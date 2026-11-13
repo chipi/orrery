@@ -880,7 +880,8 @@
     "deep-sky names (2026-11-12)": "Object nicknames: each language Wikipedia title of the English article (en.wikipedia langlinks API, fetched 2026-11-12; zh converted to zh-CN, sr to Cyrillic) where one exists and names the object (ru Скопление Дикая Утка, zh 野鸭星团, ko 야생오리 성단, de Wildentenhaufen, fr amas du Canard sauvage, es Cúmulo del Pato Salvaje, ar عنقود البط البري, ru Туманность Гантель, de Hantelnebel, fr nébuleuse de l'Haltère, it Nebulosa Manubrio, nl Halternevel). Where the Wikipedia title is only the catalogue number (ja M11 (天体), sr Месје 11, most hi, nl and pt titles) the form follows the same language's existing names of the same kind (Pinwheel Galaxy: ru Вертушка, zh 风车, ko 바람개비, it Girandola, nl Windmolen, pt Cata-vento; the Eagle, Orion and Lagoon Nebula patterns). Nicknames with no article in any language (Checkmark Nebula, Coma Pinwheel, Black Swan Cluster, the M-numbered groups, Surfboard Galaxy in most languages) are literal translations of the English name by the translator and the lowest confidence. Constellations: the language Wikipedia titles (en.wikipedia langlinks, fetched 2026-11-12) without the (constellation) qualifier; ko follows the Korea Astronomy and Space Science Institute forms (헤르쿨레스자리, not Wikipedia's 허큘리스자리); ar Sagittarius is القوس as in the site's Sagittarius A* label; where a pt Wikipedia title is the Latin name (Sagittarius, Aquarius, Perseus, Taurus, Lyra, Virgo, Leo, Capricornus, Lepus, Centaurus) the pt-BR column writes the Portuguese name, as the site already does for Escorpião and Escudo. Hindi constellation names follow the existing '<name> तारामंडल' pattern and hi.wikipedia (पहलवान, ययाति, वृष, कुम्भ, ब्रह्मा).",
     "deep-sky people (2026-11-12)": "People named in the 120 deep-sky texts. ru, ja, zh-CN, ko, hi, ar, sr-Cyrl: the language Wikipedia title of the person (en.wikipedia langlinks API, fetched 2026-11-12; zh converted to zh-CN, sr to Cyrillic; ru 'Surname, Name' reordered to Name Surname) where one exists (ru Шарль Мессье, Эдмунд Галлей, Каролина Гершель; ja シャルル・メシエ, ウィリアム・ハーシェル; zh 夏尔·梅西耶, 威廉·赫歇尔, 弗里茨·兹威基; ko 샤를 메시에, 윌리엄 허셜, 프리츠 츠비키; ar شارل مسييه, إدموند هالي, هارلو شابلي; sr Шарл Месје), else the translator's own transliteration of the name in that language's usual rules (ru Practical Transcription, ja katakana, zh Xinhua name table, ko national orthography, hi Devanagari transliteration, ar, sr), which has no source and is the lowest confidence: Kenneth Glyn Jones, Walter Scott Houston, Michael Merrifield, Holger Baumgardt, Abraham Ihle, Bengt Westerlund, Karl Henize (all but ru zh), Barnaba Oriani, Edward Pigott (hi ar sr ko), James Dunlop, Owen Gingerich, Antoine Darquier de Pellepoix, Jean-Jacques d'Ortous de Mairan and the hi/ko/ar/sr columns generally. Latin-script locales: the English name unless that locale writes it differently (en.wikipedia langlinks: de Wilhelm Herschel, es Edmund Halley / Carolina Herschel / Giovanni Battista Odierna, fr Jean-Dominique Cassini, de/fr/it/pt Giovanni Domenico Maraldi, de/fr/it Johann Abraham Ihle, de/pt Johann Gottfried Köhler, Ptolemy: de Ptolemäus, fr Ptolémée, es Ptolomeo, it Tolomeo, nl Ptolemaeus, pt Ptolomeu; al-Sufi: de as-Sufi, fr al-Soufi, nl al-Soefi, pt Azofi; Earl of Rosse: the titles of nobility each language uses). Bare surnames carry _bare.",
     "deep-text batch 4 glossary (2026-11-12)": "Names and terms added for docs/wip/deep-text/batch-04.md. Where the site already translated a word (captions in deep-sky.json, earlier deep-sky overlays: luminous red nova, Type Ia, grand-design spiral, the nickname titles) the existing site form was taken. Not checked on native pages (no search run; first-agent forms): the person names in ru ja zh-CN ko hi ar sr-Cyrl (Huggins, Harding, Muñoz, Pontoppidan, Fabian, Atkinson, Szyszka, Häberle, Krause), the Hindi constellation forms for Draco, Fornax, Sagitta, Corvus, the es/pt constellation gaps, Gabriela Mistral Nebula, Christmas Tree Cluster, Fornax Cluster, and the terms white dwarf cooling track, cometary knot, intracluster light, protostellar outflow, super star cluster, tidal tail, polarimetry, ionisation front in all locales (calques of the English sense; confidence marked). nl Bellennevel replaces the site caption's 'Bellnevel' (not Dutch).",
-    "galaxy-structure terms (2026-11-13)": "Binding forms for deep-text batch 06 (galaxy structures). The site's own form where the site already writes the term (messages explore_cosmic_web_kind_* and explore_hub_desc_*: supercluster, void, galaxy wall, filament; the large-scale-structure and Laniakea essays: cosmic web, basin of attraction, megaparsec, zone of avoidance), else the language Wikipedia title of the English article (en.wikipedia langlinks API, fetched 2026-11-13: redshift, peculiar velocity, comoving distance, tip of the red giant branch, surface brightness fluctuations, Local Void; zh converted to zh-CN, sr to Cyrillic). Not in Wikipedia and set by the translator from the neighbouring terms (galaxy cloud in all 13 languages; hi peculiar velocity, comoving distance, surface brightness fluctuations, tip of the red giant branch; ar peculiar velocity; sr comoving distance and the Local Void's native form; ja, ko and zh-CN void/Local Void compounds): confidence is medium or low as marked in _confidence. Stems accept every variant the site already writes in an unreviewed tree."
+    "galaxy-structure terms (2026-11-13)": "Binding forms for deep-text batch 06 (galaxy structures). The site's own form where the site already writes the term (messages explore_cosmic_web_kind_* and explore_hub_desc_*: supercluster, void, galaxy wall, filament; the large-scale-structure and Laniakea essays: cosmic web, basin of attraction, megaparsec, zone of avoidance), else the language Wikipedia title of the English article (en.wikipedia langlinks API, fetched 2026-11-13: redshift, peculiar velocity, comoving distance, tip of the red giant branch, surface brightness fluctuations, Local Void; zh converted to zh-CN, sr to Cyrillic). Not in Wikipedia and set by the translator from the neighbouring terms (galaxy cloud in all 13 languages; hi peculiar velocity, comoving distance, surface brightness fluctuations, tip of the red giant branch; ar peculiar velocity; sr comoving distance and the Local Void's native form; ja, ko and zh-CN void/Local Void compounds): confidence is medium or low as marked in _confidence. Stems accept every variant the site already writes in an unreviewed tree.",
+    "galaxy and structure deep-text batches 05-06 (2026-11-13)": "Binding forms for deep-text batches 05 (29 Local Group galaxies) and 06 (30 structures). Terms: the site's own form where the site already writes it (messages explore_lg_kind_* and explore_mw_*: dwarf spheroidal / dwarf irregular / dwarf elliptical / irregular galaxy, satellite galaxy, dark-matter halo, kpc; metal-poor from deep-sky m92), else compounds built from the site's existing neighbouring terms (dwarf galaxy, galaxy, elliptical galaxy, tip of the red giant branch, redshift) by the translator; Wikipedia langlinks (fetched 2026-11-13) carried no article for these compounds in the target languages, so every non-site form here has no native-page check: medium or low in _confidence as marked, Hindi and the Arabic/Serbian/Korean scientific compounds (period-luminosity relation, velocity dispersion, mass-to-light ratio, eclipsing binary, early/late-type, overdensity, crossing time, potential well, watershed, repeller, Hubble flow) lowest. People: the translator's transliteration under the same rules as the deep-sky people (ru Practical Transcription, ja katakana, zh Xinhua-style names, ko national orthography, hi Devanagari, ar, sr Serbian Cyrillic); en.wikipedia langlinks supplied only a few (Baade, Barnard, Leavitt, Wolf, Swift, Melotte, Shapley, Zwicky, Schuster, West) and the rest has no source. Names whose original-language pronunciation is uncertain (Pietrzyński, Kallivayalil, Antoja, Gullieuszik, Oemler, Huchra, van Zee, Wakamatsu, Lee, Jang, Kim, Sohn, Wu, Mei) are the lowest confidence. Latin-script locales keep the English spelling and carry no entry. Constellations Apus, Antlia, Horologium, Indus, Norma: the language Wikipedia titles where present (ar, hi, ja, ko, ru, sr, de, fr, it, nl, zh for Apus and Antlia), else the established names. Observatories and surveys (class place): the site's own observatory page names (Palomar, Mount Wilson, Very Large Telescope), else Wikipedia titles (Lowell, Sloan Digital Sky Survey) or the translator's forms. Not added (origin-rule vehicles and catalogue designations): Hubble, Gaia, Chandra, Cosmicflows-4, GRAVITY, DDO, Maffei 1/2, CfA2 (kept in Latin)."
   },
   "body": {
     "Earth": {
@@ -3497,6 +3498,123 @@
       "ru": "Канберра",
       "sr-Cyrl": "Канбера",
       "zh-CN": "堪培拉"
+    },
+    "Palomar Observatory": {
+      "ru": "Паломарская обсерватория",
+      "ja": "パロマー天文台",
+      "zh-CN": "帕洛马天文台",
+      "ko": "팔로마 천문대",
+      "hi": "पालोमर वेधशाला",
+      "ar": "مرصد بالومار",
+      "sr-Cyrl": "Опсерваторија Паломар",
+      "de": "Palomar-Observatorium",
+      "fr": "Observatoire du Mont Palomar",
+      "es": "Observatorio de Monte Palomar",
+      "it": "Osservatorio di Monte Palomar",
+      "nl": "Palomar-observatorium",
+      "pt-BR": "Observatório do Monte Palomar"
+    },
+    "Mount Wilson Observatory": {
+      "ru": "Обсерватория Маунт-Вильсон",
+      "ja": "ウィルソン山天文台",
+      "zh-CN": "威尔逊山天文台",
+      "ko": "윌슨산 천문대",
+      "hi": "माउंट विल्सन वेधशाला",
+      "ar": "مرصد جبل ويلسون",
+      "sr-Cyrl": "Опсерваторија Маунт Вилсон",
+      "de": "Mount-Wilson-Observatorium",
+      "fr": "Observatoire du Mont Wilson",
+      "es": "Observatorio del Monte Wilson",
+      "it": "Osservatorio di Mount Wilson",
+      "nl": "Mount Wilson-observatorium",
+      "pt-BR": "Observatório do Monte Wilson"
+    },
+    "Very Large Telescope": {
+      "ru": "Очень большой телескоп",
+      "ja": "超大型望遠鏡",
+      "zh-CN": "甚大望远镜",
+      "ko": "초거대 망원경",
+      "hi": "वेरी लार्ज टेलीस्कोप",
+      "ar": "التلسكوب الكبير جدًا",
+      "sr-Cyrl": "Веома велики телескоп"
+    },
+    "Boyden Observatory": {
+      "ru": "Обсерватория Бойдена",
+      "ja": "ボイデン天文台",
+      "zh-CN": "博伊登天文台",
+      "ko": "보이든 천문대",
+      "hi": "बॉयडन वेधशाला",
+      "ar": "مرصد بويدن",
+      "sr-Cyrl": "Опсерваторија Бојден",
+      "de": "Boyden-Observatorium",
+      "fr": "Observatoire Boyden",
+      "es": "Observatorio Boyden",
+      "it": "Osservatorio Boyden",
+      "nl": "Boyden-observatorium",
+      "pt-BR": "Observatório Boyden"
+    },
+    "Lowell Observatory": {
+      "ru": "Обсерватория Лоуэлла",
+      "ja": "ローウェル天文台",
+      "zh-CN": "洛厄尔天文台",
+      "ko": "로웰 천문대",
+      "hi": "लोवेल वेधशाला",
+      "ar": "مرصد لويل",
+      "sr-Cyrl": "Опсерваторија Лоуел",
+      "de": "Lowell-Observatorium",
+      "fr": "Observatoire Lowell",
+      "es": "Observatorio Lowell",
+      "it": "Osservatorio Lowell",
+      "nl": "Lowell-observatorium",
+      "pt-BR": "Observatório Lowell"
+    },
+    "David Dunlap Observatory": {
+      "ru": "Обсерватория Дэвида Данлэпа",
+      "ja": "デビッド・ダンラップ天文台",
+      "zh-CN": "大卫·邓拉普天文台",
+      "ko": "데이비드 던랩 천문대",
+      "hi": "डेविड डनलप वेधशाला",
+      "ar": "مرصد ديفيد دنلاب",
+      "sr-Cyrl": "Опсерваторија Дејвид Данлап",
+      "de": "David-Dunlap-Observatorium",
+      "fr": "Observatoire David Dunlap",
+      "es": "Observatorio David Dunlap",
+      "it": "Osservatorio David Dunlap",
+      "nl": "David Dunlap-observatorium",
+      "pt-BR": "Observatório David Dunlap"
+    },
+    "UK Schmidt Telescope": {
+      "ru": "Британский телескоп Шмидта",
+      "ja": "英国シュミット望遠鏡",
+      "zh-CN": "英国施密特望远镜",
+      "ko": "영국 슈미트 망원경",
+      "hi": "यूके श्मिट टेलीस्कोप",
+      "ar": "تلسكوب شميدت البريطاني",
+      "sr-Cyrl": "Британски Шмитов телескоп",
+      "de": "UK-Schmidt-Teleskop",
+      "fr": "télescope Schmidt britannique",
+      "es": "Telescopio Schmidt del Reino Unido",
+      "it": "Telescopio Schmidt britannico",
+      "nl": "Britse Schmidt-telescoop",
+      "pt-BR": "Telescópio Schmidt do Reino Unido"
+    },
+    "Sloan Digital Sky Survey": {
+      "ru": "Слоуновский цифровой небесный обзор",
+      "ja": "スローン・デジタル・スカイサーベイ",
+      "zh-CN": "斯隆数字巡天",
+      "ko": "슬론 디지털 스카이 서베이",
+      "hi": "स्लोन डिजिटल स्काई सर्वे",
+      "ar": "مسح سلون الرقمي للسماء",
+      "sr-Cyrl": "Слоуново дигитално небеско истраживање"
+    },
+    "Palomar Sky Survey": {
+      "ru": "Паломарский обзор неба",
+      "ja": "パロマー天文台スカイサーベイ",
+      "zh-CN": "帕洛马巡天",
+      "ko": "팔로마 스카이 서베이",
+      "hi": "पालोमर स्काई सर्वे",
+      "ar": "مسح بالومار للسماء",
+      "sr-Cyrl": "Паломарски преглед неба"
     }
   },
   "station": {
@@ -8136,6 +8254,913 @@
       "nl": "Ptolemaeus",
       "pt-BR": "Ptolomeu",
       "_bare": true
+    },
+    "Sidney van den Bergh": {
+      "ru": "Сидни ван ден Берг",
+      "ja": "シドニー・ファン・デン・ベルフ",
+      "zh-CN": "西德尼·范登伯格",
+      "ko": "시드니 반 덴 버그",
+      "hi": "सिडनी वैन डेन बर्ग",
+      "ar": "سيدني فان دن بيرغ",
+      "sr-Cyrl": "Сидни ван ден Берг"
+    },
+    "Albert Wilson": {
+      "ru": "Альберт Уилсон",
+      "ja": "アルバート・ウィルソン",
+      "zh-CN": "艾伯特·威尔逊",
+      "ko": "앨버트 윌슨",
+      "hi": "अल्बर्ट विल्सन",
+      "ar": "ألبرت ويلسون",
+      "sr-Cyrl": "Алберт Вилсон"
+    },
+    "Max Wolf": {
+      "ru": "Макс Вольф",
+      "ja": "マックス・ヴォルフ",
+      "zh-CN": "马克斯·沃尔夫",
+      "ko": "막스 볼프",
+      "hi": "मैक्स वोल्फ",
+      "ar": "ماكس فولف",
+      "sr-Cyrl": "Макс Волф"
+    },
+    "Lewis Swift": {
+      "ru": "Льюис Свифт",
+      "ja": "ルイス・スウィフト",
+      "zh-CN": "路易斯·斯威夫特",
+      "ko": "루이스 스위프트",
+      "hi": "लुईस स्विफ्ट",
+      "ar": "لويس سويفت",
+      "sr-Cyrl": "Луис Свифт"
+    },
+    "Walter Baade": {
+      "ru": "Вальтер Бааде",
+      "ja": "ウォルター・バーデ",
+      "zh-CN": "沃尔特·巴德",
+      "ko": "발터 바데",
+      "hi": "वाल्टर बाडे",
+      "ar": "فالتر بادي",
+      "sr-Cyrl": "Валтер Бааде"
+    },
+    "Henrietta Leavitt": {
+      "ru": "Генриетта Ливитт",
+      "ja": "ヘンリエッタ・リービット",
+      "zh-CN": "亨丽埃塔·勒维特",
+      "ko": "헨리에타 레빗",
+      "hi": "हेनरीएटा लेविट",
+      "ar": "هنريتا ليفيت",
+      "sr-Cyrl": "Хенријета Левит"
+    },
+    "Edward Emerson Barnard": {
+      "ru": "Эдвард Эмерсон Барнард",
+      "ja": "エドワード・エマーソン・バーナード",
+      "zh-CN": "爱德华·爱默生·巴纳德",
+      "ko": "에드워드 에머슨 바너드",
+      "hi": "एडवर्ड एमर्सन बर्नार्ड",
+      "ar": "إدوارد إيمرسون برنارد",
+      "sr-Cyrl": "Едвард Емерсон Барнард"
+    },
+    "Mike Irwin": {
+      "ru": "Майк Ирвин",
+      "ja": "マイク・アーウィン",
+      "zh-CN": "迈克·艾尔文",
+      "ko": "마이크 어윈",
+      "hi": "माइक इरविन",
+      "ar": "مايك إروين",
+      "sr-Cyrl": "Мајк Ирвин"
+    },
+    "Gerry Gilmore": {
+      "ru": "Джерри Гилмор",
+      "ja": "ジェリー・ギルモア",
+      "zh-CN": "杰里·吉尔摩",
+      "ko": "제리 길모어",
+      "hi": "जेरी गिल्मोर",
+      "ar": "جيري غيلمور",
+      "sr-Cyrl": "Џери Гилмор"
+    },
+    "Rodrigo Ibata": {
+      "ru": "Родриго Ибата",
+      "ja": "ロドリゴ・イバータ",
+      "zh-CN": "罗德里戈·伊巴塔",
+      "ko": "로드리고 이바타",
+      "hi": "रोड्रिगो इबाता",
+      "ar": "رودريغو إيباتا",
+      "sr-Cyrl": "Родриго Ибата"
+    },
+    "Alan Whiting": {
+      "ru": "Алан Уайтинг",
+      "ja": "アラン・ホワイティング",
+      "zh-CN": "艾伦·惠廷",
+      "ko": "앨런 화이팅",
+      "hi": "एलन व्हाइटिंग",
+      "ar": "آلان وايتينغ",
+      "sr-Cyrl": "Алан Вајтинг"
+    },
+    "George Hau": {
+      "ru": "Джордж Хау",
+      "ja": "ジョージ・ハウ",
+      "zh-CN": "乔治·豪",
+      "ko": "조지 하우",
+      "hi": "जॉर्ज हाउ",
+      "ar": "جورج هاو",
+      "sr-Cyrl": "Џорџ Хау"
+    },
+    "Peter Bunclark": {
+      "ru": "Питер Банкларк",
+      "ja": "ピーター・バンクラーク",
+      "zh-CN": "彼得·邦克拉克",
+      "ko": "피터 벙클라크",
+      "hi": "पीटर बंकलार्क",
+      "ar": "بيتر بانكلارك",
+      "sr-Cyrl": "Питер Банкларк"
+    },
+    "Mick Bridgeland": {
+      "ru": "Мик Бриджленд",
+      "ja": "ミック・ブリッジランド",
+      "zh-CN": "米克·布里奇兰",
+      "ko": "믹 브리지랜드",
+      "hi": "मिक ब्रिजलैंड",
+      "ar": "ميك بريدجلاند",
+      "sr-Cyrl": "Мик Бриџланд"
+    },
+    "Richard McMahon": {
+      "ru": "Ричард Макмахон",
+      "ja": "リチャード・マクマホン",
+      "zh-CN": "理查德·麦克马洪",
+      "ko": "리처드 맥마흔",
+      "hi": "रिचर्ड मैकमोहन",
+      "ar": "ريتشارد ماكماهون",
+      "sr-Cyrl": "Ричард Макмахон"
+    },
+    "Russell Lavery": {
+      "ru": "Рассел Лейвери",
+      "ja": "ラッセル・レイヴァリー",
+      "zh-CN": "拉塞尔·拉弗里",
+      "ko": "러셀 레이버리",
+      "hi": "रसेल लेवरी",
+      "ar": "راسل ليفري",
+      "sr-Cyrl": "Расел Лејвери"
+    },
+    "Kenneth Mighell": {
+      "ru": "Кеннет Майгелл",
+      "ja": "ケネス・マイゲル",
+      "zh-CN": "肯尼思·迈格尔",
+      "ko": "케네스 마이겔",
+      "hi": "केनेथ माइगेल",
+      "ar": "كينيث مايغل",
+      "sr-Cyrl": "Кенет Мајгел"
+    },
+    "Knut Lundmark": {
+      "ru": "Кнут Лундмарк",
+      "ja": "クヌート・ルンドマルク",
+      "zh-CN": "克努特·伦德马克",
+      "ko": "크누트 룬드마르크",
+      "hi": "क्नूट लुंडमार्क",
+      "ar": "كنوت لوندمارك",
+      "sr-Cyrl": "Кнут Лундмарк"
+    },
+    "Philibert Melotte": {
+      "ru": "Филибер Мелотт",
+      "ja": "フィリベール・メロット",
+      "zh-CN": "菲利伯特·梅洛特",
+      "ko": "필리베르 멜로트",
+      "hi": "फिलिबर्ट मेलोट",
+      "ar": "فيليبير ميلوت",
+      "sr-Cyrl": "Филибер Мелот"
+    },
+    "Hans-Emil Schuster": {
+      "ru": "Ганс-Эмиль Шустер",
+      "ja": "ハンス＝エミール・シュスター",
+      "zh-CN": "汉斯-埃米尔·舒斯特",
+      "ko": "한스에밀 슈스터",
+      "hi": "हंस-एमिल शुस्टर",
+      "ar": "هانز-إميل شوستر",
+      "sr-Cyrl": "Ханс-Емил Шустер"
+    },
+    "Richard West": {
+      "ru": "Ричард Вест",
+      "ja": "リチャード・ウェスト",
+      "zh-CN": "理查德·韦斯特",
+      "ko": "리처드 웨스트",
+      "hi": "रिचर्ड वेस्ट",
+      "ar": "ريتشارد ويست",
+      "sr-Cyrl": "Ричард Вест"
+    },
+    "Robert Harrington": {
+      "ru": "Роберт Харрингтон",
+      "ja": "ロバート・ハリントン",
+      "zh-CN": "罗伯特·哈林顿",
+      "ko": "로버트 해링턴",
+      "hi": "रॉबर्ट हैरिंगटन",
+      "ar": "روبرت هارينغتون",
+      "sr-Cyrl": "Роберт Харингтон"
+    },
+    "Gérard de Vaucouleurs": {
+      "ru": "Жерар де Вокулёр",
+      "ja": "ジェラール・ド・ヴォークルール",
+      "zh-CN": "杰拉德·德沃库勒",
+      "ko": "제라르 드 보클레르",
+      "hi": "जेरार्ड डी वोकुलर",
+      "ar": "جيرار دو فوكولر",
+      "sr-Cyrl": "Жерар де Вокулер"
+    },
+    "de Vaucouleurs": {
+      "ru": "де Вокулёр",
+      "ja": "ド・ヴォークルール",
+      "zh-CN": "德沃库勒",
+      "ko": "드 보클레르",
+      "hi": "डी वोकुलर",
+      "ar": "دو فوكولر",
+      "sr-Cyrl": "де Вокулер",
+      "_bare": true
+    },
+    "McConnachie": {
+      "ru": "Макконнахи",
+      "ja": "マコナキー",
+      "zh-CN": "麦康纳希",
+      "ko": "맥코나키",
+      "hi": "मैककोनाची",
+      "ar": "ماكونيكي",
+      "sr-Cyrl": "Маконаки",
+      "_bare": true
+    },
+    "Amorisco": {
+      "ru": "Амориско",
+      "ja": "アモリスコ",
+      "zh-CN": "阿莫里斯科",
+      "ko": "아모리스코",
+      "hi": "अमोरिस्को",
+      "ar": "أموريسكو",
+      "sr-Cyrl": "Амориско",
+      "_bare": true
+    },
+    "Cannon": {
+      "ru": "Кэннон",
+      "ja": "キャノン",
+      "zh-CN": "坎农",
+      "ko": "캐넌",
+      "hi": "कैनन",
+      "ar": "كانون",
+      "sr-Cyrl": "Кенон",
+      "_bare": true
+    },
+    "Silverman": {
+      "ru": "Сильверман",
+      "ja": "シルバーマン",
+      "zh-CN": "西尔弗曼",
+      "ko": "실버먼",
+      "hi": "सिल्वरमैन",
+      "ar": "سيلفرمان",
+      "sr-Cyrl": "Силверман",
+      "_bare": true
+    },
+    "Filippenko": {
+      "ru": "Филиппенко",
+      "ja": "フィリペンコ",
+      "zh-CN": "菲利片科",
+      "ko": "필리펜코",
+      "hi": "फ़िलिपेंको",
+      "ar": "فيليبينكو",
+      "sr-Cyrl": "Филипенко",
+      "_bare": true
+    },
+    "Cole": {
+      "ru": "Коул",
+      "ja": "コール",
+      "zh-CN": "科尔",
+      "ko": "콜",
+      "hi": "कोल",
+      "ar": "كول",
+      "sr-Cyrl": "Кол",
+      "_bare": true
+    },
+    "van Zee": {
+      "ru": "ван Зее",
+      "ja": "ファン・ジー",
+      "zh-CN": "范泽",
+      "ko": "반 지",
+      "hi": "वैन ज़ी",
+      "ar": "فان زي",
+      "sr-Cyrl": "ван Зи",
+      "_bare": true
+    },
+    "Sohn": {
+      "ru": "Сон",
+      "ja": "ソン",
+      "zh-CN": "孙",
+      "ko": "손",
+      "hi": "सोन",
+      "ar": "سون",
+      "sr-Cyrl": "Сон",
+      "_bare": true
+    },
+    "Bustamante-Rosell": {
+      "ru": "Бустаманте-Росель",
+      "ja": "ブスタマンテ＝ロセル",
+      "zh-CN": "布斯塔曼特-罗塞尔",
+      "ko": "부스타만테-로셀",
+      "hi": "बुस्तामांते-रोसेल",
+      "ar": "بوستامانتي-روسيل",
+      "sr-Cyrl": "Бустаманте-Росел",
+      "_bare": true
+    },
+    "Pascale": {
+      "ru": "Паскале",
+      "ja": "パスカレ",
+      "zh-CN": "帕斯卡莱",
+      "ko": "파스칼레",
+      "hi": "पास्काले",
+      "ar": "باسكالي",
+      "sr-Cyrl": "Паскале",
+      "_bare": true
+    },
+    "Koch": {
+      "ru": "Кох",
+      "ja": "コッホ",
+      "zh-CN": "科赫",
+      "ko": "코흐",
+      "hi": "कोच",
+      "ar": "كوخ",
+      "sr-Cyrl": "Кох",
+      "_bare": true
+    },
+    "Pietrzyński": {
+      "ru": "Петшиньский",
+      "ja": "ピェトシンスキ",
+      "zh-CN": "皮特申斯基",
+      "ko": "피에트신스키",
+      "hi": "पिएत्शिन्स्की",
+      "ar": "بيتشينسكي",
+      "sr-Cyrl": "Пјетшињски",
+      "_bare": true
+    },
+    "Kallivayalil": {
+      "ru": "Калливаялил",
+      "ja": "カリヴァヤリル",
+      "zh-CN": "卡利瓦亚利尔",
+      "ko": "칼리바얄릴",
+      "hi": "कलिवायलिल",
+      "ar": "كاليفايالل",
+      "sr-Cyrl": "Каливајалил",
+      "_bare": true
+    },
+    "Graczyk": {
+      "ru": "Грачик",
+      "ja": "グラチク",
+      "zh-CN": "格拉奇克",
+      "ko": "그라칙",
+      "hi": "ग्रैचिक",
+      "ar": "غراتشيك",
+      "sr-Cyrl": "Грачик",
+      "_bare": true
+    },
+    "Antoja": {
+      "ru": "Антожа",
+      "ja": "アントージャ",
+      "zh-CN": "安托亚",
+      "ko": "안토자",
+      "hi": "अंतोजा",
+      "ar": "أنتوجا",
+      "sr-Cyrl": "Антожа",
+      "_bare": true
+    },
+    "Karachentsev": {
+      "ru": "Караченцев",
+      "ja": "カラチェンツェフ",
+      "zh-CN": "卡拉琴采夫",
+      "ko": "카라첸체프",
+      "hi": "करचेन्त्सेव",
+      "ar": "كاراتشينتسيف",
+      "sr-Cyrl": "Караченцев",
+      "_bare": true
+    },
+    "Karachentseva": {
+      "ru": "Караченцева",
+      "ja": "カラチェンツェワ",
+      "zh-CN": "卡拉琴采娃",
+      "ko": "카라첸체바",
+      "hi": "करचेन्त्सेवा",
+      "ar": "كاراتشينتسيفا",
+      "sr-Cyrl": "Караченцева",
+      "_bare": true
+    },
+    "Armandroff": {
+      "ru": "Армандрофф",
+      "ja": "アーマンドロフ",
+      "zh-CN": "阿曼德罗夫",
+      "ko": "아만드로프",
+      "hi": "आर्मंड्रॉफ",
+      "ar": "أرماندروف",
+      "sr-Cyrl": "Армандроф",
+      "_bare": true
+    },
+    "Holmberg": {
+      "ru": "Хольмберг",
+      "ja": "ホルムベリ",
+      "zh-CN": "霍姆伯格",
+      "ko": "홀름베리",
+      "hi": "होल्मबर्ग",
+      "ar": "هولمبرغ",
+      "sr-Cyrl": "Холмберг",
+      "_bare": true
+    },
+    "Gullieuszik": {
+      "ru": "Гуллиеушик",
+      "ja": "グッリウシク",
+      "zh-CN": "古列乌西克",
+      "ko": "굴리우시크",
+      "hi": "गुल्लीउज़िक",
+      "ar": "غوليوسيك",
+      "sr-Cyrl": "Гулијушик",
+      "_bare": true
+    },
+    "Bellazzini": {
+      "ru": "Беллаццини",
+      "ja": "ベッラッツィーニ",
+      "zh-CN": "贝拉齐尼",
+      "ko": "벨라치니",
+      "hi": "बेल्लाज़िनी",
+      "ar": "بيلاتزيني",
+      "sr-Cyrl": "Белацини",
+      "_bare": true
+    },
+    "Burke": {
+      "ru": "Берк",
+      "ja": "バーク",
+      "zh-CN": "伯克",
+      "ko": "버크",
+      "hi": "बर्क",
+      "ar": "بيرك",
+      "sr-Cyrl": "Берк",
+      "_bare": true
+    },
+    "Mighell": {
+      "ru": "Майгелл",
+      "ja": "マイゲル",
+      "zh-CN": "迈格尔",
+      "ko": "마이겔",
+      "hi": "माइगेल",
+      "ar": "مايغل",
+      "sr-Cyrl": "Мајгел",
+      "_bare": true
+    },
+    "Dirsch": {
+      "ru": "Дирш",
+      "ja": "ディルシュ",
+      "zh-CN": "迪尔施",
+      "ko": "디르슈",
+      "hi": "डिर्श",
+      "ar": "ديرش",
+      "sr-Cyrl": "Дирш",
+      "_bare": true
+    },
+    "Richtler": {
+      "ru": "Рихтлер",
+      "ja": "リヒトラー",
+      "zh-CN": "里希特勒",
+      "ko": "리히틀러",
+      "hi": "रिख़्टलर",
+      "ar": "ريشتلر",
+      "sr-Cyrl": "Рихтлер",
+      "_bare": true
+    },
+    "Bassino": {
+      "ru": "Бассино",
+      "ja": "バッシーノ",
+      "zh-CN": "巴西诺",
+      "ko": "바시노",
+      "hi": "बासीनो",
+      "ar": "باسينو",
+      "sr-Cyrl": "Басино",
+      "_bare": true
+    },
+    "Smith Castelli": {
+      "ru": "Смит Кастелли",
+      "ja": "スミス・カステッリ",
+      "zh-CN": "史密斯·卡斯泰利",
+      "ko": "스미스 카스텔리",
+      "hi": "स्मिथ कैस्टेली",
+      "ar": "سميث كاستيلي",
+      "sr-Cyrl": "Смит Кастели",
+      "_bare": true
+    },
+    "Kirshner": {
+      "ru": "Киршнер",
+      "ja": "カーシュナー",
+      "zh-CN": "柯什纳",
+      "ko": "커시너",
+      "hi": "किर्शनर",
+      "ar": "كيرشنر",
+      "sr-Cyrl": "Киршнер",
+      "_bare": true
+    },
+    "Oemler": {
+      "ru": "Оэмлер",
+      "ja": "オームラー",
+      "zh-CN": "厄姆勒",
+      "ko": "오믈러",
+      "hi": "ओएमलर",
+      "ar": "أويملر",
+      "sr-Cyrl": "Оемлер",
+      "_bare": true
+    },
+    "Schechter": {
+      "ru": "Шехтер",
+      "ja": "シェヒター",
+      "zh-CN": "谢克特",
+      "ko": "셰크터",
+      "hi": "शेक्टर",
+      "ar": "شيختر",
+      "sr-Cyrl": "Шехтер",
+      "_bare": true
+    },
+    "Shectman": {
+      "ru": "Шектман",
+      "ja": "シェクトマン",
+      "zh-CN": "谢克特曼",
+      "ko": "섹트먼",
+      "hi": "शेक्टमैन",
+      "ar": "شيكتمان",
+      "sr-Cyrl": "Шектман",
+      "_bare": true
+    },
+    "Dupuy": {
+      "ru": "Дюпюи",
+      "ja": "デュピュイ",
+      "zh-CN": "迪皮伊",
+      "ko": "뒤퓌이",
+      "hi": "डुपुई",
+      "ar": "دوبوي",
+      "sr-Cyrl": "Дипи",
+      "_bare": true
+    },
+    "Courtois": {
+      "ru": "Куртуа",
+      "ja": "クルトワ",
+      "zh-CN": "库尔图瓦",
+      "ko": "쿠르투아",
+      "hi": "कुर्त्वा",
+      "ar": "كورتوا",
+      "sr-Cyrl": "Куртоа",
+      "_bare": true
+    },
+    "Geller": {
+      "ru": "Геллер",
+      "ja": "ゲラー",
+      "zh-CN": "盖勒",
+      "ko": "겔러",
+      "hi": "गेलर",
+      "ar": "غيلر",
+      "sr-Cyrl": "Гелер",
+      "_bare": true
+    },
+    "Huchra": {
+      "ru": "Хакра",
+      "ja": "ハクラ",
+      "zh-CN": "赫克拉",
+      "ko": "허크라",
+      "hi": "हकरा",
+      "ar": "هوكرا",
+      "sr-Cyrl": "Хукра",
+      "_bare": true
+    },
+    "Gott": {
+      "ru": "Готт",
+      "ja": "ゴット",
+      "zh-CN": "戈特",
+      "ko": "고트",
+      "hi": "गॉट",
+      "ar": "غوت",
+      "sr-Cyrl": "Гот",
+      "_bare": true
+    },
+    "Nasonova": {
+      "ru": "Насонова",
+      "ja": "ナソノワ",
+      "zh-CN": "纳索诺娃",
+      "ko": "나소노바",
+      "hi": "नसोनोवा",
+      "ar": "ناسونوفا",
+      "sr-Cyrl": "Насонова",
+      "_bare": true
+    },
+    "de Freitas Pacheco": {
+      "ru": "ди Фрейташ Пашеку",
+      "ja": "デ・フレイタス・パシェコ",
+      "zh-CN": "德弗雷塔斯·帕切科",
+      "ko": "지 프레이타스 파셰쿠",
+      "hi": "डी फ्रीटास पाचेको",
+      "ar": "دي فريتاس باشيكو",
+      "sr-Cyrl": "де Фрејташ Пашеко",
+      "_bare": true
+    },
+    "Dressler": {
+      "ru": "Дресслер",
+      "ja": "ドレスラー",
+      "zh-CN": "德雷斯勒",
+      "ko": "드레슬러",
+      "hi": "ड्रेसलर",
+      "ar": "دريسلر",
+      "sr-Cyrl": "Дреслер",
+      "_bare": true
+    },
+    "Woudt": {
+      "ru": "Воудт",
+      "ja": "ワウト",
+      "zh-CN": "沃特",
+      "ko": "바우트",
+      "hi": "वाउट",
+      "ar": "فاودت",
+      "sr-Cyrl": "Воудт",
+      "_bare": true
+    },
+    "Kraan-Korteweg": {
+      "ru": "Кран-Кортевег",
+      "ja": "クラーン＝コルテウェグ",
+      "zh-CN": "克兰-科尔特韦格",
+      "ko": "크란-코르테베흐",
+      "hi": "क्रान-कोर्टेवेग",
+      "ar": "كران-كورتيفيغ",
+      "sr-Cyrl": "Кран-Кортевег",
+      "_bare": true
+    },
+    "Hoffman": {
+      "ru": "Хоффман",
+      "ja": "ホフマン",
+      "zh-CN": "霍夫曼",
+      "ko": "호프먼",
+      "hi": "हॉफ़मैन",
+      "ar": "هوفمان",
+      "sr-Cyrl": "Хофман",
+      "_bare": true
+    },
+    "Fleenor": {
+      "ru": "Флинор",
+      "ja": "フリーナー",
+      "zh-CN": "弗利诺",
+      "ko": "플리너",
+      "hi": "फ़्लीनर",
+      "ar": "فلينور",
+      "sr-Cyrl": "Флинор",
+      "_bare": true
+    },
+    "Tully": {
+      "ru": "Талли",
+      "ja": "タリー",
+      "zh-CN": "塔利",
+      "ko": "털리",
+      "hi": "टली",
+      "ar": "تولي",
+      "sr-Cyrl": "Тали",
+      "_bare": true
+    },
+    "Pomarède": {
+      "ru": "Помаред",
+      "ja": "ポマレード",
+      "zh-CN": "波马雷德",
+      "ko": "포마레드",
+      "hi": "पोमारेड",
+      "ar": "بومارد",
+      "sr-Cyrl": "Помаред",
+      "_bare": true
+    },
+    "Dupke": {
+      "ru": "Дупке",
+      "ja": "デュプケ",
+      "zh-CN": "杜普克",
+      "ko": "두프케",
+      "hi": "डुप्के",
+      "ar": "دوبكه",
+      "sr-Cyrl": "Дупке",
+      "_bare": true
+    },
+    "Bregman": {
+      "ru": "Брегман",
+      "ja": "ブレグマン",
+      "zh-CN": "布雷格曼",
+      "ko": "브레그먼",
+      "hi": "ब्रेगमैन",
+      "ar": "بريغمان",
+      "sr-Cyrl": "Брегман",
+      "_bare": true
+    },
+    "Wu": {
+      "ru": "У",
+      "ja": "ウー",
+      "zh-CN": "吴",
+      "ko": "우",
+      "hi": "वू",
+      "ar": "وو",
+      "sr-Cyrl": "Ву",
+      "_bare": true
+    },
+    "Anand": {
+      "ru": "Ананд",
+      "ja": "アナンド",
+      "zh-CN": "阿南德",
+      "ko": "아난드",
+      "hi": "आनंद",
+      "ar": "أناند",
+      "sr-Cyrl": "Ананд",
+      "_bare": true
+    },
+    "Sharina": {
+      "ru": "Шарина",
+      "ja": "シャリナ",
+      "zh-CN": "沙里娜",
+      "ko": "샤리나",
+      "hi": "शरीना",
+      "ar": "شارينا",
+      "sr-Cyrl": "Шарина",
+      "_bare": true
+    },
+    "Huchtmeier": {
+      "ru": "Хухтмайер",
+      "ja": "ハフトマイアー",
+      "zh-CN": "胡赫特迈尔",
+      "ko": "후흐트마이어",
+      "hi": "हुख़्टमायर",
+      "ar": "هوختماير",
+      "sr-Cyrl": "Хухтмајер",
+      "_bare": true
+    },
+    "Lee": {
+      "ru": "Ли",
+      "ja": "イ",
+      "zh-CN": "李",
+      "ko": "이",
+      "hi": "ली",
+      "ar": "لي",
+      "sr-Cyrl": "Ли",
+      "_bare": true
+    },
+    "Jang": {
+      "ru": "Чан",
+      "ja": "チャン",
+      "zh-CN": "张",
+      "ko": "장",
+      "hi": "जांग",
+      "ar": "جانغ",
+      "sr-Cyrl": "Чанг",
+      "_bare": true
+    },
+    "Müller": {
+      "ru": "Мюллер",
+      "ja": "ミュラー",
+      "zh-CN": "米勒",
+      "ko": "뮐러",
+      "hi": "म्यूलर",
+      "ar": "مولر",
+      "sr-Cyrl": "Милер",
+      "_bare": true
+    },
+    "Mahdavi": {
+      "ru": "Махдави",
+      "ja": "マフダヴィ",
+      "zh-CN": "马赫达维",
+      "ko": "마흐다비",
+      "hi": "महदवी",
+      "ar": "مهدوي",
+      "sr-Cyrl": "Махдави",
+      "_bare": true
+    },
+    "Trentham": {
+      "ru": "Трентэм",
+      "ja": "トレンサム",
+      "zh-CN": "特伦瑟姆",
+      "ko": "트렌덤",
+      "hi": "ट्रेंथम",
+      "ar": "ترينثام",
+      "sr-Cyrl": "Трентам",
+      "_bare": true
+    },
+    "Verheijen": {
+      "ru": "Верхейен",
+      "ja": "フェルハイエン",
+      "zh-CN": "费尔海延",
+      "ko": "페르헤이언",
+      "hi": "वेरहाइजन",
+      "ar": "فيرهيين",
+      "sr-Cyrl": "Верхејен",
+      "_bare": true
+    },
+    "Rizzi": {
+      "ru": "Рицци",
+      "ja": "リッツィ",
+      "zh-CN": "里齐",
+      "ko": "리치",
+      "hi": "रिज़ी",
+      "ar": "ريتسي",
+      "sr-Cyrl": "Рици",
+      "_bare": true
+    },
+    "Durret": {
+      "ru": "Дюре",
+      "ja": "デュレ",
+      "zh-CN": "迪雷",
+      "ko": "뒤레",
+      "hi": "ड्यूरे",
+      "ar": "دوريه",
+      "sr-Cyrl": "Дире",
+      "_bare": true
+    },
+    "Wakamatsu": {
+      "ru": "Вакамацу",
+      "ja": "若松",
+      "zh-CN": "若松",
+      "ko": "와카마쓰",
+      "hi": "वाकामात्सू",
+      "ar": "واكاماتسو",
+      "sr-Cyrl": "Вакамацу",
+      "_bare": true
+    },
+    "Haynes": {
+      "ru": "Хейнс",
+      "ja": "ヘインズ",
+      "zh-CN": "海恩斯",
+      "ko": "헤인스",
+      "hi": "हेन्स",
+      "ar": "هاينز",
+      "sr-Cyrl": "Хејнс",
+      "_bare": true
+    },
+    "Giovanelli": {
+      "ru": "Джованелли",
+      "ja": "ジョヴァネッリ",
+      "zh-CN": "乔瓦内利",
+      "ko": "조바넬리",
+      "hi": "जियोवानेली",
+      "ar": "جيوفانيلي",
+      "sr-Cyrl": "Ђованели",
+      "_bare": true
+    },
+    "Proust": {
+      "ru": "Пруст",
+      "ja": "プルースト",
+      "zh-CN": "普鲁斯特",
+      "ko": "프루스트",
+      "hi": "प्रूस्त",
+      "ar": "بروست",
+      "sr-Cyrl": "Пруст",
+      "_bare": true
+    },
+    "Raychaudhury": {
+      "ru": "Райчаудхури",
+      "ja": "レイチャウドゥーリ",
+      "zh-CN": "雷乔杜里",
+      "ko": "라이차우두리",
+      "hi": "रायचौधरी",
+      "ar": "رايتشودهوري",
+      "sr-Cyrl": "Рајчаудхури",
+      "_bare": true
+    },
+    "Scaramella": {
+      "ru": "Скарамелла",
+      "ja": "スカラメッラ",
+      "zh-CN": "斯卡拉梅拉",
+      "ko": "스카라멜라",
+      "hi": "स्कारामेला",
+      "ar": "سكاراميلا",
+      "sr-Cyrl": "Скарамела",
+      "_bare": true
+    },
+    "Mei": {
+      "ru": "Меи",
+      "ja": "メイ",
+      "zh-CN": "梅",
+      "ko": "메이",
+      "hi": "मेई",
+      "ar": "ميي",
+      "sr-Cyrl": "Меи",
+      "_bare": true
+    },
+    "Shaya": {
+      "ru": "Шая",
+      "ja": "シャヤ",
+      "zh-CN": "沙亚",
+      "ko": "샤야",
+      "hi": "शाया",
+      "ar": "شايا",
+      "sr-Cyrl": "Шаја",
+      "_bare": true
+    },
+    "McCall": {
+      "ru": "Маккол",
+      "ja": "マッコール",
+      "zh-CN": "麦考尔",
+      "ko": "맥콜",
+      "hi": "मैककॉल",
+      "ar": "ماكول",
+      "sr-Cyrl": "Макол",
+      "_bare": true
+    },
+    "Kim": {
+      "ru": "Ким",
+      "ja": "キム",
+      "zh-CN": "金",
+      "ko": "김",
+      "hi": "किम",
+      "ar": "كيم",
+      "sr-Cyrl": "Ким",
+      "_bare": true
     }
   },
   "star": {
@@ -12715,6 +13740,169 @@
       "it": "Superammasso della Chioma (Grande muraglia CfA2)",
       "nl": "Comasupercluster (Grote Muur CfA2)",
       "pt-BR": "Superaglomerado de Coma (Grande Muralha CfA2)"
+    },
+    "Apus": {
+      "ru": "Райская Птица",
+      "ja": "ふうちょう座",
+      "zh-CN": "天燕座",
+      "ko": "극락조자리",
+      "hi": "स्वर्गपक्षी तारामंडल",
+      "ar": "طائر الفردوس",
+      "sr-Cyrl": "Рајска птица",
+      "de": "Paradiesvogel",
+      "fr": "Oiseau de paradis",
+      "it": "Uccello del Paradiso",
+      "nl": "Paradijsvogel",
+      "pt-BR": "Ave do Paraíso"
+    },
+    "Antlia": {
+      "ru": "Насос",
+      "ja": "ポンプ座",
+      "zh-CN": "唧筒座",
+      "ko": "공기펌프자리",
+      "hi": "ऐंट्लिया तारामंडल",
+      "ar": "مفرغة الهواء",
+      "sr-Cyrl": "Пумпа",
+      "de": "Luftpumpe",
+      "fr": "Machine pneumatique",
+      "it": "Macchina Pneumatica",
+      "nl": "Luchtpomp",
+      "pt-BR": "Máquina Pneumática"
+    },
+    "Horologium": {
+      "ru": "Часы",
+      "ja": "とけい座",
+      "zh-CN": "时钟座",
+      "ko": "시계자리",
+      "hi": "घड़ी तारामंडल",
+      "ar": "الساعة",
+      "sr-Cyrl": "Часовник",
+      "de": "Pendeluhr",
+      "fr": "Horloge",
+      "es": "Reloj",
+      "it": "Orologio",
+      "nl": "Slingeruurwerk",
+      "pt-BR": "Relógio"
+    },
+    "Indus": {
+      "ru": "Индеец",
+      "ja": "インディアン座",
+      "zh-CN": "印第安座",
+      "ko": "인디언자리",
+      "hi": "इंडस तारामंडल",
+      "ar": "الهندي",
+      "sr-Cyrl": "Индијанац",
+      "de": "Inder",
+      "fr": "Indien",
+      "es": "Indio",
+      "it": "Indiano",
+      "nl": "Indiaan",
+      "pt-BR": "Índio"
+    },
+    "Norma": {
+      "ru": "Наугольник",
+      "ja": "じょうぎ座",
+      "zh-CN": "矩尺座",
+      "ko": "직각자자리",
+      "hi": "नॉर्मा तारामंडल",
+      "ar": "المسطرة",
+      "sr-Cyrl": "Угломер",
+      "de": "Winkelmaß",
+      "fr": "Règle",
+      "es": "Regla",
+      "it": "Regolo",
+      "nl": "Winkelhaak",
+      "pt-BR": "Esquadro"
+    },
+    "Council of Giants": {
+      "ru": "Совет гигантов",
+      "ja": "巨人の評議会",
+      "zh-CN": "巨人议会",
+      "ko": "거인 평의회",
+      "hi": "दानवों की परिषद",
+      "ar": "مجلس العمالقة",
+      "sr-Cyrl": "Савет џинова",
+      "de": "Rat der Riesen",
+      "fr": "Conseil des géants",
+      "es": "Consejo de Gigantes",
+      "it": "Consiglio dei Giganti",
+      "nl": "Raad van Reuzen",
+      "pt-BR": "Conselho de Gigantes"
+    },
+    "Southern Supercluster": {
+      "ru": "Южное сверхскопление",
+      "ja": "南の超銀河団",
+      "zh-CN": "南超星系团",
+      "ko": "남부 초은하단",
+      "hi": "दक्षिणी सुपरक्लस्टर",
+      "ar": "عنقود مجرات الجنوب الفائق",
+      "sr-Cyrl": "Јужно суперјато",
+      "de": "Südlicher Superhaufen",
+      "fr": "superamas austral",
+      "es": "Supercúmulo Austral",
+      "it": "Superammasso Meridionale",
+      "nl": "Zuidelijke supercluster",
+      "pt-BR": "Superaglomerado Austral"
+    },
+    "Local Supercluster": {
+      "ru": "Местное сверхскопление",
+      "ja": "局所超銀河団",
+      "zh-CN": "本超星系团",
+      "ko": "국부 초은하단",
+      "hi": "स्थानीय सुपरक्लस्टर",
+      "ar": "العنقود المجري الفائق المحلي",
+      "sr-Cyrl": "Локално суперјато",
+      "de": "Lokaler Superhaufen",
+      "fr": "superamas local",
+      "es": "Supercúmulo Local",
+      "it": "Superammasso Locale",
+      "nl": "Lokale supercluster",
+      "pt-BR": "Superaglomerado Local"
+    },
+    "Centaurus Wall": {
+      "ru": "Стена Центавра",
+      "ja": "ケンタウルス座の壁",
+      "zh-CN": "半人马墙",
+      "ko": "센타우루스 장벽",
+      "hi": "नरतुरंग दीवार",
+      "ar": "جدار قنطورس",
+      "sr-Cyrl": "Зид Кентаура",
+      "de": "Centaurus-Mauer",
+      "fr": "Mur du Centaure",
+      "es": "Muro de Centauro",
+      "it": "Muro del Centauro",
+      "nl": "Centaurusmuur",
+      "pt-BR": "Muralha do Centauro"
+    },
+    "Coma Cluster": {
+      "ru": "Скопление Волос Вероники",
+      "ja": "かみのけ座銀河団",
+      "zh-CN": "后发座星系团",
+      "ko": "머리털자리 은하단",
+      "hi": "कोमा बेरेनाइसीस क्लस्टर",
+      "ar": "عنقود الذؤابة المجري",
+      "sr-Cyrl": "Јато Береникине косе",
+      "de": "Coma-Galaxienhaufen",
+      "fr": "Amas de la Chevelure de Bérénice",
+      "es": "Cúmulo de Coma",
+      "it": "Ammasso della Chioma",
+      "nl": "Comacluster",
+      "pt-BR": "Aglomerado de Coma"
+    },
+    "Pavo–Indus filament": {
+      "ru": "Филамент Павлина — Индейца",
+      "ja": "くじゃく座・インディアン座フィラメント",
+      "zh-CN": "孔雀-印第安丝状结构",
+      "ko": "공작자리-인디언자리 필라멘트",
+      "hi": "मोर–इंडस तंतु",
+      "ar": "خيط بافو-اندس",
+      "sr-Cyrl": "Филамент Пауна–Индуса",
+      "de": "Pavo-Indus-Filament",
+      "fr": "filament du Paon-Indien",
+      "es": "filamento Pavo-Indus",
+      "it": "filamento Pavo-Indo",
+      "nl": "Pavo-Indusfilament",
+      "pt-BR": "filamento Pavo-Indus"
     }
   },
   "agency": {
@@ -22143,6 +23331,1693 @@
       "it": "Vuoto Locale",
       "nl": "Lokale leegte",
       "pt-BR": "Vazio Local"
+    },
+    "kiloparsec": {
+      "_sense": "a thousand parsecs, about 3,260 light-years, the unit for sizes and distances in and around galaxies",
+      "_en": "\\bkilo-?parsecs?\\b|\\bkpc\\b",
+      "_match": {
+        "ru": ["килопарс\\p{L}*", "кило-?парсек\\p{L}*", "кпк", "kpc"],
+        "ja": ["キロパーセク", "kpc"],
+        "zh-CN": ["千秒差距", "kpc"],
+        "ko": ["킬로파섹", "킬로 ?파섹", "kpc"],
+        "hi": ["किलोपार्सेक", "किलो-?पार्सेक", "किलोपारसेक", "kpc"],
+        "ar": ["كيلوفرسخ", "كيلو ?فرسخ\\p{L}*", "كيلو ?بارسك\\p{L}*", "kpc"],
+        "sr-Cyrl": ["килопарс\\p{L}*", "кило ?парсек\\p{L}*", "kpc", "кпк"],
+        "de": ["Kilopars\\p{L}*", "kpc"],
+        "fr": ["kilopars\\p{L}*", "kpc"],
+        "es": ["kilopárs\\p{L}*", "kiloparsec\\p{L}*", "kpc"],
+        "it": ["kilopars\\p{L}*", "kpc"],
+        "nl": ["kilopars\\p{L}*", "kpc"],
+        "pt-BR": ["quilopars\\p{L}*", "kiloparsec\\p{L}*", "kpc"]
+      },
+      "_confidence": {
+        "ru": "high",
+        "ja": "high",
+        "zh-CN": "high",
+        "ko": "high",
+        "hi": "medium",
+        "ar": "medium",
+        "sr-Cyrl": "high",
+        "de": "high",
+        "fr": "high",
+        "es": "high",
+        "it": "high",
+        "nl": "high",
+        "pt-BR": "high"
+      },
+      "ru": "килопарсек",
+      "ja": "キロパーセク",
+      "zh-CN": "千秒差距",
+      "ko": "킬로파섹",
+      "hi": "किलोपार्सेक",
+      "ar": "كيلوفرسخ",
+      "sr-Cyrl": "килопарсек",
+      "de": "Kiloparsec",
+      "fr": "kiloparsec",
+      "es": "kilopársec",
+      "it": "kiloparsec",
+      "nl": "kiloparsec",
+      "pt-BR": "quiloparsec"
+    },
+    "dwarf spheroidal galaxy": {
+      "_sense": "a small, faint, diffuse galaxy of mostly old stars with little or no gas, found near a larger galaxy",
+      "_en": "\\bdwarf spheroidals?(?: galax(?:y|ies))?\\b|\\bdSphs?\\b|\\bspheroidal dwarfs?\\b",
+      "_match": {
+        "ru": ["карликов\\p{L}* сфероидальн\\p{L}* галакти\\p{L}*", "сфероидальн\\p{L}*", "dSph"],
+        "ja": ["矮小楕円体銀河", "矮小楕円体", "矮小球状", "矮小スフェロイド", "dSph"],
+        "zh-CN": ["矮椭球星系", "矮椭球", "椭球星系", "dSph"],
+        "ko": ["왜소타원체은하", "왜소 ?타원체", "타원체", "dSph"],
+        "hi": ["बौनी[ -]?गोलाभ[ -]?आकाशगंगा", "गोलाभ\\p{L}*", "गोलाकार बौन\\p{L}*", "dSph"],
+        "ar": [
+          "مجرة (?:ال)?قزمة (?:ال)?شبه (?:ال)?كروية",
+          "شبه كروي\\p{L}*",
+          "كروي\\p{L}* (?:ال)?شكل",
+          "كروي\\p{L}* قزم\\p{L}*",
+          "المجرات الكروية القزمة",
+          "مجرة كروية قزمة",
+          "dSph"
+        ],
+        "sr-Cyrl": [
+          "патуљас\\p{L}* сфероид\\p{L}* галакси\\p{L}*",
+          "сфероидн\\p{L}*",
+          "сфероидал\\p{L}*",
+          "dSph"
+        ],
+        "de": [
+          "sphäroida\\p{L}* Zwerggalax\\p{L}*",
+          "sphäroidal\\p{L}*",
+          "Sphäroid\\p{L}*",
+          "dSph"
+        ],
+        "fr": ["galax\\p{L}* sphéroïda\\p{L}* nai\\p{L}*", "sphéroïd\\p{L}*", "dSph"],
+        "es": ["galax\\p{L}* esferoid\\p{L}* ena\\p{L}*", "esferoid\\p{L}*", "dSph"],
+        "it": ["galass\\p{L}* sferoida\\p{L}* nana", "sferoid\\p{L}*", "dSph"],
+        "nl": [
+          "sferoïda\\p{L}* dwergstels\\p{L}*",
+          "sferoïd\\p{L}*",
+          "sferoid\\p{L}*",
+          "dwergsferoïd\\p{L}*",
+          "dSph"
+        ],
+        "pt-BR": ["galáx\\p{L}* esferoid\\p{L}* anã", "esferoid\\p{L}*", "dSph"]
+      },
+      "_confidence": {
+        "ru": "high",
+        "ja": "high",
+        "zh-CN": "high",
+        "ko": "high",
+        "hi": "medium",
+        "ar": "medium",
+        "sr-Cyrl": "high",
+        "de": "high",
+        "fr": "high",
+        "es": "high",
+        "it": "high",
+        "nl": "medium",
+        "pt-BR": "high"
+      },
+      "ru": "карликовая сфероидальная галактика",
+      "ja": "矮小楕円体銀河",
+      "zh-CN": "矮椭球星系",
+      "ko": "왜소타원체은하",
+      "hi": "बौनी गोलाभ आकाशगंगा",
+      "ar": "مجرة قزمة شبه كروية",
+      "sr-Cyrl": "патуљаста сфероидна галаксија",
+      "de": "sphäroidale Zwerggalaxie",
+      "fr": "galaxie sphéroïdale naine",
+      "es": "galaxia esferoidal enana",
+      "it": "galassia sferoidale nana",
+      "nl": "sferoïdaal dwergstelsel",
+      "pt-BR": "galáxia esferoidal anã"
+    },
+    "dwarf irregular galaxy": {
+      "_sense": "a small, gas-rich galaxy with no regular shape, usually still forming stars",
+      "_en": "\\bdwarf irregulars?(?: galax(?:y|ies))?\\b|\\birregular dwarfs?(?: galax(?:y|ies))?\\b|\\bdIrrs?\\b",
+      "_match": {
+        "ru": ["карликов\\p{L}* неправильн\\p{L}* галакти\\p{L}*", "неправильн\\p{L}*"],
+        "ja": ["矮小不規則銀河", "不規則"],
+        "zh-CN": ["矮不规则星系", "不规则"],
+        "ko": ["왜소불규칙은하", "불규칙"],
+        "hi": ["बौनी[ -]?अनियमित[ -]?आकाशगंगा", "अनियमित\\p{L}*", "बेढंग\\p{L}*"],
+        "ar": [
+          "مجرة (?:ال)?قزمة (?:ال)?غير (?:ال)?منتظمة",
+          "غير منتظم\\p{L}*",
+          "غير المنتظم\\p{L}*"
+        ],
+        "sr-Cyrl": ["патуљас\\p{L}* неправил\\p{L}* галакси\\p{L}*", "неправилн\\p{L}*"],
+        "de": ["irregulä\\p{L}* Zwerggalax\\p{L}*", "irregulär\\p{L}*", "unregelmäßig\\p{L}*"],
+        "fr": [
+          "galax\\p{L}* irréguliè\\p{L}* nai\\p{L}*",
+          "irrégulier\\p{L}*",
+          "irrégulièr\\p{L}*"
+        ],
+        "es": ["galax\\p{L}* irregul\\p{L}* ena\\p{L}*", "irregular\\p{L}*"],
+        "it": ["galass\\p{L}* irregola\\p{L}* nana", "irregolar\\p{L}*"],
+        "nl": ["onregelmat\\p{L}* dwergstels\\p{L}*", "onregelmatig\\p{L}*", "irregulier\\p{L}*"],
+        "pt-BR": ["galáx\\p{L}* irregul\\p{L}* anã", "irregular\\p{L}*", "irregulares"]
+      },
+      "_confidence": {
+        "ru": "high",
+        "ja": "high",
+        "zh-CN": "high",
+        "ko": "high",
+        "hi": "medium",
+        "ar": "medium",
+        "sr-Cyrl": "high",
+        "de": "high",
+        "fr": "high",
+        "es": "high",
+        "it": "high",
+        "nl": "medium",
+        "pt-BR": "high"
+      },
+      "ru": "карликовая неправильная галактика",
+      "ja": "矮小不規則銀河",
+      "zh-CN": "矮不规则星系",
+      "ko": "왜소불규칙은하",
+      "hi": "बौनी अनियमित आकाशगंगा",
+      "ar": "مجرة قزمة غير منتظمة",
+      "sr-Cyrl": "патуљаста неправилна галаксија",
+      "de": "irreguläre Zwerggalaxie",
+      "fr": "galaxie irrégulière naine",
+      "es": "galaxia irregular enana",
+      "it": "galassia irregolare nana",
+      "nl": "onregelmatig dwergstelsel",
+      "pt-BR": "galáxia irregular anã"
+    },
+    "irregular galaxy": {
+      "_sense": "a galaxy with no regular shape, neither spiral nor elliptical",
+      "_en": "\\birregular galax(?:y|ies)\\b",
+      "_match": {
+        "ru": ["неправильн\\p{L}* галакти\\p{L}*", "неправильн\\p{L}*"],
+        "ja": ["不規則銀河", "不規則"],
+        "zh-CN": ["不规则星系", "不规则"],
+        "ko": ["불규칙은하", "불규칙"],
+        "hi": ["अनियमित[ -]?आकाशगंगा", "अनियमित\\p{L}*", "बेढंग\\p{L}*"],
+        "ar": ["مجرة (?:ال)?غير (?:ال)?منتظمة", "غير منتظم\\p{L}*", "غير المنتظم\\p{L}*"],
+        "sr-Cyrl": ["неправил\\p{L}* галакси\\p{L}*", "неправилн\\p{L}*"],
+        "de": ["irregulä\\p{L}* Galax\\p{L}*", "irregulär\\p{L}*", "unregelmäßig\\p{L}*"],
+        "fr": ["galax\\p{L}* irréguliè\\p{L}*", "irrégulier\\p{L}*", "irrégulièr\\p{L}*"],
+        "es": ["galax\\p{L}* irregul\\p{L}*", "irregular\\p{L}*"],
+        "it": ["galass\\p{L}* irregola\\p{L}*", "irregolar\\p{L}*"],
+        "nl": ["onregelmat\\p{L}* sterrenstels\\p{L}*", "onregelmatig\\p{L}*", "irregulier\\p{L}*"],
+        "pt-BR": ["galáx\\p{L}* irregul\\p{L}*", "irregular\\p{L}*", "irregulares"]
+      },
+      "_confidence": {
+        "ru": "high",
+        "ja": "high",
+        "zh-CN": "high",
+        "ko": "high",
+        "hi": "medium",
+        "ar": "medium",
+        "sr-Cyrl": "high",
+        "de": "high",
+        "fr": "high",
+        "es": "high",
+        "it": "high",
+        "nl": "high",
+        "pt-BR": "high"
+      },
+      "ru": "неправильная галактика",
+      "ja": "不規則銀河",
+      "zh-CN": "不规则星系",
+      "ko": "불규칙은하",
+      "hi": "अनियमित आकाशगंगा",
+      "ar": "مجرة غير منتظمة",
+      "sr-Cyrl": "неправилна галаксија",
+      "de": "irreguläre Galaxie",
+      "fr": "galaxie irrégulière",
+      "es": "galaxia irregular",
+      "it": "galassia irregolare",
+      "nl": "onregelmatig sterrenstelsel",
+      "pt-BR": "galáxia irregular"
+    },
+    "satellite galaxy": {
+      "_sense": "a smaller galaxy that orbits a larger one",
+      "_en": "\\bsatellite galax(?:y|ies)\\b|\\bsatellites? of (?:the )?(?:Milky Way|Andromeda|M31|Andromeda Galaxy)\\b|\\bMilky Way's satellites?\\b|\\bsatellite dwarfs?\\b",
+      "_match": {
+        "ru": ["галактика-спутн\\p{L}*", "спутник\\p{L}*"],
+        "ja": ["衛星銀河", "衛星", "伴銀河"],
+        "zh-CN": ["卫星星系", "卫星", "伴星系"],
+        "ko": ["위성 ?은하", "위성", "동반 ?은하"],
+        "hi": ["उपग्रह[ -]?आकाशगंगा", "उपग्रह\\p{L}*", "सहचर\\p{L}*"],
+        "ar": ["مجرة (?:ال)?تابعة", "تابع\\p{L}*", "قمر\\p{L}*", "رفيق\\p{L}*"],
+        "sr-Cyrl": [
+          "сателитс\\p{L}* галакси\\p{L}*",
+          "сателит\\p{L}*",
+          "пратилац",
+          "пратиоц\\p{L}*",
+          "пратећ\\p{L}*"
+        ],
+        "de": ["Satellitengalax\\p{L}*", "Satellit\\p{L}*", "Begleiter\\p{L}*"],
+        "fr": ["galax\\p{L}* satelli\\p{L}*", "satellite\\p{L}*", "compagn\\p{L}*"],
+        "es": ["galax\\p{L}* satéli\\p{L}*", "satélite\\p{L}*", "compañer\\p{L}*"],
+        "it": ["galass\\p{L}* satelli\\p{L}*", "satellit\\p{L}*", "compagn\\p{L}*"],
+        "nl": ["satellietstels\\p{L}*", "satelliet\\p{L}*", "begeleid\\p{L}*", "begeleider\\p{L}*"],
+        "pt-BR": ["galáx\\p{L}* satéli\\p{L}*", "satélite\\p{L}*", "companheir\\p{L}*"]
+      },
+      "_confidence": {
+        "ru": "high",
+        "ja": "high",
+        "zh-CN": "high",
+        "ko": "high",
+        "hi": "medium",
+        "ar": "medium",
+        "sr-Cyrl": "high",
+        "de": "high",
+        "fr": "high",
+        "es": "high",
+        "it": "high",
+        "nl": "high",
+        "pt-BR": "high"
+      },
+      "ru": "галактика-спутник",
+      "ja": "衛星銀河",
+      "zh-CN": "卫星星系",
+      "ko": "위성 은하",
+      "hi": "उपग्रह आकाशगंगा",
+      "ar": "مجرة تابعة",
+      "sr-Cyrl": "сателитска галаксија",
+      "de": "Satellitengalaxie",
+      "fr": "galaxie satellite",
+      "es": "galaxia satélite",
+      "it": "galassia satellite",
+      "nl": "satellietstelsel",
+      "pt-BR": "galáxia satélite"
+    },
+    "horizontal branch": {
+      "_sense": "the stage of old stars that burn helium in their cores, a nearly horizontal band on a star cluster's colour-brightness diagram",
+      "_en": "\\bhorizontal[- ]branch(?:es)?\\b",
+      "_match": {
+        "ru": [
+          "горизонтальн\\p{L}* вет\\p{L}*",
+          "горизонтальн\\p{L}* ветв\\p{L}*",
+          "горизонтальн\\p{L}* ветк\\p{L}*"
+        ],
+        "ja": ["水平分枝", "水平枝"],
+        "zh-CN": ["水平分支", "水平支"],
+        "ko": ["수평가지", "수평 ?가지", "수평 ?분지"],
+        "hi": ["क्षैतिज[ -]?शाखा", "क्षैतिज\\p{L}* शाख\\p{L}*", "क्षैतिज"],
+        "ar": ["الفرع (?:ال)?الأفقي", "(?:ال)?فرع (?:ال)?[أا]فقي"],
+        "sr-Cyrl": [
+          "хоризонтал\\p{L}* гра\\p{L}*",
+          "хоризонталн\\p{L}* гран\\p{L}*",
+          "хоризонталн\\p{L}* грањ\\p{L}*"
+        ],
+        "de": ["Horizontala\\p{L}*", "Horizontal-?ast\\p{L}*", "horizontal\\p{L}* Ast"],
+        "fr": ["branc\\p{L}* horizonta\\p{L}*", "branches? horizontales?"],
+        "es": ["rama horizont\\p{L}*", "ramas? horizontales?"],
+        "it": ["ramo orizzonta\\p{L}*", "ram[oi] orizzontal\\p{L}*"],
+        "nl": ["horizonta\\p{L}* tak", "horizontale-? ?tak\\p{L}*", "horizontaaltak\\p{L}*"],
+        "pt-BR": ["ramo horizont\\p{L}*", "ramos? horizont\\p{L}*"]
+      },
+      "_confidence": {
+        "ru": "high",
+        "ja": "high",
+        "zh-CN": "high",
+        "ko": "medium",
+        "hi": "medium",
+        "ar": "medium",
+        "sr-Cyrl": "medium",
+        "de": "medium",
+        "fr": "high",
+        "es": "high",
+        "it": "high",
+        "nl": "medium",
+        "pt-BR": "high"
+      },
+      "ru": "горизонтальная ветвь",
+      "ja": "水平分枝",
+      "zh-CN": "水平分支",
+      "ko": "수평가지",
+      "hi": "क्षैतिज शाखा",
+      "ar": "الفرع الأفقي",
+      "sr-Cyrl": "хоризонтална грана",
+      "de": "Horizontalast",
+      "fr": "branche horizontale",
+      "es": "rama horizontal",
+      "it": "ramo orizzontale",
+      "nl": "horizontale tak",
+      "pt-BR": "ramo horizontal"
+    },
+    "eclipsing binary": {
+      "_sense": "a pair of stars that regularly pass in front of each other as seen from Earth, so that their light dips",
+      "_en": "\\beclipsing binar(?:y|ies)\\b",
+      "_match": {
+        "ru": [
+          "затменн\\p{L}* двойн\\p{L}* звез\\p{L}*",
+          "затменн\\p{L}*",
+          "затменно-?двойн\\p{L}*"
+        ],
+        "ja": ["食連星", "食変光星"],
+        "zh-CN": ["食双星", "食双", "交食双星", "食变星"],
+        "ko": ["식쌍성", "식 ?쌍성", "식 ?변광성"],
+        "hi": ["ग्रहण[ -]?द्वितारा", "ग्रहण\\p{L}* द्वि\\p{L}*", "ग्रहण\\p{L}* युग्म", "ग्रहणकारी"],
+        "ar": ["نجم (?:ال)?ثنائي (?:ال)?كاسف", "كاسف\\p{L}*", "ثنائي\\p{L}* كاسف\\p{L}*"],
+        "sr-Cyrl": [
+          "помрачују\\p{L}* двој\\p{L}* звез\\p{L}*",
+          "затменск\\p{L}*",
+          "затмен\\p{L}*",
+          "помрачуј\\p{L}* двојн\\p{L}*"
+        ],
+        "de": [
+          "Bedeckungsveränderlich\\p{L}*",
+          "Bedeckungs-?Doppelstern\\p{L}*",
+          "Bedeckungsdoppelstern\\p{L}*"
+        ],
+        "fr": ["binai\\p{L}* à éclips\\p{L}*", "binaires? à éclipses", "binaires? éclips\\p{L}*"],
+        "es": ["binar\\p{L}* eclipsan\\p{L}*", "binari\\p{L}* eclips\\p{L}*", "eclipsante\\p{L}*"],
+        "it": [
+          "binar\\p{L}* a eclis\\p{L}*",
+          "binari\\p{L}* a eclisse",
+          "binari\\p{L}* eclissant\\p{L}*",
+          "eclissant\\p{L}*"
+        ],
+        "nl": ["bedekkingsdubbelst\\p{L}*", "bedekking\\p{L}*", "eclips\\p{L}*"],
+        "pt-BR": [
+          "binár\\p{L}* eclipsan\\p{L}*",
+          "binári\\p{L}* eclips\\p{L}*",
+          "eclipsante\\p{L}*"
+        ]
+      },
+      "_confidence": {
+        "ru": "high",
+        "ja": "high",
+        "zh-CN": "high",
+        "ko": "medium",
+        "hi": "low",
+        "ar": "medium",
+        "sr-Cyrl": "medium",
+        "de": "medium",
+        "fr": "high",
+        "es": "medium",
+        "it": "medium",
+        "nl": "medium",
+        "pt-BR": "medium"
+      },
+      "ru": "затменная двойная звезда",
+      "ja": "食連星",
+      "zh-CN": "食双星",
+      "ko": "식쌍성",
+      "hi": "ग्रहण द्वितारा",
+      "ar": "نجم ثنائي كاسف",
+      "sr-Cyrl": "помрачујућа двојна звезда",
+      "de": "Bedeckungsveränderlicher",
+      "fr": "binaire à éclipses",
+      "es": "binaria eclipsante",
+      "it": "binaria a eclisse",
+      "nl": "bedekkingsdubbelster",
+      "pt-BR": "binária eclipsante"
+    },
+    "period-luminosity relation": {
+      "_sense": "the link between how long a Cepheid takes to pulse and how bright it really is, used to measure distances",
+      "_en": "\\bperiod[- –—]luminosity relations?\\b|\\bLeavitt law\\b",
+      "_match": {
+        "ru": [
+          "зависимос\\p{L}* пери\\p{L}* — светимос\\p{L}*",
+          "период\\p{L}*[ —–-]+светимост\\p{L}*",
+          "период\\p{L}* и светимост\\p{L}*",
+          "закон Ливитт\\p{L}*"
+        ],
+        "ja": ["周期光度関係", "周期[-・–—]?光度", "周期と光度"],
+        "zh-CN": ["周光关系", "周光", "周期[-–—]光度", "周期与光度"],
+        "ko": ["주기-광도 ?관계", "주기 ?-? ?광도", "주기와 광도"],
+        "hi": [
+          "आवर्तकाल–दीप्ति[ -]?संबंध",
+          "आवर्त\\p{L}*[ –—-]*(?:दीप्ति|चमक|ज्योति)",
+          "अवधि[ –—-]*(?:दीप्ति|चमक|ज्योति)"
+        ],
+        "ar": [
+          "علاقة (?:ال)?الدورة (?:ال)?واللمعان",
+          "علاقة (?:ال)?(?:دورة|دور|فترة)\\p{L}* (?:و|[-–—])?\\s?(?:ال)?(?:لمعان|سطوع|تألق)\\p{L}*",
+          "قانون ليفيت"
+        ],
+        "sr-Cyrl": [
+          "зависно\\p{L}* период–сј\\p{L}*",
+          "(?:зависност|веза|однос)\\p{L}* период\\p{L}*",
+          "период\\p{L}*[–—-]\\p{L}*(?:сјај|луминозност)\\p{L}*"
+        ],
+        "de": [
+          "Perioden-Leuchtkraft-Beziehu\\p{L}*",
+          "Perioden-?(?:Leuchtkraft|Helligkeits)\\p{L}*",
+          "Leavitt-?Gesetz"
+        ],
+        "fr": [
+          "relati\\p{L}* période-luminosi\\p{L}*",
+          "relations?[ -]période[ -]luminosité",
+          "loi de Leavitt"
+        ],
+        "es": [
+          "relaci\\p{L}* período-luminosid\\p{L}*",
+          "relaci\\p{L}* per[ií]odo[ -]luminosidad",
+          "ley de Leavitt"
+        ],
+        "it": [
+          "relazio\\p{L}* periodo-luminosi\\p{L}*",
+          "relazion\\p{L}* periodo[ -]luminosità",
+          "legge di Leavitt"
+        ],
+        "nl": [
+          "periode-lichtkrachtrelat\\p{L}*",
+          "periode-?lichtkracht\\p{L}*",
+          "periode-?helderheid\\p{L}*",
+          "wet van Leavitt"
+        ],
+        "pt-BR": [
+          "relaç\\p{L}* período-luminosida\\p{L}*",
+          "rela\\p{L}* per[ií]odo[ -]luminosidade",
+          "lei de Leavitt"
+        ]
+      },
+      "_confidence": {
+        "ru": "high",
+        "ja": "high",
+        "zh-CN": "medium",
+        "ko": "medium",
+        "hi": "low",
+        "ar": "medium",
+        "sr-Cyrl": "medium",
+        "de": "high",
+        "fr": "high",
+        "es": "high",
+        "it": "high",
+        "nl": "medium",
+        "pt-BR": "high"
+      },
+      "ru": "зависимость период — светимость",
+      "ja": "周期光度関係",
+      "zh-CN": "周光关系",
+      "ko": "주기-광도 관계",
+      "hi": "आवर्तकाल–दीप्ति संबंध",
+      "ar": "علاقة الدورة واللمعان",
+      "sr-Cyrl": "зависност период–сјај",
+      "de": "Perioden-Leuchtkraft-Beziehung",
+      "fr": "relation période-luminosité",
+      "es": "relación período-luminosidad",
+      "it": "relazione periodo-luminosità",
+      "nl": "periode-lichtkrachtrelatie",
+      "pt-BR": "relação período-luminosidade"
+    },
+    "velocity dispersion": {
+      "_sense": "the spread of the speeds of stars in a galaxy or cluster around their average",
+      "_en": "\\bvelocity dispersions?\\b",
+      "_match": {
+        "ru": ["дисперс\\p{L}* скорост\\p{L}*", "дисперси\\p{L}* [\\p{L} ]{0,25}скорост\\p{L}*"],
+        "ja": ["速度分散", "速度の分散"],
+        "zh-CN": ["速度弥散", "速度离散", "速度分散", "弥散度"],
+        "ko": ["속도 ?분산", "속도 ?분산도"],
+        "hi": [
+          "वेग[ -]?प्रकीर्णन",
+          "वेग\\p{L}* (?:का )?(?:प्रकीर्णन|फैलाव|प्रसार|परिक्षेपण|विचलन|बिखराव)\\p{L}*",
+          "वेग[ -]?(?:प्रकीर्णन|फैलाव|प्रसार|परिक्षेपण|विचलन|बिखराव)"
+        ],
+        "ar": [
+          "تشتت (?:ال)?السرعة",
+          "(?:تشتت|تبعثر|تباين|انتشار)\\p{L}* (?:في )?(?:ال)?سرع\\p{L}*"
+        ],
+        "sr-Cyrl": [
+          "дисперзи\\p{L}* брзи\\p{L}*",
+          "(?:дисперзиј|расипањ|распршењ)\\p{L}* брзин\\p{L}*"
+        ],
+        "de": [
+          "Geschwindigkeitsdispersi\\p{L}*",
+          "Geschwindigkeits-?(?:dispersion|streuung)\\p{L}*"
+        ],
+        "fr": ["dispersi\\p{L}* de vites\\p{L}*", "dispersions? (?:des )?vitesses?"],
+        "es": ["dispersi\\p{L}* de velocidad\\p{L}*", "dispersi\\p{L}* de (?:las )?velocidades"],
+        "it": ["dispersio\\p{L}* di veloci\\p{L}*", "dispersion\\p{L}* (?:delle |di )?velocità"],
+        "nl": ["snelheidsdispers\\p{L}*", "snelheids(?:dispersie|spreiding)\\p{L}*"],
+        "pt-BR": ["dispers\\p{L}* de velocidad\\p{L}*", "dispers\\p{L}* (?:das |de )?velocidades?"]
+      },
+      "_confidence": {
+        "ru": "high",
+        "ja": "high",
+        "zh-CN": "medium",
+        "ko": "high",
+        "hi": "low",
+        "ar": "medium",
+        "sr-Cyrl": "medium",
+        "de": "high",
+        "fr": "high",
+        "es": "high",
+        "it": "high",
+        "nl": "high",
+        "pt-BR": "high"
+      },
+      "ru": "дисперсия скоростей",
+      "ja": "速度分散",
+      "zh-CN": "速度弥散",
+      "ko": "속도 분산",
+      "hi": "वेग प्रकीर्णन",
+      "ar": "تشتت السرعة",
+      "sr-Cyrl": "дисперзија брзина",
+      "de": "Geschwindigkeitsdispersion",
+      "fr": "dispersion de vitesse",
+      "es": "dispersión de velocidades",
+      "it": "dispersione di velocità",
+      "nl": "snelheidsdispersie",
+      "pt-BR": "dispersão de velocidades"
+    },
+    "mass-to-light ratio": {
+      "_sense": "the mass of an object divided by its luminosity, in solar units",
+      "_en": "\\bmass[- ]to[- ]light ratios?\\b|\\bM/L\\b",
+      "_match": {
+        "ru": [
+          "отношен\\p{L}* мас\\p{L}* к светимос\\p{L}*",
+          "отношени\\p{L}* масс\\p{L}* (?:к|и) (?:светимост|блеск)\\p{L}*",
+          "масс\\p{L}*[ –—-]+светимост\\p{L}*"
+        ],
+        "ja": ["質量光度比", "質量対光度比", "質量と光度の比", "質量-光度比"],
+        "zh-CN": ["质光比", "质量光度比", "质量-光度比", "质量与光度之比"],
+        "ko": ["질량 ?대 ?광도비", "질량 ?(?:대 |-)?광도 ?비", "질량광도비"],
+        "hi": [
+          "द्रव्यमान[ -]?दीप्ति[ -]?अनुपात",
+          "द्रव्यमान[ –—-]*(?:से[ –—-]*)?(?:दीप्ति|चमक|प्रकाश|ज्योति)[ –—-]*अनुपात"
+        ],
+        "ar": [
+          "نسبة (?:ال)?الكتلة (?:ال)?إلى (?:ال)?الإضاءة",
+          "نسب\\p{L}* (?:ال)?كتلة (?:إلى|الى) (?:ال)?(?:لمعان|سطوع|ضوء|إضاءة)\\p{L}*"
+        ],
+        "sr-Cyrl": [
+          "одн\\p{L}* масе и сја\\p{L}*",
+          "однос\\p{L}* мас\\p{L}* (?:и|према|на) (?:сјај|светлост|луминозност)\\p{L}*"
+        ],
+        "de": [
+          "Masse-Leuchtkraft-Verhältn\\p{L}*",
+          "Masse-?(?:zu-)?(?:Leuchtkraft|Licht|Helligkeit)\\p{L}*"
+        ],
+        "fr": [
+          "rappo\\p{L}* masse-luminosi\\p{L}*",
+          "rapports? masse[ -/](?:à[ -])?luminosité",
+          "rapports? masse[ -]lumière"
+        ],
+        "es": [
+          "cocien\\p{L}* masa-luminosid\\p{L}*",
+          "relaci\\p{L}* masa[ -/]luminosidad",
+          "relaci\\p{L}* masa[ -]luz",
+          "cociente masa[ -]luminosidad"
+        ],
+        "it": [
+          "rappor\\p{L}* massa-luminosi\\p{L}*",
+          "rapporto massa[ -/]luminosità",
+          "rapporto massa[ -]luce"
+        ],
+        "nl": [
+          "massa-lichtkrachtverhoudi\\p{L}*",
+          "massa-?(?:tot-)?(?:lichtkracht|licht|helderheid)\\p{L}*"
+        ],
+        "pt-BR": [
+          "raz\\p{L}* massa-luminosida\\p{L}*",
+          "raz\\p{L}* massa[ -/]luminosidade",
+          "rela\\p{L}* massa[ -]luminosidade"
+        ]
+      },
+      "_confidence": {
+        "ru": "high",
+        "ja": "high",
+        "zh-CN": "high",
+        "ko": "medium",
+        "hi": "low",
+        "ar": "medium",
+        "sr-Cyrl": "medium",
+        "de": "high",
+        "fr": "high",
+        "es": "high",
+        "it": "high",
+        "nl": "medium",
+        "pt-BR": "high"
+      },
+      "ru": "отношение массы к светимости",
+      "ja": "質量光度比",
+      "zh-CN": "质光比",
+      "ko": "질량 대 광도비",
+      "hi": "द्रव्यमान-दीप्ति अनुपात",
+      "ar": "نسبة الكتلة إلى الإضاءة",
+      "sr-Cyrl": "однос масе и сјаја",
+      "de": "Masse-Leuchtkraft-Verhältnis",
+      "fr": "rapport masse-luminosité",
+      "es": "cociente masa-luminosidad",
+      "it": "rapporto massa-luminosità",
+      "nl": "massa-lichtkrachtverhouding",
+      "pt-BR": "razão massa-luminosidade"
+    },
+    "Hubble flow": {
+      "_sense": "the motion of galaxies away from us caused by the expansion of the universe",
+      "_en": "\\bHubble[- ]flows?\\b",
+      "_match": {
+        "ru": ["хаббловск\\p{L}* пот\\p{L}*", "хаббловск\\p{L}*", "поток\\p{L}* Хаббл\\p{L}*"],
+        "ja": ["ハッブル流", "ハッブル[・]?フロー"],
+        "zh-CN": ["哈勃流", "哈勃膨胀流", "哈勃流动"],
+        "ko": ["허블 ?흐름", "허블 ?유동", "허블 ?플로우"],
+        "hi": ["हबल[ -]?प्रवाह", "हब्बल प्रवाह", "हबल फ़्लो", "हबल बहाव"],
+        "ar": ["تدفق (?:ال)?هابل", "تدفّق هابل", "تدفق هبل"],
+        "sr-Cyrl": [
+          "Хабл\\p{L}* ток",
+          "Хабл\\p{L}* ток\\p{L}*",
+          "Хабловск\\p{L}* ток\\p{L}*",
+          "Хабл\\p{L}* проток\\p{L}*"
+        ],
+        "de": ["Hubble-Flu\\p{L}*", "Hubble-?Fluß", "Hubble-?Strom\\p{L}*"],
+        "fr": ["flot de Hubb\\p{L}*", "flots? de Hubble", "flux de Hubble"],
+        "es": ["flu\\p{L}* de Hubb\\p{L}*", "flujo Hubble"],
+        "it": ["flus\\p{L}* di Hubb\\p{L}*", "flusso Hubble"],
+        "nl": ["Hubble-stro\\p{L}*", "Hubble-?stroming", "Hubbleflow"],
+        "pt-BR": ["flu\\p{L}* de Hubb\\p{L}*", "fluxo Hubble"]
+      },
+      "_confidence": {
+        "ru": "high",
+        "ja": "high",
+        "zh-CN": "medium",
+        "ko": "medium",
+        "hi": "low",
+        "ar": "medium",
+        "sr-Cyrl": "low",
+        "de": "high",
+        "fr": "high",
+        "es": "high",
+        "it": "high",
+        "nl": "medium",
+        "pt-BR": "high"
+      },
+      "ru": "хаббловский поток",
+      "ja": "ハッブル流",
+      "zh-CN": "哈勃流",
+      "ko": "허블 흐름",
+      "hi": "हबल प्रवाह",
+      "ar": "تدفق هابل",
+      "sr-Cyrl": "Хаблов ток",
+      "de": "Hubble-Fluss",
+      "fr": "flot de Hubble",
+      "es": "flujo de Hubble",
+      "it": "flusso di Hubble",
+      "nl": "Hubble-stroom",
+      "pt-BR": "fluxo de Hubble"
+    },
+    "dark-matter halo": {
+      "_sense": "an extended, roughly spherical cloud of dark matter around a galaxy",
+      "_en": "\\bdark[- ]matter halos?\\b",
+      "_match": {
+        "ru": [
+          "оре\\p{L}* тёмн\\p{L}* матер\\p{L}*",
+          "ореол\\p{L}* т[её]мн\\p{L}* материи",
+          "гало т[её]мной материи"
+        ],
+        "ja": [
+          "ダークマター・ハロー",
+          "ダークマターハロー",
+          "暗黒物質ハロー",
+          "ダークマター・ヘイロー",
+          "(?:ダークマター|暗黒物質)の?ハロ"
+        ],
+        "zh-CN": ["暗物质晕", "暗物质 ?光晕", "暗晕"],
+        "ko": ["암흑물질 ?헤일로", "암흑 ?물질 ?(?:헤일로|후광|헤이로|할로)", "다크 ?매터 ?헤일로"],
+        "hi": [
+          "डार्क[ -]?मैटर[ -]?हेलो",
+          "डार्क मैटर (?:हेलो|प्रभामंडल|हैलो)",
+          "डार्क मैटर के प्रभामंडल",
+          "श्याम पदार्थ (?:का )?प्रभामंडल"
+        ],
+        "ar": [
+          "هالة (?:ال)?المادة (?:ال)?المظلمة",
+          "هالة (?:ال)?مادة (?:ال)?مظلمة",
+          "هالات? (?:صغيرة )?(?:من )?(?:ال)?مادة (?:ال)?مظلمة"
+        ],
+        "sr-Cyrl": [
+          "хало там\\p{L}* матери\\p{L}*",
+          "хало (?:од )?тамне материје",
+          "ореол тамне материје",
+          "хало\\p{L}* (?:од )?тамне материје"
+        ],
+        "de": [
+          "Dunkle-Materie-Ha\\p{L}*",
+          "Dunkle-?Materie-?Halo\\p{L}*",
+          "Halo\\p{L}* (?:aus|der) [Dd]unkl\\p{L}* Materie",
+          "Dunkelmaterie-?Halo\\p{L}*"
+        ],
+        "fr": ["halo de matiè\\p{L}* noi\\p{L}*", "halos? de matière (?:noire|sombre)"],
+        "es": ["halo de mater\\p{L}* oscu\\p{L}*", "halos? (?:\\p{L}+ )?de materia oscura"],
+        "it": [
+          "alo\\p{L}* di mater\\p{L}* oscu\\p{L}*",
+          "alon\\p{L}* di materia oscura",
+          "halo di materia oscura"
+        ],
+        "nl": [
+          "donkere-materieha\\p{L}*",
+          "donkere-?materie-?halo\\p{L}*",
+          "halo['’]?s? van donkere materie"
+        ],
+        "pt-BR": ["halo de matér\\p{L}* escu\\p{L}*", "halos? de matéria escura"]
+      },
+      "_confidence": {
+        "ru": "high",
+        "ja": "high",
+        "zh-CN": "high",
+        "ko": "high",
+        "hi": "medium",
+        "ar": "high",
+        "sr-Cyrl": "high",
+        "de": "high",
+        "fr": "high",
+        "es": "high",
+        "it": "high",
+        "nl": "high",
+        "pt-BR": "high"
+      },
+      "ru": "ореол тёмной материи",
+      "ja": "ダークマター・ハロー",
+      "zh-CN": "暗物质晕",
+      "ko": "암흑물질 헤일로",
+      "hi": "डार्क मैटर हेलो",
+      "ar": "هالة المادة المظلمة",
+      "sr-Cyrl": "хало тамне материје",
+      "de": "Dunkle-Materie-Halo",
+      "fr": "halo de matière noire",
+      "es": "halo de materia oscura",
+      "it": "alone di materia oscura",
+      "nl": "donkere-materiehalo",
+      "pt-BR": "halo de matéria escura"
+    },
+    "neutral hydrogen": {
+      "_sense": "hydrogen atoms that have kept their electron and give off 21-centimetre radio waves",
+      "_en": "\\bneutral (?:atomic )?hydrogen\\b",
+      "_match": {
+        "ru": ["нейтральн\\p{L}* водор\\p{L}*", "нейтральн\\p{L}* водород\\p{L}*"],
+        "ja": ["中性水素", "中性の水素"],
+        "zh-CN": ["中性氢", "中性氫"],
+        "ko": ["중성 ?수소"],
+        "hi": [
+          "उदासीन[ -]?हाइड्रोजन",
+          "उदासीन\\p{L}* हाइड्रोजन",
+          "तटस्थ हाइड्रोजन",
+          "अनावेशित हाइड्रोजन"
+        ],
+        "ar": ["الهيدروجين (?:ال)?المحايد", "(?:ال)?هيدروجين (?:ال)?(?:محايد|متعادل|حيادي)"],
+        "sr-Cyrl": [
+          "неутрал\\p{L}* водон\\p{L}*",
+          "неутралн\\p{L}* водоник\\p{L}*",
+          "неутрал\\p{L}* водоник\\p{L}*"
+        ],
+        "de": ["neutral\\p{L}* Wassersto\\p{L}*", "neutral\\p{L}* Wasserstoff\\p{L}*"],
+        "fr": ["hydrogè\\p{L}* neut\\p{L}*", "hydrogène (?:atomique )?neutre"],
+        "es": ["hidróge\\p{L}* neut\\p{L}*", "hidrógeno (?:atómico )?neutro"],
+        "it": ["idroge\\p{L}* neut\\p{L}*", "idrogeno (?:atomico )?neutro"],
+        "nl": ["neutra\\p{L}* waterst\\p{L}*", "neutrale? waterstof\\p{L}*"],
+        "pt-BR": ["hidrogên\\p{L}* neut\\p{L}*", "hidrog[eê]nio (?:atômico )?neutro"]
+      },
+      "_confidence": {
+        "ru": "high",
+        "ja": "high",
+        "zh-CN": "high",
+        "ko": "high",
+        "hi": "medium",
+        "ar": "high",
+        "sr-Cyrl": "high",
+        "de": "high",
+        "fr": "high",
+        "es": "high",
+        "it": "high",
+        "nl": "high",
+        "pt-BR": "high"
+      },
+      "ru": "нейтральный водород",
+      "ja": "中性水素",
+      "zh-CN": "中性氢",
+      "ko": "중성 수소",
+      "hi": "उदासीन हाइड्रोजन",
+      "ar": "الهيدروجين المحايد",
+      "sr-Cyrl": "неутрални водоник",
+      "de": "neutraler Wasserstoff",
+      "fr": "hydrogène neutre",
+      "es": "hidrógeno neutro",
+      "it": "idrogeno neutro",
+      "nl": "neutrale waterstof",
+      "pt-BR": "hidrogênio neutro"
+    },
+    "stellar stream": {
+      "_sense": "a long, thin trail of stars pulled out of a dwarf galaxy or star cluster by a larger galaxy's tidal pull",
+      "_en": "\\b(?:stellar|tidal) streams?\\b",
+      "_match": {
+        "ru": [
+          "звёздн\\p{L}* пот\\p{L}*",
+          "звёздн\\p{L}* поток\\p{L}*",
+          "приливн\\p{L}* поток\\p{L}*",
+          "звездн\\p{L}* поток\\p{L}*"
+        ],
+        "ja": [
+          "恒星ストリーム",
+          "恒星流",
+          "星流",
+          "潮汐ストリーム",
+          "星のストリーム",
+          "恒星の流れ"
+        ],
+        "zh-CN": ["恒星流", "星流", "潮汐流", "恒星潮汐流"],
+        "ko": [
+          "항성류",
+          "항성 ?류",
+          "별 ?흐름",
+          "항성 ?흐름",
+          "항성 ?스트림",
+          "조석 ?흐름",
+          "조석 ?류"
+        ],
+        "hi": [
+          "तारकीय[ -]?धारा",
+          "तारकीय (?:धारा|प्रवाह)\\p{L}*",
+          "तारों की (?:धारा|धाराएँ|पट्टी)\\p{L}*",
+          "ज्वारीय (?:धारा|प्रवाह)\\p{L}*",
+          "स्टेलर स्ट्रीम"
+        ],
+        "ar": [
+          "تيار (?:ال)?نجمي",
+          "تيار\\p{L}* (?:ال)?نجمي\\p{L}*",
+          "تيار (?:ال)?نجم\\p{L}*",
+          "تيار\\p{L}* (?:ال)?مد\\p{L}*",
+          "تدفق نجمي"
+        ],
+        "sr-Cyrl": [
+          "звезда\\p{L}* ток",
+          "звездан\\p{L}* (?:ток|токов|струј|поток)\\p{L}*",
+          "плимн\\p{L}* ток\\p{L}*"
+        ],
+        "de": [
+          "Sternstr\\p{L}*",
+          "Stern(?:en)?ström\\p{L}*",
+          "Stern(?:en)?strom\\p{L}*",
+          "Gezeitenström\\p{L}*",
+          "Gezeitenstrom\\p{L}*"
+        ],
+        "fr": [
+          "coura\\p{L}* stellai\\p{L}*",
+          "courants? stellaires?",
+          "courants? de marée",
+          "courants? d['’]étoiles",
+          "flux stellaires?"
+        ],
+        "es": [
+          "corrien\\p{L}* estel\\p{L}*",
+          "corrientes? estelares?",
+          "corrientes? de marea",
+          "flujos? estelares?"
+        ],
+        "it": [
+          "corren\\p{L}* stella\\p{L}*",
+          "corrent\\p{L}* stellar\\p{L}*",
+          "corrent\\p{L}* mareal\\p{L}*",
+          "flussi? stellar\\p{L}*"
+        ],
+        "nl": [
+          "sterrenstro\\p{L}*",
+          "sterren-?stroom\\p{L}*",
+          "sterrenstromen",
+          "getijdenstroom\\p{L}*",
+          "getijdenstromen",
+          "sterstro{1,2}m\\p{L}*"
+        ],
+        "pt-BR": [
+          "corren\\p{L}* estel\\p{L}*",
+          "corrent\\p{L}* estelar\\p{L}*",
+          "corrent\\p{L}* de maré\\p{L}*",
+          "fluxos? estelares?"
+        ]
+      },
+      "_confidence": {
+        "ru": "high",
+        "ja": "medium",
+        "zh-CN": "high",
+        "ko": "medium",
+        "hi": "low",
+        "ar": "medium",
+        "sr-Cyrl": "medium",
+        "de": "high",
+        "fr": "high",
+        "es": "high",
+        "it": "high",
+        "nl": "medium",
+        "pt-BR": "high"
+      },
+      "ru": "звёздный поток",
+      "ja": "恒星ストリーム",
+      "zh-CN": "恒星流",
+      "ko": "항성류",
+      "hi": "तारकीय धारा",
+      "ar": "تيار نجمي",
+      "sr-Cyrl": "звездани ток",
+      "de": "Sternstrom",
+      "fr": "courant stellaire",
+      "es": "corriente estelar",
+      "it": "corrente stellare",
+      "nl": "sterrenstroom",
+      "pt-BR": "corrente estelar"
+    },
+    "metal-poor": {
+      "_sense": "having few elements heavier than helium compared with the Sun",
+      "_en": "\\bmetal[- ]poor\\b",
+      "_match": {
+        "ru": ["бедн\\p{L}* металла\\p{L}*", "бедн\\p{L}* металл\\p{L}*", "малометалличн\\p{L}*"],
+        "ja": [
+          "金属に乏しい",
+          "金属が少な\\p{L}*",
+          "金属量の少ない",
+          "低金属",
+          "金属欠乏",
+          "金属に乏し\\p{L}*"
+        ],
+        "zh-CN": ["贫金属", "缺金属", "低金属", "金属含量低", "金属丰度低"],
+        "ko": [
+          "금속이 ?적은",
+          "금속 ?(?:함량|량|함유량)이 (?:적|낮)\\p{L}*",
+          "저금속",
+          "금속 ?빈약",
+          "금속 ?결핍"
+        ],
+        "hi": [
+          "धातु[ -]?निर्धन",
+          "धातु[ -]?रहित",
+          "कम धातु\\p{L}*",
+          "धातु[ -]?की कमी",
+          "निम्न धातु\\p{L}*",
+          "धातु[ -]?(?:विहीन|हीन|न्यून)",
+          "अल्प[ -]?धातु\\p{L}*"
+        ],
+        "ar": [
+          "فقير (?:ال)?بالفلزات",
+          "فقير\\p{L}* (?:ب)?(?:ال)?(?:فلزات|معادن)",
+          "قليل\\p{L}* (?:ال)?(?:فلزات|معادن)",
+          "فقر\\p{L}* (?:ال)?(?:فلزات|معادن)"
+        ],
+        "sr-Cyrl": [
+          "сиромаш\\p{L}* метали\\p{L}*",
+          "сиромашн\\p{L}* метал\\p{L}*",
+          "сиромашн\\p{L}*",
+          "мало метала",
+          "са мало метала"
+        ],
+        "de": ["metalla\\p{L}*", "metallarm\\p{L}*", "arm an Metallen"],
+        "fr": ["pauv\\p{L}* en méta\\p{L}*", "pauvres? en métaux", "pauvre en métal\\p{L}*"],
+        "es": [
+          "pob\\p{L}* en metal\\p{L}*",
+          "pobres? en metales",
+          "pobre en metal\\p{L}*",
+          "poco metálic\\p{L}*"
+        ],
+        "it": [
+          "pove\\p{L}* di metal\\p{L}*",
+          "pover\\p{L}* di metall\\p{L}*",
+          "poco metallic\\p{L}*"
+        ],
+        "nl": ["metaala\\p{L}*", "metaal-?arm\\p{L}*", "arm aan metalen"],
+        "pt-BR": [
+          "pob\\p{L}* em meta\\p{L}*",
+          "pobres? em metais",
+          "pobre em metal\\p{L}*",
+          "pouco metálic\\p{L}*"
+        ]
+      },
+      "_confidence": {
+        "ru": "high",
+        "ja": "high",
+        "zh-CN": "high",
+        "ko": "high",
+        "hi": "medium",
+        "ar": "high",
+        "sr-Cyrl": "high",
+        "de": "high",
+        "fr": "high",
+        "es": "high",
+        "it": "high",
+        "nl": "high",
+        "pt-BR": "high"
+      },
+      "ru": "бедный металлами",
+      "ja": "金属に乏しい",
+      "zh-CN": "贫金属",
+      "ko": "금속이 적은",
+      "hi": "धातु-निर्धन",
+      "ar": "فقير بالفلزات",
+      "sr-Cyrl": "сиромашан металима",
+      "de": "metallarm",
+      "fr": "pauvre en métaux",
+      "es": "pobre en metales",
+      "it": "povero di metalli",
+      "nl": "metaalarm",
+      "pt-BR": "pobre em metais"
+    },
+    "metal-rich": {
+      "_sense": "having many elements heavier than helium compared with the Sun",
+      "_en": "\\bmetal[- ]rich\\b(?! (?:M-(?:type|class) )?(?:asteroids?|bod(?:y|ies)|worlds?|objects?))",
+      "_match": {
+        "ru": ["богат\\p{L}* металла\\p{L}*", "богат\\p{L}* металл\\p{L}*"],
+        "ja": ["金属に富む", "金属に富\\p{L}*", "金属量が多い", "金属が豊富\\p{L}*", "高金属"],
+        "zh-CN": ["富金属", "富含金属", "高金属", "金属含量高", "金属丰度高"],
+        "ko": [
+          "금속이 ?많은",
+          "금속 ?(?:함량|량|함유량)이 (?:많|높)\\p{L}*",
+          "고금속",
+          "금속 ?풍부\\p{L}*"
+        ],
+        "hi": [
+          "धातु[ -]?समृद्ध",
+          "धातु[ -]?(?:समृद्ध|प्रचुर|बहुल)\\p{L}*",
+          "अधिक धातु\\p{L}*",
+          "धातु[ -]?अधिक"
+        ],
+        "ar": [
+          "غني (?:ال)?بالفلزات",
+          "غني\\p{L}* (?:ب)?(?:ال)?(?:فلزات|معادن)",
+          "وفير\\p{L}* (?:ال)?(?:فلزات|معادن)"
+        ],
+        "sr-Cyrl": ["бог\\p{L}* метали\\p{L}*", "богат\\p{L}* метал\\p{L}*", "много метала"],
+        "de": ["metallrei\\p{L}*", "metallreich\\p{L}*", "reich an Metallen"],
+        "fr": ["ric\\p{L}* en méta\\p{L}*", "riches? en métaux", "riche en métal\\p{L}*"],
+        "es": ["rico en metal\\p{L}*", "ricas? en metales"],
+        "it": [
+          "ric\\p{L}* di metal\\p{L}*",
+          "ricch\\p{L}* di metall\\p{L}*",
+          "ricco di metall\\p{L}*"
+        ],
+        "nl": ["metaalri\\p{L}*", "metaal-?rijk\\p{L}*", "rijk aan metalen"],
+        "pt-BR": ["rico em meta\\p{L}*", "ricas? em metais", "rico em metal\\p{L}*"]
+      },
+      "_confidence": {
+        "ru": "high",
+        "ja": "high",
+        "zh-CN": "high",
+        "ko": "medium",
+        "hi": "medium",
+        "ar": "medium",
+        "sr-Cyrl": "medium",
+        "de": "high",
+        "fr": "high",
+        "es": "high",
+        "it": "high",
+        "nl": "high",
+        "pt-BR": "high"
+      },
+      "ru": "богатый металлами",
+      "ja": "金属に富む",
+      "zh-CN": "富金属",
+      "ko": "금속이 많은",
+      "hi": "धातु-समृद्ध",
+      "ar": "غني بالفلزات",
+      "sr-Cyrl": "богат металима",
+      "de": "metallreich",
+      "fr": "riche en métaux",
+      "es": "rico en metales",
+      "it": "ricco di metalli",
+      "nl": "metaalrijk",
+      "pt-BR": "rico em metais"
+    },
+    "early-type galaxy": {
+      "_sense": "an elliptical or lenticular galaxy; \"early\" marks a place in the Hubble classification sequence, not youth",
+      "_en": "\\bearly[- ]type(?: galax(?:y|ies))?\\b|\\bearly types?\\b",
+      "_match": {
+        "ru": ["галакти\\p{L}* ранне\\p{L}* типа", "раннего типа", "ранн\\p{L}* тип\\p{L}*"],
+        "ja": ["早期型銀河", "早期型"],
+        "zh-CN": ["早型星系", "早型", "早期型"],
+        "ko": ["조기형 ?은하", "조기 ?형", "초기 ?형", "조기 ?유형"],
+        "hi": [
+          "प्रारंभिक[ -]?प्रकार[ -]?की[ -]?आकाशगंगा",
+          "प्रारंभिक\\p{L}* (?:प्रकार|वर्ग)\\p{L}*",
+          "आरंभिक\\p{L}* प्रकार\\p{L}*",
+          "अर्ली[ -]?टाइप"
+        ],
+        "ar": [
+          "مجرة (?:ال)?من (?:ال)?النوع (?:ال)?المبكر",
+          "(?:من )?(?:ال)?نوع (?:ال)?مبكر",
+          "النمط المبكر",
+          "ذات النوع المبكر"
+        ],
+        "sr-Cyrl": ["галакси\\p{L}* ран\\p{L}* типа", "ран\\p{L}* тип\\p{L}*", "раног"],
+        "de": [
+          "Galax\\p{L}* früh\\p{L}* Typs",
+          "frühe\\p{L}* Typs?",
+          "Frühtyp\\p{L}*",
+          "früher\\p{L}* Typ\\p{L}*",
+          "Early-?Type\\p{L}*"
+        ],
+        "fr": ["galax\\p{L}* de type préco\\p{L}*", "types? précoces?", "précoces?"],
+        "es": ["galax\\p{L}* de tipo tempra\\p{L}*", "tipos? tempranos?", "tempran\\p{L}*"],
+        "it": ["galass\\p{L}* di tipo preco\\p{L}*", "tipi? precoci?", "precoc\\p{L}*"],
+        "nl": [
+          "vroegtype-sterrenstels\\p{L}*",
+          "vroeg-?type\\p{L}*",
+          "vroege? typ\\p{L}*",
+          "early-?type\\p{L}*"
+        ],
+        "pt-BR": [
+          "galáx\\p{L}* de tipo preco\\p{L}*",
+          "tipos? precoces?",
+          "tipo inicial",
+          "precoces?"
+        ]
+      },
+      "_confidence": {
+        "ru": "high",
+        "ja": "high",
+        "zh-CN": "high",
+        "ko": "medium",
+        "hi": "low",
+        "ar": "medium",
+        "sr-Cyrl": "medium",
+        "de": "medium",
+        "fr": "medium",
+        "es": "medium",
+        "it": "medium",
+        "nl": "medium",
+        "pt-BR": "medium"
+      },
+      "ru": "галактика раннего типа",
+      "ja": "早期型銀河",
+      "zh-CN": "早型星系",
+      "ko": "조기형 은하",
+      "hi": "प्रारंभिक प्रकार की आकाशगंगा",
+      "ar": "مجرة من النوع المبكر",
+      "sr-Cyrl": "галаксија раног типа",
+      "de": "Galaxie frühen Typs",
+      "fr": "galaxie de type précoce",
+      "es": "galaxia de tipo temprano",
+      "it": "galassia di tipo precoce",
+      "nl": "vroegtype-sterrenstelsel",
+      "pt-BR": "galáxia de tipo precoce"
+    },
+    "late-type galaxy": {
+      "_sense": "a spiral or irregular galaxy; \"late\" marks a place in the Hubble classification sequence, not old age",
+      "_en": "\\blate[- ]type(?: galax(?:y|ies))?\\b|\\blate types?\\b",
+      "_match": {
+        "ru": ["галакти\\p{L}* поздне\\p{L}* типа", "позднего типа", "поздн\\p{L}* тип\\p{L}*"],
+        "ja": ["晩期型銀河", "晩期型"],
+        "zh-CN": ["晚型星系", "晚型", "晚期型"],
+        "ko": ["만기형 ?은하", "만기 ?형", "후기 ?형", "만기 ?유형"],
+        "hi": [
+          "परवर्ती[ -]?प्रकार[ -]?की[ -]?आकाशगंगा",
+          "परवर्ती\\p{L}* (?:प्रकार|वर्ग)\\p{L}*",
+          "पश्च\\p{L}* प्रकार\\p{L}*",
+          "लेट[ -]?टाइप"
+        ],
+        "ar": [
+          "مجرة (?:ال)?من (?:ال)?النوع (?:ال)?المتأخر",
+          "(?:من )?(?:ال)?نوع (?:ال)?متأخر",
+          "النمط المتأخر",
+          "ذات النوع المتأخر"
+        ],
+        "sr-Cyrl": ["галакси\\p{L}* касн\\p{L}* типа", "касн\\p{L}* тип\\p{L}*", "касног"],
+        "de": [
+          "Galax\\p{L}* spät\\p{L}* Typs",
+          "späte\\p{L}* Typs?",
+          "Spättyp\\p{L}*",
+          "später\\p{L}* Typ\\p{L}*",
+          "Late-?Type\\p{L}*"
+        ],
+        "fr": ["galax\\p{L}* de type tard\\p{L}*", "types? tardifs?", "tardifs?"],
+        "es": ["galax\\p{L}* de tipo tard\\p{L}*", "tipos? tardíos?", "tardí\\p{L}*"],
+        "it": ["galass\\p{L}* di tipo tardi\\p{L}*", "tipi? tardiv\\p{L}*", "tardiv\\p{L}*"],
+        "nl": [
+          "laattype-sterrenstels\\p{L}*",
+          "laat-?type\\p{L}*",
+          "late? typ\\p{L}*",
+          "late-?type\\p{L}*"
+        ],
+        "pt-BR": ["galáx\\p{L}* de tipo tard\\p{L}*", "tipos? tardios?", "tardios?"]
+      },
+      "_confidence": {
+        "ru": "high",
+        "ja": "high",
+        "zh-CN": "high",
+        "ko": "medium",
+        "hi": "low",
+        "ar": "medium",
+        "sr-Cyrl": "medium",
+        "de": "medium",
+        "fr": "medium",
+        "es": "medium",
+        "it": "medium",
+        "nl": "medium",
+        "pt-BR": "medium"
+      },
+      "ru": "галактика позднего типа",
+      "ja": "晩期型銀河",
+      "zh-CN": "晚型星系",
+      "ko": "만기형 은하",
+      "hi": "परवर्ती प्रकार की आकाशगंगा",
+      "ar": "مجرة من النوع المتأخر",
+      "sr-Cyrl": "галаксија касног типа",
+      "de": "Galaxie späten Typs",
+      "fr": "galaxie de type tardif",
+      "es": "galaxia de tipo tardío",
+      "it": "galassia di tipo tardivo",
+      "nl": "laattype-sterrenstelsel",
+      "pt-BR": "galáxia de tipo tardio"
+    },
+    "overdensity": {
+      "_sense": "a region where the density of galaxies or matter is higher than the cosmic average",
+      "_en": "\\bover-?densit(?:y|ies)\\b",
+      "_match": {
+        "ru": [
+          "избыточн\\p{L}* плотнос\\p{L}*",
+          "избыточн\\p{L}* плотност\\p{L}*",
+          "повышенн\\p{L}* плотност\\p{L}*",
+          "сверхплотност\\p{L}*"
+        ],
+        "ja": ["過密度", "過密", "密度超過"],
+        "zh-CN": ["过密度", "超密度", "过密"],
+        "ko": ["과밀도", "과밀", "초과 ?밀도"],
+        "hi": ["अतिघनत्व", "अति-?घनत्व", "अधिघनत्व", "अधिक घनत्व", "घनत्व (?:की )?अधिकता"],
+        "ar": [
+          "فرط (?:ال)?الكثافة",
+          "فرط (?:ال)?كثافة",
+          "كثافة زائدة",
+          "زيادة (?:في )?(?:ال)?كثافة",
+          "فائض (?:ال)?كثافة"
+        ],
+        "sr-Cyrl": [
+          "прегусти\\p{L}*",
+          "прегустин\\p{L}*",
+          "повећан\\p{L}* густин\\p{L}*",
+          "вишак густине"
+        ],
+        "de": ["Überdich\\p{L}*", "Überdicht\\p{L}*", "Dichte-?überschuss\\p{L}*"],
+        "fr": ["surdensi\\p{L}*", "surdensit\\p{L}*", "excès de densité"],
+        "es": ["sobredensid\\p{L}*", "sobredensidad\\p{L}*", "exceso de densidad"],
+        "it": ["sovradensi\\p{L}*", "sovradensità", "eccesso di densità"],
+        "nl": ["overdichthe\\p{L}*", "overdichtheid\\p{L}*", "overdichtheden"],
+        "pt-BR": ["sobredensida\\p{L}*", "sobredensidade\\p{L}*", "excesso de densidade"]
+      },
+      "_confidence": {
+        "ru": "medium",
+        "ja": "medium",
+        "zh-CN": "low",
+        "ko": "medium",
+        "hi": "low",
+        "ar": "low",
+        "sr-Cyrl": "medium",
+        "de": "medium",
+        "fr": "medium",
+        "es": "medium",
+        "it": "medium",
+        "nl": "medium",
+        "pt-BR": "medium"
+      },
+      "ru": "избыточная плотность",
+      "ja": "過密度",
+      "zh-CN": "过密度",
+      "ko": "과밀도",
+      "hi": "अतिघनत्व",
+      "ar": "فرط الكثافة",
+      "sr-Cyrl": "прегустина",
+      "de": "Überdichte",
+      "fr": "surdensité",
+      "es": "sobredensidad",
+      "it": "sovradensità",
+      "nl": "overdichtheid",
+      "pt-BR": "sobredensidade"
+    },
+    "triaxial": {
+      "_sense": "having three unequal axes, like a flattened, elongated ellipsoid",
+      "_en": "\\btriaxial(?:ity)?\\b",
+      "_match": {
+        "ru": ["трёхосн\\p{L}*", "трехосн\\p{L}*", "триаксиальн\\p{L}*"],
+        "ja": ["三軸", "3軸", "三軸不等", "トリアキシャル"],
+        "zh-CN": ["三轴", "三軸", "三轴椭球"],
+        "ko": ["삼축", "3축", "세 ?축", "트라이액시얼"],
+        "hi": ["त्रि[ -]?अक्षीय", "त्रि-?अक्षीय", "तीन[ -]?अक्ष\\p{L}*", "ट्राइएक्सियल"],
+        "ar": ["ثلاثي (?:ال)?المحاور", "ثلاثي (?:ال)?محاور", "ثلاثية (?:ال)?محاور", "ثلاثة محاور"],
+        "sr-Cyrl": ["троос\\p{L}*", "троосн\\p{L}*", "тро-?осн\\p{L}*", "тријаксијал\\p{L}*"],
+        "de": ["triaxi\\p{L}*", "dreiachsig\\p{L}*"],
+        "fr": ["triaxi\\p{L}*", "à trois axes"],
+        "es": ["triaxi\\p{L}*", "de tres ejes"],
+        "it": ["triassia\\p{L}*", "tri-?assial\\p{L}*", "a tre assi"],
+        "nl": ["drieass\\p{L}*", "triaxia\\p{L}*"],
+        "pt-BR": ["triaxi\\p{L}*", "de três eixos"]
+      },
+      "_confidence": {
+        "ru": "high",
+        "ja": "high",
+        "zh-CN": "high",
+        "ko": "medium",
+        "hi": "medium",
+        "ar": "medium",
+        "sr-Cyrl": "medium",
+        "de": "high",
+        "fr": "high",
+        "es": "high",
+        "it": "high",
+        "nl": "medium",
+        "pt-BR": "high"
+      },
+      "ru": "трёхосный",
+      "ja": "三軸",
+      "zh-CN": "三轴",
+      "ko": "삼축",
+      "hi": "त्रि-अक्षीय",
+      "ar": "ثلاثي المحاور",
+      "sr-Cyrl": "троосни",
+      "de": "triaxial",
+      "fr": "triaxial",
+      "es": "triaxial",
+      "it": "triassiale",
+      "nl": "drieassig",
+      "pt-BR": "triaxial"
+    },
+    "crossing time": {
+      "_sense": "the time a typical galaxy needs to cross a group or cluster at its usual speed",
+      "_en": "\\bcrossing[- ]times?\\b",
+      "_match": {
+        "ru": [
+          "вре\\p{L}* пересечен\\p{L}*",
+          "врем\\p{L}* пересечени\\p{L}*",
+          "врем\\p{L}* пролёта"
+        ],
+        "ja": ["横断時間", "クロッシングタイム", "横切る時間"],
+        "zh-CN": ["穿越时间", "穿行时间", "穿过时间"],
+        "ko": ["횡단 ?시간", "가로지르는 시간", "통과 ?시간"],
+        "hi": ["पारगमन[ -]?काल", "पारगमन[ -]?(?:काल|समय)", "पार करने का समय"],
+        "ar": ["زمن (?:ال)?العبور", "(?:ال)?زمن (?:ال)?(?:عبور|عبر)", "وقت العبور"],
+        "sr-Cyrl": [
+          "вре\\p{L}* прела\\p{L}*",
+          "врем\\p{L}* (?:прелаз|пресеца)\\p{L}*",
+          "врем\\p{L}* пролаз\\p{L}*"
+        ],
+        "de": [
+          "Durchquerungsze\\p{L}*",
+          "Durchquerungs-?zeit\\p{L}*",
+          "Überquerungszeit\\p{L}*",
+          "Crossing-?Time"
+        ],
+        "fr": ["tem\\p{L}* de travers\\p{L}*", "temps de traversée", "temps de croisement"],
+        "es": ["tiem\\p{L}* de cru\\p{L}*", "tiempo de (?:cruce|travesía)"],
+        "it": ["tem\\p{L}* di attraversamen\\p{L}*", "tempo di (?:attraversamento|crossing)"],
+        "nl": [
+          "kruisti\\p{L}*",
+          "kruistijd\\p{L}*",
+          "oversteektijd\\p{L}*",
+          "doorkruisingstijd\\p{L}*"
+        ],
+        "pt-BR": ["tem\\p{L}* de travess\\p{L}*", "tempo de (?:travessia|cruzamento)"]
+      },
+      "_confidence": {
+        "ru": "high",
+        "ja": "medium",
+        "zh-CN": "medium",
+        "ko": "medium",
+        "hi": "low",
+        "ar": "medium",
+        "sr-Cyrl": "medium",
+        "de": "high",
+        "fr": "high",
+        "es": "high",
+        "it": "medium",
+        "nl": "medium",
+        "pt-BR": "high"
+      },
+      "ru": "время пересечения",
+      "ja": "横断時間",
+      "zh-CN": "穿越时间",
+      "ko": "횡단 시간",
+      "hi": "पारगमन काल",
+      "ar": "زمن العبور",
+      "sr-Cyrl": "време прелаза",
+      "de": "Durchquerungszeit",
+      "fr": "temps de traversée",
+      "es": "tiempo de cruce",
+      "it": "tempo di attraversamento",
+      "nl": "kruistijd",
+      "pt-BR": "tempo de travessia"
+    },
+    "dwarf elliptical galaxy": {
+      "_sense": "a small, smooth, faint galaxy of mostly old stars with little gas",
+      "_en": "\\bdwarf ellipticals?(?: galax(?:y|ies))?\\b",
+      "_match": {
+        "ru": ["карликов\\p{L}* эллиптическ\\p{L}* галакти\\p{L}*", "эллиптическ\\p{L}*"],
+        "ja": ["矮小楕円銀河", "矮小楕円", "矮楕円"],
+        "zh-CN": ["矮椭圆星系", "矮椭圆", "矮椭"],
+        "ko": ["왜소타원은하", "왜소 ?타원"],
+        "hi": ["बौनी[ -]?दीर्घवृत्तीय[ -]?आकाशगंगा", "दीर्घवृत्त\\p{L}*", "अंडाकार\\p{L}*"],
+        "ar": ["مجرة (?:ال)?قزمة (?:ال)?إهليلجية", "إهليلج\\p{L}*", "إهليج\\p{L}*", "بيضاو\\p{L}*"],
+        "sr-Cyrl": [
+          "патуљас\\p{L}* елиптич\\p{L}* галакси\\p{L}*",
+          "елиптичн\\p{L}*",
+          "елиптик\\p{L}*"
+        ],
+        "de": ["elliptisc\\p{L}* Zwerggalax\\p{L}*", "elliptisch\\p{L}*"],
+        "fr": ["galax\\p{L}* elliptiq\\p{L}* nai\\p{L}*", "elliptiqu\\p{L}*"],
+        "es": ["galax\\p{L}* elípti\\p{L}* ena\\p{L}*", "elíptic\\p{L}*"],
+        "it": ["galass\\p{L}* ellitti\\p{L}* nana", "ellittic\\p{L}*"],
+        "nl": ["elliptis\\p{L}* dwergstels\\p{L}*", "ellipt\\p{L}*"],
+        "pt-BR": ["galáx\\p{L}* elípti\\p{L}* anã", "elíptic\\p{L}*"]
+      },
+      "_confidence": {
+        "ru": "high",
+        "ja": "high",
+        "zh-CN": "high",
+        "ko": "high",
+        "hi": "medium",
+        "ar": "high",
+        "sr-Cyrl": "high",
+        "de": "high",
+        "fr": "high",
+        "es": "high",
+        "it": "high",
+        "nl": "high",
+        "pt-BR": "high"
+      },
+      "ru": "карликовая эллиптическая галактика",
+      "ja": "矮小楕円銀河",
+      "zh-CN": "矮椭圆星系",
+      "ko": "왜소타원은하",
+      "hi": "बौनी दीर्घवृत्तीय आकाशगंगा",
+      "ar": "مجرة قزمة إهليلجية",
+      "sr-Cyrl": "патуљаста елиптична галаксија",
+      "de": "elliptische Zwerggalaxie",
+      "fr": "galaxie elliptique naine",
+      "es": "galaxia elíptica enana",
+      "it": "galassia ellittica nana",
+      "nl": "elliptisch dwergstelsel",
+      "pt-BR": "galáxia elíptica anã"
+    },
+    "potential well": {
+      "_sense": "a region where gravity is strongest and into which matter falls",
+      "_en": "\\bpotential wells?\\b",
+      "_match": {
+        "ru": [
+          "потенциальн\\p{L}* яма",
+          "потенциальн\\p{L}* ям\\p{L}*",
+          "потенциальн\\p{L}* колодц\\p{L}*"
+        ],
+        "ja": ["ポテンシャル井戸", "ポテンシャルの井戸", "ポテンシャルの谷", "井戸型ポテンシャル"],
+        "zh-CN": ["势阱", "勢阱", "势井", "引力势阱", "引力阱"],
+        "ko": [
+          "퍼텐셜 ?우물",
+          "포텐셜 ?우물",
+          "퍼텐셜 ?구덩이",
+          "퍼텐셜 ?웅덩이",
+          "중력 ?우물",
+          "퍼텐셜 ?계곡"
+        ],
+        "hi": ["विभव[ -]?कूप", "विभव[ -]?(?:गर्त|कुआँ|कुआं)", "गुरुत्व[ -]?कूप", "पोटेंशियल वेल"],
+        "ar": [
+          "بئر (?:ال)?الجهد",
+          "بئر (?:ال)?(?:جهد|كمون|جاذبية)",
+          "حفرة (?:ال)?(?:جهد|كمون|جاذبية)"
+        ],
+        "sr-Cyrl": [
+          "потенцијал\\p{L}* јама",
+          "потенцијалн\\p{L}* (?:јам|бун)\\p{L}*",
+          "гравитацион\\p{L}* јам\\p{L}*"
+        ],
+        "de": [
+          "Potentialto\\p{L}*",
+          "Potenzialtopf\\p{L}*",
+          "Potent?ialmulde\\p{L}*",
+          "Potent?ialgrube\\p{L}*"
+        ],
+        "fr": ["pui\\p{L}* de potenti\\p{L}*", "puits (?:de potentiel|gravitationnel|de gravité)"],
+        "es": [
+          "pozo de potenci\\p{L}*",
+          "pozos? (?:de potencial|gravitacional\\p{L}*|de gravedad)"
+        ],
+        "it": [
+          "buca di potenzia\\p{L}*",
+          "buch[ae] (?:di potenziale|gravitazional\\p{L}*)",
+          "pozz\\p{L}* (?:di potenziale|gravitazional\\p{L}*)"
+        ],
+        "nl": [
+          "potentiaalp\\p{L}*",
+          "potentiaalkuil\\p{L}*",
+          "zwaartekrachtput\\p{L}*",
+          "zwaartekrachtskuil\\p{L}*"
+        ],
+        "pt-BR": ["poço de potenci\\p{L}*", "poços? (?:de potencial|gravitacional\\p{L}*)"]
+      },
+      "_confidence": {
+        "ru": "high",
+        "ja": "medium",
+        "zh-CN": "high",
+        "ko": "medium",
+        "hi": "low",
+        "ar": "medium",
+        "sr-Cyrl": "medium",
+        "de": "high",
+        "fr": "high",
+        "es": "high",
+        "it": "high",
+        "nl": "high",
+        "pt-BR": "high"
+      },
+      "ru": "потенциальная яма",
+      "ja": "ポテンシャル井戸",
+      "zh-CN": "势阱",
+      "ko": "퍼텐셜 우물",
+      "hi": "विभव कूप",
+      "ar": "بئر الجهد",
+      "sr-Cyrl": "потенцијална јама",
+      "de": "Potentialtopf",
+      "fr": "puits de potentiel",
+      "es": "pozo de potencial",
+      "it": "buca di potenziale",
+      "nl": "potentiaalput",
+      "pt-BR": "poço de potencial"
+    },
+    "watershed": {
+      "_sense": "a boundary where flows part in opposite directions; in the definition of Laniakea, where galaxies' motions diverge toward different gravitational centres",
+      "_en": "\\bwatersheds?\\b",
+      "_match": {
+        "ru": ["водоразд\\p{L}*", "водораздел\\p{L}*"],
+        "ja": ["分水嶺", "分水界", "流域"],
+        "zh-CN": ["分水岭", "分水嶺", "分水线"],
+        "ko": ["분수령", "분수계", "분수선", "유역"],
+        "hi": ["जलविभाजक", "जल-?विभाजक", "जल विभाजन", "जलसंभर", "वाटरशेड", "जलविभाजन"],
+        "ar": [
+          "خط (?:ال)?تقسيم (?:ال)?المياه",
+          "خط (?:ال)?تقسيم (?:ال)?مياه",
+          "خطوط تقسيم (?:ال)?مياه",
+          "خط فاصل (?:ال)?مياه",
+          "فاصل (?:ال)?مياه"
+        ],
+        "sr-Cyrl": [
+          "вододелни\\p{L}*",
+          "вододелниц\\p{L}*",
+          "вододел\\p{L}*",
+          "водораздел\\p{L}*",
+          "разводниц\\p{L}*",
+          "слив\\p{L}*"
+        ],
+        "de": ["Wasserschei\\p{L}*", "Wasserscheide\\p{L}*"],
+        "fr": [
+          "lig\\p{L}* de parta\\p{L}* des eaux",
+          "lignes? de partage des eaux",
+          "lignes? de crête",
+          "bassins? versants?"
+        ],
+        "es": [
+          "divisor\\p{L}* de agu\\p{L}*",
+          "divisorias? de aguas",
+          "divisoria\\p{L}*",
+          "cuencas? (?:hidrográfic\\p{L}*|de drenaje|de flujos)"
+        ],
+        "it": [
+          "spartiacq\\p{L}*",
+          "spartiacque",
+          "spartiacqua",
+          "displuvio",
+          "bacin\\p{L}* idrografic\\p{L}*"
+        ],
+        "nl": ["waterscheidi\\p{L}*", "waterscheiding\\p{L}*"],
+        "pt-BR": [
+          "divis\\p{L}* de águ\\p{L}*",
+          "divisor\\p{L}* de águas",
+          "linha divisória",
+          "bacias? hidrográfic\\p{L}*"
+        ]
+      },
+      "_confidence": {
+        "ru": "high",
+        "ja": "high",
+        "zh-CN": "high",
+        "ko": "high",
+        "hi": "low",
+        "ar": "medium",
+        "sr-Cyrl": "medium",
+        "de": "high",
+        "fr": "medium",
+        "es": "medium",
+        "it": "high",
+        "nl": "high",
+        "pt-BR": "high"
+      },
+      "ru": "водораздел",
+      "ja": "分水嶺",
+      "zh-CN": "分水岭",
+      "ko": "분수령",
+      "hi": "जलविभाजक",
+      "ar": "خط تقسيم المياه",
+      "sr-Cyrl": "вододелница",
+      "de": "Wasserscheide",
+      "fr": "ligne de partage des eaux",
+      "es": "divisoria de aguas",
+      "it": "spartiacque",
+      "nl": "waterscheiding",
+      "pt-BR": "divisor de águas"
+    },
+    "repeller": {
+      "_sense": "a region, usually a large void, from which matter is pushed away; the opposite of an attractor",
+      "_en": "\\brepell?ers?\\b",
+      "_match": {
+        "ru": ["отталкивате\\p{L}*", "отталкивател\\p{L}*", "репеллер\\p{L}*"],
+        "ja": ["リペラー", "斥力源", "反発源", "反発体", "レペラー", "斥力体"],
+        "zh-CN": ["斥源", "斥力源", "排斥体", "排斥源", "巨斥源", "斥力体"],
+        "ko": ["척력체", "반발체", "리펠러", "반발원", "척력원"],
+        "hi": [
+          "प्रतिकर्षक",
+          "प्रतिकर्षी",
+          "रिपेलर",
+          "अपकर्षक",
+          "विकर्षक",
+          "विकर्षण केंद्र",
+          "प्रतिकर्षण केंद्र"
+        ],
+        "ar": ["طارد", "طارد\\p{L}*", "دافع\\p{L}*", "منفّر\\p{L}*", "منفر\\p{L}*"],
+        "sr-Cyrl": ["одбојн\\p{L}*", "одбојник\\p{L}*", "репелер\\p{L}*"],
+        "de": [
+          "Repell\\p{L}*",
+          "Abstoßer\\p{L}*",
+          "Abstoßungszentr\\p{L}*",
+          "Abstoßungsgebiet\\p{L}*"
+        ],
+        "fr": ["répulse\\p{L}*", "répulseurs?", "repousseurs?"],
+        "es": ["repuls\\p{L}*", "repelente\\p{L}*"],
+        "it": ["repulso\\p{L}*", "repulsor\\p{L}*", "repulsiv\\p{L}*"],
+        "nl": ["repell\\p{L}*", "afstoter\\p{L}*", "afstotend\\p{L}*"],
+        "pt-BR": ["repuls\\p{L}*", "repelente\\p{L}*"]
+      },
+      "_confidence": {
+        "ru": "medium",
+        "ja": "low",
+        "zh-CN": "low",
+        "ko": "low",
+        "hi": "low",
+        "ar": "low",
+        "sr-Cyrl": "low",
+        "de": "medium",
+        "fr": "medium",
+        "es": "medium",
+        "it": "medium",
+        "nl": "low",
+        "pt-BR": "medium"
+      },
+      "ru": "отталкиватель",
+      "ja": "リペラー",
+      "zh-CN": "斥源",
+      "ko": "척력체",
+      "hi": "प्रतिकर्षक",
+      "ar": "طارد",
+      "sr-Cyrl": "одбојник",
+      "de": "Repeller",
+      "fr": "répulseur",
+      "es": "repulsor",
+      "it": "repulsore",
+      "nl": "repeller",
+      "pt-BR": "repulsor"
     }
   }
 }

@@ -12,6 +12,8 @@ Read-only brief, written at HEAD `48537a8fef6` on `tech-debt/0.9.9`. Method: `gi
 6. **Four slices, T1 to T4** (§7). T2 (the two INDEXes) edits the files C6 is editing: build it after C6 lands (Decision 5).
 7. **Needs the operator before code:** 8 forks in §13.
 
+**Operator decision 2026-11-13:** all 8 recommendations in §13 approved (option a each); T1 to T4 approved, built in this order. The C4 defect was repaired before T1 in `1e405882d2f` (12 thumbs, TGO included, which §2.2 missed); its test now checks every thumb against the `*-hero-overrides.json` files.
+
 ## 1. What was asked, and the house rules
 
 Operator, 2026-11-13: the 28 px round resident photos with an agency-colour ring (C4, UXD-024) are good; where else would small images of the thing make lists more visual? Plan row L45 (`docs/wip/2026-11-11-ux-feedback-plan.md:573`).

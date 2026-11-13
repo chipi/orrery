@@ -78,20 +78,71 @@ The three-tier educational link system uses a consistent colour language across 
 
 ### 2.4 Agency colours
 
-Used for card accent borders (3px top), pin markers, label text, and logo backgrounds.
+Confirmed by the operator on 2026-11-13 (the swatch page "Orrery agency palette"), teal and cyan
+identity colours included. The code is the source: `src/lib/agencies.ts` (badge fill, card and
+mission accents; a compound agency takes its first partner's colour) and
+`src/lib/surface-map/nation-palette.ts` (surface-site markers, the nation legend and the Earth
+regime panel's resident dots, which use a lighter chip colour for some agencies). A badge's text is
+white or dark by contrast.
 
-| Agency | Display colour | Logo background |
+| Agency | Badge | Map / regime chip (where it differs) |
 |---|---|---|
-| NASA | `#4b9cd3` | `#0B3D91` |
-| ESA | `#7b9cff` | `#1C3C8A` |
-| CNSA | `#ff5555` | `#DE2910` |
-| ISRO | `#ff8c3c` | `#1a1a2e` |
-| Roscosmos | `#cc4444` | `#0d0d1a` |
-| UAE/MBRSC | `#4ecdc4` | `#ffffff` |
-| JAXA | `#5588ff` | `#0062AC` |
-| SpaceX | `#ffcc66` | `#000000` |
-| Personal mission | `#889fe7` | `rgba(80,112,255,0.08)` |
-| Planned (generic) | `#7b9cff` | `rgba(68,102,255,0.15)` |
+| NASA | `#0B3D91` | `#3b82f6` |
+| ESA | `#003247` | `#1d4ed8` |
+| JAXA | `#003087` | `#1d4ed8` |
+| ISRO | `#FF9933` | `#f97316` |
+| CNSA | `#DE2910` | `#dc2626` |
+| CMSA | `#DE2910` | — |
+| CASC | `#DE2910` | — |
+| Roscosmos | `#cc4444` | `#ef4444` |
+| CSA | `#D52B1E` | — |
+| UAESA | `#00833F` | `#00732F` |
+| USSF | `#1D2951` | — |
+| NOAA | `#003087` | — |
+| USGS | `#00833F` | — |
+| ASI | `#008C45` | `#1d4ed8` |
+| SpaceX | `#005288` | `#3b82f6` |
+| Boeing | `#1D4E89` | — |
+| Northrop Grumman | `#005EB8` | — |
+| ULA | `#1A3668` | — |
+| Blue Origin | `#00264D` | — |
+| Arianespace | `#0033A0` | — |
+| Axiom Space | `#1F3A93` | — |
+| Intuitive Machines | `#00A3E0` | — |
+| ispace | `#003E7E` | — |
+| SpaceIL | `#0038B8` | `#1d4ed8` |
+| Amazon | `#FF9900` | — |
+| SES | `#003C71` | — |
+| Sirius XM | `#0067B1` | — |
+| Viasat | `#005CAB` | — |
+| Eutelsat OneWeb | `#003DA5` | — |
+| Iridium | `#00477F` | — |
+| Planet Labs | `#1B9E77` | — |
+| Rocket Lab | `#000000` | `#00A6A6` |
+| Avio | `#003c71` | — |
+| Firefly | `#ff6600` | — |
+| Relativity | `#5d2a86` | — |
+| MHI | `#cc0000` | — |
+| Astra | `#000000` | — |
+
+Nations (surface-site markers and the nation legend):
+
+| Nation | Colour |
+|---|---|
+| USA | `#0B3D91` |
+| USSR/Russia | `#8B0000` |
+| Europe | `#003299` |
+| China | `#DE2910` |
+| India | `#FF9933` |
+| Japan | `#003087` |
+| UAE | `#00732F` |
+| Israel | `#0038B8` |
+| New Zealand | `#00A6A6` |
+| South Korea | `#5B8DEF` |
+| North Korea | `#9B59B6` |
+| Iran | `#6BBF59` |
+| Australia | `#E0B400` |
+| Brazil | `#C2185B` |
 
 ### 2.5 Orbital regime colours (Earth Orbit)
 

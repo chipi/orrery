@@ -33,7 +33,7 @@ function source(pages: Partial<ScaleIndexSource['pages']> = {}): ScaleIndexSourc
   body.delete('structures');
   return {
     locale: 'en-US',
-    names: { body: {}, star: {}, blackHole: {}, belt: {} },
+    names: { body: {}, star: {}, blackHole: {}, belt: {}, galaxy: {}, structure: {} },
     pages: {
       body,
       star: pageIds('/explore/stars/'),
@@ -196,7 +196,10 @@ describe('entity-page links (C11)', () => {
     expect(routes).not.toContain('/explore/deep-sky/carina-nebula');
     // No second page: the other members have none.
     expect(href('milky-way', '47-tucanae')).toBeUndefined();
-    expect(href('local-group', 'lmc')).toBeUndefined();
+    // The Local Group galaxies have a page of their own only once their overlay exists.
+    expect(href('local-group', 'lmc')).toBe(
+      src.pages.galaxy.has('lmc') ? '/explore/galaxies/lmc' : undefined,
+    );
   });
 
   it('a row names its object as its page does: designation, then the common name', () => {
@@ -227,9 +230,18 @@ describe('entity-page links (C11)', () => {
       for (const r of rows[scale]) if (r.href) expect(all.has(r.href)).toBe(true);
   });
 
-  it('every other row is a button without a link: 73 of 344', () => {
+  it('every other row is a button without a link: 73 of 344 with no galaxy or structure overlay', () => {
+    // A galaxy page links its Local Group row and, for the Magellanic Clouds, a Milky Way row; a
+    // structure page one row per scale that lists it (local-group: two).
+    const galaxyRows =
+      src.localGroup.filter((m) => src.pages.galaxy.has(m.id)).length +
+      (src.milkyWay.magellanic ?? []).filter((m) => src.pages.galaxy.has(m.id)).length;
+    const structureRows = [src.localSheet, src.virgo, src.laniakea, src.cosmicWeb].reduce(
+      (n, scale) => n + scale.filter((m) => src.pages.structure.has(m.id)).length,
+      0,
+    );
     const n = CTX_ORDER.reduce((s, c) => s + rows[c].filter((r) => !r.href).length, 0);
-    expect(n).toBe(344 - (118 + 140 + 7 + 4 + 1 + 1));
+    expect(n).toBe(344 - (118 + 140 + 7 + 4 + 1 + 1) - galaxyRows - structureRows);
   });
 });
 
@@ -263,6 +275,8 @@ describe('row fields', () => {
         star: { sirius: 'Sirius (de)' },
         blackHole: { gargantua: 'Gargantua (de)' },
         belt: { asteroid: 'Gürtel (de)' },
+        galaxy: {},
+        structure: {},
         sun: 'Sonne',
       },
     });
@@ -361,9 +375,11 @@ describe('galaxy and structure pages (item 18)', () => {
   const full = buildScaleIndexRows(withPages());
 
   it('no overlay, no page, no link: the rows of today are unchanged', () => {
+    const bare = buildScaleIndexRows(source({ galaxy: new Set(), structure: new Set() }));
     for (const scale of ['local-sheet', 'laniakea', 'cosmic-web'] as const)
-      expect(rows[scale].filter((r) => r.href?.startsWith('/explore/structures/'))).toEqual([]);
-    expect(rows['milky-way'].find((r) => r.id === 'lmc')?.href).toBeUndefined();
+      expect(bare[scale].filter((r) => r.href?.startsWith('/explore/structures/'))).toEqual([]);
+    expect(bare['milky-way'].find((r) => r.id === 'lmc')?.href).toBeUndefined();
+    expect(bare['local-group'].find((r) => r.id === 'lmc')?.href).toBeUndefined();
   });
 
   it('every Local Group member links a page, a twin its deep-sky one: 29 + 4', () => {
@@ -404,5 +420,27 @@ describe('galaxy and structure pages (item 18)', () => {
     );
     expect(hrefs).toHaveLength(62);
     expect(new Set(hrefs).size).toBe(59);
+  });
+
+  it("a row takes the reader's name with or without a page; a page keeps it", () => {
+    const names = {
+      ...src.names,
+      galaxy: { lmc: 'LMC (de)', 'sculptor-dwarf': 'Sculptor (de)' },
+      structure: { 'virgo-cluster': 'Virgo (de)', laniakea: 'Laniakea (de)' },
+    };
+    const named = (pages: ScaleIndexSource['pages']) =>
+      buildScaleIndexRows({ ...source(), names, pages });
+    const none = named(source().pages);
+    const all = named(withPages().pages);
+    for (const r of [none, all]) {
+      expect(r['local-group'].find((x) => x.id === 'lmc')?.name).toBe('LMC (de)');
+      expect(r['milky-way'].find((x) => x.id === 'lmc')?.name).toBe('LMC (de)');
+      expect(r.virgo.find((x) => x.id === 'virgo-cluster')?.name).toBe('Virgo (de)');
+      expect(r['cosmic-web'].find((x) => x.id === 'laniakea')?.name).toBe('Laniakea (de)');
+    }
+    expect(all['local-group'].find((x) => x.id === 'sculptor-dwarf')?.href).toBe(
+      '/explore/galaxies/sculptor-dwarf',
+    );
+    expect(none['local-group'].find((x) => x.id === 'ic-10')?.name).toBe('IC 10');
   });
 });

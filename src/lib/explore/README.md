@@ -13,13 +13,18 @@ wrappers; markup pieces live next to it in `src/routes/explore/`.
   the chips of each scale and the search / section helpers (UXD-017). `outerPageOf` is the one resolver
   of the page an outer-scale row links (the deep-sky page of a twin, else `/explore/galaxies/<id>` or
   `/explore/structures/<id>`, ADR-096 item 18); the entity loaders reuse it for their Related lists.
+- `outer-overlay.svelte.ts` — the fact and bio the six outer-scale panels show in place of the kind blurb
+  (`outerOverlay`, one effect per panel; `overlayRequest` is what it asks for: only an id the page's
+  `outerOverlays` lists, so no 404 before the text exists; a Local Group member that is a deep-sky
+  object asks that object's overlay). The panel's name is its INDEX row's.
 - `outer-page.ts` — what the galaxy and structure pages share: the row and Related-section shapes and
   the `?context=<scale>&pick=<id>` link into the scene.
 - `paths-legend.ts` — PATHS layer rows, iconic taglines, interstellar craft.
 - `format.ts` — HUD formatters (scale numbers, light units, context names,
   star colours, satellite sizes, time dilation, `planetName`). The galaxy and structure values
   (`galaxyDistance`, `galaxyDiameter`, `structureDistance`, `structureSpan`, the kind and membership
-  labels) are shared by the six outer panels and the two entity pages, so they print one string.
+  labels) are shared by the six outer panels and the two entity pages, so they print one string;
+  `outerLead` is the panel's lead (overlay fact and bio, else the kind blurb).
 - `planet-sizes.ts` — the eight planets of the REFERENCES overlay (radius, colour,
   size order) shared by `SizesCanvas` and the legend grid.
 - `lens-panel.ts` — which science-lens story + layers each shell shows, and

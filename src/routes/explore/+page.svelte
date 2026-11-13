@@ -72,6 +72,7 @@
     type DeepSkyTextOverlay,
   } from '$lib/data';
   import { findDeepSkyImage, type DeepSkyImage } from '$lib/deep-sky';
+  import { outerOverlay } from '$lib/explore/outer-overlay.svelte';
   import StarPanel from '$lib/components/StarPanel.svelte';
   import ExoplanetPanel from '$lib/components/ExoplanetPanel.svelte';
   import MassPeriodChart from '$lib/components/MassPeriodChart.svelte';
@@ -852,24 +853,41 @@
     const hole = activeBlackHole ?? bhPanelHole;
     return hole ? localHref(`/science/observation/${hole.science_section}`) : localHref('/');
   });
-  // One name per object (UXD-017): a globular or Local Group member that has a deep-sky page is
-  // named in its panel as its INDEX row and page name it.
-  const twinName = (scale: 'milky-way' | 'local-group', id: string): string | undefined => {
-    const row = data.scaleIndex[scale].find((r) => r.id === id);
-    return row?.href ? row.name : undefined;
-  };
+  // One name per object (UXD-017): a panel is named as its INDEX row and its page name it. A Milky
+  // Way pin keeps the data's name unless it has a page (a globular) or is a Magellanic Cloud; the
+  // outer scales' members are all in the glossary.
+  const rowName = (scale: keyof typeof data.scaleIndex, id: string): string | undefined =>
+    data.scaleIndex[scale].find((r) => r.id === id)?.name;
   let selectedMwObject = $derived.by(() => {
     const o = mwObjects.find((x) => x.id === selectedMwId);
     if (!o) return null;
-    const name = twinName('milky-way', o.id);
-    return name ? { ...o, name } : o;
+    const row = data.scaleIndex['milky-way'].find((r) => r.id === o.id);
+    return row?.href || row?.kind === 'satellite-galaxy' ? { ...o, name: row.name } : o;
   });
   let lgPanelMember = $derived.by(() => {
     const mbr = selectedLgMember;
-    if (!mbr) return null;
-    const name = twinName('local-group', mbr.id);
-    return name ? { ...mbr, name } : mbr;
+    const name = mbr && rowName('local-group', mbr.id);
+    return mbr && name ? { ...mbr, name } : mbr;
   });
+  // The fact and bio the five outer panels show in place of the kind blurb (the files decide which
+  // ids have one).
+  const galaxyTarget = (id: string | undefined) => (id ? { kind: 'galaxy' as const, id } : null);
+  const structureTarget = (id: string | undefined) =>
+    id ? { kind: 'structure' as const, id } : null;
+  const outerIds = () => data.outerOverlays;
+  const mwOverlay = outerOverlay(
+    () =>
+      galaxyTarget(selectedMwObject?.kind === 'satellite-galaxy' ? selectedMwObject.id : undefined),
+    outerIds,
+  );
+  const lgOverlay = outerOverlay(() => galaxyTarget(selectedLgMember?.id), outerIds);
+  const lsOverlay = outerOverlay(() => structureTarget(selectedLsMember?.id), outerIds);
+  const virgoOverlay = outerOverlay(() => structureTarget(selectedVirgoMember?.id), outerIds);
+  const laniakeaOverlay = outerOverlay(() => structureTarget(selectedLaniakeaMember?.id), outerIds);
+  const cosmicWebOverlay = outerOverlay(
+    () => structureTarget(selectedCosmicWebMember?.id),
+    outerIds,
+  );
   let mwLearnHref = $derived(
     selectedMwObject
       ? localHref(`/science/observation/${selectedMwObject.science_section}`)
@@ -2287,6 +2305,7 @@
 
 <MilkyWayPanel
   object={selectedMwObject}
+  overlay={mwOverlay.current}
   learnHref={mwLearnHref}
   open={mwPanelOpen}
   onClose={() => closeMwFn?.()}
@@ -2295,6 +2314,7 @@
 
 <LocalGroupPanel
   member={lgPanelMember}
+  overlay={lgOverlay.current}
   open={lgPanelOpen}
   onClose={() => closeLgFn?.()}
   covered={bhPanelOpen}
@@ -2302,24 +2322,32 @@
 
 <LocalSheetPanel
   member={selectedLsMember}
+  overlay={lsOverlay.current}
+  name={selectedLsMember ? rowName('local-sheet', selectedLsMember.id) : undefined}
   open={lsPanelOpen}
   onClose={() => closeLsFn?.()}
   covered={bhPanelOpen}
 />
 <VirgoPanel
   member={selectedVirgoMember}
+  overlay={virgoOverlay.current}
+  name={selectedVirgoMember ? rowName('virgo', selectedVirgoMember.id) : undefined}
   open={virgoPanelOpen}
   onClose={() => closeVirgoFn?.()}
   covered={bhPanelOpen}
 />
 <CosmicWebPanel
   member={selectedCosmicWebMember}
+  overlay={cosmicWebOverlay.current}
+  name={selectedCosmicWebMember ? rowName('cosmic-web', selectedCosmicWebMember.id) : undefined}
   open={cosmicWebPanelOpen}
   onClose={() => closeCosmicWebFn?.()}
   covered={bhPanelOpen}
 />
 <LaniakeaPanel
   member={selectedLaniakeaMember}
+  overlay={laniakeaOverlay.current}
+  name={selectedLaniakeaMember ? rowName('laniakea', selectedLaniakeaMember.id) : undefined}
   open={laniakeaPanelOpen}
   onClose={() => closeLaniakeaFn?.()}
   covered={bhPanelOpen}

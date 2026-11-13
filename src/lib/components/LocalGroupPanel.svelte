@@ -6,10 +6,10 @@
 -->
 <script lang="ts">
   import UniversePanelBody from './UniversePanelBody.svelte';
-  import type { LocalGroupMember, LocalGroupKind } from '$lib/data';
+  import type { LocalGroupMember, LocalGroupKind, OuterTextOverlay } from '$lib/data';
   import * as m from '$lib/paraglide/messages';
   import { getLocale } from '$lib/paraglide/runtime';
-  import { galaxyDiameter, galaxyDistance, galaxyGroupLabel } from '$lib/explore/format';
+  import { galaxyDiameter, galaxyDistance, galaxyGroupLabel, outerLead } from '$lib/explore/format';
   import { sourceLink } from '$lib/catalogue';
 
   type Props = {
@@ -18,8 +18,10 @@
     onClose: () => void;
     /** Another panel is stacked on this one (a black hole opened from its pin). */
     covered?: boolean;
+    /** The galaxy's reviewed fact and bio in the reader's language; null until loaded or written. */
+    overlay?: OuterTextOverlay | null;
   };
-  let { member, open, onClose, covered = false }: Props = $props();
+  let { member, open, onClose, covered = false, overlay = null }: Props = $props();
 
   const kindLabel = (k: LocalGroupKind): string =>
     k === 'spiral'
@@ -80,6 +82,6 @@
   heroOf={member ? { level: 'local-group', id: member.id } : undefined}
   kind={member ? kindLabel(member.kind) : undefined}
   name={member?.name}
-  lead={member ? [blurb(member.kind)] : []}
+  lead={member ? outerLead(overlay, blurb(member.kind)) : []}
   {facts}
 />

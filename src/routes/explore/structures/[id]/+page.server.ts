@@ -2,6 +2,7 @@ import { error } from '@sveltejs/kit';
 import { getLocale } from '$lib/paraglide/runtime';
 import { getStructureEntity } from '$lib/data/outer-entity';
 import * as m from '$lib/paraglide/messages';
+import { dataSourceItems, sourceLink } from '$lib/catalogue';
 import { structureDistance, structureKindLabel, structureSpan } from '$lib/explore/format';
 import { openInOrreryPath, relatedSections, type OuterRow } from '$lib/explore/outer-page';
 import { structurePageIds } from '../../../../../scripts/site-routes.mjs';
@@ -31,6 +32,7 @@ export const load: PageServerLoad = async ({ params, fetch }) => {
     rows.push({
       label: m.explore_lg_label_distance(),
       value: structureDistance(entity.distMpc, locale),
+      src: sourceLink(entity.catalogue.dist_mpc),
     });
   if (entity.diamMly > 0)
     rows.push({
@@ -45,7 +47,9 @@ export const load: PageServerLoad = async ({ params, fetch }) => {
     title: entity.name,
     kind: structureKindLabel(entity.kind),
     rows,
-    sources: [],
+    sources: dataSourceItems(entity.catalogue, (k) =>
+      k === 'dist_mpc' ? m.explore_lg_label_distance() : null,
+    ),
     sections: relatedSections(entity.related),
     openPath: openInOrreryPath(entity.scale, entity.id),
   };

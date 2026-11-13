@@ -7,7 +7,8 @@
 -->
 <script lang="ts">
   import UniversePanelBody from './UniversePanelBody.svelte';
-  import type { MilkyWayObject } from '$lib/data';
+  import type { MilkyWayObject, OuterTextOverlay } from '$lib/data';
+  import { outerLead } from '$lib/explore/format';
   import * as m from '$lib/paraglide/messages';
 
   type Props = {
@@ -18,8 +19,10 @@
     onClose: () => void;
     /** Another panel is stacked on this one (a black hole opened from its pin). */
     covered?: boolean;
+    /** A Magellanic Cloud's reviewed fact and bio (the galaxy page's text) in the reader's language. */
+    overlay?: OuterTextOverlay | null;
   };
-  let { object, learnHref, open, onClose, covered = false }: Props = $props();
+  let { object, learnHref, open, onClose, covered = false, overlay = null }: Props = $props();
 
   let kindLabel = $derived.by(() => {
     switch (object?.kind) {
@@ -94,7 +97,7 @@
   heroOf={object ? { level: 'milky-way', id: object.id } : undefined}
   kind={object ? kindLabel : undefined}
   name={object?.name}
-  lead={object ? [blurb] : []}
+  lead={object ? outerLead(object.kind === 'satellite-galaxy' ? overlay : null, blurb) : []}
   {facts}
   learn={object ? { href: learnHref, label: m.explore_mw_learn_more() } : undefined}
 />

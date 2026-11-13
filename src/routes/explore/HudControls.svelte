@@ -255,6 +255,7 @@
     <OrbitRuler
       regimes={exploreRegimes}
       highlightRegime={null}
+      collapsible={false}
       onSelect={(id) => {
         openExploreRegime(id);
         close();

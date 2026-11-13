@@ -215,6 +215,17 @@
   let exploreRegimes: OrbitRegime[] = $state([]);
   let exploreRegimePanelOpen = $state(false);
   let selectedExploreRegimeId = $state<string | null>(null);
+  // The ruler row under the pointer or keyboard focus, and the host's drawing hook (UXD-024).
+  let hoverExploreRegimeId = $state<string | null>(null);
+  let setRegimeHighlightFn = $state<((hover: string | null, active: string | null) => void) | null>(
+    null,
+  );
+  $effect(() => {
+    setRegimeHighlightFn?.(
+      hoverExploreRegimeId,
+      exploreRegimePanelOpen ? selectedExploreRegimeId : null,
+    );
+  });
   let selectedExploreRegime = $derived(
     selectedExploreRegimeId
       ? (exploreRegimes.find((r) => r.id === selectedExploreRegimeId) ?? null)
@@ -1986,6 +1997,7 @@
     deepSkyDeepLinkFn = exploreHost.deepSkyDeepLinkFn;
     selectDeepSkyFn = exploreHost.selectDeepSkyFn;
     focusBodyFn = exploreHost.focusBodyFn;
+    setRegimeHighlightFn = exploreHost.setRegimeHighlightFn;
     exitNeighborhoodFn = exploreHost.exitNeighborhoodFn;
     resetNeighborhoodFn = exploreHost.resetNeighborhoodFn;
     resetMilkyWayFn = exploreHost.resetMilkyWayFn;
@@ -2426,16 +2438,20 @@
     <OrbitRuler
       regimes={exploreRegimes}
       highlightRegime={null}
+      activeRegime={exploreRegimePanelOpen ? selectedExploreRegimeId : null}
       onSelect={openExploreRegime}
+      onPreview={(id) => (hoverExploreRegimeId = id)}
       surfaceAnchor={null}
     />
   </div>
 {/if}
 
 <RegimePanel
+  bundle="orbit-regimes-explore"
   regime={selectedExploreRegime}
   open={exploreRegimePanelOpen}
   onClose={closeExploreRegime}
+  onMissionOpen={(id) => void iconic.openMission(id, localeFromPage(page))}
   selectableIds={exploreSelectableIds}
   onResidentClick={openBodyById}
 />
@@ -2588,6 +2604,8 @@
     :global(.mdg-body .ruler) {
       position: static;
       width: 100%;
+      min-width: 0;
+      max-width: none;
       max-height: 32vh;
       left: auto;
       bottom: auto;

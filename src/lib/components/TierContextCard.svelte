@@ -116,7 +116,7 @@
     left: 12px;
     /* Above the nation legend (and the route's locate button) when the
        scene sets --card-bottom. */
-    bottom: var(--card-bottom, 56px);
+    bottom: max(var(--card-bottom, 56px), calc(var(--hud-stack-top, 0px) + 8px));
     /* Over the layer chips (.hud-controls, z 35 on desktop) — while a site is in
        detail the imagery card is what the user is reading. */
     z-index: 36;

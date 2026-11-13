@@ -94,6 +94,8 @@
   import RegimeChip from '$lib/components/RegimeChip.svelte';
   import AgencyRow from '$lib/components/AgencyRow.svelte';
   import { regimeForAltitude } from '$lib/physics/util/orbit-regime-match';
+  import { buildRegimeHighlight, type RegimeHighlight } from '$lib/three/regime-highlight';
+  import { regimeShape, type RegimeShape, type RulerScene } from '$lib/orbit-regime-geometry';
   import {
     getMissionIndex,
     getMission,
@@ -728,6 +730,28 @@
   // carries its category so the per-frame loop can sub-gate against
   // the relevant layer{Stations,Observatories,...} flag.
   let earthSats: Array<import('$lib/surface-scene/earth-satellite-layer').SatObj> = [];
+
+  // The orbit ruler's regime drawn in the scene (UXD-024). The route calls setRegimeHighlight
+  // from the ruler's hover / focus and the open panel; the handle is built in onMount once the
+  // regimes and (on /earth) the Moon ghost's radius are known.
+  let regimeHover: string | null = null;
+  let regimeActive: string | null = null;
+  let regimeMoonR = 0;
+  let regimeHl: RegimeHighlight | null = null;
+  let syncRegimeHighlightImpl: (() => void) | undefined;
+  /** `ID:hover` / `ID:active` / '' — the e2e hook (`data-regime-highlight` on the scene root). */
+  let regimeHlState = $state('');
+  /** Draw `hover` (pointer or focus on a ruler row) and `active` (the open panel's regime). */
+  export function setRegimeHighlight(hover: string | null, active: string | null): void {
+    regimeHover = hover;
+    regimeActive = active;
+    regimeHl?.set(hover, active);
+    regimeHlState = hover ? `${hover}:hover` : active ? `${active}:active` : '';
+  }
+  $effect(() => {
+    void regimes;
+    syncRegimeHighlightImpl?.();
+  });
   // EarthObject cache + selection state (#290 Slice 6b). Cached for the
   // pointer-click handler to look up the clicked sat. selectedSat
   // drives EarthObjectPanel; nulled out when the user selects a
@@ -1183,12 +1207,11 @@
         return;
       }
       const hr = handle.getBoundingClientRect();
-      // Whatever sits in the lower-left under the tab (imagery card, locate chip, orbit
-      // ruler) pushes it up; a ruler that stepped right of the locate chip is out of its way.
+      // Whatever sits in the lower-left under the tab (imagery card, the HUD column of locate
+      // chip, readout and orbit ruler) pushes it up.
       const lowest = [
         root.querySelector('.tier-context-card'),
-        document.querySelector('.locate-slot'),
-        document.querySelector('.ruler'),
+        document.querySelector('.hud-stack-bl'),
       ]
         .map((el) => el?.getBoundingClientRect())
         .filter((r) => r && r.width && r.height && r.left < hr.right)
@@ -1211,9 +1234,9 @@
       mo.disconnect();
     };
   });
-  // The route's Orbit Ruler (bottom-left, behind everything) moves right of the
-  // locate button where they share rows. Published on <html>: the ruler lives in the
-  // route, not here.
+  // The route's bottom-left HUD column (locate chip, readout, orbit ruler: HudStackBL) clears
+  // the centred footer on narrow windows, where its width runs under it. Published on <html>
+  // for the column's `bottom`.
   $effect(() => {
     const root = sceneRoot;
     if (!root) return;
@@ -1223,29 +1246,10 @@
       const r = el?.getBoundingClientRect();
       return r && r.width && r.height ? r : null;
     };
-    const clearProps = () => {
-      html.style.removeProperty('--ruler-left');
-      html.style.removeProperty('--ruler-clear');
-    };
     const check = () => {
-      const ruler = [...document.querySelectorAll('.ruler')].map(visible).find(Boolean);
-      if (!ruler) {
-        clearProps();
-        return;
-      }
-      let right = 0;
-      // The locate chip sits at the ruler's default spot on /earth and /moon, so
-      // wherever they share rows the ruler steps right of it (not only on short windows).
-      const locate = visible(document.querySelector('.locate-slot .ui-chip'));
-      if (locate && locate.top < ruler.bottom && locate.bottom > ruler.top) {
-        right = Math.max(right, locate.right);
-      }
-      const left = right ? Math.round(right + 12) : 12;
-      if (right) html.style.setProperty('--ruler-left', `${left}px`);
-      else html.style.removeProperty('--ruler-left');
-      // On narrow windows the ruler's column runs under the centred footer: lift it clear.
+      const stack = visible(document.querySelector('.hud-stack-bl'));
       const foot = visible(document.querySelector('.site-footer'));
-      if (foot && left < foot.right && left + ruler.width > foot.left) {
+      if (stack && foot && stack.left < foot.right && stack.right > foot.left) {
         html.style.setProperty('--ruler-clear', `${Math.round(innerHeight - foot.top + 8)}px`);
       } else {
         html.style.removeProperty('--ruler-clear');
@@ -1264,7 +1268,7 @@
       cancelAnimationFrame(raf);
       ro.disconnect();
       mo.disconnect();
-      clearProps();
+      html.style.removeProperty('--ruler-clear');
     };
   });
   // .by(): a closure, so TS sees `selected` as SurfaceSite | null, not the
@@ -2152,6 +2156,7 @@
         });
         scene.add(mg.mesh);
         earthMoonR = mg.moonR;
+        regimeMoonR = mg.moonR;
         earthLayerHandles.push(mg);
       }
       if (eol.tides) {
@@ -3624,6 +3629,55 @@
       reducedMotion = r;
     });
     lifecycle.add(stopReducedMotionWatch);
+
+    // Regime highlight (UXD-024): one build per regime list; shapes come from the same functions
+    // that place the orbiters (orbit-regime-geometry.ts).
+    const rulerScene: RulerScene | null =
+      config.planet === 'earth' || config.planet === 'moon' || config.planet === 'mars'
+        ? config.planet
+        : null;
+    let regimeHlKey = '';
+    const regimeMarkerPts: THREE.Vector3[] = [];
+    // A Lagrange-point regime is a point: it rings each of its residents instead.
+    const regimeMarkerPoints = (id: string): THREE.Vector3[] => {
+      regimeMarkerPts.length = 0;
+      if (config.planet === 'earth') {
+        for (const s of earthSats) {
+          if (earthObjectsCache.find((o) => o.id === s.id)?.regime === id) {
+            regimeMarkerPts.push(s.group.getWorldPosition(new THREE.Vector3()));
+          }
+        }
+      } else {
+        for (const om of orbitalMarkers) {
+          const site = orbiterSites.find((x) => x.id === om.siteId);
+          if (regimeForAltitude(site?.altitude_km, regimes ?? [])?.id === id) {
+            regimeMarkerPts.push(om.dotGroup.getWorldPosition(new THREE.Vector3()));
+          }
+        }
+      }
+      return regimeMarkerPts;
+    };
+    syncRegimeHighlightImpl = () => {
+      if (!rulerScene || !regimes || regimes.length === 0) return;
+      const key = `${regimes.map((r) => r.id).join(',')}:${regimeMoonR}`;
+      if (key === regimeHlKey) return;
+      regimeHlKey = key;
+      regimeHl?.dispose();
+      const shapes: Record<string, RegimeShape> = {};
+      for (const r of regimes) {
+        const s = regimeShape(rulerScene, r, { planetRadius, moonR: regimeMoonR });
+        if (s) shapes[r.id] = s;
+      }
+      regimeHl = buildRegimeHighlight({ shapes, markerPoints: regimeMarkerPoints });
+      regimeHl.set(regimeHover, regimeActive);
+      scene.add(regimeHl.group);
+    };
+    syncRegimeHighlightImpl();
+    lifecycle.add(() => {
+      syncRegimeHighlightImpl = undefined;
+      regimeHl?.dispose();
+      regimeHl = null;
+    });
 
     let lastTime = performance.now();
 
@@ -5357,6 +5411,19 @@
           }
         }
 
+        // The ruler's regime, drawn only while the orbits are in view (the ruler's own gate).
+        if (regimeHl) {
+          if (orbitsInView) {
+            regimeHl.update(
+              camera,
+              container?.clientWidth ?? 1,
+              container?.clientHeight ?? 1,
+              now,
+              reducedMotion,
+            );
+          } else regimeHl.group.visible = false;
+        }
+
         if (view === '3d') {
           // composer is null on minimal/low tiers — render direct.
           if (composer) composer.render();
@@ -5403,6 +5470,7 @@
 
 <div
   bind:this={sceneRoot}
+  data-regime-highlight={regimeHlState || undefined}
   class="surface-scene"
   style:--body-tint={config.bodyTintCss}
   style:--chip-tint={config.planet === 'earth' ? undefined : config.bodyTintCss}
@@ -5599,6 +5667,7 @@
       <OrbitRuler
         {regimes}
         highlightRegime={null}
+        collapsible={false}
         onSelect={(id) => {
           onRegimeOpen?.(id);
           close();
@@ -7668,6 +7737,8 @@ sample      ${debugInfo.projectedPxSample}`}
     :global(.mdg-body .ruler) {
       position: static;
       width: 100%;
+      min-width: 0;
+      max-width: none;
       max-height: 32vh;
       left: auto;
       bottom: auto;

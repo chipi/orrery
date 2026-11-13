@@ -199,6 +199,9 @@ const WORLD_HUD_PARTS: Array<[string, string]> = [
   ['distance scale', '.distance-scale'],
   ['nation legend', '.legend-3d'],
   ['locate', '.locate-slot'],
+  // The column's readout (/moon, once a location is resolved): own pixels above the chip. The
+  // column itself (.hud-stack-bl) holds the others, so it is not a part.
+  ['readout', '.moon-observer'],
   ['footer', '.footer-menu'],
 ];
 

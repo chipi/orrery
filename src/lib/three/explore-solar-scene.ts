@@ -3,6 +3,7 @@ import { Line2 } from 'three/examples/jsm/lines/Line2.js';
 import { LineGeometry } from 'three/examples/jsm/lines/LineGeometry.js';
 import { LineMaterial } from 'three/examples/jsm/lines/LineMaterial.js';
 import { PLANETS, type PlanetVisual, type SatelliteDef } from '$lib/explore-scene';
+import { ASTEROID_BELT_R, KUIPER_BELT_R } from '$lib/orbit-regime-geometry';
 import { buildDirectionLabelSprite } from '$lib/three/iconic-trajectory';
 import { onLayerChange } from '$lib/science-layers';
 import { buildLocalGroupLayer } from '$lib/galaxies-layer';
@@ -114,7 +115,7 @@ export function createExploreSolarScene(deps: ExploreSolarSceneDeps) {
   const asteroidBeltGeo = new THREE.BufferGeometry();
   asteroidBeltGeo.setAttribute(
     'position',
-    new THREE.BufferAttribute(sampleBelt(1800, 195, 237, 8), 3),
+    new THREE.BufferAttribute(sampleBelt(1800, ASTEROID_BELT_R[0], ASTEROID_BELT_R[1], 8), 3),
   );
   const asteroidBelt = new THREE.Points(
     asteroidBeltGeo,
@@ -137,7 +138,7 @@ export function createExploreSolarScene(deps: ExploreSolarSceneDeps) {
   const kuiperBeltGeo = new THREE.BufferGeometry();
   kuiperBeltGeo.setAttribute(
     'position',
-    new THREE.BufferAttribute(sampleBelt(2200, 460, 620, 14), 3),
+    new THREE.BufferAttribute(sampleBelt(2200, KUIPER_BELT_R[0], KUIPER_BELT_R[1], 14), 3),
   );
   const kuiperBelt = new THREE.Points(
     kuiperBeltGeo,
@@ -169,8 +170,8 @@ export function createExploreSolarScene(deps: ExploreSolarSceneDeps) {
     mesh.userData = { beltId: id };
     return mesh;
   };
-  const asteroidBeltPick = buildBeltPickAid('asteroid', 195, 237);
-  const kuiperBeltPick = buildBeltPickAid('kuiper', 460, 620);
+  const asteroidBeltPick = buildBeltPickAid('asteroid', ...ASTEROID_BELT_R);
+  const kuiperBeltPick = buildBeltPickAid('kuiper', ...KUIPER_BELT_R);
   scene.add(asteroidBeltPick);
   scene.add(kuiperBeltPick);
 

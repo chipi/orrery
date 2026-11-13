@@ -41,6 +41,9 @@ import { deepSkyRung, type DeepSkyRung } from '$lib/universe/deep-sky-lod';
 import { gravityAccel, logScaleLength, BODY_MASS_KG } from '$lib/orbit-overlays';
 import { PLANETS, realStartAngle } from '$lib/explore-scene';
 import { auToPx } from '$lib/scale';
+import { regimeShape, type RegimeShape } from '$lib/orbit-regime-geometry';
+import { buildRegimeHighlight } from '$lib/three/regime-highlight';
+import { RING_BLUE } from '$lib/universe/scene-pins';
 import { gyro } from '$lib/sensory/device-orientation';
 import { cue } from '$lib/sensory/feedback';
 import { getLocale } from '$lib/paraglide/runtime';
@@ -2013,6 +2016,37 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
   // Exposed to the page's select funnel (selectBody) and Reset View.
   focusBodyFn = focusBody;
 
+  // The orbit ruler's zone drawn in the solar scene (UXD-024): 3D through regime-highlight.ts,
+  // 2D in draw2d, both from the shapes of orbit-regime-geometry.ts (the planets' orbitR and the
+  // belt constants; the three zones beyond the scene are schematic and dashed).
+  const regimeShapes: Record<string, RegimeShape> = {};
+  for (const id of [
+    'SUN',
+    'TERRESTRIAL',
+    'BELT',
+    'GIANTS',
+    'KUIPER',
+    'SCATTERED',
+    'HELIOPAUSE',
+    'OORT',
+  ]) {
+    const shape = regimeShape('explore', { id });
+    if (shape) regimeShapes[id] = shape;
+  }
+  const regimeHl = buildRegimeHighlight({ shapes: regimeShapes });
+  scene.add(regimeHl.group);
+  lifecycle.add(() => regimeHl.dispose());
+  let regimeHover: string | null = null;
+  let regimeActive: string | null = null;
+  const setRegimeHighlightFn = (hover: string | null, active: string | null): void => {
+    regimeHover = hover;
+    regimeActive = active;
+    regimeHl.set(hover, active);
+    const tag = hover ? `${hover}:hover` : active ? `${active}:active` : '';
+    if (tag) bridge.container?.setAttribute('data-regime-highlight', tag);
+    else bridge.container?.removeAttribute('data-regime-highlight');
+  };
+
   // Read-only hooks for the select-focus e2e spec (no shipped behaviour, like
   // __explore2dBodyOffset): where the camera looks, whether the selection ring is up, and where a
   // body is, and where it is on screen (a canvas click lands there). Keys: planet:<id>,
@@ -3878,6 +3912,33 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
       ctx2.stroke();
     });
 
+    // The ruler's zone (UXD-024): the same shapes as the 3D scene, in the 2D units of orbitR.
+    for (const id of new Set([regimeActive, regimeHover])) {
+      const shape = id ? regimeShapes[id] : undefined;
+      if (!shape) continue;
+      const level =
+        id === regimeHover ? 0.9 : 0.55 + 0.35 * (0.5 + 0.5 * Math.sin(performance.now() / 255));
+      const rgb = `${(RING_BLUE >> 16) & 255},${(RING_BLUE >> 8) & 255},${RING_BLUE & 255}`;
+      ctx2.save();
+      ctx2.lineWidth = (shape.kind === 'ring' ? 2 : 1.5) / zoom2d;
+      ctx2.strokeStyle = `rgba(${rgb},${level})`;
+      if (shape.schematic) ctx2.setLineDash([8 / zoom2d, 6 / zoom2d]);
+      if (shape.kind === 'band') {
+        ctx2.beginPath();
+        ctx2.arc(0, 0, shape.outer, 0, Math.PI * 2);
+        ctx2.arc(0, 0, shape.inner, 0, Math.PI * 2, true);
+        ctx2.fillStyle = `rgba(${rgb},${0.14 * (level / 0.9)})`;
+        ctx2.fill('evenodd');
+        ctx2.beginPath();
+        ctx2.arc(0, 0, shape.outer, 0, Math.PI * 2);
+        ctx2.stroke();
+      }
+      ctx2.beginPath();
+      ctx2.arc(0, 0, shape.inner, 0, Math.PI * 2);
+      ctx2.stroke();
+      ctx2.restore();
+    }
+
     // Mission overlay arc (Theme A.A1) — drawn after orbit rings
     // but before planets so the arc sits behind the planet dots.
     if (bridge.overlayArcPx.length > 1 && bridge.overlayMission) {
@@ -4759,6 +4820,13 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
         } else {
           hoverHalo.visible = false;
         }
+        regimeHl.update(
+          camera,
+          bridge.container?.clientWidth ?? 1,
+          bridge.container?.clientHeight ?? 1,
+          performance.now(),
+          deps.getReducedMotion(),
+        );
         for (const b of beltBrightness) {
           const on = bridge.selectedBeltId === b.id;
           b.material.opacity = b.opacity * (on ? 1.8 : 1);
@@ -4948,6 +5016,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     deepSkyGatewayFn,
     deepSkyDeepLinkFn,
     focusBodyFn,
+    setRegimeHighlightFn,
     exitNeighborhoodFn,
     resetNeighborhoodFn,
     resetMilkyWayFn,

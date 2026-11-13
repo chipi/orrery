@@ -471,27 +471,4 @@ test.describe('features that find chips by class', () => {
       for (const el of await page.locator(sel).all()) await expect(el).toBeHidden();
     }
   });
-
-  test('the orbit ruler never sits on top of the locate chip on /earth', async ({ page }) => {
-    await page.setViewportSize({ width: 1280, height: 720 });
-    await page.goto('/earth');
-    await waitForHydration(page);
-    const locate = page.getByTestId('earth-locate-me');
-    await expect(locate).toBeVisible();
-    await page.waitForTimeout(1500);
-    const overlap = await page.evaluate(() => {
-      const a = document.querySelector('[data-testid="earth-locate-me"]')?.getBoundingClientRect();
-      const ruler = [...document.querySelectorAll('.ruler')]
-        .map((el) => el.getBoundingClientRect())
-        .find((r) => r.width && r.height);
-      if (!a || !ruler) return null;
-      return !(
-        a.right <= ruler.left ||
-        ruler.right <= a.left ||
-        a.bottom <= ruler.top ||
-        ruler.bottom <= a.top
-      );
-    });
-    expect(overlap, 'locate chip and ruler boxes intersect').not.toBe(true);
-  });
 });

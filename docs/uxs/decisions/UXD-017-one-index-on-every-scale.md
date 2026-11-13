@@ -87,6 +87,15 @@ I3, WM3). I3 (a colour per planet) was already built here; what changes:
   agencies, not a nation). The orbit/land cue the old blue/red dot carried moves to the meta line as
   words, `1976 · ACTIVE · ON LAND` / `· IN ORBIT` (uppercase), the words of the Orbit and Land chips. With that third part the meta no longer fits beside the name and the agency badge, so the Worlds row is two lines as well: dot | name and badge over the meta, which wraps only after a " · " (two lines at most, `title` with the whole text; German "ABGESTÜRZT · AUF DER OBERFLÄCHE" needs the second line).
 
+## Note 2026-11-13 — L45-T2: the lead slot holds a round photo
+
+[UXD-025](UXD-025-lists-carry-a-round-photo.md) (slice T2) puts the 28 px `EntityThumb` in the lead slot of the
+solar-system rows (the slot grows from 26 to 28 px on that scale; 40 of 51 rows have a photo, the 11 with no
+image keep the dot, centred in the same slot) and of the Worlds' rows (`/moon /mars /venus /earth`, 28, 27, 3
+and 73 of the same number of rows; the nation-colour dot becomes the photo's ring). The neighbourhood and the six
+outer scales stay without photos (UXD-025 decision 3, held). The rows, the roving items and the ↗ links are
+unchanged. No new string.
+
 ## Consequences
 
 The next page type is a one-line addition per row. Each scale's list is the keyboard way into its scene.

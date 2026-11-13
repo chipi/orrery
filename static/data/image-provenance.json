@@ -62454,23 +62454,22 @@
     {
       "id": "80098cbb21df29c3",
       "path": "/images/small-bodies/pluto/02.1x1.jpg",
-      "source_type": "wikimedia-commons",
-      "title": "File:Pluto_in_True_Color_-_High-Res.jpg",
-      "author": "NASA",
+      "source_type": "nasa-images-api",
+      "title": "New Horizons Flyby of Pluto (GSFC_20171208_Archive_e000684)",
+      "author": "NASA/GSFC",
       "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/wiki/File%3APluto_in_True_Color_-_High-Res.jpg",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Pluto_in_True_Color_-_High-Res.jpg",
+      "source_url": "https://images.nasa.gov/details/GSFC_20171208_Archive_e000684",
+      "image_url": null,
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
       "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
       "modifications": [
-        "downloaded-via-special-filepath",
-        "reencoded-jpeg"
+        "identified-by-image-match"
       ],
       "revid": null,
       "pageid": null,
-      "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.926Z"
+      "nasa_id": "GSFC_20171208_Archive_e000684",
+      "fetched_at": "2026-11-13T22:00:00.000Z"
     },
     {
       "id": "ffb016ecf2852fc3",

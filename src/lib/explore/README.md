@@ -21,7 +21,7 @@ wrappers; markup pieces live next to it in `src/routes/explore/`.
   object asks that object's overlay). The panel's name is its INDEX row's.
 - `outer-page.ts` — what the galaxy and structure pages share: the row and Related-section shapes and
   the `?context=<scale>&pick=<id>` link into the scene.
-- `paths-legend.ts` — PATHS layer rows, iconic taglines (shown in the card beside the hovered legend row, UXD-026), interstellar craft.
+- `paths-legend.ts` — PATHS layer rows (the mission thumb in each row is `thumbOf('missions', mission_id)`, UXD-025), iconic taglines (shown in the card beside the hovered legend row, UXD-026), interstellar craft.
 - `format.ts` — HUD formatters (scale numbers, light units, context names,
   star colours, satellite sizes, time dilation, `planetName`, the solar-system INDEX meta line: `planetIndexMeta`, `smallBodyIndexMeta`, `moonIndexMeta`, `beltIndexMeta`). The galaxy and structure values
   (`galaxyDistance`, `galaxyDiameter`, `structureDistance`, `structureSpan`, the kind and membership

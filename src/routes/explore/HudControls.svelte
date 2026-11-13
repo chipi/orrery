@@ -5,6 +5,8 @@
   import EnterArButton from '$lib/components/EnterArButton.svelte';
   import EnterSkyButton from '$lib/components/EnterSkyButton.svelte';
   import Chip from '$lib/components/Chip.svelte';
+  import EntityThumb from '$lib/components/EntityThumb.svelte';
+  import { thumbOf } from '$lib/entity-thumb';
   import LayerChipRow from '$lib/components/LayerChipRow.svelte';
   import ResetViewButton from '$lib/components/ResetViewButton.svelte';
   import MobileDrawerGroup from '$lib/components/MobileDrawerGroup.svelte';
@@ -242,7 +244,7 @@
             data-testid="paths-legend-row-{entry.mission_id}"
             data-audio-stage="iconic-mission-{entry.mission_id}"
           >
-            <span class="swatch" style="background-color: {entry.color};" aria-hidden="true"></span>
+            <EntityThumb src={thumbOf('missions', entry.mission_id)} ring={entry.color} />
             <span class="name">{entry.name}</span>
             <span class="logos" aria-hidden="true">
               {#each agencyToLogoPaths(entry.agency) as logoPath (logoPath)}
@@ -363,7 +365,7 @@
           data-testid="paths-legend-row-{entry.mission_id}"
           data-audio-stage="iconic-mission-{entry.mission_id}"
         >
-          <span class="swatch" style="background-color: {entry.color};" aria-hidden="true"></span>
+          <EntityThumb src={thumbOf('missions', entry.mission_id)} ring={entry.color} />
           <span class="name">{entry.name}</span>
           <span class="logos" aria-hidden="true">
             {#each agencyToLogoPaths(entry.agency) as logoPath (logoPath)}
@@ -600,7 +602,7 @@
   .paths-legend-tip.is-on {
     opacity: 1;
   }
-  /* Single-line row: swatch, name, agency logos, launch year. */
+  /* Single-line row: the round photo (ringed in the path colour), name, agency logos, launch year. */
   .paths-legend-row {
     display: flex;
     align-items: center;
@@ -608,7 +610,7 @@
     background: none;
     border: none;
     color: #dde4ff;
-    padding: 5px 6px;
+    padding: 4px 6px;
     border-radius: 3px;
     cursor: pointer;
     text-align: left;
@@ -639,13 +641,6 @@
   }
   .paths-legend-row.is-selected .year {
     color: rgba(255, 255, 255, 0.95);
-  }
-  .paths-legend-row .swatch {
-    display: inline-block;
-    width: 18px;
-    height: 3px;
-    border-radius: 2px;
-    flex-shrink: 0;
   }
   .paths-legend-row .name {
     flex: 1;
@@ -711,11 +706,11 @@
       max-height: calc(100vh - var(--nav-height) - 220px);
       z-index: 36;
     }
-    /* 28 px rows (still above the 24 px hit floor): the 18 rows and the title fit a 900 px-high
+    /* 28 px rows, the 28 px thumb filling the row (above the 24 px hit floor): the 18 rows and the title fit a 900 px-high
        window without a scrollbar (C7 IM7). A touch row keeps its 36 px. */
     .paths-legend-row {
       min-height: 28px;
-      padding: 3px 6px;
+      padding: 0 6px;
     }
     .paths-legend-tip {
       display: block;

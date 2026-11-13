@@ -40,7 +40,7 @@ the brief's §1 and §2.
    the title and the popover stay. The page still measures the legend's top and caps its height
    (`sizePathsLegend`), now to the space above the lower-left stack (see decision 10). Measured, not the brief's
    arithmetic: the 18 rows need a 599 px legend, which fits without scrolling at 1440×900 (the list is 538 px, e2e);
-   at 1366×768 the list is 478 px and at 1280×720 430 px, and scrolls inside. The touch drawer keeps 36 px rows.
+   at 1366×768 the list is 478 px and at 1280×720 430 px, and scrolls inside. The touch drawer keeps 36 px rows. Since L45-T3b ([UXD-025](UXD-025-lists-carry-a-round-photo.md)) each row leads with a 28 px round photo ringed in the path colour in place of the swatch line; the fine-pointer row stays 28 px (vertical padding 0, the photo fills it) and the touch row 36 px (padding 4/6), so the list heights above are unchanged.
 6. **The milestone box (IM2, IM4).** One canvas sprite per labelled waypoint, drawn once at the device pixel ratio
    (2 at least) the first time its mission is highlighted (the 18 builds at load stay cheap). Header `n/N · date`
    (the milestone's number among the trajectory's labelled waypoints, Today excluded, and the data's own ISO date:
@@ -119,7 +119,6 @@ lacked), `select-focus.spec.ts` IM5 and `perf-explore-iconic-clicks.spec.ts` re-
 
 ## Not covered
 
-A real device; a production build; the CJK locales' boxes (no screenshot); the PATHS legend's thumbnails (L45, T3, after
-this slice, the row markup takes them); the legend over the folded ruler header on a window shorter than about
+A real device; a production build; the CJK locales' boxes (no screenshot); the legend over the folded ruler header on a window shorter than about
 700 px (they overlap, as the legend overlapped the time dock before); the pill and mission box on a phone (the
 drawer has neither card nor boxes at the same time as the sheet).

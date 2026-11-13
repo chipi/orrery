@@ -1,11 +1,11 @@
 # UXD-025 — Lists carry a round photo of the row's own thing, from one component and one resolver
 
-- **Status**: accepted (T1 built: the component, the resolver, the manifest, the regime panel and its founding missions; T2 built: the solar-system and the Worlds' INDEXes; T3a built: the station lists and the belt members; T4 built: the fleet panel and the entity pages; T3b, the PATHS legend, is decided and not built)
+- **Status**: accepted (T1 built: the component, the resolver, the manifest, the regime panel and its founding missions; T2 built: the solar-system and the Worlds' INDEXes; T3a built: the station lists and the belt members; T4 built: the fleet panel and the entity pages; T3b built: the PATHS legend)
 - **Date**: 2026-11-13 (proposed and decided)
 - **Decider**: the operator, 2026-11-13 — all 8 recommendations of `docs/wip/2026-11-13-L45-thumbnail-scan-brief.md` §13 approved (option a each); slices T1 to T4 approved, built in that order
 - **Answers**: L45 of the UX feedback plan
 - **Builds on**: [UXD-024](UXD-024-orbit-ruler-one-row-draws-its-regime.md) (the 28 px resident photo this generalises), [UXD-001](UXD-001-ui-accent-blue-replaces-teal.md) (no teal or cyan ring), [UXD-017](UXD-017-one-index-on-every-scale.md) (the INDEX rows T2 puts a photo in)
-- **Changes**: `src/lib/components/EntityThumb.svelte`, `src/lib/entity-thumb.ts` (new, each with its test), `RegimePanel.svelte`, `surface-map/nation-palette.ts` (`agencyRingColor`), `scripts/build-entity-thumbs.ts` (new), `scripts/vision/build-credit-thumbs.mjs` (`--paths`), `scripts/validate-data.ts`, `static/data/entity-thumbs.json` (new; T2 adds `sites`), T2: `ScaleIndex.svelte`, `SurfaceIndexPanel.svelte`, `index-panel.css`, `surface-map/surface-index.ts` (`IndexItem.thumb`), `data/gallery-ids.ts` (extracted from `galleries.ts`), `static/data/orbit-regime-thumbs.json`, 352 files in `static/credit-thumbs/images/`, 22 `1x1.jpg` crops in `static/images/`, T3a and T4: `StationRoute.svelte`, `BeltPanel.svelte`, `FleetEntryPanel.svelte`, `SiteEntityPage.svelte`, `entity-page.css`, `surface-scene/MuseumPanel.svelte`, `routes/fleet/[id]/` and `routes/programs/[id]/` pages, `entity-thumb.ts` (`beltMemberThumb`), `data/site-entity.ts` (hardware `agency`), no data file; [UXS-014](../UXS-014.md), Design System §5.16, `docs/adr/TA.md`, `docs/accessibility.md`, the component and scripts READMEs
+- **Changes**: `src/lib/components/EntityThumb.svelte`, `src/lib/entity-thumb.ts` (new, each with its test), `RegimePanel.svelte`, `surface-map/nation-palette.ts` (`agencyRingColor`), `scripts/build-entity-thumbs.ts` (new), `scripts/vision/build-credit-thumbs.mjs` (`--paths`), `scripts/validate-data.ts`, `static/data/entity-thumbs.json` (new; T2 adds `sites`), T2: `ScaleIndex.svelte`, `SurfaceIndexPanel.svelte`, `index-panel.css`, `surface-map/surface-index.ts` (`IndexItem.thumb`), `data/gallery-ids.ts` (extracted from `galleries.ts`), `static/data/orbit-regime-thumbs.json`, 352 files in `static/credit-thumbs/images/`, 22 `1x1.jpg` crops in `static/images/`, T3a and T4: `StationRoute.svelte`, `BeltPanel.svelte`, `FleetEntryPanel.svelte`, `SiteEntityPage.svelte`, `entity-page.css`, `surface-scene/MuseumPanel.svelte`, `routes/fleet/[id]/` and `routes/programs/[id]/` pages, `entity-thumb.ts` (`beltMemberThumb`), `data/site-entity.ts` (hardware `agency`), T3b: `routes/explore/HudControls.svelte`, no data file; [UXS-014](../UXS-014.md), Design System §5.16, `docs/adr/TA.md`, `docs/accessibility.md`, the component and scripts READMEs
 
 ## Context
 
@@ -57,9 +57,8 @@ map, loading the 512 px crop (30 to 56 KB) where the pipeline already has a 192 
 7. **Built after T1, decided.** T2 the Worlds' INDEX and the solar-system INDEX, after C6 (decision 5, option a;
    see "T2" below). T3a the station module lists and the belt members, T4 the fleet panel's lists (the MISSIONS tab
    printed the raw mission id: fixed first) and the entity pages' Related and hardware lists (decision 6, option a;
-   a patched program row keeps its patch), built after T2 (see "T3a" and "T4" below). **Still to build, decided.**
-   T3b the PATHS legend (thumb with the path colour as ring, the swatch dot dropped; Voyager 2 neutral, decision 8,
-   option a); its file, `paths-legend.ts`, is with the C7 work.
+   a patched program row keeps its patch), built after T2 (see "T3a" and "T4" below). T3b the PATHS legend (thumb with the path colour as ring, the swatch
+   line dropped; Voyager 2 neutral, decision 8, option a), built after C7 (see "T3b" below).
 
 ## T2 — the solar-system and the Worlds' INDEXes (built 2026-11-13, after C6)
 
@@ -138,6 +137,26 @@ map, loading the 512 px crop (30 to 56 KB) where the pipeline already has a 192 
    museum is not in the manifest); the single mission row of a site page.
 6. **No file generated**; the manifest was current.
 
+## T3b — the PATHS legend (built 2026-11-13, after C7)
+
+1. **Rows** (`HudControls.svelte`, the desktop legend and the phone drawer copy, each of the 18 `PATHS_LEGEND` rows):
+   an `EntityThumb` (`thumbOf('missions', mission_id)`, 28 px) leads the row in place of the 18 × 3 px swatch line;
+   the name, the agency logos and the year are as before. 18 of 18 rows have a thumb (every one is a trajectory
+   mission with a `missions` image).
+2. **Ring = the path colour** (decision 8, option a): `entry.color` goes to `EntityThumb`'s `ring`, so the ring is the
+   colour of the line in the scene. The one teal path, Voyager 2 (`#4ecdc4`), gets the neutral ring through `ringColor`
+   (UXD-001), and its line in the scene stays teal (`paths-legend.ts` `a3-keep`). A thumb that fails to load shows the
+   8 px dot in the path colour in the same slot (the teal one for Voyager 2: the dot is the data colour, as in the
+   other lists); there is no line fallback, the line is gone.
+3. **Row size**: the legend does not grow. The fine-pointer row stays 28 px (the 28 px thumb fills it: padding 3 px
+   became 0 vertically, so neighbouring rings are 2 px apart, the list's gap), the touch row stays 36 px (padding 5
+   px became 4 px, 28 + 8). The brief's "+36 px" counted rows of 36 px on a fine pointer, which C7 had already cut
+   to 28. Measured: the list is 538 px at 1440×900 with no scrollbar before and after, 18 rows × 28 + 17 × 2; at
+   1280×720 it still scrolls inside and the legend still ends above the folded ruler (`sizePathsLegend` unchanged).
+4. **Agency logos kept**, no row of the 280 px legend overflows its box in `en`, `de`, `ru` and `ar` (`scrollWidth` ≤ `clientWidth`;
+   Cassini-Huygens, with two logos, is the widest).
+5. **No new string** (the thumb is decorative, `alt=""`), no file generated, no new dependency.
+
 ## Consequences
 
 The lists get lighter, not heavier: a regime panel's 4 to 9 photos are 192 px WebPs (3 to 9 KB each) instead of
@@ -147,7 +166,7 @@ change; `validate-data` says so. The ring of a row that carries no identity colo
 the founding missions in every regime panel: giving them their agency's colour would need the mission's agency
 in a row that only holds a `mission_id`.
 
-Not covered: the PATHS legend (T3b); the held lists; (T3a and T4: Firefox and WebKit, a production build, a real device, the drawer copy of the station list in its own sheet, `de` and `ar` on every list: `de` was read on `/iss` and the fleet panel, `ar` on `/iss` and `/fleet/atlas-v`;) (T2: Firefox and WebKit, whether a production build behaves like the dev
+Not covered: the held lists; (T3b: Firefox and WebKit, a production build, a real device, `ru` on the phone drawer, the legend at widths other than 1440 and 1280, the lazy load of a drawer thumb before its tab is opened;) (T3a and T4: Firefox and WebKit, a production build, a real device, the drawer copy of the station list in its own sheet, `de` and `ar` on every list: `de` was read on `/iss` and the fleet panel, `ar` on `/iss` and `/fleet/atlas-v`;) (T2: Firefox and WebKit, whether a production build behaves like the dev
 server, a real device, the Worlds' index with the folded filters of the next slice;) right-to-left and the long-name locales (the T1 rows are flex and grid
 without physical offsets and were screenshot only in English); a phone width under 390 px; whether the
 dev-server panel behaves the same in a production build (a hidden panel not fetching its lazy images was not
@@ -186,3 +205,10 @@ nothing, no `img` on the other scales) and `surface-index.spec.ts` (photo on eve
 slot 06 for Apollo 16, blocked file to the dot, names aligned, closed INDEX fetches nothing). Screenshots at
 1440×900, 390×844 and 844×390: `/explore` All and Moons (en, de, ar), `/moon` (en, de, ar), `/mars`, `/earth`,
 `/venus`.
+
+T3b: unit `paths-legend.test.ts` (each of the 18 rows has a thumb on disk and its ring is the path colour, the neutral
+for Voyager 2 only). E2E `explore-iconic-legend.spec.ts` (18 photos, 28 × 28, rings of Pioneer 10, Voyager 1 and
+Voyager 2, no `.swatch`, still no scrollbar at 1440×900; a blocked file shows 18 dots in the path colour and the row
+keeps its height; the phone drawer rows carry the photo, 36 to 44 px), and the existing "legend stops above the
+lower-left stack" case at 1440×900, 1366×768 and 1280×720; run on the three Chromium projects against the dev server.
+Screenshots read: 1440×900 (en, de, ru, ar), 1280×720 (en), 390×844 drawer (en, de, ar).

@@ -102,6 +102,7 @@ Do not propose alternatives. If a locked decision needs revisiting, write an ADR
 | Mission data | Static JSON under `static/data/` (served as `/data/...`) | ADR-006 |
 | Mission flight params | Optional `flight` sub-object + `flight_data_quality` honesty flag | ADR-027 |
 | Panel tabs + galleries | Tabbed detail panels (OVERVIEW · GALLERY · TECHNICAL · SIZES · LEARN · FLIGHT); GALLERY is always the 2nd tab when present (conditional on per-category manifest); LEARN links in locale overlays | ADR-017, ADR-016 |
+| Star / outer-scale / black-hole panels | One shared `UniversePanelBody` (and `UniverseFacts`): one hero or none (no hero, no slot), GALLERY second and only with two or more images, a star's IN THE SKY tab holds the constellation finder, lead `.editorial`, no `rem` font size; heroes from `static/data/universe/panel-heroes.json` (every key needs a file and a provenance row, checked by validate-data); a black hole opens in place and "See the lensing simulation" enters the takeover; enforced by `bash scripts/check-universe-panels.sh` | UXD-023 |
 | Lambert solver | Web Worker | ADR-008 |
 | Default fly scenario | ORRERY-1 free-return flyby (library missions add landings / cislunar arcs) | ADR-009 |
 | Transfer arc | Keplerian half-ellipses | ADR-010 |

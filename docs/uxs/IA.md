@@ -188,6 +188,8 @@ Regions that persist across or within a screen.
 
 **Science links in panels** — a panel offers at most five `/science` sections as cards, through one helper (`pickScienceLinks`), never a per-type default list ([UXD-022](decisions/UXD-022-science-link-lists.md)); each orbit-ruler pane has its own card, none repeating inside a ruler ([UXD-010](decisions/UXD-010-ruler-regimes-each-get-their-own-science-card.md)).
 
+**Star, outer-scale and black-hole panels** — one body for all nine (`UniversePanelBody`, [UXD-023](decisions/UXD-023-star-and-outer-panels-follow-the-planet-pattern.md)): one hero or none, GALLERY second with two or more images, a star's IN THE SKY tab (finder, constellation, zodiac note, "Show constellation lines"); a black hole opens in place and "See the lensing simulation" enters the takeover.
+
 **Bottom bar** — `height: 68px`, `bottom: 0`, `left: 0`, `right: 0`. Present on: fly (timeline scrubber, play/pause, speed controls). Absent on all other screens.
 
 **HUD panels** — fly screen has four fixed-position panels (left identity, right navigation, right systems, CAPCOM panels). These are screen-specific, not shared shell regions.

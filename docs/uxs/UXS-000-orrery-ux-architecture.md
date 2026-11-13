@@ -191,11 +191,11 @@ gains a link to the UXD, in the same change as the rule.
 | `docs/uxs/IA.md` 121–152 (§home-cards)                                                | UXD-003 (route-card titles, the removed icon text)                   |
 | `docs/uxs/IA.md` 233–242 (spacing tokens 52 px, 314 px) and 203 (text-dim)            | none (SC-1, SC-2, SC-3 first)                                        |
 | `docs/uxs/UXS-013.md` 63 (`--size-lead`) and the hero/card typography section         | UXD-002, UXD-003                                                     |
-| `docs/uxs/UXS-001.md` (detail panel tabs; no star-panel section today)                | UXD-008 (add a star-panel section), UXD-002 (panel overview text)    |
+| `docs/uxs/UXS-001.md` (detail panel tabs; no star-panel section today)                | UXD-008, UXD-023 (star-panel section added in B3), UXD-002 (panel overview text) |
 | `docs/uxs/UXS-002.md` 38, 40, 65, 84 and `UXS-003.md` 42, 89–90 (teal HUD and CAPCOM) | UXD-001                                                              |
 | `docs/uxs/UXS-004.md`, `UXS-005.md`, `UXS-006.md` (size and italic lines)             | UXD-002                                                              |
 | `docs/uxs/UXS-006.md` (Moon map; no panorama section today)                           | UXD-007 (add a panorama section; surface sites share the scene, ADR-072) |
-| `docs/uxs/UXS-014.md` 25 onward ("Selecting & understanding an object")               | UXD-008 (star panel), UXD-010 (orbit ruler science cards; no ruler section today) |
+| `docs/uxs/UXS-014.md` 25 onward ("Selecting & understanding an object")               | UXD-008, UXD-023 (star and outer panels), UXD-010 (orbit ruler science cards; no ruler section today) |
 | `docs/uxs/UXS-016.md` §1 (scale ladder rail)                                          | UXD-010 only if the ruler is specified there; otherwise none         |
 | `docs/concept/05_Design_System.md` 48, 58, 61, 72, 87, 90, 97, 432 (teal)             | UXD-001                                                              |
 | `docs/concept/05_Design_System.md` 125, 144–148, 215 (type rules)                      | UXD-002                                                              |

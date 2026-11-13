@@ -123,6 +123,7 @@ tables); keep it.
 | Question | Run | Where it runs |
 | --- | --- | --- |
 | does every panel list its /science links through `pickScienceLinks` (at most five), with no per-type default list, no mission push-chain, no hand-written link list in a panel or banner, no section pair that differs between locales, no regime card repeated inside a ruler, no two bodies of one type with the same list (UXD-022) | `check-science-links.mjs` (prints `B2-CHECK violations: 0`; `b2-keep: <why>` marks an allowed single link); the cap over all 289 panels, the family share and the locale drift are `src/lib/science-links.test.ts` | by hand and in `npm run test` (the test file) |
+| do the nine star, outer-scale and black-hole panels sit on the shared `UniversePanelBody` (one hero or none, a star's finder only in IN THE SKY, no private head/cell rule, no `rem` font size), does a black hole open in place with the lensing action, do the hero data, the EHT file and its provenance, the five locale keys, the tests and the docs exist (UXD-023) | `check-universe-panels.sh` (prints `B3-CHECK violations: 0`; `b3-keep: <why>` marks an allowed hit) | by hand |
 
 ## Links and 404s — which tool, when
 

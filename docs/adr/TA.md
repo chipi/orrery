@@ -70,7 +70,7 @@ The production app ships a set of user-facing routes (the core experience below;
 | Programs | **42** |
 | Descent profiles | **77** |
 | Launch profiles | **40** |
-| AJV schemas | **85** |
+| AJV schemas | **87** |
 | Essays | **13** |
 
 _Top-level routes: catalog · colophon · credits · earth · essays · explore · fleet · fly · gallery · iss · lab · learn · library · live · mars · missions · moon · patches · plan · posters · privacy · programs · science · sourcing · tiangong · venus · worlds_
@@ -378,6 +378,8 @@ How 3D works on every canvas route. The application has **seven distinct 3D scen
 - **Disposal:** every route's teardown walks the scene graph and calls `geometry.dispose()` + `material.dispose()` (texture too where appropriate) for each `Mesh`. Without this, locale switching leaks ~6 MB per swap.
 
 ### /explore v2 — The Known Universe (`$lib/universe`, Slices 0–8 · explore-v2 branch)
+
+**Panels (B3, [UXD-023](../uxs/decisions/UXD-023-star-and-outer-panels-follow-the-planet-pattern.md))** — `StarPanel`, `DeepSkyPanel`, `BlackHolePanel` and the six outer-scale panels sit on `UniversePanelBody` (+ `UniverseFacts`): one hero or none, GALLERY second with two or more images, a star's IN THE SKY tab. Heroes: `static/data/universe/panel-heroes.json` (`getUniverseHero`; a deep-sky photo is served as its thumb, a part-of photo captions what is pictured), a star's photo from its overlay, further star images from `star-gallery.json` (`getNamedStarGallery`, empty at ship). Image lane `/images/black-holes/<id>/NN.webp` (the EHT 2022 Sagittarius A* image, ESO, CC BY 4.0); focal points in `stars-hero-overrides.json` / `black-holes-hero-overrides.json`. A black hole opens its panel in place (`bridge.bhPanelHole`); the lensing takeover (`bridge.activeBlackHole`) is its action or `?bh=`.
 
 Extends `/explore` outward from the solar system into the real stellar neighborhood, in place. **v1 is untouched:** the solar scene + composer render path are unchanged; the neighborhood is a **second `THREE.Scene`, dynamically imported only at the boundary** (RFC-032 C-F), so v1's bundle + first paint don't move. PRD-030 / RFC-032 / UXS-014.
 

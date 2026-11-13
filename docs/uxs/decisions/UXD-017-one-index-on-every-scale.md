@@ -7,6 +7,7 @@
   (`docs/wip/2026-11-12-scale-index-brief.md`, "Decisions (operator, 2026-11-12)")
 - **Answers**: the brief's §5 questions 1 to 13; carries C6 of the UX feedback plan (kind filters, meta
   line, planet colour dots) for the solar system
+- **Amended by**: slice C6 (2026-11-13), below
 - **Superseded in part by**: [UXD-019](UXD-019-select-equals-focus.md) — a row now also takes the camera, and
   a member of an outer scale is a link (`?context=&pick=`); the rest of this decision stands
 - **Changes**: `src/lib/components/ScaleIndex.svelte` (new; replaces `StarIndex.svelte` and
@@ -44,7 +45,7 @@ and a `↗` link where the object has an entity page.
 - **Neighbourhood**: stars and deep-sky objects in one list, a Deep sky chip filters.
 - **Chips**: kind chips from the labels the panels already print, plus "Notable objects" (own key since `4a21e77beca`; "Highlights" read as "achievements" in ja, ko, ar) where the data has
   headliners, at most five besides All; no distance or size filter.
-- **Solar system** gains the moons, the two belts, a meta line (a moon's planet) and each body's colour dot.
+- **Solar system** gains the moons, the two belts, a meta line and each body's colour dot (the meta line and the chips: see the amendment of 2026-11-13).
 - **Open state**: persists across a scale jump on a fine pointer, closes on a coarse one (the 320 px rail
   covers most of a phone). It is hidden during a takeover (black hole, deep-sky immersion, an exoplanet's
   BodyScene, which gets its own list in a later slice) and, outside the solar system, in the 2D view.
@@ -55,6 +56,36 @@ and a `↗` link where the object has an entity page.
   `ScaleIndex` in the next one.
 - `StarIndex` and `ExploreBodyIndex` are deleted, with the stale "Index drawer tab" comments; UXD-015 and
   the A5 brief no longer say the neighbourhood's stars have no links.
+
+## Amendment 2026-11-13 — slice C6: a meta line on every row, a chip for every row, nation colours on the Worlds
+
+The operator approved all five recommendations of `docs/wip/2026-11-13-slice-C6-brief.md` §12 (I1, I2,
+I3, WM3). I3 (a colour per planet) was already built here; what changes:
+
+- **Meta line** on every solar-system row, built per request locale in `scale-index.ts` from data the
+  repo already has (`planetIndexMeta`, `smallBodyIndexMeta`, `moonIndexMeta`, `beltIndexMeta` in
+  `src/lib/explore/format.ts`; numbers through `Intl`, the unit through `unit_au_value` and
+  `mp_flight_unit_km`, the AU range through the orbit ruler's `fmtRegimeAU`):
+  planet "1.52 AU · 6,779 km · 2 major moons" (the diameter from `PLANET_STATS`; "major" because the
+  count is the moons the scene draws, not the real number; no moon part for Mercury and Venus);
+  dwarf, asteroid and Kuiper object "2.77 AU · 940 km" (three significant figures, diameter = 2 ×
+  `radius_km`); comet "17.8 AU" (no size); moon "Jupiter · 3,643 km"; belt "2.2–3.2 AU"; the Sun "Star"
+  and ʻOumuamua "interstellar object" are the kind label. The prerendered link rows carry no meta.
+- **A two-line row on the solar-system INDEX only**: name over meta, a 26 px lead slot spanning both
+  lines, still one `button.si-row`. The other seven scales keep one line (their meta is a 6 to 20
+  character kind label). The meta's `title` carries the full text for the ellipsis.
+- **Chips**: Planets, Dwarfs, Asteroids (asteroids + Arrokoth), Moons, Comets (+ ʻOumuamua), five besides
+  All. Every solar-system row is under a chip except the Sun and the two belts (All only); a unit test
+  (`scale-index.test.ts`) names those three, so a new body cannot be silently unreachable. This closes a
+  gap of the first build: the Dwarfs chip matched 4 of 51 rows, while the layer chip DWARFS also controls
+  the 15 asteroids and Arrokoth. New keys: `explore_index_filter_asteroids`, `explore_index_moon_count`
+  (+ `_one _two _few _many`); the Moons chip reuses `explore_index_section_moons`, the Sun's meta
+  `explore_ds_cat_star`.
+- **The Worlds' index** (`SurfaceIndexPanel`, still its own component): a site's dot is its nation colour
+  `colorFor(site)`, the legend swatch's colour, with a 1 px light ring (`rgba(255,255,255,0.35)`) so the
+  dark navy and dark red read; an Earth object keeps its own object colour (`earth-objects.json` has
+  agencies, not a nation). The orbit/land cue the old blue/red dot carried moves to the meta line as
+  words, `1976 · Active · On land` / `· In orbit`, the words of the Orbit and Land chips.
 
 ## Consequences
 

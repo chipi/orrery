@@ -11,6 +11,8 @@
  *        focal: [x, y], category, subject, alt: { "<locale>": "<text>" … all 14 },
  *        agency: "<gallery credit label>", author?: "<only when the source's author field is wrong>" } }
  * `agency` is required: the credit tools keep a row's old agency, which belonged to the old picture.
+ * A key that names the NEXT free slot of a gallery (the slot after the last served one) adds a new
+ * picture instead of replacing one; run rebuild-gallery-manifests.ts after it.
  *
  * Usage: npx tsx scripts/replace-gallery-slots.ts <map.json> [--dry-run]
  * Then: rebuild-gallery-manifests.ts, build-i18n-bundles.mjs, build-offline-manifest.mjs,
@@ -69,7 +71,15 @@ const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 const problems: string[] = [];
 for (const [rel, s] of Object.entries(map)) {
   if (!/^[a-z0-9-]+\/[a-z0-9-]+\/\d\d$/.test(rel)) problems.push(`${rel}: not <surface>/<id>/<NN>`);
-  if (!existsSync(`static/images/${rel}.webp`)) problems.push(`${rel}: no served slot to replace`);
+  // A slot that does not exist yet is accepted only as the next free number of its gallery
+  // (it is appended; rebuild-gallery-manifests.ts then counts it).
+  const nn = Number(rel.slice(-2));
+  const prev = `${rel.slice(0, -2)}${String(nn - 1).padStart(2, '0')}`;
+  if (
+    !existsSync(`static/images/${rel}.webp`) &&
+    !(nn > 1 && existsSync(`static/images/${prev}.webp`))
+  )
+    problems.push(`${rel}: no served slot to replace, and it is not the next free slot`);
   if (s.source !== 'commons' && s.source !== 'nasa')
     problems.push(`${rel}: source must be commons or nasa`);
   if (!s.id || !s.subject || !s.category || !s.agency)

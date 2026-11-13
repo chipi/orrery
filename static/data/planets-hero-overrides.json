@@ -3,9 +3,9 @@
  "source_audit": "(manual curation — populate via /dev/slice-a-review or hand-edit)",
  "overrides": {
   "mars": {
-   "slot": "03.jpg",
-   "reason": "manual hero override — Marko 2026-09-12 (no-panorama hero rule, card/hero pass)",
-   "approved_at": "2026-09-12"
+   "slot": "06.jpg",
+   "reason": "operator 2026-11-13: SVS true-colour globe, matches Earth 05 / Jupiter 01 in the whole-disc frame",
+   "approved_at": "2026-11-13"
   },
   "earth": {
    "slot": "05.jpg",

@@ -1,8 +1,8 @@
 # UXD-029 — Planet heroes: the whole disc on black, planets only
 
-- **Status**: accepted (frame built; the Mars picture change waits for the operator's yes on the crop, see Not done)
+- **Status**: accepted (frame and Mars hero built; EP3 relocation not yet)
 - **Date**: 2026-11-13 (proposed and decided)
-- **Decider**: the operator, 2026-11-13 — recommendations of `docs/wip/2026-11-13-slice-C10-brief.md` §12 approved as written ("I am OK on 25 recommendations", commit `ec0ceeb9be2`, for C6 to C10 together), then the side-by-side sheet: "whole disc for the eight unchanged pictures: yes"; Mars: the 2018 picture (slot 04) **with a tighter crop**, seen by the operator before it lands.
+- **Decider**: the operator, 2026-11-13 — recommendations of `docs/wip/2026-11-13-slice-C10-brief.md` §12 approved as written ("I am OK on 25 recommendations", commit `ec0ceeb9be2`, for C6 to C10 together), then the side-by-side sheet: "whole disc for the eight unchanged pictures: yes"; Mars: first the 2018 picture (slot 04) with a tighter crop, then, after seeing it, **the SVS true-colour globe** (decision 4).
 - **Answers**: EP2, EP3 of the UX feedback plan; slice C10; BACKFILL B-033
 - **Builds on**: [UXD-018](UXD-018-panel-shell-and-actions.md) (the panel's hero: 16:9 box, no hover glow), [UXD-023](UXD-023-star-and-outer-panels-follow-the-planet-pattern.md) (the star and outer panels keep the 16:9 cover)
 - **Changes**: `src/lib/components/PlanetPanel.svelte` and `SmallBodyPanel.svelte` (Pluto only; `heroClass="planet-hero"`), `src/lib/styles/panel-tabs.css` (`.planet-hero`), `src/lib/data/planet-heroes.test.ts` (new), `tests/e2e/planet-heroes.spec.ts` (new); [UXS-001](../UXS-001.md), `docs/concept/05_Design_System.md` 5.3, the change inventory, BACKFILL, `AGENTS.md`, `scripts/IMAGE-PIPELINE.md`, the component README
@@ -18,7 +18,7 @@ Pluto is drawn by `SmallBodyPanel`, and its hero is `small-bodies/pluto/01` (New
 1. **The rule.** A planet panel's hero is one picture of the planet itself, in natural or published colour: no artist concept, no spacecraft in frame, no map, inset or diagram. The nine heroes at this commit meet it (checked by title in `planet-heroes.test.ts`, and by eye on the sheet); Earth 04 (Apollo-Soyuz) and Venus 03 (Magellan concept) are in the Gallery tab, not the hero slot.
 2. **The frame.** Planet panels draw the hero with `object-fit: contain` in the same 16:9 box, on pure black (`.planet-hero` in `panel-tabs.css`). The pictures' own space is `rgb(0,0,0)` (measured at the outer two pixels of every hero: 0,0,0; Jupiter 2,2,2, Neptune 1,1,0): the earlier translucent button ground over the panel colour (about 2,2,7) showed as a faint rectangle, so the ground is `#000`. Only planets: star, outer and black-hole panels keep the 16:9 cover (UXD-023).
 3. **The cards and the entity page are unchanged.** The collectible card's hero band is a cover crop under a fade (it shares the file, not the frame); `/explore/<id>` draws no hero picture.
-4. **Mars (decided, not yet built).** Slot 04 (Hubble, July 2018) replaces slot 03, **cropped** so its disc is about 85 % of the picture like the other planets: in the 1600 x 1600 master the disc is 825 px across, centred at (783, 728); a 970 px square window around it gives 85 %. The crop lands when the operator has seen it.
+4. **Mars (built).** The hero is the new slot `planets/mars/06`: NASA Goddard SVS "Mars Rotate (True Color)" ([SVS 659](https://svs.gsfc.nasa.gov/659/), Commons file of the same name, PD-NASA), a **globe rendered in true colour from Mars Global Surveyor MOLA and Viking data, not a single photograph**, 2560 x 1920 with the disc 1635 px across (85 % of the height, like Earth 05 and Jupiter 01). Slots 03 and 04 stay in the gallery. The provenance title and the 14-locale alt text say it is a rendering. Not taken: the 2018 Hubble slot 04 as is (the disc is 51 % of its picture), cropped (a 970 px square: the operator judged it too soft next to Earth and Jupiter), and a 2016 Hubble photograph (candidate A of the sheet, disc 69 %). The operator chose the SVS globe on 2026-11-13; Earth 05 is likewise a rendered composite.
 
 ## Consequences
 
@@ -28,7 +28,7 @@ Pluto is drawn by `SmallBodyPanel`, and its hero is `small-bodies/pluto/01` (New
 
 ## Not done
 
-- Mars still shows slot 03 until the cropped slot-04 picture is approved and built. No existing script crops a master tighter (`replace-gallery-slots.ts` fetches a new original and makes only the focal 1x1; `crop-variants.ts` writes the 1x1 thumbnail), so that step needs a decision on how the cropped master is made.
+- The collectible card's hero band is a cover crop, so Mars's card shows a band of the globe, not the whole disc (as for every planet).
 - EP3 relocation (Earth 04, Venus 03 to the mission galleries): not built in this slice's frame commit.
 - Whether every explicit override entry should carry `disc: true` (brief decision 5a): not built; the data test guards the hero slot instead.
 

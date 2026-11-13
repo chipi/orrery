@@ -29452,6 +29452,19 @@
       "rejected_by": null,
       "scored_at": "2026-11-09T13:32:45.179Z",
       "scoring_cost_usd": 0
+    },
+    "/images/planets/mars/06.jpg": {
+      "score": 8,
+      "subject": "Mars globe rendered in true colour from Mars Global Surveyor and Viking data: a full orange disk with dark grey-blue regions, the pale Hellas basin and a white polar cap, on black space.",
+      "category": "orbital",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-13T20:37:49.950Z",
+      "scoring_cost_usd": 0
     }
   }
 }

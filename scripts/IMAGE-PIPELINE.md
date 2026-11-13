@@ -274,7 +274,12 @@ When a slot should hold a better picture rather than disappear, write a map unde
 alt: { all 14 locales }, agency, author? } }`), smudge the galleries' masters and run. `agency` is
 required because the credit tools keep a row's old agency, which named the old picture's source
 (batch 1 came out with "JAXA / NASA" on a JAXA render); `author` overrides a Commons author field that
-holds a licence text instead of a name (MMX-CG02.jpg):
+holds a licence text instead of a name (MMX-CG02.jpg). A key that names the **next free slot** of a
+gallery (the slot after the last served one) **adds** a new picture instead of replacing one
+(`planets/mars/06`, UXD-029); a rendering or composite says so in its provenance `title` and alt text,
+which the tool does not write (edit the row after the run). The run ends with a whole-repo
+`build-credit-thumbs.mjs`: in a tree that lacks other galleries' credit thumbs it writes those too
+(709 untracked files, 2026-11-13); delete the unrelated ones and rebuild yours with `--paths F`.
 
 ```bash
 npx tsx scripts/replace-gallery-slots.ts <map.json> --dry-run   # fetches every original, writes nothing

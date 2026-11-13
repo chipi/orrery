@@ -146,8 +146,12 @@ follow it:
   line, scrolls sideways: a second line ran into the site card). On `/explore` the row shares the bottom line with
   the time dock, the scale strip and the level card in the 439 px left beside the drawer (tried: stacked above the
   dock, which then covers the strip and runs into the level card), so it sits under the drawer while one is open
-  and returns when the panel closes. Not changed: the INDEX tab still lies over BACK TO EXPLORE on a landscape
-  Worlds page.
+  and returns when the panel closes.
+- **The INDEX tab and BACK TO EXPLORE.** On a landscape Worlds page with a site open, the imagery card pushed the
+  tab up to the chip row's height (tab 70 to 136 px, row 60 to 104) and it lay over the first chip. The row now
+  starts after the 44 px tab on a landscape phone (`left: 52px`), so the two rects are disjoint; with the drawer
+  open the chips keep their width and the row scrolls. A portrait phone was already clear (the tab is at mid
+  height, the open panel is a sheet over both). Fine-pointer windows were already clear (row at 36 px).
 
 ## Consequences
 

@@ -21,11 +21,11 @@ const ROWS: Record<string, string[]> = {
   '/mars': ['layer-surface', 'layer-orbiters', 'layer-orbits', 'layer-traverses'],
   '/venus': ['layer-surface', 'layer-orbiters', 'layer-orbits'],
   '/explore': [
+    'layer-paths',
     'layer-planets',
     'layer-dwarfs',
     'layer-comets',
     'layer-interstellar',
-    'layer-paths',
   ],
 };
 
@@ -65,8 +65,8 @@ for (const [route, ids] of Object.entries(ROWS)) {
       await waitForHydration(page);
       const row = await chipRow(page, isMobile);
       await expect(row).toBeVisible();
-      // The phone Controls drawer on /explore leaves PATHS to its Iconic Missions tab.
-      const expected = isMobile && route === '/explore' ? ids.slice(0, -1) : ids;
+      // ICONIC MISSIONS is first (C7 IM7). The phone Controls drawer leaves it to its Iconic Missions tab.
+      const expected = isMobile && route === '/explore' ? ids.slice(1) : ids;
       expect(await layerIds(row)).toEqual(expected);
 
       await expect(page.locator('.chip-group')).toHaveCount(0);

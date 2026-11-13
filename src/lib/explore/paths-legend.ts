@@ -146,7 +146,7 @@ export const PATHS_LEGEND = [
 ];
 
 // Iconic-mission tagline lookup — one-line "why it's iconic" copy
-// surfaced as an italic subtitle under each legend row. Keys are in
+// shown in the card beside the hovered legend row (C7). Keys are in
 // messages/*.json under `explore_iconic_tagline_<mission_id>`. The
 // mapping is hand-rolled because Paraglide's tree-shake only sees
 // statically-referenced message functions.

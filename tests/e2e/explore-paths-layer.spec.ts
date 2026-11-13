@@ -1,6 +1,7 @@
 import { test, expect, type Page } from '@playwright/test';
 import { openDrawerTab } from './_helpers/hud-expand';
 import { isExpectedNoise } from './_helpers/console-errors';
+import { waitForHydration } from './_helpers/hydration';
 
 /**
  * /explore PATHS layer — iconic spacecraft trajectories (#306).
@@ -8,8 +9,9 @@ import { isExpectedNoise } from './_helpers/console-errors';
  * Coverage:
  *  - PATHS chip is rendered and starts in the OFF state (aria-pressed)
  *  - clicking the chip flips the state to ON without console errors
- *  - the 9 iconic trajectory JSON files (Voyager 1+2, Pioneer 10+11,
- *    New Horizons, Galileo, Juno, Cassini, Dawn) all fetch 200
+ *  - the 18 iconic trajectory JSON files (Voyager 1+2, Pioneer 10+11,
+ *    New Horizons, Galileo, Juno, Cassini, Dawn, Vega 1+2, Venera 13, Giotto, Ulysses,
+ *    Rosetta, Hayabusa2, BepiColombo, JUICE) all fetch 200
  *  - the Saturn-anchored Cassini orbiter-tour JSON (Slice D) fetches 200
  *
  * We don't try to raycast the canvas-side rendering — that requires
@@ -29,6 +31,15 @@ const PATHS_TRAJECTORY_IDS = [
   'juno',
   'cassini',
   'dawn',
+  'vega-1',
+  'vega-2',
+  'venera-13',
+  'giotto',
+  'ulysses',
+  'rosetta',
+  'hayabusa2',
+  'bepicolombo',
+  'juice',
 ] as const;
 
 const ORBITER_TOUR_IDS = ['cassini-tour', 'galileo-tour', 'juno-tour'] as const;
@@ -79,7 +90,7 @@ test.describe('/explore — PATHS layer', () => {
     expect(errors, `console errors during PATHS toggle: ${errors.join(' | ')}`).toEqual([]);
   });
 
-  test('all 9 iconic trajectory JSON files are reachable', async ({ page, baseURL }) => {
+  test('all 18 iconic trajectory JSON files are reachable', async ({ page, baseURL }) => {
     const resolvedBase = baseURL ?? 'http://localhost:4173';
     for (const id of PATHS_TRAJECTORY_IDS) {
       const res = await page.request.get(`${resolvedBase}/data/trajectories/${id}.json`);
@@ -122,6 +133,7 @@ test.describe('/explore — PATHS layer', () => {
     // above the link can intercept the tap by sub-pixel margin on
     // narrow viewports; the real-finger UX works fine).
     await page.goto('/explore?paths=1');
+    await waitForHydration(page);
     // #342 Phase 31 — the layer-paths chip is in the default-collapsed
     // hud-controls cluster on touch. Expand it so .toBeVisible passes.
     // Toggle state (aria-pressed) is independent of the cluster

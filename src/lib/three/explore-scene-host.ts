@@ -2096,6 +2096,12 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
       }
       return out;
     };
+    // Read-only probe of the iconic-mission boxes (C7 e2e): every box as drawn, canvas px.
+    window.__iconicBoxes = () => {
+      const w = bridge.container?.clientWidth ?? 1;
+      const h = bridge.container?.clientHeight ?? 1;
+      return iconicTrajectoryHandles.flatMap((t) => t.snapshotBoxes(camera, w, h));
+    };
     // Read-only probe of the pin scenes (readability e2e): every label and ring as drawn, client px.
     window.__scenePins = () => {
       const sc = inNeighborhood()
@@ -2650,6 +2656,9 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
       const trajHits = ray3dHover.intersectObjects(trajTargets, false);
       const newId = (trajHits[0]?.object.userData.missionId as string | undefined) ?? null;
       if (newId !== iconic.state.hoveredId) iconic.state.hoveredId = newId;
+      // The marker under the pointer forces its milestone box (the placement pass may hide it).
+      const topHit = trajHits[0]?.object ?? null;
+      for (const h of iconicTrajectoryHandles) h.setHoveredMilestone(topHit);
     } else if (iconic.state.hoveredId) {
       iconic.state.hoveredId = null;
     }
@@ -5006,6 +5015,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     delete window.__exploreBodyScreen;
     delete window.__exploreLinePoints;
     delete window.__scenePins;
+    delete window.__iconicBoxes;
     delete window.__explore2dLabels;
   });
 

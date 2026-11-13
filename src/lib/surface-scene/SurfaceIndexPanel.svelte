@@ -18,6 +18,7 @@
   import AgencyBadge from '$lib/components/AgencyBadge.svelte';
   import Chip from '$lib/components/Chip.svelte';
   import ChipGroup from '$lib/components/ChipGroup.svelte';
+  import EntityThumb from '$lib/components/EntityThumb.svelte';
   import { roving } from '$lib/a11y/roving';
   import { localHref } from '$lib/locale';
   import {
@@ -207,7 +208,13 @@
           aria-current={item.id === selectedId ? 'true' : undefined}
           onclick={() => onSelect(item.id)}
         >
-          <span class="row-dot" style:background={domainColor(item)} aria-hidden="true"></span>
+          <span class="row-lead" aria-hidden="true">
+            {#if item.thumb}
+              <EntityThumb src={item.thumb} ring={item.color} />
+            {:else}
+              <span class="row-dot" style:background={domainColor(item)}></span>
+            {/if}
+          </span>
           <span class="row-name">{item.name}</span>
           <span class="row-badge"><AgencyBadge agency={item.agencies.join(' / ')} /></span>
           <span class="row-meta" title={metaOf(item)}>{metaShown(item)}</span>
@@ -348,10 +355,10 @@
      would squeeze the name to nothing beside it. */
   .sidx-row {
     display: grid;
-    grid-template-columns: 8px minmax(0, 1fr) auto;
+    grid-template-columns: 28px minmax(0, 1fr) auto;
     grid-template-areas:
-      'dot name badge'
-      'dot meta meta';
+      'lead name badge'
+      'lead meta meta';
     align-items: center;
     column-gap: 8px;
     row-gap: 2px;
@@ -375,8 +382,13 @@
     background: var(--color-accent-soft);
     border-color: color-mix(in srgb, var(--color-accent) 55%, transparent);
   }
+  /* 28 px: the EntityThumb (L45, UXD-025); a row without a photo centres its dot in the same slot. */
+  .row-lead {
+    grid-area: lead;
+    display: grid;
+    place-items: center;
+  }
   .row-dot {
-    grid-area: dot;
     box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.35);
     width: 8px;
     height: 8px;

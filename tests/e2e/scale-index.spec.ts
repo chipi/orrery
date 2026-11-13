@@ -473,6 +473,80 @@ test.describe('/explore INDEX — the solar-system rows: a meta line, two lines,
   });
 });
 
+test.describe('/explore INDEX — a round photo in the lead slot of the solar rows (L45, UXD-025)', () => {
+  const NEUTRAL = 'rgba(255, 255, 255, 0.5)';
+  const ringOf = (img: Locator) => img.evaluate((el) => getComputedStyle(el).borderTopColor);
+
+  test('a row with a photo has a 28 px round alt="" lazy image, the identity colour as ring, Uranus neutral; a row without keeps its dot; names align', async ({
+    page,
+  }) => {
+    test.slow();
+    await openScale(page, SCALES[0]);
+    await toggle(page).click();
+    const panel = panelOf(page, 'solar-system');
+    await expect(panel).toBeVisible();
+    const row = (id: string) => panel.locator(`button.si-row[data-index-id="${id}"]`);
+
+    // 40 of the 51 rows have a photo: the Sun, 9 planets, 12 small bodies, 16 moons, 2 belts.
+    await expect(panel.locator('button.si-row img.entity-thumb')).toHaveCount(40);
+    await expect(panel.locator('button.si-row .si-dot')).toHaveCount(11);
+
+    const mars = row('mars').locator('img.entity-thumb');
+    await expect(mars).toHaveAttribute('alt', '');
+    await expect(mars).toHaveAttribute('loading', 'lazy');
+    await expect(mars).toHaveAttribute(
+      'src',
+      /\/credit-thumbs\/images\/planets\/mars\/03\.1x1\.webp$/,
+    );
+    expect(await mars.boundingBox()).toMatchObject({ width: 28, height: 28 });
+    expect(await ringOf(mars)).toBe('rgb(193, 68, 14)');
+    expect(await ringOf(row('uranus').locator('img.entity-thumb'))).toBe(NEUTRAL);
+    expect(await ringOf(row('io').locator('img.entity-thumb'))).toBe(NEUTRAL);
+
+    // A moon (crop generated in T1) and a belt have one; Psyche has no image: the dot, no img.
+    await expect(row('io').locator('img.entity-thumb')).toHaveCount(1);
+    await expect(row('asteroid').locator('img.entity-thumb')).toHaveCount(1);
+    await expect(row('psyche').locator('img.entity-thumb')).toHaveCount(0);
+    await expect(row('psyche').locator('.si-dot')).toHaveCount(1);
+
+    // Names start at the same x with and without a photo, and the row stays two lines tall.
+    const x = async (id: string) => (await row(id).locator('.si-name').boundingBox())!.x;
+    expect(Math.abs((await x('ceres')) - (await x('psyche')))).toBeLessThan(1);
+    expect((await row('psyche').boundingBox())!.height).toBeGreaterThanOrEqual(44);
+  });
+
+  test('a thumb that fails to load falls back to the dot, not a broken image', async ({ page }) => {
+    test.slow();
+    await page.route('**/credit-thumbs/images/planets/mars/**', (r) => r.abort());
+    await openScale(page, SCALES[0]);
+    await toggle(page).click();
+    const mars = panelOf(page, 'solar-system').locator('button.si-row[data-index-id="mars"]');
+    await expect(mars).toBeVisible();
+    await expect(mars.locator('.entity-thumb-dot')).toHaveCount(1);
+    await expect(mars.locator('img.entity-thumb')).toHaveCount(0);
+  });
+
+  test('a closed INDEX fetches no thumb; opening it does; the neighbourhood has none', async ({
+    page,
+  }) => {
+    test.slow();
+    const thumbs: string[] = [];
+    page.on('request', (r) => {
+      if (r.url().includes('/credit-thumbs/')) thumbs.push(r.url());
+    });
+    await openScale(page, SCALES[0]);
+    await page.waitForTimeout(1500);
+    expect(thumbs, 'a hidden panel loads no lazy image').toHaveLength(0);
+    await toggle(page).click();
+    await expect.poll(() => thumbs.length, { timeout: 15_000 }).toBeGreaterThan(0);
+
+    // Decision 3 (held): the other scales keep the dot and badge lead slot, no photo.
+    expect(
+      await page.locator('aside.scale-index:not([data-scale="solar-system"]) img').count(),
+    ).toBe(0);
+  });
+});
+
 test.describe('/explore INDEX — axe with the INDEX open', () => {
   for (const s of [SCALES[0], SCALES[1]]) {
     test(`${s.id}: 0 critical or serious axe violations`, async ({ page }) => {

@@ -14,6 +14,8 @@ export interface EntityThumbManifest {
     string,
     { dir: string; flat?: boolean; slots: Record<string, string>; none: string[] }
   >;
+  /** Worlds' INDEX sites: id -> `<dir>/<folder>/<slot>` of the folder the site's panel shows. */
+  sites: Record<string, { slots: Record<string, string>; none: string[] }>;
 }
 
 /** The ring of a row with no identity colour (the C4 neutral). */
@@ -33,6 +35,45 @@ export function resolveThumb(
 
 export const thumbOf = (surface: string, id: string): string | null =>
   resolveThumb(manifestJson as EntityThumbManifest, surface, id);
+
+/**
+ * The thumb of a site of a Worlds' INDEX (`moon`, `mars`, `venus`, `earth-objects`): the blessed
+ * slot of the folder the site's panel gallery resolves to (own folder, else its mission, else the
+ * fleet entry; scripts/build-entity-thumbs.ts runs the same ladder). Earth launch pads are the
+ * fleet's own `launch-site` entries: `thumbOf('fleet', id)`.
+ */
+export function resolveSiteThumb(
+  manifest: EntityThumbManifest,
+  body: string,
+  id: string,
+): string | null {
+  const frag = manifest.sites[body]?.slots[id];
+  return frag ? `/credit-thumbs/images/${frag}.1x1.webp` : null;
+}
+
+export const thumbOfSite = (body: string, id: string): string | null =>
+  resolveSiteThumb(manifestJson as EntityThumbManifest, body, id);
+
+const SOLAR_SURFACE: Record<string, string> = {
+  planet: 'planets',
+  moon: 'satellites',
+  belt: 'belts',
+  dwarf: 'small-bodies',
+  asteroid: 'small-bodies',
+  comet: 'small-bodies',
+  kbo: 'small-bodies',
+  interstellar: 'small-bodies',
+};
+
+/** The thumb of a solar-system INDEX row (`ScaleIndexRow.kind` + id), or null when it has none. */
+export function solarRowThumb(
+  row: { id: string; kind: string },
+  manifest: EntityThumbManifest = manifestJson as EntityThumbManifest,
+): string | null {
+  if (row.kind === 'sun') return resolveThumb(manifest, 'sun', 'sun');
+  const surface = SOLAR_SURFACE[row.kind];
+  return surface ? resolveThumb(manifest, surface, row.id) : null;
+}
 
 /** `thumbOf` for a `<surface>/<id>` reference, as the regime panel's per-bundle map stores it. */
 export function thumbOfRef(ref: string | undefined | null): string | null {

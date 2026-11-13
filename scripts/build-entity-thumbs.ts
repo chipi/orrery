@@ -20,6 +20,7 @@
  */
 import { existsSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
+import { gallerySiteIdVariants } from '../src/lib/data/gallery-ids';
 
 export interface SurfaceSpec {
   /** Key in the manifest and in `thumbOf(surface, id)`. */
@@ -56,10 +57,65 @@ export interface SurfaceThumbs {
   none: string[];
 }
 
+/**
+ * The sites of the Worlds' INDEXes (/moon, /mars, /venus, /earth objects). A site's panel shows
+ * the first image of the first folder its gallery ladder finds (galleries.ts), so its thumb is
+ * the blessed slot of THAT folder, not necessarily of a folder named like the site.
+ */
+export interface SiteThumbs {
+  /** site id -> `<dir>/<folder>/<slot>` of the 192 px thumb that exists. */
+  slots: Record<string, string>;
+  /** Sites whose ladder reaches no image, or whose blessed slot has no thumb. */
+  none: string[];
+}
+
 export interface EntityThumbManifest {
   version: 1;
   surfaces: Record<string, SurfaceThumbs>;
+  sites: Record<string, SiteThumbs>;
 }
+
+interface SiteBody {
+  /** Key in the manifest and in `thumbOfSite(body, id)`. */
+  key: string;
+  /** static/data file listing the sites (ids, optional `mission_id`). */
+  file: string;
+  /** The body's own gallery folder: dir, count manifest and override surface. Venus has none. */
+  own?: { dir: string; manifest: string; overrides: string };
+  /** Probe the fleet galleries too (moon, mars) after the mission galleries. */
+  fleet: boolean;
+  /** Probe the mission gallery by the site's `mission_id` (earth objects use the id only). */
+  byMissionId: boolean;
+}
+
+const SITE_BODIES: SiteBody[] = [
+  {
+    key: 'moon',
+    file: 'moon-sites.json',
+    own: { dir: 'moon-sites', manifest: 'moon-site-galleries.json', overrides: 'moon-sites' },
+    fleet: true,
+    byMissionId: true,
+  },
+  {
+    key: 'mars',
+    file: 'mars-sites.json',
+    own: { dir: 'mars-sites', manifest: 'mars-site-galleries.json', overrides: 'mars-sites' },
+    fleet: true,
+    byMissionId: true,
+  },
+  { key: 'venus', file: 'venus-sites.json', fleet: false, byMissionId: true },
+  {
+    key: 'earth-objects',
+    file: 'earth-objects.json',
+    own: {
+      dir: 'earth-objects',
+      manifest: 'earth-object-galleries.json',
+      overrides: 'earth-objects',
+    },
+    fleet: false,
+    byMissionId: false,
+  },
+];
 
 export interface MissingInputs {
   /** `/images/<dir>/<id>/NN.1x1.jpg` of a blessed slot whose 192 px thumb is not built. */
@@ -112,7 +168,111 @@ export function buildEntityThumbs(root = '.'): {
     }
     surfaces[spec.key] = out;
   }
-  return { manifest: { version: 1, surfaces }, missing };
+  return { manifest: { version: 1, surfaces, sites: buildSiteThumbs(root, missing) }, missing };
+}
+
+function overrideSlots(root: string, name: string): Record<string, number> {
+  const file = join(root, 'static/data', `${name}-hero-overrides.json`);
+  if (!existsSync(file)) return {};
+  const o = readJson<{ overrides?: Record<string, { slot?: string }> }>(file).overrides ?? {};
+  const out: Record<string, number> = {};
+  for (const [id, v] of Object.entries(o)) {
+    const n = v.slot?.match(/^\d\d/)?.[0];
+    if (n) out[id] = Number(n);
+  }
+  return out;
+}
+
+const readCounts = (root: string, file: string): Record<string, number> => {
+  const p = join(root, 'static/data', file);
+  return existsSync(p) ? readJson<Record<string, number>>(p) : {};
+};
+
+/** applyHeroOverride (image-hero.ts): the override's slot moves to the front when it is in the gallery. */
+function firstSlot(count: number, ...overrides: (number | undefined)[]): number {
+  let order = Array.from({ length: count }, (_, i) => i + 1);
+  for (const n of overrides) {
+    const i = n === undefined ? -1 : order.indexOf(n);
+    if (i > 0) order = [order[i], ...order.slice(0, i), ...order.slice(i + 1)];
+  }
+  return order[0];
+}
+
+function buildSiteThumbs(root: string, missing: MissingInputs): Record<string, SiteThumbs> {
+  const missionCounts = readCounts(root, 'mission-galleries.json');
+  const fleetCounts = readCounts(root, 'fleet-galleries.json');
+  const missionOv = overrideSlots(root, 'missions');
+  const fleetOv = overrideSlots(root, 'fleet');
+  const out: Record<string, SiteThumbs> = {};
+  for (const body of SITE_BODIES) {
+    const file = join(root, 'static/data', body.file);
+    const sites = existsSync(file) ? readJson<{ id: string; mission_id?: string }[]>(file) : [];
+    const ownCounts = body.own ? readCounts(root, body.own.manifest) : {};
+    const ownOv = body.own ? overrideSlots(root, body.own.overrides) : {};
+    const res: SiteThumbs = { slots: {}, none: [] };
+    for (const site of sites) {
+      // The ladder of getMoonSiteGallery / getMarsSiteGallery / getEarthObjectGallery, first hit wins;
+      // each step applies its own folder's hero override, then the site surface's (as the loaders do).
+      const steps: { dir: string; folder: string; count: number; slot: number }[] = [];
+      const own = body.own;
+      if (own) {
+        const count = ownCounts[site.id] ?? 0;
+        steps.push({
+          dir: own.dir,
+          folder: site.id,
+          count,
+          slot: firstSlot(count, ownOv[site.id]),
+        });
+      }
+      const mission = (id: string) => {
+        const count = missionCounts[id] ?? 0;
+        steps.push({
+          dir: 'missions',
+          folder: id,
+          count,
+          slot: firstSlot(count, missionOv[id], ownOv[site.id]),
+        });
+      };
+      const fleet = (id: string) => {
+        for (const v of gallerySiteIdVariants(id)) {
+          const count = fleetCounts[v] ?? 0;
+          steps.push({
+            dir: 'fleet-galleries',
+            folder: v,
+            count,
+            slot: firstSlot(count, fleetOv[v], ownOv[site.id]),
+          });
+        }
+      };
+      if (body.byMissionId && site.mission_id) mission(site.mission_id);
+      mission(site.id);
+      if (body.fleet) {
+        if (site.mission_id) fleet(site.mission_id);
+        fleet(site.id);
+      }
+      const hit = steps.find((s) => s.count > 0);
+      if (!hit) {
+        res.none.push(site.id);
+        continue;
+      }
+      const slot = String(hit.slot).padStart(2, '0');
+      const rel = `${hit.dir}/${hit.folder}`;
+      if (existsSync(join(root, 'static/credit-thumbs/images', rel, `${slot}.1x1.webp`))) {
+        res.slots[site.id] = `${rel}/${slot}`;
+        continue;
+      }
+      res.none.push(site.id);
+      const crop = `/images/${rel}/${slot}.1x1.jpg`;
+      const master = `masters/${rel}/${slot}.jpg`;
+      if (existsSync(join(root, 'static', crop))) {
+        if (!missing.needThumb.includes(crop)) missing.needThumb.push(crop);
+      } else if (existsSync(join(root, master)) && !missing.need1x1.includes(master)) {
+        missing.need1x1.push(master);
+      }
+    }
+    out[body.key] = res;
+  }
+  return out;
 }
 
 export const MANIFEST_PATH = 'static/data/entity-thumbs.json';

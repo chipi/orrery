@@ -93,7 +93,7 @@ compete for the pointer a little more. The 2D view's labels lost their world sca
 and they take part in the pass; the Sun's caption and a planet's name start past the drawn edge of the body (the
 core, Saturn's ring, the selection ring), and a small body's name past its dot and a right-pointing comet tail.
 Not covered: the lens overlay labels of the Milky Way (world-sized teaching text), `iconic-trajectory` labels
-(C7), the Worlds' site tags, `fly-frame-runner.ts` and `three-label.ts` (not measured against the floor), the
+(done in C7: [UXD-026](UXD-026-iconic-missions-legend-and-milestone-boxes.md)), the Worlds' site tags, `fly-frame-runner.ts` and `three-label.ts` (not measured against the floor), the
 ruler (C4), the solar scene's own sprite labels in `explore-scene-host.ts`.
 
 Follow-up (2026-11-12, operator's device screenshots): the Milky Way opened with two of the four arm names off screen on a 16:9 laptop and every arm name and the Sun off screen on a phone. The arm label anchors (`milky-way-schematic.json`, schematic like every position there) moved from the disc edge to 4–9 kpc, placed so no arm name collides with a pin label at 1280, 1470, 2560 and on a phone (portrait, landscape), and a portrait window enters farther out (`MW_ENTRY_CAM_R_PORTRAIT`, 2.0× against 1.12×), as the Local Group already did. Labels beside the INDEX pull tab flip inward as at the screen edge (`setLabelLeftInset`).

@@ -108,7 +108,7 @@ Follow-up (operator, 2026-11-12, iPhone): the strip's lifts are for the time doc
 
 The touch top-left cluster (`hud-top-mobile`) takes the same clearance and wraps (2026-11-12: fr "RÉINITIALISER LA VUE" at 360 px ran under the picker; e2e at 360 px in fr, de, ru). Not covered: that cluster with a docked drawer on a touch landscape device (it
 the clearance includes the drawer cover, but no test runs it there); the orbit ruler (C4); the REFERENCES chip in the time
-dock (A4); the breadcrumb and picker redesign (C8); the encounter labels of the iconic paths (C7).
+dock (A4); the breadcrumb and picker redesign (C8); the encounter labels of the iconic paths (done in C7, [UXD-026](UXD-026-iconic-missions-legend-and-milestone-boxes.md)).
 
 ## Verification
 

@@ -37,8 +37,8 @@ Pane links vary per pane.
   MissionPanel push-chain (up to about 21 cards) with a ranked pick by type and phase (plan line
   339).
 - The orbit ruler's other issues from the same screen belong to other slices: wrapping rows (C4),
-  unlinked founding missions and the country codes (C5), the close X drawn over scrolled text (B1),
-  the Vega pill (C3).
+  unlinked founding missions and the country codes (C5; both done in [UXD-024](UXD-024-orbit-ruler-one-row-draws-its-regime.md)),
+  the close X drawn over scrolled text (B1), the Vega pill (C3).
 
 ## Verification
 

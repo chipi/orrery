@@ -17,6 +17,7 @@ these first before hand-rolling raf loops, listener registries, or
 | Standard canvas input listeners | `bindCanvasInputs` (existing) | mouse / touch / wheel + hover; returns the matching `removeEventListener` chain |
 | Closest 2D NDC hit testing | `pickClosest2D` (existing) | screen-space pick fallback for routes that don't run a full Three.js raycast |
 | Object3D disposal walk | `disposeObject3D` (existing) | recursive geometry / material / texture dispose |
+| The orbit ruler's regime in a scene | `buildRegimeHighlight` | one group of annulus + `Line2` edges, great-circle shell or pin rings per regime shape (`$lib/orbit-regime-geometry`), `set(hover, active)`, `update(camera, w, h, t, still)` per frame, `dispose()`; `explore-scene-host.ts` and `SurfaceScene` both use it (UXD-024) |
 | Soft-edged alpha mask for a square patch | `featherMask(edge)` | smoothstep fade over the outer `edge` fraction; each call returns its own texture over one cached buffer, so `disposeObject3D` on one patch never strips the mask from the others (#641) |
 
 ## Colour pipeline — one output step

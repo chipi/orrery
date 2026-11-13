@@ -131,6 +131,7 @@ If something *can't* be expressed in this contract, that's a signal — file an 
 | `site-tags.ts` | Screen-space site tags (#641): framed icon + glass card per site, pad, museum and observatory, drawn as HTML over the canvas. Touching tags merge into a group (count badge, "+N"); cards thin by priority, flip sides, and keep clear of the HUD panels. The 3D marker models and sprite labels stay in the scene graph on `UNRENDERED_LAYER` (`surface-markers.ts`), so picking still hits their spheres |
 | `surface-view-state.ts` | Pure view-state rules for the close modes: whether the nations filter strip (and the mobile drawer) is hidden in route view / flat-patch, and whether "Zoom in" flies (it used to bail below camR 32, dead from a route view framed at 31-32) |
 | `debug-info.ts`, `status-tone.ts` | Shared debug overlay shape + factory; site status badge mapping |
+| `SurfaceScene.svelte` `setRegimeHighlight(hover, active)` | The orbit ruler's regime drawn in the scene (UXD-024): shapes from `$lib/orbit-regime-geometry`, drawing from `$lib/three/regime-highlight`; Lagrange regimes ring their residents (`earthSats`, `orbitalMarkers`); gated by `orbitsInView`; state published as `data-regime-highlight` on the scene root. The route's bottom-left column is `HudStackBL`, outside the scene: the scene only publishes `--legend-top` and lifts the column over the footer (`--ruler-clear`) |
 | `README.md` | This file — the contract |
 
 ## Adjacent libs (already factored)

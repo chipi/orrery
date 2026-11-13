@@ -184,6 +184,7 @@
       <PanelHeroImage
         src={gallery[0]}
         name={planet.name}
+        heroClass="planet-hero"
         onOpen={() => {
           if (Date.now() - panelOpenedAt < 400) return;
           lightboxSrc = gallery[0]!;

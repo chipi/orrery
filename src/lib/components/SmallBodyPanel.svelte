@@ -213,6 +213,7 @@
       <PanelHeroImage
         src={gallery[0]}
         name={body.name}
+        heroClass={body.id === 'pluto' ? 'planet-hero' : ''}
         onOpen={() => (lightboxSrc = gallery[0]!)}
       />
     {/if}

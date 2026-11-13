@@ -106,6 +106,15 @@
   display: block;
 }
 
+/* A planet hero shows the whole disc (UXD-029): contain, not cover, on pure black — the pictures'
+   own space is rgb(0,0,0), so any other ground would show as a seam at the picture edge. */
+.planet-hero .panel-hero-btn {
+  background: #000;
+}
+.planet-hero .panel-hero-btn img {
+  object-fit: contain;
+}
+
 .empty-tab {
   font-size: var(--size-meta);
   color: var(--color-text-label);

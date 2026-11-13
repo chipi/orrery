@@ -16,6 +16,9 @@
   import { localizeHref } from '$lib/paraglide/runtime';
   import { exploreContext, type ExploreContextId } from '$lib/explore-context';
   import LocalePicker from '$lib/components/LocalePicker.svelte';
+  import ScaleGlyphIcon from '$lib/components/ScaleGlyphIcon.svelte';
+  import type { ShellId } from '$lib/explore/scale-shell-controller';
+  import { SCALE_SHELL_LIST } from '$lib/explore/scale-shells';
   import { audio } from '$lib/audio-state.svelte';
   import { sensory } from '$lib/sensory/state.svelte';
   import SensorySheet from '$lib/components/SensorySheet.svelte';
@@ -50,7 +53,7 @@
     key: string;
     label: () => string;
     hub: string;
-    children: { path: string; label: () => string; query?: string }[];
+    children: { path: string; label: () => string; query?: string; glyph?: ShellId }[];
   };
   type NavItem = NavLink | NavGroup;
 
@@ -61,25 +64,16 @@
       key: 'explore',
       label: m.nav_group_explore,
       hub: '/explore/hub',
-      children: [
-        // Explicit ?context=solar-system so this jumps back to the solar system from
-        // any scale (a bare /explore is a no-op when you're already on /explore — the
-        // URL doesn't change, so nothing fires; the param gives the effect a trigger).
-        { path: '/explore', query: '?context=solar-system', label: m.nav_explore },
-        // /explore v2 scale-shells — jump straight to a context (RFC-032).
-        {
-          path: '/explore',
-          query: '?context=neighborhood',
-          label: m.explore_ctx_stellar_neighborhood,
-        },
-        { path: '/explore', query: '?context=milky-way', label: m.explore_ctx_milky_way },
-        { path: '/explore', query: '?context=local-group', label: m.explore_ctx_local_group },
-        // The outward cosmology tiers (RFC-039 shells; surfaced 2026-08).
-        { path: '/explore', query: '?context=local-sheet', label: m.explore_ctx_local_sheet },
-        { path: '/explore', query: '?context=virgo', label: m.explore_ctx_virgo },
-        { path: '/explore', query: '?context=laniakea', label: m.explore_ctx_laniakea },
-        { path: '/explore', query: '?context=cosmic-web', label: m.explore_ctx_cosmic_web },
-      ],
+      // One row per scale level from the shell table. Each carries an explicit
+      // ?context=<id> (the solar system's too) so it jumps back from any scale: a bare /explore is
+      // a no-op when you're already on /explore — the URL doesn't change, so nothing fires; the
+      // param gives the effect a trigger.
+      children: SCALE_SHELL_LIST.map((s) => ({
+        path: '/explore',
+        query: s.query,
+        label: s.navName,
+        glyph: s.glyph,
+      })),
     },
     // WORLDS (2026-08 IA split, RFC-038) — the worlds you can stand on. Split out
     // of the EXPLORE group so EXPLORE reads as the pure zoom-out scale ladder and
@@ -427,8 +421,13 @@
                   href={`${base}${localizeHref(child.path)}${child.query ?? ''}`}
                   role="menuitem"
                   class="group-menu-link"
+                  class:has-glyph={child.glyph}
                   class:active={childActive(child, page.url, $exploreContext)}
-                  onclick={closeGroups}>{child.label()}</a
+                  onclick={closeGroups}
+                  >{#if child.glyph}<ScaleGlyphIcon
+                      glyph={child.glyph}
+                      size={20}
+                    />{/if}{child.label()}</a
                 >
               {/each}
             </div>
@@ -684,8 +683,13 @@
             <a
               href={`${base}${localizeHref(child.path)}${child.query ?? ''}`}
               class="drawer-link drawer-group-item"
+              class:has-glyph={child.glyph}
               class:active={childActive(child, page.url, $exploreContext)}
-              onclick={closeMobileMenu}>{child.label()}</a
+              onclick={closeMobileMenu}
+              >{#if child.glyph}<ScaleGlyphIcon
+                  glyph={child.glyph}
+                  size={20}
+                />{/if}{child.label()}</a
             >
           {/each}
         </div>
@@ -973,6 +977,13 @@
     border: 1px solid transparent;
     white-space: nowrap;
     transition: all 0.12s;
+  }
+  /* The Explore rows lead with the level's glyph, the same one the picker and the home grid draw. */
+  .group-menu-link.has-glyph,
+  .drawer-group-item.has-glyph {
+    display: flex;
+    align-items: center;
+    gap: 10px;
   }
   .group-menu-link:hover,
   .group-menu-link:focus-visible {

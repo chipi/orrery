@@ -153,6 +153,7 @@
   // cycleSurfaceMode below).
   import PanoramaToggleButton from '$lib/components/PanoramaToggleButton.svelte';
   import TierContextCard from '$lib/components/TierContextCard.svelte';
+  import ExploreHint from '$lib/components/ExploreHint.svelte';
   import {
     buildTierContext,
     type TierContext,
@@ -5484,6 +5485,7 @@
   style:--index-handle-top={indexHandleTop != null ? `${indexHandleTop}px` : undefined}
   style:--index-top={indexTopPx != null ? `${indexTopPx}px` : undefined}
   style:--card-bottom={legendH ? `${48 + legendH + 8 + locateReservePx}px` : undefined}
+  style:--hint-bottom={legendH ? `${48 + legendH + 8}px` : undefined}
 >
   <div
     class="layer"
@@ -5990,6 +5992,12 @@ sample      ${debugInfo.projectedPxSample}`}
         ? localHref(HOW_IMAGERY_WORKS[config.planet]!)
         : undefined}
     />
+  {/if}
+
+  <!-- W1 welcome hint (UXD-027): one dismissible line inviting a zoom, the same component as
+       /explore's. Gone after the first wheel, pinch, tap or drag on the canvas, or in 12 s. -->
+  {#if view === '3d' && !panoramaActive}
+    <ExploreHint text={m.surface_hint_zoom()} testid="surface-hint" topOnTouch />
   {/if}
 
   <!-- Hover tooltip — small floating card beside the cursor.

@@ -1,6 +1,8 @@
 <!-- The Explore scale-level glyphs (Solar System → Cosmic Web), one per level: the home grid and
      the /explore hub draw the same icon for the same level. SVG children only; the caller owns the
-     <svg viewBox="0 0 48 48"> and the ic-* gradient defs. -->
+     <svg viewBox="0 0 48 48"> and the ic-* gradient defs. `idSuffix` is appended to every gradient
+     id it references: the home grid and hub use the page-wide defs (no suffix); ScaleGlyphIcon
+     draws its own, uniquely suffixed, so a glyph never depends on a sibling's <defs>. -->
 <svelte:options namespace="svg" />
 
 <script lang="ts" module>
@@ -17,7 +19,7 @@
 </script>
 
 <script lang="ts">
-  let { glyph }: { glyph: string } = $props();
+  let { glyph, idSuffix = '' }: { glyph: string; idSuffix?: string } = $props();
 </script>
 
 {#if glyph === 'solar-system'}
@@ -25,7 +27,7 @@
      through the galaxy and Local Group to the faint cosmic web at
      the rim — the 8-shell ladder /explore now is. Warm core → cool
      rim; a few web-node dots on the outer shells. -->
-  <circle cx="24" cy="24" r="15" fill="url(#ic-sun-corona)" opacity="0.5" />
+  <circle cx="24" cy="24" r="15" fill="url(#ic-sun-corona{idSuffix})" opacity="0.5" />
   <!-- Shell 4 — the cosmic web (faint, dashed, with node dots) -->
   <circle
     cx="24"
@@ -54,12 +56,12 @@
   <!-- Shell 1 — the solar system -->
   <circle cx="24" cy="24" r="5.5" fill="none" stroke="rgba(255,216,120,0.75)" stroke-width="1.1" />
   <!-- Core: the Sun -->
-  <circle cx="24" cy="24" r="4.5" fill="url(#ic-sun-corona)" />
-  <circle cx="24" cy="24" r="2.4" fill="url(#ic-sun)" />
+  <circle cx="24" cy="24" r="4.5" fill="url(#ic-sun-corona{idSuffix})" />
+  <circle cx="24" cy="24" r="2.4" fill="url(#ic-sun{idSuffix})" />
 {:else if glyph === 'neighborhood'}
   <!-- Stellar neighborhood — a field of nearby stars, the Sun
      highlighted at centre, with faint constellation lines. -->
-  <circle cx="24" cy="24" r="3" fill="url(#ic-glow-accent)" />
+  <circle cx="24" cy="24" r="3" fill="url(#ic-glow-accent{idSuffix})" />
   <circle cx="24" cy="24" r="1.6" fill="#fff7e0" />
   <circle cx="10" cy="12" r="1" fill="rgba(255,255,255,0.8)" />
   <circle cx="38" cy="10" r="1.2" fill="rgba(200,220,255,0.85)" />
@@ -72,7 +74,7 @@
   <line x1="38" y1="10" x2="34" y2="20" stroke="rgba(120,169,255,0.28)" stroke-width="0.5" />
 {:else if glyph === 'milky-way'}
   <!-- Milky Way — a face-on spiral: bright bar core + two arms. -->
-  <circle cx="24" cy="24" r="13" fill="url(#ic-glow-blue)" opacity="0.35" />
+  <circle cx="24" cy="24" r="13" fill="url(#ic-glow-blue{idSuffix})" opacity="0.35" />
   <path
     d="M 24 24 Q 35 21 40 29 Q 42 35 33 37"
     fill="none"
@@ -90,7 +92,7 @@
     cy="24"
     rx="5"
     ry="2.3"
-    fill="url(#ic-sun-corona)"
+    fill="url(#ic-sun-corona{idSuffix})"
     transform="rotate(-25 24 24)"
   />
   <ellipse cx="24" cy="24" rx="3" ry="1.4" fill="#ffd87a" transform="rotate(-25 24 24)" />
@@ -159,10 +161,10 @@
 {:else if glyph === 'virgo'}
   <!-- Virgo Supercluster — a dominant warm central cluster + the
        accent blue "you are here" group + scattered smaller groups. -->
-  <circle cx="28" cy="22" r="9" fill="url(#ic-glow-gold)" />
-  <circle cx="28" cy="22" r="4" fill="url(#ic-sun-corona)" />
+  <circle cx="28" cy="22" r="9" fill="url(#ic-glow-gold{idSuffix})" />
+  <circle cx="28" cy="22" r="4" fill="url(#ic-sun-corona{idSuffix})" />
   <circle cx="28" cy="22" r="2" fill="#ffd87a" />
-  <circle cx="13" cy="32" r="3" fill="url(#ic-glow-accent)" />
+  <circle cx="13" cy="32" r="3" fill="url(#ic-glow-accent{idSuffix})" />
   <circle cx="13" cy="32" r="1.4" fill="var(--color-accent)" />
   <circle cx="16" cy="14" r="1.2" fill="#dfe8ff" />
   <circle cx="38" cy="34" r="1.3" fill="#dfe8ff" />
@@ -171,7 +173,7 @@
 {:else if glyph === 'laniakea'}
   <!-- Laniakea — a basin of flows: streamlines curving inward to a
        bright focus (the Great Attractor), our group on the rim. -->
-  <circle cx="30" cy="26" r="7" fill="url(#ic-glow-gold)" />
+  <circle cx="30" cy="26" r="7" fill="url(#ic-glow-gold{idSuffix})" />
   <circle cx="30" cy="26" r="2.4" fill="#ffcf6a" />
   <path
     d="M 6 10 Q 20 18 29 24"
@@ -186,7 +188,7 @@
     stroke-width="1"
   />
   <path d="M 44 12 Q 36 18 31 24" fill="none" stroke="rgba(180,205,255,0.45)" stroke-width="0.9" />
-  <circle cx="6" cy="10" r="2" fill="url(#ic-glow-accent)" />
+  <circle cx="6" cy="10" r="2" fill="url(#ic-glow-accent{idSuffix})" />
   <circle cx="6" cy="10" r="1" fill="var(--color-accent)" />
 {:else if glyph === 'cosmic-web'}
   <!-- Cosmic Web — nodes joined by faint filaments around a dark

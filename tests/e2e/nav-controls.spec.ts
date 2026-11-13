@@ -107,6 +107,48 @@ test.describe('nav controls — fine pointer (desktop)', () => {
   });
 });
 
+/**
+ * The Explore group's rows are the eight scale levels from the one shell table (C8, UXD-027):
+ * the ladder's order, each row with the level's glyph, the live level highlighted.
+ */
+test.describe('nav Explore group — one row per scale level', () => {
+  test.use({ viewport: { width: 1440, height: 900 }, hasTouch: false, isMobile: false });
+  test.beforeEach(() => {
+    test.skip(project() !== 'desktop-chromium', 'the dropdown is a fine-pointer surface');
+  });
+
+  test('eight rows in ladder order, each with its glyph and a ?context= link; the live level is active', async ({
+    page,
+  }) => {
+    await open(page, '/explore?context=local-group');
+    await expect(page.getByTestId('explore-scale-rung-local-group')).toHaveAttribute(
+      'aria-current',
+      'true',
+      { timeout: 40_000 },
+    );
+    await nav(page)
+      .getByRole('button', { name: /explore/i })
+      .click();
+    const rows = page.locator('.group-menu .group-menu-link');
+    await expect(rows).toHaveCount(8);
+    const hrefs = await rows.evaluateAll((els) => els.map((e) => e.getAttribute('href') ?? ''));
+    expect(hrefs.map((h) => new URLSearchParams(h.split('?')[1]).get('context'))).toEqual([
+      'solar-system',
+      'neighborhood',
+      'milky-way',
+      'local-group',
+      'local-sheet',
+      'virgo',
+      'laniakea',
+      'cosmic-web',
+    ]);
+    for (let i = 0; i < 8; i++)
+      await expect(rows.nth(i).locator('svg.scale-glyph-icon')).toHaveCount(1);
+    await expect(page.locator('.group-menu .group-menu-link.active')).toHaveCount(1);
+    await expect(rows.nth(3)).toHaveClass(/active/);
+  });
+});
+
 test.describe('nav controls — coarse pointer', () => {
   // A touch window at laptop size (links inline, More trigger) gets the same 44 px targets as a phone.
   test.describe('touch at 1280 x 720', () => {

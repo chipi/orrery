@@ -121,6 +121,8 @@
   import DeepSkyImmersion from './DeepSkyImmersion.svelte';
   import WarpOverlays from './WarpOverlays.svelte';
   import ScaleNav from './ScaleNav.svelte';
+  import LevelContextCard from '$lib/components/LevelContextCard.svelte';
+  import ExploreHint from '$lib/components/ExploreHint.svelte';
   import SunCompass from './SunCompass.svelte';
   import ScaleStrip from './ScaleStrip.svelte';
   import TimeDock from './TimeDock.svelte';
@@ -598,11 +600,14 @@
   let scaleBarLabel = $state('');
   // How far a docked side panel reaches in from the right edge (measured by the host).
   let panelCoverPx = $state(0);
-  // The solar system's navigator is flush right (right = panel cover + 8); the HUD row stops
-  // 12 px before its left edge, so the two rows never overlap.
+  // The solar system's navigator is flush right (right = panel cover + 8) with the level card
+  // under it; the HUD row stops 12 px before the wider of the two, so they never overlap.
   let scaleNavWidth = $state(0);
+  let levelCardWidth = $state(0);
   let hudClearRightPx = $derived(
-    view === '3d' && scaleNavWidth > 0 ? panelCoverPx + 8 + scaleNavWidth + 12 : panelCoverPx + 16,
+    view === '3d' && scaleNavWidth > 0
+      ? panelCoverPx + 8 + Math.max(scaleNavWidth, showLevelPicker ? levelCardWidth : 0) + 12
+      : panelCoverPx + 16,
   );
   let contextId = $state<ExploreContextId>('solar-system');
   // Publish the live scale context to the global store so the Nav highlights the
@@ -617,6 +622,9 @@
   });
   onDestroy(() => exploreContext.set(null));
 
+  // The level picker and the card under it show in a scale level; not in a takeover (black hole,
+  // deep-sky, body scene), where the lens panel keeps the story.
+  let showLevelPicker = $derived(!activeBlackHole && !activeDeepSky && contextId !== 'body-scene');
   let lensPanel = $derived.by(() =>
     computeLensPanel({
       blackHoleActive: !!activeBlackHole,
@@ -2101,17 +2109,17 @@
     aria-label={m.explore_canvas_aria_2d()}
   ></canvas>
 
-  <!-- #45 top scale-navigator (replaces the v2 breadcrumb + the old bottom-right
-       picker; UXS-014 "you always know where you are"). One row under the nav:
-       `‹ back` (out one shell, or exit a takeover) · the scale chip (jump to ANY
-       shell) · `⟲ reset`. The chip alone names the current scale, so the redundant
-       breadcrumb is gone. In a full-screen takeover (black-hole / body-scene /
-       deep-sky) only the back arrow shows — the ladder isn't meaningful there. -->
+  <!-- #45 top scale-navigator (replaces the old bottom-right picker; UXS-014 "you always know
+       where you are"). One row under the nav: `‹ back` (out one shell, or exit a takeover) ·
+       the level chip (glyph + name, jump to ANY shell) · `⟲ reset`. In a full-screen takeover
+       (black-hole / body-scene / deep-sky) only the back arrow shows — the ladder isn't
+       meaningful there. C8: under the row hangs the level card ("what you are looking at"),
+       shown wherever the picker is. -->
   {#if view === '3d'}
     <ScaleNav
       atSolar={contextId === 'solar-system' && !activeBlackHole}
       back={scaleNavBack}
-      showPicker={!activeBlackHole && !activeDeepSky && contextId !== 'body-scene'}
+      showPicker={showLevelPicker}
       activeShell={contextId as ShellId}
       pickerDisabled={!contextDeepLinkFn}
       onJump={(shell) => void contextDeepLinkFn?.(shell)}
@@ -2120,6 +2128,12 @@
       bind:width={scaleNavWidth}
       onReset={resetCurrentScale}
     />
+    {#if showLevelPicker}
+      <LevelContextCard shell={contextId as ShellId} {panelCoverPx} bind:width={levelCardWidth} />
+    {/if}
+    {#if panelCoverPx === 0}
+      <ExploreHint text={m.explore_hint_zoom()} topOnTouch />
+    {/if}
   {/if}
 
   <!-- Slice 5/8 honesty badges (Milky Way … Cosmic Web are labelled schematics,
@@ -2536,10 +2550,10 @@
      panel's toggles were dead switches. -->
 {#if view === '3d'}
   <ScienceLayersPanel
-    title={lensPanel.title}
-    body={lensPanel.body}
-    tab={lensPanel.tab}
-    section={lensPanel.section}
+    title={showLevelPicker ? undefined : lensPanel.title}
+    body={showLevelPicker ? undefined : lensPanel.body}
+    tab={showLevelPicker ? undefined : lensPanel.tab}
+    section={showLevelPicker ? undefined : lensPanel.section}
     available={lensPanel.available}
     historicalFoundations={lensPanel.historicalFoundations}
   />

@@ -6,11 +6,15 @@
   `scale-shell-controller` · `planShellJump`).
 
   #45 promoted this into the top scale-navigator: on EVERY viewport it renders as
-  one "Scale" chip (`◉ <current shell> ▾`) that opens the ladder as a popover
-  DOWNWARD and auto-closes on pick. It replaces both the old always-on desktop
-  rail and the redundant breadcrumb — the chip is the single "where am I + jump to
+  one chip (`<level glyph> <current shell> ▾`) that opens the ladder as a popover
+  DOWNWARD and auto-closes on pick. It replaced the old always-on desktop rail
+  (the breadcrumb was retired earlier) — the chip is the single "where am I + jump to
   any scale" control, flanked by the host's back/reset affordances. The parent
   positions it (this component is layout-neutral: `position: relative`).
+
+  C8 (UXD-027): the levels come from `SCALE_SHELLS`; the chip and every rung lead with the
+  level's glyph (`ScaleGlyphIcon`, the one the home grid and hub draw), and a rung adds the
+  home-grid line under its name where there is a pointer to read it with.
 
   The caller hides this entirely during full-screen sub-views (body-scene /
   black-hole / deep-sky) — `contextDeepLinkFn` only knows the shells, not those
@@ -19,7 +23,9 @@
 <script lang="ts">
   import * as m from '$lib/paraglide/messages';
   import Chip from './Chip.svelte';
-  import { CTX_ORDER, type ShellId } from '$lib/explore/scale-shell-controller';
+  import ScaleGlyphIcon from './ScaleGlyphIcon.svelte';
+  import type { ShellId } from '$lib/explore/scale-shell-controller';
+  import { SCALE_SHELLS, SCALE_SHELL_LIST } from '$lib/explore/scale-shells';
 
   let {
     activeShell,
@@ -40,31 +46,11 @@
   } = $props();
 
   // Top-to-bottom the rail reads outermost → innermost, so "zoom out" is "up".
-  const rungs = [...CTX_ORDER].reverse();
+  const rungs = [...SCALE_SHELL_LIST].reverse();
+  const uid = $props.id();
 
   // Mobile popover open state; ignored on desktop (the rail is always shown).
   let open = $state(false);
-
-  function labelFor(shell: ShellId): string {
-    switch (shell) {
-      case 'solar-system':
-        return m.explore_ctx_solar_system();
-      case 'neighborhood':
-        return m.explore_ctx_stellar_neighborhood();
-      case 'milky-way':
-        return m.explore_ctx_milky_way();
-      case 'local-group':
-        return m.explore_ctx_local_group();
-      case 'local-sheet':
-        return m.explore_ctx_local_sheet();
-      case 'virgo':
-        return m.explore_ctx_virgo();
-      case 'laniakea':
-        return m.explore_ctx_laniakea();
-      case 'cosmic-web':
-        return m.explore_ctx_cosmic_web();
-    }
-  }
 
   function pick(shell: ShellId) {
     open = false;
@@ -121,11 +107,10 @@
   data-align={align}
   data-testid="explore-scale-picker"
 >
-  <!-- Mobile-only trigger: shows the current shell + a caret; opens the ladder. -->
+  <!-- The trigger: the current level's glyph + name + a caret; opens the ladder. -->
   <Chip
     bind:ref={toggleButton}
     kind="action"
-    dot
     active={open}
     data-testid="explore-scale-toggle"
     aria-haspopup="true"
@@ -134,7 +119,8 @@
     {disabled}
     onclick={() => (open = !open)}
   >
-    <span class="toggle-label">{labelFor(activeShell)}</span>
+    {#snippet icon()}<ScaleGlyphIcon glyph={SCALE_SHELLS[activeShell].glyph} size={20} />{/snippet}
+    <span class="toggle-label">{SCALE_SHELLS[activeShell].name()}</span>
     <span class="caret" aria-hidden="true">{open ? '▴' : '▾'}</span>
   </Chip>
 
@@ -145,18 +131,24 @@
     style:right={railLeft === null ? undefined : 'auto'}
     aria-label={m.explore_scale_jump_aria()}
   >
-    {#each rungs as shell, i (shell)}
+    {#each rungs as s, i (s.id)}
       <Chip
         bind:ref={rungButtons[i]}
         kind="action"
-        active={shell === activeShell}
-        data-testid="explore-scale-rung-{shell}"
-        aria-current={shell === activeShell ? 'true' : undefined}
+        active={s.id === activeShell}
+        class="rung"
+        data-testid="explore-scale-rung-{s.id}"
+        aria-current={s.id === activeShell ? 'true' : undefined}
+        aria-describedby="{uid}-desc-{s.id}"
         {disabled}
-        onclick={() => pick(shell)}
+        onclick={() => pick(s.id)}
         onkeydown={(e: KeyboardEvent) => onRungKeydown(e, i)}
       >
-        <span class="rung-label">{labelFor(shell)}</span>
+        {#snippet icon()}<ScaleGlyphIcon glyph={s.glyph} size={24} />{/snippet}
+        <span class="rung-text">
+          <span class="rung-label">{s.name()}</span>
+          <span class="rung-desc" id="{uid}-desc-{s.id}">{s.desc()}</span>
+        </span>
       </Chip>
     {/each}
   </nav>
@@ -184,6 +176,10 @@
     top: calc(100% + 6px);
     left: 0;
     max-inline-size: calc(100vw - 16px);
+    /* Eight rungs are taller than a landscape phone: the ladder scrolls inside. */
+    max-block-size: calc(100dvh - 130px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
     flex-direction: column;
     gap: 6px;
     padding: 8px;
@@ -202,5 +198,34 @@
   }
   .rail :global(.ui-chip) {
     justify-content: flex-start;
+  }
+  /* A rung: the level's glyph, its name, and (with a pointer) the home-grid line under it, cut
+     to one line. Phones and coarse pointers get the glyph and name only: the card under the
+     row carries the full text. */
+  .rail :global(.ui-chip.rung) {
+    padding-block: 4px;
+    text-align: start;
+  }
+  .rung-text {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    min-inline-size: 0;
+  }
+  .rung-desc {
+    display: none;
+    inline-size: 15rem;
+    max-inline-size: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 400;
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--color-text-label);
+  }
+  @media (hover: hover) and (pointer: fine) and (min-width: 700px) {
+    .rung-desc {
+      display: block;
+    }
   }
 </style>

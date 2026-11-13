@@ -4,7 +4,8 @@ import { test, expect, type Page } from '@playwright/test';
  * /explore science lens on every scale shell (WS-3, RFC-039 Contract D). The
  * former bespoke chip rows (neighbourhood constellations/deep-sky/HR/light-cones,
  * Milky Way rotation/dark-matter/populations) are retired: every shell now surfaces
- * its teaching layers + lens-story through the one ScienceLayersPanel. Each shell is
+ * its teaching layers through the one ScienceLayersPanel; the lens-story moved to the
+ * level card under the picker (C8, UXD-027). Each shell is
  * reached with the build-safe ?context=<shell> deep-link; the master lens is turned
  * on by setting the same attribute the Nav toggle writes, then the panel is expanded.
  */
@@ -33,10 +34,11 @@ test.describe('/explore — per-shell science lens (WS-3)', () => {
     await gotoShell(page, 'neighborhood');
     await openLens(page);
     const panel = page.locator('[data-testid="science-lens-panel"]');
-    // The lens-story title + at least one promoted teaching layer are present.
-    await expect(panel).toContainText(/stellar neighbourhood/i);
+    // At least one promoted teaching layer is present; the story is the level card's (C8).
     await expect(panel).toContainText(/Constellations/);
     await expect(panel).toContainText(/HR Diagram/);
+    await expect(panel.locator('a.lens-story')).toHaveCount(0);
+    await expect(page.getByTestId('explore-level-card')).toContainText(/nearest stars/i);
   });
 
   test('the Milky Way lens surfaces its overlays', async ({ page }) => {
@@ -47,25 +49,26 @@ test.describe('/explore — per-shell science lens (WS-3)', () => {
     await expect(panel).toContainText(/Dark-matter halo/i);
   });
 
-  test('the Local Group lens carries a story + learn link even before its overlays', async ({
+  test('the Local Group story and its learn links live in the level card, not the lens', async ({
     page,
   }) => {
     await gotoShell(page, 'local-group');
-    await openLens(page);
-    const panel = page.locator('[data-testid="science-lens-panel"]');
-    await expect(panel).toContainText(/Local Group/i);
-    // The → science learn link is the WS-3 deliverable for shells whose per-tier
-    // overlays are still to come (WS-5): the lens-story itself is the link.
-    await expect(panel.locator('a.lens-story')).toBeVisible();
+    await page.evaluate(() => document.documentElement.setAttribute('data-science-lens', 'on'));
+    // The story (C8, UXD-027) moved to the card that hangs under the level picker: always there,
+    // lens on or off, with its /science sections. A shell with no layers has no lens panel.
+    const card = page.getByTestId('explore-level-card');
+    await expect(card).toContainText(/Andromeda/i);
+    // A touch screen folds the card; open it to see its links.
+    const fold = page.getByTestId('explore-level-card-toggle');
+    if ((await fold.getAttribute('aria-expanded')) !== 'true') await fold.click();
+    await expect(card.locator('a[href$="/science/observation/local-group"]')).toBeVisible();
+    await expect(page.locator('[data-testid="science-lens-panel"]')).toHaveCount(0);
   });
 
-  test('a shell with no overlays yet shows only the lens-story, no layer rows', async ({
-    page,
-  }) => {
+  test('a shell with no overlays yet has a card and no lens panel', async ({ page }) => {
     await gotoShell(page, 'local-sheet');
-    await openLens(page);
-    const panel = page.locator('[data-testid="science-lens-panel"]');
-    await expect(panel).toContainText(/Local Sheet/i);
-    await expect(panel.locator('.rows')).toHaveCount(0);
+    await page.evaluate(() => document.documentElement.setAttribute('data-science-lens', 'on'));
+    await expect(page.getByTestId('explore-level-card')).toContainText(/Local Sheet/i);
+    await expect(page.locator('[data-testid="science-lens-panel"]')).toHaveCount(0);
   });
 });

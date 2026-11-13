@@ -63,6 +63,11 @@ it picks the model per locale (Haiku; Sonnet for the locales in
 every answer with `problems()`, retrying on failure. Run them with the API key
 from `.env` (`set -a; . ./.env; set +a`).
 
+**Compiling the messages:** only `npm run i18n:compile` (output `src/lib/paraglide/`). A bare
+`paraglide-js compile` writes `src/paraglide/`, gitignored, whose ~3,700 generated files leave
+svelte-check checking almost nothing (106 files, 0 errors, on 2026-11-13);
+`check-stray-paraglide.mjs` (in `validate-data`) fails while that folder exists.
+
 **New English content → create its 13 translations.** Each tool skips locale
 files that already exist, so re-runs are safe.
 

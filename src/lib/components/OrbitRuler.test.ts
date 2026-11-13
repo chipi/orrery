@@ -34,7 +34,9 @@ describe('OrbitRuler markup contract', () => {
     expect(out).toContain('data-testid="ruler-toggle"');
     expect(out).toContain('aria-expanded="true"');
     expect(out).toMatch(/aria-controls="ruler-bands-[a-z0-9]+"/);
-    expect(out).toContain('aria-label="Collapse the orbit ruler"');
+    // The name is the visible title; the state is aria-expanded, so no flipping aria-label.
+    expect(out).toMatch(/data-testid="ruler-toggle"[^>]*>\s*<span[^>]*>ORBIT RULER/);
+    expect(out).not.toContain('Collapse the orbit ruler');
     expect(out).toContain('▾');
   });
 

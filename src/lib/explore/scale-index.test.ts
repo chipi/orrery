@@ -216,7 +216,18 @@ describe('entity-page links (C11)', () => {
       .filter((r) => src.deepSky.some((o) => o.id === r.id))
       .map((r) => r.id)
       .sort();
-    expect(shared).toEqual(['m110', 'm13', 'm15', 'm22', 'm3', 'm32', 'm4', 'm5', 'm92', 'ngc-6752']);
+    expect(shared).toEqual([
+      'm110',
+      'm13',
+      'm15',
+      'm22',
+      'm3',
+      'm32',
+      'm4',
+      'm5',
+      'm92',
+      'ngc-6752',
+    ]);
     for (const target of Object.values(DEEP_SKY_ALIAS))
       expect(
         src.deepSky.some((o) => o.id === target),

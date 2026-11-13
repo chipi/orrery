@@ -1,4 +1,5 @@
 import { describe, expect, it } from 'vitest';
+import * as m from '$lib/paraglide/messages';
 import { PLANETS } from '$lib/explore-scene';
 import { smallBodyById } from './small-bodies';
 import { resolveBodyRef } from './body-ref';
@@ -60,5 +61,14 @@ describe('world-links', () => {
   it('every world has a chip label, none for another body', () => {
     for (const id of Object.keys(WORLD_LINKS)) expect(worldLinkLabel(id).length).toBeGreaterThan(0);
     expect(worldLinkLabel('jupiter')).toBe('');
+  });
+
+  it('each world names its own body (no swapped label)', () => {
+    expect(worldLinkLabel('earth')).toBe(m.panel_action_world_earth());
+    expect(worldLinkLabel('moon')).toBe(m.panel_action_world_moon());
+    expect(worldLinkLabel('mars')).toBe(m.panel_action_world_mars());
+    expect(worldLinkLabel('venus')).toBe(m.panel_action_world_venus());
+    const labels = Object.keys(WORLD_LINKS).map(worldLinkLabel);
+    expect(new Set(labels).size).toBe(labels.length);
   });
 });

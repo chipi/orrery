@@ -63,6 +63,7 @@ export const load: PageServerLoad = async ({ params, fetch }) => {
           name: full?.name ?? id,
           first: full?.first ?? null,
           year: m.year,
+          agency: m.agency,
           refs: (full?.fleet_refs ?? []).map((r) => r.id),
         };
       }),
@@ -80,7 +81,9 @@ export const load: PageServerLoad = async ({ params, fetch }) => {
         [...new Set(ids)].map(async (id) => {
           const r = INDEX.find((x) => x.id === id);
           const e = r && (await getFleet(r.id, r.category, locale, fetch));
-          return e ? { id, name: e.name ?? id, tagline: e.tagline ?? null } : null;
+          return e
+            ? { id, name: e.name ?? id, tagline: e.tagline ?? null, agency: e.agency }
+            : null;
         }),
       )
     ).filter((h): h is NonNullable<typeof h> => h !== null);

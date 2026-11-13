@@ -3,6 +3,7 @@ import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import {
   THUMB_NEUTRAL_RING,
+  beltMemberThumb,
   isTealOrCyan,
   resolveSiteThumb,
   resolveThumb,
@@ -197,6 +198,72 @@ describe('the Worlds INDEX sites on the real manifest (T2)', () => {
     const pads = readdirSync(dir).map((f) => f.replace(/\.json$/, ''));
     expect(pads.length).toBe(42);
     for (const id of pads) expect(thumbOf('fleet', id), id).not.toBeNull();
+  });
+});
+
+describe('the station, belt, fleet, program and museum lists on the real manifest (T3a, T4)', () => {
+  const ids = (f: string) => rj<{ id: string }[]>(`static/data/${f}`).map((x) => x.id);
+
+  it('every ISS and Tiangong module and visitor has a thumb on disk except Poisk (no image)', () => {
+    const cases: [string, string[]][] = [
+      ['iss-modules', [...ids('iss-modules.json'), ...ids('iss-visitors.json')]],
+      ['tiangong-modules', [...ids('tiangong-modules.json'), ...ids('tiangong-visitors.json')]],
+    ];
+    let without: string[] = [];
+    for (const [surface, list] of cases)
+      for (const id of list) {
+        const path = thumbOf(surface, id);
+        if (!path) without = [...without, id];
+        else expect(existsSync(join('static', path)), `${surface}/${id}`).toBe(true);
+      }
+    expect(without).toEqual(['poisk']);
+  });
+
+  it('a belt member row takes the thumb of its first word: Ceres, Vesta and Pluto yes; Pallas, Hygiea, Quaoar no', () => {
+    expect(beltMemberThumb('Ceres — dwarf planet, ≈ 940 km diameter')).toContain('/ceres/');
+    expect(beltMemberThumb('Vesta — second-most massive')).toContain('/vesta/');
+    expect(beltMemberThumb('Pluto — dwarf planet')).toContain('/small-bodies/pluto/');
+    for (const w of ['Pallas — ≈ 510 km', 'Hygiea — ≈ 430 km', 'Quaoar — 1,100 km'])
+      expect(beltMemberThumb(w), w).toBeNull();
+    expect(beltMemberThumb('')).toBeNull();
+  });
+
+  it('belt members: 6 of the 9 the belts list have a thumb', () => {
+    const belts = rj<{ belts: { largest_members: string[] }[] }>('static/data/belts.json').belts;
+    const all = belts.flatMap((b) => b.largest_members);
+    expect(all.length).toBe(9);
+    expect(all.filter((mem) => beltMemberThumb(mem)).length).toBe(6);
+  });
+
+  it('every mission a fleet entry links has a thumb on disk (the fleet panel MISSIONS tab and /fleet/<id>)', () => {
+    const dir = 'static/data/fleet';
+    let rows = 0;
+    for (const cat of readdirSync(dir, { withFileTypes: true }).filter((d) => d.isDirectory()))
+      for (const f of readdirSync(join(dir, cat.name))) {
+        const e = rj<{ id: string; linked_missions?: string[] }>(join(dir, cat.name, f));
+        for (const mid of e.linked_missions ?? []) {
+          rows++;
+          const path = thumbOf('missions', mid);
+          expect(path, `${e.id} -> ${mid}`).not.toBeNull();
+          expect(existsSync(join('static', path as string)), `${e.id} -> ${mid}`).toBe(true);
+        }
+      }
+    expect(rows).toBe(311);
+  });
+
+  it('every fleet entry has a thumb (hardware lists link only fleet ids)', () => {
+    for (const id of ids('fleet/index.json')) expect(thumbOf('fleet', id), id).not.toBeNull();
+  });
+
+  it('86 of the 88 museum holdings are fleet entries with a thumb; the 2 science pages keep the dot', () => {
+    const holds = rj<{ holds: { ref: string }[] }[]>('static/data/museums.json').flatMap(
+      (mu) => mu.holds,
+    );
+    expect(holds.length).toBe(88);
+    const pages = holds.filter((h) => h.ref.startsWith('/'));
+    expect(pages.length).toBe(2);
+    for (const h of holds.filter((x) => !x.ref.startsWith('/')))
+      expect(thumbOf('fleet', h.ref), h.ref).not.toBeNull();
   });
 });
 

@@ -15,6 +15,9 @@
   import { article, breadcrumbList } from '$lib/json-ld';
   import JsonLd from '$lib/components/JsonLd.svelte';
   import SiteIllustrationFigure from '$lib/components/SiteIllustrationFigure.svelte';
+  import EntityThumb from '$lib/components/EntityThumb.svelte';
+  import { thumbOf } from '$lib/entity-thumb';
+  import { agencyRingColor } from '$lib/surface-map/nation-palette';
   import type { SiteBody, SiteEntity } from '$lib/data/site-entity';
 
   let { body, entity, mapTitle }: { body: SiteBody; entity: SiteEntity; mapTitle: string } =
@@ -142,9 +145,16 @@
         <h2 class="page-section-label">{ogTitle(m.fleet_page_title()).split(/\s[—–]\s/)[0]}</h2>
         <ul class="linklist wide">
           {#each entity.mission.hardware as h (h.id)}
-            <li>
-              <a href={localHref(`/fleet/${h.id}`)}>{h.name}</a>
-              {#if h.tagline}<span class="note">{h.tagline}</span>{/if}
+            <li class="has-thumb">
+              <EntityThumb
+                src={thumbOf('fleet', h.id)}
+                ring={agencyRingColor(h.agency)}
+                fallback="none"
+              />
+              <span class="lt-body">
+                <a href={localHref(`/fleet/${h.id}`)}>{h.name}</a>
+                {#if h.tagline}<span class="note">{h.tagline}</span>{/if}
+              </span>
             </li>
           {/each}
         </ul>

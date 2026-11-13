@@ -7,6 +7,9 @@
   import Chip from './Chip.svelte';
   import PanelActions from './PanelActions.svelte';
   import AgencyRow from './AgencyRow.svelte';
+  import EntityThumb from './EntityThumb.svelte';
+  import { thumbOf } from '$lib/entity-thumb';
+  import { agencyRingColor } from '$lib/surface-map/nation-palette';
   import { page } from '$app/state';
   import { assetUrl } from '$lib/asset-url';
   import {
@@ -220,6 +223,39 @@
   let hasAnyMission = $derived((entry?.linked_missions?.length ?? 0) > 0);
   let hasMissions = $derived((entry?.linked_missions?.length ?? 0) > 1);
   let hasLinks = $derived((entry?.links?.length ?? 0) > 0);
+
+  // MISSIONS tab rows: the mission's name in this locale (what /fleet/<id> prints), its agency for
+  // the thumb ring. Rows appear once the names are in, so the raw id never shows.
+  let missionRows = $state<{ id: string; name: string; agency: string | null }[]>([]);
+  $effect(() => {
+    const ids = tab === 'missions' && !hasFlights ? (entry?.linked_missions ?? []) : [];
+    const loc = localeFromPage(page);
+    if (ids.length === 0) {
+      missionRows = [];
+      return;
+    }
+    let live = true;
+    void getMissionIndex()
+      .then((idx) =>
+        Promise.all(
+          ids.map(async (id) => {
+            const row = idx.find((x) => x.id === id);
+            const full = row ? await getMission(row.id, row.dest, loc).catch(() => null) : null;
+            return { id, name: full?.name ?? id, agency: row?.agency ?? null };
+          }),
+        ),
+      )
+      .then((rows) => {
+        if (live) missionRows = rows;
+      })
+      .catch(dataLoadFailed);
+    return () => {
+      live = false;
+    };
+  });
+  const ringFor = (agency: string | null | undefined) => (agency ? agencyRingColor(agency) : null);
+  // Hardware rows know their agency from the fleet index (loaded when an entry opens).
+  const fleetAgency = (id: string) => fleetIndex.find((x) => x.id === id)?.agency;
 
   let linksByTier = $derived.by(() => {
     const out = {
@@ -518,6 +554,10 @@
           <ul class="xref-list">
             {#each engineLaunchers as v (v.launcherId)}
               <li>
+                <EntityThumb
+                  src={thumbOf('fleet', v.launcherId)}
+                  ring={ringFor(fleetAgency(v.launcherId))}
+                />
                 {#if knownIds?.has(v.launcherId) && onNavigate}
                   <button
                     type="button"
@@ -552,6 +592,7 @@
           <ul class="xref-list">
             {#each launcherEngines as e (e.id)}
               <li>
+                <EntityThumb src={thumbOf('fleet', e.id)} ring={ringFor(fleetAgency(e.id))} />
                 {#if onNavigate}
                   <button type="button" class="xref-link ui-hit" onclick={() => onNavigate?.(e.id)}>
                     {e.name}
@@ -782,14 +823,15 @@
           </ul>
         {:else}
           <ul class="missions-list">
-            {#each entry.linked_missions ?? [] as mid (mid)}
+            {#each missionRows as row (row.id)}
               <li>
                 <a
                   class="mission-link"
-                  href={localHref(`/missions?id=${mid}`)}
+                  href={localHref(`/missions?id=${row.id}`)}
                   data-sveltekit-preload-data="hover"
                 >
-                  {mid}
+                  <EntityThumb src={thumbOf('missions', row.id)} ring={ringFor(row.agency)} />
+                  <span class="mission-name">{row.name}</span>
                   <span class="mission-arrow">→</span>
                 </a>
               </li>
@@ -1057,7 +1099,7 @@
   }
   .xref-list li {
     display: flex;
-    align-items: baseline;
+    align-items: center;
     flex-wrap: wrap;
     gap: 4px 8px;
   }
@@ -1114,6 +1156,19 @@
   .mission-arrow {
     margin-left: 6px;
     color: var(--color-state);
+  }
+  .missions-list .mission-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 4px 10px 4px 6px;
+  }
+  .missions-list .mission-name {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+  .missions-list .mission-arrow {
+    margin-inline-start: auto;
   }
 
   .credit {

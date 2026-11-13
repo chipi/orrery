@@ -7,6 +7,8 @@
   import { page } from '$app/state';
   import Panel from '$lib/components/Panel.svelte';
   import PlaceHero from '$lib/components/PlaceHero.svelte';
+  import EntityThumb from '$lib/components/EntityThumb.svelte';
+  import { thumbOf } from '$lib/entity-thumb';
   import { getFleet, getFleetIndex, getScienceSection, holdingNotYetOpen } from '$lib/data';
   import { localeFromPage, localHref } from '$lib/locale';
   import * as m from '$lib/paraglide/messages';
@@ -91,11 +93,14 @@
       <ul>
         {#each rows as r (r.ref)}
           <li data-testid="museum-panel-object">
-            <a href={r.href} data-sveltekit-preload-data="hover">{r.name}</a>
-            {#if r.item}<p class="item">{r.item}</p>{/if}
-            {#if r.from && holdingNotYetOpen({ from: r.from })}
-              <p class="opens">{m.museum_opens({ date: opens(r.from) })}</p>
-            {/if}
+            <EntityThumb src={r.ref.startsWith('/') ? null : thumbOf('fleet', r.ref)} />
+            <div class="obj">
+              <a href={r.href} data-sveltekit-preload-data="hover">{r.name}</a>
+              {#if r.item}<p class="item">{r.item}</p>{/if}
+              {#if r.from && holdingNotYetOpen({ from: r.from })}
+                <p class="opens">{m.museum_opens({ date: opens(r.from) })}</p>
+              {/if}
+            </div>
           </li>
         {/each}
       </ul>
@@ -164,6 +169,14 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+  }
+  li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .obj {
+    min-width: 0;
   }
   li a {
     color: var(--color-earth);

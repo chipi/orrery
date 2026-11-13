@@ -212,6 +212,9 @@ test.describe('/explore select = focus', () => {
       .getByRole('tab', { name: /members/i })
       .click();
     const links = pane.first().locator('a.member-link');
+    // L45-T3a: Ceres and Vesta have a photo, Pallas and Hygiea keep the dot
+    await expect(pane.first().locator('.member-list img.entity-thumb')).toHaveCount(2);
+    await expect(pane.first().locator('.member-list .entity-thumb-slot')).toHaveCount(2);
     await expect(links.filter({ hasText: /Vesta/ })).toHaveCount(1);
     await expect(links.filter({ hasText: /Pallas/ })).toHaveCount(0);
     const url = page.url();

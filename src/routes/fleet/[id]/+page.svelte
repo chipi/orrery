@@ -18,6 +18,9 @@
   import { ogTitle, DEFAULT_OG_IMAGE } from '$lib/social-meta';
   import { article, breadcrumbList, absoluteUrl } from '$lib/json-ld';
   import JsonLd from '$lib/components/JsonLd.svelte';
+  import EntityThumb from '$lib/components/EntityThumb.svelte';
+  import { thumbOf } from '$lib/entity-thumb';
+  import { agencyRingColor } from '$lib/surface-map/nation-palette';
   import type { PageData } from './$types';
 
   let { data }: { data: PageData } = $props();
@@ -153,10 +156,17 @@
       <h2 class="page-section-label">{m.panel_tab_missions()}</h2>
       <ul class="linklist">
         {#each data.missions as mission (mission.id)}
-          <li>
-            <a href={localHref(`/missions/${mission.id}`)}>{mission.name}</a>
-            <span class="year">{mission.year}</span>
-            {#if mission.first}<span class="note">{mission.first}</span>{/if}
+          <li class="has-thumb">
+            <EntityThumb
+              src={thumbOf('missions', mission.id)}
+              ring={agencyRingColor(mission.agency)}
+              fallback="none"
+            />
+            <span class="lt-body">
+              <a href={localHref(`/missions/${mission.id}`)}>{mission.name}</a>
+              <span class="year">{mission.year}</span>
+              {#if mission.first}<span class="note">{mission.first}</span>{/if}
+            </span>
           </li>
         {/each}
       </ul>
@@ -200,9 +210,16 @@
         <h2 class="page-section-label">{group.title}</h2>
         <ul class="linklist">
           {#each group.items as h (h.id)}
-            <li>
-              <a href={localHref(`/fleet/${h.id}`)}>{h.name}</a>
-              {#if h.tagline}<span class="note">{h.tagline}</span>{/if}
+            <li class="has-thumb">
+              <EntityThumb
+                src={thumbOf('fleet', h.id)}
+                ring={agencyRingColor(h.agency)}
+                fallback="none"
+              />
+              <span class="lt-body">
+                <a href={localHref(`/fleet/${h.id}`)}>{h.name}</a>
+                {#if h.tagline}<span class="note">{h.tagline}</span>{/if}
+              </span>
             </li>
           {/each}
         </ul>

@@ -92,6 +92,17 @@
 .entity .linklist li {
   margin: 0;
 }
+.entity .linklist li.has-thumb {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+.entity .linklist li.has-thumb > .entity-thumb {
+  margin-top: 1px;
+}
+.entity .linklist .lt-body {
+  min-width: 0;
+}
 .entity .linklist .year {
   margin-left: 6px;
   color: rgba(255, 255, 255, 0.45);

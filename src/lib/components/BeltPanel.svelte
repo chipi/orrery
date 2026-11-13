@@ -19,6 +19,8 @@
   import PanelHeroImage from './PanelHeroImage.svelte';
   import PanelLightbox from './PanelLightbox.svelte';
   import Panel from './Panel.svelte';
+  import EntityThumb from './EntityThumb.svelte';
+  import { beltMemberThumb } from '$lib/entity-thumb';
   import ScienceCard from './ScienceCard.svelte';
   import { pickScienceLinks } from '$lib/science-links';
   import * as m from '$lib/paraglide/messages';
@@ -257,6 +259,7 @@
           {#each entry.largest_members as member, i (member)}
             {@const id = memberId(baseMember(i) ?? member)}
             <li>
+              <EntityThumb src={beltMemberThumb(baseMember(i) ?? member)} />
               {#if id}
                 <a
                   href={localHref(`/explore?id=${id}`)}
@@ -267,7 +270,7 @@
                   <span class="member-cta" aria-hidden="true">{m.belt_member_open()}</span>
                 </a>
               {:else}
-                {member}
+                <span class="member-plain">{member}</span>
               {/if}
             </li>
           {/each}
@@ -415,11 +418,20 @@
     padding: 6px 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     line-height: 1.4;
+    display: flex;
+    align-items: center;
+    gap: 10px;
   }
   .member-list li:last-child {
     border-bottom: none;
   }
+  .member-plain {
+    flex: 1;
+    min-width: 0;
+  }
   .member-link {
+    flex: 1;
+    min-width: 0;
     display: flex;
     align-items: baseline;
     justify-content: space-between;

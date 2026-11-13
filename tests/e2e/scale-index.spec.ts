@@ -3,6 +3,13 @@ import { expect, test, type Locator, type Page } from '@playwright/test';
 import { collectCanonicalRoutes } from '../../scripts/site-routes.mjs';
 import { waitForHydration } from './_helpers/hydration';
 import { expectLinkTargets, expectOneTabStop } from './_helpers/index-panel';
+import {
+  galaxyPages,
+  galaxyRows,
+  structurePages,
+  structureRows,
+  structureRowsOf,
+} from './_helpers/outer-pages';
 
 /**
  * UXD-017: the same INDEX on all eight /explore scales. One spec over every scale: the panel is
@@ -21,7 +28,7 @@ type Scale = {
   aria: string;
   /** A row that is a plain object of the scene (not a black hole), selected by Enter. */
   pick: string;
-  /** Whether any row has an entity page (so ↗ links exist). */
+  /** Whether any row has an entity page (so ↗ links exist). The two outer-scale page types follow their overlay files. */
   links: boolean;
 };
 
@@ -59,7 +66,7 @@ const SCALES: Scale[] = [
     context: 'local-sheet',
     aria: 'Local Sheet index — jump to a member group',
     pick: 'm81-group',
-    links: false,
+    links: structureRowsOf('local-sheet') > 0,
   },
   {
     id: 'virgo',
@@ -73,7 +80,7 @@ const SCALES: Scale[] = [
     context: 'laniakea',
     aria: 'Laniakea index — jump to a member',
     pick: 'great-attractor',
-    links: false,
+    links: structureRowsOf('laniakea') > 0,
   },
   {
     id: 'cosmic-web',
@@ -110,7 +117,7 @@ test.describe('the prerendered /explore HTML holds the INDEX links, no dead butt
   });
 
   for (const locale of ['', '/de']) {
-    test(`${locale}/explore: 48 body, 66 star, 4 black-hole and 153 deep-sky links, six lists, no button row`, async ({
+    test(`${locale}/explore: 48 body, 66 star, 4 black-hole and 153 deep-sky links, the galaxy and structure pages of the overlay files, the lists that have one, no button row`, async ({
       request,
     }) => {
       const res = await request.get(`${locale}/explore`);
@@ -119,8 +126,19 @@ test.describe('the prerendered /explore HTML holds the INDEX links, no dead butt
       const lists = [...html.matchAll(/<aside[^>]*class="scale-index"[^>]*>/g)].map(
         (m) => /data-scale="([a-z-]+)"/.exec(m[0])?.[1],
       );
+      // Six lists always have a linked row; the Local Sheet and Laniakea appear once one of their
+      // members has a structure page (the overlay files decide, ADR-096 item 18).
       expect(lists.sort()).toEqual(
-        ['cosmic-web', 'local-group', 'milky-way', 'neighborhood', 'solar-system', 'virgo'].sort(),
+        [
+          'cosmic-web',
+          'local-group',
+          'milky-way',
+          'neighborhood',
+          'solar-system',
+          'virgo',
+          ...(structureRowsOf('local-sheet') > 0 ? ['local-sheet'] : []),
+          ...(structureRowsOf('laniakea') > 0 ? ['laniakea'] : []),
+        ].sort(),
       );
       expect(html.match(/<button[^>]*class="[^"]*\bsi-row\b/g) ?? []).toHaveLength(0);
 
@@ -138,7 +156,13 @@ test.describe('the prerendered /explore HTML holds the INDEX links, no dead butt
       // (ngc-5139) and the Carina alias (carina-nebula, ngc-3372) link the same pages: 13 twin rows.
       expect(kind('/explore/deep-sky/')).toHaveLength(140 + 13);
       expect(new Set(kind('/explore/deep-sky/')).size).toBe(140);
-      expect(listed).toHaveLength(48 + 66 + 4 + 140 + 13);
+      // The galaxy rows are the Local Group's, the Magellanic Clouds twice (also in the Milky Way
+      // scale); the structure rows are one per scale that lists the structure (local-group: two).
+      expect(kind('/explore/galaxies/')).toHaveLength(galaxyRows());
+      expect(new Set(kind('/explore/galaxies/')).size).toBe(galaxyPages.size);
+      expect(kind('/explore/structures/')).toHaveLength(structureRows());
+      expect(new Set(kind('/explore/structures/')).size).toBe(structurePages.size);
+      expect(listed).toHaveLength(48 + 66 + 4 + 140 + 13 + galaxyRows() + structureRows());
       // Every body, star, black-hole and deep-sky page of the site is one of those links.
       const pages = routes.filter(
         (r) => /^\/explore\/[^/]+(\/[^/]+)?$/.test(r) && r !== '/explore/hub',

@@ -3690,5 +3690,8 @@
   "star_show_constellations": "星座線を表示",
   "star_zodiac_note": "{con}は黄道星座です。太陽・月・惑星がその中を通ります。",
   "explore_bh_see_lensing": "重力レンズのシミュレーションを見る",
-  "panel_hero_pictured": "写っている天体：{part}"
+  "panel_hero_pictured": "写っている天体：{part}",
+  "explore_related_part_of": "所属",
+  "explore_related_members": "主な天体",
+  "explore_related_same_scale": "同じスケールの天体"
 }

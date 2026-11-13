@@ -3690,5 +3690,8 @@
   "star_show_constellations": "显示星座连线",
   "star_zodiac_note": "{con}是黄道星座：太阳、月亮和行星都会经过它。",
   "explore_bh_see_lensing": "查看引力透镜模拟",
-  "panel_hero_pictured": "图中：{part}"
+  "panel_hero_pictured": "图中：{part}",
+  "explore_related_part_of": "隶属于",
+  "explore_related_members": "成员",
+  "explore_related_same_scale": "同一尺度的其他天体"
 }

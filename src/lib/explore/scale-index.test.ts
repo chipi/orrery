@@ -22,13 +22,15 @@ const pageIds = (prefix: string): Set<string> =>
       .map((r) => r.slice(prefix.length)),
   );
 
-function source(): ScaleIndexSource {
+function source(pages: Partial<ScaleIndexSource['pages']> = {}): ScaleIndexSource {
   const members = (file: string) => read<{ members: never[] }>(`universe/${file}.json`).members;
   const body = pageIds('/explore/');
   body.delete('hub');
   body.delete('stars');
   body.delete('black-holes');
   body.delete('deep-sky');
+  body.delete('galaxies');
+  body.delete('structures');
   return {
     locale: 'en-US',
     names: { body: {}, star: {}, blackHole: {}, belt: {} },
@@ -37,6 +39,9 @@ function source(): ScaleIndexSource {
       star: pageIds('/explore/stars/'),
       blackHole: pageIds('/explore/black-holes/'),
       deepSky: pageIds('/explore/deep-sky/'),
+      galaxy: pageIds('/explore/galaxies/'),
+      structure: pageIds('/explore/structures/'),
+      ...pages,
     },
     deepSkyAlias: DEEP_SKY_ALIAS,
     planets: read<{ planets: never[] }>('planets.json').planets,
@@ -338,5 +343,66 @@ describe('groupBySection', () => {
 
   it('is empty for no rows', () => {
     expect(groupBySection([] as ScaleIndexRow[])).toEqual([]);
+  });
+});
+
+// ADR-096 item 18: the rows of the five outer scales link /explore/galaxies|structures/<id> once the
+// page exists. No overlay exists yet, so the route list is empty; these give every member a page.
+describe('galaxy and structure pages (item 18)', () => {
+  const memberIds = (list: { id: string }[]) => list.map((m) => m.id);
+  const twins = new Set(['andromeda', 'triangulum', 'm32', 'm110']);
+  const withPages = (): ScaleIndexSource =>
+    source({
+      galaxy: new Set(memberIds(source().localGroup).filter((id) => !twins.has(id))),
+      structure: new Set(
+        [...src.localSheet, ...src.virgo, ...src.laniakea, ...src.cosmicWeb].map((m) => m.id),
+      ),
+    });
+  const full = buildScaleIndexRows(withPages());
+
+  it('no overlay, no page, no link: the rows of today are unchanged', () => {
+    for (const scale of ['local-sheet', 'laniakea', 'cosmic-web'] as const)
+      expect(rows[scale].filter((r) => r.href?.startsWith('/explore/structures/'))).toEqual([]);
+    expect(rows['milky-way'].find((r) => r.id === 'lmc')?.href).toBeUndefined();
+  });
+
+  it('every Local Group member links a page, a twin its deep-sky one: 29 + 4', () => {
+    const lg = full['local-group'];
+    expect(lg.filter((r) => !r.href)).toEqual([]);
+    expect(lg.filter((r) => r.href?.startsWith('/explore/galaxies/'))).toHaveLength(29);
+    const twin = (id: string) => lg.find((r) => r.id === id)?.href;
+    expect(twin('andromeda')).toBe('/explore/deep-sky/m31');
+    expect(twin('triangulum')).toBe('/explore/deep-sky/m33');
+    expect(twin('m32')).toBe('/explore/deep-sky/m32');
+    expect(twin('m110')).toBe('/explore/deep-sky/m110');
+    expect(twin('lmc')).toBe('/explore/galaxies/lmc');
+  });
+
+  it('the Milky Way scale links the two Magellanic Clouds to the same pages as the Local Group', () => {
+    const mw = full['milky-way'];
+    for (const id of ['lmc', 'smc']) {
+      expect(mw.find((r) => r.id === id)?.href).toBe(`/explore/galaxies/${id}`);
+      expect(full['local-group'].find((r) => r.id === id)?.href).toBe(`/explore/galaxies/${id}`);
+    }
+    expect(mw.filter((r) => r.href?.startsWith('/explore/galaxies/'))).toHaveLength(2);
+  });
+
+  it('the four structure scales link every member: 9 + 7 + 8 + 7, local-group in two scales, one page', () => {
+    const count = (scale: (typeof CTX_ORDER)[number]) =>
+      full[scale].filter((r) => r.href?.startsWith('/explore/structures/')).length;
+    expect([count('local-sheet'), count('virgo'), count('laniakea'), count('cosmic-web')]).toEqual([
+      9, 7, 8, 7,
+    ]);
+    const lg = (scale: 'local-sheet' | 'virgo') => full[scale].find((r) => r.id === 'local-group');
+    expect(lg('local-sheet')?.href).toBe('/explore/structures/local-group');
+    expect(lg('virgo')?.href).toBe('/explore/structures/local-group');
+  });
+
+  it('links 62 rows to 59 pages, only /explore/galaxies and /explore/structures', () => {
+    const hrefs = CTX_ORDER.flatMap((s) => full[s].flatMap((r) => (r.href ? [r.href] : []))).filter(
+      (h) => /^\/explore\/(galaxies|structures)\//.test(h),
+    );
+    expect(hrefs).toHaveLength(62);
+    expect(new Set(hrefs).size).toBe(59);
   });
 });

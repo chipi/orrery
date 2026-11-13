@@ -28,7 +28,9 @@ import {
   blackHolePageIds,
   collectCanonicalRoutes,
   deepSkyPageIds,
+  galaxyPageIds,
   starPageIds,
+  structurePageIds,
 } from '../../../scripts/site-routes.mjs';
 
 export type EntityHub = 'missions' | 'fleet' | 'moon' | 'mars' | 'venus' | 'explore';
@@ -225,6 +227,8 @@ export async function getScaleIndexRows(locale: string, fetchFn: FetchFn): Promi
       star: new Set(starLinks.map((l) => l.id)),
       blackHole: new Set(blackHoleLinks.map((l) => l.id)),
       deepSky: new Set<string>(deepSkyPageIds()),
+      galaxy: new Set<string>(galaxyPageIds()),
+      structure: new Set<string>(structurePageIds()),
     },
     deepSkyAlias: DEEP_SKY_ALIAS,
     planets: planets.planets,

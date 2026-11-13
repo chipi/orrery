@@ -69,7 +69,7 @@ const THIN_MIN_CHARS = {
 };
 const thinnest = new Map();
 const ENTITY_ROUTE =
-  /^\/(missions|fleet|moon|mars|venus|explore|lab)\/([^/]+)$|^\/explore\/(?:stars|black-holes|deep-sky)\/[^/]+$/;
+  /^\/(missions|fleet|moon|mars|venus|explore|lab)\/([^/]+)$|^\/explore\/(?:stars|black-holes|deep-sky|galaxies|structures)\/[^/]+$/;
 // Index / app pages that sit under an entity prefix.
 const NOT_ENTITY = new Set(['/missions/launches', '/explore/hub']);
 

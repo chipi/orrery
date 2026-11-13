@@ -3690,5 +3690,8 @@
   "star_show_constellations": "तारामंडल की रेखाएँ दिखाएँ",
   "star_zodiac_note": "{con} एक राशि-तारामंडल है: सूर्य, चंद्रमा और ग्रह इससे होकर गुज़रते हैं।",
   "explore_bh_see_lensing": "गुरुत्वीय लेंसिंग सिमुलेशन देखें",
-  "panel_hero_pictured": "तस्वीर में: {part}"
+  "panel_hero_pictured": "तस्वीर में: {part}",
+  "explore_related_part_of": "इसका हिस्सा",
+  "explore_related_members": "सदस्य",
+  "explore_related_same_scale": "इसी पैमाने पर भी"
 }

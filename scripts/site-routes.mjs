@@ -221,6 +221,69 @@ function deepSkyRoutes() {
   return deepSkyPageIds().map((id) => `/explore/deep-sky/${id}`);
 }
 
+/** The data file of the galaxy pages, and the four of the structure pages. */
+export const GALAXY_DATA_FILE = 'static/data/universe/local-group.json';
+export const STRUCTURE_DATA_FILES = [
+  'static/data/universe/local-sheet.json',
+  'static/data/universe/virgo-cluster.json',
+  'static/data/universe/laniakea.json',
+  'static/data/universe/cosmic-web.json',
+];
+
+/** @param {string} p @returns {string[]} the `members[]` ids of a universe data file */
+function memberIds(p) {
+  return existsSync(p)
+    ? JSON.parse(readFileSync(p, 'utf8')).members.map((/** @type {{ id: string }} */ m) => m.id)
+    : [];
+}
+
+/**
+ * Every id with a galaxy page (/explore/galaxies/<id>): the Local Group members that have an
+ * overlay under i18n-src/en-US/universe/galaxies/ (the files decide, as for deep-sky), except the
+ * four whose page is a deep-sky one: andromeda and triangulum (DEEP_SKY_ALIAS) and m32 and m110
+ * (an object of deep-sky-objects.json under the same id). One real object, one page.
+ *
+ * @returns {string[]}
+ */
+export function galaxyPageIds() {
+  const deepSky = new Set(
+    existsSync('static/data/universe/deep-sky-objects.json')
+      ? JSON.parse(readFileSync('static/data/universe/deep-sky-objects.json', 'utf8')).objects.map(
+          (/** @type {{ id: string }} */ o) => o.id,
+        )
+      : [],
+  );
+  return memberIds(GALAXY_DATA_FILE).filter(
+    (id) =>
+      !Object.hasOwn(DEEP_SKY_ALIAS, id) &&
+      !deepSky.has(id) &&
+      existsSync(`i18n-src/en-US/universe/galaxies/${id}.json`),
+  );
+}
+
+/**
+ * Every id with a structure page (/explore/structures/<id>): the members of the Local Sheet,
+ * Virgo, Laniakea and Cosmic web files that have an overlay under
+ * i18n-src/en-US/universe/structures/. `local-group` is a member of two of the files: once.
+ *
+ * @returns {string[]}
+ */
+export function structurePageIds() {
+  return [...new Set(STRUCTURE_DATA_FILES.flatMap(memberIds))].filter((id) =>
+    existsSync(`i18n-src/en-US/universe/structures/${id}.json`),
+  );
+}
+
+/** One indexable page per galaxy with text (/explore/galaxies/<id>). */
+function galaxyRoutes() {
+  return galaxyPageIds().map((id) => `/explore/galaxies/${id}`);
+}
+
+/** One indexable page per structure with text (/explore/structures/<id>). */
+function structureRoutes() {
+  return structurePageIds().map((id) => `/explore/structures/${id}`);
+}
+
 /** One indexable page per Lab formula (/lab/<id>, 0.9.8 SEO). The id list is
  *  guarded against the TS registry by lab-formulas-json.test.ts. */
 function labRoutes() {
@@ -250,6 +313,8 @@ export function collectCanonicalRoutes() {
     ...starRoutes(),
     ...blackHoleRoutes(),
     ...deepSkyRoutes(),
+    ...galaxyRoutes(),
+    ...structureRoutes(),
     ...labRoutes(),
   ];
 }

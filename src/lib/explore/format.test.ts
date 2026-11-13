@@ -14,7 +14,14 @@ import {
   distanceUnitLabel,
   distanceWithUnit,
   fmtScale,
+  galaxyDiameter,
+  galaxyDistance,
+  galaxyGroupLabel,
+  galaxyKindLabel,
   lightUnitLabel,
+  structureDistance,
+  structureKindLabel,
+  structureSpan,
 } from './format';
 
 describe('explore formatters', () => {
@@ -164,5 +171,55 @@ describe('deep-sky formatters', () => {
       'other',
     ] as const;
     expect(new Set(cats.map(deepSkyCategoryLabel)).size).toBe(cats.length);
+  });
+});
+
+describe('galaxy and structure formatters (panel and page share them)', () => {
+  it('a galaxy distance has three significant figures, in the locale’s number format and unit', () => {
+    expect(galaxyDistance(2.5538, 'en-US')).toBe('2,550,000 ly');
+    expect(galaxyDistance(0.1583, 'en-US')).toBe('158,000 ly');
+    expect(galaxyDistance(2.5538, 'de')).toBe(`${(2550000).toLocaleString('de')} ly`);
+    expect(galaxyDiameter(105, 'en-US')).toBe('105,000 ly');
+  });
+
+  it('a structure distance and span are shown to the light-year, as the panels did (Mpc × 3.26e6)', () => {
+    expect(structureDistance(16.5, 'en-US')).toBe('53,790,000 ly');
+    expect(structureSpan(520, 'en-US')).toBe('520,000,000 ly');
+    expect(structureDistance(16.5, 'fr')).toBe(
+      m.unit_ly_value({ value: (53790000).toLocaleString('fr') }),
+    );
+  });
+
+  it('every kind of the data has its own label, and an unknown kind keeps its id', () => {
+    for (const k of [
+      'spiral',
+      'irregular',
+      'dwarf-elliptical',
+      'dwarf-spheroidal',
+      'dwarf-irregular',
+    ])
+      expect(galaxyKindLabel(k), k).not.toBe(k);
+    for (const k of [
+      'group',
+      'cloud',
+      'cluster',
+      'supercluster',
+      'attractor',
+      'wall',
+      'void',
+      'concentration',
+    ])
+      expect(structureKindLabel(k), k).not.toBe(k);
+    expect(galaxyKindLabel('x')).toBe('x');
+    expect(structureKindLabel('x')).toBe('x');
+  });
+
+  it('a galaxy’s place in the Local Group: ours, a major member, a satellite, or a free dwarf', () => {
+    const label = (id: string, parent: string) => galaxyGroupLabel(id, parent);
+    expect(label('milky-way', 'milky-way')).toBe(m.explore_lg_group_self());
+    expect(label('andromeda', 'andromeda')).toBe(m.explore_lg_group_anchor());
+    expect(label('lmc', 'milky-way')).toBe(m.explore_lg_group_mw());
+    expect(label('ngc-147', 'andromeda')).toBe(m.explore_lg_group_andromeda());
+    expect(label('wlm', 'independent')).toBe(m.explore_lg_group_independent());
   });
 });

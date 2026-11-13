@@ -96,6 +96,28 @@ describe('prune-streamed-assets (MOBILE=1) black-hole pages', () => {
   });
 });
 
+describe('prune-streamed-assets (MOBILE=1) galaxy and structure pages', () => {
+  it('drops every /explore/galaxies/<id> and /explore/structures/<id> page and its __data.json; keeps the scene route', () => {
+    const b = seed(dir);
+    for (const prefix of ['', 'de/']) {
+      for (const [folder, id] of [
+        ['galaxies', 'lmc'],
+        ['structures', 'virgo-cluster'],
+      ]) {
+        mkdirSync(path.join(b, prefix, `explore/${folder}/${id}`), { recursive: true });
+        writeFileSync(path.join(b, prefix, `explore/${folder}/${id}.html`), 'x');
+        writeFileSync(path.join(b, prefix, `explore/${folder}/${id}/__data.json`), '{}');
+      }
+    }
+    writeFileSync(path.join(b, 'explore.html'), 'x'); // the scene route — must survive
+    run(dir, true);
+    expect(existsSync(path.join(b, 'explore/galaxies'))).toBe(false);
+    expect(existsSync(path.join(b, 'explore/structures'))).toBe(false);
+    expect(existsSync(path.join(b, 'de'))).toBe(false);
+    expect(existsSync(path.join(b, 'explore.html'))).toBe(true);
+  });
+});
+
 describe('prune-streamed-assets (MOBILE unset)', () => {
   it('is a no-op — the browser build is untouched', () => {
     const b = seed(dir);

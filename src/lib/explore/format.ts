@@ -160,3 +160,51 @@ const PLANET_NAME: Record<string, typeof m.lab_body_earth> = {
   uranus: m.lab_body_uranus,
   neptune: m.lab_body_neptune,
 };
+
+// ── Galaxies and structures (the six outer-scale panels and their /explore/galaxies and
+// /explore/structures pages): one string per value, so a panel and its page cannot disagree.
+
+const lightYears = (ly: number, locale: string, o: Intl.NumberFormatOptions): string =>
+  m.unit_ly_value({ value: new Intl.NumberFormat(locale, o).format(ly) });
+
+// Three significant figures: the Local Group catalogue's distances are whole kiloparsecs.
+export const galaxyDistance = (distMly: number, locale: string): string =>
+  lightYears(distMly * 1e6, locale, { maximumSignificantDigits: 3 });
+export const galaxyDiameter = (diamKly: number, locale: string): string =>
+  lightYears(diamKly * 1e3, locale, { maximumSignificantDigits: 3 });
+// The four schematic files hold hand values in Mpc and Mly; shown to the light-year, as the panels did.
+export const structureDistance = (distMpc: number, locale: string): string =>
+  lightYears(distMpc * 3.26e6, locale, { maximumFractionDigits: 0 });
+export const structureSpan = (diamMly: number, locale: string): string =>
+  lightYears(diamMly * 1e6, locale, { maximumFractionDigits: 0 });
+
+const GALAXY_KIND_LABEL: Record<string, () => string> = {
+  spiral: m.explore_lg_kind_spiral,
+  irregular: m.explore_lg_kind_irregular,
+  'dwarf-elliptical': m.explore_lg_kind_dwarf_elliptical,
+  'dwarf-spheroidal': m.explore_lg_kind_dwarf_spheroidal,
+  'dwarf-irregular': m.explore_lg_kind_dwarf_irregular,
+};
+export const galaxyKindLabel = (kind: string): string => GALAXY_KIND_LABEL[kind]?.() ?? kind;
+
+const STRUCTURE_KIND_LABEL: Record<string, () => string> = {
+  group: m.explore_ls_kind_group,
+  cloud: m.explore_ls_kind_cloud,
+  cluster: m.explore_virgo_kind_cluster,
+  supercluster: m.explore_laniakea_kind_supercluster,
+  attractor: m.explore_laniakea_kind_attractor,
+  wall: m.explore_cosmic_web_kind_wall,
+  void: m.explore_cosmic_web_kind_void,
+  concentration: m.explore_cosmic_web_kind_concentration,
+};
+export const structureKindLabel = (kind: string): string => STRUCTURE_KIND_LABEL[kind]?.() ?? kind;
+
+// A galaxy's place in the Local Group: our own, a major member, a satellite of one, or a free dwarf.
+export function galaxyGroupLabel(id: string, parent: string): string {
+  if (id === 'milky-way') return m.explore_lg_group_self();
+  // An anchor galaxy (Andromeda) is a major member, not a satellite of anything.
+  if (id === parent) return m.explore_lg_group_anchor();
+  if (parent === 'milky-way') return m.explore_lg_group_mw();
+  if (parent === 'andromeda') return m.explore_lg_group_andromeda();
+  return m.explore_lg_group_independent();
+}

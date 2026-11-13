@@ -171,13 +171,15 @@ export interface ScaleIndexSource {
   };
   /**
    * Ids that have an entity page: /explore/<id>, /explore/stars/<id>, /explore/black-holes/<id>,
-   * /explore/deep-sky/<id>.
+   * /explore/deep-sky/<id>, /explore/galaxies/<id>, /explore/structures/<id>.
    */
   pages: {
     body: ReadonlySet<string>;
     star: ReadonlySet<string>;
     blackHole: ReadonlySet<string>;
     deepSky: ReadonlySet<string>;
+    galaxy: ReadonlySet<string>;
+    structure: ReadonlySet<string>;
   };
   /** Scene ids that name a deep-sky object under another id (andromeda → m31): they link its page. */
   deepSkyAlias: Readonly<Record<string, string>>;
@@ -214,15 +216,14 @@ type Member = { id: string; name: string; kind: string; headliner: boolean; pare
 
 const dist = (m: Member): number => ('dist_mly' in m ? m.dist_mly : m.dist_mpc);
 
+type PageOf = (id: string, name: string) => { href: string; name: string } | null;
+
 /** Members nearest first; the data files list them in the order they were authored. */
-function memberRows(
-  members: Member[],
-  deepSkyPage?: (id: string) => { href: string; name: string } | null,
-): ScaleIndexRow[] {
+function memberRows(members: Member[], pageOf?: PageOf): ScaleIndexRow[] {
   return [...members]
     .sort((a, b) => dist(a) - dist(b))
     .map((m) => {
-      const page = deepSkyPage?.(m.id);
+      const page = pageOf?.(m.id, m.name);
       return {
         id: m.id,
         name: page?.name ?? m.name,
@@ -235,14 +236,16 @@ function memberRows(
     });
 }
 
+type PageSource = Pick<ScaleIndexSource, 'deepSky' | 'deepSkyAlias'> & {
+  pages: Pick<ScaleIndexSource['pages'], 'deepSky' | 'galaxy' | 'structure'>;
+};
+
 /**
  * The deep-sky page an INDEX row of another scale links: one real object, one page, so a Milky Way
  * globular or Local Group member that is the same object as a deep-sky one (DEEP_SKY_ALIAS, or the
  * same id) shares its page, and is named as the page names it (UXD-017).
  */
-function deepSkyPageOf(
-  src: ScaleIndexSource,
-): (id: string) => { href: string; name: string } | null {
+function deepSkyPageOf(src: PageSource): (id: string) => { href: string; name: string } | null {
   const byId = new Map(src.deepSky.map((o) => [o.id, o]));
   return (id) => {
     const alias = src.deepSkyAlias[id];
@@ -253,6 +256,21 @@ function deepSkyPageOf(
         : null;
     const o = page ? byId.get(page) : undefined;
     return page && o ? { href: `/explore/deep-sky/${page}`, name: deepSkyTitle(o) } : null;
+  };
+}
+
+/**
+ * The page of a Local Group member (the deep-sky page of a twin, else /explore/galaxies/<id>) and
+ * of a structure (/explore/structures/<id>), for the INDEX rows and for a page's Related list.
+ * `name` is the data's name for a member that is not a twin.
+ */
+export function outerPageOf(src: PageSource): { galaxy: PageOf; structure: PageOf } {
+  const twin = deepSkyPageOf(src);
+  return {
+    galaxy: (id, name) =>
+      twin(id) ?? (src.pages.galaxy.has(id) ? { href: `/explore/galaxies/${id}`, name } : null),
+    structure: (id, name) =>
+      src.pages.structure.has(id) ? { href: `/explore/structures/${id}`, name } : null,
   };
 }
 
@@ -400,14 +418,18 @@ function milkyWayRows(src: ScaleIndexSource): ScaleIndexRow[] {
       selectable: true,
     });
   }
-  for (const s of mw.magellanic ?? [])
+  const galaxyPage = outerPageOf(src).galaxy;
+  for (const s of mw.magellanic ?? []) {
+    const page = galaxyPage(s.id, s.name);
     rows.push({
       id: s.id,
-      name: s.name,
+      name: page?.name ?? s.name,
       kind: 'satellite-galaxy',
       section: 'satellites',
+      href: page?.href,
       selectable: true,
     });
+  }
   for (const a of mw.arms)
     rows.push({ id: a.id, name: a.name, kind: 'spiral-arm', section: 'arms', selectable: true });
   return rows;
@@ -419,14 +441,18 @@ function milkyWayRows(src: ScaleIndexSource): ScaleIndexRow[] {
  * Gargantua after everything real, at the foot of the Cosmic web.
  */
 export function buildScaleIndexRows(src: ScaleIndexSource): ScaleIndexRows {
+  const { galaxy, structure } = outerPageOf(src);
   return {
     'solar-system': solarRows(src),
     neighborhood: neighborhoodRows(src),
     'milky-way': milkyWayRows(src),
-    'local-group': memberRows(src.localGroup, deepSkyPageOf(src)),
-    'local-sheet': memberRows(src.localSheet),
-    virgo: [...memberRows(src.virgo), blackHoleRow(src, 'm87-star', 'black-holes')],
-    laniakea: memberRows(src.laniakea),
-    'cosmic-web': [...memberRows(src.cosmicWeb), blackHoleRow(src, 'gargantua', 'fiction')],
+    'local-group': memberRows(src.localGroup, galaxy),
+    'local-sheet': memberRows(src.localSheet, structure),
+    virgo: [...memberRows(src.virgo, structure), blackHoleRow(src, 'm87-star', 'black-holes')],
+    laniakea: memberRows(src.laniakea, structure),
+    'cosmic-web': [
+      ...memberRows(src.cosmicWeb, structure),
+      blackHoleRow(src, 'gargantua', 'fiction'),
+    ],
   };
 }

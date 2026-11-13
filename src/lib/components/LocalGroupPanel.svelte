@@ -8,6 +8,8 @@
   import UniversePanelBody from './UniversePanelBody.svelte';
   import type { LocalGroupMember, LocalGroupKind } from '$lib/data';
   import * as m from '$lib/paraglide/messages';
+  import { getLocale } from '$lib/paraglide/runtime';
+  import { galaxyDiameter, galaxyDistance, galaxyGroupLabel } from '$lib/explore/format';
   import { sourceLink } from '$lib/catalogue';
 
   type Props = {
@@ -30,15 +32,6 @@
             ? m.explore_lg_kind_dwarf_spheroidal()
             : m.explore_lg_kind_dwarf_irregular();
 
-  const groupLabel = (mem: LocalGroupMember): string => {
-    if (mem.id === 'milky-way') return m.explore_lg_group_self();
-    // An anchor galaxy (Andromeda) is a major member, not a satellite of anything.
-    if (mem.id === mem.parent) return m.explore_lg_group_anchor();
-    if (mem.parent === 'milky-way') return m.explore_lg_group_mw();
-    if (mem.parent === 'andromeda') return m.explore_lg_group_andromeda();
-    return m.explore_lg_group_independent();
-  };
-
   const blurb = (k: LocalGroupKind): string =>
     k === 'spiral'
       ? m.explore_lg_blurb_spiral()
@@ -46,25 +39,32 @@
         ? m.explore_lg_blurb_irregular()
         : m.explore_lg_blurb_dwarf();
 
-  // Three significant figures: the catalogue distance is whole kiloparsecs.
-  const fmt = (n: number): string => n.toLocaleString(undefined, { maximumSignificantDigits: 3 });
   let distSrc = $derived(sourceLink(member?.catalogue?.dist_mly));
 
   let facts = $derived(
     member
       ? [
-          { label: m.explore_lg_label_group(), value: groupLabel(member), accent: true },
+          {
+            label: m.explore_lg_label_group(),
+            value: galaxyGroupLabel(member.id, member.parent),
+            accent: true,
+          },
           ...(member.dist_mly > 0
             ? [
                 {
                   label: m.explore_lg_label_distance(),
-                  value: `${fmt(member.dist_mly * 1e6)} ly`,
+                  value: galaxyDistance(member.dist_mly, getLocale()),
                   source: distSrc ?? undefined,
                 },
               ]
             : []),
           ...(member.diam_kly > 0
-            ? [{ label: m.explore_lg_label_diameter(), value: `${fmt(member.diam_kly * 1e3)} ly` }]
+            ? [
+                {
+                  label: m.explore_lg_label_diameter(),
+                  value: galaxyDiameter(member.diam_kly, getLocale()),
+                },
+              ]
             : []),
         ]
       : [],

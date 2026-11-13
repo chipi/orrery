@@ -31,6 +31,7 @@ const GATED_ROUTES: { path: string; label: string; exclude?: string }[] = [
   { path: '/science', label: 'science encyclopedia' },
   { path: '/library', label: 'library / outbound-link disclosure' },
   { path: '/explore', label: 'explore (planet bodies)' },
+  { path: '/explore?context=milky-way', label: 'explore level card and welcome hint' },
   { path: '/earth', label: 'earth (orbit bodies)' },
   { path: '/moon', label: 'moon (landing sites)' },
   { path: '/mars', label: 'mars (landing sites)' },

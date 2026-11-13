@@ -9,6 +9,7 @@
   import * as m from '$lib/paraglide/messages';
   import JsonLd from '$lib/components/JsonLd.svelte';
   import ScaleGlyph, { SCALE_GLYPHS } from '$lib/components/ScaleGlyph.svelte';
+  import { SCALE_SHELL_LIST } from '$lib/explore/scale-shells';
   import { website } from '$lib/json-ld';
   import { canonicalUrl, metaDescription } from '$lib/seo';
   import { getLocale } from '$lib/paraglide/runtime';
@@ -86,70 +87,14 @@
   const grid: GridItem[] = $derived([
     // EXPLORE — the zoom-out scale shells (all jump into /explore at a scale).
     { heading: m.nav_group_explore() },
-    {
+    ...SCALE_SHELL_LIST.map((s) => ({
       route: '/explore',
-      query: '?context=solar-system',
-      name: m.explore_ctx_solar_system(),
-      glyph: 'solar-system',
-      title: m.landing_card_explore_title(),
-      desc: m.landing_card_explore_desc(),
-    },
-    {
-      route: '/explore',
-      query: '?context=neighborhood',
-      name: m.explore_ctx_stellar_neighborhood(),
-      glyph: 'neighborhood',
-      title: m.explore_hub_shortcut_neighborhood(),
-      desc: m.explore_hub_desc_neighborhood(),
-    },
-    {
-      route: '/explore',
-      query: '?context=milky-way',
-      name: m.explore_ctx_milky_way(),
-      glyph: 'milky-way',
-      title: m.explore_hub_shortcut_milkyway(),
-      desc: m.explore_hub_desc_milkyway(),
-    },
-    {
-      route: '/explore',
-      query: '?context=local-group',
-      name: m.explore_ctx_local_group(),
-      glyph: 'local-group',
-      title: m.explore_hub_shortcut_localgroup(),
-      desc: m.explore_hub_desc_localgroup(),
-    },
-    {
-      route: '/explore',
-      query: '?context=local-sheet',
-      name: m.explore_ctx_local_sheet(),
-      glyph: 'local-sheet',
-      title: m.explore_lens_story_ls_title(),
-      desc: m.explore_hub_desc_localsheet(),
-    },
-    {
-      route: '/explore',
-      query: '?context=virgo',
-      name: m.explore_ctx_virgo(),
-      glyph: 'virgo',
-      title: m.explore_lens_story_virgo_title(),
-      desc: m.explore_hub_desc_virgo(),
-    },
-    {
-      route: '/explore',
-      query: '?context=laniakea',
-      name: m.explore_ctx_laniakea(),
-      glyph: 'laniakea',
-      title: m.explore_lens_story_laniakea_title(),
-      desc: m.explore_hub_desc_laniakea(),
-    },
-    {
-      route: '/explore',
-      query: '?context=cosmic-web',
-      name: m.explore_ctx_cosmic_web(),
-      glyph: 'cosmic-web',
-      title: m.explore_lens_story_cosmic_web_title(),
-      desc: m.explore_hub_desc_cosmicweb(),
-    },
+      query: s.query,
+      name: s.name(),
+      glyph: s.glyph,
+      title: s.title(),
+      desc: s.desc(),
+    })),
     // WORLDS — the worlds you can stand on.
     { heading: m.nav_group_worlds() },
     {

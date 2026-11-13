@@ -144,6 +144,8 @@ const HUD_PARTS: Array<[string, string]> = [
   ['index tab', '.scale-index-handle'],
   ['footer', '.footer-menu'],
   ['scale panel', '.scale-strip'],
+  ['level card', '[data-testid="explore-level-card"]'],
+  ['welcome hint', '[data-testid="explore-hint"]'],
 ];
 
 for (const size of HUD_SIZES) {
@@ -160,7 +162,9 @@ for (const size of HUD_SIZES) {
       for (const [name, sel] of HUD_PARTS) {
         const l = page.locator(sel).first();
         if (!(await l.isVisible())) continue;
-        boxes.push([name, await box(l)]);
+        const b = await l.boundingBox();
+        if (!b) continue; // the welcome hint can fade out between the two calls
+        boxes.push([name, b]);
       }
       expect(boxes.length).toBeGreaterThanOrEqual(6);
       const clashes: string[] = [];
@@ -198,6 +202,7 @@ const WORLD_HUD_PARTS: Array<[string, string]> = [
   ['index tab', '.surface-index-handle'],
   ['distance scale', '.distance-scale'],
   ['nation legend', '.legend-3d'],
+  ['welcome hint', '[data-testid="surface-hint"]'],
   ['locate', '.locate-slot'],
   // The column's readout (/moon, once a location is resolved): own pixels above the chip. The
   // column itself (.hud-stack-bl) holds the others, so it is not a part.
@@ -221,7 +226,9 @@ for (const route of WORLD_ROUTES) {
           for (const [name, sel] of parts) {
             const l = page.locator(sel).first();
             if (!(await l.isVisible())) continue;
-            boxes.push([name, await box(l)]);
+            const b = await l.boundingBox();
+            if (!b) continue;
+            boxes.push([name, b]);
           }
           const clashes: string[] = [];
           for (let i = 0; i < boxes.length; i++)

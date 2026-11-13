@@ -2,6 +2,8 @@ import * as m from '$lib/paraglide/messages';
 import type { LayerKey } from '$lib/science-layers';
 import type { ExploreContextId } from '$lib/three/explore-scene-host';
 import type { ScienceTabId } from '$types/science';
+import type { ShellId } from './scale-shell-controller';
+import { SCALE_SHELLS } from './scale-shells';
 
 // WS-3 (RFC-039 Contract D) — the science lens is now uniform across every scale
 // shell. One ScienceLayersPanel, its props derived from the active shell: each
@@ -23,6 +25,13 @@ export type LensPanelInput = {
   activeBodyHostId: string | null | undefined;
   exoplanetHostIds: ReadonlySet<string>;
 };
+// A level's story: its title, body and own section, all from the shell table.
+function shellStory(id: ShellId): Pick<LensPanelProps, 'title' | 'body' | 'tab' | 'section'> {
+  const s = SCALE_SHELLS[id];
+  const [tab, section] = s.science[0].split('/');
+  return { title: s.storyTitle(), body: s.storyBody(), tab: tab as ScienceTabId, section };
+}
+
 export function computeLensPanel({
   blackHoleActive,
   contextId,
@@ -44,68 +53,25 @@ export function computeLensPanel({
   switch (contextId) {
     case 'neighborhood':
       return {
-        title: m.explore_lens_story_nb_title(),
-        body: m.explore_lens_story_nb_body(),
-        tab: 'observation',
-        section: 'hertzsprung-russell',
+        ...shellStory('neighborhood'),
         // One region, one lens (2026-09-11): the same five layers inside
         // an exoplanet system — mass–period is item 5 here too.
         available: ['constellations', 'deep-sky', 'hr-diagram', 'light-cones', 'mass-period'],
       };
     case 'milky-way':
       return {
-        title: m.explore_lens_story_mw_title(),
-        body: m.explore_lens_story_mw_body(),
-        tab: 'observation',
-        section: 'our-galaxy',
+        ...shellStory('milky-way'),
         available: ['rotation-curve', 'dark-matter-halo', 'stellar-populations'],
       };
     case 'local-group':
-      return {
-        title: m.explore_lens_story_lg_title(),
-        body: m.explore_lens_story_lg_body(),
-        tab: 'observation',
-        section: 'local-group',
-        available: [],
-      };
     case 'local-sheet':
-      return {
-        title: m.explore_lens_story_ls_title(),
-        body: m.explore_lens_story_ls_body(),
-        tab: 'observation',
-        section: 'galaxy-types',
-        available: [],
-      };
     case 'virgo':
-      return {
-        title: m.explore_lens_story_virgo_title(),
-        body: m.explore_lens_story_virgo_body(),
-        tab: 'cosmology',
-        section: 'large-scale-structure',
-        available: [],
-      };
     case 'laniakea':
-      return {
-        title: m.explore_lens_story_laniakea_title(),
-        body: m.explore_lens_story_laniakea_body(),
-        tab: 'cosmology',
-        section: 'laniakea-and-the-great-attractor',
-        available: [],
-      };
     case 'cosmic-web':
-      return {
-        title: m.explore_lens_story_cosmic_web_title(),
-        body: m.explore_lens_story_cosmic_web_body(),
-        tab: 'cosmology',
-        section: 'large-scale-structure',
-        available: [],
-      };
+      return { ...shellStory(contextId), available: [] };
     case 'solar-system':
       return {
-        title: m.explore_2d_view_title(),
-        body: m.explore_lens_solar_system_body(),
-        tab: 'orbits',
-        section: 'keplerian-orbit',
+        ...shellStory('solar-system'),
         available: [
           'hover',
           'gravity',
@@ -133,10 +99,7 @@ export function computeLensPanel({
       // scenes keep no lens surface.
       if (activeBodyHostId && exoplanetHostIds.has(activeBodyHostId)) {
         return {
-          title: m.explore_lens_story_nb_title(),
-          body: m.explore_lens_story_nb_body(),
-          tab: 'observation',
-          section: 'hertzsprung-russell',
+          ...shellStory('neighborhood'),
           available: ['constellations', 'deep-sky', 'hr-diagram', 'light-cones', 'mass-period'],
         };
       }
@@ -171,23 +134,23 @@ export function scaleNavBackTarget(
 ): { exit: ScaleNavExit; label: string } | null {
   if (blackHoleActive) return { exit: 'black-hole', label: m.explore_ctx_back() };
   if (contextId === 'body-scene')
-    return { exit: 'body-scene', label: m.explore_ctx_stellar_neighborhood() };
-  if (deepSkyActive) return { exit: 'deep-sky', label: m.explore_ctx_stellar_neighborhood() };
+    return { exit: 'body-scene', label: SCALE_SHELLS.neighborhood.name() };
+  if (deepSkyActive) return { exit: 'deep-sky', label: SCALE_SHELLS.neighborhood.name() };
   switch (contextId) {
     case 'neighborhood':
-      return { exit: 'neighborhood', label: m.explore_ctx_solar_system() };
+      return { exit: 'neighborhood', label: SCALE_SHELLS['solar-system'].name() };
     case 'milky-way':
-      return { exit: 'milky-way', label: m.explore_ctx_stellar_neighborhood() };
+      return { exit: 'milky-way', label: SCALE_SHELLS.neighborhood.name() };
     case 'local-group':
-      return { exit: 'local-group', label: m.explore_ctx_milky_way() };
+      return { exit: 'local-group', label: SCALE_SHELLS['milky-way'].name() };
     case 'local-sheet':
-      return { exit: 'local-sheet', label: m.explore_ctx_local_group() };
+      return { exit: 'local-sheet', label: SCALE_SHELLS['local-group'].name() };
     case 'virgo':
-      return { exit: 'virgo', label: m.explore_ctx_local_sheet() };
+      return { exit: 'virgo', label: SCALE_SHELLS['local-sheet'].name() };
     case 'laniakea':
-      return { exit: 'laniakea', label: m.explore_ctx_virgo() };
+      return { exit: 'laniakea', label: SCALE_SHELLS.virgo.name() };
     case 'cosmic-web':
-      return { exit: 'cosmic-web', label: m.explore_ctx_laniakea() };
+      return { exit: 'cosmic-web', label: SCALE_SHELLS.laniakea.name() };
     default:
       return null;
   }

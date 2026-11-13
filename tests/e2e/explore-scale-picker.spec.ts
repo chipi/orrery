@@ -64,6 +64,42 @@ test.describe('/explore — scale picker (#258)', () => {
     });
   });
 
+  test('the chip and every rung lead with the level glyph; the ladder keeps its eight rungs in order', async ({
+    page,
+  }) => {
+    await expect(toggle(page).locator('svg.scale-glyph-icon')).toHaveCount(1);
+    await toggle(page).click();
+    const rungs = picker(page).locator('[data-testid^="explore-scale-rung-"]');
+    // Outermost first: "zoom out" is "up".
+    await expect(rungs).toHaveCount(8);
+    const ids = await rungs.evaluateAll((els) =>
+      els.map((e) => e.getAttribute('data-testid')!.replace('explore-scale-rung-', '')),
+    );
+    expect(ids).toEqual([
+      'cosmic-web',
+      'laniakea',
+      'virgo',
+      'local-sheet',
+      'local-group',
+      'milky-way',
+      'neighborhood',
+      'solar-system',
+    ]);
+    for (const id of ids)
+      await expect(rung(page, id).locator('svg.scale-glyph-icon')).toHaveCount(1);
+    // Unique gradient ids: nine glyphs side by side must not share a <defs> id.
+    const dup = await page.evaluate(() => {
+      const seen = new Set<string>();
+      const dups: string[] = [];
+      for (const el of document.querySelectorAll('.scale-glyph-icon [id]')) {
+        if (seen.has(el.id)) dups.push(el.id);
+        seen.add(el.id);
+      }
+      return dups;
+    });
+    expect(dup).toEqual([]);
+  });
+
   test('hidden in 2D view and during a full-screen sub-view', async ({ page, isMobile }) => {
     // Scale shells are a 3D concept — the picker is gone in the flat 2D map.
     const viewToggle = isMobile

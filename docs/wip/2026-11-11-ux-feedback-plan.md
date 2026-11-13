@@ -26,7 +26,7 @@ per screen, then the change, then e2e on all three Playwright projects.
 - D1 Full redesign now, or this consistency pass first (proposal: consistency pass; it is the base a redesign needs).
 - D2 Home: video instead of the hero graphic? A Higgsfield test video is a paid run — size and cost estimate first.
 - D3 TV home and TV app: scope.
-- D4 Explore: drop the second-level nav under Explore and use the breadcrumb as the way through the levels (keep separate pages in the sitemap)?
+- D4 Explore: drop the second-level nav under Explore and use the breadcrumb as the way through the levels (keep separate pages in the sitemap)? **Answered 2026-11-13 (C8, UXD-027): keep the dropdown; the levels stay `?context=` on one page.**
 - D5 Explore: zooming into Earth / Mars / Moon / Venus switches to the world page, or an explicit "open world view" link?
 - D6 Launch camera: the operator shares example shots first.
 - D7 Missions/era filter designed with Higgsfield (paid) or in code.
@@ -352,7 +352,7 @@ not audited.
 | C5 Ruler data | O4, O5 | founding missions linked where the mission exists (Pioneer 10, Voyager 1/2, Dawn, New Horizons, Parker, Solar Orbiter, Mariner 4/10, Mars Express, Hope); country codes stripped; lists reviewed after H | every listed mission that exists is a link |
 | C6 Index | I1, I2, I3, WM3 | Explore index rows get a meta line (type, distance, diameter, moons) and kind filters; planet dots in each planet's colour; Moon/Mars index dots use the nation colours (`colorFor(site)`) like the footer | shots of both indexes |
 | C7 Iconic missions | IM1, IM2, IM3, IM4, IM7 | title = "Hover any spacecraft…", "why one plane" behind (i); chip first in its row; milestone boxes sharp (screen-constant), date + number in the header, milestone name in the body, mission name once | shots at default and zoomed |
-| C8 Explore navigation | E1, W1, E7, E9, E10 | one shell table feeds nav, hub, home grid, picker; breadcrumb/picker uses the home-page icons and per-level text; a per-level "what you are looking at" card (TierContextCard pattern) with science links; one welcome hint for Explore and Worlds; second-level nav per D4 | shots of each level; sitemap per D4 |
+| C8 Explore navigation | E1, W1, E7, E9, E10 | one shell table feeds nav, hub, home grid, picker; breadcrumb/picker uses the home-page icons and per-level text; a per-level "what you are looking at" card (TierContextCard pattern) with science links; one welcome hint for Explore and Worlds; second-level nav per D4 (kept, UXD-027) | shots of each level; sitemap per D4 (unchanged) |
 | C9 Explore → Worlds | E6 | per D5: "Go to Mars" in the planet panel and "Back to Explore" on the world page, or switch on zoom | link both ways for Earth, Moon, Mars, Venus |
 | C10 Planet heroes | EP2, EP3 | full-disc true-colour heroes for every planet (Mars first); artist concepts and mission shots kept out of the hero slot | shots of all 9 planet panels next to the 3D body |
 

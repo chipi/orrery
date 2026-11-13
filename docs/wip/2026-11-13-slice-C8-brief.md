@@ -179,3 +179,7 @@ Plan ideas now outdated: "second-level nav per D4" as a **removal** (not decided
 ## Decisions (operator, 2026-11-13)
 
 All 6 recommendations of §12 approved as written ("I am OK on 25 recommendations", for C6–C10 together). Order: implementation starts after L45 (the thumbnail scan), which follows C4–C5.
+
+## Built (2026-11-13)
+
+Slice C8 is built as [UXD-027](../uxs/decisions/UXD-027-explore-levels-one-table-glyphs-card-and-hint.md) (UXD-026 was taken by C7). Where the build differs from this brief: 4 new keys, not 2 (the brief proposed reusing `surface_card_collapse_aria` / `surface_card_expand_aria`, which read "site details"); the card is folded by default in a window under 900 x 560 with a mouse as well as on touch (the footer-dock sweep found it met the chip rows and the scale panel at 375 x 812, 667 x 375 and 800 x 375); the HUD chip row stops before the card at the solar system; the hint hangs under the top row on touch and in the upper part of the scene in a small window with a mouse (the bottom edge is crowded there); the slug lists are curated from sections that exist in `science-index.json` (a unit test checks each one). NV1 to NV9 are answered in UXD-027 and the inventory row.

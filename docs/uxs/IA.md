@@ -102,7 +102,7 @@ HOME  ·  EXPLORE ▾  ·  WORLDS ▾  ·  FLY  ·  PLAN  ·  CATALOG ▾  ·  L
 | Slot | Kind | Members (children) | Group hub (TV) |
 |---|---|---|---|
 | Home | link → `/` | — | — |
-| **Explore** | group | Solar System · Stellar Neighborhood · Milky Way · Local Group (the `/explore` scale shells, via `?context=`) | `/explore/hub` |
+| **Explore** | group | the eight `/explore` scale levels, Solar System to Cosmic Web (rows from the shell table `SCALE_SHELLS`, each with the level's glyph, via `?context=`, [UXD-027](decisions/UXD-027-explore-levels-one-table-glyphs-card-and-hint.md)) | `/explore/hub` |
 | **Worlds** | group | Earth · Moon · Mars · Venus (the `SurfaceScene` routes) | `/worlds` |
 | Fly | link → `/fly` | — | — |
 | Plan | link → `/plan` | — | — |
@@ -120,6 +120,14 @@ scenes ship). `/explore` itself is **not renamed** — the 375+ `SeeInApp`
 keep working. Cosmology content is **not** an Explore nav item: it lives under
 `/science` (a cosmology tab) in the **Learn** group; the scale shells link to it
 contextually via each shell's science-lens "→ Read in /science" link.
+
+**The Explore dropdown is derived, and it stays (D4, [UXD-027](decisions/UXD-027-explore-levels-one-table-glyphs-card-and-hint.md)).**
+Its eight rows, the hub's eight tiles, the home grid's eight cards and the level picker's ladder
+are one list, `SCALE_SHELLS` (`src/lib/explore/scale-shells.ts`), read four times; no copy
+carries a level's name, query or glyph. The plan's question "drop the second-level nav and
+use the breadcrumb?" is answered **keep**: the picker is the way through the levels *on* `/explore`,
+the dropdown the way in from any page, and neither is a page: a level is `?context=` on the one
+prerendered `/explore` (the sitemap lists `/explore` and `/explore/hub`).
 
 **TV (10-foot / D-pad).** A dropdown is unusable with a D-pad, so on TV each
 group renders as a single link to its **big-box hub** (`/explore/hub`, `/worlds`,
@@ -142,7 +150,7 @@ should reveal breadth. So the two need not be identical — only **reconcilable*
 
 - The landing shows **the whole nav tree, unpacked and sectioned** — every group
   is a labeled section, every leaf its own rich card (with a hand-drawn glyph):
-  **Explore** (the 4 scale shells) · **Worlds** (Earth/Moon/Mars/Venus) · **Plan
+  **Explore** (the 8 scale levels, from the same `SCALE_SHELLS` table as the nav, the hub and the picker) · **Worlds** (Earth/Moon/Mars/Venus) · **Plan
   & Fly** · **Catalog** (all six) · **Learn** (Essays · Science).
 - Section headers **reuse the nav group labels**, so the landing *teaches* the
   nav's grouping by showing it — the two surfaces reinforce each other.
@@ -169,6 +177,7 @@ features that warrant top-level prominence.
 
 ```
 /explore                                       Solar System Explorer
+/explore?context=milky-way                     One of the eight scale levels (solar-system, neighborhood, milky-way, local-group, local-sheet, virgo, laniakea, cosmic-web): a jump on the one prerendered page, not a page of its own (UXD-027)
 /plan                                          Mission Configurator (Mars default)
 /plan?dest=jupiter&type=flyby                  Multi-destination (ADR-026): dest=mercury|venus|mars|jupiter|saturn; type=landing|flyby
 /fly                                           Mission Arc (default scenario: ORRERY DEMO free-return)
@@ -210,6 +219,8 @@ Text pages (everything that is not a scene, the home page, the Lab or a browse t
 ---
 
 ## §controls
+
+The level card's fold on `/explore` (`LevelContextCard`) is the same kind of control as the orbit ruler's header: a disclosure `<button>` with `aria-expanded` and `aria-controls`, a 44 px target ([UXD-027](decisions/UXD-027-explore-levels-one-table-glyphs-card-and-hint.md)). The welcome hint's × is a 24 px `.ui-hit` (44 px on touch). The level picker stays one `Chip` and its rungs `Chip`s; each leads with the level's glyph.
 
 The orbit ruler's header is the one disclosure control that is not a chip: a `<button class="ui-hit">` with `aria-expanded` and `aria-controls` (a Chip's contract is `aria-pressed`), 24 px minimum hit area ([UXD-024](decisions/UXD-024-orbit-ruler-one-row-draws-its-regime.md)).
 
@@ -301,7 +312,7 @@ No state is persisted between sessions on the original surfaces. All screen stat
 
 The one cross-surface exception is URL-encoded state: mission ID and filter params allow a specific view to be bookmarked and shared.
 
-**The Physics Lab (`/lab`) is the deliberate exception** — a worksheet is a document the user builds, so it persists: URL-compact for sharing, `localStorage` for the working session, and a `.orrlab.json` export/import for durable documents (one codec, RFC-037 §5 / D-serialize). This is scoped to `/lab`; the other surfaces remain memory-only, with two small exceptions that are UI preferences, not user data: whether the Moon/Mars imagery card is expanded (`orrery.surface.tierCardExpanded`) and whether the orbit ruler is folded (`orrery.ruler.collapsed`, [UXD-024](decisions/UXD-024-orbit-ruler-one-row-draws-its-regime.md)), each a `localStorage` flag with a blocked-storage fallback.
+**The Physics Lab (`/lab`) is the deliberate exception** — a worksheet is a document the user builds, so it persists: URL-compact for sharing, `localStorage` for the working session, and a `.orrlab.json` export/import for durable documents (one codec, RFC-037 §5 / D-serialize). This is scoped to `/lab`; the other surfaces remain memory-only, with three small exceptions that are UI preferences, not user data: whether the Moon/Mars imagery card is expanded (`orrery.surface.tierCardExpanded`), whether the orbit ruler is folded (`orrery.ruler.collapsed`, [UXD-024](decisions/UXD-024-orbit-ruler-one-row-draws-its-regime.md)) and whether the `/explore` level card is expanded (`orrery.explore.levelCardExpanded`, [UXD-027](decisions/UXD-027-explore-levels-one-table-glyphs-card-and-hint.md)), each a `localStorage` flag with a blocked-storage fallback. The welcome hint (`/explore` and the four Worlds) is **not** stored: it shows on every visit until the first zoom or drag.
 
 ---
 
@@ -348,3 +359,4 @@ SvelteKit's standard entry: `src/app.html` is the document shell; `src/routes/+l
 | v1.4 | November 2026 | Added §controls (the one chip, UXD-014). |
 | v1.6 | November 2026 | §controls: the orbit ruler's disclosure header; §state-persistence: the ruler fold as the second UI-preference exception (UXD-024). |
 | v1.5 | November 2026 | §surfaces row for `/library` with its three data blocks (Audio episodes, Launches data, Astrophysics data). |
+| v1.7 | November 2026 | §nav-groups: the Explore dropdown is derived from the shell table and stays (D4); §home-cards: the 8 levels from the same table; §url-structure: `?context=` levels are not pages; §controls: the level card fold, the hint ×; §state-persistence: the level card fold as the third UI-preference exception, the hint not stored (UXD-027). |

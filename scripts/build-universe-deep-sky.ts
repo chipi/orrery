@@ -162,6 +162,7 @@ const GATEWAY: Record<string, string> = {
 const NAME_OVERRIDE: Record<string, string> = {
   M11: 'Wild Duck Cluster',
   M17: 'Omega Nebula',
+  M87: 'Virgo A', // NASA's Messier 87 page names no common name; Wikipedia: "also known as Virgo A or NGC 4486"; OpenNGC's "Virgo Galaxy" is not in use
   M76: 'Little Dumbbell Nebula',
   'NGC 104': '47 Tucanae', // OpenNGC: "47 Tuc Cluster"
   'NGC 6752': 'NGC 6752', // OpenNGC has no common name

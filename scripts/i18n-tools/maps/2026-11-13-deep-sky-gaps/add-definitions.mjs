@@ -1,6 +1,6 @@
 // One-sentence definitions for the 7 terms of add-terms.mjs, in en-US and the 13 locales
 // (i18n-src/<loc>/glossary/terms.json; /science/glossary needs one per `term` entry).
-// Sources read (none of them Wikipedia):
+// Sources read (none of them Wikipedia; core-collapsed cluster and metallicity re-sourced in l43-fixes.mjs, which supersedes their entries below):
 //   anemic spiral: arxiv.org/abs/astro-ph/0205105 ("Anemic galaxies have less prominent star formation
 //     than normal galaxies of the same Hubble type", deficient gas content)
 //   flocculent spiral: arxiv.org/abs/2205.08733 (flocculents "have patchy and low-contrast spiral

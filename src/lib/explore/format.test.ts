@@ -182,11 +182,12 @@ describe('galaxy and structure formatters (panel and page share them)', () => {
     expect(galaxyDiameter(105, 'en-US')).toBe('105,000 ly');
   });
 
-  it('a structure distance and span are shown to the light-year, as the panels did (Mpc × 3.26e6)', () => {
-    expect(structureDistance(16.5, 'en-US')).toBe('53,790,000 ly');
+  it('a structure distance has three significant figures (Mpc × 3.26e6), a span is shown to the light-year', () => {
+    expect(structureDistance(16.5, 'en-US')).toBe('53,800,000 ly');
+    expect(structureDistance(3.3, 'en-US')).toBe('10,800,000 ly');
     expect(structureSpan(520, 'en-US')).toBe('520,000,000 ly');
     expect(structureDistance(16.5, 'fr')).toBe(
-      m.unit_ly_value({ value: (53790000).toLocaleString('fr') }),
+      m.unit_ly_value({ value: (53800000).toLocaleString('fr') }),
     );
   });
 

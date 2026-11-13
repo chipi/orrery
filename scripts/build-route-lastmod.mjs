@@ -51,6 +51,19 @@ const ROOT = fileURLToPath(new URL('..', import.meta.url));
 export const OUT = 'src/lib/generated/route-lastmod.json';
 const DEFAULT_LOCALE = 'en-US';
 
+/**
+ * The code a galaxy or structure page is built from besides its own route folder: the shared page
+ * component, the entity loader, the row/section builders and the formatters. Not
+ * scripts/i18n-tools/native-terms.json (the glossary names): every glossary edit would re-date all
+ * 65 pages for a name that mostly did not change.
+ */
+const OUTER_PAGE_CODE = [
+  'src/lib/components/OuterEntityPage.svelte',
+  'src/lib/data/outer-entity.ts',
+  'src/lib/explore/outer-page.ts',
+  'src/lib/explore/format.ts',
+];
+
 /** Pages built from a shared data file / list that is not an entity of its own. */
 const SEED_DATA = {
   // The INDEX of all eight scales (UXD-017) is in the page: its rows and the pages they link
@@ -211,6 +224,7 @@ export function gitContext() {
     'src/routes',
     'src/lib/lab/messages',
     'src/lib/physics/registry',
+    ...OUTER_PAGE_CODE,
   ];
   const latest = parseNameLog(
     git(['log', '--no-renames', '--name-only', '--format=%x01%ct', '--', ...paths]),
@@ -334,6 +348,7 @@ export function inputsFor(route, ctx, data) {
     // A galaxy page: its record in the Local Group census and its overlay.
     entry('static/data/universe/local-group.json', seg[2]);
     overlays.push(`universe/galaxies/${seg[2]}.json`);
+    files.push(...OUTER_PAGE_CODE);
     addDir('explore/galaxies/[id]');
   } else if (seg[0] === 'explore' && seg[1] === 'structures' && seg.length === 3) {
     // A structure page: its record in each scale file that lists it, and its overlay.
@@ -345,6 +360,7 @@ export function inputsFor(route, ctx, data) {
     ])
       entry(f, seg[2]);
     overlays.push(`universe/structures/${seg[2]}.json`);
+    files.push(...OUTER_PAGE_CODE);
     addDir('explore/structures/[id]');
   } else if (
     seg[0] === 'explore' &&

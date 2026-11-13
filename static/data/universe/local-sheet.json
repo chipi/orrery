@@ -30,7 +30,7 @@
           "source": "Wu et al. 2014, infrared tip-of-the-red-giant-branch distance to IC 342, 3.45 ± 0.13 Mpc",
           "bibcode": null,
           "record_url": "https://arxiv.org/abs/1404.2987",
-          "note": "IC 342: 3.45 ± 0.13 Mpc; the group value here is 3.3 Mpc, within 1.2 sigma"
+          "note": "The paper gives IC 342 at 3.45 ± 0.13 Mpc; the group value shown is 3.3 Mpc, within 1.2 sigma"
         }
       }
     },
@@ -61,7 +61,7 @@
           "source": "Karachentsev et al. 2007, Centaurus A group distance, Cen A 3.76 ± 0.05 Mpc",
           "bibcode": null,
           "record_url": "https://arxiv.org/abs/astro-ph/0603091",
-          "note": "Cen A sub-group: 3.76 ± 0.05 Mpc; the M83 sub-group is at 4.79 ± 0.10 Mpc"
+          "note": "The paper gives the Cen A sub-group at 3.76 ± 0.05 Mpc, shown rounded to 3.8; the M83 sub-group is at 4.79 ± 0.10 Mpc"
         }
       }
     },
@@ -81,7 +81,7 @@
           "source": "Karachentsev et al. 2021, Sculptor group dwarf galaxies at 3.62 and 3.66 Mpc",
           "bibcode": null,
           "record_url": "https://arxiv.org/abs/2102.11354",
-          "note": "two dwarfs at 3.62 and 3.66 Mpc; NGC 253 is at 3.94 Mpc (Karachentsev et al. 2003); the group value here is 3.7 Mpc"
+          "note": "The paper gives two dwarfs at 3.62 and 3.66 Mpc; NGC 253 is at 3.94 Mpc (Karachentsev et al. 2003); the group value shown is 3.7 Mpc"
         }
       }
     },
@@ -101,7 +101,7 @@
           "source": "Karachentsev et al. 2003, Canes Venatici I cloud, 4.1 ± 0.2 Mpc",
           "bibcode": null,
           "record_url": "https://arxiv.org/abs/astro-ph/0210414",
-          "note": "cloud: 4.1 ± 0.2 Mpc; the value here is 4.0 Mpc, within the error"
+          "note": "The paper gives the cloud at 4.1 ± 0.2 Mpc; the value shown is 4.0 Mpc, within the error"
         }
       }
     },
@@ -137,7 +137,7 @@
       "catalogue": {
         "dist_mpc": {
           "value": 7.7,
-          "source": "Anand, Rizzi and Tully 2018, distance to NGC 6946, 7.72 ± 0.32 Mpc",
+          "source": "Anand et al. 2018, distance to NGC 6946, 7.72 ± 0.32 Mpc",
           "bibcode": null,
           "record_url": "https://arxiv.org/abs/1807.05229"
         }

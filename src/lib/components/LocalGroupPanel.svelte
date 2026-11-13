@@ -9,8 +9,7 @@
   import type { LocalGroupMember, LocalGroupKind, OuterTextOverlay } from '$lib/data';
   import * as m from '$lib/paraglide/messages';
   import { getLocale } from '$lib/paraglide/runtime';
-  import { galaxyDiameter, galaxyDistance, galaxyGroupLabel, outerLead } from '$lib/explore/format';
-  import { sourceLink } from '$lib/catalogue';
+  import { galaxyFacts, outerLead } from '$lib/explore/format';
 
   type Props = {
     member: LocalGroupMember | null;
@@ -41,34 +40,13 @@
         ? m.explore_lg_blurb_irregular()
         : m.explore_lg_blurb_dwarf();
 
-  let distSrc = $derived(sourceLink(member?.catalogue?.dist_mly));
-
   let facts = $derived(
     member
-      ? [
-          {
-            label: m.explore_lg_label_group(),
-            value: galaxyGroupLabel(member.id, member.parent),
-            accent: true,
-          },
-          ...(member.dist_mly > 0
-            ? [
-                {
-                  label: m.explore_lg_label_distance(),
-                  value: galaxyDistance(member.dist_mly, getLocale()),
-                  source: distSrc ?? undefined,
-                },
-              ]
-            : []),
-          ...(member.diam_kly > 0
-            ? [
-                {
-                  label: m.explore_lg_label_diameter(),
-                  value: galaxyDiameter(member.diam_kly, getLocale()),
-                },
-              ]
-            : []),
-        ]
+      ? galaxyFacts(member, getLocale()).map(({ src, ...f }, i) => ({
+          ...f,
+          ...(i === 0 ? { accent: true } : {}),
+          source: src ?? undefined,
+        }))
       : [],
   );
 </script>

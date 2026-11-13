@@ -13,6 +13,21 @@ vi.mock('./UniversePanelBody.svelte', () => ({
   },
 }));
 
+// The galaxy page's load reads the census through the data layer and lists the ids with an overlay;
+// here the two Magellanic Clouds have a page and an overlay.
+vi.mock('$lib/data/core', () => ({
+  get: vi.fn(async (path: string) => {
+    const o = /^i18n\/([^/]+)\/universe\/galaxies\/(.+)\.json$/.exec(path);
+    if (o) return { fact: `fact of ${o[2]}`, bio: `bio of ${o[2]}` };
+    return JSON.parse(readFileSync(`static/data/${path}`, 'utf8'));
+  }),
+}));
+vi.mock('../../../scripts/site-routes.mjs', async (orig) => ({
+  ...(await orig<Record<string, unknown>>()),
+  galaxyPageIds: () => ['lmc', 'smc'],
+}));
+import * as galaxyPage from '../../routes/explore/galaxies/[id]/+page.server';
+
 import LocalGroupPanel from './LocalGroupPanel.svelte';
 import MilkyWayPanel from './MilkyWayPanel.svelte';
 import LocalSheetPanel from './LocalSheetPanel.svelte';
@@ -33,6 +48,7 @@ const props = (component: unknown, p: Record<string, unknown>) => {
   return seen.props as unknown as {
     title: string;
     name?: string;
+    kind?: string;
     lead: string[];
     facts: { label: string; source?: { url: string } }[];
   };
@@ -56,6 +72,26 @@ describe('the outer-scale panels show the entity text (galaxy brief §3.3)', () 
     expect(blurb).toHaveLength(1);
     expect(blurb[0]).not.toContain('FACT');
   });
+
+  it.each(['lmc', 'smc'])(
+    'Milky Way: %s prints the strings of its galaxy page and of the Local Group panel',
+    async (id) => {
+      const member = pick('local-group', id) as never;
+      const object = { id, name: id, kind: 'satellite-galaxy', science_section: 'x' };
+      const mw = props(MilkyWayPanel, { object, learnHref: '/', member });
+      const lg = props(LocalGroupPanel, { member });
+      const page = (await galaxyPage.load({
+        params: { id },
+        fetch,
+      } as never)) as { rows: { label: string; value: string }[]; kind: string };
+      const strip = (fs: { label: string; value: string }[]) => fs.map((f) => [f.label, f.value]);
+      expect(strip(mw.facts as never)).toEqual(strip(page.rows));
+      expect(strip(lg.facts as never)).toEqual(strip(page.rows));
+      expect(mw.kind).toBe(page.kind);
+      // The schematic's own hand values ("161,741 ly", "18,900 ly") are not shown.
+      expect(JSON.stringify(mw.facts)).not.toMatch(/161,741|18,900|203,650/);
+    },
+  );
 
   it('Milky Way: a Magellanic Cloud shows the galaxy text, any other pin keeps its blurb', () => {
     const lmc = { id: 'lmc', name: 'LMC', kind: 'satellite-galaxy', science_section: 'x' };

@@ -55,6 +55,7 @@
     getSun,
     getMissionIndex,
     getMission,
+    getLocalGroup,
     type MilkyWayObject,
     type LocalGroupMember,
     type LocalSheetMember,
@@ -864,11 +865,23 @@
     const row = data.scaleIndex['milky-way'].find((r) => r.id === o.id);
     return row?.href || row?.kind === 'satellite-galaxy' ? { ...o, name: row.name } : o;
   });
-  let lgPanelMember = $derived.by(() => {
-    const mbr = selectedLgMember;
+  const lgPanelNamed = (mbr: LocalGroupMember | null | undefined) => {
     const name = mbr && rowName('local-group', mbr.id);
-    return mbr && name ? { ...mbr, name } : mbr;
+    return mbr && name ? { ...mbr, name } : (mbr ?? null);
+  };
+  let lgPanelMember = $derived(lgPanelNamed(selectedLgMember));
+  // A Magellanic Cloud's numbers and kind are the Local Group census record's (as on its galaxy
+  // page), so its Milky Way panel and the page print one string.
+  let mwCensus = $state<LocalGroupMember[]>([]);
+  $effect(() => {
+    if (selectedMwObject?.kind !== 'satellite-galaxy' || mwCensus.length) return;
+    void getLocalGroup(fetch).then((d) => (mwCensus = d?.members ?? []));
   });
+  let mwPanelMember = $derived(
+    selectedMwObject?.kind === 'satellite-galaxy'
+      ? lgPanelNamed(mwCensus.find((x) => x.id === selectedMwObject.id))
+      : null,
+  );
   // The fact and bio the five outer panels show in place of the kind blurb (the files decide which
   // ids have one).
   const galaxyTarget = (id: string | undefined) => (id ? { kind: 'galaxy' as const, id } : null);
@@ -2306,6 +2319,7 @@
 <MilkyWayPanel
   object={selectedMwObject}
   overlay={mwOverlay.current}
+  member={mwPanelMember}
   learnHref={mwLearnHref}
   open={mwPanelOpen}
   onClose={() => closeMwFn?.()}

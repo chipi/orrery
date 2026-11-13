@@ -1,0 +1,16 @@
+{
+  "fact": "NGC 6752 est un amas globulaire de la constellation australe du Paon, à environ 13 400 années-lumière.",
+  "bio": "Des ajustements N-corps lui donnent environ 260 000 masses solaires (base de données d'amas globulaires de Baumgardt). La NASA le décrit comme vieux de plus de 10 milliards d'années ; une vue de son cœur par Hubble montre des traînardes bleues, des étoiles qui semblent trop jeunes et massives pour un amas aussi vieux, peut-être formées par des collisions et des fusions. La photométrie de Hubble montre une séquence principale élargie, et les couleurs de ses géantes rouges suivent la teneur en sodium et en oxygène, signes de plus d'une population stellaire (Milone et ses collègues, 2010).",
+  "links": [
+    {
+      "l": "NASA APOD",
+      "u": "https://science.nasa.gov/image-article/apod-2012-february-10-at-the-core-of-ngc-6752/",
+      "t": "intro"
+    },
+    {
+      "l": "Baumgardt",
+      "u": "https://people.smp.uq.edu.au/HolgerBaumgardt/globular/fits/ngc6752.html",
+      "t": "core"
+    }
+  ]
+}

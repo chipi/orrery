@@ -1,0 +1,16 @@
+{
+  "fact": "NGC 6752は、南天のくじゃく座にある球状星団で、約1万3400光年の距離にあります。",
+  "bio": "N体モデルのフィットでは約26万太陽質量となります（バウムガルトの球状星団データベース）。NASAは、その年齢を100億年以上としています。Hubbleによる中心核の画像には青色はぐれ星が写っており、これはこれほど古い星団にしては若く質量が大きすぎるように見える星で、衝突や合体でできた可能性があります。Hubbleの測光は主系列の広がりを示し、赤色巨星の色はナトリウムと酸素の量に応じて変わります。これは複数の恒星種族があることを示すしるしです（ミローネらによる、2010年）。",
+  "links": [
+    {
+      "l": "NASA APOD",
+      "u": "https://science.nasa.gov/image-article/apod-2012-february-10-at-the-core-of-ngc-6752/",
+      "t": "intro"
+    },
+    {
+      "l": "Baumgardt",
+      "u": "https://people.smp.uq.edu.au/HolgerBaumgardt/globular/fits/ngc6752.html",
+      "t": "core"
+    }
+  ]
+}

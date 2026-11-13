@@ -268,6 +268,14 @@
     backdrop-filter: blur(4px);
     pointer-events: auto;
   }
+  /* A narrow window with a mouse: the detail panel (z 30) is as wide as the window, so the dock
+     sits under it, as the INDEX handle does (index-panel.css). One below the HUD cluster (25,
+     HudControls.svelte), which keeps the paths legend over the scrubber. */
+  @media (hover: hover) and (pointer: fine) and (max-width: 600px) {
+    .time-controls {
+      z-index: 24;
+    }
+  }
   /* Touch: the two things this 50px clears — the footer and the scales dock —
      are both hidden on touch, so the scale strip drops to the bottom edge and
      the drawer (--mcd-bottom) sits just above it, closing the gap the removed

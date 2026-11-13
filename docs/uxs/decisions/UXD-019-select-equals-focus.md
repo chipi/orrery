@@ -67,7 +67,7 @@ residents of the ruler were buttons that did nothing. Evidence: the brief's §2 
    New Horizons) open the mission panel like the rest; their message (status, heading, signal reach, the
    culture door) is a section of its Overview. `MessagePanel` is deleted. A milestone marker, a launch
    marker or a milestone box on a trajectory opens its mission (the `userData` contract is
-   `PICK_KINDS`, tested, and a re-skin keeps it); a box ranks below a real body and above a pick-aid.
+   `PICK_KINDS`, tested, and a re-skin keeps it); a box ranks below a real body and above a pick-aid. A belt is an area, not a body: a marker or box drawn over the belt takes the click, and the belt keeps it only where no marker is hit (2026-11-13, found on a phone, where the inner path markers lie over the belt).
 9. **Outer scales.** A member from the canvas or an INDEX row pans the camera to it and eases the zoom
    to 0.6 x the scale's entry distance (never below the floor, never out from a closer view the user
    chose). All eight scales have a Reset; the four that lacked one (Local Sheet, Virgo, Laniakea, Cosmic

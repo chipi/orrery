@@ -20,6 +20,7 @@ import { categoriseMarsMarker } from '$lib/mars-marker-category';
 import { categoriseMoonMarker } from '$lib/moon-marker-category';
 import { categoriseEarthSatellite } from '$lib/earth-satellite-category';
 import { matchesQuery } from '$lib/list-search';
+import { colorFor } from './nation-palette';
 
 export type IndexBody = 'mars' | 'moon' | 'earth' | 'venus';
 export type IndexDomain = 'orbit' | 'land';
@@ -40,7 +41,7 @@ export interface IndexItem {
   status: string;
   /** Earth only — orbital regime (LEO/MEO/GEO/…). */
   regime?: string;
-  /** Optional marker colour (earth objects carry one; surface sites don't). */
+  /** Dot colour: a site's nation colour (the legend's), an earth object's own colour. */
   color?: string;
   body: IndexBody;
 }
@@ -65,7 +66,7 @@ export function surfaceSiteToIndexItem(site: SurfaceSite, body: IndexBody): Inde
             'launch-site',
     year: site.year,
     status: site.status,
-    color: undefined,
+    color: colorFor(site),
     body,
   };
 }

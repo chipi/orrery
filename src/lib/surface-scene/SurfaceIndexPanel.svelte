@@ -90,6 +90,14 @@
     items.some((i) => i.domain === 'land') && items.some((i) => i.domain === 'orbit'),
   );
 
+  // The orbit/land cue the dot's old blue/red carried is now words: the dot is the nation's colour.
+  const metaOf = (item: IndexItem): string =>
+    [
+      item.year,
+      surfaceStatusLabel(item.status),
+      item.domain === 'orbit' ? m.surface_index_orbit() : m.surface_index_land(),
+    ].join(' · ');
+
   function domainColor(item: IndexItem): string {
     if (item.color) return item.color;
     return item.domain === 'orbit' ? '#5070ff' : '#c1440e';
@@ -194,8 +202,8 @@
         >
           <span class="row-dot" style:background={domainColor(item)} aria-hidden="true"></span>
           <span class="row-name">{item.name}</span>
-          <AgencyBadge agency={item.agencies.join(' / ')} />
-          <span class="row-meta">{item.year} · {surfaceStatusLabel(item.status)}</span>
+          <span class="row-badge"><AgencyBadge agency={item.agencies.join(' / ')} /></span>
+          <span class="row-meta" title={metaOf(item)}>{metaOf(item)}</span>
         </button>
         {#if pageIds.has(item.id)}
           <a
@@ -329,10 +337,17 @@
     letter-spacing: 0.5px;
     color: var(--color-text);
   }
+  /* Two lines: the name and the agency logos over `year · status · In orbit|On land`, which
+     would squeeze the name to nothing beside it. */
   .sidx-row {
-    display: flex;
+    display: grid;
+    grid-template-columns: 8px minmax(0, 1fr) auto;
+    grid-template-areas:
+      'dot name badge'
+      'dot meta meta';
     align-items: center;
-    gap: 8px;
+    column-gap: 8px;
+    row-gap: 2px;
     flex: 1;
     min-width: 0;
     padding: 8px 8px;
@@ -354,13 +369,18 @@
     border-color: color-mix(in srgb, var(--color-accent) 55%, transparent);
   }
   .row-dot {
-    flex-shrink: 0;
+    grid-area: dot;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.35);
     width: 8px;
     height: 8px;
     border-radius: 50%;
   }
+  .row-badge {
+    grid-area: badge;
+    display: flex;
+  }
   .row-name {
-    flex: 1;
+    grid-area: name;
     min-width: 0;
     font-family: var(--font-display);
     font-size: 13px;
@@ -370,7 +390,10 @@
     white-space: nowrap;
   }
   .row-meta {
-    flex-shrink: 0;
+    grid-area: meta;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     font-size: var(--size-label);
     letter-spacing: 0.4px;
     color: var(--color-text-dim);

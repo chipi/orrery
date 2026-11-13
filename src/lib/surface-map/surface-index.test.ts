@@ -10,6 +10,7 @@ import {
   filterIndexItems,
   type IndexItem,
 } from './surface-index';
+import { colorFor } from './nation-palette';
 
 // Minimal fixtures — the adapter only reads a handful of fields, so partial
 // objects cast to the full type keep the tests readable.
@@ -117,6 +118,16 @@ describe('surfaceSiteToIndexItem', () => {
   it('falls back to the id when no overlay name is present', () => {
     const noName = { ...marsRover, name: undefined } as SurfaceSite;
     expect(surfaceSiteToIndexItem(noName, 'mars').name).toBe('curiosity');
+  });
+
+  it("takes the dot colour from the site's nation, the colour of the legend swatch (WM3)", () => {
+    const of = (nation: string, body: 'mars' | 'moon') =>
+      surfaceSiteToIndexItem({ ...marsRover, nation } as unknown as SurfaceSite, body).color;
+    expect(of('USA', 'mars')).toBe(colorFor({ nation: 'USA' }));
+    expect(of('USA', 'mars')).toBe('#0B3D91');
+    expect(of('China', 'moon')).toBe('#DE2910');
+    expect(of('USSR', 'moon')).toBe(of('Russia', 'moon'));
+    expect(of('Narnia', 'moon')).toBe('#888');
   });
 });
 

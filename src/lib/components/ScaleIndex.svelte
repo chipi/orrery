@@ -2,7 +2,7 @@
   ScaleIndex (UXD-017) — the INDEX of one /explore scale: a searchable, keyboard-reachable list of
   every selectable object of that scale's scene. It is the DOM mirror of the canvas (TA.md "Canvas
   object indexes"): the keyboard / screen-reader / TV way in, and selecting a row does exactly what
-  a canvas click does (no camera move, no new URL). Roving list: one Tab stop, ↑↓ / D-pad move,
+  a canvas click does (the camera focuses the object, UXD-019). Roving list: one Tab stop, ↑↓ / D-pad move,
   Enter selects. The page owns which rows exist and what a select does; this component owns the
   query, the filter chip and the list.
 
@@ -37,6 +37,7 @@
     'bh:supermassive': m.explore_bh_kind_supermassive,
     'bh:stellar': m.explore_bh_kind_stellar,
     'bh:fictional': m.explore_bh_kind_fictional,
+    'solar:sun': m.explore_ds_cat_star,
     'solar:dwarf': m.explore_tt_kind_dwarf,
     'solar:comet': m.explore_tt_kind_comet,
     'solar:interstellar': m.explore_tt_kind_interstellar,
@@ -107,6 +108,8 @@
     headliner: m.explore_index_filter_headliner,
     planet: m.ui_layer_planets,
     dwarf: m.ui_layer_dwarfs,
+    asteroid: m.explore_index_filter_asteroids,
+    moon: m.explore_index_section_moons,
     comet: m.ui_layer_comets,
     globular: m.explore_mw_kind_globular,
     satellite: m.explore_mw_kind_satellite,
@@ -189,6 +192,13 @@
   };
   const metaOf = (r: ScaleIndexRow): string =>
     r.meta ?? (scale === 'local-group' ? lgGroup(r) : kindLabel(r));
+  // A wrapped meta breaks only after a " · " (the dot stays on the line it ends), never inside
+  // "139,820 km": no-break spaces inside each part, and before each dot.
+  const metaShown = (r: ScaleIndexRow): string =>
+    metaOf(r)
+      .split(' · ')
+      .map((p) => p.replaceAll(' ', ' '))
+      .join(' · ');
   const filtered = $derived(filterRows(shown, filter, query, metaOf));
   const groups = $derived(groupBySection(filtered));
   const filterIds = $derived(SCALE_FILTERS[scale].filter((id) => shown.some(FILTER_TESTS[id])));
@@ -293,7 +303,8 @@
                     >{/each}
                 </span>
                 <span class="si-name">{row.name}</span>
-                {#if metaOf(row)}<span class="si-meta">{metaOf(row)}</span>{/if}
+                {#if metaOf(row)}<span class="si-meta" title={metaOf(row)}>{metaShown(row)}</span
+                  >{/if}
               </button>
               {#if row.href}
                 <a

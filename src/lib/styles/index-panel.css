@@ -207,6 +207,35 @@
   font-size: var(--size-label);
   color: var(--color-state);
 }
+/* The solar system's rows are two lines (UXD-017, C6): the name over its meta (distance, size, moons),
+   which is too long to sit beside the name in a 320 px rail. The other seven scales keep one line. */
+.scale-index[data-scale='solar-system'] .si-row {
+  display: grid;
+  grid-template-columns: 26px minmax(0, 1fr);
+  grid-template-areas:
+    'lead name'
+    'lead meta';
+  column-gap: 8px;
+  row-gap: 2px;
+  align-items: center;
+}
+.scale-index[data-scale='solar-system'] .si-lead {
+  grid-area: lead;
+}
+.scale-index[data-scale='solar-system'] .si-name {
+  grid-area: name;
+}
+/* A planet's "1.52 AU · 6,779 km · 2 major moons" is wider than the ~205 px beside the lead slot and
+   the ↗: it wraps on a balanced break (two lines at most, then an ellipsis; `title` has it all). */
+.scale-index[data-scale='solar-system'] .si-meta {
+  grid-area: meta;
+  max-width: none;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  white-space: normal;
+  text-wrap: balance;
+}
 .si-section {
   margin-top: 6px;
   padding: 10px 10px 4px;

@@ -725,6 +725,16 @@
   .site-footer.more-open {
     z-index: 60;
   }
+  /* A narrow window with a mouse: an open detail panel (Panel.svelte, z 30) is as wide as the
+     window, so the strip and its More popover sit under it rather than over its lower corner. Only
+     while a panel is open; the strip does not move. Wider, the drawer is clear of the strip's
+     dock rules (footer-dock.spec); touch has no footer. */
+  @media (hover: hover) and (pointer: fine) and (max-width: 600px) {
+    :global(html:has(aside.panel:not(.covered))) .site-footer,
+    :global(html:has(aside.panel:not(.covered))) .site-footer.more-open {
+      z-index: 25;
+    }
+  }
   /* Touch: the floating footer is hidden entirely — its links move into the
      nav hamburger drawer as a bottom section (see Nav.svelte). This frees the
      whole bottom edge for each route's drawer buttons instead of the strip

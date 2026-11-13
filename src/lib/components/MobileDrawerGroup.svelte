@@ -90,9 +90,12 @@
     }
     const b = btn.getBoundingClientRect();
     const container = mdgEl.getBoundingClientRect();
-    const panelW = Math.min(400, window.innerWidth * 0.92);
+    const panelW = Math.min(400, container.width);
     const centre = b.left + b.width / 2;
-    const leftVp = Math.max(8, Math.min(centre - panelW / 2, window.innerWidth - panelW - 8));
+    const leftVp = Math.max(
+      container.left,
+      Math.min(centre - panelW / 2, container.right - panelW),
+    );
     panelLeft = Math.round(leftVp - container.left);
   }
 
@@ -105,12 +108,18 @@
     positionPanel();
   });
 
-  // Re-measure on resize (width feeds the clamp + the container origin).
+  // Re-measure on resize (width feeds the clamp + the container origin), and when the row's own
+  // width changes because a detail drawer opened or closed beside it.
   $effect(() => {
     if (typeof window === 'undefined') return;
     const h = () => positionPanel();
     window.addEventListener('resize', h);
-    return () => window.removeEventListener('resize', h);
+    const ro = mdgEl && typeof ResizeObserver !== 'undefined' ? new ResizeObserver(h) : null;
+    if (mdgEl) ro?.observe(mdgEl);
+    return () => {
+      window.removeEventListener('resize', h);
+      ro?.disconnect();
+    };
   });
 
   // Swipe-down on the panel body collapses it.
@@ -366,7 +375,22 @@
     position: absolute;
     bottom: calc(100% + 8px);
     left: var(--panel-left, 8px);
-    width: min(400px, 92vw);
+    width: min(400px, 100%);
+  }
+  /* An open detail panel is a side drawer in landscape (Panel.svelte, z 30): the tab row and the
+     card it opens end at the drawer's edge, so they never cross the drawer's actions and stay
+     usable for the scene beside it (the Worlds). */
+  :global(html[data-touch][data-orientation='landscape']:has(aside.panel:not(.covered))) .mdg {
+    right: calc(var(--panel-width) + 12px);
+  }
+  /* An inline row shares the bottom line with the route's strip (/explore: the time dock is most of
+     the width left beside the drawer, and the scale strip and level card fill the rest), so there
+     is no room to narrow it: it keeps its place and sits under the drawer while one is open, as
+     the INDEX handle does on a narrow window. Closing the panel brings it back. */
+  :global(html[data-touch][data-orientation='landscape']:has(aside.panel:not(.covered)))
+    .mdg.bottom-inline {
+    right: 8px;
+    z-index: 25;
   }
   :global(html[data-touch][data-orientation='landscape']) .mdg-body {
     max-height: min(46vh, 240px);

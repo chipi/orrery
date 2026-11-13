@@ -7352,6 +7352,15 @@ sample      ${debugInfo.projectedPxSample}`}
       max-width: calc(100vw - 16px);
       z-index: 45;
     }
+    /* Landscape: the detail panel is a side drawer; the row ends at its edge and scrolls sideways
+       (a second line would run into the site card below it). */
+    :global(html[data-touch][data-orientation='landscape']:has(aside.panel:not(.covered)))
+      .hud-top-mobile {
+      max-width: calc(100vw - var(--panel-width) - 20px);
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
   }
   /* The sphere controls (2D / reset / spin) are inert in the flat-patch
      detail view — hide them so they stop overlapping the flat-patch's own

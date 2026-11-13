@@ -286,6 +286,7 @@ The panel always contains, top to bottom:
 1. Identity details below the header (key stats, type line, tagline)
 1a. Action row (`PanelActions`): at most three chips, in-scene, then view, then simulate, then plan; above the hero, on every tab; absent when the entity has no action. Nothing is stacked at the foot of a panel.
 2. Hero image (no hover glow; keyboard focus draws an inset 2px `--color-focus` ring), then the tab strip (OVERVIEW | GALLERY | LEARN) — where applicable
+2a. Star, outer-scale and black-hole panels (`UniversePanelBody`, [UXD-023](../uxs/decisions/UXD-023-star-and-outer-panels-follow-the-planet-pattern.md)): the same order, one hero or none (no hero, no slot; a part-of photo captions what is pictured), GALLERY second only with two or more images, a star's IN THE SKY tab holds the constellation finder; lead `.editorial`, facts in the planet cell look; no colour or size of their own
 3. Stats grid: three cells per row (`repeat(3, minmax(0, 1fr))`), so up to nine values take three rows (UXD-018, amendment "Overview three per row")
 4. Signature element (the "still on the surface" section for Moon; the "scale fact" for Earth orbit; the editorial fact for planets)
 5. Description (lead text, Space Mono upright)

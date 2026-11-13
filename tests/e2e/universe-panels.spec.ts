@@ -27,7 +27,8 @@ test.describe('star panel (SN2, UXD-008)', () => {
     ]);
     const lead = p.locator('.tab-content .editorial').first();
     await expect(lead).toBeVisible();
-    await expect(lead).toBeInViewport();
+    // A phone held sideways is 390 px tall: the lead is a scroll away there, as for every panel.
+    if ((page.viewportSize()?.height ?? 0) >= 600) await expect(lead).toBeInViewport();
     const ratio = await p
       .locator('.panel-hero-btn img')
       .evaluate((el) => el.clientWidth / el.clientHeight);

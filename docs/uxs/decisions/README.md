@@ -87,6 +87,7 @@ How the rule is checked (the guard), or what is not checked yet.
 | [UXD-020](UXD-020-explore-readability-pins-rings-labels.md) | /explore readability: one 12 px label, one 44 px ring (gold anchor, blue hover), one placement pass, a steady label offset, 2 px light-year rings | accepted | 2026-11-12 |
 | [UXD-021](UXD-021-explore-hud-scale-bar-picker-pills-references.md) | /explore HUD: one fixed-width scale bar (120 px, the value follows), a picker ladder that stays on screen and a row that clears a docked panel, direction pills for their owner only, an aligned REFERENCES grid in the reader's language, Reset always in its slot | accepted | 2026-11-12 |
 | [UXD-022](UXD-022-science-link-lists.md)                      | Science links: at most five per panel through one helper, curated per body, ranked per mission class, each ruler regime its own card, the section pair identical in every locale | accepted | 2026-11-12 |
+| [UXD-023](UXD-023-star-and-outer-panels-follow-the-planet-pattern.md) | Star, outer-scale and black-hole panels follow the planet pattern: one shared body, one hero or none, GALLERY with two images, IN THE SKY for stars, deep-sky and EHT heroes, black holes open in place | accepted | 2026-11-12 |
 
 Open questions (D1 to D7, Q3 to Q10) are not records; they are listed in
 [UXS-000 §Open](../UXS-000-orrery-ux-architecture.md#open).

@@ -882,7 +882,7 @@
     "deep-text batch 4 glossary (2026-11-12)": "Names and terms added for docs/wip/deep-text/batch-04.md. Where the site already translated a word (captions in deep-sky.json, earlier deep-sky overlays: luminous red nova, Type Ia, grand-design spiral, the nickname titles) the existing site form was taken. Not checked on native pages (no search run; first-agent forms): the person names in ru ja zh-CN ko hi ar sr-Cyrl (Huggins, Harding, Muñoz, Pontoppidan, Fabian, Atkinson, Szyszka, Häberle, Krause), the Hindi constellation forms for Draco, Fornax, Sagitta, Corvus, the es/pt constellation gaps, Gabriela Mistral Nebula, Christmas Tree Cluster, Fornax Cluster, and the terms white dwarf cooling track, cometary knot, intracluster light, protostellar outflow, super star cluster, tidal tail, polarimetry, ionisation front in all locales (calques of the English sense; confidence marked). nl Bellennevel replaces the site caption's 'Bellnevel' (not Dutch).",
     "galaxy-structure terms (2026-11-13)": "Binding forms for deep-text batch 06 (galaxy structures). The site's own form where the site already writes the term (messages explore_cosmic_web_kind_* and explore_hub_desc_*: supercluster, void, galaxy wall, filament; the large-scale-structure and Laniakea essays: cosmic web, basin of attraction, megaparsec, zone of avoidance), else the language Wikipedia title of the English article (en.wikipedia langlinks API, fetched 2026-11-13: redshift, peculiar velocity, comoving distance, tip of the red giant branch, surface brightness fluctuations, Local Void; zh converted to zh-CN, sr to Cyrillic). Not in Wikipedia and set by the translator from the neighbouring terms (galaxy cloud in all 13 languages; hi peculiar velocity, comoving distance, surface brightness fluctuations, tip of the red giant branch; ar peculiar velocity; sr comoving distance and the Local Void's native form; ja, ko and zh-CN void/Local Void compounds): confidence is medium or low as marked in _confidence. Stems accept every variant the site already writes in an unreviewed tree.",
     "galaxy and structure deep-text batches 05-06 (2026-11-13)": "Binding forms for deep-text batches 05 (29 Local Group galaxies) and 06 (30 structures). Terms: the site's own form where the site already writes it (messages explore_lg_kind_* and explore_mw_*: dwarf spheroidal / dwarf irregular / dwarf elliptical / irregular galaxy, satellite galaxy, dark-matter halo, kpc; metal-poor from deep-sky m92), else compounds built from the site's existing neighbouring terms (dwarf galaxy, galaxy, elliptical galaxy, tip of the red giant branch, redshift) by the translator; Wikipedia langlinks (fetched 2026-11-13) carried no article for these compounds in the target languages, so every non-site form here has no native-page check: medium or low in _confidence as marked, Hindi and the Arabic/Serbian/Korean scientific compounds (period-luminosity relation, velocity dispersion, mass-to-light ratio, eclipsing binary, early/late-type, overdensity, crossing time, potential well, watershed, repeller, Hubble flow) lowest. People: the translator's transliteration under the same rules as the deep-sky people (ru Practical Transcription, ja katakana, zh Xinhua-style names, ko national orthography, hi Devanagari, ar, sr Serbian Cyrillic); en.wikipedia langlinks supplied only a few (Baade, Barnard, Leavitt, Wolf, Swift, Melotte, Shapley, Zwicky, Schuster, West) and the rest has no source. Names whose original-language pronunciation is uncertain (Pietrzyński, Kallivayalil, Antoja, Gullieuszik, Oemler, Huchra, van Zee, Wakamatsu, Lee, Jang, Kim, Sohn, Wu, Mei) are the lowest confidence. Latin-script locales keep the English spelling and carry no entry. Constellations Apus, Antlia, Horologium, Indus, Norma: the language Wikipedia titles where present (ar, hi, ja, ko, ru, sr, de, fr, it, nl, zh for Apus and Antlia), else the established names. Observatories and surveys (class place): the site's own observatory page names (Palomar, Mount Wilson, Very Large Telescope), else Wikipedia titles (Lowell, Sloan Digital Sky Survey) or the translator's forms. Not added (origin-rule vehicles and catalogue designations): Hubble, Gaia, Chandra, Cosmicflows-4, GRAVITY, DDO, Maffei 1/2, CfA2 (kept in Latin).",
-    "galaxy and structure gaps (2026-11-13, round 2)": "Constellations: the language Wikipedia title of the English article (wikidata-labels.mjs, 2026-11-13). es and pt-BR Wikipedias write Cetus, Boötes, Canes Venatici, Reticulum, Sextans, Tucana, Antlia, Apus, Pavo, Virgo, Leo, Eridanus (es) in Latin, and the shipped es text already does, so those are explicit same-as-English entries; pt-BR Ursa Maior / Ursa Menor / Peixes / Erídano follow the shipped pt-BR text. sr-Cyrl Indus is Индус (sr Wikipedia 'Индус (сазвежђе)', and the Pavo–Indus filament entry already reads Пауна–Индуса); Индијанац, which no shipped text uses, is replaced. hi Leo/Sagittarius from hi Wikipedia (सिंह / धनु तारामंडल); hi Reticulum and Sextans transliterated or Latin like the site's hi dwarf-galaxy names. Names: the forms the staged texts used where the glossary was blank (Norma Cluster nl/hi/sr, Centaurus A, Tarantelnebel, Wolf-Lundmark-Melotte hi/sr), Latin for de/fr/es/it/nl/pt-BR survey and telescope names (Wikipedia: de/es/it/nl/pt Very Large Telescope, Sloan Digital Sky Survey), site messages galaxy_name_sagittarius_dwarf for hi and sr-Cyrl. A. G. Wilson = Albert George Wilson (Q499156): initials transliterated by sound (ru Дж., sr Џ.). Terms: tidal stream and comoving coordinates take the forms the translators converged on (they agree with the stellar stream and comoving distance bindings). ko 조기형 / 만기형 은하 confirmed on Korean pages (bizhankook.com/articles/18062, koreascience.kr JAKO201900937422558). Definitions read: tidal stream, fiveable.me/intro-astronomy/key-terms/stellar-streams ('long, narrow chains of stars left behind when a globular cluster or dwarf galaxy gets pulled apart by gravity'); comoving coordinates, physicsforums.com/threads/what-does-comoving-mean.989228 ('coordinates which expand with the expansion of the Universe', fixed positions while the scale factor changes)."
+    "galaxy and structure gaps (2026-11-13, round 2)": "Constellations: the language Wikipedia title of the English article (wikidata-labels.mjs, 2026-11-13). es and pt-BR constellations are the native names, not Latin (round 3, 2026-11-13): the language Wikipedia titles are the IAU Latin names, but the article ledes and the institutional sources write the native name. es: IGN/Observatorio Astronómico Nacional SkyAtlas2020_spa (ign.es/web/resources/docs/IGNCnig/Astronomia-pdf/SkyAtlas2020_spa_Canarias2.pdf; Tucán, Retículo, Sextante, Horno, Reloj, Regla, Ballena, Erídano, Boyero, Perros de Caza, Ave del Paraíso, Pavo Real, Neumático) and the es.wikipedia ledes (Fornax o el Horno, Norma, la Regla o la Escuadra, Horologium o el Reloj, Cetus o la Ballena, Boötes o el Boyero, Canes Venatici o los Perros de Caza, Antlia o la Bomba Neumática o la Máquina Neumática, Reticulum o el Retículo, Eridanus o el Erídano, Apus o el Ave del Paraíso, Sextans o el Sextante, Tucana o el Tucán, Pavo o el Pavo); Virgo and Leo stay (Spanish writes Virgo, Leo). pt-BR: Fiocruz Museu da Vida Mensageiros das Estrelas vols 3, 8, 9, 12 (Baleia, Pavão, Ave do Paraíso, Boieiro, Cães de Caça, Sextante) and the UFRJ Departamento de Astronomia thesis pantheon.ufrj.br/bitstream/11422/17795/3/GASilva.pdf (a table Latin / Portuguese: Máquina Pneumática, Esquadro, Retículo, Sextante, Tucano, Cães de Caça, Relógio, Fornalha, Boieiro) and the IAU OAE pt-BR Fornax map (astro4edu.org: Baleia, Erídano, Fornalha, Relógio); Erídano, Ursa Maior / Ursa Menor / Peixes follow the shipped pt-BR text. nl and de Pegasus, Hercules, Eridanus and de Netz are the native names (nl.wikipedia Pegasus (sterrenbeeld), Hercules, Eridanus (rivier Eridanos); de.wikipedia Der Pegasus, Eridanus auch Fluss Eridanus). sr-Cyrl Indus is Индус (sr Wikipedia 'Индус (сазвежђе)', and the Pavo–Indus filament entry already reads Пауна–Индуса); Индијанац, which no shipped text uses, is replaced. hi Leo/Sagittarius from hi Wikipedia (सिंह / धनु तारामंडल); hi Reticulum and Sextans transliterated or Latin like the site's hi dwarf-galaxy names. Names: the forms the staged texts used where the glossary was blank (Norma Cluster nl/hi/sr, Centaurus A, Tarantelnebel, Wolf-Lundmark-Melotte hi/sr), Latin for de/fr/es/it/nl/pt-BR survey and telescope names (Wikipedia: de/es/it/nl/pt Very Large Telescope, Sloan Digital Sky Survey), site messages galaxy_name_sagittarius_dwarf for hi and sr-Cyrl. A. G. Wilson = Albert George Wilson (Q499156): initials transliterated by sound (ru Дж., sr Џ.). Terms: tidal stream and comoving coordinates take the forms the translators converged on (they agree with the stellar stream and comoving distance bindings). ko 조기형 / 만기형 은하 confirmed on Korean pages (bizhankook.com/articles/18062, koreascience.kr JAKO201900937422558). Definitions read (round 3): tidal stream, Eyre and Binney 2011 \"The mechanics of tidal streams\", MNRAS, arXiv:1011.3672 (streams formed by the tidal disruption of cold, low-mass clusters in the potential of a massive host galaxy; relics of tidally stripped globular clusters and dwarf galaxies; they appear to delineate the progenitor orbit but are poorly represented by single orbits, so the en definition says \"roughly along the orbit\"); comoving coordinates, Komatsu, UT Austin astronomy course Spring 2005 lecture 23 (as.utexas.edu/astronomy/education/spring05/komatsu/lecture23.pdf: \"Comoving coordinate is the coordinate which expands in the same way as space; galaxies always remain at the same position in comoving coordinates\"), E. L. Wright, UCLA Cosmology Tutorial part 2 (astro.ucla.edu/~wright/cosmo_02.htm: distance to any comoving observer D(t) = a(t) D(now)), and Hogg 1999 \"Distance measures in cosmology\", arXiv:astro-ph/9905116 (comoving distance is the proper distance divided by the ratio of scale factors then to now, constant for objects moving with the Hubble flow). Science review of the 25 definitions of batches 05-06 (2026-11-13) applied to 18 of them; the other 7 stayed."
   },
   "body": {
     "Earth": {
@@ -9282,7 +9282,7 @@
       "sr-Cyrl": "Еридан",
       "de": "Eridanus",
       "fr": "Éridan",
-      "es": "Eridanus",
+      "es": "Erídano",
       "it": "Eridano",
       "nl": "Eridanus",
       "pt-BR": "Erídano",
@@ -9298,10 +9298,10 @@
       "sr-Cyrl": "Ловачки пси",
       "de": "Jagdhunde",
       "fr": "Chiens de chasse",
-      "es": "Canes Venatici",
+      "es": "Perros de Caza",
       "it": "Cani da Caccia",
       "nl": "Jachthonden",
-      "pt-BR": "Canes Venatici",
+      "pt-BR": "Cães de Caça",
       "_qid": "Q10452"
     },
     "Big Dipper": {
@@ -9361,10 +9361,10 @@
       "sr-Cyrl": "Мрежица",
       "de": "Netz",
       "fr": "Réticule",
-      "es": "Reticulum",
+      "es": "Retículo",
       "it": "Reticolo",
       "nl": "Net",
-      "pt-BR": "Reticulum",
+      "pt-BR": "Retículo",
       "_qid": "Q10498"
     },
     "Sagitta": {
@@ -9396,7 +9396,7 @@
       "es": "Pavo",
       "it": "Pavone",
       "nl": "Pauw",
-      "pt-BR": "Pavo",
+      "pt-BR": "Pavão",
       "_qid": "Q10515"
     },
     "Corvus": {
@@ -9441,10 +9441,10 @@
       "sr-Cyrl": "Секстант",
       "de": "Sextant",
       "fr": "Sextant",
-      "es": "Sextans",
+      "es": "Sextante",
       "it": "Sestante",
       "nl": "Sextant",
-      "pt-BR": "Sextans",
+      "pt-BR": "Sextante",
       "_qid": "Q10525"
     },
     "Scutum": {
@@ -9532,10 +9532,10 @@
       "sr-Cyrl": "Тукан",
       "de": "Tukan",
       "fr": "Toucan",
-      "es": "Tucana",
+      "es": "Tucán",
       "it": "Tucano",
       "nl": "Toekan",
-      "pt-BR": "Tucana",
+      "pt-BR": "Tucano",
       "_qid": "Q10567"
     },
     "Aries": {
@@ -11687,10 +11687,10 @@
       "sr-Cyrl": "Волар",
       "de": "Bärenhüter",
       "fr": "Bouvier",
-      "es": "Boötes",
+      "es": "Boyero",
       "it": "Boote",
       "nl": "Ossenhoeder",
-      "pt-BR": "Boötes",
+      "pt-BR": "Boieiro",
       "_qid": "Q8667"
     },
     "Pisces": {
@@ -11779,10 +11779,10 @@
       "sr-Cyrl": "Кит",
       "de": "Walfisch",
       "fr": "Baleine",
-      "es": "Cetus",
+      "es": "Ballena",
       "it": "Balena",
       "nl": "Walvis",
-      "pt-BR": "Cetus",
+      "pt-BR": "Baleia",
       "_qid": "Q8839"
     },
     "Aldebaran": {
@@ -12947,7 +12947,7 @@
       "sr-Cyrl": "Пећ",
       "de": "Chemischer Ofen",
       "fr": "Fourneau",
-      "es": "Fornax",
+      "es": "Horno",
       "it": "Fornace",
       "nl": "Oven",
       "pt-BR": "Fornalha"
@@ -13862,10 +13862,10 @@
       "sr-Cyrl": "Рајска птица",
       "de": "Paradiesvogel",
       "fr": "Oiseau de paradis",
-      "es": "Apus",
+      "es": "Ave del Paraíso",
       "it": "Uccello del Paradiso",
       "nl": "Paradijsvogel",
-      "pt-BR": "Apus"
+      "pt-BR": "Ave do Paraíso"
     },
     "Antlia": {
       "ru": "Насос",
@@ -13877,10 +13877,10 @@
       "sr-Cyrl": "Пумпа",
       "de": "Luftpumpe",
       "fr": "Machine pneumatique",
-      "es": "Antlia",
+      "es": "Máquina Neumática",
       "it": "Macchina Pneumatica",
       "nl": "Luchtpomp",
-      "pt-BR": "Antlia"
+      "pt-BR": "Máquina Pneumática"
     },
     "Horologium": {
       "ru": "Часы",
@@ -13892,10 +13892,10 @@
       "sr-Cyrl": "Часовник",
       "de": "Pendeluhr",
       "fr": "Horloge",
-      "es": "Horologium",
+      "es": "Reloj",
       "it": "Orologio",
       "nl": "Slingeruurwerk",
-      "pt-BR": "Horologium"
+      "pt-BR": "Relógio"
     },
     "Indus": {
       "ru": "Индеец",
@@ -13922,7 +13922,7 @@
       "sr-Cyrl": "Угломер",
       "de": "Winkelmaß",
       "fr": "Règle",
-      "es": "Norma",
+      "es": "Regla",
       "it": "Regolo",
       "nl": "Winkelhaak",
       "pt-BR": "Esquadro"

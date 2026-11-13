@@ -29,6 +29,7 @@
   import EntityThumb from './EntityThumb.svelte';
   import * as m from '$lib/paraglide/messages';
   import thumbRefs from '$data/orbit-regime-thumbs.json';
+  import missionIndex from '$data/missions/index.json';
   import type { OrbitRegime } from '$types/orbit-regime';
   import type { ScienceTabId } from '$types/science';
 
@@ -69,6 +70,10 @@
   // different things per bundle; the file is the entity's blessed-hero thumb (entity-thumb.ts).
   const residentThumb = (id: string): string | null =>
     thumbOfRef((thumbRefs as Record<string, string>)[`${bundle}/${id}`]);
+  // A first carries only its mission id; the ring is that mission's agency colour.
+  const missionAgency = new Map(missionIndex.map((x) => [x.id, x.agency]));
+  const firstRing = (id: string | undefined): string | undefined =>
+    id ? agencyRingColor(missionAgency.get(id) ?? '') : undefined;
 </script>
 
 <!--
@@ -145,7 +150,10 @@
         <ul class="firsts">
           {#each regime.firsts as f (f)}
             <li>
-              <EntityThumb src={f.mission_id ? thumbOf('missions', f.mission_id) : null} />
+              <EntityThumb
+                src={f.mission_id ? thumbOf('missions', f.mission_id) : null}
+                ring={firstRing(f.mission_id)}
+              />
               <span class="firsts-year">{f.year}</span>
               {#if f.mission_id}
                 <a

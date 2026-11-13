@@ -8,6 +8,7 @@ import {
   nationKey,
   objectNationKey,
 } from './nation-palette';
+import missionIndex from '../../../static/data/missions/index.json';
 
 describe('nationKey', () => {
   it('collapses USSR + Russia to USSR/Russia', () => {
@@ -142,6 +143,23 @@ describe('agencyRingColor', () => {
     ['UAESA', '#00732F'],
   ])('%s is %s, the colour the regime panel ring and dot always had', (agency, color) => {
     expect(agencyRingColor(agency)).toBe(color);
+  });
+
+  it.each([
+    ['Roscosmos', '#ef4444'],
+    ['CMSA', '#dc2626'],
+    ['USSF', '#3b82f6'],
+    ['Blue Origin', '#3b82f6'],
+    ['ESA / NASA', '#1d4ed8'],
+    ['NASA / Roscosmos', '#3b82f6'],
+  ])('mission-index spelling %s is %s', (agency, color) => {
+    expect(agencyRingColor(agency)).toBe(color);
+  });
+
+  it('every agency in the mission index has a ring colour', () => {
+    for (const { id, agency } of missionIndex) {
+      expect(agencyRingColor(agency), `${id}: ${agency}`).not.toBe('rgba(255,255,255,0.5)');
+    }
   });
 
   it('is the neutral grey for an agency without a palette entry', () => {

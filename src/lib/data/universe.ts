@@ -250,6 +250,36 @@ export async function getDeepSkyI18n(
   if (locale === 'en-US') return null;
   return get<DeepSkyTextOverlay>(path('en-US'), fetchFn).catch(() => null);
 }
+
+/** The editorial overlay of a galaxy or structure: the deep-sky shape (fact, bio, one or two links). */
+export type OuterTextOverlay = DeepSkyTextOverlay;
+
+async function getOuterOverlay(
+  dir: 'galaxies' | 'structures',
+  locale: string,
+  id: string,
+  fetchFn: FetchLike,
+): Promise<OuterTextOverlay | null> {
+  const path = (l: string) => `i18n/${l}/universe/${dir}/${id}.json`;
+  const overlay = await get<OuterTextOverlay>(path(locale), fetchFn).catch(() => null);
+  if (overlay) return overlay;
+  if (locale === 'en-US') return null;
+  return get<OuterTextOverlay>(path('en-US'), fetchFn).catch(() => null);
+}
+
+/** A Local Group galaxy's overlay (i18n-src/<locale>/universe/galaxies/<id>.json), en-US as the fallback; null if neither exists. */
+export const getGalaxyI18n = (
+  locale: string,
+  id: string,
+  fetchFn: FetchLike = fetch,
+): Promise<OuterTextOverlay | null> => getOuterOverlay('galaxies', locale, id, fetchFn);
+
+/** A group, cloud, cluster or other structure's overlay (…/universe/structures/<id>.json), en-US as the fallback; null if neither exists. */
+export const getStructureI18n = (
+  locale: string,
+  id: string,
+  fetchFn: FetchLike = fetch,
+): Promise<OuterTextOverlay | null> => getOuterOverlay('structures', locale, id, fetchFn);
 const deepSkyGalleryCache = new Map<string, Promise<DeepSkyImage[]>>();
 /** The curated deep-sky gallery images (cached per locale) — the caption/credit/
  *  telescope source joined to deep-sky objects via photoKey. A locale's overlay

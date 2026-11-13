@@ -7,6 +7,8 @@
   import UniversePanelBody from './UniversePanelBody.svelte';
   import type { VirgoMember, VirgoKind } from '$lib/data';
   import * as m from '$lib/paraglide/messages';
+  import { getLocale } from '$lib/paraglide/runtime';
+  import { structureDistance, structureSpan } from '$lib/explore/format';
 
   type Props = {
     member: VirgoMember | null;
@@ -24,8 +26,6 @@
         ? m.explore_virgo_kind_cloud()
         : m.explore_virgo_kind_group();
 
-  const fmt = (n: number): string => n.toLocaleString(undefined, { maximumFractionDigits: 0 });
-
   let facts = $derived(
     member
       ? [
@@ -33,13 +33,18 @@
             ? [
                 {
                   label: m.explore_lg_label_distance(),
-                  value: `${fmt(member.dist_mpc * 3.26e6)} ly`,
+                  value: structureDistance(member.dist_mpc, getLocale()),
                   accent: true,
                 },
               ]
             : []),
           ...(member.diam_mly > 0
-            ? [{ label: m.explore_lg_label_diameter(), value: `${fmt(member.diam_mly * 1e6)} ly` }]
+            ? [
+                {
+                  label: m.explore_lg_label_diameter(),
+                  value: structureSpan(member.diam_mly, getLocale()),
+                },
+              ]
             : []),
         ]
       : [],

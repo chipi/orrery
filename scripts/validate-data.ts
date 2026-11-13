@@ -21,6 +21,7 @@ import { join } from 'node:path';
 import { isAllowedLicense } from './license-allowlist.js';
 // Plain .mjs shared enumerator (scripts/site-routes.mjs pattern; JSDoc-typed).
 import { canonicalCardTargets, aliasStubTargets } from './card-targets.mjs';
+import { DEEP_SKY_ALIAS } from './site-routes.mjs';
 import { isAllowedChannel } from './video-channel-allowlist.js';
 import { isJpegBytes } from './lib/image-bytes.ts';
 import { isNonDescriptiveAlt } from './lib/alt-text.ts';
@@ -563,37 +564,67 @@ function checkCatalogue(
         passed++;
       }
     }
-    // An object with reviewed text has a page (/explore/deep-sky/<id>, listed from the en-US overlay
-    // files): the overlay then exists in all 14 locales, each with a fact, a bio and one or two links.
-    // The overlay must belong to an object, or no page and no panel would ever show it.
+    // An entity with reviewed text has a page (/explore/deep-sky|galaxies|structures/<id>, listed from
+    // the en-US overlay files): the overlay then exists in all 14 locales, each with a fact, a bio and
+    // one or two links. The overlay must belong to an entity, or no page and no panel would ever show it.
+    const members = (file: string): string[] => {
+      const p = join(DATA_ROOT, 'universe', file);
+      return existsSync(p)
+        ? (readJson(p) as { members: Array<{ id: string }> }).members.map((m) => m.id)
+        : [];
+    };
     const dsIds = new Set(dso.objects.map((o) => o.id));
-    const overlayDir = (loc: string) => join(I18N_SRC, loc, 'universe', 'deep-sky');
-    const withText = existsSync(overlayDir('en-US'))
-      ? readdirSync(overlayDir('en-US'))
-          .filter((n) => n.endsWith('.json'))
-          .map((n) => n.slice(0, -5))
-      : [];
-    for (const id of withText) {
-      const problems: string[] = [];
-      if (!dsIds.has(id)) problems.push('not an object of deep-sky-objects.json');
-      for (const loc of ['en-US', ...TRANSLATED_LOCALES]) {
-        const p = join(overlayDir(loc), `${id}.json`);
-        if (!existsSync(p)) {
-          problems.push(`${loc}: missing`);
-          continue;
+    const overlaySets: Array<{ dir: string; ids: Set<string>; what: string }> = [
+      { dir: 'deep-sky', ids: dsIds, what: 'an object of deep-sky-objects.json' },
+      {
+        dir: 'galaxies',
+        // The four twins (andromeda, triangulum, m32, m110) keep their deep-sky page.
+        ids: new Set(
+          members('local-group.json').filter(
+            (id) => !Object.hasOwn(DEEP_SKY_ALIAS, id) && !dsIds.has(id),
+          ),
+        ),
+        what: 'a Local Group member without a deep-sky page (local-group.json)',
+      },
+      {
+        dir: 'structures',
+        ids: new Set(
+          ['local-sheet', 'virgo-cluster', 'laniakea', 'cosmic-web'].flatMap((n) =>
+            members(`${n}.json`),
+          ),
+        ),
+        what: 'a member of local-sheet, virgo-cluster, laniakea or cosmic-web .json',
+      },
+    ];
+    for (const { dir, ids, what } of overlaySets) {
+      const overlayDir = (loc: string) => join(I18N_SRC, loc, 'universe', dir);
+      const withText = existsSync(overlayDir('en-US'))
+        ? readdirSync(overlayDir('en-US'))
+            .filter((n) => n.endsWith('.json'))
+            .map((n) => n.slice(0, -5))
+        : [];
+      for (const id of withText) {
+        const problems: string[] = [];
+        if (!ids.has(id)) problems.push(`not ${what}`);
+        for (const loc of ['en-US', ...TRANSLATED_LOCALES]) {
+          const p = join(overlayDir(loc), `${id}.json`);
+          if (!existsSync(p)) {
+            problems.push(`${loc}: missing`);
+            continue;
+          }
+          const ov = readJson(p) as { fact?: unknown; bio?: unknown; links?: unknown };
+          for (const k of ['fact', 'bio'] as const)
+            if (typeof ov[k] !== 'string' || !ov[k].trim()) problems.push(`${loc}: empty ${k}`);
+          const n = Array.isArray(ov.links) ? ov.links.length : 0;
+          if (n < 1 || n > 2) problems.push(`${loc}: ${n} links (want 1-2)`);
         }
-        const ov = readJson(p) as { fact?: unknown; bio?: unknown; links?: unknown };
-        for (const k of ['fact', 'bio'] as const)
-          if (typeof ov[k] !== 'string' || !ov[k].trim()) problems.push(`${loc}: empty ${k}`);
-        const n = Array.isArray(ov.links) ? ov.links.length : 0;
-        if (n < 1 || n > 2) problems.push(`${loc}: ${n} links (want 1-2)`);
-      }
-      if (problems.length) {
-        failed++;
-        console.error(`\n  ✗ i18n-src/*/universe/deep-sky/${id}.json`);
-        for (const p of problems) console.error(`      ${p}`);
-      } else {
-        passed++;
+        if (problems.length) {
+          failed++;
+          console.error(`\n  ✗ i18n-src/*/universe/${dir}/${id}.json`);
+          for (const p of problems) console.error(`      ${p}`);
+        } else {
+          passed++;
+        }
       }
     }
     // Every gatewaySystem must resolve to a real exoplanet host id.

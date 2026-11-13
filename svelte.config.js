@@ -8,7 +8,7 @@ import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import { expandLocalizedRoots } from './scripts/gh-pages-compat.mjs';
 // The un-localized route list — shared with src/routes/sitemap.xml so the
 // sitemap can't drift from what actually prerenders. See site-routes.mjs.
-import { collectCanonicalRoutes } from './scripts/site-routes.mjs';
+import { collectCanonicalRoutes, galaxyPageIds, structurePageIds } from './scripts/site-routes.mjs';
 
 const base = (process.env.VITE_BASE ?? '').replace(/\/$/, '');
 
@@ -96,6 +96,17 @@ const config = {
       // crawler still flags it. Ignore — same behaviour as before #328
       // when this codepath wasn't exercised by an explicit `entries`.
       handleEntryGeneratorMismatch: 'ignore',
+      // /explore/galaxies/[id] and /explore/structures/[id] have no entries until their overlay
+      // files exist (ADR-096 item 18: the files decide), so SvelteKit reports them unseen. That
+      // is expected while the list is empty; with entries they are crawled, and any other unseen
+      // route still fails the build.
+      handleUnseenRoutes: ({ routes, message }) => {
+        const empty = new Set([
+          ...(galaxyPageIds().length === 0 ? ['/explore/galaxies/[id]'] : []),
+          ...(structurePageIds().length === 0 ? ['/explore/structures/[id]'] : []),
+        ]);
+        if (routes.some((r) => !empty.has(r))) throw new Error(message);
+      },
     },
   },
 };

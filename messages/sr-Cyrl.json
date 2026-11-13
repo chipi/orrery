@@ -3690,5 +3690,8 @@
   "star_show_constellations": "Прикажи линије сазвежђа",
   "star_zodiac_note": "{con} је зодијачко сазвежђе: кроз њега пролазе Сунце, Месец и планете.",
   "explore_bh_see_lensing": "Погледај симулацију гравитационог сочива",
-  "panel_hero_pictured": "На снимку: {part}"
+  "panel_hero_pictured": "На снимку: {part}",
+  "explore_related_part_of": "Припада",
+  "explore_related_members": "Објекти",
+  "explore_related_same_scale": "Такође на овој скали"
 }

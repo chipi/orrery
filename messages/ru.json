@@ -3690,5 +3690,8 @@
   "star_show_constellations": "Показать линии созвездий",
   "star_zodiac_note": "{con} — зодиакальное созвездие: через него проходят Солнце, Луна и планеты.",
   "explore_bh_see_lensing": "Смотреть симуляцию линзирования",
-  "panel_hero_pictured": "На снимке: {part}"
+  "panel_hero_pictured": "На снимке: {part}",
+  "explore_related_part_of": "Входит в",
+  "explore_related_members": "Объекты",
+  "explore_related_same_scale": "Также в этом масштабе"
 }

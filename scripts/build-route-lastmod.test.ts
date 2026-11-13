@@ -336,3 +336,61 @@ describe('indexnow --since on the generated sitemap', () => {
     expect(filterSince(urls, '2999-01-01')).toEqual([]);
   });
 });
+
+describe('galaxy and structure page inputs (ADR-096 item 18)', () => {
+  const tracked = new Set([
+    'src/routes/explore/galaxies/[id]/+page.svelte',
+    'src/routes/explore/structures/[id]/+page.svelte',
+    'i18n-src/en-US/universe/galaxies/lmc.json',
+    'i18n-src/de/universe/galaxies/lmc.json',
+    'i18n-src/en-US/universe/structures/local-group.json',
+  ]);
+  const latest = new Map<string, number>([
+    ['src/routes/explore/galaxies/[id]/+page.svelte', day('2026-03-01')],
+    ['src/routes/explore/structures/[id]/+page.svelte', day('2026-03-02')],
+    ['i18n-src/en-US/universe/galaxies/lmc.json', day('2026-04-01')],
+    ['i18n-src/de/universe/galaxies/lmc.json', day('2026-05-01')],
+    ['i18n-src/en-US/universe/structures/local-group.json', day('2026-04-02')],
+  ]);
+  const entryDates = new Map([
+    ['static/data/universe/local-group.json#lmc', day('2026-06-01')],
+    ['static/data/universe/local-sheet.json#local-group', day('2026-02-01')],
+    ['static/data/universe/virgo-cluster.json#local-group', day('2026-07-01')],
+    ['static/data/universe/laniakea.json#virgo-supercluster', day('2026-01-01')],
+  ]);
+  const ctx = { tracked, latest, entryDates, locales: ['de', 'fr'] };
+  const data = {
+    missions: new Map(),
+    fleet: new Map(),
+    labFiles: [],
+    hostPlanets: new Map(),
+    doors: [],
+  };
+
+  it('dates a galaxy from its census entry, its overlay and its page folder', () => {
+    const inputs = inputsFor('/explore/galaxies/lmc', ctx, data);
+    expect(inputs.entries).toEqual(['static/data/universe/local-group.json#lmc']);
+    expect(inputs.overlays).toEqual(['universe/galaxies/lmc.json']);
+    expect(inputs.files).toEqual(['src/routes/explore/galaxies/[id]/+page.svelte']);
+    expect(newestTs(inputs, 'de', ctx)).toBe(day('2026-06-01'));
+    expect(newestTs(inputs, 'fr', ctx)).toBe(day('2026-06-01'));
+  });
+
+  it('dates a structure from every scale file that lists it, so local-group takes the newer of two', () => {
+    const inputs = inputsFor('/explore/structures/local-group', ctx, data);
+    expect(inputs.entries).toEqual([
+      'static/data/universe/local-sheet.json#local-group',
+      'static/data/universe/virgo-cluster.json#local-group',
+    ]);
+    expect(inputs.overlays).toEqual(['universe/structures/local-group.json']);
+    expect(newestTs(inputs, 'de', ctx)).toBe(day('2026-07-01'));
+  });
+
+  it('is neither the body-page nor the deep-sky branch: /explore/galaxies is a folder, not an /explore/<id>', () => {
+    for (const route of ['/explore/galaxies/lmc', '/explore/structures/local-group']) {
+      const inputs = inputsFor(route, ctx, data);
+      expect(inputs.overlays.some((o: string) => o.startsWith('planets/'))).toBe(false);
+      expect(inputs.overlays.some((o: string) => o.includes('deep-sky'))).toBe(false);
+    }
+  });
+});

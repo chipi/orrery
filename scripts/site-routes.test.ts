@@ -6,7 +6,9 @@ import {
   blackHolePageIds,
   collectCanonicalRoutes,
   deepSkyPageIds,
+  galaxyPageIds,
   starPageIds,
+  structurePageIds,
 } from './site-routes.mjs';
 
 const read = (p: string) => JSON.parse(readFileSync(p, 'utf8'));
@@ -174,5 +176,84 @@ describe('deep-sky page routes (/explore/deep-sky/<id>)', () => {
       expect(pages.has(target), `${alias}'s target ${target} has no page`).toBe(true);
       expect(known.has(alias), `${alias} is itself an object`).toBe(alias === 'carina-nebula');
     }
+  });
+});
+
+describe('galaxy and structure page routes (/explore/galaxies|structures/<id>, ADR-096 item 18)', () => {
+  const members = (file: string): string[] =>
+    read(`static/data/universe/${file}.json`).members.map((m: { id: string }) => m.id);
+  const overlayIds = (dir: string): string[] =>
+    existsSync(`i18n-src/en-US/universe/${dir}`)
+      ? readdirSync(`i18n-src/en-US/universe/${dir}`)
+          .filter((f) => f.endsWith('.json'))
+          .map((f) => f.slice(0, -5))
+      : [];
+  const deepSkyIds = new Set<string>(
+    read('static/data/universe/deep-sky-objects.json').objects.map((o: { id: string }) => o.id),
+  );
+  // What a page could be: the Local Group members that are not a deep-sky twin, and every structure.
+  const galaxyCandidates = members('local-group').filter(
+    (id) => !Object.hasOwn(DEEP_SKY_ALIAS, id) && !deepSkyIds.has(id),
+  );
+  const structureCandidates = [
+    ...new Set(['local-sheet', 'virgo-cluster', 'laniakea', 'cosmic-web'].flatMap(members)),
+  ];
+
+  it('are the ids of the overlay files that name a member: the files decide, so none exist before the text', () => {
+    expect([...galaxyPageIds()].sort()).toEqual(
+      overlayIds('galaxies')
+        .filter((id) => galaxyCandidates.includes(id))
+        .sort(),
+    );
+    expect([...structurePageIds()].sort()).toEqual(
+      overlayIds('structures')
+        .filter((id) => structureCandidates.includes(id))
+        .sort(),
+    );
+    for (const id of overlayIds('galaxies')) expect(galaxyCandidates, id).toContain(id);
+    for (const id of overlayIds('structures')) expect(structureCandidates, id).toContain(id);
+  });
+
+  it('can be 29 galaxies and 30 structures, none of them a twin of a deep-sky page', () => {
+    expect(members('local-group')).toHaveLength(33);
+    expect(galaxyCandidates).toHaveLength(29);
+    for (const twin of ['andromeda', 'triangulum', 'm32', 'm110'])
+      expect(galaxyCandidates).not.toContain(twin);
+    // local-group is a member of two scales and one page.
+    expect(structureCandidates).toHaveLength(30);
+  });
+
+  it('are in the canonical route list, each exactly once, under their own prefix', () => {
+    const routes: string[] = collectCanonicalRoutes();
+    expect(routes.filter((r) => r.startsWith('/explore/galaxies/')).sort()).toEqual(
+      galaxyPageIds()
+        .map((id: string) => `/explore/galaxies/${id}`)
+        .sort(),
+    );
+    expect(routes.filter((r) => r.startsWith('/explore/structures/')).sort()).toEqual(
+      structurePageIds()
+        .map((id: string) => `/explore/structures/${id}`)
+        .sort(),
+    );
+    expect(new Set(routes).size).toBe(routes.length);
+  });
+
+  it('never share an id with a planet, moon, small body, star, black hole or deep-sky object, and are one path segment', () => {
+    const taken = new Set<string>([
+      ...read('static/data/planets.json').planets.map((p: { name: string }) =>
+        p.name.toLowerCase(),
+      ),
+      ...read('static/data/satellites.json').satellites.map((s: { id: string }) => s.id),
+      ...read('static/data/small-bodies.json').bodies.map((b: { id: string }) => b.id),
+      ...starPageIds(),
+      ...blackHolePageIds(),
+      ...deepSkyIds,
+    ]);
+    for (const id of [...galaxyCandidates, ...structureCandidates]) {
+      expect(taken.has(id), `${id} is also another entity's id`).toBe(false);
+      expect(id).toMatch(/^[a-z0-9-]+$/);
+    }
+    // A galaxy and a structure never share an id either (two prefixes, but one INDEX id space).
+    expect(galaxyCandidates.filter((id) => structureCandidates.includes(id))).toEqual([]);
   });
 });

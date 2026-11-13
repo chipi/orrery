@@ -3690,5 +3690,8 @@
   "star_show_constellations": "Afficher les lignes des constellations",
   "star_zodiac_note": "{con} est une constellation zodiacale : le Soleil, la Lune et les planètes la traversent.",
   "explore_bh_see_lensing": "Voir la simulation de la lentille gravitationnelle",
-  "panel_hero_pictured": "Sur l'image : {part}"
+  "panel_hero_pictured": "Sur l'image : {part}",
+  "explore_related_part_of": "Fait partie de",
+  "explore_related_members": "Objets",
+  "explore_related_same_scale": "Aussi à cette échelle"
 }

@@ -108,6 +108,11 @@ const ENTRY_FILES = {
   'static/data/universe/exoplanet-systems.json': (j) => (j.systems ?? []).map((e) => [e.hostId, e]),
   'static/data/universe/black-holes.json': (j) => (j.objects ?? []).map((e) => [e.id, e]),
   'static/data/universe/deep-sky-objects.json': (j) => (j.objects ?? []).map((e) => [e.id, e]),
+  'static/data/universe/local-group.json': (j) => (j.members ?? []).map((e) => [e.id, e]),
+  'static/data/universe/local-sheet.json': (j) => (j.members ?? []).map((e) => [e.id, e]),
+  'static/data/universe/virgo-cluster.json': (j) => (j.members ?? []).map((e) => [e.id, e]),
+  'static/data/universe/laniakea.json': (j) => (j.members ?? []).map((e) => [e.id, e]),
+  'static/data/universe/cosmic-web.json': (j) => (j.members ?? []).map((e) => [e.id, e]),
   'static/data/deep-sky.json': (j) => j.map((e) => [e.key, e]),
 };
 
@@ -325,13 +330,31 @@ export function inputsFor(route, ctx, data) {
       overlays.push('deep-sky.json');
     }
     addDir('explore/deep-sky/[id]');
+  } else if (seg[0] === 'explore' && seg[1] === 'galaxies' && seg.length === 3) {
+    // A galaxy page: its record in the Local Group census and its overlay.
+    entry('static/data/universe/local-group.json', seg[2]);
+    overlays.push(`universe/galaxies/${seg[2]}.json`);
+    addDir('explore/galaxies/[id]');
+  } else if (seg[0] === 'explore' && seg[1] === 'structures' && seg.length === 3) {
+    // A structure page: its record in each scale file that lists it, and its overlay.
+    for (const f of [
+      'static/data/universe/local-sheet.json',
+      'static/data/universe/virgo-cluster.json',
+      'static/data/universe/laniakea.json',
+      'static/data/universe/cosmic-web.json',
+    ])
+      entry(f, seg[2]);
+    overlays.push(`universe/structures/${seg[2]}.json`);
+    addDir('explore/structures/[id]');
   } else if (
     seg[0] === 'explore' &&
     seg.length === 2 &&
     seg[1] !== 'hub' &&
     seg[1] !== 'stars' &&
     seg[1] !== 'black-holes' &&
-    seg[1] !== 'deep-sky'
+    seg[1] !== 'deep-sky' &&
+    seg[1] !== 'galaxies' &&
+    seg[1] !== 'structures'
   ) {
     for (const f of Object.keys(ENTRY_FILES)) {
       if (/(planets|satellites|small-bodies)\.json$/.test(f)) entry(f, seg[1]);

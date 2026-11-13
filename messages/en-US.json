@@ -3690,5 +3690,8 @@
   "star_show_constellations": "Show constellation lines",
   "star_zodiac_note": "{con} is a zodiac constellation: the Sun, Moon and planets pass through it.",
   "explore_bh_see_lensing": "See the lensing simulation",
-  "panel_hero_pictured": "Pictured: {part}"
+  "panel_hero_pictured": "Pictured: {part}",
+  "explore_related_part_of": "Part of",
+  "explore_related_members": "Members",
+  "explore_related_same_scale": "Also at this scale"
 }

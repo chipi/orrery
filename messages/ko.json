@@ -3690,5 +3690,8 @@
   "star_show_constellations": "별자리 선 보기",
   "star_zodiac_note": "{con}은(는) 황도 별자리입니다. 태양과 달, 행성이 이곳을 지나갑니다.",
   "explore_bh_see_lensing": "중력 렌즈 시뮬레이션 보기",
-  "panel_hero_pictured": "사진 속 대상: {part}"
+  "panel_hero_pictured": "사진 속 대상: {part}",
+  "explore_related_part_of": "소속",
+  "explore_related_members": "구성 천체",
+  "explore_related_same_scale": "같은 규모의 다른 천체"
 }

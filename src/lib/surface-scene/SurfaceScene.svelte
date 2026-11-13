@@ -1826,6 +1826,10 @@
     try {
       renderer = createSceneRenderer(container, {
         pixelRatioCap: quality.pixelRatioCap,
+        // Pure black space, as on /explore (operator 2026-11-13). The default dark indigo
+        // (0x04040c) is lifted to a visible purple by the composer's OutputPass on every tier
+        // that renders through it (all but minimal and low).
+        clearColor: 0x000000,
       });
     } catch (e) {
       // WebGL unavailable — fallback notice is shown in the container; bail init.

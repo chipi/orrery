@@ -682,10 +682,14 @@ This version is pinned. Upgrading requires audit of all six screens — r128 has
 ```javascript
 const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
 renderer.setPixelRatio(Math.min(devicePixelRatio, 2)); // cap at 2× for performance
-renderer.setClearColor(0x04040c, 1);
+renderer.setClearColor(0x000000, 1); // /explore and the Worlds (createSceneRenderer's clearColor)
 ```
 
-`alpha: false` is intentional — the background colour is always `#04040c`, never transparent.
+`alpha: false` is intentional: a scene is never transparent. The space around a body is pure black on
+/explore and on every World (/earth, /moon, /mars, /venus; operator 2026-11-13). The page's `bg-base`
+(`#04040c`) is not used as a scene clear: the composer's OutputPass, on every quality tier above low,
+lifts that dark indigo to a visible purple. `createSceneRenderer` still defaults to `0x04040c` for
+/fly's heliocentric scene.
 
 ### 8.3 Material conventions
 

@@ -1,6 +1,6 @@
 # Deep text, batch 6 (drafts): the 30 structures
 
-Drafts only. Nothing here is in `i18n-src/` or `static/` yet. 2026-11-13, branch `tech-debt/0.9.9`. Not yet science-reviewed.
+Drafts with the science review applied (`batch-06-review.md`). Nothing here is in `i18n-src/` yet. 2026-11-13, branch `tech-debt/0.9.9`. The per-object `Sources` lines below are the post-review notes; the sections from `Catalogue entries` on are the writer's pre-review record and are superseded where the `Science review` section says so.
 
 ## Shape and selection
 
@@ -15,10 +15,10 @@ Drafts only. Nothing here is in `i18n-src/` or `static/` yet. 2026-11-13, branch
 
 ### local-group (group, Local Sheet and Virgo)
 Target: `universe/structures/local-group.json`
-- fact: The Local Group is the set of galaxies bound together by gravity that contains the Milky Way, about 10 million light-years across.
-- bio: McConnachie's 2012 catalogue lists over 100 galaxies within 3 megaparsecs of the Sun, among them satellites of the Milky Way and the Andromeda Galaxy and isolated dwarfs. The Milky Way, the Andromeda Galaxy and the Triangulum Galaxy are its three large spirals, and the Large and Small Magellanic Clouds orbit the Milky Way. McCall (2014) finds that a sphere 3.75 megaparsecs across marks the upper limit of its realm of influence.
+- fact: The Local Group is the set of galaxies bound together by gravity that contains the Milky Way.
+- bio: McConnachie's 2012 catalogue lists over 100 galaxies within 3 megaparsecs of the Sun, the Local Group and its near neighbours, among them satellites of the Milky Way and the Andromeda Galaxy and isolated dwarfs. The Milky Way, the Andromeda Galaxy and the Triangulum Galaxy are its three large spirals, and the Large and Small Magellanic Clouds orbit the Milky Way. McCall (2014) finds that a sphere with a radius of 3.75 megaparsecs, the Council of Giants, encloses the Local Group and sets an upper limit to its realm of influence.
 - links: arXiv, McConnachie 2012 (https://arxiv.org/abs/1204.1562, core); arXiv, McCall 2014 (https://arxiv.org/abs/1403.3667, core)
-- Sources: arXiv 1204.1562 (fetched: over 100 nearby galaxies within 3 Mpc, satellites and isolated dwarfs), arXiv 1403.3667 (fetched: Council of Giants 3.75 Mpc, upper limit of the group's realm of influence, Local Sheet). Spiral count and kinds from `local-group.json`. "Satellites of the Milky Way" for the Magellanic Clouds is general knowledge, McConnachie's abstract names satellite systems without naming them.
+- Sources (after review): Review fixes: radius not diameter (McCall 2014), 'and its near neighbours' added, the unsourced 10-million-light-year size cut.
 
 ### ic-342-group (group, Local Sheet)
 Target: `universe/structures/ic-342-group.json`
@@ -29,31 +29,31 @@ Target: `universe/structures/ic-342-group.json`
 
 ### m81-group (group, Local Sheet)
 Target: `universe/structures/m81-group.json`
-- fact: A group of galaxies around Bode's Galaxy (M81), about 12 million light-years away, among the nearest groups to the Local Group.
-- bio: M81, the Cigar Galaxy (M82) and NGC 3077 are its three main galaxies, and neutral hydrogen forms bridges between them, a sign of past close encounters. These tides are thought to have stripped gas from the galaxies and to drive the intense star formation in M82 and NGC 3077. Karachentsev and colleagues (2002) measured Hubble distances to 13 late-type galaxies of the M81 and NGC 2403 complex, about 50 galaxies in all. Their group distance is about 3.6 megaparsecs.
-- links: arXiv, Karachentsev 2005 (https://arxiv.org/abs/astro-ph/0410065, core); Wikipedia (https://en.wikipedia.org/wiki/M81_Group, intro)
-- Sources: arXiv astro-ph/0410065 (fetched: the M81 group is one of six nearby groups with about 10% distances from red giant branch stars), a search summary of Karachentsev et al. 2002, A&A 383, 125 (about 50 galaxies, 13 HST distances; the aanda.org page returned 403, the paper was not read). S-WP-M81Group (3.6 Mpc, H I bridges, starbursts in M82 and NGC 3077, "one of the nearest groups"): the distance and the tidal claims rest on this pointer only. The arXiv id of the 2002 paper was not confirmed (astro-ph/0210414 turned out to be the CVn I paper).
+- fact: A group of galaxies around Bode's Galaxy (M81), about 11 to 12 million light-years away, among the nearest groups to the Local Group.
+- bio: M81, the Cigar Galaxy (M82) and NGC 3077 are its three main galaxies. Karachentsev and colleagues (2002) measured Hubble distances to 13 late-type galaxies of the M81 and NGC 2403 complex, about 50 galaxies in all. Distances to the group fall at about 3.5 to 3.6 megaparsecs.
+- links: arXiv, Karachentsev 2005 (https://arxiv.org/abs/astro-ph/0410065, core)
+- Sources (after review): Review fixes: Wikipedia link and the H I-bridge and starburst sentences cut (Wikipedia-only, the Yun, Ho and Lo 1994 source not opened); 3.6 no longer attributed to a paper. 'Among the nearest groups' is in Karachentsev 2005 (abstract read).
 
 ### centaurus-a-group (group, Local Sheet)
 Target: `universe/structures/centaurus-a-group.json`
-- fact: A complex of galaxies around Centaurus A and Messier 83, about 12 to 15 million light-years away, made of two sub-groups.
-- bio: Karachentsev and colleagues (2007) measured 24 nearby galaxies with Hubble. Centaurus A lies at 3.76 ± 0.05 megaparsecs and the M83 sub-group at 4.79 ± 0.10, about a megaparsec farther. The Centaurus A sub-group is the more massive, with an orbital mass of 6 to 8 trillion Suns against about 1 trillion for M83's. Both sub-groups move with small peculiar velocities relative to the smooth cosmic expansion. The Southern Pinwheel Galaxy (M83) is its second large spiral.
+- fact: A complex of galaxies around Centaurus A and Messier 83, about 12 to 16 million light-years away, made of two sub-groups.
+- bio: Karachentsev and colleagues (2007) measured 24 nearby galaxies with Hubble. Centaurus A lies at 3.76 ± 0.05 megaparsecs and the M83 sub-group at 4.79 ± 0.10, about a megaparsec farther. The Centaurus A sub-group is the more massive, with an orbital mass of 6 to 8 trillion Suns against about 0.8 to 0.9 trillion for M83's. Both sub-groups move with small peculiar velocities relative to the smooth cosmic expansion. The Southern Pinwheel Galaxy (M83) is its second large spiral.
 - links: arXiv, Karachentsev 2007 (https://arxiv.org/abs/astro-ph/0603091, core)
-- Sources: arXiv astro-ph/0603091 (fetched: 24 galaxies, Cen A 3.76 ± 0.05 Mpc, M83 group 4.79 ± 0.10 Mpc, masses (6.4-8.1) and (0.8-0.9) x 10^12, small peculiar velocities). The fact line gives a range because the data file's single 3.7 Mpc fits only the Cen A sub-group. Data conflict, see below.
+- Sources (after review): Review fixes: '12 to 16' (12.3 and 15.6 million light-years), M83 mass 0.8 to 0.9 trillion. Data dist_mpc 3.7 to 3.8 (Cen A sub-group 3.76).
 
 ### sculptor-group (group, Local Sheet)
 Target: `universe/structures/sculptor-group.json`
-- fact: A loose filament of galaxies around the spiral NGC 253, about 12 million light-years away, not a tight, bound group.
-- bio: Karachentsev and colleagues (2003) measured Hubble distances to nine galaxies of the region, from 3.34 to 4.92 megaparsecs, with NGC 253 at 3.94. The galaxies lie in several loose groups around NGC 253, NGC 300 and NGC 7793, and with the Canes Venatici I Cloud and the Local Group they form a 10-megaparsec filament driven by the free cosmic expansion. In 2021 two dwarfs at about 3.6 megaparsecs were confirmed as members of the NGC 253 group, with a mass of about 8 × 10^11 Suns.
+- fact: A loose filament of galaxies around the spiral NGC 253, about 12 to 13 million light-years away, rather than a bound group.
+- bio: Karachentsev and colleagues (2003) measured Hubble distances to nine galaxies of the region, from 3.34 to 4.92 megaparsecs, with NGC 253 at 3.94, and describe it as a loose filament rather than a bound system. The galaxies lie in several loose groups around NGC 253, NGC 300 and NGC 7793, and with the Canes Venatici I Cloud and the Local Group they form a 10-megaparsec filament driven by the free cosmic expansion. In 2021 two dwarfs at about 3.6 megaparsecs were confirmed as members of the NGC 253 group, with a mass of about 8 × 10^11 Suns.
 - links: arXiv, Karachentsev 2003 (https://arxiv.org/abs/astro-ph/0302045, core); arXiv, Karachentsev 2021 (https://arxiv.org/abs/2102.11354, core)
-- Sources: arXiv astro-ph/0302045 (fetched abstract and ar5iv text: nine distances 3.34-4.92 Mpc, NGC 253 3.94, 10 Mpc amorphous filament driven by free Hubble flow, loose groups around NGC 300, 253, 7793, "loose filament rather than a bound system" extending about 6 Mpc), arXiv 2102.11354 (fetched: 3.62 ± 0.18 and 3.66 ± 0.18 Mpc, mass (8.1 ± 2.6) x 10^11). Data conflict: data 3.7 Mpc, NGC 253 3.94 Mpc (2003) but the 2021 dwarfs at 3.6; the text follows the data in the fact line.
+- Sources (after review): Review fixes: fact and bio agree (12 to 13 million light-years, 3.94 Mpc = 12.8), the 'loose filament' wording attributed to Karachentsev 2003. Data kept (3.7).
 
 ### maffei-group (group, Local Sheet)
 Target: `universe/structures/maffei-group.json`
 - fact: A group of galaxies around Maffei 1 and 2, about 19 million light-years away, seen through the dust of the Milky Way's disc.
-- bio: Maffei 1 and 2 lie near the plane of the Milky Way, where dust makes distances uncertain. An infrared measurement in 2014 placed them at about 3.4 to 3.5 megaparsecs, beside IC 342. Anand and colleagues (2019) put Maffei 2 at 5.73 ± 0.40 megaparsecs, which places the Maffei Group 2.5 megaparsecs behind the IC 342 Group. They find it moving toward the Local Group at 128 ± 33 kilometres per second, which they attribute to void expansion from the direction of Perseus-Pisces.
+- bio: Maffei 1 and 2 lie near the plane of the Milky Way, where dust makes distances uncertain. An infrared measurement in 2014 placed them at about 3.4 to 3.5 megaparsecs, beside IC 342. Anand and colleagues (2019) put Maffei 2 at 5.73 ± 0.40 megaparsecs, which places the Maffei Group 2.5 megaparsecs behind the IC 342 Group. They find it moving toward the Local Group at 128 ± 33 kilometres per second, which they think is likely void expansion from the direction of Perseus-Pisces.
 - links: arXiv, Anand 2019 (https://arxiv.org/abs/1901.05981, core); arXiv, Wu 2014 (https://arxiv.org/abs/1404.2987, core)
-- Sources: arXiv 1901.05981 (fetched: 5.73 ± 0.40 Mpc, 2.5 Mpc behind IC 342, -128 ± 33 km/s, void expansion from Perseus-Pisces), arXiv 1404.2987 (fetched: Maffei 1 3.37 +0.32/-0.23, Maffei 2 3.52 +0.32/-0.30 Mpc). "Near the plane" is from S-WP-IC342/Maffei (pointer) and the Wu abstract's remark on low-latitude obscured galaxies. Data 5.7 Mpc agrees with Anand 2019.
+- Sources (after review): Review fix: the void-expansion attribution is hedged as the abstract words it. Anand 2019 measures Maffei 2 only; the text does not say Maffei 1 moved.
 
 ### ngc-6946-group (group, Local Sheet)
 Target: `universe/structures/ngc-6946-group.json`
@@ -64,17 +64,17 @@ Target: `universe/structures/ngc-6946-group.json`
 
 ### m101-group (group, Local Sheet)
 Target: `universe/structures/m101-group.json`
-- fact: A loose group of galaxies around the Pinwheel Galaxy (M101), about 21 to 23 million light-years away.
-- bio: Müller and colleagues (2017) searched 330 square degrees of Sloan Digital Sky Survey images around M101, M51 and M63 and found 15 new dwarf-galaxy candidates. The spirals lie at 7.0, 8.6 and 9.0 megaparsecs on a thin filament about 3 megaparsecs long, which the authors tie to the expansion of the Local Void. Tikhonov and colleagues (2015) used the tip of the red giant branch to find four dwarf companions of M101: NGC 5474, NGC 5477, UGC 8837 and UGC 9405.
-- links: arXiv, Müller 2017 (https://arxiv.org/abs/1701.03681, core); Wikipedia (https://en.wikipedia.org/wiki/M101_Group, intro)
-- Sources: arXiv 1701.03681 (fetched: 330 sq deg SDSS, 15 candidates, 7.0 / 8.6 / 9.0 Mpc, thin filament about 3 Mpc, rms thickness 67 kpc, Local Void), a search summary for Tikhonov et al. 2015 (four dwarf companions; paper not fetched), S-WP-M101Group (member list). Data conflict: data 6.4 Mpc (20.9 Mly), Müller 7.0 Mpc (22.8 Mly); the fact gives the range. "Group" membership counts differ widely between sources (7 to 15) and are not stated.
+- fact: A loose group of galaxies around the Pinwheel Galaxy (M101), about 23 million light-years away.
+- bio: Müller and colleagues (2017) searched 330 square degrees of Sloan Digital Sky Survey images around M101, M51 and M63 and found 15 new dwarf-galaxy candidates. The spirals lie at tip-of-the-red-giant-branch distances of 7.0, 8.6 and 9.0 megaparsecs on a thin filament about 3 megaparsecs long, which the authors tie to the expansion of the Local Void.
+- links: arXiv, Müller 2017 (https://arxiv.org/abs/1701.03681, core)
+- Sources (after review): Review fixes: Wikipedia link and the Tikhonov 2015 member list cut (search-summary only); one distance, 7.0 Mpc (22.8 million light-years). Data dist_mpc 6.4 to 7.0 (medium confidence: 6.4 may be a Cepheid value).
 
 ### ngc-5846-group (group, Virgo Supercluster)
 Target: `universe/structures/ngc-5846-group.json`
-- fact: A group of galaxies centred on the elliptical NGC 5846, about 85 million light-years away, part of the string of groups called Virgo III.
-- bio: Tully's Nearby Galaxies Catalog of 1987 sorts the nearby galaxies into groups. The Virgo III Groups are at least 13 of them, in a structure about 27 megaparsecs away that is elongated toward the Virgo Cluster, as the Leo Cloud is. Each group is named for its brightest galaxy: NGC 5846 leads one, and NGC 5746 and NGC 5566 lead others.
-- links: Wikipedia (https://en.wikipedia.org/wiki/NGC_5846_Group, intro)
-- Sources: S-WP-VirgoIII (87 Mly / 27 Mpc, at least 13 groups, 41-1 NGC 5846, 41-2 NGC 5746, 41-3 NGC 5566, elongated toward Virgo like the Leo Cloud, refs Tully 1987, Tully 1982, Kim 2016), the only source for every claim here. No primary paper fetched. Data 26 Mpc (about 85 Mly) vs the pointer's 27 Mpc: consistent.
+- fact: A group of galaxies around the giant elliptical NGC 5846, about 80 million light-years away, in the Virgo Supercluster.
+- bio: Mahdavi, Trentham and Tully (2005) found two giant ellipticals, NGC 5846 and NGC 5813, about 600 kiloparsecs apart in projection, inside a dark-matter halo about 1.6 megaparsecs across, with a velocity dispersion of 322 kilometres per second. The group is dominated by dwarf elliptical galaxies, as the Virgo Cluster is.
+- links: arXiv, Mahdavi, Trentham and Tully 2005 (https://arxiv.org/abs/astro-ph/0506737, core)
+- Sources (after review): Review rewrite from the primary (astro-ph/0506737, abstract read); the Wikipedia Virgo III claims (13 groups, 27 Mpc, member names) cut. Data 26 Mpc kept: the review's 25 is low confidence (search snippet, 24.9 Mpc), so the fact's 80 million light-years (24.5 Mpc) and the data's 85 differ by 6 per cent.
 
 ### canes-venatici-i (cloud, Local Sheet)
 Target: `universe/structures/canes-venatici-i.json`
@@ -85,31 +85,31 @@ Target: `universe/structures/canes-venatici-i.json`
 
 ### canes-venatici-spur (cloud, Virgo Supercluster)
 Target: `universe/structures/canes-venatici-spur.json`
-- fact: A thin filament of galaxies in Canes Venatici, about 8 megaparsecs (26 million light-years) away, that links a larger cloud to the Virgo Cluster.
-- bio: Tully's Nearby Galaxies Catalog (1988) lists it as structure 43. It runs from the NGC 5353/54 Group toward the Virgo Cluster, linking the Canes Venatici-Camelopardalis Cloud to Virgo, and so offers a shortcut to the cluster.
-- links: Wikipedia (https://en.wikipedia.org/wiki/Canes_II_Group, intro)
-- Sources: a search summary (extended search) of the Wikipedia articles M94 Group and NGC 5353/4 Group: "filament running from near the NGC 5353/54 Group to the Virgo Cluster ... structure 43 in the Nearby Galaxies Catalog (Tully 1988)". Those two articles were not fetched. arXiv 0802.1737 (Tully and Trentham 2008, fetched) does not mention the spur in its abstract. The Wikipedia article for Canes Venatici Spur returned 404. UNSOURCED beyond that: the 8 Mpc distance (26 Mly, from the data file only), the 7 Mly size, the member list. The "shortcut" wording is from the same search summary. SHORT (369). The whole text rests on one search summary. The link is a fetched page (Canes II Group) that does not itself describe the spur: replace it when a better page is found.
+- fact: A filament of galaxies in Canes Venatici, in the Virgo Supercluster, listed as a structure in Tully's Nearby Galaxies Atlas.
+- bio: Few studies describe it on its own; the filaments around the Virgo Cluster that it belongs to are mapped by Kim and colleagues (2016).
+- links: arXiv, Kim 2016 (https://arxiv.org/abs/1611.00437, core)
+- Sources (after review): SHORT by the reviewer's proposal: nothing else is sourced. The 8 Mpc distance, the member list and the 'shortcut' wording are cut; the Wikipedia link is replaced. The Atlas listing is the reviewer's own proposed wording, resting on a search summary (Tully 1988, structure 43): NOT VERIFIED. Data 8 Mpc unchanged and unsourced.
 
 ### leo-i-cloud (cloud, Virgo Supercluster)
 Target: `universe/structures/leo-i-cloud.json`
-- fact: The Leo I Cloud, a string of galaxy groups in Leo that includes the M96 Group, about 36 million light-years away.
-- bio: Karachentsev, Nasonova and Karachentseva (2015) measured distances and peculiar velocities for 290 galaxies in Leo and Cancer, identifying 23 groups. They report that the Leo I group around NGC 3379, with NGC 3627 and the Local Group, moves away from the Local Void toward the Leo cloud at about 400 kilometres per second. M95, M96 and M105 are its brightest galaxies.
-- links: arXiv, Karachentsev 2015 (https://arxiv.org/abs/1502.04253, core); Wikipedia (https://en.wikipedia.org/wiki/Leo_I_Group, intro)
-- Sources: arXiv 1502.04253 (fetched: 290 galaxies, 23 groups, 20 pairs, 400 km/s toward the Leo cloud). S-WP-M96Group (M96, M95, M105 as brightest; 37 Mly). The "Leo cloud" the paper means is the more distant Leo Cloud (about 26 Mpc in the pointer and about 22 Mpc in a search summary), not this entity: the text says "toward the Leo cloud" and does not say it is the same. SHORT risk: borderline.
+- fact: The Leo I Group, also called the M96 Group, a group of galaxies in Leo about 35 million light-years away.
+- bio: Karachentsev, Nasonova and Karachentseva (2015) measured distances and peculiar velocities for 290 galaxies in Leo and Cancer, in 23 groups and 20 pairs, and found the Leo I group moving away from the Local Void at about 400 kilometres per second. It includes M66, M96 and the elliptical M105 (NGC 3379). Lee and Jang (2013) measured tip-of-the-red-giant-branch distances of 10.6 megaparsecs to M66 and 10.7 to M96.
+- links: arXiv, Karachentsev 2015 (https://arxiv.org/abs/1502.04253, core); arXiv, Lee and Jang 2013 (https://arxiv.org/abs/1306.2306, core)
+- Sources (after review): Id and data name kept (glossary keys); the fact says what the literature calls it. Fixes: 'string of groups' cut, 36 to 35 million light-years (10.7 Mpc), 'with the Local Group' dropped, Wikipedia link and 'brightest galaxies' cut. Lee and Jang 2013: (m-M)0 = 30.12 (M66) and 30.15 (M96) = 10.6 and 10.7 Mpc, my conversion. Data dist_mpc 11 to 10.7.
 
 ### ursa-major-cloud (cloud, Virgo Supercluster)
 Target: `universe/structures/ursa-major-cloud.json`
 - fact: A cloud of galaxies in Ursa Major that contains the spiral-rich Ursa Major Cluster, about 60 million light-years away.
-- bio: The Ursa Major Cluster is a loose, spiral-rich system whose members include M108 and M109; it holds about 30 per cent of the light but only about 5 per cent of the mass of the Virgo Cluster. Tully and Verheijen (1997) adopted a distance of 15.5 megaparsecs for it, and later work puts its galaxies at about 18.6 megaparsecs, the value used here. Tully's catalogue gives about 580 galaxies in the surrounding cloud.
-- links: Wikipedia (https://en.wikipedia.org/wiki/Ursa_Major_Cluster, intro)
-- Sources: S-WP-UrsaMajorCluster (18.6 Mpc, spiral-rich, 30% of the light and 5% of the mass of Virgo, M108 and M109 as members, about 580 galaxies in the cloud; refs Tully and Fisher 1987, Tully et al. 1996, Courtois 2013), a search summary of Tully and Verheijen 1997 (15.5 Mpc adopted; arXiv astro-ph/9703029 per the search, not fetched; "later studies 18.6"). Every number here is pointer or search-summary level. The 580 count is attributed to Tully's catalogue by the writer, not by the pointer, and should be checked or cut. Data conflict: 18.6 vs the original 15.5.
+- bio: Tully and Verheijen (1997) describe the Ursa Major Cluster as unevolved and made up of spiral galaxies rich in neutral hydrogen. Trentham, Tully and Verheijen (2001) put the cluster at 18.6 megaparsecs and found about two dozen dwarf galaxies in it, far fewer than a Virgo-like cluster would give (about a thousand).
+- links: arXiv, Trentham, Tully and Verheijen 2001 (https://arxiv.org/abs/astro-ph/0103039, core); arXiv, Tully and Verheijen 1997 (https://arxiv.org/abs/astro-ph/9703029, core)
+- Sources (after review): Review fixes: the 30 per cent / 5 per cent figures, the 580 count, the 15.5 Mpc attribution and the M108 / M109 membership cut (Wikipedia-only or unsupported); 18.6 Mpc sourced to Trentham 2001. The fact (60 million light-years = 18.6 Mpc) is unchanged.
 
 ### virgo-ii-groups (cloud, Virgo Supercluster)
 Target: `universe/structures/virgo-ii-groups.json`
-- fact: The Virgo II Groups, a set of galaxy groups in the Virgo Supercluster, roughly 55 to 80 million light-years away.
-- bio: They form the upper branch of the supercluster, with the Leo Cloud as the lower branch. The structure is made of at least 100 galaxies and clusters, collected into groups named for a bright member: the M61 Group and the NGC 4030, 4179, 4697, 4699, 4753, 4856 and 5084 Groups.
-- links: Wikipedia (https://en.wikipedia.org/wiki/Virgo_II_Groups, intro)
-- Sources: S-WP-VirgoII (55-80 Mly, at least 100 galaxies and clusters, the eight named groups, ref Powell 2006 "An Atlas of the Universe"), S-WP-LeoCloud (Virgo II = upper branch, Leo Cloud = lower branch of the Virgo Supercluster), a search summary of Tully 1982 (clouds including Virgo II). No primary paper fetched. SHORT. Data 18 Mpc (59 Mly) is inside the quoted range.
+- fact: The Virgo II Groups are a set of galaxy groups in the Virgo Supercluster, named for a bright member each, such as the M61 Group.
+- bio: Few studies describe these groups as one structure. Kim and colleagues (2016) map the filaments of galaxies behind and beside the Virgo Cluster.
+- links: arXiv, Kim 2016 (https://arxiv.org/abs/1611.00437, core)
+- Sources (after review): SHORT by the reviewer's proposal. Cut: the 55 to 80 million light-years, the 100 galaxies, the eight group names, the upper-branch claim. The second proposed sentence (Tully 1982 prolate clouds) is dropped because the link between Tully 1982 and 'Virgo II' is not verified; Kim 2016 does not name Virgo II either, so the bio does not say which filaments they are. 'Named for a bright member each, such as the M61 Group' is the reviewer's own proposed wording: NOT VERIFIED beyond that. Data 18 Mpc unchanged.
 
 ### virgo-cluster (cluster, Virgo Supercluster)
 Target: `universe/structures/virgo-cluster.json`
@@ -120,108 +120,119 @@ Target: `universe/structures/virgo-cluster.json`
 
 ### centaurus-cluster (cluster, Laniakea)
 Target: `universe/structures/centaurus-cluster.json`
-- fact: A rich cluster of galaxies in Centaurus, about 170 million light-years away, in the Hydra-Centaurus Supercluster.
-- bio: Catalogued as Abell 3526 (A3526), it has the giant elliptical NGC 4696 as its brightest member and a redshift of 0.0114. It is made of two parts: the main group Cen 30 and a subgroup, Cen 45, centred on NGC 4709, which moves at about 1,500 kilometres per second relative to Cen 30 and is merging with it. The hot gas between its galaxies has been mapped in X-rays with the Chandra Observatory.
-- links: Wikipedia (https://en.wikipedia.org/wiki/Centaurus_Cluster, intro)
-- Sources: S-WP-CentaurusCluster (170 Mly, about 100 galaxies, A3526, NGC 4696, Cen 30 and Cen 45, 1,500 km/s, z = 0.01140, Chandra X-ray studies), the only source for every claim; no primary paper fetched. Data 52 Mpc = 170 Mly, consistent. SHORT risk.
+- fact: A rich cluster of galaxies in Centaurus, about 160 million light-years away, in the Hydra-Centaurus Supercluster.
+- bio: Catalogued as Abell 3526 (A3526), it has the giant elliptical NGC 4696 as its brightest member and a redshift of 0.0114. It is made of two parts: the main group Cen 30 and a subgroup, Cen 45, centred on NGC 4709, whose galaxies are about 1,500 kilometres per second higher in redshift velocity than Cen 30 and which is thought to be falling into it. Dupke and Bregman (2006) mapped the hot gas between its galaxies in X-rays with the Chandra Observatory.
+- links: arXiv, Dupke and Bregman 2006 (https://arxiv.org/abs/astro-ph/0512045, core)
+- Sources (after review): Review fixes: 160 million light-years (z = 0.0114, cz = 3,418 km/s = 49 Mpc at H0 = 70), Cen 45 redshift offset not 'moves', Chandra mapping attributed. Abell 3526, NGC 4696 and z = 0.0114 remain pointer-level: NED check NOT DONE. The 1,500 km/s is the reviewer's replacement number; the reviewer's own arithmetic from the mean velocities (3,397 and 4,746) gives about 1,350: NOT VERIFIED. Data dist_mpc 52 to 49.
 
 ### antlia-cluster (cluster, Laniakea)
 Target: `universe/structures/antlia-cluster.json`
 - fact: A cluster of galaxies in Antlia, about 130 million light-years away, in the Hydra-Centaurus Supercluster.
-- bio: Abell S0636 has about 234 galaxies in two subgroups, a northern one around NGC 3268 and a southern one around NGC 3258, two massive ellipticals. It has no single dominant central galaxy and is rich in early-type and dwarf elliptical galaxies. Its X-ray gas is nearly isothermal at about 2 keV, and its binding mass is about 3.3 × 10^14 Suns. Dirsch, Richtler and Bassino (2003) studied the globular clusters of NGC 3258 and NGC 3268.
-- links: Wikipedia (https://en.wikipedia.org/wiki/Antlia_Cluster, intro)
-- Sources: S-WP-AntliaCluster (40.7 Mpc, 234 galaxies, NGC 3268 and NGC 3258, Bautz-Morgan III, 2.0 keV, 3.3 x 10^14, Dirsch et al. 2003), S-WP-HydraCentaurus (Antlia Wall, Hydra-Centaurus). Every claim rests on the pointers; no primary paper fetched. The "third-nearest cluster" superlative is left out. Data 40 Mpc, pointer 40.7 Mpc.
+- bio: Antlia is dominated by two massive ellipticals, NGC 3268 and NGC 3258, each at the centre of a subgroup. Dirsch, Richtler and Bassino (2003) found several thousand globular clusters around each, more around NGC 3258. Smith Castelli and colleagues (2008) measured the colours of its early-type galaxies and found the same colour-magnitude relation as Fornax, Virgo, Perseus and Coma.
+- links: arXiv, Dirsch, Richtler and Bassino 2003 (https://arxiv.org/abs/astro-ph/0307200, core); arXiv, Smith Castelli 2008 (https://arxiv.org/abs/0803.1630, core)
+- Sources (after review): Review rewrite from the two primaries (abstracts read); 234 galaxies, 2 keV, 3.3 × 10^14 Suns, 'no dominant central galaxy' cut (Wikipedia-only). Distance 40 Mpc / 130 million light-years is consistent and unsourced.
 
 ### virgo-supercluster (supercluster, Laniakea and Cosmic web)
 Target: `universe/structures/virgo-supercluster.json`
-- fact: The Virgo Supercluster, or Local Supercluster, holds the Local Group and the Virgo Cluster and spans about 110 to 150 million light-years.
-- bio: Tully (1982) described the Local Supercluster as an overdensity of galaxies on the northern sky that holds the Virgo Cluster and several tens of small groups. It is not the largest unit our galaxy belongs to: Tully and colleagues (2014) found it is one lobe of Laniakea, a region defined by galaxy flows, not density. The Virgo Cluster is its dominant concentration; the Local Group lies on its outskirts.
-- links: arXiv, Tully 2014 (https://arxiv.org/abs/1409.0880, core); Wikipedia (https://en.wikipedia.org/wiki/Virgo_Supercluster, intro)
-- Sources: arXiv 1409.0880 (fetched: flows diverge as at watershed divides; the supercluster is the volume within the surface), a search summary of the Tully 1982 ApJ 257, 389 abstract (disc 60% / halo 40% of luminous galaxies, extends over 90 degrees, Virgo and several tens of small groups; the ADS page returned 405 and was not opened), S-WP-VirgoSupercluster (147 Mly major axis, at least 100 groups and clusters, 1.48 x 10^15 Msun, "Virgo Extension", refs Tully 1982, Klypin 2003, Einasto 2007). Data conflict: diam 110 Mly (the file's note says about 33 Mpc), pointer 147 Mly; the fact states the range. The disc-halo split and the clouds list were cut for length.
+- fact: The Virgo Supercluster, or Local Supercluster, holds the Local Group and the Virgo Cluster and extends over tens of megaparsecs.
+- bio: De Vaucouleurs coined the name Local Supercluster in 1953. Tully (1982) mapped an overdensity of galaxies in the northern Galactic hemisphere as a thin disc holding about 60 per cent of its luminous galaxies, inside a roughly spherical halo holding the other 40 per cent. It is not the largest unit our galaxy belongs to: Tully and colleagues (2014) found that it lies inside Laniakea, together with the historical Southern Supercluster. The Virgo Cluster is its dominant concentration.
+- links: ADS, Tully 1982 (https://adsabs.harvard.edu/pdf/1982ApJ...257..389T, core); arXiv, Tully 2014 (https://arxiv.org/abs/1409.0880, core)
+- Sources (after review): Review fixes: northern Galactic hemisphere, de Vaucouleurs credited with the definition, disc and halo fractions from Tully 1982 (read), 'lobe' replaced by the Nature wording, 'Local Group on its outskirts' cut, the 110 to 150 million light-year size cut (no primary; data diam 110 kept as schematic and unsourced).
 
 ### great-attractor (attractor, Laniakea)
 Target: `universe/structures/great-attractor.json`
-- fact: The Great Attractor is a region toward Norma, about 220 million light-years away, that galaxies including ours flow toward.
-- bio: It was found in the 1980s from the motions of elliptical galaxies and lies behind the dust of the Milky Way's disc. Woudt and Kraan-Korteweg (2000) found the Norma cluster (Abell 3627) at 4,844 kilometres per second, comparable in size and mass to Coma, and argue it marks the centre of the Great Attractor, where the Centaurus Wall meets the Norma supercluster. The Shapley Concentration also pulls on us (Hoffman and colleagues, 2017).
-- links: arXiv, Woudt 2000 (https://arxiv.org/abs/astro-ph/0006126, core); Wikipedia (https://en.wikipedia.org/wiki/Great_Attractor, intro)
-- Sources: arXiv astro-ph/0006126 (fetched: Norma cluster ACO 3627 at 4,844 km/s, comparable to Coma, marks the GA centre, Centaurus Wall and Norma supercluster, extinction 3-5 mag), arXiv 1702.02483 (fetched: Shapley the main attractor within 7,000 km/s, Dipole Repeller). S-WP-GreatAttractor (150-250 Mly, the 1980s, about 400 ellipticals, zone of avoidance, moving toward Shapley): "found in the 1980s", "elliptical galaxies" and "behind the disc" rest on this pointer. The Laniakea-centred-on-it clause was cut; the Dipole Repeller and Tully-focus claims are not in the text. Data conflict: dist_mpc 68 (222 Mly); Norma cz 4,844 km/s = 69 Mpc (my conversion).
+- fact: The Great Attractor is the region toward Norma, about 220 million light-years away, where flows of galaxies, including ours, converge.
+- bio: It was found in the 1980s from the motions of elliptical galaxies (Dressler and colleagues, 1987) and lies behind the dust of the Milky Way's disc. Woudt and Kraan-Korteweg (2000) found the Norma cluster (Abell 3627) at 4,844 kilometres per second, comparable in size and mass to Coma, and argue that it most likely marks the bottom of the potential well of the Great Attractor, where the Centaurus Wall meets the Norma supercluster. The Shapley Concentration also pulls on us (Hoffman and colleagues, 2017).
+- links: arXiv, Woudt 2000 (https://arxiv.org/abs/astro-ph/0006126, core); arXiv, Tully 2014 (https://arxiv.org/abs/1409.0880, core)
+- Sources (after review): Review fixes: region not object (Tully 2014: flows converge toward the Norma and Centaurus clusters), the hedge 'most likely marks the bottom of the potential well', Dressler 1987 credited, Wikipedia link replaced. Data 68 Mpc kept (Norma 4,844 km/s = 69 Mpc); the Hoffman 2017 clause is as in the draft and its wording was not re-checked in the paper (see shapley-concentration).
 
 ### hydra-centaurus (supercluster, Laniakea)
 Target: `universe/structures/hydra-centaurus.json`
-- fact: A supercluster of galaxy clusters toward Hydra and Centaurus, about 130 to 150 million light-years away, and a lobe of Laniakea.
-- bio: It has two parts: the Centaurus part, with a filament of four Abell clusters (A3537, A3565, A3574 and AS753) and the Centaurus Cluster itself, and the Hydra part, the Antlia or Hydra Wall, which contains the Hydra Cluster (A1060) and the Antlia Cluster. Tully and colleagues (2014) showed it is only a lobe of a greater structure, Laniakea. Its Great Attractor end is dominated by the Norma Cluster (Abell 3627).
-- links: Wikipedia (https://en.wikipedia.org/wiki/Hydra%E2%80%93Centaurus_Supercluster, intro)
-- Sources: S-WP-HydraCentaurus (centre 39 Mpc, out to 69 Mpc, four-cluster filament, Antlia Wall with Hydra and Antlia clusters, Norma Cluster, refs Tully 2014, Courtois 2013 AJ 146, 69, Pomarede 2017 ApJ 845, 55, Plionis and Valdarnini 1991), the only source for the member list; arXiv 1306.0091 (Courtois 2013, fetched: abstract has no Hydra-Centaurus numbers). Data conflict: data 45 Mpc (147 Mly); pointer centre 39 Mpc (127 Mly). The 600 km/s bulk flow toward Norma was cut. SHORT risk.
+- fact: A supercluster of galaxy clusters toward Hydra and Centaurus, about 150 million light-years away.
+- bio: Tully and colleagues (2014) found flows converging near the Norma and Centaurus clusters inside Laniakea.
+- links: arXiv, Tully 2014 (https://arxiv.org/abs/1409.0880, core)
+- Sources (after review): SHORT after the review. Cut (Wikipedia-only): the four Abell clusters, the Antlia or Hydra Wall, the Hydra Cluster A1060, the 'lobe' wording, the 130 to 150 range. 150 million light-years = data 45 Mpc (147), unsourced.
 
 ### pavo-indus (supercluster, Laniakea)
 Target: `universe/structures/pavo-indus.json`
-- fact: A supercluster toward Pavo and Indus, about 200 to 230 million light-years away, in the southern sky, and a lobe of Laniakea.
-- bio: It is a wall or filament about 66 megaparsecs, 215 million light-years, long. Three main clusters make it up, Abell 3656, Abell 3698 and Abell 3742, with the NGC 6769 Group and others. Fairall (1988) linked it to the Centaurus supercluster, and Tully and colleagues (2014) place it as a lobe of Laniakea, centred on the Great Attractor.
-- links: Wikipedia (https://en.wikipedia.org/wiki/Pavo%E2%80%93Indus_Supercluster, intro)
-- Sources: S-WP-PavoIndus (60-70 Mpc = 196-228 Mly, wall or filament 66 Mpc, A3656, A3698, A3742, NGC 6769 Group, Fairall 1988, Tully 2014); the only source. "In the southern sky" is the writer's reading of the constellation names, not from the pointer. Data 70 Mpc is at the top of the quoted range. SHORT.
+- fact: A filament and supercluster of galaxy clusters toward Pavo and Indus, in the southern sky, in Laniakea.
+- bio: Tully and colleagues (2014) call it the important Pavo-Indus filament and include it in Laniakea, whose flows converge toward the Norma and Centaurus clusters.
+- links: arXiv, Tully 2014 (https://arxiv.org/abs/1409.0880, core)
+- Sources (after review): SHORT after the review. The 66 Mpc length, Abell 3656 / 3698 / 3742, Fairall 1988 and the 'lobe centred on the Great Attractor' claim cut (Wikipedia-only or contradicted by Tully 2014). No distance in the text. Data 70 Mpc unverified (NED not opened) and unchanged.
 
 ### ophiuchus-supercluster (supercluster, Laniakea)
 Target: `universe/structures/ophiuchus-supercluster.json`
-- fact: A supercluster centred on the Ophiuchus Cluster, about 390 to 450 million light-years away, and a part of Laniakea.
-- bio: The Ophiuchus Cluster, a rich cluster with a central cD galaxy, was found in 1981 on Palomar plates by Ken-ichi Wakamatsu and Matthew Malkan. It has at least two more clusters, four groups and several field galaxies as members, over a major axis of about 300 million light-years, at a redshift of 0.028. Tully and colleagues (2014) found it lies inside Laniakea, and a 2023 study with Cosmicflows-4 proposed that Laniakea is a cocoon holding smaller superclusters.
-- links: Wikipedia (https://en.wikipedia.org/wiki/Ophiuchus_Supercluster, intro)
-- Sources: S-WP-Ophiuchus (455 ± 32 Mly, z = 0.028, 303 Mly major axis, discovery 1981 by Wakamatsu and Malkan, in Laniakea per Tully 2014, Valade 2024), S-WP-Laniakea ("supercluster cocoon", Dupuy and Courtois 2023, possible association with the Ophiuchus Cluster basin). arXiv 2305.02339 (fetched) does not mention Ophiuchus in its abstract. The only source for every claim. Data conflict: dist_mpc 119 (388 Mly); pointer 139.6 Mpc (455 Mly). z = 0.028 is cz 8,400 km/s = 120 Mpc at H0 = 70 (my conversion), so the pointer's 455 Mly uses a lower H0. The fact states the range. SHORT risk.
+- fact: A supercluster centred on the Ophiuchus Cluster, about 400 million light-years away, in the direction of the Milky Way's centre.
+- bio: The Ophiuchus Cluster, at a redshift of 0.0296, is one of the most massive nearby clusters. Durret and colleagues (2015) estimate its mass at 1.1 × 10^15 Suns. It lies behind the Milky Way's disc, so its galaxies are hard to see. Wakamatsu and colleagues (2005) found several more groups or clusters within 8 degrees, a structure comparable to a supercluster. Tully and colleagues (2014) describe Laniakea as extending toward it.
+- links: arXiv, Durret 2015 (https://arxiv.org/abs/1509.00986, core)
+- Sources (after review): Reviewer's full rewrite (Durret 2015 read). Cut: the 1981 Palomar discovery, the 300 million light-year axis, the 'cocoon' claim. z = 0.0296 is cz 8,900 km/s = 127 Mpc = 413 million light-years at H0 = 70 (my conversion). Data dist_mpc 119 to 127; diam_mly 60 unchanged (the review's 115 is low confidence).
 
 ### fornax-eridanus (supercluster, Laniakea)
 Target: `universe/structures/fornax-eridanus.json`
-- fact: A complex of galaxy groups around the Fornax Cluster, about 65 million light-years away, which this site files under the southern part of Laniakea.
-- bio: Nasonova, de Freitas Pacheco and Karachentsev (2011) used 109 galaxies within 20 megaparsecs of the Fornax centre to map the Hubble flow around it. Their infall method gives a mass of 0.4 to 3.3 × 10^14 Suns for the Fornax Cluster, and 1.3 to 3.9 × 10^14 for the whole Fornax-Eridanus complex. Fornax is at about 18.6 megaparsecs, the complex's barycentre at 21.1, according to papers it cites. NGC 1365 is its best-known spiral.
+- fact: A complex of galaxy groups around the Fornax Cluster, about 65 million light-years away, associated with the historical Southern Supercluster.
+- bio: Nasonova, de Freitas Pacheco and Karachentsev (2011) used 109 galaxies within 20 megaparsecs of the Fornax centre to map the Hubble flow around it. Their infall method gives a mass of 0.4 to 3.3 × 10^14 Suns for the Fornax Cluster, and 1.3 to 3.9 × 10^14 for the whole Fornax-Eridanus complex. NGC 1365, a barred spiral, lies in the Fornax Cluster.
 - links: arXiv, Nasonova 2011 (https://arxiv.org/abs/1106.1291, core)
-- Sources: arXiv 1106.1291 (fetched abstract: 109 galaxies within 20 Mpc, spherical infall masses 0.40-3.32 and 1.30-3.93 x 10^14); a search summary for 18.6 ± 0.3 Mpc (modulus 31.35) and 21.1 Mpc (complex barycentre, 19.6 for the NGC 1399 gravity centre), both quoted from search snippets of the A&A papers whose pages were not fetched. "Southern part of Laniakea": the data file name "(Southern)" and S-WP-Laniakea (the Southern Supercluster is one of Laniakea's components); whether the Fornax-Eridanus complex is what Tully calls the Southern Supercluster was not verified. NGC 1365 as "best-known spiral" is the writer's wording; batch 4 describes it as a barred spiral in the Fornax Cluster. Data 20 Mpc inside the 19.6-21.1 range.
+- Sources (after review): Review fixes: the snippet-only 18.6 and 21.1 Mpc cut; 'associated with the historical Southern Supercluster' (the equivalence is not in a primary: NOT VERIFIED); NGC 1365 wording. Data 20 Mpc kept.
 
 ### laniakea (supercluster, Cosmic web)
 Target: `universe/structures/laniakea.json`
-- fact: Laniakea is the basin of gravitational attraction that contains the Milky Way, about 400 to 520 million light-years across.
-- bio: Tully, Courtois, Hoffman and Pomarède (2014) traced where peculiar-velocity flows diverge, as water does at watershed divides, and defined a supercluster as the volume within that surface. Laniakea takes in the Virgo Supercluster, the Hydra-Centaurus and Pavo-Indus Superclusters and the Great Attractor. Dupuy and Courtois (2023) redrew the watersheds with Cosmicflows-4 and defined five more superclusters the same way: Apus, Hercules, Lepus, Perseus-Pisces and Shapley.
+- fact: Laniakea is the basin of gravitational attraction that contains the Milky Way. It extends about 520 million light-years (160 megaparsecs) across, if approximated as round.
+- bio: Tully, Courtois, Hoffman and Pomarède (2014) traced where peculiar-velocity flows diverge, as water does at watershed divides, and defined a supercluster as the volume within that surface. Laniakea encompasses about 10^17 Suns. It takes in the Local, or Virgo, Supercluster, the historical Southern Supercluster and the Pavo-Indus filament, and its flows converge near the Norma and Centaurus clusters, close to the Great Attractor. Dupuy and Courtois (2023) redrew the watersheds with Cosmicflows-4 and defined five more superclusters the same way: Apus, Hercules, Lepus, Perseus-Pisces and Shapley.
 - links: arXiv, Tully 2014 (https://arxiv.org/abs/1409.0880, core); arXiv, Dupuy 2023 (https://arxiv.org/abs/2305.02339, core)
-- Sources: arXiv 1409.0880 (fetched: definition by flow divergence; the abstract gives no size, galaxy count or mass), arXiv 2305.02339 (fetched: 2 x 10^6 (Mpc/h)^3, Apus, Hercules, Lepus, Perseus-Pisces, Shapley, A&A 678, A176), S-WP-Laniakea (about 120 Mpc / 400 Mly across, 100,000 to 150,000 galaxies, about 10^17 Msun, components, Hawaiian name). Data conflict: diam_mly 520 and extent 160 Mpc; pointer 400 Mly; S-WP-GreatAttractor 500 Mly; none of these is in the Nature abstract (the Hawaii press release that gives 500 Mly was not fetched). The fact states the range 400 to 520.
+- Sources (after review): Review fixes: 160 Mpc = 520 million light-years from Tully 2014 (read), the component list in the Nature wording, mass 10^17 Suns added, the 2 × 10^6 (Mpc/h)^3 volume not quoted. Data diam 520 and extent 160 correct.
 
 ### horologium-reticulum (supercluster, Cosmic web)
 Target: `universe/structures/horologium-reticulum.json`
-- fact: A supercluster of galaxy clusters toward Horologium and Reticulum, about 0.7 to 1 billion light-years away.
-- bio: Fleenor and colleagues (2005) measured 547 redshifts with the 6dF spectrograph across a field more than 12 by 12 degrees wide. The galaxies span 17,000 to 22,500 kilometres per second, with an overdensity of about 2.4 between the clusters. The supercluster splits into two redshift peaks about 2,500 kilometres per second (35 megaparsecs) apart, each with a systematic trend across the field. The authors found properties like those of the Shapley Concentration.
+- fact: A supercluster of galaxy clusters toward Horologium and Reticulum, about 0.8 to 1 billion light-years away.
+- bio: Fleenor and colleagues (2005) measured 547 redshifts, mostly between the clusters, across a supercluster that covers more than 12 by 12 degrees of sky. The galaxies span 17,000 to 22,500 kilometres per second, with an overdensity of about 2.4 between the clusters. The supercluster splits into two redshift peaks about 2,500 kilometres per second (35 megaparsecs) apart, each with a systematic trend across the field. The authors found properties like those of the Shapley Concentration.
 - links: arXiv, Fleenor 2005 (https://arxiv.org/abs/astro-ph/0505361, core)
-- Sources: arXiv astro-ph/0505361 (fetched: 547 redshifts, 12 x 12 degrees centred 03h19m -50d02m, 17,000-22,500 km/s, overdensity 2.4, bimodal with 2,500 km/s (35 Mpc), trend over 1,500 km/s, similar to Shapley, AJ 130, 957). Data conflict: dist_mpc 210 (685 Mly) and diam 550 Mly; Fleenor's 17,000-22,500 km/s is 243-321 Mpc (0.8 to 1.05 billion light-years, my conversion at H0 = 70). S-WP-Horologium gives nearest part 700 Mly and far end 1.2 Gly and size 550 Mly with refs Fleenor 2005, Chow-Martinez 2011, Einasto 2001; the 210 Mpc data matches that nearest edge, not the mean. The fact states 0.7 to 1 billion. Cosmic-web.json is science-review pending: this one needs the reviewer.
+- Sources (after review): Review fixes: 0.8 to 1 billion light-years (243 to 321 Mpc at H0 = 70, my conversion), the 547 redshifts and field wording. Data dist_mpc 210 to 285. Data diam 550 has no source; unchanged.
 
 ### shapley-concentration (concentration, Cosmic web)
 Target: `universe/structures/shapley-concentration.json`
-- fact: The Shapley Concentration is a dense knot of galaxy clusters about 650 million light-years away, which Hoffman and colleagues (2017) call the main attractor of the local flow.
-- bio: Proust and colleagues (2006) gathered 10,529 velocities for 8,632 galaxies across 285 square degrees. Its main plane lies near 14,500 kilometres per second and spans their whole 12 by 30 degree field, with a galaxy overdensity of about 5.4 in the centre; 48 per cent of the galaxies lie between the rich clusters. Raychaudhury and, independently, Scaramella and colleagues named it in 1989.
+- fact: The Shapley Concentration is a dense knot of galaxy clusters about 650 million light-years away, which Hoffman and colleagues (2017) identify as the dominant attractor within about 7,000 kilometres per second.
+- bio: Proust and colleagues (2006) gathered 10,529 velocities for 8,632 galaxies across 285 square degrees. Its main plane, at about 14,500 kilometres per second or about 650 million light-years, fills their whole 12 by 30 degree field, so it extends at least about 350 million light-years, with a galaxy overdensity of about 5.4 in the centre; 48 per cent of the galaxies lie between the rich clusters. Raychaudhury (1989) and, independently, Scaramella and colleagues (1989) identified it as a concentration of rich clusters.
 - links: arXiv, Proust 2006 (https://arxiv.org/abs/astro-ph/0509903, core); arXiv, Hoffman 2017 (https://arxiv.org/abs/1702.02483, core)
-- Sources: arXiv astro-ph/0509903 (fetched: 8,632 galaxies, 10,529 velocities, 285 sq deg, 14,500 km/s, 12 x 30 degrees, overdensity about 5.4, 48 per cent intercluster), arXiv 1702.02483 (fetched: primary attractor within 7,000 km/s, Dipole Repeller about 16,000 km/s away "in the northern hemisphere"; the Dipole Repeller sentence was cut for length), S-WP-Shapley (650 Mly, z = 0.046, Raychaudhury 1989 and Scaramella 1989 in Nature). 14,500 km/s is 207 Mpc at H0 = 70 (my conversion). Data 200 Mpc agrees; data diam 260 Mly is below the pointer's 625 to 978 Mly major axis, which is not stated in the text. The "largest concentration" claim is left out. Strict note: the survey footprint (30 by 75 Mpc/h) is not the structure's extent.
+- Sources (after review): Review fixes: the 'named it in 1989' claim reworded, size lower bound (plane 75 h^-1 Mpc at h = 0.7 is 107 Mpc, 350 million light-years; medium), the Hoffman clause is the reviewer's replacement and its wording was NOT confirmed from the paper. Data diam 260 to 350.
 
 ### perseus-pisces (wall, Cosmic web)
 Target: `universe/structures/perseus-pisces.json`
-- fact: A chain of galaxy clusters, strongest toward Perseus and Pisces, about 230 million light-years away and called a supercluster.
-- bio: Haynes and Giovanelli (1986) mapped it with an H I redshift survey. Its main ridge extends at least 50 megaparsecs per h and runs into the Milky Way's zone of avoidance east of Perseus. The Perseus Cluster (Abell 426) is one of its richest clusters, with Abell 262. Dupuy and Courtois (2023) include it among six watershed superclusters, and Anand and colleagues (2019) attribute the motion of the Maffei Group to void expansion from its direction.
-- links: Wikipedia (https://en.wikipedia.org/wiki/Perseus%E2%80%93Pisces_Supercluster, intro)
-- Sources: a search summary of Haynes and Giovanelli 1986 (ApJ 306, L55 not opened; main ridge at least 50 h^-1 Mpc, disappears into the zone of avoidance east of Perseus, about 5,000 km/s); S-WP-PerseusPisces (250 Mly, main members A262, A347, A426), arXiv 2305.02339 and arXiv 1901.05981 (both fetched). 5,000 km/s is 71 Mpc at H0 = 70 (my conversion): data 70 Mpc agrees. The data file lists it with kind "wall" and the name "Supercluster"; the pointer calls it a supercluster that is part of a filament. Data diam 300 Mly vs "at least 50 Mpc/h". SHORT risk.
+- fact: A supercluster, a chain of galaxy clusters strongest toward Perseus and Pisces, about 230 to 250 million light-years away.
+- bio: Haynes and Giovanelli (1986) mapped it with an H I redshift survey. Its main ridge extends at least about 70 megaparsecs (about 230 million light-years) and runs into the Milky Way's zone of avoidance east of Perseus. Dupuy and Courtois (2023) include it among six watershed superclusters, and Anand and colleagues (2019) think the motion of the Maffei Group is likely void expansion from its direction.
+- links: arXiv, Dupuy and Courtois 2023 (https://arxiv.org/abs/2305.02339, core); arXiv, Anand 2019 (https://arxiv.org/abs/1901.05981, core)
+- Sources (after review): Review fixes: no 'per h' (50 h^-1 Mpc at h = 0.7 is 71 Mpc), the Perseus Cluster / Abell 262 sentence cut, Wikipedia link replaced (Haynes and Giovanelli 1986 was not opened, so it is not linked), kind wall to supercluster in the data. Haynes and Giovanelli figures are from a search summary: NOT VERIFIED. Data diam 300 kept as schematic.
 
 ### coma-great-wall (wall, Cosmic web)
 Target: `universe/structures/coma-great-wall.json`
-- fact: The CfA2 Great Wall, a sheet of galaxies around the Coma Cluster found by Geller and Huchra in 1989, about 330 million light-years away.
-- bio: It showed up in the second Center for Astrophysics redshift survey, and the clusters Coma, Hercules and Leo lie in it. Its true extent is unknown because the dust of the Milky Way hides what lies beyond. Gott and colleagues (2005) give its length as 240 megaparsecs in comoving coordinates, against 450 for the Sloan Great Wall. Geller and Huchra wrote that the extent of the largest features is limited only by the size of the survey.
-- links: Wikipedia (https://en.wikipedia.org/wiki/CfA2_Great_Wall, intro); arXiv, Gott 2005 (https://arxiv.org/abs/astro-ph/0310571, core)
-- Sources: S-WP-CfA2GreatWall (1989, Geller and Huchra, CfA2 survey, Hercules, Coma and Leo clusters, zone of avoidance limits the extent; the pointer's size figures, "300 Mly wide, 15 Mly thick, at least 500 Mly long" from Chown 2024, are left out), ar5iv astro-ph/0310571 (fetched: 240 Mpc comoving vs 450 Mpc for the SGW), a search summary of the Geller and Huchra 1989 Science abstract (246, 897; the Science page returned 403): "The extent of the largest features is limited only by the size of the survey". The wall's distance of 100 Mpc is not sourced beyond the Coma Cluster's. Data diam 750 Mly vs Gott's 240 Mpc comoving (782 Mly). The name in the data mixes the Coma Supercluster and the Great Wall.
+- fact: The CfA2 Great Wall, a sheet of galaxies around the Coma Cluster described by Geller and Huchra in 1989 and filed on this site under the name Coma Supercluster, about 330 million light-years away.
+- bio: It showed up in the second Center for Astrophysics redshift survey. Its full extent is unknown: the survey ends before the wall does, and the Milky Way's dust hides part of the sky. Gott and colleagues (2005) give its length as 240 megaparsecs in comoving coordinates, about 780 million light-years, against 450 for the Sloan Great Wall. Geller and Huchra wrote that the extent of the largest features is limited only by the size of the survey.
+- links: arXiv, Gott 2005 (https://arxiv.org/abs/astro-ph/0310571, core)
+- Sources (after review): Review fixes: Hercules and Leo membership cut (a separate structure), the extent sentence no longer contradicts itself, 'described by', Wikipedia link cut (no replacement). Data name 'Coma Supercluster (CfA2 Great Wall)' kept (glossary key). Geller and Huchra 1989 sentence is from a search summary: NOT VERIFIED.
 
 ### sloan-great-wall (wall, Cosmic web)
 Target: `universe/structures/sloan-great-wall.json`
-- fact: The Sloan Great Wall is a wall of galaxies mapped with the Sloan Digital Sky Survey, about a billion light-years away and about 1.4 billion light-years long.
-- bio: Gott and colleagues (2005) reported it as a structure at redshift 0.073, at a median distance of about 310 megaparsecs, with an observed length of 419 megaparsecs, 1.37 billion light-years. They said it was 80 per cent longer than the Great Wall of Geller and Huchra and so, at that date, the largest observed structure. Its length in comoving coordinates is 450 megaparsecs, against 240 for the older wall.
+- fact: The Sloan Great Wall is a wall of galaxies mapped with the Sloan Digital Sky Survey, about a billion light-years away and extending about 1.4 billion light-years.
+- bio: Gott and colleagues (2005) reported it as a structure at redshift 0.073, at a median distance of about 310 megaparsecs. They give its length as 419 megaparsecs as observed, about 1.4 billion light-years, or 450 in comoving coordinates, against 240 for the older Great Wall of Geller and Huchra. They said it was 80 per cent longer than that wall and so, at that date, the largest observed structure.
 - links: arXiv, Gott 2005 (https://arxiv.org/abs/astro-ph/0310571, core)
-- Sources: arXiv astro-ph/0310571 (abstract fetched: 1.37 billion light-years, 80% longer, "largest observed structure in the universe"; the ar5iv text fetched: z = 0.073, median distance about 310 Mpc, 419 Mpc observed, 450 Mpc comoving, ApJ 624, 463). Data 300 Mpc and 1,400 Mly agree (310 vs 300; 1.37 vs 1.4). The 2011 papers that questioned whether it is one structure were seen only on a Wikipedia pointer and are not stated. The page's wording "at that date" is the writer's attribution; the review should check whether a newer claim of a longer structure needs naming.
+- Sources (after review): Review fixes: 1.4 in both lines (1.37 billion), the observed and comoving lengths labelled. 'At that date' kept; later claims of longer structures NOT checked.
 
 ### bootes-void (void, Cosmic web)
 Target: `universe/structures/bootes-void.json`
 - fact: The Boötes Void is a region toward Boötes with far fewer galaxies than usual, about 700 million light-years away, found in 1981.
-- bio: Kirshner, Oemler, Schechter and Shectman (1981) measured 133 redshifts in three narrow fields in Boötes and found identical gaps of about 6,000 kilometres per second, between 12,000 and 18,000, in each. They speculated that the region between the fields was a void of about a million cubic megaparsecs. A larger survey in 1987 mapped it in detail. Dupuy and Courtois (2023) find a central repeller in the Boötes void, using the Cosmicflows-4 velocity field.
-- links: arXiv, Dupuy 2023 (https://arxiv.org/abs/2305.02339, core); Wikipedia (https://en.wikipedia.org/wiki/Bo%C3%B6tes_Void, intro)
-- Sources: a search summary of Kirshner et al. 1981 ApJ 248, L57 (the ADS page appeared in the search results but was not opened: 133 redshifts, three fields about 35 degrees apart, gaps of 6,000 km/s between 12,000 and 18,000 km/s, "million cubic megaparsec void"); S-WP-BootesVoid (700 Mly, radius 62 Mpc, 60 galaxies against about 2,000 expected, Kirshner 1987 survey; the 60 and 2,000 figures and the radius are left out, one pointer); arXiv 2305.02339 (fetched: repellers in the Boötes and Sculptor voids). 15,000 km/s is 214 Mpc at H0 = 70 (my conversion): data 210 Mpc agrees. Data conflict: data diam 330 Mly (about 101 Mpc); pointer radius 62 Mpc, so a diameter of about 124 Mpc or 400 Mly.
+- bio: Kirshner, Oemler, Schechter and Shectman (1981) found an identical gap of about 6,000 kilometres per second in the galaxy redshifts of each of three small fields, about 35 degrees apart. A 1987 survey with 239 redshifts in 283 small fields confirmed a roughly spherical void of about a million cubic megaparsecs, with a radius of about 62 megaparsecs, centred near 15,500 kilometres per second. Dupuy and Courtois (2023) find a central repeller in the Boötes void, using the Cosmicflows-4 velocity field.
+- links: ADS, Kirshner 1987 (https://articles.adsabs.harvard.edu/pdf/1987ApJ...314..493K, core); arXiv, Dupuy 2023 (https://arxiv.org/abs/2305.02339, core)
+- Sources (after review): Review fixes: the 133 redshifts and the 12,000 / 18,000 bounds (snippet-only) cut, the 1987 survey described as the review words it, radius 62 Mpc. Data diam 330 to 400 (radius 62 Mpc = 124 Mpc diameter).
+
+## Science review (applied 2026-11-13)
+
+Review: `batch-06-review.md` (11 ERROR, 17 OVERREACH, 22 UNSUPPORTED, 14 NIT; verdict FIX THEN SHIP). Applied: every finding above NIT in the 25 objects that had one, plus the NITs; the 5 OK objects (ic-342-group, ngc-6946-group, canes-venatici-i, virgo-cluster, and maffei-group apart from its hedge) are unchanged.
+
+- Reader text: no Wikipedia link remains; each former Wikipedia link is replaced by the primary the review names, and an entry with no primary has no link (coma-great-wall keeps Gott 2005 only; fornax-eridanus, laniakea, horologium-reticulum, shapley-concentration, sloan-great-wall and the others keep the arXiv links they had). No "per h" or "h^-1" in reader text.
+- Redshift distances use H0 = 70 (see README). Fact and bio agree on every number (C4): sculptor 12 to 13, m81 11 to 12, centaurus-a 12 to 16, centaurus-cluster 160, sloan 1.4, laniakea 520.
+- SHORT after the review: canes-venatici-spur, virgo-ii-groups (reviewer's minimal proposals), hydra-centaurus, pavo-indus (one sourced sentence each), local-group and virgo-supercluster (size cut). Nothing is padded.
+- Wording that is the reviewer's own and rests on a search summary (NOT VERIFIED): the Atlas listing of canes-venatici-spur, "named for a bright member each, such as the M61 Group" (virgo-ii-groups), the 1,500 km/s of centaurus-cluster (the review's own arithmetic gives about 1,350), the Hoffman 2017 clause (shapley-concentration, great-attractor), the Haynes and Giovanelli 1986 ridge (perseus-pisces), the Geller and Huchra 1989 sentence (coma-great-wall), "associated with the historical Southern Supercluster" (fornax-eridanus).
+- Data corrections applied in `static/data/universe/`: horologium-reticulum dist_mpc 210 to 285; shapley-concentration diam_mly 260 to 350; bootes-void diam_mly 330 to 400; perseus-pisces kind wall to supercluster; ophiuchus-supercluster dist_mpc 119 to 127; centaurus-cluster dist_mpc 52 to 49; m101-group dist_mpc 6.4 to 7.0; centaurus-a-group dist_mpc 3.7 to 3.8; leo-i-cloud dist_mpc 11 to 10.7. Not changed (review says keep or low confidence): ngc-5846-group 26 (review 25, low), ophiuchus diam_mly 60 (low), horologium diam_mly 550, virgo-supercluster diam_mly 110, perseus-pisces diam_mly 300, pavo-indus 70, hydra-centaurus 45, fornax-eridanus 20, m81-group 3.6, sculptor-group 3.7, and the rows marked keep.
+- Names: leo-i-cloud and coma-great-wall keep id and data name (glossary keys); the fact line carries the literature name. fornax-eridanus "(Southern)" is not verified.
 
 ## Catalogue entries (decision 6)
 

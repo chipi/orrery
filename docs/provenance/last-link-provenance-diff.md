@@ -1,47 +1,86 @@
 # Last link-provenance build
 
-> Generated: 2026-11-12T20:09:31.662Z
+> Generated: 2026-11-13T08:31:31.140Z
 
-- Total entries: 1794 (was 1758)
-- Added: 36
+- Total entries: 1869 (was 1794)
+- Added: 75
 - Removed: 0
 - Changed: 0
 
-## Added (36)
-- `ngc-1300` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/NGC_1300>
-- `ngc-1300` · core · esa · en · <https://esahubble.org/images/opo0501a/>
-- `ngc-1365` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/NGC_1365>
-- `ngc-1365` · core · esa · en · <https://www.esa.int/Science_Exploration/Space_Science/Speedy_black_hole_holds_galaxy_s_history>
-- `ngc-2014-2020` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/NGC_2014>
-- `ngc-2014-2020` · core · stsci · en · <https://www.stsci.edu/contents/news-releases/2020/news-2020-16>
-- `ngc-2174` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/NGC_2174>
-- `ngc-2174` · core · esa · en · <https://esahubble.org/news/heic1406/>
-- `ngc-2264` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/NGC_2264>
-- `ngc-2264` · core · esa · en · <https://esahubble.org/images/heic0206c/>
-- `ngc-2392` · core · nasa · en · <https://nssdc.gsfc.nasa.gov/photo_gallery/caption/hst_eskimo_ngc2392_0007.txt>
-- `ngc-3132` · core · eurekalert · en · <https://www.eurekalert.org/news-releases/973668>
-- `ngc-3324` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/NGC_3324>
-- `ngc-3324` · core · esa · en · <https://esa.int/Science_Exploration/Space_Science/Webb/Webb_reveals_Cosmic_Cliffs_a_glittering_landscape_of_star_birth>
-- `ngc-3372` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Carina_Nebula>
-- `ngc-3372` · core · esa · en · <https://esahubble.org/images/heic0707a/>
-- `ngc-4038-4039` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Antennae_Galaxies>
-- `ngc-4038-4039` · core · esa · en · <https://esahubble.org/news/heic0615/>
-- `ngc-5139` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Omega_Centauri>
-- `ngc-5139` · core · baumgardt-uq · en · <https://people.smp.uq.edu.au/HolgerBaumgardt/globular/fits/ngc5139.html>
-- `ngc-6302` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/NGC_6302>
-- `ngc-6302` · core · nasa · en · <https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-caldwell-catalog/caldwell-69/>
-- `ngc-6543` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Cat%27s_Eye_Nebula>
-- `ngc-6543` · core · esa · en · <https://www.esa.int/Science_Exploration/Space_Science/Cat_s_Eye_Nebula_NGC_65432>
-- `ngc-7293` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Helix_Nebula>
-- `ngc-7293` · core · spitzer · en · <https://www.spitzer.caltech.edu/image/ssc2007-03a-comets-kick-up-dust-in-helix-nebula>
-- `ngc-7635` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Bubble_Nebula>
-- `ngc-7635` · core · esa · en · <https://esahubble.org/news/heic1608/>
-- `perseus-cluster` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Perseus_Cluster>
-- `perseus-cluster` · core · esa · en · <https://www.esa.int/Science_Exploration/Space_Science/Euclid/Euclid_s_view_of_the_Perseus_cluster_of_galaxies>
-- `rho-ophiuchi` · core · nasa · en · <https://www.jpl.nasa.gov/news/webb-celebrates-first-year-of-science-with-close-up-on-birth-of-sun-like-stars/>
-- `serpens-nebula` · core · esa · en · <https://esawebb.org/images/weic2415a/>
-- `sn-1572` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/SN_1572>
-- `sn-1572` · core · arxiv · en · <https://arxiv.org/abs/0810.5106>
-- `v838-mon` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/V838_Monocerotis>
-- `wr-124` · core · esa · en · <https://www.esa.int/Science_Exploration/Space_Science/Webb/Webb_captures_rarely_seen_prelude_to_a_supernova>
+## Added (75)
+- `andromeda-i` · core · arxiv · en · <https://arxiv.org/pdf/1204.1562>
+- `andromeda-ii` · core · arxiv · en · <https://arxiv.org/pdf/1204.1562>
+- `andromeda-iii` · core · arxiv · en · <https://arxiv.org/pdf/1204.1562>
+- `antlia-cluster` · core · arxiv · en · <https://arxiv.org/abs/0803.1630>
+- `antlia-cluster` · core · arxiv · en · <https://arxiv.org/abs/astro-ph/0307200>
+- `aquarius-dwarf` · core · arxiv · en · <https://arxiv.org/pdf/1204.1562>
+- `bootes-void` · core · nasa · en · <https://articles.adsabs.harvard.edu/pdf/1987ApJ...314..493K>
+- `bootes-void` · core · arxiv · en · <https://arxiv.org/abs/2305.02339>
+- `canes-venatici-i` · core · arxiv · en · <https://arxiv.org/abs/astro-ph/0210414>
+- `canes-venatici-spur` · core · arxiv · en · <https://arxiv.org/abs/1611.00437>
+- `carina-dwarf` · core · arxiv · en · <https://arxiv.org/pdf/1204.1562>
+- `centaurus-a-group` · core · arxiv · en · <https://arxiv.org/abs/astro-ph/0603091>
+- `centaurus-cluster` · core · arxiv · en · <https://arxiv.org/abs/astro-ph/0512045>
+- `cetus-dwarf` · core · arxiv · en · <https://arxiv.org/pdf/1204.1562>
+- `coma-great-wall` · core · arxiv · en · <https://arxiv.org/abs/astro-ph/0310571>
+- `draco-dwarf` · core · arxiv · en · <https://arxiv.org/pdf/1204.1562>
+- `fornax-dwarf` · core · arxiv · en · <https://arxiv.org/pdf/1204.1562>
+- `fornax-eridanus` · core · arxiv · en · <https://arxiv.org/abs/1106.1291>
+- `great-attractor` · core · arxiv · en · <https://arxiv.org/abs/1409.0880>
+- `great-attractor` · core · arxiv · en · <https://arxiv.org/abs/astro-ph/0006126>
+- `horologium-reticulum` · core · arxiv · en · <https://arxiv.org/abs/astro-ph/0505361>
+- `hydra-centaurus` · core · arxiv · en · <https://arxiv.org/abs/1409.0880>
+- `ic-10` · core · arxiv · en · <https://arxiv.org/abs/0802.2716>
+- `ic-1613` · core · arxiv · en · <https://arxiv.org/pdf/1204.1562>
+- `ic-342-group` · core · arxiv · en · <https://arxiv.org/abs/1404.2987>
+- `ic-342-group` · core · arxiv · en · <https://arxiv.org/abs/1901.05981>
+- `laniakea` · core · arxiv · en · <https://arxiv.org/abs/1409.0880>
+- `laniakea` · core · arxiv · en · <https://arxiv.org/abs/2305.02339>
+- `leo-a` · core · arxiv · en · <https://arxiv.org/abs/astro-ph/0702646>
+- `leo-i` · core · arxiv · en · <https://arxiv.org/pdf/1204.1562>
+- `leo-i-cloud` · core · arxiv · en · <https://arxiv.org/abs/1306.2306>
+- `leo-i-cloud` · core · arxiv · en · <https://arxiv.org/abs/1502.04253>
+- `leo-ii` · core · arxiv · en · <https://arxiv.org/pdf/1204.1562>
+- `lmc` · core · arxiv · en · <https://arxiv.org/abs/1903.08096>
+- `local-group` · core · arxiv · en · <https://arxiv.org/abs/1204.1562>
+- `local-group` · core · arxiv · en · <https://arxiv.org/abs/1403.3667>
+- `m101-group` · core · arxiv · en · <https://arxiv.org/abs/1701.03681>
+- `m81-group` · core · arxiv · en · <https://arxiv.org/abs/astro-ph/0410065>
+- `maffei-group` · core · arxiv · en · <https://arxiv.org/abs/1404.2987>
+- `maffei-group` · core · arxiv · en · <https://arxiv.org/abs/1901.05981>
+- `milky-way` · intro · nasa · en · <https://imagine.gsfc.nasa.gov/science/objects/milkyway1.html>
+- `milky-way` · core · arxiv · en · <https://arxiv.org/abs/1904.05721>
+- `ngc-147` · core · arxiv · en · <https://arxiv.org/pdf/1204.1562>
+- `ngc-185` · core · arxiv · en · <https://arxiv.org/pdf/1204.1562>
+- `ngc-5846-group` · core · arxiv · en · <https://arxiv.org/abs/astro-ph/0506737>
+- `ngc-6822` · core · nasa · en · <https://science.nasa.gov/?p=29831>
+- `ngc-6946-group` · core · arxiv · en · <https://arxiv.org/abs/1807.05229>
+- `ngc-6946-group` · core · arxiv · en · <https://arxiv.org/abs/astro-ph/0010148>
+- `ophiuchus-supercluster` · core · arxiv · en · <https://arxiv.org/abs/1509.00986>
+- `pavo-indus` · core · arxiv · en · <https://arxiv.org/abs/1409.0880>
+- `pegasus-dirr` · core · arxiv · en · <https://arxiv.org/pdf/1204.1562>
+- `pegasus-dsph` · core · arxiv · en · <https://arxiv.org/pdf/1204.1562>
+- `perseus-pisces` · core · arxiv · en · <https://arxiv.org/abs/1901.05981>
+- `perseus-pisces` · core · arxiv · en · <https://arxiv.org/abs/2305.02339>
+- `phoenix-dwarf` · core · arxiv · en · <https://arxiv.org/pdf/1204.1562>
+- `sagittarius-dirr` · core · arxiv · en · <https://arxiv.org/pdf/1204.1562>
+- `sagittarius-dsph` · core · arxiv · en · <https://arxiv.org/abs/1804.10196>
+- `sculptor-dwarf` · core · arxiv · en · <https://arxiv.org/pdf/1204.1562>
+- `sculptor-group` · core · arxiv · en · <https://arxiv.org/abs/2102.11354>
+- `sculptor-group` · core · arxiv · en · <https://arxiv.org/abs/astro-ph/0302045>
+- `sextans-dwarf` · core · arxiv · en · <https://arxiv.org/pdf/1204.1562>
+- `shapley-concentration` · core · arxiv · en · <https://arxiv.org/abs/1702.02483>
+- `shapley-concentration` · core · arxiv · en · <https://arxiv.org/abs/astro-ph/0509903>
+- `sloan-great-wall` · core · arxiv · en · <https://arxiv.org/abs/astro-ph/0310571>
+- `smc` · core · arxiv · en · <https://arxiv.org/abs/2010.08754>
+- `tucana-dwarf` · core · arxiv · en · <https://arxiv.org/pdf/1204.1562>
+- `ursa-major-cloud` · core · arxiv · en · <https://arxiv.org/abs/astro-ph/0103039>
+- `ursa-major-cloud` · core · arxiv · en · <https://arxiv.org/abs/astro-ph/9703029>
+- `ursa-minor-dwarf` · core · arxiv · en · <https://arxiv.org/pdf/1204.1562>
+- `virgo-cluster` · core · arxiv · en · <https://arxiv.org/abs/1710.08935>
+- `virgo-cluster` · core · arxiv · en · <https://arxiv.org/abs/astro-ph/0702510>
+- `virgo-ii-groups` · core · arxiv · en · <https://arxiv.org/abs/1611.00437>
+- `virgo-supercluster` · core · nasa · en · <https://adsabs.harvard.edu/pdf/1982ApJ...257..389T>
+- `virgo-supercluster` · core · arxiv · en · <https://arxiv.org/abs/1409.0880>
+- `wlm` · core · arxiv · en · <https://arxiv.org/pdf/1204.1562>
 

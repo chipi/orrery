@@ -660,6 +660,45 @@
       "source_author": "Andrew C. Fabian et al.",
       "license_short": "Facts-only",
       "license_rationale": "Only facts were read from the credited source (the paper and its arXiv preprint); no sentence of it is reproduced."
+    },
+    {
+      "id": "galaxy.overlays.arxiv-papers",
+      "location": {
+        "file": "i18n-src/en-US/universe/galaxies/"
+      },
+      "category": "galaxy",
+      "relationship": "paraphrased-from",
+      "snippet": "Distances, sizes, masses and membership of the Milky Way, the Magellanic Clouds and the Local Group dwarfs, from the refereed papers each text links (McConnachie 2012 catalogue, Pietrzyński et al. 2019 and Graczyk et al. 2020 for the Magellanic Clouds, and the per-galaxy distance papers); checked by the batch 05 science review.",
+      "source_url": "https://arxiv.org/abs/1204.1562",
+      "source_publisher": "arXiv (Cornell University); the journals of the linked papers",
+      "license_short": "Facts-only",
+      "license_rationale": "Only facts were read from the credited papers; no sentence of them is reproduced, and each text links the papers it rests on."
+    },
+    {
+      "id": "galaxy.overlays.nasa",
+      "location": {
+        "file": "i18n-src/en-US/universe/galaxies/"
+      },
+      "category": "galaxy",
+      "relationship": "paraphrased-from",
+      "snippet": "The Milky Way (NASA Imagine the Universe) and NGC 6822 (NASA Science) background facts, paraphrased.",
+      "source_url": "https://imagine.gsfc.nasa.gov/",
+      "source_publisher": "NASA Goddard Space Flight Center; NASA Science",
+      "license_short": "PD-NASA",
+      "license_rationale": "NASA pages are U.S. Government works in the public domain (17 U.S.C. § 105); the Orrery text is a paraphrase."
+    },
+    {
+      "id": "structure.overlays.arxiv-ads-papers",
+      "location": {
+        "file": "i18n-src/en-US/universe/structures/"
+      },
+      "category": "structure",
+      "relationship": "paraphrased-from",
+      "snippet": "Distances, extents, masses and membership of the galaxy groups, clouds, clusters, superclusters, walls and the Boötes Void, from the refereed papers each text links (Karachentsev, Tully et al. 2014, Mei et al. 2007, Gott et al. 2005, Kirshner et al. 1987 and others); checked by the batch 06 science review. Redshift distances are converted at H0 = 70 km/s/Mpc.",
+      "source_url": "https://arxiv.org/abs/1409.0880",
+      "source_publisher": "arXiv (Cornell University); NASA ADS; the journals of the linked papers",
+      "license_short": "Facts-only",
+      "license_rationale": "Only facts were read from the credited papers; no sentence of them is reproduced, and each text links the papers it rests on."
     }
   ]
 }

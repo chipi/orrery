@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-12T20:09:31.649Z",
+  "generated_at": "2026-11-13T08:31:31.125Z",
   "script_version": "build-link-provenance@1.0.0",
-  "commit_sha": "aca77b925837e46d0ae8f7067c1687901b0708e6",
+  "commit_sha": "aec7ad341615a75f44ef92f6bf10b3acfb188478",
   "entries": [
     {
       "id": "30-doradus__4f141b763a84",
@@ -481,6 +481,48 @@
       "last_verified": "2026-09-11"
     },
     {
+      "id": "andromeda-i__c0b23fdf87e0",
+      "entity_id": "andromeda-i",
+      "category": "galaxy",
+      "route": "/explore",
+      "url": "https://arxiv.org/pdf/1204.1562",
+      "label": "arXiv",
+      "tier": "core",
+      "source_id": "arxiv",
+      "language": "en",
+      "kind": "science-publisher",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-13"
+    },
+    {
+      "id": "andromeda-ii__d98d23e90752",
+      "entity_id": "andromeda-ii",
+      "category": "galaxy",
+      "route": "/explore",
+      "url": "https://arxiv.org/pdf/1204.1562",
+      "label": "arXiv",
+      "tier": "core",
+      "source_id": "arxiv",
+      "language": "en",
+      "kind": "science-publisher",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-13"
+    },
+    {
+      "id": "andromeda-iii__8308f34a7800",
+      "entity_id": "andromeda-iii",
+      "category": "galaxy",
+      "route": "/explore",
+      "url": "https://arxiv.org/pdf/1204.1562",
+      "label": "arXiv",
+      "tier": "core",
+      "source_id": "arxiv",
+      "language": "en",
+      "kind": "science-publisher",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-13"
+    },
+    {
       "id": "antares__c446642ddf8c",
       "entity_id": "antares",
       "category": "star",
@@ -535,6 +577,34 @@
       "kind": "vendor-official",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
       "last_verified": "2026-09-11"
+    },
+    {
+      "id": "antlia-cluster__88cb00bb23f4",
+      "entity_id": "antlia-cluster",
+      "category": "structure",
+      "route": "/explore",
+      "url": "https://arxiv.org/abs/0803.1630",
+      "label": "arXiv",
+      "tier": "core",
+      "source_id": "arxiv",
+      "language": "en",
+      "kind": "science-publisher",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-13"
+    },
+    {
+      "id": "antlia-cluster__f2098c260938",
+      "entity_id": "antlia-cluster",
+      "category": "structure",
+      "route": "/explore",
+      "url": "https://arxiv.org/abs/astro-ph/0307200",
+      "label": "arXiv",
+      "tier": "core",
+      "source_id": "arxiv",
+      "language": "en",
+      "kind": "science-publisher",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-13"
     },
     {
       "id": "apollo-1__a69235de69e2",
@@ -1277,6 +1347,20 @@
       "kind": "agency-official",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
       "last_verified": "2026-09-11"
+    },
+    {
+      "id": "aquarius-dwarf__c497ece39e3b",
+      "entity_id": "aquarius-dwarf",
+      "category": "galaxy",
+      "route": "/explore",
+      "url": "https://arxiv.org/pdf/1204.1562",
+      "label": "arXiv",
+      "tier": "core",
+      "source_id": "arxiv",
+      "language": "en",
+      "kind": "science-publisher",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-13"
     },
     {
       "id": "arcturus__b2f38ee35bfb",
@@ -2693,6 +2777,34 @@
       "last_verified": "2026-09-11"
     },
     {
+      "id": "bootes-void__5eed371745d0",
+      "entity_id": "bootes-void",
+      "category": "structure",
+      "route": "/explore",
+      "url": "https://articles.adsabs.harvard.edu/pdf/1987ApJ...314..493K",
+      "label": "ADS",
+      "tier": "core",
+      "source_id": "nasa",
+      "language": "en",
+      "kind": "science-publisher",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-13"
+    },
+    {
+      "id": "bootes-void__43ccd6398d16",
+      "entity_id": "bootes-void",
+      "category": "structure",
+      "route": "/explore",
+      "url": "https://arxiv.org/abs/2305.02339",
+      "label": "arXiv",
+      "tier": "core",
+      "source_id": "arxiv",
+      "language": "en",
+      "kind": "science-publisher",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-13"
+    },
+    {
       "id": "buran__74b497838e45",
       "entity_id": "buran",
       "category": "fleet",
@@ -2845,6 +2957,34 @@
       "kind": "agency-official",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
       "last_verified": "2026-07-07"
+    },
+    {
+      "id": "canes-venatici-i__01394b616674",
+      "entity_id": "canes-venatici-i",
+      "category": "structure",
+      "route": "/explore",
+      "url": "https://arxiv.org/abs/astro-ph/0210414",
+      "label": "arXiv",
+      "tier": "core",
+      "source_id": "arxiv",
+      "language": "en",
+      "kind": "science-publisher",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-13"
+    },
+    {
+      "id": "canes-venatici-spur__521cfd791325",
+      "entity_id": "canes-venatici-spur",
+      "category": "structure",
+      "route": "/explore",
+      "url": "https://arxiv.org/abs/1611.00437",
+      "label": "arXiv",
+      "tier": "core",
+      "source_id": "arxiv",
+      "language": "en",
+      "kind": "science-publisher",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-13"
     },
     {
       "id": "canopus__0bb73a5a1cf5",
@@ -3169,6 +3309,20 @@
       "last_verified": "2026-09-11"
     },
     {
+      "id": "carina-dwarf__a739666c548d",
+      "entity_id": "carina-dwarf",
+      "category": "galaxy",
+      "route": "/explore",
+      "url": "https://arxiv.org/pdf/1204.1562",
+      "label": "arXiv",
+      "tier": "core",
+      "source_id": "arxiv",
+      "language": "en",
+      "kind": "science-publisher",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-13"
+    },
+    {
       "id": "carina-nebula__3d32d726636c",
       "entity_id": "carina-nebula",
       "category": "deep-sky",
@@ -3351,6 +3505,34 @@
       "last_verified": "2026-09-11"
     },
     {
+      "id": "centaurus-a-group__3c8fef709a3f",
+      "entity_id": "centaurus-a-group",
+      "category": "structure",
+      "route": "/explore",
+      "url": "https://arxiv.org/abs/astro-ph/0603091",
+      "label": "arXiv",
+      "tier": "core",
+      "source_id": "arxiv",
+      "language": "en",
+      "kind": "science-publisher",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-13"
+    },
+    {
+      "id": "centaurus-cluster__bfa11717b19f",
+      "entity_id": "centaurus-cluster",
+      "category": "structure",
+      "route": "/explore",
+      "url": "https://arxiv.org/abs/astro-ph/0512045",
+      "label": "arXiv",
+      "tier": "core",
+      "source_id": "arxiv",
+      "language": "en",
+      "kind": "science-publisher",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-13"
+    },
+    {
       "id": "ceres__49c6ef445a68",
       "entity_id": "ceres",
       "category": "small-body",
@@ -3363,6 +3545,20 @@
       "kind": "encyclopedic",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
       "last_verified": "2026-09-11"
+    },
+    {
+      "id": "cetus-dwarf__09504f8cde61",
+      "entity_id": "cetus-dwarf",
+      "category": "galaxy",
+      "route": "/explore",
+      "url": "https://arxiv.org/pdf/1204.1562",
+      "label": "arXiv",
+      "tier": "core",
+      "source_id": "arxiv",
+      "language": "en",
+      "kind": "science-publisher",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-13"
     },
     {
       "id": "challenger__4a6e182591f6",
@@ -4317,6 +4513,20 @@
       "last_verified": "2026-09-11"
     },
     {
+      "id": "coma-great-wall__210ae79cc0db",
+      "entity_id": "coma-great-wall",
+      "category": "structure",
+      "route": "/explore",
+      "url": "https://arxiv.org/abs/astro-ph/0310571",
+      "label": "arXiv",
+      "tier": "core",
+      "source_id": "arxiv",
+      "language": "en",
+      "kind": "science-publisher",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-13"
+    },
+    {
       "id": "compton-gro__6c0462dee329",
       "entity_id": "compton-gro",
       "category": "fleet",
@@ -5227,6 +5437,20 @@
       "last_verified": "2026-09-11"
     },
     {
+      "id": "draco-dwarf__79512ac06a50",
+      "entity_id": "draco-dwarf",
+      "category": "galaxy",
+      "route": "/explore",
+      "url": "https://arxiv.org/pdf/1204.1562",
+      "label": "arXiv",
+      "tier": "core",
+      "source_id": "arxiv",
+      "language": "en",
+      "kind": "science-publisher",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-13"
+    },
+    {
       "id": "dubhe__244e8a24c8d8",
       "entity_id": "dubhe",
       "category": "star",
@@ -6093,6 +6317,34 @@
       "kind": "encyclopedic",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
       "last_verified": "2026-09-11"
+    },
+    {
+      "id": "fornax-dwarf__aef305ce8e2c",
+      "entity_id": "fornax-dwarf",
+      "category": "galaxy",
+      "route": "/explore",
+      "url": "https://arxiv.org/pdf/1204.1562",
+      "label": "arXiv",
+      "tier": "core",
+      "source_id": "arxiv",
+      "language": "en",
+      "kind": "science-publisher",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-13"
+    },
+    {
+      "id": "fornax-eridanus__6700bd3572d8",
+      "entity_id": "fornax-eridanus",
+      "category": "structure",
+      "route": "/explore",
+      "url": "https://arxiv.org/abs/1106.1291",
+      "label": "arXiv",
+      "tier": "core",
+      "source_id": "arxiv",
+      "language": "en",
+      "kind": "science-publisher",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-13"
     },
     {
       "id": "free-fall__a091f1ee049f",
@@ -7061,6 +7313,34 @@
       "last_verified": "2026-09-11"
     },
     {
+      "id": "great-attractor__52af1df02aa0",
+      "entity_id": "great-attractor",
+      "category": "structure",
+      "route": "/explore",
+      "url": "https://arxiv.org/abs/1409.0880",
+      "label": "arXiv",
+      "tier": "core",
+      "source_id": "arxiv",
+      "language": "en",
+      "kind": "science-publisher",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-13"
+    },
+    {
+      "id": "great-attractor__1c921f53581a",
+      "entity_id": "great-attractor",
+      "category": "structure",
+      "route": "/explore",
+      "url": "https://arxiv.org/abs/astro-ph/0006126",
+      "label": "arXiv",
+      "tier": "core",
+      "source_id": "arxiv",
+      "language": "en",
+      "kind": "science-publisher",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-13"
+    },
+    {
       "id": "ground-track-shift__64cb9b583f95",
       "entity_id": "ground-track-shift",
       "category": "lab-formula",
@@ -7789,6 +8069,20 @@
       "last_verified": "2026-09-11"
     },
     {
+      "id": "horologium-reticulum__a7f514f4f9dd",
+      "entity_id": "horologium-reticulum",
+      "category": "structure",
+      "route": "/explore",
+      "url": "https://arxiv.org/abs/astro-ph/0505361",
+      "label": "arXiv",
+      "tier": "core",
+      "source_id": "arxiv",
+      "language": "en",
+      "kind": "science-publisher",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-13"
+    },
+    {
       "id": "htv__579f3a3162f8",
       "entity_id": "htv",
       "category": "fleet",
@@ -8083,6 +8377,48 @@
       "last_verified": "2026-09-11"
     },
     {
+      "id": "hydra-centaurus__5621653c7d3f",
+      "entity_id": "hydra-centaurus",
+      "category": "structure",
+      "route": "/explore",
+      "url": "https://arxiv.org/abs/1409.0880",
+      "label": "arXiv",
+      "tier": "core",
+      "source_id": "arxiv",
+      "language": "en",
+      "kind": "science-publisher",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-13"
+    },
+    {
+      "id": "ic-10__d711670117db",
+      "entity_id": "ic-10",
+      "category": "galaxy",
+      "route": "/explore",
+      "url": "https://arxiv.org/abs/0802.2716",
+      "label": "arXiv",
+      "tier": "core",
+      "source_id": "arxiv",
+      "language": "en",
+      "kind": "science-publisher",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-13"
+    },
+    {
+      "id": "ic-1613__e677f7dfcc14",
+      "entity_id": "ic-1613",
+      "category": "galaxy",
+      "route": "/explore",
+      "url": "https://arxiv.org/pdf/1204.1562",
+      "label": "arXiv",
+      "tier": "core",
+      "source_id": "arxiv",
+      "language": "en",
+      "kind": "science-publisher",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-13"
+    },
+    {
       "id": "ic-342__b6d2f1fe1873",
       "entity_id": "ic-342",
       "category": "deep-sky",
@@ -8095,6 +8431,34 @@
       "kind": "encyclopedic",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
       "last_verified": "2026-11-12"
+    },
+    {
+      "id": "ic-342-group__d3f78cc9acfe",
+      "entity_id": "ic-342-group",
+      "category": "structure",
+      "route": "/explore",
+      "url": "https://arxiv.org/abs/1404.2987",
+      "label": "arXiv",
+      "tier": "core",
+      "source_id": "arxiv",
+      "language": "en",
+      "kind": "science-publisher",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-13"
+    },
+    {
+      "id": "ic-342-group__41280c90054a",
+      "entity_id": "ic-342-group",
+      "category": "structure",
+      "route": "/explore",
+      "url": "https://arxiv.org/abs/1901.05981",
+      "label": "arXiv",
+      "tier": "core",
+      "source_id": "arxiv",
+      "language": "en",
+      "kind": "science-publisher",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-13"
     },
     {
       "id": "im-1-odysseus__49d2220585de",
@@ -9245,6 +9609,34 @@
       "last_verified": "2026-09-11"
     },
     {
+      "id": "laniakea__570ffff3155b",
+      "entity_id": "laniakea",
+      "category": "structure",
+      "route": "/explore",
+      "url": "https://arxiv.org/abs/1409.0880",
+      "label": "arXiv",
+      "tier": "core",
+      "source_id": "arxiv",
+      "language": "en",
+      "kind": "science-publisher",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-13"
+    },
+    {
+      "id": "laniakea__43e1f1c4c25f",
+      "entity_id": "laniakea",
+      "category": "structure",
+      "route": "/explore",
+      "url": "https://arxiv.org/abs/2305.02339",
+      "label": "arXiv",
+      "tier": "core",
+      "source_id": "arxiv",
+      "language": "en",
+      "kind": "science-publisher",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-13"
+    },
+    {
       "id": "lanyue__a04e29aee570",
       "entity_id": "lanyue",
       "category": "fleet",
@@ -9525,6 +9917,76 @@
       "last_verified": "2026-09-11"
     },
     {
+      "id": "leo-a__bf3b2b014829",
+      "entity_id": "leo-a",
+      "category": "galaxy",
+      "route": "/explore",
+      "url": "https://arxiv.org/abs/astro-ph/0702646",
+      "label": "arXiv",
+      "tier": "core",
+      "source_id": "arxiv",
+      "language": "en",
+      "kind": "science-publisher",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-13"
+    },
+    {
+      "id": "leo-i__29ed2f9fd1b8",
+      "entity_id": "leo-i",
+      "category": "galaxy",
+      "route": "/explore",
+      "url": "https://arxiv.org/pdf/1204.1562",
+      "label": "arXiv",
+      "tier": "core",
+      "source_id": "arxiv",
+      "language": "en",
+      "kind": "science-publisher",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-13"
+    },
+    {
+      "id": "leo-i-cloud__ebdc2fb9165f",
+      "entity_id": "leo-i-cloud",
+      "category": "structure",
+      "route": "/explore",
+      "url": "https://arxiv.org/abs/1306.2306",
+      "label": "arXiv",
+      "tier": "core",
+      "source_id": "arxiv",
+      "language": "en",
+      "kind": "science-publisher",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-13"
+    },
+    {
+      "id": "leo-i-cloud__3cf30087ae07",
+      "entity_id": "leo-i-cloud",
+      "category": "structure",
+      "route": "/explore",
+      "url": "https://arxiv.org/abs/1502.04253",
+      "label": "arXiv",
+      "tier": "core",
+      "source_id": "arxiv",
+      "language": "en",
+      "kind": "science-publisher",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-13"
+    },
+    {
+      "id": "leo-ii__d4812d2e4bfe",
+      "entity_id": "leo-ii",
+      "category": "galaxy",
+      "route": "/explore",
+      "url": "https://arxiv.org/pdf/1204.1562",
+      "label": "arXiv",
+      "tier": "core",
+      "source_id": "arxiv",
+      "language": "en",
+      "kind": "science-publisher",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-13"
+    },
+    {
       "id": "leonardo__f37440fd8a04",
       "entity_id": "leonardo",
       "category": "iss-module",
@@ -9621,6 +10083,48 @@
       "kind": "agency-official",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
       "last_verified": "2026-09-11"
+    },
+    {
+      "id": "lmc__cbb7e9cdcd50",
+      "entity_id": "lmc",
+      "category": "galaxy",
+      "route": "/explore",
+      "url": "https://arxiv.org/abs/1903.08096",
+      "label": "arXiv",
+      "tier": "core",
+      "source_id": "arxiv",
+      "language": "en",
+      "kind": "science-publisher",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-13"
+    },
+    {
+      "id": "local-group__2490024ecebc",
+      "entity_id": "local-group",
+      "category": "structure",
+      "route": "/explore",
+      "url": "https://arxiv.org/abs/1204.1562",
+      "label": "arXiv",
+      "tier": "core",
+      "source_id": "arxiv",
+      "language": "en",
+      "kind": "science-publisher",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-13"
+    },
+    {
+      "id": "local-group__9eef8381f8bf",
+      "entity_id": "local-group",
+      "category": "structure",
+      "route": "/explore",
+      "url": "https://arxiv.org/abs/1403.3667",
+      "label": "arXiv",
+      "tier": "core",
+      "source_id": "arxiv",
+      "language": "en",
+      "kind": "science-publisher",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-13"
     },
     {
       "id": "long-march-10__50a9e18ecc40",
@@ -10993,6 +11497,20 @@
       "kind": "agency-official",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
       "last_verified": "2026-11-12"
+    },
+    {
+      "id": "m101-group__4402b23e3c06",
+      "entity_id": "m101-group",
+      "category": "structure",
+      "route": "/explore",
+      "url": "https://arxiv.org/abs/1701.03681",
+      "label": "arXiv",
+      "tier": "core",
+      "source_id": "arxiv",
+      "language": "en",
+      "kind": "science-publisher",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-13"
     },
     {
       "id": "m103__60d6d0d48d34",
@@ -13095,6 +13613,20 @@
       "last_verified": "2026-11-12"
     },
     {
+      "id": "m81-group__42dbe10a4972",
+      "entity_id": "m81-group",
+      "category": "structure",
+      "route": "/explore",
+      "url": "https://arxiv.org/abs/astro-ph/0410065",
+      "label": "arXiv",
+      "tier": "core",
+      "source_id": "arxiv",
+      "language": "en",
+      "kind": "science-publisher",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-13"
+    },
+    {
       "id": "m82__df3a45afc4ee",
       "entity_id": "m82",
       "category": "deep-sky",
@@ -13597,6 +14129,34 @@
       "kind": "agency-official",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
       "last_verified": "2026-11-12"
+    },
+    {
+      "id": "maffei-group__3d2f6051e1b1",
+      "entity_id": "maffei-group",
+      "category": "structure",
+      "route": "/explore",
+      "url": "https://arxiv.org/abs/1404.2987",
+      "label": "arXiv",
+      "tier": "core",
+      "source_id": "arxiv",
+      "language": "en",
+      "kind": "science-publisher",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-13"
+    },
+    {
+      "id": "maffei-group__9e345566aef7",
+      "entity_id": "maffei-group",
+      "category": "structure",
+      "route": "/explore",
+      "url": "https://arxiv.org/abs/1901.05981",
+      "label": "arXiv",
+      "tier": "core",
+      "source_id": "arxiv",
+      "language": "en",
+      "kind": "science-publisher",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-13"
     },
     {
       "id": "magellan__02627ee0d6f0",
@@ -14957,6 +15517,34 @@
       "last_verified": "2026-09-11"
     },
     {
+      "id": "milky-way__27bfb641b953",
+      "entity_id": "milky-way",
+      "category": "galaxy",
+      "route": "/explore",
+      "url": "https://imagine.gsfc.nasa.gov/science/objects/milkyway1.html",
+      "label": "NASA Imagine",
+      "tier": "intro",
+      "source_id": "nasa",
+      "language": "en",
+      "kind": "agency-official",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-13"
+    },
+    {
+      "id": "milky-way__4fa4698073d2",
+      "entity_id": "milky-way",
+      "category": "galaxy",
+      "route": "/explore",
+      "url": "https://arxiv.org/abs/1904.05721",
+      "label": "arXiv",
+      "tier": "core",
+      "source_id": "arxiv",
+      "language": "en",
+      "kind": "science-publisher",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-13"
+    },
+    {
       "id": "mimosa__658c458e3ea4",
       "entity_id": "mimosa",
       "category": "star",
@@ -15755,6 +16343,34 @@
       "last_verified": "2026-11-12"
     },
     {
+      "id": "ngc-147__f2a94bd72485",
+      "entity_id": "ngc-147",
+      "category": "galaxy",
+      "route": "/explore",
+      "url": "https://arxiv.org/pdf/1204.1562",
+      "label": "arXiv",
+      "tier": "core",
+      "source_id": "arxiv",
+      "language": "en",
+      "kind": "science-publisher",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-13"
+    },
+    {
+      "id": "ngc-185__63ea26dcbcdf",
+      "entity_id": "ngc-185",
+      "category": "galaxy",
+      "route": "/explore",
+      "url": "https://arxiv.org/pdf/1204.1562",
+      "label": "arXiv",
+      "tier": "core",
+      "source_id": "arxiv",
+      "language": "en",
+      "kind": "science-publisher",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-13"
+    },
+    {
       "id": "ngc-2014-2020__9571e46042e2",
       "entity_id": "ngc-2014-2020",
       "category": "deep-sky",
@@ -15993,6 +16609,20 @@
       "last_verified": "2026-11-12"
     },
     {
+      "id": "ngc-5846-group__19d4b07b4965",
+      "entity_id": "ngc-5846-group",
+      "category": "structure",
+      "route": "/explore",
+      "url": "https://arxiv.org/abs/astro-ph/0506737",
+      "label": "arXiv",
+      "tier": "core",
+      "source_id": "arxiv",
+      "language": "en",
+      "kind": "science-publisher",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-13"
+    },
+    {
       "id": "ngc-602__9b5e5def5083",
       "entity_id": "ngc-602",
       "category": "deep-sky",
@@ -16075,6 +16705,48 @@
       "kind": "agency-official",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
       "last_verified": "2026-11-12"
+    },
+    {
+      "id": "ngc-6822__f46ca800b162",
+      "entity_id": "ngc-6822",
+      "category": "galaxy",
+      "route": "/explore",
+      "url": "https://science.nasa.gov/?p=29831",
+      "label": "NASA",
+      "tier": "core",
+      "source_id": "nasa",
+      "language": "en",
+      "kind": "agency-official",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-13"
+    },
+    {
+      "id": "ngc-6946-group__5f5279bbf5a0",
+      "entity_id": "ngc-6946-group",
+      "category": "structure",
+      "route": "/explore",
+      "url": "https://arxiv.org/abs/1807.05229",
+      "label": "arXiv",
+      "tier": "core",
+      "source_id": "arxiv",
+      "language": "en",
+      "kind": "science-publisher",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-13"
+    },
+    {
+      "id": "ngc-6946-group__5ad8f2a829e9",
+      "entity_id": "ngc-6946-group",
+      "category": "structure",
+      "route": "/explore",
+      "url": "https://arxiv.org/abs/astro-ph/0010148",
+      "label": "arXiv",
+      "tier": "core",
+      "source_id": "arxiv",
+      "language": "en",
+      "kind": "science-publisher",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-13"
     },
     {
       "id": "ngc-7293__a72d826cdef8",
@@ -16229,6 +16901,20 @@
       "kind": "vendor-official",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
       "last_verified": "2026-07-07"
+    },
+    {
+      "id": "ophiuchus-supercluster__96043dc08506",
+      "entity_id": "ophiuchus-supercluster",
+      "category": "structure",
+      "route": "/explore",
+      "url": "https://arxiv.org/abs/1509.00986",
+      "label": "arXiv",
+      "tier": "core",
+      "source_id": "arxiv",
+      "language": "en",
+      "kind": "science-publisher",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-13"
     },
     {
       "id": "opportunity__9201780d6302",
@@ -16973,6 +17659,20 @@
       "last_verified": "2026-06-28"
     },
     {
+      "id": "pavo-indus__398517a69883",
+      "entity_id": "pavo-indus",
+      "category": "structure",
+      "route": "/explore",
+      "url": "https://arxiv.org/abs/1409.0880",
+      "label": "arXiv",
+      "tier": "core",
+      "source_id": "arxiv",
+      "language": "en",
+      "kind": "science-publisher",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-13"
+    },
+    {
       "id": "peacock__2323d7de7750",
       "entity_id": "peacock",
       "category": "star",
@@ -16985,6 +17685,34 @@
       "kind": "encyclopedic",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
       "last_verified": "2026-09-11"
+    },
+    {
+      "id": "pegasus-dirr__ef7bdc32d896",
+      "entity_id": "pegasus-dirr",
+      "category": "galaxy",
+      "route": "/explore",
+      "url": "https://arxiv.org/pdf/1204.1562",
+      "label": "arXiv",
+      "tier": "core",
+      "source_id": "arxiv",
+      "language": "en",
+      "kind": "science-publisher",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-13"
+    },
+    {
+      "id": "pegasus-dsph__8b3ead1babcf",
+      "entity_id": "pegasus-dsph",
+      "category": "galaxy",
+      "route": "/explore",
+      "url": "https://arxiv.org/pdf/1204.1562",
+      "label": "arXiv",
+      "tier": "core",
+      "source_id": "arxiv",
+      "language": "en",
+      "kind": "science-publisher",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-13"
     },
     {
       "id": "perseus-cluster__481360fbb4e1",
@@ -17013,6 +17741,34 @@
       "kind": "agency-official",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
       "last_verified": "2026-11-12"
+    },
+    {
+      "id": "perseus-pisces__c577272d3dd0",
+      "entity_id": "perseus-pisces",
+      "category": "structure",
+      "route": "/explore",
+      "url": "https://arxiv.org/abs/1901.05981",
+      "label": "arXiv",
+      "tier": "core",
+      "source_id": "arxiv",
+      "language": "en",
+      "kind": "science-publisher",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-13"
+    },
+    {
+      "id": "perseus-pisces__45efbab1a53a",
+      "entity_id": "perseus-pisces",
+      "category": "structure",
+      "route": "/explore",
+      "url": "https://arxiv.org/abs/2305.02339",
+      "label": "arXiv",
+      "tier": "core",
+      "source_id": "arxiv",
+      "language": "en",
+      "kind": "science-publisher",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-13"
     },
     {
       "id": "perseverance__c796de99d764",
@@ -17209,6 +17965,20 @@
       "kind": "agency-official",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
       "last_verified": "2026-09-11"
+    },
+    {
+      "id": "phoenix-dwarf__1f755ecd3bb0",
+      "entity_id": "phoenix-dwarf",
+      "category": "galaxy",
+      "route": "/explore",
+      "url": "https://arxiv.org/pdf/1204.1562",
+      "label": "arXiv",
+      "tier": "core",
+      "source_id": "arxiv",
+      "language": "en",
+      "kind": "science-publisher",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-13"
     },
     {
       "id": "pioneer-10__8b7b4c1f6a18",
@@ -18989,6 +19759,34 @@
       "last_verified": "2026-09-11"
     },
     {
+      "id": "sagittarius-dirr__0fece3e0407d",
+      "entity_id": "sagittarius-dirr",
+      "category": "galaxy",
+      "route": "/explore",
+      "url": "https://arxiv.org/pdf/1204.1562",
+      "label": "arXiv",
+      "tier": "core",
+      "source_id": "arxiv",
+      "language": "en",
+      "kind": "science-publisher",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-13"
+    },
+    {
+      "id": "sagittarius-dsph__3ab3c1bdf6fc",
+      "entity_id": "sagittarius-dsph",
+      "category": "galaxy",
+      "route": "/explore",
+      "url": "https://arxiv.org/abs/1804.10196",
+      "label": "arXiv",
+      "tier": "core",
+      "source_id": "arxiv",
+      "language": "en",
+      "kind": "science-publisher",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-13"
+    },
+    {
       "id": "saiph__870a28b799af",
       "entity_id": "saiph",
       "category": "star",
@@ -19633,6 +20431,48 @@
       "last_verified": "2026-09-11"
     },
     {
+      "id": "sculptor-dwarf__5fb227230f88",
+      "entity_id": "sculptor-dwarf",
+      "category": "galaxy",
+      "route": "/explore",
+      "url": "https://arxiv.org/pdf/1204.1562",
+      "label": "arXiv",
+      "tier": "core",
+      "source_id": "arxiv",
+      "language": "en",
+      "kind": "science-publisher",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-13"
+    },
+    {
+      "id": "sculptor-group__74e16d6246ee",
+      "entity_id": "sculptor-group",
+      "category": "structure",
+      "route": "/explore",
+      "url": "https://arxiv.org/abs/2102.11354",
+      "label": "arXiv",
+      "tier": "core",
+      "source_id": "arxiv",
+      "language": "en",
+      "kind": "science-publisher",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-13"
+    },
+    {
+      "id": "sculptor-group__980119e32e4a",
+      "entity_id": "sculptor-group",
+      "category": "structure",
+      "route": "/explore",
+      "url": "https://arxiv.org/abs/astro-ph/0302045",
+      "label": "arXiv",
+      "tier": "core",
+      "source_id": "arxiv",
+      "language": "en",
+      "kind": "science-publisher",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-13"
+    },
+    {
       "id": "semnan-imam-khomeini__40f23982e53f",
       "entity_id": "semnan-imam-khomeini",
       "category": "fleet",
@@ -19729,6 +20569,48 @@
       "kind": "mission-microsite",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
       "last_verified": "2026-11-12"
+    },
+    {
+      "id": "sextans-dwarf__0fe846607169",
+      "entity_id": "sextans-dwarf",
+      "category": "galaxy",
+      "route": "/explore",
+      "url": "https://arxiv.org/pdf/1204.1562",
+      "label": "arXiv",
+      "tier": "core",
+      "source_id": "arxiv",
+      "language": "en",
+      "kind": "science-publisher",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-13"
+    },
+    {
+      "id": "shapley-concentration__c2f0b92c9762",
+      "entity_id": "shapley-concentration",
+      "category": "structure",
+      "route": "/explore",
+      "url": "https://arxiv.org/abs/1702.02483",
+      "label": "arXiv",
+      "tier": "core",
+      "source_id": "arxiv",
+      "language": "en",
+      "kind": "science-publisher",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-13"
+    },
+    {
+      "id": "shapley-concentration__8a1d8d5e5f68",
+      "entity_id": "shapley-concentration",
+      "category": "structure",
+      "route": "/explore",
+      "url": "https://arxiv.org/abs/astro-ph/0509903",
+      "label": "arXiv",
+      "tier": "core",
+      "source_id": "arxiv",
+      "language": "en",
+      "kind": "science-publisher",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-13"
     },
     {
       "id": "shenzhou__8c6b6fdcceee",
@@ -20109,6 +20991,20 @@
       "last_verified": "2026-09-11"
     },
     {
+      "id": "sloan-great-wall__80aff4f00532",
+      "entity_id": "sloan-great-wall",
+      "category": "structure",
+      "route": "/explore",
+      "url": "https://arxiv.org/abs/astro-ph/0310571",
+      "label": "arXiv",
+      "tier": "core",
+      "source_id": "arxiv",
+      "language": "en",
+      "kind": "science-publisher",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-13"
+    },
+    {
       "id": "sls-block-1__97367022b2b4",
       "entity_id": "sls-block-1",
       "category": "fleet",
@@ -20205,6 +21101,20 @@
       "kind": "agency-official",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
       "last_verified": "2026-11-12"
+    },
+    {
+      "id": "smc__fc0c28ed0d3a",
+      "entity_id": "smc",
+      "category": "galaxy",
+      "route": "/explore",
+      "url": "https://arxiv.org/abs/2010.08754",
+      "label": "arXiv",
+      "tier": "core",
+      "source_id": "arxiv",
+      "language": "en",
+      "kind": "science-publisher",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-13"
     },
     {
       "id": "sn-1572__24bfff678221",
@@ -22447,6 +23357,20 @@
       "last_verified": "2026-09-11"
     },
     {
+      "id": "tucana-dwarf__2834f29b8c60",
+      "entity_id": "tucana-dwarf",
+      "category": "galaxy",
+      "route": "/explore",
+      "url": "https://arxiv.org/pdf/1204.1562",
+      "label": "arXiv",
+      "tier": "core",
+      "source_id": "arxiv",
+      "language": "en",
+      "kind": "science-publisher",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-13"
+    },
+    {
       "id": "tundra-molniya__dbf7360f9e3e",
       "entity_id": "tundra-molniya",
       "category": "earth-object",
@@ -22795,6 +23719,48 @@
       "kind": "agency-official",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
       "last_verified": "2026-05-07"
+    },
+    {
+      "id": "ursa-major-cloud__29ba2ee1c52a",
+      "entity_id": "ursa-major-cloud",
+      "category": "structure",
+      "route": "/explore",
+      "url": "https://arxiv.org/abs/astro-ph/0103039",
+      "label": "arXiv",
+      "tier": "core",
+      "source_id": "arxiv",
+      "language": "en",
+      "kind": "science-publisher",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-13"
+    },
+    {
+      "id": "ursa-major-cloud__05fe57de9bc1",
+      "entity_id": "ursa-major-cloud",
+      "category": "structure",
+      "route": "/explore",
+      "url": "https://arxiv.org/abs/astro-ph/9703029",
+      "label": "arXiv",
+      "tier": "core",
+      "source_id": "arxiv",
+      "language": "en",
+      "kind": "science-publisher",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-13"
+    },
+    {
+      "id": "ursa-minor-dwarf__f36c78ac7efa",
+      "entity_id": "ursa-minor-dwarf",
+      "category": "galaxy",
+      "route": "/explore",
+      "url": "https://arxiv.org/pdf/1204.1562",
+      "label": "arXiv",
+      "tier": "core",
+      "source_id": "arxiv",
+      "language": "en",
+      "kind": "science-publisher",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-13"
     },
     {
       "id": "v838-mon__4fb01322394c",
@@ -23649,6 +24615,76 @@
       "kind": "agency-official",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
       "last_verified": "2026-09-11"
+    },
+    {
+      "id": "virgo-cluster__7141a15622d3",
+      "entity_id": "virgo-cluster",
+      "category": "structure",
+      "route": "/explore",
+      "url": "https://arxiv.org/abs/1710.08935",
+      "label": "arXiv",
+      "tier": "core",
+      "source_id": "arxiv",
+      "language": "en",
+      "kind": "science-publisher",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-13"
+    },
+    {
+      "id": "virgo-cluster__4afcc780c003",
+      "entity_id": "virgo-cluster",
+      "category": "structure",
+      "route": "/explore",
+      "url": "https://arxiv.org/abs/astro-ph/0702510",
+      "label": "arXiv",
+      "tier": "core",
+      "source_id": "arxiv",
+      "language": "en",
+      "kind": "science-publisher",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-13"
+    },
+    {
+      "id": "virgo-ii-groups__a84772578358",
+      "entity_id": "virgo-ii-groups",
+      "category": "structure",
+      "route": "/explore",
+      "url": "https://arxiv.org/abs/1611.00437",
+      "label": "arXiv",
+      "tier": "core",
+      "source_id": "arxiv",
+      "language": "en",
+      "kind": "science-publisher",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-13"
+    },
+    {
+      "id": "virgo-supercluster__1a3f3f021cff",
+      "entity_id": "virgo-supercluster",
+      "category": "structure",
+      "route": "/explore",
+      "url": "https://adsabs.harvard.edu/pdf/1982ApJ...257..389T",
+      "label": "ADS",
+      "tier": "core",
+      "source_id": "nasa",
+      "language": "en",
+      "kind": "science-publisher",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-13"
+    },
+    {
+      "id": "virgo-supercluster__8be4fe87458c",
+      "entity_id": "virgo-supercluster",
+      "category": "structure",
+      "route": "/explore",
+      "url": "https://arxiv.org/abs/1409.0880",
+      "label": "arXiv",
+      "tier": "core",
+      "source_id": "arxiv",
+      "language": "en",
+      "kind": "science-publisher",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-13"
     },
     {
       "id": "vis-viva__ba95e0293353",
@@ -24629,6 +25665,20 @@
       "kind": "encyclopedic",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
       "last_verified": "2026-09-11"
+    },
+    {
+      "id": "wlm__48973c973d2c",
+      "entity_id": "wlm",
+      "category": "galaxy",
+      "route": "/explore",
+      "url": "https://arxiv.org/pdf/1204.1562",
+      "label": "arXiv",
+      "tier": "core",
+      "source_id": "arxiv",
+      "language": "en",
+      "kind": "science-publisher",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-13"
     },
     {
       "id": "woomera__6fc2095c8d70",

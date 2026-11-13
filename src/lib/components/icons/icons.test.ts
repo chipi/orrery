@@ -14,5 +14,6 @@ describe('ICON_SHOWCASE', () => {
     expect((entry?.variants ?? []).map((v) => v.props.glyph)).toEqual(
       SCALE_SHELL_LIST.map((s) => s.glyph),
     );
+    for (const v of entry?.variants ?? []) expect(v.label).not.toBe(v.props.glyph);
   });
 });

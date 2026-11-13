@@ -52,6 +52,18 @@ export type IconShowcaseEntry = {
   variants?: Array<{ label?: string; props: Record<string, unknown> }>;
 };
 
+/** English level names, the keys of the colophon overlay's `variants` for `scale-glyphs`. */
+const LEVEL_NAMES: Record<string, string> = {
+  'solar-system': 'Solar System',
+  neighborhood: 'Stellar Neighborhood',
+  'milky-way': 'Milky Way',
+  'local-group': 'Local Group',
+  'local-sheet': 'Local Sheet',
+  virgo: 'Virgo Supercluster',
+  laniakea: 'Laniakea',
+  'cosmic-web': 'Cosmic Web',
+};
+
 export const ICON_SHOWCASE: IconShowcaseEntry[] = [
   {
     id: 'menu',
@@ -192,7 +204,7 @@ export const ICON_SHOWCASE: IconShowcaseEntry[] = [
     route: '/explore',
     component: ScaleGlyphIcon as Component<Record<string, unknown>>,
     variants: SCALE_SHELL_LIST.map((s) => ({
-      label: s.glyph,
+      label: LEVEL_NAMES[s.glyph] ?? s.glyph,
       props: { glyph: s.glyph, size: 32 },
     })),
   },

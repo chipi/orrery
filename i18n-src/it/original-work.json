@@ -2351,6 +2351,21 @@
       "title": "Livello sensoriale",
       "what": "Ago di bussola attraversato da un'onda: apre le impostazioni sensoriali (suono / vibrazione / inclinazione).",
       "where": "Navigazione"
+    },
+    "scale-glyphs": {
+      "title": "Glifi dei livelli di scala",
+      "what": "Un piccolo disegno per ogni livello di /explore, dal Sistema Solare alla Ragnatela cosmica: nel selettore di livello, nelle righe di navigazione e nella scheda del livello.",
+      "where": "Esplora · navigazione · selettore di livello",
+      "variants": {
+        "Solar System": "Sistema Solare",
+        "Stellar Neighborhood": "Vicinato stellare",
+        "Milky Way": "Via Lattea",
+        "Local Group": "Gruppo Locale",
+        "Local Sheet": "Foglio Locale",
+        "Virgo Supercluster": "Superammasso Locale",
+        "Laniakea": "Laniakea",
+        "Cosmic Web": "Ragnatela cosmica"
+      }
     }
   }
 }

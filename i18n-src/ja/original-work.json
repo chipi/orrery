@@ -2351,6 +2351,21 @@
       "title": "感覚レイヤー",
       "what": "波形が横切るコンパスの針 — 感覚設定（音 / 振動 / 傾き）を開く。",
       "where": "ナビゲーション"
+    },
+    "scale-glyphs": {
+      "title": "スケールレベルのグリフ",
+      "what": "/explore の各レベルに1つずつある小さな絵柄。太陽系からコズミック・ウェブまで。レベル選択、ナビゲーションの行、レベルカードに表示される。",
+      "where": "エクスプローラー · ナビゲーション · レベル選択",
+      "variants": {
+        "Solar System": "太陽系",
+        "Stellar Neighborhood": "恒星近傍",
+        "Milky Way": "銀河系",
+        "Local Group": "局所銀河群",
+        "Local Sheet": "ローカルシート",
+        "Virgo Supercluster": "おとめ座超銀河団",
+        "Laniakea": "ラニアケア",
+        "Cosmic Web": "コズミック・ウェブ"
+      }
     }
   }
 }

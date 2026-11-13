@@ -2351,6 +2351,21 @@
       "title": "感官层",
       "what": "被波形穿过的指南针——打开感官设置（声音 / 振动 / 倾斜）。",
       "where": "导航"
+    },
+    "scale-glyphs": {
+      "title": "尺度层级图标",
+      "what": "/explore 每个层级各有一幅小图，从太阳系到宇宙网——出现在层级选择器、导航行和层级卡片中。",
+      "where": "探索 · 导航 · 层级选择器",
+      "variants": {
+        "Solar System": "太阳系",
+        "Stellar Neighborhood": "恒星邻域",
+        "Milky Way": "银河系",
+        "Local Group": "本星系群",
+        "Local Sheet": "本星系板",
+        "Virgo Supercluster": "室女座超星系团",
+        "Laniakea": "拉尼亚凯亚",
+        "Cosmic Web": "宇宙网"
+      }
     }
   }
 }

@@ -14,9 +14,34 @@
     "waivers": {
       "type": "array",
       "items": { "$ref": "#/$defs/waiver" }
+    },
+    "artistic_impressions": {
+      "description": "Flown-vehicle heroes that may be an artist's concept, illustration or computer graphic because no photograph of the vehicle exists (ADR-053). One row per exact image path; read by scripts/validate-image-depiction.ts.",
+      "type": "array",
+      "items": { "$ref": "#/$defs/slotRow" }
+    },
+    "not_concept": {
+      "description": "Gallery slots whose title or alt text carries a concept word but whose picture is not an artist's concept (a photograph of a museum model, a data view). Exempt from the honest-label rule and from the hero rule. One row per exact image path, with the reason.",
+      "type": "array",
+      "items": { "$ref": "#/$defs/slotRow" }
     }
   },
   "$defs": {
+    "slotRow": {
+      "type": "object",
+      "required": ["scope", "justification", "reviewer", "decided_at"],
+      "additionalProperties": false,
+      "properties": {
+        "scope": {
+          "type": "string",
+          "pattern": "^/images/[^*]+/\\d\\d$",
+          "description": "The exact slot, /images/<surface>/<id>/NN, no extension."
+        },
+        "justification": { "type": "string", "minLength": 10 },
+        "reviewer": { "type": "string", "minLength": 1 },
+        "decided_at": { "type": "string", "format": "date" }
+      }
+    },
     "waiver": {
       "type": "object",
       "required": [

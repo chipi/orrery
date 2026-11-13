@@ -16,7 +16,7 @@
     "taken": "发布于2022年7月12日"
   },
   "jwst-stephans": {
-    "title": "史蒂芬五重星系",
+    "title": "斯蒂芬五重星系",
     "caption": "五个星系被锁定在宇宙舞蹈中，其中四个因潮汐力互相撕裂。",
     "subject": "星系",
     "type": "紧凑星系群",
@@ -32,7 +32,7 @@
     "taken": "发布于2022年10月19日"
   },
   "jwst-tarantula": {
-    "title": "狼蛛星云",
+    "title": "蜘蛛星云",
     "caption": "30 Doradus — 我们银河系邻域中已知最活跃的星暴区。",
     "subject": "星云",
     "type": "恒星形成区（30 Dor）",
@@ -40,7 +40,7 @@
     "taken": "发布于2022年9月6日"
   },
   "jwst-cartwheel": {
-    "title": "大风车星系",
+    "title": "车轮星系",
     "caption": "一个罕见的环形星系，仍在经历数亿年前一次迎面碰撞的余波中摇动。",
     "subject": "星系",
     "type": "环形星系",
@@ -48,7 +48,7 @@
     "taken": "发布于2022年8月2日"
   },
   "jwst-phantom": {
-    "title": "幻影星系",
+    "title": "幽灵星系",
     "caption": "M74 — 一个大设计旋涡星系，其气体和尘埃的骨架在红外波段被完全揭示。",
     "subject": "星系",
     "type": "旋涡星系（M74）",
@@ -96,7 +96,7 @@
     "taken": "2016年·Hubble 26周年"
   },
   "hst-westerlund2": {
-    "title": "韦斯特伦德2",
+    "title": "维斯特卢2",
     "caption": "年轻恒星的巨大星团，摄自Hubble的25周年纪念影像。",
     "subject": "星团",
     "type": "星团（Gum 29）",
@@ -112,7 +112,7 @@
     "taken": "2004年"
   },
   "hst-whirlpool": {
-    "title": "涡旋星系",
+    "title": "涡状星系",
     "caption": "M51 — 教科书般完美的旋涡星系，星臂闪烁着新生恒星的粉色光芒。",
     "subject": "星系",
     "type": "旋涡星系（M51）",
@@ -136,7 +136,7 @@
     "taken": "2015"
   },
   "hst-sombrero": {
-    "title": "索姆布雷罗星系",
+    "title": "阔边帽星系",
     "caption": "M104——中心是耀眼的白色，外围被一圈黑暗的尘埃环绕。",
     "subject": "星系",
     "type": "螺旋星系（M104）",
@@ -238,7 +238,7 @@
     "taken": "2024年发布"
   },
   "hst-lagoon": {
-    "title": "拉古恩星云",
+    "title": "礁湖星云",
     "caption": "M8 — 一个气体和尘埃组成的恒星摇篮，摄自Hubble的28周年纪念影像。",
     "subject": "星云",
     "type": "发射星云（M8）",
@@ -278,7 +278,7 @@
     "taken": "2002 年·ACS 首次成像"
   },
   "hst-omega-centauri": {
-    "title": "半人马座 Omega",
+    "title": "半人马座ω",
     "caption": "天空中最明亮的球状星团——数百万颗恒星被重力束缚在一起。",
     "subject": "星团",
     "type": "球状星团",
@@ -302,7 +302,7 @@
     "taken": "2007年·Hubble 17周年"
   },
   "jwst-rho-ophiuchi": {
-    "title": "人马座ρ云",
+    "title": "蛇夫座ρ星云复合体",
     "caption": "距地球最近的恒星形成区，在众多年轻太阳的照耀下熠熠生辉——韦伯太空望远镜周年纪念图像。",
     "subject": "星云",
     "type": "恒星形成区",
@@ -326,7 +326,7 @@
     "taken": "2020年·Hubble 30周年"
   },
   "hst-hen2104": {
-    "title": "南方蟹状星云",
+    "title": "南蟹状星云",
     "caption": "垂死恒星及其伴星抛出的嵌套沙漏形气体结构。",
     "subject": "星云",
     "type": "行星状星云",
@@ -342,7 +342,7 @@
     "taken": "2014年·Hubble 24周年"
   },
   "hst-andromeda": {
-    "title": "仙女星系",
+    "title": "仙女座星系",
     "caption": "Hubble有史以来最清晰的我们最近的大星系邻居全景 —— 超过1亿颗恒星。",
     "subject": "星系",
     "type": "螺旋星系",

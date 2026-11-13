@@ -76,6 +76,55 @@ test.describe('an open detail panel is over every HUD piece and the footer', () 
   }
 });
 
+test.describe('the INDEX tab and BACK TO EXPLORE on a phone: disjoint, both on top', () => {
+  test.beforeEach(({ page: _page }, testInfo) => {
+    test.skip(testInfo.project.name === 'desktop-chromium', 'touch rows only');
+  });
+
+  // The site state is the one that moves the tab: the imagery card pushes it up to the chip row.
+  for (const route of [
+    '/moon',
+    '/mars',
+    '/venus',
+    '/earth',
+    '/moon?site=apollo11',
+    '/mars?site=perseverance',
+    '/venus?site=venera-13',
+    '/earth?site=lc-39a',
+  ]) {
+    test(`${route}: neither covers the other`, async ({ page }, testInfo) => {
+      // A portrait phone's open site panel is a full-height sheet over both: the closed state is the test.
+      test.skip(
+        route.includes('site=') && testInfo.project.name === 'mobile-chromium',
+        'the sheet covers both',
+      );
+      await page.goto(route);
+      await waitForHydration(page);
+      const handle = page.locator('.surface-index-handle');
+      const back = page.locator('.hud-top-mobile > *').first();
+      await expect(handle).toBeVisible({ timeout: 45_000 });
+      await expect(back).toBeVisible();
+      await page.waitForTimeout(1500);
+      const a = (await handle.boundingBox())!;
+      const b = (await back.boundingBox())!;
+      const disjoint =
+        a.x + a.width <= b.x ||
+        b.x + b.width <= a.x ||
+        a.y + a.height <= b.y ||
+        b.y + b.height <= a.y;
+      expect(disjoint, `tab ${JSON.stringify(a)} vs back ${JSON.stringify(b)}`).toBe(true);
+      for (const loc of [handle, back]) {
+        const onTop = await loc.evaluate((el) => {
+          const r = el.getBoundingClientRect();
+          const hit = document.elementFromPoint(r.left + r.width / 2, r.top + r.height / 2);
+          return !!hit && el.contains(hit);
+        });
+        expect(onTop, 'on top at its centre').toBe(true);
+      }
+    });
+  }
+});
+
 test.describe('a landscape phone: the drawer tabs stay usable beside the side drawer', () => {
   test.beforeEach(({ page: _page }, testInfo) => {
     test.skip(testInfo.project.name !== 'mobile-landscape-chromium', 'landscape-only');

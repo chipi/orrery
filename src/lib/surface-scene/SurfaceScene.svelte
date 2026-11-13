@@ -7352,14 +7352,25 @@ sample      ${debugInfo.projectedPxSample}`}
       max-width: calc(100vw - 16px);
       z-index: 45;
     }
-    /* Landscape: the detail panel is a side drawer; the row ends at its edge and scrolls sideways
+    /* Landscape: the row starts after the INDEX tab (44 px wide, left edge). On a short screen the
+       imagery card pushes the tab up to the row's height, so the tab would cover BACK TO EXPLORE. */
+    :global(html[data-touch][data-orientation='landscape']) .hud-top-mobile {
+      left: 52px;
+      max-width: calc(100vw - 60px);
+    }
+    /* …and, with the detail panel open as a side drawer, ends at its edge and scrolls sideways
        (a second line would run into the site card below it). */
     :global(html[data-touch][data-orientation='landscape']:has(aside.panel:not(.covered)))
       .hud-top-mobile {
-      max-width: calc(100vw - var(--panel-width) - 20px);
+      max-width: calc(100vw - var(--panel-width) - 64px);
       flex-wrap: nowrap;
       overflow-x: auto;
       scrollbar-width: none;
+    }
+    :global(html[data-touch][data-orientation='landscape']:has(aside.panel:not(.covered)))
+      .hud-top-mobile
+      > :global(*) {
+      flex-shrink: 0;
     }
   }
   /* The sphere controls (2D / reset / spin) are inert in the flat-patch

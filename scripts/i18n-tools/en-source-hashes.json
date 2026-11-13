@@ -3547,6 +3547,7 @@
     "low Earth orbit": "8db733a0af",
     "luminous red nova": "68a9d0a388",
     "magnetosphere": "643f280e4b",
+    "main sequence": "4f8cb8cb90",
     "maser": "c6db0848b5",
     "mass-to-light ratio": "60f43dc893",
     "megaparsec": "917f0cca0e",
@@ -3600,6 +3601,7 @@
     "star cluster": "8de2f1e57c",
     "star-forming region": "c6480cf60f",
     "starburst": "f529e1e53d",
+    "stellar population": "8bfb5accb3",
     "stellar stream": "1401d80bda",
     "stellar-mass black hole": "2cee17ea77",
     "sun-synchronous": "6217cea0da",
@@ -20173,6 +20175,16 @@
     "links.1.t": "94a0426e8d",
     "links.1.u": "76bfb707bf"
   },
+  "universe/deep-sky/ngc-104.json": {
+    "bio": "a33f3d1fb8",
+    "fact": "1aa98cb222",
+    "links.0.l": "bce9e8a013",
+    "links.0.t": "3cee674645",
+    "links.0.u": "5fff55c1fd",
+    "links.1.l": "eda2e13963",
+    "links.1.t": "94a0426e8d",
+    "links.1.u": "2388809717"
+  },
   "universe/deep-sky/ngc-1300.json": {
     "bio": "9f74d06515",
     "fact": "c47638c861",
@@ -20317,6 +20329,16 @@
     "links.1.l": "664add4380",
     "links.1.t": "3cee674645",
     "links.1.u": "4bbd6de0ed"
+  },
+  "universe/deep-sky/ngc-6752.json": {
+    "bio": "9e714289b8",
+    "fact": "54b6a4b5c5",
+    "links.0.l": "7bcefebc17",
+    "links.0.t": "3cee674645",
+    "links.0.u": "d298d5d40f",
+    "links.1.l": "eda2e13963",
+    "links.1.t": "94a0426e8d",
+    "links.1.u": "7040d88d4b"
   },
   "universe/deep-sky/ngc-7293.json": {
     "bio": "b39d148ac8",

@@ -62414,44 +62414,42 @@
     {
       "id": "4c9870cf17fbfa66",
       "path": "/images/small-bodies/pluto/01.1x1.jpg",
-      "source_type": "wikimedia-commons",
-      "title": "File:Pluto-01_Stern_03_Pluto_Color_TXT.jpg",
-      "author": "NASA",
+      "source_type": "nasa-images-api",
+      "title": "The Rich Color Variations of Pluto (PIA19952)",
+      "author": "NASA/Johns Hopkins University Applied Physics Laboratory/Southwest Research Institute",
       "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/wiki/File%3APluto-01_Stern_03_Pluto_Color_TXT.jpg",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Pluto-01_Stern_03_Pluto_Color_TXT.jpg",
+      "source_url": "https://images.nasa.gov/details/PIA19952",
+      "image_url": null,
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
       "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
       "modifications": [
-        "downloaded-via-special-filepath",
-        "reencoded-jpeg"
+        "identified-by-image-match"
       ],
       "revid": null,
       "pageid": null,
-      "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.926Z"
+      "nasa_id": "PIA19952",
+      "fetched_at": "2026-11-13T20:51:39.967Z"
     },
     {
       "id": "00d1f9db5829e33f",
       "path": "/images/small-bodies/pluto/01.webp",
-      "source_type": "wikimedia-commons",
-      "title": "File:NH-LORRI-Pluto-Charon-2015-01-25.jpg",
-      "author": "NASA",
+      "source_type": "nasa-images-api",
+      "title": "The Rich Color Variations of Pluto (PIA19952)",
+      "author": "NASA/Johns Hopkins University Applied Physics Laboratory/Southwest Research Institute",
       "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/wiki/File%3ANH-LORRI-Pluto-Charon-2015-01-25.jpg",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/NH-LORRI-Pluto-Charon-2015-01-25.jpg",
+      "source_url": "https://images.nasa.gov/details/PIA19952",
+      "image_url": null,
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
       "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
       "modifications": [
-        "downloaded-via-special-filepath",
-        "reencoded-jpeg"
+        "identified-by-image-match"
       ],
       "revid": null,
       "pageid": null,
-      "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.926Z"
+      "nasa_id": "PIA19952",
+      "fetched_at": "2026-11-13T20:51:39.967Z"
     },
     {
       "id": "80098cbb21df29c3",

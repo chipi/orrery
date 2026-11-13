@@ -1,0 +1,16 @@
+{
+  "fact": "The Milky Way is the barred spiral galaxy that contains the Sun, a disk of stars that extends roughly 100,000 light-years.",
+  "bio": "Its stars number 100 to 400 billion; its mass is uncertain by over a factor of two. The Sun is about 26,700 light-years from the centre, measured in 2019 by the GRAVITY collaboration from the orbit of the star S2 around the central black hole, Sagittarius A*. Whether it has two or four spiral arms is debated. Gaia data show the disk was disturbed 300 to 900 million years ago, consistent with estimates of the Sagittarius Dwarf's last passage (Antoja and colleagues, 2018).",
+  "links": [
+    {
+      "l": "NASA Imagine",
+      "u": "https://imagine.gsfc.nasa.gov/science/objects/milkyway1.html",
+      "t": "intro"
+    },
+    {
+      "l": "arXiv",
+      "u": "https://arxiv.org/abs/1904.05721",
+      "t": "core"
+    }
+  ]
+}

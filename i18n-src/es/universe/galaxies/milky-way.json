@@ -1,0 +1,16 @@
+{
+  "fact": "La Vía Láctea es la galaxia espiral barrada que contiene el Sol, un disco de estrellas que se extiende unos 100 000 años luz.",
+  "bio": "Sus estrellas suman de 100 a 400 mil millones; su masa es incierta en más de un factor de dos. El Sol está a unos 26 700 años luz del centro, medidos en 2019 por la colaboración GRAVITY a partir de la órbita de la estrella S2 alrededor del agujero negro central, Sagittarius A*. Se debate si tiene dos o cuatro brazos espirales. Los datos de Gaia muestran que el disco fue perturbado hace entre 300 y 900 millones de años, en consonancia con las estimaciones del último paso de la Enana Elíptica de Sagitario (Antoja y colegas, 2018).",
+  "links": [
+    {
+      "l": "NASA Imagine",
+      "u": "https://imagine.gsfc.nasa.gov/science/objects/milkyway1.html",
+      "t": "intro"
+    },
+    {
+      "l": "arXiv",
+      "u": "https://arxiv.org/abs/1904.05721",
+      "t": "core"
+    }
+  ]
+}

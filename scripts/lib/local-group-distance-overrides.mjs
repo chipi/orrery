@@ -19,9 +19,9 @@ export const LOCAL_GROUP_OVERRIDES = {
     kpc: 62.44,
     source:
       'Graczyk et al. 2020, eclipsing-binary distance to the SMC, 62.44 ± 0.47 (stat.) ± 0.81 (syst.) kpc',
-    bibcode: null,
+    bibcode: '2020ApJ...904...13G',
     record_url: 'https://arxiv.org/abs/2010.08754',
-    note: 'SMC: 62.44 kpc (arXiv 2010.08754); ADS bibcode not confirmed; replaces the McConnachie 2012 value of 64 kpc',
+    note: 'SMC: 62.44 kpc; ApJ 904, 13 (doi 10.3847/1538-4357/abbb2b); replaces the McConnachie 2012 value of 64 kpc',
   },
 };
 

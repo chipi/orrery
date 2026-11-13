@@ -20,7 +20,7 @@
       "kind": "concentration",
       "headliner": true,
       "dist_mpc": 200,
-      "diam_mly": 260,
+      "diam_mly": 350,
       "x": 24,
       "y": 2,
       "z": 8
@@ -28,7 +28,7 @@
     {
       "id": "perseus-pisces",
       "name": "Perseus–Pisces Supercluster",
-      "kind": "wall",
+      "kind": "supercluster",
       "headliner": false,
       "dist_mpc": 70,
       "diam_mly": 300,
@@ -64,7 +64,7 @@
       "kind": "void",
       "headliner": false,
       "dist_mpc": 210,
-      "diam_mly": 330,
+      "diam_mly": 400,
       "x": 6,
       "y": 1,
       "z": 26
@@ -74,7 +74,7 @@
       "name": "Horologium–Reticulum Supercluster",
       "kind": "supercluster",
       "headliner": false,
-      "dist_mpc": 210,
+      "dist_mpc": 285,
       "diam_mly": 550,
       "x": 20,
       "y": -3,

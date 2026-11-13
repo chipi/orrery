@@ -51,6 +51,7 @@ at most 1 on the UX A / B slices (operator 2026-11-12).
 - **Attribute opinions and claims** to the person who made them (Thorne's disk remark).
 - Text must **agree with the data file**; list disagreements under "Data conflicts" with a source.
 - Leave out what you cannot source; never pad to reach the length.
+- **Redshift distances** (cz to Mpc, from batch 6 on) use H0 = 70 km/s/Mpc, stated once here; never write "per h" or "h^-1 Mpc" in reader text, convert or cut.
 
 ## Batches
 

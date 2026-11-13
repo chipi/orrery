@@ -1,7 +1,7 @@
 {
   "_generated": "scripts/build-universe-deep-sky.ts — do not edit by hand",
   "_source": "joins scripts/data-snapshots/messier-catalog.json (OpenNGC + Harris, Baumgardt & Vasiliev, Hunt & Reffert, Cosmicflows-4, McConnachie, SIMBAD) × static/data/deep-sky.json",
-  "_count": 141,
+  "_count": 143,
   "_withPhoto": 44,
   "objects": [
     {
@@ -7102,6 +7102,110 @@
           "bibcode": "2012AJ....144....4M",
           "record_url": "https://vizier.cds.unistra.fr/viz-bin/VizieR-4?-source=J%2FAJ%2F144%2F4%2Fcatalog&Name=NGC%20205",
           "note": "whole kpc"
+        }
+      }
+    },
+    {
+      "id": "ngc-104",
+      "designation": "NGC 104",
+      "name": "47 Tucanae",
+      "category": "globular-cluster",
+      "ra": 6.02233,
+      "dec": -72.08144,
+      "x": 0.305967,
+      "y": -0.951495,
+      "z": 0.032279,
+      "mag": 3.95,
+      "size_arcmin": 31.8,
+      "con": "Tuc",
+      "dist_ly": 14742,
+      "dist_label": "~15,000 light-years",
+      "photoKey": null,
+      "photoTitle": null,
+      "gatewaySystem": null,
+      "records": {
+        "simbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=NGC%20104"
+      },
+      "catalogue": {
+        "position": {
+          "value": [
+            6.02233,
+            -72.08144
+          ],
+          "source": "OpenNGC, coordinates from NED",
+          "bibcode": null,
+          "record_url": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=NGC%20104"
+        },
+        "size_arcmin": {
+          "value": 31.8,
+          "source": "OpenNGC, major axis (LEDA, SIMBAD, HEASARC)",
+          "bibcode": null,
+          "record_url": "https://github.com/mattiaverga/OpenNGC/blob/master/database_files/NGC.csv"
+        },
+        "mag": {
+          "value": 3.95,
+          "source": "Harris, Catalog of Parameters for Milky Way Globular Clusters (1996, 2010 edition), integrated V",
+          "bibcode": "1996AJ....112.1487H",
+          "record_url": "https://physics.mcmaster.ca/~harris/mwgc.dat"
+        },
+        "dist_ly": {
+          "value": 14742,
+          "source": "Baumgardt & Vasiliev 2021, Galactic globular cluster distances (Gaia EDR3, HST, N-body fits)",
+          "bibcode": "2021MNRAS.505.5957B",
+          "record_url": "https://people.smp.uq.edu.au/HolgerBaumgardt/globular/fits/ngc0104.html",
+          "note": "+/- 0.03 kpc; Harris 1996 (2010 edition): 4.5 kpc"
+        }
+      }
+    },
+    {
+      "id": "ngc-6752",
+      "designation": "NGC 6752",
+      "name": "NGC 6752",
+      "category": "globular-cluster",
+      "ra": 287.71575,
+      "dec": -59.98186,
+      "x": 0.152231,
+      "y": -0.865867,
+      "z": -0.47655,
+      "mag": 5.4,
+      "size_arcmin": 13.2,
+      "con": "Pav",
+      "dist_ly": 13438,
+      "dist_label": "~13,000 light-years",
+      "photoKey": null,
+      "photoTitle": null,
+      "gatewaySystem": null,
+      "records": {
+        "simbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=NGC%206752"
+      },
+      "catalogue": {
+        "position": {
+          "value": [
+            287.71575,
+            -59.98186
+          ],
+          "source": "OpenNGC, coordinates from NED",
+          "bibcode": null,
+          "record_url": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=NGC%206752"
+        },
+        "size_arcmin": {
+          "value": 13.2,
+          "source": "OpenNGC, major axis (LEDA, SIMBAD, HEASARC)",
+          "bibcode": null,
+          "record_url": "https://github.com/mattiaverga/OpenNGC/blob/master/database_files/NGC.csv"
+        },
+        "mag": {
+          "value": 5.4,
+          "source": "Harris, Catalog of Parameters for Milky Way Globular Clusters (1996, 2010 edition), integrated V",
+          "bibcode": "1996AJ....112.1487H",
+          "record_url": "https://physics.mcmaster.ca/~harris/mwgc.dat"
+        },
+        "dist_ly": {
+          "value": 13438,
+          "source": "Baumgardt & Vasiliev 2021, Galactic globular cluster distances (Gaia EDR3, HST, N-body fits)",
+          "bibcode": "2021MNRAS.505.5957B",
+          "record_url": "https://people.smp.uq.edu.au/HolgerBaumgardt/globular/fits/ngc6752.html",
+          "note": "table 4.12 kpc; per-cluster page 4.13 kpc"
         }
       }
     }

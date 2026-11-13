@@ -86,7 +86,7 @@ describe('buildScaleIndexRows: row ids are the data ids (C9)', () => {
     const stars = new Set([...idsOf(src.namedStars), ...src.hostSystems.map((s) => s.hostId)]);
     expect(stars.size).toBe(66);
     expect(sorted(ids('neighborhood'))).toEqual(sorted([...stars, ...idsOf(src.deepSky)]));
-    expect(rows.neighborhood).toHaveLength(66 + 141);
+    expect(rows.neighborhood).toHaveLength(66 + 143);
   });
 
   it('milky way: the host merge of objects, globulars, Magellanic clouds and arms, plus Cygnus X-1', () => {
@@ -122,9 +122,9 @@ describe('buildScaleIndexRows: row ids are the data ids (C9)', () => {
     expect(sorted(ids('cosmic-web'))).toEqual(sorted([...idsOf(src.cosmicWeb), 'gargantua']));
   });
 
-  it('every scale has rows, 344 in all', () => {
+  it('every scale has rows, 346 in all', () => {
     for (const scale of CTX_ORDER) expect(rows[scale].length).toBeGreaterThan(0);
-    expect(CTX_ORDER.reduce((n, s) => n + rows[s].length, 0)).toBe(344);
+    expect(CTX_ORDER.reduce((n, s) => n + rows[s].length, 0)).toBe(346);
   });
 });
 
@@ -155,7 +155,7 @@ describe('entity-page links (C11)', () => {
     return out;
   };
 
-  it('every body, star, black-hole and deep-sky page has a row with that href: 48 + 66 + 4 + 140', () => {
+  it('every body, star, black-hole and deep-sky page has a row with that href: 48 + 66 + 4 + 142', () => {
     const bodyPages = routes.filter(
       (r) => /^\/explore\/[^/]+$/.test(r) && !['/explore/hub'].includes(r) && !r.includes('/stars'),
     );
@@ -176,7 +176,7 @@ describe('entity-page links (C11)', () => {
 
     const dsPages = routes.filter((r) => r.startsWith('/explore/deep-sky/'));
     expect([...linked('/explore/deep-sky/').keys()].sort()).toEqual([...dsPages].sort());
-    expect(dsPages).toHaveLength(140);
+    expect(dsPages).toHaveLength(142);
   });
 
   it('one real object, one page: the Milky Way globulars and Local Group twins link the deep-sky page', () => {
@@ -194,8 +194,8 @@ describe('entity-page links (C11)', () => {
     expect(href('neighborhood', 'carina-nebula')).toBe('/explore/deep-sky/ngc-3372');
     expect(href('neighborhood', 'ngc-3372')).toBe('/explore/deep-sky/ngc-3372');
     expect(routes).not.toContain('/explore/deep-sky/carina-nebula');
-    // No second page: the other members have none.
-    expect(href('milky-way', '47-tucanae')).toBeUndefined();
+    expect(href('milky-way', '47-tucanae')).toBe('/explore/deep-sky/ngc-104');
+    expect(href('milky-way', 'ngc-6752')).toBe('/explore/deep-sky/ngc-6752');
     // The Local Group galaxies have a page of their own only once their overlay exists.
     expect(href('local-group', 'lmc')).toBe(
       src.pages.galaxy.has('lmc') ? '/explore/galaxies/lmc' : undefined,
@@ -216,7 +216,7 @@ describe('entity-page links (C11)', () => {
       .filter((r) => src.deepSky.some((o) => o.id === r.id))
       .map((r) => r.id)
       .sort();
-    expect(shared).toEqual(['m110', 'm13', 'm15', 'm22', 'm3', 'm32', 'm4', 'm5', 'm92']);
+    expect(shared).toEqual(['m110', 'm13', 'm15', 'm22', 'm3', 'm32', 'm4', 'm5', 'm92', 'ngc-6752']);
     for (const target of Object.values(DEEP_SKY_ALIAS))
       expect(
         src.deepSky.some((o) => o.id === target),
@@ -230,7 +230,7 @@ describe('entity-page links (C11)', () => {
       for (const r of rows[scale]) if (r.href) expect(all.has(r.href)).toBe(true);
   });
 
-  it('every other row is a button without a link: 73 of 344 with no galaxy or structure overlay', () => {
+  it('every other row is a button without a link: 73 of 346 with no galaxy or structure overlay', () => {
     // A galaxy page links its Local Group row and, for the Magellanic Clouds, a Milky Way row; a
     // structure page one row per scale that lists it (local-group: two).
     const galaxyRows =
@@ -241,7 +241,7 @@ describe('entity-page links (C11)', () => {
       0,
     );
     const n = CTX_ORDER.reduce((s, c) => s + rows[c].filter((r) => !r.href).length, 0);
-    expect(n).toBe(344 - (118 + 140 + 7 + 4 + 1 + 1) - galaxyRows - structureRows);
+    expect(n).toBe(346 - (118 + 142 + 9 + 4 + 1 + 1) - galaxyRows - structureRows);
   });
 });
 

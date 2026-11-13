@@ -119,7 +119,7 @@ describe('deep-sky page routes (/explore/deep-sky/<id>)', () => {
         .filter((id) => !Object.hasOwn(DEEP_SKY_ALIAS, id))
         .sort(),
     );
-    expect(ids).toHaveLength(140);
+    expect(ids).toHaveLength(142);
   });
 
   it('are objects of deep-sky-objects.json, and have the overlay in all 14 locales or none', () => {
@@ -168,6 +168,7 @@ describe('deep-sky page routes (/explore/deep-sky/<id>)', () => {
       andromeda: 'm31',
       triangulum: 'm33',
       'omega-centauri': 'ngc-5139',
+      '47-tucanae': 'ngc-104',
       'carina-nebula': 'ngc-3372',
     });
     for (const [alias, target] of Object.entries(DEEP_SKY_ALIAS) as [string, string][]) {

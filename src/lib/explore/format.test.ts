@@ -128,9 +128,9 @@ describe('deep-sky formatters', () => {
     );
   });
 
-  it('deepSkyTitle names each of the 141 objects differently, and never shows an unspaced code', () => {
+  it('deepSkyTitle names each of the 143 objects differently, and never shows an unspaced code', () => {
     const titles = records.objects.map((o) => deepSkyTitle(o));
-    expect(new Set(titles).size).toBe(141);
+    expect(new Set(titles).size).toBe(143);
     for (const t of titles) expect(t).not.toMatch(/(NGC|IC)\d/);
   });
 

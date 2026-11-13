@@ -200,6 +200,8 @@ const NGC_ALIAS = {
   'NGC 4038/4039': 'NGC4038', // Antennae (NGC 4038 primary)
   'NGC 2014 / 2020': 'NGC2014',
   'IC 342': 'IC0342',
+  'NGC 104': 'NGC0104', // 47 Tucanae
+  'NGC 6752': 'NGC6752',
 };
 
 function parseHms(ra, dec) {

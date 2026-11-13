@@ -21,6 +21,8 @@ import TrajectoryArrowIcon from './TrajectoryArrowIcon.svelte';
 import MissionOrbitIcon from './MissionOrbitIcon.svelte';
 import ShareIcon from './ShareIcon.svelte';
 import SensoryIcon from './SensoryIcon.svelte';
+import ScaleGlyphIcon from '../ScaleGlyphIcon.svelte';
+import { SCALE_SHELL_LIST } from '$lib/explore/scale-shells';
 
 export {
   MenuIcon,
@@ -181,5 +183,17 @@ export const ICON_SHOWCASE: IconShowcaseEntry[] = [
     route: '/',
     component: SensoryIcon as Component<Record<string, unknown>>,
     variants: [{ props: { size: 24 } }],
+  },
+  {
+    id: 'scale-glyphs',
+    label: 'Scale-level glyphs',
+    what: 'One small drawing per /explore level, from the solar system out to the cosmic web — in the level picker, the nav rows and the level card.',
+    where: 'Explore · nav · level picker',
+    route: '/explore',
+    component: ScaleGlyphIcon as Component<Record<string, unknown>>,
+    variants: SCALE_SHELL_LIST.map((s) => ({
+      label: s.glyph,
+      props: { glyph: s.glyph, size: 32 },
+    })),
   },
 ];

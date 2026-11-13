@@ -66,10 +66,11 @@ test.describe('surface object index', () => {
       const n = parseInt(hex.slice(1), 16);
       return `rgb(${n >> 16}, ${(n >> 8) & 255}, ${n & 255})`;
     };
+    // Every moon site has a photo (L45): the nation colour is the ring of the round thumb.
     const dot = (id: string) =>
-      list.locator(`.sidx-row[data-index-id="${id}"] .row-dot`).evaluate((el) => {
+      list.locator(`.sidx-row[data-index-id="${id}"] img.entity-thumb`).evaluate((el) => {
         const cs = getComputedStyle(el);
-        return { bg: cs.backgroundColor, ring: cs.boxShadow };
+        return { bg: cs.borderTopColor, ring: cs.borderTopStyle };
       });
     // The meta wraps only after a " · ": no-break spaces inside each part, read here as spaces.
     const meta = async (id: string) =>
@@ -97,6 +98,52 @@ test.describe('surface object index', () => {
         .evaluate((el) => getComputedStyle(el).getPropertyValue('--chip-tone').trim());
       expect(rgb(tone)).toBe(china.bg);
     }
+  });
+
+  test('a row carries the round photo of its panel hero, ringed in the nation colour; a blocked file falls back to the dot; a closed index fetches none (L45, T2)', async ({
+    page,
+  }, testInfo) => {
+    test.skip(
+      testInfo.project.name === 'mobile-chromium',
+      'the index is a desktop and landscape tab',
+    );
+    const thumbs: string[] = [];
+    page.on('request', (r) => {
+      if (r.url().includes('/credit-thumbs/')) thumbs.push(r.url());
+    });
+    await page.route('**/credit-thumbs/images/missions/apollo12/**', (r) => r.abort());
+    await page.goto('/moon', { waitUntil: 'networkidle' });
+    const toggle = page.locator('[data-testid="surface-index-toggle"]');
+    await page.waitForSelector('html[data-hydrated]', { state: 'attached', timeout: 45_000 });
+    await expect(toggle).toBeVisible({ timeout: 45_000 });
+    await page.waitForTimeout(1500);
+    expect(thumbs, 'a closed index loads no lazy image').toHaveLength(0);
+    await toggle.click();
+    const list = page.locator('[data-testid="surface-index-list"]');
+    await expect(list).toBeVisible();
+    const row = (id: string) => list.locator(`.sidx-row[data-index-id="${id}"]`);
+
+    // 28 of 28 moon sites have a photo; Apollo 12's is blocked above, so 27 images and one dot.
+    await expect(list.locator('.sidx-row img.entity-thumb')).toHaveCount(27);
+    await expect(row('apollo12').locator('.entity-thumb-dot')).toHaveCount(1);
+    await expect(row('apollo12').locator('img.entity-thumb')).toHaveCount(0);
+
+    // Apollo 16: the blessed slot of the mission folder its panel shows (06), not slot 01.
+    const img = row('apollo16').locator('img.entity-thumb');
+    await expect(img).toHaveAttribute(
+      'src',
+      /\/credit-thumbs\/images\/missions\/apollo16\/06\.1x1\.webp$/,
+    );
+    await expect(img).toHaveAttribute('alt', '');
+    await expect(img).toHaveAttribute('loading', 'lazy');
+    expect(await img.boundingBox()).toMatchObject({ width: 28, height: 28 });
+    expect(await img.evaluate((el) => getComputedStyle(el).borderTopColor)).toBe(
+      'rgb(11, 61, 145)',
+    );
+
+    // Names start at one x for a row with a photo and a row with the dot.
+    const x = async (id: string) => (await row(id).locator('.row-name').boundingBox())!.x;
+    expect(Math.abs((await x('apollo12')) - (await x('apollo16')))).toBeLessThan(1);
   });
 
   test('landscape phone: the Index pullout tab shows the list', async ({ page }, testInfo) => {

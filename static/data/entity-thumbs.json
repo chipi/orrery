@@ -611,5 +611,116 @@
    "none": [],
    "flat": true
   }
+ },
+ "sites": {
+  "moon": {
+   "slots": {
+    "luna9": "missions/luna9/01",
+    "luna16": "missions/luna16/05",
+    "luna17": "missions/luna17/06",
+    "luna21": "missions/luna21/06",
+    "luna24": "missions/luna24/04",
+    "apollo11": "missions/apollo11/01",
+    "apollo12": "missions/apollo12/01",
+    "apollo14": "missions/apollo14/01",
+    "apollo15": "missions/apollo15/02",
+    "apollo16": "missions/apollo16/06",
+    "apollo17": "missions/apollo17/01",
+    "change3": "missions/change3/01",
+    "change4": "missions/change4/07",
+    "change5": "missions/change5/01",
+    "change6": "missions/change6/01",
+    "chandrayaan3": "missions/chandrayaan3/03",
+    "slim": "missions/slim/01",
+    "change7": "moon-sites/change7/01",
+    "artemis4": "missions/artemis4/01",
+    "luna10": "missions/luna10/01",
+    "clementine": "missions/clementine/01",
+    "lunar-prospector": "missions/lunar-prospector/01",
+    "smart-1": "missions/smart-1/01",
+    "change1": "missions/change1/01",
+    "chandrayaan1": "missions/chandrayaan1/01",
+    "lro": "missions/lro/03",
+    "change2": "moon-sites/change2/01",
+    "beresheet": "missions/beresheet/01"
+   },
+   "none": []
+  },
+  "mars": {
+   "slots": {
+    "mars2": "missions/mars2/04",
+    "mars3": "missions/mars3/05",
+    "mars6": "missions/mars6/01",
+    "viking1-lander": "missions/viking1/06",
+    "viking2-lander": "mars-sites/viking2-lander/01",
+    "mars-pathfinder": "missions/mars-pathfinder/04",
+    "beagle2": "mars-sites/beagle2/01",
+    "spirit": "missions/spirit/06",
+    "opportunity": "missions/opportunity/06",
+    "phoenix": "missions/phoenix/10",
+    "curiosity": "missions/curiosity/01",
+    "schiaparelli": "missions/schiaparelli/06",
+    "insight": "missions/insight/01",
+    "perseverance": "missions/perseverance/05",
+    "zhurong": "mars-sites/zhurong/01",
+    "exomars-rosalind-franklin": "mars-sites/exomars-rosalind-franklin/01",
+    "mariner9": "missions/mariner9/01",
+    "mars3-orbiter": "mars-sites/mars3-orbiter/01",
+    "viking1-orbiter": "mars-sites/viking1-orbiter/01",
+    "mars-odyssey": "mars-sites/mars-odyssey/01",
+    "mars-express": "missions/mars-express/05",
+    "mro": "mars-sites/mro/05",
+    "maven": "missions/maven/01",
+    "mangalyaan": "missions/mangalyaan/01",
+    "tgo": "mars-sites/tgo/03",
+    "tianwen1-orbiter": "missions/tianwen1/01",
+    "hope": "missions/hope-probe/04"
+   },
+   "none": []
+  },
+  "venus": {
+   "slots": {
+    "venera-13": "missions/venera-13/02",
+    "vega-1": "missions/vega-1/02",
+    "vega-2": "missions/vega-2/03"
+   },
+   "none": []
+  },
+  "earth-objects": {
+   "slots": {
+    "iss": "earth-objects/iss/01",
+    "tiangong": "earth-objects/tiangong/01",
+    "hubble": "earth-objects/hubble/01",
+    "gps": "earth-objects/gps/01",
+    "galileo": "earth-objects/galileo/01",
+    "glonass": "earth-objects/glonass/01",
+    "beidou": "earth-objects/beidou/01",
+    "geo": "earth-objects/geo/01",
+    "chandra": "earth-objects/chandra/01",
+    "xmm": "earth-objects/xmm/01",
+    "lro": "missions/lro/03",
+    "luna10": "missions/luna10/01",
+    "clementine": "missions/clementine/01",
+    "lunar-prospector": "missions/lunar-prospector/01",
+    "smart-1": "missions/smart-1/01",
+    "change1": "missions/change1/01",
+    "chandrayaan1": "missions/chandrayaan1/01",
+    "change2": "earth-objects/change2/01",
+    "jwst": "earth-objects/jwst/01",
+    "gaia": "earth-objects/gaia/01",
+    "starlink": "earth-objects/starlink/01",
+    "oneweb": "earth-objects/oneweb/01",
+    "iridium-next": "earth-objects/iridium-next/01",
+    "kuiper": "earth-objects/kuiper/01",
+    "planet-labs": "earth-objects/planet-labs/01",
+    "sentinel-copernicus": "earth-objects/sentinel-copernicus/01",
+    "landsat": "earth-objects/landsat/01",
+    "goes": "earth-objects/goes/01",
+    "inmarsat": "earth-objects/inmarsat/01",
+    "tundra-molniya": "earth-objects/tundra-molniya/01",
+    "o3b": "earth-objects/o3b/01"
+   },
+   "none": []
+  }
  }
 }

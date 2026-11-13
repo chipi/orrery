@@ -11,6 +11,7 @@ import {
   type IndexItem,
 } from './surface-index';
 import { colorFor } from './nation-palette';
+import { thumbOf, thumbOfSite } from '$lib/entity-thumb';
 
 // Minimal fixtures — the adapter only reads a handful of fields, so partial
 // objects cast to the full type keep the tests readable.
@@ -128,6 +129,21 @@ describe('surfaceSiteToIndexItem', () => {
     expect(of('China', 'moon')).toBe('#DE2910');
     expect(of('USSR', 'moon')).toBe(of('Russia', 'moon'));
     expect(of('Narnia', 'moon')).toBe('#888');
+  });
+
+  it('carries the thumb of the folder its panel shows, per body (L45, T2)', () => {
+    expect(surfaceSiteToIndexItem(moonCrewed, 'moon').thumb).toBe(thumbOfSite('moon', 'apollo11'));
+    expect(surfaceSiteToIndexItem(moonCrewed, 'moon').thumb).toContain('/credit-thumbs/images/');
+    expect(surfaceSiteToIndexItem(marsRover, 'mars').thumb).toBe(thumbOfSite('mars', 'curiosity'));
+  });
+
+  it('an earth launch pad takes the fleet launch-site thumb, not a site folder', () => {
+    expect(surfaceSiteToIndexItem(baikonur, 'earth').thumb).toBe(thumbOf('fleet', 'baikonur'));
+  });
+
+  it('a site with no thumb carries null (the row keeps its dot)', () => {
+    const none = { ...marsRover, id: 'no-such-site' } as SurfaceSite;
+    expect(surfaceSiteToIndexItem(none, 'mars').thumb).toBeNull();
   });
 });
 

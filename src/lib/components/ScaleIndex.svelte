@@ -158,6 +158,8 @@
   import '$lib/styles/index-panel.css';
   import Chip from './Chip.svelte';
   import ChipGroup from './ChipGroup.svelte';
+  import EntityThumb from './EntityThumb.svelte';
+  import { solarRowThumb } from '$lib/entity-thumb';
 
   type Props = {
     scale: ShellId;
@@ -293,7 +295,9 @@
                 onclick={() => onSelect(row)}
               >
                 <span class="si-lead" aria-hidden="true">
-                  {#if row.color || scale === 'solar-system'}<span
+                  {#if scale === 'solar-system' && solarRowThumb(row)}
+                    <EntityThumb src={solarRowThumb(row)} ring={row.color} />
+                  {:else if row.color || scale === 'solar-system'}<span
                       class="si-dot"
                       style:background={row.color}
                     ></span>{/if}

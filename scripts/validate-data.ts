@@ -2571,6 +2571,13 @@ let entityThumbsFailed = 0;
         }
       }
     }
+    for (const [body, s] of Object.entries(manifest.sites)) {
+      for (const [id, frag] of Object.entries(s.slots)) {
+        if (!existsSync(join('static/credit-thumbs/images', `${frag}.1x1.webp`))) {
+          problems.push(`entity-thumbs sites.${body}.${id} ${frag}: listed but not on disk`);
+        }
+      }
+    }
     if (missing.need1x1.length > 0) {
       problems.push(
         `${missing.need1x1.length} blessed slot(s) have a master but no 1x1 crop — re-run: ` +

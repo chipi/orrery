@@ -21,6 +21,7 @@ import { categoriseMoonMarker } from '$lib/moon-marker-category';
 import { categoriseEarthSatellite } from '$lib/earth-satellite-category';
 import { matchesQuery } from '$lib/list-search';
 import { colorFor } from './nation-palette';
+import { thumbOf, thumbOfSite } from '$lib/entity-thumb';
 
 export type IndexBody = 'mars' | 'moon' | 'earth' | 'venus';
 export type IndexDomain = 'orbit' | 'land';
@@ -41,8 +42,10 @@ export interface IndexItem {
   status: string;
   /** Earth only — orbital regime (LEO/MEO/GEO/…). */
   regime?: string;
-  /** Dot colour: a site's nation colour (the legend's), an earth object's own colour. */
+  /** Dot and thumb-ring colour: a site's nation colour (the legend's), an earth object's own colour. */
   color?: string;
+  /** The row's round photo (L45, UXD-025): the 192 px thumb its panel's hero resolves to, or null. */
+  thumb: string | null;
   body: IndexBody;
 }
 
@@ -67,6 +70,7 @@ export function surfaceSiteToIndexItem(site: SurfaceSite, body: IndexBody): Inde
     year: site.year,
     status: site.status,
     color: colorFor(site),
+    thumb: body === 'earth' ? thumbOf('fleet', site.id) : thumbOfSite(body, site.id),
     body,
   };
 }
@@ -84,6 +88,7 @@ export function earthObjectToIndexItem(obj: EarthObject): IndexItem {
     status: obj.status,
     regime: obj.regime,
     color: obj.color,
+    thumb: thumbOfSite('earth-objects', obj.id),
     body: 'earth',
   };
 }

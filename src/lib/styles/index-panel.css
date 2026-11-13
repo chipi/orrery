@@ -212,7 +212,7 @@
    Only the button rows: the prerendered link rows have a name and no meta, and must not shift. */
 .scale-index[data-scale='solar-system'] button.si-row {
   display: grid;
-  grid-template-columns: 26px minmax(0, 1fr);
+  grid-template-columns: 28px minmax(0, 1fr);
   grid-template-areas:
     'lead name'
     'lead meta';
@@ -220,8 +220,12 @@
   row-gap: 2px;
   align-items: center;
 }
+/* 28 px: the EntityThumb (L45, UXD-025); a row without a photo centres its dot in the same slot,
+   so names align with and without thumbs. */
 .scale-index[data-scale='solar-system'] .si-lead {
   grid-area: lead;
+  width: 28px;
+  justify-content: center;
 }
 .scale-index[data-scale='solar-system'] .si-name {
   grid-area: name;

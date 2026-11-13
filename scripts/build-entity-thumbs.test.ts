@@ -2,7 +2,7 @@ import { afterAll, describe, expect, it } from 'vitest';
 import { mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { dirname, join } from 'node:path';
-import { MANIFEST_PATH, buildEntityThumbs, serialize } from './build-entity-thumbs';
+import { MANIFEST_PATH, SURFACES, buildEntityThumbs, serialize } from './build-entity-thumbs';
 
 const root = mkdtempSync(join(tmpdir(), 'entity-thumbs-'));
 afterAll(() => rmSync(root, { recursive: true, force: true }));
@@ -79,5 +79,62 @@ describe('buildEntityThumbs', () => {
 describe('the committed manifest', () => {
   it('is what the builder writes from the repo (rerun npx tsx scripts/build-entity-thumbs.ts)', () => {
     expect(readFileSync(MANIFEST_PATH, 'utf8')).toBe(serialize(buildEntityThumbs().manifest));
+  });
+});
+
+describe('buildEntityThumbs: the Worlds sites follow the panel gallery ladder', () => {
+  const r = mkdtempSync(join(tmpdir(), 'entity-thumbs-sites-'));
+  afterAll(() => rmSync(r, { recursive: true, force: true }));
+  const put = (rel: string, body = 'x') => {
+    mkdirSync(dirname(join(r, rel)), { recursive: true });
+    writeFileSync(join(r, rel), body);
+  };
+  const json = (rel: string, v: unknown) => put(rel, JSON.stringify(v));
+  for (const s of SURFACES) mkdirSync(join(r, 'static/images', s.dir), { recursive: true });
+  json('static/data/moon-sites.json', [
+    { id: 'own1' },
+    { id: 'lander-x', mission_id: 'mmm' },
+    { id: 'luna21' },
+    { id: 'nothing' },
+    { id: 'ovr', mission_id: 'm2' },
+    { id: 'nothumb', mission_id: 'm3' },
+  ]);
+  json('static/data/moon-site-galleries.json', { own1: 2 });
+  json('static/data/mission-galleries.json', { mmm: 3, m2: 4, m3: 2 });
+  json('static/data/fleet-galleries.json', { 'lunokhod-2': 2 });
+  json('static/data/missions-hero-overrides.json', { overrides: { mmm: { slot: '02.jpg' } } });
+  json('static/data/moon-sites-hero-overrides.json', { overrides: { ovr: { slot: '03.jpg' } } });
+  for (const t of [
+    'moon-sites/own1/01',
+    'missions/mmm/02',
+    'fleet-galleries/lunokhod-2/01',
+    'missions/m2/03',
+  ])
+    put(`static/credit-thumbs/images/${t}.1x1.webp`);
+  put('static/images/missions/m3/01.1x1.jpg');
+  const { manifest, missing } = buildEntityThumbs(r);
+
+  it('takes the first folder with images: own, mission_id, id, then the fleet id variants', () => {
+    expect(manifest.sites.moon.slots).toEqual({
+      own1: 'moon-sites/own1/01',
+      'lander-x': 'missions/mmm/02',
+      luna21: 'fleet-galleries/lunokhod-2/01',
+      ovr: 'missions/m2/03',
+    });
+  });
+
+  it('applies the folder override, then the site surface override, as the loaders do', () => {
+    expect(manifest.sites.moon.slots['lander-x']).toBe('missions/mmm/02');
+    expect(manifest.sites.moon.slots.ovr).toBe('missions/m2/03');
+  });
+
+  it('leaves a site with no image, or whose blessed slot has no thumb, in none', () => {
+    expect(manifest.sites.moon.none).toEqual(['nothing', 'nothumb']);
+    expect(missing.needThumb).toEqual(['/images/missions/m3/01.1x1.jpg']);
+  });
+
+  it('lists every body, empty when its data file is absent', () => {
+    expect(Object.keys(manifest.sites)).toEqual(['moon', 'mars', 'venus', 'earth-objects']);
+    expect(manifest.sites.mars).toEqual({ slots: {}, none: [] });
   });
 });

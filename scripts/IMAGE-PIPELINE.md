@@ -301,6 +301,32 @@ upright (re-encoded at q92): the ladder ignores the flag, and on 2026-11-08 a ph
 replace: on 2026-11-08 several rows still described pictures replaced earlier, so the review was by
 eye over contact sheets of every live mission gallery image.
 
+### Concept labels and photograph heroes — `validate-image-depiction.ts` (ADR-053, 2026-11-13)
+
+Two rules over the vehicle galleries (`missions`, `fleet-galleries`, `iss-modules`, `tiangong-modules`,
+`earth-objects`, `mars-sites`, `moon-sites`), both a `validate-data` task in the `image` group, logic and
+unit tests in `image-depiction.ts`:
+
+- **Rule B — honest labels.** A slot whose picture is an artist's concept, illustration, computer graphic,
+  painting or diagram says so in its provenance **title** and its en-US **alt text**; the gate fails when
+  exactly one of them says it. When you add a concept image, append the label to the title
+  (`File:Juno spacecraft model.png (computer render)`) and write the alt text as "Artist's concept of …".
+  A slot whose word is a false positive (a photograph of a museum model "painted white", a perspective
+  view computed from real radar data) goes in `not_concept` in `static/data/license-waivers.json`, with
+  the reason. The vocabulary is `CONCEPT_RE` in `image-depiction.ts`.
+- **Rule A — the hero is a photograph.** The blessed hero slot (the `*-hero-overrides.json` slot, else 01,
+  as `entity-thumbs.json` lists it; it feeds the card and the list thumbs) of a vehicle must not be a
+  slot Rule B recognises as a concept. Exempt: `status` `PLANNED`, a slot in `not_concept`, a slot in
+  `artistic_impressions` (use it when no photograph of the vehicle exists; exact slot, justification,
+  reviewer, `decided_at`). A missing `status` is not exempt. The heroes that fail on 2026-11-13 are frozen
+  in `static/data/hero-concept-baseline.json`: the gate fails on a hero not in it **and** on an entry that
+  was fixed, so remove the entry in the commit that replaces the hero. Changing a hero needs the
+  operator's side-by-side and a yes (plan row L47). `tsx scripts/validate-image-depiction.ts
+  --write-baseline` regenerates the file; do not use it to silence a new finding.
+
+A concept slot nobody labelled is invisible to the gate when title and alt text are both neutral: look at
+the picture when you add it.
+
 ### Hero crop positions — `vision/hero-crop-sheet.mjs`
 
 A hero is shown as a cover crop in three places: the collectible card's hero band (about 1.6–2.6:1,

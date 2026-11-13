@@ -28,11 +28,12 @@
   "firsts": [
     {
       "year": 1801,
-      "label": "Cerere — primo asteroide scoperto (Piazzi, Italia)"
+      "label": "Cerere — primo asteroide scoperto (Piazzi)"
     },
     {
       "year": 2011,
-      "label": "Dawn — primo orbitatore dedicato agli asteroidi (Vesta, USA)"
+      "label": "Dawn — primo orbitatore dedicato agli asteroidi (Vesta)",
+      "mission_id": "dawn"
     }
   ],
   "science_link": {

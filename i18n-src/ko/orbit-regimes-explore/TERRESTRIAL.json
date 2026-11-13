@@ -28,15 +28,17 @@
   "firsts": [
     {
       "year": 1962,
-      "label": "Mariner 2 — 최초의 금성 근접통과 (미국)"
+      "label": "Mariner 2 — 최초의 금성 근접통과"
     },
     {
       "year": 1965,
-      "label": "Mariner 4 — 최초의 화성 근접통과 (미국)"
+      "label": "Mariner 4 — 최초의 화성 근접통과",
+      "mission_id": "mariner4"
     },
     {
       "year": 1974,
-      "label": "Mariner 10 — 최초의 수성 근접통과 (미국)"
+      "label": "Mariner 10 — 최초의 수성 근접통과",
+      "mission_id": "mariner10"
     }
   ],
   "science_link": {

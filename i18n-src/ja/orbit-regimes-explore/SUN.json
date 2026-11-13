@@ -13,13 +13,13 @@
   "firsts": [
     {
       "year": 2018,
-      "label": "Parker Solar Probe — 史上最も太陽に接近したフライバイ (アメリカ)",
-      "mission_id": ""
+      "label": "Parker Solar Probe — 史上最も太陽に接近したフライバイ",
+      "mission_id": "parker-solar-probe"
     },
     {
       "year": 2020,
-      "label": "Solar Orbiter — 初の太陽近接撮影 (ESA)",
-      "mission_id": ""
+      "label": "Solar Orbiter — 初の太陽近接撮影",
+      "mission_id": "solar-orbiter"
     }
   ],
   "science_link": {

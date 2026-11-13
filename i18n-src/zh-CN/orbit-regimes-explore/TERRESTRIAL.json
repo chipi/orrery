@@ -28,15 +28,17 @@
   "firsts": [
     {
       "year": 1962,
-      "label": "Mariner 2 — 首次金星飞掠 (美国)"
+      "label": "Mariner 2 — 首次金星飞掠"
     },
     {
       "year": 1965,
-      "label": "Mariner 4 — 首次火星飞掠（美国）"
+      "label": "Mariner 4 — 首次火星飞掠",
+      "mission_id": "mariner4"
     },
     {
       "year": 1974,
-      "label": "Mariner 10 — 首次水星飞掠 (美国)"
+      "label": "Mariner 10 — 首次水星飞掠",
+      "mission_id": "mariner10"
     }
   ],
   "science_link": {

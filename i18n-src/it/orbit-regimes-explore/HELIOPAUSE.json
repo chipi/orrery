@@ -7,13 +7,13 @@
   "firsts": [
     {
       "year": 2012,
-      "label": "Voyager 1 attraversa l'eliopausa — primo artefatto nello spazio interstellare (USA)",
-      "mission_id": ""
+      "label": "Voyager 1 attraversa l'eliopausa — primo artefatto nello spazio interstellare",
+      "mission_id": "voyager-1"
     },
     {
       "year": 2018,
-      "label": "Voyager 2 attraversa l'eliopausa (USA)",
-      "mission_id": ""
+      "label": "Voyager 2 attraversa l'eliopausa",
+      "mission_id": "voyager-2"
     }
   ],
   "science_link": {

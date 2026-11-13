@@ -5,8 +5,12 @@
   "comparison": "About 4× farther than Neptune. A signal from Voyager 1 takes ~22 hours to reach Earth. The probes will not encounter another star for 40,000+ years (Voyager 1 will pass within 1.6 light-years of Gliese 445 in ~40,000 years).",
   "residents": [],
   "firsts": [
-    { "year": 2012, "label": "Voyager 1 crosses the heliopause — first artefact in interstellar space (USA)" },
-    { "year": 2018, "label": "Voyager 2 crosses the heliopause (USA)" }
+    {
+      "year": 2012,
+      "label": "Voyager 1 crosses the heliopause — first artefact in interstellar space",
+      "mission_id": "voyager-1"
+    },
+    { "year": 2018, "label": "Voyager 2 crosses the heliopause", "mission_id": "voyager-2" }
   ],
   "science_link": {
     "tab": "scales-time",

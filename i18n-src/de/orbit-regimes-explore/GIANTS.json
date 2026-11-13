@@ -28,19 +28,22 @@
   "firsts": [
     {
       "year": 1973,
-      "label": "Pioneer 10 — erster Jupiter-Vorbeiflug (USA)"
+      "label": "Pioneer 10 — erster Jupiter-Vorbeiflug",
+      "mission_id": "pioneer-10"
     },
     {
       "year": 1986,
-      "label": "Voyager 2 — einziger Uranus-Vorbeiflug überhaupt (USA)"
+      "label": "Voyager 2 — einziger Uranus-Vorbeiflug überhaupt",
+      "mission_id": "voyager-2"
     },
     {
       "year": 1989,
-      "label": "Voyager 2 — einziger Neptun-Vorbeiflug überhaupt (USA)"
+      "label": "Voyager 2 — einziger Neptun-Vorbeiflug überhaupt",
+      "mission_id": "voyager-2"
     },
     {
       "year": 1995,
-      "label": "Galileo — erster Jupiter-Orbiter (USA)",
+      "label": "Galileo — erster Jupiter-Orbiter",
       "mission_id": "galileo"
     }
   ],

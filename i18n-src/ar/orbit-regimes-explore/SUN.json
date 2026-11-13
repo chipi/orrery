@@ -13,11 +13,13 @@
   "firsts": [
     {
       "year": 2018,
-      "label": "Parker Solar Probe — أقرب تحليق للشمس على الإطلاق (الولايات المتحدة)"
+      "label": "Parker Solar Probe — أقرب تحليق للشمس على الإطلاق",
+      "mission_id": "parker-solar-probe"
     },
     {
       "year": 2020,
-      "label": "Solar Orbiter — أول تصوير قريب للشمس (ESA)"
+      "label": "Solar Orbiter — أول تصوير قريب للشمس",
+      "mission_id": "solar-orbiter"
     }
   ],
   "science_link": {

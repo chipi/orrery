@@ -13,11 +13,13 @@
   "firsts": [
     {
       "year": 2018,
-      "label": "Parker Solar Probe — सूर्य के सबसे निकट उड़ान (अमेरिका)"
+      "label": "Parker Solar Probe — सूर्य के सबसे निकट उड़ान",
+      "mission_id": "parker-solar-probe"
     },
     {
       "year": 2020,
-      "label": "Solar Orbiter — पहली निकट-सूर्य इमेजिंग (ESA)"
+      "label": "Solar Orbiter — पहली निकट-सूर्य इमेजिंग",
+      "mission_id": "solar-orbiter"
     }
   ],
   "science_link": {

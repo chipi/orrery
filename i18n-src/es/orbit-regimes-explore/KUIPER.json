@@ -38,15 +38,17 @@
   "firsts": [
     {
       "year": 1930,
-      "label": "Plutón descubierto — primer KBO identificado (Tombaugh, USA)"
+      "label": "Plutón descubierto — primer KBO identificado (Tombaugh)"
     },
     {
       "year": 2015,
-      "label": "New Horizons — primer sobrevuelo de Plutón (EE. UU.)"
+      "label": "New Horizons — primer sobrevuelo de Plutón",
+      "mission_id": "new-horizons"
     },
     {
       "year": 2019,
-      "label": "New Horizons en Arrokoth — cuerpo más distante jamás visitado (EE. UU.)"
+      "label": "New Horizons en Arrokoth — cuerpo más distante jamás visitado",
+      "mission_id": "new-horizons"
     }
   ],
   "science_link": {

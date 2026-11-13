@@ -43,12 +43,13 @@
   "firsts": [
     {
       "year": 1971,
-      "label": "Mariner 9 — primo satellite artificiale marziano (USA)",
+      "label": "Mariner 9 — primo satellite artificiale marziano",
       "mission_id": "mariner9"
     },
     {
       "year": 2003,
-      "label": "Mars Express — prima missione ESA su Marte"
+      "label": "Mars Express — prima missione ESA su Marte",
+      "mission_id": "mars-express"
     }
   ],
   "science_link": {

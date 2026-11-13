@@ -13,11 +13,13 @@
   "firsts": [
     {
       "year": 2018,
-      "label": "Parker Solar Probe — survol le plus proche du Soleil jamais réalisé (États-Unis)"
+      "label": "Parker Solar Probe — survol le plus proche du Soleil jamais réalisé",
+      "mission_id": "parker-solar-probe"
     },
     {
       "year": 2020,
-      "label": "Solar Orbiter — premières images rapprochées du Soleil (ESA)"
+      "label": "Solar Orbiter — premières images rapprochées du Soleil",
+      "mission_id": "solar-orbiter"
     }
   ],
   "science_link": {

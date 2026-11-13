@@ -28,19 +28,22 @@
   "firsts": [
     {
       "year": 1973,
-      "label": "Pioneer 10 — први прелет поред Јупитера (САД)"
+      "label": "Pioneer 10 — први прелет поред Јупитера",
+      "mission_id": "pioneer-10"
     },
     {
       "year": 1986,
-      "label": "Voyager 2 — једини прелет поред Урана икада (САД)"
+      "label": "Voyager 2 — једини прелет поред Урана икада",
+      "mission_id": "voyager-2"
     },
     {
       "year": 1989,
-      "label": "Voyager 2 — једини прелет поред Нептуна икада (САД)"
+      "label": "Voyager 2 — једини прелет поред Нептуна икада",
+      "mission_id": "voyager-2"
     },
     {
       "year": 1995,
-      "label": "Galileo — први орбитер око Јупитера (САД)",
+      "label": "Galileo — први орбитер око Јупитера",
       "mission_id": "galileo"
     }
   ],

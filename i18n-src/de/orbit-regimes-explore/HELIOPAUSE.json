@@ -7,11 +7,13 @@
   "firsts": [
     {
       "year": 2012,
-      "label": "Voyager 1 überquert die Heliopause — erstes Artefakt im interstellaren Raum (USA)"
+      "label": "Voyager 1 überquert die Heliopause — erstes Artefakt im interstellaren Raum",
+      "mission_id": "voyager-1"
     },
     {
       "year": 2018,
-      "label": "Voyager 2 überquert die Heliopause (USA)"
+      "label": "Voyager 2 überquert die Heliopause",
+      "mission_id": "voyager-2"
     }
   ],
   "science_link": {

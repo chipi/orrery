@@ -13,11 +13,13 @@
   "firsts": [
     {
       "year": 2018,
-      "label": "Parker Solar Probe — nächster jemals erfolgter Sonnen-Vorbeiflug (USA)"
+      "label": "Parker Solar Probe — nächster jemals erfolgter Sonnen-Vorbeiflug",
+      "mission_id": "parker-solar-probe"
     },
     {
       "year": 2020,
-      "label": "Solar Orbiter — erste Nahaufnahmen der Sonne (ESA)"
+      "label": "Solar Orbiter — erste Nahaufnahmen der Sonne",
+      "mission_id": "solar-orbiter"
     }
   ],
   "science_link": {

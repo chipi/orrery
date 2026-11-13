@@ -7,11 +7,13 @@
   "firsts": [
     {
       "year": 2012,
-      "label": "Voyager 1 franchit l'héliopause — premier artefact dans l'espace interstellaire (États-Unis)"
+      "label": "Voyager 1 franchit l'héliopause — premier artefact dans l'espace interstellaire",
+      "mission_id": "voyager-1"
     },
     {
       "year": 2018,
-      "label": "Voyager 2 franchit l'héliopause (États-Unis)"
+      "label": "Voyager 2 franchit l'héliopause",
+      "mission_id": "voyager-2"
     }
   ],
   "science_link": {

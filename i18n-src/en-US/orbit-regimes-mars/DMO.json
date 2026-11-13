@@ -7,7 +7,11 @@
     { "id": "hope", "label": "Hope — Emirates Mars Mission", "agency": "UAESA" }
   ],
   "firsts": [
-    { "year": 2021, "label": "Hope — first UAE mission to another planet" }
+    {
+      "year": 2021,
+      "label": "Hope — first UAE mission to another planet",
+      "mission_id": "hope-probe"
+    }
   ],
   "science_link": {
     "tab": "orbits",

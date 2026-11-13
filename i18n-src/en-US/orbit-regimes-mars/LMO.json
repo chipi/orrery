@@ -13,8 +13,12 @@
     { "id": "tgo", "label": "ExoMars TGO — methane hunter", "agency": "ESA" }
   ],
   "firsts": [
-    { "year": 1971, "label": "Mariner 9 — first artificial Mars satellite (USA)", "mission_id": "mariner9" },
-    { "year": 2003, "label": "Mars Express — first ESA Mars mission" }
+    {
+      "year": 1971,
+      "label": "Mariner 9 — first artificial Mars satellite",
+      "mission_id": "mariner9"
+    },
+    { "year": 2003, "label": "Mars Express — first ESA Mars mission", "mission_id": "mars-express" }
   ],
   "science_link": {
     "tab": "orbits",

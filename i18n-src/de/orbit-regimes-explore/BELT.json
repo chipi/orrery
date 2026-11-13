@@ -28,11 +28,12 @@
   "firsts": [
     {
       "year": 1801,
-      "label": "Ceres — erster entdeckter Asteroid (Piazzi, Italien)"
+      "label": "Ceres — erster entdeckter Asteroid (Piazzi)"
     },
     {
       "year": 2011,
-      "label": "Dawn — erster speziell für Asteroiden gebauter Orbiter (Vesta, USA)"
+      "label": "Dawn — erster speziell für Asteroiden gebauter Orbiter (Vesta)",
+      "mission_id": "dawn"
     }
   ],
   "science_link": {

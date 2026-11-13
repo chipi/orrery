@@ -28,15 +28,17 @@
   "firsts": [
     {
       "year": 1962,
-      "label": "Mariner 2 — први прелет поред Венере (САД)"
+      "label": "Mariner 2 — први прелет поред Венере"
     },
     {
       "year": 1965,
-      "label": "Mariner 4 — први прелет поред Марса (САД)"
+      "label": "Mariner 4 — први прелет поред Марса",
+      "mission_id": "mariner4"
     },
     {
       "year": 1974,
-      "label": "Mariner 10 — први прелет поред Меркура (САД)"
+      "label": "Mariner 10 — први прелет поред Меркура",
+      "mission_id": "mariner10"
     }
   ],
   "science_link": {

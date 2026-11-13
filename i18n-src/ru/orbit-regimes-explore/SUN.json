@@ -13,11 +13,13 @@
   "firsts": [
     {
       "year": 2018,
-      "label": "Parker Solar Probe — самый близкий пролёт у Солнца за всю историю (США)"
+      "label": "Parker Solar Probe — самый близкий пролёт у Солнца за всю историю",
+      "mission_id": "parker-solar-probe"
     },
     {
       "year": 2020,
-      "label": "Solar Orbiter — первая съёмка вблизи Солнца (ESA)"
+      "label": "Solar Orbiter — первая съёмка вблизи Солнца",
+      "mission_id": "solar-orbiter"
     }
   ],
   "science_link": {

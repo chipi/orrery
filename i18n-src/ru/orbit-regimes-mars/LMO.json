@@ -43,12 +43,13 @@
   "firsts": [
     {
       "year": 1971,
-      "label": "Mariner 9 — первый искусственный спутник Марса (США)",
+      "label": "Mariner 9 — первый искусственный спутник Марса",
       "mission_id": "mariner9"
     },
     {
       "year": 2003,
-      "label": "Mars Express — первая марсианская миссия ESA"
+      "label": "Mars Express — первая марсианская миссия ESA",
+      "mission_id": "mars-express"
     }
   ],
   "science_link": {

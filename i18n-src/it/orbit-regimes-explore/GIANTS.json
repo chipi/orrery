@@ -28,19 +28,22 @@
   "firsts": [
     {
       "year": 1973,
-      "label": "Pioneer 10 — primo sorvolo di Giove (USA)"
+      "label": "Pioneer 10 — primo sorvolo di Giove",
+      "mission_id": "pioneer-10"
     },
     {
       "year": 1986,
-      "label": "Voyager 2 — unico sorvolo di Urano mai effettuato (USA)"
+      "label": "Voyager 2 — unico sorvolo di Urano mai effettuato",
+      "mission_id": "voyager-2"
     },
     {
       "year": 1989,
-      "label": "Voyager 2 — unico sorvolo di Nettuno mai effettuato (USA)"
+      "label": "Voyager 2 — unico sorvolo di Nettuno mai effettuato",
+      "mission_id": "voyager-2"
     },
     {
       "year": 1995,
-      "label": "Galileo — primo orbitatore di Giove (USA)",
+      "label": "Galileo — primo orbitatore di Giove",
       "mission_id": "galileo"
     }
   ],

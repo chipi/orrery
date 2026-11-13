@@ -28,12 +28,12 @@
   "firsts": [
     {
       "year": 1966,
-      "label": "Luna 10 — primer orbitador lunar artificial (URSS)",
+      "label": "Luna 10 — primer orbitador lunar artificial",
       "mission_id": "luna10"
     },
     {
       "year": 1968,
-      "label": "Apollo 8 — primera órbita lunar tripulada (EE. UU.)",
+      "label": "Apollo 8 — primera órbita lunar tripulada",
       "mission_id": "apollo8"
     }
   ],

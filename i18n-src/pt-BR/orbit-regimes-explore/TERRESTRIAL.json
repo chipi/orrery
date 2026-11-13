@@ -28,15 +28,17 @@
   "firsts": [
     {
       "year": 1962,
-      "label": "Mariner 2 — primeira passagem por Vênus (EUA)"
+      "label": "Mariner 2 — primeira passagem por Vênus"
     },
     {
       "year": 1965,
-      "label": "Mariner 4 — primeira passagem por Marte (EUA)"
+      "label": "Mariner 4 — primeira passagem por Marte",
+      "mission_id": "mariner4"
     },
     {
       "year": 1974,
-      "label": "Mariner 10 — primeira passagem por Mercúrio (EUA)"
+      "label": "Mariner 10 — primeira passagem por Mercúrio",
+      "mission_id": "mariner10"
     }
   ],
   "science_link": {

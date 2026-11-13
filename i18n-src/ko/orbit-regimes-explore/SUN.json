@@ -13,11 +13,13 @@
   "firsts": [
     {
       "year": 2018,
-      "label": "Parker Solar Probe — 역대 가장 가까운 태양 근접 비행 (미국)"
+      "label": "Parker Solar Probe — 역대 가장 가까운 태양 근접 비행",
+      "mission_id": "parker-solar-probe"
     },
     {
       "year": 2020,
-      "label": "Solar Orbiter — 최초의 태양 근접 촬영 (ESA)"
+      "label": "Solar Orbiter — 최초의 태양 근접 촬영",
+      "mission_id": "solar-orbiter"
     }
   ],
   "science_link": {

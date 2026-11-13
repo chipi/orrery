@@ -7,11 +7,13 @@
   "firsts": [
     {
       "year": 2012,
-      "label": "Voyager 1 steekt de heliopauze over — eerste artefact in de interstellaire ruimte (VS)"
+      "label": "Voyager 1 steekt de heliopauze over — eerste artefact in de interstellaire ruimte",
+      "mission_id": "voyager-1"
     },
     {
       "year": 2018,
-      "label": "Voyager 2 steekt de heliopauze over (VS)"
+      "label": "Voyager 2 steekt de heliopauze over",
+      "mission_id": "voyager-2"
     }
   ],
   "science_link": {

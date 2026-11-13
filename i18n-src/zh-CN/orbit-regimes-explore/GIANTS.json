@@ -28,19 +28,22 @@
   "firsts": [
     {
       "year": 1973,
-      "label": "Pioneer 10 — 首次飞掠木星（USA）"
+      "label": "Pioneer 10 — 首次飞掠木星",
+      "mission_id": "pioneer-10"
     },
     {
       "year": 1986,
-      "label": "Voyager 2 — 唯一一次飞掠天王星（USA）"
+      "label": "Voyager 2 — 唯一一次飞掠天王星",
+      "mission_id": "voyager-2"
     },
     {
       "year": 1989,
-      "label": "Voyager 2 — 唯一一次飞掠海王星（USA）"
+      "label": "Voyager 2 — 唯一一次飞掠海王星",
+      "mission_id": "voyager-2"
     },
     {
       "year": 1995,
-      "label": "Galileo — 首个木星轨道器（USA）",
+      "label": "Galileo — 首个木星轨道器",
       "mission_id": "galileo"
     }
   ],

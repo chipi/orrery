@@ -38,15 +38,17 @@
   "firsts": [
     {
       "year": 1930,
-      "label": "यम की खोज — पहला KBO पहचाना गया (Tombaugh, USA)"
+      "label": "यम की खोज — पहला KBO पहचाना गया (Tombaugh)"
     },
     {
       "year": 2015,
-      "label": "New Horizons — पहली यम उड़ान (अमेरिका)"
+      "label": "New Horizons — पहली यम उड़ान",
+      "mission_id": "new-horizons"
     },
     {
       "year": 2019,
-      "label": "New Horizons एरोकोथ पर — अब तक का सबसे दूर का पिंड जिसकी यात्रा की गई (अमेरिका)"
+      "label": "New Horizons एरोकोथ पर — अब तक का सबसे दूर का पिंड जिसकी यात्रा की गई",
+      "mission_id": "new-horizons"
     }
   ],
   "science_link": {

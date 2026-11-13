@@ -13,11 +13,13 @@
   "firsts": [
     {
       "year": 2018,
-      "label": "Parker Solar Probe — closest-ever Sun flyby (USA)"
+      "label": "Parker Solar Probe — closest-ever Sun flyby",
+      "mission_id": "parker-solar-probe"
     },
     {
       "year": 2020,
-      "label": "Solar Orbiter — first close-Sun imaging (ESA)"
+      "label": "Solar Orbiter — first close-Sun imaging",
+      "mission_id": "solar-orbiter"
     }
   ],
   "science_link": {

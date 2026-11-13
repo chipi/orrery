@@ -28,11 +28,12 @@
   "firsts": [
     {
       "year": 1801,
-      "label": "Ceres — eerste ontdekte asteroïde (Piazzi, Italië)"
+      "label": "Ceres — eerste ontdekte asteroïde (Piazzi)"
     },
     {
       "year": 2011,
-      "label": "Dawn — eerste speciale asteroïdenorbiter (Vesta, USA)"
+      "label": "Dawn — eerste speciale asteroïdenorbiter (Vesta)",
+      "mission_id": "dawn"
     }
   ],
   "science_link": {

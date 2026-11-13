@@ -28,12 +28,12 @@
   "firsts": [
     {
       "year": 1957,
-      "label": "Sputnik 1 — first artificial Earth satellite (USSR)",
+      "label": "Sputnik 1 — first artificial Earth satellite",
       "mission_id": "sputnik1"
     },
     {
       "year": 1961,
-      "label": "Vostok 1 — Yuri Gagarin, first crewed orbital flight (USSR)",
+      "label": "Vostok 1 — Yuri Gagarin, first crewed orbital flight",
       "mission_id": "vostok-1"
     }
   ],

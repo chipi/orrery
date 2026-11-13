@@ -28,12 +28,12 @@
   "firsts": [
     {
       "year": 1966,
-      "label": "Luna 10 — erster künstlicher Mondorbiter (UdSSR)",
+      "label": "Luna 10 — erster künstlicher Mondorbiter",
       "mission_id": "luna10"
     },
     {
       "year": 1968,
-      "label": "Apollo 8 — erste bemannte Mondumlaufbahn (USA)",
+      "label": "Apollo 8 — erste bemannte Mondumlaufbahn",
       "mission_id": "apollo8"
     }
   ],

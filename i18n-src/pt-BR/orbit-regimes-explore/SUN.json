@@ -13,11 +13,13 @@
   "firsts": [
     {
       "year": 2018,
-      "label": "Parker Solar Probe — aproximação mais próxima do Sol já realizada (EUA)"
+      "label": "Parker Solar Probe — aproximação mais próxima do Sol já realizada",
+      "mission_id": "parker-solar-probe"
     },
     {
       "year": 2020,
-      "label": "Solar Orbiter — primeiras imagens próximas do Sol (ESA)"
+      "label": "Solar Orbiter — primeiras imagens próximas do Sol",
+      "mission_id": "solar-orbiter"
     }
   ],
   "science_link": {

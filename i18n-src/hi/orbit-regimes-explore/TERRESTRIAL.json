@@ -28,18 +28,17 @@
   "firsts": [
     {
       "year": 1962,
-      "label": "Mariner 2 — पहला शुक्र फ्लाईबाई (अमेरिका)",
-      "mission_id": "mariner-2"
+      "label": "Mariner 2 — पहला शुक्र फ्लाईबाई"
     },
     {
       "year": 1965,
-      "label": "Mariner 4 — पहला मंगल फ्लाईबाई (अमेरिका)",
-      "mission_id": "mariner-4"
+      "label": "Mariner 4 — पहला मंगल फ्लाईबाई",
+      "mission_id": "mariner4"
     },
     {
       "year": 1974,
-      "label": "Mariner 10 — पहला बुध फ्लाईबाई (अमेरिका)",
-      "mission_id": "mariner-10"
+      "label": "Mariner 10 — पहला बुध फ्लाईबाई",
+      "mission_id": "mariner10"
     }
   ],
   "science_link": {

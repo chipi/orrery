@@ -28,19 +28,22 @@
   "firsts": [
     {
       "year": 1973,
-      "label": "Pioneer 10 — 初の木星フライバイ (アメリカ)"
+      "label": "Pioneer 10 — 初の木星フライバイ",
+      "mission_id": "pioneer-10"
     },
     {
       "year": 1986,
-      "label": "Voyager 2 — 唯一の天王星フライバイ (アメリカ)"
+      "label": "Voyager 2 — 唯一の天王星フライバイ",
+      "mission_id": "voyager-2"
     },
     {
       "year": 1989,
-      "label": "Voyager 2 — 唯一の海王星フライバイ (アメリカ)"
+      "label": "Voyager 2 — 唯一の海王星フライバイ",
+      "mission_id": "voyager-2"
     },
     {
       "year": 1995,
-      "label": "Galileo — 初の木星周回機 (アメリカ)",
+      "label": "Galileo — 初の木星周回機",
       "mission_id": "galileo"
     }
   ],

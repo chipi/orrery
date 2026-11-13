@@ -38,15 +38,17 @@
   "firsts": [
     {
       "year": 1930,
-      "label": "发现冥王星——首个确认的柯伊伯带天体 (Tombaugh, 美国)"
+      "label": "发现冥王星——首个确认的柯伊伯带天体 (Tombaugh)"
     },
     {
       "year": 2015,
-      "label": "New Horizons——首次飞掠冥王星 (美国)"
+      "label": "New Horizons——首次飞掠冥王星",
+      "mission_id": "new-horizons"
     },
     {
       "year": 2019,
-      "label": "New Horizons抵达阿罗科斯——人类探访过的最遥远天体 (美国)"
+      "label": "New Horizons抵达阿罗科斯——人类探访过的最遥远天体",
+      "mission_id": "new-horizons"
     }
   ],
   "science_link": {

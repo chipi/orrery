@@ -28,11 +28,12 @@
   "firsts": [
     {
       "year": 1801,
-      "label": "ケレス — 最初に発見された小惑星 (ピアッツィ, Italy)"
+      "label": "ケレス — 最初に発見された小惑星 (ピアッツィ)"
     },
     {
       "year": 2011,
-      "label": "Dawn — 最初の小惑星専用周回機 (ベスタ, USA)"
+      "label": "Dawn — 最初の小惑星専用周回機 (ベスタ)",
+      "mission_id": "dawn"
     }
   ],
   "science_link": {

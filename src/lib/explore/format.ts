@@ -4,8 +4,7 @@ import type { LocaleCode } from '$lib/locale';
 import type { DeepSkyCategory, LocalGroupMember, OuterTextOverlay } from '$lib/data/universe';
 import { sourceLink } from '$lib/catalogue';
 import { constellationName } from '$lib/universe/iau-constellations';
-import { formatNumber } from '$lib/format';
-import { fmtRegimeAU } from '$lib/orbit-regime-format';
+import { fmtRegimeAU, regimeNum } from '$lib/orbit-regime-format';
 import { majorMoonCount } from '$lib/plural';
 
 // Localised label for an anonymous star's catalogue colour (enum → message).
@@ -57,14 +56,14 @@ export const distanceUnitLabel = (unit: string): string => distanceWithUnit('', 
 // Built on the server per request locale, so every call passes the locale to the messages.
 const META_SEP = ' · ';
 // Three significant figures ("1.52", "30.1", "939"); a diameter from 1,000 km up is written whole
-// ("6,779"), as the planet panel prints it.
+// ("6,779"), as the planet panel prints it; from 100,000 zh/ja/ko/hi use 万/만/लाख like the ruler.
 const sig3 = (x: number, locale: LocaleCode): string =>
   new Intl.NumberFormat(locale, { maximumSignificantDigits: 3 }).format(x);
 const indexAu = (au: number, locale: LocaleCode): string =>
   m.unit_au_value({ value: sig3(au, locale) }, { locale });
 const indexKm = (km: number, locale: LocaleCode): string =>
   m.mp_flight_unit_km(
-    { value: km >= 1000 ? formatNumber(Math.round(km), locale) : sig3(km, locale) },
+    { value: km >= 1000 ? regimeNum(Math.round(km), locale) : sig3(km, locale) },
     { locale },
   );
 
@@ -80,7 +79,7 @@ export function planetIndexMeta(
   ].join(META_SEP);
 }
 
-/** "2.77 AU · 940 km": a dwarf, asteroid or Kuiper object; a comet has no size, only its distance. */
+/** "2.77 AU · 939 km": a dwarf, asteroid or Kuiper object; a comet has no size, only its distance. */
 export function smallBodyIndexMeta(
   b: { au: number; diameterKm?: number },
   locale: LocaleCode,

@@ -2,6 +2,7 @@ import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 import * as m from '$lib/paraglide/messages';
 import { overwriteGetLocale } from '$lib/paraglide/runtime';
+import { regimeNum } from '$lib/orbit-regime-format';
 import {
   SATELLITE_STATS,
   anonColorLabel,
@@ -259,5 +260,15 @@ describe('solar-system INDEX meta (C6)', () => {
     expect(beltIndexMeta(2.2, 3.2, 'de')).toBe('2,2–3,2 AE');
     expect(moonIndexMeta('المشتري', 3643, 'ar')).toBe('المشتري · 3,643 كم');
     expect(beltIndexMeta(2.2, 3.2, 'ar')).toBe('2.2–3.2 و.ف');
+  });
+
+  it('a diameter from 100,000 km is written in 万/만/लाख in zh, ja, ko and hi, like the ruler', () => {
+    const jupiter = { au: 5.2, diameterKm: 139820, moons: 0 };
+    for (const loc of ['zh-CN', 'ja', 'ko', 'hi'] as const) {
+      expect(planetIndexMeta(jupiter, loc)).toContain(regimeNum(139820, loc));
+      expect(planetIndexMeta(jupiter, loc)).not.toContain('139');
+    }
+    expect(planetIndexMeta(jupiter, 'de')).toContain('139.820');
+    expect(moonIndexMeta('木星', 3643, 'ja')).toBe('木星 · 3,643 km');
   });
 });

@@ -97,6 +97,13 @@
       surfaceStatusLabel(item.status),
       item.domain === 'orbit' ? m.surface_index_orbit() : m.surface_index_land(),
     ].join(' · ');
+  // A long meta (de "ABGESTÜRZT · AUF DER OBERFLÄCHE") wraps only after a " · ", as the solar
+  // INDEX does: no-break spaces inside each part and before each dot.
+  const metaShown = (item: IndexItem): string =>
+    metaOf(item)
+      .split(' · ')
+      .map((p) => p.replaceAll(' ', ' '))
+      .join(' · ');
 
   function domainColor(item: IndexItem): string {
     if (item.color) return item.color;
@@ -203,7 +210,7 @@
           <span class="row-dot" style:background={domainColor(item)} aria-hidden="true"></span>
           <span class="row-name">{item.name}</span>
           <span class="row-badge"><AgencyBadge agency={item.agencies.join(' / ')} /></span>
-          <span class="row-meta" title={metaOf(item)}>{metaOf(item)}</span>
+          <span class="row-meta" title={metaOf(item)}>{metaShown(item)}</span>
         </button>
         {#if pageIds.has(item.id)}
           <a
@@ -391,9 +398,11 @@
   }
   .row-meta {
     grid-area: meta;
-    white-space: nowrap;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
     overflow: hidden;
-    text-overflow: ellipsis;
     font-size: var(--size-label);
     letter-spacing: 0.4px;
     color: var(--color-text-dim);

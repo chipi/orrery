@@ -144,6 +144,14 @@ export const SCALE_FILTERS: Record<ShellId, IndexFilterId[]> = {
   'cosmic-web': ['headliner', 'supercluster', 'wall', 'void', 'concentration'],
 };
 
+/** The words of a meta line the search box reads: a moon's planet, a kind ("Star"), never the
+ *  measurements, so "km" or "2" does not match every row. */
+export const metaWords = (meta: string): string =>
+  meta
+    .split(' · ')
+    .filter((p) => !/\d/.test(p))
+    .join(' · ');
+
 /** The rows a chip (null = All) and the search box leave, in list order. */
 export function filterRows(
   rows: ScaleIndexRow[],
@@ -155,7 +163,7 @@ export function filterRows(
   return rows.filter(
     (r) =>
       (filter === null || FILTER_TESTS[filter](r)) &&
-      (!q || r.name.toLowerCase().includes(q) || metaOf(r).toLowerCase().includes(q)),
+      (!q || r.name.toLowerCase().includes(q) || metaWords(metaOf(r)).toLowerCase().includes(q)),
   );
 }
 

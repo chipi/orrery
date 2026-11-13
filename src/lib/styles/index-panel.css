@@ -208,8 +208,9 @@
   color: var(--color-state);
 }
 /* The solar system's rows are two lines (UXD-017, C6): the name over its meta (distance, size, moons),
-   which is too long to sit beside the name in a 320 px rail. The other seven scales keep one line. */
-.scale-index[data-scale='solar-system'] .si-row {
+   which is too long to sit beside the name in a 320 px rail. The other seven scales keep one line.
+   Only the button rows: the prerendered link rows have a name and no meta, and must not shift. */
+.scale-index[data-scale='solar-system'] button.si-row {
   display: grid;
   grid-template-columns: 26px minmax(0, 1fr);
   grid-template-areas:

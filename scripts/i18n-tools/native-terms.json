@@ -882,7 +882,8 @@
     "deep-text batch 4 glossary (2026-11-12)": "Names and terms added for docs/wip/deep-text/batch-04.md. Where the site already translated a word (captions in deep-sky.json, earlier deep-sky overlays: luminous red nova, Type Ia, grand-design spiral, the nickname titles) the existing site form was taken. Not checked on native pages (no search run; first-agent forms): the person names in ru ja zh-CN ko hi ar sr-Cyrl (Huggins, Harding, Muñoz, Pontoppidan, Fabian, Atkinson, Szyszka, Häberle, Krause), the Hindi constellation forms for Draco, Fornax, Sagitta, Corvus, the es/pt constellation gaps, Gabriela Mistral Nebula, Christmas Tree Cluster, Fornax Cluster, and the terms white dwarf cooling track, cometary knot, intracluster light, protostellar outflow, super star cluster, tidal tail, polarimetry, ionisation front in all locales (calques of the English sense; confidence marked). nl Bellennevel replaces the site caption's 'Bellnevel' (not Dutch).",
     "galaxy-structure terms (2026-11-13)": "Binding forms for deep-text batch 06 (galaxy structures). The site's own form where the site already writes the term (messages explore_cosmic_web_kind_* and explore_hub_desc_*: supercluster, void, galaxy wall, filament; the large-scale-structure and Laniakea essays: cosmic web, basin of attraction, megaparsec, zone of avoidance), else the language Wikipedia title of the English article (en.wikipedia langlinks API, fetched 2026-11-13: redshift, peculiar velocity, comoving distance, tip of the red giant branch, surface brightness fluctuations, Local Void; zh converted to zh-CN, sr to Cyrillic). Not in Wikipedia and set by the translator from the neighbouring terms (galaxy cloud in all 13 languages; hi peculiar velocity, comoving distance, surface brightness fluctuations, tip of the red giant branch; ar peculiar velocity; sr comoving distance and the Local Void's native form; ja, ko and zh-CN void/Local Void compounds): confidence is medium or low as marked in _confidence. Stems accept every variant the site already writes in an unreviewed tree.",
     "galaxy and structure deep-text batches 05-06 (2026-11-13)": "Binding forms for deep-text batches 05 (29 Local Group galaxies) and 06 (30 structures). Terms: the site's own form where the site already writes it (messages explore_lg_kind_* and explore_mw_*: dwarf spheroidal / dwarf irregular / dwarf elliptical / irregular galaxy, satellite galaxy, dark-matter halo, kpc; metal-poor from deep-sky m92), else compounds built from the site's existing neighbouring terms (dwarf galaxy, galaxy, elliptical galaxy, tip of the red giant branch, redshift) by the translator; Wikipedia langlinks (fetched 2026-11-13) carried no article for these compounds in the target languages, so every non-site form here has no native-page check: medium or low in _confidence as marked, Hindi and the Arabic/Serbian/Korean scientific compounds (period-luminosity relation, velocity dispersion, mass-to-light ratio, eclipsing binary, early/late-type, overdensity, crossing time, potential well, watershed, repeller, Hubble flow) lowest. People: the translator's transliteration under the same rules as the deep-sky people (ru Practical Transcription, ja katakana, zh Xinhua-style names, ko national orthography, hi Devanagari, ar, sr Serbian Cyrillic); en.wikipedia langlinks supplied only a few (Baade, Barnard, Leavitt, Wolf, Swift, Melotte, Shapley, Zwicky, Schuster, West) and the rest has no source. Names whose original-language pronunciation is uncertain (Pietrzyński, Kallivayalil, Antoja, Gullieuszik, Oemler, Huchra, van Zee, Wakamatsu, Lee, Jang, Kim, Sohn, Wu, Mei) are the lowest confidence. Latin-script locales keep the English spelling and carry no entry. Constellations Apus, Antlia, Horologium, Indus, Norma: the language Wikipedia titles where present (ar, hi, ja, ko, ru, sr, de, fr, it, nl, zh for Apus and Antlia), else the established names. Observatories and surveys (class place): the site's own observatory page names (Palomar, Mount Wilson, Very Large Telescope), else Wikipedia titles (Lowell, Sloan Digital Sky Survey) or the translator's forms. Not added (origin-rule vehicles and catalogue designations): Hubble, Gaia, Chandra, Cosmicflows-4, GRAVITY, DDO, Maffei 1/2, CfA2 (kept in Latin).",
-    "galaxy and structure gaps (2026-11-13, round 2)": "Constellations: the language Wikipedia title of the English article (wikidata-labels.mjs, 2026-11-13). es and pt-BR constellations are the native names, not Latin (round 3, 2026-11-13): the language Wikipedia titles are the IAU Latin names, but the article ledes and the institutional sources write the native name. es: IGN/Observatorio Astronómico Nacional SkyAtlas2020_spa (ign.es/web/resources/docs/IGNCnig/Astronomia-pdf/SkyAtlas2020_spa_Canarias2.pdf; Tucán, Retículo, Sextante, Horno, Reloj, Regla, Ballena, Erídano, Boyero, Perros de Caza, Ave del Paraíso, Pavo Real, Neumático) and the es.wikipedia ledes (Fornax o el Horno, Norma, la Regla o la Escuadra, Horologium o el Reloj, Cetus o la Ballena, Boötes o el Boyero, Canes Venatici o los Perros de Caza, Antlia o la Bomba Neumática o la Máquina Neumática, Reticulum o el Retículo, Eridanus o el Erídano, Apus o el Ave del Paraíso, Sextans o el Sextante, Tucana o el Tucán, Pavo o el Pavo); Virgo and Leo stay (Spanish writes Virgo, Leo). pt-BR: Fiocruz Museu da Vida Mensageiros das Estrelas vols 3, 8, 9, 12 (Baleia, Pavão, Ave do Paraíso, Boieiro, Cães de Caça, Sextante) and the UFRJ Departamento de Astronomia thesis pantheon.ufrj.br/bitstream/11422/17795/3/GASilva.pdf (a table Latin / Portuguese: Máquina Pneumática, Esquadro, Retículo, Sextante, Tucano, Cães de Caça, Relógio, Fornalha, Boieiro) and the IAU OAE pt-BR Fornax map (astro4edu.org: Baleia, Erídano, Fornalha, Relógio); Erídano, Ursa Maior / Ursa Menor / Peixes follow the shipped pt-BR text. nl and de Pegasus, Hercules, Eridanus and de Netz are the native names (nl.wikipedia Pegasus (sterrenbeeld), Hercules, Eridanus (rivier Eridanos); de.wikipedia Der Pegasus, Eridanus auch Fluss Eridanus). sr-Cyrl Indus is Индус (sr Wikipedia 'Индус (сазвежђе)', and the Pavo–Indus filament entry already reads Пауна–Индуса); Индијанац, which no shipped text uses, is replaced. hi Leo/Sagittarius from hi Wikipedia (सिंह / धनु तारामंडल); hi Reticulum and Sextans transliterated or Latin like the site's hi dwarf-galaxy names. Names: the forms the staged texts used where the glossary was blank (Norma Cluster nl/hi/sr, Centaurus A, Tarantelnebel, Wolf-Lundmark-Melotte hi/sr), Latin for de/fr/es/it/nl/pt-BR survey and telescope names (Wikipedia: de/es/it/nl/pt Very Large Telescope, Sloan Digital Sky Survey), site messages galaxy_name_sagittarius_dwarf for hi and sr-Cyrl. A. G. Wilson = Albert George Wilson (Q499156): initials transliterated by sound (ru Дж., sr Џ.). Terms: tidal stream and comoving coordinates take the forms the translators converged on (they agree with the stellar stream and comoving distance bindings). ko 조기형 / 만기형 은하 confirmed on Korean pages (bizhankook.com/articles/18062, koreascience.kr JAKO201900937422558). Definitions read (round 3): tidal stream, Eyre and Binney 2011 \"The mechanics of tidal streams\", MNRAS, arXiv:1011.3672 (streams formed by the tidal disruption of cold, low-mass clusters in the potential of a massive host galaxy; relics of tidally stripped globular clusters and dwarf galaxies; they appear to delineate the progenitor orbit but are poorly represented by single orbits, so the en definition says \"roughly along the orbit\"); comoving coordinates, Komatsu, UT Austin astronomy course Spring 2005 lecture 23 (as.utexas.edu/astronomy/education/spring05/komatsu/lecture23.pdf: \"Comoving coordinate is the coordinate which expands in the same way as space; galaxies always remain at the same position in comoving coordinates\"), E. L. Wright, UCLA Cosmology Tutorial part 2 (astro.ucla.edu/~wright/cosmo_02.htm: distance to any comoving observer D(t) = a(t) D(now)), and Hogg 1999 \"Distance measures in cosmology\", arXiv:astro-ph/9905116 (comoving distance is the proper distance divided by the ratio of scale factors then to now, constant for objects moving with the Hubble flow). Science review of the 25 definitions of batches 05-06 (2026-11-13) applied to 18 of them; the other 7 stayed."
+    "galaxy and structure gaps (2026-11-13, round 2)": "Constellations: the language Wikipedia title of the English article (wikidata-labels.mjs, 2026-11-13). es and pt-BR constellations are the native names, not Latin (round 3, 2026-11-13): the language Wikipedia titles are the IAU Latin names, but the article ledes and the institutional sources write the native name. es: IGN/Observatorio Astronómico Nacional SkyAtlas2020_spa (ign.es/web/resources/docs/IGNCnig/Astronomia-pdf/SkyAtlas2020_spa_Canarias2.pdf; Tucán, Retículo, Sextante, Horno, Reloj, Regla, Ballena, Erídano, Boyero, Perros de Caza, Ave del Paraíso, Pavo Real, Neumático) and the es.wikipedia ledes (Fornax o el Horno, Norma, la Regla o la Escuadra, Horologium o el Reloj, Cetus o la Ballena, Boötes o el Boyero, Canes Venatici o los Perros de Caza, Antlia o la Bomba Neumática o la Máquina Neumática, Reticulum o el Retículo, Eridanus o el Erídano, Apus o el Ave del Paraíso, Sextans o el Sextante, Tucana o el Tucán, Pavo o el Pavo); Virgo and Leo stay (Spanish writes Virgo, Leo). pt-BR: Fiocruz Museu da Vida Mensageiros das Estrelas vols 3, 8, 9, 12 (Baleia, Pavão, Ave do Paraíso, Boieiro, Cães de Caça, Sextante) and the UFRJ Departamento de Astronomia thesis pantheon.ufrj.br/bitstream/11422/17795/3/GASilva.pdf (a table Latin / Portuguese: Máquina Pneumática, Esquadro, Retículo, Sextante, Tucano, Cães de Caça, Relógio, Fornalha, Boieiro) and the IAU OAE pt-BR Fornax map (astro4edu.org: Baleia, Erídano, Fornalha, Relógio); Erídano, Ursa Maior / Ursa Menor / Peixes follow the shipped pt-BR text. nl and de Pegasus, Hercules, Eridanus and de Netz are the native names (nl.wikipedia Pegasus (sterrenbeeld), Hercules, Eridanus (rivier Eridanos); de.wikipedia Der Pegasus, Eridanus auch Fluss Eridanus). sr-Cyrl Indus is Индус (sr Wikipedia 'Индус (сазвежђе)', and the Pavo–Indus filament entry already reads Пауна–Индуса); Индијанац, which no shipped text uses, is replaced. hi Leo/Sagittarius from hi Wikipedia (सिंह / धनु तारामंडल); hi Reticulum and Sextans transliterated or Latin like the site's hi dwarf-galaxy names. Names: the forms the staged texts used where the glossary was blank (Norma Cluster nl/hi/sr, Centaurus A, Tarantelnebel, Wolf-Lundmark-Melotte hi/sr), Latin for de/fr/es/it/nl/pt-BR survey and telescope names (Wikipedia: de/es/it/nl/pt Very Large Telescope, Sloan Digital Sky Survey), site messages galaxy_name_sagittarius_dwarf for hi and sr-Cyrl. A. G. Wilson = Albert George Wilson (Q499156): initials transliterated by sound (ru Дж., sr Џ.). Terms: tidal stream and comoving coordinates take the forms the translators converged on (they agree with the stellar stream and comoving distance bindings). ko 조기형 / 만기형 은하 confirmed on Korean pages (bizhankook.com/articles/18062, koreascience.kr JAKO201900937422558). Definitions read (round 3): tidal stream, Eyre and Binney 2011 \"The mechanics of tidal streams\", MNRAS, arXiv:1011.3672 (streams formed by the tidal disruption of cold, low-mass clusters in the potential of a massive host galaxy; relics of tidally stripped globular clusters and dwarf galaxies; they appear to delineate the progenitor orbit but are poorly represented by single orbits, so the en definition says \"roughly along the orbit\"); comoving coordinates, Komatsu, UT Austin astronomy course Spring 2005 lecture 23 (as.utexas.edu/astronomy/education/spring05/komatsu/lecture23.pdf: \"Comoving coordinate is the coordinate which expands in the same way as space; galaxies always remain at the same position in comoving coordinates\"), E. L. Wright, UCLA Cosmology Tutorial part 2 (astro.ucla.edu/~wright/cosmo_02.htm: distance to any comoving observer D(t) = a(t) D(now)), and Hogg 1999 \"Distance measures in cosmology\", arXiv:astro-ph/9905116 (comoving distance is the proper distance divided by the ratio of scale factors then to now, constant for objects moving with the Hubble flow). Science review of the 25 definitions of batches 05-06 (2026-11-13) applied to 18 of them; the other 7 stayed.",
+    "deep-text batch 5b (2026-11-13)": "Terms: main sequence, definition read on NASA Science 'Types of stars' (science.nasa.gov/universe/stars/types: a star fusing hydrogen to helium in its core); stellar population, definition read on Milone and Marino 2022, 'Multiple populations in star clusters' (arXiv:2206.10564: groups of stars with different elemental abundances and/or distinct sequences in photometric diagrams), the sodium, nitrogen, oxygen and helium pattern from the Milone et al. 2012 and 2010 abstracts the batch cites. Forms of the two terms: the first agents' forms from standard textbook usage, NOT checked on native pages (the Swinburne cosmos glossary was unreachable); ar main sequence follows the site's shipped science pages (النطاق الرئيس); ja also accepts the shipped メインシーケンス; hi and ar stellar population are the least sure (hi तारकीय जनसंख्या, ar عشيرة نجمية, the Arabic word for Population I/II). Names: Milone (Antonino Milone) transliterated by sound from the Italian, NOT checked on native pages; 47 Tucanae: ja きょしちょう座47 (kotobank / Nipponica), zh 杜鹃座47 (cdstm.cn, bjp.org.cn APOD), ko 큰부리새자리 47 (khan.co.kr, 2017-07-27), ru and sr 47 Тукана and hi, ar by the constellation name entries; Cape of Good Hope: the standard names in each language, not looked up individually. Solar mass and N-body are not glossary terms: the 13 translations reuse the forms of the shipped ngc-5139 text."
   },
   "body": {
     "Earth": {
@@ -3649,6 +3650,21 @@
       "it": "Second Palomar Sky Survey",
       "nl": "Second Palomar Sky Survey",
       "pt-BR": "Second Palomar Sky Survey"
+    },
+    "Cape of Good Hope": {
+      "ru": "мыс Доброй Надежды",
+      "ja": "喜望峰",
+      "zh-CN": "好望角",
+      "ko": "희망봉",
+      "hi": "उत्तमाशा अंतरीप",
+      "ar": "رأس الرجاء الصالح",
+      "sr-Cyrl": "Рт добре наде",
+      "de": "Kap der Guten Hoffnung",
+      "fr": "cap de Bonne-Espérance",
+      "es": "cabo de Buena Esperanza",
+      "it": "Capo di Buona Speranza",
+      "nl": "Kaap de Goede Hoop",
+      "pt-BR": "Cabo da Boa Esperança"
     }
   },
   "station": {
@@ -9211,6 +9227,15 @@
       "it": "A. G. Wilson",
       "nl": "A. G. Wilson",
       "pt-BR": "A. G. Wilson"
+    },
+    "Milone": {
+      "ru": "Милоне",
+      "ja": "ミローネ",
+      "zh-CN": "米洛内",
+      "ko": "밀로네",
+      "hi": "मिलोने",
+      "ar": "ميلوني",
+      "sr-Cyrl": "Милоне"
     }
   },
   "star": {
@@ -14016,6 +14041,21 @@
       "it": "filamento Pavo-Indo",
       "nl": "Pavo-Indusfilament",
       "pt-BR": "filamento Pavo-Indus"
+    },
+    "47 Tucanae": {
+      "ru": "47 Тукана",
+      "ja": "きょしちょう座47",
+      "zh-CN": "杜鹃座47",
+      "ko": "큰부리새자리 47",
+      "hi": "47 टूकाना",
+      "ar": "47 الطوقان",
+      "sr-Cyrl": "47 Тукана",
+      "de": "47 Tucanae",
+      "fr": "47 Tucanae",
+      "es": "47 Tucanae",
+      "it": "47 Tucanae",
+      "nl": "47 Tucanae",
+      "pt-BR": "47 Tucanae"
     }
   },
   "agency": {
@@ -25269,6 +25309,109 @@
       "it": "coordinate comoventi",
       "nl": "meebewegende coördinaten",
       "pt-BR": "coordenadas comóveis"
+    },
+    "main sequence": {
+      "_sense": "the long stage when a star fuses hydrogen into helium in its core, a band on a brightness-colour diagram",
+      "_en": "\\bmain[- ]sequence\\b",
+      "_match": {
+        "ru": ["главн\\p{L}* последовательност\\p{L}*"],
+        "ja": ["主系列", "メインシーケンス"],
+        "zh-CN": ["主序"],
+        "ko": ["주계열"],
+        "hi": ["मुख्य[ -]?अनुक्रम", "मुख्य[ -]?श्रेणी", "मुख्य क्रम"],
+        "ar": [
+          "النطاق الرئيس\\p{L}*",
+          "النسق الرئيسي",
+          "(?:ال)?تسلسل(?:ًا)? (?:ال)?رئيسي\\p{L}*",
+          "المتتابعة الرئيسية"
+        ],
+        "sr-Cyrl": ["главн\\p{L}* низ\\p{L}*"],
+        "de": ["Hauptreihe\\p{L}*"],
+        "fr": ["séquence principale"],
+        "es": ["secuencia principal"],
+        "it": ["sequenza principale"],
+        "nl": ["hoofdreeks\\p{L}*"],
+        "pt-BR": ["sequência principal"]
+      },
+      "_confidence": {
+        "ru": "high",
+        "ja": "high",
+        "zh-CN": "high",
+        "ko": "high",
+        "hi": "medium",
+        "ar": "medium",
+        "sr-Cyrl": "high",
+        "de": "high",
+        "fr": "high",
+        "es": "high",
+        "it": "high",
+        "nl": "high",
+        "pt-BR": "high"
+      },
+      "ru": "главная последовательность",
+      "ja": "主系列",
+      "zh-CN": "主序",
+      "ko": "주계열",
+      "hi": "मुख्य अनुक्रम",
+      "ar": "النطاق الرئيس",
+      "sr-Cyrl": "главни низ",
+      "de": "Hauptreihe",
+      "fr": "séquence principale",
+      "es": "secuencia principal",
+      "it": "sequenza principale",
+      "nl": "hoofdreeks",
+      "pt-BR": "sequência principal"
+    },
+    "stellar population": {
+      "_sense": "a group of stars with a shared origin and chemical make-up; a globular cluster often holds more than one",
+      "_en": "\\bstellar populations?\\b",
+      "_match": {
+        "ru": [
+          "звёздн\\p{L}* популяц\\p{L}*",
+          "звёздн\\p{L}* населени\\p{L}*",
+          "звездн\\p{L}* популяц\\p{L}*"
+        ],
+        "ja": ["恒星種族", "星の種族", "星種族"],
+        "zh-CN": ["星族"],
+        "ko": ["항성 ?종족", "별의 종족"],
+        "hi": ["तारकीय[\\p{L}\\p{M}]* (?:जनसंख्या|समष्टि|आबादी)", "तारों की (?:जनसंख्या|आबादी)"],
+        "ar": ["عشير(?:ة|ات) نجمي\\p{L}*", "مجموع(?:ة|ات) نجمي\\p{L}*", "تعداد نجمي"],
+        "sr-Cyrl": ["звездан\\p{L}* популациј\\p{L}*"],
+        "de": ["Sternpopulation\\p{L}*", "stellare Population\\p{L}*"],
+        "fr": ["population\\p{L}* stellaire\\p{L}*"],
+        "es": ["poblaci\\p{L}* estelar\\p{L}*"],
+        "it": ["popolazion\\p{L}* stellar\\p{L}*"],
+        "nl": ["stellaire populatie\\p{L}*", "sterrenpopulatie\\p{L}*"],
+        "pt-BR": ["popula\\p{L}* estelar\\p{L}*"]
+      },
+      "_confidence": {
+        "ru": "high",
+        "ja": "medium",
+        "zh-CN": "high",
+        "ko": "medium",
+        "hi": "low",
+        "ar": "low",
+        "sr-Cyrl": "medium",
+        "de": "high",
+        "fr": "high",
+        "es": "high",
+        "it": "high",
+        "nl": "medium",
+        "pt-BR": "high"
+      },
+      "ru": "звёздная популяция",
+      "ja": "恒星種族",
+      "zh-CN": "星族",
+      "ko": "항성 종족",
+      "hi": "तारकीय जनसंख्या",
+      "ar": "عشيرة نجمية",
+      "sr-Cyrl": "звездана популација",
+      "de": "Sternpopulation",
+      "fr": "population stellaire",
+      "es": "población estelar",
+      "it": "popolazione stellare",
+      "nl": "stellaire populatie",
+      "pt-BR": "população estelar"
     }
   }
 }

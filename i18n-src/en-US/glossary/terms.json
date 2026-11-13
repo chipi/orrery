@@ -164,5 +164,7 @@
   "watershed": "A boundary where flows part in opposite directions, as water does at a ridge; in Laniakea's definition, where galaxies' motions diverge toward different gravitational centres.",
   "repeller": "A region, usually a big void, that is emptier than its surroundings, so nearby matter is pulled less toward it than away from it and seems to flow away; the opposite of an attractor.",
   "tidal stream": "A long, thin stream of stars pulled out of a dwarf galaxy or star cluster by the tidal pull of a larger galaxy, stretched out roughly along the orbit of the original object.",
-  "comoving coordinates": "Positions measured on a grid that expands with the universe, so galaxies carried along by the expansion keep the same coordinates; at the present time they match ordinary distances."
+  "comoving coordinates": "Positions measured on a grid that expands with the universe, so galaxies carried along by the expansion keep the same coordinates; at the present time they match ordinary distances.",
+  "main sequence": "The long stage in which a star fuses hydrogen into helium in its core; on a plot of brightness against colour, such stars form a band, and most stars, the Sun included, are on it.",
+  "stellar population": "A group of stars that share an origin and chemical make-up. Globular clusters often hold more than one, told apart by their abundances of elements such as nitrogen, sodium and oxygen, or by separate sequences in a brightness-colour diagram."
 }

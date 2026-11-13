@@ -2006,8 +2006,8 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
   // Read-only hooks for the select-focus e2e spec (no shipped behaviour, like
   // __explore2dBodyOffset): where the camera looks, whether the selection ring is up, and where a
   // body is, and where it is on screen (a canvas click lands there). Keys: planet:<id>,
-  // small:<id>, moon:<parent>:<id>, belt:<id>, marker:<missionId> (the first milestone marker of
-  // that path).
+  // small:<id>, moon:<parent>:<id>, belt:<id>, marker:<missionId>[:<n>|:last] (that path's
+  // milestone marker n, the first by default).
   const bodyWorldPosition = (key: string): THREE.Vector3 | null => {
     const [kind, a, b] = key.split(':');
     const out = new THREE.Vector3();
@@ -2020,9 +2020,11 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
         ?.satellites.find((s) => s.def.id === b)
         ?.mesh.getWorldPosition(out);
     else if (kind === 'marker') {
-      const marker = iconicTrajectoryHandles
-        .find((h) => h.missionId === a)
-        ?.pickTargets.find((t) => t.userData.kind === PICK_KINDS.marker);
+      const markers =
+        iconicTrajectoryHandles
+          .find((h) => h.missionId === a)
+          ?.pickTargets.filter((t) => t.userData.kind === PICK_KINDS.marker) ?? [];
+      const marker = b === 'last' ? markers.at(-1) : markers[Number(b ?? 0)];
       if (!marker) return null;
       marker.getWorldPosition(out);
     } else if (kind !== 'belt') return null;
@@ -2394,7 +2396,9 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     // specific was hit (preserving wide-zoom forgiveness).
     // IM5: an encounter marker, a launch marker or a milestone box opens its mission. They rank
     // below a real body (a box floating over a planet must not take the planet's click) and
-    // above the wide pick-aid spheres. The userData contract is iconic-trajectory.ts PICK_KINDS.
+    // above the wide pick-aid spheres. A belt is an area, not a body: a marker drawn over it takes
+    // the click (on a phone's wide view the belt's band lies under the inner path markers).
+    // The userData contract is iconic-trajectory.ts PICK_KINDS.
     const isMilestone = (ud: Record<string, unknown>): boolean =>
       ud.kind === 'iconic-trajectory-marker' ||
       ud.kind === 'iconic-trajectory-launch' ||
@@ -2412,9 +2416,11 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
         (h) =>
           isSelectable(h.object.userData) &&
           !h.object.userData.isPickAid &&
+          typeof h.object.userData.beltId !== 'string' &&
           !isMilestone(h.object.userData),
       ) ??
       hits.find((h) => isMilestone(h.object.userData)) ??
+      hits.find((h) => typeof h.object.userData.beltId === 'string') ??
       hits.find((h) => isSelectable(h.object.userData));
     if (hit) {
       const planetId = hit.object.userData.planetId as string | undefined;

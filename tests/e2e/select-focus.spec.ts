@@ -42,6 +42,14 @@ async function clickablePoint(page: Page, key: string): Promise<{ x: number; y: 
           p,
         );
         if (onCanvas) found = p;
+        else {
+          // A phone's default zoom (about 70 AU across) leaves the outer craft beyond the edge:
+          // zoom out one step over the canvas centre and look again.
+          const vp = page.viewportSize()!;
+          await page.mouse.move(vp.width / 2, vp.height / 2);
+          await page.mouse.wheel(0, 240);
+          await page.waitForTimeout(400);
+        }
         return onCanvas;
       },
       { timeout: 30_000, message: `${key} has a point on the canvas to click` },
@@ -75,6 +83,20 @@ const indexRow = (panel: Locator, id: string) =>
   panel.locator(`button.si-row[data-index-id="${id}"]`);
 
 /** The layer chip: in the HUD on a fine pointer, in the Controls drawer on touch. */
+/** On a phone (portrait) a body panel is a full-height sheet over the drawer: true when it covers
+ *  the Controls tab, so the layer chips cannot be reached while the panel is open. */
+async function controlsTabCovered(page: Page, tabName = 'controls|layers'): Promise<boolean> {
+  return page.evaluate((name) => {
+    const tab = [...document.querySelectorAll<HTMLElement>('.mdg-tab')].find((t) =>
+      new RegExp(name, 'i').test(t.textContent ?? ''),
+    );
+    if (!tab) return true;
+    const r = tab.getBoundingClientRect();
+    const top = document.elementFromPoint(r.left + r.width / 2, r.top + r.height / 2);
+    return !top || !(top === tab || tab.contains(top));
+  }, tabName);
+}
+
 async function chip(page: Page, isMobile: boolean, key: string): Promise<Locator> {
   if (isMobile) {
     await openControlsDrawer(page);
@@ -227,16 +249,10 @@ test.describe('/explore select = focus', () => {
       if (isMobile) {
         // On a phone (portrait) a body panel is a full-height sheet: it covers the
         // drawer, so its layer chips cannot be reached while the panel is open.
-        const tabCovered = await page.evaluate(() => {
-          const tab = [...document.querySelectorAll<HTMLElement>('.mdg-tab')].find((t) =>
-            /controls|layers/i.test(t.textContent ?? ''),
-          );
-          if (!tab) return true;
-          const r = tab.getBoundingClientRect();
-          const top = document.elementFromPoint(r.left + r.width / 2, r.top + r.height / 2);
-          return !top || !(top === tab || tab.contains(top));
-        });
-        test.skip(tabCovered, `${s.name}'s full-height sheet covers the Controls drawer`);
+        test.skip(
+          await controlsTabCovered(page),
+          `${s.name}'s full-height sheet covers the Controls drawer`,
+        );
       }
       await (await chip(page, isMobile, s.chip)).click();
       await expect(panels(page)).toHaveCount(0);
@@ -255,6 +271,11 @@ test.describe('/explore select = focus', () => {
   }) => {
     await openExplore(page, '?id=mars');
     await expect(panels(page).filter({ hasText: /Mars/ }).first()).toBeVisible({ timeout: 20_000 });
+    if (isMobile)
+      test.skip(
+        await controlsTabCovered(page),
+        "Mars's full-height sheet covers the Controls drawer",
+      );
     await (await chip(page, isMobile, 'dwarfs')).click();
     await expect(panels(page).filter({ hasText: /Mars/ }).first()).toBeVisible();
     await settled(page);
@@ -265,7 +286,8 @@ test.describe('/explore select = focus', () => {
     await openExplore(page);
     const dwarfs = await chip(page, isMobile, 'dwarfs');
     await dwarfs.click();
-    await expect(dwarfs).not.toHaveAttribute('aria-pressed', 'true');
+    // The phone drawer closes after a toggle (A5): reopen it to read the chip.
+    await expect(await chip(page, isMobile, 'dwarfs')).not.toHaveAttribute('aria-pressed', 'true');
     const panel = await openIndex(page);
     await indexRow(panel, 'ceres').click();
     await expect(panels(page).filter({ hasText: /Ceres/ }).first()).toBeVisible({
@@ -288,7 +310,15 @@ test.describe('/explore select = focus', () => {
     ).toBeVisible({
       timeout: 15_000,
     });
-    await (await chip(page, isMobile, 'paths')).click();
+    if (isMobile) {
+      // PATHS lives in the phone's Iconic Missions tab (A5), which the mission sheet covers.
+      test.skip(
+        await controlsTabCovered(page, 'missions'),
+        "Voyager 2's full-height sheet covers the Missions drawer",
+      );
+      await openDrawerTab(page, /missions/i);
+      await page.locator('.mdg-body [data-testid="layer-paths"]').click();
+    } else await (await chip(page, isMobile, 'paths')).click();
     await expect(panels(page)).toHaveCount(0);
   });
 
@@ -313,7 +343,9 @@ test.describe('/explore select = focus', () => {
 
   test('a milestone marker on a path opens its mission (IM5)', async ({ page }) => {
     await openExplore(page, '?paths=1');
-    const at = await clickablePoint(page, 'marker:voyager-2');
+    // The last marker (the Neptune encounter): the inner ones share their spot with other
+    // paths' markers on a phone's wide view, and the nearest marker takes the click.
+    const at = await clickablePoint(page, 'marker:voyager-2:last');
     await page.mouse.click(at.x, at.y);
     await expect(
       panels(page)
@@ -356,6 +388,13 @@ test.describe('/explore select = focus', () => {
     const solar = page.getByTestId('scale-index-toggle');
     await expect(solar).toHaveAttribute('aria-label', /^Body index/);
     const vp = page.viewportSize()!;
+    // On a phone Io's panel is a full-height sheet that takes the wheel: close it (× keeps the
+    // selection and the focus, UXD-019) so the wheel reaches the canvas.
+    const onCanvas = await page.evaluate(
+      ({ x, y }) => document.elementFromPoint(x, y)?.tagName === 'CANVAS',
+      { x: vp.width * 0.3, y: vp.height * 0.5 },
+    );
+    if (!onCanvas) await page.locator('aside.panel .panel-close').first().click();
     await page.mouse.move(vp.width * 0.3, vp.height * 0.5);
     // Io's own 50 radii (1.3 x 50 = 65 units) used to be the ceiling, where the next scroll
     // leaves the solar system. The ceiling is Jupiter's 50 radii now: scroll past 65 and stay.
@@ -378,6 +417,9 @@ test.describe('/explore select = focus', () => {
       timeout: 20_000,
     });
     await settled(page);
+    // On a phone Mars's panel is a full-height sheet over the scale picker: close it (× keeps the
+    // selection, UXD-019; Reset is what clears it below).
+    if (isMobile) await page.locator('aside.panel .panel-close').first().click();
     await page.getByTestId('explore-scale-toggle').click();
     await page.getByTestId('explore-scale-rung-neighborhood').click();
     const toggle = page.getByTestId('scale-index-toggle');
@@ -508,6 +550,22 @@ const OUTER = [
   { scale: 'cosmic-web', row: 'shapley-concentration' },
 ];
 
+/** The scale's Reset. On a phone the member's sheet and its backdrop lie over the navigator:
+ *  close the sheet first (× keeps the focus, UXD-019) so Reset is reachable. */
+async function clickReset(page: Page) {
+  const reset = page.getByTestId('explore-scale-reset');
+  const close = page.locator('aside.panel .panel-close').first();
+  if (await close.isVisible()) {
+    const free = await reset.evaluate((el) => {
+      const r = el.getBoundingClientRect();
+      const top = document.elementFromPoint(r.left + r.width / 2, r.top + r.height / 2);
+      return !!top && (top === el || el.contains(top));
+    });
+    if (!free) await close.click();
+  }
+  await reset.click();
+}
+
 test.describe('/explore outer scales: a member takes the camera, Reset gives it back', () => {
   // Nothing is skipped on any project. A cold load of an outer scale is heavy on the 2-CPU
   // landscape shard (the scene chunks, the data and the cross-out dolly run in sequence), so
@@ -530,7 +588,7 @@ test.describe('/explore outer scales: a member takes the camera, Reset gives it 
       const focused = await cam(page);
       expect(dist(focused.origin, [0, 0, 0]), 'the camera panned to the member').toBeGreaterThan(1);
       expect(focused.camR, 'and eased in').toBeLessThanOrEqual(entry.camR);
-      await page.getByTestId('explore-scale-reset').click();
+      await clickReset(page);
       await settled(page);
       const back = await cam(page);
       expect(dist(back.origin, [0, 0, 0])).toBeLessThan(0.01);
@@ -582,7 +640,7 @@ test.describe('/explore outer scales: a member takes the camera, Reset gives it 
     });
     await expect.poll(() => new URL(page.url()).searchParams.get('pick')).toBe('andromeda');
     expect(new URL(page.url()).searchParams.get('context')).toBe('local-group');
-    await page.getByTestId('explore-scale-reset').click();
+    await clickReset(page);
     await expect.poll(() => new URL(page.url()).searchParams.get('pick')).toBeNull();
   });
 });

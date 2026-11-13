@@ -229,6 +229,8 @@
       )
     );
     overflow-y: auto;
+    /* A narrow ruler (the <=600 px cap) cuts its title, it never scrolls sideways. */
+    overflow-x: hidden;
     overscroll-behavior: contain;
   }
   .ruler::-webkit-scrollbar {
@@ -275,6 +277,9 @@
     border-color: var(--color-state);
   }
   .ruler-title-text {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
     white-space: nowrap;
   }
   .ruler-chev {

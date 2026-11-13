@@ -24,11 +24,17 @@ export function regimeNum(x: number, locale: LocaleCode, decimals = 0): string {
   return formatNumber(x, locale, decimals);
 }
 
-export function fmtRegimeKm(alt: Band, locale: LocaleCode): string {
+/** `round` (the ruler row) gives a single altitude of 1,000 km or more to the nearest thousand; the
+ *  regime panel passes `round: false`, so its stat agrees with its text ("exactly 35,786 km"). */
+export function fmtRegimeKm(
+  alt: Band,
+  locale: LocaleCode,
+  { round = true }: { round?: boolean } = {},
+): string {
   const n = (x: number) => regimeNum(x, locale);
   if (typeof alt === 'number') {
     return m.mp_flight_unit_km(
-      { value: n(alt >= 1000 ? Math.round(alt / 1000) * 1000 : alt) },
+      { value: n(round && alt >= 1000 ? Math.round(alt / 1000) * 1000 : alt) },
       { locale },
     );
   }
@@ -42,8 +48,12 @@ export function fmtRegimeAU(d: Band, locale: LocaleCode): string {
   return m.unit_au_value({ value: `${fmt(d[0])}–${fmt(d[1])}` }, { locale });
 }
 
-export function fmtRegimeBand(r: OrbitRegime, locale: LocaleCode): string {
-  if (r.altitude_km != null) return fmtRegimeKm(r.altitude_km, locale);
+export function fmtRegimeBand(
+  r: OrbitRegime,
+  locale: LocaleCode,
+  opts: { round?: boolean } = {},
+): string {
+  if (r.altitude_km != null) return fmtRegimeKm(r.altitude_km, locale, opts);
   if (r.distance_au != null) return fmtRegimeAU(r.distance_au, locale);
   return '';
 }

@@ -1,6 +1,6 @@
 {
   "_note": "The Local Sheet / Local Volume (WS-1, RFC-039) — the galaxy groups within ~10 Mpc of the Local Group, arranged in the flattened Local Sheet. A SCHEMATIC, NOT TO SCALE (PRD-030 principle 2): the Local Group sits at the origin as the 'you are here' anchor, and each neighbouring group is placed in a thin illustrative layout. Distances (dist_mpc) + classifications are real; the xyz layout is hand-authored for legibility (matching the local-group.json precedent). The precise supergalactic-coordinate placement is deferred to the Virgo / Laniakea tiers where the plane's structure carries meaning.",
-  "_provenance": "Distances + types: NASA/IPAC NED, Karachentsev Local Volume catalogue (2013), Anand et al. TRGB distances (2018–2019), Tully et al. Cosmicflows. Schematic positions hand-authored for legibility. Science-reviewed 2026-08-08 (IC 342 + Maffei split into distinct groups; NGC 6946 → 7.7 Mpc; Sculptor → 3.7 Mpc).",
+  "_provenance": "Distances + types: NASA/IPAC NED, Karachentsev Local Volume catalogue (2013), Anand et al. TRGB distances (2018–2019), Tully et al. Cosmicflows. Schematic positions hand-authored for legibility. Science-reviewed 2026-08-08 (IC 342 + Maffei split into distinct groups; NGC 6946 → 7.7 Mpc; Sculptor → 3.7 Mpc). Distance sources: `catalogue.dist_mpc` where a paper states the value (scripts/lib/structure-distance-catalogue.mjs, batch 06 review); a member with no entry is an anchor or its distance is unsourced.",
   "extent_mpc": 10,
   "members": [
     {
@@ -23,7 +23,16 @@
       "diam_mly": 3,
       "x": -2.6,
       "y": 0.4,
-      "z": 1.9
+      "z": 1.9,
+      "catalogue": {
+        "dist_mpc": {
+          "value": 3.3,
+          "source": "Wu et al. 2014, infrared tip-of-the-red-giant-branch distance to IC 342, 3.45 ± 0.13 Mpc",
+          "bibcode": null,
+          "record_url": "https://arxiv.org/abs/1404.2987",
+          "note": "IC 342: 3.45 ± 0.13 Mpc; the group value here is 3.3 Mpc, within 1.2 sigma"
+        }
+      }
     },
     {
       "id": "m81-group",
@@ -45,7 +54,16 @@
       "diam_mly": 5,
       "x": 2.9,
       "y": -0.6,
-      "z": -2.2
+      "z": -2.2,
+      "catalogue": {
+        "dist_mpc": {
+          "value": 3.8,
+          "source": "Karachentsev et al. 2007, Centaurus A group distance, Cen A 3.76 ± 0.05 Mpc",
+          "bibcode": null,
+          "record_url": "https://arxiv.org/abs/astro-ph/0603091",
+          "note": "Cen A sub-group: 3.76 ± 0.05 Mpc; the M83 sub-group is at 4.79 ± 0.10 Mpc"
+        }
+      }
     },
     {
       "id": "sculptor-group",
@@ -56,7 +74,16 @@
       "diam_mly": 3,
       "x": 1.4,
       "y": -0.5,
-      "z": 3.1
+      "z": 3.1,
+      "catalogue": {
+        "dist_mpc": {
+          "value": 3.7,
+          "source": "Karachentsev et al. 2021, Sculptor group dwarf galaxies at 3.62 and 3.66 Mpc",
+          "bibcode": null,
+          "record_url": "https://arxiv.org/abs/2102.11354",
+          "note": "two dwarfs at 3.62 and 3.66 Mpc; NGC 253 is at 3.94 Mpc (Karachentsev et al. 2003); the group value here is 3.7 Mpc"
+        }
+      }
     },
     {
       "id": "canes-venatici-i",
@@ -67,7 +94,16 @@
       "diam_mly": 4,
       "x": -3.6,
       "y": 0.3,
-      "z": 1.2
+      "z": 1.2,
+      "catalogue": {
+        "dist_mpc": {
+          "value": 4,
+          "source": "Karachentsev et al. 2003, Canes Venatici I cloud, 4.1 ± 0.2 Mpc",
+          "bibcode": null,
+          "record_url": "https://arxiv.org/abs/astro-ph/0210414",
+          "note": "cloud: 4.1 ± 0.2 Mpc; the value here is 4.0 Mpc, within the error"
+        }
+      }
     },
     {
       "id": "maffei-group",
@@ -78,7 +114,15 @@
       "diam_mly": 3,
       "x": -4.6,
       "y": 0.9,
-      "z": 3.2
+      "z": 3.2,
+      "catalogue": {
+        "dist_mpc": {
+          "value": 5.7,
+          "source": "Anand et al. 2019, tip-of-the-red-giant-branch distance to Maffei 2, 5.73 ± 0.40 Mpc",
+          "bibcode": null,
+          "record_url": "https://arxiv.org/abs/1901.05981"
+        }
+      }
     },
     {
       "id": "ngc-6946-group",
@@ -89,18 +133,35 @@
       "diam_mly": 2,
       "x": -5.6,
       "y": 0.6,
-      "z": 3.6
+      "z": 3.6,
+      "catalogue": {
+        "dist_mpc": {
+          "value": 7.7,
+          "source": "Anand, Rizzi and Tully 2018, distance to NGC 6946, 7.72 ± 0.32 Mpc",
+          "bibcode": null,
+          "record_url": "https://arxiv.org/abs/1807.05229"
+        }
+      }
     },
     {
       "id": "m101-group",
       "name": "M101 Group (Pinwheel)",
       "kind": "group",
       "headliner": false,
-      "dist_mpc": 7.0,
+      "dist_mpc": 7,
       "diam_mly": 3,
       "x": -5.2,
       "y": 1,
-      "z": -2.6
+      "z": -2.6,
+      "catalogue": {
+        "dist_mpc": {
+          "value": 7,
+          "source": "Müller et al. 2017, distance to M101, 7.0 Mpc",
+          "bibcode": null,
+          "record_url": "https://arxiv.org/abs/1701.03681",
+          "note": "M101: 7.0 Mpc; an earlier value of 6.4 Mpc is superseded"
+        }
+      }
     }
   ]
 }

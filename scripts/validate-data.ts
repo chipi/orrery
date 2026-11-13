@@ -863,6 +863,14 @@ validateFile(join(DATA_ROOT, 'local-group-galaxies.json'), validateLocalGroupGal
     );
   }
 }
+// Structure distances: an entry is optional (an anchor, or no paper states the value), but one that
+// exists must be sourced and equal the displayed distance.
+for (const f of ['local-sheet', 'virgo-cluster', 'laniakea', 'cosmic-web']) {
+  const path = join(DATA_ROOT, 'universe', `${f}.json`);
+  if (!existsSync(path)) continue;
+  const doc = readJson(path) as { members: CatalogueRow[] };
+  checkCatalogue(`universe/${f}.json`, doc.members, { dist_mpc: (r) => r.dist_mpc }, () => []);
+}
 // B3 (UXD-023): the heroes of the outer-scale and black-hole panels and the stars' extra images.
 // Every key names a file that exists and a provenance row, so /credits lists what a panel shows.
 {

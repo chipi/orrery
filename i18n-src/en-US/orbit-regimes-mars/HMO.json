@@ -9,7 +9,11 @@
     { "id": "viking1-orbiter", "label": "Viking 1 orbiter (1976-1980)", "agency": "NASA" }
   ],
   "firsts": [
-    { "year": 1971, "label": "Mariner 9 — first artificial satellite of any planet other than Earth (USA)", "mission_id": "mariner9" }
+    {
+      "year": 1971,
+      "label": "Mariner 9 — first artificial satellite of any planet other than Earth",
+      "mission_id": "mariner9"
+    }
   ],
   "science_link": {
     "tab": "orbits",

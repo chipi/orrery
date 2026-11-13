@@ -7,11 +7,13 @@
   "firsts": [
     {
       "year": 2012,
-      "label": "Voyager 1 cruza la heliopausa: primer artefacto en el espacio interestelar (EE. UU.)"
+      "label": "Voyager 1 cruza la heliopausa: primer artefacto en el espacio interestelar",
+      "mission_id": "voyager-1"
     },
     {
       "year": 2018,
-      "label": "Voyager 2 cruza la heliopausa (EE.UU.)"
+      "label": "Voyager 2 cruza la heliopausa",
+      "mission_id": "voyager-2"
     }
   ],
   "science_link": {

@@ -28,15 +28,17 @@
   "firsts": [
     {
       "year": 1962,
-      "label": "Mariner 2 — primer sobrevuelo de Venus (EE. UU.)"
+      "label": "Mariner 2 — primer sobrevuelo de Venus"
     },
     {
       "year": 1965,
-      "label": "Mariner 4 — primer sobrevuelo de Marte (EE. UU.)"
+      "label": "Mariner 4 — primer sobrevuelo de Marte",
+      "mission_id": "mariner4"
     },
     {
       "year": 1974,
-      "label": "Mariner 10 — primer sobrevuelo de Mercurio (EE. UU.)"
+      "label": "Mariner 10 — primer sobrevuelo de Mercurio",
+      "mission_id": "mariner10"
     }
   ],
   "science_link": {

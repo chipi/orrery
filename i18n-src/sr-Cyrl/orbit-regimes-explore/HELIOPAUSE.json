@@ -7,13 +7,13 @@
   "firsts": [
     {
       "year": 2012,
-      "label": "Voyager 1 прелази хелиопаузу — први артефакт у међузвезданом простору (САД)",
-      "mission_id": ""
+      "label": "Voyager 1 прелази хелиопаузу — први артефакт у међузвезданом простору",
+      "mission_id": "voyager-1"
     },
     {
       "year": 2018,
-      "label": "Voyager 2 прелази хелиопаузу (САД)",
-      "mission_id": ""
+      "label": "Voyager 2 прелази хелиопаузу",
+      "mission_id": "voyager-2"
     }
   ],
   "science_link": {

@@ -7,11 +7,13 @@
   "firsts": [
     {
       "year": 2012,
-      "label": "Voyager 1, 태양권계면 통과 — 성간 공간의 첫 인공물 (미국)"
+      "label": "Voyager 1, 태양권계면 통과 — 성간 공간의 첫 인공물",
+      "mission_id": "voyager-1"
     },
     {
       "year": 2018,
-      "label": "Voyager 2, 태양권계면 통과 (미국)"
+      "label": "Voyager 2, 태양권계면 통과",
+      "mission_id": "voyager-2"
     }
   ],
   "science_link": {

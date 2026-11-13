@@ -13,11 +13,13 @@
   "firsts": [
     {
       "year": 2018,
-      "label": "Parker Solar Probe — il sorvolo più ravvicinato del Sole mai effettuato (USA)"
+      "label": "Parker Solar Probe — il sorvolo più ravvicinato del Sole mai effettuato",
+      "mission_id": "parker-solar-probe"
     },
     {
       "year": 2020,
-      "label": "Solar Orbiter — prima acquisizione di immagini ravvicinate del Sole (ESA)"
+      "label": "Solar Orbiter — prima acquisizione di immagini ravvicinate del Sole",
+      "mission_id": "solar-orbiter"
     }
   ],
   "science_link": {

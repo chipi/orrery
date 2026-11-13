@@ -38,15 +38,17 @@
   "firsts": [
     {
       "year": 1930,
-      "label": "冥王星発見 — 最初のKBO確認(Tombaugh, USA)"
+      "label": "冥王星発見 — 最初のKBO確認(Tombaugh)"
     },
     {
       "year": 2015,
-      "label": "New Horizons — 初の冥王星フライバイ(アメリカ)"
+      "label": "New Horizons — 初の冥王星フライバイ",
+      "mission_id": "new-horizons"
     },
     {
       "year": 2019,
-      "label": "New Horizonsがアロコスへ — 史上最遠の天体訪問(アメリカ)"
+      "label": "New Horizonsがアロコスへ — 史上最遠の天体訪問",
+      "mission_id": "new-horizons"
     }
   ],
   "science_link": {

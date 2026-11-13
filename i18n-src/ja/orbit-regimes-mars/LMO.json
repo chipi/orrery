@@ -43,12 +43,13 @@
   "firsts": [
     {
       "year": 1971,
-      "label": "Mariner 9 — 初の人工火星衛星 (アメリカ)",
+      "label": "Mariner 9 — 初の人工火星衛星",
       "mission_id": "mariner9"
     },
     {
       "year": 2003,
-      "label": "Mars Express — ESA初の火星ミッション"
+      "label": "Mars Express — ESA初の火星ミッション",
+      "mission_id": "mars-express"
     }
   ],
   "science_link": {

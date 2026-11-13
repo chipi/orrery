@@ -12,9 +12,13 @@
     { "id": "arrokoth", "label": "Arrokoth — 44.6 AU, contact binary", "agency": "NATURAL" }
   ],
   "firsts": [
-    { "year": 1930, "label": "Pluto discovered — first KBO identified (Tombaugh, USA)" },
-    { "year": 2015, "label": "New Horizons — first Pluto flyby (USA)" },
-    { "year": 2019, "label": "New Horizons at Arrokoth — most distant body ever visited (USA)" }
+    { "year": 1930, "label": "Pluto discovered — first KBO identified (Tombaugh)" },
+    { "year": 2015, "label": "New Horizons — first Pluto flyby", "mission_id": "new-horizons" },
+    {
+      "year": 2019,
+      "label": "New Horizons at Arrokoth — most distant body ever visited",
+      "mission_id": "new-horizons"
+    }
   ],
   "science_link": {
     "tab": "planets",

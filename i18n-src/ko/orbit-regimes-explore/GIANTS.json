@@ -28,19 +28,22 @@
   "firsts": [
     {
       "year": 1973,
-      "label": "Pioneer 10 — 최초의 목성 근접 비행 (미국)"
+      "label": "Pioneer 10 — 최초의 목성 근접 비행",
+      "mission_id": "pioneer-10"
     },
     {
       "year": 1986,
-      "label": "Voyager 2 — 유일한 천왕성 근접 비행 (미국)"
+      "label": "Voyager 2 — 유일한 천왕성 근접 비행",
+      "mission_id": "voyager-2"
     },
     {
       "year": 1989,
-      "label": "Voyager 2 — 유일한 해왕성 근접 비행 (미국)"
+      "label": "Voyager 2 — 유일한 해왕성 근접 비행",
+      "mission_id": "voyager-2"
     },
     {
       "year": 1995,
-      "label": "Galileo — 최초의 목성 궤도선 (미국)",
+      "label": "Galileo — 최초의 목성 궤도선",
       "mission_id": "galileo"
     }
   ],

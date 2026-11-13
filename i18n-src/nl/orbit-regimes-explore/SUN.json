@@ -13,11 +13,13 @@
   "firsts": [
     {
       "year": 2018,
-      "label": "Parker Solar Probe — dichtste flyby ooit langs de Zon (VS)"
+      "label": "Parker Solar Probe — dichtste flyby ooit langs de Zon",
+      "mission_id": "parker-solar-probe"
     },
     {
       "year": 2020,
-      "label": "Solar Orbiter — eerste beeldvorming dicht bij de Zon (ESA)"
+      "label": "Solar Orbiter — eerste beeldvorming dicht bij de Zon",
+      "mission_id": "solar-orbiter"
     }
   ],
   "science_link": {

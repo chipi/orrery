@@ -28,11 +28,12 @@
   "firsts": [
     {
       "year": 1801,
-      "label": "세레스 — 최초로 발견된 소행성 (피아치, Italy)"
+      "label": "세레스 — 최초로 발견된 소행성 (피아치)"
     },
     {
       "year": 2011,
-      "label": "Dawn — 최초의 전용 소행성 궤도선 (베스타, USA)"
+      "label": "Dawn — 최초의 전용 소행성 궤도선 (베스타)",
+      "mission_id": "dawn"
     }
   ],
   "science_link": {

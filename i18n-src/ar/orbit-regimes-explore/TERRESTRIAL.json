@@ -28,18 +28,17 @@
   "firsts": [
     {
       "year": 1962,
-      "label": "Mariner 2 — أول تحليق بالقرب من الزهرة (الولايات المتحدة)",
-      "mission_id": "mariner-2"
+      "label": "Mariner 2 — أول تحليق بالقرب من الزهرة"
     },
     {
       "year": 1965,
-      "label": "Mariner 4 — أول تحليق بالقرب من المريخ (الولايات المتحدة)",
-      "mission_id": "mariner-4"
+      "label": "Mariner 4 — أول تحليق بالقرب من المريخ",
+      "mission_id": "mariner4"
     },
     {
       "year": 1974,
-      "label": "Mariner 10 — أول تحليق بالقرب من عطارد (الولايات المتحدة)",
-      "mission_id": "mariner-10"
+      "label": "Mariner 10 — أول تحليق بالقرب من عطارد",
+      "mission_id": "mariner10"
     }
   ],
   "science_link": {

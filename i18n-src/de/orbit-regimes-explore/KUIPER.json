@@ -38,15 +38,17 @@
   "firsts": [
     {
       "year": 1930,
-      "label": "Pluto entdeckt — erstes KBO identifiziert (Tombaugh, USA)"
+      "label": "Pluto entdeckt — erstes KBO identifiziert (Tombaugh)"
     },
     {
       "year": 2015,
-      "label": "New Horizons — erster Pluto-Vorbeiflug (USA)"
+      "label": "New Horizons — erster Pluto-Vorbeiflug",
+      "mission_id": "new-horizons"
     },
     {
       "year": 2019,
-      "label": "New Horizons bei Arrokoth — am weitesten entfernt besuchter Körper (USA)"
+      "label": "New Horizons bei Arrokoth — am weitesten entfernt besuchter Körper",
+      "mission_id": "new-horizons"
     }
   ],
   "science_link": {

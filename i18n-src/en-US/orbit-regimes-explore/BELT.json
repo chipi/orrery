@@ -10,8 +10,12 @@
     { "id": "hygiea", "label": "Hygiea — fourth-largest, possibly dwarf", "agency": "NATURAL" }
   ],
   "firsts": [
-    { "year": 1801, "label": "Ceres — first asteroid discovered (Piazzi, Italy)" },
-    { "year": 2011, "label": "Dawn — first dedicated asteroid orbiter (Vesta, USA)" }
+    { "year": 1801, "label": "Ceres — first asteroid discovered (Piazzi)" },
+    {
+      "year": 2011,
+      "label": "Dawn — first dedicated asteroid orbiter (Vesta)",
+      "mission_id": "dawn"
+    }
   ],
   "science_link": {
     "tab": "planets",

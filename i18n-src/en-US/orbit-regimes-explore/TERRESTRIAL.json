@@ -28,15 +28,17 @@
   "firsts": [
     {
       "year": 1962,
-      "label": "Mariner 2 — first Venus flyby (USA)"
+      "label": "Mariner 2 — first Venus flyby"
     },
     {
       "year": 1965,
-      "label": "Mariner 4 — first Mars flyby (USA)"
+      "label": "Mariner 4 — first Mars flyby",
+      "mission_id": "mariner4"
     },
     {
       "year": 1974,
-      "label": "Mariner 10 — first Mercury flyby (USA)"
+      "label": "Mariner 10 — first Mercury flyby",
+      "mission_id": "mariner10"
     }
   ],
   "science_link": {

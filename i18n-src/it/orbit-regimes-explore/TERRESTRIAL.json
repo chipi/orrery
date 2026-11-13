@@ -28,15 +28,17 @@
   "firsts": [
     {
       "year": 1962,
-      "label": "Mariner 2 — primo sorvolo di Venere (USA)"
+      "label": "Mariner 2 — primo sorvolo di Venere"
     },
     {
       "year": 1965,
-      "label": "Mariner 4 — primo sorvolo di Marte (USA)"
+      "label": "Mariner 4 — primo sorvolo di Marte",
+      "mission_id": "mariner4"
     },
     {
       "year": 1974,
-      "label": "Mariner 10 — primo sorvolo di Mercurio (USA)"
+      "label": "Mariner 10 — primo sorvolo di Mercurio",
+      "mission_id": "mariner10"
     }
   ],
   "science_link": {

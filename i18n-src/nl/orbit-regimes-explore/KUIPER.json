@@ -38,15 +38,17 @@
   "firsts": [
     {
       "year": 1930,
-      "label": "Pluto ontdekt — eerste KBO geïdentificeerd (Tombaugh, USA)"
+      "label": "Pluto ontdekt — eerste KBO geïdentificeerd (Tombaugh)"
     },
     {
       "year": 2015,
-      "label": "New Horizons — eerste Pluto-scheervlucht (VS)"
+      "label": "New Horizons — eerste Pluto-scheervlucht",
+      "mission_id": "new-horizons"
     },
     {
       "year": 2019,
-      "label": "New Horizons bij Arrokoth — het verst verwijderde lichaam dat ooit is bezocht (VS)"
+      "label": "New Horizons bij Arrokoth — het verst verwijderde lichaam dat ooit is bezocht",
+      "mission_id": "new-horizons"
     }
   ],
   "science_link": {

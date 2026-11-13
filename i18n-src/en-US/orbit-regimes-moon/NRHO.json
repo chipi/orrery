@@ -8,7 +8,7 @@
     { "id": "gateway", "label": "Lunar Gateway (paused in 2026)", "agency": "NASA" }
   ],
   "firsts": [
-    { "year": 2022, "label": "CAPSTONE — first NRHO operational flight (USA)" }
+    { "year": 2022, "label": "CAPSTONE — first NRHO operational flight" }
   ],
   "science_link": {
     "tab": "mission-phases",

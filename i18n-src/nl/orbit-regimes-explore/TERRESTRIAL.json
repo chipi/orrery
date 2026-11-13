@@ -28,15 +28,17 @@
   "firsts": [
     {
       "year": 1962,
-      "label": "Mariner 2 — eerste Venus-voorbijvlucht (VS)"
+      "label": "Mariner 2 — eerste Venus-voorbijvlucht"
     },
     {
       "year": 1965,
-      "label": "Mariner 4 — eerste Mars-voorbijvlucht (VS)"
+      "label": "Mariner 4 — eerste Mars-voorbijvlucht",
+      "mission_id": "mariner4"
     },
     {
       "year": 1974,
-      "label": "Mariner 10 — eerste Mercurius-voorbijvlucht (VS)"
+      "label": "Mariner 10 — eerste Mercurius-voorbijvlucht",
+      "mission_id": "mariner10"
     }
   ],
   "science_link": {

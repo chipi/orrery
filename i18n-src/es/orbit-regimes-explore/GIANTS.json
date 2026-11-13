@@ -28,19 +28,22 @@
   "firsts": [
     {
       "year": 1973,
-      "label": "Pioneer 10 — primer sobrevuelo de Júpiter (EE. UU.)"
+      "label": "Pioneer 10 — primer sobrevuelo de Júpiter",
+      "mission_id": "pioneer-10"
     },
     {
       "year": 1986,
-      "label": "Voyager 2 — único sobrevuelo de Urano jamás realizado (EE. UU.)"
+      "label": "Voyager 2 — único sobrevuelo de Urano jamás realizado",
+      "mission_id": "voyager-2"
     },
     {
       "year": 1989,
-      "label": "Voyager 2 — único sobrevuelo de Neptuno jamás realizado (EE. UU.)"
+      "label": "Voyager 2 — único sobrevuelo de Neptuno jamás realizado",
+      "mission_id": "voyager-2"
     },
     {
       "year": 1995,
-      "label": "Galileo — primer orbitador de Júpiter (EE. UU.)",
+      "label": "Galileo — primer orbitador de Júpiter",
       "mission_id": "galileo"
     }
   ],

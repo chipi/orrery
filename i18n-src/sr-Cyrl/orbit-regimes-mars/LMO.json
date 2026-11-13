@@ -43,12 +43,13 @@
   "firsts": [
     {
       "year": 1971,
-      "label": "Mariner 9 — први вештачки сателит Марса (САД)",
+      "label": "Mariner 9 — први вештачки сателит Марса",
       "mission_id": "mariner9"
     },
     {
       "year": 2003,
-      "label": "Mars Express — прва мисија агенције ESA ка Марсу"
+      "label": "Mars Express — прва мисија агенције ESA ка Марсу",
+      "mission_id": "mars-express"
     }
   ],
   "science_link": {

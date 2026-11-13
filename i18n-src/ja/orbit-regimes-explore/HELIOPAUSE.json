@@ -7,11 +7,13 @@
   "firsts": [
     {
       "year": 2012,
-      "label": "Voyager 1がヘリオポーズを通過――星間空間に到達した初の人工物 (アメリカ)"
+      "label": "Voyager 1がヘリオポーズを通過――星間空間に到達した初の人工物",
+      "mission_id": "voyager-1"
     },
     {
       "year": 2018,
-      "label": "Voyager 2がヘリオポーズを通過 (アメリカ)"
+      "label": "Voyager 2がヘリオポーズを通過",
+      "mission_id": "voyager-2"
     }
   ],
   "science_link": {

@@ -28,19 +28,22 @@
   "firsts": [
     {
       "year": 1973,
-      "label": "Pioneer 10 — first Jupiter flyby (USA)"
+      "label": "Pioneer 10 — first Jupiter flyby",
+      "mission_id": "pioneer-10"
     },
     {
       "year": 1986,
-      "label": "Voyager 2 — only Uranus flyby ever (USA)"
+      "label": "Voyager 2 — only Uranus flyby ever",
+      "mission_id": "voyager-2"
     },
     {
       "year": 1989,
-      "label": "Voyager 2 — only Neptune flyby ever (USA)"
+      "label": "Voyager 2 — only Neptune flyby ever",
+      "mission_id": "voyager-2"
     },
     {
       "year": 1995,
-      "label": "Galileo — first Jupiter orbiter (USA)",
+      "label": "Galileo — first Jupiter orbiter",
       "mission_id": "galileo"
     }
   ],

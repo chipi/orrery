@@ -53,6 +53,8 @@ const TASKS: Task[] = [
   { name: 'check-tech-bom', cmd: 'tsx', args: ['scripts/build-tech-bom.ts', '--check'] },
   { name: 'check-doc-counts', cmd: 'node', args: ['scripts/gen-doc-counts.mjs', '--check'] },
   { name: 'check-version-sync', cmd: 'node', args: ['scripts/check-version-sync.mjs'] },
+  // A bare paraglide compile writes src/paraglide/, which empties svelte-check's program.
+  { name: 'check-stray-paraglide', cmd: 'node', args: ['scripts/check-stray-paraglide.mjs'] },
   // In-app links held in data, overlays and messages (every locale): route,
   // query parameter and selected id must exist. Panel links never reach the
   // prerendered HTML that check-internal-links.mjs reads.

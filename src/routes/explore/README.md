@@ -40,7 +40,7 @@ Milky Way globular and Local Group rows of the same object link it (`DEEP_SKY_AL
 the groups, clouds, clusters, superclusters, walls and void of the four outer scales (ADR-096 item 18;
 server loads → `$lib/data/outer-entity`, `getGalaxyEntity` / `getStructureEntity`; ids from
 `galaxyPageIds()` / `structurePageIds()`, the overlay files under `i18n-src/en-US/universe/galaxies|structures/`,
-so a page exists only once its text does and both lists are empty until the text batches land; names are the glossary's (`getOuterNames`, one string in the INDEX row, the panel and the page; the load also hands the panels `outerOverlays`, the ids whose text they may ask for); both
+so a page exists only once its text does (29 galaxies and 30 structures since 2026-11-13, deep-text batches 05 and 06); names are the glossary's (`getOuterNames`, one string in the INDEX row, the panel and the page; the load also hands the panels `outerOverlays`, the ids whose text they may ask for); both
 `+page.svelte` are one line over `$lib/components/OuterEntityPage.svelte`; `svelte.config.js`
 tolerates the two empty page types in `handleUnseenRoutes`; back-link `/explore?context=<scale>&pick=<id>`). There is no list page: the
 INDEX does that job. `+page.svelte` mounts one `ScaleIndex` per scale (`CTX_ORDER`), all hidden

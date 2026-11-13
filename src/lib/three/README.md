@@ -18,6 +18,7 @@ these first before hand-rolling raf loops, listener registries, or
 | Closest 2D NDC hit testing | `pickClosest2D` (existing) | screen-space pick fallback for routes that don't run a full Three.js raycast |
 | Object3D disposal walk | `disposeObject3D` (existing) | recursive geometry / material / texture dispose |
 | The orbit ruler's regime in a scene | `buildRegimeHighlight` | one group of annulus + `Line2` edges, great-circle shell or pin rings per regime shape (`$lib/orbit-regime-geometry`), `set(hover, active)`, `update(camera, w, h, t, still)` per frame, `dispose()`; `explore-scene-host.ts` and `SurfaceScene` both use it (UXD-024) |
+| An iconic mission's trajectory, markers and boxes | `buildIconicTrajectory` (`iconic-trajectory.ts`) + `iconic-box.ts` | the Line2 path, the milestone markers (the pick contract: `PICK_KINDS`, `userData`, `pickTargets`), the per-frame sizing and placement of the milestone boxes (`n/N · date` header, name body, 12 px at any zoom, drawn at the first highlight) and the one mission box at Today, through `universe/scene-pins.ts` `placeLabels` (UXD-026); `iconic-box.ts` is the pure text and size part (`boxHeader`, `wrapText`, `layoutBox`) |
 | Soft-edged alpha mask for a square patch | `featherMask(edge)` | smoothstep fade over the outer `edge` fraction; each call returns its own texture over one cached buffer, so `disposeObject3D` on one patch never strips the mask from the others (#641) |
 
 ## Colour pipeline — one output step

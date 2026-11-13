@@ -19,6 +19,8 @@
   import Chip from '$lib/components/Chip.svelte';
   import ChipGroup from '$lib/components/ChipGroup.svelte';
   import EntityThumb from '$lib/components/EntityThumb.svelte';
+  import IndexFiltersToggle from '$lib/components/IndexFiltersToggle.svelte';
+  import '$lib/styles/index-panel.css';
   import { roving } from '$lib/a11y/roving';
   import { localHref } from '$lib/locale';
   import {
@@ -60,6 +62,14 @@
   let agencyFilter = $state<string>('ALL');
   let statusFilter = $state<string>('ALL');
   let eraFilter = $state<string>('ALL');
+  // The agency, era and status groups are folded behind the FILTERS button; starts closed. The
+  // filter state is not touched by folding.
+  let foldOpen = $state(false);
+  const foldedOn = $derived(
+    [agencyFilter, eraFilter, statusFilter].filter((v) => v !== 'ALL').length,
+  );
+  const uid = $props.id();
+  const foldId = `sidx-fold-${uid}`;
 
   const agencies = $derived(indexAgencies(items));
   const statuses = $derived(indexStatuses(items));
@@ -148,42 +158,63 @@
         >
       </ChipGroup>
     {/if}
-
-    <ChipGroup role="radiogroup" label={m.surface_index_filter_agency()}>
-      <Chip kind="choice" active={agencyFilter === 'ALL'} onclick={() => (agencyFilter = 'ALL')}
-        >{m.surface_index_all()}</Chip
-      >
-      {#each agencies as a (a)}
-        <Chip kind="choice" active={agencyFilter === a} onclick={() => (agencyFilter = a)}>
-          <AgencyBadge agency={a} /><span>{a}</span>
-        </Chip>
-      {/each}
-    </ChipGroup>
-
-    <ChipGroup role="radiogroup" label={m.surface_index_filter_era()}>
-      <Chip kind="choice" active={eraFilter === 'ALL'} onclick={() => (eraFilter = 'ALL')}
-        >{m.surface_index_all()}</Chip
-      >
-      {#each ERAS as e (e.id)}
-        <Chip kind="choice" active={eraFilter === e.id} onclick={() => (eraFilter = e.id)}
-          >{e.label}</Chip
-        >
-      {/each}
-    </ChipGroup>
-
-    <ChipGroup role="radiogroup" label={m.surface_index_filter_status()}>
-      <Chip kind="choice" active={statusFilter === 'ALL'} onclick={() => (statusFilter = 'ALL')}
-        >{m.surface_index_all()}</Chip
-      >
-      {#each statuses as s (s)}
-        <Chip kind="choice" active={statusFilter === s} onclick={() => (statusFilter = s)}
-          >{surfaceStatusLabel(s)}</Chip
-        >
-      {/each}
-    </ChipGroup>
   </div>
 
-  <div class="sidx-count">{filtered.length} / {items.length}</div>
+  <!-- Folded filters (C6-F): agency, era and status sit behind the FILTERS button beside the
+       count; the button keeps the number of filters on while the fold is closed. -->
+  <div class="sidx-count-line">
+    <div class="sidx-count">{filtered.length} / {items.length}</div>
+    <IndexFiltersToggle
+      open={foldOpen}
+      count={foldedOn}
+      controls={foldId}
+      onclick={() => (foldOpen = !foldOpen)}
+    />
+  </div>
+
+  <div class="sidx-fold idx-fold" id={foldId} hidden={!foldOpen}>
+    <div class="idx-fold-group">
+      <span class="idx-fold-label">{m.fleet_filter_agency()}</span>
+      <ChipGroup role="radiogroup" label={m.surface_index_filter_agency()}>
+        <Chip kind="choice" active={agencyFilter === 'ALL'} onclick={() => (agencyFilter = 'ALL')}
+          >{m.surface_index_all()}</Chip
+        >
+        {#each agencies as a (a)}
+          <Chip kind="choice" active={agencyFilter === a} onclick={() => (agencyFilter = a)}>
+            <AgencyBadge agency={a} /><span>{a}</span>
+          </Chip>
+        {/each}
+      </ChipGroup>
+    </div>
+
+    <div class="idx-fold-group">
+      <span class="idx-fold-label">{m.card_stat_era()}</span>
+      <ChipGroup role="radiogroup" label={m.surface_index_filter_era()}>
+        <Chip kind="choice" active={eraFilter === 'ALL'} onclick={() => (eraFilter = 'ALL')}
+          >{m.surface_index_all()}</Chip
+        >
+        {#each ERAS as e (e.id)}
+          <Chip kind="choice" active={eraFilter === e.id} onclick={() => (eraFilter = e.id)}
+            >{e.label}</Chip
+          >
+        {/each}
+      </ChipGroup>
+    </div>
+
+    <div class="idx-fold-group">
+      <span class="idx-fold-label">{m.fleet_filter_status()}</span>
+      <ChipGroup role="radiogroup" label={m.surface_index_filter_status()}>
+        <Chip kind="choice" active={statusFilter === 'ALL'} onclick={() => (statusFilter = 'ALL')}
+          >{m.surface_index_all()}</Chip
+        >
+        {#each statuses as s (s)}
+          <Chip kind="choice" active={statusFilter === s} onclick={() => (statusFilter = s)}
+            >{surfaceStatusLabel(s)}</Chip
+          >
+        {/each}
+      </ChipGroup>
+    </div>
+  </div>
 
   <!-- Roving (RFC-031 S3): the surface site index (moon/mars/earth) is one Tab
        stop; ↑↓ / TV D-pad move between sites, Enter selects. Gives the canvas
@@ -280,14 +311,23 @@
     gap: 5px;
     margin-bottom: 8px;
   }
-  .sidx-filters :global(.badge) {
+  .sidx-filters:empty {
+    display: none;
+  }
+  .sidx-fold :global(.badge) {
     height: 13px;
+  }
+  .sidx-count-line {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 4px;
   }
   .sidx-count {
     font-size: var(--size-label);
     letter-spacing: 0.5px;
     color: var(--color-text-dim);
-    margin-bottom: 4px;
   }
   .sidx-list {
     list-style: none;
@@ -298,17 +338,17 @@
     overflow-y: auto;
     overscroll-behavior: contain;
   }
-  /* Landscape phones are short: the wrapped filter chips (esp. under Linux font
-     metrics) can eat the whole panel and squeeze the flex:1 list to zero. Cap
-     the filters so they scroll internally and the list always keeps a real
-     scroll area, and guarantee the list a minimum visible height. */
+  /* Landscape phones are short: an open FILTERS fold (the agency chips wrap to several lines) can
+     eat the whole panel and squeeze the flex:1 list to zero. The panel scrolls as a whole, as the
+     solar INDEX does, and the list keeps a real minimum height. */
   @media (max-height: 500px) {
-    .sidx-filters {
-      max-height: 42%;
+    .sidx {
       overflow-y: auto;
+      overscroll-behavior: contain;
     }
     .sidx-list {
-      min-height: 96px;
+      flex: none;
+      min-height: 132px;
     }
   }
   .sidx-item {

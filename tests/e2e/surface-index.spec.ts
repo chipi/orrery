@@ -146,6 +146,81 @@ test.describe('surface object index', () => {
     expect(Math.abs((await x('apollo12')) - (await x('apollo16')))).toBeLessThan(1);
   });
 
+  test('agency, era and status are folded behind one FILTERS button beside the count; the fold keeps its state and the button its count (C6-F)', async ({
+    page,
+  }, testInfo) => {
+    test.skip(
+      testInfo.project.name === 'mobile-chromium',
+      'the index is a desktop and landscape tab',
+    );
+    await page.goto('/moon', { waitUntil: 'networkidle' });
+    await page.waitForSelector('html[data-hydrated]', { state: 'attached', timeout: 45_000 });
+    await page.locator('[data-testid="surface-index-toggle"]').click({ timeout: 45_000 });
+    const list = page.locator('[data-testid="surface-index-list"]');
+    await expect(list).toBeVisible();
+    const panel = page.locator('.sidx').filter({ has: list });
+    const btn = panel.getByTestId('index-filters-toggle');
+    const count = panel.locator('.sidx-count');
+
+    // Closed at the start: the domain chips are on one line, the three groups are not shown.
+    await expect(btn).toHaveAttribute('aria-expanded', 'false');
+    await expect(panel.getByRole('radio', { name: /in orbit/i })).toBeVisible();
+    await expect(panel.getByRole('radio', { name: /^NASA$/ })).toBeHidden();
+    await expect(btn.locator('.idx-filters-n')).toHaveCount(0);
+    const rows = await list.locator('.sidx-row').count();
+    await expect(count).toHaveText(`${rows} / ${rows}`);
+
+    // Open: three labelled groups; a chip in one filters.
+    await btn.click();
+    await expect(btn).toHaveAttribute('aria-expanded', 'true');
+    for (const label of [/^AGENCY$/i, /^ERA$/i, /^STATUS$/i]) {
+      await expect(panel.locator('.idx-fold-label').filter({ hasText: label })).toBeVisible();
+    }
+    await panel.getByRole('radio', { name: /^NASA$/ }).click();
+    await expect(count).not.toHaveText(`${rows} / ${rows}`);
+    const narrowed = await list.locator('.sidx-row').count();
+    expect(narrowed).toBeLessThan(rows);
+    await expect(btn.locator('.idx-filters-n')).toHaveText('1');
+
+    // Folding does not change the filter: same rows, the count stays on the closed button.
+    await btn.click();
+    await expect(panel.getByRole('radio', { name: /^NASA$/ })).toBeHidden();
+    expect(await list.locator('.sidx-row').count()).toBe(narrowed);
+    await expect(btn.locator('.idx-filters-n')).toHaveText('1');
+
+    // A second group raises the count; keyboard: the button is a Tab stop and Enter opens it.
+    await btn.focus();
+    await page.keyboard.press('Enter');
+    await expect(btn).toHaveAttribute('aria-expanded', 'true');
+    await panel.getByRole('radio', { name: /^FLOWN$/i }).click();
+    await expect(btn.locator('.idx-filters-n')).toHaveText('2');
+  });
+
+  test('phone: a site panel (a full-height sheet) covers the index handle, which does not draw over its text', async ({
+    page,
+  }, testInfo) => {
+    test.skip(
+      testInfo.project.name === 'mobile-landscape-chromium',
+      'a landscape sheet is a side drawer',
+    );
+    // A narrow window with a mouse (390 px) gets the same full-width panel as a phone.
+    if (testInfo.project.name === 'desktop-chromium')
+      await page.setViewportSize({ width: 390, height: 844 });
+    test.slow();
+    await page.goto('/moon?site=apollo11');
+    await page.waitForSelector('html[data-hydrated]', { state: 'attached', timeout: 45_000 });
+    const panel = page.locator('aside.panel');
+    await expect(panel).toBeVisible({ timeout: 45_000 });
+    const handle = page.locator('.surface-index-handle');
+    await expect(handle).toHaveCount(1);
+    const covered = await handle.evaluate((el) => {
+      const r = el.getBoundingClientRect();
+      const hit = document.elementFromPoint(r.left + r.width / 2, r.top + r.height / 2);
+      return !!hit && !el.contains(hit) && !!hit.closest('aside.panel');
+    });
+    expect(covered, 'the panel text is on top, the handle does not cover it').toBe(true);
+  });
+
   test('landscape phone: the Index pullout tab shows the list', async ({ page }, testInfo) => {
     test.skip(testInfo.project.name !== 'mobile-landscape-chromium', 'landscape-only');
     await page.goto('/mars', { waitUntil: 'networkidle' });

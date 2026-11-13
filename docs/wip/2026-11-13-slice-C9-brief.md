@@ -148,3 +148,7 @@ None. `world-links.ts` is code. No `?id=` extension is needed (the four ids reso
 - NV6 The `/explore/<id>` page's layout (`routes/explore/[id]/+page.svelte`) was grepped only for links, not read; where the chip would sit was not designed.
 - NV7 `UXS-000` §Open and the Venus UXS (if any) were not opened; TA.md's Worlds paragraph line numbers were not read.
 - NV8 Whether an Explore panel's chip count would exceed the UXD-018 limit when a body has Plan, the new chip and a third (`Fly`) was checked only for `PlanetPanel` (Plan + surface link + Share = 3 at the limit).
+
+## Decisions (operator, 2026-11-13)
+
+All 4 recommendations of §12 approved as written ("I am OK on 25 recommendations", for C6–C10 together). Order: implementation starts after L45 (the thumbnail scan), which follows C4–C5.

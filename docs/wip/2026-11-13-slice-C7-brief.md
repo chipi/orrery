@@ -166,3 +166,7 @@ None to `static/data/trajectories/*.json` or the overlays. The milestone number 
 - NV7 `static/data/glossary/native-terms.json` and the `WhyPopover` styling inside the HUD (it was designed for panels; z-index against the legend's z 36) were not opened.
 - NV8 `iconic-selection.svelte.ts` (hover/select state) and the mobile `onLegendKeydown` were located, not read; the host's 18 builds' per-frame cost with DPR-2 textures was not measured.
 - NV9 Whether the box count in the sprite hook can be read without breaking `window.__exploreCameraState`-style guards (DEV-gated only) was not checked.
+
+## Decisions (operator, 2026-11-13)
+
+All 5 recommendations of §12 approved as written ("I am OK on 25 recommendations", for C6–C10 together). Order: implementation starts after L45 (the thumbnail scan), which follows C4–C5.

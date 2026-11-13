@@ -181,3 +181,7 @@ Plan ideas now outdated: "planet dots in each planet's colour" (done, `+page.sve
 - NV7 `static/data/glossary/native-terms.json` and the existing plural keys were not opened; whether "Asteroids" and "major moons" have bound forms in all 14 locales is unknown.
 - NV8 Whether `format.test.ts` exists, whether `earth` launch sites (spaceports) have a `nation` on every site, and what `/venus` sites carry (Venus uses the same `IndexBody`) were not checked beyond the Moon and Mars counts above.
 - NV9 AGENTS.md lines 717-837 ("Design system") were not read for an INDEX row look statement; the docs list in §9 may miss one.
+
+## Decisions (operator, 2026-11-13)
+
+All 5 recommendations of §12 approved as written ("I am OK on 25 recommendations", for C6–C10 together). Order: implementation starts after L45 (the thumbnail scan), which follows C4–C5.

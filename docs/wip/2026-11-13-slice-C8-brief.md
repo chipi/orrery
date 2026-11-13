@@ -175,3 +175,7 @@ Plan ideas now outdated: "second-level nav per D4" as a **removal** (not decided
 - NV7 `static/data/glossary/native-terms.json` was not opened; the 14 locales' wording of the existing `explore_ctx_*` names and of "zoom" were not compared.
 - NV8 Whether any other file lists the eight levels (the TV hub, `audio-tour.ts`, the command palette `command_palette_*`, `Nav` search index, `site-routes.mjs` for `?context=`) was not searched beyond the five copies named; the unit test in §8 would catch a missing consumer only if it is added to it.
 - NV9 The `landing_card_*`/`explore_hub_desc_*` text lengths in the 14 locales were not measured against a 280 px card (the lens-story bodies are 40–75 words in en-US; in `de` and `ru` longer).
+
+## Decisions (operator, 2026-11-13)
+
+All 6 recommendations of §12 approved as written ("I am OK on 25 recommendations", for C6–C10 together). Order: implementation starts after L45 (the thumbnail scan), which follows C4–C5.

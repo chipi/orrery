@@ -186,3 +186,7 @@ Plan idea now outdated: "full-disc true-colour heroes for every planet (Mars fir
 - NV8 `masters/` are LFS: the `move-image-to-gallery.ts` and `replace-gallery-slots.ts` runs need `git lfs pull -I 'masters/**'` for the affected slots; whether the masters of planets/earth/04 and planets/venus/03 are present in this worktree was not checked.
 - NV9 Image licences: Jupiter (CC-BY-4.0) and Saturn (CC-BY-2.0) and the Venus 04 Akatsuki (CC-BY-2.0) rows carry an attribution duty already met by the credits pipeline; I did not re-verify the rows on Commons (no network use in this step).
 - NV10 Whether any sourcing candidate for a non-Mars planet exists that meets the rule better than today's hero was not searched (the brief does not claim one does).
+
+## Decisions (operator, 2026-11-13)
+
+All 5 recommendations of §12 approved as written ("I am OK on 25 recommendations", for C6–C10 together). Order: implementation starts after L45 (the thumbnail scan), which follows C4–C5.

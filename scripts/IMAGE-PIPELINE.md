@@ -301,7 +301,9 @@ its lower half faded under the title), the browse-page covers (16:9) and every e
 (16:9). All crop at the centre unless the hero's entry in `static/data/<surface>-hero-overrides.json`
 carries a reviewed `position` (CSS object-position, `"50% 22%"`), which `heroPositionFor()` in
 `src/lib/image-hero.ts` applies everywhere. A hero without an override entry gets one with its own
-slot (`"slot": "01.jpg"`) when it needs a position.
+slot (`"slot": "01.jpg"`) when it needs a position. **Exception — planets (UXD-029):** the planet
+panel hero is `object-fit: contain` on `#000` so the whole disc shows; `position` has no effect there
+(the card band and the browse covers still crop).
 
 ```bash
 node scripts/vision/hero-crop-sheet.mjs --out /tmp/crops                       # every surface

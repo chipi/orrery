@@ -135,9 +135,19 @@ and the time dock (z 40) were drawn over the full-width Mars panel's eyebrow, ti
 under the panel there (cluster z 25, dock z 24, so the PATHS legend still covers the scrubber), the same rule as
 the tab; wider windows and touch are unchanged (the portrait sheet is z 80). It was not new in C7 or C8: those
 slices moved the chips and the legend but not the z values. `hud-under-panel.spec.ts` samples a grid over the open
-panel on `/explore` and the Worlds and fails on anything else on top. Open: a landscape phone's drawer tab row
-(RULER, MISSIONS, CONTROLS, SCAN; `MobileDrawerGroup`, z 38) spans the whole bottom edge and crosses the side
-drawer's lower actions, and the site footer's More button crosses a full-width panel's lower right corner.
+panel on nine routes (`/explore`, the four Worlds, `/iss`, `/tiangong`, `/fleet`, `/missions`) and fails on
+anything else on top. The rule is project-wide, "nothing draws over an open detail panel", and the two leftovers
+follow it:
+- **The site footer** (z 35) is z 25 in that window while a panel is open, with its More popover; it does not move
+  and it has no panel to sit under elsewhere (touch hides it).
+- **A landscape phone's drawer tab row** (`MobileDrawerGroup`, z 38) crossed the side drawer's actions (GO TO MARS,
+  PLAN MISSION; LAYERS, NATIONS, SCAN on the Worlds). On the Worlds the row and the card a tab opens now end at the
+  drawer's edge, so the tabs stay usable for the scene beside it, and the top-left chip row ends there too (one
+  line, scrolls sideways: a second line ran into the site card). On `/explore` the row shares the bottom line with
+  the time dock, the scale strip and the level card in the 439 px left beside the drawer (tried: stacked above the
+  dock, which then covers the strip and runs into the level card), so it sits under the drawer while one is open
+  and returns when the panel closes. Not changed: the INDEX tab still lies over BACK TO EXPLORE on a landscape
+  Worlds page.
 
 ## Consequences
 

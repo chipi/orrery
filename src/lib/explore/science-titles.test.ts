@@ -34,6 +34,15 @@ describe('loadScienceTitles', () => {
     expect(it.get('observation/our-galaxy')).toBe('Our galaxy');
   });
 
+  it('does not keep a failed read: the next ask fetches again', async () => {
+    const bad = vi.fn(async () => ({ ok: false }) as Response);
+    await loadScienceTitles('ko', bad as unknown as typeof fetch);
+    await Promise.resolve();
+    const good = vi.fn(async () => ok(entries('우리 은하')));
+    const t = await loadScienceTitles('ko', good as unknown as typeof fetch);
+    expect(t.get('observation/our-galaxy')).toBe('우리 은하');
+  });
+
   it('reads only the English index for en-US, and gives an empty map when nothing loads', async () => {
     const fetchFn = vi.fn(async () => ({ ok: false }) as Response);
     const t = await loadScienceTitles('en-US', fetchFn as unknown as typeof fetch);

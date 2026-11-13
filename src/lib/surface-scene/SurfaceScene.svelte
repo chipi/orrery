@@ -1105,6 +1105,8 @@
   // Nation legend height: the imagery card and the right-edge readouts stack
   // above the strip (--legend-top) instead of overlapping its wrapped rows.
   let legendH = $state(0);
+  // The welcome hint is shown once per visit: it stays gone through a panorama or 2D toggle.
+  let hintDone = $state(false);
   // Site icons have started to show at this zoom (#641 legend gate).
   let tagStageOn = $state(false);
   // Globe colour at the flat-patch site (Mars): its greyscale imagery is
@@ -5996,8 +5998,13 @@ sample      ${debugInfo.projectedPxSample}`}
 
   <!-- W1 welcome hint (UXD-027): one dismissible line inviting a zoom, the same component as
        /explore's. Gone after the first wheel, pinch, tap or drag on the canvas, or in 12 s. -->
-  {#if view === '3d' && !panoramaActive}
-    <ExploreHint text={m.surface_hint_zoom()} testid="surface-hint" topOnTouch />
+  {#if !hintDone && view === '3d' && !panoramaActive}
+    <ExploreHint
+      text={m.surface_hint_zoom()}
+      testid="surface-hint"
+      topOnTouch
+      ondismiss={() => (hintDone = true)}
+    />
   {/if}
 
   <!-- Hover tooltip — small floating card beside the cursor.

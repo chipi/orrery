@@ -85,11 +85,20 @@ describe('explore formatters', () => {
 
   it('contextLabel names each shell, the body host name in a body scene', () => {
     expect(contextLabel('body-scene', 'Kepler-186')).toBe('Kepler-186');
-    const named = (['neighborhood', 'milky-way', 'local-group', 'solar-system'] as const).map((c) =>
-      contextLabel(c, 'x'),
-    );
-    expect(new Set(named).size).toBe(4);
-    expect(contextLabel('virgo', 'x')).toBe(contextLabel('solar-system', 'x'));
+    const named = (
+      [
+        'solar-system',
+        'neighborhood',
+        'milky-way',
+        'local-group',
+        'local-sheet',
+        'virgo',
+        'laniakea',
+        'cosmic-web',
+      ] as const
+    ).map((c) => contextLabel(c, 'x'));
+    // Every level has its own name (the label once fell back to the Solar System's for four).
+    expect(new Set(named).size).toBe(8);
   });
 
   it('dilationPct is the far-clock rate √(1 − 1/k)', () => {

@@ -600,14 +600,11 @@
   let scaleBarLabel = $state('');
   // How far a docked side panel reaches in from the right edge (measured by the host).
   let panelCoverPx = $state(0);
-  // The solar system's navigator is flush right (right = panel cover + 8) with the level card
-  // under it; the HUD row stops 12 px before the wider of the two, so they never overlap.
+  // The solar system's navigator is flush right (right = panel cover + 8); the HUD row stops
+  // 12 px before its left edge, so the two rows never overlap.
   let scaleNavWidth = $state(0);
-  let levelCardWidth = $state(0);
   let hudClearRightPx = $derived(
-    view === '3d' && scaleNavWidth > 0
-      ? panelCoverPx + 8 + Math.max(scaleNavWidth, showLevelPicker ? levelCardWidth : 0) + 12
-      : panelCoverPx + 16,
+    view === '3d' && scaleNavWidth > 0 ? panelCoverPx + 8 + scaleNavWidth + 12 : panelCoverPx + 16,
   );
   let contextId = $state<ExploreContextId>('solar-system');
   // Publish the live scale context to the global store so the Nav highlights the
@@ -622,9 +619,6 @@
   });
   onDestroy(() => exploreContext.set(null));
 
-  // The level picker and the card under it show in a scale level; not in a takeover (black hole,
-  // deep-sky, body scene), where the lens panel keeps the story.
-  let showLevelPicker = $derived(!activeBlackHole && !activeDeepSky && contextId !== 'body-scene');
   let lensPanel = $derived.by(() =>
     computeLensPanel({
       blackHoleActive: !!activeBlackHole,
@@ -873,6 +867,16 @@
   let selectCosmicWebFn: ((id: string) => void) | null = null;
   // Slice 6 — the black hole currently rendered full-screen (geodesic lensing).
   let activeBlackHole = $state<BlackHole | null>(null);
+  // The level picker and the card under it show in a scale level; not in a takeover (black hole,
+  // deep-sky, body scene), where the lens panel keeps the story.
+  let showLevelPicker = $derived(!activeBlackHole && !activeDeepSky && contextId !== 'body-scene');
+  // The welcome hint is shown once per visit: closed, timed out or acted on, it stays gone through
+  // a docked panel, a 2D toggle or a takeover.
+  let hintDone = $state(false);
+  // A docked panel means the visitor is already in: the hint is not drawn beside it, nor after it.
+  $effect(() => {
+    if (panelCoverPx > 0) hintDone = true;
+  });
   let bhPanelOpen = $state(false);
   let bhPanelHole = $state<BlackHole | null>(null);
   let exitBlackHoleFn: (() => void) | null = null;
@@ -2129,10 +2133,10 @@
       onReset={resetCurrentScale}
     />
     {#if showLevelPicker}
-      <LevelContextCard shell={contextId as ShellId} {panelCoverPx} bind:width={levelCardWidth} />
+      <LevelContextCard shell={contextId as ShellId} {panelCoverPx} />
     {/if}
-    {#if panelCoverPx === 0}
-      <ExploreHint text={m.explore_hint_zoom()} topOnTouch />
+    {#if !hintDone && panelCoverPx === 0}
+      <ExploreHint text={m.explore_hint_zoom()} topOnTouch ondismiss={() => (hintDone = true)} />
     {/if}
   {/if}
 

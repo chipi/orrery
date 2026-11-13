@@ -16,6 +16,9 @@ export type HintEvent =
   | { type: 'close' }
   | { type: 'timeout'; elapsedMs: number };
 
+/** What the 12 s timer reports: the timer fires at the timeout, whatever a clock read says. */
+export const timeoutEvent = (): HintEvent => ({ type: 'timeout', elapsedMs: HINT_TIMEOUT_MS });
+
 export function dismissesHint(e: HintEvent): boolean {
   switch (e.type) {
     case 'wheel':

@@ -47,14 +47,16 @@ level picker (the `◉ <level> ▾` chip and its ladder).
    glyph (24 px), its name, a fold button (`aria-expanded`, `aria-controls`; the TierContextCard pattern: 44 px target,
    `#889fe7` hover and focus). Body: what the level is (the home-grid `desc`, 90 % white), the story the lens used to carry
    (`explore_lens_story_*_body`, label grey), then up to five `/science/<tab>/<section>` links with the sections' titles
-   from `science-index.<locale>.json` (one fetch per locale, kept; until it arrives a link reads as its slug). It follows the level
+   from `science-index.<locale>.json` (one fetch per locale, kept; the links are drawn once it has answered, so no slug flashes; if it cannot be read they read as their slugs; each link is a 24 px target, 44 px on touch). It follows the level
    and is drawn wherever the picker is: not in 2D, a black-hole or deep-sky takeover, or a body scene. Open with a pointer in a
    window 900 px wide and 560 px tall or more; folded on touch and in a smaller window with a mouse (found by the footer-dock
    sweep: at 375 x 812, 667 x 375 and 800 x 375 an open card met the chip rows and the scale panel); the choice is remembered
    (`localStorage` `orrery.explore.levelCardExpanded`, blocked storage falls back to the default). Folded, the card is only its
    header, as wide as that (in a small window with a mouse, only the glyph and the fold button: the picker chip above it names the
-   level). At the solar system the HUD chip row stops before the card (it takes the wider of the picker row and the card, as it
-   did for the row alone). It is a `section` named by the level. z 7, under the picker's open ladder (46) and under panels (30).
+   level). The HUD chip row still stops only before the picker row (not the card): taking the card's 280 px made the layer chips
+   wrap and move when a panel docked (chip-row spec), and folded in a small window the card is narrower than the row. The fold
+   button is a disclosure, not a chip, and carries `data-a4-keep` (the chip sweep's documented exception; the orbit ruler
+   header's pattern). It is a `section` named by the level. z 7, under the picker's open ladder (46) and under panels (30).
    The lists are curated per level in the table; no two are alike (Virgo and the Cosmic web open on the same section by
    design). "A dedicated article per layer" is a content task: the sections linked are the ones that exist, and the
    Virgo and Cosmic web levels still lack their own article.
@@ -67,7 +69,7 @@ level picker (the `◉ <level> ▾` chip and its ladder).
    the × is a 24 px `.ui-hit`, 44 px on touch, label `explore_anon_dismiss`), 11 px mono, the card's chrome. The same
    component on `/explore` ("Zoom in or out through the 8 scales · drag to look around") and, once, in `SurfaceScene` for
    `/earth /moon /mars /venus` ("Zoom in to explore · drag to look around"). It goes at the first wheel turn, pinch or tap, or a
-   drag of 6 px or more, **on the canvas**, at the ×, or after 12 s (on `/explore` it is also not drawn while a side panel is docked: a tap that opened one has dismissed it, and a deep link to a body would have it meet the shifted scale strip); it fades over 300 ms (a CSS transition, so
+   drag of 6 px or more, **on the canvas**, at the ×, or after 12 s (on `/explore` a docked side panel also ends it: it is not drawn beside one and does not return when the panel closes; the page, and for the Worlds `SurfaceScene`, keeps a `hintDone` flag set by the hint's `ondismiss`, so a 2D or panorama toggle or a takeover does not bring it back either; the 12 s timer reports the timeout itself rather than a measured time, which could read just under 12 s); it fades over 300 ms (a CSS transition, so
    `prefers-reduced-motion` cuts it) and is not remembered: it is back on the next visit (decision 5a of the brief).
    Pure rules in `src/lib/hint-state.ts`. A pointer device: bottom centre, 64 px up (on the Worlds above the nation
    legend); in a window under 900 px wide or 560 px tall it hangs left-aligned at 40 % of the scene's height, 48 px in (clear of the
@@ -92,8 +94,8 @@ index).
 - Adding a ninth level, or renaming one, is one edit in `scale-shells.ts` (plus its messages and glyph).
 - `Nav.svelte` now imports the table and `ScaleGlyphIcon`, so the glyph code and the level messages load on every page.
 - `/explore` shows a card at the top right at every level; with a right-docked panel it moves left of it.
-- A level with no layers has no Science Lens panel; the Nav's lens toggle is available there (the panel still registers)
-  but shows nothing for it.
+- A level with no layers has no Science Lens panel, and the panel registers the lens as available only while it has a story
+  or layers to draw, so the Nav's toggle reads "unavailable here" (disabled) on Local Group to Cosmic Web (e2e).
 - The nine glyphs in the open ladder, the chip and the card are separate SVG documents with their own defs (five
   small gradients each).
 

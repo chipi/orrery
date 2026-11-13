@@ -59,6 +59,18 @@
     "why": "engine name left in English (Liquid Apogee Motor)",
     "tr": "4924c9f2e3"
   },
+  "apparent magnitude|de|glossary/terms.json :: apparent magnitude": {
+    "why": "read 2026-11-12: the match is the value \"magnitude 6\" inside the definition of the term itself, written as the plain value word in this locale",
+    "tr": "1408ce2bd8"
+  },
+  "apparent magnitude|ru|glossary/terms.json :: apparent magnitude": {
+    "why": "read 2026-11-12: the match is the value \"magnitude 6\" inside the definition of the term itself, written as the plain value word in this locale",
+    "tr": "0ca10d5a8c"
+  },
+  "apparent magnitude|zh-CN|glossary/terms.json :: apparent magnitude": {
+    "why": "read 2026-11-12: the match is the value \"magnitude 6\" inside the definition of the term itself, written as the plain value word in this locale",
+    "tr": "5cc05061c3"
+  },
   "booster|ar|essays/going-to-the-moon.json :: body.24.md": {
     "why": "read 2026-11-06 (second race): the Long March 10-series test vehicle that flew on 11 Feb 2026 is a core first stage, not a side booster; \"first stage\" / \"test stage\" is the accurate word",
     "tr": "6c2755a077"
@@ -2382,6 +2394,38 @@
   "docking|ko|science/space-stations/node-module.json :: body_paragraphs.4": {
     "why": "Chinese Docking Mechanism is a proper name left in English",
     "tr": "7a82c63b61"
+  },
+  "dwarf spheroidal galaxy|de|universe/galaxies/sagittarius-dirr.json :: bio": {
+    "why": "reviewed 2026-11-13: 'Sagittarius Dwarf Spheroidal' is the galaxy's name here (messages galaxy_name_sagittarius_dwarf, glossary star entry), written in the locale's name form, not the term dwarf spheroidal galaxy; one name per language",
+    "tr": "45e7b63e72"
+  },
+  "dwarf spheroidal galaxy|es|universe/galaxies/sagittarius-dirr.json :: bio": {
+    "why": "reviewed 2026-11-13: 'Sagittarius Dwarf Spheroidal' is the galaxy's name here (messages galaxy_name_sagittarius_dwarf, glossary star entry), written in the locale's name form, not the term dwarf spheroidal galaxy; one name per language",
+    "tr": "851a607a4e"
+  },
+  "dwarf spheroidal galaxy|fr|universe/galaxies/sagittarius-dirr.json :: bio": {
+    "why": "reviewed 2026-11-13: 'Sagittarius Dwarf Spheroidal' is the galaxy's name here (messages galaxy_name_sagittarius_dwarf, glossary star entry), written in the locale's name form, not the term dwarf spheroidal galaxy; one name per language",
+    "tr": "22c78ffcd3"
+  },
+  "dwarf spheroidal galaxy|it|universe/galaxies/sagittarius-dirr.json :: bio": {
+    "why": "reviewed 2026-11-13: 'Sagittarius Dwarf Spheroidal' is the galaxy's name here (messages galaxy_name_sagittarius_dwarf, glossary star entry), written in the locale's name form, not the term dwarf spheroidal galaxy; one name per language",
+    "tr": "ba569f66c7"
+  },
+  "dwarf spheroidal galaxy|ja|universe/galaxies/sagittarius-dirr.json :: bio": {
+    "why": "reviewed 2026-11-13: 'Sagittarius Dwarf Spheroidal' is the galaxy's name here (messages galaxy_name_sagittarius_dwarf, glossary star entry), written in the locale's name form, not the term dwarf spheroidal galaxy; one name per language",
+    "tr": "b0b42351af"
+  },
+  "dwarf spheroidal galaxy|ko|universe/galaxies/sagittarius-dirr.json :: bio": {
+    "why": "reviewed 2026-11-13: 'Sagittarius Dwarf Spheroidal' is the galaxy's name here (messages galaxy_name_sagittarius_dwarf, glossary star entry), written in the locale's name form, not the term dwarf spheroidal galaxy; one name per language",
+    "tr": "1143f9d279"
+  },
+  "dwarf spheroidal galaxy|pt-BR|universe/galaxies/sagittarius-dirr.json :: bio": {
+    "why": "reviewed 2026-11-13: 'Sagittarius Dwarf Spheroidal' is the galaxy's name here (messages galaxy_name_sagittarius_dwarf, glossary star entry), written in the locale's name form, not the term dwarf spheroidal galaxy; one name per language",
+    "tr": "4a46758231"
+  },
+  "dwarf spheroidal galaxy|ru|universe/galaxies/sagittarius-dirr.json :: bio": {
+    "why": "reviewed 2026-11-13: 'Sagittarius Dwarf Spheroidal' is the galaxy's name here (messages galaxy_name_sagittarius_dwarf, glossary star entry), written in the locale's name form, not the term dwarf spheroidal galaxy; one name per language",
+    "tr": "48e04f0f7e"
   },
   "eccentricity|de|science/orbits/eccentricity.json :: diagram_caption": {
     "why": "read 2026-11-04 (chunk 3): written as the symbol e in a caption",
@@ -5259,6 +5303,50 @@
     "why": "phase of a campaign, not a rocket stage",
     "tr": "9575bb09bc"
   },
+  "star-forming region|ar|glossary/terms.json :: maser": {
+    "why": "read 2026-11-12: the maser definition says \"star-forming clouds\", a cloud where stars form, not the term \"star-forming region\"; the translation renders that phrase",
+    "tr": "b56b1b1378"
+  },
+  "star-forming region|es|glossary/terms.json :: maser": {
+    "why": "read 2026-11-12: the maser definition says \"star-forming clouds\", a cloud where stars form, not the term \"star-forming region\"; the translation renders that phrase",
+    "tr": "ba526a265d"
+  },
+  "star-forming region|fr|glossary/terms.json :: maser": {
+    "why": "read 2026-11-12: the maser definition says \"star-forming clouds\", a cloud where stars form, not the term \"star-forming region\"; the translation renders that phrase",
+    "tr": "e21265400b"
+  },
+  "star-forming region|it|glossary/terms.json :: maser": {
+    "why": "read 2026-11-12: the maser definition says \"star-forming clouds\", a cloud where stars form, not the term \"star-forming region\"; the translation renders that phrase",
+    "tr": "abe65b9329"
+  },
+  "star-forming region|ja|glossary/terms.json :: maser": {
+    "why": "read 2026-11-12: the maser definition says \"star-forming clouds\", a cloud where stars form, not the term \"star-forming region\"; the translation renders that phrase",
+    "tr": "f816c38746"
+  },
+  "star-forming region|ko|glossary/terms.json :: maser": {
+    "why": "read 2026-11-12: the maser definition says \"star-forming clouds\", a cloud where stars form, not the term \"star-forming region\"; the translation renders that phrase",
+    "tr": "2af5cab557"
+  },
+  "star-forming region|nl|glossary/terms.json :: maser": {
+    "why": "read 2026-11-12: the maser definition says \"star-forming clouds\", a cloud where stars form, not the term \"star-forming region\"; the translation renders that phrase",
+    "tr": "4a4b395327"
+  },
+  "star-forming region|pt-BR|glossary/terms.json :: maser": {
+    "why": "read 2026-11-12: the maser definition says \"star-forming clouds\", a cloud where stars form, not the term \"star-forming region\"; the translation renders that phrase",
+    "tr": "3f73abf7aa"
+  },
+  "star-forming region|ru|glossary/terms.json :: maser": {
+    "why": "read 2026-11-12: the maser definition says \"star-forming clouds\", a cloud where stars form, not the term \"star-forming region\"; the translation renders that phrase",
+    "tr": "1d31511514"
+  },
+  "star-forming region|sr-Cyrl|glossary/terms.json :: maser": {
+    "why": "read 2026-11-12: the maser definition says \"star-forming clouds\", a cloud where stars form, not the term \"star-forming region\"; the translation renders that phrase",
+    "tr": "f56c22ef3e"
+  },
+  "star-forming region|zh-CN|glossary/terms.json :: maser": {
+    "why": "read 2026-11-12: the maser definition says \"star-forming clouds\", a cloud where stars form, not the term \"star-forming region\"; the translation renders that phrase",
+    "tr": "0ec03b25b0"
+  },
   "thrust|ar|missions/psyche/psyche-mission.json :: events.3.note": {
     "why": "variant: محرك أيوني (ion engine)",
     "tr": "7840ad83bd"
@@ -5462,61 +5550,5 @@
   "upper stage|sr-Cyrl|science/propulsion/engine-clustering.json :: body_paragraphs.3": {
     "why": "read 2026-11-04 (chunk 1): natural omission: the sentence does without the word",
     "tr": "674c774f8e"
-  },
-  "star-forming region|ru|glossary/terms.json :: maser": {
-    "why": "read 2026-11-12: the maser definition says \"star-forming clouds\", a cloud where stars form, not the term \"star-forming region\"; the translation renders that phrase",
-    "tr": "1d31511514"
-  },
-  "star-forming region|ja|glossary/terms.json :: maser": {
-    "why": "read 2026-11-12: the maser definition says \"star-forming clouds\", a cloud where stars form, not the term \"star-forming region\"; the translation renders that phrase",
-    "tr": "f816c38746"
-  },
-  "star-forming region|zh-CN|glossary/terms.json :: maser": {
-    "why": "read 2026-11-12: the maser definition says \"star-forming clouds\", a cloud where stars form, not the term \"star-forming region\"; the translation renders that phrase",
-    "tr": "0ec03b25b0"
-  },
-  "star-forming region|ko|glossary/terms.json :: maser": {
-    "why": "read 2026-11-12: the maser definition says \"star-forming clouds\", a cloud where stars form, not the term \"star-forming region\"; the translation renders that phrase",
-    "tr": "2af5cab557"
-  },
-  "star-forming region|ar|glossary/terms.json :: maser": {
-    "why": "read 2026-11-12: the maser definition says \"star-forming clouds\", a cloud where stars form, not the term \"star-forming region\"; the translation renders that phrase",
-    "tr": "b56b1b1378"
-  },
-  "star-forming region|sr-Cyrl|glossary/terms.json :: maser": {
-    "why": "read 2026-11-12: the maser definition says \"star-forming clouds\", a cloud where stars form, not the term \"star-forming region\"; the translation renders that phrase",
-    "tr": "f56c22ef3e"
-  },
-  "star-forming region|fr|glossary/terms.json :: maser": {
-    "why": "read 2026-11-12: the maser definition says \"star-forming clouds\", a cloud where stars form, not the term \"star-forming region\"; the translation renders that phrase",
-    "tr": "e21265400b"
-  },
-  "star-forming region|es|glossary/terms.json :: maser": {
-    "why": "read 2026-11-12: the maser definition says \"star-forming clouds\", a cloud where stars form, not the term \"star-forming region\"; the translation renders that phrase",
-    "tr": "ba526a265d"
-  },
-  "star-forming region|it|glossary/terms.json :: maser": {
-    "why": "read 2026-11-12: the maser definition says \"star-forming clouds\", a cloud where stars form, not the term \"star-forming region\"; the translation renders that phrase",
-    "tr": "abe65b9329"
-  },
-  "star-forming region|nl|glossary/terms.json :: maser": {
-    "why": "read 2026-11-12: the maser definition says \"star-forming clouds\", a cloud where stars form, not the term \"star-forming region\"; the translation renders that phrase",
-    "tr": "4a4b395327"
-  },
-  "star-forming region|pt-BR|glossary/terms.json :: maser": {
-    "why": "read 2026-11-12: the maser definition says \"star-forming clouds\", a cloud where stars form, not the term \"star-forming region\"; the translation renders that phrase",
-    "tr": "3f73abf7aa"
-  },
-  "apparent magnitude|ru|glossary/terms.json :: apparent magnitude": {
-    "why": "read 2026-11-12: the match is the value \"magnitude 6\" inside the definition of the term itself, written as the plain value word in this locale",
-    "tr": "0ca10d5a8c"
-  },
-  "apparent magnitude|zh-CN|glossary/terms.json :: apparent magnitude": {
-    "why": "read 2026-11-12: the match is the value \"magnitude 6\" inside the definition of the term itself, written as the plain value word in this locale",
-    "tr": "5cc05061c3"
-  },
-  "apparent magnitude|de|glossary/terms.json :: apparent magnitude": {
-    "why": "read 2026-11-12: the match is the value \"magnitude 6\" inside the definition of the term itself, written as the plain value word in this locale",
-    "tr": "1408ce2bd8"
   }
 }

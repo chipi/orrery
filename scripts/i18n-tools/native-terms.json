@@ -881,7 +881,8 @@
     "deep-sky people (2026-11-12)": "People named in the 120 deep-sky texts. ru, ja, zh-CN, ko, hi, ar, sr-Cyrl: the language Wikipedia title of the person (en.wikipedia langlinks API, fetched 2026-11-12; zh converted to zh-CN, sr to Cyrillic; ru 'Surname, Name' reordered to Name Surname) where one exists (ru Шарль Мессье, Эдмунд Галлей, Каролина Гершель; ja シャルル・メシエ, ウィリアム・ハーシェル; zh 夏尔·梅西耶, 威廉·赫歇尔, 弗里茨·兹威基; ko 샤를 메시에, 윌리엄 허셜, 프리츠 츠비키; ar شارل مسييه, إدموند هالي, هارلو شابلي; sr Шарл Месје), else the translator's own transliteration of the name in that language's usual rules (ru Practical Transcription, ja katakana, zh Xinhua name table, ko national orthography, hi Devanagari transliteration, ar, sr), which has no source and is the lowest confidence: Kenneth Glyn Jones, Walter Scott Houston, Michael Merrifield, Holger Baumgardt, Abraham Ihle, Bengt Westerlund, Karl Henize (all but ru zh), Barnaba Oriani, Edward Pigott (hi ar sr ko), James Dunlop, Owen Gingerich, Antoine Darquier de Pellepoix, Jean-Jacques d'Ortous de Mairan and the hi/ko/ar/sr columns generally. Latin-script locales: the English name unless that locale writes it differently (en.wikipedia langlinks: de Wilhelm Herschel, es Edmund Halley / Carolina Herschel / Giovanni Battista Odierna, fr Jean-Dominique Cassini, de/fr/it/pt Giovanni Domenico Maraldi, de/fr/it Johann Abraham Ihle, de/pt Johann Gottfried Köhler, Ptolemy: de Ptolemäus, fr Ptolémée, es Ptolomeo, it Tolomeo, nl Ptolemaeus, pt Ptolomeu; al-Sufi: de as-Sufi, fr al-Soufi, nl al-Soefi, pt Azofi; Earl of Rosse: the titles of nobility each language uses). Bare surnames carry _bare.",
     "deep-text batch 4 glossary (2026-11-12)": "Names and terms added for docs/wip/deep-text/batch-04.md. Where the site already translated a word (captions in deep-sky.json, earlier deep-sky overlays: luminous red nova, Type Ia, grand-design spiral, the nickname titles) the existing site form was taken. Not checked on native pages (no search run; first-agent forms): the person names in ru ja zh-CN ko hi ar sr-Cyrl (Huggins, Harding, Muñoz, Pontoppidan, Fabian, Atkinson, Szyszka, Häberle, Krause), the Hindi constellation forms for Draco, Fornax, Sagitta, Corvus, the es/pt constellation gaps, Gabriela Mistral Nebula, Christmas Tree Cluster, Fornax Cluster, and the terms white dwarf cooling track, cometary knot, intracluster light, protostellar outflow, super star cluster, tidal tail, polarimetry, ionisation front in all locales (calques of the English sense; confidence marked). nl Bellennevel replaces the site caption's 'Bellnevel' (not Dutch).",
     "galaxy-structure terms (2026-11-13)": "Binding forms for deep-text batch 06 (galaxy structures). The site's own form where the site already writes the term (messages explore_cosmic_web_kind_* and explore_hub_desc_*: supercluster, void, galaxy wall, filament; the large-scale-structure and Laniakea essays: cosmic web, basin of attraction, megaparsec, zone of avoidance), else the language Wikipedia title of the English article (en.wikipedia langlinks API, fetched 2026-11-13: redshift, peculiar velocity, comoving distance, tip of the red giant branch, surface brightness fluctuations, Local Void; zh converted to zh-CN, sr to Cyrillic). Not in Wikipedia and set by the translator from the neighbouring terms (galaxy cloud in all 13 languages; hi peculiar velocity, comoving distance, surface brightness fluctuations, tip of the red giant branch; ar peculiar velocity; sr comoving distance and the Local Void's native form; ja, ko and zh-CN void/Local Void compounds): confidence is medium or low as marked in _confidence. Stems accept every variant the site already writes in an unreviewed tree.",
-    "galaxy and structure deep-text batches 05-06 (2026-11-13)": "Binding forms for deep-text batches 05 (29 Local Group galaxies) and 06 (30 structures). Terms: the site's own form where the site already writes it (messages explore_lg_kind_* and explore_mw_*: dwarf spheroidal / dwarf irregular / dwarf elliptical / irregular galaxy, satellite galaxy, dark-matter halo, kpc; metal-poor from deep-sky m92), else compounds built from the site's existing neighbouring terms (dwarf galaxy, galaxy, elliptical galaxy, tip of the red giant branch, redshift) by the translator; Wikipedia langlinks (fetched 2026-11-13) carried no article for these compounds in the target languages, so every non-site form here has no native-page check: medium or low in _confidence as marked, Hindi and the Arabic/Serbian/Korean scientific compounds (period-luminosity relation, velocity dispersion, mass-to-light ratio, eclipsing binary, early/late-type, overdensity, crossing time, potential well, watershed, repeller, Hubble flow) lowest. People: the translator's transliteration under the same rules as the deep-sky people (ru Practical Transcription, ja katakana, zh Xinhua-style names, ko national orthography, hi Devanagari, ar, sr Serbian Cyrillic); en.wikipedia langlinks supplied only a few (Baade, Barnard, Leavitt, Wolf, Swift, Melotte, Shapley, Zwicky, Schuster, West) and the rest has no source. Names whose original-language pronunciation is uncertain (Pietrzyński, Kallivayalil, Antoja, Gullieuszik, Oemler, Huchra, van Zee, Wakamatsu, Lee, Jang, Kim, Sohn, Wu, Mei) are the lowest confidence. Latin-script locales keep the English spelling and carry no entry. Constellations Apus, Antlia, Horologium, Indus, Norma: the language Wikipedia titles where present (ar, hi, ja, ko, ru, sr, de, fr, it, nl, zh for Apus and Antlia), else the established names. Observatories and surveys (class place): the site's own observatory page names (Palomar, Mount Wilson, Very Large Telescope), else Wikipedia titles (Lowell, Sloan Digital Sky Survey) or the translator's forms. Not added (origin-rule vehicles and catalogue designations): Hubble, Gaia, Chandra, Cosmicflows-4, GRAVITY, DDO, Maffei 1/2, CfA2 (kept in Latin)."
+    "galaxy and structure deep-text batches 05-06 (2026-11-13)": "Binding forms for deep-text batches 05 (29 Local Group galaxies) and 06 (30 structures). Terms: the site's own form where the site already writes it (messages explore_lg_kind_* and explore_mw_*: dwarf spheroidal / dwarf irregular / dwarf elliptical / irregular galaxy, satellite galaxy, dark-matter halo, kpc; metal-poor from deep-sky m92), else compounds built from the site's existing neighbouring terms (dwarf galaxy, galaxy, elliptical galaxy, tip of the red giant branch, redshift) by the translator; Wikipedia langlinks (fetched 2026-11-13) carried no article for these compounds in the target languages, so every non-site form here has no native-page check: medium or low in _confidence as marked, Hindi and the Arabic/Serbian/Korean scientific compounds (period-luminosity relation, velocity dispersion, mass-to-light ratio, eclipsing binary, early/late-type, overdensity, crossing time, potential well, watershed, repeller, Hubble flow) lowest. People: the translator's transliteration under the same rules as the deep-sky people (ru Practical Transcription, ja katakana, zh Xinhua-style names, ko national orthography, hi Devanagari, ar, sr Serbian Cyrillic); en.wikipedia langlinks supplied only a few (Baade, Barnard, Leavitt, Wolf, Swift, Melotte, Shapley, Zwicky, Schuster, West) and the rest has no source. Names whose original-language pronunciation is uncertain (Pietrzyński, Kallivayalil, Antoja, Gullieuszik, Oemler, Huchra, van Zee, Wakamatsu, Lee, Jang, Kim, Sohn, Wu, Mei) are the lowest confidence. Latin-script locales keep the English spelling and carry no entry. Constellations Apus, Antlia, Horologium, Indus, Norma: the language Wikipedia titles where present (ar, hi, ja, ko, ru, sr, de, fr, it, nl, zh for Apus and Antlia), else the established names. Observatories and surveys (class place): the site's own observatory page names (Palomar, Mount Wilson, Very Large Telescope), else Wikipedia titles (Lowell, Sloan Digital Sky Survey) or the translator's forms. Not added (origin-rule vehicles and catalogue designations): Hubble, Gaia, Chandra, Cosmicflows-4, GRAVITY, DDO, Maffei 1/2, CfA2 (kept in Latin).",
+    "galaxy and structure gaps (2026-11-13, round 2)": "Constellations: the language Wikipedia title of the English article (wikidata-labels.mjs, 2026-11-13). es and pt-BR Wikipedias write Cetus, Boötes, Canes Venatici, Reticulum, Sextans, Tucana, Antlia, Apus, Pavo, Virgo, Leo, Eridanus (es) in Latin, and the shipped es text already does, so those are explicit same-as-English entries; pt-BR Ursa Maior / Ursa Menor / Peixes / Erídano follow the shipped pt-BR text. sr-Cyrl Indus is Индус (sr Wikipedia 'Индус (сазвежђе)', and the Pavo–Indus filament entry already reads Пауна–Индуса); Индијанац, which no shipped text uses, is replaced. hi Leo/Sagittarius from hi Wikipedia (सिंह / धनु तारामंडल); hi Reticulum and Sextans transliterated or Latin like the site's hi dwarf-galaxy names. Names: the forms the staged texts used where the glossary was blank (Norma Cluster nl/hi/sr, Centaurus A, Tarantelnebel, Wolf-Lundmark-Melotte hi/sr), Latin for de/fr/es/it/nl/pt-BR survey and telescope names (Wikipedia: de/es/it/nl/pt Very Large Telescope, Sloan Digital Sky Survey), site messages galaxy_name_sagittarius_dwarf for hi and sr-Cyrl. A. G. Wilson = Albert George Wilson (Q499156): initials transliterated by sound (ru Дж., sr Џ.). Terms: tidal stream and comoving coordinates take the forms the translators converged on (they agree with the stellar stream and comoving distance bindings). ko 조기형 / 만기형 은하 confirmed on Korean pages (bizhankook.com/articles/18062, koreascience.kr JAKO201900937422558). Definitions read: tidal stream, fiveable.me/intro-astronomy/key-terms/stellar-streams ('long, narrow chains of stars left behind when a globular cluster or dwarf galaxy gets pulled apart by gravity'); comoving coordinates, physicsforums.com/threads/what-does-comoving-mean.989228 ('coordinates which expand with the expansion of the Universe', fixed positions while the scale factor changes)."
   },
   "body": {
     "Earth": {
@@ -3536,7 +3537,13 @@
       "ko": "초거대 망원경",
       "hi": "वेरी लार्ज टेलीस्कोप",
       "ar": "التلسكوب الكبير جدًا",
-      "sr-Cyrl": "Веома велики телескоп"
+      "sr-Cyrl": "Веома велики телескоп",
+      "de": "Very Large Telescope",
+      "fr": "Very Large Telescope",
+      "es": "Very Large Telescope",
+      "it": "Very Large Telescope",
+      "nl": "Very Large Telescope",
+      "pt-BR": "Very Large Telescope"
     },
     "Boyden Observatory": {
       "ru": "Обсерватория Бойдена",
@@ -3605,7 +3612,13 @@
       "ko": "슬론 디지털 스카이 서베이",
       "hi": "स्लोन डिजिटल स्काई सर्वे",
       "ar": "مسح سلون الرقمي للسماء",
-      "sr-Cyrl": "Слоуново дигитално небеско истраживање"
+      "sr-Cyrl": "Слоуново дигитално небеско истраживање",
+      "de": "Sloan Digital Sky Survey",
+      "fr": "Sloan Digital Sky Survey",
+      "es": "Sloan Digital Sky Survey",
+      "it": "Sloan Digital Sky Survey",
+      "nl": "Sloan Digital Sky Survey",
+      "pt-BR": "Sloan Digital Sky Survey"
     },
     "Palomar Sky Survey": {
       "ru": "Паломарский обзор неба",
@@ -3614,7 +3627,28 @@
       "ko": "팔로마 스카이 서베이",
       "hi": "पालोमर स्काई सर्वे",
       "ar": "مسح بالومار للسماء",
-      "sr-Cyrl": "Паломарски преглед неба"
+      "sr-Cyrl": "Паломарски преглед неба",
+      "de": "Palomar Sky Survey",
+      "fr": "Palomar Sky Survey",
+      "es": "Palomar Sky Survey",
+      "it": "Palomar Sky Survey",
+      "nl": "Palomar Sky Survey",
+      "pt-BR": "Palomar Sky Survey"
+    },
+    "Second Palomar Sky Survey": {
+      "ru": "Второй Паломарский обзор неба",
+      "ja": "第二パロマー天文台スカイサーベイ",
+      "zh-CN": "第二次帕洛马巡天",
+      "ko": "제2 팔로마 스카이 서베이",
+      "hi": "दूसरा पालोमर स्काई सर्वे",
+      "ar": "مسح بالومار الثاني للسماء",
+      "sr-Cyrl": "Други Паломарски преглед неба",
+      "de": "Second Palomar Sky Survey",
+      "fr": "Second Palomar Sky Survey",
+      "es": "Second Palomar Sky Survey",
+      "it": "Second Palomar Sky Survey",
+      "nl": "Second Palomar Sky Survey",
+      "pt-BR": "Second Palomar Sky Survey"
     }
   },
   "station": {
@@ -5686,6 +5720,7 @@
       "zh-CN": "布伦特·塔利",
       "hi": "ब्रेंट टली",
       "ar": "برينت تولي",
+      "sr-Cyrl": "Брент Тали",
       "_qid": "Q535965"
     },
     "Suni Williams": {
@@ -9161,6 +9196,21 @@
       "ar": "كيم",
       "sr-Cyrl": "Ким",
       "_bare": true
+    },
+    "A. G. Wilson": {
+      "ru": "А. Дж. Уилсон",
+      "ja": "A・G・ウィルソン",
+      "zh-CN": "A. G. 威尔逊",
+      "ko": "A. G. 윌슨",
+      "hi": "ए. जी. विल्सन",
+      "ar": "أ. ج. ويلسون",
+      "sr-Cyrl": "А. Џ. Вилсон",
+      "de": "A. G. Wilson",
+      "fr": "A. G. Wilson",
+      "es": "A. G. Wilson",
+      "it": "A. G. Wilson",
+      "nl": "A. G. Wilson",
+      "pt-BR": "A. G. Wilson"
     }
   },
   "star": {
@@ -9230,8 +9280,12 @@
       "hi": "स्रोतास्विनी तारामंडल",
       "ar": "النهر",
       "sr-Cyrl": "Еридан",
+      "de": "Eridanus",
       "fr": "Éridan",
+      "es": "Eridanus",
       "it": "Eridano",
+      "nl": "Eridanus",
+      "pt-BR": "Erídano",
       "_qid": "Q10433"
     },
     "Canes Venatici": {
@@ -9244,8 +9298,10 @@
       "sr-Cyrl": "Ловачки пси",
       "de": "Jagdhunde",
       "fr": "Chiens de chasse",
+      "es": "Canes Venatici",
       "it": "Cani da Caccia",
       "nl": "Jachthonden",
+      "pt-BR": "Canes Venatici",
       "_qid": "Q10452"
     },
     "Big Dipper": {
@@ -9292,6 +9348,7 @@
       "es": "Osa Menor",
       "it": "Orsa Minore",
       "nl": "Kleine Beer",
+      "pt-BR": "Ursa Menor",
       "_qid": "Q10478"
     },
     "Reticulum": {
@@ -9299,11 +9356,15 @@
       "ja": "レチクル座",
       "zh-CN": "网罟座",
       "ko": "그물자리",
+      "hi": "रेटिकुलम तारामंडल",
       "ar": "الشبكة",
       "sr-Cyrl": "Мрежица",
+      "de": "Netz",
       "fr": "Réticule",
+      "es": "Reticulum",
       "it": "Reticolo",
       "nl": "Net",
+      "pt-BR": "Reticulum",
       "_qid": "Q10498"
     },
     "Sagitta": {
@@ -9332,8 +9393,10 @@
       "sr-Cyrl": "Паун",
       "de": "Pfau",
       "fr": "Paon",
+      "es": "Pavo",
       "it": "Pavone",
       "nl": "Pauw",
+      "pt-BR": "Pavo",
       "_qid": "Q10515"
     },
     "Corvus": {
@@ -9373,12 +9436,15 @@
       "ja": "ろくぶんぎ座",
       "zh-CN": "六分仪座",
       "ko": "육분의자리",
+      "hi": "Sextans तारामंडल",
       "ar": "السدس",
       "sr-Cyrl": "Секстант",
       "de": "Sextant",
       "fr": "Sextant",
+      "es": "Sextans",
       "it": "Sestante",
       "nl": "Sextant",
+      "pt-BR": "Sextans",
       "_qid": "Q10525"
     },
     "Scutum": {
@@ -9466,8 +9532,10 @@
       "sr-Cyrl": "Тукан",
       "de": "Tukan",
       "fr": "Toucan",
+      "es": "Tucana",
       "it": "Tucano",
       "nl": "Toekan",
+      "pt-BR": "Tucana",
       "_qid": "Q10567"
     },
     "Aries": {
@@ -9544,11 +9612,14 @@
       "ja": "じょうぎ座銀河団",
       "zh-CN": "矩尺座星系团",
       "ko": "직각자자리 은하단",
+      "hi": "नॉर्मा क्लस्टर",
       "ar": "عنقود نورما المجري",
+      "sr-Cyrl": "Јато Угломера",
       "de": "Norma-Galaxienhaufen",
       "fr": "Amas de la Règle",
       "es": "Cúmulo de Norma",
       "it": "Ammasso del Regolo",
+      "nl": "Winkelhaakcluster",
       "pt-BR": "Aglomerado do Esquadro",
       "_qid": "Q1068075"
     },
@@ -9621,11 +9692,13 @@
       "ru": "Галактика Вольфа-Лундмарка-Мелотта",
       "zh-CN": "沃尔夫-隆达马克-梅洛帝星系",
       "ko": "WLM 은하",
+      "hi": "वोल्फ-लुंडमार्क-मेलोट",
       "ar": "وولف-لوندمارك-ميلوت",
+      "sr-Cyrl": "Волф-Лундмарк-Мелот",
       "de": "Wolf-Lundmark-Melotte-Galaxie",
       "fr": "galaxie de Wolf-Lundmark-Melotte",
-      "it": "Galassia di Wolf-Lundmark-Melotte",
       "es": "Wolf-Lundmark-Melotte",
+      "it": "Galassia di Wolf-Lundmark-Melotte",
       "nl": "Wolf-Lundmark-Melotte",
       "pt-BR": "Wolf-Lundmark-Melotte",
       "_qid": "Q1155745"
@@ -10839,8 +10912,16 @@
       "ru": "Группа галактик Центавр A/M83",
       "ja": "ケンタウルス座A/M83銀河群",
       "zh-CN": "半人马座 A/M83星系团",
+      "ko": "센타우루스 A 은하군",
+      "hi": "सैन्टॉरस ए समूह",
       "ar": "مجموعة قنطورس A/M83",
+      "sr-Cyrl": "Група Кентаура A",
+      "de": "Centaurus-A-Gruppe",
+      "fr": "groupe de Centaurus A",
+      "es": "Grupo de Centaurus A",
       "it": "Gruppo Centaurus A",
+      "nl": "Centaurus A-groep",
+      "pt-BR": "Grupo de Centaurus A",
       "_qid": "Q1881065"
     },
     "Eskimo Nebula": {
@@ -10871,8 +10952,10 @@
       "ja": "タランチュラ星雲",
       "zh-CN": "蜘蛛星云",
       "ko": "타란툴라 성운",
+      "hi": "टैरेंटुला नीहारिका",
       "ar": "سديم العنكبوت",
       "sr-Cyrl": "Маглина Тарантула",
+      "de": "Tarantelnebel",
       "fr": "Nébuleuse de la Tarentule",
       "es": "Nebulosa de la Tarántula",
       "it": "Nebulosa Tarantola",
@@ -11012,7 +11095,9 @@
       "ja": "いて座矮小楕円銀河",
       "zh-CN": "人马座矮椭球星系",
       "ko": "궁수자리 왜소 타원 은하",
+      "hi": "धनु गोलाभ बौनी आकाशगंगा",
       "ar": "مجرة الرامي الإهليجية القزمة",
+      "sr-Cyrl": "Патуљаста сфероидна галаксија у Стрелцу",
       "de": "Sagittarius-Zwerggalaxie",
       "fr": "Galaxie naine elliptique du Sagittaire",
       "es": "Enana Elíptica de Sagitario",
@@ -11194,6 +11279,13 @@
       "ko": "센타우루스 A 은하",
       "hi": "सैन्टॉरस ए",
       "ar": "قنطورس A",
+      "sr-Cyrl": "Кентаур A",
+      "de": "Centaurus A",
+      "fr": "Centaurus A",
+      "es": "Centaurus A",
+      "it": "Centaurus A",
+      "nl": "Centaurus A",
+      "pt-BR": "Centaurus A",
       "_qid": "Q487255"
     },
     "Flame Nebula": {
@@ -11249,6 +11341,7 @@
       "ko": "마젤란 은하",
       "hi": "मॅजलॅनिक बादल",
       "ar": "سحابتا ماجلان",
+      "sr-Cyrl": "Магеланови облаци",
       "de": "Magellansche Wolken",
       "fr": "nuages de Magellan",
       "es": "Nubes de Magallanes",
@@ -11264,6 +11357,7 @@
       "ko": "마젤란 은하",
       "hi": "मॅजलॅनिक बादल",
       "ar": "سحابتا ماجلان",
+      "sr-Cyrl": "Магеланови облаци",
       "de": "Magellansche Wolken",
       "fr": "nuages de Magellan",
       "es": "Nubes de Magallanes",
@@ -11593,8 +11687,10 @@
       "sr-Cyrl": "Волар",
       "de": "Bärenhüter",
       "fr": "Bouvier",
+      "es": "Boötes",
       "it": "Boote",
       "nl": "Ossenhoeder",
+      "pt-BR": "Boötes",
       "_qid": "Q8667"
     },
     "Pisces": {
@@ -11610,6 +11706,7 @@
       "es": "Piscis",
       "it": "Pesci",
       "nl": "Vissen",
+      "pt-BR": "Peixes",
       "_qid": "Q8679"
     },
     "Van Maanen's Star": {
@@ -11682,8 +11779,10 @@
       "sr-Cyrl": "Кит",
       "de": "Walfisch",
       "fr": "Baleine",
+      "es": "Cetus",
       "it": "Balena",
       "nl": "Walvis",
+      "pt-BR": "Cetus",
       "_qid": "Q8839"
     },
     "Aldebaran": {
@@ -11750,6 +11849,7 @@
       "es": "Osa Mayor",
       "it": "Orsa Maggiore",
       "nl": "Grote Beer",
+      "pt-BR": "Ursa Maior",
       "_qid": "Q8918"
     },
     "Sombrero Galaxy": {
@@ -12379,9 +12479,9 @@
       "ja": "いて座矮小楕円銀河",
       "zh-CN": "人马座矮椭球星系",
       "ko": "궁수자리 왜소 타원 은하",
-      "hi": "धनु बौनी दीर्घवृत्तीय आकाशगंगा",
+      "hi": "धनु गोलाभ बौनी आकाशगंगा",
       "ar": "مجرة الرامي الإهليجية القزمة",
-      "sr-Cyrl": "Патуљаста елиптична галаксија у Стрелцу",
+      "sr-Cyrl": "Патуљаста сфероидна галаксија у Стрелцу",
       "de": "Sagittarius-Zwerggalaxie",
       "fr": "Galaxie naine elliptique du Sagittaire",
       "es": "Enana Elíptica de Sagitario",
@@ -12400,7 +12500,9 @@
       "ja": "いて座",
       "zh-CN": "人马座",
       "ko": "궁수자리",
+      "hi": "धनु तारामंडल",
       "ar": "القوس",
+      "sr-Cyrl": "Стрелац",
       "de": "Schütze",
       "fr": "Sagittaire",
       "es": "Sagitario",
@@ -12420,6 +12522,7 @@
       "fr": "Hercule",
       "es": "Hércules",
       "it": "Ercole",
+      "nl": "Hercules",
       "pt-BR": "Hércules"
     },
     "Aquarius": {
@@ -12520,9 +12623,11 @@
       "hi": "पेगासस तारामंडल",
       "ar": "الفرس الأعظم",
       "sr-Cyrl": "Пегаз",
+      "de": "Pegasus",
       "fr": "Pégase",
       "es": "Pegaso",
       "it": "Pegaso",
+      "nl": "Pegasus",
       "pt-BR": "Pégaso"
     },
     "Puppis": {
@@ -12562,6 +12667,7 @@
       "ar": "السرطان",
       "sr-Cyrl": "Рак",
       "de": "Krebs",
+      "fr": "Cancer",
       "es": "Cáncer",
       "it": "Cancro",
       "nl": "Kreeft",
@@ -12572,9 +12678,12 @@
       "ja": "しし座",
       "zh-CN": "狮子座",
       "ko": "사자자리",
+      "hi": "सिंह तारामंडल",
       "ar": "الأسد",
+      "sr-Cyrl": "Лав",
       "de": "Löwe",
       "fr": "Lion",
+      "es": "Leo",
       "it": "Leone",
       "nl": "Leeuw",
       "pt-BR": "Leão"
@@ -12589,6 +12698,7 @@
       "sr-Cyrl": "Девица",
       "de": "Jungfrau",
       "fr": "Vierge",
+      "es": "Virgo",
       "it": "Vergine",
       "nl": "Maagd",
       "pt-BR": "Virgem"
@@ -12675,6 +12785,7 @@
       "ko": "조각가자리",
       "hi": "भास्कर तारामंडल",
       "ar": "معمل النحات",
+      "sr-Cyrl": "Вајар",
       "de": "Bildhauer",
       "fr": "Sculpteur",
       "es": "Escultor",
@@ -12836,7 +12947,7 @@
       "sr-Cyrl": "Пећ",
       "de": "Chemischer Ofen",
       "fr": "Fourneau",
-      "es": "Horno",
+      "es": "Fornax",
       "it": "Fornace",
       "nl": "Oven",
       "pt-BR": "Fornalha"
@@ -13751,9 +13862,10 @@
       "sr-Cyrl": "Рајска птица",
       "de": "Paradiesvogel",
       "fr": "Oiseau de paradis",
+      "es": "Apus",
       "it": "Uccello del Paradiso",
       "nl": "Paradijsvogel",
-      "pt-BR": "Ave do Paraíso"
+      "pt-BR": "Apus"
     },
     "Antlia": {
       "ru": "Насос",
@@ -13765,9 +13877,10 @@
       "sr-Cyrl": "Пумпа",
       "de": "Luftpumpe",
       "fr": "Machine pneumatique",
+      "es": "Antlia",
       "it": "Macchina Pneumatica",
       "nl": "Luchtpomp",
-      "pt-BR": "Máquina Pneumática"
+      "pt-BR": "Antlia"
     },
     "Horologium": {
       "ru": "Часы",
@@ -13779,10 +13892,10 @@
       "sr-Cyrl": "Часовник",
       "de": "Pendeluhr",
       "fr": "Horloge",
-      "es": "Reloj",
+      "es": "Horologium",
       "it": "Orologio",
       "nl": "Slingeruurwerk",
-      "pt-BR": "Relógio"
+      "pt-BR": "Horologium"
     },
     "Indus": {
       "ru": "Индеец",
@@ -13791,7 +13904,7 @@
       "ko": "인디언자리",
       "hi": "इंडस तारामंडल",
       "ar": "الهندي",
-      "sr-Cyrl": "Индијанац",
+      "sr-Cyrl": "Индус",
       "de": "Inder",
       "fr": "Indien",
       "es": "Indio",
@@ -13809,7 +13922,7 @@
       "sr-Cyrl": "Угломер",
       "de": "Winkelmaß",
       "fr": "Règle",
-      "es": "Regla",
+      "es": "Norma",
       "it": "Regolo",
       "nl": "Winkelhaak",
       "pt-BR": "Esquadro"
@@ -22833,7 +22946,7 @@
     },
     "comoving distance": {
       "_sense": "the distance between two objects measured on a scale that stretches with the universe's expansion, fixed to today's size",
-      "_en": "\\bcomoving (?:distances?|coordinates?|radius|volume)\\b|\\bcomoving\\b",
+      "_en": "\\bcomoving (?:distances?|radius|volume)\\b|\\bcomoving\\b(?! coordinates?\\b)",
       "_match": {
         "ru": [
           "сопутствующ\\p{L}* расстоян\\p{L}*",
@@ -22845,10 +22958,11 @@
         "zh-CN": ["共动距离", "共动", "同移", "共動", "随动距离", "协动"],
         "ko": [
           "공변 ?거리",
-          "공변 ?(?:거리|좌표|반경|부피)?",
           "공동 ?이동 ?거리",
           "동반 ?거리",
-          "코무빙"
+          "코무빙",
+          "공변 ?(?:거리|반경|부피)?",
+          "공변 ?(?:거리|반경|부피)?"
         ],
         "hi": [
           "सहगामी[ -]?दूरी",
@@ -24155,7 +24269,7 @@
     },
     "stellar stream": {
       "_sense": "a long, thin trail of stars pulled out of a dwarf galaxy or star cluster by a larger galaxy's tidal pull",
-      "_en": "\\b(?:stellar|tidal) streams?\\b",
+      "_en": "\\bstellar streams?\\b",
       "_match": {
         "ru": [
           "звёздн\\p{L}* пот\\p{L}*",
@@ -25018,6 +25132,143 @@
       "it": "repulsore",
       "nl": "repeller",
       "pt-BR": "repulsor"
+    },
+    "tidal stream": {
+      "_sense": "a long, thin stream of stars pulled out of a dwarf galaxy or star cluster by the tides of a larger galaxy (the same object as a stellar stream, named by its cause)",
+      "_en": "\\btidal streams?\\b",
+      "_match": {
+        "ru": ["приливн\\p{L}* (?:звёздн\\p{L}* )?поток\\p{L}*", "поток\\p{L}* приливн\\p{L}*"],
+        "ja": ["潮汐(?:性)?(?:恒星)?(?:ストリーム|流)", "潮汐ストリーム"],
+        "zh-CN": ["潮汐(?:恒星|星)?流", "潮汐恒星流"],
+        "ko": ["조석 ?(?:항성 ?)?(?:류|흐름|스트림)", "조석 ?항성 ?류"],
+        "hi": ["ज्वारीय (?:तारकीय )?धारा[\\p{L}\\p{M}]*", "ज्वारीय तारकीय धारा", "ज्वारीय धारा"],
+        "ar": [
+          "تيار\\p{L}* (?:ال)?نجمي\\p{L}* (?:ال)?مد\\p{L}*",
+          "تيار\\p{L}* (?:ال)?مد\\p{L}*",
+          "تيار\\p{L}* مد\\p{L}* (?:ال)?نجمي\\p{L}*"
+        ],
+        "sr-Cyrl": [
+          "плимн\\p{L}* ток\\p{L}*",
+          "плимн\\p{L}* токов\\p{L}*",
+          "плимн\\p{L}* (?:звездан\\p{L}* )?ток\\p{L}*"
+        ],
+        "de": [
+          "Gezeiten-?(?:Stern-?)?(?:strom|ströme)\\p{L}*",
+          "Gezeiten-?Sternstr\\p{L}*",
+          "Gezeitenström\\p{L}*"
+        ],
+        "fr": [
+          "courants? de marée",
+          "courants? (?:stellaires? )?de marée",
+          "courant maréal",
+          "courants? stellaires? de marée"
+        ],
+        "es": [
+          "corrientes? de marea",
+          "corrientes? (?:estelares? )?de marea",
+          "corriente mareal",
+          "corrientes? mareales?"
+        ],
+        "it": ["corrent[ei] mareal[ei]", "corrent[ei] (?:stellar[ei] )?(?:di marea|mareal[ei])"],
+        "nl": ["getijden-?stroom\\p{L}*", "getijdenstromen", "getijde-?(?:sterren)?stroom\\p{L}*"],
+        "pt-BR": [
+          "corrente[s]? de maré",
+          "corrente[s]? (?:estelares? )?de maré",
+          "corrente[s]? mareais?"
+        ]
+      },
+      "_confidence": {
+        "ru": "medium",
+        "ja": "medium",
+        "zh-CN": "medium",
+        "ko": "medium",
+        "hi": "medium",
+        "ar": "medium",
+        "sr-Cyrl": "medium",
+        "de": "medium",
+        "fr": "medium",
+        "es": "medium",
+        "it": "medium",
+        "nl": "medium",
+        "pt-BR": "medium"
+      },
+      "ru": "приливный поток",
+      "ja": "潮汐ストリーム",
+      "zh-CN": "潮汐恒星流",
+      "ko": "조석 항성류",
+      "hi": "ज्वारीय तारकीय धारा",
+      "ar": "تيار نجمي مدّي",
+      "sr-Cyrl": "плимни ток",
+      "de": "Gezeiten-Sternstrom",
+      "fr": "courant de marée",
+      "es": "corriente de marea",
+      "it": "corrente mareale",
+      "nl": "getijdenstroom",
+      "pt-BR": "corrente de maré"
+    },
+    "comoving coordinates": {
+      "_sense": "positions measured on a grid that expands with the universe, so galaxies carried along by the expansion keep the same coordinates",
+      "_en": "\\bcomoving coordinates?\\b",
+      "_match": {
+        "ru": ["сопутствующ\\p{L}* координат\\p{L}*", "координат\\p{L}* сопутствующ\\p{L}*"],
+        "ja": ["共動座標", "共動(?:する)?座標系?"],
+        "zh-CN": ["共动坐标", "共動坐標", "共动坐标系"],
+        "ko": ["공변 ?좌표\\p{L}*", "공동 ?이동 ?좌표", "공변 ?좌표계"],
+        "hi": ["सहगामी निर्देशांक", "सहगामी (?:नियामक|निर्देशांक)\\p{L}*", "सहगामी निर्देशांक"],
+        "ar": [
+          "إحداثيات (?:ال)?مسايرة",
+          "إحداثيات (?:ال)?مسايرة",
+          "إحداثيات (?:ال)?مرافقة",
+          "إحداثيات (?:ال)?متحركة (?:ال)?مع"
+        ],
+        "sr-Cyrl": [
+          "пратећ\\p{L}* координат\\p{L}*",
+          "координат\\p{L}* пратећ\\p{L}*",
+          "сапутн\\p{L}* координат\\p{L}*"
+        ],
+        "de": [
+          "mitbewegte[nrs]? Koordinaten",
+          "mitbewegt\\p{L}* Koordinat\\p{L}*",
+          "komovierend\\p{L}* Koordinat\\p{L}*"
+        ],
+        "fr": ["coordonnées comobiles", "coordonnées en co-?mobiles?"],
+        "es": ["coordenadas comóviles", "coordenadas co-?móviles"],
+        "it": ["coordinate comoventi", "coordinate co-?moventi"],
+        "nl": [
+          "meebewegende coördinaten",
+          "meebewegende coordinaten",
+          "meebewegend\\p{L}* coördinat\\p{L}*"
+        ],
+        "pt-BR": ["coordenadas comóveis", "coordenadas co-?móveis"]
+      },
+      "_confidence": {
+        "ru": "medium",
+        "ja": "medium",
+        "zh-CN": "medium",
+        "ko": "medium",
+        "hi": "medium",
+        "ar": "medium",
+        "sr-Cyrl": "medium",
+        "de": "medium",
+        "fr": "high",
+        "es": "high",
+        "it": "medium",
+        "nl": "medium",
+        "pt-BR": "high"
+      },
+      "ru": "сопутствующие координаты",
+      "ja": "共動座標",
+      "zh-CN": "共动坐标",
+      "ko": "공변 좌표",
+      "hi": "सहगामी निर्देशांक",
+      "ar": "إحداثيات مسايرة",
+      "sr-Cyrl": "пратеће координате",
+      "de": "mitbewegte Koordinaten",
+      "fr": "coordonnées comobiles",
+      "es": "coordenadas comóviles",
+      "it": "coordinate comoventi",
+      "nl": "meebewegende coördinaten",
+      "pt-BR": "coordenadas comóveis"
     }
   }
 }

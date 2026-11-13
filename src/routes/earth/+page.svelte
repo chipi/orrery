@@ -23,7 +23,6 @@
   import DebugPanelRegistrar from '$lib/components/DebugPanelRegistrar.svelte';
   import TourAnchors from '$lib/components/TourAnchors.svelte';
   import OrbitRuler from '$lib/components/OrbitRuler.svelte';
-  import RegimePanel from '$lib/components/RegimePanel.svelte';
   import HudStackBL from '$lib/components/HudStackBL.svelte';
   import { hudTouch } from '$lib/hud-touch.svelte';
   import { base } from '$app/paths';
@@ -251,14 +250,16 @@
   {/if}
 </HudStackBL>
 
-<RegimePanel
-  bundle="orbit-regimes"
-  regime={selectedRegime}
-  open={regimePanelOpen}
-  onClose={closeRegime}
-  {selectableIds}
-  {onResidentClick}
-/>
+{#await import('$lib/components/RegimePanel.svelte') then { default: RegimePanel }}
+  <RegimePanel
+    bundle="orbit-regimes"
+    regime={selectedRegime}
+    open={regimePanelOpen}
+    onClose={closeRegime}
+    {selectableIds}
+    {onResidentClick}
+  />
+{/await}
 
 <style>
   /* #48 — "center on my location" button: a row of the bottom-left column (HudStackBL), or the

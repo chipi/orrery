@@ -16,7 +16,6 @@
   import SurfacePreloadLinks from '$lib/components/SurfacePreloadLinks.svelte';
   import TourAnchors from '$lib/components/TourAnchors.svelte';
   import OrbitRuler from '$lib/components/OrbitRuler.svelte';
-  import RegimePanel from '$lib/components/RegimePanel.svelte';
   import HudStackBL from '$lib/components/HudStackBL.svelte';
   import { onMount } from 'svelte';
   import { page } from '$app/state';
@@ -285,11 +284,13 @@
   {/if}
 </HudStackBL>
 
-<RegimePanel
-  bundle="orbit-regimes-mars"
-  regime={selectedRegime}
-  open={regimePanelOpen}
-  onClose={closeRegime}
-  {selectableIds}
-  {onResidentClick}
-/>
+{#await import('$lib/components/RegimePanel.svelte') then { default: RegimePanel }}
+  <RegimePanel
+    bundle="orbit-regimes-mars"
+    regime={selectedRegime}
+    open={regimePanelOpen}
+    onClose={closeRegime}
+    {selectableIds}
+    {onResidentClick}
+  />
+{/await}

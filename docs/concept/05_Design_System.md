@@ -286,7 +286,7 @@ The panel always contains, top to bottom:
 1. Identity details below the header (key stats, type line, tagline)
 1a. Action row (`PanelActions`): at most three chips, in-scene, then view, then simulate, then plan; above the hero, on every tab; absent when the entity has no action. Nothing is stacked at the foot of a panel.
 2. Hero image (no hover glow; keyboard focus draws an inset 2px `--color-focus` ring), then the tab strip (OVERVIEW | GALLERY | LEARN) — where applicable
-3. Stats grid (2-column)
+3. Stats grid: three cells per row (`repeat(3, minmax(0, 1fr))`), so up to nine values take three rows (UXD-018, amendment "Overview three per row")
 4. Signature element (the "still on the surface" section for Moon; the "scale fact" for Earth orbit; the editorial fact for planets)
 5. Description (lead text, Space Mono upright)
 5a. Science cards (`ScienceCard`): at most five distinct `/science` sections, through `pickScienceLinks` (`src/lib/science-links.ts`, [UXD-022](../uxs/decisions/UXD-022-science-link-lists.md)); `expanded={false}` (title and intro) for the compact lists of a station module and an Earth object; a body with no curated list shows none, there is no per-type default

@@ -75,6 +75,13 @@ gone on touch too.
 - **Decision**: the agency badge and the status chip have the same outer size (the badge takes the status chip's 1 px border, in its own colour); the close chip is a square as tall as Share (30 px fine pointer, 44 px touch) with the × drawn at 18 / 22 px; badges, status, Share and × sit on one centre line. The close chip is one style everywhere a small chip closes something: the panel, the INDEX and the surface index (`.ui-chip--close` in `chip.css`). The operator then extended it to every close (2026-11-12): dialogs, overlays, drawers and banners use the same chip (list in UXD-014); each keeps only its own placement.
 - **Verification**: `tests/e2e/panel-shell.spec.ts` ("header sizes"): badge and status the same height, × square and as tall as Share, all on one centre line (±1 px), on a mission and a lander panel.
 
+## Amendment 2026-11-12 — Overview three per row (operator)
+
+- **Why**: "Overview is too heavy with 4 rows of data at start". Two cells per row put eight values on four rows above the editorial text.
+- **Decision**: the Overview values grid holds three cells per row, compact (the operator's pick of "3 per row, compact"), so up to nine values take three rows. Cell type and padding are unchanged; a long value wraps inside its cell.
+- **Mechanism**: `.grid { grid-template-columns: repeat(3, minmax(0, 1fr)) }` in every panel with an Overview grid: `PlanetPanel`, `SatellitePanel`, `SmallBodyPanel`, `SunPanel`, `MissionPanel`, `ExoplanetPanel`, `StationModulePanel`, `EarthObjectPanel` and `SurfaceScene` (site panel). The star panel's layout is slice B3's.
+- **Verification**: screenshots of a planet, a lander, a mission and a comet panel on desktop and phone.
+
 ## Verification
 
 `tests/e2e/panel-shell.spec.ts`, the `chip.spec.ts` sweep, and the slice's check script

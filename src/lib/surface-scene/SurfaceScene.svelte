@@ -7340,7 +7340,7 @@ sample      ${debugInfo.projectedPxSample}`}
   }
   .grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 7px;
     margin-bottom: 14px;
   }

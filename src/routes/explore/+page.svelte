@@ -2593,6 +2593,13 @@
     .ruler-desktop-only {
       --ruler-clear: 104px;
     }
+    /* The scale panel is 190 px wide at the right here (ScaleStrip): the ruler stops 8 px short of
+       it and cuts a name with an ellipsis (its title carries the full name) rather than run under
+       it. */
+    .ruler-desktop-only :global(.ruler) {
+      min-width: 0;
+      max-width: calc(100vw - 12px - 190px - 12px - 8px);
+    }
   }
   @media (hover: none), (pointer: coarse) {
     .ruler-desktop-only {

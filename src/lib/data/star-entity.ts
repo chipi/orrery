@@ -2,6 +2,7 @@ import { get, type FetchLike } from './core';
 import type { CatalogueMap } from '$lib/catalogue';
 import {
   getCultureDoors,
+  getPageHero,
   type ExoplanetOverlay,
   type ExoplanetPlanet,
   type ExoplanetSystem,
@@ -9,7 +10,15 @@ import {
   type CatalogueEntryLike,
   type NamedStar,
   type NamedStarOverlay,
+  type PageHero,
 } from './universe';
+
+/**
+ * Stars whose panel photo is not a photograph of the star (Vega: a labelled JWST disk figure;
+ * Altair: a gridded model view; Barnard's Star: an unmarked star field). They keep it in the
+ * panel and get no page hero (operator decision 2026-11-13).
+ */
+export const NO_PAGE_HERO = new Set(['vega', 'altair', 'barnards-star']);
 
 type Link = NonNullable<NamedStarOverlay['links']>[number];
 
@@ -47,6 +56,26 @@ export interface StarEntity {
   catalogue: CatalogueMap;
   /** The star's object pages: SIMBAD, and the Exoplanet Archive for a host. */
   records: { simbad?: string; exoplanet_archive?: string };
+  /** The star panel's photo with the panel's reviewed crop, or null: no photo, no slot. */
+  hero: PageHero | null;
+}
+
+/** The panel photo of a named star as a page hero; the crop is stars-hero-overrides.json's, as in the panel. */
+async function starHero(
+  id: string,
+  photo: { src: string } | undefined,
+  locale: string,
+  fetchFn: FetchLike,
+): Promise<PageHero | null> {
+  if (!photo || NO_PAGE_HERO.has(id)) return null;
+  const doc = await get<{ overrides?: Record<string, { slot: string; position?: string }> }>(
+    'stars-hero-overrides.json',
+    fetchFn,
+  ).catch(() => null);
+  const o = doc?.overrides?.[id];
+  const slot = /\/(\d\d)\.(?:webp|jpe?g)$/.exec(photo.src)?.[1];
+  const position = o?.position && o.slot.slice(0, 2) === slot ? o.position : undefined;
+  return getPageHero({ src: photo.src, full: photo.src, position }, locale, fetchFn);
 }
 
 /**
@@ -132,5 +161,6 @@ export async function getStarEntity(
     named: !!star,
     catalogue,
     records,
+    hero: await starHero(id, o?.photo, locale, fetchFn),
   };
 }

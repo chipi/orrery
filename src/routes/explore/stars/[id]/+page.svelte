@@ -11,7 +11,9 @@
   import { getLocale } from '$lib/paraglide/runtime';
   import { canonicalUrl, metaDescription, pageTitle } from '$lib/seo';
   import { ogTitle } from '$lib/social-meta';
-  import { article, breadcrumbList } from '$lib/json-ld';
+  import { absoluteUrl, article, breadcrumbList } from '$lib/json-ld';
+  import { assetUrl } from '$lib/asset-url';
+  import EntityHero from '$lib/components/EntityHero.svelte';
   import JsonLd from '$lib/components/JsonLd.svelte';
   import DataSources from '$lib/components/DataSources.svelte';
   import type { LocalizedCultureDoor } from '$lib/data/universe';
@@ -36,7 +38,13 @@
     const loc = getLocale();
     const url = canonicalUrl(`/explore/stars/${star.id}`, loc);
     return [
-      article({ headline: star.name, description: summary, url, inLanguage: loc }),
+      article({
+        headline: star.name,
+        description: summary,
+        url,
+        inLanguage: loc,
+        ...(star.hero ? { image: absoluteUrl(assetUrl(star.hero.full)) } : {}),
+      }),
       breadcrumbList([
         { name: section, url: canonicalUrl('/explore', loc) },
         { name: star.name, url },
@@ -71,6 +79,8 @@
     <h1 class="page-title">{star.name}</h1>
     {#if star.fact}<p class="lede page-lead">{star.fact}</p>{/if}
   </header>
+
+  {#if star.hero}<EntityHero hero={star.hero} />{/if}
 
   {#if star.bio}<p class="dispatch">{star.bio}</p>{/if}
 

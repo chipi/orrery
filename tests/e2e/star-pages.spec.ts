@@ -41,6 +41,37 @@ const CASES = [
   { id: 'trappist-1', system: true, scene: 'system=trappist-1' },
 ];
 
+// The panel's photo is the page hero (ADR-096 item 13), with the panel's reviewed crop; a star whose
+// photo is not a photograph of it (Vega) keeps the panel image and gets no hero. Real browser, both projects.
+test.describe('star pages: hero', () => {
+  test('Sirius shows its photo as one figure under the lede, cropped as its panel, with the credit', async ({
+    page,
+  }) => {
+    await page.goto('/explore/stars/sirius');
+    const hero = page.getByTestId('entity-hero');
+    await expect(hero).toHaveCount(1);
+    const img = hero.locator('img');
+    await expect(img).toHaveAttribute('src', /\/images\/stars\/sirius\/01/);
+    await expect(img).toHaveCSS('object-position', '50% 35%');
+    await expect
+      .poll(() => img.evaluate((el: HTMLImageElement) => el.naturalWidth))
+      .toBeGreaterThan(0);
+    await expect(hero.locator('figcaption')).toContainText('H. Bond');
+    const after = await page.evaluate(() => {
+      const fig = document.querySelector('[data-testid="entity-hero"]')!;
+      const lede = document.querySelector('.lede')!;
+      return !!(lede.compareDocumentPosition(fig) & Node.DOCUMENT_POSITION_FOLLOWING);
+    });
+    expect(after).toBe(true);
+  });
+
+  test('Vega has no entity hero', async ({ page }) => {
+    await page.goto('/explore/stars/vega');
+    await expect(page.locator('h1')).toHaveText('Vega');
+    await expect(page.getByTestId('entity-hero')).toHaveCount(0);
+  });
+});
+
 test.describe('star pages: static HTML', () => {
   // Playwright requires a destructuring pattern as the first argument (see mobile-invariants.spec.ts).
   // eslint-disable-next-line no-empty-pattern

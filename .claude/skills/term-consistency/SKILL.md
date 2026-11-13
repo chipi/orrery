@@ -156,7 +156,7 @@ node scripts/i18n-tools/term-drift.mjs --trees=essays                         # 
 
 When a tree reaches zero unreviewed misses, add it to `GATED_TREES` in
 `term-glossary.test.ts` (it runs `term-drift … --gate`), so a new translation that drifts
-fails CI. Gated since 2026-10-31: all five trees — **science**, **essays**, **programs**, **fleet**, **missions**. Mutation-checked: putting "branden" back in
+fails CI. Gated since 2026-10-31: **science**, **essays**, **programs**, **fleet**, **missions**, **glossary**; since 2026-11-13 also **universe** (deep-sky, stars, black holes, galaxies, structures, named stars, exoplanets). Mutation-checked: putting "branden" back in
 one nl field fails the test with "unreviewed misses: 1".
 
 ## Detector rules worth knowing

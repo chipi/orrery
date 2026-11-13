@@ -2,6 +2,7 @@ import { expect, test } from '@playwright/test';
 import { collectCanonicalRoutes } from '../../scripts/site-routes.mjs';
 import { expectLinkTargets, expectOneTabStop } from './_helpers/index-panel';
 import { waitForHydration } from './_helpers/hydration';
+import { galaxyPages, structurePages } from './_helpers/outer-pages';
 
 /**
  * UX slice A5 (UXD-015, ADR-096 item 11): the A–Z is absorbed into the INDEX. On the scene
@@ -9,8 +10,10 @@ import { waitForHydration } from './_helpers/hydration';
  * object has an entity page also carries a real link to it, and the prerendered HTML links
  * every entity page of the hub even while the INDEX panel is closed (crawlers do not click).
  * /missions and /fleet keep the A–Z at the page foot. The stars (ADR-096 item 13) are typed apart
- * under /explore/stars/<id>, the black holes (item 16) under /explore/black-holes/<id> and the deep-sky
- * objects with text (item 17) under /explore/deep-sky/<id>; all three
+ * under /explore/stars/<id>, the black holes (item 16) under /explore/black-holes/<id>, the deep-sky
+ * objects with text (item 17) under /explore/deep-sky/<id>, and the galaxies and the groups,
+ * clusters and other structures (item 18) under /explore/galaxies/<id> and
+ * /explore/structures/<id>; all of them
  * are rows of the INDEX of the scale they belong to (UXD-017), and /explore renders every scale's
  * INDEX, hidden unless it is on screen, so the prerendered /explore HTML links every one of them.
  * The /explore INDEX in the browser (all eight scales) is scale-index.spec.ts.
@@ -45,6 +48,15 @@ function deepSkyPageIds(): string[] {
   return (collectCanonicalRoutes() as string[])
     .filter((r) => r.startsWith('/explore/deep-sky/'))
     .map((r) => r.slice('/explore/deep-sky/'.length));
+}
+
+/** Every /explore/galaxies/<id> or /explore/structures/<id> page the routes list, sorted. */
+function outerPageIds(dir: 'galaxies' | 'structures'): string[] {
+  const prefix = `/explore/${dir}/`;
+  return (collectCanonicalRoutes() as string[])
+    .filter((r) => r.startsWith(prefix))
+    .map((r) => r.slice(prefix.length))
+    .sort();
 }
 
 test.describe('the prerendered hub HTML links every entity page', () => {
@@ -83,14 +95,22 @@ test.describe('the prerendered hub HTML links every entity page', () => {
       expect(holes.length).toBe(4);
       const objects = deepSkyPageIds();
       expect(objects.length).toBe(140);
+      // Galaxy and structure pages follow their overlay files (ADR-096 item 18): the routes and the
+      // files agree, and the INDEX links each of them, with or without text written yet.
+      const galaxies = outerPageIds('galaxies');
+      const structures = outerPageIds('structures');
+      expect(galaxies).toEqual([...galaxyPages].sort());
+      expect(structures).toEqual([...structurePages].sort());
       const missing = [
         ...stars.map((id) => `${locale}/explore/stars/${id}`),
         ...holes.map((id) => `${locale}/explore/black-holes/${id}`),
         ...objects.map((id) => `${locale}/explore/deep-sky/${id}`),
+        ...galaxies.map((id) => `${locale}/explore/galaxies/${id}`),
+        ...structures.map((id) => `${locale}/explore/structures/${id}`),
       ].filter((href) => !hrefs.includes(href));
       expect(
         missing,
-        `star / black-hole / deep-sky pages not linked from ${locale}/explore`,
+        `star / black-hole / deep-sky / galaxy / structure pages not linked from ${locale}/explore`,
       ).toEqual([]);
     });
   }

@@ -278,23 +278,38 @@ test.describe('who lives here and the founding missions', () => {
     await open(page, '/explore?regime=GIANTS');
     const giants = panel(page, /Jupiter/).first();
     await expect(giants).toBeVisible();
-    await expect(giants.locator('.resident-thumb')).toHaveCount(4);
+    await expect(giants.locator('.residents .entity-thumb')).toHaveCount(4);
     await expect
       .poll(() =>
         giants
-          .locator('.resident-thumb')
+          .locator('.residents .entity-thumb')
           .evaluateAll((els) => els.filter((e) => (e as HTMLImageElement).naturalWidth > 0).length),
       )
       .toBe(4);
     await expect(giants.locator('button.resident-link')).toHaveCount(4);
+    // L45: every founding mission that links to a mission page also carries its photo.
+    const linked = await giants.locator('.firsts-link').count();
+    expect(linked).toBeGreaterThan(0);
+    await expect(giants.locator('.firsts .entity-thumb')).toHaveCount(linked);
 
     await open(page, '/explore?regime=BELT');
     const belt = panel(page, /Pallas/).first();
     await expect(belt).toBeVisible();
-    await expect(belt.locator('.resident-thumb')).toHaveCount(2);
-    await expect(belt.locator('.thumb-slot .agency-dot')).toHaveCount(2);
+    await expect(belt.locator('.residents .entity-thumb')).toHaveCount(2);
+    await expect(belt.locator('.residents .entity-thumb-slot .entity-thumb-dot')).toHaveCount(2);
     await expect(belt.locator('button.resident-link', { hasText: /Ceres/ })).toHaveCount(1);
     await expect(belt.locator('.resident-label', { hasText: /Pallas/ })).toHaveCount(1);
+  });
+
+  test('a thumbnail file that fails to load turns into the dot, never a broken image', async ({
+    page,
+  }) => {
+    await page.route('**/credit-thumbs/**', (r) => r.abort());
+    await open(page, '/explore?regime=GIANTS');
+    const giants = panel(page, /Jupiter/).first();
+    await expect(giants).toBeVisible();
+    await expect(giants.locator('.entity-thumb')).toHaveCount(0);
+    await expect(giants.locator('.residents .entity-thumb-slot')).toHaveCount(4);
   });
 
   test('GIANTS: a first with a mission page opens the mission in place over the regime panel', async ({

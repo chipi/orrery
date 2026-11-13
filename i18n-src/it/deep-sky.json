@@ -1,7 +1,7 @@
 {
   "jwst-carina": {
     "title": "Scogliere cosmiche",
-    "caption": "Il bordo di una nursery stellare nella Nebulosa Carina (NGC 3324), scolpito da stelle giovani.",
+    "caption": "Il bordo di una nursery stellare nella Nebulosa della Carena (NGC 3324), scolpito da stelle giovani.",
     "subject": "Nebulosa",
     "type": "Regione di formazione stellare",
     "distance": "~7.900 anni luce",
@@ -65,7 +65,7 @@
   },
   "hst-mystic-mountain": {
     "title": "Montagna Mistica",
-    "caption": "Un pilastro di tre anni luce nella Nebulosa Carina, dall'anniversario ventesimo di Hubble.",
+    "caption": "Un pilastro di tre anni luce nella Nebulosa della Carena, dall'anniversario ventesimo di Hubble.",
     "subject": "Nebulosa",
     "type": "Pilastro in formazione stellare",
     "distance": "~7.700 anni luce",
@@ -80,7 +80,7 @@
     "taken": "2009"
   },
   "hst-antennae": {
-    "title": "Galassie Antennae",
+    "title": "Galassie Antenne",
     "caption": "Due galassie (NGC 4038/4039) in collisione, che innescano miliardi di nuove stelle.",
     "subject": "Galassie",
     "type": "Galassie in collisione",
@@ -144,7 +144,7 @@
     "taken": "2003"
   },
   "hst-eskimo": {
-    "title": "Nebulosa Eskimo",
+    "title": "Nebulosa Eschimese",
     "caption": "NGC 2392 — una stella simile al Sole avvolta in gusci di gas che ha espulso 10.000 anni fa.",
     "subject": "Nebulosa",
     "type": "Nebulosa planetaria (NGC 2392)",
@@ -254,7 +254,7 @@
     "taken": "2006"
   },
   "hst-carina-pano": {
-    "title": "Nebulosa Carina",
+    "title": "Nebulosa della Carena",
     "caption": "Un panorama largo 50 anni luce di una delle più grandi fabbriche di stelle della galassia.",
     "subject": "Nebulosa",
     "type": "Regione di formazione stellare",

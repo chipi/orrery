@@ -746,7 +746,7 @@
     regimeHover = hover;
     regimeActive = active;
     regimeHl?.set(hover, active);
-    regimeHlState = hover ? `${hover}:hover` : active ? `${active}:active` : '';
+    regimeHlState = regimeHl ? regimeHl.state() : '';
   }
   $effect(() => {
     void regimes;
@@ -3642,24 +3642,24 @@
         : null;
     let regimeHlKey = '';
     const regimeMarkerPts: THREE.Vector3[] = [];
+    const markerVec = (i: number) => (regimeMarkerPts[i] ??= new THREE.Vector3());
     // A Lagrange-point regime is a point: it rings each of its residents instead.
     const regimeMarkerPoints = (id: string): THREE.Vector3[] => {
-      regimeMarkerPts.length = 0;
+      let n = 0;
       if (config.planet === 'earth') {
+        const regimeOf = new Map(earthObjectsCache.map((o) => [o.id, o.regime]));
         for (const s of earthSats) {
-          if (earthObjectsCache.find((o) => o.id === s.id)?.regime === id) {
-            regimeMarkerPts.push(s.group.getWorldPosition(new THREE.Vector3()));
-          }
+          if (regimeOf.get(s.id) === id) s.group.getWorldPosition(markerVec(n++));
         }
       } else {
         for (const om of orbitalMarkers) {
           const site = orbiterSites.find((x) => x.id === om.siteId);
           if (regimeForAltitude(site?.altitude_km, regimes ?? [])?.id === id) {
-            regimeMarkerPts.push(om.dotGroup.getWorldPosition(new THREE.Vector3()));
+            om.dotGroup.getWorldPosition(markerVec(n++));
           }
         }
       }
-      return regimeMarkerPts;
+      return regimeMarkerPts.slice(0, n);
     };
     syncRegimeHighlightImpl = () => {
       if (!rulerScene || !regimes || regimes.length === 0) return;

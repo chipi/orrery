@@ -27,7 +27,8 @@
   region (Molniya: perigee 1,000 km, apogee 40,000 km).
 -->
 <script lang="ts">
-  import { onMount } from 'svelte';
+  import { onMount, untrack } from 'svelte';
+  import { browser } from '$app/environment';
   import type { OrbitRegime } from '$types/orbit-regime';
   import * as m from '$lib/paraglide/messages';
   import { page } from '$app/state';
@@ -76,17 +77,17 @@
   }: Props = $props();
 
   const loc = $derived(localeFromPage(page));
-  let collapsed = $state(false);
-  onMount(() => {
-    if (collapsible) collapsed = initialCollapsed(window.innerHeight);
-    return () => onPreview?.(null);
-  });
+  let collapsed = $state(
+    untrack(() => collapsible) && browser ? initialCollapsed(window.innerHeight) : false,
+  );
+  onMount(() => () => onPreview?.(null));
   function toggle() {
     collapsed = !collapsed;
     saveCollapsed(collapsed);
     if (collapsed) onPreview?.(null);
   }
-  const bodyId = `ruler-bands-${Math.random().toString(36).slice(2, 8)}`;
+  const uid = $props.id();
+  const bodyId = `ruler-bands-${uid}`;
 
   // Render order top→bottom. SURFACE is synthetic (always at 0 km, no
   // panel) — included as a visual anchor so the ruler reads as "ground
@@ -131,7 +132,6 @@
         class="ruler-toggle ui-hit"
         aria-expanded={!collapsed}
         aria-controls={bodyId}
-        aria-label={collapsed ? m.ruler_expand_aria() : m.ruler_collapse_aria()}
         data-testid="ruler-toggle"
         onclick={toggle}
       >

@@ -32,7 +32,7 @@
     "taken": "Veröffentlicht am 19. Okt 2022"
   },
   "jwst-tarantula": {
-    "title": "Tarantula-Nebel",
+    "title": "Tarantelnebel",
     "caption": "30 Doradus — die aktivste bekannte Starburst-Region in unserer galaktischen Nachbarschaft.",
     "subject": "Nebel",
     "type": "Sternentstehungsregion (30 Dor)",
@@ -40,7 +40,7 @@
     "taken": "Veröffentlicht am 6. Sep 2022"
   },
   "jwst-cartwheel": {
-    "title": "Cartwheel-Galaxie",
+    "title": "Wagenradgalaxie",
     "caption": "Eine seltene Ringgalaxie, die noch immer von einer frontalen Kollision vor Hunderten von Millionen Jahren nachklingt.",
     "subject": "Galaxien",
     "type": "Ringgalaxie",
@@ -48,7 +48,7 @@
     "taken": "Veröffentlicht am 2. Aug 2022"
   },
   "jwst-phantom": {
-    "title": "Phantom-Galaxie",
+    "title": "Phantomgalaxie",
     "caption": "M74 — eine großartige Spiralgalaxie, deren Skelett aus Gas und Staub im Infrarot entblößt ist.",
     "subject": "Galaxien",
     "type": "Spiralgalaxie (M74)",
@@ -128,7 +128,7 @@
     "taken": "2005"
   },
   "hst-veil": {
-    "title": "Schleier-Nebel",
+    "title": "Cirrusnebel",
     "caption": "Ein Hauch des Cygnusbogens — eine Supernova-Stoßwelle, die sich noch nach etwa 20.000 Jahren ausdehnt.",
     "subject": "Nebel",
     "type": "Supernova-Überrest · Cygnusbogen",
@@ -136,7 +136,7 @@
     "taken": "2015"
   },
   "hst-sombrero": {
-    "title": "Sombrero-Galaxie",
+    "title": "Sombrerogalaxie",
     "caption": "M104 — ein strahlender weißer Kern, umhüllt von einem dunklen Staubring.",
     "subject": "Galaxien",
     "type": "Spiralgalaxie (M104)",
@@ -159,7 +159,7 @@
     "distance": "~6.500 Lichtjahre"
   },
   "chandra-tycho": {
-    "title": "Tycho-Supernova-Überrest",
+    "title": "Tychos Supernova-Überrest",
     "caption": "Die Röntgenschale eines Sterns, dessen Explosion Tycho Brahe 1572 beobachtete.",
     "subject": "Supernova",
     "type": "Supernova-Überrest · Röntgenstrahlung (SN 1572)",
@@ -174,7 +174,7 @@
     "taken": "2007"
   },
   "euclid-perseus": {
-    "title": "Perseus-Cluster",
+    "title": "Perseushaufen",
     "caption": "Euclid erfasst 1.000 Galaxien im Cluster und 100.000 weitere dahinter verstreut.",
     "subject": "Tiefenfeld",
     "type": "Galaxienhaufen",
@@ -182,7 +182,7 @@
     "taken": "Veröffentlicht am 7. Nov 2023"
   },
   "euclid-horsehead": {
-    "title": "Pferdekopf-Nebel",
+    "title": "Pferdekopfnebel",
     "caption": "Euclids panoramischer Blick auf die ikonische dunkle Wolke im Orion.",
     "subject": "Nebel",
     "type": "Dunkelnebel (Barnard 33)",
@@ -214,15 +214,15 @@
     "taken": "2010–heute"
   },
   "jwst-orion": {
-    "title": "Orion-Nebel",
-    "caption": "Der innere Orion-Nebel — eine Sternenkinderstube 1.350 Lichtjahre entfernt, in Webb NIRCam.",
+    "title": "Orionnebel",
+    "caption": "Der innere Orionnebel — eine Sternenkinderstube 1.350 Lichtjahre entfernt, in Webb NIRCam.",
     "subject": "Nebel",
     "type": "Emissionsnebel (M42)",
     "distance": "~1.350 Lichtjahre",
     "taken": "Veröffentlicht am 12. Sep 2022"
   },
   "jwst-ring": {
-    "title": "Ring-Nebel",
+    "title": "Ringnebel",
     "caption": "M57 — ein sonnenähnlicher Stern am Ende seines Lebens, seine äußeren Schichten leuchten in feiner Detailschärfe.",
     "subject": "Nebel",
     "type": "Planetarischer Nebel (M57)",
@@ -238,7 +238,7 @@
     "taken": "Veröffentlicht 2024"
   },
   "hst-lagoon": {
-    "title": "Lagoon-Nebel",
+    "title": "Lagunennebel",
     "caption": "M8 — eine Sternkinderstube aus Gas und Staub, vom 28. Jahrestag des Hubble.",
     "subject": "Nebel",
     "type": "Emissionsnebel (M8)",
@@ -246,7 +246,7 @@
     "taken": "2018 · Hubble 28."
   },
   "hst-orion": {
-    "title": "Orion-Nebel",
+    "title": "Orionnebel",
     "caption": "M42 — Hubbles schärfstes Mosaik der nächstgelegenen massiven Sternentstehungsgebiet.",
     "subject": "Nebel",
     "type": "Emissionsnebel (M42)",
@@ -342,7 +342,7 @@
     "taken": "2014 · Hubble 24."
   },
   "hst-andromeda": {
-    "title": "Andromeda-Galaxie",
+    "title": "Andromedagalaxie",
     "caption": "Das schärfste Hubble-Panorama aller Zeiten unserer nächsten großen Nachbarin — über 100 Millionen Sterne.",
     "subject": "Galaxie",
     "type": "Spiralgalaxie",
@@ -350,7 +350,7 @@
     "taken": "2015 · PHAT"
   },
   "hst-pinwheel": {
-    "title": "Feuerrad-Galaxie",
+    "title": "Feuerradgalaxie",
     "caption": "M101 — eine riesige Spiralgalaxie von vorne gesehen, ihre Arme durchzogen von rosa Sternentstehungsgebieten.",
     "subject": "Galaxie",
     "type": "Spiralgalaxie",

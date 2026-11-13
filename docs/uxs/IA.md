@@ -204,6 +204,8 @@ Text pages (everything that is not a scene, the home page, the Lab or a browse t
 
 ## §controls
 
+The orbit ruler's header is the one disclosure control that is not a chip: a `<button class="ui-hit">` with `aria-expanded` and `aria-controls` (a Chip's contract is `aria-pressed`), 24 px minimum hit area ([UXD-024](decisions/UXD-024-orbit-ruler-one-row-draws-its-regime.md)).
+
 Every toggle, filter, choice and HUD action is a `<Chip>` (`src/lib/components/Chip.svelte`, look in `src/lib/styles/chip.css`, [UXD-014](decisions/UXD-014-one-chip-and-filter.md)): 30px on a fine pointer, 44px on a coarse one, 4px corners, 11px uppercase, outline at rest, one active look (soft accent fill, accent edge, white text; the world tint on `/moon`, `/mars` and `/venus`). Four kinds: toggle (`aria-pressed`), choice (`role="radio"` inside `ChipGroup role="radiogroup"`, arrow keys), action, link. Reset view is `ResetViewButton`. Filter groups on missions, fleet, launches, deep-sky, programs, the star and surface indexes and `/plan` are radiogroups. The FILTERS strip is a compact chip with the count after the label. Panels' close, back, Share and action chips are chips too (UXD-018). Kept outside the chip: tabs (`PanelTabRow`), nav toggles, cards, the standalone pages' CTAs, status and label pills, the Lab. Design System §5.7 and §5.7a hold the values. **Layer chips are one flat horizontal row** on Explore and every world (`LayerChipRow`, [UXD-015](decisions/UXD-015-flat-chip-row.md)): no groups, no captions, no master switches, no greyed chip, no vertical column; on a fine pointer the view actions (2D, RESET VIEW, SPIN, AR, SKY) sit first in the same row, 12px apart, RESET VIEW always present (disabled when inert); the row wraps between chips, and `/earth` is SURFACE, LAUNCHPADS, MUSEUMS, OBSERVATORIES, ORBITERS (one ORBITERS chip for every orbiter). The INDEX panels on `/moon`, `/mars`, `/venus` and `/explore` carry a real link to each entity page (the neighbourhood INDEX links each star's `/explore/stars/<id>` page, the Milky Way, Virgo and Cosmic web INDEX the black holes'; `/explore` has the same INDEX at all eight scales, UXD-017); there is no separate A–Z tab there (`/missions` and `/fleet` keep it at the page foot).
 
 ---
@@ -290,7 +292,7 @@ No state is persisted between sessions on the original surfaces. All screen stat
 
 The one cross-surface exception is URL-encoded state: mission ID and filter params allow a specific view to be bookmarked and shared.
 
-**The Physics Lab (`/lab`) is the deliberate exception** — a worksheet is a document the user builds, so it persists: URL-compact for sharing, `localStorage` for the working session, and a `.orrlab.json` export/import for durable documents (one codec, RFC-037 §5 / D-serialize). This is scoped to `/lab`; the other surfaces remain memory-only.
+**The Physics Lab (`/lab`) is the deliberate exception** — a worksheet is a document the user builds, so it persists: URL-compact for sharing, `localStorage` for the working session, and a `.orrlab.json` export/import for durable documents (one codec, RFC-037 §5 / D-serialize). This is scoped to `/lab`; the other surfaces remain memory-only, with two small exceptions that are UI preferences, not user data: whether the Moon/Mars imagery card is expanded (`orrery.surface.tierCardExpanded`) and whether the orbit ruler is folded (`orrery.ruler.collapsed`, [UXD-024](decisions/UXD-024-orbit-ruler-one-row-draws-its-regime.md)), each a `localStorage` flag with a blocked-storage fallback.
 
 ---
 
@@ -335,4 +337,5 @@ SvelteKit's standard entry: `src/app.html` is the document shell; `src/routes/+l
 | v1.2 | August 2026 | Added §lab (Physics Lab surface — one card model, three views; UXS-015 / RFC-037 / PRD-033), §surfaces + §url-structure rows for `/lab`, and the §state-persistence exception for Lab worksheet persistence. |
 | v1.3 | August 2026 | Added §nav-groups (EXPLORE / WORLDS / PLAN & FLY / CATALOG / LEARN top-level split; the 4 surface bodies moved out of EXPLORE into a new WORLDS group + `/worlds` TV hub) and §home-cards (the landing rebuilt as the whole nav tree, sectioned; every leaf a rich hand-drawn card). RFC-038. Known Universe epic renumbered to PRD-034 / RFC-039 / UXS-016 to clear the Physics Lab numbers. |
 | v1.4 | November 2026 | Added §controls (the one chip, UXD-014). |
+| v1.6 | November 2026 | §controls: the orbit ruler's disclosure header; §state-persistence: the ruler fold as the second UI-preference exception (UXD-024). |
 | v1.5 | November 2026 | §surfaces row for `/library` with its three data blocks (Audio episodes, Launches data, Astrophysics data). |

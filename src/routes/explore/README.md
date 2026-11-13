@@ -9,6 +9,7 @@ plain `legendRowEls` array (legend keyboard nav) and `iconic.state`.
 
 - `HudControls` — solar-system HUD: one row on a fine pointer, the view actions (2D/3D, reset, always rendered and disabled when nothing is selected, AR/Sky) then the layer chips (`LayerChipRow`, UXD-015; the PATHS chip carries `data-audio-stage` through the config `attrs`), the
   PATHS legend, the mobile top row and the mobile drawers (incl. Scan).
+- The orbit ruler (`OrbitRuler`, mounted in `+page.svelte`, the touch drawer's tab in `HudControls`) draws its hovered or open zone through the host's `setRegimeHighlightFn` (3D and 2D, [UXD-024](../../../docs/uxs/decisions/UXD-024-orbit-ruler-one-row-draws-its-regime.md)); a founding mission opens in place over the regime panel (`onMissionOpen`).
 - `TimeDock` — PLANET SCALES chip + time controls (play, speed radiogroup, reset; coupled positions).
 - `ScaleNav` — top row: back chip, scale picker, `ResetViewButton` (the seven outer scales only: the solar system's one RESET VIEW is the HUD row's; always drawn, disabled when inert; flush right at the solar system and then left of a docked panel, UXD-021).
 - `SunCompass` — off-screen Sun needle (neighborhood).

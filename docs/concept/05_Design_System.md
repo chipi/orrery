@@ -155,6 +155,8 @@ Nations (surface-site markers and the nation legend):
 | MOON distance | `#aaaacc` |
 | L2 | `#ffd700` |
 
+These are data colours: the dot of a ruler row and the regime panel's eyebrow keep them (teal LEO included). The ruler's highlight in the scene is NOT drawn in them but in the highlight blue `#889fe7`, so no ring is teal (§5.16, [UXD-024](../uxs/decisions/UXD-024-orbit-ruler-one-row-draws-its-regime.md)).
+
 ---
 
 ## 3. Typography
@@ -275,6 +277,7 @@ The layers that meet on `/explore` and the other scene routes, bottom to top. A 
 
 | z-index | Layer | Source |
 |---|---|---|
+| 7 | The bottom-left HUD column of `/earth`, `/moon`, `/mars` (readout, locate chip, orbit ruler; the ruler inside it has no layer of its own) | `HudStackBL.svelte` |
 | 8 | The `/explore` scale navigator while its ladder is closed | `ScaleNav.svelte` |
 | 28 | Regime panel (the Earth-orbit ruler), under a satellite panel opened from it | `RegimePanel.svelte` (`zIndex={28}`) |
 | 30 | Detail panel (default, `--panel-z`) | `Panel.svelte` |
@@ -535,6 +538,24 @@ The HUD parts of `/explore` that carry a number, a choice or a name ([UXD-021](.
 | Reset slot | One RESET VIEW per scale, always drawn, disabled while there is nothing to reset, so the row never shifts. At the solar system it is the HUD row's (top left, A5, UXD-015; enabled by a selection of any kind); at the seven outer scales it is the navigator's (a selection; at the neighbourhood also the Sun out of frame). Never two on screen. The Explore HUD row stops 12px before the navigator's left edge (cover + 8px + its width), like the worlds' `hud-beside-panel` |
 | Direction pills | ʻOumuamua's "← Vega" and a heading craft's "→ star" (Voyager 1 and 2, Pioneer 10 and 11): hidden at rest, shown while the owner is hovered or selected (a craft's with its path highlight). The arrow lines stay. A named star's name is the star panel's (`getNamedStarI18n`); a catalogue-only star keeps its data name |
 | REFERENCES overlay | The canvas (`SizesCanvas`) draws the eight bodies only: true relative size, a common baseline, size order. The names are a DOM grid under it (`SizesOverlay`): eight columns in the same left-to-right order on the 640px card, 4 x 2 under 620px; a cell holds a swatch in the planet's colour, the name in the viewer's language (`planetName`, `lab_body_*`) and the diameter (the `planet-stats.ts` mean diameter) in the page locale and unit form; a name never breaks mid-word from 360px up (Space Mono 11px, -0.02em tracking; the longest, nl MERCURIUS, is 58.6px in a 61px text box at 360px). The open planet's cell is marked; hover, focus or a tap on a cell rings its body. Heading above the canvas, source line under the grid |
+
+---
+
+### 5.16 Orbit ruler, bottom-left column and regime highlight (UXD-024)
+
+The ruler is `OrbitRuler.svelte`; on the three Worlds it stands in `HudStackBL.svelte`, on `/explore` alone at the lower left. Behaviour in [UXS-014](../uxs/UXS-014.md#the-orbit-ruler).
+
+| Element | Rule |
+|---|---|
+| Ruler card | `rgba(8,12,22,0.62)`, 1px `rgba(255,255,255,0.08)` border, 6px radius, 10px 12px padding, Space Mono 11px. `width: max-content`, `min-width: 208px`, `max-width: min(280px, 44vw)` (152px to 56vw under 720px on a non-touch window); in the touch drawer full width and flush |
+| Row | One line: an 8px dot in the regime colour, the short name (700, `letter-spacing: .04em`, ellipsis, the full name as `title`), the altitude or distance at 62% white, tabular. 1px `rgba(255,255,255,0.06)` border, 4px radius, 4px 8px padding |
+| Row hover, focus, open | `#889fe7` edge and `rgba(136,159,231,0.14)` fill; the dot keeps the regime colour. A row flagged for the selected orbiter keeps its regime-colour look until hovered |
+| Header | A disclosure `<button class="ui-hit">` with the title and a `▾` / `▸` box (1px `rgba(255,255,255,0.16)` border, 4px radius); not a Chip (§5.7: a Chip is `aria-pressed`, this is `aria-expanded`). Folded: the header alone, plus ` · <short name>` of the flagged regime. Remembered in `localStorage`; folded by default under 560px window height. The touch drawer has no header button |
+| Bottom-left column | `position: absolute; left: 12px; bottom: max(14px, --ruler-clear)`, z 7 (§4.7), flex column, 8px gap, top to bottom: readout (Moon), locate chip, ruler. `max-height` leaves 150px at the top for the chip rows; the ruler shrinks and scrolls first. On touch only the readout stays, at `bottom: 106px + safe area`, above the scene's bar. The imagery card (`TierContextCard`) is outside the column and rises above it by `--hud-stack-top` |
+| Regime highlight (scene) | `#889fe7` (`RING_BLUE`) only. Band: annulus at opacity 0.14 and two 1.5px screen-width lines. One altitude: one 2px line. Hill sphere: three great circles, 1.2px. Lagrange point: the 44px pin ring (§5.14) on each resident, no ring at its own radius. A schematic regime (beyond the scene: `/explore` SCATTERED, HELIOPAUSE, OORT) is dashed. Hover 0.9; the open panel's regime pulses 0.55 to 0.9 over 1.6s, steady under `prefers-reduced-motion`. Equatorial plane on the Worlds, the ecliptic on `/explore`; the 2D view draws the same shapes in the units of `orbitR`. Hidden while the camera is below the orbits |
+| Resident photo | 28px circle, `object-fit: cover`, 2px border in the agency colour; a resident with no photo keeps the 8px dot centred in the same 28px slot |
+
+Scene code cannot read CSS variables: the highlight blue is the literal `RING_BLUE` (§5.14).
 
 ---
 

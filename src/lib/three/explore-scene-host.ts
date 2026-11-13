@@ -1161,8 +1161,11 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     dollyActive = false;
     cancelFocus();
     focusOrigin.set(0, 0, 0);
-    camP = LG_ENTRY_CAM_P;
-    camR = Math.max(camRMin, Math.min(camRMax, LG_ENTRY_CAM_R));
+    // The level's frame, so a portrait phone goes back to its own entry distance, not the
+    // landscape one.
+    const f = LEVELS.find((l) => l.id === 'local-group')?.frame();
+    camP = f?.entryP ?? LG_ENTRY_CAM_P;
+    camR = Math.max(camRMin, Math.min(camRMax, f?.entryR ?? LG_ENTRY_CAM_R));
     closeLgPanel();
     updateCam();
   }

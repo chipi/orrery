@@ -687,8 +687,8 @@
   // The navigator's Reset at the seven outer scales (always drawn, UXD-021); it is enabled once
   // the current scale's view is "dirty" (a selection, or the Sun panned out of frame). The solar
   // system has none here: its Reset is the HUD row's.
-  let scaleResetEnabled = $derived.by(() => {
-    if (contextId === 'neighborhood') return !!(selectedStarId || (sunCompass && !sunCompass.on));
+  let scaleSelection = $derived.by(() => {
+    if (contextId === 'neighborhood') return !!selectedStarId;
     if (contextId === 'milky-way') return !!selectedMwId;
     if (contextId === 'local-group') return !!selectedLgMember;
     if (contextId === 'local-sheet') return !!selectedLsMember;
@@ -697,7 +697,23 @@
     if (contextId === 'cosmic-web') return !!selectedCosmicWebMember;
     return false;
   });
+  // A member's × closes its panel but keeps the camera on it (UXD-019), so Reset stays live
+  // until the view is reset or the scale changes, not only while something is selected.
+  let scaleFocusKept = $state(false);
+  $effect(() => {
+    if (scaleSelection) scaleFocusKept = true;
+  });
+  $effect(() => {
+    void contextId;
+    scaleFocusKept = untrack(() => scaleSelection);
+  });
+  let scaleResetEnabled = $derived(
+    scaleSelection ||
+      scaleFocusKept ||
+      (contextId === 'neighborhood' && !!sunCompass && !sunCompass.on),
+  );
   function resetCurrentScale(): void {
+    scaleFocusKept = false;
     if (contextId === 'neighborhood') resetNeighborhoodFn?.();
     else if (contextId === 'milky-way') resetMilkyWayFn?.();
     else if (contextId === 'local-group') resetLocalGroupFn?.();

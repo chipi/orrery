@@ -588,7 +588,16 @@ test.describe('/explore outer scales: a member takes the camera, Reset gives it 
       const focused = await cam(page);
       expect(dist(focused.origin, [0, 0, 0]), 'the camera panned to the member').toBeGreaterThan(1);
       expect(focused.camR, 'and eased in').toBeLessThanOrEqual(entry.camR);
-      await clickReset(page);
+      // × closes the member's panel and keeps the camera on it (UXD-019), so Reset stays live
+      // (on a phone the sheet covers the navigator, so × is also the way to reach Reset).
+      await page.locator('aside.panel:visible .panel-close').first().click();
+      await expect(page.locator('aside.panel:visible')).toHaveCount(0);
+      expect(
+        dist((await cam(page)).origin, [0, 0, 0]),
+        'the camera kept the member',
+      ).toBeGreaterThan(1);
+      await expect(page.getByTestId('explore-scale-reset')).toBeEnabled();
+      await page.getByTestId('explore-scale-reset').click();
       await settled(page);
       const back = await cam(page);
       expect(dist(back.origin, [0, 0, 0])).toBeLessThan(0.01);

@@ -44,5 +44,6 @@ export const load: PageServerLoad = async ({ params, fetch }) => {
     ),
     sections: relatedSections(entity.related),
     openPath: openInOrreryPath(entity.scale, entity.id),
+    hero: entity.hero,
   };
 };

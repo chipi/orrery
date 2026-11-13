@@ -3,7 +3,8 @@
   item 18), laid out as the deep-sky page: crumb, kind line, name, fact as the lede, bio, the
   value rows (the catalogue's source linked where there is one), the Data sources block, the
   overlay's learn-more links, the Related list (part of, members, same scale: computed from the
-  census files, not prose) and the link into the scene (?context=<scale>&pick=<id>). No hero yet.
+  census files, not prose) and the link into the scene (?context=<scale>&pick=<id>). The hero is the picture
+  its panel shows (panel-heroes.json, a part-of photo captioned with what it pictures), or none.
 -->
 <script lang="ts">
   import '$lib/components/entity-page.css';
@@ -12,10 +13,13 @@
   import { getLocale } from '$lib/paraglide/runtime';
   import { canonicalUrl, metaDescription, pageTitle } from '$lib/seo';
   import { ogTitle } from '$lib/social-meta';
-  import { article, breadcrumbList } from '$lib/json-ld';
+  import { absoluteUrl, article, breadcrumbList } from '$lib/json-ld';
   import JsonLd from '$lib/components/JsonLd.svelte';
   import DataSources from '$lib/components/DataSources.svelte';
+  import EntityHero from '$lib/components/EntityHero.svelte';
+  import { assetUrl } from '$lib/asset-url';
   import type { DataSourceItem } from '$lib/catalogue';
+  import type { PageHero } from '$lib/data';
   import type { OuterRow, OuterSection } from '$lib/explore/outer-page';
 
   type Props = {
@@ -30,6 +34,7 @@
       sections: OuterSection[];
       /** Locale-free `/explore?context=<scale>&pick=<id>`. */
       openPath: string;
+      hero?: PageHero | null;
     };
   };
   let { data }: Props = $props();
@@ -39,7 +44,13 @@
     const loc = getLocale();
     const url = canonicalUrl(data.path, loc);
     return [
-      article({ headline: data.title, description: summary, url, inLanguage: loc }),
+      article({
+        headline: data.title,
+        description: summary,
+        url,
+        inLanguage: loc,
+        ...(data.hero ? { image: absoluteUrl(assetUrl(data.hero.full)) } : {}),
+      }),
       breadcrumbList([
         { name: section, url: canonicalUrl('/explore', loc) },
         { name: data.title, url },
@@ -66,6 +77,8 @@
     <h1 class="page-title">{data.title}</h1>
     <p class="lede page-lead">{data.text.fact}</p>
   </header>
+
+  {#if data.hero}<EntityHero hero={data.hero} />{/if}
 
   <p class="dispatch">{data.text.bio}</p>
 

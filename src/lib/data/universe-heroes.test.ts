@@ -10,7 +10,7 @@ vi.mock('./core', () => ({
   }),
 }));
 
-import { getNamedStarGallery, getUniverseHero } from './universe';
+import { getNamedStarGallery, getPageHero, getUniverseHero } from './universe';
 
 const heroes = (
   JSON.parse(readFileSync('static/data/universe/panel-heroes.json', 'utf8')) as {
@@ -43,6 +43,13 @@ describe('getUniverseHero (B3, UXD-023)', () => {
     );
   });
 
+  it('Triangulum shows NGC 604 as a part-of photo, named in the reader locale', async () => {
+    const tri = await getUniverseHero('local-group', 'triangulum', 'en-US');
+    expect(tri?.full).toBe('/images/deep-sky/jwst-ngc604.jpg');
+    expect(tri?.pictured).toBe('NGC 604');
+    expect((await getUniverseHero('local-group', 'triangulum', 'ja'))?.pictured).toBeTruthy();
+  });
+
   it('no entry, no hero: Laniakea, Virgo, Cygnus X-1 and Gargantua have none', async () => {
     expect(await getUniverseHero('laniakea', 'virgo-supercluster')).toBeNull();
     expect(await getUniverseHero('virgo', 'virgo-cluster')).toBeNull();
@@ -65,6 +72,41 @@ describe('getUniverseHero (B3, UXD-023)', () => {
       if (!e.pictured) continue;
       const [level, id] = key.split('/') as [Parameters<typeof getUniverseHero>[0], string];
       expect((await getUniverseHero(level, id))?.pictured, key).toBeTruthy();
+    }
+  });
+});
+
+describe('getPageHero (entity pages)', () => {
+  it('is null without a hero', async () => {
+    expect(await getPageHero(null, 'en-US')).toBeNull();
+  });
+
+  it('a deep-sky thumb gets the full width for its srcset, the alt in the locale and the provenance credit', async () => {
+    const h = await getPageHero(await getUniverseHero('local-group', 'lmc', 'de'), 'de');
+    expect(h).toMatchObject({
+      src: '/images/deep-sky/jwst-tarantula.thumb.jpg',
+      full: '/images/deep-sky/jwst-tarantula.jpg',
+      fullWidth: 1600,
+      credit: 'NASA, ESA, CSA, STScI, Webb ERO Production Team',
+    });
+    expect(h?.pictured).toBeTruthy();
+    expect(h?.alt).toBeTruthy();
+  });
+
+  it('a webp hero keeps its own path as the image and has no srcset width', async () => {
+    const h = await getPageHero(await getUniverseHero('black-holes', 'sagittarius-a-star'), 'en-US');
+    expect(h?.fullWidth).toBeUndefined();
+    expect(h?.src).toBe('/images/black-holes/sagittarius-a-star/01.webp');
+    expect(h?.alt.length).toBeGreaterThan(10);
+    expect(h?.credit).toBeTruthy();
+  });
+
+  it('every entry of panel-heroes.json has alt text and a credit on its page', async () => {
+    for (const key of Object.keys(heroes)) {
+      const [level, id] = key.split('/') as [Parameters<typeof getUniverseHero>[0], string];
+      const h = await getPageHero(await getUniverseHero(level, id), 'en-US');
+      expect(h?.alt.length, `${key} alt`).toBeGreaterThan(5);
+      expect(h?.credit, `${key} credit`).toBeTruthy();
     }
   });
 });

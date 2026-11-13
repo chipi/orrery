@@ -34,6 +34,13 @@
   object-fit: cover;
   border-radius: 6px;
 }
+.entity .hero figcaption {
+  margin-top: 8px;
+  font-family: var(--font-mono, 'Space Mono', monospace);
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: var(--color-text-label);
+}
 .entity .dispatch {
   font-size: 17px;
 }

@@ -12,7 +12,9 @@
   import { getLocale } from '$lib/paraglide/runtime';
   import { canonicalUrl, metaDescription, pageTitle } from '$lib/seo';
   import { ogTitle } from '$lib/social-meta';
-  import { article, breadcrumbList } from '$lib/json-ld';
+  import { absoluteUrl, article, breadcrumbList } from '$lib/json-ld';
+  import { assetUrl } from '$lib/asset-url';
+  import EntityHero from '$lib/components/EntityHero.svelte';
   import JsonLd from '$lib/components/JsonLd.svelte';
   import DataSources from '$lib/components/DataSources.svelte';
   import type { PageData } from './$types';
@@ -25,7 +27,13 @@
     const loc = getLocale();
     const url = canonicalUrl(`/explore/deep-sky/${obj.id}`, loc);
     return [
-      article({ headline: data.title, description: summary, url, inLanguage: loc }),
+      article({
+        headline: data.title,
+        description: summary,
+        url,
+        inLanguage: loc,
+        ...(obj.hero ? { image: absoluteUrl(assetUrl(obj.hero.full)) } : {}),
+      }),
       breadcrumbList([
         { name: section, url: canonicalUrl('/explore', loc) },
         { name: data.title, url },
@@ -52,6 +60,8 @@
     <h1 class="page-title">{data.title}</h1>
     <p class="lede page-lead">{obj.fact}</p>
   </header>
+
+  {#if obj.hero}<EntityHero hero={obj.hero} credit={!obj.gallery} />{/if}
 
   <p class="dispatch">{obj.bio}</p>
 

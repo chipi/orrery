@@ -104,6 +104,19 @@ describe('getGalaxyEntity', () => {
     expect(e?.related[0].links[0].name).toMatch(/^M31/);
   });
 
+  it('the LMC page takes its panel hero, the Tarantula Nebula named as the part pictured; a dwarf has none', async () => {
+    for (const id of ['lmc', 'sculptor-dwarf']) OVERLAYS.add(id);
+    const p = pages({ galaxy: ids(['lmc', 'sculptor-dwarf']) });
+    const lmc = await getGalaxyEntity('lmc', 'en-US', fetch, p);
+    expect(lmc?.hero).toMatchObject({
+      full: '/images/deep-sky/jwst-tarantula.jpg',
+      pictured: 'Tarantula Nebula',
+    });
+    expect(lmc?.hero?.alt).toBeTruthy();
+    expect((await getGalaxyEntity('lmc', 'de', fetch, p))?.hero?.pictured).toBeTruthy();
+    expect((await getGalaxyEntity('sculptor-dwarf', 'en-US', fetch, p))?.hero).toBeNull();
+  });
+
   it('is null for a twin: its page is the deep-sky one', async () => {
     OVERLAYS.add('andromeda');
     expect(
@@ -140,6 +153,20 @@ describe('getStructureEntity', () => {
     expect((await at('local-group'))?.scale).toBe('local-sheet');
     expect((await at('virgo-supercluster'))?.scale).toBe('laniakea');
     expect((await at('laniakea'))?.scale).toBe('cosmic-web');
+  });
+
+  it('a structure takes the hero its panel shows under its scale, a part-of photo naming what it pictures', async () => {
+    for (const id of ['ic-342-group', 'm101-group', 'perseus-pisces', 'virgo-cluster'])
+      OVERLAYS.add(id);
+    const at = async (id: string) =>
+      getStructureEntity(id, 'en-US', fetch, pages({ structure: ids([id]) }));
+    expect((await at('ic-342-group'))?.hero).toMatchObject({
+      full: '/images/deep-sky/euclid-ic342.jpg',
+      pictured: 'The Hidden Galaxy',
+    });
+    expect((await at('m101-group'))?.hero?.full).toBe('/images/deep-sky/hst-pinwheel.jpg');
+    expect((await at('perseus-pisces'))?.hero?.full).toBe('/images/deep-sky/euclid-perseus.jpg');
+    expect((await at('virgo-cluster'))?.hero).toBeNull();
   });
 
   it('links what contains it, what it holds and its neighbours, each once', async () => {

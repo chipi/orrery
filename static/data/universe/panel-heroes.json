@@ -8,6 +8,7 @@
     "local-group/andromeda": { "photoKey": "hst-andromeda" },
     "local-group/lmc": { "photoKey": "jwst-tarantula", "pictured": true },
     "local-group/smc": { "photoKey": "jwst-ngc346", "pictured": true },
+    "local-group/triangulum": { "photoKey": "jwst-ngc604", "pictured": true },
     "local-sheet/ic-342-group": { "photoKey": "euclid-ic342", "pictured": true },
     "local-sheet/m101-group": { "photoKey": "hst-pinwheel", "pictured": true },
     "cosmic-web/perseus-pisces": { "photoKey": "euclid-perseus", "pictured": true },

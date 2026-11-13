@@ -36,7 +36,12 @@ import {
 } from '$lib/universe/milky-way-visual';
 import { describeDistanceAu, AU_PER_PC } from '$lib/universe/scale-readout';
 import { fixedScaleBar, formatBarValue, scaleBarWidth } from '$lib/universe/scale-bar';
-import { placeLabels, setLabelLeftInset, type PlaceSlot } from '$lib/universe/scene-pins';
+import {
+  placeLabels,
+  setLabelLeftInset,
+  spriteRectPx,
+  type PlaceSlot,
+} from '$lib/universe/scene-pins';
 import { deepSkyRung, type DeepSkyRung } from '$lib/universe/deep-sky-lod';
 import { gravityAccel, logScaleLength, BODY_MASS_KG } from '$lib/orbit-overlays';
 import { PLANETS, realStartAngle } from '$lib/explore-scene';
@@ -2085,10 +2090,19 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     });
     // Read-only probe of the direction pills (HUD e2e): drawn (the whole chain visible) and text.
     window.__exploreDirectionLabels = () => {
-      const out: Record<string, { drawn: boolean; text: string }> = {};
+      const out: Record<
+        string,
+        { drawn: boolean; text: string; x: number; y: number; w: number; h: number }
+      > = {};
       const read = (key: string, sprite: THREE.Sprite) => {
         const state = sprite.userData.directionLabel as { text: string } | undefined;
-        out[key] = { drawn: isDrawn(sprite), text: state?.text ?? '' };
+        const w = bridge.container?.clientWidth ?? 1;
+        const h = bridge.container?.clientHeight ?? 1;
+        out[key] = {
+          drawn: isDrawn(sprite),
+          text: state?.text ?? '',
+          ...spriteRectPx(sprite, camera, w, h),
+        };
       };
       for (const o of smallBodyObjs) if (o.directionLabel) read(o.body.id, o.directionLabel);
       for (const h of iconicTrajectoryHandles) {

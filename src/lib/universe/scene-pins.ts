@@ -301,6 +301,23 @@ export function projectedPx(
   return (Math.abs(axis ? _q.y - a.y : _q.x - a.x) * viewportPx) / 2;
 }
 
+/** A sprite's rectangle as drawn, canvas px (left, top, size), measured by projection. */
+export function spriteRectPx(
+  sprite: THREE.Sprite,
+  camera: THREE.Camera,
+  w: number,
+  h: number,
+): { x: number; y: number; w: number; h: number } {
+  camera.updateMatrixWorld();
+  sprite.getWorldPosition(_p);
+  const pw = projectedPx(camera, _p, sprite.scale.x, 0, w);
+  const ph = projectedPx(camera, _p, sprite.scale.y, 1, h);
+  _p.project(camera);
+  const cx = ((_p.x + 1) / 2) * w;
+  const cy = ((1 - _p.y) / 2) * h;
+  return { x: cx - sprite.center.x * pw, y: cy - (1 - sprite.center.y) * ph, w: pw, h: ph };
+}
+
 export function snapshotPins(
   scale: string,
   pins: readonly ProbePin[],

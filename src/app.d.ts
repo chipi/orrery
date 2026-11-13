@@ -93,7 +93,10 @@ declare global {
       viewShiftPx: number;
     };
     /** The direction pills (ʻOumuamua's and the heading craft's): drawn (whole chain visible) and text, by owner id. */
-    __exploreDirectionLabels?: () => Record<string, { drawn: boolean; text: string }>;
+    __exploreDirectionLabels?: () => Record<
+      string,
+      { drawn: boolean; text: string; x: number; y: number; w: number; h: number }
+    >;
     /** Pin scenes (neighbourhood to cosmic web): every label and ring as drawn, client px; null elsewhere. */
     __scenePins?: () => import('$lib/universe/scene-pins').PinsSnapshot | null;
     /** Iconic-mission boxes (milestones and the mission box) of the highlighted missions, as drawn, canvas px. */

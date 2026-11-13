@@ -89,6 +89,14 @@ export function wrapText(text: string, maxW: number, measure: Measure, maxLines:
   return { lines: kept, truncated: true };
 }
 
+/** One line cut to `maxW` with an ellipsis, or as it is when it fits (a long mission name in the header). */
+export function ellipsize(text: string, maxW: number, measure: Measure): string {
+  if (measure(text) <= maxW) return text;
+  let cut = text;
+  while (cut && measure(`${cut}…`) > maxW) cut = graphemes(cut).slice(0, -1).join('');
+  return `${cut.trimEnd()}…`;
+}
+
 export interface BoxLayout {
   header: string;
   lines: string[];
@@ -118,11 +126,12 @@ export function layoutBox({
 }: LayoutOpts): BoxLayout {
   const textMax = maxW - BOX_PAD_X * 2;
   const wrapped = wrapText(body, textMax, measureBody, maxLines);
-  const widest = Math.max(measureHeader(header), ...wrapped.lines.map((l) => measureBody(l)));
+  const fittedHeader = ellipsize(header, textMax, measureHeader);
+  const widest = Math.max(measureHeader(fittedHeader), ...wrapped.lines.map((l) => measureBody(l)));
   const w = Math.ceil(Math.min(textMax, widest)) + BOX_PAD_X * 2;
   const h =
     BOX_PAD_Y * 2 +
     BOX_HEADER_LINE +
     (wrapped.lines.length ? BOX_ROW_GAP + wrapped.lines.length * BOX_BODY_LINE : 0);
-  return { header, lines: wrapped.lines, truncated: wrapped.truncated, w, h };
+  return { header: fittedHeader, lines: wrapped.lines, truncated: wrapped.truncated, w, h };
 }

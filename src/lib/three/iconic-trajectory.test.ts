@@ -1,5 +1,6 @@
 // @vitest-environment jsdom
 import * as THREE from 'three';
+import { spriteRectPx } from '$lib/universe/scene-pins';
 import { describe, expect, it, vi } from 'vitest';
 import {
   PICK_KINDS,
@@ -217,5 +218,80 @@ describe('iconic milestone boxes', () => {
     const mats = sprites.map((s) => vi.spyOn(s.material, 'dispose'));
     h.dispose();
     for (const spy of [...tex, ...mats]) expect(spy).toHaveBeenCalled();
+  });
+
+  it('clears the hovered milestone when the paths go off', () => {
+    const h = build();
+    h.setHighlight(true);
+    const cam = cameraAt(40000);
+    const hidden = shown(h, cam).find((b) => !b.shown && b.kind === 'milestone' && b.n >= 2)!;
+    const marker = h.pickTargets.filter((o) => o.userData.kind === PICK_KINDS.marker)[hidden.n - 2];
+    h.setHoveredMilestone(marker);
+    expect(shown(h, cam).find((b) => b.header === hidden.header)!.shown).toBe(true);
+    h.setVisible(false);
+    h.setVisible(true);
+    expect(shown(h, cam).find((b) => b.header === hidden.header)!.shown).toBe(false);
+    h.dispose();
+  });
+
+  it('upper-cases the mission box header in the page language', () => {
+    document.documentElement.lang = 'tr';
+    const h = buildIconicTrajectory({
+      data: { ...data, name: 'ilk' },
+      auToPx: (au) => au * 10,
+      width: 800,
+      height: 600,
+    });
+    h.setHighlight(true);
+    expect(shown(h, cameraAt(400)).find((b) => b.kind === 'mission')!.header).toBe('İLK');
+    document.documentElement.lang = '';
+    h.dispose();
+  });
+});
+
+describe('iconic mission box and the heading pill', () => {
+  // the last leg runs along +Y, so the pill stands straight above Today on screen, where the
+  // mission box would be lifted
+  const heading: IconicTrajectoryData = {
+    ...data,
+    heading: { star: 'Gliese 445', constellation: 'Cam' },
+    waypoints: [
+      ...data.waypoints.slice(0, -1),
+      { date: '2020-01-01', label: 'Leg', x: 0, y: 5, z: 0 },
+      { date: '2026-11-12', label: 'Today', x: 0, y: 10, z: 0 },
+    ],
+  };
+  const rect = (r: { x: number; y: number; w: number; h: number }) => ({
+    l: r.x,
+    r: r.x + r.w,
+    t: r.y,
+    b: r.y + r.h,
+  });
+
+  it('never overlap: the box moves below Today where the pill would meet it', () => {
+    const h = buildIconicTrajectory({
+      data: heading,
+      auToPx: (au) => au * 10,
+      width: 800,
+      height: 600,
+    });
+    h.setHighlight(true);
+    for (const dist of [900, 1100, 1200, 1263, 1330, 1450, 1800]) {
+      // straight down the z axis: the pill stands 62 / wpp px above Today, wpp = 2 d tan(27.5 deg) / 700
+      const cam = new THREE.PerspectiveCamera(55, VIEW_W / VIEW_H, 0.1, 100000);
+      cam.position.set(0, 100, dist);
+      cam.lookAt(0, 100, 0);
+      cam.updateMatrixWorld(true);
+      const boxes = shown(h, cam);
+      const mission = boxes.find((b) => b.kind === 'mission')!;
+      const pill = h.directionLabel!;
+      const pr = spriteRectPx(pill, cam, VIEW_W, VIEW_H);
+      expect(mission.shown && pill.visible, `both drawn at ${dist}`).toBe(true);
+      const a = rect(mission);
+      const b = rect(pr);
+      const apart = a.r <= b.l || b.r <= a.l || a.b <= b.t || b.b <= a.t;
+      expect(apart, `dist ${dist}`).toBe(true);
+    }
+    h.dispose();
   });
 });

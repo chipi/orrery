@@ -38,8 +38,10 @@
     section?: string;
     /** Override the trigger label. Defaults to "Why?". */
     triggerLabel?: string;
+    /** The small heading over the title. Defaults to "Why this number"; pass '' to draw none. */
+    eyebrow?: string;
   };
-  let { title, body, tab, section, triggerLabel }: Props = $props();
+  let { title, body, tab, section, triggerLabel, eyebrow }: Props = $props();
 
   let open = $state(false);
   let trigger: HTMLButtonElement | null = $state(null);
@@ -98,7 +100,7 @@
       data-testid="why-popover"
     >
       <div class="header">
-        <span class="eyebrow">{m.why_popover_eyebrow()}</span>
+        {#if eyebrow !== ''}<span class="eyebrow">{eyebrow ?? m.why_popover_eyebrow()}</span>{/if}
         <Chip
           kind="action"
           class="close ui-chip--close"
@@ -173,6 +175,9 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 6px;
+  }
+  .header :global(.close) {
+    margin-inline-start: auto;
   }
   .eyebrow {
     font-family: var(--font-mono, 'Space Mono', monospace);

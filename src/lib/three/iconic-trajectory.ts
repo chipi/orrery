@@ -23,6 +23,7 @@ import {
   labelRect,
   liftOnScreen,
   newLabelSlot,
+  overlaps,
   placeLabels,
   projectedPx,
   viewDepth,
@@ -685,18 +686,23 @@ export function buildIconicTrajectory(opts: BuildIconicTrajectoryOpts): IconicTr
     });
   }
   const slots = boxes.map((b) => b.slot);
-  const boxTextures: THREE.CanvasTexture[] = [];
+  // The heading pill takes part in the pass, after the mission box: a box never sits on it.
+  const dirSlot = dirLabel ? newLabelSlot(dirLabel, 1, -0.5) : null;
+  if (dirSlot) slots.push(dirSlot);
+  let boxTextures: THREE.CanvasTexture[] = [];
+  let disposed = false;
 
-  /** Lays out and draws every box, once, when the mission is first highlighted: the 18 builds at
-   *  load stay cheap (perf-explore-iconic-clicks) and the font is loaded by then. */
-  const ensureBoxes = (): void => {
-    if (boxes.length === 0 || boxes[0].layout) return;
+  const layoutAndDraw = (): void => {
+    for (const t of boxTextures) t.dispose();
+    boxTextures = [];
     const measureHeader = boxMeasure(BOX_FONT_HEADER, BOX_HEADER_PX);
     const measureBody = boxMeasure(BOX_FONT_BODY, BOX_BODY_PX);
-    const rtl = typeof document !== 'undefined' && document.documentElement.dir === 'rtl';
+    const root = typeof document === 'undefined' ? null : document.documentElement;
+    const rtl = root?.dir === 'rtl';
+    const lang = root?.lang || undefined;
     for (const b of boxes) {
       b.layout = layoutBox({
-        header: b.kind === 'mission' ? b.header.toUpperCase() : b.header,
+        header: b.kind === 'mission' ? b.header.toLocaleUpperCase(lang) : b.header,
         body: b.body,
         measureHeader,
         measureBody,
@@ -707,6 +713,20 @@ export function buildIconicTrajectory(opts: BuildIconicTrajectoryOpts): IconicTr
       boxTextures.push(texture);
       b.sprite.material.map = texture;
       b.sprite.material.needsUpdate = true;
+    }
+  };
+
+  /** Lays out and draws every box, once, when the mission is first highlighted: the 18 builds at
+   *  load stay cheap (perf-explore-iconic-clicks). If the mono font was not loaded yet the sizes
+   *  came from the fallback, so they are drawn again when it has. */
+  const ensureBoxes = (): void => {
+    if (boxes.length === 0 || boxes[0].layout) return;
+    layoutAndDraw();
+    const fonts = typeof document === 'undefined' ? undefined : document.fonts;
+    if (fonts && !fonts.check(BOX_FONT_BODY)) {
+      void fonts.load(BOX_FONT_BODY).then(() => {
+        if (!disposed) layoutAndDraw();
+      });
     }
   };
 
@@ -726,6 +746,7 @@ export function buildIconicTrajectory(opts: BuildIconicTrajectoryOpts): IconicTr
     },
     setVisible: (v: boolean) => {
       group.visible = v;
+      if (!v) forced = null;
     },
     setHighlight: (highlighted: boolean) => {
       lineMaterial.opacity = highlighted ? LINE_OPACITY_BRIGHT : LINE_OPACITY_DIM;
@@ -747,6 +768,9 @@ export function buildIconicTrajectory(opts: BuildIconicTrajectoryOpts): IconicTr
       if (!labelGroup.visible) return;
       camera.updateMatrixWorld();
       const fov = cameraFov(camera);
+      // The heading pill is a candidate like a box (its sprite is world-sized, its rectangle is
+      // read the same way).
+      if (dirSlot && dirLabel) dirSlot.visible = labelRect(dirLabel, camera, dirSlot.rect, tmp);
       for (const b of boxes) {
         const layout = b.layout;
         if (!layout) continue;
@@ -758,9 +782,21 @@ export function buildIconicTrajectory(opts: BuildIconicTrajectoryOpts): IconicTr
           continue;
         }
         const wpp = worldPerPx(depth, fov, canvasHeight);
-        liftOnScreen(b.sprite.position, b.base, camera, (layout.h / 2 + BOX_GAP_PX) * wpp);
+        const lift = (layout.h / 2 + BOX_GAP_PX) * wpp;
         b.sprite.scale.set(layout.w * wpp, layout.h * wpp, 1);
+        liftOnScreen(b.sprite.position, b.base, camera, lift);
         slot.visible = labelRect(b.sprite, camera, slot.rect, tmp);
+        // The mission box and the pill both sit at Today: when they would meet, the box goes
+        // below the marker, the pill keeps its place at the arrow tip.
+        if (
+          b.kind === 'mission' &&
+          slot.visible &&
+          dirSlot?.visible &&
+          overlaps(slot.rect, dirSlot.rect)
+        ) {
+          liftOnScreen(b.sprite.position, b.base, camera, -lift);
+          slot.visible = labelRect(b.sprite, camera, slot.rect, tmp);
+        }
       }
       placeLabels(slots);
     },
@@ -802,6 +838,7 @@ export function buildIconicTrajectory(opts: BuildIconicTrajectoryOpts): IconicTr
       clickTargetMaterial.dispose();
       ringGeo.dispose();
       ringMaterial.dispose();
+      disposed = true;
       for (const t of boxTextures) t.dispose();
       for (const b of boxes) b.sprite.material.dispose();
       dirLineGeo?.dispose();

@@ -26,7 +26,7 @@ const shownBoxes = async (page: Page) => (await boxes(page)).filter((b) => b.sho
 
 /** Hover a legend row until its mission's boxes are drawn: the 18 trajectories build one per
  *  frame after load, so a hover that lands before its mission exists has nothing to highlight. */
-async function hoverUntilBoxes(page: Page, id: string) {
+async function hoverUntilBoxes(page: Page, id: string, min = 2) {
   const row = page.getByTestId(`paths-legend-row-${id}`);
   await expect
     .poll(
@@ -38,7 +38,7 @@ async function hoverUntilBoxes(page: Page, id: string) {
       },
       { timeout: 20_000 },
     )
-    .toBeGreaterThan(1);
+    .toBeGreaterThanOrEqual(min);
 }
 
 test.describe('/explore — iconic legend (C7)', () => {
@@ -142,6 +142,9 @@ test.describe('/explore — iconic legend (C7)', () => {
     await expect(trigger).toHaveAttribute('aria-expanded', 'true');
     const pop = page.getByTestId('why-popover');
     await expect(pop).toBeVisible();
+    // the popover has no "WHY THIS NUMBER" eyebrow here
+    await expect(pop.locator('.eyebrow')).toHaveCount(0);
+    await expect(pop.getByText(/why this number/i)).toHaveCount(0);
     await expect(pop.getByRole('link')).toHaveAttribute(
       'href',
       /\/science\/transfers\/coplanar-trajectories$/,
@@ -165,6 +168,15 @@ test.describe('/explore — iconic legend (C7)', () => {
     const body = page.locator('.mdg-body');
     await expect(body.locator('.paths-legend-title')).toHaveText(/hover any spacecraft/i);
     await expect(body.getByTestId('paths-legend-why').locator('button.trigger')).toBeVisible();
+    // AGENTS.md touch floor: the (i) keeps a 44 x 44 px hit area
+    const hit = await body
+      .getByTestId('paths-legend-why')
+      .locator('button.trigger')
+      .evaluate((el) => {
+        const r = getComputedStyle(el, '::after');
+        return Math.min(parseFloat(r.width), parseFloat(r.height));
+      });
+    expect(hit).toBeGreaterThanOrEqual(44);
     await expect(body.locator(ROWS)).toHaveCount(18);
     await expect(body.getByTestId('paths-legend-tip')).toHaveCount(0);
   });
@@ -236,5 +248,118 @@ test.describe('/explore — iconic milestone boxes (C7)', () => {
       }
       expect(compared, `boxes compared after wheel ${dy}`).toBeGreaterThan(0);
     }
+  });
+
+  for (const id of ['voyager-1', 'voyager-2', 'pioneer-10', 'pioneer-11']) {
+    test(`${id}: the mission box and the heading pill do not overlap (NV6)`, async ({ page }) => {
+      desktopOnly();
+      test.slow();
+      await openPaths(page);
+      // the outbound craft are past the default view: zoom out until Today is on screen
+      const vp = page.viewportSize()!;
+      await page.mouse.move(vp.width / 2, vp.height / 2);
+      await page.mouse.wheel(0, 2200);
+      await page.waitForTimeout(1500);
+      await hoverUntilBoxes(page, id, 1);
+      await expect
+        .poll(
+          async () =>
+            (await page.evaluate((k) => window.__exploreDirectionLabels!()[k]?.drawn, id)) ?? false,
+        )
+        .toBe(true);
+      const pill = await page.evaluate((k) => window.__exploreDirectionLabels!()[k], id);
+      const mission = (await boxes(page)).find((b) => b.kind === 'mission' && b.missionId === id)!;
+      expect(mission.shown, 'the mission box is drawn').toBe(true);
+      const apart =
+        mission.x + mission.w <= pill.x + 0.5 ||
+        pill.x + pill.w <= mission.x + 0.5 ||
+        mission.y + mission.h <= pill.y + 0.5 ||
+        pill.y + pill.h <= mission.y + 0.5;
+      expect(apart, `pill ${JSON.stringify(pill)} / box ${JSON.stringify(mission)}`).toBe(true);
+    });
+  }
+
+  test('the live region reads the tagline after the pointer rests, not on a sweep', async ({
+    page,
+  }) => {
+    desktopOnly();
+    await openPaths(page);
+    const live = page.getByTestId('paths-legend-live');
+    await expect(live).toHaveText('');
+    const a = page.getByTestId('paths-legend-row-pioneer-10');
+    const b = page.getByTestId('paths-legend-row-voyager-2');
+    await a.hover();
+    await b.hover();
+    await expect(live).toHaveText(/\S{3}/, { timeout: 3000 });
+    await expect(page.getByTestId('paths-legend-tip')).toHaveAttribute('aria-hidden', 'true');
+  });
+});
+
+test.describe('/explore — the orbit ruler folds under the open legend (UXD-026)', () => {
+  const toggle = (page: Page) => page.getByTestId('ruler-toggle');
+  const stored = (page: Page) =>
+    page.evaluate(() => localStorage.getItem('orrery.ruler.collapsed'));
+
+  for (const saved of ['0', '1'] as const) {
+    test(`legend open: ruler folded; closed: its own state (saved ${saved}) and the saved choice is untouched`, async ({
+      page,
+    }) => {
+      desktopOnly();
+      await page.addInitScript((v) => localStorage.setItem('orrery.ruler.collapsed', v), saved);
+      await page.goto('/explore');
+      await waitForHydration(page);
+      const open = saved === '0';
+      await expect(toggle(page)).toHaveAttribute('aria-expanded', String(open));
+      const chip = page.getByTestId('layer-paths');
+      await chip.click();
+      await expect(page.locator('.paths-legend')).toBeVisible();
+      await expect(toggle(page)).toHaveAttribute('aria-expanded', 'false');
+      // a click on the folded header does not unfold it nor overwrite the choice
+      await toggle(page).click({ force: true });
+      await expect(toggle(page)).toHaveAttribute('aria-expanded', 'false');
+      expect(await stored(page)).toBe(saved);
+      await chip.click();
+      await expect(page.locator('.paths-legend')).toBeHidden();
+      await expect(toggle(page)).toHaveAttribute('aria-expanded', String(open));
+      expect(await stored(page)).toBe(saved);
+    });
+  }
+
+  for (const [w, h] of [
+    [1440, 900],
+    [1366, 768],
+    [1280, 720],
+  ] as const) {
+    test(`${w}x${h}: all 18 rows without scrolling`, async ({ page }) => {
+      desktopOnly();
+      await page.setViewportSize({ width: w, height: h });
+      await openPaths(page);
+      const list = page.locator('.paths-legend .paths-legend-list');
+      await expect(page.locator(ROWS)).toHaveCount(18);
+      const m = await list.evaluate((el) => [el.scrollHeight, el.clientHeight]);
+      expect(m[0], `list ${m}`).toBeLessThanOrEqual(m[1] + 1);
+    });
+  }
+});
+
+test.describe('/ar — the (i) popover in a right-to-left page (UXD-026)', () => {
+  test('opens inside the viewport and inside the legend', async ({ page }) => {
+    desktopOnly();
+    await page.goto('/ar/explore?paths=1');
+    await waitForHydration(page);
+    const trigger = page.getByTestId('paths-legend-why').locator('button.trigger');
+    await expect(trigger).toBeVisible({ timeout: 30_000 });
+    await trigger.click();
+    const pop = page.getByTestId('why-popover');
+    await expect(pop).toBeVisible();
+    const vp = page.viewportSize()!;
+    const p = (await pop.boundingBox())!;
+    const l = (await page.locator('.paths-legend').boundingBox())!;
+    expect(p.x).toBeGreaterThanOrEqual(0);
+    expect(p.y).toBeGreaterThanOrEqual(0);
+    expect(p.x + p.width).toBeLessThanOrEqual(vp.width);
+    expect(p.y + p.height).toBeLessThanOrEqual(vp.height);
+    expect(p.x, 'inside the legend (start)').toBeGreaterThanOrEqual(l.x - 1);
+    expect(p.x + p.width, 'inside the legend (end)').toBeLessThanOrEqual(l.x + l.width + 1);
   });
 });

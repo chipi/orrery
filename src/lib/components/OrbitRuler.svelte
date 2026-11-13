@@ -63,6 +63,9 @@
     anchorBottomPx?: number;
     /** Header folds the ruler (default). The touch drawer passes false. */
     collapsible?: boolean;
+    /** Fold the ruler to its header without touching the remembered choice (the iconic legend is
+     *  open below it, UXD-026). The header does not toggle while this is true. */
+    forceFolded?: boolean;
   }
   let {
     regimes,
@@ -74,6 +77,7 @@
     surfaceAnchor,
     anchorBottomPx = 80,
     collapsible = true,
+    forceFolded = false,
   }: Props = $props();
 
   const loc = $derived(localeFromPage(page));
@@ -81,10 +85,14 @@
     untrack(() => collapsible) && browser ? initialCollapsed(window.innerHeight) : false,
   );
   onMount(() => () => onPreview?.(null));
+  const folded = $derived(collapsed || forceFolded);
+  $effect(() => {
+    if (folded) onPreview?.(null);
+  });
   function toggle() {
+    if (forceFolded) return;
     collapsed = !collapsed;
     saveCollapsed(collapsed);
-    if (collapsed) onPreview?.(null);
   }
   const uid = $props.id();
   const bodyId = `ruler-bands-${uid}`;
@@ -121,7 +129,7 @@
 
 <aside
   class="ruler"
-  class:ruler--collapsed={collapsible && collapsed}
+  class:ruler--collapsed={collapsible && folded}
   style:--ruler-bottom="{anchorBottomPx}px"
   aria-label={m.earth_orbit_ruler_aria()}
 >
@@ -130,22 +138,22 @@
       <button
         type="button"
         class="ruler-toggle ui-hit"
-        aria-expanded={!collapsed}
+        aria-expanded={!folded}
         aria-controls={bodyId}
         data-testid="ruler-toggle"
         onclick={toggle}
       >
         <span class="ruler-title-text"
-          >{m.earth_orbit_ruler_title()}{#if collapsed && flagged}
+          >{m.earth_orbit_ruler_title()}{#if folded && flagged}
             · {flagged}{/if}</span
         >
-        <span class="ruler-chev" aria-hidden="true">{collapsed ? '▸' : '▾'}</span>
+        <span class="ruler-chev" aria-hidden="true">{folded ? '▸' : '▾'}</span>
       </button>
     {:else}
       {m.earth_orbit_ruler_title()}
     {/if}
   </h3>
-  <ul class="ruler-bands" id={bodyId} hidden={collapsible && collapsed}>
+  <ul class="ruler-bands" id={bodyId} hidden={collapsible && folded}>
     {#each ordered as r (r.id)}
       <li>
         <button

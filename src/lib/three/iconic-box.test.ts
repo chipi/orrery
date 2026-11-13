@@ -7,6 +7,7 @@ import {
   BOX_PAD_Y,
   BOX_ROW_GAP,
   boxHeader,
+  ellipsize,
   layoutBox,
   wrapText,
 } from './iconic-box';
@@ -64,6 +65,27 @@ describe('wrapText', () => {
     expect(out.lines.join('')).toBe(text);
     // a combining mark never starts a line (it would be a detached vowel sign or virama)
     for (const l of out.lines) expect(/^[ा-्]/.test(l)).toBe(false);
+  });
+});
+
+describe('ellipsize and a header wider than the box', () => {
+  it('leaves a fitting line alone and cuts a wide one with an ellipsis', () => {
+    expect(ellipsize('VOYAGER 2', 100, mono)).toBe('VOYAGER 2');
+    const cut = ellipsize('Cassini-Huygens Grand Finale Orbiter', 100, mono);
+    expect(cut.endsWith('…')).toBe(true);
+    expect(mono(cut)).toBeLessThanOrEqual(100);
+  });
+
+  it('layoutBox keeps the header inside the box width', () => {
+    const box = layoutBox({
+      header: 'A VERY LONG MISSION NAME THAT DOES NOT FIT THE BOX AT ALL',
+      body: 'x',
+      measureHeader: mono,
+      measureBody: mono,
+    });
+    expect(box.w).toBeLessThanOrEqual(BOX_MAX_W);
+    expect(mono(box.header)).toBeLessThanOrEqual(BOX_MAX_W - BOX_PAD_X * 2);
+    expect(box.header.endsWith('…')).toBe(true);
   });
 });
 

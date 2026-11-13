@@ -2445,6 +2445,7 @@
       onSelect={openExploreRegime}
       onPreview={(id) => (hoverExploreRegimeId = id)}
       surfaceAnchor={null}
+      forceFolded={layers.paths}
     />
   </div>
 {/if}

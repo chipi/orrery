@@ -137,6 +137,12 @@
     // Level with the row, kept inside the viewport (a card beside the last rows would run off it).
     tipTop = Math.max(0, Math.min(r.top - box.top - 4, window.innerHeight - 8 - box.top - h));
   });
+  let liveText = $state('');
+  $effect(() => {
+    const id = tipId;
+    const t = setTimeout(() => (liveText = id ? iconicTagline(id) : ''), id ? 250 : 0);
+    return () => clearTimeout(t);
+  });
 </script>
 
 <!-- The legend's title (IM1) with the (i) behind which the "why one plane" explanation sits:
@@ -151,6 +157,7 @@
         tab="transfers"
         section="coplanar-trajectories"
         triggerLabel="ⓘ"
+        eyebrow=""
       />
     </span>
   </div>
@@ -190,17 +197,21 @@
       {@render legendHead()}
       <!-- Hover brightens the arc + shows the tagline in the card beside the row but does NOT
            open the panel — click commits. Intentional after the 2026-06-19 render-storm from
-           async getMission() on every mouseenter. The live region stays in the DOM (opacity 0
-           when idle) so a screen reader announces the text that appears. -->
+           async getMission() on every mouseenter. The card is drawn at once; a separate live region
+           reads the tagline once the pointer has rested 250 ms, so a sweep over the rows is not
+           read row by row. -->
       <div
         class="paths-legend-tip"
         class:is-on={!!tipId}
         bind:this={tipEl}
         style:top="{tipTop}px"
-        aria-live="polite"
+        aria-hidden="true"
         data-testid="paths-legend-tip"
       >
         {#if tipId}{iconicTagline(tipId)}{/if}
+      </div>
+      <div class="paths-legend-live" aria-live="polite" data-testid="paths-legend-live">
+        {liveText}
       </div>
       <div class="paths-legend-list">
         {#each PATHS_LEGEND as entry, i (entry.mission_id)}
@@ -466,7 +477,7 @@
     display: none;
     flex-direction: column;
     padding: 8px 10px;
-    background: rgba(15, 18, 35, 0.95);
+    background: rgba(15, 18, 35, 0.85);
     border: 1px solid var(--color-accent-edge);
     border-radius: 4px;
     /* Cap height so the 18-row roster never spills past the footer on a short window; the page
@@ -534,10 +545,19 @@
   .paths-legend-why :global(.popover) {
     font-family: var(--font-editorial);
   }
+  /* AGENTS.md: a touch target is 44 x 44 px; the 20 px (i) keeps its look, the hit area grows. */
+  @media (hover: none), (pointer: coarse) {
+    .paths-legend-why :global(.trigger)::after {
+      width: 44px;
+      height: 44px;
+    }
+  }
   @media (min-width: 601px) {
     .paths-legend-why :global(.popover) {
       left: auto;
-      right: 0;
+      right: auto;
+      inset-inline-start: auto;
+      inset-inline-end: 0;
       width: 250px;
     }
   }
@@ -559,6 +579,14 @@
     opacity: 0;
     pointer-events: none;
     transition: opacity 80ms linear;
+  }
+  .paths-legend-live {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
   }
   .paths-legend-tip.is-on {
     opacity: 1;

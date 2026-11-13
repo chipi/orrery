@@ -14102,7 +14102,14 @@
       "_sense": "the path of a body around another; also the verb",
       "_match": {
         "ru": ["орбит", "вращаться по орбите", "выйти на орбиту", "обраща\\p{L}*"],
-        "ja": ["軌道", "周回", "公転", "(?:周り|周囲)を回"],
+        "ja": [
+          "軌道",
+          "周回",
+          "公転",
+          "(?:周り|周囲)を回",
+          "を回[るっり]",
+          "周り[^。、]{0,20}回[るっり]"
+        ],
         "zh-CN": [
           "轨道",
           "入轨",
@@ -14116,12 +14123,22 @@
           "进入\\p{L}{1,3}轨道",
           "绕\\p{L}{0,6}运行",
           "绕轨",
-          "高轨"
+          "高轨",
+          "绕转",
+          "绕[^，。；、]{0,24}运行"
         ],
-        "ko": ["궤도", "공전", "선회하다", "(?:둘레|주위)를 ?(?:도는|돈|돌)", "도는", "선회"],
+        "ko": [
+          "궤도",
+          "공전",
+          "선회하다",
+          "(?:둘레|주위)를 ?(?:도는|돈|돌)",
+          "도는",
+          "선회",
+          "돕니다"
+        ],
         "hi": ["कक्षा", "कक्षीय", "परिक्रमा", "कक्षीय पथ"],
         "ar": ["مدار", "مدارية", "يدور", "تدور", "دارت"],
-        "sr-Cyrl": ["орбит", "путања", "круж\\p{L}*", "обилаз\\p{L}* око"],
+        "sr-Cyrl": ["орбит", "путања", "круж\\p{L}*", "обилаз\\p{L}* око", "обилаз\\p{L}*"],
         "de": [
           "Umlaufbahn",
           "\\bOrbit",
@@ -14132,10 +14149,11 @@
           "-Orb\\p{L}*",
           "umkreis\\p{L}*",
           "(?<!\\p{L})kreis(?:t|en|te|ten)\\b",
-          "Uml(?:a|ä)uf\\p{L}*"
+          "Uml(?:a|ä)uf\\p{L}*",
+          "umeinander kreis\\p{L}*"
         ],
         "fr": ["orbit", "gravit(?:e|ent|ait|aient|er|ant)\\b"],
-        "es": ["órbit", "orbit"],
+        "es": ["órbit", "orbit", "gir\\p{L}* (?:una )?(?:en torno|alrededor)"],
         "it": ["orbit", "gira\\p{L}* attorno"],
         "nl": [
           "\\bbaan",
@@ -14146,7 +14164,13 @@
           "omloopba\\p{L}*",
           "(?<!\\p{L})(?:aarde?|maan|mars|venus|zonne|zons|halo|doel|overdrachts|parkeer|transfer|kepler|kerkhof|wetenschaps|werk|eind|polaire|ellips)ba(?:an|nen)\\b",
           "cirkel(?:t|en|de|den)\\b",
-          "(?<!\\p{L})(?:aarde?|maan|mars)ba(?:an|nen)\\p{L}*"
+          "(?<!\\p{L})(?:aarde?|maan|mars)ba(?:an|nen)\\p{L}*",
+          "omcirkel\\p{L}*",
+          "rondcirkel\\p{L}*",
+          "omloop(?:t|en)\\b",
+          "omheen draai\\p{L}*",
+          "(?:om|rond) [^.,;:]{1,35}draai(?:t|en|de|den)\\b",
+          "draai(?:t|en|de|den) (?:\\p{L}+ ){0,2}(?:om|rond) (?!en\\b)\\p{L}"
         ],
         "pt-BR": ["órbit", "orbit"]
       },
@@ -17574,12 +17598,13 @@
         "ja": ["系外惑星"],
         "zh-CN": ["系外行星"],
         "ko": ["외계 ?행성"],
-        "hi": ["एक्सोप्लैनेट", "बहिर्ग्रह", "बाह्यग्रह"],
+        "hi": ["एक्सोप्लैनेट", "बहिर्ग्रह", "बाह्यग्रह", "बाह्य ?ग्रह"],
         "ar": [
           "(?:ال)?كواكب (?:ال)?خارجية",
           "كوكب[\\p{L}]* خارج (?:ال)?مجموعة (?:ال)?شمسية",
           "خارج (?:ال)?مجموعة (?:ال)?شمسية",
-          "كوكب[\\p{L}]* خارجي"
+          "كوكب[\\p{L}]* خارجي",
+          "(?:ال)?كواكب (?:ال\\p{L}+ )?(?:ال)?خارجية"
         ],
         "sr-Cyrl": ["егзопланет"],
         "de": ["Exoplanet"],
@@ -18549,20 +18574,32 @@
         "ko": ["초신성 ?잔해"],
         "hi": ["सुपरनोवा[ -]?अवशेष", "सुपरनोवा (?:अवशेष|अवशिष्ट)", "अधिनव तारा अवशेष"],
         "ar": ["بقايا (?:ال)?مستعر (?:ال)?أعظم", "بقايا (?:ال)?مستعر"],
-        "sr-Cyrl": ["остат\\p{L}* суперно\\p{L}*"],
+        "sr-Cyrl": ["остат\\p{L}* суперно\\p{L}*", "остат\\p{L}* (?:\\p{L}+ )?суперно\\p{L}*"],
         "de": [
           "Supernova-Überre\\p{L}*",
           "Supernova-?[Üü]berrest\\p{L}*",
           "Supernova-?Rest\\p{L}*"
         ],
-        "fr": ["rémane\\p{L}* de superno\\p{L}*", "(?:reste|vestige|rémanent)s? de supernova"],
-        "es": ["remanen\\p{L}* de superno\\p{L}*", "(?:remanente|resto)s? de supernova"],
+        "fr": [
+          "rémane\\p{L}* de superno\\p{L}*",
+          "(?:reste|vestige|rémanent)s? de supernova",
+          "rémane\\p{L}* de (?:la )?superno\\p{L}*"
+        ],
+        "es": [
+          "remanen\\p{L}* de superno\\p{L}*",
+          "(?:remanente|resto)s? de supernova",
+          "remanen\\p{L}* de (?:la )?superno\\p{L}*"
+        ],
         "it": [
           "res\\p{L}* di superno\\p{L}*",
-          "(?:resto|residuo|resti|residui)\\p{L}* di supernova"
+          "(?:resto|residuo|resti|residui)\\p{L}* di supernova",
+          "res\\p{L}* d(?:i|ella) (?:la )?superno\\p{L}*"
         ],
         "nl": ["supernovare\\p{L}*", "supernova-?rest\\p{L}*", "supernova-?residu"],
-        "pt-BR": ["remanescen\\p{L}* de superno\\p{L}*"]
+        "pt-BR": [
+          "remanescen\\p{L}* de superno\\p{L}*",
+          "remanescen\\p{L}* d[ae] (?:a )?superno\\p{L}*"
+        ]
       },
       "_confidence": {
         "ru": "high",
@@ -18802,7 +18839,8 @@
         "it": [
           "regio\\p{L}* di formazio\\p{L}* stella\\p{L}*",
           "formazione (?:stellare|di stelle)",
-          "nursery"
+          "nursery",
+          "cull[ae] (?:di stelle|stellare)"
         ],
         "nl": ["stervormingsgebi\\p{L}*", "stervorm\\p{L}*", "stervormend\\p{L}*", "sterrenkraam"],
         "pt-BR": [
@@ -19963,11 +20001,17 @@
           "црвени џин",
           "црвен\\p{L}* див\\p{L}*"
         ],
-        "de": ["Rot\\p{L}* Rie\\p{L}*", "rot\\p{L}* Riese\\p{L}*", "Roter Riese", "Rote Riesen"],
+        "de": [
+          "Rot\\p{L}* Rie\\p{L}*",
+          "rot\\p{L}* Riese\\p{L}*",
+          "Roter Riese",
+          "Rote Riesen",
+          "Rot\\p{L}*-Riesen\\p{L}*"
+        ],
         "fr": ["géan\\p{L}* rou\\p{L}*", "géantes? rouges?"],
         "es": ["gigan\\p{L}* roja", "gigantes? rojas?"],
         "it": ["gigan\\p{L}* ros\\p{L}*", "giganti? ross\\p{L}*", "gigante rossa"],
-        "nl": ["rode reus", "rode? reus\\p{L}*", "rode reuzen"],
+        "nl": ["rode reus", "rode? reus\\p{L}*", "rode reuzen", "rode-reuz\\p{L}*"],
         "pt-BR": ["gigan\\p{L}* vermel\\p{L}*", "gigantes? vermelhas?"]
       },
       "_confidence": {
@@ -20292,7 +20336,7 @@
     },
     "binary star": {
       "_sense": "two stars that orbit a common centre of mass",
-      "_en": "\\bbinary (?:stars?|systems?)\\b|\\bbinaries\\b|\\bdouble stars?\\b",
+      "_en": "(?<!eclipsing )\\bbinary (?:stars?|systems?)\\b|(?<!eclipsing )\\bbinaries\\b|\\bdouble stars?\\b",
       "_match": {
         "ru": [
           "двойн\\p{L}* звез\\p{L}*",
@@ -20347,20 +20391,23 @@
           "estrel\\p{L}* binar\\p{L}*",
           "estrellas? binarias?",
           "binari[ao]s?",
-          "sistemas? binarios?"
+          "sistemas? binarios?",
+          "estrellas? dobles?"
         ],
         "it": [
           "stel\\p{L}* binar\\p{L}*",
           "stell\\p{L}* binari\\p{L}*",
           "binari\\p{L}*",
-          "sistem\\p{L}* binari\\p{L}*"
+          "sistem\\p{L}* binari\\p{L}*",
+          "stell\\p{L}* doppi\\p{L}*"
         ],
         "nl": ["dubbelst\\p{L}*", "dubbelster\\p{L}*", "dubbelstersysteem", "binair\\p{L}*"],
         "pt-BR": [
           "estre\\p{L}* binár\\p{L}*",
           "estrelas? binárias?",
           "binári[ao]s?",
-          "sistemas? binários?"
+          "sistemas? binários?",
+          "estrelas? dupl\\p{L}*"
         ]
       },
       "_confidence": {
@@ -20870,7 +20917,8 @@
           "نجم أوّلي",
           "بروتوستار",
           "نجوم (?:ال)?أولية",
-          "نجم(?:ا)? أولي"
+          "نجم(?:ا)? أولي",
+          "نجوما أولية"
         ],
         "sr-Cyrl": ["протозвез\\p{L}*", "протозвезд\\p{L}*", "протозвезде"],
         "de": ["Protoste\\p{L}*", "Protostern\\p{L}*", "Protosterne"],
@@ -20989,13 +21037,15 @@
           "spectraal ?(?:type|klasse)\\p{L}*",
           "spectra\\p{L}*",
           "[OBAFGKM]\\d?-?(?:type|klasse|ster)",
-          "spectraaltype"
+          "spectraaltype",
+          "type [OBAFGKM](?![\\p{L}\\d])"
         ],
         "pt-BR": [
           "tipo espectr\\p{L}*",
           "(?:tipo|classe) espectral\\p{L}*",
           "espectral\\p{L}*",
-          "de tipo [OBAFGKM]"
+          "de tipo [OBAFGKM]",
+          "tipos? [OBAFGKM](?![\\p{L}\\d])"
         ]
       },
       "_confidence": {
@@ -21112,7 +21162,8 @@
           "hacia el azul",
           "corrimiento hacia el azul",
           "desplazamiento hacia el azul",
-          "corrimiento"
+          "corrimiento",
+          "desplazad\\p{L}* (?:hacia el |al )azul"
         ],
         "it": [
           "spostamen\\p{L}* ver\\p{L}* il blu",
@@ -21573,12 +21624,18 @@
       "_match": {
         "ru": [
           "спиральн\\p{L}* галактик\\p{L}* с (?:чёткими|четкими) рукавами",
-          "(?:чёткими|четкими|чёткий|четкий|чётк\\p{L}*|четк\\p{L}*) рукав\\p{L}*"
+          "(?:чёткими|четкими|чёткий|четкий|чётк\\p{L}*|четк\\p{L}*) рукав\\p{L}*",
+          "чётк\\p{L}* \\p{L}+ рукав\\p{L}*",
+          "четк\\p{L}* \\p{L}+ рукав\\p{L}*"
         ],
         "ja": ["グランドデザイン", "グランド・デザイン"],
         "zh-CN": ["宏象"],
         "ko": ["그랜드 ?디자인"],
-        "hi": ["स्पष्ट भुजाओं", "स्पष्ट[\\p{L}\\p{M}]* भुजा[\\p{L}\\p{M}]*"],
+        "hi": [
+          "स्पष्ट भुजाओं",
+          "स्पष्ट[\\p{L}\\p{M}]* भुजा[\\p{L}\\p{M}]*",
+          "स्पष्ट[\\p{L}\\p{M}]*,? (?:[\\p{L}\\p{M}]+ )?भुजा"
+        ],
         "ar": ["ذات أذرع واضحة", "أذرع واضحة"],
         "sr-Cyrl": [
           "јасно изражен\\p{L}* крак\\p{L}*",
@@ -23827,7 +23884,12 @@
         "zh-CN": ["食双星", "食双", "交食双星", "食变星"],
         "ko": ["식쌍성", "식 ?쌍성", "식 ?변광성"],
         "hi": ["ग्रहण[ -]?द्वितारा", "ग्रहण\\p{L}* द्वि\\p{L}*", "ग्रहण\\p{L}* युग्म", "ग्रहणकारी"],
-        "ar": ["نجم (?:ال)?ثنائي (?:ال)?كاسف", "كاسف\\p{L}*", "ثنائي\\p{L}* كاسف\\p{L}*"],
+        "ar": [
+          "نجم (?:ال)?ثنائي (?:ال)?كاسف",
+          "كاسف\\p{L}*",
+          "ثنائي\\p{L}* كاسف\\p{L}*",
+          "ثنائي\\p{L}* (?:ال)?كاسف\\p{L}*"
+        ],
         "sr-Cyrl": [
           "помрачују\\p{L}* двој\\p{L}* звез\\p{L}*",
           "затменск\\p{L}*",
@@ -25375,7 +25437,12 @@
         "zh-CN": ["星族"],
         "ko": ["항성 ?종족", "별의 종족"],
         "hi": ["तारकीय[\\p{L}\\p{M}]* (?:जनसंख्या|समष्टि|आबादी)", "तारों की (?:जनसंख्या|आबादी)"],
-        "ar": ["عشير(?:ة|ات) نجمي\\p{L}*", "مجموع(?:ة|ات) نجمي\\p{L}*", "تعداد نجمي"],
+        "ar": [
+          "عشير(?:ة|ات) نجمي\\p{L}*",
+          "مجموع(?:ة|ات) نجمي\\p{L}*",
+          "تعداد نجمي",
+          "عشير\\p{L}* (?:ال)?نجمي\\p{L}*"
+        ],
         "sr-Cyrl": ["звездан\\p{L}* популациј\\p{L}*"],
         "de": ["Sternpopulation\\p{L}*", "stellare Population\\p{L}*"],
         "fr": ["population\\p{L}* stellaire\\p{L}*"],

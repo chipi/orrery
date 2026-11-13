@@ -10,10 +10,16 @@ wrappers; markup pieces live next to it in `src/routes/explore/`.
   focus frames. The page's `selectBody` and the host's `focusBody` take it from there.
 - `small-bodies.ts` — the solar-system small-body catalogue + orbit sampling.
 - `scale-index.ts` — the INDEX of the eight scales: the row model, `buildScaleIndexRows` (server-side),
-  the chips of each scale and the search / section helpers (UXD-017).
+  the chips of each scale and the search / section helpers (UXD-017). `outerPageOf` is the one resolver
+  of the page an outer-scale row links (the deep-sky page of a twin, else `/explore/galaxies/<id>` or
+  `/explore/structures/<id>`, ADR-096 item 18); the entity loaders reuse it for their Related lists.
+- `outer-page.ts` — what the galaxy and structure pages share: the row and Related-section shapes and
+  the `?context=<scale>&pick=<id>` link into the scene.
 - `paths-legend.ts` — PATHS layer rows, iconic taglines, interstellar craft.
 - `format.ts` — HUD formatters (scale numbers, light units, context names,
-  star colours, satellite sizes, time dilation, `planetName`).
+  star colours, satellite sizes, time dilation, `planetName`). The galaxy and structure values
+  (`galaxyDistance`, `galaxyDiameter`, `structureDistance`, `structureSpan`, the kind and membership
+  labels) are shared by the six outer panels and the two entity pages, so they print one string.
 - `planet-sizes.ts` — the eight planets of the REFERENCES overlay (radius, colour,
   size order) shared by `SizesCanvas` and the legend grid.
 - `lens-panel.ts` — which science-lens story + layers each shell shows, and

@@ -38,9 +38,9 @@ the brief's §1 and §2.
    Iconic Missions tab.
 5. **Rows (IM7).** 28 px with a fine pointer (was 36), padding 3/6. Only the row list scrolls (`.paths-legend-list`);
    the title and the popover stay. The page still measures the legend's top and caps its height
-   (`sizePathsLegend`). Measured, not the brief's arithmetic (which used the CSS cap the page overrides): at 1440×900
-   and at 1280×720 the legend is 599 px tall, the list does not scroll, and the legend ends at 703 px; it scrolls
-   below about 717 px of window height. The touch drawer keeps 36 px rows.
+   (`sizePathsLegend`), now to the space above the lower-left stack (see decision 10). Measured, not the brief's
+   arithmetic: the 18 rows need a 599 px legend, which fits without scrolling at 1440×900 (the list is 538 px, e2e);
+   at 1366×768 the list is 478 px and at 1280×720 430 px, and scrolls inside. The touch drawer keeps 36 px rows.
 6. **The milestone box (IM2, IM4).** One canvas sprite per labelled waypoint, drawn once at the device pixel ratio
    (2 at least) the first time its mission is highlighted (the 18 builds at load stay cheap). Header `n/N · date`
    (the milestone's number among the trajectory's labelled waypoints, Today excluded, and the data's own ISO date:
@@ -68,10 +68,10 @@ the brief's §1 and §2.
     pointer) `OrbitRuler` is drawn folded to its one-line header (`forceFolded`, a prop of the component, fed
     `layers.paths` by the page). This is not the user's fold: the remembered choice (`orrery.ruler.collapsed`) is
     never written while it is forced (the header does not toggle), and closing the legend restores the ruler's own
-    state, open or closed. The legend keeps all 18 rows without scrolling at 1440×900, 1366×768 and 1280×720 (it is
-    599 px tall, e2e). The 0.95 background alpha tried in the first build is back at the original 0.85: the ruler's
-    rows no longer sit under the legend at 900 px. Below about 700 px of window height the legend still ends over
-    the folded header, as it ended over the time dock before.
+    state, open or closed. The legend ends above the highest of the folded ruler header, PLANET SCALES and the time dock (measured in `sizePathsLegend`, also when the ruler's data arrives); the list scrolls when that is not enough. All 18 rows show without scrolling at 1440×900; at 1366×768 and 1280×720 the list scrolls and the time dock stays clickable (e2e `elementFromPoint`); at full height the legend is
+    599 px tall. The 0.95 background alpha tried in the first build is back at the original 0.85: the ruler's
+    rows no longer sit under the legend. The popover of the (i) hangs from the bottom of the head row (not from the
+    (i)), so a three-line German title is not covered (e2e).
 11. **The heading pill is in the pass (NV6).** For the craft that have one (the five outbound), the "→ star" pill is a
     slot ranked after the mission box. Where the mission box would meet it at Today, the box goes below the marker
     and the pill keeps its place at the arrow tip. `__exploreDirectionLabels` now carries the pill's rectangle; the

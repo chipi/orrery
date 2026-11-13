@@ -330,16 +330,62 @@ test.describe('/explore — the orbit ruler folds under the open legend (UXD-026
     [1366, 768],
     [1280, 720],
   ] as const) {
-    test(`${w}x${h}: all 18 rows without scrolling`, async ({ page }) => {
+    test(`${w}x${h}: the legend stops above the lower-left stack; the time dock stays clickable`, async ({
+      page,
+    }) => {
       desktopOnly();
       await page.setViewportSize({ width: w, height: h });
       await openPaths(page);
-      const list = page.locator('.paths-legend .paths-legend-list');
       await expect(page.locator(ROWS)).toHaveCount(18);
+      await page.waitForTimeout(600);
+      const list = page.locator('.paths-legend .paths-legend-list');
       const m = await list.evaluate((el) => [el.scrollHeight, el.clientHeight]);
-      expect(m[0], `list ${m}`).toBeLessThanOrEqual(m[1] + 1);
+      if (h >= 900)
+        expect(m[0], `list ${m}: 18 rows without scrolling`).toBeLessThanOrEqual(m[1] + 1);
+      else expect(m[0], `list ${m}: scrolls inside`).toBeGreaterThan(m[1] + 1);
+      const legendBottom = await page
+        .locator('.paths-legend')
+        .evaluate((el) => el.getBoundingClientRect().bottom);
+      for (const sel of [
+        '.ruler-desktop-only .ruler',
+        '[data-testid=sizes-toggle]',
+        '.time-controls',
+      ]) {
+        const top = await page
+          .locator(sel)
+          .first()
+          .evaluate((el) => el.getBoundingClientRect().top);
+        expect(legendBottom, `legend bottom above ${sel}`).toBeLessThanOrEqual(top);
+      }
+      await expect(page.getByTestId('ruler-toggle')).toHaveAttribute('aria-expanded', 'false');
+      const play = page.getByTestId('explore-time-play');
+      const hit = await play.evaluate((el) => {
+        const r = el.getBoundingClientRect();
+        const at = document.elementFromPoint(r.left + r.width / 2, r.top + r.height / 2);
+        return !!at && (at === el || el.contains(at));
+      });
+      expect(hit, 'the play button is the element under its centre').toBe(true);
     });
   }
+});
+
+test.describe('/de — the (i) popover does not cover a three-line title (UXD-026)', () => {
+  test('the popover starts below the legend head', async ({ page }) => {
+    desktopOnly();
+    await page.goto('/de/explore?paths=1');
+    await waitForHydration(page);
+    const trigger = page.getByTestId('paths-legend-why').locator('button.trigger');
+    await expect(trigger).toBeVisible({ timeout: 30_000 });
+    await trigger.click();
+    const pop = page.getByTestId('why-popover');
+    await expect(pop).toBeVisible();
+    const title = (await page.locator('.paths-legend-title').boundingBox())!;
+    const p = (await pop.boundingBox())!;
+    expect(title.height, 'the German title wraps to more than one line').toBeGreaterThan(30);
+    expect(p.y, 'popover top is below the title bottom').toBeGreaterThanOrEqual(
+      title.y + title.height,
+    );
+  });
 });
 
 test.describe('/ar — the (i) popover in a right-to-left page (UXD-026)', () => {
@@ -359,6 +405,8 @@ test.describe('/ar — the (i) popover in a right-to-left page (UXD-026)', () =>
     expect(p.y).toBeGreaterThanOrEqual(0);
     expect(p.x + p.width).toBeLessThanOrEqual(vp.width);
     expect(p.y + p.height).toBeLessThanOrEqual(vp.height);
+    const t = (await page.locator('.paths-legend-title').boundingBox())!;
+    expect(p.y, 'below the title (RTL)').toBeGreaterThanOrEqual(t.y + t.height);
     expect(p.x, 'inside the legend (start)').toBeGreaterThanOrEqual(l.x - 1);
     expect(p.x + p.width, 'inside the legend (end)').toBeLessThanOrEqual(l.x + l.width + 1);
   });

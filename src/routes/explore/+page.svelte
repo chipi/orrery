@@ -441,11 +441,23 @@
     const el = pathsLegendEl;
     if (!el) return;
     const top = el.getBoundingClientRect().top;
-    el.style.maxHeight = Math.max(140, window.innerHeight - top - 16) + 'px';
+    // The lower-left stack (the folded orbit ruler, PLANET SCALES, the time dock) stays reachable:
+    // the legend ends above its highest member and the list scrolls when that is not enough.
+    let stackTop = window.innerHeight - 16;
+    for (const sel of [
+      '.ruler-desktop-only .ruler',
+      '[data-testid="sizes-toggle"]',
+      '.time-controls',
+    ]) {
+      const r = document.querySelector(sel)?.getBoundingClientRect();
+      if (r && r.height > 0 && r.top > top) stackTop = Math.min(stackTop, r.top - 8);
+    }
+    el.style.maxHeight = Math.max(140, stackTop - top) + 'px';
   }
   $effect(() => {
     // Re-measure whenever the legend is shown — after the DOM commits so
     // getBoundingClientRect().top reflects the rendered chip stack.
+    void exploreRegimes.length; // the ruler arrives with its data: measure again
     if (layers.paths) requestAnimationFrame(sizePathsLegend);
   });
 

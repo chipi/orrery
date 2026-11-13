@@ -1,0 +1,1 @@
+import{X as e,bt as t,gt as n,yt as r}from"../chunks/B8c3XTJR.js";import"../chunks/xihTtKlq.js";import{t as i}from"../chunks/Dqrfxedu.js";import{t as a}from"../chunks/CIkUVfdp2.js";function o(o,s){t(s,!0);{let t=n(()=>i());a(o,{body:`mars`,get entity(){return s.data.entity},get mapTitle(){return e(t)}})}r()}export{o as component};

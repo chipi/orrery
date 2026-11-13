@@ -13,7 +13,6 @@
   import SurfacePreloadLinks from '$lib/components/SurfacePreloadLinks.svelte';
   import TourAnchors from '$lib/components/TourAnchors.svelte';
   import OrbitRuler from '$lib/components/OrbitRuler.svelte';
-  import RegimePanel from '$lib/components/RegimePanel.svelte';
   import HudStackBL from '$lib/components/HudStackBL.svelte';
   import { hudTouch } from '$lib/hud-touch.svelte';
   import { onMount } from 'svelte';
@@ -358,14 +357,16 @@
   {/if}
 </HudStackBL>
 
-<RegimePanel
-  bundle="orbit-regimes-moon"
-  regime={selectedRegime}
-  open={regimePanelOpen}
-  onClose={closeRegime}
-  {selectableIds}
-  {onResidentClick}
-/>
+{#await import('$lib/components/RegimePanel.svelte') then { default: RegimePanel }}
+  <RegimePanel
+    bundle="orbit-regimes-moon"
+    regime={selectedRegime}
+    open={regimePanelOpen}
+    onClose={closeRegime}
+    {selectableIds}
+    {onResidentClick}
+  />
+{/await}
 
 <style>
   /* #48 — observer button + readout: rows of the bottom-left column (HudStackBL); on a phone

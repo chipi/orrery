@@ -162,5 +162,7 @@
   "dwarf elliptical galaxy": "A small, smooth, faint galaxy of mostly old stars with little gas, often found as a companion to a larger galaxy or in dense galaxy clusters.",
   "potential well": "A region where gravity is strongest and into which matter falls; the bottom of the well is the centre of the mass that pulls on its surroundings.",
   "watershed": "A boundary where flows part in opposite directions, as water does at a ridge; in Laniakea's definition, where galaxies' motions diverge toward different gravitational centres.",
-  "repeller": "A region, usually a big void, from which matter is pushed away because it is emptier than its surroundings; the opposite of an attractor."
+  "repeller": "A region, usually a big void, from which matter is pushed away because it is emptier than its surroundings; the opposite of an attractor.",
+  "tidal stream": "A long, thin stream of stars pulled out of a dwarf galaxy or star cluster by the tidal pull of a larger galaxy, stretched along the orbit of the original object.",
+  "comoving coordinates": "Positions measured on a grid that expands with the universe, so galaxies carried along by the expansion keep the same coordinates; at the present time they match ordinary distances."
 }

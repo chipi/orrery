@@ -14,6 +14,8 @@
   import TourAnchors from '$lib/components/TourAnchors.svelte';
   import OrbitRuler from '$lib/components/OrbitRuler.svelte';
   import RegimePanel from '$lib/components/RegimePanel.svelte';
+  import HudStackBL from '$lib/components/HudStackBL.svelte';
+  import { hudTouch } from '$lib/hud-touch.svelte';
   import { onMount } from 'svelte';
   import { page } from '$app/state';
   import { goto } from '$app/navigation';
@@ -149,6 +151,8 @@
   let orbitsInView = $state(true);
   let regimePanelOpen = $state(false);
   let selectedRegimeId = $state<string | null>(null);
+  // The ruler row under the pointer or keyboard focus; the scene draws it (UXD-024).
+  let hoverRegimeId = $state<string | null>(null);
   let selectedRegime = $derived(
     selectedRegimeId ? (regimes.find((r) => r.id === selectedRegimeId) ?? null) : null,
   );
@@ -198,6 +202,10 @@
   function onResidentClick(id: string) {
     window.__surfaceSceneSelectSite?.(id);
   }
+
+  $effect(() => {
+    surfaceScene?.setRegimeHighlight(hoverRegimeId, regimePanelOpen ? selectedRegimeId : null);
+  });
 
   onMount(async () => {
     try {
@@ -278,61 +286,80 @@
   onOrbitsInViewChange={(v) => (orbitsInView = v)}
 >
   {#snippet barStart()}
-    <!-- #48 — opt-in precise centering. On a phone it is the first icon of the scene's
-         bottom bar (the label stays for assistive tech and tests). -->
-    <div class="locate-slot">
-      <Chip
-        kind="action"
-        onclick={viewFromMyLocation}
-        disabled={locating}
-        data-testid="moon-locate-me"
-        title={m.moon_locate_me()}
-      >
-        {#snippet icon()}☾{/snippet}
-        <span class="locate-label">{locating ? m.moon_locate_working() : m.moon_locate_me()}</span>
-      </Chip>
-    </div>
+    {#if hudTouch.value}
+      {@render locateChip()}
+    {/if}
   {/snippet}
 </SurfaceScene>
 
-<!-- #48 — observer view. Opt-in (no prompt on load): resolves the observer's
-     location, orients to tonight's sub-Earth point + surfaces phase/visibility. -->
-{#if observerView}
-  <div class="moon-observer" data-testid="moon-observer-readout">
-    <div class="mo-eyebrow">{m.moon_view_eyebrow()}</div>
-    <div class="mo-phase">{PHASE_LABEL[observerView.phase.phaseName]()}</div>
-    <div class="mo-row">
-      {m.moon_view_lit({ pct: Math.round(observerView.phase.illuminatedFraction * 100) })}
-    </div>
-    <div class="mo-row">
-      {#if observerView.aboveHorizon}
-        {m.moon_view_alt_above({ deg: Math.round(observerView.altitudeDeg) })}
-      {:else}
-        {m.moon_view_alt_below()}
-      {/if}
-    </div>
-    <div class="mo-row mo-dim">
-      {m.moon_view_libration({
-        lon: `${observerView.libration.lonDeg >= 0 ? '+' : ''}${observerView.libration.lonDeg.toFixed(1)}°`,
-        lat: `${observerView.libration.latDeg >= 0 ? '+' : ''}${observerView.libration.latDeg.toFixed(1)}°`,
-      })}
-    </div>
-  </div>
-{/if}
-
 <TourAnchors route="moon" anchors={MOON_TOUR_ANCHORS} />
 
-<!-- Desktop-only ruler — on mobile the SurfaceScene accordion Ruler tab
-     replaces this. .ruler-desktop-only renders display:none at ≤767px. -->
-<div class="ruler-desktop-only">
+{#snippet locateChip()}
+  <!-- #48 — opt-in precise centering. On a phone it is the first icon of the scene's
+       bottom bar (the label stays for assistive tech and tests). -->
+  <div class="locate-slot">
+    <Chip
+      kind="action"
+      onclick={viewFromMyLocation}
+      disabled={locating}
+      data-testid="moon-locate-me"
+      title={m.moon_locate_me()}
+    >
+      {#snippet icon()}☾{/snippet}
+      <span class="locate-label">{locating ? m.moon_locate_working() : m.moon_locate_me()}</span>
+    </Chip>
+  </div>
+{/snippet}
+
+<!-- #48 — observer view. Opt-in (no prompt on load): resolves the observer's
+     location, orients to tonight's sub-Earth point + surfaces phase/visibility. -->
+<!-- Bottom-left column (UXD-024): the readout, the locate chip and the orbit ruler, top to
+     bottom. On a phone the chip is the first icon of the scene's bottom bar, the readout stays
+     above it and the ruler is the drawer's Ruler tab. -->
+<HudStackBL>
+  {#snippet readout()}
+    {#if observerView}
+      <div class="moon-observer" data-testid="moon-observer-readout">
+        <div class="mo-eyebrow">{m.moon_view_eyebrow()}</div>
+        <div class="mo-phase">{PHASE_LABEL[observerView.phase.phaseName]()}</div>
+        <div class="mo-row">
+          {m.moon_view_lit({ pct: Math.round(observerView.phase.illuminatedFraction * 100) })}
+        </div>
+        <div class="mo-row">
+          {#if observerView.aboveHorizon}
+            {m.moon_view_alt_above({ deg: Math.round(observerView.altitudeDeg) })}
+          {:else}
+            {m.moon_view_alt_below()}
+          {/if}
+        </div>
+        <div class="mo-row mo-dim">
+          {m.moon_view_libration({
+            lon: `${observerView.libration.lonDeg >= 0 ? '+' : ''}${observerView.libration.lonDeg.toFixed(1)}°`,
+            lat: `${observerView.libration.latDeg >= 0 ? '+' : ''}${observerView.libration.latDeg.toFixed(1)}°`,
+          })}
+        </div>
+      </div>
+    {/if}
+  {/snippet}
+  {#snippet chip()}
+    {@render locateChip()}
+  {/snippet}
   {#if regimes.length > 0 && orbitsInView}
     <!-- Hidden once the camera dips below LLO — orbits then sit overhead
          and the ruler references nothing on screen (#363). -->
-    <OrbitRuler {regimes} {highlightRegime} onSelect={openRegime} anchorBottomPx={14} />
+    <OrbitRuler
+      {regimes}
+      {highlightRegime}
+      activeRegime={regimePanelOpen ? selectedRegimeId : null}
+      onSelect={openRegime}
+      onPreview={(id) => (hoverRegimeId = id)}
+      anchorBottomPx={14}
+    />
   {/if}
-</div>
+</HudStackBL>
 
 <RegimePanel
+  bundle="orbit-regimes-moon"
   regime={selectedRegime}
   open={regimePanelOpen}
   onClose={closeRegime}
@@ -341,14 +368,10 @@
 />
 
 <style>
-  /* #48 — observer button + readout, bottom-left. Same treatment as /earth;
-     the readout stacks above the button when a location has been resolved. */
+  /* #48 — observer button + readout: rows of the bottom-left column (HudStackBL); on a phone
+     the chip is the first icon of the scene's bottom bar and the readout rides above it. */
   .locate-slot {
-    position: absolute;
-    /* On the nation legend's top edge when the scene publishes it. */
-    bottom: var(--legend-top, calc(60px + env(safe-area-inset-bottom, 0px)));
-    left: 12px;
-    z-index: 7;
+    display: block;
   }
   /* A globe control: the panorama's compass sits in this corner. */
   :global(html[data-surface-panorama]) .locate-slot,
@@ -357,9 +380,6 @@
   }
   /* Phone: a chip in the scene's bottom bar; the words stay for screen readers. */
   @media (hover: none), (pointer: coarse) {
-    .locate-slot {
-      position: static;
-    }
     .locate-label {
       position: absolute;
       width: 1px;
@@ -370,10 +390,6 @@
     }
   }
   .moon-observer {
-    position: absolute;
-    bottom: calc(106px + env(safe-area-inset-bottom, 0px));
-    left: 12px;
-    z-index: 7;
     min-width: 190px;
     max-width: min(70vw, 260px);
     padding: 10px 12px;
@@ -403,16 +419,5 @@
     color: var(--text-dim, #9a9aa7);
     font-size: 11px;
     margin-top: 2px;
-  }
-  .ruler-desktop-only {
-    display: contents;
-  }
-  /* Hide the persistent desktop ruler on touch — the RULER drawer replaces it.
-     Keyed on capability, not width, so a landscape phone (wide but touch)
-     doesn't show BOTH the default ruler and the drawer one. */
-  @media (hover: none), (pointer: coarse) {
-    .ruler-desktop-only {
-      display: none;
-    }
   }
 </style>

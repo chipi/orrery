@@ -12,16 +12,21 @@
                + name (Bebas Neue big title)
                + stat-row (altitude + first-year)
     .editorial — comparison line + story paragraph (shared, panel-tabs.css)
-    Residents — agency-dot list (Space Mono mono labels)
-    Firsts    — year + label list
+    Residents — 28 px photo in an agency-colour ring, or the agency dot (Space Mono mono labels)
+    Firsts    — year + label list; a first with a mission page is a link
     ScienceCard — the regime's own best /science card (one per pane; no card repeats inside a ruler,
                   UXD-010; the data rule is tested in science-links.test.ts)
 -->
 <script lang="ts">
   import Panel from './Panel.svelte';
-  import { localHref } from '$lib/locale';
+  import { localHref, localeFromPage } from '$lib/locale';
+  import { page } from '$app/state';
+  import { assetUrl } from '$lib/asset-url';
+  import { fmtRegimeBand } from '$lib/orbit-regime-format';
+  import { onMissionLinkClick } from '$lib/missions-linkify';
   import ScienceCard from './ScienceCard.svelte';
   import * as m from '$lib/paraglide/messages';
+  import thumbs from '$data/orbit-regime-thumbs.json';
   import type { OrbitRegime } from '$types/orbit-regime';
   import type { ScienceTabId } from '$types/science';
 
@@ -29,6 +34,14 @@
     regime: OrbitRegime | null;
     open: boolean;
     onClose: () => void;
+    /** The ruler bundle the regime and its residents belong to: a resident id means different
+     *  things per bundle (`lro`, `queqiao`, `galileo` appear in two), so the thumbnail map is
+     *  keyed `<bundle>/<id>`. */
+    bundle?:
+      'orbit-regimes' | 'orbit-regimes-moon' | 'orbit-regimes-mars' | 'orbit-regimes-explore';
+    /** Open a founding mission in place (/explore: the mission panel stacks over this one, which
+     *  stays mounted). Without it a first is an anchor to /missions?id=. */
+    onMissionOpen?: (missionId: string) => void;
     /** Set of object ids currently selectable in the scene (#354 /earth
      *  EarthObjects; #355 lunar orbiter SurfaceSites; #356 Mars orbiter
      *  sites). A resident whose `id` matches becomes a clickable button
@@ -43,27 +56,15 @@
     regime,
     open,
     onClose,
+    bundle = 'orbit-regimes',
+    onMissionOpen,
     selectableIds = new Set<string>(),
     onResidentClick,
   }: Props = $props();
 
-  function fmtKm(alt: number | [number, number]): string {
-    if (typeof alt === 'number') {
-      return alt >= 1000 ? `${alt.toLocaleString('en-US')} km` : `${alt} km`;
-    }
-    const f = (x: number) => x.toLocaleString('en-US');
-    return `${f(alt[0])} - ${f(alt[1])} km`;
-  }
-  function fmtAU(d: number | [number, number]): string {
-    const f = (x: number) => (x >= 1000 ? x.toLocaleString('en-US') : x.toString());
-    if (typeof d === 'number') return `${f(d)} AU`;
-    return `${f(d[0])} - ${f(d[1])} AU`;
-  }
-  function fmtDistance(r: OrbitRegime): string {
-    if (r.altitude_km != null) return fmtKm(r.altitude_km);
-    if (r.distance_au != null) return fmtAU(r.distance_au);
-    return '';
-  }
+  const loc = $derived(localeFromPage(page));
+  const thumbOf = (id: string): string | null =>
+    (thumbs as Record<string, string>)[`${bundle}/${id}`] ?? null;
 
   // Per-agency accent for resident dots. Mirrors `nationChipFor` in
   // src/lib/surface-map/nation-palette.ts so the regime panel reads
@@ -116,7 +117,7 @@
       <div class="stat-row">
         <div>
           <div class="stat-label">{m.earth_regime_altitude_label()}</div>
-          <div class="stat-value">{fmtDistance(regime)}</div>
+          <div class="stat-value">{fmtRegimeBand(regime, loc)}</div>
         </div>
         {#if regime.firsts && regime.firsts.length > 0}
           <div>
@@ -144,9 +145,24 @@
         <ul class="residents">
           {#each regime.residents as r (r.id)}
             {@const clickable = selectableIds.has(r.id) && onResidentClick != null}
+            {@const thumb = thumbOf(r.id)}
             <li>
-              <span class="agency-dot" style:background={agencyColor(r.agency)} aria-hidden="true"
-              ></span>
+              {#if thumb}
+                <img
+                  class="resident-thumb"
+                  src={assetUrl(thumb)}
+                  alt=""
+                  width="28"
+                  height="28"
+                  loading="lazy"
+                  decoding="async"
+                  style:border-color={agencyColor(r.agency)}
+                />
+              {:else}
+                <span class="thumb-slot" aria-hidden="true"
+                  ><span class="agency-dot" style:background={agencyColor(r.agency)}></span></span
+                >
+              {/if}
               {#if clickable}
                 <button type="button" class="resident-link" onclick={() => onResidentClick?.(r.id)}>
                   {r.label}
@@ -169,7 +185,12 @@
             <li>
               <span class="firsts-year">{f.year}</span>
               {#if f.mission_id}
-                <a class="firsts-link" href={localHref(`/missions?id=${f.mission_id}`)}>
+                <a
+                  class="firsts-link"
+                  href={localHref(`/missions?id=${f.mission_id}`)}
+                  onclick={(e) =>
+                    onMissionLinkClick(e, { kind: 'mission', id: f.mission_id }, onMissionOpen)}
+                >
                   {f.label}
                   <span class="resident-arrow" aria-hidden="true">↗</span>
                 </a>
@@ -284,11 +305,28 @@
     color: rgba(255, 255, 255, 0.88);
     line-height: 1.45;
   }
+  /* A resident with a photo: 28 px round, the agency colour as a 2 px ring (UXD-024). One
+     without keeps the dot, centred in the same 28 px slot so the labels line up. */
+  .resident-thumb {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid;
+    box-sizing: border-box;
+    flex-shrink: 0;
+  }
+  .thumb-slot {
+    width: 28px;
+    height: 28px;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+  }
   .agency-dot {
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    flex-shrink: 0;
   }
   .firsts li {
     display: grid;

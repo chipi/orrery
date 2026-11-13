@@ -11,6 +11,7 @@
  */
 import * as THREE from 'three';
 import { disposeObject3d } from '$lib/three/dispose-object3d';
+import { surfaceOrbitRadius } from '$lib/orbit-regime-geometry';
 import { createMarkerHalo } from '$lib/three/marker-halo';
 import { attachPickableHit } from '$lib/three/pickable-hit';
 import { buildOrbiterGroup, type OrbiterMarker } from '$lib/three/orbiter-group';
@@ -239,7 +240,7 @@ export function createSurfaceMarkers(ctx: SurfaceMarkersContext): {
       // Lunar orbital altitudes range from ~50 km (LRO) to ~470 km
       // (SMART-1). Compress with log scale so all rings fit cleanly
       // around the 30u Moon sphere without overlapping.
-      const ringRadius = planetRadius + 4 + Math.log10(1 + site.altitude_km / 50) * 5;
+      const ringRadius = surfaceOrbitRadius(planetRadius, site.altitude_km);
       const dimmed = site.status !== 'ACTIVE';
       const marker = buildOrbiterGroup({
         site,

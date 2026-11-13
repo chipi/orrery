@@ -17,6 +17,7 @@
   import TourAnchors from '$lib/components/TourAnchors.svelte';
   import OrbitRuler from '$lib/components/OrbitRuler.svelte';
   import RegimePanel from '$lib/components/RegimePanel.svelte';
+  import HudStackBL from '$lib/components/HudStackBL.svelte';
   import { onMount } from 'svelte';
   import { page } from '$app/state';
   import { goto } from '$app/navigation';
@@ -160,8 +161,11 @@
   // Orbit ruler auto-hides once the camera dips below the lowest orbit
   // band (#363) — SurfaceScene flips this via onOrbitsInViewChange.
   let orbitsInView = $state(true);
+  let surfaceScene: SurfaceScene | undefined = $state();
   let regimePanelOpen = $state(false);
   let selectedRegimeId = $state<string | null>(null);
+  // The ruler row under the pointer or keyboard focus; the scene draws it (UXD-024).
+  let hoverRegimeId = $state<string | null>(null);
   let selectedRegime = $derived(
     selectedRegimeId ? (regimes.find((r) => r.id === selectedRegimeId) ?? null) : null,
   );
@@ -219,6 +223,10 @@
     }
   });
 
+  $effect(() => {
+    surfaceScene?.setRegimeHighlight(hoverRegimeId, regimePanelOpen ? selectedRegimeId : null);
+  });
+
   // ?regime=AREOSTATIONARY deep-link resolver.
   $effect(() => {
     void regimes;
@@ -245,6 +253,7 @@
 <DebugPanelRegistrar label="MARS" />
 
 <SurfaceScene
+  bind:this={surfaceScene}
   entityLinks={data.entityIndex}
   config={MARS_CONFIG}
   body="mars"
@@ -260,34 +269,27 @@
 
 <TourAnchors route="mars" anchors={MARS_TOUR_ANCHORS} />
 
-<!-- Desktop-only ruler — on mobile the SurfaceScene accordion Ruler tab
-     replaces this. .ruler-desktop-only renders display:none at ≤767px. -->
-<div class="ruler-desktop-only">
+<!-- Bottom-left column (UXD-024): the orbit ruler. On a phone it is the drawer's Ruler tab. -->
+<HudStackBL>
   {#if regimes.length > 0 && orbitsInView}
     <!-- Hidden once the camera dips below LMO — orbits then sit overhead
          and the ruler references nothing on screen (#363). -->
-    <OrbitRuler {regimes} {highlightRegime} onSelect={openRegime} anchorBottomPx={14} />
+    <OrbitRuler
+      {regimes}
+      {highlightRegime}
+      activeRegime={regimePanelOpen ? selectedRegimeId : null}
+      onSelect={openRegime}
+      onPreview={(id) => (hoverRegimeId = id)}
+      anchorBottomPx={14}
+    />
   {/if}
-</div>
+</HudStackBL>
 
 <RegimePanel
+  bundle="orbit-regimes-mars"
   regime={selectedRegime}
   open={regimePanelOpen}
   onClose={closeRegime}
   {selectableIds}
   {onResidentClick}
 />
-
-<style>
-  .ruler-desktop-only {
-    display: contents;
-  }
-  /* Hide the persistent desktop ruler on touch — the RULER drawer replaces it.
-     Keyed on capability, not width, so a landscape phone (wide but touch)
-     doesn't show BOTH the default ruler and the drawer one. */
-  @media (hover: none), (pointer: coarse) {
-    .ruler-desktop-only {
-      display: none;
-    }
-  }
-</style>

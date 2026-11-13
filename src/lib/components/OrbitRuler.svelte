@@ -1,23 +1,25 @@
 <!--
-  OrbitRuler — vertical altitude reference for /earth's orbital regimes (#354).
+  OrbitRuler — vertical altitude reference for the orbital regimes of /earth, /moon, /mars and the
+  heliocentric zones of /explore (#354, UXD-024).
 
-  Pinned to the LOWER-LEFT corner of the SurfaceScene at all viewport
-  widths (per 2026-06-22 user direction — "always visible"). Vertical
-  stack from L2 (top) → LEO (bottom), with a synthetic SURFACE row
-  below. Each band:
-   - regime color (mirrors REGIME_COLORS the orbit rings use)
-   - short name (LEO / MEO / …)
-   - altitude in km
-  Click a band → emits the regime id via `onSelect`.
+  Sits in the LOWER-LEFT corner of the scene (on the three Worlds inside the HudStackBL column, on
+  /explore on its own). Vertical stack from the outermost regime (top) → the innermost (bottom),
+  with a synthetic SURFACE row below. Each band is ONE line:
+   - regime colour dot (mirrors REGIME_COLORS; the colour stays on the dot only)
+   - short name (LEO / MEO / …), ellipsised with the full name as the title when it cannot fit
+   - altitude / distance, formatted by orbit-regime-format.ts (the regime panel reads the same)
+  Click or Enter on a band → `onSelect(regimeId)`. Hover or keyboard focus → `onPreview(regimeId)`
+  so the route can draw that regime in the scene; `activeRegime` is the regime whose panel is open.
 
-  Width and font compress on phone-sized viewports but the ruler is
-  never hidden or collapsed.
+  The ruler grows to its longest row (208 → 280 px). The header is a disclosure button: it folds
+  the ruler to the header (plus the flagged regime's name), remembered in localStorage and folded
+  by default below 560 px of window height (ruler-collapse.ts). The touch drawer passes
+  `collapsible={false}`: its tab is the fold.
 
-  Bands are equal-height — real altitudes span six orders of magnitude
-  (LEO 400 km → L2 1.5M km), so a true-scale ruler would pancake every
-  Earth-orbit band into a sliver. The regime panel (RegimePanel.svelte)
-  carries the scale comparisons; this surface teaches the regime
-  vocabulary + click-into-detail.
+  Bands are equal-height — real altitudes span six orders of magnitude (LEO 400 km → L2 1.5M km),
+  so a true-scale ruler would pancake every Earth-orbit band into a sliver. The regime panel
+  (RegimePanel.svelte) carries the scale comparisons; this surface teaches the regime vocabulary
+  + click-into-detail.
 
   Bands appear bottom→top in conventional altitude order:
    SURFACE → LEO → HEO → MEO → GEO → MOON → L2
@@ -25,19 +27,25 @@
   region (Molniya: perigee 1,000 km, apogee 40,000 km).
 -->
 <script lang="ts">
+  import { onMount } from 'svelte';
   import type { OrbitRegime } from '$types/orbit-regime';
   import * as m from '$lib/paraglide/messages';
   import { page } from '$app/state';
-  import { formatNumber } from '$lib/format';
   import { localeFromPage } from '$lib/locale';
+  import { fmtRegimeBand } from '$lib/orbit-regime-format';
+  import { initialCollapsed, saveCollapsed } from '$lib/ruler-collapse';
 
   interface Props {
     regimes: OrbitRegime[];
     onSelect: (regimeId: string) => void;
+    /** Hover / keyboard focus on a band (the regime id), cleared with null. */
+    onPreview?: (regimeId: string | null) => void;
     /** Regime to flag on the ruler — set by /earth when an orbiter is
      *  selected. Per 2026-06-22 user direction the ruler should "flag
      *  which ruler section it exists in" for the active orbit. */
     highlightRegime?: string | null;
+    /** The regime whose panel is open. */
+    activeRegime?: string | null;
     /** Explicit top→bottom render order by regime id. When omitted,
      *  regimes stack by descending altitude. /earth passes a curated
      *  list to place HEO (highly elliptical) between LEO and MEO; other
@@ -48,22 +56,37 @@
      *  /explore omits it (set to null) since the Sun is itself the
      *  bottom band and there is no "surface" below it. */
     surfaceAnchor?: { label: string; value: string } | null;
-    /** Distance in px from the viewport bottom to pin the ruler. Defaults
-     *  to 80 (clears /explore's bottom-left PLANET SCALES card). /earth,
-     *  /moon, /mars pass a small value so the ruler sits flush with the
-     *  screen bottom instead of floating (2026-06-28 user direction:
-     *  "orbit ruler ... should be aligned with bottom of the screen and
-     *  not hover over it"). */
+    /** Distance in px from the viewport bottom to pin the ruler when it stands alone (/explore).
+     *  Defaults to 80 (clears /explore's bottom-left PLANET SCALES card). Inside a HudStackBL the
+     *  stack owns the position and this is unused. */
     anchorBottomPx?: number;
+    /** Header folds the ruler (default). The touch drawer passes false. */
+    collapsible?: boolean;
   }
   let {
     regimes,
     onSelect,
+    onPreview,
     highlightRegime = null,
+    activeRegime = null,
     order,
     surfaceAnchor,
     anchorBottomPx = 80,
+    collapsible = true,
   }: Props = $props();
+
+  const loc = $derived(localeFromPage(page));
+  let collapsed = $state(false);
+  onMount(() => {
+    if (collapsible) collapsed = initialCollapsed(window.innerHeight);
+    return () => onPreview?.(null);
+  });
+  function toggle() {
+    collapsed = !collapsed;
+    saveCollapsed(collapsed);
+    if (collapsed) onPreview?.(null);
+  }
+  const bodyId = `ruler-bands-${Math.random().toString(36).slice(2, 8)}`;
 
   // Render order top→bottom. SURFACE is synthetic (always at 0 km, no
   // panel) — included as a visual anchor so the ruler reads as "ground
@@ -89,54 +112,56 @@
           .filter((r): r is OrbitRegime => r != null)
       : [...regimes].sort((a, b) => midDistance(b) - midDistance(a)),
   );
-
-  // zh/ja/ko write large numbers in 万/만 and hi in लाख, as the site's own text does
-  // ("150万公里", "97 लाख किमी"), not in digit groups.
-  const MYRIAD_LOCALES = new Set(['zh-CN', 'ja', 'ko', 'hi']);
-  function num(x: number, decimals = 0): string {
-    const loc = localeFromPage(page);
-    if (x >= 100_000 && MYRIAD_LOCALES.has(loc)) {
-      return new Intl.NumberFormat(loc, {
-        notation: 'compact',
-        maximumSignificantDigits: 3,
-      }).format(x);
-    }
-    return formatNumber(x, loc, decimals);
-  }
-  function fmtKm(alt: number | [number, number]): string {
-    if (typeof alt === 'number') {
-      return m.mp_flight_unit_km({ value: num(alt >= 1000 ? Math.round(alt / 1000) * 1000 : alt) });
-    }
-    return m.mp_flight_unit_km({ value: `${num(alt[0])}–${num(alt[1])}` });
-  }
-  function fmtAU(d: number | [number, number]): string {
-    const fmt = (x: number) => num(x, x < 10 ? 1 : 0);
-    if (typeof d === 'number') return m.unit_au_value({ value: fmt(d) });
-    return m.unit_au_value({ value: `${fmt(d[0])}–${fmt(d[1])}` });
-  }
-  function fmtBand(r: OrbitRegime): string {
-    if (r.altitude_km != null) return fmtKm(r.altitude_km);
-    if (r.distance_au != null) return fmtAU(r.distance_au);
-    return '';
-  }
+  // Folded, the header still says which section the selected orbiter is in.
+  let flagged = $derived(
+    ordered.find((r) => r.id === (highlightRegime ?? activeRegime))?.short ?? null,
+  );
 </script>
 
 <aside
   class="ruler"
+  class:ruler--collapsed={collapsible && collapsed}
   style:--ruler-bottom="{anchorBottomPx}px"
   aria-label={m.earth_orbit_ruler_aria()}
 >
-  <h3 class="ruler-title">{m.earth_orbit_ruler_title()}</h3>
-  <ul class="ruler-bands">
+  <h3 class="ruler-title">
+    {#if collapsible}
+      <button
+        type="button"
+        class="ruler-toggle ui-hit"
+        aria-expanded={!collapsed}
+        aria-controls={bodyId}
+        aria-label={collapsed ? m.ruler_expand_aria() : m.ruler_collapse_aria()}
+        data-testid="ruler-toggle"
+        onclick={toggle}
+      >
+        <span class="ruler-title-text"
+          >{m.earth_orbit_ruler_title()}{#if collapsed && flagged}
+            · {flagged}{/if}</span
+        >
+        <span class="ruler-chev" aria-hidden="true">{collapsed ? '▸' : '▾'}</span>
+      </button>
+    {:else}
+      {m.earth_orbit_ruler_title()}
+    {/if}
+  </h3>
+  <ul class="ruler-bands" id={bodyId} hidden={collapsible && collapsed}>
     {#each ordered as r (r.id)}
       <li>
         <button
           type="button"
           class="band"
           class:band--highlighted={r.id === highlightRegime}
+          class:band--active={r.id === activeRegime}
           style:--regime-color={r.color}
-          aria-current={r.id === highlightRegime ? 'true' : undefined}
+          aria-current={r.id === highlightRegime || r.id === activeRegime ? 'true' : undefined}
+          data-regime={r.id}
+          title={r.name}
           onclick={() => onSelect(r.id)}
+          onpointerenter={() => onPreview?.(r.id)}
+          onpointerleave={() => onPreview?.(null)}
+          onfocus={(e) => e.currentTarget.matches(':focus-visible') && onPreview?.(r.id)}
+          onblur={() => onPreview?.(null)}
         >
           {#if r.id === highlightRegime}
             <span class="band-flag" aria-hidden="true">▸</span>
@@ -144,7 +169,7 @@
             <span class="band-dot" aria-hidden="true"></span>
           {/if}
           <span class="band-name">{r.short ?? r.id}</span>
-          <span class="band-alt">{fmtBand(r)}</span>
+          <span class="band-alt">{fmtRegimeBand(r, loc)}</span>
         </button>
       </li>
     {/each}
@@ -163,10 +188,9 @@
 </aside>
 
 <style>
-  /* Pinned LOWER-LEFT and always visible — per 2026-06-22 user note
-     "move this to lower left corner so it is always visible". `bottom`
-     leaves room above the global footer bar (Gallery / Credits / etc.)
-     and above the centred nation legend (bottom: 48 / centred).
+  /* Standalone (/explore): pinned LOWER-LEFT. The three Worlds put the ruler inside HudStackBL,
+     which makes it static (see that component). `bottom` leaves room above the global footer bar
+     (--ruler-clear) and any route card (--ruler-bottom).
      z-index 1 (very low) — the ruler is a passive reference, NEVER
      competes with overlay UI for the same screen real estate. Any
      other panel, sheet, drawer, or popover in this region paints on
@@ -174,13 +198,7 @@
      background if something shows up in the same place"). */
   .ruler {
     position: absolute;
-    /* --ruler-left: set by SurfaceScene when the locate chip shares the ruler's
-       row. */
-    left: var(--ruler-left, 12px);
-    /* Pin distance is route-supplied via --ruler-bottom (anchorBottomPx
-       prop). /explore keeps 80 px to clear its bottom-left PLANET SCALES
-       card; /earth /moon /mars pass a small inset so the ruler is flush
-       with the screen bottom (2026-06-28 user direction). */
+    left: 12px;
     bottom: max(var(--ruler-bottom, 80px), var(--ruler-clear, 0px));
     z-index: 1;
     pointer-events: none;
@@ -192,7 +210,11 @@
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 6px;
     padding: 10px 12px 8px;
-    width: 208px;
+    /* One row, one line: the ruler grows to its longest row (UXD-024). */
+    box-sizing: border-box;
+    width: max-content;
+    min-width: 208px;
+    max-width: min(280px, 44vw);
     /* Cap height so dense rulers (/explore 8 zones) never overflow off
        the top edge when other overlays (iconic-mission legend, etc.)
        are also showing on the left rail (2026-06-22 user direction
@@ -226,6 +248,43 @@
     letter-spacing: 0.15em;
     color: var(--color-text-label);
   }
+  .ruler--collapsed .ruler-title {
+    margin-bottom: 0;
+  }
+  .ruler-toggle {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 0;
+    background: transparent;
+    border: 0;
+    color: inherit;
+    font: inherit;
+    letter-spacing: inherit;
+    text-align: start;
+    cursor: pointer;
+  }
+  .ruler-toggle:hover,
+  .ruler-toggle:focus-visible {
+    color: #fff;
+    outline: none;
+  }
+  .ruler-toggle:focus-visible .ruler-chev {
+    border-color: var(--color-state);
+  }
+  .ruler-title-text {
+    white-space: nowrap;
+  }
+  .ruler-chev {
+    font-size: 12px;
+    line-height: 1.2;
+    color: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 4px;
+    padding: 0 6px;
+  }
   .ruler-bands {
     list-style: none;
     margin: 0;
@@ -233,6 +292,9 @@
     display: flex;
     flex-direction: column;
     gap: 2px;
+  }
+  .ruler-bands[hidden] {
+    display: none;
   }
   .band {
     width: 100%;
@@ -244,17 +306,21 @@
     font: inherit;
     cursor: pointer;
     display: grid;
-    grid-template-columns: 10px 1fr auto;
+    grid-template-columns: 10px minmax(0, 1fr) auto;
     align-items: center;
     gap: 8px;
+    white-space: nowrap;
     transition:
       background 120ms ease,
       border-color 120ms ease;
   }
+  /* The row lights in the highlight blue, the same blue the scene draws the regime in; the regime
+     colour stays on the dot. */
   .band:hover,
-  .band:focus-visible {
-    background: rgba(255, 255, 255, 0.06);
-    border-color: var(--regime-color);
+  .band:focus-visible,
+  .band--active {
+    background: rgba(136, 159, 231, 0.14);
+    border-color: var(--color-state);
     outline: none;
   }
   .band-dot {
@@ -265,14 +331,18 @@
     box-shadow: 0 0 8px var(--regime-color);
   }
   .band-name {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
     text-align: left;
     font-weight: 700;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.04em;
   }
   .band-alt {
     white-space: nowrap;
     color: rgba(255, 255, 255, 0.62);
     font-size: var(--size-label);
+    font-variant-numeric: tabular-nums;
   }
   .surface-row {
     margin-top: 6px;
@@ -296,13 +366,17 @@
     font-weight: 700;
   }
 
-  /* Highlighted band — flagged when an orbiter is selected. The band's
-     regime colour bleeds into the background and a small ▸ flag
-     replaces the dot. */
+  /* Flagged band — set when an orbiter is selected. The band's regime colour bleeds into the
+     background and a small ▸ flag replaces the dot. */
   .band--highlighted {
     background: color-mix(in srgb, var(--regime-color) 18%, transparent);
     border-color: var(--regime-color);
     box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--regime-color) 50%, transparent);
+  }
+  .band--highlighted:hover,
+  .band--highlighted:focus-visible,
+  .band--highlighted.band--active {
+    border-color: var(--color-state);
   }
   .band-flag {
     color: var(--regime-color);
@@ -311,12 +385,11 @@
     text-align: center;
   }
 
-  /* Tighter footprint on phones — keeps the ruler always visible
-     (no chip-collapse) but stops it eating the bottom of a 375 px
-     viewport. Width drops from 188 to 152; font 11→10; padding 10→6. */
+  /* Tighter footprint on short non-touch windows (the touch drawer has its own tab). */
   @media (max-width: 720px) {
     .ruler {
-      width: 152px;
+      min-width: 152px;
+      max-width: 56vw;
       font-size: var(--size-label);
       padding: 6px 8px 4px;
     }
@@ -327,7 +400,7 @@
     }
     .band {
       padding: 3px 6px;
-      grid-template-columns: 8px 1fr auto;
+      grid-template-columns: 8px minmax(0, 1fr) auto;
       gap: 6px;
     }
     .band-alt {

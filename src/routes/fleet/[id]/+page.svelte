@@ -19,8 +19,6 @@
   import { article, breadcrumbList, absoluteUrl } from '$lib/json-ld';
   import JsonLd from '$lib/components/JsonLd.svelte';
   import EntityThumb from '$lib/components/EntityThumb.svelte';
-  import { thumbOf } from '$lib/entity-thumb';
-  import { agencyRingColor } from '$lib/surface-map/nation-palette';
   import type { PageData } from './$types';
 
   let { data }: { data: PageData } = $props();
@@ -157,11 +155,7 @@
       <ul class="linklist">
         {#each data.missions as mission (mission.id)}
           <li class="has-thumb">
-            <EntityThumb
-              src={thumbOf('missions', mission.id)}
-              ring={agencyRingColor(mission.agency)}
-              fallback="none"
-            />
+            <EntityThumb src={mission.thumb} ring={mission.ring} fallback="none" />
             <span class="lt-body">
               <a href={localHref(`/missions/${mission.id}`)}>{mission.name}</a>
               <span class="year">{mission.year}</span>
@@ -211,11 +205,7 @@
         <ul class="linklist">
           {#each group.items as h (h.id)}
             <li class="has-thumb">
-              <EntityThumb
-                src={thumbOf('fleet', h.id)}
-                ring={agencyRingColor(h.agency)}
-                fallback="none"
-              />
+              <EntityThumb src={h.thumb} ring={h.ring} fallback="none" />
               <span class="lt-body">
                 <a href={localHref(`/fleet/${h.id}`)}>{h.name}</a>
                 {#if h.tagline}<span class="note">{h.tagline}</span>{/if}

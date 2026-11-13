@@ -4,6 +4,8 @@ import { get } from '$lib/data/core';
 import { enginesForLauncher, launchersForEngine } from '$lib/physics/propulsion/engine-registry';
 import { getLocale } from '$lib/paraglide/runtime';
 import { entityHero } from '$lib/entity-hero';
+import { thumbOf } from '$lib/entity-thumb';
+import { agencyRingColor } from '$lib/surface-map/nation-palette';
 import fleetIndex from '$data/fleet/index.json';
 import galleryCounts from '$data/fleet-galleries.json';
 import heroOverrides from '$data/fleet-hero-overrides.json';
@@ -63,7 +65,8 @@ export const load: PageServerLoad = async ({ params, fetch }) => {
           name: full?.name ?? id,
           first: full?.first ?? null,
           year: m.year,
-          agency: m.agency,
+          thumb: thumbOf('missions', id),
+          ring: agencyRingColor(m.agency),
           refs: (full?.fleet_refs ?? []).map((r) => r.id),
         };
       }),
@@ -82,7 +85,13 @@ export const load: PageServerLoad = async ({ params, fetch }) => {
           const r = INDEX.find((x) => x.id === id);
           const e = r && (await getFleet(r.id, r.category, locale, fetch));
           return e
-            ? { id, name: e.name ?? id, tagline: e.tagline ?? null, agency: e.agency }
+            ? {
+                id,
+                name: e.name ?? id,
+                tagline: e.tagline ?? null,
+                thumb: thumbOf('fleet', id),
+                ring: agencyRingColor(e.agency),
+              }
             : null;
         }),
       )

@@ -17,6 +17,15 @@
   transform: translateY(-50%) rotate(180deg);
 }
 
+/* A narrow window with a mouse: the detail panel (Panel.svelte, z 30) is then as wide as the window,
+   so the tab sits under it instead of over its text, as the Worlds' handle already does
+   (SurfaceScene.svelte). On touch the panel is a bottom sheet and covers the tab already. */
+@media (hover: hover) and (pointer: fine) and (max-width: 600px) {
+  .scale-index-handle {
+    z-index: 25;
+  }
+}
+
 /* Starts under the HUD chip row, which wraps on narrow windows: ScaleIndex publishes the
    measured bottom as --index-top; nothing on touch, where the HUD is hidden. */
 .scale-index {
@@ -62,8 +71,75 @@
   outline: none;
   border-color: var(--color-accent-strong);
 }
-.si-top ~ .si-filter-row {
+.si-top ~ .si-filters {
   margin-bottom: 8px;
+}
+
+/* Folded filters (C6-F): the chips that fit one line stay, the rest sit behind a FILTERS button
+   that opens them in place, under the count. IndexFiltersToggle is the button, shared with the
+   Worlds' index. Before the chips are measured they wrap, as they always did. */
+.si-filters {
+  position: relative;
+}
+.si-filters.is-fitted > .ui-chip-group {
+  flex-wrap: nowrap;
+}
+.idx-count-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+.idx-count-line .si-count {
+  margin-bottom: 0;
+}
+.idx-filters-btn {
+  flex: none;
+  gap: 4px;
+  margin-inline-start: auto;
+}
+.idx-filters-btn[aria-expanded='true'] {
+  border-color: var(--color-accent);
+}
+.idx-filters-n {
+  color: var(--color-accent-strong);
+}
+.idx-filters-chevron {
+  font-size: 11px;
+  line-height: 1;
+}
+.idx-fold {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+.idx-fold[hidden] {
+  display: none;
+}
+.idx-fold-group {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.idx-fold-label {
+  font-family: var(--font-mono);
+  font-size: var(--size-label);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--color-text-dim);
+}
+/* Off-screen copy of the chips: their widths decide how many fit one line. */
+.idx-measure {
+  position: absolute;
+  visibility: hidden;
+  pointer-events: none;
+  display: flex;
+  gap: 6px;
+  white-space: nowrap;
+  inset-inline-start: 0;
+  top: 0;
 }
 .si-count {
   margin-bottom: 4px;

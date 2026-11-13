@@ -103,6 +103,13 @@ async function openScale(page: Page, s: Scale) {
   await expect(toggle(page)).toHaveAttribute('aria-label', s.aria, { timeout: 45_000 });
 }
 
+/** Click a kind chip; a chip folded behind the FILTERS button (C6-F) opens the fold first. */
+async function pickChip(panel: Locator, name: RegExp) {
+  const chip = panel.getByRole('radio', { name });
+  if (!(await chip.isVisible())) await panel.getByTestId('index-filters-toggle').click();
+  await chip.click();
+}
+
 const finePointer = (page: Page) =>
   page.evaluate(() => matchMedia('(hover: hover) and (pointer: fine)').matches);
 
@@ -448,7 +455,7 @@ test.describe('/explore INDEX — the solar-system rows: a meta line, two lines,
       [/^Comets$/i, 3],
     ];
     for (const [label, n] of chips) {
-      await panel.getByRole('radio', { name: label }).click();
+      await pickChip(panel, label);
       await expect(count).toHaveText(`${n} / 51`);
       await expect(panel.locator('button.si-row')).toHaveCount(n);
     }
@@ -463,9 +470,9 @@ test.describe('/explore INDEX — the solar-system rows: a meta line, two lines,
     await openScale(page, SCALES[0]);
     await toggle(page).click();
     const panel = panelOf(page, 'solar-system');
-    await panel.getByRole('radio', { name: /^Asteroids$/i }).click();
+    await pickChip(panel, /^Asteroids$/i);
     await expect(panel.locator('button.si-row[data-index-id="arrokoth"]')).toHaveCount(1);
-    await panel.getByRole('radio', { name: /^Comets$/i }).click();
+    await pickChip(panel, /^Comets$/i);
     await expect(panel.locator('button.si-row[data-index-id="oumuamua"]')).toHaveCount(1);
     await panel.getByRole('radio', { name: /^All$/i }).click();
     await panel.locator('input[type="search"]').fill('Jup');
@@ -544,6 +551,110 @@ test.describe('/explore INDEX — a round photo in the lead slot of the solar ro
     expect(
       await page.locator('aside.scale-index:not([data-scale="solar-system"]) img').count(),
     ).toBe(0);
+  });
+});
+
+test.describe('/explore INDEX — folded filters: the chips that fit one line stay, the rest sit behind FILTERS (C6-F)', () => {
+  test('the solar system keeps All, Planets and Moons on one line; Dwarfs, Asteroids and Comets open from the button; a folded chip still filters and the count stays on the closed button', async ({
+    page,
+  }) => {
+    test.slow();
+    await openScale(page, SCALES[0]);
+    await toggle(page).click();
+    const panel = panelOf(page, 'solar-system');
+    await expect(panel).toBeVisible();
+    const btn = panel.getByTestId('index-filters-toggle');
+    const chip = (name: RegExp) => panel.getByRole('radio', { name });
+    await expect(btn).toBeVisible();
+    await expect(btn).toHaveAttribute('aria-expanded', 'false');
+    await expect(btn).toHaveAttribute('aria-controls', 'si-fold-solar-system');
+
+    // One line: every visible chip has the same top; the fold is closed.
+    for (const name of [/^All$/i, /^Planets$/i, /^Moons$/i]) await expect(chip(name)).toBeVisible();
+    for (const name of [/^Asteroids$/i, /^Comets$/i]) await expect(chip(name)).toBeHidden();
+    const tops = await panel
+      .locator('.si-filter-row .ui-chip')
+      .evaluateAll((els) => els.map((e) => Math.round(e.getBoundingClientRect().top)));
+    expect(new Set(tops).size, 'the visible chips are one line').toBe(1);
+
+    await btn.click();
+    await expect(btn).toHaveAttribute('aria-expanded', 'true');
+    await expect(chip(/^Asteroids$/i)).toBeVisible();
+    await expect(chip(/^Comets$/i)).toBeVisible();
+
+    // A folded chip filters, and closing the fold keeps the count on the button.
+    await chip(/^Asteroids$/i).click();
+    await expect(panel.locator('.si-count')).toHaveText('16 / 51');
+    await btn.click();
+    await expect(btn).toHaveAttribute('aria-expanded', 'false');
+    await expect(chip(/^Asteroids$/i)).toBeHidden();
+    await expect(btn.locator('.idx-filters-n')).toHaveText('1');
+    await expect(panel.locator('.si-count')).toHaveText('16 / 51');
+
+    // A visible chip clears it: the count goes.
+    await chip(/^All$/i).click();
+    await expect(btn.locator('.idx-filters-n')).toHaveCount(0);
+  });
+
+  test('keyboard: Tab from the chips reaches the FILTERS button, Enter opens it, Enter again closes it', async ({
+    page,
+  }) => {
+    test.slow();
+    await openScale(page, SCALES[0]);
+    await toggle(page).click();
+    const panel = panelOf(page, 'solar-system');
+    await expect(panel).toBeVisible();
+    const btn = panel.getByTestId('index-filters-toggle');
+    await panel.getByRole('radio', { name: /^All$/i }).focus();
+    await page.keyboard.press('Tab');
+    await expect(btn).toBeFocused();
+    await page.keyboard.press('Enter');
+    await expect(btn).toHaveAttribute('aria-expanded', 'true');
+    await page.keyboard.press('Enter');
+    await expect(btn).toHaveAttribute('aria-expanded', 'false');
+  });
+
+  test('no scale lets its chips wrap past one line: the neighbourhood and the solar system show one row, with a FILTERS button only where chips are folded', async ({
+    page,
+  }) => {
+    test.slow();
+    for (const s of [SCALES[1], SCALES[0]]) {
+      await openScale(page, s);
+      if (!(await panelOf(page, s.id).isVisible())) await toggle(page).click();
+      const panel = panelOf(page, s.id);
+      await expect(panel).toBeVisible();
+      const tops = await panel
+        .locator('.si-filter-row .ui-chip')
+        .evaluateAll((els) => els.map((e) => Math.round(e.getBoundingClientRect().top)));
+      expect(new Set(tops).size, `${s.id}: one chip line`).toBe(1);
+    }
+  });
+});
+
+test.describe('/explore INDEX — the handle sits under an open detail panel on a phone', () => {
+  test('a full-height panel sheet covers the INDEX tab: the point at the tab centre is the panel, not the tab', async ({
+    page,
+  }, testInfo) => {
+    test.skip(
+      testInfo.project.name === 'mobile-landscape-chromium',
+      'a landscape sheet is a side drawer',
+    );
+    // A narrow window with a mouse (390 px) gets the same full-width panel as a phone.
+    if (testInfo.project.name === 'desktop-chromium')
+      await page.setViewportSize({ width: 390, height: 844 });
+    test.slow();
+    await page.goto('/explore?context=local-group&pick=lmc');
+    await waitForHydration(page);
+    const panel = page.locator('aside.panel');
+    await expect(panel).toBeVisible({ timeout: 45_000 });
+    const handle = page.locator('.scale-index-handle');
+    await expect(handle).toHaveCount(1);
+    const covered = await handle.evaluate((el) => {
+      const r = el.getBoundingClientRect();
+      const hit = document.elementFromPoint(r.left + r.width / 2, r.top + r.height / 2);
+      return !!hit && !el.contains(hit) && !!hit.closest('aside.panel');
+    });
+    expect(covered, 'the panel text is on top, the handle does not cover it').toBe(true);
   });
 });
 

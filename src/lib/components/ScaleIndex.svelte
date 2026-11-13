@@ -159,6 +159,8 @@
   import Chip from './Chip.svelte';
   import ChipGroup from './ChipGroup.svelte';
   import EntityThumb from './EntityThumb.svelte';
+  import IndexFiltersToggle from './IndexFiltersToggle.svelte';
+  import { fitChips } from '$lib/explore/chip-fit';
   import { solarRowThumb } from '$lib/entity-thumb';
 
   type Props = {
@@ -205,6 +207,47 @@
   const groups = $derived(groupBySection(filtered));
   const filterIds = $derived(SCALE_FILTERS[scale].filter((id) => shown.some(FILTER_TESTS[id])));
   const pageHref = (r: ScaleIndexRow) => (r.href ? localHref(r.href) : undefined);
+
+  // Folded filters (C6-F): the chips that fit the one line beside All stay; the rest sit behind a
+  // FILTERS button. Which fit is measured, because a chip's width follows its label (de, ru, ar).
+  const CHIP_GAP = 6;
+  const PINNED: Partial<Record<ShellId, IndexFilterId[]>> = { 'solar-system': ['planet', 'moon'] };
+  let filtersEl: HTMLElement | undefined = $state();
+  let measureEl: HTMLElement | undefined = $state();
+  let folded = $state<IndexFilterId[]>([]);
+  let fitted = $state(false);
+  let foldOpen = $state(false);
+  const foldedIds = $derived(filterIds.filter((id) => folded.includes(id)));
+  const visibleIds = $derived(filterIds.filter((id) => !folded.includes(id)));
+  const foldedOn = $derived(filter !== null && foldedIds.includes(filter) ? 1 : 0);
+  const foldId = $derived(`si-fold-${scale}`);
+  $effect(() => {
+    const ids = filterIds;
+    if (!open || !filtersEl || !measureEl) return;
+    const host = filtersEl;
+    const probe = measureEl;
+    const run = () => {
+      const kids = [...probe.children] as HTMLElement[];
+      const avail = host.clientWidth;
+      if (!avail || kids.length !== ids.length + 1) return;
+      const widths = kids.map((k) => k.offsetWidth);
+      const priority = [
+        ...(PINNED[scale] ?? []).map((p) => ids.indexOf(p) + 1).filter((i) => i > 0),
+        ...ids.map((_, i) => i + 1),
+      ];
+      const fit = fitChips(widths, CHIP_GAP, avail, priority);
+      const next = fit.folded.map((i) => ids[i - 1]);
+      if (next.join() !== folded.join()) folded = next;
+      fitted = true;
+    };
+    run();
+    const ro = new ResizeObserver(run);
+    ro.observe(host);
+    return () => ro.disconnect();
+  });
+  $effect(() => {
+    if (foldedIds.length === 0) foldOpen = false;
+  });
 
   // Starts just under the HUD chip row, which wraps on narrow windows (nothing on touch: HUD hidden).
   let indexTopPx = $state<number | null>(null);
@@ -254,19 +297,49 @@
         onclick={onClose}>×</Chip
       >
     </div>
+    {#snippet chipLabel(id: IndexFilterId)}{FILTER_GLYPH[id]
+        ? `${FILTER_GLYPH[id]} `
+        : ''}{FILTER_LABELS[id]()}{/snippet}
     {#if filterIds.length > 0}
-      <ChipGroup class="si-filter-row" role="radiogroup" label={m.explore_index_filter_aria()}>
-        <Chip kind="choice" active={filter === null} onclick={() => (filter = null)}
-          >{m.star_index_filter_all()}</Chip
-        >
-        {#each filterIds as id (id)}
-          <Chip kind="choice" active={filter === id} onclick={() => (filter = id)}
-            >{FILTER_GLYPH[id] ? `${FILTER_GLYPH[id]} ` : ''}{FILTER_LABELS[id]()}</Chip
+      <div class="si-filters" class:is-fitted={fitted} bind:this={filtersEl}>
+        <ChipGroup class="si-filter-row" role="radiogroup" label={m.explore_index_filter_aria()}>
+          <Chip kind="choice" active={filter === null} onclick={() => (filter = null)}
+            >{m.star_index_filter_all()}</Chip
           >
-        {/each}
-      </ChipGroup>
+          {#each visibleIds as id (id)}
+            <Chip kind="choice" active={filter === id} onclick={() => (filter = id)}
+              >{@render chipLabel(id)}</Chip
+            >
+          {/each}
+        </ChipGroup>
+        <div class="idx-measure" aria-hidden="true" bind:this={measureEl}>
+          <span class="ui-chip">{m.star_index_filter_all()}</span>
+          {#each filterIds as id (id)}<span class="ui-chip">{@render chipLabel(id)}</span>{/each}
+        </div>
+      </div>
     {/if}
-    <div class="si-count">{filtered.length} / {shown.length}</div>
+    <div class="idx-count-line">
+      <div class="si-count">{filtered.length} / {shown.length}</div>
+      {#if foldedIds.length > 0}
+        <IndexFiltersToggle
+          open={foldOpen}
+          count={foldedOn}
+          controls={foldId}
+          onclick={() => (foldOpen = !foldOpen)}
+        />
+      {/if}
+    </div>
+    {#if foldedIds.length > 0}
+      <div class="idx-fold" id={foldId} hidden={!foldOpen}>
+        <ChipGroup role="radiogroup" label={m.explore_index_filter_aria()}>
+          {#each foldedIds as id (id)}
+            <Chip kind="choice" active={filter === id} onclick={() => (filter = id)}
+              >{@render chipLabel(id)}</Chip
+            >
+          {/each}
+        </ChipGroup>
+      </div>
+    {/if}
     <ul
       class="si-list"
       use:roving={{

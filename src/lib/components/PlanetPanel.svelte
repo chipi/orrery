@@ -5,8 +5,8 @@
   import PanelHeroImage from './PanelHeroImage.svelte';
   import PanelLightbox from './PanelLightbox.svelte';
   import Panel from './Panel.svelte';
-  import { localHref } from '$lib/locale';
   import Chip from './Chip.svelte';
+  import WorldLinkChip from './WorldLinkChip.svelte';
   import PanelActions from './PanelActions.svelte';
   import { getPlanetGallery, getPlanets } from '$lib/data';
   import type { CardSpec } from '$lib/cards/card-spec';
@@ -174,13 +174,9 @@
     </div>
 
     <PanelActions>
-      {#if planet.id === 'earth' || planet.id === 'mars' || (planet.missionable && onPlanMission)}
-        {#if planet.id === 'earth' || planet.id === 'mars'}
-          <Chip kind="link" href={localHref(`/${planet.id}`)}>{m.panel_action_surface()}</Chip>
-        {/if}
-        {#if planet.missionable && onPlanMission}
-          <Chip kind="action" onclick={onPlanMission}>{m.panel_action_plan()}</Chip>
-        {/if}
+      <WorldLinkChip bodyId={planet.id} />
+      {#if planet.missionable && onPlanMission}
+        <Chip kind="action" onclick={onPlanMission}>{m.panel_action_plan()}</Chip>
       {/if}
     </PanelActions>
 

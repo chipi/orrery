@@ -338,7 +338,7 @@ animation: slideIn / fadeIn 0.22s ease;
 The panel always contains, top to bottom:
 0. Header (`.panel-head`, fixed above the scroll container, solid `--color-panel-bg`, UXD-018 as amended by B1.1): one block, no separate bar row. Line 1 is the eyebrow (the kind line: agency badge and status, the type, a category and designation) with, at the inline end of its first row, only back `←` (after a card link) and close `×` (operator 2026-11-13): `<Chip>`s drawn at the badges' 24px, square, with a 44px tap area on touch through an invisible extension; they sit on the left in RTL. Share is not in the header: it is the last chip of the action row (1a). Line 2 is the entity name at the full panel width: a long name wraps under the actions, never beside them. A panel with no eyebrow (a place with only a name) leaves line 1 to the actions. The header does not scroll with the content, so the name is always visible and nothing scrolls under the actions. `Panel` takes the two parts as the `eyebrow` and `heading` snippets and owns the layout. Line 1 is one centre line: the agency badge, the status chip and × have the same 24px height; badges that wrap keep × on their first row, and a 6px gap separates line 1 from the name.
 1. Identity details below the header (key stats, type line, tagline)
-1a. Action row (`PanelActions`): at most three chips, in-scene, then view, then simulate, then plan, then Share last when the entity has a collectible card (opens the card overlay; `Panel` provides it, a panel with no row of its own gets one holding Share); above the hero, on every tab; absent when there is no action and no card. Nothing is stacked at the foot of a panel.
+1a. Action row (`PanelActions`): at most three chips, in-scene, then view, then simulate, then plan, then Share last when the entity has a collectible card (opens the card overlay; `Panel` provides it, a panel with no row of its own gets one holding Share); above the hero, on every tab; absent when there is no action and no card. Nothing is stacked at the foot of a panel. The "view" chip of Earth, Mars, Venus and the Moon is "Go to Mars" (and so on), a link to the body's world page ([UXD-028](../uxs/decisions/UXD-028-explore-and-worlds-link-both-ways.md), `WorldLinkChip`); no other body has one.
 2. Hero image (no hover glow; keyboard focus draws an inset 2px `--color-focus` ring), then the tab strip (OVERVIEW | GALLERY | LEARN) — where applicable
 2a. Star, outer-scale and black-hole panels (`UniversePanelBody`, [UXD-023](../uxs/decisions/UXD-023-star-and-outer-panels-follow-the-planet-pattern.md)): the same order, one hero or none (no hero, no slot; a part-of photo captions what is pictured), GALLERY second only with two or more images, a star's IN THE SKY tab holds the constellation finder; lead `.editorial`, facts in the planet cell look; no colour or size of their own
 3. Stats grid: three cells per row (`repeat(3, minmax(0, 1fr))`), so up to nine values take three rows (UXD-018, amendment "Overview three per row")
@@ -391,6 +391,8 @@ The abbreviation is always visible. The real logo loads on top. Never breaks off
 ### 5.7 Chip (toggle, filter, choice, HUD action)
 
 One control for every toggle, filter, choice and HUD action, drawn by `src/lib/styles/chip.css` and rendered by `<Chip>` ([UXD-014](../uxs/decisions/UXD-014-one-chip-and-filter.md)). A page never defines its own chip, pill or toggle rules.
+
+A link chip (`kind="link"`, an `<a>`) is the way between two pages: "Go to Mars" in an Explore panel's action row and "Back to Explore" at the head of a Worlds page's view row (the top-left cluster on touch); plain words, no arrow glyph ([UXD-028](../uxs/decisions/UXD-028-explore-and-worlds-link-both-ways.md)).
 
 Layer chips sit in one flat horizontal row (`LayerChipRow`, [UXD-015](../uxs/decisions/UXD-015-flat-chip-row.md)): 6px gaps, wrapping between chips where the width runs out, no captions, groups or master chips, and on a touch drawer the same run of 44px chips. On a fine pointer the view actions (2D, RESET VIEW, SPIN, AR, SKY) and the layer chips are one row: the actions group, a 12px gap, then the layer group, wrapping between the groups. RESET VIEW is always in its slot (disabled, not removed) so no chip shifts. On `/explore` ICONIC MISSIONS is the first layer chip, ahead of PLANETS, DWARFS, COMETS and ISM, because it opens the legend below the row (C7, [UXD-026](../uxs/decisions/UXD-026-iconic-missions-legend-and-milestone-boxes.md)).
 
@@ -604,6 +606,8 @@ Scrollable card grid. Preview panel is `position: fixed; right: 0` at z-index 50
 
 Full-screen 3D/2D. Regime legend strip below nav. Bottom bar with speed controls. The log scale is the central design decision — the legend makes it explicit.
 
+**Back to Explore.** The view row (and the top-left cluster on touch) starts with the "Back to Explore" link chip, to `/explore?id=earth` ([UXD-028](../uxs/decisions/UXD-028-explore-and-worlds-link-both-ways.md)); the same chip is first on /moon, /mars and /venus.
+
 **Notable:** HTML label overlays for orbital objects in 3D use the same `project()` pattern as P01, but with a graceful opacity fade when objects pass behind the body. Labels disappear at `wp.z > 1`.
 
 ![P05 Earth Orbit Viewer — ISS selected, log-scale display from ISS to JWST, regime legend](screenshots/p05_earth_orbit.png)
@@ -613,6 +617,8 @@ Full-screen 3D/2D. Regime legend strip below nav. Bottom bar with speed controls
 Full-screen 3D/2D. The 3D view is a sphere — the camera orbits the Moon, not the Moon rotating. The 2D flat map uses a cylindrical projection (near side centred at 0° longitude). Filter strip replaces the planet pills. Agency filter stacks with status filter.
 
 **Index.** The INDEX rail's dot is the site's nation colour, the legend's (§5.13).
+
+**Back to Explore.** The first chip of the view row (the top-left cluster on touch) is "Back to Explore", a link to `/explore?id=earth:moon` (the satellite key) that opens the Moon's panel with the camera on it ([UXD-028](../uxs/decisions/UXD-028-explore-and-worlds-link-both-ways.md)).
 
 **Notable:** The far side missions (Chang'e 4, Chang'e 6) can only be seen in 3D by rotating the camera — this is intentional design, not a bug. The far side is literally hidden from Earth. The 2D flat map reveals it at the edges.
 

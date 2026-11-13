@@ -27,7 +27,8 @@ over an anchor must join it. `tactical-scan-mobile.test.ts` reads
 `[id]/` is not part of the explorer: it is the indexable page of one planet,
 moon or small body (server load `+page.server.ts` → `$lib/data/body-entity`,
 names from the glossary `body` section), linking back to `/explore?id=`
-(ADR-096). `stars/` holds the indexable star pages: `stars/[id]/` is one named star or
+(ADR-096) and, for Earth, the Moon, Mars and Venus, to the world page (`entity-world-link`,
+`$lib/explore/world-links`, UXD-028). `stars/` holds the indexable star pages: `stars/[id]/` is one named star or
 exoplanet host (server load `+page.server.ts` → `$lib/data/star-entity`; the host's system is a
 section of the page; back-links `/explore?goto=` or `?system=`; ids from `starPageIds()` in
 `scripts/site-routes.mjs`, ADR-096 items 13–14). `black-holes/[id]/` is one black hole (ADR-096

@@ -1,0 +1,31 @@
+# UXD-028 — Explore and the Worlds: an explicit link both ways, no switch on zoom
+
+- **Status**: accepted (built; the e2e counts are in Verification, a real device is open)
+- **Date**: 2026-11-13 (proposed and decided)
+- **Decider**: the operator, 2026-11-13 — all 4 recommendations of `docs/wip/2026-11-13-slice-C9-brief.md` §12 approved as written ("I am OK on 25 recommendations", commit `ec0ceeb9be2`, for C6 to C10 together). This record is also the answer to the plan's **D5**: **an explicit link both ways, no automatic switch on zoom**.
+- **Answers**: E6 of the UX feedback plan; slice C9; D5
+- **Builds on**: [UXD-018](UXD-018-panel-shell-and-actions.md) (the action row: the new chip is the "view" chip, at most three host chips plus Share), [UXD-019](UXD-019-select-equals-focus.md) (`?id=` opens the panel and focuses the body; the way back relies on it), [UXD-014](UXD-014-one-chip-and-filter.md) (a link is `Chip kind="link"`), [UXD-015](UXD-015-flat-chip-row.md) (the Worlds' view row), [UXD-027](UXD-027-explore-levels-one-table-glyphs-card-and-hint.md) (the table-first pattern)
+- **Changes**: `src/lib/explore/world-links.ts` (new, with its test), `src/lib/components/WorldLinkChip.svelte` (new, with its test), `PlanetPanel.svelte`, `SatellitePanel.svelte`, `src/routes/explore/[id]/+page.svelte`, `src/lib/surface-scene/SurfaceScene.svelte`, `messages/*.json` (5 keys added, `panel_action_surface` removed), `tests/e2e/explore-worlds-link.spec.ts` (new); [UXS-001](../UXS-001.md), [UXS-005](../UXS-005.md), [UXS-006](../UXS-006.md), [UXS-014](../UXS-014.md), [IA](../IA.md), `docs/concept/05_Design_System.md`, `docs/adr/TA.md`, the module READMEs
+
+## Context
+
+The Earth, Mars and Moon panels of `/explore` carried an "Explore surface" link to the world page; Venus, which has a world page, had none; nothing on a Worlds page said the body is also a planet of the solar system. The plan (E6, D5) asked whether zooming into Earth, Mars, the Moon or Venus should switch to the world page, or whether an explicit link is enough. At its closest zoom `/explore` shows a textured sphere with moons, not the Worlds' real-data surface: the two views have different cameras, units and data tiers, and a switch would leave the page and lose the Explore level, the panels and the INDEX state.
+
+## Decision
+
+1. **D5: an explicit link both ways, no automatic switch.** Zooming never changes the page. The history stays clean and the reader decides. Not taken: a "near zoom" suggestion chip (brief decision 1b) and an automatic switch (1c); the operator picked 1a.
+2. **One table.** `WORLD_LINKS` in `src/lib/explore/world-links.ts` (typed, pure): per world the world page and the `?id=` of the same body on `/explore`. `worldPathFor`, `explorePathFor` and `worldLinkLabel` are what the three consumers call, so a fifth world is one row and one label. **The Moon's id is the satellite key `earth:moon`**: the brief wrote `moon`, but `resolveBodyRef('moon')` is null (only `parent:satellite` resolves), so a bare `moon` would have opened nothing; a unit test pins it.
+3. **Explore to Worlds.** `WorldLinkChip` draws the view chip "Go to Mars" in the action row of `PlanetPanel` (Earth, Mars, Venus) and `SatellitePanel` (the Moon), in place of the two hard-coded conditions and the generic "Explore surface". Venus gets it now (decision 3a). The row stays at most three host chips: for Earth and Mars it is Go to, Plan mission and then Share. No other body has the chip (a test and an e2e check Jupiter, the Sun and Mercury).
+4. **Worlds to Explore.** The first control of every Worlds page's view row is "Back to Explore", a `Chip kind="link"` to `/explore?id=<body>`: the body's panel opens and the camera is on it (UXD-019), so the reader returns to the object they left, not to the Sun. It leads `.hud-controls` on a fine pointer and `.hud-top-mobile` on touch; that touch cluster now wraps where the width runs out (a long label, AR and SKY) instead of leaving the screen. It hides with the rest of the row in a panorama and in the flat ground patch; the nav's EXPLORE group is still there.
+5. **The entity page.** `/explore/<id>` for Earth, the Moon, Mars and Venus carries the same "Go to" link beside "Open in Orrery" (decision 4a): it is the crawlable twin of the panel.
+6. **Words (decision 2a).** "Go to Mars" on Explore and "Back to Explore" on the Worlds. The body's name is not a `{name}` placeholder: four messages, `panel_action_world_earth`, `_moon`, `_mars`, `_venus`, each written by hand so the language declines the name (ru "Перейти к Земле", de "Zum Mond", ar "انتقل إلى القمر", hi "पृथ्वी पर जाएँ", ja "地球へ移動"). "Explore" in "Back to Explore" is the word each language's nav group uses (`nav_group_explore`: ERKUNDEN, EXPLORAR, ИССЛЕДОВАНИЕ, 探索 and so on). `panel_action_surface` is removed from the 14 locales and the code in one pass. No arrow glyph: plain words, so there is no RTL mirroring to get wrong.
+
+## Consequences
+
+- Eight links for four bodies, from one table; the `world-links` unit test fails when a world loses its row, an `explore` id stops resolving through `resolveBodyRef`, or the two directions stop being inverse.
+- The Worlds' view row is one chip longer (about 146 px in English); on a 390 px phone the row still fits with 2D, Reset and Spin, and wraps when AR or SKY join.
+- Not done, and named: the chip is not shown in the flat ground patch or a panorama (they have their own exit); a "you are also a planet" cue on the Worlds beyond the chip is not added.
+
+## Verification
+
+`src/lib/explore/world-links.test.ts` (the table, the ids through `resolveBodyRef`, the inverse), `src/lib/components/WorldLinkChip.test.ts` (the four chips, none for Jupiter, the Sun, Mercury, Pluto, Io), `tests/e2e/explore-worlds-link.spec.ts` on `desktop-chromium`, `mobile-chromium` and `mobile-landscape-chromium`: for Earth, Moon, Mars and Venus the panel chip opens the world page, "Back to Explore" is the first chip of the visible view row and returns to `/explore?id=<body>` with the panel open and the ring up, no other panel has the chip, and the four entity pages link the world page. Screenshots at 1440 x 900, 390 x 844 and 844 x 390, en, de and ar, were read (the Worlds are drawn with headless WebGL, so their globes are as dark as in earlier slices).

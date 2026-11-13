@@ -318,10 +318,13 @@ test.describe('who lives here and the founding missions', () => {
     await expect(link).toHaveAttribute('href', /\/missions\?id=luna10$/);
   });
 
+  // The ruler rows open each regime's panel in place: four page loads a locale, not twenty-one.
   for (const loc of ['en', 'de', 'ru']) {
     test(`${loc}: no founding mission ends in a country tag; 23 of 38 are links`, async ({
       page,
+      hasTouch,
     }) => {
+      test.skip(hasTouch, 'the data is the same on a phone; the drawer is covered above');
       test.slow();
       let links = 0;
       const tails: string[] = [];
@@ -334,12 +337,17 @@ test.describe('who lives here and the founding missions', () => {
           ['SUN', 'TERRESTRIAL', 'BELT', 'GIANTS', 'KUIPER', 'SCATTERED', 'HELIOPAUSE', 'OORT'],
         ],
       ] as Array<[string, string[]]>) {
+        await open(page, withLocale(loc, route));
         for (const id of ids) {
-          await open(page, `${withLocale(loc, route)}?regime=${id}`);
-          const items = page.locator('aside.panel .firsts li');
-          await expect(page.locator('aside.panel').first()).toBeVisible();
+          await page.locator(`.ruler .band[data-regime="${id}"]`).click();
+          await expect(page).toHaveURL(new RegExp(`regime=${id}(&|$)`));
+          await expect(page.locator('aside.panel .firsts').first()).toBeVisible();
+          await page.waitForTimeout(200);
           links += await page.locator('aside.panel .firsts-link').count();
-          for (const t of await items.locator('.firsts-link, .firsts-label').allTextContents()) {
+          for (const t of await page
+            .locator('aside.panel .firsts li')
+            .locator('.firsts-link, .firsts-label')
+            .allTextContents()) {
             const m = t.match(/[(（]([^()（）]*)[)）]\s*↗?\s*$/);
             if (
               m &&

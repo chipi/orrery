@@ -77,6 +77,10 @@ async function readChips(page: Page) {
             el.classList.contains('is-on'),
           border: cs.borderTopColor,
           color: cs.color,
+          // The panel header's × and ← are drawn at the badges' 24 px (UXD-018 amendment); on
+          // touch an invisible ::before (inset -10px) keeps the tap area at 44 px.
+          headerLine: !!el.closest('.panel-actions-line'),
+          beforeInset: getComputedStyle(el, '::before').top,
         };
       }),
   );
@@ -90,6 +94,11 @@ for (const route of ROUTES) {
     for (const chip of chips) {
       expect(chip.fontSize, `${chip.name} font-size`).toBeGreaterThanOrEqual(11);
       expect(chip.radius, `${chip.name} radius`).toBe('4px');
+      if (chip.headerLine) {
+        expect(chip.minBlock, `${chip.name} min size`).toBe('24px');
+        if (!fine) expect(chip.beforeInset, `${chip.name} tap extension`).toBe('-10px');
+        continue;
+      }
       expect(chip.minBlock, `${chip.name} min size`).toBe(fine ? '30px' : '44px');
       expect(chip.box, `${chip.name} smaller side`).toBeGreaterThanOrEqual(fine ? 29 : 43);
     }

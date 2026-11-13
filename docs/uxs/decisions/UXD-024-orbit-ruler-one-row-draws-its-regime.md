@@ -35,7 +35,7 @@ the opposite. Evidence: the brief's §1 to §6.
    is remembered in `localStorage` (`orrery.ruler.collapsed`, try/catch, `ruler-collapse.ts`); with no saved
    choice the ruler starts folded below 560 px of window height. The touch drawer's ruler has no fold, its tab is
    the fold. Two keys: `ruler_collapse_aria`, `ruler_expand_aria`, 14 locales. This is a second exception to
-   IA's "no state is persisted" (IA §state-persistence says so).
+   IA's "no state is persisted" (IA §state-persistence says so). **Amendment 2026-11-13 (C7, operator "Ruler folds", [UXD-026](UXD-026-iconic-missions-legend-and-milestone-boxes.md) decision 10):** on `/explore`, while the Iconic missions legend is open, the ruler is drawn folded (`forceFolded`) whatever its own state; the saved choice is not written while it is forced, and closing the legend gives the ruler its own state back.
 4. **One bottom-left column (W2, W4, decision 7).** `HudStackBL` is a flex column anchored at the lower left of
    `/earth`, `/moon` and `/mars`: the "AS SEEN FROM YOU" readout (Moon, once resolved), the locate chip, the ruler,
    top to bottom, 8 px apart. Nothing is measured and nudged any more: the `--ruler-left` script is gone; the

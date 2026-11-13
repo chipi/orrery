@@ -2,7 +2,7 @@
 
 - **Status**: accepted (built; the screenshots and the e2e counts are in Verification, a real device is open)
 - **Date**: 2026-11-13 (proposed and decided)
-- **Decider**: the operator, 2026-11-13 — all 5 recommendations of `docs/wip/2026-11-13-slice-C7-brief.md` §12 approved as written ("I am OK on 25 recommendations", commit `ec0ceeb9be2`, for C6 to C10 together)
+- **Decider**: the operator, 2026-11-13 — the ruler decision of 2026-11-13 (decision 10), and all 5 recommendations of `docs/wip/2026-11-13-slice-C7-brief.md` §12 approved as written ("I am OK on 25 recommendations", commit `ec0ceeb9be2`, for C6 to C10 together)
 - **Answers**: IM1, IM2, IM3, IM4, IM7 of the UX feedback plan; slice C7 (IM5 and IM6 are C1, [UXD-019](UXD-019-select-equals-focus.md))
 - **Builds on**: [UXD-019](UXD-019-select-equals-focus.md) (decision 8: the pick contract of the milestone sprites, kept), [UXD-020](UXD-020-explore-readability-pins-rings-labels.md) (12 px label, sizing from the view depth, the placement pass, the steady offset: the machinery the boxes move onto), [UXD-021](UXD-021-explore-hud-scale-bar-picker-pills-references.md) (a direction pill shows for its owner only), [UXD-014](UXD-014-one-chip-and-filter.md) (a control that is not a chip is a 24 px `.ui-hit`), [UXD-002](UXD-002-type-scale-and-the-11px-floor.md) (no italic lead below 14 px, 11 px floor), [UXD-024](UXD-024-orbit-ruler-one-row-draws-its-regime.md) (the disclosure-button pattern)
 - **Changes**: `src/routes/explore/HudControls.svelte`, `src/lib/three/iconic-trajectory.ts`, `iconic-box.ts` (new, with its test), `explore-scene-host.ts` (the box probe, the hovered-milestone call), `src/app.d.ts`, `messages/*.json` (1 key changed, 1 added), `tests/e2e/explore-iconic-legend.spec.ts` (new), `chip-row.spec.ts`, `explore-paths-layer.spec.ts`; [UXS-014](../UXS-014.md), [IA](../IA.md), `docs/concept/05_Design_System.md`, `docs/adr/TA.md`, `docs/accessibility.md`, the module READMEs
@@ -51,7 +51,7 @@ the brief's §1 and §2.
    screen-up (`liftOnScreen`). Right-to-left: the lines are right-aligned, the header is always left-to-right.
 7. **No mission name in a milestone box (IM3); one mission box (decision 2, option a).** A single box at the Today
    marker: the mission's name (11 px, upper case) over its `current_distance_label` (12 px, up to 3 lines in 240 px),
-   drawn while the mission is highlighted, placed first in the pass (so it is never the one hidden). It is not a
+   drawn while the mission is highlighted, placed first in the pass: it wins every collision except with a milestone box the pointer is holding forced (the hovered marker's box wins over it). It is not a
    pick target: Today's own sphere opens the mission.
 8. **Boxes that cannot be placed (decision 5, option a).** The shared pass (`placeLabels`, UXD-020) places the mission
    box, then Launch, then the rest by index, and hides a box that would overlap a placed one; it returns when there is
@@ -62,6 +62,29 @@ the brief's §1 and §2.
    (`kind`, `id`, `missionId`, `label`, `date`) and `pickTargets` are as before, and the box sprite is still the
    `PICK_KINDS.label` target; `iconic-trajectory.test.ts` keeps its original five tests green. A hidden box is not
    drawn and so not pickable (the host picks drawn objects only); its marker is.
+
+10. **The orbit ruler folds while the legend is open (operator decision, 2026-11-13, "Ruler folds").** The legend
+    runs down over the lower-left ruler, whose rows showed through it. While ICONIC MISSIONS is on (desktop, fine
+    pointer) `OrbitRuler` is drawn folded to its one-line header (`forceFolded`, a prop of the component, fed
+    `layers.paths` by the page). This is not the user's fold: the remembered choice (`orrery.ruler.collapsed`) is
+    never written while it is forced (the header does not toggle), and closing the legend restores the ruler's own
+    state, open or closed. The legend keeps all 18 rows without scrolling at 1440×900, 1366×768 and 1280×720 (it is
+    599 px tall, e2e). The 0.95 background alpha tried in the first build is back at the original 0.85: the ruler's
+    rows no longer sit under the legend at 900 px. Below about 700 px of window height the legend still ends over
+    the folded header, as it ended over the time dock before.
+11. **The heading pill is in the pass (NV6).** For the craft that have one (the five outbound), the "→ star" pill is a
+    slot ranked after the mission box. Where the mission box would meet it at Today, the box goes below the marker
+    and the pill keeps its place at the arrow tip. `__exploreDirectionLabels` now carries the pill's rectangle; the
+    e2e asserts disjoint rectangles for Voyager 1 and 2 and Pioneer 10 and 11.
+12. **Review fixes.** The (i) popover is placed with logical offsets (`inset-inline-end`), so it opens inside the
+    legend in a right-to-left page (e2e in `ar`). `WhyPopover` has an optional `eyebrow` prop (default the existing
+    "Why this number"; `''` draws none); the legend passes `''`, the 12 other callers are unchanged. On touch the
+    (i) keeps its 20 px look but its hit area is 44 × 44 px (AGENTS.md). The tagline card is `aria-hidden` and a
+    separate live region reads the tagline once the pointer has rested 250 ms, so a sweep over the rows is not read
+    row by row. A header wider than its box is cut with an ellipsis (it is measured like the body); the mission
+    name is upper-cased in the page language (`toLocaleUpperCase`); the boxes are drawn again once the mono font
+    has loaded if it had not at the first draw; the hovered milestone is cleared when the paths go off.
+    `es` `explore_why_plane_body`: "a la que Júpiter lanzó".
 
 ## Alternatives not taken
 
@@ -96,7 +119,7 @@ lacked), `select-focus.spec.ts` IM5 and `perf-explore-iconic-clicks.spec.ts` re-
 
 ## Not covered
 
-A real device; a production build; the 3 CJK locales' boxes (no screenshot); the Arabic box beyond the one
-screenshot; whether the mission box and a direction pill collide at Today for Voyager 1 and 2, Pioneer 10 and 11
-(not looked at: no Voyager 1 or Pioneer screenshot was read); the PATHS legend's thumbnails (L45, T3, after this slice, the row markup takes them);
-the legend over the orbit ruler on a window shorter than the legend (they overlap as before).
+A real device; a production build; the CJK locales' boxes (no screenshot); the PATHS legend's thumbnails (L45, T3, after
+this slice, the row markup takes them); the legend over the folded ruler header on a window shorter than about
+700 px (they overlap, as the legend overlapped the time dock before); the pill and mission box on a phone (the
+drawer has neither card nor boxes at the same time as the sheet).

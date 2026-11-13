@@ -76,6 +76,8 @@ type Category =
   | 'fleet'
   | 'star'
   | 'deep-sky'
+  | 'galaxy'
+  | 'structure'
   | 'lab-formula';
 
 interface LinkEntry {
@@ -150,7 +152,7 @@ const HOST_RULES: Array<{ match: RegExp; rule: HostRule }> = [
     rule: { source_id: 'nasa', defaultKind: 'mission-microsite', defaultLanguage: 'en' },
   },
   {
-    match: /^articles\.adsabs\.harvard\.edu$/i,
+    match: /(^|\.)adsabs\.harvard\.edu$/i,
     rule: { source_id: 'nasa', defaultKind: 'science-publisher', defaultLanguage: 'en' },
   },
 
@@ -1274,6 +1276,14 @@ async function main(): Promise<void> {
     {
       label: 'i18n/en-US/universe/deep-sky/*.json',
       run: () => collectFromI18nPerIdDir('universe/deep-sky', 'deep-sky', '/explore'),
+    },
+    {
+      label: 'i18n/en-US/universe/galaxies/*.json',
+      run: () => collectFromI18nPerIdDir('universe/galaxies', 'galaxy', '/explore'),
+    },
+    {
+      label: 'i18n/en-US/universe/structures/*.json',
+      run: () => collectFromI18nPerIdDir('universe/structures', 'structure', '/explore'),
     },
   ];
   const raw: RawLink[] = [];

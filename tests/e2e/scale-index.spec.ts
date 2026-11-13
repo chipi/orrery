@@ -117,7 +117,7 @@ test.describe('the prerendered /explore HTML holds the INDEX links, no dead butt
   });
 
   for (const locale of ['', '/de']) {
-    test(`${locale}/explore: 48 body, 66 star, 4 black-hole and 153 deep-sky links, the galaxy and structure pages of the overlay files, the lists that have one, no button row`, async ({
+    test(`${locale}/explore: 48 body, 66 star, 4 black-hole and 157 deep-sky links, the galaxy and structure pages of the overlay files, the lists that have one, no button row`, async ({
       request,
     }) => {
       const res = await request.get(`${locale}/explore`);
@@ -151,18 +151,18 @@ test.describe('the prerendered /explore HTML holds the INDEX links, no dead butt
       const kind = (prefix: string) => listed.filter((h) => h.startsWith(`${locale}${prefix}`));
       expect(kind('/explore/stars/')).toHaveLength(66);
       expect(kind('/explore/black-holes/')).toHaveLength(4);
-      // 140 objects with text, each linked from the neighbourhood; one real object, one page, so the
-      // 7 Milky Way globulars, the 4 Local Group twins (m32, m110, andromeda, triangulum), Omega Centauri
-      // (ngc-5139) and the Carina alias (carina-nebula, ngc-3372) link the same pages: 13 twin rows.
-      expect(kind('/explore/deep-sky/')).toHaveLength(140 + 13);
-      expect(new Set(kind('/explore/deep-sky/')).size).toBe(140);
+      // 142 objects with text, each linked from the neighbourhood; one real object, one page, so the
+      // 9 Milky Way globulars (47 Tucanae and NGC 6752 since 2a739c7dee7), the 4 Local Group twins (m32, m110, andromeda, triangulum), Omega Centauri
+      // (ngc-5139) and the Carina alias (carina-nebula, ngc-3372) link the same pages: 15 twin rows.
+      expect(kind('/explore/deep-sky/')).toHaveLength(142 + 15);
+      expect(new Set(kind('/explore/deep-sky/')).size).toBe(142);
       // The galaxy rows are the Local Group's, the Magellanic Clouds twice (also in the Milky Way
       // scale); the structure rows are one per scale that lists the structure (local-group: two).
       expect(kind('/explore/galaxies/')).toHaveLength(galaxyRows());
       expect(new Set(kind('/explore/galaxies/')).size).toBe(galaxyPages.size);
       expect(kind('/explore/structures/')).toHaveLength(structureRows());
       expect(new Set(kind('/explore/structures/')).size).toBe(structurePages.size);
-      expect(listed).toHaveLength(48 + 66 + 4 + 140 + 13 + galaxyRows() + structureRows());
+      expect(listed).toHaveLength(48 + 66 + 4 + 142 + 15 + galaxyRows() + structureRows());
       // Every body, star, black-hole and deep-sky page of the site is one of those links.
       const pages = routes.filter(
         (r) => /^\/explore\/[^/]+(\/[^/]+)?$/.test(r) && r !== '/explore/hub',
@@ -407,6 +407,69 @@ test.describe('/explore INDEX — across a scale jump', () => {
     expect(hitIsRung, 'the Milky Way rung is what a click at its centre reaches').toBe(true);
     await rung.click();
     await expect(toggle(page)).toHaveAttribute('aria-label', SCALES[2].aria, { timeout: 45_000 });
+  });
+});
+
+test.describe('/explore INDEX — the solar-system rows: a meta line, two lines, a chip for each row (C6)', () => {
+  test('every row has a meta line under its name; the chips count 9, 4, 16, 16, 3 of 51', async ({
+    page,
+  }) => {
+    test.slow();
+    await openScale(page, SCALES[0]);
+    await toggle(page).click();
+    const panel = panelOf(page, 'solar-system');
+    await expect(panel).toBeVisible();
+    const row = (id: string) => panel.locator(`button.si-row[data-index-id="${id}"]`);
+    const meta = (id: string) => row(id).locator('.si-meta');
+
+    await expect(panel.locator('button.si-row')).toHaveCount(51);
+    await expect(panel.locator('button.si-row .si-meta')).toHaveCount(51);
+    await expect(meta('sun')).toHaveText('Star');
+    await expect(meta('mars')).toHaveText('1.52 AU · 6,779 km · 2 major moons');
+    await expect(meta('mercury')).toHaveText('0.387 AU · 4,880 km');
+    await expect(meta('ceres')).toHaveText('2.77 AU · 939 km');
+    await expect(meta('io')).toHaveText('Jupiter · 3,643 km');
+    await expect(meta('asteroid')).toHaveText('2.2–3.2 AU');
+    await expect(meta('mars')).toHaveAttribute('title', '1.52 AU · 6,779 km · 2 major moons');
+
+    // Name over meta, the dot centred on both lines, still one button per object.
+    const [name, mt] = await Promise.all([
+      row('ceres').locator('.si-name').boundingBox(),
+      meta('ceres').boundingBox(),
+    ]);
+    expect(mt!.y).toBeGreaterThanOrEqual(name!.y + name!.height - 1);
+
+    const count = panel.locator('.si-count');
+    const chips: [RegExp, number][] = [
+      [/^Planets$/i, 9],
+      [/^Dwarfs$/i, 4],
+      [/^Asteroids$/i, 16],
+      [/^Moons$/i, 16],
+      [/^Comets$/i, 3],
+    ];
+    for (const [label, n] of chips) {
+      await panel.getByRole('radio', { name: label }).click();
+      await expect(count).toHaveText(`${n} / 51`);
+      await expect(panel.locator('button.si-row')).toHaveCount(n);
+    }
+    await panel.getByRole('radio', { name: /^All$/i }).click();
+    await expect(count).toHaveText('51 / 51');
+  });
+
+  test('the Asteroids chip holds Arrokoth, Comets holds ʻOumuamua; the search finds a planet’s moons by its name', async ({
+    page,
+  }) => {
+    test.slow();
+    await openScale(page, SCALES[0]);
+    await toggle(page).click();
+    const panel = panelOf(page, 'solar-system');
+    await panel.getByRole('radio', { name: /^Asteroids$/i }).click();
+    await expect(panel.locator('button.si-row[data-index-id="arrokoth"]')).toHaveCount(1);
+    await panel.getByRole('radio', { name: /^Comets$/i }).click();
+    await expect(panel.locator('button.si-row[data-index-id="oumuamua"]')).toHaveCount(1);
+    await panel.getByRole('radio', { name: /^All$/i }).click();
+    await panel.locator('input[type="search"]').fill('Jup');
+    await expect(panel.locator('.si-count')).toHaveText('5 / 51');
   });
 });
 

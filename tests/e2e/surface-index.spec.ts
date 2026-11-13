@@ -50,6 +50,51 @@ test.describe('surface object index', () => {
     expect(orbitOnly).toBeLessThan(all);
   });
 
+  test('a site dot is its nation colour, the legend swatch colour; the meta line says orbit or land (WM3)', async ({
+    page,
+  }, testInfo) => {
+    test.skip(
+      testInfo.project.name === 'mobile-chromium',
+      'the index is a desktop and landscape tab',
+    );
+    await page.goto('/moon', { waitUntil: 'networkidle' });
+    await page.locator('[data-testid="surface-index-toggle"]').click();
+    const list = page.locator('[data-testid="surface-index-list"]');
+    await expect(list).toBeVisible();
+
+    const rgb = (hex: string) => {
+      const n = parseInt(hex.slice(1), 16);
+      return `rgb(${n >> 16}, ${(n >> 8) & 255}, ${n & 255})`;
+    };
+    const dot = (id: string) =>
+      list.locator(`.sidx-row[data-index-id="${id}"] .row-dot`).evaluate((el) => {
+        const cs = getComputedStyle(el);
+        return { bg: cs.backgroundColor, ring: cs.boxShadow };
+      });
+    const meta = (id: string) =>
+      list.locator(`.sidx-row[data-index-id="${id}"] .row-meta`).innerText();
+
+    await expect(list.locator('.sidx-row[data-index-id="change4"]')).toHaveCount(1);
+    const china = await dot('change4');
+    expect(china.bg).toBe(rgb('#DE2910'));
+    expect(china.ring).not.toBe('none');
+    expect((await dot('apollo11')).bg).toBe(rgb('#0B3D91'));
+    expect((await dot('luna9')).bg).toBe(rgb('#8B0000'));
+    expect((await dot('luna10')).bg).toBe(rgb('#8B0000'));
+
+    expect(await meta('apollo11')).toMatch(/1969 · .+ · ON LAND$/);
+    expect(await meta('luna10')).toMatch(/ · IN ORBIT$/);
+
+    if (testInfo.project.name === 'desktop-chromium') {
+      // The legend swatch of China is drawn from the same palette: one colour, not two.
+      const tone = await page
+        .getByTestId('legend-nation-China')
+        .first()
+        .evaluate((el) => getComputedStyle(el).getPropertyValue('--chip-tone').trim());
+      expect(rgb(tone)).toBe(china.bg);
+    }
+  });
+
   test('landscape phone: the Index pullout tab shows the list', async ({ page }, testInfo) => {
     test.skip(testInfo.project.name !== 'mobile-landscape-chromium', 'landscape-only');
     await page.goto('/mars', { waitUntil: 'networkidle' });

@@ -94,7 +94,7 @@ test.describe('the prerendered hub HTML links every entity page', () => {
       const holes = blackHolePageIds();
       expect(holes.length).toBe(4);
       const objects = deepSkyPageIds();
-      expect(objects.length).toBe(140);
+      expect(objects.length).toBe(142);
       // Galaxy and structure pages follow their overlay files (ADR-096 item 18): the routes and the
       // files agree, and the INDEX links each of them, with or without text written yet.
       const galaxies = outerPageIds('galaxies');

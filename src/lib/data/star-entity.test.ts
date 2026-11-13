@@ -98,6 +98,37 @@ describe('getStarEntity', () => {
     expect(prox!.records.exoplanet_archive).toContain('Proxima%20Cen');
   });
 
+  it('gives a named star its panel photo as the page hero, with the panel’s reviewed crop, alt and credit', async () => {
+    const sirius = await getStarEntity('sirius', 'en-US');
+    expect(sirius?.hero).toMatchObject({
+      src: '/images/stars/sirius/01.webp',
+      full: '/images/stars/sirius/01.webp',
+      position: '50% 35%',
+      credit: 'NASA, ESA, H. Bond (STScI), M. Barstow (University of Leicester)',
+    });
+    expect(sirius?.hero?.alt).toBeTruthy();
+    expect(sirius?.hero?.fullWidth).toBeUndefined();
+    const rigel = await getStarEntity('rigel', 'en-US');
+    expect(rigel?.hero).toMatchObject({ src: '/images/stars/rigel/01.webp', credit: 'Haktarfone' });
+    expect(rigel?.hero?.position).toBeUndefined();
+  });
+
+  it('gives the seven approved stars a hero and Vega, Altair and Barnard’s Star none', async () => {
+    for (const id of [
+      'sirius',
+      'rigil-kentaurus',
+      'rigel',
+      'betelgeuse',
+      'antares',
+      'fomalhaut',
+      'proxima-centauri',
+    ])
+      expect((await getStarEntity(id, 'en-US'))?.hero?.src, id).toBe(`/images/stars/${id}/01.webp`);
+    for (const id of ['vega', 'altair', 'barnards-star'])
+      expect((await getStarEntity(id, 'en-US'))?.hero, id).toBeNull();
+    expect((await getStarEntity('trappist-1', 'en-US'))?.hero).toBeNull();
+  });
+
   it('is keyed by star id only: a planet, moon, black hole or unknown id is null', async () => {
     for (const id of ['mars', 'europa', 'gargantua', 'proxima-cen-b', 'nope'])
       expect(await getStarEntity(id, 'en-US')).toBeNull();

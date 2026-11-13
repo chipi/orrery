@@ -2351,6 +2351,21 @@
       "title": "Zintuiglaag",
       "what": "Kompasnaald gekruist door een golf — opent de zintuiglijke instellingen (geluid / trilling / kantelen).",
       "where": "Navigatie"
+    },
+    "scale-glyphs": {
+      "title": "Glyphs van de schaalniveaus",
+      "what": "Een kleine tekening per niveau van /explore, van het zonnestelsel tot het kosmisch web — in de niveaukiezer, de navigatierijen en de niveaukaart.",
+      "where": "Verkennen · navigatie · niveaukiezer",
+      "variants": {
+        "Solar System": "Zonnestelsel",
+        "Stellar Neighborhood": "Stellaire omgeving",
+        "Milky Way": "Melkweg",
+        "Local Group": "Lokale Groep",
+        "Local Sheet": "Lokale Plaat",
+        "Virgo Supercluster": "Virgosupercluster",
+        "Laniakea": "Laniakea",
+        "Cosmic Web": "Kosmisch web"
+      }
     }
   }
 }

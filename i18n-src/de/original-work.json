@@ -2351,6 +2351,21 @@
       "title": "Sinnesebene",
       "what": "Kompassnadel, von einer Welle gekreuzt — öffnet die Sinneseinstellungen (Ton / Vibration / Neigung).",
       "where": "Navigation"
+    },
+    "scale-glyphs": {
+      "title": "Symbole der Maßstabsebenen",
+      "what": "Eine kleine Zeichnung für jede Ebene in /explore, vom Sonnensystem bis zum Kosmischen Netz — in der Ebenenauswahl, den Navigationszeilen und der Ebenenkarte.",
+      "where": "Erkunden · Navigation · Ebenenauswahl",
+      "variants": {
+        "Solar System": "Sonnensystem",
+        "Stellar Neighborhood": "Sonnenumgebung",
+        "Milky Way": "Milchstraße",
+        "Local Group": "Lokale Gruppe",
+        "Local Sheet": "Lokales Blatt",
+        "Virgo Supercluster": "Virgo-Superhaufen",
+        "Laniakea": "Laniakea",
+        "Cosmic Web": "Kosmisches Netz"
+      }
     }
   }
 }

@@ -2351,6 +2351,21 @@
       "title": "Couche sensorielle",
       "what": "Aiguille de boussole traversée par une onde — ouvre les réglages sensoriels (son / vibration / inclinaison).",
       "where": "Navigation"
+    },
+    "scale-glyphs": {
+      "title": "Glyphes des niveaux d'échelle",
+      "what": "Un petit dessin par niveau de /explore, du Système solaire à la Toile cosmique — dans le sélecteur de niveau, les lignes de navigation et la carte du niveau.",
+      "where": "Explorer · navigation · sélecteur de niveau",
+      "variants": {
+        "Solar System": "Système solaire",
+        "Stellar Neighborhood": "Voisinage stellaire",
+        "Milky Way": "Voie lactée",
+        "Local Group": "Groupe local",
+        "Local Sheet": "Feuille locale",
+        "Virgo Supercluster": "Superamas de la Vierge",
+        "Laniakea": "Laniakea",
+        "Cosmic Web": "Toile cosmique"
+      }
     }
   }
 }

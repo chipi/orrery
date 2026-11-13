@@ -2351,6 +2351,21 @@
       "title": "Camada sensorial",
       "what": "Agulha de bússola cruzada por uma onda — abre as configurações sensoriais (som / vibração / inclinação).",
       "where": "Navegação"
+    },
+    "scale-glyphs": {
+      "title": "Glifos dos níveis de escala",
+      "what": "Um pequeno desenho para cada nível de /explore, do Sistema Solar à Teia cósmica: no seletor de nível, nas linhas de navegação e no cartão do nível.",
+      "where": "Explorar · navegação · seletor de nível",
+      "variants": {
+        "Solar System": "Sistema Solar",
+        "Stellar Neighborhood": "Vizinhança estelar",
+        "Milky Way": "Via Láctea",
+        "Local Group": "Grupo Local",
+        "Local Sheet": "Folha Local",
+        "Virgo Supercluster": "Superaglomerado local",
+        "Laniakea": "Laniakea",
+        "Cosmic Web": "Teia cósmica"
+      }
     }
   }
 }

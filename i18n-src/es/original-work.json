@@ -2351,6 +2351,21 @@
       "title": "Capa sensorial",
       "what": "Aguja de brújula atravesada por una onda: abre los ajustes sensoriales (sonido / vibración / inclinación).",
       "where": "Navegación"
+    },
+    "scale-glyphs": {
+      "title": "Glifos de los niveles de escala",
+      "what": "Un pequeño dibujo por cada nivel de /explore, del Sistema Solar a la Red cósmica: en el selector de nivel, las filas de navegación y la tarjeta del nivel.",
+      "where": "Explorar · navegación · selector de nivel",
+      "variants": {
+        "Solar System": "Sistema Solar",
+        "Stellar Neighborhood": "Vecindario estelar",
+        "Milky Way": "Vía Láctea",
+        "Local Group": "Grupo Local",
+        "Local Sheet": "Hoja Local",
+        "Virgo Supercluster": "Supercúmulo de Virgo",
+        "Laniakea": "Laniakea",
+        "Cosmic Web": "Red cósmica"
+      }
     }
   }
 }

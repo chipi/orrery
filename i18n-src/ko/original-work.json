@@ -2351,6 +2351,21 @@
       "title": "감각 레이어",
       "what": "파형이 가로지르는 나침반 바늘 — 감각 설정(소리 / 진동 / 기울기)을 엽니다.",
       "where": "내비게이션"
+    },
+    "scale-glyphs": {
+      "title": "스케일 단계 글리프",
+      "what": "/explore의 각 단계마다 하나씩 있는 작은 그림으로, 태양계에서 우주 웹까지 이어진다. 단계 선택기, 내비게이션 행, 단계 카드에 쓰인다.",
+      "where": "탐험 · 내비게이션 · 단계 선택기",
+      "variants": {
+        "Solar System": "태양계",
+        "Stellar Neighborhood": "항성 근방",
+        "Milky Way": "우리 은하",
+        "Local Group": "국부 은하군",
+        "Local Sheet": "국부 시트",
+        "Virgo Supercluster": "처녀자리 초은하단",
+        "Laniakea": "라니아케아",
+        "Cosmic Web": "우주 웹"
+      }
     }
   }
 }

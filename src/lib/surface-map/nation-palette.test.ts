@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 import {
   NATION_COLORS,
   agencyNationKey,
+  agencyRingColor,
   colorFor,
   nationChipFor,
   nationKey,
@@ -125,5 +126,26 @@ describe('objectNationKey', () => {
     expect(objectNationKey({ agencies: ['CSA'] })).toBeNull();
     expect(objectNationKey({ agencies: [] })).toBeNull();
     expect(objectNationKey({})).toBeNull();
+  });
+});
+
+describe('agencyRingColor', () => {
+  it.each([
+    ['NASA', '#3b82f6'],
+    ['SpaceX', '#3b82f6'],
+    ['ROSCOSMOS', '#ef4444'],
+    ['CNSA', '#dc2626'],
+    ['ISRO', '#f97316'],
+    ['JAXA', '#1d4ed8'],
+    ['ESA', '#1d4ed8'],
+    ['Arianespace', '#1d4ed8'],
+    ['UAESA', '#00732F'],
+  ])('%s is %s, the colour the regime panel ring and dot always had', (agency, color) => {
+    expect(agencyRingColor(agency)).toBe(color);
+  });
+
+  it('is the neutral grey for an agency without a palette entry', () => {
+    expect(agencyRingColor('NATURAL')).toBe('rgba(255,255,255,0.5)');
+    expect(agencyRingColor('')).toBe('rgba(255,255,255,0.5)');
   });
 });

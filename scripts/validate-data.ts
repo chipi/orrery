@@ -45,6 +45,11 @@ import {
   type LaunchEntryMinimal,
 } from './validate-data-helpers.js';
 import { TRANSLATED_LOCALES } from './lib/locales.mjs';
+import {
+  buildEntityThumbs,
+  serialize,
+  MANIFEST_PATH as ENTITY_THUMBS_PATH,
+} from './build-entity-thumbs.ts';
 
 const DATA_ROOT = 'static/data';
 
@@ -2539,6 +2544,60 @@ let surfaceHotspotVariantFailed = 0;
 }
 
 // ─────────────────────────────────────────────────────────────────────
+// Round list thumbnails (L45, UXD-025). static/data/entity-thumbs.json says which 192 px WebP is
+// each gallery entity's thumb (its blessed hero slot). It must be what scripts/build-entity-thumbs.ts
+// writes from the files on disk, every listed file must exist, and an entity whose blessed slot has
+// a 1x1 crop or a master must not be left without a thumb (a row would show the dot for a picture
+// that exists). Entities with no image at all are listed in the manifest's `none` and are fine.
+console.log('\nValidating the list-thumbnail manifest (entity-thumbs.json)...');
+let entityThumbsFailed = 0;
+{
+  const problems: string[] = [];
+  try {
+    const { manifest, missing } = buildEntityThumbs();
+    if (
+      !existsSync(ENTITY_THUMBS_PATH) ||
+      readFileSync(ENTITY_THUMBS_PATH, 'utf-8') !== serialize(manifest)
+    ) {
+      problems.push(
+        `${ENTITY_THUMBS_PATH} is stale — re-run: npx tsx scripts/build-entity-thumbs.ts`,
+      );
+    }
+    for (const s of Object.values(manifest.surfaces)) {
+      for (const [id, slot] of Object.entries(s.slots)) {
+        const rel = `${s.dir}${s.flat ? '' : `/${id}`}/${slot}.1x1.webp`;
+        if (!existsSync(join('static/credit-thumbs/images', rel))) {
+          problems.push(`entity-thumbs ${rel}: listed but not on disk`);
+        }
+      }
+    }
+    if (missing.need1x1.length > 0) {
+      problems.push(
+        `${missing.need1x1.length} blessed slot(s) have a master but no 1x1 crop — re-run: ` +
+          `npx tsx scripts/hotspots/regenerate-tier3-variants.mjs --slots ${missing.need1x1.join(' ')}`,
+      );
+    }
+    if (missing.needThumb.length > 0) {
+      problems.push(
+        `${missing.needThumb.length} blessed slot(s) have a 1x1 crop but no 192 px thumb ` +
+          `(${missing.needThumb.slice(0, 3).join(', ')}${missing.needThumb.length > 3 ? ', …' : ''}) — re-run: ` +
+          `npx tsx scripts/build-entity-thumbs.ts --missing /tmp/entity-thumbs-missing.json && ` +
+          `node scripts/vision/build-credit-thumbs.mjs --paths /tmp/entity-thumbs-missing.json && ` +
+          `npx tsx scripts/build-entity-thumbs.ts`,
+      );
+    }
+  } catch (err) {
+    problems.push(`entity-thumbs check error: ${(err as Error).message}`);
+  }
+  if (problems.length === 0) {
+    console.log('  ✓ entity-thumbs.json is current, every thumb is on disk, none is left unbuilt');
+  } else {
+    for (const p of problems) console.log(`  ✗ ${p}`);
+    entityThumbsFailed = problems.length;
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────────
 // Overlay-completeness check (AGENTS.md non-negotiable, GH #83 follow-up).
 //
 // History: GH #83 added 11 constellation entries to earth-objects.json but
@@ -2915,6 +2974,7 @@ if (
     imageMimeFailed +
     imagePipelineFailed +
     surfaceHotspotVariantFailed +
+    entityThumbsFailed +
     overlayFailed +
     audioFailed +
     episodeSourcesFailed +

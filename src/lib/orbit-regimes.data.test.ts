@@ -1,5 +1,6 @@
 /**
- * Orbit-ruler data (C4/C5): the founding-mission links and the "who lives here" thumbnails.
+ * Orbit-ruler data (C4/C5): the founding-mission links and the "who lives here" thumbnails (L45:
+ * the map names the entity, entity-thumbs.json holds its file).
  * `mission_id` lives in the per-locale overlays, so the guard walks all 14 locales: the same
  * (bundle, regime, position, year, id) tuples everywhere, every id a real mission page, and no
  * trailing country or agency tag on a label.
@@ -7,6 +8,7 @@
 import { describe, it, expect } from 'vitest';
 import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
+import { thumbOfRef } from './entity-thumb';
 
 const rj = <T = unknown>(p: string): T => JSON.parse(readFileSync(p, 'utf8')) as T;
 const BUNDLES = [
@@ -190,27 +192,33 @@ describe('orbit ruler: resident thumbnails (C4)', () => {
     ),
   );
 
-  it('every mapped file is on disk and is the 1x1 variant', () => {
-    for (const [k, p] of Object.entries(thumbs)) {
-      expect(p, k).toMatch(/^\/images\/.+\/\d\d\.1x1\.jpg$/);
-      expect(existsSync(join('static', p)), `${k} -> ${p}`).toBe(true);
+  // The map says which entity a resident is (`<surface>/<id>`); the file is that entity's thumb in
+  // static/data/entity-thumbs.json, which entity-thumb.test.ts checks against the hero overrides.
+  it('every mapped resident resolves to a thumb that is on disk', () => {
+    for (const [k, ref] of Object.entries(thumbs)) {
+      const p = thumbOfRef(ref);
+      expect(p, `${k} -> ${ref}`).not.toBeNull();
+      expect(existsSync(join('static', p as string)), `${k} -> ${p}`).toBe(true);
     }
   });
 
   // The thumb is the hero the operator's review blessed: slot 01 unless the image tree's
-  // *-hero-overrides.json picked another one.
-  it('every thumb uses the blessed hero slot', () => {
-    const OVERRIDE_FILE: Record<string, string> = { 'fleet-galleries': 'fleet' };
-    for (const [k, p] of Object.entries(thumbs)) {
-      const [, tree, id, slot] =
-        p.match(/^\/images\/([^/]+)\/(?:([^/]+)\/)?(\d\d)\.1x1\.jpg$/) ?? [];
-      const f = join('static/data', `${OVERRIDE_FILE[tree] ?? tree}-hero-overrides.json`);
-      const o =
-        id && existsSync(f)
-          ? rj<{ overrides: Record<string, { slot: string }> }>(f).overrides[id]
-          : undefined;
-      expect(slot, `${k} -> ${p}`).toBe(o ? o.slot.slice(0, 2) : '01');
-    }
+  // *-hero-overrides.json picked another one. Slot 01 showed a rejected picture for these.
+  it.each([
+    ['orbit-regimes/lro', 'fleet-galleries/lro/03'],
+    ['orbit-regimes-moon/lro', 'fleet-galleries/lro/03'],
+    ['orbit-regimes-moon/clementine', 'fleet-galleries/clementine/02'],
+    ['orbit-regimes-moon/chandrayaan1', 'fleet-galleries/chandrayaan1/02'],
+    ['orbit-regimes-mars/hope', 'fleet-galleries/hope/03'],
+    ['orbit-regimes-mars/mars-express', 'fleet-galleries/mars-express/03'],
+    ['orbit-regimes-mars/mangalyaan', 'fleet-galleries/mangalyaan/03'],
+    ['orbit-regimes-mars/mars-odyssey', 'fleet-galleries/mars-odyssey/02'],
+    ['orbit-regimes-mars/tgo', 'mars-sites/tgo/03'],
+    ['orbit-regimes-explore/haumea', 'small-bodies/haumea/03'],
+    ['orbit-regimes-explore/earth', 'planets/earth/05'],
+    ['orbit-regimes-explore/mars', 'planets/mars/03'],
+  ])('%s shows the blessed slot (%s)', (key, stem) => {
+    expect(thumbOfRef(thumbs[key])).toBe(`/credit-thumbs/images/${stem}.1x1.webp`);
   });
 
   it('every resident is mapped or listed in NO_THUMB, never both', () => {

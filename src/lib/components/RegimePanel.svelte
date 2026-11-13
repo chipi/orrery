@@ -21,12 +21,14 @@
   import Panel from './Panel.svelte';
   import { localHref, localeFromPage } from '$lib/locale';
   import { page } from '$app/state';
-  import { assetUrl } from '$lib/asset-url';
   import { fmtRegimeBand } from '$lib/orbit-regime-format';
   import { onMissionLinkClick } from '$lib/missions-linkify';
+  import { thumbOf, thumbOfRef } from '$lib/entity-thumb';
+  import { agencyRingColor } from '$lib/surface-map/nation-palette';
   import ScienceCard from './ScienceCard.svelte';
+  import EntityThumb from './EntityThumb.svelte';
   import * as m from '$lib/paraglide/messages';
-  import thumbs from '$data/orbit-regime-thumbs.json';
+  import thumbRefs from '$data/orbit-regime-thumbs.json';
   import type { OrbitRegime } from '$types/orbit-regime';
   import type { ScienceTabId } from '$types/science';
 
@@ -63,34 +65,10 @@
   }: Props = $props();
 
   const loc = $derived(localeFromPage(page));
-  const thumbOf = (id: string): string | null =>
-    (thumbs as Record<string, string>)[`${bundle}/${id}`] ?? null;
-
-  // Per-agency accent for resident dots. Mirrors `nationChipFor` in
-  // src/lib/surface-map/nation-palette.ts so the regime panel reads
-  // consistent with the nation legend at the bottom of the scene.
-  function agencyColor(agency: string): string {
-    switch (agency) {
-      case 'NASA':
-      case 'SpaceX':
-        return '#3b82f6';
-      case 'ROSCOSMOS':
-        return '#ef4444';
-      case 'CNSA':
-        return '#dc2626';
-      case 'ISRO':
-        return '#f97316';
-      case 'JAXA':
-        return '#1d4ed8';
-      case 'ESA':
-      case 'Arianespace':
-        return '#1d4ed8';
-      case 'UAESA':
-        return '#00732F';
-      default:
-        return 'rgba(255,255,255,0.5)';
-    }
-  }
+  // The map says which entity a resident is (`<surface>/<id>`), because a resident id means
+  // different things per bundle; the file is the entity's blessed-hero thumb (entity-thumb.ts).
+  const residentThumb = (id: string): string | null =>
+    thumbOfRef((thumbRefs as Record<string, string>)[`${bundle}/${id}`]);
 </script>
 
 <!--
@@ -145,24 +123,8 @@
         <ul class="residents">
           {#each regime.residents as r (r.id)}
             {@const clickable = selectableIds.has(r.id) && onResidentClick != null}
-            {@const thumb = thumbOf(r.id)}
             <li>
-              {#if thumb}
-                <img
-                  class="resident-thumb"
-                  src={assetUrl(thumb)}
-                  alt=""
-                  width="28"
-                  height="28"
-                  loading="lazy"
-                  decoding="async"
-                  style:border-color={agencyColor(r.agency)}
-                />
-              {:else}
-                <span class="thumb-slot" aria-hidden="true"
-                  ><span class="agency-dot" style:background={agencyColor(r.agency)}></span></span
-                >
-              {/if}
+              <EntityThumb src={residentThumb(r.id)} ring={agencyRingColor(r.agency)} />
               {#if clickable}
                 <button type="button" class="resident-link" onclick={() => onResidentClick?.(r.id)}>
                   {r.label}
@@ -183,6 +145,7 @@
         <ul class="firsts">
           {#each regime.firsts as f (f)}
             <li>
+              <EntityThumb src={f.mission_id ? thumbOf('missions', f.mission_id) : null} />
               <span class="firsts-year">{f.year}</span>
               {#if f.mission_id}
                 <a
@@ -305,32 +268,12 @@
     color: rgba(255, 255, 255, 0.88);
     line-height: 1.45;
   }
-  /* A resident with a photo: 28 px round, the agency colour as a 2 px ring (UXD-024). One
-     without keeps the dot, centred in the same 28 px slot so the labels line up. */
-  .resident-thumb {
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid;
-    box-sizing: border-box;
-    flex-shrink: 0;
-  }
-  .thumb-slot {
-    width: 28px;
-    height: 28px;
-    display: grid;
-    place-items: center;
-    flex-shrink: 0;
-  }
-  .agency-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-  }
+  /* A first: the mission's photo (EntityThumb, 28 px) before the year; a first with no mission
+     or no photo keeps the dot in the same slot so the years and labels line up (UXD-025). */
   .firsts li {
     display: grid;
-    grid-template-columns: 52px 1fr;
+    grid-template-columns: 28px 52px 1fr;
+    align-items: center;
     gap: 8px;
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;

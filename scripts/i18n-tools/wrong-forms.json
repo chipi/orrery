@@ -192,6 +192,136 @@
       "loc": "es",
       "re": "[Aa]ños? de luz(?! solar)",
       "why": "año luz (años de luz solar = years of sunlight is fine)"
+    },
+    {
+      "loc": "de",
+      "re": "Süd-Ring-Nebel",
+      "why": "gallery caption variant of Südlicher Ringnebel (L39)"
+    },
+    {
+      "loc": "de",
+      "re": "Eskimo-Nebel",
+      "why": "caption variant of Eskimonebel (L39)"
+    },
+    {
+      "loc": "de",
+      "re": "Antennae-Galaxien",
+      "why": "caption variant of Antennen-Galaxien (L39)"
+    },
+    {
+      "loc": "de",
+      "re": "Katzenauge-Nebel",
+      "why": "caption variant of Katzenaugennebel (L39)"
+    },
+    {
+      "loc": "de",
+      "re": "Kegel-Nebel",
+      "why": "caption variant of Konusnebel (L39)"
+    },
+    {
+      "loc": "de",
+      "re": "Carina-Nebel",
+      "why": "caption variant of Carinanebel (L39)"
+    },
+    {
+      "loc": "nl",
+      "re": "Carinaneveling",
+      "why": "not Dutch for nebula; Carinanevel (L39)"
+    },
+    {
+      "loc": "nl",
+      "re": "Katten-oognevel",
+      "why": "caption variant of Kattenoognevel (L39)"
+    },
+    {
+      "loc": "nl",
+      "re": "Antennae-sterrenstelsels",
+      "why": "caption variant of Antennestelsel (L39)"
+    },
+    {
+      "loc": "es",
+      "re": "Anillo Austral",
+      "why": "caption variant of Nebulosa Anillo del Sur (L39)"
+    },
+    {
+      "loc": "es",
+      "re": "Galaxias Antenas",
+      "why": "caption variant of Galaxias Antennae (L39)"
+    },
+    {
+      "loc": "es",
+      "re": "Nebulosa del Ojo de Gato",
+      "why": "caption variant of Nebulosa Ojo de Gato (L39)"
+    },
+    {
+      "loc": "it",
+      "re": "Nebulosa Eskimo",
+      "why": "caption variant of Nebulosa Eschimese (L39)"
+    },
+    {
+      "loc": "it",
+      "re": "Galassie Antennae",
+      "why": "caption variant of Galassie Antenne (L39)"
+    },
+    {
+      "loc": "fr",
+      "re": "Galaxies Antennae",
+      "why": "caption variant of Galaxies des Antennes (L39)"
+    },
+    {
+      "loc": "pt-BR",
+      "re": "Nebulosa Esquimó",
+      "why": "caption variant of Nebulosa do Esquimó (L39)"
+    },
+    {
+      "loc": "pt-BR",
+      "re": "Nebulosa do Olho de Gato",
+      "why": "caption variant of Nebulosa Olho de Gato (L39)"
+    },
+    {
+      "loc": "zh-CN",
+      "re": "锥形星云",
+      "why": "caption variant of 锥状星云 (L39)"
+    },
+    {
+      "loc": "ru",
+      "re": "Галактики Antennae",
+      "why": "Latin name in Russian text; Галактики Антенны (L39)"
+    },
+    {
+      "loc": "ko",
+      "re": "남쪽 고리 성운",
+      "why": "caption variant of 팔렬 성운 (L39)"
+    },
+    {
+      "loc": "ar",
+      "re": "سديم كارينا",
+      "why": "variant of سديم الجؤجؤ (L39)"
+    },
+    {
+      "loc": "ar",
+      "re": "سديم الحلقة الجنوبية",
+      "why": "variant of سديم الحلقة الجنوبي (L39)"
+    },
+    {
+      "loc": "hi",
+      "re": "कारीना नेबुला",
+      "why": "variant of कैरीना नीहारिका (L39)"
+    },
+    {
+      "loc": "hi",
+      "re": "बिल्ली की आँख नेबुला",
+      "why": "variant of बिल्ली लोचन नीहारिका (L39)"
+    },
+    {
+      "loc": "ru",
+      "re": "Большой Разлом",
+      "why": "Great Rift is Большой Провал (ru Wikipedia) (L38)"
+    },
+    {
+      "loc": "nl",
+      "re": "Grote Spleet",
+      "why": "Great Rift is Grote Rift (L38)"
     }
   ]
 }

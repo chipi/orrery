@@ -166,5 +166,12 @@
   "tidal stream": "Long filet mince d'étoiles arrachées à une galaxie naine ou à un amas par la marée gravitationnelle d'une galaxie plus grande, étiré à peu près le long de l'orbite de l'objet d'origine.",
   "comoving coordinates": "Positions mesurées sur une grille qui se dilate avec l'Univers : les galaxies emportées par l'expansion gardent leurs coordonnées, qui égalent les distances ordinaires à l'époque présente.",
   "main sequence": "La longue phase pendant laquelle une étoile fusionne l'hydrogène en hélium dans son cœur ; sur un diagramme luminosité-couleur, ces étoiles forment une bande, où se trouvent la plupart des étoiles, Soleil compris.",
-  "stellar population": "Un groupe d'étoiles de même origine et de même composition chimique. Les amas globulaires en contiennent souvent plus d'une, que l'on distingue par leurs abondances d'éléments comme l'azote, le sodium et l'oxygène, ou par des séquences séparées dans un diagramme luminosité-couleur."
+  "stellar population": "Un groupe d'étoiles de même origine et de même composition chimique. Les amas globulaires en contiennent souvent plus d'une, que l'on distingue par leurs abondances d'éléments comme l'azote, le sodium et l'oxygène, ou par des séquences séparées dans un diagramme luminosité-couleur.",
+  "anemic spiral": "Galaxie spirale dont la formation d'étoiles est anormalement faible pour son type : ses bras sont lisses et peu contrastés, souvent parce qu'elle a perdu ou épuisé une grande part de son gaz.",
+  "flocculent spiral": "Galaxie spirale dont les bras, au lieu de deux longs bras continus, sont de courts fragments décousus et peu contrastés.",
+  "millisecond pulsar": "Pulsar qui tourne sur lui-même en quelques millisecondes : une vieille étoile à neutrons accélérée par le gaz tombant d'une étoile compagne.",
+  "core-collapsed cluster": "Amas globulaire dont le centre s'est contracté en un noyau d'étoiles exceptionnellement dense, aboutissement de son évolution dynamique.",
+  "galactic wind": "Flux de gaz chassé d'une galaxie par le rayonnement et les explosions de supernovæ de ses jeunes étoiles.",
+  "OB association": "Groupe lâche de jeunes étoiles massives de type spectral O et B, nées ensemble mais qui ne sont plus liées par la gravité et se dispersent lentement.",
+  "metallicity": "Part de la matière d'une étoile ou d'une galaxie constituée d'éléments plus lourds que l'hélium, que les astronomes appellent métaux ; les vieilles étoiles ont en général une faible métallicité."
 }

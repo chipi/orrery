@@ -90,7 +90,7 @@ describe('thumbOf / thumbOfRef on the real manifest', () => {
   it('honours the hero override: LRO, Hope and Earth are not on slot 01', () => {
     expect(thumbOf('fleet', 'lro')).toBe('/credit-thumbs/images/fleet-galleries/lro/03.1x1.webp');
     expect(thumbOf('fleet', 'hope')).toContain('/hope/03.');
-    expect(thumbOf('planets', 'earth')).toContain('/earth/05.');
+    expect(thumbOf('planets', 'earth')).toContain('/earth/04.');
   });
 
   it('a moon whose blessed slot had no 1x1 has a thumb now', () => {

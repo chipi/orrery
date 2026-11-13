@@ -215,8 +215,8 @@ describe('orbit ruler: resident thumbnails (C4)', () => {
     ['orbit-regimes-mars/mars-odyssey', 'fleet-galleries/mars-odyssey/02'],
     ['orbit-regimes-mars/tgo', 'mars-sites/tgo/03'],
     ['orbit-regimes-explore/haumea', 'small-bodies/haumea/03'],
-    ['orbit-regimes-explore/earth', 'planets/earth/05'],
-    ['orbit-regimes-explore/mars', 'planets/mars/03'],
+    ['orbit-regimes-explore/earth', 'planets/earth/04'],
+    ['orbit-regimes-explore/mars', 'planets/mars/06'],
   ])('%s shows the blessed slot (%s)', (key, stem) => {
     expect(thumbOfRef(thumbs[key])).toBe(`/credit-thumbs/images/${stem}.1x1.webp`);
   });

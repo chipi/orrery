@@ -51,7 +51,10 @@ photograph; the deep-sky photo was only the immersive main area (MW5). Evidence:
    photo is served as its 700 px thumb (the originals are not on the WebP ladder). Laniakea and Virgo have none.
 5. **Black holes open in place.** Selecting a hole at its scale (pin, INDEX row, `?galaxy=`) opens its panel and
    leaves the main area; the action "See the lensing simulation" enters the takeover. `?bh=<id>` still enters
-   the takeover directly. Sagittarius A\* has the EHT 2022 image (ESO `eso2208-eht-mwa`, credit "EHT Collaboration",
+   the takeover directly, also on a mounted page. A hole's panel open in place is a selection at its
+   scale like any member's (review 2026-11-13): any other pick closes it, the scale's Reset is live
+   while it is open and after its ×, and a Milky Way hole is mirrored as `?galaxy=<id>` (shareable,
+   reloads to the same panel). Sagittarius A\* has the EHT 2022 image (ESO `eso2208-eht-mwa`, credit "EHT Collaboration",
    CC BY 4.0, read on `eso.org/public/outreach/copyright/`), M87\* the EHT 2019 image already in the repo.
 6. **Gallery for stars**: a sidecar `star-gallery.json` and loader ship empty; no star has a second image, so no
    Gallery tab shows at ship (L29 lists the content).

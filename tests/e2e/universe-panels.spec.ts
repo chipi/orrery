@@ -153,4 +153,46 @@ test.describe('black holes (MW3, Q1)', () => {
     await panel(page).locator('.panel-hero-btn').click();
     await expect(page.locator('.lightbox')).toBeVisible();
   });
+
+  test('an open hole panel is a selection: ?galaxy= keeps it, Reset is live and closes it', async ({
+    page,
+  }) => {
+    await open(page, '/explore?galaxy=sagittarius-a-star');
+    await expect(panel(page)).toContainText(/Sagittarius A\*/);
+    expect(new URL(page.url()).searchParams.get('galaxy')).toBe('sagittarius-a-star');
+    const reset = page.getByTestId('explore-scale-reset');
+    await expect(reset).toBeEnabled();
+    // × keeps the camera on the pin, so Reset stays live (UXD-019); on a phone × is also the way
+    // past the sheet to the navigator.
+    await panel(page).locator('.panel-close').click();
+    await expect(page.locator('aside.panel:visible')).toHaveCount(0);
+    await expect(reset).toBeEnabled();
+    await reset.click();
+    await expect
+      .poll(() => page.evaluate(() => window.__exploreCameraState!().origin), { timeout: 10_000 })
+      .toEqual([0, 0, 0]);
+    expect(new URL(page.url()).searchParams.get('galaxy')).toBeNull();
+  });
+
+  test('picking another member closes the hole panel and shows the member', async ({ page }) => {
+    await open(page, '/explore?galaxy=sagittarius-a-star');
+    const toggle = page.getByTestId('scale-index-toggle');
+    // A portrait phone's full-height sheet covers the INDEX handle: no other pick is reachable
+    // while the hole's panel is open there.
+    const covered = await toggle.evaluate((el) => {
+      const r = el.getBoundingClientRect();
+      const top = document.elementFromPoint(r.left + r.width / 2, r.top + r.height / 2);
+      return !top || !(top === el || el.contains(top));
+    });
+    test.skip(covered, "the hole's full-height sheet covers the INDEX handle");
+    await toggle.click();
+    await page
+      .locator(
+        'aside.scale-index[data-scale="milky-way"] button.si-row[data-index-id="omega-centauri"]',
+      )
+      .click();
+    await expect(panel(page)).toContainText(/Omega Centauri|ω Centauri/i, { timeout: 10_000 });
+    await expect(page.locator('aside.panel:visible')).toHaveCount(1);
+    await expect(page.locator('aside.panel:visible')).not.toContainText(/Sagittarius A\*/);
+  });
 });

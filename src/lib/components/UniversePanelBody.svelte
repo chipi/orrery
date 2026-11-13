@@ -111,6 +111,12 @@
       openedAt = Date.now();
     }
   });
+  // Re-opening the same entity after × arms the guard again (no entityId change then).
+  let wasOpen = false;
+  $effect(() => {
+    if (open && !wasOpen) openedAt = Date.now();
+    wasOpen = open;
+  });
 
   let looked = $state<UniverseHero | null>(null);
   let overridesReady = $state(false);

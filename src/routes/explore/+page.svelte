@@ -688,6 +688,8 @@
   // the current scale's view is "dirty" (a selection, or the Sun panned out of frame). The solar
   // system has none here: its Reset is the HUD row's.
   let scaleSelection = $derived.by(() => {
+    // A black hole's panel open in place is a selection at its scale (B3, UXD-023).
+    if (bhPanelOpen && bhPanelHole) return true;
     if (contextId === 'neighborhood') return !!selectedStarId;
     if (contextId === 'milky-way') return !!selectedMwId;
     if (contextId === 'local-group') return !!selectedLgMember;
@@ -840,6 +842,7 @@
   let exitBlackHoleFn: (() => void) | null = null;
   let seeBlackHoleLensingFn: (() => void) | null = null;
   let bhDeepLinkFn: ((id: string) => void) | null = null;
+  let bhTakeoverFn: ((id: string) => void) | null = null;
   // Slice 6 physics lenses (curvature grid + time-dilation readout), on the BH view.
   let bhCurvatureLens = $state(false);
   let bhTimeLens = $state(false);
@@ -1186,7 +1189,18 @@
   let openStarUrlId = $derived(panelState.star && selectedStarId ? selectedStarId : null);
   let bodySysUrl = $derived(contextId === 'body-scene' ? activeBodyHostId : null);
   let deepSkyUrlDesignation = $derived(activeDeepSky ? activeDeepSky.designation : null);
-  let galaxyUrlId = $derived(contextId === 'milky-way' && selectedMwId ? selectedMwId : null);
+  // A Milky Way hole's panel open in place is mirrored too, so it is shareable and reloads to the
+  // same panel (?galaxy=sagittarius-a-star opens it in place; ?bh= is the takeover).
+  let galaxyUrlId = $derived(
+    contextId !== 'milky-way'
+      ? null
+      : (selectedMwId ??
+          (!activeBlackHole &&
+          bhPanelOpen &&
+          (bhPanelHole?.id === 'sagittarius-a-star' || bhPanelHole?.id === 'cygnus-x-1')
+            ? bhPanelHole.id
+            : null)),
+  );
   let bhUrlId = $derived(activeBlackHole ? activeBlackHole.id : null);
   const urlGuards = createUrlGuards();
   // The five outer scales with no URL parameter of their own (UXD-019): the selected member is
@@ -1223,7 +1237,7 @@
     enterSystem: () => enterSystemFn,
     deepSkyDeepLink: () => deepSkyDeepLinkFn,
     mwDeepLink: () => mwDeepLinkFn,
-    bhDeepLink: () => bhDeepLinkFn,
+    bhDeepLink: () => bhTakeoverFn,
     contextDeepLink: () => contextDeepLinkFn,
     showPaths: () => (layers.paths = true),
   });
@@ -1974,6 +1988,7 @@
     exitBlackHoleFn = exploreHost.exitBlackHoleFn;
     seeBlackHoleLensingFn = exploreHost.seeBlackHoleLensingFn;
     bhDeepLinkFn = exploreHost.bhDeepLinkFn;
+    bhTakeoverFn = exploreHost.bhTakeoverFn;
     setBhCurvatureFn = exploreHost.setBhCurvatureFn;
     closeStarFn = exploreHost.closeStarFn;
     gotoStarFn = exploreHost.gotoStarFn;

@@ -27,7 +27,7 @@
 
 {#if facts.length > 0}
   <div class="grid">
-    {#each facts as f (f.label)}
+    {#each facts as f, i (i)}
       <div class="cell">
         <div class="cell-label">
           {f.label}{#if f.why}<WhyPopover title={f.why.title} body={f.why.body} />{/if}
@@ -66,6 +66,9 @@
     letter-spacing: 2px;
     color: var(--color-text-label);
     margin-bottom: 3px;
+    /* Labels read as the planet panels' do (FROM SUN, ORBITAL PERIOD); their strings are stored
+       in sentence case, so the case comes from here. */
+    text-transform: uppercase;
     /* A long word (Schwarzschild) must not pass the cell edge at three columns. */
     overflow-wrap: anywhere;
   }

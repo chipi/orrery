@@ -541,7 +541,7 @@ How content reaches the application — the fail-closed asset + provenance disci
 
 **Banned:**
 
-- Artist's impressions of vehicles that exist or have existed (planned-only entries carry an `artistic-impression: true` waiver per ADR-053).
+- Artist's impressions, illustrations and computer graphics as the hero of a vehicle that exists or has existed (planned-only entries are exempt by `status`, a vehicle with no photograph carries an `artistic_impressions` waiver, ADR-053 amendment 2026-11-13); in a gallery slot they are allowed when labelled.
 - Stock photography / third-party render mockups (no `wired.com`, no `space.com`).
 - Anything that can't produce a license + attribution + last-verified for the manifest.
 
@@ -980,7 +980,7 @@ Non-negotiables. Cannot be changed without a new ADR that explicitly supersedes 
 
 - **Provenance is fail-closed.** Every image referenced from a data file must have a row in `image-provenance.json` with a valid license; every outbound LEARN link must resolve in `link-provenance.json`; every paraphrased text fragment must register in `text-sources.json`. Missing rows fail the build. See ADR-047, ADR-051.
 
-- **No artist's impressions of flown vehicles.** Imagery sources prefer the operating agency's archive first, then Wikimedia Commons under free licence. Planned-only vehicles carry an explicit `artistic-impression: true` waiver flag. See ADR-046, ADR-053.
+- **A flown vehicle's hero is a photograph, and a concept says so.** Imagery sources prefer the operating agency's archive first, then Wikimedia Commons under free licence. The blessed hero of a flown vehicle must not be an artist's concept, illustration or computer graphic unless its `status` is `PLANNED` or the slot has an `artistic_impressions` waiver; any gallery slot that is one says so in both its provenance title and its alt text (`not_concept` lists the false positives). `scripts/validate-image-depiction.ts` (a `validate-data` task) enforces both; today's concept heroes are frozen in `static/data/hero-concept-baseline.json`, cleared by the hero review (plan row L47). See ADR-046, ADR-053.
 
 - **Diagram sources committed.** Every science / fleet SVG diagram is hand-authored and the SVG file *is* the source. No AI generation. `validate-diagrams.ts` is fail-closed: missing SVG breaks the build. See ADR-035, ADR-053.
 

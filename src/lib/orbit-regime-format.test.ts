@@ -71,6 +71,13 @@ describe('fmtRegimeBand', () => {
     }
   });
 
+  it('the panel prints a single altitude exactly; the ruler row rounds it to the thousand', () => {
+    const geo = BASES.find((r) => r.id === 'GEO')!;
+    expect(fmtRegimeBand(geo, 'en-US', { round: false })).toBe('35,786 km');
+    expect(fmtRegimeBand(geo, 'en-US')).toBe('36,000 km');
+    expect(fmtRegimeBand(geo, 'de', { round: false })).toMatch(/35\.786/);
+  });
+
   it('prints GIANTS as 5–30 AU, not 5.0–30 AU', () => {
     const giants = BASES.find((r) => r.id === 'GIANTS')!;
     expect(fmtRegimeBand(giants, 'en-US')).toBe('5–30 AU');

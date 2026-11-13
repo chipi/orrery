@@ -220,10 +220,13 @@
   let setRegimeHighlightFn = $state<((hover: string | null, active: string | null) => void) | null>(
     null,
   );
+  // The zones belong to the solar-system scale: leaving it (or a black-hole takeover) clears the
+  // drawing even while a zone panel is still open.
   $effect(() => {
+    const here = contextId === 'solar-system' && !activeBlackHole;
     setRegimeHighlightFn?.(
-      hoverExploreRegimeId,
-      exploreRegimePanelOpen ? selectedExploreRegimeId : null,
+      here ? hoverExploreRegimeId : null,
+      here && exploreRegimePanelOpen ? selectedExploreRegimeId : null,
     );
   });
   let selectedExploreRegime = $derived(

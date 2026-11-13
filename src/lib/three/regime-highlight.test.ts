@@ -96,9 +96,13 @@ describe('buildRegimeHighlight', () => {
 
   it('a schematic regime is dashed', () => {
     const hl = buildRegimeHighlight({ shapes });
-    const mat = (child(hl, 4).children[0] as THREE.Mesh).material as { dashed: boolean };
+    const mat = (child(hl, 4).children[0] as THREE.Mesh).material as unknown as {
+      dashed: boolean;
+    };
     expect(mat.dashed).toBe(true);
-    const solid = (child(hl, 1).children[0] as THREE.Mesh).material as { dashed: boolean };
+    const solid = (child(hl, 1).children[0] as THREE.Mesh).material as unknown as {
+      dashed: boolean;
+    };
     expect(solid.dashed).toBe(false);
   });
 

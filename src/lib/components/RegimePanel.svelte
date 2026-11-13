@@ -117,7 +117,7 @@
       <div class="stat-row">
         <div>
           <div class="stat-label">{m.earth_regime_altitude_label()}</div>
-          <div class="stat-value">{fmtRegimeBand(regime, loc)}</div>
+          <div class="stat-value">{fmtRegimeBand(regime, loc, { round: false })}</div>
         </div>
         {#if regime.firsts && regime.firsts.length > 0}
           <div>

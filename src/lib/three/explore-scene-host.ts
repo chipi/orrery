@@ -3916,8 +3916,13 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     for (const id of new Set([regimeActive, regimeHover])) {
       const shape = id ? regimeShapes[id] : undefined;
       if (!shape) continue;
+      // The open zone pulses, steady (the 3D mid-point) under prefers-reduced-motion.
       const level =
-        id === regimeHover ? 0.9 : 0.55 + 0.35 * (0.5 + 0.5 * Math.sin(performance.now() / 255));
+        id === regimeHover
+          ? 0.9
+          : deps.getReducedMotion()
+            ? 0.725
+            : 0.55 + 0.35 * (0.5 + 0.5 * Math.sin(performance.now() / 255));
       const rgb = `${(RING_BLUE >> 16) & 255},${(RING_BLUE >> 8) & 255},${RING_BLUE & 255}`;
       ctx2.save();
       ctx2.lineWidth = (shape.kind === 'ring' ? 2 : 1.5) / zoom2d;

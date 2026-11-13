@@ -9,7 +9,7 @@
 -->
 <script lang="ts">
   import { assetUrl } from '$lib/asset-url';
-  import { ringColor, THUMB_NEUTRAL_RING } from '$lib/entity-thumb';
+  import { ringColor, THUMB_NEUTRAL_RING } from '$lib/entity-thumb-ring';
 
   interface Props {
     src: string | null;

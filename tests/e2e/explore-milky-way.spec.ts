@@ -28,10 +28,11 @@ test.describe('/explore — Milky Way leveling (#451)', () => {
 
   test('a Magellanic Cloud opens a panel with its distance', async ({ page }) => {
     await page.goto('/explore?galaxy=lmc');
-    await expect(page.getByText('Satellite galaxy', { exact: false }).first()).toBeVisible({
-      timeout: 15_000,
-    });
-    await expect(page.getByText('161,741 ly', { exact: false }).first()).toBeVisible();
+    // The Milky Way pin prints what the Local Group panel and /explore/galaxies/lmc print (one
+    // string per entity, shared galaxyFacts): kind and distance to three significant figures.
+    const panel = page.locator('aside.panel:not(.covered)').first();
+    await expect(panel).toContainText(/Irregular galaxy/i, { timeout: 15_000 });
+    await expect(panel).toContainText('162,000 ly');
   });
 
   test('the MW shell shows a distance reference + the science lens chips', async ({ page }) => {

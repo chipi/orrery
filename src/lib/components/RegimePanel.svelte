@@ -29,7 +29,7 @@
   import EntityThumb from './EntityThumb.svelte';
   import * as m from '$lib/paraglide/messages';
   import thumbRefs from '$data/orbit-regime-thumbs.json';
-  import missionIndex from '$data/missions/index.json';
+  import firstAgency from '$data/orbit-regime-first-agency.json';
   import type { OrbitRegime } from '$types/orbit-regime';
   import type { ScienceTabId } from '$types/science';
 
@@ -70,10 +70,10 @@
   // different things per bundle; the file is the entity's blessed-hero thumb (entity-thumb.ts).
   const residentThumb = (id: string): string | null =>
     thumbOfRef((thumbRefs as Record<string, string>)[`${bundle}/${id}`]);
-  // A first carries only its mission id; the ring is that mission's agency colour.
-  const missionAgency = new Map(missionIndex.map((x) => [x.id, x.agency]));
+  // A first carries only its mission id; the ring is that mission's agency colour. The agency
+  // comes from a 17-entry map, not missions/index.json (23 KB), which the data test keeps in step.
   const firstRing = (id: string | undefined): string | undefined =>
-    id ? agencyRingColor(missionAgency.get(id) ?? '') : undefined;
+    id ? agencyRingColor((firstAgency as Record<string, string>)[id] ?? '') : undefined;
 </script>
 
 <!--

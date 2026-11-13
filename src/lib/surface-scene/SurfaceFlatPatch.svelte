@@ -27,7 +27,7 @@
   import { statusTone } from '$lib/surface-scene/status-tone';
   import { getLocale } from '$lib/paraglide/runtime';
   import { formatNumber } from '$lib/format';
-  import { distanceWithUnit } from '$lib/explore/format';
+  import { distanceWithUnit } from '$lib/explore/distance-format';
   import {
     fixedScaleBar,
     formatBarValue,

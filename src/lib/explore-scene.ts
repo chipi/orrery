@@ -8,6 +8,7 @@
  */
 import * as THREE from 'three';
 import { createLayeredStarField } from '$lib/three/star-field.js';
+import { PLANET_ORBIT_R } from '$lib/explore-orbit-radii';
 
 // ─── Public data types ──────────────────────────────────────────────────────
 
@@ -56,7 +57,7 @@ export const PLANETS: PlanetVisual[] = [
   {
     id: 'mercury',
     name: 'Mercury',
-    orbitR: 52,
+    orbitR: PLANET_ORBIT_R.mercury,
     size3: 2.8,
     size2: 3,
     color3: 0xb5b5b5,
@@ -73,7 +74,7 @@ export const PLANETS: PlanetVisual[] = [
   {
     id: 'venus',
     name: 'Venus',
-    orbitR: 83,
+    orbitR: PLANET_ORBIT_R.venus,
     size3: 5.0,
     size2: 5,
     color3: 0xe8cda0,
@@ -90,7 +91,7 @@ export const PLANETS: PlanetVisual[] = [
   {
     id: 'earth',
     name: 'Earth',
-    orbitR: 113,
+    orbitR: PLANET_ORBIT_R.earth,
     size3: 5.2,
     size2: 5.5,
     color3: 0x3a8fcc,
@@ -120,7 +121,7 @@ export const PLANETS: PlanetVisual[] = [
   {
     id: 'mars',
     name: 'Mars',
-    orbitR: 155,
+    orbitR: PLANET_ORBIT_R.mars,
     size3: 3.8,
     size2: 4,
     color3: 0xc1440e,
@@ -156,7 +157,7 @@ export const PLANETS: PlanetVisual[] = [
   {
     id: 'jupiter',
     name: 'Jupiter',
-    orbitR: 248,
+    orbitR: PLANET_ORBIT_R.jupiter,
     size3: 13.5,
     size2: 13,
     color3: 0xc88b3a,
@@ -208,7 +209,7 @@ export const PLANETS: PlanetVisual[] = [
   {
     id: 'saturn',
     name: 'Saturn',
-    orbitR: 320,
+    orbitR: PLANET_ORBIT_R.saturn,
     size3: 11.0,
     size2: 11,
     color3: 0xe4d191,
@@ -247,7 +248,7 @@ export const PLANETS: PlanetVisual[] = [
   {
     id: 'uranus',
     name: 'Uranus',
-    orbitR: 378,
+    orbitR: PLANET_ORBIT_R.uranus,
     size3: 7.5,
     size2: 7.5,
     color3: 0x7de8e8, // a3-keep: planet identity colour, palette review at the end
@@ -310,7 +311,7 @@ export const PLANETS: PlanetVisual[] = [
   {
     id: 'neptune',
     name: 'Neptune',
-    orbitR: 430,
+    orbitR: PLANET_ORBIT_R.neptune,
     size3: 7.0,
     size2: 7,
     color3: 0x3f54ba,
@@ -338,7 +339,7 @@ export const PLANETS: PlanetVisual[] = [
   {
     id: 'pluto',
     name: 'Pluto',
-    orbitR: 580,
+    orbitR: PLANET_ORBIT_R.pluto,
     size3: 1.5,
     size2: 1.8,
     color3: 0xd0b48c,

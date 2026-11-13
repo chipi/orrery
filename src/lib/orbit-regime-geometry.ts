@@ -1,12 +1,12 @@
 /**
  * Orbit regime -> radius in scene units, for the four scenes that carry the orbit ruler (UXD-024).
  * Radii come from the functions that place the objects (`altToSurfaceScene` on /earth, the
- * lunar/Martian ring formula in `surface-markers.ts`, `PLANETS[].orbitR` and the belt constants on
+ * lunar/Martian ring formula in `surface-markers.ts`, `PLANET_ORBIT_R` (which `PLANETS[].orbitR` reads) and the belt constants on
  * /explore), never a second formula, so a highlighted band sits exactly where its residents ride.
  * Pure: no three.js objects, so it is unit-tested without a renderer.
  */
 import { altToSurfaceScene } from '$lib/scale';
-import { PLANETS } from '$lib/explore-scene';
+import { PLANET_ORBIT_R } from '$lib/explore-orbit-radii';
 import type { OrbitRegime } from '$types/orbit-regime';
 
 export type RulerScene = 'earth' | 'moon' | 'mars' | 'explore';
@@ -39,11 +39,7 @@ const SCATTERED_R = [620, 720] as const;
 const HELIOPAUSE_R = 800;
 const OORT_R = 1000;
 
-const orbitR = (id: string): number => {
-  const p = PLANETS.find((x) => x.id === id);
-  if (!p) throw new Error(`orbit-regime-geometry: no planet ${id}`);
-  return p.orbitR;
-};
+const orbitR = (id: keyof typeof PLANET_ORBIT_R): number => PLANET_ORBIT_R[id];
 
 function exploreShape(id: string): RegimeShape | null {
   const band = (inner: number, outer: number, schematic?: boolean): RegimeShape => ({

@@ -74,39 +74,39 @@
           source: src ?? undefined,
         }))
       : object
-      ? [
-          ...(object.mass_solar
-            ? [
-                {
-                  label: m.explore_mw_label_mass(),
-                  value: fmt(object.mass_solar),
-                  unit: m.explore_mw_solar_masses(),
-                  accent: true,
-                },
-              ]
-            : []),
-          ...(object.dist_from_sun_ly
-            ? [
-                {
-                  label: m.explore_mw_label_dist_sun(),
-                  value: `${fmt(object.dist_from_sun_ly)} ly`,
-                },
-              ]
-            : []),
-          ...(object.galactocentric_ly
-            ? [
-                {
-                  label: m.explore_mw_label_dist_centre(),
-                  value: `${fmt(object.galactocentric_ly)} ly`,
-                },
-              ]
-            : []),
-          ...(object.diam_kly
-            ? [{ label: m.explore_mw_label_diam(), value: `${fmt(object.diam_kly * 1000)} ly` }]
-            : []),
-          ...(object.arm ? [{ label: m.explore_mw_label_location(), value: object.arm }] : []),
-        ]
-      : [],
+        ? [
+            ...(object.mass_solar
+              ? [
+                  {
+                    label: m.explore_mw_label_mass(),
+                    value: fmt(object.mass_solar),
+                    unit: m.explore_mw_solar_masses(),
+                    accent: true,
+                  },
+                ]
+              : []),
+            ...(object.dist_from_sun_ly
+              ? [
+                  {
+                    label: m.explore_mw_label_dist_sun(),
+                    value: `${fmt(object.dist_from_sun_ly)} ly`,
+                  },
+                ]
+              : []),
+            ...(object.galactocentric_ly
+              ? [
+                  {
+                    label: m.explore_mw_label_dist_centre(),
+                    value: `${fmt(object.galactocentric_ly)} ly`,
+                  },
+                ]
+              : []),
+            ...(object.diam_kly
+              ? [{ label: m.explore_mw_label_diam(), value: `${fmt(object.diam_kly * 1000)} ly` }]
+              : []),
+            ...(object.arm ? [{ label: m.explore_mw_label_location(), value: object.arm }] : []),
+          ]
+        : [],
   );
 </script>
 

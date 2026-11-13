@@ -207,7 +207,7 @@
   {/snippet}
 
   {#if selected}
-    <!-- No PanelActions row: an Earth object has no entity action. Share is in the Panel bar. -->
+    <!-- No PanelActions row of its own: an Earth object has no entity action; Panel draws Share in a row of its own here. -->
 
     {#if panelGallery.length > 0}
       <PanelHeroImage

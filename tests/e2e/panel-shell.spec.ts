@@ -73,15 +73,22 @@ test.describe('panel shell (B1)', () => {
       expect(hitsClose).toBe(true);
     });
 
-    test(`${label} panel: no foot stack, row above the hero with at most 3 chips`, async ({
+    test(`${label} panel: no foot stack, row above the hero with at most 3 chips and Share`, async ({
       page,
     }) => {
       const panel = await openPanel(page, path);
       await expect(panel.locator('.cta, .cta-card, .cta-bar, .card-cta-bar')).toHaveCount(0);
-      const row = panel.locator('.panel-actions');
+      const row = panel.locator('.panel-actions:visible');
       if ((await row.count()) === 0) return;
-      const chips = row.locator('.ui-chip');
+      // The host's actions, at most three; Share (when the entity has a card) is the last chip.
+      const chips = row.locator('.ui-chip:not([data-testid="open-card-btn"])');
       expect(await chips.count()).toBeLessThanOrEqual(3);
+      const share = row.locator('[data-testid="open-card-btn"]');
+      if ((await share.count()) > 0)
+        expect(
+          await row.locator('.ui-chip').last().getAttribute('data-testid'),
+          'Share is the last chip',
+        ).toBe('open-card-btn');
       const hero = panel.locator('.panel-hero').first();
       if ((await hero.count()) > 0) {
         const r = await row.boundingBox();
@@ -146,23 +153,35 @@ test.describe('panel shell (B1)', () => {
     expect(ring.color).toBe(ring.focus);
   });
 
-  test('header and row chips are 30 px on a fine pointer and 44 px on touch', async ({
+  test("× is drawn at the badges' 24 px with a 44 px tap area on touch; row chips are 30 / 44 px", async ({
     page,
     isMobile,
   }) => {
     const panel = await openPanel(page, '/explore?id=mars');
     const want = isMobile ? 44 : 30;
-    const heightOf = async (sel: string) =>
-      Math.round((await panel.locator(sel).first().boundingBox())!.height);
-    expect(await heightOf('.panel-head .panel-close')).toBe(want);
-    expect(await heightOf('.panel-head [data-testid="open-card-btn"]')).toBe(want);
-    expect(await heightOf('.panel-actions .ui-chip')).toBeGreaterThanOrEqual(want);
-    expect(await heightOf('.panel-head .panel-actions-line')).toBe(want);
+    const boxOf = async (sel: string) => (await panel.locator(sel).first().boundingBox())!;
+    const close = await boxOf('.panel-head .panel-close');
+    expect(Math.round(close.height)).toBe(24);
+    expect(Math.round(close.width)).toBe(24);
+    expect(Math.round((await boxOf('.panel-actions .ui-chip')).height)).toBeGreaterThanOrEqual(
+      want,
+    );
+    // Share is the action row's last chip, never in the header.
+    await expect(panel.locator('.panel-head [data-testid="open-card-btn"]')).toHaveCount(0);
+    await expect(panel.locator('.panel-actions [data-testid="open-card-btn"]')).toBeVisible();
+    if (isMobile) {
+      // The tap area: 9 px outside the drawn × (inside the 44 px extension) still hits it.
+      const hit = await page.evaluate(
+        ({ x, y }) => !!document.elementFromPoint(x, y)?.closest('.panel-close'),
+        { x: close.x + close.width / 2, y: close.y - 9 },
+      );
+      expect(hit, '× keeps a 44 px tap area on touch').toBe(true);
+    }
   });
 
   test('Share opens the card overlay; Escape closes only the overlay', async ({ page }) => {
     const panel = await openPanel(page, '/missions?id=apollo11');
-    await panel.locator('.panel-head').getByTestId('open-card-btn').click();
+    await panel.locator('.panel-actions').getByTestId('open-card-btn').click();
     const card = page.locator('.backdrop .card');
     await expect(card).toBeVisible({ timeout: 10_000 });
     await page.keyboard.press('Escape');
@@ -170,10 +189,10 @@ test.describe('panel shell (B1)', () => {
     await expect(panel).toBeVisible();
   });
 
-  // UXD-018 amendment "header sizes": badge and status one size, × a square as tall as Share,
-  // all on one centre line.
+  // UXD-018 amendments "header sizes" and "Share in the action row": badge and status one size,
+  // × a square as tall as the badges, all on the first badge row's centre line.
   for (const path of ['/missions?id=apollo11', '/mars?site=perseverance']) {
-    test(`header sizes on ${path}: badge = status, square ×, one centre line`, async ({ page }) => {
+    test(`header sizes on ${path}: badge = status = ×, one centre line`, async ({ page }) => {
       test.slow();
       await page.goto(path);
       const head = page.locator('aside.panel .panel-head').first();
@@ -189,19 +208,19 @@ test.describe('panel shell (B1)', () => {
       const box = async (sel: string) => (await head.locator(sel).first().boundingBox())!;
       const badge = await box('.agency-badge');
       const status = await box('.status');
-      const share = await box('[data-testid="open-card-btn"]');
       const close = await box('.panel-close');
       expect(
         Math.abs(badge.height - status.height),
         'badge and status one height',
       ).toBeLessThanOrEqual(0.5);
       expect(Math.abs(close.width - close.height), '× is a square').toBeLessThanOrEqual(0.5);
-      expect(Math.abs(close.height - share.height), '× as tall as Share').toBeLessThanOrEqual(0.5);
+      expect(Math.abs(close.height - badge.height), '× as tall as the badge').toBeLessThanOrEqual(
+        0.5,
+      );
       const mid = (b: { y: number; height: number }) => b.y + b.height / 2;
       for (const [name, b] of [
         ['badge', badge],
         ['status', status],
-        ['Share', share],
       ] as const)
         expect(Math.abs(mid(b) - mid(close)), `${name} on the × centre line`).toBeLessThanOrEqual(
           1,

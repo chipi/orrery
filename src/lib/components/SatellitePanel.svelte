@@ -175,11 +175,11 @@
       </div>
     </div>
 
-    {#if entry.id === 'moon'}
-      <PanelActions>
+    <PanelActions>
+      {#if entry.id === 'moon'}
         <Chip kind="link" href={localHref(`/moon`)}>{m.panel_action_surface()}</Chip>
-      </PanelActions>
-    {/if}
+      {/if}
+    </PanelActions>
 
     {#if gallery.length > 0}
       <PanelHeroImage

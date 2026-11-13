@@ -173,16 +173,16 @@
       </div>
     </div>
 
-    {#if planet.id === 'earth' || planet.id === 'mars' || (planet.missionable && onPlanMission)}
-      <PanelActions>
+    <PanelActions>
+      {#if planet.id === 'earth' || planet.id === 'mars' || (planet.missionable && onPlanMission)}
         {#if planet.id === 'earth' || planet.id === 'mars'}
           <Chip kind="link" href={localHref(`/${planet.id}`)}>{m.panel_action_surface()}</Chip>
         {/if}
         {#if planet.missionable && onPlanMission}
           <Chip kind="action" onclick={onPlanMission}>{m.panel_action_plan()}</Chip>
         {/if}
-      </PanelActions>
-    {/if}
+      {/if}
+    </PanelActions>
 
     {#if gallery.length > 0}
       <PanelHeroImage

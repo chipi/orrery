@@ -184,7 +184,7 @@
     {#if name}<div class="name">{name}</div>{/if}
   {/snippet}
 
-  {#if actions}<PanelActions>{@render actions()}</PanelActions>{/if}
+  <PanelActions>{@render actions?.()}</PanelActions>
 
   {#if hero}
     {#key overridesReady}

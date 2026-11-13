@@ -127,6 +127,18 @@ and 73 of the same number of rows; the nation-colour dot becomes the photo's rin
 outer scales stay without photos (UXD-025 decision 3, held). The rows, the roving items and the ↗ links are
 unchanged. No new string.
 
+## Note 2026-11-13 — C6-F: the rest of the HUD under a full-width panel
+
+The tab was not the only piece. In a window 600 px wide or less with a mouse, the `/explore` HUD cluster (the
+view actions, the layer chips; z 45 since the iconic-mission legend was lifted over the time dock on 2026-06-28)
+and the time dock (z 40) were drawn over the full-width Mars panel's eyebrow, title and first stat. Both now sit
+under the panel there (cluster z 25, dock z 24, so the PATHS legend still covers the scrubber), the same rule as
+the tab; wider windows and touch are unchanged (the portrait sheet is z 80). It was not new in C7 or C8: those
+slices moved the chips and the legend but not the z values. `hud-under-panel.spec.ts` samples a grid over the open
+panel on `/explore` and the Worlds and fails on anything else on top. Open: a landscape phone's drawer tab row
+(RULER, MISSIONS, CONTROLS, SCAN; `MobileDrawerGroup`, z 38) spans the whole bottom edge and crosses the side
+drawer's lower actions, and the site footer's More button crosses a full-width panel's lower right corner.
+
 ## Consequences
 
 The next page type is a one-line addition per row. Each scale's list is the keyboard way into its scene.

@@ -731,6 +731,16 @@
     }
   }
 
+  /* A narrow window with a mouse: the detail panel (Panel.svelte, z 30) is as wide as the window,
+     so the cluster sits under it instead of over its eyebrow and title, as the INDEX handle does
+     (index-panel.css). Still above the time dock (24, TimeDock.svelte), so the paths legend
+     hanging off it covers the scrubber. On touch the portrait sheet (z 80) covers it already. */
+  @media (hover: hover) and (pointer: fine) and (max-width: 600px) {
+    .hud-controls {
+      z-index: 25;
+    }
+  }
+
   /* FB2 — mobile-only top cluster: 2D/3D toggle + Reset View, mirroring the
      desktop .hud-controls top-left corner (.hud-controls itself is desktop-only). */
   .hud-top-mobile {

@@ -421,7 +421,7 @@
       },
       "category": "deep-sky",
       "relationship": "paraphrased-from",
-      "snippet": "The masses of globular clusters (M54, M72, M92, M107, NGC 5139) named in the texts, from the Baumgardt and Vasiliev catalogue of Galactic globular cluster parameters.",
+      "snippet": "The masses of globular clusters (M54, M72, M92, M107, NGC 104, NGC 5139, NGC 6752) named in the texts, from the Baumgardt and Vasiliev catalogue of Galactic globular cluster parameters.",
       "source_url": "https://people.smp.uq.edu.au/HolgerBaumgardt/globular/parameter.html",
       "source_publisher": "University of Queensland (Baumgardt and Vasiliev globular cluster catalogue)",
       "source_author": "Holger Baumgardt, Eugene Vasiliev",
@@ -658,6 +658,65 @@
       "source_url": "https://arxiv.org/abs/astro-ph/0306036",
       "source_publisher": "Monthly Notices of the Royal Astronomical Society (arXiv preprint)",
       "source_author": "Andrew C. Fabian et al.",
+      "license_short": "Facts-only",
+      "license_rationale": "Only facts were read from the credited source (the paper and its arXiv preprint); no sentence of it is reproduced."
+    },
+    {
+      "id": "deep-sky.ngc-104.milone-2012",
+      "location": {
+        "file": "i18n-src/en-US/universe/deep-sky/ngc-104.json",
+        "json_path": "$.bio"
+      },
+      "category": "deep-sky",
+      "relationship": "paraphrased-from",
+      "snippet": "That Hubble photometry splits the main sequence of 47 Tucanae into two, with about 30% of the stars of primeval abundances and the rest enriched in nitrogen and slightly in helium, from Milone et al. (2012), ApJ 744, 58.",
+      "source_url": "https://arxiv.org/abs/1109.0900",
+      "source_publisher": "The Astrophysical Journal (arXiv preprint)",
+      "source_author": "A. P. Milone et al.",
+      "license_short": "Facts-only",
+      "license_rationale": "Only facts were read from the credited source (the paper and its arXiv preprint); no sentence of it is reproduced."
+    },
+    {
+      "id": "deep-sky.ngc-104.lacaille-pulsars",
+      "location": {
+        "file": "i18n-src/en-US/universe/deep-sky/ngc-104.json",
+        "json_path": "$.bio"
+      },
+      "category": "deep-sky",
+      "relationship": "paraphrased-from",
+      "snippet": "Lacaille's discovery of 47 Tucanae from the Cape of Good Hope in 1751, from the SEDS Milky Way globular clusters page for NGC 104, and the count of more than 40 known radio pulsars, from Paulo Freire's list of pulsars in globular clusters.",
+      "source_url": "https://spider.seds.org/spider/MWGC/n0104.html",
+      "source_publisher": "Students for the Exploration and Development of Space (SEDS); Paulo Freire, Max Planck Institute for Radio Astronomy",
+      "license_short": "Facts-only",
+      "license_rationale": "Only facts were read from the credited sources (a date, a name and a count); no sentence of them is reproduced."
+    },
+    {
+      "id": "deep-sky.ngc-6752.nasa-apod-2012",
+      "location": {
+        "file": "i18n-src/en-US/universe/deep-sky/ngc-6752.json",
+        "json_path": "$.bio"
+      },
+      "category": "deep-sky",
+      "relationship": "paraphrased-from",
+      "snippet": "The age of more than 10 billion years and the blue stragglers at the core of NGC 6752, possibly made by collisions and mergers, from the NASA Astronomy Picture of the Day of 10 February 2012 (image credit ESA/Hubble and NASA).",
+      "source_url": "https://science.nasa.gov/image-article/apod-2012-february-10-at-the-core-of-ngc-6752/",
+      "source_publisher": "NASA Science (Astronomy Picture of the Day)",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/multimedia/guidelines/index.html",
+      "license_rationale": "NASA Science pages are U.S. Government works in the public domain (17 U.S.C. § 105); the Orrery text is a paraphrase, and where it carries a NASA estimate it says so."
+    },
+    {
+      "id": "deep-sky.ngc-6752.milone-2010",
+      "location": {
+        "file": "i18n-src/en-US/universe/deep-sky/ngc-6752.json",
+        "json_path": "$.bio"
+      },
+      "category": "deep-sky",
+      "relationship": "paraphrased-from",
+      "snippet": "That the broadened main sequence and the sodium and oxygen content of the red giants of NGC 6752 point to more than one stellar population, from Milone et al. (2010), ApJ 709, 1183.",
+      "source_url": "https://arxiv.org/abs/0912.2055",
+      "source_publisher": "The Astrophysical Journal (arXiv preprint)",
+      "source_author": "A. P. Milone et al.",
       "license_short": "Facts-only",
       "license_rationale": "Only facts were read from the credited source (the paper and its arXiv preprint); no sentence of it is reproduced."
     },

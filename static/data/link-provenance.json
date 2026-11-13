@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-13T08:31:31.125Z",
+  "generated_at": "2026-11-13T11:07:57.428Z",
   "script_version": "build-link-provenance@1.0.0",
-  "commit_sha": "aec7ad341615a75f44ef92f6bf10b3acfb188478",
+  "commit_sha": "784871df49ade88ce8017476ddf249d55af3d4c3",
   "entries": [
     {
       "id": "30-doradus__4f141b763a84",
@@ -16287,6 +16287,34 @@
       "last_verified": "2026-09-11"
     },
     {
+      "id": "ngc-104__52e9239e8086",
+      "entity_id": "ngc-104",
+      "category": "deep-sky",
+      "route": "/explore",
+      "url": "https://arxiv.org/abs/1109.0900",
+      "label": "arXiv",
+      "tier": "intro",
+      "source_id": "arxiv",
+      "language": "en",
+      "kind": "science-publisher",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-13"
+    },
+    {
+      "id": "ngc-104__8341a4b6a1dc",
+      "entity_id": "ngc-104",
+      "category": "deep-sky",
+      "route": "/explore",
+      "url": "https://people.smp.uq.edu.au/HolgerBaumgardt/globular/fits/ngc0104.html",
+      "label": "Baumgardt",
+      "tier": "core",
+      "source_id": "baumgardt-uq",
+      "language": "en",
+      "kind": "educational",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-13"
+    },
+    {
       "id": "ngc-1300__8ff348ab0187",
       "entity_id": "ngc-1300",
       "category": "deep-sky",
@@ -16705,6 +16733,34 @@
       "kind": "agency-official",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
       "last_verified": "2026-11-12"
+    },
+    {
+      "id": "ngc-6752__ba329fdb28de",
+      "entity_id": "ngc-6752",
+      "category": "deep-sky",
+      "route": "/explore",
+      "url": "https://science.nasa.gov/image-article/apod-2012-february-10-at-the-core-of-ngc-6752/",
+      "label": "NASA APOD",
+      "tier": "intro",
+      "source_id": "nasa",
+      "language": "en",
+      "kind": "agency-official",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-13"
+    },
+    {
+      "id": "ngc-6752__e0b7105318e5",
+      "entity_id": "ngc-6752",
+      "category": "deep-sky",
+      "route": "/explore",
+      "url": "https://people.smp.uq.edu.au/HolgerBaumgardt/globular/fits/ngc6752.html",
+      "label": "Baumgardt",
+      "tier": "core",
+      "source_id": "baumgardt-uq",
+      "language": "en",
+      "kind": "educational",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-13"
     },
     {
       "id": "ngc-6822__f46ca800b162",

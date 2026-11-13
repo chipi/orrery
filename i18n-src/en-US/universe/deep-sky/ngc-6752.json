@@ -1,0 +1,16 @@
+{
+  "fact": "NGC 6752 is a globular cluster in the southern constellation Pavo, about 13,400 light-years away.",
+  "bio": "N-body fits give it about 260,000 solar masses (Baumgardt's globular cluster database). NASA describes it as over 10 billion years old; a Hubble view of its core shows blue stragglers, stars that look too young and massive for a cluster this old, possibly made by collisions and mergers. Hubble photometry shows a broadened main sequence, and its red giants' colours track sodium and oxygen content, signs of more than one stellar population (Milone and colleagues, 2010).",
+  "links": [
+    {
+      "l": "NASA APOD",
+      "u": "https://science.nasa.gov/image-article/apod-2012-february-10-at-the-core-of-ngc-6752/",
+      "t": "intro"
+    },
+    {
+      "l": "Baumgardt",
+      "u": "https://people.smp.uq.edu.au/HolgerBaumgardt/globular/fits/ngc6752.html",
+      "t": "core"
+    }
+  ]
+}

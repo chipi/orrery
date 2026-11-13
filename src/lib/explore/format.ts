@@ -1,7 +1,8 @@
 import * as m from '$lib/paraglide/messages';
 import type { ExploreContextId } from '$lib/three/explore-scene-host';
 import type { LocaleCode } from '$lib/locale';
-import type { DeepSkyCategory, OuterTextOverlay } from '$lib/data/universe';
+import type { DeepSkyCategory, LocalGroupMember, OuterTextOverlay } from '$lib/data/universe';
+import { sourceLink } from '$lib/catalogue';
 import { constellationName } from '$lib/universe/iau-constellations';
 
 // Localised label for an anonymous star's catalogue colour (enum → message).
@@ -172,9 +173,10 @@ export const galaxyDistance = (distMly: number, locale: string): string =>
   lightYears(distMly * 1e6, locale, { maximumSignificantDigits: 3 });
 export const galaxyDiameter = (diamKly: number, locale: string): string =>
   lightYears(diamKly * 1e3, locale, { maximumSignificantDigits: 3 });
-// The four schematic files hold hand values in Mpc and Mly; shown to the light-year, as the panels did.
+// The four schematic files hold hand values in Mpc (one or two figures): three significant figures,
+// as galaxyDistance, so a one-digit value is not shown as "10,758,000 ly".
 export const structureDistance = (distMpc: number, locale: string): string =>
-  lightYears(distMpc * 3.26e6, locale, { maximumFractionDigits: 0 });
+  lightYears(distMpc * 3.26e6, locale, { maximumSignificantDigits: 3 });
 export const structureSpan = (diamMly: number, locale: string): string =>
   lightYears(diamMly * 1e6, locale, { maximumFractionDigits: 0 });
 
@@ -207,6 +209,32 @@ export function galaxyGroupLabel(id: string, parent: string): string {
   if (parent === 'milky-way') return m.explore_lg_group_mw();
   if (parent === 'andromeda') return m.explore_lg_group_andromeda();
   return m.explore_lg_group_independent();
+}
+
+/**
+ * The Local Group facts of a galaxy (group, distance with its source, diameter): the rows of the
+ * galaxy page, the Local Group panel and a Magellanic Cloud's Milky Way panel, one string each.
+ */
+export function galaxyFacts(
+  g: Pick<LocalGroupMember, 'id' | 'parent' | 'dist_mly' | 'diam_kly' | 'catalogue'>,
+  locale: string,
+): { label: string; value: string; src: ReturnType<typeof sourceLink> }[] {
+  const rows: { label: string; value: string; src: ReturnType<typeof sourceLink> }[] = [
+    { label: m.explore_lg_label_group(), value: galaxyGroupLabel(g.id, g.parent), src: null },
+  ];
+  if (g.dist_mly > 0)
+    rows.push({
+      label: m.explore_lg_label_distance(),
+      value: galaxyDistance(g.dist_mly, locale),
+      src: sourceLink(g.catalogue?.dist_mly),
+    });
+  if (g.diam_kly > 0)
+    rows.push({
+      label: m.explore_lg_label_diameter(),
+      value: galaxyDiameter(g.diam_kly, locale),
+      src: null,
+    });
+  return rows;
 }
 
 /** The panel's lead paragraphs: the entity's reviewed fact and bio, else the kind blurb. */

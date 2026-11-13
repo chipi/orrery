@@ -1,5 +1,14 @@
 import { expect, test, type APIRequestContext } from '@playwright/test';
-import { galaxyPages, inHtml, outerName, overlayOf, structurePages } from './_helpers/outer-pages';
+import {
+  DEEP_SKY_TWINS,
+  expectedGalaxyPages,
+  expectedStructurePages,
+  galaxyPages,
+  inHtml,
+  outerName,
+  overlayOf,
+  structurePages,
+} from './_helpers/outer-pages';
 
 /**
  * Galaxy and structure entity pages (/explore/galaxies/<id>, /explore/structures/<id>, ADR-096
@@ -52,7 +61,7 @@ test.describe('galaxy and structure pages: static HTML', () => {
   }) => {
     await notAPage(request, '/explore/galaxies/no-such-galaxy');
     await notAPage(request, '/explore/structures/no-such-structure');
-    await notAPage(request, '/explore/galaxies/andromeda');
+    for (const twin of DEEP_SKY_TWINS) await notAPage(request, `/explore/galaxies/${twin}`);
   });
 
   for (const { dir, id, dataName, open, pages } of CASES) {
@@ -106,12 +115,20 @@ test.describe('galaxy and structure pages: static HTML', () => {
   test('the Virgo Cluster names its distance paper (Mei 2007), the Local Group members theirs', async ({
     request,
   }) => {
-    test.skip(!structurePages.has('virgo-cluster'), 'no overlay for virgo-cluster yet');
+    test.skip(
+      !structurePages.has('virgo-cluster') || !galaxyPages.has('lmc'),
+      'no overlay for virgo-cluster or lmc yet',
+    );
     const virgo = await (await request.get('/explore/structures/virgo-cluster')).text();
     expect(virgo).toContain('href="https://arxiv.org/abs/astro-ph/0702510"');
-    test.skip(!galaxyPages.has('lmc'), 'no overlay for lmc yet');
     const lmc = await (await request.get('/explore/galaxies/lmc')).text();
     expect(lmc).toContain('2019Natur.567..200P');
+  });
+
+  test('the page sets match the data, not the route code: every overlaid member, no twin', async () => {
+    expect([...galaxyPages].sort()).toEqual(expectedGalaxyPages());
+    expect([...structurePages].sort()).toEqual(expectedStructurePages());
+    for (const twin of DEEP_SKY_TWINS) expect(galaxyPages.has(twin)).toBe(false);
   });
 
   test('an unsourced structure distance has no paper link (the batch 6 review decides)', async ({
@@ -121,4 +138,23 @@ test.describe('galaxy and structure pages: static HTML', () => {
     const html = await (await request.get('/explore/structures/m81-group')).text();
     expect(html).not.toContain('data-testid="data-sources"');
   });
+});
+
+test.describe("an anchor structure opens in the next scale out (the pages' scene links)", () => {
+  const ANCHORS = [
+    { context: 'local-sheet', pick: 'local-group', name: /Local Group/ },
+    { context: 'virgo', pick: 'local-group', name: /Local Group/ },
+    { context: 'laniakea', pick: 'virgo-supercluster', name: /Virgo Supercluster/ },
+    { context: 'cosmic-web', pick: 'laniakea', name: /Laniakea/ },
+  ];
+  for (const a of ANCHORS) {
+    test(`?context=${a.context}&pick=${a.pick} opens its panel`, async ({ page }) => {
+      test.slow();
+      await page.goto(`/explore?context=${a.context}&pick=${a.pick}`);
+      await expect(
+        page.locator('aside.panel:not(.covered)').filter({ hasText: a.name }).first(),
+      ).toBeVisible({ timeout: 60_000 });
+      await expect.poll(() => new URL(page.url()).searchParams.get('pick')).toBe(a.pick);
+    });
+  }
 });

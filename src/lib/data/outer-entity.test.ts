@@ -187,6 +187,33 @@ describe('getStructureEntity', () => {
     expect(hrefs(m81, 'same-scale')).toContain('/explore/structures/ic-342-group');
   });
 
+  it('says "part of" only where the reviewed text does; the other members of a scale stay in same-scale', async () => {
+    const all = [
+      'virgo-supercluster',
+      'laniakea',
+      'ngc-5846-group',
+      'ursa-major-cloud',
+      'ophiuchus-supercluster',
+      'pavo-indus',
+      'great-attractor',
+    ];
+    for (const id of all) OVERLAYS.add(id);
+    const p = pages({ structure: ids(all) });
+    const part = async (id: string) =>
+      hrefs(await getStructureEntity(id, 'en-US', fetch, p), 'part-of');
+    const same = async (id: string) =>
+      hrefs(await getStructureEntity(id, 'en-US', fetch, p), 'same-scale');
+    // "in the Virgo Supercluster" (fact), "include it in Laniakea" (bio).
+    expect(await part('ngc-5846-group')).toEqual(['/explore/structures/virgo-supercluster']);
+    expect(await part('pavo-indus')).toEqual(['/explore/structures/laniakea']);
+    // The review raised these two: no membership claim in the text, so no "part of".
+    expect(await part('ursa-major-cloud')).toBeUndefined();
+    expect(await part('ophiuchus-supercluster')).toBeUndefined();
+    expect(await part('great-attractor')).toBeUndefined();
+    expect(await same('ursa-major-cloud')).toContain('/explore/structures/ngc-5846-group');
+    expect(await same('ophiuchus-supercluster')).toContain('/explore/structures/pavo-indus');
+  });
+
   it('carries the distance source where a paper states it, none for an anchor or an unsourced value', async () => {
     for (const id of ['maffei-group', 'local-group', 'm81-group']) OVERLAYS.add(id);
     const at = (id: string) => getStructureEntity(id, 'en-US', fetch, pages({ structure: ids([id]) }));

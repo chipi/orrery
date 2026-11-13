@@ -338,6 +338,12 @@ describe('indexnow --since on the generated sitemap', () => {
 });
 
 describe('galaxy and structure page inputs (ADR-096 item 18)', () => {
+  const CODE = [
+    'src/lib/components/OuterEntityPage.svelte',
+    'src/lib/data/outer-entity.ts',
+    'src/lib/explore/outer-page.ts',
+    'src/lib/explore/format.ts',
+  ];
   const tracked = new Set([
     'src/routes/explore/galaxies/[id]/+page.svelte',
     'src/routes/explore/structures/[id]/+page.svelte',
@@ -371,9 +377,22 @@ describe('galaxy and structure page inputs (ADR-096 item 18)', () => {
     const inputs = inputsFor('/explore/galaxies/lmc', ctx, data);
     expect(inputs.entries).toEqual(['static/data/universe/local-group.json#lmc']);
     expect(inputs.overlays).toEqual(['universe/galaxies/lmc.json']);
-    expect(inputs.files).toEqual(['src/routes/explore/galaxies/[id]/+page.svelte']);
+    expect(inputs.files).toEqual([...CODE, 'src/routes/explore/galaxies/[id]/+page.svelte']);
     expect(newestTs(inputs, 'de', ctx)).toBe(day('2026-06-01'));
     expect(newestTs(inputs, 'fr', ctx)).toBe(day('2026-06-01'));
+  });
+
+  it('dates a page from the shared code it is built from: the component, the loader, the builders, the formatters', () => {
+    const codeCtx = {
+      ...ctx,
+      tracked: new Set([...tracked, ...CODE]),
+      latest: new Map([...latest, ...CODE.map((f, i) => [f, day(`2026-09-0${i + 1}`)] as const)]),
+    };
+    for (const route of ['/explore/galaxies/lmc', '/explore/structures/local-group']) {
+      const inputs = inputsFor(route, codeCtx, data);
+      for (const f of CODE) expect(inputs.files).toContain(f);
+      expect(newestTs(inputs, 'de', codeCtx)).toBe(day('2026-09-04'));
+    }
   });
 
   it('dates a structure from every scale file that lists it, so local-group takes the newer of two', () => {

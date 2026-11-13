@@ -2,7 +2,7 @@ import { expect, test } from '@playwright/test';
 import { collectCanonicalRoutes } from '../../scripts/site-routes.mjs';
 import { expectLinkTargets, expectOneTabStop } from './_helpers/index-panel';
 import { waitForHydration } from './_helpers/hydration';
-import { galaxyPages, structurePages } from './_helpers/outer-pages';
+import { expectedGalaxyPages, expectedStructurePages } from './_helpers/outer-pages';
 
 /**
  * UX slice A5 (UXD-015, ADR-096 item 11): the A–Z is absorbed into the INDEX. On the scene
@@ -99,8 +99,8 @@ test.describe('the prerendered hub HTML links every entity page', () => {
       // files agree, and the INDEX links each of them, with or without text written yet.
       const galaxies = outerPageIds('galaxies');
       const structures = outerPageIds('structures');
-      expect(galaxies).toEqual([...galaxyPages].sort());
-      expect(structures).toEqual([...structurePages].sort());
+      expect(galaxies).toEqual(expectedGalaxyPages());
+      expect(structures).toEqual(expectedStructurePages());
       const missing = [
         ...stars.map((id) => `${locale}/explore/stars/${id}`),
         ...holes.map((id) => `${locale}/explore/black-holes/${id}`),

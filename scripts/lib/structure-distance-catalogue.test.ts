@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import fs from 'node:fs';
+import { catalogueLabel } from '../../src/lib/catalogue';
 import {
   applyStructureCatalogue,
   STRUCTURE_DISTANCE_SOURCES,
@@ -34,6 +35,32 @@ describe('applyStructureCatalogue', () => {
       expect(ids.has(id), id).toBe(true);
       expect(s.record_url, id).toMatch(/^https:\/\/arxiv\.org\/abs\//);
     }
+  });
+
+  it('shows an author-and-year label on the page, not a first author cut at a comma', () => {
+    expect(Object.values(STRUCTURE_DISTANCE_SOURCES).map((s) => catalogueLabel(s.source))).toEqual([
+      'Wu et al. 2014',
+      'Karachentsev et al. 2007',
+      'Karachentsev et al. 2021',
+      'Anand et al. 2019',
+      'Anand et al. 2018',
+      'Müller et al. 2017',
+      'Karachentsev et al. 2003',
+      'Lee and Jang 2013',
+      'Trentham et al. 2001',
+      'Mei et al. 2007',
+      'Woudt and Kraan-Korteweg 2000',
+      'Durret et al. 2015',
+      'Fleenor et al. 2005',
+      'Proust et al. 2006',
+      'Gott et al. 2005',
+    ]);
+  });
+
+  it('has notes a reader can read: no process wording, and no entry the review found unverified', () => {
+    for (const [id, s] of Object.entries(STRUCTURE_DISTANCE_SOURCES))
+      expect((s as { note?: string }).note ?? '', id).not.toMatch(/reviewer/i);
+    expect(STRUCTURE_DISTANCE_SOURCES).not.toHaveProperty('centaurus-cluster');
   });
 
   it('is what the four data files hold (run scripts/apply-structure-distance-catalogue.mjs)', () => {

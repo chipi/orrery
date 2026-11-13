@@ -30,7 +30,7 @@
           "source": "Woudt and Kraan-Korteweg 2000, Norma cluster redshift, cz = 4,844 km/s",
           "bibcode": null,
           "record_url": "https://arxiv.org/abs/astro-ph/0006126",
-          "note": "Norma cluster, cz = 4,844 km/s is about 69 Mpc at H0 = 70 (conversion by the batch reviewer)"
+          "note": "The paper gives the Norma cluster at cz = 4,844 km/s, about 69 Mpc converted at H0 = 70 km/s/Mpc; the value shown is 68 Mpc"
         }
       }
     },
@@ -54,16 +54,7 @@
       "diam_mly": 40,
       "x": 38,
       "y": 1,
-      "z": 6,
-      "catalogue": {
-        "dist_mpc": {
-          "value": 49,
-          "source": "Dupke and Bregman 2006, Centaurus cluster redshift, z = 0.0114",
-          "bibcode": null,
-          "record_url": "https://arxiv.org/abs/astro-ph/0512045",
-          "note": "cz = 3,418 km/s is 49 Mpc at H0 = 70 (conversion by the batch reviewer)"
-        }
-      }
+      "z": 6
     },
     {
       "id": "pavo-indus",
@@ -92,7 +83,7 @@
           "source": "Durret et al. 2015, Ophiuchus supercluster redshift, z = 0.0296",
           "bibcode": null,
           "record_url": "https://arxiv.org/abs/1509.00986",
-          "note": "z = 0.0296 is 127 Mpc at H0 = 70 (conversion by the batch reviewer)"
+          "note": "z = 0.0296 is 127 Mpc, converted at H0 = 70 km/s/Mpc"
         }
       }
     },

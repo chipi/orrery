@@ -30,7 +30,7 @@
           "source": "Proust et al. 2006, Shapley supercluster, main plane at 14,500 km/s",
           "bibcode": null,
           "record_url": "https://arxiv.org/abs/astro-ph/0509903",
-          "note": "14,500 km/s is 207 Mpc at H0 = 70 (conversion by the batch reviewer); the value here is 200 Mpc"
+          "note": "14,500 km/s is 207 Mpc, converted at H0 = 70 km/s/Mpc; the value shown is 200 Mpc"
         }
       }
     },
@@ -72,7 +72,7 @@
           "source": "Gott et al. 2005, Sloan Great Wall median distance 310 Mpc",
           "bibcode": null,
           "record_url": "https://arxiv.org/abs/astro-ph/0310571",
-          "note": "median distance 310 Mpc (z = 0.073); the value here is 300 Mpc"
+          "note": "Median distance 310 Mpc (z = 0.073); the value shown is 300 Mpc"
         }
       }
     },
@@ -103,7 +103,7 @@
           "source": "Fleenor et al. 2005, Horologium-Reticulum supercluster redshifts, 17,000 to 22,500 km/s",
           "bibcode": null,
           "record_url": "https://arxiv.org/abs/astro-ph/0505361",
-          "note": "17,000 to 22,500 km/s is 243 to 321 Mpc at H0 = 70; the value here is the 285 Mpc of the mean"
+          "note": "17,000 to 22,500 km/s is 243 to 321 Mpc, converted at H0 = 70 km/s/Mpc; the value shown is the 285 Mpc of the mean"
         }
       }
     }

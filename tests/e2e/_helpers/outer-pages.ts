@@ -47,6 +47,24 @@ export const galaxyRows = (): number => {
   );
 };
 
+/**
+ * The galaxy pages expected from the data alone, independent of site-routes: the Local Group
+ * members with an en-US overlay file, less the four deep-sky twins (their page is the deep-sky one).
+ */
+export const DEEP_SKY_TWINS = ['andromeda', 'triangulum', 'm32', 'm110'] as const;
+export const expectedGalaxyPages = (): string[] =>
+  members('local-group')
+    .map((m) => m.id)
+    .filter((id) => !(DEEP_SKY_TWINS as readonly string[]).includes(id))
+    .filter((id) => existsSync(`i18n-src/en-US/universe/galaxies/${id}.json`))
+    .sort();
+
+/** The structure pages expected from the data alone: every member of the four files with an overlay. */
+export const expectedStructurePages = (): string[] =>
+  [...new Set(Object.values(STRUCTURE_SCALES).flatMap((f) => members(f).map((m) => m.id)))]
+    .filter((id) => existsSync(`i18n-src/en-US/universe/structures/${id}.json`))
+    .sort();
+
 /** The glossary's name for a data name in a locale (the data's own name in en-US). */
 export function outerName(dataName: string, locale: string): string {
   if (locale === 'en-US') return dataName;

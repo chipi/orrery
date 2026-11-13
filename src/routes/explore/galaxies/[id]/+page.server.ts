@@ -2,13 +2,8 @@ import { error } from '@sveltejs/kit';
 import { getLocale } from '$lib/paraglide/runtime';
 import { getGalaxyEntity } from '$lib/data/outer-entity';
 import * as m from '$lib/paraglide/messages';
-import { dataSourceItems, sourceLink } from '$lib/catalogue';
-import {
-  galaxyDiameter,
-  galaxyDistance,
-  galaxyGroupLabel,
-  galaxyKindLabel,
-} from '$lib/explore/format';
+import { dataSourceItems } from '$lib/catalogue';
+import { galaxyFacts, galaxyKindLabel } from '$lib/explore/format';
 import { openInOrreryPath, relatedSections, type OuterRow } from '$lib/explore/outer-page';
 import { galaxyPageIds } from '../../../../../scripts/site-routes.mjs';
 import type { EntryGenerator, PageServerLoad } from './$types';
@@ -28,23 +23,16 @@ export const load: PageServerLoad = async ({ params, fetch }) => {
   const locale = getLocale();
   const entity = await getGalaxyEntity(params.id, locale, fetch);
   if (!entity) throw error(404, `Unknown galaxy: ${params.id}`);
-  const rows: OuterRow[] = [
+  const rows: OuterRow[] = galaxyFacts(
     {
-      label: m.explore_lg_label_group(),
-      value: galaxyGroupLabel(entity.id, entity.parent),
+      id: entity.id,
+      parent: entity.parent,
+      dist_mly: entity.distMly,
+      diam_kly: entity.diamKly,
+      catalogue: entity.catalogue,
     },
-  ];
-  if (entity.distMly > 0)
-    rows.push({
-      label: m.explore_lg_label_distance(),
-      value: galaxyDistance(entity.distMly, locale),
-      src: sourceLink(entity.catalogue.dist_mly),
-    });
-  if (entity.diamKly > 0)
-    rows.push({
-      label: m.explore_lg_label_diameter(),
-      value: galaxyDiameter(entity.diamKly, locale),
-    });
+    locale,
+  );
   return {
     text: { fact: entity.fact, bio: entity.bio, links: entity.links },
     path: `/explore/galaxies/${entity.id}`,

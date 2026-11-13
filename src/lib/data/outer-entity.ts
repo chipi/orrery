@@ -98,10 +98,28 @@ type StructureMember = {
 };
 
 /**
- * The structure scales, innermost first, with the structure each is the view of. A member of a scale
- * is part of that structure: the Local Group and the Virgo clouds are part of the Virgo Supercluster,
- * the Virgo Supercluster and the Laniakea members part of Laniakea. The Local Sheet and the Cosmic
- * web have no structure of their own to be part of.
+ * "Part of" is shown only where the reviewed text itself says so, not for every member of a scale
+ * file (docs/wip/deep-text/batch-06-review.md): the fact or bio of the entity, or of the whole it
+ * names, says "in the Virgo Supercluster", "holds the Local Group", "inside Laniakea". Left out on
+ * purpose, as the text makes no such claim: leo-i-cloud, ursa-major-cloud (Virgo scale),
+ * ophiuchus-supercluster ("Laniakea extending toward it"), hydra-centaurus, great-attractor,
+ * centaurus-cluster, antlia-cluster, fornax-eridanus (Laniakea scale); they stay in the
+ * same-scale list. Add an id here when its overlay is reviewed to say it.
+ */
+const PART_OF: Record<string, string> = {
+  'local-group': 'virgo-supercluster',
+  'virgo-cluster': 'virgo-supercluster',
+  'canes-venatici-spur': 'virgo-supercluster',
+  'virgo-ii-groups': 'virgo-supercluster',
+  'ngc-5846-group': 'virgo-supercluster',
+  'virgo-supercluster': 'laniakea',
+  'pavo-indus': 'laniakea',
+};
+
+/**
+ * The structure scales, innermost first, with the structure each is the view of (its anchor): the
+ * Virgo scale shows the Virgo Supercluster's members, the Laniakea scale Laniakea's. The Local Sheet
+ * and the Cosmic web have no structure of their own.
  */
 const SCALES = [
   { scale: 'local-sheet', anchor: null },
@@ -252,10 +270,8 @@ export async function getStructureEntity(
     seen.add(r.href);
     return [r];
   };
-  // The structure a scale is the view of, and what is in it.
-  const partOf = own.flatMap((s) =>
-    s.anchor && s.anchor !== id ? unseen(structure(s.anchor, name(nameOf(scales, s.anchor)))) : [],
-  );
+  const whole = Object.hasOwn(PART_OF, id) ? PART_OF[id] : undefined;
+  const partOf = whole ? unseen(structure(whole, name(nameOf(scales, whole)))) : [];
   const viewOf = scales.find((s) => s.anchor === id);
   const members =
     id === 'local-group'

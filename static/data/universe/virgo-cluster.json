@@ -61,7 +61,7 @@
           "source": "Lee and Jang 2013, distance moduli 30.12 (M66) and 30.15 (M96) in the Leo I group",
           "bibcode": null,
           "record_url": "https://arxiv.org/abs/1306.2306",
-          "note": "moduli 30.12 and 30.15 are 10.6 and 10.7 Mpc (conversion by the batch reviewer)"
+          "note": "Moduli 30.12 and 30.15 are 10.6 and 10.7 Mpc (converted from the distance moduli); the value shown is 10.7 Mpc"
         }
       }
     },
@@ -78,7 +78,7 @@
       "catalogue": {
         "dist_mpc": {
           "value": 18.6,
-          "source": "Trentham, Tully and Verheijen 2001, Ursa Major cloud, 18.6 Mpc",
+          "source": "Trentham et al. 2001, Ursa Major cloud, 18.6 Mpc",
           "bibcode": null,
           "record_url": "https://arxiv.org/abs/astro-ph/0103039",
           "note": "Tully and Verheijen 1997 adopted 15.5 Mpc"

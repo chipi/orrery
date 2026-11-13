@@ -7,6 +7,8 @@
   import { cardChain, goBackCard, isCardUrl } from '$lib/card-chain.svelte';
   import { audio } from '$lib/audio-state.svelte';
   import Chip from './Chip.svelte';
+  import PanelActions from './PanelActions.svelte';
+  import { providePanelShare } from './panel-share.svelte';
 
   type Props = {
     open: boolean;
@@ -79,6 +81,8 @@
     heading,
     children,
   }: Props = $props();
+  // Share is drawn in the action row (PanelActions), or in a row of its own when the host has none.
+  const shareCtx = providePanelShare(() => onShare);
 
   let panelEl: HTMLElement | undefined = $state();
 
@@ -210,11 +214,6 @@
             data-audio-stage="panel-back">←</Chip
           >
         {/if}
-        {#if onShare}
-          <Chip kind="action" onclick={onShare} aria-haspopup="dialog" data-testid="open-card-btn"
-            >{m.panel_share()}</Chip
-          >
-        {/if}
         <Chip
           kind="action"
           class="panel-close ui-chip--close"
@@ -227,6 +226,7 @@
       <div class="panel-heading">{@render heading?.()}</div>
     </div>
     <div class="content" bind:this={contentEl}>
+      {#if onShare && shareCtx.rows === 0}<PanelActions own />{/if}
       {@render children?.()}
     </div>
   </aside>
@@ -335,6 +335,8 @@
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;
     column-gap: 8px;
+    /* The first line is as tall as the badges (24 px): a gap keeps the name off it. */
+    row-gap: 6px;
     align-items: center;
     padding: 0 18px 10px;
     background: var(--color-panel-bg);
@@ -349,9 +351,43 @@
   .panel-actions-line {
     grid-column: 2;
     grid-row: 1;
+    align-self: start;
     display: flex;
     align-items: center;
     gap: 6px;
+  }
+  /* Operator 2026-11-13: only × (and ← after a card link) shares the first line with the badges,
+     drawn at the badges' 24 px and aligned with their first row; Share is in the action row. On
+     touch the tap area stays 44 px through an invisible extension, the gap wide enough that two
+     extensions never overlap. */
+  .panel-actions-line :global(.ui-chip) {
+    position: relative;
+    block-size: 24px;
+    min-block-size: 24px;
+    min-inline-size: 24px;
+    padding-inline: 8px;
+  }
+  .panel-actions-line :global(.ui-chip--close),
+  .panel-actions-line :global(.panel-back) {
+    inline-size: 24px;
+    padding-inline: 0;
+    font-size: 16px;
+  }
+  @media not ((hover: hover) and (pointer: fine)) {
+    .panel-head {
+      padding-top: 10px;
+    }
+    .panel-actions-line {
+      gap: 20px;
+    }
+    .panel-actions-line :global(.ui-chip)::before {
+      content: '';
+      position: absolute;
+      inset: -10px;
+    }
+  }
+  .panel-head {
+    align-items: start;
   }
   .panel-eyebrow {
     grid-column: 1;

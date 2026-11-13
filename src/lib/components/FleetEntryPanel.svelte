@@ -354,15 +354,15 @@
       {/if}
     </div>
 
-    {#if entry.explorer_route}
-      <PanelActions>
+    <PanelActions>
+      {#if entry.explorer_route}
         <Chip
           kind="link"
           href={localHref(`${entry.explorer_route}?id=${entry.id}`)}
           data-sveltekit-preload-data="hover">{m.fleet_open_explorer({ name: entry.name })}</Chip
         >
-      </PanelActions>
-    {/if}
+      {/if}
+    </PanelActions>
 
     {#if hasGallery}
       <PanelHeroImage

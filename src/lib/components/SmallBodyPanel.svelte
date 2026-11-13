@@ -200,14 +200,14 @@
   {#if body}
     <!-- The one entity action: Plan mission, for the bodies /plan lists (Pluto lost the planet
          panel's chip when it moved here). Known at first paint, so the row never shifts the hero.
-         Share is in the Panel bar. -->
-    {#if isPlanDestination(body.id)}
-      <PanelActions>
+         Share is the row's last chip (PanelActions). -->
+    <PanelActions>
+      {#if isPlanDestination(body.id)}
         <Chip kind="link" href={localHref(`/plan?dest=${body.id}`)} data-testid="plan-mission-chip"
           >{m.panel_action_plan()}</Chip
         >
-      </PanelActions>
-    {/if}
+      {/if}
+    </PanelActions>
 
     {#if gallery.length > 0}
       <PanelHeroImage

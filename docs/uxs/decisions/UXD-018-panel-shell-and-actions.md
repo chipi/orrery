@@ -75,6 +75,13 @@ gone on touch too.
 - **Decision**: the agency badge and the status chip have the same outer size (the badge takes the status chip's 1 px border, in its own colour); the close chip is a square as tall as Share (30 px fine pointer, 44 px touch) with the × drawn at 18 / 22 px; badges, status, Share and × sit on one centre line. The close chip is one style everywhere a small chip closes something: the panel, the INDEX and the surface index (`.ui-chip--close` in `chip.css`). The operator then extended it to every close (2026-11-12): dialogs, overlays, drawers and banners use the same chip (list in UXD-014); each keeps only its own placement.
 - **Verification**: `tests/e2e/panel-shell.spec.ts` ("header sizes"): badge and status the same height, × square and as tall as Share, all on one centre line (±1 px), on a mission and a lander panel.
 
+## Amendment 2026-11-13 — × alone on the badge line, Share in the action row (operator)
+
+- **Why**: "the location of Share and × is not good and makes a problem when the line is overcrowded"; the 30 / 44 px chips beside 24 px badges did not line up with them, and on a panel with several badges (Cassini: NASA / ESA / ASI, FLOWN, PARTIAL DATA) the badges wrapped and the actions sat between two lines.
+- **Decision** (the operator's pick of three placements, and "badge height 24 px" over the chip height): the first line holds the badges and, at the inline end, only × (and ← after a card link), drawn at the badges' 24 px and aligned with their first row. Share is the last chip of the action row (`PanelActions`), so a row holds at most three host chips and Share. On touch the × keeps a 44 px tap area through an invisible extension (the gap between two such controls is 20 px, so extensions never overlap). This replaces the "header sizes" amendment's × as tall as Share; the badge and status sizes stay.
+- **Mechanism**: `Panel` provides its `onShare` through a context (`panel-share.svelte.ts`); every `PanelActions` draws it last; a host with no action still mounts `PanelActions` (its chips conditional inside), and an Earth object, which has no row, gets one from `Panel` holding Share alone. The other closes (dialogs, INDEX, overlays) keep `.ui-chip--close` at the chip size.
+- **Verification**: `tests/e2e/panel-shell.spec.ts` (× 24 × 24 and on the badges' centre line, its 44 px tap area on touch, Share in the action row and never in the header, Share opens the card).
+
 ## Amendment 2026-11-12 — Overview three per row (operator)
 
 - **Why**: "Overview is too heavy with 4 rows of data at start". Two cells per row put eight values on four rows above the editorial text.

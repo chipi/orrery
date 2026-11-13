@@ -402,7 +402,7 @@
   }
   .grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 14px 16px;
   }
   /* .mission-list / .mission-link moved to src/lib/styles/panel-tabs.css

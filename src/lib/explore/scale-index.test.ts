@@ -6,6 +6,7 @@ import {
   SCALE_FILTERS,
   buildScaleIndexRows,
   filterRows,
+  metaWords,
   groupBySection,
   type ScaleIndexRow,
   type ScaleIndexSource,
@@ -376,6 +377,17 @@ describe('filters', () => {
     const dwarfs = filterRows(rows['local-group'], 'dwarf-galaxy', '');
     expect(dwarfs.length).toBe(17 + 2 + 9);
     expect(filterRows(rows['local-group'], 'spiral', '')).toHaveLength(3);
+  });
+
+  it('search reads the words of a meta line, never its measurements', () => {
+    const solar = rows['solar-system'].map((r) => ({
+      ...r,
+      meta: r.id === 'io' ? 'Jupiter · 3,643 km' : r.id === 'mars' ? '1.52 AU · 6,779 km' : r.meta,
+    }));
+    expect(filterRows(solar, null, 'jup').map((r) => r.id)).toContain('io');
+    expect(filterRows(solar, null, 'km').map((r) => r.id)).not.toContain('io');
+    expect(filterRows(solar, null, '6,779')).toEqual([]);
+    expect(metaWords('Jupiter · 3,643 km')).toBe('Jupiter');
   });
 
   it('search matches the name and the meta line, case-insensitively', () => {

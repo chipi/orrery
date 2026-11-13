@@ -68,12 +68,12 @@ I3, WM3). I3 (a colour per planet) was already built here; what changes:
   `mp_flight_unit_km`, the AU range through the orbit ruler's `fmtRegimeAU`):
   planet "1.52 AU · 6,779 km · 2 major moons" (the diameter from `PLANET_STATS`; "major" because the
   count is the moons the scene draws, not the real number; no moon part for Mercury and Venus);
-  dwarf, asteroid and Kuiper object "2.77 AU · 940 km" (three significant figures, diameter = 2 ×
-  `radius_km`); comet "17.8 AU" (no size); moon "Jupiter · 3,643 km"; belt "2.2–3.2 AU"; the Sun "Star"
+  dwarf, asteroid and Kuiper object "2.77 AU · 939 km" (three significant figures, diameter = 2 ×
+  `radius_km`; a diameter of 100,000 km or more is written in 万/만/लाख in zh, ja, ko and hi, as the ruler does); comet "17.8 AU" (no size); moon "Jupiter · 3,643 km"; belt "2.2–3.2 AU"; the Sun "Star"
   and ʻOumuamua "interstellar object" are the kind label. The prerendered link rows carry no meta.
 - **A two-line row on the solar-system INDEX only**: name over meta, a 26 px lead slot spanning both
   lines, still one `button.si-row`. The other seven scales keep one line (their meta is a 6 to 20
-  character kind label). The meta's `title` carries the full text for the ellipsis.
+  character kind label). The meta's `title` carries the full text for the ellipsis. The search box reads a meta's words (a moon's planet, "Star"), not its measurements, so "km" or "2" does not match every row.
 - **Chips**: Planets, Dwarfs, Asteroids (asteroids + Arrokoth), Moons, Comets (+ ʻOumuamua), five besides
   All. Every solar-system row is under a chip except the Sun and the two belts (All only); a unit test
   (`scale-index.test.ts`) names those three, so a new body cannot be silently unreachable. This closes a
@@ -85,7 +85,7 @@ I3, WM3). I3 (a colour per planet) was already built here; what changes:
   `colorFor(site)`, the legend swatch's colour, with a 1 px light ring (`rgba(255,255,255,0.35)`) so the
   dark navy and dark red read; an Earth object keeps its own object colour (`earth-objects.json` has
   agencies, not a nation). The orbit/land cue the old blue/red dot carried moves to the meta line as
-  words, `1976 · Active · On land` / `· In orbit`, the words of the Orbit and Land chips.
+  words, `1976 · ACTIVE · ON LAND` / `· IN ORBIT` (uppercase), the words of the Orbit and Land chips. With that third part the meta no longer fits beside the name and the agency badge, so the Worlds row is two lines as well: dot | name and badge over the meta, which wraps only after a " · " (two lines at most, `title` with the whole text; German "ABGESTÜRZT · AUF DER OBERFLÄCHE" needs the second line).
 
 ## Consequences
 

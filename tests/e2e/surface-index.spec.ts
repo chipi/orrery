@@ -71,8 +71,12 @@ test.describe('surface object index', () => {
         const cs = getComputedStyle(el);
         return { bg: cs.backgroundColor, ring: cs.boxShadow };
       });
-    const meta = (id: string) =>
-      list.locator(`.sidx-row[data-index-id="${id}"] .row-meta`).innerText();
+    // The meta wraps only after a " · ": no-break spaces inside each part, read here as spaces.
+    const meta = async (id: string) =>
+      (await list.locator(`.sidx-row[data-index-id="${id}"] .row-meta`).innerText()).replaceAll(
+        ' ',
+        ' ',
+      );
 
     await expect(list.locator('.sidx-row[data-index-id="change4"]')).toHaveCount(1);
     const china = await dot('change4');

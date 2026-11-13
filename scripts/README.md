@@ -37,7 +37,8 @@ cached under `~/.cache/orrery` (`CATALOGUE_REFRESH=1` refetches).
 | write the black holes' published mass and distance (cross-checked against SIMBAD) | `node scripts/refresh-black-hole-catalogue.mjs` |
 | refresh the Local Group distances (McConnachie 2012) in both Local Group files | `node scripts/refresh-local-group-catalogue.mjs` |
 | add the SIMBAD / Exoplanet Archive record links to the named stars (HYG values unchanged) / the exoplanet systems | `npx tsx scripts/build-named-stars.ts` / `npx tsx scripts/build-exoplanet-systems.ts` (the snapshot's `disc_year` of Proxima Cen d is 2025, the committed file's hand correction 2022: merge the record links, do not overwrite) |
-| which catalogue answers which value; the pure transforms | `lib/deep-sky-catalogues.mjs`, `lib/black-hole-catalogue.mjs`, `lib/local-group-catalogue.mjs`, `lib/catalogue-sources.mjs` (each with a `.test.ts`) |
+| which catalogue answers which value; the pure transforms | `lib/deep-sky-catalogues.mjs`, `lib/black-hole-catalogue.mjs`, `lib/local-group-catalogue.mjs`, `lib/structure-distance-catalogue.mjs`, `lib/catalogue-sources.mjs` (each with a `.test.ts`) |
+| write the source of each structure distance (Local Sheet, Virgo, Laniakea, Cosmic web; hand-reviewed, offline) | edit `lib/structure-distance-catalogue.mjs`, then `node scripts/apply-structure-distance-catalogue.mjs` (an id not in the table has no source link: the anchors and the values batch 6's review found unsourced) |
 | the gate | `npm run validate-data` (`findCatalogueProblems` in `validate-data-helpers.ts`) |
 
 ## Mission thumbnails — which tool, when

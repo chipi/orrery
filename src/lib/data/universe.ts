@@ -428,6 +428,8 @@ export interface LocalSheetMember {
   x: number;
   y: number;
   z: number;
+  /** Source of `dist_mpc` (#658); absent where the value is an anchor or no source was confirmed. */
+  catalogue?: { dist_mpc?: CatalogueEntry };
 }
 export interface LocalSheetData {
   extent_mpc: number;
@@ -457,6 +459,8 @@ export interface VirgoMember {
   x: number;
   y: number;
   z: number;
+  /** Source of `dist_mpc` (#658); absent where the value is an anchor or no source was confirmed. */
+  catalogue?: { dist_mpc?: CatalogueEntry };
 }
 export interface VirgoData {
   extent_mpc: number;
@@ -485,6 +489,8 @@ export interface LaniakeaMember {
   x: number;
   y: number;
   z: number;
+  /** Source of `dist_mpc` (#658); absent where the value is an anchor or no source was confirmed. */
+  catalogue?: { dist_mpc?: CatalogueEntry };
 }
 export interface LaniakeaData {
   extent_mpc: number;
@@ -513,6 +519,8 @@ export interface CosmicWebMember {
   x: number;
   y: number;
   z: number;
+  /** Source of `dist_mpc` (#658); absent where the value is an anchor or no source was confirmed. */
+  catalogue?: { dist_mpc?: CatalogueEntry };
 }
 export interface CosmicWebData {
   extent_mpc: number;

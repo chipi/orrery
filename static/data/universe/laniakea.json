@@ -1,6 +1,6 @@
 {
   "_note": "The Laniakea Supercluster (WS-5c, RFC-039) — the ~160 Mpc basin of attraction our Virgo Supercluster is one lobe of, defined by Tully et al. (2014) as the region where galaxy flows all stream toward a common gravitational focus, the Great Attractor. A SCHEMATIC, NOT TO SCALE (PRD-030 principle 2): the Virgo Supercluster sits at the origin as the 'you are here' anchor out on Laniakea's edge, the Great Attractor is the dominant central focus, and the other constituent superclusters/clusters are placed in an illustrative layout flattened toward the supergalactic plane (small z). This is a selected sample of Laniakea's named components, not the full roster. Distances (dist_mpc) + classifications are real; the xyz layout is hand-authored for legibility.",
-  "_provenance": "Distances + types: Tully et al. (2014) Nature 'The Laniakea supercluster of galaxies'; NASA/IPAC NED; Cosmicflows-2 velocity field. Schematic positions hand-authored for legibility. Science-reviewed 2026-08-08 (Great Attractor→68 Mpc, Centaurus→52 Mpc, Hydra-Centaurus→45 Mpc; Ophiuchus Supercluster added).",
+  "_provenance": "Distances + types: Tully et al. (2014) Nature 'The Laniakea supercluster of galaxies'; NASA/IPAC NED; Cosmicflows-2 velocity field. Schematic positions hand-authored for legibility. Science-reviewed 2026-08-08 (Great Attractor→68 Mpc, Centaurus→52 Mpc, Hydra-Centaurus→45 Mpc; Ophiuchus Supercluster added). Distance sources: `catalogue.dist_mpc` where a paper states the value (scripts/lib/structure-distance-catalogue.mjs, batch 06 review); a member with no entry is an anchor or its distance is unsourced.",
   "extent_mpc": 160,
   "members": [
     {
@@ -23,7 +23,16 @@
       "diam_mly": 90,
       "x": 45,
       "y": 2,
-      "z": 10
+      "z": 10,
+      "catalogue": {
+        "dist_mpc": {
+          "value": 68,
+          "source": "Woudt and Kraan-Korteweg 2000, Norma cluster redshift, cz = 4,844 km/s",
+          "bibcode": null,
+          "record_url": "https://arxiv.org/abs/astro-ph/0006126",
+          "note": "Norma cluster, cz = 4,844 km/s is about 69 Mpc at H0 = 70 (conversion by the batch reviewer)"
+        }
+      }
     },
     {
       "id": "hydra-centaurus",
@@ -45,7 +54,16 @@
       "diam_mly": 40,
       "x": 38,
       "y": 1,
-      "z": 6
+      "z": 6,
+      "catalogue": {
+        "dist_mpc": {
+          "value": 49,
+          "source": "Dupke and Bregman 2006, Centaurus cluster redshift, z = 0.0114",
+          "bibcode": null,
+          "record_url": "https://arxiv.org/abs/astro-ph/0512045",
+          "note": "cz = 3,418 km/s is 49 Mpc at H0 = 70 (conversion by the batch reviewer)"
+        }
+      }
     },
     {
       "id": "pavo-indus",
@@ -67,7 +85,16 @@
       "diam_mly": 60,
       "x": 62,
       "y": 2.5,
-      "z": -6
+      "z": -6,
+      "catalogue": {
+        "dist_mpc": {
+          "value": 127,
+          "source": "Durret et al. 2015, Ophiuchus supercluster redshift, z = 0.0296",
+          "bibcode": null,
+          "record_url": "https://arxiv.org/abs/1509.00986",
+          "note": "z = 0.0296 is 127 Mpc at H0 = 70 (conversion by the batch reviewer)"
+        }
+      }
     },
     {
       "id": "fornax-eridanus",

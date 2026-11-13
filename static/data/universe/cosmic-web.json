@@ -1,6 +1,6 @@
 {
   "_note": "The Cosmic Web (WS-5d, RFC-039) — the largest scale in the /explore ladder: the foam of superclusters, filaments, and great walls wrapped around vast voids that structures the nearby observable universe (out to roughly 1 gigaparsec / a few billion light-years). A HEAVILY SCHEMATIC MODEL, NOT TO SCALE and NOT A SURVEY (PRD-030 principle 2 + RFC-039 Gpc-honesty risk): Laniakea sits at the origin as the 'you are here' anchor, and the great named structures are placed in an illustrative layout. Distances (dist_mpc) are real order-of-magnitude values; the xyz layout is hand-authored to convey the web's topology (nodes + walls + voids), NOT true positions. Treat it as a diagram of an idea, not a map.",
-  "_provenance": "Structures + rough distances: NASA/IPAC NED; 2dF + SDSS redshift surveys (Sloan Great Wall, Gott et al. 2005); Boötes Void (Kirshner et al. 1981); Shapley Concentration; Horologium-Reticulum Supercluster. Schematic positions hand-authored. Science-review pending (WS-5d).",
+  "_provenance": "Structures + rough distances: NASA/IPAC NED; 2dF + SDSS redshift surveys (Sloan Great Wall, Gott et al. 2005); Boötes Void (Kirshner et al. 1981); Shapley Concentration; Horologium-Reticulum Supercluster. Schematic positions hand-authored. Science-review pending (WS-5d). Distance sources: `catalogue.dist_mpc` where a paper states the value (scripts/lib/structure-distance-catalogue.mjs, batch 06 review); a member with no entry is an anchor or its distance is unsourced.",
   "extent_mpc": 320,
   "members": [
     {
@@ -23,7 +23,16 @@
       "diam_mly": 350,
       "x": 24,
       "y": 2,
-      "z": 8
+      "z": 8,
+      "catalogue": {
+        "dist_mpc": {
+          "value": 200,
+          "source": "Proust et al. 2006, Shapley supercluster, main plane at 14,500 km/s",
+          "bibcode": null,
+          "record_url": "https://arxiv.org/abs/astro-ph/0509903",
+          "note": "14,500 km/s is 207 Mpc at H0 = 70 (conversion by the batch reviewer); the value here is 200 Mpc"
+        }
+      }
     },
     {
       "id": "perseus-pisces",
@@ -56,7 +65,16 @@
       "diam_mly": 1400,
       "x": 30,
       "y": -2,
-      "z": -18
+      "z": -18,
+      "catalogue": {
+        "dist_mpc": {
+          "value": 300,
+          "source": "Gott et al. 2005, Sloan Great Wall median distance 310 Mpc",
+          "bibcode": null,
+          "record_url": "https://arxiv.org/abs/astro-ph/0310571",
+          "note": "median distance 310 Mpc (z = 0.073); the value here is 300 Mpc"
+        }
+      }
     },
     {
       "id": "bootes-void",
@@ -78,7 +96,16 @@
       "diam_mly": 550,
       "x": 20,
       "y": -3,
-      "z": -26
+      "z": -26,
+      "catalogue": {
+        "dist_mpc": {
+          "value": 285,
+          "source": "Fleenor et al. 2005, Horologium-Reticulum supercluster redshifts, 17,000 to 22,500 km/s",
+          "bibcode": null,
+          "record_url": "https://arxiv.org/abs/astro-ph/0505361",
+          "note": "17,000 to 22,500 km/s is 243 to 321 Mpc at H0 = 70; the value here is the 285 Mpc of the mean"
+        }
+      }
     }
   ]
 }

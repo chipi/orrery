@@ -67,8 +67,8 @@ describe('getScaleIndexRows', () => {
       const twice =
         ['lmc', 'smc'].filter((id) => (galaxyPageIds() as string[]).includes(id)).length +
         ((structurePageIds() as string[]).includes('local-group') ? 1 : 0);
-      expect(linked.length - new Set(linked).size).toBe(7 + 4 + 1 + 1 + twice);
-      expect(CTX_ORDER.reduce((n, s) => n + rows[s].length, 0)).toBe(344);
+      expect(linked.length - new Set(linked).size).toBe(9 + 4 + 1 + 1 + twice);
+      expect(CTX_ORDER.reduce((n, s) => n + rows[s].length, 0)).toBe(346);
     },
   );
 

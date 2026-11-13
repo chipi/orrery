@@ -94,6 +94,9 @@ export const DISTANCE_OVERRIDES = {
   'NGC 3324': {
     note: 'matched NGC_3324 by name (Hunt & Reffert 2023, 2419 pc); Cantat-Gaudin et al. 2020 gives 2389 pc (7,792 ly), a different fit that is not used here',
   },
+  'NGC 6752': {
+    note: 'table 4.12 kpc; per-cluster page 4.13 kpc',
+  },
   'NGC 2392': {
     note: 'method paral; SIMBAD lists other distances from 4,100 to 6,800 ly',
   },

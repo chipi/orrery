@@ -163,6 +163,8 @@ const NAME_OVERRIDE: Record<string, string> = {
   M11: 'Wild Duck Cluster',
   M17: 'Omega Nebula',
   M76: 'Little Dumbbell Nebula',
+  'NGC 104': '47 Tucanae', // OpenNGC: "47 Tuc Cluster"
+  'NGC 6752': 'NGC 6752', // OpenNGC has no common name
 };
 const CATEGORY_OVERRIDE: Record<string, Category> = {
   'Gum 29': 'star-cluster', // Westerlund 2: the text and caption treat it as a cluster

@@ -13,6 +13,8 @@ wrappers; markup pieces live next to it in `src/routes/explore/`.
   the chips of each scale and the search / section helpers (UXD-017). `outerPageOf` is the one resolver
   of the page an outer-scale row links (the deep-sky page of a twin, else `/explore/galaxies/<id>` or
   `/explore/structures/<id>`, ADR-096 item 18); the entity loaders reuse it for their Related lists.
+- `chip-fit.ts` — `fitChips`: which filter chips stay on one line beside All and which fold behind the
+  INDEX's FILTERS button (C6-F, UXD-017 amendment); pure, `ScaleIndex` measures the chip widths and passes them.
 - `outer-overlay.svelte.ts` — the fact and bio the six outer-scale panels show in place of the kind blurb
   (`outerOverlay`, one effect per panel; `overlayRequest` is what it asks for: only an id the page's
   `outerOverlays` lists, so no 404 before the text exists; a Local Group member that is a deep-sky

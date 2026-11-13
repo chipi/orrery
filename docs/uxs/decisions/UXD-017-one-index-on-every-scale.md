@@ -7,7 +7,7 @@
   (`docs/wip/2026-11-12-scale-index-brief.md`, "Decisions (operator, 2026-11-12)")
 - **Answers**: the brief's §5 questions 1 to 13; carries C6 of the UX feedback plan (kind filters, meta
   line, planet colour dots) for the solar system
-- **Amended by**: slice C6 (2026-11-13), below
+- **Amended by**: slice C6 and C6-F, folded filters (2026-11-13), below
 - **Superseded in part by**: [UXD-019](UXD-019-select-equals-focus.md) — a row now also takes the camera, and
   a member of an outer scale is a link (`?context=&pick=`); the rest of this decision stands
 - **Changes**: `src/lib/components/ScaleIndex.svelte` (new; replaces `StarIndex.svelte` and
@@ -86,6 +86,37 @@ I3, WM3). I3 (a colour per planet) was already built here; what changes:
   dark navy and dark red read; an Earth object keeps its own object colour (`earth-objects.json` has
   agencies, not a nation). The orbit/land cue the old blue/red dot carried moves to the meta line as
   words, `1976 · ACTIVE · ON LAND` / `· IN ORBIT` (uppercase), the words of the Orbit and Land chips. With that third part the meta no longer fits beside the name and the agency badge, so the Worlds row is two lines as well: dot | name and badge over the meta, which wraps only after a " · " (two lines at most, `title` with the whole text; German "ABGESTÜRZT · AUF DER OBERFLÄCHE" needs the second line).
+
+## Amendment 2026-11-13 — folded filters (C6-F)
+
+The operator, 2026-11-13, from a `/mars` landscape screenshot where the filter chips took 8 rows: "Folded
+filters" for the Worlds' INDEX and the same pattern on the solar-system INDEX.
+
+- **Worlds' INDEX** (`SurfaceIndexPanel`): the search line, then the domain chips (All, In orbit, On land) on
+  their own row, then the count with a **FILTERS** button beside it. The agency, era and status groups sit
+  behind that button, closed at the start, each with a small label (AGENCY, ERA, STATUS: `fleet_filter_agency`,
+  `card_stat_era`, `fleet_filter_status`). Opened, they show in place under the count line; folding does not
+  change the filter state; the button keeps the number of those three groups that are not on All while the fold
+  is closed.
+- **Solar-system INDEX** (and any scale whose chips would wrap past one line, in the reader's language: the
+  widths are measured, `chip-fit.ts`): All and the chips that fit one line stay; the rest sit behind the same
+  button. Planets and Moons are taken first, then the scale's own order, so at 296 px in English the line is All,
+  Planets, Dwarfs, Moons and the fold holds Asteroids and Comets; in German All, Planeten, Monde. When the active
+  chip is inside the fold the button shows `1`. The neighbourhood and the outer scales fold the same way: at 296
+  px only All and Notable objects (or Planets and Culture) fit, so their other chips are behind the button.
+- **One look** (one INDEX on every scale): `IndexFiltersToggle.svelte` is the button (the word is `filters_eyebrow`,
+  FILTERS in 14 locales, no new key; a chevron ▾ closed and ▴ open; `aria-expanded`, `aria-controls`), `.idx-*` in
+  `index-panel.css` the look, `chip-fit.ts` the pure fit. A folded chip is a normal radio chip: it filters, and
+  Tab reaches the button.
+- **Where the button sits.** Beside the count, not at the end of the chip row as drafted: at the 296 px content
+  width All, In orbit and On land are 222 px wide, which leaves 56 px, and the button is about 94 px. The same
+  place on both INDEXes.
+- **Short windows.** A landscape phone scrolls the Worlds' panel as a whole when the fold is open, as the solar
+  INDEX already did.
+- **The INDEX tab on a narrow window.** On `/explore` in a window 600 px wide or less with a mouse the detail panel
+  is as wide as the window and the tab (z 44) was drawn over its text; the tab now sits under the panel (z 25), as
+  the Worlds' tab already did (`SurfaceScene.svelte`). Older than C6: it dates from the first build of this INDEX
+  (`8684bced2e0`); on touch the panel is a bottom sheet and already covered the tab.
 
 ## Note 2026-11-13 — L45-T2: the lead slot holds a round photo
 

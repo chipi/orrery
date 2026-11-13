@@ -1,14 +1,14 @@
 {
   "jwst-carina": {
     "title": "Acantilados Cósmicos",
-    "caption": "El borde de una guardería estelar en la Nebulosa de Carina (NGC 3324), esculpido por estrellas jóvenes.",
+    "caption": "El borde de una guardería estelar en la Nebulosa de la Quilla (NGC 3324), esculpido por estrellas jóvenes.",
     "subject": "Nebulosa",
     "type": "Región de formación estelar",
     "distance": "~7900 años luz",
     "taken": "Publicada el 12 de julio de 2022"
   },
   "jwst-southern-ring": {
-    "title": "Nebulosa Anillo Austral",
+    "title": "Nebulosa Anillo del Sur",
     "caption": "Una estrella moribunda (NGC 3132) que derrama capas de gas y polvo a lo largo de medio año luz.",
     "subject": "Nebulosa",
     "type": "Nebulosa planetaria",
@@ -65,7 +65,7 @@
   },
   "hst-mystic-mountain": {
     "title": "Montaña Mística",
-    "caption": "Un pilar de tres años luz en la Nebulosa de Carina, del 20 aniversario de Hubble.",
+    "caption": "Un pilar de tres años luz en la Nebulosa de la Quilla, del 20 aniversario de Hubble.",
     "subject": "Nebulosa",
     "type": "Pilar de formación estelar",
     "distance": "~7700 años luz",
@@ -80,7 +80,7 @@
     "taken": "2009"
   },
   "hst-antennae": {
-    "title": "Galaxias Antenas",
+    "title": "Galaxias Antennae",
     "caption": "Dos galaxias (NGC 4038/4039) en colisión, encendiendo miles de millones de nuevas estrellas.",
     "subject": "Galaxias",
     "type": "Galaxias en colisión",
@@ -104,7 +104,7 @@
     "taken": "2015 · 25 aniversario del Hubble"
   },
   "hst-cats-eye": {
-    "title": "Nebulosa del Ojo de Gato",
+    "title": "Nebulosa Ojo de Gato",
     "caption": "NGC 6543 — una de las nebulosas planetarias más intrincadas jamás observadas.",
     "subject": "Nebulosa",
     "type": "Nebulosa planetaria (NGC 6543)",
@@ -254,7 +254,7 @@
     "taken": "2006"
   },
   "hst-carina-pano": {
-    "title": "Nebulosa de Carina",
+    "title": "Nebulosa de la Quilla",
     "caption": "Un panorama de 50 años luz de ancho de una de las mayores fábricas estelares de la galaxia.",
     "subject": "Nebulosa",
     "type": "Región de formación estelar",

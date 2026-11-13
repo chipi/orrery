@@ -1,14 +1,14 @@
 {
   "jwst-carina": {
     "title": "Kosmische Klippen",
-    "caption": "Der Rand einer Sternenkinderstätte im Carina-Nebel (NGC 3324), vom Sternenwind junger Sterne modelliert.",
+    "caption": "Der Rand einer Sternenkinderstätte im Carinanebel (NGC 3324), vom Sternenwind junger Sterne modelliert.",
     "subject": "Nebel",
     "type": "Sternentstehungsregion",
     "distance": "~7.900 Lichtjahre",
     "taken": "Veröffentlicht am 12. Jul 2022"
   },
   "jwst-southern-ring": {
-    "title": "Süd-Ring-Nebel",
+    "title": "Südlicher Ringnebel",
     "caption": "Ein sterbender Stern (NGC 3132), der Gas- und Staubschalen über eine halbe Lichtjahr verteilt abwirft.",
     "subject": "Nebel",
     "type": "Planetarischer Nebel",
@@ -65,7 +65,7 @@
   },
   "hst-mystic-mountain": {
     "title": "Mystischer Berg",
-    "caption": "Eine drei Lichtjahre hohe Säule im Carina-Nebel aus Hubbles 20. Jahrestag.",
+    "caption": "Eine drei Lichtjahre hohe Säule im Carinanebel aus Hubbles 20. Jahrestag.",
     "subject": "Nebel",
     "type": "Sternentstehungssäule",
     "distance": "~7.700 Lichtjahre",
@@ -80,7 +80,7 @@
     "taken": "2009"
   },
   "hst-antennae": {
-    "title": "Antennae-Galaxien",
+    "title": "Antennen-Galaxien",
     "caption": "Zwei Galaxien (NGC 4038/4039) kollidieren miteinander und entzünden Milliarden neuer Sterne.",
     "subject": "Galaxien",
     "type": "Kollidierend Galaxien",
@@ -104,7 +104,7 @@
     "taken": "2015 · Hubble 25."
   },
   "hst-cats-eye": {
-    "title": "Katzenauge-Nebel",
+    "title": "Katzenaugennebel",
     "caption": "NGC 6543 — einer der kompliziertesten planetarischen Nebel, die je beobachtet wurden.",
     "subject": "Nebel",
     "type": "Planetarischer Nebel (NGC 6543)",
@@ -144,7 +144,7 @@
     "taken": "2003"
   },
   "hst-eskimo": {
-    "title": "Eskimo-Nebel",
+    "title": "Eskimonebel",
     "caption": "NGC 2392 — ein sonnenähnlicher Stern, umhüllt von Gasschalen, die er vor 10.000 Jahren abgestoßen hat.",
     "subject": "Nebel",
     "type": "Planetarischer Nebel (NGC 2392)",
@@ -254,7 +254,7 @@
     "taken": "2006"
   },
   "hst-carina-pano": {
-    "title": "Carina-Nebel",
+    "title": "Carinanebel",
     "caption": "Ein 50 Lichtjahre breites Panorama einer der größten Sternfabriken in der Galaxie.",
     "subject": "Nebel",
     "type": "Sternentstehungsgebiet",
@@ -270,7 +270,7 @@
     "taken": "Veröffentlicht 2023"
   },
   "hst-cone-nebula": {
-    "title": "Kegel-Nebel",
+    "title": "Konusnebel",
     "caption": "Ein sieben Lichtjahre hohes Gasgebilde aus kaltem Gas in einer fernen Sternkinderstube.",
     "subject": "Nebel",
     "type": "Emissionsnebel",

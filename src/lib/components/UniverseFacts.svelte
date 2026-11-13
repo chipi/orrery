@@ -66,6 +66,8 @@
     letter-spacing: 2px;
     color: var(--color-text-label);
     margin-bottom: 3px;
+    /* A long word (Schwarzschild) must not pass the cell edge at three columns. */
+    overflow-wrap: anywhere;
   }
   .cell-value {
     font-family: var(--font-mono, 'Space Mono', monospace);

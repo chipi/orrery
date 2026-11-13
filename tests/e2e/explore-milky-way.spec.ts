@@ -31,7 +31,7 @@ test.describe('/explore — Milky Way leveling (#451)', () => {
     await expect(page.getByText('Satellite galaxy', { exact: false }).first()).toBeVisible({
       timeout: 15_000,
     });
-    await expect(page.getByText('163,000 ly', { exact: false }).first()).toBeVisible();
+    await expect(page.getByText('161,741 ly', { exact: false }).first()).toBeVisible();
   });
 
   test('the MW shell shows a distance reference + the science lens chips', async ({ page }) => {

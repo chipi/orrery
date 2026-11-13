@@ -6,6 +6,17 @@ vi.mock('$app/state', () => ({ page: { url: new URL('http://localhost/explore') 
 vi.mock('$app/environment', () => ({ browser: false }));
 vi.mock('$app/paths', () => ({ base: '' }));
 
+// The shell, the lightbox, the gallery grid and the why-popover are tested on their own; stubbing
+// them keeps this test on the body's own markup (and out of their coverage).
+type Payload = unknown;
+type Props = { children?: (p: Payload) => void };
+vi.mock('./Panel.svelte', () => ({
+  default: (payload: Payload, props: Props) => props.children?.(payload),
+}));
+vi.mock('./PanelLightbox.svelte', () => ({ default: () => {} }));
+vi.mock('./PanelGalleryGrid.svelte', () => ({ default: () => {} }));
+vi.mock('./WhyPopover.svelte', () => ({ default: () => {} }));
+
 import UniversePanelBody from './UniversePanelBody.svelte';
 
 const base = { open: true, onClose: () => {}, title: 'Large Magellanic Cloud', entityId: 'lmc' };

@@ -624,7 +624,12 @@ test.describe('/explore outer scales: a member takes the camera, Reset gives it 
     await page.waitForTimeout(2_500); // the cross-out dolly
     const panel = await openIndex(page, 'virgo');
     await indexRow(panel, 'm87-star').click();
-    await expect(panels(page).filter({ hasText: /M87/ }).first()).toBeVisible({ timeout: 45_000 });
+    // The Virgo Cluster panel stays mounted, covered, under it and its text now names M87 too.
+    await expect(
+      page.locator('aside.panel:visible').filter({ hasText: /M87/ }).first(),
+    ).toBeVisible({
+      timeout: 45_000,
+    });
     await settled(page);
     expect(dist((await cam(page)).origin, [0, 0, 0]), 'the camera took the pin').toBeGreaterThan(1);
     await page

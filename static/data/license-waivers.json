@@ -1,4 +1,79 @@
 {
   "schema_version": 1,
-  "waivers": []
+  "waivers": [],
+  "artistic_impressions": [],
+  "not_concept": [
+    {
+      "scope": "/images/fleet-galleries/tiangong-2/02",
+      "justification": "Photograph of a scale model of Tiangong-2 with Tianzhou-1; only the Commons file name says 'rendering'.",
+      "reviewer": "chipi",
+      "decided_at": "2026-11-13"
+    },
+    {
+      "scope": "/images/fleet-galleries/progress-m/01",
+      "justification": "Photograph of a Soyuz launch carrying a Progress ship; the provenance title (Progress-M_drawing.svg) names the wrong file and the true source is not yet identified (image-find-source found no match, d=17).",
+      "reviewer": "chipi",
+      "decided_at": "2026-11-13"
+    },
+    {
+      "scope": "/images/fleet-galleries/soyuz/04",
+      "justification": "Photograph of a museum model of the Soyuz launch vehicle; 'painted' in the alt text describes the model's paint.",
+      "reviewer": "chipi",
+      "decided_at": "2026-11-13"
+    },
+    {
+      "scope": "/images/fleet-galleries/vega-1/03",
+      "justification": "Photograph of a museum display model of the Vega balloon probe; 'painted' in the alt text describes the display backdrop.",
+      "reviewer": "chipi",
+      "decided_at": "2026-11-13"
+    },
+    {
+      "scope": "/images/fleet-galleries/vega-2/02",
+      "justification": "Photograph of a museum display model of the Vega balloon probe; 'painted' in the alt text describes the display backdrop.",
+      "reviewer": "chipi",
+      "decided_at": "2026-11-13"
+    },
+    {
+      "scope": "/images/fleet-galleries/pioneer-11/03",
+      "justification": "Print of the Pioneer plaque; 'diagram' in the alt text describes the solar system engraved on it.",
+      "reviewer": "chipi",
+      "decided_at": "2026-11-13"
+    },
+    {
+      "scope": "/images/missions/pioneer-10/02",
+      "justification": "Photograph of the Pioneer plaque; 'diagram' in the alt text describes the solar system engraved on it.",
+      "reviewer": "chipi",
+      "decided_at": "2026-11-13"
+    },
+    {
+      "scope": "/images/tiangong-modules/tianzhou/01",
+      "justification": "Photograph of the interior of a Tianzhou cargo hold; only the Commons file name says 'diagram'.",
+      "reviewer": "chipi",
+      "decided_at": "2026-11-13"
+    },
+    {
+      "scope": "/images/mars-sites/viking1-orbiter/03",
+      "justification": "Image assembled from Viking orbiter pictures; 'painted' in the alt text describes the mosaic, not an artist's painting.",
+      "reviewer": "chipi",
+      "decided_at": "2026-11-13"
+    },
+    {
+      "scope": "/images/fleet-galleries/magellan/02",
+      "justification": "Perspective view computed from Magellan radar altimetry and imagery of Venus (real data), not an artist's concept.",
+      "reviewer": "chipi",
+      "decided_at": "2026-11-13"
+    },
+    {
+      "scope": "/images/fleet-galleries/magellan/04",
+      "justification": "Perspective view computed from Magellan radar altimetry and imagery of Venus (real data), not an artist's concept.",
+      "reviewer": "chipi",
+      "decided_at": "2026-11-13"
+    },
+    {
+      "scope": "/images/fleet-galleries/magellan/05",
+      "justification": "Perspective view computed from Magellan radar altimetry and imagery of Venus (real data), not an artist's concept.",
+      "reviewer": "chipi",
+      "decided_at": "2026-11-13"
+    }
+  ]
 }

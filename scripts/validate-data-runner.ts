@@ -127,6 +127,15 @@ const TASKS: Task[] = [
     args: ['scripts/validate-hero-coverage.ts'],
     groups: ['image'],
   },
+  // Flown-vehicle galleries: a concept, illustration or computer graphic says so in the provenance
+  // title and the alt text (Rule B), and a hero is a photograph unless the vehicle is PLANNED or the
+  // slot is waived (Rule A; today's concept heroes are frozen in hero-concept-baseline.json). ADR-053.
+  {
+    name: 'validate-image-depiction',
+    cmd: 'tsx',
+    args: ['scripts/validate-image-depiction.ts'],
+    groups: ['image'],
+  },
   {
     name: 'validate-image-dupes',
     cmd: 'tsx',

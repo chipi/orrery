@@ -385,8 +385,10 @@
   }
   /* An inline row shares the bottom line with the route's strip (/explore: the time dock is most of
      the width left beside the drawer, and the scale strip and level card fill the rest), so there
-     is no room to narrow it: it keeps its place and sits under the drawer while one is open, as
-     the INDEX handle does on a narrow window. Closing the panel brings it back. */
+     is no room to narrow it. Its part left of the drawer would still take a tap and open a card
+     under the drawer, so the route hides the row while a drawer is open (HudControls
+     `drawerUnderPanel`, from the page's panel width; a `:has()` rule here was not re-evaluated in
+     time under reduced motion); closing the panel brings it back. */
   :global(html[data-touch][data-orientation='landscape']:has(aside.panel:not(.covered)))
     .mdg.bottom-inline {
     right: 8px;

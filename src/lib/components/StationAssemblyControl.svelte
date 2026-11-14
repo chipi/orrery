@@ -290,6 +290,21 @@
     overflow: hidden;
     text-overflow: ellipsis;
   }
+  /* A landscape phone is ~290 px tall: sit the box just above the drawer tabs
+     and tighten it so it clears the top-left HUD chips (3D, RESET VIEW, SPIN)
+     instead of covering the play and reset buttons (UXD-031). */
+  @media (max-height: 480px) and (pointer: coarse) {
+    .assembly-overlay {
+      bottom: 3.5rem;
+      padding: 0.6rem 1.2rem 0.5rem;
+    }
+    .chip {
+      margin-top: 0.35rem;
+    }
+    .hint {
+      margin-top: 0.25rem;
+    }
+  }
   /* A phone reserves the second row, so the sentence stays whole and the box
      never changes height (UXD-031). */
   @media (max-width: 480px) {

@@ -598,6 +598,7 @@ Scene code cannot read CSS variables: the highlight blue is the literal `RING_BL
 | Control row | Play, reset, scrub, date (`#ffd57a`, `5.5rem` min at 480px and below, else `6.2rem`), close; chips 30px fine pointer, 44px touch. The scrub input has `min-width: 0` so the date stays inside the box on a phone. |
 | Chip block | Two rows, each `1.3em` high, one line, `white-space: nowrap`, ellipsis: row 1 the glyph and the phase name (bold; a dotted-underline button where the phase has a module panel), row 2 "launcher · date" indented under the name (the date `flex: none`, the launcher cut). The empty state uses the same two rows. The whole phase is in the block's `title` and in a visually hidden `aria-live="polite"` element. |
 | Hint | `0.74rem`, one row with an ellipsis; at 480px and below two rows reserved (`2.5em`, clamped at two). |
+| Landscape phone | Touch and 480px tall or less: `bottom: 3.5rem`, padding `0.6rem 1.2rem 0.5rem`, tighter chip and hint margins (about 124px tall), so the box clears the top-left HUD chips and the drawer tabs. |
 
 A new phase string never changes the box height; do not let a row wrap.
 

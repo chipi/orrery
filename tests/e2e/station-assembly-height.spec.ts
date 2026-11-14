@@ -166,6 +166,56 @@ test.describe('a 360 px phone', () => {
   }
 });
 
+for (const station of STATIONS) {
+  test(`${station.id}: on a landscape phone the player covers no HUD chip and no control of its own is covered`, async ({
+    page,
+    isMobile,
+  }, testInfo) => {
+    test.skip(testInfo.project.name !== 'mobile-landscape-chromium', 'landscape phone only');
+    await page.goto(`/${station.id}`, { waitUntil: 'networkidle' });
+    await openAssembly(page, station.id, isMobile);
+    const r = await page.evaluate(() => {
+      const rect = (el: Element) => el.getBoundingClientRect();
+      const box = rect(document.querySelector('[data-testid="station-assembly"]')!);
+      const onTop = (el: Element) => {
+        const b = rect(el);
+        const hit = document.elementFromPoint(b.left + b.width / 2, b.top + b.height / 2);
+        return el === hit || el.contains(hit);
+      };
+      const chips = Array.from(document.querySelectorAll('.hud-top-mobile button')).filter(
+        (el) => rect(el).width > 0,
+      );
+      const own = ['assembly-play', 'assembly-reset', 'assembly-scrub', 'assembly-date'].map((id) =>
+        document.querySelector(`[data-testid="${id}"]`)!,
+      );
+      const mdg = document.querySelector('.mdg')?.getBoundingClientRect();
+      return {
+        n: chips.length,
+        chips: chips.map((el) => {
+          const b = rect(el);
+          const disjoint =
+            b.right <= box.left ||
+            b.left >= box.right ||
+            b.bottom <= box.top ||
+            b.top >= box.bottom;
+          return { t: el.textContent?.trim(), disjoint, onTop: onTop(el) };
+        }),
+        own: own.map(onTop),
+        boxBottom: box.bottom,
+        mdgTop: mdg ? mdg.top : null,
+        boxTop: box.top,
+      };
+    });
+    expect(r.n).toBeGreaterThanOrEqual(3);
+    for (const c of r.chips) {
+      expect(c.disjoint, `${c.t} is clear of the player`).toBe(true);
+      expect(c.onTop, `${c.t} is on top at its centre`).toBe(true);
+    }
+    expect(r.own).toEqual([true, true, true, true]);
+    if (r.mdgTop !== null) expect(r.boxBottom).toBeLessThanOrEqual(r.mdgTop);
+  });
+}
+
 test('the chip title and the live region carry the whole phase', async ({ page, isMobile }) => {
   await page.goto('/iss', { waitUntil: 'networkidle' });
   await openAssembly(page, 'iss', isMobile);

@@ -18,6 +18,8 @@ The player's box grew upward with the wrapped text of its "launched on" line. On
 3. **Both stations.** One component, so `/tiangong` follows `/iss`.
 4. **The control row on a phone.** The scrub input may shrink (`min-width: 0`) and the date readout is `5.5rem` at 480 px and below, so the date stays inside the box at 360 and 393 px (it ran past the box edge before).
 
+5. **A landscape phone (touch, 480 px tall or less).** The box sits at `bottom: 3.5rem` with tighter padding (about 124 px tall) so it fits between the top-left HUD chips (3D, RESET VIEW, SPIN) and the drawer tabs. Measured at 802 x 293: before, the box ran from y 68 to 205 and covered the chips' row (bottom 104), hiding the play and reset buttons behind RESET VIEW and SPIN; after, from y 113 to 237, 9 px under the chips and 8 px above the drawer (top 245).
+
 ## Consequences
 
 - The box height does not depend on the phase, the width or the locale's phase text; the controls sit at the same y in every phase.
@@ -27,7 +29,7 @@ The player's box grew upward with the wrapped text of its "launched on" line. On
 ## Not done
 
 - No data edit (the dock and truss strings stay English constants in every locale; not touched).
-- In landscape on a phone (851 x 393) the box still overlaps the top-left HUD chips (3D, RESET VIEW, SPIN) when it is at its tallest, as before; no layout outside the player was changed.
+- No layout outside the player was changed. The landscape fit (decision 5) is by media query on height; a landscape window shorter than about 290 px was not measured.
 - The live region's addition is small and was not asked for in the plan; a reviewer may cut it.
 
 ## Verification

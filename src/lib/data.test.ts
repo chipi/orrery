@@ -1548,9 +1548,16 @@ describe('Venus sites', () => {
     expect(ru.map((s) => s.lat)).toEqual(en.map((s) => s.lat));
   });
 
-  it('getVenusSiteGallery returns an empty array (no galleries yet)', async () => {
-    const urls = await getVenusSiteGallery();
-    expect(urls).toEqual([]);
+  it('getVenusSiteGallery returns the mission gallery of each Venus site (VE1)', async () => {
+    // The hero order needs the browser-side override cache: see data/galleries.test.ts.
+    const counts = { 'venera-13': 3, 'vega-1': 4, 'vega-2': 3 };
+    for (const [id, n] of Object.entries(counts)) {
+      const urls = await getVenusSiteGallery(id);
+      expect(urls.length, id).toBe(n);
+      for (const u of urls)
+        expect(u, id).toMatch(new RegExp(`/images/missions/${id}/0\\d\\.webp$`));
+    }
+    expect(await getVenusSiteGallery('no-such-site')).toEqual([]);
   });
 });
 

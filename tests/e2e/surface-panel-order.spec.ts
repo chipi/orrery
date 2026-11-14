@@ -61,10 +61,10 @@ for (const w of WORLDS) {
       const hero = await heroBeforeTabs(page);
       if (hero !== true) wrong.push(`${id}:${hero}`);
     }
-    // Venus has no site gallery until slice D3: its guard is armed but has nothing to judge yet.
-    if (w.route !== '/venus') {
-      expect(withGallery.length, 'sites with a gallery were checked').toBeGreaterThan(20);
-    }
+    // Venus has 3 sites (D3 gave each a gallery), the Moon and Mars about 28.
+    expect(withGallery.length, 'sites with a gallery were checked').toBeGreaterThanOrEqual(
+      w.route === '/venus' ? 3 : 20,
+    );
     expect(wrong, 'sites whose hero is missing or after the tab row').toEqual([]);
   });
 }

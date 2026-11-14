@@ -11,6 +11,7 @@ Don't reinvent this on the route — extend it here:
 - Three.js scene + camera + renderer + outline composer
 - Planet sphere mesh + texture loading + the surrounding star field
 - Surface markers (lander glyphs per site), label sprites, selection halos, marker placement via `placeOnSphereTangent`
+- The site gallery ladder — `getSurfaceSiteGallery` (`src/lib/data/galleries.ts`: own manifest, mission by `mission_id` then id, fleet id variants, hero override), the one function behind `getMoonSiteGallery`, `getMarsSiteGallery` and `getVenusSiteGallery`; a route passes its loader as `loadGallery`, it does not copy the ladder
 - Hotspot LOD dispatcher entries (Tier 0/1/2/3 wiring per site, the per-frame `updateHotspotLOD` call, the selected-site clamp, the cross-fade ramp)
 - Orbital rings + dots (parented to scene, log-scaled from `max(altitude_km)` in the loaded sites)
 - The per-frame animation loop (camera smoothing, drag inertia, smooth zoom lerp, fly-in tween, auto-spin gating, hover outline, scale-pulse on selected, Tier-2 opacity ramp at `camR 33 → 30.5`)

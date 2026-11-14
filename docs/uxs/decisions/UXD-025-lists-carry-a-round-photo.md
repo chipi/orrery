@@ -78,8 +78,8 @@ map, loading the 512 px crop (30 to 56 KB) where the pipeline already has a 192 
    objects, 42 launch pads). A site without a thumb keeps the C6 dot (nation colour, light ring), centred.
 3. **Which file.** A site shows the picture of the folder its panel gallery resolves to, not of a folder named
    like it. The manifest gained `sites` (`moon`, `mars`, `venus`, `earth-objects`): per site id the
-   `<dir>/<folder>/<slot>` of the thumb. `build-entity-thumbs.ts` runs the loaders' ladder (`getMoonSiteGallery`,
-   `getMarsSiteGallery`, `getEarthObjectGallery`: own folder, mission by `mission_id`, mission by id, fleet id
+   `<dir>/<folder>/<slot>` of the thumb. `build-entity-thumbs.ts` runs the loaders' ladder (`getSurfaceSiteGallery`, the one ladder behind `getMoonSiteGallery`,
+   `getMarsSiteGallery` and `getVenusSiteGallery` since [UXD-036](UXD-036-venus-galleries-use-the-worlds-ladder.md), and `getEarthObjectGallery`: own folder, mission by `mission_id`, mission by id, fleet id
    variants (`gallery-ids.ts`, extracted from `galleries.ts` so both use one list of variants); a venus site
    skips the own folder), and the slot is what `applyHeroOverride` makes first: the folder's own hero override
    (missions, fleet), then the site surface's. So Apollo 16 on `/moon` shows `missions/apollo16/06`. An Earth launch

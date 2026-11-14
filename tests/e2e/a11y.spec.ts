@@ -80,6 +80,7 @@ const GATED_ROUTES: { path: string; label: string; exclude?: string }[] = [
   { path: '/science/history/apollo-11-1969', label: 'science history page' },
   { path: '/c/mission/apollo11', label: 'share card' },
   { path: '/moon?site=lro', label: 'moon orbiter selected' },
+  { path: '/venus?site=vega-1', label: 'venus site selected, hero and gallery' },
 ];
 
 test.describe('a11y gate (ADR-025 — 0 critical or serious violations)', () => {

@@ -1,1 +1,0 @@
-import"./CdRpCpgE.js";import{t as e}from"./Culej2Ni.js";var t=`${e}/images/og-default.jpg`;function n(e){return e.replace(/\s*[·|—–-]\s*Orrery\s*$/u,``)}export{n,t};

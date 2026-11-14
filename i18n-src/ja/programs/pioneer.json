@@ -86,5 +86,21 @@
   "link_labels": {
     "/explore": "3D エクスプローラーで見る木星",
     "/programs/voyager": "Voyager — Pioneer が下見したグランドツアー"
+  },
+  "roster": {
+    "mission:pioneer-10": {
+      "note": "小惑星帯を横断して木星に到達した初の宇宙船であり、太陽系を完全に脱出する針路に乗せられた初の宇宙船"
+    },
+    "mission:pioneer-11": {
+      "note": "木星をフライバイした後、土星に到達した初の宇宙船となった——Voyagerが後に辿る経路と環の危険を偵察した"
+    },
+    "The Pioneer plaque": {
+      "note": "各機に取り付けられた小さな金色のアルマイト加工の銘板で、男性、女性、そして地球の位置を描く——星々に向けた人類初の物理的メッセージ",
+      "name": "Pioneer銘板"
+    },
+    "Pioneer Venus": {
+      "note": "別の2機のPioneerが1978年に金星に到達した——雲を透かしてレーダーで惑星を地図化した周回機と、押し潰すような大気へ突入したプローブ",
+      "name": "Pioneer Venus"
+    }
   }
 }

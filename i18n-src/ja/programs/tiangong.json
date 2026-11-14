@@ -96,5 +96,34 @@
     "/fleet?id=tiangong": "フリート — Shenzhou、Tianzhou と Long March ファミリー",
     "/programs/iss": "ISS — Tiangong が締め出されたステーション",
     "/earth?site=tiangong": "頭上の Tiangong"
+  },
+  "roster": {
+    "module:tianhe": {
+      "note": "コアモジュール——居住区、生命維持装置、推進系、そしてステーションの制御センター。最初に打ち上げられた部分であり、ステーションの心臓部。"
+    },
+    "module:chinarm": {
+      "note": "Tianheに取り付けられたステーションのロボットアームで、モジュールの移動と宇宙遊泳の支援に使われる。"
+    },
+    "module:wentian": {
+      "note": "最初の実験モジュール——予備の制御センターと、宇宙遊泳用のエアロックを備える。"
+    },
+    "module:mengtian": {
+      "note": "2つ目の実験モジュールで、T字型のステーションを完成させる。微小重力科学のための施設。"
+    },
+    "mission:shenzhou-1": {
+      "note": "最初の無人Shenzhou試験飛行——中国が自前のクルーカプセルを飛ばせることの証明"
+    },
+    "Shenzhou 5": {
+      "note": "楊利偉が軌道に出た初の中国人宇宙飛行士となる——中国は自国のロケットで人間を打ち上げた3番目の国として、米国とソ連に並ぶ",
+      "name": "Shenzhou 5"
+    },
+    "Shenzhou 9 → Tiangong-1": {
+      "note": "中国のステーションとの初の有人ドッキング。劉洋が中国初の女性宇宙飛行士となる",
+      "name": "Shenzhou 9 → Tiangong-1"
+    },
+    "Continuous occupation": {
+      "note": "2022年6月のShenzhou-14から恒久的なクルー体制が始まる。以来、CSSには途切れなくクルーが滞在している",
+      "name": "継続的な有人運用"
+    }
   }
 }

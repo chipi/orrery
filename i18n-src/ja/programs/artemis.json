@@ -95,5 +95,23 @@
     "/moon": "月 — 目的地",
     "/fleet?id=orion": "フリート — Orion、SLS と月面機材",
     "/programs/apollo": "Apollo — Artemis の名の由来であり、その先を目指す計画"
+  },
+  "roster": {
+    "Artemis I": {
+      "note": "無人のOrionが最初のSLS打ち上げで月を周回する——誰かが乗る前に深宇宙用ハードウェアを実証する",
+      "name": "Artemis I"
+    },
+    "mission:artemis2": {
+      "note": "初のクルー——月へ飛ぶ初の非アメリカ人を含む4人の宇宙飛行士。2026年4月のフライバイで、人類は史上最も地球から遠い地点に到達した"
+    },
+    "mission:artemis3": {
+      "note": "地球周回軌道での有人試験——1969年のApollo 9と同様、誰かが月へ向かう前にOrionが商業着陸船とドッキングする"
+    },
+    "mission:artemis4": {
+      "note": "月面への帰還——1972年以来初の有人月面着陸であり、南極付近では史上初"
+    },
+    "mission:artemis5": {
+      "note": "2028年後半に予定される2回目の着陸——南極に基地を築く作業の始まり"
+    }
   }
 }

@@ -82,5 +82,31 @@
   "link_labels": {
     "/programs/iss": "ISS — これらが後継を担うステーション",
     "/programs/spacex": "SpaceX — 頼ることになる乗員・物資輸送"
+  },
+  "roster": {
+    "Commercial LEO Destinations": {
+      "note": "NASAは複数の企業に民間ステーションの建造費を提供し、軌道上の拠点の運営者ではなく利用者になることを計画している",
+      "name": "商業LEOデスティネーション"
+    },
+    "Vast Haven-1": {
+      "note": "Vast社による単一モジュールの商業フリーフライヤー——軌道に到達すると見込まれる最初期の商業ステーションの一つ",
+      "name": "Vast Haven-1"
+    },
+    "Axiom Station": {
+      "note": "Axiom Spaceが独立したフリーフライヤーとして組み立てる。最初のモジュールはISSに一時的にドッキングしてから切り離され、後続のモジュールと自由飛行で合流する——計画は2024年12月に再編された",
+      "name": "Axiom Station"
+    },
+    "Orbital Reef": {
+      "note": "Blue OriginとSierra Spaceの事業で、軌道上の「複合用途ビジネスパーク」として構想されている——研究、製造、観光",
+      "name": "Orbital Reef"
+    },
+    "Starlab": {
+      "note": "VoyagerとAirbusによる、一つの大型フリーフライヤーとして設計されたステーション。ISS後の継続的な科学研究を目指す",
+      "name": "Starlab"
+    },
+    "ISS retirement": {
+      "note": "ISSは2030年頃に軌道離脱させられる予定。低軌道での人類の存在が途切れないよう、商業ステーションはそれ以前に飛行していることが望まれている",
+      "name": "ISSの運用終了"
+    }
   }
 }

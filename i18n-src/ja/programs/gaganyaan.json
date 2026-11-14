@@ -87,5 +87,19 @@
     "/fleet?id=gaganyaan": "フリート — Gaganyaan 宇宙船",
     "/programs/chandrayaan": "Chandrayaan — インドの月探査計画",
     "/programs/mangalyaan": "Mangalyaan — 初挑戦で成功したインドの火星探査"
+  },
+  "roster": {
+    "Announced": {
+      "note": "インドが、自国の宇宙飛行士を自国のロケットで飛ばすことを約束する——独自の有人宇宙飛行能力を持つ4番目の国になるための目標",
+      "name": "発表"
+    },
+    "Test Vehicle abort": {
+      "note": "最初の飛行試験で、故障したロケットからカプセルを引き離さねばならない脱出システムを実証する——有人計画が土台とする安全機能",
+      "name": "テスト機アボート試験"
+    },
+    "First crewed flight": {
+      "note": "インドのクルーがインドの宇宙船に乗る初飛行の予定——2027年初頭を目標とし、ロシア、米国、中国と並ぶ独自の有人宇宙飛行国となる",
+      "name": "初の有人飛行"
+    }
   }
 }

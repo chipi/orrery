@@ -93,5 +93,18 @@
     "/programs/ariane": "Ariane — ESA の科学ミッションを打ち上げるロケット",
     "/earth?site=gaia": "L2 の Gaia",
     "/earth?site=xmm": "XMM-Newton"
+  },
+  "roster": {
+    "mission:rosetta": {
+      "note": "10年の追跡の末、Rosettaは彗星67Pを周回し、Philaeランダーをその表面に降ろす——彗星を周回し、かつ着陸した史上初の探査機"
+    },
+    "Gaia's map": {
+      "note": "Gaiaが、これまで作られた中で最も精密な天の川銀河の3次元地図の公開を始める——約20億個の恒星の位置、距離、運動",
+      "name": "Gaiaの地図"
+    },
+    "Euclid opens its eyes": {
+      "note": "空の3分の1を観測し、ダークマターとダークエネルギーが宇宙をどのように形作ってきたかを地図化するために作られた望遠鏡",
+      "name": "Euclidが目を開く"
+    }
   }
 }

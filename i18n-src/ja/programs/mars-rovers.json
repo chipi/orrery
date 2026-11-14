@@ -91,5 +91,26 @@
     "/mars?site=opportunity": "Opportunity — メリディアニ平原",
     "/mars?site=curiosity": "Curiosity — ゲール・クレーター",
     "/mars?site=perseverance": "Perseverance — ジェゼロ・クレーター"
+  },
+  "roster": {
+    "mission:mars-pathfinder": {
+      "note": "エアバッグで火星に弾んで着陸した低コストのミッションで、電子レンジ大の探査車Sojournerが別の惑星上で回った初の車輪となった"
+    },
+    "mission:spirit": {
+      "note": "2004年に90日間のミッションで着陸し、6年間稼働して、火星のより温暖で湿潤だった過去を示す化学的痕跡を見つけた"
+    },
+    "mission:opportunity": {
+      "note": "Spiritの双子で、14年間で45キロメートル超を走破した——別の世界で車両が走った最長距離"
+    },
+    "mission:curiosity": {
+      "note": "2012年にロケット推進のスカイクレーンによって火星に降ろされた、自動車大で原子力駆動の探査車。Gale Craterにかつて居住可能な湖があったことを確認した"
+    },
+    "mission:perseverance": {
+      "note": "2021年にJezero Craterの底——太古の川のデルタと湖底——に着陸し、過去の生命の痕跡を探し、将来のミッションが持ち帰るためのサンプルを筒に封入する"
+    },
+    "Ingenuity": {
+      "note": "Perseveranceが運んだ小型ヘリコプターが2021年に別の惑星での初の動力飛行を行い、その後さらに数十回飛行した",
+      "name": "Ingenuity"
+    }
   }
 }

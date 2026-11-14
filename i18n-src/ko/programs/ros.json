@@ -83,5 +83,19 @@
     "/programs/mir": "Mir — 러시아 구역의 뿌리가 된 모듈식 정거장",
     "/programs/salyut": "Salyut — 러시아 최초의 정거장들",
     "/programs/iss": "ISS — 러시아가 떠나는 협력 체제"
+  },
+  "roster": {
+    "Announced": {
+      "note": "러시아가 ISS 협력에서 빠지고 자국 정거장을 짓겠다고 선언한다 — Salyut와 Mir의 독자 노선으로의 회귀",
+      "name": "발표"
+    },
+    "First module": {
+      "note": "러시아 궤도 정거장(ROS)의 첫 UUM 모듈 발사 계획. 전체 정거장은 2020년대 후반으로 예상된다",
+      "name": "첫 모듈"
+    },
+    "ISS withdrawal": {
+      "note": "ISS 참여를 끝내고 자국 우주비행사를 자체 정거장으로 옮기겠다는 러시아가 밝힌 일정",
+      "name": "ISS 탈퇴"
+    }
   }
 }

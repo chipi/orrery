@@ -91,5 +91,25 @@
     "/fleet?id=falcon-9": "함대 — Falcon 9, Falcon Heavy, Dragon",
     "/programs/iss": "ISS — Crew Dragon이 향하는 정거장",
     "/earth": "지구 — 궤도, 랑데부, 발사장"
+  },
+  "roster": {
+    "Falcon 1, flight 4": {
+      "note": "궤도에 도달한 최초의 민간 개발 액체 연료 로켓 — 회사의 자금이 바닥나기 몇 주 전, 감당할 수 있었던 마지막 비행으로 날았다",
+      "name": "Falcon 1, 4번째 비행"
+    },
+    "First Dragon to the ISS": {
+      "note": "정거장에 결합한 첫 상업용 우주선 — 민간 부문이 유인 우주비행의 보급을 시작한다",
+      "name": "ISS로 간 첫 Dragon"
+    },
+    "First booster landing": {
+      "note": "Falcon 9 1단이 돌아와 똑바로 착륙한다 — 수십 년간 경제성이 없다고 일축되던 재사용이 입증된다",
+      "name": "첫 부스터 착륙"
+    },
+    "mission:inspiration4": {
+      "note": "궤도에 오른 첫 전원 민간인 승무원 — 전문 우주비행사는 전혀 탑승하지 않았다"
+    },
+    "mission:polaris-dawn": {
+      "note": "첫 상업용 우주유영으로, Crew Dragon에서 새로 설계한 SpaceX 우주복을 입고 이루어졌다"
+    }
   }
 }

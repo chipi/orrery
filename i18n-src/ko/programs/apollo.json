@@ -107,5 +107,28 @@
     "/science/propulsion/tsiolkovsky": "로켓 방정식",
     "/moon?site=apollo15": "Apollo 15 — 해들리-아펜니노",
     "/moon?site=apollo16": "Apollo 16 — 데카르트 고지"
+  },
+  "roster": {
+    "Ranger": {
+      "note": "로봇 준비 단계 — 달의 첫 근접 영상을 보내온 충돌 탐사선으로, 충돌 직전까지 표면을 촬영해 Apollo가 마주할 지형을 드러냈다",
+      "name": "Ranger"
+    },
+    "Lunar Orbiter": {
+      "note": "로봇 준비 단계 — 궤도선 다섯 기가 달 거의 전체를 촬영해 Apollo 착륙 지점을 고르고 인증했다. 안전한 착륙을 가능하게 한 정찰",
+      "name": "Lunar Orbiter"
+    },
+    "Surveyor": {
+      "note": "로봇 준비 단계 — 연착륙선들이 달 표면이 우주선을 삼키지 않고 무게를 견딘다는 것을 입증했다. Apollo 12는 Surveyor 3 곁에 착륙해 그 부품을 가져왔다",
+      "name": "Surveyor"
+    },
+    "mission:apollo-1": {
+      "note": "선실 화재 — 지상 시험 중 승무원을 잃음"
+    },
+    "mission:apollo7": {
+      "note": "첫 유인 비행"
+    },
+    "mission:apollo9": {
+      "note": "지구 궤도에서의 달 착륙선 유인 시험"
+    }
   }
 }

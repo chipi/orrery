@@ -91,5 +91,30 @@
     "/fleet?id=shenzhou": "함대 — Shenzhou 우주선",
     "/programs/tiangong": "Tiangong — Shenzhou 승무원이 건설하고 오가는 정거장",
     "/programs/soyuz": "Soyuz — Shenzhou 구성의 원형이 된 우주선"
+  },
+  "roster": {
+    "mission:shenzhou-1": {
+      "note": "첫 무인 시험 비행 — 누군가 타기 전에 캡슐이 날아갔다가 돌아온다"
+    },
+    "Shenzhou 5": {
+      "note": "양리웨이가 지구를 14바퀴 돈다 — 우주에 간 첫 중국인 우주비행사이며, 중국은 자국 로켓으로 사람을 쏘아 올린 세 번째 나라가 된다. 가가린 이후 42년 만이다",
+      "name": "Shenzhou 5"
+    },
+    "Shenzhou 7": {
+      "note": "자이지강이 중국 최초의 우주유영을 한다 — EVA를 수행한 역대 세 번째 나라",
+      "name": "Shenzhou 7"
+    },
+    "Shenzhou 9": {
+      "note": "Tiangong-1과의 첫 유인 도킹. 류양이 우주에 간 첫 중국 여성이 된다",
+      "name": "Shenzhou 9"
+    },
+    "Shenzhou 11": {
+      "note": "Tiangong-2에서 30일 체류 — 그때까지 중국 최장의 유인 임무로, 한 달 단위의 거주가 가능함을 입증했다",
+      "name": "Shenzhou 11"
+    },
+    "Shenzhou 12": {
+      "note": "영구적인 중국 우주정거장에 탑승한 첫 승무원. Shenzhou-14(2022)가 지속적인 상주를 시작한다",
+      "name": "Shenzhou 12"
+    }
   }
 }

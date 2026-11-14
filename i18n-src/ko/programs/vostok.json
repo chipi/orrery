@@ -94,5 +94,11 @@
   "link_labels": {
     "/earth": "지구 — 궤도와 발사장",
     "/science/mission-phases/edl": "진입·하강·착륙"
+  },
+  "roster": {
+    "Korabl-Sputnik 2 (Belka & Strelka)": {
+      "note": "개 Belka와 Strelka — 궤도를 돌고 살아 돌아온 첫 동물로, Vostok 시험 우주선에 탔다",
+      "name": "Korabl-Sputnik 2 (Belka & Strelka)"
+    }
   }
 }

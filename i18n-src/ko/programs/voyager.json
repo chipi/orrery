@@ -87,5 +87,25 @@
     "/explore": "3D 탐색기의 외행성",
     "/gallery/deep-sky": "심원천체 갤러리의 ‘창백한 푸른 점’",
     "/programs/pioneer": "Pioneer — 가장 먼저 떠난 탐사선"
+  },
+  "roster": {
+    "mission:voyager-2": {
+      "note": "네 거대 행성을 모두 방문한 유일한 우주선이자, 인류가 천왕성과 해왕성을 가까이서 본 유일한 기회"
+    },
+    "mission:voyager-1": {
+      "note": "목성과 토성을 통과하고, 돌아서서 태양계 전체를 촬영했으며, 성간 공간에 도달한 최초의 인공물이 되었다"
+    },
+    "The Golden Record": {
+      "note": "각 우주선에 볼트로 고정된 금도금 레코드 — 지구의 소리, 음악, 인사를 담아, 10억 년 뒤 그것을 발견할지 모를 누군가를 향해 있다",
+      "name": "Golden Record"
+    },
+    "The Pale Blue Dot": {
+      "note": "1990년 2월 14일 해왕성 너머에서 Voyager 1이 뒤돌아 지구를 단 하나의 픽셀로 촬영했다",
+      "name": "Pale Blue Dot"
+    },
+    "Interstellar space": {
+      "note": "Voyager 1은 2012년, Voyager 2는 2018년에 헬리오포즈를 넘었다 — 태양의 거품을 떠나 별 사이의 공간에 들어선 최초의 기계로, 지금도 집으로 신호를 보내고 있다",
+      "name": "성간 공간"
+    }
   }
 }

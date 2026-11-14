@@ -93,5 +93,18 @@
     "/programs/ariane": "Ariane — ESA의 과학 임무를 발사하는 로켓",
     "/earth?site=gaia": "L2의 Gaia",
     "/earth?site=xmm": "XMM-Newton"
+  },
+  "roster": {
+    "mission:rosetta": {
+      "note": "10년의 추격 끝에 Rosetta는 혜성 67P를 공전하며 Philae 착륙선을 표면에 내려놓는다 — 혜성을 공전하고 그 위에 착륙한 사상 최초의 우주선"
+    },
+    "Gaia's map": {
+      "note": "Gaia가 지금까지 만들어진 가장 정밀한 우리 은하의 3차원 지도를 공개하기 시작한다 — 거의 20억 개 별의 위치, 거리, 운동",
+      "name": "Gaia의 지도"
+    },
+    "Euclid opens its eyes": {
+      "note": "하늘의 3분의 1을 관측해 암흑 물질과 암흑 에너지가 우주를 어떻게 빚어 왔는지 지도화하도록 만든 망원경",
+      "name": "Euclid가 눈을 뜨다"
+    }
   }
 }

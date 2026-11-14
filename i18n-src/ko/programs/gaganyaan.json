@@ -87,5 +87,19 @@
     "/fleet?id=gaganyaan": "함대 — Gaganyaan 우주선",
     "/programs/chandrayaan": "Chandrayaan — 인도의 달 탐사 계획",
     "/programs/mangalyaan": "Mangalyaan — 첫 시도에 성공한 인도의 화성 탐사"
+  },
+  "roster": {
+    "Announced": {
+      "note": "인도가 자국 우주비행사를 자국 로켓에 태워 보내겠다고 약속한다 — 독자적인 유인 우주비행을 갖춘 네 번째 나라가 되게 할 목표",
+      "name": "발표"
+    },
+    "Test Vehicle abort": {
+      "note": "첫 비행 시험에서 고장 난 로켓으로부터 캡슐을 떼어 내야 하는 탈출 시스템을 입증한다 — 유인 계획이 기반으로 삼는 안전 능력",
+      "name": "시험 비행체 중단 시험"
+    },
+    "First crewed flight": {
+      "note": "인도 승무원이 인도 우주선을 타는 데뷔 비행 계획 — 2027년 초를 목표로 하며, 러시아, 미국, 중국과 함께 독자적 유인 우주비행 강국이 된다",
+      "name": "첫 유인 비행"
+    }
   }
 }

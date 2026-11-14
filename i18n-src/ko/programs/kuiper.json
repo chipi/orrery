@@ -88,5 +88,19 @@
     "/programs/starlink": "Starlink — 뒤쫓고 있는 위성군",
     "/earth": "지구 — 궤도와 붐비는 저궤도",
     "/earth?site=kuiper": "Kuiper 위성군"
+  },
+  "roster": {
+    "KuiperSat prototypes": {
+      "note": "양산이 시작되기 전에 설계를 검증하려고 시험 위성 두 기가 궤도에 오른다",
+      "name": "KuiperSat 시제품"
+    },
+    "Production launches": {
+      "note": "운용 위성군 배치가 시작된다 — Starlink에 수년 뒤처진 채, 주파수를 지키기 위한 규제 시한과 경쟁하며",
+      "name": "양산 발사"
+    },
+    "Multi-rocket by design": {
+      "note": "Kuiper는 Falcon에 의존했을 때처럼 경쟁사의 로켓에 기대는 대신 여러 사업자에게서 발사를 산다 — Atlas V, Vulcan, Ariane 6, New Glenn",
+      "name": "설계부터 다중 로켓"
+    }
   }
 }

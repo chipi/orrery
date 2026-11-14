@@ -94,5 +94,15 @@
   "link_labels": {
     "/programs/esa-human": "유인 우주비행의 ESA — Spacelab, Columbus, ATV",
     "/fleet?id=ariane-5": "함대 — Ariane 발사체"
+  },
+  "roster": {
+    "Ariane 4": {
+      "note": "1990년대 내내 전 세계 상업 위성 발사의 약 절반을 차지하며 Arianespace를 업계 최강자로 만든 믿음직한 상업용 주력 로켓",
+      "name": "Ariane 4"
+    },
+    "Flight 501": {
+      "note": "Ariane 5의 첫 비행은 재사용된 Ariane 4 유도 소프트웨어가 새 로켓의 더 높은 속도에서 오버플로를 일으켜 37초 만에 자폭했다 — 소프트웨어 공학의 획기적인 경고 사례",
+      "name": "Flight 501"
+    }
   }
 }

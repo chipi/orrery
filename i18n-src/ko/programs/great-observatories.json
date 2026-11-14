@@ -93,5 +93,15 @@
     "/explore": "탐색 — 이 망원경들이 밝혀낸 심원천체",
     "/earth?site=hubble": "지구 저궤도의 Hubble",
     "/earth?site=chandra": "Chandra X선 관측선"
+  },
+  "roster": {
+    "Compton Gamma Ray Observatory": {
+      "note": "원래 네 기 중 감마선 담당 — 2000년 일부러 궤도에서 이탈시켜질 때까지 우주에서 가장 격렬한 사건들을 지도화했다",
+      "name": "Compton 감마선 관측선"
+    },
+    "Nancy Grace Roman": {
+      "note": "NASA 계보의 다음 주자 — Hubble의 100배가 넘는 시야를 가진 광시야 적외선 탐사 망원경으로, 우주의 한 구역을 응시하는 대신 우주를 지도화하도록 만들어졌다",
+      "name": "Nancy Grace Roman"
+    }
   }
 }

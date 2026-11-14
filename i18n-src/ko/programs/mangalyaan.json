@@ -88,5 +88,18 @@
     "/fleet?id=mangalyaan": "함대 — Mars Orbiter Mission",
     "/programs/chandrayaan": "Chandrayaan — 인도의 달 탐사 계획",
     "/mars?site=mangalyaan": "화성 궤도의 Mangalyaan"
+  },
+  "roster": {
+    "mission:mangalyaan": {
+      "note": "Mars Orbiter Mission이 첫 시도에 화성 궤도에 진입한다 — 인도는 첫 도전에 화성에서 성공한 사상 최초의 나라이자, 화성 궤도에 도달한 첫 아시아 국가가 되었다"
+    },
+    "The cost": {
+      "note": "임무 전체 비용은 약 7,400만 달러로, 할리우드 영화 Gravity보다 적었고 비슷한 서방 화성 탐사의 극히 일부였다",
+      "name": "비용"
+    },
+    "Eight years on station": {
+      "note": "6개월을 목표로 설계되었으나 궤도선은 교신이 끊길 때까지 약 8년 동안 작동했다 — 작은 기술 시연기가 오래 사는 과학 임무가 되었다",
+      "name": "궤도에서의 8년"
+    }
   }
 }

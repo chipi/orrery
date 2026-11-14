@@ -90,5 +90,11 @@
   "link_labels": {
     "/earth": "지구 — 궤도, 랑데부, 발사장",
     "/science/mission-phases/edl": "진입·하강·착륙"
+  },
+  "roster": {
+    "Soyuz 4 & 5": {
+      "note": "유인 우주선 두 대의 첫 도킹과, 두 우주선 사이를 우주유영으로 이동한 첫 승무원 이송",
+      "name": "Soyuz 4 & 5"
+    }
   }
 }

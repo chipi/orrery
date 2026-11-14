@@ -82,5 +82,31 @@
   "link_labels": {
     "/programs/iss": "ISS — 이들이 뒤를 잇도록 만들어진 정거장",
     "/programs/spacex": "SpaceX — 이들이 의지할 승무원·화물 수송"
+  },
+  "roster": {
+    "Commercial LEO Destinations": {
+      "note": "NASA는 여러 기업이 민간 정거장을 짓도록 자금을 지원하며, 궤도 전초기지의 운영자가 아니라 고객이 되려 한다",
+      "name": "상업용 LEO 목적지"
+    },
+    "Vast Haven-1": {
+      "note": "Vast의 단일 모듈 상업용 자유비행체 — 궤도에 오를 것으로 예상되는 최초의 상업용 정거장 중 하나",
+      "name": "Vast Haven-1"
+    },
+    "Axiom Station": {
+      "note": "Axiom Space가 독립 자유비행체로 조립한다. 첫 모듈은 ISS에 잠시 도킹했다가 분리되어 이후 모듈과 자유 비행 상태로 합쳐진다 — 계획은 2024년 12월에 재편되었다",
+      "name": "Axiom Station"
+    },
+    "Orbital Reef": {
+      "note": "Blue Origin과 Sierra Space의 사업으로, 궤도상의 '복합 용도 비즈니스 파크'를 표방한다 — 연구, 제조, 관광",
+      "name": "Orbital Reef"
+    },
+    "Starlab": {
+      "note": "Voyager와 Airbus가 하나의 큰 자유비행체로 설계한 정거장으로, ISS 이후의 지속적인 과학 연구를 목표로 한다",
+      "name": "Starlab"
+    },
+    "ISS retirement": {
+      "note": "ISS는 2030년경 궤도에서 이탈시킬 예정이다. 저궤도의 인류 존재가 결코 끊기지 않도록, 상업용 정거장은 그 전에 비행하고 있어야 한다",
+      "name": "ISS 퇴역"
+    }
   }
 }

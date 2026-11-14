@@ -90,5 +90,15 @@
   "link_labels": {
     "/programs/space-shuttle": "Space Shuttle — 그것이 맞선 기체",
     "/fleet?id=buran": "함대 — Buran 궤도선과 Energia"
+  },
+  "roster": {
+    "The single flight": {
+      "note": "1988년 11월 15일 Buran은 무인 궤도 비행을 단 한 번 수행했다 — 완전 자동 발사, 두 바퀴 공전, 재진입, 옆바람 속 활주로 착륙까지, 조종사는 한순간도 탑승하지 않았다",
+      "name": "단 한 번의 비행"
+    },
+    "Cancellation": {
+      "note": "소련이 사라지고 예산도 임무도 남지 않자, 계획은 단 한 번의 비행 뒤 취소되었다. 비행했던 궤도선은 2002년 바이코누르의 격납고 지붕이 무너지면서 파괴되었다",
+      "name": "계획 취소"
+    }
   }
 }

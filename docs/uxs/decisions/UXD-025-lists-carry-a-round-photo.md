@@ -113,6 +113,11 @@ map, loading the 512 px crop (30 to 56 KB) where the pipeline already has a 192 
 
 ## T4 — the fleet panel and the entity pages (built 2026-11-13)
 
+> Amended by [UXD-035](UXD-035-fleet-view-toggle-and-one-missions-list.md) (2026-11-14): the flights branch of the
+> MISSIONS tab is gone. Every entry has one list (flights and linked missions together); a row has the round photo
+> only where its mission exists, the others the dot and plain text. Point 1's "an entry with crew flights shows its
+> flights, as before (patches and portraits, no photo)" no longer holds.
+
 > Superseded in part by [UXD-032](UXD-032-program-page-card-rails-and-compact-hardware.md) (2026-11-14): on
 > `/programs/<id>` the hardware list is no longer round photos but compact cards with a rectangular 72×48 mini
 > hero (PG6). The program's mission rows keep their round photos and patches; every other list keeps the thumb.

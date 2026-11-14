@@ -184,8 +184,8 @@ test.describe('/fleet', () => {
   test('capsule and spacecraft line-up draws every crewed and cargo craft', async ({ page }) => {
     const errors = attachConsoleAndError(page);
     await page.goto('/fleet?category=launcher&view=lineup');
-    await page.getByRole('button', { name: /Capsules/ }).click();
-    await expect(page).toHaveURL(/category=crewed-spacecraft/);
+    await page.getByRole('radio', { name: /Capsules/ }).click();
+    await expect(page).toHaveURL(/kind=spacecraft/);
     const labels = page.locator('section.lineup .label');
     await expect(labels.first()).toBeVisible({ timeout: 15_000 });
     expect(await labels.count()).toBeGreaterThanOrEqual(35);

@@ -93,13 +93,11 @@
   let statusFilter: FleetStatus | 'ALL' = $state('ALL');
   let sortMode: 'chrono-desc' | 'chrono-asc' | 'alpha' | 'category' = $state('chrono-desc');
   let listView = $state(false);
-  /** True-scale line-up (`?view=lineup`), for launchers or capsules and spacecraft. */
+  /** True-scale line-up (`?view=lineup&kind=`), for launchers or capsules and spacecraft. */
   let lineupView = $state(false);
   let lineupFocus = $state<string | null>(null);
-  const lineupKind = $derived.by(() => {
-    const k = lineupKindFor(categoryFilter);
-    return k && LINEUP_LIVE.includes(k) ? k : null;
-  });
+  // The line-up's own kind: choosing it never touches the category filter.
+  let lineupKind = $state<LineupKind>('launchers');
   /** RFC-027 — free-text search across name + agency + category + tagline + country. */
   let query = $state('');
 
@@ -223,7 +221,7 @@
     rover: '#a05a2c', // mars surface
     lander: '#9c8c4e', // dust-tan
     orbiter: '#7a4ecd', // violet — outer space
-    observatory: '#4ecdc4', // a3-keep: category identity colour, palette review at the end
+    observatory: '#8fd16a', // green — the lowest-orbit band
     'space-suit': '#cbd5e1', // ice-white — pressure shell
     constellation: '#9bdbff', // pale sky-blue — Earth-orbiting collectives
     'launch-site': '#6b8e6b', // moss-green — Earth-surface launch sites (#285)
@@ -258,6 +256,15 @@
     listView = view === 'list';
     lineupView = view === 'lineup';
     lineupFocus = url.searchParams.get('focus');
+    // Old links carry the kind as `category=launcher&view=lineup`.
+    const kind = url.searchParams.get('kind') as LineupKind | null;
+    const fromCategory = lineupKindFor(categoryFilter);
+    lineupKind =
+      kind && LINEUP_LIVE.includes(kind)
+        ? kind
+        : fromCategory && LINEUP_LIVE.includes(fromCategory)
+          ? fromCategory
+          : 'launchers';
     query = url.searchParams.get('q') ?? '';
   }
 
@@ -297,7 +304,11 @@
     if (lineupView) params.set('view', 'lineup');
     else if (listView) params.set('view', 'list');
     else params.delete('view');
-    if (!lineupView) params.delete('focus');
+    if (lineupView) params.set('kind', lineupKind);
+    else {
+      params.delete('focus');
+      params.delete('kind');
+    }
     // Write the raw query (not trimmed): the URL→state effect re-reads `q`
     // on every goto, so a trimmed write would strip the trailing space the
     // instant it's typed — making " " un-typeable in the search box (e.g.
@@ -311,10 +322,13 @@
     });
   }
 
-  function openLineup(kind: LineupKind | null) {
-    if (kind) categoryFilter = kind === 'launchers' ? 'launcher' : 'crewed-spacecraft';
-    lineupView = kind != null;
+  function setView(view: 'grid' | 'lineup') {
+    lineupView = view === 'lineup';
     listView = false;
+    syncUrl();
+  }
+  function setLineupKind(kind: LineupKind) {
+    lineupKind = kind;
     syncUrl();
   }
 
@@ -498,8 +512,9 @@
         kind="action"
         class="filters-strip"
         data-audio-stage="fleet-filters-toggle"
-        aria-expanded={filtersExpanded}
-        aria-controls={filtersExpanded ? 'fleet-filters' : undefined}
+        aria-expanded={filtersExpanded && !lineupView}
+        aria-controls={filtersExpanded && !lineupView ? 'fleet-filters' : undefined}
+        disabled={lineupView}
         onclick={() => (filtersExpanded = !filtersExpanded)}
       >
         {m.filters_eyebrow()}
@@ -515,14 +530,40 @@
         {/if}
         <span class="filters-chevron" aria-hidden="true">{filtersExpanded ? '▾' : '▸'}</span>
       </Chip>
-      {#if filtersExpanded && anyFilterActive}
+      {#if filtersExpanded && anyFilterActive && !lineupView}
         <Chip kind="action" quiet dismiss class="filters-clear" onclick={clearAllFilters}>
           {m.missions_clear_filters()}
         </Chip>
       {/if}
+      <!-- The view toggle sits right after FILTERS and never moves: the line-up is a fixed
+           true-scale comparison of one kind, so FILTERS is disabled, not removed, while it is on. -->
+      <ChipGroup role="radiogroup" class="view-group" label={m.fleet_view_aria()}>
+        <Chip kind="choice" active={!lineupView} onclick={() => setView('grid')}
+          >{m.fleet_view_grid()}</Chip
+        >
+        <Chip kind="choice" active={lineupView} onclick={() => setView('lineup')}
+          >{m.fleet_lineup_toggle()}</Chip
+        >
+      </ChipGroup>
+      {#if lineupView}
+        <ChipGroup role="radiogroup" class="view-group" label={m.fleet_lineup_toggle_aria()}>
+          <Chip
+            kind="choice"
+            active={lineupKind === 'launchers'}
+            onclick={() => setLineupKind('launchers')}>{m.fleet_lineup_launchers()}</Chip
+          >
+          {#if LINEUP_LIVE.includes('spacecraft')}
+            <Chip
+              kind="choice"
+              active={lineupKind === 'spacecraft'}
+              onclick={() => setLineupKind('spacecraft')}>{m.fleet_lineup_spacecraft()}</Chip
+            >
+          {/if}
+        </ChipGroup>
+      {/if}
     </div>
 
-    {#if filtersExpanded}
+    {#if filtersExpanded && !lineupView}
       <div data-audio-stage="fleet-epoch-timeline">
         <EpochTimelineStrip {countByEpoch} selected={epochFilter} onSelect={(v) => setEpoch(v)} />
       </div>
@@ -616,26 +657,7 @@
         </div>
       </nav>
     {/if}
-    <ChipGroup class="lineup-bar" label={m.fleet_lineup_toggle_aria()}>
-      <span class="filter-label">{m.fleet_lineup_toggle()}</span>
-      <Chip
-        kind="toggle"
-        active={lineupView && lineupKind === 'launchers'}
-        onclick={() => openLineup('launchers')}>{m.fleet_lineup_launchers()}</Chip
-      >
-      {#if LINEUP_LIVE.includes('spacecraft')}
-        <Chip
-          kind="toggle"
-          active={lineupView && lineupKind === 'spacecraft'}
-          onclick={() => openLineup('spacecraft')}>{m.fleet_lineup_spacecraft()}</Chip
-        >
-      {/if}
-      {#if lineupView}
-        <Chip kind="action" onclick={() => openLineup(null)}>{m.fleet_lineup_back()}</Chip>
-      {/if}
-    </ChipGroup>
-
-    {#if lineupView && lineupKind}
+    {#if lineupView}
       {#key lineupKind + localeFromPage(page)}
         <!-- Loaded only when a line-up opens: its landmark/cast lists and labels stay off the grid. -->
         {#await import('$lib/components/FleetLineup.svelte') then { default: FleetLineup }}

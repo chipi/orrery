@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { untrack } from 'svelte';
   import PanelTabRow from './PanelTabRow.svelte';
   import PanelHeroImage from './PanelHeroImage.svelte';
   import PanelLightbox from './PanelLightbox.svelte';
@@ -38,6 +39,7 @@
   import { countryLabel } from '$lib/country-label';
   import { epochLabel } from '$lib/epoch-label';
   import { fleetSpecRows } from '$lib/fleet-spec-rows';
+  import { fleetMissionRows } from '$lib/fleet-missions';
   import { fleetStatusLabel } from '$lib/status-label';
   import MuseumsForObject from './MuseumsForObject.svelte';
   import VideoThumb from './VideoThumb.svelte';
@@ -51,11 +53,10 @@
   import { dataLoadFailed } from '$lib/data/core';
 
   /**
-   * Fleet detail panel. Six tabs (OVERVIEW / GALLERY / ANATOMY / CREW /
-   * MISSIONS / LEARN) per PRD-012 v0.2; tabs render conditionally based
-   * on what the entry actually has (skeleton entries from Phase A only
-   * have OVERVIEW + LEARN populated; later phases progressively unlock
-   * GALLERY, ANATOMY, CREW, MISSIONS).
+   * Fleet detail panel. Four tabs (OVERVIEW / MISSIONS / GALLERY / DETAIL);
+   * tabs render conditionally based on what the entry actually has.
+   * MISSIONS is one list of flights and linked missions (fleet-missions.ts),
+   * a link only where the mission exists, the crew as one line of names.
    *
    * Cloned/streamlined from StationModulePanel.svelte (RFC-016 OQ-4) so
    * station-specific concerns (microgravity-axes, station context links)
@@ -212,41 +213,54 @@
 
   let hasGallery = $derived(gallery.length > 0);
   let hasVideos = $derived(videos.length > 0);
-  let hasFlights = $derived((entry?.flights?.length ?? 0) > 0);
-  // Mission-link CTA on OVERVIEW renders whenever there's at least
-  // one linked mission. MISSIONS tab is shown only when there are
-  // 2+ — the single-mission case is fully served by the
-  // .spec-cta--mission button (which direct-links to that one
-  // mission), so showing a tab containing a list-of-one would just
-  // duplicate the CTA (2026-06-15 user note: "when we have 1
-  // mission only, I don't think we need missions tab?").
-  let hasAnyMission = $derived((entry?.linked_missions?.length ?? 0) > 0);
-  let hasMissions = $derived((entry?.linked_missions?.length ?? 0) > 1);
   let hasLinks = $derived((entry?.links?.length ?? 0) > 0);
 
-  // MISSIONS tab rows: the mission's name in this locale (what /fleet/<id> prints), its agency for
-  // the thumb ring. Rows appear once the names are in, so the raw id never shows.
-  let missionRows = $state<{ id: string; name: string; agency: string | null }[]>([]);
+  // One list of missions per entry (flights + linked_missions, see fleet-missions.ts): the MISSIONS
+  // tab, the OVERVIEW button's count and /fleet/<id> all read it. The tab shows from 2 rows; one row
+  // is served by the OVERVIEW button alone (2026-06-15 user note: "when we have 1 mission only, I
+  // don't think we need missions tab?").
+  let missionNames = $state<Record<string, string>>({});
+  let namesLocale = '';
+  let missionIds = $derived(
+    entry && missionIndex.length > 0
+      ? fleetMissionRows(entry, missionIndex, () => undefined)
+          .filter((r) => r.missionId)
+          .map((r) => r.key)
+      : [],
+  );
+  let missionRows = $derived(
+    entry && missionIndex.length > 0
+      ? fleetMissionRows(entry, missionIndex, (id) => missionNames[id])
+      : [],
+  );
+  let hasMissions = $derived(missionRows.length > 1);
+  let soleMission = $derived(
+    missionRows.length === 1 && missionRows[0].missionId ? missionRows[0] : null,
+  );
+  // Names load for the tab, and for a single mission whose name the OVERVIEW button prints; until
+  // they are in, a mission's raw id never shows.
+  let namesReady = $derived(missionIds.every((id) => id in missionNames));
   $effect(() => {
-    const ids = tab === 'missions' && !hasFlights ? (entry?.linked_missions ?? []) : [];
     const loc = localeFromPage(page);
-    if (ids.length === 0) {
-      missionRows = [];
-      return;
-    }
+    const ids = tab === 'missions' || missionIds.length === 1 ? missionIds : [];
+    const have = untrack(() => (namesLocale === loc ? missionNames : {}));
+    const missing = ids.filter((id) => !(id in have));
+    if (missing.length === 0) return;
     let live = true;
     void getMissionIndex()
       .then((idx) =>
         Promise.all(
-          ids.map(async (id) => {
+          missing.map(async (id) => {
             const row = idx.find((x) => x.id === id);
             const full = row ? await getMission(row.id, row.dest, loc).catch(() => null) : null;
-            return { id, name: full?.name ?? id, agency: row?.agency ?? null };
+            return [id, full?.name ?? id] as const;
           }),
         ),
       )
-      .then((rows) => {
-        if (live) missionRows = rows;
+      .then((pairs) => {
+        if (!live) return;
+        namesLocale = loc;
+        missionNames = { ...have, ...Object.fromEntries(pairs) };
       })
       .catch(dataLoadFailed);
     return () => {
@@ -413,13 +427,9 @@
       />
     {/if}
 
-    <!-- Tab order: OVERVIEW · MISSIONS (cond) · GALLERY · ANATOMY · CREW
-         · LEARN. MISSIONS sits 2nd whenever the vehicle has linked
-         missions, so the "what has actually flown on this" surface is
-         the user's first follow-on after the overview (2026-06-17 user
-         direction: "on fly details, can we get missions tab to be
-         second when available"). -->
-    <!-- MISSIONS + CREW merged (user direction): crewed vehicles show their flights + crew rosters under "CREW"; everything else shows the linked-mission list under "MISSIONS". Hidden when neither. -->
+    <!-- Tab order: OVERVIEW · MISSIONS (cond) · GALLERY · DETAIL. MISSIONS sits 2nd, so
+         "what has actually flown on this" is the first follow-on after the overview
+         (2026-06-17 user direction). One tab named MISSIONS for every entry (UXD-035). -->
     <!-- ANATOMY + LEARN merged (user direction) to keep the tab row from overflowing. Shows the diagram (if any) then the tiered links. -->
     <PanelTabRow
       rowClass="tabs fleet-tabs"
@@ -427,8 +437,8 @@
         { id: 'overview', label: m.panel_tab_overview(), audioStage: 'fleet-tab-overview' },
         {
           id: 'missions',
-          label: hasFlights ? m.panel_tab_crew() : m.panel_tab_missions(),
-          visible: hasMissions || hasFlights,
+          label: m.panel_tab_missions(),
+          visible: hasMissions,
           audioStage: 'fleet-tab-missions',
         },
         { id: 'gallery', label: m.panel_tab_gallery(), visible: hasGallery || hasVideos },
@@ -454,53 +464,51 @@
              navigation is symmetric (2026-06-15 user direction:
              "make feedback from fleet to mission as we have from
              mission to fleet with same style buttons"). Label adapts
-             to cardinality: 1 mission -> direct deep-link with the
-             mission ID; N missions -> tab switcher to the MISSIONS
-             tab. 0 missions -> nothing rendered (consistent with the
-             MISSIONS tab being auto-hidden for those entries). -->
-        {#if hasAnyMission}
-          {@const missionIds = entry.linked_missions ?? []}
-          {#if missionIds.length === 1}
-            <!-- b1-keep: navigation cards (label + value), not actions -->
-            <div class="mission-cta-bar">
-              <a
-                // b1-keep: navigation card (label + value), not an action
-                class="spec-cta spec-cta--mission"
-                href={localHref(`/missions?id=${missionIds[0]}`)}
-                data-testid="fleet-mission-cta-single"
-                data-sveltekit-preload-data="hover"
-              >
-                <span class="spec-icon" aria-hidden="true">
-                  <MissionOrbitIcon />
-                </span>
-                <span class="spec-text">
-                  <span class="spec-label">{m.fleet_mission_cta_label()}</span>
-                  <span class="spec-value">{missionIds[0]}</span>
-                </span>
-              </a>
-            </div>
-          {:else}
-            <!-- b1-keep: navigation cards (label + value), not actions -->
-            <div class="mission-cta-bar">
-              <button
-                type="button"
-                // b1-keep: navigation card (label + value), not an action
-                class="spec-cta spec-cta--mission"
-                onclick={() => (tab = 'missions')}
-                data-testid="fleet-mission-cta-multi"
-              >
-                <span class="spec-icon" aria-hidden="true">
-                  <MissionOrbitIcon />
-                </span>
-                <span class="spec-text">
-                  <span class="spec-label">{m.panel_tab_missions()}</span>
-                  <span class="spec-value"
-                    >{m.fleet_missions_count({ count: missionIds.length })}</span
-                  >
-                </span>
-              </button>
-            </div>
-          {/if}
+             to the rows of the one Missions list: 1 mission in the
+             catalogue -> direct deep-link printing its name; 2+ rows
+             -> tab switcher to the MISSIONS tab with the same count.
+             A single flight whose mission is not in the catalogue
+             has nothing to link to -> nothing rendered. -->
+        {#if soleMission}
+          <!-- b1-keep: navigation cards (label + value), not actions -->
+          <div class="mission-cta-bar">
+            <a
+              // b1-keep: navigation card (label + value), not an action
+              class="spec-cta spec-cta--mission"
+              href={localHref(`/missions?id=${soleMission.missionId}`)}
+              data-testid="fleet-mission-cta-single"
+              data-sveltekit-preload-data="hover"
+            >
+              <span class="spec-icon" aria-hidden="true">
+                <MissionOrbitIcon />
+              </span>
+              <span class="spec-text">
+                <span class="spec-label">{m.fleet_mission_cta_label()}</span>
+                <span class="spec-value">{namesReady ? soleMission.title : ' '}</span>
+              </span>
+            </a>
+          </div>
+        {:else if hasMissions}
+          <!-- b1-keep: navigation cards (label + value), not actions -->
+          <div class="mission-cta-bar">
+            <button
+              type="button"
+              // b1-keep: navigation card (label + value), not an action
+              class="spec-cta spec-cta--mission"
+              onclick={() => (tab = 'missions')}
+              data-testid="fleet-mission-cta-multi"
+            >
+              <span class="spec-icon" aria-hidden="true">
+                <MissionOrbitIcon />
+              </span>
+              <span class="spec-text">
+                <span class="spec-label">{m.panel_tab_missions()}</span>
+                <span class="spec-value"
+                  >{m.fleet_missions_count({ count: missionRows.length })}</span
+                >
+              </span>
+            </button>
+          </div>
         {/if}
 
         {#if entry.description}
@@ -779,65 +787,46 @@
             {/if}
           </ul>
         {/if}
-      {:else if tab === 'missions' && (hasMissions || hasFlights)}
-        {#if hasFlights}
-          <ul class="flights">
-            {#each entry.flights ?? [] as flight (flight.mission_id)}
-              <li class="flight">
-                <header class="flight-head">
-                  <span class="flight-designation">{flight.flight_designation}</span>
-                  <a
-                    class="mission-link"
-                    href={localHref(`/missions?id=${flight.mission_id}`)}
-                    data-sveltekit-preload-data="hover"
-                  >
-                    {m.fleet_flight_mission_link()}
-                  </a>
-                </header>
-                {#if flight.patch_path}
-                  <img
-                    class="patch"
-                    src={flight.patch_path}
-                    alt=""
-                    loading="lazy"
-                    decoding="async"
-                  />
-                {/if}
-                {#if flight.crew && flight.crew.length > 0}
-                  <ul class="crew-grid">
-                    {#each flight.crew as crew (crew.name)}
-                      <li class="crew-card">
-                        {#if crew.portrait_path}
-                          <img src={crew.portrait_path} alt="" loading="lazy" decoding="async" />
-                        {:else}
-                          <div class="crew-portrait-empty" aria-hidden="true">—</div>
-                        {/if}
-                        <span class="crew-name">{crew.name}</span>
-                        <span class="crew-role">{crew.role}</span>
-                      </li>
-                    {/each}
-                  </ul>
-                {/if}
-              </li>
-            {/each}
-          </ul>
-        {:else}
-          <ul class="missions-list">
-            {#each missionRows as row (row.id)}
-              <li>
+      {:else if tab === 'missions' && hasMissions && namesReady}
+        {@const inCatalogue = missionIds.length}
+        <p class="missions-summary" data-testid="fleet-missions-summary">
+          {inCatalogue === missionRows.length
+            ? m.fleet_missions_count({ count: missionRows.length })
+            : m.fleet_missions_in_catalogue({ count: missionRows.length, open: inCatalogue })}
+        </p>
+        <ul class="missions-list">
+          {#each missionRows as row (row.key)}
+            <li class="mission-row" class:plain={!row.missionId}>
+              {#if row.missionId}
                 <a
                   class="mission-link"
-                  href={localHref(`/missions?id=${row.id}`)}
+                  href={localHref(`/missions?id=${row.missionId}`)}
                   data-sveltekit-preload-data="hover"
                 >
-                  <EntityThumb src={thumbOf('missions', row.id)} ring={ringFor(row.agency)} />
-                  <span class="mission-name">{row.name}</span>
-                  <span class="mission-arrow">→</span>
+                  <EntityThumb
+                    src={thumbOf('missions', row.missionId)}
+                    ring={ringFor(row.agency)}
+                  />
+                  <span class="mission-name">{row.title}</span>
+                  {#if row.sub}<span class="mission-sub">{row.sub}</span>{/if}
+                  <span class="mission-arrow" aria-hidden="true">→</span>
                 </a>
-              </li>
-            {/each}
-          </ul>
-        {/if}
+              {:else}
+                <div class="mission-plain">
+                  <EntityThumb src={null} />
+                  <span class="mission-name">{row.title}</span>
+                </div>
+                {#if row.sub}<p class="mission-note">{row.sub}</p>{/if}
+              {/if}
+              {#if row.crew.length > 0}
+                <p class="mission-crew">
+                  <span class="mission-crew-label">{m.panel_tab_crew()}</span>
+                  {row.crew.join(', ')}
+                </p>
+              {/if}
+            </li>
+          {/each}
+        </ul>
       {/if}
     </div>
   {/if}
@@ -1157,18 +1146,63 @@
     margin-left: 6px;
     color: var(--color-state);
   }
-  .missions-list .mission-link {
+  .missions-list .mission-link,
+  .mission-plain {
     display: flex;
     align-items: center;
     gap: 10px;
     padding: 4px 10px 4px 6px;
+    box-sizing: border-box;
+  }
+  .missions-list .mission-link {
+    min-height: 44px;
+  }
+  .mission-plain {
+    min-height: 32px;
+    color: rgba(255, 255, 255, 0.7);
+    font-family: var(--font-mono, 'Space Mono', monospace);
+    font-size: 12px;
   }
   .missions-list .mission-name {
+    flex: 1;
     min-width: 0;
     overflow-wrap: anywhere;
   }
+  .mission-sub {
+    color: var(--color-text-label);
+    font-size: var(--size-label);
+    font-variant-numeric: tabular-nums;
+  }
   .missions-list .mission-arrow {
-    margin-inline-start: auto;
+    margin-inline-start: 0;
+  }
+  /* Notes and crew sit under the title, in line with it: 6 px padding + 28 px thumb + 10 px gap. */
+  .mission-note,
+  .mission-crew {
+    margin: 0;
+    padding-inline: 44px 10px;
+    font-family: var(--font-mono, 'Space Mono', monospace);
+    font-size: 11px;
+    line-height: 1.4;
+    color: var(--color-text-label);
+    overflow-wrap: anywhere;
+  }
+  .mission-crew {
+    padding-block-end: 4px;
+  }
+  .mission-crew-label {
+    margin-inline-end: 6px;
+    font-size: var(--size-label);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .missions-summary {
+    margin: 0 0 8px;
+    font-family: var(--font-mono, 'Space Mono', monospace);
+    font-size: var(--size-label);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-text-label);
   }
 
   .credit {
@@ -1227,83 +1261,6 @@
     font-style: italic; /* a1-keep: caption */
     font-size: var(--size-caption);
     color: rgba(255, 255, 255, 0.5);
-  }
-
-  .flights {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-  }
-  .flight {
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 4px;
-    padding: 10px;
-  }
-  .flight-head {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 8px;
-  }
-  .flight-designation {
-    font-family: 'Bebas Neue', system-ui, sans-serif;
-    font-size: 16px;
-    color: #fff;
-  }
-  .patch {
-    width: 90px;
-    height: 90px;
-    object-fit: contain;
-    margin-bottom: 8px;
-  }
-  .crew-grid {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
-    gap: 8px;
-  }
-  .crew-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 4px;
-    text-align: center;
-  }
-  .crew-card img {
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    border-radius: 50%;
-  }
-  .crew-portrait-empty {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.04);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: rgba(255, 255, 255, 0.3);
-    font-size: 18px;
-  }
-  .crew-name {
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 11px;
-    color: #fff;
-    line-height: 1.2;
-  }
-  .crew-role {
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: var(--size-label);
-    color: var(--color-text-label);
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
   }
 
   .missions-list {

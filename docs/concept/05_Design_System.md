@@ -419,6 +419,8 @@ Hover: `border-color: var(--color-state)`, white text. Focus-visible: `2px solid
 
 A compact chip on the left above the grid: `FILTERS  12 / 150  ▾`. The count sits right after the label (accent state colour when a filter is on, 60 % white for the total alone), the chevron last. One label key (`filters_eyebrow`), uppercase by CSS. The visible count is `aria-hidden`; a visually hidden sibling reads "12 of 150" (`filters_count_of`, word order per language). CLEAR FILTERS is a quiet chip with a `×` beside it while a filter is on. Used by `/missions`, `/fleet` and `/missions/launches`.
 
+A **view toggle** is a `ChipGroup role="radiogroup"` of `Chip kind="choice"`, one chip per view, named by its own key (`fleet_view_aria`, "View"). It sits on the FILTERS row, right after the FILTERS chip (and CLEAR FILTERS), never inside the collapsible strip, so it is always visible. On `/fleet` it is GRID and LINE-UP; a second radiogroup (Launchers, Capsules & spacecraft) follows it only while LINE-UP is on. A view that does not obey the filters disables the FILTERS chip while it is on (`disabled`, not removed, so nothing on the row moves) and draws neither the filters panel nor CLEAR FILTERS ([UXD-035](../uxs/decisions/UXD-035-fleet-view-toggle-and-one-missions-list.md)).
+
 ### 5.8 Section label (grid divider)
 
 ```css
@@ -613,6 +615,7 @@ A new phase string never changes the box height; do not let a row wrap.
 | Hardware card | A link, 56px tall, `72px 1fr` grid, 4px padding, same border, radius and hover as the mini card. A rectangular 72×48 hero (4px radius, `object-fit: cover`), the name (14px, 600, accent, one line) over the role (11px label). Grid `minmax(260px, 1fr)`, 8px gap, one column at 480px and below. Replaces the round 28px thumb on this page only. |
 | Mission pane | `aside.detail`: meta and name one line with an ellipsis, blurb `min-height: 4.65em` and clamped at three lines. One height for every mission. |
 | Empty section | A section with no rows draws no label and no box. |
+| Missions list of a fleet entry (UXD-035) | The fleet panel's MISSIONS tab (shown from 2 rows) and `/fleet/<id>`: one list, the union of `flights` and `linked_missions`, oldest first (`fleetMissionRows`). A header line (label colour, 11px uppercase): "5 missions · 2 in the catalogue". A row whose mission exists is a link (min 44px tall, the §5.7 link-chip fill): a 28px round `EntityThumb` with the agency ring, the name, the year (label colour, tabular), `→`. A row without a mission is plain text, no fill, no hover, no link: the 8px dot, the flight designation, 70 % ink, its note under it. The crew is one line under either kind, "CREW" in label colour then names, comma-joined, no roles, no portrait, no patch, no empty circle. |
 | Milestones (UXD-033) | After Missions: the mission timeline look (rail, hollow dot, year, name in label colour, note) with no pane, no photo and no link. A context row that has a `link` (a craft or station module) is a mission-timeline row whose name is a link in accent colour, regular weight, underline on hover. |
 
 ---

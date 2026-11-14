@@ -153,30 +153,22 @@
     <section class="missions">
       <h2 class="page-section-label">{m.panel_tab_missions()}</h2>
       <ul class="linklist">
-        {#each data.missions as mission (mission.id)}
+        {#each data.missions as mission (mission.key)}
           <li class="has-thumb">
-            <EntityThumb src={mission.thumb} ring={mission.ring} fallback="none" />
+            <EntityThumb src={mission.thumb} ring={mission.ring} />
             <span class="lt-body">
-              <a href={localHref(`/missions/${mission.id}`)}>{mission.name}</a>
-              <span class="year">{mission.year}</span>
+              {#if mission.missionId}
+                <a href={localHref(`/missions/${mission.missionId}`)}>{mission.title}</a>
+              {:else}
+                {mission.title}
+              {/if}
+              {#if mission.missionId}<span class="year">{mission.sub}</span>{/if}
               {#if mission.first}<span class="note">{mission.first}</span>{/if}
+              {#if !mission.missionId && mission.sub}<span class="note">{mission.sub}</span>{/if}
+              {#if mission.crew.length}
+                <span class="note">{m.panel_tab_crew()}: {mission.crew.join(', ')}</span>
+              {/if}
             </span>
-          </li>
-        {/each}
-      </ul>
-    </section>
-  {/if}
-
-  {#if data.crewed.length}
-    <section class="crew">
-      <h2 class="page-section-label">{m.panel_tab_crew()}</h2>
-      <ul>
-        {#each data.crewed as fl (fl.designation)}
-          <li>
-            {#if fl.missionId}<a class="inline" href={localHref(`/missions/${fl.missionId}`)}
-                >{fl.mission}</a
-              >{:else}{fl.mission}{/if}
-            — {fl.crew.join(', ')}
           </li>
         {/each}
       </ul>

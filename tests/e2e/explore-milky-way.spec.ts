@@ -11,19 +11,20 @@ import { test, expect } from '@playwright/test';
  */
 
 test.describe('/explore — Milky Way leveling (#451)', () => {
+  // Scoped to the open panel: the level picker's rung descriptions ("the spiral arms, …") are in
+  // the DOM too, hidden until the picker opens.
   test('a globular cluster opens a panel with its kind + distance', async ({ page }) => {
     await page.goto('/explore?galaxy=omega-centauri');
-    await expect(page.getByText('Globular cluster', { exact: false }).first()).toBeVisible({
-      timeout: 15_000,
-    });
-    await expect(page.getByText('16,000 ly', { exact: false }).first()).toBeVisible();
+    const panel = page.locator('aside.panel:not(.covered)').first();
+    await expect(panel).toContainText(/Globular cluster/i, { timeout: 15_000 });
+    await expect(panel).toContainText('16,000 ly');
   });
 
   test('an arm opens a panel', async ({ page }) => {
     await page.goto('/explore?galaxy=perseus');
-    await expect(page.getByText('Spiral arm', { exact: false }).first()).toBeVisible({
-      timeout: 15_000,
-    });
+    const panel = page.locator('aside.panel:not(.covered)').first();
+    await expect(panel).toContainText(/Spiral arm/i, { timeout: 15_000 });
+    await expect(panel).toContainText('Perseus Arm');
   });
 
   test('a Magellanic Cloud opens a panel with its distance', async ({ page }) => {

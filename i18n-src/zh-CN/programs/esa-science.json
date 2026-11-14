@@ -93,5 +93,18 @@
     "/programs/ariane": "Ariane — 发射 ESA 科学任务的火箭",
     "/earth?site=gaia": "位于 L2 的 Gaia",
     "/earth?site=xmm": "XMM-Newton"
+  },
+  "roster": {
+    "mission:rosetta": {
+      "note": "经过十年的追逐，Rosetta环绕彗星67P飞行，并将Philae着陆器投放到其表面——首个环绕彗星并在彗星上着陆的航天器"
+    },
+    "Gaia's map": {
+      "note": "Gaia开始发布有史以来最精确的银河系三维星图——近二十亿颗恒星的位置、距离和运动",
+      "name": "Gaia星图"
+    },
+    "Euclid opens its eyes": {
+      "note": "一台旨在巡天观测三分之一天空、绘制暗物质和暗能量如何塑造宇宙的望远镜",
+      "name": "Euclid睁开双眼"
+    }
   }
 }

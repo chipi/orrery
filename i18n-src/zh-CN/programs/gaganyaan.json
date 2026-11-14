@@ -87,5 +87,19 @@
     "/fleet?id=gaganyaan": "航天器 — Gaganyaan 飞船",
     "/programs/chandrayaan": "Chandrayaan — 印度的探月计划",
     "/programs/mangalyaan": "Mangalyaan — 印度首次尝试即成功的火星任务"
+  },
+  "roster": {
+    "Announced": {
+      "note": "印度承诺用自己的火箭把自己的宇航员送上太空——这个目标将使其成为第四个拥有独立载人航天能力的国家",
+      "name": "正式宣布"
+    },
+    "Test Vehicle abort": {
+      "note": "首次飞行试验演示逃逸系统，它必须在火箭出现故障时把飞船舱拉离——载人计划赖以建立的安全能力",
+      "name": "试验飞行器中止试验"
+    },
+    "First crewed flight": {
+      "note": "印度乘组首次乘坐印度飞船的计划——目标是2027年初，使印度与俄罗斯、美国和中国一同成为拥有独立载人航天能力的国家",
+      "name": "首次载人飞行"
+    }
   }
 }

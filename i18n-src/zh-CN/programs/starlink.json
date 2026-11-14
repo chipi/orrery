@@ -92,5 +92,23 @@
     "/programs/spacex": "SpaceX — 发射它的 Falcon",
     "/earth": "地球 — 轨道与日益拥挤的近地轨道",
     "/earth?site=starlink": "Starlink 卫星星座"
+  },
+  "roster": {
+    "First 60 satellites": {
+      "note": "一枚Falcon 9一次部署60颗扁平叠放的卫星——运营星座就此开始，夜空迎来了第一列Starlink“列车”",
+      "name": "首批60颗卫星"
+    },
+    "Service goes live": {
+      "note": "公测开启；一个卫星星座变成了面向消费者的互联网服务，抵达了光纤和蜂窝基站从未到过的地方",
+      "name": "服务上线"
+    },
+    "Ukraine": {
+      "note": "Starlink终端让一个国家在战争中保持在线——并使一家公司的星座一夜之间成为国家安全的一个因素",
+      "name": "乌克兰"
+    },
+    "Direct to cell": {
+      "note": "卫星开始不通过终端、直接连接普通手机——这个星座开始变成一座全球蜂窝基站",
+      "name": "直连手机"
+    }
   }
 }

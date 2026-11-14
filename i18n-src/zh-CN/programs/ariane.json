@@ -94,5 +94,15 @@
   "link_labels": {
     "/programs/esa-human": "ESA 在载人航天中的角色——Spacelab、Columbus、ATV",
     "/fleet?id=ariane-5": "航天器 — Ariane 运载火箭"
+  },
+  "roster": {
+    "Ariane 4": {
+      "note": "可靠的商业主力火箭，在整个1990年代拿下了全球约一半的商业卫星发射，使Arianespace成为行业霸主",
+      "name": "Ariane 4"
+    },
+    "Flight 501": {
+      "note": "Ariane 5的首飞在37秒后自毁，原因是重用的Ariane 4制导软件在新火箭更高的速度下发生了溢出——软件工程领域里一个标志性的警示故事",
+      "name": "Flight 501"
+    }
   }
 }

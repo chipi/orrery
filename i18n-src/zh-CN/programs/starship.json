@@ -95,5 +95,29 @@
     "/fleet?id=starship": "航天器 — Starship 发射系统",
     "/programs/spacex": "SpaceX — Starship 赖以建立的可重复使用技术",
     "/mars": "火星 — 目的地"
+  },
+  "roster": {
+    "Starhopper": {
+      "note": "一台单发动机试验箭体跳起150米并着陆——该计划的首次飞行，验证了基本的控制",
+      "name": "Starhopper"
+    },
+    "SN15 lands": {
+      "note": "经历一连串壮观的爆炸之后，一枚Starship上面级高飞并完好着陆——“飞行—失败—修复”的方法被应用到有史以来最大的火箭上",
+      "name": "SN15着陆"
+    },
+    "First integrated flight": {
+      "note": "完整的组合——Super Heavy助推器和Starship——首次一同发射；它离开了发射台，数分钟后失联，数据为下一次尝试提供了依据",
+      "name": "首次整体飞行"
+    },
+    "Booster catch": {
+      "note": "Super Heavy助推器飞回，并被发射塔的机械臂在空中接住——在这种规模上从未有人尝试过的着陆方式",
+      "name": "助推器回收"
+    },
+    "mission:starship-demo": {
+      "note": "通往轨道、月球和火星之路上的无人演示飞行"
+    },
+    "mission:starship-mars-crew": {
+      "note": "预期的最终状态——载人Starship把人送往火星表面"
+    }
   }
 }

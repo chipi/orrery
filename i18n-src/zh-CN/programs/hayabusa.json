@@ -90,5 +90,13 @@
   "link_labels": {
     "/fleet?id=hayabusa-2": "航天器 — Hayabusa 探测器",
     "/explore": "探索 — 小行星糸川与龙宫"
+  },
+  "roster": {
+    "mission:hayabusa1": {
+      "note": "抵达小行星糸川，两次触地，并在严重故障的情况下，带回了首份取自小行星的样本"
+    },
+    "mission:hayabusa2": {
+      "note": "抵达龙宫，发射弹丸制造人造撞击坑，采集地下物质，并于2020年将其送回地球——一次完美的任务"
+    }
   }
 }

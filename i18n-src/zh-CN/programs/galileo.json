@@ -86,5 +86,26 @@
   "link_labels": {
     "/explore": "3D 探索器中的木星",
     "/programs/cassini": "Cassini — 同样的思路，用在土星"
+  },
+  "roster": {
+    "mission:galileo": {
+      "note": "首个环绕木星飞行的航天器——近八年来近距离研究这颗巨行星及其主要卫星"
+    },
+    "The atmospheric probe": {
+      "note": "抵达时，Galileo释放了一枚探测器，投入木星云层——对巨行星大气的第一次也是唯一一次直接采样",
+      "name": "大气探测器"
+    },
+    "Europa's hidden ocean": {
+      "note": "Galileo的磁场和成像数据给出了迄今最有力的证据：木星卫星木卫二的冰层之下有一片液态水海洋",
+      "name": "木卫二隐藏的海洋"
+    },
+    "The stuck antenna": {
+      "note": "主天线未能完全展开；新的数据压缩软件被发送到航天器上，挽救了任务，通过涓涓细流般的链路保住了大部分科学成果",
+      "name": "卡住的天线"
+    },
+    "The deliberate end": {
+      "note": "燃料耗尽后，Galileo被有意投入木星，以确保它绝不会坠落到木卫二上而污染其海洋",
+      "name": "有意的终点"
+    }
   }
 }

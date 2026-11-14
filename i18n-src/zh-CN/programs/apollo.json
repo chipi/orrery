@@ -107,5 +107,28 @@
     "/science/propulsion/tsiolkovsky": "火箭方程",
     "/moon?site=apollo15": "Apollo 15 — 哈德利-亚平宁区",
     "/moon?site=apollo16": "Apollo 16 — 笛卡尔高地"
+  },
+  "roster": {
+    "Ranger": {
+      "note": "机器人先导任务——撞击探测器传回了首批月球近景图像，一直拍到撞击前的最后一刻，揭示了Apollo将要面对的地形",
+      "name": "Ranger"
+    },
+    "Lunar Orbiter": {
+      "note": "机器人先导任务——五颗环月轨道器拍摄了几乎整个月球，用以挑选并认证Apollo的着陆点；正是这次侦察使安全登月成为可能",
+      "name": "Lunar Orbiter"
+    },
+    "Surveyor": {
+      "note": "机器人先导任务——软着陆器证明月面能承受航天器的重量而不会将其吞没；Apollo 12降落在Surveyor 3旁，并带回了它的部分部件",
+      "name": "Surveyor"
+    },
+    "mission:apollo-1": {
+      "note": "座舱起火——乘组在地面测试中罹难"
+    },
+    "mission:apollo7": {
+      "note": "首次载人飞行"
+    },
+    "mission:apollo9": {
+      "note": "在地球轨道上对登月舱进行载人测试"
+    }
   }
 }

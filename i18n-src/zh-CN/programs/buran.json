@@ -90,5 +90,15 @@
   "link_labels": {
     "/programs/space-shuttle": "Space Shuttle — 它所回应的飞行器",
     "/fleet?id=buran": "航天器 — Buran 轨道器与 Energia"
+  },
+  "roster": {
+    "The single flight": {
+      "note": "1988年11月15日，Buran完成了一次无人轨道飞行——全自动发射、绕地两圈、再入大气层，并在侧风中降落在跑道上，全程没有任何飞行员在舱内",
+      "name": "唯一一次飞行"
+    },
+    "Cancellation": {
+      "note": "苏联解体，既没有预算也没有任务，该计划在唯一一次飞行后被取消；那架飞过的轨道器在2002年拜科努尔机库屋顶坍塌时被毁",
+      "name": "项目取消"
+    }
   }
 }

@@ -93,5 +93,15 @@
     "/explore": "探索 — 这些望远镜揭示的深空天体",
     "/earth?site=hubble": "近地轨道上的 Hubble",
     "/earth?site=chandra": "Chandra X 射线天文台"
+  },
+  "roster": {
+    "Compton Gamma Ray Observatory": {
+      "note": "最初四台之一的伽马射线成员——它绘制了宇宙中最剧烈事件的地图，直到2000年被有意离轨",
+      "name": "Compton伽马射线天文台"
+    },
+    "Nancy Grace Roman": {
+      "note": "NASA谱系中的下一位——一台广角红外巡天望远镜，视场超过Hubble的一百倍，旨在测绘整个宇宙，而不是盯着其中的一小块",
+      "name": "Nancy Grace Roman"
+    }
   }
 }

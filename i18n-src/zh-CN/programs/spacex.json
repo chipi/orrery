@@ -91,5 +91,25 @@
     "/fleet?id=falcon-9": "航天器 — Falcon 9、Falcon Heavy 与 Dragon",
     "/programs/iss": "国际空间站 — Crew Dragon 飞往的空间站",
     "/earth": "地球 — 轨道、交会对接与发射场"
+  },
+  "roster": {
+    "Falcon 1, flight 4": {
+      "note": "首枚进入轨道的私人研制液体燃料火箭——在公司资金耗尽的几周前、凭着它能负担的最后一次飞行升空",
+      "name": "Falcon 1第4次飞行"
+    },
+    "First Dragon to the ISS": {
+      "note": "首艘与空间站对接停靠的商业飞船——私营部门开始为载人航天补给",
+      "name": "首次Dragon飞往国际空间站"
+    },
+    "First booster landing": {
+      "note": "一枚Falcon 9一级返回并直立着陆——数十年来被斥为不经济的可重复使用技术得到验证",
+      "name": "首次助推器着陆"
+    },
+    "mission:inspiration4": {
+      "note": "首个进入轨道的全平民乘组——舱内完全没有职业宇航员"
+    },
+    "mission:polaris-dawn": {
+      "note": "首次商业太空行走，从Crew Dragon出舱，穿着SpaceX新设计的航天服"
+    }
   }
 }

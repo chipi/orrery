@@ -94,5 +94,11 @@
   "link_labels": {
     "/earth": "地球 — 轨道与发射场",
     "/science/mission-phases/edl": "进入、下降与着陆"
+  },
+  "roster": {
+    "Korabl-Sputnik 2 (Belka & Strelka)": {
+      "note": "小狗Belka和Strelka——首批进入轨道并活着返回的动物，搭乘Vostok试验飞船",
+      "name": "Korabl-Sputnik 2 (Belka & Strelka)"
+    }
   }
 }

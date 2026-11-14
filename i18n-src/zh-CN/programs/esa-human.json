@@ -90,5 +90,19 @@
   "link_labels": {
     "/programs/iss": "国际空间站 — 欧洲参与建造的空间站",
     "/programs/ariane": "Ariane — 运送 ATV 的运载火箭"
+  },
+  "roster": {
+    "Spacelab": {
+      "note": "欧洲对载人航天的首次贡献——一座载人实验室，在航天飞机货舱中飞行了22次任务，并于1983年搭载了首位ESA宇航员乌尔夫·默博尔德",
+      "name": "Spacelab"
+    },
+    "Columbus": {
+      "note": "ESA在国际空间站上的常设研究实验室——这个舱段使欧洲成为拥有自己设施的国际空间站正式伙伴",
+      "name": "Columbus"
+    },
+    "European Service Module": {
+      "note": "ATV技术的重生：欧洲如今制造为NASA的Orion飞船提供动力和推进的服务舱，用于Artemis任务中飞往月球轨道",
+      "name": "欧洲服务舱"
+    }
   }
 }

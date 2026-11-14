@@ -132,7 +132,12 @@
       const pr = q.get('pr');
       if (pr) ar.renderer.setPixelRatio(Number(pr));
       if (q.get('cond') !== '0')
-        rig = attachLaunchConditions(asc, thePlan.conditions, VEHICLE_LENGTH_KM);
+        rig = attachLaunchConditions(
+          asc,
+          thePlan.conditions,
+          VEHICLE_LENGTH_KM,
+          `${base}/textures/2k_earth_nightmap.jpg`,
+        );
 
       const renderAt = (tt: number): void => {
         if (!asc || !ar) return;

@@ -91,6 +91,10 @@ export interface Channels {
   dist: KF;
   fov: KF;
   look: KF;
+  /** Target share of the frame height the vehicle (base to nose) fills. When set, the
+   *  camera distance is solved to hold it, so framing does not depend on elevation,
+   *  attitude or field of view; `dist` is only the starting guess. */
+  fill?: KF;
 }
 
 export interface DirectedShot {
@@ -133,6 +137,8 @@ export interface LaunchConditions {
   /** Cloud-deck altitude (km). */
   deckAltKm: number;
   cloudSeed: number;
+  /** 0 = stratus sheets, 1 = cumulus clusters (the deck mixes both by region). */
+  cloudType: number;
   padSmoke: boolean;
 }
 
@@ -403,8 +409,8 @@ const POOL: ShotDef[] = [
     fast: false,
     weight: 1,
     ease: 'smooth',
-    build: (r, s) => ({
-      az: lin(s * JD(r, -30, 8), s * JD(r, 42, 8)),
+    build: (r) => ({
+      az: r() < 0.5 ? lin(JD(r, 14, 5), JD(r, 72, 6)) : lin(JD(r, 72, 6), JD(r, 14, 5)),
       el: lin(JD(r, 14, 3), JD(r, 18, 3)),
       dist: lin(J(r, 4.2, 0.1), J(r, 3.4, 0.1)),
       fov: lin(J(r, 40, 0.04), J(r, 36, 0.04)),
@@ -501,6 +507,28 @@ export function evalKf(kf: KF, p: number, ease: Ease): number {
   return kf[kf.length - 1][1];
 }
 
+/** Vehicle share of the frame height per pool shot (start, end). Examples fill 40 to 70 %;
+ *  wide_trail is the one deliberate small shot and still keeps the vehicle readable. */
+const FILL: Record<string, [number, number]> = {
+  lookdown_chase: [0.6, 0.6],
+  overhead_drop: [0.55, 0.6],
+  threeq_low: [0.6, 0.7],
+  crane_low: [0.55, 0.62],
+  side_track: [0.5, 0.55],
+  push_in: [0.35, 0.7],
+  threeq_high: [0.7, 0.7],
+  lowangle_hero: [0.62, 0.66],
+  wide_trail: [0.3, 0.3],
+  orbit_pan: [0.5, 0.6],
+  lookdown_high: [0.6, 0.6],
+  threeq_limb: [0.68, 0.72],
+};
+
+function withFill(ch: Channels, f: [number, number] | undefined, r: Rng): Channels {
+  if (f) ch.fill = lin(J(r, f[0], 0.06), J(r, f[1], 0.06));
+  return ch;
+}
+
 // ─── Beat shots ─────────────────────────────────────────────────────────────
 
 const maxqSqueeze = (r: Rng, s: 1 | -1): Channels => ({
@@ -515,6 +543,12 @@ const maxqSqueeze = (r: Rng, s: 1 | -1): Channels => ({
     [1, 44],
   ],
   look: lin(0.35, 0.85),
+  fill: [
+    [0, 0.45],
+    [0.38, 0.75],
+    [0.6, 0.75],
+    [1, 0.5],
+  ],
 });
 
 const sepPushIn = (r: Rng, s: 1 | -1): Channels => {
@@ -534,6 +568,12 @@ const sepPushIn = (r: Rng, s: 1 | -1): Channels => {
       [1, 42],
     ],
     look: lin(0.2, 0.25),
+    fill: [
+      [0, 0.45],
+      [0.3, 0.7],
+      [0.52, 0.7],
+      [1, 0.5],
+    ],
   };
 };
 
@@ -548,11 +588,17 @@ const boosterPeel = (r: Rng, s: 1 | -1): Channels => ({
     [1, 38],
   ],
   look: lin(0.2, 0.3),
+  fill: [
+    [0, 0.5],
+    [0.3, 0.62],
+    [0.52, 0.62],
+    [1, 0.5],
+  ],
 });
 
 // ─── Views (for the 30-degree rule) ─────────────────────────────────────────
 
-function viewOf(sh: DirectedShot): View {
+export function viewOf(sh: DirectedShot): View {
   if (sh.kept) return KEPT_VIEW[sh.kept];
   if (sh.anchor) {
     const a = sh.anchor;
@@ -563,11 +609,25 @@ function viewOf(sh: DirectedShot): View {
   }
   const c = sh.ch!;
   return {
-    az0: c.az[0][1],
-    az1: c.az[c.az.length - 1][1],
+    az0: worldAz(c.az[0][1], sh.side),
+    az1: worldAz(c.az[c.az.length - 1][1], sh.side),
     el0: c.el[0][1],
     el1: c.el[c.el.length - 1][1],
   };
+}
+
+/** Azimuth channels are "degrees behind the side view" (0 = abeam, 90 = straight behind the
+ *  tail); `side` mirrors the camera across the flight plane. World azimuth: atan2(x, z). */
+function worldAz(az: number, side: number): number {
+  const a = az * D2R;
+  return (Math.atan2(-Math.sin(a), side * Math.cos(a)) * 180) / Math.PI;
+}
+
+/** Keep every azimuth keyframe in the rear half (5 to 88 degrees behind abeam): the camera
+ *  never looks at the nose head-on, where the stack foreshortens to a dot. */
+function behind(ch: Channels): Channels {
+  ch.az = ch.az.map(([p, v]) => [p, Math.min(60, Math.max(5, Math.abs(v)))] as [number, number]);
+  return ch;
 }
 
 const wrap180 = (d: number): number => {
@@ -585,10 +645,19 @@ export function farEnough(prev: View, next: View): boolean {
 /** Shift a built shot's azimuth so it starts 60 degrees from where the previous one ended. */
 function repairAz(sh: DirectedShot, prev: View, r: Rng): void {
   if (!sh.ch) return;
-  const sign = r() < 0.5 ? -1 : 1;
-  const target = prev.az1 + sign * 60;
-  const delta = target - sh.ch.az[0][1];
-  sh.ch.az = sh.ch.az.map(([p, v]) => [p, v + delta] as [number, number]);
+  const side0 = sh.side;
+  const orig = sh.ch.az.map(([p, v]) => [p, v] as [number, number]);
+  const flips: (1 | -1)[] =
+    r() < 0.5 ? [side0, side0 === 1 ? -1 : 1] : [side0 === 1 ? -1 : 1, side0];
+  for (const sd of flips) {
+    for (const delta of [0, 35, -35, 60, -60, 80]) {
+      sh.side = sd;
+      sh.ch.az = orig.map(
+        ([p, v]) => [p, Math.min(60, Math.max(5, v + delta))] as [number, number],
+      );
+      if (farEnough(prev, viewOf(sh))) return;
+    }
+  }
 }
 
 // ─── Conditions ─────────────────────────────────────────────────────────────
@@ -647,6 +716,7 @@ export function pickConditions(
     deckAltKm: 1.8 + r() * 3.2,
     cloudSeed: Math.floor(r() * 1000),
     padSmoke: padSmokeBias || r() < 0.4,
+    cloudType: r(),
   };
 }
 
@@ -723,13 +793,15 @@ export function buildDirectorPlan(inp: DirectorInputs): DirectorPlan {
         family: 'ground',
         tStart: 0,
         tEnd: openEnd,
-        anchor: { x: -0.3, y: 0.14, z: 1.55 },
+        // Pad level, close, tilted up so the stretched ground photo is out of frame; the
+        // smoke rolls across the bottom (example 5).
+        anchor: { x: -0.25, y: 0.1, z: 1.3 },
         ch: {
           az: lin(0, 0),
           el: lin(0, 0),
           dist: lin(1, 1),
-          fov: lin(70, 40),
-          look: lin(0.5, 0.58),
+          fov: lin(64, 46),
+          look: lin(1.0, 0.75),
         },
       }),
     );
@@ -742,11 +814,12 @@ export function buildDirectorPlan(inp: DirectorInputs): DirectorPlan {
         tEnd: openEnd,
         // Above and behind the nose from the first frame, the pad and the plume below.
         ch: {
-          az: lin(oSide * 25, oSide * 50),
-          el: lin(76, 60),
-          dist: lin(2.2, 2.8),
-          fov: lin(58, 46),
-          look: lin(0.7, 0.9),
+          az: lin(25, 50),
+          el: lin(70, 58),
+          dist: lin(1.6, 2.2),
+          fov: lin(60, 46),
+          look: lin(0.8, 0.9),
+          fill: lin(0.6, 0.55),
         },
       }),
     );
@@ -757,13 +830,13 @@ export function buildDirectorPlan(inp: DirectorInputs): DirectorPlan {
         family: 'ground',
         tStart: 0,
         tEnd: openEnd,
-        anchor: { x: -0.5, y: 0.1, z: 2.0 },
+        anchor: { x: -0.4, y: 0.08, z: 1.7 },
         ch: {
           az: lin(0, 0),
           el: lin(0, 0),
           dist: lin(1, 1),
-          fov: lin(56, 38),
-          look: lin(0.45, 0.62),
+          fov: lin(60, 44),
+          look: lin(0.95, 0.7),
         },
       }),
     );
@@ -840,7 +913,7 @@ export function buildDirectorPlan(inp: DirectorInputs): DirectorPlan {
         ease: def.ease,
         blendInS: 0,
         fast: def.fast,
-        ch: def.build(r, s),
+        ch: behind(withFill(def.build(r, s), FILL[def.id], r)),
         minS: effMin,
         maxS: effMax,
       };
@@ -872,7 +945,7 @@ export function buildDirectorPlan(inp: DirectorInputs): DirectorPlan {
       ease: 'smooth',
       blendInS: 0,
       fast: false,
-      ch: build(r, s),
+      ch: behind(build(r, s)),
     };
     const pv = prevView();
     if (pv && !farEnough(pv, viewOf(shot))) repairAz(shot, pv, r);
@@ -977,6 +1050,57 @@ const D2R = Math.PI / 180;
 /** Framing knob: the examples fill 60 to 70 % of the frame; the brief's distances gave about 30 %. */
 const CLOSE = 0.72;
 
+const ASPECT = 16 / 9;
+
+/**
+ * The share of the frame height the vehicle's base-to-nose segment spans as seen from
+ * `pose` (screen-space length over frame height; 16:9). Large when close or when the stack
+ * lies across the view, small when far or when it points at the camera.
+ */
+export function vehicleFill(pose: CameraPose, s: AscentState, vehLen: number): number {
+  const fv = bodyAngleFromVerticalRad(s);
+  const bx = s.downrangeKm;
+  const by = s.altKm;
+  const nx = bx + Math.sin(fv) * vehLen;
+  const ny = by + Math.cos(fv) * vehLen;
+  // camera basis
+  let fx = pose.tx - pose.px;
+  let fy = pose.ty - pose.py;
+  let fz = pose.tz - pose.pz;
+  const fl = Math.hypot(fx, fy, fz) || 1;
+  fx /= fl;
+  fy /= fl;
+  fz /= fl;
+  // right = f x up(0,1,0)
+  let rx = -fz;
+  const ry = 0;
+  let rz = fx;
+  const rl = Math.hypot(rx, rz) || 1;
+  rx /= rl;
+  rz /= rl;
+  // up = r x f
+  const ux = ry * fz - rz * fy;
+  const uy = rz * fx - rx * fz;
+  const uz = rx * fy - ry * fx;
+  const th = Math.tan((pose.fov * D2R) / 2);
+  const proj = (x: number, y: number, z: number): [number, number] | null => {
+    const vx = x - pose.px;
+    const vy = y - pose.py;
+    const vz = z - pose.pz;
+    const depth = vx * fx + vy * fy + vz * fz;
+    if (depth < 1e-3) return null;
+    return [
+      ((vx * rx + vy * ry + vz * rz) / (depth * th)) * (1 / ASPECT),
+      (vx * ux + vy * uy + vz * uz) / (depth * th),
+    ];
+  };
+  const a = proj(bx, by, 0);
+  const b = proj(nx, ny, 0);
+  if (!a || !b) return 10;
+  // NDC spans 2 per axis, x already divided by the aspect: length in frame heights
+  return Math.hypot((a[0] - b[0]) * ASPECT, a[1] - b[1]) / 2;
+}
+
 function channelPose(
   sh: DirectedShot,
   s: AscentState,
@@ -994,16 +1118,30 @@ function channelPose(
   let py: number;
   let pz: number;
   if (sh.anchor) {
-    px = sh.anchor.x * vehLen;
+    // The camera stands on the pad, then slides along with the stack (the physics drifts
+    // downrange from the first seconds) so it stays in frame.
+    px = sh.anchor.x * vehLen + s.downrangeKm * smooth((p - 0.08) / 0.3);
     py = sh.anchor.y * vehLen;
     pz = sh.anchor.z * vehLen * sh.side;
   } else {
-    const d = ev(ch.dist) * vehLen * CLOSE;
+    let d = ev(ch.dist) * vehLen * CLOSE;
     const el = ev(ch.el) * D2R;
     const az = ev(ch.az) * D2R;
-    px = tx + d * Math.cos(el) * Math.sin(az);
-    py = ty + d * Math.sin(el);
-    pz = d * Math.cos(el) * Math.cos(az);
+    const at = (dd: number): [number, number, number] => [
+      tx - dd * Math.cos(el) * Math.sin(az),
+      ty + dd * Math.sin(el),
+      sh.side * dd * Math.cos(el) * Math.cos(az),
+    ];
+    if (ch.fill) {
+      const want = ev(ch.fill);
+      const fov = ev(ch.fov);
+      for (let i = 0; i < 4; i++) {
+        const [cx, cy, cz] = at(d);
+        const got = vehicleFill({ px: cx, py: cy, pz: cz, tx, ty, tz: 0, fov }, s, vehLen);
+        d = Math.min(16 * vehLen, Math.max(1.1 * vehLen, (d * got) / want));
+      }
+    }
+    [px, py, pz] = at(d);
   }
   if (!reduced) {
     const wob = vehLen * 0.025;

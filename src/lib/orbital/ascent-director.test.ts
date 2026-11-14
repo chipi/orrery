@@ -18,6 +18,8 @@ import {
   mulberry32,
   pickConditions,
   shotIndexAt,
+  vehicleFill,
+  viewOf,
   type DirectedShot,
   type DirectorInputs,
   type DirectorPlan,
@@ -224,15 +226,7 @@ describe('constraints over many generated sequences', () => {
         const a = plan.shots[i - 1];
         const b = plan.shots[i];
         if (a.kind === 'kept' && b.kind === 'kept') continue;
-        const view = (s: DirectedShot) =>
-          s.ch && !s.anchor
-            ? {
-                az0: s.ch.az[0][1],
-                az1: s.ch.az.at(-1)![1],
-                el0: s.ch.el[0][1],
-                el1: s.ch.el.at(-1)![1],
-              }
-            : null;
+        const view = (s: DirectedShot) => (s.ch && !s.anchor ? viewOf(s) : null);
         const va = view(a);
         const vb = view(b);
         if (!va || !vb) continue; // kept and anchored views are approximations; the plan checks them
@@ -377,6 +371,37 @@ describe('poses', () => {
     expect(evalKf(kf, 0.5, 'linear')).toBe(15);
     expect(evalKf(kf, 0.5, 'smooth')).toBe(15);
     expect(evalKf(kf, 0.5, 'out')).toBeCloseTo(17.5, 6);
+  });
+});
+
+describe('framing', () => {
+  it('the vehicle fills 40-70 % (a band of 35-80) of the frame in pool and beat shots; wide_trail stays readable', () => {
+    let checked = 0;
+    for (const id of ['falcon-9', 'sls-block-1', 'space-shuttle-stack', 'atlas-v', 'saturn-v']) {
+      const p = byId(id);
+      for (let seed = 0; seed < 8; seed++) {
+        const plan = planFor(p, { seed });
+        for (const sh of plan.shots) {
+          if (!sh.ch || (sh.kind !== 'pool' && sh.kind !== 'beat')) continue;
+          for (const f of [0.15, 0.5, 0.85]) {
+            const t = sh.tStart + f * (sh.tEnd - sh.tStart);
+            if (t - sh.tStart < sh.blendInS) continue; // still blending out of the last shot
+            const s = sampleAscentAt(p.summary.states, t);
+            const pose = directedPoseAt(plan, t, s, 1.2).pose;
+            const fill = vehicleFill(pose, s, 1.2);
+            checked++;
+            if (sh.id === 'wide_trail') {
+              expect(fill).toBeGreaterThan(0.2);
+              expect(fill).toBeLessThan(0.45);
+            } else {
+              expect(fill, `${id} ${sh.id} f=${f}`).toBeGreaterThan(0.3);
+              expect(fill, `${id} ${sh.id} f=${f}`).toBeLessThan(0.85);
+            }
+          }
+        }
+      }
+    }
+    expect(checked).toBeGreaterThan(500);
   });
 });
 

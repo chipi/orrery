@@ -1,13 +1,14 @@
 /**
- * Launch conditions rig (G3 review prototype, dev-only): a seeded sky, sun, cloud deck
- * and pad smoke laid over the existing ascent scene, all procedural (shader noise and
- * canvas-drawn sprites; no image asset). The director picks the conditions
+ * Launch conditions rig (G3 review prototype, dev-only): a seeded sky, sun, atmosphere
+ * limb, cloud deck, night lights, pad tower and pad smoke laid over the existing ascent
+ * scene, all procedural (shader noise and canvas-drawn sprites; no image asset beyond the
+ * night map the scene already ships). The director picks the conditions
  * (ascent-director.ts `pickConditions`); this paints them.
  *
  * It decorates a scene built by createAscentScene without changing that file: it finds
- * the scene's own sun, ambient light, sky dome and sun disc, retunes or hides them, and
- * adds its own. Call `update` after each `setState` (the scene resets the background
- * every frame).
+ * the scene's own sun, ambient light, sky dome, sun disc, atmosphere rim and tower,
+ * retunes or hides them, and adds its own. Call `update` after each `setState` (the scene
+ * resets the background every frame).
  */
 
 import * as THREE from 'three';
@@ -30,11 +31,16 @@ interface Palette {
   cloudShade: number;
   /** How much the sun glows in the sky (0 = none). */
   glow: number;
-  /** Pad satellite photo brightness (it is emissive in the scene). */
+  /** Pad satellite photo brightness (it is emissive in the scene) and its tint. */
   groundEmissive: number;
-  /** The plume lights the pad and stack (0 = no, 1 = fully). */
+  groundTint: number;
+  /** The plume lights the pad and stack (0 = a little, 1 = fully). */
   flameLight: number;
-  rim: number;
+  /** Atmosphere limb colour and strength. */
+  limb: number;
+  limbAmt: number;
+  /** City lights on the dark side (0 = none). */
+  cityLights: number;
 }
 
 const PALETTES: Record<LightId, Palette> = {
@@ -50,8 +56,11 @@ const PALETTES: Record<LightId, Palette> = {
     cloudShade: 0x8d9db4,
     glow: 0.55,
     groundEmissive: 0.9,
-    flameLight: 0,
-    rim: 0x8ec5ff,
+    groundTint: 0xffffff,
+    flameLight: 0.12,
+    limb: 0x5aa0ff,
+    limbAmt: 1.2,
+    cityLights: 0,
   },
   golden: {
     horizon: 0xf2a85e,
@@ -60,13 +69,16 @@ const PALETTES: Record<LightId, Palette> = {
     sun: 0xffb25c,
     sunIntensity: 1.25,
     ambient: 0xffd8b0,
-    ambientIntensity: 0.22,
+    ambientIntensity: 0.24,
     cloudLit: 0xffd2a0,
     cloudShade: 0x6a5a80,
     glow: 1.0,
     groundEmissive: 0.65,
-    flameLight: 0.35,
-    rim: 0xffb070,
+    groundTint: 0xffd9b0,
+    flameLight: 0.5,
+    limb: 0xff9a55,
+    limbAmt: 1.1,
+    cityLights: 0.15,
   },
   dusk: {
     horizon: 0xd8764f,
@@ -74,29 +86,35 @@ const PALETTES: Record<LightId, Palette> = {
     ground: 0x2a2748,
     sun: 0xff8048,
     sunIntensity: 1.0,
-    ambient: 0x6a78b0,
-    ambientIntensity: 0.2,
+    ambient: 0x8a90c8,
+    ambientIntensity: 0.34,
     cloudLit: 0xff9a68,
-    cloudShade: 0x2a3050,
+    cloudShade: 0x3a4068,
     glow: 1.25,
-    groundEmissive: 0.22,
+    groundEmissive: 0.5,
+    groundTint: 0xff9a70,
     flameLight: 1,
-    rim: 0xff8a5a,
+    limb: 0xff6a3a,
+    limbAmt: 1.0,
+    cityLights: 0.6,
   },
   night: {
     horizon: 0x16213d,
     zenith: 0x040612,
     ground: 0x070a18,
     sun: 0xa8bcff,
-    sunIntensity: 0.55,
-    ambient: 0x3a4a86,
-    ambientIntensity: 0.16,
-    cloudLit: 0x6f82b8,
-    cloudShade: 0x151c34,
+    sunIntensity: 0.6,
+    ambient: 0x5a6cae,
+    ambientIntensity: 0.55,
+    cloudLit: 0x8da0d8,
+    cloudShade: 0x1c2442,
     glow: 0.25,
-    groundEmissive: 0.07,
+    groundEmissive: 0.38,
+    groundTint: 0x8ea4e0,
     flameLight: 1,
-    rim: 0x4a63b0,
+    limb: 0x3f64c8,
+    limbAmt: 0.7,
+    cityLights: 1,
   },
 };
 
@@ -128,6 +146,28 @@ function radialTexture(hard: number, size = 128): THREE.CanvasTexture {
   return tex;
 }
 
+/** A glow with no visible edge: a steep, multi-stop falloff. */
+function softGlowTexture(size = 128): THREE.CanvasTexture {
+  const cv = document.createElement('canvas');
+  cv.width = cv.height = size;
+  const ctx = cv.getContext('2d')!;
+  const g = ctx.createRadialGradient(size / 2, size / 2, 0, size / 2, size / 2, size / 2);
+  for (const [s, a] of [
+    [0, 1],
+    [0.12, 0.6],
+    [0.3, 0.25],
+    [0.55, 0.07],
+    [0.8, 0.015],
+    [1, 0],
+  ] as [number, number][])
+    g.addColorStop(s, `rgba(255,255,255,${a})`);
+  ctx.fillStyle = g;
+  ctx.fillRect(0, 0, size, size);
+  const tex = new THREE.CanvasTexture(cv);
+  tex.colorSpace = THREE.SRGBColorSpace;
+  return tex;
+}
+
 /** A lumpy cloud-puff texture: several overlapping soft discs, so smoke reads as billows. */
 function puffTexture(): THREE.CanvasTexture {
   const size = 128;
@@ -139,12 +179,13 @@ function puffTexture(): THREE.CanvasTexture {
     seed = (seed * 1664525 + 1013904223) >>> 0;
     return seed / 4294967296;
   };
-  for (let i = 0; i < 9; i++) {
-    const x = size * (0.3 + rnd() * 0.4);
-    const y = size * (0.3 + rnd() * 0.4);
-    const r = size * (0.16 + rnd() * 0.14);
+  for (let i = 0; i < 12; i++) {
+    const x = size * (0.28 + rnd() * 0.44);
+    const y = size * (0.28 + rnd() * 0.44);
+    const r = size * (0.14 + rnd() * 0.16);
     const g = ctx.createRadialGradient(x, y, 0, x, y, r);
-    g.addColorStop(0, 'rgba(255,255,255,0.55)');
+    g.addColorStop(0, 'rgba(255,255,255,0.6)');
+    g.addColorStop(0.6, 'rgba(255,255,255,0.3)');
     g.addColorStop(1, 'rgba(255,255,255,0)');
     ctx.fillStyle = g;
     ctx.fillRect(0, 0, size, size);
@@ -180,10 +221,56 @@ const NOISE_GLSL = /* glsl */ `
   }
 `;
 
+/** A lattice service tower (example 5): four posts, rings, diagonals, a lightning mast. */
+function buildPadTower(vehLen: number, mat: THREE.Material): THREE.Group {
+  const g = new THREE.Group();
+  const box = new THREE.BoxGeometry(1, 1, 1);
+  const add = (
+    x: number,
+    y: number,
+    z: number,
+    sx: number,
+    sy: number,
+    sz: number,
+    rz = 0,
+  ): void => {
+    const m = new THREE.Mesh(box, mat);
+    m.position.set(x * vehLen, y * vehLen, z * vehLen);
+    m.scale.set(sx * vehLen, sy * vehLen, sz * vehLen);
+    m.rotation.z = rz;
+    g.add(m);
+  };
+  const H = 1.18;
+  const W = 0.1;
+  const post = 0.009;
+  for (const sx of [-1, 1])
+    for (const sz of [-1, 1]) add((sx * W) / 2, H / 2, (sz * W) / 2, post, H, post);
+  const bays = 12;
+  for (let i = 0; i <= bays; i++) {
+    const y = (H * i) / bays;
+    add(0, y, W / 2, W, post * 0.8, post * 0.8);
+    add(0, y, -W / 2, W, post * 0.8, post * 0.8);
+    add(W / 2, y, 0, post * 0.8, post * 0.8, W);
+    add(-W / 2, y, 0, post * 0.8, post * 0.8, W);
+    if (i < bays) {
+      const bay = H / bays;
+      const len = Math.hypot(W, bay);
+      const ang = Math.atan2(bay, W) * (i % 2 ? 1 : -1);
+      add(0, y + bay / 2, W / 2, len, post * 0.6, post * 0.6, ang);
+      add(0, y + bay / 2, -W / 2, len, post * 0.6, post * 0.6, -ang);
+    }
+  }
+  add(0, H + 0.16, 0, post * 1.6, 0.32, post * 1.6); // lightning mast
+  add(-0.14, 0.7, 0, 0.3, post * 2, post * 2); // swing arm toward the stack
+  add(0, 0.012, 0, 0.5, 0.024, 0.5); // pad slab
+  return g;
+}
+
 export function attachLaunchConditions(
   asc: AscentScene,
   c: LaunchConditions,
   vehLen: number,
+  nightUrl?: string,
 ): ConditionsRig {
   const pal = PALETTES[c.light];
   const scene = asc.scene;
@@ -191,8 +278,8 @@ export function attachLaunchConditions(
   const owned: THREE.Object3D[] = [];
   const disposables: { dispose(): void }[] = [];
 
-  // ── Retune the scene's own lights and neutralise its sky and sun ───────
-  const found: { rim: THREE.Mesh | null } = { rim: null };
+  // ── Retune the scene's own lights and neutralise its sky, sun, rim and tower ─
+  const found: { earth: THREE.Mesh | null } = { earth: null };
   const groundMats: THREE.MeshStandardMaterial[] = [];
   scene.traverse((o) => {
     if (o instanceof THREE.DirectionalLight) {
@@ -205,20 +292,26 @@ export function attachLaunchConditions(
     } else if (o instanceof THREE.Mesh) {
       const mat = o.material as THREE.Material;
       if (o.renderOrder === -10 && mat instanceof THREE.ShaderMaterial) o.visible = false;
-      const params = (o.geometry as THREE.SphereGeometry).parameters as
-        { radius?: number } | undefined;
-      if (params?.radius === R_EARTH_KM + 55) found.rim = o;
+      const geo = o.geometry as THREE.BufferGeometry & {
+        parameters?: { radius?: number; height?: number };
+      };
+      const radius = geo.parameters?.radius;
+      if (radius === R_EARTH_KM + 55) o.visible = false; // the scene's flat rim shell
+      if (radius === R_EARTH_KM) found.earth = o;
+      if (
+        geo instanceof THREE.BoxGeometry &&
+        Math.abs((geo.parameters?.height ?? 0) - vehLen * 1.05) < 1e-6
+      )
+        o.visible = false; // the scene's black strongback; a lattice replaces it
       if (mat instanceof THREE.MeshStandardMaterial && mat.emissiveMap) groundMats.push(mat);
     } else if (o instanceof THREE.Group && Math.abs(o.position.length() - 60_000) < 1) {
       o.visible = false; // the scene's sun disc, replaced below
     }
   });
-  if (found.rim) {
-    const rimMat = found.rim.material as THREE.MeshBasicMaterial;
-    rimMat.color.setHex(pal.rim);
-    if (c.light !== 'midday') rimMat.opacity = 0.06;
+  for (const m of groundMats) {
+    m.emissiveIntensity = pal.groundEmissive;
+    m.emissive.setHex(pal.groundTint);
   }
-  for (const m of groundMats) m.emissiveIntensity = pal.groundEmissive;
 
   // ── Sky dome: colours by light, a glow toward the sun ──────────────────
   const skyMat = new THREE.ShaderMaterial({
@@ -262,10 +355,10 @@ export function attachLaunchConditions(
   owned.push(skyDome);
   disposables.push(skyMat, skyDome.geometry);
 
-  // ── Sun (or moon): a core and a wide halo, additive, visible from altitude ──
+  // ── Sun (or moon): a core and a halo, additive, visible from altitude ───
   const haloTex = radialTexture(0);
   const coreTex = radialTexture(1);
-  const mkSun = (tex: THREE.Texture, scale: number, opacity: number): THREE.Sprite => {
+  const mkSun = (tex: THREE.Texture, scale: number, opacity: number): void => {
     const sp = new THREE.Sprite(
       new THREE.SpriteMaterial({
         map: tex,
@@ -281,14 +374,94 @@ export function attachLaunchConditions(
     scene.add(sp);
     owned.push(sp);
     disposables.push(sp.material);
-    return sp;
   };
-  mkSun(haloTex, 14_000, 0.28 * Math.min(1.3, pal.glow));
-  mkSun(coreTex, 5_500, 0.95);
+  mkSun(haloTex, 12_000, 0.24 * Math.min(1.3, pal.glow));
+  mkSun(coreTex, 4_200, 0.9);
   disposables.push(haloTex, coreTex);
 
-  // ── Cloud deck: one shell of procedural noise ───────────────────────────
-  const thr = 0.78 - 0.58 * c.coverage;
+  // ── Atmosphere limb: a thin glow that fades into space, coloured by the light ─
+  const atmoMat = new THREE.ShaderMaterial({
+    uniforms: {
+      uCentre: { value: new THREE.Vector3(0, -R_EARTH_KM, 0) },
+      uSunDir: { value: sunDir },
+      uCol: { value: new THREE.Color(pal.limb) },
+      uAmt: { value: pal.limbAmt },
+      uCamAlt: { value: 0 },
+    },
+    side: THREE.BackSide,
+    transparent: true,
+    depthWrite: false,
+    blending: THREE.AdditiveBlending,
+    vertexShader: /* glsl */ `
+      varying vec3 vW;
+      void main() { vec4 w = modelMatrix * vec4(position, 1.0); vW = w.xyz; gl_Position = projectionMatrix * viewMatrix * w; }
+    `,
+    fragmentShader: /* glsl */ `
+      uniform vec3 uCentre; uniform vec3 uSunDir; uniform vec3 uCol; uniform float uAmt; uniform float uCamAlt;
+      varying vec3 vW;
+      void main() {
+        vec3 ro = cameraPosition - uCentre;
+        vec3 rd = normalize(vW - cameraPosition);
+        float tca = max(-dot(ro, rd), 0.0);
+        vec3 pc = ro + rd * tca;
+        float h = length(pc) - 6371.0;
+        float g = exp(-max(h, 0.0) / 20.0);
+        float sunSide = 0.22 + 0.78 * smoothstep(-0.35, 0.8, dot(normalize(pc), normalize(uSunDir)));
+        float vis = smoothstep(15.0, 70.0, uCamAlt);
+        gl_FragColor = vec4(uCol * g * sunSide * uAmt * vis, 1.0);
+      }
+    `,
+  });
+  const atmo = new THREE.Mesh(new THREE.SphereGeometry(R_EARTH_KM + 170, 128, 64), atmoMat);
+  atmo.position.set(0, -R_EARTH_KM, 0);
+  atmo.renderOrder = 1;
+  scene.add(atmo);
+  owned.push(atmo);
+  disposables.push(atmoMat, atmo.geometry);
+
+  // ── Night lights on the dark side: the scene's own night map, additive ──
+  let lightsMat: THREE.ShaderMaterial | null = null;
+  if (nightUrl && found.earth && pal.cityLights > 0) {
+    const tex = new THREE.TextureLoader().load(nightUrl);
+    tex.colorSpace = THREE.SRGBColorSpace;
+    lightsMat = new THREE.ShaderMaterial({
+      uniforms: {
+        uMap: { value: tex },
+        uSunDir: { value: sunDir },
+        uCentre: { value: new THREE.Vector3(0, -R_EARTH_KM, 0) },
+        uAmt: { value: pal.cityLights },
+        uCamAlt: { value: 0 },
+      },
+      transparent: true,
+      depthWrite: false,
+      blending: THREE.AdditiveBlending,
+      vertexShader: /* glsl */ `
+        varying vec2 vUv; varying vec3 vW;
+        void main() { vUv = uv; vec4 w = modelMatrix * vec4(position, 1.0); vW = w.xyz; gl_Position = projectionMatrix * viewMatrix * w; }
+      `,
+      fragmentShader: /* glsl */ `
+        uniform sampler2D uMap; uniform vec3 uSunDir; uniform vec3 uCentre; uniform float uAmt; uniform float uCamAlt;
+        varying vec2 vUv; varying vec3 vW;
+        void main() {
+          float ndl = dot(normalize(vW - uCentre), normalize(uSunDir));
+          float dark = 1.0 - smoothstep(-0.12, 0.1, ndl);
+          vec3 city = texture2D(uMap, vUv).rgb;
+          float vis = smoothstep(6.0, 40.0, uCamAlt);
+          gl_FragColor = vec4(city * vec3(1.15, 0.9, 0.6) * dark * uAmt * vis * 1.6, 1.0);
+        }
+      `,
+    });
+    const lights = new THREE.Mesh(new THREE.SphereGeometry(R_EARTH_KM + 0.4, 128, 128), lightsMat);
+    lights.position.copy(found.earth.position);
+    lights.quaternion.copy(found.earth.quaternion);
+    lights.renderOrder = 1;
+    scene.add(lights);
+    owned.push(lights);
+    disposables.push(lightsMat, lights.geometry, tex);
+  }
+
+  // ── Cloud deck: cumulus clusters and stratus sheets, soft edged ────────
+  const thr = 0.82 - 0.62 * c.coverage;
   const cloudMat = new THREE.ShaderMaterial({
     uniforms: {
       uSunDir: { value: sunDir },
@@ -300,6 +473,7 @@ export function attachLaunchConditions(
       uDeckAlt: { value: c.deckAltKm },
       uCamAlt: { value: 0 },
       uSeed: { value: c.cloudSeed * 7.31 },
+      uType: { value: c.cloudType },
     },
     side: THREE.DoubleSide,
     transparent: true,
@@ -310,31 +484,46 @@ export function attachLaunchConditions(
     `,
     fragmentShader: /* glsl */ `
       uniform vec3 uSunDir; uniform vec3 uCentre; uniform vec3 uLit; uniform vec3 uShade; uniform vec3 uWarm;
-      uniform float uThr; uniform float uDeckAlt; uniform float uCamAlt; uniform float uSeed;
+      uniform float uThr; uniform float uDeckAlt; uniform float uCamAlt; uniform float uSeed; uniform float uType;
       varying vec3 vW;
       ${NOISE_GLSL}
+      // 0..1 cloud density: a regional mix of stretched stratus sheets and puffy cumulus clusters
+      float density(vec3 q, int oct) {
+        float regime = fbm(q * 0.011, 3);
+        float cu = smoothstep(0.36, 0.64, regime + (uType - 0.5) * 0.5);
+        vec3 qs = q * vec3(0.022, 0.04, 0.085);
+        float st = fbm(qs + fbm(qs * 2.0, 2) * 0.8, oct);
+        float cl = fbm(q * 0.03, 3);
+        float bil = 1.0 - abs(2.0 * fbm(q * 0.14 + cl * 2.5, oct) - 1.0);
+        float cumulus = clamp(cl * 0.75 + bil * 0.5 - 0.12, 0.0, 1.0);
+        return mix(st, cumulus, cu);
+      }
       void main() {
-        vec3 p = vW * 0.07 + vec3(uSeed, uSeed * 0.37, uSeed * 0.71);
-        vec3 w = vec3(fbm(p * 0.55, 3), fbm(p * 0.55 + 17.0, 3), fbm(p * 0.55 + 31.0, 3));
-        float n = fbm(p + (w - 0.5) * 1.6, 5);
-        float cov = smoothstep(uThr, uThr + 0.2, n);
-        if (cov < 0.01) discard;
+        vec3 q = vW + vec3(uSeed * 13.0, uSeed * 5.0, uSeed * 9.0);
+        float n = density(q, 5);
+        float cov = smoothstep(uThr, uThr + 0.3, n);
         vec3 nrm = normalize(vW - uCentre);
         float ndl = dot(nrm, normalize(uSunDir));
         float day = smoothstep(-0.12, 0.3, ndl);
-        // self-shadow: density a step toward the sun, so billows have a lit and a shaded flank
+        // self-shadow: density a step toward the sun gives billows a lit and a shaded flank
         vec3 st = normalize(uSunDir - nrm * dot(nrm, uSunDir));
-        float nS = fbm(p + st * 0.35 + (w - 0.5) * 1.6, 3);
-        float relief = clamp(0.55 + (n - nS) * 3.2, 0.0, 1.0);
+        float nS = density(q + st * 0.5, 3);
+        float relief = clamp(0.55 + (n - nS) * 3.0, 0.0, 1.0);
         float above = step(uDeckAlt, uCamAlt);
-        vec3 top = mix(uShade, uLit, relief * day + (1.0 - day) * 0.08);
+        vec3 top = mix(uShade, uLit, relief * day + (1.0 - day) * 0.1);
+        top = mix(top, uShade, smoothstep(uThr + 0.25, uThr + 0.55, n) * 0.25);
         top = mix(top, uWarm, (1.0 - smoothstep(0.0, 0.35, abs(ndl + 0.04))) * 0.35 * day);
         vec3 under = mix(uShade * 0.55, uLit * 0.55, day * 0.6 + 0.1);
-        vec3 col = mix(under, top, above);
+        vec3 cloudCol = mix(under, top, above);
         float dist = length(vW - cameraPosition);
         float graze = smoothstep(0.03, 0.22, abs(dot(normalize(cameraPosition - vW), nrm)));
-        float a = cov * smoothstep(0.15, 2.0, dist) * graze;
-        a *= mix(0.92, 1.0, above);
+        float fadeNear = smoothstep(0.15, 2.0, dist) * graze;
+        float cloudA = cov * fadeNear * mix(0.92, 1.0, above);
+        // a pale veil between the clouds from altitude: lifts the deep ocean blue
+        float veilA = 0.24 * above * smoothstep(5.0, 45.0, uCamAlt) * graze;
+        vec3 veilCol = mix(uShade, uLit, day * 0.7) * 0.9;
+        float a = cloudA + veilA * (1.0 - cloudA);
+        vec3 col = (cloudCol * cloudA + veilCol * veilA * (1.0 - cloudA)) / max(a, 0.001);
         gl_FragColor = vec4(col, clamp(a, 0.0, 1.0));
       }
     `,
@@ -349,8 +538,91 @@ export function attachLaunchConditions(
   owned.push(cloudDeck);
   disposables.push(cloudMat, cloudDeck.geometry);
 
-  // ── Pad smoke: sprites, every position a pure function of the mission time ──
-  const N = c.padSmoke ? 110 : 0;
+  // ── Pad: a lattice tower, a grainy ground overlay that breaks up the stretched photo ─
+  const towerMat = new THREE.MeshStandardMaterial({
+    color: 0x8a8e98,
+    roughness: 0.8,
+    metalness: 0.2,
+  });
+  const tower = buildPadTower(vehLen, towerMat);
+  tower.position.set(vehLen * 0.34, 0, 0);
+  scene.add(tower);
+  owned.push(tower);
+  disposables.push(towerMat);
+
+  const lvl = pal.groundEmissive;
+  const grainMat = new THREE.ShaderMaterial({
+    uniforms: {
+      uCamAlt: { value: 0 },
+      uDark: { value: new THREE.Color(0x14210f).multiplyScalar(0.4 + lvl) },
+      uLight: {
+        value: new THREE.Color(0x6b7a4c)
+          .multiplyScalar(lvl)
+          .lerp(new THREE.Color(pal.groundTint), 0.15),
+      },
+    },
+    transparent: true,
+    depthWrite: false,
+    polygonOffset: true,
+    polygonOffsetFactor: -2,
+    polygonOffsetUnits: -2,
+    vertexShader: /* glsl */ `
+      varying vec3 vW;
+      void main() { vec4 w = modelMatrix * vec4(position, 1.0); vW = w.xyz; gl_Position = projectionMatrix * viewMatrix * w; }
+    `,
+    fragmentShader: /* glsl */ `
+      uniform float uCamAlt; uniform vec3 uDark; uniform vec3 uLight;
+      varying vec3 vW;
+      ${NOISE_GLSL}
+      void main() {
+        vec3 p = vec3(vW.x, 0.0, vW.z);
+        float d = fbm(p * 3.0, 4) * 0.55 + fbm(p * 22.0, 3) * 0.45;
+        float r = length(vW.xz);
+        float a = 0.55 * (1.0 - smoothstep(6.0, 18.0, uCamAlt)) * (1.0 - smoothstep(14.0, 30.0, r));
+        gl_FragColor = vec4(mix(uDark, uLight, smoothstep(0.3, 0.7, d)), a);
+      }
+    `,
+  });
+  const grain = new THREE.Mesh(new THREE.PlaneGeometry(64, 64).rotateX(-Math.PI / 2), grainMat);
+  grain.position.y = 0.004;
+  grain.renderOrder = 1;
+  scene.add(grain);
+  owned.push(grain);
+  disposables.push(grainMat, grain.geometry);
+
+  // ── Plume glow: a halo at the pad and a pool of light on the ground, lighting the smoke ──
+  const glowTex = softGlowTexture();
+  disposables.push(glowTex);
+  const glowSprite = new THREE.Sprite(
+    new THREE.SpriteMaterial({
+      map: glowTex,
+      color: 0xffa050,
+      transparent: true,
+      opacity: 0,
+      blending: THREE.AdditiveBlending,
+      depthWrite: false,
+    }),
+  );
+  scene.add(glowSprite);
+  owned.push(glowSprite);
+  disposables.push(glowSprite.material);
+  const poolMat = new THREE.MeshBasicMaterial({
+    map: glowTex,
+    color: 0xff9a40,
+    transparent: true,
+    opacity: 0,
+    blending: THREE.AdditiveBlending,
+    depthWrite: false,
+  });
+  const pool = new THREE.Mesh(new THREE.PlaneGeometry(1, 1).rotateX(-Math.PI / 2), poolMat);
+  pool.position.y = 0.01;
+  pool.scale.setScalar(vehLen * 4.2);
+  scene.add(pool);
+  owned.push(pool);
+  disposables.push(poolMat, pool.geometry);
+
+  // ── Pad smoke: sprites rolling out sideways, every position a pure function of the mission time ──
+  const N = c.padSmoke ? 200 : 0;
   const puffTex = puffTexture();
   disposables.push(puffTex);
   const puffs: { sp: THREE.Sprite; ang: number; spd: number; lift: number; size: number }[] = [];
@@ -366,21 +638,28 @@ export function attachLaunchConditions(
     scene.add(sp);
     owned.push(sp);
     disposables.push(sp.material);
+    // the flame trenches throw most of it out along the pad's sides (+/- z), some everywhere
+    const side = hash(i, 5) < 0.5 ? 1 : -1;
+    // along x, so a camera on the z side sees it roll out to its left and right
+    const ang =
+      hash(i, 6) < 0.75
+        ? (side > 0 ? 0 : Math.PI) + (hash(i, 1) - 0.5) * 0.9
+        : hash(i, 1) * Math.PI * 2;
     puffs.push({
       sp,
-      ang: hash(i, 1) * Math.PI * 2,
-      spd: 0.5 + hash(i, 2),
+      ang,
+      spd: 0.45 + hash(i, 2),
       lift: hash(i, 3),
-      size: 0.8 + hash(i, 4) * 0.7,
+      size: 0.9 + hash(i, 4) * 0.8,
     });
   }
-  const smokeBase = new THREE.Color(pal.cloudLit).lerp(new THREE.Color(pal.cloudShade), 0.25);
-  const flameWarm = new THREE.Color(0xffa04a);
+  const smokeBase = new THREE.Color(pal.cloudShade).lerp(new THREE.Color(pal.cloudLit), 0.35);
+  const flameWarm = new THREE.Color(0xffa040);
   const tmp = new THREE.Color();
 
-  // ── A warm light from the plume for low-light launches ──────────────────
-  const flameA = new THREE.PointLight(0xffa860, 0, vehLen * 9, 1.6);
-  const flameB = new THREE.PointLight(0xffa860, 0, vehLen * 9, 1.6);
+  // ── Warm light from the plume on the stack, the tower and the smoke ─────
+  const flameA = new THREE.PointLight(0xffa860, 0, vehLen * 12, 1.4);
+  const flameB = new THREE.PointLight(0xffa860, 0, vehLen * 12, 1.4);
   scene.add(flameA, flameB);
   owned.push(flameA, flameB);
 
@@ -389,39 +668,62 @@ export function attachLaunchConditions(
 
   return {
     update(s, camera) {
+      const camAlt = camera.position.y;
       skyMat.uniforms.uAlt.value = s.altKm;
-      cloudMat.uniforms.uCamAlt.value = camera.position.y;
+      cloudMat.uniforms.uCamAlt.value = camAlt;
+      atmoMat.uniforms.uCamAlt.value = camAlt;
+      grainMat.uniforms.uCamAlt.value = camAlt;
+      if (lightsMat) lightsMat.uniforms.uCamAlt.value = camAlt;
       // The scene writes its own sky colour each frame; override with this launch's.
       const skyT = Math.min(1, Math.pow(s.altKm / 70, 0.65));
       (scene.background as THREE.Color).copy(skyGround).lerp(SPACE, skyT);
 
       const t = s.t;
+      const lit = s.thrustN > 0 ? 1 : 0;
+      const nearPad = 1 - smoothstep01((s.altKm - 0.2) / 2.2);
+      const boost = 0.55 + pal.flameLight * 0.6;
+      glowSprite.visible = lit * nearPad > 0.01;
+      glowSprite.position.set(s.downrangeKm, s.altKm + vehLen * 0.05, 0);
+      glowSprite.scale.setScalar(vehLen * 3.2);
+      (glowSprite.material as THREE.SpriteMaterial).opacity = 0.8 * lit * nearPad * boost;
+      pool.visible = glowSprite.visible;
+      poolMat.opacity = 0.9 * lit * nearPad * boost;
+
       puffs.forEach((p, i) => {
-        const age = t - (-3 + i * 0.24);
-        if (age < 0 || age > 30) {
+        const age = t - (-3 + i * 0.12);
+        if (age < 0 || age > 34) {
           p.sp.visible = false;
           return;
         }
-        const spread = vehLen * (0.08 + 0.85 * (1 - Math.exp(-age / 5))) * (0.5 + p.spd * 0.55);
+        const dist = vehLen * (0.12 + 1.7 * (1 - Math.exp(-age / 6))) * (0.45 + p.spd * 0.6);
         p.sp.visible = true;
+        const size = vehLen * p.size * (0.4 + 0.03 * Math.min(age, 12));
         p.sp.position.set(
-          Math.cos(p.ang) * spread * 1.2,
-          vehLen * (0.05 + 0.08 * Math.sqrt(age) + 0.2 * p.lift * (1 - Math.exp(-age / 3))),
-          Math.sin(p.ang) * spread,
+          Math.cos(p.ang) * dist,
+          size * 0.35 +
+            vehLen * (0.03 + 0.03 * Math.sqrt(age) + 0.1 * p.lift * (1 - Math.exp(-age / 4))),
+          Math.sin(p.ang) * dist * 0.55,
         );
-        p.sp.scale.setScalar(vehLen * p.size * (0.42 + 0.1 * age));
+        p.sp.scale.setScalar(size);
         const m = p.sp.material as THREE.SpriteMaterial;
-        m.opacity = 0.85 * smoothstep01(age / 0.7) * (1 - smoothstep01((age - 12) / 18));
-        tmp.copy(flameWarm).lerp(smokeBase, smoothstep01(age / 4));
-        m.color.copy(tmp).multiplyScalar(0.55 + 0.45 * pal.groundEmissive + pal.flameLight * 0.2);
+        // fade with age, and where a puff would swallow the camera
+        const nearCam = smoothstep01(
+          (p.sp.position.distanceTo(camera.position) - vehLen * 0.5) / vehLen,
+        );
+        m.opacity = 0.85 * nearCam * smoothstep01(age / 0.7) * (1 - smoothstep01((age - 9) / 14));
+        // lit from below by the plume while the engines burn near the pad
+        const glow =
+          Math.exp(-dist / (vehLen * 0.9)) * lit * nearPad * (1 - smoothstep01(age / 14));
+        tmp.copy(smokeBase).lerp(flameWarm, Math.min(1, glow * boost * 1.4));
+        m.color.copy(tmp).multiplyScalar(0.5 + 0.6 * pal.groundEmissive + glow * 0.5);
       });
 
-      const lit = s.thrustN > 0 ? 1 : 0;
-      const k = pal.flameLight * lit * 14 * (1 - Math.min(1, s.altKm / 25));
+      // mid-stack and well out to the sides: a low light makes a hot spot on the ground photo
+      const k = pal.flameLight * lit * 20 * (1 - Math.min(1, s.altKm / 90));
       flameA.intensity = k;
       flameB.intensity = k;
-      flameA.position.set(s.downrangeKm, s.altKm + vehLen * 0.05, vehLen * 0.8);
-      flameB.position.set(s.downrangeKm, s.altKm + vehLen * 0.05, -vehLen * 0.8);
+      flameA.position.set(s.downrangeKm, s.altKm + vehLen * 0.7, vehLen * 1.15);
+      flameB.position.set(s.downrangeKm, s.altKm + vehLen * 0.7, -vehLen * 1.15);
     },
     dispose() {
       for (const o of owned) scene.remove(o);

@@ -12,7 +12,6 @@
   import { assetUrl } from '$lib/asset-url';
   import AgencyBadge from '$lib/components/AgencyBadge.svelte';
   import EntityThumb from '$lib/components/EntityThumb.svelte';
-  import { thumbOf } from '$lib/entity-thumb';
   import { base } from '$app/paths';
   import * as m from '$lib/paraglide/messages';
   import JsonLd from '$lib/components/JsonLd.svelte';
@@ -260,7 +259,10 @@
                   <img class="t-patch" src={assetUrl(badges[`mission:${r.linked_id}`])} alt="" />
                 {:else}
                   <span class="t-thumb"
-                    ><EntityThumb src={thumbOf('missions', r.linked_id)} fallback="none" /></span
+                    ><EntityThumb
+                      src={data.thumbs[`mission:${r.linked_id}`] ?? null}
+                      fallback="none"
+                    /></span
                   >
                 {/if}
                 <button
@@ -306,7 +308,10 @@
     <ul class="hardware">
       {#each fleet as r, i (i)}
         <li>
-          <EntityThumb src={r.linked_id ? thumbOf('fleet', r.linked_id) : null} fallback="none" />
+          <EntityThumb
+            src={r.linked_id ? (data.thumbs[`fleet:${r.linked_id}`] ?? null) : null}
+            fallback="none"
+          />
           <span class="hw-body">
             <a href={href(r)}>{pretty(r.linked_id ?? '')}</a>
             {#if r.role}<span class="role">{r.role}</span>{/if}

@@ -17,7 +17,7 @@ export interface RosterMissionDetail {
   href: string;
 }
 
-export const load: PageLoad = async ({ params, fetch }) => {
+export const load: PageLoad = async ({ params, fetch, data }) => {
   const program = await getProgram(params.id, getLocale(), fetch);
   if (!program) throw error(404, `Unknown program: ${params.id}`);
 
@@ -49,5 +49,5 @@ export const load: PageLoad = async ({ params, fetch }) => {
   // its roster carries none; only the program insignia resolves.
   const badges = await getBadges(fetch);
 
-  return { program, missionDetails, badges };
+  return { program, missionDetails, badges, thumbs: data.thumbs };
 };

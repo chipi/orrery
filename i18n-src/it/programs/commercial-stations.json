@@ -82,5 +82,31 @@
   "link_labels": {
     "/programs/iss": "SSI — la stazione che sono costruite per sostituire",
     "/programs/spacex": "SpaceX — il trasporto di equipaggi e merci su cui faranno affidamento"
+  },
+  "roster": {
+    "Commercial LEO Destinations": {
+      "note": "la NASA finanzia diverse aziende per costruire stazioni private, con l'intento di diventare cliente di avamposti orbitali anziché gestirne uno",
+      "name": "Commercial LEO Destinations"
+    },
+    "Vast Haven-1": {
+      "note": "una stazione commerciale a modulo singolo in volo libero di Vast — tra le prime stazioni commerciali che si prevede raggiungano l'orbita",
+      "name": "Vast Haven-1"
+    },
+    "Axiom Station": {
+      "note": "Axiom Space la assembla come stazione indipendente in volo libero; il suo primo modulo si aggancia brevemente alla ISS e poi si stacca per unirsi ai moduli successivi in volo libero — piano ristrutturato a dicembre 2024",
+      "name": "Axiom Station"
+    },
+    "Orbital Reef": {
+      "note": "un'iniziativa di Blue Origin e Sierra Space presentata come un «parco d'affari a uso misto» in orbita — ricerca, produzione e turismo",
+      "name": "Orbital Reef"
+    },
+    "Starlab": {
+      "note": "una stazione di Voyager e Airbus progettata come un unico grande modulo in volo libero, pensata per una scienza continua dopo la ISS",
+      "name": "Starlab"
+    },
+    "ISS retirement": {
+      "note": "la ISS verrà fatta rientrare intorno al 2030; le stazioni commerciali dovrebbero già volare prima che se ne vada, così la presenza umana in orbita bassa non si interrompe mai",
+      "name": "Ritiro della ISS"
+    }
   }
 }

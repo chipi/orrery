@@ -87,5 +87,19 @@
     "/fleet?id=gaganyaan": "Flotta — la navicella Gaganyaan",
     "/programs/chandrayaan": "Chandrayaan — il programma lunare dell'India",
     "/programs/mangalyaan": "Mangalyaan — la missione marziana dell'India riuscita al primo tentativo"
+  },
+  "roster": {
+    "Announced": {
+      "note": "l'India si impegna a far volare i propri astronauti con un proprio razzo — l'obiettivo che ne farebbe la quarta nazione con volo spaziale umano indipendente",
+      "name": "Annunciato"
+    },
+    "Test Vehicle abort": {
+      "note": "il primo test in volo dimostra il sistema di fuga dell'equipaggio, che deve allontanare la capsula da un razzo in avaria — la capacità di sicurezza attorno a cui si costruisce un programma con equipaggio",
+      "name": "Abort del veicolo di prova"
+    },
+    "First crewed flight": {
+      "note": "il debutto previsto di un equipaggio indiano su una navicella indiana — puntato per l'inizio del 2027, unendosi a Russia, Stati Uniti e Cina come potenze di volo spaziale umano indipendente",
+      "name": "Primo volo con equipaggio"
+    }
   }
 }

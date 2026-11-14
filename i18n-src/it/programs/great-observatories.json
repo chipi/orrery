@@ -93,5 +93,15 @@
     "/explore": "Esplora — gli oggetti del cielo profondo rivelati da questi telescopi",
     "/earth?site=hubble": "Hubble in orbita terrestre bassa",
     "/earth?site=chandra": "Osservatorio a raggi X Chandra"
+  },
+  "roster": {
+    "Compton Gamma Ray Observatory": {
+      "note": "il membro a raggi gamma dei quattro originali — mappò gli eventi più violenti dell'universo finché non fu fatto rientrare deliberatamente nel 2000",
+      "name": "Compton Gamma Ray Observatory"
+    },
+    "Nancy Grace Roman": {
+      "note": "il successivo nella linea della NASA — un telescopio per survey a infrarossi a grande campo, con un campo visivo oltre cento volte quello di Hubble, costruito per mappare l'universo anziché fissare un solo angolo",
+      "name": "Nancy Grace Roman"
+    }
   }
 }

@@ -95,5 +95,23 @@
     "/moon": "Luna — la destinazione",
     "/fleet?id=orion": "Flotta — Orion, SLS e i mezzi lunari",
     "/programs/apollo": "Apollo — il programma da cui Artemis prende il nome e che supera"
+  },
+  "roster": {
+    "Artemis I": {
+      "note": "un'Orion senza equipaggio gira intorno alla Luna al primo lancio dell'SLS — l'hardware per lo spazio profondo viene collaudato prima che qualcuno lo usi",
+      "name": "Artemis I"
+    },
+    "mission:artemis2": {
+      "note": "il primo equipaggio — quattro astronauti, tra cui il primo non americano a volare verso la Luna; il loro sorvolo di aprile 2026 portò esseri umani più lontano dalla Terra che mai"
+    },
+    "mission:artemis3": {
+      "note": "una prova con equipaggio in orbita terrestre — Orion si aggancia ai lander commerciali prima che qualcuno li usi per andare sulla Luna, come fece Apollo 9 nel 1969"
+    },
+    "mission:artemis4": {
+      "note": "il ritorno in superficie — il primo allunaggio con equipaggio dal 1972 e il primo in assoluto vicino al polo sud"
+    },
+    "mission:artemis5": {
+      "note": "il secondo allunaggio, previsto per fine 2028 — l'inizio dei lavori verso una base al polo sud"
+    }
   }
 }

@@ -89,5 +89,21 @@
     "/mars?site=viking1-lander": "Viking 1 — Chryse Planitia",
     "/mars?site=viking2-lander": "Viking 2 — Utopia Planitia",
     "/mars?site=viking1-orbiter": "orbiter Viking 1"
+  },
+  "roster": {
+    "fleet:viking-1": {
+      "note": "la prima sonda ad atterrare con successo su Marte e a operarvi — un orbiter per mappare dall'alto e un lander per lavorare in superficie"
+    },
+    "mission:viking1": {
+      "note": "il 20 luglio 1976 il lander Viking 1 si posò in Chryse Planitia e restituì le prime immagini nitide della superficie di Marte"
+    },
+    "Viking 2": {
+      "note": "una seconda coppia di orbiter e lander, posata a migliaia di chilometri di distanza, in Utopia Planitia, sei settimane dopo",
+      "name": "Viking 2"
+    },
+    "The biology experiments": {
+      "note": "ogni lander eseguì esperimenti progettati per rilevare la vita nel suolo marziano; i risultati furono ambigui, e ancora oggi se ne discute",
+      "name": "Gli esperimenti di biologia"
+    }
   }
 }

@@ -87,5 +87,25 @@
     "/explore": "I pianeti esterni nell'esploratore 3D",
     "/gallery/deep-sky": "Il «pallido puntino azzurro», nella galleria Cielo profondo",
     "/programs/pioneer": "Pioneer — le sonde che partirono per prime"
+  },
+  "roster": {
+    "mission:voyager-2": {
+      "note": "l'unica sonda ad aver visitato tutti e quattro i pianeti giganti, e l'unico sguardo ravvicinato che l'umanità abbia mai avuto su Urano e Nettuno"
+    },
+    "mission:voyager-1": {
+      "note": "sorvolò Giove e Saturno, si voltò per fotografare l'intero sistema solare e divenne il primo oggetto costruito dall'uomo a raggiungere lo spazio interstellare"
+    },
+    "The Golden Record": {
+      "note": "un disco fonografico placcato in oro fissato a ciascuna sonda — suoni, musica e saluti dalla Terra, rivolti a chiunque possa trovarlo fra un miliardo di anni",
+      "name": "Il Golden Record"
+    },
+    "The Pale Blue Dot": {
+      "note": "il 14 febbraio 1990, da oltre Nettuno, Voyager 1 si voltò e fotografò la Terra come un singolo pixel",
+      "name": "Il Pale Blue Dot"
+    },
+    "Interstellar space": {
+      "note": "Voyager 1 attraversò l'eliopausa nel 2012, Voyager 2 nel 2018 — le prime macchine a lasciare la bolla del Sole e a entrare nello spazio tra le stelle, e che ancora chiamano a casa",
+      "name": "Spazio interstellare"
+    }
   }
 }

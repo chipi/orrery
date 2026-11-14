@@ -95,5 +95,27 @@
     "/programs/great-observatories": "I Grandi Osservatori — la stirpe che il JWST prosegue",
     "/programs/ariane": "Ariane — il razzo che lo ha lanciato",
     "/earth?site=jwst": "Telescopio spaziale James Webb"
+  },
+  "roster": {
+    "Conceived": {
+      "note": "comincia la pianificazione di un «Next Generation Space Telescope» che succeda a Hubble — l'inizio di una saga di 25 anni di riprogettazioni, ritardi e un budget cresciuto di circa dieci volte",
+      "name": "Concepito"
+    },
+    "Nearly cancelled": {
+      "note": "con anni di ritardo e miliardi di sforamento, il programma fu preso di mira per la cancellazione dal Congresso prima di essere salvato — una sopravvivenza risicata come poche in questo atlante",
+      "name": "Quasi cancellato"
+    },
+    "Launch": {
+      "note": "il giorno di Natale, un Ariane 5 fornito dall'ESA lancia JWST senza difetti — con tale precisione che il telescopio risparmiò carburante a sufficienza per raddoppiare circa la sua vita prevista",
+      "name": "Lancio"
+    },
+    "The unfolding": {
+      "note": "in due settimane, 344 passaggi a singolo punto di guasto dispiegano lo schermo solare grande come un campo da tennis e lo specchio segmentato a un milione di miglia da qualsiasi speranza di riparazione — ognuno ha funzionato",
+      "name": "Il dispiegamento"
+    },
+    "First images": {
+      "note": "le prime immagini a colori stupiscono il mondo — la visione infrarossa più profonda dell'universo mai ripresa, galassie dell'alba del tempo cosmico",
+      "name": "Prime immagini"
+    }
   }
 }

@@ -94,5 +94,11 @@
   "link_labels": {
     "/earth": "Terra — orbite e siti di lancio",
     "/science/mission-phases/edl": "Ingresso, discesa e atterraggio"
+  },
+  "roster": {
+    "Korabl-Sputnik 2 (Belka & Strelka)": {
+      "note": "le cagnoline Belka e Strelka — i primi animali a orbitare e a tornare vivi, sulla navicella di prova Vostok",
+      "name": "Korabl-Sputnik 2 (Belka e Strelka)"
+    }
   }
 }

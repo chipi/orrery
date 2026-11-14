@@ -82,5 +82,18 @@
   "link_labels": {
     "/explore": "Plutone nell'esploratore 3D",
     "/gallery/deep-sky": "Plutone, nella galleria Cielo profondo"
+  },
+  "roster": {
+    "mission:new-horizons": {
+      "note": "la sonda più veloce mai lanciata, mandata attraverso il sistema solare per compiere il primo studio ravvicinato di Plutone — e poi di un mondo oltre di esso"
+    },
+    "Pluto, up close": {
+      "note": "il 14 luglio 2015 sorvolò Plutone, rivelando un mondo giovane e attivo di ghiacciai di azoto e montagne di ghiaccio d'acqua dove gli scienziati si aspettavano una palla di roccia morta",
+      "name": "Plutone da vicino"
+    },
+    "Arrokoth": {
+      "note": "il giorno di Capodanno del 2019 sorvolò Arrokoth, un minuscolo corpo a due lobi, un miliardo e mezzo di chilometri oltre Plutone — l'oggetto più lontano mai esplorato da vicino",
+      "name": "Arrokoth"
+    }
   }
 }

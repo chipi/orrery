@@ -91,5 +91,17 @@
     "/moon": "Luna — il sito di allunaggio di SLIM",
     "/explore": "Esplora — Venere e i pianeti interni",
     "/programs/hayabusa": "Hayabusa — la campagna JAXA di ritorno di campioni da asteroidi"
+  },
+  "roster": {
+    "Kaguya / SELENE": {
+      "note": "la più grande missione lunare dopo Apollo — un orbiter lunare che mappò la superficie con un dettaglio senza precedenti e girò il primo video in alta definizione della Terra che sorge sul bordo lunare",
+      "name": "Kaguya / SELENE"
+    },
+    "mission:akatsuki": {
+      "note": "dopo il guasto nel 2010 del motore di inserimento in orbita attorno a Venere, la sonda girò intorno al Sole per cinque anni e, al secondo tentativo, usò i suoi minuscoli propulsori d'assetto per entrare in orbita — una missione salvata da una perdita certa"
+    },
+    "mission:slim": {
+      "note": "il «Moon Sniper» atterrò a circa 10 metri dal suo bersaglio — una precisione puntuale che nessuno aveva mai raggiunto — e poi sopravvive a un atterraggio capovolto per restituire scienza con l'energia solare"
+    }
   }
 }

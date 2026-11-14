@@ -103,5 +103,15 @@
     "/earth": "Terra — orbite, rientro e siti di lancio",
     "/science/mission-phases/edl": "Ingresso, discesa e atterraggio",
     "/science/propulsion/tsiolkovsky": "L'equazione di Ciolkovskij — perché il Redstone non poteva andare in orbita"
+  },
+  "roster": {
+    "Mercury-Redstone 2 (Ham)": {
+      "note": "prova suborbitale con uno scimpanzé — liberò il Redstone per un volo con equipaggio",
+      "name": "Mercury-Redstone 2 (Ham)"
+    },
+    "Mercury-Atlas 5 (Enos)": {
+      "note": "prova di due orbite con uno scimpanzé — liberò l'Atlas prima del volo di Glenn",
+      "name": "Mercury-Atlas 5 (Enos)"
+    }
   }
 }

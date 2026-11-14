@@ -86,5 +86,21 @@
   "link_labels": {
     "/explore": "Giove nell'esploratore 3D",
     "/programs/voyager": "Voyager — il tour che Pioneer aveva esplorato"
+  },
+  "roster": {
+    "mission:pioneer-10": {
+      "note": "la prima sonda ad attraversare la fascia degli asteroidi e a raggiungere Giove, e la prima messa su una rotta per lasciare del tutto il sistema solare"
+    },
+    "mission:pioneer-11": {
+      "note": "sorvolò Giove, poi divenne la prima sonda a raggiungere Saturno — esplorando la rotta e i pericoli degli anelli che le Voyager avrebbero seguito"
+    },
+    "The Pioneer plaque": {
+      "note": "una piccola targa anodizzata in oro su ciascuna sonda che mostra un uomo, una donna e la posizione della Terra — il primo messaggio fisico dell'umanità rivolto alle stelle",
+      "name": "La targa delle Pioneer"
+    },
+    "Pioneer Venus": {
+      "note": "una coppia distinta di Pioneer raggiunse Venere nel 1978 — un orbiter che mappò il pianeta con il radar attraverso le nubi, e sonde che si tuffarono nella sua atmosfera schiacciante",
+      "name": "Pioneer Venus"
+    }
   }
 }

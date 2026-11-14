@@ -104,6 +104,18 @@
     },
     "mission:magellan": {
       "note": "rilasciata dalla stiva del carico utile dello Shuttle Atlantis durante la STS-30, nel maggio 1989, poi inviata verso Venere con uno stadio superiore"
+    },
+    "STS-1": {
+      "note": "il primo volo orbitale — la prima volta che un veicolo con equipaggio fu portato in orbita al lancio inaugurale, e il primo riutilizzabile",
+      "name": "STS-1"
+    },
+    "Challenger (STS-51-L)": {
+      "note": "perso 73 secondi dopo il lancio quando una guarnizione del booster, irrigidita dal freddo, cedette; morirono sette membri dell'equipaggio, e il disastro mise a nudo una cultura che aveva normalizzato un rischio noto",
+      "name": "Challenger (STS-51-L)"
+    },
+    "Columbia (STS-107)": {
+      "note": "perso durante il rientro quando detriti di schiuma avevano bucato l'ala al lancio; morirono sette membri dell'equipaggio, e si scoprì che si era ripetuto lo stesso fallimento organizzativo",
+      "name": "Columbia (STS-107)"
     }
   }
 }

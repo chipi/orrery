@@ -90,5 +90,15 @@
   "link_labels": {
     "/programs/space-shuttle": "Space Shuttle — il veicolo a cui rispondeva",
     "/fleet?id=buran": "Flotta — l'orbiter Buran ed Energia"
+  },
+  "roster": {
+    "The single flight": {
+      "note": "il 15 novembre 1988 Buran compì un'unica missione orbitale senza equipaggio — un lancio completamente automatico, due orbite, rientro e atterraggio in pista con vento al traverso, senza alcun pilota a bordo in nessun momento",
+      "name": "L'unico volo"
+    },
+    "Cancellation": {
+      "note": "con l'Unione Sovietica scomparsa e senza più budget né missione, il programma fu cancellato dopo il suo unico volo; l'orbiter che aveva volato fu distrutto nel 2002 quando il tetto del suo hangar crollò a Bajkonur",
+      "name": "Cancellazione"
+    }
   }
 }

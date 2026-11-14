@@ -90,5 +90,11 @@
   "link_labels": {
     "/earth": "Terra — orbite, rendezvous e siti di lancio",
     "/science/mission-phases/edl": "Ingresso, discesa e atterraggio"
+  },
+  "roster": {
+    "Soyuz 4 & 5": {
+      "note": "primo aggancio di due veicoli con equipaggio + primo trasferimento di equipaggio, tramite passeggiata spaziale tra le due navicelle",
+      "name": "Soyuz 4 e 5"
+    }
   }
 }

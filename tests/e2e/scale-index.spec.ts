@@ -503,7 +503,7 @@ test.describe('/explore INDEX — a round photo in the lead slot of the solar ro
     await expect(mars).toHaveAttribute('loading', 'lazy');
     await expect(mars).toHaveAttribute(
       'src',
-      /\/credit-thumbs\/images\/planets\/mars\/03\.1x1\.webp$/,
+      /\/credit-thumbs\/images\/planets\/mars\/06\.1x1\.webp$/,
     );
     expect(await mars.boundingBox()).toMatchObject({ width: 28, height: 28 });
     expect(await ringOf(mars)).toBe('rgb(193, 68, 14)');

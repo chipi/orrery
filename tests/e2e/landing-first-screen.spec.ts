@@ -56,12 +56,17 @@ for (const size of [
       await expectInFirstScreen(page, page.locator('#what-heading'), '"What is this?" heading');
     });
 
-    test('the hero is two columns: the copy left of the same picture', async ({ page }) => {
+    test('the copy sits left over the same, large picture, which runs behind it to the right', async ({
+      page,
+    }) => {
       await page.goto('/', { waitUntil: 'networkidle' });
       const copy = (await page.locator('.hero-copy').boundingBox())!;
       const pic = (await page.locator('.hero-illustration').boundingBox())!;
-      expect(copy.x + copy.width).toBeLessThanOrEqual(pic.x);
-      expect(pic.width).toBeLessThanOrEqual(401);
+      expect(copy.x).toBeLessThan(pic.x);
+      expect(pic.x).toBeLessThan(copy.x + copy.width);
+      expect(pic.x + pic.width).toBeGreaterThan(copy.x + copy.width);
+      expect(pic.width).toBeGreaterThanOrEqual(600);
+      expect(pic.width).toBeLessThanOrEqual(801);
       await expect(page.locator('.hero-illustration')).toHaveAttribute('src', /app-landing-hero/);
     });
   });
@@ -103,7 +108,8 @@ for (const [locale, path, rtl] of [
       if (rtl) {
         const copy = (await page.locator('.hero-copy').boundingBox())!;
         const pic = (await page.locator('.hero-illustration').boundingBox())!;
-        expect(pic.x + pic.width).toBeLessThanOrEqual(copy.x + 1);
+        expect(pic.x).toBeLessThan(copy.x);
+        expect(copy.x + copy.width).toBeGreaterThan(pic.x + pic.width);
       }
     });
   });

@@ -681,26 +681,66 @@
     .wordmark {
       font-size: 96px;
     }
-    /* Two columns: the intro and both actions sit left, the same picture smaller on the right, so
-       the wordmark, the CTAs and the first heading are in the first screen of a 1366x768 laptop. */
+    /* The picture fills the hero's right side, breaks out of the 880 px column toward the window
+       edge, and runs behind the intro, whose side of it fades out so the text stays readable. The
+       wordmark, the CTAs and the first heading still fit the first screen of a 1366x768 laptop. */
     .hero {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) min(400px, 30vw);
-      column-gap: 40px;
+      grid-template-columns: minmax(0, 1fr);
       align-items: center;
       text-align: left;
       padding-bottom: 0;
     }
     .hero-illustration {
-      grid-column: 2;
-      grid-row: 1;
-      width: 100%;
+      grid-area: 1 / 1;
+      justify-self: end;
+      width: min(800px, 56vw);
       margin: 0;
+      margin-inline-end: calc(-1 * clamp(0px, (100vw - 880px) / 2 - 32px, 260px));
       transform: none;
+      --hero-fade: 18%;
+      --hero-fade-start: 42%;
+      --hero-fade-dir: to right;
+      -webkit-mask-image:
+        linear-gradient(
+          var(--hero-fade-dir),
+          transparent 0,
+          #000 var(--hero-fade-start),
+          #000 calc(100% - var(--hero-fade)),
+          transparent 100%
+        ),
+        linear-gradient(
+          to bottom,
+          transparent 0,
+          #000 var(--hero-fade),
+          #000 calc(100% - var(--hero-fade)),
+          transparent 100%
+        );
+      mask-image:
+        linear-gradient(
+          var(--hero-fade-dir),
+          transparent 0,
+          #000 var(--hero-fade-start),
+          #000 calc(100% - var(--hero-fade)),
+          transparent 100%
+        ),
+        linear-gradient(
+          to bottom,
+          transparent 0,
+          #000 var(--hero-fade),
+          #000 calc(100% - var(--hero-fade)),
+          transparent 100%
+        );
+    }
+    :global([dir='rtl']) .hero-illustration {
+      --hero-fade-dir: to left;
     }
     .hero-copy {
-      grid-column: 1;
-      grid-row: 1;
+      grid-area: 1 / 1;
+      position: relative;
+      z-index: 1;
+      max-width: 500px;
+      text-shadow: 0 1px 12px rgba(4, 4, 12, 0.9);
     }
     .cta-row {
       justify-content: flex-start;

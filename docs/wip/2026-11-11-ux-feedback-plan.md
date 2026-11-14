@@ -23,9 +23,9 @@ per screen, then the change, then e2e on all three Playwright projects.
 
 ## Decisions the operator owns (asked once, before the phase that needs them)
 
-- D1 Full redesign now, or this consistency pass first (proposal: consistency pass; it is the base a redesign needs).
-- D2 Home: video instead of the hero graphic? A Higgsfield test video is a paid run — size and cost estimate first.
-- D3 TV home and TV app: scope.
+- D1 Full redesign now, or this consistency pass first (proposal: consistency pass; it is the base a redesign needs). **Answered 2026-11-14 (F3, UXD-039): the consistency pass.**
+- D2 Home: video instead of the hero graphic? A Higgsfield test video is a paid run — size and cost estimate first. **Answered 2026-11-14 (F3, UXD-039): keep the still hero, no video.**
+- D3 TV home and TV app: scope. **Answered 2026-11-14 (F3, UXD-039): keep the two-panel TV layout, an emulation spec; the TV app's needs are a separate brief the operator scopes.**
 - D4 Explore: drop the second-level nav under Explore and use the breadcrumb as the way through the levels (keep separate pages in the sitemap)? **Answered 2026-11-13 (C8, UXD-027): keep the dropdown; the levels stay `?context=` on one page.**
 - D5 Explore: zooming into Earth / Mars / Moon / Venus switches to the world page, or an explicit "open world view" link?
 - D6 Launch camera: the operator shares example shots first.
@@ -390,7 +390,7 @@ Briefs `docs/wip/2026-11-14-slice-F1-brief.md` … `F4-brief.md` (87792e19c6f; F
 |---|---|---|---|
 | F1 Credits and colophon | CR2, CO1, CO2, CO3 | one collapse approach (Q7) for both; colophon totals line from `original-work.json` totals; cutaways split into spacecraft and launchers (Q9) | shots; TOC anchors open their section |
 | F2 Library | LI2, LI3 | after Q10 | — |
-| F3 Home | H1, H2, H3 | hero capped so the intro and actions are above the fold at 1440x900 and 1366x768; Lab card in Learn (needs a glyph) | shots at 1366x768, 1440x900, 390x844 |
+| F3 Home | H1, H2, H3 | hero capped so the intro and actions are above the fold at 1440x900 and 1366x768; Lab card in Learn (needs a glyph) | shots at 1366x768, 1440x900, 390x844 — **built 2026-11-14 ([UXD-039](../uxs/decisions/UXD-039-home-two-column-hero-one-glyph-component-and-type-scale.md)); in review** |
 
 ## G. Plan, Fly, Launch
 
@@ -534,7 +534,7 @@ Every item we deferred, with where it lands. Add to it whenever something is def
 |---|---|---|---|
 | L1 | /fly HUD colour: fresh assessment from scratch (cyan `#7fd4ff`, `#8fbfe0`, `#6ea6cc` held in 6 fly files), candidates cyan / blue D / neutral white / cockpit convention, contrast on launch sky, black space, Mars, Earth limb, sheets + recommendation | operator 2026-11-12, A3 round 2 | before A4 build |
 | L2 | Nav hamburger break (1219 px): measure all 14 locales, then lower | A6 answer 5a | after A6 |
-| L3 | Home hero image `app-landing-hero.webp` still has a teal trajectory arc (raster) — redraw with the home slice | A3 review | home slice (H1–H8) |
+| L3 | ~~Home hero image `app-landing-hero.webp` still has a teal trajectory arc (raster) — redraw with the home slice~~ — kept (decision 35a, operator 2026-11-14: "dont touch heros ... what we have now is good"; the arc is illustration, the file is not edited) | A3 review | closed in F3 (UXD-039) |
 | L4 | Palette review at the end: every `a3-keep` data colour (orbit regimes, agencies, nations, era bands, star / universe colours, axes, /plan heat map, comet / Uranus / Neptune tints, Lab figure art, science diagrams) — move to the new palette or keep | A3 Q3, "To check at the end" | end of 0.9.9 UX work |
 | L5 | Second crawl pass for the inventory: nav, footer, plain links, phone Worlds drawers, Moon/Earth/Venus index states, missions and launches filter pills, open popovers | A4 inventory gaps | during A4 |
 | L6 | 888 "select mercury…"-style browser-default buttons on 22 routes: confirm they are hidden canvas proxies, fix if any is visible | A4 crawl | during A4 |

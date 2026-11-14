@@ -107,7 +107,7 @@ HOME  ·  EXPLORE ▾  ·  WORLDS ▾  ·  FLY  ·  PLAN  ·  CATALOG ▾  ·  L
 | Fly | link → `/fly` | — | — |
 | Plan | link → `/plan` | — | — |
 | **Catalog** | group | Programs · Missions · Fleet · ISS · Tiangong · Live | `/catalog` |
-| **Learn** | group | Essays · Science | `/learn` |
+| **Learn** | group | Lab · Essays · Science | `/learn` |
 
 **Two axes — Explore vs Worlds (2026-08 split).** `/explore` was doing two jobs:
 the zoom-out *scale* ladder (solar system → cosmic web) **and** the close-up of a
@@ -151,7 +151,8 @@ should reveal breadth. So the two need not be identical — only **reconcilable*
 - The landing shows **the whole nav tree, unpacked and sectioned** — every group
   is a labeled section, every leaf its own rich card (with a hand-drawn glyph):
   **Explore** (the 8 scale levels, from the same `SCALE_SHELLS` table as the nav, the hub and the picker) · **Worlds** (Earth/Moon/Mars/Venus) · **Plan
-  & Fly** · **Catalog** (all six) · **Learn** (Essays · Science).
+  & Fly** · **Catalog** (all six) · **Learn** (Lab · Essays · Science): 23 cards under 5
+  headings, the number printed in the section heading from the grid itself ([UXD-039](decisions/UXD-039-home-two-column-hero-one-glyph-component-and-type-scale.md)).
 - Section headers **reuse the nav group labels**, so the landing *teaches* the
   nav's grouping by showing it — the two surfaces reinforce each other.
 - Why unpacked (not one card per group): **information scent.** "Missions",

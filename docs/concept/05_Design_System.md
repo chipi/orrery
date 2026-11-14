@@ -269,7 +269,9 @@ Every text page (credits, colophon, library, gallery and its sub-pages, posters,
 | `.page-section-label` | §5.8 values, uppercase; `--rule` adds the top rule |
 | `.page-section-title` | Bebas Neue 28px, 2px spacing |
 
-Not on the shell: the home page (home slice, H8), the scene routes, the Lab, the missions/launches/fleet browse tools, card stubs and dev pages.
+Not on the shell: the home page (below), the scene routes, the Lab, the missions/launches/fleet browse tools, card stubs and dev pages.
+
+**The home page ([UXD-039](../uxs/decisions/UXD-039-home-two-column-hero-one-glyph-component-and-type-scale.md)).** It keeps its own column (`.landing`, 880px at 1024px, 720px at 768px) and its own display type: the wordmark (Bebas, 48, 80, 96px), the section h2 (24, 32px), the card route names (22px), the grid headings (13px), the CTA labels (14px). Everything that reads as text uses the shell's tokens: `--size-body` (14px: subhead, prose), `--size-lead` (16px: the "What is this?" intro, the card titles, upright Space Mono per [UXD-003](../uxs/decisions/UXD-003-home-route-card-titles-upright.md)) and `--size-meta` (12px: card descriptions, the About block). From 1024px the hero is two columns: the copy and the three CTAs left, the same picture right (`min(400px, 30vw)`, edges feathered as before), so the CTAs and the first heading are in the first screen of a 1366x768 laptop; below 1024px it is the single stack. The TV layout (coarse pointer, no hover, 1100px or wider, 1.5 dppx or less) is two panels, the hero pinned and centred left, the route grid right.
 
 ### 4.7 Layering (z-index)
 
@@ -617,6 +619,10 @@ A new phase string never changes the box height; do not let a row wrap.
 | Empty section | A section with no rows draws no label and no box. |
 | Missions list of a fleet entry (UXD-035) | The fleet panel's MISSIONS tab (shown from 2 rows) and `/fleet/<id>`: one list, the union of `flights` and `linked_missions`, oldest first (`fleetMissionRows`). A header line (label colour, 11px uppercase): "5 missions · 2 in the catalogue". A row whose mission exists is a link (min 44px tall, the §5.7 link-chip fill): a 28px round `EntityThumb` with the agency ring, the name, the year (label colour, tabular), `→`. A row without a mission is plain text, no fill, no hover, no link: the 8px dot, the flight designation, 70 % ink, its note under it. The crew is one line under either kind, "CREW" in label colour then names, comma-joined, no roles, no portrait, no patch, no empty circle. |
 | Milestones (UXD-033) | After Missions: the mission timeline look (rail, hollow dot, year, name in label colour, note) with no pane, no photo and no link. A context row that has a `link` (a craft or station module) is a mission-timeline row whose name is a link in accent colour, regular weight, underline on hover. |
+
+### 5.20 Route-card glyphs ([UXD-039](../uxs/decisions/UXD-039-home-two-column-hero-one-glyph-component-and-type-scale.md))
+
+The 48 x 48 icon on a route card (the home grid and the section hubs `/learn`, `/worlds`, `/catalog`, `/explore/hub`). One component draws them: `RouteGlyph` (SVG children, keyed by glyph id; `ROUTE_GLYPHS` lists the ids; the eight Explore level glyphs are `ScaleGlyph`'s), with `RouteGlyphDefs` as the one block of 16 `ic-*` gradients (mounted once per page, before the cards). The caller owns `<svg class="card-icon" viewBox="0 0 48 48">` (44px square) and the card. Colours: `--color-accent`, `--color-accent-hover`, `--color-accent-edge`, `--color-accent-strong` and the explicit planet gradients; no teal, no cyan. `variant="hub"` (what `RouteCardGrid` passes) keeps the hub's own drawing of earth, programs, live and essays, `variant="home"` (the default) the home grid's; the other glyphs are one drawing. The Lab glyph: a notebook page with a grid, a dashed throw parabola ending in a gold marker, a thrust arrow. A new route card needs one branch in `RouteGlyph`, an id in `ROUTE_GLYPHS`, and `RouteGlyph.test.ts` fails until it has both.
 
 ---
 

@@ -82,7 +82,7 @@ The slice plan is dated 2026-11-11 and all statuses are as of that day, on branc
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | F1 | Credits and colophon: one collapse approach, a totals line, cutaways split | CR2, CO1, CO2, CO3 | none yet | planned | credits, colophon | a page-shell section | Q7, Q9 |
 | F2 | Library additions | LI2, LI3 | none yet | planned | library | a page-shell section | Q10 |
-| F3 | Home: hero capped, the Lab card in Learn, more engaging above the fold | H1, H2, H3 (H8 settled for card titles only) | UXD-003 (card titles) | planned | home | IA §home-cards, UXS-013 | D1, D2, D3 |
+| F3 | Home: a two-column hero puts the intro and the CTAs in the first screen, one glyph component draws every route card (the Lab card in Learn), the cards heading counts itself, body text on the shell tokens, a TV emulation spec | H1, H2, H3, H8, D1, D2, D3 | UXD-039, UXD-003 (card titles) | in review (built; unit tests, before = after proof of the glyphs (27 markup branches equal, 25 icons byte-identical), e2e on three projects against the dev server, screenshots at 1366x768, 1440x900, 390x844, de, ar, TV and /learn; not checked: Safari and iOS, a real TV, the other 12 locales' first screens) | home, /learn, /worlds | IA §home-cards, UXS-013, Design System §4.6 and §5.20, TA, the components README | — |
 | F4 | The deep-sky viewer fits one screen; facts label above value | G5, G6 | UXD-009 | planned (added after the slice plan) | `/gallery/deep-sky` | a gallery spec (none today) | — |
 
 ## Plan, Fly, Launch

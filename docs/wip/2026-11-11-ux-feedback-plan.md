@@ -394,6 +394,8 @@ Briefs `docs/wip/2026-11-14-slice-F1-brief.md` … `F4-brief.md` (87792e19c6f; F
 
 ## G. Plan, Fly, Launch
 
+Briefs `docs/wip/2026-11-14-slice-G1-brief.md` … `G3-brief.md` (bd814da6c3a). **Operator 2026-11-14:** G1 and G2 recommendations G-1…G-14 approved ("Yes on G1/2"). G3 (D6 answered with nine example images): the first seconds stay; after them an action-movie camera ("zoom in/out, pan, good flow, drama"), fluid and "not all launches the same"; clouds over Earth on some launches, none on others, "diversity and colors"; the opening also varies ("start at different cameras"). Review-gated: the `/dev/launch-director` prototype (68913329b0e) was shown as strips and clips — operator: "It is all fucking amazing"; round 2 tunes framing, pad smoke, the limb, clouds, dusk/night before anything reaches `/fly`.
+
 | Slice | Points | Change | Done when |
 |---|---|---|---|
 | G1 Plan → Fly | PL1, PL2, PL3, FY3 | destinations grouped (inner, asteroids, Jupiter/Saturn systems, outer); the chosen rocket and a default payload carried to Fly (`rocket=` param, `vehicle`, `fleet_refs`) so the launch sequence starts; launch and descent beats as markers on the play bar | e2e: plan → fly shows rocket, payload, working launch, markers |

@@ -33,7 +33,7 @@ test.describe('/posters — Orrery gallery', () => {
     const imgs = page.locator('article.gallery .grid > figure.poster a[download] img');
     await expect(imgs).toHaveCount(POSTER_COUNT);
 
-    await expect(page.locator('article.gallery footer.gallery-footer')).toBeVisible();
+    await expect(page.locator('article.gallery footer.page-note')).toBeVisible();
 
     expect(errors).toEqual([]);
   });

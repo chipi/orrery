@@ -89,7 +89,7 @@
     {/each}
   </div>
 
-  <footer class="gallery-footer">
+  <footer class="page-note">
     <p>
       <strong>{m.posters_footer_free_title()}</strong>
       {m.posters_footer_free_body()}
@@ -146,34 +146,6 @@
     height: auto;
     aspect-ratio: 2 / 3;
     object-fit: cover;
-  }
-  .gallery-footer {
-    margin-top: 48px;
-    padding: 20px 24px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 4px;
-  }
-  .gallery-footer p {
-    font-family: var(--font-mono), monospace;
-    font-size: 12px;
-    line-height: 1.7;
-    color: rgba(255, 255, 255, 0.7);
-    margin: 0 0 10px;
-  }
-  .gallery-footer p:last-child {
-    margin-bottom: 0;
-  }
-  .gallery-footer strong {
-    color: var(--color-state);
-    font-weight: normal;
-    letter-spacing: 1px;
-  }
-  .gallery-footer :global(a) {
-    color: var(--color-state);
-    text-decoration: underline;
-  }
-  .gallery-footer :global(a:hover) {
-    text-decoration: underline;
   }
   @media (max-width: 1023px) {
     .grid {

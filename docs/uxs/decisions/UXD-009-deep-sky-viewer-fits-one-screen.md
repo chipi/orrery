@@ -40,3 +40,11 @@ is slice A3 ([UXD-001](UXD-001-ui-accent-blue-replaces-teal.md)) (plan lines 443
 
 Planned: shots at 1440×900 and 1366×768. No test guards the fit today (not checked by this
 document).
+
+**Built and verified 2026-11-14 (slice F4, [UXD-040](UXD-040-gallery-viewer-fits-hub-strips-keep-text-and-one-page-note.md)).**
+The figure is a two-row grid (the image takes the height the caption stack leaves) and scrolls on a
+phone; `tests/e2e/gallery.spec.ts` guards the fit on desktop-chromium, mobile-chromium and
+mobile-landscape-chromium. Pillars of Creation at 1366×768: image y 40 to 415 (375 px), first
+value y 582 to 602, credit line y 668 to 684, button y 694 to 728 (before: values y 768 to 788,
+credit y 860, button y 886 to 920, all below the window); at 1440×900 the button ends at y 860
+(before: y 988 to 1022). The facts were already label above value and stay so.

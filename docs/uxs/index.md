@@ -13,6 +13,7 @@
 | UXS-014 | /explore v2 — navigating the known universe (zoom/warp, boundary crossing, lenses, discovery) | Draft v0.1 | Spec-only; signature moments get a prototype before build |
 | UXS-015 | Physics Lab — one card model, three views (Notebook / Focus / Canvas); reuses the house design system + the `station-blueprint` teal grid; computed-vs-illustrated honesty line | Draft v0.1 | House-accurate interactive prototypes at kickoff (`docs/prototypes/lab/`) gate Slice 0 |
 | UXS-016 | The outward arc — the 8-rung scale ladder, the 4 new tiers, the Milky-Way-first enrichment, and a science lens on every shell (extends UXS-014) | Draft v0.1 | 2 anchors mocked (8-rung rail · enriched Milky Way); tier crossings + new lenses mock-gated per slice |
+| UXS-017 | The gallery — the hub's strips, the deep-sky viewer that fits one screen, the one `.page-note` under the gallery pages | Draft v0.1 | Spec-only; guarded by `tests/e2e/gallery.spec.ts` |
 
 ## UX architecture and decisions
 

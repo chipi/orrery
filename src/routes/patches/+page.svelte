@@ -129,7 +129,7 @@
     </section>
   {/if}
 
-  <footer class="patches-footer">
+  <footer class="page-note">
     <p>
       <!-- eslint-disable-next-line svelte/no-at-html-tags -- safe: m.*() output + base path, no user input -->
       {@html m.patches_footer({
@@ -147,9 +147,8 @@
   .crumb .sep {
     margin: 0 8px;
   }
-  /* a2-keep: link colour inside the lead and footer; slice A3 owns colour */
-  .lede :global(a),
-  .patches-footer :global(a) {
+  /* a2-keep: link colour inside the lead; slice A3 owns colour */
+  .lede :global(a) {
     color: var(--color-state);
   }
   .grid {
@@ -207,13 +206,5 @@
   }
   .b-credit:hover {
     color: rgba(255, 255, 255, 0.65);
-  }
-  .patches-footer {
-    margin-top: 46px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 18px;
-    font-size: 14px;
-    line-height: 1.55;
-    color: rgba(255, 255, 255, 0.6);
   }
 </style>

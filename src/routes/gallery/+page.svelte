@@ -71,7 +71,7 @@
       </div>
     </a>
 
-    <a class="strip" href="{base}{localizeHref('/posters')}">
+    <a class="strip strip-beside" href="{base}{localizeHref('/posters')}">
       <div class="strip-imgs strip-imgs-posters">
         {#each postersStrip as id (id)}
           <img src="{assetOrigin}/images/posters/{id}.thumb.jpg" alt="" loading="lazy" />
@@ -85,7 +85,7 @@
       </div>
     </a>
 
-    <a class="strip strip-patches" href="{base}{localizeHref('/patches')}">
+    <a class="strip strip-beside strip-patches" href="{base}{localizeHref('/patches')}">
       <div class="strip-imgs">
         {#each patchesStrip as p (p)}
           <img src="{assetOrigin}/images/badges/{p}.webp" alt="" loading="lazy" />
@@ -117,8 +117,10 @@
   }
   .strip {
     position: relative;
-    display: block;
-    height: clamp(168px, 25vh, 240px);
+    display: flex;
+    align-items: center;
+    /* A minimum, not a height: the text sets the band's height, so it is never cut. */
+    min-height: clamp(168px, 25vh, 240px);
     /* G1 (UXD-012): a band whose text starts on the page title's left edge. */
     border-radius: 0 14px 14px 0;
     overflow: hidden;
@@ -168,12 +170,8 @@
     );
   }
   .strip-text {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-inline: 0 clamp(24px, 5vw, 56px);
+    position: relative;
+    padding: 22px clamp(24px, 5vw, 56px) 22px 0;
     max-width: min(560px, 64%);
   }
   /* a2-keep: card title inside an image strip, not a page section heading */
@@ -190,11 +188,6 @@
     color: rgba(255, 255, 255, 0.78);
     margin: 0 0 12px;
     max-width: 44ch;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
   }
   .go {
     font-family: var(--font-mono, 'Space Mono', monospace);
@@ -207,10 +200,17 @@
     color: #fff;
   }
 
+  /* Posters and insignia: the art starts where the text column ends, so no text runs under
+     a thumbnail (the art is clipped on the right instead). */
+  .strip-beside .strip-text {
+    max-width: 40%;
+  }
+  .strip-beside .strip-imgs {
+    padding-left: 40%;
+  }
   /* Posters are portrait prints — a little breathing room reads as a shelf. */
   .strip-imgs-posters {
     gap: 10px;
-    padding-left: 30%;
   }
 
   /* Insignia are transparent round badges — float them on the right on a soft
@@ -220,8 +220,7 @@
   }
   .strip-patches .strip-imgs {
     gap: clamp(14px, 2.5vw, 30px);
-    justify-content: flex-end;
-    padding-right: 3%;
+    justify-content: flex-start;
   }
   .strip-patches .strip-imgs img {
     height: 66%;
@@ -249,12 +248,20 @@
 
   @media (max-width: 560px) {
     .strip {
-      height: clamp(150px, 34vw, 200px);
+      min-height: clamp(150px, 34vw, 200px);
     }
-    .strip-text {
+    .strip-text,
+    .strip-beside .strip-text {
       max-width: 78%;
     }
-    .strip-imgs-posters {
+    /* A phone has no room beside the text: the art sits behind it, under a heavier scrim. */
+    .strip-beside .strip-scrim {
+      background: linear-gradient(90deg, rgba(5, 7, 13, 0.94), rgba(5, 7, 13, 0.78) 80%);
+    }
+    .strip-beside .strip-imgs {
+      padding-left: 0;
+    }
+    .strip-beside .strip-imgs-posters {
       padding-left: 8%;
     }
   }

@@ -268,6 +268,7 @@ Every text page (credits, colophon, library, gallery and its sub-pages, posters,
 | `.page-lead` | `--size-lead` (16px, 15px under 600px) upright Space Mono, 78% white, 64ch |
 | `.page-section-label` | §5.8 values, uppercase; `--rule` adds the top rule |
 | `.page-section-title` | Bebas Neue 28px, 2px spacing |
+| `.page-note` | The `<footer>` under a page where sources and licences are discussed ([UXD-040](../uxs/decisions/UXD-040-gallery-viewer-fits-hub-strips-keep-text-and-one-page-note.md)): 1px frame at 8% white, 4px corners, `20px 24px` padding, 44px above; Space Mono `--size-meta` (12px), line-height 1.7, 70% white; `strong` and links `--color-state` (the muted blue), links underlined. `/gallery/deep-sky`, `/posters`, `/patches` and `/sourcing` use it and write no footer rule |
 
 Not on the shell: the home page (below), the scene routes, the Lab, the missions/launches/fleet browse tools, card stubs and dev pages.
 
@@ -623,6 +624,10 @@ A new phase string never changes the box height; do not let a row wrap.
 ### 5.20 Route-card glyphs ([UXD-039](../uxs/decisions/UXD-039-home-two-column-hero-one-glyph-component-and-type-scale.md))
 
 The 48 x 48 icon on a route card (the home grid and the section hubs `/learn`, `/worlds`, `/catalog`, `/explore/hub`). One component draws them: `RouteGlyph` (SVG children, keyed by glyph id; `ROUTE_GLYPHS` lists the ids; the eight Explore level glyphs are `ScaleGlyph`'s), with `RouteGlyphDefs` as the one block of 16 `ic-*` gradients (mounted once per page, before the cards). The caller owns `<svg class="card-icon" viewBox="0 0 48 48">` (44px square) and the card. Colours: `--color-accent`, `--color-accent-hover`, `--color-accent-edge`, `--color-accent-strong` and the explicit planet gradients; no teal, no cyan. `variant="hub"` (what `RouteCardGrid` passes) keeps the hub's own drawing of earth, programs, live and essays, `variant="home"` (the default) the home grid's; the other glyphs are one drawing. The Lab glyph: a notebook page with a grid, a dashed throw parabola ending in a gold marker, a thrust arrow. A new route card needs one branch in `RouteGlyph`, an id in `ROUTE_GLYPHS`, and `RouteGlyph.test.ts` fails until it has both.
+
+### 5.21 Deep-sky viewer ([UXD-040](../uxs/decisions/UXD-040-gallery-viewer-fits-hub-strips-keep-text-and-one-page-note.md), [UXD-009](../uxs/decisions/UXD-009-deep-sky-viewer-fits-one-screen.md))
+
+The full-window viewer of `/gallery/deep-sky` (the panel galleries have their own, `PanelLightbox`). `.lb-figure` is a grid of two rows, the image (`minmax(200px, 1fr)`) and the caption stack (`auto`), `max-height: calc(100svh - 80px)`, `overflow: auto`: the image keeps its aspect and takes the height the stack leaves, so the facts row (`dt` label above `dd` value, 11px caps over 13px), the credit line and the "show in the sky" button are inside the window at 1366x768 and 1440x900 for every image and locale, with the image at least 300px high. On a phone, and in a window too short for both (a phone in landscape), the figure scrolls and every element is reachable. The caption stays italic Crimson Pro at `--size-caption` (14px, [UXD-002](../uxs/decisions/UXD-002-type-scale-and-the-11px-floor.md)). The "show in the sky" button is the accent gradient (`--color-accent` to `--color-accent-hover`) with `--color-bg` text (4.96:1 on the dark end, 8.32:1 on the light end), never a teal.
 
 ---
 

@@ -204,7 +204,7 @@
     {/each}
   </div>
 
-  <footer class="gallery-footer">
+  <footer class="page-note">
     <p>
       <strong>{m.deepsky_footer_obs_title()}</strong>
       {m.deepsky_footer_obs_body()}
@@ -428,28 +428,6 @@
     color: var(--color-text-label);
   }
 
-  .gallery-footer {
-    margin-top: 44px;
-    padding: 20px 24px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 4px;
-  }
-  .gallery-footer p {
-    font-family: var(--font-mono), monospace;
-    font-size: 12px;
-    line-height: 1.7;
-    color: rgba(255, 255, 255, 0.7);
-    margin: 0 0 10px;
-  }
-  .gallery-footer p:last-child {
-    margin-bottom: 0;
-  }
-  .gallery-footer strong {
-    color: var(--color-state);
-    font-weight: normal;
-    letter-spacing: 1px;
-  }
-
   /* Lightbox */
   .lightbox {
     position: fixed;
@@ -475,22 +453,27 @@
     position: relative;
     z-index: 1;
     margin: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    /* G6 (UXD-009): the image takes the height the caption stack leaves, so the facts, the
+       credit and the button always show. The 200px floor stops a short window (a phone in
+       landscape) from shrinking the picture to nothing: there the figure scrolls instead. */
+    display: grid;
+    grid-template-rows: minmax(200px, 1fr) auto;
+    justify-items: center;
     max-width: min(1200px, 92vw);
-    max-height: 90vh;
+    max-height: calc(100svh - 80px);
+    overflow: hidden auto;
   }
-  .lb-figure img {
+  .lb-figure > img {
+    min-height: 0;
     max-width: 100%;
-    max-height: 72vh;
+    max-height: 100%;
     object-fit: contain;
     border-radius: 4px;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
   }
   .lb-figure figcaption {
     text-align: center;
-    margin-top: 16px;
+    margin-top: 12px;
     max-width: 680px;
   }
   /* a2-keep: lightbox figure title, not a page section heading */
@@ -538,15 +521,15 @@
     font-size: var(--size-caption);
     line-height: 1.5;
     color: rgba(255, 255, 255, 0.82);
-    margin: 0 0 14px;
+    margin: 0 0 10px;
   }
   .lb-facts {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 6px 22px;
-    margin: 0 0 14px;
-    padding: 12px 0;
+    margin: 0 0 10px;
+    padding: 10px 0;
     border-top: 1px solid rgba(255, 255, 255, 0.12);
     border-bottom: 1px solid rgba(255, 255, 255, 0.12);
   }
@@ -593,7 +576,7 @@
     padding: 0.45rem 0.85rem;
     border-radius: 6px;
     background: linear-gradient(135deg, var(--color-accent), var(--color-accent-hover));
-    color: #06231f;
+    color: var(--color-bg);
     font-weight: 700;
     font-size: 0.85rem;
     text-decoration: none;

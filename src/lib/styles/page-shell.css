@@ -51,6 +51,35 @@
   font-style: normal;
 }
 
+/* The note under a page's content, where sources and licences are discussed (UXD-040): one
+   framed box in the meta size, the muted blue for what it names and links. Gallery, posters,
+   insignia and sourcing use it; a page adds the class to its <footer>. */
+.page-note {
+  margin-top: 44px;
+  padding: 20px 24px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--border-radius);
+  font-family: var(--font-mono), monospace;
+  font-size: var(--size-meta);
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.7);
+}
+.page-note p {
+  margin: 0 0 10px;
+}
+.page-note p:last-child {
+  margin-bottom: 0;
+}
+.page-note strong {
+  color: var(--color-state);
+  font-weight: normal;
+  letter-spacing: 1px;
+}
+.page-note a {
+  color: var(--color-state);
+  text-decoration: underline;
+}
+
 .page-section-label {
   --page-label-color: var(--color-text-label);
   font-family: 'Space Mono', monospace;

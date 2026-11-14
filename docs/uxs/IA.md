@@ -217,7 +217,7 @@ Regions that persist across or within a screen.
 
 ## §page-shell
 
-Text pages (everything that is not a scene, the home page, the Lab or a browse tool) share one shell, `src/lib/styles/page-shell.css` ([UXD-012](decisions/UXD-012-one-page-shell.md)): `.page-shell` container (1080px; `--reading` 760px; `--wide` 1400px; `--inset` inside the science host), `.page-crumb`, `.page-title` (Bebas `clamp(40px, 8vw, 64px)`), `.page-lead` (`--size-lead` upright), `.page-section-label` (11px 700 uppercase 60% white) and `.page-section-title` (Bebas 28px). The container starts right under the sticky nav with 24px of air; no page adds `--nav-height`. Full table: Design System §4.6.
+Text pages (everything that is not a scene, the home page, the Lab or a browse tool) share one shell, `src/lib/styles/page-shell.css` ([UXD-012](decisions/UXD-012-one-page-shell.md)): `.page-shell` container (1080px; `--reading` 760px; `--wide` 1400px; `--inset` inside the science host), `.page-crumb`, `.page-title` (Bebas `clamp(40px, 8vw, 64px)`), `.page-lead` (`--size-lead` upright), `.page-section-label` (11px 700 uppercase 60% white) and `.page-section-title` (Bebas 28px). The container starts right under the sticky nav with 24px of air; no page adds `--nav-height`. Full table: Design System §4.6. The note under a gallery page's content (where sources and licences are discussed) is one class in the same file, `.page-note` ([UXD-040](decisions/UXD-040-gallery-viewer-fits-hub-strips-keep-text-and-one-page-note.md)).
 
 ---
 

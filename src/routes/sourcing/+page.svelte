@@ -78,7 +78,7 @@
     {/each}
   </ol>
 
-  <footer class="sourcing-footer">
+  <footer class="page-note">
     <p>
       <!-- eslint-disable-next-line svelte/no-at-html-tags -- safe: m.*() output + base path, no user input -->
       {@html m.sourcing_footer({
@@ -200,16 +200,5 @@
     border-top: 1px solid rgba(255, 255, 255, 0.08);
     padding-top: 12px;
     margin-bottom: 0;
-  }
-  .sourcing-footer {
-    margin-top: 40px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 18px;
-    font-size: 14px;
-    line-height: 1.55;
-    color: rgba(255, 255, 255, 0.6);
-  }
-  .sourcing-footer :global(a) {
-    color: var(--color-state);
   }
 </style>

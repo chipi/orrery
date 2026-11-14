@@ -91,5 +91,26 @@
     "/mars?site=opportunity": "Opportunity — Meridiani Planum",
     "/mars?site=curiosity": "Curiosity — Gale-Krater",
     "/mars?site=perseverance": "Perseverance — Jezero-Krater"
+  },
+  "roster": {
+    "mission:mars-pathfinder": {
+      "note": "die kostengünstige Mission, die auf Airbags auf den Mars hüpfte und Sojourner, einen mikrowellengroßen Rover, als erste Räder auf einem anderen Planeten rollen ließ"
+    },
+    "mission:spirit": {
+      "note": "landete 2004 für eine 90-Tage-Mission und arbeitete sechs Jahre lang; er fand chemische Spuren der wärmeren, feuchteren Vergangenheit des Mars"
+    },
+    "mission:opportunity": {
+      "note": "Spirits Zwilling, der in 14 Jahren mehr als 45 Kilometer zurücklegte — die längste Strecke, die je ein Fahrzeug auf einer anderen Welt gefahren ist"
+    },
+    "mission:curiosity": {
+      "note": "ein autogroßer, nuklear betriebener Rover, 2012 von einem raketengetriebenen Himmelskran auf den Mars abgesetzt, der bestätigte, dass der Gale-Krater einst einen bewohnbaren See barg"
+    },
+    "mission:perseverance": {
+      "note": "landete 2021 auf dem Boden des Jezero-Kraters — einem uralten Flussdelta und Seebett — um nach Spuren vergangenen Lebens zu suchen und Proben in Röhrchen zu versiegeln, die eine künftige Mission nach Hause bringen soll"
+    },
+    "Ingenuity": {
+      "note": "ein kleiner Hubschrauber, den Perseverance mitbrachte, führte 2021 den ersten motorisierten Flug auf einem anderen Planeten durch und flog danach Dutzende weitere Male",
+      "name": "Ingenuity"
+    }
   }
 }

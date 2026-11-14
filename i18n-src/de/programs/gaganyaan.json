@@ -87,5 +87,19 @@
     "/fleet?id=gaganyaan": "Flotte — das Raumschiff Gaganyaan",
     "/programs/chandrayaan": "Chandrayaan — Indiens Mondprogramm",
     "/programs/mangalyaan": "Mangalyaan — Indiens Marsmission, die beim ersten Versuch gelang"
+  },
+  "roster": {
+    "Announced": {
+      "note": "Indien verpflichtet sich, mit einer eigenen Rakete eigene Astronauten zu fliegen — das Ziel, das es zur vierten Nation mit unabhängiger bemannter Raumfahrt machen würde",
+      "name": "Angekündigt"
+    },
+    "Test Vehicle abort": {
+      "note": "der erste Flugtest zeigt das Rettungssystem für die Besatzung, das die Kapsel von einer versagenden Rakete wegziehen muss — die Sicherheitsfähigkeit, um die ein bemanntes Programm herum aufgebaut ist",
+      "name": "Abbruchtest des Testfahrzeugs"
+    },
+    "First crewed flight": {
+      "note": "das geplante Debüt einer indischen Besatzung in einem indischen Raumfahrzeug — angepeilt für Anfang 2027, womit Indien zu Russland, den USA und China als unabhängige Macht der bemannten Raumfahrt stößt",
+      "name": "Erster bemannter Flug"
+    }
   }
 }

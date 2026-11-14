@@ -104,6 +104,18 @@
     },
     "mission:magellan": {
       "note": "aus der Nutzlastbucht der Atlantis auf STS-30 im Mai 1989 ausgesetzt, dann mit einer Oberstufe zur Venus geschickt"
+    },
+    "STS-1": {
+      "note": "der erste Orbitalflug — das erste Mal, dass ein bemanntes Raumfahrzeug beim Jungfernstart in den Orbit flog, und das erste wiederverwendbare",
+      "name": "STS-1"
+    },
+    "Challenger (STS-51-L)": {
+      "note": "73 Sekunden nach dem Start verloren, als eine kältestarre Booster-Dichtung versagte; sieben Besatzungsmitglieder starben, und die Katastrophe legte eine Kultur offen, die bekannte Risiken normalisiert hatte",
+      "name": "Challenger (STS-51-L)"
+    },
+    "Columbia (STS-107)": {
+      "note": "beim Wiedereintritt verloren, nachdem Schaumtrümmer beim Start den Flügel durchlöchert hatten; sieben Besatzungsmitglieder starben, und es zeigte sich, dass sich dasselbe organisatorische Versagen wiederholt hatte",
+      "name": "Columbia (STS-107)"
     }
   }
 }

@@ -95,5 +95,27 @@
     "/programs/great-observatories": "Die Great Observatories — die Linie, die JWST fortsetzt",
     "/programs/ariane": "Ariane — die Rakete, die es startete",
     "/earth?site=jwst": "James-Webb-Weltraumteleskop"
+  },
+  "roster": {
+    "Conceived": {
+      "note": "die Planung eines „Next Generation Space Telescope“ als Nachfolger von Hubble beginnt — der Anfang einer 25-jährigen Saga aus Neukonstruktionen, Verzögerungen und einem Budget, das sich etwa verzehnfachte",
+      "name": "Konzipiert"
+    },
+    "Nearly cancelled": {
+      "note": "Jahre hinter dem Zeitplan und Milliarden über dem Budget sollte das Programm vom Kongress gestrichen werden, bevor es gerettet wurde — ein Überleben so knapp wie kaum eines in diesem Atlas",
+      "name": "Beinahe eingestellt"
+    },
+    "Launch": {
+      "note": "am Weihnachtstag startet eine von der ESA gestellte Ariane 5 das JWST makellos — so präzise, dass das Teleskop genug Treibstoff sparte, um seine erwartete Lebensdauer etwa zu verdoppeln",
+      "name": "Start"
+    },
+    "The unfolding": {
+      "note": "über zwei Wochen entfalten 344 Einzelfehlerstellen-Schritte den tennisplatzgroßen Sonnenschutz und den segmentierten Spiegel, eine Million Meilen von jeder Reparaturmöglichkeit entfernt — jeder einzelne gelang",
+      "name": "Die Entfaltung"
+    },
+    "First images": {
+      "note": "die ersten Vollfarbbilder verblüffen die Welt — der tiefste Infrarotblick auf das Universum, der je aufgenommen wurde, Galaxien aus der Morgendämmerung der kosmischen Zeit",
+      "name": "Erste Bilder"
+    }
   }
 }

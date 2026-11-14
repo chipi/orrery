@@ -93,5 +93,18 @@
     "/programs/ariane": "Ariane — die Rakete, die die Wissenschaft der ESA startet",
     "/earth?site=gaia": "Gaia am L2",
     "/earth?site=xmm": "XMM-Newton"
+  },
+  "roster": {
+    "mission:rosetta": {
+      "note": "nach zehnjähriger Verfolgungsjagd umkreist Rosetta den Kometen 67P und setzt den Lander Philae auf seiner Oberfläche ab — das erste Raumfahrzeug, das einen Kometen umkreiste und auf ihm landete"
+    },
+    "Gaia's map": {
+      "note": "Gaia beginnt mit der Veröffentlichung der präzisesten dreidimensionalen Karte der Milchstraße, die je erstellt wurde — Positionen, Entfernungen und Bewegungen von fast zwei Milliarden Sternen",
+      "name": "Gaias Karte"
+    },
+    "Euclid opens its eyes": {
+      "note": "ein Teleskop, gebaut, um ein Drittel des Himmels zu durchmustern und zu kartieren, wie Dunkle Materie und Dunkle Energie das Universum geformt haben",
+      "name": "Euclid öffnet die Augen"
+    }
   }
 }

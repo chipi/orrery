@@ -94,5 +94,15 @@
   "link_labels": {
     "/programs/esa-human": "Die ESA in der bemannten Raumfahrt — Spacelab, Columbus, ATV",
     "/fleet?id=ariane-5": "Flotte — Ariane-Trägerraketen"
+  },
+  "roster": {
+    "Ariane 4": {
+      "note": "das zuverlässige kommerzielle Arbeitspferd, das in den 1990er-Jahren etwa die Hälfte der weltweiten kommerziellen Satellitenstarts gewann und Arianespace zum Marktführer machte",
+      "name": "Ariane 4"
+    },
+    "Flight 501": {
+      "note": "der Jungfernflug der Ariane 5 zerstörte sich nach 37 Sekunden selbst, als wiederverwendete Lenksoftware der Ariane 4 bei der höheren Geschwindigkeit der neuen Rakete überlief — ein Lehrstück der Softwaretechnik",
+      "name": "Flug 501"
+    }
   }
 }

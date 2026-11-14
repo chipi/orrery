@@ -95,5 +95,23 @@
     "/moon": "Mond — das Ziel",
     "/fleet?id=orion": "Flotte — Orion, SLS & die Mondtechnik",
     "/programs/apollo": "Apollo — das Programm, nach dem Artemis benannt ist und über das es hinausgeht"
+  },
+  "roster": {
+    "Artemis I": {
+      "note": "eine unbemannte Orion umfliegt den Mond beim ersten SLS-Start — die Tiefraum-Hardware ist erprobt, bevor jemand mit ihr fliegt",
+      "name": "Artemis I"
+    },
+    "mission:artemis2": {
+      "note": "die erste Besatzung — vier Astronauten, darunter der erste Nicht-Amerikaner auf dem Weg zum Mond; ihr Vorbeiflug im April 2026 brachte Menschen weiter von der Erde weg als je zuvor"
+    },
+    "mission:artemis3": {
+      "note": "ein bemannter Test im Erdorbit — Orion koppelt an die kommerziellen Lander an, bevor jemand mit ihnen zum Mond fliegt, wie Apollo 9 im Jahr 1969"
+    },
+    "mission:artemis4": {
+      "note": "die Rückkehr zur Oberfläche — die erste bemannte Mondlandung seit 1972 und die erste überhaupt in der Nähe des Südpols"
+    },
+    "mission:artemis5": {
+      "note": "die zweite Landung, für Ende 2028 geplant — der Beginn der Arbeit an einer Basis am Südpol"
+    }
   }
 }

@@ -87,5 +87,25 @@
     "/explore": "Die äußeren Planeten im 3D-Explorer",
     "/gallery/deep-sky": "Der „Pale Blue Dot“ in der Deep-Sky-Galerie",
     "/programs/pioneer": "Pioneer — die Sonden, die zuerst flogen"
+  },
+  "roster": {
+    "mission:voyager-2": {
+      "note": "das einzige Raumfahrzeug, das alle vier Riesenplaneten besuchte, und der einzige Blick aus der Nähe, den die Menschheit je auf Uranus und Neptun hatte"
+    },
+    "mission:voyager-1": {
+      "note": "flog an Jupiter und Saturn vorbei, drehte sich um, um das gesamte Sonnensystem zu fotografieren, und wurde das erste von Menschen gebaute Objekt im interstellaren Raum"
+    },
+    "The Golden Record": {
+      "note": "eine vergoldete Schallplatte an jedem Raumfahrzeug — Klänge, Musik und Grüße von der Erde, gerichtet an jeden, der sie in einer Milliarde Jahren finden mag",
+      "name": "Die Golden Record"
+    },
+    "The Pale Blue Dot": {
+      "note": "am 14. Februar 1990 drehte sich Voyager 1 von jenseits des Neptun um und fotografierte die Erde als einzelnen Pixel",
+      "name": "Der Pale Blue Dot"
+    },
+    "Interstellar space": {
+      "note": "Voyager 1 überquerte 2012 die Heliopause, Voyager 2 2018 — die ersten Maschinen, die die Blase der Sonne verließen und in den Raum zwischen den Sternen eintraten, und die immer noch nach Hause funken",
+      "name": "Interstellarer Raum"
+    }
   }
 }

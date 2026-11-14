@@ -95,5 +95,69 @@
     "/fleet?id=iss": "Flotte — die Internationale Raumstation",
     "/programs/mir": "Mir — die Station, deren Erbe die ISS antrat",
     "/earth?site=iss": "Die ISS über uns"
+  },
+  "roster": {
+    "module:zarya": {
+      "note": "Das erste Modul — ein von den USA finanzierter, in Russland gebauter Steuerungs- und Energieblock: der Keim der gesamten Station."
+    },
+    "module:unity": {
+      "note": "Das erste US-Modul, ein Verbindungsknoten mit sechs Anschlüssen, der zwei Wochen später mit Zarya verbunden wurde."
+    },
+    "module:zvezda": {
+      "note": "Das russische Servicemodul, das die Station bewohnbar machte: Wohnquartiere, Lebenserhaltung und Antrieb."
+    },
+    "module:destiny": {
+      "note": "Das US-Labor — das wichtigste Forschungsmodul und die Kommandozentrale der Station."
+    },
+    "module:canadarm2": {
+      "note": "Kanadas Roboterarm, der einen Großteil der Station montierte und ankommende Raumfahrzeuge einfängt."
+    },
+    "module:quest": {
+      "note": "Die US-Luftschleuse, die Weltraumspaziergänge sowohl in amerikanischen als auch in russischen Anzügen ermöglicht."
+    },
+    "module:pirs": {
+      "note": "Ein russisches Andockmodul mit Luftschleuse — 2021 aus der Umlaufbahn gelenkt, um Platz für Nauka zu machen."
+    },
+    "module:harmony": {
+      "note": "Der Knoten, der den Weg für die internationalen Labore öffnete."
+    },
+    "module:columbus": {
+      "note": "Europas Labor — der Eckpfeiler des ESA-Beitrags zur Station."
+    },
+    "module:kibo": {
+      "note": "Japans Labor — das größte einzelne Modul, mit eigener Außenplattform."
+    },
+    "module:poisk": {
+      "note": "Ein russisches Andock- und Luftschleusenmodul am Zenit von Zvezda."
+    },
+    "module:tranquility": {
+      "note": "Lebenserhaltung und Trainingsgeräte — und die Halterung für die Cupola."
+    },
+    "module:cupola": {
+      "note": "Die Beobachtungskuppel mit sieben Fenstern, Quelle der berühmtesten Ansichten der Erde von der Station."
+    },
+    "module:rassvet": {
+      "note": "Ein russisches Andock- und Lagermodul."
+    },
+    "module:leonardo": {
+      "note": "Ein dauerhaftes Lagermodul, umgebaut aus einem wiederverwendbaren Frachtbehälter."
+    },
+    "module:beam": {
+      "note": "Ein experimentelles aufblasbares Modul, das erweiterbare Habitate im Orbit erprobt."
+    },
+    "module:nauka": {
+      "note": "Das lange verzögerte russische Wissenschaftsmodul, hinzugefügt mehr als zwei Jahrzehnte nach Beginn des Aufbaus."
+    },
+    "module:prichal": {
+      "note": "Ein russischer Andockknoten — eine der jüngsten Ergänzungen."
+    },
+    "Expedition 1": {
+      "note": "die erste ständige Besatzung traf am 2. November 2000 ein; seitdem leben Menschen ununterbrochen an Bord — die längste ununterbrochene menschliche Präsenz außerhalb der Erde in der Geschichte",
+      "name": "Expedition 1"
+    },
+    "Commercial Crew": {
+      "note": "SpaceXs Crew Dragon brachte nach neun Jahren die US-Besatzungsstarts zurück und leitete die Übergabe des Zugangs zum niedrigen Orbit an kommerzielle Anbieter ein",
+      "name": "Commercial Crew"
+    }
   }
 }

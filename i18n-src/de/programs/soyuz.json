@@ -90,5 +90,11 @@
   "link_labels": {
     "/earth": "Erde — Umlaufbahnen, Rendezvous & Startplätze",
     "/science/mission-phases/edl": "Eintritt, Abstieg & Landung"
+  },
+  "roster": {
+    "Soyuz 4 & 5": {
+      "note": "erste Kopplung zweier bemannter Raumfahrzeuge und erster Besatzungstransfer per Weltraumspaziergang zwischen den beiden Schiffen",
+      "name": "Soyuz 4 und 5"
+    }
   }
 }

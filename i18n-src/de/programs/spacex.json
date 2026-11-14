@@ -91,5 +91,25 @@
     "/fleet?id=falcon-9": "Flotte — Falcon 9, Falcon Heavy & Dragon",
     "/programs/iss": "ISS — die Station, die Crew Dragon anfliegt",
     "/earth": "Erde — Umlaufbahnen, Rendezvous & Startplätze"
+  },
+  "roster": {
+    "Falcon 1, flight 4": {
+      "note": "die erste privat entwickelte Flüssigtreibstoffrakete im Orbit — geflogen wenige Wochen, bevor dem Unternehmen das Geld ausging, auf dem letzten Flug, den es sich leisten konnte",
+      "name": "Falcon 1, Flug 4"
+    },
+    "First Dragon to the ISS": {
+      "note": "das erste kommerzielle Raumfahrzeug, das an der Station festmachte — der Privatsektor beginnt, die bemannte Raumfahrt zu versorgen",
+      "name": "Erste Dragon zur ISS"
+    },
+    "First booster landing": {
+      "note": "eine Falcon-9-Erststufe kehrt zurück und landet aufrecht — die Wiederverwendbarkeit, jahrzehntelang als unwirtschaftlich abgetan, ist bewiesen",
+      "name": "Erste Boosterlandung"
+    },
+    "mission:inspiration4": {
+      "note": "die erste rein zivile Besatzung im Orbit — überhaupt keine Berufsastronauten an Bord"
+    },
+    "mission:polaris-dawn": {
+      "note": "der erste kommerzielle Weltraumspaziergang, aus einer Crew Dragon in einem neu entworfenen SpaceX-Anzug"
+    }
   }
 }

@@ -94,5 +94,11 @@
   "link_labels": {
     "/earth": "Erde — Umlaufbahnen & Startplätze",
     "/science/mission-phases/edl": "Eintritt, Abstieg & Landung"
+  },
+  "roster": {
+    "Korabl-Sputnik 2 (Belka & Strelka)": {
+      "note": "die Hunde Belka und Strelka — die ersten Tiere, die im Orbit flogen und lebend zurückkehrten, auf dem Vostok-Testraumschiff",
+      "name": "Korabl-Sputnik 2 (Belka und Strelka)"
+    }
   }
 }

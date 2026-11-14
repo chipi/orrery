@@ -82,5 +82,31 @@
   "link_labels": {
     "/programs/iss": "ISS — die Station, deren Nachfolger sie werden sollen",
     "/programs/spacex": "SpaceX — der Crew- und Frachttransport, auf den sie angewiesen sein werden"
+  },
+  "roster": {
+    "Commercial LEO Destinations": {
+      "note": "die NASA finanziert mehrere Unternehmen beim Bau privater Stationen und plant, Kunde von Außenposten im Orbit zu werden, statt selbst einen zu betreiben",
+      "name": "Commercial LEO Destinations"
+    },
+    "Vast Haven-1": {
+      "note": "ein kommerzieller Einmodul-Freiflieger von Vast — eine der frühesten kommerziellen Stationen, die den Orbit erreichen sollen",
+      "name": "Vast Haven-1"
+    },
+    "Axiom Station": {
+      "note": "Axiom Space baut sie als eigenständigen Freiflieger auf; das erste Modul koppelt kurz an die ISS an und löst sich dann, um sich später im freien Flug mit weiteren Modulen zu verbinden — Plan im Dezember 2024 umgestellt",
+      "name": "Axiom Station"
+    },
+    "Orbital Reef": {
+      "note": "ein Vorhaben von Blue Origin und Sierra Space, angepriesen als „Gewerbepark mit gemischter Nutzung“ im Orbit — Forschung, Fertigung und Tourismus",
+      "name": "Orbital Reef"
+    },
+    "Starlab": {
+      "note": "eine Station von Voyager und Airbus, entworfen als ein einziger großer Freiflieger, ausgerichtet auf kontinuierliche Wissenschaft nach der ISS",
+      "name": "Starlab"
+    },
+    "ISS retirement": {
+      "note": "die ISS soll um 2030 aus der Umlaufbahn gelenkt werden; die kommerziellen Stationen sollen bereits fliegen, bevor sie geht, damit die menschliche Präsenz im niedrigen Orbit nie abreißt",
+      "name": "ISS-Außerdienststellung"
+    }
   }
 }

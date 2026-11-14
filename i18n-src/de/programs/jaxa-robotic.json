@@ -91,5 +91,17 @@
     "/moon": "Mond — der Landeplatz von SLIM",
     "/explore": "Erkunden — Venus und die inneren Planeten",
     "/programs/hayabusa": "Hayabusa — die Asteroiden-Probenrückführung der JAXA"
+  },
+  "roster": {
+    "Kaguya / SELENE": {
+      "note": "die größte Mondmission seit Apollo — ein Mondorbiter, der die Oberfläche in nie dagewesenem Detail kartierte und das erste hochauflösende Video eines Erdaufgangs über dem Mondhorizont drehte",
+      "name": "Kaguya / SELENE"
+    },
+    "mission:akatsuki": {
+      "note": "nachdem 2010 das Triebwerk zum Einschwenken in die Venus-Umlaufbahn ausgefallen war, umrundete die Sonde fünf Jahre lang die Sonne und schwenkte beim zweiten Versuch mit ihren winzigen Lageregelungsdüsen in den Orbit ein — eine Mission, die vor dem sicheren Verlust gerettet wurde"
+    },
+    "mission:slim": {
+      "note": "der „Moon Sniper“ landete etwa 10 Meter von seinem Ziel entfernt — eine Punktgenauigkeit, die niemand zuvor erreicht hatte — und liefert nach einer umgekippten Landung dennoch Wissenschaft mit Solarstrom"
+    }
   }
 }

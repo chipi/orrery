@@ -94,5 +94,31 @@
   "link_labels": {
     "/earth": "Erde — Umlaufbahnen, Rendezvous & Startplätze",
     "/science/mission-phases/edl": "Eintritt, Abstieg & Landung"
+  },
+  "roster": {
+    "Gemini 1": {
+      "note": "unbemannter Struktur- und Trägerraketentest",
+      "name": "Gemini 1"
+    },
+    "Gemini 2": {
+      "note": "unbemannter suborbitaler Hitzeschildtest",
+      "name": "Gemini 2"
+    },
+    "Gemini 5": {
+      "note": "acht Tage in der Luft — der erste Flug von mehr als einer Woche, der bewies, dass Besatzungen eine Mondhin- und -rückreise durchhalten konnten",
+      "name": "Gemini 5"
+    },
+    "Gemini 9A": {
+      "note": "der „Angry Alligator“, das Zielobjekt, das sich nicht öffnete; der Außenbordeinsatz erwies sich als erschöpfend und beinahe katastrophal",
+      "name": "Gemini 9A"
+    },
+    "Gemini 10": {
+      "note": "koppelte an, nutzte das Triebwerk der Agena zum Bahnwechsel und traf sich mit einem zweiten Zielobjekt",
+      "name": "Gemini 10"
+    },
+    "Gemini 11": {
+      "note": "Rendezvous im Direktaufstieg schon im ersten Umlauf; erreichte mit 1.374 km ein Rekordapogäum",
+      "name": "Gemini 11"
+    }
   }
 }

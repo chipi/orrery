@@ -91,5 +91,30 @@
     "/fleet?id=shenzhou": "Flotte — das Raumschiff Shenzhou",
     "/programs/tiangong": "Tiangong — die Station, die Shenzhou-Crews bauten und anfliegen",
     "/programs/soyuz": "Soyuz — das Raumschiff, von dem die Bauweise von Shenzhou abstammt"
+  },
+  "roster": {
+    "mission:shenzhou-1": {
+      "note": "erster unbemannter Testflug — die Kapsel fliegt und kehrt zurück, bevor jemand mit ihr fliegt"
+    },
+    "Shenzhou 5": {
+      "note": "Yang Liwei umkreist die Erde 14-mal — der erste chinesische Astronaut im All, und China wird die dritte Nation, die mit eigener Rakete einen Menschen startet, 42 Jahre nach Gagarin",
+      "name": "Shenzhou 5"
+    },
+    "Shenzhou 7": {
+      "note": "Zhai Zhigang absolviert Chinas ersten Weltraumspaziergang — das dritte Land überhaupt mit einem Außenbordeinsatz",
+      "name": "Shenzhou 7"
+    },
+    "Shenzhou 9": {
+      "note": "erste bemannte Kopplung, mit Tiangong-1; Liu Yang wird die erste Chinesin im All",
+      "name": "Shenzhou 9"
+    },
+    "Shenzhou 11": {
+      "note": "ein 30-tägiger Aufenthalt an Bord von Tiangong-2 — bis dahin Chinas längste bemannte Mission, der Beweis für monatelange Bewohnbarkeit",
+      "name": "Shenzhou 11"
+    },
+    "Shenzhou 12": {
+      "note": "die erste Besatzung an Bord der ständigen Chinesischen Raumstation; Shenzhou-14 (2022) beginnt die ununterbrochene Besetzung",
+      "name": "Shenzhou 12"
+    }
   }
 }

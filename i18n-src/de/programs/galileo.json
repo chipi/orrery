@@ -86,5 +86,26 @@
   "link_labels": {
     "/explore": "Jupiter im 3D-Explorer",
     "/programs/cassini": "Cassini — dieselbe Idee, am Saturn"
+  },
+  "roster": {
+    "mission:galileo": {
+      "note": "das erste Raumfahrzeug im Orbit um den Jupiter — fast acht Jahre aus nächster Nähe am Riesenplaneten und seinen großen Monden"
+    },
+    "The atmospheric probe": {
+      "note": "bei der Ankunft setzte Galileo eine Sonde aus, die in die Wolken des Jupiter stürzte — die erste und einzige direkte Probe der Atmosphäre eines Riesenplaneten",
+      "name": "Die Atmosphärensonde"
+    },
+    "Europa's hidden ocean": {
+      "note": "Galileos Magnetfeld- und Bilddaten lieferten das bislang stärkste Argument, dass unter dem Eis des Jupitermondes Europa ein Ozean aus flüssigem Wasser liegt",
+      "name": "Europas verborgener Ozean"
+    },
+    "The stuck antenna": {
+      "note": "die Hauptantenne entfaltete sich nicht vollständig; die Mission wurde durch neue Datenkompressionssoftware gerettet, die zur Sonde hochgesendet wurde, und rettete so den Großteil der Wissenschaft über eine Verbindung im Schneckentempo",
+      "name": "Die klemmende Antenne"
+    },
+    "The deliberate end": {
+      "note": "ohne Treibstoff wurde Galileo absichtlich in den Jupiter gelenkt, um sicherzugehen, dass sie nie auf Europa einschlagen und dessen Ozean verunreinigen konnte",
+      "name": "Das gewollte Ende"
+    }
   }
 }

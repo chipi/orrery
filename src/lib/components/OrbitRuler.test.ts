@@ -7,7 +7,7 @@ import type { OrbitRegime } from '$types/orbit-regime';
 vi.mock('$app/state', () => ({ page: { url: new URL('http://localhost/') } }));
 
 const regimes: OrbitRegime[] = [
-  { id: 'LEO', name: 'Low Earth Orbit', short: 'LEO', altitude_km: [160, 2000], color: '#4ecdc4' },
+  { id: 'LEO', name: 'Low Earth Orbit', short: 'LEO', altitude_km: [160, 2000], color: '#8fd16a' },
   { id: 'GEO', name: 'Geostationary Orbit', short: 'GEO', altitude_km: 35786, color: '#ffc850' },
   { id: 'L2', name: 'Sun-Earth L2', short: 'L2', altitude_km: 1500000, color: '#ffd700' },
 ];

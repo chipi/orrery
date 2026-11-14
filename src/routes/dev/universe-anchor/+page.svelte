@@ -177,8 +177,8 @@
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: var(--size-label);
     letter-spacing: 1px;
-    color: #4ecdc4;
-    border: 1px solid rgba(78, 205, 196, 0.4);
+    color: #889fe7;
+    border: 1px solid rgba(136, 159, 231, 0.4);
     border-radius: 3px;
     padding: 1px 5px;
     vertical-align: middle;
@@ -200,7 +200,7 @@
   }
   .ctl input[type='range'] {
     width: 100%;
-    accent-color: #4ecdc4;
+    accent-color: #889fe7;
   }
   .ctl.inline {
     display: flex;

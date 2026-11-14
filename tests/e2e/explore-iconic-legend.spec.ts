@@ -187,12 +187,11 @@ test.describe('/explore — iconic legend (C7)', () => {
 const RINGS: Record<string, string> = {
   'pioneer-10': 'rgb(249, 117, 131)',
   'voyager-1': 'rgb(255, 166, 87)',
-  // teal path: the ring is the C4 neutral, the line in the scene keeps its teal
-  'voyager-2': 'rgba(255, 255, 255, 0.5)',
+  'voyager-2': 'rgb(218, 71, 235)',
 };
 
 test.describe('/explore — a thumb on every PATHS legend row (L45-T3b)', () => {
-  test('18 rows, 18 mission photos, ringed in the path colour; Voyager 2 neutral; no swatch', async ({
+  test('18 rows, 18 mission photos, ringed in the path colour; Voyager 2 magenta; no swatch', async ({
     page,
   }) => {
     desktopOnly();

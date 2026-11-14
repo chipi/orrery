@@ -18,7 +18,7 @@ const data: IconicTrajectoryData = {
   name: 'Voyager 2',
   mission_id: 'voyager-2',
   category: 'interstellar-bound',
-  color: '#4ecdc4',
+  color: '#da47eb',
   current_position_au: [30, 10, 0],
   current_distance_au: 140,
   current_distance_label: '140 AU',

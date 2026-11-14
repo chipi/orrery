@@ -41,7 +41,7 @@ map, loading the 512 px crop (30 to 56 KB) where the pipeline already has a 192 
    `image-provenance.json`: a thumb is a derived file of an image already credited.
 4. **Ring colour (decision 4, option a).** The row's own identity colour (agency, nation, planet, trajectory), the
    neutral `rgba(255,255,255,0.5)` where the row has none. A teal or cyan identity colour (hue 160 to 200 degrees:
-   `#4ecdc4`, Uranus `#7de8e8`, New Zealand `#00A6A6`, Voyager 2's path) gets the neutral ring (`ringColor`); the
+   `#4ecdc4`, Uranus `#7de8e8`, New Zealand `#00A6A6`) gets the neutral ring (`ringColor`); the
    fallback dot keeps the data colour. `agencyRingColor()` moved from `RegimePanel` to `nation-palette.ts`; it is
    the palette of `nationChipFor` keyed by the agency alone, and returns the colours the panel always had.
 5. **The regime panel on it.** Residents use `EntityThumb`; `orbit-regime-thumbs.json` stays as the
@@ -153,9 +153,10 @@ map, loading the 512 px crop (30 to 56 KB) where the pipeline already has a 192 
    the name, the agency logos and the year are as before. 18 of 18 rows have a thumb (every one is a trajectory
    mission with a `missions` image).
 2. **Ring = the path colour** (decision 8, option a): `entry.color` goes to `EntityThumb`'s `ring`, so the ring is the
-   colour of the line in the scene. The one teal path, Voyager 2 (`#4ecdc4`), gets the neutral ring through `ringColor`
-   (UXD-001), and its line in the scene stays teal (`paths-legend.ts` `a3-keep`). A thumb that fails to load shows the
-   8 px dot in the path colour in the same slot (the teal one for Voyager 2: the dot is the data colour, as in the
+   colour of the line in the scene. Voyager 2 was the one teal path and got the neutral ring through `ringColor`
+   (UXD-001); its path is now magenta `#da47eb` ([UXD-037](UXD-037-orbit-band-palette-no-teal.md), 2026-11-14), so its
+   ring is its own colour. A thumb that fails to load shows the
+   8 px dot in the path colour in the same slot (the dot is the data colour, as in the
    other lists); there is no line fallback, the line is gone.
 3. **Row size**: the legend does not grow. The fine-pointer row stays 28 px (the 28 px thumb fills it: padding 3 px
    became 0 vertically, so neighbouring rings are 2 px apart, the list's gap), the touch row stays 36 px (padding 5

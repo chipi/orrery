@@ -597,7 +597,7 @@
     font-family: 'Bebas Neue', sans-serif;
     font-size: 12px;
     letter-spacing: 3px;
-    color: #4ecdc4;
+    color: #889fe7;
   }
   .debug-page-label {
     font-size: var(--size-label);
@@ -624,7 +624,7 @@
     padding: 2px 6px;
   }
   .debug-close:hover {
-    color: #4ecdc4;
+    color: #889fe7;
   }
   .debug-tabs {
     display: flex;
@@ -650,8 +650,8 @@
     color: rgba(220, 230, 245, 0.95);
   }
   .debug-tab.active {
-    color: #4ecdc4;
-    border-bottom-color: #4ecdc4;
+    color: #889fe7;
+    border-bottom-color: #889fe7;
   }
   .debug-body {
     flex: 1;
@@ -687,7 +687,7 @@
     color: rgba(220, 230, 245, 0.95);
   }
   .debug-toggle input {
-    accent-color: #4ecdc4;
+    accent-color: #889fe7;
   }
   .debug-slider {
     display: inline-flex;
@@ -696,7 +696,7 @@
   }
   .debug-slider input[type='range'] {
     width: 120px;
-    accent-color: #4ecdc4;
+    accent-color: #889fe7;
   }
   .debug-slider-val {
     font-family: var(--font-mono, 'Space Mono', monospace);

@@ -181,7 +181,7 @@
     color: #dde6f5;
   }
   .stat.good span {
-    color: #4ecdc4;
+    color: #889fe7;
   }
   .controls {
     display: flex;
@@ -245,7 +245,7 @@
     color: #7a8aa5;
   }
   .ok {
-    color: #4ecdc4;
+    color: #889fe7;
   }
   .bad {
     color: #ff9a9a;
@@ -266,7 +266,7 @@
     font-size: 11px;
   }
   .row-clean {
-    background: rgba(78, 205, 196, 0.05);
+    background: rgba(136, 159, 231, 0.05);
   }
   .badge {
     font-size: var(--size-label);
@@ -276,7 +276,7 @@
     letter-spacing: 1px;
   }
   .badge.fix {
-    background: rgba(78, 205, 196, 0.2);
-    color: #4ecdc4;
+    background: rgba(136, 159, 231, 0.2);
+    color: #889fe7;
   }
 </style>

@@ -27,8 +27,8 @@ export interface EpochBand {
   yearEnd: number;
   /**
    * Narrative accent colour — picked to evoke each era's identity
-   * (Sputnik amber, Cold War red, Apollo gold, Skylab cyan, Mir
-   * purple, ISS silver, Falcon teal, Artemis amber, Mars rust). Used
+   * (Sputnik amber, Cold War red, Apollo gold, Skylab magenta, Mir
+   * purple, ISS silver, Falcon green, Artemis amber, Mars rust). Used
    * by EpochTimelineStrip for hover + active states.
    *
    * Verified WCAG-AA against the dark page background (~#0a0a16) at
@@ -47,7 +47,7 @@ export const EPOCH_BANDS: readonly EpochBand[] = [
     id: 'first-stations',
     yearStart: 1973,
     yearEnd: 1986,
-    color: '#5fc4e0', // a3-keep: era band colour coding, palette review at the end
+    color: '#da47eb',
   },
   {
     id: 'shuttle-and-mir',
@@ -60,7 +60,7 @@ export const EPOCH_BANDS: readonly EpochBand[] = [
     id: 'commercial-era',
     yearStart: 2011,
     yearEnd: 2024,
-    color: '#4ecdc4', // a3-keep: era band colour coding, palette review at the end
+    color: '#8fd16a',
   },
   { id: 'lunar-return', yearStart: 2024, yearEnd: 2030, color: '#ffb14e' },
   // Mars Era — starts at the first planned crewed-Mars / sample-return

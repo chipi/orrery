@@ -1,7 +1,7 @@
 import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { describe, expect, it } from 'vitest';
-import { THUMB_NEUTRAL_RING, ringColor, thumbOf } from '$lib/entity-thumb';
+import { ringColor, thumbOf } from '$lib/entity-thumb';
 import { INTERSTELLAR_CRAFT, PATHS_LEGEND, iconicTagline } from './paths-legend';
 
 describe('PATHS legend', () => {
@@ -42,14 +42,12 @@ describe('PATHS legend', () => {
   });
 
   // L45-T3b (UXD-025): the round photo leads each row, ringed in the path colour.
-  it('every row has a mission thumb on disk, ringed in its path colour (Voyager 2 neutral)', () => {
+  it('every row has a mission thumb on disk, ringed in its path colour', () => {
     for (const r of PATHS_LEGEND) {
       const src = thumbOf('missions', r.mission_id);
       expect(src, r.mission_id).not.toBeNull();
       expect(existsSync(resolve(__dirname, '../../../static', src!.slice(1))), src!).toBe(true);
-      expect(ringColor(r.color), r.mission_id).toBe(
-        r.mission_id === 'voyager-2' ? THUMB_NEUTRAL_RING : r.color,
-      );
+      expect(ringColor(r.color), r.mission_id).toBe(r.color);
     }
   });
 

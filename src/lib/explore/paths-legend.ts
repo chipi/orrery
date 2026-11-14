@@ -33,7 +33,7 @@ export const PATHS_LEGEND = [
   },
   {
     mission_id: 'voyager-2',
-    color: '#4ecdc4', // a3-keep: mission identity colour (Voyager 2, matches static/data), palette review at the end
+    color: '#da47eb', // Voyager 2; matches static/data/trajectories/voyager-2.json
     name: 'Voyager 2',
     launch_year: 1977,
     agency: 'NASA',

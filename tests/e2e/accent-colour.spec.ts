@@ -28,17 +28,15 @@ const vp = process.env.A3_VIEWPORT?.match(/^(\d+)x(\d+)$/);
 if (vp) test.use({ viewport: { width: Number(vp[1]), height: Number(vp[2]) } });
 
 // Data colours, not chrome (operator decision 2026-11-12, palette review at the end): the /plan
-// heat-map scale, the microgravity axes legend, era bands and orbit-regime / agency / nation
-// identity dots whose colour comes from data.
-// Data colours reach the page as inline style bindings from data (a regime's --regime-color, a
-// fleet category's --accent, an era's --band-color, a chip's --chip-tone (UXD-014), an agency
-// badge's inline background-color);
+// heat-map scale, the microgravity axes legend and agency / nation identity dots whose colour
+// comes from data. Orbit-regime colours (--regime-color) and era bands (--band-color) are NOT
+// exempt: the band palette has no teal (UXD-037), so the guard catches one that comes back.
+// Data colours reach the page as inline style bindings from data (a fleet category's --accent, a
+// chip's --chip-tone (UXD-014), an agency badge's inline background-color);
 // UI colours come from the CSS tokens. So an element under an inline colour binding is data.
 const DATA_COLOUR = [
   '.color-bar',
   '.swatch-zenith',
-  '[style*="--band-color"]',
-  '[style*="--regime-color"]',
   '[style*="--chip-tone"]',
   '[style*="--accent"]',
   '[style*="background-color"]',
@@ -204,6 +202,13 @@ const route = (name: string, url: string, settle = 1200): Screen => ({
   open: async (page) => {
     await page.goto(LOC + url, { waitUntil: 'domcontentloaded' });
     await expect(page.locator('main, section, #app, body').first()).toBeVisible();
+    // The orbit ruler mounts after hydration, later than `settle`: without this wait the scan
+    // could pass before the regime dots exist (UXD-037). On touch the ruler lives in a drawer tab
+    // and is not on the page until it is opened.
+    const touch = await page.evaluate(() => navigator.maxTouchPoints > 0);
+    if (!touch && /^\/(earth|moon|mars)$/.test(url)) {
+      await page.locator('.ruler-bands [data-regime]').first().waitFor({ timeout: 30_000 });
+    }
     await page.waitForTimeout(settle);
   },
 });

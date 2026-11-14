@@ -2,12 +2,12 @@
   {
     "id": "LMO",
     "altitude_km": [150, 500],
-    "color": "#4ecdc4"
+    "color": "#8fd16a"
   },
   {
     "id": "HMO",
     "altitude_km": [1000, 2500],
-    "color": "#7fd9d2"
+    "color": "#f28bb8"
   },
   {
     "id": "AREOSTATIONARY",

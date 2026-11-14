@@ -120,14 +120,13 @@ opening heading (UXD-007, e2e in slice D2), the deep-sky viewer fit (UXD-009), t
 
 Nothing below is a UXD. Each moves to one when the operator answers.
 
-**Operator decisions (asked once, before the phase that needs them)** — plan lines 24–32 (D1 to D3 are answered: [UXD-039](decisions/UXD-039-home-two-column-hero-one-glyph-component-and-type-scale.md); D4 is answered: keep the Explore dropdown, [UXD-027](decisions/UXD-027-explore-levels-one-table-glyphs-card-and-hint.md); D5 is answered: an explicit link both ways, no switch on zoom, [UXD-028](decisions/UXD-028-explore-and-worlds-link-both-ways.md)):
+**Operator decisions (asked once, before the phase that needs them)** — plan lines 24–32 (D1 to D3 are answered: [UXD-039](decisions/UXD-039-home-two-column-hero-one-glyph-component-and-type-scale.md); D4 is answered: keep the Explore dropdown, [UXD-027](decisions/UXD-027-explore-levels-one-table-glyphs-card-and-hint.md); D5 is answered: an explicit link both ways, no switch on zoom, [UXD-028](decisions/UXD-028-explore-and-worlds-link-both-ways.md); D6 is answered: on 2026-11-14 the operator shared nine example shots, the launch camera is slice G3, [G3 brief](../wip/2026-11-14-slice-G3-brief.md) §2.7, no UXD yet):
 
 | Id | Question                                                                                                       |
 | -- | -------------------------------------------------------------------------------------------------------------- |
-| D6 | Launch camera: the operator shares example shots first                                                         |
 | D7 | Missions era filter designed with Higgsfield (paid) or in code                                                 |
 
-**Questions for the operator** — plan lines 402–414 (Q1 and Q2 are answered: UXD-001, UXD-002; Q7 and Q9 are answered: UXD-038; Q10 is answered: UXD-041):
+**Questions for the operator** — plan lines 402–414 (Q1 and Q2 are answered: UXD-001, UXD-002; Q7 and Q9 are answered: UXD-038; Q10 is answered: UXD-041; Q8 is answered 2026-11-13: line style only, plan line 423, no UXD yet):
 
 | Id  | Question                                                                                     |
 | --- | -------------------------------------------------------------------------------------------- |
@@ -135,7 +134,6 @@ Nothing below is a UXD. Each moves to one when the operator answers.
 | Q4  | A mission link in a body panel: open the mission panel in place, or go to `/missions`?       |
 | Q5  | Chip groups: group every world (On ground / In space), or flatten Earth?                     |
 | Q6  | Panel close X: scrolls away with the content, or a slim fixed header bar?                    |
-| Q8  | Moon traverses: line style only, or the Mars extras (patches, photos, stops)?                |
 
 **Clarified from screenshots, fix described, no separate operator go recorded** (plan lines 417–425):
 MW3 (Sagittarius A\* panel gets the EHT 2022 image as its hero; the lensing render becomes an

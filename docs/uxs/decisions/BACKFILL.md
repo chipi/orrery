@@ -65,7 +65,7 @@ decision and its date only.
   decision date. They are the current spec, not history, and are not enumerated here.
 - **Decisions only in the working plan.** The 2026-11-11 answers (Q1, Q2 and the clarifications) are
   the UXDs, not backfill.
-- **Open questions** (D1 to D7, Q3 to Q10) are listed in
+- **Open questions** (D7, Q3 to Q6) are listed in
   [UXS-000 §Open](../UXS-000-orrery-ux-architecture.md#open), not here.
 - **ADRs that are architecture, not UX** (for example ADR-001 to ADR-017 on stack, ADR-063 to ADR-071
   on deploy) are not backfilled; the UX-relevant ones are rows above. The ADRs were found by title

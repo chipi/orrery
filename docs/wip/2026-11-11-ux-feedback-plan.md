@@ -28,7 +28,7 @@ per screen, then the change, then e2e on all three Playwright projects.
 - D3 TV home and TV app: scope. **Answered 2026-11-14 (F3, UXD-039): keep the two-panel TV layout, an emulation spec; the TV app's needs are a separate brief the operator scopes.**
 - D4 Explore: drop the second-level nav under Explore and use the breadcrumb as the way through the levels (keep separate pages in the sitemap)? **Answered 2026-11-13 (C8, UXD-027): keep the dropdown; the levels stay `?context=` on one page.**
 - D5 Explore: zooming into Earth / Mars / Moon / Venus switches to the world page, or an explicit "open world view" link?
-- D6 Launch camera: the operator shares example shots first.
+- D6 Launch camera: the operator shares example shots first. **Answered 2026-11-14 (G3): nine example images; the camera work is slice G3 (`2026-11-14-slice-G3-brief.md` §2.7).**
 - D7 Missions/era filter designed with Higgsfield (paid) or in code.
 
 ## GitHub
@@ -419,9 +419,9 @@ GH1 — README and docs refreshed with text and screenshots of the finished UI.
 - Q4 A mission link in a body panel: open the mission panel in place, or go to /missions?
 - Q5 Chip groups: group every world, or flatten Earth?
 - Q6 Panel close X: scrolls away with the content, or a slim fixed header bar?
-- Q7 Credits/colophon length: every section collapsed with its count, or "first N + show all"?
+- Q7 Credits/colophon length: every section collapsed with its count, or "first N + show all"? **Answered 2026-11-14: first 10 + "Show all N" (decision 24a, UXD-038).**
 - Q8 Moon traverses: line style only, or the Mars extras (patches, photos, stops)? — **answered 2026-11-13: line style only** (D4 brief decision 10a).
-- Q9 "Launcher sketches": the launchers inside the 198 cutaways, or the exploded launcher art?
+- Q9 "Launcher sketches": the launchers inside the 198 cutaways, or the exploded launcher art? **Answered 2026-11-14: the launchers inside the 198 cutaways, 158 spacecraft + 40 launcher sketches (decision 26a, UXD-038).**
 - Q10 Library: which "JPL planetary models", and which landing/rover research items? **Answered 2026-11-14: decisions 29a, 30a (UXD-041).**
 - Need a screenshot or URL: G5/G6 (which gallery page; the bottom line), O6 ("light minute / light year" — the regime data has neither), W5 (brackets — both bodies draw them), SN2 ("the zodiac chart" — none exists), MW3 (the Sag A* image), W6 (which sites show graphics).
 - D1–D7 above.

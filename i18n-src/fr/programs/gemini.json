@@ -94,5 +94,31 @@
   "link_labels": {
     "/earth": "Terre — orbites, rendez-vous et sites de lancement",
     "/science/mission-phases/edl": "Entrée, descente et atterrissage"
+  },
+  "roster": {
+    "Gemini 1": {
+      "note": "essai structurel et du lanceur sans équipage",
+      "name": "Gemini 1"
+    },
+    "Gemini 2": {
+      "note": "essai suborbital sans équipage du bouclier thermique",
+      "name": "Gemini 2"
+    },
+    "Gemini 5": {
+      "note": "huit jours en l'air — le premier vol de plus d'une semaine, prouvant que des équipages pouvaient tenir un aller-retour lunaire",
+      "name": "Gemini 5"
+    },
+    "Gemini 9A": {
+      "note": "l'« alligator en colère », la cible qui refusait de s'ouvrir ; la sortie extravéhiculaire s'est avérée épuisante et quasi désastreuse",
+      "name": "Gemini 9A"
+    },
+    "Gemini 10": {
+      "note": "s'est amarré, a utilisé le moteur de l'Agena pour changer d'orbite et a effectué un rendez-vous avec une seconde cible",
+      "name": "Gemini 10"
+    },
+    "Gemini 11": {
+      "note": "rendez-vous en ascension directe dès la première orbite ; a atteint un apogée record de 1 374 km",
+      "name": "Gemini 11"
+    }
   }
 }

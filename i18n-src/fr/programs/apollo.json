@@ -107,5 +107,28 @@
     "/science/propulsion/tsiolkovsky": "L'équation de Tsiolkovski",
     "/moon?site=apollo15": "Apollo 15 — Hadley–Apennine",
     "/moon?site=apollo16": "Apollo 16 — hauts plateaux Descartes"
+  },
+  "roster": {
+    "Ranger": {
+      "note": "préparation robotique — des sondes impactrices qui ont renvoyé les premières images rapprochées de la Lune, photographiant la surface jusqu'à l'instant de l'impact et révélant le terrain qu'affronterait Apollo",
+      "name": "Ranger"
+    },
+    "Lunar Orbiter": {
+      "note": "préparation robotique — cinq orbiteurs ont photographié presque toute la Lune pour choisir et certifier les sites d'alunissage d'Apollo ; la reconnaissance qui a rendu possible un alunissage sûr",
+      "name": "Lunar Orbiter"
+    },
+    "Surveyor": {
+      "note": "préparation robotique — des atterrisseurs en douceur ont prouvé que la surface lunaire supporterait le poids d'un vaisseau au lieu de l'engloutir ; Apollo 12 s'est posé à côté de Surveyor 3 et en a rapporté des pièces",
+      "name": "Surveyor"
+    },
+    "mission:apollo-1": {
+      "note": "incendie dans la cabine — équipage perdu lors d'un essai au sol"
+    },
+    "mission:apollo7": {
+      "note": "premier vol habité"
+    },
+    "mission:apollo9": {
+      "note": "essai habité du module lunaire en orbite terrestre"
+    }
   }
 }

@@ -103,5 +103,15 @@
     "/earth": "Terre — orbites, rentrée et sites de lancement",
     "/science/mission-phases/edl": "Entrée, descente et atterrissage",
     "/science/propulsion/tsiolkovsky": "L'équation de Tsiolkovski — pourquoi la Redstone ne pouvait pas atteindre l'orbite"
+  },
+  "roster": {
+    "Mercury-Redstone 2 (Ham)": {
+      "note": "essai suborbital avec un chimpanzé — a validé la Redstone pour un vol habité",
+      "name": "Mercury-Redstone 2 (Ham)"
+    },
+    "Mercury-Atlas 5 (Enos)": {
+      "note": "essai de deux orbites avec un chimpanzé — a validé l'Atlas avant le vol de Glenn",
+      "name": "Mercury-Atlas 5 (Enos)"
+    }
   }
 }

@@ -82,5 +82,18 @@
   "link_labels": {
     "/explore": "Pluton dans l'explorateur 3D",
     "/gallery/deep-sky": "Pluton, dans la galerie Ciel profond"
+  },
+  "roster": {
+    "mission:new-horizons": {
+      "note": "le vaisseau le plus rapide jamais lancé, envoyé à travers le système solaire pour réaliser la première étude rapprochée de Pluton — puis d'un monde au-delà"
+    },
+    "Pluto, up close": {
+      "note": "le 14 juillet 2015, il a survolé Pluton, révélant un monde jeune et actif de glaciers d'azote et de montagnes de glace d'eau là où les scientifiques attendaient une boule de roche morte",
+      "name": "Pluton de près"
+    },
+    "Arrokoth": {
+      "note": "le jour de l'An 2019, il a survolé Arrokoth, un minuscule corps à deux lobes situé un milliard et demi de kilomètres au-delà de Pluton — l'objet le plus lointain jamais exploré de près",
+      "name": "Arrokoth"
+    }
   }
 }

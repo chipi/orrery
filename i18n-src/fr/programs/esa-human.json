@@ -90,5 +90,19 @@
   "link_labels": {
     "/programs/iss": "ISS — la station que l'Europe a aidé à construire",
     "/programs/ariane": "Ariane — le lanceur qui a emporté l'ATV"
+  },
+  "roster": {
+    "Spacelab": {
+      "note": "la première contribution de l'Europe aux vols spatiaux habités — un laboratoire habité qui a volé dans la soute de la navette spatiale lors de 22 missions et emporté le premier astronaute de l'ESA, Ulf Merbold, en 1983",
+      "name": "Spacelab"
+    },
+    "Columbus": {
+      "note": "le laboratoire de recherche permanent de l'ESA sur la Station spatiale internationale — le module qui a fait de l'Europe un partenaire à part entière de l'ISS avec une installation propre",
+      "name": "Columbus"
+    },
+    "European Service Module": {
+      "note": "la technologie de l'ATV renaît : l'Europe construit désormais le module de service qui alimente et propulse le vaisseau Orion de la NASA lors de ses vols vers l'orbite lunaire dans le cadre d'Artemis",
+      "name": "Module de service européen"
+    }
   }
 }

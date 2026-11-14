@@ -90,5 +90,13 @@
   "link_labels": {
     "/fleet?id=hayabusa-2": "Flotte — les sondes Hayabusa",
     "/explore": "Explorer — les astéroïdes Itokawa et Ryugu"
+  },
+  "roster": {
+    "mission:hayabusa1": {
+      "note": "atteint l'astéroïde Itokawa, touche le sol à deux reprises et — malgré des pannes graves — rapporte le premier échantillon jamais prélevé sur un astéroïde"
+    },
+    "mission:hayabusa2": {
+      "note": "atteint Ryugu, tire un projectile pour créer un cratère artificiel, recueille de la matière du sous-sol et la ramène sur Terre en 2020 — un sans-faute"
+    }
   }
 }

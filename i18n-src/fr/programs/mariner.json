@@ -87,5 +87,20 @@
     "/mars": "Mars — le monde que Mariner a photographié le premier",
     "/programs/viking": "Viking — les atterrisseurs dont Mariner a reconnu la route",
     "/mars?site=mariner9": "Mariner 9 en orbite martienne"
+  },
+  "roster": {
+    "Mariner 2 reaches Venus": {
+      "note": "en décembre 1962, Mariner 2 est devenu le premier vaisseau à atteindre une autre planète, découvrant Vénus non comme une jumelle tropicale de la Terre mais comme une fournaise à des centaines de degrés",
+      "name": "Mariner 2 atteint Vénus"
+    },
+    "fleet:mariner-4": {
+      "note": "a survolé Mars en 1965 et renvoyé les premières photographies d'une autre planète prises de près — un monde cratérisé, apparemment mort, qui a mis fin aux vieux rêves de canaux et de vie martiens"
+    },
+    "fleet:mariner-9": {
+      "note": "est devenu le premier vaisseau en orbite autour d'une autre planète, cartographiant tout Mars et révélant des volcans géants, un réseau de canyons grand comme un continent et des lits de rivières asséchés"
+    },
+    "mission:mariner10": {
+      "note": "le premier vaisseau à visiter Mercure, et le premier à utiliser la gravité d'une planète pour en atteindre une autre — l'astuce de la fronde que toute mission d'espace lointain emploie depuis"
+    }
   }
 }

@@ -87,5 +87,19 @@
     "/fleet?id=gaganyaan": "Flotte — le vaisseau Gaganyaan",
     "/programs/chandrayaan": "Chandrayaan — le programme lunaire de l'Inde",
     "/programs/mangalyaan": "Mangalyaan — la mission martienne de l'Inde réussie du premier coup"
+  },
+  "roster": {
+    "Announced": {
+      "note": "l'Inde s'engage à envoyer ses propres astronautes sur sa propre fusée — l'objectif qui ferait d'elle la quatrième nation capable de vols habités indépendants",
+      "name": "Annoncé"
+    },
+    "Test Vehicle abort": {
+      "note": "le premier essai en vol démontre le système d'évacuation de l'équipage, qui doit écarter la capsule d'une fusée défaillante — la capacité de sécurité autour de laquelle un programme habité est construit",
+      "name": "Abandon du véhicule d'essai"
+    },
+    "First crewed flight": {
+      "note": "les débuts prévus d'un équipage indien dans un vaisseau indien — visés pour début 2027, rejoignant la Russie, les États-Unis et la Chine parmi les puissances de vols habités indépendants",
+      "name": "Premier vol habité"
+    }
   }
 }

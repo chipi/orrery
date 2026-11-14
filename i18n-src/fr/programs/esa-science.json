@@ -93,5 +93,18 @@
     "/programs/ariane": "Ariane — la fusée qui lance la science de l'ESA",
     "/earth?site=gaia": "Gaia au point L2",
     "/earth?site=xmm": "XMM-Newton"
+  },
+  "roster": {
+    "mission:rosetta": {
+      "note": "après une poursuite de dix ans, Rosetta se met en orbite autour de la comète 67P et largue l'atterrisseur Philae à sa surface — le premier vaisseau à orbiter autour d'une comète et à s'y poser"
+    },
+    "Gaia's map": {
+      "note": "Gaia commence à publier la carte tridimensionnelle la plus précise de la Voie lactée jamais réalisée — les positions, distances et mouvements de près de deux milliards d'étoiles",
+      "name": "La carte de Gaia"
+    },
+    "Euclid opens its eyes": {
+      "note": "un télescope conçu pour sonder un tiers du ciel et cartographier comment la matière noire et l'énergie noire ont façonné l'univers",
+      "name": "Euclid ouvre les yeux"
+    }
   }
 }

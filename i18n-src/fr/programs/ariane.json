@@ -94,5 +94,15 @@
   "link_labels": {
     "/programs/esa-human": "L'ESA dans le vol spatial habité — Spacelab, Columbus, ATV",
     "/fleet?id=ariane-5": "Flotte — lanceurs Ariane"
+  },
+  "roster": {
+    "Ariane 4": {
+      "note": "le fiable cheval de bataille commercial qui a capté environ la moitié des lancements commerciaux de satellites du monde dans les années 1990 et fait d'Arianespace le leader",
+      "name": "Ariane 4"
+    },
+    "Flight 501": {
+      "note": "le vol inaugural d'Ariane 5 s'est autodétruit au bout de 37 secondes lorsque le logiciel de guidage réutilisé d'Ariane 4 a débordé à la plus grande vitesse de la nouvelle fusée — un cas d'école de l'ingénierie logicielle",
+      "name": "Vol 501"
+    }
   }
 }

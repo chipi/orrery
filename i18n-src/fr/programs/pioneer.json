@@ -86,5 +86,21 @@
   "link_labels": {
     "/explore": "Jupiter dans l'explorateur 3D",
     "/programs/voyager": "Voyager — le grand tour que Pioneer avait reconnu"
+  },
+  "roster": {
+    "mission:pioneer-10": {
+      "note": "le premier vaisseau à traverser la ceinture d'astéroïdes et à atteindre Jupiter, et le premier mis sur une trajectoire pour quitter entièrement le système solaire"
+    },
+    "mission:pioneer-11": {
+      "note": "a survolé Jupiter, puis est devenu le premier vaisseau à atteindre Saturne — éclairant le chemin et les dangers des anneaux que suivraient les Voyager"
+    },
+    "The Pioneer plaque": {
+      "note": "une petite plaque anodisée or sur chaque vaisseau montrant un homme, une femme et la position de la Terre — le premier message physique de l'humanité adressé aux étoiles",
+      "name": "La plaque de Pioneer"
+    },
+    "Pioneer Venus": {
+      "note": "une paire distincte de Pioneer a atteint Vénus en 1978 — un orbiteur qui a cartographié la planète au radar à travers ses nuages, et des sondes qui ont plongé dans son atmosphère écrasante",
+      "name": "Pioneer Venus"
+    }
   }
 }

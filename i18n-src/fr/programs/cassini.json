@@ -86,5 +86,21 @@
   "link_labels": {
     "/explore": "Saturne dans l'explorateur 3D",
     "/programs/voyager": "Voyager — les survols qui sont venus en premier"
+  },
+  "roster": {
+    "mission:cassini": {
+      "note": "a passé treize ans en orbite autour de Saturne — le seul vaisseau à l'avoir fait — cartographiant les anneaux, les lunes et les tempêtes avec un détail qu'aucun survol ne pouvait atteindre"
+    },
+    "mission:huygens": {
+      "note": "la sonde européenne Huygens s'est posée en parachute sur Titan en janvier 2005 — le premier et seul atterrissage n'importe où dans le système solaire externe"
+    },
+    "The geysers of Enceladus": {
+      "note": "Cassini a découvert des jets de glace d'eau jaillissant du pôle sud de la minuscule lune Encelade, preuve d'un océan global sous sa glace — l'un des endroits les plus prometteurs pour chercher la vie",
+      "name": "Les geysers d'Encelade"
+    },
+    "The Grand Finale": {
+      "note": "à court de carburant, Cassini a été lancée vingt-deux fois entre Saturne et ses anneaux, puis précipitée délibérément dans la planète, pour être sûr qu'elle ne puisse jamais contaminer les lunes océaniques",
+      "name": "Le Grand Final"
+    }
   }
 }

@@ -90,5 +90,11 @@
   "link_labels": {
     "/earth": "Terra — órbitas, encontros e bases de lançamento",
     "/science/mission-phases/edl": "Entrada, descida e pouso"
+  },
+  "roster": {
+    "Soyuz 4 & 5": {
+      "note": "primeiro acoplamento de duas naves tripuladas + primeira transferência de tripulação, por caminhada espacial entre as duas naves",
+      "name": "Soyuz 4 e 5"
+    }
   }
 }

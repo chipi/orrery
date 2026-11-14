@@ -94,5 +94,11 @@
   "link_labels": {
     "/earth": "Terra — órbitas e bases de lançamento",
     "/science/mission-phases/edl": "Entrada, descida e pouso"
+  },
+  "roster": {
+    "Korabl-Sputnik 2 (Belka & Strelka)": {
+      "note": "as cadelas Belka e Strelka — os primeiros animais a orbitar e voltar vivos, na nave de testes Vostok",
+      "name": "Korabl-Sputnik 2 (Belka e Strelka)"
+    }
   }
 }

@@ -88,5 +88,19 @@
     "/programs/starlink": "Starlink — a constelação que ele persegue",
     "/earth": "Terra — órbitas e a superlotação da órbita baixa",
     "/earth?site=kuiper": "A constelação Kuiper"
+  },
+  "roster": {
+    "KuiperSat prototypes": {
+      "note": "dois satélites de teste chegam à órbita para validar o projeto antes do início da produção em massa",
+      "name": "Protótipos KuiperSat"
+    },
+    "Production launches": {
+      "note": "a constelação operacional começa a ser implantada — anos atrás da Starlink, e correndo contra um prazo regulatório para manter seu espectro",
+      "name": "Lançamentos de produção"
+    },
+    "Multi-rocket by design": {
+      "note": "a Kuiper compra lançamentos de muitos fornecedores — Atlas V, Vulcan, Ariane 6, New Glenn — em vez de depender do foguete de um rival como dependeria do Falcon",
+      "name": "Vários foguetes por projeto"
+    }
   }
 }

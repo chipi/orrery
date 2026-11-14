@@ -87,5 +87,25 @@
     "/explore": "Os planetas externos no explorador 3D",
     "/gallery/deep-sky": "O “pálido ponto azul”, na galeria Céu profundo",
     "/programs/pioneer": "Pioneer — as sondas que foram primeiro"
+  },
+  "roster": {
+    "mission:voyager-2": {
+      "note": "a única nave a visitar os quatro planetas gigantes, e o único olhar de perto que a humanidade já teve de Urano e Netuno"
+    },
+    "mission:voyager-1": {
+      "note": "sobrevoou Júpiter e Saturno, virou-se para fotografar todo o sistema solar e tornou-se o primeiro objeto feito pelo homem a alcançar o espaço interestelar"
+    },
+    "The Golden Record": {
+      "note": "um disco de vinil banhado a ouro preso a cada nave — sons, música e saudações da Terra, dirigidos a quem puder encontrá-lo daqui a um bilhão de anos",
+      "name": "O Golden Record"
+    },
+    "The Pale Blue Dot": {
+      "note": "em 14 de fevereiro de 1990, de além de Netuno, a Voyager 1 virou-se e fotografou a Terra como um único pixel",
+      "name": "O Pale Blue Dot"
+    },
+    "Interstellar space": {
+      "note": "a Voyager 1 cruzou a heliopausa em 2012, a Voyager 2 em 2018 — as primeiras máquinas a deixar a bolha do Sol e entrar no espaço entre as estrelas, e que ainda ligam para casa",
+      "name": "Espaço interestelar"
+    }
   }
 }

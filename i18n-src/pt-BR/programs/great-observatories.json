@@ -93,5 +93,15 @@
     "/explore": "Explorar — os objetos de céu profundo revelados por esses telescópios",
     "/earth?site=hubble": "Hubble em órbita terrestre baixa",
     "/earth?site=chandra": "Observatório de Raios X Chandra"
+  },
+  "roster": {
+    "Compton Gamma Ray Observatory": {
+      "note": "o membro de raios gama dos quatro originais — mapeou os eventos mais violentos do universo até ser retirado de órbita deliberadamente em 2000",
+      "name": "Compton Gamma Ray Observatory"
+    },
+    "Nancy Grace Roman": {
+      "note": "o próximo na linhagem da NASA — um telescópio de levantamento infravermelho de campo amplo, com campo de visão mais de cem vezes o do Hubble, construído para mapear o universo em vez de contemplar um único trecho dele",
+      "name": "Nancy Grace Roman"
+    }
   }
 }

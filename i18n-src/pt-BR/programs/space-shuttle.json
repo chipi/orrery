@@ -104,6 +104,18 @@
     },
     "mission:magellan": {
       "note": "liberada da baía de carga do Shuttle Atlantis na STS-30, em maio de 1989, e depois enviada a Vênus por um estágio superior"
+    },
+    "STS-1": {
+      "note": "o primeiro voo orbital — a primeira vez que uma nave tripulada foi levada à órbita em seu lançamento inaugural, e a primeira reutilizável",
+      "name": "STS-1"
+    },
+    "Challenger (STS-51-L)": {
+      "note": "perdido 73 segundos após o lançamento, quando uma vedação do propulsor, endurecida pelo frio, falhou; sete tripulantes morreram, e o desastre expôs uma cultura que havia normalizado um risco conhecido",
+      "name": "Challenger (STS-51-L)"
+    },
+    "Columbia (STS-107)": {
+      "note": "perdido durante a reentrada, depois que detritos de espuma haviam furado a asa no lançamento; sete tripulantes morreram, e constatou-se que a mesma falha organizacional havia se repetido",
+      "name": "Columbia (STS-107)"
     }
   }
 }

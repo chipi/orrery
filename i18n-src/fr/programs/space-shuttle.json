@@ -94,5 +94,16 @@
   "link_labels": {
     "/earth": "Terre — orbites et sites de lancement",
     "/fleet?id=discovery": "Flotte — les orbiteurs du Space Shuttle"
+  },
+  "roster": {
+    "mission:galileo": {
+      "note": "larguée depuis la soute de charge utile de la navette Atlantis lors de STS-34, en octobre 1989, puis envoyée vers Jupiter par un étage supérieur"
+    },
+    "mission:ulysses": {
+      "note": "larguée depuis la soute de charge utile de la navette Discovery lors de STS-41, en octobre 1990, puis envoyée, en passant près de Jupiter, sur une orbite polaire autour du Soleil"
+    },
+    "mission:magellan": {
+      "note": "larguée depuis la soute de charge utile de la navette Atlantis lors de STS-30, en mai 1989, puis envoyée vers Vénus par un étage supérieur"
+    }
   }
 }

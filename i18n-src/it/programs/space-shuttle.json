@@ -94,5 +94,16 @@
   "link_labels": {
     "/earth": "Terra — orbite e siti di lancio",
     "/fleet?id=discovery": "Flotta — gli orbiter dello Space Shuttle"
+  },
+  "roster": {
+    "mission:galileo": {
+      "note": "rilasciata dalla stiva del carico utile dello Shuttle Atlantis durante la STS-34, nell'ottobre 1989, poi inviata verso Giove con uno stadio superiore"
+    },
+    "mission:ulysses": {
+      "note": "rilasciata dalla stiva del carico utile dello Shuttle Discovery durante la STS-41, nell'ottobre 1990, poi inviata oltre Giove su un'orbita polare attorno al Sole"
+    },
+    "mission:magellan": {
+      "note": "rilasciata dalla stiva del carico utile dello Shuttle Atlantis durante la STS-30, nel maggio 1989, poi inviata verso Venere con uno stadio superiore"
+    }
   }
 }

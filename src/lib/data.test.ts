@@ -1369,6 +1369,21 @@ describe('programs / badges / sourcing loaders (PRD-029)', () => {
     expect(de?.surface_sites?.[0]?.label).toBe('Apollo 15 — Hadley–Apennin');
   });
 
+  it('getProgram lays the locale roster text over the base rows and keeps the rest English', async () => {
+    const note = (p: Awaited<ReturnType<typeof getProgram>>, id: string) =>
+      p?.roster.find((r) => r.linked_id === id)?.note;
+    const en = await getProgram('space-shuttle');
+    const de = await getProgram('space-shuttle', 'de');
+    expect(note(en, 'galileo')).toBe(
+      "deployed from Atlantis's payload bay on STS-34 in October 1989, then sent to Jupiter on an upper stage",
+    );
+    expect(note(de, 'galileo')).toContain('STS-34 im Oktober 1989');
+    expect(de?.roster.length).toBe(en?.roster.length);
+    expect(de?.roster.find((r) => r.name === 'STS-1')?.note).toBe(
+      en?.roster.find((r) => r.name === 'STS-1')?.note,
+    );
+  });
+
   it('getBadges returns the insignia map', async () => {
     const badges = await getBadges();
     expect(badges['program:apollo']).toMatch(/badges\/programs\/apollo/);

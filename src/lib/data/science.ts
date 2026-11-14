@@ -1,4 +1,5 @@
 import { get, type FetchLike } from './core';
+import { mergeRoster } from '../program-roster-overlay.js';
 import type { Program, ProgramBase, ProgramOverlay, ProgramIndexEntry } from '$types/program';
 import type { Essay, EssayBase, EssayOverlay, EssayIndexEntry } from '$types/essay';
 import type {
@@ -92,6 +93,7 @@ export async function getProgram(
     return {
       ...baseRecord,
       ...fallback,
+      roster: mergeRoster(baseRecord.roster, fallback.roster),
       see_also: baseRecord.see_also?.map((s) => ({ ...s, label: labels[s.href] ?? s.label })),
       surface_sites: baseRecord.surface_sites?.map((s) => ({
         ...s,

@@ -22,7 +22,7 @@ You are translating Orrery into a new language. Before you start:
 
 Files you will be touching:
 - `messages/<code>.json` — Paraglide UI strings (informal register where the en-US source uses a friendly tone; UI labels follow §4a).
-- `i18n-src/<code>/<surface>/…json` — per-entity content overlays mirroring `i18n-src/en-US/` (missions, fleet, programs, science, sites, …), bundled at build into `static/data/i18n/<code>.json`. Keep every `id`; names follow §2.
+- `i18n-src/<code>/<surface>/…json` — per-entity content overlays mirroring `i18n-src/en-US/` (missions, fleet, programs, science, sites, …), bundled at build into `static/data/i18n/<code>.json`. Keep every `id`; names follow §2. A program overlay may also carry `roster: { "<ref:linked_id | English name>": { note, name } }` for the roster rows whose English is in `static/data/programs` (see the program runbook §3).
 - `scripts/i18n-tools/native-terms.json` — the glossary: native forms of names and terms per locale. A name goes there before it goes into any text (strategy §3.5).
 
 Per ADR-017's fallback chain, any key you omit will fall back to en-US — broken translation is bounded, not user-blocking.

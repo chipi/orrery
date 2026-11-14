@@ -94,5 +94,16 @@
   "link_labels": {
     "/earth": "पृथ्वी — कक्षाएँ और प्रक्षेपण स्थल",
     "/fleet?id=discovery": "बेड़ा — Space Shuttle ऑर्बिटर"
+  },
+  "roster": {
+    "mission:galileo": {
+      "note": "अक्टूबर 1989 में STS-34 पर Shuttle Atlantis के पेलोड बे से छोड़ा गया, फिर ऊपरी चरण के सहारे बृहस्पति की ओर भेजा गया"
+    },
+    "mission:ulysses": {
+      "note": "अक्टूबर 1990 में STS-41 पर Shuttle Discovery के पेलोड बे से छोड़ा गया, फिर बृहस्पति के पास से गुज़रते हुए सूर्य की ध्रुवीय कक्षा में भेजा गया"
+    },
+    "mission:magellan": {
+      "note": "मई 1989 में STS-30 पर Shuttle Atlantis के पेलोड बे से छोड़ा गया, फिर ऊपरी चरण के सहारे शुक्र की ओर भेजा गया"
+    }
   }
 }

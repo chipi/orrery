@@ -94,6 +94,24 @@ test.describe('program page sections and cards', () => {
     expect(names).not.toContain('Esa Human');
   });
 
+  test('/de/programs/space-shuttle: the Galileo, Magellan and Ulysses rows say they were deployed from the Shuttle, in German', async ({
+    page,
+  }) => {
+    await page.goto('/de/programs/space-shuttle');
+    const notes = await page.locator('section.roster .t-note').allInnerTexts();
+    expect(notes).toContain(
+      'aus der Nutzlastbucht der Atlantis auf STS-34 im Oktober 1989 ausgesetzt, dann mit einer Oberstufe zum Jupiter geschickt',
+    );
+    expect(
+      notes.filter((n) => /^aus der Nutzlastbucht der (Atlantis|Discovery) auf STS-/.test(n)),
+    ).toHaveLength(3);
+    await page.goto('/programs/space-shuttle');
+    const en = await page.locator('section.roster .t-note').allInnerTexts();
+    expect(
+      en.filter((n) => /^deployed from (Atlantis|Discovery)'s payload bay on STS-/.test(n)),
+    ).toHaveLength(3);
+  });
+
   test('a rail scrolls sideways inside its box; the page does not (390 px)', async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 844 });
     await page.goto('/programs/mars-rovers');

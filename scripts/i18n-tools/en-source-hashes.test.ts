@@ -62,6 +62,26 @@ describe('English source-hash manifest', () => {
     rmSync(root, { recursive: true });
   });
 
+  it('covers program roster English: a note, and the name of a name-only row', () => {
+    const root = corpus();
+    const roster = (note: string) => ({
+      roster: [
+        { linked_id: 'a', ref: 'mission', note },
+        { name: 'Event', note: 'n2' },
+        { linked_id: 'b', ref: 'fleet' },
+      ],
+    });
+    put(root, 'static/data/programs/p.json', roster('old'));
+    expect(run(root, 'write').out).toContain('wrote 7 strings in 3 files');
+    expect(run(root, 'check')).toMatchObject({ code: 0 });
+    put(root, 'static/data/programs/p.json', roster('new'));
+    const r = run(root, 'check');
+    expect(r.code).toBe(1);
+    expect(r.out).toContain('changed\tprograms-roster/p.json\tmission:a.note');
+    expect(r.out).toContain('1 changed, 0 new');
+    rmSync(root, { recursive: true });
+  });
+
   it('only counts an English string that was removed', () => {
     const root = corpus();
     run(root, 'write');

@@ -94,5 +94,16 @@
   "link_labels": {
     "/earth": "Aarde — banen & lanceerplaatsen",
     "/fleet?id=discovery": "Vloot — Space Shuttle-orbiters"
+  },
+  "roster": {
+    "mission:galileo": {
+      "note": "uitgezet vanuit het laadruim van Shuttle Atlantis tijdens STS-34 in oktober 1989, daarna met een bovenste trap naar Jupiter gestuurd"
+    },
+    "mission:ulysses": {
+      "note": "uitgezet vanuit het laadruim van Shuttle Discovery tijdens STS-41 in oktober 1990, daarna langs Jupiter in een poolbaan om de zon gestuurd"
+    },
+    "mission:magellan": {
+      "note": "uitgezet vanuit het laadruim van Shuttle Atlantis tijdens STS-30 in mei 1989, daarna met een bovenste trap naar Venus gestuurd"
+    }
   }
 }

@@ -94,5 +94,16 @@
   "link_labels": {
     "/earth": "地球 — 軌道と打ち上げ地点",
     "/fleet?id=discovery": "フリート — Space Shuttle オービター"
+  },
+  "roster": {
+    "mission:galileo": {
+      "note": "1989年10月、STS-34でShuttle Atlantisのペイロードベイから放出され、その後、上段ロケットで木星へ送られた"
+    },
+    "mission:ulysses": {
+      "note": "1990年10月、STS-41でShuttle Discoveryのペイロードベイから放出され、その後、木星を経由して太陽の極軌道へ送られた"
+    },
+    "mission:magellan": {
+      "note": "1989年5月、STS-30でShuttle Atlantisのペイロードベイから放出され、その後、上段ロケットで金星へ送られた"
+    }
   }
 }

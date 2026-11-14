@@ -13256,6 +13256,360 @@
     "science_sections.3.why": "a614c64695",
     "type": "88f34b3e20"
   },
+  "programs-roster/apollo.json": {
+    "Lunar Orbiter.name": "79206992d8",
+    "Lunar Orbiter.note": "3bdd204173",
+    "Ranger.name": "6eb9532f38",
+    "Ranger.note": "69758dc76f",
+    "Surveyor.name": "412258d437",
+    "Surveyor.note": "d8518ec2b6",
+    "mission:apollo-1.note": "dbe92384ce",
+    "mission:apollo7.note": "583eeb4875",
+    "mission:apollo9.note": "f98892ec70"
+  },
+  "programs-roster/ariane.json": {
+    "Ariane 4.name": "ee1f4d3f2c",
+    "Ariane 4.note": "db4fe326fc",
+    "Flight 501.name": "916c5787c2",
+    "Flight 501.note": "cef5045a1a"
+  },
+  "programs-roster/artemis.json": {
+    "Artemis I.name": "a1e20a8970",
+    "Artemis I.note": "52686aff2f",
+    "mission:artemis2.note": "27d1b1b283",
+    "mission:artemis3.note": "1a88586a04",
+    "mission:artemis4.note": "7de3975ab0",
+    "mission:artemis5.note": "556f768702"
+  },
+  "programs-roster/buran.json": {
+    "Cancellation.name": "319aaae4de",
+    "Cancellation.note": "e785553912",
+    "The single flight.name": "a6ff8ae084",
+    "The single flight.note": "8a919b184b"
+  },
+  "programs-roster/cassini.json": {
+    "The Grand Finale.name": "6c637c5dbf",
+    "The Grand Finale.note": "da7422788c",
+    "The geysers of Enceladus.name": "e1d19fe479",
+    "The geysers of Enceladus.note": "b1cbde48db",
+    "mission:cassini.note": "f2f6598e36",
+    "mission:huygens.note": "5a175ad345"
+  },
+  "programs-roster/chandrayaan.json": {
+    "Chandrayaan-2.name": "e4792516d8",
+    "Chandrayaan-2.note": "264a25afe5",
+    "mission:chandrayaan1.note": "8ce5befe7a",
+    "mission:chandrayaan3.note": "46c8787795"
+  },
+  "programs-roster/change.json": {
+    "Crewed landing.name": "5ba8ed4081",
+    "Crewed landing.note": "ad533f2ebc",
+    "ILRS.name": "ac98f12149",
+    "ILRS.note": "cbbcf90de6",
+    "Queqiao relay.name": "b1fd1adb8f",
+    "Queqiao relay.note": "128facba0e",
+    "mission:change1.note": "14a5b43646",
+    "mission:change3.note": "45e31c7c9f",
+    "mission:change4.note": "10e8e3802e",
+    "mission:change5.note": "7f93f4a759",
+    "mission:change6.note": "a53d961075"
+  },
+  "programs-roster/commercial-stations.json": {
+    "Axiom Station.name": "cde7533b00",
+    "Axiom Station.note": "299240f8e5",
+    "Commercial LEO Destinations.name": "755d1e9aaf",
+    "Commercial LEO Destinations.note": "2b43f601e3",
+    "ISS retirement.name": "815551123f",
+    "ISS retirement.note": "2b1a0e3533",
+    "Orbital Reef.name": "1c8dc662a1",
+    "Orbital Reef.note": "c6259e7407",
+    "Starlab.name": "887fec58b4",
+    "Starlab.note": "c142f5ceff",
+    "Vast Haven-1.name": "aee57a88c6",
+    "Vast Haven-1.note": "062054406c"
+  },
+  "programs-roster/esa-human.json": {
+    "Columbus.name": "31f009eed6",
+    "Columbus.note": "dcd792e45d",
+    "European Service Module.name": "ce569569ae",
+    "European Service Module.note": "33d4222b1d",
+    "Spacelab.name": "5b795e29ca",
+    "Spacelab.note": "8f444e1014"
+  },
+  "programs-roster/esa-science.json": {
+    "Euclid opens its eyes.name": "23e629dee6",
+    "Euclid opens its eyes.note": "842fbfb371",
+    "Gaia's map.name": "09e155153c",
+    "Gaia's map.note": "b016379bc4",
+    "mission:rosetta.note": "d3d8dd634f"
+  },
+  "programs-roster/gaganyaan.json": {
+    "Announced.name": "51290bee40",
+    "Announced.note": "04f54939a3",
+    "First crewed flight.name": "78afbb209d",
+    "First crewed flight.note": "4d97c0bcc9",
+    "Test Vehicle abort.name": "6881a0a32e",
+    "Test Vehicle abort.note": "008ae12d36"
+  },
+  "programs-roster/galileo.json": {
+    "Europa's hidden ocean.name": "eeaae681a3",
+    "Europa's hidden ocean.note": "24a5897ce3",
+    "The atmospheric probe.name": "0771d8954e",
+    "The atmospheric probe.note": "74a1421c93",
+    "The deliberate end.name": "0a7cd3fa0f",
+    "The deliberate end.note": "6be8476ccb",
+    "The stuck antenna.name": "c97033a3b0",
+    "The stuck antenna.note": "efb6af8c8c",
+    "mission:galileo.note": "1dadfe529b"
+  },
+  "programs-roster/gemini.json": {
+    "Gemini 1.name": "e636458dec",
+    "Gemini 1.note": "32f0a7434e",
+    "Gemini 10.name": "c9f2d19a37",
+    "Gemini 10.note": "6e09da2f9b",
+    "Gemini 11.name": "9ab84f864f",
+    "Gemini 11.note": "ff5daa0339",
+    "Gemini 2.name": "39ccc50deb",
+    "Gemini 2.note": "c8d88d009d",
+    "Gemini 5.name": "6c4b405f99",
+    "Gemini 5.note": "534643f002",
+    "Gemini 9A.name": "a126272e9c",
+    "Gemini 9A.note": "7244e5c1b9"
+  },
+  "programs-roster/great-observatories.json": {
+    "Compton Gamma Ray Observatory.name": "b00c37acd8",
+    "Compton Gamma Ray Observatory.note": "03a6011155",
+    "Nancy Grace Roman.name": "659459da07",
+    "Nancy Grace Roman.note": "73cdc073c4"
+  },
+  "programs-roster/hayabusa.json": {
+    "mission:hayabusa1.note": "8c108efa4e",
+    "mission:hayabusa2.note": "4869b6dc3d"
+  },
+  "programs-roster/iss.json": {
+    "Commercial Crew.name": "6930619221",
+    "Commercial Crew.note": "d12de7b668",
+    "Expedition 1.name": "0bca584c8f",
+    "Expedition 1.note": "4b90cfb3ba",
+    "module:beam.note": "3d4c1b85aa",
+    "module:canadarm2.note": "22ec56c415",
+    "module:columbus.note": "e900aa162f",
+    "module:cupola.note": "0cee52967a",
+    "module:destiny.note": "a9dd7fbce4",
+    "module:harmony.note": "23aecfb289",
+    "module:kibo.note": "a95b2f0d30",
+    "module:leonardo.note": "8332561486",
+    "module:nauka.note": "35a0eea96c",
+    "module:pirs.note": "16284202d4",
+    "module:poisk.note": "c19d4754ad",
+    "module:prichal.note": "c128190b59",
+    "module:quest.note": "99630b856d",
+    "module:rassvet.note": "7d704e4a50",
+    "module:tranquility.note": "37686340d1",
+    "module:unity.note": "9267c5de9f",
+    "module:zarya.note": "6e56e54522",
+    "module:zvezda.note": "b7bf2c41cb"
+  },
+  "programs-roster/jaxa-robotic.json": {
+    "Kaguya / SELENE.name": "4f84f95c84",
+    "Kaguya / SELENE.note": "c99e0ee3cf",
+    "mission:akatsuki.note": "da0402954c",
+    "mission:slim.note": "bcf889f02d"
+  },
+  "programs-roster/jwst.json": {
+    "Conceived.name": "c0c9d0e074",
+    "Conceived.note": "1eb0e9eb4d",
+    "First images.name": "aaa560ee3c",
+    "First images.note": "46abaa45c8",
+    "Launch.name": "4ad48a0259",
+    "Launch.note": "d2349015ff",
+    "Nearly cancelled.name": "254e33c0b0",
+    "Nearly cancelled.note": "38520fe1eb",
+    "The unfolding.name": "fb40d5b64f",
+    "The unfolding.note": "f4951b1ff0"
+  },
+  "programs-roster/kuiper.json": {
+    "KuiperSat prototypes.name": "6e92cf3c33",
+    "KuiperSat prototypes.note": "35935c0d4c",
+    "Multi-rocket by design.name": "505f819362",
+    "Multi-rocket by design.note": "f1b553366e",
+    "Production launches.name": "bc962148cb",
+    "Production launches.note": "e214f8b8f9"
+  },
+  "programs-roster/mangalyaan.json": {
+    "Eight years on station.name": "6307327b07",
+    "Eight years on station.note": "50a4104a4c",
+    "The cost.name": "293cbd1e95",
+    "The cost.note": "696fa7ea6d",
+    "mission:mangalyaan.note": "032b497562"
+  },
+  "programs-roster/mariner.json": {
+    "Mariner 2 reaches Venus.name": "af2e7607cd",
+    "Mariner 2 reaches Venus.note": "98731c3b2c",
+    "fleet:mariner-4.note": "77c86d1739",
+    "fleet:mariner-9.note": "a3376fcbef",
+    "mission:mariner10.note": "279c61b959"
+  },
+  "programs-roster/mars-rovers.json": {
+    "Ingenuity.name": "6c868f3fcd",
+    "Ingenuity.note": "dca08f3245",
+    "mission:curiosity.note": "e6b6ebf0a0",
+    "mission:mars-pathfinder.note": "bf2ffa0587",
+    "mission:opportunity.note": "98e80da2e6",
+    "mission:perseverance.note": "8f7e71bcff",
+    "mission:spirit.note": "99f4168b84"
+  },
+  "programs-roster/mercury.json": {
+    "Mercury-Atlas 5 (Enos).name": "9d730ac95f",
+    "Mercury-Atlas 5 (Enos).note": "c57f9f9f73",
+    "Mercury-Redstone 2 (Ham).name": "ccf35b6e16",
+    "Mercury-Redstone 2 (Ham).note": "060f57882f"
+  },
+  "programs-roster/mir.json": {
+    "Modular assembly.name": "fd2cfd1b3f",
+    "Modular assembly.note": "0a03aa2954",
+    "Polyakov — 437 days.name": "39ec356c09",
+    "Polyakov — 437 days.note": "8278e2d136",
+    "Shuttle-Mir.name": "d999840cba",
+    "Shuttle-Mir.note": "70f421649d",
+    "The 1997 crises.name": "28ecb29638",
+    "The 1997 crises.note": "bd0e1c4e33"
+  },
+  "programs-roster/new-horizons.json": {
+    "Arrokoth.name": "b7755328b6",
+    "Arrokoth.note": "04f08b374f",
+    "Pluto, up close.name": "c5e6ce8a27",
+    "Pluto, up close.note": "af3a05b196",
+    "mission:new-horizons.note": "d418185a1c"
+  },
+  "programs-roster/pioneer.json": {
+    "Pioneer Venus.name": "9a29ab1144",
+    "Pioneer Venus.note": "49bf08355f",
+    "The Pioneer plaque.name": "fe8ec8acdc",
+    "The Pioneer plaque.note": "ab8465c14c",
+    "mission:pioneer-10.note": "7e62b0871f",
+    "mission:pioneer-11.note": "8171664b28"
+  },
+  "programs-roster/ros.json": {
+    "Announced.name": "51290bee40",
+    "Announced.note": "50b869270c",
+    "First module.name": "33738331e1",
+    "First module.note": "4cb2872783",
+    "ISS withdrawal.name": "6c7726b585",
+    "ISS withdrawal.note": "829b28a8fb"
+  },
+  "programs-roster/shenzhou.json": {
+    "Shenzhou 11.name": "b22c09fed1",
+    "Shenzhou 11.note": "6241c40075",
+    "Shenzhou 12.name": "b0bd6f60ec",
+    "Shenzhou 12.note": "2e0f5c4dcc",
+    "Shenzhou 5.name": "4c967a38a2",
+    "Shenzhou 5.note": "e562899a9b",
+    "Shenzhou 7.name": "9448676848",
+    "Shenzhou 7.note": "8e04f66b53",
+    "Shenzhou 9.name": "2e30f79e8e",
+    "Shenzhou 9.note": "3d624fb533",
+    "mission:shenzhou-1.note": "9a827b2021"
+  },
+  "programs-roster/soviet-lunar.json": {
+    "L3 complex.name": "2b62a5da1d",
+    "L3 complex.note": "424a75afa6",
+    "LK lunar lander.name": "a2343120e3",
+    "LK lunar lander.note": "9c618681fe",
+    "N1 — four launch failures.name": "ae72b13874",
+    "N1 — four launch failures.note": "5aacbc1952",
+    "Zond 5.name": "d329bfc625",
+    "Zond 5.note": "0bdbcda320"
+  },
+  "programs-roster/soyuz.json": {
+    "Soyuz 4 & 5.name": "a8f183f4e3",
+    "Soyuz 4 & 5.note": "00e034ed4b"
+  },
+  "programs-roster/space-shuttle.json": {
+    "Challenger (STS-51-L).name": "4f512e5d2c",
+    "Challenger (STS-51-L).note": "3084a6b7fb",
+    "Columbia (STS-107).name": "1b7520c910",
+    "Columbia (STS-107).note": "a5b9c784f7",
+    "STS-1.name": "d846165316",
+    "STS-1.note": "5ace888797",
+    "mission:galileo.note": "546cfe3728",
+    "mission:magellan.note": "347109581f",
+    "mission:ulysses.note": "80921b22d0"
+  },
+  "programs-roster/spacex.json": {
+    "Falcon 1, flight 4.name": "f90df54883",
+    "Falcon 1, flight 4.note": "ce22eafdb0",
+    "First Dragon to the ISS.name": "a7491b1d8c",
+    "First Dragon to the ISS.note": "3c799f647c",
+    "First booster landing.name": "56100eec9e",
+    "First booster landing.note": "c580182fd5",
+    "mission:inspiration4.note": "6d02486d1d",
+    "mission:polaris-dawn.note": "ff453fada2"
+  },
+  "programs-roster/sputnik.json": {
+    "Sputnik 2.name": "2d7eedc72f",
+    "Sputnik 2.note": "61b067868e",
+    "Sputnik 3.name": "728e311f10",
+    "Sputnik 3.note": "cf48e803e0",
+    "mission:sputnik1.note": "493a00488e"
+  },
+  "programs-roster/starlink.json": {
+    "Direct to cell.name": "4b46f41c4c",
+    "Direct to cell.note": "8b5c4cdcfb",
+    "First 60 satellites.name": "bcad4b21cb",
+    "First 60 satellites.note": "4d100ec758",
+    "Service goes live.name": "a724dcca74",
+    "Service goes live.note": "d96ee86eda",
+    "Ukraine.name": "c951ec00f1",
+    "Ukraine.note": "0e8abb55b1"
+  },
+  "programs-roster/starship.json": {
+    "Booster catch.name": "cfdd46e590",
+    "Booster catch.note": "69ebf42ef7",
+    "First integrated flight.name": "57bec43d18",
+    "First integrated flight.note": "0784ed4bde",
+    "SN15 lands.name": "c3abc08521",
+    "SN15 lands.note": "779d700ba9",
+    "Starhopper.name": "6be2379b18",
+    "Starhopper.note": "602ba4db55",
+    "mission:starship-demo.note": "1e288a6074",
+    "mission:starship-mars-crew.note": "39cba875e1"
+  },
+  "programs-roster/tiangong.json": {
+    "Continuous occupation.name": "7da9088148",
+    "Continuous occupation.note": "0d52dcfd3b",
+    "Shenzhou 5.name": "4c967a38a2",
+    "Shenzhou 5.note": "9b258b95bf",
+    "Shenzhou 9 → Tiangong-1.name": "23a87993b7",
+    "Shenzhou 9 → Tiangong-1.note": "5e98aabbca",
+    "mission:shenzhou-1.note": "2534367424",
+    "module:chinarm.note": "3cb70c1347",
+    "module:mengtian.note": "64d2b6fb49",
+    "module:tianhe.note": "a9d25d7661",
+    "module:wentian.note": "796316f85f"
+  },
+  "programs-roster/viking.json": {
+    "The biology experiments.name": "13710c320b",
+    "The biology experiments.note": "ee67c873a5",
+    "Viking 2.name": "a62bd402f0",
+    "Viking 2.note": "bbe8885d1e",
+    "fleet:viking-1.note": "946ce6370b",
+    "mission:viking1.note": "1ff355ab86"
+  },
+  "programs-roster/vostok.json": {
+    "Korabl-Sputnik 2 (Belka & Strelka).name": "4106606dd7",
+    "Korabl-Sputnik 2 (Belka & Strelka).note": "e77fe91736"
+  },
+  "programs-roster/voyager.json": {
+    "Interstellar space.name": "ed62181897",
+    "Interstellar space.note": "8a4f2d4fa9",
+    "The Golden Record.name": "641c4d4f79",
+    "The Golden Record.note": "05522df69f",
+    "The Pale Blue Dot.name": "3a48e0268a",
+    "The Pale Blue Dot.note": "8a2268767e",
+    "mission:voyager-1.note": "840abcb5c3",
+    "mission:voyager-2.note": "3af72d590c"
+  },
   "programs/apollo.json": {
     "goals.0.align": "d27a1f1177",
     "goals.0.caption": "f79a21ce52",

@@ -94,9 +94,12 @@ export interface ProgramOverlay {
   /** Translated see-also and surface-site link text, keyed by the link's href
    *  (surface sites: `/<surface>?site=<site>`). */
   link_labels?: Record<string, string>;
+  /** Locale text for roster rows, keyed by `rosterKey()` (`ref:linked_id`, else the English
+   *  name); only the rows a locale translates. Merged into `roster` by getProgram(). */
+  roster?: Record<string, { name?: string; note?: string }>;
 }
 
-export type Program = ProgramBase & ProgramOverlay;
+export type Program = ProgramBase & Omit<ProgramOverlay, 'roster'>;
 
 /** Lightweight index row for the /programs browse cards. */
 export interface ProgramIndexEntry {

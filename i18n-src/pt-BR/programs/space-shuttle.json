@@ -94,5 +94,16 @@
   "link_labels": {
     "/earth": "Terra — órbitas e bases de lançamento",
     "/fleet?id=discovery": "Frota — os orbitadores do Space Shuttle"
+  },
+  "roster": {
+    "mission:galileo": {
+      "note": "liberada da baía de carga do Shuttle Atlantis na STS-34, em outubro de 1989, e depois enviada a Júpiter por um estágio superior"
+    },
+    "mission:ulysses": {
+      "note": "liberada da baía de carga do Shuttle Discovery na STS-41, em outubro de 1990, e depois enviada, passando por Júpiter, a uma órbita polar ao redor do Sol"
+    },
+    "mission:magellan": {
+      "note": "liberada da baía de carga do Shuttle Atlantis na STS-30, em maio de 1989, e depois enviada a Vênus por um estágio superior"
+    }
   }
 }

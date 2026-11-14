@@ -94,5 +94,16 @@
   "link_labels": {
     "/earth": "Erde — Umlaufbahnen & Startplätze",
     "/fleet?id=discovery": "Flotte — Space-Shuttle-Orbiter"
+  },
+  "roster": {
+    "mission:galileo": {
+      "note": "aus der Nutzlastbucht der Atlantis auf STS-34 im Oktober 1989 ausgesetzt, dann mit einer Oberstufe zum Jupiter geschickt"
+    },
+    "mission:ulysses": {
+      "note": "aus der Nutzlastbucht der Discovery auf STS-41 im Oktober 1990 ausgesetzt, dann am Jupiter vorbei in eine polare Sonnenumlaufbahn geschickt"
+    },
+    "mission:magellan": {
+      "note": "aus der Nutzlastbucht der Atlantis auf STS-30 im Mai 1989 ausgesetzt, dann mit einer Oberstufe zur Venus geschickt"
+    }
   }
 }

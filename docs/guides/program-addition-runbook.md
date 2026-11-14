@@ -35,11 +35,15 @@ Structured, non-translatable data. Schema: `static/data/schemas/program.schema.j
 
 **A row that names an entry that exists must link to it** (as `linked_id` for a mission, or `link` for a craft or module); `src/lib/programs-roster.test.ts` fails on a name-only row equal to a mission, craft or module name. Hardware rows are the flown vehicles of the program's linked missions (`fleet_refs`): launchers, spacecraft, landers, orbiters and rovers; launch sites are left out.
 
+**Roster text is English in the base record and translated per locale.** A row's `note`, and the `name` of a name-only row, are English here; a locale shows them through its overlay's `roster` map (§3), or English where it has none. A **deployed-from** note (a probe launched from the Shuttle is not a Shuttle mission) goes on the linked row, e.g. `{ "linked_id": "galileo", "ref": "mission", "year": 1989, "note": "deployed from Atlantis's payload bay on STS-34 …" }`.
+
 Keep cross-refs symmetric where the linked entity points back (e.g. a mission's `program`, if/when added).
 
 ### 3 · Editorial overlay — `i18n-src/en-US/programs/{id}.json`
 
 The spine, en-US prose first. Schema: `program-overlay.schema.json`. Required: `name`, `tagline`, `the_land`, `goals`, `outcome`, `narrative`, `legacy`, `lessons`. Each spine section is an **ordered block list**: `{ type: "prose", md }` and `{ type: "figure", image, caption, align }`. Write every block against `programs-editorial-voice.md` §5 (per-section register). Do **not** repeat the hero lower down; prefer more, smaller, single-subject figures; no collages.
+
+**Roster text in a locale overlay** — `i18n-src/{locale}/programs/{id}.json` may carry `roster: { "<key>": { "note": "…", "name": "…" } }`, only for the rows that locale translates; `getProgram()` lays it over the base roster (`src/lib/program-roster-overlay.js`). The key is the row's `rosterKey()`, never its array position, so inserting a row keeps every translation: **`ref:linked_id`** for a linked row (`mission:galileo`, `fleet:cassini` — a mission and its craft share an id), else the row's **English `name`** (`STS-1`). `note` replaces the note of any row; `name` replaces the name of a name-only row only (a linked row's name comes from the linked entry). There is no `roster` in the en-US overlay: the English is the base record, so one source. The base rows that are not in a locale's map show English, and are counted by `node scripts/i18n-coverage-scan.mjs` as `rosterMissing` per locale (reported, not gated); a key with no row is an `extraKey`, and `src/lib/program-roster-overlay.test.ts` fails on one. Staleness: `stale-overlays.mjs --manifest=check` (in `validate-data`) hashes every base roster note and name-only name under `programs-roster/{id}.json`, so a new or edited English note fails until the translations are re-checked and `--manifest=write` is run.
 
 ### 4 · Images — reuse-first
 
@@ -75,7 +79,7 @@ Add the program's index entry (id, name, tagline, agency, years, epoch, hero) so
 
 ### 11 · i18n — English-first, then translate at tier
 
-Rebuild the bundle after any overlay edit: `node scripts/build-i18n-bundles.mjs` (writes `static/data/i18n/{locale}.json`; the bundle key is `programs/{id}.json` — **with** the `.json`). Programs ship **en-US only** at first. `validate-data` enforces all-14-locale overlays as core content, so a new program shows 13 expected locale-gap reds until translated — wire the **programs known-gap exemption** for the English-first phase (mirrors how audio/missions phase locales), and translate when the program's locale tier ships.
+Rebuild the bundle after any overlay edit: `node scripts/build-i18n-bundles.mjs` (writes `static/data/i18n/{locale}.json`; the bundle key is `programs/{id}.json` — **with** the `.json`). Programs ship **en-US only** at first. `validate-data` enforces all-14-locale overlays as core content, so a new program shows 13 expected locale-gap reds until translated — wire the **programs known-gap exemption** for the English-first phase (mirrors how audio/missions phase locales), and translate when the program's locale tier ships. The roster's notes and name-only names are translated separately, through the overlay's `roster` map (§3); an untranslated row is a `rosterMissing` count in the coverage scan, not a `validate-data` red.
 
 ### 12 · Validate
 

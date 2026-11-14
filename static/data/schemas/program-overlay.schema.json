@@ -20,7 +20,19 @@
     "outcome": { "$ref": "#/$defs/body", "description": "What came of it — met, missed, cancelled, open. Stated, not graded." },
     "narrative": { "$ref": "#/$defs/body", "description": "The editorial story tying the roster together." },
     "legacy": { "$ref": "#/$defs/body", "description": "What it gave back — impact on humanity + specific nations: economy, spinoffs, science, soft power, inspiration. Advocacy voice, still sourced + neutral." },
-    "lessons": { "$ref": "#/$defs/body", "description": "What we can learn — the leadership / team-playbook / human-inspiration takeaway. A transferable lesson on doing hard things (a good story, a piece of trivia, the 'how to be better' element), grounded in the program, not preachy." }
+    "lessons": { "$ref": "#/$defs/body", "description": "What we can learn — the leadership / team-playbook / human-inspiration takeaway. A transferable lesson on doing hard things (a good story, a piece of trivia, the 'how to be better' element), grounded in the program, not preachy." },
+    "roster": {
+      "type": "object",
+      "description": "Locale text for roster rows, only the rows the locale translates. Key = `ref:linked_id` for a linked row, else the row's English name (src/lib/program-roster-overlay.js rosterKey). `note` replaces the row's note; `name` replaces the name of a name-only row.",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "name": { "type": "string", "minLength": 1 },
+          "note": { "type": "string", "minLength": 1 }
+        }
+      }
+    }
   },
   "$defs": {
     "body": {

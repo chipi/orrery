@@ -94,5 +94,16 @@
   "link_labels": {
     "/earth": "Tierra: órbitas y bases de lanzamiento",
     "/fleet?id=discovery": "Flota — los orbitadores del Space Shuttle"
+  },
+  "roster": {
+    "mission:galileo": {
+      "note": "desplegada desde la bodega de carga útil del transbordador Atlantis en la STS-34, en octubre de 1989, y enviada después a Júpiter con una etapa superior"
+    },
+    "mission:ulysses": {
+      "note": "desplegada desde la bodega de carga útil del transbordador Discovery en la STS-41, en octubre de 1990, y enviada después, pasando junto a Júpiter, a una órbita polar alrededor del Sol"
+    },
+    "mission:magellan": {
+      "note": "desplegada desde la bodega de carga útil del transbordador Atlantis en la STS-30, en mayo de 1989, y enviada después a Venus con una etapa superior"
+    }
   }
 }

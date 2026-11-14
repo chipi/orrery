@@ -94,5 +94,16 @@
   "link_labels": {
     "/earth": "地球 — 轨道与发射场",
     "/fleet?id=discovery": "航天器 — Space Shuttle 轨道器"
+  },
+  "roster": {
+    "mission:galileo": {
+      "note": "1989年10月在 STS-34 任务中从航天飞机 Atlantis 的货舱部署，随后由上面级送往木星"
+    },
+    "mission:ulysses": {
+      "note": "1990年10月在 STS-41 任务中从航天飞机 Discovery 的货舱部署，随后飞越木星，进入环绕太阳的极轨道"
+    },
+    "mission:magellan": {
+      "note": "1989年5月在 STS-30 任务中从航天飞机 Atlantis 的货舱部署，随后由上面级送往金星"
+    }
   }
 }

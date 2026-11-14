@@ -14,6 +14,7 @@
   import { countryLabel } from '$lib/country-label';
   import { epochLabel } from '$lib/epoch-label';
   import { fleetSpecRows } from '$lib/fleet-spec-rows';
+  import { fleetCategoryLabel } from '$lib/fleet-category-label';
   import { canonicalUrl, metaDescription, pageTitle } from '$lib/seo';
   import { ogTitle, DEFAULT_OG_IMAGE } from '$lib/social-meta';
   import { article, breadcrumbList, absoluteUrl } from '$lib/json-ld';
@@ -27,20 +28,6 @@
   let summary = $derived(
     metaDescription([entry.tagline, entry.description].filter(Boolean).join(' ')),
   );
-  const CATEGORY: Record<string, () => string> = {
-    launcher: m.fleet_cat_launcher,
-    'crewed-spacecraft': m.fleet_cat_crewed,
-    'cargo-spacecraft': m.fleet_cat_cargo,
-    station: m.fleet_cat_station,
-    rover: m.fleet_cat_rover,
-    lander: m.fleet_cat_lander,
-    orbiter: m.fleet_cat_orbiter,
-    observatory: m.fleet_cat_observatory,
-    'space-suit': m.fleet_cat_suit,
-    constellation: m.fleet_cat_constellation,
-    'launch-site': m.fleet_cat_launch_site,
-    engine: m.fleet_cat_engine,
-  };
   let siteHeading = $derived(
     entry.category === 'lander' || entry.category === 'rover'
       ? m.surface_landing_site()
@@ -91,7 +78,7 @@
 
   <header>
     <p class="meta">
-      {entry.agency} · {CATEGORY[entry.category]?.() ?? entry.category} ·
+      {entry.agency} · {fleetCategoryLabel(entry.category)} ·
       <span class="status">{fleetStatusLabel(entry.status)}</span>
     </p>
     <h1 class="page-title">{entry.name}</h1>
@@ -190,7 +177,7 @@
     </section>
   {/if}
 
-  {#each [{ title: m.fleet_engines_heading(), items: data.engines }, { title: m.fleet_used_on(), items: data.usedOn }, { title: section, items: data.alongside }, { title: CATEGORY[entry.category]?.() ?? entry.category, items: data.kin }] as group (group.title)}
+  {#each [{ title: m.fleet_engines_heading(), items: data.engines }, { title: m.fleet_used_on(), items: data.usedOn }, { title: section, items: data.alongside }, { title: fleetCategoryLabel(entry.category), items: data.kin }] as group (group.title)}
     {#if group.items.length}
       <section class="related">
         <h2 class="page-section-label">{group.title}</h2>

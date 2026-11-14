@@ -32,6 +32,7 @@
   import * as m from '$lib/paraglide/messages';
   import { countryLabel } from '$lib/country-label';
   import { fleetStatusLabel } from '$lib/status-label';
+  import { fleetCategoryLabel } from '$lib/fleet-category-label';
   import { pickHero, loadHeroOverrides, heroPositionFor } from '$lib/image-hero';
   import { cue } from '$lib/sensory/feedback';
   import {
@@ -194,21 +195,7 @@
     'engine',
   ];
 
-  const CATEGORY_MSG: Record<FleetCategory, () => string> = {
-    launcher: m.fleet_cat_launcher,
-    'crewed-spacecraft': m.fleet_cat_crewed,
-    'cargo-spacecraft': m.fleet_cat_cargo,
-    station: m.fleet_cat_station,
-    rover: m.fleet_cat_rover,
-    lander: m.fleet_cat_lander,
-    orbiter: m.fleet_cat_orbiter,
-    observatory: m.fleet_cat_observatory,
-    'space-suit': m.fleet_cat_suit,
-    constellation: m.fleet_cat_constellation,
-    'launch-site': m.fleet_cat_launch_site,
-    engine: m.fleet_cat_engine,
-  };
-  const categoryLabel = (c: FleetCategory): string => CATEGORY_MSG[c]?.() ?? c;
+  const categoryLabel = (c: FleetCategory): string => fleetCategoryLabel(c);
   // first_flight is a date, or "planned" for hardware that has not flown.
   const firstFlightLabel = (f: string): string =>
     f === 'planned' ? m.fleet_value_planned() : f.slice(0, 4);

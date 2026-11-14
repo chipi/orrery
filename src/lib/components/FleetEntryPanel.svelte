@@ -38,6 +38,7 @@
   import * as m from '$lib/paraglide/messages';
   import { countryLabel } from '$lib/country-label';
   import { epochLabel } from '$lib/epoch-label';
+  import { fleetCategoryLabel } from '$lib/fleet-category-label';
   import { fleetSpecRows } from '$lib/fleet-spec-rows';
   import { fleetMissionRows } from '$lib/fleet-missions';
   import { fleetStatusLabel } from '$lib/status-label';
@@ -377,7 +378,7 @@
         <span class="status status-{entry.status.toLowerCase()}">
           {fleetStatusLabel(entry.status)}
         </span>
-        <span class="category-chip">{entry.category}</span>
+        <span class="category-chip">{fleetCategoryLabel(entry.category)}</span>
       </AgencyRow>
     {/if}
   {/snippet}

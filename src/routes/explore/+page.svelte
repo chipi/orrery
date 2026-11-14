@@ -2277,6 +2277,7 @@
 
   <HudControls
     hidden={contextId !== 'solar-system' || !!activeBlackHole}
+    drawerUnderPanel={panelCoverPx > 0}
     {view}
     {toggleView}
     hasSelection={solarHasSelection}

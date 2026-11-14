@@ -86,15 +86,24 @@ const indexRow = (panel: Locator, id: string) =>
 /** On a phone (portrait) a body panel is a full-height sheet over the drawer: true when it covers
  *  the Controls tab, so the layer chips cannot be reached while the panel is open. */
 async function controlsTabCovered(page: Page, tabName = 'controls|layers'): Promise<boolean> {
-  return page.evaluate((name) => {
-    const tab = [...document.querySelectorAll<HTMLElement>('.mdg-tab')].find((t) =>
-      new RegExp(name, 'i').test(t.textContent ?? ''),
-    );
-    if (!tab) return true;
-    const r = tab.getBoundingClientRect();
-    const top = document.elementFromPoint(r.left + r.width / 2, r.top + r.height / 2);
-    return !top || !(top === tab || tab.contains(top));
-  }, tabName);
+  // The landscape row hides a frame after the panel docks (the page measures the panel first),
+  // so give it up to 3 s to become covered before answering "not covered".
+  return page
+    .waitForFunction(
+      (name) => {
+        const tab = [...document.querySelectorAll<HTMLElement>('.mdg-tab')].find((t) =>
+          new RegExp(name, 'i').test(t.textContent ?? ''),
+        );
+        if (!tab) return true;
+        const r = tab.getBoundingClientRect();
+        const top = document.elementFromPoint(r.left + r.width / 2, r.top + r.height / 2);
+        return !top || !(top === tab || tab.contains(top));
+      },
+      tabName,
+      { timeout: 3_000 },
+    )
+    .then(() => true)
+    .catch(() => false);
 }
 
 async function chip(page: Page, isMobile: boolean, key: string): Promise<Locator> {
@@ -315,9 +324,11 @@ test.describe('/explore select = focus', () => {
     });
     if (isMobile) {
       // PATHS lives in the phone's Iconic Missions tab (A5), which the mission sheet covers.
+      // Portrait: the full-height sheet covers the drawer; landscape: the row is hidden while a
+      // side panel is docked (HudControls drawerUnderPanel).
       test.skip(
         await controlsTabCovered(page, 'missions'),
-        "Voyager 2's full-height sheet covers the Missions drawer",
+        "Voyager 2's panel covers or hides the Missions drawer",
       );
       await openDrawerTab(page, /missions/i);
       await page.locator('.mdg-body [data-testid="layer-paths"]').click();

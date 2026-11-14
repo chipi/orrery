@@ -49,9 +49,13 @@
     focusedRotationHours,
     focusedLightTime,
     focusedOnPlanet,
+    drawerUnderPanel = false,
   }: {
     /** True outside the solar system (or in a black-hole takeover). */
     hidden: boolean;
+    /** A side panel is docked (landscape phone): the inline drawer row has no room beside it, and
+     *  its visible part would open a card under the panel, so the row is hidden until it closes. */
+    drawerUnderPanel?: boolean;
     view: '3d' | '2d';
     toggleView: () => void;
     hasSelection: boolean;
@@ -398,27 +402,40 @@
 <!-- Mobile solar-system drawers (ruler/controls/missions/index) — solar-system
      only; the neighborhood + BodyScenes have their own chrome. -->
 {#if !hidden}
-  <MobileDrawerGroup
-    tabs={[
-      // B3: fixed semantic slot order [Measure][Overlays][Highlight][Scene];
-      // empty slots (no Overlays in solar-system) are simply omitted.
-      { id: 'ruler', label: m.drawer_tab_ruler(), icon: '◎', content: mobileRulerContent },
-      { id: 'missions', label: m.drawer_tab_missions(), icon: '➤', content: mobileIconicContent },
-      { id: 'controls', label: m.drawer_tab_controls(), icon: '▤', content: mobileControlsContent },
-      // Scan appears only when a focused planet has a tactical readout (#49).
-      ...(focusedOnPlanet && focusedStats
-        ? [{ id: 'scan', label: m.drawer_tab_scan(), icon: '◈', content: mobileScanContent }]
-        : []),
-    ]}
-    onOpen={(id) => {
-      if (id === 'missions') onShowPaths();
-    }}
-    bottomInline
-    --mcd-bottom="calc(56px + env(safe-area-inset-bottom, 0px))"
-  />
+  <div class="drawer-wrap" class:under-panel={drawerUnderPanel}>
+    <MobileDrawerGroup
+      tabs={[
+        // B3: fixed semantic slot order [Measure][Overlays][Highlight][Scene];
+        // empty slots (no Overlays in solar-system) are simply omitted.
+        { id: 'ruler', label: m.drawer_tab_ruler(), icon: '◎', content: mobileRulerContent },
+        { id: 'missions', label: m.drawer_tab_missions(), icon: '➤', content: mobileIconicContent },
+        {
+          id: 'controls',
+          label: m.drawer_tab_controls(),
+          icon: '▤',
+          content: mobileControlsContent,
+        },
+        // Scan appears only when a focused planet has a tactical readout (#49).
+        ...(focusedOnPlanet && focusedStats
+          ? [{ id: 'scan', label: m.drawer_tab_scan(), icon: '◈', content: mobileScanContent }]
+          : []),
+      ]}
+      onOpen={(id) => {
+        if (id === 'missions') onShowPaths();
+      }}
+      bottomInline
+      --mcd-bottom="calc(56px + env(safe-area-inset-bottom, 0px))"
+    />
+  </div>
 {/if}
 
 <style>
+  .drawer-wrap {
+    display: contents;
+  }
+  .drawer-wrap.under-panel {
+    visibility: hidden;
+  }
   /* Solar-system chrome hidden out in the stellar neighborhood. */
   .context-hidden {
     display: none !important;

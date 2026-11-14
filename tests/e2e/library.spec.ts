@@ -142,6 +142,11 @@ test.describe('/library — outbound LEARN-link bill of links', () => {
     const wiki = page.locator('#src-wikipedia');
     await expect(wiki.locator('.src-head')).toBeInViewport();
     await expect(wiki.locator(':scope > ul.entity-list > li')).toHaveCount(10);
+    // A fresh load on the same hash lands the header too.
+    await page.goto('/library#src-wikipedia', { waitUntil: 'networkidle' });
+    await expect(page.locator('#src-wikipedia .src-head')).toBeInViewport();
+    await page.goto('/library', { waitUntil: 'networkidle' });
+    await page.locator('nav.toc a[href="#src-wikipedia"]').click();
 
     const chip = wiki.getByTestId('show-all');
     await expect(chip).toHaveText(/^\s*Show all \d+\s*$/);

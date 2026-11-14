@@ -189,4 +189,15 @@ test.describe('/credits — image provenance disclosure', () => {
     await page.waitForLoadState('networkidle');
     await expect(page).toHaveURL(/\/credits(\?|$)/);
   });
+
+  // The sources render after an async fetch, so the browser's own hash scroll fires before
+  // the target exists: the page scrolls to the hash once the sources are drawn.
+  for (const id of ['src-nasa', 'src-insignia']) {
+    test(`a fresh load of /credits#${id} lands the section header in view`, async ({ page }) => {
+      await page.goto(`/credits#${id}`, { waitUntil: 'networkidle' });
+      const block = page.locator(`#${id}`);
+      await expect(block).toBeAttached({ timeout: 10_000 });
+      await expect(block.locator(':scope > header')).toBeInViewport();
+    });
+  }
 });

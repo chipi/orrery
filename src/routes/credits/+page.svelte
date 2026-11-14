@@ -55,6 +55,8 @@
   import { plural } from '$lib/plural';
   import ShowAll from '$lib/components/ShowAll.svelte';
   import { previewList } from '$lib/preview-list';
+  import { scrollToHash } from '$lib/scroll-to-hash';
+  import { tick } from 'svelte';
 
   // Every list shows its first PREVIEW rows and a "Show all N" chip ($lib/preview-list); source
   // headers stay open, so a contents link lands on its header with the first rows below it.
@@ -125,6 +127,11 @@
         loaded = true;
       })
       .catch(dataLoadFailed);
+  });
+
+  // The sources draw after the fetch above; the browser's load-time hash scroll found nothing.
+  $effect(() => {
+    if (loaded) void tick().then(scrollToHash);
   });
 
   // Our OWN assets are not third-party imagery and must not appear in the

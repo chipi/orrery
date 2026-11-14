@@ -83,3 +83,13 @@ test.describe('/colophon — totals, cutaway split, the 10-row rule', () => {
     await expect(grid.locator('> li')).toHaveCount(10);
   });
 });
+
+test.describe('/colophon — a fresh load on a section hash', () => {
+  for (const id of ['sec-launchers', 'sec-tours']) {
+    test(`/colophon#${id} lands the heading in view`, async ({ page }) => {
+      await page.goto(`/colophon#${id}`, { waitUntil: 'networkidle' });
+      await expect(page.locator(`#${id}`)).toBeAttached({ timeout: 10_000 });
+      await expect(page.locator(`#${id}`)).toBeInViewport();
+    });
+  }
+});

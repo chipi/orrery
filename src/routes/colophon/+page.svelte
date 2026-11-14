@@ -23,6 +23,8 @@
   import { ICON_SHOWCASE } from '$lib/components/icons';
   import ShowAll from '$lib/components/ShowAll.svelte';
   import { previewList } from '$lib/preview-list';
+  import { scrollToHash } from '$lib/scroll-to-hash';
+  import { tick } from 'svelte';
   import {
     colophonSections,
     splitCutaways,
@@ -101,6 +103,17 @@
     tours: m.colophon_section_tours,
   };
 
+  // The sections draw once `data` arrives, and the tours section once `episodes` does; the
+  // browser's load-time hash scroll found nothing. Scroll when both fetches have settled.
+  let hashScrolled = false;
+  let episodesSettled = $state(false);
+  $effect(() => {
+    if (data && episodesSettled && !hashScrolled) {
+      hashScrolled = true;
+      void tick().then(scrollToHash);
+    }
+  });
+
   $effect(() => {
     void fetch(`${base}/data/original-work.json`)
       .then((r) => r.json())
@@ -138,7 +151,8 @@
         }
         episodes = [...byId.values()];
       })
-      .catch(() => {});
+      .catch(() => {})
+      .finally(() => (episodesSettled = true));
   });
 </script>
 

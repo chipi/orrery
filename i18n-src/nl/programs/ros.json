@@ -83,5 +83,19 @@
     "/programs/mir": "Mir — het modulaire station waarvan het Russische segment afstamt",
     "/programs/salyut": "Salyut — de eerste stations van Rusland",
     "/programs/iss": "ISS — het partnerschap dat Rusland verlaat"
+  },
+  "roster": {
+    "Announced": {
+      "note": "Rusland verklaart het ISS-partnerschap te verlaten en een eigen nationaal station te bouwen — een terugkeer naar het alleen-gaan-model van Salyut en Mir",
+      "name": "Aangekondigd"
+    },
+    "First module": {
+      "note": "de geplande lancering van de eerste UUM-module van het Russisch Orbitaal Station (ROS); het volledige station wordt eind jaren 2020 verwacht",
+      "name": "Eerste module"
+    },
+    "ISS withdrawal": {
+      "note": "Ruslands aangekondigde tijdlijn voor het beëindigen van zijn deelname aan het ISS en het verplaatsen van zijn kosmonauten naar een eigen station",
+      "name": "Terugtrekking uit het ISS"
+    }
   }
 }

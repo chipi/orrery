@@ -91,5 +91,25 @@
     "/fleet?id=falcon-9": "Vloot — Falcon 9, Falcon Heavy & Dragon",
     "/programs/iss": "ISS — het station waar Crew Dragon naartoe vliegt",
     "/earth": "Aarde — banen, rendez-vous & lanceerplaatsen"
+  },
+  "roster": {
+    "Falcon 1, flight 4": {
+      "note": "de eerste particulier ontwikkelde raket op vloeibare brandstof die een baan bereikte — gevlogen weken voordat het bedrijf zonder geld kwam te zitten, op de laatste vlucht die het zich kon veroorloven",
+      "name": "Falcon 1, vlucht 4"
+    },
+    "First Dragon to the ISS": {
+      "note": "het eerste commerciële ruimtevaartuig dat aan het station aanmeerde — de private sector begint de bemande ruimtevaart te bevoorraden",
+      "name": "Eerste Dragon naar het ISS"
+    },
+    "First booster landing": {
+      "note": "een eerste trap van een Falcon 9 keert terug en landt rechtop — herbruikbaarheid, decennialang afgedaan als oneconomisch, is aangetoond",
+      "name": "Eerste boosterlanding"
+    },
+    "mission:inspiration4": {
+      "note": "de eerste volledig civiele bemanning in een baan — helemaal geen professionele astronauten aan boord"
+    },
+    "mission:polaris-dawn": {
+      "note": "de eerste commerciële ruimtewandeling, vanuit een Crew Dragon in een nieuw ontworpen SpaceX-pak"
+    }
   }
 }

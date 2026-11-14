@@ -93,5 +93,15 @@
     "/explore": "Verkennen — de deep-sky objecten die deze telescopen onthulden",
     "/earth?site=hubble": "Hubble in een lage baan om de Aarde",
     "/earth?site=chandra": "Chandra-röntgenobservatorium"
+  },
+  "roster": {
+    "Compton Gamma Ray Observatory": {
+      "note": "het gammastralingslid van de oorspronkelijke vier — het bracht de hevigste gebeurtenissen in het heelal in kaart tot het in 2000 bewust uit zijn baan werd gebracht",
+      "name": "Compton Gamma Ray Observatory"
+    },
+    "Nancy Grace Roman": {
+      "note": "de volgende in de NASA-lijn — een infraroodtelescoop voor brede-veldonderzoek met een gezichtsveld van meer dan honderd keer dat van Hubble, gebouwd om het heelal in kaart te brengen in plaats van naar één plek te staren",
+      "name": "Nancy Grace Roman"
+    }
   }
 }

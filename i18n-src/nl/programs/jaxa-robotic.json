@@ -91,5 +91,17 @@
     "/moon": "Maan — de landingsplaats van SLIM",
     "/explore": "Verkennen — Venus en de binnenplaneten",
     "/programs/hayabusa": "Hayabusa — de JAXA-campagne die monsters van planetoïden terugbracht"
+  },
+  "roster": {
+    "Kaguya / SELENE": {
+      "note": "de grootste maanmissie sinds Apollo — een maanorbiter die het oppervlak met ongekend detail in kaart bracht en de eerste high-definitionvideo maakte van een opkomende Aarde boven de maanrand",
+      "name": "Kaguya / SELENE"
+    },
+    "mission:akatsuki": {
+      "note": "nadat zijn motor voor baaninsertie in 2010 bij Venus uitviel, cirkelde de sonde vijf jaar om de Zon en gleed bij een tweede poging met zijn kleine standregelmotoren in een baan — een missie gered van zeker verlies"
+    },
+    "mission:slim": {
+      "note": "de 'Moon Sniper' landde ongeveer 10 meter van zijn doel — een precisie die niemand eerder had bereikt — en overleeft daarna een omgevallen touchdown om wetenschap terug te sturen op zonne-energie"
+    }
   }
 }

@@ -107,5 +107,28 @@
     "/science/propulsion/tsiolkovsky": "De raketvergelijking",
     "/moon?site=apollo15": "Apollo 15 — Hadley–Apennijnen",
     "/moon?site=apollo16": "Apollo 16 — Descartes-hoogland"
+  },
+  "roster": {
+    "Ranger": {
+      "note": "robotvoorbereiding — inslagsondes die de eerste close-upbeelden van de Maan terugstuurden en het oppervlak fotografeerden tot op het moment van de inslag, waarmee ze het terrein onthulden dat Apollo zou aantreffen",
+      "name": "Ranger"
+    },
+    "Lunar Orbiter": {
+      "note": "robotvoorbereiding — vijf orbiters fotografeerden bijna de hele Maan om de Apollo-landingsplaatsen te kiezen en goed te keuren; de verkenning die een veilige landing mogelijk maakte",
+      "name": "Lunar Orbiter"
+    },
+    "Surveyor": {
+      "note": "robotvoorbereiding — zachte landers bewezen dat het maanoppervlak het gewicht van een ruimtevaartuig zou dragen in plaats van het te verzwelgen; Apollo 12 landde naast Surveyor 3 en bracht delen ervan mee naar huis",
+      "name": "Surveyor"
+    },
+    "mission:apollo-1": {
+      "note": "cabinebrand — bemanning verloren bij een test op de grond"
+    },
+    "mission:apollo7": {
+      "note": "eerste bemande vlucht"
+    },
+    "mission:apollo9": {
+      "note": "bemande test van de maanlander in een baan om de Aarde"
+    }
   }
 }

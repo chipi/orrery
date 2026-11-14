@@ -91,5 +91,30 @@
     "/fleet?id=shenzhou": "Vloot — het ruimteschip Shenzhou",
     "/programs/tiangong": "Tiangong — het station dat Shenzhou-bemanningen bouwden en bezoeken",
     "/programs/soyuz": "Soyuz — het ruimteschip waarvan de opbouw van Shenzhou afstamt"
+  },
+  "roster": {
+    "mission:shenzhou-1": {
+      "note": "eerste onbemande testvlucht — de capsule vliegt en keert terug voordat iemand ermee meevliegt"
+    },
+    "Shenzhou 5": {
+      "note": "Yang Liwei maakt 14 omlopen om de Aarde — de eerste Chinese astronaut in de ruimte, en China wordt het derde land dat een mens met een eigen raket lanceert, 42 jaar na Gagarin",
+      "name": "Shenzhou 5"
+    },
+    "Shenzhou 7": {
+      "note": "Zhai Zhigang voert China's eerste ruimtewandeling uit — het derde land ooit dat een EVA uitvoerde",
+      "name": "Shenzhou 7"
+    },
+    "Shenzhou 9": {
+      "note": "eerste bemande koppeling, met Tiangong-1; Liu Yang wordt de eerste Chinese vrouw in de ruimte",
+      "name": "Shenzhou 9"
+    },
+    "Shenzhou 11": {
+      "note": "een verblijf van 30 dagen aan boord van Tiangong-2 — China's langste bemande missie tot dan toe, die bewoning op maandschaal bewees",
+      "name": "Shenzhou 11"
+    },
+    "Shenzhou 12": {
+      "note": "de eerste bemanning die aan boord ging van het permanente Chinese Ruimtestation; Shenzhou-14 (2022) begint de ononderbroken bewoning",
+      "name": "Shenzhou 12"
+    }
   }
 }

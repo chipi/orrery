@@ -95,5 +95,23 @@
     "/moon": "Maan — de bestemming",
     "/fleet?id=orion": "Vloot — Orion, SLS & de maanhardware",
     "/programs/apollo": "Apollo — het programma waarnaar Artemis is vernoemd en waarop het voortbouwt"
+  },
+  "roster": {
+    "Artemis I": {
+      "note": "een onbemande Orion vliegt rond de Maan bij de eerste SLS-lancering — de hardware voor de diepe ruimte is bewezen voordat iemand ermee meevliegt",
+      "name": "Artemis I"
+    },
+    "mission:artemis2": {
+      "note": "de eerste bemanning — vier astronauten, onder wie de eerste niet-Amerikaan die naar de Maan vliegt; hun voorbijvlucht in april 2026 bracht mensen verder van de Aarde dan ooit"
+    },
+    "mission:artemis3": {
+      "note": "een bemande test in een baan om de Aarde — Orion koppelt aan de commerciële landers voordat iemand ermee naar de Maan reist, zoals Apollo 9 in 1969"
+    },
+    "mission:artemis4": {
+      "note": "de terugkeer naar het oppervlak — de eerste bemande maanlanding sinds 1972 en de eerste ooit in de buurt van de zuidpool"
+    },
+    "mission:artemis5": {
+      "note": "de tweede landing, gepland voor eind 2028 — het begin van het werk aan een basis op de zuidpool"
+    }
   }
 }

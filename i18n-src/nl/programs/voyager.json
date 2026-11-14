@@ -87,5 +87,25 @@
     "/explore": "De buitenplaneten in de 3D-verkenner",
     "/gallery/deep-sky": "De ‘Pale Blue Dot’, in de Deep-sky-galerij",
     "/programs/pioneer": "Pioneer — de sondes die als eerste gingen"
+  },
+  "roster": {
+    "mission:voyager-2": {
+      "note": "het enige ruimtevaartuig dat alle vier de reuzenplaneten bezocht, en de enige close-up die de mensheid ooit van Uranus en Neptunus heeft gehad"
+    },
+    "mission:voyager-1": {
+      "note": "vloog langs Jupiter en Saturnus, draaide zich om om het hele zonnestelsel te fotograferen en werd het eerste door mensen gemaakte object dat de interstellaire ruimte bereikte"
+    },
+    "The Golden Record": {
+      "note": "een vergulde grammofoonplaat aan elk ruimtevaartuig bevestigd — geluiden, muziek en groeten van de Aarde, gericht aan wie haar over een miljard jaar zou kunnen vinden",
+      "name": "De Golden Record"
+    },
+    "The Pale Blue Dot": {
+      "note": "op 14 februari 1990 draaide Voyager 1 zich van voorbij Neptunus om en fotografeerde de Aarde als één enkele pixel",
+      "name": "De Pale Blue Dot"
+    },
+    "Interstellar space": {
+      "note": "Voyager 1 passeerde de heliopauze in 2012, Voyager 2 in 2018 — de eerste machines die de bel van de Zon verlieten en de ruimte tussen de sterren betraden, en nog steeds naar huis bellen",
+      "name": "Interstellaire ruimte"
+    }
   }
 }

@@ -86,5 +86,26 @@
   "link_labels": {
     "/explore": "Jupiter in de 3D-verkenner",
     "/programs/cassini": "Cassini — hetzelfde idee, bij Saturnus"
+  },
+  "roster": {
+    "mission:galileo": {
+      "note": "het eerste ruimtevaartuig in een baan om Jupiter — bijna acht jaar lang van dichtbij de reuzenplaneet en zijn grote manen bestudeerd"
+    },
+    "The atmospheric probe": {
+      "note": "bij aankomst liet Galileo een sonde los die in de wolken van Jupiter dook — het eerste en enige directe monster van de atmosfeer van een reuzenplaneet",
+      "name": "De atmosfeersonde"
+    },
+    "Europa's hidden ocean": {
+      "note": "de magnetische gegevens en beelden van Galileo leverden het sterkste argument tot dan toe dat onder het ijs van Jupiters maan Europa een oceaan van vloeibaar water ligt",
+      "name": "Europa's verborgen oceaan"
+    },
+    "The stuck antenna": {
+      "note": "de hoofdantenne ging niet volledig open; de missie werd gered door nieuwe datacompressiesoftware die naar het ruimtevaartuig werd gestuurd, waarmee het grootste deel van de wetenschap werd veiliggesteld over een druppelsnelle verbinding",
+      "name": "De vastzittende antenne"
+    },
+    "The deliberate end": {
+      "note": "zonder brandstof werd Galileo opzettelijk in Jupiter gestuurd, om er zeker van te zijn dat het nooit op Europa kon neerstorten en de oceaan ervan kon besmetten",
+      "name": "Het bewuste einde"
+    }
   }
 }

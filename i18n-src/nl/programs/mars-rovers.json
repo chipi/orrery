@@ -91,5 +91,26 @@
     "/mars?site=opportunity": "Opportunity — Meridiani Planum",
     "/mars?site=curiosity": "Curiosity — Gale-krater",
     "/mars?site=perseverance": "Perseverance — Jezero-krater"
+  },
+  "roster": {
+    "mission:mars-pathfinder": {
+      "note": "de goedkope missie die op airbags over Mars stuiterde en Sojourner, een rover ter grootte van een magnetron, de eerste wielen liet zijn die op een andere planeet draaiden"
+    },
+    "mission:spirit": {
+      "note": "landde in 2004 voor een missie van 90 dagen en werkte zes jaar, waarbij het chemische sporen vond van het warmere, nattere verleden van Mars"
+    },
+    "mission:opportunity": {
+      "note": "Spirits tweelingbroer, die in 14 jaar meer dan 45 kilometer reed — de grootste afstand die enig voertuig op een andere wereld heeft afgelegd"
+    },
+    "mission:curiosity": {
+      "note": "een rover ter grootte van een auto, op kernenergie, in 2012 door een raketaangedreven sky crane op Mars neergelaten, die bevestigde dat de Gale-krater ooit een bewoonbaar meer bevatte"
+    },
+    "mission:perseverance": {
+      "note": "landde in 2021 op de bodem van de Jezero-krater — een oude riviermonding en meerbedding — om te zoeken naar tekenen van vroeger leven en monsters in buizen af te sluiten voor een toekomstige missie om ze naar huis te brengen"
+    },
+    "Ingenuity": {
+      "note": "een kleine helikopter die door Perseverance werd meegenomen maakte in 2021 de eerste aangedreven vlucht op een andere planeet en vloog daarna nog tientallen keren",
+      "name": "Ingenuity"
+    }
   }
 }

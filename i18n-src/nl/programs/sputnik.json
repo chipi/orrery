@@ -87,5 +87,18 @@
     "/earth": "Aarde — de wereld waar hij als eerste omheen cirkelde",
     "/programs/vostok": "Vostok — de eerste mensen volgen",
     "/posters": "De Sputnik-poster"
+  },
+  "roster": {
+    "mission:sputnik1": {
+      "note": "4 oktober 1957 — de eerste kunstmatige satelliet, een gepolijste bol van 58 centimeter met vier zweepantennes die elke 96 minuten om de Aarde cirkelde en drie weken lang piepte op de korte golf"
+    },
+    "Sputnik 2": {
+      "note": "3 november 1957 — nam Laika mee, een Moskouse straathond en het eerste levende wezen in een baan om de Aarde; de capsule had geen manier om haar naar huis te brengen",
+      "name": "Sputnik 2"
+    },
+    "Sputnik 3": {
+      "note": "15 mei 1958 — een geofysisch laboratorium van 1,3 ton, de uitgebreide wetenschappelijke satelliet die het programma oorspronkelijk als eerste had willen lanceren",
+      "name": "Sputnik 3"
+    }
   }
 }

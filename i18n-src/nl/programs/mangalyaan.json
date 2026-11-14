@@ -88,5 +88,18 @@
     "/fleet?id=mangalyaan": "Vloot — de Mars Orbiter Mission",
     "/programs/chandrayaan": "Chandrayaan — het maanprogramma van India",
     "/mars?site=mangalyaan": "Mangalyaan in een baan om Mars"
+  },
+  "roster": {
+    "mission:mangalyaan": {
+      "note": "de Mars Orbiter Mission komt bij de eerste poging in een baan om Mars — India wordt het eerste land ooit dat bij zijn debuut slaagt op Mars, en het eerste Aziatische land dat een baan om Mars bereikt"
+    },
+    "The cost": {
+      "note": "de hele missie kostte ongeveer 74 miljoen dollar — minder dan de Hollywoodfilm Gravity, en een fractie van vergelijkbare westerse Marsmissies",
+      "name": "De kosten"
+    },
+    "Eight years on station": {
+      "note": "ontworpen voor zes maanden werkte de orbiter ongeveer acht jaar voordat het contact uiteindelijk verloren ging — een kleine technologiedemonstrator die een langlevende wetenschappelijke missie werd",
+      "name": "Acht jaar in de baan"
+    }
   }
 }

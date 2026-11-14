@@ -86,5 +86,21 @@
   "link_labels": {
     "/explore": "Saturnus in de 3D-verkenner",
     "/programs/voyager": "Voyager — de scheervluchten die eerst kwamen"
+  },
+  "roster": {
+    "mission:cassini": {
+      "note": "bracht dertien jaar door in een baan om Saturnus — het enige ruimtevaartuig dat dat ooit deed — en bracht de ringen, de manen en de stormen in kaart met een detail dat geen voorbijvlucht kon bereiken"
+    },
+    "mission:huygens": {
+      "note": "de Europese Huygens-sonde daalde in januari 2005 met een parachute neer op Titan — de eerste en enige landing waar dan ook in het buitenste zonnestelsel"
+    },
+    "The geysers of Enceladus": {
+      "note": "Cassini ontdekte stralen van waterijs die uit de zuidpool van de kleine maan Enceladus spoten, bewijs van een wereldwijde oceaan onder het ijs — een van de meest veelbelovende plekken om naar leven te zoeken",
+      "name": "De geisers van Enceladus"
+    },
+    "The Grand Finale": {
+      "note": "zonder brandstof werd Cassini tweeëntwintig keer tussen Saturnus en zijn ringen door gestuurd en daarna bewust in de planeet gestort, om zeker te zijn dat het nooit de oceaanmanen kon besmetten",
+      "name": "De Grand Finale"
+    }
   }
 }

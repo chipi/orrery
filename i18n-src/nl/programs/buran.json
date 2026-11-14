@@ -90,5 +90,15 @@
   "link_labels": {
     "/programs/space-shuttle": "Space Shuttle — het voertuig waarop het een antwoord was",
     "/fleet?id=buran": "Vloot — Buran-orbiter & Energia"
+  },
+  "roster": {
+    "The single flight": {
+      "note": "op 15 november 1988 voerde Buran één onbemande orbitale missie uit — een volledig geautomatiseerde lancering, twee omlopen, terugkeer en baanlanding in een zijwind, zonder dat er op enig moment een piloot aan boord was",
+      "name": "De enige vlucht"
+    },
+    "Cancellation": {
+      "note": "met de Sovjet-Unie verdwenen en zonder budget of missie werd het programma na zijn ene vlucht geannuleerd; de gevlogen orbiter werd in 2002 vernield toen het dak van zijn hangar op Bajkonoer instortte",
+      "name": "Annulering"
+    }
   }
 }

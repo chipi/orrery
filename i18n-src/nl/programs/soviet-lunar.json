@@ -97,5 +97,23 @@
     "/moon?site=luna16": "Luna 16 — eerste robotische monsterterugkeer",
     "/moon?site=luna17": "Luna 17 — Lunokhod 1",
     "/moon?site=luna21": "Luna 21 — Lunokhod 2"
+  },
+  "roster": {
+    "Zond 5": {
+      "note": "eerste ruimtevaartuig dat om de Maan cirkelde en veilig terugkeerde naar de Aarde — de twee schildpadden aan boord waren de eerste levende wezens die rond de Maan en terug reisden, drie maanden vóór Apollo 8",
+      "name": "Zond 5"
+    },
+    "N1 — four launch failures": {
+      "note": "alle vier de N1-testlanceringen (1969-1972) mislukten; de tweede, in juli 1969, viel terug op het lanceerplatform in een van de grootste niet-nucleaire explosies ooit geregistreerd",
+      "name": "N1 — vier mislukte lanceringen"
+    },
+    "LK lunar lander": {
+      "note": "de lander voor één kosmonaut — ongeveer 40% van de massa van de LM van Apollo — onbemand in een baan om de Aarde getest maar nooit naar de Maan gevlogen",
+      "name": "LK-maanlander"
+    },
+    "L3 complex": {
+      "note": "de volledige N1-L3-maanstack: één N1-lancering, een Soyuz 7K-LOK met twee kosmonauten in een maanbaan, één kosmonaut naar het oppervlak in de LK",
+      "name": "L3-complex"
+    }
   }
 }

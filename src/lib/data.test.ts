@@ -1379,9 +1379,11 @@ describe('programs / badges / sourcing loaders (PRD-029)', () => {
     );
     expect(note(de, 'galileo')).toContain('STS-34 im Oktober 1989');
     expect(de?.roster.length).toBe(en?.roster.length);
-    expect(de?.roster.find((r) => r.name === 'STS-1')?.note).toBe(
-      en?.roster.find((r) => r.name === 'STS-1')?.note,
-    );
+    const sts1 = (p: typeof de) => p?.roster.find((r) => r.name === 'STS-1')?.note;
+    expect(sts1(de)).toContain('erste Orbitalflug');
+    // ar has no roster text yet: its rows stay the English base
+    const ar = await getProgram('space-shuttle', 'ar');
+    expect(sts1(ar)).toBe(sts1(en));
   });
 
   it('getBadges returns the insignia map', async () => {

@@ -32,7 +32,16 @@ derived from the panorama's photo span, on **every site that has a panorama**.
 - Applies to every body with panoramas, not only the sites the operator looked at
   ([UXD-011](UXD-011-decisions-apply-project-wide.md)).
 
+- Slice D2 found the heading already built (v0.9.5, `entry_yaw_deg`) and did not add one; "a photo
+  first on every site" was already true for the Moon and Mars (the hero is the first gallery image;
+  [UXD-034](UXD-034-worlds-orbiter-detail-tab-and-panorama-opening.md)).
+
 ## Verification
 
-Planned, not written: the e2e in slice D2. No test asserts the opening heading today (not checked
-by this document).
+Written in slice D2 ([UXD-034](UXD-034-worlds-orbiter-detail-tab-and-panorama-opening.md)):
+`src/lib/panorama-entry.data.test.ts` checks every partial panorama's opening yaw against its
+`panorama_metadata.photo_span_deg`, and `tests/e2e/panorama-entry.spec.ts` reads the camera yaw the
+user gets (the compass rose's `data-yaw`) on the 18 partial panoramas, on desktop-chromium,
+mobile-chromium and mobile-landscape-chromium. The audit of the 30 is in UXD-034: one site (Insight)
+opened badly and was fixed, and a fly-in still running when "Stand here" was pressed overwrote the
+opening view on three sites until `enterPanorama` ended it.

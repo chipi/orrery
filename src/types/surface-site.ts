@@ -285,6 +285,13 @@ export interface PanoramaMetadata {
    * `scripts/hotspots/panorama-entry-yaw.mjs`.
    */
   entry_yaw_deg?: number;
+  /**
+   * Where the photograph sits on a partial panorama (under 90 % of the
+   * 360°): yaw degrees `[from, to]`, increasing, wrapping through 0 when
+   * from > to. Absent on a full 360°. The opening view (`entry_yaw_deg`,
+   * else 0) must be inside it — `panorama-entry.data.test.ts`.
+   */
+  photo_span_deg?: [number, number];
 }
 
 /**

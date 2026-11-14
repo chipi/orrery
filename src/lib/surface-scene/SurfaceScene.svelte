@@ -1376,6 +1376,8 @@
   let panelTab: PanelTab = $state('overview');
   // The anatomy drawings of what is on this site's surface (top of STORY).
   let panelAnatomy = $derived(selected ? siteAnatomy(selected) : []);
+  // An orbiter never touched a surface: its drawing is the DETAIL tab, not STORY.
+  let panelIsOrbiter = $derived((selected as SurfaceSite | null)?.kind === 'orbiter');
   const panelSequenceId = $derived((selected as SurfaceSite | null)?.id ?? null);
   let panelSequence = $derived(panelSequenceId ? siteLandingSequence(panelSequenceId) : null);
   let panelGallery: string[] = $state([]);
@@ -3030,6 +3032,9 @@
         child.visible = false;
       }
       savedCamR = camR;
+      // A fly-in still running (the site was just selected) would overwrite camT/camP every
+      // frame and open the panorama on the globe's longitude, not on the photograph.
+      flyActive = false;
       // Move camera close to origin so the user's drag-to-rotate
       // feels like spinning their head inside the skybox.
       camR = 0.5;
@@ -6486,6 +6491,7 @@ sample      ${debugInfo.projectedPxSample}`}
 
       <PanelTabRow
         tabs={buildSurfacePanelTabs({
+          kind: panelIsOrbiter ? 'orbiter' : 'site',
           hasGallery: panelGallery.length > 0 || panelVideos.length > 0,
           hasStory: !!panelStory,
           hasLinks: panelHasLinks,
@@ -6770,9 +6776,24 @@ sample      ${debugInfo.projectedPxSample}`}
           </PanelGalleryGrid>
           <p class="gallery-credit">{panelGalleryCredit(selected.agency)}</p>
         {/if}
-      {:else if panelTab === 'story' && (panelStory || panelAnatomy.length > 0 || panelSequence)}
+      {:else if panelTab === 'details' && panelIsOrbiter && panelAnatomy.length > 0}
+        <SiteLandingPanel
+          heading="spacecraft"
+          anatomy={panelAnatomy}
+          locale={localeFromPage(page)}
+          onOpen={(src) => (panelLightbox = src)}
+        />
+        {#if panelAnatomy.some((a) => a.exploded)}
+          <SiteLandingPanel
+            part="exploded"
+            anatomy={panelAnatomy}
+            locale={localeFromPage(page)}
+            onOpen={(src) => (panelLightbox = src)}
+          />
+        {/if}
+      {:else if panelTab === 'story' && (panelStory || (!panelIsOrbiter && (panelAnatomy.length > 0 || panelSequence)))}
         {#snippet landingGraphics()}
-          {#if panelAnatomy.length > 0 || panelSequence}
+          {#if !panelIsOrbiter && (panelAnatomy.length > 0 || panelSequence)}
             <SiteLandingPanel
               anatomy={panelAnatomy}
               sequence={panelSequence}
@@ -6782,7 +6803,7 @@ sample      ${debugInfo.projectedPxSample}`}
           {/if}
         {/snippet}
         {#snippet cutawayGraphics()}
-          {#if panelAnatomy.some((a) => a.exploded)}
+          {#if !panelIsOrbiter && panelAnatomy.some((a) => a.exploded)}
             <SiteLandingPanel
               part="exploded"
               anatomy={panelAnatomy}

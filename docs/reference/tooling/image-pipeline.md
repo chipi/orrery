@@ -316,7 +316,8 @@ co-registration helpers `coreg-*.mjs` / `verify-coreg-geometry.mjs` /
   (also at the end of every `/fly` descent, `?from=descent`). The script finds each image's
   content (lit sky, or textured ground under the Moon's black sky) and writes
   `panorama_metadata.entry_yaw_deg` = 360·(0.75 − u) into `surface-hotspots.json`; full
-  panoramas get none.
+  panoramas get none. The photograph's span (`photo_span_deg`) is not written by it: it is set by
+  hand and checked by `src/lib/panorama-entry.data.test.ts` (UXD-034).
 - **When** After re-padding or replacing any `tier3-pan.jpg`.
 - **State** STANDING.
 

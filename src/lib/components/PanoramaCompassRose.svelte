@@ -70,6 +70,7 @@
     role="img"
     aria-label={ariaLabel}
     data-testid="panorama-compass-rose"
+    data-yaw={Math.round(((yawDeg % 360) + 360) % 360)}
     title={titleAttr}
   >
     <svg width="68" height="68" viewBox="-34 -34 68 68" aria-hidden="true">

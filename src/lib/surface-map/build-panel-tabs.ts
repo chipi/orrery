@@ -6,6 +6,7 @@
  *   - overview is always visible
  *   - gallery hides when the gallery is empty
  *   - story hides when no story exists for the site
+ *   - an orbiter site (`kind: 'orbiter'`) swaps the drawing-only STORY for DETAIL
  *   - learn hides when the site has no Learn-tab links
  *
  * Caller passes the three booleans; helper returns the tabs array.
@@ -18,7 +19,10 @@ export function buildSurfacePanelTabs({
   hasLinks,
   hasJourney = false,
   hasLanding = false,
+  kind = 'site',
 }: {
+  /** An orbiter never touched a surface: its drawing is under DETAIL, not STORY. */
+  kind?: 'site' | 'orbiter';
   hasGallery: boolean;
   hasStory: boolean;
   hasLinks: boolean;
@@ -35,8 +39,14 @@ export function buildSurfacePanelTabs({
     {
       id: 'story',
       label: m.panel_tab_story(),
-      visible: hasStory || hasLanding,
+      visible: kind === 'orbiter' ? hasStory : hasStory || hasLanding,
       testid: 'panel-tab-story',
+    },
+    {
+      id: 'details',
+      label: m.panel_tab_detail(),
+      visible: kind === 'orbiter' && hasLanding,
+      testid: 'panel-tab-details',
     },
     {
       id: 'journey',

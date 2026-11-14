@@ -89,6 +89,44 @@ describe('siteAnatomy — a lander drawn apart from its fleet entry', () => {
   });
 });
 
+describe('siteAnatomy — an orbiter site', () => {
+  const orbiter = (id: string, refs: Array<[string, FleetRef['role']]>) => ({
+    ...site(id, refs),
+    kind: 'orbiter' as const,
+  });
+  const orbIds = (s: ReturnType<typeof orbiter>) => siteAnatomy(s, drawn).map((a) => a.fleetId);
+
+  it('keeps its own drawing even when the id says orbiter (that filter is for landers)', () => {
+    expect(orbIds(orbiter('mars3-orbiter', [['mars3-orbiter', 'spacecraft']]))).toEqual([
+      'mars3-orbiter',
+    ]);
+    expect(orbIds(orbiter('viking1-orbiter', [['viking1-orbiter', 'spacecraft']]))).toEqual([
+      'viking1-orbiter',
+    ]);
+  });
+  it('falls back to its own id when the site row has no fleet_refs', () => {
+    for (const id of ['clementine', 'maven', 'hope']) expect(orbIds(orbiter(id, []))).toEqual([id]);
+    expect(
+      siteAnatomy({ id: 'maven', kind: 'orbiter', fleet_refs: null }, drawn).map((a) => a.fleetId),
+    ).toEqual(['maven']);
+  });
+  it('shows nothing when nothing is drawn for it', () => {
+    expect(siteAnatomy({ id: 'tgo', kind: 'orbiter', fleet_refs: [] }, () => null)).toEqual([]);
+  });
+  it('a lander still drops what stayed in orbit', () => {
+    expect(
+      ids({
+        ...site('apollo11', [
+          ['apollo-csm-block-ii', 'spacecraft'],
+          ['apollo-lm', 'spacecraft'],
+        ]),
+        kind: 'surface',
+      } as ReturnType<typeof site>),
+    ).toEqual(['apollo-lm']);
+    expect(ids(site('apollo17', [['orion', 'spacecraft']]))).toEqual([]);
+  });
+});
+
 describe('siteLandingSequence', () => {
   it('points at the sheet for a site that has one, and null otherwise', () => {
     expect(siteLandingSequence('curiosity')).toMatch(

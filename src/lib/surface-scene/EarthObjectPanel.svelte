@@ -47,6 +47,8 @@
   import { spacecraftDiagramPath, launcherCutawayPath } from '$lib/spacecraft-diagrams';
   import type { OrbitRegime } from '$types/orbit-regime';
   import RegimeChip from '$lib/components/RegimeChip.svelte';
+  import SiteLandingPanel from '$lib/surface-scene/SiteLandingPanel.svelte';
+  import { siteAnatomy } from '$lib/surface-scene/site-anatomy';
   import { regimeById } from '$lib/physics/util/orbit-regime-match';
   import { dataLoadFailed } from '$lib/data/core';
   import { readableTextOn, DARK_TEXT } from '$lib/readable-text';
@@ -72,11 +74,20 @@
 
   let matchedRegime = $derived(regimes ? regimeById(selected?.regime, regimes) : null);
 
-  type PanelTab = 'overview' | 'gallery' | 'learn';
+  type PanelTab = 'overview' | 'gallery' | 'details' | 'learn';
   let panelTab: PanelTab = $state('overview');
   let panelGallery: string[] = $state([]);
   let panelGalleryGrid = $derived(panelGallery.length <= 1 ? panelGallery : panelGallery.slice(1));
   let panelLightbox = $state<string | null>(null);
+  // The craft's own drawing (a satellite, station or observatory): the DETAIL tab, as for a
+  // Moon or Mars orbiter.
+  let panelAnatomy = $derived(selected ? siteAnatomy(selected) : []);
+  let panelDrawings = $derived(
+    panelAnatomy.flatMap((a) => [a.src, a.exploded]).filter((p): p is string => !!p),
+  );
+  let panelLightboxImages = $derived(
+    panelLightbox && panelDrawings.includes(panelLightbox) ? panelDrawings : panelGallery,
+  );
   let lastSelectedId = $state<string | null>(null);
 
   // #547 S5c — the collectible card. Every earth-object aliases an
@@ -221,6 +232,12 @@
       tabs={[
         { id: 'overview', label: m.panel_tab_overview() },
         { id: 'gallery', label: m.panel_tab_gallery(), visible: panelGallery.length > 0 },
+        {
+          id: 'details',
+          label: m.panel_tab_detail(),
+          visible: panelAnatomy.length > 0,
+          testid: 'panel-tab-details',
+        },
         { id: 'learn', label: m.panel_tab_learn(), visible: panelHasLinks },
       ]}
       bind:active={panelTab}
@@ -348,6 +365,21 @@
           {panelGalleryCredit(selected.agencies?.join(' / '))}
         </p>
       {/if}
+    {:else if panelTab === 'details' && panelAnatomy.length > 0}
+      <SiteLandingPanel
+        heading="spacecraft"
+        anatomy={panelAnatomy}
+        locale={localeFromPage(page)}
+        onOpen={(src) => (panelLightbox = src)}
+      />
+      {#if panelAnatomy.some((a) => a.exploded)}
+        <SiteLandingPanel
+          part="exploded"
+          anatomy={panelAnatomy}
+          locale={localeFromPage(page)}
+          onOpen={(src) => (panelLightbox = src)}
+        />
+      {/if}
     {:else if panelTab === 'learn'}
       {#if !panelHasLinks}
         <p class="empty-tab">{m.panel_no_links()}</p>
@@ -362,7 +394,11 @@
   <cards.CardOverlay spec={cardSpec} open={cardOpen} onClose={() => (cardOpen = false)} />
 {/if}
 
-<PanelLightbox src={panelLightbox} images={panelGallery} onClose={() => (panelLightbox = null)} />
+<PanelLightbox
+  src={panelLightbox}
+  images={panelLightboxImages}
+  onClose={() => (panelLightbox = null)}
+/>
 
 <style>
   .agency-row {

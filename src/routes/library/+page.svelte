@@ -37,10 +37,17 @@
   import * as m from '$lib/paraglide/messages';
   import { getLocale } from '$lib/paraglide/runtime';
   import { dataLoadFailed } from '$lib/data/core';
+  import ShowAll from '$lib/components/ShowAll.svelte';
+  import { previewList } from '$lib/preview-list';
   import type { PageData } from './$types';
 
   let { data }: { data: PageData } = $props();
 
+  // Each source block draws its first PREVIEW entity clusters and a "Show all N" chip
+  // ($lib/preview-list); source headers and the contents list stay open, so a #src-<id> link
+  // lands on its header with the first clusters below it.
+  let expanded = $state<Record<string, boolean>>({});
+  const expand = (key: string) => (expanded = { ...expanded, [key]: true });
 
   let logos = $state<SourceLogosManifest | null>(null);
   let provenance = $state<LinkProvenanceManifest | null>(null);
@@ -328,7 +335,7 @@
         </header>
 
         <ul class="entity-list">
-          {#each group.entities as cluster (cluster)}
+          {#each previewList(group.entities, expanded[group.source.id]) as cluster (cluster)}
             <li class="entity">
               <header class="entity-head">
                 <span class="ent-cat">{categoryLabel(cluster.category)}</span>
@@ -380,6 +387,12 @@
             </li>
           {/each}
         </ul>
+        <ShowAll
+          count={group.entities.length}
+          expanded={expanded[group.source.id]}
+          onexpand={() => expand(group.source.id)}
+          list={group.source.id}
+        />
       </article>
     {/each}
   {/if}

@@ -126,6 +126,32 @@ test.describe('/library — outbound LEARN-link bill of links', () => {
     await expect(rows.nth(4).locator('p')).toContainText('Zhurong');
   });
 
+  test('a source block draws 10 entity clusters and a "Show all N" chip; the contents link lands on the open header (25a)', async ({
+    page,
+  }) => {
+    await page.goto('/library', { waitUntil: 'networkidle' });
+    await expect(page.locator('article.source-block').first()).toBeVisible({ timeout: 15_000 });
+
+    const blocks = page.locator('article.source-block');
+    const clusterCounts = await blocks.evaluateAll((els) =>
+      els.map((el) => el.querySelectorAll(':scope > ul.entity-list > li').length),
+    );
+    expect(Math.max(...clusterCounts)).toBeLessThanOrEqual(10);
+
+    await page.locator('nav.toc a[href="#src-wikipedia"]').click();
+    const wiki = page.locator('#src-wikipedia');
+    await expect(wiki.locator('.src-head')).toBeInViewport();
+    await expect(wiki.locator(':scope > ul.entity-list > li')).toHaveCount(10);
+
+    const chip = wiki.getByTestId('show-all');
+    await expect(chip).toHaveText(/^\s*Show all \d+\s*$/);
+    const total = Number((await chip.textContent())!.replace(/\D/g, ''));
+    expect(total).toBeGreaterThan(10);
+    await chip.click();
+    await expect(wiki.locator(':scope > ul.entity-list > li')).toHaveCount(total);
+    await expect(chip).toHaveCount(0);
+  });
+
   test('linked from the site footer', async ({ page, isMobile }) => {
     await page.goto('/', { waitUntil: 'networkidle' });
     // Desktop: the floating bottom-right footer strip. Touch: the strip is

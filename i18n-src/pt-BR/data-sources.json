@@ -26,5 +26,11 @@
   "open-cluster-catalogues": "Distâncias dos aglomerados estelares e nebulosas com aglomerado de Messier a partir do Gaia: Hunt & Reffert 2023, com Cantat-Gaudin et al. 2020 como reserva e como alternativa na nota.",
   "globular-cluster-catalogues": "Distâncias dos aglomerados globulares segundo Baumgardt & Vasiliev 2021 e suas magnitudes V totais segundo o catálogo de Harris (a distância dele fica na nota).",
   "cosmicflows-4": "Distâncias das galáxias de Messier e da galeria segundo o Cosmicflows-4.",
-  "mcconnachie-2012": "Distâncias das galáxias do Grupo Local, e dos aglomerados e nebulosas dentro das Nuvens de Magalhães e de M33, segundo McConnachie 2012."
+  "mcconnachie-2012": "Distâncias das galáxias do Grupo Local, e dos aglomerados e nebulosas dentro das Nuvens de Magalhães e de M33, segundo McConnachie 2012.",
+  "jpl-keplerian-elements": "Os elementos keplerianos aproximados do JPL para as posições dos planetas (Standish). O Laboratório de Física calcula a partir desses elementos, e um teste garante que o modelo planetário das trajetórias das missões fique a no máximo 0,6° deles.",
+  "jpl-planetary-parameters": "A tabela do JPL com os parâmetros físicos dos planetas (tamanhos, massas, rotação e valores de superfície), citada para as estatísticas dos planetas nos artigos de ciência.",
+  "jpl-satellite-parameters": "Os elementos e parâmetros físicos dos satélites planetários do JPL, citados para as órbitas e os tamanhos das luas nos artigos de ciência e para os valores da esfera de Hill.",
+  "lroc-nac-traverses": "Os trajetos que a equipe da câmera da LRO mapeou a partir de imagens da Narrow Angle Camera: Apollo 15 e 16, Lunokhod 1 e 2 e Yutu-2. O Orrery os simplifica e os desenha na vista da superfície da Lua.",
+  "usgs-apollo17-traverse": "O trajeto mapeado pelo USGS Astrogeology do veículo lunar da Apollo 17 (Haase et al. 2019), ajustado ao ortomosaico da LROC do vale Taurus-Littrow e desenhado na vista da superfície da Lua com suas estações.",
+  "hirise-zhurong-traverse": "As marcas das rodas do rover chinês Zhurong vistas pela câmera HiRISE da Mars Reconnaissance Orbiter (NASA/JPL/University of Arizona). O Orrery as traçou para desenhar a rota na vista da superfície de Marte, com precisão de cerca de 20 m."
 }

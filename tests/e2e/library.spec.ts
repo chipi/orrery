@@ -68,15 +68,62 @@ test.describe('/library — outbound LEARN-link bill of links', () => {
     const html = await (await request.get('/library')).text();
     const block = html.match(/data-testid="library-astro-sources"[\s\S]*?<\/aside>/)?.[0] ?? '';
     expect(block).toContain('href="/credits"');
-    expect(block).toContain('ssd.jpl.nasa.gov');
     const links = [...block.matchAll(/<a href="(https:[^"]+)"([^>]*)>/g)];
-    expect(links.length).toBe(13); // 12 catalogues + JPL
+    expect(links.length).toBe(12); // the catalogues; JPL has its own block below
     for (const [, , attrs] of links) {
       expect(attrs).toContain('target="_blank"');
       expect(attrs).toContain('rel="noopener noreferrer external"');
     }
     expect(block).toContain('Cosmicflows-4');
     expect(block).toContain('NASA Exoplanet Archive');
+  });
+
+  test('the Planetary models block lists the three NASA JPL sources, each with its link and what Orrery does with it (LI2)', async ({
+    page,
+  }) => {
+    await page.goto('/library', { waitUntil: 'networkidle' });
+    const block = page.getByTestId('library-planetary-sources');
+    await expect(block.getByRole('heading', { level: 3 })).toHaveText(
+      'Planetary models (NASA JPL)',
+    );
+    const rows = block.locator('li[data-source-id]');
+    await expect(rows).toHaveCount(3);
+    await expect(rows.nth(0).locator('p')).toContainText('within 0.6°');
+    for (const [i, id, path] of [
+      [0, 'jpl-keplerian-elements', '/planets/approx_pos.html'],
+      [1, 'jpl-planetary-parameters', '/planets/phys_par.html'],
+      [2, 'jpl-satellite-parameters', '/sats/'],
+    ] as const) {
+      const row = rows.nth(i);
+      await expect(row).toHaveAttribute('data-source-id', id);
+      const link = row.locator('a');
+      await expect(link).toHaveAttribute('href', `https://ssd.jpl.nasa.gov${path}`);
+      await expect(link).toHaveAttribute('target', '_blank');
+      expect(await link.getAttribute('rel')).toBe('noopener noreferrer external');
+      await expect(row.locator('p')).not.toBeEmpty();
+    }
+  });
+
+  test('the Moon and Mars surface data block lists the landing and rover-track sources the routes cite (LI3)', async ({
+    page,
+  }) => {
+    await page.goto('/library', { waitUntil: 'networkidle' });
+    const block = page.getByTestId('library-surface-sources');
+    await expect(block.getByRole('heading', { level: 3 })).toHaveText('Moon and Mars surface data');
+    const rows = block.locator('li[data-source-id]');
+    await expect(rows).toHaveCount(5);
+    const hosts = await rows
+      .locator('a')
+      .evaluateAll((as) => as.map((a) => new URL((a as HTMLAnchorElement).href).hostname));
+    expect(hosts).toEqual([
+      'www.lroc.asu.edu',
+      'doi.org',
+      'mars.nasa.gov',
+      'an.rsl.wustl.edu',
+      'www.uahirise.org',
+    ]);
+    await expect(rows.nth(0).locator('p')).toContainText('Narrow Angle Camera');
+    await expect(rows.nth(4).locator('p')).toContainText('Zhurong');
   });
 
   test('linked from the site footer', async ({ page, isMobile }) => {

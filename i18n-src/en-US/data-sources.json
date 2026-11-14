@@ -26,5 +26,11 @@
   "open-cluster-catalogues": "Distances of the Messier star clusters and cluster nebulae, from Gaia: Hunt & Reffert 2023, with Cantat-Gaudin et al. 2020 as the fallback and the alternative in the note.",
   "globular-cluster-catalogues": "Distances of the globular clusters from Baumgardt & Vasiliev 2021, and their total V magnitudes from Harris’s catalogue (his own distance is kept in the note).",
   "cosmicflows-4": "Distances of the Messier and gallery galaxies from Cosmicflows-4.",
-  "mcconnachie-2012": "Distances of the Local Group galaxies, and of the clusters and nebulae inside the Magellanic Clouds and M33, from McConnachie 2012."
+  "mcconnachie-2012": "Distances of the Local Group galaxies, and of the clusters and nebulae inside the Magellanic Clouds and M33, from McConnachie 2012.",
+  "jpl-keplerian-elements": "JPL's approximate Keplerian elements for the positions of the planets (Standish). The Physics Lab computes from these elements, and the planet model behind the mission paths is tested to stay within 0.6° of them.",
+  "jpl-planetary-parameters": "JPL's table of planetary physical parameters (sizes, masses, rotation and surface values), cited for the planet statistics in the science articles.",
+  "jpl-satellite-parameters": "JPL's planetary satellite elements and physical parameters, cited for the moons' orbits and sizes in the science articles and for the Hill-sphere figures.",
+  "lroc-nac-traverses": "The tracks the LRO Camera team mapped from Narrow Angle Camera images: Apollo 15 and 16, Lunokhod 1 and 2, and Yutu-2. Orrery simplifies them and draws them on the Moon surface view.",
+  "usgs-apollo17-traverse": "The USGS Astrogeology mapped traverse of the Apollo 17 Lunar Roving Vehicle (Haase et al. 2019), tied to the LROC orthomosaic of the Taurus–Littrow valley and drawn on the Moon surface view with its stations.",
+  "hirise-zhurong-traverse": "The wheel tracks of China's Zhurong rover seen by the HiRISE camera on Mars Reconnaissance Orbiter (NASA/JPL/University of Arizona). Orrery traced them into the route drawn on the Mars surface view, accurate to about 20 m."
 }

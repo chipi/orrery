@@ -102,7 +102,7 @@ _Top-level routes: catalog · colophon · credits · earth · essays · explore 
 | `/patches` | Insignia gallery · every program and mission patch with per-badge credit and licence (`badges.json` + `badge-provenance.json` from `scripts/fetch-badges.ts`) | — |
 | `/sourcing` | Public sourcing-debt ledger · content Orrery wanted but could not source under its licensing bar (`i18n-src/<locale>/sourcing/gaps.json`) | PRD-037 |
 | `/science/glossary` | A /science "see also" tab: the site's technical terms, one sentence each in the reader's language, with the /science page that explains each and the pages that use it most (`native-terms.json` `term` + `i18n-src/<locale>/glossary/terms.json` → `scripts/build-glossary.mjs` → `static/data/glossary/<locale>.json`). Article text links each term's first mention to its entry (`scripts/glossary-links.mjs` → `<locale>.links.json` → `parseInline`, at most 2 per paragraph) | PRD-038 |
-| `/library` | Outbound-link inventory · agency mastheads + per-link provenance | ADR-051 |
+| `/library` | Outbound-link inventory · agency mastheads + per-link provenance (incl. the /science article and essay links) · five data blocks at the head (Planetary models, Moon and Mars surface data read from `data-sources.json`) · first 10 entity clusters per source + "Show all N" | ADR-051, UXD-041 |
 | `/credits` | Bill of materials for every image and reused text fragment | ADR-046 / ADR-047 |
 | `/colophon` | How Orrery is made, including AI-generated asset provenance | — |
 | `/privacy` | What Orrery measures and the analytics opt-out switch (no consent banner) | ADR-092 |
@@ -186,7 +186,7 @@ The fail-closed asset + outbound-link discipline that distinguishes Orrery from 
 
 **Text-source attribution** (`static/data/text-sources.json`) — every paraphrased editorial fragment registered with source, license, and last-verified date.
 
-**Outbound LEARN-link manifest** (`scripts/build-link-provenance.ts`, `static/data/link-provenance.json`) — one entry per `(entity_id, url)` pair. Per-link source agency, language (BCP-47), tier (`intro`/`core`/`deep`), last-verified date. Locale fallback chain: UI-locale link first, then operator-native-language link, then English, then multi-lingual landing. See ADR-051.
+**Outbound LEARN-link manifest** (`scripts/build-link-provenance.ts`, `static/data/link-provenance.json`) — one entry per `(entity_id, url)` pair; it reads the entity files' `links` and the /science articles (`science/<tab>/<id>.json`, category `science`) and the published essays' `sources` (category `essay`), and `src/lib/link-provenance-coverage.test.ts` fails when one of them is missing (UXD-041). Per-link source agency, language (BCP-47), tier (`intro`/`core`/`deep`), last-verified date. Locale fallback chain: UI-locale link first, then operator-native-language link, then English, then multi-lingual landing. See ADR-051.
 
 **Link checker** (`scripts/check-learn-links.ts`) — live HEAD+GET probe, redirect chain capture, slow-response detection, robots.txt honoured. Writes `docs/provenance/last-link-check.md`. Build does not call this script (no live network in CI) but the report is the gate for `validate-data.ts`.
 

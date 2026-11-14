@@ -21,7 +21,7 @@
   import { base } from '$app/paths';
   import { metaDescription } from '$lib/seo';
   import { localHref } from '$lib/locale';
-  import { getSourceLogos, type SourceLogosManifest } from '$lib/data';
+  import { getDataSources, getSourceLogos, type SourceLogosManifest } from '$lib/data';
   import {
     getLinkProvenanceManifest,
     type LinkProvenanceManifest,
@@ -41,9 +41,21 @@
 
   let { data }: { data: PageData } = $props();
 
+
   let logos = $state<SourceLogosManifest | null>(null);
   let provenance = $state<LinkProvenanceManifest | null>(null);
   let loaded = $state(false);
+  // The planetary and surface blocks draw name and link from the server load and the localised
+  // description from data-sources.json's overlay, so they read the same as on /credits.
+  let descriptions = $state<Record<string, string>>({});
+
+  $effect(() => {
+    void getDataSources(getLocale())
+      .then((d) => {
+        descriptions = Object.fromEntries(d.entries.map((e) => [e.id, e.description]));
+      })
+      .catch(dataLoadFailed);
+  });
 
   $effect(() => {
     void Promise.all([getSourceLogos(getLocale()), getLinkProvenanceManifest()])
@@ -126,6 +138,10 @@
         return m.library_category_galaxy();
       case 'structure':
         return m.library_category_structure();
+      case 'science':
+        return m.nav_science();
+      case 'essay':
+        return m.essays_label();
       default:
         return c;
     }
@@ -214,18 +230,48 @@
           link: `<a href="${localHref('/credits')}">${m.credits_section_data()}</a>`,
         })}
       </p>
-      <p>
-        <!-- eslint-disable-next-line svelte/no-at-html-tags -- safe: m.*() output + data-sources.json URL, no user input -->
-        {@html m.library_astro_planets({
-          link: `<a href="${data.jpl.url}" target="_blank" rel="noopener noreferrer external" hreflang="en">${data.jpl.name}</a>`,
-        })}
-      </p>
       <ul class="astro-sources">
         {#each data.astroSources as s (s.id)}
           <li>
             <a href={s.url} target="_blank" rel="noopener noreferrer external" hreflang="en"
               >{s.name}</a
             >
+          </li>
+        {/each}
+      </ul>
+    </aside>
+
+    <aside
+      class="data-sources"
+      aria-labelledby="library-planetary-title"
+      data-testid="library-planetary-sources"
+    >
+      <h3 id="library-planetary-title">{m.library_planetary_models()}</h3>
+      <ul class="source-rows">
+        {#each data.planetarySources as s (s.id)}
+          <li data-source-id={s.id}>
+            <a href={s.url} target="_blank" rel="noopener noreferrer external" hreflang="en"
+              >{s.name}</a
+            >
+            {#if descriptions[s.id]}<p>{descriptions[s.id]}</p>{/if}
+          </li>
+        {/each}
+      </ul>
+    </aside>
+
+    <aside
+      class="data-sources"
+      aria-labelledby="library-surface-title"
+      data-testid="library-surface-sources"
+    >
+      <h3 id="library-surface-title">{m.library_surface_data()}</h3>
+      <ul class="source-rows">
+        {#each data.surfaceSources as s (s.id)}
+          <li data-source-id={s.id}>
+            <a href={s.url} target="_blank" rel="noopener noreferrer external" hreflang="en"
+              >{s.name}</a
+            >
+            {#if descriptions[s.id]}<p>{descriptions[s.id]}</p>{/if}
           </li>
         {/each}
       </ul>
@@ -390,6 +436,18 @@
     list-style: none;
     font-size: 16px;
     line-height: 1.6;
+  }
+  .source-rows {
+    display: grid;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  .source-rows p {
+    margin: 2px 0 0;
   }
   .data-sources :global(a) {
     color: rgba(255, 255, 255, 0.95);

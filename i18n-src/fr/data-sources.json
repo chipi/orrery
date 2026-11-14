@@ -26,5 +26,11 @@
   "open-cluster-catalogues": "Distances des amas d’étoiles et des nébuleuses à amas de Messier d’après Gaia : Hunt & Reffert 2023, avec Cantat-Gaudin et al. 2020 en secours et comme alternative dans la note.",
   "globular-cluster-catalogues": "Distances des amas globulaires d’après Baumgardt & Vasiliev 2021 et leurs magnitudes V totales d’après le catalogue de Harris (sa propre distance figure dans la note).",
   "cosmicflows-4": "Distances des galaxies de Messier et de la galerie d’après Cosmicflows-4.",
-  "mcconnachie-2012": "Distances des galaxies du Groupe local, ainsi que des amas et nébuleuses des Nuages de Magellan et de M33, d’après McConnachie 2012."
+  "mcconnachie-2012": "Distances des galaxies du Groupe local, ainsi que des amas et nébuleuses des Nuages de Magellan et de M33, d’après McConnachie 2012.",
+  "jpl-keplerian-elements": "Les éléments képlériens approchés du JPL pour les positions des planètes (Standish). Le laboratoire de physique calcule à partir d’eux, et un test garantit que le modèle planétaire des trajectoires de mission s’en écarte de 0,6° au plus.",
+  "jpl-planetary-parameters": "Le tableau du JPL des paramètres physiques des planètes (tailles, masses, rotation et valeurs de surface), cité pour les statistiques planétaires des articles scientifiques.",
+  "jpl-satellite-parameters": "Les éléments et paramètres physiques des satellites planétaires du JPL, cités pour les orbites et les tailles des lunes dans les articles scientifiques et pour les valeurs de la sphère de Hill.",
+  "lroc-nac-traverses": "Les trajets que l’équipe de la caméra du LRO a cartographiés à partir d’images de la Narrow Angle Camera : Apollo 15 et 16, Lunokhod 1 et 2 et Yutu-2. Orrery les simplifie et les trace sur la vue de la surface de la Lune.",
+  "usgs-apollo17-traverse": "Le trajet cartographié par l’USGS Astrogeology du rover lunaire d’Apollo 17 (Haase et al. 2019), calé sur l’orthomosaïque LROC de la vallée de Taurus-Littrow et tracé sur la vue de la surface de la Lune avec ses stations.",
+  "hirise-zhurong-traverse": "Les traces de roues du rover chinois Zhurong vues par la caméra HiRISE de Mars Reconnaissance Orbiter (NASA/JPL/Université de l’Arizona). Orrery les a suivies pour tracer l’itinéraire de la vue de la surface de Mars, avec une précision d’environ 20 m."
 }

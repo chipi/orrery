@@ -26,5 +26,11 @@
   "open-cluster-catalogues": "Gaia 자료에 따른 메시에 성단과 성단 성운의 거리: Hunt & Reffert 2023을 우선하고, Cantat-Gaudin et al. 2020은 대체값이자 주석의 대안으로 둡니다.",
   "globular-cluster-catalogues": "구상 성단의 거리는 Baumgardt & Vasiliev 2021, 총 V 등급은 해리스 카탈로그에서 가져왔습니다(해리스 자신의 거리는 주석에 남겨 둡니다).",
   "cosmicflows-4": "메시에 은하와 갤러리 은하의 거리는 Cosmicflows-4에서 가져왔습니다.",
-  "mcconnachie-2012": "국부 은하군 은하와 대소 마젤란 은하 및 M33 안의 성단·성운의 거리는 McConnachie 2012에서 가져왔습니다."
+  "mcconnachie-2012": "국부 은하군 은하와 대소 마젤란 은하 및 M33 안의 성단·성운의 거리는 McConnachie 2012에서 가져왔습니다.",
+  "jpl-keplerian-elements": "행성 위치를 위한 JPL의 근사 케플러 요소(Standish). 물리 실험실은 이 요소로 계산하며, 임무 경로에 쓰이는 행성 모델이 여기서 0.6° 이내에 있음을 테스트로 확인합니다.",
+  "jpl-planetary-parameters": "행성 물리 매개변수(크기, 질량, 자전, 표면 값)를 정리한 JPL의 표로, 과학 기사의 행성 통계 출처로 인용합니다.",
+  "jpl-satellite-parameters": "행성 위성의 궤도 요소와 물리 매개변수를 정리한 JPL 자료로, 과학 기사에서 위성의 궤도와 크기, 힐 구 수치의 출처로 인용합니다.",
+  "lroc-nac-traverses": "LRO 카메라 팀이 협각 카메라(NAC) 영상으로 지도화한 주행 경로: Apollo 15와 16, Lunokhod 1과 2, Yutu-2. Orrery가 이를 단순화해 달 표면 보기에 그립니다.",
+  "usgs-apollo17-traverse": "USGS Astrogeology가 지도화한 Apollo 17 달 탐사차의 주행 경로(Haase 외 2019)로, 타우루스–리트로 계곡의 LROC 정사모자이크에 맞춰 정렬하고 각 정거장과 함께 달 표면 보기에 그립니다.",
+  "hirise-zhurong-traverse": "Mars Reconnaissance Orbiter의 HiRISE 카메라가 포착한 중국 로버 Zhurong의 바퀴 자국(NASA/JPL/애리조나 대학교). Orrery가 이를 따라 그려 화성 표면 보기의 경로로 삼았으며 정확도는 약 20 m입니다."
 }

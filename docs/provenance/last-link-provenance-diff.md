@@ -1,9 +1,112 @@
 # Last link-provenance build
 
-> Generated: 2026-11-13T11:07:57.448Z
+> Generated: 2026-11-14T18:24:57.843Z
 
-- Total entries: 1873 (was 1873)
-- Added: 0
+- Total entries: 2417 (was 1873)
+- Added: 544
 - Removed: 0
 - Changed: 0
+
+## Added (544)
+- `asteroid-mining` · core · nasa · en · <https://cneos.jpl.nasa.gov/>
+- `asteroid-mining` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Asteroid_mining>
+- `asteroid-mining` · core · nasa · en · <https://science.nasa.gov/mission/osiris-rex/>
+- `asteroid-mining` · core · jaxa · en · <https://www.hayabusa2.jaxa.jp/en/>
+- `comms` · core · nasa · en · <https://oig.nasa.gov/wp-content/uploads/2023/12/ig-23-016.pdf>
+- `comms` · core · nrao · en · <https://public.nrao.edu/ask/how-strong-is-the-signal-from-the-voyager-1-spacecraft-when-it-reaches-earth/>
+- `comms` · core · iflscience · en · <https://www.iflscience.com/on-november-13-2026-voyager-will-reach-one-full-light-day-away-from-earth-81432>
+- `comms` · core · nasa · en · <https://www.jpl.nasa.gov/news/nasas-laser-comms-demo-makes-deep-space-record-completes-first-phase/>
+- `comms` · core · nasa · en · <https://www.nasa.gov/communicating-with-missions/dsn/>
+- `comms` · core · nasa · en · <https://www.nasa.gov/directorates/stmd/tech-demo-missions-program/deep-space-optical-communications-dsoc/nasas-deep-space-communications-demo-exceeds-project-expectations/>
+- `cosmology/cosmic-distance-ladder` · intro · nasa · en · <https://science.nasa.gov/missions/hubble/nasas-webb-hubble-telescopes-affirm-universes-expansion-rate-puzzle-persists/>
+- `cosmology/cosmic-distance-ladder` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Cosmic_distance_ladder>
+- `cosmology/cosmic-distance-ladder` · deep · arxiv · en · <https://arxiv.org/abs/2112.04510>
+- `cosmology/laniakea-and-the-great-attractor` · intro · youtube · en · <https://www.youtube.com/watch?v=rENyyRwxpHo>
+- `cosmology/laniakea-and-the-great-attractor` · core · nature · en · <https://www.nature.com/articles/nature13674>
+- `cosmology/laniakea-and-the-great-attractor` · deep · wikipedia · en · <https://en.wikipedia.org/wiki/Laniakea_Supercluster>
+- `cosmology/large-scale-structure` · intro · nasa · en · <https://science.nasa.gov/mission/hubble/science/science-highlights/mapping-the-cosmic-web/>
+- `cosmology/large-scale-structure` · core · nature · en · <https://www.nature.com/articles/nature13674>
+- `cosmology/large-scale-structure` · deep · wikipedia · en · <https://en.wikipedia.org/wiki/Observable_universe>
+- `delta-v` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Oberth_effect>
+- `delta-v` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Tsiolkovsky_rocket_equation>
+- `delta-v` · core · nasa · en · <https://science.nasa.gov/learn/basics-of-space-flight/chapter4-1/>
+- `delta-v` · core · nasa · en · <https://science.nasa.gov/mission/voyager/planetary-voyage/>
+- `delta-v` · core · internet-archive · en · <https://web.archive.org/web/20230725181037/https://www.nasa.gov/mission_pages/station/expeditions/expedition30/tryanny.html>
+- `delta-v` · core · isro · en · <https://www.isro.gov.in/MarsOrbiterMissionSpacecraft.html>
+- `exoplanets/are-we-alone` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Drake_equation>
+- `exoplanets/are-we-alone` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Fermi_paradox>
+- `exoplanets/astrometry` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Methods_of_detecting_exoplanets>
+- `exoplanets/astrometry` · core · esa · en · <https://www.esa.int/Science_Exploration/Space_Science/Gaia>
+- `exoplanets/biosignatures` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Biosignature>
+- `exoplanets/detecting-extraterrestrial-life` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Search_for_extraterrestrial_intelligence>
+- `exoplanets/detecting-extraterrestrial-life` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Wow!_signal>
+- `exoplanets/detecting-extraterrestrial-life` · core · breakthrough-initiatives · en · <https://breakthroughinitiatives.org/initiative/1>
+- `exoplanets/detecting-extraterrestrial-life` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Allen_Telescope_Array>
+- `exoplanets/detecting-extraterrestrial-life` · core · wikipedia · en · <https://en.wikipedia.org/wiki/BLC1>
+- `exoplanets/detecting-extraterrestrial-life` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Project_Ozma>
+- `exoplanets/detecting-extraterrestrial-life` · deep · arxiv · en · <https://arxiv.org/abs/1809.07252>
+- `exoplanets/direct-imaging` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Methods_of_detecting_exoplanets>
+- `exoplanets/direct-imaging` · core · nasa · en · <https://exoplanets.nasa.gov/exep/technology/coronagraph/>
+- `exoplanets/exoplanet-atmospheres` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Extrasolar_atmosphere>
+- `exoplanets/exoplanet-atmospheres` · core · nasa · en · <https://science.nasa.gov/mission/webb/>
+- `exoplanets/fifty-one-pegasi` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/51_Pegasi_b>
+- `exoplanets/fifty-one-pegasi` · core · nobel-prize · en · <https://www.nobelprize.org/prizes/physics/2019/summary/>
+- `exoplanets/habitable-zone` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Circumstellar_habitable_zone>
+- `exoplanets/habitable-zone` · core · nasa · en · <https://exoplanets.nasa.gov/search-for-life/habitable-zone/>
+- `exoplanets/hot-jupiters` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Hot_Jupiter>
+- `exoplanets/microlensing` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Gravitational_microlensing>
+- `exoplanets/microlensing` · core · nasa · en · <https://roman.gsfc.nasa.gov/>
+- `exoplanets/orbital-resonance` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Orbital_resonance>
+- `exoplanets/planet-formation` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Nebular_hypothesis>
+- `exoplanets/planet-formation` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Planetary_migration>
+- `exoplanets/proxima-system` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Proxima_Centauri_b>
+- `exoplanets/proxima-system` · deep · breakthrough-initiatives · en · <https://breakthroughinitiatives.org/initiative/3>
+- `exoplanets/radial-velocity` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Doppler_spectroscopy>
+- `exoplanets/radial-velocity` · core · nasa · en · <https://exoplanets.nasa.gov/alien-worlds/ways-to-find-a-planet/>
+- `exoplanets/super-earths-sub-neptunes` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Super-Earth>
+- `exoplanets/super-earths-sub-neptunes` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Mini-Neptune>
+- `exoplanets/tidal-locking` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Tidal_locking>
+- `exoplanets/transit` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Methods_of_detecting_exoplanets>
+- `exoplanets/transit` · core · nasa · en · <https://exoplanets.nasa.gov/tess/>
+- `exoplanets/transit-timing` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Transit-timing_variation>
+- `exoplanets/trappist-1-system` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/TRAPPIST-1>
+- `exoplanets/trappist-1-system` · core · nasa · en · <https://exoplanets.nasa.gov/trappist1/>
+- `generational-starships` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Biosphere_2>
+- `generational-starships` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Generation_ship>
+- `generational-starships` · core · bis · en · <https://www.bis-space.com/>
+- `generational-starships` · core · nasa · en · <https://www.nasa.gov/reference/environmental-control-and-life-support-systems-eclss/>
+- `going-to-mars` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Tianwen-1>
+- `going-to-mars` · core · nasa · en · <https://science.nasa.gov/mars/>
+- `going-to-mars` · core · isro · en · <https://www.isro.gov.in/MarsOrbiterMissionSpacecraft.html>
+- `going-to-mars` · core · nasa · en · <https://www.nasa.gov/humans-in-space/space-radiation/>
+- `going-to-mars` · core · nasa · en · <https://www.nasa.gov/missions/mars-2020-perseverance/perseverance-rover/nasas-oxygen-generating-experiment-moxie-completes-mars-mission/>
+- `going-to-the-moon` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Luna_programme>
+- `going-to-the-moon` · core · cgtn · en · <https://news.cgtn.com/news/2025-02-12/China-reveals-names-of-moon-landing-spacesuit-manned-lunar-rover-1AVRj0iWRws/share_amp.html>
+- `going-to-the-moon` · core · cgtn · en · <https://news.cgtn.com/news/2026-04-24/China-Space-Day-How-far-have-we-come-toward-a-manned-lunar-landing--1MBhqOD8nQs/p.html>
+- `going-to-the-moon` · core · cgtn · en · <https://news.cgtn.com/news/2026-10-31/China-s-first-crewed-lunar-mission-Three-astronauts-two-to-land-1RGHkv1WkgM/p.html>
+- `going-to-the-moon` · core · nasa · en · <https://science.nasa.gov/mission/lro/>
+- `going-to-the-moon` · core · spacepolicyonline · en · <https://spacepolicyonline.com/news/isaacman-chinese-taikonauts-likely-to-fly-around-moon-in-2027/>
+- `going-to-the-moon` · core · irishnews · en · <https://www.irishnews.com/news/world/china-abruptly-postpones-ambitious-change-7-lunar-mission-launch-JLQUEK3BENJYJEYRMWTGDCFXNE/>
+- `going-to-the-moon` · core · jaxa · en · <https://www.isas.jaxa.jp/en/missions/spacecraft/current/slim.html>
+- `going-to-the-moon` · core · isro · en · <https://www.isro.gov.in/Chandrayaan3.html>
+- `going-to-the-moon` · core · nasa · en · <https://www.nasa.gov/humans-in-space/artemis/>
+- `going-to-the-moon` · core · nasa · en · <https://www.nasa.gov/news-release/nasa-adds-mission-to-artemis-lunar-program-updates-architecture/>
+- `going-to-the-moon` · core · planetary-society · en · <https://www.planetary.org/articles/the-cost-of-a-promise-lunar-rover>
+- `going-to-the-moon` · core · theregister · en · <https://www.theregister.com/2025/08/11/china_lunar_lander_test_success/>
+- `going-to-the-moon` · core · universetoday · en · <https://www.universetoday.com/articles/china-unveils-their-plan-for-a-crewed-moon-landing>
+- `history/apollo-11-1969` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Apollo_11>
+- `history/apollo-11-1969` · core · nasa · en · <https://www.nasa.gov/mission/apollo-11/>
+- `history/goddard-liquid-rocket-1926` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Robert_H._Goddard>
+- `history/goddard-liquid-rocket-1926` · core · nasa · en · <https://www.nasa.gov/stem-content/robert-goddards-historic-firsts/>
+- `history/keplers-laws-1609` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Johannes_Kepler>
+- `history/keplers-laws-1609` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Tycho_Brahe>
+- `history/newton-principia-1687` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Isaac_Newton>
+- `history/newton-principia-1687` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Philosophi%C3%A6_Naturalis_Principia_Mathematica>
+- `history/sputnik-1957` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Sputnik_1>
+- `history/sputnik-1957` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Sergei_Korolev>
+- `history/tsiolkovsky-equation-1903` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Konstantin_Tsiolkovsky>
+- `history/tsiolkovsky-equation-1903` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Tsiolkovsky_rocket_equation>
+- `interstellar-exploration` · core · bis · en · <https://bis-space.com/shop/product/project-daedalus-demonstrating-the-engineering-feasibility-of-interstellar-travel/>
+- `interstellar-exploration` · core · breakthrough-initiatives · en · <https://breakthroughinitiatives.org/initiative/3>
+- … 444 more
 

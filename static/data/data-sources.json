@@ -339,6 +339,48 @@
       ]
     },
     {
+      "id": "jpl-keplerian-elements",
+      "name": "NASA JPL · Planetary positions (Keplerian elements)",
+      "catalog": "JPL Solar System Dynamics — approximate positions of the planets, Keplerian elements (Standish)",
+      "category": "planetary-model",
+      "description": "JPL's approximate Keplerian elements for the positions of the planets (Standish). The Physics Lab computes from these elements, and the planet model behind the mission paths is tested to stay within 0.6° of them.",
+      "source_url": "https://ssd.jpl.nasa.gov/planets/approx_pos.html",
+      "license_short": "PD-USGov",
+      "license_url": "https://www.jpl.nasa.gov/jpl-image-use-policy",
+      "license_rationale": "JPL/NASA reference data is US-Government public domain (same basis as the Physics Lab constants entry).",
+      "used_on": [
+        "lab"
+      ]
+    },
+    {
+      "id": "jpl-planetary-parameters",
+      "name": "NASA JPL · Planetary physical parameters",
+      "catalog": "JPL Solar System Dynamics — planetary physical parameters",
+      "category": "planetary-model",
+      "description": "JPL's table of planetary physical parameters (sizes, masses, rotation and surface values), cited for the planet statistics in the science articles.",
+      "source_url": "https://ssd.jpl.nasa.gov/planets/phys_par.html",
+      "license_short": "PD-USGov",
+      "license_url": "https://www.jpl.nasa.gov/jpl-image-use-policy",
+      "license_rationale": "JPL/NASA reference data is US-Government public domain (same basis as the Physics Lab constants entry).",
+      "used_on": [
+        "science"
+      ]
+    },
+    {
+      "id": "jpl-satellite-parameters",
+      "name": "NASA JPL · Planetary satellite parameters",
+      "catalog": "JPL Solar System Dynamics — planetary satellite elements and physical parameters",
+      "category": "planetary-model",
+      "description": "JPL's planetary satellite elements and physical parameters, cited for the moons' orbits and sizes in the science articles and for the Hill-sphere figures.",
+      "source_url": "https://ssd.jpl.nasa.gov/sats/",
+      "license_short": "PD-USGov",
+      "license_url": "https://www.jpl.nasa.gov/jpl-image-use-policy",
+      "license_rationale": "JPL/NASA reference data is US-Government public domain (same basis as the Physics Lab constants entry).",
+      "used_on": [
+        "science"
+      ]
+    },
+    {
       "id": "models-ref-wikipedia",
       "name": "3D model references — Wikipedia",
       "catalog": "136 pages — sizes and proportions for the 3D models",
@@ -1554,6 +1596,50 @@
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
       "license_rationale": "NASA Planetary Data System archive data from a NASA mission; U.S. Government work (17 U.S.C. §105).",
+      "used_on": [
+        "mars"
+      ]
+    },
+    {
+      "id": "lroc-nac-traverses",
+      "name": "LROC NAC rover and LRV traverses",
+      "catalog": "LROC traverse GeoJSON layers mapped from Narrow Angle Camera images — NASA/GSFC/Arizona State University",
+      "category": "other",
+      "description": "The tracks the LRO Camera team mapped from Narrow Angle Camera images: Apollo 15 and 16, Lunokhod 1 and 2, and Yutu-2. Orrery simplifies them and draws them on the Moon surface view.",
+      "acknowledgement": "NASA/GSFC/Arizona State University",
+      "source_url": "https://www.lroc.asu.edu/geojson/luna_lunokhod1_traverse.geojson",
+      "license_short": "LROC-EDU",
+      "license_url": "https://lroc.im-ldi.com/about/terms",
+      "license_rationale": "The route files credit NASA/GSFC/Arizona State University and state \"LROC data, educational use with credit\". The LROC terms (lroc.im-ldi.com/about/terms, verified 2026-11-09 for LROC images, see image-provenance.json) permit educational use by schools, museums and other organisations without prior permission when credited; this is not the public-domain PDS archive. Orrery is a non-commercial educational site. Not separately checked: whether the terms page names the GeoJSON traverse layers themselves.",
+      "used_on": [
+        "moon"
+      ]
+    },
+    {
+      "id": "usgs-apollo17-traverse",
+      "name": "USGS Astrogeology · Apollo 17 traverse (Haase et al. 2019)",
+      "catalog": "Apollo 17 LRV mapped traverse and stations, Haase et al. 2019 (doi:10.1029/2018EA000408), USGS Astrogeology",
+      "category": "other",
+      "description": "The USGS Astrogeology mapped traverse of the Apollo 17 Lunar Roving Vehicle (Haase et al. 2019), tied to the LROC orthomosaic of the Taurus–Littrow valley and drawn on the Moon surface view with its stations.",
+      "source_url": "https://doi.org/10.1029/2018EA000408",
+      "license_short": "PD-USGov",
+      "license_url": "https://www.usa.gov/government-works",
+      "license_rationale": "USGS Astrogeology products are U.S. Government work (scripts/IMAGE-PIPELINE.md lists USGS Astrogeology as PD-USGov). The Apollo 17 route file credits \"© NASA\" and Haase et al. 2019. Not verified: the licence of the published traverse data itself, which the repo does not state.",
+      "used_on": [
+        "moon"
+      ]
+    },
+    {
+      "id": "hirise-zhurong-traverse",
+      "name": "HiRISE · Zhurong wheel tracks",
+      "catalog": "HiRISE ESP_073225_2055 (11 March 2022) and ESP_077511_2055 (7 February 2023), NASA/JPL/University of Arizona",
+      "category": "other",
+      "description": "The wheel tracks of China's Zhurong rover seen by the HiRISE camera on Mars Reconnaissance Orbiter (NASA/JPL/University of Arizona). Orrery traced them into the route drawn on the Mars surface view, accurate to about 20 m.",
+      "acknowledgement": "NASA/JPL/University of Arizona",
+      "source_url": "https://www.uahirise.org/ESP_073225_2055",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "HiRISE imagery is produced by NASA/JPL/University of Arizona; not subject to U.S. copyright per 17 U.S.C. §105. Use is permitted; provide source attribution. The route drawn from it is Orrery's own tracing.",
       "used_on": [
         "mars"
       ]

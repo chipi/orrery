@@ -26,5 +26,11 @@
   "open-cluster-catalogues": "Distancias de los cúmulos estelares y nebulosas con cúmulo de Messier a partir de Gaia: Hunt & Reffert 2023, con Cantat-Gaudin et al. 2020 como respaldo y como alternativa en la nota.",
   "globular-cluster-catalogues": "Distancias de los cúmulos globulares según Baumgardt & Vasiliev 2021 y sus magnitudes V totales según el catálogo de Harris (su propia distancia queda en la nota).",
   "cosmicflows-4": "Distancias de las galaxias de Messier y de la galería según Cosmicflows-4.",
-  "mcconnachie-2012": "Distancias de las galaxias del Grupo Local, y de los cúmulos y nebulosas dentro de las Nubes de Magallanes y M33, según McConnachie 2012."
+  "mcconnachie-2012": "Distancias de las galaxias del Grupo Local, y de los cúmulos y nebulosas dentro de las Nubes de Magallanes y M33, según McConnachie 2012.",
+  "jpl-keplerian-elements": "Los elementos keplerianos aproximados del JPL para las posiciones de los planetas (Standish). El Laboratorio de Física calcula con ellos, y una prueba garantiza que el modelo planetario de las trayectorias de las misiones no se aparta de ellos más de 0,6°.",
+  "jpl-planetary-parameters": "La tabla del JPL de parámetros físicos de los planetas (tamaños, masas, rotación y valores de superficie), citada para las estadísticas planetarias de los artículos de ciencia.",
+  "jpl-satellite-parameters": "Los elementos y parámetros físicos de los satélites planetarios del JPL, citados para las órbitas y los tamaños de las lunas en los artículos de ciencia y para las cifras de la esfera de Hill.",
+  "lroc-nac-traverses": "Los recorridos que el equipo de la cámara del LRO cartografió a partir de imágenes de la Narrow Angle Camera: Apollo 15 y 16, Lunokhod 1 y 2 y Yutu-2. Orrery los simplifica y los dibuja en la vista de la superficie de la Luna.",
+  "usgs-apollo17-traverse": "El recorrido cartografiado por el USGS Astrogeology del vehículo lunar de Apollo 17 (Haase et al. 2019), ajustado al ortomosaico de LROC del valle Taurus-Littrow y dibujado en la vista de la superficie de la Luna con sus estaciones.",
+  "hirise-zhurong-traverse": "Las huellas de las ruedas del róver chino Zhurong vistas por la cámara HiRISE del Mars Reconnaissance Orbiter (NASA/JPL/Universidad de Arizona). Orrery las trazó para dibujar la ruta de la vista de la superficie de Marte, con una precisión de unos 20 m."
 }

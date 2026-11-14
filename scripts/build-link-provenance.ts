@@ -3,7 +3,8 @@
  *
  * Walks every JSON file under `static/data/` (and `i18n-src/en-US/`
  * for overlay-side links), collects the structured `links: [{l,u,t}]`
- * arrays plus the single-string `wiki` field on small bodies, classifies
+ * arrays (the /science articles included) plus the essays' `sources: [{title,url}]`
+ * and the single-string `wiki` field on small bodies, classifies
  * each URL by host and tier, then writes:
  *   - static/data/link-provenance.json
  *   - docs/provenance/last-link-provenance-diff.md
@@ -78,7 +79,9 @@ type Category =
   | 'deep-sky'
   | 'galaxy'
   | 'structure'
-  | 'lab-formula';
+  | 'lab-formula'
+  | 'science'
+  | 'essay';
 
 interface LinkEntry {
   id: string;
@@ -638,6 +641,143 @@ const HOST_RULES: Array<{ match: RegExp; rule: HostRule }> = [
     match: /(^|\.)polarisprogram\.com$/i,
     rule: { source_id: 'polaris-program', defaultKind: 'vendor-official', defaultLanguage: 'en' },
   },
+  // /science articles and essay sources (F2, LI3): the hosts the two reading lists cite.
+  {
+    match: /(^|\.)eso\.org$/i,
+    rule: { source_id: 'eso', defaultKind: 'agency-official', defaultLanguage: 'en' },
+  },
+  {
+    match: /^cloudless\.eox\.at$/i,
+    rule: { source_id: 'eox', defaultKind: 'vendor-official', defaultLanguage: 'en' },
+  },
+  {
+    match: /^lroc\.im-ldi\.com$/i,
+    rule: { source_id: 'lroc-website', defaultKind: 'mission-microsite', defaultLanguage: 'en' },
+  },
+  {
+    match: /^themis\.asu\.edu$/i,
+    rule: { source_id: 'asu-themis', defaultKind: 'mission-microsite', defaultLanguage: 'en' },
+  },
+  {
+    match: /(^|\.)msss\.com$/i,
+    rule: { source_id: 'msss', defaultKind: 'vendor-official', defaultLanguage: 'en' },
+  },
+  {
+    match: /(^|\.)almaobservatory\.org$/i,
+    rule: { source_id: 'alma', defaultKind: 'mission-microsite', defaultLanguage: 'en' },
+  },
+  {
+    match: /(^|\.)keckobservatory\.org$/i,
+    rule: {
+      source_id: 'keck-observatory',
+      defaultKind: 'mission-microsite',
+      defaultLanguage: 'en',
+    },
+  },
+  {
+    match: /(^|\.)eventhorizontelescope\.org$/i,
+    rule: { source_id: 'eht', defaultKind: 'mission-microsite', defaultLanguage: 'en' },
+  },
+  {
+    match: /(^|\.)breakthroughinitiatives\.org$/i,
+    rule: {
+      source_id: 'breakthrough-initiatives',
+      defaultKind: 'mission-microsite',
+      defaultLanguage: 'en',
+    },
+  },
+  {
+    match: /(^|\.)lco\.global$/i,
+    rule: { source_id: 'lco', defaultKind: 'educational', defaultLanguage: 'en' },
+  },
+  {
+    match: /(^|\.)lpi\.usra\.edu$/i,
+    rule: { source_id: 'lpi', defaultKind: 'educational', defaultLanguage: 'en' },
+  },
+  {
+    match: /(^|\.)minorplanetcenter\.net$/i,
+    rule: { source_id: 'minor-planet-center', defaultKind: 'educational', defaultLanguage: 'en' },
+  },
+  {
+    match: /(^|\.)nrao\.edu$/i,
+    rule: { source_id: 'nrao', defaultKind: 'educational', defaultLanguage: 'en' },
+  },
+  {
+    match: /(^|\.)its\.caltech\.edu$/i,
+    rule: { source_id: 'caltech-thorne', defaultKind: 'educational', defaultLanguage: 'en' },
+  },
+  {
+    match: /(^|\.)astro\.umd\.edu$/i,
+    rule: { source_id: 'umd-astronomy', defaultKind: 'educational', defaultLanguage: 'en' },
+  },
+  {
+    match: /(^|\.)home\.cern$/i,
+    rule: { source_id: 'cern', defaultKind: 'educational', defaultLanguage: 'en' },
+  },
+  {
+    match: /(^|\.)nobelprize\.org$/i,
+    rule: { source_id: 'nobel-prize', defaultKind: 'educational', defaultLanguage: 'en' },
+  },
+  {
+    match: /(^|\.)nss\.org$/i,
+    rule: { source_id: 'nss', defaultKind: 'educational', defaultLanguage: 'en' },
+  },
+  {
+    match: /(^|\.)bis-space\.com$/i,
+    rule: { source_id: 'bis', defaultKind: 'educational', defaultLanguage: 'en' },
+  },
+  {
+    match: /(^|\.)ibiblio\.org$/i,
+    rule: { source_id: 'ibiblio', defaultKind: 'educational', defaultLanguage: 'en' },
+  },
+  {
+    match: /(^|\.)loc\.gov$/i,
+    rule: { source_id: 'library-of-congress', defaultKind: 'educational', defaultLanguage: 'en' },
+  },
+  {
+    match: /^(www\.)?google\.com$/i,
+    rule: { source_id: 'google-books', defaultKind: 'community', defaultLanguage: 'en' },
+  },
+  {
+    match: /(^|\.)gctc\.ru$/i,
+    rule: { source_id: 'gctc', defaultKind: 'agency-official', defaultLanguage: 'ru' },
+  },
+  {
+    match: /(^|\.)data\.linz\.govt\.nz$/i,
+    rule: { source_id: 'linz', defaultKind: 'agency-official', defaultLanguage: 'en' },
+  },
+  {
+    match: /(^|\.)energy\.gov$/i,
+    rule: { source_id: 'us-doe', defaultKind: 'agency-official', defaultLanguage: 'en' },
+  },
+  {
+    match: /(^|\.)fcc\.gov$/i,
+    rule: { source_id: 'fcc', defaultKind: 'agency-official', defaultLanguage: 'en' },
+  },
+  {
+    match: /(^|\.)iadc-home\.org$/i,
+    rule: { source_id: 'iadc', defaultKind: 'agency-official', defaultLanguage: 'en' },
+  },
+  {
+    match: /(^|\.)rfc-editor\.org$/i,
+    rule: { source_id: 'rfc-editor', defaultKind: 'science-publisher', defaultLanguage: 'en' },
+  },
+  {
+    match: /(^|\.)researchgate\.net$/i,
+    rule: { source_id: 'researchgate', defaultKind: 'community', defaultLanguage: 'en' },
+  },
+  {
+    match: /(^|\.)iflscience\.com$/i,
+    rule: { source_id: 'iflscience', defaultKind: 'community', defaultLanguage: 'en' },
+  },
+  {
+    match: /(^|\.)phys\.org$/i,
+    rule: { source_id: 'phys-org', defaultKind: 'community', defaultLanguage: 'en' },
+  },
+  {
+    match: /(^|\.)youtube\.com$/i,
+    rule: { source_id: 'youtube', defaultKind: 'community', defaultLanguage: 'en' },
+  },
 ];
 
 function classifyHost(url: string): HostRule {
@@ -884,6 +1024,62 @@ function collectFromI18nMissions(): RawLink[] {
           source_file: file,
         });
       }
+    }
+  }
+  return out;
+}
+
+/**
+ * /science article links: static/data/science/<tab>/<id>.json, `links: [{l,u,t}]`, shown on
+ * /science/<tab>/<id>. The `_index.json` lists (glossary, reading-list, watch-list) carry none.
+ * src/lib/link-provenance-coverage.test.ts holds the same entity ids.
+ */
+function collectFromScience(): RawLink[] {
+  const out: RawLink[] = [];
+  const root = join(DATA_ROOT, 'science');
+  for (const tab of listDir(root).filter((d) => isDir(join(root, d)))) {
+    for (const f of listDir(join(root, tab))) {
+      if (!f.endsWith('.json') || f.startsWith('_')) continue;
+      const fullPath = join(root, tab, f);
+      const j = JSON.parse(readFileSync(fullPath, 'utf8')) as unknown;
+      if (!isObj(j) || typeof j.id !== 'string' || typeof j.tab !== 'string') continue;
+      for (const ln of asArray(j.links)) {
+        if (!isObj(ln) || typeof ln.u !== 'string') continue;
+        out.push({
+          url: ln.u,
+          label: String(ln.l ?? ln.u),
+          rawT: ln.t,
+          entity_id: `${j.tab}/${j.id}`,
+          category: 'science',
+          route: `/science/${j.tab}/${j.id}`,
+          source_file: fullPath,
+        });
+      }
+    }
+  }
+  return out;
+}
+
+/** Essay source lists: static/data/essays/<slug>.json, `sources: [{title,url}]`, on /essays/<slug>. */
+function collectFromEssays(): RawLink[] {
+  const out: RawLink[] = [];
+  const root = join(DATA_ROOT, 'essays');
+  for (const f of listDir(root)) {
+    if (!f.endsWith('.json') || f === 'index.json') continue;
+    const fullPath = join(root, f);
+    const j = JSON.parse(readFileSync(fullPath, 'utf8')) as unknown;
+    if (!isObj(j) || typeof j.slug !== 'string' || j.status !== 'published') continue;
+    for (const s of asArray(j.sources)) {
+      if (!isObj(s) || typeof s.url !== 'string') continue;
+      out.push({
+        url: s.url,
+        label: String(s.title ?? s.url),
+        rawT: 'core',
+        entity_id: j.slug,
+        category: 'essay',
+        route: `/essays/${j.slug}`,
+        source_file: fullPath,
+      });
     }
   }
   return out;
@@ -1285,6 +1481,8 @@ async function main(): Promise<void> {
       label: 'i18n/en-US/universe/structures/*.json',
       run: () => collectFromI18nPerIdDir('universe/structures', 'structure', '/explore'),
     },
+    { label: 'science/<tab>/*.json (/science articles)', run: () => collectFromScience() },
+    { label: 'essays/*.json (/essays sources)', run: () => collectFromEssays() },
   ];
   const raw: RawLink[] = [];
   for (const { label, run } of collectors) {

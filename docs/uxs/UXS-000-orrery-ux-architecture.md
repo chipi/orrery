@@ -127,7 +127,7 @@ Nothing below is a UXD. Each moves to one when the operator answers.
 | D6 | Launch camera: the operator shares example shots first                                                         |
 | D7 | Missions era filter designed with Higgsfield (paid) or in code                                                 |
 
-**Questions for the operator** — plan lines 402–414 (Q1 and Q2 are answered: UXD-001, UXD-002):
+**Questions for the operator** — plan lines 402–414 (Q1 and Q2 are answered: UXD-001, UXD-002; Q10 is answered: UXD-041):
 
 | Id  | Question                                                                                     |
 | --- | -------------------------------------------------------------------------------------------- |
@@ -138,7 +138,6 @@ Nothing below is a UXD. Each moves to one when the operator answers.
 | Q7  | Credits and colophon length: every section collapsed with its count, or "first N + show all"? |
 | Q8  | Moon traverses: line style only, or the Mars extras (patches, photos, stops)?                |
 | Q9  | "Launcher sketches": the launchers inside the 198 cutaways, or the exploded launcher art?    |
-| Q10 | Library: which "JPL planetary models", and which landing and rover research items?           |
 
 **Clarified from screenshots, fix described, no separate operator go recorded** (plan lines 417–425):
 MW3 (Sagittarius A\* panel gets the EHT 2022 image as its hero; the lensing render becomes an

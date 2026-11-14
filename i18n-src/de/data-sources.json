@@ -26,5 +26,11 @@
   "open-cluster-catalogues": "Entfernungen der Messier-Sternhaufen und Haufennebel aus Gaia-Daten: Hunt & Reffert 2023, mit Cantat-Gaudin et al. 2020 als Ersatz und als Alternative in der Anmerkung.",
   "globular-cluster-catalogues": "Entfernungen der Kugelsternhaufen nach Baumgardt & Vasiliev 2021 und ihre Gesamthelligkeiten in V aus Harris’ Katalog (seine eigene Entfernung steht in der Anmerkung).",
   "cosmicflows-4": "Entfernungen der Messier- und Galerie-Galaxien nach Cosmicflows-4.",
-  "mcconnachie-2012": "Entfernungen der Galaxien der Lokalen Gruppe sowie der Haufen und Nebel in den Magellanschen Wolken und in M33 nach McConnachie 2012."
+  "mcconnachie-2012": "Entfernungen der Galaxien der Lokalen Gruppe sowie der Haufen und Nebel in den Magellanschen Wolken und in M33 nach McConnachie 2012.",
+  "jpl-keplerian-elements": "Die genäherten Keplerschen Bahnelemente des JPL für die Positionen der Planeten (Standish). Das Physik-Labor rechnet mit diesen Elementen, und ein Test sichert, dass das Planetenmodell hinter den Missionsbahnen höchstens 0,6° davon abweicht.",
+  "jpl-planetary-parameters": "Die JPL-Tabelle der physikalischen Parameter der Planeten (Größen, Massen, Rotation und Oberflächenwerte), in den Wissenschaftsartikeln für die Planetendaten zitiert.",
+  "jpl-satellite-parameters": "Die JPL-Bahnelemente und physikalischen Parameter der Planetenmonde, in den Wissenschaftsartikeln für Mondbahnen, Mondgrößen und die Werte der Hill-Sphäre zitiert.",
+  "lroc-nac-traverses": "Die Fahrspuren, die das LRO-Kamerateam aus Bildern der Narrow Angle Camera kartiert hat: Apollo 15 und 16, Lunokhod 1 und 2 sowie Yutu-2. Orrery vereinfacht sie und zeichnet sie in die Mond-Oberflächenansicht.",
+  "usgs-apollo17-traverse": "Der vom USGS Astrogeology kartierte Fahrweg des Mondautos von Apollo 17 (Haase et al. 2019), an das LROC-Orthomosaik des Tals Taurus-Littrow gebunden und mit seinen Stationen in der Mond-Oberflächenansicht gezeichnet.",
+  "hirise-zhurong-traverse": "Die Radspuren des chinesischen Rovers Zhurong, von der HiRISE-Kamera des Mars Reconnaissance Orbiter gesehen (NASA/JPL/University of Arizona). Orrery hat sie zur Route auf der Mars-Oberflächenansicht nachgezeichnet, auf etwa 20 m genau."
 }

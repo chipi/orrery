@@ -26,5 +26,11 @@
   "open-cluster-catalogues": "梅西耶星团和星团星云的距离，基于 Gaia 数据：以 Hunt & Reffert 2023 为主，Cantat-Gaudin et al. 2020 作为后备，并在注释中列为替代值。",
   "globular-cluster-catalogues": "球状星团的距离取自 Baumgardt & Vasiliev 2021，总V星等取自哈里斯星表（其自身的距离保留在注释中）。",
   "cosmicflows-4": "梅西耶星系和图库星系的距离取自 Cosmicflows-4。",
-  "mcconnachie-2012": "本星系群星系的距离，以及麦哲伦云和M33内星团与星云的距离，取自 McConnachie 2012。"
+  "mcconnachie-2012": "本星系群星系的距离，以及麦哲伦云和M33内星团与星云的距离，取自 McConnachie 2012。",
+  "jpl-keplerian-elements": "JPL 用于行星位置的近似开普勒根数（Standish）。物理实验室依据这些根数计算，并有测试确保任务轨迹所用的行星模型与其偏差不超过 0.6°。",
+  "jpl-planetary-parameters": "JPL 的行星物理参数表（大小、质量、自转与表面数值），在科学文章的行星统计数据中被引用。",
+  "jpl-satellite-parameters": "JPL 的行星卫星轨道根数与物理参数，在科学文章中被引用，用于卫星的轨道和大小以及希尔球数值。",
+  "lroc-nac-traverses": "LRO 相机团队根据窄角相机（NAC）影像绘出的路线：Apollo 15 和 16、Lunokhod 1 和 2 以及玉兔二号。Orrery 将其简化后绘制在月面视图中。",
+  "usgs-apollo17-traverse": "USGS Astrogeology 绘制的 Apollo 17 月球车行驶路线（Haase 等，2019），与金牛—利特罗山谷的 LROC 正射镶嵌图配准，并连同各停靠点绘制在月面视图中。",
+  "hirise-zhurong-traverse": "HiRISE 相机（火星勘测轨道飞行器，NASA/JPL/亚利桑那大学）拍到的祝融号火星车车轮痕迹。Orrery 沿着这些痕迹描出火星表面视图中的路线，精度约 20 米。"
 }

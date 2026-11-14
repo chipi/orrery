@@ -1,22 +1,6 @@
 import dataSources from '$data/data-sources.json';
 import type { PageServerLoad } from './$types';
-
-/** The astrophysics catalogues and papers behind the star, deep-sky, black-hole and Local
- *  Group values (#658), in reading order; names and links come from data-sources.json. */
-const ASTRO_SOURCE_IDS = [
-  'hyg-v41',
-  'gaia-dpac',
-  'nasa-exoplanet-archive',
-  'cds-simbad-vizier',
-  'ned',
-  'openngc',
-  'open-cluster-catalogues',
-  'globular-cluster-catalogues',
-  'cosmicflows-4',
-  'mcconnachie-2012',
-  'black-hole-parameters',
-  'gravity-eht-galactic-centre',
-];
+import { ASTRO_SOURCE_IDS, PLANETARY_SOURCE_IDS, SURFACE_SOURCE_IDS } from './source-ids';
 
 export const load: PageServerLoad = () => {
   const byId = new Map(dataSources.entries.map((e) => [e.id, e]));
@@ -27,7 +11,7 @@ export const load: PageServerLoad = () => {
   };
   return {
     astroSources: ASTRO_SOURCE_IDS.map(source),
-    // JPL's approximate Keplerian elements: the planet positions (ADR-095, the Lab ephemeris).
-    jpl: source('jpl-iau-constants'),
+    planetarySources: PLANETARY_SOURCE_IDS.map(source),
+    surfaceSources: SURFACE_SOURCE_IDS.map(source),
   };
 };

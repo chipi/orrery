@@ -389,7 +389,7 @@ Briefs `docs/wip/2026-11-14-slice-F1-brief.md` … `F4-brief.md` (87792e19c6f; F
 | Slice | Points | Change | Done when |
 |---|---|---|---|
 | F1 Credits and colophon | CR2, CO1, CO2, CO3 | one collapse approach (Q7) for both; colophon totals line from `original-work.json` totals; cutaways split into spacecraft and launchers (Q9) | shots; TOC anchors open their section |
-| F2 Library | LI2, LI3 | after Q10 | — |
+| F2 Library | LI2, LI3 | UXD-041 (built 2026-11-14) | — |
 | F3 Home | H1, H2, H3 | hero capped so the intro and actions are above the fold at 1440x900 and 1366x768; Lab card in Learn (needs a glyph) | shots at 1366x768, 1440x900, 390x844 — **built 2026-11-14 ([UXD-039](../uxs/decisions/UXD-039-home-two-column-hero-one-glyph-component-and-type-scale.md)); in review** |
 
 ## G. Plan, Fly, Launch
@@ -422,7 +422,7 @@ GH1 — README and docs refreshed with text and screenshots of the finished UI.
 - Q7 Credits/colophon length: every section collapsed with its count, or "first N + show all"?
 - Q8 Moon traverses: line style only, or the Mars extras (patches, photos, stops)? — **answered 2026-11-13: line style only** (D4 brief decision 10a).
 - Q9 "Launcher sketches": the launchers inside the 198 cutaways, or the exploded launcher art?
-- Q10 Library: which "JPL planetary models", and which landing/rover research items?
+- Q10 Library: which "JPL planetary models", and which landing/rover research items? **Answered 2026-11-14: decisions 29a, 30a (UXD-041).**
 - Need a screenshot or URL: G5/G6 (which gallery page; the bottom line), O6 ("light minute / light year" — the regime data has neither), W5 (brackets — both bodies draw them), SN2 ("the zodiac chart" — none exists), MW3 (the Sag A* image), W6 (which sites show graphics).
 - D1–D7 above.
 

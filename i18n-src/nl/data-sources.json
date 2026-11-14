@@ -26,5 +26,11 @@
   "open-cluster-catalogues": "Afstanden van de Messier-sterrenclusters en clusternevels uit Gaia: Hunt & Reffert 2023, met Cantat-Gaudin et al. 2020 als terugval en als alternatief in de noot.",
   "globular-cluster-catalogues": "Afstanden van de bolhopen volgens Baumgardt & Vasiliev 2021 en hun totale V-magnitudes uit Harris’ catalogus (zijn eigen afstand staat in de noot).",
   "cosmicflows-4": "Afstanden van de Messier- en galerijsterrenstelsels volgens Cosmicflows-4.",
-  "mcconnachie-2012": "Afstanden van de sterrenstelsels van de Lokale Groep, en van de clusters en nevels in de Magelhaense wolken en in M33, volgens McConnachie 2012."
+  "mcconnachie-2012": "Afstanden van de sterrenstelsels van de Lokale Groep, en van de clusters en nevels in de Magelhaense wolken en in M33, volgens McConnachie 2012.",
+  "jpl-keplerian-elements": "De benaderde kepleriaanse elementen van JPL voor de posities van de planeten (Standish). Het Natuurkundelab rekent met deze elementen, en een test bewaakt dat het planeetmodel achter de missiebanen er hooguit 0,6° van afwijkt.",
+  "jpl-planetary-parameters": "De JPL-tabel met fysische parameters van de planeten (afmetingen, massa’s, rotatie en oppervlaktewaarden), aangehaald voor de planeetstatistieken in de wetenschapsartikelen.",
+  "jpl-satellite-parameters": "De elementen en fysische parameters van de planeetmanen van JPL, aangehaald voor de banen en afmetingen van manen in de wetenschapsartikelen en voor de waarden van de Hill-sfeer.",
+  "lroc-nac-traverses": "De sporen die het camerateam van LRO uit beelden van de Narrow Angle Camera in kaart bracht: Apollo 15 en 16, Lunokhod 1 en 2 en Yutu-2. Orrery vereenvoudigt ze en tekent ze op het Maan-oppervlakteaanzicht.",
+  "usgs-apollo17-traverse": "Het door USGS Astrogeology in kaart gebrachte traject van de maanwagen van Apollo 17 (Haase et al. 2019), gekoppeld aan het LROC-orthomozaïek van de Taurus-Littrow-vallei en met zijn stations getekend op het Maan-oppervlakteaanzicht.",
+  "hirise-zhurong-traverse": "De wielsporen van de Chinese rover Zhurong, gezien door de HiRISE-camera van de Mars Reconnaissance Orbiter (NASA/JPL/University of Arizona). Orrery volgde ze om de route op het Mars-oppervlakteaanzicht te tekenen, tot op ongeveer 20 m nauwkeurig."
 }

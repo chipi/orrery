@@ -38,12 +38,25 @@
     {
       "name": "Gaia's map",
       "year": 2016,
-      "note": "Gaia begins releasing the most precise three-dimensional map of the Milky Way ever made — the positions, distances and motions of nearly two billion stars"
+      "note": "Gaia begins releasing the most precise three-dimensional map of the Milky Way ever made — the positions, distances and motions of nearly two billion stars",
+      "link": {
+        "ref": "fleet",
+        "id": "gaia"
+      }
     },
     {
       "name": "Euclid opens its eyes",
       "year": 2023,
-      "note": "a telescope built to survey a third of the sky and map how dark matter and dark energy have shaped the universe"
+      "note": "a telescope built to survey a third of the sky and map how dark matter and dark energy have shaped the universe",
+      "link": {
+        "ref": "fleet",
+        "id": "euclid"
+      }
+    },
+    {
+      "linked_id": "ariane-5",
+      "ref": "fleet",
+      "role": "launcher"
     }
   ],
   "related_programs": [

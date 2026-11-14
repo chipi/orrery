@@ -25,22 +25,26 @@
     {
       "name": "First 60 satellites",
       "year": 2019,
-      "note": "a single Falcon 9 deploys 60 flat-packed satellites at once — the operational constellation begins, and the night sky gets its first Starlink 'train'"
+      "note": "a single Falcon 9 deploys 60 flat-packed satellites at once — the operational constellation begins, and the night sky gets its first Starlink 'train'",
+      "milestone": true
     },
     {
       "name": "Service goes live",
       "year": 2021,
-      "note": "public beta opens; a constellation becomes a consumer internet service reaching places fibre and cell towers never did"
+      "note": "public beta opens; a constellation becomes a consumer internet service reaching places fibre and cell towers never did",
+      "milestone": true
     },
     {
       "name": "Ukraine",
       "year": 2022,
-      "note": "Starlink terminals keep a country online through a war — and make one company's constellation a factor in national security overnight"
+      "note": "Starlink terminals keep a country online through a war — and make one company's constellation a factor in national security overnight",
+      "milestone": true
     },
     {
       "name": "Direct to cell",
       "year": 2024,
-      "note": "satellites begin connecting ordinary phones directly, with no terminal — the constellation starts to become a global cell tower"
+      "note": "satellites begin connecting ordinary phones directly, with no terminal — the constellation starts to become a global cell tower",
+      "milestone": true
     }
   ],
   "related_programs": [

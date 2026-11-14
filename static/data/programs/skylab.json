@@ -14,7 +14,9 @@
     { "linked_id": "skylab-2", "ref": "mission", "year": 1973 },
     { "linked_id": "skylab-3", "ref": "mission", "year": 1973 },
     { "linked_id": "skylab-4", "ref": "mission", "year": 1973 },
-    { "linked_id": "saturn-v", "ref": "fleet", "role": "launcher" }
+    { "linked_id": "saturn-v", "ref": "fleet", "role": "launcher" },
+    { "linked_id": "saturn-ib", "ref": "fleet", "role": "launcher" },
+    { "linked_id": "apollo-csm-block-ii", "ref": "fleet", "role": "crew spacecraft" }
   ],
   "related_programs": ["apollo", "salyut", "iss"],
   "see_also": [

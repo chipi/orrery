@@ -20,19 +20,25 @@
       "note": "the first spacecraft to land successfully on Mars and operate — an orbiter to map from above and a lander to work on the surface"
     },
     {
-      "name": "Viking 1 lands",
+      "linked_id": "viking1",
+      "ref": "mission",
       "year": 1976,
       "note": "on 20 July 1976 the Viking 1 lander touched down in Chryse Planitia and returned the first clear pictures from the surface of Mars"
     },
     {
       "name": "Viking 2",
       "year": 1976,
-      "note": "a second orbiter-and-lander pair, set down thousands of kilometres away in Utopia Planitia six weeks later"
+      "note": "a second orbiter-and-lander pair, set down thousands of kilometres away in Utopia Planitia six weeks later",
+      "link": {
+        "ref": "fleet",
+        "id": "viking2-lander"
+      }
     },
     {
       "name": "The biology experiments",
       "year": 1976,
-      "note": "each lander ran experiments designed to detect life in the Martian soil; the results were ambiguous, and remain argued over to this day"
+      "note": "each lander ran experiments designed to detect life in the Martian soil; the results were ambiguous, and remain argued over to this day",
+      "milestone": true
     }
   ],
   "related_programs": [

@@ -14,17 +14,20 @@
     {
       "name": "Announced",
       "year": 2022,
-      "note": "Russia declares it will leave the ISS partnership and build its own national station — a return to the go-it-alone model of Salyut and Mir"
+      "note": "Russia declares it will leave the ISS partnership and build its own national station — a return to the go-it-alone model of Salyut and Mir",
+      "milestone": true
     },
     {
       "name": "First module",
       "year": 2028,
-      "note": "the planned launch of the first UUM module of the Russian Orbital Station (ROS); the full station is expected in the late 2020s"
+      "note": "the planned launch of the first UUM module of the Russian Orbital Station (ROS); the full station is expected in the late 2020s",
+      "milestone": true
     },
     {
       "name": "ISS withdrawal",
       "year": 2028,
-      "note": "Russia's stated timeline for ending its participation in the ISS and shifting its cosmonauts to its own station"
+      "note": "Russia's stated timeline for ending its participation in the ISS and shifting its cosmonauts to its own station",
+      "milestone": true
     }
   ],
   "related_programs": [

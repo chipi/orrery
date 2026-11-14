@@ -15,32 +15,38 @@
     {
       "name": "Commercial LEO Destinations",
       "year": 2021,
-      "note": "NASA funds several companies to build private stations, planning to become a customer of orbital outposts rather than the operator of one"
+      "note": "NASA funds several companies to build private stations, planning to become a customer of orbital outposts rather than the operator of one",
+      "milestone": true
     },
     {
       "name": "Vast Haven-1",
       "year": 2027,
-      "note": "a single-module commercial free-flyer by Vast — among the earliest commercial stations expected to reach orbit"
+      "note": "a single-module commercial free-flyer by Vast — among the earliest commercial stations expected to reach orbit",
+      "milestone": true
     },
     {
       "name": "Axiom Station",
       "year": 2027,
-      "note": "Axiom Space assembles as an independent free-flyer; its first module docks briefly to the ISS then detaches to join later modules in free flight — plan restructured in Dec 2024"
+      "note": "Axiom Space assembles as an independent free-flyer; its first module docks briefly to the ISS then detaches to join later modules in free flight — plan restructured in Dec 2024",
+      "milestone": true
     },
     {
       "name": "Orbital Reef",
       "year": 2027,
-      "note": "a Blue Origin and Sierra Space venture pitched as a 'mixed-use business park' in orbit — research, manufacturing, and tourism"
+      "note": "a Blue Origin and Sierra Space venture pitched as a 'mixed-use business park' in orbit — research, manufacturing, and tourism",
+      "milestone": true
     },
     {
       "name": "Starlab",
       "year": 2029,
-      "note": "a Voyager and Airbus station designed as a single large free-flyer, aimed at continuous science after the ISS"
+      "note": "a Voyager and Airbus station designed as a single large free-flyer, aimed at continuous science after the ISS",
+      "milestone": true
     },
     {
       "name": "ISS retirement",
       "year": 2030,
-      "note": "the ISS is to be deorbited around 2030; the commercial stations are meant to be flying before it goes, so human presence in low orbit is never interrupted"
+      "note": "the ISS is to be deorbited around 2030; the commercial stations are meant to be flying before it goes, so human presence in low orbit is never interrupted",
+      "milestone": true
     }
   ],
   "related_programs": [

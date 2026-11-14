@@ -33,6 +33,26 @@
       "ref": "mission",
       "year": 2023,
       "note": "the return: Vikram lands softly near the lunar south pole — the first spacecraft ever to do so, making India the fourth nation to land on the Moon"
+    },
+    {
+      "linked_id": "pslv-xl",
+      "ref": "fleet",
+      "role": "launcher"
+    },
+    {
+      "linked_id": "lvm3",
+      "ref": "fleet",
+      "role": "launcher"
+    },
+    {
+      "linked_id": "vikram-cy3",
+      "ref": "fleet",
+      "role": "lander"
+    },
+    {
+      "linked_id": "pragyan",
+      "ref": "fleet",
+      "role": "rover"
     }
   ],
   "related_programs": [

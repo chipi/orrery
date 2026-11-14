@@ -22,12 +22,19 @@
     {
       "name": "Pluto, up close",
       "year": 2015,
-      "note": "on 14 July 2015 it flew past Pluto, revealing a young, active world of nitrogen glaciers and water-ice mountains where scientists had expected a dead ball of rock"
+      "note": "on 14 July 2015 it flew past Pluto, revealing a young, active world of nitrogen glaciers and water-ice mountains where scientists had expected a dead ball of rock",
+      "milestone": true
     },
     {
       "name": "Arrokoth",
       "year": 2019,
-      "note": "on New Year's Day 2019 it flew past Arrokoth, a tiny two-lobed body a billion and a half kilometres beyond Pluto — the most distant object ever explored up close"
+      "note": "on New Year's Day 2019 it flew past Arrokoth, a tiny two-lobed body a billion and a half kilometres beyond Pluto — the most distant object ever explored up close",
+      "milestone": true
+    },
+    {
+      "linked_id": "atlas-v",
+      "ref": "fleet",
+      "role": "launcher"
     }
   ],
   "related_programs": [

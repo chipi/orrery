@@ -55,6 +55,7 @@ export const load: PageLoad = async ({ params, fetch, data }) => {
     badges,
     thumbs: data.thumbs,
     heroes: data.heroes,
+    fleetNames: data.fleetNames,
     siteCards: data.siteCards,
     related: data.related,
   };

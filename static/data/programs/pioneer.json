@@ -29,12 +29,28 @@
     {
       "name": "The Pioneer plaque",
       "year": 1972,
-      "note": "a small gold-anodised plaque on each craft showing a man, a woman, and the Earth's location — the first physical message from humanity aimed at the stars"
+      "note": "a small gold-anodised plaque on each craft showing a man, a woman, and the Earth's location — the first physical message from humanity aimed at the stars",
+      "milestone": true
     },
     {
       "name": "Pioneer Venus",
       "year": 1978,
       "note": "a separate pair of Pioneers reached Venus in 1978 — an orbiter that radar-mapped the planet through its clouds, and probes that plunged into its crushing atmosphere"
+    },
+    {
+      "linked_id": "pioneer-10",
+      "ref": "fleet",
+      "role": "spacecraft"
+    },
+    {
+      "linked_id": "pioneer-11",
+      "ref": "fleet",
+      "role": "spacecraft"
+    },
+    {
+      "linked_id": "atlas-slv-3d",
+      "ref": "fleet",
+      "role": "launcher"
     }
   ],
   "related_programs": [

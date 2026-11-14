@@ -61,13 +61,25 @@
     },
     "roster": {
       "type": "array",
-      "description": "The campaign's missions + hardware. Each item is EITHER linked (linked_id + ref → an existing orrery entry, clickable) OR context-only (name + year → named but not individually modeled). The curated flagship set is NOT expanded to satisfy a roster; context items exist precisely so a program can tell its whole arc.",
+      "description": "The campaign's missions + hardware. Each item is EITHER linked (linked_id + ref → an existing orrery entry, clickable) OR context-only (name + year → named but not individually modeled); a context row about a modelled craft or station module carries `link`, and a context row that is an episode, phase, decision or plan carries `milestone: true` (UXD-033). A row that names an existing entry must link to it. The curated flagship set is NOT expanded to satisfy a roster; context items exist precisely so a program can tell its whole arc. (Documentation: no script reads this schema; src/lib/programs-roster.test.ts guards the data.)",
       "items": {
         "type": "object",
         "additionalProperties": false,
         "properties": {
           "linked_id": { "type": "string", "minLength": 1 },
-          "ref": { "type": "string", "enum": ["mission", "fleet"] },
+          "ref": { "type": "string", "enum": ["mission", "fleet", "module"] },
+          "link": {
+            "type": "object",
+            "description": "A name-only row about an existing craft or station module: opens it, keeps the row's year and note.",
+            "additionalProperties": false,
+            "required": ["ref", "id"],
+            "properties": {
+              "ref": { "type": "string", "enum": ["fleet", "module"] },
+              "id": { "type": "string", "minLength": 1 },
+              "station": { "type": "string", "enum": ["iss", "tiangong"], "description": "Required when ref is module: the station page that opens the module." }
+            }
+          },
+          "milestone": { "const": true, "description": "An episode, phase, decision or plan inside the program: drawn under Milestones, never linked." },
           "role": {
             "type": "string",
             "description": "Optional label for fleet members (launcher, spacecraft, suit, rover, launch-site, …) or a mission descriptor.",
@@ -77,7 +89,7 @@
           "year": { "type": "integer", "minimum": 1955, "maximum": 2100 },
           "note": { "type": "string", "description": "One-line context for a roster item (esp. context-only entries)." }
         },
-        "oneOf": [
+        "anyOf": [
           { "required": ["linked_id", "ref"] },
           { "required": ["name"] }
         ]

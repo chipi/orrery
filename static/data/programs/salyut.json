@@ -17,7 +17,9 @@
     { "linked_id": "salyut-4", "ref": "fleet", "role": "station", "year": 1974 },
     { "linked_id": "salyut-5", "ref": "fleet", "role": "station", "year": 1976 },
     { "linked_id": "salyut-6", "ref": "fleet", "role": "station", "year": 1977 },
-    { "linked_id": "salyut-7", "ref": "fleet", "role": "station", "year": 1982 }
+    { "linked_id": "salyut-7", "ref": "fleet", "role": "station", "year": 1982 },
+    { "linked_id": "soyuz", "ref": "fleet", "role": "launcher" },
+    { "linked_id": "soyuz-7k-ok", "ref": "fleet", "role": "spacecraft" }
   ],
   "related_programs": ["soyuz", "skylab", "mir"],
   "see_also": [

@@ -22,7 +22,11 @@
     {
       "name": "Compton Gamma Ray Observatory",
       "year": 1991,
-      "note": "the gamma-ray member of the original four — it mapped the most violent events in the universe until it was deliberately de-orbited in 2000"
+      "note": "the gamma-ray member of the original four — it mapped the most violent events in the universe until it was deliberately de-orbited in 2000",
+      "link": {
+        "ref": "fleet",
+        "id": "compton-gro"
+      }
     },
     {
       "linked_id": "chandra",

@@ -612,6 +612,7 @@ A new phase string never changes the box height; do not let a row wrap.
 | Hardware card | A link, 56px tall, `72px 1fr` grid, 4px padding, same border, radius and hover as the mini card. A rectangular 72×48 hero (4px radius, `object-fit: cover`), the name (14px, 600, accent, one line) over the role (11px label). Grid `minmax(260px, 1fr)`, 8px gap, one column at 480px and below. Replaces the round 28px thumb on this page only. |
 | Mission pane | `aside.detail`: meta and name one line with an ellipsis, blurb `min-height: 4.65em` and clamped at three lines. One height for every mission. |
 | Empty section | A section with no rows draws no label and no box. |
+| Milestones (UXD-033) | After Missions: the mission timeline look (rail, hollow dot, year, name in label colour, note) with no pane, no photo and no link. A context row that has a `link` (a craft or station module) is a mission-timeline row whose name is a link in accent colour, regular weight, underline on hover. |
 
 ---
 

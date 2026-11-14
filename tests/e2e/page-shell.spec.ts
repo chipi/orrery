@@ -29,6 +29,7 @@ const PAGES: Shell[] = [
   { path: '/sourcing', width: 760 },
   { path: '/programs' },
   { path: '/programs/apollo', width: 760 },
+  { path: '/programs/cassini', width: 760 },
   { path: '/privacy', width: 760 },
   { path: '/live' },
   // The essays index title is drawn over the banner illustration (allow-listed).

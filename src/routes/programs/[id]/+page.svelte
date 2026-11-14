@@ -17,8 +17,10 @@
   import {
     deeperLinks,
     hardwareRows,
+    milestoneRows,
     missionRows,
     programSections,
+    rowPath,
     surfaceSiteHref,
   } from '$lib/program-page';
   import { base } from '$app/paths';
@@ -95,12 +97,13 @@
   }
 
   function href(r: ProgramRosterItem): string | null {
-    if (!r.linked_id) return null;
-    if (r.ref === 'mission') return localHref(`/missions?id=${r.linked_id}&from=program:${p.id}`);
-    if (r.ref === 'fleet') return localHref(`/fleet?id=${r.linked_id}&from=program:${p.id}`);
-    if (r.ref === 'module') return localHref(`/${p.id}?module=${r.linked_id}`);
-    return null;
+    const path = rowPath(p.id, r);
+    return path ? localHref(path) : null;
   }
+
+  // The real (localised) name of a linked mission or craft; an id only when it could not be read.
+  const missionName = (id: string) => data.missionDetails[id]?.name ?? pretty(id);
+  const fleetName = (id: string) => data.fleetNames[id] ?? pretty(id);
 
   let sections = $derived([
     { label: m.program_section_land(), blocks: p.the_land },
@@ -113,6 +116,7 @@
 
   // Chronological; entries without a date (future/TBD) sort to the bottom.
   let missions = $derived(missionRows(p.roster));
+  let milestones = $derived(milestoneRows(p.roster));
   // A section with no rows draws nothing, label included.
   let has = $derived(new Set(programSections(p)));
   let deeper = $derived(deeperLinks(p.see_also));
@@ -278,8 +282,11 @@
                   <button
                     type="button"
                     class="t-name ui-hit"
-                    onclick={() => (selected = r.linked_id ?? null)}>{pretty(r.linked_id)}</button
+                    onclick={() => (selected = r.linked_id ?? null)}
+                    >{missionName(r.linked_id)}</button
                   >
+                {:else if href(r)}
+                  <a class="t-name t-link ui-hit" href={href(r)}>{r.name}</a>
                 {:else}
                   <span class="t-name t-ctx">{r.name}</span>
                 {/if}
@@ -309,6 +316,24 @@
           </aside>
         {/if}
       </div>
+    </section>
+  {/if}
+
+  {#if has.has('milestones')}
+    <section class="milestones">
+      <h2 class="page-section-label page-section-label--rule">{m.program_section_milestones()}</h2>
+      <ol class="timeline">
+        {#each milestones as r, i (i)}
+          <li class="context">
+            <span class="t-year">{r.year ?? ''}</span>
+            <span class="t-dot"></span>
+            <span class="t-body">
+              <span class="t-name t-ctx">{r.name}</span>
+              {#if r.note}<span class="t-note">{r.note}</span>{/if}
+            </span>
+          </li>
+        {/each}
+      </ol>
     </section>
   {/if}
 
@@ -351,7 +376,7 @@
                 <span class="hw-hero hw-none" aria-hidden="true"></span>
               {/if}
               <span class="hw-body">
-                <span class="hw-name">{pretty(r.linked_id ?? '')}</span>
+                <span class="hw-name">{fleetName(r.linked_id ?? '')}</span>
                 {#if r.role}<span class="role">{r.role}</span>{/if}
               </span>
             </a>
@@ -568,10 +593,15 @@
   .mod-timeline {
     margin-bottom: 16px;
   }
-  a.t-mod {
+  a.t-mod,
+  .timeline a.t-link {
     text-decoration: none;
   }
-  a.t-mod:hover {
+  .timeline a.t-link {
+    font-weight: 400;
+  }
+  a.t-mod:hover,
+  .timeline a.t-link:hover {
     text-decoration: underline;
   }
   .assembly-foot {

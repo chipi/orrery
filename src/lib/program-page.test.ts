@@ -3,9 +3,11 @@ import { existsSync, readFileSync } from 'node:fs';
 import {
   deeperLinks,
   hardwareRows,
+  milestoneRows,
   missionRows,
   programSections,
   reuseHeroPath,
+  rowPath,
   surfaceSiteHref,
 } from './program-page';
 import { fleetHeroOf, heroOfThumb, siteHeroOf } from './entity-thumb';
@@ -30,7 +32,7 @@ describe('programSections (E1: a section with no rows draws nothing)', () => {
   });
 
   it('keeps the page order on every program', () => {
-    const order = ['missions', 'surface', 'hardware', 'related', 'deeper', 'sources'];
+    const order = ['missions', 'milestones', 'surface', 'hardware', 'related', 'deeper', 'sources'];
     for (const p of programs) {
       const got = programSections(p);
       expect(got, p.id).toEqual(order.filter((s) => got.includes(s as never)));
@@ -64,6 +66,55 @@ describe('programSections (E1: a section with no rows draws nothing)', () => {
     ]);
     expect(rows.map((r) => r.linked_id ?? r.name)).toEqual(['a', 'b', 'ctx']);
     expect(hardwareRows([{ ref: 'fleet', linked_id: 'f' }, { ref: 'mission' }])).toHaveLength(1);
+  });
+});
+
+describe('milestones and row links (E2)', () => {
+  it('splits milestone rows out of Missions, oldest first, and keeps them name-only', () => {
+    const roster = [
+      { name: 'Late', year: 2017, milestone: true as const },
+      { ref: 'mission' as const, linked_id: 'a', year: 2004 },
+      { name: 'Early', year: 2005, milestone: true as const },
+      { name: 'Flight', year: 2001 },
+    ];
+    expect(missionRows(roster).map((r) => r.linked_id ?? r.name)).toEqual(['Flight', 'a']);
+    expect(milestoneRows(roster).map((r) => r.name)).toEqual(['Early', 'Late']);
+  });
+
+  it('draws Milestones right after Missions, and alone when a program has no mission row', () => {
+    const base = { surface_sites: [], see_also: [], related_programs: [], links: [] };
+    expect(
+      programSections({
+        ...base,
+        roster: [
+          { ref: 'mission', linked_id: 'a' },
+          { name: 'M', milestone: true },
+        ],
+      }),
+    ).toEqual(['missions', 'milestones']);
+    expect(programSections({ ...base, roster: [{ name: 'M', milestone: true }] })).toEqual([
+      'milestones',
+    ]);
+  });
+
+  it('builds the path of a linked row, a craft link and a module link', () => {
+    expect(rowPath('apollo', { ref: 'mission', linked_id: 'apollo7' })).toBe(
+      '/missions?id=apollo7&from=program:apollo',
+    );
+    expect(rowPath('apollo', { ref: 'fleet', linked_id: 'saturn-v' })).toBe(
+      '/fleet?id=saturn-v&from=program:apollo',
+    );
+    expect(rowPath('space-shuttle', { name: 'C', link: { ref: 'fleet', id: 'columbia' } })).toBe(
+      '/fleet?id=columbia&from=program:space-shuttle',
+    );
+    expect(
+      rowPath('esa-human', {
+        name: 'Columbus',
+        link: { ref: 'module', id: 'columbus', station: 'iss' },
+      }),
+    ).toBe('/iss?module=columbus');
+    expect(rowPath('iss', { ref: 'module', linked_id: 'zarya' })).toBe('/iss?module=zarya');
+    expect(rowPath('cassini', { name: 'The Grand Finale', milestone: true })).toBeNull();
   });
 });
 

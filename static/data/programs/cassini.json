@@ -22,19 +22,27 @@
       "note": "spent thirteen years in orbit at Saturn — the only spacecraft ever to do so — mapping the rings, the moons, and the storms in detail no flyby could reach"
     },
     {
-      "name": "Huygens lands on Titan",
+      "linked_id": "huygens",
+      "ref": "mission",
       "year": 2005,
       "note": "the European Huygens probe parachuted onto Titan in January 2005 — the first and only landing anywhere in the outer solar system"
     },
     {
       "name": "The geysers of Enceladus",
       "year": 2005,
-      "note": "Cassini found jets of water ice erupting from the south pole of the tiny moon Enceladus, evidence of a global ocean beneath its ice — one of the most promising places to look for life"
+      "note": "Cassini found jets of water ice erupting from the south pole of the tiny moon Enceladus, evidence of a global ocean beneath its ice — one of the most promising places to look for life",
+      "milestone": true
     },
     {
       "name": "The Grand Finale",
       "year": 2017,
-      "note": "out of fuel, Cassini was flown between Saturn and its rings twenty-two times and then deliberately plunged into the planet, to be sure it could never contaminate the ocean moons"
+      "note": "out of fuel, Cassini was flown between Saturn and its rings twenty-two times and then deliberately plunged into the planet, to be sure it could never contaminate the ocean moons",
+      "milestone": true
+    },
+    {
+      "linked_id": "cassini",
+      "ref": "fleet",
+      "role": "Saturn orbiter"
     }
   ],
   "related_programs": [

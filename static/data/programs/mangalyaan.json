@@ -27,12 +27,19 @@
     {
       "name": "The cost",
       "year": 2014,
-      "note": "the whole mission cost about 74 million dollars — less than the Hollywood film Gravity, and a fraction of comparable Western Mars missions"
+      "note": "the whole mission cost about 74 million dollars — less than the Hollywood film Gravity, and a fraction of comparable Western Mars missions",
+      "milestone": true
     },
     {
       "name": "Eight years on station",
       "year": 2022,
-      "note": "designed for six months, the orbiter worked for roughly eight years before contact was finally lost — a small technology demonstrator that became a long-lived science mission"
+      "note": "designed for six months, the orbiter worked for roughly eight years before contact was finally lost — a small technology demonstrator that became a long-lived science mission",
+      "milestone": true
+    },
+    {
+      "linked_id": "pslv-xl",
+      "ref": "fleet",
+      "role": "launcher"
     }
   ],
   "related_programs": [

@@ -4,19 +4,40 @@
  */
 import type { ProgramBase, ProgramRosterItem, ProgramSeeAlso } from '$types/program';
 
-export type ProgramSection = 'missions' | 'surface' | 'hardware' | 'related' | 'deeper' | 'sources';
+export type ProgramSection =
+  'missions' | 'milestones' | 'surface' | 'hardware' | 'related' | 'deeper' | 'sources';
 
 type SectionInput = Pick<
   ProgramBase,
   'roster' | 'surface_sites' | 'see_also' | 'related_programs' | 'links'
 >;
 
-/** The timeline rows: linked missions and named context rows, undated ones last. */
+const byYear = (a: ProgramRosterItem, b: ProgramRosterItem) =>
+  (a.year ?? Infinity) - (b.year ?? Infinity);
+
+/** The timeline rows: linked missions and named context rows, undated ones last; no milestones. */
 export function missionRows(roster: ProgramRosterItem[]): ProgramRosterItem[] {
   return roster
-    .filter((r) => r.ref === 'mission' || (!r.ref && !!r.name))
-    .slice()
-    .sort((a, b) => (a.year ?? Infinity) - (b.year ?? Infinity));
+    .filter((r) => !r.milestone && (r.ref === 'mission' || (!r.ref && !!r.name)))
+    .sort(byYear);
+}
+
+/** The rows of the Milestones section: episodes, phases, decisions and plans, oldest first. */
+export const milestoneRows = (roster: ProgramRosterItem[]): ProgramRosterItem[] =>
+  roster.filter((r) => r.milestone).sort(byYear);
+
+/**
+ * Where a roster row opens, without the locale prefix, or null for a plain row. A linked row opens
+ * its mission, craft or module; a name-only row with a `link` opens that craft or module. A module
+ * row of a station program opens that station's page; a link names its station.
+ */
+export function rowPath(programId: string, r: ProgramRosterItem): string | null {
+  const ref = r.linked_id ? r.ref : r.link?.ref;
+  const id = r.linked_id ?? r.link?.id;
+  if (!ref || !id) return null;
+  if (ref === 'mission') return `/missions?id=${id}&from=program:${programId}`;
+  if (ref === 'fleet') return `/fleet?id=${id}&from=program:${programId}`;
+  return `/${r.link?.station ?? programId}?module=${id}`;
 }
 
 export const hardwareRows = (roster: ProgramRosterItem[]): ProgramRosterItem[] =>
@@ -33,6 +54,7 @@ export const deeperLinks = (seeAlso: ProgramSeeAlso[] | undefined): ProgramSeeAl
 export function programSections(p: SectionInput): ProgramSection[] {
   const out: ProgramSection[] = [];
   if (missionRows(p.roster).length) out.push('missions');
+  if (milestoneRows(p.roster).length) out.push('milestones');
   if (p.surface_sites?.length) out.push('surface');
   if (hardwareRows(p.roster).length) out.push('hardware');
   if (p.related_programs?.length) out.push('related');

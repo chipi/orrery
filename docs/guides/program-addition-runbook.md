@@ -27,9 +27,13 @@ Structured, non-translatable data. Schema: `static/data/schemas/program.schema.j
 
 ### 2 · Roster — link flagships, name context
 
-`roster[]` items are one of two shapes:
-- **Linked** (we model it): `{ ref: "mission" | "fleet", linked_id, role, note }` — clickable, drives the timeline + master-detail pane.
-- **Context** (we don't): `{ name, year, note }` — flat text, no link. This is how a program legitimately mentions missions outside the curated set (Apollo names Apollo 1/7/9 without modelling them).
+`roster[]` items have these shapes ([UXD-033](../uxs/decisions/UXD-033-program-roster-links-and-milestones.md)):
+- **Linked** (we model it): `{ ref: "mission" | "fleet" | "module", linked_id, role, note }` — a mission row is clickable and drives the timeline + master-detail pane; a fleet row is a hardware card; a module row opens the station page (`/<program id>?module=<id>`).
+- **Context** (we don't): `{ name, year, note }` — flat text, no link. This is how a program legitimately mentions missions outside the curated set (Soviet lunar names Zond 5, whose mission is not modelled).
+- **Context with a link** (an event about an entry we model): `{ name, year, note, link: { ref: "fleet" | "module", id, station? } }` — Challenger's loss links the Challenger craft; Columbus under ESA human spaceflight links `/iss?module=columbus` (`station: "iss"`). A `module` link names its station.
+- **Milestone**: a context row plus `milestone: true` — an episode, phase, decision or plan inside the program (not a flight, a craft or a test). Drawn under "Milestones" after Missions, no link, no card.
+
+**A row that names an entry that exists must link to it** (as `linked_id` for a mission, or `link` for a craft or module); `src/lib/programs-roster.test.ts` fails on a name-only row equal to a mission, craft or module name. Hardware rows are the flown vehicles of the program's linked missions (`fleet_refs`): launchers, spacecraft, landers, orbiters and rovers; launch sites are left out.
 
 Keep cross-refs symmetric where the linked entity points back (e.g. a mission's `program`, if/when added).
 
@@ -88,7 +92,7 @@ Author → `npm run validate-data` → fix what it names → repeat. A program i
 - **Bundle key carries `.json`.** The overlay is keyed `programs/apollo.json` in the bundle; `getProgram` must request it with the extension. A key without `.json` silently misses.
 - **Universal `load` needs `event.fetch`.** Relative data URLs (`/data/...`) throw under global `fetch` at prerender — thread the page's `fetch` through every `get*` call.
 - **`entries()` is not automatic.** Every program `id` must be listed or its page is missing from the build.
-- **Roster ≠ new content.** Naming a mission in the roster does not model it. Resist the pull to add missions "so the roster links resolve" — name them as context instead.
+- **Roster ≠ new content.** Naming a mission in the roster does not model it. Resist the pull to add missions "so the roster links resolve" — name them as context instead. The reverse also binds: a mission or craft that already exists is linked, never left as a context name.
 - **Badges are PD/CC or nothing.** Don't reach for a trademarked contractor logo to fill a vehicle's badge slot; leave it empty (the UI hides it). Confirm the license on the Commons file page, not by eye.
 - **Dispatches are part of the program, not a follow-up PR.** They ship with the program that motivated them — step 6, every time.
 

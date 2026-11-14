@@ -13,6 +13,11 @@
     { "name": "Ariane 4", "year": 1988, "note": "the reliable commercial workhorse that captured roughly half the world's commercial satellite launches through the 1990s and made Arianespace dominant" },
     { "linked_id": "ariane-5", "ref": "fleet", "role": "launcher", "year": 1996 },
     { "name": "Flight 501", "year": 1996, "note": "Ariane 5's maiden flight self-destructed 37 seconds in when reused Ariane 4 guidance software overflowed at the new rocket's higher speed — a landmark software-engineering cautionary tale" },
+    { "linked_id": "giotto", "ref": "mission", "year": 1985 },
+    { "linked_id": "rosetta", "ref": "mission", "year": 2004 },
+    { "linked_id": "juice", "ref": "mission", "year": 2023 },
+    { "linked_id": "bepicolombo", "ref": "mission", "year": 2018 },
+    { "linked_id": "smart-1", "ref": "mission", "year": 2003 },
     { "linked_id": "ariane-6", "ref": "fleet", "role": "launcher", "year": 2024 }
   ],
   "related_programs": ["esa-human", "iss", "space-shuttle"],

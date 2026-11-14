@@ -74,7 +74,7 @@ The slice plan is dated 2026-11-11 and all statuses are as of that day, on branc
 | E2 | Program data: roster links, a "Milestones" section | PG7 to PG9 | none yet | planned | program pages | none (data) | — |
 | E3 | Missions page: one agency palette, colour in the filters, a redesigned era strip | MI2, MI3 | none yet | planned | missions | UXS-004 | D7 |
 | E4 | Fleet: line-up as a view toggle, a compact "Missions" tab | FL2, FL3 | none yet | planned | fleet | UXS-004 | — |
-| E5 | ISS: the assembly player at a fixed height | ISS2 | none yet | planned | iss | ADR-040 | — |
+| E5 | ISS: the assembly player at a fixed height (shared with /tiangong) | ISS2 | UXD-031 | in review (built, e2e on three projects in en, de, ar and screenshots checked; waiting for the operator's screenshots) | iss, tiangong | TA.md, the components README, Design System 5.18 (ADR-040 does not cover the player) | — |
 
 ## Pages
 

@@ -588,6 +588,19 @@ Scene code cannot read CSS variables: the highlight blue is the literal `RING_BL
 | Card state | Open with a pointer in a window 900px wide and 560px tall or more; folded on touch and in a smaller window with a mouse (there, folded, only the glyph and the fold button show: the picker chip names the level). Folded, the card is as wide as its header (`width: max-content`). The choice is kept in `localStorage` `orrery.explore.levelCardExpanded` (blocked storage: the default for this view) |
 | Welcome hint | One line, `rgba(8,10,22,0.86)`, 1px `rgba(255,255,255,0.18)` border, 6px radius, 5px 6px 5px 12px padding, Space Mono 11px, line height 1.4, 90% white, `max-width: 100% - 32px`, centred, z 6 (§4.7). A pointer device: 64px above the bottom edge of the scene frame (on the Worlds above the nation legend: `--hint-bottom`); in a window under 900px wide or 560px tall, left-aligned at 40% of the frame height, 48px from the left edge and, from 600px wide, ending 300px short of the right edge (the scale strip). A touch device: `top: 110px` in the frame, under the top row and the card's header. The close button is a 24px `.ui-hit` `×` (16px, 70% white, `#889fe7` on hover and focus; 44px area on touch). `role="status"`, `aria-live="polite"`. Fades over 300ms (a CSS transition: reduced motion cuts it). Goes at the first wheel turn, pinch, tap or 6px drag on the canvas, at the ×, or after 12s; never stored. On `/explore` it is not drawn while a side panel is docked (`panelCoverPx` > 0) |
 
+### 5.18 Station assembly player (UXD-031)
+
+`StationAssemblyControl.svelte`, shared by `/iss` and `/tiangong`. One box, one height across every phase and width.
+
+| Element | Rule |
+|---|---|
+| Box | `position: absolute`, centred, `bottom: 5.5rem`, `width: min(92vw, 640px)`, `rgba(8,12,18,0.92)`, 1px accent-edge border, 12px radius, `0.9rem 1.2rem 0.7rem` padding, z 12. Never `min-height`-driven: the height is the sum of fixed parts. |
+| Control row | Play, reset, scrub, date (`#ffd57a`, `5.5rem` min at 480px and below, else `6.2rem`), close; chips 30px fine pointer, 44px touch. The scrub input has `min-width: 0` so the date stays inside the box on a phone. |
+| Chip block | Two rows, each `1.3em` high, one line, `white-space: nowrap`, ellipsis: row 1 the glyph and the phase name (bold; a dotted-underline button where the phase has a module panel), row 2 "launcher · date" indented under the name (the date `flex: none`, the launcher cut). The empty state uses the same two rows. The whole phase is in the block's `title` and in a visually hidden `aria-live="polite"` element. |
+| Hint | `0.74rem`, one row with an ellipsis; at 480px and below two rows reserved (`2.5em`, clamped at two). |
+
+A new phase string never changes the box height; do not let a row wrap.
+
 ---
 
 ## 6. Screen patterns

@@ -7,8 +7,13 @@
    *   - a scrub-bar (0 → 1, mapped to nowEpoch ∈ [startEpoch, endEpoch])
    *   - a reset button (jump to t=0)
    *   - a current-date readout
-   *   - a "🚀 launched on <launcher> · <date>" chip for whatever module
-   *     most recently entered the timeline.
+   *   - a two-row "🚀 <name>" / "<launcher> · <date>" chip for whatever
+   *     phase most recently entered the timeline.
+   *
+   * The box keeps ONE height across every phase and width (UXD-031): the
+   * chip is two fixed one-line rows cut with an ellipsis (whole text in the
+   * title and the live region), the hint is one row (two at 480 px and
+   * below). Never let the chip or the hint wrap or grow.
    *
    * The component is purely a controller — the actual mesh tweening
    * happens in the parent's Three.js animate() loop via
@@ -65,6 +70,13 @@
 
   const nowEpoch = $derived(startEpoch + progress * (endEpoch - startEpoch));
   const nowDate = $derived(fmtDate(nowEpoch));
+  // The chip is cut to two one-line rows; the whole phase stays here for the
+  // title and the live region.
+  const fullText = $derived(
+    latestChip
+      ? `${latestChip.name} · ${latestChip.launcher} · ${latestChip.date}`
+      : m.assembly_waiting_first_launch(),
+  );
 </script>
 
 <div class="assembly-overlay" data-testid="station-assembly">
@@ -114,38 +126,45 @@
   </div>
 
   {#if latestChip}
-    <p class="chip" data-testid="assembly-chip">
-      <span aria-hidden="true">🚀</span>
-      {#if latestChip.pickableId}
-        <button
-          type="button"
-          class="chip-name"
-          data-testid="assembly-chip-name"
-          title={m.assembly_open_module_title()}
-          onclick={() => onChipClick(latestChip!.pickableId!)}
-        >
-          {latestChip.name}
-        </button>
-      {:else}
-        <!-- Truss / iROSA phases have no panel target — render the chip
-             name as plain text, no click affordance. -->
-        <span class="chip-name chip-name-static" data-testid="assembly-chip-name">
-          {latestChip.name}
-        </span>
-      {/if}
-      <span class="sep">·</span>
-      <span>{latestChip.launcher}</span>
-      <span class="sep">·</span>
-      <time>{latestChip.date}</time>
-    </p>
+    <div class="chip" data-testid="assembly-chip" title={fullText}>
+      <p class="chip-line">
+        <span class="glyph" aria-hidden="true">🚀</span>
+        {#if latestChip.pickableId}
+          <button
+            type="button"
+            class="chip-name"
+            data-testid="assembly-chip-name"
+            title={m.assembly_open_module_title()}
+            onclick={() => onChipClick(latestChip!.pickableId!)}
+          >
+            {latestChip.name}
+          </button>
+        {:else}
+          <!-- Truss / iROSA phases have no panel target — render the chip
+               name as plain text, no click affordance. -->
+          <span class="chip-name chip-name-static" data-testid="assembly-chip-name">
+            {latestChip.name}
+          </span>
+        {/if}
+      </p>
+      <p class="chip-line chip-meta">
+        <span class="cut">{latestChip.launcher}</span>
+        <span class="sep">·</span>
+        <time>{latestChip.date}</time>
+      </p>
+    </div>
   {:else}
-    <p class="chip empty" data-testid="assembly-chip">
-      <span aria-hidden="true">·</span>
-      <span>{m.assembly_waiting_first_launch()}</span>
-    </p>
+    <div class="chip empty" data-testid="assembly-chip">
+      <p class="chip-line">
+        <span class="glyph" aria-hidden="true">·</span>
+        <span class="cut">{m.assembly_waiting_first_launch()}</span>
+      </p>
+      <p class="chip-line chip-meta"></p>
+    </div>
   {/if}
+  <span class="sr-only" aria-live="polite">{fullText}</span>
 
-  <p class="hint" aria-live="polite">
+  <p class="hint">
     {m.station_assembly_hint({ seconds: Math.round(durationMs / 1000) })}
   </p>
 </div>
@@ -177,6 +196,7 @@
     flex: 1;
     accent-color: var(--color-accent);
     height: 1.4rem;
+    min-width: 0;
   }
 
   .date {
@@ -187,14 +207,45 @@
     color: #ffd57a;
   }
 
+  /* Two fixed one-line rows (name, then launcher · date): the box keeps one
+     height across every phase and every width (UXD-031). */
   .chip {
     margin: 0.55rem 0 0;
     font-size: 0.86rem;
+    line-height: 1.3;
+  }
+  .chip-line {
+    margin: 0;
+    height: 1.3em;
     display: flex;
     align-items: baseline;
     gap: 0.4rem;
-    flex-wrap: wrap;
-    line-height: 1.3;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .glyph {
+    flex: none;
+    width: 1.4em;
+  }
+  .chip-meta {
+    padding-inline-start: calc(1.4em + 0.4rem);
+  }
+  .cut,
+  .chip-name {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .chip-meta time {
+    flex: none;
+  }
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
   }
   .chip-name {
     color: #fff;
@@ -203,6 +254,7 @@
     padding: 0;
     font: inherit;
     font-weight: 700;
+    text-align: start;
     cursor: pointer;
     text-decoration: underline dotted var(--color-accent-strong);
     text-underline-offset: 3px;
@@ -213,7 +265,7 @@
   }
   .chip-name:focus-visible {
     outline: 2px solid var(--color-focus);
-    outline-offset: 2px;
+    outline-offset: -2px;
     border-radius: 2px;
   }
   .chip-name-static {
@@ -233,5 +285,24 @@
     font-size: 0.74rem;
     opacity: 0.6;
     line-height: 1.25;
+    height: 1.25em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  /* A phone reserves the second row, so the sentence stays whole and the box
+     never changes height (UXD-031). */
+  @media (max-width: 480px) {
+    .date {
+      min-width: 5.5rem;
+    }
+    .hint {
+      height: 2.5em;
+      white-space: normal;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
   }
 </style>

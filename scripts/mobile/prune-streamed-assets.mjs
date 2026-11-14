@@ -16,6 +16,8 @@
  *   - build/audio/                   narration + Curator Tour (~97 MB)
  *   - build/credit-thumbs/           /credits thumbnails (~6.9 MB), streamed via
  *                                    assetUrl() like /images
+ *   - build/data/{tech-bom,fleet-image-sources,image-approved,image-phashes,
+ *     hero-concept-baseline,entity-thumbs}.json  build-time-only data (~1.5 MB)
  *   - build/diagrams/**\/*-<w>.webp   diagram width rungs; on-device srcsetFor
  *                                    skips /diagrams and uses the base file
  *   - build/data/i18n/<non-en>*.json 13 non-default locale bundles + their chunks
@@ -149,6 +151,21 @@ async function targets() {
   // so the stub a recipient opens is always the web deploy's copy.
   const cardStubs = path.join(BUILD, 'c');
   if (existsSync(cardStubs)) list.push(cardStubs);
+
+  // Build-time-only data files in static/data (~1.5 MB): validators, the pHash/depiction
+  // baselines and the tech BOM read them from disk; nothing under src/ fetches them, and
+  // entity-thumbs.json is imported (bundled into _app) so its static copy is a dead duplicate.
+  for (const file of [
+    'tech-bom.json',
+    'fleet-image-sources.json',
+    'image-approved.json',
+    'image-phashes.json',
+    'hero-concept-baseline.json',
+    'entity-thumbs.json',
+  ]) {
+    const p = path.join(BUILD, 'data', file);
+    if (existsSync(p)) list.push(p);
+  }
 
   // Entity pages (0.9.8 SEO: /missions, /fleet, /<body>/<site>, /explore, /explore/stars/<id>,
   // /explore/black-holes/<id>, /explore/deep-sky/<id>, /explore/galaxies/<id>, /explore/structures/<id>,

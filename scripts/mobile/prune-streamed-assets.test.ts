@@ -62,6 +62,22 @@ describe('prune-streamed-assets (MOBILE=1)', () => {
     expect(existsSync(path.join(b, 'data/i18n/en-US.core.json'))).toBe(true); // default chunk
     expect(existsSync(path.join(b, 'app.js'))).toBe(true);
   });
+
+  it('drops the build-time-only data files, keeps the data the app fetches', () => {
+    const b = seed(dir);
+    for (const f of [
+      'tech-bom.json',
+      'image-phashes.json',
+      'entity-thumbs.json',
+      'credit-thumbs.json',
+    ])
+      writeFileSync(path.join(b, 'data', f), '{}');
+    run(dir, true);
+    expect(existsSync(path.join(b, 'data/tech-bom.json'))).toBe(false);
+    expect(existsSync(path.join(b, 'data/image-phashes.json'))).toBe(false);
+    expect(existsSync(path.join(b, 'data/entity-thumbs.json'))).toBe(false);
+    expect(existsSync(path.join(b, 'data/credit-thumbs.json'))).toBe(true); // /credits fetches it
+  });
 });
 
 describe('prune-streamed-assets (MOBILE=1) star pages', () => {

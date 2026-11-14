@@ -94,6 +94,22 @@ the opposite. Evidence: the brief's §1 to §6.
    Chandrayaan-2 ids of the H list; the additions (MESSENGER, Cassini, "first orbiter" firsts) and the request for
    Mariner 2 and Luna 1 mission pages are C5b.
 
+10. **The nation legend starts right of the column (2026-11-14).** The legend strip on the Worlds is a full-width
+   row at `bottom: 48px`, z 5; before C4 the ruler stood under it (z 1, `pointer-events: none`) and the chips always
+   won. C4 made the column interactive and put it at z 7, so at 1280×720 on `/earth` the open ruler (and the chip's
+   column) covered USA and USSR/Russia: a click landed on the ruler, and the strip wrapped under it. Found by the
+   clean-build run of `legend-nation-filter.spec.ts` (USA chip covered); `footer-dock.spec.ts` missed it because the
+   legend is faded out (`visibility: hidden`) until zoom brings the site icons in (#641), so its part list never
+   measured it. Chosen: `HudStackBL` publishes its right edge as `--hud-stack-right` on `<html>` (next to
+   `--hud-stack-top`) and the strip's `left` is that edge + 8 px (0 where there is no column: touch, `/venus`);
+   the strip stays centred in what is left and wraps in the narrower width. Not chosen: folding the ruler while the
+   legend would collide (the ruler's rows are the control, and a fold that depends on the legend's wrap would
+   jump on every zoom); raising the strip above the column (the strip would stand over the globe's lower rim and
+   the scale readouts, which stack on `--legend-top`). Touch is unchanged: the strip is `display: none` there
+   (the drawer's Nations tab). `footer-dock.spec.ts` now zooms the legend in on `/earth`, `/moon` and `/mars` at
+   1280×720, 1366×768 and 1440×900 and checks every chip against the readout, locate chip and ruler (disjoint boxes,
+   chip on top at its centre).
+
 ## Consequences
 
 The ruler is wider on the Worlds' long-name locales (up to 280 px against 208) and reads one line per row; at

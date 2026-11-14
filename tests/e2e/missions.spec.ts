@@ -282,22 +282,27 @@ test.describe('/missions — flight-data quality badge (v0.1.13)', () => {
   test('Curiosity card shows MEASURED badge', async ({ page }) => {
     await page.goto('/missions');
     await expect(page.locator('[data-testid^="mission-card-"]')).toHaveCount(MISSION_COUNT, {
-      timeout: 10_000,
+      timeout: 20_000,
     });
     const card = page.locator('[data-testid="mission-card-curiosity"]');
     await expect(card.locator('.card-quality.quality-measured')).toBeVisible();
   });
 
+  // The cards and badges come from the library fetch in onMount (`getMissionsForLibrary`, 126
+  // mission files), not from the index. Measured on the dev server (2026-11-14), 844x390: first
+  // cards 5.5 to 9.1 s after load in 8 loads, and zero cards after 10 s and after 15 s once each
+  // on loaded landscape runs, past the old 5 s and 10 s waits. 20 s stays under the 30 s test
+  // timeout once the page has loaded.
   test('Mars 3 card shows SPARSE badge', async ({ page }) => {
     await page.goto('/missions');
     const card = page.locator('[data-testid="mission-card-mars3"]');
-    await expect(card.locator('.card-quality.quality-sparse')).toBeVisible({ timeout: 5_000 });
+    await expect(card.locator('.card-quality.quality-sparse')).toBeVisible({ timeout: 20_000 });
   });
 
   test('Starship Demo card shows UNKNOWN badge', async ({ page }) => {
     await page.goto('/missions');
     const card = page.locator('[data-testid="mission-card-starship-demo"]');
-    await expect(card.locator('.card-quality.quality-unknown')).toBeVisible({ timeout: 5_000 });
+    await expect(card.locator('.card-quality.quality-unknown')).toBeVisible({ timeout: 20_000 });
   });
 });
 

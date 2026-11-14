@@ -1381,9 +1381,9 @@ describe('programs / badges / sourcing loaders (PRD-029)', () => {
     expect(de?.roster.length).toBe(en?.roster.length);
     const sts1 = (p: typeof de) => p?.roster.find((r) => r.name === 'STS-1')?.note;
     expect(sts1(de)).toContain('erste Orbitalflug');
-    // ar has no roster text yet: its rows stay the English base
-    const ar = await getProgram('space-shuttle', 'ar');
-    expect(sts1(ar)).toBe(sts1(en));
+    // a locale with no overlay at all: its rows stay the English base
+    const xx = await getProgram('space-shuttle', 'xx');
+    expect(sts1(xx)).toBe(sts1(en));
   });
 
   it('getBadges returns the insignia map', async () => {

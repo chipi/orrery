@@ -88,5 +88,19 @@
     "/programs/starlink": "Starlink — الكوكبة التي يلاحقها",
     "/earth": "الأرض — المدارات وازدحام المدار المنخفض",
     "/earth?site=kuiper": "كوكبة Kuiper"
+  },
+  "roster": {
+    "KuiperSat prototypes": {
+      "note": "يصل قمران اختباريان إلى المدار للتحقق من التصميم قبل بدء الإنتاج الضخم",
+      "name": "نماذج KuiperSat الأولية"
+    },
+    "Production launches": {
+      "note": "تبدأ الكوكبة التشغيلية بالانتشار — متأخرة سنوات عن Starlink وفي سباق مع ساعة تنظيمية للحفاظ على طيفها",
+      "name": "عمليات الإطلاق الإنتاجية"
+    },
+    "Multi-rocket by design": {
+      "note": "تشتري Kuiper عمليات إطلاق من مزوّدين كثر — Atlas V وVulcan وAriane 6 وNew Glenn — بدلًا من الاعتماد على صاروخ منافس كما كانت ستفعل مع Falcon",
+      "name": "صواريخ متعددة بالتصميم"
+    }
   }
 }

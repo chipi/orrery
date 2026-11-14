@@ -7,7 +7,8 @@
   above the scene's bottom bar; the chip is the first icon of that bar (the route renders it from
   `hudTouch`) and the ruler lives in the drawer. The imagery card (TierContextCard) is scene
   attribution, not a control: it stays outside and clears the column's top edge, published here as
-  `--hud-stack-top` on <html>.
+  `--hud-stack-top` on <html>. Its right edge is published as `--hud-stack-right`: the nation legend
+  strip (SurfaceScene) starts there, since the column stands above the strip's layer.
 -->
 <script lang="ts">
   import { onMount, type Snippet } from 'svelte';
@@ -36,8 +37,10 @@
       const r = node.getBoundingClientRect();
       if (r.width && r.height && !hudTouch.value) {
         root.style.setProperty('--hud-stack-top', `${Math.round(window.innerHeight - r.top)}px`);
+        root.style.setProperty('--hud-stack-right', `${Math.round(r.right)}px`);
       } else {
         root.style.removeProperty('--hud-stack-top');
+        root.style.removeProperty('--hud-stack-right');
       }
     };
     const schedule = () => {
@@ -53,6 +56,7 @@
       ro.disconnect();
       window.removeEventListener('resize', schedule);
       root.style.removeProperty('--hud-stack-top');
+      root.style.removeProperty('--hud-stack-right');
     };
   });
 </script>

@@ -7411,7 +7411,9 @@ sample      ${debugInfo.projectedPxSample}`}
        footer. On desktop always visible; on mobile replaced by the
        Nations tab in the MobileDrawerGroup accordion. */
     bottom: 48px;
-    left: 0;
+    /* Starts 8 px right of the lower-left HUD column (HudStackBL, z 7, over this strip's z 5);
+       0 where there is none: -8px is the fallback that cancels the +8px. */
+    left: calc(var(--hud-stack-right, -8px) + 8px);
     right: 0;
     display: flex;
     flex-wrap: wrap;

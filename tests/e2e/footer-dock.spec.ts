@@ -182,6 +182,82 @@ for (const size of HUD_SIZES) {
 }
 
 /**
+ * The nation legend is faded out until the site icons arrive with zoom (#641), so the generic
+ * "no two HUD parts intersect" test below never sees it. With the legend in, its chips and the
+ * lower-left column (readout, locate chip, orbit ruler: HudStackBL, UXD-024) must own separate
+ * pixels, and each chip must be what a click at its centre hits. Touch keeps the legend in the
+ * drawer's Nations tab, so this is a non-touch contract.
+ */
+for (const route of ['/earth', '/moon', '/mars']) {
+  for (const size of [
+    { width: 1280, height: 720 },
+    { width: 1366, height: 768 },
+    { width: 1440, height: 900 },
+  ]) {
+    test.describe(`nation legend vs lower-left column ${route} — ${size.width}x${size.height}`, () => {
+      test.use({ viewport: size, hasTouch: false, isMobile: false });
+
+      test('legend chips clear the locate chip and the ruler, and are on top at their centre', async ({
+        page,
+      }) => {
+        test.slow();
+        await page.goto(route, { waitUntil: 'networkidle' });
+        await page.waitForFunction(
+          () =>
+            typeof (window as { __surfaceSceneSelectSite?: unknown }).__surfaceSceneSelectSite ===
+            'function',
+          null,
+          { timeout: 20_000 },
+        );
+        const canvas = await page.locator('canvas').first().boundingBox();
+        if (!canvas) throw new Error('no scene canvas');
+        await page.mouse.move(canvas.x + canvas.width / 2, canvas.y + canvas.height / 2);
+        const arrived = page.locator('.legend-3d:not(.legend-3d--away)');
+        for (let i = 0; i < 40 && (await arrived.count()) === 0; i++) {
+          await page.mouse.wheel(0, -150);
+          await page.waitForTimeout(150);
+        }
+        await expect(arrived).toHaveCount(1);
+        await page.waitForTimeout(600);
+
+        const chips = page.locator('.legend-3d [data-testid^="legend-nation-"]');
+        const n = await chips.count();
+        expect(n).toBeGreaterThan(4);
+        const column: Array<[string, Box]> = [];
+        for (const [name, sel] of [
+          ['locate', '.locate-slot'],
+          ['ruler', '.ruler'],
+          ['readout', '.moon-observer'],
+        ]) {
+          const l = page.locator(sel).first();
+          if (!(await l.isVisible())) continue;
+          const b = await l.boundingBox();
+          if (b) column.push([name, b]);
+        }
+        expect(column.length, 'the column renders at least the locate chip').toBeGreaterThan(0);
+
+        const problems: string[] = [];
+        for (let i = 0; i < n; i++) {
+          const chip = chips.nth(i);
+          const id = (await chip.getAttribute('data-testid')) ?? `chip ${i}`;
+          const b = await chip.boundingBox();
+          if (!b) continue;
+          for (const [name, cb] of column)
+            if (intersects(b, cb)) problems.push(`${id} under ${name}`);
+          const hit = await chip.evaluate((el) => {
+            const r = el.getBoundingClientRect();
+            const top = document.elementFromPoint(r.x + r.width / 2, r.y + r.height / 2);
+            return !!top && el.contains(top);
+          });
+          if (!hit) problems.push(`${id} not on top at its centre`);
+        }
+        expect(problems, `legend chips covered: ${problems.join(', ')}`).toEqual([]);
+      });
+    });
+  }
+}
+
+/**
  * The worlds' HUD (/earth /moon /mars /venus): the view-control row, the one flat chip
  * row, the INDEX pull tab (and its panel, opened), the orbit ruler, the distance scale,
  * the nation legend, the locate chip and the footer own separate pixels on a non-touch

@@ -126,6 +126,14 @@ declare global {
     __surfaceSceneFaceSite?: (id: string, targetR?: number) => void;
     /** Test hook: where the site's own spot (through the route's magnified frame) is drawn, client px. */
     __surfaceSceneDrawnSiteXY?: (id: string) => { x: number; y: number } | null;
+    /** Test hook: an orbiter marker's or Earth satellite's drawn state (dot visible, ring visible, outlined) and centre, client px. */
+    __surfaceSceneObjectState?: (id: string) => {
+      visible: boolean;
+      ringVisible: boolean;
+      outlined: boolean;
+      x: number;
+      y: number;
+    } | null;
     /** /iss, /tiangong (StationRoute, as `__${config.id}PickAt`). */
     __issPickAt?: (moduleId?: string) => { x: number; y: number; moduleId: string } | null;
     __tiangongPickAt?: (moduleId?: string) => { x: number; y: number; moduleId: string } | null;

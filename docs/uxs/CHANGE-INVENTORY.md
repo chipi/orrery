@@ -60,7 +60,7 @@ The slice plan is dated 2026-11-11 and all statuses are as of that day, on branc
 
 | Slice | Change | Points | Decisions | Status | Surfaces | Will touch | Waits on |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| D1 | Orbiter selection: the selected orbiter stays visible; the view shifts left of the panel | W3 | none yet | planned | moon, mars, earth, venus | UXS-005, UXS-006, ADR-072 | — |
+| D1 | Orbiter selection: while an orbiter is selected the orbits stay in view (the selected orbiter, its ring, the other orbiters, the ruler), the selected orbiter wears the outline, and on every selection in the 3D view the view shifts beside the open panel (the Explore framing, now one shared helper); closing an orbiter's panel ends its selection; a deep link to an orbiter now flies to it | W3 | UXD-030, UXD-019 | in review | moon, mars, earth, venus (explore: the framing code moved, behaviour kept) | `SurfaceScene.svelte`, `surface-view-state.ts`, `panel-framing-host.ts`, `explore-scene-host.ts`, UXS-005, UXS-006, IA §controls, Design System §5.3/§6.5/§6.6, ADR-072, TA.md | — (decisions 1a, 2a, 3a approved 2026-11-14) |
 | D2 | Panel order for sites and orbiters: a photo first; a "Details" tab for orbiters; a panorama that opens facing the real photo | W6, WM1 | UXD-007 | planned | surface-site and orbiter panels, panoramas | UXS-006, ADR-074 | — |
 | D3 | Venus galleries | VE1 | none yet | planned | venus | UXS-006 | — |
 | D4 | Moon traverses: line style only, or Mars parity | WM2 | none yet | planned | moon | UXS-006 | Q8 |

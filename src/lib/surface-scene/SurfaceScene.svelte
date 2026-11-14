@@ -115,6 +115,7 @@
   } from '$lib/three/scene-renderer';
   import { heroEnvironment } from '$lib/three/hero-materials';
   import { createCanvasResizer } from '$lib/three/canvas-resizer';
+  import { createPanelFramer, openPanelRects, watchPanels } from '$lib/three/panel-framing-host';
   import { bindCanvasInputs } from '$lib/three/canvas-input-listeners';
   import PanelTabRow from '$lib/components/PanelTabRow.svelte';
   import Chip from '$lib/components/Chip.svelte';
@@ -206,6 +207,7 @@
     DETAIL_FLY_TARGET_R,
     mobileDrawerHidden,
     nationFilterAway,
+    orbitsInViewNext,
     shouldFlyToDetail,
   } from '$lib/surface-scene/surface-view-state';
   import {
@@ -383,11 +385,10 @@
   // meaningful); below it the planet fills the view and the orbits have
   // scrolled off-screen. Radius-relative so it's right for Earth, Moon and
   // Mars without per-body tuning. Earth ≈ 6.4 Mm, Moon ≈ 1.7 Mm, Mars ≈
-  // 3.4 Mm.
-  const ORBIT_RULER_HIDE_RADII = 1.0;
+  // 3.4 Mm. The rule (with its 12% hysteresis band) is orbitsInViewNext in surface-view-state;
+  // it keeps the orbits in view while an orbiter is the focus, because that fly-in lands under
+  // one radius and would hide the very thing just picked.
   // Last emitted in-view state — drives onOrbitsInViewChange edge calls.
-  // 12% hysteresis band so parking the camera exactly at the threshold
-  // can't flicker the ruler frame-to-frame.
   let orbitsInView = true;
 
   // ─── Nation palette (per IA §shared-tokens) ──────────────────────
@@ -1554,6 +1555,7 @@
   // Orbiter-marker focus by site id (moon/mars orbital missions). Assigned
   // in onMount (captures orbitalMarkers + the shared fly-in).
   let faceCameraAtOrbiter: ((siteId: string) => void) | undefined;
+  let pendingOrbiterFace: string | null = null;
   /**
    * "Zoom to detail" — fly the camera in to the close range where the
    * HiRISE / LROC NAC detail patch is fully visible (camR ≈ 31, just
@@ -1754,6 +1756,26 @@
         if (ndc.z >= 1) return null;
         const r = renderer.domElement.getBoundingClientRect();
         return { x: r.left + ((ndc.x + 1) / 2) * r.width, y: r.top + ((1 - ndc.y) / 2) * r.height };
+      };
+      // Test hook: an orbiter marker's or Earth satellite's drawn state, client px (the dot's
+      // own centre through the live camera, view offset included). Null for an unknown id.
+      window.__surfaceSceneObjectState = (id) => {
+        const om = orbitalMarkers.find((m) => m.siteId === id);
+        const sat = om ? undefined : earthSats.find((s) => s.id === id);
+        const dot = om?.dotGroup ?? sat?.group;
+        if (!dot) return null;
+        const ring = om?.ringMesh ?? sat?.ringMesh;
+        const wp = dot.getWorldPosition(new THREE.Vector3()).project(camera);
+        const r = renderer.domElement.getBoundingClientRect();
+        let drawn = dot.visible;
+        for (let p = dot.parent; drawn && p; p = p.parent) drawn = p.visible;
+        return {
+          visible: drawn && wp.z < 1,
+          ringVisible: !!ring && ring.visible,
+          outlined: !!outlinePass?.selectedObjects.includes(dot),
+          x: r.left + ((wp.x + 1) / 2) * r.width,
+          y: r.top + ((1 - wp.y) / 2) * r.height,
+        };
       };
     }
 
@@ -2444,7 +2466,15 @@
     // markers gets it.
     faceCameraAtOrbiter = (siteId) => {
       const om = orbitalMarkers.find((m) => m.siteId === siteId);
-      if (!om) return;
+      if (!om) {
+        // A deep link selects as the site list loads, before the frame loop has built the
+        // markers: the fly-in waits for them.
+        pendingOrbiterFace = siteId;
+        return;
+      }
+      // Place the dot on its ring now (a new marker sits at the centre until its first tick),
+      // without advancing the phase.
+      tickOrbiterDot(om, 0, true);
       const worldPos = new THREE.Vector3();
       om.dotGroup.getWorldPosition(worldPos);
       flyToWorldPos(worldPos);
@@ -3697,6 +3727,24 @@
     // because the surface scene's render still has to run when the
     // user prefers reduced motion (the camera stays put but the
     // scene + 2D overlay still paints).
+    // Panel-aware framing (UXD-030): the focus point sits in the middle of the space an open side
+    // panel leaves, for every selection in the 3D view. Route view keeps the shift (a 3D framing);
+    // the flat patch and the panorama are their own views.
+    const framer = createPanelFramer({
+      camera,
+      getReducedMotion: () => reducedMotion,
+      getRects: openPanelRects,
+      getViewportW: () => window.innerWidth,
+      getSize: () => ({
+        w: container?.clientWidth || window.innerWidth,
+        h: container?.clientHeight || window.innerHeight,
+      }),
+    });
+    watchPanels(framer, lifecycle);
+    lifecycle.add(() => {
+      if (camera.view?.enabled) camera.clearViewOffset();
+    });
+
     const loop = createAnimateLoop({
       onFrame: () => {
         frameMonitor.tick();
@@ -3718,6 +3766,8 @@
         // still need the sphere rendered so the cross-fade reads as a
         // cross-fade rather than a flicker).
         if (flatPatchPhase === 'visible') return;
+
+        framer.apply(dt, view === '3d' && !flatPatchActive && !panoramaActive);
 
         // Panorama HUD yaw + pitch readouts (PRD-022 / ADR-074 Phase 2C/2D).
         // camT/camP are in radians; convert + normalise for compass-rose
@@ -3838,6 +3888,13 @@
         // rebuild (8 lunar orbiters added in v0.4 — Issue #40 / PRD-009).
         if (surfaceSiteCount !== markers.length) rebuildMarkers();
         if (orbiterSites.length !== orbitalMarkers.length) rebuildOrbitalMarkers();
+        if (pendingOrbiterFace) {
+          const id = pendingOrbiterFace;
+          if (orbitalMarkers.some((m) => m.siteId === id)) {
+            pendingOrbiterFace = null;
+            if (selected?.id === id) faceCameraAtOrbiter?.(id);
+          }
+        }
 
         // Apply layer visibility every frame so chip toggles take effect
         // immediately (cheap — small static arrays).
@@ -3964,9 +4021,17 @@
           const om = orbitalMarkers.find((x) => x.dotGroup.userData.siteId === hoveredSiteId);
           if (om) outlineMeshes.push(om.dotGroup);
         }
-        // /earth — Earth-satellite hover outline. Skipped if the same
-        // satellite is currently selected so the outline doesn't
-        // double up with the selection chrome.
+        // A selected orbiter or Earth satellite wears the same outline as on hover (the only
+        // selection mark an orbiter has: no halo, and its panel may cover the label).
+        if (selected?.kind === 'orbiter') {
+          const om = orbitalMarkers.find((x) => x.dotGroup.userData.siteId === selected?.id);
+          if (om?.dotGroup.visible) outlineMeshes.push(om.dotGroup);
+        }
+        // /earth — Earth-satellite hover outline, and the selected satellite's mark.
+        if (selectedSat) {
+          const sat = earthSats.find((s) => s.id === selectedSat?.id);
+          if (sat?.group.visible) outlineMeshes.push(sat.group);
+        }
         if (hoveredSatId && hoveredSatId !== selectedSat?.id) {
           const sat = earthSats.find((s) => s.id === hoveredSatId);
           if (sat) outlineMeshes.push(sat.group);
@@ -4010,13 +4075,15 @@
         // ruler. Hysteresis (hide < threshold, re-show > threshold × 1.12)
         // keeps it from flickering when parked near the boundary.
         if (onOrbitsInViewChange) {
-          const orbitRulerHideKm = config.radiusKm * ORBIT_RULER_HIDE_RADII;
-          if (orbitsInView && altitudeKm < orbitRulerHideKm) {
-            orbitsInView = false;
-            onOrbitsInViewChange(false);
-          } else if (!orbitsInView && altitudeKm > orbitRulerHideKm * 1.12) {
-            orbitsInView = true;
-            onOrbitsInViewChange(true);
+          const next = orbitsInViewNext({
+            altitudeKm,
+            radiusKm: config.radiusKm,
+            wasInView: orbitsInView,
+            focusOnOrbiter: selected?.kind === 'orbiter' || selectedSat != null,
+          });
+          if (next !== orbitsInView) {
+            orbitsInView = next;
+            onOrbitsInViewChange(next);
           }
         }
 
@@ -6265,7 +6332,12 @@ sample      ${debugInfo.projectedPxSample}`}
   <Panel
     open={panelOpen}
     title={selected?.name ?? selected?.id ?? ''}
-    onClose={() => (panelOpen = false)}
+    onClose={() => {
+      panelOpen = false;
+      // An orbiter's focus ends with its panel (as an Earth satellite's does): the dot is released
+      // and the orbit gate returns to the camera's height.
+      if (selected?.kind === 'orbiter') selected = null;
+    }}
     onShare={cardSpec ? () => (cardOpen = true) : undefined}
   >
     {#snippet eyebrow()}

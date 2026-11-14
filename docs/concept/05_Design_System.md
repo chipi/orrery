@@ -329,7 +329,7 @@ This pattern appears on P01, P03, P05, and P06. It must be identical on every sc
 
 ### 5.3 Detail panel (right slide-in)
 
-Used on the solar system explorer, mission arc, Earth orbit viewer, and Moon map. Slides in from the right. Pushes the grid content left in the mission library (using `margin-right`). Overlaps the 3D view on other screens.
+Used on the solar system explorer, mission arc, Earth orbit viewer, and Moon map. Slides in from the right. Pushes the grid content left in the mission library (using `margin-right`). Overlaps the 3D view on other screens; in the 3D view of `/explore` and of the Worlds (`/earth`, `/moon`, `/mars`, `/venus`) the focus sits in the middle of what the panel leaves (Panel-aware framing, below; [UXD-030](../uxs/decisions/UXD-030-worlds-selected-orbiter-stays-visible-and-framed.md)).
 
 ```css
 position: absolute; top: 52px; right: 0; bottom: 60–68px;
@@ -655,6 +655,8 @@ Full-screen 3D/2D. The 3D view is a sphere — the camera orbits the Moon, not t
 **Index.** The INDEX rail's dot is the site's nation colour, the legend's (§5.13).
 
 **Back to Explore.** The first chip of the view row (the top-left cluster on touch) is "Back to Explore", a link to `/explore?id=earth:moon` (the satellite key) that opens the Moon's panel with the camera on it ([UXD-028](../uxs/decisions/UXD-028-explore-and-worlds-link-both-ways.md)).
+**Selected orbiter.** An orbiter selected in the 3D view (ISS, Hubble, a GNSS craft) is marked with the outline pass, the same look as hover (no halo, no new art). The orbits stay in view while it is selected: the orbiter, its ring, the other orbiters and the ruler are drawn even though the fly-in lands under one body radius, and the view shifts so the orbiter sits in the middle of the space the panel leaves ([UXD-030](../uxs/decisions/UXD-030-worlds-selected-orbiter-stays-visible-and-framed.md)).
+
 
 **Notable:** The far side missions (Chang'e 4, Chang'e 6) can only be seen in 3D by rotating the camera — this is intentional design, not a bug. The far side is literally hidden from Earth. The 2D flat map reveals it at the edges.
 
@@ -667,6 +669,8 @@ Full-screen 3D/2D. The 3D view is a sphere — the camera orbits the Moon, not t
 ### 7.1 Camera orbit (3D views)
 
 Consistent across P01, P03, P05, P06:
+**Selected orbiter.** An orbiter site (LRO, Lunar Prospector and the others; on /mars, MRO) selected in the 3D view keeps its dot, its ring, the other orbiters and the ruler in view, wears the outline pass as on hover, and sits in the middle of the space the panel leaves; closing the panel ends the selection and the orbits hide again when the camera is under one radius ([UXD-030](../uxs/decisions/UXD-030-worlds-selected-orbiter-stays-visible-and-framed.md)).
+
 
 - **Mouse drag:** `camTheta += dx * 0.005–0.006; camPhi = clamp(camPhi + dy * 0.004–0.005)`
 - **Scroll:** `camR = clamp(camR + deltaY * 0.5–0.7, min, max)`
@@ -710,7 +714,7 @@ Selected means three things at once: the panel is open, the object is ringed, th
 - **Ring for every kind that has a body.** Planets, moons, small bodies and the Sun take the ring (look in §5.14). A belt has no ring: its particles brighten (opacity ×1.8, size ×1.3) while it is selected. Pluto is a small body with one panel everywhere, and takes the ring and the focus like the others.
 - **One ring rule: the ring follows the selection, not the panel.** × closes the panel; the body stays selected, ringed and centred until another selection, Reset View, or the chip of its kind turned off clears it.
 - **Camera focus (600ms, ease-out).** A planet or a moon lands at 8 radii (zoom range 1.5 to 50 radii); a small body at 14 radii (4 to 600 units); a belt frames the whole ring from the Sun (570 units for the asteroid belt, 1,430 for the Kuiper belt). The Sun, and an object the scene does not draw, fly to the heliocentric home view. At the outer scales a member pans the camera to it and eases the zoom to 0.6 × the scale's entry distance, never below the floor and never out from a closer view the visitor chose; all eight scales have a Reset that flies back to the entry pose.
-- **Panel-aware framing.** With a side drawer open, the look-at point sits in the middle of the space the drawer leaves (the projection shifts by half the drawer's width). A bottom sheet (touch portrait) moves nothing. One helper, `src/lib/three/panel-framing.ts`.
+- **Panel-aware framing.** With a side drawer open, the look-at point sits in the middle of the space the drawer leaves (the projection shifts by half the drawer's width). A bottom sheet (touch portrait) moves nothing. The maths is `src/lib/three/panel-framing.ts`; the per-frame mechanism (measure `aside.panel`, ease, `camera.setViewOffset`) is `createPanelFramer` in `src/lib/three/panel-framing-host.ts`, called by the Explore host and by `SurfaceScene` (the Worlds' 3D view and route view; not the 2D map, the flat patch or a panorama).
 - **Chips own kinds.** Turning a layer chip off clears a selection of its kind (panel, ring and focus; the camera flies to the home view). Selecting an object whose chip is off turns the chip on. PATHS off closes a mission opened from a path.
 - **No object, no link.** A resident or a belt member is a button only when the scene has an object for it; otherwise it is plain text.
 - **A mission opens in place.** A mission id in a body panel's Missions tab opens the mission panel over the body panel. The body stays selected and its panel stays mounted but covered (not painted, not focusable, Escape leaves it), so its tab and scroll return. The mission panel's bar carries a back chip (`←`, `panel-back`) that returns to the body panel; × is the same return. Selecting another body closes the mission. The lists run newest first.

@@ -332,3 +332,46 @@ for (const route of WORLD_ROUTES) {
     });
   }
 }
+
+/**
+ * An orbiter selected with its panel open (UXD-030): the ruler stays in view beside it, so the
+ * same HUD parts, plus the panel, own separate pixels.
+ */
+for (const [route, label] of [
+  ['/moon?site=lro', '/moon LRO'],
+  ['/mars?site=mro', '/mars MRO'],
+] as const) {
+  for (const size of WORLD_SIZES.slice(0, 4)) {
+    const key = `${size.width}x${size.height}`;
+    test.describe(`world HUD, orbiter selected ${label} — ${key} non-touch`, () => {
+      test.use({ viewport: size, hasTouch: false, isMobile: false });
+
+      test('no HUD part intersects another or the panel', async ({ page }) => {
+        test.slow();
+        await page.goto(route, { waitUntil: 'networkidle' });
+        await expect(page.locator('aside.panel')).toBeVisible();
+        await page.waitForTimeout(1500);
+        const boxes: Array<[string, Box]> = [];
+        for (const [name, sel] of [
+          // The welcome hint and the footer sit under a panel by design; the rest must not.
+          ...WORLD_HUD_PARTS.filter(([n]) => n !== 'welcome hint' && n !== 'footer'),
+          ['panel', 'aside.panel'] as [string, string],
+        ]) {
+          const l = page.locator(sel).first();
+          if (!(await l.isVisible())) continue;
+          const b = await l.boundingBox();
+          if (b) boxes.push([name, b]);
+        }
+        expect(
+          boxes.some(([n]) => n === 'ruler'),
+          'the ruler stays in view',
+        ).toBe(true);
+        const clashes: string[] = [];
+        for (let i = 0; i < boxes.length; i++)
+          for (let j = i + 1; j < boxes.length; j++)
+            if (intersects(boxes[i][1], boxes[j][1])) clashes.push(`${boxes[i][0]}|${boxes[j][0]}`);
+        expect(clashes, `overlapping HUD parts: ${clashes.join(', ')}`).toEqual([]);
+      });
+    });
+  }
+}

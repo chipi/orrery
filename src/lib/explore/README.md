@@ -38,6 +38,9 @@ wrappers; markup pieces live next to it in `src/routes/explore/`.
 - `explore-url-sync.svelte.ts` — deep-link resolvers + shallow URL mirrors
   (`?id ?goto ?system/&planet ?deepsky ?galaxy ?bh ?context ?paths/&focus`).
 
+The panel-aware framing the host applies is `createPanelFramer` in
+`$lib/three/panel-framing-host.ts` (shared with the Worlds, UXD-030).
+
 Contracts: the scene host (`$lib/three/explore-scene-host.ts`) reads and
 writes the URL guards through the page's bridge; fn pointers are read at
 call time, never captured. `$effect` does not run under this repo's vitest

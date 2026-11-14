@@ -1,8 +1,7 @@
 /**
  * Panel-aware framing (UXD-019): the point a camera looks at sits in the middle of the space the
- * open panel leaves, not under the panel's edge. Pure maths over measured rects; the scene host
- * turns the result into `camera.setViewOffset`. Written for /explore and shared with the Worlds'
- * orbiter framing (D1), which asks for the same shift.
+ * open panel leaves, not under the panel's edge. Pure maths over measured rects; `createPanelFramer`
+ * (panel-framing-host) turns the result into `camera.setViewOffset` for /explore and the Worlds.
  */
 
 export interface PanelRect {

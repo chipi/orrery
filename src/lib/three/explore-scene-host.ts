@@ -28,7 +28,7 @@ import {
   type BodyRef,
   type FocusFrame,
 } from '$lib/explore/body-ref';
-import { easeShift, framingShiftPx, panelCoverPx } from '$lib/three/panel-framing';
+import { createPanelFramer, openPanelRects, watchPanels } from '$lib/three/panel-framing-host';
 import {
   equatorialToGalactic,
   galacticPlanePin,
@@ -2086,7 +2086,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
       flying: flyActive,
       ringVisible: selHalo.visible,
       ringAt: selHalo.position.toArray(),
-      viewShiftPx: framingShift,
+      viewShiftPx: framer.shift(),
     });
     // Read-only probe of the direction pills (HUD e2e): drawn (the whole chain visible) and text.
     window.__exploreDirectionLabels = () => {
@@ -2191,51 +2191,23 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
   }
 
   // Panel-aware framing (UXD-019): the focus point sits in the middle of the space the open
-  // side panel leaves, not under its edge. The projection shifts by half the panel's cover
-  // (camera.setViewOffset), so the look-at point, picking and every scale keep one camera. A
-  // bottom sheet (touch portrait) covers the scene and shifts nothing. The panels are measured
-  // only in the 400 ms after one opened or closed (the 220 ms fly-in moves its rect), the window
-  // resized or the view changed; the shift is eased every frame (instant under reduced motion).
-  const FRAMING_SETTLE_MS = 400;
-  let framingShift = 0;
-  let framingTarget = 0;
-  let framingMeasureUntil = performance.now() + FRAMING_SETTLE_MS;
-  let framingWanted = false;
-  const markFramingDirty = (): void => {
-    framingMeasureUntil = performance.now() + FRAMING_SETTLE_MS;
-  };
-  const isPanelNode = (n: Node): boolean => n instanceof Element && n.matches('aside.panel');
-  const panelWatch = new MutationObserver((records) => {
-    if (records.some((r) => [...r.addedNodes, ...r.removedNodes].some(isPanelNode)))
-      markFramingDirty();
+  // side panel leaves. The mechanism is shared with the Worlds (panel-framing-host).
+  const framer = createPanelFramer({
+    camera,
+    getReducedMotion: deps.getReducedMotion,
+    getRects: openPanelRects,
+    getViewportW: () => window.innerWidth,
+    getSize: () => ({
+      w: bridge.container?.clientWidth ?? window.innerWidth,
+      h: bridge.container?.clientHeight ?? window.innerHeight,
+    }),
+    onCover: (cover) => {
+      bridge.panelCoverPx = cover;
+    },
   });
-  panelWatch.observe(document.body, { childList: true, subtree: true });
-  lifecycle.add(() => panelWatch.disconnect());
-  lifecycle.on(window, 'resize', markFramingDirty);
+  watchPanels(framer, lifecycle);
   function applyPanelFraming(dt: number): void {
-    const wanted = bridge.view === '3d' && !bridge.activeBlackHole && !bridge.deepSkyImmersed;
-    if (wanted !== framingWanted) {
-      framingWanted = wanted;
-      markFramingDirty();
-    }
-    if (performance.now() < framingMeasureUntil) {
-      const rects = wanted
-        ? Array.from(document.querySelectorAll('aside.panel'), (el) => el.getBoundingClientRect())
-        : [];
-      const cover = panelCoverPx(rects, window.innerWidth);
-      framingTarget = framingShiftPx(cover);
-      if (bridge.panelCoverPx !== cover) bridge.panelCoverPx = cover;
-    }
-    framingShift = deps.getReducedMotion()
-      ? framingTarget
-      : easeShift(framingShift, framingTarget, dt);
-    if (framingShift === 0) {
-      if (camera.view?.enabled) camera.clearViewOffset();
-      return;
-    }
-    const w = bridge.container?.clientWidth ?? window.innerWidth;
-    const h = bridge.container?.clientHeight ?? window.innerHeight;
-    camera.setViewOffset(w, h, framingShift, 0, w, h);
+    framer.apply(dt, bridge.view === '3d' && !bridge.activeBlackHole && !bridge.deepSkyImmersed);
   }
 
   // A selected belt has no ring to draw (it is a cloud, not a dot): its particles brighten

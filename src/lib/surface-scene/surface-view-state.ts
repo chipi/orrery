@@ -48,3 +48,29 @@ export function mobileDrawerHidden(i: {
 }): boolean {
   return i.routeViewActive || i.flatPatchActive || !!i.detailFlying;
 }
+
+/**
+ * The camera's height above the surface, in body radii, under which the orbits have scrolled off
+ * and the planet fills the view. Radius-relative, so it is right for every body.
+ */
+export const ORBIT_RULER_HIDE_RADII = 1.0;
+
+/** Re-show band above the hide threshold, so parking at the edge cannot flicker. */
+const ORBIT_RULER_SHOW_BAND = 1.12;
+
+/**
+ * Whether the orbits (dots, rings, ruler) are in view. Under one body radius they hide for a clean
+ * single-body view, with a 12 % hysteresis band; while an orbiter is the focus they stay, because
+ * the fly-in to an orbiter lands under one radius and would otherwise hide the thing just picked.
+ */
+export function orbitsInViewNext(i: {
+  altitudeKm: number;
+  radiusKm: number;
+  wasInView: boolean;
+  focusOnOrbiter: boolean;
+}): boolean {
+  if (i.focusOnOrbiter) return true;
+  const hideKm = i.radiusKm * ORBIT_RULER_HIDE_RADII;
+  if (i.wasInView) return !(i.altitudeKm < hideKm);
+  return i.altitudeKm > hideKm * ORBIT_RULER_SHOW_BAND;
+}

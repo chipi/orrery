@@ -232,7 +232,7 @@ Never mix faces within a semantic role. Descriptions and overviews are Space Mon
 
 ### 4.3 Card grid
 
-Cards use CSS Grid with `auto-fill` and `minmax(280–290px, 1fr)`. Gap is 12–14px. Cards animate in with `fadeUp` staggered by 35–40ms per card.
+Cards use CSS Grid with `auto-fill` and `minmax(280–290px, 1fr)`. Gap is 12–14px. Cards animate in with `fadeUp` staggered by 35–40ms per card. The program page's rails and compact hardware cards are §5.19.
 
 ### 4.4 Internal spacing
 
@@ -598,9 +598,9 @@ Scene code cannot read CSS variables: the highlight blue is the literal `RING_BL
 | Control row | Play, reset, scrub, date (`#ffd57a`, `5.5rem` min at 480px and below, else `6.2rem`), close; chips 30px fine pointer, 44px touch. The scrub input has `min-width: 0` so the date stays inside the box on a phone. |
 | Chip block | Two rows, each `1.3em` high, one line, `white-space: nowrap`, ellipsis: row 1 the glyph and the phase name (bold; a dotted-underline button where the phase has a module panel), row 2 "launcher · date" indented under the name (the date `flex: none`, the launcher cut). The empty state uses the same two rows. The whole phase is in the block's `title` and in a visually hidden `aria-live="polite"` element. |
 | Hint | `0.74rem`, one row with an ellipsis; at 480px and below two rows reserved (`2.5em`, clamped at two). |
-| Landscape phone | Touch and 480px tall or less: `bottom: 3.5rem`, padding `0.6rem 1.2rem 0.5rem`, tighter chip and hint margins (about 124px tall), so the box clears the top-left HUD chips and the drawer tabs. |
 
 A new phase string never changes the box height; do not let a row wrap.
+
 ### 5.19 Mini card, card rail, compact hardware card and the mission pane (UXD-032)
 
 `/programs/<id>`. Not the mission-library card (§5.4) and not the programs index card (300 px, tagline).
@@ -612,7 +612,6 @@ A new phase string never changes the box height; do not let a row wrap.
 | Hardware card | A link, 56px tall, `72px 1fr` grid, 4px padding, same border, radius and hover as the mini card. A rectangular 72×48 hero (4px radius, `object-fit: cover`), the name (14px, 600, accent, one line) over the role (11px label). Grid `minmax(260px, 1fr)`, 8px gap, one column at 480px and below. Replaces the round 28px thumb on this page only. |
 | Mission pane | `aside.detail`: meta and name one line with an ellipsis, blurb `min-height: 4.65em` and clamped at three lines. One height for every mission. |
 | Empty section | A section with no rows draws no label and no box. |
-
 
 ---
 
@@ -656,6 +655,8 @@ Full-screen 3D/2D. Regime legend strip below nav. Bottom bar with speed controls
 
 **Back to Explore.** The view row (and the top-left cluster on touch) starts with the "Back to Explore" link chip, to `/explore?id=earth` ([UXD-028](../uxs/decisions/UXD-028-explore-and-worlds-link-both-ways.md)); the same chip is first on /moon, /mars and /venus.
 
+**Selected orbiter.** An orbiter selected in the 3D view (ISS, Hubble, a GNSS craft) is marked with the outline pass, the same look as hover (no halo, no new art). The orbits stay in view while it is selected: the orbiter, its ring, the other orbiters and the ruler are drawn even though the fly-in lands under one body radius, and the view shifts so the orbiter sits in the middle of the space the panel leaves ([UXD-030](../uxs/decisions/UXD-030-worlds-selected-orbiter-stays-visible-and-framed.md)).
+
 **Notable:** HTML label overlays for orbital objects in 3D use the same `project()` pattern as P01, but with a graceful opacity fade when objects pass behind the body. Labels disappear at `wp.z > 1`.
 
 ![P05 Earth Orbit Viewer — ISS selected, log-scale display from ISS to JWST, regime legend](screenshots/p05_earth_orbit.png)
@@ -667,8 +668,8 @@ Full-screen 3D/2D. The 3D view is a sphere — the camera orbits the Moon, not t
 **Index.** The INDEX rail's dot is the site's nation colour, the legend's (§5.13).
 
 **Back to Explore.** The first chip of the view row (the top-left cluster on touch) is "Back to Explore", a link to `/explore?id=earth:moon` (the satellite key) that opens the Moon's panel with the camera on it ([UXD-028](../uxs/decisions/UXD-028-explore-and-worlds-link-both-ways.md)).
-**Selected orbiter.** An orbiter selected in the 3D view (ISS, Hubble, a GNSS craft) is marked with the outline pass, the same look as hover (no halo, no new art). The orbits stay in view while it is selected: the orbiter, its ring, the other orbiters and the ruler are drawn even though the fly-in lands under one body radius, and the view shifts so the orbiter sits in the middle of the space the panel leaves ([UXD-030](../uxs/decisions/UXD-030-worlds-selected-orbiter-stays-visible-and-framed.md)).
 
+**Selected orbiter.** An orbiter site (LRO, Lunar Prospector and the others; on /mars, MRO) selected in the 3D view keeps its dot, its ring, the other orbiters and the ruler in view, wears the outline pass as on hover, and sits in the middle of the space the panel leaves; closing the panel ends the selection and the orbits hide again when the camera is under one radius ([UXD-030](../uxs/decisions/UXD-030-worlds-selected-orbiter-stays-visible-and-framed.md)).
 
 **Notable:** The far side missions (Chang'e 4, Chang'e 6) can only be seen in 3D by rotating the camera — this is intentional design, not a bug. The far side is literally hidden from Earth. The 2D flat map reveals it at the edges.
 
@@ -681,8 +682,6 @@ Full-screen 3D/2D. The 3D view is a sphere — the camera orbits the Moon, not t
 ### 7.1 Camera orbit (3D views)
 
 Consistent across P01, P03, P05, P06:
-**Selected orbiter.** An orbiter site (LRO, Lunar Prospector and the others; on /mars, MRO) selected in the 3D view keeps its dot, its ring, the other orbiters and the ruler in view, wears the outline pass as on hover, and sits in the middle of the space the panel leaves; closing the panel ends the selection and the orbits hide again when the camera is under one radius ([UXD-030](../uxs/decisions/UXD-030-worlds-selected-orbiter-stays-visible-and-framed.md)).
-
 
 - **Mouse drag:** `camTheta += dx * 0.005–0.006; camPhi = clamp(camPhi + dy * 0.004–0.005)`
 - **Scroll:** `camR = clamp(camR + deltaY * 0.5–0.7, min, max)`

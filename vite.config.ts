@@ -686,6 +686,8 @@ export default defineConfig(({ mode, command }) => {
           // helper (model-geom) both instantiate Three.js materials/geometry
           // jsdom can't run. Same policy as the scene/model builders.
           'src/lib/three/hero-materials.ts',
+          // G3 launch-conditions rig (shader sky, cloud deck, pad smoke) — WebGL, dev-only for now.
+          'src/lib/three/launch-conditions-scene.ts',
           'src/lib/three/model-geom.ts',
           // Surface/flyby hotspot 3D models — every hotspot-models/*.ts is a
           // procedural `buildXHotspot(): THREE.Group` builder (rovers, landers,

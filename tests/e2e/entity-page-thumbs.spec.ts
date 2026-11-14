@@ -69,12 +69,20 @@ test.describe('entity pages carry round photos in the server HTML (L45-T4)', () 
     expectLazyDecorative(tags);
   });
 
-  test('/programs/apollo: unpatched mission rows and the hardware list have a photo; a patched row keeps its patch', async ({
+  test('/programs/apollo: the hardware list is compact cards with a mini hero (E1, UXD-032, not a round photo); a patched mission row keeps its patch', async ({
     page,
   }) => {
     const tags = await thumbTags(page, '/programs/apollo');
-    expect(tags.length).toBeGreaterThanOrEqual(8);
     expectLazyDecorative(tags);
+    const res = await page.request.get('/programs/apollo');
+    const heroes = (await res.text()).match(/<img[^>]*class="hw-hero[^"]*"[^>]*>/g) ?? [];
+    expect(heroes.length).toBeGreaterThanOrEqual(8);
+    for (const t of heroes) {
+      expect(t).toContain('alt=""');
+      expect(t).toContain('loading="lazy"');
+      expect(t).toContain('width="72"');
+      expect(t).toMatch(/src="[^"]*images\/fleet-galleries\/[^"]+\.webp"/);
+    }
     await page.goto('/programs/apollo');
     const patched = page.locator('.timeline li:has(img.t-patch)');
     expect(await patched.count()).toBeGreaterThan(0);

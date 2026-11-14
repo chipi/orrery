@@ -70,7 +70,7 @@ The slice plan is dated 2026-11-11 and all statuses are as of that day, on branc
 
 | Slice | Change | Points | Decisions | Status | Surfaces | Will touch | Waits on |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| E1 | Program page: empty sections hidden, mini-cards for related programs, surface sites and hardware | PG2 to PG6 | none yet | planned | program pages | UXS-004 | — |
+| E1 | Program page: empty sections hidden, mini-cards for related programs, surface sites and hardware | PG2 to PG6 | UXD-032 | in review (built; unit tests, e2e on three projects against the dev server and screenshots of Sputnik, Apollo, Cassini and Mars rovers checked; prerender build and the route budget not run; waiting for the operator's screenshots) | program pages | UXS-004 (no program content: the UXD and Design System 5.19 hold it), IA url-structure, TA.md, the components README, UXD-025, the program runbook | — |
 | E2 | Program data: roster links, a "Milestones" section | PG7 to PG9 | none yet | planned | program pages | none (data) | — |
 | E3 | Missions page: one agency palette, colour in the filters, a redesigned era strip | MI2, MI3 | none yet | planned | missions | UXS-004 | D7 |
 | E4 | Fleet: line-up as a view toggle, a compact "Missions" tab | FL2, FL3 | none yet | planned | fleet | UXS-004 | — |

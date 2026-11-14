@@ -188,6 +188,7 @@ features that warrant top-level prominence.
 /earth                                         Earth Orbit
 /moon                                          Moon Map (/mars and /venus are the other two Worlds; each links back to /explore?id=<body>, UXD-028)
 /explore?id=mars                               A body's panel opens and the camera focuses it (a planet, a small body, `parent:moon` for a satellite); the return deep link of the Worlds' "Back to Explore" chip (UXD-028)
+/programs/<id>                                 A program page (UXD-032): the spine, Missions, On the surface (rail), Hardware (compact cards), Related programs (rail), Go deeper, Sources; a section with no rows draws nothing; an Earth surface card links `/earth?object=<id>` (Moon and Mars `?site=<id>`)
 /lab                                           Physics Lab (empty Notebook)
 /lab?doc=<compact>                             Shared worksheet (URL-encoded card graph; grammar frozen in RFC-037 D-serialize)
 ```

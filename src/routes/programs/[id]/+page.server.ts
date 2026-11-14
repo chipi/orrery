@@ -1,21 +1,56 @@
-import { getProgram } from '$lib/data';
+import { getProgram, getProgramIndex } from '$lib/data';
 import { getLocale } from '$lib/paraglide/runtime';
-import { thumbOf } from '$lib/entity-thumb';
+import { thumbOf, siteHeroOf, fleetHeroOf } from '$lib/entity-thumb';
+import { reuseHeroPath } from '$lib/program-page';
 import type { PageServerLoad } from './$types';
 
 /**
- * The round photo of each roster row, resolved here so the page does not ship the thumbs manifest
- * to the browser (~4.6 KB brotli with the thumb component's ring helper). Keyed `<ref>:<linked_id>`
- * like the page's badges map; a row with no photo has no key.
+ * Everything the page draws from a manifest, resolved here so the browser does not ship the thumbs
+ * manifest (~4.6 KB brotli with the thumb component's ring helper) or the programs index: the round
+ * photo of each mission row (keyed `mission:<id>`), the hero of each hardware card (`heroes`, keyed
+ * by fleet id), and the cards of the two rails (surface sites, related programs), each with its
+ * entity's existing hero. A card with no hero has `hero: null`.
  */
 export const load: PageServerLoad = async ({ params, fetch }) => {
-  const program = await getProgram(params.id, getLocale(), fetch);
+  const locale = getLocale();
+  const program = await getProgram(params.id, locale, fetch);
   const thumbs: Record<string, string> = {};
+  const heroes: Record<string, string> = {};
   for (const r of program?.roster ?? []) {
-    if (!r.linked_id || (r.ref && r.ref !== 'mission' && r.ref !== 'fleet')) continue;
-    const kind = r.ref === 'fleet' ? 'fleet' : 'mission';
-    const t = thumbOf(kind === 'fleet' ? 'fleet' : 'missions', r.linked_id);
-    if (t) thumbs[`${kind}:${r.linked_id}`] = t;
+    if (!r.linked_id) continue;
+    if (r.ref === 'fleet') {
+      const h = fleetHeroOf(r.linked_id);
+      if (h) heroes[r.linked_id] = h;
+    } else if (!r.ref || r.ref === 'mission') {
+      const t = thumbOf('missions', r.linked_id);
+      if (t) thumbs[`mission:${r.linked_id}`] = t;
+    }
   }
-  return { thumbs };
+
+  const siteCards = (program?.surface_sites ?? []).map((s) => ({
+    surface: s.surface,
+    site: s.site,
+    label: s.label,
+    hero: siteHeroOf(s.surface === 'earth' ? 'earth-objects' : s.surface, s.site),
+  }));
+
+  const index = program?.related_programs?.length ? await getProgramIndex(locale, fetch) : [];
+  const byId = new Map(index.map((e) => [e.id, e]));
+  const related = (program?.related_programs ?? []).flatMap((id) => {
+    const e = byId.get(id);
+    return e
+      ? [
+          {
+            id,
+            name: e.name,
+            agency: e.agency,
+            start_year: e.start_year ?? null,
+            end_year: e.end_year ?? null,
+            hero: reuseHeroPath(e.hero),
+          },
+        ]
+      : [];
+  });
+
+  return { thumbs, heroes, siteCards, related };
 };

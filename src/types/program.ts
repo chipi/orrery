@@ -26,7 +26,7 @@ export interface ProgramLink {
 export interface ProgramSeeAlso {
   label: string;
   href: string;
-  kind: 'body' | 'science' | 'explore';
+  kind: 'body' | 'science' | 'explore' | 'fleet' | 'gallery' | 'program';
 }
 
 export interface ProgramBase {

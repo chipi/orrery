@@ -72,6 +72,7 @@ const GATED_ROUTES: { path: string; label: string; exclude?: string }[] = [
   { path: '/missions?id=apollo11', label: 'mission panel open' },
   { path: '/fleet?id=saturn-v', label: 'fleet panel open' },
   { path: '/programs/apollo', label: 'program page' },
+  { path: '/programs/sputnik', label: 'program page, no hardware' },
   { path: '/essays/delta-v', label: 'essay page' },
   { path: '/science/orbits/keplerian-orbit', label: 'science section' },
   { path: '/science/history/apollo-11-1969', label: 'science history page' },

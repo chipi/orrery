@@ -51,6 +51,22 @@ export function resolveSiteThumb(
 export const thumbOfSite = (body: string, id: string): string | null =>
   resolveSiteThumb(manifestJson as EntityThumbManifest, body, id);
 
+/**
+ * `/images/<fragment>.webp`: the full 16:9-capable hero of the file a `/credit-thumbs` 1x1 thumb was
+ * cropped from (the thumb is the blessed slot's crop, so this is the hero the entity shows).
+ */
+export function heroOfThumb(thumb: string | null): string | null {
+  const m = thumb?.match(/^\/credit-thumbs(\/images\/.+)\.1x1\.webp$/);
+  return m ? `${m[1]}.webp` : null;
+}
+
+/** The hero of a site of a Worlds' INDEX (`moon`, `mars`, `venus`, `earth-objects`), or null. */
+export const siteHeroOf = (body: string, id: string): string | null =>
+  heroOfThumb(thumbOfSite(body, id));
+
+/** The hero of a fleet entry (its blessed gallery slot), or null. */
+export const fleetHeroOf = (id: string): string | null => heroOfThumb(thumbOf('fleet', id));
+
 const SOLAR_SURFACE: Record<string, string> = {
   planet: 'planets',
   moon: 'satellites',

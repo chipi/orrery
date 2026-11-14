@@ -113,6 +113,10 @@ map, loading the 512 px crop (30 to 56 KB) where the pipeline already has a 192 
 
 ## T4 — the fleet panel and the entity pages (built 2026-11-13)
 
+> Superseded in part by [UXD-032](UXD-032-program-page-card-rails-and-compact-hardware.md) (2026-11-14): on
+> `/programs/<id>` the hardware list is no longer round photos but compact cards with a rectangular 72×48 mini
+> hero (PG6). The program's mission rows keep their round photos and patches; every other list keeps the thumb.
+
 1. **Bug fixed first.** The fleet panel's MISSIONS tab printed the raw mission id (`new-horizons`) where `/fleet/<id>`
    prints the mission's name. The tab now loads each linked mission with `getMission` in the page locale (the source
    `/fleet/<id>` uses, in the 14 overlays: no new string) and renders its rows once the names are in, so the id

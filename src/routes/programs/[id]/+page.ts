@@ -49,5 +49,13 @@ export const load: PageLoad = async ({ params, fetch, data }) => {
   // its roster carries none; only the program insignia resolves.
   const badges = await getBadges(fetch);
 
-  return { program, missionDetails, badges, thumbs: data.thumbs };
+  return {
+    program,
+    missionDetails,
+    badges,
+    thumbs: data.thumbs,
+    heroes: data.heroes,
+    siteCards: data.siteCards,
+    related: data.related,
+  };
 };

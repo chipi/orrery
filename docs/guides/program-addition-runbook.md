@@ -55,7 +55,7 @@ Neither is a spec/fact rehash. **Launch-site assets propagate automatically** �
 
 ### 7 · Deep-links — `see_also`
 
-`see_also[]` (`{ label, href, kind: "body" | "science" | "explore" }`) sends the reader into the rest of Orrery — `/moon`, `/science` articles, `/explore`. Every program should hand off to the surfaces that continue its story.
+The program page draws only the sections that have rows (no hardware row: no Hardware heading), shows `related_programs` as a card rail (so list ids that exist in `programs/index.json`; do not repeat them as `see_also` rows of kind `program`, the page drops those) and `surface_sites` as a card rail (Earth objects such as `iss` link `/earth?object=<id>`). `see_also[]` (`{ label, href, kind: "body" | "science" | "explore" | "fleet" | "gallery" }`) sends the reader into the rest of Orrery — `/moon`, `/science` articles, `/explore`. Every program should hand off to the surfaces that continue its story.
 
 ### 8 · Prerender — `src/routes/programs/[id]/+page.ts`
 

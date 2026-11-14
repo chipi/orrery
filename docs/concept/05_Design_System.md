@@ -601,6 +601,18 @@ Scene code cannot read CSS variables: the highlight blue is the literal `RING_BL
 | Landscape phone | Touch and 480px tall or less: `bottom: 3.5rem`, padding `0.6rem 1.2rem 0.5rem`, tighter chip and hint margins (about 124px tall), so the box clears the top-left HUD chips and the drawer tabs. |
 
 A new phase string never changes the box height; do not let a row wrap.
+### 5.19 Mini card, card rail, compact hardware card and the mission pane (UXD-032)
+
+`/programs/<id>`. Not the mission-library card (§5.4) and not the programs index card (300 px, tagline).
+
+| Element | Rule |
+|---|---|
+| `MiniCard` | A link, 176 px wide, 1px `rgba(255,255,255,0.1)` border, 8px radius, `rgba(255,255,255,0.02)` fill, hover and focus edge `rgba(127,176,224,0.5)`. A 16:9 hero (decorative, `alt=""`), a kind line (Space Mono 11px, 1px tracking, uppercase, label colour), a title (Bebas 20px, one line, ellipsis, full text in `title`), an optional meta line (as the kind line). The hero is the entity's existing hero; no hero is a flat panel. |
+| `CardRail` | A `ul` with `aria-label` (the section label), `display: flex`, 10px gap, horizontal scroll inside its own box, scroll-snap `x proximity`, no arrow buttons. The page never scrolls sideways. |
+| Hardware card | A link, 56px tall, `72px 1fr` grid, 4px padding, same border, radius and hover as the mini card. A rectangular 72×48 hero (4px radius, `object-fit: cover`), the name (14px, 600, accent, one line) over the role (11px label). Grid `minmax(260px, 1fr)`, 8px gap, one column at 480px and below. Replaces the round 28px thumb on this page only. |
+| Mission pane | `aside.detail`: meta and name one line with an ellipsis, blurb `min-height: 4.65em` and clamped at three lines. One height for every mission. |
+| Empty section | A section with no rows draws no label and no box. |
+
 
 ---
 

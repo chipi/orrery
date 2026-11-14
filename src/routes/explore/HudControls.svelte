@@ -320,61 +320,63 @@
   <!-- Compact trajectory on/off — a much smaller stand-in for the desktop
        chip. onOpen enables the layer when the drawer opens; this toggle lets
        you switch the arcs off without closing the drawer. -->
-  <div class="iconic-row">
-    <Chip
-      kind="toggle"
-      dot
-      active={layers.paths}
-      onclick={() => onToggleLayer('paths')}
-      data-testid="layer-paths"
-      title={m.explore_layer_tip_paths()}
-    >
-      {m.ui_layer_paths()}
-    </Chip>
-  </div>
-  <div class="paths-legend" role="group" aria-label={m.explore_trajectory_legend_aria()}>
-    {@render legendHead()}
-    <div class="paths-legend-list">
-      {#each PATHS_LEGEND as entry, i (entry.mission_id)}
-        <button
-          type="button"
-          class="paths-legend-row"
-          data-a4-keep="legend row, not a chip"
-          class:is-selected={iconic.state.selectedId === entry.mission_id}
-          class:is-hovered={iconic.state.hoveredId === entry.mission_id}
-          aria-pressed={iconic.state.selectedId === entry.mission_id}
-          onclick={() => {
-            iconic.selectMission(entry.mission_id, localeFromPage(page));
-            close();
-          }}
-          onkeydown={(e) => onLegendKeydown(e, i)}
-          onmouseenter={() => {
-            iconic.state.hoveredId = entry.mission_id;
-          }}
-          onfocus={() => {
-            iconic.state.hoveredId = entry.mission_id;
-          }}
-          onblur={() => {
-            if (iconic.state.hoveredId === entry.mission_id) {
+  <div class="iconic-drawer">
+    <div class="iconic-row">
+      <Chip
+        kind="toggle"
+        dot
+        active={layers.paths}
+        onclick={() => onToggleLayer('paths')}
+        data-testid="layer-paths"
+        title={m.explore_layer_tip_paths()}
+      >
+        {m.ui_layer_paths()}
+      </Chip>
+    </div>
+    <div class="paths-legend" role="group" aria-label={m.explore_trajectory_legend_aria()}>
+      {@render legendHead()}
+      <div class="paths-legend-list">
+        {#each PATHS_LEGEND as entry, i (entry.mission_id)}
+          <button
+            type="button"
+            class="paths-legend-row"
+            data-a4-keep="legend row, not a chip"
+            class:is-selected={iconic.state.selectedId === entry.mission_id}
+            class:is-hovered={iconic.state.hoveredId === entry.mission_id}
+            aria-pressed={iconic.state.selectedId === entry.mission_id}
+            onclick={() => {
+              iconic.selectMission(entry.mission_id, localeFromPage(page));
+              close();
+            }}
+            onkeydown={(e) => onLegendKeydown(e, i)}
+            onmouseenter={() => {
+              iconic.state.hoveredId = entry.mission_id;
+            }}
+            onfocus={() => {
+              iconic.state.hoveredId = entry.mission_id;
+            }}
+            onblur={() => {
+              if (iconic.state.hoveredId === entry.mission_id) {
+                iconic.state.hoveredId = null;
+              }
+            }}
+            onmouseleave={() => {
               iconic.state.hoveredId = null;
-            }
-          }}
-          onmouseleave={() => {
-            iconic.state.hoveredId = null;
-          }}
-          data-testid="paths-legend-row-{entry.mission_id}"
-          data-audio-stage="iconic-mission-{entry.mission_id}"
-        >
-          <EntityThumb src={thumbOf('missions', entry.mission_id)} ring={entry.color} />
-          <span class="name">{entry.name}</span>
-          <span class="logos" aria-hidden="true">
-            {#each agencyToLogoPaths(entry.agency) as logoPath (logoPath)}
-              <img src={logoPath} alt="" loading="lazy" />
-            {/each}
-          </span>
-          <span class="year">{entry.launch_year}</span>
-        </button>
-      {/each}
+            }}
+            data-testid="paths-legend-row-{entry.mission_id}"
+            data-audio-stage="iconic-mission-{entry.mission_id}"
+          >
+            <EntityThumb src={thumbOf('missions', entry.mission_id)} ring={entry.color} />
+            <span class="name">{entry.name}</span>
+            <span class="logos" aria-hidden="true">
+              {#each agencyToLogoPaths(entry.agency) as logoPath (logoPath)}
+                <img src={logoPath} alt="" loading="lazy" />
+              {/each}
+            </span>
+            <span class="year">{entry.launch_year}</span>
+          </button>
+        {/each}
+      </div>
     </div>
   </div>
 {/snippet}
@@ -491,6 +493,49 @@
      positioning needed — the drawer handles its own scroll. */
   :global(.mdg-body) .paths-legend {
     display: flex;
+    max-height: none;
+  }
+  /* The drawer body scrolls (46vh, 240px in landscape); a list with its own cap collapsed to no
+     rows on a 390 px-high phone. The title is one line: a touch screen cannot hover, and the (i)
+     holds the explanation. */
+  :global(.mdg-body) .paths-legend-list {
+    flex: none;
+    overflow: visible;
+  }
+  :global(.mdg-body) .paths-legend-title {
+    min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  /* A landscape phone's card is 130 to 180 px high (46vh of a 293 to 390 px window): the chip and
+     the title share one line (the legend's own box dissolves into a grid), the rows tighten, and
+     2 to 3 rows show; the card scrolls for the rest. */
+  :global(html[data-touch][data-orientation='landscape'] .mdg-body) .iconic-drawer {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: center;
+    column-gap: 8px;
+  }
+  :global(html[data-touch][data-orientation='landscape'] .mdg-body) .iconic-drawer .paths-legend {
+    display: contents;
+  }
+  :global(html[data-touch][data-orientation='landscape'] .mdg-body) .iconic-row {
+    margin-bottom: 4px;
+  }
+  :global(html[data-touch][data-orientation='landscape'] .mdg-body) .paths-legend-head {
+    /* the card's × is 44 px wide in the corner: the (i) ends before it */
+    padding: 0 40px 0 0;
+    margin: 0 0 4px;
+    border-bottom: none;
+    align-items: center;
+  }
+  :global(html[data-touch][data-orientation='landscape'] .mdg-body) .paths-legend-list {
+    grid-column: 1 / -1;
+  }
+  :global(html[data-touch][data-orientation='landscape'] .mdg-body) .paths-legend-row {
+    min-height: 30px;
+    padding-block: 1px;
   }
   .paths-legend-list {
     display: flex;

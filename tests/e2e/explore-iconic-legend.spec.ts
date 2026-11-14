@@ -254,8 +254,37 @@ test.describe('/explore — a thumb on every PATHS legend row (L45-T3b)', () => 
     const h = await body
       .getByTestId('paths-legend-row-pioneer-10')
       .evaluate((el) => el.getBoundingClientRect().height);
-    expect(h).toBeGreaterThanOrEqual(36);
+    // 36 px in portrait; a landscape phone's 130 to 180 px card tightens them to 30 so that 2 to 3
+    // rows show (UXD-026 decision 13)
+    expect(h).toBeGreaterThanOrEqual(30);
     expect(h).toBeLessThanOrEqual(44);
+  });
+});
+
+test.describe('/explore — the MISSIONS drawer card shows rows (C7)', () => {
+  test('at least 2 rows are inside the card and voyager-1 is clickable', async ({ page }) => {
+    test.skip(!test.info().project.name.startsWith('mobile'), 'touch only');
+    await page.goto('/explore');
+    await waitForHydration(page);
+    await openDrawerTab(page, /missions/i);
+    const body = page.locator('.mdg-body');
+    await expect(body.locator(ROWS)).toHaveCount(18);
+    // rows must be inside the card's visible box, not merely have a box: the body scrolls
+    const inside = await body.evaluate((el) => {
+      const b = el.getBoundingClientRect();
+      return [...el.querySelectorAll('[data-testid^="paths-legend-row-"]')].filter((r) => {
+        const q = r.getBoundingClientRect();
+        return q.height > 20 && q.top >= b.top - 1 && q.bottom <= b.bottom + 1;
+      }).length;
+    });
+    expect(inside, 'rows fully inside the card without scrolling').toBeGreaterThanOrEqual(2);
+    // one line title on touch
+    const titleH = await body.locator('.paths-legend-title').evaluate((el) => el.clientHeight);
+    expect(titleH).toBeLessThan(24);
+    const row = body.getByTestId('paths-legend-row-voyager-1');
+    await row.scrollIntoViewIfNeeded();
+    await row.click();
+    await expect(page.locator('aside.panel').first()).toBeVisible({ timeout: 15_000 });
   });
 });
 

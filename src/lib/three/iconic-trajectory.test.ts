@@ -294,4 +294,25 @@ describe('iconic mission box and the heading pill', () => {
     }
     h.dispose();
   });
+
+  it('the pill stays drawn while its mission is highlighted, on screen or not', () => {
+    const h = buildIconicTrajectory({
+      data: heading,
+      auToPx: (au) => au * 10,
+      width: 800,
+      height: 600,
+    });
+    h.setVisible(true);
+    h.setHighlight(true);
+    // looking away from Today and the pill: both are off the canvas
+    const cam = new THREE.PerspectiveCamera(55, VIEW_W / VIEW_H, 0.1, 100000);
+    cam.position.set(0, 100, 1200);
+    cam.lookAt(5000, 100, 0);
+    cam.updateMatrixWorld(true);
+    h.relayoutLabels(cam, VIEW_H);
+    expect(h.directionLabel!.visible).toBe(true);
+    h.setHighlight(false);
+    expect(h.directionLabel!.visible).toBe(false);
+    h.dispose();
+  });
 });

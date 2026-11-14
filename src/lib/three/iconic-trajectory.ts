@@ -29,6 +29,7 @@ import {
   viewDepth,
   worldPerPx,
   type LabelSlot,
+  type PlaceSlot,
 } from '$lib/universe/scene-pins';
 import {
   BOX_BODY_LINE,
@@ -685,9 +686,13 @@ export function buildIconicTrajectory(opts: BuildIconicTrajectoryOpts): IconicTr
       marker: null,
     });
   }
-  const slots = boxes.map((b) => b.slot);
-  // The heading pill takes part in the pass, after the mission box: a box never sits on it.
-  const dirSlot = dirLabel ? newLabelSlot(dirLabel, 1, -0.5) : null;
+  const slots: PlaceSlot[] = boxes.map((b) => b.slot);
+  // The heading pill is required while its mission is highlighted (UXD-021): it is an obstacle the
+  // boxes yield to (a forced slot, placed first), not a candidate. It has no `sprite`, so the pass
+  // never hides it, and an off-screen pill (a phone's sheet and edge) stays drawn as before.
+  const dirSlot: PlaceSlot | null = dirLabel
+    ? { rank: -2, order: -1, force: true, visible: false, rect: { l: 0, r: 0, b: 0, t: 0 } }
+    : null;
   if (dirSlot) slots.push(dirSlot);
   let boxTextures: THREE.CanvasTexture[] = [];
   let disposed = false;
@@ -768,7 +773,7 @@ export function buildIconicTrajectory(opts: BuildIconicTrajectoryOpts): IconicTr
       if (!labelGroup.visible) return;
       camera.updateMatrixWorld();
       const fov = cameraFov(camera);
-      // The heading pill is a candidate like a box (its sprite is world-sized, its rectangle is
+      // The heading pill is an obstacle for the boxes (its sprite is world-sized, its rectangle is
       // read the same way).
       if (dirSlot && dirLabel) dirSlot.visible = labelRect(dirLabel, camera, dirSlot.rect, tmp);
       for (const b of boxes) {

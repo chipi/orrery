@@ -394,5 +394,9 @@
   }
   :global(html[data-touch][data-orientation='landscape']) .mdg-body {
     max-height: min(46vh, 240px);
+    padding-block: 6px;
+    /* The floating card sits over the level card and the scale chips: opaque enough that their
+       text does not show through it. */
+    background: rgba(8, 10, 22, 0.98);
   }
 </style>

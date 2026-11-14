@@ -384,6 +384,8 @@ Briefs `docs/wip/2026-11-13-slice-E1-brief.md` … `E5-brief.md` (3f9d6edd98a). 
 
 ## F. Pages
 
+Briefs `docs/wip/2026-11-14-slice-F1-brief.md` … `F4-brief.md` (87792e19c6f; F4 = gallery G4/G6). **Operator 2026-11-14: "I'm okay with all the recommendations. Go for them."** — Decisions 24–44 approved as recommended (Q7: first 10 + "Show all N" on credits, colophon and library; Q9: the 198 cutaways split 158 spacecraft + 40 launcher sketches; Q10: JPL elements + physical + satellite parameters as three rows, the landing/rover sources the route files cite; D1 consistency pass; D2 still hero, no video; D3 keep the two-panel TV layout + an emulation spec; the home hero becomes two columns from 1024 px with the picture file untouched; L3 teal arc kept; one shared glyph component with Lab; G2–G4 = `/gallery/deep-sky`; the viewer image takes the remaining height).
+
 | Slice | Points | Change | Done when |
 |---|---|---|---|
 | F1 Credits and colophon | CR2, CO1, CO2, CO3 | one collapse approach (Q7) for both; colophon totals line from `original-work.json` totals; cutaways split into spacecraft and launchers (Q9) | shots; TOC anchors open their section |

@@ -799,7 +799,7 @@
   "landing_section_tour_p2": "Finde eine Mission, die dich interessiert, in /missions — Curiosity, Apollo 11, alles ab Sputnik. Lies ihren FLIGHT-Tab, um das tatsächliche ∆v-Budget zu sehen, aufgeschlüsselt nach den fünf Phasen jedes Raumflugs: Start, Trans-X-Injektion, Kreuzfahrt, Bahninsertion, EDL.",
   "landing_section_tour_p3": "Wenn etwas keinen Sinn ergibt — wenn eine Zahl im HUD oder ein Label in einem Diagramm dich verwirrt — jeder Begriff ist mit /science verlinkt. Die Enzyklopädie ist dafür gedacht, der Reihe nach gelesen oder je nach Bedarf durchsprungen zu werden.",
   "landing_section_tour_p4": "/plan und /fly sind das tiefere Ende. /plan berechnet Porkchop-Diagramme für jedes Ziel — wähle ein Startjahr, sieh, wann die Fenster sich öffnen. /fly nimmt eine Mission und führt dich phasenweise durch ihre Trajektorie. Das HUD zeigt alles in echten Einheiten.",
-  "landing_section_cards_heading": "Alle 12 Ziele",
+  "landing_section_cards_heading": "Alle {count} Ziele",
   "landing_card_explore_title": "Von der Sonne zum kosmischen Netz",
   "landing_card_explore_desc": "Zoome durch acht verschachtelte Skalen hinaus — Sonnensystem, Galaxie, Lokale Gruppe, das kosmische Netz — jede in echter Entfernung.",
   "landing_card_plan_title": "Startfenster wählen",

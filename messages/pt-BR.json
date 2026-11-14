@@ -799,7 +799,7 @@
   "landing_section_tour_p2": "Encontre uma missão que te interessa em /missions — Curiosity, Apollo 11, qualquer coisa desde o Sputnik. Leia sua aba FLIGHT para ver o orçamento real de ∆v dividido nas cinco fases de qualquer voo espacial: lançamento, injeção trans-X, cruzeiro, inserção em órbita, EDL.",
   "landing_section_tour_p3": "Quando algo não fizer sentido — quando um número no HUD ou um rótulo em um gráfico te confundir — cada termo está vinculado a /science. A enciclopédia é feita para ser lida em ordem ou saltada conforme você precisar.",
   "landing_section_tour_p4": "/plan e /fly são a parte mais profunda. /plan calcula diagramas porkchop para qualquer destino — escolha um ano de lançamento, veja quando as janelas se abrem. /fly pega uma missão e te leva pela trajetória fase por fase. O HUD mostra tudo em unidades reais.",
-  "landing_section_cards_heading": "Todos os 12 destinos",
+  "landing_section_cards_heading": "Todos os {count} destinos",
   "landing_card_explore_title": "Do Sol à teia cósmica",
   "landing_card_explore_desc": "Afaste a visão através de oito escalas aninhadas — sistema solar, galáxia, Grupo Local, a teia cósmica — cada uma em distância real.",
   "landing_card_plan_title": "Escolha uma janela de lançamento",

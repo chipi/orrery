@@ -799,7 +799,7 @@
   "landing_section_tour_p2": "Trouvez une mission qui vous intéresse dans /missions — Curiosity, Apollo 11, n'importe laquelle à partir de Sputnik. Lisez son onglet FLIGHT pour voir le budget réel de ∆v détaillé selon les cinq phases de tout vol spatial : lancement, injection trans-X, croisière, insertion orbitale, EDL.",
   "landing_section_tour_p3": "Quand quelque chose vous échappe — un nombre de l'affichage ou une étiquette de graphique qui vous déroute —, chaque terme renvoie à /science. L'encyclopédie peut se lire dans l'ordre ou se parcourir selon vos besoins.",
   "landing_section_tour_p4": "/plan et /fly sont la partie la plus avancée. /plan calcule des diagrammes porkchop pour n'importe quelle destination — choisissez une année de lancement et voyez quand les fenêtres s'ouvrent. /fly prend une mission et vous fait parcourir sa trajectoire phase par phase. L'affichage montre tout en unités réelles.",
-  "landing_section_cards_heading": "Les 12 destinations",
+  "landing_section_cards_heading": "Les {count} destinations",
   "landing_card_explore_title": "Du Soleil à la toile cosmique",
   "landing_card_explore_desc": "Dézoomez à travers huit échelles imbriquées — système solaire, galaxie, Groupe Local, toile cosmique — chacune à la vraie distance.",
   "landing_card_plan_title": "Choisir une fenêtre de lancement",

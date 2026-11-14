@@ -799,7 +799,7 @@
   "landing_section_tour_p2": "Zoek een missie die je interesseert in /missions — Curiosity, Apollo 11, alles vanaf Sputnik. Lees het FLIGHT-tabblad om het werkelijke Δv-budget te zien, opgedeeld in de vijf fasen van elke ruimtevlucht: lancering, trans-X-injectie, cruise, baanvergrendeling, EDL.",
   "landing_section_tour_p3": "Wanneer iets geen zin heeft — wanneer een nummer in de HUD of een label op een grafiek je verwart — is elke term gekoppeld aan /science. De encyclopedie is bedoeld om in volgorde te lezen of er doorheen te springen afhankelijk van wat je nodig hebt.",
   "landing_section_tour_p4": "/plan en /fly zijn de diepere kant. /plan berekent porkchop-diagrammen voor elke bestemming — kies een lanceerjaar, zie wanneer de vensters opengaan. /fly neemt een missie en loopt fase voor fase door zijn baan. De HUD toont alles in echte eenheden.",
-  "landing_section_cards_heading": "Alle 12 bestemmingen",
+  "landing_section_cards_heading": "Alle {count} bestemmingen",
   "landing_card_explore_title": "Van de Zon tot het kosmische web",
   "landing_card_explore_desc": "Zoom uit door acht geneste schalen — zonnestelsel, sterrenstelsel, Lokale Groep, het kosmische web — elk op echte afstand.",
   "landing_card_plan_title": "Kies een lanceervenster",

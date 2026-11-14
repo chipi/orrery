@@ -809,7 +809,7 @@
   "landing_section_tour_p2": "/missions で気になるミッションを探しましょう — Curiosity、Apollo 11、Sputnik 以降のあらゆるもの。FLIGHT タブを読むと、すべての宇宙飛行に共通する5つのフェーズ — 打ち上げ、トランスX投入、巡航、軌道投入、EDL — に分けた実際のΔv予算が見られます。",
   "landing_section_tour_p3": "HUD の数字やチャートのラベルなど、意味がわからないものに出会ったら、すべての用語は /science にリンクされています。百科事典は、必要に応じて順番に読んでも、飛び飛びに読んでもよいように作られています。",
   "landing_section_tour_p4": "/plan と /fly はより深い領域です。/plan は任意の目的地のポークチョップ図を計算します — 打ち上げ年を選ぶと、ウィンドウがいつ開くかがわかります。/fly はミッションを取り上げ、その軌道をフェーズごとに案内します。HUD にはすべてが実際の単位で表示されます。",
-  "landing_section_cards_heading": "全12の目的地",
+  "landing_section_cards_heading": "全{count}の目的地",
   "landing_card_explore_title": "太陽から宇宙ウェブへ",
   "landing_card_explore_desc": "8つのネストされたスケール — 太陽系、銀河、局部銀河群、宇宙ウェブ — すべて実際の距離で拡大/縮小します。",
   "landing_card_plan_title": "打ち上げウィンドウを選ぶ",

@@ -1169,7 +1169,7 @@
   "landing_hero_tagline": "A solar system explorer for the browser.",
   "landing_meta_description": "Browser-based solar system explorer, mission simulator, and encyclopedia. Real orbital mechanics. Curated mission catalogue. 14 languages. Open source, no sign-up, no ads, no third-party trackers.",
   "landing_page_title": "Orrery · A solar system explorer for the browser",
-  "landing_section_cards_heading": "All 12 destinations",
+  "landing_section_cards_heading": "All {count} destinations",
   "landing_section_do_heading": "PLAN & FLY",
   "landing_section_tour_heading": "How to use it",
   "landing_section_tour_p1": "Start at /explore. Spin the solar system. Click any planet to read its orbital elements — semi-major axis, eccentricity, true anomaly. The numbers are live.",

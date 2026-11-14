@@ -809,7 +809,7 @@
   "landing_section_tour_p2": "/missions에서 관심 있는 임무를 찾아보세요 — Curiosity, Apollo 11, Sputnik 이후의 무엇이든. FLIGHT 탭을 읽으면 모든 우주 비행의 다섯 단계 — 발사, trans-X 투입, 순항, 궤도 삽입, EDL — 에 걸쳐 실제 ∆v 예산이 어떻게 나뉘는지 볼 수 있습니다.",
   "landing_section_tour_p3": "무언가 이해되지 않을 때 — HUD의 숫자나 차트의 라벨이 헷갈릴 때 — 모든 용어는 /science로 연결됩니다. 백과사전은 처음부터 순서대로 읽어도 되고, 필요에 따라 건너뛰며 읽어도 됩니다.",
   "landing_section_tour_p4": "/plan과 /fly는 더 깊은 단계입니다. /plan은 모든 목적지에 대한 포크찹 플롯을 계산합니다 — 발사 연도를 고르면 발사 창이 언제 열리는지 볼 수 있습니다. /fly는 임무 하나를 골라 궤적을 단계별로 안내합니다. HUD는 모든 것을 실제 단위로 보여 줍니다.",
-  "landing_section_cards_heading": "12개 목적지 모두",
+  "landing_section_cards_heading": "{count}개 목적지 모두",
   "landing_card_explore_title": "태양에서 우주의 웹까지",
   "landing_card_explore_desc": "여덟 겹으로 중첩된 규모를 따라 멀리 물러나 보세요 — 태양계, 은하, 국부 은하군, 우주 웹 — 모두 실제 거리 그대로입니다.",
   "landing_card_plan_title": "발사 창 선택",

@@ -11,7 +11,7 @@
  * the locale's own median length ratio for the tree, is clearly short (< 0.8 of the median).
  * intro_sentence is capped at 240 characters (validate-data): a translation that ran long was
  * sometimes cut to fit, so restore the meaning within the cap.
- * Sentences end at . ! ? 。 ！ ？ ۔ । followed by a space or the end (decimals don't split).
+ * Sentences end at . ! ? 。 ！ ？ ۔ । followed by a space or the end (decimals and "U.S." don't split).
  *
  * dropped-sentences-reviewed.json holds the flagged fields a person read and left (a clause joined
  * by a comma or a dash instead of a full stop, a CJK sentence run together), keyed
@@ -44,7 +44,7 @@ const REVIEWED_FILE = 'scripts/i18n-tools/dropped-sentences-reviewed.json';
 export const sentences = (s) =>
   s
     .replace(/\[([^\]]*)\]\([^)]*\)/g, '$1')
-    .split(/(?<=[.!?])\s+(?=\S)|(?<=[。！？।۔])/u)
+    .split(/(?<=[.!?])(?<!\bU\.S\.)\s+(?=\S)|(?<=[。！？।۔])/u)
     .filter((x) => x.trim().length > 2).length;
 
 const walk = (d) =>

@@ -38,9 +38,10 @@ test.describe('/explore — Milky Way leveling (#451)', () => {
 
   test('the MW shell shows a distance reference + the science lens chips', async ({ page }) => {
     await page.goto('/explore?context=milky-way');
-    await expect(page.getByText('across', { exact: false }).first()).toBeVisible({
-      timeout: 12_000,
-    });
+    // The scale strip's note; the level card (folded on touch) carries "across" in its story too.
+    await expect(
+      page.locator('.scale-schematic-size').filter({ visible: true }).first(),
+    ).toContainText('across', { timeout: 12_000 });
     // The lens ships COLLAPSED to its strip on first paint (all viewports) — turn
     // it on (same attribute the Nav toggle writes) and expand before the chips show.
     await page.evaluate(() => document.documentElement.setAttribute('data-science-lens', 'on'));

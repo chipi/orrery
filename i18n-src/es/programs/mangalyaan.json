@@ -88,5 +88,18 @@
     "/fleet?id=mangalyaan": "Flota — la Mars Orbiter Mission",
     "/programs/chandrayaan": "Chandrayaan: el programa lunar de la India",
     "/mars?site=mangalyaan": "Mangalyaan en órbita marciana"
+  },
+  "roster": {
+    "mission:mangalyaan": {
+      "note": "la Mars Orbiter Mission entra en órbita de Marte al primer intento — la India es la primera nación en triunfar en Marte en su estreno y la primera nación asiática en alcanzar la órbita de Marte"
+    },
+    "The cost": {
+      "note": "toda la misión costó unos 74 millones de dólares — menos que la película de Hollywood Gravity y una fracción de misiones occidentales comparables a Marte",
+      "name": "El coste"
+    },
+    "Eight years on station": {
+      "note": "diseñado para seis meses, el orbitador funcionó unos ocho años hasta que se perdió el contacto — un pequeño demostrador tecnológico que se convirtió en una misión científica de larga vida",
+      "name": "Ocho años en órbita"
+    }
   }
 }

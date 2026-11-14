@@ -91,5 +91,25 @@
     "/fleet?id=falcon-9": "Flota — Falcon 9, Falcon Heavy y Dragon",
     "/programs/iss": "EEI: la estación a la que vuela Crew Dragon",
     "/earth": "Tierra: órbitas, encuentros y bases de lanzamiento"
+  },
+  "roster": {
+    "Falcon 1, flight 4": {
+      "note": "el primer cohete de combustible líquido de desarrollo privado en llegar a órbita — volado pocas semanas antes de que la empresa se quedara sin dinero, en el último vuelo que podía permitirse",
+      "name": "Falcon 1, vuelo 4"
+    },
+    "First Dragon to the ISS": {
+      "note": "la primera nave comercial en atracar en la Estación — el sector privado empieza a abastecer los vuelos espaciales tripulados",
+      "name": "Primera Dragon a la ISS"
+    },
+    "First booster landing": {
+      "note": "una primera etapa de Falcon 9 regresa y aterriza en vertical — la reutilización, descartada durante décadas por antieconómica, queda demostrada",
+      "name": "Primer aterrizaje de un propulsor"
+    },
+    "mission:inspiration4": {
+      "note": "la primera tripulación totalmente civil en orbitar — sin ningún astronauta profesional a bordo"
+    },
+    "mission:polaris-dawn": {
+      "note": "el primer paseo espacial comercial, desde una Crew Dragon con un traje de SpaceX de nuevo diseño"
+    }
   }
 }

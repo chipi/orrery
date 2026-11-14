@@ -86,5 +86,17 @@
   "link_labels": {
     "/moon": "Luna: la región de alunizaje del polo sur",
     "/fleet?id=chandrayaan1": "Flota — las sondas Chandrayaan"
+  },
+  "roster": {
+    "mission:chandrayaan1": {
+      "note": "la primera misión lunar de la India — su impactador e instrumentos hallan pruebas claras de moléculas de agua por toda la superficie lunar, un descubrimiento que cambió nuestra comprensión de la Luna"
+    },
+    "Chandrayaan-2": {
+      "note": "el orbitador tuvo éxito y sigue funcionando, pero el módulo de aterrizaje Vikram se estrelló en el descenso final — un casi logro público y doloroso en el polo sur",
+      "name": "Chandrayaan-2"
+    },
+    "mission:chandrayaan3": {
+      "note": "el regreso: Vikram aluniza suavemente cerca del polo sur lunar — la primera nave en lograrlo, lo que convierte a la India en la cuarta nación en alunizar"
+    }
   }
 }

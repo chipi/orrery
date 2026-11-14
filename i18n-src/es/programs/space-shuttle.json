@@ -104,6 +104,18 @@
     },
     "mission:magellan": {
       "note": "desplegada desde la bodega de carga útil del transbordador Atlantis en la STS-30, en mayo de 1989, y enviada después a Venus con una etapa superior"
+    },
+    "STS-1": {
+      "note": "el primer vuelo orbital — la primera vez que una nave tripulada volaba a órbita en su lanzamiento inaugural, y la primera reutilizable",
+      "name": "STS-1"
+    },
+    "Challenger (STS-51-L)": {
+      "note": "perdido 73 segundos después del lanzamiento cuando falló una junta de un propulsor endurecida por el frío; murieron siete tripulantes, y el desastre dejó al descubierto una cultura que había normalizado un riesgo conocido",
+      "name": "Challenger (STS-51-L)"
+    },
+    "Columbia (STS-107)": {
+      "note": "perdido durante la reentrada, cuando restos de espuma habían perforado el ala en el lanzamiento; murieron siete tripulantes, y se comprobó que se había repetido el mismo fallo organizativo",
+      "name": "Columbia (STS-107)"
     }
   }
 }

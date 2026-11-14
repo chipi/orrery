@@ -103,5 +103,15 @@
     "/earth": "Tierra: órbitas, reentrada y bases de lanzamiento",
     "/science/mission-phases/edl": "Entrada, descenso y aterrizaje",
     "/science/propulsion/tsiolkovsky": "La ecuación del cohete: por qué el Redstone no podía orbitar"
+  },
+  "roster": {
+    "Mercury-Redstone 2 (Ham)": {
+      "note": "prueba suborbital con un chimpancé — dejó el Redstone listo para un vuelo tripulado",
+      "name": "Mercury-Redstone 2 (Ham)"
+    },
+    "Mercury-Atlas 5 (Enos)": {
+      "note": "prueba de dos órbitas con un chimpancé — dejó el Atlas listo antes de que volara Glenn",
+      "name": "Mercury-Atlas 5 (Enos)"
+    }
   }
 }

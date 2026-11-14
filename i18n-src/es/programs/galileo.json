@@ -86,5 +86,26 @@
   "link_labels": {
     "/explore": "Júpiter en el explorador 3D",
     "/programs/cassini": "Cassini: la misma idea, en Saturno"
+  },
+  "roster": {
+    "mission:galileo": {
+      "note": "la primera nave en orbitar Júpiter — casi ocho años estudiando de cerca el planeta gigante y sus lunas principales"
+    },
+    "The atmospheric probe": {
+      "note": "a su llegada, Galileo soltó una sonda que se sumergió en las nubes de Júpiter — la primera y única muestra directa de la atmósfera de un planeta gigante",
+      "name": "La sonda atmosférica"
+    },
+    "Europa's hidden ocean": {
+      "note": "los datos magnéticos y de imagen de Galileo aportaron el argumento más sólido hasta entonces de que bajo el hielo de la luna joviana Europa hay un océano de agua líquida",
+      "name": "El océano oculto de Europa"
+    },
+    "The stuck antenna": {
+      "note": "la antena principal no se abrió del todo; la misión se salvó con un nuevo software de compresión de datos enviado a la nave, que rescató la mayor parte de la ciencia por un enlace a paso de tortuga",
+      "name": "La antena atascada"
+    },
+    "The deliberate end": {
+      "note": "sin combustible, Galileo fue lanzada contra Júpiter a propósito, para asegurar que nunca pudiera estrellarse en Europa y contaminar su océano",
+      "name": "El final deliberado"
+    }
   }
 }

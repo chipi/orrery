@@ -93,5 +93,18 @@
     "/programs/ariane": "Ariane: el cohete que lanza la ciencia de la ESA",
     "/earth?site=gaia": "Gaia en L2",
     "/earth?site=xmm": "XMM-Newton"
+  },
+  "roster": {
+    "mission:rosetta": {
+      "note": "tras una persecución de diez años, Rosetta orbita el cometa 67P y deja caer el módulo Philae sobre su superficie — la primera nave en orbitar un cometa y posarse en él"
+    },
+    "Gaia's map": {
+      "note": "Gaia empieza a publicar el mapa tridimensional más preciso de la Vía Láctea jamás hecho — las posiciones, distancias y movimientos de casi dos mil millones de estrellas",
+      "name": "El mapa de Gaia"
+    },
+    "Euclid opens its eyes": {
+      "note": "un telescopio construido para rastrear un tercio del cielo y cartografiar cómo la materia oscura y la energía oscura han dado forma al universo",
+      "name": "Euclid abre los ojos"
+    }
   }
 }

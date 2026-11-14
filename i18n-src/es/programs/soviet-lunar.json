@@ -97,5 +97,23 @@
     "/moon?site=luna16": "Luna 16: primer retorno robótico de muestras",
     "/moon?site=luna17": "Luna 17 — Lunokhod 1",
     "/moon?site=luna21": "Luna 21 — Lunokhod 2"
+  },
+  "roster": {
+    "Zond 5": {
+      "note": "primera nave en rodear la Luna y volver sana y salva a la Tierra — sus dos tortugas fueron los primeros seres vivos en viajar alrededor de la Luna y regresar, tres meses antes del Apollo 8",
+      "name": "Zond 5"
+    },
+    "N1 — four launch failures": {
+      "note": "los cuatro lanzamientos de prueba del N1 (1969–1972) fracasaron; el segundo, en julio de 1969, cayó de nuevo sobre la plataforma en una de las mayores explosiones no nucleares jamás registradas",
+      "name": "N1 — cuatro lanzamientos fallidos"
+    },
+    "LK lunar lander": {
+      "note": "el módulo de aterrizaje de un solo cosmonauta — con cerca del 40 % de la masa del módulo lunar del Apollo — probado en vuelo sin tripulación en órbita terrestre, pero nunca enviado a la Luna",
+      "name": "Módulo lunar LK"
+    },
+    "L3 complex": {
+      "note": "la pila lunar N1-L3 completa: un lanzamiento del N1, un Soyuz 7K-LOK con dos cosmonautas en órbita lunar y un solo cosmonauta a la superficie en el LK",
+      "name": "Complejo L3"
+    }
   }
 }

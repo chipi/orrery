@@ -90,5 +90,13 @@
   "link_labels": {
     "/fleet?id=hayabusa-2": "Flota — las sondas Hayabusa",
     "/explore": "Explorar: los asteroides Itokawa y Ryugu"
+  },
+  "roster": {
+    "mission:hayabusa1": {
+      "note": "llega al asteroide Itokawa, toca la superficie dos veces y — pese a fallos graves — trae a casa la primera muestra jamás tomada de un asteroide"
+    },
+    "mission:hayabusa2": {
+      "note": "llega a Ryugu, dispara un proyectil para hacer un cráter artificial, recoge material del subsuelo y lo devuelve a la Tierra en 2020 — una misión impecable"
+    }
   }
 }

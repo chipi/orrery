@@ -86,5 +86,21 @@
   "link_labels": {
     "/explore": "Júpiter en el explorador 3D",
     "/programs/voyager": "Voyager: el recorrido que Pioneer exploró antes"
+  },
+  "roster": {
+    "mission:pioneer-10": {
+      "note": "la primera nave en cruzar el cinturón de asteroides y llegar a Júpiter, y la primera puesta en rumbo para abandonar por completo el sistema solar"
+    },
+    "mission:pioneer-11": {
+      "note": "sobrevoló Júpiter y luego fue la primera nave en llegar a Saturno — explorando el camino y los peligros de los anillos que seguirían las Voyager"
+    },
+    "The Pioneer plaque": {
+      "note": "una pequeña placa anodizada en oro en cada nave que muestra a un hombre, una mujer y la ubicación de la Tierra — el primer mensaje físico de la humanidad dirigido a las estrellas",
+      "name": "La placa de las Pioneer"
+    },
+    "Pioneer Venus": {
+      "note": "una pareja aparte de Pioneer llegó a Venus en 1978 — un orbitador que cartografió el planeta con radar a través de sus nubes y sondas que se hundieron en su atmósfera aplastante",
+      "name": "Pioneer Venus"
+    }
   }
 }

@@ -29,6 +29,30 @@ async function readSnap(page: Page) {
   return page.evaluate(() => window.__scenePins?.() ?? null);
 }
 
+/**
+ * Waits until every shown label has been 11-13 px for eight rendered frames in a row. A fixed wait
+ * counts wall-clock ms, not frames: after a viewport resize the scene re-frames over the next few
+ * frames, and on software GL with 2 CPUs the probe still read a 1.9 px "label" from before that
+ * (9 of 35 docker runs at 600 ms). A timeout falls through to the assertions, which report it.
+ */
+async function labelsAtRest(page: Page) {
+  await page
+    .waitForFunction(
+      async () => {
+        const frame = () => new Promise((r) => requestAnimationFrame(r));
+        for (let i = 0; i < 8; i++) {
+          const shown = (window.__scenePins?.()?.labels ?? []).filter((l) => l.shown);
+          if (!shown.length || shown.some((l) => l.textPx < 11 || l.textPx > 13)) return false;
+          await frame();
+        }
+        return true;
+      },
+      null,
+      { timeout: 30_000 },
+    )
+    .catch(() => undefined);
+}
+
 async function open(page: Page, level: string, locale = '') {
   await page.goto(`${locale}/explore?context=${level}`);
   await page.waitForFunction(() => window.__scenePins?.() != null, null, { timeout: 60_000 });
@@ -61,6 +85,7 @@ test.describe('/explore readability (C2, UXD-020)', () => {
       for (const h of [900, 768, 667]) {
         await page.setViewportSize({ width, height: h });
         await page.waitForTimeout(600);
+        await labelsAtRest(page);
         const s = (await readSnap(page))!;
         expect(shown(s).length, `${level} @${h}: some label is shown`).toBeGreaterThan(0);
         for (const l of shown(s)) {

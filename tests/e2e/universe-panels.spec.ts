@@ -141,10 +141,14 @@ test.describe('black holes (MW3, Q1)', () => {
     page,
   }) => {
     await open(page, '/explore?bh=sagittarius-a-star');
-    await expect(panel(page).locator('.panel-hero')).toHaveCount(1);
+    // Docker software GL, 2 CPUs (measured): each lensing frame blocks the page 4.2-4.6 s (8.7 s on
+    // 1 CPU) and every assertion poll waits for one, so the hero is seen 4.2-4.4 s after the panel,
+    // which the default 5 s misses by a frame. It is already fetched at mount; this is only polling.
+    const takeoverFrames = { timeout: 20_000 };
+    await expect(panel(page).locator('.panel-hero')).toHaveCount(1, takeoverFrames);
     await expect(
       panel(page).getByRole('button', { name: 'See the lensing simulation' }),
-    ).toHaveCount(0);
+    ).toHaveCount(0, takeoverFrames);
   });
 
   test('a hole without a picture has no hero slot (Cygnus X-1)', async ({ page }) => {

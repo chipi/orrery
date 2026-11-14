@@ -737,9 +737,18 @@ function panelHeroes(fetchFn: FetchLike): Promise<Record<string, PanelHeroEntry>
       fetchFn,
     )
       .then((doc) => doc.heroes ?? {})
-      .catch(() => ({}));
+      .catch(() => {
+        // A failed fetch is no heroes for this call only; caching it would hide every hero for the session.
+        panelHeroesCache = null;
+        return {};
+      });
   }
   return panelHeroesCache;
+}
+
+/** Start the hero manifest fetch early so a panel opened later finds it cached. */
+export function warmUniverseHeroes(fetchFn: FetchLike = fetch): void {
+  void panelHeroes(fetchFn);
 }
 
 /** The hero of an outer-scale or black-hole panel, or null: no hero, no slot. */

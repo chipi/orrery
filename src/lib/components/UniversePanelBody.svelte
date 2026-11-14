@@ -25,6 +25,7 @@
   import {
     getImageProvenance,
     getUniverseHero,
+    warmUniverseHeroes,
     type UniverseHero,
     type UniverseLevel,
   } from '$lib/data';
@@ -120,6 +121,11 @@
 
   let looked = $state<UniverseHero | null>(null);
   let overridesReady = $state(false);
+  // Fetched at mount, not at first open: a ?bh= takeover starts rendering frames that run seconds
+  // each on software GL, and a fetch begun after the panel opens lands behind them (hero 6-16 s late).
+  $effect(() => {
+    warmUniverseHeroes();
+  });
   $effect(() => {
     void Promise.all([loadHeroOverrides('stars'), loadHeroOverrides('black-holes')]).then(
       () => (overridesReady = true),

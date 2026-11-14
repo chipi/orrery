@@ -127,7 +127,7 @@ Nothing below is a UXD. Each moves to one when the operator answers.
 | D6 | Launch camera: the operator shares example shots first                                                         |
 | D7 | Missions era filter designed with Higgsfield (paid) or in code                                                 |
 
-**Questions for the operator** — plan lines 402–414 (Q1 and Q2 are answered: UXD-001, UXD-002; Q10 is answered: UXD-041):
+**Questions for the operator** — plan lines 402–414 (Q1 and Q2 are answered: UXD-001, UXD-002; Q7 and Q9 are answered: UXD-038; Q10 is answered: UXD-041):
 
 | Id  | Question                                                                                     |
 | --- | -------------------------------------------------------------------------------------------- |
@@ -135,9 +135,7 @@ Nothing below is a UXD. Each moves to one when the operator answers.
 | Q4  | A mission link in a body panel: open the mission panel in place, or go to `/missions`?       |
 | Q5  | Chip groups: group every world (On ground / In space), or flatten Earth?                     |
 | Q6  | Panel close X: scrolls away with the content, or a slim fixed header bar?                    |
-| Q7  | Credits and colophon length: every section collapsed with its count, or "first N + show all"? |
 | Q8  | Moon traverses: line style only, or the Mars extras (patches, photos, stops)?                |
-| Q9  | "Launcher sketches": the launchers inside the 198 cutaways, or the exploded launcher art?    |
 
 **Clarified from screenshots, fix described, no separate operator go recorded** (plan lines 417–425):
 MW3 (Sagittarius A\* panel gets the EHT 2022 image as its hero; the lensing render becomes an

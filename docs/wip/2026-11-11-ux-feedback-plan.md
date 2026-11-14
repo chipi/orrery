@@ -388,7 +388,7 @@ Briefs `docs/wip/2026-11-14-slice-F1-brief.md` … `F4-brief.md` (87792e19c6f; F
 
 | Slice | Points | Change | Done when |
 |---|---|---|---|
-| F1 Credits and colophon | CR2, CO1, CO2, CO3 | one collapse approach (Q7) for both; colophon totals line from `original-work.json` totals; cutaways split into spacecraft and launchers (Q9) | shots; TOC anchors open their section |
+| F1 Credits and colophon | CR2, CO1, CO2, CO3 | one collapse approach (Q7) for both; colophon totals line counted from the sections it draws (the `totals` object undercounts); cutaways split into spacecraft and launchers (Q9) | shots; TOC anchors reach their header (UXD-038, built 2026-11-14) |
 | F2 Library | LI2, LI3 | UXD-041 (built 2026-11-14) | — |
 | F3 Home | H1, H2, H3 | hero capped so the intro and actions are above the fold at 1440x900 and 1366x768; Lab card in Learn (needs a glyph) | shots at 1366x768, 1440x900, 390x844 — **built 2026-11-14 ([UXD-039](../uxs/decisions/UXD-039-home-two-column-hero-one-glyph-component-and-type-scale.md)); in review** |
 

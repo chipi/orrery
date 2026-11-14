@@ -53,6 +53,13 @@
   import { getLocale } from '$lib/paraglide/runtime';
   import { licenseLabel } from '$lib/license-label';
   import { plural } from '$lib/plural';
+  import ShowAll from '$lib/components/ShowAll.svelte';
+  import { previewList } from '$lib/preview-list';
+
+  // Every list shows its first PREVIEW rows and a "Show all N" chip ($lib/preview-list); source
+  // headers stay open, so a contents link lands on its header with the first rows below it.
+  let expanded = $state<Record<string, boolean>>({});
+  const expand = (key: string) => (expanded = { ...expanded, [key]: true });
 
   // Counts in the locale's plural form (1 photo; sr 2–4 фотографије; ar dual …); the plain key is "other".
   const photosLabel = plural(m.credits_count_photos, {
@@ -296,7 +303,7 @@
   {:else}
     <nav class="toc" aria-label={m.credits_toc_label()}>
       <h3>{m.credits_toc_label()}</h3>
-      <ul>
+      <ul class="preview-narrow" class:is-open={expanded['toc']}>
         {#each groups as group (group)}
           <li>
             <a href="#src-{group.source.id}">{group.source.name}</a>
@@ -307,6 +314,13 @@
           </li>
         {/each}
       </ul>
+      <ShowAll
+        narrow
+        count={groups.length}
+        expanded={expanded['toc']}
+        onexpand={() => expand('toc')}
+        list="toc"
+      />
     </nav>
 
     {#each groups as group (group)}
@@ -342,7 +356,7 @@
             <span class="bom-count">{photosLabel(group.bundles.length)}</span>
           </h3>
           <ul class="photo-list">
-            {#each group.bundles as bundle (bundle)}
+            {#each previewList(group.bundles, expanded[`${group.source.id}:photos`]) as bundle (bundle)}
               {@const photo = bundle.representative}
               <li class="photo">
                 <a
@@ -430,6 +444,12 @@
               </li>
             {/each}
           </ul>
+          <ShowAll
+            count={group.bundles.length}
+            expanded={expanded[`${group.source.id}:photos`]}
+            onexpand={() => expand(`${group.source.id}:photos`)}
+            list="{group.source.id}:photos"
+          />
         {/if}
 
         {#if group.texts.length > 0}
@@ -438,7 +458,7 @@
             <span class="bom-count">{textsLabel(group.texts.length)}</span>
           </h3>
           <ul class="text-list">
-            {#each group.texts as t (t)}
+            {#each previewList(group.texts, expanded[`${group.source.id}:texts`]) as t (t)}
               <li class="text-entry">
                 <p class="t-row">
                   <span class="t-cat">{categoryLabel(t.category)}</span>
@@ -483,6 +503,12 @@
               </li>
             {/each}
           </ul>
+          <ShowAll
+            count={group.texts.length}
+            expanded={expanded[`${group.source.id}:texts`]}
+            onexpand={() => expand(`${group.source.id}:texts`)}
+            list="{group.source.id}:texts"
+          />
         {/if}
       </article>
     {/each}
@@ -505,7 +531,7 @@
       </p>
       <p class="storage-blurb">{m.credits_audio_intro()}</p>
       <ul class="audio-list">
-        {#each audioProv.entries as a (a.id)}
+        {#each previewList(audioProv.entries, expanded['audio']) as a (a.id)}
           <li class="audio-row">
             <span class="audio-body">{a.body}</span>
             <span class="audio-text">
@@ -524,6 +550,12 @@
           </li>
         {/each}
       </ul>
+      <ShowAll
+        count={audioProv.entries.length}
+        expanded={expanded['audio']}
+        onexpand={() => expand('audio')}
+        list="audio"
+      />
     </article>
   {/if}
 
@@ -541,7 +573,7 @@
       </p>
       <p class="storage-blurb">{m.credits_video_intro()}</p>
       <ul class="photo-list">
-        {#each videoProv.entries as v (v.id)}
+        {#each previewList(videoProv.entries, expanded['video']) as v (v.id)}
           {@const poster = posterUrlFor(v)}
           <li class="photo">
             <a
@@ -552,15 +584,12 @@
               aria-label={v.title}
             >
               {#if poster}
-                <!-- eager: only ~N video posters, and they sit far down a long
-                     page where the lazy trigger is unreliable (they simply
-                     never requested). Small 64px thumbs, so eager is safe. -->
                 <img
                   src={poster}
                   alt=""
                   width="64"
                   height="64"
-                  loading="eager"
+                  loading="lazy"
                   decoding="async"
                   onerror={(e) => ((e.currentTarget as HTMLImageElement).style.display = 'none')}
                 />
@@ -580,6 +609,12 @@
           </li>
         {/each}
       </ul>
+      <ShowAll
+        count={videoProv.entries.length}
+        expanded={expanded['video']}
+        onexpand={() => expand('video')}
+        list="video"
+      />
     </article>
   {/if}
 
@@ -596,7 +631,7 @@
         {[...new Set(badges.map((b) => licenseLabel(b.license_short)))].join(' · ')}
       </p>
       <ul class="insignia-list">
-        {#each badges as bdg (bdg.path)}
+        {#each previewList(badges, expanded['insignia']) as bdg (bdg.path)}
           <li class="insignia-row">
             <img
               class="insignia-thumb"
@@ -623,6 +658,12 @@
           </li>
         {/each}
       </ul>
+      <ShowAll
+        count={badges.length}
+        expanded={expanded['insignia']}
+        onexpand={() => expand('insignia')}
+        list="insignia"
+      />
     </article>
   {/if}
 
@@ -640,7 +681,7 @@
       </p>
       <p class="storage-blurb">{m.credits_data_intro()}</p>
       <ul class="data-list">
-        {#each dataSources.entries as d, i (d.id)}
+        {#each previewList(dataSources.entries, expanded['data']) as d, i (d.id)}
           {#if d.category === 'model-reference' && dataSources.entries[i - 1]?.category !== 'model-reference'}
             <li class="data-note">{m.credits_data_models_note()}</li>
           {/if}
@@ -678,6 +719,12 @@
           </li>
         {/each}
       </ul>
+      <ShowAll
+        count={dataSources.entries.length}
+        expanded={expanded['data']}
+        onexpand={() => expand('data')}
+        list="data"
+      />
     </article>
   {/if}
 

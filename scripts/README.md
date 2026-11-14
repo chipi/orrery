@@ -23,6 +23,15 @@ before you open the file:
 Conventions: tsx or .mjs, colocated `*.test.ts` where logic warrants it;
 script headers cite the ADR/PRD/RFC that governs them — keep that up.
 
+## Credits — which check, when
+
+| Question | Run |
+|---|---|
+| does every image file under the Moon, Mars and Earth folders have a credit row | `npx vitest run src/lib/credits-coverage.test.ts` (in `npm run test`; stems matched as `/credits` bundles them, width rungs told apart by `image-ladder.json`) |
+| does a browser request any Moon, Mars or Earth image that has no credit row | `node scripts/audit-scene-image-credits.mjs [--base=http://[::1]:5180] [--sites=3]` — loads `/moon`, `/mars`, `/earth` and each scene's first N sites, lists repo images with no row, external image hosts and failed requests; needs a running server and one headless Chromium; read-only |
+| is a credit row a real credit or a placeholder | `npx tsx scripts/validate-gallery-credits.ts` (the placeholder ceiling) |
+| regenerate `/colophon`'s inventory (and each cutaway's `kind`) | `node scripts/build-original-work.mjs` |
+
 ## Catalogue values — which tool, when
 
 Every catalogue-derived number on a panel or entity page carries `{ value, source, bibcode, record_url }`

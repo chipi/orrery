@@ -97,6 +97,15 @@ const science = scanDiagrams('static/diagrams/science', '/diagrams/science');
 const fleetNames = Object.fromEntries(
   JSON.parse(readFileSync('static/data/fleet/index.json', 'utf8')).map((e) => [e.id, e.name]),
 );
+const fleetCategory = Object.fromEntries(
+  JSON.parse(readFileSync('static/data/fleet/index.json', 'utf8')).map((e) => [e.id, e.category]),
+);
+// Pencil launcher drawings (docs/anatomy-art-runbook.md §1) that have no fleet entry to say so.
+const LAUNCHER_ART_WITHOUT_ENTRY = new Set(['m-v', 'pslv']);
+const anatomyKind = (id) =>
+  fleetCategory[id] === 'launcher' || LAUNCHER_ART_WITHOUT_ENTRY.has(id)
+    ? 'launcher'
+    : 'spacecraft';
 const anatomyIdSet = new Set(JSON.parse(readFileSync('src/lib/anatomy-ids.json', 'utf8')));
 const anatomyArt = (() => {
   try {
@@ -113,6 +122,7 @@ const anatomyArt = (() => {
             title: fleetNames[id] ?? humanize(id),
             file: `/images/anatomy/${f}`,
             cover: false,
+            kind: anatomyKind(id),
           };
         })
     );

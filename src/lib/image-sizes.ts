@@ -30,6 +30,8 @@ export const IMAGE_SIZES = {
   colophonThumb: 'auto, (max-width: 560px) 50vw, 260px',
   /** /colophon wide thumbnail grid (230px-min columns; two columns on phones). */
   colophonWide: 'auto, (max-width: 560px) 50vw, 360px',
+  /** /colophon launcher sketches (portrait cards, 170px-min columns; two per row on phones). */
+  colophonPortrait: 'auto, (max-width: 560px) 50vw, 200px',
   /** /credits row thumbnail: 64px, 96px from 768px. */
   creditThumb: 'auto, (min-width: 768px) 96px, 64px',
 } as const;

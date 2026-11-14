@@ -46,6 +46,12 @@
           },
           "cover": {
             "type": "boolean"
+          },
+          "kind": {
+            "enum": [
+              "spacecraft",
+              "launcher"
+            ]
           }
         }
       }

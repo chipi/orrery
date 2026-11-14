@@ -144,8 +144,14 @@ That's it — the manifest is **auto-derived**:
   `anatomy-ids.json` (no hand-edit). The fleet DETAIL tab + station panels read
   it. Underscore station-visitor ids alias to the kebab webp via
   `ANATOMY_ALIAS` — add an entry there only for a NEW underscore/kebab split.
-- `/colophon` "Spacecraft cutaways" section + the consistency test pick the new
-  ids up automatically.
+- `/colophon` "Spacecraft cutaways" and "Launcher sketches" sections + the
+  consistency test pick the new ids up automatically. `build-original-work.mjs`
+  gives each drawing a `kind`: `launcher` when the fleet entry's category is
+  `launcher` (the pencil set of §1), else `spacecraft`; a launcher drawn with no
+  fleet entry (today `m-v`, `pslv`) goes in `LAUNCHER_ART_WITHOUT_ENTRY` in the
+  script, and `src/lib/colophon-sections.test.ts` fails on a new id with no
+  fleet entry until you look at it. The translated overlays key by file, so a
+  split moves nothing there.
 
 ### Verify + commit
 

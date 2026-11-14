@@ -60,6 +60,8 @@ test.describe('/credits — image provenance disclosure', () => {
     await page.goto('/credits', { waitUntil: 'networkidle' });
     const block = page.locator('#src-data-catalogues');
     await expect(block).toBeVisible({ timeout: 10_000 });
+    // The list shows its first 10 entries; the catalogues named below sit further down.
+    await block.locator('[data-testid="show-all"]').click();
     for (const name of [
       'SIMBAD and VizieR',
       'NASA/IPAC Extragalactic Database',
@@ -98,6 +100,9 @@ test.describe('/credits — image provenance disclosure', () => {
     await expect(page.locator('section.credits[data-route-ready="true"]')).toBeVisible();
     const chips = page.locator('.photo-list .variant-chip');
     await expect(chips.first()).toBeVisible({ timeout: 10_000 });
+    // Each list shows its first 10 rows: open the biggest block to see the crop families.
+    await page.locator('[data-testid="show-all"][data-list="nasa:photos"]').click();
+    await expect(page.locator('#src-nasa .photo-list > li')).not.toHaveCount(10);
     expect(await chips.count()).toBeGreaterThan(100);
   });
 
@@ -121,6 +126,51 @@ test.describe('/credits — image provenance disclosure', () => {
     await expect(multiStemRow).toBeVisible({ timeout: 10_000 });
     const codeCount = await multiStemRow.locator('code.path').count();
     expect(codeCount).toBeGreaterThanOrEqual(2);
+  });
+
+  test('every list shows at most 10 rows until Show all (F1, UXD-038)', async ({ page }) => {
+    await page.goto('/credits', { waitUntil: 'networkidle' });
+    await expect(page.locator('article.source-block').first()).toBeVisible({ timeout: 10_000 });
+    const longest = await page
+      .locator('article.source-block ul')
+      .evaluateAll((uls) => Math.max(...uls.map((u) => u.children.length)));
+    expect(longest).toBeLessThanOrEqual(10);
+    // The biggest sources carry a chip that names the full count.
+    await expect(page.locator('[data-testid="show-all"][data-list="nasa:photos"]')).toBeVisible();
+  });
+
+  test('Show all opens the whole list under an open header', async ({ page }) => {
+    await page.goto('/credits', { waitUntil: 'networkidle' });
+    const list = page.locator('#src-nasa .photo-list > li');
+    await expect(list).toHaveCount(10, { timeout: 10_000 });
+    const chip = page.locator('[data-testid="show-all"][data-list="nasa:photos"]');
+    const total = Number((await chip.textContent())!.replace(/\D/g, ''));
+    expect(total).toBeGreaterThan(1000);
+    await chip.scrollIntoViewIfNeeded();
+    await chip.click();
+    await expect(list).toHaveCount(total);
+    await expect(chip).toHaveCount(0);
+    // The rows grow below the chip, so the first new row opens where the chip was: still on
+    // screen (the browser's scroll anchoring absorbs the off-screen blocks above settling to
+    // their real height, so scrollY itself is not the thing to compare).
+    await expect(list.nth(10)).toBeInViewport();
+  });
+
+  test('a contents link lands on its open source header with the first rows below it', async ({
+    page,
+  }) => {
+    await page.goto('/credits', { waitUntil: 'networkidle' });
+    await expect(page.locator('nav.toc')).toBeVisible({ timeout: 10_000 });
+    // Phones list the first 10 sources until "Show all"; from 768 px the contents stay whole.
+    const more = page.locator('nav.toc [data-testid="show-all"]');
+    if (await more.isVisible()) await more.click();
+    const link = page.locator('nav.toc li a').last();
+    const id = (await link.getAttribute('href'))!.slice(1);
+    await link.click();
+    const block = page.locator(`#${id}`);
+    await expect(block.locator('.src-head')).toBeInViewport();
+    const rows = await block.locator('ul').evaluateAll((uls) => uls.map((u) => u.children.length));
+    for (const n of rows) expect(n).toBeLessThanOrEqual(10);
   });
 
   test('linked from the site footer', async ({ page, isMobile }) => {

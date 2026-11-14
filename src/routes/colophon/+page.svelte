@@ -1,5 +1,4 @@
 <script lang="ts">
-  import Chip from '$lib/components/Chip.svelte';
   import { metaDescription } from '$lib/seo';
   import { responsive } from '$lib/responsive-image.svelte';
   import { localHref } from '$lib/locale';
@@ -22,12 +21,21 @@
   import { get } from '$lib/data/core';
   import { localizeOriginalWork, type OriginalWorkOverlay } from '$lib/original-work';
   import { ICON_SHOWCASE } from '$lib/components/icons';
+  import ShowAll from '$lib/components/ShowAll.svelte';
+  import { previewList } from '$lib/preview-list';
+  import {
+    colophonSections,
+    splitCutaways,
+    type CutawayEntry,
+    type SectionId,
+  } from '$lib/colophon-sections';
 
   type Diagram = { title: string; file: string; cover: boolean };
+  type Cutaway = Diagram & CutawayEntry;
   type Poster = { title: string; file: string; thumb: string };
   type Item = { title: string; what: string; where: string; route: string; thumb?: string };
   type Manifest = {
-    anatomy_art: Diagram[];
+    anatomy_art: Cutaway[];
     exploded_art: Diagram[];
     landing_art?: (Diagram & { route: string })[];
     blueprint_art?: (Diagram & { route: string })[];
@@ -62,13 +70,36 @@
   let episodes = $state<Episode[]>([]);
   let lightbox = $state<{ src: string; title: string; route: string } | null>(null);
 
-  // Each section shows its first PREVIEW items and a "Show all" button: a full scroll of the
-  // page loaded ~63 MB of images on a phone (image-weight.spec, 2026-11-07).
-  const PREVIEW = 10;
+  // Each section shows its first PREVIEW items and a "Show all" chip ($lib/preview-list): a full
+  // scroll of the page loaded ~63 MB of images on a phone (image-weight.spec, 2026-11-07).
   let expanded = $state<Record<string, boolean>>({});
-  function shown<T>(key: string, list: readonly T[]): readonly T[] {
-    return expanded[key] ? list : list.slice(0, PREVIEW);
-  }
+  const expand = (key: string) => (expanded = { ...expanded, [key]: true });
+
+  // The sections once: contents list, headings and the totals line all read these counts.
+  const sections = $derived(
+    data ? colophonSections(data, ICON_SHOWCASE.length, episodes.length) : [],
+  );
+  const countOf = (id: SectionId): number => sections.find((s) => s.id === id)?.count ?? 0;
+  const totalWorks = $derived(sections.reduce((n, s) => n + s.count, 0));
+  const cutaways = $derived(splitCutaways(data?.anatomy_art ?? []));
+  const sectionLabels: Record<SectionId, () => string> = {
+    cutaways: m.colophon_section_cutaways,
+    launchers: m.colophon_section_launchers,
+    exploded: m.colophon_section_exploded,
+    landing: m.colophon_section_landing,
+    blueprints: m.colophon_section_blueprints,
+    posters: m.colophon_gallery_posters,
+    'mission-trajectories': m.colophon_section_mission_trajectories,
+    'site-illustrations': m.colophon_section_site_illustrations,
+    'lab-illustrations': m.colophon_lab_illustrations,
+    diagrams: m.colophon_section_diagrams,
+    capsules: m.colophon_section_capsules,
+    models: m.colophon_section_models,
+    canvas: m.colophon_section_canvas,
+    ui: m.colophon_section_ui,
+    writing: m.colophon_section_writing,
+    tours: m.colophon_section_tours,
+  };
 
   $effect(() => {
     void fetch(`${base}/data/original-work.json`)
@@ -116,24 +147,15 @@
   <meta name="description" content={metaDescription(m.colophon_intro())} />
 </svelte:head>
 
-{#snippet showAll(key: string, count: number)}
-  {#if count > PREVIEW && !expanded[key]}
-    <div class="show-all-row">
-      <Chip
-        kind="action"
-        data-testid="colophon-show-all"
-        onclick={() => (expanded = { ...expanded, [key]: true })}
-      >
-        {m.colophon_show_all({ count })}
-      </Chip>
-    </div>
-  {/if}
-{/snippet}
-
 <section class="colophon page-shell" aria-labelledby="colophon-title" data-route-ready="true">
   <header class="head">
     <h1 id="colophon-title" class="page-title">{m.colophon_title()}</h1>
     <p class="intro page-lead">{m.colophon_intro()}</p>
+    {#if data}
+      <p class="totals" data-testid="colophon-totals">
+        {m.colophon_totals({ works: totalWorks, sections: sections.length })}
+      </p>
+    {/if}
     <p class="attribution">{m.colophon_attribution()}</p>
     <p class="reused">
       <a href={localHref(`/credits`)}>{m.colophon_reused_link()} →</a>
@@ -144,93 +166,27 @@
     <p class="loading">…</p>
   {:else}
     <!-- Jump-link TOC (2026-09-11 operator ask) — same affordance as the
-         sources index at the top of /credits. Entries mirror the section
-         order below, including the two conditional sections. -->
+         sources index at the top of /credits. One row per section drawn
+         below, in page order (`sections`: the same rows as the totals line). -->
     <nav class="toc" aria-label={m.colophon_toc_label()}>
       <h3>{m.colophon_toc_label()}</h3>
       <ul>
-        <li>
-          <a href="#sec-cutaways">{m.colophon_section_cutaways()}</a>
-          <span class="counts">· {data.anatomy_art.length}</span>
-        </li>
-        <li>
-          <a href="#sec-exploded">{m.colophon_section_exploded()}</a>
-          <span class="counts">· {data.exploded_art.length}</span>
-        </li>
-        {#if data.landing_art && data.landing_art.length > 0}
+        {#each sections as s (s.id)}
           <li>
-            <a href="#sec-landing">{m.colophon_section_landing()}</a>
-            <span class="counts">· {data.landing_art.length}</span>
+            <a href="#sec-{s.id}">{sectionLabels[s.id]()}</a>
+            <span class="counts">· {s.count}</span>
           </li>
-        {/if}
-        {#if data.blueprint_art && data.blueprint_art.length > 0}
-          <li>
-            <a href="#sec-blueprints">{m.colophon_section_blueprints()}</a>
-            <span class="counts">· {data.blueprint_art.length}</span>
-          </li>
-        {/if}
-        {#if data.mission_trajectories && data.mission_trajectories.length > 0}
-          <li>
-            <a href="#sec-mission-trajectories">{m.colophon_section_mission_trajectories()}</a>
-            <span class="counts">· {data.mission_trajectories.length}</span>
-          </li>
-        {/if}
-        {#if data.site_illustrations && data.site_illustrations.length > 0}
-          <li>
-            <a href="#sec-site-illustrations">{m.colophon_section_site_illustrations()}</a>
-            <span class="counts">· {data.site_illustrations.length}</span>
-          </li>
-        {/if}
-        <li>
-          <a href="#sec-posters">{m.colophon_gallery_posters()}</a>
-          <span class="counts">· {data.posters.length}</span>
-        </li>
-        {#if data.lab_illustrations && data.lab_illustrations.length > 0}
-          <li>
-            <a href="#sec-lab-illustrations">{m.colophon_lab_illustrations()}</a>
-            <span class="counts">· {data.lab_illustrations.length}</span>
-          </li>
-        {/if}
-        <li>
-          <a href="#sec-diagrams">{m.colophon_section_diagrams()}</a>
-          <span class="counts">· {data.diagrams_science.length}</span>
-        </li>
-        <li>
-          <a href="#sec-capsules">{m.colophon_section_capsules()}</a>
-          <span class="counts">· {data.capsules.length}</span>
-        </li>
-        <li>
-          <a href="#sec-models">{m.colophon_section_models()}</a>
-          <span class="counts">· {data.models3d.length}</span>
-        </li>
-        <li>
-          <a href="#sec-canvas">{m.colophon_section_canvas()}</a>
-          <span class="counts">· {data.canvas2d.length}</span>
-        </li>
-        <li>
-          <a href="#sec-ui">{m.colophon_section_ui()}</a>
-          <span class="counts">· {data.ui.length}</span>
-        </li>
-        <li>
-          <a href="#sec-writing">{m.colophon_section_writing()}</a>
-          <span class="counts">· {data.writing.length}</span>
-        </li>
-        {#if episodes.length > 0}
-          <li>
-            <a href="#sec-tours">{m.colophon_section_tours()}</a>
-            <span class="counts">· {episodes.length}</span>
-          </li>
-        {/if}
+        {/each}
       </ul>
     </nav>
 
-    <!-- Showpiece: generated watercolor cutaways + pencil sketches (#367). -->
+    <!-- Showpiece: generated watercolor cutaways (#367), spacecraft only. -->
     <section class="block" aria-labelledby="sec-cutaways">
       <h2 id="sec-cutaways" class="page-section-title">
-        {m.colophon_section_cutaways()}<span class="count">{data.anatomy_art.length}</span>
+        {m.colophon_section_cutaways()}<span class="count">{countOf('cutaways')}</span>
       </h2>
       <ul class="thumb-grid wide">
-        {#each shown('cutaways', data.anatomy_art) as d (d.file)}
+        {#each previewList(cutaways.spacecraft, expanded['cutaways']) as d (d.file)}
           <li class="thumb-card">
             <button
               type="button"
@@ -248,8 +204,47 @@
           </li>
         {/each}
       </ul>
-      {@render showAll('cutaways', data.anatomy_art.length)}
+      <ShowAll
+        count={cutaways.spacecraft.length}
+        expanded={expanded['cutaways']}
+        onexpand={() => expand('cutaways')}
+        list="cutaways"
+      />
     </section>
+
+    <!-- Launcher sketches: the pencil drawings on sketchbook paper (portrait, 2:3). -->
+    {#if cutaways.launchers.length > 0}
+      <section class="block" aria-labelledby="sec-launchers">
+        <h2 id="sec-launchers" class="page-section-title">
+          {m.colophon_section_launchers()}<span class="count">{countOf('launchers')}</span>
+        </h2>
+        <ul class="thumb-grid portrait">
+          {#each previewList(cutaways.launchers, expanded['launchers']) as d (d.file)}
+            <li class="thumb-card">
+              <button
+                type="button"
+                class="thumb-open"
+                onclick={() => (lightbox = { src: srcOf(d.file), title: d.title, route: '/fleet' })}
+              >
+                <img
+                  {...responsive(srcOf(d.file), IMAGE_SIZES.colophonPortrait)}
+                  alt={d.title}
+                  loading="lazy"
+                  decoding="async"
+                />
+              </button>
+              <span class="thumb-title">{d.title}</span>
+            </li>
+          {/each}
+        </ul>
+        <ShowAll
+          count={cutaways.launchers.length}
+          expanded={expanded['launchers']}
+          onexpand={() => expand('launchers')}
+          list="launchers"
+        />
+      </section>
+    {/if}
 
     <!-- Exploded cutaways: launchers stage by stage, landers and rovers part by part. -->
     <section class="block" aria-labelledby="sec-exploded">
@@ -257,7 +252,7 @@
         {m.colophon_section_exploded()}<span class="count">{data.exploded_art.length}</span>
       </h2>
       <ul class="thumb-grid wide">
-        {#each shown('exploded', data.exploded_art) as d (d.file)}
+        {#each previewList(data.exploded_art, expanded['exploded']) as d (d.file)}
           <li class="thumb-card">
             <button
               type="button"
@@ -275,7 +270,12 @@
           </li>
         {/each}
       </ul>
-      {@render showAll('exploded', data.exploded_art.length)}
+      <ShowAll
+        count={data.exploded_art.length}
+        expanded={expanded['exploded']}
+        onexpand={() => expand('exploded')}
+        list="exploded"
+      />
     </section>
 
     <!-- Landing sequences: how each surface site's craft came down (top of its STORY tab). -->
@@ -285,7 +285,7 @@
           {m.colophon_section_landing()}<span class="count">{data.landing_art.length}</span>
         </h2>
         <ul class="thumb-grid wide">
-          {#each shown('landing', data.landing_art) as d (d.file)}
+          {#each previewList(data.landing_art, expanded['landing']) as d (d.file)}
             <li class="thumb-card">
               <button
                 type="button"
@@ -303,7 +303,12 @@
             </li>
           {/each}
         </ul>
-        {@render showAll('landing', data.landing_art.length)}
+        <ShowAll
+          count={data.landing_art.length}
+          expanded={expanded['landing']}
+          onexpand={() => expand('landing')}
+          list="landing"
+        />
       </section>
     {/if}
 
@@ -314,7 +319,7 @@
           {m.colophon_section_blueprints()}<span class="count">{data.blueprint_art.length}</span>
         </h2>
         <ul class="thumb-grid wide">
-          {#each shown('blueprints', data.blueprint_art) as d (d.file)}
+          {#each previewList(data.blueprint_art, expanded['blueprints']) as d (d.file)}
             <li class="thumb-card">
               <button
                 type="button"
@@ -332,7 +337,12 @@
             </li>
           {/each}
         </ul>
-        {@render showAll('blueprints', data.blueprint_art.length)}
+        <ShowAll
+          count={data.blueprint_art.length}
+          expanded={expanded['blueprints']}
+          onexpand={() => expand('blueprints')}
+          list="blueprints"
+        />
       </section>
     {/if}
 
@@ -349,7 +359,7 @@
         })}
       </p>
       <ul class="thumb-grid">
-        {#each shown('posters', data.posters) as p (p.file)}
+        {#each previewList(data.posters, expanded['posters']) as p (p.file)}
           <li class="thumb-card">
             <button
               type="button"
@@ -362,7 +372,12 @@
           </li>
         {/each}
       </ul>
-      {@render showAll('posters', data.posters.length)}
+      <ShowAll
+        count={data.posters.length}
+        expanded={expanded['posters']}
+        onexpand={() => expand('posters')}
+        list="posters"
+      />
     </section>
 
     <!-- Mission trajectory plots: drawn in code from /fly's trajectory model (scripts/render-mission-thumbnails.ts), one per mission. -->
@@ -375,7 +390,7 @@
         </h2>
         <p class="block-note">{m.colophon_mission_trajectories_note()}</p>
         <ul class="thumb-grid wide">
-          {#each shown('mission-trajectories', data.mission_trajectories) as d (d.file)}
+          {#each previewList(data.mission_trajectories, expanded['mission-trajectories']) as d (d.file)}
             <li class="thumb-card">
               <button
                 type="button"
@@ -393,7 +408,12 @@
             </li>
           {/each}
         </ul>
-        {@render showAll('mission-trajectories', data.mission_trajectories.length)}
+        <ShowAll
+          count={data.mission_trajectories.length}
+          expanded={expanded['mission-trajectories']}
+          onexpand={() => expand('mission-trajectories')}
+          list="mission-trajectories"
+        />
       </section>
     {/if}
 
@@ -407,7 +427,7 @@
         </h2>
         <p class="block-note">{m.colophon_site_illustrations_note()}</p>
         <ul class="thumb-grid wide">
-          {#each shown('site-illustrations', data.site_illustrations) as d (d.file)}
+          {#each previewList(data.site_illustrations, expanded['site-illustrations']) as d (d.file)}
             <li class="thumb-card">
               <button
                 type="button"
@@ -425,7 +445,12 @@
             </li>
           {/each}
         </ul>
-        {@render showAll('site-illustrations', data.site_illustrations.length)}
+        <ShowAll
+          count={data.site_illustrations.length}
+          expanded={expanded['site-illustrations']}
+          onexpand={() => expand('site-illustrations')}
+          list="site-illustrations"
+        />
       </section>
     {/if}
 
@@ -443,7 +468,7 @@
           })}
         </p>
         <ul class="thumb-grid">
-          {#each shown('lab', data.lab_illustrations) as d (d.file)}
+          {#each previewList(data.lab_illustrations, expanded['lab']) as d (d.file)}
             <li class="thumb-card">
               <button
                 type="button"
@@ -461,7 +486,12 @@
             </li>
           {/each}
         </ul>
-        {@render showAll('lab', data.lab_illustrations.length)}
+        <ShowAll
+          count={data.lab_illustrations.length}
+          expanded={expanded['lab']}
+          onexpand={() => expand('lab')}
+          list="lab"
+        />
       </section>
     {/if}
 
@@ -471,7 +501,7 @@
         {m.colophon_section_diagrams()}<span class="count">{data.diagrams_science.length}</span>
       </h2>
       <ul class="thumb-grid">
-        {#each shown('diagrams', data.diagrams_science) as d (d.file)}
+        {#each previewList(data.diagrams_science, expanded['diagrams']) as d (d.file)}
           <li class="thumb-card" class:cover={d.cover}>
             <button
               type="button"
@@ -489,7 +519,12 @@
           </li>
         {/each}
       </ul>
-      {@render showAll('diagrams', data.diagrams_science.length)}
+      <ShowAll
+        count={data.diagrams_science.length}
+        expanded={expanded['diagrams']}
+        onexpand={() => expand('diagrams')}
+        list="diagrams"
+      />
     </section>
 
     <!-- Human-spaceflight capsules + live-rendered geometry/canvas. Each item
@@ -498,7 +533,7 @@
       <section class="block" aria-labelledby="sec-{sec.id}">
         <h2 id="sec-{sec.id}">{sec.label}<span class="count">{sec.items.length}</span></h2>
         <ul class="item-list">
-          {#each shown(sec.id, sec.items) as it (it.thumb)}
+          {#each previewList(sec.items, expanded[sec.id]) as it (it.thumb)}
             <li class="item" class:has-thumb={it.thumb}>
               {#if it.thumb}
                 <button
@@ -516,7 +551,12 @@
             </li>
           {/each}
         </ul>
-        {@render showAll(sec.id, sec.items.length)}
+        <ShowAll
+          count={sec.items.length}
+          expanded={expanded[sec.id]}
+          onexpand={() => expand(sec.id)}
+          list={sec.id}
+        />
       </section>
     {/each}
 
@@ -528,7 +568,7 @@
         {m.colophon_section_ui()}<span class="count">{ICON_SHOWCASE.length}</span>
       </h2>
       <ul class="icon-grid">
-        {#each shown('ui', ICON_SHOWCASE) as icon (icon.id)}
+        {#each previewList(ICON_SHOWCASE, expanded['ui']) as icon (icon.id)}
           <li class="icon-card">
             <div class="icon-swatch">
               {#each icon.variants ?? [{ props: {} }] as v (v.label ?? 'only')}
@@ -548,7 +588,12 @@
           </li>
         {/each}
       </ul>
-      {@render showAll('ui', ICON_SHOWCASE.length)}
+      <ShowAll
+        count={ICON_SHOWCASE.length}
+        expanded={expanded['ui']}
+        onexpand={() => expand('ui')}
+        list="ui"
+      />
     </section>
 
     <section class="block" aria-labelledby="sec-writing">
@@ -556,7 +601,7 @@
         {m.colophon_section_writing()}<span class="count">{data.writing.length}</span>
       </h2>
       <ul class="item-list">
-        {#each shown('writing', data.writing) as it (it.route + '@' + it.title)}
+        {#each previewList(data.writing, expanded['writing']) as it (it.route + '@' + it.title)}
           <li class="item">
             <p class="it-title">{it.title}</p>
             <p class="it-what">{it.what}</p>
@@ -564,7 +609,12 @@
           </li>
         {/each}
       </ul>
-      {@render showAll('writing', data.writing.length)}
+      <ShowAll
+        count={data.writing.length}
+        expanded={expanded['writing']}
+        onexpand={() => expand('writing')}
+        list="writing"
+      />
     </section>
 
     {#if episodes.length > 0}
@@ -574,7 +624,7 @@
         </h2>
         <p class="tours-note">{m.colophon_tours_note()}</p>
         <ul class="episode-list">
-          {#each shown('tours', episodes) as ep (ep.id)}
+          {#each previewList(episodes, expanded['tours']) as ep (ep.id)}
             <li class="episode">
               <span class="ep-title">{ep.title}</span>
               <span class="ep-actions">
@@ -601,7 +651,12 @@
             </li>
           {/each}
         </ul>
-        {@render showAll('tours', episodes.length)}
+        <ShowAll
+          count={episodes.length}
+          expanded={expanded['tours']}
+          onexpand={() => expand('tours')}
+          list="tours"
+        />
       </section>
     {/if}
   {/if}
@@ -678,6 +733,13 @@
   .head {
     margin-bottom: 40px;
   }
+  .totals {
+    font-family: var(--font-mono, 'Space Mono', monospace);
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: var(--color-text-label);
+    margin: 0 0 12px;
+  }
   .attribution {
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
@@ -748,8 +810,18 @@
       gap: 10px;
     }
   }
-  .show-all-row {
-    margin-top: 14px;
+  /* Launcher sketches are portrait (2:3): narrower cards, the whole drawing shown. */
+  .thumb-grid.portrait {
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  }
+  .thumb-grid.portrait .thumb-card img {
+    aspect-ratio: 2 / 3;
+  }
+  @media (max-width: 560px) {
+    .thumb-grid.portrait {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
   }
   .thumb-card {
     background: rgba(255, 255, 255, 0.02);

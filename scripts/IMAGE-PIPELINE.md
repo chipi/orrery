@@ -320,8 +320,9 @@ unit tests in `image-depiction.ts`:
   `artistic_impressions` (use it when no photograph of the vehicle exists; exact slot, justification,
   reviewer, `decided_at`). A missing `status` is not exempt. The heroes that fail on 2026-11-13 are frozen
   in `static/data/hero-concept-baseline.json`: the gate fails on a hero not in it **and** on an entry that
-  was fixed, so remove the entry in the commit that replaces the hero. Changing a hero needs the
-  operator's side-by-side and a yes (plan row L47). `tsx scripts/validate-image-depiction.ts
+  was fixed, so remove the entry in the commit that replaces the hero. The operator reviewed the list
+  and kept every hero on it (plan row L47, 2026-11-14); changing any hero needs the operator's
+  side-by-side and a yes. `tsx scripts/validate-image-depiction.ts
   --write-baseline` regenerates the file; do not use it to silence a new finding.
 
 A concept slot nobody labelled is invisible to the gate when title and alt text are both neutral: look at

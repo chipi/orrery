@@ -1,5 +1,5 @@
 {
-  "_comment": "Frozen 2026-11-13: flown-vehicle heroes whose picture is an artist concept, illustration, computer graphic or painting (ADR-053). validate-image-depiction fails on a hero not listed here and on a listed hero that has since been fixed or waived, so this list only shrinks. The hero-review slice (plan row L47) clears it, one vehicle at a time, with the operator side-by-side and yes. missing_status lists heroes whose entity has no status, which counts as not planned-only: fill the status in the data.",
+  "_comment": "Frozen 2026-11-13: flown-vehicle heroes whose picture is an artist concept, illustration, computer graphic or painting (ADR-053). validate-image-depiction fails on a hero not listed here and on a listed hero that has since been fixed or waived, so this list only shrinks. The operator reviewed it (plan row L47, 2026-11-14) and kept every listed hero: it is the accepted state, not a to-do list. missing_status lists heroes whose entity has no status, which counts as not planned-only: fill the status in the data.",
   "heroes": [
     "earth-objects/geo /images/earth-objects/geo/01",
     "earth-objects/gps /images/earth-objects/gps/01",

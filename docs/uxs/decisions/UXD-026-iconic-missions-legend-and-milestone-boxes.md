@@ -72,9 +72,12 @@ the brief's §1 and §2.
     599 px tall. The 0.95 background alpha tried in the first build is back at the original 0.85: the ruler's
     rows no longer sit under the legend. The popover of the (i) hangs from the bottom of the head row (not from the
     (i)), so a three-line German title is not covered (e2e).
-11. **The heading pill is in the pass (NV6).** For the craft that have one (the five outbound), the "→ star" pill is a
-    slot ranked after the mission box. Where the mission box would meet it at Today, the box goes below the marker
-    and the pill keeps its place at the arrow tip. `__exploreDirectionLabels` now carries the pill's rectangle; the
+11. **The heading pill is an obstacle in the pass (NV6).** For the craft that have one (the four with a named star),
+    the "→ star" pill is required while its mission is highlighted (UXD-021): it is a forced slot with no sprite, so
+    the pass never hides it, not for overlap and not for being off the canvas (a phone's sheet and edge; a first build
+    made it a hideable candidate and the pill vanished on mobile-chromium, `explore-hud.spec.ts` "a heading craft's
+    pill"). Where the mission box would meet it at Today, the box goes below the marker, and the pass hides the box
+    if it still overlaps; the pill keeps its place at the arrow tip. `__exploreDirectionLabels` now carries the pill's rectangle; the
     e2e asserts disjoint rectangles for Voyager 1 and 2 and Pioneer 10 and 11.
 12. **Review fixes.** The (i) popover is placed with logical offsets (`inset-inline-end`), so it opens inside the
     legend in a right-to-left page (e2e in `ar`). `WhyPopover` has an optional `eyebrow` prop (default the existing
@@ -85,6 +88,20 @@ the brief's §1 and §2.
     name is upper-cased in the page language (`toLocaleUpperCase`); the boxes are drawn again once the mono font
     has loaded if it had not at the first draw; the hovered milestone is cleared when the paths go off.
     `es` `explore_why_plane_body`: "a la que Júpiter lanzó".
+
+13. **The phone drawer card always shows rows (clean-build e2e fix).** The drawer legend has no cap of its own (its
+    list used to shrink to nothing inside the card's `46vh` on a 390 px-high phone, `explore-message-panel.spec.ts`):
+    the card scrolls. The title is one line with an ellipsis (touch cannot hover; the (i) holds the explanation). In
+    landscape the legend's box dissolves into a grid so the ICONIC MISSIONS chip and the title share one line (the
+    (i) ends before the card's ×), the rows tighten to 30 px and the card's vertical padding is 6 px: 2 to 3 full
+    rows show at 844×390, 667×375 and 851×293 (Pixel 5 landscape), and the card is 98% opaque so the level card
+    behind it no longer shows through. e2e on both phone projects: at least 2 rows fully inside the card and the
+    voyager-1 row clickable.
+14. **The heading pill is never hidden by the pass.** The first form of decision 11 made the pill a hideable
+    candidate; labelRect rejects a point outside the canvas, so on a phone, where the panel sheet and the edge put
+    Today off the canvas, the pill stopped being drawn (`explore-hud.spec.ts` "a heading craft's pill",
+    mobile-chromium). The pill is now a forced slot without a sprite: it stays drawn whenever the mission is
+    highlighted, and the mission box yields (moves below, else is hidden).
 
 ## Alternatives not taken
 

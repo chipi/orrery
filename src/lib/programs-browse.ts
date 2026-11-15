@@ -48,13 +48,15 @@ export function agencyColorsByEra(programs: ProgramIndexEntry[]): Map<FleetEpoch
   }
   const out = new Map<FleetEpoch, string[]>();
   for (const [ep, counts] of perEra) {
-    out.set(
-      ep,
-      [...counts.entries()]
-        .sort((x, y) => y[1] - x[1] || x[0].localeCompare(y[0]))
-        .map(([a]) => agencyDataColor(a))
-        .filter((c): c is string => !!c),
-    );
+    // One dot per colour: the strip keys its dots by colour.
+    out.set(ep, [
+      ...new Set(
+        [...counts.entries()]
+          .sort((x, y) => y[1] - x[1] || x[0].localeCompare(y[0]))
+          .map(([a]) => agencyDataColor(a))
+          .filter((c): c is string => !!c),
+      ),
+    ]);
   }
   return out;
 }

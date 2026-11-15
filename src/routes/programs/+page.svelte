@@ -64,6 +64,16 @@
     'funding-line': m.programs_kind_funding,
   };
   const kindLabel = (k: string) => (KIND_LABEL[k as ProgramKind] ?? (() => k))();
+  // The card's pill and the list row say the kind in the singular, the shorter form the program
+  // page already uses, so the whole word fits the pill row.
+  const KIND_ONE: Record<ProgramKind, () => string> = {
+    'crewed-campaign': m.program_kind_crewed,
+    station: m.program_kind_station,
+    'robotic-campaign': m.program_kind_robotic,
+    infrastructure: m.program_kind_infrastructure,
+    'funding-line': m.program_kind_funding,
+  };
+  const kindOne = (k: string) => (KIND_ONE[k as ProgramKind] ?? (() => k))();
   const kindsPresent = $derived(KINDS.filter((k) => programs.some((p) => p.kind === k)));
 
   interface ProgramFilterState {
@@ -327,7 +337,7 @@
       rows={filtered.map((p) => ({
         id: p.id,
         name: p.name,
-        kind: kindLabel(p.kind),
+        kind: kindOne(p.kind),
         agency: programAgencies(p).join(' / '),
         year: years(p),
         status: programStatusClass(p.status),
@@ -355,13 +365,14 @@
           facts={[
             { label: m.card_stat_country(), value: p.country },
             { label: m.missions_card_year_label(), value: years(p) },
+            { label: m.card_stat_status(), value: programStatusLabel(p.status) },
           ]}
         >
           {#snippet pills()}
+            <span class="card-kind">{kindOne(p.kind)}</span>
             <span class="card-status status-{programStatusClass(p.status)}">
               {programStatusLabel(p.status)}
             </span>
-            <span class="card-kind">{kindLabel(p.kind)}</span>
           {/snippet}
         </EntityCard>
       {/each}
@@ -416,6 +427,27 @@
   }
   .head {
     margin-bottom: 18px;
+  }
+
+  /* Two pills share a 232 px row on a card; a tighter tracking lets the longest status and the
+     longest kind (en) show whole. */
+  .programs-index :global(.entity-card-grid .card-status),
+  .programs-index :global(.entity-card-grid .card-kind) {
+    letter-spacing: 0.5px;
+    padding-inline: 5px;
+  }
+  /* The kind is the first pill and always shows whole; the status gives way to it. On the two-column
+     phone grid there is room for the kind alone (the years already say ongoing or ended). */
+  @media (max-width: 600px) {
+    .programs-index :global(.entity-card-grid .card-status) {
+      display: none;
+    }
+  }
+
+  /* A joint program lists several agencies on one line: they clip at the card's edge instead of
+     squeezing into each other. */
+  .programs-index :global(.entity-card-grid .card-agency) {
+    flex: none;
   }
 
   .empty {

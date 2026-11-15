@@ -31,6 +31,7 @@
   import {
     buildDirectorPlan,
     directedPoseAt,
+    groundRelative,
     type CoverId,
     type DirectorPlan,
     type LightId,
@@ -142,7 +143,8 @@
       const renderAt = (tt: number): void => {
         if (!asc || !ar) return;
         const sampled = tt < 0 ? padState(summary, tt) : sampleAscentAt(summary.states, tt);
-        const s = tt > sampled.t ? { ...sampled, t: tt } : sampled;
+        const raw = tt > sampled.t ? { ...sampled, t: tt } : sampled;
+        const s = groundRelative(raw, launchSite?.lat ?? 28.5);
         asc.setState(s);
         if (mode === 'director') {
           const dp = directedPoseAt(thePlan, tt, s, VEHICLE_LENGTH_KM);

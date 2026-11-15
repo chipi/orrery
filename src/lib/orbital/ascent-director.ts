@@ -1038,6 +1038,31 @@ export function buildDirectorPlan(inp: DirectorInputs): DirectorPlan {
 
 // ─── Pose ───────────────────────────────────────────────────────────────────
 
+/** Earth's surface speed at the equator (km/s). */
+const EQUATOR_SPEED_KMS = 0.4651;
+const GROUND_FIX_FULL_S = 15;
+const GROUND_FIX_FADE_S = 20;
+
+/**
+ * The state as the GROUND sees it. The physics reports downrange as the inertial arc, so
+ * the launch site's rotation speed (0.41 km/s at the Cape) shows as the vehicle sliding
+ * ~4 km sideways in the first 10 s while it climbs 0.2 km. Subtracting the pad's speed makes
+ * the first seconds a vertical rise. The correction ramps out (smoothstep) between 15 s and
+ * 35 s and then holds, so the path stays continuous once the real pitch-over dominates.
+ * Dev-rig only: the physics, the HUD and /fly stay inertial.
+ */
+export function groundRelative(s: AscentState, latDeg: number): AscentState {
+  const v = EQUATOR_SPEED_KMS * Math.cos(latDeg * D2R);
+  const t = Math.max(0, s.t);
+  const u = clamp01((t - GROUND_FIX_FULL_S) / GROUND_FIX_FADE_S);
+  // integral of v * (1 - smoothstep(u)) from 15 s: the speed fades to zero
+  const offset =
+    t <= GROUND_FIX_FULL_S
+      ? v * t
+      : v * (GROUND_FIX_FULL_S + GROUND_FIX_FADE_S * (u - u * u * u + (u * u * u * u) / 2));
+  return { ...s, downrangeKm: s.downrangeKm - offset };
+}
+
 export function shotIndexAt(shots: DirectedShot[], t: number): number {
   if (shots.length === 0 || t <= shots[0].tStart) return 0;
   for (let i = 0; i < shots.length; i++) {

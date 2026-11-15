@@ -15,6 +15,7 @@ import {
   evalKf,
   farEnough,
   fnv1a32,
+  groundRelative,
   mulberry32,
   pickConditions,
   shotIndexAt,
@@ -402,6 +403,64 @@ describe('framing', () => {
       }
     }
     expect(checked).toBeGreaterThan(500);
+  });
+});
+
+describe('first seconds rise vertically (ground-relative)', () => {
+  const CFGS: [string, number | undefined][] = [
+    ['sls-block-1', undefined],
+    ['sls-block-1', 77],
+    ['space-shuttle-stack', 5],
+    ['atlas-v', undefined],
+    ['falcon-9', undefined],
+    ['falcon-9', 3],
+  ];
+
+  it('the inertial path drifts kilometres sideways (the defect the rig corrects)', () => {
+    const s = sampleAscentAt(byId('falcon-9').summary.states, 10);
+    expect(s.downrangeKm).toBeGreaterThan(3);
+    expect(s.altKm).toBeLessThan(0.5);
+  });
+
+  it('the ground-relative vehicle stays over the pad, rising, until tower clear + 2 s', () => {
+    for (const [id] of CFGS) {
+      const p = byId(id);
+      const lat = p.profile.launchSite?.lat ?? 28.5;
+      for (let t = 0; t <= 24; t += 0.5) {
+        const g = groundRelative(sampleAscentAt(p.summary.states, t), lat);
+        // vertical until the real pitch-over (a few seconds after tower clear), then at most 45 deg
+        const k = t <= 12 ? 0.5 : 1.05;
+        expect(Math.abs(g.downrangeKm), `${id} t=${t}`).toBeLessThan(0.02 + k * g.altKm);
+      }
+    }
+  });
+
+  it('the ground-relative path is continuous and never goes backwards past the correction', () => {
+    const p = byId('falcon-9');
+    let prev = groundRelative(sampleAscentAt(p.summary.states, 0), 28.5).downrangeKm;
+    for (let t = 1; t <= 120; t++) {
+      const d = groundRelative(sampleAscentAt(p.summary.states, t), 28.5).downrangeKm;
+      expect(d - prev).toBeGreaterThan(-0.05);
+      expect(d - prev).toBeLessThan(3);
+      prev = d;
+    }
+  });
+
+  it('the opening camera does not slide sideways with the vehicle', () => {
+    for (const [id, seed] of CFGS) {
+      const p = byId(id);
+      const lat = p.profile.launchSite?.lat ?? 28.5;
+      for (const opening of ['tower_clear', 'pad_wide', 'pad_dusk', 'overhead_drop'] as const) {
+        const plan = planFor(p, { seed, force: { opening } });
+        const xs: number[] = [];
+        for (let t = 3; t <= 22; t += 1) {
+          const s = groundRelative(sampleAscentAt(p.summary.states, t), lat);
+          xs.push(directedPoseAt(plan, t, s, 1.2).pose.px);
+        }
+        const slide = Math.max(...xs) - Math.min(...xs);
+        expect(slide, `${id} ${opening}`).toBeLessThan(0.9);
+      }
+    }
   });
 });
 

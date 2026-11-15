@@ -2,6 +2,7 @@ import { describe, it, expect } from 'vitest';
 import { readdirSync, readFileSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 import {
+  bodyAngleFromVerticalRad,
   integrateAscent,
   sampleAscentAt,
   type AscentSummary,
@@ -16,6 +17,7 @@ import {
   farEnough,
   fnv1a32,
   groundRelative,
+  TOWER_CLEAR_ALT_KM,
   mulberry32,
   pickConditions,
   shotIndexAt,
@@ -435,6 +437,61 @@ describe('first seconds rise vertically (ground-relative)', () => {
     }
   });
 
+  const tiltDeg = (id: string, t: number): { deg: number; alt: number } => {
+    const p = byId(id);
+    const g = groundRelative(
+      sampleAscentAt(p.summary.states, t),
+      p.profile.launchSite?.lat ?? 28.5,
+    );
+    return { deg: (bodyAngleFromVerticalRad(g) * 180) / Math.PI, alt: g.altKm };
+  };
+
+  it('the rendered body stays vertical (< 1 deg) while its base is below the pad tower top + margin', () => {
+    let checked = 0;
+    for (const id of ['sls-block-1', 'space-shuttle-stack', 'atlas-v', 'falcon-9']) {
+      for (let t = 0; t <= 45; t += 0.25) {
+        const { deg, alt } = tiltDeg(id, t);
+        if (alt < TOWER_CLEAR_ALT_KM) {
+          expect(deg, `${id} t=${t} alt=${alt.toFixed(2)}`).toBeLessThan(1);
+          checked++;
+        }
+      }
+    }
+    expect(checked).toBeGreaterThan(300);
+  });
+
+  it('the inertial physics already leans > 1 deg before the base clears the tower (the defect)', () => {
+    const s = sampleAscentAt(byId('atlas-v').summary.states, 8);
+    expect((bodyAngleFromVerticalRad(s) * 180) / Math.PI).toBeGreaterThan(1);
+    expect(s.altKm).toBeLessThan(TOWER_CLEAR_ALT_KM);
+  });
+
+  it('the attitude is continuous: at most 1.6 deg per frame at x10, 30 fps', () => {
+    for (const id of ['sls-block-1', 'space-shuttle-stack', 'atlas-v', 'falcon-9']) {
+      let prev = tiltDeg(id, 0).deg;
+      for (let t = 1 / 3; t <= 150; t += 1 / 3) {
+        const d = tiltDeg(id, t).deg;
+        expect(Math.abs(d - prev), `${id} t=${t.toFixed(2)}`).toBeLessThan(1.6);
+        prev = d;
+      }
+    }
+  });
+
+  it('after the blend the body points along the ground-relative flight path (no crab)', () => {
+    for (const id of ['sls-block-1', 'space-shuttle-stack', 'atlas-v', 'falcon-9']) {
+      const p = byId(id);
+      const lat = p.profile.launchSite?.lat ?? 28.5;
+      for (const t of [60, 90, 120]) {
+        const a = groundRelative(sampleAscentAt(p.summary.states, t - 0.5), lat);
+        const b = groundRelative(sampleAscentAt(p.summary.states, t + 0.5), lat);
+        const pathDeg =
+          (Math.atan2(b.downrangeKm - a.downrangeKm, b.altKm - a.altKm) * 180) / Math.PI;
+        const bodyDeg = tiltDeg(id, t).deg;
+        expect(Math.abs(bodyDeg - pathDeg), `${id} t=${t}`).toBeLessThan(15);
+      }
+    }
+  });
+
   it('the ground-relative path is continuous and never goes backwards past the correction', () => {
     const p = byId('falcon-9');
     let prev = groundRelative(sampleAscentAt(p.summary.states, 0), 28.5).downrangeKm;
@@ -528,6 +585,26 @@ describe('smooth camera in the coast (no jerks at x10, 30 fps)', () => {
         expect(screen).toBeLessThan(1.93);
       }
     }
+  });
+});
+
+describe('Space Shuttle sequence', () => {
+  it('has no fairing beat (fairingKg 0): no fairing_jettison event and no fairing shot', () => {
+    const p = byId('space-shuttle-stack');
+    expect(p.profile.fairingKg).toBe(0);
+    expect(p.summary.events.some((e) => e.type === 'fairing_jettison')).toBe(false);
+    for (let seed = 0; seed < 20; seed++)
+      expect(planFor(p, { seed }).shots.some((s) => s.id === 'fairing')).toBe(false);
+  });
+
+  it('SRB separation is the first staging, MECO and the tank drop come together, in that order', () => {
+    const ev = byId('space-shuttle-stack').summary.events;
+    const stagings = ev.filter((e) => e.type === 'staging');
+    const meco = ev.find((e) => e.type === 'meco')!;
+    expect(stagings[0].t).toBeGreaterThan(90);
+    expect(stagings[0].t).toBeLessThan(130);
+    expect(meco.t).toBeGreaterThan(480);
+    expect(stagings.at(-1)!.t).toBeCloseTo(meco.t, 0);
   });
 });
 

@@ -1047,27 +1047,36 @@ export function buildDirectorPlan(inp: DirectorInputs): DirectorPlan {
 
 /** Earth's surface speed at the equator (km/s). */
 const EQUATOR_SPEED_KMS = 0.4651;
-const GROUND_FIX_FULL_S = 15;
-const GROUND_FIX_FADE_S = 20;
+/** The drawn pad tower is 1.18 vehicle lengths (1.416 km) tall; the body stays vertical until
+ *  its base is above it, plus a margin. */
+export const TOWER_CLEAR_ALT_KM = 1.416 + 0.1;
+const TILT_BLEND_KM = 3;
 
 /**
  * The state as the GROUND sees it. The physics reports downrange as the inertial arc, so
  * the launch site's rotation speed (0.41 km/s at the Cape) shows as the vehicle sliding
  * ~4 km sideways in the first 10 s while it climbs 0.2 km. Subtracting the pad's speed makes
- * the first seconds a vertical rise. The correction ramps out (smoothstep) between 15 s and
- * 35 s and then holds, so the path stays continuous once the real pitch-over dominates.
- * Dev-rig only: the physics, the HUD and /fly stay inertial.
+ * the first seconds a vertical rise. Dev-rig only: the physics, the HUD and /fly stay inertial.
  */
 export function groundRelative(s: AscentState, latDeg: number): AscentState {
   const v = EQUATOR_SPEED_KMS * Math.cos(latDeg * D2R);
   const t = Math.max(0, s.t);
-  const u = clamp01((t - GROUND_FIX_FULL_S) / GROUND_FIX_FADE_S);
-  // integral of v * (1 - smoothstep(u)) from 15 s: the speed fades to zero
-  const offset =
-    t <= GROUND_FIX_FULL_S
-      ? v * t
-      : v * (GROUND_FIX_FULL_S + GROUND_FIX_FADE_S * (u - u * u * u + (u * u * u * u) / 2));
-  return { ...s, downrangeKm: s.downrangeKm - offset };
+  // The pad's speed is subtracted for the whole flight: fading it out made the ground path
+  // swing sideways at 15-35 s while the body still pointed up (a visible crab).
+  const downrangeKm = s.downrangeKm - v * t;
+
+  // Attitude. The physics tilts the body as soon as it has horizontal speed (the pad's own
+  // 0.4 km/s counts). Drawn: vertical until the base clears the pad tower, then a quintic
+  // blend to the ground-relative flight path (no crab), and from 40 s a second quintic blend
+  // to the physics attitude, which the path and the thrust agree with by then.
+  const tilt = bodyAngleFromVerticalRad(s);
+  const horiz = Math.sqrt(Math.max(0, s.speedKms * s.speedKms - s.velUpKms * s.velUpKms));
+  const path = Math.atan2(Math.max(0, horiz - v), Math.max(1e-6, s.velUpKms));
+  const w1 = smoother((s.altKm - TOWER_CLEAR_ALT_KM) / TILT_BLEND_KM);
+  const w2 = smoother((t - 40) / 30);
+  const target = path * (1 - w2) + tilt * w2;
+  const fromVertical = w1 * target;
+  return { ...s, downrangeKm, attitudeRad: Math.PI / 2 - fromVertical };
 }
 
 export function shotIndexAt(shots: DirectedShot[], t: number): number {

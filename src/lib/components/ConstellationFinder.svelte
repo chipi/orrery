@@ -29,6 +29,9 @@
     const ctx = cv.getContext('2d');
     if (!ctx) return;
     ctx.clearRect(0, 0, W, H);
+    // The page's RTL direction would anchor the labels at their right edge and cut them off.
+    ctx.direction = 'ltr';
+    ctx.textAlign = 'left';
     ctx.fillStyle = '#04060d';
     ctx.fillRect(0, 0, W, H);
 

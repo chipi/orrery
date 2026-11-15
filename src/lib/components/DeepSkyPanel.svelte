@@ -22,6 +22,29 @@
   } from '$lib/explore/format';
   import { dataSourceItems, recordLinks, sourceLink } from '$lib/catalogue';
   import DataSources from './DataSources.svelte';
+  import ConstellationFinder from './ConstellationFinder.svelte';
+  import UniverseFacts, { type Fact } from './UniverseFacts.svelte';
+  import {
+    getConstellationLines,
+    getNamedStars,
+    getNamedStarI18n,
+    type NamedStar,
+  } from '$lib/data';
+  import { dataLoadFailed } from '$lib/data/core';
+  import { isZodiacConstellation } from '$lib/universe/iau-constellations';
+  import { showConstellationLines } from '$lib/universe/constellation-actions';
+  import {
+    altitudeBand,
+    bestMonths,
+    eyeBand,
+    figureVertices,
+    formatDec,
+    formatRa,
+    maxAltitude,
+    nearestNamedStar,
+    raDecToHyg,
+  } from '$lib/universe/sky-finder';
+  import { viewerLatLon } from '$lib/viewer-location';
 
   type Props = {
     object: DeepSkyObject | null;
@@ -95,6 +118,111 @@
         ]
       : [],
   );
+  // IN THE SKY (L42, UXD-049): the figure of the object's constellation with the object ringed,
+  // and rows computed from its own RA / Dec / magnitude (src/lib/universe/sky-finder.ts).
+  let lastId = $state<string | null>(null);
+  let conVertices = $state<number[] | null>(null);
+  let namedStars = $state<NamedStar[]>([]);
+  let hopNames = $state<Record<string, string>>({});
+  $effect(() => {
+    if (object && object.id !== lastId) {
+      lastId = object.id;
+      conVertices = null;
+      const forId = object.id;
+      const con = object.con;
+      void getConstellationLines()
+        .then((all) => {
+          if (object && object.id === forId) conVertices = figureVertices(all, con);
+        })
+        .catch(dataLoadFailed);
+      if (namedStars.length === 0) {
+        void getNamedStars()
+          .then((s) => (namedStars = s))
+          .catch(dataLoadFailed);
+      }
+    }
+  });
+
+  // The object's own direction from RA / Dec in the HYG frame: its scene x, y, z is a different frame.
+  let skyDir = $derived(object ? raDecToHyg(object.ra, object.dec) : null);
+  let hop = $derived(skyDir ? nearestNamedStar(skyDir, namedStars, 15) : null);
+  $effect(() => {
+    const star = hop?.star;
+    const locale = getLocale();
+    if (!star) return;
+    const key = `${locale}:${star.id}`;
+    if (hopNames[key]) return;
+    void getNamedStarI18n(locale, star.id)
+      .then((o) => (hopNames = { ...hopNames, [key]: o?.name ?? star.proper }))
+      .catch(() => (hopNames = { ...hopNames, [key]: star.proper }));
+  });
+  let hopName = $derived(hop ? (hopNames[`${getLocale()}:${hop.star.id}`] ?? hop.star.proper) : '');
+
+  let skyFacts = $derived.by((): Fact[] => {
+    if (!object) return [];
+    const locale = getLocale();
+    const month = (i: number) =>
+      new Intl.DateTimeFormat(locale, { month: 'short', timeZone: 'UTC' }).format(
+        new Date(Date.UTC(2001, i, 15)),
+      );
+    const months = bestMonths(object.ra);
+    const lat = viewerLatLon()?.latDeg;
+    const alt = lat === undefined ? null : altitudeBand(maxAltitude(object.dec, lat));
+    const eye = eyeBand(object.mag);
+    return [
+      {
+        label: m.star_label_constellation(),
+        value: deepSkyConstellation(object.con),
+        accent: true,
+      },
+      {
+        label: m.sky_label_position(),
+        value: `${formatRa(object.ra)} · ${formatDec(object.dec)}`,
+      },
+      ...(hop
+        ? [
+            {
+              label: m.sky_label_hop(),
+              value: m.sky_hop_value({
+                star: hopName,
+                deg: hop.sepDeg.toLocaleString(locale, { maximumFractionDigits: 1 }),
+              }),
+            },
+          ]
+        : []),
+      {
+        label: m.sky_label_best_months(),
+        value: m.sky_months_range({ from: month(months.from), to: month(months.to) }),
+      },
+      ...(alt
+        ? [
+            {
+              label: m.sky_label_altitude(),
+              value:
+                alt === 'high'
+                  ? m.sky_alt_high()
+                  : alt === 'low'
+                    ? m.sky_alt_low()
+                    : m.sky_alt_never(),
+            },
+          ]
+        : []),
+      ...(eye
+        ? [
+            {
+              label: m.sky_label_eye(),
+              value:
+                eye === 'naked'
+                  ? m.sky_eye_naked()
+                  : eye === 'binoculars'
+                    ? m.sky_eye_binoculars()
+                    : m.sky_eye_telescope(),
+            },
+          ]
+        : []),
+    ];
+  });
+
   let hero = $derived(
     object?.photoKey && image
       ? {
@@ -115,7 +243,34 @@
   name={object ? title : undefined}
   lead={[overlay?.fact, overlay?.bio, image?.caption].filter((t): t is string => !!t)}
   {facts}
+  idPrefix="deepsky"
+  tabs={[{ id: 'sky', label: m.panel_tab_sky(), visible: !!object?.con }]}
 >
+  {#snippet tabContent(active)}
+    {#if object && active === 'sky'}
+      {#if conVertices && skyDir}
+        <div class="sky-finder">
+          <ConstellationFinder
+            vertices={conVertices}
+            starXYZ={[skyDir[0], skyDir[1], skyDir[2]]}
+            marker="object"
+            label={deepSkyConstellation(object.con)}
+            hop={hop ? { xyz: [hop.star.x, hop.star.y, hop.star.z], label: hopName } : undefined}
+          />
+          <p class="finder-caption">
+            {m.star_finder_caption({ con: deepSkyConstellation(object.con) })}
+          </p>
+        </div>
+      {/if}
+      <UniverseFacts facts={skyFacts} />
+      {#if isZodiacConstellation(object.con)}
+        <p class="editorial">{m.star_zodiac_note({ con: deepSkyConstellation(object.con) })}</p>
+      {/if}
+      <div class="ui-chip-group">
+        <Chip kind="action" onclick={showConstellationLines}>{m.star_show_constellations()}</Chip>
+      </div>
+    {/if}
+  {/snippet}
   {#snippet actions()}
     {#if object?.gatewaySystem && onGateway}
       <Chip kind="action" onclick={() => onGateway?.(object.gatewaySystem!)}
@@ -136,6 +291,17 @@
 </UniversePanelBody>
 
 <style>
+  .sky-finder {
+    margin-bottom: 12px;
+  }
+  .finder-caption {
+    font-family: var(--font-mono, 'Space Mono', monospace);
+    font-size: var(--size-label);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--color-text-label);
+    margin: 4px 0 0;
+  }
   .gateway-note {
     font-size: var(--size-meta);
     line-height: 1.4;

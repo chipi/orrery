@@ -428,6 +428,10 @@ A compact chip on the left above the grid: `FILTERS  12 / 150  ▾`. The count s
 
 A **view toggle** is a `ChipGroup role="radiogroup"` of `Chip kind="choice"`, one chip per view, named by its own key (`fleet_view_aria`, "View"). It sits on the FILTERS row, right after the FILTERS chip (and CLEAR FILTERS), never inside the collapsible strip, so it is always visible. On `/fleet` it is GRID and LINE-UP; a second radiogroup (Launchers, Capsules & spacecraft) follows it only while LINE-UP is on. A view that does not obey the filters disables the FILTERS chip while it is on (`disabled`, not removed, so nothing on the row moves) and draws neither the filters panel nor CLEAR FILTERS ([UXD-035](../uxs/decisions/UXD-035-fleet-view-toggle-and-one-missions-list.md)).
 
+### 5.7b Canvas proxies: hidden, and visible on focus
+
+The canvas routes keep two kinds of invisible buttons that stand in for 3D objects. **Tour anchors** (`.tour-anchors`, the Curator Tour's "select mercury" click targets): a 1 px clipped box, `aria-hidden`, `tabindex="-1"`, never focusable, never drawn. **Screen-reader lists** (`.sr-site-list` on the Worlds, `.sr-module-list` on `/iss` and `/tiangong`, GH #256): the same clip, but in the tab order, one button per site or module. While focus is inside a list only the focused row is drawn, as a panel-coloured chip with a 2 px `--color-focus` ring at the bottom centre, 56 px above the edge (clear of the footer dock); the other rows stay clipped but focusable, so Tab keeps walking the list. The rule is in `app.css`; the components' own `.sr-only` clip is the resting state. A new canvas proxy that is in the tab order uses the same class pair, or it is a tab stop nobody can see. Guard: `tests/e2e/sr-list-focus.spec.ts`.
+
 ### 5.8 Section label (grid divider)
 
 ```css

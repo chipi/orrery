@@ -125,6 +125,54 @@ html {
   pointer-events: auto;
 }
 
+/* The screen-reader site / module lists (GH #256) are clipped to 1 px, so a keyboard user
+ * tabbing through them saw no focus at all. While focus is inside one, only the focused
+ * row is drawn, as a chip at the bottom centre with the focus ring; every other row stays
+ * clipped but focusable, so Tab keeps walking the list. Specificity beats the components'
+ * scoped `.sr-only`. */
+ul.sr-only.sr-site-list:focus-within,
+ul.sr-only.sr-module-list:focus-within {
+  position: fixed;
+  left: 50%;
+  bottom: calc(56px + env(safe-area-inset-bottom, 0px));
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: calc(100vw - 32px);
+  height: auto;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+  clip: auto;
+  list-style: none;
+  z-index: 60;
+}
+ul.sr-only.sr-site-list:focus-within > li:not(:focus-within),
+ul.sr-only.sr-module-list:focus-within > li:not(:focus-within) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+ul.sr-only.sr-site-list:focus-within button,
+ul.sr-only.sr-module-list:focus-within button {
+  display: block;
+  padding: 8px 14px;
+  border: 1px solid var(--color-accent-edge, rgba(255, 255, 255, 0.3));
+  border-radius: 6px;
+  background: var(--color-panel-bg);
+  color: #fff;
+  font: 12px/1.3 var(--font-mono);
+  white-space: normal;
+  text-align: center;
+}
+ul.sr-only.sr-site-list:focus-within button:focus-visible,
+ul.sr-only.sr-module-list:focus-within button:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
 /* ── TV / 10-foot layer (RFC-031 S6) ─────────────────────────────────────────
    Gated to a large, no-hover, coarse-pointer screen — i.e. a TV driven by a
    D-pad remote — so desktop + phone/tablet-portrait are completely untouched

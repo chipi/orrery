@@ -3740,5 +3740,6 @@
   "library_category_galaxy": "गैलेक्सियाँ",
   "library_category_structure": "ब्रह्मांडीय संरचनाएँ",
   "fly_2d_scale_label": "1 AU = {px} पिक्सेल",
-  "missions_showing": "दिख रहा है: {era} ({count})"
+  "browse_showing": "दिख रहा है: {era} ({count})",
+  "browse_view_list": "सूची"
 }

@@ -3740,5 +3740,6 @@
   "library_category_galaxy": "Sterrenstelsels",
   "library_category_structure": "Kosmische structuren",
   "fly_2d_scale_label": "1 AE = {px} px",
-  "missions_showing": "Getoond: {era} ({count})"
+  "browse_showing": "Getoond: {era} ({count})",
+  "browse_view_list": "Lijst"
 }

@@ -3740,5 +3740,6 @@
   "library_category_galaxy": "Galassie",
   "library_category_structure": "Strutture cosmiche",
   "fly_2d_scale_label": "1 au = {px} px",
-  "missions_showing": "In mostra: {era} ({count})"
+  "browse_showing": "In mostra: {era} ({count})",
+  "browse_view_list": "Elenco"
 }

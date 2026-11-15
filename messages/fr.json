@@ -3740,5 +3740,6 @@
   "library_category_galaxy": "Galaxies",
   "library_category_structure": "Structures cosmiques",
   "fly_2d_scale_label": "1 au = {px} px",
-  "missions_showing": "Affichage : {era} ({count})"
+  "browse_showing": "Affichage : {era} ({count})",
+  "browse_view_list": "Liste"
 }

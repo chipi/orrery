@@ -4,15 +4,12 @@
   import ChipGroup from '$lib/components/ChipGroup.svelte';
   let { data } = $props();
   import { metaDescription } from '$lib/seo';
-  import { responsive } from '$lib/responsive-image.svelte';
-  import { IMAGE_SIZES } from '$lib/image-sizes';
   import { onMount, untrack } from 'svelte';
   import { canonicalId } from '$lib/data/retired-ids';
   import { page } from '$app/state';
   import { audio } from '$lib/audio-state.svelte';
   import { afterNavigate, goto } from '$app/navigation';
   import { trackCardNavigation, seedBackTarget } from '$lib/card-chain.svelte';
-  import { assetUrl } from '$lib/asset-url';
   import { getFleet, getFleetGallery, getFleetIndex, getBadges } from '$lib/data';
   import type {
     FleetCategory,
@@ -22,18 +19,23 @@
     FleetStatus,
   } from '$types/fleet';
   import EpochTimelineStrip from '$lib/components/EpochTimelineStrip.svelte';
+  import EntityCard from '$lib/components/EntityCard.svelte';
+  import EntityList from '$lib/components/EntityList.svelte';
+  import AgencyFilterRow from '$lib/components/AgencyFilterRow.svelte';
+  import BrowseToolbar from '$lib/components/BrowseToolbar.svelte';
+  import { epochLabel } from '$lib/epoch-label';
   import FleetEntryPanel from '$lib/components/FleetEntryPanel.svelte';
   import VisuallyHiddenH1 from '$lib/components/VisuallyHiddenH1.svelte';
   import { LINEUP_LIVE, lineupKindFor, type LineupKind } from '$lib/three/lineup/lineup-kind';
   import { handleGridKeydown } from '$lib/grid-keyboard-nav';
-  import { agencyLogo, agencyFullName, splitAgencies } from '$lib/agencies';
+  import { agencyDataColor, splitAgencies } from '$lib/agencies';
   import { matchesQuery } from '$lib/list-search';
   import { trackFilterChange, trackSearch } from '$lib/analytics';
   import * as m from '$lib/paraglide/messages';
   import { countryLabel } from '$lib/country-label';
   import { fleetStatusLabel } from '$lib/status-label';
   import { fleetCategoryLabel } from '$lib/fleet-category-label';
-  import { pickHero, loadHeroOverrides, heroPositionFor } from '$lib/image-hero';
+  import { pickHero, loadHeroOverrides } from '$lib/image-hero';
   import { cue } from '$lib/sensory/feedback';
   import {
     type RemoteData,
@@ -45,7 +47,6 @@
   } from '$lib/types/remote-data';
   import { dataLoadFailed } from '$lib/data/core';
   import { localeFromPage, localHref } from '$lib/locale';
-  import { readableTextOn, DARK_TEXT } from '$lib/readable-text';
 
   // ─── State ───────────────────────────────────────────────────────
   // RemoteData<E,T> per #330 C.2. `entries` is the success-branch
@@ -139,8 +140,32 @@
   // Agency logo + full-name lookups delegate to the unified registry
   // at src/lib/agencies.ts. Add new agencies / logos there — every
   // consumer (fleet, missions, ISS modules, launches) picks them up.
-  const logoFor = agencyLogo;
-  const fullNameFor = (agency: string) => agencyFullName(agency);
+  // Agencies per era and per chip: the era tiles' dots and the chips' counts (unfiltered inventory).
+  let agencyCount: Map<string, number> = $derived.by(() => {
+    const map = new Map<string, number>();
+    for (const e of entries)
+      for (const a of new Set(splitAgencies(e.agency))) map.set(a, (map.get(a) ?? 0) + 1);
+    return map;
+  });
+  let colorsByEpoch: Map<FleetEpoch, string[]> = $derived.by(() => {
+    const perEra = new Map<FleetEpoch, Map<string, number>>();
+    for (const e of entries) {
+      const counts = perEra.get(e.epoch) ?? new Map<string, number>();
+      for (const a of new Set(splitAgencies(e.agency))) counts.set(a, (counts.get(a) ?? 0) + 1);
+      perEra.set(e.epoch, counts);
+    }
+    const out = new Map<FleetEpoch, string[]>();
+    for (const [ep, counts] of perEra) {
+      out.set(
+        ep,
+        [...counts.entries()]
+          .sort((x, y) => y[1] - x[1] || x[0].localeCompare(y[0]))
+          .map(([a]) => agencyDataColor(a))
+          .filter((c): c is string => !!c),
+      );
+    }
+    return out;
+  });
 
   // ─── Filtering + sorting ─────────────────────────────────────────
   function firstFlightYear(e: FleetIndexEntry): number {
@@ -309,9 +334,9 @@
     });
   }
 
-  function setView(view: 'grid' | 'lineup') {
+  function setView(view: 'grid' | 'list' | 'lineup') {
     lineupView = view === 'lineup';
-    listView = false;
+    listView = view === 'list';
     syncUrl();
   }
   function setLineupKind(kind: LineupKind) {
@@ -472,7 +497,7 @@
 </svelte:head>
 <VisuallyHiddenH1 title={m.fleet_page_title()} />
 
-<div class="fleet entity-browse-page">
+<div class="fleet entity-browse-page browse-main">
   {#if !isSuccess(entriesRequest) && !isError(entriesRequest)}
     <p class="status">{m.fleet_loading()}</p>
   {:else if isError(entriesRequest)}
@@ -517,21 +542,13 @@
         {/if}
         <span class="filters-chevron" aria-hidden="true">{filtersExpanded ? '▾' : '▸'}</span>
       </Chip>
-      {#if filtersExpanded && anyFilterActive && !lineupView}
+      {#if anyFilterActive && !lineupView}
         <Chip kind="action" quiet dismiss class="filters-clear" onclick={clearAllFilters}>
           {m.missions_clear_filters()}
         </Chip>
       {/if}
-      <!-- The view toggle sits right after FILTERS and never moves: the line-up is a fixed
-           true-scale comparison of one kind, so FILTERS is disabled, not removed, while it is on. -->
-      <ChipGroup role="radiogroup" class="view-group" label={m.fleet_view_aria()}>
-        <Chip kind="choice" active={!lineupView} onclick={() => setView('grid')}
-          >{m.fleet_view_grid()}</Chip
-        >
-        <Chip kind="choice" active={lineupView} onclick={() => setView('lineup')}
-          >{m.fleet_lineup_toggle()}</Chip
-        >
-      </ChipGroup>
+      <!-- The view toggle is in the toolbar (BrowseToolbar), the same on /missions. FILTERS is
+           disabled, not removed, while the line-up is on: it is a fixed true-scale comparison. -->
       {#if lineupView}
         <ChipGroup role="radiogroup" class="view-group" label={m.fleet_lineup_toggle_aria()}>
           <Chip
@@ -550,10 +567,28 @@
       {/if}
     </div>
 
-    {#if filtersExpanded && !lineupView}
+    {#if !lineupView}
       <div data-audio-stage="fleet-epoch-timeline">
-        <EpochTimelineStrip {countByEpoch} selected={epochFilter} onSelect={(v) => setEpoch(v)} />
+        <EpochTimelineStrip
+          {countByEpoch}
+          {colorsByEpoch}
+          selected={epochFilter}
+          onSelect={(v) => setEpoch(v)}
+        />
       </div>
+      <div class="filters agency-row" data-audio-stage="fleet-agency-filter">
+        {#if agencies.length > 0}
+          <AgencyFilterRow
+            agencies={agencies.map((name) => ({ name, count: agencyCount.get(name) ?? 0 }))}
+            value={agencyFilter}
+            onSelect={setAgency}
+            label={m.fleet_filter_agency()}
+            allLabel={m.lib_filter_status_all()}
+          />
+        {/if}
+      </div>
+    {/if}
+    {#if filtersExpanded && !lineupView}
       <nav
         id="fleet-filters"
         class="filters"
@@ -587,63 +622,32 @@
             >
           {/each}
         </ChipGroup>
-
-        {#if agencies.length > 0}
-          <ChipGroup role="radiogroup" class="filter-group" label={m.fleet_agency_aria()}>
-            <span class="filter-label">{m.fleet_filter_agency()}</span>
-            <Chip kind="choice" active={agencyFilter === 'ALL'} onclick={() => setAgency('ALL')}
-              >{m.lib_filter_status_all()}</Chip
-            >
-            {#each agencies as agency (agency)}
-              {@const logo = logoFor(agency)}
-              {@const fullName = fullNameFor(agency)}
-              <Chip
-                kind="choice"
-                class="agency-chip"
-                active={agencyFilter === agency}
-                aria-label={fullName}
-                title={fullName}
-                onclick={() => setAgency(agency)}
-              >
-                {#if logo}
-                  <img
-                    src={logo}
-                    alt={fullName}
-                    class="agency-pill-logo"
-                    onerror={(e) => {
-                      const img = e.currentTarget as HTMLImageElement;
-                      img.style.display = 'none';
-                      const fb = img.nextElementSibling as HTMLElement | null;
-                      if (fb) fb.style.display = 'inline';
-                    }}
-                    loading="lazy"
-                    decoding="async"
-                  />
-                  <span class="agency-pill-fallback" hidden>{agency}</span>
-                {:else}
-                  {agency}
-                {/if}
-              </Chip>
-            {/each}
-          </ChipGroup>
-        {/if}
-
-        <div class="filter-group sort-group">
-          <span class="filter-label">{m.fleet_filter_sort()}</span>
-          <select
-            aria-label={m.fleet_sort_aria()}
-            value={sortMode}
-            onchange={(e) =>
-              setSort((e.currentTarget as HTMLSelectElement).value as typeof sortMode)}
-          >
-            <option value="chrono-desc">{m.fleet_sort_newest()}</option>
-            <option value="chrono-asc">{m.fleet_sort_oldest()}</option>
-            <option value="alpha">{m.fleet_sort_alpha()}</option>
-            <option value="category">{m.fleet_sort_category()}</option>
-          </select>
-        </div>
       </nav>
     {/if}
+    <BrowseToolbar
+      total={entries.length}
+      noun={m.nav_fleet()}
+      showing={m.browse_showing({
+        era: epochFilter === 'ALL' ? m.epoch_all() : epochLabel(epochFilter),
+        count: filtered.length,
+      })}
+      sortOptions={[
+        { value: 'chrono-desc', label: m.fleet_sort_newest() },
+        { value: 'chrono-asc', label: m.fleet_sort_oldest() },
+        { value: 'alpha', label: m.fleet_sort_alpha() },
+        { value: 'category', label: m.fleet_sort_category() },
+      ]}
+      sort={sortMode}
+      onSort={(v) => setSort(v as typeof sortMode)}
+      views={[
+        { value: 'grid', label: m.fleet_view_grid() },
+        { value: 'list', label: m.browse_view_list() },
+        { value: 'lineup', label: m.fleet_lineup_toggle() },
+      ]}
+      view={lineupView ? 'lineup' : listView ? 'list' : 'grid'}
+      onView={(v) => setView(v as 'grid' | 'list' | 'lineup')}
+      bare={lineupView}
+    />
     {#if lineupView}
       {#key lineupKind + localeFromPage(page)}
         <!-- Loaded only when a line-up opens: its landmark/cast lists and labels stay off the grid. -->
@@ -663,21 +667,22 @@
     {:else if filtered.length === 0}
       <p class="status">{m.fleet_empty()}</p>
     {:else if listView}
-      <ul class="fleet-list">
-        {#each filtered as entry (entry.id)}
-          <li>
-            <button type="button" class="list-row" onclick={() => openEntry(entry)}>
-              <span class="list-name">{entry.name}</span>
-              <span class="list-cat">{categoryLabel(entry.category)}</span>
-              <span class="list-agency">{entry.agency}</span>
-              <span class="list-year">{firstFlightLabel(entry.first_flight)}</span>
-              <span class="list-status status-{entry.status.toLowerCase()}"
-                >{fleetStatusLabel(entry.status)}</span
-              >
-            </button>
-          </li>
-        {/each}
-      </ul>
+      <EntityList
+        label={m.fleet_grid_aria()}
+        rows={filtered.map((entry) => ({
+          id: entry.id,
+          name: entry.name,
+          kind: categoryLabel(entry.category),
+          agency: entry.agency,
+          year: firstFlightLabel(entry.first_flight),
+          status: entry.status,
+          statusLabel: fleetStatusLabel(entry.status),
+        }))}
+        onOpen={(id) => {
+          const e = entries.find((x) => x.id === id);
+          if (e) openEntry(e);
+        }}
+      />
     {:else}
       <ul
         class="fleet-grid entity-card-grid"
@@ -685,85 +690,33 @@
         aria-label={m.fleet_grid_aria()}
       >
         {#each filtered as entry (entry.id)}
-          {@const primaryAgency = (entry.agency ?? '').split(/\s*\/\s*/)[0]?.trim() ?? entry.agency}
-          {@const cardLogo = logoFor(primaryAgency)}
-          {@const cardFullName = fullNameFor(primaryAgency)}
-          {@const accent = CATEGORY_COLOR[entry.category]}
-          <li class="card-li">
-            <button
-              type="button"
-              class="card"
-              class:selected={selectedEntry?.id === entry.id}
-              style:--accent={accent}
-              data-testid="fleet-card-{entry.id}"
-              data-audio-stage="fleet-select-{entry.id}"
-              onclick={() => openEntry(entry)}
-              onkeydown={(e) => handleGridKeydown(e, closePanel)}
-              aria-label="{entry.name} ({entry.agency}, {firstFlightLabel(entry.first_flight)})"
-            >
-              <div class="card-accent" aria-hidden="true"></div>
-              <figure class="card-photo">
-                <img
-                  class="card-cover"
-                  {...responsive(pickHero('fleet', entry.id), IMAGE_SIZES.card)}
-                  style:object-position={heroPositionFor(pickHero('fleet', entry.id))}
-                  alt=""
-                  loading="lazy"
-                  onerror={(e) => {
-                    const fig = (e.currentTarget as HTMLImageElement).closest('figure');
-                    if (fig) fig.classList.add('cover-missing');
-                  }}
-                  decoding="async"
-                />
-              </figure>
-              <div class="card-body">
-                <header class="card-head">
-                  <span
-                    class="agency-badge"
-                    style:background-color={accent}
-                    style:color={readableTextOn(accent)}
-                    style:text-shadow={readableTextOn(accent) === DARK_TEXT ? 'none' : null}
-                    title={cardFullName}
-                  >
-                    {#if cardLogo}
-                      <img
-                        src={cardLogo}
-                        alt=""
-                        class="agency-logo"
-                        aria-hidden="true"
-                        onerror={(e) =>
-                          ((e.currentTarget as HTMLImageElement).style.display = 'none')}
-                        loading="lazy"
-                        decoding="async"
-                      />
-                    {/if}
-                    {primaryAgency}
-                  </span>
-                  <span class="card-status status-{entry.status.toLowerCase()}">
-                    {fleetStatusLabel(entry.status)}
-                  </span>
-                </header>
-                <div class="card-name-row">
-                  <h2 class="card-name">{entry.name}</h2>
-                  {#if badges[`fleet:${entry.id}`]}
-                    <img
-                      class="card-badge"
-                      src={assetUrl(badges[`fleet:${entry.id}`])}
-                      alt=""
-                      loading="lazy"
-                      decoding="async"
-                    />
-                  {/if}
-                </div>
-                <p class="card-type">{categoryLabel(entry.category)}</p>
-                <div class="card-meta">
-                  <span class="card-year">{firstFlightLabel(entry.first_flight)}</span>
-                  <span class="card-country">{countryLabel(entry.country)}</span>
-                </div>
-                <p class="card-first">{entry.tagline}</p>
-              </div>
-            </button>
-          </li>
+          <EntityCard
+            photo={pickHero('fleet', entry.id)}
+            name={entry.name}
+            year={firstFlightLabel(entry.first_flight)}
+            agencies={splitAgencies(entry.agency).map((a) => ({
+              name: a,
+              color: agencyDataColor(a),
+            }))}
+            agencyTitle={entry.agency}
+            accent={CATEGORY_COLOR[entry.category]}
+            story={entry.tagline}
+            badge={badges[`fleet:${entry.id}`]}
+            selected={selectedEntry?.id === entry.id}
+            testid="fleet-card-{entry.id}"
+            audioStage="fleet-select-{entry.id}"
+            ariaLabel="{entry.name} ({entry.agency}, {firstFlightLabel(entry.first_flight)})"
+            facts={[{ label: m.card_stat_country(), value: countryLabel(entry.country) }]}
+            onclick={() => openEntry(entry)}
+            onkeydown={(e) => handleGridKeydown(e, closePanel)}
+          >
+            {#snippet pills()}
+              <span class="card-status status-{entry.status.toLowerCase()}">
+                {fleetStatusLabel(entry.status)}
+              </span>
+              <span class="card-kind">{categoryLabel(entry.category)}</span>
+            {/snippet}
+          </EntityCard>
         {/each}
       </ul>
     {/if}
@@ -805,13 +758,6 @@
 />
 
 <style>
-  .fleet {
-    padding: 18px 22px 40px;
-    max-width: 1400px;
-    margin: 0 auto;
-    position: relative;
-  }
-
   .status {
     text-align: center;
     color: rgba(255, 255, 255, 0.6);
@@ -831,171 +777,11 @@
      (src/lib/styles/chip.css); the status colours are STATUS_TONE.
      Shared with /missions so chrome can't visually drift. */
 
-  .sort-group {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-  .sort-group select {
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    color: rgba(255, 255, 255, 0.85);
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 11px;
-    cursor: pointer;
-  }
-
   /* Grid layout itself (display, columns, gap, breakpoints) lives in
      src/lib/styles/entity-card-grid.css — shared with /missions so the
      column count tracks viewport identically across both routes. */
 
-  /* W4 (GH #274) — content-visibility: auto lets the browser skip
-   * layout + paint for off-screen cards (152 fleet entries × ~280px
-   * each = ~21000px tall before virtualisation; we only need ~3-4
-   * rows visible at any time). `contain-intrinsic-size` is the
-   * scrollbar-friendly height hint that prevents jump-scroll when
-   * cards come back into view. CSS-native solution — no JS, no
-   * virtualizer library, no scroll-listener; relies on Chromium
-   * (mobile-chromium e2e target) + modern Safari/Firefox support.
-   * Trade-off vs DOM virtualisation: DOM nodes still exist (cheap
-   * memory), but layout/paint cost drops to ~0 for off-screen items.
-   * Route-local because /missions doesn't yet have enough entries to
-   * benefit from the optimisation. */
-  .fleet-grid > .card-li {
-    content-visibility: auto;
-    contain-intrinsic-size: auto 280px;
-  }
-  /* content-visibility:auto applies paint containment, which clips the
-     SHARED focus outline / selected glow — they draw OUTSIDE the card box
-     (outline-offset, box-shadow) and get cropped to the card-li. /missions
-     has no content-visibility so the identical highlight shows there. Lift
-     content-visibility for the focused/selected card so the keyboard
-     roving-nav highlight renders the same on both routes. One card opts
-     out of the optimisation at a time — negligible. The audio tour's flash glow
-     is a box-shadow too: without the opt-out every fleet roll-call flash was
-     invisible (stage-review 2026-11-08). */
-  .fleet-grid > .card-li:has(.card:focus-visible),
-  .fleet-grid > .card-li:has(.card.selected),
-  .fleet-grid > .card-li:has(.card:global(.audio-stage-flash)) {
-    content-visibility: visible;
-  }
-
-  /* Card chrome (.card, .card-photo, .card-body, .card-head,
-     .agency-badge, .card-status, .card-name, .card-type, .card-meta,
-     .card-country, .card-first, plus interactive states) lives in
-     src/lib/styles/entity-card-grid.css and is opted into by the
-     `entity-card-grid` class on `<ul class="fleet-grid entity-card-grid">`.
-     Shared with /missions so the two routes can't visually drift again. */
-
-  .fleet-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
-  }
-  /* W4 (GH #274) — same content-visibility treatment as the grid; list
-   * rows are ~50px each so a list-view scroll skips layout/paint for
-   * the ~140 off-screen rows. See note on .fleet-grid above. */
-  .fleet-list > li {
-    content-visibility: auto;
-    contain-intrinsic-size: auto 50px;
-  }
-  .list-row {
-    width: 100%;
-    background: transparent;
-    border: 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-    color: inherit;
-    text-align: left;
-    padding: 8px 12px;
-    cursor: pointer;
-    display: grid;
-    grid-template-columns: 2fr 1fr 1.2fr 0.6fr 0.7fr;
-    align-items: center;
-    gap: 10px;
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 11.5px;
-  }
-  .list-row:hover {
-    background: rgba(255, 255, 255, 0.03);
-  }
-  .list-name {
-    color: #fff;
-    font-weight: 600;
-  }
-  .list-cat,
-  .list-agency,
-  .list-year {
-    color: rgba(255, 255, 255, 0.6);
-  }
-  .list-status {
-    text-transform: uppercase;
-    font-size: var(--size-label);
-    letter-spacing: 0.06em;
-    padding: 1px 6px;
-    border-radius: 3px;
-    text-align: center;
-  }
-  .list-status.status-active {
-    background: rgba(136, 159, 231, 0.18);
-    color: #889fe7;
-  }
-  .list-status.status-flown {
-    background: color-mix(in srgb, var(--color-accent) 18%, transparent);
-    color: var(--color-state);
-  }
-  .list-status.status-retired {
-    background: rgba(255, 200, 80, 0.18);
-    color: #ffc850;
-  }
-  .list-status.status-failed {
-    background: rgba(193, 68, 14, 0.22);
-    color: #ff6b3a;
-  }
-  .list-status.status-planned {
-    background: rgba(255, 255, 255, 0.1);
-    color: rgba(255, 255, 255, 0.78);
-  }
-
-  /* Mobile-first: stack filters cleanly at 375 px */
-  @media (max-width: 600px) {
-    .fleet {
-      padding: 14px 12px 30px;
-    }
-    .filter-label {
-      min-width: 100%;
-      margin-bottom: 2px;
-    }
-    /* Mobile grid floor lives in entity-card-grid.css.
-       Fleet-specific name shrink — selector tightened to .fleet-grid
-       so Svelte's scoped-CSS specificity wins over the shared
-       entity-card-grid.css default of 22 px. */
-    .fleet-grid .card-name {
-      font-size: 18px;
-    }
-    .list-row {
-      grid-template-columns: 2fr 1fr 0.6fr;
-      grid-template-areas:
-        'name name year'
-        'cat agency status';
-    }
-    .list-name {
-      grid-area: name;
-    }
-    .list-year {
-      grid-area: year;
-      text-align: right;
-    }
-    .list-cat {
-      grid-area: cat;
-    }
-    .list-agency {
-      grid-area: agency;
-    }
-    .list-status {
-      grid-area: status;
-    }
-  }
+  /* The card, the grid, the toolbar, the agency row and the list are the shared components
+     (EntityCard, entity-card-grid.css, BrowseToolbar, AgencyFilterRow, EntityList): /missions
+     renders the same ones. */
 </style>

@@ -3740,5 +3740,6 @@
   "library_category_galaxy": "은하",
   "library_category_structure": "우주 구조",
   "fly_2d_scale_label": "1 AU = {px}픽셀",
-  "missions_showing": "표시 중: {era} ({count})"
+  "browse_showing": "표시 중: {era} ({count})",
+  "browse_view_list": "목록"
 }

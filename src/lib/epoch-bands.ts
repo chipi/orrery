@@ -90,9 +90,15 @@ export const AXIS_MAX = 2040;
  * why on missions it is not — I would expect to see same on missions".)
  */
 export function epochForYear(year: number): FleetEpoch | null {
-  for (const band of EPOCH_BANDS) {
-    if (year >= band.yearStart && year <= band.yearEnd) return band.id;
+  // Where two bands share more than a boundary year (First Stations 1973-1986 and Shuttle & Mir
+  // 1981-1998 share 1981-1986) the band that starts later wins: a 1981 Shuttle flight is a
+  // Shuttle & Mir mission, as its tile says (UXD-048, operator 2026-11-15).
+  const hits = EPOCH_BANDS.filter((b) => year >= b.yearStart && year <= b.yearEnd);
+  if (hits.length > 1) {
+    const [a, b] = hits;
+    if (Math.min(a.yearEnd, b.yearEnd) - Math.max(a.yearStart, b.yearStart) > 1) return b.id;
   }
+  if (hits.length > 0) return hits[0].id;
   // Past the last band's end — bucket into the final band (Mars Era)
   // so a 2045 mission still counts somewhere instead of vanishing.
   if (year >= EPOCH_BANDS[EPOCH_BANDS.length - 1].yearStart) {

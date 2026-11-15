@@ -2,16 +2,17 @@
   import EntityIndex from '$lib/components/EntityIndex.svelte';
   import Chip from '$lib/components/Chip.svelte';
   import ChipGroup from '$lib/components/ChipGroup.svelte';
+  import EntityCard from '$lib/components/EntityCard.svelte';
+  import EntityList from '$lib/components/EntityList.svelte';
+  import AgencyFilterRow from '$lib/components/AgencyFilterRow.svelte';
+  import BrowseToolbar from '$lib/components/BrowseToolbar.svelte';
   let { data } = $props();
   import { metaDescription } from '$lib/seo';
-  import { responsive } from '$lib/responsive-image.svelte';
-  import { IMAGE_SIZES } from '$lib/image-sizes';
   import { onMount } from 'svelte';
   import { page } from '$app/state';
   import { audio } from '$lib/audio-state.svelte';
   import { afterNavigate, goto } from '$app/navigation';
   import { setCurrentCard, trackCardNavigation, seedBackTarget } from '$lib/card-chain.svelte';
-  import { assetUrl } from '$lib/asset-url';
   import { getMissionsForLibrary, getBadges } from '$lib/data';
   import { localeFromPage, localHref } from '$lib/locale';
   import type { Destination, Mission, MissionStatus } from '$types/mission';
@@ -25,10 +26,10 @@
   import VisuallyHiddenH1 from '$lib/components/VisuallyHiddenH1.svelte';
   import * as m from '$lib/paraglide/messages';
   import { missionStatusLabel } from '$lib/status-label';
-  import { agencyColor, agencyLogo, agencyFullName, splitAgencies } from '$lib/agencies';
+  import { agencyColor, agencyDataColor, agencyFullName, splitAgencies } from '$lib/agencies';
   import { matchesQuery } from '$lib/list-search';
   import { trackFilterChange, trackSearch } from '$lib/analytics';
-  import { pickHero, loadHeroOverrides, heroPositionFor } from '$lib/image-hero';
+  import { pickHero, loadHeroOverrides } from '$lib/image-hero';
   import { cue } from '$lib/sensory/feedback';
   import {
     type RemoteData,
@@ -90,6 +91,10 @@
     epoch: FleetEpoch | 'ALL';
     /** RFC-027 — free-text search across name + agency + type + first. */
     q: string;
+    /** Order of the grid; the names are /fleet's (`?sort=`). */
+    sort: 'chrono-desc' | 'chrono-asc' | 'alpha';
+    /** Grid of cards or the compact list (`?view=list`). */
+    view: 'grid' | 'list';
     expanded: boolean;
   }
   const filterState = $state<MissionFilterState>({
@@ -99,6 +104,8 @@
     crew: 'ALL',
     epoch: 'ALL',
     q: '',
+    sort: 'chrono-desc',
+    view: 'grid',
     expanded: false,
   });
 
@@ -241,11 +248,16 @@
             (filterState.crew === 'CREWED' ? mission.crewed === true : mission.crewed !== true)) &&
           (filterState.epoch === 'ALL' || epochForYear(mission.year) === filterState.epoch),
       )
-      // J.1 — sort descending by year so the latest + upcoming missions
-      // surface at the top of the grid. Tiebreak by mission id for
-      // stable order within a year.
+      // Newest first by default so the latest and upcoming missions lead; the tiebreak is the id,
+      // so the order inside a year is stable.
       .slice()
-      .sort((a, b) => b.year - a.year || a.id.localeCompare(b.id)),
+      .sort((a, b) =>
+        filterState.sort === 'alpha'
+          ? (a.name ?? a.id).localeCompare(b.name ?? b.id)
+          : filterState.sort === 'chrono-asc'
+            ? a.year - b.year || a.id.localeCompare(b.id)
+            : b.year - a.year || a.id.localeCompare(b.id),
+      ),
   );
 
   // ─── URL ↔ filter sync ───────────────────────────────────────────
@@ -270,6 +282,9 @@
     const epochRaw = url.searchParams.get('epoch');
     filterState.epoch = epochRaw && epochValid(epochRaw) ? (epochRaw as FleetEpoch) : 'ALL';
     filterState.q = url.searchParams.get('q') ?? '';
+    const so = url.searchParams.get('sort');
+    filterState.sort = so === 'chrono-asc' || so === 'alpha' ? so : 'chrono-desc';
+    filterState.view = url.searchParams.get('view') === 'list' ? 'list' : 'grid';
     // Auto-expand the filter strip whenever the URL carries any
     // filter param — even if the value clamped back to the default,
     // the user explicitly asked about filters and should see the
@@ -293,6 +308,8 @@
     if (filterState.crew !== 'ALL') params.set('crew', filterState.crew);
     if (filterState.epoch !== 'ALL') params.set('epoch', filterState.epoch);
     if (filterState.q.trim() !== '') params.set('q', filterState.q.trim());
+    if (filterState.sort !== 'chrono-desc') params.set('sort', filterState.sort);
+    if (filterState.view === 'list') params.set('view', 'list');
     const qs = params.toString();
     const target = localHref(`/missions${qs ? `?${qs}` : ''}`);
     if (target !== page.url.pathname + page.url.search) {
@@ -300,6 +317,16 @@
       // every filter toggle.
       goto(target, { replaceState: true, keepFocus: true, noScroll: true });
     }
+  }
+
+  function setSort(value: MissionFilterState['sort']) {
+    filterState.sort = value;
+    pushFiltersToUrl();
+  }
+
+  function setView(value: MissionFilterState['view']) {
+    filterState.view = value;
+    pushFiltersToUrl();
   }
 
   function setEpoch(value: FleetEpoch | 'ALL') {
@@ -367,12 +394,10 @@
   // Agency logo + full-name lookups delegate to the unified registry
   // at src/lib/agencies.ts. Add new agencies / logos there — every
   // consumer (fleet, missions, ISS modules, launches) picks them up.
-  const logoFor = agencyLogo;
   // One colour per agency (UXD-048): the card, its badge and the filter dot read the registry, not
   // the per-mission `color` of the data (which the 3D scenes still use).
   const colorOf = (mission: { agency: string; color: string }) =>
     agencyColor(mission.agency) ?? mission.color;
-  const fullNameFor = (agency: string) => agencyFullName(agency);
 
   // ─── Card click → open MissionPanel ──────────────────────────────
   let selectedId: string | null = $state(null);
@@ -477,7 +502,7 @@
 
 <LaunchesBanner />
 
-<div class="library entity-browse-page">
+<div class="library entity-browse-page browse-main">
   <!-- RFC-027 — free-text search across name + agency + type + first.
        Sits above the FILTERS toggle so it's visible without expanding.
        Placeholder + aria reuse the same i18n key (the ellipsis suffix
@@ -519,7 +544,7 @@
       {/if}
       <span class="filters-chevron" aria-hidden="true">{filterState.expanded ? '▾' : '▸'}</span>
     </Chip>
-    {#if filterState.expanded && anyFilterActive}
+    {#if anyFilterActive}
       <Chip kind="action" quiet dismiss class="filters-clear" onclick={clearAllFilters}>
         {m.missions_clear_filters()}
       </Chip>
@@ -536,51 +561,13 @@
   </div>
   <div class="filters agency-row" data-audio-stage="missions-agency-filter">
     {#if agencies.length > 0}
-      <ChipGroup
-        role="radiogroup"
+      <AgencyFilterRow
+        agencies={agencies.map((name) => ({ name, count: agencyCount.get(name) ?? 0 }))}
+        value={filterState.agency}
+        onSelect={setAgency}
         label={m.lib_filter_agency_label()}
-        class="filter-group agency-filter"
-      >
-        <span class="filter-label">{m.lib_filter_agency_label()}</span>
-        <Chip kind="choice" active={filterState.agency === 'ALL'} onclick={() => setAgency('ALL')}
-          >{m.lib_filter_agency_all()}</Chip
-        >
-        {#each agencies as agency (agency)}
-          {@const logo = logoFor(agency)}
-          {@const fullName = fullNameFor(agency)}
-          <Chip
-            kind="choice"
-            class="agency-chip"
-            count={agencyCount.get(agency) ?? 0}
-            dotColor={agencyColor(agency) ?? undefined}
-            active={filterState.agency === agency}
-            aria-label={`${fullName}, ${agencyCount.get(agency) ?? 0}`}
-            title={fullName}
-            onclick={() => setAgency(agency)}
-          >
-            {#if logo}
-              <img
-                src={logo}
-                alt={fullName}
-                class="agency-pill-logo"
-                onerror={(e) => {
-                  // Logo missing → fall back to text label so the chip
-                  // never renders blank.
-                  const img = e.currentTarget as HTMLImageElement;
-                  img.style.display = 'none';
-                  const fb = img.nextElementSibling as HTMLElement | null;
-                  if (fb) fb.style.display = 'inline';
-                }}
-                loading="lazy"
-                decoding="async"
-              />
-              <span class="agency-pill-fallback" hidden>{agency}</span>
-            {:else}
-              {agency}
-            {/if}
-          </Chip>
-        {/each}
-      </ChipGroup>
+        allLabel={m.lib_filter_agency_all()}
+      />
     {/if}
   </div>
   {#if filterState.expanded}
@@ -624,17 +611,27 @@
   {/if}
 
   {#if isSuccess(missionsRequest)}
-    <p class="showing-line" data-testid="missions-showing">
-      <b class="showing-total">{missions.length}</b>
-      <span>{m.card_stat_missions()}</span>
-      <span class="showing-sep" aria-hidden="true">|</span>
-      <span class="showing-now" aria-live="polite"
-        >{m.missions_showing({
-          era: filterState.epoch === 'ALL' ? m.epoch_all() : epochLabel(filterState.epoch),
-          count: filtered.length,
-        })}</span
-      >
-    </p>
+    <BrowseToolbar
+      total={missions.length}
+      noun={m.card_stat_missions()}
+      showing={m.browse_showing({
+        era: filterState.epoch === 'ALL' ? m.epoch_all() : epochLabel(filterState.epoch),
+        count: filtered.length,
+      })}
+      sortOptions={[
+        { value: 'chrono-desc', label: m.fleet_sort_newest() },
+        { value: 'chrono-asc', label: m.fleet_sort_oldest() },
+        { value: 'alpha', label: m.fleet_sort_alpha() },
+      ]}
+      sort={filterState.sort}
+      onSort={(v) => setSort(v as MissionFilterState['sort'])}
+      views={[
+        { value: 'grid', label: m.fleet_view_grid() },
+        { value: 'list', label: m.browse_view_list() },
+      ]}
+      view={filterState.view}
+      onView={(v) => setView(v as MissionFilterState['view'])}
+    />
   {/if}
 
   {#if isError(missionsRequest)}
@@ -644,103 +641,76 @@
   {:else if filtered.length === 0}
     <div class="empty">{m.lib_empty()}</div>
   {:else}
-    <ul
-      class="grid entity-card-grid"
-      data-audio-stage="missions-grid"
-      aria-label={m.missions_grid_aria()}
-    >
-      {#each filtered as mission (mission.id)}
-        <li class="card-li">
-          <button
-            type="button"
-            class="card"
-            class:selected={selectedId === mission.id}
-            style:--accent={colorOf(mission)}
-            data-testid="mission-card-{mission.id}"
-            data-audio-stage="missions-select-{mission.id}"
+    {#if filterState.view === 'list'}
+      <EntityList
+        label={m.missions_grid_aria()}
+        rows={filtered.map((mission) => ({
+          id: mission.id,
+          name: mission.name ?? mission.id,
+          kind: missionDestLabel(mission.dest),
+          agency: mission.agency,
+          year: mission.year,
+          status: mission.status,
+          statusLabel: missionStatusLabel(mission.status),
+        }))}
+        onOpen={selectMission}
+      />
+    {:else}
+      <ul
+        class="grid entity-card-grid"
+        data-audio-stage="missions-grid"
+        aria-label={m.missions_grid_aria()}
+      >
+        {#each filtered as mission (mission.id)}
+          <EntityCard
+            photo={pickHero('missions', mission.id)}
+            name={mission.name ?? mission.id}
+            year={mission.year}
+            agencies={splitAgencies(mission.agency).map((a) => ({
+              name: a,
+              color: agencyDataColor(a) ?? mission.color,
+            }))}
+            agencyTitle={agencyFullName(mission.agency) ?? mission.agency}
+            accent={colorOf(mission)}
+            story={mission.first}
+            badge={badges[`mission:${mission.id}`]}
+            selected={selectedId === mission.id}
+            testid="mission-card-{mission.id}"
+            audioStage="missions-select-{mission.id}"
+            facts={[
+              { label: m.missions_card_year_label(), value: String(mission.year) },
+              { label: m.missions_card_dest_label(), value: missionDestLabel(mission.dest) },
+            ]}
             onclick={() => selectMission(mission.id)}
             onkeydown={(e) => handleGridKeydown(e, closePanel)}
           >
-            <div class="card-accent" aria-hidden="true"></div>
-            <figure class="card-photo">
-              <img
-                class="card-cover"
-                {...responsive(pickHero('missions', mission.id), IMAGE_SIZES.card)}
-                style:object-position={heroPositionFor(pickHero('missions', mission.id))}
-                alt=""
-                loading="lazy"
-                onerror={(e) => {
-                  // Hero missing → mark parent figure as cover-missing
-                  // so CSS swaps the broken-image icon for the same
-                  // soft gradient placeholder /fleet uses (2026-06-15
-                  // user note: "fleet page handles that better, can we
-                  // do the same on mission"). Image sourcing happens
-                  // separately via the image pipeline; this just keeps
-                  // the gap honest while it does.
-                  const fig = (e.currentTarget as HTMLImageElement).closest('figure');
-                  if (fig) fig.classList.add('cover-missing');
-                }}
-                decoding="async"
-              />
-            </figure>
-            <div class="card-body">
-              <div class="card-name-row">
-                <h2 class="card-name">{mission.name ?? mission.id}</h2>
-                {#if badges[`mission:${mission.id}`]}
-                  <img
-                    class="card-badge"
-                    src={assetUrl(badges[`mission:${mission.id}`])}
-                    alt=""
-                    loading="lazy"
-                    decoding="async"
-                  />
-                {/if}
-                <span class="card-year-vis" aria-hidden="true">{mission.year}</span>
-              </div>
-              <p class="card-agencies" title={agencyFullName(mission.agency) ?? mission.agency}>
-                {#each splitAgencies(mission.agency) as a (a)}
-                  <span class="card-agency" style:--agency={agencyColor(a) ?? mission.color}
-                    ><i aria-hidden="true"></i>{a}</span
-                  >
-                {/each}
-              </p>
-              <div class="card-pills">
-                <span class="card-status status-{mission.status.toLowerCase()}">
-                  {missionStatusLabel(mission.status)}
+            {#snippet pills()}
+              <span class="card-status status-{mission.status.toLowerCase()}">
+                {missionStatusLabel(mission.status)}
+              </span>
+              {#if mission.flight_data_quality}
+                <span
+                  class="card-quality quality-{mission.flight_data_quality}"
+                  title={m.lib_flight_data_quality_aria({
+                    q: mission.flight_data_quality.toUpperCase(),
+                  })}
+                >
+                  {#if mission.flight_data_quality === 'measured'}
+                    {m.lib_flight_data_quality_measured()}
+                  {:else if mission.flight_data_quality === 'sparse'}
+                    {m.lib_flight_data_quality_sparse()}
+                  {:else if mission.flight_data_quality === 'reconstructed'}
+                    {m.lib_flight_data_quality_reconstructed()}
+                  {:else}
+                    {m.lib_flight_data_quality_unknown()}
+                  {/if}
                 </span>
-                {#if mission.flight_data_quality}
-                  <span
-                    class="card-quality quality-{mission.flight_data_quality}"
-                    title={m.lib_flight_data_quality_aria({
-                      q: mission.flight_data_quality.toUpperCase(),
-                    })}
-                  >
-                    {#if mission.flight_data_quality === 'measured'}
-                      {m.lib_flight_data_quality_measured()}
-                    {:else if mission.flight_data_quality === 'sparse'}
-                      {m.lib_flight_data_quality_sparse()}
-                    {:else if mission.flight_data_quality === 'reconstructed'}
-                      {m.lib_flight_data_quality_reconstructed()}
-                    {:else}
-                      {m.lib_flight_data_quality_unknown()}
-                    {/if}
-                  </span>
-                {/if}
-              </div>
-              {#if mission.first}
-                <p class="card-first">{mission.first}</p>
               {/if}
-              <dl class="sr-only">
-                <dt>{m.missions_card_year_label()}</dt>
-                <dd>{mission.year}</dd>
-                <dt>{m.missions_card_dest_label()}</dt>
-                <dd>{missionDestLabel(mission.dest)}</dd>
-              </dl>
-            </div>
-          </button>
-        </li>
-      {/each}
-    </ul>
+            {/snippet}
+          </EntityCard>
+        {/each}
+      </ul>
+    {/if}
   {/if}
   <EntityIndex hub="missions" title={m.entity_index_missions()} links={data.entityIndex} />
 </div>
@@ -778,67 +748,6 @@
 </div>
 
 <style>
-  .library {
-    padding: 18px 22px 40px;
-    max-width: 1400px;
-    margin: 0 auto;
-  }
-  .agency-row {
-    margin-bottom: 8px;
-  }
-  .showing-line {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    gap: 4px 10px;
-    margin: 0 0 14px;
-    font-family: var(--font-mono);
-    font-size: var(--size-label);
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: var(--color-text-dim);
-  }
-  .showing-total {
-    font-family: var(--font-display);
-    font-size: 24px;
-    font-weight: 400;
-    letter-spacing: 2px;
-    color: var(--color-text);
-  }
-  .card-year-vis {
-    flex: none;
-    font-family: var(--font-mono);
-    font-size: 13px;
-    color: rgba(255, 255, 255, 0.78);
-  }
-  .card-agencies {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 4px 12px;
-    margin: 0;
-    font-family: var(--font-mono);
-    font-size: var(--size-label);
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.85);
-  }
-  .card-agency {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-  }
-  .card-agency i {
-    inline-size: 3px;
-    block-size: 12px;
-    border-radius: 1px;
-    background: var(--agency);
-  }
-  .card-pills {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 6px;
-  }
   /* Screen-reader-only — visually hidden, kept in tab order + a11y tree.
      Used for the <dl><dt> labels on card metadata (GH #256). */
   .sr-only {

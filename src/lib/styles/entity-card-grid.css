@@ -1,9 +1,10 @@
 /*
  * Entity-card grid — shared card chrome for /missions + /fleet (v0.1.x)
  *
- * Both routes render a grid of clickable cards with the same visual
- * grammar: agency badge + status pill in a header, large display-font
- * name, optional caption, optional meta row, optional one-line tagline.
+ * One card, one grid (UXD-048). Both routes render <EntityCard> (src/lib/components/EntityCard.svelte)
+ * in a <ul class="entity-card-grid">: a 16:9 photo, then a fixed-height body of four rows (name and
+ * year, one line per agency, pills, a two-line story). Every card of a grid has the same size
+ * whatever a record carries; a page differs only in its data and its pills.
  *
  * Used by:
  *   - /missions (route-data: id, name, agency, status, year, dest,
@@ -102,18 +103,15 @@
   aspect-ratio: 16 / 9;
   overflow: hidden;
   position: relative;
-  background: rgba(0, 0, 0, 0.4);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-}
-/* Hero-missing placeholder — degrade to a soft gradient instead of a
-   broken-image icon. .cover-missing class added by the <img> onerror
-   handler. */
-.entity-card-grid .card-photo.cover-missing {
+  /* The slot reads as a soft gradient, never a black box, while the photo has no src yet (the image
+     ladder manifest gates it, 0.1 s warm, seconds on a cold dev server) and for a mission with no
+     hero (the <img> onerror adds .cover-missing and hides the broken image). */
   background: linear-gradient(
     135deg,
-    color-mix(in srgb, var(--color-accent) 5%, transparent),
-    rgba(255, 255, 255, 0.02)
+    color-mix(in srgb, var(--accent, var(--color-accent)) 14%, #0a0a16),
+    rgba(255, 255, 255, 0.03)
   );
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
 }
 .entity-card-grid .card-photo img {
   width: 100%;
@@ -127,48 +125,6 @@
 }
 .entity-card-grid .card:hover .card-photo img {
   transform: scale(1.04);
-}
-
-.entity-card-grid .card-body {
-  grid-column: 2;
-  padding: 12px 14px 14px;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-.entity-card-grid .card-head {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 4px 8px;
-  margin-bottom: 4px;
-}
-
-.entity-card-grid .agency-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-family: var(--font-mono, 'Space Mono', monospace);
-  font-size: var(--size-label);
-  letter-spacing: 2px;
-  font-weight: 700;
-  padding: 3px 8px 3px 4px;
-  border-radius: 3px;
-  color: #fff;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-}
-.entity-card-grid .agency-logo {
-  height: 17px;
-  width: auto;
-  max-width: 26px;
-  object-fit: contain;
-  /* Show the logo in its real brand colours on a small white tile, so it
-     reads on any agency-colour badge (NASA red/blue, SpaceX blue, plus the
-     monochrome marks) — far clearer than the old flat-white invert. */
-  background: #fff;
-  border-radius: 2px;
-  padding: 2px 3px;
 }
 
 .entity-card-grid .card-status {
@@ -256,15 +212,6 @@
   background: rgba(255, 255, 255, 0.02);
 }
 
-.entity-card-grid .card-name-row {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.entity-card-grid .card-name-row .card-name {
-  flex: 1 1 auto;
-  min-width: 0;
-}
 /* Insignia beside the card title (PRD-029). Only rendered for entries that
    have a sourced badge — gated on the badges map, so no 404 flood on the
    ~250-card fleet grid. */
@@ -274,44 +221,126 @@
   height: 30px;
   object-fit: contain;
 }
+
+/* ─── The card body: four fixed rows, so no card has an empty band or grows past its row ──── */
+.entity-card-grid .card-body {
+  grid-column: 2;
+  box-sizing: border-box;
+  block-size: 142px;
+  padding: 12px 14px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  overflow: hidden;
+}
+.entity-card-grid .card-name-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
 .entity-card-grid .card-name {
-  font-family: 'Bebas Neue', sans-serif;
+  flex: 1 1 auto;
+  min-width: 0;
+  font-family: var(--font-display);
   font-size: 22px;
+  font-weight: 400;
   letter-spacing: 2px;
-  color: #fff;
+  color: var(--color-text);
   line-height: 1;
   margin: 0;
-}
-.entity-card-grid .card-type {
-  font-family: var(--font-mono, 'Space Mono', monospace);
-  font-size: var(--size-label);
-  letter-spacing: 2px;
-  color: rgba(255, 255, 255, 0.7);
-  margin: 0;
-}
-.entity-card-grid .card-meta {
-  display: flex;
-  gap: 10px;
-  font-family: var(--font-mono, 'Space Mono', monospace);
-  font-size: var(--size-label);
-  letter-spacing: 1px;
-  color: rgba(255, 255, 255, 0.65);
-  margin: 0;
-}
-/* Secondary meta cells — destination on /missions, country on /fleet.
-   Both ellipsize at ~13ch so the row stays single-line and the
-   primary year cell never wraps. */
-.entity-card-grid .card-dest,
-.entity-card-grid .card-country {
-  max-width: 13ch;
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+.entity-card-grid .card-year-vis {
+  flex: none;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.78);
+}
+.entity-card-grid .card-agencies {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 12px;
+  margin: 0;
+  min-height: 14px;
+  overflow: hidden;
+  font-family: var(--font-mono);
+  font-size: var(--size-label);
+  line-height: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
+}
+.entity-card-grid .card-agency {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
   white-space: nowrap;
 }
+.entity-card-grid .card-agency i {
+  flex: none;
+  inline-size: 3px;
+  block-size: 12px;
+  border-radius: 1px;
+  background: var(--agency);
+}
+.entity-card-grid .card-pills {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 6px;
+  min-height: 22px;
+  overflow: hidden;
+}
+.entity-card-grid .card-pills > * {
+  flex: none;
+  white-space: nowrap;
+}
+/* The first pill (the status) keeps its width; the next (the data quality, the kind of a craft: a
+   long word in some languages) gives way with an ellipsis rather than being cut at the card's edge. */
+.entity-card-grid .card-pills > :not(:first-child) {
+  flex: 0 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .entity-card-grid .card-first {
-  font-family: var(--font-mono, 'Space Mono', monospace);
-  font-size: var(--size-label);
-  color: rgba(255, 255, 255, 0.7);
-  line-height: 1.5;
   margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--size-label);
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.7);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+}
+
+/* Long grids: off-screen cards skip layout and paint (was /fleet only). The focused, selected and
+   flashed card opts out, because the paint containment would crop its outline and glow. */
+.entity-card-grid > .card-li {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 290px;
+}
+.entity-card-grid > .card-li:has(.card:focus-visible),
+.entity-card-grid > .card-li:has(.card.selected),
+.entity-card-grid > .card-li:has(.card.audio-stage-flash) {
+  content-visibility: visible;
+}
+
+/* A card's second pill when it is not a status: the kind of a craft on /fleet. */
+.entity-card-grid .card-kind {
+  font-family: var(--font-mono);
+  font-size: var(--size-label);
+  letter-spacing: 2px;
+  font-weight: 700;
+  padding: 3px 6px;
+  border-radius: 3px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.75);
+  text-transform: uppercase;
 }

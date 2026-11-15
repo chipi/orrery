@@ -3740,5 +3740,6 @@
   "library_category_galaxy": "Галактики",
   "library_category_structure": "Космические структуры",
   "fly_2d_scale_label": "1 а. е. = {px} пикс.",
-  "missions_showing": "Показано: {era} ({count})"
+  "browse_showing": "Показано: {era} ({count})",
+  "browse_view_list": "Список"
 }

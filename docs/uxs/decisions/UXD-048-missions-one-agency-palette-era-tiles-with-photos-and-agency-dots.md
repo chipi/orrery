@@ -5,7 +5,7 @@
 - **Decider**: the operator, 2026-11-15 — D7 "in code, free route", strip option A, palette 10b, then the mission-control mock-up variant 2 (era photos, agency dots, redesigned cards)
 - **Answers**: MI2, MI3, D7, L50 (E3)
 - **Builds on**: [UXD-014](UXD-014-one-chip-and-one-filter.md) (the one chip), Design System §2.4, §5.4, §5.7a
-- **Changes**: `src/lib/agencies.ts` (14 colours), `EpochTimelineStrip.svelte`, `Chip.svelte` (`dotColor`), `chip.css`, `era-flagships.ts`, `src/routes/missions/+page.svelte`, `MissionPanel.svelte` (agency row colour), `messages/*.json` (`missions_showing`), tests
+- **Changes**: `EntityCard`, `AgencyFilterRow`, `BrowseToolbar`, `EntityList`, `entity-card-grid.css`, `entity-browse-page.css`, `/fleet` page, `epoch-bands.ts` (bucketing), `agencyDataColor`, `src/lib/agencies.ts` (14 colours), `EpochTimelineStrip.svelte`, `Chip.svelte` (`dotColor`), `chip.css`, `era-flagships.ts`, `src/routes/missions/+page.svelte`, `MissionPanel.svelte` (agency row colour), `messages/*.json` (`missions_showing`), tests
 
 ## Context
 
@@ -19,10 +19,20 @@ The brief (`docs/wip/2026-11-13-slice-E3-brief.md`) counted three agency palette
 4. **The strip and the agency row are always visible**; FILTERS keeps destination, status and crew. Agency chips carry a 10 px palette dot (`Chip` `dotColor`, no ring, the selected edge stays the accent) and the mission count. A line under the filters reads the catalogue total and "Showing: <era> (<n>)".
 5. **The card**: photo, name with the year at the row's end, one line per agency (3 px bar in its colour, then the name), status pill, the story.
 
+## Amendment, round 2 (2026-11-15): one pattern for /missions and /fleet
+
+The operator: cards "have to stay the same size they were"; "missions and fleet are two sides of the same coin". The card, the grid, the agency row, the toolbar and the list became shared components, and /fleet was brought into line. The pages that use the card and the grid are /missions and /fleet only.
+
+1. **One card, one footprint** (`EntityCard`, `entity-card-grid.css`): photo plus a fixed 142 px body of four rows, so no card has an empty band or stretches past its row. Card heights, first 16 cards, before E3 (`eadf9e3978a^`) and now: /missions 277 to 285 px at 1440, 302 to 330 at 768, 252 to 289 at 390, now 287, 340 and 241; /fleet 326 to 381, 347 to 418 and 278 to 404, now 287, 340 and 241. One height per width on both pages, within 2 px of the old /missions card and 40 to 100 px shorter than the old /fleet card; the empty band under the last row is 37 px at most (a record without a story).
+2. **Black photos**: the cause is not a missing image. The first card image gets its `src` only when the image-ladder manifest and the hero overrides have loaded (`responsive()` returns no `src` after mount until then; a log of one cold load: first card image in the DOM at 4.45 s, the manifest at 4.34 s, painted at 4.55 s), and until then the slot showed the 40 % black fill. The slot is now the soft gradient. Screenshots wait for the images.
+3. **Agency chips** show the name, the dot and the count; the logos are dropped (dark on dark).
+4. **Era photos**: Shuttle & Mir is STS-1 (the Columbia launch); it was counted in First Stations because the bands overlap and the earlier band won; where bands share more than a boundary year the later band now wins (1981 to 1986 move to Shuttle & Mir: 12 and 15 missions). Mars Era shows Perseverance on Mars (a photo) instead of the Starship render. Text over every tile photo is at least 6.6:1 (sampled: the brightest pixel under each text box).
+5. **Sort and Grid / List** exist on both pages (/fleet had sort in its filters and a list view by URL only); they are in the toolbar.
+6. **Differences found and how they were resolved**: strip inside FILTERS on /fleet, always visible on /missions → visible on both; agency chips inside FILTERS with logos on both → one visible row, names; sort only on /fleet → toolbar on both; view toggle in the filters row on /fleet, none on /missions → toolbar; "Showing" line only on /missions → both; CLEAR FILTERS only while the filters were open → whenever a filter is on; two card layouts (badge, type, country on /fleet; badge, type, destination on /missions) → one card, country and destination are hidden facts, the category is a pill; content-visibility only on /fleet → the grid; page padding 22 px vs 12 px on a phone and a smaller card name on /fleet → one frame (`.browse-main`) and one name size; /fleet agency dots use brand colours lifted to 4.5:1 where the palette has no value. Kept per type: the FILTERS chip disabled in the line-up, the Line-up view, the category filter, the destination and crew filters, the launches banner, how the era counts are made (year bands vs the entry's epoch).
+
 ## Not changed on purpose
 
 - The mission `color` in the data files stays (explore's paths, the HUD rings and the overlay accent read it; 11 of the 139 differ from the registry). `/missions` reads the registry.
-- No sort select and no grid / list toggle: `/missions` has neither (it sorts by year, newest first); the operator's mock-up shows them and the brief said to add only what is missing, so this is raised, not built.
 - The chip colours of `nation-palette.ts` and the other 23 agencies' brand colours.
 
 ## Verification

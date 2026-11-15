@@ -147,3 +147,20 @@
 .entity-browse-page .filters > .filters-clear {
   margin-inline-start: auto;
 }
+
+/* The page frame of the two catalogue pages (/missions, /fleet): one width, one padding. */
+.entity-browse-page.browse-main {
+  position: relative;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 18px 22px 40px;
+}
+@media (max-width: 600px) {
+  .entity-browse-page.browse-main {
+    padding: 14px 12px 30px;
+  }
+  .entity-browse-page.browse-main .filters .filter-label {
+    min-width: 100%;
+    margin-bottom: 2px;
+  }
+}

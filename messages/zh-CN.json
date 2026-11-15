@@ -3740,5 +3740,6 @@
   "library_category_galaxy": "星系",
   "library_category_structure": "宇宙结构",
   "fly_2d_scale_label": "1 AU = {px} 像素",
-  "missions_showing": "显示：{era}（{count}）"
+  "browse_showing": "显示：{era}（{count}）",
+  "browse_view_list": "列表"
 }

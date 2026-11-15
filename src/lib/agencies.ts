@@ -424,3 +424,34 @@ export function agencyColor(input: string | null | undefined): string | null {
   const compound = resolveAgencyCompound(input);
   return compound[0]?.color ?? null;
 }
+
+/**
+ * The colour to draw an agency as a DATA mark (a dot, a bar) on the dark page: its registry colour,
+ * lifted toward white until it clears 4.5:1 on the page and the card for the agencies that still
+ * carry a dark brand colour (the 14 agencies of /missions already do, so they are returned as
+ * they are). null when the agency has no colour.
+ */
+export function agencyDataColor(input: string | null | undefined): string | null {
+  const c = agencyColor(input);
+  if (!c || !/^#[0-9a-f]{6}$/i.test(c)) return c;
+  const lum = (hex: string) => {
+    const lin = (v: number) => {
+      const s = v / 255;
+      return s <= 0.03928 ? s / 12.92 : ((s + 0.055) / 1.055) ** 2.4;
+    };
+    const [r, g, b] = [1, 3, 5].map((i) => lin(parseInt(hex.slice(i, i + 2), 16)));
+    return 0.2126 * r + 0.7152 * g + 0.0722 * b;
+  };
+  const ratio = (hex: string) => (lum(hex) + 0.05) / (lum('#0a0a16') + 0.05);
+  let out = c;
+  for (let t = 0.1; ratio(out) < 4.5 && t <= 1; t += 0.1) {
+    const mix = [1, 3, 5].map((i) => {
+      const v = parseInt(c.slice(i, i + 2), 16);
+      return Math.round(v + (255 - v) * t)
+        .toString(16)
+        .padStart(2, '0');
+    });
+    out = '#' + mix.join('');
+  }
+  return out;
+}

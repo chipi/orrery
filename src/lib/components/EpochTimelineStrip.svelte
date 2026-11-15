@@ -100,7 +100,9 @@
     overflow: hidden;
     justify-content: flex-start;
     align-items: stretch;
-    min-block-size: 96px;
+    /* block-size, not min-block-size: the chip's own minimum (30 / 44 px) stays, so the tile is a
+       taller chip that follows chip.spec's size rule instead of a second chip size. */
+    block-size: 96px;
     padding: 0;
     text-align: start;
     white-space: normal;
@@ -127,17 +129,17 @@
     z-index: -1;
     background: linear-gradient(
       to right,
-      rgba(4, 4, 12, 0.94) 0%,
-      rgba(4, 4, 12, 0.88) 45%,
-      rgba(4, 4, 12, 0.35) 100%
+      rgba(4, 4, 12, 0.96) 0%,
+      rgba(4, 4, 12, 0.93) 62%,
+      rgba(4, 4, 12, 0.45) 100%
     );
   }
   :global([dir='rtl']) .era-photo + .era-body::before {
     background: linear-gradient(
       to left,
-      rgba(4, 4, 12, 0.94) 0%,
-      rgba(4, 4, 12, 0.88) 45%,
-      rgba(4, 4, 12, 0.35) 100%
+      rgba(4, 4, 12, 0.96) 0%,
+      rgba(4, 4, 12, 0.93) 62%,
+      rgba(4, 4, 12, 0.45) 100%
     );
   }
   .era-body {
@@ -202,7 +204,7 @@
     }
     .strip :global(.era-tile) {
       flex: 0 0 132px;
-      min-block-size: 88px;
+      block-size: 88px;
       scroll-snap-align: start;
     }
   }

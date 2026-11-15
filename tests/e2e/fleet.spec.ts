@@ -156,7 +156,7 @@ test.describe('/fleet', () => {
   test('list view fallback renders rows', async ({ page }) => {
     const errors = attachConsoleAndError(page);
     await page.goto('/fleet?view=list');
-    const rows = page.locator('.fleet-list .list-row');
+    const rows = page.locator('[data-testid="entity-list"] .list-row');
     await expect(rows.first()).toBeVisible({ timeout: 10_000 });
     expect(await rows.count()).toBeGreaterThanOrEqual(100);
     expect(errors).toEqual([]);
@@ -257,10 +257,12 @@ test.describe('/fleet', () => {
     await expect(panel).toBeVisible({ timeout: 10_000 });
     await panel.getByRole('tab', { name: /MISSIONS/i }).click();
     const rows = panel.locator('.missions-list a.mission-link');
-    await expect(rows).toHaveCount(15);
-    await expect(rows.first()).toContainText('New Horizons');
+    // 15 when this was written; the catalogue grows (16 with Viking 2 and the content7 missions).
+    await expect(rows.first()).toBeVisible();
+    expect(await rows.count()).toBeGreaterThanOrEqual(15);
+    await expect(rows.filter({ hasText: 'New Horizons' })).toHaveCount(1);
     for (const text of await rows.allInnerTexts()) expect(text).not.toMatch(/^[a-z0-9-]+\s*→?$/);
-    const thumb = rows.first().locator('img.entity-thumb');
+    const thumb = rows.filter({ hasText: 'New Horizons' }).locator('img.entity-thumb');
     await expect(thumb).toHaveAttribute('alt', '');
     await expect(thumb).toHaveAttribute('loading', 'lazy');
     await expect(thumb).toHaveAttribute('width', '28');

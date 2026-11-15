@@ -205,7 +205,7 @@ Regions that persist across or within a screen.
 
 **Nav bar** — `height: 52px` (`--nav-bar-height`, one token; `--nav-height` adds the safe-area inset), `top: 0`, `left: 0`, `right: 0`, z-index 40. Present on all screens. Contains wordmark, screen links, and the right-hand cluster: audio tour, locale, science lens, settings, and a More menu holding High contrast, Share and Debug (drawer rows on phones). Cluster controls are 32px on a fine pointer, 44px on touch, in both axes (`--nav-btn-fine`, `--nav-btn-touch`; [UXD-016](decisions/UXD-016-compact-nav-and-more-menu.md)). The hamburger replaces the links at ≤ 1219px or on any touch device.
 
-**Right detail panel** — `width: 314px`, `top: 52px`, `right: 0`, `bottom: 68px` (68px on fly screen) or `bottom: 0`. Slides in on click. Present on: explore (planet/body panels), missions (mission detail), moon (site panels). Absent on: plan, fly, earth (these have dedicated HUD layouts). A fixed one-block header sits above the scrolling content: line 1 is the eyebrow with back (after a card link), Share (when the entity has a collectible card) and close at its end, line 2 is the entity name at full width, so the name is always visible; the entity's actions are one row of at most three chips under the identity block, above the hero, and nothing is stacked at the panel's foot ([UXD-018](decisions/UXD-018-panel-shell-and-actions.md)).
+**Right detail panel** — `width: 400px` (`--panel-width`), `top: 52px`, `right: 0`, `bottom: 68px` (68px on fly screen) or `bottom: 0`. Slides in on click. Present on: explore (planet/body panels), missions (mission detail), moon (site panels). Absent on: plan, fly, earth (these have dedicated HUD layouts). A fixed one-block header sits above the scrolling content: line 1 is the eyebrow with back (after a card link), Share (when the entity has a collectible card) and close at its end, line 2 is the entity name at full width, so the name is always visible; the entity's actions are one row of at most three chips under the identity block, above the hero, and nothing is stacked at the panel's foot ([UXD-018](decisions/UXD-018-panel-shell-and-actions.md)).
 
 **Science links in panels** — a panel offers at most five `/science` sections as cards, through one helper (`pickScienceLinks`), never a per-type default list ([UXD-022](decisions/UXD-022-science-link-lists.md)); each orbit-ruler pane has its own card, none repeating inside a ruler ([UXD-010](decisions/UXD-010-ruler-regimes-each-get-their-own-science-card.md)).
 
@@ -292,7 +292,7 @@ size-lead:        16px    Panel overview / lead text, upright Space Mono (--size
 
 ```
 nav-height:     52px
-panel-width:    314px
+panel-width:    400px
 bottom-bar-h:   68px
 panel-pad:      14px 18px
 hud-pad:        12px 16px
@@ -370,3 +370,4 @@ SvelteKit's standard entry: `src/app.html` is the document shell; `src/routes/+l
 | v1.8 | November 2026 | §controls: the panel framing on the Worlds and the selected orbiter (UXD-030). |
 | v1.9 | November 2026 | §controls: the view toggle on the FILTERS row; §url-structure: `/fleet` and `?view=lineup&kind=` (UXD-035). |
 | v1.10 | November 2026 | §surfaces row for `/library`: five data blocks (Planetary models and Moon and Mars surface data added), the 10-cluster rule on the source sections (UXD-041). |
+| v1.11 | November 2026 | §layout and §shared-tokens: the right detail panel is 400 px (`--panel-width`), not 314 px (UXS-000 SC-2 closed, plan L34). |

@@ -224,7 +224,7 @@ Never mix faces within a semantic role. Descriptions and overviews are Space Mon
 | Panel | Width |
 |---|---|
 | Mission library preview | 360px |
-| Solar system detail panel | 314px |
+| Solar system detail panel | 400px (`--panel-width`) |
 | Mission arc HUD left | 220px |
 | Mission arc HUD right | 220px |
 | Moon map detail panel | 330px |
@@ -666,7 +666,7 @@ The nation colour stays on the site marker, the INDEX dot and the panel. A route
 
 ### 6.1 Solar system explorer (P01)
 
-Full-screen 3D/2D. Detail panel slides in from right (314px). Planet pills strip below nav. Bottom bar with speed controls and sim date. The 3D view is the default — the 2D top-down view is educationally valuable for showing ecliptic geometry.
+Full-screen 3D/2D. Detail panel slides in from right (400px). Planet pills strip below nav. Bottom bar with speed controls and sim date. The 3D view is the default — the 2D top-down view is educationally valuable for showing ecliptic geometry.
 
 **Notable:** Planet labels are HTML overlay divs, not canvas text or Three.js sprites, positioned using `position.clone().project(camera)`. This is the correct pattern for all 3D screens.
 

@@ -500,10 +500,10 @@ Design at 375px first. Desktop is progressive enhancement.
 ```css
 /* correct — mobile base, desktop enhancement */
 .panel { position: fixed; bottom: 0; width: 100%; }
-@media (min-width: 768px) { .panel { right: 0; width: 314px; top: 52px; bottom: 0; } }
+@media (min-width: 768px) { .panel { right: 0; width: 400px; top: 52px; bottom: 0; } }
 
 /* wrong — desktop base, mobile override */
-.panel { position: fixed; right: 0; width: 314px; }
+.panel { position: fixed; right: 0; width: 400px; }
 @media (max-width: 767px) { .panel { bottom: 0; width: 100%; } }
 ```
 
@@ -827,7 +827,7 @@ Nav bar:        height 52px (--nav-bar-height), z-index 40; right-hand controls 
                 pointers, 44px on touch (--nav-btn-fine / --nav-btn-touch); High contrast,
                 Share and Debug live in the More menu, drawer rows on phones (UXD-016)
 Panel (mobile): bottom sheet, full width
-Panel (desktop): right drawer, 314px wide
+Panel (desktop): right drawer, 400px wide (--panel-width)
 Touch targets:  min 44×44px
 ```
 

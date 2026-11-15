@@ -13,6 +13,7 @@
   import { ogTitle } from '$lib/social-meta';
   import { absoluteUrl, article, breadcrumbList } from '$lib/json-ld';
   import { assetUrl } from '$lib/asset-url';
+  import Chip from '$lib/components/Chip.svelte';
   import EntityHero from '$lib/components/EntityHero.svelte';
   import JsonLd from '$lib/components/JsonLd.svelte';
   import DataSources from '$lib/components/DataSources.svelte';
@@ -157,9 +158,9 @@
             </p>
           {/if}
           <p class="actions">
-            <a class="cta" href={localHref(`/explore?system=${star.id}&planet=${p.id}`)}>
+            <Chip kind="link" href={localHref(`/explore?system=${star.id}&planet=${p.id}`)}>
               {m.launches_open_in_orrery()}
-            </a>
+            </Chip>
           </p>
         </section>
       {/each}
@@ -190,9 +191,9 @@
   </section>
 
   <p class="actions">
-    <a class="cta" href={appHref}>{m.launches_open_in_orrery()}</a>
+    <Chip kind="link" href={appHref}>{m.launches_open_in_orrery()}</Chip>
     {#if star.planets.length && star.named}
-      <a class="cta" href={localHref(`/explore?system=${star.id}`)}>{m.star_enter_system()}</a>
+      <Chip kind="link" href={localHref(`/explore?system=${star.id}`)}>{m.star_enter_system()}</Chip>
     {/if}
   </p>
 </article>

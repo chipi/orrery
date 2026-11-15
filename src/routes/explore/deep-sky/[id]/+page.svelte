@@ -14,6 +14,7 @@
   import { ogTitle } from '$lib/social-meta';
   import { absoluteUrl, article, breadcrumbList } from '$lib/json-ld';
   import { assetUrl } from '$lib/asset-url';
+  import Chip from '$lib/components/Chip.svelte';
   import EntityHero from '$lib/components/EntityHero.svelte';
   import JsonLd from '$lib/components/JsonLd.svelte';
   import DataSources from '$lib/components/DataSources.svelte';
@@ -132,6 +133,8 @@
   {/if}
 
   <p class="actions">
-    <a class="cta" href={localHref(`/explore?deepsky=${obj.id}`)}>{m.launches_open_in_orrery()}</a>
+    <Chip kind="link" href={localHref(`/explore?deepsky=${obj.id}`)}
+      >{m.launches_open_in_orrery()}</Chip
+    >
   </p>
 </article>

@@ -75,6 +75,7 @@ test.describe('/explore/<id> entity page', () => {
       await page.goto(`/explore/${w.id}`);
       const link = page.getByTestId('entity-world-link');
       await expect(link).toHaveText(w.label);
+      await expect(link, 'the page action is the one chip (plan L31)').toHaveClass(/ui-chip/);
       await expect(link).toHaveAttribute('href', `/${w.id}`);
     });
   }

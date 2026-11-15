@@ -12,6 +12,7 @@
   import { canonicalUrl, metaDescription, pageTitle } from '$lib/seo';
   import { ogTitle } from '$lib/social-meta';
   import { article, breadcrumbList } from '$lib/json-ld';
+  import Chip from '$lib/components/Chip.svelte';
   import JsonLd from '$lib/components/JsonLd.svelte';
   import type { PageData } from './$types';
 
@@ -94,10 +95,10 @@
   {/if}
 
   <p class="actions">
-    <a class="cta" href={appHref}>{m.launches_open_in_orrery()}</a>
+    <Chip kind="link" href={appHref}>{m.launches_open_in_orrery()}</Chip>
     {#if worldPath}
-      <a class="cta" href={localHref(worldPath)} data-testid="entity-world-link"
-        >{worldLinkLabel(body.id)}</a
+      <Chip kind="link" href={localHref(worldPath)} data-testid="entity-world-link"
+        >{worldLinkLabel(body.id)}</Chip
       >
     {/if}
   </p>

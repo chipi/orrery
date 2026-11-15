@@ -18,6 +18,7 @@
   import { canonicalUrl, metaDescription, pageTitle } from '$lib/seo';
   import { ogTitle, DEFAULT_OG_IMAGE } from '$lib/social-meta';
   import { article, breadcrumbList, absoluteUrl } from '$lib/json-ld';
+  import Chip from '$lib/components/Chip.svelte';
   import JsonLd from '$lib/components/JsonLd.svelte';
   import EntityThumb from '$lib/components/EntityThumb.svelte';
   import type { PageData } from './$types';
@@ -210,6 +211,8 @@
   {/if}
 
   <p class="actions">
-    <a class="cta" href={localHref(`/fleet?id=${entry.id}`)}>{m.launches_open_in_orrery()}</a>
+    <Chip kind="link" href={localHref(`/fleet?id=${entry.id}`)}
+      >{m.launches_open_in_orrery()}</Chip
+    >
   </p>
 </article>

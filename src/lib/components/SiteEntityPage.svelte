@@ -13,6 +13,7 @@
   import { canonicalUrl, metaDescription, pageTitle } from '$lib/seo';
   import { ogTitle } from '$lib/social-meta';
   import { article, breadcrumbList } from '$lib/json-ld';
+  import Chip from '$lib/components/Chip.svelte';
   import JsonLd from '$lib/components/JsonLd.svelte';
   import SiteIllustrationFigure from '$lib/components/SiteIllustrationFigure.svelte';
   import EntityThumb from '$lib/components/EntityThumb.svelte';
@@ -163,10 +164,12 @@
   {/if}
 
   <p class="actions">
-    <a class="cta" href={localHref(`/${body}?site=${site.id}`)}>{m.launches_open_in_orrery()}</a>
+    <Chip kind="link" href={localHref(`/${body}?site=${site.id}`)}
+      >{m.launches_open_in_orrery()}</Chip
+    >
     {#if site.mission_id}
-      <a class="cta" href={localHref(`/missions/${site.mission_id}`)}
-        >{name} · {ogTitle(m.missions_page_title())}</a
+      <Chip kind="link" href={localHref(`/missions/${site.mission_id}`)}
+        >{name} · {ogTitle(m.missions_page_title())}</Chip
       >
     {/if}
   </p>

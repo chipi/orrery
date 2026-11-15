@@ -40,7 +40,10 @@ the world tint when on or hovered. Small controls that are not chips (Why?, prov
 names, credits summary, fleet cross-references) get a 24 px minimum hit area (`.ui-hit`) with no
 visual change. Allow-list: tabs, status and label pills, cards, CTAs, Lab, nav, home, the `/fly`
 scene CTAs and `fly-mtab`. (Superseded in part by [UXD-018](UXD-018-panel-shell-and-actions.md): the
-panels' close, back, Share and action chips are chips; the standalone pages keep their `.cta`.)
+panels' close, back, Share and action chips are chips. Amended 2026-11-15 (plan L30, L31): the
+standalone entity pages' `.cta` links and `/plan`'s FLY MISSION are `<Chip kind="link">` /
+`kind="action"` too; the retired private blues `#1a33bb` / `#2244dd` are gone. The home hero's
+buttons, the 404 page's buttons and the `/fly` demo buttons stay as they are.)
 
 The per-world tint rule (requested 2026-06-17, re-confirmed 2026-11-12): the Worlds set
 `--chip-tint` from the route's `bodyTintCss`; `.ui-chip` reads `var(--chip-tint, var(--color-accent))`

@@ -14,6 +14,7 @@
   import { canonicalUrl, metaDescription, pageTitle, SITE_ORIGIN } from '$lib/seo';
   import { ogTitle } from '$lib/social-meta';
   import { article, breadcrumbList, absoluteUrl } from '$lib/json-ld';
+  import Chip from '$lib/components/Chip.svelte';
   import JsonLd from '$lib/components/JsonLd.svelte';
   import type { PageData } from './$types';
 
@@ -144,9 +145,11 @@
   {/if}
 
   <p class="actions">
-    <a class="cta" href={localHref(`/missions?id=${mission.id}`)}>{m.launches_open_in_orrery()}</a>
+    <Chip kind="link" href={localHref(`/missions?id=${mission.id}`)}
+      >{m.launches_open_in_orrery()}</Chip
+    >
     {#if mission.flight}
-      <a class="cta" href={localHref(`/fly?mission=${mission.id}`)}>{m.mp_fly_button()}</a>
+      <Chip kind="link" href={localHref(`/fly?mission=${mission.id}`)}>{m.mp_fly_button()}</Chip>
     {/if}
   </p>
 </article>

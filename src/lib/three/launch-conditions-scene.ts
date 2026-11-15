@@ -16,6 +16,8 @@ import type { LaunchConditions, LightId } from '$lib/orbital/ascent-director';
 import type { AscentState } from '$lib/physics/ascent/ascent-physics';
 import type { AscentScene } from './ascent-scene';
 import { SeparationBurst } from './separation-burst';
+import { buildPad, type PadBuild } from './launch-pads';
+import type { PadSpec } from '$lib/launches/pad-family';
 
 const R_EARTH_KM = 6371;
 
@@ -284,6 +286,7 @@ export function attachLaunchConditions(
   vehLen: number,
   nightUrl?: string,
   lite = false,
+  pad?: { spec: PadSpec | null; vehicleM?: number } | null,
 ): ConditionsRig {
   const pal = PALETTES[c.light];
   const scene = asc.scene;
@@ -566,10 +569,18 @@ export function attachLaunchConditions(
     roughness: 0.8,
     metalness: 0.2,
   });
-  const tower = buildPadTower(vehLen, towerMat);
-  tower.position.set(vehLen * 0.34, 0, 0);
-  scene.add(tower);
-  owned.push(tower);
+  let padBuild: PadBuild | null = null;
+  if (pad?.spec) {
+    padBuild = buildPad(pad.spec, pad.vehicleM ?? 55, vehLen);
+    scene.add(padBuild.group);
+    owned.push(padBuild.group);
+    disposables.push(padBuild);
+  } else {
+    const tower = buildPadTower(vehLen, towerMat);
+    tower.position.set(vehLen * 0.34, 0, 0);
+    scene.add(tower);
+    owned.push(tower);
+  }
   disposables.push(towerMat);
 
   const lvl = pal.groundEmissive;
@@ -725,6 +736,7 @@ export function attachLaunchConditions(
       (scene.background as THREE.Color).copy(skyGround).lerp(SPACE, skyT);
 
       const t = s.t;
+      padBuild?.update(t);
       const lit = s.thrustN > 0 ? 1 : 0;
       const nearPad = 1 - smoothstep01((s.altKm - 0.2) / 2.2);
       const boost = 0.55 + pal.flameLight * 0.6;

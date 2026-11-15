@@ -58,6 +58,7 @@
   import { createAnimateLoop, type AnimateLoop } from '$lib/three/animate-loop';
   import { createLaunchDirector, type LaunchDirector } from '$lib/three/launch-director-rig';
   import type { LaunchInstant } from '$lib/orbital/launch-sun';
+  import type { PadSpec } from '$lib/launches/pad-family';
   import type { SafeArea } from '$lib/orbital/ascent-director';
   import { prefersReducedMotion } from '$lib/reduced-motion';
   import {
@@ -107,6 +108,8 @@
     /** The mission's real launch instant and pad (null for a Plan flight or a date-only mission):
      *  the launch's light comes from the Sun there; else it is seeded. */
     launchInstant?: LaunchInstant | null;
+    /** The launch site's pad model at the launch year (G4); null keeps the generic lattice tower. */
+    launchPadSpec?: PadSpec | null;
     /** ?debug=1: what the camera-debug view draws (the /fly DebugPanel Page tab). */
     onDirectorDebug?: (d: DirectorDebugData) => void;
   }
@@ -121,6 +124,7 @@
     speed = $bindable(5),
     externalClock = false,
     launchInstant = null,
+    launchPadSpec = null,
     onDirectorDebug,
   }: Props = $props();
 
@@ -348,6 +352,12 @@
         vehLen: VEHICLE_LENGTH_KM,
         missionId: mission.spacecraftId,
         launch: launchInstant,
+        // ?pad=generic keeps the one lattice tower (A/B, frame-time comparison)
+        pad:
+          new URLSearchParams(window.location.search).get('pad') === 'generic'
+            ? null
+            : launchPadSpec,
+        launcherHeightM: mission.launcherHeightM,
         payloadSepT,
         endT: ascentEnd,
         reducedMotion: prefersReducedMotion(),

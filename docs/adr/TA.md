@@ -64,8 +64,8 @@ The production app ships a set of user-facing routes (the core experience below;
 | Corpus | Count |
 | --- | --- |
 | User-facing routes (top-level) | **27** |
-| Missions | **139** |
-| Fleet entries | **299** |
+| Missions | **132** |
+| Fleet entries | **296** |
 | Science sections | **175** |
 | Programs | **42** |
 | Descent profiles | **77** |
@@ -146,6 +146,7 @@ _Top-level routes: catalog · colophon · credits · earth · essays · explore 
 - **Headless physics** — `src/lib/physics/ascent/ascent-physics.ts` (`integrateAscent(profile) → AscentSummary`, a pure powered-flight EOM integrator), `ascent-clock.ts` (the multi-scale `Phase = 'ascent'|'cruise'` clock: `makeTimeline`/`scrubberToPoint`/`advanceClock`), `ascent-hud.ts` (countdown/beats/status), `ascent-cameras.ts` (shot schedule, kept for `?cam=classic` and the kept shots), `ascent-director.ts` (the launch camera director, the default since 2026-11-15 and UXD-046: a seeded shot plan, the conditions pick, the ground-relative state and upright-until-tower-clear attitude; wired by `src/lib/three/launch-director-rig.ts`, shared with `/dev/launch-director`), `launch-sun.ts` (the Sun at the pad at the real launch time; the light rule), `launch-profile-registry.ts` (per-vehicle `LaunchProfile`). All unit-tested.
 - **The phase-scene contract** — `src/lib/three/flight-phase-scene.ts`: `interface FlightPhaseScene<TState>` (`scene`/`camera`/`setState`/`setAspect`/`setForceVisible`/`setForcesVisible`/`snapCamera`/`reset`/`dispose`) + `type ForceKey`. `AscentScene` **and `DescentScene`** implement it; the broadcast composer `ascent-renderer.ts` drives any `FlightPhaseScene` unchanged. This was the seam the descent/landing act extended (RFC-034 §12) — same interface, same composer, thrust-reversed physics; `ascent-clock` `Phase` widened to add `'descent'`.
 - **WebGL builders** (jsdom-can't-run, coverage-excluded per the `explore-scene.ts` policy) — `ascent-scene.ts` (Scene 0 render), `ascent-renderer.ts` (ACES + film + vignette), `launcher-models.ts` (procedural rockets), `launch-ground.ts` (launch-site ground patch).
+- **Launch pads (G4, UXD-047)** — `src/lib/launches/pad-family.ts` maps every launch-site fleet record to a pad model by launch year (one row per record, tested; no row = the generic lattice tower), `resolveLaunchContext` returns it as `padSpec`, `LaunchScene` passes it with the launcher's real height to `createLaunchDirector`, and `src/lib/three/launch-pads.ts` builds 16 low-detail models in five families (Apollo/Shuttle LC-39, Soviet, SpaceX, ULA, service towers) in metres at true scale against the vehicle; their moving parts are pure functions of the mission time. Listed on `/colophon` from `src/lib/launches/pad-gallery.json` (also the `/dev/models` gallery's source).
 - **Science-Lens forces** — the `thrust`/`drag` layers (+ reused `gravity`=weight, `velocity`) drive the on-vehicle free-body arrows via the pure `launch-force-layers.ts` map; the lens panel is the legend.
 - **Injection burn** (RFC-034 §3.1) — after SECO, before the warp, the kick/upper stage that leaves parking orbit fires as an explicit beat (S-IVB/Centaur/Blok D/Star 48B/…): `injection-burn.ts` `resolveInjectionBurn()` names the stage (prefers `flight.launch.vehicle_stage`, else a launcher→stage map) + burn type (`TLI`/`TMI`/`INJECTION` from `dest`) + Δv (`tli_or_tmi_dv_km_s`); LaunchScene shows the callout + a plume re-light (`ascent-scene.setInjectionBurn`). Hosted Earth-local because a parking orbit is sub-pixel in the AU cruise scene. Gracefully absent for LEO-direct launchers.
 

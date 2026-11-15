@@ -57,6 +57,9 @@
   import { buildTiangongProxyStation } from '$lib/tiangong-proxy-model';
   import { buildLauncherModel } from '$lib/three/launcher-models';
   import { buildDescentModel } from '$lib/three/descent-models';
+  import { buildPadShowcase } from '$lib/three/launch-pads';
+  import PAD_GALLERY from '$lib/launches/pad-gallery.json';
+  import { VARIANT_FAMILY, type PadVariant } from '$lib/launches/pad-family';
   import { buildLanderCruiseCraft } from '$lib/three/lander-cruise-models';
   import { buildVenusLanderModel } from '$lib/venus-lander-models';
   import { installHeroEnvironment } from '$lib/three/hero-materials';
@@ -750,6 +753,21 @@
         ['nova-c', 'Nova-C (IM-1 Odysseus)', buildNovaC],
       ] as [string, string, () => THREE.Group][]
     ).map(([id, label, build]) => ({ id, label, family: 'probe', build })),
+    // Launch pads (launch-pads.ts, G4): each model with a plain stand-in vehicle of its real height
+    ...PAD_GALLERY.map(({ variant, label, vehM }) => ({
+      id: variant,
+      label,
+      family: 'pad',
+      build: () =>
+        buildPadShowcase(
+          {
+            family: VARIANT_FAMILY[variant as PadVariant],
+            variant: variant as PadVariant,
+            siteId: 'wenchang-lc-101',
+          },
+          vehM,
+        ),
+    })),
     { id: 'cast', label: 'Cartoon cast', family: 'lineup', flat: true, build: buildCastRow },
   ];
 

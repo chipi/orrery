@@ -45,6 +45,26 @@ describe('resolveLaunchContext (the pad the dossier names and the sun uses)', ()
   };
   const profileSite = { lat: 28.56, lon: -80.58, name: 'SLC-40 · Cape Canaveral' };
 
+  it('gives the pad model of the pad and the launch year (G4)', async () => {
+    const sts = await resolveLaunchContext(
+      { missionId: 'x', departureDate: '1989-10-18', launcherId: 'space-shuttle-stack' },
+      profileSite,
+      fakeFetch(named),
+    );
+    expect(sts.pad?.id).toBe('lc-39b');
+    expect(sts.padSpec?.variant).toBe('shuttle');
+    const d = await resolveLaunchContext(
+      { missionId: 'dart', departureDate: '2021-11-24', launcherId: 'falcon-9' },
+      profileSite,
+      fakeFetch(named),
+    );
+    expect(d.padSpec?.variant).toBe('f9-te');
+    const plan = await resolveLaunchContext({ missionId: 'plan-x' }, profileSite, fakeFetch(named));
+    expect(plan.padSpec?.variant).toBe('f9-cat'); // the profile's SLC-40, as it is today
+    const none = await resolveLaunchContext({ missionId: 'plan-x' }, undefined, fakeFetch(named));
+    expect(none.padSpec).toBeNull();
+  });
+
   it('DART names Vandenberg, not the profile site', async () => {
     const c = await resolveLaunchContext(
       { missionId: 'dart', departureDate: '2021-11-24', launcherId: 'falcon-9' },

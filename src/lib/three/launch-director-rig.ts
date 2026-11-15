@@ -18,6 +18,7 @@ import {
   type LaunchProfile,
 } from '$lib/physics/ascent/ascent-physics';
 import type { CameraPose } from '$lib/orbital/ascent-cameras';
+import type { PadSpec } from '$lib/launches/pad-family';
 import {
   buildDirectorPlan,
   directedPoseAt,
@@ -41,6 +42,10 @@ export interface LaunchDirectorOptions {
   seed?: number;
   /** The mission's real launch instant and pad; absent = seeded light. */
   launch?: LaunchInstant | null;
+  /** The pad model of the launch site and date (G4); absent keeps the generic lattice tower. */
+  pad?: PadSpec | null;
+  /** The vehicle's real height in metres: the pad is built at true scale against it. */
+  launcherHeightM?: number;
   /** Spacecraft separation time when it is not SECO (an injection burn), and the end of the act. */
   payloadSepT?: number;
   endT?: number;
@@ -97,7 +102,14 @@ export function createLaunchDirector(o: LaunchDirectorOptions): LaunchDirector {
   const rig: ConditionsRig | null =
     o.conditions === false
       ? null
-      : attachLaunchConditions(asc, plan.conditions, vehLen, o.nightUrl, o.lite === true);
+      : attachLaunchConditions(
+          asc,
+          plan.conditions,
+          vehLen,
+          o.nightUrl,
+          o.lite === true,
+          o.pad ? { spec: o.pad, vehicleM: o.launcherHeightM } : null,
+        );
 
   let safe: SafeArea | null = o.safe ?? null;
   return {

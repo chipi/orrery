@@ -10,6 +10,7 @@
  */
 
 import { findLaunchEntry, type LaunchEntryLike, type LaunchInstant } from '$lib/orbital/launch-sun';
+import { padSiteFromProfileName, resolvePadSpec, type PadSpec } from './pad-family';
 
 const DECADES: [number, number, string][] = [
   [1957, 1969, '1957-1969'],
@@ -31,6 +32,8 @@ export interface LaunchInstantQuery {
 }
 
 export interface LaunchPad {
+  /** The fleet launch-site id, when the pad resolved to one (picks the pad model). */
+  id?: string;
   /** The displayed site name (the fleet launch-site entry's, else the profile's). */
   name?: string;
   lat: number;
@@ -40,6 +43,8 @@ export interface LaunchPad {
 export interface LaunchContext {
   instant: LaunchInstant | null;
   pad: LaunchPad | null;
+  /** The pad model for the launch site at the launch year; null keeps the generic tower. */
+  padSpec: PadSpec | null;
 }
 
 async function fetchJson<T>(fetchFn: typeof fetch, url: string): Promise<T | null> {
@@ -62,7 +67,7 @@ async function fleetPad(
     `${base}/data/fleet/launch-site/${siteRef}.json`,
   );
   return j && typeof j.lat === 'number' && typeof j.lon === 'number'
-    ? { name: j.name, lat: j.lat, lon: j.lon }
+    ? { id: siteRef, name: j.name, lat: j.lat, lon: j.lon }
     : null;
 }
 
@@ -76,8 +81,12 @@ export async function resolveLaunchContext(
   fetchFn: typeof fetch = fetch,
   base = '',
 ): Promise<LaunchContext> {
-  const fallback: LaunchPad | null = profileSite ? { ...profileSite } : null;
-  if (!q.missionId || q.missionId.startsWith('plan-')) return { instant: null, pad: fallback };
+  const hint = padSiteFromProfileName(profileSite?.name);
+  const fallback: LaunchPad | null = profileSite
+    ? { ...profileSite, ...(hint ? { id: hint } : {}) }
+    : null;
+  if (!q.missionId || q.missionId.startsWith('plan-'))
+    return { instant: null, pad: fallback, padSpec: resolvePadSpec(fallback?.id, null) };
 
   const year = q.departureDate ? Number(q.departureDate.slice(0, 4)) : NaN;
   const files = Number.isFinite(year)
@@ -99,9 +108,15 @@ export async function resolveLaunchContext(
     fallback;
   const hasTime = entry && (entry.net_precision === 'minute' || entry.net_precision === 'second');
   const utcMs = hasTime ? Date.parse(entry?.net ?? '') : NaN;
+  const padYear = Number.isFinite(utcMs)
+    ? new Date(utcMs).getUTCFullYear()
+    : Number.isFinite(year)
+      ? year
+      : null;
   return {
     instant: pad && Number.isFinite(utcMs) ? { utcMs, latDeg: pad.lat, lonDeg: pad.lon } : null,
     pad,
+    padSpec: resolvePadSpec(pad?.id, padYear),
   };
 }
 

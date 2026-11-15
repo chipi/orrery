@@ -102,6 +102,7 @@
   import FlybyDebugViewer from '$lib/components/FlybyDebugViewer.svelte';
   import LaunchDirectorDebugViewer from '$lib/components/LaunchDirectorDebugViewer.svelte';
   import { resolveLaunchContext } from '$lib/launches/launch-instant';
+  import type { PadSpec } from '$lib/launches/pad-family';
   import type { LaunchInstant } from '$lib/orbital/launch-sun';
   import type { DirectorDebugData } from '$lib/orbital/launch-director-debug-plot';
   import DebugPanelRegistrar from '$lib/components/DebugPanelRegistrar.svelte';
@@ -326,6 +327,8 @@
   let launchInstant = $state<LaunchInstant | null>(null);
   // The displayed pad: the mission's launch-site ref, else the launches entry's pad, else the profile's.
   let launchSiteName = $state<string | undefined>(undefined);
+  // The pad model of that site at the launch year (G4); null keeps the generic tower.
+  let launchPadSpec = $state<PadSpec | null>(null);
   let launchDirectorDebug = $state<DirectorDebugData | null>(null);
   // The launcher's real height (fleet specs), so a showcase craft rides it at true scale.
   let launcherHeightM = $state<number | undefined>(undefined);
@@ -403,6 +406,7 @@
         ).catch(() => null);
         launchInstant = ctx?.instant ?? null;
         launchSiteName = ctx?.pad?.name;
+        launchPadSpec = ctx?.padSpec ?? null;
         launchProfile = p;
         dispatchPhase({ type: 'startLaunch' });
       })
@@ -3276,6 +3280,7 @@
     bind:playing={isPlaying}
     bind:speed={launchSpeed}
     {launchInstant}
+    {launchPadSpec}
     onDirectorDebug={(d) => (launchDirectorDebug = d)}
     externalClock={true}
     onComplete={() => {

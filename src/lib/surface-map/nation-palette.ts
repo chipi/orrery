@@ -64,7 +64,7 @@ export function nationChipFor(site: Pick<SurfaceSite, 'nation' | 'agency'>): {
   if (agency === 'IAF') return { label: `${countryLabel('Israel')} · IAF`, color: '#1d4ed8' };
   if (agency === 'WRE') return { label: `${countryLabel('Australia')} · WRE`, color: '#E0B400' };
   if (agency === 'AEB') return { label: `${countryLabel('Brazil')} · AEB`, color: '#C2185B' };
-  if (nation === 'USA' || agency === 'NASA' || agency === 'Intuitive Machines')
+  if (nation === 'USA' || agency === 'NASA')
     return { label: `${countryLabel('USA')} · NASA`, color: '#3b82f6' };
   if (nation === 'USSR' || nation === 'Russia' || agency === 'ROSCOSMOS')
     return { label: `${countryLabel('USSR')} · Roscosmos`, color: '#ef4444' };
@@ -103,6 +103,7 @@ const RING_ALIAS: Record<string, { agency?: string; nation?: string }> = {
   CMSA: { agency: 'CNSA' },
   USSF: { nation: 'USA' },
   'Blue Origin': { nation: 'USA' },
+  'Intuitive Machines': { nation: 'USA' },
 };
 export function agencyRingColor(agency: string): string {
   const lead = agency.split('/')[0].trim();

@@ -1,4 +1,6 @@
-# Content 7 — Viking 2, IM-1, Chang'e 2, Mars 2, MRO, Mariner 2, Shenzhou 5 (pending heroes)
+# Content 7 — Viking 2, IM-1, Chang'e 2, Mars 2, MRO, Mariner 2, Shenzhou 5
+
+**Landed 2026-11-15.** The operator approved every staged candidate ("ship all staged candidates"), the side branch was merged onto `tech-debt/0.9.9` and the images went through `scripts/replace-gallery-slots.ts` (map `scripts/link-fixes/2026-11-15-content7-images.json`: 33 mission and 14 fleet images). Mars 2 already had a four-image gallery with an approved hero (slot 04, 2026-11-09) from its Mars-site entry, and slot 02 of it is the same 1972 stamp: those stay, and the one new picture is slot 05 (the stamp and the Mars 3 model were not added a second time). The artist-concept heroes of MRO and Mariner 2 carry `artistic_impressions` waivers. The text below is the state before the merge.
 
 Written 2026-11-15 on `tech-debt/0.9.9`. Ranks 2, 4, 5, 6, 8, 9, 10 of the operator-approved top-10 (`2026-11-14-slice-H-brief.md` section 6). Web search was exhausted (400/400). Operator ruling 2026-11-15: plain figures (dates, vehicle, altitudes, masses, durations) may come from Wikipedia when no primary page loaded; every such figure has a row in the search backlog (S19 to S23); narrative claims, causes and "firsts" need a primary page or stay out.
 

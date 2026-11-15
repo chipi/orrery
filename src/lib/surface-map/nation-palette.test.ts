@@ -150,6 +150,7 @@ describe('agencyRingColor', () => {
     ['CMSA', '#dc2626'],
     ['USSF', '#3b82f6'],
     ['Blue Origin', '#3b82f6'],
+    ['Intuitive Machines', '#3b82f6'],
     ['ESA / NASA', '#1d4ed8'],
     ['NASA / Roscosmos', '#3b82f6'],
   ])('mission-index spelling %s is %s', (agency, color) => {

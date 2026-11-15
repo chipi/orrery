@@ -97,9 +97,8 @@
     "/programs/apollo": "Apollo — das Programm, nach dem Artemis benannt ist und über das es hinausgeht"
   },
   "roster": {
-    "Artemis I": {
-      "note": "eine unbemannte Orion umfliegt den Mond beim ersten SLS-Start — die Tiefraum-Hardware ist erprobt, bevor jemand mit ihr fliegt",
-      "name": "Artemis I"
+    "mission:artemis1": {
+      "note": "eine unbemannte Orion umfliegt den Mond beim ersten SLS-Start — die Tiefraum-Hardware ist erprobt, bevor jemand mit ihr fliegt"
     },
     "mission:artemis2": {
       "note": "die erste Besatzung — vier Astronauten, darunter der erste Nicht-Amerikaner auf dem Weg zum Mond; ihr Vorbeiflug im April 2026 brachte Menschen weiter von der Erde weg als je zuvor"

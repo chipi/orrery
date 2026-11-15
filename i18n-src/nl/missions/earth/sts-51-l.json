@@ -1,0 +1,23 @@
+{
+  "name": "STS-51-L",
+  "vehicle": "Space Shuttle Challenger (OV-099)",
+  "payload": "TDRS-B en Spartan-Halley; zeven bemanningsleden",
+  "delta_v": "0 km/s (baan niet bereikt; voertuig 73 s na de lancering verloren)",
+  "type": "BEMANDE SHUTTLEVLUCHT · VERLOREN TIJDENS DE STIJGING",
+  "first": "Challenger en haar zevenkoppige bemanning gingen 73 seconden na de lancering verloren",
+  "description": "STS-51-L was de 25e Space Shuttle-missie en de 10e vlucht van Challenger. De ladingen waren de Tracking and Data Relay Satellite TDRS-B en de satelliet Spartan-Halley, en de vlucht was gepland voor zes dagen op ongeveer 153 zeemijl hoogte. De bemanning van zeven bestond uit Francis R. Scobee, commandant; Michael J. Smith, piloot; Judith A. Resnik, Ellison S. Onizuka en Ronald E. McNair, missiespecialisten; S. Christa McAuliffe, lerares in de ruimte (Teacher in Space); en Gregory B. Jarvis, ladingspecialist. Na drie uitstellen en een afgelasting ten opzichte van de geplande datum 1986-01-22 steeg Challenger op 1986-01-28 om 11:38:00 EST (16:38:00 UTC) op van lanceerplatform B, bij een luchttemperatuur van 36 °F (ongeveer 2 °C), 15 °F kouder dan bij enige eerdere lancering. Een gaslek door de achterste veldverbinding van de rechter vastebrandstofmotor verzwakte de externe tank, en 73 seconden na de lancering, bij Mach 1.92 en op 46.000 voet (ongeveer 14 km), brak het voertuig uiteen. De bemanning ging verloren. De Rogers-commissie concludeerde dat het verlies werd veroorzaakt door het falen van de verbinding tussen de twee onderste segmenten van de rechter vastebrandstofmotor, waardoor de afdichtingen die hete gassen moesten tegenhouden werden vernietigd, en dat het hoogst onwaarschijnlijk was dat de beslissers tot lancering zouden hebben besloten als zij alle feiten hadden gekend.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LIFT-OFF",
+      "note": "Challenger stijgt op 1986-01-28 om 11:38:00 EST (16:38:00 UTC) op van lanceerplatform B.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.000845,
+      "label": "VOERTUIG VERLOREN",
+      "note": "73 seconden na de lancering breekt het voertuig uiteen bij Mach 1.92 en op 46.000 voet. Alle zeven bemanningsleden gaan verloren.",
+      "type": "warning"
+    }
+  ]
+}

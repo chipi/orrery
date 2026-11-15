@@ -1,0 +1,13 @@
+{
+  "name": "STS-1",
+  "vehicle": "Space Shuttle Columbia (OV-102)",
+  "payload": "Crew of two (Young, Crippen); DFI and ACIP instrumentation",
+  "delta_v": "~9.4 km/s (LEO)",
+  "type": "CREWED ORBITAL TEST · FLOWN",
+  "first": "The first orbital test flight of the Space Shuttle, flown by two astronauts",
+  "description": "STS-1 was the first orbital test flight of the Space Shuttle. Commander John W. Young and Pilot Robert L. Crippen launched in Columbia from Launch Complex 39A at Kennedy Space Center on 1981-04-12 at 7:00:03 EST (12:00:03 UTC) into a 166 nautical mile (about 307 km) orbit inclined 40.3 degrees. The NASA NSSDCA catalogue describes it as the first crewed orbital test flight of the Space Transportation System, flown to verify the combined performance of the Shuttle vehicle. In 54 hours, 20 minutes and 53 seconds the crew completed 37 revolutions, then landed on Runway 23 at Edwards Air Force Base, California, on 1981-04-14 at 10:20:57 PST (18:20:57 UTC). The payloads were instruments: the Developmental Flight Instrumentation and the ACIP pallet recorded temperatures, pressures and accelerations. The launch and the overpressure wave of the solid rocket boosters cost the orbiter 16 tiles and damaged 148 more.",
+  "events": [
+    { "met": 0, "label": "LIFTOFF", "note": "Columbia lifts off from Pad 39A at 7:00:03 EST (12:00:03 UTC) on 1981-04-12.", "type": "nominal" },
+    { "met": 2.2645, "label": "LANDING", "note": "Runway 23 at Edwards Air Force Base on 1981-04-14, 10:20:57 PST, after 37 revolutions.", "type": "nominal" }
+  ]
+}

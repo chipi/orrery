@@ -97,9 +97,8 @@
     "/programs/apollo": "Apollo — Artemis の名の由来であり、その先を目指す計画"
   },
   "roster": {
-    "Artemis I": {
-      "note": "無人のOrionが最初のSLS打ち上げで月を周回する——誰かが乗る前に深宇宙用ハードウェアを実証する",
-      "name": "Artemis I"
+    "mission:artemis1": {
+      "note": "無人のOrionが最初のSLS打ち上げで月を周回する——誰かが乗る前に深宇宙用ハードウェアを実証する"
     },
     "mission:artemis2": {
       "note": "初のクルー——月へ飛ぶ初の非アメリカ人を含む4人の宇宙飛行士。2026年4月のフライバイで、人類は史上最も地球から遠い地点に到達した"

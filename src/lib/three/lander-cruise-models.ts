@@ -788,6 +788,7 @@ const BUILDERS: Record<string, () => THREE.Group> = {
   // Apollo 10 and 13 flew the full CSM + LM stack too (Apollo 8 had no LM: fly-craft's CSM).
   apollo10: buildApolloCruise,
   apollo13: buildApolloCruise,
+  artemis1: buildOrionCruise,
   artemis2: buildOrionCruise,
   artemis3: buildOrionCruise,
   artemis5: buildOrionCruise,

@@ -1,0 +1,23 @@
+{
+  "name": "STS-1",
+  "vehicle": "Space Shuttle Columbia (OV-102)",
+  "payload": "Besatzung aus zwei Astronauten (Young, Crippen); DFI- und ACIP-Instrumentierung",
+  "delta_v": "~9.4 km/s (LEO)",
+  "type": "BEMANNTER ORBITALTEST · GEFLOGEN",
+  "first": "Der erste Orbitaltestflug des Space Shuttle, geflogen von zwei Astronauten",
+  "description": "STS-1 war der erste Orbitaltestflug des Space Shuttle. Kommandant John W. Young und Pilot Robert L. Crippen starteten am 1981-04-12 um 7:00:03 EST (12:00:03 UTC) mit der Columbia vom Launch Complex 39A des Kennedy Space Center in eine Umlaufbahn in 166 Seemeilen (etwa 307 km) Höhe mit 40.3 Grad Bahnneigung. Der NASA-Katalog NSSDCA beschreibt ihn als den ersten bemannten Orbitaltestflug des Space Transportation System, der die Leistung des gesamten Shuttle-Systems überprüfen sollte. In 54 Stunden, 20 Minuten und 53 Sekunden absolvierte die Besatzung 37 Umläufe und landete dann am 1981-04-14 um 10:20:57 PST (18:20:57 UTC) auf Piste 23 der Edwards Air Force Base in Kalifornien. Die Nutzlasten waren Messgeräte: Die Developmental Flight Instrumentation und die ACIP-Palette zeichneten Temperaturen, Drücke und Beschleunigungen auf. Durch den Start und die Überdruckwelle der Feststoffbooster verlor der Orbiter 16 Kacheln, weitere 148 wurden beschädigt.",
+  "events": [
+    {
+      "met": 0,
+      "label": "START",
+      "note": "Die Columbia hebt am 1981-04-12 um 7:00:03 EST (12:00:03 UTC) von Rampe 39A ab.",
+      "type": "nominal"
+    },
+    {
+      "met": 2.2645,
+      "label": "LANDUNG",
+      "note": "Piste 23 der Edwards Air Force Base am 1981-04-14, 10:20:57 PST, nach 37 Umläufen.",
+      "type": "nominal"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "name": "STS-51-L",
+  "vehicle": "Space Shuttle Challenger (OV-099)",
+  "payload": "TDRS-B und Spartan-Halley; sieben Besatzungsmitglieder",
+  "delta_v": "0 km/s (Orbit nicht erreicht; Fahrzeug 73 s nach dem Start verloren)",
+  "type": "BEMANNTER SHUTTLE-FLUG · BEIM AUFSTIEG VERLOREN",
+  "first": "Challenger und ihre siebenköpfige Besatzung gingen 73 Sekunden nach dem Start verloren",
+  "description": "STS-51-L war die 25. Mission des Space Shuttle und der 10. Flug der Challenger. Die Nutzlasten waren der Tracking and Data Relay Satellite TDRS-B und der Satellit Spartan-Halley; der Flug sollte sechs Tage in etwa 153 Seemeilen Höhe dauern. Die siebenköpfige Besatzung bestand aus Francis R. Scobee, Kommandant; Michael J. Smith, Pilot; Judith A. Resnik, Ellison S. Onizuka und Ronald E. McNair, Missionsspezialisten; S. Christa McAuliffe, Lehrerin im All (Teacher in Space); und Gregory B. Jarvis, Nutzlastspezialist. Nach drei Verschiebungen und einem Startabbruch gegenüber dem geplanten Termin 1986-01-22 hob die Challenger am 1986-01-28 um 11:38:00 EST (16:38:00 UTC) von Rampe B ab, bei einer Lufttemperatur von 36 °F (etwa 2 °C), 15 °F kälter als bei jedem früheren Start. Ein Gasleck durch die hintere Feldverbindung des rechten Feststoffraketenmotors schwächte den Außentank, und 73 Sekunden nach dem Start, bei Mach 1.92 und in 46.000 Fuß Höhe (etwa 14 km), brach das Fahrzeug auseinander. Die Besatzung kam ums Leben. Die Rogers-Kommission stellte fest, dass der Verlust durch das Versagen der Verbindung zwischen den beiden unteren Segmenten des rechten Feststoffraketenmotors verursacht wurde, das die Dichtungen zerstörte, die heiße Gase zurückhalten sollten, und dass es höchst unwahrscheinlich gewesen wäre, dass die Entscheidungsträger den Start genehmigt hätten, wenn sie alle Fakten gekannt hätten.",
+  "events": [
+    {
+      "met": 0,
+      "label": "START",
+      "note": "Die Challenger hebt am 1986-01-28 um 11:38:00 EST (16:38:00 UTC) von Rampe B ab.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.000845,
+      "label": "FAHRZEUG VERLOREN",
+      "note": "73 Sekunden nach dem Start bricht das Fahrzeug bei Mach 1.92 und in 46.000 Fuß Höhe auseinander. Alle sieben Besatzungsmitglieder kommen ums Leben.",
+      "type": "warning"
+    }
+  ]
+}

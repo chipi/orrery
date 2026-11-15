@@ -97,9 +97,8 @@
     "/programs/apollo": "Apollo — il programma da cui Artemis prende il nome e che supera"
   },
   "roster": {
-    "Artemis I": {
-      "note": "un'Orion senza equipaggio gira intorno alla Luna al primo lancio dell'SLS — l'hardware per lo spazio profondo viene collaudato prima che qualcuno lo usi",
-      "name": "Artemis I"
+    "mission:artemis1": {
+      "note": "un'Orion senza equipaggio gira intorno alla Luna al primo lancio dell'SLS — l'hardware per lo spazio profondo viene collaudato prima che qualcuno lo usi"
     },
     "mission:artemis2": {
       "note": "il primo equipaggio — quattro astronauti, tra cui il primo non americano a volare verso la Luna; il loro sorvolo di aprile 2026 portò esseri umani più lontano dalla Terra che mai"

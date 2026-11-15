@@ -105,17 +105,14 @@
     "mission:magellan": {
       "note": "uitgezet vanuit het laadruim van Shuttle Atlantis tijdens STS-30 in mei 1989, daarna met een bovenste trap naar Venus gestuurd"
     },
-    "STS-1": {
-      "note": "de eerste orbitale vlucht — de eerste keer dat een bemand ruimtevaartuig bij zijn eerste lancering naar een baan werd gevlogen, en de eerste herbruikbare",
-      "name": "STS-1"
+    "mission:sts-1": {
+      "note": "de eerste orbitale vlucht — de eerste keer dat een bemand ruimtevaartuig bij zijn eerste lancering naar een baan werd gevlogen, en de eerste herbruikbare"
     },
-    "Challenger (STS-51-L)": {
-      "note": "verloren 73 seconden na de lancering toen een door kou verstijfde boosterafdichting het begaf; zeven bemanningsleden kwamen om, en de ramp legde een cultuur bloot die een bekend risico had genormaliseerd",
-      "name": "Challenger (STS-51-L)"
+    "mission:sts-51-l": {
+      "note": "verloren 73 seconden na de lancering toen een door kou verstijfde boosterafdichting het begaf; zeven bemanningsleden kwamen om, en de ramp legde een cultuur bloot die een bekend risico had genormaliseerd"
     },
-    "Columbia (STS-107)": {
-      "note": "verloren tijdens de terugkeer toen schuimresten bij de lancering een gat in de vleugel hadden geslagen; zeven bemanningsleden kwamen om, en hetzelfde organisatorische falen bleek zich te hebben herhaald",
-      "name": "Columbia (STS-107)"
+    "mission:sts-107": {
+      "note": "verloren tijdens de terugkeer toen schuimresten bij de lancering een gat in de vleugel hadden geslagen; zeven bemanningsleden kwamen om, en hetzelfde organisatorische falen bleek zich te hebben herhaald"
     }
   }
 }

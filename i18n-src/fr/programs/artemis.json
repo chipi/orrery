@@ -97,9 +97,8 @@
     "/programs/apollo": "Apollo — le programme dont Artemis tire son nom et qu'il dépasse"
   },
   "roster": {
-    "Artemis I": {
-      "note": "une capsule Orion sans équipage fait le tour de la Lune lors du premier lancement du SLS — le matériel d'espace lointain est éprouvé avant que quiconque l'emprunte",
-      "name": "Artemis I"
+    "mission:artemis1": {
+      "note": "une capsule Orion sans équipage fait le tour de la Lune lors du premier lancement du SLS — le matériel d'espace lointain est éprouvé avant que quiconque l'emprunte"
     },
     "mission:artemis2": {
       "note": "le premier équipage — quatre astronautes, dont le premier non-Américain à voler vers la Lune ; leur survol d'avril 2026 a emmené des humains plus loin de la Terre que jamais"

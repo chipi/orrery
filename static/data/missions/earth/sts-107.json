@@ -1,0 +1,54 @@
+{
+  "id": "sts-107",
+  "agency": "NASA",
+  "agency_full": "National Aeronautics and Space Administration",
+  "sector": "gov",
+  "dest": "EARTH",
+  "color": "#0B3D91",
+  "year": 2003,
+  "status": "FLOWN",
+  "departure_date": "2003-01-16",
+  "arrival_date": "2003-02-01",
+  "transit_days": 16,
+  "vehicle": "Space Shuttle Columbia (OV-102)",
+  "payload": "SPACEHAB Research Double Module with 80-plus experiments; crew of seven",
+  "delta_v": "~9.4 km/s (LEO)",
+  "data_quality": "good",
+  "credit": "© NASA / Columbia Accident Investigation Board. Public domain / archive.",
+  "links": [
+    {
+      "l": "STS-107 — NASA",
+      "u": "https://www.nasa.gov/mission/sts-107/",
+      "t": "core"
+    },
+    {
+      "l": "STS-107 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/STS-107",
+      "t": "intro"
+    },
+    {
+      "l": "Remembering Columbia, STS-107 (NASA)",
+      "u": "https://www.nasa.gov/remembering-columbia-sts-107",
+      "t": "core"
+    },
+    {
+      "l": "Columbia Accident Investigation Board report (NASA)",
+      "u": "https://www.nasa.gov/wp-content/uploads/2025/04/caib-report.pdf",
+      "t": "deep"
+    }
+  ],
+  "fleet_refs": [
+    {
+      "id": "space-shuttle-stack",
+      "role": "launcher"
+    },
+    {
+      "id": "columbia",
+      "role": "spacecraft"
+    },
+    {
+      "id": "lc-39a",
+      "role": "launch-site"
+    }
+  ]
+}

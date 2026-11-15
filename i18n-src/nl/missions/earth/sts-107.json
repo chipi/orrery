@@ -1,0 +1,29 @@
+{
+  "name": "STS-107",
+  "vehicle": "Space Shuttle Columbia (OV-102)",
+  "payload": "SPACEHAB Research Double Module met meer dan 80 experimenten; zeven bemanningsleden",
+  "delta_v": "~9.4 km/s (LEO)",
+  "type": "BEMANDE ONDERZOEKSVLUCHT · VERLOREN BIJ DE TERUGKEER",
+  "first": "Een wetenschappelijke vlucht van 16 dagen die eindigde met het verlies van Columbia bij de terugkeer",
+  "description": "STS-107 was een 16 dagen durende microzwaartekrachtmissie (Microgravity Research Mission) met een SPACEHAB Research Double Module met meer dan 80 experimenten: commerciële ladingen, onderzoek van de Europese ruimtevaartorganisatie ESA en biologisch en natuurkundig onderzoek van NASA. De bemanning van zeven bestond uit Rick D. Husband, commandant; William C. McCool, piloot; Michael P. Anderson, ladingcommandant; David M. Brown, Kalpana Chawla en Laurel B. Clark, missiespecialisten; en Ilan Ramon, ladingspecialist, die het Israëlische ruimteagentschap vertegenwoordigde. Columbia steeg op 2003-01-16 om 10:39 EST (15:39 UTC) op van lanceerplatform 39A. Ongeveer 82 seconden na de lancering trof isolatieschuim van de externe tank de linkervleugel. NASA meldt dat de astronauten de verwachtingen van wetenschappers overtroffen met de resultaten uit hun 16 dagen. Op 2003-02-01 gingen Columbia en haar bemanning tijdens de terugkeer boven Oost-Texas rond 9:00 EST verloren, 16 minuten voor de geplande landing bij het Kennedy Space Center. De Columbia Accident Investigation Board, onder voorzitterschap van de gepensioneerde admiraal Harold W. Gehman, herleidde de schade tot de schuimtreffer op de linkervleugel en stelde vast dat de vernietiging van de vleugel door oververhitting het uiteenvallen van Columbia veroorzaakte. Het publiceerde zijn rapport op 2003-08-26.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LIFT-OFF",
+      "note": "Columbia stijgt op 2003-01-16 om 10:39 EST (15:39 UTC) op van lanceerplatform 39A.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.00095,
+      "label": "SCHUIMTREFFER",
+      "note": "Ongeveer 82 seconden na de lancering treft isolatieschuim van de externe tank de linkervleugel.",
+      "type": "warning"
+    },
+    {
+      "met": 15.93,
+      "label": "COLUMBIA VERLOREN",
+      "note": "Op 2003-02-01 gaan Columbia en haar zeven bemanningsleden rond 9:00 EST verloren tijdens de terugkeer boven Oost-Texas, 16 minuten voor de geplande landing.",
+      "type": "warning"
+    }
+  ]
+}

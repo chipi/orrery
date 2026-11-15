@@ -1,0 +1,23 @@
+{
+  "name": "STS-1",
+  "vehicle": "Space Shuttle Columbia (OV-102)",
+  "payload": "Bemanning van twee astronauten (Young, Crippen); DFI- en ACIP-instrumentatie",
+  "delta_v": "~9.4 km/s (LEO)",
+  "type": "BEMANDE ORBITALE TEST · GEVLOGEN",
+  "first": "De eerste orbitale testvlucht van de Space Shuttle, gevlogen door twee astronauten",
+  "description": "STS-1 was de eerste orbitale testvlucht van de Space Shuttle. Commandant John W. Young en piloot Robert L. Crippen vertrokken op 1981-04-12 om 7:00:03 EST (12:00:03 UTC) met de Columbia vanaf Launch Complex 39A van het Kennedy Space Center naar een baan op 166 zeemijl (ongeveer 307 km) hoogte, met een inclinatie van 40.3 graden. De NASA-catalogus NSSDCA beschrijft de vlucht als de eerste bemande orbitale testvlucht van het Space Transportation System, bedoeld om de gezamenlijke prestaties van het shuttlesysteem te controleren. In 54 uur, 20 minuten en 53 seconden voltooide de bemanning 37 omlopen en landde daarna op 1981-04-14 om 10:20:57 PST (18:20:57 UTC) op baan 23 van Edwards Air Force Base in Californië. De lading bestond uit instrumenten: de Developmental Flight Instrumentation en het ACIP-pallet registreerden temperaturen, drukken en versnellingen. Door de lancering en de overdrukgolf van de vastebrandstofboosters verloor de orbiter 16 tegels en raakten er nog 148 beschadigd.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LIFT-OFF",
+      "note": "De Columbia stijgt op 1981-04-12 om 7:00:03 EST (12:00:03 UTC) op vanaf lanceerplatform 39A.",
+      "type": "nominal"
+    },
+    {
+      "met": 2.2645,
+      "label": "LANDING",
+      "note": "Baan 23 van Edwards Air Force Base op 1981-04-14, 10:20:57 PST, na 37 omlopen.",
+      "type": "nominal"
+    }
+  ]
+}

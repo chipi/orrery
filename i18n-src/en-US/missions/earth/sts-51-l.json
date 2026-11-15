@@ -1,0 +1,13 @@
+{
+  "name": "STS-51-L",
+  "vehicle": "Space Shuttle Challenger (OV-099)",
+  "payload": "TDRS-B and Spartan-Halley; crew of seven",
+  "delta_v": "0 km/s (orbit not reached; vehicle lost 73 s after liftoff)",
+  "type": "CREWED SHUTTLE FLIGHT · LOST ON ASCENT",
+  "first": "Challenger and its crew of seven were lost 73 seconds after liftoff",
+  "description": "STS-51-L was the 25th Space Shuttle mission and the 10th flight of Challenger. Its payloads were the Tracking and Data Relay Satellite TDRS-B and the Spartan-Halley satellite, and it was planned to last six days at about 153 nautical miles. The crew of seven was Francis R. Scobee, Commander; Michael J. Smith, Pilot; Judith A. Resnik, Ellison S. Onizuka and Ronald E. McNair, Mission Specialists; S. Christa McAuliffe, Teacher in Space; and Gregory B. Jarvis, Payload Specialist. After three postponements and a scrub from the planned date of 1986-01-22, Challenger lifted off from Pad B at 11:38:00 EST (16:38:00 UTC) on 1986-01-28, in an air temperature of 36 °F (about 2 °C), 15 °F colder than at any earlier launch. A gas leak through the aft field joint of the right solid rocket motor weakened the external tank, and 73 seconds after liftoff, at Mach 1.92 and 46,000 feet (about 14 km), the vehicle broke apart. The crew was lost. The Rogers Commission found that the loss was caused by a failure in the joint between the two lower segments of the right solid rocket motor, which destroyed the seals meant to keep hot gases in, and that, had the decision makers known all the facts, it was highly unlikely they would have decided to launch.",
+  "events": [
+    { "met": 0, "label": "LIFTOFF", "note": "Challenger lifts off from Pad B at 11:38:00 EST (16:38:00 UTC) on 1986-01-28.", "type": "nominal" },
+    { "met": 0.000845, "label": "VEHICLE LOST", "note": "73 seconds after liftoff the vehicle breaks apart at Mach 1.92 and 46,000 feet. All seven crew are lost.", "type": "warning" }
+  ]
+}

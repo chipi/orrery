@@ -38,7 +38,10 @@
       "t": "deep"
     }
   ],
-  "linked_missions": [],
+  "linked_missions": [
+    "sts-1",
+    "sts-107"
+  ],
   "flights": [
     {
       "mission_id": "sts-1",

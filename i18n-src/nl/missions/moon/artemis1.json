@@ -1,0 +1,47 @@
+{
+  "name": "Artemis I",
+  "vehicle": "SLS Block 1 + Orion (onbemand)",
+  "payload": "Orion met de geïnstrumenteerde pop Commander Moonikin Campos; tien CubeSats",
+  "delta_v": "~0.43 km/s (alleen de DRO-vertrek- en terugkeer-flybymanoeuvres; totaal niet opgegeven)",
+  "type": "ONBEMANDE TEST IN DE DIEPE RUIMTE · GEVLOGEN",
+  "first": "De eerste vlucht van het Space Launch System, een onbemande test van Orion rond de Maan",
+  "description": "Artemis I was de eerste vlucht van het Space Launch System van NASA en een onbemande test van het ruimtevaartuig Orion rond de Maan. SLS Block 1 steeg op 2022-11-16 om 1:47 EST (06:47 UTC) op van Launch Complex 39B van het Kennedy Space Center. Op 2022-11-21 maakte Orion een aangedreven maanflyby op ongeveer 130 km (80 mijl) boven het oppervlak, het eerste van twee manoeuvres om in een verre retrograde baan (DRO) te komen, en het kwam op 2022-11-25 in die baan. Op 2022-11-26 passeerde het het afstandsrecord van Apollo 13 voor een ruimtevaartuig dat mensen kan vervoeren: 248.655 mijl van de aarde. Op zijn verste punt was Orion 268.563 mijl (ongeveer 432.000 km) van de aarde en 43.471 mijl (ongeveer 70.000 km) voorbij de achterkant van de Maan. Een ontsteking van 1 minuut 45 seconden bracht het op 2022-12-01 uit de baan, en op 2022-12-05 stuurde een aangedreven terugkeerflyby van 3 minuten 27 seconden, opnieuw op ongeveer 130 km boven het oppervlak, het terug naar de aarde. Orion kwam op 2022-12-11 om 12:40 EST neer in de Stille Oceaan voor de kust van San Diego, na 25 dagen, 10 uur en 53 minuten. Op de stoel van de commandant zat Commander Moonikin Campos, een geïnstrumenteerde pop in een Orion Crew Survival System-pak. Orion voerde 161 testdoelen uit; de analyse van het onverwachte materiaalverlies (char loss) van het hitteschild werd doorgegeven aan Artemis II.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCERING",
+      "note": "SLS Block 1 stijgt op 2022-11-16 om 06:47 UTC op van LC-39B met Orion onbemand.",
+      "type": "nominal"
+    },
+    {
+      "met": 5.26,
+      "label": "HEENVLUCHT-FLYBY",
+      "note": "Aangedreven flyby op 2022-11-21 op ongeveer 130 km boven het oppervlak, na een ontsteking van 2 minuten 30 seconden.",
+      "type": "info"
+    },
+    {
+      "met": 9.63,
+      "label": "DRO-INSERTIE",
+      "note": "Orion komt op 2022-11-25 in de verre retrograde baan.",
+      "type": "nominal"
+    },
+    {
+      "met": 15.63,
+      "label": "DRO-VERTREK",
+      "note": "Een ontsteking van 1 minuut 45 seconden op 2022-12-01 (ongeveer 0.14 km/s) brengt Orion uit de baan.",
+      "type": "nominal"
+    },
+    {
+      "met": 19.41,
+      "label": "TERUGKEER-FLYBY",
+      "note": "Aangedreven flyby op 2022-12-05 op ongeveer 130 km boven het oppervlak; een ontsteking van 3 minuten 27 seconden (ongeveer 0.29 km/s) stuurt Orion terug naar de aarde.",
+      "type": "info"
+    },
+    {
+      "met": 25.45,
+      "label": "NEERKOMST",
+      "note": "Stille Oceaan voor de kust van San Diego op 2022-12-11 om 12:40 EST, na 25 dagen 10 uur 53 minuten.",
+      "type": "nominal"
+    }
+  ]
+}

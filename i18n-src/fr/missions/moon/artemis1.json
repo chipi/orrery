@@ -1,0 +1,47 @@
+{
+  "name": "Artemis I",
+  "vehicle": "SLS Block 1 + Orion (sans équipage)",
+  "payload": "Orion avec le mannequin instrumenté Commander Moonikin Campos ; dix CubeSats",
+  "delta_v": "~0.43 km/s (manœuvres de départ de la DRO et de survol de retour seulement ; total non indiqué)",
+  "type": "TEST HABITÉ EN ESPACE LOINTAIN SANS ÉQUIPAGE · RÉALISÉ",
+  "first": "Le premier vol du Space Launch System, un test sans équipage d’Orion autour de la Lune",
+  "description": "Artemis I fut le premier vol du Space Launch System de la NASA et un test sans équipage du vaisseau Orion autour de la Lune. SLS Block 1 a décollé du Launch Complex 39B du Centre spatial Kennedy le 2022-11-16 à 1:47 EST (06:47 UTC). Le 2022-11-21, Orion a effectué un survol lunaire propulsé à environ 130 km (80 milles) au-dessus de la surface, première des deux manœuvres nécessaires pour entrer en orbite rétrograde distante (DRO), et il est entré sur cette orbite le 2022-11-25. Le 2022-11-26, il a dépassé le record d’éloignement de la Terre d’Apollo 13 pour un vaisseau conçu pour transporter des humains, 248 655 milles. À son point le plus éloigné, Orion se trouvait à 268 563 milles (environ 432 000 km) de la Terre et à 43 471 milles (environ 70 000 km) au-delà de la face cachée de la Lune. Une poussée de 1 minute 45 secondes l’a fait quitter l’orbite le 2022-12-01, et le 2022-12-05 un survol propulsé de retour de 3 minutes 27 secondes, de nouveau à environ 130 km au-dessus de la surface, l’a redirigé vers la Terre. Orion a amerri dans l’océan Pacifique au large de San Diego le 2022-12-11 à 12:40 EST, après 25 jours, 10 heures et 53 minutes. Le siège du commandant était occupé par Commander Moonikin Campos, un mannequin instrumenté vêtu de la combinaison Orion Crew Survival System. Orion a accompli 161 objectifs de test ; l’analyse de la perte inattendue de matière du bouclier thermique (char loss) a nourri Artemis II.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCEMENT",
+      "note": "SLS Block 1 décolle de LC-39B le 2022-11-16 à 06:47 UTC avec Orion sans équipage.",
+      "type": "nominal"
+    },
+    {
+      "met": 5.26,
+      "label": "SURVOL ALLER",
+      "note": "Survol propulsé le 2022-11-21 à environ 130 km au-dessus de la surface, après une poussée de 2 minutes 30 secondes.",
+      "type": "info"
+    },
+    {
+      "met": 9.63,
+      "label": "ENTRÉE EN DRO",
+      "note": "Orion entre en orbite rétrograde distante le 2022-11-25.",
+      "type": "nominal"
+    },
+    {
+      "met": 15.63,
+      "label": "SORTIE DE DRO",
+      "note": "Une poussée de 1 minute 45 secondes le 2022-12-01 (environ 0.14 km/s) fait quitter l’orbite à Orion.",
+      "type": "nominal"
+    },
+    {
+      "met": 19.41,
+      "label": "SURVOL RETOUR",
+      "note": "Survol propulsé le 2022-12-05 à environ 130 km au-dessus de la surface ; une poussée de 3 minutes 27 secondes (environ 0.29 km/s) redirige Orion vers la Terre.",
+      "type": "info"
+    },
+    {
+      "met": 25.45,
+      "label": "AMERRISSAGE",
+      "note": "Océan Pacifique au large de San Diego le 2022-12-11 à 12:40 EST, après 25 jours 10 heures 53 minutes.",
+      "type": "nominal"
+    }
+  ]
+}

@@ -22,6 +22,9 @@ const FLY_CRAFT: Record<string, readonly [string, string]> = {
   'soyuz-1': ['soyuz-progress', 'soyuz-7k-ok'],
   'soyuz-11': ['soyuz-progress', 'soyuz-7k-ok'],
   'shenzhou-1': ['station-freighters', 'shenzhou'],
+  'sts-1': ['winged', 'columbia'],
+  'sts-107': ['winged', 'columbia'],
+  'sts-51-l': ['winged', 'challenger'],
   inspiration4: ['capsules-commercial', 'crew-dragon'],
   'polaris-dawn': ['capsules-commercial', 'crew-dragon'],
   ...Object.fromEntries(

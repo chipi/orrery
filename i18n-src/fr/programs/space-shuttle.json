@@ -105,17 +105,14 @@
     "mission:magellan": {
       "note": "larguée depuis la soute de charge utile de la navette Atlantis lors de STS-30, en mai 1989, puis envoyée vers Vénus par un étage supérieur"
     },
-    "STS-1": {
-      "note": "le premier vol orbital — la première fois qu'un vaisseau habité était envoyé en orbite dès son lancement inaugural, et le premier réutilisable",
-      "name": "STS-1"
+    "mission:sts-1": {
+      "note": "le premier vol orbital — la première fois qu'un vaisseau habité était envoyé en orbite dès son lancement inaugural, et le premier réutilisable"
     },
-    "Challenger (STS-51-L)": {
-      "note": "perdue 73 secondes après le lancement quand un joint de propulseur durci par le froid a cédé ; sept membres d'équipage sont morts, et le désastre a révélé une culture qui avait normalisé un risque connu",
-      "name": "Challenger (STS-51-L)"
+    "mission:sts-51-l": {
+      "note": "perdue 73 secondes après le lancement quand un joint de propulseur durci par le froid a cédé ; sept membres d'équipage sont morts, et le désastre a révélé une culture qui avait normalisé un risque connu"
     },
-    "Columbia (STS-107)": {
-      "note": "perdue pendant la rentrée atmosphérique, des débris de mousse ayant percé l'aile au lancement ; sept membres d'équipage sont morts, et la même défaillance organisationnelle s'est avérée s'être répétée",
-      "name": "Columbia (STS-107)"
+    "mission:sts-107": {
+      "note": "perdue pendant la rentrée atmosphérique, des débris de mousse ayant percé l'aile au lancement ; sept membres d'équipage sont morts, et la même défaillance organisationnelle s'est avérée s'être répétée"
     }
   }
 }

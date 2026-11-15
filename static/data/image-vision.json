@@ -29595,6 +29595,422 @@
       "rejected_by": null,
       "scored_at": "2026-11-15T10:24:26.965Z",
       "scoring_cost_usd": 0
+    },
+    "/images/missions/sts-1/01.jpg": {
+      "score": 8,
+      "subject": "Space Shuttle Columbia lifting off from Launch Complex 39A on STS-1, 12 April 1981.",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.4
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T13:29:38.164Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/sts-1/02.jpg": {
+      "score": 8,
+      "subject": "Columbia on final approach to Rogers Dry Lake, 14 April 1981, with a chase aircraft.",
+      "category": "spacecraft",
+      "focal_point": {
+        "x": 0.63,
+        "y": 0.45
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T13:29:38.232Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/sts-1/03.jpg": {
+      "score": 8,
+      "subject": "Columbia on the lake bed after landing with a tow tug and ground crew.",
+      "category": "spacecraft",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.4
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T13:29:38.256Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/sts-1/04.jpg": {
+      "score": 8,
+      "subject": "Aerial view of the Columbia stack arriving at Launch Complex 39A on the mobile launcher.",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.55
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T13:29:38.316Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/sts-1/05.jpg": {
+      "score": 8,
+      "subject": "Official STS-1 crew portrait, two astronauts in orange suits holding an orbiter model.",
+      "category": "people",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.4
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T13:29:38.330Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/sts-1/06.jpg": {
+      "score": 8,
+      "subject": "The STS-1 astronauts walking beside Columbia after landing, with ground crew.",
+      "category": "people",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.65
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T13:29:38.419Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/sts-1/07.jpg": {
+      "score": 8,
+      "subject": "Two astronauts in launch-and-entry suits in a suit-up room with technicians.",
+      "category": "people",
+      "focal_point": {
+        "x": 0.4,
+        "y": 0.55
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T13:29:38.456Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/sts-107/01.jpg": {
+      "score": 8,
+      "subject": "Official STS-107 crew portrait, seven astronauts in orange suits.",
+      "category": "people",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.4
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T13:29:38.465Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/sts-107/02.jpg": {
+      "score": 8,
+      "subject": "The seven STS-107 crew members floating in the SPACEHAB module in orbit.",
+      "category": "people",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.4
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T13:29:38.498Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/sts-107/03.jpg": {
+      "score": 8,
+      "subject": "The STS-107 crew in blue flight suits before the Columbia white room.",
+      "category": "people",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.4
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T13:29:38.520Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/sts-107/04.jpg": {
+      "score": 8,
+      "subject": "Columbia lifting off from Launch Pad 39A on 16 January 2003.",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.4
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T13:29:38.529Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/sts-107/05.jpg": {
+      "score": 8,
+      "subject": "Columbia rising on its exhaust plume just after liftoff, 16 January 2003.",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.6,
+        "y": 0.4
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T13:29:38.535Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/sts-107/06.jpg": {
+      "score": 8,
+      "subject": "The STS-107 mission poster with crew portrait, patch and printed mission text.",
+      "category": "other",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.3
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T13:29:38.573Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/sts-51-l/01.jpg": {
+      "score": 8,
+      "subject": "Official STS-51-L crew portrait, seven astronauts in light-blue flight suits.",
+      "category": "people",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T13:29:38.591Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/sts-51-l/02.jpg": {
+      "score": 8,
+      "subject": "The STS-51-L crew at the pre-launch breakfast, 28 January 1986.",
+      "category": "people",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T13:29:38.612Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/sts-51-l/03.jpg": {
+      "score": 8,
+      "subject": "The STS-51-L crew in flight suits holding helmets in a white-room-style setting.",
+      "category": "people",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.45
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T13:29:38.638Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/sts-51-l/04.jpg": {
+      "score": 8,
+      "subject": "Aerial view of the Challenger stack on the crawler-transporter heading to Launch Pad 39B.",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.45
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T13:29:38.663Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/sts-51-l/05.jpg": {
+      "score": 8,
+      "subject": "The STS-51-L mission patch with the seven crew surnames.",
+      "category": "other",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T13:29:38.682Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/sts-51-l/06.jpg": {
+      "score": 8,
+      "subject": "Challenger lifting off from Launch Pad 39B on 28 January 1986.",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.45,
+        "y": 0.3
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T13:29:38.742Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/artemis1/01.jpg": {
+      "score": 8,
+      "subject": "SLS and Orion lifting off from Launch Pad 39B at night, 16 November 2022.",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.55,
+        "y": 0.45
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T13:29:38.788Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/artemis1/02.jpg": {
+      "score": 8,
+      "subject": "SLS and Orion on Launch Pad 39B at night under floodlights after rollout.",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T13:29:38.832Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/artemis1/03.jpg": {
+      "score": 8,
+      "subject": "Orion crew module in flight with the Moon and Earth as two dots.",
+      "category": "orbital",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.45
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T13:29:39.032Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/artemis1/04.jpg": {
+      "score": 8,
+      "subject": "The far side of the Moon beside the Orion service module and a solar array.",
+      "category": "orbital",
+      "focal_point": {
+        "x": 0.7,
+        "y": 0.55
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T13:29:39.050Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/artemis1/05.jpg": {
+      "score": 8,
+      "subject": "Orion crew module and service module seen by a solar-array camera.",
+      "category": "spacecraft",
+      "focal_point": {
+        "x": 0.55,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T13:29:39.071Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/artemis1/06.jpg": {
+      "score": 8,
+      "subject": "The Orion capsule floating after splashdown with its flotation balloons.",
+      "category": "spacecraft",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.6
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T13:29:39.093Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/artemis1/07.jpg": {
+      "score": 8,
+      "subject": "Orion splashdown seen from afar with a helicopter and the recovery ship.",
+      "category": "other",
+      "focal_point": {
+        "x": 0.4,
+        "y": 0.6
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T13:29:39.117Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/artemis1/08.jpg": {
+      "score": 8,
+      "subject": "Moonikin Campos being unpacked from a crate after the flight.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.55
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T13:29:39.145Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/orion/05.jpg": {
+      "score": 8,
+      "subject": "Orion crew module and service module seen by a solar-array camera in flight.",
+      "category": "spacecraft",
+      "focal_point": {
+        "x": 0.55,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T13:29:39.269Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/orion/06.jpg": {
+      "score": 8,
+      "subject": "Orion crew module in flight with the Moon and Earth as two dots.",
+      "category": "orbital",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.45
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T13:29:39.289Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/sls-block-1/06.jpg": {
+      "score": 8,
+      "subject": "SLS and Orion lifting off from Launch Pad 39B at night.",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.55,
+        "y": 0.45
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T13:29:39.308Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/columbia/06.jpg": {
+      "score": 8,
+      "subject": "Official STS-1 crew portrait, two astronauts in orange suits holding an orbiter model.",
+      "category": "people",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.4
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T13:29:39.351Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/challenger/06.jpg": {
+      "score": 8,
+      "subject": "Aerial view of the Challenger stack on the crawler-transporter heading to Launch Pad 39B.",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.45
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T13:29:39.440Z",
+      "scoring_cost_usd": 0
     }
   }
 }

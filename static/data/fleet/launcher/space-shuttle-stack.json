@@ -29,9 +29,12 @@
     }
   ],
   "linked_missions": [
+    "sts-1",
+    "sts-51-l",
     "galileo",
     "magellan",
-    "ulysses"
+    "ulysses",
+    "sts-107"
   ],
   "specs": {
     "height_m": 56.1,

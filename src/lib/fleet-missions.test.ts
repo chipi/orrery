@@ -81,7 +81,7 @@ describe('fleetMissionRows over the fleet data', () => {
     expect(rowsOf(byId('soyuz-7k-ok'))).toHaveLength(7);
     expect(linked(byId('soyuz-7k-ok'))).toHaveLength(3);
     expect(rowsOf(byId('space-shuttle-orbiter'))).toHaveLength(8);
-    expect(linked(byId('space-shuttle-orbiter'))).toHaveLength(2);
+    expect(linked(byId('space-shuttle-orbiter'))).toHaveLength(5);
   });
 
   it('a row without a mission is plain text: the designation, the crew as names', () => {

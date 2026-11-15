@@ -1,0 +1,14 @@
+{
+  "name": "STS-107",
+  "vehicle": "Space Shuttle Columbia (OV-102)",
+  "payload": "SPACEHAB Research Double Module with 80-plus experiments; crew of seven",
+  "delta_v": "~9.4 km/s (LEO)",
+  "type": "CREWED RESEARCH FLIGHT · LOST ON RE-ENTRY",
+  "first": "A 16-day science flight that ended with the loss of Columbia on re-entry",
+  "description": "STS-107 was a 16-day Microgravity Research Mission carrying a SPACEHAB Research Double Module with more than 80 experiments: commercial payloads, European Space Agency investigations and NASA biological and physical research. The crew of seven was Rick D. Husband, Commander; William C. McCool, Pilot; Michael P. Anderson, Payload Commander; David M. Brown, Kalpana Chawla and Laurel B. Clark, Mission Specialists; and Ilan Ramon, Payload Specialist, representing the Israeli Space Agency. Columbia lifted off from Pad 39A at 10:39 EST (15:39 UTC) on 2003-01-16. About 82 seconds after launch, foam insulation from the external tank struck the left wing. NASA reports that the astronauts exceeded scientists' expectations for the science obtained in their 16 days. On 2003-02-01, during re-entry over East Texas at about 9:00 EST, Columbia and its crew were lost, 16 minutes before the scheduled landing at Kennedy Space Center. The Columbia Accident Investigation Board, chaired by retired Admiral Harold W. Gehman, traced the damage to the foam strike on the left wing and determined that the destruction of the wing from overheating caused the breakup of Columbia. It published its report on 2003-08-26.",
+  "events": [
+    { "met": 0, "label": "LIFTOFF", "note": "Columbia lifts off from Pad 39A at 10:39 EST (15:39 UTC) on 2003-01-16.", "type": "nominal" },
+    { "met": 0.00095, "label": "FOAM STRIKE", "note": "About 82 seconds after launch, foam insulation from the external tank strikes the left wing.", "type": "warning" },
+    { "met": 15.93, "label": "COLUMBIA LOST", "note": "On 2003-02-01, at about 9:00 EST, Columbia and its crew of seven are lost during re-entry over East Texas, 16 minutes before the scheduled landing.", "type": "warning" }
+  ]
+}

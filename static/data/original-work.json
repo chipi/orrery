@@ -2004,6 +2004,12 @@
       "cover": false
     },
     {
+      "title": "Artemis I",
+      "file": "/images/missions/thumbnails/artemis1.webp",
+      "route": "/missions?id=artemis1",
+      "cover": false
+    },
+    {
       "title": "Artemis II",
       "file": "/images/missions/thumbnails/artemis2.webp",
       "route": "/missions?id=artemis2",
@@ -2589,6 +2595,24 @@
       "title": "Starship Mars Crew",
       "file": "/images/missions/thumbnails/starship-mars-crew.webp",
       "route": "/missions?id=starship-mars-crew",
+      "cover": false
+    },
+    {
+      "title": "STS-1",
+      "file": "/images/missions/thumbnails/sts-1.webp",
+      "route": "/missions?id=sts-1",
+      "cover": false
+    },
+    {
+      "title": "STS-107",
+      "file": "/images/missions/thumbnails/sts-107.webp",
+      "route": "/missions?id=sts-107",
+      "cover": false
+    },
+    {
+      "title": "STS-51-L",
+      "file": "/images/missions/thumbnails/sts-51-l.webp",
+      "route": "/missions?id=sts-51-l",
       "cover": false
     },
     {
@@ -5093,7 +5117,7 @@
     "exploded_art": 76,
     "landing_art": 39,
     "blueprint_art": 18,
-    "mission_trajectories": 128,
+    "mission_trajectories": 132,
     "site_illustrations": 16,
     "lab_illustrations": 25,
     "diagrams_science": 117,

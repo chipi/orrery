@@ -1,0 +1,29 @@
+{
+  "name": "STS-107",
+  "vehicle": "Space Shuttle Columbia (OV-102)",
+  "payload": "Modulo di ricerca doppio SPACEHAB con oltre 80 esperimenti; sette membri dell’equipaggio",
+  "delta_v": "~9.4 km/s (LEO)",
+  "type": "VOLO DI RICERCA CON EQUIPAGGIO · PERSO AL RIENTRO",
+  "first": "Un volo scientifico di 16 giorni che si concluse con la perdita del Columbia al rientro",
+  "description": "STS-107 fu una missione di ricerca in microgravità (Microgravity Research Mission) di 16 giorni che trasportava un modulo di ricerca doppio SPACEHAB con oltre 80 esperimenti: carichi commerciali, studi dell’Agenzia Spaziale Europea e ricerche biologiche e fisiche della NASA. L’equipaggio di sette persone era composto da Rick D. Husband, comandante; William C. McCool, pilota; Michael P. Anderson, comandante del carico utile; David M. Brown, Kalpana Chawla e Laurel B. Clark, specialisti di missione; e Ilan Ramon, specialista del carico utile, in rappresentanza dell’Agenzia Spaziale Israeliana. Il Columbia decollò dalla rampa 39A alle 10:39 EST (15:39 UTC) del 2003-01-16. Circa 82 secondi dopo il lancio, schiuma isolante del serbatoio esterno colpì l’ala sinistra. La NASA riferisce che gli astronauti superarono le aspettative degli scienziati sui risultati ottenuti nei loro 16 giorni. Il 2003-02-01, durante il rientro sul Texas orientale intorno alle 9:00 EST, il Columbia e il suo equipaggio andarono perduti, 16 minuti prima dell’atterraggio previsto al Kennedy Space Center. Il Columbia Accident Investigation Board, presieduto dall’ammiraglio in pensione Harold W. Gehman, ricondusse il danno all’impatto della schiuma sull’ala sinistra e stabilì che la distruzione dell’ala per surriscaldamento causò la disintegrazione del Columbia. Pubblicò il proprio rapporto il 2003-08-26.",
+  "events": [
+    {
+      "met": 0,
+      "label": "DECOLLO",
+      "note": "Il Columbia decolla dalla rampa 39A alle 10:39 EST (15:39 UTC) del 2003-01-16.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.00095,
+      "label": "IMPATTO DELLA SCHIUMA",
+      "note": "Circa 82 secondi dopo il lancio, schiuma isolante del serbatoio esterno colpisce l’ala sinistra.",
+      "type": "warning"
+    },
+    {
+      "met": 15.93,
+      "label": "COLUMBIA PERSO",
+      "note": "Il 2003-02-01, intorno alle 9:00 EST, il Columbia e i suoi sette membri dell’equipaggio vanno perduti durante il rientro sul Texas orientale, 16 minuti prima dell’atterraggio previsto.",
+      "type": "warning"
+    }
+  ]
+}

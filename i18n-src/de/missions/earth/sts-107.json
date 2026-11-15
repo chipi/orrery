@@ -1,0 +1,29 @@
+{
+  "name": "STS-107",
+  "vehicle": "Space Shuttle Columbia (OV-102)",
+  "payload": "SPACEHAB Research Double Module mit mehr als 80 Experimenten; sieben Besatzungsmitglieder",
+  "delta_v": "~9.4 km/s (LEO)",
+  "type": "BEMANNTER FORSCHUNGSFLUG · BEIM WIEDEREINTRITT VERLOREN",
+  "first": "Ein 16-tägiger Forschungsflug, der mit dem Verlust der Columbia beim Wiedereintritt endete",
+  "description": "STS-107 war eine 16-tägige Mikrogravitations-Forschungsmission (Microgravity Research Mission) mit einem SPACEHAB Research Double Module und mehr als 80 Experimenten: kommerzielle Nutzlasten, Untersuchungen der Europäischen Weltraumorganisation ESA und biologische und physikalische Forschung der NASA. Die siebenköpfige Besatzung bestand aus Rick D. Husband, Kommandant; William C. McCool, Pilot; Michael P. Anderson, Nutzlastkommandant; David M. Brown, Kalpana Chawla und Laurel B. Clark, Missionsspezialisten; und Ilan Ramon, Nutzlastspezialist, der die israelische Weltraumagentur vertrat. Die Columbia hob am 2003-01-16 um 10:39 EST (15:39 UTC) von Rampe 39A ab. Etwa 82 Sekunden nach dem Start traf Schaumisolierung des Außentanks den linken Flügel. Die NASA berichtet, die Astronauten hätten die Erwartungen der Wissenschaftler an die in ihren 16 Tagen gewonnenen Ergebnisse übertroffen. Am 2003-02-01 gingen die Columbia und ihre Besatzung beim Wiedereintritt über Ost-Texas gegen 9:00 EST verloren, 16 Minuten vor der geplanten Landung im Kennedy Space Center. Das Columbia Accident Investigation Board unter dem Vorsitz des pensionierten Admirals Harold W. Gehman führte den Schaden auf den Schaumtreffer am linken Flügel zurück und stellte fest, dass die Zerstörung des Flügels durch Überhitzung das Auseinanderbrechen der Columbia verursachte. Es veröffentlichte seinen Bericht am 2003-08-26.",
+  "events": [
+    {
+      "met": 0,
+      "label": "START",
+      "note": "Die Columbia hebt am 2003-01-16 um 10:39 EST (15:39 UTC) von Rampe 39A ab.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.00095,
+      "label": "SCHAUMTREFFER",
+      "note": "Etwa 82 Sekunden nach dem Start trifft Schaumisolierung des Außentanks den linken Flügel.",
+      "type": "warning"
+    },
+    {
+      "met": 15.93,
+      "label": "COLUMBIA VERLOREN",
+      "note": "Am 2003-02-01 gehen die Columbia und ihre sieben Besatzungsmitglieder gegen 9:00 EST beim Wiedereintritt über Ost-Texas verloren, 16 Minuten vor der geplanten Landung.",
+      "type": "warning"
+    }
+  ]
+}

@@ -102069,6 +102069,46 @@
       "fetched_at": "2026-06-19T09:26:46.875Z"
     },
     {
+      "id": "81a62b9870285647",
+      "path": "/images/fleet-galleries/challenger/06.webp",
+      "source_type": "wikimedia-commons",
+      "title": "File:STS-51-L - Space Shuttle Challenger on the Crawler-Transporter.jpg",
+      "author": "NASA",
+      "agency": "NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:STS-51-L_-_Space_Shuttle_Challenger_on_the_Crawler-Transporter.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/fd/STS-51-L_-_Space_Shuttle_Challenger_on_the_Crawler-Transporter.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Public domain",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 59211933,
+      "nasa_id": null,
+      "fetched_at": "2026-11-15T13:29:23.822Z"
+    },
+    {
+      "id": "e8ddcbdff6c57dab",
+      "path": "/images/fleet-galleries/challenger/06.1x1.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:STS-51-L - Space Shuttle Challenger on the Crawler-Transporter.jpg",
+      "author": "NASA",
+      "agency": "NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:STS-51-L_-_Space_Shuttle_Challenger_on_the_Crawler-Transporter.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/fd/STS-51-L_-_Space_Shuttle_Challenger_on_the_Crawler-Transporter.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Public domain",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 59211933,
+      "nasa_id": null,
+      "fetched_at": "2026-11-15T13:29:23.822Z"
+    },
+    {
       "id": "98a8c314376801fb",
       "path": "/images/fleet-galleries/chandra/04.1x1.jpg",
       "source_type": "nasa-images-api",
@@ -102487,6 +102527,46 @@
       "pageid": null,
       "nasa_id": null,
       "fetched_at": "2026-06-19T09:26:46.876Z"
+    },
+    {
+      "id": "e31950ca43d817a9",
+      "path": "/images/fleet-galleries/columbia/06.webp",
+      "source_type": "wikimedia-commons",
+      "title": "File:Sts-1 crew.jpg",
+      "author": "NASA",
+      "agency": "NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Sts-1_crew.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/ed/Sts-1_crew.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Public domain",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 6449897,
+      "nasa_id": null,
+      "fetched_at": "2026-11-15T13:29:25.071Z"
+    },
+    {
+      "id": "60cd2cec21b55195",
+      "path": "/images/fleet-galleries/columbia/06.1x1.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:Sts-1 crew.jpg",
+      "author": "NASA",
+      "agency": "NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Sts-1_crew.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/ed/Sts-1_crew.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Public domain",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 6449897,
+      "nasa_id": null,
+      "fetched_at": "2026-11-15T13:29:25.072Z"
     },
     {
       "id": "1d66646896b44bac",
@@ -107676,6 +107756,86 @@
       "fetched_at": "2026-11-09T15:37:37.038Z"
     },
     {
+      "id": "47a474bbd8ba590b",
+      "path": "/images/fleet-galleries/orion/05.webp",
+      "source_type": "nasa-images-api",
+      "title": "Orion Snaps a Selfie During External Inspection (cmasaw1_20221118204608_034)",
+      "author": "NASA/JSC",
+      "agency": "NASA",
+      "source_url": "https://images.nasa.gov/details/cmasaw1_20221118204608_034",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "cmasaw1_20221118204608_034",
+      "fetched_at": "2026-11-15T13:29:37.988Z"
+    },
+    {
+      "id": "0307402771fb6377",
+      "path": "/images/fleet-galleries/orion/05.1x1.jpg",
+      "source_type": "nasa-images-api",
+      "title": "Orion Snaps a Selfie During External Inspection (cmasaw1_20221118204608_034)",
+      "author": "NASA/JSC",
+      "agency": "NASA",
+      "source_url": "https://images.nasa.gov/details/cmasaw1_20221118204608_034",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "cmasaw1_20221118204608_034",
+      "fetched_at": "2026-11-15T13:29:37.988Z"
+    },
+    {
+      "id": "8a07bc08dc46bc33",
+      "path": "/images/fleet-galleries/orion/06.webp",
+      "source_type": "nasa-images-api",
+      "title": "Artemis I Flight Day 13: Orion, Earth, and Moon (art001e000672)",
+      "author": "NASA/JSC",
+      "agency": "NASA",
+      "source_url": "https://images.nasa.gov/details/art001e000672",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "art001e000672",
+      "fetched_at": "2026-11-15T13:29:37.988Z"
+    },
+    {
+      "id": "09b3f86f1c734274",
+      "path": "/images/fleet-galleries/orion/06.1x1.jpg",
+      "source_type": "nasa-images-api",
+      "title": "Artemis I Flight Day 13: Orion, Earth, and Moon (art001e000672)",
+      "author": "NASA/JSC",
+      "agency": "NASA",
+      "source_url": "https://images.nasa.gov/details/art001e000672",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "art001e000672",
+      "fetched_at": "2026-11-15T13:29:37.988Z"
+    },
+    {
       "id": "6505c06f2196c977",
       "path": "/images/fleet-galleries/orlan-mks/01.1x1.jpg",
       "source_type": "wikimedia-commons",
@@ -109774,6 +109934,46 @@
       "pageid": null,
       "nasa_id": "KSC-20210917-PH-FMX01_0124",
       "fetched_at": "2026-11-09T16:43:54.317Z"
+    },
+    {
+      "id": "883c79fc9984467b",
+      "path": "/images/fleet-galleries/sls-block-1/06.webp",
+      "source_type": "nasa-images-api",
+      "title": "Artemis I Launch (NHQ202211160200)",
+      "author": "NASA/Bill Ingalls",
+      "agency": "NASA/Bill Ingalls",
+      "source_url": "https://images.nasa.gov/details/NHQ202211160200",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "NHQ202211160200",
+      "fetched_at": "2026-11-15T13:29:37.988Z"
+    },
+    {
+      "id": "4b766de817071862",
+      "path": "/images/fleet-galleries/sls-block-1/06.1x1.jpg",
+      "source_type": "nasa-images-api",
+      "title": "Artemis I Launch (NHQ202211160200)",
+      "author": "NASA/Bill Ingalls",
+      "agency": "NASA/Bill Ingalls",
+      "source_url": "https://images.nasa.gov/details/NHQ202211160200",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "NHQ202211160200",
+      "fetched_at": "2026-11-15T13:29:37.988Z"
     },
     {
       "id": "0be868ea444d5e40",
@@ -117724,6 +117924,1086 @@
       "pageid": 136556667,
       "nasa_id": null,
       "fetched_at": "2026-11-15T10:24:26.288Z"
+    },
+    {
+      "id": "3586b3db9bad3d37",
+      "path": "/images/missions/sts-1/03.webp",
+      "source_type": "wikimedia-commons",
+      "title": "File:The Space Shuttle Columbia on Rogers Dry lakebed at Edwards AFB after landing to complete its first orbital mission on April 14, 1981 (ECN-14697).jpg",
+      "author": "NASA Armstrong Flight Research Center / NASA",
+      "agency": "NASA/Dryden (AFRC)",
+      "source_url": "https://commons.wikimedia.org/wiki/File:The_Space_Shuttle_Columbia_on_Rogers_Dry_lakebed_at_Edwards_AFB_after_landing_to_complete_its_first_orbital_mission_on_April_14,_1981_(ECN-14697).jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/eb/The_Space_Shuttle_Columbia_on_Rogers_Dry_lakebed_at_Edwards_AFB_after_landing_to_complete_its_first_orbital_mission_on_April_14%2C_1981_%28ECN-14697%29.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Public domain",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 176845324,
+      "nasa_id": null,
+      "fetched_at": "2026-11-15T13:29:26.309Z"
+    },
+    {
+      "id": "d9365a58a71165a4",
+      "path": "/images/missions/sts-1/03.1x1.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:The Space Shuttle Columbia on Rogers Dry lakebed at Edwards AFB after landing to complete its first orbital mission on April 14, 1981 (ECN-14697).jpg",
+      "author": "NASA Armstrong Flight Research Center / NASA",
+      "agency": "NASA/Dryden (AFRC)",
+      "source_url": "https://commons.wikimedia.org/wiki/File:The_Space_Shuttle_Columbia_on_Rogers_Dry_lakebed_at_Edwards_AFB_after_landing_to_complete_its_first_orbital_mission_on_April_14,_1981_(ECN-14697).jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/eb/The_Space_Shuttle_Columbia_on_Rogers_Dry_lakebed_at_Edwards_AFB_after_landing_to_complete_its_first_orbital_mission_on_April_14%2C_1981_%28ECN-14697%29.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Public domain",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 176845324,
+      "nasa_id": null,
+      "fetched_at": "2026-11-15T13:29:26.310Z"
+    },
+    {
+      "id": "e5fa0697f8b08208",
+      "path": "/images/missions/sts-1/04.webp",
+      "source_type": "wikimedia-commons",
+      "title": "File:Columbia STS-1 arrival at launch pad.jpg",
+      "author": "NASA",
+      "agency": "NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Columbia_STS-1_arrival_at_launch_pad.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Columbia_STS-1_arrival_at_launch_pad.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Public domain",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 375472,
+      "nasa_id": null,
+      "fetched_at": "2026-11-15T13:29:27.542Z"
+    },
+    {
+      "id": "b8bb2ad4854b0fc6",
+      "path": "/images/missions/sts-1/04.1x1.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:Columbia STS-1 arrival at launch pad.jpg",
+      "author": "NASA",
+      "agency": "NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Columbia_STS-1_arrival_at_launch_pad.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Columbia_STS-1_arrival_at_launch_pad.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Public domain",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 375472,
+      "nasa_id": null,
+      "fetched_at": "2026-11-15T13:29:27.543Z"
+    },
+    {
+      "id": "3e671fe2b5f143f9",
+      "path": "/images/missions/sts-1/05.webp",
+      "source_type": "wikimedia-commons",
+      "title": "File:Sts-1 crew.jpg",
+      "author": "NASA",
+      "agency": "NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Sts-1_crew.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/ed/Sts-1_crew.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Public domain",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 6449897,
+      "nasa_id": null,
+      "fetched_at": "2026-11-15T13:29:27.543Z"
+    },
+    {
+      "id": "c405c88fc143fb67",
+      "path": "/images/missions/sts-1/05.1x1.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:Sts-1 crew.jpg",
+      "author": "NASA",
+      "agency": "NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Sts-1_crew.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/ed/Sts-1_crew.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Public domain",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 6449897,
+      "nasa_id": null,
+      "fetched_at": "2026-11-15T13:29:27.543Z"
+    },
+    {
+      "id": "62d034f31173ca32",
+      "path": "/images/missions/sts-1/01.webp",
+      "source_type": "nasa-images-api",
+      "title": "Launch Views - Columbia - STS-1 Mission - KSC (S81-30459)",
+      "author": "NASA/JSC",
+      "agency": "NASA",
+      "source_url": "https://images.nasa.gov/details/S81-30459",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "S81-30459",
+      "fetched_at": "2026-11-15T13:29:37.988Z"
+    },
+    {
+      "id": "f0f8b19cd5b0ecf5",
+      "path": "/images/missions/sts-1/01.1x1.jpg",
+      "source_type": "nasa-images-api",
+      "title": "Launch Views - Columbia - STS-1 Mission - KSC (S81-30459)",
+      "author": "NASA/JSC",
+      "agency": "NASA",
+      "source_url": "https://images.nasa.gov/details/S81-30459",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "S81-30459",
+      "fetched_at": "2026-11-15T13:29:37.988Z"
+    },
+    {
+      "id": "f597e3a44bbf7b3c",
+      "path": "/images/missions/sts-1/02.webp",
+      "source_type": "nasa-images-api",
+      "title": "STS-1 - Landing View - Edwards AFB (EAFB), CA (S81-30425)",
+      "author": "NASA/JSC",
+      "agency": "NASA",
+      "source_url": "https://images.nasa.gov/details/S81-30425",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "S81-30425",
+      "fetched_at": "2026-11-15T13:29:37.988Z"
+    },
+    {
+      "id": "663ead29e86d5fb9",
+      "path": "/images/missions/sts-1/02.1x1.jpg",
+      "source_type": "nasa-images-api",
+      "title": "STS-1 - Landing View - Edwards AFB (EAFB), CA (S81-30425)",
+      "author": "NASA/JSC",
+      "agency": "NASA",
+      "source_url": "https://images.nasa.gov/details/S81-30425",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "S81-30425",
+      "fetched_at": "2026-11-15T13:29:37.988Z"
+    },
+    {
+      "id": "bd2cb89f010fd0be",
+      "path": "/images/missions/sts-1/06.webp",
+      "source_type": "nasa-images-api",
+      "title": "Space Shuttle astronauts John Young and Robert Crippen (in tan space suits) are greeted by members of the ground crew after stepping off the Space Shuttle Columbia after STS-1 (EC81-15177)",
+      "author": "NASA",
+      "agency": "NASA/Dryden (AFRC)",
+      "source_url": "https://images.nasa.gov/details/EC81-15177",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "EC81-15177",
+      "fetched_at": "2026-11-15T13:29:37.988Z"
+    },
+    {
+      "id": "36f944a06c7d104c",
+      "path": "/images/missions/sts-1/06.1x1.jpg",
+      "source_type": "nasa-images-api",
+      "title": "Space Shuttle astronauts John Young and Robert Crippen (in tan space suits) are greeted by members of the ground crew after stepping off the Space Shuttle Columbia after STS-1 (EC81-15177)",
+      "author": "NASA",
+      "agency": "NASA/Dryden (AFRC)",
+      "source_url": "https://images.nasa.gov/details/EC81-15177",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "EC81-15177",
+      "fetched_at": "2026-11-15T13:29:37.988Z"
+    },
+    {
+      "id": "c40e7ef35cf046f0",
+      "path": "/images/missions/sts-1/07.webp",
+      "source_type": "nasa-images-api",
+      "title": "KSC-81PC-0347 (81PC0347)",
+      "author": "NASA or National Aeronautics and Space Administration",
+      "agency": "NASA/KSC",
+      "source_url": "https://images.nasa.gov/details/81PC0347",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "81PC0347",
+      "fetched_at": "2026-11-15T13:29:37.988Z"
+    },
+    {
+      "id": "b103b1cbb373c341",
+      "path": "/images/missions/sts-1/07.1x1.jpg",
+      "source_type": "nasa-images-api",
+      "title": "KSC-81PC-0347 (81PC0347)",
+      "author": "NASA or National Aeronautics and Space Administration",
+      "agency": "NASA/KSC",
+      "source_url": "https://images.nasa.gov/details/81PC0347",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "81PC0347",
+      "fetched_at": "2026-11-15T13:29:37.988Z"
+    },
+    {
+      "id": "454cc4cd2d95f39e",
+      "path": "/images/missions/sts-107/01.webp",
+      "source_type": "wikimedia-commons",
+      "title": "File:Crew of STS-107, official photo.jpg",
+      "author": "NASA",
+      "agency": "NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Crew_of_STS-107,_official_photo.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/04/Crew_of_STS-107%2C_official_photo.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Public domain",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 780785,
+      "nasa_id": null,
+      "fetched_at": "2026-11-15T13:29:28.810Z"
+    },
+    {
+      "id": "5f6349c925d6748c",
+      "path": "/images/missions/sts-107/01.1x1.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:Crew of STS-107, official photo.jpg",
+      "author": "NASA",
+      "agency": "NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Crew_of_STS-107,_official_photo.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/04/Crew_of_STS-107%2C_official_photo.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Public domain",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 780785,
+      "nasa_id": null,
+      "fetched_at": "2026-11-15T13:29:28.811Z"
+    },
+    {
+      "id": "dd10ed5171a8e26d",
+      "path": "/images/missions/sts-107/02.webp",
+      "source_type": "wikimedia-commons",
+      "title": "File:STS-107 crew in orbit.jpg",
+      "author": "Unknown (film recovered by NASA)",
+      "agency": "NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:STS-107_crew_in_orbit.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/5d/STS-107_crew_in_orbit.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Public domain",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 261717,
+      "nasa_id": null,
+      "fetched_at": "2026-11-15T13:29:30.056Z"
+    },
+    {
+      "id": "9eae72805f5756be",
+      "path": "/images/missions/sts-107/02.1x1.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:STS-107 crew in orbit.jpg",
+      "author": "Unknown (film recovered by NASA)",
+      "agency": "NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:STS-107_crew_in_orbit.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/5d/STS-107_crew_in_orbit.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Public domain",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 261717,
+      "nasa_id": null,
+      "fetched_at": "2026-11-15T13:29:30.056Z"
+    },
+    {
+      "id": "25df1894d0686529",
+      "path": "/images/missions/sts-107/03.webp",
+      "source_type": "wikimedia-commons",
+      "title": "File:STS-107 Crew portrait.jpg",
+      "author": "NASA official photo",
+      "agency": "NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:STS-107_Crew_portrait.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/2d/STS-107_Crew_portrait.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Public domain",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 15915510,
+      "nasa_id": null,
+      "fetched_at": "2026-11-15T13:29:31.307Z"
+    },
+    {
+      "id": "89b5a44bb0fac285",
+      "path": "/images/missions/sts-107/03.1x1.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:STS-107 Crew portrait.jpg",
+      "author": "NASA official photo",
+      "agency": "NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:STS-107_Crew_portrait.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/2d/STS-107_Crew_portrait.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Public domain",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 15915510,
+      "nasa_id": null,
+      "fetched_at": "2026-11-15T13:29:31.308Z"
+    },
+    {
+      "id": "2b2f4c6a56b62ea7",
+      "path": "/images/missions/sts-107/04.webp",
+      "source_type": "wikimedia-commons",
+      "title": "File:STS-107 Columbia from LaunchPad39.jpg",
+      "author": "NASA",
+      "agency": "NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:STS-107_Columbia_from_LaunchPad39.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/5a/STS-107_Columbia_from_LaunchPad39.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Public domain",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 52655125,
+      "nasa_id": null,
+      "fetched_at": "2026-11-15T13:29:32.544Z"
+    },
+    {
+      "id": "86e19f6bcddbea69",
+      "path": "/images/missions/sts-107/04.1x1.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:STS-107 Columbia from LaunchPad39.jpg",
+      "author": "NASA",
+      "agency": "NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:STS-107_Columbia_from_LaunchPad39.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/5a/STS-107_Columbia_from_LaunchPad39.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Public domain",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 52655125,
+      "nasa_id": null,
+      "fetched_at": "2026-11-15T13:29:32.544Z"
+    },
+    {
+      "id": "3f1341e56c06c51e",
+      "path": "/images/missions/sts-107/06.webp",
+      "source_type": "wikimedia-commons",
+      "title": "File:STS-107 Mission Poster.jpg",
+      "author": "NASA Space Flight Awareness",
+      "agency": "NASA Space Flight Awareness",
+      "source_url": "https://commons.wikimedia.org/wiki/File:STS-107_Mission_Poster.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/17/STS-107_Mission_Poster.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Public domain",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 17447739,
+      "nasa_id": null,
+      "fetched_at": "2026-11-15T13:29:33.779Z"
+    },
+    {
+      "id": "300e18097c07814d",
+      "path": "/images/missions/sts-107/06.1x1.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:STS-107 Mission Poster.jpg",
+      "author": "NASA Space Flight Awareness",
+      "agency": "NASA Space Flight Awareness",
+      "source_url": "https://commons.wikimedia.org/wiki/File:STS-107_Mission_Poster.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/17/STS-107_Mission_Poster.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Public domain",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 17447739,
+      "nasa_id": null,
+      "fetched_at": "2026-11-15T13:29:33.780Z"
+    },
+    {
+      "id": "e62d3b77fd22cbc6",
+      "path": "/images/missions/sts-107/05.webp",
+      "source_type": "nasa-images-api",
+      "title": "STS107-S-016 (16 January 2003) --- The Space Shuttle Columbia leaves Launch Pad 39A for ST (STS107-S-016)",
+      "author": "NASA/JSC",
+      "agency": "NASA/JSC",
+      "source_url": "https://images.nasa.gov/details/STS107-S-016",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "STS107-S-016",
+      "fetched_at": "2026-11-15T13:29:37.988Z"
+    },
+    {
+      "id": "38bb532983987162",
+      "path": "/images/missions/sts-107/05.1x1.jpg",
+      "source_type": "nasa-images-api",
+      "title": "STS107-S-016 (16 January 2003) --- The Space Shuttle Columbia leaves Launch Pad 39A for ST (STS107-S-016)",
+      "author": "NASA/JSC",
+      "agency": "NASA/JSC",
+      "source_url": "https://images.nasa.gov/details/STS107-S-016",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "STS107-S-016",
+      "fetched_at": "2026-11-15T13:29:37.988Z"
+    },
+    {
+      "id": "5b45d38e7295128c",
+      "path": "/images/missions/sts-51-l/01.webp",
+      "source_type": "wikimedia-commons",
+      "title": "File:Challenger flight 51-l crew.jpg",
+      "author": "NASA",
+      "agency": "NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Challenger_flight_51-l_crew.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Challenger_flight_51-l_crew.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Public domain",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 181762,
+      "nasa_id": null,
+      "fetched_at": "2026-11-15T13:29:35.023Z"
+    },
+    {
+      "id": "39c48af655a8ae71",
+      "path": "/images/missions/sts-51-l/01.1x1.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:Challenger flight 51-l crew.jpg",
+      "author": "NASA",
+      "agency": "NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Challenger_flight_51-l_crew.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Challenger_flight_51-l_crew.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Public domain",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 181762,
+      "nasa_id": null,
+      "fetched_at": "2026-11-15T13:29:35.023Z"
+    },
+    {
+      "id": "20048872a081ea25",
+      "path": "/images/missions/sts-51-l/04.webp",
+      "source_type": "wikimedia-commons",
+      "title": "File:STS-51-L - Space Shuttle Challenger on the Crawler-Transporter.jpg",
+      "author": "NASA",
+      "agency": "NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:STS-51-L_-_Space_Shuttle_Challenger_on_the_Crawler-Transporter.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/fd/STS-51-L_-_Space_Shuttle_Challenger_on_the_Crawler-Transporter.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Public domain",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 59211933,
+      "nasa_id": null,
+      "fetched_at": "2026-11-15T13:29:35.023Z"
+    },
+    {
+      "id": "24750d6f03fca827",
+      "path": "/images/missions/sts-51-l/04.1x1.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:STS-51-L - Space Shuttle Challenger on the Crawler-Transporter.jpg",
+      "author": "NASA",
+      "agency": "NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:STS-51-L_-_Space_Shuttle_Challenger_on_the_Crawler-Transporter.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/fd/STS-51-L_-_Space_Shuttle_Challenger_on_the_Crawler-Transporter.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Public domain",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 59211933,
+      "nasa_id": null,
+      "fetched_at": "2026-11-15T13:29:35.023Z"
+    },
+    {
+      "id": "0b1bcc917a6380bb",
+      "path": "/images/missions/sts-51-l/02.webp",
+      "source_type": "nasa-images-api",
+      "title": "Crewmembers of the STS 51-L mission at pre-launch breakfast (51l-s-029)",
+      "author": "NASA/JSC",
+      "agency": "NASA/JSC",
+      "source_url": "https://images.nasa.gov/details/51l-s-029",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "51l-s-029",
+      "fetched_at": "2026-11-15T13:29:37.988Z"
+    },
+    {
+      "id": "fa8ff5c696afea06",
+      "path": "/images/missions/sts-51-l/02.1x1.jpg",
+      "source_type": "nasa-images-api",
+      "title": "Crewmembers of the STS 51-L mission at pre-launch breakfast (51l-s-029)",
+      "author": "NASA/JSC",
+      "agency": "NASA/JSC",
+      "source_url": "https://images.nasa.gov/details/51l-s-029",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "51l-s-029",
+      "fetched_at": "2026-11-15T13:29:37.988Z"
+    },
+    {
+      "id": "e1fba7db0ba074b5",
+      "path": "/images/missions/sts-51-l/03.webp",
+      "source_type": "nasa-images-api",
+      "title": "Crew pose for portrait while training at KSC (S86-30460)",
+      "author": "NASA/JSC",
+      "agency": "NASA/JSC",
+      "source_url": "https://images.nasa.gov/details/S86-30460",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "S86-30460",
+      "fetched_at": "2026-11-15T13:29:37.988Z"
+    },
+    {
+      "id": "8343b6ee4fe1e2cb",
+      "path": "/images/missions/sts-51-l/03.1x1.jpg",
+      "source_type": "nasa-images-api",
+      "title": "Crew pose for portrait while training at KSC (S86-30460)",
+      "author": "NASA/JSC",
+      "agency": "NASA/JSC",
+      "source_url": "https://images.nasa.gov/details/S86-30460",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "S86-30460",
+      "fetched_at": "2026-11-15T13:29:37.988Z"
+    },
+    {
+      "id": "836f74cfd6299839",
+      "path": "/images/missions/sts-51-l/05.webp",
+      "source_type": "nasa-images-api",
+      "title": "STS-51L CREW INSIGNIA (S85-46260)",
+      "author": "NASA/JSC",
+      "agency": "NASA/JSC",
+      "source_url": "https://images.nasa.gov/details/S85-46260",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "S85-46260",
+      "fetched_at": "2026-11-15T13:29:37.988Z"
+    },
+    {
+      "id": "ac7e8b6924bd726d",
+      "path": "/images/missions/sts-51-l/05.1x1.jpg",
+      "source_type": "nasa-images-api",
+      "title": "STS-51L CREW INSIGNIA (S85-46260)",
+      "author": "NASA/JSC",
+      "agency": "NASA/JSC",
+      "source_url": "https://images.nasa.gov/details/S85-46260",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "S85-46260",
+      "fetched_at": "2026-11-15T13:29:37.988Z"
+    },
+    {
+      "id": "b02ebb00686909a7",
+      "path": "/images/missions/sts-51-l/06.webp",
+      "source_type": "nasa-images-api",
+      "title": "Liftoff of Shuttle Challenger for STS 51-L mission (51l-s-157)",
+      "author": "NASA/JSC",
+      "agency": "NASA/JSC",
+      "source_url": "https://images.nasa.gov/details/51l-s-157",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "51l-s-157",
+      "fetched_at": "2026-11-15T13:29:37.988Z"
+    },
+    {
+      "id": "42686c602fab5206",
+      "path": "/images/missions/sts-51-l/06.1x1.jpg",
+      "source_type": "nasa-images-api",
+      "title": "Liftoff of Shuttle Challenger for STS 51-L mission (51l-s-157)",
+      "author": "NASA/JSC",
+      "agency": "NASA/JSC",
+      "source_url": "https://images.nasa.gov/details/51l-s-157",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "51l-s-157",
+      "fetched_at": "2026-11-15T13:29:37.988Z"
+    },
+    {
+      "id": "5944098598b3b503",
+      "path": "/images/missions/artemis1/01.webp",
+      "source_type": "nasa-images-api",
+      "title": "Artemis I Launch (NHQ202211160200)",
+      "author": "NASA/Bill Ingalls",
+      "agency": "NASA/Bill Ingalls",
+      "source_url": "https://images.nasa.gov/details/NHQ202211160200",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "NHQ202211160200",
+      "fetched_at": "2026-11-15T13:29:37.988Z"
+    },
+    {
+      "id": "2f05bf329bba3ae4",
+      "path": "/images/missions/artemis1/01.1x1.jpg",
+      "source_type": "nasa-images-api",
+      "title": "Artemis I Launch (NHQ202211160200)",
+      "author": "NASA/Bill Ingalls",
+      "agency": "NASA/Bill Ingalls",
+      "source_url": "https://images.nasa.gov/details/NHQ202211160200",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "NHQ202211160200",
+      "fetched_at": "2026-11-15T13:29:37.988Z"
+    },
+    {
+      "id": "a631d7a56caa7b8c",
+      "path": "/images/missions/artemis1/02.webp",
+      "source_type": "nasa-images-api",
+      "title": "Artemis I Rollout for Launch (KSC-20221104-PH-ILW01_0298)",
+      "author": "NASA/Isaac Watson",
+      "agency": "NASA/Isaac Watson",
+      "source_url": "https://images.nasa.gov/details/KSC-20221104-PH-ILW01_0298",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "KSC-20221104-PH-ILW01_0298",
+      "fetched_at": "2026-11-15T13:29:37.988Z"
+    },
+    {
+      "id": "56f60604521cf43d",
+      "path": "/images/missions/artemis1/02.1x1.jpg",
+      "source_type": "nasa-images-api",
+      "title": "Artemis I Rollout for Launch (KSC-20221104-PH-ILW01_0298)",
+      "author": "NASA/Isaac Watson",
+      "agency": "NASA/Isaac Watson",
+      "source_url": "https://images.nasa.gov/details/KSC-20221104-PH-ILW01_0298",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "KSC-20221104-PH-ILW01_0298",
+      "fetched_at": "2026-11-15T13:29:37.988Z"
+    },
+    {
+      "id": "810a4f40cb62d8f0",
+      "path": "/images/missions/artemis1/03.webp",
+      "source_type": "nasa-images-api",
+      "title": "Artemis I Flight Day 13: Orion, Earth, and Moon (art001e000672)",
+      "author": "NASA/JSC",
+      "agency": "NASA",
+      "source_url": "https://images.nasa.gov/details/art001e000672",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "art001e000672",
+      "fetched_at": "2026-11-15T13:29:37.988Z"
+    },
+    {
+      "id": "52205f8a4bdb25fe",
+      "path": "/images/missions/artemis1/03.1x1.jpg",
+      "source_type": "nasa-images-api",
+      "title": "Artemis I Flight Day 13: Orion, Earth, and Moon (art001e000672)",
+      "author": "NASA/JSC",
+      "agency": "NASA",
+      "source_url": "https://images.nasa.gov/details/art001e000672",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "art001e000672",
+      "fetched_at": "2026-11-15T13:29:37.988Z"
+    },
+    {
+      "id": "3b6595d1b6550918",
+      "path": "/images/missions/artemis1/04.webp",
+      "source_type": "nasa-images-api",
+      "title": "Orion Approaches Moon for Outbound Powered Flyby (art001e000268)",
+      "author": "NASA/JSC",
+      "agency": "NASA",
+      "source_url": "https://images.nasa.gov/details/art001e000268",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "art001e000268",
+      "fetched_at": "2026-11-15T13:29:37.988Z"
+    },
+    {
+      "id": "67c64d9a74eacdcb",
+      "path": "/images/missions/artemis1/04.1x1.jpg",
+      "source_type": "nasa-images-api",
+      "title": "Orion Approaches Moon for Outbound Powered Flyby (art001e000268)",
+      "author": "NASA/JSC",
+      "agency": "NASA",
+      "source_url": "https://images.nasa.gov/details/art001e000268",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "art001e000268",
+      "fetched_at": "2026-11-15T13:29:37.988Z"
+    },
+    {
+      "id": "63f7d53500f219c5",
+      "path": "/images/missions/artemis1/05.webp",
+      "source_type": "nasa-images-api",
+      "title": "Orion Snaps a Selfie During External Inspection (cmasaw1_20221118204608_034)",
+      "author": "NASA/JSC",
+      "agency": "NASA",
+      "source_url": "https://images.nasa.gov/details/cmasaw1_20221118204608_034",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "cmasaw1_20221118204608_034",
+      "fetched_at": "2026-11-15T13:29:37.988Z"
+    },
+    {
+      "id": "74a5ab9d059cbda4",
+      "path": "/images/missions/artemis1/05.1x1.jpg",
+      "source_type": "nasa-images-api",
+      "title": "Orion Snaps a Selfie During External Inspection (cmasaw1_20221118204608_034)",
+      "author": "NASA/JSC",
+      "agency": "NASA",
+      "source_url": "https://images.nasa.gov/details/cmasaw1_20221118204608_034",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "cmasaw1_20221118204608_034",
+      "fetched_at": "2026-11-15T13:29:37.988Z"
+    },
+    {
+      "id": "bb4ce61db73a4b27",
+      "path": "/images/missions/artemis1/06.webp",
+      "source_type": "nasa-images-api",
+      "title": "Orion Recovery (KSC-20221211-PH-JNV01-0008)",
+      "author": "NASA/Josh Valcarcel",
+      "agency": "NASA/Josh Valcarcel",
+      "source_url": "https://images.nasa.gov/details/KSC-20221211-PH-JNV01-0008",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "KSC-20221211-PH-JNV01-0008",
+      "fetched_at": "2026-11-15T13:29:37.988Z"
+    },
+    {
+      "id": "9f0fed48f34f15ce",
+      "path": "/images/missions/artemis1/06.1x1.jpg",
+      "source_type": "nasa-images-api",
+      "title": "Orion Recovery (KSC-20221211-PH-JNV01-0008)",
+      "author": "NASA/Josh Valcarcel",
+      "agency": "NASA/Josh Valcarcel",
+      "source_url": "https://images.nasa.gov/details/KSC-20221211-PH-JNV01-0008",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "KSC-20221211-PH-JNV01-0008",
+      "fetched_at": "2026-11-15T13:29:37.988Z"
+    },
+    {
+      "id": "0f46d335f8827f44",
+      "path": "/images/missions/artemis1/07.webp",
+      "source_type": "nasa-images-api",
+      "title": "Orion Splashdown (KSC-20221211-PH-JNV01-0001)",
+      "author": "NASA/Josh Valcarcel",
+      "agency": "NASA/Josh Valcarcel",
+      "source_url": "https://images.nasa.gov/details/KSC-20221211-PH-JNV01-0001",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "KSC-20221211-PH-JNV01-0001",
+      "fetched_at": "2026-11-15T13:29:37.988Z"
+    },
+    {
+      "id": "ec3c15e0c2f223d2",
+      "path": "/images/missions/artemis1/07.1x1.jpg",
+      "source_type": "nasa-images-api",
+      "title": "Orion Splashdown (KSC-20221211-PH-JNV01-0001)",
+      "author": "NASA/Josh Valcarcel",
+      "agency": "NASA/Josh Valcarcel",
+      "source_url": "https://images.nasa.gov/details/KSC-20221211-PH-JNV01-0001",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "KSC-20221211-PH-JNV01-0001",
+      "fetched_at": "2026-11-15T13:29:37.988Z"
+    },
+    {
+      "id": "2bc3d2172bd9bcd1",
+      "path": "/images/missions/artemis1/08.webp",
+      "source_type": "nasa-images-api",
+      "title": "Artemis I Orion Post-Flight Payload Processing - Campos/Moonikin (KSC-20230110-PH-CSH01_0035)",
+      "author": "NASA/Cory Huston",
+      "agency": "NASA/Cory Huston",
+      "source_url": "https://images.nasa.gov/details/KSC-20230110-PH-CSH01_0035",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "KSC-20230110-PH-CSH01_0035",
+      "fetched_at": "2026-11-15T13:29:37.988Z"
+    },
+    {
+      "id": "1538a75926e65e4a",
+      "path": "/images/missions/artemis1/08.1x1.jpg",
+      "source_type": "nasa-images-api",
+      "title": "Artemis I Orion Post-Flight Payload Processing - Campos/Moonikin (KSC-20230110-PH-CSH01_0035)",
+      "author": "NASA/Cory Huston",
+      "agency": "NASA/Cory Huston",
+      "source_url": "https://images.nasa.gov/details/KSC-20230110-PH-CSH01_0035",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "KSC-20230110-PH-CSH01_0035",
+      "fetched_at": "2026-11-15T13:29:37.988Z"
     }
   ]
 }

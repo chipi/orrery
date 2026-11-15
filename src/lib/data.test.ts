@@ -168,8 +168,9 @@ describe('getMissionIndex', () => {
     // 2026-07-12 — /programs Earth flights: Mercury (freedom-7…), Gemini
     // (3/4/6a/7/8/12), Soyuz 1 & 11. 115 → 123. 2026-07-18 — RFC-034 §12 Phase-2 descent missions huygens + near-shoemaker. 123 → 125. 2026-10-20 — Artemis architecture change: artemis5 added (artemis3 moved Moon → Earth). 125 → 126.
     const missions = await getMissionIndex();
-    // 2026-11-15 — slice H adds kaguya + chandrayaan2. 126 → 128.
-    expect(missions).toHaveLength(128);
+    // 2026-11-15 — slice H adds kaguya + chandrayaan2 (126 → 128); content4 adds sts-1, sts-51-l,
+    // sts-107 and artemis1 (128 → 132).
+    expect(missions).toHaveLength(132);
   });
 
   it('every entry has the required language-neutral fields', async () => {
@@ -224,9 +225,9 @@ describe('filterMissions', () => {
     for (const m of mars) expect(m.dest).toBe('MARS');
   });
 
-  it('MOON filter returns 34', async () => {
+  it('MOON filter returns 35', async () => {
     const moon = await filterMissions({ dest: 'MOON' });
-    expect(moon).toHaveLength(34);
+    expect(moon).toHaveLength(35);
     for (const m of moon) expect(m.dest).toBe('MOON');
   });
 
@@ -448,7 +449,7 @@ describe('getSun', () => {
 describe('getMissionsForLibrary', () => {
   it('returns all 115 missions merged with their en-US overlays', async () => {
     const list = await getMissionsForLibrary();
-    expect(list).toHaveLength(128);
+    expect(list).toHaveLength(132);
     // Every mission should have its base fields…
     for (const m of list) {
       expect(m.id).toBeTruthy();
@@ -494,7 +495,7 @@ describe('getMissionsForLibrary', () => {
 
   it('falls back to en-US for missing locale', async () => {
     const list = await getMissionsForLibrary('xx-TEST');
-    expect(list).toHaveLength(128);
+    expect(list).toHaveLength(132);
   });
 
   it('count matches what filterMissions reports', async () => {
@@ -513,6 +514,8 @@ describe('getMissionsForLibrary', () => {
       'chandrayaan2',
       'schiaparelli',
       'soyuz-1',
+      'sts-107',
+      'sts-51-l',
     ]);
     expect(lib.find((m) => m.id === 'curiosity')!.outcome).toBeUndefined();
   });
@@ -1389,7 +1392,7 @@ describe('programs / badges / sourcing loaders (PRD-029)', () => {
     );
     expect(note(de, 'galileo')).toContain('STS-34 im Oktober 1989');
     expect(de?.roster.length).toBe(en?.roster.length);
-    const sts1 = (p: typeof de) => p?.roster.find((r) => r.name === 'STS-1')?.note;
+    const sts1 = (p: typeof de) => p?.roster.find((r) => r.linked_id === 'sts-1')?.note;
     expect(sts1(de)).toContain('erste Orbitalflug');
     // a locale with no overlay at all: its rows stay the English base
     const xx = await getProgram('space-shuttle', 'xx');

@@ -1,0 +1,23 @@
+{
+  "name": "STS-1",
+  "vehicle": "Space Shuttle Columbia (OV-102)",
+  "payload": "Équipage de deux astronautes (Young, Crippen) ; instrumentation DFI et ACIP",
+  "delta_v": "~9.4 km/s (LEO)",
+  "type": "ESSAI ORBITAL HABITÉ · RÉALISÉ",
+  "first": "Le premier vol d’essai orbital du Space Shuttle, piloté par deux astronautes",
+  "description": "STS-1 fut le premier vol d’essai orbital du Space Shuttle. Le commandant John W. Young et le pilote Robert L. Crippen ont décollé à bord de Columbia depuis le Launch Complex 39A du Centre spatial Kennedy le 1981-04-12 à 7:00:03 EST (12:00:03 UTC), sur une orbite à 166 milles marins (environ 307 km) d’altitude, inclinée de 40.3 degrés. Le catalogue NSSDCA de la NASA le décrit comme le premier vol d’essai orbital habité du Space Transportation System, destiné à vérifier les performances d’ensemble du véhicule. En 54 heures, 20 minutes et 53 secondes, l’équipage a accompli 37 révolutions, puis s’est posé sur la piste 23 de la base aérienne d’Edwards, en Californie, le 1981-04-14 à 10:20:57 PST (18:20:57 UTC). Les charges utiles étaient des instruments : la Developmental Flight Instrumentation et la palette ACIP enregistraient températures, pressions et accélérations. Le lancement et l’onde de surpression des propulseurs d'appoint à poudre ont fait perdre 16 tuiles à l’orbiteur, et 148 autres ont été endommagées.",
+  "events": [
+    {
+      "met": 0,
+      "label": "DÉCOLLAGE",
+      "note": "Columbia décolle du pas de tir 39A le 1981-04-12 à 7:00:03 EST (12:00:03 UTC).",
+      "type": "nominal"
+    },
+    {
+      "met": 2.2645,
+      "label": "ATTERRISSAGE",
+      "note": "Piste 23 de la base aérienne d’Edwards le 1981-04-14, 10:20:57 PST, après 37 révolutions.",
+      "type": "nominal"
+    }
+  ]
+}

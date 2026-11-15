@@ -97,9 +97,8 @@
     "/programs/apollo": "Apollo — Artemis의 이름이 유래했고 그것을 넘어서는 계획"
   },
   "roster": {
-    "Artemis I": {
-      "note": "무인 Orion이 첫 SLS 발사에서 달을 돌아온다 — 누군가 탑승하기 전에 심우주 하드웨어를 검증한다",
-      "name": "Artemis I"
+    "mission:artemis1": {
+      "note": "무인 Orion이 첫 SLS 발사에서 달을 돌아온다 — 누군가 탑승하기 전에 심우주 하드웨어를 검증한다"
     },
     "mission:artemis2": {
       "note": "첫 승무원 — 달까지 비행하는 최초의 비미국인을 포함한 우주비행사 네 명. 2026년 4월의 근접 통과로 인류는 지구에서 역대 가장 먼 곳까지 갔다"

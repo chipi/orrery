@@ -1,0 +1,23 @@
+{
+  "name": "STS-1",
+  "vehicle": "Space Shuttle Columbia (OV-102)",
+  "payload": "Tripulação de dois astronautas (Young, Crippen); instrumentação DFI e ACIP",
+  "delta_v": "~9.4 km/s (LEO)",
+  "type": "TESTE ORBITAL TRIPULADO · REALIZADO",
+  "first": "O primeiro voo de teste orbital do Space Shuttle, pilotado por dois astronautas",
+  "description": "STS-1 foi o primeiro voo de teste orbital do Space Shuttle. O comandante John W. Young e o piloto Robert L. Crippen decolaram a bordo do Columbia do Launch Complex 39A do Centro Espacial Kennedy em 1981-04-12 às 7:00:03 EST (12:00:03 UTC), rumo a uma órbita a 166 milhas náuticas (cerca de 307 km) de altitude, com inclinação de 40.3 graus. O catálogo NSSDCA da NASA o descreve como o primeiro voo de teste orbital tripulado do Space Transportation System, realizado para verificar o desempenho conjunto do veículo. Em 54 horas, 20 minutos e 53 segundos a tripulação completou 37 revoluções e pousou na pista 23 da Base Aérea de Edwards, na Califórnia, em 1981-04-14 às 10:20:57 PST (18:20:57 UTC). As cargas úteis eram instrumentos: a Developmental Flight Instrumentation e a plataforma ACIP registravam temperaturas, pressões e acelerações. O lançamento e a onda de sobrepressão dos propulsores de combustível sólido fizeram o orbitador perder 16 ladrilhos e danificaram outros 148.",
+  "events": [
+    {
+      "met": 0,
+      "label": "DECOLAGEM",
+      "note": "O Columbia decola da plataforma 39A em 1981-04-12 às 7:00:03 EST (12:00:03 UTC).",
+      "type": "nominal"
+    },
+    {
+      "met": 2.2645,
+      "label": "POUSO",
+      "note": "Pista 23 da Base Aérea de Edwards em 1981-04-14, 10:20:57 PST, após 37 revoluções.",
+      "type": "nominal"
+    }
+  ]
+}

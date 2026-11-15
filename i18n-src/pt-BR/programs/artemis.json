@@ -97,9 +97,8 @@
     "/programs/apollo": "Apollo — o programa que dá nome ao Artemis e que ele supera"
   },
   "roster": {
-    "Artemis I": {
-      "note": "uma Orion não tripulada contorna a Lua no primeiro lançamento do SLS — o hardware de espaço profundo é comprovado antes que alguém viaje nele",
-      "name": "Artemis I"
+    "mission:artemis1": {
+      "note": "uma Orion não tripulada contorna a Lua no primeiro lançamento do SLS — o hardware de espaço profundo é comprovado antes que alguém viaje nele"
     },
     "mission:artemis2": {
       "note": "a primeira tripulação — quatro astronautas, incluindo o primeiro não americano a voar à Lua; o sobrevoo de abril de 2026 levou seres humanos mais longe da Terra do que nunca"

@@ -1,0 +1,29 @@
+{
+  "name": "STS-107",
+  "vehicle": "Space Shuttle Columbia (OV-102)",
+  "payload": "Módulo de investigación doble SPACEHAB con más de 80 experimentos; siete tripulantes",
+  "delta_v": "~9.4 km/s (LEO)",
+  "type": "VUELO DE INVESTIGACIÓN TRIPULADO · PERDIDO EN LA REENTRADA",
+  "first": "Un vuelo científico de 16 días que terminó con la pérdida del Columbia en la reentrada",
+  "description": "STS-107 fue una misión de investigación en microgravedad (Microgravity Research Mission) de 16 días que transportaba un módulo de investigación doble SPACEHAB con más de 80 experimentos: cargas comerciales, estudios de la Agencia Espacial Europea e investigación biológica y física de la NASA. La tripulación de siete la formaban Rick D. Husband, comandante; William C. McCool, piloto; Michael P. Anderson, comandante de carga útil; David M. Brown, Kalpana Chawla y Laurel B. Clark, especialistas de misión; e Ilan Ramon, especialista de carga útil, en representación de la Agencia Espacial Israelí. El Columbia despegó de la plataforma 39A a las 10:39 EST (15:39 UTC) del 2003-01-16. Unos 82 segundos después del lanzamiento, espuma aislante del tanque externo golpeó el ala izquierda. La NASA informa de que los astronautas superaron las expectativas de los científicos respecto a los resultados obtenidos en sus 16 días. El 2003-02-01, durante la reentrada sobre el este de Texas hacia las 9:00 EST, el Columbia y su tripulación se perdieron, 16 minutos antes del aterrizaje previsto en el Centro Espacial Kennedy. La Junta de Investigación del Accidente del Columbia (Columbia Accident Investigation Board), presidida por el almirante retirado Harold W. Gehman, atribuyó el daño al impacto de la espuma en el ala izquierda y determinó que la destrucción del ala por sobrecalentamiento causó la desintegración del Columbia. Publicó su informe el 2003-08-26.",
+  "events": [
+    {
+      "met": 0,
+      "label": "DESPEGUE",
+      "note": "El Columbia despega de la plataforma 39A a las 10:39 EST (15:39 UTC) del 2003-01-16.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.00095,
+      "label": "IMPACTO DE ESPUMA",
+      "note": "Unos 82 segundos después del lanzamiento, espuma aislante del tanque externo golpea el ala izquierda.",
+      "type": "warning"
+    },
+    {
+      "met": 15.93,
+      "label": "COLUMBIA PERDIDO",
+      "note": "El 2003-02-01, hacia las 9:00 EST, el Columbia y sus siete tripulantes se pierden en la reentrada sobre el este de Texas, 16 minutos antes del aterrizaje previsto.",
+      "type": "warning"
+    }
+  ]
+}

@@ -97,9 +97,8 @@
     "/programs/apollo": "Apollo — Artemis 得名于它、又超越了它的计划"
   },
   "roster": {
-    "Artemis I": {
-      "note": "一艘无人Orion在首次SLS发射中绕月飞行——在有人乘坐之前先验证深空硬件",
-      "name": "Artemis I"
+    "mission:artemis1": {
+      "note": "一艘无人Orion在首次SLS发射中绕月飞行——在有人乘坐之前先验证深空硬件"
     },
     "mission:artemis2": {
       "note": "首个乘组——四名宇航员，其中包括首位飞向月球的非美国人；他们在2026年4月的飞掠使人类飞到了距地球前所未有的远处"

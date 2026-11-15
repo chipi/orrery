@@ -33,7 +33,9 @@
       "t": "deep"
     }
   ],
-  "linked_missions": [],
+  "linked_missions": [
+    "sts-51-l"
+  ],
   "flights": [
     {
       "mission_id": "sts-6",

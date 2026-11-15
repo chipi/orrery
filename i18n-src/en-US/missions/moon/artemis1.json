@@ -1,0 +1,17 @@
+{
+  "name": "Artemis I",
+  "vehicle": "SLS Block 1 + Orion (uncrewed)",
+  "payload": "Orion with the instrumented manikin Commander Moonikin Campos; ten CubeSats",
+  "delta_v": "~0.43 km/s (DRO departure and return flyby burns only; total not stated)",
+  "type": "UNCREWED DEEP-SPACE TEST · FLOWN",
+  "first": "The first flight of the Space Launch System, an uncrewed test of Orion around the Moon",
+  "description": "Artemis I was the first flight of NASA's Space Launch System and an uncrewed test of the Orion spacecraft around the Moon. SLS Block 1 lifted off from Launch Complex 39B at Kennedy Space Center on 2022-11-16 at 1:47 EST (06:47 UTC). On 2022-11-21 Orion made an outbound powered flyby about 130 km (80 miles) above the lunar surface, the first of two maneuvers needed to enter a distant retrograde orbit (DRO), and it entered that orbit on 2022-11-25. On 2022-11-26 it passed Apollo 13's record distance from Earth for a spacecraft designed to carry humans, 248,655 miles. At its farthest, Orion was 268,563 miles (about 432,000 km) from Earth and 43,471 miles (about 70,000 km) beyond the far side of the Moon. A 1 minute 45 second burn took it out of the orbit on 2022-12-01, and on 2022-12-05 a 3 minute 27 second return powered flyby, again about 130 km above the surface, redirected it toward Earth. Orion splashed down in the Pacific Ocean off San Diego on 2022-12-11 at 12:40 EST, after 25 days, 10 hours and 53 minutes. The commander's seat held Commander Moonikin Campos, an instrumented manikin in an Orion Crew Survival System suit. Orion accomplished 161 test objectives; analysis of unexpected char loss on its heat shield fed forward to Artemis II.",
+  "events": [
+    { "met": 0, "label": "LAUNCH", "note": "SLS Block 1 lifts off from LC-39B on 2022-11-16 at 06:47 UTC with Orion uncrewed.", "type": "nominal" },
+    { "met": 5.26, "label": "OUTBOUND FLYBY", "note": "Powered flyby on 2022-11-21 about 130 km above the surface, after a 2 minute 30 second burn.", "type": "info" },
+    { "met": 9.63, "label": "DRO INSERTION", "note": "Orion enters the distant retrograde orbit on 2022-11-25.", "type": "nominal" },
+    { "met": 15.63, "label": "DRO DEPARTURE", "note": "A 1 minute 45 second burn on 2022-12-01 (about 0.14 km/s) takes Orion out of the orbit.", "type": "nominal" },
+    { "met": 19.41, "label": "RETURN FLYBY", "note": "Powered flyby on 2022-12-05 about 130 km above the surface; a 3 minute 27 second burn (about 0.29 km/s) redirects Orion toward Earth.", "type": "info" },
+    { "met": 25.45, "label": "SPLASHDOWN", "note": "Pacific Ocean off San Diego on 2022-12-11 at 12:40 EST, after 25 days 10 hours 53 minutes.", "type": "nominal" }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "name": "Artemis I",
+  "vehicle": "SLS Block 1 + Orion（無人）",
+  "payload": "計測機器付きマネキンCommander Moonikin Campos搭乗のOrion；CubeSats 10機",
+  "delta_v": "~0.43 km/s（DRO離脱と帰路フライバイの噴射のみ；総量は未記載）",
+  "type": "無人深宇宙試験 · 飛行済み",
+  "first": "Space Launch Systemの初飛行。月を周回した無人のOrion試験",
+  "description": "Artemis Iは、NASAのSpace Launch Systemの初飛行であり、Orion宇宙船による月周辺の無人試験だった。SLS Block 1は2022-11-16の1:47 EST（06:47 UTC）にケネディ宇宙センターのLaunch Complex 39Bから打ち上げられた。2022-11-21、Orionは月面から約130 km（80マイル）の高度で推進を伴う往路フライバイを行った。これは遠方逆行軌道（DRO）に入るための2回の操作の1回目で、2022-11-25にその軌道に入った。2022-11-26には、人間を運ぶ設計の宇宙機としてのApollo 13の地球からの最大距離記録（248,655マイル）を超えた。最も遠い地点で、Orionは地球から268,563マイル（約432,000 km）、月の裏側からさらに43,471マイル（約70,000 km）の位置にあった。2022-12-01の1分45秒の噴射で軌道を離れ、2022-12-05には3分27秒の復路の推進フライバイが、やはり月面から約130 kmの高度で行われ、Orionを地球へ向け直した。Orionは2022-12-11の12:40 ESTに、サンディエゴ沖の太平洋に着水した。25日10時間53分の飛行だった。司令官席にはOrion Crew Survival Systemの宇宙服を着た計測機器付きマネキンCommander Moonikin Camposが座っていた。Orionは161の試験目標を達成し、熱シールドの予期しない炭化層損失（char loss）の解析はArtemis IIに引き継がれた。",
+  "events": [
+    {
+      "met": 0,
+      "label": "打上げ",
+      "note": "SLS Block 1は2022-11-16の06:47 UTCにLC-39Bから無人のOrionを載せて離昇する。",
+      "type": "nominal"
+    },
+    {
+      "met": 5.26,
+      "label": "往路フライバイ",
+      "note": "2022-11-21、2分30秒の噴射の後、月面から約130 kmの高度で推進フライバイ。",
+      "type": "info"
+    },
+    {
+      "met": 9.63,
+      "label": "DRO投入",
+      "note": "Orionは2022-11-25に遠方逆行軌道に入る。",
+      "type": "nominal"
+    },
+    {
+      "met": 15.63,
+      "label": "DRO離脱",
+      "note": "2022-12-01の1分45秒の噴射（約0.14 km/s）でOrionは軌道を離れる。",
+      "type": "nominal"
+    },
+    {
+      "met": 19.41,
+      "label": "復路フライバイ",
+      "note": "2022-12-05、月面から約130 kmの高度で推進フライバイ。3分27秒の噴射（約0.29 km/s）でOrionは地球へ向け直される。",
+      "type": "info"
+    },
+    {
+      "met": 25.45,
+      "label": "着水",
+      "note": "2022-12-11の12:40 EST、サンディエゴ沖の太平洋。25日10時間53分の飛行の後。",
+      "type": "nominal"
+    }
+  ]
+}

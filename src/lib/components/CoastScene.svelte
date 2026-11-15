@@ -113,6 +113,8 @@
       container,
       aspect: container.clientWidth / container.clientHeight,
       altitudeKm: altKm,
+      apogeeKm: coast.apogeeKm,
+      perigeeKm: coast.perigeeKm,
       inclinationDeg: coast.inclinationDeg,
       totalRevs: coast.revolutions,
       suborbital: coast.suborbital,

@@ -49,6 +49,35 @@ test('STS-1 after the climb: the Earth-orbit coast, not a cislunar transfer', as
   }
 });
 
+// The craft in the coast is enlarged (a real orbiter is sub-pixel against the Earth) and marked in
+// the wide shot; the debug hook reports its size and its share of the view.
+test('STS-1 coast: the enlarged craft is sized and in view (debug hook)', async ({ page }) => {
+  test.setTimeout(260_000);
+  await enterLaunch(page, 'sts-1', '&debug=1');
+  await page.evaluate(() =>
+    (window as unknown as { __flyLaunchT: (t: number) => void }).__flyLaunchT(3000),
+  );
+  await page
+    .getByRole('button', { name: /^play$/i })
+    .first()
+    .click();
+  await expect(page.locator('[data-testid="coast-scene"]')).toBeVisible({ timeout: 220_000 });
+  await expect(async () => {
+    const d = await page.evaluate(() =>
+      (
+        window as unknown as {
+          __flyCoastCamDebug?: () => { craftKm: number; craftFraction: number } | null;
+        }
+      ).__flyCoastCamDebug?.(),
+    );
+    expect(d).toBeTruthy();
+    expect(d!.craftKm).toBeGreaterThan(300); // the model ×460, not a sub-pixel dot
+    expect(d!.craftKm).toBeLessThan(3000);
+    expect(d!.craftFraction).toBeGreaterThan(0.002);
+    expect(d!.craftFraction).toBeLessThan(1);
+  }).toPass({ timeout: 30_000 });
+});
+
 // The X-37B flights (dest EARTH, Atlas V) coast in the orbit tracked for them, not a cislunar arc.
 test('OTV-5 after the climb: the Earth-orbit coast (54.5 degrees from its record)', async ({
   page,

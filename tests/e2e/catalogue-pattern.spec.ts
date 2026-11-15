@@ -138,8 +138,10 @@ for (const { route, cards } of GRID_PAGES) {
       expect(g.heights, `${route}: every card of a grid has one height`).toHaveLength(1);
       expect(Math.max(...g.bands), `${route}: no empty band over 50 px`).toBeLessThanOrEqual(50);
     }
-    // The same grid as /missions: same gap, same column count at this viewport (the frames differ by
-    // a few px, so a viewport right at a column break could differ by one).
+    // The same grid rule as /missions (same gap, auto-fill from the same floor), in the reading
+    // pages' 1080 px frame: so never more columns than /missions' wide frame, and /essays is one
+    // column on a phone (a long title fits).
+    const width = page.viewportSize()!.width;
     await page.goto('/missions');
     await waitForHydration(page);
     await expect(page.locator('ul.entity-card-grid > li > .card').first()).toBeVisible({
@@ -148,7 +150,9 @@ for (const { route, cards } of GRID_PAGES) {
     const ref = (await gridFacts(page)).grids[0];
     for (const g of grids) {
       expect(g.gap).toBe(ref.gap);
-      expect(Math.abs(g.columns - ref.columns)).toBeLessThanOrEqual(1);
+      expect(g.columns).toBeLessThanOrEqual(ref.columns);
+      if (route === '/essays' && width <= 600) expect(g.columns).toBe(1);
+      if (route !== '/essays' && width >= 1100) expect(g.columns).toBe(3);
     }
   });
 }
@@ -163,9 +167,21 @@ test('/essays and /missions cards have the catalogue footprint (a photo and a 14
   });
   const essay = await page.evaluate(() => {
     const body = document.querySelector('ul.entity-card-grid .card-body')!;
-    return Math.round(body.getBoundingClientRect().height);
+    const dek = body.querySelector('.card-first')!;
+    const cs = getComputedStyle(dek);
+    return {
+      body: Math.round(body.getBoundingClientRect().height),
+      font: cs.fontFamily,
+      clamp: cs.webkitLineClamp,
+      size: cs.fontSize,
+      margin: getComputedStyle(body).marginBottom,
+    };
   });
-  expect(essay).toBe(142);
+  expect(essay.body).toBe(142);
+  expect(essay.font).toContain('Crimson Pro');
+  expect(essay.clamp).toBe('3');
+  expect(essay.size).toBe('15.5px');
+  expect(essay.margin, 'no stray margin (a global .editorial rule once added 14 px)').toBe('0px');
 });
 
 test('/posters keeps each poster a download link and /patches keeps each credit a link', async ({

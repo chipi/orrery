@@ -60,7 +60,7 @@
   <meta name="description" content={metaDescription(m.essays_seo_description())} />
 </svelte:head>
 
-<section class="longview page-shell page-shell--wide" data-route-ready="true">
+<section class="longview page-shell" data-route-ready="true">
   <header class="head">
     <LongViewHero />
     <p class="intro page-lead">{m.essays_intro()}</p>
@@ -70,7 +70,7 @@
     <section class="movement">
       <h2 class="page-section-label page-section-label--rule">{g.label}</h2>
       <p class="mv-blurb">{g.blurb}</p>
-      <ul class="entity-card-grid">
+      <ul class="entity-card-grid narrow-single">
         {#each g.essays as e (e.slug)}
           <EntityCard
             href="{base}{localizeHref(`/essays/${e.slug}`)}"
@@ -80,11 +80,8 @@
             nameLines={2}
             level={3}
             story={essayPlainText(e.dek ?? '')}
-          >
-            {#snippet pills()}
-              <span class="go">{m.essays_read()}</span>
-            {/snippet}
-          </EntityCard>
+            editorial
+          />
         {/each}
       </ul>
     </section>
@@ -103,11 +100,5 @@
     color: rgba(255, 255, 255, 0.5);
     margin: 0 0 18px;
     max-width: 60ch;
-  }
-  .go {
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 11px;
-    letter-spacing: 1px;
-    color: var(--color-state);
   }
 </style>

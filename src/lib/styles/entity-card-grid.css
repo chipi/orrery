@@ -281,6 +281,22 @@
   line-clamp: 2;
   line-height: 1;
 }
+/* An essay (`editorial`): the same body height, the summary in the editorial serif on three lines
+   in place of the pills row. */
+.entity-card-grid .card-body.essay .card-first {
+  font-family: var(--font-editorial);
+  font-size: 15.5px;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.68);
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+}
+/* A reading grid (`narrow-single`, /essays): one column on a phone, so a long title fits. */
+@media (max-width: 600px) {
+  .entity-card-grid.narrow-single {
+    grid-template-columns: 1fr;
+  }
+}
 /* The compact body: a name and one extra row (a credit line), the same height on every card. */
 .entity-card-grid .card-body.compact {
   block-size: 106px;

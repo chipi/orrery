@@ -59,6 +59,8 @@
     nameLines?: 1 | 2;
     /** The name's heading level: 2 under the page title, 3 under a section heading. */
     level?: 2 | 3;
+    /** An essay: the summary is set in the editorial serif, three lines, and there is no pills row. */
+    editorial?: boolean;
     /** A photo from the image ladder (the default) or a plain file. */
     ladder?: boolean;
     imageSizes?: string;
@@ -91,6 +93,7 @@
     body = 'full',
     nameLines = 1,
     level = 2,
+    editorial = false,
     ladder = true,
     imageSizes = IMAGE_SIZES.card,
     alt = '',
@@ -137,7 +140,7 @@
       {/if}
     </figure>
     {#if body !== 'none'}
-      <div class="card-body" class:compact={body === 'compact'}>
+      <div class="card-body" class:compact={body === 'compact'} class:essay={editorial}>
         <div class="card-name-row" class:lines-2={nameLines === 2}>
           <svelte:element
             this={`h${level}`}
@@ -161,7 +164,7 @@
               {/each}
             </p>
           {/if}
-          <div class="card-pills">{@render pills?.()}</div>
+          {#if !editorial}<div class="card-pills">{@render pills?.()}</div>{/if}
           <p class="card-first">{story ?? ''}</p>
         {/if}
         {#if facts.length > 0}

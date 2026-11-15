@@ -10,6 +10,7 @@ import type { MissionTimeline, Vec2 } from '$lib/physics/transfer/mission-arc';
 import type { resolveQualitySync } from '$lib/quality/quality-tier';
 import type { LoadedMission } from '$lib/fly-mission-apply';
 import type { createCinematicBeatState } from '$lib/fly-cinematic-beats';
+import { MOON_MISSION_DEST_IDS } from '$lib/physics/transfer/lambert-grid.constants';
 import type { DestinationId } from '$lib/physics/transfer/lambert-grid.constants';
 import type { CislunarTrajectory } from '$lib/orbital/cislunar/cislunar-geometry';
 import type { FlyUpdaters } from '$lib/three/fly-updaters';
@@ -74,8 +75,12 @@ export function createFlySceneHost(deps: FlySceneHostDeps) {
       pluto: `${base}/textures/2k_pluto.jpg`,
       // No Ceres texture in the catalogue today — falls back to the
       // DEST_STYLE colour. Add `2k_ceres.jpg` to the texture pack to
-      // light it up automatically.
+      // light it up automatically. Vesta, Psyche and Bennu stay stylised too.
     },
+    // The nine planetary-moon destinations (ADR-086); each loads when it is first shown.
+    moonTextures: Object.fromEntries(
+      MOON_MISSION_DEST_IDS.map((id) => [id, `${base}/textures/2k_${id}.jpg`]),
+    ),
   });
   const scene = helioHandles.scene;
   const camera = helioHandles.camera;

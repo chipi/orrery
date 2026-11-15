@@ -4611,15 +4611,18 @@
 
         <section class="capcom-section">
           <h3>{m.fly_capcom_comms_title()}</h3>
-          <div class="comm-row">
-            <span class="comm-key">{m.fly_capcom_signal_delay()}</span>
-            <span class="comm-val">{m.fly_capcom_lmin({ value: signalDelayMin.toFixed(2) })}</span>
-          </div>
-          <div class="comm-row">
-            <span class="comm-key">{m.fly_capcom_rtt()}</span>
-            <span class="comm-val"
-              >{m.fly_capcom_lmin({ value: (signalDelayMin * 2).toFixed(2) })}</span
-            >
+          <div class="comm-grid">
+            <div class="comm-row">
+              <span class="comm-key">{m.fly_capcom_signal_delay()}</span>
+              <span class="comm-val">{m.fly_capcom_lmin({ value: signalDelayMin.toFixed(2) })}</span
+              >
+            </div>
+            <div class="comm-row">
+              <span class="comm-key">{m.fly_capcom_rtt()}</span>
+              <span class="comm-val"
+                >{m.fly_capcom_lmin({ value: (signalDelayMin * 2).toFixed(2) })}</span
+              >
+            </div>
           </div>
         </section>
       </div>
@@ -4963,9 +4966,6 @@
   /* HUD ACTIVE EVENT row — paired with the pulsing on-canvas diamond.
      Wraps label + italic description vertically so a one-line key on
      the left tracks a multi-line value on the right. */
-  .hud-row-active-event {
-    align-items: flex-start;
-  }
   .hud-row-active-event .accent-active {
     display: inline-flex;
     flex-direction: column;
@@ -5788,9 +5788,18 @@
     color: rgba(255, 255, 255, 0.85);
     min-width: 180px;
     width: 220px;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
+    /* Label/value grid (UXD-042): one label column per panel, shared by every row; a row's
+       value starts in the label's row and wraps only inside the value column. Everything
+       that is not a row (title, phase pill, notes, bars) spans both columns. */
+    display: grid;
+    grid-template-columns: fit-content(50%) minmax(0, 1fr);
+    column-gap: 10px;
+    row-gap: 4px;
+    align-content: start;
+    align-items: baseline;
+  }
+  .hud > :not(.hud-row) {
+    grid-column: 1 / -1;
   }
   /* Systems HUD now stacks flush right after flight-params instead of
      being pushed to the bottom — the previous `margin-top: auto` left
@@ -5851,7 +5860,7 @@
     margin-bottom: 2px;
   }
   .hud-phase {
-    align-self: flex-start;
+    justify-self: start;
     padding: 2px 8px;
     border-radius: 3px;
     border: 1px solid;
@@ -5891,36 +5900,29 @@
     border-color: color-mix(in srgb, var(--color-accent) 50%, transparent);
   }
 
-  /* hud-row gets a long val (e.g. "Sputnik 8K71PS (R-7 Semyorka
-     derivative)") that overflows the .hud's 220 px width and, because
-     .hud is position:fixed, the overflow extends past the viewport
-     and triggers a horizontal scrollbar on the page (2026-06-19 user
-     report: "when we have launcher and vehicle a bit too narrow so at
-     bottom horizontal bar appears, we don't want that").
-     Fix: allow the val to wrap onto its own line when the row's flex
-     constraints can't accommodate the natural width, and break very
-     long single tokens at any character. The typical short-value
-     layout (one-line "MARS · 2011") is unchanged. */
+  /* A long val (e.g. "Sputnik 8K71PS (R-7 Semyorka derivative)") must not overflow the
+     .hud's 220 px width: .hud is position:fixed, so the overflow extends past the viewport and
+     triggers a horizontal scrollbar on the page (2026-06-19 user report: "when we have launcher
+     and vehicle a bit too narrow so at bottom horizontal bar appears, we don't want that").
+     The row is transparent to layout: its key and val are cells of the .hud grid, so the val
+     wraps inside its own column (very long single tokens break at any character) and the
+     label is never left alone on a line (FY4). */
   .hud-row {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-    flex-wrap: wrap;
-    align-items: baseline;
+    display: contents;
   }
   .hud-key {
     color: var(--color-text-label);
     font-size: 11px;
     letter-spacing: 2px;
     font-weight: 700;
-    flex-shrink: 0;
+    min-width: 0;
+    overflow-wrap: anywhere;
   }
   .hud-val {
     color: rgba(255, 255, 255, 0.9);
     font-weight: 700;
     min-width: 0;
-    flex: 1 1 auto;
-    text-align: right;
+    text-align: left;
     overflow-wrap: anywhere;
   }
   .hud-val.dim {
@@ -5934,6 +5936,7 @@
   .hud-val-sub {
     color: var(--color-text-label);
     font-weight: 400;
+    white-space: nowrap;
   }
 
   .dv-bar {
@@ -5997,7 +6000,7 @@
     .hud-navigation,
     .hud-systems,
     .hud-flight-params {
-      display: block;
+      display: grid;
     }
     .hud-stack {
       bottom: 80px;
@@ -6724,7 +6727,7 @@
     .hud-stack.m-open .hud-navigation,
     .hud-stack.m-open .hud-systems,
     .hud-stack.m-open .hud-flight-params {
-      display: flex;
+      display: grid;
     }
     /* PHASE tab: the FD + conic strips are centered rows on desktop; let them
        stack full-width in the sheet. */
@@ -6841,16 +6844,27 @@
     color: rgba(255, 255, 255, 0.6);
   }
 
+  /* Same label/value grid as .hud: the rows share one label column, the value wraps inside
+     its own column. Each row draws its own rule across both columns. */
+  .comm-grid {
+    display: grid;
+    grid-template-columns: fit-content(50%) minmax(0, 1fr);
+    column-gap: 10px;
+    align-items: baseline;
+  }
   .comm-row {
-    display: flex;
-    justify-content: space-between;
+    display: contents;
+  }
+  .comm-key,
+  .comm-val {
     padding: 4px 0;
     font-size: 11px;
+    min-width: 0;
+    overflow-wrap: anywhere;
     border-bottom: 1px solid rgba(255, 255, 255, 0.04);
   }
   .comm-key {
     color: var(--color-text-label);
-    font-size: 11px;
     letter-spacing: 2px;
     font-weight: 700;
   }

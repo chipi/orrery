@@ -45,6 +45,15 @@ direct-render tier or scene shows ACES + sRGB. Rules (guarded by `output-step-ru
 - Bloom thresholds, exposure and light intensities are tuned against the OutputPass output, not
   against raw linear values.
 
+## `/fly` helio scene — moons and the 2D canvas
+
+`fly-helio-scene.ts` owns the decorative moons (`MOON_SYSTEM`). The nine planetary-moon
+destinations load their `static/textures/2k_<id>.jpg` the first time they are shown or targeted
+(`moonTextures`, passed by `fly-scene-host.ts`); `setTargetMoon` highlights the one a plan flight
+names (`mission.targetMoon`). `fly-frame-runner.ts` `draw2d` is the 2D canvas; its line values, scale
+fit and destination selection are the pure modules in `src/lib/fly/` (`fly-2d-style.ts`,
+`fly-2d-scale.ts`, `fly-2d-targets.ts`, UXD-043).
+
 ## Critical contract — `document.hidden` pause
 
 `docs/adr/TA.md` declares every 3D scene **must** pause its raf loop

@@ -38166,48 +38166,6 @@
       "fetched_at": "2026-11-02T10:13:00.212Z"
     },
     {
-      "id": "61017f7dd7c64bcd",
-      "path": "/images/missions/mars2/04.1x1.jpg",
-      "source_type": "wikimedia-commons",
-      "title": "Mariner 8 assembly.jpg",
-      "author": null,
-      "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/wiki/File:Mariner%208%20assembly.jpg",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mariner%208%20assembly.jpg?width=1600",
-      "license_short": "PD-NASA",
-      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-      "license_rationale": "Public domain.",
-      "modifications": [
-        "downloaded-via-special-filepath",
-        "reencoded-jpeg"
-      ],
-      "revid": null,
-      "pageid": null,
-      "nasa_id": null,
-      "fetched_at": "2026-06-23T13:39:06Z"
-    },
-    {
-      "id": "6cdfdfd8ed3aced6",
-      "path": "/images/missions/mars2/04.webp",
-      "source_type": "wikimedia-commons",
-      "title": "Mariner 8 assembly.jpg",
-      "author": null,
-      "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/wiki/File:Mariner%208%20assembly.jpg",
-      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mariner%208%20assembly.jpg?width=1600",
-      "license_short": "PD-NASA",
-      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-      "license_rationale": "Public domain.",
-      "modifications": [
-        "downloaded-via-special-filepath",
-        "reencoded-jpeg"
-      ],
-      "revid": null,
-      "pageid": null,
-      "nasa_id": null,
-      "fetched_at": "2026-06-23T13:39:06Z"
-    },
-    {
       "id": "3e3982ffd21ad2e0",
       "path": "/images/missions/mars3/05.1x1.jpg",
       "source_type": "wikimedia-commons",
@@ -49219,7 +49177,7 @@
     },
     {
       "id": "aa8be1141624abd8",
-      "path": "/images/missions/mars2/05.webp",
+      "path": "/images/missions/mars2/04.webp",
       "source_type": "nasa-images-api",
       "title": "Search for the Mars 2 Debris Field (PIA18888)",
       "author": "NASA/JPL-Caltech/University of Arizona",
@@ -49239,7 +49197,7 @@
     },
     {
       "id": "5d8a0f4e183052ae",
-      "path": "/images/missions/mars2/05.1x1.jpg",
+      "path": "/images/missions/mars2/04.1x1.jpg",
       "source_type": "nasa-images-api",
       "title": "Search for the Mars 2 Debris Field (PIA18888)",
       "author": "NASA/JPL-Caltech/University of Arizona",

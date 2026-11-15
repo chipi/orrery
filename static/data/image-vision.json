@@ -12864,22 +12864,6 @@
       "scored_at": "2026-06-08T10:54:17.760Z",
       "scoring_cost_usd": 0.0072569999999999996
     },
-    "/images/missions/mars2/04.jpg": {
-      "score": 9,
-      "subject": "Full-disk view of Mars showing reddish-orange terrain, surface features, and a polar ice cap against a black background.",
-      "category": "orbital",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.48
-      },
-      "variants": {
-        "1x1": "/images/missions/mars2/04.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T10:54:23.696Z",
-      "scoring_cost_usd": 0.003909
-    },
     "/images/missions/mars3/05.jpg": {
       "score": 2,
       "subject": "Extremely low-resolution, heavily degraded black-and-white image showing indistinct grainy texture with no identifiable space-related subject.",
@@ -30090,7 +30074,7 @@
       "scored_at": "2026-11-15T14:29:39.244Z",
       "scoring_cost_usd": 0
     },
-    "/images/missions/mars2/05.jpg": {
+    "/images/missions/mars2/04.jpg": {
       "score": 8,
       "subject": "An orbital view of terrain searched for the lost Mars 2 lander; the lander is not identified in it.",
       "category": "surface",

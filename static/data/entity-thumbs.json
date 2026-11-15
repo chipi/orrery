@@ -82,7 +82,7 @@
     "mariner9": "01",
     "mars-express": "03",
     "mars-pathfinder": "04",
-    "mars2": "04",
+    "mars2": "02",
     "mars3": "05",
     "mars6": "01",
     "maven": "01",
@@ -736,7 +736,7 @@
   },
   "mars": {
    "slots": {
-    "mars2": "missions/mars2/04",
+    "mars2": "missions/mars2/02",
     "mars3": "missions/mars3/05",
     "mars6": "missions/mars6/01",
     "viking1-lander": "missions/viking1/06",

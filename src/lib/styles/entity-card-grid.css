@@ -11,6 +11,7 @@
  *     flight_data_quality, "first" tagline)
  *   - /fleet (route-data: id, name, agency, status, year, country,
  *     category, tagline)
+ *   - /patches, /essays, /posters (card and grid sizing only; the card's shape props)
  *
  * Data fields differ (year+dest vs year+country, quality badge only on
  * missions) so the markup is route-local — but everything visual is
@@ -92,8 +93,36 @@
 }
 
 .entity-card-grid .card-accent {
-  background: var(--accent);
+  background: var(--accent, rgba(255, 255, 255, 0.12));
   grid-row: 1 / span 2;
+}
+
+/* The root can be a link (/essays, /posters) or a plain box (/patches): no UA link look, and a box
+   that does nothing neither lifts nor shows a pointer. A page whose records carry no colour keeps
+   the 4 px edge in a neutral tone, so its card has the catalogue's exact footprint. */
+.entity-card-grid a.card {
+  text-decoration: none;
+}
+.entity-card-grid div.card {
+  cursor: default;
+}
+.entity-card-grid div.card:hover {
+  transform: none;
+}
+
+/* Photo shapes. `wide` (16:9) is the catalogue's; `portrait` (2:3) is an art print's, so the poster
+   is never cropped; `contain` keeps a whole insignia inside the slot, on the soft gradient. */
+.entity-card-grid .card.portrait .card-photo {
+  aspect-ratio: 2 / 3;
+}
+.entity-card-grid .card.contain .card-photo img {
+  box-sizing: border-box;
+  padding: 14px;
+  object-fit: contain;
+  filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.5));
+}
+.entity-card-grid .card-photo:last-child {
+  border-bottom: 0;
 }
 
 .entity-card-grid .card-photo {
@@ -238,6 +267,48 @@
   align-items: center;
   gap: 8px;
   min-width: 0;
+}
+/* A title (an essay, an insignia) may take two lines; the row keeps both so the cards stay equal. */
+.entity-card-grid .card-name-row.lines-2 {
+  align-items: flex-start;
+  min-block-size: 44px;
+}
+.entity-card-grid .card-name-row.lines-2 .card-name {
+  white-space: normal;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  line-height: 1;
+}
+/* The compact body: a name and one extra row (a credit line), the same height on every card. */
+.entity-card-grid .card-body.compact {
+  block-size: 106px;
+}
+.entity-card-grid .card-extra {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--size-label);
+  line-height: 1.5;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--color-text-label);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+}
+.entity-card-grid .card-extra a {
+  color: inherit;
+  text-decoration: none;
+}
+.entity-card-grid .card-extra a:hover {
+  color: rgba(255, 255, 255, 0.65);
+}
+.entity-card-grid .card-extra a:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
 }
 .entity-card-grid .card-name {
   flex: 1 1 auto;

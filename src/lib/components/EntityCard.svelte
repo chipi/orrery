@@ -9,6 +9,8 @@
     the story, two lines at most (`story`)
 
   A page differs only in the data and in what it puts in `pills`; it never forks the card. The
+  shape props (`aspect`, `fit`, `body`, `nameLines`, a link or plain root) let /patches, /essays and
+  /posters use the same card: Design System §5.4, UXS-017 §4. The
   grid is `<ul class="entity-card-grid">` (src/lib/styles/entity-card-grid.css); this component
   renders the `<li>`. Visually hidden `facts` (year and destination, say) are read out as a
   definition list. Spec: Design System §5.4.
@@ -24,12 +26,12 @@
     /** Hero URL (`pickHero(...)`). A missing or failing photo shows the soft placeholder. */
     photo: string;
     name: string;
-    year: string | number;
-    /** One entry per agency; `color` is the palette colour of its bar. */
-    agencies: { name: string; color: string | null }[];
+    year?: string | number | null;
+    /** One entry per agency; `color` is the palette colour of its bar. None: the row is left out. */
+    agencies?: { name: string; color: string | null }[];
     agencyTitle?: string;
-    /** The lead colour: the card's left edge. */
-    accent: string;
+    /** The lead colour: the card's left edge. None: the edge stays, in a neutral tone. */
+    accent?: string | null;
     story?: string | null;
     /** Insignia beside the name (PRD-029), already gated on the badges map. */
     badge?: string | null;
@@ -40,16 +42,37 @@
     /** Hidden label / value pairs read out after the card (year, destination, country). */
     facts?: { label: string; value: string }[];
     pills?: Snippet;
-    onclick: () => void;
+    /** The last row of a `compact` body (a credit line, say). */
+    extra?: Snippet;
+    /** The root: a button with `onclick`, a link with `href`, or a plain box with neither. */
+    onclick?: () => void;
     onkeydown?: (e: KeyboardEvent) => void;
+    href?: string;
+    download?: string;
+    /** Photo shape: `wide` is 16:9 (the catalogue), `portrait` is 2:3 (a print). */
+    aspect?: 'wide' | 'portrait';
+    /** `contain` shows the whole artwork (an insignia) on the soft gradient instead of cropping it. */
+    fit?: 'cover' | 'contain';
+    /** `full` is the four-row body, `compact` a name and one `extra` row, `none` the photo alone. */
+    body?: 'full' | 'compact' | 'none';
+    /** The name's lines (1 ellipsis, or 2 for a title). The row keeps the room either way. */
+    nameLines?: 1 | 2;
+    /** The name's heading level: 2 under the page title, 3 under a section heading. */
+    level?: 2 | 3;
+    /** A photo from the image ladder (the default) or a plain file. */
+    ladder?: boolean;
+    imageSizes?: string;
+    alt?: string;
+    imgWidth?: number;
+    imgHeight?: number;
   }
   let {
     photo,
     name,
-    year,
-    agencies,
+    year = null,
+    agencies = [],
     agencyTitle,
-    accent,
+    accent = null,
     story = null,
     badge = null,
     selected = false,
@@ -58,63 +81,100 @@
     ariaLabel,
     facts = [],
     pills,
+    extra,
     onclick,
     onkeydown,
+    href,
+    download,
+    aspect = 'wide',
+    fit = 'cover',
+    body = 'full',
+    nameLines = 1,
+    level = 2,
+    ladder = true,
+    imageSizes = IMAGE_SIZES.card,
+    alt = '',
+    imgWidth,
+    imgHeight,
   }: Props = $props();
+
+  const tag = $derived(href ? 'a' : onclick ? 'button' : 'div');
+  const rootAttrs = $derived(
+    tag === 'a'
+      ? { href, download, 'aria-label': ariaLabel }
+      : tag === 'button'
+        ? { type: 'button', onclick, onkeydown, 'aria-label': ariaLabel }
+        : {},
+  );
+  const imgAttrs = $derived(ladder ? responsive(photo, imageSizes) : { src: photo });
 </script>
 
 <li class="card-li">
-  <button
-    type="button"
-    class="card"
+  <svelte:element
+    this={tag}
+    class="card {aspect} {fit}"
     class:selected
-    style:--accent={accent}
+    style:--accent={accent ?? undefined}
     data-testid={testid}
     data-audio-stage={audioStage}
-    aria-label={ariaLabel}
-    {onclick}
-    {onkeydown}
+    {...rootAttrs}
   >
     <div class="card-accent" aria-hidden="true"></div>
     <figure class="card-photo">
-      <img
-        class="card-cover"
-        {...responsive(photo, IMAGE_SIZES.card)}
-        style:object-position={heroPositionFor(photo)}
-        alt=""
-        loading="lazy"
-        decoding="async"
-        onerror={(e) =>
-          (e.currentTarget as HTMLImageElement).closest('figure')?.classList.add('cover-missing')}
-      />
-    </figure>
-    <div class="card-body">
-      <div class="card-name-row">
-        <h2 class="card-name">{name}</h2>
-        {#if badge}
-          <img class="card-badge" src={assetUrl(badge)} alt="" loading="lazy" decoding="async" />
-        {/if}
-        <span class="card-year-vis" aria-hidden="true">{year}</span>
-      </div>
-      <p class="card-agencies" title={agencyTitle}>
-        {#each agencies as a (a.name)}
-          <span class="card-agency" style:--agency={a.color ?? accent}
-            ><i aria-hidden="true"></i>{a.name}</span
-          >
-        {/each}
-      </p>
-      <div class="card-pills">{@render pills?.()}</div>
-      <p class="card-first">{story ?? ''}</p>
-      {#if facts.length > 0}
-        <dl class="sr-only">
-          {#each facts as f (f.label)}
-            <dt>{f.label}</dt>
-            <dd>{f.value}</dd>
-          {/each}
-        </dl>
+      {#if photo}
+        <img
+          class="card-cover"
+          {...imgAttrs}
+          style:object-position={fit === 'cover' ? heroPositionFor(photo) : undefined}
+          {alt}
+          width={imgWidth}
+          height={imgHeight}
+          loading="lazy"
+          decoding="async"
+          onerror={(e) =>
+            (e.currentTarget as HTMLImageElement).closest('figure')?.classList.add('cover-missing')}
+        />
       {/if}
-    </div>
-  </button>
+    </figure>
+    {#if body !== 'none'}
+      <div class="card-body" class:compact={body === 'compact'}>
+        <div class="card-name-row" class:lines-2={nameLines === 2}>
+          <svelte:element
+            this={`h${level}`}
+            class="card-name"
+            title={nameLines === 2 ? name : undefined}>{name}</svelte:element
+          >
+          {#if badge}
+            <img class="card-badge" src={assetUrl(badge)} alt="" loading="lazy" decoding="async" />
+          {/if}
+          {#if year != null}<span class="card-year-vis" aria-hidden="true">{year}</span>{/if}
+        </div>
+        {#if body === 'compact'}
+          <div class="card-extra">{@render extra?.()}</div>
+        {:else}
+          {#if agencies.length > 0}
+            <p class="card-agencies" title={agencyTitle}>
+              {#each agencies as a (a.name)}
+                <span class="card-agency" style:--agency={a.color ?? accent}
+                  ><i aria-hidden="true"></i>{a.name}</span
+                >
+              {/each}
+            </p>
+          {/if}
+          <div class="card-pills">{@render pills?.()}</div>
+          <p class="card-first">{story ?? ''}</p>
+        {/if}
+        {#if facts.length > 0}
+          <dl class="sr-only">
+            {#each facts as f (f.label)}
+              <dt>{f.label}</dt>
+              <dd>{f.value}</dd>
+            {/each}
+          </dl>
+        {/if}
+      </div>
+    {/if}
+  </svelte:element>
 </li>
 
 <style>

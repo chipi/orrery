@@ -11,9 +11,8 @@
    */
   import type { FleetEpoch } from '$types/fleet';
   import { EPOCH_BANDS } from '$lib/epoch-bands';
-  import { ERA_FLAGSHIP } from '$lib/era-flagships';
-  import { pickHero, loadHeroOverrides, heroPositionFor } from '$lib/image-hero';
-  import { responsive } from '$lib/responsive-image.svelte';
+  import { ERA_FLAGSHIP, ERA_PHOTO_POSITION } from '$lib/era-flagships';
+  import { pickHero, loadHeroOverrides } from '$lib/image-hero';
   import * as m from '$lib/paraglide/messages';
   import { epochLabel } from '$lib/epoch-label';
   import Chip from './Chip.svelte';
@@ -29,14 +28,15 @@
 
   let { countByEpoch, colorsByEpoch, selected, onSelect }: Props = $props();
 
-  const MAX_DOTS = 7;
+  const MAX_DOTS = 5;
   let heroesReady = $state(false);
   $effect(() => {
     void loadHeroOverrides('missions').then(() => (heroesReady = true));
   });
   const photo = (id: FleetEpoch) => {
     void heroesReady;
-    return pickHero('missions', ERA_FLAGSHIP[id]);
+    // the hero's square crop: the subject is centred and it is a small file for a 60 px slot
+    return pickHero('missions', ERA_FLAGSHIP[id]).replace(/\.webp$/, '.1x1.jpg');
   };
   const yearsOf = (b: (typeof EPOCH_BANDS)[number]) =>
     `${b.yearStart}–${b.id === 'mars-era' ? '∞' : b.yearEnd}`;
@@ -60,9 +60,11 @@
       >
         <img
           class="era-photo"
-          {...responsive(photo(ep.id), '200px')}
-          style:object-position={heroPositionFor(photo(ep.id))}
+          src={photo(ep.id)}
+          style:object-position={ERA_PHOTO_POSITION[ep.id]}
           alt=""
+          width="64"
+          height="96"
           loading="lazy"
           decoding="async"
           onerror={(e) => ((e.currentTarget as HTMLImageElement).style.display = 'none')}
@@ -106,41 +108,28 @@
     padding: 0;
     text-align: start;
     white-space: normal;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.3px;
     background: var(--color-bg);
   }
   .strip :global(.era-tile[aria-checked='true']) {
     border-color: var(--color-state);
     box-shadow: 0 0 0 1px var(--color-state);
   }
+  /* The photo sits crisp on the end side (about 40 % of the tile) with a short fade into the dark at its
+     inner edge; the text is on the plain tile surface, so its contrast does not depend on the photo. */
   .era-photo {
     position: absolute;
-    inset: 0;
-    inline-size: 100%;
+    inset-block: 0;
+    inset-inline-end: 0;
+    inline-size: 40%;
     block-size: 100%;
     object-fit: cover;
-    object-position: 70% 50%;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 55%);
+    mask-image: linear-gradient(to right, transparent 0%, #000 55%);
   }
-  /* The gradient keeps the label at 4.5:1 or better wherever the photo is bright. */
-  .era-photo + .era-body::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    background: linear-gradient(
-      to right,
-      rgba(4, 4, 12, 0.96) 0%,
-      rgba(4, 4, 12, 0.93) 62%,
-      rgba(4, 4, 12, 0.45) 100%
-    );
-  }
-  :global([dir='rtl']) .era-photo + .era-body::before {
-    background: linear-gradient(
-      to left,
-      rgba(4, 4, 12, 0.96) 0%,
-      rgba(4, 4, 12, 0.93) 62%,
-      rgba(4, 4, 12, 0.45) 100%
-    );
+  :global([dir='rtl']) .era-photo {
+    -webkit-mask-image: linear-gradient(to left, transparent 0%, #000 55%);
+    mask-image: linear-gradient(to left, transparent 0%, #000 55%);
   }
   .era-body {
     position: relative;
@@ -155,6 +144,8 @@
   }
   .era-name {
     display: block;
+    /* the name stays in the left 60 %, on the plain dark: it wraps rather than reach the photo */
+    max-inline-size: 60%;
     line-height: 1.25;
     overflow-wrap: anywhere;
     color: var(--color-text);

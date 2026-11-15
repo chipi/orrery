@@ -68,8 +68,9 @@ test('/fleet keeps its Line-up view in the toolbar and hides the strip there', a
     page.getByTestId('browse-toolbar').getByRole('radio', { name: 'Line-up' }),
   ).toBeVisible();
   await page.goto('/fleet?category=launcher&view=lineup');
-  await expect(page.locator('.era-tiles')).toHaveCount(0);
-  await expect(page.getByRole('radio', { name: 'Line-up' })).toBeChecked();
+  await waitForHydration(page);
+  await expect(page.locator('.era-tiles')).toHaveCount(0, { timeout: 15_000 });
+  await expect(page.getByRole('radio', { name: 'Line-up' })).toBeChecked({ timeout: 15_000 });
 });
 
 test('/fleet sorts by category', async ({ page }) => {

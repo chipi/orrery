@@ -24,6 +24,8 @@ describe('era flagship photos', () => {
       expect(index.some((m) => m.id === id)).toBe(true);
       const slot = (overrides[id]?.slot ?? '01.jpg').replace(/\.\w+$/, '');
       expect(existsSync(`static/images/missions/${id}/${slot}.webp`)).toBe(true);
+      // the tile draws the square crop
+      expect(existsSync(`static/images/missions/${id}/${slot}.1x1.jpg`)).toBe(true);
     },
   );
 

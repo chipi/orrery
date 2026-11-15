@@ -16,15 +16,19 @@ import type { LaunchBoosters, LaunchProfile } from './ascent-physics';
  * {@link atlasVSrbCount}). Masses/thrust/Isp are PER booster.
  * Figures: Aerojet Rocketdyne AJ-60A (gross 46,697 kg · propellant 40,779 kg ·
  * 1,688 kN peak SL thrust · Isp 245.5 s SL / 279.3 s vac · ~94 s burn).
+ * Modelled at the burn-AVERAGE thrust (constant 434 kg/s) so burnout lands at the real
+ * T+94 s (at the 1,688 kN peak it burnt out at 58 s); the casings are jettisoned at
+ * T+117 s (Atlas V User's Guide Rev 11, Table 2.4.1-1: 116-118 s).
  */
 const ATLAS_V_AJ60A: Omit<LaunchBoosters, 'count'> = {
   name: 'AJ-60A',
   wetKg: 46697,
   dryKg: 5918,
-  thrustSlKN: 1688,
-  thrustVacKN: 1900,
+  thrustSlKN: 1042,
+  thrustVacKN: 1187,
   ispSlS: 245,
   ispVacS: 279,
+  separationDelayS: 23,
   chamberTempK: 3300,
 };
 

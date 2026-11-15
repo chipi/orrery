@@ -88,6 +88,10 @@ export interface LaunchBoosters {
   airLitCount?: number;
   /** Mission time (s) the air-lit group lights; absent = at the ground-lit group's burnout. */
   airLitIgnitionS?: number;
+  /** Seconds a burnt-out booster stays attached before it is jettisoned (Atlas V holds its
+   *  AJ-60As from burnout at T+94 s to T+117 s; SRB-A 10 s; PSLV's PSOM-XLs ~20 s). The
+   *  STAGE SEP beat is at the jettison. Absent = jettisoned at burnout. */
+  separationDelayS?: number;
 }
 
 /** A launch vehicle's ascent profile. See RFC-034 §6 for the shipped JSON schema. */
@@ -108,6 +112,12 @@ export interface LaunchProfile {
   fairingKg?: number;
   /** Altitude to jettison the fairing (m). Defaults to the Kármán line. */
   fairingJettisonAltM?: number;
+  /**
+   * Mission time (s) the fairing is jettisoned, when the real flight schedules it by time
+   * (the free-molecular-heating criterion lands on a fixed time for a given trajectory:
+   * Delta II M+39 s, Proton-M T+345 s). Takes precedence over `fairingJettisonAltM`.
+   */
+  fairingJettisonS?: number;
   /**
    * The payload stays in the vehicle's bay for the whole launch (the Space Shuttle: it is
    * deployed hours later in orbit). No spacecraft-separation beat, no injection beat and no
@@ -566,7 +576,13 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
     Math.max(0, (profile.boosters?.count ?? 0) - 1),
   );
   const groundCount = (profile.boosters?.count ?? 0) - airLit;
-  type BoosterGroup = { stage: LaunchStage; prop: number; air: boolean; dropped: boolean };
+  type BoosterGroup = {
+    stage: LaunchStage;
+    prop: number;
+    air: boolean;
+    dropped: boolean;
+    burnoutAt?: number;
+  };
   const groups: BoosterGroup[] = profile.boosters
     ? [
         {
@@ -950,6 +966,8 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
     }
     for (const g of groups) {
       if (!g.dropped && g.prop <= 0) {
+        g.burnoutAt ??= t + (profile.boosters?.separationDelayS ?? 0);
+        if (t < g.burnoutAt) continue;
         g.dropped = true;
         pushEvent(
           'staging',
@@ -993,7 +1011,10 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
     }
 
     // Fairing jettison once above the atmosphere.
-    if (fairingOn && alt >= fairingJettAlt) {
+    if (
+      fairingOn &&
+      (profile.fairingJettisonS != null ? t >= profile.fairingJettisonS : alt >= fairingJettAlt)
+    ) {
       fairingOn = false;
       pushEvent('fairing_jettison');
     }

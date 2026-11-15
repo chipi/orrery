@@ -5,6 +5,7 @@
   "payloadKg": 1337,
   "fairingKg": 1182,
   "fairingJettisonAltM": 113000,
+  "fairingJettisonS": 118,
   "refAreaM2": 11,
   "cd": 0.3,
   "launchSite": { "lat": 13.7333, "lon": 80.2347, "name": "First Launch Pad · Sriharikota" },
@@ -20,6 +21,7 @@
     "thrustVacKN": 650,
     "ispSlS": 245,
     "ispVacS": 262,
+    "separationDelayS": 20,
     "chamberTempK": 3000
   },
   "stages": [
@@ -27,11 +29,12 @@
       "name": "PS1 (S139)",
       "wetKg": 168000,
       "dryKg": 30000,
-      "thrustSlKN": 3300,
-      "thrustVacKN": 3700,
+      "thrustSlKN": 3135,
+      "thrustVacKN": 3515,
       "ispSlS": 237,
       "ispVacS": 269,
       "engines": 1,
+      "separationDelayS": 9.7,
       "chamberTempK": 3300
     },
     {
@@ -78,6 +81,10 @@
     {
       "l": "Dry masses derived from the 320 t liftoff mass less sourced propellant; solid thrusts are burn averages matching the ISRO burn times",
       "u": "https://www.isro.gov.in/mission_PSLV_C11.html"
+    },
+    {
+      "l": "ISRO PSLV-C25 flight events: PSOM-XL separations 69.94 / 92.04 s (burnt-out motors ride ~20 s), PS1 burn 103 s and separation 112.75 s, fairing 117.95 s, PS2 separation 264.74 s",
+      "u": "https://new1.isro.gov.in/media_isro/pdf/Missions/PSLVC25/publication_PSLVC25.pdf"
     }
   ]
 }

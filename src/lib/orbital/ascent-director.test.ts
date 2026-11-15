@@ -464,6 +464,73 @@ describe('first seconds rise vertically (ground-relative)', () => {
   });
 });
 
+describe('smooth camera in the coast (no jerks at x10, 30 fps)', () => {
+  const rel = (plan: DirectorPlan, t: number, p: (typeof PROFILES)[number]) => {
+    const s = groundRelative(
+      sampleAscentAt(p.summary.states, t),
+      p.profile.launchSite?.lat ?? 28.5,
+    );
+    const pose = directedPoseAt(plan, t, s, 1.2).pose;
+    return [
+      (pose.px - s.downrangeKm) / 1.2,
+      (pose.py - s.altKm) / 1.2,
+      pose.pz / 1.2,
+      (pose.tx - s.downrangeKm) / 1.2,
+      (pose.ty - s.altKm) / 1.2,
+      pose.fov / 10,
+    ];
+  };
+
+  it('the second difference of the vehicle-relative camera stays small except at hard cuts', () => {
+    const dt = 10 / 30; // x10, 30 fps
+    let frames = 0;
+    for (const [id, seed] of [
+      ['sls-block-1', undefined],
+      ['sls-block-1', 77],
+      ['space-shuttle-stack', 5],
+      ['atlas-v', undefined],
+      ['falcon-9', undefined],
+    ] as [string, number | undefined][]) {
+      const p = byId(id);
+      const plan = planFor(p, { seed, speed: 10 });
+      const cuts = plan.shots.filter((s) => s.blendInS === 0).map((s) => s.tStart);
+      const end = plan.shots[plan.shots.length - 1].tEnd;
+      let a: number[] | null = null;
+      let b: number[] | null = null;
+      for (let t = 200; t < end; t += dt) {
+        const c = rel(plan, t, p);
+        const nearCut = cuts.some((ct) => t >= ct - 2 * dt && t <= ct + 2 * dt);
+        if (a && b && !nearCut) {
+          const m = Math.max(...c.map((x, i) => Math.abs(x - 2 * b![i] + a![i])));
+          expect(
+            m,
+            `${id} seed ${seed} t=${t.toFixed(1)} ${plan.shots[shotIndexAt(plan.shots, t)].id}`,
+          ).toBeLessThan(0.08);
+          frames++;
+        }
+        a = b;
+        b = c;
+      }
+    }
+    expect(frames).toBeGreaterThan(2000);
+  });
+
+  it('blends last about 1.3 s of screen time at any speed (capped by half the shot)', () => {
+    for (const speed of [5, 10, 20]) {
+      const plan = planFor(byId('falcon-9'), { seed: 9, speed });
+      const long = plan.shots.filter(
+        (s) => s.kind === 'pool' && s.blendInS > 0 && (s.tEnd - s.tStart) * 0.5 >= 1.93 * speed,
+      );
+      expect(long.length).toBeGreaterThan(0);
+      for (const s of long) {
+        const screen = s.blendInS / speed;
+        expect(screen, `${s.id} speed ${speed}`).toBeGreaterThan(1.27);
+        expect(screen).toBeLessThan(1.93);
+      }
+    }
+  });
+});
+
 describe('reduced motion', () => {
   const p = byId('falcon-9');
   const plan = planFor(p, { seed: 5, reducedMotion: true });

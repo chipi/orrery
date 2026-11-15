@@ -488,6 +488,11 @@ const smooth = (x: number): number => {
   const c = clamp01(x);
   return c * c * (3 - 2 * c);
 };
+/** Quintic smootherstep: zero velocity AND zero acceleration at both ends of a blend. */
+const smoother = (x: number): number => {
+  const c = clamp01(x);
+  return c * c * c * (c * (c * 6 - 15) + 10);
+};
 const applyEase = (e: Ease, x: number): number => {
   const c = clamp01(x);
   if (e === 'linear') return c;
@@ -745,8 +750,10 @@ export function buildDirectorPlan(inp: DirectorInputs): DirectorPlan {
   const last = (): DirectedShot | undefined => shots[shots.length - 1];
   const side = (): 1 | -1 => (r() < 0.5 ? -1 : 1);
 
+  // A blend is a camera move the viewer watches: about 1.3 s of SCREEN time whatever the speed
+  // (4 flight s at x5 is 0.8 s, and at x10 only 0.4 s, which read as a whip).
   const blendFor = (s: number, span: number): number =>
-    reduced ? 0 : Math.min(s, Math.max(0, span * 0.6));
+    reduced ? 0 : Math.min((s * 1.6 * speed) / 5, Math.max(0, span * 0.5));
 
   // ── Opening: a seeded pool; today's is one option ───────────────────────
   const opening: OpeningId =
@@ -1236,7 +1243,7 @@ export function directedPoseAt(
   if (!reduced && sh.blendInS > 0 && i > 0) {
     const u = (t - sh.tStart) / sh.blendInS;
     if (u < 1) {
-      blend = smooth(u);
+      blend = smoother(u);
       const prev = shotPose(plan.shots[i - 1], s, vehLen, 1, focus, reduced);
       pose = blendPoses(prev, pose, blend);
     }

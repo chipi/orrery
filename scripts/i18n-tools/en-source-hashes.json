@@ -13901,9 +13901,8 @@
     "mission:huygens.note": "5a175ad345"
   },
   "programs-roster/chandrayaan.json": {
-    "Chandrayaan-2.name": "e4792516d8",
-    "Chandrayaan-2.note": "264a25afe5",
     "mission:chandrayaan1.note": "8ce5befe7a",
+    "mission:chandrayaan2.note": "264a25afe5",
     "mission:chandrayaan3.note": "46c8787795"
   },
   "programs-roster/change.json": {
@@ -14016,9 +14015,8 @@
     "module:zvezda.note": "b7bf2c41cb"
   },
   "programs-roster/jaxa-robotic.json": {
-    "Kaguya / SELENE.name": "4f84f95c84",
-    "Kaguya / SELENE.note": "c99e0ee3cf",
     "mission:akatsuki.note": "da0402954c",
+    "mission:kaguya.note": "c99e0ee3cf",
     "mission:slim.note": "bcf889f02d"
   },
   "programs-roster/jwst.json": {

@@ -193,7 +193,8 @@
   <p class="actions">
     <Chip kind="link" href={appHref}>{m.launches_open_in_orrery()}</Chip>
     {#if star.planets.length && star.named}
-      <Chip kind="link" href={localHref(`/explore?system=${star.id}`)}>{m.star_enter_system()}</Chip>
+      <Chip kind="link" href={localHref(`/explore?system=${star.id}`)}>{m.star_enter_system()}</Chip
+      >
     {/if}
   </p>
 </article>

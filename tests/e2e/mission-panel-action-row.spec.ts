@@ -45,9 +45,10 @@ test('the action row holds its place while the surface site is read', async ({ p
 
   const gaps = samples.map((s) => s.gap).filter((v): v is number => v !== null);
   expect(gaps.length, 'the row and the hero are on screen').toBeGreaterThan(10);
-  expect(Math.max(...gaps) - Math.min(...gaps), 'hero moved under the row (px)').toBeLessThanOrEqual(
-    1,
-  );
+  expect(
+    Math.max(...gaps) - Math.min(...gaps),
+    'hero moved under the row (px)',
+  ).toBeLessThanOrEqual(1);
 
   const withFly = samples.filter((s) => s.fly !== null);
   expect(withFly.length, 'Fly appears').toBeGreaterThan(0);

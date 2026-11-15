@@ -59,16 +59,23 @@ for (const prefix of ['', '/de', '/ru']) {
 
     expect(m.dock.length).toBe(1);
     expect(m.dock[0]!.r, 'the dock ends inside the screen').toBeLessThanOrEqual(m.vw);
-    for (const c of m.dockChips) expect(c.r, 'a dock chip ends inside the screen').toBeLessThanOrEqual(m.vw);
+    for (const c of m.dockChips)
+      expect(c.r, 'a dock chip ends inside the screen').toBeLessThanOrEqual(m.vw);
 
     expect(m.tabs.length).toBeGreaterThan(0);
-    for (const t of m.tabs) expect(t.b, 'the tab row ends above the dock').toBeLessThanOrEqual(m.dock[0]!.t);
+    for (const t of m.tabs)
+      expect(t.b, 'the tab row ends above the dock').toBeLessThanOrEqual(m.dock[0]!.t);
 
-    const hit = (a: Rect, b: Rect) => a.l < b.r - 0.5 && b.l < a.r - 0.5 && a.t < b.b - 0.5 && b.t < a.b - 0.5;
+    const hit = (a: Rect, b: Rect) =>
+      a.l < b.r - 0.5 && b.l < a.r - 0.5 && a.t < b.b - 0.5 && b.t < a.b - 0.5;
     const others = [...m.picker, ...m.card];
     for (const h of m.hud) {
-      for (const o of others) expect(hit(h, o), `HUD chip ${JSON.stringify(h)} runs under ${JSON.stringify(o)}`).toBe(false);
-      for (const t of m.hint) expect(hit(h, t), `the hint covers HUD chip ${JSON.stringify(h)}`).toBe(false);
+      for (const o of others)
+        expect(hit(h, o), `HUD chip ${JSON.stringify(h)} runs under ${JSON.stringify(o)}`).toBe(
+          false,
+        );
+      for (const t of m.hint)
+        expect(hit(h, t), `the hint covers HUD chip ${JSON.stringify(h)}`).toBe(false);
     }
   });
 }

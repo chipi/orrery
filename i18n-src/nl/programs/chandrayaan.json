@@ -91,9 +91,8 @@
     "mission:chandrayaan1": {
       "note": "India's eerste maanmissie — de inslagsonde en instrumenten vinden duidelijk bewijs van watermoleculen over het hele maanoppervlak, een ontdekking die veranderde hoe we de Maan begrijpen"
     },
-    "Chandrayaan-2": {
-      "note": "de orbiter slaagde en werkt nog steeds, maar de Vikram-lander stortte neer tijdens de laatste afdaling — een publieke, pijnlijke bijna-gelukte landing bij de zuidpool",
-      "name": "Chandrayaan-2"
+    "mission:chandrayaan2": {
+      "note": "de orbiter slaagde en werkt nog steeds, maar de Vikram-lander stortte neer tijdens de laatste afdaling — een publieke, pijnlijke bijna-gelukte landing bij de zuidpool"
     },
     "mission:chandrayaan3": {
       "note": "de terugkeer: Vikram landt zacht bij de zuidpool van de Maan — het eerste ruimtevaartuig ooit dat dat deed, waarmee India het vierde land werd dat op de Maan landde"

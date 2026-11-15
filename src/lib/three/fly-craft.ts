@@ -52,6 +52,9 @@ const FLY_CRAFT: Record<string, readonly [string, string]> = {
   'smart-1': ['orbiters', 'buildSmart1'],
   change1: ['orbiters', 'buildChange1'],
   chandrayaan1: ['orbiters', 'buildChandrayaan1'],
+  // The Chandrayaan-2 orbiter: another ISRO gold box with one wing; the Chandrayaan-1 shape is close enough.
+  chandrayaan2: ['orbiters', 'buildChandrayaan1'],
+  kaguya: ['orbiters', 'buildKaguya'],
   'lunar-prospector': ['orbiters', 'buildLunarProspector'],
   luna10: ['orbiters', 'buildLuna10'],
   sputnik1: ['early-stations', 'buildSputnik1'],

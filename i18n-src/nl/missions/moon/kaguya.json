@@ -1,0 +1,54 @@
+{
+  "name": "Kaguya (SELENE)",
+  "vehicle": "H-IIA 2022",
+  "payload": "3020 kg lanceermassa; 2914 kg hoofdorbiter; twee subsatellieten van 53 kg (Okina, Ouna)",
+  "delta_v": "~4 km/s (TLI + LOI, schatting)",
+  "type": "ORBITER · SUBSATELLIETEN · GEVLOGEN",
+  "first": "Hogeresolutievideo van een aardopkomst boven de maanhorizon",
+  "description": "Kaguya, officieel SELENE (Selenological and Engineering Explorer), was na Hiten de tweede Japanse maanorbiter. Gelanceerd met een H-IIA vanaf Tanegashima op 2007-09-14, droeg hij een hoofdorbiter van 2914 kg en twee subsatellieten van 53 kg, Okina en Ouna. Alle drie de namen komen uit «Het verhaal van de bamboesnijder», waarvan de heldin, Kaguya, een prinses van de maan is. Okina gaf de radioverbinding met de orbiter door vanachter de maan, waardoor de zwaartekracht van de achterkant met dopplermetingen kon worden gevolgd, en Ouna diende als radiobron voor VLBI-tracking. Na de maanbaaninsertie op 2007-10-03 vestigde de orbiter zich op 2007-10-19 in een cirkelvormige poolbaan op 100 km. Daar brachten zijn terreincamera, multibandbeeldvormer, spectraalprofiler, röntgen- en gammaspectrometers, laserhoogtemeter en radarsounder de vorm, samenstelling, zwaartekracht en het magnetisme van de maan in kaart, terwijl zijn hogeresolutiecamera de aarde filmde die boven de horizon opkwam. In 2009 werd de orbiter verlaagd tot ongeveer 50 km en op 2009-06-10 op commando gecontroleerd laten inslaan nabij de krater Gill.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCERING",
+      "note": "H-IIA 2022 (F13) vanaf Tanegashima, 2007-09-14.",
+      "type": "nominal"
+    },
+    {
+      "met": 19,
+      "label": "LOI",
+      "note": "Maanbaaninsertie 2007-10-03 in een poolbaan met een perilune van 100 km.",
+      "type": "nominal"
+    },
+    {
+      "met": 25,
+      "label": "OKINA LOSGEMAAKT",
+      "note": "De relaissatelliet wordt op 2007-10-09 losgelaten in een baan van 100 x 2400 km.",
+      "type": "info"
+    },
+    {
+      "met": 28.1,
+      "label": "OUNA LOSGEMAAKT",
+      "note": "De VLBI-radiobronsatelliet wordt op 2007-10-12 losgelaten in een baan van 100 x 800 km.",
+      "type": "info"
+    },
+    {
+      "met": 35,
+      "label": "BAAN OP 100 KM",
+      "note": "Cirkelvormige polaire baan op 100 km bereikt op 2007-10-19; de hoofdfase van de wetenschap begint.",
+      "type": "nominal"
+    },
+    {
+      "met": 517.4,
+      "label": "OKINA-INSLAG",
+      "note": "Okina valt op 2009-02-12 op de achterkant van de maan nabij de krater Mineur D.",
+      "type": "info"
+    },
+    {
+      "met": 635.7,
+      "label": "GECONTROLEERDE INSLAG",
+      "note": "De hoofdorbiter wordt op 2009-06-10 18:25 UTC naar het oppervlak nabij de krater Gill gestuurd en de missie eindigt.",
+      "type": "nominal"
+    }
+  ],
+  "vehicle_stage": "tweede trap van de H-IIA"
+}

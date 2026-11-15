@@ -592,6 +592,16 @@ export function buildChandrayaan1(): THREE.Group {
   });
 }
 
+/** Kaguya / SELENE (2007): a 2.1 m box bus with one large solar wing and a dish on a mast. Schematic. */
+export function buildKaguya(): THREE.Group {
+  return buildBoxOrbiter({
+    bus: [2.1, 2.1, 2.1],
+    gold: true,
+    arrays: { sides: [1], panels: 2, panelLen: 2.2, panelWid: 2.4, y: 1.05, strut: 0.3 },
+    dish: { d: 0.9, vertex: [0, 2.4, 0], elev: 0, mount: [0, 2.1, 0] },
+  });
+}
+
 /** Lunar Prospector (1998): a 1.36 m drum covered in cells, three 2.5 m instrument booms. */
 export function buildLunarProspector(): THREE.Group {
   const g = new THREE.Group();

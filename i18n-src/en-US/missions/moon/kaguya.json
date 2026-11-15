@@ -1,0 +1,19 @@
+{
+  "name": "Kaguya (SELENE)",
+  "vehicle": "H-IIA 2022",
+  "payload": "3020 kg launch mass; 2914 kg main orbiter; two 53 kg subsatellites (Okina, Ouna)",
+  "delta_v": "~4 km/s (TLI + LOI, estimate)",
+  "type": "ORBITER · SUBSATELLITES · FLOWN",
+  "first": "High-definition video of Earth rising over the Moon's limb",
+  "description": "Kaguya, formally SELENE (Selenological and Engineering Explorer), was Japan's second lunar orbiter after Hiten. Launched on an H-IIA from Tanegashima on 2007-09-14, it carried a 2914 kg main orbiter and two 53 kg subsatellites, Okina and Ouna. All three names come from The Tale of the Bamboo Cutter, whose heroine, Kaguya, is a princess from the Moon. Okina relayed the orbiter's radio link from behind the Moon, which allowed Doppler tracking of the far side's gravity, and Ouna served as a radio source for VLBI tracking. After lunar orbit insertion on 2007-10-03 the orbiter settled into a circular polar orbit at 100 km on 2007-10-19. There its terrain camera, multiband imager, spectral profiler, X-ray and gamma-ray spectrometers, laser altimeter and radar sounder mapped the Moon's shape, composition, gravity and magnetism, while its high-definition camera filmed Earth rising over the limb. The orbiter was lowered to about 50 km in 2009 and, on 2009-06-10, commanded into a controlled impact near Gill crater.",
+  "events": [
+    { "met": 0, "label": "LAUNCH", "note": "H-IIA 2022 (F13) from Tanegashima 2007-09-14.", "type": "nominal" },
+    { "met": 19, "label": "LOI", "note": "Lunar orbit insertion 2007-10-03 into a polar orbit with a 100 km perilune.", "type": "nominal" },
+    { "met": 25, "label": "OKINA RELEASED", "note": "The relay satellite is released 2007-10-09 into a 100 x 2400 km orbit.", "type": "info" },
+    { "met": 28.1, "label": "OUNA RELEASED", "note": "The VLBI radio-source satellite is released 2007-10-12 into a 100 x 800 km orbit.", "type": "info" },
+    { "met": 35, "label": "100 KM ORBIT", "note": "Circular polar orbit at 100 km reached 2007-10-19; the main science phase begins.", "type": "nominal" },
+    { "met": 517.4, "label": "OKINA IMPACT", "note": "Okina falls on the far side near Mineur D crater 2009-02-12.", "type": "info" },
+    { "met": 635.7, "label": "CONTROLLED IMPACT", "note": "The main orbiter is commanded into the surface near Gill crater 2009-06-10 18:25 UTC, ending the mission.", "type": "nominal" }
+  ],
+  "vehicle_stage": "H-IIA 2nd stage"
+}

@@ -91,9 +91,8 @@
     "mission:chandrayaan1": {
       "note": "Indiens erste Mondmission — Impaktor und Instrumente finden klare Hinweise auf Wassermoleküle auf der gesamten Mondoberfläche, eine Entdeckung, die unser Bild vom Mond veränderte"
     },
-    "Chandrayaan-2": {
-      "note": "der Orbiter war erfolgreich und arbeitet noch, aber der Lander Vikram stürzte beim letzten Abstieg ab — ein öffentlicher, schmerzhafter Beinahe-Erfolg am Südpol",
-      "name": "Chandrayaan-2"
+    "mission:chandrayaan2": {
+      "note": "der Orbiter war erfolgreich und arbeitet noch, aber der Lander Vikram stürzte beim letzten Abstieg ab — ein öffentlicher, schmerzhafter Beinahe-Erfolg am Südpol"
     },
     "mission:chandrayaan3": {
       "note": "die Rückkehr: Vikram landet weich nahe dem Mondsüdpol — als erstes Raumfahrzeug überhaupt, und Indien wird die vierte Nation mit einer Mondlandung"

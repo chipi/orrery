@@ -278,10 +278,13 @@ required because the credit tools keep a row's old agency, which named the old p
 (batch 1 came out with "JAXA / NASA" on a JAXA render); `author` overrides a Commons author field that
 holds a licence text instead of a name (MMX-CG02.jpg). A key that names the **next free slot** of a
 gallery (the slot after the last served one) **adds** a new picture instead of replacing one
-(`planets/mars/06`, UXD-029); a rendering or composite says so in its provenance `title` and alt text,
-which the tool does not write (edit the row after the run). The run ends with a whole-repo
-`build-credit-thumbs.mjs`: in a tree that lacks other galleries' credit thumbs it writes those too
-(709 untracked files, 2026-11-13); delete the unrelated ones and rebuild yours with `--paths F`.
+(`planets/mars/06`, UXD-029); so does slot 01 of a gallery with no served picture, and a slot that
+follows another slot of the same map, so a new mission or fleet gallery is built in one run (slice H
+part 2, 2026-11-15, `scripts/link-fixes/2026-11-15-slice-h-images.json`); a rendering or composite says so in its provenance `title` and alt text,
+which the tool does not write (edit the row after the run). The run ends with `build-credit-thumbs.mjs
+--paths` over its own slots only (it used to be whole-repo and wrote 709 untracked files in a tree that
+lacked other galleries' thumbs, 2026-11-13). The credit tools can mis-record a row: check the licence
+short and the author of every new row (a Commons file with no machine-readable author came out empty).
 
 ```bash
 npx tsx scripts/replace-gallery-slots.ts <map.json> --dry-run   # fetches every original, writes nothing

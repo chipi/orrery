@@ -14,8 +14,8 @@ const orbiters = [...load('moon-sites.json'), ...load('mars-sites.json')].filter
 // surface. If a story file is ever written for one, the STORY tab comes back
 // beside DETAIL and this test names which orbiter did it.
 describe('Moon and Mars orbiter sites', () => {
-  it('lists the 19 orbiters', () => {
-    expect(orbiters).toHaveLength(19);
+  it('lists the 20 orbiters', () => {
+    expect(orbiters).toHaveLength(20);
   });
 
   it('has no story file content for any orbiter', () => {
@@ -26,12 +26,12 @@ describe('Moon and Mars orbiter sites', () => {
     }
   });
 
-  it('shows the drawing of every orbiter that has one, and none for TGO and Tianwen-1', () => {
+  it('shows the drawing of every orbiter that has one, and none for Kaguya, TGO and Tianwen-1', () => {
     const without = orbiters
       .filter((s) => siteAnatomy(s).length === 0)
       .map((s) => s.id)
       .sort();
-    expect(without).toEqual(['tgo', 'tianwen1-orbiter']);
+    expect(without).toEqual(['kaguya', 'tgo', 'tianwen1-orbiter']);
     for (const s of orbiters) {
       const own = spacecraftDiagramPath(s.id);
       const refd = (s.fleet_refs ?? []).some((r) => spacecraftDiagramPath(r.id));

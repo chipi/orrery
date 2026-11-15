@@ -19948,5 +19948,72 @@
   ],
   "/images/stars/wezen/01": [
     512
+  ],
+  "/images/missions/thumbnails/chandrayaan2": [
+    736
+  ],
+  "/images/missions/thumbnails/card/chandrayaan2": [
+    420
+  ],
+  "/images/missions/thumbnails/kaguya": [
+    736
+  ],
+  "/images/missions/thumbnails/card/kaguya": [
+    420
+  ],
+  "/images/fleet-galleries/chandrayaan2/01": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/fleet-galleries/chandrayaan2/02": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/fleet-galleries/kaguya/01": [
+    320,
+    640,
+    1280,
+    2048
+  ],
+  "/images/missions/chandrayaan2/01": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/missions/chandrayaan2/02": [
+    320,
+    854,
+    1367,
+    2050
+  ],
+  "/images/missions/chandrayaan2/03": [
+    320,
+    1100
+  ],
+  "/images/missions/chandrayaan2/04": [
+    320,
+    1100
+  ],
+  "/images/missions/kaguya/01": [
+    320,
+    640,
+    1280
+  ],
+  "/images/missions/kaguya/02": [
+    320,
+    1280
+  ],
+  "/images/missions/kaguya/03": [
+    320,
+    512,
+    819,
+    1229
   ]
 }

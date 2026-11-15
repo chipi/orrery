@@ -423,6 +423,27 @@
     "crewed": false
   },
   {
+    "id": "kaguya",
+    "agency": "JAXA",
+    "dest": "MOON",
+    "status": "FLOWN",
+    "year": 2007,
+    "sector": "gov",
+    "color": "#003087",
+    "crewed": false
+  },
+  {
+    "id": "chandrayaan2",
+    "agency": "ISRO",
+    "dest": "MOON",
+    "status": "ACTIVE",
+    "year": 2019,
+    "sector": "gov",
+    "color": "#FF9933",
+    "crewed": false,
+    "outcome": "failure"
+  },
+  {
     "id": "blue-moon-mk1",
     "agency": "Blue Origin",
     "dest": "MOON",

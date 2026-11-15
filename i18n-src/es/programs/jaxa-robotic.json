@@ -93,9 +93,8 @@
     "/programs/hayabusa": "Hayabusa: la campaña de la JAXA para traer muestras de asteroides"
   },
   "roster": {
-    "Kaguya / SELENE": {
-      "note": "la mayor misión lunar desde Apollo — un orbitador lunar que cartografió la superficie con un detalle sin precedentes y grabó el primer vídeo en alta definición de la Tierra saliendo sobre el limbo lunar",
-      "name": "Kaguya / SELENE"
+    "mission:kaguya": {
+      "note": "la mayor misión lunar desde Apollo — un orbitador lunar que cartografió la superficie con un detalle sin precedentes y grabó el primer vídeo en alta definición de la Tierra saliendo sobre el limbo lunar"
     },
     "mission:akatsuki": {
       "note": "tras fallar en 2010 su motor de inserción orbital en Venus, la sonda rodeó el Sol durante cinco años y, en un segundo intento, usó sus diminutos propulsores de actitud para entrar en órbita — una misión salvada de una pérdida segura"

@@ -29465,6 +29465,136 @@
       "rejected_by": null,
       "scored_at": "2026-11-13T20:37:49.950Z",
       "scoring_cost_usd": 0
+    },
+    "/images/missions/kaguya/01.jpg": {
+      "score": 8,
+      "subject": "An H-IIA rocket lifting off from Tanegashima with the Kaguya lunar orbiter.",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.62,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T10:24:26.504Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/kaguya/02.jpg": {
+      "score": 8,
+      "subject": "A SMART-1 image of the lunar surface with the Kaguya impact site ringed in red.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.69,
+        "y": 0.33
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T10:24:26.516Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/kaguya/03.jpg": {
+      "score": 8,
+      "subject": "A strip of overlapping SMART-1 images crossing the lunar surface, with the Kaguya impact site ringed in red.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T10:24:26.524Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/kaguya/01.jpg": {
+      "score": 8,
+      "subject": "A 1:10 scale model of the Kaguya spacecraft on display.",
+      "category": "spacecraft",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.6
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T10:24:26.535Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/chandrayaan2/01.jpg": {
+      "score": 8,
+      "subject": "The Chandrayaan-2 orbiter in gold thermal foil on its transport trolley in a clean room.",
+      "category": "spacecraft",
+      "focal_point": {
+        "x": 0.55,
+        "y": 0.45
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T10:24:26.543Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/chandrayaan2/02.jpg": {
+      "score": 8,
+      "subject": "The Vikram lander mounted on top of the Chandrayaan-2 orbiter in a clean room.",
+      "category": "spacecraft",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.4
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T10:24:26.772Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/chandrayaan2/03.jpg": {
+      "score": 8,
+      "subject": "An LRO image of the Vikram crash site with the impact site, debris and soil disturbance marked.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.4
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T10:24:26.925Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/chandrayaan2/04.jpg": {
+      "score": 8,
+      "subject": "An LRO after/before ratio image of the Vikram crash site.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T10:24:26.932Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/chandrayaan2/01.jpg": {
+      "score": 8,
+      "subject": "Technicians examining the Chandrayaan-2 orbiter in a clean room during payload integration.",
+      "category": "spacecraft",
+      "focal_point": {
+        "x": 0.55,
+        "y": 0.4
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T10:24:26.937Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/chandrayaan2/02.jpg": {
+      "score": 8,
+      "subject": "The Chandrayaan-3 lander on the lunar surface, imaged by the Chandrayaan-2 orbiter's OHRC camera.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.45,
+        "y": 0.52
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T10:24:26.965Z",
+      "scoring_cost_usd": 0
     }
   }
 }

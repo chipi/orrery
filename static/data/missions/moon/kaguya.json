@@ -1,0 +1,723 @@
+{
+  "id": "kaguya",
+  "agency": "JAXA",
+  "agency_full": "Japan Aerospace Exploration Agency",
+  "sector": "gov",
+  "dest": "MOON",
+  "color": "#003087",
+  "year": 2007,
+  "status": "FLOWN",
+  "departure_date": "2007-09-14",
+  "arrival_date": "2007-10-03",
+  "transit_days": 19,
+  "vehicle": "H-IIA 2022",
+  "payload": "3020 kg launch mass; 2914 kg main orbiter; two 53 kg subsatellites (Okina, Ouna)",
+  "delta_v": "~4 km/s (TLI + LOI, estimate)",
+  "data_quality": "good",
+  "credit": "© JAXA — SELENE (Selenological and Engineering Explorer), nicknamed Kaguya. Japan's second lunar orbiter after Hiten: a 2914 kg main orbiter and two 53 kg subsatellites mapped the Moon's surface, gravity and magnetism from 2007 to 2009, and its high-definition camera filmed Earth rising over the limb.",
+  "links": [
+    {
+      "l": "SELENE (Kaguya) — JAXA",
+      "u": "https://global.jaxa.jp/projects/sas/selene/",
+      "t": "intro"
+    },
+    {
+      "l": "月周回衛星「かぐや」(SELENE) — ISAS/JAXA",
+      "u": "https://www.isas.jaxa.jp/en/missions/spacecraft/past/kaguya.html",
+      "t": "core"
+    },
+    {
+      "l": "SELENE — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/SELENE",
+      "t": "intro"
+    },
+    {
+      "l": "かぐや (月周回衛星) — 日本語版ウィキペディア",
+      "u": "https://ja.wikipedia.org/wiki/%E3%81%8B%E3%81%90%E3%82%84",
+      "t": "core"
+    },
+    {
+      "l": "The Kaguya mission overview (Kato et al., Space Science Reviews 2010)",
+      "u": "https://link.springer.com/article/10.1007/s11214-010-9678-3",
+      "t": "deep"
+    }
+  ],
+  "flight_data_quality": "sparse",
+  "fleet_refs": [
+    {
+      "id": "h-iia",
+      "role": "launcher"
+    },
+    {
+      "id": "kaguya",
+      "role": "spacecraft"
+    },
+    {
+      "id": "tanegashima-yoshinobu",
+      "role": "launch-site"
+    }
+  ],
+  "flight": {
+    "launch": {
+      "vehicle_stage": "H-IIA 2nd stage",
+      "mass_at_tli_kg": 3020,
+      "source": "JAXA/ISAS: launch 2007-09-14 on H-IIA F13; total launch mass about 3 t (Ahrens, NASA GSFC, Kaguya overview, citing Kato et al. 2010)",
+      "departure": "spacecraft"
+    },
+    "cruise": {
+      "tcm_count": 0,
+      "source": "Kato et al. 2010 and the NASA GSFC overview describe a phasing orbit of 2.5 revolutions around the Earth before lunar orbit insertion; no dated trajectory corrections were found, so none is listed."
+    },
+    "arrival": {
+      "v_infinity_km_s": 0.85,
+      "periapsis_km": 100,
+      "inclination_deg": 90,
+      "orbit_insertion_dv_km_s": 0.85,
+      "source": "Lunar orbit insertion 2007-10-03 into a polar orbit with a 100 km perilune (Ahrens, NASA GSFC, citing Kato et al. 2010); the v-infinity and the insertion delta-v are schematic estimates, not published figures."
+    },
+    "totals": {
+      "total_dv_km_s": 4,
+      "source": "Schematic estimate for TLI plus LOI; the mission's propellant budget was not found."
+    },
+    "events": [
+      {
+        "met_days": 0,
+        "type": "launch",
+        "label": "Launch — H-IIA F13",
+        "description": "Tanegashima Space Center, Japan, 2007-09-14. SELENE (Kaguya) rides an H-IIA 2022 with a 2914 kg main orbiter and two 53 kg subsatellites, Okina and Ouna."
+      },
+      {
+        "met_days": 19,
+        "type": "edl_or_oi",
+        "label": "Lunar orbit insertion",
+        "description": "2007-10-03. After a phasing orbit of about 2.5 revolutions around the Earth, Kaguya is captured into a polar lunar orbit with a 100 km perilune. It settles into a circular orbit at 100 km on 2007-10-19."
+      }
+    ],
+    "cislunar_profile": {
+      "source_tier": "tier_1_5_hybrid",
+      "parking_orbit": {
+        "altitude_km": 250,
+        "inclination_deg": 30.4,
+        "revs": 3
+      },
+      "tli": {
+        "dv_kms": 3.1
+      },
+      "translunar": {
+        "type": "direct"
+      },
+      "lunar_arrival": {
+        "type": "orbit",
+        "altitude_km": 100,
+        "inclination_deg": 90,
+        "periselene_km": 100
+      },
+      "return": {
+        "type": "none"
+      },
+      "waypoints_source": "Kaguya (JAXA): launch 2007-09-14, lunar orbit insertion 2007-10-03 after a phasing orbit of about 2.5 revolutions (Ahrens, NASA GSFC overview; Kato et al. 2010). Parking-orbit altitude, inclination and the TLI delta-v are schematic. Ecliptic plane; orbit phase schematic.",
+      "waypoints_km": [
+        [
+          0,
+          6628,
+          0,
+          0
+        ],
+        [
+          0.0001,
+          6627,
+          -3,
+          6
+        ],
+        [
+          0.403,
+          -4322,
+          2523,
+          -4301
+        ],
+        [
+          0.6045,
+          6329,
+          940,
+          -1603
+        ],
+        [
+          0.8061,
+          -940,
+          -3307,
+          5637
+        ],
+        [
+          1.0076,
+          -5567,
+          1811,
+          -3086
+        ],
+        [
+          1.2091,
+          5567,
+          1811,
+          -3086
+        ],
+        [
+          1.4106,
+          940,
+          -3307,
+          5637
+        ],
+        [
+          1.6121,
+          -6329,
+          940,
+          -1603
+        ],
+        [
+          1.8136,
+          4322,
+          2523,
+          -4301
+        ],
+        [
+          2.0152,
+          6688,
+          0,
+          -86
+        ],
+        [
+          2.2167,
+          6795,
+          0,
+          -241
+        ],
+        [
+          2.4182,
+          6902,
+          0,
+          -401
+        ],
+        [
+          2.6197,
+          7010,
+          0,
+          -566
+        ],
+        [
+          2.8212,
+          7118,
+          0,
+          -737
+        ],
+        [
+          3.0227,
+          7228,
+          0,
+          -913
+        ],
+        [
+          3.2242,
+          7338,
+          0,
+          -1096
+        ],
+        [
+          3.4258,
+          7450,
+          0,
+          -1285
+        ],
+        [
+          3.6273,
+          7562,
+          0,
+          -1480
+        ],
+        [
+          3.8288,
+          7676,
+          0,
+          -1683
+        ],
+        [
+          4.0303,
+          7790,
+          0,
+          -1893
+        ],
+        [
+          4.2318,
+          7905,
+          0,
+          -2111
+        ],
+        [
+          4.4333,
+          8021,
+          0,
+          -2337
+        ],
+        [
+          4.6348,
+          8139,
+          0,
+          -2572
+        ],
+        [
+          4.8364,
+          8257,
+          0,
+          -2816
+        ],
+        [
+          5.0379,
+          8377,
+          0,
+          -3069
+        ],
+        [
+          5.2394,
+          8497,
+          0,
+          -3332
+        ],
+        [
+          5.4409,
+          8619,
+          0,
+          -3606
+        ],
+        [
+          5.6424,
+          8741,
+          0,
+          -3891
+        ],
+        [
+          5.8439,
+          8865,
+          0,
+          -4189
+        ],
+        [
+          6.0455,
+          8989,
+          0,
+          -4498
+        ],
+        [
+          6.247,
+          9115,
+          0,
+          -4821
+        ],
+        [
+          6.4485,
+          9242,
+          0,
+          -5158
+        ],
+        [
+          6.65,
+          9370,
+          0,
+          -5510
+        ],
+        [
+          6.8515,
+          9498,
+          0,
+          -5878
+        ],
+        [
+          7.053,
+          9628,
+          0,
+          -6263
+        ],
+        [
+          7.2545,
+          9758,
+          0,
+          -6666
+        ],
+        [
+          7.4561,
+          9890,
+          0,
+          -7088
+        ],
+        [
+          7.6576,
+          10022,
+          0,
+          -7530
+        ],
+        [
+          7.8591,
+          10154,
+          0,
+          -7994
+        ],
+        [
+          8.0606,
+          10287,
+          0,
+          -8482
+        ],
+        [
+          8.2621,
+          10421,
+          0,
+          -8994
+        ],
+        [
+          8.4636,
+          10555,
+          0,
+          -9534
+        ],
+        [
+          8.6652,
+          10689,
+          0,
+          -10101
+        ],
+        [
+          8.8667,
+          10823,
+          0,
+          -10700
+        ],
+        [
+          9.0682,
+          10956,
+          0,
+          -11332
+        ],
+        [
+          9.2697,
+          11089,
+          0,
+          -11999
+        ],
+        [
+          9.4712,
+          11221,
+          0,
+          -12704
+        ],
+        [
+          9.6727,
+          11351,
+          0,
+          -13453
+        ],
+        [
+          9.8742,
+          11480,
+          0,
+          -14245
+        ],
+        [
+          10.0758,
+          11606,
+          0,
+          -15086
+        ],
+        [
+          10.2773,
+          11730,
+          0,
+          -15979
+        ],
+        [
+          10.4788,
+          11850,
+          0,
+          -16930
+        ],
+        [
+          10.6803,
+          11965,
+          0,
+          -17944
+        ],
+        [
+          10.8818,
+          12076,
+          0,
+          -19025
+        ],
+        [
+          11.0833,
+          12180,
+          0,
+          -20180
+        ],
+        [
+          11.2848,
+          12276,
+          0,
+          -21418
+        ],
+        [
+          11.4864,
+          12363,
+          0,
+          -22744
+        ],
+        [
+          11.6879,
+          12440,
+          0,
+          -24167
+        ],
+        [
+          11.8894,
+          12503,
+          0,
+          -25699
+        ],
+        [
+          12.0909,
+          12551,
+          0,
+          -27351
+        ],
+        [
+          12.2924,
+          12582,
+          0,
+          -29133
+        ],
+        [
+          12.4939,
+          12591,
+          0,
+          -31058
+        ],
+        [
+          12.6955,
+          12575,
+          0,
+          -33149
+        ],
+        [
+          12.897,
+          12530,
+          0,
+          -35420
+        ],
+        [
+          13.0985,
+          12450,
+          0,
+          -37889
+        ],
+        [
+          13.3,
+          12330,
+          0,
+          -40580
+        ],
+        [
+          13.5015,
+          12159,
+          0,
+          -43532
+        ],
+        [
+          13.703,
+          11931,
+          0,
+          -46765
+        ],
+        [
+          13.9045,
+          11635,
+          0,
+          -50312
+        ],
+        [
+          14.1061,
+          11259,
+          0,
+          -54219
+        ],
+        [
+          14.3076,
+          10783,
+          0,
+          -58546
+        ],
+        [
+          14.5091,
+          10193,
+          0,
+          -63332
+        ],
+        [
+          14.7106,
+          9467,
+          0,
+          -68638
+        ],
+        [
+          14.9121,
+          8575,
+          0,
+          -74550
+        ],
+        [
+          15.1136,
+          7481,
+          0,
+          -81162
+        ],
+        [
+          15.3152,
+          6151,
+          0,
+          -88550
+        ],
+        [
+          15.5167,
+          4540,
+          0,
+          -96822
+        ],
+        [
+          15.7182,
+          2578,
+          0,
+          -106135
+        ],
+        [
+          15.9197,
+          197,
+          0,
+          -116625
+        ],
+        [
+          16.1212,
+          -2679,
+          0,
+          -128422
+        ],
+        [
+          16.3227,
+          -6145,
+          0,
+          -141684
+        ],
+        [
+          16.5242,
+          -10345,
+          0,
+          -156642
+        ],
+        [
+          16.7258,
+          -15392,
+          0,
+          -173400
+        ],
+        [
+          16.9273,
+          -21417,
+          0,
+          -192040
+        ],
+        [
+          17.1288,
+          -28556,
+          0,
+          -212583
+        ],
+        [
+          17.3303,
+          -36999,
+          0,
+          -234990
+        ],
+        [
+          17.5318,
+          -46760,
+          0,
+          -258818
+        ],
+        [
+          17.7333,
+          -57820,
+          0,
+          -283407
+        ],
+        [
+          17.9348,
+          -70023,
+          0,
+          -307713
+        ],
+        [
+          18.1364,
+          -83017,
+          0,
+          -330140
+        ],
+        [
+          18.3379,
+          -96151,
+          0,
+          -348911
+        ],
+        [
+          18.5394,
+          -108629,
+          0,
+          -362147
+        ],
+        [
+          18.7409,
+          -119519,
+          0,
+          -368105
+        ],
+        [
+          19,
+          -129876,
+          0,
+          -363746
+        ],
+        [
+          19.1439,
+          -129807,
+          841,
+          -363553
+        ],
+        [
+          19.3455,
+          -129515,
+          1670,
+          -362734
+        ],
+        [
+          19.547,
+          -129113,
+          1784,
+          -361609
+        ],
+        [
+          19.7485,
+          -128773,
+          1135,
+          -360657
+        ],
+        [
+          19.95,
+          -128641,
+          0,
+          -360286
+        ]
+      ]
+    }
+  }
+}

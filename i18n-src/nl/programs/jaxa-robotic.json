@@ -93,9 +93,8 @@
     "/programs/hayabusa": "Hayabusa — de JAXA-campagne die monsters van planetoïden terugbracht"
   },
   "roster": {
-    "Kaguya / SELENE": {
-      "note": "de grootste maanmissie sinds Apollo — een maanorbiter die het oppervlak met ongekend detail in kaart bracht en de eerste high-definitionvideo maakte van een opkomende Aarde boven de maanrand",
-      "name": "Kaguya / SELENE"
+    "mission:kaguya": {
+      "note": "de grootste maanmissie sinds Apollo — een maanorbiter die het oppervlak met ongekend detail in kaart bracht en de eerste high-definitionvideo maakte van een opkomende Aarde boven de maanrand"
     },
     "mission:akatsuki": {
       "note": "nadat zijn motor voor baaninsertie in 2010 bij Venus uitviel, cirkelde de sonde vijf jaar om de Zon en gleed bij een tweede poging met zijn kleine standregelmotoren in een baan — een missie gered van zeker verlies"

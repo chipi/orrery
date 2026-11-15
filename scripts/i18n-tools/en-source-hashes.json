@@ -3436,6 +3436,11 @@
     "description": "3c6e8d5c3b",
     "tagline": "d885a4f710"
   },
+  "fleet/orbiter/chandrayaan2.json": {
+    "best_known_for": "67fc0c5782",
+    "description": "db4a78c710",
+    "tagline": "67fc0c5782"
+  },
   "fleet/orbiter/change-2.json": {
     "best_known_for": "6cd0db5328",
     "description": "3c6f586c8b",
@@ -3514,6 +3519,11 @@
     "description": "3daf1de817",
     "name": "2e97b8b4ba",
     "tagline": "f88383c7f9"
+  },
+  "fleet/orbiter/kaguya.json": {
+    "best_known_for": "0607579df7",
+    "description": "4bbc5c18e3",
+    "tagline": "0607579df7"
   },
   "fleet/orbiter/lro.json": {
     "best_known_for": "70e85710f5",
@@ -10531,6 +10541,34 @@
     "vehicle": "ef03cb7a6c",
     "vehicle_stage": "9e1f348919"
   },
+  "missions/moon/chandrayaan2.json": {
+    "delta_v": "4cc166d53f",
+    "description": "f925c6b1f4",
+    "events.0.label": "89006102d3",
+    "events.0.note": "4253b70667",
+    "events.0.type": "586d612861",
+    "events.1.label": "2b17a67d3a",
+    "events.1.note": "03281f7b5e",
+    "events.1.type": "586d612861",
+    "events.2.label": "4c3d27717f",
+    "events.2.note": "737315aef2",
+    "events.2.type": "586d612861",
+    "events.3.label": "46ed73397e",
+    "events.3.note": "69c558d8b9",
+    "events.3.type": "586d612861",
+    "events.4.label": "620932e8cf",
+    "events.4.note": "bf839999a3",
+    "events.4.type": "383fd7bf84",
+    "events.5.label": "8e1cec1833",
+    "events.5.note": "c0c6a0cd5e",
+    "events.5.type": "59bd0a3ff4",
+    "first": "69971e22e3",
+    "name": "e4792516d8",
+    "payload": "baa2308e59",
+    "type": "965ce8c3ca",
+    "vehicle": "dfcbe80f33",
+    "vehicle_stage": "53a8a5914b"
+  },
   "missions/moon/chandrayaan3.json": {
     "delta_v": "07bc01930b",
     "description": "cfa8539abd",
@@ -10711,6 +10749,37 @@
     "type": "5931663f94",
     "vehicle": "e05b1970dd",
     "vehicle_stage": "73df2db2bf"
+  },
+  "missions/moon/kaguya.json": {
+    "delta_v": "faf40213b1",
+    "description": "c299059214",
+    "events.0.label": "89006102d3",
+    "events.0.note": "d561688e2e",
+    "events.0.type": "586d612861",
+    "events.1.label": "4c3d27717f",
+    "events.1.note": "c746cc8078",
+    "events.1.type": "586d612861",
+    "events.2.label": "f1783c85af",
+    "events.2.note": "c8bcd7299e",
+    "events.2.type": "59bd0a3ff4",
+    "events.3.label": "5e44c67231",
+    "events.3.note": "6c71f1e2e3",
+    "events.3.type": "59bd0a3ff4",
+    "events.4.label": "558c9b561b",
+    "events.4.note": "c7a2ef59b5",
+    "events.4.type": "586d612861",
+    "events.5.label": "3546a249a4",
+    "events.5.note": "5999108daa",
+    "events.5.type": "59bd0a3ff4",
+    "events.6.label": "a3560a53b1",
+    "events.6.note": "2045fa7296",
+    "events.6.type": "586d612861",
+    "first": "22ac19bfa0",
+    "name": "f2ac0904eb",
+    "payload": "06971de2a0",
+    "type": "8b1f1b3f3a",
+    "vehicle": "4663ec8ec8",
+    "vehicle_stage": "3ba5583b72"
   },
   "missions/moon/lro.json": {
     "delta_v": "e660934f53",
@@ -11372,6 +11441,14 @@
     "name": "5337860aa1",
     "site_name": "34bad456e2"
   },
+  "moon-sites/chandrayaan2.json": {
+    "capability": "b670c7cbc3",
+    "fact": "3654ed6f1d",
+    "left": "d7f919c366",
+    "mission_type": "929e36caa8",
+    "name": "829e2f9054",
+    "site_name": "d33198e15c"
+  },
   "moon-sites/chandrayaan3.json": {
     "capability": "e63bc80b36",
     "fact": "0135517593",
@@ -11440,6 +11517,13 @@
     "mission_type": "4d93e55942",
     "name": "2bf2d48e26",
     "site_name": "37462a5e60"
+  },
+  "moon-sites/kaguya.json": {
+    "capability": "e29f88337d",
+    "fact": "afb6d3693b",
+    "mission_type": "c7df813bc8",
+    "name": "f2ac0904eb",
+    "site_name": "34bad456e2"
   },
   "moon-sites/lro.json": {
     "capability": "4c2421ac18",

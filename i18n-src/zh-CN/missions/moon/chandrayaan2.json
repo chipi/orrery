@@ -1,0 +1,48 @@
+{
+  "name": "Chandrayaan-2",
+  "vehicle": "LVM3 M1（原 GSLV Mk III）",
+  "payload": "发射质量 3850 kg；轨道器 2379 kg；Vikram 着陆器 1471 kg（含 27 kg 的 Pragyan 巡视器）",
+  "delta_v": "~3.5 km/s（估算）",
+  "type": "轨道器运行中 · 着陆器丢失",
+  "first": "印度首次尝试在月球软着陆",
+  "description": "Chandrayaan-2 是 ISRO 的第二次月球任务，也是其首次软着陆尝试：一台轨道器、Vikram 着陆器和 27 kg 的 Pragyan 巡视器，于 2019-07-22 一同从斯里赫里戈达发射。轨道器于 2019-08-20 被月球捕获进入轨道，Vikram 于 2019-09-02 分离，着陆器于 2019-09-06 开始朝南极地区的动力下降。在约 2.1 km 高度失去联系，Vikram 坠毁；故障分析委员会认为原因是多种因素的综合，其中包括下降制导与控制中的软件错误。后来，一位来自金奈的志愿者在 NASA 月球勘测轨道器（LRO）的图像中发现了残骸，LRO 随后确定了撞击点（70.881° S，22.784° E）。轨道器继续工作：它的八台仪器（CLASS、XSM、DFSAR、IIRS、ChACE-2、TMC-2、RAMBHA-DFRS 和 OHRC）在 2026 年仍在极轨道上测绘月球，其 OHRC 相机后来还拍摄了 Chandrayaan-3 的着陆点。",
+  "events": [
+    {
+      "met": 0,
+      "label": "发射",
+      "note": "LVM3 M1（前身为 GSLV Mk III）从斯里赫里戈达发射，2019-07-22。",
+      "type": "nominal"
+    },
+    {
+      "met": 22.49,
+      "label": "TLI",
+      "note": "经过一系列地球轨道抬升点火后，于 2019-08-13 进行地月转移入轨。",
+      "type": "nominal"
+    },
+    {
+      "met": 28.76,
+      "label": "月球轨道插入",
+      "note": "月球轨道插入 2019-08-20，进入 18,072 x 114 km 轨道。",
+      "type": "nominal"
+    },
+    {
+      "met": 41.94,
+      "label": "Vikram 分离",
+      "note": "内含 Pragyan 巡视器的 Vikram 于 2019-09-02 与轨道器分离。",
+      "type": "nominal"
+    },
+    {
+      "met": 46.45,
+      "label": "着陆器丢失",
+      "note": "动力下降于 2019-09-06 约 20:08 UTC 开始（印度时间为 9 月 7 日）；在约 2.1 km 高度失去联系，Vikram 坠毁。",
+      "type": "warning"
+    },
+    {
+      "met": 133,
+      "label": "发现坠毁点",
+      "note": "NASA 的 LRO 确定 Vikram 的撞击点（70.881° S，22.784° E），于 2019-12-02 公布；轨道器继续测绘。",
+      "type": "info"
+    }
+  ],
+  "vehicle_stage": "LVM3 低温上面级"
+}

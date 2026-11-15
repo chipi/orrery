@@ -27,5 +27,14 @@
       "u": "https://www.isro.gov.in/Press%20Release5.html",
       "t": "deep"
     }
+  ],
+  "linked_missions": [
+    "chandrayaan2"
+  ],
+  "linked_sites": [
+    {
+      "type": "moon",
+      "site_id": "chandrayaan2"
+    }
   ]
 }

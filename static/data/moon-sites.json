@@ -1107,6 +1107,41 @@
     ]
   },
   {
+    "id": "kaguya",
+    "marker": "orbiter",
+    "kind": "orbiter",
+    "agency": "JAXA",
+    "nation": "Japan",
+    "year": 2007,
+    "altitude_km": 100,
+    "inclination_deg": 90,
+    "eccentricity": 0,
+    "status": "ENDED",
+    "surface_status": "completed",
+    "samples_kg": 0,
+    "data_quality": "good",
+    "credit": "© JAXA — Kaguya (SELENE), Japan's second lunar orbiter, in a 100 km polar orbit from 2007 to 2009. Its terrain camera patches serve as context images for many of the landing sites here.",
+    "mission_id": "kaguya",
+    "links": [
+      {
+        "l": "SELENE (Kaguya) — JAXA",
+        "u": "https://global.jaxa.jp/projects/sas/selene/",
+        "t": "intro"
+      },
+      {
+        "l": "SELENE — Wikipedia",
+        "u": "https://en.wikipedia.org/wiki/SELENE",
+        "t": "intro"
+      }
+    ],
+    "fleet_refs": [
+      {
+        "id": "kaguya",
+        "role": "spacecraft"
+      }
+    ]
+  },
+  {
     "id": "lro",
     "marker": "orbiter",
     "kind": "orbiter",
@@ -1212,6 +1247,48 @@
     "fleet_refs": [
       {
         "id": "beresheet",
+        "role": "spacecraft"
+      }
+    ]
+  },
+  {
+    "id": "chandrayaan2",
+    "marker": "lander",
+    "kind": "surface",
+    "agency": "ISRO",
+    "nation": "India",
+    "year": 2019,
+    "landing_date": "2019-09-06",
+    "lat": -70.881,
+    "lon": 22.784,
+    "region_bounds": {
+      "lat_min": -70.9,
+      "lat_max": -70.86,
+      "lon_min": 22.74,
+      "lon_max": 22.83
+    },
+    "region_kind": "landing_ellipse",
+    "crewed": false,
+    "status": "CRASHED",
+    "surface_status": "completed",
+    "data_quality": "good",
+    "credit": "Vikram, the lander of ISRO's Chandrayaan-2, crashed during its powered descent on 2019-09-06. NASA's Lunar Reconnaissance Orbiter found the impact site at 70.881° S, 22.784° E, announced 2019-12-02.",
+    "mission_id": "chandrayaan2",
+    "links": [
+      {
+        "l": "Vikram Lander Found — LROC (NASA/GSFC/Arizona State University)",
+        "u": "https://lroc.im-ldi.com/posts/1131",
+        "t": "core"
+      },
+      {
+        "l": "Chandrayaan-2 — Wikipedia",
+        "u": "https://en.wikipedia.org/wiki/Chandrayaan-2",
+        "t": "intro"
+      }
+    ],
+    "fleet_refs": [
+      {
+        "id": "vikram-cy2",
         "role": "spacecraft"
       }
     ]

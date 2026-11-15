@@ -31414,7 +31414,8 @@
       "nasa_id": "TC1S2B0_01_05507N332E0193",
       "fetched_at": "2026-06-24T22:29:37.305Z",
       "spacecraft_name": "Kaguya (SELENE)",
-      "instrument": "Kaguya TC"
+      "instrument": "Kaguya TC",
+      "spacecraft_id": "kaguya"
     },
     {
       "id": "750f40c7d2147eea",
@@ -31459,7 +31460,8 @@
       "nasa_id": "TC1S2B0_01_03493S699E0322",
       "fetched_at": "2026-06-24T22:29:18.854Z",
       "spacecraft_name": "Kaguya (SELENE)",
-      "instrument": "Kaguya TC"
+      "instrument": "Kaguya TC",
+      "spacecraft_id": "kaguya"
     },
     {
       "id": "9a5f49f5c72a4e08",
@@ -31504,7 +31506,8 @@
       "nasa_id": "TC1S2B0_01_03493S699E0322",
       "fetched_at": "2026-06-28T18:02:08.934Z",
       "spacecraft_name": "Kaguya (SELENE)",
-      "instrument": "Kaguya TC"
+      "instrument": "Kaguya TC",
+      "spacecraft_id": "kaguya"
     },
     {
       "id": "c1fa1c9aa73cad80",
@@ -31528,7 +31531,8 @@
       "nasa_id": "TC1S2B0_01_03493S699E0322",
       "fetched_at": "2026-06-28T18:02:08.934Z",
       "spacecraft_name": "Kaguya (SELENE)",
-      "instrument": "Kaguya TC"
+      "instrument": "Kaguya TC",
+      "spacecraft_id": "kaguya"
     },
     {
       "id": "e1dc300cdb386e98",
@@ -31573,7 +31577,8 @@
       "nasa_id": "TC1S2B0_01_03042N437E3400",
       "fetched_at": "2026-06-24T22:28:36.507Z",
       "spacecraft_name": "Kaguya (SELENE)",
-      "instrument": "Kaguya TC"
+      "instrument": "Kaguya TC",
+      "spacecraft_id": "kaguya"
     },
     {
       "id": "d2a870b57c5f9570",
@@ -31618,7 +31623,8 @@
       "nasa_id": "TC1S2B0_01_03042N437E3400",
       "fetched_at": "2026-06-28T18:01:57.847Z",
       "spacecraft_name": "Kaguya (SELENE)",
-      "instrument": "Kaguya TC"
+      "instrument": "Kaguya TC",
+      "spacecraft_id": "kaguya"
     },
     {
       "id": "6c00365047f1315a",
@@ -31665,7 +31671,8 @@
       "nasa_id": "TC1S2B0_01_03358S461E1781",
       "fetched_at": "2026-11-03T21:37:43.466Z",
       "spacecraft_name": "Kaguya (SELENE)",
-      "instrument": "Kaguya TC"
+      "instrument": "Kaguya TC",
+      "spacecraft_id": "kaguya"
     },
     {
       "id": "a57e8ad227a8f74b",
@@ -31710,7 +31717,8 @@
       "nasa_id": "TC1S2B0_01_03358S461E1781",
       "fetched_at": "2026-06-28T18:01:07.950Z",
       "spacecraft_name": "Kaguya (SELENE)",
-      "instrument": "Kaguya TC"
+      "instrument": "Kaguya TC",
+      "spacecraft_id": "kaguya"
     },
     {
       "id": "04cf35146316f4f6",
@@ -31734,7 +31742,8 @@
       "nasa_id": "TC1S2B0_01_03358S461E1781",
       "fetched_at": "2026-06-28T18:01:07.950Z",
       "spacecraft_name": "Kaguya (SELENE)",
-      "instrument": "Kaguya TC"
+      "instrument": "Kaguya TC",
+      "spacecraft_id": "kaguya"
     },
     {
       "id": "bbf9ab3367472780",
@@ -31758,7 +31767,8 @@
       "nasa_id": "TC1S2B0_01_05527S459E1774",
       "fetched_at": "2026-06-28T18:01:07.950Z",
       "spacecraft_name": "Kaguya (SELENE)",
-      "instrument": "Kaguya TC"
+      "instrument": "Kaguya TC",
+      "spacecraft_id": "kaguya"
     },
     {
       "id": "3b342c1d6a8415b7",
@@ -31782,7 +31792,8 @@
       "nasa_id": "TC1S2B0_01_03358S461E1781",
       "fetched_at": "2026-06-28T18:01:07.950Z",
       "spacecraft_name": "Kaguya (SELENE)",
-      "instrument": "Kaguya TC"
+      "instrument": "Kaguya TC",
+      "spacecraft_id": "kaguya"
     },
     {
       "id": "175dcff66a40a5a7",
@@ -31806,7 +31817,8 @@
       "nasa_id": "TC1S2B0_01_05527S459E1774",
       "fetched_at": "2026-06-28T18:01:07.950Z",
       "spacecraft_name": "Kaguya (SELENE)",
-      "instrument": "Kaguya TC"
+      "instrument": "Kaguya TC",
+      "spacecraft_id": "kaguya"
     },
     {
       "id": "66091dbe1d42f8d5",
@@ -31830,7 +31842,8 @@
       "nasa_id": "TC1S2B0_01_03358S461E1781",
       "fetched_at": "2026-06-28T18:01:07.947Z",
       "spacecraft_name": "Kaguya (SELENE)",
-      "instrument": "Kaguya TC"
+      "instrument": "Kaguya TC",
+      "spacecraft_id": "kaguya"
     },
     {
       "id": "8f666e4e9da12291",
@@ -31875,7 +31888,8 @@
       "nasa_id": "TC1S2B0_01_03071N429E3084",
       "fetched_at": "2026-11-03T21:37:54.287Z",
       "spacecraft_name": "Kaguya (SELENE)",
-      "instrument": "Kaguya TC"
+      "instrument": "Kaguya TC",
+      "spacecraft_id": "kaguya"
     },
     {
       "id": "bfc898ae32100456",
@@ -31941,7 +31955,8 @@
       "nasa_id": "TC1S2B0_01_03332S420E2064",
       "fetched_at": "2026-11-03T21:38:01.663Z",
       "spacecraft_name": "Kaguya (SELENE)",
-      "instrument": "Kaguya TC"
+      "instrument": "Kaguya TC",
+      "spacecraft_id": "kaguya"
     },
     {
       "id": "ad8e724fe8564b5a",
@@ -32007,7 +32022,8 @@
       "nasa_id": "TC1W2B0_01_05138S001E0565",
       "fetched_at": "2026-11-03T21:37:03.429Z",
       "spacecraft_name": "Kaguya (SELENE)",
-      "instrument": "Kaguya TC"
+      "instrument": "Kaguya TC",
+      "spacecraft_id": "kaguya"
     },
     {
       "id": "9b1d11a1cc39fcab",
@@ -32052,7 +32068,8 @@
       "nasa_id": "TC2W2B0_01_07124N385E3250",
       "fetched_at": "2026-11-03T21:37:13.796Z",
       "spacecraft_name": "Kaguya (SELENE)",
-      "instrument": "Kaguya TC"
+      "instrument": "Kaguya TC",
+      "spacecraft_id": "kaguya"
     },
     {
       "id": "624f3e472b249fa6",
@@ -32097,7 +32114,8 @@
       "nasa_id": "TC2W2B0_01_07124N385E3250",
       "fetched_at": "2026-06-28T18:02:33.087Z",
       "spacecraft_name": "Kaguya (SELENE)",
-      "instrument": "Kaguya TC"
+      "instrument": "Kaguya TC",
+      "spacecraft_id": "kaguya"
     },
     {
       "id": "08ed7960e106fc44",
@@ -32121,7 +32139,8 @@
       "nasa_id": "TC2W2B0_01_07124N385E3250",
       "fetched_at": "2026-06-28T18:02:33.087Z",
       "spacecraft_name": "Kaguya (SELENE)",
-      "instrument": "Kaguya TC"
+      "instrument": "Kaguya TC",
+      "spacecraft_id": "kaguya"
     },
     {
       "id": "62a89efcc4bc9995",
@@ -32145,7 +32164,8 @@
       "nasa_id": "TC2W2B0_01_07124N385E3250",
       "fetched_at": "2026-06-28T18:02:33.087Z",
       "spacecraft_name": "Kaguya (SELENE)",
-      "instrument": "Kaguya TC"
+      "instrument": "Kaguya TC",
+      "spacecraft_id": "kaguya"
     },
     {
       "id": "5ecf04b719dfceed",
@@ -32169,7 +32189,8 @@
       "nasa_id": "TC2W2B0_01_07124N385E3250",
       "fetched_at": "2026-06-28T18:02:33.087Z",
       "spacecraft_name": "Kaguya (SELENE)",
-      "instrument": "Kaguya TC"
+      "instrument": "Kaguya TC",
+      "spacecraft_id": "kaguya"
     },
     {
       "id": "27ad21192b8b754c",
@@ -32193,7 +32214,8 @@
       "nasa_id": "TC2W2B0_01_07124N385E3250",
       "fetched_at": "2026-06-28T18:02:33.087Z",
       "spacecraft_name": "Kaguya (SELENE)",
-      "instrument": "Kaguya TC"
+      "instrument": "Kaguya TC",
+      "spacecraft_id": "kaguya"
     },
     {
       "id": "b40426631e5a7264",
@@ -32217,7 +32239,8 @@
       "nasa_id": "TC2W2B0_01_07124N385E3250",
       "fetched_at": "2026-06-28T18:02:33.086Z",
       "spacecraft_name": "Kaguya (SELENE)",
-      "instrument": "Kaguya TC"
+      "instrument": "Kaguya TC",
+      "spacecraft_id": "kaguya"
     },
     {
       "id": "4b2a4593c865465a",
@@ -32262,7 +32285,8 @@
       "nasa_id": "TC1S2B0_01_05668N254E0303",
       "fetched_at": "2026-11-03T21:37:24.073Z",
       "spacecraft_name": "Kaguya (SELENE)",
-      "instrument": "Kaguya TC"
+      "instrument": "Kaguya TC",
+      "spacecraft_id": "kaguya"
     },
     {
       "id": "dce4ffed3b774f2a",
@@ -32286,7 +32310,8 @@
       "nasa_id": "TC1S2B0_01_05667N251E0313",
       "fetched_at": "2026-06-28T18:02:59.107Z",
       "spacecraft_name": "Kaguya (SELENE)",
-      "instrument": "Kaguya TC"
+      "instrument": "Kaguya TC",
+      "spacecraft_id": "kaguya"
     },
     {
       "id": "6d4cf52711d7a522",
@@ -32310,7 +32335,8 @@
       "nasa_id": "TC1S2B0_01_05667N251E0313",
       "fetched_at": "2026-06-28T18:02:59.107Z",
       "spacecraft_name": "Kaguya (SELENE)",
-      "instrument": "Kaguya TC"
+      "instrument": "Kaguya TC",
+      "spacecraft_id": "kaguya"
     },
     {
       "id": "feff19ff1c282845",
@@ -32334,7 +32360,8 @@
       "nasa_id": "TC1S2B0_01_05667N251E0313",
       "fetched_at": "2026-06-28T18:02:59.107Z",
       "spacecraft_name": "Kaguya (SELENE)",
-      "instrument": "Kaguya TC"
+      "instrument": "Kaguya TC",
+      "spacecraft_id": "kaguya"
     },
     {
       "id": "a205995840a95504",
@@ -32358,7 +32385,8 @@
       "nasa_id": "TC1S2B0_01_05667N251E0313",
       "fetched_at": "2026-06-28T18:02:59.107Z",
       "spacecraft_name": "Kaguya (SELENE)",
-      "instrument": "Kaguya TC"
+      "instrument": "Kaguya TC",
+      "spacecraft_id": "kaguya"
     },
     {
       "id": "4d9fc185566b1db3",
@@ -32382,7 +32410,8 @@
       "nasa_id": "TC1S2B0_01_05667N251E0313",
       "fetched_at": "2026-06-28T18:02:59.107Z",
       "spacecraft_name": "Kaguya (SELENE)",
-      "instrument": "Kaguya TC"
+      "instrument": "Kaguya TC",
+      "spacecraft_id": "kaguya"
     },
     {
       "id": "09c983571b9ef798",
@@ -32406,7 +32435,8 @@
       "nasa_id": "TC1S2B0_01_05667N265E0313",
       "fetched_at": "2026-06-28T18:02:59.106Z",
       "spacecraft_name": "Kaguya (SELENE)",
-      "instrument": "Kaguya TC"
+      "instrument": "Kaguya TC",
+      "spacecraft_id": "kaguya"
     },
     {
       "id": "22211739a2fef1e4",
@@ -32451,7 +32481,8 @@
       "nasa_id": "TC1S2B0_01_05637N127E0619",
       "fetched_at": "2026-11-03T21:36:51.734Z",
       "spacecraft_name": "Kaguya (SELENE)",
-      "instrument": "Kaguya TC"
+      "instrument": "Kaguya TC",
+      "spacecraft_id": "kaguya"
     },
     {
       "id": "438324e4c5145e53",
@@ -32475,7 +32506,8 @@
       "nasa_id": "KAGUYA_TC_DETAIL_LUNA9",
       "fetched_at": "2026-06-25T21:50:55.167Z",
       "spacecraft_name": "Kaguya (SELENE)",
-      "instrument": "Kaguya TC"
+      "instrument": "Kaguya TC",
+      "spacecraft_id": "kaguya"
     },
     {
       "id": "473272d48ce5eab0",
@@ -32499,7 +32531,8 @@
       "nasa_id": "TC1W2B0_01_02749N070E2961",
       "fetched_at": "2026-06-24T22:27:34.244Z",
       "spacecraft_name": "Kaguya (SELENE)",
-      "instrument": "Kaguya TC"
+      "instrument": "Kaguya TC",
+      "spacecraft_id": "kaguya"
     },
     {
       "id": "280e1b038ab8bd57",
@@ -32565,7 +32598,8 @@
       "nasa_id": "TC1S2B0_01_05672S139E0253",
       "fetched_at": "2026-06-24T22:29:28.960Z",
       "spacecraft_name": "Kaguya (SELENE)",
-      "instrument": "Kaguya TC"
+      "instrument": "Kaguya TC",
+      "spacecraft_id": "kaguya"
     },
     {
       "id": "656d8743728823b1",
@@ -117290,6 +117324,406 @@
       "pageid": null,
       "nasa_id": null,
       "fetched_at": "2026-11-15T08:54:04.932Z"
+    },
+    {
+      "id": "39c10ac8ef6e7eed",
+      "path": "/images/missions/kaguya/01.webp",
+      "source_type": "wikimedia-commons",
+      "title": "File:H-IIA F13 launching KAGUYA.jpg",
+      "author": "Naritama (NARITA Masahiro)",
+      "agency": "JAXA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:H-IIA_F13_launching_KAGUYA.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/1b/H-IIA_F13_launching_KAGUYA.jpg",
+      "license_short": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.1/jp/deed.en",
+      "license_rationale": "Creative Commons Attribution 2.1 jp",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 2772603,
+      "nasa_id": null,
+      "fetched_at": "2026-11-15T10:24:15.069Z"
+    },
+    {
+      "id": "26c7c6fc35d588bd",
+      "path": "/images/missions/kaguya/01.1x1.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:H-IIA F13 launching KAGUYA.jpg",
+      "author": "Naritama (NARITA Masahiro)",
+      "agency": "JAXA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:H-IIA_F13_launching_KAGUYA.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/1b/H-IIA_F13_launching_KAGUYA.jpg",
+      "license_short": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.1/jp/deed.en",
+      "license_rationale": "Creative Commons Attribution 2.1 jp",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 2772603,
+      "nasa_id": null,
+      "fetched_at": "2026-11-15T10:24:15.070Z"
+    },
+    {
+      "id": "8cf8827fe046115d",
+      "path": "/images/missions/kaguya/02.webp",
+      "source_type": "wikimedia-commons",
+      "title": "File:Kaguya impact site ESA200870.jpg",
+      "author": "European Space Agency",
+      "agency": "ESA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Kaguya_impact_site_ESA200870.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/60/Kaguya_impact_site_ESA200870.jpg",
+      "license_short": "CC-BY-SA-3.0-IGO",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/igo/deed.en",
+      "license_rationale": "Creative Commons Attribution-Share Alike 3.0 igo",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 59259756,
+      "nasa_id": null,
+      "fetched_at": "2026-11-15T10:24:16.325Z"
+    },
+    {
+      "id": "506f55c00ea01a1a",
+      "path": "/images/missions/kaguya/02.1x1.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:Kaguya impact site ESA200870.jpg",
+      "author": "European Space Agency",
+      "agency": "ESA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Kaguya_impact_site_ESA200870.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/60/Kaguya_impact_site_ESA200870.jpg",
+      "license_short": "CC-BY-SA-3.0-IGO",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/igo/deed.en",
+      "license_rationale": "Creative Commons Attribution-Share Alike 3.0 igo",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 59259756,
+      "nasa_id": null,
+      "fetched_at": "2026-11-15T10:24:16.325Z"
+    },
+    {
+      "id": "af0a396c80e6f267",
+      "path": "/images/missions/kaguya/03.webp",
+      "source_type": "wikimedia-commons",
+      "title": "File:Kaguya impact approach strip ESA206139.jpg",
+      "author": "European Space Agency",
+      "agency": "ESA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Kaguya_impact_approach_strip_ESA206139.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Kaguya_impact_approach_strip_ESA206139.jpg",
+      "license_short": "CC-BY-SA-3.0-IGO",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/igo/deed.en",
+      "license_rationale": "Creative Commons Attribution-Share Alike 3.0 igo",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 59259758,
+      "nasa_id": null,
+      "fetched_at": "2026-11-15T10:24:17.580Z"
+    },
+    {
+      "id": "0bdcc8a76fe4a514",
+      "path": "/images/missions/kaguya/03.1x1.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:Kaguya impact approach strip ESA206139.jpg",
+      "author": "European Space Agency",
+      "agency": "ESA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Kaguya_impact_approach_strip_ESA206139.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Kaguya_impact_approach_strip_ESA206139.jpg",
+      "license_short": "CC-BY-SA-3.0-IGO",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/igo/deed.en",
+      "license_rationale": "Creative Commons Attribution-Share Alike 3.0 igo",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 59259758,
+      "nasa_id": null,
+      "fetched_at": "2026-11-15T10:24:17.580Z"
+    },
+    {
+      "id": "7ea5404f41b60e2a",
+      "path": "/images/fleet-galleries/kaguya/01.webp",
+      "source_type": "wikimedia-commons",
+      "title": "File:月周回衛星「かぐや（SELENE)」の模型.JPG",
+      "author": "Unknown author",
+      "agency": "JAXA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:%E6%9C%88%E5%91%A8%E5%9B%9E%E8%A1%9B%E6%98%9F%E3%80%8C%E3%81%8B%E3%81%90%E3%82%84%EF%BC%88SELENE)%E3%80%8D%E3%81%AE%E6%A8%A1%E5%9E%8B.JPG",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/26/%E6%9C%88%E5%91%A8%E5%9B%9E%E8%A1%9B%E6%98%9F%E3%80%8C%E3%81%8B%E3%81%90%E3%82%84%EF%BC%88SELENE%29%E3%80%8D%E3%81%AE%E6%A8%A1%E5%9E%8B.JPG",
+      "license_short": "CC-BY-SA-3.0",
+      "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "license_rationale": "Creative Commons Attribution-Share Alike 3.0",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 122841722,
+      "nasa_id": null,
+      "fetched_at": "2026-11-15T10:24:18.823Z"
+    },
+    {
+      "id": "096400b10f499b35",
+      "path": "/images/fleet-galleries/kaguya/01.1x1.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:月周回衛星「かぐや（SELENE)」の模型.JPG",
+      "author": "Unknown author",
+      "agency": "JAXA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:%E6%9C%88%E5%91%A8%E5%9B%9E%E8%A1%9B%E6%98%9F%E3%80%8C%E3%81%8B%E3%81%90%E3%82%84%EF%BC%88SELENE)%E3%80%8D%E3%81%AE%E6%A8%A1%E5%9E%8B.JPG",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/26/%E6%9C%88%E5%91%A8%E5%9B%9E%E8%A1%9B%E6%98%9F%E3%80%8C%E3%81%8B%E3%81%90%E3%82%84%EF%BC%88SELENE%29%E3%80%8D%E3%81%AE%E6%A8%A1%E5%9E%8B.JPG",
+      "license_short": "CC-BY-SA-3.0",
+      "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "license_rationale": "Creative Commons Attribution-Share Alike 3.0",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 122841722,
+      "nasa_id": null,
+      "fetched_at": "2026-11-15T10:24:18.824Z"
+    },
+    {
+      "id": "eac2530bbc735a25",
+      "path": "/images/missions/chandrayaan2/01.webp",
+      "source_type": "wikimedia-commons",
+      "title": "File:GSLV Mk III M1, Chandrayaan-2 - Orbiter at SDSC SHAR.jpg",
+      "author": "Indian Space Research Organisation",
+      "agency": "ISRO",
+      "source_url": "https://commons.wikimedia.org/wiki/File:GSLV_Mk_III_M1,_Chandrayaan-2_-_Orbiter_at_SDSC_SHAR.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/d1/GSLV_Mk_III_M1%2C_Chandrayaan-2_-_Orbiter_at_SDSC_SHAR.jpg",
+      "license_short": "GODL-India",
+      "license_url": "https://data.gov.in/sites/default/files/Gazette_Notification_OGDL.pdf",
+      "license_rationale": "Government Open Data License – India",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 80159293,
+      "nasa_id": null,
+      "fetched_at": "2026-11-15T10:24:20.069Z"
+    },
+    {
+      "id": "d9ec2563da7405e8",
+      "path": "/images/missions/chandrayaan2/01.1x1.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:GSLV Mk III M1, Chandrayaan-2 - Orbiter at SDSC SHAR.jpg",
+      "author": "Indian Space Research Organisation",
+      "agency": "ISRO",
+      "source_url": "https://commons.wikimedia.org/wiki/File:GSLV_Mk_III_M1,_Chandrayaan-2_-_Orbiter_at_SDSC_SHAR.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/d1/GSLV_Mk_III_M1%2C_Chandrayaan-2_-_Orbiter_at_SDSC_SHAR.jpg",
+      "license_short": "GODL-India",
+      "license_url": "https://data.gov.in/sites/default/files/Gazette_Notification_OGDL.pdf",
+      "license_rationale": "Government Open Data License – India",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 80159293,
+      "nasa_id": null,
+      "fetched_at": "2026-11-15T10:24:20.069Z"
+    },
+    {
+      "id": "fc9b16da7e169a7e",
+      "path": "/images/missions/chandrayaan2/02.webp",
+      "source_type": "wikimedia-commons",
+      "title": "File:GSLV Mk III M1, Chandrayaan-2 - Vikram lander mounted on top of orbiter.jpg",
+      "author": "Indian Space Research Organisation",
+      "agency": "ISRO",
+      "source_url": "https://commons.wikimedia.org/wiki/File:GSLV_Mk_III_M1,_Chandrayaan-2_-_Vikram_lander_mounted_on_top_of_orbiter.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/ef/GSLV_Mk_III_M1%2C_Chandrayaan-2_-_Vikram_lander_mounted_on_top_of_orbiter.jpg",
+      "license_short": "GODL-India",
+      "license_url": "https://data.gov.in/sites/default/files/Gazette_Notification_OGDL.pdf",
+      "license_rationale": "Government Open Data License – India",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 80159263,
+      "nasa_id": null,
+      "fetched_at": "2026-11-15T10:24:21.318Z"
+    },
+    {
+      "id": "25bdf2ee7298fb9c",
+      "path": "/images/missions/chandrayaan2/02.1x1.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:GSLV Mk III M1, Chandrayaan-2 - Vikram lander mounted on top of orbiter.jpg",
+      "author": "Indian Space Research Organisation",
+      "agency": "ISRO",
+      "source_url": "https://commons.wikimedia.org/wiki/File:GSLV_Mk_III_M1,_Chandrayaan-2_-_Vikram_lander_mounted_on_top_of_orbiter.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/ef/GSLV_Mk_III_M1%2C_Chandrayaan-2_-_Vikram_lander_mounted_on_top_of_orbiter.jpg",
+      "license_short": "GODL-India",
+      "license_url": "https://data.gov.in/sites/default/files/Gazette_Notification_OGDL.pdf",
+      "license_rationale": "Government Open Data License – India",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 80159263,
+      "nasa_id": null,
+      "fetched_at": "2026-11-15T10:24:21.318Z"
+    },
+    {
+      "id": "22961f07671d6f69",
+      "path": "/images/missions/chandrayaan2/03.webp",
+      "source_type": "wikimedia-commons",
+      "title": "File:Chandrayaan-2 Vikram lander Impact Ejecta with scalebar.png",
+      "author": "NASA/GSFC/Arizona State University",
+      "agency": "NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Chandrayaan-2_Vikram_lander_Impact_Ejecta_with_scalebar.png",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Chandrayaan-2_Vikram_lander_Impact_Ejecta_with_scalebar.png",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Public domain",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 84567510,
+      "nasa_id": null,
+      "fetched_at": "2026-11-15T10:24:22.549Z"
+    },
+    {
+      "id": "23568c6b291340b4",
+      "path": "/images/missions/chandrayaan2/03.1x1.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:Chandrayaan-2 Vikram lander Impact Ejecta with scalebar.png",
+      "author": "NASA/GSFC/Arizona State University",
+      "agency": "NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Chandrayaan-2_Vikram_lander_Impact_Ejecta_with_scalebar.png",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Chandrayaan-2_Vikram_lander_Impact_Ejecta_with_scalebar.png",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Public domain",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 84567510,
+      "nasa_id": null,
+      "fetched_at": "2026-11-15T10:24:22.549Z"
+    },
+    {
+      "id": "03f6989503f21f28",
+      "path": "/images/missions/chandrayaan2/04.webp",
+      "source_type": "wikimedia-commons",
+      "title": "File:Chandrayaan-2 Vikram lander Impact Ratio.png",
+      "author": "NASA/GSFC/Arizona State University",
+      "agency": "NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Chandrayaan-2_Vikram_lander_Impact_Ratio.png",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Chandrayaan-2_Vikram_lander_Impact_Ratio.png",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Public domain",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 84567509,
+      "nasa_id": null,
+      "fetched_at": "2026-11-15T10:24:23.793Z"
+    },
+    {
+      "id": "fc34a810e6a79a27",
+      "path": "/images/missions/chandrayaan2/04.1x1.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:Chandrayaan-2 Vikram lander Impact Ratio.png",
+      "author": "NASA/GSFC/Arizona State University",
+      "agency": "NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Chandrayaan-2_Vikram_lander_Impact_Ratio.png",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Chandrayaan-2_Vikram_lander_Impact_Ratio.png",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Public domain",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 84567509,
+      "nasa_id": null,
+      "fetched_at": "2026-11-15T10:24:23.793Z"
+    },
+    {
+      "id": "51cb5fadfa5c4b1c",
+      "path": "/images/fleet-galleries/chandrayaan2/01.webp",
+      "source_type": "wikimedia-commons",
+      "title": "File:Chandrayaan-2 orbiter in clean-room being integrated with payloads.jpg",
+      "author": "U R Rao Satellite Centre",
+      "agency": "ISRO",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Chandrayaan-2_orbiter_in_clean-room_being_integrated_with_payloads.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Chandrayaan-2_orbiter_in_clean-room_being_integrated_with_payloads.jpg",
+      "license_short": "GODL-India",
+      "license_url": "https://data.gov.in/sites/default/files/Gazette_Notification_OGDL.pdf",
+      "license_rationale": "Government Open Data License – India",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 109782633,
+      "nasa_id": null,
+      "fetched_at": "2026-11-15T10:24:25.055Z"
+    },
+    {
+      "id": "84936726c636e750",
+      "path": "/images/fleet-galleries/chandrayaan2/01.1x1.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:Chandrayaan-2 orbiter in clean-room being integrated with payloads.jpg",
+      "author": "U R Rao Satellite Centre",
+      "agency": "ISRO",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Chandrayaan-2_orbiter_in_clean-room_being_integrated_with_payloads.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Chandrayaan-2_orbiter_in_clean-room_being_integrated_with_payloads.jpg",
+      "license_short": "GODL-India",
+      "license_url": "https://data.gov.in/sites/default/files/Gazette_Notification_OGDL.pdf",
+      "license_rationale": "Government Open Data License – India",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 109782633,
+      "nasa_id": null,
+      "fetched_at": "2026-11-15T10:24:25.055Z"
+    },
+    {
+      "id": "fb72731126746978",
+      "path": "/images/fleet-galleries/chandrayaan2/02.webp",
+      "source_type": "wikimedia-commons",
+      "title": "File:Image of Chandrayaan-3 Lander captured by OHRC camera aboard Chandrayaan-2 Orbiter.webp",
+      "author": "Indian Space Research Organisation",
+      "agency": "ISRO",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Image_of_Chandrayaan-3_Lander_captured_by_OHRC_camera_aboard_Chandrayaan-2_Orbiter.webp",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/00/Image_of_Chandrayaan-3_Lander_captured_by_OHRC_camera_aboard_Chandrayaan-2_Orbiter.webp",
+      "license_short": "GODL-India",
+      "license_url": "https://data.gov.in/sites/default/files/Gazette_Notification_OGDL.pdf",
+      "license_rationale": "Government Open Data License – India",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 136556667,
+      "nasa_id": null,
+      "fetched_at": "2026-11-15T10:24:26.288Z"
+    },
+    {
+      "id": "b7a1e3c330564581",
+      "path": "/images/fleet-galleries/chandrayaan2/02.1x1.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:Image of Chandrayaan-3 Lander captured by OHRC camera aboard Chandrayaan-2 Orbiter.webp",
+      "author": "Indian Space Research Organisation",
+      "agency": "ISRO",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Image_of_Chandrayaan-3_Lander_captured_by_OHRC_camera_aboard_Chandrayaan-2_Orbiter.webp",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/00/Image_of_Chandrayaan-3_Lander_captured_by_OHRC_camera_aboard_Chandrayaan-2_Orbiter.webp",
+      "license_short": "GODL-India",
+      "license_url": "https://data.gov.in/sites/default/files/Gazette_Notification_OGDL.pdf",
+      "license_rationale": "Government Open Data License – India",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 136556667,
+      "nasa_id": null,
+      "fetched_at": "2026-11-15T10:24:26.288Z"
     }
   ]
 }

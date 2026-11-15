@@ -2064,6 +2064,12 @@
       "cover": false
     },
     {
+      "title": "Chandrayaan-2",
+      "file": "/images/missions/thumbnails/chandrayaan2.webp",
+      "route": "/missions?id=chandrayaan2",
+      "cover": false
+    },
+    {
       "title": "Chandrayaan-3",
       "file": "/images/missions/thumbnails/chandrayaan3.webp",
       "route": "/missions?id=chandrayaan3",
@@ -2247,6 +2253,12 @@
       "title": "Juno",
       "file": "/images/missions/thumbnails/juno.webp",
       "route": "/missions?id=juno",
+      "cover": false
+    },
+    {
+      "title": "Kaguya (SELENE)",
+      "file": "/images/missions/thumbnails/kaguya.webp",
+      "route": "/missions?id=kaguya",
       "cover": false
     },
     {
@@ -5081,7 +5093,7 @@
     "exploded_art": 76,
     "landing_art": 39,
     "blueprint_art": 18,
-    "mission_trajectories": 126,
+    "mission_trajectories": 128,
     "site_illustrations": 16,
     "lab_illustrations": 25,
     "diagrams_science": 117,

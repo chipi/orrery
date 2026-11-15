@@ -93,9 +93,8 @@
     "/programs/hayabusa": "Hayabusa — la campagna JAXA di ritorno di campioni da asteroidi"
   },
   "roster": {
-    "Kaguya / SELENE": {
-      "note": "la più grande missione lunare dopo Apollo — un orbiter lunare che mappò la superficie con un dettaglio senza precedenti e girò il primo video in alta definizione della Terra che sorge sul bordo lunare",
-      "name": "Kaguya / SELENE"
+    "mission:kaguya": {
+      "note": "la più grande missione lunare dopo Apollo — un orbiter lunare che mappò la superficie con un dettaglio senza precedenti e girò il primo video in alta definizione della Terra che sorge sul bordo lunare"
     },
     "mission:akatsuki": {
       "note": "dopo il guasto nel 2010 del motore di inserimento in orbita attorno a Venere, la sonda girò intorno al Sole per cinque anni e, al secondo tentativo, usò i suoi minuscoli propulsori d'assetto per entrare in orbita — una missione salvata da una perdita certa"

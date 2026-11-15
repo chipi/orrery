@@ -93,9 +93,8 @@
     "/programs/hayabusa": "Hayabusa — la campagne de retour d'échantillons d'astéroïdes de la JAXA"
   },
   "roster": {
-    "Kaguya / SELENE": {
-      "note": "la plus grande mission lunaire depuis Apollo — un orbiteur lunaire qui a cartographié la surface avec un détail inédit et filmé la première vidéo haute définition d'un lever de Terre au-dessus du limbe lunaire",
-      "name": "Kaguya / SELENE"
+    "mission:kaguya": {
+      "note": "la plus grande mission lunaire depuis Apollo — un orbiteur lunaire qui a cartographié la surface avec un détail inédit et filmé la première vidéo haute définition d'un lever de Terre au-dessus du limbe lunaire"
     },
     "mission:akatsuki": {
       "note": "après la panne en 2010 de son moteur d'insertion en orbite autour de Vénus, la sonde a tourné autour du Soleil pendant cinq ans et, lors d'une seconde tentative, a utilisé ses minuscules propulseurs d'attitude pour se glisser en orbite — une mission sauvée d'une perte certaine"

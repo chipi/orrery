@@ -1,0 +1,54 @@
+{
+  "name": "Kaguya (SELENE)",
+  "vehicle": "H-IIA 2022",
+  "payload": "3020 kg de masa de lanzamiento; 2914 kg del orbitador principal; dos subsatélites de 53 kg (Okina, Ouna)",
+  "delta_v": "~4 km/s (TLI + LOI, estimación)",
+  "type": "ORBITADOR · SUBSATÉLITES · REALIZADA",
+  "first": "Vídeo en alta definición de la salida de la Tierra sobre el horizonte lunar",
+  "description": "Kaguya, oficialmente SELENE (Selenological and Engineering Explorer), fue el segundo orbitador lunar japonés tras Hiten. Lanzado con un H-IIA desde Tanegashima el 2007-09-14, llevaba un orbitador principal de 2914 kg y dos subsatélites de 53 kg, Okina y Ouna. Los tres nombres proceden de «El cuento del cortador de bambú», cuya heroína, Kaguya, es una princesa venida de la Luna. Okina retransmitía el enlace de radio del orbitador desde detrás de la Luna, lo que permitió seguir con mediciones Doppler la gravedad de la cara oculta, y Ouna servía de fuente de radio para el seguimiento VLBI. Tras la inserción en órbita lunar el 2007-10-03, el orbitador se estabilizó el 2007-10-19 en una órbita polar circular a 100 km. Allí su cámara de terreno, su generador de imágenes multibanda, su perfilador espectral, sus espectrómetros de rayos X y gamma, su altímetro láser y su sonda de radar cartografiaron la forma, la composición, la gravedad y el magnetismo de la Luna, mientras su cámara de alta definición filmaba la Tierra saliendo sobre el horizonte. En 2009 el orbitador fue descendido a unos 50 km y, el 2009-06-10, se le ordenó un impacto controlado cerca del cráter Gill.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANZAMIENTO",
+      "note": "H-IIA 2022 (F13) desde Tanegashima, 2007-09-14.",
+      "type": "nominal"
+    },
+    {
+      "met": 19,
+      "label": "LOI",
+      "note": "Inserción en órbita lunar 2007-10-03, en una órbita polar con periselenio de 100 km.",
+      "type": "nominal"
+    },
+    {
+      "met": 25,
+      "label": "OKINA LIBERADO",
+      "note": "El satélite de retransmisión se libera el 2007-10-09 en una órbita de 100 x 2400 km.",
+      "type": "info"
+    },
+    {
+      "met": 28.1,
+      "label": "OUNA LIBERADO",
+      "note": "El satélite fuente de radio VLBI se libera el 2007-10-12 en una órbita de 100 x 800 km.",
+      "type": "info"
+    },
+    {
+      "met": 35,
+      "label": "ÓRBITA DE 100 KM",
+      "note": "Órbita polar circular a 100 km alcanzada el 2007-10-19; comienza la fase científica principal.",
+      "type": "nominal"
+    },
+    {
+      "met": 517.4,
+      "label": "IMPACTO DE OKINA",
+      "note": "Okina cae en la cara oculta cerca del cráter Mineur D el 2009-02-12.",
+      "type": "info"
+    },
+    {
+      "met": 635.7,
+      "label": "IMPACTO CONTROLADO",
+      "note": "El orbitador principal es dirigido hacia la superficie cerca del cráter Gill el 2009-06-10 a las 18:25 UTC, y la misión termina.",
+      "type": "nominal"
+    }
+  ],
+  "vehicle_stage": "segunda etapa del H-IIA"
+}

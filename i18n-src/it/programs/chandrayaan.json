@@ -91,9 +91,8 @@
     "mission:chandrayaan1": {
       "note": "la prima missione lunare dell'India — il suo impattore e gli strumenti trovano prove chiare di molecole d'acqua su tutta la superficie lunare, una scoperta che ha cambiato il modo in cui capiamo la Luna"
     },
-    "Chandrayaan-2": {
-      "note": "l'orbiter ebbe successo e funziona ancora, ma il lander Vikram si schiantò nella discesa finale — un quasi successo pubblico e doloroso al polo sud",
-      "name": "Chandrayaan-2"
+    "mission:chandrayaan2": {
+      "note": "l'orbiter ebbe successo e funziona ancora, ma il lander Vikram si schiantò nella discesa finale — un quasi successo pubblico e doloroso al polo sud"
     },
     "mission:chandrayaan3": {
       "note": "il ritorno: Vikram atterra dolcemente vicino al polo sud lunare — la prima sonda in assoluto a riuscirci, il che rende l'India la quarta nazione ad atterrare sulla Luna"

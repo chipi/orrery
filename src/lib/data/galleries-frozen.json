@@ -25,9 +25,11 @@
     "smart-1": ["/images/missions/smart-1/01.webp","/images/missions/smart-1/02.webp","/images/missions/smart-1/03.webp","/images/missions/smart-1/04.webp","/images/missions/smart-1/05.webp"],
     "change1": ["/images/missions/change1/01.webp","/images/missions/change1/02.webp","/images/missions/change1/03.webp","/images/missions/change1/04.webp","/images/missions/change1/05.webp"],
     "chandrayaan1": ["/images/missions/chandrayaan1/01.webp","/images/missions/chandrayaan1/02.webp","/images/missions/chandrayaan1/03.webp","/images/missions/chandrayaan1/04.webp","/images/missions/chandrayaan1/05.webp"],
+    "kaguya": ["/images/missions/kaguya/01.webp","/images/missions/kaguya/02.webp","/images/missions/kaguya/03.webp"],
     "lro": ["/images/missions/lro/03.webp","/images/missions/lro/01.webp","/images/missions/lro/02.webp","/images/missions/lro/04.webp","/images/missions/lro/05.webp"],
     "change2": ["/images/moon-sites/change2/01.webp","/images/moon-sites/change2/02.webp"],
-    "beresheet": ["/images/missions/beresheet/01.webp","/images/missions/beresheet/02.webp","/images/missions/beresheet/03.webp","/images/missions/beresheet/04.webp","/images/missions/beresheet/05.webp","/images/missions/beresheet/06.webp","/images/missions/beresheet/07.webp","/images/missions/beresheet/08.webp","/images/missions/beresheet/09.webp"]
+    "beresheet": ["/images/missions/beresheet/01.webp","/images/missions/beresheet/02.webp","/images/missions/beresheet/03.webp","/images/missions/beresheet/04.webp","/images/missions/beresheet/05.webp","/images/missions/beresheet/06.webp","/images/missions/beresheet/07.webp","/images/missions/beresheet/08.webp","/images/missions/beresheet/09.webp"],
+    "chandrayaan2": ["/images/missions/chandrayaan2/01.webp","/images/missions/chandrayaan2/02.webp","/images/missions/chandrayaan2/03.webp","/images/missions/chandrayaan2/04.webp"]
   },
   "mars": {
     "mars2": ["/images/missions/mars2/04.webp","/images/missions/mars2/01.webp","/images/missions/mars2/02.webp","/images/missions/mars2/03.webp"],

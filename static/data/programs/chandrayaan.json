@@ -24,7 +24,14 @@
       "note": "India's first Moon mission — its impactor and instruments find clear evidence of water molecules across the lunar surface, a discovery that reshaped how we understand the Moon"
     },
     {
-      "name": "Chandrayaan-2",
+      "linked_id": "chandrayaan2",
+      "ref": "fleet",
+      "role": "lunar orbiter",
+      "year": 2019
+    },
+    {
+      "linked_id": "chandrayaan2",
+      "ref": "mission",
       "year": 2019,
       "note": "the orbiter succeeded and still works, but the Vikram lander crashed on final descent — a public, painful near-miss at the south pole"
     },

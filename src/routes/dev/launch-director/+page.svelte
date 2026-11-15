@@ -37,6 +37,23 @@
     type LightId,
     type OpeningId,
   } from '$lib/orbital/ascent-director';
+  import {
+    buildPlotModel,
+    liveReadout,
+    pushTrail,
+    type LiveReadout,
+    type PlotModel,
+    type Pt,
+  } from '$lib/orbital/launch-director-debug-plot';
+  import LaunchDirectorDebugViewer from '$lib/components/LaunchDirectorDebugViewer.svelte';
+  import DebugPanelRegistrar from '$lib/components/DebugPanelRegistrar.svelte';
+
+  // ?debug=1: the DebugPanel's Page tab shows the director's plan, path and live camera.
+  let debugModel = $state<PlotModel | null>(null);
+  let debugLive = $state<LiveReadout | null>(null);
+  let debugTrail = $state<Pt[]>([]);
+  let debugVehicle = $state<Pt | null>(null);
+  let debugFrame = 0;
 
   let container: HTMLDivElement;
   const q =
@@ -101,6 +118,14 @@
         },
       });
       plan = thePlan;
+      if (q.get('debug') === '1') {
+        debugModel = buildPlotModel({
+          plan: thePlan,
+          stateAt: (tt) => sampleAscentAt(summary.states, tt),
+          latDeg: profile.launchSite?.lat ?? 28.5,
+          vehLen: VEHICLE_LENGTH_KM,
+        });
+      }
       endT = thePlan.shots[thePlan.shots.length - 1].tEnd;
 
       const schedule = buildShotSchedule({
@@ -158,6 +183,12 @@
           shotLabel = `today: ${asc.activeShot}`;
         }
         rig?.update(s, asc.camera);
+        if (debugModel && tt >= 0 && ++debugFrame % 3 === 0) {
+          const lr = liveReadout(thePlan, tt, s, VEHICLE_LENGTH_KM);
+          debugLive = lr;
+          debugVehicle = { x: s.downrangeKm, y: s.altKm };
+          debugTrail = pushTrail(debugTrail, { x: lr.rel.dx, y: lr.rel.dz });
+        }
         ar.render();
       };
 
@@ -209,12 +240,36 @@
     };
   });
 
+  $effect(() => {
+    // a scrub back resets the trail
+    if (t < 1) debugTrail = [];
+  });
+
   const fmt = (x: number): string => `${x < 0 ? '-' : '+'}${Math.abs(Math.round(x))}s`;
 </script>
 
 <svelte:head><title>launch director (dev)</title></svelte:head>
 
 <div class="stage" bind:this={container}></div>
+
+{#snippet directorDebug()}
+  {#if debugModel && plan}
+    <LaunchDirectorDebugViewer
+      model={debugModel}
+      live={debugLive}
+      trail={debugTrail}
+      vehicle={debugVehicle}
+      light={plan.conditions.light}
+      cover={plan.conditions.cover}
+      opening={plan.opening}
+      seed={plan.seed}
+    />
+  {:else}
+    <div>Open with ?debug=1 once the launch has loaded.</div>
+  {/if}
+{/snippet}
+
+<DebugPanelRegistrar label="LAUNCH DIRECTOR" content={directorDebug} />
 
 {#if showUi}
   <div class="bar">

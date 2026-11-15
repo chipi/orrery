@@ -160,6 +160,11 @@
   import ChipGroup from './ChipGroup.svelte';
   import EntityThumb from './EntityThumb.svelte';
   import IndexFiltersToggle from './IndexFiltersToggle.svelte';
+  import IndexKindGlyph from './IndexKindGlyph.svelte';
+  import {
+    indexKindGlyph,
+    type IndexKindGlyph as IndexKindGlyphId,
+  } from '$lib/explore/index-kind-glyph';
   import { fitChips } from '$lib/explore/chip-fit';
   import { solarRowThumb } from '$lib/entity-thumb';
 
@@ -194,6 +199,13 @@
     if (r.parent === 'andromeda') return m.explore_lg_group_andromeda();
     return m.explore_lg_group_independent();
   };
+  // The kind of a row is a glyph, with the exact localized type as tooltip and text for a screen
+  // reader (UXD-045). The solar system keeps its two-line meta, the Local Group its group line; a
+  // star keeps its constellation as text beside the glyph.
+  const kindGlyphOf = (r: ScaleIndexRow): IndexKindGlyphId | null =>
+    scale !== 'solar-system' && scale !== 'local-group' && kindLabel(r)
+      ? indexKindGlyph(r.kind, !!r.badges?.includes('black-hole'))
+      : null;
   const metaOf = (r: ScaleIndexRow): string =>
     r.meta ?? (scale === 'local-group' ? lgGroup(r) : kindLabel(r));
   // A wrapped meta breaks only after a " · " (the dot stays on the line it ends), never inside
@@ -391,8 +403,17 @@
                     >{/each}
                 </span>
                 <span class="si-name">{row.name}</span>
-                {#if metaOf(row)}<span class="si-meta" title={metaOf(row)}>{metaShown(row)}</span
+                {#if metaOf(row) && (!kindGlyphOf(row) || row.meta !== undefined)}<span
+                    class="si-meta"
+                    title={metaOf(row)}>{metaShown(row)}</span
                   >{/if}
+                {#if kindGlyphOf(row)}
+                  <span class="si-kind" data-tip={kindLabel(row)} data-testid="scale-index-kind"
+                    ><IndexKindGlyph glyph={kindGlyphOf(row)!} /><span class="si-kind-text"
+                      >, {kindLabel(row)}</span
+                    ></span
+                  >
+                {/if}
               </button>
               {#if row.href}
                 <a

@@ -575,6 +575,46 @@ test.describe('/explore INDEX — a round photo in the lead slot of the solar ro
     await expect(stand).toHaveAttribute('title', 'Pictured: NGC 253');
     await expect(stand).toHaveAttribute('alt', '');
   });
+
+  test('the type of a row is a glyph with the full type as its name and tooltip; the name keeps the width (UXD-045)', async ({
+    page,
+  }) => {
+    test.slow();
+    await openScale(page, SCALES[1]);
+    await toggle(page).click();
+    const nb = panelOf(page, 'neighborhood');
+    await expect(nb).toBeVisible();
+    const m13 = nb.locator('button.si-row[data-index-id="m13"]');
+    const kind = m13.locator('.si-kind');
+    await expect(m13.locator('.si-meta')).toHaveCount(0);
+    await expect(kind.locator('svg.index-kind-glyph')).toHaveAttribute('data-glyph', 'globular');
+    await expect(kind).toHaveAttribute('data-tip', 'Globular cluster');
+    await expect(m13).toHaveAccessibleName(/Hercules Globular Cluster\s*, Globular cluster$/);
+
+    // The tooltip shows on keyboard focus of the row and on hover of the glyph, not otherwise.
+    const tip = () => kind.evaluate((el) => getComputedStyle(el, '::after').visibility);
+    expect(await tip()).toBe('hidden');
+    await m13.focus();
+    await page.keyboard.press('ArrowDown');
+    await page.keyboard.press('ArrowUp');
+    await expect(m13).toBeFocused();
+    expect(await tip()).toBe('visible');
+    await m13.evaluate((el) => (el as HTMLElement).blur());
+    await page.mouse.move(0, 0);
+    expect(await tip()).toBe('hidden');
+    await kind.hover();
+    expect(await tip()).toBe('visible');
+
+    // The glyph is 14 px and its box is no wider than that plus nothing: the name's width is what is left.
+    const box = (await kind.boundingBox())!;
+    expect(box.width).toBeLessThanOrEqual(15);
+    expect((await m13.boundingBox())!.height).toBeGreaterThanOrEqual(44);
+
+    // A star keeps its constellation as text beside a star glyph.
+    const canopus = nb.locator('button.si-row[data-index-id="canopus"]');
+    await expect(canopus.locator('.si-meta')).toHaveText('Carina');
+    await expect(canopus.locator('svg.index-kind-glyph')).toHaveAttribute('data-glyph', 'star');
+  });
 });
 
 test.describe('/explore INDEX — folded filters: the chips that fit one line stay, the rest sit behind FILTERS (C6-F)', () => {

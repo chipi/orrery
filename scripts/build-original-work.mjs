@@ -1028,6 +1028,12 @@ const flyEarlyProbes = [
   ],
 ].map(mk('model-probe', 'Fly + Explore', '/fly'));
 
+// Launch pads (G4) — src/lib/three/launch-pads.ts, drawn under the rocket in the /fly launch
+// scene; one entry per pad model, from the catalogue the /dev/models gallery also reads.
+const launchPads = JSON.parse(readFileSync('src/lib/launches/pad-gallery.json', 'utf8'))
+  .map((p) => [p.variant, p.label, p.what])
+  .map(mk('model-pad', 'Fly · launch pad', '/fly'));
+
 const models3d = [
   ...spacecraft,
   ...launchers,
@@ -1037,6 +1043,7 @@ const models3d = [
   ...lineupSpacecraft,
   ...flyProbes,
   ...flyEarlyProbes,
+  ...launchPads,
   ...moonModels,
   ...marsModels,
   ...venusModels,

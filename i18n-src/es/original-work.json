@@ -1991,6 +1991,86 @@
       "title": "Sputnik 1",
       "what": "La esfera pulida de 58 cm, con la junta entre sus dos hemisferios, 36 pernos y cuatro antenas de látigo inclinadas hacia atrás de 2,4 y 2,9 m.",
       "where": "Vuela + Explora"
+    },
+    "/images/colophon/model-pad-apollo-lut_webp": {
+      "title": "Plataforma de lanzamiento: Apolo, LC-39",
+      "what": "La plataforma del Saturn V: la torre umbilical de 380 ft con brazos oscilantes que caen al despegar, y la zanja de llamas. Medidas de cifras de la NASA en Wikipedia.",
+      "where": "Volar · plataforma de lanzamiento"
+    },
+    "/images/colophon/model-pad-shuttle_webp": {
+      "title": "Plataforma de lanzamiento: Transbordador espacial, LC-39",
+      "what": "La plataforma del transbordador: la estructura de servicio fija (350 ft con su mástil), la estructura de servicio giratoria replegada, la torre de agua de 290 ft. Alturas principales de Wikipedia; el resto, aproximado.",
+      "where": "Volar · plataforma de lanzamiento"
+    },
+    "/images/colophon/model-pad-sls_webp": {
+      "title": "Plataforma de lanzamiento: SLS, LC-39B",
+      "what": "La plataforma de Artemis: la torre del lanzador móvil junto al cohete y tres altas torres pararrayos. Tamaños aproximados.",
+      "where": "Volar · plataforma de lanzamiento"
+    },
+    "/images/colophon/model-pad-soyuz_webp": {
+      "title": "Plataforma de lanzamiento: Soyuz, Baikonur y Plesetsk",
+      "what": "La plataforma de la familia R-7: cuatro brazos de soporte que caen hacia fuera al despegar, dos cabinas de servicio replegadas, mástiles pararrayos, el foso de llamas. Tamaños aproximados.",
+      "where": "Volar · plataforma de lanzamiento"
+    },
+    "/images/colophon/model-pad-proton_webp": {
+      "title": "Plataforma de lanzamiento: Protón, Baikonur",
+      "what": "Una torre de servicio fija con brazos oscilantes que se retraen al despegar, junto a la zanja de llamas. Tamaños aproximados.",
+      "where": "Volar · plataforma de lanzamiento"
+    },
+    "/images/colophon/model-pad-f9-39a_webp": {
+      "title": "Plataforma de lanzamiento: Falcon, LC-39A",
+      "what": "SpaceX en la 39A: el transportador-erector que se inclina 1,5 grados antes del despegue y 45 en él, la antigua torre elevada por encima de 350 ft. Cifras de Wikipedia.",
+      "where": "Volar · plataforma de lanzamiento"
+    },
+    "/images/colophon/model-pad-f9-cat_webp": {
+      "title": "Plataforma de lanzamiento: Falcon, SLC-40 con torre de tripulación",
+      "what": "SpaceX en la SLC-40 desde la torre de acceso de la tripulación de 2023, con el transportador-erector que se inclina al despegar. Altura de la torre aproximada.",
+      "where": "Volar · plataforma de lanzamiento"
+    },
+    "/images/colophon/model-pad-f9-te_webp": {
+      "title": "Plataforma de lanzamiento: Falcon, SLC-40 y SLC-4E",
+      "what": "Una plataforma Falcon sencilla: el transportador-erector que se inclina al despegar y mástiles pararrayos. Tamaños aproximados.",
+      "where": "Volar · plataforma de lanzamiento"
+    },
+    "/images/colophon/model-pad-starbase_webp": {
+      "title": "Plataforma de lanzamiento: Starship, Starbase",
+      "what": "La torre de lanzamiento de Starbase con sus brazos de captura abiertos. Altura de la torre aproximada.",
+      "where": "Volar · plataforma de lanzamiento"
+    },
+    "/images/colophon/model-pad-atlas-v_webp": {
+      "title": "Plataforma de lanzamiento: Atlas V, SLC-41",
+      "what": "La plataforma de ULA: plataforma de lanzamiento móvil, torre umbilical y cuatro torres pararrayos; el edificio de integración vertical queda aparte y se omite. Tamaños aproximados.",
+      "where": "Volar · plataforma de lanzamiento"
+    },
+    "/images/colophon/model-pad-cape-classic_webp": {
+      "title": "Plataforma de lanzamiento: Plataforma con torre de servicio del Cabo",
+      "what": "Las plataformas Atlas, Delta, Titan y Saturn IB del Cabo: una torre umbilical con brazos oscilantes junto al vehículo. Tamaños aproximados.",
+      "where": "Volar · plataforma de lanzamiento"
+    },
+    "/images/colophon/model-pad-kourou-a5_webp": {
+      "title": "Plataforma de lanzamiento: Ariane 4 y 5, Kourou",
+      "what": "Las plataformas ELA-2 y ELA-3: un mástil umbilical junto al lanzador y cuatro altas torres pararrayos. Tamaños aproximados.",
+      "where": "Volar · plataforma de lanzamiento"
+    },
+    "/images/colophon/model-pad-kourou-a6_webp": {
+      "title": "Plataforma de lanzamiento: Ariane 6, Kourou",
+      "what": "La plataforma ELA-4: el mástil umbilical, dos torres pararrayos y el pórtico móvil muy retirado. Tamaños aproximados.",
+      "where": "Volar · plataforma de lanzamiento"
+    },
+    "/images/colophon/model-pad-chinese-fst_webp": {
+      "title": "Plataforma de lanzamiento: Torre de servicio china",
+      "what": "La torre de servicio fija de Jiuquan, Xichang, Wenchang y Taiyuan, con sus plataformas de trabajo que se pliegan al despegar. Tamaños aproximados.",
+      "where": "Volar · plataforma de lanzamiento"
+    },
+    "/images/colophon/model-pad-tanegashima_webp": {
+      "title": "Plataforma de lanzamiento: Tanegashima",
+      "what": "La plataforma de Yoshinobu: la torre umbilical del lanzador H-II y una torre pararrayos. Tamaños aproximados.",
+      "where": "Volar · plataforma de lanzamiento"
+    },
+    "/images/colophon/model-pad-sriharikota_webp": {
+      "title": "Plataforma de lanzamiento: Sriharikota",
+      "what": "La plataforma de la ISRO: la torre umbilical junto al vehículo y la torre de servicio móvil muy retirada. Tamaños aproximados.",
+      "where": "Volar · plataforma de lanzamiento"
     }
   },
   "capsules": {

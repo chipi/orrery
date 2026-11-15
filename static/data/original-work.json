@@ -4475,6 +4475,118 @@
       "thumb": "/images/colophon/model-probe-nova-c.webp"
     },
     {
+      "title": "Launch pad: Apollo, LC-39",
+      "what": "The Saturn V pad: the 380 ft Launch Umbilical Tower with swing arms that fall away at liftoff, and the flame trench. Sizes from NASA figures on Wikipedia.",
+      "where": "Fly · launch pad",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-pad-apollo-lut.webp"
+    },
+    {
+      "title": "Launch pad: Space Shuttle, LC-39",
+      "what": "The Shuttle pad: the Fixed Service Structure (350 ft with its mast), the Rotating Service Structure swung back, the 290 ft water tower. Main heights from Wikipedia; the rest approximate.",
+      "where": "Fly · launch pad",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-pad-shuttle.webp"
+    },
+    {
+      "title": "Launch pad: SLS, LC-39B",
+      "what": "The Artemis pad: the Mobile Launcher tower beside the rocket and three tall lightning towers. Sizes approximate.",
+      "where": "Fly · launch pad",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-pad-sls.webp"
+    },
+    {
+      "title": "Launch pad: Soyuz, Baikonur and Plesetsk",
+      "what": "The R-7 family pad: four support arms that fall outward at liftoff, two retracted service cabins, lightning masts, the flame pit. Sizes approximate.",
+      "where": "Fly · launch pad",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-pad-soyuz.webp"
+    },
+    {
+      "title": "Launch pad: Proton, Baikonur",
+      "what": "A fixed service tower with swing arms that retract at liftoff, beside the flame trench. Sizes approximate.",
+      "where": "Fly · launch pad",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-pad-proton.webp"
+    },
+    {
+      "title": "Launch pad: Falcon, LC-39A",
+      "what": "SpaceX at 39A: the transporter-erector that leans back 1.5 degrees before liftoff and 45 at it, the old tower extended above 350 ft. Figures from Wikipedia.",
+      "where": "Fly · launch pad",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-pad-f9-39a.webp"
+    },
+    {
+      "title": "Launch pad: Falcon, SLC-40 with crew tower",
+      "what": "SpaceX at SLC-40 since the crew access tower of 2023, with the transporter-erector tilting away at liftoff. Tower height approximate.",
+      "where": "Fly · launch pad",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-pad-f9-cat.webp"
+    },
+    {
+      "title": "Launch pad: Falcon, SLC-40 and SLC-4E",
+      "what": "A bare Falcon pad: the transporter-erector tilting away at liftoff, and lightning masts. Sizes approximate.",
+      "where": "Fly · launch pad",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-pad-f9-te.webp"
+    },
+    {
+      "title": "Launch pad: Starship, Starbase",
+      "what": "The Starbase launch tower with its catching arms held open. Tower height approximate.",
+      "where": "Fly · launch pad",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-pad-starbase.webp"
+    },
+    {
+      "title": "Launch pad: Atlas V, SLC-41",
+      "what": "The ULA pad: mobile launch platform, umbilical tower and four lightning towers; the Vertical Integration Facility stands off the pad and is left out. Sizes approximate.",
+      "where": "Fly · launch pad",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-pad-atlas-v.webp"
+    },
+    {
+      "title": "Launch pad: Cape service-tower pad",
+      "what": "The Cape's Atlas, Delta, Titan and Saturn IB pads: an umbilical tower with swing arms beside the vehicle. Sizes approximate.",
+      "where": "Fly · launch pad",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-pad-cape-classic.webp"
+    },
+    {
+      "title": "Launch pad: Ariane 4 and 5, Kourou",
+      "what": "The ELA-2 and ELA-3 pads: an umbilical mast beside the launcher and four tall lightning towers. Sizes approximate.",
+      "where": "Fly · launch pad",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-pad-kourou-a5.webp"
+    },
+    {
+      "title": "Launch pad: Ariane 6, Kourou",
+      "what": "The ELA-4 pad: the umbilical mast, two lightning towers and the mobile gantry rolled well back. Sizes approximate.",
+      "where": "Fly · launch pad",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-pad-kourou-a6.webp"
+    },
+    {
+      "title": "Launch pad: Chinese service tower",
+      "what": "The fixed service tower of Jiuquan, Xichang, Wenchang and Taiyuan, its working platforms folding away at liftoff. Sizes approximate.",
+      "where": "Fly · launch pad",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-pad-chinese-fst.webp"
+    },
+    {
+      "title": "Launch pad: Tanegashima",
+      "what": "The Yoshinobu pad: the H-II launcher's umbilical tower and a lightning tower. Sizes approximate.",
+      "where": "Fly · launch pad",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-pad-tanegashima.webp"
+    },
+    {
+      "title": "Launch pad: Sriharikota",
+      "what": "The ISRO pad: the umbilical tower beside the vehicle and the mobile service tower rolled well back. Sizes approximate.",
+      "where": "Fly · launch pad",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-pad-sriharikota.webp"
+    },
+    {
       "title": "Apollo Lunar Module",
       "what": "Descent + ascent stage, gold MLI foil, and RCS quads.",
       "where": "Moon landing sites",
@@ -5185,7 +5297,7 @@
     "lab_illustrations": 25,
     "diagrams_science": 117,
     "posters": 27,
-    "models3d": 182,
+    "models3d": 198,
     "capsules": 8,
     "canvas2d": 6,
     "ui": 4,

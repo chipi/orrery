@@ -1991,6 +1991,86 @@
       "title": "Sputnik 1",
       "what": "La sfera lucida da 58 cm, con la giunzione tra i due emisferi, 36 bulloni e quattro antenne a stilo inclinate all’indietro da 2,4 e 2,9 m.",
       "where": "Vola + Esplora"
+    },
+    "/images/colophon/model-pad-apollo-lut_webp": {
+      "title": "Rampa di lancio: Apollo, LC-39",
+      "what": "La rampa del Saturn V: la torre ombelicale di 380 ft con bracci oscillanti che si staccano al decollo e la trincea delle fiamme. Misure da dati NASA su Wikipedia.",
+      "where": "Volare · rampa di lancio"
+    },
+    "/images/colophon/model-pad-shuttle_webp": {
+      "title": "Rampa di lancio: Space Shuttle, LC-39",
+      "what": "La rampa dello Shuttle: la struttura di servizio fissa (350 ft con il suo palo), la struttura di servizio rotante ripiegata, la torre dell’acqua di 290 ft. Altezze principali da Wikipedia; il resto approssimativo.",
+      "where": "Volare · rampa di lancio"
+    },
+    "/images/colophon/model-pad-sls_webp": {
+      "title": "Rampa di lancio: SLS, LC-39B",
+      "what": "La rampa di Artemis: la torre del lanciatore mobile accanto al razzo e tre alte torri parafulmine. Dimensioni approssimative.",
+      "where": "Volare · rampa di lancio"
+    },
+    "/images/colophon/model-pad-soyuz_webp": {
+      "title": "Rampa di lancio: Sojuz, Bajkonur e Plesetsk",
+      "what": "La rampa della famiglia R-7: quattro bracci di sostegno che cadono verso l’esterno al decollo, due cabine di servizio ritirate, pali parafulmine, la fossa delle fiamme. Dimensioni approssimative.",
+      "where": "Volare · rampa di lancio"
+    },
+    "/images/colophon/model-pad-proton_webp": {
+      "title": "Rampa di lancio: Proton, Bajkonur",
+      "what": "Una torre di servizio fissa con bracci oscillanti che si ritraggono al decollo, accanto alla trincea delle fiamme. Dimensioni approssimative.",
+      "where": "Volare · rampa di lancio"
+    },
+    "/images/colophon/model-pad-f9-39a_webp": {
+      "title": "Rampa di lancio: Falcon, LC-39A",
+      "what": "SpaceX alla 39A: il trasportatore-erettore che si inclina di 1,5 gradi prima del decollo e di 45 al decollo, la vecchia torre alzata oltre i 350 ft. Dati da Wikipedia.",
+      "where": "Volare · rampa di lancio"
+    },
+    "/images/colophon/model-pad-f9-cat_webp": {
+      "title": "Rampa di lancio: Falcon, SLC-40 con torre equipaggio",
+      "what": "SpaceX alla SLC-40 dalla torre di accesso dell’equipaggio del 2023, con il trasportatore-erettore che si inclina al decollo. Altezza della torre approssimativa.",
+      "where": "Volare · rampa di lancio"
+    },
+    "/images/colophon/model-pad-f9-te_webp": {
+      "title": "Rampa di lancio: Falcon, SLC-40 e SLC-4E",
+      "what": "Una rampa Falcon essenziale: il trasportatore-erettore che si inclina al decollo e pali parafulmine. Dimensioni approssimative.",
+      "where": "Volare · rampa di lancio"
+    },
+    "/images/colophon/model-pad-starbase_webp": {
+      "title": "Rampa di lancio: Starship, Starbase",
+      "what": "La torre di lancio di Starbase con i bracci di cattura aperti. Altezza della torre approssimativa.",
+      "where": "Volare · rampa di lancio"
+    },
+    "/images/colophon/model-pad-atlas-v_webp": {
+      "title": "Rampa di lancio: Atlas V, SLC-41",
+      "what": "La rampa di ULA: piattaforma di lancio mobile, torre ombelicale e quattro torri parafulmine; l’edificio di integrazione verticale sta fuori dalla rampa e manca. Dimensioni approssimative.",
+      "where": "Volare · rampa di lancio"
+    },
+    "/images/colophon/model-pad-cape-classic_webp": {
+      "title": "Rampa di lancio: Rampa con torre di servizio di Cape Canaveral",
+      "what": "Le rampe Atlas, Delta, Titan e Saturn IB di Cape Canaveral: una torre ombelicale con bracci oscillanti accanto al veicolo. Dimensioni approssimative.",
+      "where": "Volare · rampa di lancio"
+    },
+    "/images/colophon/model-pad-kourou-a5_webp": {
+      "title": "Rampa di lancio: Ariane 4 e 5, Kourou",
+      "what": "Le rampe ELA-2 ed ELA-3: un palo ombelicale accanto al lanciatore e quattro alte torri parafulmine. Dimensioni approssimative.",
+      "where": "Volare · rampa di lancio"
+    },
+    "/images/colophon/model-pad-kourou-a6_webp": {
+      "title": "Rampa di lancio: Ariane 6, Kourou",
+      "what": "La rampa ELA-4: il palo ombelicale, due torri parafulmine e il portale mobile arretrato di molto. Dimensioni approssimative.",
+      "where": "Volare · rampa di lancio"
+    },
+    "/images/colophon/model-pad-chinese-fst_webp": {
+      "title": "Rampa di lancio: Torre di servizio cinese",
+      "what": "La torre di servizio fissa di Jiuquan, Xichang, Wenchang e Taiyuan, con le piattaforme di lavoro che si ripiegano al decollo. Dimensioni approssimative.",
+      "where": "Volare · rampa di lancio"
+    },
+    "/images/colophon/model-pad-tanegashima_webp": {
+      "title": "Rampa di lancio: Tanegashima",
+      "what": "La rampa di Yoshinobu: la torre ombelicale del lanciatore H-II e una torre parafulmine. Dimensioni approssimative.",
+      "where": "Volare · rampa di lancio"
+    },
+    "/images/colophon/model-pad-sriharikota_webp": {
+      "title": "Rampa di lancio: Sriharikota",
+      "what": "La rampa dell’ISRO: la torre ombelicale accanto al veicolo e la torre di servizio mobile arretrata di molto. Dimensioni approssimative.",
+      "where": "Volare · rampa di lancio"
     }
   },
   "capsules": {

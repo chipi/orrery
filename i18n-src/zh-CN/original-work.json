@@ -1991,6 +1991,86 @@
       "title": "Sputnik 1",
       "what": "抛光的直径 58 厘米圆球，带半球接缝、36 颗螺栓和四根向后倾斜、长 2.4 米与 2.9 米的鞭状天线。",
       "where": "飞行 + 探索"
+    },
+    "/images/colophon/model-pad-apollo-lut_webp": {
+      "title": "发射台：阿波罗，LC-39",
+      "what": "土星五号发射台：高 380 英尺的脐带塔，摆臂在升空时脱落，另有火焰导流槽。尺寸取自维基百科转引的 NASA 数据。",
+      "where": "飞行 · 发射台"
+    },
+    "/images/colophon/model-pad-shuttle_webp": {
+      "title": "发射台：航天飞机，LC-39",
+      "what": "航天飞机发射台：固定勤务结构（含桅杆 350 英尺）、转到后方的回转勤务结构、高 290 英尺的水塔。主要高度取自维基百科，其余为大致数值。",
+      "where": "飞行 · 发射台"
+    },
+    "/images/colophon/model-pad-sls_webp": {
+      "title": "发射台：SLS，LC-39B",
+      "what": "阿尔忒弥斯发射台：火箭旁的移动发射器塔架和三座高大的避雷塔。尺寸为大致数值。",
+      "where": "飞行 · 发射台"
+    },
+    "/images/colophon/model-pad-soyuz_webp": {
+      "title": "发射台：联盟号，拜科努尔与普列谢茨克",
+      "what": "R-7 系列发射台：升空时向外倒下的四根支撑臂、两座退开的勤务舱、避雷桅杆、火焰坑。尺寸为大致数值。",
+      "where": "飞行 · 发射台"
+    },
+    "/images/colophon/model-pad-proton_webp": {
+      "title": "发射台：质子号，拜科努尔",
+      "what": "带摆臂的固定勤务塔，摆臂在升空时收回，位于火焰导流槽旁。尺寸为大致数值。",
+      "where": "飞行 · 发射台"
+    },
+    "/images/colophon/model-pad-f9-39a_webp": {
+      "title": "发射台：猎鹰，LC-39A",
+      "what": "39A 的 SpaceX：升空前后仰 1.5 度、升空时后仰 45 度的运输起竖器，以及加高到 350 英尺以上的旧塔。数据取自维基百科。",
+      "where": "飞行 · 发射台"
+    },
+    "/images/colophon/model-pad-f9-cat_webp": {
+      "title": "发射台：猎鹰，SLC-40 与乘组塔",
+      "what": "2023 年建成乘组通道塔后的 SLC-40 的 SpaceX，运输起竖器在升空时倾倒离开。塔高为大致数值。",
+      "where": "飞行 · 发射台"
+    },
+    "/images/colophon/model-pad-f9-te_webp": {
+      "title": "发射台：猎鹰，SLC-40 与 SLC-4E",
+      "what": "简单的猎鹰发射台：升空时倾倒离开的运输起竖器和避雷桅杆。尺寸为大致数值。",
+      "where": "飞行 · 发射台"
+    },
+    "/images/colophon/model-pad-starbase_webp": {
+      "title": "发射台：星舰，星际基地",
+      "what": "星际基地的发射塔，捕获臂张开。塔高为大致数值。",
+      "where": "飞行 · 发射台"
+    },
+    "/images/colophon/model-pad-atlas-v_webp": {
+      "title": "发射台：宇宙神 V，SLC-41",
+      "what": "ULA 发射台：移动发射平台、脐带塔和四座避雷塔；垂直总装厂房在发射台之外，已省略。尺寸为大致数值。",
+      "where": "飞行 · 发射台"
+    },
+    "/images/colophon/model-pad-cape-classic_webp": {
+      "title": "发射台：卡角的勤务塔发射台",
+      "what": "卡角的宇宙神、德尔塔、泰坦和土星 IB 发射台：火箭旁带摆臂的脐带塔。尺寸为大致数值。",
+      "where": "飞行 · 发射台"
+    },
+    "/images/colophon/model-pad-kourou-a5_webp": {
+      "title": "发射台：阿丽亚娜 4 与 5，库鲁",
+      "what": "ELA-2 与 ELA-3 发射台：运载火箭旁的脐带桅杆和四座高大的避雷塔。尺寸为大致数值。",
+      "where": "飞行 · 发射台"
+    },
+    "/images/colophon/model-pad-kourou-a6_webp": {
+      "title": "发射台：阿丽亚娜 6，库鲁",
+      "what": "ELA-4 发射台：脐带桅杆、两座避雷塔和退得很远的移动门架。尺寸为大致数值。",
+      "where": "飞行 · 发射台"
+    },
+    "/images/colophon/model-pad-chinese-fst_webp": {
+      "title": "发射台：中国的勤务塔",
+      "what": "酒泉、西昌、文昌和太原的固定勤务塔，工作平台在升空时折起。尺寸为大致数值。",
+      "where": "飞行 · 发射台"
+    },
+    "/images/colophon/model-pad-tanegashima_webp": {
+      "title": "发射台：种子岛",
+      "what": "吉信发射台：H-II 火箭的脐带塔和一座避雷塔。尺寸为大致数值。",
+      "where": "飞行 · 发射台"
+    },
+    "/images/colophon/model-pad-sriharikota_webp": {
+      "title": "发射台：斯里哈里科塔",
+      "what": "ISRO 发射台：火箭旁的脐带塔和退得很远的移动勤务塔。尺寸为大致数值。",
+      "where": "飞行 · 发射台"
     }
   },
   "capsules": {

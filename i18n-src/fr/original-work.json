@@ -1991,6 +1991,86 @@
       "title": "Sputnik 1",
       "what": "La sphère polie de 58 cm, avec le joint entre ses deux hémisphères, 36 boulons et quatre antennes fouets inclinées vers l’arrière de 2,4 et 2,9 m.",
       "where": "Voler + Explorer"
+    },
+    "/images/colophon/model-pad-apollo-lut_webp": {
+      "title": "Pas de tir : Apollo, LC-39",
+      "what": "Le pas de tir de Saturn V : la tour ombilicale de 380 ft avec des bras pivotants qui s’écartent au décollage, et la tranchée de flammes. Dimensions d’après des chiffres de la NASA sur Wikipédia.",
+      "where": "Voler · pas de tir"
+    },
+    "/images/colophon/model-pad-shuttle_webp": {
+      "title": "Pas de tir : Navette spatiale, LC-39",
+      "what": "Le pas de tir de la navette : la structure de service fixe (350 ft avec son mât), la structure de service rotative repliée, le château d’eau de 290 ft. Hauteurs principales de Wikipédia ; le reste approximatif.",
+      "where": "Voler · pas de tir"
+    },
+    "/images/colophon/model-pad-sls_webp": {
+      "title": "Pas de tir : SLS, LC-39B",
+      "what": "Le pas de tir d’Artemis : la tour du lanceur mobile à côté de la fusée et trois hauts pylônes paratonnerres. Tailles approximatives.",
+      "where": "Voler · pas de tir"
+    },
+    "/images/colophon/model-pad-soyuz_webp": {
+      "title": "Pas de tir : Soyouz, Baïkonour et Plessetsk",
+      "what": "Le pas de tir de la famille R-7 : quatre bras d’appui qui basculent vers l’extérieur au décollage, deux cabines de service retirées, des mâts paratonnerres, la fosse à flammes. Tailles approximatives.",
+      "where": "Voler · pas de tir"
+    },
+    "/images/colophon/model-pad-proton_webp": {
+      "title": "Pas de tir : Proton, Baïkonour",
+      "what": "Une tour de service fixe avec des bras pivotants qui se rétractent au décollage, près de la tranchée de flammes. Tailles approximatives.",
+      "where": "Voler · pas de tir"
+    },
+    "/images/colophon/model-pad-f9-39a_webp": {
+      "title": "Pas de tir : Falcon, LC-39A",
+      "what": "SpaceX à la 39A : le transporteur-érecteur qui s’incline de 1,5 degré avant le décollage et de 45 à celui-ci, l’ancienne tour surélevée au-delà de 350 ft. Chiffres de Wikipédia.",
+      "where": "Voler · pas de tir"
+    },
+    "/images/colophon/model-pad-f9-cat_webp": {
+      "title": "Pas de tir : Falcon, SLC-40 avec tour équipage",
+      "what": "SpaceX à la SLC-40 depuis la tour d’accès de l’équipage de 2023, avec le transporteur-érecteur qui s’écarte au décollage. Hauteur de la tour approximative.",
+      "where": "Voler · pas de tir"
+    },
+    "/images/colophon/model-pad-f9-te_webp": {
+      "title": "Pas de tir : Falcon, SLC-40 et SLC-4E",
+      "what": "Un pas de tir Falcon nu : le transporteur-érecteur qui s’écarte au décollage et des mâts paratonnerres. Tailles approximatives.",
+      "where": "Voler · pas de tir"
+    },
+    "/images/colophon/model-pad-starbase_webp": {
+      "title": "Pas de tir : Starship, Starbase",
+      "what": "La tour de lancement de Starbase, ses bras de capture ouverts. Hauteur de la tour approximative.",
+      "where": "Voler · pas de tir"
+    },
+    "/images/colophon/model-pad-atlas-v_webp": {
+      "title": "Pas de tir : Atlas V, SLC-41",
+      "what": "Le pas de tir d’ULA : plateforme de lancement mobile, tour ombilicale et quatre pylônes paratonnerres ; le bâtiment d’intégration verticale se trouve à l’écart et est omis. Tailles approximatives.",
+      "where": "Voler · pas de tir"
+    },
+    "/images/colophon/model-pad-cape-classic_webp": {
+      "title": "Pas de tir : Pas de tir à tour de service du Cap",
+      "what": "Les pas de tir Atlas, Delta, Titan et Saturn IB du Cap : une tour ombilicale avec des bras pivotants à côté du lanceur. Tailles approximatives.",
+      "where": "Voler · pas de tir"
+    },
+    "/images/colophon/model-pad-kourou-a5_webp": {
+      "title": "Pas de tir : Ariane 4 et 5, Kourou",
+      "what": "Les pas de tir ELA-2 et ELA-3 : un mât ombilical à côté du lanceur et quatre hauts pylônes paratonnerres. Tailles approximatives.",
+      "where": "Voler · pas de tir"
+    },
+    "/images/colophon/model-pad-kourou-a6_webp": {
+      "title": "Pas de tir : Ariane 6, Kourou",
+      "what": "Le pas de tir ELA-4 : le mât ombilical, deux pylônes paratonnerres et le portique mobile reculé très loin. Tailles approximatives.",
+      "where": "Voler · pas de tir"
+    },
+    "/images/colophon/model-pad-chinese-fst_webp": {
+      "title": "Pas de tir : Tour de service chinoise",
+      "what": "La tour de service fixe de Jiuquan, Xichang, Wenchang et Taiyuan, dont les plateformes de travail s’escamotent au décollage. Tailles approximatives.",
+      "where": "Voler · pas de tir"
+    },
+    "/images/colophon/model-pad-tanegashima_webp": {
+      "title": "Pas de tir : Tanegashima",
+      "what": "Le pas de tir de Yoshinobu : la tour ombilicale du lanceur H-II et un pylône paratonnerre. Tailles approximatives.",
+      "where": "Voler · pas de tir"
+    },
+    "/images/colophon/model-pad-sriharikota_webp": {
+      "title": "Pas de tir : Sriharikota",
+      "what": "Le pas de tir de l’ISRO : la tour ombilicale à côté du lanceur et la tour de service mobile reculée très loin. Tailles approximatives.",
+      "where": "Voler · pas de tir"
     }
   },
   "capsules": {

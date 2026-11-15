@@ -602,10 +602,11 @@
   let panelCoverPx = $state(0);
   // The solar system's navigator is flush right (right = panel cover + 8); the HUD row stops
   // 12 px before its left edge, so the two rows never overlap.
+  // The level card hangs under that row at the same right edge and can be wider than the picker
+  // (de at 390 px: the HUD row's second line ran under it), so the HUD row clears the wider.
   let scaleNavWidth = $state(0);
-  let hudClearRightPx = $derived(
-    view === '3d' && scaleNavWidth > 0 ? panelCoverPx + 8 + scaleNavWidth + 12 : panelCoverPx + 16,
-  );
+  let levelCardWidth = $state(0);
+  let hudMobileRowsHeight = $state(0);
   let contextId = $state<ExploreContextId>('solar-system');
   // Publish the live scale context to the global store so the Nav highlights the
   // active scale-shell menu item (the URL ?context is cleared after the jump, so
@@ -870,6 +871,16 @@
   // The level picker and the card under it show in a scale level; not in a takeover (black hole,
   // deep-sky, body scene), where the lens panel keeps the story.
   let showLevelPicker = $derived(!activeBlackHole && !activeDeepSky && contextId !== 'body-scene');
+  let hudClearRightPx = $derived(
+    view === '3d' && scaleNavWidth > 0 ? panelCoverPx + 8 + scaleNavWidth + 12 : panelCoverPx + 16,
+  );
+  // The phone's top rows wrap to a second and third line under the card, so they clear the card
+  // too; the desktop row (one band, the card hangs under it) keeps the navigator's width only.
+  let hudMobileClearRightPx = $derived(
+    view === '3d' && scaleNavWidth > 0
+      ? panelCoverPx + 8 + Math.max(scaleNavWidth, showLevelPicker ? levelCardWidth : 0) + 12
+      : panelCoverPx + 16,
+  );
   // The welcome hint is shown once per visit: closed, timed out or acted on, it stays gone through
   // a docked panel, a 2D toggle or a takeover.
   let hintDone = $state(false);
@@ -2133,10 +2144,15 @@
       onReset={resetCurrentScale}
     />
     {#if showLevelPicker}
-      <LevelContextCard shell={contextId as ShellId} {panelCoverPx} />
+      <LevelContextCard shell={contextId as ShellId} {panelCoverPx} bind:width={levelCardWidth} />
     {/if}
     {#if !hintDone && panelCoverPx === 0}
-      <ExploreHint text={m.explore_hint_zoom()} topOnTouch ondismiss={() => (hintDone = true)} />
+      <ExploreHint
+        text={m.explore_hint_zoom()}
+        topOnTouch
+        touchTopPx={hudMobileRowsHeight > 0 ? hudMobileRowsHeight + 16 : undefined}
+        ondismiss={() => (hintDone = true)}
+      />
     {/if}
   {/if}
 
@@ -2283,6 +2299,8 @@
     hasSelection={solarHasSelection}
     onResetView={resetSolarView}
     clearRightPx={hudClearRightPx}
+    mobileClearRightPx={hudMobileClearRightPx}
+    bind:mobileRowsHeight={hudMobileRowsHeight}
     {layers}
     onToggleLayer={(key) => {
       layers[key] = !layers[key];

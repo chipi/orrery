@@ -104,7 +104,7 @@
       {:else if satelliteRatio !== null}
         {satelliteRatio < 0.01 ? satelliteRatio.toFixed(4) : satelliteRatio.toFixed(2)}×
       {:else}
-        {m.explore_scale_short()}
+        <span class="scale-word">{m.explore_scale_short()}</span>
       {/if}
     </Chip>
   </div>
@@ -292,6 +292,30 @@
   }
   .time-controls :global(.speed-group) {
     flex-wrap: nowrap;
+  }
+  /* 44 px chips made the dock 385 px (en) to 419 px (ru) wide: the date and the reset ran past a
+     390 px screen's right edge (L26). On a phone the dock never exceeds the viewport, and the
+     default "SCALE" word gives way to the Earth image (the chip keeps its aria-label); a ratio
+     such as "0.53×" stays. */
+  .time-controls {
+    max-inline-size: calc(100vw - 16px);
+    box-sizing: border-box;
+  }
+  @media (max-width: 440px) {
+    .time-controls {
+      gap: 4px;
+    }
+    .time-controls .scale-word {
+      position: absolute;
+      inline-size: 1px;
+      block-size: 1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+      white-space: nowrap;
+    }
+    .time-controls :global(.scale-compact .ui-chip) {
+      padding-inline: 10px;
+    }
   }
   /* Date readout (#351 Layer 2-B) — non-interactive text showing the
      running simulated date, in the panel's mono/accent blue language. */

@@ -14,12 +14,16 @@
     text,
     testid = 'explore-hint',
     topOnTouch = false,
+    touchTopPx,
     ondismiss,
   }: {
     text: string;
     testid?: string;
     /** Hang under the top row on a touch screen instead of above the bottom edge. */
     topOnTouch?: boolean;
+    /** Where that hang starts, when the top rows are taller than the two the default allows for
+     *  (a long label wraps the HUD row to three). */
+    touchTopPx?: number;
     /** Called once the hint has faded out: the host keeps it gone for the rest of the visit. */
     ondismiss?: () => void;
   } = $props();
@@ -82,6 +86,7 @@
     class="hint"
     class:leaving
     class:top-on-touch={topOnTouch}
+    style:--hint-top-touch={touchTopPx ? `${touchTopPx}px` : undefined}
     role="status"
     aria-live="polite"
     data-testid={testid}

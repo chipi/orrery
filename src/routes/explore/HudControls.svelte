@@ -35,6 +35,7 @@
     hasSelection,
     onResetView,
     clearRightPx = 16,
+    mobileClearRightPx = clearRightPx,
     layers,
     onToggleLayer,
     onShowPaths,
@@ -50,7 +51,11 @@
     focusedLightTime,
     focusedOnPlanet,
     drawerUnderPanel = false,
+    mobileRowsHeight = $bindable(0),
   }: {
+    /** The measured height of the phone's top rows (0 when they are not drawn), for the hint that
+     *  hangs under them. */
+    mobileRowsHeight?: number;
     /** True outside the solar system (or in a black-hole takeover). */
     hidden: boolean;
     /** A side panel is docked (landscape phone): the inline drawer row has no room beside it, and
@@ -64,6 +69,8 @@
      *  at the solar system, beside the panel). The row wraps before it, the worlds' "stop before
      *  the panel" rule (hud-beside-panel). */
     clearRightPx?: number;
+    /** The same for the phone's top rows, which also clear the level card under the navigator. */
+    mobileClearRightPx?: number;
     layers: ExploreLayers;
     onToggleLayer: (key: keyof ExploreLayers) => void;
     onShowPaths: () => void;
@@ -277,8 +284,9 @@
      desktop .hud-controls corner; .hud-controls itself is desktop-only). -->
 <div
   class="hud-top-mobile"
+  bind:clientHeight={mobileRowsHeight}
   class:context-hidden={hidden}
-  style:--hud-clear-right="{clearRightPx}px"
+  style:--hud-clear-right="{mobileClearRightPx}px"
   role="group"
   aria-label={m.ui_view_controls()}
 >
@@ -424,7 +432,7 @@
         if (id === 'missions') onShowPaths();
       }}
       bottomInline
-      --mcd-bottom="calc(56px + env(safe-area-inset-bottom, 0px))"
+      --mcd-bottom="calc(max(8px, env(safe-area-inset-bottom, 0px)) + 60px)"
     />
   </div>
 {/if}

@@ -19,10 +19,13 @@
   let {
     shell,
     panelCoverPx = 0,
+    width = $bindable(0),
   }: {
     shell: ShellId;
     /** Width a docked side panel covers at the right edge; the card sits left of it. */
     panelCoverPx?: number;
+    /** The card's measured width, for the HUD row that must stop before it. */
+    width?: number;
   } = $props();
 
   const STORE_KEY = 'orrery.explore.levelCardExpanded';
@@ -80,6 +83,7 @@
 
 <section
   class="level-card"
+  bind:clientWidth={width}
   class:collapsed={!expanded}
   style:right={`${panelCoverPx + 8}px`}
   aria-label={s.name()}

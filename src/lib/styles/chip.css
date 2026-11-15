@@ -86,6 +86,16 @@
   pointer-events: none;
 }
 
+/* A label that may wrap: where a row has less width than the label's one line (RESET VIEW in de at
+   390 px, next to the scale navigator), the chip narrows and the label takes two lines instead of
+   running past the chip's edge. At full width the chip is unchanged. */
+.ui-chip--wrap {
+  white-space: normal;
+  text-align: center;
+  line-height: 1.2;
+  padding-block: 3px;
+}
+
 /* Clear filters: a chip without an edge at rest. */
 .ui-chip--quiet:not(:hover) {
   background: transparent;

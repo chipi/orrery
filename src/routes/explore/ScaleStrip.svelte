@@ -271,6 +271,12 @@
   :global(html[data-touch]) .scale-strip.no-dock {
     bottom: max(12px, env(safe-area-inset-bottom, 0px));
   }
+  /* Touch portrait at the solar system: the 44 px chips put the tab row's top edge 108 px up
+     (measured: dock 56 + 8 + 4 gap + 40 tabs), so the strip clears it by 4 px instead of sitting
+     4 px under it (L26). */
+  :global(html[data-touch]) .scale-strip:not(.no-dock) {
+    bottom: 112px;
+  }
   /* Touch landscape at the solar system: the time dock sits bottom-left and the drawer's tab row
      (8 px up, 34 px tall) bottom-right, under the strip; the strip sits 8 px above the tabs. */
   @media (orientation: landscape) and (max-height: 500px) {

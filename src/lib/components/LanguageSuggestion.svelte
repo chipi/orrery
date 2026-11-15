@@ -206,4 +206,14 @@
     right: 4px;
     transform: translateY(-50%);
   }
+  /* Touch: the close chip is 44 px square, so each side's zone grows from 38 to 52 px and the pill
+     from 44 to 52 px tall; the 34 px zone left the chip over the language name (L26). */
+  @media (hover: none), (pointer: coarse) {
+    .lang-suggest {
+      padding: 8px 52px;
+    }
+    .globe {
+      left: 9px;
+    }
+  }
 </style>

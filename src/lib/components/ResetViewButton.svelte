@@ -6,6 +6,6 @@
   let { ...rest }: { [key: string]: unknown } = $props();
 </script>
 
-<Chip kind="action" {...rest}>
+<Chip kind="action" class="ui-chip--wrap" {...rest}>
   {m.ui_reset_view()}
 </Chip>

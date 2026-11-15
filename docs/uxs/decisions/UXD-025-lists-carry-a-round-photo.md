@@ -1,6 +1,6 @@
 # UXD-025 — Lists carry a round photo of the row's own thing, from one component and one resolver
 
-- **Status**: accepted (T1 built: the component, the resolver, the manifest, the regime panel and its founding missions; T2 built: the solar-system and the Worlds' INDEXes; T3a built: the station lists and the belt members; T4 built: the fleet panel and the entity pages; T3b built: the PATHS legend)
+- **Status**: accepted (T1 built: the component, the resolver, the manifest, the regime panel and its founding missions; T2 built: the solar-system and the Worlds' INDEXes; T3a built: the station lists and the belt members; T4 built: the fleet panel and the entity pages; T3b built: the PATHS legend; T5 built: the neighbourhood and outer-scale INDEXes and the galaxy and structure Related lists, L46)
 - **Date**: 2026-11-13 (proposed and decided)
 - **Decider**: the operator, 2026-11-13 — all 8 recommendations of `docs/wip/2026-11-13-L45-thumbnail-scan-brief.md` §13 approved (option a each); slices T1 to T4 approved, built in that order
 - **Answers**: L45 of the UX feedback plan
@@ -50,9 +50,9 @@ map, loading the 512 px crop (30 to 56 KB) where the pipeline already has a 192 
    The founding missions that link to a mission (23 of 38) show that mission's photo before the year, ring neutral
    (the row carries no agency); the other 15 keep the dot in the same slot, so years and labels line up. The
    `firsts` grid is `28px 52px 1fr`.
-6. **Held (decision 3, option a).** The neighbourhood INDEX (54 of 209 rows with a photo) and the six outer-scale
-   INDEXes (10 of 84) get no thumbs until a content pass raises coverage: a quarter of the rows with a photo reads
-   as a mistake. `/fleet?view=list` (decision 7, option a) stays without thumbs: nothing links to it. Launch rows
+6. **Held (decision 3, option a), then released by L46 (T5 below).** The neighbourhood INDEX (54 of 209 rows with a
+   photo) and the six outer-scale INDEXes (10 of 84) got no thumbs until a content pass raised coverage: a quarter of
+   the rows with a photo reads as a mistake. `/fleet?view=list` (decision 7, option a) stays without thumbs: nothing links to it. Launch rows
    are not proposed (their images are other people's URLs).
 7. **Built after T1, decided.** T2 the Worlds' INDEX and the solar-system INDEX, after C6 (decision 5, option a;
    see "T2" below). T3a the station module lists and the belt members, T4 the fleet panel's lists (the MISSIONS tab
@@ -166,6 +166,37 @@ map, loading the 512 px crop (30 to 56 KB) where the pipeline already has a 192 
 4. **Agency logos kept**, no row of the 280 px legend overflows its box in `en`, `de`, `ru` and `ar` (`scrollWidth` ≤ `clientWidth`;
    Cassini-Huygens, with two logos, is the widest).
 5. **No new string** (the thumb is decorative, `alt=""`), no file generated, no new dependency.
+
+## T5 — the neighbourhood and outer-scale INDEXes and the Related lists (L46, built 2026-11-15)
+
+Decision 6 held these lists until the content pass raised coverage. L46 phase 1 found the photos
+(`docs/wip/2026-11-15-L46-candidates.md`); the operator approved a set image by image on 2026-11-15; this is phase 2.
+
+1. **What shipped.** Deep sky: 94 photos (Commons, free licences, each file's page re-read and its licence checked;
+   the 5 faint or non-round ones — M18, M25, M36, M62, M67 — dropped by the operator). Outer scales: 18 photos, 3
+   X-ray images (Cygnus X-1, the Virgo and Centaurus clusters) and 11 stand-ins (a real image of a member standing for
+   the row: NGC 253 for the Sculptor Group); the three doubtful stand-ins (Great Attractor, Sagittarius dSph,
+   Fornax–Eridanus) and the six faint dwarfs were dropped; the Fornax dwarf reuses its shipped science image. Stars:
+   53 Digitized Sky Survey crops, 7 of them with a plate seam, the 3 faint hosts (TRAPPIST-1, TOI-700, Kepler-16)
+   dropped. Rows with no candidate keep no photo.
+2. **Same component, a second slot.** On every scale but the solar system a row's 28 px `EntityThumb` sits in its own
+   `si-photo` slot at the row's start. The ⊕ ◈ ★ badges, which shared the lead slot, move behind the name and meta
+   (a 26 px empty lead slot left the names 8 characters wide in the 320 px rail), so names line up with and without a
+   photo; a row with no photo shows the centred dot, as everywhere (decision 1). The prerendered link rows carry the slot too, so
+   hydration shifts nothing.
+3. **Which file.** A star: `thumbOf('stars', id)`, the manifest's new `stars` surface (the 192 px crop of the blessed
+   slot, `stars-hero-overrides.json` else 01). A deep-sky object: `/credit-thumbs/images/deep-sky/<photoKey>.webp`. An
+   outer row: the photo its panel hero names in `universe/panel-heroes.json`, else its deep-sky twin's (`index-thumbs.ts`,
+   `outerThumb`); the INDEX rows are built on the server with the hero entries and the gallery titles in the reader's
+   language. A hero with only a `src` (Sagittarius A*, M87*) has no thumb.
+4. **A stand-in says what it shows.** A hero marked `pictured` carries "Pictured: NGC 253" (`panel_hero_pictured`, the
+   existing message the panel already prints, in all 14 locales) as the thumb's hover text; the thumb stays decorative
+   (`alt=""`). The same text is the panel's and the page's hero caption, as before.
+5. **Related lists.** The Related lists of `/explore/galaxies/<id>` and `/explore/structures/<id>` lead each row with the
+   photo when the list has one (`withThumbs`, the same resolver); rows without keep the dot so names line up.
+6. **Ring** neutral on every one of these rows (they carry no agency).
+7. **Not covered.** Rows with no photo keep the dot (18 outer rows with no candidate, the held ones above, Sagittarius A*
+   and M87*); Firefox, WebKit, a real device, a production build.
 
 ## Consequences
 

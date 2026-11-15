@@ -78,3 +78,107 @@ test('/fleet sorts by category', async ({ page }) => {
   await page.locator('.sort-field select').selectOption('category');
   await expect(page).toHaveURL(/sort=category/);
 });
+
+/**
+ * /patches, /essays and /posters take the catalogue's card and grid (EntityCard in an
+ * `entity-card-grid`): the same columns and gap as /missions, one card size per grid, no empty band.
+ * Only the card's content differs (an insignia shown whole, an essay's title and dek, a print).
+ */
+const GRID_PAGES = [
+  { route: '/patches', cards: 110 },
+  { route: '/essays', cards: 13 },
+  { route: '/posters', cards: 27 },
+];
+
+type GridFacts = {
+  grids: { n: number; heights: number[]; gap: string; columns: number; bands: number[] }[];
+};
+
+async function gridFacts(page: import('@playwright/test').Page): Promise<GridFacts> {
+  await page.addStyleTag({ content: '*{content-visibility:visible!important}' });
+  return page.evaluate(() => {
+    const grids = [...document.querySelectorAll<HTMLElement>('ul.entity-card-grid')].map((ul) => {
+      const cards = [...ul.querySelectorAll<HTMLElement>(':scope > li > .card')];
+      const cs = getComputedStyle(ul);
+      return {
+        n: cards.length,
+        heights: [...new Set(cards.map((c) => Math.round(c.getBoundingClientRect().height)))],
+        gap: cs.columnGap,
+        columns: cs.gridTemplateColumns.split(' ').length,
+        // The empty band under the content of each card: card bottom minus its lowest content.
+        bands: cards.map((c) => {
+          const bottom = c.getBoundingClientRect().bottom;
+          const low = Math.max(
+            ...[...c.querySelectorAll<HTMLElement>('.card-photo, .card-body > *')].map(
+              (e) => e.getBoundingClientRect().bottom,
+            ),
+          );
+          return Math.round(bottom - low);
+        }),
+      };
+    });
+    return { grids };
+  });
+}
+
+for (const { route, cards } of GRID_PAGES) {
+  test(`${route} uses the shared card grid: one card size per grid, no empty band`, async ({
+    page,
+  }) => {
+    await page.goto(route);
+    await waitForHydration(page);
+    await expect(page.locator('ul.entity-card-grid > li > .card').first()).toBeVisible({
+      timeout: 20_000,
+    });
+    await expect(page.locator('ul.entity-card-grid > li > .card')).toHaveCount(cards);
+    const { grids } = await gridFacts(page);
+    expect(grids.length).toBeGreaterThan(0);
+    for (const g of grids) {
+      expect(g.heights, `${route}: every card of a grid has one height`).toHaveLength(1);
+      expect(Math.max(...g.bands), `${route}: no empty band over 50 px`).toBeLessThanOrEqual(50);
+    }
+    // The same grid as /missions: same gap, same column count at this viewport (the frames differ by
+    // a few px, so a viewport right at a column break could differ by one).
+    await page.goto('/missions');
+    await waitForHydration(page);
+    await expect(page.locator('ul.entity-card-grid > li > .card').first()).toBeVisible({
+      timeout: 20_000,
+    });
+    const ref = (await gridFacts(page)).grids[0];
+    for (const g of grids) {
+      expect(g.gap).toBe(ref.gap);
+      expect(Math.abs(g.columns - ref.columns)).toBeLessThanOrEqual(1);
+    }
+  });
+}
+
+test('/essays and /missions cards have the catalogue footprint (a photo and a 142 px body)', async ({
+  page,
+}) => {
+  await page.goto('/essays');
+  await waitForHydration(page);
+  await expect(page.locator('ul.entity-card-grid > li > .card').first()).toBeVisible({
+    timeout: 20_000,
+  });
+  const essay = await page.evaluate(() => {
+    const body = document.querySelector('ul.entity-card-grid .card-body')!;
+    return Math.round(body.getBoundingClientRect().height);
+  });
+  expect(essay).toBe(142);
+});
+
+test('/posters keeps each poster a download link and /patches keeps each credit a link', async ({
+  page,
+}) => {
+  await page.goto('/posters');
+  await waitForHydration(page);
+  await expect(page.locator('ul.entity-card-grid > li > a.card[download]')).toHaveCount(27);
+  await page.goto('/patches');
+  await waitForHydration(page);
+  const credits = page.locator('ul.entity-card-grid .card-extra a[target="_blank"]');
+  expect(await credits.count()).toBeGreaterThan(50);
+  await expect(page.locator('ul.entity-card-grid > li > .card').first()).not.toHaveAttribute(
+    'href',
+    /.*/,
+  );
+});

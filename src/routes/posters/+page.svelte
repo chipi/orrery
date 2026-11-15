@@ -11,6 +11,7 @@
   import { localizeHref } from '$lib/paraglide/runtime';
   import { assetOrigin } from '$lib/asset-url';
   import { roving } from '$lib/a11y/roving';
+  import EntityCard from '$lib/components/EntityCard.svelte';
   import * as m from '$lib/paraglide/messages';
 
   type Poster = { id: string; title: string; sub: string };
@@ -69,25 +70,23 @@
 
   <!-- Spatial roving (RFC-031 S1): one Tab stop; arrows / TV D-pad move between
        posters by 2D geometry instead of 27 separate Tab stops. -->
-  <div class="grid" use:roving={{ mode: 'spatial' }}>
+  <ul class="entity-card-grid" use:roving={{ mode: 'spatial' }}>
     {#each posters as p (p.id)}
-      <figure class="poster">
-        <a
-          href="{assetOrigin}/images/posters/{p.id}.jpg"
-          download="orrery-{p.id}.jpg"
-          aria-label={m.posters_download_aria({ title: p.title, sub: p.sub })}
-        >
-          <img
-            src="{assetOrigin}/images/posters/{p.id}.thumb.jpg"
-            alt={m.posters_alt({ title: p.title, sub: p.sub })}
-            width="700"
-            height="1050"
-            loading="lazy"
-          />
-        </a>
-      </figure>
+      <EntityCard
+        href="{assetOrigin}/images/posters/{p.id}.jpg"
+        download="orrery-{p.id}.jpg"
+        ariaLabel={m.posters_download_aria({ title: p.title, sub: p.sub })}
+        photo="{assetOrigin}/images/posters/{p.id}.thumb.jpg"
+        ladder={false}
+        alt={m.posters_alt({ title: p.title, sub: p.sub })}
+        imgWidth={700}
+        imgHeight={1050}
+        name={p.title}
+        aspect="portrait"
+        body="none"
+      />
     {/each}
-  </div>
+  </ul>
 
   <footer class="page-note">
     <p>
@@ -117,46 +116,5 @@
   }
   .crumb .sep {
     margin: 0 8px;
-  }
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 28px;
-  }
-  .poster {
-    margin: 0;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 4px;
-    overflow: hidden;
-    background: #000;
-    transition:
-      border-color 0.2s,
-      transform 0.2s;
-  }
-  .poster:hover {
-    border-color: var(--color-accent-edge);
-    transform: translateY(-2px);
-  }
-  .poster a {
-    display: block;
-  }
-  .poster img {
-    display: block;
-    width: 100%;
-    height: auto;
-    aspect-ratio: 2 / 3;
-    object-fit: cover;
-  }
-  @media (max-width: 1023px) {
-    .grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-  @media (max-width: 639px) {
-    .grid {
-      grid-template-columns: 1fr;
-      max-width: 480px;
-      margin: 0 auto;
-    }
   }
 </style>

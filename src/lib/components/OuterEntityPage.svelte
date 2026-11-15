@@ -17,6 +17,7 @@
   import JsonLd from '$lib/components/JsonLd.svelte';
   import DataSources from '$lib/components/DataSources.svelte';
   import EntityHero from '$lib/components/EntityHero.svelte';
+  import EntityThumb from '$lib/components/EntityThumb.svelte';
   import { assetUrl } from '$lib/asset-url';
   import type { DataSourceItem } from '$lib/catalogue';
   import type { PageHero } from '$lib/data';
@@ -107,7 +108,17 @@
       <h2 class="page-section-label">{s.heading}</h2>
       <ul class="linklist wide">
         {#each s.links as l (l.href)}
-          <li><a href={localHref(l.href)}>{l.name}</a></li>
+          {#if s.links.some((x) => x.thumb)}
+            <li class="has-thumb">
+              <EntityThumb
+                src={l.thumb ?? null}
+                title={l.pictured ? m.panel_hero_pictured({ part: l.pictured }) : undefined}
+              />
+              <span class="lt-body"><a href={localHref(l.href)}>{l.name}</a></span>
+            </li>
+          {:else}
+            <li><a href={localHref(l.href)}>{l.name}</a></li>
+          {/if}
         {/each}
       </ul>
     </section>

@@ -196,6 +196,18 @@
   text-decoration: none;
   cursor: pointer;
 }
+.si-row:has(.si-photo) {
+  align-items: center;
+}
+/* With a photo in front the badges (⊕ ◈ ★) move behind the name and its meta, at the row's end: the names
+   start at one x and keep the width the 26 px lead slot would take (a row without badges draws none). */
+.si-row:has(.si-photo) .si-lead {
+  order: 5;
+  width: auto;
+}
+.si-row:has(.si-photo) .si-lead:not(:has(*)) {
+  display: none;
+}
 .si-row:hover,
 .si-row:focus-visible {
   background: color-mix(in srgb, var(--color-accent) 18%, transparent);
@@ -247,6 +259,16 @@
   flex: none;
   width: 26px;
   font-size: 11px;
+}
+/* The round photo of a neighbourhood or outer-scale row (L46, UXD-025): 28 px, a row with no photo
+   centres its dot in the same slot so the names line up. The solar system keeps its photo in the lead. */
+.si-photo {
+  display: inline-flex;
+  flex: none;
+  width: 28px;
+  height: 28px;
+  align-items: center;
+  justify-content: center;
 }
 .si-dot {
   width: 8px;

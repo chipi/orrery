@@ -16,8 +16,10 @@
     ring?: string | null;
     size?: number;
     fallback?: 'dot' | 'none';
+    /** Hover text of a stand-in photo ("Pictured: NGC 253"); the picture stays decorative. */
+    title?: string;
   }
-  let { src, ring = null, size = 28, fallback = 'dot' }: Props = $props();
+  let { src, ring = null, size = 28, fallback = 'dot', title }: Props = $props();
 
   let failed = $state<string | null>(null);
   const showImage = $derived(src != null && failed !== src);
@@ -28,6 +30,7 @@
     class="entity-thumb"
     src={assetUrl(src)}
     alt=""
+    {title}
     width={size}
     height={size}
     loading="lazy"

@@ -746,6 +746,10 @@ function panelHeroes(fetchFn: FetchLike): Promise<Record<string, PanelHeroEntry>
   return panelHeroesCache;
 }
 
+/** Every entry of universe/panel-heroes.json, by `<level>/<id>` (the INDEX rows and Related lists read their photos from it). */
+export const getPanelHeroEntries = (fetchFn: FetchLike = fetch): Promise<Record<string, PanelHeroEntry>> =>
+  panelHeroes(fetchFn);
+
 /** Start the hero manifest fetch early so a panel opened later finds it cached. */
 export function warmUniverseHeroes(fetchFn: FetchLike = fetch): void {
   void panelHeroes(fetchFn);

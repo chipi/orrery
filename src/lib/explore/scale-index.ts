@@ -16,6 +16,12 @@ import {
   smallBodyIndexMeta,
 } from './format';
 import type { ShellId } from './scale-shell-controller';
+import {
+  deepSkyObjectThumb,
+  outerThumb,
+  type IndexThumbSource,
+  type RowThumb,
+} from './index-thumbs';
 
 export type IndexSection =
   | 'stars'
@@ -54,7 +60,15 @@ export interface ScaleIndexRow {
   color?: string;
   /** False for a row whose object the scene does not draw. */
   selectable: boolean;
+  /** Root-relative path of the row's round photo (L46); absent when the row has none. */
+  thumb?: string;
+  /** What the photo shows when it is a part of the row (a stand-in), in the reader's language. */
+  thumbPictured?: string;
 }
+
+/** The two row fields a photo sets. */
+const thumbFields = (t: RowThumb | null): Pick<ScaleIndexRow, 'thumb' | 'thumbPictured'> =>
+  t ? { thumb: t.thumb, ...(t.pictured ? { thumbPictured: t.pictured } : {}) } : {};
 
 export type ScaleIndexRows = Record<ShellId, ScaleIndexRow[]>;
 
@@ -236,6 +250,8 @@ export interface ScaleIndexSource {
   laniakea: Member[];
   cosmicWeb: Member[];
   blackHoles: { id: string; name: string; kind: string }[];
+  /** The photos of the neighbourhood and outer-scale rows (L46); a row has none without it. */
+  thumbs?: IndexThumbSource;
 }
 
 type Member = { id: string; name: string; kind: string; headliner: boolean; parent?: string } & (
@@ -251,6 +267,7 @@ function memberRows(
   members: Member[],
   names: Record<string, string>,
   pageOf?: PageOf,
+  photo?: (id: string) => RowThumb | null,
 ): ScaleIndexRow[] {
   return [...members]
     .sort((a, b) => dist(a) - dist(b))
@@ -265,6 +282,7 @@ function memberRows(
         badges: m.headliner ? ['headliner'] : undefined,
         href: page?.href,
         selectable: true,
+        ...thumbFields(photo?.(m.id) ?? null),
       };
     });
 }
@@ -322,6 +340,7 @@ function blackHoleRow(
     badges: ['black-hole'],
     href: src.pages.blackHole.has(id) ? `/explore/black-holes/${id}` : undefined,
     selectable: true,
+    ...thumbFields(outerThumb(src.thumbs, 'black-holes', id)),
   };
 }
 
@@ -435,6 +454,7 @@ function neighborhoodRows(src: ScaleIndexSource): ScaleIndexRow[] {
       badges: badgesOf(id),
       href: src.pages.star.has(id) ? `/explore/stars/${id}` : undefined,
       selectable: true,
+      ...(src.thumbs?.star[id] ? { thumb: src.thumbs.star[id] } : {}),
     }))
     .sort(byName);
   const deepSkyPage = deepSkyPageOf(src);
@@ -447,6 +467,7 @@ function neighborhoodRows(src: ScaleIndexSource): ScaleIndexRow[] {
       badges: badgesOf(o.id),
       href: deepSkyPage(o.id)?.href,
       selectable: true,
+      ...thumbFields(deepSkyObjectThumb(src.thumbs, o.id)),
     }))
     .sort(byName);
   return [...starRows, ...deepRows];
@@ -459,7 +480,14 @@ function milkyWayRows(src: ScaleIndexSource): ScaleIndexRow[] {
     rows.push(
       o.id === 'sagittarius-a-star'
         ? blackHoleRow(src, o.id, 'objects')
-        : { id: o.id, name: o.name, kind: o.kind, section: 'objects', selectable: true },
+        : {
+            id: o.id,
+            name: o.name,
+            kind: o.kind,
+            section: 'objects',
+            selectable: true,
+            ...thumbFields(outerThumb(src.thumbs, 'milky-way', o.id)),
+          },
     );
   }
   rows.push(blackHoleRow(src, 'cygnus-x-1', 'objects'));
@@ -474,6 +502,7 @@ function milkyWayRows(src: ScaleIndexSource): ScaleIndexRow[] {
       badges: g.headliner ? ['headliner'] : undefined,
       href: page?.href,
       selectable: true,
+      ...thumbFields(outerThumb(src.thumbs, 'milky-way', g.id, src.deepSkyAlias[g.id])),
     });
   }
   const galaxyPage = outerPageOf(src).galaxy;
@@ -487,6 +516,7 @@ function milkyWayRows(src: ScaleIndexSource): ScaleIndexRow[] {
       section: 'satellites',
       href: page?.href,
       selectable: true,
+      ...thumbFields(outerThumb(src.thumbs, 'milky-way', s.id, src.deepSkyAlias[s.id])),
     });
   }
   for (const a of mw.arms)
@@ -501,19 +531,21 @@ function milkyWayRows(src: ScaleIndexSource): ScaleIndexRow[] {
  */
 export function buildScaleIndexRows(src: ScaleIndexSource): ScaleIndexRows {
   const { galaxy, structure } = outerPageOf(src);
+  const photo = (level: string) => (id: string) =>
+    outerThumb(src.thumbs, level, id, src.deepSkyAlias[id]);
   return {
     'solar-system': solarRows(src),
     neighborhood: neighborhoodRows(src),
     'milky-way': milkyWayRows(src),
-    'local-group': memberRows(src.localGroup, src.names.galaxy, galaxy),
-    'local-sheet': memberRows(src.localSheet, src.names.structure, structure),
+    'local-group': memberRows(src.localGroup, src.names.galaxy, galaxy, photo('local-group')),
+    'local-sheet': memberRows(src.localSheet, src.names.structure, structure, photo('local-sheet')),
     virgo: [
-      ...memberRows(src.virgo, src.names.structure, structure),
+      ...memberRows(src.virgo, src.names.structure, structure, photo('virgo')),
       blackHoleRow(src, 'm87-star', 'black-holes'),
     ],
-    laniakea: memberRows(src.laniakea, src.names.structure, structure),
+    laniakea: memberRows(src.laniakea, src.names.structure, structure, photo('laniakea')),
     'cosmic-web': [
-      ...memberRows(src.cosmicWeb, src.names.structure, structure),
+      ...memberRows(src.cosmicWeb, src.names.structure, structure, photo('cosmic-web')),
       blackHoleRow(src, 'gargantua', 'fiction'),
     ],
   };

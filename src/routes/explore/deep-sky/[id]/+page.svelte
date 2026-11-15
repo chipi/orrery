@@ -65,7 +65,7 @@
 
   <p class="dispatch">{obj.bio}</p>
 
-  {#if obj.gallery}<p>{obj.gallery.caption}</p>{/if}
+  {#if obj.gallery?.caption}<p>{obj.gallery.caption}</p>{/if}
 
   {#if data.rows.length}
     <dl class="facts">

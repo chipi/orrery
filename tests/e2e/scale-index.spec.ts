@@ -533,7 +533,7 @@ test.describe('/explore INDEX — a round photo in the lead slot of the solar ro
     await expect(mars.locator('img.entity-thumb')).toHaveCount(0);
   });
 
-  test('a closed INDEX fetches no thumb; opening it does; the neighbourhood has none', async ({
+  test('a closed INDEX fetches no thumb; opening it does; the other scales hold their lazy photos hidden', async ({
     page,
   }) => {
     test.slow();
@@ -547,10 +547,33 @@ test.describe('/explore INDEX — a round photo in the lead slot of the solar ro
     await toggle(page).click();
     await expect.poll(() => thumbs.length, { timeout: 15_000 }).toBeGreaterThan(0);
 
-    // Decision 3 (held): the other scales keep the dot and badge lead slot, no photo.
-    expect(
-      await page.locator('aside.scale-index:not([data-scale="solar-system"]) img').count(),
-    ).toBe(0);
+    // L46 (UXD-025 T5): the other scales carry photos too, in a slot of their own, still lazy and hidden.
+    const others = page.locator('aside.scale-index:not([data-scale="solar-system"]) .si-photo img');
+    expect(await others.count()).toBeGreaterThan(100);
+    expect(await others.first().getAttribute('loading')).toBe('lazy');
+  });
+
+  test('the neighbourhood and the Local Group rows show their photo: a star crop, a deep-sky photo, a stand-in that says what it pictures; a row with none keeps the dot', async ({
+    page,
+  }) => {
+    test.slow();
+    await openScale(page, SCALES[1]);
+    await toggle(page).click();
+    const nb = panelOf(page, 'neighborhood');
+    await expect(nb).toBeVisible();
+    await expect(nb.locator('button.si-row[data-index-id="canopus"] img.entity-thumb')).toHaveCount(
+      1,
+    );
+    await expect(nb.locator('button.si-row[data-index-id="m13"] img.entity-thumb')).toHaveCount(1);
+    await expect(nb.locator('button.si-row[data-index-id="m18"] .entity-thumb-dot')).toHaveCount(1);
+    await page.goto('/explore?context=local-sheet');
+    await waitForHydration(page);
+    await toggle(page).click();
+    const sheet = panelOf(page, 'local-sheet');
+    await expect(sheet).toBeVisible();
+    const stand = sheet.locator('button.si-row[data-index-id="sculptor-group"] img.entity-thumb');
+    await expect(stand).toHaveAttribute('title', 'Pictured: NGC 253');
+    await expect(stand).toHaveAttribute('alt', '');
   });
 });
 

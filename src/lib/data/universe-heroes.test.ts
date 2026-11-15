@@ -50,10 +50,12 @@ describe('getUniverseHero (B3, UXD-023)', () => {
     expect((await getUniverseHero('local-group', 'triangulum', 'ja'))?.pictured).toBeTruthy();
   });
 
-  it('no entry, no hero: Laniakea, Virgo, Cygnus X-1 and Gargantua have none', async () => {
+  it('no entry, no hero: Laniakea, the Virgo II groups and Gargantua have none; Cygnus X-1 has its Chandra image', async () => {
     expect(await getUniverseHero('laniakea', 'virgo-supercluster')).toBeNull();
-    expect(await getUniverseHero('virgo', 'virgo-cluster')).toBeNull();
-    expect(await getUniverseHero('black-holes', 'cygnus-x-1')).toBeNull();
+    expect(await getUniverseHero('virgo', 'virgo-ii-groups')).toBeNull();
+    expect((await getUniverseHero('black-holes', 'cygnus-x-1'))?.full).toBe(
+      '/images/deep-sky/cygnus-x-1.jpg',
+    );
     expect(await getUniverseHero('black-holes', 'gargantua')).toBeNull();
   });
 

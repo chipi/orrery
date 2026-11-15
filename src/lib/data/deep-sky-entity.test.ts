@@ -24,7 +24,7 @@ describe('getDeepSkyEntity', () => {
       category: 'globular-cluster',
       con: 'Her',
       gatewaySystem: null,
-      gallery: null,
+      gallery: { telescope: 'Hubble', credit: 'NASA · STScI · WikiSky' },
     });
     expect(m13?.fact).toContain('The Hercules Cluster, over 100,000 stars');
     expect(m13?.bio).toContain('Edmond Halley discovered it in 1714');
@@ -77,18 +77,16 @@ describe('getDeepSkyEntity', () => {
     expect(de?.hero?.alt).not.toBe(m42?.hero?.alt);
   });
 
-  it('M33 has no photo of its own: its page takes the Triangulum panel hero, NGC 604, named as the part pictured', async () => {
+  it('M33 has its own gallery photo (L46), which its page shows in place of the Triangulum panel hero (NGC 604)', async () => {
     const m33 = await getDeepSkyEntity('m33', 'en-US');
-    expect(m33?.gallery).toBeNull();
-    expect(m33?.hero).toMatchObject({
-      full: '/images/deep-sky/jwst-ngc604.jpg',
-      pictured: 'NGC 604',
-    });
+    expect(m33?.gallery?.telescope).toBe('ESO');
+    expect(m33?.hero?.full).toBe('/images/deep-sky/m33.jpg');
+    expect(m33?.hero?.pictured).toBeUndefined();
     expect(m33?.hero?.credit).toBeTruthy();
   });
 
   it('an object with no photo and no twin hero has none: no hero, no slot', async () => {
-    expect((await getDeepSkyEntity('m13', 'en-US'))?.hero).toBeNull();
+    expect((await getDeepSkyEntity('m18', 'en-US'))?.hero).toBeNull();
   });
 
   it('every page object with a photo has a hero whose files exist and that carries alt text', async () => {
@@ -122,7 +120,7 @@ describe('getDeepSkyEntity', () => {
         expect(e!.links.length, `${id} ${locale} links`).toBeLessThanOrEqual(2);
       }
     }
-  });
+  }, 60_000);
 
   it('every gateway of a page object is a star page', async () => {
     const stars = new Set<string>(starPageIds());

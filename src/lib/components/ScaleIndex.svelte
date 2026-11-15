@@ -367,6 +367,17 @@
                 title={row.kind === 'fictional' ? m.bh_fiction_badge() : undefined}
                 onclick={() => onSelect(row)}
               >
+                {#if scale !== 'solar-system'}
+                  <span class="si-photo" aria-hidden="true"
+                    ><EntityThumb
+                      src={row.thumb ?? null}
+                      ring={row.color}
+                      title={row.thumbPictured
+                        ? m.panel_hero_pictured({ part: row.thumbPictured })
+                        : undefined}
+                    /></span
+                  >
+                {/if}
                 <span class="si-lead" aria-hidden="true">
                   {#if scale === 'solar-system' && solarRowThumb(row)}
                     <EntityThumb src={solarRowThumb(row)} ring={row.color} />
@@ -398,7 +409,10 @@
                 class="si-row"
                 href={pageHref(row)}
                 data-testid="scale-index-page-link"
-                data-index-id={row.id}><span class="si-name">{row.name}</span></a
+                data-index-id={row.id}
+                >{#if scale !== 'solar-system'}<span class="si-photo" aria-hidden="true"
+                    ><EntityThumb src={row.thumb ?? null} ring={row.color} /></span
+                  >{/if}<span class="si-name">{row.name}</span></a
               >
             {/if}
           </li>

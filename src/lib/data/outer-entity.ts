@@ -2,10 +2,13 @@ import type { FetchLike } from './core';
 import type { CatalogueEntry } from '$lib/catalogue';
 import { outerPageOf } from '$lib/explore/scale-index';
 import { outerName } from '$lib/server/glossary';
+import { deepSkyObjectThumb, outerThumb, type IndexThumbSource } from '$lib/explore/index-thumbs';
 import {
   getCosmicWeb,
+  getDeepSkyGallery,
   getDeepSkyObjects,
   getGalaxyI18n,
+  getPanelHeroEntries,
   getLaniakea,
   getLocalGroup,
   getLocalSheet,
@@ -33,11 +36,53 @@ export interface RelatedLink {
   /** Locale-free path. */
   href: string;
   name: string;
+  /** Root-relative path of the row's round photo (L46), absent when it has none. */
+  thumb?: string;
+  /** What the photo shows when it is a part of the entity (a stand-in), in the reader's language. */
+  pictured?: string;
 }
 /** `part-of`: what it belongs to; `members`: what belongs to it; `same-scale`: its neighbours in the INDEX. */
 export interface RelatedGroup {
   kind: 'part-of' | 'members' | 'same-scale';
   links: RelatedLink[];
+}
+
+const THUMB_LEVELS = {
+  galaxies: ['local-group', 'milky-way'],
+  structures: ['local-sheet', 'virgo', 'laniakea', 'cosmic-web'],
+} as const;
+
+/** The round photos of a Related list (L46): the row's panel hero, else its deep-sky twin's photo. */
+async function withThumbs(
+  related: RelatedGroup[],
+  locale: string,
+  fetchFn: FetchLike,
+  deepSky: { id: string; photoKey?: string | null }[],
+): Promise<RelatedGroup[]> {
+  const [heroes, gallery] = await Promise.all([
+    getPanelHeroEntries(fetchFn),
+    getDeepSkyGallery(fetchFn, locale),
+  ]);
+  const ts: IndexThumbSource = {
+    star: {},
+    heroes,
+    titles: Object.fromEntries(gallery.map((g) => [g.key, g.title])),
+    photoKeyOf: Object.fromEntries(deepSky.map((o) => [o.id, o.photoKey])),
+  };
+  return related.map((g) => ({
+    ...g,
+    links: g.links.map((l) => {
+      const m = /^\/explore\/(galaxies|structures|deep-sky)\/(.+)$/.exec(l.href);
+      if (!m) return l;
+      const t =
+        m[1] === 'deep-sky'
+          ? deepSkyObjectThumb(ts, m[2])
+          : (THUMB_LEVELS[m[1] as keyof typeof THUMB_LEVELS]
+              .map((level) => outerThumb(ts, level, m[2]))
+              .find(Boolean) ?? null);
+      return t ? { ...l, thumb: t.thumb, ...(t.pictured ? { pictured: t.pictured } : {}) } : l;
+    }),
+  }));
 }
 
 /** The names the INDEX rows, the panels and the pages share, by id. */
@@ -241,7 +286,7 @@ export async function getGalaxyEntity(
     fact: overlay.fact,
     bio: overlay.bio,
     links: overlay.links ?? [],
-    related,
+    related: await withThumbs(related, locale, fetchFn, deepSky),
     scale: 'local-group',
     hero: await getPageHero(await getUniverseHero('local-group', id, locale, fetchFn), locale, fetchFn),
   };
@@ -305,7 +350,7 @@ export async function getStructureEntity(
     fact: overlay.fact,
     bio: overlay.bio,
     links: overlay.links ?? [],
-    related,
+    related: await withThumbs(related, locale, fetchFn, deepSky),
     scale: own[0].scale,
     hero: await getPageHero(await structureHero(own, id, locale, fetchFn), locale, fetchFn),
   };

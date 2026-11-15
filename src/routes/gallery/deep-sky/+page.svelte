@@ -180,7 +180,7 @@
         <button
           type="button"
           onclick={() => open(i)}
-          aria-label={m.deepsky_view_aria({ title: img.title, caption: img.caption })}
+          aria-label={m.deepsky_view_aria({ title: img.title, caption: img.caption || img.type })}
         >
           <img
             src="{assetOrigin}/images/deep-sky/{img.key}.thumb.jpg"
@@ -244,7 +244,7 @@
               >{current.constellation}{/if}
           </div>
         {/if}
-        <p class="lb-caption">{current.caption}</p>
+        {#if current.caption}<p class="lb-caption">{current.caption}</p>{/if}
         <dl class="lb-facts">
           <div>
             <dt>{m.deepsky_fact_object()}</dt>
@@ -256,18 +256,24 @@
               <dd>{current.constellation}</dd>
             </div>
           {/if}
-          <div>
-            <dt>{m.explore_ds_distance()}</dt>
-            <dd>{current.distance}</dd>
-          </div>
-          <div>
-            <dt>{m.deepsky_fact_captured()}</dt>
-            <dd>{current.taken}</dd>
-          </div>
-          <div>
-            <dt>{m.deepsky_fact_instrument()}</dt>
-            <dd>{current.instrument}</dd>
-          </div>
+          {#if current.distance}
+            <div>
+              <dt>{m.explore_ds_distance()}</dt>
+              <dd>{current.distance}</dd>
+            </div>
+          {/if}
+          {#if current.taken}
+            <div>
+              <dt>{m.deepsky_fact_captured()}</dt>
+              <dd>{current.taken}</dd>
+            </div>
+          {/if}
+          {#if current.instrument}
+            <div>
+              <dt>{m.deepsky_fact_instrument()}</dt>
+              <dd>{current.instrument}</dd>
+            </div>
+          {/if}
         </dl>
         <p class="lb-meta">
           <span class="lb-credit">{current.credit}</span>

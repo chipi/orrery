@@ -2,6 +2,7 @@ import {
   getBlackHoles,
   getCosmicWeb,
   getCultureObjectIds,
+  getDeepSkyGallery,
   getDeepSkyObjects,
   getExoplanetSystems,
   getFleet,
@@ -11,8 +12,10 @@ import {
   getMilkyWaySchematic,
   getMission,
   getNamedStars,
+  getPanelHeroEntries,
   getVirgo,
 } from '$lib/data';
+import { thumbOf } from '$lib/entity-thumb';
 import { get } from '$lib/data/core';
 import { buildScaleIndexRows, type ScaleIndexRows } from '$lib/explore/scale-index';
 import { getBodyEntity } from '$lib/data/body-entity';
@@ -174,6 +177,8 @@ export async function getScaleIndexRows(locale: string, fetchFn: FetchFn): Promi
     cosmicWeb,
     blackHoles,
     outerNames,
+    heroes,
+    gallery,
   ] = await Promise.all([
     getEntityIndex('explore', locale, fetchFn),
     getStarLinks(locale, fetchFn),
@@ -209,6 +214,8 @@ export async function getScaleIndexRows(locale: string, fetchFn: FetchFn): Promi
     getCosmicWeb(fetchFn),
     getBlackHoles(fetchFn),
     getOuterNames(locale, fetchFn),
+    getPanelHeroEntries(fetchFn),
+    getDeepSkyGallery(fetchFn, locale),
   ]);
   if (!milkyWay || !localGroup || !localSheet || !virgo || !laniakea || !cosmicWeb)
     throw new Error('universe data is missing: the scale INDEX cannot be built');
@@ -255,5 +262,16 @@ export async function getScaleIndexRows(locale: string, fetchFn: FetchFn): Promi
     laniakea: laniakea.members,
     cosmicWeb: cosmicWeb.members,
     blackHoles,
+    thumbs: {
+      star: Object.fromEntries(
+        [...namedStars.map((s) => s.id), ...systems.map((s) => s.hostId)].flatMap((id) => {
+          const t = thumbOf('stars', id);
+          return t ? [[id, t]] : [];
+        }),
+      ),
+      heroes,
+      titles: Object.fromEntries(gallery.map((g) => [g.key, g.title])),
+      photoKeyOf: Object.fromEntries(deepSky.map((o) => [o.id, o.photoKey])),
+    },
   });
 }

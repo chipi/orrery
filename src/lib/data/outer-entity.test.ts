@@ -104,7 +104,7 @@ describe('getGalaxyEntity', () => {
     expect(e?.related[0].links[0].name).toMatch(/^M31/);
   });
 
-  it('the LMC page takes its panel hero, the Tarantula Nebula named as the part pictured; a dwarf has none', async () => {
+  it('the LMC page takes its panel hero, the Tarantula Nebula named as the part pictured; a dwarf shows its own photo (L46)', async () => {
     for (const id of ['lmc', 'sculptor-dwarf']) OVERLAYS.add(id);
     const p = pages({ galaxy: ids(['lmc', 'sculptor-dwarf']) });
     const lmc = await getGalaxyEntity('lmc', 'en-US', fetch, p);
@@ -114,7 +114,9 @@ describe('getGalaxyEntity', () => {
     });
     expect(lmc?.hero?.alt).toBeTruthy();
     expect((await getGalaxyEntity('lmc', 'de', fetch, p))?.hero?.pictured).toBeTruthy();
-    expect((await getGalaxyEntity('sculptor-dwarf', 'en-US', fetch, p))?.hero).toBeNull();
+    expect((await getGalaxyEntity('sculptor-dwarf', 'en-US', fetch, p))?.hero?.full).toBe(
+      '/images/deep-sky/sculptor-dwarf.jpg',
+    );
   });
 
   it('is null for a twin: its page is the deep-sky one', async () => {
@@ -156,7 +158,13 @@ describe('getStructureEntity', () => {
   });
 
   it('a structure takes the hero its panel shows under its scale, a part-of photo naming what it pictures', async () => {
-    for (const id of ['ic-342-group', 'm101-group', 'perseus-pisces', 'virgo-cluster'])
+    for (const id of [
+      'ic-342-group',
+      'm101-group',
+      'perseus-pisces',
+      'virgo-cluster',
+      'virgo-ii-groups',
+    ])
       OVERLAYS.add(id);
     const at = async (id: string) =>
       getStructureEntity(id, 'en-US', fetch, pages({ structure: ids([id]) }));
@@ -166,7 +174,8 @@ describe('getStructureEntity', () => {
     });
     expect((await at('m101-group'))?.hero?.full).toBe('/images/deep-sky/hst-pinwheel.jpg');
     expect((await at('perseus-pisces'))?.hero?.full).toBe('/images/deep-sky/euclid-perseus.jpg');
-    expect((await at('virgo-cluster'))?.hero).toBeNull();
+    expect((await at('virgo-cluster'))?.hero?.full).toBe('/images/deep-sky/virgo-cluster.jpg');
+    expect((await at('virgo-ii-groups'))?.hero).toBeNull();
   });
 
   it('links what contains it, what it holds and its neighbours, each once', async () => {

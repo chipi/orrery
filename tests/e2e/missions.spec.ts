@@ -77,9 +77,10 @@ test.describe('/missions — catalog', () => {
 
   test('?dest=MARS pre-applies the filter on load (URL sharing)', async ({ page }) => {
     await page.goto('/missions?dest=MARS');
-    await expect(page.locator('[data-testid^="mission-card-"]')).toHaveCount(20, {
-      timeout: 10_000,
-    });
+    await expect(page.locator('[data-testid^="mission-card-"]')).toHaveCount(
+      missionCountWhere((m) => m.dest === 'MARS'),
+      { timeout: 10_000 },
+    );
     // The MARS pill should reflect the active state.
     await expect(page.getByRole('radio', { name: /^MARS$/i })).toHaveAttribute(
       'aria-checked',

@@ -210,7 +210,7 @@ Regions that persist across or within a screen.
 
 **Science links in panels** — a panel offers at most five `/science` sections as cards, through one helper (`pickScienceLinks`), never a per-type default list ([UXD-022](decisions/UXD-022-science-link-lists.md)); each orbit-ruler pane has its own card, none repeating inside a ruler ([UXD-010](decisions/UXD-010-ruler-regimes-each-get-their-own-science-card.md)).
 
-**Star, outer-scale and black-hole panels** — one body for all nine (`UniversePanelBody`, [UXD-023](decisions/UXD-023-star-and-outer-panels-follow-the-planet-pattern.md)): one hero or none, GALLERY second with two or more images, a star's IN THE SKY tab (finder, constellation, zodiac note, "Show constellation lines"); a black hole opens in place and "See the lensing simulation" enters the takeover.
+**Star, outer-scale and black-hole panels** — one body for all nine (`UniversePanelBody`, [UXD-023](decisions/UXD-023-star-and-outer-panels-follow-the-planet-pattern.md)): one hero or none, GALLERY second with two or more images, a star's IN THE SKY tab (finder, constellation, zodiac note, "Show constellation lines"), and a deep-sky object's OVERVIEW · IN THE SKY (finder with the object ringed, position, nearest bright star, best months, latitude, viewing band, [UXD-049](decisions/UXD-049-deep-sky-panel-in-the-sky-tab.md)); a black hole opens in place and "See the lensing simulation" enters the takeover.
 
 **Bottom bar** — `height: 68px`, `bottom: 0`, `left: 0`, `right: 0`. Present on: fly (timeline scrubber, play/pause, speed controls). Absent on all other screens.
 
@@ -304,15 +304,7 @@ border-radius:  4–6px   Panels and cards
 
 ### Agency colours
 
-```
-color-nasa:       #0B3D91
-color-esa:        #003299
-color-cnsa:       #DE2910
-color-isro:       #FF9933
-color-roscosmos:  #8B0000
-color-jaxa:       #003087
-color-spacex:     #005288
-```
+One table, [Design System §2.4](../concept/05_Design_System.md) (the code is `src/lib/agencies.ts`; the 14 agencies of `/missions` have the palette of [UXD-048](decisions/UXD-048-missions-one-agency-palette-era-tiles-with-photos-and-agency-dots.md)). The seven values this section listed were older than the code and are removed.
 
 ---
 

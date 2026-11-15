@@ -314,7 +314,7 @@
 >
   {#snippet eyebrow()}
     {#if mission}
-      <AgencyRow agency={mission.agency} color={mission.color}>
+      <AgencyRow agency={mission.agency}>
         <span class="status status-{mission.status.toLowerCase()}"
           >{missionStatusLabel(mission.status)}</span
         >

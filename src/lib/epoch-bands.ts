@@ -3,7 +3,7 @@
  * v0.2 §epochs / RFC-016 v0.2 OQ-17).
  *
  * Used by:
- *   - EpochTimelineStrip.svelte (renders the bands)
+ *   - EpochTimelineStrip.svelte (renders the nine bands as equal tiles; the years only label them)
  *   - /fleet (filters entries by their explicit `epoch` field)
  *   - /missions (filters by year-range membership — missions have no
  *     `epoch` field, only `year`)
@@ -29,7 +29,7 @@ export interface EpochBand {
    * Narrative accent colour — picked to evoke each era's identity
    * (Sputnik amber, Cold War red, Apollo gold, Skylab magenta, Mir
    * purple, ISS silver, Falcon green, Artemis amber, Mars rust). Used
-   * by EpochTimelineStrip for hover + active states.
+   * by EpochTimelineStrip for the dot of a tile.
    *
    * Verified WCAG-AA against the dark page background (~#0a0a16) at
    * the 9.5 / 11 px label sizes the strip renders — every hue here

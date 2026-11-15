@@ -3726,5 +3726,6 @@
   "explore_related_same_scale": "同じスケールの天体",
   "library_category_galaxy": "銀河",
   "library_category_structure": "宇宙の構造",
-  "fly_2d_scale_label": "1 au = {px} ピクセル"
+  "fly_2d_scale_label": "1 au = {px} ピクセル",
+  "missions_showing": "表示中: {era}（{count}）"
 }

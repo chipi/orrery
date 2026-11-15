@@ -3726,5 +3726,6 @@
   "explore_related_same_scale": "같은 규모의 다른 천체",
   "library_category_galaxy": "은하",
   "library_category_structure": "우주 구조",
-  "fly_2d_scale_label": "1 AU = {px}픽셀"
+  "fly_2d_scale_label": "1 AU = {px}픽셀",
+  "missions_showing": "표시 중: {era} ({count})"
 }

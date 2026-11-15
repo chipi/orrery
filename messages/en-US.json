@@ -3726,5 +3726,6 @@
   "explore_related_same_scale": "Also at this scale",
   "library_category_galaxy": "Galaxies",
   "library_category_structure": "Cosmic structures",
-  "fly_2d_scale_label": "1 AU = {px} px"
+  "fly_2d_scale_label": "1 AU = {px} px",
+  "missions_showing": "Showing: {era} ({count})"
 }

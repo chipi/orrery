@@ -108,6 +108,11 @@
   border-radius: 50%;
   background: var(--chip-tone, var(--color-state));
 }
+/* A data dot (an agency colour on a filter chip): 10 px, no ring, the colour clears 4.5:1. */
+.ui-chip__dot--data {
+  width: 10px;
+  height: 10px;
+}
 .ui-chip__icon {
   flex: none;
   display: inline-flex;

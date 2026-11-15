@@ -3726,5 +3726,6 @@
   "explore_related_same_scale": "على المقياس نفسه أيضاً",
   "library_category_galaxy": "المجرات",
   "library_category_structure": "البنى الكونية",
-  "fly_2d_scale_label": "1 و.ف = {px} بكسل"
+  "fly_2d_scale_label": "1 و.ف = {px} بكسل",
+  "missions_showing": "المعروض: {era} ({count})"
 }

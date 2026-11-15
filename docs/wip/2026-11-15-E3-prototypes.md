@@ -2,6 +2,8 @@
 
 Dev route `/dev/missions-era` (`?view=now|A|B|C|filter|palette`, German and Arabic under `/de/` and `/ar/`). It is built from the real mission index and excluded from the prod build by `src/routes/dev/+layout.ts` (a non-dev build returns 404 for the whole `/dev` subtree). Nothing on `/missions` or `/fleet` changed. Pure helpers and 23 unit tests: `src/routes/dev/missions-era/proto.ts`, `proto.test.ts`. Brief: `2026-11-13-slice-E3-brief.md` (decisions 11 to 14).
 
+**Outcome (2026-11-15):** the operator chose option A, the proposed palette (10b) and dots without a ring; the route and its helpers were removed after the build ([UXD-048](../uxs/decisions/UXD-048-missions-one-agency-palette-era-tiles-with-photos-and-agency-dots.md)); the colour maths moved to `src/lib/colour-math.ts`. The text below is the record of what was measured.
+
 The operator picks first; the page is built after. Sheets live in the session scratchpad (`e3/sheet-*.png`), not in the repo.
 
 ## Measured on the real index

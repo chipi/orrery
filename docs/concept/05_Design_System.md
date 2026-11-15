@@ -85,32 +85,41 @@ mission accents; a compound agency takes its first partner's colour) and
 regime panel's resident dots, which use a lighter chip colour for some agencies). A badge's text is
 white or dark by contrast.
 
+**The 14 agencies that fly on `/missions` carry one palette** ([UXD-048](../uxs/decisions/UXD-048-missions-one-agency-palette-era-tiles-with-photos-and-agency-dots.md),
+operator 2026-11-15, brief decision 10b): one value per agency, the same on the card accent, the card's agency bar, the
+filter chip's dot and the era tiles' dots. Every value is 4.5:1 or better on the page (`#04040c`) and on the card
+(`#0a0a16`), avoids cyan and teal, and keeps every pair of agencies apart under normal vision and protan, deutan and
+tritan simulation (CIEDE2000 above 5; neighbours in the filter row 7 or more). `src/lib/agency-palette.test.ts` holds all
+of it. The other 23 agencies keep their brand colour, and the Badge column below is the one source for both. The chip
+column (`nationChipFor`, map and regime markers) and the mission `color` of the data files (the 3D scenes' path and ring
+colour) are separate roles and unchanged.
+
 | Agency | Badge | Map / regime chip (where it differs) |
 |---|---|---|
-| NASA | `#0B3D91` | `#3b82f6` |
-| ESA | `#003247` | `#1d4ed8` |
-| JAXA | `#003087` | `#1d4ed8` |
-| ISRO | `#FF9933` | `#f97316` |
-| CNSA | `#DE2910` | `#dc2626` |
-| CMSA | `#DE2910` | — |
+| NASA | `#2e72fa` | `#3b82f6` |
+| ESA | `#e444c9` | `#1d4ed8` |
+| JAXA | `#eb7085` | `#1d4ed8` |
+| ISRO | `#fa942e` | `#f97316` |
+| CNSA | `#fa2e2e` | `#dc2626` |
+| CMSA | `#fc92b5` | — |
 | CASC | `#DE2910` | — |
-| Roscosmos | `#cc4444` | `#ef4444` |
+| Roscosmos | `#f1ab9d` | `#ef4444` |
 | CSA | `#D52B1E` | — |
-| UAESA | `#00833F` | `#00732F` |
-| USSF | `#1D2951` | — |
+| UAESA | `#60fb7a` | `#00732F` |
+| USSF | `#ab9df1` | — |
 | NOAA | `#003087` | — |
 | USGS | `#00833F` | — |
-| ASI | `#008C45` | `#1d4ed8` |
-| SpaceX | `#005288` | `#3b82f6` |
+| ASI | `#9df1b9` | `#1d4ed8` |
+| SpaceX | `#d5d9e2` | `#3b82f6` |
 | Boeing | `#1D4E89` | — |
 | Northrop Grumman | `#005EB8` | — |
 | ULA | `#1A3668` | — |
-| Blue Origin | `#00264D` | — |
+| Blue Origin | `#2e94fa` | — |
 | Arianespace | `#0033A0` | — |
 | Axiom Space | `#1F3A93` | — |
-| Intuitive Machines | `#00A3E0` | — |
+| Intuitive Machines | `#e44494` | — |
 | ispace | `#003E7E` | — |
-| SpaceIL | `#0038B8` | `#1d4ed8` |
+| SpaceIL | `#92c7fc` | `#1d4ed8` |
 | Amazon | `#FF9900` | — |
 | SES | `#003C71` | — |
 | Sirius XM | `#0067B1` | — |
@@ -350,7 +359,7 @@ The panel always contains, top to bottom:
 1a. Action row (`PanelActions`): at most three chips, in-scene, then view, then simulate, then plan, then Share last when the entity has a collectible card (opens the card overlay; `Panel` provides it, a panel with no row of its own gets one holding Share); above the hero, on every tab; absent when there is no action and no card. Nothing is stacked at the foot of a panel. The "view" chip of Earth, Mars, Venus and the Moon is "Go to Mars" (and so on), a link to the body's world page ([UXD-028](../uxs/decisions/UXD-028-explore-and-worlds-link-both-ways.md), `WorldLinkChip`); no other body has one.
 2. Hero image (no hover glow; keyboard focus draws an inset 2px `--color-focus` ring; a **planet's** hero is `object-fit: contain` on `#000` so the whole disc shows, UXD-029 — every other panel keeps the 16:9 cover), then the tab strip (OVERVIEW | GALLERY | LEARN) — where applicable
 2b. A Worlds panel (a Moon, Mars or Venus site, an orbiter, an Earth object): the same order, so the photograph comes first and the tabs after it (a guard test checks it for every Moon and Mars site with a gallery). The tab that holds the craft's drawing depends on what the craft did: a lander's is STORY (the landing sheet, then "On the surface" and the drawing), an orbiter's, and an Earth object's that has a drawing, is DETAIL (the existing `panel_tab_detail`), whose body is headed "The spacecraft" and holds the drawing, its exploded cutaway when it has one, and the fleet link. An orbiter never gets "On the surface" ([UXD-034](../uxs/decisions/UXD-034-worlds-orbiter-detail-tab-and-panorama-opening.md))
-2a. Star, outer-scale and black-hole panels (`UniversePanelBody`, [UXD-023](../uxs/decisions/UXD-023-star-and-outer-panels-follow-the-planet-pattern.md)): the same order, one hero or none (no hero, no slot; a part-of photo captions what is pictured), GALLERY second only with two or more images, a star's IN THE SKY tab holds the constellation finder; lead `.editorial`, facts in the planet cell look; no colour or size of their own
+2a. Star, outer-scale and black-hole panels (`UniversePanelBody`, [UXD-023](../uxs/decisions/UXD-023-star-and-outer-panels-follow-the-planet-pattern.md)): the same order, one hero or none (no hero, no slot; a part-of photo captions what is pictured), GALLERY second only with two or more images, a star's IN THE SKY tab holds the constellation finder, and so does a deep-sky object's (the object ringed in the figure, then six computed cells in the planet cell look, [UXD-049](../uxs/decisions/UXD-049-deep-sky-panel-in-the-sky-tab.md)); lead `.editorial`, facts in the planet cell look; no colour or size of their own
 3. Stats grid: three cells per row (`repeat(3, minmax(0, 1fr))`), so up to nine values take three rows (UXD-018, amendment "Overview three per row")
 4. Signature element (the "still on the surface" section for Moon; the "scale fact" for Earth orbit; the editorial fact for planets)
 5. Description (lead text, Space Mono upright)
@@ -363,6 +372,8 @@ Rule and reasoning: [UXD-018](../uxs/decisions/UXD-018-panel-shell-and-actions.m
 The star and deep-sky panels take their editorial text from the reader's locale overlay (`i18n-src/<locale>/universe/<kind>/<id>.json`, en-US as the fallback): `fact` is the lead (`.editorial`, item 4) and `bio` the body (`.prose`, item 5), above the values grid. The deep-sky panel keeps its gallery caption after the bio and its Data sources block ahead of the credit; an object with no overlay shows none of it, no placeholder.
 
 ### 5.4 Card (mission library)
+
+**`/missions` card (UXD-048):** the photo on top (the mission hero, 16:9 crop of the image ladder), then the name in Bebas Neue with the year at the row's end, then one line per agency (a 3 px bar in the agency's palette colour, §2.4, then the name in uppercase mono; a joint mission lists each partner with its own bar), then the status pill (and the data-quality pill) and the mission's one-line story (`first`). The 4 px accent at the card's left edge is the lead agency's colour. Year and destination are also read out as a visually hidden definition list. `/fleet` keeps the structure below.
 
 Cards have a 3px top border in the agency colour. The rest of the border is `rgba(255,255,255,0.07)`, shifting to `rgba(255,255,255,0.18)` on hover with a -2px Y translate.
 
@@ -427,6 +438,10 @@ Hover: `border-color: var(--color-state)`, white text. Focus-visible: `2px solid
 A compact chip on the left above the grid: `FILTERS  12 / 150  ▾`. The count sits right after the label (accent state colour when a filter is on, 60 % white for the total alone), the chevron last. One label key (`filters_eyebrow`), uppercase by CSS. The visible count is `aria-hidden`; a visually hidden sibling reads "12 of 150" (`filters_count_of`, word order per language). CLEAR FILTERS is a quiet chip with a `×` beside it while a filter is on. Used by `/missions`, `/fleet` and `/missions/launches`.
 
 A **view toggle** is a `ChipGroup role="radiogroup"` of `Chip kind="choice"`, one chip per view, named by its own key (`fleet_view_aria`, "View"). It sits on the FILTERS row, right after the FILTERS chip (and CLEAR FILTERS), never inside the collapsible strip, so it is always visible. On `/fleet` it is GRID and LINE-UP; a second radiogroup (Launchers, Capsules & spacecraft) follows it only while LINE-UP is on. A view that does not obey the filters disables the FILTERS chip while it is on (`disabled`, not removed, so nothing on the row moves) and draws neither the filters panel nor CLEAR FILTERS ([UXD-035](../uxs/decisions/UXD-035-fleet-view-toggle-and-one-missions-list.md)).
+
+**Era strip (UXD-048)** (`EpochTimelineStrip`, on `/missions` and `/fleet`, always visible above the filters): a `ChipGroup role="radiogroup"` of nine `Chip kind="choice"` tiles, one per era (§ `epoch-bands.ts`), arrow keys with roving focus and reversed in right-to-left, Home and End. A tile is the era's flagship mission hero (`src/lib/era-flagships.ts`, one fixed mission per era, never a new image) under a dark gradient on the reading side, then the era's name (wraps to two or three lines, never clipped), its years (`bdi dir="ltr"`), its count and, on `/missions`, one 7 px dot per agency active in the era (at most 7, then "+N"; palette colours, §2.4). The chosen tile has the `--color-state` (#889fe7) edge and ring; pressing the chosen tile clears the choice. Nine columns when the strip is 1100 px or wider, five and four under 1100 px, one horizontally scrolling row under 560 px (tiles 132 px). Right-to-left mirrors the order (the first era at the right). The aria name of a tile is `epoch_band_aria` (name, years, count).
+
+**Agency filter row (UXD-048)**, always visible under the strip: one `Chip kind="choice"` per agency with a 10 px dot in the agency's palette colour (`dotColor`; no ring, the colours clear 4.5:1), the logo (or the name where there is none) and the mission count (`count`; the aria label adds it). The selected chip keeps the accent edge, so the dot never carries the selected state. Under the filters a line reads the catalogue total and "Showing: <era> (<n>)" (`missions_showing`).
 
 ### 5.7b Canvas proxies: hidden, and visible on focus
 

@@ -3726,5 +3726,6 @@
   "explore_related_same_scale": "Такође на овој скали",
   "library_category_galaxy": "Галаксије",
   "library_category_structure": "Космичке структуре",
-  "fly_2d_scale_label": "1 АЈ = {px} пиксела"
+  "fly_2d_scale_label": "1 АЈ = {px} пиксела",
+  "missions_showing": "Приказано: {era} ({count})"
 }

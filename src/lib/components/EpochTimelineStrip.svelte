@@ -1,322 +1,209 @@
 <script lang="ts">
   /**
-   * Epoch timeline strip — horizontal scrub bar with 8 named historic
-   * epoch bands (PRD-012 v0.2 §epochs / RFC-016 v0.2 OQ-17).
-   *
-   * Each band:
-   *  - position derived from year range
-   *  - entry count rendered as caption
-   *  - clickable to filter the card grid
-   *  - active band highlighted with accent blue
-   *
-   * Mobile (≤600 px): collapses to a horizontal swipe-friendly chip
-   * row that surfaces epoch + count without the time axis.
+   * Era strip (UXD-048; PRD-012 v0.2 §epochs, RFC-016 v0.2 OQ-17): nine equal tiles, one per
+   * historic spaceflight epoch, in a radiogroup of <Chip kind="choice">. A tile is a photo (the
+   * era's flagship mission hero, `$lib/era-flagships`) under a dark gradient, with the era's
+   * name (wraps, never clipped), its years, its count and, where the page brings them, a row
+   * of agency-colour dots (the agencies active in that era). The chosen tile has the #889fe7
+   * edge. Click or Enter/Space on the chosen tile clears the choice. Arrow keys move and
+   * select (reversed in right-to-left, by ChipGroup). Nine columns, five and four under
+   * 1100 px of strip, one scroll row under 560. Serves /missions and /fleet.
    */
   import type { FleetEpoch } from '$types/fleet';
-  import { EPOCH_BANDS, AXIS_MIN, AXIS_MAX } from '$lib/epoch-bands';
+  import { EPOCH_BANDS } from '$lib/epoch-bands';
+  import { ERA_FLAGSHIP } from '$lib/era-flagships';
+  import { pickHero, loadHeroOverrides, heroPositionFor } from '$lib/image-hero';
+  import { responsive } from '$lib/responsive-image.svelte';
   import * as m from '$lib/paraglide/messages';
   import { epochLabel } from '$lib/epoch-label';
   import Chip from './Chip.svelte';
   import ChipGroup from './ChipGroup.svelte';
 
-  const AXIS_RANGE = AXIS_MAX - AXIS_MIN;
-
   type Props = {
-    /**
-     * Count per epoch id. Each consuming route brings its own count
-     * map — /fleet counts entries by their explicit `epoch` field,
-     * /missions counts by year-range membership. Keeps this component
-     * pure presentation. (2026-06-17 refactor — was previously
-     * computing counts internally from a FleetIndexEntry[] prop, which
-     * only worked for /fleet.)
-     */
     countByEpoch: Map<FleetEpoch, number>;
+    /** Agency colours active in each era (one per agency); omitted on a page without agencies. */
+    colorsByEpoch?: Map<FleetEpoch, string[]>;
     selected: FleetEpoch | 'ALL';
     onSelect: (v: FleetEpoch | 'ALL') => void;
   };
 
-  let { countByEpoch, selected, onSelect }: Props = $props();
+  let { countByEpoch, colorsByEpoch, selected, onSelect }: Props = $props();
 
-  function pctLeft(year: number): number {
-    return ((year - AXIS_MIN) / AXIS_RANGE) * 100;
-  }
-  function pctWidth(start: number, end: number): number {
-    return ((end - start) / AXIS_RANGE) * 100;
-  }
-
-  function handleKey(e: KeyboardEvent, epoch: FleetEpoch) {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      onSelect(selected === epoch ? 'ALL' : epoch);
-    }
-  }
-
-  // Today indicator (2026-05-10 fixed-ish — recompute on mount for stability)
-  const todayYear = new Date().getFullYear();
-  const todayPct = Math.max(0, Math.min(100, pctLeft(todayYear)));
+  const MAX_DOTS = 7;
+  let heroesReady = $state(false);
+  $effect(() => {
+    void loadHeroOverrides('missions').then(() => (heroesReady = true));
+  });
+  const photo = (id: FleetEpoch) => {
+    void heroesReady;
+    return pickHero('missions', ERA_FLAGSHIP[id]);
+  };
+  const yearsOf = (b: (typeof EPOCH_BANDS)[number]) =>
+    `${b.yearStart}–${b.id === 'mars-era' ? '∞' : b.yearEnd}`;
 </script>
 
 <section class="strip" aria-label={m.epoch_timeline_aria()}>
-  <!-- Desktop: full timeline with bands positioned along the axis -->
-  <div class="axis-wrap" aria-hidden="true">
-    <div class="axis">
-      {#each EPOCH_BANDS as ep (ep.id)}
-        <button
-          type="button"
-          class="band"
-          class:active={selected === ep.id}
-          style:left="{pctLeft(ep.yearStart)}%"
-          style:width="{pctWidth(ep.yearStart, ep.yearEnd)}%"
-          style:--band-color={ep.color}
-          onclick={() => onSelect(selected === ep.id ? 'ALL' : ep.id)}
-          onkeydown={(e) => handleKey(e, ep.id)}
-          title="{epochLabel(ep.id)} ({ep.yearStart}–{ep.id === 'mars-era'
-            ? '∞'
-            : ep.yearEnd}) · {countByEpoch.get(ep.id) ?? 0}"
-          aria-label={m.epoch_band_aria({
-            label: epochLabel(ep.id),
-            start: ep.yearStart,
-            end: ep.yearEnd,
-            count: countByEpoch.get(ep.id) ?? 0,
-          })}
-        >
-          <span class="band-label">{epochLabel(ep.id)}</span>
-          <span class="band-meta"
-            >{ep.yearStart}–{ep.id === 'mars-era' ? '∞' : ep.yearEnd} · {countByEpoch.get(ep.id) ??
-              0}</span
-          >
-        </button>
-      {/each}
-      <div
-        class="today"
-        style:left="{todayPct}%"
-        title={m.epoch_today_title({ year: todayYear })}
-      ></div>
-    </div>
-    <div class="axis-ticks">
-      <span class="tick" style:left="0%">1957</span>
-      <span class="tick" style:left="{pctLeft(1969)}%">1969</span>
-      <span class="tick" style:left="{pctLeft(1986)}%">1986</span>
-      <span class="tick" style:left="{pctLeft(2011)}%">2011</span>
-      <span class="tick" style:left="100%" style:transform="translateX(-100%)">2030</span>
-    </div>
-  </div>
-
-  <!-- Mobile: simple chip carousel -->
-  <div class="chips">
-    <ChipGroup role="radiogroup" label={m.epoch_filter_aria()}>
-      <Chip kind="choice" active={selected === 'ALL'} onclick={() => onSelect('ALL')}
-        >{m.epoch_all()}</Chip
+  <ChipGroup role="radiogroup" label={m.epoch_filter_aria()} class="era-tiles">
+    {#each EPOCH_BANDS as ep (ep.id)}
+      {@const colors = colorsByEpoch?.get(ep.id) ?? []}
+      <Chip
+        kind="choice"
+        class="era-tile"
+        active={selected === ep.id}
+        aria-label={m.epoch_band_aria({
+          label: epochLabel(ep.id),
+          start: ep.yearStart,
+          end: ep.yearEnd,
+          count: countByEpoch.get(ep.id) ?? 0,
+        })}
+        onclick={() => onSelect(selected === ep.id ? 'ALL' : ep.id)}
       >
-      {#each EPOCH_BANDS as ep (ep.id)}
-        <Chip
-          kind="choice"
-          dot
-          tone={ep.color}
-          active={selected === ep.id}
-          count={countByEpoch.get(ep.id) ?? 0}
-          onclick={() => onSelect(selected === ep.id ? 'ALL' : ep.id)}
-        >
-          {epochLabel(ep.id)}
-        </Chip>
-      {/each}
-    </ChipGroup>
-  </div>
+        <img
+          class="era-photo"
+          {...responsive(photo(ep.id), '200px')}
+          style:object-position={heroPositionFor(photo(ep.id))}
+          alt=""
+          loading="lazy"
+          decoding="async"
+          onerror={(e) => ((e.currentTarget as HTMLImageElement).style.display = 'none')}
+        />
+        <span class="era-body">
+          <span class="era-name">{epochLabel(ep.id)}</span>
+          <span class="era-years"><bdi dir="ltr">{yearsOf(ep)}</bdi></span>
+          <span class="era-foot">
+            <b class="era-count" aria-hidden="true">{countByEpoch.get(ep.id) ?? 0}</b>
+            {#if colors.length > 0}
+              <span class="era-dots" aria-hidden="true">
+                {#each colors.slice(0, MAX_DOTS) as c (c)}<i style:background={c}></i>{/each}
+                {#if colors.length > MAX_DOTS}<em>+{colors.length - MAX_DOTS}</em>{/if}
+              </span>
+            {/if}
+          </span>
+        </span>
+      </Chip>
+    {/each}
+  </ChipGroup>
 </section>
 
 <style>
   .strip {
+    container-type: inline-size;
     margin: 0 0 14px;
+  }
+  .strip :global(.era-tiles) {
+    display: grid;
+    grid-template-columns: repeat(9, minmax(0, 1fr));
+    gap: 6px;
+  }
+  .strip :global(.era-tile) {
+    position: relative;
+    overflow: hidden;
+    justify-content: flex-start;
+    align-items: stretch;
+    min-block-size: 96px;
     padding: 0;
+    text-align: start;
+    white-space: normal;
+    letter-spacing: 0.5px;
+    background: var(--color-bg);
   }
-
-  /* ───── Desktop axis (≥ 720 px) ───── */
-  .axis-wrap {
-    display: none;
-    position: relative;
-    padding: 6px 0 22px;
+  .strip :global(.era-tile[aria-checked='true']) {
+    border-color: var(--color-state);
+    box-shadow: 0 0 0 1px var(--color-state);
   }
-  .axis {
-    position: relative;
-    height: 56px;
-    background: linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 0.02) 0%,
-      rgba(255, 255, 255, 0.04) 50%,
-      rgba(255, 255, 255, 0.02) 100%
-    );
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  }
-
-  /* Per-band hue via --band-color (set on the button inline). Three
-     pieces working together so each band reads as belonging to its
-     era at every interaction state (2026-06-17 user direction:
-     "coloring is very thin and super basic, can we make it more
-     appealing, aligned with rest of the project in terms of UX and
-     being cool"):
-
-       1. A 3 px top-edge stripe in full-hue band colour. Stays
-          visible at every width — even when a 3-year band squeezes
-          to ~30 px and the label ellipsises, the stripe keeps the
-          hue legible.
-       2. A vertical gradient from band-colour at the top to
-          transparent at the bottom — feels like the era's light
-          spilling down into the row instead of a flat fill.
-       3. An outer glow on the active band so the selected era reads
-          as "lifted" off the dark axis, matching the glowy-accent
-          vibe of the rest of Orrery's chrome (planet panels,
-          fly HUD, science chips).
-
-     Default `#5070ff` fallback inside every color-mix matches the
-     prior accent blue, so a band without an explicit colour gracefully
-     degrades. */
-  .band {
-    /* a4-keep: desktop epoch band is a timeline segment, not a chip (MI2 redesigns it) */
+  .era-photo {
     position: absolute;
-    top: 0;
-    height: 100%;
+    inset: 0;
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+    object-position: 70% 50%;
+  }
+  /* The gradient keeps the label at 4.5:1 or better wherever the photo is bright. */
+  .era-photo + .era-body::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
     background: linear-gradient(
-      to bottom,
-      color-mix(in srgb, var(--band-color, var(--color-accent)) 18%, transparent),
-      color-mix(in srgb, var(--band-color, var(--color-accent)) 5%, transparent) 70%,
-      transparent 100%
+      to right,
+      rgba(4, 4, 12, 0.94) 0%,
+      rgba(4, 4, 12, 0.88) 45%,
+      rgba(4, 4, 12, 0.35) 100%
     );
-    border: 1px solid color-mix(in srgb, var(--band-color, var(--color-accent)) 28%, transparent);
-    border-top: 3px solid
-      color-mix(in srgb, var(--band-color, var(--color-accent)) 72%, transparent);
-    border-radius: 0;
-    color: color-mix(in srgb, var(--band-color, var(--color-state)) 35%, white);
-    cursor: pointer;
+  }
+  :global([dir='rtl']) .era-photo + .era-body::before {
+    background: linear-gradient(
+      to left,
+      rgba(4, 4, 12, 0.94) 0%,
+      rgba(4, 4, 12, 0.88) 45%,
+      rgba(4, 4, 12, 0.35) 100%
+    );
+  }
+  .era-body {
+    position: relative;
+    z-index: 0;
+    isolation: isolate;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 4px 6px;
-    overflow: hidden;
-    transition:
-      background 0.18s,
-      border-color 0.18s,
-      color 0.18s,
-      box-shadow 0.18s,
-      transform 0.18s;
+    justify-content: space-between;
+    gap: 4px;
+    inline-size: 100%;
+    padding: 9px 10px 8px;
   }
-  .band:hover {
-    /* a4-keep: desktop epoch band is a timeline segment, not a chip (MI2 redesigns it) */
-    background: linear-gradient(
-      to bottom,
-      color-mix(in srgb, var(--band-color, var(--color-accent)) 32%, transparent),
-      color-mix(in srgb, var(--band-color, var(--color-accent)) 12%, transparent) 70%,
-      transparent 100%
-    );
-    border-color: color-mix(in srgb, var(--band-color, var(--color-accent)) 55%, transparent);
-    border-top: 3px solid var(--band-color, var(--color-accent));
-    color: #fff;
-    transform: translateY(-1px);
+  .era-name {
+    display: block;
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+    color: var(--color-text);
   }
-  .band.active {
-    /* a4-keep: desktop epoch band is a timeline segment, not a chip (MI2 redesigns it) */
-    background: linear-gradient(
-      to bottom,
-      color-mix(in srgb, var(--band-color, var(--color-accent)) 48%, transparent),
-      color-mix(in srgb, var(--band-color, var(--color-accent)) 22%, transparent) 60%,
-      color-mix(in srgb, var(--band-color, var(--color-accent)) 8%, transparent) 100%
-    );
-    border-color: var(--band-color, var(--color-accent));
-    border-top: 3px solid var(--band-color, var(--color-accent));
-    color: #fff;
-    box-shadow:
-      inset 0 -1px 10px color-mix(in srgb, var(--band-color, var(--color-accent)) 28%, transparent),
-      0 0 14px color-mix(in srgb, var(--band-color, var(--color-accent)) 36%, transparent);
-    z-index: 2;
-  }
-  .band-label {
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    line-height: 1.1;
-    text-align: center;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-    max-width: 100%;
-  }
-  /* WCAG-AA: 9.5 px caption text needs ≥ 4.5:1 contrast on the dark
-     band background. White at 0.5 alpha → ~5:1 nominally but the
-     band's faint coloured tint pulls effective contrast below that.
-     Bumped to 0.78 alpha + slight size bump to 10 px so every meta
-     line clears AA across all 9 band hues. (2026-06-17 user note:
-     "make sure all labels are readable".) */
-  .band-meta {
-    margin-top: 2px;
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: var(--size-label);
+  .era-years {
+    font-weight: 400;
+    letter-spacing: 0;
     color: rgba(255, 255, 255, 0.78);
-    line-height: 1;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-    max-width: 100%;
   }
-  .band.active .band-meta {
-    color: color-mix(in srgb, var(--band-color, var(--color-state)) 30%, white);
+  .era-foot {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    letter-spacing: 0;
+    flex-wrap: wrap;
   }
-
-  /* Today indicator — a slim glowing vertical line. Brought up to a
-     stronger amber glow so it stands above the now-richer band
-     gradients without competing with active-band hues. */
-  .today {
-    position: absolute;
-    top: -4px;
-    bottom: -4px;
-    width: 2px;
-    background: #ffc850;
-    box-shadow:
-      0 0 4px rgba(255, 200, 80, 0.95),
-      0 0 12px rgba(255, 200, 80, 0.55);
-    pointer-events: none;
-    z-index: 3;
+  .era-count {
+    font-size: 13px;
   }
-
-  .axis-ticks {
-    position: relative;
-    height: 14px;
+  .era-dots {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 3px;
   }
-  /* WCAG-AA bump from 0.4 → 0.72 + 9.5 → 10 px. The tick labels sit
-     on the dark page background (no band tint) so the math is simpler
-     but the prior 0.4 alpha was clearly failing AA. */
-  .tick {
-    position: absolute;
-    top: 2px;
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: var(--size-label);
-    color: rgba(255, 255, 255, 0.72);
-    transform: translateX(-50%);
-    pointer-events: none;
+  .era-dots i {
+    inline-size: 7px;
+    block-size: 7px;
+    border-radius: 50%;
   }
-
-  /* ───── Mobile chip carousel (< 720 px) ───── */
-  .chips {
-    padding: 4px 0;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
+  .era-dots em {
+    font-style: normal;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.78);
   }
-  .chips :global(.ui-chip-group) {
-    flex-wrap: nowrap;
-  }
-  .chips :global(.ui-chip) {
-    scroll-snap-align: start;
-    flex-shrink: 0;
-  }
-
-  @media (min-width: 720px) {
-    .axis-wrap {
-      display: block;
+  @container (max-width: 1099px) {
+    .strip :global(.era-tiles) {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
     }
-    .chips {
-      display: none;
+  }
+  @container (max-width: 559px) {
+    .strip :global(.era-tiles) {
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+    }
+    .strip :global(.era-tile) {
+      flex: 0 0 132px;
+      min-block-size: 88px;
+      scroll-snap-align: start;
     }
   }
 </style>

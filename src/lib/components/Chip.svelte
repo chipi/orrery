@@ -19,6 +19,8 @@
     count?: number | string;
     /** Data colour: the leading dot and, when on, the edge. */
     tone?: string;
+    /** Colour of the leading dot alone (an agency colour): the dot is drawn, the edge stays the accent. */
+    dotColor?: string;
     dot?: boolean;
     quiet?: boolean;
     dismiss?: boolean;
@@ -38,6 +40,7 @@
     tabstop = false,
     count,
     tone,
+    dotColor,
     dot = false,
     quiet = false,
     dismiss = false,
@@ -59,7 +62,12 @@
 </script>
 
 {#snippet inner()}
-  {#if dot}<span class="ui-chip__dot" aria-hidden="true"></span>{/if}
+  {#if dot || dotColor}<span
+      class="ui-chip__dot"
+      class:ui-chip__dot--data={dotColor}
+      style:background={dotColor}
+      aria-hidden="true"
+    ></span>{/if}
   {#if icon}<span class="ui-chip__icon" aria-hidden="true">{@render icon()}</span>{/if}
   {#if children}{@render children()}{/if}
   {#if count !== undefined && count !== ''}<span class="ui-chip__count">{count}</span>{/if}

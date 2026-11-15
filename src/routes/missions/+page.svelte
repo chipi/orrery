@@ -25,7 +25,7 @@
   import VisuallyHiddenH1 from '$lib/components/VisuallyHiddenH1.svelte';
   import * as m from '$lib/paraglide/messages';
   import { missionStatusLabel } from '$lib/status-label';
-  import { agencyLogo, agencyFullName, splitAgencies } from '$lib/agencies';
+  import { agencyColor, agencyLogo, agencyFullName, splitAgencies } from '$lib/agencies';
   import { matchesQuery } from '$lib/list-search';
   import { trackFilterChange, trackSearch } from '$lib/analytics';
   import { pickHero, loadHeroOverrides, heroPositionFor } from '$lib/image-hero';
@@ -39,8 +39,8 @@
     isSuccess,
   } from '$lib/types/remote-data';
   import { dataLoadFailed } from '$lib/data/core';
-  import { readableTextOn, DARK_TEXT } from '$lib/readable-text';
   import { missionDestLabel } from '$lib/mission-dest-label';
+  import { epochLabel } from '$lib/epoch-label';
 
   // EpochTimelineStrip URL allowlist — same shape as /fleet's epochValid.
   // The strip writes `?epoch=<id>`; this validates round-trips so a junk
@@ -160,6 +160,38 @@
       if (ep) map.set(ep, (map.get(ep) ?? 0) + 1);
     }
     return map;
+  });
+
+  // Agencies active in each era (their palette colours, most missions first) for the era tiles,
+  // and the number of missions each agency flew for the filter chips (unfiltered inventory).
+  let agencyCount: Map<string, number> = $derived.by(() => {
+    const map = new Map<string, number>();
+    for (const mission of missions) {
+      for (const a of new Set(splitAgencies(mission.agency))) map.set(a, (map.get(a) ?? 0) + 1);
+    }
+    return map;
+  });
+  let colorsByEpoch: Map<FleetEpoch, string[]> = $derived.by(() => {
+    const perEra = new Map<FleetEpoch, Map<string, number>>();
+    for (const mission of missions) {
+      const ep = epochForYear(mission.year);
+      if (!ep) continue;
+      const counts = perEra.get(ep) ?? new Map<string, number>();
+      for (const a of new Set(splitAgencies(mission.agency)))
+        counts.set(a, (counts.get(a) ?? 0) + 1);
+      perEra.set(ep, counts);
+    }
+    const out = new Map<FleetEpoch, string[]>();
+    for (const [ep, counts] of perEra) {
+      out.set(
+        ep,
+        [...counts.entries()]
+          .sort((x, y) => y[1] - x[1] || x[0].localeCompare(y[0]))
+          .map(([a]) => agencyColor(a))
+          .filter((c): c is string => !!c),
+      );
+    }
+    return out;
   });
 
   function clearAllFilters(): void {
@@ -336,6 +368,10 @@
   // at src/lib/agencies.ts. Add new agencies / logos there — every
   // consumer (fleet, missions, ISS modules, launches) picks them up.
   const logoFor = agencyLogo;
+  // One colour per agency (UXD-048): the card, its badge and the filter dot read the registry, not
+  // the per-mission `color` of the data (which the 3D scenes still use).
+  const colorOf = (mission: { agency: string; color: string }) =>
+    agencyColor(mission.agency) ?? mission.color;
   const fullNameFor = (agency: string) => agencyFullName(agency);
 
   // ─── Card click → open MissionPanel ──────────────────────────────
@@ -490,14 +526,64 @@
     {/if}
   </div>
 
+  <div data-audio-stage="missions-epoch-timeline">
+    <EpochTimelineStrip
+      {countByEpoch}
+      {colorsByEpoch}
+      selected={filterState.epoch}
+      onSelect={(v) => setEpoch(v)}
+    />
+  </div>
+  <div class="filters agency-row" data-audio-stage="missions-agency-filter">
+    {#if agencies.length > 0}
+      <ChipGroup
+        role="radiogroup"
+        label={m.lib_filter_agency_label()}
+        class="filter-group agency-filter"
+      >
+        <span class="filter-label">{m.lib_filter_agency_label()}</span>
+        <Chip kind="choice" active={filterState.agency === 'ALL'} onclick={() => setAgency('ALL')}
+          >{m.lib_filter_agency_all()}</Chip
+        >
+        {#each agencies as agency (agency)}
+          {@const logo = logoFor(agency)}
+          {@const fullName = fullNameFor(agency)}
+          <Chip
+            kind="choice"
+            class="agency-chip"
+            count={agencyCount.get(agency) ?? 0}
+            dotColor={agencyColor(agency) ?? undefined}
+            active={filterState.agency === agency}
+            aria-label={`${fullName}, ${agencyCount.get(agency) ?? 0}`}
+            title={fullName}
+            onclick={() => setAgency(agency)}
+          >
+            {#if logo}
+              <img
+                src={logo}
+                alt={fullName}
+                class="agency-pill-logo"
+                onerror={(e) => {
+                  // Logo missing → fall back to text label so the chip
+                  // never renders blank.
+                  const img = e.currentTarget as HTMLImageElement;
+                  img.style.display = 'none';
+                  const fb = img.nextElementSibling as HTMLElement | null;
+                  if (fb) fb.style.display = 'inline';
+                }}
+                loading="lazy"
+                decoding="async"
+              />
+              <span class="agency-pill-fallback" hidden>{agency}</span>
+            {:else}
+              {agency}
+            {/if}
+          </Chip>
+        {/each}
+      </ChipGroup>
+    {/if}
+  </div>
   {#if filterState.expanded}
-    <div data-audio-stage="missions-epoch-timeline">
-      <EpochTimelineStrip
-        {countByEpoch}
-        selected={filterState.epoch}
-        onSelect={(v) => setEpoch(v)}
-      />
-    </div>
     <nav
       id="missions-filters"
       class="filters"
@@ -534,49 +620,21 @@
           </Chip>
         {/each}
       </ChipGroup>
-
-      {#if agencies.length > 0}
-        <ChipGroup role="radiogroup" label={m.lib_filter_agency_label()} class="filter-group">
-          <span class="filter-label">{m.lib_filter_agency_label()}</span>
-          <Chip kind="choice" active={filterState.agency === 'ALL'} onclick={() => setAgency('ALL')}
-            >{m.lib_filter_agency_all()}</Chip
-          >
-          {#each agencies as agency (agency)}
-            {@const logo = logoFor(agency)}
-            {@const fullName = fullNameFor(agency)}
-            <Chip
-              kind="choice"
-              class="agency-chip"
-              active={filterState.agency === agency}
-              aria-label={fullName}
-              title={fullName}
-              onclick={() => setAgency(agency)}
-            >
-              {#if logo}
-                <img
-                  src={logo}
-                  alt={fullName}
-                  class="agency-pill-logo"
-                  onerror={(e) => {
-                    // Logo missing → fall back to text label so the chip
-                    // never renders blank.
-                    const img = e.currentTarget as HTMLImageElement;
-                    img.style.display = 'none';
-                    const fb = img.nextElementSibling as HTMLElement | null;
-                    if (fb) fb.style.display = 'inline';
-                  }}
-                  loading="lazy"
-                  decoding="async"
-                />
-                <span class="agency-pill-fallback" hidden>{agency}</span>
-              {:else}
-                {agency}
-              {/if}
-            </Chip>
-          {/each}
-        </ChipGroup>
-      {/if}
     </nav>
+  {/if}
+
+  {#if isSuccess(missionsRequest)}
+    <p class="showing-line" data-testid="missions-showing">
+      <b class="showing-total">{missions.length}</b>
+      <span>{m.card_stat_missions()}</span>
+      <span class="showing-sep" aria-hidden="true">|</span>
+      <span class="showing-now" aria-live="polite"
+        >{m.missions_showing({
+          era: filterState.epoch === 'ALL' ? m.epoch_all() : epochLabel(filterState.epoch),
+          count: filtered.length,
+        })}</span
+      >
+    </p>
   {/if}
 
   {#if isError(missionsRequest)}
@@ -597,7 +655,7 @@
             type="button"
             class="card"
             class:selected={selectedId === mission.id}
-            style:--accent={mission.color}
+            style:--accent={colorOf(mission)}
             data-testid="mission-card-{mission.id}"
             data-audio-stage="missions-select-{mission.id}"
             onclick={() => selectMission(mission.id)}
@@ -626,28 +684,27 @@
               />
             </figure>
             <div class="card-body">
-              <header class="card-head">
-                <span
-                  class="agency-badge"
-                  style:background-color={mission.color}
-                  style:color={readableTextOn(mission.color)}
-                  style:text-shadow={readableTextOn(mission.color) === DARK_TEXT ? 'none' : null}
-                  title={agencyFullName(mission.agency) ?? mission.agency}
-                >
-                  {#if logoFor(mission.agency)}
-                    <img
-                      src={logoFor(mission.agency)}
-                      alt=""
-                      class="agency-logo"
-                      aria-hidden="true"
-                      onerror={(e) =>
-                        ((e.currentTarget as HTMLImageElement).style.display = 'none')}
-                      loading="lazy"
-                      decoding="async"
-                    />
-                  {/if}
-                  {mission.agency}
-                </span>
+              <div class="card-name-row">
+                <h2 class="card-name">{mission.name ?? mission.id}</h2>
+                {#if badges[`mission:${mission.id}`]}
+                  <img
+                    class="card-badge"
+                    src={assetUrl(badges[`mission:${mission.id}`])}
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                  />
+                {/if}
+                <span class="card-year-vis" aria-hidden="true">{mission.year}</span>
+              </div>
+              <p class="card-agencies" title={agencyFullName(mission.agency) ?? mission.agency}>
+                {#each splitAgencies(mission.agency) as a (a)}
+                  <span class="card-agency" style:--agency={agencyColor(a) ?? mission.color}
+                    ><i aria-hidden="true"></i>{a}</span
+                  >
+                {/each}
+              </p>
+              <div class="card-pills">
                 <span class="card-status status-{mission.status.toLowerCase()}">
                   {missionStatusLabel(mission.status)}
                 </span>
@@ -669,35 +726,16 @@
                     {/if}
                   </span>
                 {/if}
-              </header>
-              <div class="card-name-row">
-                <h2 class="card-name">{mission.name ?? mission.id}</h2>
-                {#if badges[`mission:${mission.id}`]}
-                  <img
-                    class="card-badge"
-                    src={assetUrl(badges[`mission:${mission.id}`])}
-                    alt=""
-                    loading="lazy"
-                    decoding="async"
-                  />
-                {/if}
               </div>
-              {#if mission.type}
-                <p class="card-type">{mission.type}</p>
-              {/if}
-              <!-- <dl> upgrade (PRD-007 / GH #256 / ADR-025 v0.7.0):
-                   year + dest expressed as definition pairs so screen
-                   readers announce them as labelled facts ("Year: 1969",
-                   "Destination: MOON") rather than two adjacent spans. -->
-              <dl class="card-meta">
-                <dt class="sr-only">{m.missions_card_year_label()}</dt>
-                <dd class="card-year">{mission.year}</dd>
-                <dt class="sr-only">{m.missions_card_dest_label()}</dt>
-                <dd class="card-dest">{missionDestLabel(mission.dest)}</dd>
-              </dl>
               {#if mission.first}
                 <p class="card-first">{mission.first}</p>
               {/if}
+              <dl class="sr-only">
+                <dt>{m.missions_card_year_label()}</dt>
+                <dd>{mission.year}</dd>
+                <dt>{m.missions_card_dest_label()}</dt>
+                <dd>{missionDestLabel(mission.dest)}</dd>
+              </dl>
             </div>
           </button>
         </li>
@@ -744,6 +782,62 @@
     padding: 18px 22px 40px;
     max-width: 1400px;
     margin: 0 auto;
+  }
+  .agency-row {
+    margin-bottom: 8px;
+  }
+  .showing-line {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 4px 10px;
+    margin: 0 0 14px;
+    font-family: var(--font-mono);
+    font-size: var(--size-label);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--color-text-dim);
+  }
+  .showing-total {
+    font-family: var(--font-display);
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    color: var(--color-text);
+  }
+  .card-year-vis {
+    flex: none;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.78);
+  }
+  .card-agencies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 12px;
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: var(--size-label);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.85);
+  }
+  .card-agency {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .card-agency i {
+    inline-size: 3px;
+    block-size: 12px;
+    border-radius: 1px;
+    background: var(--agency);
+  }
+  .card-pills {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
   }
   /* Screen-reader-only — visually hidden, kept in tab order + a11y tree.
      Used for the <dl><dt> labels on card metadata (GH #256). */

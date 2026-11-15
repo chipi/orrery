@@ -1,4 +1,6 @@
-# Content 4 — STS-1, STS-51-L, STS-107, Artemis I (pending heroes)
+# Content 4 — STS-1, STS-51-L, STS-107, Artemis I
+
+**Landed 2026-11-15.** The operator approved every staged image ("images are fine", STS-51-L 06 stays a gallery image), the side branch was merged onto `tech-debt/0.9.9` and the images went through `scripts/replace-gallery-slots.ts` (map `scripts/link-fixes/2026-11-15-content4-images.json`: 27 mission and 5 fleet images). The text below is the state before the merge.
 
 Written 2026-11-15 on `tech-debt/0.9.9`. The four missions are authored and held on the side branch `content4-pending` (one commit on top of `68566680f2e`), because `validate-hero-coverage` fails until each has an approved hero. This file and the image candidates are the only parts on the trunk.
 

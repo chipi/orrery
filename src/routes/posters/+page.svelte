@@ -57,7 +57,7 @@
   <meta name="description" content={metaDescription(m.posters_lede())} />
 </svelte:head>
 
-<article class="gallery page-shell page-shell--wide" data-route-ready="true">
+<article class="gallery page-shell" data-route-ready="true">
   <header>
     <nav class="crumb page-crumb">
       <a href="{base}{localizeHref('/gallery')}">{m.layout_footer_gallery()}</a><span class="sep"

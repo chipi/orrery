@@ -396,5 +396,758 @@
     "type": "صدى ضوئي",
     "distance": "~20,000 سنة ضوئية",
     "taken": "2004"
+  },
+  "m2": {
+    "title": "M2 · NGC 7089",
+    "subject": "عنقود كروي",
+    "type": "عنقود كروي",
+    "distance": "~38,000 سنة ضوئية"
+  },
+  "m4": {
+    "title": "M4 · NGC 6121",
+    "subject": "عنقود كروي",
+    "type": "عنقود كروي",
+    "distance": "~6,030 سنة ضوئية"
+  },
+  "m3": {
+    "title": "M3 · NGC 5272",
+    "subject": "عنقود كروي",
+    "type": "عنقود كروي",
+    "distance": "~33,000 سنة ضوئية"
+  },
+  "m5": {
+    "title": "M5 · NGC 5904",
+    "subject": "عنقود كروي",
+    "type": "عنقود كروي",
+    "distance": "~24,000 سنة ضوئية"
+  },
+  "m6": {
+    "title": "M6 · Butterfly Cluster",
+    "subject": "عنقود نجمي",
+    "type": "عنقود نجمي",
+    "distance": "~1,470 سنة ضوئية"
+  },
+  "m9": {
+    "title": "M9 · NGC 6333",
+    "subject": "عنقود كروي",
+    "type": "عنقود كروي",
+    "distance": "~27,000 سنة ضوئية"
+  },
+  "m10": {
+    "title": "M10 · NGC 6254",
+    "subject": "عنقود كروي",
+    "type": "عنقود كروي",
+    "distance": "~17,000 سنة ضوئية"
+  },
+  "m7": {
+    "title": "M7 · Ptolemy's Cluster",
+    "subject": "عنقود نجمي",
+    "type": "عنقود نجمي",
+    "distance": "~900 سنة ضوئية"
+  },
+  "m11": {
+    "title": "M11 · Wild Duck Cluster",
+    "subject": "عنقود نجمي",
+    "type": "عنقود نجمي",
+    "distance": "~7,280 سنة ضوئية"
+  },
+  "m12": {
+    "title": "M12 · NGC 6218",
+    "subject": "عنقود كروي",
+    "type": "عنقود كروي",
+    "distance": "~17,000 سنة ضوئية"
+  },
+  "m14": {
+    "title": "M14 · NGC 6402",
+    "subject": "عنقود كروي",
+    "type": "عنقود كروي",
+    "distance": "~30,000 سنة ضوئية"
+  },
+  "m13": {
+    "title": "M13 · Hercules Globular Cluster",
+    "subject": "عنقود كروي",
+    "type": "عنقود كروي",
+    "distance": "~24,000 سنة ضوئية"
+  },
+  "m17": {
+    "title": "M17 · Omega Nebula",
+    "subject": "سديم",
+    "type": "سديم",
+    "distance": "~5,460 سنة ضوئية"
+  },
+  "m15": {
+    "title": "M15 · NGC 7078",
+    "subject": "عنقود كروي",
+    "type": "عنقود كروي",
+    "distance": "~35,000 سنة ضوئية"
+  },
+  "m19": {
+    "title": "M19 · NGC 6273",
+    "subject": "عنقود كروي",
+    "type": "عنقود كروي",
+    "distance": "~27,000 سنة ضوئية"
+  },
+  "m20": {
+    "title": "M20 · Trifid Nebula",
+    "subject": "سديم",
+    "type": "سديم",
+    "distance": "~3,960 سنة ضوئية"
+  },
+  "m21": {
+    "title": "M21 · NGC 6531",
+    "subject": "عنقود نجمي",
+    "type": "عنقود نجمي",
+    "distance": "~3,920 سنة ضوئية"
+  },
+  "m22": {
+    "title": "M22 · NGC 6656",
+    "subject": "عنقود كروي",
+    "type": "عنقود كروي",
+    "distance": "~11,000 سنة ضوئية"
+  },
+  "m23": {
+    "title": "M23 · NGC 6494",
+    "subject": "عنقود نجمي",
+    "type": "عنقود نجمي",
+    "distance": "~2,330 سنة ضوئية"
+  },
+  "m24": {
+    "title": "M24 · Small Sgr Star Cloud",
+    "subject": "جرم سماوي عميق",
+    "type": "جرم سماوي عميق"
+  },
+  "m26": {
+    "title": "M26 · NGC 6694",
+    "subject": "عنقود نجمي",
+    "type": "عنقود نجمي",
+    "distance": "~5,990 سنة ضوئية"
+  },
+  "m27": {
+    "title": "M27 · Dumbbell Nebula",
+    "subject": "سديم كوكبي",
+    "type": "سديم كوكبي",
+    "distance": "~1,270 سنة ضوئية"
+  },
+  "m28": {
+    "title": "M28 · NGC 6626",
+    "subject": "عنقود كروي",
+    "type": "عنقود كروي",
+    "distance": "~18,000 سنة ضوئية"
+  },
+  "m29": {
+    "title": "M29 · NGC 6913",
+    "subject": "عنقود نجمي",
+    "type": "عنقود نجمي",
+    "distance": "~5,570 سنة ضوئية"
+  },
+  "m32": {
+    "title": "M32 · NGC 221",
+    "subject": "مجرة",
+    "type": "مجرة",
+    "distance": "~2.6 مليون سنة ضوئية"
+  },
+  "m33": {
+    "title": "M33 · Triangulum Galaxy",
+    "subject": "مجرة",
+    "type": "مجرة",
+    "distance": "~2.6 مليون سنة ضوئية"
+  },
+  "m34": {
+    "title": "M34 · NGC 1039",
+    "subject": "عنقود نجمي",
+    "type": "عنقود نجمي",
+    "distance": "~1,600 سنة ضوئية"
+  },
+  "m30": {
+    "title": "M30 · NGC 7099",
+    "subject": "عنقود كروي",
+    "type": "عنقود كروي",
+    "distance": "~28,000 سنة ضوئية"
+  },
+  "m35": {
+    "title": "M35 · NGC 2168",
+    "subject": "عنقود نجمي",
+    "type": "عنقود نجمي",
+    "distance": "~2,740 سنة ضوئية"
+  },
+  "m37": {
+    "title": "M37 · NGC 2099",
+    "subject": "عنقود نجمي",
+    "type": "عنقود نجمي",
+    "distance": "~4,570 سنة ضوئية"
+  },
+  "m38": {
+    "title": "M38 · NGC 1912",
+    "subject": "عنقود نجمي",
+    "type": "عنقود نجمي",
+    "distance": "~3,540 سنة ضوئية"
+  },
+  "m39": {
+    "title": "M39 · NGC 7092",
+    "subject": "عنقود نجمي",
+    "type": "عنقود نجمي",
+    "distance": "~965 سنة ضوئية"
+  },
+  "m41": {
+    "title": "M41 · NGC 2287",
+    "subject": "عنقود نجمي",
+    "type": "عنقود نجمي",
+    "distance": "~2,330 سنة ضوئية"
+  },
+  "m43": {
+    "title": "M43 · Mairan's Nebula",
+    "subject": "منطقة تشكل نجمي",
+    "type": "منطقة تشكل نجمي"
+  },
+  "m44": {
+    "title": "M44 · Beehive",
+    "subject": "عنقود نجمي",
+    "type": "عنقود نجمي",
+    "distance": "~598 سنة ضوئية"
+  },
+  "m47": {
+    "title": "M47 · NGC 2422",
+    "subject": "عنقود نجمي",
+    "type": "عنقود نجمي",
+    "distance": "~1,530 سنة ضوئية"
+  },
+  "m46": {
+    "title": "M46 · NGC 2437",
+    "subject": "عنقود نجمي",
+    "type": "عنقود نجمي",
+    "distance": "~5,070 سنة ضوئية"
+  },
+  "m48": {
+    "title": "M48 · NGC 2548",
+    "subject": "عنقود نجمي",
+    "type": "عنقود نجمي",
+    "distance": "~2,440 سنة ضوئية"
+  },
+  "m49": {
+    "title": "M49 · NGC 4472",
+    "subject": "مجرة",
+    "type": "مجرة",
+    "distance": "~55 مليون سنة ضوئية"
+  },
+  "m50": {
+    "title": "M50 · NGC 2323",
+    "subject": "عنقود نجمي",
+    "type": "عنقود نجمي",
+    "distance": "~3,120 سنة ضوئية"
+  },
+  "m52": {
+    "title": "M52 · NGC 7654",
+    "subject": "عنقود نجمي",
+    "type": "عنقود نجمي",
+    "distance": "~5,120 سنة ضوئية"
+  },
+  "m53": {
+    "title": "M53 · NGC 5024",
+    "subject": "عنقود كروي",
+    "type": "عنقود كروي",
+    "distance": "~60,000 سنة ضوئية"
+  },
+  "m55": {
+    "title": "M55 · NGC 6809",
+    "subject": "عنقود كروي",
+    "type": "عنقود كروي",
+    "distance": "~17,000 سنة ضوئية"
+  },
+  "m54": {
+    "title": "M54 · NGC 6715",
+    "subject": "عنقود كروي",
+    "type": "عنقود كروي",
+    "distance": "~86,000 سنة ضوئية"
+  },
+  "m58": {
+    "title": "M58 · NGC 4579",
+    "subject": "مجرة",
+    "type": "مجرة",
+    "distance": "~64 مليون سنة ضوئية"
+  },
+  "m56": {
+    "title": "M56 · NGC 6779",
+    "subject": "عنقود كروي",
+    "type": "عنقود كروي",
+    "distance": "~34,000 سنة ضوئية"
+  },
+  "m59": {
+    "title": "M59 · NGC 4621",
+    "subject": "مجرة",
+    "type": "مجرة",
+    "distance": "~50 مليون سنة ضوئية"
+  },
+  "m61": {
+    "title": "M61 · NGC 4303",
+    "subject": "مجرة",
+    "type": "مجرة",
+    "distance": "~55 مليون سنة ضوئية"
+  },
+  "m63": {
+    "title": "M63 · Sunflower Galaxy",
+    "subject": "مجرة",
+    "type": "مجرة",
+    "distance": "~29 مليون سنة ضوئية"
+  },
+  "m60": {
+    "title": "M60 · NGC 4649",
+    "subject": "مجرة",
+    "type": "مجرة",
+    "distance": "~54 مليون سنة ضوئية"
+  },
+  "m64": {
+    "title": "M64 · Black Eye Galaxy",
+    "subject": "مجرة",
+    "type": "مجرة",
+    "distance": "~14 مليون سنة ضوئية"
+  },
+  "m65": {
+    "title": "M65 · NGC 3623",
+    "subject": "مجرة",
+    "type": "مجرة",
+    "distance": "~42 مليون سنة ضوئية"
+  },
+  "m66": {
+    "title": "M66 · NGC 3627",
+    "subject": "مجرة",
+    "type": "مجرة",
+    "distance": "~34 مليون سنة ضوئية"
+  },
+  "m68": {
+    "title": "M68 · NGC 4590",
+    "subject": "عنقود كروي",
+    "type": "عنقود كروي",
+    "distance": "~34,000 سنة ضوئية"
+  },
+  "m69": {
+    "title": "M69 · NGC 6637",
+    "subject": "عنقود كروي",
+    "type": "عنقود كروي",
+    "distance": "~29,000 سنة ضوئية"
+  },
+  "m70": {
+    "title": "M70 · NGC 6681",
+    "subject": "عنقود كروي",
+    "type": "عنقود كروي",
+    "distance": "~31,000 سنة ضوئية"
+  },
+  "m71": {
+    "title": "M71 · NGC 6838",
+    "subject": "عنقود كروي",
+    "type": "عنقود كروي",
+    "distance": "~13,000 سنة ضوئية"
+  },
+  "m72": {
+    "title": "M72 · NGC 6981",
+    "subject": "عنقود كروي",
+    "type": "عنقود كروي",
+    "distance": "~54,000 سنة ضوئية"
+  },
+  "m75": {
+    "title": "M75 · NGC 6864",
+    "subject": "عنقود كروي",
+    "type": "عنقود كروي",
+    "distance": "~67,000 سنة ضوئية"
+  },
+  "m73": {
+    "title": "M73 · NGC 6994",
+    "subject": "جرم سماوي عميق",
+    "type": "جرم سماوي عميق",
+    "distance": "~2,240 سنة ضوئية"
+  },
+  "m77": {
+    "title": "M77 · NGC 1068",
+    "subject": "مجرة",
+    "type": "مجرة",
+    "distance": "~50 مليون سنة ضوئية"
+  },
+  "m78": {
+    "title": "M78 · NGC 2068",
+    "subject": "سديم",
+    "type": "سديم",
+    "distance": "~1,320 سنة ضوئية"
+  },
+  "m79": {
+    "title": "M79 · NGC 1904",
+    "subject": "عنقود كروي",
+    "type": "عنقود كروي",
+    "distance": "~43,000 سنة ضوئية"
+  },
+  "m76": {
+    "title": "M76 · Little Dumbbell Nebula",
+    "subject": "سديم كوكبي",
+    "type": "سديم كوكبي",
+    "distance": "~4,680 سنة ضوئية"
+  },
+  "m80": {
+    "title": "M80 · NGC 6093",
+    "subject": "عنقود كروي",
+    "type": "عنقود كروي",
+    "distance": "~34,000 سنة ضوئية"
+  },
+  "m81": {
+    "title": "M81 · Bode's Galaxy",
+    "subject": "مجرة",
+    "type": "مجرة",
+    "distance": "~12 مليون سنة ضوئية"
+  },
+  "m82": {
+    "title": "M82 · Cigar Galaxy",
+    "subject": "مجرة",
+    "type": "مجرة",
+    "distance": "~12 مليون سنة ضوئية"
+  },
+  "m83": {
+    "title": "M83 · Southern Pinwheel Galaxy",
+    "subject": "مجرة",
+    "type": "مجرة",
+    "distance": "~16 مليون سنة ضوئية"
+  },
+  "m85": {
+    "title": "M85 · NGC 4382",
+    "subject": "مجرة",
+    "type": "مجرة",
+    "distance": "~58 مليون سنة ضوئية"
+  },
+  "m84": {
+    "title": "M84 · NGC 4374",
+    "subject": "مجرة",
+    "type": "مجرة",
+    "distance": "~58 مليون سنة ضوئية"
+  },
+  "m86": {
+    "title": "M86 · NGC 4406",
+    "subject": "مجرة",
+    "type": "مجرة",
+    "distance": "~55 مليون سنة ضوئية"
+  },
+  "m87": {
+    "title": "M87 · Virgo A",
+    "subject": "مجرة",
+    "type": "مجرة",
+    "distance": "~55 مليون سنة ضوئية"
+  },
+  "m88": {
+    "title": "M88 · NGC 4501",
+    "subject": "مجرة",
+    "type": "مجرة",
+    "distance": "~63 مليون سنة ضوئية"
+  },
+  "m89": {
+    "title": "M89 · NGC 4552",
+    "subject": "مجرة",
+    "type": "مجرة",
+    "distance": "~53 مليون سنة ضوئية"
+  },
+  "m90": {
+    "title": "M90 · NGC 4569",
+    "subject": "مجرة",
+    "type": "مجرة",
+    "distance": "~54 مليون سنة ضوئية"
+  },
+  "m91": {
+    "title": "M91 · NGC 4548",
+    "subject": "مجرة",
+    "type": "مجرة",
+    "distance": "~53 مليون سنة ضوئية"
+  },
+  "m92": {
+    "title": "M92 · NGC 6341",
+    "subject": "عنقود كروي",
+    "type": "عنقود كروي",
+    "distance": "~28,000 سنة ضوئية"
+  },
+  "m93": {
+    "title": "M93 · NGC 2447",
+    "subject": "عنقود نجمي",
+    "type": "عنقود نجمي",
+    "distance": "~3,170 سنة ضوئية"
+  },
+  "m94": {
+    "title": "M94 · NGC 4736",
+    "subject": "مجرة",
+    "type": "مجرة",
+    "distance": "~14 مليون سنة ضوئية"
+  },
+  "m95": {
+    "title": "M95 · NGC 3351",
+    "subject": "مجرة",
+    "type": "مجرة",
+    "distance": "~32 مليون سنة ضوئية"
+  },
+  "m96": {
+    "title": "M96 · NGC 3368",
+    "subject": "مجرة",
+    "type": "مجرة",
+    "distance": "~34 مليون سنة ضوئية"
+  },
+  "m98": {
+    "title": "M98 · NGC 4192",
+    "subject": "مجرة",
+    "type": "مجرة",
+    "distance": "~55 مليون سنة ضوئية"
+  },
+  "m97": {
+    "title": "M97 · Owl Nebula",
+    "subject": "سديم كوكبي",
+    "type": "سديم كوكبي",
+    "distance": "~2,640 سنة ضوئية"
+  },
+  "m100": {
+    "title": "M100 · NGC 4321",
+    "subject": "مجرة",
+    "type": "مجرة",
+    "distance": "~50 مليون سنة ضوئية"
+  },
+  "m99": {
+    "title": "M99 · Coma Pinwheel",
+    "subject": "مجرة",
+    "type": "مجرة",
+    "distance": "~54 مليون سنة ضوئية"
+  },
+  "m103": {
+    "title": "M103 · NGC 581",
+    "subject": "عنقود نجمي",
+    "type": "عنقود نجمي",
+    "distance": "~8,240 سنة ضوئية"
+  },
+  "m106": {
+    "title": "M106 · NGC 4258",
+    "subject": "مجرة",
+    "type": "مجرة",
+    "distance": "~25 مليون سنة ضوئية"
+  },
+  "m107": {
+    "title": "M107 · NGC 6171",
+    "subject": "عنقود كروي",
+    "type": "عنقود كروي",
+    "distance": "~18,000 سنة ضوئية"
+  },
+  "m108": {
+    "title": "M108 · NGC 3556",
+    "subject": "مجرة",
+    "type": "مجرة",
+    "distance": "~30 مليون سنة ضوئية"
+  },
+  "m109": {
+    "title": "M109 · NGC 3992",
+    "subject": "مجرة",
+    "type": "مجرة",
+    "distance": "~82 مليون سنة ضوئية"
+  },
+  "m110": {
+    "title": "M110 · NGC 205",
+    "subject": "مجرة",
+    "type": "مجرة",
+    "distance": "~2.7 مليون سنة ضوئية"
+  },
+  "ngc-104": {
+    "title": "NGC 104 · 47 Tucanae",
+    "subject": "عنقود كروي",
+    "type": "عنقود كروي",
+    "distance": "~15,000 سنة ضوئية"
+  },
+  "ngc-6752": {
+    "title": "NGC 6752",
+    "subject": "عنقود كروي",
+    "type": "عنقود كروي",
+    "distance": "~13,000 سنة ضوئية"
+  },
+  "m105": {
+    "title": "M105 · NGC 3379",
+    "subject": "مجرة",
+    "type": "مجرة",
+    "distance": "~36 مليون سنة ضوئية"
+  },
+  "cygnus-x-1": {
+    "title": "الدجاجة X-1",
+    "subject": "ثقب أسود نجمي",
+    "type": "ثقب أسود نجمي",
+    "distance": "~7,240 سنة ضوئية"
+  },
+  "milky-way": {
+    "title": "Galactic Center",
+    "subject": "مجرة",
+    "type": "مجرة"
+  },
+  "sculptor-dwarf": {
+    "title": "Sculptor Dwarf Galaxy",
+    "subject": "مجرة",
+    "type": "مجرة قزمة شبه كروية",
+    "distance": "~280,000 سنة ضوئية"
+  },
+  "leo-i": {
+    "title": "قزمة الأسد الأولى",
+    "subject": "مجرة",
+    "type": "مجرة قزمة شبه كروية",
+    "distance": "~830,000 سنة ضوئية"
+  },
+  "ngc-185": {
+    "title": "NGC 185",
+    "subject": "مجرة",
+    "type": "مجرة قزمة إهليلجية",
+    "distance": "~2 مليون سنة ضوئية"
+  },
+  "ngc-147": {
+    "title": "NGC 147",
+    "subject": "مجرة",
+    "type": "مجرة قزمة إهليلجية",
+    "distance": "~2.2 مليون سنة ضوئية"
+  },
+  "andromeda-i": {
+    "title": "المرأة المسلسلة I",
+    "subject": "مجرة",
+    "type": "مجرة قزمة شبه كروية",
+    "distance": "~2.4 مليون سنة ضوئية"
+  },
+  "andromeda-ii": {
+    "title": "المرأة المسلسلة II",
+    "subject": "مجرة",
+    "type": "مجرة قزمة شبه كروية",
+    "distance": "~2.1 مليون سنة ضوئية"
+  },
+  "andromeda-iii": {
+    "title": "المرأة المسلسلة III",
+    "subject": "مجرة",
+    "type": "مجرة قزمة شبه كروية",
+    "distance": "~2.4 مليون سنة ضوئية"
+  },
+  "pegasus-dsph": {
+    "title": "Andromeda VI (Pegasus Dwarf Spheroidal)",
+    "subject": "مجرة",
+    "type": "مجرة قزمة شبه كروية",
+    "distance": "~2.6 مليون سنة ضوئية"
+  },
+  "ic-1613": {
+    "title": "IC 1613",
+    "subject": "مجرة",
+    "type": "مجرة قزمة غير منتظمة",
+    "distance": "~2.5 مليون سنة ضوئية"
+  },
+  "ngc-6822": {
+    "title": "Barnard's Galaxy (NGC 6822)",
+    "subject": "مجرة",
+    "type": "مجرة قزمة غير منتظمة",
+    "distance": "~1.5 مليون سنة ضوئية"
+  },
+  "ic-10": {
+    "title": "IC 10",
+    "subject": "مجرة",
+    "type": "مجرة قزمة غير منتظمة",
+    "distance": "~2.6 مليون سنة ضوئية"
+  },
+  "wlm": {
+    "title": "WLM",
+    "subject": "مجرة",
+    "type": "مجرة قزمة غير منتظمة",
+    "distance": "~3 ملايين سنة ضوئية"
+  },
+  "leo-a": {
+    "title": "الأسد A",
+    "subject": "مجرة",
+    "type": "مجرة قزمة غير منتظمة",
+    "distance": "~2.6 مليون سنة ضوئية"
+  },
+  "phoenix-dwarf": {
+    "title": "قزمة العنقاء",
+    "subject": "مجرة",
+    "type": "مجرة قزمة غير منتظمة",
+    "distance": "~1.4 مليون سنة ضوئية"
+  },
+  "aquarius-dwarf": {
+    "title": "قزمة الدلو",
+    "subject": "مجرة",
+    "type": "مجرة قزمة غير منتظمة",
+    "distance": "~3.5 مليون سنة ضوئية"
+  },
+  "sagittarius-dirr": {
+    "title": "Sagittarius Dwarf Irregular Galaxy",
+    "subject": "مجرة",
+    "type": "مجرة قزمة غير منتظمة",
+    "distance": "~3.5 مليون سنة ضوئية"
+  },
+  "pegasus-dirr": {
+    "title": "Pegasus Dwarf Irregular Galaxy",
+    "subject": "مجرة",
+    "type": "مجرة قزمة غير منتظمة",
+    "distance": "~3 ملايين سنة ضوئية"
+  },
+  "m81-group": {
+    "title": "M81 and M82",
+    "subject": "مجرة",
+    "type": "مجرة",
+    "distance": "~12 مليون سنة ضوئية"
+  },
+  "centaurus-a-group": {
+    "title": "قنطورس A",
+    "subject": "مجرة",
+    "type": "مجرة",
+    "distance": "~12 مليون سنة ضوئية"
+  },
+  "sculptor-group": {
+    "title": "NGC 253",
+    "subject": "مجرة",
+    "type": "مجرة",
+    "distance": "~12 مليون سنة ضوئية"
+  },
+  "canes-venatici-i": {
+    "title": "NGC 4214",
+    "subject": "مجرة",
+    "type": "مجرة",
+    "distance": "~13 مليون سنة ضوئية"
+  },
+  "maffei-group": {
+    "title": "Maffei 2",
+    "subject": "مجرة",
+    "type": "مجرة",
+    "distance": "~19 مليون سنة ضوئية"
+  },
+  "ngc-6946-group": {
+    "title": "NGC 6946",
+    "subject": "مجرة",
+    "type": "مجرة",
+    "distance": "~25 مليون سنة ضوئية"
+  },
+  "leo-i-cloud": {
+    "title": "M96",
+    "subject": "مجرة",
+    "type": "مجرة",
+    "distance": "~35 مليون سنة ضوئية"
+  },
+  "virgo-cluster": {
+    "title": "عنقود العذراء المجري",
+    "subject": "عنقود مجرات",
+    "type": "عنقود مجرات",
+    "distance": "~54 مليون سنة ضوئية"
+  },
+  "ngc-5846-group": {
+    "title": "NGC 5846",
+    "subject": "مجرة",
+    "type": "مجرة",
+    "distance": "~85 مليون سنة ضوئية"
+  },
+  "centaurus-cluster": {
+    "title": "عنقود قنطورس المجري",
+    "subject": "عنقود مجرات",
+    "type": "عنقود مجرات",
+    "distance": "~160 مليون سنة ضوئية"
+  },
+  "antlia-cluster": {
+    "title": "عنقود أنتاليا المجري",
+    "subject": "عنقود مجرات",
+    "type": "عنقود مجرات",
+    "distance": "~130 مليون سنة ضوئية"
+  },
+  "shapley-concentration": {
+    "title": "Shapley Supercluster core",
+    "subject": "عنقود مجرات",
+    "type": "عنقود مجرات",
+    "distance": "~650 مليون سنة ضوئية"
+  },
+  "coma-great-wall": {
+    "title": "عنقود الذؤابة المجري",
+    "subject": "عنقود مجرات",
+    "type": "عنقود مجرات",
+    "distance": "~330 مليون سنة ضوئية"
   }
 }

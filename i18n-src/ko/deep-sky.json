@@ -396,5 +396,758 @@
     "type": "빛의 메아리",
     "distance": "약 20,000광년",
     "taken": "2004년"
+  },
+  "m2": {
+    "title": "M2 · NGC 7089",
+    "subject": "구상 성단",
+    "type": "구상 성단",
+    "distance": "~38,000 광년"
+  },
+  "m4": {
+    "title": "M4 · NGC 6121",
+    "subject": "구상 성단",
+    "type": "구상 성단",
+    "distance": "~6,030 광년"
+  },
+  "m3": {
+    "title": "M3 · NGC 5272",
+    "subject": "구상 성단",
+    "type": "구상 성단",
+    "distance": "~33,000 광년"
+  },
+  "m5": {
+    "title": "M5 · NGC 5904",
+    "subject": "구상 성단",
+    "type": "구상 성단",
+    "distance": "~24,000 광년"
+  },
+  "m6": {
+    "title": "M6 · Butterfly Cluster",
+    "subject": "성단",
+    "type": "성단",
+    "distance": "~1,470 광년"
+  },
+  "m9": {
+    "title": "M9 · NGC 6333",
+    "subject": "구상 성단",
+    "type": "구상 성단",
+    "distance": "~27,000 광년"
+  },
+  "m10": {
+    "title": "M10 · NGC 6254",
+    "subject": "구상 성단",
+    "type": "구상 성단",
+    "distance": "~17,000 광년"
+  },
+  "m7": {
+    "title": "M7 · Ptolemy's Cluster",
+    "subject": "성단",
+    "type": "성단",
+    "distance": "~900 광년"
+  },
+  "m11": {
+    "title": "M11 · Wild Duck Cluster",
+    "subject": "성단",
+    "type": "성단",
+    "distance": "~7,280 광년"
+  },
+  "m12": {
+    "title": "M12 · NGC 6218",
+    "subject": "구상 성단",
+    "type": "구상 성단",
+    "distance": "~17,000 광년"
+  },
+  "m14": {
+    "title": "M14 · NGC 6402",
+    "subject": "구상 성단",
+    "type": "구상 성단",
+    "distance": "~30,000 광년"
+  },
+  "m13": {
+    "title": "M13 · Hercules Globular Cluster",
+    "subject": "구상 성단",
+    "type": "구상 성단",
+    "distance": "~24,000 광년"
+  },
+  "m17": {
+    "title": "M17 · Omega Nebula",
+    "subject": "성운",
+    "type": "성운",
+    "distance": "~5,460 광년"
+  },
+  "m15": {
+    "title": "M15 · NGC 7078",
+    "subject": "구상 성단",
+    "type": "구상 성단",
+    "distance": "~35,000 광년"
+  },
+  "m19": {
+    "title": "M19 · NGC 6273",
+    "subject": "구상 성단",
+    "type": "구상 성단",
+    "distance": "~27,000 광년"
+  },
+  "m20": {
+    "title": "M20 · Trifid Nebula",
+    "subject": "성운",
+    "type": "성운",
+    "distance": "~3,960 광년"
+  },
+  "m21": {
+    "title": "M21 · NGC 6531",
+    "subject": "성단",
+    "type": "성단",
+    "distance": "~3,920 광년"
+  },
+  "m22": {
+    "title": "M22 · NGC 6656",
+    "subject": "구상 성단",
+    "type": "구상 성단",
+    "distance": "~11,000 광년"
+  },
+  "m23": {
+    "title": "M23 · NGC 6494",
+    "subject": "성단",
+    "type": "성단",
+    "distance": "~2,330 광년"
+  },
+  "m24": {
+    "title": "M24 · Small Sgr Star Cloud",
+    "subject": "심원천체",
+    "type": "심원천체"
+  },
+  "m26": {
+    "title": "M26 · NGC 6694",
+    "subject": "성단",
+    "type": "성단",
+    "distance": "~5,990 광년"
+  },
+  "m27": {
+    "title": "M27 · Dumbbell Nebula",
+    "subject": "행성상 성운",
+    "type": "행성상 성운",
+    "distance": "~1,270 광년"
+  },
+  "m28": {
+    "title": "M28 · NGC 6626",
+    "subject": "구상 성단",
+    "type": "구상 성단",
+    "distance": "~18,000 광년"
+  },
+  "m29": {
+    "title": "M29 · NGC 6913",
+    "subject": "성단",
+    "type": "성단",
+    "distance": "~5,570 광년"
+  },
+  "m32": {
+    "title": "M32 · NGC 221",
+    "subject": "은하",
+    "type": "은하",
+    "distance": "~260만 광년"
+  },
+  "m33": {
+    "title": "M33 · Triangulum Galaxy",
+    "subject": "은하",
+    "type": "은하",
+    "distance": "~260만 광년"
+  },
+  "m34": {
+    "title": "M34 · NGC 1039",
+    "subject": "성단",
+    "type": "성단",
+    "distance": "~1,600 광년"
+  },
+  "m30": {
+    "title": "M30 · NGC 7099",
+    "subject": "구상 성단",
+    "type": "구상 성단",
+    "distance": "~28,000 광년"
+  },
+  "m35": {
+    "title": "M35 · NGC 2168",
+    "subject": "성단",
+    "type": "성단",
+    "distance": "~2,740 광년"
+  },
+  "m37": {
+    "title": "M37 · NGC 2099",
+    "subject": "성단",
+    "type": "성단",
+    "distance": "~4,570 광년"
+  },
+  "m38": {
+    "title": "M38 · NGC 1912",
+    "subject": "성단",
+    "type": "성단",
+    "distance": "~3,540 광년"
+  },
+  "m39": {
+    "title": "M39 · NGC 7092",
+    "subject": "성단",
+    "type": "성단",
+    "distance": "~965 광년"
+  },
+  "m41": {
+    "title": "M41 · NGC 2287",
+    "subject": "성단",
+    "type": "성단",
+    "distance": "~2,330 광년"
+  },
+  "m43": {
+    "title": "M43 · Mairan's Nebula",
+    "subject": "별 형성 영역",
+    "type": "별 형성 영역"
+  },
+  "m44": {
+    "title": "M44 · Beehive",
+    "subject": "성단",
+    "type": "성단",
+    "distance": "~598 광년"
+  },
+  "m47": {
+    "title": "M47 · NGC 2422",
+    "subject": "성단",
+    "type": "성단",
+    "distance": "~1,530 광년"
+  },
+  "m46": {
+    "title": "M46 · NGC 2437",
+    "subject": "성단",
+    "type": "성단",
+    "distance": "~5,070 광년"
+  },
+  "m48": {
+    "title": "M48 · NGC 2548",
+    "subject": "성단",
+    "type": "성단",
+    "distance": "~2,440 광년"
+  },
+  "m49": {
+    "title": "M49 · NGC 4472",
+    "subject": "은하",
+    "type": "은하",
+    "distance": "~5500만 광년"
+  },
+  "m50": {
+    "title": "M50 · NGC 2323",
+    "subject": "성단",
+    "type": "성단",
+    "distance": "~3,120 광년"
+  },
+  "m52": {
+    "title": "M52 · NGC 7654",
+    "subject": "성단",
+    "type": "성단",
+    "distance": "~5,120 광년"
+  },
+  "m53": {
+    "title": "M53 · NGC 5024",
+    "subject": "구상 성단",
+    "type": "구상 성단",
+    "distance": "~60,000 광년"
+  },
+  "m55": {
+    "title": "M55 · NGC 6809",
+    "subject": "구상 성단",
+    "type": "구상 성단",
+    "distance": "~17,000 광년"
+  },
+  "m54": {
+    "title": "M54 · NGC 6715",
+    "subject": "구상 성단",
+    "type": "구상 성단",
+    "distance": "~86,000 광년"
+  },
+  "m58": {
+    "title": "M58 · NGC 4579",
+    "subject": "은하",
+    "type": "은하",
+    "distance": "~6400만 광년"
+  },
+  "m56": {
+    "title": "M56 · NGC 6779",
+    "subject": "구상 성단",
+    "type": "구상 성단",
+    "distance": "~34,000 광년"
+  },
+  "m59": {
+    "title": "M59 · NGC 4621",
+    "subject": "은하",
+    "type": "은하",
+    "distance": "~5000만 광년"
+  },
+  "m61": {
+    "title": "M61 · NGC 4303",
+    "subject": "은하",
+    "type": "은하",
+    "distance": "~5500만 광년"
+  },
+  "m63": {
+    "title": "M63 · Sunflower Galaxy",
+    "subject": "은하",
+    "type": "은하",
+    "distance": "~2900만 광년"
+  },
+  "m60": {
+    "title": "M60 · NGC 4649",
+    "subject": "은하",
+    "type": "은하",
+    "distance": "~5400만 광년"
+  },
+  "m64": {
+    "title": "M64 · Black Eye Galaxy",
+    "subject": "은하",
+    "type": "은하",
+    "distance": "~1400만 광년"
+  },
+  "m65": {
+    "title": "M65 · NGC 3623",
+    "subject": "은하",
+    "type": "은하",
+    "distance": "~4200만 광년"
+  },
+  "m66": {
+    "title": "M66 · NGC 3627",
+    "subject": "은하",
+    "type": "은하",
+    "distance": "~3400만 광년"
+  },
+  "m68": {
+    "title": "M68 · NGC 4590",
+    "subject": "구상 성단",
+    "type": "구상 성단",
+    "distance": "~34,000 광년"
+  },
+  "m69": {
+    "title": "M69 · NGC 6637",
+    "subject": "구상 성단",
+    "type": "구상 성단",
+    "distance": "~29,000 광년"
+  },
+  "m70": {
+    "title": "M70 · NGC 6681",
+    "subject": "구상 성단",
+    "type": "구상 성단",
+    "distance": "~31,000 광년"
+  },
+  "m71": {
+    "title": "M71 · NGC 6838",
+    "subject": "구상 성단",
+    "type": "구상 성단",
+    "distance": "~13,000 광년"
+  },
+  "m72": {
+    "title": "M72 · NGC 6981",
+    "subject": "구상 성단",
+    "type": "구상 성단",
+    "distance": "~54,000 광년"
+  },
+  "m75": {
+    "title": "M75 · NGC 6864",
+    "subject": "구상 성단",
+    "type": "구상 성단",
+    "distance": "~67,000 광년"
+  },
+  "m73": {
+    "title": "M73 · NGC 6994",
+    "subject": "심원천체",
+    "type": "심원천체",
+    "distance": "~2,240 광년"
+  },
+  "m77": {
+    "title": "M77 · NGC 1068",
+    "subject": "은하",
+    "type": "은하",
+    "distance": "~5000만 광년"
+  },
+  "m78": {
+    "title": "M78 · NGC 2068",
+    "subject": "성운",
+    "type": "성운",
+    "distance": "~1,320 광년"
+  },
+  "m79": {
+    "title": "M79 · NGC 1904",
+    "subject": "구상 성단",
+    "type": "구상 성단",
+    "distance": "~43,000 광년"
+  },
+  "m76": {
+    "title": "M76 · Little Dumbbell Nebula",
+    "subject": "행성상 성운",
+    "type": "행성상 성운",
+    "distance": "~4,680 광년"
+  },
+  "m80": {
+    "title": "M80 · NGC 6093",
+    "subject": "구상 성단",
+    "type": "구상 성단",
+    "distance": "~34,000 광년"
+  },
+  "m81": {
+    "title": "M81 · Bode's Galaxy",
+    "subject": "은하",
+    "type": "은하",
+    "distance": "~1200만 광년"
+  },
+  "m82": {
+    "title": "M82 · Cigar Galaxy",
+    "subject": "은하",
+    "type": "은하",
+    "distance": "~1200만 광년"
+  },
+  "m83": {
+    "title": "M83 · Southern Pinwheel Galaxy",
+    "subject": "은하",
+    "type": "은하",
+    "distance": "~1600만 광년"
+  },
+  "m85": {
+    "title": "M85 · NGC 4382",
+    "subject": "은하",
+    "type": "은하",
+    "distance": "~5800만 광년"
+  },
+  "m84": {
+    "title": "M84 · NGC 4374",
+    "subject": "은하",
+    "type": "은하",
+    "distance": "~5800만 광년"
+  },
+  "m86": {
+    "title": "M86 · NGC 4406",
+    "subject": "은하",
+    "type": "은하",
+    "distance": "~5500만 광년"
+  },
+  "m87": {
+    "title": "M87 · Virgo A",
+    "subject": "은하",
+    "type": "은하",
+    "distance": "~5500만 광년"
+  },
+  "m88": {
+    "title": "M88 · NGC 4501",
+    "subject": "은하",
+    "type": "은하",
+    "distance": "~6300만 광년"
+  },
+  "m89": {
+    "title": "M89 · NGC 4552",
+    "subject": "은하",
+    "type": "은하",
+    "distance": "~5300만 광년"
+  },
+  "m90": {
+    "title": "M90 · NGC 4569",
+    "subject": "은하",
+    "type": "은하",
+    "distance": "~5400만 광년"
+  },
+  "m91": {
+    "title": "M91 · NGC 4548",
+    "subject": "은하",
+    "type": "은하",
+    "distance": "~5300만 광년"
+  },
+  "m92": {
+    "title": "M92 · NGC 6341",
+    "subject": "구상 성단",
+    "type": "구상 성단",
+    "distance": "~28,000 광년"
+  },
+  "m93": {
+    "title": "M93 · NGC 2447",
+    "subject": "성단",
+    "type": "성단",
+    "distance": "~3,170 광년"
+  },
+  "m94": {
+    "title": "M94 · NGC 4736",
+    "subject": "은하",
+    "type": "은하",
+    "distance": "~1400만 광년"
+  },
+  "m95": {
+    "title": "M95 · NGC 3351",
+    "subject": "은하",
+    "type": "은하",
+    "distance": "~3200만 광년"
+  },
+  "m96": {
+    "title": "M96 · NGC 3368",
+    "subject": "은하",
+    "type": "은하",
+    "distance": "~3400만 광년"
+  },
+  "m98": {
+    "title": "M98 · NGC 4192",
+    "subject": "은하",
+    "type": "은하",
+    "distance": "~5500만 광년"
+  },
+  "m97": {
+    "title": "M97 · Owl Nebula",
+    "subject": "행성상 성운",
+    "type": "행성상 성운",
+    "distance": "~2,640 광년"
+  },
+  "m100": {
+    "title": "M100 · NGC 4321",
+    "subject": "은하",
+    "type": "은하",
+    "distance": "~5000만 광년"
+  },
+  "m99": {
+    "title": "M99 · Coma Pinwheel",
+    "subject": "은하",
+    "type": "은하",
+    "distance": "~5400만 광년"
+  },
+  "m103": {
+    "title": "M103 · NGC 581",
+    "subject": "성단",
+    "type": "성단",
+    "distance": "~8,240 광년"
+  },
+  "m106": {
+    "title": "M106 · NGC 4258",
+    "subject": "은하",
+    "type": "은하",
+    "distance": "~2500만 광년"
+  },
+  "m107": {
+    "title": "M107 · NGC 6171",
+    "subject": "구상 성단",
+    "type": "구상 성단",
+    "distance": "~18,000 광년"
+  },
+  "m108": {
+    "title": "M108 · NGC 3556",
+    "subject": "은하",
+    "type": "은하",
+    "distance": "~3000만 광년"
+  },
+  "m109": {
+    "title": "M109 · NGC 3992",
+    "subject": "은하",
+    "type": "은하",
+    "distance": "~8200만 광년"
+  },
+  "m110": {
+    "title": "M110 · NGC 205",
+    "subject": "은하",
+    "type": "은하",
+    "distance": "~270만 광년"
+  },
+  "ngc-104": {
+    "title": "NGC 104 · 47 Tucanae",
+    "subject": "구상 성단",
+    "type": "구상 성단",
+    "distance": "~15,000 광년"
+  },
+  "ngc-6752": {
+    "title": "NGC 6752",
+    "subject": "구상 성단",
+    "type": "구상 성단",
+    "distance": "~13,000 광년"
+  },
+  "m105": {
+    "title": "M105 · NGC 3379",
+    "subject": "은하",
+    "type": "은하",
+    "distance": "~3600만 광년"
+  },
+  "cygnus-x-1": {
+    "title": "백조자리 X-1",
+    "subject": "항성질량 블랙홀",
+    "type": "항성질량 블랙홀",
+    "distance": "~7,240 광년"
+  },
+  "milky-way": {
+    "title": "Galactic Center",
+    "subject": "은하",
+    "type": "은하"
+  },
+  "sculptor-dwarf": {
+    "title": "Sculptor Dwarf Galaxy",
+    "subject": "은하",
+    "type": "왜소타원체은하",
+    "distance": "~280,000 광년"
+  },
+  "leo-i": {
+    "title": "사자자리 I 왜소은하",
+    "subject": "은하",
+    "type": "왜소타원체은하",
+    "distance": "~830,000 광년"
+  },
+  "ngc-185": {
+    "title": "NGC 185",
+    "subject": "은하",
+    "type": "왜소타원은하",
+    "distance": "~200만 광년"
+  },
+  "ngc-147": {
+    "title": "NGC 147",
+    "subject": "은하",
+    "type": "왜소타원은하",
+    "distance": "~220만 광년"
+  },
+  "andromeda-i": {
+    "title": "안드로메다자리 I 왜소은하",
+    "subject": "은하",
+    "type": "왜소타원체은하",
+    "distance": "~240만 광년"
+  },
+  "andromeda-ii": {
+    "title": "안드로메다자리 II 왜소은하",
+    "subject": "은하",
+    "type": "왜소타원체은하",
+    "distance": "~210만 광년"
+  },
+  "andromeda-iii": {
+    "title": "안드로메다자리 III 왜소은하",
+    "subject": "은하",
+    "type": "왜소타원체은하",
+    "distance": "~240만 광년"
+  },
+  "pegasus-dsph": {
+    "title": "Andromeda VI (Pegasus Dwarf Spheroidal)",
+    "subject": "은하",
+    "type": "왜소타원체은하",
+    "distance": "~260만 광년"
+  },
+  "ic-1613": {
+    "title": "IC 1613",
+    "subject": "은하",
+    "type": "왜소불규칙은하",
+    "distance": "~250만 광년"
+  },
+  "ngc-6822": {
+    "title": "Barnard's Galaxy (NGC 6822)",
+    "subject": "은하",
+    "type": "왜소불규칙은하",
+    "distance": "~150만 광년"
+  },
+  "ic-10": {
+    "title": "IC 10",
+    "subject": "은하",
+    "type": "왜소불규칙은하",
+    "distance": "~260만 광년"
+  },
+  "wlm": {
+    "title": "WLM",
+    "subject": "은하",
+    "type": "왜소불규칙은하",
+    "distance": "~300만 광년"
+  },
+  "leo-a": {
+    "title": "사자자리 A",
+    "subject": "은하",
+    "type": "왜소불규칙은하",
+    "distance": "~260만 광년"
+  },
+  "phoenix-dwarf": {
+    "title": "봉황자리 왜소은하",
+    "subject": "은하",
+    "type": "왜소불규칙은하",
+    "distance": "~140만 광년"
+  },
+  "aquarius-dwarf": {
+    "title": "물병자리 왜소은하",
+    "subject": "은하",
+    "type": "왜소불규칙은하",
+    "distance": "~350만 광년"
+  },
+  "sagittarius-dirr": {
+    "title": "Sagittarius Dwarf Irregular Galaxy",
+    "subject": "은하",
+    "type": "왜소불규칙은하",
+    "distance": "~350만 광년"
+  },
+  "pegasus-dirr": {
+    "title": "Pegasus Dwarf Irregular Galaxy",
+    "subject": "은하",
+    "type": "왜소불규칙은하",
+    "distance": "~300만 광년"
+  },
+  "m81-group": {
+    "title": "M81 and M82",
+    "subject": "은하",
+    "type": "은하",
+    "distance": "~1200만 광년"
+  },
+  "centaurus-a-group": {
+    "title": "센타우루스 A 은하",
+    "subject": "은하",
+    "type": "은하",
+    "distance": "~1200만 광년"
+  },
+  "sculptor-group": {
+    "title": "NGC 253",
+    "subject": "은하",
+    "type": "은하",
+    "distance": "~1200만 광년"
+  },
+  "canes-venatici-i": {
+    "title": "NGC 4214",
+    "subject": "은하",
+    "type": "은하",
+    "distance": "~1300만 광년"
+  },
+  "maffei-group": {
+    "title": "Maffei 2",
+    "subject": "은하",
+    "type": "은하",
+    "distance": "~1900만 광년"
+  },
+  "ngc-6946-group": {
+    "title": "NGC 6946",
+    "subject": "은하",
+    "type": "은하",
+    "distance": "~2500만 광년"
+  },
+  "leo-i-cloud": {
+    "title": "M96",
+    "subject": "은하",
+    "type": "은하",
+    "distance": "~3500만 광년"
+  },
+  "virgo-cluster": {
+    "title": "처녀자리 은하단",
+    "subject": "은하단",
+    "type": "은하단",
+    "distance": "~5400만 광년"
+  },
+  "ngc-5846-group": {
+    "title": "NGC 5846",
+    "subject": "은하",
+    "type": "은하",
+    "distance": "~8500만 광년"
+  },
+  "centaurus-cluster": {
+    "title": "센타우루스자리 은하단",
+    "subject": "은하단",
+    "type": "은하단",
+    "distance": "~1.6억 광년"
+  },
+  "antlia-cluster": {
+    "title": "공기펌프자리 은하단",
+    "subject": "은하단",
+    "type": "은하단",
+    "distance": "~1.3억 광년"
+  },
+  "shapley-concentration": {
+    "title": "Shapley Supercluster core",
+    "subject": "은하단",
+    "type": "은하단",
+    "distance": "~6.5억 광년"
+  },
+  "coma-great-wall": {
+    "title": "머리털자리 은하단",
+    "subject": "은하단",
+    "type": "은하단",
+    "distance": "~3.3억 광년"
   }
 }

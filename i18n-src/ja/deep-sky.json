@@ -396,5 +396,758 @@
     "type": "光エコー",
     "distance": "約2万光年",
     "taken": "2004年"
+  },
+  "m2": {
+    "title": "M2 · NGC 7089",
+    "subject": "球状星団",
+    "type": "球状星団",
+    "distance": "~38,000 光年"
+  },
+  "m4": {
+    "title": "M4 · NGC 6121",
+    "subject": "球状星団",
+    "type": "球状星団",
+    "distance": "~6,030 光年"
+  },
+  "m3": {
+    "title": "M3 · NGC 5272",
+    "subject": "球状星団",
+    "type": "球状星団",
+    "distance": "~33,000 光年"
+  },
+  "m5": {
+    "title": "M5 · NGC 5904",
+    "subject": "球状星団",
+    "type": "球状星団",
+    "distance": "~24,000 光年"
+  },
+  "m6": {
+    "title": "M6 · Butterfly Cluster",
+    "subject": "星団",
+    "type": "星団",
+    "distance": "~1,470 光年"
+  },
+  "m9": {
+    "title": "M9 · NGC 6333",
+    "subject": "球状星団",
+    "type": "球状星団",
+    "distance": "~27,000 光年"
+  },
+  "m10": {
+    "title": "M10 · NGC 6254",
+    "subject": "球状星団",
+    "type": "球状星団",
+    "distance": "~17,000 光年"
+  },
+  "m7": {
+    "title": "M7 · Ptolemy's Cluster",
+    "subject": "星団",
+    "type": "星団",
+    "distance": "~900 光年"
+  },
+  "m11": {
+    "title": "M11 · Wild Duck Cluster",
+    "subject": "星団",
+    "type": "星団",
+    "distance": "~7,280 光年"
+  },
+  "m12": {
+    "title": "M12 · NGC 6218",
+    "subject": "球状星団",
+    "type": "球状星団",
+    "distance": "~17,000 光年"
+  },
+  "m14": {
+    "title": "M14 · NGC 6402",
+    "subject": "球状星団",
+    "type": "球状星団",
+    "distance": "~30,000 光年"
+  },
+  "m13": {
+    "title": "M13 · Hercules Globular Cluster",
+    "subject": "球状星団",
+    "type": "球状星団",
+    "distance": "~24,000 光年"
+  },
+  "m17": {
+    "title": "M17 · Omega Nebula",
+    "subject": "星雲",
+    "type": "星雲",
+    "distance": "~5,460 光年"
+  },
+  "m15": {
+    "title": "M15 · NGC 7078",
+    "subject": "球状星団",
+    "type": "球状星団",
+    "distance": "~35,000 光年"
+  },
+  "m19": {
+    "title": "M19 · NGC 6273",
+    "subject": "球状星団",
+    "type": "球状星団",
+    "distance": "~27,000 光年"
+  },
+  "m20": {
+    "title": "M20 · Trifid Nebula",
+    "subject": "星雲",
+    "type": "星雲",
+    "distance": "~3,960 光年"
+  },
+  "m21": {
+    "title": "M21 · NGC 6531",
+    "subject": "星団",
+    "type": "星団",
+    "distance": "~3,920 光年"
+  },
+  "m22": {
+    "title": "M22 · NGC 6656",
+    "subject": "球状星団",
+    "type": "球状星団",
+    "distance": "~11,000 光年"
+  },
+  "m23": {
+    "title": "M23 · NGC 6494",
+    "subject": "星団",
+    "type": "星団",
+    "distance": "~2,330 光年"
+  },
+  "m24": {
+    "title": "M24 · Small Sgr Star Cloud",
+    "subject": "ディープスカイ天体",
+    "type": "ディープスカイ天体"
+  },
+  "m26": {
+    "title": "M26 · NGC 6694",
+    "subject": "星団",
+    "type": "星団",
+    "distance": "~5,990 光年"
+  },
+  "m27": {
+    "title": "M27 · Dumbbell Nebula",
+    "subject": "惑星状星雲",
+    "type": "惑星状星雲",
+    "distance": "~1,270 光年"
+  },
+  "m28": {
+    "title": "M28 · NGC 6626",
+    "subject": "球状星団",
+    "type": "球状星団",
+    "distance": "~18,000 光年"
+  },
+  "m29": {
+    "title": "M29 · NGC 6913",
+    "subject": "星団",
+    "type": "星団",
+    "distance": "~5,570 光年"
+  },
+  "m32": {
+    "title": "M32 · NGC 221",
+    "subject": "銀河",
+    "type": "銀河",
+    "distance": "~260万 光年"
+  },
+  "m33": {
+    "title": "M33 · Triangulum Galaxy",
+    "subject": "銀河",
+    "type": "銀河",
+    "distance": "~260万 光年"
+  },
+  "m34": {
+    "title": "M34 · NGC 1039",
+    "subject": "星団",
+    "type": "星団",
+    "distance": "~1,600 光年"
+  },
+  "m30": {
+    "title": "M30 · NGC 7099",
+    "subject": "球状星団",
+    "type": "球状星団",
+    "distance": "~28,000 光年"
+  },
+  "m35": {
+    "title": "M35 · NGC 2168",
+    "subject": "星団",
+    "type": "星団",
+    "distance": "~2,740 光年"
+  },
+  "m37": {
+    "title": "M37 · NGC 2099",
+    "subject": "星団",
+    "type": "星団",
+    "distance": "~4,570 光年"
+  },
+  "m38": {
+    "title": "M38 · NGC 1912",
+    "subject": "星団",
+    "type": "星団",
+    "distance": "~3,540 光年"
+  },
+  "m39": {
+    "title": "M39 · NGC 7092",
+    "subject": "星団",
+    "type": "星団",
+    "distance": "~965 光年"
+  },
+  "m41": {
+    "title": "M41 · NGC 2287",
+    "subject": "星団",
+    "type": "星団",
+    "distance": "~2,330 光年"
+  },
+  "m43": {
+    "title": "M43 · Mairan's Nebula",
+    "subject": "星形成領域",
+    "type": "星形成領域"
+  },
+  "m44": {
+    "title": "M44 · Beehive",
+    "subject": "星団",
+    "type": "星団",
+    "distance": "~598 光年"
+  },
+  "m47": {
+    "title": "M47 · NGC 2422",
+    "subject": "星団",
+    "type": "星団",
+    "distance": "~1,530 光年"
+  },
+  "m46": {
+    "title": "M46 · NGC 2437",
+    "subject": "星団",
+    "type": "星団",
+    "distance": "~5,070 光年"
+  },
+  "m48": {
+    "title": "M48 · NGC 2548",
+    "subject": "星団",
+    "type": "星団",
+    "distance": "~2,440 光年"
+  },
+  "m49": {
+    "title": "M49 · NGC 4472",
+    "subject": "銀河",
+    "type": "銀河",
+    "distance": "~5500万 光年"
+  },
+  "m50": {
+    "title": "M50 · NGC 2323",
+    "subject": "星団",
+    "type": "星団",
+    "distance": "~3,120 光年"
+  },
+  "m52": {
+    "title": "M52 · NGC 7654",
+    "subject": "星団",
+    "type": "星団",
+    "distance": "~5,120 光年"
+  },
+  "m53": {
+    "title": "M53 · NGC 5024",
+    "subject": "球状星団",
+    "type": "球状星団",
+    "distance": "~60,000 光年"
+  },
+  "m55": {
+    "title": "M55 · NGC 6809",
+    "subject": "球状星団",
+    "type": "球状星団",
+    "distance": "~17,000 光年"
+  },
+  "m54": {
+    "title": "M54 · NGC 6715",
+    "subject": "球状星団",
+    "type": "球状星団",
+    "distance": "~86,000 光年"
+  },
+  "m58": {
+    "title": "M58 · NGC 4579",
+    "subject": "銀河",
+    "type": "銀河",
+    "distance": "~6400万 光年"
+  },
+  "m56": {
+    "title": "M56 · NGC 6779",
+    "subject": "球状星団",
+    "type": "球状星団",
+    "distance": "~34,000 光年"
+  },
+  "m59": {
+    "title": "M59 · NGC 4621",
+    "subject": "銀河",
+    "type": "銀河",
+    "distance": "~5000万 光年"
+  },
+  "m61": {
+    "title": "M61 · NGC 4303",
+    "subject": "銀河",
+    "type": "銀河",
+    "distance": "~5500万 光年"
+  },
+  "m63": {
+    "title": "M63 · Sunflower Galaxy",
+    "subject": "銀河",
+    "type": "銀河",
+    "distance": "~2900万 光年"
+  },
+  "m60": {
+    "title": "M60 · NGC 4649",
+    "subject": "銀河",
+    "type": "銀河",
+    "distance": "~5400万 光年"
+  },
+  "m64": {
+    "title": "M64 · Black Eye Galaxy",
+    "subject": "銀河",
+    "type": "銀河",
+    "distance": "~1400万 光年"
+  },
+  "m65": {
+    "title": "M65 · NGC 3623",
+    "subject": "銀河",
+    "type": "銀河",
+    "distance": "~4200万 光年"
+  },
+  "m66": {
+    "title": "M66 · NGC 3627",
+    "subject": "銀河",
+    "type": "銀河",
+    "distance": "~3400万 光年"
+  },
+  "m68": {
+    "title": "M68 · NGC 4590",
+    "subject": "球状星団",
+    "type": "球状星団",
+    "distance": "~34,000 光年"
+  },
+  "m69": {
+    "title": "M69 · NGC 6637",
+    "subject": "球状星団",
+    "type": "球状星団",
+    "distance": "~29,000 光年"
+  },
+  "m70": {
+    "title": "M70 · NGC 6681",
+    "subject": "球状星団",
+    "type": "球状星団",
+    "distance": "~31,000 光年"
+  },
+  "m71": {
+    "title": "M71 · NGC 6838",
+    "subject": "球状星団",
+    "type": "球状星団",
+    "distance": "~13,000 光年"
+  },
+  "m72": {
+    "title": "M72 · NGC 6981",
+    "subject": "球状星団",
+    "type": "球状星団",
+    "distance": "~54,000 光年"
+  },
+  "m75": {
+    "title": "M75 · NGC 6864",
+    "subject": "球状星団",
+    "type": "球状星団",
+    "distance": "~67,000 光年"
+  },
+  "m73": {
+    "title": "M73 · NGC 6994",
+    "subject": "ディープスカイ天体",
+    "type": "ディープスカイ天体",
+    "distance": "~2,240 光年"
+  },
+  "m77": {
+    "title": "M77 · NGC 1068",
+    "subject": "銀河",
+    "type": "銀河",
+    "distance": "~5000万 光年"
+  },
+  "m78": {
+    "title": "M78 · NGC 2068",
+    "subject": "星雲",
+    "type": "星雲",
+    "distance": "~1,320 光年"
+  },
+  "m79": {
+    "title": "M79 · NGC 1904",
+    "subject": "球状星団",
+    "type": "球状星団",
+    "distance": "~43,000 光年"
+  },
+  "m76": {
+    "title": "M76 · Little Dumbbell Nebula",
+    "subject": "惑星状星雲",
+    "type": "惑星状星雲",
+    "distance": "~4,680 光年"
+  },
+  "m80": {
+    "title": "M80 · NGC 6093",
+    "subject": "球状星団",
+    "type": "球状星団",
+    "distance": "~34,000 光年"
+  },
+  "m81": {
+    "title": "M81 · Bode's Galaxy",
+    "subject": "銀河",
+    "type": "銀河",
+    "distance": "~1200万 光年"
+  },
+  "m82": {
+    "title": "M82 · Cigar Galaxy",
+    "subject": "銀河",
+    "type": "銀河",
+    "distance": "~1200万 光年"
+  },
+  "m83": {
+    "title": "M83 · Southern Pinwheel Galaxy",
+    "subject": "銀河",
+    "type": "銀河",
+    "distance": "~1600万 光年"
+  },
+  "m85": {
+    "title": "M85 · NGC 4382",
+    "subject": "銀河",
+    "type": "銀河",
+    "distance": "~5800万 光年"
+  },
+  "m84": {
+    "title": "M84 · NGC 4374",
+    "subject": "銀河",
+    "type": "銀河",
+    "distance": "~5800万 光年"
+  },
+  "m86": {
+    "title": "M86 · NGC 4406",
+    "subject": "銀河",
+    "type": "銀河",
+    "distance": "~5500万 光年"
+  },
+  "m87": {
+    "title": "M87 · Virgo A",
+    "subject": "銀河",
+    "type": "銀河",
+    "distance": "~5500万 光年"
+  },
+  "m88": {
+    "title": "M88 · NGC 4501",
+    "subject": "銀河",
+    "type": "銀河",
+    "distance": "~6300万 光年"
+  },
+  "m89": {
+    "title": "M89 · NGC 4552",
+    "subject": "銀河",
+    "type": "銀河",
+    "distance": "~5300万 光年"
+  },
+  "m90": {
+    "title": "M90 · NGC 4569",
+    "subject": "銀河",
+    "type": "銀河",
+    "distance": "~5400万 光年"
+  },
+  "m91": {
+    "title": "M91 · NGC 4548",
+    "subject": "銀河",
+    "type": "銀河",
+    "distance": "~5300万 光年"
+  },
+  "m92": {
+    "title": "M92 · NGC 6341",
+    "subject": "球状星団",
+    "type": "球状星団",
+    "distance": "~28,000 光年"
+  },
+  "m93": {
+    "title": "M93 · NGC 2447",
+    "subject": "星団",
+    "type": "星団",
+    "distance": "~3,170 光年"
+  },
+  "m94": {
+    "title": "M94 · NGC 4736",
+    "subject": "銀河",
+    "type": "銀河",
+    "distance": "~1400万 光年"
+  },
+  "m95": {
+    "title": "M95 · NGC 3351",
+    "subject": "銀河",
+    "type": "銀河",
+    "distance": "~3200万 光年"
+  },
+  "m96": {
+    "title": "M96 · NGC 3368",
+    "subject": "銀河",
+    "type": "銀河",
+    "distance": "~3400万 光年"
+  },
+  "m98": {
+    "title": "M98 · NGC 4192",
+    "subject": "銀河",
+    "type": "銀河",
+    "distance": "~5500万 光年"
+  },
+  "m97": {
+    "title": "M97 · Owl Nebula",
+    "subject": "惑星状星雲",
+    "type": "惑星状星雲",
+    "distance": "~2,640 光年"
+  },
+  "m100": {
+    "title": "M100 · NGC 4321",
+    "subject": "銀河",
+    "type": "銀河",
+    "distance": "~5000万 光年"
+  },
+  "m99": {
+    "title": "M99 · Coma Pinwheel",
+    "subject": "銀河",
+    "type": "銀河",
+    "distance": "~5400万 光年"
+  },
+  "m103": {
+    "title": "M103 · NGC 581",
+    "subject": "星団",
+    "type": "星団",
+    "distance": "~8,240 光年"
+  },
+  "m106": {
+    "title": "M106 · NGC 4258",
+    "subject": "銀河",
+    "type": "銀河",
+    "distance": "~2500万 光年"
+  },
+  "m107": {
+    "title": "M107 · NGC 6171",
+    "subject": "球状星団",
+    "type": "球状星団",
+    "distance": "~18,000 光年"
+  },
+  "m108": {
+    "title": "M108 · NGC 3556",
+    "subject": "銀河",
+    "type": "銀河",
+    "distance": "~3000万 光年"
+  },
+  "m109": {
+    "title": "M109 · NGC 3992",
+    "subject": "銀河",
+    "type": "銀河",
+    "distance": "~8200万 光年"
+  },
+  "m110": {
+    "title": "M110 · NGC 205",
+    "subject": "銀河",
+    "type": "銀河",
+    "distance": "~270万 光年"
+  },
+  "ngc-104": {
+    "title": "NGC 104 · 47 Tucanae",
+    "subject": "球状星団",
+    "type": "球状星団",
+    "distance": "~15,000 光年"
+  },
+  "ngc-6752": {
+    "title": "NGC 6752",
+    "subject": "球状星団",
+    "type": "球状星団",
+    "distance": "~13,000 光年"
+  },
+  "m105": {
+    "title": "M105 · NGC 3379",
+    "subject": "銀河",
+    "type": "銀河",
+    "distance": "~3600万 光年"
+  },
+  "cygnus-x-1": {
+    "title": "はくちょう座X-1",
+    "subject": "恒星質量ブラックホール",
+    "type": "恒星質量ブラックホール",
+    "distance": "~7,240 光年"
+  },
+  "milky-way": {
+    "title": "Galactic Center",
+    "subject": "銀河",
+    "type": "銀河"
+  },
+  "sculptor-dwarf": {
+    "title": "Sculptor Dwarf Galaxy",
+    "subject": "銀河",
+    "type": "矮小楕円体銀河",
+    "distance": "~280,000 光年"
+  },
+  "leo-i": {
+    "title": "しし座I",
+    "subject": "銀河",
+    "type": "矮小楕円体銀河",
+    "distance": "~830,000 光年"
+  },
+  "ngc-185": {
+    "title": "NGC 185",
+    "subject": "銀河",
+    "type": "矮小楕円銀河",
+    "distance": "~200万 光年"
+  },
+  "ngc-147": {
+    "title": "NGC 147",
+    "subject": "銀河",
+    "type": "矮小楕円銀河",
+    "distance": "~220万 光年"
+  },
+  "andromeda-i": {
+    "title": "アンドロメダ座I",
+    "subject": "銀河",
+    "type": "矮小楕円体銀河",
+    "distance": "~240万 光年"
+  },
+  "andromeda-ii": {
+    "title": "アンドロメダ座II",
+    "subject": "銀河",
+    "type": "矮小楕円体銀河",
+    "distance": "~210万 光年"
+  },
+  "andromeda-iii": {
+    "title": "アンドロメダ座III",
+    "subject": "銀河",
+    "type": "矮小楕円体銀河",
+    "distance": "~240万 光年"
+  },
+  "pegasus-dsph": {
+    "title": "Andromeda VI (Pegasus Dwarf Spheroidal)",
+    "subject": "銀河",
+    "type": "矮小楕円体銀河",
+    "distance": "~260万 光年"
+  },
+  "ic-1613": {
+    "title": "IC 1613",
+    "subject": "銀河",
+    "type": "矮小不規則銀河",
+    "distance": "~250万 光年"
+  },
+  "ngc-6822": {
+    "title": "Barnard's Galaxy (NGC 6822)",
+    "subject": "銀河",
+    "type": "矮小不規則銀河",
+    "distance": "~150万 光年"
+  },
+  "ic-10": {
+    "title": "IC 10",
+    "subject": "銀河",
+    "type": "矮小不規則銀河",
+    "distance": "~260万 光年"
+  },
+  "wlm": {
+    "title": "WLM",
+    "subject": "銀河",
+    "type": "矮小不規則銀河",
+    "distance": "~300万 光年"
+  },
+  "leo-a": {
+    "title": "しし座A",
+    "subject": "銀河",
+    "type": "矮小不規則銀河",
+    "distance": "~260万 光年"
+  },
+  "phoenix-dwarf": {
+    "title": "ほうおう座矮小銀河",
+    "subject": "銀河",
+    "type": "矮小不規則銀河",
+    "distance": "~140万 光年"
+  },
+  "aquarius-dwarf": {
+    "title": "みずがめ座矮小銀河",
+    "subject": "銀河",
+    "type": "矮小不規則銀河",
+    "distance": "~350万 光年"
+  },
+  "sagittarius-dirr": {
+    "title": "Sagittarius Dwarf Irregular Galaxy",
+    "subject": "銀河",
+    "type": "矮小不規則銀河",
+    "distance": "~350万 光年"
+  },
+  "pegasus-dirr": {
+    "title": "Pegasus Dwarf Irregular Galaxy",
+    "subject": "銀河",
+    "type": "矮小不規則銀河",
+    "distance": "~300万 光年"
+  },
+  "m81-group": {
+    "title": "M81 and M82",
+    "subject": "銀河",
+    "type": "銀河",
+    "distance": "~1200万 光年"
+  },
+  "centaurus-a-group": {
+    "title": "ケンタウルス座A",
+    "subject": "銀河",
+    "type": "銀河",
+    "distance": "~1200万 光年"
+  },
+  "sculptor-group": {
+    "title": "NGC 253",
+    "subject": "銀河",
+    "type": "銀河",
+    "distance": "~1200万 光年"
+  },
+  "canes-venatici-i": {
+    "title": "NGC 4214",
+    "subject": "銀河",
+    "type": "銀河",
+    "distance": "~1300万 光年"
+  },
+  "maffei-group": {
+    "title": "Maffei 2",
+    "subject": "銀河",
+    "type": "銀河",
+    "distance": "~1900万 光年"
+  },
+  "ngc-6946-group": {
+    "title": "NGC 6946",
+    "subject": "銀河",
+    "type": "銀河",
+    "distance": "~2500万 光年"
+  },
+  "leo-i-cloud": {
+    "title": "M96",
+    "subject": "銀河",
+    "type": "銀河",
+    "distance": "~3500万 光年"
+  },
+  "virgo-cluster": {
+    "title": "おとめ座銀河団",
+    "subject": "銀河団",
+    "type": "銀河団",
+    "distance": "~5400万 光年"
+  },
+  "ngc-5846-group": {
+    "title": "NGC 5846",
+    "subject": "銀河",
+    "type": "銀河",
+    "distance": "~8500万 光年"
+  },
+  "centaurus-cluster": {
+    "title": "ケンタウルス座銀河団",
+    "subject": "銀河団",
+    "type": "銀河団",
+    "distance": "~1.6億 光年"
+  },
+  "antlia-cluster": {
+    "title": "ポンプ座銀河団",
+    "subject": "銀河団",
+    "type": "銀河団",
+    "distance": "~1.3億 光年"
+  },
+  "shapley-concentration": {
+    "title": "Shapley Supercluster core",
+    "subject": "銀河団",
+    "type": "銀河団",
+    "distance": "~6.5億 光年"
+  },
+  "coma-great-wall": {
+    "title": "かみのけ座銀河団",
+    "subject": "銀河団",
+    "type": "銀河団",
+    "distance": "~3.3億 光年"
   }
 }

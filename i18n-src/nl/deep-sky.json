@@ -396,5 +396,758 @@
     "type": "Lichtecho",
     "distance": "~20.000 lichtjaar",
     "taken": "2004"
+  },
+  "m2": {
+    "title": "M2 · NGC 7089",
+    "subject": "Bolhoop",
+    "type": "Bolhoop",
+    "distance": "~38.000 lichtjaar"
+  },
+  "m4": {
+    "title": "M4 · NGC 6121",
+    "subject": "Bolhoop",
+    "type": "Bolhoop",
+    "distance": "~6.030 lichtjaar"
+  },
+  "m3": {
+    "title": "M3 · NGC 5272",
+    "subject": "Bolhoop",
+    "type": "Bolhoop",
+    "distance": "~33.000 lichtjaar"
+  },
+  "m5": {
+    "title": "M5 · NGC 5904",
+    "subject": "Bolhoop",
+    "type": "Bolhoop",
+    "distance": "~24.000 lichtjaar"
+  },
+  "m6": {
+    "title": "M6 · Butterfly Cluster",
+    "subject": "Sterrencluster",
+    "type": "Sterrencluster",
+    "distance": "~1.470 lichtjaar"
+  },
+  "m9": {
+    "title": "M9 · NGC 6333",
+    "subject": "Bolhoop",
+    "type": "Bolhoop",
+    "distance": "~27.000 lichtjaar"
+  },
+  "m10": {
+    "title": "M10 · NGC 6254",
+    "subject": "Bolhoop",
+    "type": "Bolhoop",
+    "distance": "~17.000 lichtjaar"
+  },
+  "m7": {
+    "title": "M7 · Ptolemy's Cluster",
+    "subject": "Sterrencluster",
+    "type": "Sterrencluster",
+    "distance": "~900 lichtjaar"
+  },
+  "m11": {
+    "title": "M11 · Wild Duck Cluster",
+    "subject": "Sterrencluster",
+    "type": "Sterrencluster",
+    "distance": "~7.280 lichtjaar"
+  },
+  "m12": {
+    "title": "M12 · NGC 6218",
+    "subject": "Bolhoop",
+    "type": "Bolhoop",
+    "distance": "~17.000 lichtjaar"
+  },
+  "m14": {
+    "title": "M14 · NGC 6402",
+    "subject": "Bolhoop",
+    "type": "Bolhoop",
+    "distance": "~30.000 lichtjaar"
+  },
+  "m13": {
+    "title": "M13 · Hercules Globular Cluster",
+    "subject": "Bolhoop",
+    "type": "Bolhoop",
+    "distance": "~24.000 lichtjaar"
+  },
+  "m17": {
+    "title": "M17 · Omega Nebula",
+    "subject": "Nevel",
+    "type": "Nevel",
+    "distance": "~5.460 lichtjaar"
+  },
+  "m15": {
+    "title": "M15 · NGC 7078",
+    "subject": "Bolhoop",
+    "type": "Bolhoop",
+    "distance": "~35.000 lichtjaar"
+  },
+  "m19": {
+    "title": "M19 · NGC 6273",
+    "subject": "Bolhoop",
+    "type": "Bolhoop",
+    "distance": "~27.000 lichtjaar"
+  },
+  "m20": {
+    "title": "M20 · Trifid Nebula",
+    "subject": "Nevel",
+    "type": "Nevel",
+    "distance": "~3.960 lichtjaar"
+  },
+  "m21": {
+    "title": "M21 · NGC 6531",
+    "subject": "Sterrencluster",
+    "type": "Sterrencluster",
+    "distance": "~3.920 lichtjaar"
+  },
+  "m22": {
+    "title": "M22 · NGC 6656",
+    "subject": "Bolhoop",
+    "type": "Bolhoop",
+    "distance": "~11.000 lichtjaar"
+  },
+  "m23": {
+    "title": "M23 · NGC 6494",
+    "subject": "Sterrencluster",
+    "type": "Sterrencluster",
+    "distance": "~2.330 lichtjaar"
+  },
+  "m24": {
+    "title": "M24 · Small Sgr Star Cloud",
+    "subject": "Deep-sky object",
+    "type": "Deep-sky object"
+  },
+  "m26": {
+    "title": "M26 · NGC 6694",
+    "subject": "Sterrencluster",
+    "type": "Sterrencluster",
+    "distance": "~5.990 lichtjaar"
+  },
+  "m27": {
+    "title": "M27 · Dumbbell Nebula",
+    "subject": "Planetaire nevel",
+    "type": "Planetaire nevel",
+    "distance": "~1.270 lichtjaar"
+  },
+  "m28": {
+    "title": "M28 · NGC 6626",
+    "subject": "Bolhoop",
+    "type": "Bolhoop",
+    "distance": "~18.000 lichtjaar"
+  },
+  "m29": {
+    "title": "M29 · NGC 6913",
+    "subject": "Sterrencluster",
+    "type": "Sterrencluster",
+    "distance": "~5.570 lichtjaar"
+  },
+  "m32": {
+    "title": "M32 · NGC 221",
+    "subject": "Sterrenstelsel",
+    "type": "Sterrenstelsel",
+    "distance": "~2,6 miljoen lichtjaar"
+  },
+  "m33": {
+    "title": "M33 · Triangulum Galaxy",
+    "subject": "Sterrenstelsel",
+    "type": "Sterrenstelsel",
+    "distance": "~2,6 miljoen lichtjaar"
+  },
+  "m34": {
+    "title": "M34 · NGC 1039",
+    "subject": "Sterrencluster",
+    "type": "Sterrencluster",
+    "distance": "~1.600 lichtjaar"
+  },
+  "m30": {
+    "title": "M30 · NGC 7099",
+    "subject": "Bolhoop",
+    "type": "Bolhoop",
+    "distance": "~28.000 lichtjaar"
+  },
+  "m35": {
+    "title": "M35 · NGC 2168",
+    "subject": "Sterrencluster",
+    "type": "Sterrencluster",
+    "distance": "~2.740 lichtjaar"
+  },
+  "m37": {
+    "title": "M37 · NGC 2099",
+    "subject": "Sterrencluster",
+    "type": "Sterrencluster",
+    "distance": "~4.570 lichtjaar"
+  },
+  "m38": {
+    "title": "M38 · NGC 1912",
+    "subject": "Sterrencluster",
+    "type": "Sterrencluster",
+    "distance": "~3.540 lichtjaar"
+  },
+  "m39": {
+    "title": "M39 · NGC 7092",
+    "subject": "Sterrencluster",
+    "type": "Sterrencluster",
+    "distance": "~965 lichtjaar"
+  },
+  "m41": {
+    "title": "M41 · NGC 2287",
+    "subject": "Sterrencluster",
+    "type": "Sterrencluster",
+    "distance": "~2.330 lichtjaar"
+  },
+  "m43": {
+    "title": "M43 · Mairan's Nebula",
+    "subject": "Stervormingsgebied",
+    "type": "Stervormingsgebied"
+  },
+  "m44": {
+    "title": "M44 · Beehive",
+    "subject": "Sterrencluster",
+    "type": "Sterrencluster",
+    "distance": "~598 lichtjaar"
+  },
+  "m47": {
+    "title": "M47 · NGC 2422",
+    "subject": "Sterrencluster",
+    "type": "Sterrencluster",
+    "distance": "~1.530 lichtjaar"
+  },
+  "m46": {
+    "title": "M46 · NGC 2437",
+    "subject": "Sterrencluster",
+    "type": "Sterrencluster",
+    "distance": "~5.070 lichtjaar"
+  },
+  "m48": {
+    "title": "M48 · NGC 2548",
+    "subject": "Sterrencluster",
+    "type": "Sterrencluster",
+    "distance": "~2.440 lichtjaar"
+  },
+  "m49": {
+    "title": "M49 · NGC 4472",
+    "subject": "Sterrenstelsel",
+    "type": "Sterrenstelsel",
+    "distance": "~55 miljoen lichtjaar"
+  },
+  "m50": {
+    "title": "M50 · NGC 2323",
+    "subject": "Sterrencluster",
+    "type": "Sterrencluster",
+    "distance": "~3.120 lichtjaar"
+  },
+  "m52": {
+    "title": "M52 · NGC 7654",
+    "subject": "Sterrencluster",
+    "type": "Sterrencluster",
+    "distance": "~5.120 lichtjaar"
+  },
+  "m53": {
+    "title": "M53 · NGC 5024",
+    "subject": "Bolhoop",
+    "type": "Bolhoop",
+    "distance": "~60.000 lichtjaar"
+  },
+  "m55": {
+    "title": "M55 · NGC 6809",
+    "subject": "Bolhoop",
+    "type": "Bolhoop",
+    "distance": "~17.000 lichtjaar"
+  },
+  "m54": {
+    "title": "M54 · NGC 6715",
+    "subject": "Bolhoop",
+    "type": "Bolhoop",
+    "distance": "~86.000 lichtjaar"
+  },
+  "m58": {
+    "title": "M58 · NGC 4579",
+    "subject": "Sterrenstelsel",
+    "type": "Sterrenstelsel",
+    "distance": "~64 miljoen lichtjaar"
+  },
+  "m56": {
+    "title": "M56 · NGC 6779",
+    "subject": "Bolhoop",
+    "type": "Bolhoop",
+    "distance": "~34.000 lichtjaar"
+  },
+  "m59": {
+    "title": "M59 · NGC 4621",
+    "subject": "Sterrenstelsel",
+    "type": "Sterrenstelsel",
+    "distance": "~50 miljoen lichtjaar"
+  },
+  "m61": {
+    "title": "M61 · NGC 4303",
+    "subject": "Sterrenstelsel",
+    "type": "Sterrenstelsel",
+    "distance": "~55 miljoen lichtjaar"
+  },
+  "m63": {
+    "title": "M63 · Sunflower Galaxy",
+    "subject": "Sterrenstelsel",
+    "type": "Sterrenstelsel",
+    "distance": "~29 miljoen lichtjaar"
+  },
+  "m60": {
+    "title": "M60 · NGC 4649",
+    "subject": "Sterrenstelsel",
+    "type": "Sterrenstelsel",
+    "distance": "~54 miljoen lichtjaar"
+  },
+  "m64": {
+    "title": "M64 · Black Eye Galaxy",
+    "subject": "Sterrenstelsel",
+    "type": "Sterrenstelsel",
+    "distance": "~14 miljoen lichtjaar"
+  },
+  "m65": {
+    "title": "M65 · NGC 3623",
+    "subject": "Sterrenstelsel",
+    "type": "Sterrenstelsel",
+    "distance": "~42 miljoen lichtjaar"
+  },
+  "m66": {
+    "title": "M66 · NGC 3627",
+    "subject": "Sterrenstelsel",
+    "type": "Sterrenstelsel",
+    "distance": "~34 miljoen lichtjaar"
+  },
+  "m68": {
+    "title": "M68 · NGC 4590",
+    "subject": "Bolhoop",
+    "type": "Bolhoop",
+    "distance": "~34.000 lichtjaar"
+  },
+  "m69": {
+    "title": "M69 · NGC 6637",
+    "subject": "Bolhoop",
+    "type": "Bolhoop",
+    "distance": "~29.000 lichtjaar"
+  },
+  "m70": {
+    "title": "M70 · NGC 6681",
+    "subject": "Bolhoop",
+    "type": "Bolhoop",
+    "distance": "~31.000 lichtjaar"
+  },
+  "m71": {
+    "title": "M71 · NGC 6838",
+    "subject": "Bolhoop",
+    "type": "Bolhoop",
+    "distance": "~13.000 lichtjaar"
+  },
+  "m72": {
+    "title": "M72 · NGC 6981",
+    "subject": "Bolhoop",
+    "type": "Bolhoop",
+    "distance": "~54.000 lichtjaar"
+  },
+  "m75": {
+    "title": "M75 · NGC 6864",
+    "subject": "Bolhoop",
+    "type": "Bolhoop",
+    "distance": "~67.000 lichtjaar"
+  },
+  "m73": {
+    "title": "M73 · NGC 6994",
+    "subject": "Deep-sky object",
+    "type": "Deep-sky object",
+    "distance": "~2.240 lichtjaar"
+  },
+  "m77": {
+    "title": "M77 · NGC 1068",
+    "subject": "Sterrenstelsel",
+    "type": "Sterrenstelsel",
+    "distance": "~50 miljoen lichtjaar"
+  },
+  "m78": {
+    "title": "M78 · NGC 2068",
+    "subject": "Nevel",
+    "type": "Nevel",
+    "distance": "~1.320 lichtjaar"
+  },
+  "m79": {
+    "title": "M79 · NGC 1904",
+    "subject": "Bolhoop",
+    "type": "Bolhoop",
+    "distance": "~43.000 lichtjaar"
+  },
+  "m76": {
+    "title": "M76 · Little Dumbbell Nebula",
+    "subject": "Planetaire nevel",
+    "type": "Planetaire nevel",
+    "distance": "~4.680 lichtjaar"
+  },
+  "m80": {
+    "title": "M80 · NGC 6093",
+    "subject": "Bolhoop",
+    "type": "Bolhoop",
+    "distance": "~34.000 lichtjaar"
+  },
+  "m81": {
+    "title": "M81 · Bode's Galaxy",
+    "subject": "Sterrenstelsel",
+    "type": "Sterrenstelsel",
+    "distance": "~12 miljoen lichtjaar"
+  },
+  "m82": {
+    "title": "M82 · Cigar Galaxy",
+    "subject": "Sterrenstelsel",
+    "type": "Sterrenstelsel",
+    "distance": "~12 miljoen lichtjaar"
+  },
+  "m83": {
+    "title": "M83 · Southern Pinwheel Galaxy",
+    "subject": "Sterrenstelsel",
+    "type": "Sterrenstelsel",
+    "distance": "~16 miljoen lichtjaar"
+  },
+  "m85": {
+    "title": "M85 · NGC 4382",
+    "subject": "Sterrenstelsel",
+    "type": "Sterrenstelsel",
+    "distance": "~58 miljoen lichtjaar"
+  },
+  "m84": {
+    "title": "M84 · NGC 4374",
+    "subject": "Sterrenstelsel",
+    "type": "Sterrenstelsel",
+    "distance": "~58 miljoen lichtjaar"
+  },
+  "m86": {
+    "title": "M86 · NGC 4406",
+    "subject": "Sterrenstelsel",
+    "type": "Sterrenstelsel",
+    "distance": "~55 miljoen lichtjaar"
+  },
+  "m87": {
+    "title": "M87 · Virgo A",
+    "subject": "Sterrenstelsel",
+    "type": "Sterrenstelsel",
+    "distance": "~55 miljoen lichtjaar"
+  },
+  "m88": {
+    "title": "M88 · NGC 4501",
+    "subject": "Sterrenstelsel",
+    "type": "Sterrenstelsel",
+    "distance": "~63 miljoen lichtjaar"
+  },
+  "m89": {
+    "title": "M89 · NGC 4552",
+    "subject": "Sterrenstelsel",
+    "type": "Sterrenstelsel",
+    "distance": "~53 miljoen lichtjaar"
+  },
+  "m90": {
+    "title": "M90 · NGC 4569",
+    "subject": "Sterrenstelsel",
+    "type": "Sterrenstelsel",
+    "distance": "~54 miljoen lichtjaar"
+  },
+  "m91": {
+    "title": "M91 · NGC 4548",
+    "subject": "Sterrenstelsel",
+    "type": "Sterrenstelsel",
+    "distance": "~53 miljoen lichtjaar"
+  },
+  "m92": {
+    "title": "M92 · NGC 6341",
+    "subject": "Bolhoop",
+    "type": "Bolhoop",
+    "distance": "~28.000 lichtjaar"
+  },
+  "m93": {
+    "title": "M93 · NGC 2447",
+    "subject": "Sterrencluster",
+    "type": "Sterrencluster",
+    "distance": "~3.170 lichtjaar"
+  },
+  "m94": {
+    "title": "M94 · NGC 4736",
+    "subject": "Sterrenstelsel",
+    "type": "Sterrenstelsel",
+    "distance": "~14 miljoen lichtjaar"
+  },
+  "m95": {
+    "title": "M95 · NGC 3351",
+    "subject": "Sterrenstelsel",
+    "type": "Sterrenstelsel",
+    "distance": "~32 miljoen lichtjaar"
+  },
+  "m96": {
+    "title": "M96 · NGC 3368",
+    "subject": "Sterrenstelsel",
+    "type": "Sterrenstelsel",
+    "distance": "~34 miljoen lichtjaar"
+  },
+  "m98": {
+    "title": "M98 · NGC 4192",
+    "subject": "Sterrenstelsel",
+    "type": "Sterrenstelsel",
+    "distance": "~55 miljoen lichtjaar"
+  },
+  "m97": {
+    "title": "M97 · Owl Nebula",
+    "subject": "Planetaire nevel",
+    "type": "Planetaire nevel",
+    "distance": "~2.640 lichtjaar"
+  },
+  "m100": {
+    "title": "M100 · NGC 4321",
+    "subject": "Sterrenstelsel",
+    "type": "Sterrenstelsel",
+    "distance": "~50 miljoen lichtjaar"
+  },
+  "m99": {
+    "title": "M99 · Coma Pinwheel",
+    "subject": "Sterrenstelsel",
+    "type": "Sterrenstelsel",
+    "distance": "~54 miljoen lichtjaar"
+  },
+  "m103": {
+    "title": "M103 · NGC 581",
+    "subject": "Sterrencluster",
+    "type": "Sterrencluster",
+    "distance": "~8.240 lichtjaar"
+  },
+  "m106": {
+    "title": "M106 · NGC 4258",
+    "subject": "Sterrenstelsel",
+    "type": "Sterrenstelsel",
+    "distance": "~25 miljoen lichtjaar"
+  },
+  "m107": {
+    "title": "M107 · NGC 6171",
+    "subject": "Bolhoop",
+    "type": "Bolhoop",
+    "distance": "~18.000 lichtjaar"
+  },
+  "m108": {
+    "title": "M108 · NGC 3556",
+    "subject": "Sterrenstelsel",
+    "type": "Sterrenstelsel",
+    "distance": "~30 miljoen lichtjaar"
+  },
+  "m109": {
+    "title": "M109 · NGC 3992",
+    "subject": "Sterrenstelsel",
+    "type": "Sterrenstelsel",
+    "distance": "~82 miljoen lichtjaar"
+  },
+  "m110": {
+    "title": "M110 · NGC 205",
+    "subject": "Sterrenstelsel",
+    "type": "Sterrenstelsel",
+    "distance": "~2,7 miljoen lichtjaar"
+  },
+  "ngc-104": {
+    "title": "NGC 104 · 47 Tucanae",
+    "subject": "Bolhoop",
+    "type": "Bolhoop",
+    "distance": "~15.000 lichtjaar"
+  },
+  "ngc-6752": {
+    "title": "NGC 6752",
+    "subject": "Bolhoop",
+    "type": "Bolhoop",
+    "distance": "~13.000 lichtjaar"
+  },
+  "m105": {
+    "title": "M105 · NGC 3379",
+    "subject": "Sterrenstelsel",
+    "type": "Sterrenstelsel",
+    "distance": "~36 miljoen lichtjaar"
+  },
+  "cygnus-x-1": {
+    "title": "Cygnus X-1",
+    "subject": "Stellair zwart gat",
+    "type": "Stellair zwart gat",
+    "distance": "~7.240 lichtjaar"
+  },
+  "milky-way": {
+    "title": "Galactic Center",
+    "subject": "Sterrenstelsel",
+    "type": "Sterrenstelsel"
+  },
+  "sculptor-dwarf": {
+    "title": "Sculptor Dwarf Galaxy",
+    "subject": "Sterrenstelsel",
+    "type": "Dwergstelsel (sferoidaal)",
+    "distance": "~280.000 lichtjaar"
+  },
+  "leo-i": {
+    "title": "Leo I",
+    "subject": "Sterrenstelsel",
+    "type": "Dwergstelsel (sferoidaal)",
+    "distance": "~830.000 lichtjaar"
+  },
+  "ngc-185": {
+    "title": "NGC 185",
+    "subject": "Sterrenstelsel",
+    "type": "Dwergstelsel (elliptisch)",
+    "distance": "~2 miljoen lichtjaar"
+  },
+  "ngc-147": {
+    "title": "NGC 147",
+    "subject": "Sterrenstelsel",
+    "type": "Dwergstelsel (elliptisch)",
+    "distance": "~2,2 miljoen lichtjaar"
+  },
+  "andromeda-i": {
+    "title": "Andromeda I",
+    "subject": "Sterrenstelsel",
+    "type": "Dwergstelsel (sferoidaal)",
+    "distance": "~2,4 miljoen lichtjaar"
+  },
+  "andromeda-ii": {
+    "title": "Andromeda II",
+    "subject": "Sterrenstelsel",
+    "type": "Dwergstelsel (sferoidaal)",
+    "distance": "~2,1 miljoen lichtjaar"
+  },
+  "andromeda-iii": {
+    "title": "Andromeda III",
+    "subject": "Sterrenstelsel",
+    "type": "Dwergstelsel (sferoidaal)",
+    "distance": "~2,4 miljoen lichtjaar"
+  },
+  "pegasus-dsph": {
+    "title": "Andromeda VI (Pegasus Dwarf Spheroidal)",
+    "subject": "Sterrenstelsel",
+    "type": "Dwergstelsel (sferoidaal)",
+    "distance": "~2,6 miljoen lichtjaar"
+  },
+  "ic-1613": {
+    "title": "IC 1613",
+    "subject": "Sterrenstelsel",
+    "type": "Dwergstelsel (onregelmatig)",
+    "distance": "~2,5 miljoen lichtjaar"
+  },
+  "ngc-6822": {
+    "title": "Barnard's Galaxy (NGC 6822)",
+    "subject": "Sterrenstelsel",
+    "type": "Dwergstelsel (onregelmatig)",
+    "distance": "~1,5 miljoen lichtjaar"
+  },
+  "ic-10": {
+    "title": "IC 10",
+    "subject": "Sterrenstelsel",
+    "type": "Dwergstelsel (onregelmatig)",
+    "distance": "~2,6 miljoen lichtjaar"
+  },
+  "wlm": {
+    "title": "WLM",
+    "subject": "Sterrenstelsel",
+    "type": "Dwergstelsel (onregelmatig)",
+    "distance": "~3 miljoen lichtjaar"
+  },
+  "leo-a": {
+    "title": "Leo A",
+    "subject": "Sterrenstelsel",
+    "type": "Dwergstelsel (onregelmatig)",
+    "distance": "~2,6 miljoen lichtjaar"
+  },
+  "phoenix-dwarf": {
+    "title": "Phoenix-dwergstelsel",
+    "subject": "Sterrenstelsel",
+    "type": "Dwergstelsel (onregelmatig)",
+    "distance": "~1,4 miljoen lichtjaar"
+  },
+  "aquarius-dwarf": {
+    "title": "Aquarius-dwergstelsel",
+    "subject": "Sterrenstelsel",
+    "type": "Dwergstelsel (onregelmatig)",
+    "distance": "~3,5 miljoen lichtjaar"
+  },
+  "sagittarius-dirr": {
+    "title": "Sagittarius Dwarf Irregular Galaxy",
+    "subject": "Sterrenstelsel",
+    "type": "Dwergstelsel (onregelmatig)",
+    "distance": "~3,5 miljoen lichtjaar"
+  },
+  "pegasus-dirr": {
+    "title": "Pegasus Dwarf Irregular Galaxy",
+    "subject": "Sterrenstelsel",
+    "type": "Dwergstelsel (onregelmatig)",
+    "distance": "~3 miljoen lichtjaar"
+  },
+  "m81-group": {
+    "title": "M81 and M82",
+    "subject": "Sterrenstelsel",
+    "type": "Sterrenstelsel",
+    "distance": "~12 miljoen lichtjaar"
+  },
+  "centaurus-a-group": {
+    "title": "Centaurus A",
+    "subject": "Sterrenstelsel",
+    "type": "Sterrenstelsel",
+    "distance": "~12 miljoen lichtjaar"
+  },
+  "sculptor-group": {
+    "title": "NGC 253",
+    "subject": "Sterrenstelsel",
+    "type": "Sterrenstelsel",
+    "distance": "~12 miljoen lichtjaar"
+  },
+  "canes-venatici-i": {
+    "title": "NGC 4214",
+    "subject": "Sterrenstelsel",
+    "type": "Sterrenstelsel",
+    "distance": "~13 miljoen lichtjaar"
+  },
+  "maffei-group": {
+    "title": "Maffei 2",
+    "subject": "Sterrenstelsel",
+    "type": "Sterrenstelsel",
+    "distance": "~19 miljoen lichtjaar"
+  },
+  "ngc-6946-group": {
+    "title": "NGC 6946",
+    "subject": "Sterrenstelsel",
+    "type": "Sterrenstelsel",
+    "distance": "~25 miljoen lichtjaar"
+  },
+  "leo-i-cloud": {
+    "title": "M96",
+    "subject": "Sterrenstelsel",
+    "type": "Sterrenstelsel",
+    "distance": "~35 miljoen lichtjaar"
+  },
+  "virgo-cluster": {
+    "title": "Virgocluster",
+    "subject": "Cluster van sterrenstelsels",
+    "type": "Cluster van sterrenstelsels",
+    "distance": "~54 miljoen lichtjaar"
+  },
+  "ngc-5846-group": {
+    "title": "NGC 5846",
+    "subject": "Sterrenstelsel",
+    "type": "Sterrenstelsel",
+    "distance": "~85 miljoen lichtjaar"
+  },
+  "centaurus-cluster": {
+    "title": "Centauruscluster",
+    "subject": "Cluster van sterrenstelsels",
+    "type": "Cluster van sterrenstelsels",
+    "distance": "~160 miljoen lichtjaar"
+  },
+  "antlia-cluster": {
+    "title": "Antliacluster",
+    "subject": "Cluster van sterrenstelsels",
+    "type": "Cluster van sterrenstelsels",
+    "distance": "~130 miljoen lichtjaar"
+  },
+  "shapley-concentration": {
+    "title": "Shapley Supercluster core",
+    "subject": "Cluster van sterrenstelsels",
+    "type": "Cluster van sterrenstelsels",
+    "distance": "~650 miljoen lichtjaar"
+  },
+  "coma-great-wall": {
+    "title": "Comacluster",
+    "subject": "Cluster van sterrenstelsels",
+    "type": "Cluster van sterrenstelsels",
+    "distance": "~330 miljoen lichtjaar"
   }
 }

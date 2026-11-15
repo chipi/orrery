@@ -396,5 +396,758 @@
     "type": "Eco de luz",
     "distance": "~20 000 años luz",
     "taken": "2004"
+  },
+  "m2": {
+    "title": "M2 · NGC 7089",
+    "subject": "Cúmulo globular",
+    "type": "Cúmulo globular",
+    "distance": "~38.000 años luz"
+  },
+  "m4": {
+    "title": "M4 · NGC 6121",
+    "subject": "Cúmulo globular",
+    "type": "Cúmulo globular",
+    "distance": "~6030 años luz"
+  },
+  "m3": {
+    "title": "M3 · NGC 5272",
+    "subject": "Cúmulo globular",
+    "type": "Cúmulo globular",
+    "distance": "~33.000 años luz"
+  },
+  "m5": {
+    "title": "M5 · NGC 5904",
+    "subject": "Cúmulo globular",
+    "type": "Cúmulo globular",
+    "distance": "~24.000 años luz"
+  },
+  "m6": {
+    "title": "M6 · Butterfly Cluster",
+    "subject": "Cúmulo estelar",
+    "type": "Cúmulo estelar",
+    "distance": "~1470 años luz"
+  },
+  "m9": {
+    "title": "M9 · NGC 6333",
+    "subject": "Cúmulo globular",
+    "type": "Cúmulo globular",
+    "distance": "~27.000 años luz"
+  },
+  "m10": {
+    "title": "M10 · NGC 6254",
+    "subject": "Cúmulo globular",
+    "type": "Cúmulo globular",
+    "distance": "~17.000 años luz"
+  },
+  "m7": {
+    "title": "M7 · Ptolemy's Cluster",
+    "subject": "Cúmulo estelar",
+    "type": "Cúmulo estelar",
+    "distance": "~900 años luz"
+  },
+  "m11": {
+    "title": "M11 · Wild Duck Cluster",
+    "subject": "Cúmulo estelar",
+    "type": "Cúmulo estelar",
+    "distance": "~7280 años luz"
+  },
+  "m12": {
+    "title": "M12 · NGC 6218",
+    "subject": "Cúmulo globular",
+    "type": "Cúmulo globular",
+    "distance": "~17.000 años luz"
+  },
+  "m14": {
+    "title": "M14 · NGC 6402",
+    "subject": "Cúmulo globular",
+    "type": "Cúmulo globular",
+    "distance": "~30.000 años luz"
+  },
+  "m13": {
+    "title": "M13 · Hercules Globular Cluster",
+    "subject": "Cúmulo globular",
+    "type": "Cúmulo globular",
+    "distance": "~24.000 años luz"
+  },
+  "m17": {
+    "title": "M17 · Omega Nebula",
+    "subject": "Nebulosa",
+    "type": "Nebulosa",
+    "distance": "~5460 años luz"
+  },
+  "m15": {
+    "title": "M15 · NGC 7078",
+    "subject": "Cúmulo globular",
+    "type": "Cúmulo globular",
+    "distance": "~35.000 años luz"
+  },
+  "m19": {
+    "title": "M19 · NGC 6273",
+    "subject": "Cúmulo globular",
+    "type": "Cúmulo globular",
+    "distance": "~27.000 años luz"
+  },
+  "m20": {
+    "title": "M20 · Trifid Nebula",
+    "subject": "Nebulosa",
+    "type": "Nebulosa",
+    "distance": "~3960 años luz"
+  },
+  "m21": {
+    "title": "M21 · NGC 6531",
+    "subject": "Cúmulo estelar",
+    "type": "Cúmulo estelar",
+    "distance": "~3920 años luz"
+  },
+  "m22": {
+    "title": "M22 · NGC 6656",
+    "subject": "Cúmulo globular",
+    "type": "Cúmulo globular",
+    "distance": "~11.000 años luz"
+  },
+  "m23": {
+    "title": "M23 · NGC 6494",
+    "subject": "Cúmulo estelar",
+    "type": "Cúmulo estelar",
+    "distance": "~2330 años luz"
+  },
+  "m24": {
+    "title": "M24 · Small Sgr Star Cloud",
+    "subject": "Objeto de cielo profundo",
+    "type": "Objeto de cielo profundo"
+  },
+  "m26": {
+    "title": "M26 · NGC 6694",
+    "subject": "Cúmulo estelar",
+    "type": "Cúmulo estelar",
+    "distance": "~5990 años luz"
+  },
+  "m27": {
+    "title": "M27 · Dumbbell Nebula",
+    "subject": "Nebulosa planetaria",
+    "type": "Nebulosa planetaria",
+    "distance": "~1270 años luz"
+  },
+  "m28": {
+    "title": "M28 · NGC 6626",
+    "subject": "Cúmulo globular",
+    "type": "Cúmulo globular",
+    "distance": "~18.000 años luz"
+  },
+  "m29": {
+    "title": "M29 · NGC 6913",
+    "subject": "Cúmulo estelar",
+    "type": "Cúmulo estelar",
+    "distance": "~5570 años luz"
+  },
+  "m32": {
+    "title": "M32 · NGC 221",
+    "subject": "Galaxia",
+    "type": "Galaxia",
+    "distance": "~2,6 millones años luz"
+  },
+  "m33": {
+    "title": "M33 · Triangulum Galaxy",
+    "subject": "Galaxia",
+    "type": "Galaxia",
+    "distance": "~2,6 millones años luz"
+  },
+  "m34": {
+    "title": "M34 · NGC 1039",
+    "subject": "Cúmulo estelar",
+    "type": "Cúmulo estelar",
+    "distance": "~1600 años luz"
+  },
+  "m30": {
+    "title": "M30 · NGC 7099",
+    "subject": "Cúmulo globular",
+    "type": "Cúmulo globular",
+    "distance": "~28.000 años luz"
+  },
+  "m35": {
+    "title": "M35 · NGC 2168",
+    "subject": "Cúmulo estelar",
+    "type": "Cúmulo estelar",
+    "distance": "~2740 años luz"
+  },
+  "m37": {
+    "title": "M37 · NGC 2099",
+    "subject": "Cúmulo estelar",
+    "type": "Cúmulo estelar",
+    "distance": "~4570 años luz"
+  },
+  "m38": {
+    "title": "M38 · NGC 1912",
+    "subject": "Cúmulo estelar",
+    "type": "Cúmulo estelar",
+    "distance": "~3540 años luz"
+  },
+  "m39": {
+    "title": "M39 · NGC 7092",
+    "subject": "Cúmulo estelar",
+    "type": "Cúmulo estelar",
+    "distance": "~965 años luz"
+  },
+  "m41": {
+    "title": "M41 · NGC 2287",
+    "subject": "Cúmulo estelar",
+    "type": "Cúmulo estelar",
+    "distance": "~2330 años luz"
+  },
+  "m43": {
+    "title": "M43 · Mairan's Nebula",
+    "subject": "Región de formación estelar",
+    "type": "Región de formación estelar"
+  },
+  "m44": {
+    "title": "M44 · Beehive",
+    "subject": "Cúmulo estelar",
+    "type": "Cúmulo estelar",
+    "distance": "~598 años luz"
+  },
+  "m47": {
+    "title": "M47 · NGC 2422",
+    "subject": "Cúmulo estelar",
+    "type": "Cúmulo estelar",
+    "distance": "~1530 años luz"
+  },
+  "m46": {
+    "title": "M46 · NGC 2437",
+    "subject": "Cúmulo estelar",
+    "type": "Cúmulo estelar",
+    "distance": "~5070 años luz"
+  },
+  "m48": {
+    "title": "M48 · NGC 2548",
+    "subject": "Cúmulo estelar",
+    "type": "Cúmulo estelar",
+    "distance": "~2440 años luz"
+  },
+  "m49": {
+    "title": "M49 · NGC 4472",
+    "subject": "Galaxia",
+    "type": "Galaxia",
+    "distance": "~55 millones años luz"
+  },
+  "m50": {
+    "title": "M50 · NGC 2323",
+    "subject": "Cúmulo estelar",
+    "type": "Cúmulo estelar",
+    "distance": "~3120 años luz"
+  },
+  "m52": {
+    "title": "M52 · NGC 7654",
+    "subject": "Cúmulo estelar",
+    "type": "Cúmulo estelar",
+    "distance": "~5120 años luz"
+  },
+  "m53": {
+    "title": "M53 · NGC 5024",
+    "subject": "Cúmulo globular",
+    "type": "Cúmulo globular",
+    "distance": "~60.000 años luz"
+  },
+  "m55": {
+    "title": "M55 · NGC 6809",
+    "subject": "Cúmulo globular",
+    "type": "Cúmulo globular",
+    "distance": "~17.000 años luz"
+  },
+  "m54": {
+    "title": "M54 · NGC 6715",
+    "subject": "Cúmulo globular",
+    "type": "Cúmulo globular",
+    "distance": "~86.000 años luz"
+  },
+  "m58": {
+    "title": "M58 · NGC 4579",
+    "subject": "Galaxia",
+    "type": "Galaxia",
+    "distance": "~64 millones años luz"
+  },
+  "m56": {
+    "title": "M56 · NGC 6779",
+    "subject": "Cúmulo globular",
+    "type": "Cúmulo globular",
+    "distance": "~34.000 años luz"
+  },
+  "m59": {
+    "title": "M59 · NGC 4621",
+    "subject": "Galaxia",
+    "type": "Galaxia",
+    "distance": "~50 millones años luz"
+  },
+  "m61": {
+    "title": "M61 · NGC 4303",
+    "subject": "Galaxia",
+    "type": "Galaxia",
+    "distance": "~55 millones años luz"
+  },
+  "m63": {
+    "title": "M63 · Sunflower Galaxy",
+    "subject": "Galaxia",
+    "type": "Galaxia",
+    "distance": "~29 millones años luz"
+  },
+  "m60": {
+    "title": "M60 · NGC 4649",
+    "subject": "Galaxia",
+    "type": "Galaxia",
+    "distance": "~54 millones años luz"
+  },
+  "m64": {
+    "title": "M64 · Black Eye Galaxy",
+    "subject": "Galaxia",
+    "type": "Galaxia",
+    "distance": "~14 millones años luz"
+  },
+  "m65": {
+    "title": "M65 · NGC 3623",
+    "subject": "Galaxia",
+    "type": "Galaxia",
+    "distance": "~42 millones años luz"
+  },
+  "m66": {
+    "title": "M66 · NGC 3627",
+    "subject": "Galaxia",
+    "type": "Galaxia",
+    "distance": "~34 millones años luz"
+  },
+  "m68": {
+    "title": "M68 · NGC 4590",
+    "subject": "Cúmulo globular",
+    "type": "Cúmulo globular",
+    "distance": "~34.000 años luz"
+  },
+  "m69": {
+    "title": "M69 · NGC 6637",
+    "subject": "Cúmulo globular",
+    "type": "Cúmulo globular",
+    "distance": "~29.000 años luz"
+  },
+  "m70": {
+    "title": "M70 · NGC 6681",
+    "subject": "Cúmulo globular",
+    "type": "Cúmulo globular",
+    "distance": "~31.000 años luz"
+  },
+  "m71": {
+    "title": "M71 · NGC 6838",
+    "subject": "Cúmulo globular",
+    "type": "Cúmulo globular",
+    "distance": "~13.000 años luz"
+  },
+  "m72": {
+    "title": "M72 · NGC 6981",
+    "subject": "Cúmulo globular",
+    "type": "Cúmulo globular",
+    "distance": "~54.000 años luz"
+  },
+  "m75": {
+    "title": "M75 · NGC 6864",
+    "subject": "Cúmulo globular",
+    "type": "Cúmulo globular",
+    "distance": "~67.000 años luz"
+  },
+  "m73": {
+    "title": "M73 · NGC 6994",
+    "subject": "Objeto de cielo profundo",
+    "type": "Objeto de cielo profundo",
+    "distance": "~2240 años luz"
+  },
+  "m77": {
+    "title": "M77 · NGC 1068",
+    "subject": "Galaxia",
+    "type": "Galaxia",
+    "distance": "~50 millones años luz"
+  },
+  "m78": {
+    "title": "M78 · NGC 2068",
+    "subject": "Nebulosa",
+    "type": "Nebulosa",
+    "distance": "~1320 años luz"
+  },
+  "m79": {
+    "title": "M79 · NGC 1904",
+    "subject": "Cúmulo globular",
+    "type": "Cúmulo globular",
+    "distance": "~43.000 años luz"
+  },
+  "m76": {
+    "title": "M76 · Little Dumbbell Nebula",
+    "subject": "Nebulosa planetaria",
+    "type": "Nebulosa planetaria",
+    "distance": "~4680 años luz"
+  },
+  "m80": {
+    "title": "M80 · NGC 6093",
+    "subject": "Cúmulo globular",
+    "type": "Cúmulo globular",
+    "distance": "~34.000 años luz"
+  },
+  "m81": {
+    "title": "M81 · Bode's Galaxy",
+    "subject": "Galaxia",
+    "type": "Galaxia",
+    "distance": "~12 millones años luz"
+  },
+  "m82": {
+    "title": "M82 · Cigar Galaxy",
+    "subject": "Galaxia",
+    "type": "Galaxia",
+    "distance": "~12 millones años luz"
+  },
+  "m83": {
+    "title": "M83 · Southern Pinwheel Galaxy",
+    "subject": "Galaxia",
+    "type": "Galaxia",
+    "distance": "~16 millones años luz"
+  },
+  "m85": {
+    "title": "M85 · NGC 4382",
+    "subject": "Galaxia",
+    "type": "Galaxia",
+    "distance": "~58 millones años luz"
+  },
+  "m84": {
+    "title": "M84 · NGC 4374",
+    "subject": "Galaxia",
+    "type": "Galaxia",
+    "distance": "~58 millones años luz"
+  },
+  "m86": {
+    "title": "M86 · NGC 4406",
+    "subject": "Galaxia",
+    "type": "Galaxia",
+    "distance": "~55 millones años luz"
+  },
+  "m87": {
+    "title": "M87 · Virgo A",
+    "subject": "Galaxia",
+    "type": "Galaxia",
+    "distance": "~55 millones años luz"
+  },
+  "m88": {
+    "title": "M88 · NGC 4501",
+    "subject": "Galaxia",
+    "type": "Galaxia",
+    "distance": "~63 millones años luz"
+  },
+  "m89": {
+    "title": "M89 · NGC 4552",
+    "subject": "Galaxia",
+    "type": "Galaxia",
+    "distance": "~53 millones años luz"
+  },
+  "m90": {
+    "title": "M90 · NGC 4569",
+    "subject": "Galaxia",
+    "type": "Galaxia",
+    "distance": "~54 millones años luz"
+  },
+  "m91": {
+    "title": "M91 · NGC 4548",
+    "subject": "Galaxia",
+    "type": "Galaxia",
+    "distance": "~53 millones años luz"
+  },
+  "m92": {
+    "title": "M92 · NGC 6341",
+    "subject": "Cúmulo globular",
+    "type": "Cúmulo globular",
+    "distance": "~28.000 años luz"
+  },
+  "m93": {
+    "title": "M93 · NGC 2447",
+    "subject": "Cúmulo estelar",
+    "type": "Cúmulo estelar",
+    "distance": "~3170 años luz"
+  },
+  "m94": {
+    "title": "M94 · NGC 4736",
+    "subject": "Galaxia",
+    "type": "Galaxia",
+    "distance": "~14 millones años luz"
+  },
+  "m95": {
+    "title": "M95 · NGC 3351",
+    "subject": "Galaxia",
+    "type": "Galaxia",
+    "distance": "~32 millones años luz"
+  },
+  "m96": {
+    "title": "M96 · NGC 3368",
+    "subject": "Galaxia",
+    "type": "Galaxia",
+    "distance": "~34 millones años luz"
+  },
+  "m98": {
+    "title": "M98 · NGC 4192",
+    "subject": "Galaxia",
+    "type": "Galaxia",
+    "distance": "~55 millones años luz"
+  },
+  "m97": {
+    "title": "M97 · Owl Nebula",
+    "subject": "Nebulosa planetaria",
+    "type": "Nebulosa planetaria",
+    "distance": "~2640 años luz"
+  },
+  "m100": {
+    "title": "M100 · NGC 4321",
+    "subject": "Galaxia",
+    "type": "Galaxia",
+    "distance": "~50 millones años luz"
+  },
+  "m99": {
+    "title": "M99 · Coma Pinwheel",
+    "subject": "Galaxia",
+    "type": "Galaxia",
+    "distance": "~54 millones años luz"
+  },
+  "m103": {
+    "title": "M103 · NGC 581",
+    "subject": "Cúmulo estelar",
+    "type": "Cúmulo estelar",
+    "distance": "~8240 años luz"
+  },
+  "m106": {
+    "title": "M106 · NGC 4258",
+    "subject": "Galaxia",
+    "type": "Galaxia",
+    "distance": "~25 millones años luz"
+  },
+  "m107": {
+    "title": "M107 · NGC 6171",
+    "subject": "Cúmulo globular",
+    "type": "Cúmulo globular",
+    "distance": "~18.000 años luz"
+  },
+  "m108": {
+    "title": "M108 · NGC 3556",
+    "subject": "Galaxia",
+    "type": "Galaxia",
+    "distance": "~30 millones años luz"
+  },
+  "m109": {
+    "title": "M109 · NGC 3992",
+    "subject": "Galaxia",
+    "type": "Galaxia",
+    "distance": "~82 millones años luz"
+  },
+  "m110": {
+    "title": "M110 · NGC 205",
+    "subject": "Galaxia",
+    "type": "Galaxia",
+    "distance": "~2,7 millones años luz"
+  },
+  "ngc-104": {
+    "title": "NGC 104 · 47 Tucanae",
+    "subject": "Cúmulo globular",
+    "type": "Cúmulo globular",
+    "distance": "~15.000 años luz"
+  },
+  "ngc-6752": {
+    "title": "NGC 6752",
+    "subject": "Cúmulo globular",
+    "type": "Cúmulo globular",
+    "distance": "~13.000 años luz"
+  },
+  "m105": {
+    "title": "M105 · NGC 3379",
+    "subject": "Galaxia",
+    "type": "Galaxia",
+    "distance": "~36 millones años luz"
+  },
+  "cygnus-x-1": {
+    "title": "Cygnus X-1",
+    "subject": "Agujero negro de masa estelar",
+    "type": "Agujero negro de masa estelar",
+    "distance": "~7240 años luz"
+  },
+  "milky-way": {
+    "title": "Galactic Center",
+    "subject": "Galaxia",
+    "type": "Galaxia"
+  },
+  "sculptor-dwarf": {
+    "title": "Sculptor Dwarf Galaxy",
+    "subject": "Galaxia",
+    "type": "Galaxia esferoidal enana",
+    "distance": "~280.000 años luz"
+  },
+  "leo-i": {
+    "title": "Leo I",
+    "subject": "Galaxia",
+    "type": "Galaxia esferoidal enana",
+    "distance": "~830.000 años luz"
+  },
+  "ngc-185": {
+    "title": "NGC 185",
+    "subject": "Galaxia",
+    "type": "Galaxia elíptica enana",
+    "distance": "~2 millones años luz"
+  },
+  "ngc-147": {
+    "title": "NGC 147",
+    "subject": "Galaxia",
+    "type": "Galaxia elíptica enana",
+    "distance": "~2,2 millones años luz"
+  },
+  "andromeda-i": {
+    "title": "Andrómeda I",
+    "subject": "Galaxia",
+    "type": "Galaxia esferoidal enana",
+    "distance": "~2,4 millones años luz"
+  },
+  "andromeda-ii": {
+    "title": "Andrómeda II",
+    "subject": "Galaxia",
+    "type": "Galaxia esferoidal enana",
+    "distance": "~2,1 millones años luz"
+  },
+  "andromeda-iii": {
+    "title": "Andrómeda III",
+    "subject": "Galaxia",
+    "type": "Galaxia esferoidal enana",
+    "distance": "~2,4 millones años luz"
+  },
+  "pegasus-dsph": {
+    "title": "Andromeda VI (Pegasus Dwarf Spheroidal)",
+    "subject": "Galaxia",
+    "type": "Galaxia esferoidal enana",
+    "distance": "~2,6 millones años luz"
+  },
+  "ic-1613": {
+    "title": "IC 1613",
+    "subject": "Galaxia",
+    "type": "Galaxia irregular enana",
+    "distance": "~2,5 millones años luz"
+  },
+  "ngc-6822": {
+    "title": "Barnard's Galaxy (NGC 6822)",
+    "subject": "Galaxia",
+    "type": "Galaxia irregular enana",
+    "distance": "~1,5 millones años luz"
+  },
+  "ic-10": {
+    "title": "IC 10",
+    "subject": "Galaxia",
+    "type": "Galaxia irregular enana",
+    "distance": "~2,6 millones años luz"
+  },
+  "wlm": {
+    "title": "WLM",
+    "subject": "Galaxia",
+    "type": "Galaxia irregular enana",
+    "distance": "~3 millones años luz"
+  },
+  "leo-a": {
+    "title": "Leo A",
+    "subject": "Galaxia",
+    "type": "Galaxia irregular enana",
+    "distance": "~2,6 millones años luz"
+  },
+  "phoenix-dwarf": {
+    "title": "Enana de Fénix",
+    "subject": "Galaxia",
+    "type": "Galaxia irregular enana",
+    "distance": "~1,4 millones años luz"
+  },
+  "aquarius-dwarf": {
+    "title": "Enana de Acuario",
+    "subject": "Galaxia",
+    "type": "Galaxia irregular enana",
+    "distance": "~3,5 millones años luz"
+  },
+  "sagittarius-dirr": {
+    "title": "Sagittarius Dwarf Irregular Galaxy",
+    "subject": "Galaxia",
+    "type": "Galaxia irregular enana",
+    "distance": "~3,5 millones años luz"
+  },
+  "pegasus-dirr": {
+    "title": "Pegasus Dwarf Irregular Galaxy",
+    "subject": "Galaxia",
+    "type": "Galaxia irregular enana",
+    "distance": "~3 millones años luz"
+  },
+  "m81-group": {
+    "title": "M81 and M82",
+    "subject": "Galaxia",
+    "type": "Galaxia",
+    "distance": "~12 millones años luz"
+  },
+  "centaurus-a-group": {
+    "title": "Centaurus A",
+    "subject": "Galaxia",
+    "type": "Galaxia",
+    "distance": "~12 millones años luz"
+  },
+  "sculptor-group": {
+    "title": "NGC 253",
+    "subject": "Galaxia",
+    "type": "Galaxia",
+    "distance": "~12 millones años luz"
+  },
+  "canes-venatici-i": {
+    "title": "NGC 4214",
+    "subject": "Galaxia",
+    "type": "Galaxia",
+    "distance": "~13 millones años luz"
+  },
+  "maffei-group": {
+    "title": "Maffei 2",
+    "subject": "Galaxia",
+    "type": "Galaxia",
+    "distance": "~19 millones años luz"
+  },
+  "ngc-6946-group": {
+    "title": "NGC 6946",
+    "subject": "Galaxia",
+    "type": "Galaxia",
+    "distance": "~25 millones años luz"
+  },
+  "leo-i-cloud": {
+    "title": "M96",
+    "subject": "Galaxia",
+    "type": "Galaxia",
+    "distance": "~35 millones años luz"
+  },
+  "virgo-cluster": {
+    "title": "Cúmulo de Virgo",
+    "subject": "Cúmulo de galaxias",
+    "type": "Cúmulo de galaxias",
+    "distance": "~54 millones años luz"
+  },
+  "ngc-5846-group": {
+    "title": "NGC 5846",
+    "subject": "Galaxia",
+    "type": "Galaxia",
+    "distance": "~85 millones años luz"
+  },
+  "centaurus-cluster": {
+    "title": "Cúmulo de Centauro",
+    "subject": "Cúmulo de galaxias",
+    "type": "Cúmulo de galaxias",
+    "distance": "~160 millones años luz"
+  },
+  "antlia-cluster": {
+    "title": "Cúmulo de Antlia",
+    "subject": "Cúmulo de galaxias",
+    "type": "Cúmulo de galaxias",
+    "distance": "~130 millones años luz"
+  },
+  "shapley-concentration": {
+    "title": "Shapley Supercluster core",
+    "subject": "Cúmulo de galaxias",
+    "type": "Cúmulo de galaxias",
+    "distance": "~650 millones años luz"
+  },
+  "coma-great-wall": {
+    "title": "Cúmulo de Coma",
+    "subject": "Cúmulo de galaxias",
+    "type": "Cúmulo de galaxias",
+    "distance": "~330 millones años luz"
   }
 }

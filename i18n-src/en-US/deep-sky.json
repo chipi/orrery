@@ -396,5 +396,758 @@
     "type": "Light echo",
     "distance": "~20,000 light-years",
     "taken": "2004"
+  },
+  "m2": {
+    "title": "M2 · NGC 7089",
+    "subject": "Globular cluster",
+    "type": "Globular cluster",
+    "distance": "~38,000 ly"
+  },
+  "m4": {
+    "title": "M4 · NGC 6121",
+    "subject": "Globular cluster",
+    "type": "Globular cluster",
+    "distance": "~6,030 ly"
+  },
+  "m3": {
+    "title": "M3 · NGC 5272",
+    "subject": "Globular cluster",
+    "type": "Globular cluster",
+    "distance": "~33,000 ly"
+  },
+  "m5": {
+    "title": "M5 · NGC 5904",
+    "subject": "Globular cluster",
+    "type": "Globular cluster",
+    "distance": "~24,000 ly"
+  },
+  "m6": {
+    "title": "M6 · Butterfly Cluster",
+    "subject": "Star cluster",
+    "type": "Star cluster",
+    "distance": "~1,470 ly"
+  },
+  "m9": {
+    "title": "M9 · NGC 6333",
+    "subject": "Globular cluster",
+    "type": "Globular cluster",
+    "distance": "~27,000 ly"
+  },
+  "m10": {
+    "title": "M10 · NGC 6254",
+    "subject": "Globular cluster",
+    "type": "Globular cluster",
+    "distance": "~17,000 ly"
+  },
+  "m7": {
+    "title": "M7 · Ptolemy's Cluster",
+    "subject": "Star cluster",
+    "type": "Star cluster",
+    "distance": "~900 ly"
+  },
+  "m11": {
+    "title": "M11 · Wild Duck Cluster",
+    "subject": "Star cluster",
+    "type": "Star cluster",
+    "distance": "~7,280 ly"
+  },
+  "m12": {
+    "title": "M12 · NGC 6218",
+    "subject": "Globular cluster",
+    "type": "Globular cluster",
+    "distance": "~17,000 ly"
+  },
+  "m14": {
+    "title": "M14 · NGC 6402",
+    "subject": "Globular cluster",
+    "type": "Globular cluster",
+    "distance": "~30,000 ly"
+  },
+  "m13": {
+    "title": "M13 · Hercules Globular Cluster",
+    "subject": "Globular cluster",
+    "type": "Globular cluster",
+    "distance": "~24,000 ly"
+  },
+  "m17": {
+    "title": "M17 · Omega Nebula",
+    "subject": "Nebula",
+    "type": "Nebula",
+    "distance": "~5,460 ly"
+  },
+  "m15": {
+    "title": "M15 · NGC 7078",
+    "subject": "Globular cluster",
+    "type": "Globular cluster",
+    "distance": "~35,000 ly"
+  },
+  "m19": {
+    "title": "M19 · NGC 6273",
+    "subject": "Globular cluster",
+    "type": "Globular cluster",
+    "distance": "~27,000 ly"
+  },
+  "m20": {
+    "title": "M20 · Trifid Nebula",
+    "subject": "Nebula",
+    "type": "Nebula",
+    "distance": "~3,960 ly"
+  },
+  "m21": {
+    "title": "M21 · NGC 6531",
+    "subject": "Star cluster",
+    "type": "Star cluster",
+    "distance": "~3,920 ly"
+  },
+  "m22": {
+    "title": "M22 · NGC 6656",
+    "subject": "Globular cluster",
+    "type": "Globular cluster",
+    "distance": "~11,000 ly"
+  },
+  "m23": {
+    "title": "M23 · NGC 6494",
+    "subject": "Star cluster",
+    "type": "Star cluster",
+    "distance": "~2,330 ly"
+  },
+  "m24": {
+    "title": "M24 · Small Sgr Star Cloud",
+    "subject": "Deep-sky object",
+    "type": "Deep-sky object"
+  },
+  "m26": {
+    "title": "M26 · NGC 6694",
+    "subject": "Star cluster",
+    "type": "Star cluster",
+    "distance": "~5,990 ly"
+  },
+  "m27": {
+    "title": "M27 · Dumbbell Nebula",
+    "subject": "Planetary nebula",
+    "type": "Planetary nebula",
+    "distance": "~1,270 ly"
+  },
+  "m28": {
+    "title": "M28 · NGC 6626",
+    "subject": "Globular cluster",
+    "type": "Globular cluster",
+    "distance": "~18,000 ly"
+  },
+  "m29": {
+    "title": "M29 · NGC 6913",
+    "subject": "Star cluster",
+    "type": "Star cluster",
+    "distance": "~5,570 ly"
+  },
+  "m32": {
+    "title": "M32 · NGC 221",
+    "subject": "Galaxy",
+    "type": "Galaxy",
+    "distance": "~2.6 million ly"
+  },
+  "m33": {
+    "title": "M33 · Triangulum Galaxy",
+    "subject": "Galaxy",
+    "type": "Galaxy",
+    "distance": "~2.6 million ly"
+  },
+  "m34": {
+    "title": "M34 · NGC 1039",
+    "subject": "Star cluster",
+    "type": "Star cluster",
+    "distance": "~1,600 ly"
+  },
+  "m30": {
+    "title": "M30 · NGC 7099",
+    "subject": "Globular cluster",
+    "type": "Globular cluster",
+    "distance": "~28,000 ly"
+  },
+  "m35": {
+    "title": "M35 · NGC 2168",
+    "subject": "Star cluster",
+    "type": "Star cluster",
+    "distance": "~2,740 ly"
+  },
+  "m37": {
+    "title": "M37 · NGC 2099",
+    "subject": "Star cluster",
+    "type": "Star cluster",
+    "distance": "~4,570 ly"
+  },
+  "m38": {
+    "title": "M38 · NGC 1912",
+    "subject": "Star cluster",
+    "type": "Star cluster",
+    "distance": "~3,540 ly"
+  },
+  "m39": {
+    "title": "M39 · NGC 7092",
+    "subject": "Star cluster",
+    "type": "Star cluster",
+    "distance": "~965 ly"
+  },
+  "m41": {
+    "title": "M41 · NGC 2287",
+    "subject": "Star cluster",
+    "type": "Star cluster",
+    "distance": "~2,330 ly"
+  },
+  "m43": {
+    "title": "M43 · Mairan's Nebula",
+    "subject": "Star-forming region",
+    "type": "Star-forming region"
+  },
+  "m44": {
+    "title": "M44 · Beehive",
+    "subject": "Star cluster",
+    "type": "Star cluster",
+    "distance": "~598 ly"
+  },
+  "m47": {
+    "title": "M47 · NGC 2422",
+    "subject": "Star cluster",
+    "type": "Star cluster",
+    "distance": "~1,530 ly"
+  },
+  "m46": {
+    "title": "M46 · NGC 2437",
+    "subject": "Star cluster",
+    "type": "Star cluster",
+    "distance": "~5,070 ly"
+  },
+  "m48": {
+    "title": "M48 · NGC 2548",
+    "subject": "Star cluster",
+    "type": "Star cluster",
+    "distance": "~2,440 ly"
+  },
+  "m49": {
+    "title": "M49 · NGC 4472",
+    "subject": "Galaxy",
+    "type": "Galaxy",
+    "distance": "~55 million ly"
+  },
+  "m50": {
+    "title": "M50 · NGC 2323",
+    "subject": "Star cluster",
+    "type": "Star cluster",
+    "distance": "~3,120 ly"
+  },
+  "m52": {
+    "title": "M52 · NGC 7654",
+    "subject": "Star cluster",
+    "type": "Star cluster",
+    "distance": "~5,120 ly"
+  },
+  "m53": {
+    "title": "M53 · NGC 5024",
+    "subject": "Globular cluster",
+    "type": "Globular cluster",
+    "distance": "~60,000 ly"
+  },
+  "m55": {
+    "title": "M55 · NGC 6809",
+    "subject": "Globular cluster",
+    "type": "Globular cluster",
+    "distance": "~17,000 ly"
+  },
+  "m54": {
+    "title": "M54 · NGC 6715",
+    "subject": "Globular cluster",
+    "type": "Globular cluster",
+    "distance": "~86,000 ly"
+  },
+  "m58": {
+    "title": "M58 · NGC 4579",
+    "subject": "Galaxy",
+    "type": "Galaxy",
+    "distance": "~64 million ly"
+  },
+  "m56": {
+    "title": "M56 · NGC 6779",
+    "subject": "Globular cluster",
+    "type": "Globular cluster",
+    "distance": "~34,000 ly"
+  },
+  "m59": {
+    "title": "M59 · NGC 4621",
+    "subject": "Galaxy",
+    "type": "Galaxy",
+    "distance": "~50 million ly"
+  },
+  "m61": {
+    "title": "M61 · NGC 4303",
+    "subject": "Galaxy",
+    "type": "Galaxy",
+    "distance": "~55 million ly"
+  },
+  "m63": {
+    "title": "M63 · Sunflower Galaxy",
+    "subject": "Galaxy",
+    "type": "Galaxy",
+    "distance": "~29 million ly"
+  },
+  "m60": {
+    "title": "M60 · NGC 4649",
+    "subject": "Galaxy",
+    "type": "Galaxy",
+    "distance": "~54 million ly"
+  },
+  "m64": {
+    "title": "M64 · Black Eye Galaxy",
+    "subject": "Galaxy",
+    "type": "Galaxy",
+    "distance": "~14 million ly"
+  },
+  "m65": {
+    "title": "M65 · NGC 3623",
+    "subject": "Galaxy",
+    "type": "Galaxy",
+    "distance": "~42 million ly"
+  },
+  "m66": {
+    "title": "M66 · NGC 3627",
+    "subject": "Galaxy",
+    "type": "Galaxy",
+    "distance": "~34 million ly"
+  },
+  "m68": {
+    "title": "M68 · NGC 4590",
+    "subject": "Globular cluster",
+    "type": "Globular cluster",
+    "distance": "~34,000 ly"
+  },
+  "m69": {
+    "title": "M69 · NGC 6637",
+    "subject": "Globular cluster",
+    "type": "Globular cluster",
+    "distance": "~29,000 ly"
+  },
+  "m70": {
+    "title": "M70 · NGC 6681",
+    "subject": "Globular cluster",
+    "type": "Globular cluster",
+    "distance": "~31,000 ly"
+  },
+  "m71": {
+    "title": "M71 · NGC 6838",
+    "subject": "Globular cluster",
+    "type": "Globular cluster",
+    "distance": "~13,000 ly"
+  },
+  "m72": {
+    "title": "M72 · NGC 6981",
+    "subject": "Globular cluster",
+    "type": "Globular cluster",
+    "distance": "~54,000 ly"
+  },
+  "m75": {
+    "title": "M75 · NGC 6864",
+    "subject": "Globular cluster",
+    "type": "Globular cluster",
+    "distance": "~67,000 ly"
+  },
+  "m73": {
+    "title": "M73 · NGC 6994",
+    "subject": "Deep-sky object",
+    "type": "Deep-sky object",
+    "distance": "~2,240 ly"
+  },
+  "m77": {
+    "title": "M77 · NGC 1068",
+    "subject": "Galaxy",
+    "type": "Galaxy",
+    "distance": "~50 million ly"
+  },
+  "m78": {
+    "title": "M78 · NGC 2068",
+    "subject": "Nebula",
+    "type": "Nebula",
+    "distance": "~1,320 ly"
+  },
+  "m79": {
+    "title": "M79 · NGC 1904",
+    "subject": "Globular cluster",
+    "type": "Globular cluster",
+    "distance": "~43,000 ly"
+  },
+  "m76": {
+    "title": "M76 · Little Dumbbell Nebula",
+    "subject": "Planetary nebula",
+    "type": "Planetary nebula",
+    "distance": "~4,680 ly"
+  },
+  "m80": {
+    "title": "M80 · NGC 6093",
+    "subject": "Globular cluster",
+    "type": "Globular cluster",
+    "distance": "~34,000 ly"
+  },
+  "m81": {
+    "title": "M81 · Bode's Galaxy",
+    "subject": "Galaxy",
+    "type": "Galaxy",
+    "distance": "~12 million ly"
+  },
+  "m82": {
+    "title": "M82 · Cigar Galaxy",
+    "subject": "Galaxy",
+    "type": "Galaxy",
+    "distance": "~12 million ly"
+  },
+  "m83": {
+    "title": "M83 · Southern Pinwheel Galaxy",
+    "subject": "Galaxy",
+    "type": "Galaxy",
+    "distance": "~16 million ly"
+  },
+  "m85": {
+    "title": "M85 · NGC 4382",
+    "subject": "Galaxy",
+    "type": "Galaxy",
+    "distance": "~58 million ly"
+  },
+  "m84": {
+    "title": "M84 · NGC 4374",
+    "subject": "Galaxy",
+    "type": "Galaxy",
+    "distance": "~58 million ly"
+  },
+  "m86": {
+    "title": "M86 · NGC 4406",
+    "subject": "Galaxy",
+    "type": "Galaxy",
+    "distance": "~55 million ly"
+  },
+  "m87": {
+    "title": "M87 · Virgo A",
+    "subject": "Galaxy",
+    "type": "Galaxy",
+    "distance": "~55 million ly"
+  },
+  "m88": {
+    "title": "M88 · NGC 4501",
+    "subject": "Galaxy",
+    "type": "Galaxy",
+    "distance": "~63 million ly"
+  },
+  "m89": {
+    "title": "M89 · NGC 4552",
+    "subject": "Galaxy",
+    "type": "Galaxy",
+    "distance": "~53 million ly"
+  },
+  "m90": {
+    "title": "M90 · NGC 4569",
+    "subject": "Galaxy",
+    "type": "Galaxy",
+    "distance": "~54 million ly"
+  },
+  "m91": {
+    "title": "M91 · NGC 4548",
+    "subject": "Galaxy",
+    "type": "Galaxy",
+    "distance": "~53 million ly"
+  },
+  "m92": {
+    "title": "M92 · NGC 6341",
+    "subject": "Globular cluster",
+    "type": "Globular cluster",
+    "distance": "~28,000 ly"
+  },
+  "m93": {
+    "title": "M93 · NGC 2447",
+    "subject": "Star cluster",
+    "type": "Star cluster",
+    "distance": "~3,170 ly"
+  },
+  "m94": {
+    "title": "M94 · NGC 4736",
+    "subject": "Galaxy",
+    "type": "Galaxy",
+    "distance": "~14 million ly"
+  },
+  "m95": {
+    "title": "M95 · NGC 3351",
+    "subject": "Galaxy",
+    "type": "Galaxy",
+    "distance": "~32 million ly"
+  },
+  "m96": {
+    "title": "M96 · NGC 3368",
+    "subject": "Galaxy",
+    "type": "Galaxy",
+    "distance": "~34 million ly"
+  },
+  "m98": {
+    "title": "M98 · NGC 4192",
+    "subject": "Galaxy",
+    "type": "Galaxy",
+    "distance": "~55 million ly"
+  },
+  "m97": {
+    "title": "M97 · Owl Nebula",
+    "subject": "Planetary nebula",
+    "type": "Planetary nebula",
+    "distance": "~2,640 ly"
+  },
+  "m100": {
+    "title": "M100 · NGC 4321",
+    "subject": "Galaxy",
+    "type": "Galaxy",
+    "distance": "~50 million ly"
+  },
+  "m99": {
+    "title": "M99 · Coma Pinwheel",
+    "subject": "Galaxy",
+    "type": "Galaxy",
+    "distance": "~54 million ly"
+  },
+  "m103": {
+    "title": "M103 · NGC 581",
+    "subject": "Star cluster",
+    "type": "Star cluster",
+    "distance": "~8,240 ly"
+  },
+  "m106": {
+    "title": "M106 · NGC 4258",
+    "subject": "Galaxy",
+    "type": "Galaxy",
+    "distance": "~25 million ly"
+  },
+  "m107": {
+    "title": "M107 · NGC 6171",
+    "subject": "Globular cluster",
+    "type": "Globular cluster",
+    "distance": "~18,000 ly"
+  },
+  "m108": {
+    "title": "M108 · NGC 3556",
+    "subject": "Galaxy",
+    "type": "Galaxy",
+    "distance": "~30 million ly"
+  },
+  "m109": {
+    "title": "M109 · NGC 3992",
+    "subject": "Galaxy",
+    "type": "Galaxy",
+    "distance": "~82 million ly"
+  },
+  "m110": {
+    "title": "M110 · NGC 205",
+    "subject": "Galaxy",
+    "type": "Galaxy",
+    "distance": "~2.7 million ly"
+  },
+  "ngc-104": {
+    "title": "NGC 104 · 47 Tucanae",
+    "subject": "Globular cluster",
+    "type": "Globular cluster",
+    "distance": "~15,000 ly"
+  },
+  "ngc-6752": {
+    "title": "NGC 6752",
+    "subject": "Globular cluster",
+    "type": "Globular cluster",
+    "distance": "~13,000 ly"
+  },
+  "m105": {
+    "title": "M105 · NGC 3379",
+    "subject": "Galaxy",
+    "type": "Galaxy",
+    "distance": "~36 million ly"
+  },
+  "cygnus-x-1": {
+    "title": "Cygnus X-1",
+    "subject": "Stellar-mass black hole",
+    "type": "Stellar-mass black hole",
+    "distance": "~7,240 ly"
+  },
+  "milky-way": {
+    "title": "Galactic Center",
+    "subject": "Galaxy",
+    "type": "Galaxy"
+  },
+  "sculptor-dwarf": {
+    "title": "Sculptor Dwarf Galaxy",
+    "subject": "Galaxy",
+    "type": "Dwarf spheroidal galaxy",
+    "distance": "~280,000 ly"
+  },
+  "leo-i": {
+    "title": "Leo I",
+    "subject": "Galaxy",
+    "type": "Dwarf spheroidal galaxy",
+    "distance": "~830,000 ly"
+  },
+  "ngc-185": {
+    "title": "NGC 185",
+    "subject": "Galaxy",
+    "type": "Dwarf elliptical galaxy",
+    "distance": "~2 million ly"
+  },
+  "ngc-147": {
+    "title": "NGC 147",
+    "subject": "Galaxy",
+    "type": "Dwarf elliptical galaxy",
+    "distance": "~2.2 million ly"
+  },
+  "andromeda-i": {
+    "title": "Andromeda I",
+    "subject": "Galaxy",
+    "type": "Dwarf spheroidal galaxy",
+    "distance": "~2.4 million ly"
+  },
+  "andromeda-ii": {
+    "title": "Andromeda II",
+    "subject": "Galaxy",
+    "type": "Dwarf spheroidal galaxy",
+    "distance": "~2.1 million ly"
+  },
+  "andromeda-iii": {
+    "title": "Andromeda III",
+    "subject": "Galaxy",
+    "type": "Dwarf spheroidal galaxy",
+    "distance": "~2.4 million ly"
+  },
+  "pegasus-dsph": {
+    "title": "Andromeda VI (Pegasus Dwarf Spheroidal)",
+    "subject": "Galaxy",
+    "type": "Dwarf spheroidal galaxy",
+    "distance": "~2.6 million ly"
+  },
+  "ic-1613": {
+    "title": "IC 1613",
+    "subject": "Galaxy",
+    "type": "Dwarf irregular galaxy",
+    "distance": "~2.5 million ly"
+  },
+  "ngc-6822": {
+    "title": "Barnard's Galaxy (NGC 6822)",
+    "subject": "Galaxy",
+    "type": "Dwarf irregular galaxy",
+    "distance": "~1.5 million ly"
+  },
+  "ic-10": {
+    "title": "IC 10",
+    "subject": "Galaxy",
+    "type": "Dwarf irregular galaxy",
+    "distance": "~2.6 million ly"
+  },
+  "wlm": {
+    "title": "WLM",
+    "subject": "Galaxy",
+    "type": "Dwarf irregular galaxy",
+    "distance": "~3 million ly"
+  },
+  "leo-a": {
+    "title": "Leo A",
+    "subject": "Galaxy",
+    "type": "Dwarf irregular galaxy",
+    "distance": "~2.6 million ly"
+  },
+  "phoenix-dwarf": {
+    "title": "Phoenix Dwarf",
+    "subject": "Galaxy",
+    "type": "Dwarf irregular galaxy",
+    "distance": "~1.4 million ly"
+  },
+  "aquarius-dwarf": {
+    "title": "Aquarius Dwarf",
+    "subject": "Galaxy",
+    "type": "Dwarf irregular galaxy",
+    "distance": "~3.5 million ly"
+  },
+  "sagittarius-dirr": {
+    "title": "Sagittarius Dwarf Irregular Galaxy",
+    "subject": "Galaxy",
+    "type": "Dwarf irregular galaxy",
+    "distance": "~3.5 million ly"
+  },
+  "pegasus-dirr": {
+    "title": "Pegasus Dwarf Irregular Galaxy",
+    "subject": "Galaxy",
+    "type": "Dwarf irregular galaxy",
+    "distance": "~3 million ly"
+  },
+  "m81-group": {
+    "title": "M81 and M82",
+    "subject": "Galaxy",
+    "type": "Galaxy",
+    "distance": "~12 million ly"
+  },
+  "centaurus-a-group": {
+    "title": "Centaurus A",
+    "subject": "Galaxy",
+    "type": "Galaxy",
+    "distance": "~12 million ly"
+  },
+  "sculptor-group": {
+    "title": "NGC 253",
+    "subject": "Galaxy",
+    "type": "Galaxy",
+    "distance": "~12 million ly"
+  },
+  "canes-venatici-i": {
+    "title": "NGC 4214",
+    "subject": "Galaxy",
+    "type": "Galaxy",
+    "distance": "~13 million ly"
+  },
+  "maffei-group": {
+    "title": "Maffei 2",
+    "subject": "Galaxy",
+    "type": "Galaxy",
+    "distance": "~19 million ly"
+  },
+  "ngc-6946-group": {
+    "title": "NGC 6946",
+    "subject": "Galaxy",
+    "type": "Galaxy",
+    "distance": "~25 million ly"
+  },
+  "leo-i-cloud": {
+    "title": "M96",
+    "subject": "Galaxy",
+    "type": "Galaxy",
+    "distance": "~35 million ly"
+  },
+  "virgo-cluster": {
+    "title": "Virgo Cluster",
+    "subject": "Galaxy cluster",
+    "type": "Galaxy cluster",
+    "distance": "~54 million ly"
+  },
+  "ngc-5846-group": {
+    "title": "NGC 5846",
+    "subject": "Galaxy",
+    "type": "Galaxy",
+    "distance": "~85 million ly"
+  },
+  "centaurus-cluster": {
+    "title": "Centaurus Cluster",
+    "subject": "Galaxy cluster",
+    "type": "Galaxy cluster",
+    "distance": "~160 million ly"
+  },
+  "antlia-cluster": {
+    "title": "Antlia Cluster",
+    "subject": "Galaxy cluster",
+    "type": "Galaxy cluster",
+    "distance": "~130 million ly"
+  },
+  "shapley-concentration": {
+    "title": "Shapley Supercluster core",
+    "subject": "Galaxy cluster",
+    "type": "Galaxy cluster",
+    "distance": "~650 million ly"
+  },
+  "coma-great-wall": {
+    "title": "Coma Cluster",
+    "subject": "Galaxy cluster",
+    "type": "Galaxy cluster",
+    "distance": "~330 million ly"
   }
 }

@@ -2,6 +2,10 @@
   "fact": "A estrela mais brilhante da Ursa Maior, a primeira na alça da Grande Concha.",
   "bio": "Alioth (Epsilon Ursae Majoris) é uma estrela branca peculiar a cerca de 81 anos-luz de distância, a mais brilhante da Ursa Maior. Seu espectro mostra assinaturas químicas estranhas e variáveis, ligadas a um forte campo magnético.",
   "cultural": "O nome deriva do árabe. Como a primeira estrela do cabo do Grande Carro — ou da cauda da Ursa Maior —, Alioth é presença certa na navegação do hemisfério norte e uma das 57 estrelas usadas na determinação de posição celeste.",
+  "photo": {
+    "src": "/images/stars/alioth/01.webp",
+    "kind": "real"
+  },
   "links": [
     {
       "l": "Wikipedia",

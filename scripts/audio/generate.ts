@@ -141,6 +141,17 @@ function pickProvider(name: ProviderName): TtsProvider {
   }
 }
 
+// Open and write on one fd: no path is checked and then reused, so the file
+// cannot be swapped between a check and the write (CodeQL js/file-system-race).
+function writeThroughFd(path: string, data: string | Uint8Array): void {
+  const fd = openSync(path, 'w');
+  try {
+    writeFileSync(fd, data);
+  } finally {
+    closeSync(fd);
+  }
+}
+
 async function main(): Promise<void> {
   const { values } = parseArgs({
     options: {
@@ -227,8 +238,8 @@ async function main(): Promise<void> {
   // Cache hit — skip generation, log a `cached` row in the ledger.
   let cachedTxt: string | null = null;
   try {
-    closeSync(openSync(mp3Path, 'r'));
-    closeSync(openSync(vttPath, 'r'));
+    readFileSync(mp3Path);
+    readFileSync(vttPath);
     cachedTxt = readFileSync(txtPath, 'utf-8');
   } catch {
     // any of the three missing → no cache hit
@@ -281,9 +292,9 @@ async function main(): Promise<void> {
   });
 
   mkdirSync(outDir, { recursive: true });
-  writeFileSync(mp3Path, output.audio);
-  writeFileSync(vttPath, output.captions);
-  writeFileSync(txtPath, output.transcript);
+  writeThroughFd(mp3Path, output.audio);
+  writeThroughFd(vttPath, output.captions);
+  writeThroughFd(txtPath, output.transcript);
 
   // Ledger gets billable_chars (provider-specific — Google counts SSML,
   // ElevenLabs counts transcript). Provenance gets transcript chars

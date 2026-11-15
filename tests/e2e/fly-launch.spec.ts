@@ -26,6 +26,29 @@ test('launch scene mounts with a live canvas', async ({ page }) => {
   await expect(page.locator('.launch .stage canvas')).toBeAttached();
 });
 
+// A Shuttle flight (dest EARTH) continues after the climb into the Earth-orbit coast from its
+// mission record (STS-1: 307 km, 40.3 degrees, 37 revolutions), never a Moon-style cislunar arc.
+test('STS-1 after the climb: the Earth-orbit coast, not a cislunar transfer', async ({
+  page,
+}, testInfo) => {
+  test.setTimeout(260_000);
+  await enterLaunch(page, 'sts-1');
+  await page.evaluate(() =>
+    (window as unknown as { __flyLaunchT: (t: number) => void }).__flyLaunchT(600),
+  );
+  await page
+    .getByRole('button', { name: /^play$/i })
+    .first()
+    .click();
+  await expect(page.locator('[data-testid="coast-scene"]')).toBeVisible({ timeout: 220_000 });
+  await expect(page.locator('[data-testid="launch-scene"]')).toHaveCount(0);
+  if (testInfo.project.name === 'desktop-chromium') {
+    // the coast HUD (hidden on touch): the orbit from the mission record
+    await expect(page.locator('body')).toContainText('307×307 km');
+    await expect(page.locator('body')).toContainText('/ 37');
+  }
+});
+
 // G3: the launch camera director is the default camera; ?cam=classic keeps today's for one release.
 test('the launch runs the camera director by default (data-director-shot names the shot)', async ({
   page,

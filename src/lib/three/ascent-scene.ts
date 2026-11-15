@@ -242,8 +242,9 @@ export function buildPayload(
   const probe = spacecraftId ? buildInterplanetarySpacecraft(spacecraftId) : null;
   // The /fleet showcase craft (preloaded by /fly) — the full CSM, Soyuz, Dragon, X-37B or probe.
   const craft = probe ? null : flyCraft(spacecraftId);
-  const capsuleId =
-    !probe && spacecraftId ? getEarthOrbitCoast(spacecraftId)?.capsuleId : undefined;
+  // A winged orbiter (the Shuttle) is the showcase craft in its bay, not a capsule on the stack.
+  const coastOfCraft = !probe && spacecraftId ? getEarthOrbitCoast(spacecraftId) : null;
+  const capsuleId = coastOfCraft && !coastOfCraft.winged ? coastOfCraft.capsuleId : undefined;
   // Artemis flights ride Orion (crew module + service module + wings): the cruise model, not
   // the generic bus every SLS flight showed before.
   const orion =

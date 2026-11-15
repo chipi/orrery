@@ -171,7 +171,7 @@
   });
 </script>
 
-<div class="coast" class:hud-hidden={hudHidden}>
+<div class="coast" class:hud-hidden={hudHidden} data-testid="coast-scene">
   <div class="canvas" bind:this={container}></div>
 
   {#if debugOn && camDbg}

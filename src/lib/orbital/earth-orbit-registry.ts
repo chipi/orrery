@@ -26,6 +26,12 @@ export interface EarthOrbitCoast {
   coastDurationS: number;
   /** Suborbital ballistic hop — a single arc, no orbital loop. */
   suborbital?: boolean;
+  /**
+   * A winged orbiter (the Space Shuttle): the craft is the /fleet showcase model
+   * (`flyCraftInOrbit`), not a capsule builder, the payload stays in the bay on the way up and the
+   * landing is a runway. `capsuleId` is then only a label ('orbiter'), never a builder id.
+   */
+  winged?: boolean;
 }
 
 const COASTS: Record<string, EarthOrbitCoast> = {
@@ -309,6 +315,34 @@ const COASTS: Record<string, EarthOrbitCoast> = {
     inclinationDeg: 42.6,
     revolutions: 14,
     coastDurationS: 86400,
+  },
+  // Space Shuttle flights: after the climb the orbiter coasts in Earth orbit (no cislunar or
+  // heliocentric arc). No re-entry descent profile exists for a winged glide, so the act holds
+  // at the end of the coast.
+  'sts-1': {
+    // The mission record: a 166 nautical mile (307 km) orbit inclined 40.3 degrees, 54 h 20 min
+    // 53 s and 37 revolutions (about 88 min each).
+    missionId: 'sts-1',
+    capsuleId: 'orbiter',
+    winged: true,
+    apogeeKm: 307,
+    perigeeKm: 307,
+    inclinationDeg: 40.3,
+    revolutions: 37,
+    coastDurationS: 195000,
+  },
+  'sts-107': {
+    // The mission record gives the 16-day flight (lost on re-entry at MET 15.93 d) but no orbit
+    // figures: 255 orbits, 39.0 degrees, 270 x 285 km are from the Wikipedia infobox (NASA's STS-107
+    // archive page was not reachable); NOT a primary source.
+    missionId: 'sts-107',
+    capsuleId: 'orbiter',
+    winged: true,
+    apogeeKm: 285,
+    perigeeKm: 270,
+    inclinationDeg: 39.0,
+    revolutions: 255,
+    coastDurationS: 1373000,
   },
 };
 

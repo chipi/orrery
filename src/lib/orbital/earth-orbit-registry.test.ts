@@ -1,4 +1,4 @@
-import { readFileSync, existsSync } from 'node:fs';
+import { readFileSync, readdirSync, existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, resolve } from 'node:path';
 import { describe, it, expect } from 'vitest';
@@ -77,6 +77,76 @@ const COAST_IDS = [
   'polaris-dawn',
   'shenzhou-1',
 ];
+
+describe('Space Shuttle flights coast in Earth orbit (no cislunar arc after the climb)', () => {
+  it('STS-1 carries its mission record: 166 nmi (307 km), 40.3 degrees, 37 revolutions', () => {
+    const c = getEarthOrbitCoast('sts-1')!;
+    expect(c.winged).toBe(true);
+    expect(c.apogeeKm).toBe(307);
+    expect(c.perigeeKm).toBe(307);
+    expect(c.inclinationDeg).toBe(40.3);
+    expect(c.revolutions).toBe(37);
+    // 54 h 20 min 53 s on the record (the climb is the first 9 min of it)
+    expect(c.coastDurationS / 3600).toBeGreaterThan(53.5);
+    expect(c.coastDurationS / 3600).toBeLessThan(54.4);
+  });
+
+  it('STS-107 is a 16-day Earth-orbit flight at 39 degrees', () => {
+    const c = getEarthOrbitCoast('sts-107')!;
+    expect(c.winged).toBe(true);
+    expect(c.inclinationDeg).toBe(39);
+    expect(c.coastDurationS / 86400).toBeGreaterThan(15.5); // the record: lost at MET 15.93 d
+    expect(c.coastDurationS / 86400).toBeLessThan(16);
+  });
+
+  it.each(['sts-1', 'sts-107'])('%s: a consistent LEO period and a runway, not a capsule', (id) => {
+    const c = getEarthOrbitCoast(id)!;
+    const min = c.coastDurationS / c.revolutions / 60;
+    expect(min).toBeGreaterThan(85);
+    expect(min).toBeLessThan(115);
+    expect(c.capsuleId).toBe('orbiter');
+    expect(CAPSULE_FAMILY_IDS).not.toContain(c.capsuleId); // never built as a capsule
+  });
+});
+
+// A dest-EARTH mission that can launch, and has a Fly chip, must continue after the climb into the
+// Earth-orbit coast: with no descriptor the router falls through to the cislunar view (a Moon arc
+// for a 2-day Shuttle flight). Missions that still fall through are listed, so a new Earth mission
+// without a descriptor fails here until it is handled or listed.
+describe('every launchable Earth mission has a coast descriptor (never the cislunar fall-through)', () => {
+  const KNOWN_GAPS = new Set([
+    'otv-1',
+    'otv-2',
+    'otv-3',
+    'otv-4',
+    'otv-5',
+    'otv-6',
+    'otv-7',
+    'shenzhou-5',
+    'sputnik1',
+  ]);
+  const dir = resolve(ROOT, 'static/data/missions/earth');
+  const missions = readdirSync(dir)
+    .filter((f) => f.endsWith('.json'))
+    .map((f) => JSON.parse(readFileSync(resolve(dir, f), 'utf8')) as Record<string, unknown>);
+
+  it('the Shuttle and every other launchable flown Earth mission is covered or listed', () => {
+    const missing: string[] = [];
+    for (const m of missions) {
+      const refs = (m.fleet_refs as { role: string }[] | undefined) ?? [];
+      const launchable = refs.some((r) => r.role === 'launcher') && m.status === 'FLOWN';
+      const hasChip = typeof m.flight_data_quality === 'string';
+      if (!launchable || !hasChip) continue;
+      if (!getEarthOrbitCoast(m.id as string) && !KNOWN_GAPS.has(m.id as string))
+        missing.push(m.id as string);
+    }
+    expect(missing).toEqual([]);
+  });
+
+  it('the listed gaps really are gaps (the list shrinks as they are fixed)', () => {
+    for (const id of KNOWN_GAPS) expect(getEarthOrbitCoast(id), id).toBeNull();
+  });
+});
 
 describe('coast ↔ descent ↔ capsule join guard', () => {
   it('every listed id resolves to a coast descriptor (catches a dropped entry)', () => {

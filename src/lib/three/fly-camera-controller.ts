@@ -176,6 +176,15 @@ export function createFlyCameraController(deps: FlyCameraDeps) {
       montageEnabled = on;
     };
   }
+  // Read-only camera probe for the touch-gesture e2e: position xyz + orbit target xyz.
+  window.__orbitCamera = () => [
+    camera.position.x,
+    camera.position.y,
+    camera.position.z,
+    camTarget.x,
+    camTarget.y,
+    camTarget.z,
+  ];
   let montageShotFrame: ShotFrame | null = null;
   let montageShotKind: ShotKind | null = null;
   // Previous frame's shot kind — a change is a CUT (snap); same kind

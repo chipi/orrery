@@ -507,7 +507,7 @@ Design at 375px first. Desktop is progressive enhancement.
 @media (max-width: 767px) { .panel { bottom: 0; width: 100%; } }
 ```
 
-Touch targets: minimum 44×44px. Three.js screens: single-finger orbit, two-finger zoom. Bottom sheet dismisses with swipe-down.
+Touch targets: minimum 44×44px. Three.js screens: single-finger orbit, two-finger pinch to zoom and drag to pan (`src/lib/three/touch-gestures.ts`; OrbitControls scenes set `ORBIT_CONTROLS_TOUCHES`). Bottom sheet dismisses with swipe-down.
 
 ---
 

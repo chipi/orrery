@@ -87,6 +87,8 @@ declare global {
     __exploreCameraState?: () => {
       origin: number[];
       camR: number;
+      camT: number;
+      camP: number;
       flying: boolean;
       ringVisible: boolean;
       ringAt: number[];
@@ -134,6 +136,10 @@ declare global {
       x: number;
       y: number;
     } | null;
+    /** Test hook: the Worlds camera (orbit angles, radius, pan offset). */
+    __surfaceSceneCamera?: () => { camR: number; camT: number; camP: number; focus: number[] };
+    /** Test hook: the /iss, /tiangong, /fly orbit camera as [position xyz, target xyz]. */
+    __orbitCamera?: () => number[] | null;
     /** /iss, /tiangong (StationRoute, as `__${config.id}PickAt`). */
     __issPickAt?: (moduleId?: string) => { x: number; y: number; moduleId: string } | null;
     __tiangongPickAt?: (moduleId?: string) => { x: number; y: number; moduleId: string } | null;

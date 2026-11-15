@@ -7,6 +7,7 @@
   import { base } from '$app/paths';
   import * as THREE from 'three';
   import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+  import { ORBIT_CONTROLS_TOUCHES } from '$lib/three/touch-gestures';
   import { createSpinAccumulator } from '$lib/three/spin-accumulator';
   import { createLayeredStarField } from '$lib/three/star-field';
   import { tickSunTrackingArrays } from '$lib/three/sun-tracking';
@@ -538,6 +539,8 @@
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true;
     controls.dampingFactor = 0.06;
+    controls.touches.ONE = ORBIT_CONTROLS_TOUCHES.ONE;
+    controls.touches.TWO = ORBIT_CONTROLS_TOUCHES.TWO;
     controls.target.set(...config.camera.target);
     controls.update();
 
@@ -877,6 +880,16 @@
     }
 
     requestMaterialRefresh = () => refreshMeshMaterials(performance.now() / 1000);
+
+    // Read-only camera probe for the touch-gesture e2e: position xyz + orbit target xyz.
+    window.__orbitCamera = () => [
+      camera.position.x,
+      camera.position.y,
+      camera.position.z,
+      controls.target.x,
+      controls.target.y,
+      controls.target.z,
+    ];
 
     resetCamera = () => {
       camera.position.copy(initialCamPos);

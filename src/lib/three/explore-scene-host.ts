@@ -111,6 +111,7 @@ import { setDirectionLabelText, type IconicTrajectoryHandle } from '$lib/three/i
 import type { attachFrameMonitor } from '$lib/quality/frame-monitor';
 import type { resolveQualitySync } from '$lib/quality/quality-tier';
 import type { createRouteLifecycle } from '$lib/three/route-lifecycle';
+import { createTwoFingerTracker, panWorldPerPx } from '$lib/three/touch-gestures';
 import type { ExploreSmallBody, createExploreSolarScene } from '$lib/three/explore-solar-scene';
 
 const SMALL_BODY_NAME_2D: Record<string, () => string> = {
@@ -2087,6 +2088,8 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     window.__exploreCameraState = () => ({
       origin: focusOrigin.toArray(),
       camR,
+      camT,
+      camP,
       flying: flyActive,
       ringVisible: selHalo.visible,
       ringAt: selHalo.position.toArray(),
@@ -2783,6 +2786,22 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     downY3d = e.clientY;
     el3d.style.cursor = isPan3d ? 'move' : 'grabbing';
   };
+  // Translate focusOrigin in the screen-aligned plane (shift/right-drag, two-finger drag). Build the
+  // camera's right + up basis from its world matrix so panning tracks the view at any orbit pose.
+  // Speed proportional to camR (and tan(fov/2)) so a finger-width of motion shifts the scene by
+  // ~one finger-width of world distance at every zoom level. The caller does NOT call updateCam.
+  //
+  // 2026-06-15 bugfix: drop the focus follow at the start of any pan. The animate-loop steady-state
+  // branch re-glues focusOrigin to the focused planet's world position every frame, which silently
+  // overwrote panning while a planet was selected. A pan is an explicit "I'm leaving this body"
+  // gesture — drop the focus so the new focusOrigin sticks.
+  const pan3dBy = (dx: number, dy: number) => {
+    if (focusFollow || flyActive) cancelFocus();
+    const scale = panWorldPerPx(camR, camera.fov, window.innerHeight);
+    camera.matrixWorld.extractBasis(camRight, camUp, camForward);
+    focusOrigin.addScaledVector(camRight, -dx * scale);
+    focusOrigin.addScaledVector(camUp, dy * scale);
+  };
   const on3dMouseMove = (e: MouseEvent) => {
     if (!isDrag3d) return;
     const dx = e.clientX - lmx3d;
@@ -2791,26 +2810,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
       dragMoved3d = true;
     }
     if (isPan3d) {
-      // Translate focusOrigin in the screen-aligned plane. Build the
-      // camera's right + up basis from its world matrix so panning
-      // tracks the user's view regardless of current orbit pose.
-      // Speed proportional to camR (and tan(fov/2)) so a finger-
-      // width of mouse motion shifts the scene by ~one finger-width
-      // of world distance at every zoom level.
-      //
-      // 2026-06-15 bugfix: drop the focus follow at the start of
-      // any pan. The animate-loop steady-state branch re-glues
-      // focusOrigin to the focused planet's world position every
-      // frame, which silently overwrote panning while a planet was
-      // selected (user note: "I click shift, mouse icon does change
-      // to move, but I am not moving the canvas"). A pan is an
-      // explicit "I'm leaving this body" gesture — drop the focus so
-      // the new focusOrigin sticks.
-      if (focusFollow || flyActive) cancelFocus();
-      const scale = (camR * 2 * Math.tan((camera.fov * Math.PI) / 360)) / window.innerHeight;
-      camera.matrixWorld.extractBasis(camRight, camUp, camForward);
-      focusOrigin.addScaledVector(camRight, -dx * scale);
-      focusOrigin.addScaledVector(camUp, dy * scale);
+      pan3dBy(dx, dy);
     } else {
       camT -= dx * 0.006;
       camP = Math.max(0.08, Math.min(Math.PI * 0.48, camP + dy * 0.005));
@@ -3368,6 +3368,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
   let touchDownX3d = 0;
   let touchDownY3d = 0;
   let pinchPrev3d = 0; // Previous two-finger distance for pinch-zoom.
+  const fingers3d = createTwoFingerTracker(); // The two-finger midpoint drives the pan.
 
   const touchDist = (a: Touch, b: Touch) =>
     Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY);
@@ -3385,10 +3386,17 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
       // pinch deltas don't get treated as orbit drag.
       touchActive3d = false;
       pinchPrev3d = touchDist(e.touches[0], e.touches[1]);
+      fingers3d.start(e.touches[0], e.touches[1]);
     }
   };
   const on3dTouchMove = (e: TouchEvent) => {
     if (e.touches.length === 2) {
+      // Two fingers pan as well as pinch (the contract of every scene: touch-gestures.ts).
+      const step = fingers3d.move(e.touches[0], e.touches[1]);
+      if (step && (step.dx !== 0 || step.dy !== 0)) {
+        pan3dBy(step.dx, step.dy);
+        updateCam();
+      }
       // Pinch-zoom on the camera radius. Per CLAUDE.md mobile rules:
       // 3D screens are single-finger orbit + two-finger zoom.
       const dist = touchDist(e.touches[0], e.touches[1]);
@@ -3535,7 +3543,10 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
   };
   const on3dTouchEnd = (e: TouchEvent) => {
     // Reset pinch state when fingers lift below 2.
-    if (e.touches.length < 2) pinchPrev3d = 0;
+    if (e.touches.length < 2) {
+      pinchPrev3d = 0;
+      fingers3d.end();
+    }
     const wasMoved = touchMoved3d;
     const wasActive = touchActive3d;
     if (e.touches.length === 0) touchActive3d = false;
@@ -3742,7 +3753,12 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
         zoom2d = Math.max(0.12, Math.min(5, zoom2d / f));
       }
       pinchPrev2d = dist;
-      pinchCenter2d = { x: (t1.clientX + t2.clientX) / 2, y: (t1.clientY + t2.clientY) / 2 };
+      // The fingers' midpoint drift pans the map (two-finger drag), alongside the pinch zoom.
+      const midX = (t1.clientX + t2.clientX) / 2;
+      const midY = (t1.clientY + t2.clientY) / 2;
+      zx2d += midX - pinchCenter2d.x;
+      zy2d += midY - pinchCenter2d.y;
+      pinchCenter2d = { x: midX, y: midY };
       return;
     }
     if (!touchActive2d || e.touches.length !== 1) return;

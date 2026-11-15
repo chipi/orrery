@@ -3615,6 +3615,16 @@
       onContextMenu,
     });
 
+    // Read-only camera probe for the touch-gesture e2e (orbit, zoom radius, pan offset).
+    if (typeof window !== 'undefined') {
+      window.__surfaceSceneCamera = () => ({
+        camR,
+        camT,
+        camP,
+        focus: [focusOffset.x, focusOffset.y, focusOffset.z],
+      });
+    }
+
     // A ring's tap target sits over the canvas: scrolling there still zooms.
     if (ringsHost) lifecycle.on(ringsHost, 'wheel', onWheel, { passive: false });
 

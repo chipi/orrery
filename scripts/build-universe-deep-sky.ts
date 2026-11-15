@@ -223,7 +223,7 @@ const objects = snap.objects.map((o) => {
     size_arcmin: o.size,
     con: CON_FIX[o.con] ?? o.con,
     dist_ly: distLy === null ? null : Math.round(distLy),
-    dist_label: catDist ? distanceLabel(catDist.value as number) : (photo?.distance ?? null),
+    dist_label: catDist ? distanceLabel(catDist.value as number) : (photo?.distance || null),
     photoKey: photo?.key ?? null,
     photoTitle: photo?.title ?? null,
     gatewaySystem: GATEWAY[o.designation] ?? null,

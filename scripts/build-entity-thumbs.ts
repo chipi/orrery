@@ -46,6 +46,7 @@ export const SURFACES: SurfaceSpec[] = [
   { key: 'iss-modules', dir: 'iss-modules', overrides: 'iss-modules' },
   { key: 'tiangong-modules', dir: 'tiangong-modules', overrides: 'tiangong-modules' },
   { key: 'sun', dir: 'sun', overrides: null, flat: true },
+  { key: 'stars', dir: 'stars', overrides: 'stars' },
 ];
 
 export interface SurfaceThumbs {

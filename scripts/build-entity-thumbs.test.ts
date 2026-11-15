@@ -41,6 +41,7 @@ for (const s of [
   'mars-sites',
   'iss-modules',
   'tiangong-modules',
+  'stars',
 ])
   mkdirSync(join(root, 'static/images', s), { recursive: true });
 

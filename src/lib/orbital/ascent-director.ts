@@ -1282,6 +1282,7 @@ export function directedPoseAt(
   s: AscentState,
   vehLen: number,
   focus?: { x: number; y: number; z?: number } | null,
+  safe?: SafeArea | null,
 ): DirectedPose {
   const reduced = plan.reducedMotion;
   const i = shotIndexAt(plan.shots, t);
@@ -1299,7 +1300,90 @@ export function directedPoseAt(
       pose = blendPoses(prev, pose, blend);
     }
   }
-  return { pose, index: i, progress, blend };
+  const fv = bodyAngleFromVerticalRad(s);
+  const centre = {
+    x: s.downrangeKm + Math.sin(fv) * vehLen * 0.5,
+    y: s.altKm + Math.cos(fv) * vehLen * 0.5,
+    z: 0,
+  };
+  return { pose: applySafeArea(pose, safe, centre), index: i, progress, blend };
+}
+
+/**
+ * The part of the frame the HUD leaves free, as fractions of the frame height covered at the top
+ * and at the bottom (a phone's header and its readout and play-bar strips). The visible frame is
+ * the canvas minus these.
+ */
+export interface SafeArea {
+  top: number;
+  bottom: number;
+}
+
+/**
+ * Fit a pose to the HUD-safe area: the view widens by the safe fraction (so a subject that filled
+ * f of the frame fills f of the visible band) and the camera tilts so the subject sits at the
+ * band's centre instead of the frame's. Pure; the identity without an inset.
+ */
+export function applySafeArea(
+  pose: CameraPose,
+  safe?: SafeArea | null,
+  /** The point that must sit at the band's centre (the vehicle's middle); default: the look-at. */
+  subject?: { x: number; y: number; z: number },
+): CameraPose {
+  if (!safe || (safe.top <= 0 && safe.bottom <= 0)) return pose;
+  const v = Math.max(0.4, 1 - safe.top - safe.bottom);
+  const c = safe.bottom - safe.top; // the visible band's centre, in NDC (-1..1)
+  const tanH = Math.tan((pose.fov * D2R) / 2) / v;
+  let fx = pose.tx - pose.px;
+  let fy = pose.ty - pose.py;
+  let fz = pose.tz - pose.pz;
+  const d = Math.hypot(fx, fy, fz) || 1;
+  fx /= d;
+  fy /= d;
+  fz /= d;
+  const n = Math.hypot(fx, fz);
+  const widened = { ...pose, fov: (2 * Math.atan(tanH)) / D2R };
+  if (n < 1e-6) return widened; // looking straight down: no horizon-relative up
+  const ux = (-fx * fy) / n;
+  const uy = n;
+  const uz = (-fz * fy) / n;
+  // The subject's height on screen now, and how far the axis must move down to lift it to c.
+  const now = subject ? ndcOf(widened, subject.x, subject.y, subject.z) : null;
+  const u = (c - (now ? now[1] : 0)) * d * tanH;
+  return { ...widened, tx: pose.tx - ux * u, ty: pose.ty - uy * u, tz: pose.tz - uz * u };
+}
+
+/** A world point in normalised device coordinates (x, y in -1..1; null behind the camera). */
+export function ndcOf(
+  pose: CameraPose,
+  x: number,
+  y: number,
+  z: number,
+  aspect = 16 / 9,
+): [number, number] | null {
+  let fx = pose.tx - pose.px;
+  let fy = pose.ty - pose.py;
+  let fz = pose.tz - pose.pz;
+  const fl = Math.hypot(fx, fy, fz) || 1;
+  fx /= fl;
+  fy /= fl;
+  fz /= fl;
+  const n = Math.hypot(fx, fz) || 1e-6;
+  const rx = -fz / n;
+  const rz = fx / n;
+  const ux = (-fx * fy) / n;
+  const uy = n;
+  const uz = (-fz * fy) / n;
+  const vx = x - pose.px;
+  const vy = y - pose.py;
+  const vz = z - pose.pz;
+  const depth = vx * fx + vy * fy + vz * fz;
+  if (depth < 1e-6) return null;
+  const th = Math.tan((pose.fov * D2R) / 2);
+  return [
+    (vx * rx + vz * rz) / (depth * th * aspect),
+    (vx * ux + vy * uy + vz * uz) / (depth * th),
+  ];
 }
 
 /** The shot list as text for the review UI and logs. */

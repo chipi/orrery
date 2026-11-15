@@ -126,17 +126,19 @@ const hasTimeOfDay = (e: LaunchEntryLike): boolean =>
 export function findLaunchEntry<E extends LaunchEntryLike>(
   entries: Iterable<E>,
   q: { missionId?: string; departureDate?: string; launcherId?: string },
+  /** true: match the entry whatever its time precision (the pad name does not need a time). */
+  anyPrecision = false,
 ): E | null {
   if (!q.missionId || q.missionId.startsWith('plan-')) return null;
   const all = [...entries];
   const byRef = all.find((e) => e.orrery_mission_ref === q.missionId);
-  if (byRef) return hasTimeOfDay(byRef) ? byRef : null;
+  if (byRef) return anyPrecision || hasTimeOfDay(byRef) ? byRef : null;
   if (!q.departureDate || !q.launcherId) return null;
   const same = all.filter(
     (e) =>
       e.orrery_launcher_ref === q.launcherId &&
       !e.orrery_mission_ref &&
-      hasTimeOfDay(e) &&
+      (anyPrecision || hasTimeOfDay(e)) &&
       (e.net ?? '').slice(0, 10) === q.departureDate,
   );
   return same.length === 1 ? same[0] : null;

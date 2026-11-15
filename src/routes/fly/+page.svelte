@@ -101,7 +101,7 @@
   import FdPhaseMarkerLabel from '$lib/components/FdPhaseMarkerLabel.svelte';
   import FlybyDebugViewer from '$lib/components/FlybyDebugViewer.svelte';
   import LaunchDirectorDebugViewer from '$lib/components/LaunchDirectorDebugViewer.svelte';
-  import { resolveLaunchInstant } from '$lib/launches/launch-instant';
+  import { resolveLaunchContext } from '$lib/launches/launch-instant';
   import type { LaunchInstant } from '$lib/orbital/launch-sun';
   import type { DirectorDebugData } from '$lib/orbital/launch-director-debug-plot';
   import DebugPanelRegistrar from '$lib/components/DebugPanelRegistrar.svelte';
@@ -324,6 +324,8 @@
   let launchProfile = $state<LaunchProfile | null>(null);
   // The launch's real instant + pad (light) and the director's debug data (?debug=1 Page tab).
   let launchInstant = $state<LaunchInstant | null>(null);
+  // The displayed pad: the mission's launch-site ref, else the launches entry's pad, else the profile's.
+  let launchSiteName = $state<string | undefined>(undefined);
   let launchDirectorDebug = $state<DirectorDebugData | null>(null);
   // The launcher's real height (fleet specs), so a showcase craft rides it at true scale.
   let launcherHeightM = $state<number | undefined>(undefined);
@@ -361,7 +363,7 @@
   let launchDossier = $derived({
     name: mission.name,
     agency: mission.agency ?? mission.agency_full ?? '',
-    site: launchProfile?.launchSite?.name ?? m.hud_launch_complex(),
+    site: launchSiteName ?? launchProfile?.launchSite?.name ?? m.hud_launch_complex(),
     destination: mission.arr_label ?? '',
     spacecraftId: mission.id,
     launcherHeightM,
@@ -386,7 +388,7 @@
         const depDate = /^\d{4}-\d{2}-\d{2}$/.test(mission.dep_label)
           ? mission.dep_label
           : undefined;
-        launchInstant = await resolveLaunchInstant(
+        const ctx = await resolveLaunchContext(
           {
             missionId: mission.id,
             departureDate: depDate,
@@ -397,6 +399,8 @@
           fetch,
           base,
         ).catch(() => null);
+        launchInstant = ctx?.instant ?? null;
+        launchSiteName = ctx?.pad?.name;
         launchProfile = p;
         dispatchPhase({ type: 'startLaunch' });
       })

@@ -26,6 +26,7 @@ import {
   type DirectorPlan,
   type LightId,
   type OpeningId,
+  type SafeArea,
 } from '$lib/orbital/ascent-director';
 import type { LaunchInstant } from '$lib/orbital/launch-sun';
 
@@ -52,6 +53,8 @@ export interface LaunchDirectorOptions {
   lite?: boolean;
   /** false: the sky, clouds and smoke are not drawn (review only). */
   conditions?: boolean;
+  /** The HUD-safe area at start (see `setSafeArea`). */
+  safe?: SafeArea | null;
 }
 
 export interface DirectorFrame {
@@ -64,6 +67,8 @@ export interface DirectorFrame {
 
 export interface LaunchDirector {
   readonly plan: DirectorPlan;
+  /** The HUD-safe area (touch and narrow viewports): the whole vehicle is framed inside it. */
+  setSafeArea(safe: SafeArea | null): void;
   /** Feed the scene the (ground-relative) state; drive the camera unless `camera` is false. */
   apply(raw: AscentState, opts?: { camera?: boolean }): DirectorFrame;
   dispose(): void;
@@ -94,12 +99,16 @@ export function createLaunchDirector(o: LaunchDirectorOptions): LaunchDirector {
       ? null
       : attachLaunchConditions(asc, plan.conditions, vehLen, o.nightUrl, o.lite === true);
 
+  let safe: SafeArea | null = o.safe ?? null;
   return {
     plan,
+    setSafeArea(s) {
+      safe = s;
+    },
     apply(raw, opts) {
       const state = groundRelative(raw, lat);
       asc.setState(state);
-      const dp = directedPoseAt(plan, state.t, state, vehLen);
+      const dp = directedPoseAt(plan, state.t, state, vehLen, undefined, safe);
       if (opts?.camera !== false) {
         const p = dp.pose;
         asc.camera.position.set(p.px, p.py, p.pz);

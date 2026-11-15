@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { resolveLaunchInstant } from './launch-instant';
+import { resolveLaunchContext, resolveLaunchInstant } from './launch-instant';
 
 const sts34 = {
   orrery_mission_ref: null,
@@ -32,6 +32,78 @@ const files = {
   'fleet/launch-site/vandenberg-slc-4e.json': { lat: 34.632, lon: -120.611 },
 };
 const cape = { lat: 28.56, lon: -80.58 };
+
+describe('resolveLaunchContext (the pad the dossier names and the sun uses)', () => {
+  const named = {
+    ...files,
+    'fleet/launch-site/vandenberg-slc-4e.json': {
+      name: 'Vandenberg SLC-4E',
+      lat: 34.632,
+      lon: -120.611,
+    },
+    'fleet/launch-site/lc-39b.json': { name: 'Launch Complex 39B', lat: 28.6273, lon: -80.6208 },
+  };
+  const profileSite = { lat: 28.56, lon: -80.58, name: 'SLC-40 · Cape Canaveral' };
+
+  it('DART names Vandenberg, not the profile site', async () => {
+    const c = await resolveLaunchContext(
+      { missionId: 'dart', departureDate: '2021-11-24', launcherId: 'falcon-9' },
+      profileSite,
+      fakeFetch(named),
+    );
+    expect(c.pad?.name).toBe('Vandenberg SLC-4E');
+    expect(c.instant?.latDeg).toBeCloseTo(34.632, 3);
+  });
+
+  it("the mission's own launch-site fleet ref wins", async () => {
+    const c = await resolveLaunchContext(
+      {
+        missionId: 'dart',
+        departureDate: '2021-11-24',
+        launcherId: 'falcon-9',
+        launchSiteRef: 'lc-39b',
+      },
+      profileSite,
+      fakeFetch(named),
+    );
+    expect(c.pad?.name).toBe('Launch Complex 39B');
+  });
+
+  it('a date-only entry still names its pad but gives no instant (seeded light)', async () => {
+    const dayOnly = {
+      orrery_mission_ref: 'dayonly',
+      orrery_launcher_ref: 'falcon-9',
+      orrery_launch_site_ref: 'vandenberg-slc-4e',
+      net: '2021-01-01T00:00:00.000Z',
+      net_precision: 'day',
+    };
+    const c = await resolveLaunchContext(
+      { missionId: 'dayonly', departureDate: '2021-01-01', launcherId: 'falcon-9' },
+      profileSite,
+      fakeFetch({ ...named, 'launches-historic/2020-2026.json': { entries: { d: dayOnly } } }),
+    );
+    expect(c.pad?.name).toBe('Vandenberg SLC-4E');
+    expect(c.instant).toBeNull();
+  });
+
+  it('a Plan flight, an unknown mission and a missing pad file use the profile site', async () => {
+    const plan = await resolveLaunchContext({ missionId: 'plan-x' }, profileSite, fakeFetch(named));
+    expect(plan.pad?.name).toBe('SLC-40 · Cape Canaveral');
+    expect(plan.instant).toBeNull();
+    const unknown = await resolveLaunchContext(
+      { missionId: 'nope', departureDate: '2021-01-01' },
+      profileSite,
+      fakeFetch(named),
+    );
+    expect(unknown.pad?.name).toBe('SLC-40 · Cape Canaveral');
+    const noFile = await resolveLaunchContext(
+      { missionId: 'dart', departureDate: '2021-11-24', launcherId: 'falcon-9' },
+      profileSite,
+      fakeFetch({ 'launches-historic/2020-2026.json': { entries: { b: dart } } }),
+    );
+    expect(noFile.pad?.name).toBe('SLC-40 · Cape Canaveral');
+  });
+});
 
 describe('resolveLaunchInstant', () => {
   it("Shuttle (no mission ref): the date + launcher entry, at the entry's pad", async () => {

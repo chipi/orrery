@@ -58,6 +58,7 @@
   import { createAnimateLoop, type AnimateLoop } from '$lib/three/animate-loop';
   import { createLaunchDirector, type LaunchDirector } from '$lib/three/launch-director-rig';
   import type { LaunchInstant } from '$lib/orbital/launch-sun';
+  import type { SafeArea } from '$lib/orbital/ascent-director';
   import { prefersReducedMotion } from '$lib/reduced-motion';
   import {
     buildPlotModel,
@@ -241,6 +242,7 @@
   let sceneObj: AscentScene | undefined;
   let director: LaunchDirector | undefined;
   let directorDebugModel: PlotModel | null = null;
+  let onSafeResize: (() => void) | undefined;
   let loop: AnimateLoop | undefined;
 
   let hud = $state({ altKm: 0, velKms: 0, stage: 'S1', met: 'T-00:12' });
@@ -328,7 +330,18 @@
     // The launch camera director (G3): shot plan, conditions, ground-relative path. One
     // implementation shared with /dev/launch-director. Skipped under ?cam=classic.
     if (!classicCam) {
+      // The HUD strips cover the top and bottom of a phone's frame: frame the vehicle in what is left.
+      const safeNow = (): SafeArea | null => {
+        const narrow = window.innerWidth <= 700 || window.matchMedia('(pointer: coarse)').matches;
+        if (!narrow) return null;
+        return window.innerHeight >= window.innerWidth
+          ? { top: 0.13, bottom: 0.27 }
+          : { top: 0.16, bottom: 0.24 };
+      };
+      onSafeResize = () => director?.setSafeArea(safeNow());
+      window.addEventListener('resize', onSafeResize);
       director = createLaunchDirector({
+        safe: safeNow(),
         asc: sceneObj,
         summary,
         profile,
@@ -485,6 +498,7 @@
   });
 
   onDestroy(() => {
+    if (onSafeResize) window.removeEventListener('resize', onSafeResize);
     director?.dispose();
     loop?.cleanup();
     sceneObj?.dispose();

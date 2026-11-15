@@ -17,6 +17,8 @@ import {
   farEnough,
   fnv1a32,
   groundRelative,
+  applySafeArea,
+  ndcOf,
   TOWER_CLEAR_ALT_KM,
   mulberry32,
   pickConditions,
@@ -585,6 +587,80 @@ describe('smooth camera in the coast (no jerks at x10, 30 fps)', () => {
         expect(screen).toBeLessThan(1.93);
       }
     }
+  });
+});
+
+describe('HUD-safe area (phones)', () => {
+  const SAFE = { top: 0.13, bottom: 0.27 };
+  const PORTRAIT = 393 / 727;
+  const ends = (s: ReturnType<typeof sampleAscentAt>) => {
+    const fv = bodyAngleFromVerticalRad(s);
+    return [
+      [s.downrangeKm, s.altKm],
+      [s.downrangeKm + Math.sin(fv) * 1.2, s.altKm + Math.cos(fv) * 1.2],
+    ] as [number, number][];
+  };
+
+  it('is the identity without an inset', () => {
+    const pose = { px: 1, py: 2, pz: 3, tx: 0, ty: 1, tz: 0, fov: 40 };
+    expect(applySafeArea(pose, null)).toBe(pose);
+    expect(applySafeArea(pose, { top: 0, bottom: 0 })).toBe(pose);
+  });
+
+  it('puts the subject at the centre of the visible band and keeps its share of it', () => {
+    const pose = { px: 0, py: 0.4, pz: 4, tx: 0, ty: 0.6, tz: 0, fov: 40 };
+    const before = ndcOf(pose, 0, 0.6, 0)!;
+    expect(before[1]).toBeCloseTo(0, 6); // the look point is at the frame centre
+    const fitted = applySafeArea(pose, SAFE);
+    const after = ndcOf(fitted, 0, 0.6, 0)!;
+    expect(after[1]).toBeCloseTo(SAFE.bottom - SAFE.top, 4); // the band centre
+    // a 1 km tall subject spans (1 - top - bottom) as much of the frame as it did
+    const h0 = ndcOf(pose, 0, 1.1, 0)![1] - ndcOf(pose, 0, 0.1, 0)![1];
+    const h1 = ndcOf(fitted, 0, 1.1, 0)![1] - ndcOf(fitted, 0, 0.1, 0)![1];
+    expect(h1 / h0).toBeCloseTo(1 - SAFE.top - SAFE.bottom, 1);
+  });
+
+  it('the whole vehicle stays inside the safe band through every opening, on a phone', () => {
+    const lo = -1 + 2 * SAFE.bottom - 0.02;
+    const hi = 1 - 2 * SAFE.top + 0.02;
+    let checked = 0;
+    for (const id of ['sls-block-1', 'space-shuttle-stack', 'atlas-v', 'falcon-9']) {
+      const p = byId(id);
+      const lat = p.profile.launchSite?.lat ?? 28.5;
+      for (const opening of ['tower_clear', 'pad_wide', 'pad_dusk', 'overhead_drop'] as const) {
+        const plan = planFor(p, { seed: 3, force: { opening } });
+        for (let t = 0; t <= 21; t += 1.5) {
+          const s = groundRelative(sampleAscentAt(p.summary.states, t), lat);
+          const pose = directedPoseAt(plan, t, s, 1.2, undefined, SAFE).pose;
+          for (const [x, y] of ends(s)) {
+            const n = ndcOf(pose, x, y, 0, PORTRAIT)!;
+            expect(n[1], `${id} ${opening} t=${t}`).toBeGreaterThan(lo);
+            expect(n[1], `${id} ${opening} t=${t}`).toBeLessThan(hi);
+            checked++;
+          }
+        }
+      }
+    }
+    expect(checked).toBeGreaterThan(300);
+  });
+
+  it('without the inset some opening crops the vehicle (the defect)', () => {
+    const lo = -1 + 2 * SAFE.bottom;
+    let cropped = 0;
+    for (const id of ['sls-block-1', 'space-shuttle-stack', 'falcon-9']) {
+      const p = byId(id);
+      const lat = p.profile.launchSite?.lat ?? 28.5;
+      for (const opening of ['tower_clear', 'pad_wide', 'pad_dusk', 'overhead_drop'] as const) {
+        const plan = planFor(p, { seed: 3, force: { opening } });
+        for (let t = 3; t <= 21; t += 2) {
+          const s = groundRelative(sampleAscentAt(p.summary.states, t), lat);
+          const pose = directedPoseAt(plan, t, s, 1.2).pose;
+          const base = ndcOf(pose, ...ends(s)[0], 0, PORTRAIT);
+          if (base && base[1] < lo) cropped++;
+        }
+      }
+    }
+    expect(cropped).toBeGreaterThan(0);
   });
 });
 

@@ -1,9 +1,12 @@
 /**
- * The real launch instant and pad of a mission, for the launch's lighting (G3): the Sun at
- * the pad at the actual launch time. Reads the launches dataset (launches-historic/<decade>)
- * for the mission's time of day and the fleet launch-site entry for the pad's coordinates.
- * Null when there is no time of day (a Plan flight, a date-only mission): the light is then
- * seeded.
+ * The real launch instant and pad of a mission (G3): the launch's lighting takes the Sun at the
+ * pad at the actual launch time, and the launch dossier names that pad. Reads the launches
+ * dataset (launches-historic/<decade>) for the mission's entry (time of day, launch-site ref)
+ * and the fleet launch-site entry for the pad's name and coordinates.
+ *
+ * Pad priority, for the sun and for the displayed name alike: the mission's own launch-site
+ * fleet ref, else the launches entry's launch-site ref, else the launch profile's site. Time:
+ * null when there is no time of day (a Plan flight, a date-only mission): the light is seeded.
  */
 
 import { findLaunchEntry, type LaunchEntryLike, type LaunchInstant } from '$lib/orbital/launch-sun';
@@ -27,6 +30,18 @@ export interface LaunchInstantQuery {
   launchSiteRef?: string;
 }
 
+export interface LaunchPad {
+  /** The displayed site name (the fleet launch-site entry's, else the profile's). */
+  name?: string;
+  lat: number;
+  lon: number;
+}
+
+export interface LaunchContext {
+  instant: LaunchInstant | null;
+  pad: LaunchPad | null;
+}
+
 async function fetchJson<T>(fetchFn: typeof fetch, url: string): Promise<T | null> {
   try {
     const res = await fetchFn(url);
@@ -36,51 +51,66 @@ async function fetchJson<T>(fetchFn: typeof fetch, url: string): Promise<T | nul
   }
 }
 
-async function padCoords(
+async function fleetPad(
   fetchFn: typeof fetch,
   base: string,
   siteRef: string | null | undefined,
-): Promise<{ lat: number; lon: number } | null> {
+): Promise<LaunchPad | null> {
   if (!siteRef) return null;
-  const j = await fetchJson<{ lat?: number; lon?: number }>(
+  const j = await fetchJson<{ name?: string; lat?: number; lon?: number }>(
     fetchFn,
     `${base}/data/fleet/launch-site/${siteRef}.json`,
   );
   return j && typeof j.lat === 'number' && typeof j.lon === 'number'
-    ? { lat: j.lat, lon: j.lon }
+    ? { name: j.name, lat: j.lat, lon: j.lon }
     : null;
 }
 
 /**
- * The launch instant, or null. The pad is, in order: the mission's own launch-site fleet ref,
- * the launches entry's launch-site ref, else `profileSite` (the launch profile's site).
+ * The pad and the launch instant of a mission. `profileSite` (the launch profile's site) is the
+ * last resort for the pad and the only pad of a Plan flight.
  */
-export async function resolveLaunchInstant(
+export async function resolveLaunchContext(
   q: LaunchInstantQuery,
-  profileSite: { lat: number; lon: number } | undefined,
+  profileSite: { lat: number; lon: number; name?: string } | undefined,
   fetchFn: typeof fetch = fetch,
   base = '',
-): Promise<LaunchInstant | null> {
-  if (!q.missionId || q.missionId.startsWith('plan-')) return null;
+): Promise<LaunchContext> {
+  const fallback: LaunchPad | null = profileSite ? { ...profileSite } : null;
+  if (!q.missionId || q.missionId.startsWith('plan-')) return { instant: null, pad: fallback };
+
   const year = q.departureDate ? Number(q.departureDate.slice(0, 4)) : NaN;
   const files = Number.isFinite(year)
     ? DECADES.filter(([a, b]) => year >= a && year <= b)
     : DECADES;
+  let entry: LaunchEntryLike | null = null;
   for (const [, , name] of files) {
     const j = await fetchJson<{ entries?: Record<string, LaunchEntryLike> }>(
       fetchFn,
       `${base}/data/launches-historic/${name}.json`,
     );
     if (!j?.entries) continue;
-    const e = findLaunchEntry(Object.values(j.entries), q);
-    if (!e) continue;
-    const utcMs = Date.parse(e.net ?? '');
-    if (!Number.isFinite(utcMs)) return null;
-    const pad =
-      (await padCoords(fetchFn, base, q.launchSiteRef)) ??
-      (await padCoords(fetchFn, base, e.orrery_launch_site_ref)) ??
-      profileSite;
-    return pad ? { utcMs, latDeg: pad.lat, lonDeg: pad.lon } : null;
+    entry = findLaunchEntry(Object.values(j.entries), q, true);
+    if (entry) break;
   }
-  return null;
+  const pad =
+    (await fleetPad(fetchFn, base, q.launchSiteRef)) ??
+    (await fleetPad(fetchFn, base, entry?.orrery_launch_site_ref)) ??
+    fallback;
+  const hasTime = entry && (entry.net_precision === 'minute' || entry.net_precision === 'second');
+  const utcMs = hasTime ? Date.parse(entry?.net ?? '') : NaN;
+  return {
+    instant: pad && Number.isFinite(utcMs) ? { utcMs, latDeg: pad.lat, lonDeg: pad.lon } : null,
+    pad,
+  };
+}
+
+/** The launch instant, or null. See {@link resolveLaunchContext}. */
+export async function resolveLaunchInstant(
+  q: LaunchInstantQuery,
+  profileSite: { lat: number; lon: number } | undefined,
+  fetchFn: typeof fetch = fetch,
+  base = '',
+): Promise<LaunchInstant | null> {
+  return (await resolveLaunchContext(q, profileSite, fetchFn, base)).instant;
 }

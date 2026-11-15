@@ -32,7 +32,15 @@ A curl/header check would have passed while the site was actually broken — whi
 is exactly how three of the 2026-07-22 bugs hid (edge/CORS tests green, page
 context broken).
 
-## What it asserts (8 suites, ~60 checks)
+## What it asserts (9 suites, ~60 checks)
+
+The **version** suite (after headers) reads the served footer (`a.footer-version`)
+and fails unless it equals the label `package.json` produces
+(`scripts/lib/footer-version.mjs`, tested in `footer-version.test.ts`). It enforces
+the release order: the bump goes into the release PR, so the deployed commit
+carries it; a footer that shows the previous version means the deploy is stale or
+the bump came after the deploy. Because the daily run checks out `main`, a merged
+but not yet deployed bump turns that run red until the deploy.
 
 1. **headers** — reachable; HSTS / X-Content-Type-Options / X-Frame-Options /
    Referrer-Policy / CSP present; and the exact CSP directives the fixes need

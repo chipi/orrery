@@ -40,6 +40,7 @@ import { chromium } from '@playwright/test';
 import { readFileSync, writeFileSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import { TRANSLATED_LOCALES } from './lib/locales.mjs';
+import { compareFooterVersion } from './lib/footer-version.mjs';
 
 const BASE = (process.env.VALIDATE_URL ?? 'https://www.orrerylearn.com').replace(/\/$/, '');
 const TIER = process.env.VALIDATE_TIER ?? 'prod';
@@ -226,6 +227,31 @@ suite('headers');
       { warn: true },
     );
   }
+  await p.close();
+}
+
+// SUITE 1b — the served footer version is package.json's version (release order:
+// the bump goes into the release PR, so a deploy of that commit shows it).
+suite('version');
+{
+  const pkgVersion = JSON.parse(
+    readFileSync(new URL('../package.json', import.meta.url), 'utf8'),
+  ).version;
+  const p = await desktop.newPage();
+  let footerText = '';
+  try {
+    await p.goto(BASE + '/', { waitUntil: 'domcontentloaded', timeout: 30000 });
+    footerText =
+      (await p.locator('a.footer-version').first().textContent({ timeout: 15000 })) ?? '';
+  } catch {
+    // an unreadable footer fails the comparison below
+  }
+  const v = compareFooterVersion(footerText, pkgVersion);
+  record(
+    `footer version == package.json (${v.expected})`,
+    v.ok,
+    v.ok ? '' : `footer shows "${v.actual || 'nothing'}", package.json says ${v.expected}`,
+  );
   await p.close();
 }
 

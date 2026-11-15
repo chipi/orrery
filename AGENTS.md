@@ -1041,7 +1041,17 @@ Where the body comes from the matching `## [X.Y.Z]` section in `CHANGELOG.md` (e
 
 After the deploy is verified (`orrery-deploy-verify`), run `npm run indexnow -- --dry-run` and, with the operator's go, `npm run indexnow` (IndexNow submission of every sitemap URL; `docs/ops/indexnow.md`). It is not a release gate and CI does not run it.
 
-All three steps are needed for a complete release: tag + GH Release + deploy. There is **no staging tier** (2026-11 decision): the flow is **merge → `gh workflow run "Deploy to prod VPS (orrery)" --ref main` → validate-prod**. The deploy is always manual, never auto-triggered, so dispatch it only for a commit whose CI + docker-e2e are green. GitHub Pages serves only the project docs (`deploy-docs.yml`, CI-gated). Tiers: **dev → prod (VPS)**; see TA.md §pipelines "Deploy tiers".
+All three steps are needed for a complete release: tag + GH Release + deploy. There is **no staging tier** (2026-11 decision). **Release order** (fixed after 0.9.8 shipped saying "v0.9.7" in the footer, because the bump came after the deploy):
+
+| # | Step | Gate |
+|---|---|---|
+| 1 | The release PR carries the version bump, the CHANGELOG entry, the offline manifest, the tech BOM, the iOS version and the sitemap dates | `check-version-sync.mjs` green |
+| 2 | Merge; CI + docker-e2e green on the merge commit | CI |
+| 3 | `gh workflow run "Deploy to prod VPS (orrery)" --ref main` deploys that exact commit | manual dispatch |
+| 4 | Verify on prod (`validate-prod`, `orrery-deploy-verify`): the footer version equals `package.json` (`version` suite, `scripts/lib/footer-version.mjs`) | `validate-prod` exit 0 |
+| 5 | Tag that same deployed commit and `gh release create` | after step 4 |
+
+Never bump the version in a separate commit after the deploy, and never tag before step 4. The deploy is always manual, never auto-triggered, so dispatch it only for a commit whose CI + docker-e2e are green. GitHub Pages serves only the project docs (`deploy-docs.yml`, CI-gated). Tiers: **dev → prod (VPS)**; see TA.md §pipelines "Deploy tiers".
 
 ---
 

@@ -516,16 +516,22 @@ export function attachLaunchConditions(
       }
       void main() {
         vec3 q = vW + vec3(uSeed * 13.0, uSeed * 5.0, uSeed * 9.0);
-        float n = density(q, 5);
+        float n = density(q, ${lite ? 3 : 5});
         float cov = smoothstep(uThr, uThr + 0.3, n);
+        float above = step(uDeckAlt, uCamAlt);
+        // seen from below, a fragment with no cloud draws nothing: skip the shading
+        if (above < 0.5 && cov < 0.004) discard;
         vec3 nrm = normalize(vW - uCentre);
         float ndl = dot(nrm, normalize(uSunDir));
         float day = smoothstep(-0.12, 0.3, ndl);
-        // self-shadow: density a step toward the sun gives billows a lit and a shaded flank
-        vec3 st = normalize(uSunDir - nrm * dot(nrm, uSunDir));
-        float nS = density(q + st * 0.5, 3);
-        float relief = clamp(0.55 + (n - nS) * 3.0, 0.0, 1.0);
-        float above = step(uDeckAlt, uCamAlt);
+        // self-shadow: density a step toward the sun gives billows a lit and a shaded flank;
+        // only the top of the deck is lit, so from below it is not computed
+        float relief = 0.55;
+        if (above > 0.5) {
+          vec3 st = normalize(uSunDir - nrm * dot(nrm, uSunDir));
+          float nS = density(q + st * 0.5, ${lite ? 2 : 3});
+          relief = clamp(0.55 + (n - nS) * 3.0, 0.0, 1.0);
+        }
         vec3 top = mix(uShade, uLit, relief * day + (1.0 - day) * 0.1);
         top = mix(top, uShade, smoothstep(uThr + 0.25, uThr + 0.55, n) * 0.25);
         top = mix(top, uWarm, (1.0 - smoothstep(0.0, 0.35, abs(ndl + 0.04))) * 0.35 * day);

@@ -339,7 +339,11 @@
         endT: ascentEnd,
         reducedMotion: prefersReducedMotion(),
         nightUrl: `${base}/textures/2k_earth_nightmap.jpg`,
-        lite: quality.tier === 'minimal' || quality.tier === 'low',
+        // weak GPUs and touch devices get the lighter conditions rig
+        lite:
+          quality.tier === 'minimal' ||
+          quality.tier === 'low' ||
+          window.matchMedia('(pointer: coarse)').matches,
       });
       if (debugMode) {
         directorDebugModel = buildPlotModel({

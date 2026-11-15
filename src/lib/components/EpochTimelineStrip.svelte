@@ -11,7 +11,7 @@
    */
   import type { FleetEpoch } from '$types/fleet';
   import { EPOCH_BANDS, eraSelectable } from '$lib/epoch-bands';
-  import { ERA_PHOTO, eraPhotoPath } from '$lib/era-flagships';
+  import { ERA_PHOTO, eraPhotoPath, eraPhotoPlacement } from '$lib/era-flagships';
   import { assetUrl } from '$lib/asset-url';
   import * as m from '$lib/paraglide/messages';
   import { epochLabel } from '$lib/epoch-label';
@@ -28,7 +28,8 @@
 
   let { countByEpoch, colorsByEpoch, selected, onSelect }: Props = $props();
 
-  const MAX_DOTS = 5;
+  // four dots and "+N": the foot row stays on the dark text side, not over the photo
+  const MAX_DOTS = 4;
   const yearsOf = (b: (typeof EPOCH_BANDS)[number]) =>
     `${b.yearStart}–${b.id === 'mars-era' ? '∞' : b.yearEnd}`;
 </script>
@@ -37,6 +38,7 @@
   <ChipGroup role="radiogroup" label={m.epoch_filter_aria()} class="era-tiles">
     {#each EPOCH_BANDS as ep (ep.id)}
       {@const colors = colorsByEpoch?.get(ep.id) ?? []}
+      {@const place = eraPhotoPlacement(ERA_PHOTO[ep.id])}
       <Chip
         kind="choice"
         class="era-tile"
@@ -53,8 +55,13 @@
         <span class="era-photo" style:--flip={ERA_PHOTO[ep.id].flipRtl ? -1 : 1}>
           <img
             class="era-img"
+            class:flip={ERA_PHOTO[ep.id].flipRtl}
             src={assetUrl(eraPhotoPath(ERA_PHOTO[ep.id]))}
-            style:object-position={ERA_PHOTO[ep.id].position}
+            style:inline-size={place.width}
+            style:block-size={place.height}
+            style:top={place.top}
+            style:--left-ltr={place.leftLtr}
+            style:--left-rtl={place.leftRtl}
             alt=""
             width="64"
             height="96"
@@ -111,57 +118,47 @@
   }
   /* The photo sits crisp on the end side (about 40 % of the tile) with a short fade into the dark at its
      inner edge; the text is on the plain tile surface, so its contrast does not depend on the photo. */
+  /* The photo covers the whole tile; each picture is sized and placed (era-flagships.ts) so its
+     subject sits large on the end side. A gradient from the tile's own dark runs from the text
+     edge to clear at about two thirds, so the photo fades in across the tile with no hard edge. */
   .era-photo {
     position: absolute;
+    inset: 0;
     display: block;
-    inset-block: 0;
-    inset-inline-end: 0;
-    inline-size: 70%;
-    block-size: 100%;
-    -webkit-mask-image: linear-gradient(
-      to right,
-      transparent 0%,
-      rgb(0 0 0 / 0.04) 14%,
-      rgb(0 0 0 / 0.14) 26%,
-      rgb(0 0 0 / 0.38) 36%,
-      rgb(0 0 0 / 0.72) 43%,
-      #000 50%
-    );
-    mask-image: linear-gradient(
-      to right,
-      transparent 0%,
-      rgb(0 0 0 / 0.04) 14%,
-      rgb(0 0 0 / 0.14) 26%,
-      rgb(0 0 0 / 0.38) 36%,
-      rgb(0 0 0 / 0.72) 43%,
-      #000 50%
-    );
+    overflow: hidden;
   }
-  :global([dir='rtl']) .era-photo {
-    -webkit-mask-image: linear-gradient(
-      to left,
-      transparent 0%,
-      rgb(0 0 0 / 0.04) 14%,
-      rgb(0 0 0 / 0.14) 26%,
-      rgb(0 0 0 / 0.38) 36%,
-      rgb(0 0 0 / 0.72) 43%,
-      #000 50%
-    );
-    mask-image: linear-gradient(
-      to left,
-      transparent 0%,
-      rgb(0 0 0 / 0.04) 14%,
-      rgb(0 0 0 / 0.14) 26%,
-      rgb(0 0 0 / 0.38) 36%,
-      rgb(0 0 0 / 0.72) 43%,
-      #000 50%
-    );
+  .era-photo::after {
+    --fade:
+      var(--color-bg) 0%, color-mix(in srgb, var(--color-bg) 94%, transparent) 18%,
+      color-mix(in srgb, var(--color-bg) 80%, transparent) 32%,
+      color-mix(in srgb, var(--color-bg) 55%, transparent) 44%,
+      color-mix(in srgb, var(--color-bg) 25%, transparent) 55%,
+      color-mix(in srgb, var(--color-bg) 6%, transparent) 64%, transparent 70%;
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, var(--fade));
+  }
+  :global([dir='rtl']) .era-photo::after {
+    background: linear-gradient(to left, var(--fade));
   }
   .era-img {
+    position: absolute;
+    left: var(--left-ltr);
     display: block;
-    inline-size: 100%;
-    block-size: 100%;
-    object-fit: cover;
+    max-inline-size: none;
+    object-fit: fill;
+    /* the picture's own leading edge fades too, so where it starts inside a narrow tile there is
+       no seam against the dark */
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 38%);
+    mask-image: linear-gradient(to right, transparent 0%, #000 38%);
+  }
+  :global([dir='rtl']) .era-img:not(.flip) {
+    -webkit-mask-image: linear-gradient(to left, transparent 0%, #000 38%);
+    mask-image: linear-gradient(to left, transparent 0%, #000 38%);
+  }
+  :global([dir='rtl']) .era-img {
+    left: var(--left-rtl);
   }
   /* A picture without text or flags (a symmetric subject) may be mirrored in right-to-left, so
      its subject lands in the visible part and not in the fade. */
@@ -182,9 +179,14 @@
   .era-name {
     display: block;
     /* the name stays in the left 56 %, on the plain dark: it wraps rather than reach the photo */
-    max-inline-size: 59%;
+    max-inline-size: 52%;
+    text-shadow:
+      0 0 4px var(--color-bg),
+      0 1px 8px var(--color-bg);
     line-height: 1.25;
-    overflow-wrap: anywhere;
+    /* whole words only: a long word ("COMMERCIAL", "KOMMERZIELLE") runs on rather than split */
+    overflow-wrap: normal;
+    word-break: keep-all;
     color: var(--color-text);
   }
   .era-years {
@@ -231,9 +233,25 @@
       scroll-snap-type: x mandatory;
     }
     .strip :global(.era-tile) {
-      flex: 0 0 132px;
-      block-size: 88px;
+      flex: 0 0 172px;
+      block-size: 96px;
       scroll-snap-align: start;
+    }
+    /* phone tiles are narrower than the desktop ones: the dark reaches further across and the
+       subject sits further toward the end, so the text never lies on the bright part */
+    .era-photo::after {
+      --fade:
+        var(--color-bg) 0%, color-mix(in srgb, var(--color-bg) 95%, transparent) 26%,
+        color-mix(in srgb, var(--color-bg) 82%, transparent) 40%,
+        color-mix(in srgb, var(--color-bg) 58%, transparent) 52%,
+        color-mix(in srgb, var(--color-bg) 26%, transparent) 63%,
+        color-mix(in srgb, var(--color-bg) 6%, transparent) 72%, transparent 78%;
+    }
+    .era-img {
+      translate: 14px 0;
+    }
+    :global([dir='rtl']) .era-img {
+      translate: -14px 0;
     }
   }
 </style>

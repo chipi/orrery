@@ -1,6 +1,7 @@
 # Black-hole lensing frame cost on software GL (plan L52)
 
-Status 2026-11-15: measured, prototyped in the browser only, nothing shipped. The operator decides.
+Status 2026-11-15: measured, then decided and shipped on `tech-debt/0.9.9` (operator: "Fix + 0.75 scale on medium"):
+see "After the fix" below. The sections above it are the measurement and options as they stood before the fix.
 Plan row: `docs/wip/2026-11-11-ux-feedback-plan.md` L52 (docker-e2e fix `4a4dd507914` left the cost).
 
 ## What was measured
@@ -86,10 +87,53 @@ This matters for the decision below: the saving at minimal comes from a frame th
    185, or a larger `dt` for them, or the static fallback the comment describes). It changes what those two
    tiers show, so it is the operator's call too.
 
+## After the fix (2026-11-15)
+
+Cause, confirmed from the code, not only the arithmetic: the shader camera is `cam = (0, uCamY, -30)` with
+`uCamY = 1 + min(4, inclination x 0.12)`, so 30.0 to 30.4 units from the hole; the horizon is `HORIZON = 1.0`;
+the loop steps `dt = 0.18` per iteration and ends after `STEP_COUNT` iterations. 155 x 0.18 = 27.9 units: the
+ray aimed at the hole has marched 27.9 of its 30.0 to 30.4 units when the loop ends, so it is still at r of
+2.1 to 2.5 (before bending), never reaches `r < HORIZON`, `hor` stays false, and the unfinished ray is sampled as
+sky. That is the blurred band with no shadow and no ring. 185 x 0.18 = 33.3 units clears it, which is why medium drew it. The "minimal uses a static fallback"
+comment described a design that was never built: `enterBlackHole` passes `quality.tier` straight in, no design
+document (RFC-032, TA.md, the PRDs, the UXS and UXD records) mentions a static fallback, and the claim lived only
+in two code comments, now removed.
+
+Fix: `stepsForTier` returns 185 for medium, low and minimal (high 220 and cinematic 260 unchanged), so every tier
+marches `steps x BH_DT >= BH_CAMERA_DISTANCE + BH_REACH_PAST_HOLE` (33.3 >= 30.41 + 2.5; both constants are exported
+from `black-hole-scene.ts`, `BH_DT` is also what the shader uses). A longer march to the disk's outer radius (camera
+distance + 14 = 44.4 units, 247 steps) was rejected: a reference render with 260 uniform steps at minimal
+(`v-ref.png` in the scratchpad `bh/`) draws the whole far disk as a wide haze over the top of the hole, not the ring
+the approved look and the medium / high tiers show. A step size that grows with distance (155 steps, cheaper far
+from the hole) was tried at minimal: growing from r = 4 or r = 8 gave the same haze as the reference, growing from
+r = 14 kept the ring, but it is a second code path for no saving the scale does not already give, so it was dropped. Medium also renders the takeover at
+`QualityConfig.lensScale` 0.75 (minimal, low, high and cinematic keep 1): `enterBlackHole` calls
+`createLensRatioGuard(renderer).apply(quality.lensScale)` before the first `setSize`, `exitBlackHole` calls
+`restore()`; the canvas box stays full-size, the browser stretches the smaller buffer.
+
+Same method as above (`bh-measure.mjs`, 1280x800, device pixel ratio 1, `taskset -c 0,1`, 30 s of frames, shared
+loaded machine, so 20 to 30 % noise):
+
+| Tier | Before: steps, scale, buffer, median | After: steps, scale, buffer, median | Hole drawn |
+| --- | --- | --- | --- |
+| minimal | 155, 1.0, 960x561, 2167 ms (10 to 14 frames) | 185, 1.0, 960x561, 3233 ms (10 frames, 2600 to 3483) | before no, after yes |
+| low | 155, 1.0, 1280x748, 4050 ms | 185, 1.0, 1280x748, 5467 ms (6 frames, 4517 to 5916) | before no, after yes |
+| medium | 185, 1.0, 1280x748, 6283 ms | 185, 0.75, 960x561, 3400 ms (9 frames, 2700 to 3733) | yes, yes |
+| high | 220, 1.0, 1280x748, 5367 ms | unchanged code path (220, 1.0); not re-measured, two runs ended with a screenshot timeout | yes, yes |
+
+Read with care: minimal and low are slower by 49 % and 35 % because they now do what they were meant to (19 % more
+steps, and a frame that has to resolve the hole); the numbers of the two runs came from a machine others were using.
+Medium is 1.85x faster than before (the earlier prototype measured 2567 ms at 0.75 on a quieter machine). Minimal at
+3.2 s per frame on software GL is the slow tier now; `lensScale` 0.75 for it is a one-value change in
+`quality-tier.ts` if the operator wants it, not taken here.
+
+Stills after the fix, in the scratchpad `bh/`: `after-minimal.png`, `after-low.png`, `after-medium.png`. All three
+show the shadow, the photon ring and the lensed disk ring, matching `bh-medium-1.png` (the old medium frame).
+
 ## Not done / not verified
 
-- Nothing shipped for L52: no source file changed, no test added. The prototype exists only as the route
-  patch inside `bh-measure.mjs` in the scratchpad.
-- Exit from the takeover with a lowered pixel ratio was not exercised.
+- The high tier was not re-measured or re-shot after the fix (its steps and scale did not change); two attempts
+  ended in a screenshot timeout on the loaded machine.
+- The restore on exit is covered by a unit test of the guard (`black-hole-lensing.test.ts`), not by an e2e that
+  enters and leaves the takeover and reads the canvas size.
 - Real GPU frame times, a phone viewport, Firefox and WebKit were not measured.
-- The cause of the 155-step picture is the arithmetic above, not a run at 170 steps.

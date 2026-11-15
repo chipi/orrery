@@ -36,6 +36,7 @@ import {
 } from '$lib/universe/milky-way-visual';
 import { describeDistanceAu, AU_PER_PC } from '$lib/universe/scale-readout';
 import { fixedScaleBar, formatBarValue, scaleBarWidth } from '$lib/universe/scale-bar';
+import { createLensRatioGuard } from '$lib/universe/black-hole-visual';
 import {
   placeLabels,
   setLabelLeftInset,
@@ -576,6 +577,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
   let bhScene: import('$lib/universe/black-hole-scene').BlackHoleScene | null = null;
   let bhLoading = false;
   let bhLastFrame = 0;
+  const lensRatio = createLensRatioGuard(renderer);
   async function enterBlackHole(id: string): Promise<void> {
     if (bhLoading) return;
     bhLoading = true;
@@ -585,6 +587,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
       const mod = await import('$lib/universe/black-hole-scene');
       bhScene?.dispose();
       bhScene = mod.createBlackHoleScene(hole, quality.tier);
+      lensRatio.apply(quality.lensScale);
       bhScene.setSize(
         bridge.container?.clientWidth ?? 1,
         bridge.container?.clientHeight ?? 1,
@@ -619,6 +622,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
       if (!deps.getReducedMotion()) bridge.crossingFlashId++;
       bhScene?.dispose();
       bhScene = null;
+      lensRatio.restore();
       bridge.activeBlackHole = null;
       bridge.bhCurvatureLens = false;
       bridge.bhTimeLens = false;

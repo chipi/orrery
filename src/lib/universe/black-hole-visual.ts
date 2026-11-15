@@ -62,3 +62,27 @@ export function framingFor(viewportWidth: number): BlackHoleFraming {
   if (viewportWidth < 700) return { scale: 2.15, yOffset: -0.55 };
   return { scale: 1.0, yOffset: 0.0 };
 }
+
+interface PixelRatioTarget {
+  getPixelRatio(): number;
+  setPixelRatio(ratio: number): void;
+}
+
+/** Renders the lensing takeover at a share of the shared renderer's pixel ratio and
+ *  puts the original ratio back on exit. `apply` is safe to call again while active
+ *  (entering a second hole keeps the first saved ratio); `restore` is a no-op when
+ *  nothing was applied. */
+export function createLensRatioGuard(renderer: PixelRatioTarget) {
+  let saved: number | null = null;
+  return {
+    apply(scale: number): void {
+      if (saved === null) saved = renderer.getPixelRatio();
+      renderer.setPixelRatio(saved * scale);
+    },
+    restore(): void {
+      if (saved === null) return;
+      renderer.setPixelRatio(saved);
+      saved = null;
+    },
+  };
+}

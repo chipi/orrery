@@ -10,6 +10,7 @@
 import { get, type FetchLike } from './core';
 import type { CatalogueEntry, CatalogueMap } from '$lib/catalogue';
 import { localizeDeepSky, type DeepSkyImage, type DeepSkyOverlay } from '$lib/deep-sky';
+import type { SunEphemeris } from '$lib/universe/sky-finder';
 
 // ─── Named stars (PRD-030 / RFC-032 — /explore v2 Slice 1) ─────────────────
 // The curated ~60 stars that get a marker + label + Panel in the stellar
@@ -84,6 +85,15 @@ export async function getConstellationLines(
       .catch(() => []);
   }
   return constellationLinesCache;
+}
+
+let sunEphemerisCache: Promise<SunEphemeris | null> | null = null;
+/** The JPL Horizons Sun table of the deep-sky IN THE SKY rows (universe/sun-ephemeris.json), cached. */
+export async function getSunEphemeris(fetchFn: FetchLike = fetch): Promise<SunEphemeris | null> {
+  if (!sunEphemerisCache) {
+    sunEphemerisCache = get<SunEphemeris>('universe/sun-ephemeris.json', fetchFn).catch(() => null);
+  }
+  return sunEphemerisCache;
 }
 
 export async function getNamedStarI18n(

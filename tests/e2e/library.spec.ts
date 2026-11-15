@@ -78,7 +78,7 @@ test.describe('/library — outbound LEARN-link bill of links', () => {
     expect(block).toContain('NASA Exoplanet Archive');
   });
 
-  test('the Planetary models block lists the three NASA JPL sources, each with its link and what Orrery does with it (LI2)', async ({
+  test('the Planetary models block lists the four NASA JPL sources, each with its link and what Orrery does with it (LI2)', async ({
     page,
   }) => {
     await page.goto('/library', { waitUntil: 'networkidle' });
@@ -87,12 +87,14 @@ test.describe('/library — outbound LEARN-link bill of links', () => {
       'Planetary models (NASA JPL)',
     );
     const rows = block.locator('li[data-source-id]');
-    await expect(rows).toHaveCount(3);
+    await expect(rows).toHaveCount(4);
     await expect(rows.nth(0).locator('p')).toContainText('within 0.6°');
+    await expect(rows.nth(3).locator('p')).toContainText('Horizons');
     for (const [i, id, path] of [
       [0, 'jpl-keplerian-elements', '/planets/approx_pos.html'],
       [1, 'jpl-planetary-parameters', '/planets/phys_par.html'],
       [2, 'jpl-satellite-parameters', '/sats/'],
+      [3, 'jpl-horizons-sun', '/horizons/'],
     ] as const) {
       const row = rows.nth(i);
       await expect(row).toHaveAttribute('data-source-id', id);

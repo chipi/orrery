@@ -27,6 +27,7 @@
   import {
     getConstellationLines,
     getNamedStars,
+    getSunEphemeris,
     getNamedStarI18n,
     type NamedStar,
   } from '$lib/data';
@@ -43,8 +44,13 @@
     maxAltitude,
     nearestNamedStar,
     raDecToHyg,
+    toDate,
+    type SunEphemeris,
   } from '$lib/universe/sky-finder';
   import { viewerLatLon } from '$lib/viewer-location';
+
+  // The Sun table behind BEST MONTHS: a proper noun, never translated (like the Exoplanet Archive).
+  const HORIZONS = { label: 'JPL Horizons', url: 'https://ssd.jpl.nasa.gov/horizons/' };
 
   type Props = {
     object: DeepSkyObject | null;
@@ -119,10 +125,12 @@
       : [],
   );
   // IN THE SKY (L42, UXD-049): the figure of the object's constellation with the object ringed,
-  // and rows computed from its own RA / Dec / magnitude (src/lib/universe/sky-finder.ts).
+  // and rows computed from its own RA / Dec / magnitude, the JPL Horizons Sun and the reader's
+  // latitude (src/lib/universe/sky-finder.ts).
   let lastId = $state<string | null>(null);
   let conVertices = $state<number[] | null>(null);
   let namedStars = $state<NamedStar[]>([]);
+  let sun = $state<SunEphemeris | null>(null);
   let hopNames = $state<Record<string, string>>({});
   $effect(() => {
     if (object && object.id !== lastId) {
@@ -138,6 +146,11 @@
       if (namedStars.length === 0) {
         void getNamedStars()
           .then((s) => (namedStars = s))
+          .catch(dataLoadFailed);
+      }
+      if (sun === null) {
+        void getSunEphemeris()
+          .then((s) => (sun = s))
           .catch(dataLoadFailed);
       }
     }
@@ -165,9 +178,11 @@
       new Intl.DateTimeFormat(locale, { month: 'short', timeZone: 'UTC' }).format(
         new Date(Date.UTC(2001, i, 15)),
       );
-    const months = bestMonths(object.ra);
     const lat = viewerLatLon()?.latDeg;
-    const alt = lat === undefined ? null : altitudeBand(maxAltitude(object.dec, lat));
+    // Both rows read the object's position at the date of the Sun table (J2000 precessed).
+    const eq = toDate(object.ra, object.dec);
+    const months = lat !== undefined && sun ? bestMonths(eq.ra, eq.dec, lat, sun) : null;
+    const alt = lat === undefined ? null : altitudeBand(maxAltitude(eq.dec, lat));
     const eye = eyeBand(object.mag);
     return [
       {
@@ -190,10 +205,18 @@
             },
           ]
         : []),
-      {
-        label: m.sky_label_best_months(),
-        value: m.sky_months_range({ from: month(months.from), to: month(months.to) }),
-      },
+      ...(months
+        ? [
+            {
+              label: m.sky_label_best_months(),
+              value:
+                months.from === months.to
+                  ? month(months.from)
+                  : m.sky_months_range({ from: month(months.from), to: month(months.to) }),
+              source: HORIZONS,
+            },
+          ]
+        : []),
       ...(alt
         ? [
             {

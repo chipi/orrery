@@ -28,6 +28,7 @@
   "cosmicflows-4": "Distances of the Messier and gallery galaxies from Cosmicflows-4.",
   "mcconnachie-2012": "Distances of the Local Group galaxies, and of the clusters and nebulae inside the Magellanic Clouds and M33, from McConnachie 2012.",
   "jpl-keplerian-elements": "JPL's approximate Keplerian elements for the positions of the planets (Standish). The Physics Lab computes from these elements, and the planet model behind the mission paths is tested to stay within 0.6° of them.",
+  "jpl-horizons-sun": "The Sun's apparent position (right ascension and declination) for every day of 2026, from JPL's Horizons system (DE441), kept as a snapshot. A deep-sky object's IN THE SKY tab reads it to find the months in which the object stands at least 20° up while the Sun is more than 18° below the horizon, and for how many hours. The month windows are checked against Horizons tables for four sites and the US Naval Observatory's celestial-navigation service.",
   "jpl-planetary-parameters": "JPL's table of planetary physical parameters (sizes, masses, rotation and surface values), cited for the planet statistics in the science articles.",
   "jpl-satellite-parameters": "JPL's planetary satellite elements and physical parameters, cited for the moons' orbits and sizes in the science articles and for the Hill-sphere figures.",
   "lroc-nac-traverses": "The tracks the LRO Camera team mapped from Narrow Angle Camera images: Apollo 15 and 16, Lunokhod 1 and 2, and Yutu-2. Orrery simplifies them and draws them on the Moon surface view.",

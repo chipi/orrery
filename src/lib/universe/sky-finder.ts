@@ -1,12 +1,16 @@
 // The sky-finder rows of a deep-sky object's IN THE SKY tab (L42, UXD-049): where it is in the
 // constellation figure, which named star is nearest, which months it is best placed, how high it
 // climbs from the reader's latitude, and how it is seen. Pure, so each rule is unit-tested; every
-// input is the object's own RA / Dec / magnitude, the 62 named stars, or the reader's latitude.
+// input is the object's own RA / Dec / magnitude, the 62 named stars, the JPL Horizons Sun table
+// (static/data/universe/sun-ephemeris.json) or the reader's latitude.
 //
 // FRAME TRAP: constellation-lines.json and named-stars.json are in the HYG frame (z toward the
 // north celestial pole). A deep-sky object's x, y, z in deep-sky-objects.json is in the scene
 // frame (y toward the pole): (x, y, z)_scene = (x, z, y)_HYG. Never hand the scene x, y, z to the
 // finder; build the direction from RA / Dec with `raDecToHyg`.
+
+import { precessEquatorialJ2000ToDate } from '../physics/ephemeris/horizontal';
+import { julianDay } from '../physics/ephemeris/time';
 
 export type Vec3 = readonly [number, number, number];
 
@@ -42,24 +46,140 @@ export function nearestNamedStar<T extends { x: number; y: number; z: number }>(
   return best && best.sepDeg <= maxDeg ? best : null;
 }
 
-// Mean-Sun rule: the Sun's RA is 0 h on day 79 (21 March) and advances 24 h in 365.25 days. An
-// object culminates near local midnight when the Sun's RA is the object's RA plus 12 h. A
-// calendar-month rule, not an ephemeris: a window can be off by a few days.
-const EQUINOX_DAY = 79;
-const YEAR_DAYS = 365.25;
-const NON_LEAP_YEAR_START_MS = Date.UTC(2001, 0, 1);
+// WELL PLACED, from the JPL Horizons Sun (static/data/universe/sun-ephemeris.json, UXD-049): on a
+// night the object scores the hours in which it stands at least minAltDeg above the horizon
+// (apparent altitude, refraction included) while the Sun is more than 18 degrees below it
+// (astronomical darkness); a month is well placed when its nights average minHours of them. The
+// latitude is the reader's. Night by night the Sun's own RA / Dec of that date is read from the
+// table; the object is the catalogue's J2000 position precessed to the table's mid-year (a shift
+// of up to 0.4 degree in RA and 0.15 degree in Dec).
+export const WELL_PLACED = { minAltDeg: 20, sunBelowDeg: -18, minHours: 4 } as const;
 
-/** The month (0 = January) in which the object stands opposite the Sun, and the window around it. */
-export function bestMonths(raDeg: number): { from: number; mid: number; to: number } {
-  const oppositeRa = (((raDeg + 180) % 360) + 360) % 360;
-  const day = (EQUINOX_DAY + (oppositeRa / 360) * YEAR_DAYS) % YEAR_DAYS;
-  const mid = new Date(NON_LEAP_YEAR_START_MS + Math.floor(day) * 86_400_000).getUTCMonth();
-  return { from: (mid + 11) % 12, mid, to: (mid + 1) % 12 };
+/** The Sun's apparent RA / Dec (degrees, of date), one entry per day from 1 January 2026, 00:00 UT. */
+export interface SunEphemeris {
+  ra_deg: readonly number[];
+  dec_deg: readonly number[];
 }
 
-/** The highest altitude in degrees the object reaches from `latDeg` (negative: never rises). */
+const EPHEMERIS_EPOCH_JD = julianDay(new Date(Date.UTC(2026, 6, 2)));
+const NIGHT_SAMPLES = 144; // one every 10 minutes of solar time
+const MONTH_OF_DAY = Array.from({ length: 366 }, (_, i) =>
+  new Date(Date.UTC(2026, 0, 1 + i)).getUTCMonth(),
+);
+
+/** An RA / Dec (degrees, J2000) precessed to the equator and equinox of the ephemeris year. */
+export function toDate(raDeg: number, decDeg: number): { ra: number; dec: number } {
+  const [x, y, z] = raDecToHyg(raDeg, decDeg);
+  const p = precessEquatorialJ2000ToDate({ x, y, z }, EPHEMERIS_EPOCH_JD);
+  return {
+    ra: (((Math.atan2(p.y, p.x) / DEG) % 360) + 360) % 360,
+    dec: Math.asin(Math.max(-1, Math.min(1, p.z / Math.hypot(p.x, p.y, p.z)))) / DEG,
+  };
+}
+
+/**
+ * The refraction in degrees at a true altitude (Saemundsson 1986, Meeus 16.4: 1010 hPa, 10 C),
+ * 0 near the zenith and for a body well below the horizon (it is not seen there anyway).
+ */
+export function refractionDeg(trueAltDeg: number): number {
+  if (!Number.isFinite(trueAltDeg) || trueAltDeg < -1) return 0;
+  const arcmin = 1.02 / Math.tan((trueAltDeg + 10.3 / (trueAltDeg + 5.11)) * DEG);
+  return Math.max(0, arcmin) / 60;
+}
+
+/**
+ * Per day of the table, the hours that night in which the object (an RA / Dec of date) stands
+ * at least 20 degrees up while the Sun is below -18 degrees. The night is sampled every ten
+ * minutes of solar time around the Sun's own position of that day.
+ */
+export function nightHours(
+  raDeg: number,
+  decDeg: number,
+  latDeg: number,
+  sun: SunEphemeris,
+): number[] {
+  const sinLat = Math.sin(latDeg * DEG);
+  const cosLat = Math.cos(latDeg * DEG);
+  const sinDec = Math.sin(decDeg * DEG);
+  const cosDec = Math.cos(decDeg * DEG);
+  const sinDark = Math.sin(WELL_PLACED.sunBelowDeg * DEG);
+  const sinUp = Math.sin((WELL_PLACED.minAltDeg - refractionDeg(WELL_PLACED.minAltDeg)) * DEG);
+  const hoursPerSample = 24 / NIGHT_SAMPLES;
+  return sun.ra_deg.map((raSun, d) => {
+    const decSun = sun.dec_deg[d] * DEG;
+    const sinSunBase = sinLat * Math.sin(decSun);
+    const cosSun = cosLat * Math.cos(decSun);
+    let n = 0;
+    for (let k = 0; k < NIGHT_SAMPLES; k++) {
+      const hSun = ((k + 0.5) / NIGHT_SAMPLES) * 2 * Math.PI;
+      if (sinSunBase + cosSun * Math.cos(hSun) >= sinDark) continue;
+      const hObj = hSun + (raSun - raDeg) * DEG;
+      if (sinLat * sinDec + cosLat * cosDec * Math.cos(hObj) >= sinUp) n++;
+    }
+    return n * hoursPerSample;
+  });
+}
+
+/** The average of `nightHours` over each month of the year (January first). */
+export function monthlyNightHours(
+  raDeg: number,
+  decDeg: number,
+  latDeg: number,
+  sun: SunEphemeris,
+): number[] {
+  const sum = new Array<number>(12).fill(0);
+  const days = new Array<number>(12).fill(0);
+  nightHours(raDeg, decDeg, latDeg, sun).forEach((h, d) => {
+    sum[MONTH_OF_DAY[d]] += h;
+    days[MONTH_OF_DAY[d]]++;
+  });
+  return sum.map((s, m) => (days[m] ? s / days[m] : 0));
+}
+
+export type MonthWindow = { from: number; mid: number; to: number };
+
+/**
+ * The window of well-placed months in twelve monthly averages of dark hours above 20 degrees:
+ * the month with the most, and the run of months around it that average at least four. Null
+ * when no month reaches four hours.
+ */
+export function windowOfMonthlyHours(hours: readonly number[]): MonthWindow | null {
+  let mid = 0;
+  for (let m = 1; m < 12; m++) if (hours[m] > hours[mid]) mid = m;
+  if (hours[mid] < WELL_PLACED.minHours) return null;
+  if (hours.every((h) => h >= WELL_PLACED.minHours)) return { from: 0, mid, to: 11 };
+  let from = mid;
+  let to = mid;
+  for (let i = 0; i < 11 && hours[(from + 11) % 12] >= WELL_PLACED.minHours; i++) {
+    from = (from + 11) % 12;
+  }
+  for (let i = 0; i < 11 && hours[(to + 1) % 12] >= WELL_PLACED.minHours; i++) {
+    if ((to + 1) % 12 === from) break;
+    to = (to + 1) % 12;
+  }
+  return { from, mid, to };
+}
+
+/**
+ * The months (0 = January) in which the object (an RA / Dec of date) is well placed from
+ * `latDeg`. Null when it never gets high in the dark sky from there.
+ */
+export function bestMonths(
+  raDeg: number,
+  decDeg: number,
+  latDeg: number,
+  sun: SunEphemeris,
+): MonthWindow | null {
+  return windowOfMonthlyHours(monthlyNightHours(raDeg, decDeg, latDeg, sun));
+}
+
+/**
+ * The highest altitude in degrees the object (a declination of date) reaches from `latDeg`, as
+ * seen through the air: 90 - |latitude - dec| plus refraction (negative: never rises).
+ */
 export function maxAltitude(decDeg: number, latDeg: number): number {
-  return 90 - Math.abs(latDeg - decDeg);
+  const geometric = 90 - Math.abs(latDeg - decDeg);
+  return geometric + refractionDeg(geometric);
 }
 
 export type AltitudeBand = 'high' | 'low' | 'never';

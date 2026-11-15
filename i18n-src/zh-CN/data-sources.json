@@ -28,6 +28,7 @@
   "cosmicflows-4": "梅西耶星系和图库星系的距离取自 Cosmicflows-4。",
   "mcconnachie-2012": "本星系群星系的距离，以及麦哲伦云和M33内星团与星云的距离，取自 McConnachie 2012。",
   "jpl-keplerian-elements": "JPL 用于行星位置的近似开普勒根数（Standish）。物理实验室依据这些根数计算，并有测试确保任务轨迹所用的行星模型与其偏差不超过 0.6°。",
+  "jpl-horizons-sun": "2026 年每一天的太阳视位置（赤经/赤纬），取自 JPL 的 Horizons 系统（DE441），以快照形式保存。深空天体的“天空中”标签读取它，找出天体高度至少 20° 且太阳在地平线下 18° 以上的月份，以及持续多少小时。月份范围已与四个地点的 Horizons 表和美国海军天文台的天文导航服务核对。",
   "jpl-planetary-parameters": "JPL 的行星物理参数表（大小、质量、自转与表面数值），在科学文章的行星统计数据中被引用。",
   "jpl-satellite-parameters": "JPL 的行星卫星轨道根数与物理参数，在科学文章中被引用，用于卫星的轨道和大小以及希尔球数值。",
   "lroc-nac-traverses": "LRO 相机团队根据窄角相机（NAC）影像绘出的路线：Apollo 15 和 16、Lunokhod 1 和 2 以及玉兔二号。Orrery 将其简化后绘制在月面视图中。",

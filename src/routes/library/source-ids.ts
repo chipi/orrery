@@ -19,11 +19,13 @@ export const ASTRO_SOURCE_IDS = [
   'gravity-eht-galactic-centre',
 ];
 
-/** NASA JPL's planetary data: positions (ADR-095), physical parameters, satellite parameters. */
+/** NASA JPL's planetary data: positions (ADR-095), physical parameters, satellite parameters, and
+ *  the Horizons Sun table behind the deep-sky IN THE SKY months. */
 export const PLANETARY_SOURCE_IDS = [
   'jpl-keplerian-elements',
   'jpl-planetary-parameters',
   'jpl-satellite-parameters',
+  'jpl-horizons-sun',
 ];
 
 /** The Moon and Mars landing and rover-track sources the route files credit. */

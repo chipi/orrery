@@ -122,7 +122,11 @@ test.describe('/explore — the IN THE SKY tab of a deep-sky panel', () => {
     const cell = await openSky(page, 'M31');
     await expect(cell(/constellation/i)).toContainText('Andromeda');
     await expect(cell(/nearest bright star/i)).toContainText('Alpheratz');
-    await expect(cell(/best months/i)).toContainText('Aug to Oct');
+    await expect(cell(/best months/i)).toContainText('Aug to Jan');
+    await expect(cell(/best months/i).getByRole('link', { name: 'JPL Horizons' })).toHaveAttribute(
+      'href',
+      'https://ssd.jpl.nasa.gov/horizons/',
+    );
     await expect(cell(/from your latitude/i)).toContainText('High in the sky');
     await expect(cell(/seen with/i)).toContainText('Naked eye');
   });
@@ -180,6 +184,7 @@ test.describe('/explore — the IN THE SKY tab with an unknown time zone', () =>
     await tab.click();
     await expect(page.locator('canvas.finder')).toBeVisible({ timeout: 20_000 });
     await expect(page.locator('.cell').filter({ hasText: /from your latitude/i })).toHaveCount(0);
+    await expect(page.locator('.cell').filter({ hasText: /best months/i })).toHaveCount(0);
     await expect(page.locator('.cell').filter({ hasText: /nearest bright star/i })).toHaveCount(0);
     await expect(page.locator('.cell').filter({ hasText: /constellation/i })).toContainText(
       'Dorado',

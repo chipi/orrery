@@ -353,6 +353,21 @@
       ]
     },
     {
+      "id": "jpl-horizons-sun",
+      "name": "NASA JPL · Horizons (the Sun's position)",
+      "catalog": "JPL Horizons on-line ephemeris system — the Sun's apparent right ascension and declination, daily for 2026 (DE441)",
+      "version": "snapshot",
+      "category": "planetary-model",
+      "description": "The Sun's apparent position (right ascension and declination) for every day of 2026, from JPL's Horizons system (DE441), kept as a snapshot. A deep-sky object's IN THE SKY tab reads it to find the months in which the object stands at least 20° up while the Sun is more than 18° below the horizon, and for how many hours. The month windows are checked against Horizons tables for four sites and the US Naval Observatory's celestial-navigation service.",
+      "source_url": "https://ssd.jpl.nasa.gov/horizons/",
+      "license_short": "PD-USGov",
+      "license_url": "https://www.jpl.nasa.gov/jpl-image-use-policy",
+      "license_rationale": "JPL/NASA reference data is US-Government public domain (same basis as the Physics Lab constants entry).",
+      "used_on": [
+        "explore"
+      ]
+    },
+    {
       "id": "jpl-planetary-parameters",
       "name": "NASA JPL · Planetary physical parameters",
       "catalog": "JPL Solar System Dynamics — planetary physical parameters",

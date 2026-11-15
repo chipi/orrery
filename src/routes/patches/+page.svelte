@@ -53,7 +53,7 @@
   </ul>
 {/snippet}
 
-<article class="patches page-shell page-shell--wide" data-route-ready="true">
+<article class="patches page-shell" data-route-ready="true">
   <header>
     <nav class="crumb page-crumb">
       <a href="{base}{localizeHref('/gallery')}">{m.layout_footer_gallery()}</a><span class="sep"

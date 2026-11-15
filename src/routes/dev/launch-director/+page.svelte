@@ -109,6 +109,7 @@
         duration,
         altAt,
         hasBoosters: (profile.boosters?.count ?? 0) > 0,
+        payloadInBay: profile.payloadInBay === true,
         speed,
         reducedMotion: reduced,
         force: {
@@ -149,6 +150,7 @@
         launcherId: profile.id,
         boosterCount: profile.boosters?.count ?? 0,
         boosterAirLitCount: profile.boosters?.airLitCount ?? 0,
+        payloadInBay: profile.payloadInBay === true,
         groundSite: (() => {
           const g = resolveLaunchGround(launchSite);
           return g ? { ...g, textureUrl: streamedUrl(`${base}${g.textureUrl}`) } : undefined;

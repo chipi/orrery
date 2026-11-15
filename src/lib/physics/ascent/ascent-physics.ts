@@ -105,6 +105,12 @@ export interface LaunchProfile {
   /** Altitude to jettison the fairing (m). Defaults to the Kármán line. */
   fairingJettisonAltM?: number;
   /**
+   * The payload stays in the vehicle's bay for the whole launch (the Space Shuttle: it is
+   * deployed hours later in orbit). No spacecraft-separation beat, no injection beat and no
+   * payload deployment are drawn: the launch ends with the vehicle alone in orbit.
+   */
+  payloadInBay?: boolean;
+  /**
    * Pitch program: `[t_seconds, flightPathAngleDeg]` knots, angle measured
    * from the LOCAL HORIZONTAL (90 = straight up, 0 = downrange). Linearly
    * interpolated; clamped to the endpoints outside the knot range.

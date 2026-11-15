@@ -163,6 +163,8 @@ export interface DirectorInputs {
   /** Altitude (km) at flight time t — picks shots that need a ground patch or a limb. */
   altAt: (t: number) => number;
   hasBoosters?: boolean;
+  /** LaunchProfile.payloadInBay: no payload-separation shot. */
+  payloadInBay?: boolean;
   /** Playback speed the plan is authored for (default 5); sub-shots shorter than 3 s of screen time merge. */
   speed?: number;
   reducedMotion?: boolean;
@@ -1030,9 +1032,14 @@ export function buildDirectorPlan(inp: DirectorInputs): DirectorPlan {
   if (seco - cursor > 0) fill(cursor, seco, cursor === openEnd ? OPENING_BLEND_S : BLEND_S);
 
   // ── Orbit and separation: kept ──────────────────────────────────────────
-  if (sepT > seco) pushKept('orbit', 'orbitHold', seco, sepT, 'seco', 0);
-  pushKept('separation', 'separation', sepT, sepEnd, 'payload_sep', 0);
-  if (end > sepEnd) pushKept('orbit', 'orbitHold', sepEnd, end, undefined, OPENING_BLEND_S);
+  if (inp.payloadInBay) {
+    // The payload stays in the bay (Shuttle): no separation shot, the orbiter alone in orbit.
+    if (end > seco) pushKept('orbit', 'orbitHold', seco, end, 'seco', 0);
+  } else {
+    if (sepT > seco) pushKept('orbit', 'orbitHold', seco, sepT, 'seco', 0);
+    pushKept('separation', 'separation', sepT, sepEnd, 'payload_sep', 0);
+    if (end > sepEnd) pushKept('orbit', 'orbitHold', sepEnd, end, undefined, OPENING_BLEND_S);
+  }
 
   return {
     seed,

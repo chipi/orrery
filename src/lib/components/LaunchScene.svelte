@@ -37,6 +37,7 @@
     INJECTION_BEAT_S,
     injectionSepT,
     payloadSepTFor,
+    launchInjection,
     buildAscentBeats,
     ascentStatus,
     countdownSeconds,
@@ -115,7 +116,7 @@
   // Post-SECO injection beat (RFC-034 §3.1): a parking-orbit coast, the kick stage
   // firing with the spacecraft still on it, then the spacecraft separating — appended
   // to the ascent before the warp. Absent when the mission has no injection stage.
-  const injection = $derived(mission.injectionBurn ?? null);
+  const injection = $derived(launchInjection(profile, mission.injectionBurn));
   const injectionBurnStart = $derived(duration + INJECTION_COAST_S);
   /** The burn's end. */
   const injectionBurnEnd = $derived(injectionSepT(duration));
@@ -279,6 +280,7 @@
       boosterCount: profile.boosters?.count ?? 0,
       boosterAirLitCount: profile.boosters?.airLitCount ?? 0,
       payloadSepT,
+      payloadInBay: profile.payloadInBay === true,
       kickStage: injection?.kickStage === true,
       injectionBurnEndT: injection ? injectionBurnEnd : undefined,
       groundSite: (() => {

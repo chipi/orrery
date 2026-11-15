@@ -83,6 +83,9 @@ export interface AscentSceneOptions {
    *  injection burn it rides the stage through the burn and separates at its end, as on a
    *  real flight. The scene's clock (s.t) runs past the last physics state for this. */
   payloadSepT?: number;
+  /** The payload stays in the vehicle's bay for the whole launch (LaunchProfile.payloadInBay):
+   *  no deployment, burst or separation shot is drawn. */
+  payloadInBay?: boolean;
   /** A kick stage carrying the spacecraft fires once the spacecraft has left the launcher
    *  (payloadSepT): for the whole burn when it is deployed first (Shuttle + IUS), for the
    *  second part when the last stage fires first (Delta II + Star 48B). */
@@ -984,8 +987,10 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   const fairingT = metOf('fairing_jettison');
   const secoT = metOf('seco');
   // The spacecraft leaves the stage at SECO, or after the injection burn when it rides it.
-  const sepAfterSeco = opts.payloadSepT != null && (secoT == null || opts.payloadSepT > secoT);
-  const payloadSepT = sepAfterSeco ? opts.payloadSepT : secoT;
+  // A payload that stays in its bay (the Shuttle) never separates during the launch.
+  const sepAfterSeco =
+    !opts.payloadInBay && opts.payloadSepT != null && (secoT == null || opts.payloadSepT > secoT);
+  const payloadSepT = opts.payloadInBay ? undefined : sepAfterSeco ? opts.payloadSepT : secoT;
   // Riding the launcher's stage through its injection burn (not deployed before a kick stage).
   const ridesInjection = sepAfterSeco && !opts.kickStage;
   // Intermediate serial stage (e.g. Saturn V's S-II) drops at the SECOND core

@@ -54,6 +54,20 @@ test.describe('launch ascent HUD (desktop)', () => {
     expect(await beats.count()).toBeGreaterThan(1);
   });
 
+  test('a Shuttle launch (Galileo) keeps the payload in the bay: no parking-orbit or separation beat', async ({
+    page,
+  }) => {
+    await enterLaunch(page, 'galileo');
+    const plan = page.locator('.launch .plan .lbl');
+    await expect(plan.first()).toBeAttached();
+    const labels = (await plan.allTextContents()).map((s) => s.trim().toUpperCase());
+    expect(labels.length).toBeGreaterThan(2);
+    expect(labels.some((l) => l.includes('SEPARATION') || l.includes('SPACECRAFT SEP'))).toBe(
+      false,
+    );
+    expect(labels.some((l) => l.includes('PARKING'))).toBe(false);
+  });
+
   test('scrubbing the master clock drives the ascent (MET advances)', async ({ page }) => {
     await enterLaunch(page, 'curiosity');
     const met = page.locator('.launch .clock .met');

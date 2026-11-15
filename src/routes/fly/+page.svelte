@@ -341,7 +341,7 @@
   // upper stage that leaves parking orbit. Null when the mission has no
   // injection stage; the LaunchScene beat is then absent.
   let launchInjectionBurn = $derived(
-    launchProfile && launchAvailable
+    launchProfile && launchAvailable && !launchProfile.payloadInBay
       ? resolveInjectionBurn(
           resolveLauncher(mission.fleet_refs, mission.vehicle)?.id,
           mission.flight?.launch?.vehicle_stage,
@@ -1678,6 +1678,7 @@
       launchSummaryFly
         ? payloadSepTFor(launchSummaryFly.totalDurationS, launchInjectionBurn)
         : undefined,
+      launchProfile?.payloadInBay === true,
     ),
   );
   let descentSepTimes = $derived(descentSeparationTimes(descentSummaryFly));

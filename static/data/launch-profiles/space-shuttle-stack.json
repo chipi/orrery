@@ -5,6 +5,7 @@
   "payloadKg": 19000,
   "fairingKg": 0,
   "fairingJettisonAltM": 320000,
+  "payloadInBay": true,
   "refAreaM2": 55,
   "cd": 0.4,
   "launchSite": {

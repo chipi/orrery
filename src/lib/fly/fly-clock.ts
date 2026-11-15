@@ -81,11 +81,13 @@ export function coastAscentFraction(earthCoast: boolean, coastDurationDays: numb
 export function launchSeparationTimes(
   summary: AscentSummary | null,
   payloadSepT?: number,
+  payloadInBay = false,
 ): number[] {
   if (!summary) return [];
   const times = summary.events
     .filter((e) => e.type === 'staging' || e.type === 'fairing_jettison')
     .map((e) => e.t);
+  if (payloadInBay) return times;
   const seco = summary.events.find((e) => e.type === 'seco')?.t;
   const sep = payloadSepT ?? seco;
   return sep != null ? [...times, sep] : times;

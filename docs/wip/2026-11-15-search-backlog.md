@@ -5,6 +5,26 @@ flight. Each item below was done with direct page fetches or Commons only, so it
 either held at a safe fallback or rests on secondary sources. Next session with a fresh
 search budget: work this list top to bottom, then strike each row here.
 
+## Fly — launches not fixed yet (operator 2026-11-15: "keep all those things not fixed with launches at the top of that pending list")
+
+Work these first. Each row points to the full detail (the S rows below, the audit doc
+`docs/wip/2026-11-15-launcher-timeline-audit.md`, or the plan's deferred list).
+
+| # | What is not fixed | State on the branch | Detail |
+|---|---|---|---|
+| F1 | **Payload separation after SECO** on every vehicle without an injection beat (real: about 169 s after MECO-1 on Atlas V 401 LEO, about 250 s after SECO-2 on Delta II) | The payload separates at SECO | S13; audit doc |
+| F2 | **H-IIA**: SRB-A jettison at T+73 s against a real T+110 s; a burn-average SRB-A loses the orbit | Reverted to the old profile | S11; likely needs a front-loaded thrust curve |
+| F3 | **Proton-M**: fairing at T+171 s against a real T+345 s; moving it pushes the Briz-M cutoff from 1008 s to 1097 s | Reverted to the old profile | S12 |
+| F4 | **26 vehicles with no fetched timeline**: ariane-1, athena-ii, atlas-agena, atlas-centaur, atlas-lv-3b, falcon-heavy, h3, lvm3, lm-3a, lm-3b, m-v, mercury-redstone, molniya-m, new-glenn, proton-k, saturn-ib, soyuz, soyuz-fg-fregat, sputnik, starship, titan-ii-g, titan-ii-glv, titan-iiie-centaur, titan-ivb-centaur, voskhod, vostok-k | Unchanged, unverified | S13; their user's guides / press kits |
+| F5 | **Secondary-source launch rows**: Shuttle, Ariane 5 ECA, Proton-M stages, Long March 2F, Long March 5 (stage-2 shutdown 720 s against 752 s, just outside ±30 s, not fixed), Falcon 9 MECO | Pinned to secondary pages | S10 |
+| F6 | **Shuttle details**: max-Q at T+77 s (real about T+60 s); ET separation +18 s (the external-tank page says "just over 10 s"); OMS-2 timing | +18 s and 77 s on the branch | S10 |
+| F7 | **Atlas V**: SECO not tabulated for the 541; other Atlas V variants beyond the AJ-60A constant | Unchanged | audit doc |
+| F8 | **Delta II**: only the 7925 eastern-range column is pinned; western range and other variants untouched | Unchanged | audit doc |
+| F9 | **Launch times for lighting**: Galileo, Magellan, Ulysses (and other missions without a `launches-historic` entry) have no launch time, so their light is seeded | G3 is adding times it can source while wiring the director into /fly | lighting commit e3a394164be |
+| F10 | **STS-1 / STS-107 after the climb**: the Shuttle has no Earth-orbit coast descriptor, so what plays after ascent is unverified | Being checked in the content landing | content4 report |
+| F11 | **Artemis I path**: no waypoints (the hybrid generator drew a 500,000 km chord); the DRO loop is not drawn | `tier_1_analytic`, no path | S17 |
+| F12 | **Vikram descent profile** (as Beresheet has) | Skipped | plan L55 |
+
 | # | Slice | What is missing | Current state on the branch | What to search | Done when |
 |---|---|---|---|---|---|
 | S1 | D4 (832af819e6f) | A surveyed traverse for **Chang'e 3 / Yutu** | 9-point outline, `approximate: true`, labelled "Approximate route" in 14 locales | Peer-reviewed Yutu traverse maps (e.g. papers in *Nature Communications*, *Science*, *Icarus*, *PSS* with rover path figures or coordinate tables); CNSA / CLEP releases; LROC NAC images of the rover tracks (lroc.im-ldi.com featured sites had none, 2026-11-15) | A cited coordinate source replaces the outline and `approximate` is dropped, or the search is recorded as exhausted here |

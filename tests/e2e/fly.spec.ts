@@ -1,6 +1,7 @@
 import { test, expect, type Page } from '@playwright/test';
 import { expandFlyHud } from './_helpers/hud-expand';
 import { MISSION_COUNT } from './_helpers/mission-index';
+import { waitForHydration } from './_helpers/hydration';
 
 /**
  * /fly — Mission Arc.
@@ -25,6 +26,9 @@ import { MISSION_COUNT } from './_helpers/mission-index';
  */
 async function gotoFly(page: Page, url = '/fly'): Promise<void> {
   await page.goto(url);
+  // /fly is server-rendered: its pills and toggles are visible before their handlers exist, and in
+  // dev the page hydrates ~3 s after load, so an early click is dropped.
+  await waitForHydration(page);
   await expandFlyHud(page);
 }
 

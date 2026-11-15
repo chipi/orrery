@@ -331,6 +331,19 @@ const COASTS: Record<string, EarthOrbitCoast> = {
     revolutions: 37,
     coastDurationS: 195000,
   },
+  // Shenzhou 5 (Yang Liwei, 2003): the mission record gives 14 orbits at 332 to 336 km and the
+  // 21 h 22 min 45 s flight; the 42.4 degree inclination is a plain figure from the English
+  // Wikipedia infobox (backlog row S29). No re-entry descent profile exists for it, so the act
+  // holds at the end of the coast.
+  'shenzhou-5': {
+    missionId: 'shenzhou-5',
+    capsuleId: 'shenzhou',
+    apogeeKm: 336,
+    perigeeKm: 332,
+    inclinationDeg: 42.4,
+    revolutions: 14,
+    coastDurationS: 76965,
+  },
   // STS-107 has no Fly (the operator, 2026-11-15; its record is flightless like STS-51-L's): no
   // descriptor, and the launch is not offered.
   //

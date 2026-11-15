@@ -99,6 +99,27 @@ test('OTV-5 after the climb: the Earth-orbit coast (54.5 degrees from its record
   }
 });
 
+// Shenzhou 5 (dest EARTH): 14 orbits at 332 x 336 km from its record.
+test('Shenzhou 5 after the climb: the Earth-orbit coast (14 orbits from its record)', async ({
+  page,
+}, testInfo) => {
+  test.setTimeout(260_000);
+  await enterLaunch(page, 'shenzhou-5');
+  await page.evaluate(() =>
+    (window as unknown as { __flyLaunchT: (t: number) => void }).__flyLaunchT(3000),
+  );
+  await page
+    .getByRole('button', { name: /^play$/i })
+    .first()
+    .click();
+  await expect(page.locator('[data-testid="coast-scene"]')).toBeVisible({ timeout: 220_000 });
+  await expect(page.locator('[data-testid="launch-scene"]')).toHaveCount(0);
+  if (testInfo.project.name === 'desktop-chromium') {
+    await expect(page.locator('body')).toContainText('332×336 km');
+    await expect(page.locator('body')).toContainText('/ 14');
+  }
+});
+
 // G3: the launch camera director is the default camera; ?cam=classic keeps today's for one release.
 test('the launch runs the camera director by default (data-director-shot names the shot)', async ({
   page,

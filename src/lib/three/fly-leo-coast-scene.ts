@@ -213,6 +213,18 @@ export function createLeoCoastScene(opts: LeoCoastSceneOptions): LeoCoastScene {
   // exaggerated (a real capsule would be sub-pixel), like every /fly subject.
   capsule.scale.setScalar(CRAFT_ENLARGEMENT);
   scene.add(capsule);
+  // A modest self-lit fill so the craft reads on the night side (the limb shot): a share of each
+  // material's own colour, so no light touches the Earth's dark side. Materials already emissive
+  // (lit windows, engine glow) keep theirs.
+  capsule.traverse((o) => {
+    const mats = (o as THREE.Mesh).material;
+    for (const m of Array.isArray(mats) ? mats : mats ? [mats] : []) {
+      const std = m as THREE.MeshStandardMaterial;
+      if (std.emissive && std.color && std.emissive.getHex() === 0) {
+        std.emissive.copy(std.color).multiplyScalar(0.32);
+      }
+    }
+  });
   // Its size in km once enlarged (the debug readout and the marker's fade read it).
   const craftBox = new THREE.Box3().setFromObject(capsule);
   const craftKm = Math.max(...craftBox.getSize(new THREE.Vector3()).toArray()) || 1;

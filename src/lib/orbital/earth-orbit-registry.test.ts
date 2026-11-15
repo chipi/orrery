@@ -148,10 +148,27 @@ describe('X-37B flights coast in Earth orbit from their records (no cislunar fal
   });
 });
 
+describe('Shenzhou 5 coasts from its record', () => {
+  it('14 orbits at 332 x 336 km in 21 h 22 min 45 s, a capsule with a Shenzhou model', () => {
+    const c = getEarthOrbitCoast('shenzhou-5')!;
+    expect(c.revolutions).toBe(14);
+    expect(c.perigeeKm).toBe(332);
+    expect(c.apogeeKm).toBe(336);
+    expect(c.coastDurationS).toBe(21 * 3600 + 22 * 60 + 45);
+    expect(c.capsuleId).toBe('shenzhou');
+    expect(CAPSULE_FAMILY_IDS).toContain(c.capsuleId);
+    expect(c.winged).toBeUndefined();
+    const min = c.coastDurationS / c.revolutions / 60;
+    expect(min).toBeGreaterThan(85);
+    expect(min).toBeLessThan(115);
+  });
+});
+
 describe('every launchable Earth mission has a coast descriptor (never the cislunar fall-through)', () => {
-  // TODO(content7 lands on the trunk): shenzhou-5 gets its coast from its own record. Sputnik 1
-  // has no flight (flightless record: no Fly), so it is not launchable and needs no entry.
-  const KNOWN_GAPS = new Set(['shenzhou-5']);
+  // Empty: every launchable flown Earth mission with a Fly chip has its coast. Sputnik 1 has no
+  // flight (flightless record: no Fly), so it is not launchable and needs no entry. Add a new Earth
+  // mission's id here only with a reason.
+  const KNOWN_GAPS = new Set<string>();
   const dir = resolve(ROOT, 'static/data/missions/earth');
   const missions = readdirSync(dir)
     .filter((f) => f.endsWith('.json'))

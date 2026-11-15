@@ -3741,5 +3741,8 @@
   "library_category_structure": "Космические структуры",
   "fly_2d_scale_label": "1 а. е. = {px} пикс.",
   "browse_showing": "Показано: {era} ({count})",
-  "browse_view_list": "Список"
+  "browse_view_list": "Список",
+  "programs_search_placeholder": "Поиск программ…",
+  "programs_filter_kind": "ТИП",
+  "programs_empty": "Нет программ, подходящих под текущие фильтры."
 }

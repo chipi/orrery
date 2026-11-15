@@ -3741,5 +3741,8 @@
   "library_category_structure": "البنى الكونية",
   "fly_2d_scale_label": "1 و.ف = {px} بكسل",
   "browse_showing": "المعروض: {era} ({count})",
-  "browse_view_list": "القائمة"
+  "browse_view_list": "القائمة",
+  "programs_search_placeholder": "ابحث في البرامج…",
+  "programs_filter_kind": "النوع",
+  "programs_empty": "لا توجد برامج تطابق عوامل التصفية الحالية."
 }

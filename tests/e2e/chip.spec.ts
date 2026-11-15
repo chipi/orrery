@@ -209,11 +209,11 @@ test.describe('FILTERS strip (MI1, FL1)', () => {
 });
 
 test.describe('keyboard: radiogroup arrows', () => {
-  test('arrows move and select inside the programs group-by, Tab leaves the group', async ({
+  test('arrows move and select inside the programs Grid / List toggle, Tab leaves the group', async ({
     page,
   }) => {
     await settle(page, { path: '/programs' });
-    const group = page.getByRole('radiogroup');
+    const group = page.getByTestId('browse-toolbar').getByRole('radiogroup');
     const first = group.getByRole('radio').first();
     await first.focus();
     await expect(first).toHaveAttribute('aria-checked', 'true');

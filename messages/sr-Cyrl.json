@@ -3741,5 +3741,8 @@
   "library_category_structure": "Космичке структуре",
   "fly_2d_scale_label": "1 АЈ = {px} пиксела",
   "browse_showing": "Приказано: {era} ({count})",
-  "browse_view_list": "Листа"
+  "browse_view_list": "Листа",
+  "programs_search_placeholder": "Претражи програме…",
+  "programs_filter_kind": "ВРСТА",
+  "programs_empty": "Ниједан програм не одговара тренутним филтерима."
 }

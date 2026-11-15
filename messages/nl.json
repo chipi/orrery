@@ -3741,5 +3741,8 @@
   "library_category_structure": "Kosmische structuren",
   "fly_2d_scale_label": "1 AE = {px} px",
   "browse_showing": "Getoond: {era} ({count})",
-  "browse_view_list": "Lijst"
+  "browse_view_list": "Lijst",
+  "programs_search_placeholder": "Programma's zoeken…",
+  "programs_filter_kind": "SOORT",
+  "programs_empty": "Geen programma's komen overeen met de huidige filters."
 }

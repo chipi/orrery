@@ -27,7 +27,7 @@ const PAGES: Shell[] = [
   { path: '/posters', width: 1400 },
   { path: '/patches' },
   { path: '/sourcing', width: 760 },
-  { path: '/programs' },
+  { path: '/programs', width: 1400 },
   { path: '/programs/apollo', width: 760 },
   { path: '/programs/cassini', width: 760 },
   { path: '/privacy', width: 760 },

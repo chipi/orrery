@@ -3741,5 +3741,8 @@
   "library_category_structure": "Strutture cosmiche",
   "fly_2d_scale_label": "1 au = {px} px",
   "browse_showing": "In mostra: {era} ({count})",
-  "browse_view_list": "Elenco"
+  "browse_view_list": "Elenco",
+  "programs_search_placeholder": "Cerca programmi…",
+  "programs_filter_kind": "TIPO",
+  "programs_empty": "Nessun programma corrisponde ai filtri attuali."
 }

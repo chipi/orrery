@@ -3741,5 +3741,8 @@
   "library_category_structure": "宇宙结构",
   "fly_2d_scale_label": "1 AU = {px} 像素",
   "browse_showing": "显示：{era}（{count}）",
-  "browse_view_list": "列表"
+  "browse_view_list": "列表",
+  "programs_search_placeholder": "搜索计划…",
+  "programs_filter_kind": "类型",
+  "programs_empty": "没有计划匹配当前筛选条件。"
 }

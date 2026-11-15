@@ -1,69 +1,166 @@
 <!--
-  /programs — editorial index (PRD-029). Era-spined by default, toggle to
-  group by agency. Not a dense grid: the browse reads as the arc of
-  spaceflight. Cards deep-link into the full editorial page.
+  /programs — the programs index (PRD-029), on the catalogue pattern of /missions and /fleet
+  (UXD-048): search, FILTERS (kind), the era strip, the agency chips, the "N programs | Showing"
+  line with sort and Grid / List, then one card of one size per program. The title, lead and patch
+  wall stay: this is an editorial index, so its frame is the text-page shell at the catalogue's
+  width. A program sits in the era of its start year (`$lib/programs-browse`). A card is a link
+  (`href`), so every program page is reachable without script.
 -->
 <script lang="ts">
+  import { onMount, untrack } from 'svelte';
+  import { page } from '$app/state';
+  import { goto } from '$app/navigation';
   import { metaDescription, seoPageTitle } from '$lib/seo';
-  import { responsive } from '$lib/responsive-image.svelte';
   import { localHref } from '$lib/locale';
+  import { assetUrl } from '$lib/asset-url';
+  import { EPOCH_BANDS } from '$lib/epoch-bands';
+  import { epochLabel } from '$lib/epoch-label';
+  import { agencyDataColor, agencyFullName } from '$lib/agencies';
+  import { matchesQuery } from '$lib/list-search';
+  import { programStatusLabel } from '$lib/status-label';
+  import {
+    agencyColorsByEra,
+    programAgencies,
+    programEra,
+    programStatusClass,
+    programsByAgency,
+    programsByEra,
+    sortPrograms,
+    type ProgramSort,
+  } from '$lib/programs-browse';
   import Chip from '$lib/components/Chip.svelte';
   import ChipGroup from '$lib/components/ChipGroup.svelte';
-  import { IMAGE_SIZES } from '$lib/image-sizes';
-  import { assetUrl } from '$lib/asset-url';
-  import AgencyBadge from '$lib/components/AgencyBadge.svelte';
+  import EpochTimelineStrip from '$lib/components/EpochTimelineStrip.svelte';
+  import AgencyFilterRow from '$lib/components/AgencyFilterRow.svelte';
+  import BrowseToolbar from '$lib/components/BrowseToolbar.svelte';
+  import EntityCard from '$lib/components/EntityCard.svelte';
+  import EntityList from '$lib/components/EntityList.svelte';
   import * as m from '$lib/paraglide/messages';
-  import type { ProgramIndexEntry } from '$types/program';
+  import type { FleetEpoch } from '$types/fleet';
+  import type { ProgramIndexEntry, ProgramKind } from '$types/program';
   import type { PageData } from './$types';
-
-  const agencyStr = (p: ProgramIndexEntry) => p.agencies?.join(' / ') ?? p.agency;
 
   let { data }: { data: PageData } = $props();
   let programs = $derived(data.programs);
   let badges = $derived(data.badges ?? {});
-  let mode = $state<'era' | 'kind' | 'agency'>('era');
 
   // Opening graphic: a wall of the iconic program mission patches (existing,
   // vetted assets). Thematically the page's subject IS programs, and patches are
   // their signature. Capped so the header stays a band, not a gallery.
   let patchWall = $derived(Object.values(badges).slice(0, 28));
 
-  // Group by a stable key; the heading label resolves per-locale via m.*().
-  const ERA_KEY: Record<string, string> = {
-    'first-steps': 'space-race',
-    'space-race': 'space-race',
-    'lunar-era': 'space-race',
-    'first-stations': 'shuttle',
-    'shuttle-and-mir': 'shuttle',
-    'iss-assembly': 'iss',
-    'commercial-era': 'newspace',
-    'lunar-return': 'newspace',
-    'mars-era': 'newspace',
-  };
-  const ERA_ORDER = ['space-race', 'shuttle', 'iss', 'newspace'];
-  const ERA_LABEL: Record<string, () => string> = {
-    'space-race': m.programs_era_space_race,
-    shuttle: m.programs_era_shuttle,
-    iss: m.programs_era_iss,
-    newspace: m.programs_era_newspace,
-  };
-
-  const KIND_KEY: Record<string, string> = {
-    'crewed-campaign': 'crewed',
-    station: 'station',
-    'robotic-campaign': 'robotic',
-    infrastructure: 'infrastructure',
-    'funding-line': 'funding',
-  };
-  const KIND_ORDER = ['crewed', 'station', 'robotic', 'infrastructure', 'funding'];
-  const KIND_LABEL: Record<string, () => string> = {
-    crewed: m.programs_kind_crewed,
+  const KINDS: ProgramKind[] = [
+    'crewed-campaign',
+    'station',
+    'robotic-campaign',
+    'infrastructure',
+    'funding-line',
+  ];
+  const KIND_LABEL: Record<ProgramKind, () => string> = {
+    'crewed-campaign': m.programs_kind_crewed,
     station: m.programs_kind_station,
-    robotic: m.programs_kind_robotic,
+    'robotic-campaign': m.programs_kind_robotic,
     infrastructure: m.programs_kind_infrastructure,
-    funding: m.programs_kind_funding,
+    'funding-line': m.programs_kind_funding,
   };
+  const kindLabel = (k: string) => (KIND_LABEL[k as ProgramKind] ?? (() => k))();
+  const kindsPresent = $derived(KINDS.filter((k) => programs.some((p) => p.kind === k)));
 
+  interface ProgramFilterState {
+    epoch: FleetEpoch | 'ALL';
+    agency: string;
+    kind: ProgramKind | 'ALL';
+    q: string;
+    sort: ProgramSort;
+    view: 'grid' | 'list';
+    expanded: boolean;
+  }
+  const filterState = $state<ProgramFilterState>({
+    epoch: 'ALL',
+    agency: 'ALL',
+    kind: 'ALL',
+    q: '',
+    sort: 'chrono-desc',
+    view: 'grid',
+    expanded: false,
+  });
+
+  let anyFilterActive = $derived(
+    filterState.epoch !== 'ALL' ||
+      filterState.agency !== 'ALL' ||
+      filterState.kind !== 'ALL' ||
+      filterState.q.trim() !== '',
+  );
+
+  // The strip and the chips count the whole catalogue, not the filtered slice.
+  let countByEpoch = $derived(programsByEra(programs));
+  let colorsByEpoch = $derived(agencyColorsByEra(programs));
+  let agencyCount = $derived(programsByAgency(programs));
+  let agencies = $derived([...agencyCount.keys()].sort());
+
+  let filtered = $derived(
+    sortPrograms(
+      programs.filter(
+        (p) =>
+          matchesQuery(
+            [p.name, ...programAgencies(p), kindLabel(p.kind), p.tagline, p.country],
+            filterState.q,
+          ) &&
+          (filterState.epoch === 'ALL' || programEra(p) === filterState.epoch) &&
+          (filterState.agency === 'ALL' || programAgencies(p).includes(filterState.agency)) &&
+          (filterState.kind === 'ALL' || p.kind === filterState.kind),
+      ),
+      filterState.sort,
+    ),
+  );
+
+  // ─── URL ↔ filter sync (same shape as /missions) ─────────────────
+  const epochValid = (v: string) => EPOCH_BANDS.some((b) => b.id === v);
+
+  function applyUrl(url: URL) {
+    const sp = url.searchParams;
+    const ep = sp.get('epoch');
+    filterState.epoch = ep && epochValid(ep) ? (ep as FleetEpoch) : 'ALL';
+    filterState.agency = sp.get('agency') ?? 'ALL';
+    const kind = sp.get('kind');
+    filterState.kind = kind && (KINDS as string[]).includes(kind) ? (kind as ProgramKind) : 'ALL';
+    filterState.q = sp.get('q') ?? '';
+    const so = sp.get('sort');
+    filterState.sort = so === 'chrono-asc' || so === 'alpha' ? so : 'chrono-desc';
+    filterState.view = sp.get('view') === 'list' ? 'list' : 'grid';
+    if (sp.has('kind')) filterState.expanded = true;
+  }
+
+  function pushUrl() {
+    const params = new URLSearchParams();
+    if (filterState.epoch !== 'ALL') params.set('epoch', filterState.epoch);
+    if (filterState.agency !== 'ALL') params.set('agency', filterState.agency);
+    if (filterState.kind !== 'ALL') params.set('kind', filterState.kind);
+    if (filterState.q.trim() !== '') params.set('q', filterState.q.trim());
+    if (filterState.sort !== 'chrono-desc') params.set('sort', filterState.sort);
+    if (filterState.view === 'list') params.set('view', 'list');
+    const qs = params.toString();
+    const target = localHref(`/programs${qs ? `?${qs}` : ''}`);
+    if (target !== page.url.pathname + page.url.search) {
+      goto(target, { replaceState: true, keepFocus: true, noScroll: true });
+    }
+  }
+
+  function clearAllFilters() {
+    filterState.epoch = 'ALL';
+    filterState.agency = 'ALL';
+    filterState.kind = 'ALL';
+    filterState.q = '';
+    pushUrl();
+  }
+
+  onMount(() => applyUrl(page.url));
+  $effect(() => {
+    const url = page.url;
+    untrack(() => applyUrl(url));
+  });
+
+  // ─── Card data ───────────────────────────────────────────────────
   function heroSrc(hero?: string): string {
     if (!hero) return '';
     const parts = hero.split('/');
@@ -75,34 +172,10 @@
     return '';
   }
 
-  let groups = $derived.by(() => {
-    const by = new Map<string, ProgramIndexEntry[]>();
-    for (const p of programs) {
-      const key =
-        mode === 'era'
-          ? (ERA_KEY[p.epoch] ?? 'other')
-          : mode === 'kind'
-            ? (KIND_KEY[p.kind] ?? 'other')
-            : p.agency;
-      if (!by.has(key)) by.set(key, []);
-      by.get(key)!.push(p);
-    }
-    const order = mode === 'era' ? ERA_ORDER : mode === 'kind' ? KIND_ORDER : null;
-    const keys = order
-      ? order.filter((k) => by.has(k))
-      : [...by.keys()].sort((a, b) => a.localeCompare(b));
-    const label = (k: string) =>
-      mode === 'era' ? (ERA_LABEL[k]?.() ?? k) : mode === 'kind' ? (KIND_LABEL[k]?.() ?? k) : k;
-    // Within every section, order chronologically by start date (then name).
-    return keys.map((k) => ({
-      key: k,
-      heading: label(k),
-      items: by
-        .get(k)!
-        .slice()
-        .sort((a, b) => (a.start_year ?? 0) - (b.start_year ?? 0) || a.name.localeCompare(b.name)),
-    }));
-  });
+  const years = (p: ProgramIndexEntry) => `${p.start_year}–${p.end_year ?? m.programs_meta_now()}`;
+  const leadColor = (p: ProgramIndexEntry) =>
+    agencyDataColor(programAgencies(p)[0]) ?? 'var(--color-state)';
+  const open = (p: ProgramIndexEntry) => goto(localHref(`/programs/${p.id}`));
 </script>
 
 <svelte:head>
@@ -110,7 +183,7 @@
   <meta name="description" content={metaDescription(m.programs_seo_description())} />
 </svelte:head>
 
-<div class="programs-index page-shell">
+<div class="programs-index page-shell page-shell--wide entity-browse-page">
   <header class="head">
     {#if patchWall.length}
       <div class="patch-wall" aria-hidden="true">
@@ -126,60 +199,174 @@
         program: `<em>${m.programs_index_intro_program()}</em>`,
       })}
     </p>
-    <!-- a2-keep: toolbar hint under the lead, not an opening paragraph -->
-    <p class="lede">{m.programs_index_browse_hint()}</p>
-    <div class="group-by">
-      <ChipGroup role="radiogroup" label={m.programs_group_aria()}>
-        <Chip kind="choice" active={mode === 'era'} onclick={() => (mode = 'era')}
-          >{m.programs_by_era()}</Chip
-        >
-        <Chip kind="choice" active={mode === 'kind'} onclick={() => (mode = 'kind')}
-          >{m.programs_by_kind()}</Chip
-        >
-        <Chip kind="choice" active={mode === 'agency'} onclick={() => (mode = 'agency')}
-          >{m.programs_by_agency()}</Chip
-        >
-      </ChipGroup>
-    </div>
   </header>
 
-  {#each groups as g (g.key)}
-    <section class="group">
-      <h2 class="page-section-label page-section-label--rule">{g.heading}</h2>
-      <div class="cards">
-        {#each g.items as p (p.id)}
-          <a class="card" href={localHref(`/programs/${p.id}`)}>
-            {#if heroSrc(p.hero)}
-              <img
-                {...responsive(heroSrc(p.hero), IMAGE_SIZES.wideCard)}
-                alt=""
-                loading="lazy"
-                decoding="async"
-              />
-            {/if}
-            <div class="card-body">
-              <p class="c-meta">
-                <AgencyBadge agency={agencyStr(p)} />
-                <span>{p.agency} · {p.start_year}–{p.end_year ?? m.programs_meta_now()}</span>
-              </p>
-              <div class="c-title-row">
-                <h3>{p.name}</h3>
-                {#if badges[`program:${p.id}`]}
-                  <img
-                    class="c-badge"
-                    src={assetUrl(badges[`program:${p.id}`])}
-                    alt=""
-                    loading="lazy"
-                  />
-                {/if}
-              </div>
-              <p class="c-hook">{p.tagline}</p>
-            </div>
-          </a>
+  <div class="search-row">
+    <input
+      type="search"
+      class="search-input"
+      placeholder={m.programs_search_placeholder()}
+      aria-label={m.programs_search_placeholder()}
+      data-testid="programs-search"
+      value={filterState.q}
+      oninput={(e) => {
+        filterState.q = (e.currentTarget as HTMLInputElement).value;
+        pushUrl();
+      }}
+    />
+  </div>
+
+  <div class="filters-bar">
+    <Chip
+      kind="action"
+      class="filters-strip"
+      aria-expanded={filterState.expanded}
+      aria-controls={filterState.expanded ? 'programs-filters' : undefined}
+      onclick={() => (filterState.expanded = !filterState.expanded)}
+    >
+      {m.filters_eyebrow()}
+      {#if filtered.length !== programs.length}
+        <span class="filters-count count-fraction" aria-hidden="true"
+          >{filtered.length} / {programs.length}</span
+        >
+        <span class="filters-count-sr"
+          >{m.filters_count_of({ shown: filtered.length, total: programs.length })}</span
+        >
+      {:else}
+        <span class="filters-count count-total-only">{programs.length}</span>
+      {/if}
+      <span class="filters-chevron" aria-hidden="true">{filterState.expanded ? '▾' : '▸'}</span>
+    </Chip>
+    {#if anyFilterActive}
+      <Chip kind="action" quiet dismiss class="filters-clear" onclick={clearAllFilters}>
+        {m.missions_clear_filters()}
+      </Chip>
+    {/if}
+  </div>
+
+  <EpochTimelineStrip
+    {countByEpoch}
+    {colorsByEpoch}
+    selected={filterState.epoch}
+    onSelect={(v) => {
+      filterState.epoch = v;
+      pushUrl();
+    }}
+  />
+  <div class="filters agency-row">
+    <AgencyFilterRow
+      agencies={agencies.map((name) => ({ name, count: agencyCount.get(name) ?? 0 }))}
+      value={filterState.agency}
+      onSelect={(v) => {
+        filterState.agency = v;
+        pushUrl();
+      }}
+      label={m.lib_filter_agency_label()}
+      allLabel={m.lib_filter_agency_all()}
+    />
+  </div>
+  {#if filterState.expanded}
+    <nav id="programs-filters" class="filters" aria-label={m.filters_eyebrow()}>
+      <ChipGroup role="radiogroup" label={m.programs_filter_kind()} class="filter-group">
+        <span class="filter-label">{m.programs_filter_kind()}</span>
+        <Chip
+          kind="choice"
+          active={filterState.kind === 'ALL'}
+          onclick={() => {
+            filterState.kind = 'ALL';
+            pushUrl();
+          }}>{m.lib_filter_status_all()}</Chip
+        >
+        {#each kindsPresent as k (k)}
+          <Chip
+            kind="choice"
+            active={filterState.kind === k}
+            onclick={() => {
+              filterState.kind = k;
+              pushUrl();
+            }}>{kindLabel(k)}</Chip
+          >
         {/each}
-      </div>
-    </section>
-  {/each}
+      </ChipGroup>
+    </nav>
+  {/if}
+
+  <BrowseToolbar
+    total={programs.length}
+    noun={m.programs_index_title()}
+    showing={m.browse_showing({
+      era: filterState.epoch === 'ALL' ? m.epoch_all() : epochLabel(filterState.epoch),
+      count: filtered.length,
+    })}
+    sortOptions={[
+      { value: 'chrono-desc', label: m.fleet_sort_newest() },
+      { value: 'chrono-asc', label: m.fleet_sort_oldest() },
+      { value: 'alpha', label: m.fleet_sort_alpha() },
+    ]}
+    sort={filterState.sort}
+    onSort={(v) => {
+      filterState.sort = v as ProgramSort;
+      pushUrl();
+    }}
+    views={[
+      { value: 'grid', label: m.fleet_view_grid() },
+      { value: 'list', label: m.browse_view_list() },
+    ]}
+    view={filterState.view}
+    onView={(v) => {
+      filterState.view = v as 'grid' | 'list';
+      pushUrl();
+    }}
+  />
+
+  {#if filtered.length === 0}
+    <p class="empty">{m.programs_empty()}</p>
+  {:else if filterState.view === 'list'}
+    <EntityList
+      label={m.programs_index_title()}
+      rows={filtered.map((p) => ({
+        id: p.id,
+        name: p.name,
+        kind: kindLabel(p.kind),
+        agency: programAgencies(p).join(' / '),
+        year: years(p),
+        status: programStatusClass(p.status),
+        statusLabel: programStatusLabel(p.status),
+      }))}
+      onOpen={(id) => {
+        const p = programs.find((x) => x.id === id);
+        if (p) open(p);
+      }}
+    />
+  {:else}
+    <ul class="entity-card-grid" aria-label={m.programs_index_title()}>
+      {#each filtered as p (p.id)}
+        <EntityCard
+          photo={heroSrc(p.hero)}
+          name={p.name}
+          year={years(p)}
+          agencies={programAgencies(p).map((a) => ({ name: a, color: agencyDataColor(a) }))}
+          agencyTitle={programAgencies(p).map(agencyFullName).join(' / ')}
+          accent={leadColor(p)}
+          story={p.tagline}
+          badge={badges[`program:${p.id}`]}
+          testid="program-card-{p.id}"
+          href={localHref(`/programs/${p.id}`)}
+          facts={[
+            { label: m.card_stat_country(), value: p.country },
+            { label: m.missions_card_year_label(), value: years(p) },
+          ]}
+        >
+          {#snippet pills()}
+            <span class="card-status status-{programStatusClass(p.status)}">
+              {programStatusLabel(p.status)}
+            </span>
+            <span class="card-kind">{kindLabel(p.kind)}</span>
+          {/snippet}
+        </EntityCard>
+      {/each}
+    </ul>
+  {/if}
 </div>
 
 <style>
@@ -227,75 +414,20 @@
     font-style: italic; /* a1-keep: inline emphasis */
     color: var(--color-state);
   }
-  /* a2-keep: toolbar hint, not the page lead */
-  .lede {
-    font-size: 13px;
-    line-height: 1.5;
-    letter-spacing: 0.2px;
-    color: rgba(255, 255, 255, 0.5);
-    max-width: 60ch;
+  .head {
+    margin-bottom: 18px;
   }
-  .group-by {
-    margin: 16px 0 8px;
-  }
-  .cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 16px;
-  }
-  .card {
-    display: block;
-    text-decoration: none;
-    color: inherit;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
-    overflow: hidden;
-    background: rgba(255, 255, 255, 0.02);
-    transition: border-color 0.15s;
-  }
-  .card:hover {
-    border-color: rgba(127, 176, 224, 0.5);
-  }
-  .card > img {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
-    display: block;
-  }
-  .card-body {
-    padding: 14px 16px 18px;
-  }
-  .c-meta {
-    display: flex;
-    align-items: center;
-    gap: 7px;
+
+  .empty {
+    padding: 40px;
+    text-align: center;
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: var(--size-label);
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
+    letter-spacing: 2px;
     color: var(--color-text-label);
   }
-  .c-title-row {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .card h3 {
-    font-family: 'Bebas Neue', 'Space Mono', sans-serif;
-    font-size: 28px;
-    letter-spacing: 1px;
-    margin: 4px 0 6px;
-  }
-  .c-badge {
-    width: 34px;
-    height: 34px;
-    object-fit: contain;
-    flex: 0 0 auto;
-    margin-bottom: 2px;
-  }
-  .c-hook {
-    font-size: 14px;
-    line-height: 1.4;
-    color: rgba(255, 255, 255, 0.7);
-  }
+
+  /* The page chrome is src/lib/styles/entity-browse-page.css, the card and the grid are EntityCard and
+     entity-card-grid.css, the toolbar, agency row and list are shared components: /missions, /fleet and
+     /missions/launches render the same ones. */
 </style>

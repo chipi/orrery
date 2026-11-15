@@ -15,6 +15,7 @@ import * as THREE from 'three';
 import type { LaunchConditions, LightId } from '$lib/orbital/ascent-director';
 import type { AscentState } from '$lib/physics/ascent/ascent-physics';
 import type { AscentScene } from './ascent-scene';
+import { SeparationBurst } from './separation-burst';
 
 const R_EARTH_KM = 6371;
 
@@ -41,6 +42,9 @@ interface Palette {
   limbAmt: number;
   /** City lights on the dark side (0 = none). */
   cityLights: number;
+  /** A fill from the camera side so a stage far from the plume stays lit, not a flat blue-grey. */
+  keyColor: number;
+  keyIntensity: number;
 }
 
 const PALETTES: Record<LightId, Palette> = {
@@ -61,6 +65,8 @@ const PALETTES: Record<LightId, Palette> = {
     limb: 0x5aa0ff,
     limbAmt: 1.2,
     cityLights: 0,
+    keyColor: 0xffffff,
+    keyIntensity: 0,
   },
   golden: {
     horizon: 0xf2a85e,
@@ -79,6 +85,8 @@ const PALETTES: Record<LightId, Palette> = {
     limb: 0xff9a55,
     limbAmt: 1.1,
     cityLights: 0.15,
+    keyColor: 0xffd9b0,
+    keyIntensity: 0.25,
   },
   dusk: {
     horizon: 0xd8764f,
@@ -97,6 +105,8 @@ const PALETTES: Record<LightId, Palette> = {
     limb: 0xff6a3a,
     limbAmt: 1.0,
     cityLights: 0.6,
+    keyColor: 0xffc9a0,
+    keyIntensity: 0.7,
   },
   night: {
     horizon: 0x16213d,
@@ -115,6 +125,8 @@ const PALETTES: Record<LightId, Palette> = {
     limb: 0x3f64c8,
     limbAmt: 0.7,
     cityLights: 1,
+    keyColor: 0xe4e9ff,
+    keyIntensity: 0.8,
   },
 };
 
@@ -663,11 +675,35 @@ export function attachLaunchConditions(
   scene.add(flameA, flameB);
   owned.push(flameA, flameB);
 
+  const key = new THREE.DirectionalLight(pal.keyColor, pal.keyIntensity * Math.PI);
+  scene.add(key);
+  owned.push(key);
+  const camDir = new THREE.Vector3();
+
+  // The scene's separation burst throws round debris flecks; with the camera this close they
+  // read as grey dots floating round the vehicle, so they are drawn small and faint here.
+  const flecks: THREE.PointsMaterial[] = [];
+  scene.traverse((o) => {
+    if (o instanceof SeparationBurst)
+      o.children.forEach((ch) => {
+        if (ch instanceof THREE.Points) flecks.push(ch.material as THREE.PointsMaterial);
+      });
+  });
+
   const skyGround = new THREE.Color(pal.ground);
   const SPACE = new THREE.Color(0x03040a);
 
   return {
     update(s, camera) {
+      for (const m of flecks) {
+        m.size *= 0.3;
+        m.opacity *= 0.35;
+      }
+      camera.getWorldDirection(camDir);
+      key.position
+        .copy(camDir)
+        .multiplyScalar(-1000)
+        .add(new THREE.Vector3(0, 600, 0));
       const camAlt = camera.position.y;
       skyMat.uniforms.uAlt.value = s.altKm;
       cloudMat.uniforms.uCamAlt.value = camAlt;

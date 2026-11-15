@@ -77,7 +77,7 @@ test.describe('catalogue pattern: agency row, toolbar, era photos (UXD-048)', ()
     await open(page);
     const tiles = page.locator('[data-audio-stage="missions-epoch-timeline"] [role="radio"]');
     await expect(tiles).toHaveCount(9);
-    expect(await tiles.locator('img.era-photo').count()).toBe(9);
+    expect(await tiles.locator('img.era-img').count()).toBe(9);
     expect(await tiles.locator('.era-dots').count()).toBeGreaterThanOrEqual(8);
     await tiles.nth(2).click();
     await expect(tiles.nth(2)).toHaveCSS('border-top-color', 'rgb(136, 159, 231)');

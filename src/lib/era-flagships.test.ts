@@ -1,38 +1,37 @@
 import { existsSync, readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 import { EPOCH_BANDS, epochForYear } from './epoch-bands';
-import { ERA_FLAGSHIP } from './era-flagships';
+import { ERA_PHOTO, eraPhotoPath } from './era-flagships';
 
 const index = JSON.parse(readFileSync('static/data/missions/index.json', 'utf8')) as {
   id: string;
   year: number;
 }[];
-const overrides = (
-  JSON.parse(readFileSync('static/data/missions-hero-overrides.json', 'utf8')) as {
-    overrides: Record<string, { slot: string }>;
-  }
-).overrides;
 
-describe('era flagship photos', () => {
-  it('names one mission for each of the nine eras', () => {
-    expect(Object.keys(ERA_FLAGSHIP).sort()).toEqual(EPOCH_BANDS.map((b) => b.id).sort());
+// Picks that are not a mission of the era's own years: a station photo, a Starship photo (the
+// only mission of Mars Era is a render), and the Artemis I pad at night (the strongest SLS image).
+const NOT_BY_YEAR = ['iss-assembly', 'mars-era', 'lunar-return'];
+
+describe('era tile photos', () => {
+  it('names one image for each of the nine eras', () => {
+    expect(Object.keys(ERA_PHOTO).sort()).toEqual(EPOCH_BANDS.map((b) => b.id).sort());
   });
 
-  it.each(Object.entries(ERA_FLAGSHIP))(
-    '%s: %s is a mission with a shipped hero image',
-    (_, id) => {
-      expect(index.some((m) => m.id === id)).toBe(true);
-      const slot = (overrides[id]?.slot ?? '01.jpg').replace(/\.\w+$/, '');
-      expect(existsSync(`static/images/missions/${id}/${slot}.webp`)).toBe(true);
-      // the tile draws the square crop
-      expect(existsSync(`static/images/missions/${id}/${slot}.1x1.jpg`)).toBe(true);
+  it.each(Object.entries(ERA_PHOTO))('%s: the square crop of %o exists', (_, p) => {
+    expect(existsSync(`static${eraPhotoPath(p)}`)).toBe(true);
+  });
+
+  it.each(Object.entries(ERA_PHOTO).filter(([, p]) => p.dir === 'missions'))(
+    '%s: a mission of the index',
+    (_, p) => {
+      expect(index.some((m) => m.id === p.id)).toBe(true);
     },
   );
 
-  it.each(Object.entries(ERA_FLAGSHIP).filter(([era]) => era !== 'mars-era'))(
-    '%s: %s sits inside the era by the bucketing the strip counts with',
-    (era, id) => {
-      const m = index.find((x) => x.id === id)!;
+  it.each(Object.entries(ERA_PHOTO).filter(([era]) => !NOT_BY_YEAR.includes(era)))(
+    '%s: the mission sits inside the era by the bucketing the strip counts with',
+    (era, p) => {
+      const m = index.find((x) => x.id === p.id)!;
       expect(epochForYear(m.year)).toBe(era);
     },
   );

@@ -1,8 +1,8 @@
 <script lang="ts">
   /**
    * Era strip (UXD-048; PRD-012 v0.2 §epochs, RFC-016 v0.2 OQ-17): nine equal tiles, one per
-   * historic spaceflight epoch, in a radiogroup of <Chip kind="choice">. A tile is a photo (the
-   * era's flagship mission hero, `$lib/era-flagships`) under a dark gradient, with the era's
+   * historic spaceflight epoch, in a radiogroup of <Chip kind="choice">. A tile is the
+   * era's photo (`$lib/era-flagships`) fading in from the text over its end 70 %, with the era's
    * name (wraps, never clipped), its years, its count and, where the page brings them, a row
    * of agency-colour dots (the agencies active in that era). The chosen tile has the #889fe7
    * edge. Click or Enter/Space on the chosen tile clears the choice. Arrow keys move and
@@ -10,9 +10,9 @@
    * 1100 px of strip, one scroll row under 560. Serves /missions and /fleet.
    */
   import type { FleetEpoch } from '$types/fleet';
-  import { EPOCH_BANDS } from '$lib/epoch-bands';
-  import { ERA_FLAGSHIP, ERA_PHOTO_POSITION } from '$lib/era-flagships';
-  import { pickHero, loadHeroOverrides } from '$lib/image-hero';
+  import { EPOCH_BANDS, eraSelectable } from '$lib/epoch-bands';
+  import { ERA_PHOTO, eraPhotoPath } from '$lib/era-flagships';
+  import { assetUrl } from '$lib/asset-url';
   import * as m from '$lib/paraglide/messages';
   import { epochLabel } from '$lib/epoch-label';
   import Chip from './Chip.svelte';
@@ -29,15 +29,6 @@
   let { countByEpoch, colorsByEpoch, selected, onSelect }: Props = $props();
 
   const MAX_DOTS = 5;
-  let heroesReady = $state(false);
-  $effect(() => {
-    void loadHeroOverrides('missions').then(() => (heroesReady = true));
-  });
-  const photo = (id: FleetEpoch) => {
-    void heroesReady;
-    // the hero's square crop: the subject is centred and it is a small file for a 60 px slot
-    return pickHero('missions', ERA_FLAGSHIP[id]).replace(/\.webp$/, '.1x1.jpg');
-  };
   const yearsOf = (b: (typeof EPOCH_BANDS)[number]) =>
     `${b.yearStart}–${b.id === 'mars-era' ? '∞' : b.yearEnd}`;
 </script>
@@ -50,6 +41,7 @@
         kind="choice"
         class="era-tile"
         active={selected === ep.id}
+        disabled={!eraSelectable(countByEpoch.get(ep.id), selected === ep.id)}
         aria-label={m.epoch_band_aria({
           label: epochLabel(ep.id),
           start: ep.yearStart,
@@ -58,17 +50,19 @@
         })}
         onclick={() => onSelect(selected === ep.id ? 'ALL' : ep.id)}
       >
-        <img
-          class="era-photo"
-          src={photo(ep.id)}
-          style:object-position={ERA_PHOTO_POSITION[ep.id]}
-          alt=""
-          width="64"
-          height="96"
-          loading="lazy"
-          decoding="async"
-          onerror={(e) => ((e.currentTarget as HTMLImageElement).style.display = 'none')}
-        />
+        <span class="era-photo" style:--flip={ERA_PHOTO[ep.id].flipRtl ? -1 : 1}>
+          <img
+            class="era-img"
+            src={assetUrl(eraPhotoPath(ERA_PHOTO[ep.id]))}
+            style:object-position={ERA_PHOTO[ep.id].position}
+            alt=""
+            width="64"
+            height="96"
+            loading="lazy"
+            decoding="async"
+            onerror={(e) => ((e.currentTarget as HTMLImageElement).style.display = 'none')}
+          />
+        </span>
         <span class="era-body">
           <span class="era-name">{epochLabel(ep.id)}</span>
           <span class="era-years"><bdi dir="ltr">{yearsOf(ep)}</bdi></span>
@@ -108,7 +102,7 @@
     padding: 0;
     text-align: start;
     white-space: normal;
-    letter-spacing: 0.3px;
+    letter-spacing: 0;
     background: var(--color-bg);
   }
   .strip :global(.era-tile[aria-checked='true']) {
@@ -119,17 +113,60 @@
      inner edge; the text is on the plain tile surface, so its contrast does not depend on the photo. */
   .era-photo {
     position: absolute;
+    display: block;
     inset-block: 0;
     inset-inline-end: 0;
-    inline-size: 40%;
+    inline-size: 70%;
     block-size: 100%;
-    object-fit: cover;
-    -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 55%);
-    mask-image: linear-gradient(to right, transparent 0%, #000 55%);
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      rgb(0 0 0 / 0.04) 14%,
+      rgb(0 0 0 / 0.14) 26%,
+      rgb(0 0 0 / 0.38) 36%,
+      rgb(0 0 0 / 0.72) 43%,
+      #000 50%
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      rgb(0 0 0 / 0.04) 14%,
+      rgb(0 0 0 / 0.14) 26%,
+      rgb(0 0 0 / 0.38) 36%,
+      rgb(0 0 0 / 0.72) 43%,
+      #000 50%
+    );
   }
   :global([dir='rtl']) .era-photo {
-    -webkit-mask-image: linear-gradient(to left, transparent 0%, #000 55%);
-    mask-image: linear-gradient(to left, transparent 0%, #000 55%);
+    -webkit-mask-image: linear-gradient(
+      to left,
+      transparent 0%,
+      rgb(0 0 0 / 0.04) 14%,
+      rgb(0 0 0 / 0.14) 26%,
+      rgb(0 0 0 / 0.38) 36%,
+      rgb(0 0 0 / 0.72) 43%,
+      #000 50%
+    );
+    mask-image: linear-gradient(
+      to left,
+      transparent 0%,
+      rgb(0 0 0 / 0.04) 14%,
+      rgb(0 0 0 / 0.14) 26%,
+      rgb(0 0 0 / 0.38) 36%,
+      rgb(0 0 0 / 0.72) 43%,
+      #000 50%
+    );
+  }
+  .era-img {
+    display: block;
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+  }
+  /* A picture without text or flags (a symmetric subject) may be mirrored in right-to-left, so
+     its subject lands in the visible part and not in the fade. */
+  :global([dir='rtl']) .era-img {
+    transform: scaleX(var(--flip, 1));
   }
   .era-body {
     position: relative;
@@ -144,8 +181,8 @@
   }
   .era-name {
     display: block;
-    /* the name stays in the left 60 %, on the plain dark: it wraps rather than reach the photo */
-    max-inline-size: 60%;
+    /* the name stays in the left 56 %, on the plain dark: it wraps rather than reach the photo */
+    max-inline-size: 59%;
     line-height: 1.25;
     overflow-wrap: anywhere;
     color: var(--color-text);
@@ -153,7 +190,7 @@
   .era-years {
     font-weight: 400;
     letter-spacing: 0;
-    color: rgba(255, 255, 255, 0.78);
+    color: rgba(255, 255, 255, 0.9);
   }
   .era-foot {
     display: flex;

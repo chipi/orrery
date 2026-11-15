@@ -106,3 +106,12 @@ export function epochForYear(year: number): FleetEpoch | null {
   }
   return null;
 }
+
+/**
+ * Whether an era tile can be chosen: an era with no entries on the page stays in the strip (the
+ * nine eras read the same everywhere) but is dimmed and not selectable. An era that is already
+ * chosen stays selectable, so a link into an empty era can still be cleared.
+ */
+export function eraSelectable(count: number | undefined, chosen: boolean): boolean {
+  return chosen || (count ?? 0) > 0;
+}

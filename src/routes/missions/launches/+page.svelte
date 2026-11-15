@@ -177,13 +177,15 @@
         const short = agencyShortName(name);
         merged.set(short, (merged.get(short) ?? 0) + n);
       }
-      out.set(
-        ep,
-        [...merged.entries()]
-          .sort((x, y) => y[1] - x[1] || x[0].localeCompare(y[0]))
-          .map(([a]) => agencyDataColor(a))
-          .filter((c): c is string => !!c),
-      );
+      // One dot per colour: the strip keys its dots by colour, and two providers can share one.
+      out.set(ep, [
+        ...new Set(
+          [...merged.entries()]
+            .sort((x, y) => y[1] - x[1] || x[0].localeCompare(y[0]))
+            .map(([a]) => agencyDataColor(a))
+            .filter((c): c is string => !!c),
+        ),
+      ]);
     }
     return out;
   });
@@ -566,11 +568,11 @@
         <EntityCard
           photo={e.orrery_launcher_ref ? pickHero('fleet', e.orrery_launcher_ref) : ''}
           name={vehicle(e)}
-          year={dateLabel(e)}
+          year={launchYear(e)}
           agencies={[{ name: providerOf(e), color: lead }]}
           agencyTitle={agencyFullName(e.agency_name)}
           accent={lead ?? 'var(--color-state)'}
-          story={e.editorial_note ?? missionLine(e)}
+          story={`${dateLabel(e)} · ${e.editorial_note ?? missionLine(e)}`}
           testid="launch-card-{e.id}"
           href={destination(e)}
           facts={[
@@ -644,6 +646,13 @@
   /* Page chrome (.search-row, .filters-bar, .filters-count, .filters-chevron, .filters,
      .filter-group, .filter-label) lives in src/lib/styles/entity-browse-page.css; the card, the
      grid, the toolbar, the agency row are the shared components /missions and /fleet render. */
+
+  /* The two-column phone grid has room for the status alone; the tier shows in the list. */
+  @media (max-width: 600px) {
+    .launches :global(.entity-card-grid .card-kind) {
+      display: none;
+    }
+  }
 
   .loading,
   .empty {

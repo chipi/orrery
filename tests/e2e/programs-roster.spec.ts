@@ -99,10 +99,11 @@ test.describe('program roster links and milestones', () => {
     page,
   }) => {
     await page.goto('/programs/space-shuttle');
-    const link = page.locator('section.roster .timeline a.t-link');
-    await expect(link).toHaveCount(2);
-    await expect(link.nth(0)).toHaveAttribute('href', /\/fleet\?id=challenger&from=program/);
-    await expect(link.nth(1)).toHaveAttribute('href', /\/fleet\?id=columbia&from=program/);
+    // The orbiters are hardware rows (linked by `linked_id`), drawn as hardware cards.
+    const card = (id: string) =>
+      page.locator(`ul.hardware a.hw-card[href*="/fleet?id=${id}&from=program"]`);
+    await expect(card('challenger')).toHaveCount(1);
+    await expect(card('columbia')).toHaveCount(1);
   });
 
   test('every link on the changed programs points at an entry that exists', async ({ page }) => {

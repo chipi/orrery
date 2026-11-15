@@ -134,7 +134,18 @@ test.describe('/programs', () => {
     await expect(page.locator('.entity-card-grid .card')).toHaveCount(
       programs.filter((p) => agenciesOf(p).includes('ESA')).length,
     );
-    await expect(page.getByRole('radio', { name: /ESA/ }).first()).toBeChecked();
+    await expect(page.locator('.agency-chip[aria-checked="true"] .agency-name')).toHaveText('ESA');
+  });
+
+  test('the kind pill shows whole on every card (no ellipsis)', async ({ page }) => {
+    await openPrograms(page);
+    await page.addStyleTag({ content: '.card-li { content-visibility: visible !important; }' });
+    const cut = await page
+      .locator('.entity-card-grid .card-kind')
+      .evaluateAll((els) =>
+        els.filter((e) => e.scrollWidth > e.clientWidth).map((e) => e.textContent?.trim() ?? ''),
+      );
+    expect(cut).toEqual([]);
   });
 
   test('?kind= is a filter in FILTERS and keeps the programs of one kind', async ({ page }) => {

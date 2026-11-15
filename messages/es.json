@@ -3654,6 +3654,8 @@
   "panel_rover_days_on_mars": "Días en Marte",
   "panel_rover_contact_sol": "{date} · Sol {sol}",
   "traverse_hover_detail": "≈ {date} · a {km} km del aterrizaje",
+  "traverse_hover_km": "a {km} km del aterrizaje",
+  "traverse_approximate_route": "Ruta aproximada: un trazado simplificado del recorrido, no una ruta medida.",
   "panel_tab_journey": "TRAYECTO",
   "journey_replay_play": "Reproducir el trayecto",
   "journey_replay_pause": "Pausa",

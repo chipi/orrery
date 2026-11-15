@@ -6743,6 +6743,11 @@ sample      ${debugInfo.projectedPxSample}`}
           </section>
         {/if}
 
+        {#if traverses[selected.id]?.approximate}
+          <div class="credit" data-testid="traverse-approximate">
+            {m.traverse_approximate_route()}
+          </div>
+        {/if}
         {#if selected.credit}
           <div class="credit">{selected.credit}</div>
         {/if}

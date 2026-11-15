@@ -63,7 +63,7 @@ describe('every Moon and Mars traverse credit names a source the page lists', ()
         const hits = CITED.filter(([re]) => re.test(credit)).map(([, id]) => id);
         // Chandrayaan-3 and Chang'e 3 are Orrery's own polylines, anchored at the lander.
         if (!hits.length) {
-          expect(credit, f).toMatch(/V1 simplified polyline/);
+          expect(credit, f).toMatch(/Approximate route: a simplified polyline/);
           continue;
         }
         cited++;

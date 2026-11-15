@@ -126,7 +126,7 @@ Nothing below is a UXD. Each moves to one when the operator answers.
 | -- | -------------------------------------------------------------------------------------------------------------- |
 | D7 | Missions era filter designed with Higgsfield (paid) or in code                                                 |
 
-**Questions for the operator** — plan lines 402–414 (Q1 and Q2 are answered: UXD-001, UXD-002; Q7 and Q9 are answered: UXD-038; Q10 is answered: UXD-041; Q8 is answered 2026-11-13: line style only, plan line 423, no UXD yet):
+**Questions for the operator** — plan lines 402–414 (Q1 and Q2 are answered: UXD-001, UXD-002; Q7 and Q9 are answered: UXD-038; Q10 is answered: UXD-041; Q8 is answered 2026-11-13: line style only, UXD-044):
 
 | Id  | Question                                                                                     |
 | --- | -------------------------------------------------------------------------------------------- |

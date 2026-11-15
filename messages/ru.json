@@ -3658,6 +3658,8 @@
   "panel_rover_days_on_mars": "Дней на Марсе",
   "panel_rover_contact_sol": "{date} · Сол {sol}",
   "traverse_hover_detail": "≈ {date} · {km} км от места посадки",
+  "traverse_hover_km": "{km} км от места посадки",
+  "traverse_approximate_route": "Приблизительный маршрут: упрощённая схема поездки, а не измеренный трек.",
   "panel_tab_journey": "ПУТЬ",
   "journey_replay_play": "Повторить путь",
   "journey_replay_pause": "Пауза",

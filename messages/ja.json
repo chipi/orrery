@@ -3654,6 +3654,8 @@
   "panel_rover_days_on_mars": "火星での日数",
   "panel_rover_contact_sol": "{date} · ソル {sol}",
   "traverse_hover_detail": "≈ {date} · 着陸地点から {km} km",
+  "traverse_hover_km": "着陸地点から {km} km",
+  "traverse_approximate_route": "おおよそのルート: 走行を簡略化して描いたもので、測量された軌跡ではありません。",
   "panel_tab_journey": "旅路",
   "journey_replay_play": "走行を再生",
   "journey_replay_pause": "一時停止",

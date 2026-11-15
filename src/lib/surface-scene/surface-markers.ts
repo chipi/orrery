@@ -428,9 +428,9 @@ export function createSurfaceMarkers(ctx: SurfaceMarkersContext): {
                   // #360/#361: Mars rovers tile HiRISE patches along the
                   // magnified route, so their landing regional is rendered at
                   // the traverse midpoint instead (skip it here to avoid a
-                  // duplicate disc). Moon traverses no longer tile patches —
-                  // the whole short drive fits the single LROC detail /
-                  // Kaguya regional — so when a traverse has NO route_patches
+                  // duplicate disc). Only Apollo 16 and 17 tile LROC patches
+                  // along the Moon route; the other routes fit the single LROC
+                  // detail / Kaguya regional — so when a traverse has NO route_patches
                   // we render the landing regional here, exactly like a
                   // non-traverse site, and the polyline overlays it.
                   const siteTrav = ctx.getTraverses()[site.id];

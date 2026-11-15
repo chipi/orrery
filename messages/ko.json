@@ -3654,6 +3654,8 @@
   "panel_rover_days_on_mars": "화성에서 보낸 날",
   "panel_rover_contact_sol": "{date} · 솔 {sol}",
   "traverse_hover_detail": "≈ {date} · 착륙 지점에서 {km}km",
+  "traverse_hover_km": "착륙 지점에서 {km}km",
+  "traverse_approximate_route": "대략적인 경로: 주행을 단순화해 그린 것으로, 측량된 궤적이 아닙니다.",
   "panel_tab_journey": "여정",
   "journey_replay_play": "주행 다시 보기",
   "journey_replay_pause": "일시정지",

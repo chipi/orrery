@@ -10,6 +10,12 @@ import path from 'node:path';
  * papers; a high-fidelity upgrade is the equivalent of Mars #362). Honest V1,
  * same status as the Mars "hand-vendored V1 stub" polylines.
  *
+ * Only Chang'e 3 (Yutu) and Chandrayaan-3 (Pragyan) are still drawn from here
+ * (`approximate: true`, "Approximate route"). Lunokhod 1 and 2 and Yutu-2 are
+ * the LROC tracks written by build-lroc-traverse.ts and Apollo 15/16/17 are
+ * LROC / USGS mapped traverses — running this script overwrites those files
+ * with the V1 polylines below, so restore them from git after a run.
+ *
  * Run: node scripts/hotspots/build-moon-traverses.mjs
  */
 
@@ -82,8 +88,9 @@ const ROVERS = [
     snapshot_date: '2014-01-25',
     lat: 44.1214,
     lon: -19.5116,
+    approximate: true,
     credit:
-      "© CNSA — Yutu rover traverse (Chang'e 3, Mare Imbrium, Dec 2013–Jan 2014; ~114 m before immobilisation). V1 simplified polyline anchored at the lander.",
+      "© CNSA — Yutu rover traverse (Chang'e 3, Mare Imbrium, Dec 2013–Jan 2014; ~114 m before immobilisation). Approximate route: a simplified polyline anchored at the lander, not a surveyed track. No published track was found (the LROC featured-sites list, lroc.im-ldi.com/featured_sites, checked 2026-11-15, has Chang'e 3 landing-site images but no traverse).",
     offsets: [
       [0, 0],
       [-8, -14],
@@ -128,8 +135,9 @@ const ROVERS = [
     snapshot_date: '2023-09-03',
     lat: -69.373,
     lon: 32.319,
+    approximate: true,
     credit:
-      '© ISRO — Pragyan rover traverse (Chandrayaan-3, ~600 km from the south pole, Aug–Sep 2023; ~101 m, the southernmost surface drive). V1 simplified polyline anchored at the Vikram lander.',
+      '© ISRO — Pragyan rover traverse (Chandrayaan-3, ~600 km from the south pole, Aug–Sep 2023; ~101 m, the southernmost surface drive). Approximate route: a simplified polyline anchored at the Vikram lander, not a surveyed track. No published track was found (the LROC featured-sites list, lroc.im-ldi.com/featured_sites, checked 2026-11-15, has no Chandrayaan-3 entry).',
     offsets: [
       [0, 0],
       [6, -10],
@@ -160,6 +168,7 @@ for (const r of ROVERS) {
     agency: r.agency,
     status: r.status,
     snapshot_date: r.snapshot_date,
+    ...(r.approximate ? { approximate: true } : {}),
     credit: r.credit,
     points,
   };

@@ -3654,6 +3654,8 @@
   "panel_rover_days_on_mars": "Dagen op Mars",
   "panel_rover_contact_sol": "{date} · Sol {sol}",
   "traverse_hover_detail": "≈ {date} · {km} km van de landingsplek",
+  "traverse_hover_km": "{km} km van de landingsplek",
+  "traverse_approximate_route": "Route bij benadering: een vereenvoudigde schets van de rit, geen opgemeten spoor.",
   "panel_tab_journey": "REIS",
   "journey_replay_play": "Rit afspelen",
   "journey_replay_pause": "Pauze",

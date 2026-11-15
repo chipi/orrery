@@ -3654,6 +3654,8 @@
   "panel_rover_days_on_mars": "Tage auf dem Mars",
   "panel_rover_contact_sol": "{date} · Sol {sol}",
   "traverse_hover_detail": "≈ {date} · {km} km vom Landeplatz",
+  "traverse_hover_km": "{km} km vom Landeplatz",
+  "traverse_approximate_route": "Ungefähre Route: eine vereinfachte Skizze der Fahrt, keine vermessene Spur.",
   "panel_tab_journey": "REISE",
   "journey_replay_play": "Fahrt abspielen",
   "journey_replay_pause": "Pausieren",

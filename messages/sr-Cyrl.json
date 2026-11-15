@@ -3658,6 +3658,8 @@
   "panel_rover_days_on_mars": "Дана на Марсу",
   "panel_rover_contact_sol": "{date} · Сол {sol}",
   "traverse_hover_detail": "≈ {date} · {km} км од места слетања",
+  "traverse_hover_km": "{km} км од места слетања",
+  "traverse_approximate_route": "Приближна рута: поједностављена скица вожње, а не измерена стаза.",
   "panel_tab_journey": "ПУТ",
   "journey_replay_play": "Пусти вожњу",
   "journey_replay_pause": "Пауза",

@@ -3,7 +3,8 @@
   "agency": "CNSA",
   "status": "ENDED",
   "snapshot_date": "2014-01-25",
-  "credit": "© CNSA — Yutu rover traverse (Chang'e 3, Mare Imbrium, Dec 2013–Jan 2014; ~114 m before immobilisation). V1 simplified polyline anchored at the lander.",
+  "approximate": true,
+  "credit": "© CNSA — Yutu rover traverse (Chang'e 3, Mare Imbrium, Dec 2013–Jan 2014; ~114 m before immobilisation). Approximate route: a simplified polyline anchored at the lander, not a surveyed track. No published track was found (the LROC featured-sites list, lroc.im-ldi.com/featured_sites, checked 2026-11-15, has Chang'e 3 landing-site images but no traverse).",
   "points": [
     [
       44.1214,

@@ -458,6 +458,11 @@ export interface Traverse {
   has_route_photos?: boolean;
   /** The rover's own photos, placed on the path at their sol (#641). */
   route_photos?: RoutePhoto[];
+  /**
+   * True when the polyline is a simplified outline anchored at the lander, not
+   * a surveyed track (no published track found). The panel says so (UXD-044).
+   */
+  approximate?: boolean;
 }
 
 /** A photo the rover took, pinned on its traverse (#641). Caption = the

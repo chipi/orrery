@@ -3654,6 +3654,8 @@
   "panel_rover_days_on_mars": "Days on Mars",
   "panel_rover_contact_sol": "{date} · Sol {sol}",
   "traverse_hover_detail": "≈ {date} · {km} km from landing",
+  "traverse_hover_km": "{km} km from landing",
+  "traverse_approximate_route": "Approximate route: a simplified outline of the drive, not a surveyed track.",
   "panel_tab_journey": "JOURNEY",
   "journey_replay_play": "Replay the drive",
   "journey_replay_pause": "Pause",

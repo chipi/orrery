@@ -271,13 +271,21 @@ export function createSurfacePicking(ctx: SurfacePickingContext): SurfacePicking
       return [rect.left + ((v.x + 1) / 2) * rect.width, rect.top + ((1 - v.y) / 2) * rect.height];
     };
     for (const tl of ctx.traverseLines) {
-      if (!tl.line?.visible || !tl.pathWorld || !tl.pointSols || !tl.pointKm) continue;
+      if (!tl.line?.visible || !tl.pathWorld || !tl.pointKm) continue;
       planetWorld.copy(tl.line.parent?.matrixWorld ?? new THREE.Matrix4());
       planetCentre.setFromMatrixPosition(planetWorld);
       const i = nearestPathVertex(tl.pathWorld, project, clientX, clientY);
       if (i < 0) continue;
-      const sol = tl.pointSols[i];
       const km = tl.pointKm[i];
+      if (!tl.pointSols) {
+        // No time on this route (the Moon's): distance from the lander only.
+        return {
+          title: m.traverse_hover_km({
+            km: formatNumber(km, getLocale() as LocaleCode, km < 10 ? 2 : 1),
+          }),
+        };
+      }
+      const sol = tl.pointSols[i];
       return {
         title: m.traverse_sol({ sol: formatNumber(sol, getLocale() as LocaleCode) }),
         label: m.traverse_hover_detail({

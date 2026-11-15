@@ -233,6 +233,8 @@ Every toggle, filter, choice and HUD action is a `<Chip>` (`src/lib/components/C
 
 "Go to Mars" (the Explore panel's view chip, one string per body) and "Back to Explore" (the first chip of a Worlds page's view row, the top-left cluster on touch) are `Chip kind="link"`s: one link, no arrow glyph, the label wraps inside the chip ([UXD-028](decisions/UXD-028-explore-and-worlds-link-both-ways.md)).
 
+On `/moon` and `/mars` the "View entire route" chip and a selected rover's line follow one traverse style on both worlds ([UXD-044](decisions/UXD-044-moon-traverses-take-the-mars-line-style.md), Design System §5.22): ramp, casing, kilometre milestones, landing ring and hover card; time-based elements are Mars-only.
+
 ---
 
 ## §shared-tokens

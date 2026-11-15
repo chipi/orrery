@@ -28,7 +28,6 @@ import {
   azimuthToAlignDir,
 } from '$lib/three/place-on-sphere';
 import { colorFor } from '$lib/surface-map/nation-palette';
-import { liftForDark } from '$lib/three-label';
 import { latLonToUnitSphere } from '$lib/moon-projection';
 import {
   buildHotspotSurfacePatch,
@@ -144,6 +143,36 @@ export function distanceMilestoneStepKm(km: number): number {
   return 10;
 }
 
+/** Cumulative great-circle km at each point of a polyline (first = 0). */
+export function cumulativeKm(points: Array<[number, number]>, radiusKm: number): number[] {
+  const km = [0];
+  for (let i = 1; i < points.length; i++) {
+    km.push(km[i - 1] + greatCircleKm(points[i - 1], points[i], radiusKm));
+  }
+  return km;
+}
+
+/** Ramp position t ∈ [0, 1] of every point: by sol when the route carries them
+ *  (Mars), else by the distance driven (the Moon's routes carry no time). */
+export function traverseRampParams(cumKm: number[], sols?: number[]): number[] {
+  if (sols) {
+    const last = sols[sols.length - 1];
+    return sols.map((s) => (last > 1 ? (s - 1) / (last - 1) : 0));
+  }
+  const total = cumKm[cumKm.length - 1];
+  return cumKm.map((k) => (total > 0 ? k / total : 0));
+}
+
+/** One look for a route on every world (UXD-044): the ramp, widths and
+ *  opacities read here, not from a per-body fork. */
+export const TRAVERSE_STYLE = {
+  lineWidth: 4,
+  casingWidth: 8,
+  casingOpacity: 0.75,
+  activeOpacity: 0.95,
+  endedOpacity: 0.7,
+} as const;
+
 // Ground half-lengths of the sol ticks: read at crater scale, vanish at the
 // whole-route view (where the colour ramp + major labels carry the time).
 const TICK_HALF_M = { minor: 20, major: 35 };
@@ -163,7 +192,8 @@ export function solToDate(landingIso: string, landingSol: number, sol: number): 
 
 function pathHover(
   verts: number[],
-  sols: number[],
+  sols: number[] | undefined,
+  points: Array<[number, number]>,
   tr: Traverse,
   landingIso: string | undefined,
   radiusKm: number,
@@ -172,21 +202,19 @@ function pathHover(
   for (let i = 0; i < verts.length; i += 3) {
     pathWorld.push(new THREE.Vector3(verts[i], verts[i + 1], verts[i + 2]));
   }
-  const km = [0];
-  for (let i = 1; i < tr.points.length; i++) {
-    km.push(km[i - 1] + greatCircleKm(tr.points[i - 1], tr.points[i], radiusKm));
-  }
+  const km = cumulativeKm(points, radiusKm);
   const total = km[km.length - 1];
   const scale = tr.length_km && total > 0 ? tr.length_km / total : 1;
   return {
     pathWorld,
     pointSols: sols,
     pointKm: km.map((k) => k * scale),
-    dateOfSol: landingIso ? (s) => solToDate(landingIso, tr.landing_sol ?? 1, s) : undefined,
+    dateOfSol:
+      sols && landingIso ? (s) => solToDate(landingIso, tr.landing_sol ?? 1, s) : undefined,
   };
 }
 
-// ─── Traverses (Mars rover paths today, Moon EVA paths future) ───
+// ─── Traverses (Mars rover paths, Moon rover and EVA paths; one style, UXD-044) ───
 export type TraverseLine = {
   line: Line2;
   lineMaterial: LineMaterial;
@@ -196,8 +224,8 @@ export type TraverseLine = {
   /** Minor + major sol ticks (#641). */
   ticks?: LineSegments2[];
   tickMaterials?: LineMaterial[];
-  /** Per-point world positions, sols and km from landing — for the path
-   *  hover card (#641). Present on sol-carrying paths only. */
+  /** Per-point world positions, km from landing and (Mars only) sols — for
+   *  the path hover card (#641). Present on every path. */
   pathWorld?: THREE.Vector3[];
   pointSols?: number[];
   pointKm?: number[];
@@ -608,14 +636,15 @@ export function createSurfaceTraverses(ctx: SurfaceTraversesContext): {
       // refreshed in the resize hook below.
       const lineGeo = new LineGeometry();
       lineGeo.setPositions(verts);
-      // #641 — colour by sol over the whole mission when the path carries
-      // sols; otherwise the site colour as before (Moon traverses).
+      // #641 — colour along the whole route: by sol when the path carries
+      // sols (Mars), by distance driven otherwise (Moon, UXD-044).
       const lastSol = sols ? sols[sols.length - 1] : 0;
-      if (sols) {
+      const cumKmPts = cumulativeKm(points, ctx.radiusKm);
+      {
         const rgb: number[] = [];
         const c = new THREE.Color();
-        for (const s of sols) {
-          solRampColor(lastSol > 1 ? (s - 1) / (lastSol - 1) : 0, c);
+        for (const t of traverseRampParams(cumKmPts, sols)) {
+          solRampColor(t, c);
           rgb.push(c.r, c.g, c.b);
         }
         lineGeo.setColors(rgb);
@@ -630,9 +659,9 @@ export function createSurfaceTraverses(ctx: SurfaceTraversesContext): {
         casingGeo.setPositions(verts);
         casingMaterial = new LineMaterial({
           color: 0x06080b,
-          linewidth: 8,
+          linewidth: TRAVERSE_STYLE.casingWidth,
           transparent: true,
-          opacity: 0.75,
+          opacity: TRAVERSE_STYLE.casingOpacity,
           depthTest: false,
         });
         casingMaterial.resolution.set(resW, resH);
@@ -642,17 +671,17 @@ export function createSurfaceTraverses(ctx: SurfaceTraversesContext): {
         planetMesh.add(casing);
       }
       const lineMaterial = new LineMaterial({
-        // Site colour lifted toward white without sols (Moon): Lunokhod's
-        // Soviet red read as a dark thread on grey regolith (#641).
-        color: sols ? 0xffffff : new THREE.Color(liftForDark(color)).getHex(),
-        vertexColors: !!sols,
+        // Every route is vertex-coloured by the ramp (UXD-044); the nation
+        // colour stays on the marker, the INDEX dot and the panel.
+        color: 0xffffff,
+        vertexColors: true,
         // 3 → 4: with the smaller balloon pins + endDot the line
         // now reads as the primary trail with the markers
         // anchored along it, rather than the markers floating
         // above a hairline (image 19 proportion feedback).
-        linewidth: 4,
+        linewidth: TRAVERSE_STYLE.lineWidth,
         transparent: true,
-        opacity: isActive ? 0.95 : 0.7,
+        opacity: isActive ? TRAVERSE_STYLE.activeOpacity : TRAVERSE_STYLE.endedOpacity,
         dashed: false,
         // Draw the trail ON TOP of the along-route HiRISE patches (#360)
         // — without this the 0.1u detail patches (rendered just above the
@@ -676,7 +705,7 @@ export function createSurfaceTraverses(ctx: SurfaceTraversesContext): {
       const ticks: LineSegments2[] = [];
       const tickMaterials: LineMaterial[] = [];
       const tickLabels: THREE.Sprite[] = [];
-      if (sols) {
+      {
         const worldPerM = (planetRadius / (ctx.radiusKm * 1000)) * traverseMag;
         const spacing = solTickSpacing(lastSol);
         const vert = (i: number) =>
@@ -690,11 +719,12 @@ export function createSurfaceTraverses(ctx: SurfaceTraversesContext): {
           return new THREE.Vector3();
         };
         const loc = getLocale() as LocaleCode;
-        for (const kind of ['minor', 'major'] as const) {
+        // Sol ticks need the sol of each point: Mars only.
+        for (const kind of sols ? (['minor', 'major'] as const) : []) {
           const every = spacing[kind];
           const half = TICK_HALF_M[kind] * worldPerM;
           const segs: number[] = [];
-          for (const { sol, i } of solTickIndices(sols, every)) {
+          for (const { sol, i } of solTickIndices(sols ?? [], every)) {
             if (kind === 'minor' && sol % spacing.major === 0) continue;
             const p = vert(i);
             const n = perpAt(i);
@@ -733,12 +763,7 @@ export function createSurfaceTraverses(ctx: SurfaceTraversesContext): {
         // Distance milestones ("10 km"), on the other side of the path from
         // the sol labels. Ground distance along the points, scaled so the end
         // reads the mission's distance driven (the polyline runs short).
-        const cumM = [0];
-        for (let i = 1; i < tr.points.length; i++) {
-          cumM.push(
-            cumM[i - 1] + greatCircleKm(tr.points[i - 1], tr.points[i], ctx.radiusKm) * 1000,
-          );
-        }
+        const cumM = cumKmPts.map((k) => k * 1000);
         const totalM = cumM[cumM.length - 1];
         const scale = tr.length_km && totalM > 0 ? (tr.length_km * 1000) / totalM : 1;
         const stepKm = distanceMilestoneStepKm((totalM * scale) / 1000);
@@ -757,7 +782,7 @@ export function createSurfaceTraverses(ctx: SurfaceTraversesContext): {
             ...label.userData,
             roverId: tr.rover_id,
             kind: 'traverse-km-label',
-            sol: sols[i],
+            sol: sols?.[i],
           };
           planetMesh.add(label);
           tickLabels.push(label);
@@ -885,15 +910,16 @@ export function createSurfaceTraverses(ctx: SurfaceTraversesContext): {
         replayMarker.userData = { roverId: tr.rover_id, kind: 'traverse-replay' };
         planetMesh.add(replayMarker);
       }
-      // #641 — landing marker ON the path: sol-carrying paths start at the
-      // lander as seen on HiRISE, which the site's rounded patch-pin is not.
-      if (sols) {
+      // #641 — landing marker ON the path, on every world (UXD-044): the
+      // route starts at the lander as mapped, which the site's rounded
+      // patch-pin is not.
+      {
         const { sprite: landSprite, texture: landTexture } = buildTraverseStopPin(0x22c55e);
         landSprite.position.copy(startWorld);
         landSprite.userData = {
           roverId: tr.rover_id,
           kind: 'traverse-landing',
-          stopSol: sols[0],
+          stopSol: sols?.[0],
           stopLabel: site?.landing_date
             ? m.surface_landed_on({ date: site.landing_date })
             : m.surface_landing_site(),
@@ -1114,7 +1140,7 @@ export function createSurfaceTraverses(ctx: SurfaceTraversesContext): {
         endLabelTexture: endBuilt.texture,
         stopPins,
         stopPinTextures,
-        ...(sols ? pathHover(verts, sols, tr, site?.landing_date, ctx.radiusKm) : {}),
+        ...pathHover(verts, sols, points, tr, site?.landing_date, ctx.radiusKm),
         toDrawn: (lat: number, lon: number): [number, number] => {
           const u = tpos(lat, lon, 1).normalize();
           return [

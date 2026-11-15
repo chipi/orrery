@@ -3654,6 +3654,8 @@
   "panel_rover_days_on_mars": "Jours sur Mars",
   "panel_rover_contact_sol": "{date} · Sol {sol}",
   "traverse_hover_detail": "≈ {date} · à {km} km de l’atterrissage",
+  "traverse_hover_km": "à {km} km de l’atterrissage",
+  "traverse_approximate_route": "Itinéraire approximatif : un tracé simplifié du parcours, pas une trace relevée.",
   "panel_tab_journey": "PARCOURS",
   "journey_replay_play": "Rejouer le trajet",
   "journey_replay_pause": "Pause",

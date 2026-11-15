@@ -1,6 +1,9 @@
 import { describe, expect, it } from 'vitest';
 import * as THREE from 'three';
 import {
+  cumulativeKm,
+  TRAVERSE_STYLE,
+  traverseRampParams,
   daysBetween,
   distanceMilestoneStepKm,
   solToDate,
@@ -138,5 +141,33 @@ describe('distanceMilestoneStepKm (#641)', () => {
     expect(distanceMilestoneStepKm(7.7)).toBe(1);
     expect(distanceMilestoneStepKm(45.2)).toBe(5);
     expect(distanceMilestoneStepKm(120)).toBe(10);
+  });
+});
+
+describe('traverseRampParams / cumulativeKm (UXD-044)', () => {
+  it('cumulativeKm starts at 0 and grows along the polyline', () => {
+    const km = cumulativeKm(
+      [
+        [0, 0],
+        [0, 1],
+        [0, 2],
+      ],
+      1737.4,
+    );
+    expect(km[0]).toBe(0);
+    expect(km[1]).toBeCloseTo(30.32, 1);
+    expect(km[2]).toBeCloseTo(60.64, 1);
+  });
+  it('ramps by distance when there are no sols: 0 at the lander, 1 at the end', () => {
+    expect(traverseRampParams([0, 1, 4])).toEqual([0, 0.25, 1]);
+    expect(traverseRampParams([0, 0])).toEqual([0, 0]);
+  });
+  it('ramps by sol when the route carries them, exactly as before', () => {
+    expect(traverseRampParams([0, 1, 4], [1, 51, 101])).toEqual([0, 0.5, 1]);
+    expect(traverseRampParams([0, 1], [1, 1])).toEqual([0, 0]);
+  });
+  it('one style table for every world', () => {
+    expect(TRAVERSE_STYLE.lineWidth).toBe(4);
+    expect(TRAVERSE_STYLE.casingWidth).toBe(8);
   });
 });

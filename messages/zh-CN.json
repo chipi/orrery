@@ -3658,6 +3658,8 @@
   "panel_rover_days_on_mars": "在火星上的天数",
   "panel_rover_contact_sol": "{date} · 火星日 {sol}",
   "traverse_hover_detail": "≈ {date} · 距着陆点 {km} 公里",
+  "traverse_hover_km": "距着陆点 {km} 公里",
+  "traverse_approximate_route": "大致路线：对行驶路径的简化示意，并非实测轨迹。",
   "panel_tab_journey": "旅程",
   "journey_replay_play": "回放行驶路线",
   "journey_replay_pause": "暂停",

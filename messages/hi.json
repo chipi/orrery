@@ -3654,6 +3654,8 @@
   "panel_rover_days_on_mars": "मंगल पर दिन",
   "panel_rover_contact_sol": "{date} · सोल {sol}",
   "traverse_hover_detail": "≈ {date} · लैंडिंग से {km} किमी",
+  "traverse_hover_km": "लैंडिंग से {km} किमी",
+  "traverse_approximate_route": "अनुमानित मार्ग: यात्रा की सरलीकृत रूपरेखा, सर्वेक्षण किया गया पथ नहीं।",
   "panel_tab_journey": "यात्रा",
   "journey_replay_play": "यात्रा दोबारा चलाएँ",
   "journey_replay_pause": "विराम दें",

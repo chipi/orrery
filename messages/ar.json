@@ -3658,6 +3658,8 @@
   "panel_rover_days_on_mars": "أيام على المريخ",
   "panel_rover_contact_sol": "{date} · اليوم المريخي {sol}",
   "traverse_hover_detail": "≈ {date} · {km} كم من موقع الهبوط",
+  "traverse_hover_km": "{km} كم من موقع الهبوط",
+  "traverse_approximate_route": "مسار تقريبي: رسم مبسّط للمسير، وليس مسارًا مرصودًا بدقة.",
   "panel_tab_journey": "الرحلة",
   "journey_replay_play": "إعادة الرحلة",
   "journey_replay_pause": "إيقاف مؤقت",

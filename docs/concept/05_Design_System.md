@@ -641,6 +641,25 @@ The 48 x 48 icon on a route card (the home grid and the section hubs `/learn`, `
 
 The full-window viewer of `/gallery/deep-sky` (the panel galleries have their own, `PanelLightbox`). `.lb-figure` is a grid of two rows, the image (`minmax(200px, 1fr)`) and the caption stack (`auto`), `max-height: calc(100svh - 80px)`, `overflow: auto`: the image keeps its aspect and takes the height the stack leaves, so the facts row (`dt` label above `dd` value, 11px caps over 13px), the credit line and the "show in the sky" button are inside the window at 1366x768 and 1440x900 for every image and locale, with the image at least 300px high. On a phone, and in a window too short for both (a phone in landscape), the figure scrolls and every element is reachable. The caption stays italic Crimson Pro at `--size-caption` (14px, [UXD-002](../uxs/decisions/UXD-002-type-scale-and-the-11px-floor.md)). The "show in the sky" button is the accent gradient (`--color-accent` to `--color-accent-hover`) with `--color-bg` text (4.96:1 on the dark end, 8.32:1 on the light end), never a teal.
 
+### 5.22 Traverse: a rover or EVA route on a Worlds page ([UXD-044](../uxs/decisions/UXD-044-moon-traverses-take-the-mars-line-style.md))
+
+One look for a route on every world; `TRAVERSE_STYLE` and the helpers `cumulativeKm`, `traverseRampParams`, `solRampColor` in `src/lib/surface-scene/surface-traverses.ts` hold it.
+
+| Element | Spec | Needs |
+|---|---|---|
+| Casing | `#06080b`, 8 px, 0.75 alpha, under the line | geometry |
+| Line | 4 px, vertex-coloured, 0.95 alpha (active) or 0.7 (ended); ramp (136,159,231) blue to (226,240,236) white to (251,191,36) amber, a data colour (`a3-keep`) | geometry |
+| Ramp position | by sol over the mission when the route carries `point_sols` (Mars); by distance driven from the lander otherwise (Moon) | `point_sols` or geometry |
+| Kilometre milestones | pills "N km" `#cbd5e1` on the side away from the sol labels; step from `distanceMilestoneStepKm` (0.5 km under 3 km, 1 to 15, 5 to 60, else 10) | geometry |
+| Landing ring | green `#22c55e` ring on the path's first point, pickable as the landing site | geometry |
+| Start and end captions, end dot | "LANDED ON date" green, "N KM · N DAYS" amber (red while active) | none |
+| Stop rings and pills | ring in the stop kind's colour, pill "name · Sol N" (name only without a sol) | `stops` |
+| Hover card | "Sol N", "≈ date · N km from landing" (Mars); "N km from landing" (Moon) | geometry (+ `point_sols`) |
+| Sol ticks and labels, replay marker, photo pins, JOURNEY tab | Mars only | `point_sols`, `route_photos`, `point_elev_m` |
+| "Approximate route" note | one line above the credit in the OVERVIEW tab when the file says `approximate: true`; the outline is not a surveyed track | `approximate` |
+
+The nation colour stays on the site marker, the INDEX dot and the panel. A route draws no time or photo element unless its file carries that data; nothing is invented to fill the style.
+
 ---
 
 ## 6. Screen patterns
@@ -694,6 +713,8 @@ Full-screen 3D/2D. Regime legend strip below nav. Bottom bar with speed controls
 Full-screen 3D/2D. The 3D view is a sphere — the camera orbits the Moon, not the Moon rotating. The 2D flat map uses a cylindrical projection (near side centred at 0° longitude). Filter strip replaces the planet pills. Agency filter stacks with status filter.
 
 **Index.** The INDEX rail's dot is the site's nation colour, the legend's (§5.13).
+
+**Rover routes.** The eight Moon routes use the Mars traverse style (§5.22), the ramp by distance; Yutu and Pragyan are labelled "Approximate route" ([UXD-044](../uxs/decisions/UXD-044-moon-traverses-take-the-mars-line-style.md)).
 
 **Back to Explore.** The first chip of the view row (the top-left cluster on touch) is "Back to Explore", a link to `/explore?id=earth:moon` (the satellite key) that opens the Moon's panel with the camera on it ([UXD-028](../uxs/decisions/UXD-028-explore-and-worlds-link-both-ways.md)).
 

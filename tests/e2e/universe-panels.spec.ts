@@ -59,7 +59,8 @@ test.describe('star panel (SN2, UXD-008)', () => {
   });
 
   test('a star without a photo shows its drawn portrait as the one hero', async ({ page }) => {
-    await open(page, '/explore?goto=arcturus');
+    // Every named star has a photo since L46; an exoplanet host (TRAPPIST-1) has none.
+    await open(page, '/explore?goto=trappist-1');
     const p = panel(page);
     await expect(p.locator('.panel-hero')).toHaveCount(1);
     await expect(p.locator('.panel-hero canvas')).toHaveCount(1);
@@ -151,9 +152,11 @@ test.describe('black holes (MW3, Q1)', () => {
     ).toHaveCount(0, takeoverFrames);
   });
 
-  test('a hole without a picture has no hero slot (Cygnus X-1)', async ({ page }) => {
+  test('Cygnus X-1 has its Chandra image as the hero (L46), and the lensing action', async ({
+    page,
+  }) => {
     await open(page, '/explore?galaxy=cygnus-x-1');
-    await expect(panel(page).locator('.panel-hero')).toHaveCount(0);
+    await expect(panel(page).locator('.panel-hero')).toHaveCount(1);
     await expect(
       panel(page).getByRole('button', { name: 'See the lensing simulation' }),
     ).toBeVisible();

@@ -2,8 +2,9 @@ import { expect, test } from '@playwright/test';
 
 /**
  * Deep-sky entity pages (/explore/deep-sky/<id>, ADR-096 item 17): static prerendered HTML, so
- * `request.get` is enough. M13 (photo-less, with the Arecibo door), M3 (a bare catalogue name:
- * the H1 is the designation, then NGC 5272) and M42 (photographed, with the gateway into the
+ * `request.get` is enough. M13 (photographed, with the Arecibo door), M3 (a bare catalogue name:
+ * the H1 is the designation, then NGC 5272), M18 (a bare catalogue name and no photo: the one
+ * kind of page that does not link the gallery) and M42 (photographed, with the gateway into the
  * TRAPPIST-1 system), in English and German: one H1 with the object's title, the self canonical
  * and reciprocal hreflang, the link back into the scene (?deepsky=<id>) and the crumb to /explore.
  */
@@ -15,7 +16,7 @@ const CASES = [
   {
     id: 'm13',
     title: 'M13 · Hercules Globular Cluster',
-    photo: false,
+    photo: true,
     text: {
       '': 'The Hercules Cluster, over 100,000 stars',
       '/de': 'Der Herkuleshaufen, über 100.000 Sterne',
@@ -24,10 +25,19 @@ const CASES = [
   {
     id: 'm3',
     title: 'M3 · NGC 5272',
-    photo: false,
+    photo: true,
     text: {
       '': 'One of the largest and brightest globular clusters known',
       '/de': 'Einer der größten und hellsten bekannten Kugelsternhaufen',
+    },
+  },
+  {
+    id: 'm18',
+    title: 'M18 · NGC 6613',
+    photo: false,
+    text: {
+      '': 'A sparse open cluster in Sagittarius',
+      '/de': 'Ein lockerer offener Sternhaufen im Schützen',
     },
   },
   {

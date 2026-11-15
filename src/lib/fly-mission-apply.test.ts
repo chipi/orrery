@@ -3,12 +3,14 @@ import {
   computeMissionApply,
   computeScenarioApply,
   computePlanApply,
+  computePlanApplyMoon,
   FLYBY_OFFSET_FRACTION,
   flyDestinationOf,
   type MissionApplyDefaults,
   type TrajectoryOverride,
 } from './fly-mission-apply';
 import { ARC_STEPS } from './fly-moon-arc';
+import { resolveLauncher } from '$lib/physics/ascent/launch-profile-registry';
 import type { Mission } from '$types/mission';
 import type { LocalizedScenario } from '$types/scenario';
 
@@ -361,6 +363,67 @@ describe('computePlanApply', () => {
 
   it('missionEvents always []', () => {
     expect(computePlanApply('mars', 'LANDING', 9000, 250, PLAN_DEFAULTS).missionEvents).toEqual([]);
+  });
+
+  describe('with a rocket handoff (/plan ?rocket=)', () => {
+    const extras = {
+      vehicle: 'Falcon Heavy',
+      payload: 'Generic spacecraft · 6065 kg',
+      fleet_refs: [{ id: 'falcon-heavy', role: 'launcher' as const }],
+      dest: 'MARS' as const,
+    };
+
+    it('carries vehicle, payload, launcher ref and dest into the flight', () => {
+      const m = computePlanApply('mars', 'LANDING', 9000, 250, PLAN_DEFAULTS, extras).missionMeta;
+      expect(m.vehicle).toBe('Falcon Heavy');
+      expect(m.payload).toBe('Generic spacecraft · 6065 kg');
+      expect(m.fleet_refs).toEqual([{ id: 'falcon-heavy', role: 'launcher' }]);
+      expect(m.dest).toBe('MARS');
+    });
+
+    it('a launcher now resolves, so the opening card’s launch button has something to start', () => {
+      const m = computePlanApply('mars', 'LANDING', 9000, 250, PLAN_DEFAULTS, extras).missionMeta;
+      expect(resolveLauncher(m.fleet_refs, m.vehicle)?.id).toBe('falcon-heavy');
+    });
+
+    it('without a handoff keeps today’s result, and no launcher resolves (no dead button)', () => {
+      const m = computePlanApply('mars', 'LANDING', 9000, 250, PLAN_DEFAULTS).missionMeta;
+      expect(m.vehicle).toBe('—');
+      expect(m.payload).toBe('—');
+      expect(m.fleet_refs).toBeUndefined();
+      expect(resolveLauncher(m.fleet_refs, m.vehicle)).toBeNull();
+    });
+
+    it('a planetary moon flies the host arc and names the moon as the target', () => {
+      const r = computePlanApply('jupiter', 'LANDING', 9900, 1500, PLAN_DEFAULTS, {
+        ...extras,
+        dest: 'JUPITER',
+        targetMoon: 'europa',
+      });
+      expect(r.activeDestination).toBe('jupiter');
+      expect(r.missionMeta.name).toBe('EARTH → EUROPA via JUPITER · LANDING');
+      expect(r.missionMeta.targetMoon).toBe('europa');
+      expect(r.appliedId).toBe('plan-europa-LANDING');
+    });
+  });
+});
+
+describe('computePlanApplyMoon with a rocket handoff', () => {
+  it('carries the vehicle, payload and a MOON dest (so the injection burn is TLI)', () => {
+    const r = computePlanApplyMoon(
+      9000,
+      4,
+      { dvFallback: 12.5 },
+      {
+        vehicle: 'SLS Block 1',
+        payload: 'Generic spacecraft · 26500 kg',
+        fleet_refs: [{ id: 'sls-block-1', role: 'launcher' }],
+        dest: 'MOON',
+      },
+    );
+    expect(r.missionMeta.vehicle).toBe('SLS Block 1');
+    expect(r.missionMeta.dest).toBe('MOON');
+    expect(r.missionMeta.fleet_refs).toEqual([{ id: 'sls-block-1', role: 'launcher' }]);
   });
 });
 

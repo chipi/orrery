@@ -5,7 +5,7 @@ Pure logic (no DOM, no Svelte) behind `/fly`'s presentation: camera framing, sho
 - **Flyby cinema** — `flyby-camera-plan.ts` (iconic-shot pose, `PLANET_COMPOSITION`), `flyby-shots.ts` (establish/approach/hero/depart rigs), `flyby-shot-schedule.ts` (MET → active shot + slow-mo), `find-active-flyby.ts`, `find-flyby-planet.ts`, `iconic-frame.ts` (plan → spherical camera frame), `jump-to-met-bias.ts`.
 - **Heliocentric** — `helio-non-flyby-frame.ts`, `sub-phase-transition.ts`, `fly-physics.ts` (trajectory math; AU, days, km/s, heliocentric ecliptic).
 - **Cislunar** — `cislunar-camera-target.ts`, `find-active-cislunar-phase.ts`, `sample-cislunar-spacecraft.ts`; `cislunar/` = geometry (ECI, km), events, hero shots, marker reveal, screen projection.
-- **Flight acts** — launch: `ascent-clock.ts` (piecewise pad-to-arrival scrubber), `ascent-cameras.ts`, `ascent-hud.ts`, `launch-force-layers.ts`; descent: `descent-hud.ts`, `descent-timewarp.ts`, `descent-force-layers.ts`; coast: `earth-orbit-registry.ts`.
+- **Flight acts** — launch: `ascent-clock.ts` (piecewise pad-to-arrival scrubber), `ascent-cameras.ts`, `ascent-hud.ts`, `flight-plan-beats.ts` (the flight-plan beats, one source for the launch HUD's FLIGHT PLAN list and the marker row on /fly's play bar, with the descent beats in the bar's unwarped clock), `launch-force-layers.ts`; descent: `descent-hud.ts`, `descent-timewarp.ts`, `descent-force-layers.ts`; coast: `earth-orbit-registry.ts`.
 - **Debug** — `fly-debug-snapshot.ts` (`window.__flyDebug`), `fly-debug-frame.ts` (`window.__flyDebugFrame`).
 
 ## Which folder owns what

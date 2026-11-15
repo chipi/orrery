@@ -239,7 +239,7 @@ export function resolveLauncher(
   const raw =
     (vehicle ? matchFlagship(vehicle, VEHICLE_VARIANTS) : null) ??
     missionLauncherId(fleetRefs) ??
-    (vehicle ? (matchFlagship(vehicle) ?? slug(vehicle)) : null);
+    (vehicle ? (matchFlagship(vehicle) ?? (slug(vehicle) || null)) : null);
   if (raw == null) return null;
   const id = LAUNCHER_ID_CANON[raw] ?? raw;
   return { id, name: vehicle ?? prettyName(id) };

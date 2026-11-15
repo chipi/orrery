@@ -396,6 +396,7 @@ const SWEEP_ALLOW_SELF = [
   '.marker',
   '.milestone-tick-button',
   '.fd-stage-tick-button',
+  '.journey-tick-button',
   '.dot-btn',
   '.handle',
   '.dot',

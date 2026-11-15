@@ -119,6 +119,12 @@ describe('hasLaunchProfile', () => {
     expect(hasLaunchProfile(undefined, 'Some Rocket')).toBe(true);
     expect(hasLaunchProfile(undefined, undefined)).toBe(false);
   });
+
+  it('a vehicle that names nothing (a /plan flight with no rocket: "—") is not launchable', () => {
+    expect(resolveLauncher(undefined, '—')).toBeNull();
+    expect(resolveLauncher(undefined, '')).toBeNull();
+    expect(hasLaunchProfile(undefined, '—')).toBe(false);
+  });
 });
 
 describe('buildGenericProfile', () => {

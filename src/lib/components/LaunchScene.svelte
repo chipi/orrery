@@ -48,6 +48,7 @@
     type InjectionBurnParams,
   } from '$lib/physics/transfer/injection-burn';
   import { formatAscentClock } from '$lib/orbital/ascent-clock';
+  import { buildPlanBeats } from '$lib/orbital/flight-plan-beats';
   import * as m from '$lib/paraglide/messages';
   import Chip from '$lib/components/Chip.svelte';
   import { hudLabel } from '$lib/orbital/hud-labels';
@@ -175,25 +176,8 @@
   const beats = $derived(buildAscentBeats(summary));
   // The flight plan: liftoff, the ascent beats, then the parking orbit, injection burn and
   // spacecraft separation when the mission leaves orbit.
-  const planBeats = $derived([
-    { label: 'LIFTOFF', t: 0 },
-    // ORBIT and SECO land on the same second: the cutoff is the beat.
-    ...beats.filter(
-      (b) =>
-        !(b.label === 'ORBIT' && beats.some((x) => x.label === 'SECO' && Math.abs(x.t - b.t) < 2)),
-    ),
-    ...(injection
-      ? [
-          { label: 'PARKING ORBIT', t: duration, untimed: true },
-          {
-            label: injectionBurnLabel(injection.burnType),
-            t: injectionBurnStart,
-            untimed: true,
-          },
-          { label: 'SPACECRAFT SEP', t: injectionBurnEnd, untimed: true },
-        ]
-      : []),
-  ]);
+  // (One source with the markers on /fly's play bar: $lib/orbital/flight-plan-beats.)
+  const planBeats = $derived(buildPlanBeats(summary, injection));
 
   let container: HTMLDivElement;
 

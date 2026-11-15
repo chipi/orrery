@@ -47,7 +47,8 @@
   } from '$lib/types/remote-data';
   import { dataLoadFailed } from '$lib/data/core';
   import { createBitmapSlot } from '$lib/plan/bitmap-slot';
-  import { PLAN_DESTINATION_IDS } from '$lib/plan/destinations';
+  import { PLAN_DESTINATION_GROUPS, PLAN_DESTINATION_IDS } from '$lib/plan/destinations';
+  import { ROCKET_FLEET_ID } from '$lib/plan/rocket-handoff';
 
   // v0.8 (#312 / ADR-076 / RFC-026): /plan ships the full twelve-destination
   // set. Every destination now has a committed porkchop grid at
@@ -69,25 +70,14 @@
   ];
   let invalidDestWarned = false;
 
-  /** rocket id → fleet entry id. Variants (atlas-v-541 → atlas-v) +
-   *  Fregat-upper Soyuz mapped onto the modern Soyuz-2 fleet entry.
-   *  Every rocket /plan surfaces now has a fleet entry — the prior
-   *  fallback path (external rockets.json links for starship / pslv-xl
-   *  / long-march-3b) was removed after their fleet entries landed. */
-  const ROCKET_FLEET_ID: Record<string, string> = {
-    'falcon-heavy': 'falcon-heavy',
-    starship: 'starship',
-    'sls-block-1': 'sls-block-1',
-    'atlas-v-541': 'atlas-v',
-    'long-march-5': 'long-march-5',
-    'ariane-6': 'ariane-6',
-    lvm3: 'lvm3',
-    'pslv-xl': 'pslv-xl',
-    h3: 'h3',
-    'h-iia': 'h-iia',
-    'long-march-3b': 'long-march-3b',
-    'soyuz-fregat': 'soyuz-2',
-    'proton-m': 'proton-m',
+  // rocket id → fleet entry id lives with the /fly handoff table ($lib/plan/rocket-handoff).
+
+  const GROUP_LABEL: Record<(typeof PLAN_DESTINATION_GROUPS)[number]['id'], () => string> = {
+    inner: m.plan_group_inner,
+    asteroids: m.plan_group_asteroids,
+    jupiter: m.plan_group_jupiter,
+    saturn: m.plan_group_saturn,
+    outer: m.plan_group_outer,
   };
 
   // ─── Grid state — driven by loaded JSON (v0.1.6 / ADR-026) ───────
@@ -322,6 +312,13 @@
     ) {
       params.set('type', missionType.toLowerCase());
     }
+    // The rocket the user picked stays in the URL, so a reload or a shared link keeps it.
+    // Before the rocket list has loaded, an incoming ?rocket= is carried through unchanged.
+    if (userPickedRocket && selectedRocketId) {
+      params.set('rocket', selectedRocketId);
+    } else if (rocketList.length === 0 && pendingRocketDeepLink) {
+      params.set('rocket', pendingRocketDeepLink);
+    }
     // Porkchop point selection (#337 gap 4). Rounded to integer days
     // so the URL stays human-readable; the resolver finds the closest
     // grid cell, which round-trips cleanly because grid cells are
@@ -397,6 +394,11 @@
   // user can share their picked cell.
   $effect(() => {
     void selected;
+    untrack(() => pushFiltersToUrl());
+  });
+  $effect(() => {
+    void selectedRocketId;
+    void userPickedRocket;
     untrack(() => pushFiltersToUrl());
   });
 
@@ -787,6 +789,8 @@
     const params = new URLSearchParams();
     if (destinationId !== 'mars') params.set('dest', destinationId);
     params.set('type', missionType.toLowerCase());
+    // The rocket the Δv budget was checked against (`viable`): /fly flies that launcher.
+    if (selectedRocketId) params.set('rocket', selectedRocketId);
     params.set('dep', String(Math.round(depDays[selected.i])));
     params.set('tof', String(Math.round(arrDays[selected.j])));
     goto(localHref(`/fly?${params.toString()}`));
@@ -936,8 +940,12 @@
           onchange={() => setDestination(destinationId)}
           class="dest-select"
         >
-          {#each DESTINATION_IDS as destOpt (destOpt)}
-            <option value={destOpt}>{destinationLabel(destOpt)}</option>
+          {#each PLAN_DESTINATION_GROUPS as grp (grp.id)}
+            <optgroup label={GROUP_LABEL[grp.id]()}>
+              {#each grp.members as destOpt (destOpt)}
+                <option value={destOpt}>{destinationLabel(destOpt)}</option>
+              {/each}
+            </optgroup>
           {/each}
         </select>
       </label>

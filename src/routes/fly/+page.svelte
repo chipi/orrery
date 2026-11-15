@@ -43,9 +43,16 @@
   import {
     type LoadedMission,
     type MissionApplyDefaults,
+    type PlanFlightExtras,
     type TrajectoryOverride,
     flyDestinationOf,
   } from '$lib/fly-mission-apply';
+  import { resolveRocketHandoff } from '$lib/plan/rocket-handoff';
+  import {
+    genericPayloadLine,
+    resolvePlanFlightDestination,
+    type PlanFlightDestination,
+  } from '$lib/plan/flight-destination';
   import {
     CINEMATIC_TIMINGS,
     createCinematicBeatState,
@@ -115,7 +122,6 @@
   } from '$lib/fly/apply-to-page';
   import {
     coastAscentFraction,
-    cruiseTickPercent,
     descentSeparationTimes,
     isCinematicCutJump,
     OI_WINDOW_DAYS,
@@ -128,7 +134,10 @@
     masterScrubFraction,
     masterScrubTarget,
     type JumpToMetContext,
+    type MasterScrubTarget,
   } from '$lib/fly/fly-clock';
+  import { declutterMarkers, journeyMarkers, type JourneyMarker } from '$lib/fly/journey-markers';
+  import { buildPlanBeats, descentPlanBeats } from '$lib/orbital/flight-plan-beats';
   import {
     anomalyLevel as deriveAnomalyLevel,
     dvRemaining as deriveDvRemaining,
@@ -186,6 +195,8 @@
   } from '$lib/physics/descent/descent-physics';
   import {
     makeTimeline,
+    formatAscentClock,
+    formatDescentClock,
     ASCENT_SPEED_MULTIPLIERS,
     DESCENT_SPEED_MULTIPLIERS,
     type JourneyTimeline,
@@ -375,15 +386,14 @@
   const deepMissionId = launchDeepParams?.get('mission') ?? null;
   let launchAutoStarted = false;
   $effect(() => {
-    // Only auto-start when the LOADED mission is the one the URL asked for —
-    // otherwise the deep-link fires on the default scenario mid-load.
-    if (
-      wantLaunchDeep &&
-      !launchAutoStarted &&
-      launchAvailable &&
-      deepMissionId != null &&
-      mission.id === deepMissionId
-    ) {
+    // Only auto-start when the LOADED flight is the one the URL asked for —
+    // otherwise the deep-link fires on the default scenario mid-load. A /plan URL has no
+    // mission id: its flight is loaded once the plan selection has been applied.
+    const urlFlightLoaded =
+      deepMissionId != null
+        ? mission.id === deepMissionId
+        : (lastAppliedMissionId?.startsWith('plan-') ?? false);
+    if (wantLaunchDeep && !launchAutoStarted && launchAvailable && urlFlightLoaded) {
       launchAutoStarted = true;
       startLaunch();
     }
@@ -1718,11 +1728,58 @@
   // The value the scrubber input + fill render: the master fraction once a
   // launch act exists, else the plain cruise progress (unchanged).
   let scrubValue = $derived(hasLaunchAct ? masterU : Math.max(0, Math.min(1, arcProgress)));
-  // A cruise MET (days) → its % position on the ACTIVE bar. On the unified bar
-  // the cruise occupies `[seam, 1]`; on the cruise-only bar it is `[0, 1]`.
-  function cruiseTickPct(metDays: number): number {
-    const seam = hasLaunchAct ? masterTimeline.ascentScrubberFraction : 0;
-    return cruiseTickPercent(metDays, arcTotalDays, seam);
+  // The marker row on the bar (UXD-042): ascent beats, cruise milestones and stages, descent
+  // beats, one row. Positions come from the same clock map the bar scrubs with; ticks closer
+  // than 10 px on the measured track collapse into the first. The ascent beats are the flight
+  // plan the launch HUD lists, so the two cannot disagree.
+  let trackWidthPx = $state(0);
+  let journeyRow = $derived(
+    declutterMarkers(
+      journeyMarkers({
+        timeline: hasLaunchAct ? masterTimeline : null,
+        arcTotalDays,
+        ascentBeats: launchSummaryFly
+          ? buildPlanBeats(launchSummaryFly, launchInjectionBurn).map((b) => ({
+              label: hudLabel(b.label),
+              t: b.t,
+            }))
+          : [],
+        descentBeats: descentSummaryFly
+          ? descentPlanBeats(descentSummaryFly).map((b) => ({ label: hudLabel(b.label), t: b.t }))
+          : [],
+        milestones:
+          arcTotalDays > 0
+            ? (mission.flight?.events ?? []).flatMap((e, idx) =>
+                e.label && e.met_days != null
+                  ? [
+                      {
+                        id: `ms-${idx}-${e.met_days}`,
+                        label: e.label,
+                        metDays: e.met_days,
+                        description: e.description,
+                      },
+                    ]
+                  : [],
+              )
+            : [],
+        stages:
+          arcTotalDays > 0
+            ? fdScrubberTicks.map((t) => ({ id: t.id, label: t.label, metDays: t.met_days }))
+            : [],
+      }),
+      trackWidthPx,
+    ),
+  );
+  /** A click on a marker seeks there. A cruise marker on the cruise-only bar (or in the cruise
+   *  act) is the old milestone jump; everything else goes through the unified bar's own scrub,
+   *  so a marker lands exactly where the same spot on the bar would. */
+  function seekMarker(mk: JourneyMarker) {
+    if (mk.seek.phase === 'cruise' && (!hasLaunchAct || flyAct === 'cruise')) {
+      jumpToMet(mk.seek.metDays);
+      return;
+    }
+    isPlaying = false;
+    applyScrubTarget(masterScrubTarget(mk.pct / 100, masterTimeline, !!earthCoast));
   }
   function masterTogglePlay() {
     if (showLaunch || showDescent) {
@@ -1745,7 +1802,9 @@
   }
   function onMasterScrub(event: Event) {
     const u = Number((event.target as HTMLInputElement).value);
-    const target = masterScrubTarget(u, masterTimeline, !!earthCoast);
+    applyScrubTarget(masterScrubTarget(u, masterTimeline, !!earthCoast));
+  }
+  function applyScrubTarget(target: MasterScrubTarget) {
     if (target.phase === 'ascent') {
       // Scrubbing back into the ascent re-mounts LaunchScene fresh (resets any
       // completed warp) and drives it to the scrubbed MET.
@@ -2209,12 +2268,34 @@
     type: 'LANDING' | 'FLYBY',
     depDay: number,
     tofDays: number,
+    extras?: PlanFlightExtras,
   ) {
-    applyPlanSelectionToPage(flyApplyCtx, dest, type, depDay, tofDays);
+    applyPlanSelectionToPage(flyApplyCtx, dest, type, depDay, tofDays, extras);
   }
 
-  function applyPlanSelectionMoon(depDay: number, tofDays: number) {
-    applyPlanSelectionMoonToPage(flyApplyCtx, depDay, tofDays);
+  function applyPlanSelectionMoon(depDay: number, tofDays: number, extras?: PlanFlightExtras) {
+    applyPlanSelectionMoonToPage(flyApplyCtx, depDay, tofDays, extras);
+  }
+
+  /** What /plan hands /fly besides the arc (UXD-042): the destination enum, the moon a
+   *  moon flight is going to, and the chosen rocket (`rocket=`) as vehicle, launcher ref and
+   *  the payload line, which names the mass the ascent integrates for that launcher. */
+  async function planFlightExtras(
+    resolved: PlanFlightDestination,
+    rocketParam: string | null,
+  ): Promise<PlanFlightExtras> {
+    const extras: PlanFlightExtras = { dest: resolved.missionDest };
+    if (resolved.kind === 'planet' && resolved.targetMoon) extras.targetMoon = resolved.targetMoon;
+    const handoff = resolveRocketHandoff(rocketParam);
+    if (!handoff) return extras;
+    extras.vehicle = handoff.vehicle;
+    extras.fleet_refs = handoff.fleetRefs;
+    const launcher = resolveLauncher(handoff.fleetRefs, handoff.vehicle);
+    const profile = launcher
+      ? await loadLaunchProfile(launcher.id, fetch, base, launcher.name).catch(() => null)
+      : null;
+    if (profile) extras.payload = genericPayloadLine(m.fly_payload_generic(), profile.payloadKg);
+    return extras;
   }
 
   async function loadMissionFromUrl(url: URL): Promise<void> {
@@ -2229,22 +2310,29 @@
     // /plan-driven entry: dep + tof set (no mission). dest is
     // optional — /plan omits it when the user picked the default
     // (Mars), so we coalesce missing/empty dest to 'mars'. Synthesise
-    // an outbound-only arc to the chosen destination.
+    // an outbound-only arc to the chosen destination. Every /plan destination
+    // resolves: the Moon to the cislunar flight (ADR-085), a planetary moon to
+    // its host planet's arc with the moon named (ADR-086), the rest to their own arc.
     if (!id && depParam !== null && tofParam !== null) {
-      const destResolved = destParam || 'mars';
+      const resolved = resolvePlanFlightDestination(destParam || 'mars');
       const depDay = Number(depParam);
       const tofDays = Number(tofParam);
       const validPlanParams = Number.isFinite(depDay) && Number.isFinite(tofDays) && tofDays > 0;
-      // Geocentric Moon (ADR-085): not a heliocentric DESTINATIONS entry — route
-      // it to the cislunar synthesis so /plan's Earth→Moon selection flies here.
-      if (destResolved === 'moon' && validPlanParams) {
-        applyPlanSelectionMoon(depDay, tofDays);
+      if (resolved && validPlanParams) {
+        const extras = await planFlightExtras(resolved, url.searchParams.get('rocket'));
+        if (myLoadId !== currentLoadId) return; // newer load superseded us
+        if (resolved.kind === 'moon') {
+          applyPlanSelectionMoon(depDay, tofDays, extras);
+        } else {
+          const type: 'LANDING' | 'FLYBY' = typeParam === 'FLYBY' ? 'FLYBY' : 'LANDING';
+          applyPlanSelection(resolved.dest, type, depDay, tofDays, extras);
+        }
         return;
       }
-      if (Object.prototype.hasOwnProperty.call(DESTINATIONS, destResolved) && validPlanParams) {
-        const dest = destResolved as DestinationId;
-        const type: 'LANDING' | 'FLYBY' = typeParam === 'FLYBY' ? 'FLYBY' : 'LANDING';
-        applyPlanSelection(dest, type, depDay, tofDays);
+      // A heliocentric body /plan does not list (a hand-written /fly URL): its own arc, no rocket.
+      const bare = (destParam || 'mars') as DestinationId;
+      if (Object.prototype.hasOwnProperty.call(DESTINATIONS, bare) && validPlanParams) {
+        applyPlanSelection(bare, typeParam === 'FLYBY' ? 'FLYBY' : 'LANDING', depDay, tofDays);
         return;
       }
     }
@@ -4226,7 +4314,7 @@
     >
       {#snippet icon()}{isPlaying ? '⏸' : '▶'}{/snippet}
     </Chip>
-    <div class="scrub-track-wrap" data-audio-stage="fly-timeline">
+    <div class="scrub-track-wrap" data-audio-stage="fly-timeline" bind:clientWidth={trackWidthPx}>
       <!-- Custom-styled track underneath the (transparent) native input.
            The native input still owns drag + click interactions for
            accessibility; the styled track + progress fill render the
@@ -4252,55 +4340,83 @@
         aria-label={m.fly_scrub_label()}
         aria-valuetext={m.fly_hud_met_value({ day: Math.round(met).toString() })}
       />
-      {#if arcTotalDays > 0 && mission.flight?.events && !showLaunch}
+      <!-- One marker row for the whole journey (UXD-042): the launch's flight-plan beats, the
+           mission's milestones (gold dots), the flight-director stages (gold diamonds) and the
+           descent beats. A click seeks there; ticks closer than 10 px collapse into the first.
+           The test id is the one the milestone specs already use. -->
+      {#if journeyRow.length > 0}
         <div class="milestone-track" data-testid="milestone-track">
-          {#each mission.flight.events as evt, idx (idx + '@' + evt.met_days + '@' + (evt.label ?? ''))}
-            {#if evt.label && evt.met_days != null}
-              {@const pct = cruiseTickPct(evt.met_days)}
-              {@const past = (evt.met_days ?? 0) < simDay - arcTimeline.dep_day}
+          {#each journeyRow as mk (mk.id)}
+            {@const past = mk.pct / 100 < scrubValue}
+            {@const more = mk.more ?? 0}
+            {#if mk.kind === 'milestone' && mk.seek.phase === 'cruise'}
               <button
                 type="button"
                 class="milestone-tick-button"
                 class:past
-                style="left: {pct}%;"
-                aria-label={m.fly_milestone_aria({ label: evt.label, days: evt.met_days ?? 0 })}
-                onclick={() => jumpToMet(evt.met_days ?? 0)}
-                data-met-days={evt.met_days}
+                class:edge-start={mk.pct < 12}
+                class:edge-end={mk.pct > 88}
+                style="left: {mk.pct}%;"
+                aria-label={m.fly_milestone_aria({ label: mk.label, days: mk.seek.metDays })}
+                onclick={() => seekMarker(mk)}
+                data-met-days={mk.seek.metDays}
+                data-marker-kind="milestone"
               >
                 <span class="milestone-tooltip">
-                  <span class="milestone-tooltip-label">{evt.label}</span>
-                  <span class="milestone-tooltip-met">MET {evt.met_days}d</span>
-                  {#if evt.description}
-                    <span class="milestone-tooltip-desc">{evt.description}</span>
+                  <span class="milestone-tooltip-label">{mk.label}</span>
+                  <span class="milestone-tooltip-met">MET {mk.seek.metDays}d</span>
+                  {#if mk.description}
+                    <span class="milestone-tooltip-desc">{mk.description}</span>
                   {/if}
+                  {#if more > 0}<span class="milestone-tooltip-met">+{more}</span>{/if}
+                </span>
+              </button>
+            {:else if mk.kind === 'stage'}
+              <button
+                type="button"
+                class="fd-stage-tick-button"
+                class:past
+                class:edge-start={mk.pct < 12}
+                class:edge-end={mk.pct > 88}
+                style="left: {mk.pct}%;"
+                aria-label={m.fly_stage_tick_aria({ label: mk.label })}
+                onclick={() => seekMarker(mk)}
+                data-fd-stage={mk.id}
+                data-marker-kind="stage"
+              >
+                <span class="fd-stage-tooltip">
+                  <span class="fd-stage-tooltip-label">{mk.label}</span>
+                  {#if more > 0}<span class="fd-stage-tooltip-label">+{more}</span>{/if}
+                </span>
+              </button>
+            {:else}
+              {@const clock =
+                mk.seek.phase === 'descent'
+                  ? formatDescentClock(mk.seek.t)
+                  : mk.seek.phase === 'ascent'
+                    ? formatAscentClock(mk.seek.t)
+                    : ''}
+              <button
+                type="button"
+                class="journey-tick-button"
+                class:past
+                class:edge-start={mk.pct < 12}
+                class:edge-end={mk.pct > 88}
+                style="left: {mk.pct}%;"
+                aria-label={m.fly_beat_aria({
+                  label: more > 0 ? `${mk.label} (+${more})` : mk.label,
+                  time: clock,
+                })}
+                onclick={() => seekMarker(mk)}
+                data-marker-kind={mk.kind}
+              >
+                <span class="journey-tooltip">
+                  <span class="journey-tooltip-label">{mk.label}</span>
+                  <span class="journey-tooltip-time">{clock}</span>
+                  {#if more > 0}<span class="journey-tooltip-time">+{more}</span>{/if}
                 </span>
               </button>
             {/if}
-          {/each}
-        </div>
-      {/if}
-      <!-- FD stage ticks on the scrubber — small gold marks at each
-           narrative stage (separation, cruise, approach, arrival).
-           Same scrubber-jump behaviour as milestones. Mirrors the
-           on-canvas gold diamonds so the user can see the FD cadence
-           on the timeline too. -->
-      {#if arcTotalDays > 0 && fdScrubberTicks.length > 0 && !showLaunch}
-        <div class="fd-stage-track" data-testid="fd-stage-track">
-          {#each fdScrubberTicks as t (t.id)}
-            {@const past = t.met_days < simDay - arcTimeline.dep_day}
-            <button
-              type="button"
-              class="fd-stage-tick-button"
-              class:past
-              style="left: {cruiseTickPct(t.met_days)}%;"
-              aria-label={m.fly_stage_tick_aria({ label: t.label })}
-              onclick={() => jumpToMet(t.met_days)}
-              data-fd-stage={t.id}
-            >
-              <span class="fd-stage-tooltip">
-                <span class="fd-stage-tooltip-label">{t.label}</span>
-              </span>
-            </button>
           {/each}
         </div>
       {/if}
@@ -6286,6 +6402,96 @@
   .speed-group {
     display: flex;
     gap: 4px;
+  /* Ascent and descent beats (UXD-042): 2 px ticks, muted blue, a label on hover and focus.
+     The hit area is 10 px, the declutter gap, so neighbours never overlap. */
+  .journey-tick-button {
+    position: absolute;
+    top: -9px;
+    width: 10px;
+    height: 18px;
+    margin-left: -5px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    pointer-events: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .journey-tick-button::before {
+    content: '';
+    width: 2px;
+    height: 14px;
+    border-radius: 1px;
+    background: #889fe7;
+    transition:
+      transform 120ms,
+      background 120ms;
+  }
+  .journey-tick-button.past::before {
+    background: rgba(136, 159, 231, 0.5);
+  }
+  .journey-tick-button:hover::before,
+  .journey-tick-button:focus-visible::before {
+    background: #c3d0ff;
+    transform: scaleY(1.2);
+  }
+  .journey-tick-button:focus-visible {
+    outline: none;
+  }
+  .journey-tooltip {
+    position: absolute;
+    bottom: 22px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 5px 9px;
+    background: rgba(15, 18, 30, 0.96);
+    border: 1px solid rgba(136, 159, 231, 0.55);
+    border-radius: 3px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 120ms;
+    z-index: 5;
+    display: flex;
+    gap: 8px;
+    align-items: baseline;
+    backdrop-filter: blur(4px);
+  }
+  .journey-tick-button:hover .journey-tooltip,
+  .journey-tick-button:focus-visible .journey-tooltip {
+    opacity: 1;
+  }
+  .journey-tooltip-label {
+    font-family: var(--font-mono, 'Space Mono', monospace);
+    font-size: var(--size-label);
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: #fff;
+    text-transform: uppercase;
+  }
+  .journey-tooltip-time {
+    font-family: var(--font-mono, 'Space Mono', monospace);
+    font-size: 11px;
+    color: #889fe7;
+    letter-spacing: 0.05em;
+  }
+  /* The first and last ticks sit at the bar's ends: keep their label inside the viewport. */
+  .edge-start .milestone-tooltip,
+  .edge-start .fd-stage-tooltip,
+  .edge-start .journey-tooltip {
+    left: 0;
+    transform: none;
+  }
+  .edge-end .milestone-tooltip,
+  .edge-end .fd-stage-tooltip,
+  .edge-end .journey-tooltip {
+    left: auto;
+    right: 0;
+    transform: none;
+  }
   }
   /* Mobile: single active-speed slot + tap-to-reveal stacked popover (matches
      /explore) so the scrubber track reclaims the horizontal space. */

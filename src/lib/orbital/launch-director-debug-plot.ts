@@ -217,6 +217,19 @@ export function liveReadout(
   };
 }
 
+/** What the debug view draws; the owner of the launch (LaunchScene) fills it per frame. */
+export interface DirectorDebugData {
+  model: PlotModel;
+  live: LiveReadout | null;
+  /** Live camera trail in the rig frame (vehicle lengths: x downrange, y across). */
+  trail: Pt[];
+  vehicle: Pt | null;
+  light: string;
+  cover: string;
+  opening: string;
+  seed: number;
+}
+
 /** Append to a trail, keeping the last `max` points and skipping a point that has not moved. */
 export function pushTrail(trail: Pt[], p: Pt, max = 160, minStep = 0.02): Pt[] {
   const last = trail[trail.length - 1];

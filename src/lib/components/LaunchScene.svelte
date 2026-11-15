@@ -56,6 +56,17 @@
   import { buildShotSchedule, defaultTuning } from '$lib/orbital/ascent-cameras';
   import AscentCameraDebug from '$lib/components/AscentCameraDebug.svelte';
   import { createAnimateLoop, type AnimateLoop } from '$lib/three/animate-loop';
+  import { createLaunchDirector, type LaunchDirector } from '$lib/three/launch-director-rig';
+  import type { LaunchInstant } from '$lib/orbital/launch-sun';
+  import { prefersReducedMotion } from '$lib/reduced-motion';
+  import {
+    buildPlotModel,
+    liveReadout,
+    pushTrail,
+    type DirectorDebugData,
+    type PlotModel,
+    type Pt,
+  } from '$lib/orbital/launch-director-debug-plot';
   import { onLayerChange } from '$lib/science-layers';
   import { LAUNCH_FORCE_LAYER_ENTRIES } from '$lib/orbital/launch-force-layers';
 
@@ -92,6 +103,11 @@
     /** When true, LaunchScene does NOT self-advance `t` — the parent's master
      *  clock owns time (the extensibility seam a future DescentScene reuses). */
     externalClock?: boolean;
+    /** The mission's real launch instant and pad (null for a Plan flight or a date-only mission):
+     *  the launch's light comes from the Sun there; else it is seeded. */
+    launchInstant?: LaunchInstant | null;
+    /** ?debug=1: what the camera-debug view draws (the /fly DebugPanel Page tab). */
+    onDirectorDebug?: (d: DirectorDebugData) => void;
   }
   let {
     profile,
@@ -103,7 +119,18 @@
     playing = $bindable(true),
     speed = $bindable(5),
     externalClock = false,
+    launchInstant = null,
+    onDirectorDebug,
   }: Props = $props();
+
+  // ?cam=classic keeps today's camera and scene for one release (A/B); the default is the director.
+  const classicCam =
+    typeof window !== 'undefined' &&
+    new URLSearchParams(window.location.search).get('cam') === 'classic';
+  /** The active director shot (data-director-shot), '' under the classic camera. */
+  let directorShot = $state('');
+  let debugTrail: Pt[] = [];
+  let debugFrame = 0;
 
   const tuning = $state(defaultTuning()); // live per-shot camera tuning (debug sliders → scene)
   const debugMode =
@@ -212,6 +239,8 @@
 
   let ar: AscentRenderer | undefined;
   let sceneObj: AscentScene | undefined;
+  let director: LaunchDirector | undefined;
+  let directorDebugModel: PlotModel | null = null;
   let loop: AnimateLoop | undefined;
 
   let hud = $state({ altKm: 0, velKms: 0, stage: 'S1', met: 'T-00:12' });
@@ -291,9 +320,36 @@
 
     // Hero IBL only on capable GPUs (high+); software-GL / weak renderers skip
     // the per-frame reflection cost. quality-tier.ts iblEnabled.
+    const quality = resolveQualitySync();
     ar = createAscentRenderer(container, sceneObj, {
-      iblEnabled: resolveQualitySync().iblEnabled,
+      iblEnabled: quality.iblEnabled,
     });
+
+    // The launch camera director (G3): shot plan, conditions, ground-relative path. One
+    // implementation shared with /dev/launch-director. Skipped under ?cam=classic.
+    if (!classicCam) {
+      director = createLaunchDirector({
+        asc: sceneObj,
+        summary,
+        profile,
+        vehLen: VEHICLE_LENGTH_KM,
+        missionId: mission.spacecraftId,
+        launch: launchInstant,
+        payloadSepT,
+        endT: ascentEnd,
+        reducedMotion: prefersReducedMotion(),
+        nightUrl: `${base}/textures/2k_earth_nightmap.jpg`,
+        lite: quality.tier === 'minimal' || quality.tier === 'low',
+      });
+      if (debugMode) {
+        directorDebugModel = buildPlotModel({
+          plan: director.plan,
+          stateAt: (tt) => sampleAscentAt(summary.states, tt),
+          latDeg: profile.launchSite?.lat ?? 28.5,
+          vehLen: VEHICLE_LENGTH_KM,
+        });
+      }
+    }
 
     // Science-Lens force vectors — the lens panel's thrust / drag / gravity /
     // velocity layers drive the scene's force arrows (RFC-034 §11.2); the lens
@@ -353,7 +409,27 @@
       // Past the last state the physics holds, but the clock runs on: the scene times the
       // injection-beat animations (spacecraft separation) off s.t.
       const s = t > sampled.t ? { ...sampled, t } : sampled;
-      sceneObj!.setState(s);
+      if (director) {
+        // Ground-relative state and the planned camera; the HUD below keeps the inertial `s`.
+        const fr = director.apply(s);
+        if (fr.shot !== directorShot) directorShot = fr.shot;
+        if (directorDebugModel && t >= 0 && ++debugFrame % 3 === 0) {
+          const lr = liveReadout(director.plan, t, fr.state, VEHICLE_LENGTH_KM);
+          debugTrail = pushTrail(debugTrail, { x: lr.rel.dx, y: lr.rel.dz });
+          onDirectorDebug?.({
+            model: directorDebugModel,
+            live: lr,
+            trail: debugTrail,
+            vehicle: { x: fr.state.downrangeKm, y: fr.state.altKm },
+            light: director.plan.conditions.light,
+            cover: director.plan.conditions.cover,
+            opening: director.plan.opening,
+            seed: director.plan.seed,
+          });
+        }
+      } else {
+        sceneObj!.setState(s);
+      }
       sceneObj!.setInjectionBurn(injectionFiring);
       if (import.meta.env.DEV && debugMode) applyDebugCamera();
       liveState = s;
@@ -405,6 +481,7 @@
   });
 
   onDestroy(() => {
+    director?.dispose();
     loop?.cleanup();
     sceneObj?.dispose();
     ar?.dispose();
@@ -416,6 +493,8 @@
   class:hud-hidden={hudHidden}
   class:external={externalClock}
   data-testid="launch-scene"
+  data-camera-mode={classicCam ? 'classic' : 'director'}
+  data-director-shot={directorShot}
 >
   <div class="stage" bind:this={container}></div>
 
@@ -566,7 +645,7 @@
 
   <!-- Launch camera-debug (?debug=1): shot timeline, live camera plot,
        per-shot tuning sliders. -->
-  {#if debugMode && !warping}
+  {#if debugMode && classicCam && !warping}
     <div class="cam-debug">
       <AscentCameraDebug
         {summary}

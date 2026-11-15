@@ -100,6 +100,10 @@
   import PhaseMarkerLabel from '$lib/components/PhaseMarkerLabel.svelte';
   import FdPhaseMarkerLabel from '$lib/components/FdPhaseMarkerLabel.svelte';
   import FlybyDebugViewer from '$lib/components/FlybyDebugViewer.svelte';
+  import LaunchDirectorDebugViewer from '$lib/components/LaunchDirectorDebugViewer.svelte';
+  import { resolveLaunchInstant } from '$lib/launches/launch-instant';
+  import type { LaunchInstant } from '$lib/orbital/launch-sun';
+  import type { DirectorDebugData } from '$lib/orbital/launch-director-debug-plot';
   import DebugPanelRegistrar from '$lib/components/DebugPanelRegistrar.svelte';
   import RenderingDebugRegistrar from '$lib/components/RenderingDebugRegistrar.svelte';
   import QualitySettingsModal from '$lib/components/QualitySettingsModal.svelte';
@@ -318,6 +322,9 @@
     );
   }
   let launchProfile = $state<LaunchProfile | null>(null);
+  // The launch's real instant + pad (light) and the director's debug data (?debug=1 Page tab).
+  let launchInstant = $state<LaunchInstant | null>(null);
+  let launchDirectorDebug = $state<DirectorDebugData | null>(null);
   // The launcher's real height (fleet specs), so a showcase craft rides it at true scale.
   let launcherHeightM = $state<number | undefined>(undefined);
   async function loadLauncherHeight(): Promise<void> {
@@ -372,8 +379,24 @@
       preloadFlyCraft(mission.id ?? ''),
       loadLauncherHeight(),
     ])
-      .then(([p]) => {
+      .then(async ([p]) => {
         if (!p) return;
+        // The real launch time and pad for the launch's light (null for a Plan flight or a
+        // mission with no time of day: the light is then seeded).
+        const depDate = /^\d{4}-\d{2}-\d{2}$/.test(mission.dep_label)
+          ? mission.dep_label
+          : undefined;
+        launchInstant = await resolveLaunchInstant(
+          {
+            missionId: mission.id,
+            departureDate: depDate,
+            launcherId: launcher.id,
+            launchSiteRef: mission.fleet_refs?.find((r) => r.role === 'launch-site')?.id,
+          },
+          p.launchSite,
+          fetch,
+          base,
+        ).catch(() => null);
         launchProfile = p;
         dispatchPhase({ type: 'startLaunch' });
       })
@@ -3246,6 +3269,8 @@
     bind:t={launchT}
     bind:playing={isPlaying}
     bind:speed={launchSpeed}
+    {launchInstant}
+    onDirectorDebug={(d) => (launchDirectorDebug = d)}
     externalClock={true}
     onComplete={() => {
       // ascent → coast (Tier-1 Earth-orbit: loop Earth → re-entry) or → cruise
@@ -3347,7 +3372,20 @@
 {/if}
 
 {#snippet flyDebugContent()}
-  {#if earthCoast}
+  {#if showLaunch && launchDirectorDebug}
+    <!-- The launch camera director (G3): the ascent path, every planned shot's camera, the live
+         camera and a readout. Plot maths: $lib/orbital/launch-director-debug-plot.ts -->
+    <LaunchDirectorDebugViewer
+      model={launchDirectorDebug.model}
+      live={launchDirectorDebug.live}
+      trail={launchDirectorDebug.trail}
+      vehicle={launchDirectorDebug.vehicle}
+      light={launchDirectorDebug.light}
+      cover={launchDirectorDebug.cover}
+      opening={launchDirectorDebug.opening}
+      seed={launchDirectorDebug.seed}
+    />
+  {:else if earthCoast}
     <!-- Tier-1 Earth-orbit re-entry (RFC-034 §13) — pad→coast→re-entry phase state,
          the counterpart of the flyby/cislunar debug for the launch/descent acts. -->
     {@const phase = showLaunch

@@ -13,8 +13,8 @@ import { test, expect, type Page } from '@playwright/test';
  * ascent-profiles.test.ts); this spec covers the wired UI.
  */
 
-async function enterLaunch(page: Page, mission: string): Promise<void> {
-  await page.goto(`/fly?mission=${mission}&launch=1`);
+async function enterLaunch(page: Page, mission: string, extra = ''): Promise<void> {
+  await page.goto(`/fly?mission=${mission}&launch=1${extra}`);
   // ?launch=1 loads the profile async then swaps in the launch overlay.
   await expect(page.locator('[data-testid="launch-scene"]')).toBeVisible({ timeout: 20_000 });
 }
@@ -23,6 +23,27 @@ async function enterLaunch(page: Page, mission: string): Promise<void> {
 // ascent scene mounts + its canvas is attached. Runs on every project.
 test('launch scene mounts with a live canvas', async ({ page }) => {
   await enterLaunch(page, 'curiosity');
+  await expect(page.locator('.launch .stage canvas')).toBeAttached();
+});
+
+// G3: the launch camera director is the default camera; ?cam=classic keeps today's for one release.
+test('the launch runs the camera director by default (data-director-shot names the shot)', async ({
+  page,
+}) => {
+  await enterLaunch(page, 'curiosity');
+  const scene = page.locator('[data-testid="launch-scene"]');
+  await expect(scene).toHaveAttribute('data-camera-mode', 'director');
+  await expect(async () => {
+    const shot = await scene.getAttribute('data-director-shot');
+    expect(shot && shot.length > 0).toBe(true);
+  }).toPass({ timeout: 15_000 });
+});
+
+test('?cam=classic runs the old camera: no director shot', async ({ page }) => {
+  await enterLaunch(page, 'curiosity', '&cam=classic');
+  const scene = page.locator('[data-testid="launch-scene"]');
+  await expect(scene).toHaveAttribute('data-camera-mode', 'classic');
+  await expect(scene).toHaveAttribute('data-director-shot', '');
   await expect(page.locator('.launch .stage canvas')).toBeAttached();
 });
 

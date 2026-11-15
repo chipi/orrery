@@ -9,6 +9,7 @@ import {
 import { buildDirectorPlan, pickConditions, mulberry32 } from './ascent-director';
 import {
   compassToSceneAz,
+  findLaunchEntry,
   launchUtcMsFor,
   lightFromSunElevation,
   sunAt,
@@ -148,6 +149,63 @@ describe('real launch light in the director', () => {
     expect(b.cloudSeed).toBe(a.cloudSeed);
     expect(b.coverage).toBe(a.coverage);
     expect(b.light).toBe('midday');
+  });
+});
+
+describe('findLaunchEntry (the Shuttle rows carry no mission ref)', () => {
+  const sts34 = {
+    orrery_mission_ref: null,
+    orrery_launcher_ref: 'space-shuttle-stack',
+    orrery_launch_site_ref: 'lc-39b',
+    net: '1989-10-18T16:53:40.000Z',
+    net_precision: 'second',
+  };
+  it('matches the single entry on the departure date flown by the mission launcher', () => {
+    const e = findLaunchEntry([sts34], {
+      missionId: 'galileo',
+      departureDate: '1989-10-18',
+      launcherId: 'space-shuttle-stack',
+    });
+    expect(e?.orrery_launch_site_ref).toBe('lc-39b');
+    expect(
+      launchUtcMsFor([sts34], 'galileo', {
+        departureDate: '1989-10-18',
+        launcherId: 'space-shuttle-stack',
+      }),
+    ).toBe(Date.UTC(1989, 9, 18, 16, 53, 40));
+  });
+  it('is null when two entries fit (ambiguous), the launcher differs or the date differs', () => {
+    const q = {
+      missionId: 'galileo',
+      departureDate: '1989-10-18',
+      launcherId: 'space-shuttle-stack',
+    };
+    expect(findLaunchEntry([sts34, { ...sts34 }], q)).toBeNull();
+    expect(findLaunchEntry([{ ...sts34, orrery_launcher_ref: 'atlas-v' }], q)).toBeNull();
+    expect(findLaunchEntry([sts34], { ...q, departureDate: '1989-10-19' })).toBeNull();
+  });
+  it('never gives a Plan flight a time', () => {
+    expect(
+      findLaunchEntry([sts34], {
+        missionId: 'plan-mars-1',
+        departureDate: '1989-10-18',
+        launcherId: 'space-shuttle-stack',
+      }),
+    ).toBeNull();
+  });
+  it('the real NASA times: STS-30 18:46:59 UTC, STS-41 11:47:15 UTC are in the dataset to the second', () => {
+    const dir = resolve(__dirname, '../../../static/data/launches-historic');
+    const all = (f: string) =>
+      Object.values(
+        (JSON.parse(readFileSync(resolve(dir, f), 'utf-8')) as { entries: Record<string, never> })
+          .entries,
+      ) as { net: string; orrery_launcher_ref: string }[];
+    const sts30 = all('1980-1989.json').find((e) => e.net.startsWith('1989-05-04'))!;
+    const sts41 = all('1990-1999.json').find((e) => e.net.startsWith('1990-10-06'))!;
+    expect(sts30.net).toBe('1989-05-04T18:46:59.000Z'); // NASA: 2:46:59 p.m. EDT
+    expect(Math.abs(Date.parse(sts41.net) - Date.UTC(1990, 9, 6, 11, 47, 15))).toBeLessThanOrEqual(
+      1000,
+    ); // NASA: 7:47:15 a.m. EDT
   });
 });
 

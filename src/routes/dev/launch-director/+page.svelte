@@ -20,7 +20,6 @@
   import { createAscentScene, VEHICLE_LENGTH_KM, type AscentScene } from '$lib/three/ascent-scene';
   import { createAscentRenderer, type AscentRenderer } from '$lib/three/ascent-renderer';
   import { resolveLaunchGround } from '$lib/three/launch-ground';
-  import { attachLaunchConditions, type ConditionsRig } from '$lib/three/launch-conditions-scene';
   import {
     integrateAscent,
     sampleAscentAt,
@@ -31,9 +30,6 @@
   import { padState, T_MINUS_S } from '$lib/orbital/ascent-hud';
   import { buildShotSchedule } from '$lib/orbital/ascent-cameras';
   import {
-    buildDirectorPlan,
-    directedPoseAt,
-    groundRelative,
     type CoverId,
     type DirectorPlan,
     type LightId,
@@ -47,7 +43,9 @@
     type PlotModel,
     type Pt,
   } from '$lib/orbital/launch-director-debug-plot';
-  import { launchUtcMsFor } from '$lib/orbital/launch-sun';
+  import type { LaunchInstant } from '$lib/orbital/launch-sun';
+  import { resolveLaunchInstant } from '$lib/launches/launch-instant';
+  import { createLaunchDirector } from '$lib/three/launch-director-rig';
   import LaunchDirectorDebugViewer from '$lib/components/LaunchDirectorDebugViewer.svelte';
   import DebugPanelRegistrar from '$lib/components/DebugPanelRegistrar.svelte';
 
@@ -57,30 +55,6 @@
   let debugTrail = $state<Pt[]>([]);
   let debugVehicle = $state<Pt | null>(null);
   let debugFrame = 0;
-
-  const DECADES = [
-    '1957-1969',
-    '1970-1979',
-    '1980-1989',
-    '1990-1999',
-    '2000-2009',
-    '2010-2019',
-    '2020-2026',
-  ];
-  async function lookupLaunchUtc(id: string): Promise<number | null> {
-    for (const d of DECADES) {
-      try {
-        const res = await fetch(`${base}/data/launches-historic/${d}.json`);
-        if (!res.ok) continue;
-        const j = (await res.json()) as { entries?: Record<string, never> };
-        const hit = launchUtcMsFor(Object.values(j.entries ?? {}), id);
-        if (hit != null) return hit;
-      } catch {
-        // an unreadable decade file only means no real instant
-      }
-    }
-    return null;
-  }
 
   let container: HTMLDivElement;
   const q =
@@ -113,7 +87,6 @@
     let disposed = false;
     let ar: AscentRenderer | undefined;
     let asc: AscentScene | undefined;
-    let rig: ConditionsRig | undefined;
     let raf = 0;
     const cleanups: (() => void)[] = [];
 
@@ -126,45 +99,23 @@
       const summary: AscentSummary = integrateAscent(profile);
       const duration = summary.totalDurationS;
       const reduced = q.get('reduced') === '1';
-      const altAt = (tt: number): number => sampleAscentAt(summary.states, tt).altKm;
-      // The real launch instant: ?utc= wins, else the launches dataset (minute-precision net of
-      // the mission's entry). None (a date-only mission, no entry, ?real=0): the light is seeded.
-      let utcMs: number | null = null;
+      // The real launch instant: ?utc= wins (at the profile's pad), else the launches dataset
+      // (the mission's time of day and pad). None (a date-only mission, no entry, ?real=0): the
+      // light is seeded.
+      let launch: LaunchInstant | null = null;
       if (q.get('real') !== '0') {
         const utcParam = q.get('utc');
-        if (utcParam && Number.isFinite(Date.parse(utcParam))) utcMs = Date.parse(utcParam);
-        else if (missionId) utcMs = await lookupLaunchUtc(missionId);
+        const site = profile.launchSite;
+        if (utcParam && Number.isFinite(Date.parse(utcParam)) && site)
+          launch = { utcMs: Date.parse(utcParam), latDeg: site.lat, lonDeg: site.lon };
+        else if (missionId)
+          launch = await resolveLaunchInstant(
+            { missionId, departureDate: q.get('date') ?? undefined, launcherId: profile.id },
+            site,
+            fetch,
+            base,
+          );
       }
-      const site = profile.launchSite;
-      const thePlan = buildDirectorPlan({
-        vehicleId: profile.id,
-        launch: utcMs != null && site ? { utcMs, latDeg: site.lat, lonDeg: site.lon } : undefined,
-        missionId,
-        seed: seedParam != null && seedParam !== '' ? Number(seedParam) : undefined,
-        events: summary.events,
-        maxQt: summary.maxQ.t,
-        duration,
-        altAt,
-        hasBoosters: (profile.boosters?.count ?? 0) > 0,
-        payloadInBay: profile.payloadInBay === true,
-        speed,
-        reducedMotion: reduced,
-        force: {
-          opening: (q.get('opening') as OpeningId | null) ?? undefined,
-          light: (q.get('light') as LightId | null) ?? undefined,
-          cover: (q.get('cover') as CoverId | null) ?? undefined,
-        },
-      });
-      plan = thePlan;
-      if (q.get('debug') === '1') {
-        debugModel = buildPlotModel({
-          plan: thePlan,
-          stateAt: (tt) => sampleAscentAt(summary.states, tt),
-          latDeg: profile.launchSite?.lat ?? 28.5,
-          vehLen: VEHICLE_LENGTH_KM,
-        });
-      }
-      endT = thePlan.shots[thePlan.shots.length - 1].tEnd;
 
       const schedule = buildShotSchedule({
         events: summary.events,
@@ -196,32 +147,45 @@
       ar = createAscentRenderer(container, asc, { iblEnabled: false });
       const pr = q.get('pr');
       if (pr) ar.renderer.setPixelRatio(Number(pr));
-      if (q.get('cond') !== '0')
-        rig = attachLaunchConditions(
-          asc,
-          thePlan.conditions,
-          VEHICLE_LENGTH_KM,
-          `${base}/textures/2k_earth_nightmap.jpg`,
-        );
+      // The same director /fly's launch runs (one implementation: launch-director-rig.ts).
+      const director = createLaunchDirector({
+        asc,
+        summary,
+        profile,
+        vehLen: VEHICLE_LENGTH_KM,
+        missionId,
+        seed: seedParam != null && seedParam !== '' ? Number(seedParam) : undefined,
+        launch,
+        speed,
+        reducedMotion: reduced,
+        force: {
+          opening: (q.get('opening') as OpeningId | null) ?? undefined,
+          light: (q.get('light') as LightId | null) ?? undefined,
+          cover: (q.get('cover') as CoverId | null) ?? undefined,
+        },
+        nightUrl: `${base}/textures/2k_earth_nightmap.jpg`,
+        conditions: q.get('cond') !== '0',
+      });
+      cleanups.push(() => director.dispose());
+      const thePlan = director.plan;
+      plan = thePlan;
+      endT = thePlan.shots[thePlan.shots.length - 1].tEnd;
+      if (q.get('debug') === '1') {
+        debugModel = buildPlotModel({
+          plan: thePlan,
+          stateAt: (tt) => sampleAscentAt(summary.states, tt),
+          latDeg: profile.launchSite?.lat ?? 28.5,
+          vehLen: VEHICLE_LENGTH_KM,
+        });
+      }
 
       const renderAt = (tt: number): void => {
         if (!asc || !ar) return;
         const sampled = tt < 0 ? padState(summary, tt) : sampleAscentAt(summary.states, tt);
         const raw = tt > sampled.t ? { ...sampled, t: tt } : sampled;
-        const s = groundRelative(raw, launchSite?.lat ?? 28.5);
-        asc.setState(s);
-        if (mode === 'director') {
-          const dp = directedPoseAt(thePlan, tt, s, VEHICLE_LENGTH_KM);
-          const p = dp.pose;
-          asc.camera.position.set(p.px, p.py, p.pz);
-          asc.camera.lookAt(p.tx, p.ty, p.tz);
-          asc.camera.fov = p.fov;
-          asc.camera.updateProjectionMatrix();
-          shotLabel = thePlan.shots[dp.index].id;
-        } else {
-          shotLabel = `today: ${asc.activeShot}`;
-        }
-        rig?.update(s, asc.camera);
+        const fr = director.apply(raw, { camera: mode === 'director' });
+        const s = fr.state;
+        shotLabel = mode === 'director' ? fr.shot : `today: ${asc.activeShot}`;
         if (debugModel && tt >= 0 && ++debugFrame % 3 === 0) {
           const lr = liveReadout(thePlan, tt, s, VEHICLE_LENGTH_KM);
           debugLive = lr;
@@ -273,7 +237,6 @@
       disposed = true;
       cancelAnimationFrame(raf);
       cleanups.forEach((f) => f());
-      rig?.dispose();
       ar?.dispose();
       asc?.dispose();
     };

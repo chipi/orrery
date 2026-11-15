@@ -283,6 +283,7 @@ export function attachLaunchConditions(
   c: LaunchConditions,
   vehLen: number,
   nightUrl?: string,
+  lite = false,
 ): ConditionsRig {
   const pal = PALETTES[c.light];
   const scene = asc.scene;
@@ -463,7 +464,10 @@ export function attachLaunchConditions(
         }
       `,
     });
-    const lights = new THREE.Mesh(new THREE.SphereGeometry(R_EARTH_KM + 0.4, 128, 128), lightsMat);
+    const lights = new THREE.Mesh(
+      new THREE.SphereGeometry(R_EARTH_KM + 0.4, lite ? 64 : 128, lite ? 64 : 128),
+      lightsMat,
+    );
     lights.position.copy(found.earth.position);
     lights.quaternion.copy(found.earth.quaternion);
     lights.renderOrder = 1;
@@ -541,7 +545,7 @@ export function attachLaunchConditions(
     `,
   });
   const cloudDeck = new THREE.Mesh(
-    new THREE.SphereGeometry(R_EARTH_KM + c.deckAltKm, 256, 128),
+    new THREE.SphereGeometry(R_EARTH_KM + c.deckAltKm, lite ? 128 : 256, lite ? 64 : 128),
     cloudMat,
   );
   cloudDeck.position.set(0, -R_EARTH_KM, 0);
@@ -634,7 +638,7 @@ export function attachLaunchConditions(
   disposables.push(poolMat, pool.geometry);
 
   // ── Pad smoke: sprites rolling out sideways, every position a pure function of the mission time ──
-  const N = c.padSmoke ? 200 : 0;
+  const N = c.padSmoke ? (lite ? 70 : 200) : 0;
   const puffTex = puffTexture();
   disposables.push(puffTex);
   const puffs: { sp: THREE.Sprite; ang: number; spd: number; lift: number; size: number }[] = [];
@@ -719,8 +723,10 @@ export function attachLaunchConditions(
       const nearPad = 1 - smoothstep01((s.altKm - 0.2) / 2.2);
       const boost = 0.55 + pal.flameLight * 0.6;
       glowSprite.visible = lit * nearPad > 0.01;
-      glowSprite.position.set(s.downrangeKm, s.altKm + vehLen * 0.05, 0);
-      glowSprite.scale.setScalar(vehLen * 3.2);
+      // The plume's own glow (not a sunset): centred on the engines, so it lights the base and
+      // the smoke instead of a dome over the pad. Before ignition (thrust 0) it is off.
+      glowSprite.position.set(s.downrangeKm, s.altKm - vehLen * 0.1, 0);
+      glowSprite.scale.setScalar(vehLen * 2.2);
       (glowSprite.material as THREE.SpriteMaterial).opacity = 0.8 * lit * nearPad * boost;
       pool.visible = glowSprite.visible;
       poolMat.opacity = 0.9 * lit * nearPad * boost;

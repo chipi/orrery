@@ -102,22 +102,53 @@ export interface LaunchInstant {
   lonDeg: number;
 }
 
+export interface LaunchEntryLike {
+  orrery_mission_ref?: string | null;
+  orrery_launcher_ref?: string | null;
+  orrery_launch_site_ref?: string | null;
+  net?: string;
+  net_precision?: string;
+}
+
+const hasTimeOfDay = (e: LaunchEntryLike): boolean =>
+  e.net_precision === 'minute' || e.net_precision === 'second';
+
 /**
- * The real launch instant of a mission from the launches dataset
- * (static/data/launches-historic/*.json, `orrery_mission_ref` + `net` with minute precision),
- * or null: a date-only mission, a mission with no entry or a Plan flight has no real time of
- * day, and the light is then seeded rather than invented.
+ * The launches-dataset entry (static/data/launches-historic/*.json) that is this mission's
+ * real launch, or null. Matches, in order:
+ *   1. `orrery_mission_ref` equal to the mission id;
+ *   2. when no entry names the mission (the Shuttle's "OV-104 IUS deploy" rows do not): the
+ *      single entry on the mission's departure date (UTC) flown by the mission's launcher.
+ * Only an entry with a time of day (minute or second precision) counts: a date-only mission,
+ * a mission with no entry or a Plan flight has no real time, and the light is then seeded
+ * rather than invented.
  */
+export function findLaunchEntry<E extends LaunchEntryLike>(
+  entries: Iterable<E>,
+  q: { missionId?: string; departureDate?: string; launcherId?: string },
+): E | null {
+  if (!q.missionId || q.missionId.startsWith('plan-')) return null;
+  const all = [...entries];
+  const byRef = all.find((e) => e.orrery_mission_ref === q.missionId);
+  if (byRef) return hasTimeOfDay(byRef) ? byRef : null;
+  if (!q.departureDate || !q.launcherId) return null;
+  const same = all.filter(
+    (e) =>
+      e.orrery_launcher_ref === q.launcherId &&
+      !e.orrery_mission_ref &&
+      hasTimeOfDay(e) &&
+      (e.net ?? '').slice(0, 10) === q.departureDate,
+  );
+  return same.length === 1 ? same[0] : null;
+}
+
+/** The real launch instant (ms, UTC) of a mission, or null. See {@link findLaunchEntry}. */
 export function launchUtcMsFor(
-  entries: Iterable<{ orrery_mission_ref?: string | null; net?: string; net_precision?: string }>,
+  entries: Iterable<LaunchEntryLike>,
   missionId: string | undefined,
+  extra: { departureDate?: string; launcherId?: string } = {},
 ): number | null {
-  if (!missionId) return null;
-  for (const e of entries) {
-    if (e.orrery_mission_ref !== missionId) continue;
-    if (e.net_precision !== 'minute' && e.net_precision !== 'second') return null;
-    const ms = Date.parse(e.net ?? '');
-    return Number.isFinite(ms) ? ms : null;
-  }
-  return null;
+  const e = findLaunchEntry(entries, { missionId, ...extra });
+  const ms = e ? Date.parse(e.net ?? '') : NaN;
+  return Number.isFinite(ms) ? ms : null;
 }

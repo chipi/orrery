@@ -110,7 +110,7 @@ const CONFIGS: Record<QualityTier, QualityConfig> = {
   minimal: {
     tier: 'minimal',
     pixelRatioCap: 0.75,
-    lensScale: 1,
+    lensScale: 0.75,
     postEnabled: false,
     bloomEnabled: false,
     bloomStrength: 0,

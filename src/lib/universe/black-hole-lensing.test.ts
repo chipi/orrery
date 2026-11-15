@@ -26,8 +26,8 @@ describe('black-hole ray budget', () => {
 });
 
 describe('lensScale', () => {
-  it('is 1 on minimal, low, high and cinematic and 0.75 on medium', () => {
-    expect(ALL_TIERS.map((t) => configFor(t).lensScale)).toEqual([1, 1, 0.75, 1, 1]);
+  it('is 0.75 on minimal and medium and 1 on low, high and cinematic', () => {
+    expect(ALL_TIERS.map((t) => configFor(t).lensScale)).toEqual([0.75, 1, 0.75, 1, 1]);
   });
 });
 

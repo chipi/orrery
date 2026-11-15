@@ -97,7 +97,7 @@ The slice plan is dated 2026-11-11 and all statuses are as of that day, on branc
 
 | Slice | Change | Points | Decisions | Status | Surfaces | Will touch | Waits on |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| H | Content (research, alongside): add Kaguya and Chandrayaan-2, propose further candidates | MI5, PG7, FL3 | none yet | planned | missions, fleet data | none (data) | the operator picks candidates |
+| H | Content (research, alongside): add Kaguya and Chandrayaan-2, propose further candidates | MI5, PG7, FL3 | none yet | part 1 authored (2 missions, 2 orbiter fleet entries, Kaguya moon site, 2 program rows linked, 14 locales, thumbnails; `chandrayaan1` fleet link repaired); waits on image approval, see the plan's deferred list L53-L57 | missions, fleet, moon sites, programs data | none (data) | image approval, then the operator picks the next candidates |
 | I | README and docs refreshed with screenshots of the finished UI | GH1 | none yet | planned (last) | README, docs | README | the finished UI |
 
 ## Work outside the slice plan, in 0.9.9

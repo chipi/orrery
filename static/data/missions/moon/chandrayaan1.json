@@ -657,6 +657,10 @@
       "role": "launcher"
     },
     {
+      "id": "chandrayaan1",
+      "role": "spacecraft"
+    },
+    {
       "id": "sriharikota-slp",
       "role": "launch-site"
     }

@@ -49,7 +49,7 @@
   ],
   "provenance": [
     {
-      "l": "Boeing/ULA — Delta II Payload Planners Guide, Dec 2006 (6 ground-lit + 3 air-lit GEMs; event table: ground-lit burnout T+63, air-lit lit T+66; MECO T+264; second-stage restart; Star 48B third stage)",
+      "l": "Boeing/ULA — Delta II Payload Planners Guide, Dec 2006 (6 ground-lit + 3 air-lit GEMs; second-stage restart; Star 48B third stage). Table 2-1 (7925, eastern range): solids separate T+66 / T+132, MECO T+264, stage I/II separation M+8, fairing M+39 (T+303), SECO-1 T+617 (Figure 2-5)",
       "u": "https://www.ulalaunch.com/docs/default-source/rockets/deltaiipayloadplannersguide2007.pdf"
     },
     {
@@ -63,10 +63,6 @@
     {
       "l": "Payload = spacecraft (Pathfinder 890 kg) + Star 48B kick stage (2,140 kg, Gunter's Space Page); fairing mass estimated",
       "u": "https://space.skyrocket.de/doc_eng/star-48.htm"
-    },
-    {
-      "l": "Delta II Payload Planners Guide Dec 2006, Table 2-1 (7925, eastern range): solids separate T+66 / T+132, MECO T+264, stage I/II separation M+8, fairing M+39 (T+303), SECO-1 T+617 (Figure 2-5)",
-      "u": "https://www.ulalaunch.com/docs/default-source/rockets/deltaiipayloadplannersguide2007.pdf"
     }
   ]
 }

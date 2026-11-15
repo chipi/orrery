@@ -42,7 +42,6 @@
     }
   ],
   "provenance": [
-    { "l": "NASA — Saturn V Flight Manual (SA-503)", "u": "https://web.archive.org/web/20230715220529/https://history.nasa.gov/afj/ap08fj/pdf/sa503-flightmanual.pdf" },
-    { "l": "MSFC-MAN-503, critical event sequence (S-IC cutoff 2:31, LET jettison 3:07, S-II cutoff 8:40, S-IVB first-burn cutoff 11:21.7) and S-IC stage data (4,792,200 lb at ignition, 305,100 lb dry, 150.7 s burn): the S-IC masses are the manual's, so the model's S-IC cuts off at 151 s", "u": "https://web.archive.org/web/20230715220529/https://history.nasa.gov/afj/ap08fj/pdf/sa503-flightmanual.pdf" }
+    { "l": "NASA — Saturn V Flight Manual (SA-503), MSFC-MAN-503: critical event sequence (S-IC cutoff 2:31, LET jettison 3:07, S-II cutoff 8:40, S-IVB first-burn cutoff 11:21.7) and S-IC stage data (4,792,200 lb at ignition, 305,100 lb dry, 150.7 s burn): the S-IC masses are the manual's, so the model's S-IC cuts off at 151 s", "u": "https://web.archive.org/web/20230715220529/https://history.nasa.gov/afj/ap08fj/pdf/sa503-flightmanual.pdf" }
   ]
 }

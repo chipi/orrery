@@ -67,7 +67,7 @@
   ],
   "provenance": [
     {
-      "l": "ISRO — PSLV-C25 Mars Orbiter Mission brochure (flight events: 4 ground-lit PSOM-XL at liftoff, 2 air-lit at T+25 s, separations at 70 and 92 s, fairing at 113 km; stage propellant loads; 320 t at liftoff)",
+      "l": "ISRO — PSLV-C25 Mars Orbiter Mission brochure (flight events: 4 ground-lit PSOM-XL at liftoff, 2 air-lit at T+25 s, separations at 70 and 92 s, fairing at 113 km; stage propellant loads; 320 t at liftoff). Flight events: PSOM-XL separations 69.94 / 92.04 s (burnt-out motors ride ~20 s), PS1 burn 103 s and separation 112.75 s, fairing 117.95 s, PS2 separation 264.74 s",
       "u": "https://new1.isro.gov.in/media_isro/pdf/Missions/PSLVC25/publication_PSLVC25.pdf"
     },
     {
@@ -81,10 +81,6 @@
     {
       "l": "Dry masses derived from the 320 t liftoff mass less sourced propellant; solid thrusts are burn averages matching the ISRO burn times",
       "u": "https://www.isro.gov.in/mission_PSLV_C11.html"
-    },
-    {
-      "l": "ISRO PSLV-C25 flight events: PSOM-XL separations 69.94 / 92.04 s (burnt-out motors ride ~20 s), PS1 burn 103 s and separation 112.75 s, fairing 117.95 s, PS2 separation 264.74 s",
-      "u": "https://new1.isro.gov.in/media_isro/pdf/Missions/PSLVC25/publication_PSLVC25.pdf"
     }
   ]
 }

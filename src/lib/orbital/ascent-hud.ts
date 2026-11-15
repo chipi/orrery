@@ -105,7 +105,7 @@ export function buildAscentBeats(summary: AscentSummary): AscentBeat[] {
   const raw: AscentBeat[] = [
     { label: 'MAX-Q', t: summary.maxQ.t },
     ...summary.events
-      .filter((e) => BEAT_LABEL[e.type])
+      .filter((e) => BEAT_LABEL[e.type] && !e.silent)
       .map((e) => ({ label: BEAT_LABEL[e.type], t: e.t })),
   ].filter((b) => b.t > 0 && b.t <= duration);
   const hasSepNear = (t: number) =>

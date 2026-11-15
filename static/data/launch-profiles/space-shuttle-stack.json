@@ -2,6 +2,7 @@
   "id": "space-shuttle-stack",
   "name": "Space Shuttle",
   "source_tier": "flagship",
+  "liftoffThrustKN": 29250,
   "payloadKg": 19000,
   "fairingKg": 0,
   "fairingJettisonAltM": 320000,
@@ -26,9 +27,9 @@
     "count": 2,
     "wetKg": 590000,
     "dryKg": 91000,
-    "thrustSlKN": 12450,
-    "thrustVacKN": 13800,
-    "ispSlS": 237,
+    "thrustSlKN": 9628,
+    "thrustVacKN": 10660,
+    "ispSlS": 242,
     "ispVacS": 268,
     "chamberTempK": 3500
   },
@@ -42,6 +43,7 @@
       "ispSlS": 366,
       "ispVacS": 452,
       "engines": 3,
+      "separationDelayS": 18,
       "chamberTempK": 3600
     },
     {
@@ -58,6 +60,14 @@
     {
       "l": "NASA — Space Shuttle Basics / Launch Vehicle",
       "u": "https://www.nasa.gov/space-shuttle/"
+    },
+    {
+      "l": "Space Shuttle Solid Rocket Booster — 123 s burn, 500 t propellant, Isp 242 s SL / 268 s vac, SRB sep ~45 km (modelled at burn-average thrust: constant 4,057 kg/s so burnout lands at 123 s; the ~12 MN liftoff peak is liftoffThrustKN)",
+      "u": "https://en.wikipedia.org/wiki/Space_Shuttle_Solid_Rocket_Booster"
+    },
+    {
+      "l": "Space Shuttle — ET separated 18 s after MECO (MECO ~T+8:30; no SECO: the OMS burns come later)",
+      "u": "https://en.wikipedia.org/wiki/Space_Shuttle"
     }
   ]
 }

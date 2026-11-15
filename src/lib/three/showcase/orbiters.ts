@@ -638,6 +638,165 @@ export function buildLuna10(): THREE.Group {
   return g;
 }
 
+/**
+ * Mariner 2 (1962, no fleet-entry specs): the hexagonal Ranger-derived bus, two solar panels (one
+ * with its solar-pressure extension), the high-gain dish on an arm below the bus and the omni
+ * antenna on top of the pyramid instrument mast. Sources: NASA NSSDCA 1962-041A — hexagonal base
+ * 1.04 m across and 0.36 m thick, panels 183 x 76 cm and 152 x 76 cm plus a 31 cm extension
+ * (5.05 m span), overall height 3.66 m. The dish size and the mast layout are schematic.
+ */
+export const MARINER_2_HEIGHT_M = 3.66;
+export const MARINER_2_SPAN_M = 5.05;
+
+export function buildMariner2(): THREE.Group {
+  const g = new THREE.Group();
+  const m = mats();
+  const gold = mat(0xb08f45, 0.7, 0.4);
+  const louver = mat(0x7d8189, 0.7, 0.4);
+  const white = mat(0xe4e4e0, 0.3, 0.5);
+  const R = 1.04 / 2;
+  const apothem = R * Math.cos(Math.PI / 6);
+  const y0 = 0.4;
+  const top = y0 + 0.36;
+
+  // hexagonal bus, a flat face toward +x and -x where the panels hinge
+  const body = new THREE.Mesh(new THREE.CylinderGeometry(R, R, 0.36, 6), gold);
+  body.position.y = y0 + 0.18;
+  g.add(body);
+  for (const y of [y0, top]) {
+    const ring = new THREE.Mesh(new THREE.CylinderGeometry(R * 1.01, R * 1.01, 0.03, 6), louver);
+    ring.position.y = y;
+    g.add(ring);
+  }
+  // electronics-bay louvers on the six faces
+  for (let i = 0; i < 6; i++) {
+    const wrap = add(g, new THREE.Group());
+    wrap.rotation.y = Math.PI / 6 + (i * Math.PI) / 3;
+    for (let k = 0; k < 4; k++)
+      box(wrap, louver, R * 0.6, 0.02, 0.025, 0, y0 + 0.08 + k * 0.07, apothem + 0.01);
+  }
+
+  // two panels: 183 x 76 cm on +x; 152 x 76 cm plus the 31 cm solar-pressure extension on -x
+  const hinge = apothem + 0.25;
+  for (const [side, len, ext] of [
+    [1, 1.83, 0],
+    [-1, 1.52, 0.31],
+  ] as const) {
+    const wrap = add(g, new THREE.Group());
+    wrap.scale.x = side;
+    wrap.position.y = top - 0.04;
+    const flat = add(wrap, new THREE.Group());
+    flat.rotation.x = -Math.PI / 2;
+    box(flat, m.frame, 0.3, 0.05, 0.05, apothem + 0.12, 0, 0);
+    panelRow(flat, m, hinge, len, 0.76, 1, undefined, 0);
+    if (ext) vane(flat, m, hinge + len, ext, 0.76);
+    jets(flat, m.dark, hinge + len + ext + 0.04, 0, 0);
+  }
+
+  // high-gain dish on an arm below the bus, tilted toward the Earth (+z)
+  const hga = dishMesh(m, 0.4);
+  placeDish(g, hga, v3(0, 0.5, 0.62), 35);
+  strut(g, m.metal, v3(0, y0, 0.2), v3(0, 0.5, 0.62), 0.03);
+  const lo = new THREE.Box3().setFromObject(g).min.y;
+
+  // pyramid instrument mast: four legs from the top face, the omni antenna at the apex
+  const topY = lo + MARINER_2_HEIGHT_M;
+  const apexY = topY - 0.8;
+  const s = 0.32;
+  for (const [cx, cz] of [
+    [s, s],
+    [-s, s],
+    [s, -s],
+    [-s, -s],
+  ] as const)
+    strut(g, m.metal, v3(cx, top, cz), v3(0, apexY, 0), 0.015);
+  for (const f of [0.35, 0.7]) {
+    const r = s * (1 - f);
+    const y = top + (apexY - top) * f;
+    for (const [a, b] of [
+      [v3(r, y, r), v3(-r, y, r)],
+      [v3(-r, y, r), v3(-r, y, -r)],
+      [v3(-r, y, -r), v3(r, y, -r)],
+      [v3(r, y, -r), v3(r, y, r)],
+    ] as const)
+      strut(g, m.metal, a, b, 0.01);
+  }
+  // cosmic-ray, plasma and magnetometer sensors on the mast
+  box(g, m.dark, 0.16, 0.16, 0.16, 0.12, top + (apexY - top) * 0.3, 0.12);
+  box(g, m.white, 0.12, 0.12, 0.12, -0.1, top + (apexY - top) * 0.5, -0.1);
+  box(g, m.dark, 0.1, 0.1, 0.1, 0.08, top + (apexY - top) * 0.72, -0.06);
+  cyl(g, white, 0.06, 0.06, apexY, topY, 0, 0, 12);
+  // cold-gas nitrogen bottles and the attitude-control jets at the bus corners
+  for (const a of [Math.PI / 6, Math.PI / 6 + (2 * Math.PI) / 3, Math.PI / 6 + (4 * Math.PI) / 3])
+    cyl(g, m.metal, 0.07, 0.07, top, top + 0.16, Math.sin(a) * R * 0.5, Math.cos(a) * R * 0.5, 12);
+
+  const out = new THREE.Group();
+  g.position.y = -lo;
+  out.add(g);
+  return out;
+}
+
+/**
+ * Mars Reconnaissance Orbiter (2005): the bus, two 5.35 x 2.53 m solar arrays, the 3 m high-gain
+ * dish on its boom, the 1.6 m x 0.9 m HiRISE barrel on the nadir deck and the SHARAD 10 m dipole
+ * (two 5 m tubes) trailing behind. Sources: NASA NSSDCA 2005-029A (3 m dish, 10 m2 arrays),
+ * NASA MRO science-instruments page (HiRISE, SHARAD), Wikipedia for the 5.35 x 2.53 m array size
+ * (backlog row). The bus box and the boom layout are schematic. Stands nadir down.
+ */
+export const MRO_ARRAY_M = { len: 5.35, wid: 2.53 } as const;
+export const MRO_DISH_M = 3;
+export const MRO_SHARAD_M = 10;
+export const MRO_HIRISE_M = { len: 1.6, dia: 0.9 } as const;
+
+export function buildMro(): THREE.Group {
+  const g = buildBoxOrbiter({
+    bus: [1.8, 2.2, 1.6],
+    arrays: {
+      sides: [1, -1],
+      panels: 1,
+      panelLen: MRO_ARRAY_M.len,
+      panelWid: MRO_ARRAY_M.wid,
+      y: 1.1,
+      strut: 0.5,
+    },
+    dish: { d: MRO_DISH_M, vertex: [0, 2.75, 0], elev: 70, mount: [0, 2.2, 0] },
+  });
+  const m = mats();
+  // HiRISE: the 1.6 m barrel on the nadir deck, its aperture ring at the bottom, with CTX beside it
+  const hi = add(g, new THREE.Group());
+  hi.userData.hirise = true;
+  cyl(hi, m.white, MRO_HIRISE_M.dia / 2, MRO_HIRISE_M.dia / 2, -1.0, 0.6, 0.4, 0.1, 28);
+  cyl(
+    hi,
+    m.dark,
+    MRO_HIRISE_M.dia / 2 + 0.04,
+    MRO_HIRISE_M.dia / 2 + 0.04,
+    -1.0,
+    -0.94,
+    0.4,
+    0.1,
+    28,
+  );
+  cyl(hi, m.dark, 0.2, 0.2, -0.55, 0.1, -0.45, 0.3, 18);
+  box(g, m.dark, 0.45, 0.35, 0.4, -0.45, -0.2, -0.3);
+  // SHARAD: a 10 m dipole (two 5 m tubes) held behind the bus on a short mast
+  const sh = add(g, new THREE.Group());
+  sh.userData.sharad = true;
+  const sz = -(0.8 + 0.7);
+  strut(sh, m.metal, v3(0, 1.5, -0.8), v3(0, 1.5, sz), 0.04);
+  for (const sx of [-1, 1]) {
+    strut(sh, m.frame, v3(0, 1.5, sz), v3(sx * (MRO_SHARAD_M / 2), 1.5, sz), 0.03);
+    box(sh, m.dark, 0.08, 0.08, 0.08, sx * (MRO_SHARAD_M / 2), 1.5, sz);
+  }
+  // UHF (Electra) whip and thruster cluster on the zenith deck
+  cyl(g, m.metal, 0.02, 0.02, 2.2, 3.0, -0.6, -0.5, 8);
+  const lo = new THREE.Box3().setFromObject(g).min.y;
+  const out = new THREE.Group();
+  g.position.y = -lo;
+  out.add(g);
+  return out;
+}
+
 export const SHOWCASE: Record<string, ShowcaseModel> = {
   'mars-express': {
     build: () =>

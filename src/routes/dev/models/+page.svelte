@@ -71,7 +71,10 @@
     buildChandrayaan1,
     buildLunarProspector,
     buildLuna10,
+    buildMariner2,
+    buildMro,
   } from '$lib/three/showcase/orbiters';
+  import { buildNovaC } from '$lib/three/showcase/landers';
   import { buildSputnik1 } from '$lib/three/showcase/early-stations';
 
   type Entry = {
@@ -742,6 +745,9 @@
         ['lunar-prospector', 'Lunar Prospector', buildLunarProspector],
         ['luna-10', 'Luna 10', buildLuna10],
         ['sputnik-1', 'Sputnik 1', buildSputnik1],
+        ['mariner-2', 'Mariner 2', buildMariner2],
+        ['mro', 'Mars Reconnaissance Orbiter', buildMro],
+        ['nova-c', 'Nova-C (IM-1 Odysseus)', buildNovaC],
       ] as [string, string, () => THREE.Group][]
     ).map(([id, label, build]) => ({ id, label, family: 'probe', build })),
     { id: 'cast', label: 'Cartoon cast', family: 'lineup', flat: true, build: buildCastRow },

@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { buildNovaC, NOVA_C_HEIGHT_M } from '$lib/three/showcase/landers';
 
 /**
  * Per-mission 3D model builders for surface markers on /moon. Mirrors
@@ -712,6 +713,16 @@ function buildBeresheet(color: string): THREE.Group {
   return g;
 }
 
+/** Intuitive Machines Nova-C (IM-1 Odysseus) — the showcase model (4.3 m tall, hexagonal body,
+ *  six legs, one engine) at marker size, standing on its feet; the tip-over is not drawn. */
+function buildNovaCMarker(): THREE.Group {
+  const g = new THREE.Group();
+  const craft = buildNovaC();
+  craft.scale.setScalar(1.2 / NOVA_C_HEIGHT_M);
+  g.add(craft);
+  return g;
+}
+
 /** Blue Origin Blue Moon MK1 — a tall cargo lander: a central tank stack, a big
  *  spherical hydrogen tank, four long legs and a BE-7 engine. */
 function buildBlueMoon(color: string): THREE.Group {
@@ -776,6 +787,7 @@ const BUILDERS: Record<string, (color: string) => THREE.Group> = {
   slim: buildSLIM,
   // Commercial / future landers
   beresheet: buildBeresheet,
+  'im-1': buildNovaCMarker,
   'blue-moon-mk1': buildBlueMoon,
   artemis4: buildArtemis,
 };

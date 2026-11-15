@@ -98,7 +98,7 @@ The slice plan is dated 2026-11-11 and all statuses are as of that day, on branc
 
 | Slice | Change | Points | Decisions | Status | Surfaces | Will touch | Waits on |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| H | Content (research, alongside): add Kaguya and Chandrayaan-2, propose further candidates | MI5, PG7, FL3 | none yet | part 1 authored (2 missions, 2 orbiter fleet entries, Kaguya moon site, 2 program rows linked, 14 locales, thumbnails; `chandrayaan1` fleet link repaired); waits on image approval, see the plan's deferred list L53-L57 | missions, fleet, moon sites, programs data | none (data) | image approval, then the operator picks the next candidates |
+| H | Content (research, alongside): add Kaguya and Chandrayaan-2, propose further candidates | MI5, PG7, FL3 | none yet | landed (2 missions, 2 orbiter fleet entries, the Kaguya orbiter marker and the Vikram crash-site marker on /moon, 2 program rows linked, 14 locales, thumbnails, 11 approved images, 2 cards; `chandrayaan1` fleet link repaired); open items in the plan's deferred list L55-L57 and `docs/wip/2026-11-15-search-backlog.md` S3, S4, S8, S9 | missions, fleet, moon sites, programs data | none (data) | image approval, then the operator picks the next candidates |
 | I | README and docs refreshed with screenshots of the finished UI | GH1 | none yet | planned (last) | README, docs | README | the finished UI |
 
 ## Work outside the slice plan, in 0.9.9

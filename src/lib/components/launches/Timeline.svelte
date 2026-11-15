@@ -9,13 +9,23 @@
   import * as m from '$lib/paraglide/messages';
   import type { LaunchEntry } from '$lib/launches/manifest.js';
 
+  /**
+   * `mixed` is a list that holds both: a flown launch shows its date, one still to come its T-0.
+   * `flat` draws the rows with no month header (an alphabetical order has no months).
+   */
   let {
     months,
     mode,
+    flat = false,
   }: {
     months: Array<{ key: string; label: string; entries: LaunchEntry[] }>;
-    mode: 'upcoming' | 'historic';
+    mode: 'upcoming' | 'historic' | 'mixed';
+    flat?: boolean;
   } = $props();
+
+  const FLOWN = ['SUCCESS', 'FAILURE', 'PARTIAL'];
+  const modeFor = (e: LaunchEntry): 'upcoming' | 'historic' =>
+    mode === 'mixed' ? (FLOWN.includes(e.status.code) ? 'historic' : 'upcoming') : mode;
 </script>
 
 <section class="timeline" aria-label={m.launches_timeline_aria()}>
@@ -23,12 +33,14 @@
     <p class="empty">{m.launches_timeline_empty()}</p>
   {/if}
   {#each months as bucket (bucket.key)}
-    <header class="month-header" id="month-{bucket.key}">
-      <h2 class="month-title">{bucket.label}</h2>
-      <span class="month-count">{m.launches_month_count({ count: bucket.entries.length })}</span>
-    </header>
+    {#if !flat}
+      <header class="month-header" id="month-{bucket.key}">
+        <h2 class="month-title">{bucket.label}</h2>
+        <span class="month-count">{m.launches_month_count({ count: bucket.entries.length })}</span>
+      </header>
+    {/if}
     {#each bucket.entries as entry (entry.id)}
-      <LaunchRow {entry} {mode} />
+      <LaunchRow {entry} mode={modeFor(entry)} />
     {/each}
   {/each}
 </section>

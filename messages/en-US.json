@@ -3744,5 +3744,7 @@
   "browse_view_list": "List",
   "programs_search_placeholder": "Search programs…",
   "programs_filter_kind": "KIND",
-  "programs_empty": "No programs match the current filters."
+  "programs_empty": "No programs match the current filters.",
+  "launches_search_placeholder": "Search launches…",
+  "launches_sort_soonest": "Soonest first"
 }

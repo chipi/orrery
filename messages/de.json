@@ -3744,5 +3744,7 @@
   "browse_view_list": "Liste",
   "programs_search_placeholder": "Programme durchsuchen…",
   "programs_filter_kind": "ART",
-  "programs_empty": "Keine Programme passen zu den aktuellen Filtern."
+  "programs_empty": "Keine Programme passen zu den aktuellen Filtern.",
+  "launches_search_placeholder": "Starts durchsuchen…",
+  "launches_sort_soonest": "Nächste zuerst"
 }

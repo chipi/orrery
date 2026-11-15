@@ -3744,5 +3744,7 @@
   "browse_view_list": "Список",
   "programs_search_placeholder": "Поиск программ…",
   "programs_filter_kind": "ТИП",
-  "programs_empty": "Нет программ, подходящих под текущие фильтры."
+  "programs_empty": "Нет программ, подходящих под текущие фильтры.",
+  "launches_search_placeholder": "Поиск запусков…",
+  "launches_sort_soonest": "Сначала ближайшие"
 }

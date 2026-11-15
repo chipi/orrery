@@ -3744,5 +3744,7 @@
   "browse_view_list": "Elenco",
   "programs_search_placeholder": "Cerca programmi…",
   "programs_filter_kind": "TIPO",
-  "programs_empty": "Nessun programma corrisponde ai filtri attuali."
+  "programs_empty": "Nessun programma corrisponde ai filtri attuali.",
+  "launches_search_placeholder": "Cerca lanci…",
+  "launches_sort_soonest": "Più vicini per primi"
 }

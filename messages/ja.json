@@ -3744,5 +3744,7 @@
   "browse_view_list": "一覧",
   "programs_search_placeholder": "プログラムを検索…",
   "programs_filter_kind": "種類",
-  "programs_empty": "現在の絞り込みに一致するプログラムはありません。"
+  "programs_empty": "現在の絞り込みに一致するプログラムはありません。",
+  "launches_search_placeholder": "打ち上げを検索…",
+  "launches_sort_soonest": "近い順"
 }

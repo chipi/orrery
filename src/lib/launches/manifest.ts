@@ -11,6 +11,7 @@
 import { base } from '$app/paths';
 import * as msg from '$lib/paraglide/messages';
 import { getLocale } from '$lib/paraglide/runtime';
+import type { YearIndex } from './year-index';
 
 export type Tier = 'T1' | 'T2' | 'T3' | 'T4';
 
@@ -91,6 +92,13 @@ export async function loadHistoricDecade(decade: string): Promise<Manifest> {
   return (await res.json()) as Manifest;
 }
 
+/** Launches per year (`launches-years.json`): the era strip's counts. An empty index when it is missing. */
+export async function loadYearIndex(): Promise<YearIndex> {
+  const res = await fetch(`${base}/data/launches-years.json`);
+  if (!res.ok) return { version: 1, years: {} };
+  return (await res.json()) as YearIndex;
+}
+
 export function decadeForYear(year: number): string {
   if (year < 1970) return '1957-1969';
   if (year < 1980) return '1970-1979';
@@ -151,10 +159,15 @@ function monthLabel(year: number, month: number): string {
     : short({ month: 'short', year: 'numeric' });
 }
 
-/** Group entries by YYYY-MM for the month strip / timeline rendering. */
+/**
+ * Group entries by YYYY-MM for the month strip / timeline rendering: the months and the launches
+ * inside a month run oldest first, or newest first with `dir = 'desc'`.
+ */
 export function groupByMonth(
   entries: LaunchEntry[],
+  dir: 'asc' | 'desc' = 'asc',
 ): Array<{ key: string; label: string; entries: LaunchEntry[] }> {
+  const sign = dir === 'asc' ? 1 : -1;
   const map = new Map<string, LaunchEntry[]>();
   for (const e of entries) {
     const dt = new Date(e.net);
@@ -164,12 +177,12 @@ export function groupByMonth(
     map.set(key, list);
   }
   const out: Array<{ key: string; label: string; entries: LaunchEntry[] }> = [];
-  for (const [key, list] of [...map.entries()].sort((a, b) => a[0].localeCompare(b[0]))) {
+  for (const [key, list] of [...map.entries()].sort((a, b) => sign * a[0].localeCompare(b[0]))) {
     const [y, m] = key.split('-');
     out.push({
       key,
       label: monthLabel(Number(y), Number(m)),
-      entries: list.sort((a, b) => a.net.localeCompare(b.net)),
+      entries: list.sort((a, b) => sign * a.net.localeCompare(b.net)),
     });
   }
   return out;

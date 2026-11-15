@@ -1,0 +1,1532 @@
+{
+  "version": 1,
+  "years": {
+    "1957": {
+      "n": 3,
+      "agencies": {
+        "MVS": 2,
+        "NRL": 1
+      }
+    },
+    "1958": {
+      "n": 28,
+      "agencies": {
+        "ABMA": 7,
+        "NOTS": 6,
+        "NRL": 6,
+        "MVS": 5,
+        "AFBMD": 4
+      }
+    },
+    "1959": {
+      "n": 25,
+      "agencies": {
+        "AFBMD": 13,
+        "ABMA": 4,
+        "MVS": 4,
+        "NRL": 4
+      }
+    },
+    "1960": {
+      "n": 38,
+      "agencies": {
+        "AFBMD": 23,
+        "RVSN": 9,
+        "GSFC": 3,
+        "MSFC": 2,
+        "LARCN": 1
+      }
+    },
+    "1961": {
+      "n": 50,
+      "agencies": {
+        "AFSSD": 23,
+        "RVSN": 9,
+        "AFBMD": 5,
+        "GSFC": 3,
+        "LARCN": 3,
+        "MSFC": 3,
+        "AFSSD/STGL": 2,
+        "MSFC/AFSSD": 2
+      }
+    },
+    "1962": {
+      "n": 80,
+      "agencies": {
+        "AFSSD": 39,
+        "RVSN": 22,
+        "GSFC": 9,
+        "MSFC/AFSSD": 5,
+        "AFSSD/STGL": 3,
+        "LARCN": 1,
+        "LERC/AFSSD": 1
+      }
+    },
+    "1963": {
+      "n": 69,
+      "agencies": {
+        "AFSSD": 35,
+        "RVSN": 24,
+        "GSFC": 7,
+        "AFSSD/STG": 1,
+        "LARCN": 1,
+        "LERC": 1
+      }
+    },
+    "1964": {
+      "n": 97,
+      "agencies": {
+        "AFSSD": 43,
+        "RVSN": 33,
+        "LERC/AFSSD": 7,
+        "GSFC": 5,
+        "LARCN": 3,
+        "MSFC": 3,
+        "LERC": 2,
+        "AFSSD/MSC": 1
+      }
+    },
+    "1965": {
+      "n": 120,
+      "agencies": {
+        "RVSN": 48,
+        "AFSSD": 40,
+        "GSFC": 8,
+        "AFSSD/MSC": 6,
+        "LERC/AFSSD": 4,
+        "S4300": 4,
+        "LARCN": 3,
+        "MSFC": 3,
+        "LERC": 2,
+        "CNES": 1,
+        "MSC/AFSSD": 1
+      }
+    },
+    "1966": {
+      "n": 124,
+      "agencies": {
+        "RVSN": 44,
+        "AFSSD": 42,
+        "GSFC": 8,
+        "LERC/AFSSD": 7,
+        "MSC/AFSSD": 6,
+        "AFSSD/MSC": 5,
+        "LERC": 4,
+        "S4300": 3,
+        "ISAS": 2,
+        "CNES": 1,
+        "LARCN": 1,
+        "MSFC": 1
+      }
+    },
+    "1967": {
+      "n": 139,
+      "agencies": {
+        "RVSN": 74,
+        "AFSSD": 19,
+        "SAMSO": 13,
+        "GSFC": 12,
+        "LERC": 4,
+        "LERC/AFSSD": 4,
+        "10ADS": 3,
+        "LERC/SAMSO": 3,
+        "CNES": 2,
+        "CRA": 1,
+        "ISAS": 1,
+        "MICOM/WRE": 1,
+        "MSFC": 1,
+        "S4300": 1
+      }
+    },
+    "1968": {
+      "n": 127,
+      "agencies": {
+        "RVSN": 79,
+        "SAMSO": 27,
+        "GSFC": 8,
+        "MSFC": 4,
+        "LERC": 3,
+        "10ADS": 2,
+        "LERC/SAMSO": 2,
+        "ELDO": 1,
+        "LARCN": 1
+      }
+    },
+    "1969": {
+      "n": 127,
+      "agencies": {
+        "RVSN": 82,
+        "SAMSO": 20,
+        "GSFC": 11,
+        "MSFC": 4,
+        "LERC": 3,
+        "LERC/SAMSO": 2,
+        "MSC": 2,
+        "10ADS": 1,
+        "ELDO": 1,
+        "ISAS": 1
+      }
+    },
+    "1970": {
+      "n": 125,
+      "agencies": {
+        "RVSN": 87,
+        "SAMSO": 15,
+        "GSFC": 7,
+        "10ADS": 2,
+        "CNES": 2,
+        "ISAS": 2,
+        "LERC/SAMSO": 2,
+        "CALT": 1,
+        "CRA": 1,
+        "ELDO": 1,
+        "LARCN": 1,
+        "LERC": 1,
+        "MSFC": 1,
+        "NPOL": 1,
+        "RAE": 1
+      }
+    },
+    "1971": {
+      "n": 134,
+      "agencies": {
+        "RVSN": 91,
+        "SAMSO": 17,
+        "GSFC": 5,
+        "LERC": 4,
+        "10ADS": 3,
+        "CNES": 2,
+        "CRA": 2,
+        "ISAS": 2,
+        "LARCN": 2,
+        "MSC": 2,
+        "MSFC": 2,
+        "ELDO": 1,
+        "RAE": 1
+      }
+    },
+    "1972": {
+      "n": 115,
+      "agencies": {
+        "RVSN": 79,
+        "SAMSO": 13,
+        "GSFC": 7,
+        "LERC": 4,
+        "10ADS": 2,
+        "AFSC": 2,
+        "MSC": 2,
+        "MSFC": 2,
+        "CRA": 1,
+        "ISAS": 1,
+        "LARCN": 1,
+        "NPOL": 1
+      }
+    },
+    "1973": {
+      "n": 116,
+      "agencies": {
+        "RVSN": 90,
+        "SAMSO": 10,
+        "GSFC": 6,
+        "MSFC": 4,
+        "LERC": 3,
+        "10ADS": 1,
+        "CNES": 1,
+        "SAST": 1
+      }
+    },
+    "1974": {
+      "n": 112,
+      "agencies": {
+        "RVSN": 85,
+        "GSFC": 7,
+        "SAMSO": 6,
+        "AFSC": 4,
+        "10ADS": 2,
+        "CRA": 2,
+        "LERC/SAMSO": 2,
+        "CALT": 1,
+        "ISAS": 1,
+        "LERC": 1,
+        "SAST": 1
+      }
+    },
+    "1975": {
+      "n": 130,
+      "agencies": {
+        "RVSN": 93,
+        "GSFC": 12,
+        "SAMSO": 7,
+        "CNES": 3,
+        "LERC": 3,
+        "AFSC": 2,
+        "LERC/SAMSO": 2,
+        "SAST": 2,
+        "10ADS": 1,
+        "CALT": 1,
+        "CRA": 1,
+        "ISAS": 1,
+        "MSFC": 1,
+        "NASDA": 1
+      }
+    },
+    "1976": {
+      "n": 131,
+      "agencies": {
+        "RVSN": 100,
+        "GSFC": 9,
+        "SAMSO": 9,
+        "LERC": 3,
+        "10ADS": 2,
+        "SAST": 2,
+        "AFSC": 1,
+        "CALT": 1,
+        "ISAS": 1,
+        "LERC/SAMSO": 1,
+        "NASDA": 1,
+        "NPOL": 1
+      }
+    },
+    "1977": {
+      "n": 130,
+      "agencies": {
+        "RVSN": 102,
+        "GSFC": 10,
+        "SAMSO": 9,
+        "LERC": 3,
+        "LERC/SAMSO": 2,
+        "10ADS": 1,
+        "ISAS": 1,
+        "LARCN": 1,
+        "NASDA": 1
+      }
+    },
+    "1978": {
+      "n": 121,
+      "agencies": {
+        "RVSN": 91,
+        "GSFC": 10,
+        "SAMSO": 8,
+        "LERC": 7,
+        "ISAS": 2,
+        "10ADS": 1,
+        "LARCN": 1,
+        "NASDA": 1
+      }
+    },
+    "1979": {
+      "n": 110,
+      "agencies": {
+        "RVSN": 89,
+        "SAMSO": 5,
+        "GSFC": 3,
+        "LARCN": 3,
+        "AFSD": 2,
+        "LERC": 2,
+        "10ADS": 1,
+        "ESA": 1,
+        "ISAS": 1,
+        "ISRO": 1,
+        "NASDA": 1,
+        "SAST": 1
+      }
+    },
+    "1980": {
+      "n": 109,
+      "agencies": {
+        "RVSN": 90,
+        "AFSD": 8,
+        "GSFC": 3,
+        "LERC": 3,
+        "ESA": 1,
+        "ISAS": 1,
+        "ISRO": 1,
+        "NASDA": 1,
+        "S394I": 1
+      }
+    },
+    "1981": {
+      "n": 124,
+      "agencies": {
+        "RVSN": 100,
+        "AFSD": 5,
+        "GSFC": 5,
+        "LERC": 4,
+        "ESA": 2,
+        "JSC/MSFC": 2,
+        "NASDA": 2,
+        "ISAS": 1,
+        "ISRO": 1,
+        "LARCN": 1,
+        "SAST": 1
+      }
+    },
+    "1982": {
+      "n": 128,
+      "agencies": {
+        "UNKS": 108,
+        "GSFC": 7,
+        "AFSD": 5,
+        "JSC/MSFC": 3,
+        "LERC": 2,
+        "CALT": 1,
+        "ESA": 1,
+        "NASDA": 1
+      }
+    },
+    "1983": {
+      "n": 129,
+      "agencies": {
+        "UNKS": 100,
+        "AFSD": 8,
+        "GSFC": 8,
+        "JSC/MSFC": 4,
+        "ESA": 2,
+        "NASDA": 2,
+        "CALT": 1,
+        "ISAS": 1,
+        "ISRO": 1,
+        "LARCN": 1,
+        "LERC": 1
+      }
+    },
+    "1984": {
+      "n": 130,
+      "agencies": {
+        "UNKS": 97,
+        "AFSD": 11,
+        "JSC/MSFC": 6,
+        "GSFC": 4,
+        "AE": 3,
+        "CALT": 3,
+        "NASDA": 2,
+        "ESA": 1,
+        "ISAS": 1,
+        "LARCN": 1,
+        "LERC": 1
+      }
+    },
+    "1985": {
+      "n": 126,
+      "agencies": {
+        "UNKS": 100,
+        "JSC/MSFC": 10,
+        "AE": 4,
+        "AFSD": 4,
+        "LERC": 3,
+        "ISAS": 2,
+        "LARCN": 2,
+        "CALT": 1
+      }
+    },
+    "1986": {
+      "n": 110,
+      "agencies": {
+        "UNKS": 94,
+        "AE": 3,
+        "AFSD": 3,
+        "CALT": 2,
+        "GSFC": 2,
+        "JSC/MSFC": 2,
+        "NASDA": 2,
+        "LARCN": 1,
+        "LERC": 1
+      }
+    },
+    "1987": {
+      "n": 114,
+      "agencies": {
+        "UNKS": 97,
+        "AFSD": 5,
+        "AE": 2,
+        "CALT": 2,
+        "GSFC": 2,
+        "NASDA": 2,
+        "ISAS": 1,
+        "ISRO": 1,
+        "LARCN": 1,
+        "LERC": 1
+      }
+    },
+    "1988": {
+      "n": 121,
+      "agencies": {
+        "UNKS": 94,
+        "AE": 7,
+        "AFSD": 5,
+        "CALT": 3,
+        "LARCN": 3,
+        "JSC/MSFC": 2,
+        "NASDA": 2,
+        "CRA": 1,
+        "GSFC": 1,
+        "ISA": 1,
+        "ISRO": 1,
+        "SAST": 1
+      }
+    },
+    "1989": {
+      "n": 102,
+      "agencies": {
+        "UNKS": 75,
+        "AE": 7,
+        "MDSSC": 7,
+        "JSC/MSFC": 5,
+        "AFSSD2": 4,
+        "GSFC": 1,
+        "ISAS": 1,
+        "LERC": 1,
+        "NASDA": 1
+      }
+    },
+    "1990": {
+      "n": 121,
+      "agencies": {
+        "UNKS": 79,
+        "MDSSC": 11,
+        "AE": 6,
+        "JSC/MSFC": 6,
+        "CALT": 4,
+        "MMA": 3,
+        "AFSSD2": 2,
+        "NASDA": 2,
+        "AFSD": 1,
+        "AFSPC": 1,
+        "GDCLS": 1,
+        "ISA": 1,
+        "ISAS": 1,
+        "LARCN": 1,
+        "OSC": 1,
+        "SAST": 1
+      }
+    },
+    "1991": {
+      "n": 90,
+      "agencies": {
+        "UNKS": 61,
+        "AE": 8,
+        "JSC/MSFC": 6,
+        "MDSSC": 5,
+        "AFSPC": 2,
+        "AFSSD2": 2,
+        "GDCLS": 2,
+        "ISAS": 1,
+        "LARCN": 1,
+        "NASDA": 1,
+        "OSC": 1
+      }
+    },
+    "1992": {
+      "n": 97,
+      "agencies": {
+        "UNKSR": 29,
+        "VKSR": 26,
+        "MDSSC": 11,
+        "JSC/MSFC": 8,
+        "AE": 7,
+        "GDCLS": 5,
+        "CALT": 3,
+        "LARCN": 2,
+        "AFSMC": 1,
+        "AFSSD2": 1,
+        "ISRO": 1,
+        "MMA": 1,
+        "NASDA": 1,
+        "SAST": 1
+      }
+    },
+    "1993": {
+      "n": 85,
+      "agencies": {
+        "VKSR": 47,
+        "JSC/MSFC": 9,
+        "AE": 7,
+        "MDSSC": 7,
+        "GDCLS": 5,
+        "AFSMC": 2,
+        "OSC": 2,
+        "AFSPC": 1,
+        "CALT": 1,
+        "ISAS": 1,
+        "ISRO": 1,
+        "LARCN": 1,
+        "RVSNR": 1
+      }
+    },
+    "1994": {
+      "n": 94,
+      "agencies": {
+        "VKSR": 49,
+        "AE": 8,
+        "JSC/MSFC": 8,
+        "AFSMC": 5,
+        "CALT": 4,
+        "MMCLS": 4,
+        "MDSSC": 3,
+        "OSC": 3,
+        "AFSPC": 2,
+        "ISRO": 2,
+        "NASDA": 2,
+        "GDCLS": 1,
+        "LARCN": 1,
+        "OSCC": 1,
+        "SAST": 1
+      }
+    },
+    "1995": {
+      "n": 80,
+      "agencies": {
+        "VKSR": 32,
+        "AE": 11,
+        "LMA": 10,
+        "JSC/MSFC": 7,
+        "AFSMC": 3,
+        "CALT": 3,
+        "MDSSC": 3,
+        "MMCLS": 2,
+        "OSC": 2,
+        "4SLS/AFSMC": 1,
+        "AFSPC": 1,
+        "EER": 1,
+        "ISA": 1,
+        "ISAS": 1,
+        "NASDA": 1,
+        "RVSNR": 1
+      }
+    },
+    "1996": {
+      "n": 77,
+      "agencies": {
+        "VKSR": 25,
+        "AE": 10,
+        "MDSSC": 10,
+        "JSC/MSFC": 7,
+        "LMA": 7,
+        "OSC": 5,
+        "CALT": 3,
+        "3SLS/AFSMC": 2,
+        "4SLS/AFSMC": 2,
+        "ESA": 1,
+        "ILSK": 1,
+        "ISRO": 1,
+        "KHRU": 1,
+        "NASDA": 1,
+        "SAST": 1
+      }
+    },
+    "1997": {
+      "n": 89,
+      "agencies": {
+        "VKSR": 18,
+        "AE": 11,
+        "LMA": 9,
+        "JSC/MSFC": 8,
+        "BLS": 6,
+        "CALT": 6,
+        "MDSSC": 5,
+        "OSC": 5,
+        "RVSNR": 5,
+        "ILSK": 4,
+        "3SLS/AFSMC": 2,
+        "4SLS/AFSMC": 2,
+        "KHRU": 2,
+        "AEB": 1,
+        "ESA": 1,
+        "ISAS": 1,
+        "ISRO": 1,
+        "LERC/AFSMC": 1,
+        "NASDA": 1
+      }
+    },
+    "1998": {
+      "n": 82,
+      "agencies": {
+        "RVSNR": 20,
+        "BLS": 13,
+        "AE": 11,
+        "LMA": 7,
+        "CALT": 6,
+        "OSC": 6,
+        "JSC/MSFC": 5,
+        "ILSK": 3,
+        "3SLS/AFSMC": 2,
+        "OSCC": 2,
+        "4SLS/AFSMC": 1,
+        "ISA": 1,
+        "ISAS": 1,
+        "KCST": 1,
+        "KHRU": 1,
+        "NASDA": 1,
+        "VMFR": 1
+      }
+    },
+    "1999": {
+      "n": 78,
+      "agencies": {
+        "RVSNR": 14,
+        "BLS": 11,
+        "AE": 10,
+        "LMA": 8,
+        "STSM": 6,
+        "ILSK": 5,
+        "2SLS/AFSMC": 3,
+        "JSC/MSFC": 3,
+        "OSC": 3,
+        "3SLS/AFSMC": 2,
+        "CALT": 2,
+        "KHRU": 2,
+        "SAST": 2,
+        "SEALC": 2,
+        "AEB": 1,
+        "ISRO": 1,
+        "KTRAS/RVSNR": 1,
+        "NASDA": 1,
+        "OSCC": 1
+      }
+    },
+    "2000": {
+      "n": 85,
+      "agencies": {
+        "AE": 12,
+        "KHRU": 8,
+        "BLS": 7,
+        "RAKA": 7,
+        "RVSNR": 7,
+        "ILSK": 6,
+        "ILSL": 6,
+        "JSC/MSFC": 5,
+        "CALT": 4,
+        "STSM": 4,
+        "2SLS/AFSMC": 2,
+        "LMA": 2,
+        "OSC": 2,
+        "PU": 2,
+        "RSLP": 2,
+        "SEALC": 2,
+        "3SLS/AFSMC": 1,
+        "EUROK": 1,
+        "ISAS": 1,
+        "KTRAS/RVSNR": 1,
+        "OSCC": 1,
+        "SAST": 1,
+        "SEALP": 1
+      }
+    },
+    "2001": {
+      "n": 59,
+      "agencies": {
+        "AE": 8,
+        "KVR": 8,
+        "RAKA": 8,
+        "BLS": 7,
+        "JSC/MSFC": 6,
+        "ILSL": 4,
+        "KHRU": 4,
+        "3SLS/AFSMC": 2,
+        "ILSK": 2,
+        "ISRO": 2,
+        "SEALP": 2,
+        "2SLS/AFSMC": 1,
+        "CALT": 1,
+        "LMA": 1,
+        "NASDA": 1,
+        "OSCC": 1,
+        "PU": 1
+      }
+    },
+    "2002": {
+      "n": 65,
+      "agencies": {
+        "AE": 12,
+        "KVR": 7,
+        "RAKA": 6,
+        "ILSK": 5,
+        "ILSL": 5,
+        "JSC/MSFC": 5,
+        "BLS": 4,
+        "KHRU": 4,
+        "NASDA": 3,
+        "CALT": 2,
+        "EUROK": 2,
+        "SAST": 2,
+        "2SLS/AFSMC": 1,
+        "3SLS/AFSMC": 1,
+        "ISA": 1,
+        "ISRO": 1,
+        "KTRAS/RVSNR": 1,
+        "OSC": 1,
+        "PLA2AC": 1,
+        "SEALP": 1
+      }
+    },
+    "2003": {
+      "n": 62,
+      "agencies": {
+        "BLS": 9,
+        "KVR": 6,
+        "ILSL": 5,
+        "RAKA": 5,
+        "AE": 4,
+        "CALT": 4,
+        "KHRU": 4,
+        "OSC": 4,
+        "SEALP": 3,
+        "2SLS/AFSMC": 2,
+        "3SLS/AFSMC": 2,
+        "EUROK": 2,
+        "ISRO": 2,
+        "NASDA": 2,
+        "SAST": 2,
+        "STSM": 2,
+        "ILSK": 1,
+        "ISAS": 1,
+        "JSC/MSFC": 1,
+        "RVSNR": 1
+      }
+    },
+    "2004": {
+      "n": 55,
+      "agencies": {
+        "BLS": 8,
+        "KVR": 8,
+        "ILSL": 6,
+        "CALT": 5,
+        "FKA": 5,
+        "ILSK": 4,
+        "KHRU": 4,
+        "AE": 3,
+        "SAST": 3,
+        "SEALP": 3,
+        "3SLS/AFSMC": 1,
+        "ISA": 1,
+        "ISRO": 1,
+        "KTRAS/RVSNR": 1,
+        "OSCC": 1,
+        "RAKA": 1
+      }
+    },
+    "2005": {
+      "n": 56,
+      "agencies": {
+        "FKA": 7,
+        "KVR": 6,
+        "ILSK": 4,
+        "SEALP": 4,
+        "AE": 3,
+        "BLS": 3,
+        "CALT": 3,
+        "ILSL": 3,
+        "KHRU": 3,
+        "STSM": 3,
+        "ESA": 2,
+        "RSLP": 2,
+        "SAST": 2,
+        "2SLS/AFSMC": 1,
+        "3SLS/AFSMC": 1,
+        "EUROK": 1,
+        "ISAS": 1,
+        "ISRO": 1,
+        "JSC/MSFC": 1,
+        "OSC": 1,
+        "PLA2AC": 1,
+        "RSC": 1,
+        "RVSNR": 1,
+        "VMFR": 1
+      }
+    },
+    "2006": {
+      "n": 65,
+      "agencies": {
+        "BLS": 7,
+        "FKA": 6,
+        "KVR": 6,
+        "AE": 5,
+        "SEALP": 5,
+        "CALT": 4,
+        "ILSK": 4,
+        "JSC/MSFC": 3,
+        "ILSL": 2,
+        "ISAS": 2,
+        "KHRU": 2,
+        "MHI": 2,
+        "RSC": 2,
+        "RSLP": 2,
+        "SAST": 2,
+        "STSM": 2,
+        "EUROK": 1,
+        "ISRO": 1,
+        "KTRAS/RVSNR": 1,
+        "OSC": 1,
+        "PU": 1,
+        "RVSNR": 1,
+        "SPX": 1,
+        "ULAB": 1,
+        "VMFR": 1
+      }
+    },
+    "2007": {
+      "n": 68,
+      "agencies": {
+        "ULAB": 9,
+        "CALT": 7,
+        "FKA": 7,
+        "AE": 6,
+        "KVR": 6,
+        "ILSK": 4,
+        "ULAL": 4,
+        "ISRO": 3,
+        "JSC/MSFC": 3,
+        "KHRU": 3,
+        "KTRAS/RVSNR": 3,
+        "SAST": 3,
+        "STSM": 3,
+        "MHI": 2,
+        "ISA": 1,
+        "OSC": 1,
+        "RSLP": 1,
+        "SEALP": 1,
+        "SPX": 1
+      }
+    },
+    "2008": {
+      "n": 69,
+      "agencies": {
+        "KVR": 7,
+        "AE": 6,
+        "CALT": 6,
+        "FKA": 6,
+        "ILSK": 6,
+        "SAST": 5,
+        "SEALP": 5,
+        "ULAB": 5,
+        "JSC/MSFC": 4,
+        "KHRU": 4,
+        "ISRO": 3,
+        "KTRAS/RVSNR": 2,
+        "OSC": 2,
+        "SPX": 2,
+        "ULAL": 2,
+        "IRSA": 1,
+        "MHI": 1,
+        "SIS": 1,
+        "STSM": 1
+      }
+    },
+    "2009": {
+      "n": 78,
+      "agencies": {
+        "ULAB": 11,
+        "FKA": 10,
+        "AE": 7,
+        "ILSK": 7,
+        "KVR": 6,
+        "JSC/MSFC": 5,
+        "ULAL": 5,
+        "CALT": 4,
+        "KHRU": 3,
+        "SIS": 3,
+        "EUROK": 2,
+        "ISRO": 2,
+        "MHI": 2,
+        "SAST": 2,
+        "IRSA": 1,
+        "JAXA": 1,
+        "KARI": 1,
+        "KCST": 1,
+        "KTRAS/RVSNR": 1,
+        "OSCC": 1,
+        "RSLP": 1,
+        "SEALP": 1,
+        "SPX": 1
+      }
+    },
+    "2010": {
+      "n": 72,
+      "agencies": {
+        "FKA": 9,
+        "CALT": 8,
+        "ILSK": 8,
+        "SAST": 7,
+        "AE": 6,
+        "KVR": 5,
+        "KHRU": 4,
+        "ULAB": 4,
+        "ISRO": 3,
+        "JSC/MSFC": 3,
+        "KTRAS/RVSNR": 3,
+        "ULAL": 3,
+        "MHI": 2,
+        "RSLP": 2,
+        "SPX": 2,
+        "EUROK": 1,
+        "KARI": 1,
+        "STSM": 1
+      }
+    },
+    "2011": {
+      "n": 84,
+      "agencies": {
+        "CALT": 15,
+        "FKA": 9,
+        "AE": 7,
+        "ULAB": 6,
+        "ILSK": 5,
+        "KVR": 5,
+        "ULAL": 5,
+        "KHRU": 4,
+        "SAST": 4,
+        "ISRO": 3,
+        "JSC/MSFC": 3,
+        "KVR?": 2,
+        "MHI": 2,
+        "RSLP": 2,
+        "STSM": 2,
+        "VVKO": 2,
+        "ELUS": 1,
+        "IRSA": 1,
+        "JAXA": 1,
+        "KTRAS/RVSNR": 1,
+        "OSCC": 1,
+        "OSCC/RSLP": 1,
+        "RKA": 1,
+        "SIS/ELUS": 1
+      }
+    },
+    "2012": {
+      "n": 75,
+      "agencies": {
+        "CALT": 12,
+        "AE": 9,
+        "FKA": 9,
+        "ILSK": 8,
+        "SAST": 7,
+        "ULAL": 6,
+        "ULAB": 4,
+        "ELUS": 3,
+        "KHRU": 3,
+        "ISRO": 2,
+        "KCST": 2,
+        "SPX": 2,
+        "VVKO": 2,
+        "ESA": 1,
+        "JAXA": 1,
+        "KVR": 1,
+        "MHI": 1,
+        "OSC": 1,
+        "STSM": 1
+      }
+    },
+    "2013": {
+      "n": 81,
+      "agencies": {
+        "FKA": 10,
+        "SAST": 8,
+        "ULAL": 8,
+        "ILSK": 7,
+        "AE": 6,
+        "CALT": 6,
+        "ISRO": 3,
+        "KHRU": 3,
+        "KVR": 3,
+        "OSC": 3,
+        "SPX": 3,
+        "ULAB": 3,
+        "VVKO": 3,
+        "KTRAS/RVSNR": 2,
+        "MHI": 2,
+        "ELUS": 1,
+        "ESA/AE": 1,
+        "EUROK": 1,
+        "JAXA": 1,
+        "KARI": 1,
+        "OSCC": 1,
+        "PLA2AC": 1,
+        "RSLP": 1,
+        "RVSNR": 1,
+        "SIS/ELUS": 1,
+        "STSM": 1
+      }
+    },
+    "2014": {
+      "n": 91,
+      "agencies": {
+        "FKA": 12,
+        "AE": 10,
+        "SAST": 9,
+        "ULAL": 9,
+        "CALT": 6,
+        "KHRU": 6,
+        "SPX": 6,
+        "VVKO": 6,
+        "ULAB": 5,
+        "ISRO": 4,
+        "MHI": 4,
+        "ILSK": 3,
+        "OSC": 3,
+        "KTRAS/RVSNR": 2,
+        "KVR": 2,
+        "ELUS": 1,
+        "ESA/AE": 1,
+        "PLA2AC": 1,
+        "RVSNR": 1
+      }
+    },
+    "2015": {
+      "n": 87,
+      "agencies": {
+        "CALT": 10,
+        "AE": 9,
+        "FKA": 9,
+        "SAST": 9,
+        "ULAL": 9,
+        "SPX": 7,
+        "ISRO": 5,
+        "VVKO": 5,
+        "ILSK": 4,
+        "KHRU": 4,
+        "MHI": 4,
+        "ESA/AE": 3,
+        "ULAB": 3,
+        "KVR": 2,
+        "AFORS/SAND": 1,
+        "IRSA": 1,
+        "KTRAS/RVSNR": 1,
+        "KVR?": 1
+      }
+    },
+    "2016": {
+      "n": 86,
+      "agencies": {
+        "CALT": 12,
+        "AE": 11,
+        "SAST": 10,
+        "FKA": 9,
+        "SPX": 9,
+        "ULAL": 8,
+        "ISRO": 7,
+        "ULAB": 4,
+        "MHI": 3,
+        "VVKO": 3,
+        "ILSK": 2,
+        "OSC": 2,
+        "EUROK": 1,
+        "ISA": 1,
+        "JAXA": 1,
+        "KHRU": 1,
+        "KVR": 1,
+        "NADA": 1
+      }
+    },
+    "2017": {
+      "n": 90,
+      "agencies": {
+        "SPX": 18,
+        "AE": 11,
+        "CALT": 10,
+        "FKA": 9,
+        "MHI": 6,
+        "SAST": 6,
+        "ULAL": 6,
+        "ISRO": 5,
+        "VVKO": 4,
+        "ILSK": 3,
+        "OATKC": 2,
+        "ULAB": 2,
+        "CASIC4A": 1,
+        "EUROK": 1,
+        "EXPACE": 1,
+        "JAXA": 1,
+        "KHRU": 1,
+        "KVR?": 1,
+        "OSC": 1,
+        "RLABN": 1
+      }
+    },
+    "2018": {
+      "n": 114,
+      "agencies": {
+        "CALT": 23,
+        "SPX": 21,
+        "SAST": 14,
+        "AE": 11,
+        "FKA": 9,
+        "ISRO": 7,
+        "ULAL": 5,
+        "MHI": 4,
+        "VVKO": 4,
+        "RLABN": 3,
+        "ULAB": 3,
+        "JAXA": 2,
+        "KHRU": 2,
+        "EUROK": 1,
+        "EXPACE": 1,
+        "KVR": 1,
+        "LANDSP": 1,
+        "NGIS": 1,
+        "OSC": 1
+      }
+    },
+    "2019": {
+      "n": 103,
+      "agencies": {
+        "CALT": 17,
+        "SPX": 13,
+        "AE": 9,
+        "FKA": 9,
+        "SAST": 9,
+        "ISRO": 6,
+        "RLABN": 6,
+        "VVKO": 6,
+        "EXPACE": 5,
+        "KHRU": 4,
+        "IRSA": 3,
+        "ULAB": 3,
+        "KVR": 2,
+        "NGIS": 2,
+        "ULAL": 2,
+        "CZHJ": 1,
+        "ILSK": 1,
+        "JAXA": 1,
+        "LYK": 1,
+        "MHI": 1,
+        "NGISD": 1,
+        "XJRY": 1
+      }
+    },
+    "2020": {
+      "n": 114,
+      "agencies": {
+        "SPX": 25,
+        "CALT": 19,
+        "SAST": 14,
+        "AE": 7,
+        "RLABN": 7,
+        "VVKO": 6,
+        "ULAL": 5,
+        "EXPACE": 4,
+        "FKA": 4,
+        "MHI": 4,
+        "NGIS": 3,
+        "STSM": 3,
+        "ASTRV": 2,
+        "ISRO": 2,
+        "KHRU": 2,
+        "CAST": 1,
+        "IRGC": 1,
+        "IRSA": 1,
+        "ISA": 1,
+        "ULAB": 1,
+        "VORB": 1,
+        "XIDO": 1
+      }
+    },
+    "2021": {
+      "n": 145,
+      "agencies": {
+        "SPX": 31,
+        "CALT": 24,
+        "SAST": 24,
+        "FKA": 8,
+        "STSM": 8,
+        "AE": 7,
+        "RLABN": 6,
+        "EXPACE": 4,
+        "ULAL": 4,
+        "VVKO": 4,
+        "KHRU": 3,
+        "ASTRV": 2,
+        "IRSA": 2,
+        "MHI": 2,
+        "NGIS": 2,
+        "VORB": 2,
+        "XJRY": 2,
+        "FFLY": 1,
+        "GKLS": 1,
+        "ISRO": 1,
+        "ISRO/NSIL": 1,
+        "JAXA": 1,
+        "KARI": 1,
+        "NGISC": 1,
+        "NGISD": 1,
+        "ULAB": 1,
+        "XIDO": 1
+      }
+    },
+    "2022": {
+      "n": 185,
+      "agencies": {
+        "SPX": 60,
+        "SAST": 31,
+        "CALT": 21,
+        "VVKO": 12,
+        "RLABN": 9,
+        "ULAL": 7,
+        "FKA": 6,
+        "AE": 5,
+        "EXPACE": 5,
+        "ASTRV": 3,
+        "KHRU": 3,
+        "ISRO": 2,
+        "ISRO/NSIL": 2,
+        "JRG": 2,
+        "NGIS": 2,
+        "VORB": 2,
+        "XIDO": 2,
+        "CZHJ": 1,
+        "ESA": 1,
+        "FFLY": 1,
+        "JAXA": 1,
+        "KARI": 1,
+        "LANDSP": 1,
+        "MSFC": 1,
+        "NSIL": 1,
+        "ULAB": 1,
+        "XJRY": 1,
+        "ZKYT": 1
+      }
+    },
+    "2023": {
+      "n": 219,
+      "agencies": {
+        "SPX": 96,
+        "SAST": 25,
+        "CALT": 20,
+        "FKA": 10,
+        "XIDO": 8,
+        "VVKO": 7,
+        "RLABN": 6,
+        "EXPACE": 5,
+        "JRG": 4,
+        "AE": 3,
+        "ISRO": 3,
+        "ISRO/NSIL": 3,
+        "FFLY": 2,
+        "KCST": 2,
+        "KHRU": 2,
+        "LANDSP": 2,
+        "MHI": 2,
+        "RLABU": 2,
+        "ULAL": 2,
+        "XJRY": 2,
+        "ABLSS": 1,
+        "ADD": 1,
+        "CZHJ": 1,
+        "IRGC": 1,
+        "ISA": 1,
+        "JAXA": 1,
+        "KARI": 1,
+        "NGIS": 1,
+        "NSIL": 1,
+        "RELSP": 1,
+        "TIANB": 1,
+        "ULAB": 1,
+        "ZKYT": 1
+      }
+    },
+    "2024": {
+      "n": 261,
+      "agencies": {
+        "SPX": 138,
+        "CALT": 24,
+        "SAST": 18,
+        "RLABN": 13,
+        "FKA": 11,
+        "CGWIC/SAST": 5,
+        "EXPACE": 5,
+        "ISRO": 5,
+        "XIDO": 5,
+        "VVKO": 4,
+        "ZKYT": 4,
+        "JAXA": 3,
+        "AE": 2,
+        "CGWIC/CALT": 2,
+        "CZHJ": 2,
+        "KHRU": 2,
+        "MHI": 2,
+        "SPONE": 2,
+        "ULAD": 2,
+        "ULAL": 2,
+        "CAST": 1,
+        "DFK": 1,
+        "ESA": 1,
+        "FFLY": 1,
+        "IRGC": 1,
+        "JRG": 1,
+        "LANDSP": 1,
+        "RLABU": 1,
+        "ULAB": 1,
+        "XJRY": 1
+      }
+    },
+    "2025": {
+      "n": 322,
+      "agencies": {
+        "SPX": 167,
+        "CALT": 38,
+        "SAST": 26,
+        "RLABN": 17,
+        "FKA": 9,
+        "AE": 7,
+        "XIDO": 6,
+        "ULAL": 5,
+        "ZKYT": 5,
+        "CZHJ": 4,
+        "EXPACE": 4,
+        "VVKO": 4,
+        "JAXA": 3,
+        "KHRU": 3,
+        "LANDSP": 3,
+        "BLOR": 2,
+        "CGWIC/SAST": 2,
+        "ISRO": 2,
+        "ISRO/NSIL": 2,
+        "CGWIC/CALT": 1,
+        "DFK": 1,
+        "INNOSP": 1,
+        "ISA": 1,
+        "ISAR": 1,
+        "KARI": 1,
+        "MHI": 1,
+        "NGIS": 1,
+        "NSIL": 1,
+        "RLABU": 1,
+        "ULAD": 1,
+        "XJRY": 1,
+        "ZHSH/SAST": 1
+      }
+    },
+    "2026": {
+      "n": 331,
+      "agencies": {
+        "SPX": 86,
+        "SpaceX": 52,
+        "United Launch Alliance": 21,
+        "Rocket Lab": 20,
+        "SAST": 14,
+        "Indian Space Research Organization": 13,
+        "CALT": 11,
+        "RLABN": 9,
+        "China Aerospace Science and Technology Corporation": 8,
+        "Mitsubishi Heavy Industries": 6,
+        "Arianespace": 5,
+        "Isar Aerospace": 5,
+        "AE": 4,
+        "Firefly Aerospace": 4,
+        "FKA": 4,
+        "ULAL": 4,
+        "Avio S.p.A": 3,
+        "CGWIC/SAST": 3,
+        "CZHJ": 3,
+        "VVKO": 3,
+        "ZHSH/CALT": 3,
+        "ZKYT": 3,
+        "BLOR": 2,
+        "Blue Origin": 2,
+        "European Space Agency": 2,
+        "EXPACE": 2,
+        "KHRU": 2,
+        "LANDSP": 2,
+        "Relativity Space": 2,
+        "Russian Federal Space Agency (ROSCOSMOS)": 2,
+        "Unknown": 2,
+        "Agency for Defense Development": 1,
+        "Astra Space": 1,
+        "CAS Space": 1,
+        "CGWIC/CALT": 1,
+        "Deep Blue Aerospace": 1,
+        "FFLY": 1,
+        "Galactic Energy": 1,
+        "i-Space": 1,
+        "Innospace": 1,
+        "ISRO": 1,
+        "Japan Aerospace Exploration Agency": 1,
+        "JAXA": 1,
+        "Korea Aerospace Research Institute": 1,
+        "LandSpace": 1,
+        "Latitude": 1,
+        "MSFC": 1,
+        "NGIS": 1,
+        "NGISD": 1,
+        "Orbex": 1,
+        "Orienspace Technology": 1,
+        "Payload Aerospace S.L.": 1,
+        "Rocket Factory Augsburg": 1,
+        "Russian Space Forces": 1,
+        "SPONE": 1,
+        "Stoke Space": 1,
+        "ULAD": 1,
+        "UNKS": 1,
+        "XIDO": 1,
+        "ZHSH/SAST": 1
+      }
+    },
+    "2027": {
+      "n": 101,
+      "agencies": {
+        "SpaceX": 46,
+        "Avio S.p.A": 9,
+        "Rocket Lab": 8,
+        "Arianespace": 6,
+        "United Launch Alliance": 6,
+        "Indian Space Research Organization": 5,
+        "Firefly Aerospace": 3,
+        "Blue Origin": 2,
+        "China Aerospace Science and Technology Corporation": 2,
+        "MaiaSpace": 2,
+        "Gilmour Space Technologies": 1,
+        "HyImpulse": 1,
+        "Interstellar Technologies": 1,
+        "Isar Aerospace": 1,
+        "Korea Aerospace Research Institute": 1,
+        "National Aeronautics and Space Administration": 1,
+        "National Center of Space Research": 1,
+        "Northrop Grumman Space Systems": 1,
+        "Payload Aerospace S.L.": 1,
+        "Russian Federal Space Agency (ROSCOSMOS)": 1,
+        "Skyrora": 1,
+        "Virgin Galactic": 1
+      }
+    },
+    "2028": {
+      "n": 36,
+      "agencies": {
+        "SpaceX": 9,
+        "Avio S.p.A": 7,
+        "United Launch Alliance": 5,
+        "Isar Aerospace": 3,
+        "Rocket Lab": 3,
+        "Mitsubishi Heavy Industries": 2,
+        "National Aeronautics and Space Administration": 2,
+        "Relativity Space": 2,
+        "Arianespace": 1,
+        "Japan Aerospace Exploration Agency": 1,
+        "Russian Federal Space Agency (ROSCOSMOS)": 1
+      }
+    },
+    "2029": {
+      "n": 44,
+      "agencies": {
+        "SpaceX": 19,
+        "Rocket Lab": 12,
+        "Arianespace": 5,
+        "United Launch Alliance": 4,
+        "Avio S.p.A": 3,
+        "China Aerospace Science and Technology Corporation": 1
+      }
+    },
+    "2030": {
+      "n": 3,
+      "agencies": {
+        "Avio S.p.A": 2,
+        "National Aeronautics and Space Administration": 1
+      }
+    },
+    "2031": {
+      "n": 2,
+      "agencies": {
+        "National Aeronautics and Space Administration": 1,
+        "SpaceX": 1
+      }
+    }
+  }
+}

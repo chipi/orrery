@@ -250,6 +250,15 @@ describe('groupByMonth', () => {
     expect(groups.map((g) => g.key)).toEqual(['2026-01', '2026-03', '2026-05']);
   });
 
+  it("dir 'desc' runs the months and the launches inside a month newest first", () => {
+    const a = makeEntry({ id: 'a', net: '2026-03-05T00:00:00.000Z' });
+    const b = makeEntry({ id: 'b', net: '2026-03-20T00:00:00.000Z' });
+    const c = makeEntry({ id: 'c', net: '2026-05-01T00:00:00.000Z' });
+    const groups = groupByMonth([a, b, c], 'desc');
+    expect(groups.map((g) => g.key)).toEqual(['2026-05', '2026-03']);
+    expect(groups[1].entries.map((e) => e.id)).toEqual(['b', 'a']);
+  });
+
   it('label format uses short year: "Jan \'26"', () => {
     const e = makeEntry({ net: '2026-01-01T00:00:00.000Z' });
     const groups = groupByMonth([e]);

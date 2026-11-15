@@ -166,6 +166,17 @@ describe('focus frames', () => {
     expect(focusFrameFor('moon', 1)).toEqual({ r: 8, minR: 1.5, maxR: 50 });
   });
 
+  it('no planet clips at its zoom floor: the near side stays beyond the heliocentric near plane (L36)', () => {
+    // The heliocentric camera's near plane is 0.5 (explore-scene-host: crossInToSolarSystem). The
+    // floor 1.5 radii leaves 0.5 radii between the camera and the surface, so a planet clips only
+    // under 1 unit of radius: the smallest (Pluto, 1.5) keeps 0.75, 1.5 times the plane.
+    const HELIO_NEAR = 0.5;
+    for (const p of PLANETS) {
+      const gap = focusFrameFor('planet', p.size3).minR - p.size3;
+      expect(gap, `${p.id}: surface distance at the floor`).toBeGreaterThan(HELIO_NEAR);
+    }
+  });
+
   it('a small body lands at 14 radii: 25 units for a dwarf, 17 for a comet', () => {
     expect(focusFrameFor('small-body', 1.8).r).toBeCloseTo(25.2, 6);
     expect(focusFrameFor('small-body', 1.2).r).toBeCloseTo(16.8, 6);

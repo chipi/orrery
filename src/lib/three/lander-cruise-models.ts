@@ -807,8 +807,6 @@ const BUILDERS: Record<string, () => THREE.Group> = {
   chandrayaan3: buildChandrayaan3Cruise,
   slim: buildSlimCruise,
   beresheet: buildBeresheetCruise,
-  // IM-1 (Nova-C): no Nova-C model exists; the Beresheet cruise craft is a stand-in until one is built.
-  'im-1': buildBeresheetCruise,
   'blue-moon-mk1': buildBlueMoonCruise,
   // Small-body sample / rendezvous craft
   hayabusa1: buildHayabusa1Cruise,

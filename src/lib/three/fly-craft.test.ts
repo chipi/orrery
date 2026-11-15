@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import * as THREE from 'three';
-import { FLY_CRAFT_MISSIONS, flyCraft, preloadFlyCraft } from './fly-craft';
+import { FLY_CRAFT_MISSIONS, flyCraft, flyCraftSource, preloadFlyCraft } from './fly-craft';
 import { buildPayload } from './ascent-scene';
 
 describe('fly-craft', () => {
@@ -19,6 +19,20 @@ describe('fly-craft', () => {
   it('missions without a showcase craft resolve false', async () => {
     expect(await preloadFlyCraft('curiosity')).toBe(false);
     expect(flyCraft('curiosity')).toBeNull();
+  });
+});
+
+describe('fly-craft: IM-1, MRO and Mariner 2 fly their own models', () => {
+  it('maps each to its dedicated builder and loads a craft of the published size', async () => {
+    expect(flyCraftSource('im-1')).toEqual(['landers', 'buildNovaC']);
+    expect(flyCraftSource('mro')).toEqual(['orbiters', 'buildMro']);
+    expect(flyCraftSource('mariner2')).toEqual(['orbiters', 'buildMariner2']);
+    for (const id of ['im-1', 'mro', 'mariner2']) expect(await preloadFlyCraft(id), id).toBe(true);
+    const h = (id: string) =>
+      new THREE.Box3().setFromObject(flyCraft(id)!).getSize(new THREE.Vector3());
+    expect(h('im-1').y).toBeCloseTo(4.3, 0);
+    expect(h('mariner2').y).toBeCloseTo(3.66, 0);
+    expect(h('mro').x).toBeGreaterThan(10);
   });
 });
 

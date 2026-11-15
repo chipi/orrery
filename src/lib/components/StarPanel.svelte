@@ -16,8 +16,8 @@
   import StarPortrait from './StarPortrait.svelte';
   import ConstellationFinder from './ConstellationFinder.svelte';
   import { constellationName, isZodiacConstellation } from '$lib/universe/iau-constellations';
-  import { isScienceLensOn, toggleScienceLens } from '$lib/science-lens';
-  import { setLayer } from '$lib/science-layers';
+  import { showConstellationLines } from '$lib/universe/constellation-actions';
+  import { figureVertices } from '$lib/universe/sky-finder';
   import { bvToRgb, bvToKelvin } from '$lib/universe/bv-to-rgb';
   import { colorNameForKelvin } from '$lib/universe/anonymous-star';
   import {
@@ -107,8 +107,7 @@
       if (con) {
         void getConstellationLines()
           .then((all) => {
-            if (star && star.id === forId)
-              conVertices = all.find((c) => c.con === con)?.vertices ?? null;
+            if (star && star.id === forId) conVertices = figureVertices(all, con);
           })
           .catch(dataLoadFailed);
       }
@@ -118,12 +117,6 @@
   let gallery = $derived(star?.photo ? [star.photo.src, ...extraImages] : extraImages);
   let hero = $derived(star?.photo ? { src: star.photo.src, full: star.photo.src } : null);
   let zodiac = $derived(isZodiacConstellation(star?.con));
-
-  // The Constellations layer draws only with the science lens on, so the action turns both on.
-  function showConstellationLines() {
-    if (!isScienceLensOn()) toggleScienceLens();
-    setLayer('constellations', true);
-  }
 
   let facts = $derived.by((): Fact[] => {
     if (!star) return [];

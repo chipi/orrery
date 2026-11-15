@@ -15,6 +15,8 @@ export interface FinderProjection {
   segments: Array<[Vec2, Vec2]>;
   /** The highlighted star's normalized 2D point, or null. */
   star: Vec2 | null;
+  /** The optional hop point's normalized 2D point; null when none was given or it falls outside the fitted box. */
+  hop: Vec2 | null;
 }
 
 function normalize([x, y, z]: Vec3): Vec3 {
@@ -30,18 +32,22 @@ function dot(a: Vec3, b: Vec3): number {
 
 /**
  * Project a constellation's flat vertex list (every 6 numbers = one segment) into
- * a normalized 2D sky chart. `star` (if given) is projected onto the same plane.
+ * a normalized 2D sky chart. `star` (if given) is projected onto the same plane and
+ * takes part in the fit. `hop` (a second point, e.g. the nearest named star) is projected
+ * the same way but never changes the fit: it is returned only when it falls inside the
+ * unit box the figure and `star` already fill, else null.
  */
 export function projectConstellation(
   vertices: number[],
   star?: Vec3 | null,
   pad = 0.08,
+  hop?: Vec3 | null,
 ): FinderProjection {
   const dirs: Vec3[] = [];
   for (let i = 0; i + 2 < vertices.length; i += 3) {
     dirs.push(normalize([vertices[i], vertices[i + 1], vertices[i + 2]]));
   }
-  if (dirs.length === 0) return { segments: [], star: null };
+  if (dirs.length === 0) return { segments: [], star: null, hop: null };
 
   // Mean viewing direction → tangent-plane basis (u, v).
   const sum = dirs.reduce<Vec3>((a, d) => [a[0] + d[0], a[1] + d[1], a[2] + d[2]], [0, 0, 0]);
@@ -80,5 +86,10 @@ export function projectConstellation(
   for (let i = 0; i + 1 < flat2d.length; i += 2) {
     segments.push([map(flat2d[i]), map(flat2d[i + 1])]);
   }
-  return { segments, star: starRaw ? map(starRaw) : null };
+  let hopPoint: Vec2 | null = null;
+  if (hop && dot(normalize(hop), w) > 0) {
+    const h = map(project(hop));
+    if (h[0] >= 0 && h[0] <= 1 && h[1] >= 0 && h[1] <= 1) hopPoint = h;
+  }
+  return { segments, star: starRaw ? map(starRaw) : null, hop: hopPoint };
 }

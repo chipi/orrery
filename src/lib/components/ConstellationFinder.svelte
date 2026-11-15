@@ -7,8 +7,17 @@
 <script lang="ts">
   import { projectConstellation } from '$lib/universe/constellation-finder';
 
-  type Props = { vertices: number[]; starXYZ: [number, number, number]; label?: string };
-  let { vertices, starXYZ, label }: Props = $props();
+  type Props = {
+    vertices: number[];
+    /** The marked point in the HYG frame (a deep-sky object goes through `raDecToHyg`, never its scene x, y, z). */
+    starXYZ: [number, number, number];
+    label?: string;
+    /** 'star' (default): a glow and a dot. 'object': a ring, for a deep-sky object. */
+    marker?: 'star' | 'object';
+    /** An optional nearest named star, HYG frame, drawn as a dot with its name and a hairline to the marked point. */
+    hop?: { xyz: [number, number, number]; label: string };
+  };
+  let { vertices, starXYZ, label, marker = 'star', hop }: Props = $props();
 
   let canvas: HTMLCanvasElement | undefined = $state();
   const W = 360;
@@ -23,7 +32,7 @@
     ctx.fillStyle = '#04060d';
     ctx.fillRect(0, 0, W, H);
 
-    const { segments, star } = projectConstellation(vertices, starXYZ);
+    const { segments, star, hop: hopPt } = projectConstellation(vertices, starXYZ, 0.08, hop?.xyz);
     if (segments.length === 0) return;
 
     // Fit the [0,1] projection into the canvas with a margin, keeping aspect by
@@ -55,8 +64,42 @@
       }
     }
 
-    // The star — a bright accent-blue marker with a glow.
-    if (star) {
+    // The hop star: a dot, its name and a hairline to the marked point.
+    if (hopPt && star && hop) {
+      const hx = px(hopPt[0]);
+      const hy = py(hopPt[1]);
+      ctx.strokeStyle = 'rgba(200, 220, 255, 0.4)';
+      ctx.lineWidth = 1;
+      ctx.setLineDash([3, 3]);
+      ctx.beginPath();
+      ctx.moveTo(hx, hy);
+      ctx.lineTo(px(star[0]), py(star[1]));
+      ctx.stroke();
+      ctx.setLineDash([]);
+      ctx.fillStyle = '#ffffff';
+      ctx.beginPath();
+      ctx.arc(hx, hy, 2.6, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.font = '10px "Space Mono", monospace';
+      ctx.fillStyle = 'rgba(255,255,255,0.75)';
+      const w = ctx.measureText(hop.label).width;
+      ctx.fillText(hop.label, hx + 6 + w > W - 4 ? hx - 6 - w : hx + 6, hy - 6);
+    }
+
+    if (star && marker === 'object') {
+      const sx = px(star[0]);
+      const sy = py(star[1]);
+      ctx.strokeStyle = '#c7d4ff';
+      ctx.lineWidth = 1.6;
+      ctx.beginPath();
+      ctx.arc(sx, sy, 7, 0, Math.PI * 2);
+      ctx.stroke();
+      ctx.fillStyle = 'rgba(199, 212, 255, 0.85)';
+      ctx.beginPath();
+      ctx.arc(sx, sy, 1.6, 0, Math.PI * 2);
+      ctx.fill();
+    } else if (star) {
+      // The star — a bright accent-blue marker with a glow.
       const sx = px(star[0]);
       const sy = py(star[1]);
       const glow = ctx.createRadialGradient(sx, sy, 0, sx, sy, 12);
@@ -83,6 +126,8 @@
     void vertices;
     void starXYZ;
     void label;
+    void marker;
+    void hop;
     draw();
   });
 </script>

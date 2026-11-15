@@ -89,9 +89,8 @@
     "/mars?site=mariner9": "Mariner 9 en orbite martienne"
   },
   "roster": {
-    "Mariner 2 reaches Venus": {
-      "note": "en décembre 1962, Mariner 2 est devenu le premier vaisseau à atteindre une autre planète, découvrant Vénus non comme une jumelle tropicale de la Terre mais comme une fournaise à des centaines de degrés",
-      "name": "Mariner 2 atteint Vénus"
+    "mission:mariner2": {
+      "note": "en décembre 1962, Mariner 2 est devenu le premier vaisseau à atteindre une autre planète, découvrant Vénus non comme une jumelle tropicale de la Terre mais comme une fournaise à des centaines de degrés"
     },
     "fleet:mariner-4": {
       "note": "a survolé Mars en 1965 et renvoyé les premières photographies d'une autre planète prises de près — un monde cratérisé, apparemment mort, qui a mis fin aux vieux rêves de canaux et de vie martiens"

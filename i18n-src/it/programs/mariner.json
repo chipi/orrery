@@ -89,9 +89,8 @@
     "/mars?site=mariner9": "Mariner 9 in orbita marziana"
   },
   "roster": {
-    "Mariner 2 reaches Venus": {
-      "note": "nel dicembre 1962 Mariner 2 diventò la prima sonda a raggiungere un altro pianeta, scoprendo che Venere non era un gemello tropicale della Terra ma una fornace a centinaia di gradi",
-      "name": "Mariner 2 raggiunge Venere"
+    "mission:mariner2": {
+      "note": "nel dicembre 1962 Mariner 2 diventò la prima sonda a raggiungere un altro pianeta, scoprendo che Venere non era un gemello tropicale della Terra ma una fornace a centinaia di gradi"
     },
     "fleet:mariner-4": {
       "note": "sorvolò Marte nel 1965 e restituì le prime fotografie di un altro pianeta scattate da vicino — un mondo butterato di crateri, apparentemente morto, che pose fine ai vecchi sogni di canali e vita marziani"

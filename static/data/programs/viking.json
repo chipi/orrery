@@ -26,13 +26,10 @@
       "note": "on 20 July 1976 the Viking 1 lander touched down in Chryse Planitia and returned the first clear pictures from the surface of Mars"
     },
     {
-      "name": "Viking 2",
+      "linked_id": "viking2",
+      "ref": "mission",
       "year": 1976,
-      "note": "a second orbiter-and-lander pair, set down thousands of kilometres away in Utopia Planitia six weeks later",
-      "link": {
-        "ref": "fleet",
-        "id": "viking2-lander"
-      }
+      "note": "a second orbiter-and-lander pair, set down thousands of kilometres away in Utopia Planitia six weeks later"
     },
     {
       "name": "The biology experiments",

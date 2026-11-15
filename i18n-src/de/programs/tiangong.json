@@ -113,9 +113,8 @@
     "mission:shenzhou-1": {
       "note": "erster unbemannter Shenzhou-Testflug — der Beweis, dass China seine eigene Besatzungskapsel fliegen konnte"
     },
-    "Shenzhou 5": {
-      "note": "Yang Liwei wird der erste chinesische Astronaut im Orbit — China reiht sich neben USA und UdSSR als dritte Nation ein, die einen Menschen mit eigener Rakete startet",
-      "name": "Shenzhou 5"
+    "mission:shenzhou-5": {
+      "note": "Yang Liwei wird der erste chinesische Astronaut im Orbit — China reiht sich neben USA und UdSSR als dritte Nation ein, die einen Menschen mit eigener Rakete startet"
     },
     "Shenzhou 9 → Tiangong-1": {
       "note": "erste bemannte Kopplung mit einer chinesischen Station; Liu Yang wird Chinas erste Frau im All",

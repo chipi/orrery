@@ -1,0 +1,23 @@
+{
+  "name": "Shenzhou 5",
+  "vehicle": "Long March 2F",
+  "payload": "7840 kg; ein Astronaut (Yang Liwei)",
+  "delta_v": "~9,4 km/s (LEO)",
+  "type": "BEMANNTER ORBITALFLUG · GEFLOGEN",
+  "first": "Chinas erster bemannter Raumflug, geflogen von Yang Liwei",
+  "description": "Shenzhou 5 war Chinas erster bemannter Raumflug. Yang Liwei, ein 38-jähriger Oberstleutnant und ehemaliger Kampfpilot, startete allein auf einer Long March 2F von Jiuquan am 2003-10-15 um 09:00 Uhr chinesischer Normalzeit. Er umrundete die Erde 14-mal in einer Höhe von etwa 332 bis 336 km und landete am 2003-10-16 (chinesische Normalzeit) in der Inneren Mongolei, nach 21 Stunden, 22 Minuten und 45 Sekunden Flugzeit.",
+  "events": [
+    {
+      "met": 0,
+      "label": "START",
+      "note": "Long March 2F von Jiuquan um 09:00 Uhr chinesischer Normalzeit, 2003-10-15.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.8908,
+      "label": "LANDUNG",
+      "note": "Landet am 2003-10-16 (chinesische Normalzeit) in der Inneren Mongolei nach 14 Umläufen und 21 h 22 min 45 s.",
+      "type": "nominal"
+    }
+  ]
+}

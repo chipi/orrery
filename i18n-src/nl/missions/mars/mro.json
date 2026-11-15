@@ -1,0 +1,24 @@
+{
+  "name": "Mars Reconnaissance Orbiter",
+  "vehicle": "Atlas V 401",
+  "payload": "2180 kg getankt (1031 kg operationeel)",
+  "delta_v": "~3,6 km/s (schatting)",
+  "type": "ORBITER · ACTIEF",
+  "first": "Een Marsorbiter waarvan de HiRISE-camera voorwerpen ter grootte van een eettafel kan onderscheiden",
+  "description": "De Mars Reconnaissance Orbiter werd op 2005-08-12 gelanceerd met een Atlas V 401 en bereikte Mars op 2006-03-10, toen een brandperiode van 1641 seconden hem in een polaire invangbaan van 400 × 35.000 km bracht. Ongeveer zes maanden aerobraking brachten hem omlaag naar zijn werkbaan van 255 × 320 km, die zonsynchroon en polair is. De wetenschappelijke waarnemingen begonnen in november 2006, na de zonneconjunctie. Hij draagt zes instrumenten, waaronder de HiRISE-camera, de CRISM-spectrometer, de SHARAD-radar en de Context Camera. NASA bouwde hem om te zoeken naar bewijs dat water lange tijd op het oppervlak aanwezig bleef: hij heeft mineraalafzettingen gevonden die in water zijn gevormd, mogelijke oeroude kustlijnen en gelaagde afzettingen. Hij dient ook als relais voor andere Marsmissies en is nog steeds actief.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCERING",
+      "note": "Atlas V 401 vanaf Cape Canaveral, 2005-08-12.",
+      "type": "nominal"
+    },
+    {
+      "met": 210,
+      "label": "MARSBAANINSERTIE",
+      "note": "Brandperiode van 1641 seconden op 2006-03-10 naar een baan van 400 × 35.000 km.",
+      "type": "nominal"
+    }
+  ],
+  "vehicle_stage": "bovenste trap Centaur"
+}

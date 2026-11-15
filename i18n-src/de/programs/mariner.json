@@ -89,9 +89,8 @@
     "/mars?site=mariner9": "Mariner 9 in der Marsumlaufbahn"
   },
   "roster": {
-    "Mariner 2 reaches Venus": {
-      "note": "im Dezember 1962 wurde Mariner 2 das erste Raumfahrzeug, das einen anderen Planeten erreichte, und fand die Venus nicht als tropischen Zwilling der Erde, sondern als einen Glutofen mit Hunderten Grad Hitze",
-      "name": "Mariner 2 erreicht die Venus"
+    "mission:mariner2": {
+      "note": "im Dezember 1962 wurde Mariner 2 das erste Raumfahrzeug, das einen anderen Planeten erreichte, und fand die Venus nicht als tropischen Zwilling der Erde, sondern als einen Glutofen mit Hunderten Grad Hitze"
     },
     "fleet:mariner-4": {
       "note": "flog 1965 am Mars vorbei und lieferte die ersten Fotos eines anderen Planeten aus der Nähe — eine kraterübersäte, offenbar tote Welt, die die alten Träume von Marskanälen und Leben beendete"

@@ -776,7 +776,9 @@ const BUILDERS: Record<string, () => THREE.Group> = {
   opportunity: buildOpportunityCruise,
   schiaparelli: buildSchiaparelliCruise,
   viking1: buildViking1Cruise,
+  viking2: buildViking1Cruise,
   mars3: buildMars3Cruise,
+  mars2: buildMars3Cruise,
   tianwen1: buildTianwen1Cruise,
   // Moon batch
   apollo11: buildApolloCruise,
@@ -805,6 +807,8 @@ const BUILDERS: Record<string, () => THREE.Group> = {
   chandrayaan3: buildChandrayaan3Cruise,
   slim: buildSlimCruise,
   beresheet: buildBeresheetCruise,
+  // IM-1 (Nova-C): no Nova-C model exists; the Beresheet cruise craft is a stand-in until one is built.
+  'im-1': buildBeresheetCruise,
   'blue-moon-mk1': buildBlueMoonCruise,
   // Small-body sample / rendezvous craft
   hayabusa1: buildHayabusa1Cruise,

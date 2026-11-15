@@ -13,7 +13,8 @@
   "hero": "fleet/mariner-4/01",
   "roster": [
     {
-      "name": "Mariner 2 reaches Venus",
+      "linked_id": "mariner2",
+      "ref": "mission",
       "year": 1962,
       "note": "in December 1962 Mariner 2 became the first spacecraft to reach another planet, finding Venus not a tropical twin of Earth but a furnace hundreds of degrees hot"
     },

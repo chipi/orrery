@@ -22,6 +22,7 @@ const FLY_CRAFT: Record<string, readonly [string, string]> = {
   'soyuz-1': ['soyuz-progress', 'soyuz-7k-ok'],
   'soyuz-11': ['soyuz-progress', 'soyuz-7k-ok'],
   'shenzhou-1': ['station-freighters', 'shenzhou'],
+  'shenzhou-5': ['station-freighters', 'shenzhou'],
   'sts-1': ['winged', 'columbia'],
   'sts-107': ['winged', 'columbia'],
   'sts-51-l': ['winged', 'challenger'],
@@ -48,6 +49,12 @@ const FLY_CRAFT: Record<string, readonly [string, string]> = {
   // MMX: box bus with two wings, like Mars Express.
   mmx: ['orbiters', 'mars-express'],
   mariner4: ['orbiters', 'mariner-4'],
+  // Mariner 2 (1962) flew a different bus from Mariner 4; the Mariner 4 shape (a bus with solar panels and a dish) is the stand-in.
+  mariner2: ['orbiters', 'mariner-4'],
+  // MRO: a box bus with two wings and a dish, like Mars Express.
+  mro: ['orbiters', 'mars-express'],
+  // Chang'e 2 was built on the same DFH-3 bus as Chang'e 1.
+  change2: ['orbiters', 'buildChange1'],
   mariner9: ['orbiters', 'mariner-9'],
   mariner10: ['orbiters', 'buildMariner10'],
   lro: ['orbiters', 'lro'],

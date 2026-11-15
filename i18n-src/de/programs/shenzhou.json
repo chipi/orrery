@@ -96,9 +96,8 @@
     "mission:shenzhou-1": {
       "note": "erster unbemannter Testflug — die Kapsel fliegt und kehrt zurück, bevor jemand mit ihr fliegt"
     },
-    "Shenzhou 5": {
-      "note": "Yang Liwei umkreist die Erde 14-mal — der erste chinesische Astronaut im All, und China wird die dritte Nation, die mit eigener Rakete einen Menschen startet, 42 Jahre nach Gagarin",
-      "name": "Shenzhou 5"
+    "mission:shenzhou-5": {
+      "note": "Yang Liwei umkreist die Erde 14-mal — der erste chinesische Astronaut im All, und China wird die dritte Nation, die mit eigener Rakete einen Menschen startet, 42 Jahre nach Gagarin"
     },
     "Shenzhou 7": {
       "note": "Zhai Zhigang absolviert Chinas ersten Weltraumspaziergang — das dritte Land überhaupt mit einem Außenbordeinsatz",

@@ -2088,6 +2088,12 @@
       "cover": false
     },
     {
+      "title": "Chang'e 2",
+      "file": "/images/missions/thumbnails/change2.webp",
+      "route": "/missions?id=change2",
+      "cover": false
+    },
+    {
       "title": "Chang'e 3",
       "file": "/images/missions/thumbnails/change3.webp",
       "route": "/missions?id=change3",
@@ -2238,6 +2244,12 @@
       "cover": false
     },
     {
+      "title": "IM-1",
+      "file": "/images/missions/thumbnails/im-1.webp",
+      "route": "/missions?id=im-1",
+      "cover": false
+    },
+    {
       "title": "InSight",
       "file": "/images/missions/thumbnails/insight.webp",
       "route": "/missions?id=insight",
@@ -2346,6 +2358,12 @@
       "cover": false
     },
     {
+      "title": "Mariner 2",
+      "file": "/images/missions/thumbnails/mariner2.webp",
+      "route": "/missions?id=mariner2",
+      "cover": false
+    },
+    {
       "title": "Mariner 4",
       "file": "/images/missions/thumbnails/mariner4.webp",
       "route": "/missions?id=mariner4",
@@ -2370,6 +2388,12 @@
       "cover": false
     },
     {
+      "title": "Mars 2",
+      "file": "/images/missions/thumbnails/mars2.webp",
+      "route": "/missions?id=mars2",
+      "cover": false
+    },
+    {
       "title": "Mars 3",
       "file": "/images/missions/thumbnails/mars3.webp",
       "route": "/missions?id=mars3",
@@ -2391,6 +2415,12 @@
       "title": "MMX",
       "file": "/images/missions/thumbnails/mmx.webp",
       "route": "/missions?id=mmx",
+      "cover": false
+    },
+    {
+      "title": "Mars Reconnaissance Orbiter",
+      "file": "/images/missions/thumbnails/mro.webp",
+      "route": "/missions?id=mro",
       "cover": false
     },
     {
@@ -2517,6 +2547,12 @@
       "title": "Shenzhou 1",
       "file": "/images/missions/thumbnails/shenzhou-1.webp",
       "route": "/missions?id=shenzhou-1",
+      "cover": false
+    },
+    {
+      "title": "Shenzhou 5",
+      "file": "/images/missions/thumbnails/shenzhou-5.webp",
+      "route": "/missions?id=shenzhou-5",
       "cover": false
     },
     {
@@ -2649,6 +2685,12 @@
       "title": "Viking 1",
       "file": "/images/missions/thumbnails/viking1.webp",
       "route": "/missions?id=viking1",
+      "cover": false
+    },
+    {
+      "title": "Viking 2",
+      "file": "/images/missions/thumbnails/viking2.webp",
+      "route": "/missions?id=viking2",
       "cover": false
     },
     {
@@ -5117,7 +5159,7 @@
     "exploded_art": 76,
     "landing_art": 39,
     "blueprint_art": 18,
-    "mission_trajectories": 132,
+    "mission_trajectories": 139,
     "site_illustrations": 16,
     "lab_illustrations": 25,
     "diagrams_science": 117,

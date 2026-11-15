@@ -64,7 +64,7 @@ export function nationChipFor(site: Pick<SurfaceSite, 'nation' | 'agency'>): {
   if (agency === 'IAF') return { label: `${countryLabel('Israel')} · IAF`, color: '#1d4ed8' };
   if (agency === 'WRE') return { label: `${countryLabel('Australia')} · WRE`, color: '#E0B400' };
   if (agency === 'AEB') return { label: `${countryLabel('Brazil')} · AEB`, color: '#C2185B' };
-  if (nation === 'USA' || agency === 'NASA')
+  if (nation === 'USA' || agency === 'NASA' || agency === 'Intuitive Machines')
     return { label: `${countryLabel('USA')} · NASA`, color: '#3b82f6' };
   if (nation === 'USSR' || nation === 'Russia' || agency === 'ROSCOSMOS')
     return { label: `${countryLabel('USSR')} · Roscosmos`, color: '#ef4444' };

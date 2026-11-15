@@ -96,9 +96,8 @@
     "mission:shenzhou-1": {
       "note": "primo volo di prova senza equipaggio — la capsula vola e rientra prima che qualcuno la usi"
     },
-    "Shenzhou 5": {
-      "note": "Yang Liwei compie 14 orbite intorno alla Terra — il primo astronauta cinese nello spazio, e la Cina diventa la terza nazione a lanciare un essere umano con un proprio razzo, 42 anni dopo Gagarin",
-      "name": "Shenzhou 5"
+    "mission:shenzhou-5": {
+      "note": "Yang Liwei compie 14 orbite intorno alla Terra — il primo astronauta cinese nello spazio, e la Cina diventa la terza nazione a lanciare un essere umano con un proprio razzo, 42 anni dopo Gagarin"
     },
     "Shenzhou 7": {
       "note": "Zhai Zhigang compie la prima passeggiata spaziale della Cina — il terzo paese in assoluto a effettuare un'attività extraveicolare",

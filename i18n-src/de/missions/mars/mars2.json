@@ -1,0 +1,30 @@
+{
+  "name": "Mars 2",
+  "vehicle": "Proton-K / D",
+  "payload": "4650 kg (Orbiter + Lander zusammen)",
+  "delta_v": "~5,5 km/s (Schätzwert)",
+  "type": "ORBITER BETRIEBSFÄHIG · LANDER VERLOREN",
+  "first": "Ein sowjetischer Orbiter mit Lander, 1971 zum Mars gestartet: Der Lander stürzte ab, der Orbiter arbeitete",
+  "description": "Mars 2 war eine sowjetische Raumsonde aus Orbiter und Lander. Sie startete am 1971-05-19 auf einer Proton-K mit Blok-D-Oberstufe, neun Tage vor ihrer Zwillingssonde Mars 3. Das Abstiegsmodul trennte sich etwa 4,5 Stunden vor der Ankunft ab. Sein Abstiegssystem fiel aus, der Fallschirm öffnete sich nicht, und der Lander stürzte auf dem Mars ab. Der Orbiter schwenkte am 1971-11-27 in eine Marsumlaufbahn mit 18 Stunden Umlaufzeit ein und sendete Daten bis etwa August 1972.",
+  "events": [
+    {
+      "met": 0,
+      "label": "START",
+      "note": "Proton-K mit Blok-D-Oberstufe von Baikonur, 1971-05-19.",
+      "type": "nominal"
+    },
+    {
+      "met": 192,
+      "label": "ORBITER-MOI",
+      "note": "Der Orbiter tritt am 1971-11-27 in die Marsumlaufbahn ein.",
+      "type": "nominal"
+    },
+    {
+      "met": 192.1,
+      "label": "LANDER VERLOREN",
+      "note": "Das Abstiegsmodul trennte sich etwa 4,5 Stunden vor der Ankunft ab; der Lander stürzte ab.",
+      "type": "warning"
+    }
+  ],
+  "vehicle_stage": "Blok-D-Oberstufe"
+}

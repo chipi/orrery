@@ -97,9 +97,8 @@
     "mission:viking1": {
       "note": "1976년 7월 20일 Viking 1 착륙선이 Chryse Planitia에 내려앉아 화성 표면에서 보낸 최초의 선명한 사진을 전송했다"
     },
-    "Viking 2": {
-      "note": "두 번째 궤도선과 착륙선 한 쌍으로, 6주 뒤 수천 킬로미터 떨어진 Utopia Planitia에 내려앉았다",
-      "name": "Viking 2"
+    "mission:viking2": {
+      "note": "두 번째 궤도선과 착륙선 한 쌍으로, 6주 뒤 수천 킬로미터 떨어진 Utopia Planitia에 내려앉았다"
     },
     "The biology experiments": {
       "note": "각 착륙선은 화성 토양에서 생명을 감지하도록 설계된 실험을 수행했다. 결과는 모호했고, 오늘날까지 논쟁이 이어진다",

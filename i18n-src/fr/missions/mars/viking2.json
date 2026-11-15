@@ -1,0 +1,30 @@
+{
+  "name": "Viking 2",
+  "vehicle": "Titan IIIE-Centaur",
+  "payload": "3530 kg (orbiteur + atterrisseur)",
+  "delta_v": "~4,5 km/s (estimation)",
+  "type": "ORBITEUR · ATTERRISSEUR · RÉALISÉE",
+  "first": "Le second atterrisseur Viking, posé à Utopia Planitia à environ 6460 km du site d'atterrissage de Viking 1",
+  "description": "Viking 2 était la seconde des deux sondes Viking de la NASA, chacune un orbiteur portant un atterrisseur. Lancée le 1975-09-09 sur un Titan IIIE-Centaur, elle est entrée en orbite autour de Mars le 1976-08-07 et a posé son atterrisseur à Utopia Planitia le 1976-09-03, à environ 6460 km du site d'atterrissage de Viking 1. L'atterrisseur a fonctionné jusqu'au 1980-04-12. L'orbiteur a renvoyé près de 16 000 images en 706 orbites avant d'être arrêté le 1978-07-24 à la suite d'une fuite dans son système de propulsion. Ses expériences sur le sol, comme celles de Viking 1, n'ont pas permis de conclure à l'existence, présente ou passée, de la vie sur Mars. Les deux orbiteurs ont renvoyé ensemble 52 663 images et cartographié environ 97 % de la planète ; les deux atterrisseurs ont renvoyé 4500 photographies.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCEMENT",
+      "note": "Titan IIIE-Centaur depuis Cap Canaveral, 1975-09-09.",
+      "type": "nominal"
+    },
+    {
+      "met": 333,
+      "label": "INSERTION EN ORBITE MARTIENNE",
+      "note": "L'orbiteur est capturé le 1976-08-07 sur une orbite de 1500 × 33 000 km.",
+      "type": "nominal"
+    },
+    {
+      "met": 360,
+      "label": "CONTACT",
+      "note": "L'atterrisseur se pose à Utopia Planitia le 1976-09-03.",
+      "type": "nominal"
+    }
+  ],
+  "vehicle_stage": "étage supérieur Centaur"
+}

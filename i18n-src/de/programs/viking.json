@@ -97,9 +97,8 @@
     "mission:viking1": {
       "note": "am 20. Juli 1976 setzte der Lander Viking 1 in Chryse Planitia auf und lieferte die ersten klaren Bilder von der Marsoberfläche"
     },
-    "Viking 2": {
-      "note": "ein zweites Orbiter-Lander-Paar, sechs Wochen später Tausende Kilometer entfernt in Utopia Planitia abgesetzt",
-      "name": "Viking 2"
+    "mission:viking2": {
+      "note": "ein zweites Orbiter-Lander-Paar, sechs Wochen später Tausende Kilometer entfernt in Utopia Planitia abgesetzt"
     },
     "The biology experiments": {
       "note": "jeder Lander führte Experimente zum Nachweis von Leben im Marsboden durch; die Ergebnisse waren uneindeutig und werden bis heute diskutiert",

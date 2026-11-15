@@ -1,0 +1,24 @@
+{
+  "name": "Mariner 2",
+  "vehicle": "Atlas-Agena B",
+  "payload": "202,8 kg",
+  "delta_v": "~3,5 km/s (estimación)",
+  "type": "SOBREVUELO · REALIZADA",
+  "first": "La NASA la considera la primera misión científica planetaria con éxito de la historia",
+  "description": "Mariner 2 se lanzó el 1962-08-27 en un Atlas-Agena B y pasó junto a Venus el 1962-12-14, con una máxima aproximación de 34 773 km. Su magnetómetro, sus detectores de partículas, su espectrómetro de plasma solar, su detector de polvo y dos radiómetros dieron una primera visión de Venus: la NASA informa de temperaturas de 216 °C en el lado nocturno hasta 237 °C en el lado diurno, una densa capa de nubes entre 56 y 80 km de altura, una rotación retrógrada lenta, una atmósfera formada sobre todo por dióxido de carbono y ningún campo magnético apreciable. En el espacio mostró que el viento solar fluye de manera continua. El contacto terminó el 1963-01-03. La NASA dice que conserva el honor de ser la primera misión científica planetaria con éxito de la historia.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANZAMIENTO",
+      "note": "Atlas-Agena B desde Cabo Cañaveral, 1962-08-27.",
+      "type": "nominal"
+    },
+    {
+      "met": 109,
+      "label": "SOBREVUELO DE VENUS",
+      "note": "Máxima aproximación de 34 773 km el 1962-12-14.",
+      "type": "nominal"
+    }
+  ],
+  "vehicle_stage": "etapa superior Agena B"
+}

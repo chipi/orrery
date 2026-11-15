@@ -1,0 +1,40 @@
+{
+  "id": "viking-2",
+  "name": "Viking 2",
+  "category": "lander",
+  "agency": "NASA",
+  "country": "USA",
+  "manufacturer": "Martin Marietta (lander); NASA JPL (orbiter)",
+  "first_flight": "1975-09-09",
+  "status": "RETIRED",
+  "era": "1969-1981",
+  "epoch": "first-stations",
+  "best_known_for": "Second Viking: an orbiter and a lander that worked in Utopia Planitia until 1980",
+  "credit": "The second Viking spacecraft, an orbiter carrying a lander. Launched 1975-09-09 on a Titan IIIE-Centaur; orbit insertion 1976-08-07; lander touchdown 1976-09-03 in Utopia Planitia. Orbiter ended 1978-07-24 per the NASA mission page (NSSDCA gives 25 July), lander 1980-04-12 (science.nasa.gov/mission/viking-2/, NSSDCA 1975-083A). Manufacturers from Wikipedia.",
+  "links": [
+    {
+      "l": "Viking 2 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Viking_2",
+      "t": "intro"
+    },
+    {
+      "l": "Viking 2 (NASA)",
+      "u": "https://science.nasa.gov/mission/viking-2/",
+      "t": "core"
+    },
+    {
+      "l": "Viking 2 (NSSDCA)",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1975-083A",
+      "t": "deep"
+    }
+  ],
+  "linked_missions": [
+    "viking2"
+  ],
+  "linked_sites": [
+    {
+      "type": "mars",
+      "site_id": "viking2-lander"
+    }
+  ]
+}

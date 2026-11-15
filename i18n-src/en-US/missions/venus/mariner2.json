@@ -1,0 +1,24 @@
+{
+  "name": "Mariner 2",
+  "vehicle": "Atlas-Agena B",
+  "payload": "202.8 kg",
+  "delta_v": "~3.5 km/s (estimate)",
+  "type": "FLYBY · FLOWN",
+  "first": "NASA calls it the very first successful planetary science mission in history",
+  "description": "Mariner 2 launched on 1962-08-27 on an Atlas-Agena B and passed Venus on 1962-12-14, at a closest approach of 34,773 km. Its magnetometer, particle detectors, solar plasma spectrometer, dust detector and two radiometers returned a first look at Venus: NASA reports temperatures from 216 °C on the dark side to 237 °C on the day side, a dense cloud layer 56 to 80 km up, a slow retrograde rotation, an atmosphere of mostly carbon dioxide and no discernible magnetic field. In space it showed that the solar wind streams continuously. Contact ended on 1963-01-03. NASA says that it keeps the honor of being the very first successful planetary science mission in history.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Atlas-Agena B from Cape Canaveral, 1962-08-27.",
+      "type": "nominal"
+    },
+    {
+      "met": 109,
+      "label": "VENUS FLYBY",
+      "note": "Closest approach 34,773 km on 1962-12-14.",
+      "type": "nominal"
+    }
+  ],
+  "vehicle_stage": "Agena B upper stage"
+}

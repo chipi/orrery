@@ -89,9 +89,8 @@
     "/mars?site=mariner9": "Mariner 9 em órbita de Marte"
   },
   "roster": {
-    "Mariner 2 reaches Venus": {
-      "note": "em dezembro de 1962 a Mariner 2 tornou-se a primeira nave a chegar a outro planeta, descobrindo Vênus não como um gêmeo tropical da Terra, mas como uma fornalha a centenas de graus",
-      "name": "A Mariner 2 chega a Vênus"
+    "mission:mariner2": {
+      "note": "em dezembro de 1962 a Mariner 2 tornou-se a primeira nave a chegar a outro planeta, descobrindo Vênus não como um gêmeo tropical da Terra, mas como uma fornalha a centenas de graus"
     },
     "fleet:mariner-4": {
       "note": "sobrevoou Marte em 1965 e devolveu as primeiras fotografias de outro planeta tiradas de perto — um mundo cheio de crateras, aparentemente morto, que pôs fim aos velhos sonhos de canais e vida em Marte"

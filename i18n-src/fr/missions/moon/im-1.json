@@ -1,0 +1,30 @@
+{
+  "name": "IM-1",
+  "vehicle": "Falcon 9 Block 5",
+  "payload": "1900 kg d'atterrisseur (Nova-C Odysseus) ; six charges utiles de la NASA",
+  "delta_v": "~3,8 km/s (TLI + LOI, estimation)",
+  "type": "ATTERRISSEUR COMMERCIAL · BASCULÉ, OPÉRATIONNEL",
+  "first": "Un atterrisseur commercial sur la Lune : il s'est posé basculé et a tout de même fonctionné",
+  "description": "IM-1 était la première mission lunaire d'Intuitive Machines, réalisée pour le programme Commercial Lunar Payload Services de la NASA avec six charges utiles de la NASA. Son atterrisseur Nova-C, nommé Odysseus, a été lancé sur un Falcon 9 le 2024-02-15, est entré en orbite lunaire le 2024-02-21 et s'est posé le 2024-02-22 à 23:23:53 UTC près du cratère Malapert A. Il s'est posé et a fonctionné, mais s'est immobilisé basculé, à environ 30 degrés. Il a continué à fonctionner jusqu'à ce qu'il perde son alimentation au début de la nuit lunaire le 2024-02-29.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCEMENT",
+      "note": "Falcon 9 depuis LC-39A, 2024-02-15.",
+      "type": "nominal"
+    },
+    {
+      "met": 6,
+      "label": "INSERTION EN ORBITE LUNAIRE",
+      "note": "Odysseus entre en orbite lunaire le 2024-02-21.",
+      "type": "nominal"
+    },
+    {
+      "met": 7,
+      "label": "ATTERRISSAGE",
+      "note": "Se pose près de Malapert A le 2024-02-22 et s'immobilise basculé.",
+      "type": "nominal"
+    }
+  ],
+  "vehicle_stage": "deuxième étage du Falcon 9"
+}

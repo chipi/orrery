@@ -80,7 +80,8 @@
       "note": "first uncrewed Shenzhou test flight — the proof that China could fly its own crew capsule"
     },
     {
-      "name": "Shenzhou 5",
+      "linked_id": "shenzhou-5",
+      "ref": "mission",
       "year": 2003,
       "note": "Yang Liwei becomes the first Chinese astronaut in orbit — China joins the US and USSR as the third nation to launch a human on its own rocket"
     },

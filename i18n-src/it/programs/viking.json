@@ -97,9 +97,8 @@
     "mission:viking1": {
       "note": "il 20 luglio 1976 il lander Viking 1 si posò in Chryse Planitia e restituì le prime immagini nitide della superficie di Marte"
     },
-    "Viking 2": {
-      "note": "una seconda coppia di orbiter e lander, posata a migliaia di chilometri di distanza, in Utopia Planitia, sei settimane dopo",
-      "name": "Viking 2"
+    "mission:viking2": {
+      "note": "una seconda coppia di orbiter e lander, posata a migliaia di chilometri di distanza, in Utopia Planitia, sei settimane dopo"
     },
     "The biology experiments": {
       "note": "ogni lander eseguì esperimenti progettati per rilevare la vita nel suolo marziano; i risultati furono ambigui, e ancora oggi se ne discute",

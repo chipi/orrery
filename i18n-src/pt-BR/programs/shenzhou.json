@@ -96,9 +96,8 @@
     "mission:shenzhou-1": {
       "note": "primeiro voo de teste não tripulado — a cápsula voa e retorna antes que alguém viaje nela"
     },
-    "Shenzhou 5": {
-      "note": "Yang Liwei dá 14 voltas na Terra — o primeiro astronauta chinês no espaço, e a China torna-se a terceira nação a lançar um humano em seu próprio foguete, 42 anos depois de Gagarin",
-      "name": "Shenzhou 5"
+    "mission:shenzhou-5": {
+      "note": "Yang Liwei dá 14 voltas na Terra — o primeiro astronauta chinês no espaço, e a China torna-se a terceira nação a lançar um humano em seu próprio foguete, 42 anos depois de Gagarin"
     },
     "Shenzhou 7": {
       "note": "Zhai Zhigang realiza a primeira caminhada espacial da China — o terceiro país a realizar uma atividade extraveicular",

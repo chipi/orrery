@@ -1,0 +1,30 @@
+{
+  "name": "Mars 2",
+  "vehicle": "Proton-K / D",
+  "payload": "4650 kg (orbiter + lander combinati)",
+  "delta_v": "~5,5 km/s (stima)",
+  "type": "ORBITER OPERATIVO · LANDER PERDUTO",
+  "first": "Un orbiter e un lander sovietici lanciati verso Marte nel 1971: il lander si è schiantato, l'orbiter ha funzionato",
+  "description": "Mars 2 era una sonda sovietica composta da un orbiter e un lander. È stata lanciata il 1971-05-19 su un Proton-K con stadio superiore Blok D, nove giorni prima della gemella Mars 3. Il modulo di discesa si è separato circa 4,5 ore prima dell'arrivo. Il suo sistema di discesa ha avuto un malfunzionamento, il paracadute non si è aperto e il lander si è schiantato su Marte. L'orbiter è entrato in orbita attorno a Marte il 1971-11-27 in un'orbita di 18 ore e ha inviato dati fino a circa agosto 1972.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCIO",
+      "note": "Proton-K con stadio superiore Blok-D da Baikonur, 1971-05-19.",
+      "type": "nominal"
+    },
+    {
+      "met": 192,
+      "label": "MOI ORBITER",
+      "note": "L'orbiter entra in orbita attorno a Marte il 1971-11-27.",
+      "type": "nominal"
+    },
+    {
+      "met": 192.1,
+      "label": "LANDER PERDUTO",
+      "note": "Il modulo di discesa si è separato circa 4,5 ore prima dell'arrivo; il lander si è schiantato.",
+      "type": "warning"
+    }
+  ],
+  "vehicle_stage": "stadio superiore Blok-D"
+}

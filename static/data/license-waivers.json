@@ -1,7 +1,26 @@
 {
   "schema_version": 1,
   "waivers": [],
-  "artistic_impressions": [],
+  "artistic_impressions": [
+    {
+      "scope": "/images/missions/mro/01",
+      "justification": "Artist concept of Mars Reconnaissance Orbiter at Mars. No photograph of the flown spacecraft in orbit exists; the gallery's photographs show the launch, the assembly and what the orbiter's camera saw. The operator approved this hero on 2026-11-15.",
+      "reviewer": "chipi",
+      "decided_at": "2026-11-15"
+    },
+    {
+      "scope": "/images/missions/mariner2/01",
+      "justification": "Artist concept of Mariner 2 in space. No photograph of the flown spacecraft in flight exists; the gallery's photographs show a ground engineering model and the people and data of the mission. The operator approved the staged hero candidates on 2026-11-15.",
+      "reviewer": "chipi",
+      "decided_at": "2026-11-15"
+    },
+    {
+      "scope": "/images/fleet-galleries/mariner-2/01",
+      "justification": "Artist concept of Mariner 2 in space, the same picture as the mission hero. No photograph of the flown spacecraft in flight exists; the gallery's photographs show a ground engineering model. The operator approved the staged hero candidates on 2026-11-15.",
+      "reviewer": "chipi",
+      "decided_at": "2026-11-15"
+    }
+  ],
   "not_concept": [
     {
       "scope": "/images/fleet-galleries/tiangong-2/02",

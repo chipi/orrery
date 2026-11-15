@@ -28,7 +28,9 @@
       "t": "deep"
     }
   ],
-  "linked_missions": [],
+  "linked_missions": [
+    "viking2"
+  ],
   "linked_sites": [
     {
       "type": "mars",

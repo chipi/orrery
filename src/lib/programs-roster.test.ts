@@ -76,8 +76,8 @@ describe('program rosters (E2): every row that names an existing entry links to 
         }
       }
     }
-    // Challenger (STS-51-L) and Columbia (STS-107) became linked mission rows, no longer name-only rows with a craft link.
-    expect(links).toBeGreaterThanOrEqual(6);
+    // Challenger (STS-51-L) and Columbia (STS-107) became linked mission rows, no longer name-only rows with a craft link; so did Shenzhou 5 (content 7).
+    expect(links).toBeGreaterThanOrEqual(5);
   });
 
   it('has no name-only row that is the name or id of an existing mission, craft or module', () => {

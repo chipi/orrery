@@ -113,9 +113,8 @@
     "mission:shenzhou-1": {
       "note": "primo volo di prova senza equipaggio di Shenzhou — la prova che la Cina poteva far volare la propria capsula per equipaggio"
     },
-    "Shenzhou 5": {
-      "note": "Yang Liwei diventa il primo astronauta cinese in orbita — la Cina si unisce a Stati Uniti e URSS come terza nazione a lanciare un essere umano con un proprio razzo",
-      "name": "Shenzhou 5"
+    "mission:shenzhou-5": {
+      "note": "Yang Liwei diventa il primo astronauta cinese in orbita — la Cina si unisce a Stati Uniti e URSS come terza nazione a lanciare un essere umano con un proprio razzo"
     },
     "Shenzhou 9 → Tiangong-1": {
       "note": "primo aggancio con equipaggio a una stazione cinese; Liu Yang diventa la prima donna cinese nello spazio",

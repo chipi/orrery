@@ -89,9 +89,8 @@
     "/mars?site=mariner9": "Mariner 9 in een baan om Mars"
   },
   "roster": {
-    "Mariner 2 reaches Venus": {
-      "note": "in december 1962 werd Mariner 2 het eerste ruimtevaartuig dat een andere planeet bereikte; het vond Venus niet als een tropische tweeling van de Aarde maar als een oven die honderden graden heet is",
-      "name": "Mariner 2 bereikt Venus"
+    "mission:mariner2": {
+      "note": "in december 1962 werd Mariner 2 het eerste ruimtevaartuig dat een andere planeet bereikte; het vond Venus niet als een tropische tweeling van de Aarde maar als een oven die honderden graden heet is"
     },
     "fleet:mariner-4": {
       "note": "vloog in 1965 voorbij Mars en stuurde de eerste foto's ooit van een andere planeet van dichtbij terug — een bekraterde, kennelijk dode wereld die een einde maakte aan de oude dromen van Marskanalen en leven"

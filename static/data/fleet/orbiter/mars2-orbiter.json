@@ -23,7 +23,9 @@
       "t": "core"
     }
   ],
-  "linked_missions": [],
+  "linked_missions": [
+    "mars2"
+  ],
   "linked_sites": [
     {
       "type": "mars",

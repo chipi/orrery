@@ -1,0 +1,23 @@
+{
+  "name": "Shenzhou 5",
+  "vehicle": "Long March 2F",
+  "payload": "7840 kg; één astronaut (Yang Liwei)",
+  "delta_v": "~9,4 km/s (LEO)",
+  "type": "BEMANDE ORBITALE VLUCHT · GEVLOGEN",
+  "first": "Chinas eerste bemande ruimtevlucht, gevlogen door Yang Liwei",
+  "description": "Shenzhou 5 was Chinas eerste bemande ruimtevlucht. Yang Liwei, een 38-jarige luitenant-kolonel en voormalig gevechtspiloot, werd alleen gelanceerd met een Long March 2F vanuit Jiuquan op 2003-10-15 om 09:00 Chinese standaardtijd. Hij cirkelde 14 keer rond de aarde op een hoogte van ongeveer 332 tot 336 km en landde in Binnen-Mongolië op 2003-10-16 (Chinese standaardtijd), na 21 uur, 22 minuten en 45 seconden vliegen.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LIFT-OFF",
+      "note": "Long March 2F vanuit Jiuquan om 09:00 Chinese standaardtijd, 2003-10-15.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.8908,
+      "label": "LANDING",
+      "note": "Landt in Binnen-Mongolië op 2003-10-16 (Chinese standaardtijd) na 14 banen en 21 h 22 min 45 s.",
+      "type": "nominal"
+    }
+  ]
+}

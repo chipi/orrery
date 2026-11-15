@@ -169,8 +169,9 @@ describe('getMissionIndex', () => {
     // (3/4/6a/7/8/12), Soyuz 1 & 11. 115 → 123. 2026-07-18 — RFC-034 §12 Phase-2 descent missions huygens + near-shoemaker. 123 → 125. 2026-10-20 — Artemis architecture change: artemis5 added (artemis3 moved Moon → Earth). 125 → 126.
     const missions = await getMissionIndex();
     // 2026-11-15 — slice H adds kaguya + chandrayaan2 (126 → 128); content4 adds sts-1, sts-51-l,
-    // sts-107 and artemis1 (128 → 132).
-    expect(missions).toHaveLength(132);
+    // sts-107 and artemis1 (128 → 132). 2026-11-15 — content7: viking2, mars2, mro (Mars), mariner2 (Venus),
+    // change2, im-1 (Moon), shenzhou-5 (Earth) (132 → 139).
+    expect(missions).toHaveLength(139);
   });
 
   it('every entry has the required language-neutral fields', async () => {
@@ -217,17 +218,17 @@ describe('getMissionIndex', () => {
 });
 
 describe('filterMissions', () => {
-  it('MARS filter returns 20', async () => {
+  it('MARS filter returns 23', async () => {
     // GH #341 Batch 1 added 4 Mars missions (Mariner 9, Spirit,
     // Opportunity, Phoenix). 16 → 20.
     const mars = await filterMissions({ dest: 'MARS' });
-    expect(mars).toHaveLength(20);
+    expect(mars).toHaveLength(23);
     for (const m of mars) expect(m.dest).toBe('MARS');
   });
 
-  it('MOON filter returns 35', async () => {
+  it('MOON filter returns 37', async () => {
     const moon = await filterMissions({ dest: 'MOON' });
-    expect(moon).toHaveLength(35);
+    expect(moon).toHaveLength(37);
     for (const m of moon) expect(m.dest).toBe('MOON');
   });
 
@@ -449,7 +450,7 @@ describe('getSun', () => {
 describe('getMissionsForLibrary', () => {
   it('returns all 115 missions merged with their en-US overlays', async () => {
     const list = await getMissionsForLibrary();
-    expect(list).toHaveLength(132);
+    expect(list).toHaveLength(139);
     // Every mission should have its base fields…
     for (const m of list) {
       expect(m.id).toBeTruthy();
@@ -495,7 +496,7 @@ describe('getMissionsForLibrary', () => {
 
   it('falls back to en-US for missing locale', async () => {
     const list = await getMissionsForLibrary('xx-TEST');
-    expect(list).toHaveLength(132);
+    expect(list).toHaveLength(139);
   });
 
   it('count matches what filterMissions reports', async () => {
@@ -512,6 +513,7 @@ describe('getMissionsForLibrary', () => {
       'apollo13',
       'beresheet',
       'chandrayaan2',
+      'mars2',
       'schiaparelli',
       'soyuz-1',
       'sts-107',

@@ -49218,6 +49218,46 @@
       "fetched_at": "2026-11-07T08:38:36.799Z"
     },
     {
+      "id": "aa8be1141624abd8",
+      "path": "/images/missions/mars2/05.webp",
+      "source_type": "nasa-images-api",
+      "title": "Search for the Mars 2 Debris Field (PIA18888)",
+      "author": "NASA/JPL-Caltech/University of Arizona",
+      "agency": "NASA/JPL-Caltech/University of Arizona",
+      "source_url": "https://images.nasa.gov/details/PIA18888",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "PIA18888",
+      "fetched_at": "2026-11-15T14:29:38.875Z"
+    },
+    {
+      "id": "5d8a0f4e183052ae",
+      "path": "/images/missions/mars2/05.1x1.jpg",
+      "source_type": "nasa-images-api",
+      "title": "Search for the Mars 2 Debris Field (PIA18888)",
+      "author": "NASA/JPL-Caltech/University of Arizona",
+      "agency": "NASA/JPL-Caltech/University of Arizona",
+      "source_url": "https://images.nasa.gov/details/PIA18888",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "PIA18888",
+      "fetched_at": "2026-11-15T14:29:38.875Z"
+    },
+    {
       "id": "13d55de928843535",
       "path": "/images/missions/mars3/01.1x1.jpg",
       "source_type": "wikimedia-commons",
@@ -119004,6 +119044,1846 @@
       "pageid": null,
       "nasa_id": "KSC-20230110-PH-CSH01_0035",
       "fetched_at": "2026-11-15T13:29:37.988Z"
+    },
+    {
+      "id": "942e79dcfe2cda59",
+      "path": "/images/missions/mariner2/02.webp",
+      "source_type": "wikimedia-commons",
+      "title": "File:Mariner 2 Engineering Model.jpg",
+      "author": "Eric Long/Smithsonian",
+      "agency": "Smithsonian NASM",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Mariner_2_Engineering_Model.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e9/Mariner_2_Engineering_Model.jpg",
+      "license_short": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "license_rationale": "Creative Commons Zero, Public Domain Dedication",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 130763266,
+      "nasa_id": null,
+      "fetched_at": "2026-11-15T14:29:17.666Z"
+    },
+    {
+      "id": "0004eef6ee142d4d",
+      "path": "/images/missions/mariner2/02.1x1.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:Mariner 2 Engineering Model.jpg",
+      "author": "Eric Long/Smithsonian",
+      "agency": "Smithsonian NASM",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Mariner_2_Engineering_Model.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e9/Mariner_2_Engineering_Model.jpg",
+      "license_short": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "license_rationale": "Creative Commons Zero, Public Domain Dedication",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 130763266,
+      "nasa_id": null,
+      "fetched_at": "2026-11-15T14:29:17.667Z"
+    },
+    {
+      "id": "03774cf5888ee7cd",
+      "path": "/images/missions/mariner2/04.webp",
+      "source_type": "wikimedia-commons",
+      "title": "File:Kennedy Receives Mariner 2 Model.jpg",
+      "author": "NASA",
+      "agency": "NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Kennedy_Receives_Mariner_2_Model.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/13/Kennedy_Receives_Mariner_2_Model.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Public domain",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 1571878,
+      "nasa_id": null,
+      "fetched_at": "2026-11-15T14:29:18.919Z"
+    },
+    {
+      "id": "927cd723298ac86a",
+      "path": "/images/missions/mariner2/04.1x1.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:Kennedy Receives Mariner 2 Model.jpg",
+      "author": "NASA",
+      "agency": "NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Kennedy_Receives_Mariner_2_Model.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/13/Kennedy_Receives_Mariner_2_Model.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Public domain",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 1571878,
+      "nasa_id": null,
+      "fetched_at": "2026-11-15T14:29:18.919Z"
+    },
+    {
+      "id": "cda464138d1bbd81",
+      "path": "/images/missions/mariner2/05.webp",
+      "source_type": "wikimedia-commons",
+      "title": "File:Mariner 2 venus data.jpg",
+      "author": "NASA",
+      "agency": "NASA/JPL",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Mariner_2_venus_data.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Mariner_2_venus_data.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Public domain",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 1572067,
+      "nasa_id": null,
+      "fetched_at": "2026-11-15T14:29:20.151Z"
+    },
+    {
+      "id": "12d6993434438d3c",
+      "path": "/images/missions/mariner2/05.1x1.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:Mariner 2 venus data.jpg",
+      "author": "NASA",
+      "agency": "NASA/JPL",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Mariner_2_venus_data.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Mariner_2_venus_data.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Public domain",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 1572067,
+      "nasa_id": null,
+      "fetched_at": "2026-11-15T14:29:20.151Z"
+    },
+    {
+      "id": "34925bdfac638e84",
+      "path": "/images/missions/mariner2/06.webp",
+      "source_type": "wikimedia-commons",
+      "title": "File:Mariner 2 inspection.jpg",
+      "author": "NASA",
+      "agency": "NASA/JPL",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Mariner_2_inspection.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/21/Mariner_2_inspection.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Public domain",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 1572044,
+      "nasa_id": null,
+      "fetched_at": "2026-11-15T14:29:21.415Z"
+    },
+    {
+      "id": "d401c0be01c35b9d",
+      "path": "/images/missions/mariner2/06.1x1.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:Mariner 2 inspection.jpg",
+      "author": "NASA",
+      "agency": "NASA/JPL",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Mariner_2_inspection.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/21/Mariner_2_inspection.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Public domain",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 1572044,
+      "nasa_id": null,
+      "fetched_at": "2026-11-15T14:29:21.415Z"
+    },
+    {
+      "id": "3425fcc87c1c3472",
+      "path": "/images/missions/mariner2/01.webp",
+      "source_type": "nasa-images-api",
+      "title": "Mariner 2 Artist Concept (PIA04594)",
+      "author": "NASA/JPL",
+      "agency": "NASA/JPL",
+      "source_url": "https://images.nasa.gov/details/PIA04594",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "PIA04594",
+      "fetched_at": "2026-11-15T14:29:38.876Z"
+    },
+    {
+      "id": "79bf4188ec1c7fa3",
+      "path": "/images/missions/mariner2/01.1x1.jpg",
+      "source_type": "nasa-images-api",
+      "title": "Mariner 2 Artist Concept (PIA04594)",
+      "author": "NASA/JPL",
+      "agency": "NASA/JPL",
+      "source_url": "https://images.nasa.gov/details/PIA04594",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "PIA04594",
+      "fetched_at": "2026-11-15T14:29:38.876Z"
+    },
+    {
+      "id": "399e4bb62e54b942",
+      "path": "/images/missions/mariner2/03.webp",
+      "source_type": "nasa-images-api",
+      "title": "Checking Out Venus (PIA21117)",
+      "author": "NASA/JPL-Caltech",
+      "agency": "NASA/JPL-Caltech",
+      "source_url": "https://images.nasa.gov/details/PIA21117",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "PIA21117",
+      "fetched_at": "2026-11-15T14:29:38.876Z"
+    },
+    {
+      "id": "d190f1831a9d3e0b",
+      "path": "/images/missions/mariner2/03.1x1.jpg",
+      "source_type": "nasa-images-api",
+      "title": "Checking Out Venus (PIA21117)",
+      "author": "NASA/JPL-Caltech",
+      "agency": "NASA/JPL-Caltech",
+      "source_url": "https://images.nasa.gov/details/PIA21117",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "PIA21117",
+      "fetched_at": "2026-11-15T14:29:38.876Z"
+    },
+    {
+      "id": "5d3cef1e5df8dcf4",
+      "path": "/images/missions/change2/01.webp",
+      "source_type": "wikimedia-commons",
+      "title": "File:Chang'e-2 mockup at BASM.jpg",
+      "author": "Shujianyang",
+      "agency": "Shujianyang (Wikimedia Commons)",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Chang%27e-2_mockup_at_BASM.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/91/Chang%27e-2_mockup_at_BASM.jpg",
+      "license_short": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "license_rationale": "Creative Commons Attribution-Share Alike 4.0",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 134259623,
+      "nasa_id": null,
+      "fetched_at": "2026-11-15T14:29:22.655Z"
+    },
+    {
+      "id": "9d5cd08da7f44637",
+      "path": "/images/missions/change2/01.1x1.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:Chang'e-2 mockup at BASM.jpg",
+      "author": "Shujianyang",
+      "agency": "Shujianyang (Wikimedia Commons)",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Chang%27e-2_mockup_at_BASM.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/91/Chang%27e-2_mockup_at_BASM.jpg",
+      "license_short": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "license_rationale": "Creative Commons Attribution-Share Alike 4.0",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 134259623,
+      "nasa_id": null,
+      "fetched_at": "2026-11-15T14:29:22.655Z"
+    },
+    {
+      "id": "9cca43dc8398ba00",
+      "path": "/images/missions/change2/02.webp",
+      "source_type": "wikimedia-commons",
+      "title": "File:Asteroid 4179 Toutatis.jpg",
+      "author": "Yun Jiang, Jianghui Ji, Jiangchuan Huang, Simone Marchi, Yuan Li &amp; Wing-Huen Ip",
+      "agency": "Jiang et al. (Scientific Reports)",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Asteroid_4179_Toutatis.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/42/Asteroid_4179_Toutatis.jpg",
+      "license_short": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "license_rationale": "Creative Commons Attribution 4.0",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 106661160,
+      "nasa_id": null,
+      "fetched_at": "2026-11-15T14:29:23.886Z"
+    },
+    {
+      "id": "8388823edcf58279",
+      "path": "/images/missions/change2/02.1x1.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:Asteroid 4179 Toutatis.jpg",
+      "author": "Yun Jiang, Jianghui Ji, Jiangchuan Huang, Simone Marchi, Yuan Li &amp; Wing-Huen Ip",
+      "agency": "Jiang et al. (Scientific Reports)",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Asteroid_4179_Toutatis.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/42/Asteroid_4179_Toutatis.jpg",
+      "license_short": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "license_rationale": "Creative Commons Attribution 4.0",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 106661160,
+      "nasa_id": null,
+      "fetched_at": "2026-11-15T14:29:23.886Z"
+    },
+    {
+      "id": "d70fe05a61ed0a73",
+      "path": "/images/missions/shenzhou-5/01.webp",
+      "source_type": "wikimedia-commons",
+      "title": "File:Shenzhou-5 return capsule at NMC.jpg",
+      "author": "Shujianyang",
+      "agency": "Shujianyang (Wikimedia Commons)",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Shenzhou-5_return_capsule_at_NMC.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/17/Shenzhou-5_return_capsule_at_NMC.jpg",
+      "license_short": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "license_rationale": "Creative Commons Attribution-Share Alike 4.0",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 134227198,
+      "nasa_id": null,
+      "fetched_at": "2026-11-15T14:29:25.122Z"
+    },
+    {
+      "id": "4489138569cc93b5",
+      "path": "/images/missions/shenzhou-5/01.1x1.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:Shenzhou-5 return capsule at NMC.jpg",
+      "author": "Shujianyang",
+      "agency": "Shujianyang (Wikimedia Commons)",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Shenzhou-5_return_capsule_at_NMC.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/17/Shenzhou-5_return_capsule_at_NMC.jpg",
+      "license_short": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "license_rationale": "Creative Commons Attribution-Share Alike 4.0",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 134227198,
+      "nasa_id": null,
+      "fetched_at": "2026-11-15T14:29:25.122Z"
+    },
+    {
+      "id": "ecf5cc42fd665f37",
+      "path": "/images/missions/shenzhou-5/02.webp",
+      "source_type": "wikimedia-commons",
+      "title": "File:Shenzhou-5 space suit at NMC.jpg",
+      "author": "Shujianyang",
+      "agency": "Shujianyang (Wikimedia Commons)",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Shenzhou-5_space_suit_at_NMC.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Shenzhou-5_space_suit_at_NMC.jpg",
+      "license_short": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "license_rationale": "Creative Commons Attribution-Share Alike 4.0",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 134226560,
+      "nasa_id": null,
+      "fetched_at": "2026-11-15T14:29:26.361Z"
+    },
+    {
+      "id": "a6045029d2ac5573",
+      "path": "/images/missions/shenzhou-5/02.1x1.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:Shenzhou-5 space suit at NMC.jpg",
+      "author": "Shujianyang",
+      "agency": "Shujianyang (Wikimedia Commons)",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Shenzhou-5_space_suit_at_NMC.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Shenzhou-5_space_suit_at_NMC.jpg",
+      "license_short": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "license_rationale": "Creative Commons Attribution-Share Alike 4.0",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 134226560,
+      "nasa_id": null,
+      "fetched_at": "2026-11-15T14:29:26.361Z"
+    },
+    {
+      "id": "eade1519bcfad2ad",
+      "path": "/images/missions/shenzhou-5/03.webp",
+      "source_type": "wikimedia-commons",
+      "title": "File:Items of Shenzhou-5 at NMC.jpg",
+      "author": "Shujianyang",
+      "agency": "Shujianyang (Wikimedia Commons)",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Items_of_Shenzhou-5_at_NMC.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/56/Items_of_Shenzhou-5_at_NMC.jpg",
+      "license_short": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "license_rationale": "Creative Commons Attribution-Share Alike 4.0",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 134226555,
+      "nasa_id": null,
+      "fetched_at": "2026-11-15T14:29:27.592Z"
+    },
+    {
+      "id": "e1c40d0292c14b8b",
+      "path": "/images/missions/shenzhou-5/03.1x1.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:Items of Shenzhou-5 at NMC.jpg",
+      "author": "Shujianyang",
+      "agency": "Shujianyang (Wikimedia Commons)",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Items_of_Shenzhou-5_at_NMC.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/56/Items_of_Shenzhou-5_at_NMC.jpg",
+      "license_short": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "license_rationale": "Creative Commons Attribution-Share Alike 4.0",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 134226555,
+      "nasa_id": null,
+      "fetched_at": "2026-11-15T14:29:27.592Z"
+    },
+    {
+      "id": "1812c92bdfeccefd",
+      "path": "/images/missions/shenzhou-5/04.webp",
+      "source_type": "wikimedia-commons",
+      "title": "File:Shenzhou-5 mockup and parachute at NMC.jpg",
+      "author": "Shujianyang",
+      "agency": "Shujianyang (Wikimedia Commons)",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Shenzhou-5_mockup_and_parachute_at_NMC.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Shenzhou-5_mockup_and_parachute_at_NMC.jpg",
+      "license_short": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "license_rationale": "Creative Commons Attribution-Share Alike 4.0",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 134224775,
+      "nasa_id": null,
+      "fetched_at": "2026-11-15T14:29:28.828Z"
+    },
+    {
+      "id": "85932084fcf14c89",
+      "path": "/images/missions/shenzhou-5/04.1x1.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:Shenzhou-5 mockup and parachute at NMC.jpg",
+      "author": "Shujianyang",
+      "agency": "Shujianyang (Wikimedia Commons)",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Shenzhou-5_mockup_and_parachute_at_NMC.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Shenzhou-5_mockup_and_parachute_at_NMC.jpg",
+      "license_short": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "license_rationale": "Creative Commons Attribution-Share Alike 4.0",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 134224775,
+      "nasa_id": null,
+      "fetched_at": "2026-11-15T14:29:28.829Z"
+    },
+    {
+      "id": "99825b201d706553",
+      "path": "/images/missions/shenzhou-5/05.webp",
+      "source_type": "wikimedia-commons",
+      "title": "File:Shenzhou 5 view from orbit.png",
+      "author": "中国新闻社",
+      "agency": "China News Service",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Shenzhou_5_view_from_orbit.png",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/13/Shenzhou_5_view_from_orbit.png",
+      "license_short": "CC-BY-3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "license_rationale": "Creative Commons Attribution 3.0",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 190567098,
+      "nasa_id": null,
+      "fetched_at": "2026-11-15T14:29:30.056Z"
+    },
+    {
+      "id": "8ecd57121526df60",
+      "path": "/images/missions/shenzhou-5/05.1x1.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:Shenzhou 5 view from orbit.png",
+      "author": "中国新闻社",
+      "agency": "China News Service",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Shenzhou_5_view_from_orbit.png",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/13/Shenzhou_5_view_from_orbit.png",
+      "license_short": "CC-BY-3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "license_rationale": "Creative Commons Attribution 3.0",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 190567098,
+      "nasa_id": null,
+      "fetched_at": "2026-11-15T14:29:30.056Z"
+    },
+    {
+      "id": "86bf71a067869665",
+      "path": "/images/missions/shenzhou-5/06.webp",
+      "source_type": "wikimedia-commons",
+      "title": "File:Shenzhou 5 in space Yang Liwei.png",
+      "author": "中国新闻社",
+      "agency": "China News Service",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Shenzhou_5_in_space_Yang_Liwei.png",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Shenzhou_5_in_space_Yang_Liwei.png",
+      "license_short": "CC-BY-3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "license_rationale": "Creative Commons Attribution 3.0",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 190567100,
+      "nasa_id": null,
+      "fetched_at": "2026-11-15T14:29:31.296Z"
+    },
+    {
+      "id": "d69efe4ced1a3bf2",
+      "path": "/images/missions/shenzhou-5/06.1x1.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:Shenzhou 5 in space Yang Liwei.png",
+      "author": "中国新闻社",
+      "agency": "China News Service",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Shenzhou_5_in_space_Yang_Liwei.png",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Shenzhou_5_in_space_Yang_Liwei.png",
+      "license_short": "CC-BY-3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "license_rationale": "Creative Commons Attribution 3.0",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 190567100,
+      "nasa_id": null,
+      "fetched_at": "2026-11-15T14:29:31.296Z"
+    },
+    {
+      "id": "c609689742198b6c",
+      "path": "/images/missions/shenzhou-5/07.webp",
+      "source_type": "wikimedia-commons",
+      "title": "File:Shenzhou 5 landing 01.png",
+      "author": "中国新闻社",
+      "agency": "China News Service",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Shenzhou_5_landing_01.png",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Shenzhou_5_landing_01.png",
+      "license_short": "CC-BY-3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "license_rationale": "Creative Commons Attribution 3.0",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 190539372,
+      "nasa_id": null,
+      "fetched_at": "2026-11-15T14:29:32.525Z"
+    },
+    {
+      "id": "ec9e3e9ae09f4464",
+      "path": "/images/missions/shenzhou-5/07.1x1.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:Shenzhou 5 landing 01.png",
+      "author": "中国新闻社",
+      "agency": "China News Service",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Shenzhou_5_landing_01.png",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Shenzhou_5_landing_01.png",
+      "license_short": "CC-BY-3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "license_rationale": "Creative Commons Attribution 3.0",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 190539372,
+      "nasa_id": null,
+      "fetched_at": "2026-11-15T14:29:32.525Z"
+    },
+    {
+      "id": "bda29cb8cb294afb",
+      "path": "/images/fleet-galleries/atlas-agena-b/04.webp",
+      "source_type": "wikimedia-commons",
+      "title": "File:Atlas Agena B with Ranger 7 (Jul. 28 1964).jpg",
+      "author": "NASA",
+      "agency": "NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Atlas_Agena_B_with_Ranger_7_(Jul._28_1964).jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/47/Atlas_Agena_B_with_Ranger_7_%28Jul._28_1964%29.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Public domain",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 5398963,
+      "nasa_id": null,
+      "fetched_at": "2026-11-15T14:29:33.755Z"
+    },
+    {
+      "id": "c657ce2ed314fb67",
+      "path": "/images/fleet-galleries/atlas-agena-b/04.1x1.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:Atlas Agena B with Ranger 7 (Jul. 28 1964).jpg",
+      "author": "NASA",
+      "agency": "NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Atlas_Agena_B_with_Ranger_7_(Jul._28_1964).jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/47/Atlas_Agena_B_with_Ranger_7_%28Jul._28_1964%29.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Public domain",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 5398963,
+      "nasa_id": null,
+      "fetched_at": "2026-11-15T14:29:33.755Z"
+    },
+    {
+      "id": "395fc8bc5aff17d4",
+      "path": "/images/fleet-galleries/atlas-agena-b/01.webp",
+      "source_type": "nasa-images-api",
+      "title": "LIFTOFF RANGER 3 FROM PAD 12. ATLAS AGENA-2 (62PC-3)",
+      "author": "NASA/KSC",
+      "agency": "NASA",
+      "source_url": "https://images.nasa.gov/details/62PC-3",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "62PC-3",
+      "fetched_at": "2026-11-15T14:29:38.876Z"
+    },
+    {
+      "id": "82a13d7d2f8289fb",
+      "path": "/images/fleet-galleries/atlas-agena-b/01.1x1.jpg",
+      "source_type": "nasa-images-api",
+      "title": "LIFTOFF RANGER 3 FROM PAD 12. ATLAS AGENA-2 (62PC-3)",
+      "author": "NASA/KSC",
+      "agency": "NASA",
+      "source_url": "https://images.nasa.gov/details/62PC-3",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "62PC-3",
+      "fetched_at": "2026-11-15T14:29:38.876Z"
+    },
+    {
+      "id": "496be47aeaa365d2",
+      "path": "/images/fleet-galleries/atlas-agena-b/02.webp",
+      "source_type": "nasa-images-api",
+      "title": "The Atlas-Agena B space Vehicle waits on the launch pad to launch the National Aeronautics (62P-165)",
+      "author": "NASA/KSC",
+      "agency": "NASA",
+      "source_url": "https://images.nasa.gov/details/62P-165",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "62P-165",
+      "fetched_at": "2026-11-15T14:29:38.876Z"
+    },
+    {
+      "id": "d68b8c5b76b317e2",
+      "path": "/images/fleet-galleries/atlas-agena-b/02.1x1.jpg",
+      "source_type": "nasa-images-api",
+      "title": "The Atlas-Agena B space Vehicle waits on the launch pad to launch the National Aeronautics (62P-165)",
+      "author": "NASA/KSC",
+      "agency": "NASA",
+      "source_url": "https://images.nasa.gov/details/62P-165",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "62P-165",
+      "fetched_at": "2026-11-15T14:29:38.876Z"
+    },
+    {
+      "id": "74e0ea8e03f19eec",
+      "path": "/images/fleet-galleries/atlas-agena-b/03.webp",
+      "source_type": "nasa-images-api",
+      "title": "Launch Vehicles (9139569)",
+      "author": "NASA/MSFC",
+      "agency": "NASA (MSFC archive)",
+      "source_url": "https://images.nasa.gov/details/9139569",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "9139569",
+      "fetched_at": "2026-11-15T14:29:38.876Z"
+    },
+    {
+      "id": "4cf58b5d7496fcf6",
+      "path": "/images/fleet-galleries/atlas-agena-b/03.1x1.jpg",
+      "source_type": "nasa-images-api",
+      "title": "Launch Vehicles (9139569)",
+      "author": "NASA/MSFC",
+      "agency": "NASA (MSFC archive)",
+      "source_url": "https://images.nasa.gov/details/9139569",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "9139569",
+      "fetched_at": "2026-11-15T14:29:38.876Z"
+    },
+    {
+      "id": "c21f7795fe22dd81",
+      "path": "/images/fleet-galleries/mariner-2/02.webp",
+      "source_type": "wikimedia-commons",
+      "title": "File:Mariner 2 Engineering Model.jpg",
+      "author": "Eric Long/Smithsonian",
+      "agency": "Smithsonian NASM",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Mariner_2_Engineering_Model.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e9/Mariner_2_Engineering_Model.jpg",
+      "license_short": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "license_rationale": "Creative Commons Zero, Public Domain Dedication",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 130763266,
+      "nasa_id": null,
+      "fetched_at": "2026-11-15T14:29:33.755Z"
+    },
+    {
+      "id": "037cd88a645e06c8",
+      "path": "/images/fleet-galleries/mariner-2/02.1x1.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:Mariner 2 Engineering Model.jpg",
+      "author": "Eric Long/Smithsonian",
+      "agency": "Smithsonian NASM",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Mariner_2_Engineering_Model.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e9/Mariner_2_Engineering_Model.jpg",
+      "license_short": "CC0",
+      "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "license_rationale": "Creative Commons Zero, Public Domain Dedication",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 130763266,
+      "nasa_id": null,
+      "fetched_at": "2026-11-15T14:29:33.755Z"
+    },
+    {
+      "id": "0442a8605141d292",
+      "path": "/images/fleet-galleries/mariner-2/03.webp",
+      "source_type": "wikimedia-commons",
+      "title": "File:Mariner 2 inspection.jpg",
+      "author": "NASA",
+      "agency": "NASA/JPL",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Mariner_2_inspection.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/21/Mariner_2_inspection.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Public domain",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 1572044,
+      "nasa_id": null,
+      "fetched_at": "2026-11-15T14:29:33.755Z"
+    },
+    {
+      "id": "0756d963c27db01b",
+      "path": "/images/fleet-galleries/mariner-2/03.1x1.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:Mariner 2 inspection.jpg",
+      "author": "NASA",
+      "agency": "NASA/JPL",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Mariner_2_inspection.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/21/Mariner_2_inspection.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Public domain",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 1572044,
+      "nasa_id": null,
+      "fetched_at": "2026-11-15T14:29:33.755Z"
+    },
+    {
+      "id": "512cbaf8806d6831",
+      "path": "/images/fleet-galleries/mariner-2/04.webp",
+      "source_type": "wikimedia-commons",
+      "title": "File:Kennedy Receives Mariner 2 Model.jpg",
+      "author": "NASA",
+      "agency": "NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Kennedy_Receives_Mariner_2_Model.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/13/Kennedy_Receives_Mariner_2_Model.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Public domain",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 1571878,
+      "nasa_id": null,
+      "fetched_at": "2026-11-15T14:29:33.755Z"
+    },
+    {
+      "id": "4768df66234e1cdf",
+      "path": "/images/fleet-galleries/mariner-2/04.1x1.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:Kennedy Receives Mariner 2 Model.jpg",
+      "author": "NASA",
+      "agency": "NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Kennedy_Receives_Mariner_2_Model.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/13/Kennedy_Receives_Mariner_2_Model.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Public domain",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 1571878,
+      "nasa_id": null,
+      "fetched_at": "2026-11-15T14:29:33.755Z"
+    },
+    {
+      "id": "83bb71163b401fb2",
+      "path": "/images/fleet-galleries/mariner-2/01.webp",
+      "source_type": "nasa-images-api",
+      "title": "Mariner 2 Artist Concept (PIA04594)",
+      "author": "NASA/JPL",
+      "agency": "NASA/JPL",
+      "source_url": "https://images.nasa.gov/details/PIA04594",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "PIA04594",
+      "fetched_at": "2026-11-15T14:29:38.876Z"
+    },
+    {
+      "id": "c28164a63aeffc6a",
+      "path": "/images/fleet-galleries/mariner-2/01.1x1.jpg",
+      "source_type": "nasa-images-api",
+      "title": "Mariner 2 Artist Concept (PIA04594)",
+      "author": "NASA/JPL",
+      "agency": "NASA/JPL",
+      "source_url": "https://images.nasa.gov/details/PIA04594",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "PIA04594",
+      "fetched_at": "2026-11-15T14:29:38.876Z"
+    },
+    {
+      "id": "5ec5058efdcb4330",
+      "path": "/images/missions/viking2/01.webp",
+      "source_type": "nasa-images-api",
+      "title": "Viking 2 Image of Mars Utopian Plain (PIA01522)",
+      "author": "NASA/JPL",
+      "agency": "NASA/JPL",
+      "source_url": "https://images.nasa.gov/details/PIA01522",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "PIA01522",
+      "fetched_at": "2026-11-15T14:29:38.876Z"
+    },
+    {
+      "id": "f22916ada25a9748",
+      "path": "/images/missions/viking2/01.1x1.jpg",
+      "source_type": "nasa-images-api",
+      "title": "Viking 2 Image of Mars Utopian Plain (PIA01522)",
+      "author": "NASA/JPL",
+      "agency": "NASA/JPL",
+      "source_url": "https://images.nasa.gov/details/PIA01522",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "PIA01522",
+      "fetched_at": "2026-11-15T14:29:38.876Z"
+    },
+    {
+      "id": "9de4722190399fb0",
+      "path": "/images/missions/viking2/02.webp",
+      "source_type": "nasa-images-api",
+      "title": "First Color Image of the Viking Lander 2 Site (PIA00568)",
+      "author": "NASA/JPL",
+      "agency": "NASA/JPL",
+      "source_url": "https://images.nasa.gov/details/PIA00568",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "PIA00568",
+      "fetched_at": "2026-11-15T14:29:38.876Z"
+    },
+    {
+      "id": "ab6ff9dd0f76e74f",
+      "path": "/images/missions/viking2/02.1x1.jpg",
+      "source_type": "nasa-images-api",
+      "title": "First Color Image of the Viking Lander 2 Site (PIA00568)",
+      "author": "NASA/JPL",
+      "agency": "NASA/JPL",
+      "source_url": "https://images.nasa.gov/details/PIA00568",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "PIA00568",
+      "fetched_at": "2026-11-15T14:29:38.876Z"
+    },
+    {
+      "id": "8d6bfc0139d83162",
+      "path": "/images/missions/viking2/03.webp",
+      "source_type": "nasa-images-api",
+      "title": "Viking 2 A utopian bright summer afternoon on Mars -- Looking south from Viking 2 on Septe (ARC-1976-AC76-1011-2-15)",
+      "author": "NASA/ARC",
+      "agency": "NASA",
+      "source_url": "https://images.nasa.gov/details/ARC-1976-AC76-1011-2-15",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "ARC-1976-AC76-1011-2-15",
+      "fetched_at": "2026-11-15T14:29:38.876Z"
+    },
+    {
+      "id": "d93df587130f5160",
+      "path": "/images/missions/viking2/03.1x1.jpg",
+      "source_type": "nasa-images-api",
+      "title": "Viking 2 A utopian bright summer afternoon on Mars -- Looking south from Viking 2 on Septe (ARC-1976-AC76-1011-2-15)",
+      "author": "NASA/ARC",
+      "agency": "NASA",
+      "source_url": "https://images.nasa.gov/details/ARC-1976-AC76-1011-2-15",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "ARC-1976-AC76-1011-2-15",
+      "fetched_at": "2026-11-15T14:29:38.876Z"
+    },
+    {
+      "id": "f898ee799eb928fb",
+      "path": "/images/missions/viking2/04.webp",
+      "source_type": "nasa-images-api",
+      "title": "Viking Lander 2 First Picture On The Surface Of Mars (PIA00396)",
+      "author": "NASA/JPL",
+      "agency": "NASA/JPL",
+      "source_url": "https://images.nasa.gov/details/PIA00396",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "PIA00396",
+      "fetched_at": "2026-11-15T14:29:38.876Z"
+    },
+    {
+      "id": "e51d6b62ba0f8678",
+      "path": "/images/missions/viking2/04.1x1.jpg",
+      "source_type": "nasa-images-api",
+      "title": "Viking Lander 2 First Picture On The Surface Of Mars (PIA00396)",
+      "author": "NASA/JPL",
+      "agency": "NASA/JPL",
+      "source_url": "https://images.nasa.gov/details/PIA00396",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "PIA00396",
+      "fetched_at": "2026-11-15T14:29:38.876Z"
+    },
+    {
+      "id": "0cc32d2e59f71fad",
+      "path": "/images/missions/viking2/05.webp",
+      "source_type": "nasa-images-api",
+      "title": "KSC-75p-110 (101-KSC-75P-110)",
+      "author": "NASA or National Aeronautics and Space Administration",
+      "agency": "NASA",
+      "source_url": "https://images.nasa.gov/details/101-KSC-75P-110",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "101-KSC-75P-110",
+      "fetched_at": "2026-11-15T14:29:38.876Z"
+    },
+    {
+      "id": "80488a0ebe7fa81a",
+      "path": "/images/missions/viking2/05.1x1.jpg",
+      "source_type": "nasa-images-api",
+      "title": "KSC-75p-110 (101-KSC-75P-110)",
+      "author": "NASA or National Aeronautics and Space Administration",
+      "agency": "NASA",
+      "source_url": "https://images.nasa.gov/details/101-KSC-75P-110",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "101-KSC-75P-110",
+      "fetched_at": "2026-11-15T14:29:38.876Z"
+    },
+    {
+      "id": "91e43cbcfbe211e0",
+      "path": "/images/missions/viking2/06.webp",
+      "source_type": "nasa-images-api",
+      "title": "KSC-75p-158 (101-KSC-75P-158)",
+      "author": "NASA or National Aeronautics and Space Administration",
+      "agency": "NASA",
+      "source_url": "https://images.nasa.gov/details/101-KSC-75P-158",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "101-KSC-75P-158",
+      "fetched_at": "2026-11-15T14:29:38.876Z"
+    },
+    {
+      "id": "3a7d44a3a9c7739c",
+      "path": "/images/missions/viking2/06.1x1.jpg",
+      "source_type": "nasa-images-api",
+      "title": "KSC-75p-158 (101-KSC-75P-158)",
+      "author": "NASA or National Aeronautics and Space Administration",
+      "agency": "NASA",
+      "source_url": "https://images.nasa.gov/details/101-KSC-75P-158",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "101-KSC-75P-158",
+      "fetched_at": "2026-11-15T14:29:38.876Z"
+    },
+    {
+      "id": "e09d39a0e50668b6",
+      "path": "/images/missions/mro/01.webp",
+      "source_type": "nasa-images-api",
+      "title": "Mars Reconnaissance Orbiter, Front View Artist Concept (PIA07245)",
+      "author": "NASA/JPL",
+      "agency": "NASA/JPL",
+      "source_url": "https://images.nasa.gov/details/PIA07245",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "PIA07245",
+      "fetched_at": "2026-11-15T14:29:38.876Z"
+    },
+    {
+      "id": "41eb139478192c0c",
+      "path": "/images/missions/mro/01.1x1.jpg",
+      "source_type": "nasa-images-api",
+      "title": "Mars Reconnaissance Orbiter, Front View Artist Concept (PIA07245)",
+      "author": "NASA/JPL",
+      "agency": "NASA/JPL",
+      "source_url": "https://images.nasa.gov/details/PIA07245",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "PIA07245",
+      "fetched_at": "2026-11-15T14:29:38.876Z"
+    },
+    {
+      "id": "57cf7785726960b4",
+      "path": "/images/missions/mro/02.webp",
+      "source_type": "nasa-images-api",
+      "title": "Mars Reconnaissance Orbiter MRO Launches (PIA04141)",
+      "author": "NASA/JPL/KSC/Lockheed Martin Space Systems",
+      "agency": "NASA/JPL/KSC/Lockheed Martin Space Systems",
+      "source_url": "https://images.nasa.gov/details/PIA04141",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "PIA04141",
+      "fetched_at": "2026-11-15T14:29:38.876Z"
+    },
+    {
+      "id": "d6d394dca40a75f3",
+      "path": "/images/missions/mro/02.1x1.jpg",
+      "source_type": "nasa-images-api",
+      "title": "Mars Reconnaissance Orbiter MRO Launches (PIA04141)",
+      "author": "NASA/JPL/KSC/Lockheed Martin Space Systems",
+      "agency": "NASA/JPL/KSC/Lockheed Martin Space Systems",
+      "source_url": "https://images.nasa.gov/details/PIA04141",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "PIA04141",
+      "fetched_at": "2026-11-15T14:29:38.876Z"
+    },
+    {
+      "id": "4224a0dd28a4de6d",
+      "path": "/images/missions/mro/03.webp",
+      "source_type": "nasa-images-api",
+      "title": "Mars Reconnaissance Orbiter MRO Roars Away (PIA04142)",
+      "author": "NASA/JPL/KSC/Lockheed Martin Space Systems",
+      "agency": "NASA/JPL/KSC/Lockheed Martin Space Systems",
+      "source_url": "https://images.nasa.gov/details/PIA04142",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "PIA04142",
+      "fetched_at": "2026-11-15T14:29:38.876Z"
+    },
+    {
+      "id": "1dc4bf5582d55e24",
+      "path": "/images/missions/mro/03.1x1.jpg",
+      "source_type": "nasa-images-api",
+      "title": "Mars Reconnaissance Orbiter MRO Roars Away (PIA04142)",
+      "author": "NASA/JPL/KSC/Lockheed Martin Space Systems",
+      "agency": "NASA/JPL/KSC/Lockheed Martin Space Systems",
+      "source_url": "https://images.nasa.gov/details/PIA04142",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "PIA04142",
+      "fetched_at": "2026-11-15T14:29:38.876Z"
+    },
+    {
+      "id": "063c9ad40ea76b74",
+      "path": "/images/missions/mro/04.webp",
+      "source_type": "nasa-images-api",
+      "title": "Mars Reconnaissance Orbiter Taking Shape (PIA06756)",
+      "author": "NASA/JPL/Lockheed Martin/Pat Corkery",
+      "agency": "NASA/JPL/Lockheed Martin/Pat Corkery",
+      "source_url": "https://images.nasa.gov/details/PIA06756",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "PIA06756",
+      "fetched_at": "2026-11-15T14:29:38.876Z"
+    },
+    {
+      "id": "d2612755d99f44e6",
+      "path": "/images/missions/mro/04.1x1.jpg",
+      "source_type": "nasa-images-api",
+      "title": "Mars Reconnaissance Orbiter Taking Shape (PIA06756)",
+      "author": "NASA/JPL/Lockheed Martin/Pat Corkery",
+      "agency": "NASA/JPL/Lockheed Martin/Pat Corkery",
+      "source_url": "https://images.nasa.gov/details/PIA06756",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "PIA06756",
+      "fetched_at": "2026-11-15T14:29:38.876Z"
+    },
+    {
+      "id": "d1028395901f53f1",
+      "path": "/images/missions/mro/05.webp",
+      "source_type": "nasa-images-api",
+      "title": "KSC-05PD-1809 (05pd1809)",
+      "author": "NASA or National Aeronautics and Space Administration",
+      "agency": "NASA",
+      "source_url": "https://images.nasa.gov/details/05pd1809",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "05pd1809",
+      "fetched_at": "2026-11-15T14:29:38.876Z"
+    },
+    {
+      "id": "a294cf569b5e5d3f",
+      "path": "/images/missions/mro/05.1x1.jpg",
+      "source_type": "nasa-images-api",
+      "title": "KSC-05PD-1809 (05pd1809)",
+      "author": "NASA or National Aeronautics and Space Administration",
+      "agency": "NASA",
+      "source_url": "https://images.nasa.gov/details/05pd1809",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "05pd1809",
+      "fetched_at": "2026-11-15T14:29:38.876Z"
+    },
+    {
+      "id": "ac8249e1c0580e45",
+      "path": "/images/missions/mro/06.webp",
+      "source_type": "nasa-images-api",
+      "title": "HiRISE Views Perseverance After Landing (PIA24427)",
+      "author": "NASA/JPL-Caltech/University of Arizona",
+      "agency": "NASA/JPL-Caltech/University of Arizona",
+      "source_url": "https://images.nasa.gov/details/PIA24427",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "PIA24427",
+      "fetched_at": "2026-11-15T14:29:38.876Z"
+    },
+    {
+      "id": "ae9ab2a9b37ab926",
+      "path": "/images/missions/mro/06.1x1.jpg",
+      "source_type": "nasa-images-api",
+      "title": "HiRISE Views Perseverance After Landing (PIA24427)",
+      "author": "NASA/JPL-Caltech/University of Arizona",
+      "agency": "NASA/JPL-Caltech/University of Arizona",
+      "source_url": "https://images.nasa.gov/details/PIA24427",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "PIA24427",
+      "fetched_at": "2026-11-15T14:29:38.876Z"
+    },
+    {
+      "id": "b1cbb1e556ab91c5",
+      "path": "/images/missions/mro/07.webp",
+      "source_type": "nasa-images-api",
+      "title": "Layers Exposed at Polar Canyon (PIA09097)",
+      "author": "NASA/JPL-Caltech/Univ. of Arizona",
+      "agency": "NASA/JPL-Caltech/Univ. of Arizona",
+      "source_url": "https://images.nasa.gov/details/PIA09097",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "PIA09097",
+      "fetched_at": "2026-11-15T14:29:38.876Z"
+    },
+    {
+      "id": "85648873fc0f1e00",
+      "path": "/images/missions/mro/07.1x1.jpg",
+      "source_type": "nasa-images-api",
+      "title": "Layers Exposed at Polar Canyon (PIA09097)",
+      "author": "NASA/JPL-Caltech/Univ. of Arizona",
+      "agency": "NASA/JPL-Caltech/Univ. of Arizona",
+      "source_url": "https://images.nasa.gov/details/PIA09097",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "PIA09097",
+      "fetched_at": "2026-11-15T14:29:38.876Z"
+    },
+    {
+      "id": "c9cf2b7d1112e41e",
+      "path": "/images/missions/im-1/01.webp",
+      "source_type": "nasa-images-api",
+      "title": "NASA/SpaceX CLPS IM-1 Launch (KSC-20240215-PH-KLS01_0020)",
+      "author": "NASA/Kim Shiflett",
+      "agency": "NASA/Kim Shiflett",
+      "source_url": "https://images.nasa.gov/details/KSC-20240215-PH-KLS01_0020",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "KSC-20240215-PH-KLS01_0020",
+      "fetched_at": "2026-11-15T14:29:38.876Z"
+    },
+    {
+      "id": "177e449223d456a1",
+      "path": "/images/missions/im-1/01.1x1.jpg",
+      "source_type": "nasa-images-api",
+      "title": "NASA/SpaceX CLPS IM-1 Launch (KSC-20240215-PH-KLS01_0020)",
+      "author": "NASA/Kim Shiflett",
+      "agency": "NASA/Kim Shiflett",
+      "source_url": "https://images.nasa.gov/details/KSC-20240215-PH-KLS01_0020",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "KSC-20240215-PH-KLS01_0020",
+      "fetched_at": "2026-11-15T14:29:38.876Z"
+    },
+    {
+      "id": "dae8d04f236aae77",
+      "path": "/images/missions/im-1/02.webp",
+      "source_type": "nasa-images-api",
+      "title": "NASA/SpaceX CLPS IM-1 Launch (KSC-20240215-PH-KLS01_0089)",
+      "author": "NASA/Kim Shiflett",
+      "agency": "NASA/Kim Shiflett",
+      "source_url": "https://images.nasa.gov/details/KSC-20240215-PH-KLS01_0089",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "KSC-20240215-PH-KLS01_0089",
+      "fetched_at": "2026-11-15T14:29:38.876Z"
+    },
+    {
+      "id": "658ca0de9c942e17",
+      "path": "/images/missions/im-1/02.1x1.jpg",
+      "source_type": "nasa-images-api",
+      "title": "NASA/SpaceX CLPS IM-1 Launch (KSC-20240215-PH-KLS01_0089)",
+      "author": "NASA/Kim Shiflett",
+      "agency": "NASA/Kim Shiflett",
+      "source_url": "https://images.nasa.gov/details/KSC-20240215-PH-KLS01_0089",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "KSC-20240215-PH-KLS01_0089",
+      "fetched_at": "2026-11-15T14:29:38.876Z"
+    },
+    {
+      "id": "1e6a39cb4b52f8cd",
+      "path": "/images/missions/im-1/03.webp",
+      "source_type": "nasa-images-api",
+      "title": "NASA/SpaceX CLPS IM-1 Launch (KSC-20240215-PH-KLS01_0085)",
+      "author": "NASA/Kim Shiflett",
+      "agency": "NASA/Kim Shiflett",
+      "source_url": "https://images.nasa.gov/details/KSC-20240215-PH-KLS01_0085",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "KSC-20240215-PH-KLS01_0085",
+      "fetched_at": "2026-11-15T14:29:38.876Z"
+    },
+    {
+      "id": "cd8aa177384afcb7",
+      "path": "/images/missions/im-1/03.1x1.jpg",
+      "source_type": "nasa-images-api",
+      "title": "NASA/SpaceX CLPS IM-1 Launch (KSC-20240215-PH-KLS01_0085)",
+      "author": "NASA/Kim Shiflett",
+      "agency": "NASA/Kim Shiflett",
+      "source_url": "https://images.nasa.gov/details/KSC-20240215-PH-KLS01_0085",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "KSC-20240215-PH-KLS01_0085",
+      "fetched_at": "2026-11-15T14:29:38.876Z"
+    },
+    {
+      "id": "ab6e43490c2384d0",
+      "path": "/images/missions/im-1/04.webp",
+      "source_type": "nasa-images-api",
+      "title": "Intuitive Machines CLPS Testing (KSC-20221118-PH-ILW01_0113)",
+      "author": "NASA/Isaac Watson",
+      "agency": "NASA/Isaac Watson",
+      "source_url": "https://images.nasa.gov/details/KSC-20221118-PH-ILW01_0113",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "KSC-20221118-PH-ILW01_0113",
+      "fetched_at": "2026-11-15T14:29:38.876Z"
+    },
+    {
+      "id": "256af2f7b6a7508a",
+      "path": "/images/missions/im-1/04.1x1.jpg",
+      "source_type": "nasa-images-api",
+      "title": "Intuitive Machines CLPS Testing (KSC-20221118-PH-ILW01_0113)",
+      "author": "NASA/Isaac Watson",
+      "agency": "NASA/Isaac Watson",
+      "source_url": "https://images.nasa.gov/details/KSC-20221118-PH-ILW01_0113",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "KSC-20221118-PH-ILW01_0113",
+      "fetched_at": "2026-11-15T14:29:38.876Z"
+    },
+    {
+      "id": "40c9fdf19b055990",
+      "path": "/images/fleet-galleries/viking-2/01.webp",
+      "source_type": "nasa-images-api",
+      "title": "KSC-75p-110 (101-KSC-75P-110)",
+      "author": "NASA or National Aeronautics and Space Administration",
+      "agency": "NASA",
+      "source_url": "https://images.nasa.gov/details/101-KSC-75P-110",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "101-KSC-75P-110",
+      "fetched_at": "2026-11-15T14:29:38.876Z"
+    },
+    {
+      "id": "1cd4d1b993aefb62",
+      "path": "/images/fleet-galleries/viking-2/01.1x1.jpg",
+      "source_type": "nasa-images-api",
+      "title": "KSC-75p-110 (101-KSC-75P-110)",
+      "author": "NASA or National Aeronautics and Space Administration",
+      "agency": "NASA",
+      "source_url": "https://images.nasa.gov/details/101-KSC-75P-110",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "101-KSC-75P-110",
+      "fetched_at": "2026-11-15T14:29:38.876Z"
+    },
+    {
+      "id": "00709fcb4d959172",
+      "path": "/images/fleet-galleries/viking-2/02.webp",
+      "source_type": "nasa-images-api",
+      "title": "Viking 2 Image of Mars Utopian Plain (PIA01522)",
+      "author": "NASA/JPL",
+      "agency": "NASA/JPL",
+      "source_url": "https://images.nasa.gov/details/PIA01522",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "PIA01522",
+      "fetched_at": "2026-11-15T14:29:38.876Z"
+    },
+    {
+      "id": "cb3558b7254ed3f1",
+      "path": "/images/fleet-galleries/viking-2/02.1x1.jpg",
+      "source_type": "nasa-images-api",
+      "title": "Viking 2 Image of Mars Utopian Plain (PIA01522)",
+      "author": "NASA/JPL",
+      "agency": "NASA/JPL",
+      "source_url": "https://images.nasa.gov/details/PIA01522",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "PIA01522",
+      "fetched_at": "2026-11-15T14:29:38.876Z"
+    },
+    {
+      "id": "5e1d166fec0b20ba",
+      "path": "/images/fleet-galleries/viking-2/03.webp",
+      "source_type": "nasa-images-api",
+      "title": "First Color Image of the Viking Lander 2 Site (PIA00568)",
+      "author": "NASA/JPL",
+      "agency": "NASA/JPL",
+      "source_url": "https://images.nasa.gov/details/PIA00568",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "PIA00568",
+      "fetched_at": "2026-11-15T14:29:38.876Z"
+    },
+    {
+      "id": "3d2824191e9f07db",
+      "path": "/images/fleet-galleries/viking-2/03.1x1.jpg",
+      "source_type": "nasa-images-api",
+      "title": "First Color Image of the Viking Lander 2 Site (PIA00568)",
+      "author": "NASA/JPL",
+      "agency": "NASA/JPL",
+      "source_url": "https://images.nasa.gov/details/PIA00568",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "PIA00568",
+      "fetched_at": "2026-11-15T14:29:38.876Z"
+    },
+    {
+      "id": "8c56298d7ece402f",
+      "path": "/images/fleet-galleries/viking-2/04.webp",
+      "source_type": "nasa-images-api",
+      "title": "Viking 2 A utopian bright summer afternoon on Mars -- Looking south from Viking 2 on Septe (ARC-1976-AC76-1011-2-15)",
+      "author": "NASA/ARC",
+      "agency": "NASA",
+      "source_url": "https://images.nasa.gov/details/ARC-1976-AC76-1011-2-15",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "ARC-1976-AC76-1011-2-15",
+      "fetched_at": "2026-11-15T14:29:38.876Z"
+    },
+    {
+      "id": "0aa35e2a470ca4bf",
+      "path": "/images/fleet-galleries/viking-2/04.1x1.jpg",
+      "source_type": "nasa-images-api",
+      "title": "Viking 2 A utopian bright summer afternoon on Mars -- Looking south from Viking 2 on Septe (ARC-1976-AC76-1011-2-15)",
+      "author": "NASA/ARC",
+      "agency": "NASA",
+      "source_url": "https://images.nasa.gov/details/ARC-1976-AC76-1011-2-15",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "ARC-1976-AC76-1011-2-15",
+      "fetched_at": "2026-11-15T14:29:38.876Z"
+    },
+    {
+      "id": "18bedd4f871b4696",
+      "path": "/images/fleet-galleries/viking-2/05.webp",
+      "source_type": "nasa-images-api",
+      "title": "Viking Lander 2 First Picture On The Surface Of Mars (PIA00396)",
+      "author": "NASA/JPL",
+      "agency": "NASA/JPL",
+      "source_url": "https://images.nasa.gov/details/PIA00396",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "PIA00396",
+      "fetched_at": "2026-11-15T14:29:38.876Z"
+    },
+    {
+      "id": "5b74f6a5ab6a2e47",
+      "path": "/images/fleet-galleries/viking-2/05.1x1.jpg",
+      "source_type": "nasa-images-api",
+      "title": "Viking Lander 2 First Picture On The Surface Of Mars (PIA00396)",
+      "author": "NASA/JPL",
+      "agency": "NASA/JPL",
+      "source_url": "https://images.nasa.gov/details/PIA00396",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "PIA00396",
+      "fetched_at": "2026-11-15T14:29:38.876Z"
+    },
+    {
+      "id": "2a213e434d3f50a1",
+      "path": "/images/fleet-galleries/viking-2/06.webp",
+      "source_type": "nasa-images-api",
+      "title": "KSC-75p-158 (101-KSC-75P-158)",
+      "author": "NASA or National Aeronautics and Space Administration",
+      "agency": "NASA",
+      "source_url": "https://images.nasa.gov/details/101-KSC-75P-158",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "101-KSC-75P-158",
+      "fetched_at": "2026-11-15T14:29:38.876Z"
+    },
+    {
+      "id": "ebdfb7ffe0d7b34d",
+      "path": "/images/fleet-galleries/viking-2/06.1x1.jpg",
+      "source_type": "nasa-images-api",
+      "title": "KSC-75p-158 (101-KSC-75P-158)",
+      "author": "NASA or National Aeronautics and Space Administration",
+      "agency": "NASA",
+      "source_url": "https://images.nasa.gov/details/101-KSC-75P-158",
+      "image_url": null,
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": "101-KSC-75P-158",
+      "fetched_at": "2026-11-15T14:29:38.876Z"
     }
   ]
 }

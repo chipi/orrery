@@ -97,9 +97,8 @@
     "mission:viking1": {
       "note": "el 20 de julio de 1976 el módulo de aterrizaje Viking 1 se posó en Chryse Planitia y devolvió las primeras imágenes nítidas de la superficie de Marte"
     },
-    "Viking 2": {
-      "note": "un segundo par de orbitador y módulo de aterrizaje, posado a miles de kilómetros de distancia, en Utopia Planitia, seis semanas después",
-      "name": "Viking 2"
+    "mission:viking2": {
+      "note": "un segundo par de orbitador y módulo de aterrizaje, posado a miles de kilómetros de distancia, en Utopia Planitia, seis semanas después"
     },
     "The biology experiments": {
       "note": "cada módulo de aterrizaje realizó experimentos diseñados para detectar vida en el suelo marciano; los resultados fueron ambiguos y siguen debatiéndose hasta hoy",

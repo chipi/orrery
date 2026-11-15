@@ -434,6 +434,11 @@ const INLINE_ALLOWLIST: ReadonlySet<string> = new Set<string>([
   // Ingalls) and the floodlit stack on the pad before launch (KSC-20221104-PH-ILW01_0298, Watson).
   // Two different photographs; both are night shots of Launch Pad 39B between the same two lightning towers.
   '4936d9a699646699|9b245ba49b666499',
+
+  // 2026-11-15 — missions/shenzhou-5 05 and missions/shenzhou-3 02 (d=0): the same Commons file,
+  // "Shenzhou 5 view from orbit.png" (a China News Service video frame). It belongs to Shenzhou 5;
+  // the Shenzhou 3 slot shows it too, which is a wrong picture for an uncrewed flight left in place.
+  '532ba93cd47e0e81|532ba93cd47e0e81',
 ]);
 
 interface BaselineFile {

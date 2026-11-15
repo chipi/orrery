@@ -2834,6 +2834,12 @@
     "name": "4f6920b887",
     "tagline": "0a62619cf0"
   },
+  "fleet/lander/viking-2.json": {
+    "best_known_for": "44eb3bd2aa",
+    "description": "d73900bc48",
+    "name": "a62bd402f0",
+    "tagline": "44eb3bd2aa"
+  },
   "fleet/lander/viking2-lander.json": {
     "best_known_for": "dfb1f8cbae",
     "description": "e8057075db",
@@ -3128,6 +3134,12 @@
     "dispatch": "70b19b14a7",
     "name": "f056d4351a",
     "tagline": "011bb9ef6d"
+  },
+  "fleet/launcher/atlas-agena-b.json": {
+    "best_known_for": "f45f9f2135",
+    "description": "abc56e0353",
+    "name": "85f24b5420",
+    "tagline": "f45f9f2135"
   },
   "fleet/launcher/atlas-lv-3b.json": {
     "best_known_for": "d1eda84a43",
@@ -3582,6 +3594,12 @@
     "description": "62592c1a7b",
     "name": "f7f3e212ab",
     "tagline": "be66d50779"
+  },
+  "fleet/orbiter/mariner-2.json": {
+    "best_known_for": "386d03b5d2",
+    "description": "37c1116687",
+    "name": "421d9731eb",
+    "tagline": "386d03b5d2"
   },
   "fleet/orbiter/mariner-4.json": {
     "best_known_for": "9d1207d65b",
@@ -8123,24 +8141,24 @@
     "timeline_now_label": "9841c42093",
     "timeline_now_title": "7cd54731be",
     "tour_eyebrow": "356c7c21c9",
+    "traverse_approximate_route": "e835494550",
     "traverse_current_position": "eec60dadcc",
     "traverse_current_rover_position": "297197f5c6",
     "traverse_end_active": "3b1405a5bb",
     "traverse_end_ended": "3603b8e78c",
     "traverse_final_rover_position": "0848fb3fa1",
     "traverse_hover_detail": "c7addbd76a",
+    "traverse_hover_km": "e1c204b8ba",
     "traverse_sol": "7aecdb1553",
     "ui_layer_comets": "f98d9da58b",
     "ui_layer_dwarfs": "14c301aae6",
     "ui_layer_interstellar_short": "db8b44fe7e",
-    "traverse_approximate_route": "e835494550",
     "ui_layer_orbiters": "08f9784fc3",
     "ui_layer_orbits": "23c424e552",
     "ui_layer_paths": "47769cd37c",
     "ui_layer_planets": "9807e6db9d",
     "ui_layer_traverses": "0c2e45a5e6",
     "ui_reset_view": "dffd08b827",
-    "traverse_hover_km": "e1c204b8ba",
     "ui_view_2d": "3698fe0420",
     "ui_view_3d": "64fe85d796",
     "ui_view_controls": "c4a04bf0c2",
@@ -8948,6 +8966,21 @@
     "type": "b8baf4a9f8",
     "vehicle": "d4bdeac7aa"
   },
+  "missions/earth/shenzhou-5.json": {
+    "delta_v": "dba9cc13e9",
+    "description": "8eeac2f5a0",
+    "events.0.label": "25ef1d7636",
+    "events.0.note": "dc6ce499e3",
+    "events.0.type": "586d612861",
+    "events.1.label": "062b45fc77",
+    "events.1.note": "b0f8ef36f2",
+    "events.1.type": "586d612861",
+    "first": "6ae420d270",
+    "name": "4c967a38a2",
+    "payload": "bd0070834d",
+    "type": "8133bc47bb",
+    "vehicle": "d4bdeac7aa"
+  },
   "missions/earth/sigma-7.json": {
     "delta_v": "dba9cc13e9",
     "description": "78dbbb0436",
@@ -9682,6 +9715,25 @@
     "vehicle": "1a222ceeae",
     "vehicle_stage": "a0df5819a5"
   },
+  "missions/mars/mars2.json": {
+    "delta_v": "85b08f15d6",
+    "description": "8d70017702",
+    "events.0.label": "89006102d3",
+    "events.0.note": "5fddaa9bcf",
+    "events.0.type": "586d612861",
+    "events.1.label": "665190d255",
+    "events.1.note": "dd3bb53c49",
+    "events.1.type": "586d612861",
+    "events.2.label": "620932e8cf",
+    "events.2.note": "fe94405b70",
+    "events.2.type": "383fd7bf84",
+    "first": "55be5f86b4",
+    "name": "27e87bed9a",
+    "payload": "b242884ce5",
+    "type": "7bb0214d51",
+    "vehicle": "a2b07a74e9",
+    "vehicle_stage": "881d3b3f1f"
+  },
   "missions/mars/mars3.json": {
     "delta_v": "dad1d4e83c",
     "description": "e962ecea71",
@@ -9753,6 +9805,22 @@
     "type": "3b655c84b2",
     "vehicle": "90fa29c54f",
     "vehicle_stage": "0fceb2ca77"
+  },
+  "missions/mars/mro.json": {
+    "delta_v": "8f65259654",
+    "description": "a7a064525f",
+    "events.0.label": "89006102d3",
+    "events.0.note": "f002c142e7",
+    "events.0.type": "586d612861",
+    "events.1.label": "43fb9e07ac",
+    "events.1.note": "2011d83d6c",
+    "events.1.type": "586d612861",
+    "first": "6b7bc087dc",
+    "name": "45da8da847",
+    "payload": "a8713d8efe",
+    "type": "9e4b4e6da1",
+    "vehicle": "5a7ad615d3",
+    "vehicle_stage": "5ea01f8577"
   },
   "missions/mars/opportunity.json": {
     "delta_v": "dad1d4e83c",
@@ -10020,6 +10088,25 @@
     "type": "0aba459e9c",
     "vehicle": "087352d935",
     "vehicle_stage": "9cf3a06ca8"
+  },
+  "missions/mars/viking2.json": {
+    "delta_v": "75e095fa92",
+    "description": "b409319ad4",
+    "events.0.label": "89006102d3",
+    "events.0.note": "b712df0923",
+    "events.0.type": "586d612861",
+    "events.1.label": "43fb9e07ac",
+    "events.1.note": "52e10c3437",
+    "events.1.type": "586d612861",
+    "events.2.label": "2d7a9acab3",
+    "events.2.note": "c366aec963",
+    "events.2.type": "586d612861",
+    "first": "ea847b235a",
+    "name": "a62bd402f0",
+    "payload": "7272b6a39a",
+    "type": "0aba459e9c",
+    "vehicle": "087352d935",
+    "vehicle_stage": "5ea01f8577"
   },
   "missions/mercury/bepicolombo.json": {
     "delta_v": "93209c25c6",
@@ -10697,6 +10784,22 @@
     "vehicle": "8b124f7c92",
     "vehicle_stage": "501f20552f"
   },
+  "missions/moon/change2.json": {
+    "delta_v": "ca8cf391ab",
+    "description": "ab266c349a",
+    "events.0.label": "89006102d3",
+    "events.0.note": "cc01a38b81",
+    "events.0.type": "586d612861",
+    "events.1.label": "41fe1d987d",
+    "events.1.note": "3f3e18b8f5",
+    "events.1.type": "586d612861",
+    "first": "ecdb397c21",
+    "name": "754c216645",
+    "payload": "c83563ab37",
+    "type": "5931663f94",
+    "vehicle": "c15f445651",
+    "vehicle_stage": "050ff17720"
+  },
   "missions/moon/change3.json": {
     "delta_v": "e9c2a9d3f1",
     "description": "35b720eb6a",
@@ -10824,6 +10927,25 @@
     "type": "5931663f94",
     "vehicle": "e05b1970dd",
     "vehicle_stage": "73df2db2bf"
+  },
+  "missions/moon/im-1.json": {
+    "delta_v": "ca8cf391ab",
+    "description": "21cd0d27e7",
+    "events.0.label": "89006102d3",
+    "events.0.note": "981169ab10",
+    "events.0.type": "586d612861",
+    "events.1.label": "41fe1d987d",
+    "events.1.note": "9cb5adf9f8",
+    "events.1.type": "586d612861",
+    "events.2.label": "062b45fc77",
+    "events.2.note": "c8c4578e42",
+    "events.2.type": "586d612861",
+    "first": "dd1538d3aa",
+    "name": "dfc11b2cd5",
+    "payload": "819347972f",
+    "type": "1500dc8784",
+    "vehicle": "9dd3cb1ce8",
+    "vehicle_stage": "8a883c79ed"
   },
   "missions/moon/kaguya.json": {
     "delta_v": "faf40213b1",
@@ -11380,6 +11502,22 @@
     "type": "5931663f94",
     "vehicle": "7eaa95e254",
     "vehicle_stage": "d4f1195382"
+  },
+  "missions/venus/mariner2.json": {
+    "delta_v": "4cc166d53f",
+    "description": "126dfd19bc",
+    "events.0.label": "89006102d3",
+    "events.0.note": "b39b43d255",
+    "events.0.type": "586d612861",
+    "events.1.label": "9515a30614",
+    "events.1.note": "3fe323795b",
+    "events.1.type": "586d612861",
+    "first": "3ba916031c",
+    "name": "421d9731eb",
+    "payload": "3cb9b2e212",
+    "type": "b8e6e0e847",
+    "vehicle": "85f24b5420",
+    "vehicle_stage": "6d8916cc93"
   },
   "missions/venus/vega-1.json": {
     "delta_v": "28a4938a2e",
@@ -13987,6 +14125,7 @@
     "Queqiao relay.name": "b1fd1adb8f",
     "Queqiao relay.note": "128facba0e",
     "mission:change1.note": "14a5b43646",
+    "mission:change2.note": "447a503f89",
     "mission:change3.note": "45e31c7c9f",
     "mission:change4.note": "10e8e3802e",
     "mission:change5.note": "7f93f4a759",
@@ -14121,11 +14260,10 @@
     "mission:mangalyaan.note": "032b497562"
   },
   "programs-roster/mariner.json": {
-    "Mariner 2 reaches Venus.name": "af2e7607cd",
-    "Mariner 2 reaches Venus.note": "98731c3b2c",
     "fleet:mariner-4.note": "77c86d1739",
     "fleet:mariner-9.note": "a3376fcbef",
-    "mission:mariner10.note": "279c61b959"
+    "mission:mariner10.note": "279c61b959",
+    "mission:mariner2.note": "98731c3b2c"
   },
   "programs-roster/mars-rovers.json": {
     "Ingenuity.name": "6c868f3fcd",
@@ -14180,13 +14318,12 @@
     "Shenzhou 11.note": "6241c40075",
     "Shenzhou 12.name": "b0bd6f60ec",
     "Shenzhou 12.note": "2e0f5c4dcc",
-    "Shenzhou 5.name": "4c967a38a2",
-    "Shenzhou 5.note": "e562899a9b",
     "Shenzhou 7.name": "9448676848",
     "Shenzhou 7.note": "8e04f66b53",
     "Shenzhou 9.name": "2e30f79e8e",
     "Shenzhou 9.note": "3d624fb533",
-    "mission:shenzhou-1.note": "9a827b2021"
+    "mission:shenzhou-1.note": "9a827b2021",
+    "mission:shenzhou-5.note": "e562899a9b"
   },
   "programs-roster/soviet-lunar.json": {
     "L3 complex.name": "2b62a5da1d",
@@ -14252,11 +14389,10 @@
   "programs-roster/tiangong.json": {
     "Continuous occupation.name": "7da9088148",
     "Continuous occupation.note": "0d52dcfd3b",
-    "Shenzhou 5.name": "4c967a38a2",
-    "Shenzhou 5.note": "9b258b95bf",
     "Shenzhou 9 → Tiangong-1.name": "23a87993b7",
     "Shenzhou 9 → Tiangong-1.note": "5e98aabbca",
     "mission:shenzhou-1.note": "2534367424",
+    "mission:shenzhou-5.note": "9b258b95bf",
     "module:chinarm.note": "3cb70c1347",
     "module:mengtian.note": "64d2b6fb49",
     "module:tianhe.note": "a9d25d7661",
@@ -14265,10 +14401,9 @@
   "programs-roster/viking.json": {
     "The biology experiments.name": "13710c320b",
     "The biology experiments.note": "ee67c873a5",
-    "Viking 2.name": "a62bd402f0",
-    "Viking 2.note": "bbe8885d1e",
     "fleet:viking-1.note": "946ce6370b",
-    "mission:viking1.note": "1ff355ab86"
+    "mission:viking1.note": "1ff355ab86",
+    "mission:viking2.note": "bbe8885d1e"
   },
   "programs-roster/vostok.json": {
     "Korabl-Sputnik 2 (Belka & Strelka).name": "4106606dd7",

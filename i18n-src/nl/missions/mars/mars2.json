@@ -1,0 +1,30 @@
+{
+  "name": "Mars 2",
+  "vehicle": "Proton-K / D",
+  "payload": "4650 kg (orbiter + lander samen)",
+  "delta_v": "~5,5 km/s (schatting)",
+  "type": "ORBITER WERKTE · LANDER VERLOREN",
+  "first": "Een Sovjet-orbiter en -lander, in 1971 naar Mars gelanceerd: de lander stortte neer, de orbiter werkte",
+  "description": "Mars 2 was een Sovjetruimtevaartuig dat bestond uit een orbiter en een lander. Het werd op 1971-05-19 gelanceerd met een Proton-K met een Blok D-bovenste trap, negen dagen vóór zijn tweelingbroer Mars 3. De afdalingsmodule scheidde ongeveer 4,5 uur voor aankomst af. Het afdalingssysteem faalde, de parachute opende niet en de lander stortte neer op Mars. De orbiter kwam op 1971-11-27 in een baan van 18 uur om Mars en stuurde gegevens tot ongeveer augustus 1972.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCERING",
+      "note": "Proton-K met Blok-D-bovenste trap vanaf Baikonoer, 1971-05-19.",
+      "type": "nominal"
+    },
+    {
+      "met": 192,
+      "label": "ORBITER: INTREDE IN MARSBAAN",
+      "note": "Orbiter gaat op 1971-11-27 in een baan rond Mars.",
+      "type": "nominal"
+    },
+    {
+      "met": 192.1,
+      "label": "LANDER VERLOREN",
+      "note": "De afdalingsmodule scheidde ongeveer 4,5 uur voor aankomst af; de lander stortte neer.",
+      "type": "warning"
+    }
+  ],
+  "vehicle_stage": "bovenste trap Blok-D"
+}

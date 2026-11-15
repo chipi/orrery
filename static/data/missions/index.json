@@ -1326,5 +1326,76 @@
     "sector": "gov",
     "color": "#0B3D91",
     "crewed": false
+  },
+  {
+    "agency": "NASA",
+    "sector": "gov",
+    "color": "#0B3D91",
+    "id": "viking2",
+    "dest": "MARS",
+    "status": "FLOWN",
+    "year": 1975,
+    "crewed": false
+  },
+  {
+    "agency": "Roscosmos",
+    "id": "mars2",
+    "dest": "MARS",
+    "status": "FLOWN",
+    "year": 1971,
+    "sector": "gov",
+    "color": "#cc4444",
+    "crewed": false,
+    "outcome": "failure"
+  },
+  {
+    "agency": "NASA",
+    "sector": "gov",
+    "color": "#0B3D91",
+    "id": "mro",
+    "dest": "MARS",
+    "status": "ACTIVE",
+    "year": 2005,
+    "crewed": false
+  },
+  {
+    "agency": "NASA",
+    "sector": "gov",
+    "color": "#0B3D91",
+    "id": "mariner2",
+    "dest": "VENUS",
+    "status": "FLOWN",
+    "year": 1962,
+    "crewed": false
+  },
+  {
+    "agency": "CNSA",
+    "id": "change2",
+    "dest": "MOON",
+    "status": "FLOWN",
+    "year": 2010,
+    "sector": "gov",
+    "color": "#DE2910",
+    "crewed": false
+  },
+  {
+    "agency": "Intuitive Machines",
+    "id": "im-1",
+    "dest": "MOON",
+    "status": "FLOWN",
+    "year": 2024,
+    "sector": "private",
+    "color": "#0B3D91",
+    "crewed": false
+  },
+  {
+    "agency": "CMSA",
+    "id": "shenzhou-5",
+    "dest": "EARTH",
+    "status": "FLOWN",
+    "year": 2003,
+    "sector": "gov",
+    "color": "#de2910",
+    "crewed": true
   }
 ]

@@ -3550,5 +3550,41 @@
     "status": "PLANNED",
     "first_flight": "planned",
     "tagline": "Proposed NASA rover for the lunar south pole"
+  },
+  {
+    "id": "viking-2",
+    "name": "Viking 2",
+    "category": "lander",
+    "agency": "NASA",
+    "country": "USA",
+    "era": "1969-1981",
+    "epoch": "first-stations",
+    "status": "RETIRED",
+    "first_flight": "1975-09-09",
+    "tagline": "Second Viking: an orbiter and a lander that worked in Utopia Planitia until 1980"
+  },
+  {
+    "id": "atlas-agena-b",
+    "name": "Atlas-Agena B",
+    "category": "launcher",
+    "agency": "NASA",
+    "country": "USA",
+    "era": "1957-1969",
+    "epoch": "space-race",
+    "status": "RETIRED",
+    "first_flight": "1961-07-12",
+    "tagline": "Launched the Ranger lunar probes and Mariner 2 to Venus"
+  },
+  {
+    "id": "mariner-2",
+    "name": "Mariner 2",
+    "category": "orbiter",
+    "agency": "NASA",
+    "country": "USA",
+    "era": "1957-1969",
+    "epoch": "space-race",
+    "status": "RETIRED",
+    "first_flight": "1962-08-27",
+    "tagline": "Venus flyby, December 1962: NASA's first successful planetary science mission"
   }
 ]

@@ -30011,6 +30011,617 @@
       "rejected_by": null,
       "scored_at": "2026-11-15T13:29:39.440Z",
       "scoring_cost_usd": 0
+    },
+    "/images/missions/viking2/01.jpg": {
+      "score": 8,
+      "subject": "The Viking 2 lander on the rock-strewn plain of Utopia Planitia, with its flag, instrument deck and antenna mast.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:39.187Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/viking2/02.jpg": {
+      "score": 8,
+      "subject": "The first colour image of the Viking Lander 2 site, a rocky plain under a dust-pink sky.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.55
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:39.200Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/viking2/03.jpg": {
+      "score": 8,
+      "subject": "A Viking 2 view south across the plain on 7 September 1976, a print scan with film-edge scale marks.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:39.204Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/viking2/04.jpg": {
+      "score": 8,
+      "subject": "The first picture Viking Lander 2 took on the surface of Mars: rocks and a lander footpad, black and white.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.6,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:39.228Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/viking2/05.jpg": {
+      "score": 8,
+      "subject": "Technicians inspecting Viking Lander 2 in the encapsulation facility at Kennedy Space Center, 6 February 1975.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:39.234Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/viking2/06.jpg": {
+      "score": 8,
+      "subject": "The mated Viking lander and orbiter being handled in the Kennedy encapsulation facility, 8 March 1975.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.45
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:39.244Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/mars2/05.jpg": {
+      "score": 8,
+      "subject": "An orbital view of terrain searched for the lost Mars 2 lander; the lander is not identified in it.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:39.253Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/mro/01.jpg": {
+      "score": 8,
+      "subject": "An artist's concept of Mars Reconnaissance Orbiter, front view, over the Martian surface.",
+      "category": "render",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:39.264Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/mro/02.jpg": {
+      "score": 8,
+      "subject": "An Atlas V launching Mars Reconnaissance Orbiter from Cape Canaveral, 12 August 2005.",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.55
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:39.302Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/mro/03.jpg": {
+      "score": 8,
+      "subject": "The Atlas V carrying Mars Reconnaissance Orbiter climbing over the Atlantic, 12 August 2005.",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.4
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:39.312Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/mro/04.jpg": {
+      "score": 8,
+      "subject": "Technicians working on the Mars Reconnaissance Orbiter structure during assembly, August 2004.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:39.323Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/mro/05.jpg": {
+      "score": 8,
+      "subject": "The encapsulated Mars Reconnaissance Orbiter being hoisted up the Vertical Integration Facility, 28 July 2005.",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.45,
+        "y": 0.4
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:39.333Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/mro/06.jpg": {
+      "score": 8,
+      "subject": "A HiRISE view of Perseverance on the surface after landing, with its parachute and descent stage.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.45,
+        "y": 0.45
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:39.343Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/mro/07.jpg": {
+      "score": 8,
+      "subject": "A HiRISE false-colour view of layered deposits exposed in a polar canyon.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.45
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:39.353Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/mariner2/01.jpg": {
+      "score": 8,
+      "subject": "An artist's concept of Mariner 2 in space.",
+      "category": "render",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:39.411Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/mariner2/02.jpg": {
+      "score": 8,
+      "subject": "The Mariner 2 engineering model at the Smithsonian National Air and Space Museum, a ground model.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.45
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:39.417Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/mariner2/03.jpg": {
+      "score": 8,
+      "subject": "Engineers at JPL looking at data from the Mariner 2 Venus flyby of 14 December 1962.",
+      "category": "people",
+      "focal_point": {
+        "x": 0.4,
+        "y": 0.45
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:39.466Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/mariner2/04.jpg": {
+      "score": 8,
+      "subject": "A Mariner 2 model presented to the US President in the Oval Office, 17 January 1963.",
+      "category": "people",
+      "focal_point": {
+        "x": 0.65,
+        "y": 0.45
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:39.479Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/mariner2/05.jpg": {
+      "score": 8,
+      "subject": "A scroll of Venus data in front of the JPL Mariner 2 mission board, January 1963.",
+      "category": "people",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:39.504Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/mariner2/06.jpg": {
+      "score": 8,
+      "subject": "A team member making a final check of the Mariner 2 spacecraft in a hangar, 1962.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.55
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:39.539Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/change2/01.jpg": {
+      "score": 8,
+      "subject": "A Chang'e 2 mock-up hanging in the Beijing Air and Space Museum.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:39.543Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/change2/02.jpg": {
+      "score": 8,
+      "subject": "Asteroid Toutatis imaged by Chang'e 2 on its flyby of 13 December 2012, processed by Jiang et al.",
+      "category": "diagram",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:39.565Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/im-1/01.jpg": {
+      "score": 8,
+      "subject": "A Falcon 9 with the Nova-C lander lifting off from Pad 39A at night, 15 February 2024.",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.55
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:39.570Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/im-1/02.jpg": {
+      "score": 8,
+      "subject": "A Falcon 9 just off Pad 39A with the IM-1 mission, a close view of the exhaust plume.",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.45
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:39.690Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/im-1/03.jpg": {
+      "score": 8,
+      "subject": "A Falcon 9 lifting off from Pad 39A with the Nova-C lander, the water tower in frame.",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.55,
+        "y": 0.45
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:39.822Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/im-1/04.jpg": {
+      "score": 8,
+      "subject": "A helicopter carrying Intuitive Machines navigation sensors for Nova-C during testing at Kennedy, 18 November 2022.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:39.968Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/shenzhou-5/01.jpg": {
+      "score": 8,
+      "subject": "The Shenzhou 5 return capsule on display at the National Museum of China.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:40.091Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/shenzhou-5/02.jpg": {
+      "score": 8,
+      "subject": "The Shenzhou 5 space suit on display at the National Museum of China.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.55,
+        "y": 0.4
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:40.107Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/shenzhou-5/03.jpg": {
+      "score": 8,
+      "subject": "Items used on the Shenzhou 5 flight, on display at the National Museum of China.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:40.128Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/shenzhou-5/04.jpg": {
+      "score": 8,
+      "subject": "A Shenzhou 5 spacecraft mock-up and parachute at the National Museum of China.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.65,
+        "y": 0.4
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:40.148Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/shenzhou-5/05.jpg": {
+      "score": 8,
+      "subject": "A view of Earth from orbit through the Shenzhou 5 window, a video frame.",
+      "category": "orbital",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:40.168Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/shenzhou-5/06.jpg": {
+      "score": 8,
+      "subject": "The Shenzhou 5 astronaut in space holding the Chinese and UN flags, a video frame.",
+      "category": "people",
+      "focal_point": {
+        "x": 0.55,
+        "y": 0.45
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:40.172Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/shenzhou-5/07.jpg": {
+      "score": 8,
+      "subject": "The Shenzhou 5 astronaut waving after the landing, a video frame.",
+      "category": "people",
+      "focal_point": {
+        "x": 0.55,
+        "y": 0.4
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:40.175Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/viking-2/01.jpg": {
+      "score": 8,
+      "subject": "Technicians inspecting Viking Lander 2 in the encapsulation facility at Kennedy Space Center, 6 February 1975.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:40.179Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/viking-2/02.jpg": {
+      "score": 8,
+      "subject": "The Viking 2 lander on the rock-strewn plain of Utopia Planitia, with its flag, instrument deck and antenna mast.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:40.190Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/viking-2/03.jpg": {
+      "score": 8,
+      "subject": "The first colour image of the Viking Lander 2 site, a rocky plain under a dust-pink sky.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.55
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:40.200Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/viking-2/04.jpg": {
+      "score": 8,
+      "subject": "A Viking 2 view south across the plain on 7 September 1976, a print scan with film-edge scale marks.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:40.202Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/viking-2/05.jpg": {
+      "score": 8,
+      "subject": "The first picture Viking Lander 2 took on the surface of Mars: rocks and a lander footpad, black and white.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.6,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:40.229Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/viking-2/06.jpg": {
+      "score": 8,
+      "subject": "The mated Viking lander and orbiter being handled in the Kennedy encapsulation facility, 8 March 1975.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.45
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:40.233Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/atlas-agena-b/01.jpg": {
+      "score": 8,
+      "subject": "The liftoff of Ranger 3 on an Atlas-Agena B from Pad 12, 26 January 1962.",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:40.243Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/atlas-agena-b/02.jpg": {
+      "score": 8,
+      "subject": "The Atlas-Agena B on the pad before the Ranger 5 launch, 18 October 1962, black and white.",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.45
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:40.309Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/atlas-agena-b/03.jpg": {
+      "score": 8,
+      "subject": "An Atlas-Agena launching Ranger 4, 23 April 1962.",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:40.337Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/atlas-agena-b/04.jpg": {
+      "score": 8,
+      "subject": "The launch of an Atlas Agena B with Ranger 7, 28 July 1964.",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.55,
+        "y": 0.4
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:40.386Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/mariner-2/01.jpg": {
+      "score": 8,
+      "subject": "An artist's concept of Mariner 2 in space.",
+      "category": "render",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:40.397Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/mariner-2/02.jpg": {
+      "score": 8,
+      "subject": "The Mariner 2 engineering model at the Smithsonian National Air and Space Museum, a ground model.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.45
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:40.403Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/mariner-2/03.jpg": {
+      "score": 8,
+      "subject": "A team member making a final check of the Mariner 2 spacecraft in a hangar, 1962.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.55
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:40.462Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/mariner-2/04.jpg": {
+      "score": 8,
+      "subject": "A Mariner 2 model presented to the US President in the Oval Office, 17 January 1963.",
+      "category": "people",
+      "focal_point": {
+        "x": 0.65,
+        "y": 0.45
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:40.466Z",
+      "scoring_cost_usd": 0
     }
   }
 }

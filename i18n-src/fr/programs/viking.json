@@ -97,9 +97,8 @@
     "mission:viking1": {
       "note": "le 20 juillet 1976, l'atterrisseur Viking 1 s'est posé en Chryse Planitia et a renvoyé les premières images nettes de la surface de Mars"
     },
-    "Viking 2": {
-      "note": "une seconde paire orbiteur-atterrisseur, posée à des milliers de kilomètres en Utopia Planitia six semaines plus tard",
-      "name": "Viking 2"
+    "mission:viking2": {
+      "note": "une seconde paire orbiteur-atterrisseur, posée à des milliers de kilomètres en Utopia Planitia six semaines plus tard"
     },
     "The biology experiments": {
       "note": "chaque atterrisseur a mené des expériences conçues pour détecter la vie dans le sol martien ; les résultats étaient ambigus, et font encore débat aujourd'hui",

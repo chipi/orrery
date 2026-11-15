@@ -97,9 +97,8 @@
     "mission:viking1": {
       "note": "1976年7月20日、Viking 1着陸機がChryse Planitiaに着陸し、火星表面からの初の鮮明な画像を送り返した"
     },
-    "Viking 2": {
-      "note": "2組目の周回機と着陸機のペアで、6週間後に数千キロメートル離れたUtopia Planitiaに降り立った",
-      "name": "Viking 2"
+    "mission:viking2": {
+      "note": "2組目の周回機と着陸機のペアで、6週間後に数千キロメートル離れたUtopia Planitiaに降り立った"
     },
     "The biology experiments": {
       "note": "各着陸機は火星の土壌中の生命を検出するよう設計された実験を行った。結果は曖昧で、今日に至るまで議論が続いている",

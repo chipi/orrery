@@ -113,9 +113,8 @@
     "mission:shenzhou-1": {
       "note": "primer vuelo de prueba no tripulado de la Shenzhou — la prueba de que China podía volar su propia cápsula tripulada"
     },
-    "Shenzhou 5": {
-      "note": "Yang Liwei se convierte en el primer astronauta chino en órbita — China se une a Estados Unidos y a la URSS como tercera nación en lanzar a un ser humano en su propio cohete",
-      "name": "Shenzhou 5"
+    "mission:shenzhou-5": {
+      "note": "Yang Liwei se convierte en el primer astronauta chino en órbita — China se une a Estados Unidos y a la URSS como tercera nación en lanzar a un ser humano en su propio cohete"
     },
     "Shenzhou 9 → Tiangong-1": {
       "note": "primer acoplamiento tripulado con una estación china; Liu Yang se convierte en la primera mujer china en el espacio",

@@ -3531,6 +3531,10 @@
     "why": "variant: 周 (revolution counter)",
     "tr": "08c0dd2469"
   },
+  "orbit|ja|missions/earth/shenzhou-5.json :: events.1.note": {
+    "why": "read 2026-11-15 (content7): '14 orbits' counts revolutions of the Earth; Japanese counts them as 14周 (laps), not the orbit as a path",
+    "tr": "29c7ddd7c0"
+  },
   "orbit|ja|science/_landing.json :: chapters.0.diagram": {
     "why": "filename",
     "tr": "72874f8e10"
@@ -3558,6 +3562,10 @@
   "orbit|ko|missions/earth/friendship-7.json :: events.3.note": {
     "why": "variant: 바퀴 (revolution counter)",
     "tr": "3b8465974d"
+  },
+  "orbit|ko|missions/earth/shenzhou-5.json :: events.1.note": {
+    "why": "read 2026-11-15 (content7): '14 orbits' counts revolutions of the Earth; Korean counts them as 14바퀴 (laps), not the orbit as a path",
+    "tr": "e834ba3824"
   },
   "orbit|ko|missions/earth/vostok-6.json :: dispatch": {
     "why": "variant: 돈 / 바퀴 (verb to orbit)",
@@ -3950,6 +3958,10 @@
   "orbit|ru|missions/earth/gemini7.json :: type": {
     "why": "variant: ОКОЛОЗЕМНЫЙ (Earth-orbit adjective, same as sibling pages)",
     "tr": "f4dd31e0df"
+  },
+  "orbit|ru|missions/earth/shenzhou-5.json :: events.1.note": {
+    "why": "read 2026-11-15 (content7): '14 orbits' counts revolutions of the Earth; the Russian word is витки (revolutions), not the orbit as a path",
+    "tr": "82b6182299"
   },
   "orbit|ru|missions/earth/sigma-7.json :: dispatch": {
     "why": "variant: виток (count of revolutions)",

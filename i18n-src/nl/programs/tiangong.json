@@ -113,9 +113,8 @@
     "mission:shenzhou-1": {
       "note": "eerste onbemande Shenzhou-testvlucht — het bewijs dat China zijn eigen bemanningscapsule kon vliegen"
     },
-    "Shenzhou 5": {
-      "note": "Yang Liwei wordt de eerste Chinese astronaut in een baan — China voegt zich bij de VS en de USSR als derde land dat een mens met een eigen raket lanceert",
-      "name": "Shenzhou 5"
+    "mission:shenzhou-5": {
+      "note": "Yang Liwei wordt de eerste Chinese astronaut in een baan — China voegt zich bij de VS en de USSR als derde land dat een mens met een eigen raket lanceert"
     },
     "Shenzhou 9 → Tiangong-1": {
       "note": "eerste bemande koppeling met een Chinees station; Liu Yang wordt China's eerste vrouw in de ruimte",

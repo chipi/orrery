@@ -29,7 +29,7 @@
   }
   let { model, live, trail, vehicle, light, cover, opening, seed }: Props = $props();
 
-  const W = 360;
+  const W = 322;
   const SIDE_H = 150;
   const RIG_H = 190;
   const COLORS: Record<string, string> = {

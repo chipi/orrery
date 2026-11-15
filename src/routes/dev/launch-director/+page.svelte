@@ -250,7 +250,8 @@
 
 <svelte:head><title>launch director (dev)</title></svelte:head>
 
-<div class="stage" bind:this={container}></div>
+<!-- with ?debug=1 the stage sits under the DebugPanel (z-index 90) instead of over everything -->
+<div class="stage" style:z-index={q.get('debug') === '1' ? 80 : 9000} bind:this={container}></div>
 
 {#snippet directorDebug()}
   {#if debugModel && plan}
@@ -272,7 +273,7 @@
 <DebugPanelRegistrar label="LAUNCH DIRECTOR" content={directorDebug} />
 
 {#if showUi}
-  <div class="bar">
+  <div class="bar" style:z-index={q.get('debug') === '1' ? 81 : 9001}>
     <div class="row">
       <strong>{launcher}{flown ? ` · ${flown}` : ''}</strong>
       <span>mission {missionId ?? '—'}</span>

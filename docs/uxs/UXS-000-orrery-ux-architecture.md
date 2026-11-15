@@ -196,6 +196,8 @@ gains a link to the UXD, in the same change as the rule.
 
 Line numbers are as read at `9fdf4cc4a6b`; re-grep before editing.
 
+**UXD-030 to UXD-047 (plan L10, 2026-11-15).** Each record is linked from the rules it changes: the IA §surfaces, §controls, §url-structure or §shared-tokens line (all eighteen), the TA.md section (all eighteen, the record in the same section as the contract), the Design System section (all but UXD-036 and UXD-041, which set no visual rule), and the UXS it amends: UXS-002 and UXS-003 (UXD-042, 043, 046, 047), UXS-004 (UXD-035), UXS-005 (UXD-030, 031, 034), UXS-006 (UXD-030, 034, 036, 044), UXS-013 (UXD-039), UXS-014 (UXD-037, 045), UXS-017 (UXD-040). UXD-032, 033, 038 and 041 amend no UXS (programs, the long text pages and the library are IA and TA rows, not a UXS); AGENTS.md carries UXD-038 (the 10-row rule) and UXD-045 (the INDEX row glyph) because those are rules an agent writes code against.
+
 ## Revision history
 
 | Date       | Change                                                                                                  |

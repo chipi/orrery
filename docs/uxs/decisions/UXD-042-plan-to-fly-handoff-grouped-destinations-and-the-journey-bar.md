@@ -4,7 +4,7 @@
 - **Date**: 2026-11-14 (proposed and decided)
 - **Decider**: the operator, 2026-11-14 — the recommendations of `docs/wip/2026-11-14-slice-G1-brief.md` §12 approved as written ("Yes on G1/2": decisions G-1a to G-9a)
 - **Answers**: PL1, PL2, PL3, FY3 of the UX feedback plan; slice G1
-- **Builds on**: [UXD-014](UXD-014-one-chip-and-one-filter-component.md) (the scrubber's play and speed chips), [UXD-001](UXD-001-ui-accent-blue-replaces-teal.md) (no teal: the beat ticks are the muted blue `#889fe7`)
+- **Builds on**: [UXD-014](UXD-014-one-chip-and-filter.md) (the scrubber's play and speed chips), [UXD-001](UXD-001-ui-accent-blue-replaces-teal.md) (no teal: the beat ticks are the muted blue `#889fe7`)
 - **Changes**: `src/lib/plan/rocket-handoff.ts`, `src/lib/plan/flight-destination.ts`, `src/lib/plan/destinations.ts`, `src/lib/fly/journey-markers.ts`, `src/lib/orbital/flight-plan-beats.ts` (all new except `destinations.ts`), `src/lib/fly-mission-apply.ts`, `src/lib/fly/apply-to-page.ts`, `src/lib/physics/ascent/launch-profile-registry.ts`, `src/lib/components/LaunchScene.svelte` (the flight-plan list reads the shared beats), `src/routes/plan/+page.svelte`, `src/routes/fly/+page.svelte`, 7 message keys in 14 locales, `tests/e2e/plan-to-fly.spec.ts` (new), `tests/e2e/chip.spec.ts`. No data file, no hero, no image.
 
 ## Context

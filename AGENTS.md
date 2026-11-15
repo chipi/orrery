@@ -792,7 +792,8 @@ Page shell (src/lib/styles/page-shell.css, UX A2, docs/uxs/decisions/UXD-012-one
   .page-section-title (Bebas 28px). No page defines its own h1 / lead / container rules
   and no page adds --nav-height padding (the nav is sticky, already in flow). Kept
   exceptions carry `a2-keep: <why>`. Not on the shell: home (home slice), scenes, Lab,
-  missions/launches/fleet browse tools. Enforced by tests/e2e/page-shell.spec.ts.
+  missions/launches/fleet browse tools. A long list on a text page draws its first 10 rows
+  and a "Show all N" chip (UXD-038). Enforced by tests/e2e/page-shell.spec.ts.
 
 Chip (src/lib/styles/chip.css, UX A4, docs/uxs/decisions/UXD-014-one-chip-and-filter.md):
   every toggle, filter, choice and HUD action is a <Chip> (kind toggle | choice | action
@@ -812,7 +813,7 @@ Layer chips (src/lib/components/LayerChipRow.svelte, UXD-015): one flat horizont
   group; RESET VIEW is always rendered (disabled when inert) so no chip shifts. /earth = SURFACE, LAUNCHPADS,
   MUSEUMS, OBSERVATORIES, ORBITERS (one ORBITERS chip switches every orbiter, as on the other
   worlds). The scene routes (/moon /mars /venus /explore) have no separate A-Z tab: their INDEX
-  panel carries a real link to each entity page (prerendered while closed, ADR-096 item 11). `/explore` has the same INDEX on all eight scales (`ScaleIndex`, UXD-017): the neighbourhood's links `/explore/stars/<id>`, the Milky Way's (Sagittarius A*, Cygnus X-1), Virgo's (M87*) and the Cosmic web's (Gargantua, "Fiction") link `/explore/black-holes/<id>`, the neighbourhood's deep-sky rows (and the twin Milky Way globular and Local Group rows, one page per object) link `/explore/deep-sky/<id>`, the Local Group's, Milky Way Magellanic and the four structure scales' rows link `/explore/galaxies/<id>` and `/explore/structures/<id>` (item 18: the files decide; 29 galaxy and 30 structure pages since 2026-11-13), and `/explore` renders every scale's INDEX, hidden unless on screen, so its prerendered HTML is the crawl path (items 13–14, 16 and 17); a scale's rows are built by `getScaleIndexRows` / `src/lib/explore/scale-index.ts`;
+  panel carries a real link to each entity page (prerendered while closed, ADR-096 item 11). `/explore` has the same INDEX on all eight scales (`ScaleIndex`, UXD-017; a row's type is a glyph with a tooltip, UXD-045): the neighbourhood's links `/explore/stars/<id>`, the Milky Way's (Sagittarius A*, Cygnus X-1), Virgo's (M87*) and the Cosmic web's (Gargantua, "Fiction") link `/explore/black-holes/<id>`, the neighbourhood's deep-sky rows (and the twin Milky Way globular and Local Group rows, one page per object) link `/explore/deep-sky/<id>`, the Local Group's, Milky Way Magellanic and the four structure scales' rows link `/explore/galaxies/<id>` and `/explore/structures/<id>` (item 18: the files decide; 29 galaxy and 30 structure pages since 2026-11-13), and `/explore` renders every scale's INDEX, hidden unless on screen, so its prerendered HTML is the crawl path (items 13–14, 16 and 17); a scale's rows are built by `getScaleIndexRows` / `src/lib/explore/scale-index.ts`;
   /missions and /fleet keep EntityIndex at the page foot. Enforced by tests/e2e/chip-row.spec.ts
   and tests/e2e/index-links.spec.ts.
 

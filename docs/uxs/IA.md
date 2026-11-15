@@ -180,10 +180,10 @@ features that warrant top-level prominence.
 /explore                                       Solar System Explorer
 /explore?context=milky-way                     One of the eight scale levels (solar-system, neighborhood, milky-way, local-group, local-sheet, virgo, laniakea, cosmic-web): a jump on the one prerendered page, not a page of its own (UXD-027)
 /plan                                          Mission Configurator (Mars default)
-/plan?dest=jupiter&type=flyby                  Multi-destination (ADR-026): dest=mercury|venus|mars|jupiter|saturn; type=landing|flyby
+/plan?dest=jupiter&type=flyby                  Multi-destination (ADR-026): dest=mercury|venus|mars|jupiter|saturn; type=landing|flyby; rocket=<rockets.json id> (kept in the URL once picked); the destination select has five groups (UXD-042)
 /fly                                           Mission Arc (default scenario: ORRERY DEMO free-return)
 /fly?mission=id                                Mission Arc (specific mission from library)
-/fly?dest=jupiter&type=flyby&dep=N&tof=N       Mission Arc (synthesised from /plan selection, ADR-026)
+/fly?dest=jupiter&type=flyby&dep=N&tof=N&rocket=id  Mission Arc (synthesised from /plan selection, ADR-026; rocket = rockets.json id, optional; a planetary moon flies its host's arc; launch=1 starts the launch)
 /missions                                      Mission Catalog (all missions)
 /missions?dest=MARS&status=ACTIVE&agency=NASA  Mission Catalog filtered (ADR-024)
 /fleet                                         Spaceflight Fleet (card grid); `?view=lineup&kind=launchers|spacecraft` is the true-scale line-up (UXD-035; `category=launcher&view=lineup` still opens it); `?id=<id>` opens an entry's panel, `/fleet/<id>` is its page

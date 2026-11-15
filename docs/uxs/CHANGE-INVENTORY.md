@@ -89,7 +89,7 @@ The slice plan is dated 2026-11-11 and all statuses are as of that day, on branc
 
 | Slice | Change | Points | Decisions | Status | Surfaces | Will touch | Waits on |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| G1 | Plan to Fly: grouped destinations, the chosen rocket and payload carried, markers on the play bar | PL1, PL2, PL3, FY3 | none yet | planned | plan, fly | UXS-002, UXS-003 | — |
+| G1 | Plan to Fly: grouped destinations (five `optgroup`s), the chosen rocket (`rocket=`) and the payload "Generic spacecraft · N kg" carried, a launch that starts from a plan flight (the dead button's cause fixed), the nine planetary moons flown on their host's arc with the moon named, one marker row on the play bar for the whole journey | PL1, PL2, PL3, FY3 | UXD-042 | built (unit tests, `plan-to-fly.spec.ts` on three projects, screenshots; not yet operator-reviewed; a launch from a plan flight was seen to start, not watched to the end) | plan, fly | UXS-002, UXS-003, IA, Design System §5.12, TA.md, ADR-026 | — |
 | G2 | Fly visuals: brighter 2D, the destination body drawn, HUD rows as a label/value grid | FY1, FY4 | UXD-004 (context) | planned | fly | UXS-003 | — |
 | G3 | Ascent: a ground-relative downrange so the first seconds rise vertically; new camera shots | FY2, LA1 | none yet | planned | fly launch | UXS-003, ADR-077 | none (D6 answered 2026-11-14: nine example shots) |
 

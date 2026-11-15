@@ -357,6 +357,7 @@
       <div
         class="action-slot"
         class:reserved={crossSitePending}
+        class:two-rows={crossSitePending && canFly}
         class:withhold={crossSitePending && !canFly}
       >
         {#if !crossSitePending}
@@ -1088,6 +1089,13 @@
   .action-slot.reserved {
     min-block-size: calc(44px + 12px);
   }
+  /* A mission that can fly and is expected to carry the surface chip fills two rows at the panel's
+     width (the surface chip, then Fly and Share), and 47 of the 60 Moon and Mars missions have a
+     site, so the two-row height is the likelier one. Measured: Apollo 11 pushed the hero 36 px
+     with the one-row reservation. */
+  .action-slot.reserved.two-rows {
+    min-block-size: calc(2 * 44px + 6px + 12px);
+  }
   /* A mission that cannot fly has no chip to show if its site list turns up nothing, so the row
      then leaves and everything below it moves up. Until the list is read, that part is laid out
      but not painted: the move happens while it cannot be seen. */
@@ -1097,6 +1105,9 @@
   @media (hover: hover) and (pointer: fine) {
     .action-slot.reserved {
       min-block-size: calc(30px + 12px);
+    }
+    .action-slot.reserved.two-rows {
+      min-block-size: calc(2 * 30px + 6px + 12px);
     }
   }
   .dispatch {

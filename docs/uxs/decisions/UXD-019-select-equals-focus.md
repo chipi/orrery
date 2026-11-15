@@ -94,6 +94,10 @@ residents of the ruler were buttons that did nothing. Evidence: the brief's §2 
     leave and everything below it move up: until the list is read that part is laid out and not painted,
     and the move happens unseen. The overview's message section of the five outbound craft holds its
     place the same way (its static text, a block for the culture door) while the trajectory loads.
+    Amended 2026-11-15: the held place is two chip rows tall for a mission that can fly (the surface
+    chip, then Fly and Share, wrap at the panel's 400 px), one row for the rest; with the one-row
+    reservation Apollo 11's hero dropped 36 px when the site list arrived. `mission-panel-action-row.spec.ts`
+    holds the site list 1.5 s and asserts the hero stays put under the row and Fly does not move.
 12. **Plan mission on small bodies.** Pluto moved from the planet panel to the small-body panel and lost
     its Plan mission chip; the small-body panel now carries it, deep-linked to `/plan?dest=<id>`, for the
     bodies /plan lists (Ceres, Vesta, Psyche, Bennu, Pluto; `src/lib/plan/destinations.ts`, shared with the

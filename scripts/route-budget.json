@@ -1,5 +1,5 @@
 {
-  "$comment": "KB brotli. shell = root layout + client entry; each route = what it adds beyond the shell. Set 2026-10-30 at measured size +10% +5 KB (rounded up to 5). /lab/callback lowered 695 → 10 on 2026-11-09: it no longer imports the Lab message map (measured 4 KB with prod debug ids). See scripts/check-route-budget.mjs. /lab lowered 795 → 120 on 2026-11-09: the Lab message tables load per locale (measured 102 KB).",
+  "$comment": "KB brotli. shell = root layout + client entry; each route = what it adds beyond the shell. Set 2026-10-30 at measured size +10% +5 KB (rounded up to 5). /lab/callback lowered 695 → 10 on 2026-11-09: it no longer imports the Lab message map (measured 4 KB with prod debug ids). See scripts/check-route-budget.mjs. /lab lowered 795 → 120 on 2026-11-09: the Lab message tables load per locale (measured 102 KB). /colophon given its own 40 on 2026-11-15 (was the 30 default): F1's sections, totals line, ShowAll and the hash scroll measured 30.3 KB (page node 20.8, data 6.4), +10% +5 rounded up to 5.",
   "shell": 200,
   "defaultRoute": 30,
   "routes": {
@@ -22,7 +22,8 @@
     "/privacy": 45,
     "/cards/[kind]/[id]": 45,
     "/programs/[id]": 35,
-    "/library": 35
+    "/library": 35,
+    "/colophon": 40
   },
   "css": {
     "$comment": "KB brotli, stylesheets of the static closure. Set 2026-11-02 at measured +10% +5 KB (rounded up to 5).",

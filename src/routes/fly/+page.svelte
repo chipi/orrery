@@ -6402,9 +6402,6 @@
     margin-top: 2px;
     white-space: normal;
   }
-  .speed-group {
-    display: flex;
-    gap: 4px;
   /* Ascent and descent beats (UXD-042): 2 px ticks, muted blue, a label on hover and focus.
      The hit area is 10 px, the declutter gap, so neighbours never overlap. */
   .journey-tick-button {
@@ -6495,6 +6492,9 @@
     right: 0;
     transform: none;
   }
+  .speed-group {
+    display: flex;
+    gap: 4px;
   }
   /* Mobile: single active-speed slot + tap-to-reveal stacked popover (matches
      /explore) so the scrubber track reclaims the horizontal space. */

@@ -11,7 +11,7 @@ Read-only brief, written at HEAD `20e2a286cff` on `tech-debt/0.9.9`. Method: rea
 5. **Data gaps:** 20 of 143 have no magnitude (no band shown for them, §5); 1 (`m73`) has no size; 57 of 143 have a constellation in which none of the 62 named stars lies; 39 of 143 have no named star within 15 degrees (§5). The two-part Serpens figure appears twice in `constellation-lines.json` and `StarPanel` takes the first (`:111`); 3 objects have `con: Ser` (§5).
 6. **Recommendation:** one new pure module `src/lib/universe/sky-finder.ts` (frame conversion, nearest named star, best months, maximum altitude, magnitude band), a `marker` prop on `ConstellationFinder`, one IN THE SKY tab on `DeepSkyPanel` through the existing `tabs`/`tabContent` slots, 13 new message keys (182 strings), no data change, no image (Decisions L42-1 to L42-6).
 7. **Cost:** about one working day for code and unit tests, one e2e spec on three projects, half a day for the 13 keys in 14 locales by hand. No paid run.
-8. **Needs the operator before code:** the plan's row has no open question; the six forks in §11 are shape and scope (L42-1 to L42-6). The row waits on nothing: B3 has landed (`4e1a65b9651`).
+8. **Needs the operator before code:** the plan's row has no open question; the six forks in §13 are shape and scope (L42-1 to L42-6). The row waits on nothing: B3 has landed (`4e1a65b9651`).
 
 ## 1. Point (plan row L42 and its source)
 

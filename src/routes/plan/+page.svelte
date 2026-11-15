@@ -1265,16 +1265,12 @@
       {#if (GRAVITY_ASSIST_CAVEAT_DESTINATIONS as readonly string[]).includes(destinationId)}
         <p class="gravity-caveat">{m.plan_gravity_assist_caveat()}</p>
       {/if}
-      <button class="fly" type="button" disabled={!viable} onclick={flyMission}>
-        <!-- Trajectory-arc glyph — same custom SVG used on the
-             /missions panel's Fly button so the cross-route action
-             is visually consistent (2026-06-15 user direction: "let's
-             adjust fly mission with same logo on plan page"). -->
-        <span class="fly-icon" aria-hidden="true">
-          <TrajectoryArrowIcon />
-        </span>
-        <span class="fly-text">{m.plan_fly_button()}</span>
-      </button>
+      <!-- The one chip (UXD-014, plan L30/L31): the same action chip and trajectory-arc glyph as
+           the mission panel's Fly. Full width in the summary column. -->
+      <Chip kind="action" class="plan-fly" disabled={!viable} onclick={flyMission}>
+        {#snippet icon()}<TrajectoryArrowIcon />{/snippet}
+        {m.plan_fly_button()}
+      </Chip>
     {/if}
   </aside>
 </div>
@@ -1857,45 +1853,8 @@
     color: rgba(255, 235, 200, 0.92);
   }
 
-  .fly {
+  :global(.plan-fly) {
     margin-top: 8px;
     width: 100%;
-    min-height: 48px;
-    padding: 12px;
-    background: #1a33bb;
-    border: 1px solid color-mix(in srgb, var(--color-accent) 55%, transparent);
-    border-radius: 4px;
-    color: #fff;
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: var(--size-label);
-    letter-spacing: 3px;
-    font-weight: 700;
-    cursor: pointer;
-    transition:
-      background 120ms,
-      border-color 120ms;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-  }
-  .fly .fly-icon {
-    flex: 0 0 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: rgba(200, 215, 255, 0.95);
-  }
-  .fly:hover:not(:disabled),
-  .fly:focus-visible:not(:disabled) {
-    background: #2244dd;
-    border-color: var(--color-accent);
-    outline: none;
-  }
-  .fly:disabled {
-    background: rgba(255, 255, 255, 0.04);
-    border-color: rgba(255, 255, 255, 0.08);
-    color: rgba(255, 255, 255, 0.25);
-    cursor: not-allowed;
   }
 </style>

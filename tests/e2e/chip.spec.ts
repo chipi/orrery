@@ -414,8 +414,6 @@ const SWEEP_ALLOW_SELF = [
   '.pop-photo',
   '.flat-patch .hud-back',
   '.flat-patch .hud-layers .chip',
-  // Plan: the primary Fly CTA
-  'button.fly',
 ];
 
 // Containers that are not chips by definition: canvas / screen-reader proxies, the locale

@@ -331,18 +331,86 @@ const COASTS: Record<string, EarthOrbitCoast> = {
     revolutions: 37,
     coastDurationS: 195000,
   },
-  'sts-107': {
-    // The mission record gives the 16-day flight (lost on re-entry at MET 15.93 d) but no orbit
-    // figures: 255 orbits, 39.0 degrees, 270 x 285 km are from the Wikipedia infobox (NASA's STS-107
-    // archive page was not reachable); NOT a primary source.
-    missionId: 'sts-107',
+  // STS-107 has no Fly (the operator, 2026-11-15; its record is flightless like STS-51-L's): no
+  // descriptor, and the launch is not offered.
+  //
+  // X-37B Orbital Test Vehicle flights (a winged spaceplane, landing on a runway): the coast is the
+  // record's days on orbit (`transit_days`). The orbit is classified at launch; the figures are the
+  // tracked orbits on the English Wikipedia satellite pages (USA-212, USA-226, USA-240, USA-261,
+  // USA-277, USA-299, USSF-52): plain figures, not a primary source (backlog row S25). The record
+  // itself gives only OTV-5's 54.5 degrees and OTV-7's "highly elliptical, to about the GEO belt
+  // at apogee". Revolutions are derived: coast seconds / the Kepler period of the mean altitude.
+  'otv-1': {
+    missionId: 'otv-1',
     capsuleId: 'orbiter',
     winged: true,
-    apogeeKm: 285,
-    perigeeKm: 270,
-    inclinationDeg: 39.0,
-    revolutions: 255,
-    coastDurationS: 1373000,
+    apogeeKm: 287,
+    perigeeKm: 279,
+    inclinationDeg: 40,
+    revolutions: 3599,
+    coastDurationS: 19440000, // 225 days
+  },
+  'otv-2': {
+    missionId: 'otv-2',
+    capsuleId: 'orbiter',
+    winged: true,
+    apogeeKm: 289.3,
+    perigeeKm: 278.5,
+    inclinationDeg: 41.9,
+    revolutions: 7500,
+    coastDurationS: 40521600, // 469 days
+  },
+  'otv-3': {
+    missionId: 'otv-3',
+    capsuleId: 'orbiter',
+    winged: true,
+    apogeeKm: 333,
+    perigeeKm: 320,
+    inclinationDeg: 43.5,
+    revolutions: 10691,
+    coastDurationS: 58320000, // 675 days
+  },
+  'otv-4': {
+    missionId: 'otv-4',
+    capsuleId: 'orbiter',
+    winged: true,
+    apogeeKm: 325,
+    perigeeKm: 312,
+    inclinationDeg: 43.5,
+    revolutions: 11393,
+    coastDurationS: 62035200, // 718 days
+  },
+  'otv-5': {
+    missionId: 'otv-5',
+    capsuleId: 'orbiter',
+    winged: true,
+    apogeeKm: 356,
+    perigeeKm: 355,
+    inclinationDeg: 54.5,
+    revolutions: 12275,
+    coastDurationS: 67392000, // 780 days
+  },
+  'otv-6': {
+    missionId: 'otv-6',
+    capsuleId: 'orbiter',
+    winged: true,
+    apogeeKm: 404,
+    perigeeKm: 388,
+    inclinationDeg: 44.6,
+    revolutions: 14177,
+    coastDurationS: 78537600, // 909 days
+  },
+  'otv-7': {
+    // Highly elliptical (USSF-52): 323 x 38,838 km at 59.1 degrees, about 11.6 h per orbit; the
+    // October 2024 aerobraking lowered it, so the revolution count is approximate.
+    missionId: 'otv-7',
+    capsuleId: 'orbiter',
+    winged: true,
+    apogeeKm: 38838,
+    perigeeKm: 323,
+    inclinationDeg: 59.1,
+    revolutions: 901,
+    coastDurationS: 37497600, // 434 days
   },
 };
 

@@ -91,15 +91,20 @@ describe('Space Shuttle flights coast in Earth orbit (no cislunar arc after the 
     expect(c.coastDurationS / 3600).toBeLessThan(54.4);
   });
 
-  it('STS-107 is a 16-day Earth-orbit flight at 39 degrees', () => {
-    const c = getEarthOrbitCoast('sts-107')!;
-    expect(c.winged).toBe(true);
-    expect(c.inclinationDeg).toBe(39);
-    expect(c.coastDurationS / 86400).toBeGreaterThan(15.5); // the record: lost at MET 15.93 d
-    expect(c.coastDurationS / 86400).toBeLessThan(16);
+  it('STS-107 and STS-51-L have no Fly: no coast descriptor, and the records are flightless', () => {
+    expect(getEarthOrbitCoast('sts-107')).toBeNull();
+    expect(getEarthOrbitCoast('sts-51-l')).toBeNull();
+    for (const id of ['sts-107', 'sts-51-l']) {
+      const rec = JSON.parse(
+        readFileSync(resolve(ROOT, `static/data/missions/earth/${id}.json`), 'utf8'),
+      ) as Record<string, unknown>;
+      // /fly's noFlight guard (fly-mission-apply.ts) hides the launch for exactly this shape
+      expect(rec.flight, id).toBeUndefined();
+      expect(rec.flight_data_quality, id).toBeUndefined();
+    }
   });
 
-  it.each(['sts-1', 'sts-107'])('%s: a consistent LEO period and a runway, not a capsule', (id) => {
+  it.each(['sts-1'])('%s: a consistent LEO period and a runway, not a capsule', (id) => {
     const c = getEarthOrbitCoast(id)!;
     const min = c.coastDurationS / c.revolutions / 60;
     expect(min).toBeGreaterThan(85);
@@ -113,18 +118,40 @@ describe('Space Shuttle flights coast in Earth orbit (no cislunar arc after the 
 // Earth-orbit coast: with no descriptor the router falls through to the cislunar view (a Moon arc
 // for a 2-day Shuttle flight). Missions that still fall through are listed, so a new Earth mission
 // without a descriptor fails here until it is handled or listed.
+describe('X-37B flights coast in Earth orbit from their records (no cislunar fall-through)', () => {
+  const OTV = [1, 2, 3, 4, 5, 6, 7].map((n) => `otv-${n}`);
+  const rec = (id: string) =>
+    JSON.parse(readFileSync(resolve(ROOT, `static/data/missions/earth/${id}.json`), 'utf8')) as {
+      transit_days: number;
+    };
+
+  it.each(OTV)("%s: a winged descriptor whose coast is the record's days on orbit", (id) => {
+    const c = getEarthOrbitCoast(id)!;
+    expect(c.winged).toBe(true);
+    expect(c.capsuleId).toBe('orbiter');
+    expect(c.coastDurationS).toBe(rec(id).transit_days * 86400);
+  });
+
+  it.each(OTV.slice(0, 6))('%s: a LEO orbit with a 88-95 min period', (id) => {
+    const c = getEarthOrbitCoast(id)!;
+    const min = c.coastDurationS / c.revolutions / 60;
+    expect(min).toBeGreaterThan(88);
+    expect(min).toBeLessThan(95);
+    expect(c.apogeeKm).toBeLessThan(500);
+  });
+
+  it("OTV-5 carries its record's 54.5 degrees; OTV-7 is highly elliptical to the GEO belt", () => {
+    expect(getEarthOrbitCoast('otv-5')!.inclinationDeg).toBe(54.5);
+    const c = getEarthOrbitCoast('otv-7')!;
+    expect(c.apogeeKm).toBeGreaterThan(30000);
+    expect(c.perigeeKm).toBeLessThan(500);
+  });
+});
+
 describe('every launchable Earth mission has a coast descriptor (never the cislunar fall-through)', () => {
-  const KNOWN_GAPS = new Set([
-    'otv-1',
-    'otv-2',
-    'otv-3',
-    'otv-4',
-    'otv-5',
-    'otv-6',
-    'otv-7',
-    'shenzhou-5',
-    'sputnik1',
-  ]);
+  // TODO(content7 lands on the trunk): shenzhou-5 gets its coast from its own record. Sputnik 1
+  // has no flight (flightless record: no Fly), so it is not launchable and needs no entry.
+  const KNOWN_GAPS = new Set(['shenzhou-5']);
   const dir = resolve(ROOT, 'static/data/missions/earth');
   const missions = readdirSync(dir)
     .filter((f) => f.endsWith('.json'))

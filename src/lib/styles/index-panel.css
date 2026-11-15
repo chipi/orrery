@@ -288,8 +288,10 @@
 .si-badge--black-hole {
   color: #f0a35e;
 }
+/* The name keeps its width and the type (meta) gives way first: the name sizes to its text and
+   shrinks only when the meta has shrunk to its floor; the meta's shrink factor is 100x. */
 .si-name {
-  flex: 1;
+  flex: 1 1 auto;
   min-width: 0;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -297,7 +299,8 @@
   font-size: 13px;
 }
 .si-meta {
-  flex: 0 1 auto;
+  flex: 0 100 auto;
+  min-width: 3.5em;
   max-width: 45%;
   overflow: hidden;
   text-overflow: ellipsis;

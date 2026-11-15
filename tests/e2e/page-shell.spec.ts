@@ -24,7 +24,7 @@ const PAGES: Shell[] = [
   { path: '/library/episodes' },
   { path: '/gallery' },
   { path: '/gallery/deep-sky', width: 1400 },
-  { path: '/posters', width: 1400 },
+  { path: '/posters' },
   { path: '/patches' },
   { path: '/sourcing', width: 760 },
   { path: '/programs', width: 1400 },

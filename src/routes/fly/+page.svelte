@@ -341,7 +341,9 @@
   // `launchSpeed` is the ascent real-time multiplier the shared speed pills set.
   let launchT = $state(-T_MINUS_S);
   let launchSpeed = $state(5);
-  let launchAvailable = $derived(hasLaunchProfile(mission.fleet_refs, mission.vehicle));
+  let launchAvailable = $derived(
+    !mission.noFlight && hasLaunchProfile(mission.fleet_refs, mission.vehicle),
+  );
   // #83 — trajectory-tube thickness invariant now lives in
   // $lib/three/trajectory-tube (pure + unit-tested): trajectoryTubeRadius()
   // scales the world radius with camera distance so every trajectory reads

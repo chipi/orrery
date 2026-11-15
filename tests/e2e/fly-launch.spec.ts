@@ -105,3 +105,19 @@ test.describe('launch ascent HUD (desktop)', () => {
     }).toPass({ timeout: 10_000 });
   });
 });
+
+// A mission record with no flight block and no flight_data_quality (STS-51-L) has no Fly chip in
+// the mission panel; a typed URL must not play a launch to orbit for it either.
+test('a mission record with no flight (STS-51-L) offers no launch, and ?launch=1 plays none', async ({
+  page,
+}) => {
+  await page.goto('/fly?mission=sts-51-l&launch=1');
+  await expect(page.locator('.opening-name')).toContainText(/51-L/i, { timeout: 30_000 });
+  await expect(page.locator('[data-testid="fly-opening-launch"]')).toHaveCount(0);
+  await expect(page.locator('[data-testid="launch-scene"]')).toHaveCount(0);
+});
+
+test('STS-1 (reconstructed flight data) still offers its launch', async ({ page }) => {
+  await page.goto('/fly?mission=sts-1');
+  await expect(page.locator('[data-testid="fly-opening-launch"]')).toBeVisible({ timeout: 30_000 });
+});

@@ -105,6 +105,10 @@ export interface LoadedMission {
   /** The /fly window ends at a perihelion, not at a body (Parker, Solar Orbiter): the camera
    *  frames the craft by the Sun, and activeDestination's Mars is only a stand-in. */
   sunTarget?: boolean;
+  /** The mission record has neither a `flight` block nor a `flight_data_quality`: the mission
+   *  panel offers no Fly chip, and a typed URL must not play a launch either (the launcher
+   *  falls back to a generic profile for any vehicle string, so STS-51-L would reach orbit). */
+  noFlight?: boolean;
   /** Transit days from the raw mission index — used by #86 opening
    *  to surface "TRANSIT · 6.7 years" without recomputing. */
   transit_days?: number;
@@ -242,6 +246,7 @@ function buildMissionMeta(
     isFromData: true,
     flight: m.flight,
     flight_data_quality: m.flight_data_quality,
+    noFlight: m.flight == null && m.flight_data_quality == null,
     description: m.description,
     agency: m.agency,
     agency_full: m.agency_full,

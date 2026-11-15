@@ -613,6 +613,31 @@ describe('computeMissionApply — Sun-target missions', () => {
   });
 });
 
+describe('computeMissionApply — a record with no flight', () => {
+  it('flags noFlight only when the record has neither a flight block nor a data quality', () => {
+    const flightless = makeMission({
+      id: 'sts-51-l',
+      vehicle: 'Space Shuttle Challenger (OV-099)',
+    });
+    expect(computeMissionApply(flightless, DEFAULTS).missionMeta.noFlight).toBe(true);
+    const reconstructed = makeMission({ flight_data_quality: 'reconstructed' });
+    expect(computeMissionApply(reconstructed, DEFAULTS).missionMeta.noFlight).toBe(false);
+    const withFlight = makeMission({
+      flight: { totals: { total_dv_km_s: 9.4 } } as Mission['flight'],
+    });
+    expect(computeMissionApply(withFlight, DEFAULTS).missionMeta.noFlight).toBe(false);
+  });
+
+  it('the shipped STS-51-L and STS-107 records are flightless; STS-1 (reconstructed) is not', async () => {
+    const { readFileSync } = await import('node:fs');
+    const rec = (id: string) =>
+      JSON.parse(readFileSync(`static/data/missions/earth/${id}.json`, 'utf8')) as Mission;
+    expect(computeMissionApply(rec('sts-51-l'), DEFAULTS).missionMeta.noFlight).toBe(true);
+    expect(computeMissionApply(rec('sts-107'), DEFAULTS).missionMeta.noFlight).toBe(true);
+    expect(computeMissionApply(rec('sts-1'), DEFAULTS).missionMeta.noFlight).toBe(false);
+  });
+});
+
 describe('flyDestinationOf', () => {
   it('is the dest body, the comet or Jupiter for Ulysses, and null where /fly has no body', () => {
     expect(flyDestinationOf({ id: 'cassini', dest: 'SATURN' })).toBe('saturn');

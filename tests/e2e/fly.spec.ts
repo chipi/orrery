@@ -508,3 +508,131 @@ test.describe('/fly — flight params HUD readout (v0.1.7 / ADR-027)', () => {
     await expect(banner).toHaveCount(0);
   });
 });
+
+/**
+ * /fly — narrow layout: chrome never covers other chrome. The layout split used to
+ * be pointer-only, so a 390 px window with a mouse got the desktop HUD rail and the
+ * 320 px CAPCOM column on top of each other, and the performance toast sat over the
+ * play bar. Runs in its own contexts (touch and non-touch) whatever the project is.
+ */
+type Box = { x: number; y: number; w: number; h: number };
+const NARROW_MODES = [
+  { name: 'touch', touch: true },
+  { name: 'non-touch', touch: false },
+];
+const boxesIntersect = (a: Box | null, b: Box | null) =>
+  !!a &&
+  !!b &&
+  a.x < b.x + b.w - 1 &&
+  b.x < a.x + a.w - 1 &&
+  a.y < b.y + b.h - 1 &&
+  b.y < a.y + a.h - 1;
+
+async function visibleBox(page: Page, selector: string): Promise<Box | null> {
+  return page.evaluate((sel) => {
+    const el = document.querySelector(sel);
+    if (!el) return null;
+    const cs = getComputedStyle(el);
+    if (cs.display === 'none' || cs.visibility === 'hidden') return null;
+    const r = el.getBoundingClientRect();
+    return r.width && r.height ? { x: r.x, y: r.y, w: r.width, h: r.height } : null;
+  }, selector);
+}
+
+test.describe('/fly — narrow layout never overlaps chrome', () => {
+  for (const mode of NARROW_MODES) {
+    test(`390 px ${mode.name}: HUD and CAPCOM never intersect, toast clears the play bar`, async ({
+      browser,
+    }) => {
+      test.setTimeout(120_000);
+      const ctx = await browser.newContext({
+        viewport: { width: 390, height: 844 },
+        hasTouch: mode.touch,
+        isMobile: mode.touch,
+      });
+      const page = await ctx.newPage();
+      try {
+        await page.goto('/fly?mission=mariner2');
+        await expect(page.locator('.scrubber')).toBeVisible();
+        const proceed = page.getByRole('button', { name: /proceed to simulation/i });
+        if (await proceed.count()) await proceed.first().click();
+        await expect(page.locator('[data-testid="mission-name"]').first()).toContainText(
+          /Mariner 2/,
+          { timeout: 30_000 },
+        );
+
+        const tabs = page.locator('.fly-mtab');
+        // Narrow always folds the panels into the tab accordion: one open at a time.
+        await expect(page.locator('.fly-mtabs')).toBeVisible();
+        const states: Array<[string, number]> = [
+          ['closed', -1],
+          ['mission', 0],
+          ['events', 1],
+        ];
+        for (const [label, idx] of states) {
+          if (idx >= 0) await tabs.nth(idx).click();
+          const hud = await visibleBox(page, '.hud-stack');
+          const cap = await visibleBox(page, '.capcom-panel');
+          expect(boxesIntersect(hud, cap), `HUD x CAPCOM with tab ${label}`).toBe(false);
+          expect(!!hud && !!cap, `only one panel open with tab ${label}`).toBe(false);
+        }
+
+        // The toast only appears when the frame monitor struggles, so mount a copy that carries
+        // the page's scoped class: that is the same CSS the real toast gets.
+        await page.evaluate(() => {
+          const sc = document.querySelector('.scrubber')!;
+          const scoped = [...sc.classList].filter((c) => c.startsWith('svelte-'));
+          const toast = document.createElement('div');
+          toast.className = ['perf-toast', ...scoped].join(' ');
+          toast.dataset.testid = 'perf-toast-probe';
+          toast.innerHTML =
+            '<div class="perf-toast-title">PERFORMANCE</div><div class="perf-toast-body">Frame time averaging 66 ms. Drop to low?</div><div class="perf-toast-actions"><button class="perf-toast-apply">Apply</button><button class="perf-toast-dismiss">Dismiss</button></div>';
+          toast.querySelectorAll('*').forEach((e) => e.classList.add(...scoped));
+          sc.parentElement!.appendChild(toast);
+        });
+        const toast = await visibleBox(page, '[data-testid="perf-toast-probe"]');
+        expect(toast, 'toast mounted').not.toBeNull();
+        expect(boxesIntersect(toast, await visibleBox(page, '.scrubber')), 'toast x play bar').toBe(
+          false,
+        );
+        expect(boxesIntersect(toast, await visibleBox(page, '.fly-mtabs')), 'toast x tabs').toBe(
+          false,
+        );
+      } finally {
+        await ctx.close();
+      }
+    });
+
+    test(`390 px ${mode.name}: the launch title never covers the clock`, async ({ browser }) => {
+      test.setTimeout(120_000);
+      const ctx = await browser.newContext({
+        viewport: { width: 390, height: 844 },
+        hasTouch: mode.touch,
+        isMobile: mode.touch,
+      });
+      const page = await ctx.newPage();
+      try {
+        await page.goto('/fly?mission=mro&launch=1');
+        await expect(page.locator('[data-testid="launch-mission"]')).toBeVisible({
+          timeout: 60_000,
+        });
+        const head = await page.evaluate(() => {
+          const r = document
+            .querySelector('[data-testid="launch-mission"]')!
+            .parentElement!.getBoundingClientRect();
+          return { x: r.x, y: r.y, w: r.width, h: r.height };
+        });
+        const clock = await visibleBox(page, '.launch .met');
+        const clockBox = await page.evaluate(() => {
+          const r = document.querySelector('.launch .met')!.parentElement!.getBoundingClientRect();
+          return { x: r.x, y: r.y, w: r.width, h: r.height };
+        });
+        expect(clock).not.toBeNull();
+        expect(boxesIntersect(head, clockBox), 'launch title x clock').toBe(false);
+        expect(head.x + head.w, 'title inside the viewport').toBeLessThanOrEqual(390);
+      } finally {
+        await ctx.close();
+      }
+    });
+  }
+});

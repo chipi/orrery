@@ -809,7 +809,7 @@
   }
   /* Phones start with the HUD collapsed; instead of nothing, keep a minimal set — mission,
      clock + phase, speed + altitude — compact and on its own dark backing. */
-  @media (hover: none), (pointer: coarse) {
+  @media (hover: none), (pointer: coarse), (max-width: 640px) {
     .launch.hud-hidden .header,
     .launch.hud-hidden .clock,
     .launch.hud-hidden .readouts {
@@ -825,6 +825,12 @@
     .launch.hud-hidden .header {
       top: 12px;
       left: 12px;
+      /* Header (left) and clock (right) share the top row: the clock keeps its width, the
+         title wraps in what is left. */
+      max-width: calc(100% - 224px);
+    }
+    .launch.hud-hidden .clock {
+      max-width: 190px;
     }
     .launch.hud-hidden .mission {
       font-size: 20px;
@@ -953,6 +959,16 @@
     position: absolute;
     top: 20px;
     left: 22px;
+    /* The clock is centred: the title wraps before it reaches the clock's half-width. */
+    max-width: calc(50% - 110px);
+    overflow-wrap: anywhere;
+  }
+  @media (max-width: 767px) {
+    /* Three wrapped lines + the subtitle still end above the telemetry panel (top 116px). */
+    .mission {
+      font-size: 20px;
+      letter-spacing: 2px;
+    }
   }
   .mission {
     font-family: 'Bebas Neue', sans-serif;

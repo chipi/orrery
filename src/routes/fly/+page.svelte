@@ -803,6 +803,16 @@
     mobilePanel = mobilePanel === p ? null : p;
     hudHidden = mobilePanel === null;
   }
+  // A narrow mouse window takes the same scene-hero collapse as touch (the tab accordion
+  // is its only HUD); widening it hands the desktop HUD back, since no desktop control
+  // can un-collapse it.
+  $effect(() => {
+    if (viewport.isTouch || viewport.isNarrow) {
+      if (mobilePanel === null) hudHidden = true;
+    } else {
+      hudHidden = false;
+    }
+  });
   $effect(() => {
     // svelte-check flow-analysis misses the template reads at the
     // `{#if lensOnState}` / CON-button gate sites; nudge it with
@@ -6082,7 +6092,8 @@
      vocabulary as the settings panel so it reads as native chrome. */
   .perf-toast {
     position: fixed;
-    bottom: 20px;
+    /* Clear of the play bar (14 px + its ~58 px height) so it never covers the transport. */
+    bottom: 88px;
     right: 16px;
     z-index: 38;
     max-width: 280px;
@@ -6626,8 +6637,11 @@
     display: none;
   }
 
-  /* ─── ≤ 767 px — HUD folds into the bottom tab accordion ────────── */
-  @media (hover: none), (pointer: coarse) {
+  /* ─── touch or ≤ 640 px (viewport.isNarrow) — HUD folds into the bottom tab accordion ──
+     The width clause matters for a narrow window with a mouse: the desktop
+     layout pins a 260 px HUD rail left and a 320 px CAPCOM column right, which
+     cannot both fit under ~640 px and so used to cover each other. */
+  @media (hover: none), (pointer: coarse), (max-width: 640px) {
     .fly-toggle-rows-desktop {
       display: none;
     }
@@ -6785,6 +6799,18 @@
       flex-direction: column;
       align-items: stretch;
       gap: 8px;
+    }
+    /* The performance toast rides above the tab bar (and over an open sheet), not
+       over the tabs or the play bar. */
+    .perf-toast {
+      bottom: calc(132px + env(safe-area-inset-bottom, 0px));
+      right: 8px;
+      max-width: calc(100vw - 16px);
+      z-index: 42;
+    }
+    :global(html[data-touch][data-orientation='landscape']) .perf-toast {
+      bottom: 90px;
+      right: 16px;
     }
   }
   /* User-dismissed panels use display:none so they release their

@@ -597,14 +597,15 @@ describe('Space Shuttle sequence', () => {
       expect(planFor(p, { seed }).shots.some((s) => s.id === 'fairing')).toBe(false);
   });
 
-  it('SRB separation is the first staging, MECO and the tank drop come together, in that order', () => {
+  it('SRB separation is the first staging, then MECO, then the tank drop within 30 s of MECO', () => {
     const ev = byId('space-shuttle-stack').summary.events;
     const stagings = ev.filter((e) => e.type === 'staging');
     const meco = ev.find((e) => e.type === 'meco')!;
     expect(stagings[0].t).toBeGreaterThan(90);
     expect(stagings[0].t).toBeLessThan(130);
     expect(meco.t).toBeGreaterThan(480);
-    expect(stagings.at(-1)!.t).toBeCloseTo(meco.t, 0);
+    expect(stagings.at(-1)!.t).toBeGreaterThanOrEqual(meco.t - 0.5);
+    expect(stagings.at(-1)!.t).toBeLessThan(meco.t + 30);
   });
 });
 

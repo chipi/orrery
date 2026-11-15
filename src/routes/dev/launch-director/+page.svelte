@@ -8,6 +8,8 @@
   mission= (seed + payload model id: artemis2, galileo, curiosity)  seed= (overrides the
   vehicle+mission seed)  mode=director|today  speed=1|5|20  light=midday|golden|dusk|night
   cover=clear|scattered|deck|heavy  opening=tower_clear|pad_wide|overhead_drop|pad_dusk
+  utc=<ISO instant> (the real launch time: the light comes from the Sun at the pad then; else the
+  mission's minute-precision net in launches-historic; real=0 forces the seeded light)
   reduced=1  cond=0 (no sky/cloud rig)  ui=0 (no overlay)  paused=1  t0=<flight s>  pr=<pixel ratio>.
   window.__g3 drives it from a script: setT(t), plan, duration.
 -->
@@ -45,6 +47,7 @@
     type PlotModel,
     type Pt,
   } from '$lib/orbital/launch-director-debug-plot';
+  import { launchUtcMsFor } from '$lib/orbital/launch-sun';
   import LaunchDirectorDebugViewer from '$lib/components/LaunchDirectorDebugViewer.svelte';
   import DebugPanelRegistrar from '$lib/components/DebugPanelRegistrar.svelte';
 
@@ -54,6 +57,30 @@
   let debugTrail = $state<Pt[]>([]);
   let debugVehicle = $state<Pt | null>(null);
   let debugFrame = 0;
+
+  const DECADES = [
+    '1957-1969',
+    '1970-1979',
+    '1980-1989',
+    '1990-1999',
+    '2000-2009',
+    '2010-2019',
+    '2020-2026',
+  ];
+  async function lookupLaunchUtc(id: string): Promise<number | null> {
+    for (const d of DECADES) {
+      try {
+        const res = await fetch(`${base}/data/launches-historic/${d}.json`);
+        if (!res.ok) continue;
+        const j = (await res.json()) as { entries?: Record<string, never> };
+        const hit = launchUtcMsFor(Object.values(j.entries ?? {}), id);
+        if (hit != null) return hit;
+      } catch {
+        // an unreadable decade file only means no real instant
+      }
+    }
+    return null;
+  }
 
   let container: HTMLDivElement;
   const q =
@@ -100,8 +127,18 @@
       const duration = summary.totalDurationS;
       const reduced = q.get('reduced') === '1';
       const altAt = (tt: number): number => sampleAscentAt(summary.states, tt).altKm;
+      // The real launch instant: ?utc= wins, else the launches dataset (minute-precision net of
+      // the mission's entry). None (a date-only mission, no entry, ?real=0): the light is seeded.
+      let utcMs: number | null = null;
+      if (q.get('real') !== '0') {
+        const utcParam = q.get('utc');
+        if (utcParam && Number.isFinite(Date.parse(utcParam))) utcMs = Date.parse(utcParam);
+        else if (missionId) utcMs = await lookupLaunchUtc(missionId);
+      }
+      const site = profile.launchSite;
       const thePlan = buildDirectorPlan({
         vehicleId: profile.id,
+        launch: utcMs != null && site ? { utcMs, latDeg: site.lat, lonDeg: site.lon } : undefined,
         missionId,
         seed: seedParam != null && seedParam !== '' ? Number(seedParam) : undefined,
         events: summary.events,

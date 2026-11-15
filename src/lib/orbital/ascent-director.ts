@@ -28,6 +28,13 @@ import {
   type AscentShotName,
   type CameraPose,
 } from './ascent-cameras';
+import {
+  compassToSceneAz,
+  lightFromSunElevation,
+  sunAt,
+  type LaunchInstant,
+  type SunPosition,
+} from './launch-sun';
 
 // ─── Seeding ────────────────────────────────────────────────────────────────
 
@@ -170,6 +177,9 @@ export interface DirectorInputs {
   reducedMotion?: boolean;
   /** Review overrides. */
   force?: { opening?: OpeningId; light?: LightId; cover?: CoverId };
+  /** The real launch instant and pad (a real mission with a time of day): the light comes from
+   *  the Sun there. Absent for a Plan flight or a date-only mission: the light is seeded. */
+  launch?: LaunchInstant;
 }
 
 // ─── Constants ──────────────────────────────────────────────────────────────
@@ -679,12 +689,20 @@ function pickWeighted<T>(r: Rng, items: [T, number][]): T {
   return items[items.length - 1][0];
 }
 
+/**
+ * The seeded conditions. `realSun` (the Sun at the pad at the real launch instant) decides the
+ * LIGHT pick and the sun's elevation and azimuth when it is given and no light is forced; the
+ * clouds and smoke stay seeded. Without it (a Plan flight, a mission with a date but no time
+ * of day) the light is rolled as before; the draws are consumed identically either way so the
+ * clouds do not change with the light source.
+ */
 export function pickConditions(
   r: Rng,
   force?: { light?: LightId; cover?: CoverId },
   padSmokeBias = false,
+  realSun?: SunPosition | null,
 ): LaunchConditions {
-  const light =
+  const rolledLight =
     force?.light ??
     pickWeighted<LightId>(r, [
       ['midday', 0.4],
@@ -712,13 +730,17 @@ export function pickConditions(
     deck: [0.62, 0.74],
     heavy: [0.9, 0.97],
   };
-  const [e0, e1] = elev[light];
+  const [e0, e1] = elev[rolledLight];
   const [c0, c1] = cov[cover];
+  const rolledElev = e0 + r() * (e1 - e0);
+  const rolledAz = r() * 360;
+  const real = realSun && !force?.light ? realSun : null;
+  const light = real ? lightFromSunElevation(real.elevDeg) : rolledLight;
   return {
     light,
     cover,
-    sunElevDeg: e0 + r() * (e1 - e0),
-    sunAzDeg: r() * 360,
+    sunElevDeg: real ? real.elevDeg : rolledElev,
+    sunAzDeg: real ? compassToSceneAz(real.azDeg) : rolledAz,
     coverage: c0 + r() * (c1 - c0),
     deckAltKm: 1.8 + r() * 3.2,
     cloudSeed: Math.floor(r() * 1000),
@@ -758,7 +780,10 @@ export function buildDirectorPlan(inp: DirectorInputs): DirectorPlan {
     reduced ? 0 : Math.min((s * 1.6 * speed) / 5, Math.max(0, span * 0.5));
 
   // ── Opening: a seeded pool; today's is one option ───────────────────────
-  const opening: OpeningId =
+  // The real Sun at the pad when the real launch instant is known (else null: seeded light).
+  const realSun = inp.launch ? sunAt(inp.launch.utcMs, inp.launch.latDeg, inp.launch.lonDeg) : null;
+  const realLight = realSun ? lightFromSunElevation(realSun.elevDeg) : null;
+  const rolledOpening: OpeningId =
     inp.force?.opening ??
     pickWeighted<OpeningId>(
       r,
@@ -767,6 +792,15 @@ export function buildDirectorPlan(inp: DirectorInputs): DirectorPlan {
         OPENING_WEIGHTS[id] * (sig?.opening?.[id] ?? 1),
       ]),
     );
+  // The dusk opening is a dusk look: a real daylight launch takes the plain pad-level wide.
+  const opening: OpeningId =
+    !inp.force?.opening &&
+    rolledOpening === 'pad_dusk' &&
+    realLight &&
+    realLight !== 'dusk' &&
+    realLight !== 'night'
+      ? 'pad_wide'
+      : rolledOpening;
   const openEnd = Math.min(OPENING_END, seco);
   const oSide = side();
   const base = (
@@ -853,10 +887,11 @@ export function buildDirectorPlan(inp: DirectorInputs): DirectorPlan {
   const conditions = pickConditions(
     r,
     {
-      light: inp.force?.light ?? (opening === 'pad_dusk' ? 'dusk' : undefined),
+      light: inp.force?.light ?? (opening === 'pad_dusk' && !realSun ? 'dusk' : undefined),
       cover: inp.force?.cover,
     },
     opening === 'pad_wide' || opening === 'pad_dusk' || opening === 'overhead_drop',
+    realSun,
   );
 
   // ── Filling a range with pool pieces ────────────────────────────────────

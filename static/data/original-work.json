@@ -4454,6 +4454,27 @@
       "thumb": "/images/colophon/model-probe-sputnik-1.webp"
     },
     {
+      "title": "Mariner 2",
+      "what": "NASA’s 3.66 m Venus flyby — the 1.04 m hexagonal bus, two solar panels (one with its solar-pressure extension, 5.05 m across), the dish on its arm and the omni antenna atop the pyramid mast. Sizes from NASA NSSDCA; the dish and mast are schematic.",
+      "where": "Fly + Explore",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-probe-mariner-2.webp"
+    },
+    {
+      "title": "Mars Reconnaissance Orbiter",
+      "what": "NASA’s Mars mapper — two 5.35 × 2.53 m solar arrays, the 3 m high-gain dish, the 1.6 m HiRISE barrel and the 10 m SHARAD dipole. Dish, HiRISE and SHARAD sizes from NASA; the array size from Wikipedia; the bus is schematic.",
+      "where": "Fly + Explore",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-probe-mro.webp"
+    },
+    {
+      "title": "Nova-C (IM-1 Odysseus)",
+      "what": "Intuitive Machines’ 4.3 m lunar lander — a 1.57 m hexagonal body, six legs, the methane engine below and three solar panels. Height and width from Wikipedia; the leg splay and deck are schematic.",
+      "where": "Fly + Explore",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-probe-nova-c.webp"
+    },
+    {
       "title": "Apollo Lunar Module",
       "what": "Descent + ascent stage, gold MLI foil, and RCS quads.",
       "where": "Moon landing sites",
@@ -5164,7 +5185,7 @@
     "lab_illustrations": 25,
     "diagrams_science": 117,
     "posters": 27,
-    "models3d": 179,
+    "models3d": 182,
     "capsules": 8,
     "canvas2d": 6,
     "ui": 4,

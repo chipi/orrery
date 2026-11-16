@@ -3,7 +3,7 @@
 Operator request: fix the Space Shuttle ascent timeline, then check every launcher for the last
 stage separating too late. Tool: the repo's own integrator (`integrateAscent`), one run per
 profile in `static/data/launch-profiles/`, events read from `AscentSummary.events`. The pinned
-rows are in `src/lib/physics/ascent/launch-timeline.test.ts`.
+rows are in `src/lib/orbital/launch-timeline.test.ts`.
 
 Tolerances: booster / stage separation, MECO and fairing ±10 s; SECO / orbit ±30 s.
 Sources are the documents fetched on 2026-11-15 (web search was exhausted, so direct fetches

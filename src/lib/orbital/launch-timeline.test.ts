@@ -1,8 +1,12 @@
 import { describe, it, expect } from 'vitest';
 import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
-import { integrateAscent, type LaunchProfile, type AscentEvent } from './ascent-physics';
-import { buildAscentBeats } from '$lib/orbital/ascent-hud';
+import {
+  integrateAscent,
+  type LaunchProfile,
+  type AscentEvent,
+} from '$lib/physics/ascent/ascent-physics';
+import { buildAscentBeats } from './ascent-hud';
 
 /**
  * Staging timeline of every launcher against its real nominal flight (2026-11-15 audit,
@@ -13,7 +17,7 @@ import { buildAscentBeats } from '$lib/orbital/ascent-hud';
  */
 const load = (id: string): LaunchProfile =>
   JSON.parse(
-    readFileSync(resolve(__dirname, `../../../../static/data/launch-profiles/${id}.json`), 'utf-8'),
+    readFileSync(resolve(__dirname, `../../../static/data/launch-profiles/${id}.json`), 'utf-8'),
   ) as LaunchProfile;
 
 const first = (events: AscentEvent[], type: AscentEvent['type'], nth = 0): number | undefined =>

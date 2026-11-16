@@ -1,6 +1,6 @@
 ---
 name: orrery-deploy-verify
-description: Verify an Orrery prod deploy end to end with the access that already exists — validate-prod against the URL, the o11y-review skill for logs and GlitchTip since the deploy, an Umami event check, source maps (a live chunk carries a debug id that GlitchTip resolves; Cloudflare isn't serving stale chunks) and prod container logs — before asking the homelab or prod sessions.
+description: Verify an Orrery prod deploy end to end with the access that already exists — validate-prod against the URL, the o11y-prod skill for logs and GlitchTip since the deploy, an Umami event check, source maps (a live chunk carries a debug id that GlitchTip resolves; Cloudflare isn't serving stale chunks) and prod container logs — before asking the homelab or prod sessions.
 when_to_use: Use when asked "did the deploy work", "verify prod", "validate the deploy", after a "Deploy to prod VPS (orrery)" run finishes, and right after every release (there is no staging tier since 2026-11).
 ---
 
@@ -20,7 +20,8 @@ Opts out of analytics; checks headers, routes, 404s, data, the Umami SRI pin.
 
 ## 2. Logs, errors, traces since the deploy
 
-Load **`o11y-review`** (shared skill) for project `orrery` from the deploy time: VictoriaLogs
+Load **`o11y-prod`** (shared skill, was `o11y-review`) for project `orrery` from the deploy time
+(a branch's dev telemetry is `o11y-dev`, never this skill): VictoriaLogs
 `app:orrery`, GlitchTip (prod 18, dev 30, lab-api 31, mcp 32), traces.
 Raw queries when needed (tailnet, read-only):
 

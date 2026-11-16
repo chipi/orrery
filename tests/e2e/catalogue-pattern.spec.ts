@@ -61,6 +61,25 @@ for (const route of ['/missions', '/fleet']) {
   });
 }
 
+// /fleet has more agencies than the row shows (/missions has fewer, so it has no "Show all").
+test('/fleet: the long agency row opens with "Show all" and closes with "Show fewer"', async ({
+  page,
+}) => {
+  await page.goto('/fleet');
+  await waitForHydration(page);
+  const row = page.locator('.agency-filter');
+  const chips = row.locator('.agency-chip');
+  const showAll = row.getByRole('button', { name: /^Show all \d+$/ });
+  await expect(showAll).toBeVisible();
+  const before = await chips.count();
+  await showAll.click();
+  await expect(row.getByRole('button', { name: 'Show fewer' })).toBeVisible();
+  expect(await chips.count()).toBeGreaterThan(before);
+  await row.getByRole('button', { name: 'Show fewer' }).click();
+  await expect(chips).toHaveCount(before);
+  await expect(showAll).toBeVisible();
+});
+
 test('/fleet keeps its Line-up view in the toolbar and hides the strip there', async ({ page }) => {
   await page.goto('/fleet');
   await waitForHydration(page);

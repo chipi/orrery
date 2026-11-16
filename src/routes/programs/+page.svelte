@@ -349,11 +349,12 @@
       }}
     />
   {:else}
-    <ul class="entity-card-grid" aria-label={m.programs_index_title()}>
+    <ul class="entity-card-grid programs-grid" aria-label={m.programs_index_title()}>
       {#each filtered as p (p.id)}
         <EntityCard
           photo={heroSrc(p.hero)}
           name={p.name}
+          nameLines={2}
           year={years(p)}
           agencies={programAgencies(p).map((a) => ({ name: a, color: agencyDataColor(a) }))}
           agencyTitle={programAgencies(p).map(agencyFullName).join(' / ')}
@@ -368,11 +369,11 @@
             { label: m.card_stat_status(), value: programStatusLabel(p.status) },
           ]}
         >
+          <!-- The year range already says whether a program is running ("2019–today") or ended
+               ("2013–2022"); the status is read out in `facts` and shown in the list view, so the
+               card keeps one pill, the kind, whole in every language. -->
           {#snippet pills()}
             <span class="card-kind">{kindOne(p.kind)}</span>
-            <span class="card-status status-{programStatusClass(p.status)}">
-              {programStatusLabel(p.status)}
-            </span>
           {/snippet}
         </EntityCard>
       {/each}
@@ -462,4 +463,26 @@
   /* The page chrome is src/lib/styles/entity-browse-page.css, the card and the grid are EntityCard and
      entity-card-grid.css, the toolbar, agency row and list are shared components: /missions, /fleet and
      /missions/launches render the same ones. */
+
+  /* A program's name is long ("Kommerzielle Raumstationen") and its title row carries a year
+     range, so the name takes two lines; the tagline drops to one so the body keeps the shared
+     142 px height. */
+  .entity-card-grid.programs-grid :global(.card-first) {
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+  }
+  /* A phone card is ~170 px wide: the name takes the whole width and the years go under it; the
+     tagline (two words at that width) gives way. */
+  @media (max-width: 600px) {
+    .entity-card-grid.programs-grid :global(.card-name-row) {
+      flex-wrap: wrap;
+      row-gap: 4px;
+    }
+    .entity-card-grid.programs-grid :global(.card-name) {
+      flex-basis: 100%;
+    }
+    .entity-card-grid.programs-grid :global(.card-first) {
+      display: none;
+    }
+  }
 </style>

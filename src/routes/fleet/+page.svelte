@@ -693,7 +693,7 @@
           <EntityCard
             photo={pickHero('fleet', entry.id)}
             name={entry.name}
-            year={firstFlightLabel(entry.first_flight)}
+            year={entry.first_flight === 'planned' ? null : firstFlightLabel(entry.first_flight)}
             agencies={splitAgencies(entry.agency).map((a) => ({
               name: a,
               color: agencyDataColor(a),

@@ -46,7 +46,9 @@ export const EPOCH_BANDS: readonly EpochBand[] = [
   {
     id: 'first-stations',
     yearStart: 1973,
-    yearEnd: 1986,
+    // 1981-1986 belong to Shuttle & Mir (the later band wins the shared years, UXD-048), so the
+    // tile's label and its count both stop at 1980.
+    yearEnd: 1980,
     color: '#da47eb',
   },
   {
@@ -90,9 +92,9 @@ export const AXIS_MAX = 2040;
  * why on missions it is not — I would expect to see same on missions".)
  */
 export function epochForYear(year: number): FleetEpoch | null {
-  // Where two bands share more than a boundary year (First Stations 1973-1986 and Shuttle & Mir
-  // 1981-1998 share 1981-1986) the band that starts later wins: a 1981 Shuttle flight is a
-  // Shuttle & Mir mission, as its tile says (UXD-048, operator 2026-11-15).
+  // Where two bands share more than a boundary year the band that starts later wins (UXD-048,
+  // operator 2026-11-15). First Stations now ends at 1980, so no two bands overlap today; the
+  // rule stays for a future band edit.
   const hits = EPOCH_BANDS.filter((b) => year >= b.yearStart && year <= b.yearEnd);
   if (hits.length > 1) {
     const [a, b] = hits;

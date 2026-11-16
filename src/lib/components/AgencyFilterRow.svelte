@@ -55,6 +55,8 @@
     <Chip kind="action" quiet onclick={() => (expanded = true)}
       >{m.colophon_show_all({ count: agencies.length })}</Chip
     >
+  {:else if expanded && agencies.length > limit}
+    <Chip kind="action" quiet onclick={() => (expanded = false)}>{m.browse_show_fewer()}</Chip>
   {/if}
 </ChipGroup>
 

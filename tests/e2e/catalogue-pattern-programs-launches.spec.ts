@@ -101,12 +101,17 @@ test.describe('/programs', () => {
     );
   });
 
-  test('a card names its agencies, status and kind', async ({ page }) => {
+  test('a card names its agencies and kind; the status is read out, not a pill', async ({
+    page,
+  }) => {
     await openPrograms(page);
     const card = page.getByTestId('program-card-apollo');
     await expect(card.locator('.card-agency')).toHaveText(['NASA']);
-    await expect(card.locator('.card-status')).toHaveText('COMPLETED');
+    await expect(card.locator('.card-status')).toHaveCount(0);
     await expect(card.locator('.card-kind')).toHaveCount(1);
+    // the kind pill is whole, never cut with an ellipsis
+    const kind = card.locator('.card-kind');
+    expect(await kind.evaluate((el) => el.scrollWidth <= el.clientWidth + 1)).toBe(true);
   });
 
   test('the era strip counts every program once, by its start year', async ({ page }) => {

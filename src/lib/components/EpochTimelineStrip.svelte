@@ -29,7 +29,7 @@
   let { countByEpoch, colorsByEpoch, selected, onSelect }: Props = $props();
 
   // four dots and "+N": the foot row stays on the dark text side, not over the photo
-  const MAX_DOTS = 4;
+  const MAX_DOTS = 3;
   const yearsOf = (b: (typeof EPOCH_BANDS)[number]) =>
     `${b.yearStart}–${b.id === 'mars-era' ? '∞' : b.yearEnd}`;
 </script>
@@ -197,9 +197,12 @@
   .era-foot {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
     letter-spacing: 0;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    /* the count, the dots and "+N" stay on the dark side, never over the photo */
+    max-inline-size: 58%;
+    text-shadow: 0 0 4px var(--color-bg);
   }
   .era-count {
     font-size: 13px;
@@ -207,8 +210,9 @@
   .era-dots {
     display: inline-flex;
     align-items: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     gap: 3px;
+    min-inline-size: 0;
   }
   .era-dots i {
     inline-size: 7px;

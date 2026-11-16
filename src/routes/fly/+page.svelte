@@ -5037,14 +5037,20 @@
     letter-spacing: 1.4px;
     text-transform: uppercase;
   }
+  /* The full text is in the Mission Events panel; here it is a three-line note at the HUD's own
+     size, so a long description never runs out of the panel. */
   .active-event-description {
     color: rgba(255, 255, 255, 0.82);
-    font-size: var(--size-lead);
+    font-size: var(--size-label);
     line-height: 1.45;
     letter-spacing: 0.2px;
     text-transform: none;
     white-space: normal;
-    max-width: 22ch;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    overflow: hidden;
   }
 
   /* Bottom strips row — centered band above the timeline scrubber

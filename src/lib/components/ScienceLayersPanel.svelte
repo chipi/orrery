@@ -545,6 +545,13 @@
     box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
     color: var(--color-text);
   }
+  /* /explore and the world scenes (Earth, Moon, Mars) pin a control row (`.hud-controls`) at the
+     top of the page that reaches past the centre at laptop widths; the panel drops below it, as
+     it already does on a phone, instead of sliding under the chips. The station pages keep their
+     row on the left and stack the panel under the orbit banner instead. */
+  :global(html:has(.hud-controls):not(:has([data-testid='station-orbit-banner']))) .panel {
+    top: calc(var(--nav-height) + var(--lens-banner-height, 0px) + 56px);
+  }
   /* Clickable strip header. Acts as the collapse toggle when expanded
      is true; when collapsed, only this strip is visible so the panel
      is compact. */

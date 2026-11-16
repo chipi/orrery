@@ -138,6 +138,27 @@ test.describe('/fly — URL mission loading (RFC-004)', () => {
     await expect(id).toContainText(/Atlas V/i);
   });
 
+  test('the ACTIVE event note stays a short note inside the HUD panel', async ({ page }) => {
+    // Curiosity at mid-cruise: TCM-2 is active and its description is four sentences long. It
+    // was set at the lead size with no limit and ran out of the panel under the scrubber.
+    await gotoFly(page, '/fly?mission=curiosity');
+    await page.getByRole('button', { name: /pause/i }).click();
+    await page.locator('input[type="range"][aria-label*="timeline" i]').fill('0.5');
+    const desc = page.getByTestId('fly-active-event').locator('.active-event-description');
+    await expect(desc).toBeVisible({ timeout: 10_000 });
+    const m = await desc.evaluate((el) => {
+      const cs = getComputedStyle(el);
+      const key = el.closest('.hud-row')!.querySelector('.hud-key')!;
+      return {
+        lines: el.getBoundingClientRect().height / parseFloat(cs.lineHeight),
+        size: parseFloat(cs.fontSize),
+        keySize: parseFloat(getComputedStyle(key).fontSize),
+      };
+    });
+    expect(m.lines).toBeLessThanOrEqual(3.05);
+    expect(m.size).toBeLessThanOrEqual(m.keySize + 2);
+  });
+
   test('?mission=apollo11 loads a Moon mission via the moon-dest fallback', async ({ page }) => {
     await gotoFly(page, '/fly?mission=apollo11');
     const id = page.locator('[data-testid="mission-name"]');

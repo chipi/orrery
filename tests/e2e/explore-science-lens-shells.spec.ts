@@ -1,4 +1,5 @@
 import { test, expect, type Page } from '@playwright/test';
+import { waitForHydration } from './_helpers/hydration';
 
 /**
  * /explore science lens on every scale shell (WS-3, RFC-039 Contract D). The
@@ -83,3 +84,26 @@ test.describe('/explore — per-shell science lens (WS-3)', () => {
     await expect(toggle).toBeEnabled();
   });
 });
+
+// The lens panel sat under the page's top control row on /explore and the world scenes at laptop
+// widths ("SCIENCE LENS" hidden behind the chips). It now drops below the row.
+for (const path of ['/explore', '/earth']) {
+  test(`${path}: the lens panel sits below the top control row, not under it`, async ({
+    page,
+    isMobile,
+  }) => {
+    test.skip(isMobile, 'the phone layout has its own drawer and offset');
+    await page.setViewportSize({ width: 1280, height: 800 });
+    await page.goto(path);
+    await waitForHydration(page);
+    await page.evaluate(() => document.documentElement.setAttribute('data-science-lens', 'on'));
+    const panel = page.locator('[data-testid="science-lens-panel"]');
+    await expect(panel).toBeVisible({ timeout: 15_000 });
+    const rowBottom = await page
+      .locator('.hud-controls')
+      .first()
+      .evaluate((el) => el.getBoundingClientRect().bottom);
+    const panelTop = await panel.evaluate((el) => el.getBoundingClientRect().top);
+    expect(panelTop).toBeGreaterThanOrEqual(rowBottom);
+  });
+}

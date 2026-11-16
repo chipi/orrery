@@ -2,15 +2,22 @@ import { existsSync, readFileSync } from 'node:fs';
 import { describe, it, expect, vi } from 'vitest';
 
 // The real static/data files and i18n-src overlays, without the bundle/fetch machinery of ./core.
-vi.mock('./core', () => ({
-  get: vi.fn(async (path: string) => {
-    const file = path.startsWith('i18n/') ? `i18n-src/${path.slice(5)}` : `static/data/${path}`;
-    if (!existsSync(file)) throw new Error(`404 ${path}`);
-    return JSON.parse(readFileSync(file, 'utf8'));
-  }),
-}));
+// Parsed once per file, as ./core caches its fetches: re-parsing the shared gallery and overlay
+// files for each of the 142 pages took ~3 s and timed out in the full parallel run.
+vi.mock('./core', () => {
+  const parsed = new Map<string, unknown>();
+  return {
+    get: vi.fn(async (path: string) => {
+      const file = path.startsWith('i18n/') ? `i18n-src/${path.slice(5)}` : `static/data/${path}`;
+      if (!existsSync(file)) throw new Error(`404 ${path}`);
+      if (!parsed.has(file)) parsed.set(file, JSON.parse(readFileSync(file, 'utf8')));
+      return structuredClone(parsed.get(file));
+    }),
+  };
+});
 
 import { getDeepSkyEntity } from './deep-sky-entity';
+import { getDeepSkyObject } from './universe';
 import { deepSkyPageIds } from '../../../scripts/site-routes.mjs';
 import { starPageIds } from '../../../scripts/site-routes.mjs';
 
@@ -98,7 +105,9 @@ describe('getDeepSkyEntity', () => {
       expect(existsSync(`static${e.hero!.full}`), `${id} full`).toBe(true);
       expect(e.hero!.alt.length, `${id} alt`).toBeGreaterThan(5);
     }
-  });
+    // Builds every full entity with its hero (the work is the test): ~2 s alone, past 5 s in the full
+    // parallel run, like the per-page test below.
+  }, 60_000);
 
   it('keeps the Orion Nebula’s gateway into the TRAPPIST-1 system', async () => {
     expect((await getDeepSkyEntity('m42', 'en-US'))?.gatewaySystem).toBe('trappist-1');
@@ -123,9 +132,12 @@ describe('getDeepSkyEntity', () => {
   }, 60_000);
 
   it('every gateway of a page object is a star page', async () => {
+    // The entity passes the object's gatewaySystem through unchanged; reading the object keeps this
+    // a data check (building 142 full entities took ~3 s, past the 5 s limit in the full run). That
+    // every page builds an entity is the test above.
     const stars = new Set<string>(starPageIds());
     for (const id of deepSkyPageIds() as string[]) {
-      const g = (await getDeepSkyEntity(id, 'en-US'))?.gatewaySystem;
+      const g = (await getDeepSkyObject(id))?.gatewaySystem;
       if (g) expect(stars.has(g), `${id} -> ${g}`).toBe(true);
     }
   });

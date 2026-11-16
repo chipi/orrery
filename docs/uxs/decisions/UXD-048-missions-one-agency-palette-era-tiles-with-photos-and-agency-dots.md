@@ -4,7 +4,7 @@
 - **Date**: 2026-11-15
 - **Decider**: the operator, 2026-11-15 — D7 "in code, free route", strip option A, palette 10b, then the mission-control mock-up variant 2 (era photos, agency dots, redesigned cards)
 - **Answers**: MI2, MI3, D7, L50 (E3)
-- **Builds on**: [UXD-014](UXD-014-one-chip-and-one-filter.md) (the one chip), Design System §2.4, §5.4, §5.7a
+- **Builds on**: [UXD-014](UXD-014-one-chip-and-filter.md) (the one chip), Design System §2.4, §5.4, §5.7a
 - **Changes**: `EntityCard`, `AgencyFilterRow`, `BrowseToolbar`, `EntityList`, `entity-card-grid.css`, `entity-browse-page.css`, `/fleet` page, `epoch-bands.ts` (bucketing), `agencyDataColor`, `src/lib/agencies.ts` (14 colours), `EpochTimelineStrip.svelte`, `Chip.svelte` (`dotColor`), `chip.css`, `era-flagships.ts`, `src/routes/missions/+page.svelte`, `MissionPanel.svelte` (agency row colour), `messages/*.json` (`missions_showing`), tests
 
 ## Context
@@ -16,7 +16,7 @@ The brief (`docs/wip/2026-11-13-slice-E3-brief.md`) counted three agency palette
 1. **One palette for the 14 agencies on /missions** (`agencies.ts` `color`): a card's accent and agency bar, the filter dot and the era tiles' dots read the same value. Each is 4.5:1 or better on the page and the card, none is cyan or teal, every pair is told apart under protan, deutan and tritan simulation (CIEDE2000 above 5, neighbours in the filter row 7 or more). The badge fill is gone from the card (a bar and the agency name replace it), so no badge text colour is needed there; the panel's agency row still picks white or dark text by contrast, now 4.5:1 or better for all 14.
 2. **The era strip is nine equal tiles** on `ChipGroup role="radiogroup"` and `Chip kind="choice"`: roving focus, arrow keys, Home and End, reversed in right-to-left, the order mirrored in Arabic, year ranges isolated (`bdi dir="ltr"`). A tile is the era's flagship mission hero under a dark gradient with name, years, count and one dot per active agency (at most 7, then "+N"). The chosen tile has the #889fe7 edge. Nine columns from a 1100 px strip, five and four below, one scroll row under 560 px.
 3. **Era photos are fixed picks** (`src/lib/era-flagships.ts`), the hero of one shipped mission each, never a new image: first-steps `sputnik1`, space-race `gemini4`, lunar-era `apollo17`, first-stations `skylab-2`, shuttle-and-mir `sts-1` (no mission of the index in 1987 to 1998 shows the Shuttle; STS-1 is the nearest picture of the subject and sits in the first-stations years), iss-assembly `spirit`, commercial-era `inspiration4`, lunar-return `artemis2`, mars-era `starship-mars-crew` (a computer render, credited as one). Credits are those of the hero in `image-provenance.json`.
-4. **The strip and the agency row are always visible**; FILTERS keeps destination, status and crew. Agency chips carry a 10 px palette dot (`Chip` `dotColor`, no ring, the selected edge stays the accent) and the mission count. A line under the filters reads the catalogue total and "Showing: <era> (<n>)".
+4. **The strip and the agency row are always visible**; FILTERS keeps destination, status and crew. Agency chips carry a 10 px palette dot (`Chip` `dotColor`, no ring, the selected edge stays the accent) and the mission count. A line under the filters reads the catalogue total and "`Showing: <era> (<n>)`".
 5. **The card**: photo, name with the year at the row's end, one line per agency (3 px bar in its colour, then the name), status pill, the story.
 
 ## Amendment, round 2 (2026-11-15): one pattern for /missions and /fleet

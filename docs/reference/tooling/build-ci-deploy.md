@@ -201,7 +201,12 @@ the playwright image and aren't needed for visuals).
 **When** — When a showcased screen/interaction changes. Add a `Shot` entry for new states.
 **I/O** — Writes `docs/screenshots/`.
 **Gotchas** — Serial by design for determinism; uses `reducedMotion: 'reduce'` to freeze simT.
-**State** — healthy.
+**State** — behind the UI (2026-11-16). The 0.9.9 screenshots in `docs/screenshots/` were taken on the
+dev server by hand, not by this script. The script predates: the `/fly` briefing card (it never
+clicks PROCEED TO SIMULATION), locale-prefixed routes (`/ja/explore`, not `?lang=ja`), and the
+files `11-science-lens-iss.png` and `16`–`22` (fleet, programs and launches catalogues, launch
+director, deep-sky IN THE SKY, gallery, Moon traverse). Running it as is would overwrite the new
+shots with the old states and write `11-science-lens-explore.png` again.
 
 ## `npm run screenshots:launchers` → `scripts/capture-launcher-lineup.mjs`
 

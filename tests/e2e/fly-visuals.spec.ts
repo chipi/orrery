@@ -63,6 +63,10 @@ async function canvasData(page: Page) {
 }
 
 test.describe('/fly — 2D view draws and fits the destination', () => {
+  // Each case loads /fly, switches to 2D, polls up to 15 s for the body and settles 1.5 s: most of
+  // the 30 s default before any slowness. On the docker-e2e runner (2 cores, no GPU) pluto ran out
+  // of time (2026-11-16, 04c3adc3262) after passing on the two runs before; the work is the test.
+  test.describe.configure({ timeout: 90_000 });
   for (const name of ['mars', 'jupiter', 'pluto'] as const) {
     test(`${name}: its own body, fitted inside the canvas, rings visible`, async ({
       page,

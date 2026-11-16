@@ -142,30 +142,46 @@ jobs:
           # Desktop 2 → 4 shards (2026-10-29): the two desktop legs set the
           # run's wall clock (Playwright 1897-1922 s each in 40674410743,
           # legs 25-50 min) while mobile-chromium legs took 8-16 min.
+          # Desktop and mobile 4 → 6 (2026-11-16, 0.9.9): the suite grew to ~6,300
+          # tests; on a092a5b17ca desktop 4-of-4 ran 48.7 min and on ba2640b8791 four
+          # legs hit the 60 min cap (cancelled, no failure). 15 legs, under the 20
+          # concurrent runners.
           - project: desktop-chromium
-            shard: '1/4'
-            shard_id: '1-of-4'
+            shard: '1/6'
+            shard_id: '1-of-6'
           - project: desktop-chromium
-            shard: '2/4'
-            shard_id: '2-of-4'
+            shard: '2/6'
+            shard_id: '2-of-6'
           - project: desktop-chromium
-            shard: '3/4'
-            shard_id: '3-of-4'
+            shard: '3/6'
+            shard_id: '3-of-6'
           - project: desktop-chromium
-            shard: '4/4'
-            shard_id: '4-of-4'
+            shard: '4/6'
+            shard_id: '4-of-6'
+          - project: desktop-chromium
+            shard: '5/6'
+            shard_id: '5-of-6'
+          - project: desktop-chromium
+            shard: '6/6'
+            shard_id: '6-of-6'
           - project: mobile-chromium
-            shard: '1/4'
-            shard_id: '1-of-4'
+            shard: '1/6'
+            shard_id: '1-of-6'
           - project: mobile-chromium
-            shard: '2/4'
-            shard_id: '2-of-4'
+            shard: '2/6'
+            shard_id: '2-of-6'
           - project: mobile-chromium
-            shard: '3/4'
-            shard_id: '3-of-4'
+            shard: '3/6'
+            shard_id: '3-of-6'
           - project: mobile-chromium
-            shard: '4/4'
-            shard_id: '4-of-4'
+            shard: '4/6'
+            shard_id: '4-of-6'
+          - project: mobile-chromium
+            shard: '5/6'
+            shard_id: '5-of-6'
+          - project: mobile-chromium
+            shard: '6/6'
+            shard_id: '6-of-6'
           # Landscape phone (Pixel 5 rotated). Guards the 0.7.2 responsive
           # redesign — touch chrome / drawers, not the desktop HUD columns. 2
           # shards: the heavy /fly render-validation + explore-perf specs are

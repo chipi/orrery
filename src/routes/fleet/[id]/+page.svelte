@@ -211,8 +211,6 @@
   {/if}
 
   <p class="actions">
-    <Chip kind="link" href={localHref(`/fleet?id=${entry.id}`)}
-      >{m.launches_open_in_orrery()}</Chip
-    >
+    <Chip kind="link" href={localHref(`/fleet?id=${entry.id}`)}>{m.launches_open_in_orrery()}</Chip>
   </p>
 </article>

@@ -121,8 +121,7 @@
   </section>
 
   <p class="actions">
-    <Chip kind="link" href={localHref(`/explore?bh=${hole.id}`)}
-      >{m.launches_open_in_orrery()}</Chip
+    <Chip kind="link" href={localHref(`/explore?bh=${hole.id}`)}>{m.launches_open_in_orrery()}</Chip
     >
   </p>
 </article>

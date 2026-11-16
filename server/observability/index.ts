@@ -42,6 +42,12 @@ export interface ObsConfig {
   umami?: { host: string; websiteId: string; hostname: string };
   /** VictoriaLogs jsonline URL; set only where no Alloy ships stdout (dev). */
   logsPushUrl?: string;
+  /**
+   * Dev only: the git branch of the checkout (ORRERY_WORKTREE, set by
+   * scripts/workspace/with-env.mjs). The dev telemetry contract tags logs, traces and errors
+   * with it so the agent on that branch finds its own (homelab `o11y-dev`).
+   */
+  worktree?: string;
 }
 
 interface TierTargets {
@@ -64,7 +70,7 @@ export const TIER_TARGETS: Record<string, TierTargets> = {
     sentryDsn: 'https://183d550946d24740a87983a1b75d86ee@glitchtip.tail6d0ed4.ts.net/30',
     otlpTracesEndpoint: 'https://vtraces.tail6d0ed4.ts.net/insert/opentelemetry/v1/traces',
     logsPushUrl:
-      'https://vlogs.tail6d0ed4.ts.net/insert/jsonline?_stream_fields=app,service,environment,instance&_msg_field=_msg&_time_field=_time',
+      'https://vlogs.tail6d0ed4.ts.net/insert/jsonline?_stream_fields=app,service,environment,instance,worktree&_msg_field=_msg&_time_field=_time',
     // "Orrery (dev)" (created 2026-10-17, operator decision): dev activity is tracked.
     umami: {
       host: 'https://umami.tail6d0ed4.ts.net',
@@ -103,6 +109,7 @@ export function obsConfigFromEnv(service: ServiceName, env = process.env): ObsCo
     metricsPort: env.METRICS_PORT ? Number(env.METRICS_PORT) : undefined,
     umami: umami ? { ...umami, hostname: env.UMAMI_HOSTNAME || service } : undefined,
     logsPushUrl: env.ORRERY_LOGS_PUSH_URL || tier.logsPushUrl,
+    worktree: environment === 'dev' ? env.ORRERY_WORKTREE?.trim() || undefined : undefined,
   };
 }
 
@@ -168,6 +175,7 @@ export function initObservability(
       url: cfg.logsPushUrl,
       service: cfg.service,
       environment: cfg.environment,
+      worktree: cfg.worktree,
     });
     state.untee = teeConsole(state.logPusher);
   }
@@ -197,6 +205,7 @@ export function initObservability(
       beforeBreadcrumb: scrubBreadcrumb,
     });
     Sentry.setTag('service', cfg.service);
+    if (cfg.worktree) Sentry.setTag('worktree', cfg.worktree);
     state.sentry = true;
   }
 
@@ -208,6 +217,7 @@ export function initObservability(
         'service.name': cfg.service,
         'deployment.environment': cfg.environment,
         ...(cfg.release ? { 'service.version': cfg.release } : {}),
+        ...(cfg.worktree ? { worktree: cfg.worktree } : {}),
       }),
       // Every request is traced. The default (parent-based) would let any caller turn
       // off the spans for its own requests with a traceparent whose flag is 00; the

@@ -10,7 +10,7 @@
 //     -- tsx server/lab-api/main.ts
 //
 // Used by the lab-api / mcp dev scripts, which don't load env files themselves.
-import { spawn } from 'node:child_process';
+import { execFileSync, spawn } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { readWorkspaceEnv } from './env.mjs';
 
@@ -63,6 +63,19 @@ export function parseArgs(argv) {
   return { defaults, command };
 }
 
+/** The current git branch, or undefined on a detached HEAD or outside git. */
+function gitBranch() {
+  try {
+    const b = execFileSync('git', ['rev-parse', '--abbrev-ref', 'HEAD'], {
+      encoding: 'utf8',
+      stdio: ['ignore', 'pipe', 'ignore'],
+    }).trim();
+    return b && b !== 'HEAD' ? b : undefined;
+  } catch {
+    return undefined;
+  }
+}
+
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
   let parsed;
   try {
@@ -72,6 +85,13 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
     process.exit(2);
   }
   const env = buildEnv(process.env, readWorkspaceEnv(), parsed.defaults);
+  // The dev telemetry contract tags a local server's logs, traces and errors with the
+  // checkout's branch (server/observability reads ORRERY_WORKTREE in dev only), as vite.config
+  // does for the browser. A detached HEAD or no git leaves it unset.
+  if (!env.ORRERY_WORKTREE) {
+    const branch = gitBranch();
+    if (branch) env.ORRERY_WORKTREE = branch;
+  }
   const [cmd, ...args] = parsed.command;
   const child = spawn(cmd, args, { stdio: 'inherit', env });
   child.on('error', (err) => {

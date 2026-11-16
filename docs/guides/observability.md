@@ -41,7 +41,7 @@ Done once on the self-hosted GlitchTip (over the tailnet). Already provisioned: 
 
 ### Local-dev posture (the dev rung)
 
-- `vite dev` **now reports** — with no `PUBLIC_SENTRY_*` override it falls back to the dev DSN (GlitchTip project 30) via `homelab:8090`. On the maintainer's tailnet this is live; off the tailnet the host doesn't resolve, the transport fails, and nothing leaves the browser (fork-silent by construction). Dev events carry a `worktree` tag (git branch) so parallel local sessions are separable.
+- `vite dev` **now reports** — with no `PUBLIC_SENTRY_*` override it falls back to the dev DSN (GlitchTip project 30) via `homelab:8090`. On the maintainer's tailnet this is live; off the tailnet the host doesn't resolve, the transport fails, and nothing leaves the browser (fork-silent by construction). Dev events carry a `worktree` tag (git branch) so parallel local sessions are separable. The lab-api and mcp dev servers carry it too (2026-11-16, the homelab dev telemetry contract): `scripts/workspace/with-env.mjs` sets `ORRERY_WORKTREE` to the checkout's branch, and in dev only the server tags its GlitchTip events, its pushed log lines (a `worktree` stream field) and its trace resource with it. Agents read their branch's dev telemetry with the homelab skill `o11y-dev` before a PR; dev errors never become GitHub issues.
 - `vite preview`, the screenshot pipeline, and CI are **not** `dev` and carry no baked vars → silent. To point local dev at a *different* project, set `PUBLIC_SENTRY_DSN=…` in your gitignored `.env` (the `scripts/check-no-secrets.ts` gate still scans the staged diff).
 
 ### Verifying it works

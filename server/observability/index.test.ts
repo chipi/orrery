@@ -98,8 +98,20 @@ describe('obsConfigFromEnv', () => {
     });
     expect(DEV_SERVER_TARGETS.sentryDsn).toMatch(/\/30$/); // orrery-dev, never prod (18)
     expect(DEV_SERVER_TARGETS.logsPushUrl).toMatch(
-      /_stream_fields=app,service,environment,instance/,
+      /_stream_fields=app,service,environment,instance,worktree/,
     );
+  });
+
+  it('dev carries the checkout branch (ORRERY_WORKTREE); other tiers never do', () => {
+    expect(obsConfigFromEnv('orrery-mcp', { ORRERY_WORKTREE: 'fix/x' }).worktree).toBe('fix/x');
+    expect(obsConfigFromEnv('orrery-mcp', { ORRERY_WORKTREE: '  ' }).worktree).toBeUndefined();
+    for (const env of [
+      { ORRERY_ENVIRONMENT: 'prod', ORRERY_WORKTREE: 'fix/x' },
+      { ORRERY_ENVIRONMENT: 'staging', ORRERY_WORKTREE: 'fix/x' },
+      { NODE_ENV: 'test', ORRERY_WORKTREE: 'fix/x' },
+    ]) {
+      expect(obsConfigFromEnv('orrery-lab-api', env).worktree).toBeUndefined();
+    }
   });
 
   it('prod fails closed: no target in code, so nothing is sent', () => {

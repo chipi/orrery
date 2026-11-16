@@ -55,6 +55,30 @@ describe('createLogPusher', () => {
     expect(stderr.mock.calls.filter((c) => String(c[0]).includes('log push failed'))).toEqual([]);
   });
 
+  it('a dev line carries the branch as `worktree` when given, and no such field otherwise', async () => {
+    const p = createLogPusher({
+      url: 'https://vlogs.example/insert/jsonline',
+      service: 'orrery-lab-api',
+      environment: 'dev',
+      instance: 'omarchy',
+      worktree: 'tech-debt/0.9.9',
+      fetchImpl: okFetch,
+    });
+    p.push('info', 'hello');
+    await p.stop();
+    const q = createLogPusher({
+      url: 'https://vlogs.example/insert/jsonline',
+      service: 'orrery-lab-api',
+      environment: 'dev',
+      instance: 'omarchy',
+      fetchImpl: okFetch,
+    });
+    q.push('info', 'hello');
+    await q.stop();
+    expect(JSON.parse(calls[0].body.trim())).toMatchObject({ worktree: 'tech-debt/0.9.9' });
+    expect(JSON.parse(calls[1].body.trim())).not.toHaveProperty('worktree');
+  });
+
   it('batches at maxBatch', async () => {
     const p = createLogPusher({
       url: 'u',

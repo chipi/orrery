@@ -16,6 +16,8 @@ export interface LogPushOptions {
   environment: string;
   app?: string;
   instance?: string;
+  /** Dev: the git branch of the checkout the server runs from (the dev telemetry contract). */
+  worktree?: string;
   /** Flush at least this often. */
   flushMs?: number;
   /** Flush as soon as this many lines are buffered. */
@@ -40,6 +42,7 @@ export function createLogPusher(opts: LogPushOptions): LogPusher {
     service: opts.service,
     environment: opts.environment,
     instance: opts.instance ?? hostname().split('.')[0],
+    ...(opts.worktree ? { worktree: opts.worktree } : {}),
   };
   const maxBatch = opts.maxBatch ?? 100;
   let buffer: string[] = [];

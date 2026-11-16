@@ -52,6 +52,9 @@ mission under a camera director, and 13 missions join the catalogue.
 
 - The Science Lens panel no longer hides under the top controls on /explore and the Worlds.
 - The /fly ACTIVE event note stays three lines inside the HUD.
+- Worlds: a tap on the selected site's crosshair reopens its panel after the view shifts back from
+  beside the panel; the imagery card sits just above the bottom-left controls near the ground;
+  the flat true-scale view's scale bar no longer lies under "View from my location".
 - Black hole rendering, with a minimal quality tier.
 - Sitemap `<lastmod>` dates track the pages' real changes.
 - A duplicate Russian Lab page title.

@@ -175,10 +175,18 @@ test.describe('the one card (UXD-048)', () => {
   }
 
   test('/missions and /fleet cards are the same size at one viewport', async ({ page }) => {
+    // Measured on screen: an off-screen card is not laid out (content-visibility: auto) and reports
+    // its 290 px placeholder, as the first /missions card did below the fold in landscape.
+    const firstCard = async () => {
+      const card = page.locator('.entity-card-grid .card').first();
+      await card.scrollIntoViewIfNeeded();
+      await page.waitForTimeout(300);
+      return card.boundingBox();
+    };
     await open(page, '/missions');
-    const a = await page.locator('.entity-card-grid .card').first().boundingBox();
+    const a = await firstCard();
     await open(page, '/fleet');
-    const b = await page.locator('.entity-card-grid .card').first().boundingBox();
+    const b = await firstCard();
     expect(Math.round(a!.height)).toBe(Math.round(b!.height));
     expect(Math.round(a!.width)).toBe(Math.round(b!.width));
   });

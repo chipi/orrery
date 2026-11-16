@@ -20,15 +20,16 @@ async function openMissionsTab(page: Page, id: string) {
 }
 
 test.describe('/fleet view toggle', () => {
-  test('GRID and LINE-UP are one radiogroup on the FILTERS row; the kind group shows only in LINE-UP', async ({
+  test('GRID, LIST and LINE-UP are one radiogroup in the toolbar; the kind group shows only in LINE-UP', async ({
     page,
   }) => {
     await page.goto('/fleet');
     const view = page.getByRole('radiogroup', { name: 'View' });
     await expect(view).toBeVisible({ timeout: 10_000 });
     await expect(view.getByRole('radio', { name: 'Grid' })).toBeChecked();
+    // In the shared toolbar since UXD-048 (was on the FILTERS row, UXD-035).
     await expect(
-      page.locator('.filters-bar').getByRole('radiogroup', { name: 'View' }),
+      page.getByTestId('browse-toolbar').getByRole('radiogroup', { name: 'View' }),
     ).toHaveCount(1);
     await expect(page.getByRole('radio', { name: 'Launchers' })).toHaveCount(0);
 

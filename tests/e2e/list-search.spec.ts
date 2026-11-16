@@ -67,6 +67,12 @@ test.describe('/missions search (RFC-027)', () => {
   });
 
   test('AND semantics: ?q=mars&dest=MARS keeps both filters', async ({ page }) => {
+    // The Mars-only count, measured here: a hard-coded "20" broke when Mars missions were added.
+    await page.goto('/missions?dest=MARS');
+    await waitForHydration(page);
+    const marsCards = page.locator('[data-testid^="mission-card-"]');
+    await expect(marsCards.first()).toBeVisible({ timeout: 10_000 });
+    const marsOnly = await marsCards.count();
     await page.goto('/missions?q=mars&dest=MARS');
     await waitForHydration(page);
     const input = page.locator('[data-testid="missions-search"]');
@@ -74,10 +80,9 @@ test.describe('/missions search (RFC-027)', () => {
     const cards = page.locator('[data-testid^="mission-card-"]');
     await expect(cards.first()).toBeVisible({ timeout: 10_000 });
     const count = await cards.count();
-    // dest=MARS alone is 20 (post-#341 Batch 1 additions); the search
-    // narrows it further. Both bounds.
+    // The search narrows the Mars filter, never widens it. Both bounds.
     expect(count).toBeGreaterThan(0);
-    expect(count).toBeLessThanOrEqual(20);
+    expect(count).toBeLessThanOrEqual(marsOnly);
   });
 });
 

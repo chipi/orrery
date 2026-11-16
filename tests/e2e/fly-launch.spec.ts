@@ -19,6 +19,16 @@ async function enterLaunch(page: Page, mission: string, extra = ''): Promise<voi
   await expect(page.locator('[data-testid="launch-scene"]')).toBeVisible({ timeout: 20_000 });
 }
 
+// Past the climb by the viewer's own control: the master scrubber spans pad to arrival and an
+// Earth-orbit mission gives the ascent its first 10-20 % (coastAscentFraction), so 0.5 is mid-coast.
+// (The `__flyLaunchT` seek hook is dev-only and absent from the production build CI tests.)
+async function scrubIntoCoast(page: Page): Promise<void> {
+  await page.locator('input.scrub').evaluate((el: HTMLInputElement) => {
+    el.value = '0.5';
+    el.dispatchEvent(new Event('input', { bubbles: true }));
+  });
+}
+
 // Mobile coverage: the full HUD is decluttered on touch, so this asserts the
 // ascent scene mounts + its canvas is attached. Runs on every project.
 test('launch scene mounts with a live canvas', async ({ page }) => {
@@ -31,16 +41,10 @@ test('launch scene mounts with a live canvas', async ({ page }) => {
 test('STS-1 after the climb: the Earth-orbit coast, not a cislunar transfer', async ({
   page,
 }, testInfo) => {
-  test.setTimeout(260_000);
+  test.setTimeout(90_000);
   await enterLaunch(page, 'sts-1');
-  await page.evaluate(() =>
-    (window as unknown as { __flyLaunchT: (t: number) => void }).__flyLaunchT(600),
-  );
-  await page
-    .getByRole('button', { name: /^play$/i })
-    .first()
-    .click();
-  await expect(page.locator('[data-testid="coast-scene"]')).toBeVisible({ timeout: 220_000 });
+  await scrubIntoCoast(page);
+  await expect(page.locator('[data-testid="coast-scene"]')).toBeVisible({ timeout: 30_000 });
   await expect(page.locator('[data-testid="launch-scene"]')).toHaveCount(0);
   if (testInfo.project.name === 'desktop-chromium') {
     // the coast HUD (hidden on touch): the orbit from the mission record
@@ -52,16 +56,10 @@ test('STS-1 after the climb: the Earth-orbit coast, not a cislunar transfer', as
 // The craft in the coast is enlarged (a real orbiter is sub-pixel against the Earth) and marked in
 // the wide shot; the debug hook reports its size and its share of the view.
 test('STS-1 coast: the enlarged craft is sized and in view (debug hook)', async ({ page }) => {
-  test.setTimeout(260_000);
+  test.setTimeout(90_000);
   await enterLaunch(page, 'sts-1', '&debug=1');
-  await page.evaluate(() =>
-    (window as unknown as { __flyLaunchT: (t: number) => void }).__flyLaunchT(3000),
-  );
-  await page
-    .getByRole('button', { name: /^play$/i })
-    .first()
-    .click();
-  await expect(page.locator('[data-testid="coast-scene"]')).toBeVisible({ timeout: 220_000 });
+  await scrubIntoCoast(page);
+  await expect(page.locator('[data-testid="coast-scene"]')).toBeVisible({ timeout: 30_000 });
   await expect(async () => {
     const d = await page.evaluate(() =>
       (
@@ -82,16 +80,10 @@ test('STS-1 coast: the enlarged craft is sized and in view (debug hook)', async 
 test('OTV-5 after the climb: the Earth-orbit coast (54.5 degrees from its record)', async ({
   page,
 }, testInfo) => {
-  test.setTimeout(260_000);
+  test.setTimeout(90_000);
   await enterLaunch(page, 'otv-5');
-  await page.evaluate(() =>
-    (window as unknown as { __flyLaunchT: (t: number) => void }).__flyLaunchT(3000),
-  );
-  await page
-    .getByRole('button', { name: /^play$/i })
-    .first()
-    .click();
-  await expect(page.locator('[data-testid="coast-scene"]')).toBeVisible({ timeout: 220_000 });
+  await scrubIntoCoast(page);
+  await expect(page.locator('[data-testid="coast-scene"]')).toBeVisible({ timeout: 30_000 });
   await expect(page.locator('[data-testid="launch-scene"]')).toHaveCount(0);
   if (testInfo.project.name === 'desktop-chromium') {
     await expect(page.locator('body')).toContainText('54.5°');
@@ -103,16 +95,10 @@ test('OTV-5 after the climb: the Earth-orbit coast (54.5 degrees from its record
 test('Shenzhou 5 after the climb: the Earth-orbit coast (14 orbits from its record)', async ({
   page,
 }, testInfo) => {
-  test.setTimeout(260_000);
+  test.setTimeout(90_000);
   await enterLaunch(page, 'shenzhou-5');
-  await page.evaluate(() =>
-    (window as unknown as { __flyLaunchT: (t: number) => void }).__flyLaunchT(3000),
-  );
-  await page
-    .getByRole('button', { name: /^play$/i })
-    .first()
-    .click();
-  await expect(page.locator('[data-testid="coast-scene"]')).toBeVisible({ timeout: 220_000 });
+  await scrubIntoCoast(page);
+  await expect(page.locator('[data-testid="coast-scene"]')).toBeVisible({ timeout: 30_000 });
   await expect(page.locator('[data-testid="launch-scene"]')).toHaveCount(0);
   if (testInfo.project.name === 'desktop-chromium') {
     await expect(page.locator('body')).toContainText('332×336 km');

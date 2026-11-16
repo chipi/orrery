@@ -566,8 +566,9 @@ test.describe('/explore INDEX — a round photo in the lead slot of the solar ro
     );
     await expect(nb.locator('button.si-row[data-index-id="m13"] img.entity-thumb')).toHaveCount(1);
     await expect(nb.locator('button.si-row[data-index-id="m18"] .entity-thumb-dot')).toHaveCount(1);
-    await page.goto('/explore?context=local-sheet');
-    await waitForHydration(page);
+    // Wait until the Local Sheet is the scale on screen (slower to settle on a phone) before the
+    // toggle is clicked, as for the neighbourhood above.
+    await openScale(page, SCALES[4]);
     await toggle(page).click();
     const sheet = panelOf(page, 'local-sheet');
     await expect(sheet).toBeVisible();

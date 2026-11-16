@@ -50,7 +50,10 @@ type Device = keyof typeof DEVICES;
 // mid-scroll is not counted, so a measurement can only come out low, not high.
 const BUDGET_MB: Record<string, Record<Device, number>> = {
   '/fleet': { phone: 17, tablet: 37, desktop: 6, tv: 17 },
-  '/missions': { phone: 16, tablet: 16, desktop: 4, tv: 8 },
+  // 2026-11-16 (0.9.9): 13 more missions (139 cards) and the era strip's nine photos; tablet
+  // re-measured on the production build at 16.2 MB (phone 7.4, desktop 3.4, tv 7.4), oversize 0.
+  // Tablet only, 1.15x rounded up.
+  '/missions': { phone: 16, tablet: 19, desktop: 4, tv: 8 },
   // 2026-11-14 (F1, UXD-038): every list shows 10 rows until "Show all". The same page with every
   // chip opened (the old rendering) was 40.8 MB on a phone; capped it is 3.6 to 3.7 MB on all four
   // devices, oversize 0 (measured on the dev server, which serves the same image files; not a

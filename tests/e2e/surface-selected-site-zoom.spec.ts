@@ -106,6 +106,22 @@ async function crosshair(page: Page): Promise<{ x: number; y: number } | null> {
   });
 }
 
+/**
+ * The crosshair once the view has stopped moving. A docked panel shifts the view beside it
+ * (UXD-030) and closing it eases the view back, so a position read before the close is stale.
+ */
+async function settledCrosshair(page: Page): Promise<{ x: number; y: number } | null> {
+  let last = await crosshair(page);
+  for (let i = 0; i < 30; i++) {
+    await page.waitForTimeout(150);
+    const now = await crosshair(page);
+    if (!now || !last) return now;
+    if (Math.hypot(now.x - last.x, now.y - last.y) < 1) return now;
+    last = now;
+  }
+  return last;
+}
+
 async function click(page: Page, isMobile: boolean, x: number, y: number): Promise<void> {
   if (isMobile) await page.touchscreen.tap(x, y);
   else await page.mouse.click(x, y);
@@ -218,6 +234,11 @@ for (const c of CASES) {
           if (!(await panelOpen(page)))
             failures.push(`camR ${r}: the crosshair did not reopen the panel`);
           else await closePanel(page);
+          // The close eases the view back from beside the panel: the target (tag, ring or the
+          // crosshair stand-in) is found again where the view comes to rest.
+          const rest = await settledCrosshair(page);
+          target = await visibleTarget(page, c.id);
+          if (!target && r <= 33) target = rest && { ...rest, tag: false };
         }
       }
       if (!target) {

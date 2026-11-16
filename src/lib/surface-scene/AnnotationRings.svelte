@@ -62,8 +62,13 @@
     onOpenPhoto?: (src: string) => void;
     /** Zoom the view in by `factor` around a screen point; false when already at the zoom limit. */
     onZoomTo?: (x: number, y: number, factor: number) => boolean;
-    /** First look at a tap on a ring (`id`) or badge at (x, y) in overlay px: true when the page handled it (no popover, no zoom). */
-    onRingTap?: (x: number, y: number, id?: string) => boolean;
+    /**
+     * First look at a tap on a ring (`id`) or badge at (x, y) in overlay px: true when the page
+     * handled it (no popover, no zoom). `e` is the click itself: the overlay frame shifts with the
+     * view (a panel docked beside it), so a page testing the tap against its own marks uses the
+     * click's client position, not the ring's overlay one.
+     */
+    onRingTap?: (x: number, y: number, id?: string, e?: MouseEvent) => boolean;
     /** Screen rectangles (e.g. WebGL traverse stop pills) that ring labels keep clear of. */
     blocked?: Rect[];
   } = $props();
@@ -343,7 +348,7 @@
       aria-label={c.members.map((r) => r.annotation.label).join(', ')}
       data-testid="annotation-cluster"
       data-count={c.members.length}
-      onclick={() => !onRingTap?.(c.x, c.y) && clickCluster(c)}
+      onclick={(e) => !onRingTap?.(c.x, c.y, undefined, e) && clickCluster(c)}
       onpointerenter={(e) => e.pointerType !== 'touch' && (previewCluster = c.key)}
       onpointerleave={() => previewCluster === c.key && (previewCluster = null)}
       onfocus={(e) =>
@@ -376,7 +381,7 @@
       onclick={(e) => {
         const hit = tappedRing(e, id);
         const h = singles.find((s) => s.annotation.id === hit) ?? r;
-        if (!onRingTap?.(h.x, h.y, hit)) toggle(hit);
+        if (!onRingTap?.(h.x, h.y, hit, e)) toggle(hit);
       }}
       onpointerenter={(e) => enter(e, id)}
       onpointerleave={() => leave(id)}

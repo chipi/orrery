@@ -324,6 +324,9 @@
      *  references nothing on screen). `true` = orbits in view (ruler
      *  meaningful), `false` = zoomed below them (hide). */
     onOrbitsInViewChange?: (inView: boolean) => void;
+    /** The flat true-scale view opened (`true`) or closed. Its scale bar owns the bottom-left
+     *  corner, so a page drops what it keeps there for the globe (the Moon's locate chip). */
+    onFlatViewChange?: (active: boolean) => void;
     /** Museums where real hardware is on display (PRD-027). When given,
      *  the globe gets museum pins, a MUSEUMS chip, the museum card and the
      *  ?museum=<id> deep link. /earth only. */
@@ -357,6 +360,7 @@
     regimes,
     onRegimeOpen,
     onOrbitsInViewChange,
+    onFlatViewChange,
     locateReservePx = 0,
     barStart,
     entityLinks = [],
@@ -1110,6 +1114,20 @@
   let hintDone = $state(false);
   // Site icons have started to show at this zoom (#641 legend gate).
   let tagStageOn = $state(false);
+  $effect(() => onFlatViewChange?.(flatPatchActive));
+  // The nation legend faded away (near the ground, route view, the flat view). It stays in the
+  // DOM with its height, so the imagery card and the hint must not keep clearing it then.
+  let legendAway = $derived(
+    nationFilterAway({
+      view,
+      tagStageOn,
+      altitudeKm,
+      radiusKm: config.radiusKm,
+      routeViewActive,
+      flatPatchActive,
+      detailFlying,
+    }),
+  );
   // Globe colour at the flat-patch site (Mars): its greyscale imagery is
   // tinted to it, like the 3D patches (#641).
   let flatPatchTint = $state<[number, number, number] | undefined>();
@@ -5568,8 +5586,10 @@
   style:--mcd-bottom="calc(8px + env(safe-area-inset-bottom, 0px))"
   style:--index-handle-top={indexHandleTop != null ? `${indexHandleTop}px` : undefined}
   style:--index-top={indexTopPx != null ? `${indexTopPx}px` : undefined}
-  style:--card-bottom={legendH ? `${48 + legendH + 8 + locateReservePx}px` : undefined}
-  style:--hint-bottom={legendH ? `${48 + legendH + 8}px` : undefined}
+  style:--card-bottom={legendH && !legendAway
+    ? `${48 + legendH + 8 + locateReservePx}px`
+    : undefined}
+  style:--hint-bottom={legendH && !legendAway ? `${48 + legendH + 8}px` : undefined}
 >
   <div
     class="layer"
@@ -5587,7 +5607,15 @@
         blocked={ringBlocked}
         onOpenPhoto={(src) => (panelLightbox = src)}
         onZoomTo={(_x, _y, factor) => zoomPatchBy(factor)}
-        onRingTap={reopenPanelAt}
+        onRingTap={(x, y, id, e) => {
+          // The ring overlay shifts with the view while a panel is docked or the shift settles,
+          // so the crosshair test reads the click's own position in container px.
+          if (e && container) {
+            const r = container.getBoundingClientRect();
+            return reopenPanelAt(e.clientX - r.left, e.clientY - r.top, id);
+          }
+          return reopenPanelAt(x, y, id);
+        }}
       />
     {/if}
   </div>
@@ -6288,15 +6316,7 @@ sample      ${debugInfo.projectedPxSample}`}
   {#if !panoramaActive}
     <div
       class="legend-3d"
-      class:legend-3d--away={nationFilterAway({
-        view,
-        tagStageOn,
-        altitudeKm,
-        radiusKm: config.radiusKm,
-        routeViewActive,
-        flatPatchActive,
-        detailFlying,
-      })}
+      class:legend-3d--away={legendAway}
       class:beside-panel={panelOpen}
       bind:this={legendEl}
       role="group"

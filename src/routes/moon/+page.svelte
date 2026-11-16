@@ -148,6 +148,9 @@
   // Orbit ruler auto-hides once the camera dips below the lowest orbit
   // band (#363) — SurfaceScene flips this via onOrbitsInViewChange.
   let orbitsInView = $state(true);
+  // The flat true-scale view: its scale bar takes the bottom-left corner and the locate chip
+  // (which turns the globe) has nothing to turn there.
+  let flatView = $state(false);
   let regimePanelOpen = $state(false);
   let selectedRegimeId = $state<string | null>(null);
   // The ruler row under the pointer or keyboard focus; the scene draws it (UXD-024).
@@ -283,6 +286,7 @@
   {regimes}
   onRegimeOpen={openRegime}
   onOrbitsInViewChange={(v) => (orbitsInView = v)}
+  onFlatViewChange={(v) => (flatView = v)}
 >
   {#snippet barStart()}
     {#if hudTouch.value}
@@ -341,7 +345,7 @@
     {/if}
   {/snippet}
   {#snippet chip()}
-    {@render locateChip()}
+    {#if !flatView}{@render locateChip()}{/if}
   {/snippet}
   {#if regimes.length > 0 && orbitsInView}
     <!-- Hidden once the camera dips below LLO — orbits then sit overhead

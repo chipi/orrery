@@ -17,7 +17,44 @@ these first before hand-rolling raf loops, listener registries, or
 | Standard canvas input listeners | `bindCanvasInputs` (existing) | mouse / touch / wheel + hover; returns the matching `removeEventListener` chain |
 | Closest 2D NDC hit testing | `pickClosest2D` (existing) | screen-space pick fallback for routes that don't run a full Three.js raycast |
 | Object3D disposal walk | `disposeObject3D` (existing) | recursive geometry / material / texture dispose |
+| The focus beside an open side panel | `createPanelFramer` + `watchPanels` (`panel-framing-host.ts`), maths in `panel-framing.ts` | measures `aside.panel` in the 400 ms after one opened, closed or the window resized, eases the shift, `camera.setViewOffset`; called by the Explore host and `SurfaceScene` (UXD-019, UXD-030) |
+| The orbit ruler's regime in a scene | `buildRegimeHighlight` | one group of annulus + `Line2` edges, great-circle shell or pin rings per regime shape (`$lib/orbit-regime-geometry`), `set(hover, active)`, `update(camera, w, h, t, still)` per frame, `dispose()`; `explore-scene-host.ts` and `SurfaceScene` both use it (UXD-024) |
+| An iconic mission's trajectory, markers and boxes | `buildIconicTrajectory` (`iconic-trajectory.ts`) + `iconic-box.ts` | the Line2 path, the milestone markers (the pick contract: `PICK_KINDS`, `userData`, `pickTargets`), the per-frame sizing and placement of the milestone boxes (`n/N · date` header, name body, 12 px at any zoom, drawn at the first highlight) and the one mission box at Today, through `universe/scene-pins.ts` `placeLabels` (UXD-026); `iconic-box.ts` is the pure text and size part (`boxHeader`, `wrapText`, `layoutBox`) |
 | Soft-edged alpha mask for a square patch | `featherMask(edge)` | smoothstep fade over the outer `edge` fraction; each call returns its own texture over one cached buffer, so `disposeObject3D` on one patch never strips the mask from the others (#641) |
+| The launch camera director on a launch scene | `createLaunchDirector` (`launch-director-rig.ts`) + `attachLaunchConditions` (`launch-conditions-scene.ts`) | the plan, the ground-relative state, the camera and the conditions rig (sky, sun, clouds, pad smoke, limb, night lights); one implementation for /fly's `LaunchScene` and `/dev/launch-director` (UXD-046) |
+| A launch pad under the rocket | `buildPad(spec, vehM, vehLen)` (`launch-pads.ts`), spec from `resolvePadSpec` (`$lib/launches/pad-family.ts`) | 16 low-detail pad models in five families, built in metres and scaled by the vehicle's real height; `update(t)` poses the moving parts (support arms, swing arms, strongback) from the mission time; `attachLaunchConditions` takes it as `pad` and keeps the generic tower when it is null; `buildPadShowcase` is the /dev/models + /colophon stand-in (UXD-047) |
+
+## Colour pipeline — one output step
+
+Composer targets are linear. The renderer's `toneMapping`, `toneMappingExposure` and
+`outputColorSpace` apply only when drawing straight to the canvas, so a composer scene without a
+final `OutputPass` shows raw linear values (darker, higher contrast, ACES ignored) while a
+direct-render tier or scene shows ACES + sRGB. Rules (guarded by `output-step-rule.test.ts`):
+
+- **Every `EffectComposer` ends in exactly one `OutputPass`, last** — after bloom, bokeh, film and
+  vignette. `createOutlinePassSetup({ outputPass: true })` does it for the surface and station routes;
+  `explore-render-stack.ts`, `ascent-renderer.ts`, `fly-helio-scene.ts`, `milky-way-scene.ts` and
+  `local-group-scene.ts` add their own. A new composer adds one in the same change.
+- **Every colour texture sets `colorSpace = THREE.SRGBColorSpace`; every data map (roughness, alpha
+  mask, anything not a colour) sets `THREE.NoColorSpace` explicitly.** An untagged texture is read
+  as linear and comes out lighter than authored once the OutputPass encodes.
+- Hex `THREE.Color` constants are already sRGB-aware (`ColorManagement`); do not pre-convert them.
+- **Shader colours are `THREE.Color` uniforms; no raw `vec3`/`vec4` colour literals in GLSL** (0 and 1
+  are fine). A colour-named uniform (`uColor`, `uHorizon`, `rimColor`, ...) is `new THREE.Color(hex)`,
+  never an array or `Vector3`. A raw sRGB literal is read as linear and the OutputPass encodes it a
+  second time (pale colours). Guarded by `output-step-rule.test.ts`
+  (exceptions are listed there with a reason).
+- Bloom thresholds, exposure and light intensities are tuned against the OutputPass output, not
+  against raw linear values.
+
+## `/fly` helio scene — moons and the 2D canvas
+
+`fly-helio-scene.ts` owns the decorative moons (`MOON_SYSTEM`). The nine planetary-moon
+destinations load their `static/textures/2k_<id>.jpg` the first time they are shown or targeted
+(`moonTextures`, passed by `fly-scene-host.ts`); `setTargetMoon` highlights the one a plan flight
+names (`mission.targetMoon`). `fly-frame-runner.ts` `draw2d` is the 2D canvas; its line values, scale
+fit and destination selection are the pure modules in `src/lib/fly/` (`fly-2d-style.ts`,
+`fly-2d-scale.ts`, `fly-2d-targets.ts`, UXD-043).
 
 ## Critical contract — `document.hidden` pause
 

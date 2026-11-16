@@ -1,15 +1,18 @@
 <script lang="ts">
   import EntityIndex from '$lib/components/EntityIndex.svelte';
+  import Chip from '$lib/components/Chip.svelte';
+  import ChipGroup from '$lib/components/ChipGroup.svelte';
+  import EntityCard from '$lib/components/EntityCard.svelte';
+  import EntityList from '$lib/components/EntityList.svelte';
+  import AgencyFilterRow from '$lib/components/AgencyFilterRow.svelte';
+  import BrowseToolbar from '$lib/components/BrowseToolbar.svelte';
   let { data } = $props();
   import { metaDescription } from '$lib/seo';
-  import { responsive } from '$lib/responsive-image.svelte';
-  import { IMAGE_SIZES } from '$lib/image-sizes';
   import { onMount } from 'svelte';
   import { page } from '$app/state';
   import { audio } from '$lib/audio-state.svelte';
   import { afterNavigate, goto } from '$app/navigation';
   import { setCurrentCard, trackCardNavigation, seedBackTarget } from '$lib/card-chain.svelte';
-  import { assetUrl } from '$lib/asset-url';
   import { getMissionsForLibrary, getBadges } from '$lib/data';
   import { localeFromPage, localHref } from '$lib/locale';
   import type { Destination, Mission, MissionStatus } from '$types/mission';
@@ -23,10 +26,10 @@
   import VisuallyHiddenH1 from '$lib/components/VisuallyHiddenH1.svelte';
   import * as m from '$lib/paraglide/messages';
   import { missionStatusLabel } from '$lib/status-label';
-  import { agencyLogo, agencyFullName, splitAgencies } from '$lib/agencies';
+  import { agencyColor, agencyDataColor, agencyFullName, splitAgencies } from '$lib/agencies';
   import { matchesQuery } from '$lib/list-search';
   import { trackFilterChange, trackSearch } from '$lib/analytics';
-  import { pickHero, loadHeroOverrides, heroPositionFor } from '$lib/image-hero';
+  import { pickHero, loadHeroOverrides } from '$lib/image-hero';
   import { cue } from '$lib/sensory/feedback';
   import {
     type RemoteData,
@@ -37,8 +40,8 @@
     isSuccess,
   } from '$lib/types/remote-data';
   import { dataLoadFailed } from '$lib/data/core';
-  import { readableTextOn, DARK_TEXT } from '$lib/readable-text';
   import { missionDestLabel } from '$lib/mission-dest-label';
+  import { epochLabel } from '$lib/epoch-label';
 
   // EpochTimelineStrip URL allowlist — same shape as /fleet's epochValid.
   // The strip writes `?epoch=<id>`; this validates round-trips so a junk
@@ -88,6 +91,10 @@
     epoch: FleetEpoch | 'ALL';
     /** RFC-027 — free-text search across name + agency + type + first. */
     q: string;
+    /** Order of the grid; the names are /fleet's (`?sort=`). */
+    sort: 'chrono-desc' | 'chrono-asc' | 'alpha';
+    /** Grid of cards or the compact list (`?view=list`). */
+    view: 'grid' | 'list';
     expanded: boolean;
   }
   const filterState = $state<MissionFilterState>({
@@ -97,6 +104,8 @@
     crew: 'ALL',
     epoch: 'ALL',
     q: '',
+    sort: 'chrono-desc',
+    view: 'grid',
     expanded: false,
   });
 
@@ -160,6 +169,38 @@
     return map;
   });
 
+  // Agencies active in each era (their palette colours, most missions first) for the era tiles,
+  // and the number of missions each agency flew for the filter chips (unfiltered inventory).
+  let agencyCount: Map<string, number> = $derived.by(() => {
+    const map = new Map<string, number>();
+    for (const mission of missions) {
+      for (const a of new Set(splitAgencies(mission.agency))) map.set(a, (map.get(a) ?? 0) + 1);
+    }
+    return map;
+  });
+  let colorsByEpoch: Map<FleetEpoch, string[]> = $derived.by(() => {
+    const perEra = new Map<FleetEpoch, Map<string, number>>();
+    for (const mission of missions) {
+      const ep = epochForYear(mission.year);
+      if (!ep) continue;
+      const counts = perEra.get(ep) ?? new Map<string, number>();
+      for (const a of new Set(splitAgencies(mission.agency)))
+        counts.set(a, (counts.get(a) ?? 0) + 1);
+      perEra.set(ep, counts);
+    }
+    const out = new Map<FleetEpoch, string[]>();
+    for (const [ep, counts] of perEra) {
+      out.set(
+        ep,
+        [...counts.entries()]
+          .sort((x, y) => y[1] - x[1] || x[0].localeCompare(y[0]))
+          .map(([a]) => agencyColor(a))
+          .filter((c): c is string => !!c),
+      );
+    }
+    return out;
+  });
+
   function clearAllFilters(): void {
     resetMissionFilters();
     pushFiltersToUrl();
@@ -207,11 +248,16 @@
             (filterState.crew === 'CREWED' ? mission.crewed === true : mission.crewed !== true)) &&
           (filterState.epoch === 'ALL' || epochForYear(mission.year) === filterState.epoch),
       )
-      // J.1 — sort descending by year so the latest + upcoming missions
-      // surface at the top of the grid. Tiebreak by mission id for
-      // stable order within a year.
+      // Newest first by default so the latest and upcoming missions lead; the tiebreak is the id,
+      // so the order inside a year is stable.
       .slice()
-      .sort((a, b) => b.year - a.year || a.id.localeCompare(b.id)),
+      .sort((a, b) =>
+        filterState.sort === 'alpha'
+          ? (a.name ?? a.id).localeCompare(b.name ?? b.id)
+          : filterState.sort === 'chrono-asc'
+            ? a.year - b.year || a.id.localeCompare(b.id)
+            : b.year - a.year || a.id.localeCompare(b.id),
+      ),
   );
 
   // ─── URL ↔ filter sync ───────────────────────────────────────────
@@ -236,6 +282,9 @@
     const epochRaw = url.searchParams.get('epoch');
     filterState.epoch = epochRaw && epochValid(epochRaw) ? (epochRaw as FleetEpoch) : 'ALL';
     filterState.q = url.searchParams.get('q') ?? '';
+    const so = url.searchParams.get('sort');
+    filterState.sort = so === 'chrono-asc' || so === 'alpha' ? so : 'chrono-desc';
+    filterState.view = url.searchParams.get('view') === 'list' ? 'list' : 'grid';
     // Auto-expand the filter strip whenever the URL carries any
     // filter param — even if the value clamped back to the default,
     // the user explicitly asked about filters and should see the
@@ -259,6 +308,8 @@
     if (filterState.crew !== 'ALL') params.set('crew', filterState.crew);
     if (filterState.epoch !== 'ALL') params.set('epoch', filterState.epoch);
     if (filterState.q.trim() !== '') params.set('q', filterState.q.trim());
+    if (filterState.sort !== 'chrono-desc') params.set('sort', filterState.sort);
+    if (filterState.view === 'list') params.set('view', 'list');
     const qs = params.toString();
     const target = localHref(`/missions${qs ? `?${qs}` : ''}`);
     if (target !== page.url.pathname + page.url.search) {
@@ -266,6 +317,16 @@
       // every filter toggle.
       goto(target, { replaceState: true, keepFocus: true, noScroll: true });
     }
+  }
+
+  function setSort(value: MissionFilterState['sort']) {
+    filterState.sort = value;
+    pushFiltersToUrl();
+  }
+
+  function setView(value: MissionFilterState['view']) {
+    filterState.view = value;
+    pushFiltersToUrl();
   }
 
   function setEpoch(value: FleetEpoch | 'ALL') {
@@ -293,6 +354,33 @@
     pushFiltersToUrl();
   }
 
+  const destOptions: [Destination | 'ALL', () => string][] = [
+    ['ALL', m.lib_filter_dest_all],
+    ['MARS', m.lib_filter_dest_mars],
+    ['MOON', m.lib_filter_dest_moon],
+    ['EARTH', m.lib_filter_dest_earth],
+    ['JUPITER', m.lib_filter_dest_jupiter],
+    ['NEPTUNE', m.lib_filter_dest_neptune],
+    ['PLUTO', m.lib_filter_dest_pluto],
+    ['CERES', m.lib_filter_dest_ceres],
+    ['COMET', m.lib_filter_dest_comet],
+    ['ASTEROID', m.lib_filter_dest_asteroid],
+    ['SUN', m.lib_filter_dest_sun],
+  ];
+  const statusOptions: [MissionStatus | 'FAILED' | 'ALL', () => string][] = [
+    ['ALL', m.lib_filter_status_all],
+    ['ACTIVE', m.lib_filter_status_active],
+    ['FLOWN', m.lib_filter_status_flown],
+    ['PLANNED', m.lib_filter_status_planned],
+    ['CANCELLED', m.lib_filter_status_cancelled],
+    ['FAILED', m.lib_filter_status_failed],
+  ];
+  const crewOptions: ['ALL' | 'CREWED' | 'UNCREWED', () => string][] = [
+    ['ALL', m.lib_filter_crew_all],
+    ['CREWED', m.lib_filter_crew_crewed],
+    ['UNCREWED', m.lib_filter_crew_uncrewed],
+  ];
+
   // RFC-027 search input handler. We push immediately on every input
   // event — SvelteKit's `replaceState: true` keeps the back-button
   // clean and the visible card grid updates synchronously via the
@@ -306,8 +394,10 @@
   // Agency logo + full-name lookups delegate to the unified registry
   // at src/lib/agencies.ts. Add new agencies / logos there — every
   // consumer (fleet, missions, ISS modules, launches) picks them up.
-  const logoFor = agencyLogo;
-  const fullNameFor = (agency: string) => agencyFullName(agency);
+  // One colour per agency (UXD-048): the card, its badge and the filter dot read the registry, not
+  // the per-mission `color` of the data (which the 3D scenes still use).
+  const colorOf = (mission: { agency: string; color: string }) =>
+    agencyColor(mission.agency) ?? mission.color;
 
   // ─── Card click → open MissionPanel ──────────────────────────────
   let selectedId: string | null = $state(null);
@@ -412,7 +502,7 @@
 
 <LaunchesBanner />
 
-<div class="library entity-browse-page">
+<div class="library entity-browse-page browse-main">
   <!-- RFC-027 — free-text search across name + agency + type + first.
        Sits above the FILTERS toggle so it's visible without expanding.
        Placeholder + aria reuse the same i18n key (the ellipsis suffix
@@ -429,270 +519,119 @@
       oninput={(e) => setQuery((e.currentTarget as HTMLInputElement).value)}
     />
   </div>
-  <!-- Filters + timeline collapsed by default. The count lives at the
-       right end of the toggle bar so the screen stays clean above the
-       grid — fraction (filtered / total) when active, total-only when
-       not, identical to /fleet for visual consistency. -->
-  <button
-    type="button"
-    class="filters-toggle"
-    aria-expanded={filterState.expanded}
-    aria-controls={filterState.expanded ? 'missions-filters' : undefined}
-    onclick={() => (filterState.expanded = !filterState.expanded)}
-    data-audio-stage="missions-filters-toggle"
-  >
-    <span class="filters-eyebrow">{m.filters_eyebrow()}</span>
-    <span class="filters-right">
+  <!-- Filters + timeline collapsed by default. The count sits right after the
+       FILTERS label — fraction (filtered / total) when active, total-only when
+       not, identical to /fleet and /missions/launches. -->
+  <div class="filters-bar">
+    <Chip
+      kind="action"
+      class="filters-strip"
+      aria-expanded={filterState.expanded}
+      aria-controls={filterState.expanded ? 'missions-filters' : undefined}
+      onclick={() => (filterState.expanded = !filterState.expanded)}
+      data-audio-stage="missions-filters-toggle"
+    >
+      {m.filters_eyebrow()}
       {#if filtered.length !== missions.length}
-        <span class="filters-count count-fraction">{filtered.length} / {missions.length}</span>
+        <span class="filters-count count-fraction" aria-hidden="true"
+          >{filtered.length} / {missions.length}</span
+        >
+        <span class="filters-count-sr"
+          >{m.filters_count_of({ shown: filtered.length, total: missions.length })}</span
+        >
       {:else}
         <span class="filters-count count-total-only">{missions.length}</span>
       {/if}
       <span class="filters-chevron" aria-hidden="true">{filterState.expanded ? '▾' : '▸'}</span>
-    </span>
-  </button>
-
-  {#if filterState.expanded}
+    </Chip>
     {#if anyFilterActive}
-      <button type="button" class="clear-filters" onclick={clearAllFilters}>
+      <Chip kind="action" quiet dismiss class="filters-clear" onclick={clearAllFilters}>
         {m.missions_clear_filters()}
-      </button>
+      </Chip>
     {/if}
-    <div data-audio-stage="missions-epoch-timeline">
-      <EpochTimelineStrip
-        {countByEpoch}
-        selected={filterState.epoch}
-        onSelect={(v) => setEpoch(v)}
+  </div>
+
+  <div data-audio-stage="missions-epoch-timeline">
+    <EpochTimelineStrip
+      {countByEpoch}
+      {colorsByEpoch}
+      selected={filterState.epoch}
+      onSelect={(v) => setEpoch(v)}
+    />
+  </div>
+  <div class="filters agency-row" data-audio-stage="missions-agency-filter">
+    {#if agencies.length > 0}
+      <AgencyFilterRow
+        agencies={agencies.map((name) => ({ name, count: agencyCount.get(name) ?? 0 }))}
+        value={filterState.agency}
+        onSelect={setAgency}
+        label={m.lib_filter_agency_label()}
+        allLabel={m.lib_filter_agency_all()}
       />
-    </div>
+    {/if}
+  </div>
+  {#if filterState.expanded}
     <nav
       id="missions-filters"
       class="filters"
       data-audio-stage="missions-filters"
       aria-label={m.missions_filters_aria()}
     >
-      <div class="filter-group" role="radiogroup" aria-label={m.lib_filter_dest_label()}>
+      <ChipGroup role="radiogroup" label={m.lib_filter_dest_label()} class="filter-group">
         <span class="filter-label">{m.lib_filter_dest_label()}</span>
-        <button
-          type="button"
-          class="pill"
-          class:active={filterState.dest === 'ALL'}
-          role="radio"
-          aria-checked={filterState.dest === 'ALL'}
-          onclick={() => setDest('ALL')}>{m.lib_filter_dest_all()}</button
-        >
-        <button
-          type="button"
-          class="pill"
-          class:active={filterState.dest === 'MARS'}
-          role="radio"
-          aria-checked={filterState.dest === 'MARS'}
-          onclick={() => setDest('MARS')}>{m.lib_filter_dest_mars()}</button
-        >
-        <button
-          type="button"
-          class="pill"
-          class:active={filterState.dest === 'MOON'}
-          role="radio"
-          aria-checked={filterState.dest === 'MOON'}
-          onclick={() => setDest('MOON')}>{m.lib_filter_dest_moon()}</button
-        >
-        <button
-          type="button"
-          class="pill"
-          class:active={filterState.dest === 'EARTH'}
-          role="radio"
-          aria-checked={filterState.dest === 'EARTH'}
-          onclick={() => setDest('EARTH')}>{m.lib_filter_dest_earth()}</button
-        >
-        <button
-          type="button"
-          class="pill"
-          class:active={filterState.dest === 'JUPITER'}
-          role="radio"
-          aria-checked={filterState.dest === 'JUPITER'}
-          onclick={() => setDest('JUPITER')}>{m.lib_filter_dest_jupiter()}</button
-        >
-        <button
-          type="button"
-          class="pill"
-          class:active={filterState.dest === 'NEPTUNE'}
-          role="radio"
-          aria-checked={filterState.dest === 'NEPTUNE'}
-          onclick={() => setDest('NEPTUNE')}>{m.lib_filter_dest_neptune()}</button
-        >
-        <button
-          type="button"
-          class="pill"
-          class:active={filterState.dest === 'PLUTO'}
-          role="radio"
-          aria-checked={filterState.dest === 'PLUTO'}
-          onclick={() => setDest('PLUTO')}>{m.lib_filter_dest_pluto()}</button
-        >
-        <button
-          type="button"
-          class="pill"
-          class:active={filterState.dest === 'CERES'}
-          role="radio"
-          aria-checked={filterState.dest === 'CERES'}
-          onclick={() => setDest('CERES')}>{m.lib_filter_dest_ceres()}</button
-        >
-        <button
-          type="button"
-          class="pill"
-          class:active={filterState.dest === 'COMET'}
-          role="radio"
-          aria-checked={filterState.dest === 'COMET'}
-          onclick={() => setDest('COMET')}>{m.lib_filter_dest_comet()}</button
-        >
-        <button
-          type="button"
-          class="pill"
-          class:active={filterState.dest === 'ASTEROID'}
-          role="radio"
-          aria-checked={filterState.dest === 'ASTEROID'}
-          onclick={() => setDest('ASTEROID')}>{m.lib_filter_dest_asteroid()}</button
-        >
-        <button
-          type="button"
-          class="pill"
-          class:active={filterState.dest === 'SUN'}
-          role="radio"
-          aria-checked={filterState.dest === 'SUN'}
-          onclick={() => setDest('SUN')}>{m.lib_filter_dest_sun()}</button
-        >
-      </div>
+        {#each destOptions as [value, label] (value)}
+          <Chip kind="choice" active={filterState.dest === value} onclick={() => setDest(value)}>
+            {label()}
+          </Chip>
+        {/each}
+      </ChipGroup>
 
-      <div class="filter-group" role="radiogroup" aria-label={m.lib_filter_status_label()}>
+      <ChipGroup role="radiogroup" label={m.lib_filter_status_label()} class="filter-group">
         <span class="filter-label">{m.lib_filter_status_label()}</span>
-        <button
-          type="button"
-          class="pill"
-          class:active={filterState.status === 'ALL'}
-          role="radio"
-          aria-checked={filterState.status === 'ALL'}
-          onclick={() => setStatus('ALL')}>{m.lib_filter_status_all()}</button
-        >
-        <button
-          type="button"
-          class="pill"
-          class:active={filterState.status === 'ACTIVE'}
-          role="radio"
-          aria-checked={filterState.status === 'ACTIVE'}
-          onclick={() => setStatus('ACTIVE')}>{m.lib_filter_status_active()}</button
-        >
-        <button
-          type="button"
-          class="pill"
-          class:active={filterState.status === 'FLOWN'}
-          role="radio"
-          aria-checked={filterState.status === 'FLOWN'}
-          onclick={() => setStatus('FLOWN')}>{m.lib_filter_status_flown()}</button
-        >
-        <button
-          type="button"
-          class="pill"
-          class:active={filterState.status === 'PLANNED'}
-          role="radio"
-          aria-checked={filterState.status === 'PLANNED'}
-          onclick={() => setStatus('PLANNED')}>{m.lib_filter_status_planned()}</button
-        >
-        <button
-          type="button"
-          class="pill"
-          class:active={filterState.status === 'CANCELLED'}
-          role="radio"
-          aria-checked={filterState.status === 'CANCELLED'}
-          onclick={() => setStatus('CANCELLED')}>{m.lib_filter_status_cancelled()}</button
-        >
-        <button
-          type="button"
-          class="pill"
-          class:active={filterState.status === 'FAILED'}
-          role="radio"
-          aria-checked={filterState.status === 'FAILED'}
-          onclick={() => setStatus('FAILED')}>{m.lib_filter_status_failed()}</button
-        >
-      </div>
-
-      <div class="filter-group" role="radiogroup" aria-label={m.lib_filter_crew_label()}>
-        <span class="filter-label">{m.lib_filter_crew_label()}</span>
-        <button
-          type="button"
-          class="pill"
-          class:active={filterState.crew === 'ALL'}
-          role="radio"
-          aria-checked={filterState.crew === 'ALL'}
-          onclick={() => setCrew('ALL')}>{m.lib_filter_crew_all()}</button
-        >
-        <button
-          type="button"
-          class="pill"
-          class:active={filterState.crew === 'CREWED'}
-          role="radio"
-          aria-checked={filterState.crew === 'CREWED'}
-          onclick={() => setCrew('CREWED')}>{m.lib_filter_crew_crewed()}</button
-        >
-        <button
-          type="button"
-          class="pill"
-          class:active={filterState.crew === 'UNCREWED'}
-          role="radio"
-          aria-checked={filterState.crew === 'UNCREWED'}
-          onclick={() => setCrew('UNCREWED')}>{m.lib_filter_crew_uncrewed()}</button
-        >
-      </div>
-
-      {#if agencies.length > 0}
-        <div class="filter-group" role="radiogroup" aria-label={m.lib_filter_agency_label()}>
-          <span class="filter-label">{m.lib_filter_agency_label()}</span>
-          <button
-            type="button"
-            class="pill"
-            class:active={filterState.agency === 'ALL'}
-            role="radio"
-            aria-checked={filterState.agency === 'ALL'}
-            onclick={() => setAgency('ALL')}>{m.lib_filter_agency_all()}</button
+        {#each statusOptions as [value, label] (value)}
+          <Chip
+            kind="choice"
+            active={filterState.status === value}
+            onclick={() => setStatus(value)}
           >
-          {#each agencies as agency (agency)}
-            {@const logo = logoFor(agency)}
-            {@const fullName = fullNameFor(agency)}
-            <button
-              type="button"
-              class="pill agency-pill"
-              class:active={filterState.agency === agency}
-              class:logo-pill={logo != null}
-              role="radio"
-              aria-checked={filterState.agency === agency}
-              aria-label={fullName}
-              title={fullName}
-              onclick={() => setAgency(agency)}
-            >
-              {#if logo}
-                <img
-                  src={logo}
-                  alt={fullName}
-                  class="agency-pill-logo"
-                  onerror={(e) => {
-                    // Logo missing → fall back to text label so the pill
-                    // never renders blank.
-                    const img = e.currentTarget as HTMLImageElement;
-                    img.style.display = 'none';
-                    const fb = img.nextElementSibling as HTMLElement | null;
-                    if (fb) fb.style.display = 'inline';
-                  }}
-                  loading="lazy"
-                  decoding="async"
-                />
-                <span class="agency-pill-fallback" hidden>{agency}</span>
-              {:else}
-                {agency}
-              {/if}
-            </button>
-          {/each}
-        </div>
-      {/if}
+            {label()}
+          </Chip>
+        {/each}
+      </ChipGroup>
+
+      <ChipGroup role="radiogroup" label={m.lib_filter_crew_label()} class="filter-group">
+        <span class="filter-label">{m.lib_filter_crew_label()}</span>
+        {#each crewOptions as [value, label] (value)}
+          <Chip kind="choice" active={filterState.crew === value} onclick={() => setCrew(value)}>
+            {label()}
+          </Chip>
+        {/each}
+      </ChipGroup>
     </nav>
+  {/if}
+
+  {#if isSuccess(missionsRequest)}
+    <BrowseToolbar
+      total={missions.length}
+      noun={m.card_stat_missions()}
+      showing={m.browse_showing({
+        era: filterState.epoch === 'ALL' ? m.epoch_all() : epochLabel(filterState.epoch),
+        count: filtered.length,
+      })}
+      sortOptions={[
+        { value: 'chrono-desc', label: m.fleet_sort_newest() },
+        { value: 'chrono-asc', label: m.fleet_sort_oldest() },
+        { value: 'alpha', label: m.fleet_sort_alpha() },
+      ]}
+      sort={filterState.sort}
+      onSort={(v) => setSort(v as MissionFilterState['sort'])}
+      views={[
+        { value: 'grid', label: m.fleet_view_grid() },
+        { value: 'list', label: m.browse_view_list() },
+      ]}
+      view={filterState.view}
+      onView={(v) => setView(v as MissionFilterState['view'])}
+    />
   {/if}
 
   {#if isError(missionsRequest)}
@@ -702,123 +641,76 @@
   {:else if filtered.length === 0}
     <div class="empty">{m.lib_empty()}</div>
   {:else}
-    <ul
-      class="grid entity-card-grid"
-      data-audio-stage="missions-grid"
-      aria-label={m.missions_grid_aria()}
-    >
-      {#each filtered as mission (mission.id)}
-        <li class="card-li">
-          <button
-            type="button"
-            class="card"
-            class:selected={selectedId === mission.id}
-            style:--accent={mission.color}
-            data-testid="mission-card-{mission.id}"
-            data-audio-stage="missions-select-{mission.id}"
+    {#if filterState.view === 'list'}
+      <EntityList
+        label={m.missions_grid_aria()}
+        rows={filtered.map((mission) => ({
+          id: mission.id,
+          name: mission.name ?? mission.id,
+          kind: missionDestLabel(mission.dest),
+          agency: mission.agency,
+          year: mission.year,
+          status: mission.status,
+          statusLabel: missionStatusLabel(mission.status),
+        }))}
+        onOpen={selectMission}
+      />
+    {:else}
+      <ul
+        class="grid entity-card-grid"
+        data-audio-stage="missions-grid"
+        aria-label={m.missions_grid_aria()}
+      >
+        {#each filtered as mission (mission.id)}
+          <EntityCard
+            photo={pickHero('missions', mission.id)}
+            name={mission.name ?? mission.id}
+            year={mission.year}
+            agencies={splitAgencies(mission.agency).map((a) => ({
+              name: a,
+              color: agencyDataColor(a) ?? mission.color,
+            }))}
+            agencyTitle={agencyFullName(mission.agency) ?? mission.agency}
+            accent={colorOf(mission)}
+            story={mission.first}
+            badge={badges[`mission:${mission.id}`]}
+            selected={selectedId === mission.id}
+            testid="mission-card-{mission.id}"
+            audioStage="missions-select-{mission.id}"
+            facts={[
+              { label: m.missions_card_year_label(), value: String(mission.year) },
+              { label: m.missions_card_dest_label(), value: missionDestLabel(mission.dest) },
+            ]}
             onclick={() => selectMission(mission.id)}
             onkeydown={(e) => handleGridKeydown(e, closePanel)}
           >
-            <div class="card-accent" aria-hidden="true"></div>
-            <figure class="card-photo">
-              <img
-                class="card-cover"
-                {...responsive(pickHero('missions', mission.id), IMAGE_SIZES.card)}
-                style:object-position={heroPositionFor(pickHero('missions', mission.id))}
-                alt=""
-                loading="lazy"
-                onerror={(e) => {
-                  // Hero missing → mark parent figure as cover-missing
-                  // so CSS swaps the broken-image icon for the same
-                  // soft gradient placeholder /fleet uses (2026-06-15
-                  // user note: "fleet page handles that better, can we
-                  // do the same on mission"). Image sourcing happens
-                  // separately via the image pipeline; this just keeps
-                  // the gap honest while it does.
-                  const fig = (e.currentTarget as HTMLImageElement).closest('figure');
-                  if (fig) fig.classList.add('cover-missing');
-                }}
-                decoding="async"
-              />
-            </figure>
-            <div class="card-body">
-              <header class="card-head">
+            {#snippet pills()}
+              <span class="card-status status-{mission.status.toLowerCase()}">
+                {missionStatusLabel(mission.status)}
+              </span>
+              {#if mission.flight_data_quality}
                 <span
-                  class="agency-badge"
-                  style:background-color={mission.color}
-                  style:color={readableTextOn(mission.color)}
-                  style:text-shadow={readableTextOn(mission.color) === DARK_TEXT ? 'none' : null}
-                  title={agencyFullName(mission.agency) ?? mission.agency}
+                  class="card-quality quality-{mission.flight_data_quality}"
+                  title={m.lib_flight_data_quality_aria({
+                    q: mission.flight_data_quality.toUpperCase(),
+                  })}
                 >
-                  {#if logoFor(mission.agency)}
-                    <img
-                      src={logoFor(mission.agency)}
-                      alt=""
-                      class="agency-logo"
-                      aria-hidden="true"
-                      onerror={(e) =>
-                        ((e.currentTarget as HTMLImageElement).style.display = 'none')}
-                      loading="lazy"
-                      decoding="async"
-                    />
+                  {#if mission.flight_data_quality === 'measured'}
+                    {m.lib_flight_data_quality_measured()}
+                  {:else if mission.flight_data_quality === 'sparse'}
+                    {m.lib_flight_data_quality_sparse()}
+                  {:else if mission.flight_data_quality === 'reconstructed'}
+                    {m.lib_flight_data_quality_reconstructed()}
+                  {:else}
+                    {m.lib_flight_data_quality_unknown()}
                   {/if}
-                  {mission.agency}
                 </span>
-                <span class="card-status status-{mission.status.toLowerCase()}">
-                  {missionStatusLabel(mission.status)}
-                </span>
-                {#if mission.flight_data_quality}
-                  <span
-                    class="card-quality quality-{mission.flight_data_quality}"
-                    title={m.lib_flight_data_quality_aria({
-                      q: mission.flight_data_quality.toUpperCase(),
-                    })}
-                  >
-                    {#if mission.flight_data_quality === 'measured'}
-                      {m.lib_flight_data_quality_measured()}
-                    {:else if mission.flight_data_quality === 'sparse'}
-                      {m.lib_flight_data_quality_sparse()}
-                    {:else if mission.flight_data_quality === 'reconstructed'}
-                      {m.lib_flight_data_quality_reconstructed()}
-                    {:else}
-                      {m.lib_flight_data_quality_unknown()}
-                    {/if}
-                  </span>
-                {/if}
-              </header>
-              <div class="card-name-row">
-                <h2 class="card-name">{mission.name ?? mission.id}</h2>
-                {#if badges[`mission:${mission.id}`]}
-                  <img
-                    class="card-badge"
-                    src={assetUrl(badges[`mission:${mission.id}`])}
-                    alt=""
-                    loading="lazy"
-                    decoding="async"
-                  />
-                {/if}
-              </div>
-              {#if mission.type}
-                <p class="card-type">{mission.type}</p>
               {/if}
-              <!-- <dl> upgrade (PRD-007 / GH #256 / ADR-025 v0.7.0):
-                   year + dest expressed as definition pairs so screen
-                   readers announce them as labelled facts ("Year: 1969",
-                   "Destination: MOON") rather than two adjacent spans. -->
-              <dl class="card-meta">
-                <dt class="sr-only">{m.missions_card_year_label()}</dt>
-                <dd class="card-year">{mission.year}</dd>
-                <dt class="sr-only">{m.missions_card_dest_label()}</dt>
-                <dd class="card-dest">{missionDestLabel(mission.dest)}</dd>
-              </dl>
-              {#if mission.first}
-                <p class="card-first">{mission.first}</p>
-              {/if}
-            </div>
-          </button>
-        </li>
-      {/each}
-    </ul>
+            {/snippet}
+          </EntityCard>
+        {/each}
+      </ul>
+    {/if}
   {/if}
   <EntityIndex hub="missions" title={m.entity_index_missions()} links={data.entityIndex} />
 </div>
@@ -856,11 +748,6 @@
 </div>
 
 <style>
-  .library {
-    padding: 18px 22px 40px;
-    max-width: 1400px;
-    margin: 0 auto;
-  }
   /* Screen-reader-only — visually hidden, kept in tab order + a11y tree.
      Used for the <dl><dt> labels on card metadata (GH #256). */
   .sr-only {
@@ -875,15 +762,12 @@
     border: 0;
   }
 
-  /* RFC-027 search input — sits above the FILTERS toggle. Same visual
-     family as the .filters-toggle border + Space-Mono type so it reads
-     as part of the same control strip. */
-  /* Page chrome (.search-row, .search-input, .filters-toggle,
-     .filters-right, .filters-count, .filters-eyebrow, .filters-chevron,
-     .filters, .filter-group, .filter-label, .pill + variants,
-     .clear-filters) lives in src/lib/styles/entity-browse-page.css —
-     opted into by the `entity-browse-page` class on the page root.
-     Shared with /fleet so chrome can't visually drift. */
+  /* Page chrome (.search-row, .search-input, .filters-bar, .filters-count,
+     .filters-chevron, .filters, .filter-group, .filter-label) lives in
+     src/lib/styles/entity-browse-page.css — opted into by the
+     `entity-browse-page` class on the page root. The chips are <Chip>
+     (src/lib/styles/chip.css). Shared with /fleet and /missions/launches
+     so chrome can't visually drift. */
 
   /* Grid layout itself (display, columns, gap, breakpoints) lives in
      src/lib/styles/entity-card-grid.css — shared with /fleet so the
@@ -901,9 +785,9 @@
     padding: 40px;
     text-align: center;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
-    color: rgba(255, 255, 255, 0.4);
+    color: var(--color-text-label);
   }
 
   .load-banner {
@@ -914,7 +798,7 @@
     border-radius: 4px;
     color: #ffc850;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     text-align: center;
   }

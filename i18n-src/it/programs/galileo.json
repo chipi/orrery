@@ -86,5 +86,26 @@
   "link_labels": {
     "/explore": "Giove nell'esploratore 3D",
     "/programs/cassini": "Cassini — la stessa idea, a Saturno"
+  },
+  "roster": {
+    "mission:galileo": {
+      "note": "la prima sonda a orbitare intorno a Giove — quasi otto anni a studiare da vicino il pianeta gigante e le sue lune principali"
+    },
+    "The atmospheric probe": {
+      "note": "all'arrivo, Galileo rilasciò una sonda che si tuffò nelle nubi di Giove — il primo e unico campione diretto dell'atmosfera di un pianeta gigante",
+      "name": "La sonda atmosferica"
+    },
+    "Europa's hidden ocean": {
+      "note": "i dati magnetici e d'immagine di Galileo fornirono l'argomento più solido finora che sotto il ghiaccio della luna gioviana Europa si trovi un oceano di acqua liquida",
+      "name": "L'oceano nascosto di Europa"
+    },
+    "The stuck antenna": {
+      "note": "l'antenna principale non si aprì del tutto; la missione fu salvata da un nuovo software di compressione dei dati trasmesso alla sonda, che recuperò gran parte della scienza su un collegamento a passo di lumaca",
+      "name": "L'antenna bloccata"
+    },
+    "The deliberate end": {
+      "note": "a corto di carburante, Galileo fu fatta precipitare di proposito su Giove, per essere certi che non potesse mai schiantarsi su Europa e contaminarne l'oceano",
+      "name": "La fine voluta"
+    }
   }
 }

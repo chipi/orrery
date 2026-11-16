@@ -12,7 +12,7 @@ import { buildLabel, liftForDark } from './three-label';
 
 describe('buildLabel', () => {
   it('returns a Group containing a Line and a Sprite', () => {
-    const { group } = buildLabel({ text: 'ISS', color: '#4ecdc4' });
+    const { group } = buildLabel({ text: 'ISS', color: '#5070ff' });
     let lineCount = 0;
     let spriteCount = 0;
     group.traverse((obj) => {

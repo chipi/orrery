@@ -97,5 +97,23 @@
     "/moon?site=luna16": "Luna 16 — 최초의 무인 샘플 귀환",
     "/moon?site=luna17": "Luna 17 — Lunokhod 1",
     "/moon?site=luna21": "Luna 21 — Lunokhod 2"
+  },
+  "roster": {
+    "Zond 5": {
+      "note": "달을 돌아 무사히 지구로 돌아온 첫 우주선 — 실린 거북이 두 마리는 달을 돌고 돌아온 최초의 생물이었다. Apollo 8보다 석 달 앞섰다",
+      "name": "Zond 5"
+    },
+    "N1 — four launch failures": {
+      "note": "N1의 시험 발사 네 번(1969-1972)이 모두 실패했다. 1969년 7월의 두 번째는 발사대 위로 떨어져, 기록된 가장 큰 비핵 폭발 중 하나가 되었다",
+      "name": "N1 — 발사 실패 네 번"
+    },
+    "LK lunar lander": {
+      "note": "우주비행사 한 명용 착륙선 — Apollo의 LM 질량의 약 40% — 지구 궤도에서 무인으로 비행 시험을 했지만 달까지 날아간 적은 없다",
+      "name": "LK 달 착륙선"
+    },
+    "L3 complex": {
+      "note": "N1-L3 달 탐사 전체 구성: N1 발사 한 번, 달 궤도의 우주비행사 두 명용 Soyuz 7K-LOK, 그리고 LK로 표면에 내려가는 우주비행사 한 명",
+      "name": "L3 복합체"
+    }
   }
 }

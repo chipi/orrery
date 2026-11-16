@@ -149,7 +149,7 @@
     display: inline-flex;
     align-items: center;
     gap: 4px;
-    font-size: 10px;
+    font-size: var(--size-label);
     color: #ff5252;
     font-family: var(--font-mono, 'Space Mono', monospace);
     text-transform: uppercase;
@@ -184,19 +184,17 @@
   }
 
   .mission {
-    color: #4ecdc4;
+    color: var(--color-state);
   }
 
   .separator {
-    color: rgba(255, 255, 255, 0.3);
+    color: var(--color-text-label);
     margin: 0 4px;
   }
 
   .editorial-note {
     margin: 4px 0 0;
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 13px;
+    font-size: var(--size-body);
     color: rgba(230, 232, 238, 0.85);
   }
 
@@ -204,19 +202,19 @@
     display: inline-block;
     margin-top: 6px;
     padding: 3px 8px;
-    background: rgba(78, 205, 196, 0.12);
-    border: 1px solid rgba(78, 205, 196, 0.4);
+    background: var(--color-accent-soft);
+    border: 1px solid var(--color-accent-edge);
     border-radius: 2px;
-    color: #4ecdc4;
+    color: var(--color-state);
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     text-transform: uppercase;
     letter-spacing: 0.5px;
     text-decoration: none;
     transition: background-color 120ms;
   }
   .catalog-link:hover {
-    background: rgba(78, 205, 196, 0.22);
+    background: color-mix(in srgb, var(--color-accent) 22%, transparent);
   }
 
   .meta {
@@ -235,7 +233,7 @@
 
   .tier {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     padding: 3px 8px;
     border-radius: 2px;
     text-transform: uppercase;
@@ -251,23 +249,23 @@
 
   .tier-routine {
     background: rgba(255, 255, 255, 0.04);
-    color: rgba(230, 232, 238, 0.5);
+    color: rgba(230, 232, 238, 0.6);
     border: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   .status {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     color: rgba(230, 232, 238, 0.7);
   }
 
   .status-success {
-    color: #4ecdc4;
+    color: var(--color-state);
   }
   .status-failure {
     color: #ff5252;
   }
   .status-go {
-    color: #4b9cd3;
+    color: var(--color-state);
   }
 </style>

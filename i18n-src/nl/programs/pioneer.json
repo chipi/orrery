@@ -86,5 +86,21 @@
   "link_labels": {
     "/explore": "Jupiter in de 3D-verkenner",
     "/programs/voyager": "Voyager — de tocht die Pioneer verkende"
+  },
+  "roster": {
+    "mission:pioneer-10": {
+      "note": "het eerste ruimtevaartuig dat de planetoïdengordel doorkruiste en Jupiter bereikte, en het eerste dat op een koers werd gezet om het zonnestelsel helemaal te verlaten"
+    },
+    "mission:pioneer-11": {
+      "note": "vloog langs Jupiter en werd daarna het eerste ruimtevaartuig dat Saturnus bereikte — verkende de route en de ringgevaren die de Voyagers zouden volgen"
+    },
+    "The Pioneer plaque": {
+      "note": "een kleine goudgeanodiseerde plaquette op elk ruimtevaartuig met een man, een vrouw en de plek van de Aarde — de eerste fysieke boodschap van de mensheid, gericht op de sterren",
+      "name": "De Pioneer-plaquette"
+    },
+    "Pioneer Venus": {
+      "note": "een apart paar Pioneers bereikte Venus in 1978 — een orbiter die de planeet met radar door zijn wolken in kaart bracht, en sondes die in zijn verpletterende atmosfeer doken",
+      "name": "Pioneer Venus"
+    }
   }
 }

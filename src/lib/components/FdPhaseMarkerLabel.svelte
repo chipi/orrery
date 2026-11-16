@@ -63,7 +63,7 @@
     white-space: nowrap;
     color: rgba(255, 200, 80, 0.92);
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 1.5px;
     text-transform: uppercase;
     text-shadow:

@@ -93,5 +93,15 @@
     "/explore": "Erkunden — die Deep-Sky-Objekte, die diese Teleskope enthüllten",
     "/earth?site=hubble": "Hubble in niedriger Erdumlaufbahn",
     "/earth?site=chandra": "Röntgenobservatorium Chandra"
+  },
+  "roster": {
+    "Compton Gamma Ray Observatory": {
+      "note": "das Gammastrahlen-Mitglied der ursprünglichen vier — es kartierte die gewaltigsten Ereignisse im Universum, bis es im Jahr 2000 absichtlich aus der Umlaufbahn gelenkt wurde",
+      "name": "Compton Gamma Ray Observatory"
+    },
+    "Nancy Grace Roman": {
+      "note": "der nächste in der NASA-Linie — ein Weitfeld-Infrarot-Durchmusterungsteleskop mit einem mehr als hundertmal größeren Gesichtsfeld als Hubble, gebaut, um das Universum zu kartieren, statt einen einzigen Fleck anzustarren",
+      "name": "Nancy Grace Roman"
+    }
   }
 }

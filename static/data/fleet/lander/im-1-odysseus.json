@@ -5,7 +5,7 @@
   "agency": "Intuitive Machines",
   "country": "USA",
   "manufacturer": "Intuitive Machines",
-  "first_flight": "2024-02-22",
+  "first_flight": "2024-02-15",
   "status": "RETIRED",
   "era": "2011-now",
   "epoch": "lunar-return",
@@ -27,5 +27,8 @@
       "u": "https://www.nasa.gov/missions/artemis/clps/intuitive-machines/",
       "t": "deep"
     }
+  ],
+  "linked_missions": [
+    "im-1"
   ]
 }

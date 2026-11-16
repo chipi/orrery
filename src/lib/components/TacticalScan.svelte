@@ -189,7 +189,7 @@
     max-width: 420px;
     padding: 8px 14px;
     background: rgba(8, 10, 22, 0.7);
-    border: 1px solid rgba(78, 205, 196, 0.35);
+    border: 1px solid var(--color-accent-edge);
     border-radius: 6px;
     backdrop-filter: blur(4px);
     pointer-events: none;
@@ -202,12 +202,12 @@
     word-break: break-word;
   }
   .scan-eyebrow {
-    font-size: 8px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
-    color: rgba(78, 205, 196, 0.85);
+    color: var(--color-state);
     margin-bottom: 6px;
     padding-bottom: 4px;
-    border-bottom: 1px solid rgba(78, 205, 196, 0.15);
+    border-bottom: 1px solid var(--color-accent-soft);
   }
   .scan-row {
     display: flex;
@@ -219,22 +219,21 @@
        a wide DE label truncates instead of overflowing the envelope. */
     min-width: 0;
   }
+  /* At the 11 px floor a long value (the light-time row) no longer fits one line:
+     the label stays whole and the value wraps under itself, right-aligned. */
   .scan-label {
-    color: rgba(255, 255, 255, 0.45);
+    color: var(--color-text-label);
     letter-spacing: 1.3px;
-    font-size: 9px;
-    min-width: 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    font-size: var(--size-label);
+    flex: 0 0 auto;
     white-space: nowrap;
   }
   .scan-value {
     color: rgba(255, 255, 255, 0.92);
     font-weight: 700;
     min-width: 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    text-align: right;
+    overflow-wrap: anywhere;
   }
   /* Surface routes (#382): pin to the right edge, stacked above the
      altitude chip (which sits at right:12px / bottom:56px in

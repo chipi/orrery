@@ -87,5 +87,25 @@
     "/explore": "3D 探索器中的外行星",
     "/gallery/deep-sky": "深空图库中的“暗淡蓝点”",
     "/programs/pioneer": "Pioneer — 率先出发的探测器"
+  },
+  "roster": {
+    "mission:voyager-2": {
+      "note": "唯一造访过全部四颗巨行星的航天器，也是人类对天王星和海王星仅有的一次近距离观察"
+    },
+    "mission:voyager-1": {
+      "note": "飞掠木星和土星，调转镜头拍下整个太阳系，并成为首个抵达星际空间的人造物体"
+    },
+    "The Golden Record": {
+      "note": "固定在每艘飞船上的镀金唱片——来自地球的声音、音乐和问候，面向十亿年后可能发现它的任何人",
+      "name": "Golden Record"
+    },
+    "The Pale Blue Dot": {
+      "note": "1990年2月14日，Voyager 1从海王星之外回首，把地球拍成了一个像素",
+      "name": "Pale Blue Dot"
+    },
+    "Interstellar space": {
+      "note": "Voyager 1于2012年、Voyager 2于2018年穿越日球层顶——首批离开太阳气泡、进入恒星之间空间的机器，仍在向家中呼唤",
+      "name": "星际空间"
+    }
   }
 }

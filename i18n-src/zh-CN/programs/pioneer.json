@@ -86,5 +86,21 @@
   "link_labels": {
     "/explore": "3D 探索器中的木星",
     "/programs/voyager": "Voyager — Pioneer 探过路的行星巡游"
+  },
+  "roster": {
+    "mission:pioneer-10": {
+      "note": "首个穿越小行星带并抵达木星的航天器，也是首个被送上完全飞离太阳系轨道的航天器"
+    },
+    "mission:pioneer-11": {
+      "note": "飞掠木星后，成为首个抵达土星的航天器——为Voyager后来要走的路线和光环危险探路"
+    },
+    "The Pioneer plaque": {
+      "note": "每艘飞船上都有一块小小的镀金阳极氧化铝板，上面是一名男子、一名女子和地球的位置——人类向星辰发出的第一条实物信息",
+      "name": "Pioneer金属板"
+    },
+    "Pioneer Venus": {
+      "note": "另一对Pioneer于1978年抵达金星——一颗透过云层用雷达测绘行星的轨道器，以及投入其压迫性大气的探测器",
+      "name": "Pioneer Venus"
+    }
   }
 }

@@ -15,6 +15,7 @@
   import * as m from '$lib/paraglide/messages';
   import { createAnimateLoop, type AnimateLoop } from '$lib/three/animate-loop';
   import ScienceChip from '$lib/components/ScienceChip.svelte';
+  import Chip from '$lib/components/Chip.svelte';
   import {
     createLeoCoastScene,
     type LeoCoastScene,
@@ -112,6 +113,8 @@
       container,
       aspect: container.clientWidth / container.clientHeight,
       altitudeKm: altKm,
+      apogeeKm: coast.apogeeKm,
+      perigeeKm: coast.perigeeKm,
       inclinationDeg: coast.inclinationDeg,
       totalRevs: coast.revolutions,
       suborbital: coast.suborbital,
@@ -170,7 +173,7 @@
   });
 </script>
 
-<div class="coast" class:hud-hidden={hudHidden}>
+<div class="coast" class:hud-hidden={hudHidden} data-testid="coast-scene">
   <div class="canvas" bind:this={container}></div>
 
   {#if debugOn && camDbg}
@@ -284,21 +287,23 @@
 
     {#if !externalClock}
       <div class="controls">
-        <button
-          class="ctl"
+        <Chip
+          kind="action"
           onclick={() => (playing = !playing)}
           aria-label={playing ? m.fly_pause() : m.fly_play()}
         >
           {playing ? '❚❚' : '▶'}
-        </button>
+        </Chip>
         {#if onToggleHud}
-          <button class="ctl" onclick={onToggleHud} aria-label={m.coast_hide_hud()}>HUD</button>
+          <Chip kind="action" onclick={onToggleHud} aria-label={m.coast_hide_hud()}>HUD</Chip>
         {/if}
-        <button class="ctl skip" onclick={finish}>{m.coast_skip()}</button>
+        <Chip kind="action" onclick={finish}>{m.coast_skip()}</Chip>
       </div>
     {/if}
   {:else if onToggleHud}
-    <button class="ctl show-hud" onclick={onToggleHud} aria-label={m.coast_show_hud()}>HUD</button>
+    <div class="show-hud-slot">
+      <Chip kind="action" onclick={onToggleHud} aria-label={m.coast_show_hud()}>HUD</Chip>
+    </div>
   {/if}
 </div>
 
@@ -321,11 +326,11 @@
     z-index: 300;
     pointer-events: none;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 0.62rem;
+    font-size: var(--size-label);
     letter-spacing: 0.05em;
-    color: #9fe0ff;
+    color: var(--color-state);
     background: rgba(6, 12, 22, 0.72);
-    border: 1px solid rgba(127, 212, 255, 0.3);
+    border: 1px solid color-mix(in srgb, var(--color-state) 30%, transparent);
     border-radius: 4px;
     padding: 0.5rem 0.65rem;
     display: grid;
@@ -333,7 +338,7 @@
     min-width: 190px;
   }
   .cd-title {
-    color: #7fd4ff;
+    color: var(--color-state);
     font-weight: 600;
     letter-spacing: 0.14em;
     margin-bottom: 0.15rem;
@@ -358,11 +363,11 @@
   .cd-seg {
     flex: 1;
     height: 4px;
-    background: rgba(127, 212, 255, 0.2);
+    background: color-mix(in srgb, var(--color-state) 20%, transparent);
     border-radius: 2px;
   }
   .cd-seg.active {
-    background: #7fd4ff;
+    background: var(--color-state);
   }
   .hud {
     position: absolute;
@@ -383,7 +388,7 @@
     display: inline-flex;
     align-items: center;
     gap: 0.4rem;
-    color: #7fd4ff;
+    color: var(--color-state);
     letter-spacing: 0.22em;
     font-weight: 600;
     font-size: 0.72rem;
@@ -393,8 +398,8 @@
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background: #7fd4ff;
-    box-shadow: 0 0 8px rgba(127, 212, 255, 0.9);
+    background: var(--color-state);
+    box-shadow: 0 0 8px color-mix(in srgb, var(--color-state) 90%, transparent);
     animation: live-pulse 1.6s ease-in-out infinite;
   }
   @keyframes live-pulse {
@@ -421,7 +426,7 @@
     gap: 0.4rem;
     text-align: right;
     padding-right: 0.7rem;
-    border-right: 1px solid rgba(127, 212, 255, 0.35);
+    border-right: 1px solid color-mix(in srgb, var(--color-state) 35%, transparent);
   }
   .ro {
     display: flex;
@@ -431,7 +436,7 @@
   }
   .ro .k {
     color: #6b7d94;
-    font-size: 0.6rem;
+    font-size: var(--size-label);
     letter-spacing: 0.16em;
   }
   .ro .v {
@@ -440,15 +445,15 @@
     font-variant-numeric: tabular-nums;
   }
   .ro.rev .v {
-    color: #7fd4ff;
+    color: var(--color-state);
     font-weight: 600;
   }
-  /* 2026 corner-bracket frame — thin cyan L's, no fill. */
+  /* 2026 corner-bracket frame — thin blue L's, no fill. */
   .frame {
     position: absolute;
     width: 16px;
     height: 16px;
-    border: 1px solid rgba(127, 212, 255, 0.4);
+    border: 1px solid color-mix(in srgb, var(--color-state) 40%, transparent);
     pointer-events: none;
   }
   .frame.tl {
@@ -481,12 +486,12 @@
     right: 1.2rem;
     bottom: 3.2rem;
     height: 3px;
-    background: rgba(143, 208, 255, 0.18);
+    background: color-mix(in srgb, var(--color-state) 18%, transparent);
     border-radius: 2px;
   }
   .scrub-fill {
     height: 100%;
-    background: #6fb7ff;
+    background: var(--color-accent);
     border-radius: 2px;
   }
   .scrub-input {
@@ -508,7 +513,7 @@
     height: 13px;
     border-radius: 50%;
     background: #cfe4ff;
-    border: 2px solid #6fb7ff;
+    border: 2px solid var(--color-accent);
     cursor: pointer;
   }
   .scrub-input::-moz-range-thumb {
@@ -516,7 +521,7 @@
     height: 13px;
     border-radius: 50%;
     background: #cfe4ff;
-    border: 2px solid #6fb7ff;
+    border: 2px solid var(--color-accent);
     cursor: pointer;
   }
   .controls {
@@ -526,36 +531,10 @@
     display: flex;
     gap: 0.6rem;
   }
-  .ctl {
-    pointer-events: auto;
-    background: rgba(20, 32, 50, 0.72);
-    color: #cfe4ff;
-    border: 1px solid rgba(111, 183, 255, 0.35);
-    border-radius: 4px;
-    padding: 0.4rem 0.7rem;
-    font-family: inherit;
-    font-size: 0.72rem;
-    letter-spacing: 0.08em;
-    cursor: pointer;
-  }
-  .ctl:hover {
-    border-color: rgba(111, 183, 255, 0.7);
-  }
-  .ctl.skip {
-    color: #ffd9a3;
-    border-color: rgba(255, 217, 163, 0.4);
-  }
-  .show-hud {
+  .show-hud-slot {
     position: absolute;
     bottom: 1rem;
     right: 1.2rem;
-    pointer-events: auto;
-    background: rgba(20, 32, 50, 0.72);
-    color: #cfe4ff;
-    border: 1px solid rgba(111, 183, 255, 0.35);
-    border-radius: 4px;
-    padding: 0.4rem 0.7rem;
-    font-size: 0.72rem;
   }
   /* Portrait phones: the title + top-right readouts collide at ~393px. Drop the
      mission name/agency (the phase chip carries the context) + shrink the
@@ -575,7 +554,7 @@
       gap: 0.22rem;
     }
     .ro .k {
-      font-size: 0.56rem;
+      font-size: var(--size-label);
       letter-spacing: 0.08em;
     }
     .ro .v {

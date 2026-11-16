@@ -22,22 +22,41 @@
     {
       "name": "The atmospheric probe",
       "year": 1995,
-      "note": "on arrival, Galileo released a probe that plunged into Jupiter's clouds — the first and only direct sample of a giant planet's atmosphere"
+      "note": "on arrival, Galileo released a probe that plunged into Jupiter's clouds — the first and only direct sample of a giant planet's atmosphere",
+      "milestone": true
     },
     {
       "name": "Europa's hidden ocean",
       "year": 1996,
-      "note": "Galileo's magnetic and imaging data made the strongest case yet that an ocean of liquid water lies beneath the ice of Jupiter's moon Europa"
+      "note": "Galileo's magnetic and imaging data made the strongest case yet that an ocean of liquid water lies beneath the ice of Jupiter's moon Europa",
+      "milestone": true
     },
     {
       "name": "The stuck antenna",
       "year": 1991,
-      "note": "the main antenna failed to open fully; the mission was rescued by new data-compression software beamed up to the spacecraft, salvaging most of the science over a trickle-speed link"
+      "note": "the main antenna failed to open fully; the mission was rescued by new data-compression software beamed up to the spacecraft, salvaging most of the science over a trickle-speed link",
+      "milestone": true
     },
     {
       "name": "The deliberate end",
       "year": 2003,
-      "note": "out of fuel, Galileo was flown into Jupiter on purpose, to be certain it could never crash onto Europa and contaminate its ocean"
+      "note": "out of fuel, Galileo was flown into Jupiter on purpose, to be certain it could never crash onto Europa and contaminate its ocean",
+      "milestone": true
+    },
+    {
+      "linked_id": "galileo",
+      "ref": "fleet",
+      "role": "spacecraft"
+    },
+    {
+      "linked_id": "space-shuttle-orbiter",
+      "ref": "fleet",
+      "role": "deployment orbiter"
+    },
+    {
+      "linked_id": "space-shuttle-stack",
+      "ref": "fleet",
+      "role": "launcher"
     }
   ],
   "related_programs": [

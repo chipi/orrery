@@ -251,6 +251,7 @@ export function buildSpacecraftSprite(): SpacecraftSprite {
     tctx.fill();
   }
   const scTex = new THREE.CanvasTexture(scTexCanvas);
+  scTex.colorSpace = THREE.SRGBColorSpace;
   scTex.minFilter = THREE.LinearFilter;
   scTex.magFilter = THREE.LinearFilter;
   const scSprite = new THREE.Sprite(
@@ -363,6 +364,7 @@ export function buildLabelSprite(): LabelSprite {
   canvas.width = 320;
   canvas.height = 96;
   const texture = new THREE.Texture(canvas);
+  texture.colorSpace = THREE.SRGBColorSpace;
   texture.needsUpdate = true;
   texture.minFilter = THREE.LinearFilter;
   texture.magFilter = THREE.LinearFilter;

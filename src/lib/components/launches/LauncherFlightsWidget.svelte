@@ -105,7 +105,7 @@
   .section-title {
     margin: 0 0 8px;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     color: rgba(230, 232, 238, 0.6);
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -138,7 +138,7 @@
   }
 
   a.row:hover {
-    background: rgba(68, 102, 255, 0.06);
+    background: color-mix(in srgb, var(--color-accent) 6%, transparent);
   }
 
   .when {
@@ -147,16 +147,16 @@
   }
 
   .payload {
-    color: #4ecdc4;
+    color: var(--color-state);
   }
 
   .pad {
-    color: rgba(230, 232, 238, 0.5);
+    color: rgba(230, 232, 238, 0.6);
     font-size: 11px;
   }
 
   .status-success {
-    color: #4ecdc4;
+    color: var(--color-state);
   }
   .status-failure {
     color: #ff5252;
@@ -167,7 +167,7 @@
     margin-top: 10px;
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
-    color: #4ecdc4;
+    color: var(--color-state);
     text-decoration: none;
   }
 

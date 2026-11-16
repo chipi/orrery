@@ -57,6 +57,9 @@
   import { buildTiangongProxyStation } from '$lib/tiangong-proxy-model';
   import { buildLauncherModel } from '$lib/three/launcher-models';
   import { buildDescentModel } from '$lib/three/descent-models';
+  import { buildPadShowcase } from '$lib/three/launch-pads';
+  import PAD_GALLERY from '$lib/launches/pad-gallery.json';
+  import { VARIANT_FAMILY, type PadVariant } from '$lib/launches/pad-family';
   import { buildLanderCruiseCraft } from '$lib/three/lander-cruise-models';
   import { buildVenusLanderModel } from '$lib/venus-lander-models';
   import { installHeroEnvironment } from '$lib/three/hero-materials';
@@ -71,7 +74,10 @@
     buildChandrayaan1,
     buildLunarProspector,
     buildLuna10,
+    buildMariner2,
+    buildMro,
   } from '$lib/three/showcase/orbiters';
+  import { buildNovaC } from '$lib/three/showcase/landers';
   import { buildSputnik1 } from '$lib/three/showcase/early-stations';
 
   type Entry = {
@@ -742,8 +748,26 @@
         ['lunar-prospector', 'Lunar Prospector', buildLunarProspector],
         ['luna-10', 'Luna 10', buildLuna10],
         ['sputnik-1', 'Sputnik 1', buildSputnik1],
+        ['mariner-2', 'Mariner 2', buildMariner2],
+        ['mro', 'Mars Reconnaissance Orbiter', buildMro],
+        ['nova-c', 'Nova-C (IM-1 Odysseus)', buildNovaC],
       ] as [string, string, () => THREE.Group][]
     ).map(([id, label, build]) => ({ id, label, family: 'probe', build })),
+    // Launch pads (launch-pads.ts, G4): each model with a plain stand-in vehicle of its real height
+    ...PAD_GALLERY.map(({ variant, label, vehM }) => ({
+      id: variant,
+      label,
+      family: 'pad',
+      build: () =>
+        buildPadShowcase(
+          {
+            family: VARIANT_FAMILY[variant as PadVariant],
+            variant: variant as PadVariant,
+            siteId: 'wenchang-lc-101',
+          },
+          vehM,
+        ),
+    })),
     { id: 'cast', label: 'Cartoon cast', family: 'lineup', flat: true, build: buildCastRow },
   ];
 
@@ -1003,8 +1027,8 @@
   }
   .id {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9.5px;
+    font-size: var(--size-label);
     letter-spacing: 1.4px;
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--color-text-label);
   }
 </style>

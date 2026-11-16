@@ -88,5 +88,19 @@
     "/programs/starlink": "Starlink — la constellation qu'il cherche à rattraper",
     "/earth": "Terre — les orbites et l'encombrement de l'orbite basse",
     "/earth?site=kuiper": "La constellation Kuiper"
+  },
+  "roster": {
+    "KuiperSat prototypes": {
+      "note": "deux satellites d'essai atteignent l'orbite pour valider la conception avant le début de la production en série",
+      "name": "Prototypes KuiperSat"
+    },
+    "Production launches": {
+      "note": "la constellation opérationnelle commence à se déployer — avec des années de retard sur Starlink, et en course contre une échéance réglementaire pour conserver son spectre",
+      "name": "Lancements de production"
+    },
+    "Multi-rocket by design": {
+      "note": "Kuiper achète des lancements auprès de nombreux fournisseurs — Atlas V, Vulcan, Ariane 6, New Glenn — plutôt que de dépendre de la fusée d'un rival comme elle le ferait avec Falcon",
+      "name": "Plusieurs fusées par conception"
+    }
   }
 }

@@ -82,7 +82,7 @@
 | ADR-079 | Asset-origin spine + source/derived separation + WebP delivery | Accepted | Jul 2026 |
 | ADR-080 | Responsive image size ladder + srcset delivery (mobile · web · Google TV) | Accepted | Jul 2026 |
 | ADR-081 | Self-hosted Umami analytics (env-var-gated, no committed IDs) | Accepted | Jul 2026 |
-| ADR-082 | Telemetry environment ladder (dev → staging → prod, isolated GlitchTip + Umami projects) | Accepted | Jul 2026 |
+| ADR-082 | Telemetry environment ladder (dev → staging → prod, isolated GlitchTip + Umami projects) | Accepted (staging rung superseded by ADR-097) | Jul 2026 |
 | ADR-084 | Decompose the `data.ts` mega-client into `$lib/data/` submodules | Accepted | Aug 2026 |
 | ADR-085 | Geocentric Earth→Moon porkchop on `/plan` (μ-parameterized Lambert + `kind: helio\|geo` tag + TLI/LOI ∆v, reuses `geocentricMoon`) | Accepted | Aug 2026 |
 | ADR-086 | Earth→(planetary moon) multi-leg porkchops on `/plan` | Accepted | Aug 2026 |
@@ -90,10 +90,11 @@
 | ADR-088 | Downrange DOF + range-control entry guidance (the entry computer flies the flight) | Accepted | Aug 2026 |
 | ADR-089 | Super-circular loft/skip model for lifting atmospheric entry | Accepted | Aug 2026 |
 | ADR-090 | Flight-map grand hero: a whole-mission scientific diagram per capstone/milestone | Accepted | Aug 2026 |
-| ADR-083 | Mobile runtime environment switcher (internal builds only; release prod-locked) | Accepted (impl. deferred to iOS thread) | Jul 2026 |
+| ADR-083 | Mobile runtime environment switcher (internal builds only; release prod-locked) | Superseded by ADR-097 | Jul 2026 |
 | ADR-091 | Station TLEs in the served /data overlay, one server-side fetcher (no browser→Celestrak) | Accepted | Sep 2026 |
 | ADR-092 | Analytics opt-out + GPC/DNT signals + `/privacy` disclosure page; no consent banner | Accepted | Sep 2026 |
 | ADR-093 | Journey instrumentation, event naming for Umami reports, no session replay | Accepted | Sep 2026 |
 | ADR-094 | Server-side observability for lab-api and mcp (GlitchTip errors, OTLP traces, internal `/metrics`, access logs, Umami tool events, LiteLLM→Langfuse metadata) | Accepted | Oct 2026 |
 | ADR-095 | Eccentric planets, the JPL reference and vector v∞ in the shared transfer model (`/fly`, `/plan`, Lab porkchops) | Accepted | Nov 2026 |
 | ADR-096 | Indexable entity pages (missions, fleet, sites, bodies, Lab formulas) and the SEO surface: head tags, JSON-LD, split sitemaps, mirror noindex, the `check-seo` gate | Accepted | Nov 2026 |
+| ADR-097 | No staging tier: releases go straight to prod, GitHub Pages serves only the docs (supersedes the staging parts of ADR-014, 070, 071, 082, 083) | Accepted | Nov 2026 |

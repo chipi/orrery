@@ -83,7 +83,7 @@ describe('glossary · reviewed keeps', () => {
 
 // Trees that reached zero unreviewed misses are gated: a new translation that drops a
 // binding form fails here until it is fixed or recorded as a keep (term-consistency skill).
-const GATED_TREES = ['science', 'essays', 'programs', 'fleet', 'missions', 'glossary'];
+const GATED_TREES = ['science', 'essays', 'programs', 'fleet', 'missions', 'glossary', 'universe'];
 describe('glossary · term gate', () => {
   it(`no unreviewed term misses in ${GATED_TREES.join(', ')}`, () => {
     const run = () => {
@@ -99,5 +99,8 @@ describe('glossary · term gate', () => {
       }
     };
     expect(run()).toContain('unreviewed misses: 0');
-  }, 30_000);
+    // The gate scans every gated tree (the work is the test): 11 s on the workstation since the
+    // 0.9.9 universe overlays, and the CI runner is ~3x slower, so 30 s timed out there
+    // (2026-11-16, a092a5b17ca, while the same commit's other ci run passed).
+  }, 90_000);
 });

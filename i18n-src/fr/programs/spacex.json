@@ -91,5 +91,25 @@
     "/fleet?id=falcon-9": "Flotte — Falcon 9, Falcon Heavy et Dragon",
     "/programs/iss": "ISS — la station que rejoint Crew Dragon",
     "/earth": "Terre — orbites, rendez-vous et sites de lancement"
+  },
+  "roster": {
+    "Falcon 1, flight 4": {
+      "note": "la première fusée à ergols liquides développée par le privé à atteindre l'orbite — lancée quelques semaines avant que l'entreprise soit à court d'argent, sur le dernier vol qu'elle pouvait se payer",
+      "name": "Falcon 1, vol 4"
+    },
+    "First Dragon to the ISS": {
+      "note": "le premier vaisseau commercial à s'amarrer à la Station — le secteur privé commence à ravitailler les vols spatiaux habités",
+      "name": "Première Dragon vers l'ISS"
+    },
+    "First booster landing": {
+      "note": "un premier étage de Falcon 9 revient et se pose à la verticale — la réutilisation, écartée pendant des décennies comme non rentable, est démontrée",
+      "name": "Premier atterrissage d'un booster"
+    },
+    "mission:inspiration4": {
+      "note": "le premier équipage entièrement civil en orbite — aucun astronaute professionnel à bord"
+    },
+    "mission:polaris-dawn": {
+      "note": "la première sortie dans l'espace commerciale, depuis une Crew Dragon dans un scaphandre SpaceX de nouvelle conception"
+    }
   }
 }

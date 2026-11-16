@@ -42,13 +42,13 @@
   // Section openers: a running number per heading, and an accent per movement so the
   // five movements of the series read apart (light enough for AA on the page background).
   const MOVEMENT_ACCENT: Record<string, string> = {
-    'into-the-dark': '#7fb0e0',
+    'into-the-dark': '#889fe7',
     'the-machines': '#e0a96d',
     'the-destinations': '#e08a72',
     'arrival-and-the-body': '#8fd1a6',
     'the-far-horizon': '#b49ce6',
   };
-  let accent = $derived(MOVEMENT_ACCENT[essay.movement] ?? '#7fb0e0');
+  let accent = $derived(MOVEMENT_ACCENT[essay.movement] ?? '#889fe7');
   let sectionNo = $derived.by(() => {
     let n = 0;
     return essay.body.map((b) => (b.type === 'heading' ? String(++n).padStart(2, '0') : ''));
@@ -75,17 +75,17 @@
 </svelte:head>
 <JsonLd data={jsonLd} />
 
-<article class="essay" data-route-ready="true">
-  <nav class="crumb">
+<article class="essay page-shell page-shell--reading" data-route-ready="true">
+  <nav class="crumb page-crumb">
     <a href="{base}{localizeHref('/essays')}">{m.essays_title()}</a><span class="sep">›</span><span
       >{essay.title}</span
     >
   </nav>
 
   <header class="head">
-    <h1>{essay.title}</h1>
+    <h1 class="page-title">{essay.title}</h1>
     <!-- eslint-disable-next-line svelte/no-at-html-tags -- author-controlled overlay, escaped by essayInlineHtml -->
-    <p class="dek">{@html essayInlineHtml(essay.dek)}</p>
+    <p class="dek page-lead">{@html essayInlineHtml(essay.dek)}</p>
   </header>
 
   {#if essay.hero}
@@ -144,46 +144,16 @@
 </article>
 
 <style>
-  .essay {
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 12px 20px 96px;
-    color: var(--color-text, #eef);
-  }
-  .crumb {
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 11px;
-    letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.5);
-    margin-bottom: 8px;
-  }
   .crumb a {
-    color: #7fb0e0;
     text-decoration: underline;
   }
   .crumb .sep {
     margin: 0 8px;
-    color: rgba(255, 255, 255, 0.3);
   }
   .head {
     margin-bottom: 32px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     padding-bottom: 24px;
-  }
-  h1 {
-    font-family: 'Bebas Neue', 'Space Mono', sans-serif;
-    font-size: clamp(40px, 8vw, 62px);
-    line-height: 1.02;
-    letter-spacing: 0.5px;
-    margin: 0 0 16px;
-  }
-  .dek {
-    font-family: 'Crimson Pro', Georgia, serif;
-    font-style: italic;
-    font-size: 20px;
-    line-height: 1.5;
-    color: rgba(255, 255, 255, 0.72);
-    margin: 0;
   }
   .body :global(p) {
     font-family: 'Crimson Pro', Georgia, serif;
@@ -236,16 +206,17 @@
     font-size: 12px;
     line-height: 1.5;
     letter-spacing: 0.3px;
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--color-text-label);
     margin-top: 9px;
   }
   .fig .credit {
     display: block;
     margin-top: 3px;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
     font-size: 11px;
   }
-  /* A section opens like a chapter: its number, the title in the display face, a short
+  /* a2-keep: essay prose headings (reading content), not page section labels.
+     A section opens like a chapter: its number, the title in the display face, a short
      rule in the movement's accent. */
   .body h2 {
     font-family: var(--font-display, 'Bebas Neue', sans-serif);
@@ -256,6 +227,7 @@
     color: #fff;
     margin: 56px 0 20px;
   }
+  /* a2-keep: the chapter rule under an essay prose heading */
   .body h2::after {
     content: '';
     display: block;
@@ -273,15 +245,15 @@
     margin-bottom: 6px;
   }
   .body :global(a) {
-    color: #cfe3fb;
+    color: var(--color-state);
     text-decoration: none;
     border-bottom: 1px solid rgba(127, 176, 224, 0.4);
   }
   .body :global(a:hover) {
-    border-bottom-color: #7fb0e0;
+    border-bottom-color: var(--color-state);
   }
   .body :global(em) {
-    font-style: italic;
+    font-style: italic; /* a1-keep: inline emphasis */
   }
   .body :global(strong) {
     font-weight: 600;
@@ -299,7 +271,7 @@
     font-size: 12px;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
     margin: 0 0 12px;
   }
   .doors ul,
@@ -313,7 +285,7 @@
   }
   .doors a,
   .sources a {
-    color: #cfe3fb;
+    color: var(--color-accent);
     text-decoration: none;
     border-bottom: 1px solid rgba(127, 176, 224, 0.4);
     font-size: 15px;
@@ -321,9 +293,9 @@
   .doors .tag {
     margin-left: 8px;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
   }
 </style>

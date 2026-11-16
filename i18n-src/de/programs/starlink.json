@@ -92,5 +92,23 @@
     "/programs/spacex": "SpaceX — die Falcon, die sie startet",
     "/earth": "Erde — Umlaufbahnen und die enge niedrige Umlaufbahn",
     "/earth?site=starlink": "Die Starlink-Konstellation"
+  },
+  "roster": {
+    "First 60 satellites": {
+      "note": "eine einzelne Falcon 9 setzt 60 flach gestapelte Satelliten auf einmal aus — die operative Konstellation beginnt, und der Nachthimmel bekommt seinen ersten Starlink-„Zug“",
+      "name": "Die ersten 60 Satelliten"
+    },
+    "Service goes live": {
+      "note": "die öffentliche Beta startet; aus einer Konstellation wird ein Internetdienst für Verbraucher, der Orte erreicht, die Glasfaser und Mobilfunkmasten nie erreichten",
+      "name": "Dienst geht in Betrieb"
+    },
+    "Ukraine": {
+      "note": "Starlink-Terminals halten ein Land durch einen Krieg online — und machen die Konstellation eines einzelnen Unternehmens über Nacht zu einem Faktor der nationalen Sicherheit",
+      "name": "Ukraine"
+    },
+    "Direct to cell": {
+      "note": "Satelliten beginnen, gewöhnliche Telefone direkt zu verbinden, ohne Terminal — die Konstellation wird allmählich zu einem globalen Mobilfunkmast",
+      "name": "Direkt zum Handy"
+    }
   }
 }

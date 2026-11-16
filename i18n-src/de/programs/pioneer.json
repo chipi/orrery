@@ -86,5 +86,21 @@
   "link_labels": {
     "/explore": "Jupiter im 3D-Explorer",
     "/programs/voyager": "Voyager — die Tour, die Pioneer erkundete"
+  },
+  "roster": {
+    "mission:pioneer-10": {
+      "note": "das erste Raumfahrzeug, das den Asteroidengürtel durchquerte und den Jupiter erreichte, und das erste auf einem Kurs, der das Sonnensystem ganz verlässt"
+    },
+    "mission:pioneer-11": {
+      "note": "flog am Jupiter vorbei und erreichte dann als erstes Raumfahrzeug den Saturn — es erkundete den Weg und die Ringgefahren, denen die Voyager folgen würden"
+    },
+    "The Pioneer plaque": {
+      "note": "eine kleine goldeloxierte Plakette an jedem Raumfahrzeug, die einen Mann, eine Frau und die Lage der Erde zeigt — die erste physische Botschaft der Menschheit, gerichtet an die Sterne",
+      "name": "Die Pioneer-Plakette"
+    },
+    "Pioneer Venus": {
+      "note": "ein eigenes Paar von Pioneer-Sonden erreichte 1978 die Venus — ein Orbiter, der den Planeten per Radar durch die Wolken kartierte, und Sonden, die in seine erdrückende Atmosphäre stürzten",
+      "name": "Pioneer Venus"
+    }
   }
 }

@@ -8,7 +8,8 @@
  *   BASIC — browse every list + open every detail: the HERO image (mobile rung) +
  *           the HERO thumbnail of every item, across ALL buckets (planets, missions,
  *           fleet, sites, …), plus poster thumbnails and the image alt text of every
- *           locale. NO galleries, NO full posters, NO audio, NO surface tiles.
+ *           locale. NO galleries, NO full posters, NO audio, NO surface tiles. Deep-sky
+ *           and star buckets: thumbnails only (their full-size photos are Full).
  *   FULL  — everything: all gallery images (02+) + their thumbs, full-size posters,
  *           surface hotspot tiles, and all audio.
  *
@@ -54,6 +55,9 @@ for (const [name, bucket] of Object.entries(OVERRIDE_BUCKET)) {
 }
 
 const FULL_ONLY_BUCKETS = new Set(['hotspots', 'posters']); // tiles / downloadable art
+// Lists show the thumbnail; the full-size photo is a detail-level view → Full only (its
+// thumb still goes to Basic below). Deep-sky + star photos are ~41 MB of the Basic pack.
+const THUMB_ONLY_BASIC_BUCKETS = new Set(['deep-sky', 'stars']);
 // cards: generated share/og composites (#547) — the in-app card renders live
 // from the template + the already-cached hero, so the ~83 MB JPEG corpus buys
 // nothing offline except 'Share card', which needs connectivity to send anyway.
@@ -117,7 +121,8 @@ for (const f of bases) {
   const { url, bytes } = mobileRung(f);
   add('full', url, bytes);
   // posters: full art is Full-only (its thumb goes to Basic below). hotspots: tiles, Full.
-  if (!FULL_ONLY_BUCKETS.has(bucket) && isHero(f)) add('basic', url, bytes);
+  if (!FULL_ONLY_BUCKETS.has(bucket) && !THUMB_ONLY_BASIC_BUCKETS.has(bucket) && isHero(f))
+    add('basic', url, bytes);
 }
 
 // 2 · thumbnails: hero thumb (01/single/override + poster .thumb) → Basic; gallery → Full

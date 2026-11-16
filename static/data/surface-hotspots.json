@@ -922,6 +922,7 @@
       "hotspot_tier2_ground_m": 819.2,
       "panorama_metadata": {
         "entry_yaw_deg": 135,
+        "photo_span_deg": [0, 270],
         "synthetic_regions": [
           {
             "pitch_min_deg": -90,
@@ -1148,6 +1149,7 @@
         "caption": "The ALSEP site in the Taurus-Littrow valley, EVA-1 (12 December 1972): the experiment package, the Lunar Roving Vehicle and the valley's massifs, Jack Schmitt's colour pan. The last Apollo landing.",
         "credit_team": "NASA · Apollo 17 / ALSJ",
         "entry_yaw_deg": 131,
+        "photo_span_deg": [30, 270],
         "synthetic_regions": [
           {
             "pitch_min_deg": -90,
@@ -1198,6 +1200,7 @@
         "lon_max": 315.6817
       },
       "panorama_metadata": {
+        "photo_span_deg": [287.5, 270],
         "synthetic_regions": [
           {
             "pitch_min_deg": -90,
@@ -1252,6 +1255,7 @@
         "lon_max": 139.3208
       },
       "panorama_metadata": {
+        "photo_span_deg": [300, 270],
         "synthetic_regions": [
           {
             "pitch_min_deg": -90,
@@ -1700,6 +1704,8 @@
         "lon_max": 139.0112
       },
       "panorama_metadata": {
+        "entry_yaw_deg": 160,
+        "photo_span_deg": [340, 270],
         "synthetic_regions": [
           {
             "pitch_min_deg": -90,
@@ -1724,6 +1730,7 @@
       "hotspot_tier2_regional_source": "/images/hotspots/moon/luna9/tier2-regional.jpg",
       "panorama_metadata": {
         "entry_yaw_deg": 240,
+        "photo_span_deg": [210, 270],
         "synthetic_regions": [
           {
             "pitch_min_deg": -90,
@@ -1855,6 +1862,7 @@
       "hotspot_tier2_ground_m": 281,
       "panorama_metadata": {
         "entry_yaw_deg": 150,
+        "photo_span_deg": [30, 270],
         "synthetic_regions": [
           {
             "pitch_min_deg": -90,
@@ -2209,6 +2217,7 @@
       "hotspot_tier2_ground_m": 1210,
       "panorama_metadata": {
         "entry_yaw_deg": 173,
+        "photo_span_deg": [70, 270],
         "synthetic_regions": [
           {
             "pitch_min_deg": -90,
@@ -2255,6 +2264,7 @@
       "hotspot_tier2_ground_m": 552,
       "panorama_metadata": {
         "entry_yaw_deg": 176,
+        "photo_span_deg": [90, 270],
         "synthetic_regions": [
           {
             "pitch_min_deg": -90,
@@ -2317,6 +2327,7 @@
             "kind": "unphotographed"
           }
         ],
+        "photo_span_deg": [150, 270],
         "entry_yaw_deg": 210
       },
       "hotspot_tier2_ctx_shift_m": {
@@ -2356,6 +2367,7 @@
         "real_extent_pct_vertical": 50,
         "compass_zero_direction": "lander imager +X",
         "entry_yaw_deg": 245,
+        "photo_span_deg": [220, 270],
         "synthetic_regions": [
           {
             "pitch_min_deg": -90,
@@ -2436,6 +2448,7 @@
             "kind": "unphotographed"
           }
         ],
+        "photo_span_deg": [220, 270],
         "entry_yaw_deg": 245
       }
     },
@@ -2759,6 +2772,7 @@
         "instrument": "Aerial photo",
         "caption": "Vandenberg SLC-4E (Falcon 9) and SLC-4W from the air — an aerial view, not a ground-level panorama.",
         "credit_team": "SpacecoasterVBG · Wikimedia Commons (CC BY-SA 4.0)",
+        "photo_span_deg": [304, 55],
         "real_extent_pct_vertical": 31,
         "synthetic_regions": [
           {
@@ -2895,6 +2909,7 @@
         "instrument": "Ground photo",
         "caption": "Gagarin's Start (Site 1/5), Baikonur Cosmodrome, 4 June 2018: the Soyuz for Soyuz MS-09 raised on the pad, the service gantries closing, flags and crews on the apron. NASA / Joel Kowsky.",
         "credit_team": "NASA / Joel Kowsky",
+        "photo_span_deg": [295, 65],
         "synthetic_regions": [
           {
             "pitch_min_deg": 39,
@@ -2961,6 +2976,7 @@
         "instrument": "Ground photo panorama",
         "caption": "Baikonur Site 31/6 from the top of the Soyuz service structure — the pad flame trench below, the steppe and the Zenit facility on the horizon.",
         "credit_team": "Paulsday86 · Wikimedia Commons (CC0)",
+        "photo_span_deg": [260, 100],
         "real_extent_pct_vertical": 37,
         "synthetic_regions": [
           {
@@ -3051,6 +3067,7 @@
         "instrument": "Ground photo (distant)",
         "caption": "Jiuquan Satellite Launch Center main launch tower from a distance — a low-resolution panoramic strip across the Gobi.",
         "credit_team": "AAxanderr · Wikimedia Commons (public domain)",
+        "photo_span_deg": [285, 75],
         "real_extent_pct_vertical": 27,
         "synthetic_regions": [
           {
@@ -3118,6 +3135,7 @@
         "instrument": "Ground photo (distant)",
         "caption": "Wenchang launch site across Qishui Bay — the LC-101 towers seen from the beach, a distant shoreline view.",
         "credit_team": "Shujianyang · Wikimedia Commons (CC BY-SA 4.0)",
+        "photo_span_deg": [265, 95],
         "real_extent_pct_vertical": 23,
         "synthetic_regions": [
           {
@@ -3208,6 +3226,7 @@
         "instrument": "Ground photo panorama",
         "caption": "Satish Dhawan Space Centre, Sriharikota — a GSLV (GSLV-F11 / GSAT-7A) rolling out on its mobile launch pedestal to the Second Launch Pad, December 2018, with the vehicle assembly buildings behind.",
         "credit_team": "ISRO · GODL-India",
+        "photo_span_deg": [285, 75],
         "synthetic_regions": [
           {
             "pitch_min_deg": 26,

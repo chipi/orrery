@@ -86,5 +86,21 @@
   "link_labels": {
     "/explore": "Saturn im 3D-Explorer",
     "/programs/voyager": "Voyager — die Vorbeiflüge, die zuerst kamen"
+  },
+  "roster": {
+    "mission:cassini": {
+      "note": "verbrachte dreizehn Jahre im Orbit um den Saturn — als einziges Raumfahrzeug überhaupt — und kartierte Ringe, Monde und Stürme in einer Detailtiefe, die kein Vorbeiflug erreichen konnte"
+    },
+    "mission:huygens": {
+      "note": "die europäische Sonde Huygens landete im Januar 2005 an Fallschirmen auf dem Titan — die erste und bisher einzige Landung im äußeren Sonnensystem"
+    },
+    "The geysers of Enceladus": {
+      "note": "Cassini entdeckte Fontänen aus Wassereis, die am Südpol des winzigen Mondes Enceladus ausbrechen — ein Hinweis auf einen globalen Ozean unter dem Eis und einer der aussichtsreichsten Orte für die Suche nach Leben",
+      "name": "Die Geysire des Enceladus"
+    },
+    "The Grand Finale": {
+      "note": "ohne Treibstoff wurde Cassini zweiundzwanzigmal zwischen Saturn und seinen Ringen hindurchgeflogen und dann absichtlich in den Planeten gestürzt, um sicherzugehen, dass sie die Ozeanmonde nie verunreinigen konnte",
+      "name": "Das große Finale"
+    }
   }
 }

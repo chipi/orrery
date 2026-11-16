@@ -87,5 +87,19 @@
     "/mars": "Mars — die Welt, die Mariner als Erster fotografierte",
     "/programs/viking": "Viking — die Lander, denen Mariner den Weg bahnte",
     "/mars?site=mariner9": "Mariner 9 in der Marsumlaufbahn"
+  },
+  "roster": {
+    "mission:mariner2": {
+      "note": "im Dezember 1962 wurde Mariner 2 das erste Raumfahrzeug, das einen anderen Planeten erreichte, und fand die Venus nicht als tropischen Zwilling der Erde, sondern als einen Glutofen mit Hunderten Grad Hitze"
+    },
+    "fleet:mariner-4": {
+      "note": "flog 1965 am Mars vorbei und lieferte die ersten Fotos eines anderen Planeten aus der Nähe — eine kraterübersäte, offenbar tote Welt, die die alten Träume von Marskanälen und Leben beendete"
+    },
+    "fleet:mariner-9": {
+      "note": "wurde das erste Raumfahrzeug im Orbit um einen anderen Planeten, kartierte den ganzen Mars und enthüllte riesige Vulkane, ein kontinentgroßes Canyonsystem und trockene Flussbetten"
+    },
+    "mission:mariner10": {
+      "note": "das erste Raumfahrzeug, das den Merkur besuchte, und das erste, das die Schwerkraft eines Planeten nutzte, um einen anderen zu erreichen — der Swing-by-Trick, den seither jede Tiefraummission verwendet"
+    }
   }
 }

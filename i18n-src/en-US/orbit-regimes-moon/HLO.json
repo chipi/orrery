@@ -10,7 +10,7 @@
     { "id": "change1", "label": "Chang'e 1 (2007-2009)", "agency": "CNSA" }
   ],
   "firsts": [
-    { "year": 1966, "label": "Luna 10 — first artificial lunar orbiter (USSR)", "mission_id": "luna10" }
+    { "year": 1966, "label": "Luna 10 — first artificial lunar orbiter", "mission_id": "luna10" }
   ],
   "science_link": {
     "tab": "orbits",

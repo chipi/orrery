@@ -97,5 +97,23 @@
     "/moon?site=luna16": "Luna 16 — erste robotische Probenrückführung",
     "/moon?site=luna17": "Luna 17 — Lunokhod 1",
     "/moon?site=luna21": "Luna 21 — Lunokhod 2"
+  },
+  "roster": {
+    "Zond 5": {
+      "note": "erstes Raumfahrzeug, das den Mond umrundete und sicher zur Erde zurückkehrte — seine zwei Schildkröten waren die ersten Lebewesen, die um den Mond und zurück reisten, drei Monate vor Apollo 8",
+      "name": "Zond 5"
+    },
+    "N1 — four launch failures": {
+      "note": "alle vier N1-Teststarts (1969–1972) scheiterten; der zweite fiel im Juli 1969 auf die Rampe zurück, in einer der größten nichtnuklearen Explosionen, die je aufgezeichnet wurden",
+      "name": "N1 — vier fehlgeschlagene Starts"
+    },
+    "LK lunar lander": {
+      "note": "der Ein-Kosmonauten-Lander — mit etwa 40 % der Masse der Apollo-Mondlandefähre — wurde unbemannt im Erdorbit flugerprobt, flog aber nie zum Mond",
+      "name": "LK-Mondlander"
+    },
+    "L3 complex": {
+      "note": "der vollständige Mondstapel N1-L3: ein N1-Start, ein Soyuz 7K-LOK mit zwei Kosmonauten im Mondorbit, ein einzelner Kosmonaut im LK zur Oberfläche",
+      "name": "Komplex L3"
+    }
   }
 }

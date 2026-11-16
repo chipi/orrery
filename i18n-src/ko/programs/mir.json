@@ -94,5 +94,23 @@
   "link_labels": {
     "/earth": "지구 — 궤도, 랑데부, 발사장",
     "/fleet?id=mir": "함대 — Mir 우주정거장"
+  },
+  "roster": {
+    "Modular assembly": {
+      "note": "10년에 걸쳐 궤도에서 조립되었다 — 핵심 모듈(1986), 이어 Kvant, Kvant-2, Kristall, Spektr, Priroda — 따로 발사한 모듈로 조립한 최초의 정거장",
+      "name": "모듈식 조립"
+    },
+    "Polyakov — 437 days": {
+      "note": "발레리 폴랴코프의 Mir에서의 437일 단독 체류는 지금도 역대 최장의 연속 유인 우주비행으로, 승무원이 화성 왕복 기간의 임무를 견딜 수 있음을 입증했다",
+      "name": "폴랴코프 — 437일"
+    },
+    "Shuttle-Mir": {
+      "note": "미국의 Space Shuttle이 Mir에 도킹하고 미국 우주비행사가 그곳에 거주했다(1995-1998) — 냉전 경쟁자들의 첫 공동 정거장 운영이자 ISS를 위한 직접적인 예행연습",
+      "name": "Shuttle-Mir"
+    },
+    "The 1997 crises": {
+      "note": "선내 화재에 이어 Progress 화물선이 충돌해 Spektr 모듈에 구멍을 내고 정거장 일부의 압력이 떨어졌다 — 승무원이 궤도에서 견뎌 낸 최악의 충돌",
+      "name": "1997년의 위기"
+    }
   }
 }

@@ -121,12 +121,12 @@ describe('agencyShortName / agencyFullName', () => {
 });
 
 describe('agencyColor', () => {
-  it('returns the brand color for a registered agency', () => {
-    expect(agencyColor('nasa')).toBe('#0B3D91');
+  it('returns the palette colour for a registered agency (UXD-048)', () => {
+    expect(agencyColor('nasa')).toBe('#2e72fa');
   });
 
   it('takes the first resolved component of a compound string', () => {
-    expect(agencyColor('ESA / NASA')).toBe('#003247');
+    expect(agencyColor('ESA / NASA')).toBe('#e444c9');
   });
 
   it('returns null when nothing resolves', () => {

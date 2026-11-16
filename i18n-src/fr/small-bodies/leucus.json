@@ -2,9 +2,13 @@
   "description": "Troyen de L4 de type D de 35 km, à la période de rotation exceptionnellement lente de 446 heures, l’un des rotateurs les plus lents connus parmi les corps de cette taille. Rencontre avec Lucy le 18 avril 2028.",
   "science_sections": [
     {
-      "tab": "planets",
-      "section": "asteroid-belt",
+      "tab": "orbits",
+      "section": "lagrange-points",
       "why": "Leucus est un astéroïde troyen L4 à rotation inhabituellement lente (période de 445 heures) — le survol de Lucy en avril 2028 permettra d'imager sa forme allongée atypique de près."
+    },
+    {
+      "tab": "orbits",
+      "section": "eccentricity"
     }
   ]
 }

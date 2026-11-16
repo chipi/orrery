@@ -168,7 +168,10 @@ describe('getMissionIndex', () => {
     // 2026-07-12 — /programs Earth flights: Mercury (freedom-7…), Gemini
     // (3/4/6a/7/8/12), Soyuz 1 & 11. 115 → 123. 2026-07-18 — RFC-034 §12 Phase-2 descent missions huygens + near-shoemaker. 123 → 125. 2026-10-20 — Artemis architecture change: artemis5 added (artemis3 moved Moon → Earth). 125 → 126.
     const missions = await getMissionIndex();
-    expect(missions).toHaveLength(126);
+    // 2026-11-15 — slice H adds kaguya + chandrayaan2 (126 → 128); content4 adds sts-1, sts-51-l,
+    // sts-107 and artemis1 (128 → 132). 2026-11-15 — content7: viking2, mars2, mro (Mars), mariner2 (Venus),
+    // change2, im-1 (Moon), shenzhou-5 (Earth) (132 → 139).
+    expect(missions).toHaveLength(139);
   });
 
   it('every entry has the required language-neutral fields', async () => {
@@ -215,17 +218,17 @@ describe('getMissionIndex', () => {
 });
 
 describe('filterMissions', () => {
-  it('MARS filter returns 20', async () => {
+  it('MARS filter returns 23', async () => {
     // GH #341 Batch 1 added 4 Mars missions (Mariner 9, Spirit,
     // Opportunity, Phoenix). 16 → 20.
     const mars = await filterMissions({ dest: 'MARS' });
-    expect(mars).toHaveLength(20);
+    expect(mars).toHaveLength(23);
     for (const m of mars) expect(m.dest).toBe('MARS');
   });
 
-  it('MOON filter returns 32', async () => {
+  it('MOON filter returns 37', async () => {
     const moon = await filterMissions({ dest: 'MOON' });
-    expect(moon).toHaveLength(32);
+    expect(moon).toHaveLength(37);
     for (const m of moon) expect(m.dest).toBe('MOON');
   });
 
@@ -358,15 +361,17 @@ describe('reference data', () => {
     expect(lunar).toHaveLength(8); // LRO + the 7 backfilled v0.4 orbiters
   });
 
-  it('moonSites() returns 28 sites (20 surface + 8 orbiters)', async () => {
+  it('moonSites() returns 30 sites (21 surface + 9 orbiters)', async () => {
     // v0.7 added luna16, luna21, beresheet (V3a + V3c hotspot coverage
     // per PRD-014 / RFC-017 §S7). Bumps surface count 16 → 19; Chang'e 7 → 20.
+    // Slice H adds the Kaguya orbiter marker (28 → 29, orbiters 8 → 9) and the Vikram crash
+    // site of Chandrayaan-2 (29 → 30, surface 20 → 21).
     const data = await moonSites();
-    expect(data).toHaveLength(28);
+    expect(data).toHaveLength(30);
     const surface = data.filter((s) => !s.kind || s.kind === 'surface');
     const orbiters = data.filter((s) => s.kind === 'orbiter');
-    expect(surface).toHaveLength(20);
-    expect(orbiters).toHaveLength(8);
+    expect(surface).toHaveLength(21);
+    expect(orbiters).toHaveLength(9);
   });
 });
 
@@ -445,7 +450,7 @@ describe('getSun', () => {
 describe('getMissionsForLibrary', () => {
   it('returns all 115 missions merged with their en-US overlays', async () => {
     const list = await getMissionsForLibrary();
-    expect(list).toHaveLength(126);
+    expect(list).toHaveLength(139);
     // Every mission should have its base fields…
     for (const m of list) {
       expect(m.id).toBeTruthy();
@@ -491,7 +496,7 @@ describe('getMissionsForLibrary', () => {
 
   it('falls back to en-US for missing locale', async () => {
     const list = await getMissionsForLibrary('xx-TEST');
-    expect(list).toHaveLength(126);
+    expect(list).toHaveLength(139);
   });
 
   it('count matches what filterMissions reports', async () => {
@@ -503,7 +508,17 @@ describe('getMissionsForLibrary', () => {
   it("carries the index-only outcome, so /missions' FAILED filter finds the failures", async () => {
     const lib = await getMissionsForLibrary();
     const failed = lib.filter((m) => m.outcome === 'failure').map((m) => m.id);
-    expect(failed.sort()).toEqual(['apollo-1', 'apollo13', 'beresheet', 'schiaparelli', 'soyuz-1']);
+    expect(failed.sort()).toEqual([
+      'apollo-1',
+      'apollo13',
+      'beresheet',
+      'chandrayaan2',
+      'mars2',
+      'schiaparelli',
+      'soyuz-1',
+      'sts-107',
+      'sts-51-l',
+    ]);
     expect(lib.find((m) => m.id === 'curiosity')!.outcome).toBeUndefined();
   });
 });
@@ -537,11 +552,11 @@ describe('getEarthObjects', () => {
 });
 
 describe('getMoonSites', () => {
-  it('returns 28 sites merged with their en-US overlay', async () => {
+  it('returns 30 sites merged with their en-US overlay', async () => {
     // v0.7 adds luna16 / luna21 / beresheet base entries for hotspot
-    // coverage; bumps count 24 → 27; Chang'e 7 → 28.
+    // coverage; bumps count 24 → 27; Chang'e 7 → 28; Kaguya 28 → 29; Vikram 29 → 30.
     const list = await getMoonSites();
-    expect(list).toHaveLength(28);
+    expect(list).toHaveLength(30);
     const apollo11 = list.find((s) => s.id === 'apollo11');
     expect(apollo11).toBeDefined();
     expect(apollo11!.year).toBe(1969);
@@ -576,7 +591,7 @@ describe('getMoonSites', () => {
 
   it('falls back to en-US when locale overlay missing', async () => {
     const list = await getMoonSites('xx-TEST');
-    expect(list).toHaveLength(28);
+    expect(list).toHaveLength(30);
   });
 });
 
@@ -1206,7 +1221,7 @@ describe('getImageProvenance (per-image lookup)', () => {
     // `https://<host>${base}${knownPath}`. Under test `base` is empty, so exercise
     // the origin (scheme + host) strip; base-prefix stripping is covered by the
     // pure normalizeImageKey tests below.
-    const entry = await getImageProvenance(`https://chipi.github.io${knownPath}`);
+    const entry = await getImageProvenance(`https://cdn.example.test${knownPath}`);
     expect(entry).not.toBeNull();
     expect(entry!.path).toBe(knownPath);
   });
@@ -1220,7 +1235,7 @@ describe('normalizeImageKey (provenance-key normalisation — RFC-030)', () => {
   });
 
   it('strips a mobile stream origin (scheme + host), keeping the path', () => {
-    expect(normalizeImageKey('https://chipi.github.io/images/missions/curiosity/01.webp')).toBe(
+    expect(normalizeImageKey('https://cdn.example.test/images/missions/curiosity/01.webp')).toBe(
       '/images/missions/curiosity/01.webp',
     );
     // http origin + a port are stripped too.
@@ -1231,7 +1246,7 @@ describe('normalizeImageKey (provenance-key normalisation — RFC-030)', () => {
 
   it('strips a configured base-path prefix after the origin', () => {
     // Mobile: origin then `${base}` — both must come off.
-    expect(normalizeImageKey('https://chipi.github.io/orrery/images/x/01.webp', '/orrery')).toBe(
+    expect(normalizeImageKey('https://cdn.example.test/orrery/images/x/01.webp', '/orrery')).toBe(
       '/images/x/01.webp',
     );
     // Web with a base path.
@@ -1367,6 +1382,23 @@ describe('programs / badges / sourcing loaders (PRD-029)', () => {
     expect(free(en)?.label).toBe('Free-return trajectory');
     expect(de?.see_also?.map((s) => s.href)).toEqual(en?.see_also?.map((s) => s.href));
     expect(de?.surface_sites?.[0]?.label).toBe('Apollo 15 — Hadley–Apennin');
+  });
+
+  it('getProgram lays the locale roster text over the base rows and keeps the rest English', async () => {
+    const note = (p: Awaited<ReturnType<typeof getProgram>>, id: string) =>
+      p?.roster.find((r) => r.linked_id === id)?.note;
+    const en = await getProgram('space-shuttle');
+    const de = await getProgram('space-shuttle', 'de');
+    expect(note(en, 'galileo')).toBe(
+      "deployed from Atlantis's payload bay on STS-34 in October 1989, then sent to Jupiter on an upper stage",
+    );
+    expect(note(de, 'galileo')).toContain('STS-34 im Oktober 1989');
+    expect(de?.roster.length).toBe(en?.roster.length);
+    const sts1 = (p: typeof de) => p?.roster.find((r) => r.linked_id === 'sts-1')?.note;
+    expect(sts1(de)).toContain('erste Orbitalflug');
+    // a locale with no overlay at all: its rows stay the English base
+    const xx = await getProgram('space-shuttle', 'xx');
+    expect(sts1(xx)).toBe(sts1(en));
   });
 
   it('getBadges returns the insignia map', async () => {
@@ -1531,9 +1563,16 @@ describe('Venus sites', () => {
     expect(ru.map((s) => s.lat)).toEqual(en.map((s) => s.lat));
   });
 
-  it('getVenusSiteGallery returns an empty array (no galleries yet)', async () => {
-    const urls = await getVenusSiteGallery();
-    expect(urls).toEqual([]);
+  it('getVenusSiteGallery returns the mission gallery of each Venus site (VE1)', async () => {
+    // The hero order needs the browser-side override cache: see data/galleries.test.ts.
+    const counts = { 'venera-13': 3, 'vega-1': 4, 'vega-2': 3 };
+    for (const [id, n] of Object.entries(counts)) {
+      const urls = await getVenusSiteGallery(id);
+      expect(urls.length, id).toBe(n);
+      for (const u of urls)
+        expect(u, id).toMatch(new RegExp(`/images/missions/${id}/0\\d\\.webp$`));
+    }
+    expect(await getVenusSiteGallery('no-such-site')).toEqual([]);
   });
 });
 

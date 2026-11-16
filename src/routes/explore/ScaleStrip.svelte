@@ -6,6 +6,7 @@
     fmtScale,
     lightUnitLabel,
   } from '$lib/explore/format';
+  import ScaleBar from '$lib/components/ScaleBar.svelte';
   import { localHref } from '$lib/locale';
   import * as m from '$lib/paraglide/messages';
   import type { ExploreContextId } from '$lib/three/explore-scene-host';
@@ -18,6 +19,8 @@
     barPx,
     barLabel,
     bodyHostName,
+    panelCoverPx = 0,
+    dockBelow = true,
   }: {
     readout: ScaleReadout | null;
     contextId: ExploreContextId;
@@ -25,11 +28,24 @@
     barPx: number;
     barLabel: string;
     bodyHostName: string;
+    /** Width a docked side panel covers at the right edge; the strip sits left of it. */
+    panelCoverPx?: number;
+    /** The time dock is drawn under the strip (solar system only); without it the strip sits at
+     *  the bottom edge. */
+    dockBelow?: boolean;
   } = $props();
+
+  const rightOffset = $derived(panelCoverPx > 0 ? `${12 + panelCoverPx}px` : undefined);
 </script>
 
 {#if readout && (contextId === 'solar-system' || contextId === 'neighborhood')}
-  <div class="scale-strip" class:neighborhood={contextId === 'neighborhood'} aria-hidden="true">
+  <div
+    class="scale-strip"
+    class:neighborhood={contextId === 'neighborhood'}
+    class:no-dock={!dockBelow}
+    style:right={rightOffset}
+    aria-hidden="true"
+  >
     <div class="scale-ladder">
       {#each RUNG_LADDER as rung (rung)}
         <span
@@ -61,14 +77,18 @@
     {/if}
     {#if barPx > 0}
       <div class="scale-bar-wrap">
-        <span class="scale-bar" style="width:{Math.round(Math.min(barPx, 220))}px"></span>
-        <span class="scale-bar-label">{barLabel}</span>
+        <ScaleBar widthPx={barPx} label={barLabel} stacked />
       </div>
     {/if}
     <div class="scale-context">{contextLabel(contextId, bodyHostName)}</div>
   </div>
 {:else if !blackHole && (contextId === 'milky-way' || contextId === 'local-group' || contextId === 'local-sheet' || contextId === 'virgo' || contextId === 'laniakea' || contextId === 'cosmic-web')}
-  <div class="scale-strip schematic" role="note">
+  <div
+    class="scale-strip schematic"
+    class:no-dock={!dockBelow}
+    role="note"
+    style:right={rightOffset}
+  >
     {#if contextId === 'milky-way'}
       <div class="scale-schematic-size">{m.explore_mw_scale_note()}</div>
       <div class="scale-schematic-note">
@@ -116,10 +136,19 @@
     font-family: var(--font-mono, 'Space Mono', monospace);
     color: #dde4ff;
     pointer-events: none;
-    max-width: 260px;
+    box-sizing: border-box;
+  }
+  /* Fixed box: the strip never resizes with its text (UXD-021). 232 px holds the 120 px bar and
+     the longest label under it; under 600 px (the bar's own breakpoint) 190 px holds the 64 px
+     bar. The schematic note keeps its content width. */
+  .scale-strip:not(.schematic) {
+    inline-size: 232px;
+  }
+  .scale-strip.schematic {
+    max-inline-size: 260px;
   }
   .scale-strip.neighborhood {
-    border-color: rgba(78, 205, 196, 0.35);
+    border-color: var(--color-accent-edge);
   }
   /* Schematic shells (Milky Way … Cosmic Web): the honesty note + optional
      Learn-more link, in the same box. Slate-accented to read as "not to scale". */
@@ -134,7 +163,7 @@
   }
   .scale-schematic-size {
     color: #9fb2cf;
-    font-size: 10px;
+    font-size: var(--size-label);
     margin-bottom: 4px;
   }
   .scale-schematic-note {
@@ -149,17 +178,17 @@
     margin-bottom: 6px;
   }
   .scale-ladder .rung {
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     text-transform: uppercase;
     padding: 1px 5px;
     border-radius: 3px;
-    color: rgba(255, 255, 255, 0.35);
+    color: var(--color-text-label);
     background: rgba(255, 255, 255, 0.04);
   }
   .scale-ladder .rung.active {
     color: #04121a;
-    background: #4ecdc4;
+    background: var(--color-accent);
     font-weight: 700;
   }
   .scale-readout {
@@ -174,37 +203,21 @@
   }
   .scale-readout .companion {
     font-size: 11px;
-    color: #9fe8e2;
+    color: var(--color-state);
   }
   .scale-light {
-    font-size: 10px;
-    color: rgba(255, 255, 255, 0.5);
+    font-size: var(--size-label);
+    color: var(--color-text-label);
     margin-top: 2px;
   }
   .scale-bar-wrap {
-    display: flex;
-    align-items: center;
-    gap: 7px;
     margin-top: 7px;
   }
-  .scale-bar {
-    display: inline-block;
-    height: 3px;
-    background: rgba(255, 255, 255, 0.8);
-    border-left: 1px solid rgba(255, 255, 255, 0.8);
-    border-right: 1px solid rgba(255, 255, 255, 0.8);
-    box-sizing: border-box;
-    min-width: 12px;
-  }
-  .scale-bar-label {
-    font-size: 10px;
-    color: rgba(255, 255, 255, 0.7);
-  }
   .scale-context {
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 1.5px;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.4);
+    color: var(--color-text-label);
     margin-top: 6px;
   }
 
@@ -213,7 +226,7 @@
     margin-left: 10px;
     padding-left: 10px;
     border-left: 1px solid rgba(255, 255, 255, 0.22);
-    color: #4ecdc4;
+    color: var(--color-state);
     text-decoration: none;
     pointer-events: auto;
     white-space: nowrap;
@@ -227,14 +240,48 @@
   /* Compact the scale strip on phones and lift it ABOVE the two stacked bottom
      bars (the Ruler/Controls/Missions drawer + the Scale/time controls, which
      together occupy ~96px from the bottom edge) so it no longer overlaps them. */
-  @media (max-width: 767px) {
+  /* The fixed 232 px box reaches back over the time dock's right end below 900 px (the dock
+     ends near x 590), so it lifts above the dock there too. */
+  @media (max-width: 899px) {
     .scale-strip {
       bottom: 104px;
+    }
+  }
+  @media (max-width: 767px) {
+    .scale-strip {
       padding: 7px 9px;
-      max-width: 190px;
+    }
+    .scale-strip.schematic {
+      max-inline-size: 190px;
     }
     .scale-readout .primary {
       font-size: 13px;
+    }
+  }
+  @media (max-width: 599px) {
+    .scale-strip:not(.schematic) {
+      inline-size: 190px;
+    }
+  }
+  /* No time dock under it (every scale but the solar system): the lifts above are for the dock,
+     so the strip keeps only the footer's 46 px, and on touch (no footer) sits at the bottom. */
+  .scale-strip.no-dock {
+    bottom: 46px;
+  }
+  :global(html[data-touch]) .scale-strip.no-dock {
+    bottom: max(12px, env(safe-area-inset-bottom, 0px));
+  }
+  /* Touch portrait at the solar system: the 44 px chips put the tab row's top edge 108 px up
+     (measured: dock 56 + 8 + 4 gap + 40 tabs), so the strip clears it by 4 px instead of sitting
+     4 px under it (L26). */
+  :global(html[data-touch]) .scale-strip:not(.no-dock) {
+    bottom: 112px;
+  }
+  /* Touch landscape at the solar system: the time dock sits bottom-left and the drawer's tab row
+     (8 px up, 34 px tall) bottom-right, under the strip; the strip sits 8 px above the tabs. */
+  @media (orientation: landscape) and (max-height: 500px) {
+    :global(html[data-touch]) .scale-strip:not(.no-dock) {
+      bottom: 50px;
     }
   }
 </style>

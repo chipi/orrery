@@ -95,5 +95,29 @@
     "/fleet?id=starship": "Flotta — il sistema di lancio Starship",
     "/programs/spacex": "SpaceX — la riutilizzabilità su cui si basa Starship",
     "/mars": "Marte — la destinazione"
+  },
+  "roster": {
+    "Starhopper": {
+      "note": "un prototipo di prova a motore singolo fa un salto di 150 metri e atterra — il primo volo del programma, che dimostra il controllo di base",
+      "name": "Starhopper"
+    },
+    "SN15 lands": {
+      "note": "dopo una serie di esplosioni spettacolari, un secondo stadio di Starship vola in alto e atterra intatto — il metodo vola-fallisci-correggi applicato al più grande razzo mai costruito",
+      "name": "SN15 atterra"
+    },
+    "First integrated flight": {
+      "note": "lo stack completo — il booster Super Heavy e Starship — decolla insieme per la prima volta; libera la rampa e viene perso pochi minuti dopo, e i dati alimentano il tentativo successivo",
+      "name": "Primo volo integrato"
+    },
+    "Booster catch": {
+      "note": "il booster Super Heavy torna indietro e viene afferrato in volo dai bracci della torre di lancio — un metodo di atterraggio che nessuno aveva mai tentato su questa scala",
+      "name": "Cattura del booster"
+    },
+    "mission:starship-demo": {
+      "note": "i voli dimostrativi senza equipaggio sulla strada verso l'orbita, la Luna e Marte"
+    },
+    "mission:starship-mars-crew": {
+      "note": "lo stato finale previsto — Starship con equipaggio che portano persone sulla superficie di Marte"
+    }
   }
 }

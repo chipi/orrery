@@ -27,15 +27,23 @@ Structured, non-translatable data. Schema: `static/data/schemas/program.schema.j
 
 ### 2 · Roster — link flagships, name context
 
-`roster[]` items are one of two shapes:
-- **Linked** (we model it): `{ ref: "mission" | "fleet", linked_id, role, note }` — clickable, drives the timeline + master-detail pane.
-- **Context** (we don't): `{ name, year, note }` — flat text, no link. This is how a program legitimately mentions missions outside the curated set (Apollo names Apollo 1/7/9 without modelling them).
+`roster[]` items have these shapes ([UXD-033](../uxs/decisions/UXD-033-program-roster-links-and-milestones.md)):
+- **Linked** (we model it): `{ ref: "mission" | "fleet" | "module", linked_id, role, note }` — a mission row is clickable and drives the timeline + master-detail pane; a fleet row is a hardware card; a module row opens the station page (`/<program id>?module=<id>`).
+- **Context** (we don't): `{ name, year, note }` — flat text, no link. This is how a program legitimately mentions missions outside the curated set (Soviet lunar names Zond 5, whose mission is not modelled).
+- **Context with a link** (an event about an entry we model): `{ name, year, note, link: { ref: "fleet" | "module", id, station? } }` — Challenger's loss links the Challenger craft; Columbus under ESA human spaceflight links `/iss?module=columbus` (`station: "iss"`). A `module` link names its station.
+- **Milestone**: a context row plus `milestone: true` — an episode, phase, decision or plan inside the program (not a flight, a craft or a test). Drawn under "Milestones" after Missions, no link, no card.
+
+**A row that names an entry that exists must link to it** (as `linked_id` for a mission, or `link` for a craft or module); `src/lib/programs-roster.test.ts` fails on a name-only row equal to a mission, craft or module name. Hardware rows are the flown vehicles of the program's linked missions (`fleet_refs`): launchers, spacecraft, landers, orbiters and rovers; launch sites are left out.
+
+**Roster text is English in the base record and translated per locale.** A row's `note`, and the `name` of a name-only row, are English here; a locale shows them through its overlay's `roster` map (§3), or English where it has none. A **deployed-from** note (a probe launched from the Shuttle is not a Shuttle mission) goes on the linked row, e.g. `{ "linked_id": "galileo", "ref": "mission", "year": 1989, "note": "deployed from Atlantis's payload bay on STS-34 …" }`.
 
 Keep cross-refs symmetric where the linked entity points back (e.g. a mission's `program`, if/when added).
 
 ### 3 · Editorial overlay — `i18n-src/en-US/programs/{id}.json`
 
 The spine, en-US prose first. Schema: `program-overlay.schema.json`. Required: `name`, `tagline`, `the_land`, `goals`, `outcome`, `narrative`, `legacy`, `lessons`. Each spine section is an **ordered block list**: `{ type: "prose", md }` and `{ type: "figure", image, caption, align }`. Write every block against `programs-editorial-voice.md` §5 (per-section register). Do **not** repeat the hero lower down; prefer more, smaller, single-subject figures; no collages.
+
+**Roster text in a locale overlay** — `i18n-src/{locale}/programs/{id}.json` may carry `roster: { "<key>": { "note": "…", "name": "…" } }`, only for the rows that locale translates; `getProgram()` lays it over the base roster (`src/lib/program-roster-overlay.js`). The key is the row's `rosterKey()`, never its array position, so inserting a row keeps every translation: **`ref:linked_id`** for a linked row (`mission:galileo`, `fleet:cassini` — a mission and its craft share an id), else the row's **English `name`** (`STS-1`). `note` replaces the note of any row; `name` replaces the name of a name-only row only (a linked row's name comes from the linked entry). There is no `roster` in the en-US overlay: the English is the base record, so one source. The base rows that are not in a locale's map show English, and are counted by `node scripts/i18n-coverage-scan.mjs` as `rosterMissing` per locale (reported, not gated); a key with no row is an `extraKey`, and `src/lib/program-roster-overlay.test.ts` fails on one. Staleness: `stale-overlays.mjs --manifest=check` (in `validate-data`) hashes every base roster note and name-only name under `programs-roster/{id}.json`, so a new or edited English note fails until the translations are re-checked and `--manifest=write` is run.
 
 ### 4 · Images — reuse-first
 
@@ -55,7 +63,7 @@ Neither is a spec/fact rehash. **Launch-site assets propagate automatically** �
 
 ### 7 · Deep-links — `see_also`
 
-`see_also[]` (`{ label, href, kind: "body" | "science" | "explore" }`) sends the reader into the rest of Orrery — `/moon`, `/science` articles, `/explore`. Every program should hand off to the surfaces that continue its story.
+The program page draws only the sections that have rows (no hardware row: no Hardware heading), shows `related_programs` as a card rail (so list ids that exist in `programs/index.json`; do not repeat them as `see_also` rows of kind `program`, the page drops those) and `surface_sites` as a card rail (Earth objects such as `iss` link `/earth?object=<id>`). `see_also[]` (`{ label, href, kind: "body" | "science" | "explore" | "fleet" | "gallery" }`) sends the reader into the rest of Orrery — `/moon`, `/science` articles, `/explore`. Every program should hand off to the surfaces that continue its story.
 
 ### 8 · Prerender — `src/routes/programs/[id]/+page.ts`
 
@@ -71,7 +79,7 @@ Add the program's index entry (id, name, tagline, agency, years, epoch, hero) so
 
 ### 11 · i18n — English-first, then translate at tier
 
-Rebuild the bundle after any overlay edit: `node scripts/build-i18n-bundles.mjs` (writes `static/data/i18n/{locale}.json`; the bundle key is `programs/{id}.json` — **with** the `.json`). Programs ship **en-US only** at first. `validate-data` enforces all-14-locale overlays as core content, so a new program shows 13 expected locale-gap reds until translated — wire the **programs known-gap exemption** for the English-first phase (mirrors how audio/missions phase locales), and translate when the program's locale tier ships.
+Rebuild the bundle after any overlay edit: `node scripts/build-i18n-bundles.mjs` (writes `static/data/i18n/{locale}.json`; the bundle key is `programs/{id}.json` — **with** the `.json`). Programs ship **en-US only** at first. `validate-data` enforces all-14-locale overlays as core content, so a new program shows 13 expected locale-gap reds until translated — wire the **programs known-gap exemption** for the English-first phase (mirrors how audio/missions phase locales), and translate when the program's locale tier ships. The roster's notes and name-only names are translated separately, through the overlay's `roster` map (§3); an untranslated row is a `rosterMissing` count in the coverage scan, not a `validate-data` red.
 
 ### 12 · Validate
 
@@ -88,7 +96,7 @@ Author → `npm run validate-data` → fix what it names → repeat. A program i
 - **Bundle key carries `.json`.** The overlay is keyed `programs/apollo.json` in the bundle; `getProgram` must request it with the extension. A key without `.json` silently misses.
 - **Universal `load` needs `event.fetch`.** Relative data URLs (`/data/...`) throw under global `fetch` at prerender — thread the page's `fetch` through every `get*` call.
 - **`entries()` is not automatic.** Every program `id` must be listed or its page is missing from the build.
-- **Roster ≠ new content.** Naming a mission in the roster does not model it. Resist the pull to add missions "so the roster links resolve" — name them as context instead.
+- **Roster ≠ new content.** Naming a mission in the roster does not model it. Resist the pull to add missions "so the roster links resolve" — name them as context instead. The reverse also binds: a mission or craft that already exists is linked, never left as a context name.
 - **Badges are PD/CC or nothing.** Don't reach for a trademarked contractor logo to fill a vehicle's badge slot; leave it empty (the UI hides it). Confirm the license on the Commons file page, not by eye.
 - **Dispatches are part of the program, not a follow-up PR.** They ship with the program that motivated them — step 6, every time.
 

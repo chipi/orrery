@@ -91,5 +91,26 @@
     "/mars?site=opportunity": "Opportunity — 子午线高原",
     "/mars?site=curiosity": "Curiosity — 盖尔撞击坑",
     "/mars?site=perseverance": "Perseverance — 耶泽罗撞击坑"
+  },
+  "roster": {
+    "mission:mars-pathfinder": {
+      "note": "一次低成本任务，借助气囊弹跳着在火星着陆，让微波炉大小的漫游车Sojourner成为在另一颗行星上转动的第一对车轮"
+    },
+    "mission:spirit": {
+      "note": "2004年着陆，原定工作90天，实际工作了六年，找到了火星更温暖、更湿润的过去的化学痕迹"
+    },
+    "mission:opportunity": {
+      "note": "Spirit的孪生兄弟，在14年里行驶了超过45公里——任何车辆在另一个世界上行驶的最远距离"
+    },
+    "mission:curiosity": {
+      "note": "一辆汽车大小、核动力的漫游车，2012年由火箭驱动的天空起重机降落在火星上，证实了盖尔撞击坑曾有一片宜居的湖泊"
+    },
+    "mission:perseverance": {
+      "note": "2021年降落在耶泽罗撞击坑底部——一处古老的河流三角洲和湖床——寻找过去生命的迹象，并将样本封入管中，留待未来的任务带回地球"
+    },
+    "Ingenuity": {
+      "note": "Perseverance携带的一架小型直升机在2021年完成了另一颗行星上的首次动力飞行，随后又飞行了数十次",
+      "name": "Ingenuity"
+    }
   }
 }

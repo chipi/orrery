@@ -16,6 +16,9 @@
  *   iOS MARKETING_VERSION node scripts/mobile/sync-native-version.mjs
  *   CHANGELOG             add a `## [X.Y.Z]` section for the version being worked on
  *
+ * Also regenerated in the release PR, but carries no version so it is not gated here:
+ *   sitemap <lastmod>     npm run route-lastmod   (full-history checkout; src/lib/generated/route-lastmod.json)
+ *
  * Wired into validate-data, so preflight and CI fail on drift.
  */
 import { readFileSync } from 'node:fs';

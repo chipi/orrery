@@ -1,0 +1,47 @@
+{
+  "name": "Artemis I",
+  "vehicle": "SLS Block 1 + Orion (não tripulado)",
+  "payload": "Orion com o manequim instrumentado Commander Moonikin Campos; dez CubeSats",
+  "delta_v": "~0.43 km/s (apenas as manobras de saída da DRO e de sobrevoo de retorno; total não informado)",
+  "type": "TESTE DE ESPAÇO PROFUNDO NÃO TRIPULADO · REALIZADO",
+  "first": "O primeiro voo do Space Launch System, um teste não tripulado da Orion ao redor da Lua",
+  "description": "Artemis I foi o primeiro voo do Space Launch System da NASA e um teste não tripulado da espaçonave Orion ao redor da Lua. O SLS Block 1 decolou do Launch Complex 39B do Centro Espacial Kennedy em 2022-11-16 à 1:47 EST (06:47 UTC). Em 2022-11-21 a Orion fez um sobrevoo lunar propulsado a cerca de 130 km (80 milhas) acima da superfície, a primeira de duas manobras necessárias para entrar em uma órbita retrógrada distante (DRO), e entrou nessa órbita em 2022-11-25. Em 2022-11-26 superou o recorde de distância da Terra da Apollo 13 para uma espaçonave projetada para levar humanos, 248.655 milhas. No ponto mais distante, a Orion estava a 268.563 milhas (cerca de 432.000 km) da Terra e a 43.471 milhas (cerca de 70.000 km) além do lado oculto da Lua. Uma queima de 1 minuto 45 segundos a tirou da órbita em 2022-12-01, e em 2022-12-05 um sobrevoo propulsado de retorno de 3 minutos 27 segundos, de novo a cerca de 130 km acima da superfície, a redirecionou para a Terra. A Orion amerissou no oceano Pacífico ao largo de San Diego em 2022-12-11 às 12:40 EST, após 25 dias, 10 horas e 53 minutos. No assento do comandante estava o Commander Moonikin Campos, um manequim instrumentado com o traje Orion Crew Survival System. A Orion cumpriu 161 objetivos de teste; a análise da perda inesperada de material do escudo térmico (char loss) foi aproveitada na Artemis II.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANÇAMENTO",
+      "note": "O SLS Block 1 decola de LC-39B em 2022-11-16 às 06:47 UTC com a Orion não tripulada.",
+      "type": "nominal"
+    },
+    {
+      "met": 5.26,
+      "label": "SOBREVOO DE IDA",
+      "note": "Sobrevoo propulsado em 2022-11-21 a cerca de 130 km acima da superfície, após uma queima de 2 minutos 30 segundos.",
+      "type": "info"
+    },
+    {
+      "met": 9.63,
+      "label": "ENTRADA NA DRO",
+      "note": "A Orion entra na órbita retrógrada distante em 2022-11-25.",
+      "type": "nominal"
+    },
+    {
+      "met": 15.63,
+      "label": "SAÍDA DA DRO",
+      "note": "Uma queima de 1 minuto 45 segundos em 2022-12-01 (cerca de 0.14 km/s) tira a Orion da órbita.",
+      "type": "nominal"
+    },
+    {
+      "met": 19.41,
+      "label": "SOBREVOO DE RETORNO",
+      "note": "Sobrevoo propulsado em 2022-12-05 a cerca de 130 km acima da superfície; uma queima de 3 minutos 27 segundos (cerca de 0.29 km/s) redireciona a Orion para a Terra.",
+      "type": "info"
+    },
+    {
+      "met": 25.45,
+      "label": "AMERISSAGEM",
+      "note": "Oceano Pacífico ao largo de San Diego em 2022-12-11 às 12:40 EST, após 25 dias 10 horas 53 minutos.",
+      "type": "nominal"
+    }
+  ]
+}

@@ -96,5 +96,33 @@
     "/fleet?id=tiangong": "Flotte — Shenzhou, Tianzhou & die Long-March-Familie",
     "/programs/iss": "ISS — die Station, von der Tiangong ausgeschlossen war",
     "/earth?site=tiangong": "Tiangong über uns"
+  },
+  "roster": {
+    "module:tianhe": {
+      "note": "Das Kernmodul — Wohnquartiere, Lebenserhaltung, Antrieb und die Kontrollzentrale der Station. Das zuerst gestartete Teil und das Herz der Station."
+    },
+    "module:chinarm": {
+      "note": "Der Roboterarm der Station, auf Tianhe montiert, zum Verlegen von Modulen und zur Unterstützung von Weltraumspaziergängen."
+    },
+    "module:wentian": {
+      "note": "Das erste Labormodul — mit einer Ersatz-Kontrollzentrale und einer Luftschleuse für Weltraumspaziergänge."
+    },
+    "module:mengtian": {
+      "note": "Das zweite Labormodul, das die T-förmige Station vervollständigt; eine Einrichtung für Schwerelosigkeitsforschung."
+    },
+    "mission:shenzhou-1": {
+      "note": "erster unbemannter Shenzhou-Testflug — der Beweis, dass China seine eigene Besatzungskapsel fliegen konnte"
+    },
+    "mission:shenzhou-5": {
+      "note": "Yang Liwei wird der erste chinesische Astronaut im Orbit — China reiht sich neben USA und UdSSR als dritte Nation ein, die einen Menschen mit eigener Rakete startet"
+    },
+    "Shenzhou 9 → Tiangong-1": {
+      "note": "erste bemannte Kopplung mit einer chinesischen Station; Liu Yang wird Chinas erste Frau im All",
+      "name": "Shenzhou 9 → Tiangong-1"
+    },
+    "Continuous occupation": {
+      "note": "die ständige Besatzung beginnt mit Shenzhou-14 im Juni 2022; die CSS ist seitdem ununterbrochen bemannt",
+      "name": "Dauerbesetzung"
+    }
   }
 }

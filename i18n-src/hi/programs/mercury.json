@@ -103,5 +103,15 @@
     "/earth": "पृथ्वी — कक्षाएँ, पुनःप्रवेश और प्रक्षेपण स्थल",
     "/science/mission-phases/edl": "प्रवेश, अवरोहण और लैंडिंग",
     "/science/propulsion/tsiolkovsky": "रॉकेट समीकरण — Redstone कक्षा तक क्यों नहीं पहुँच सका"
+  },
+  "roster": {
+    "Mercury-Redstone 2 (Ham)": {
+      "note": "चिंपैंज़ी का उप-कक्षीय परीक्षण — Redstone को मानवयुक्त उड़ान के लिए मंज़ूरी दिलाई",
+      "name": "Mercury-Redstone 2 (Ham)"
+    },
+    "Mercury-Atlas 5 (Enos)": {
+      "note": "चिंपैंज़ी का दो-परिक्रमा परीक्षण — ग्लेन के उड़ने से पहले Atlas को मंज़ूरी दिलाई",
+      "name": "Mercury-Atlas 5 (Enos)"
+    }
   }
 }

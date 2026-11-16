@@ -94,5 +94,25 @@
   "link_labels": {
     "/earth": "Terre — orbites et sites de lancement",
     "/fleet?id=discovery": "Flotte — les orbiteurs du Space Shuttle"
+  },
+  "roster": {
+    "mission:galileo": {
+      "note": "larguée depuis la soute de charge utile de la navette Atlantis lors de STS-34, en octobre 1989, puis envoyée vers Jupiter par un étage supérieur"
+    },
+    "mission:ulysses": {
+      "note": "larguée depuis la soute de charge utile de la navette Discovery lors de STS-41, en octobre 1990, puis envoyée, en passant près de Jupiter, sur une orbite polaire autour du Soleil"
+    },
+    "mission:magellan": {
+      "note": "larguée depuis la soute de charge utile de la navette Atlantis lors de STS-30, en mai 1989, puis envoyée vers Vénus par un étage supérieur"
+    },
+    "mission:sts-1": {
+      "note": "le premier vol orbital — la première fois qu'un vaisseau habité était envoyé en orbite dès son lancement inaugural, et le premier réutilisable"
+    },
+    "mission:sts-51-l": {
+      "note": "perdue 73 secondes après le lancement quand un joint de propulseur durci par le froid a cédé ; sept membres d'équipage sont morts, et le désastre a révélé une culture qui avait normalisé un risque connu"
+    },
+    "mission:sts-107": {
+      "note": "perdue pendant la rentrée atmosphérique, des débris de mousse ayant percé l'aile au lancement ; sept membres d'équipage sont morts, et la même défaillance organisationnelle s'est avérée s'être répétée"
+    }
   }
 }

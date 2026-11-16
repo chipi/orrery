@@ -10,8 +10,8 @@
     { "id": "change2", "label": "Chang'e 2 (2010-2011)", "agency": "CNSA" }
   ],
   "firsts": [
-    { "year": 1966, "label": "Luna 10 — first artificial lunar orbiter (USSR)", "mission_id": "luna10" },
-    { "year": 1968, "label": "Apollo 8 — first crewed lunar orbit (USA)", "mission_id": "apollo8" }
+    { "year": 1966, "label": "Luna 10 — first artificial lunar orbiter", "mission_id": "luna10" },
+    { "year": 1968, "label": "Apollo 8 — first crewed lunar orbit", "mission_id": "apollo8" }
   ],
   "science_link": {
     "tab": "orbits",

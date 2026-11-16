@@ -50,3 +50,32 @@ describe('i18n overlays keep the English link targets', () => {
     expect(problems, problems.slice(0, 30).join('\n')).toEqual([]);
   });
 });
+
+// A science card's {tab, section} is a path, never prose: the sr-Cyrl overlays had 108 cards
+// with a translated tab ("Планете", "орбите", "размере и време") that link to no page (fixed
+// 2026-11-12). Every card in every locale must point at static/data/science/<tab>/<section>.json.
+describe('i18n overlays keep the science card paths', () => {
+  it('every science_sections entry in every locale names a real science section', () => {
+    const problems: string[] = [];
+    const cards = (o: unknown, out: { tab?: unknown; section?: unknown }[] = []) => {
+      if (Array.isArray(o)) o.forEach((v) => cards(v, out));
+      else if (o && typeof o === 'object') {
+        for (const [k, v] of Object.entries(o)) {
+          if (k === 'science_sections' && Array.isArray(v)) out.push(...v);
+          else cards(v, out);
+        }
+      }
+      return out;
+    };
+    for (const loc of readdirSync(R)) {
+      for (const f of walk(path.join(R, loc))) {
+        for (const c of cards(JSON.parse(readFileSync(f, 'utf8')))) {
+          const p = path.join('static/data/science', String(c.tab), `${String(c.section)}.json`);
+          if (!existsSync(p))
+            problems.push(`${path.relative(R, f)} → ${String(c.tab)}/${String(c.section)}`);
+        }
+      }
+    }
+    expect(problems, problems.slice(0, 30).join('\n')).toEqual([]);
+  });
+});

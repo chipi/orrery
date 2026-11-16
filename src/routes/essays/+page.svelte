@@ -5,7 +5,7 @@
 -->
 <script lang="ts">
   import { metaDescription, seoPageTitle } from '$lib/seo';
-  import { responsive } from '$lib/responsive-image.svelte';
+  import EntityCard from '$lib/components/EntityCard.svelte';
   import { IMAGE_SIZES } from '$lib/image-sizes';
   import { base } from '$app/paths';
   import { localizeHref } from '$lib/paraglide/runtime';
@@ -60,64 +60,39 @@
   <meta name="description" content={metaDescription(m.essays_seo_description())} />
 </svelte:head>
 
-<section class="longview" data-route-ready="true">
+<section class="longview page-shell" data-route-ready="true">
   <header class="head">
     <LongViewHero />
-    <p class="intro">{m.essays_intro()}</p>
+    <p class="intro page-lead">{m.essays_intro()}</p>
   </header>
 
   {#each groups as g (g.key)}
     <section class="movement">
-      <h2>{g.label}</h2>
+      <h2 class="page-section-label page-section-label--rule">{g.label}</h2>
       <p class="mv-blurb">{g.blurb}</p>
-      <div class="cards">
+      <ul class="entity-card-grid narrow-single">
         {#each g.essays as e (e.slug)}
-          <a class="card" href="{base}{localizeHref(`/essays/${e.slug}`)}">
-            {#if e.hero}
-              <img
-                class="card-hero"
-                {...responsive(imgSrc(e.hero), IMAGE_SIZES.wideCard)}
-                alt=""
-                loading="lazy"
-                decoding="async"
-              />
-            {/if}
-            <h3>{e.title}</h3>
-            <p class="card-dek">{essayPlainText(e.dek ?? '')}</p>
-            <span class="go">{m.essays_read()}</span>
-          </a>
+          <EntityCard
+            href="{base}{localizeHref(`/essays/${e.slug}`)}"
+            photo={e.hero ? imgSrc(e.hero) : ''}
+            imageSizes={IMAGE_SIZES.wideCard}
+            name={e.title ?? e.slug}
+            nameLines={2}
+            level={3}
+            story={essayPlainText(e.dek ?? '')}
+            editorial
+          />
         {/each}
-      </div>
+      </ul>
     </section>
   {/each}
 </section>
 
 <style>
-  .longview {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 14px 20px 96px;
-    color: var(--color-text, #eef);
-  }
-  .intro {
-    font-family: 'Crimson Pro', Georgia, serif;
-    font-size: 20px;
-    line-height: 1.6;
-    color: rgba(255, 255, 255, 0.8);
-    max-width: 64ch;
-    margin: 0 0 8px;
-  }
   .movement {
     margin-top: 44px;
   }
-  .movement h2 {
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 13px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: #7fb0e0;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 18px;
+  .movement .page-section-label {
     margin: 0 0 4px;
   }
   .mv-blurb {
@@ -125,59 +100,5 @@
     color: rgba(255, 255, 255, 0.5);
     margin: 0 0 18px;
     max-width: 60ch;
-  }
-  .cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 16px;
-  }
-  .card {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: 20px;
-    background: rgba(18, 24, 38, 0.7);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    text-decoration: none;
-    color: inherit;
-    transition:
-      border-color 0.15s,
-      transform 0.15s;
-  }
-  .card:hover {
-    border-color: rgba(127, 176, 224, 0.6);
-    transform: translateY(-2px);
-  }
-  /* Full-bleed hero at the top of the card (bleeds out of the 20px padding). */
-  .card-hero {
-    display: block;
-    width: calc(100% + 40px);
-    height: 148px;
-    margin: -20px -20px 4px;
-    object-fit: cover;
-    border-radius: 10px 10px 0 0;
-    background: rgba(8, 12, 22, 0.6);
-  }
-  .card h3 {
-    font-family: 'Bebas Neue', 'Space Mono', sans-serif;
-    font-size: 26px;
-    letter-spacing: 0.5px;
-    margin: 0;
-    color: #fff;
-  }
-  .card-dek {
-    font-family: 'Crimson Pro', Georgia, serif;
-    font-size: 15.5px;
-    line-height: 1.5;
-    color: rgba(255, 255, 255, 0.68);
-    margin: 0;
-    flex: 1;
-  }
-  .go {
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 11px;
-    letter-spacing: 1px;
-    color: #7fb0e0;
   }
 </style>

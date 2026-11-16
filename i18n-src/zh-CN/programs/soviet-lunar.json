@@ -97,5 +97,23 @@
     "/moon?site=luna16": "Luna 16 — 首次无人采样返回",
     "/moon?site=luna17": "Luna 17 — Lunokhod 1",
     "/moon?site=luna21": "Luna 21 — Lunokhod 2"
+  },
+  "roster": {
+    "Zond 5": {
+      "note": "首个绕月飞行并安全返回地球的航天器——它搭载的两只乌龟是首批绕月往返的生物，比Apollo 8早三个月",
+      "name": "Zond 5"
+    },
+    "N1 — four launch failures": {
+      "note": "N1的四次试验发射（1969-1972年）全部失败；1969年7月的第二次坠回发射台，成为有记录以来最大的非核爆炸之一",
+      "name": "N1——四次发射失败"
+    },
+    "LK lunar lander": {
+      "note": "单人宇航员着陆器——质量约为Apollo登月舱的40%——在地球轨道上进行了无人飞行测试，但从未飞往月球",
+      "name": "LK登月着陆器"
+    },
+    "L3 complex": {
+      "note": "完整的N1-L3登月组合：一次N1发射，月球轨道上的双人Soyuz 7K-LOK，以及乘LK降落月面的一名宇航员",
+      "name": "L3综合体"
+    }
   }
 }

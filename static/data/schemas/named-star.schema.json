@@ -4,20 +4,30 @@
   "title": "Curated named-star catalog (PRD-030 / RFC-032, Slice 1)",
   "description": "The ~60 notable stars that get a marker + label + Panel in /explore v2. Base record resolved from HYG by IAU proper name; per-locale editorial overlays live under i18n-src/<locale>/universe/named-stars/<id>.json.",
   "type": "object",
-  "required": ["schema_version", "generated_at", "script_version", "catalog", "count", "stars"],
+  "required": ["schema_version", "generated_at", "script_version", "catalog", "catalogue_source", "count", "stars"],
   "additionalProperties": false,
   "properties": {
     "schema_version": { "type": "integer", "const": 1 },
     "generated_at": { "type": "string", "format": "date-time" },
     "script_version": { "type": "string", "minLength": 1 },
     "catalog": { "type": "string", "minLength": 1 },
+    "catalogue_source": {
+      "type": "object",
+      "required": ["source", "bibcode", "record_url"],
+      "additionalProperties": false,
+      "properties": {
+        "source": { "type": "string", "minLength": 1 },
+        "bibcode": { "type": ["string", "null"] },
+        "record_url": { "type": "string", "pattern": "^https://" }
+      }
+    },
     "count": { "type": "integer", "minimum": 1 },
     "stars": {
       "type": "array",
       "minItems": 1,
       "items": {
         "type": "object",
-        "required": ["id", "hip", "proper", "con", "spect", "dist_pc", "mag", "absmag", "bv", "x", "y", "z"],
+        "required": ["id", "hip", "proper", "con", "spect", "dist_pc", "mag", "absmag", "bv", "x", "y", "z", "records"],
         "additionalProperties": false,
         "properties": {
           "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
@@ -31,7 +41,13 @@
           "bv": { "type": ["number", "null"] },
           "x": { "type": "number" },
           "y": { "type": "number" },
-          "z": { "type": "number" }
+          "z": { "type": "number" },
+          "records": {
+            "type": "object",
+            "required": ["simbad"],
+            "additionalProperties": false,
+            "properties": { "simbad": { "type": "string", "pattern": "^https://simbad.cds.unistra.fr/" } }
+          }
         }
       }
     }

@@ -94,5 +94,31 @@
   "link_labels": {
     "/earth": "Aarde — banen, rendez-vous & lanceerplaatsen",
     "/science/mission-phases/edl": "Intrede, daling & landing"
+  },
+  "roster": {
+    "Gemini 1": {
+      "note": "onbemande test van structuur en draagraket",
+      "name": "Gemini 1"
+    },
+    "Gemini 2": {
+      "note": "onbemande suborbitale hitteschildtest",
+      "name": "Gemini 2"
+    },
+    "Gemini 5": {
+      "note": "acht dagen in de lucht — de eerste vlucht van meer dan een week, die bewees dat bemanningen een retourvlucht naar de Maan konden volhouden",
+      "name": "Gemini 5"
+    },
+    "Gemini 9A": {
+      "note": "het 'boze alligator'-doelwit dat niet wilde openen; de ruimtewandeling bleek uitputtend en bijna rampzalig",
+      "name": "Gemini 9A"
+    },
+    "Gemini 10": {
+      "note": "koppelde, gebruikte de motor van de Agena om van baan te veranderen en had een rendez-vous met een tweede doelwit",
+      "name": "Gemini 10"
+    },
+    "Gemini 11": {
+      "note": "directe-opstijging-rendez-vous in de eerste omloop; bereikte een recordapogeum van 1.374 km",
+      "name": "Gemini 11"
+    }
   }
 }

@@ -548,10 +548,10 @@
   .debug-panel {
     position: fixed;
     /* Start just below the nav (so it never covers it) — then drag anywhere. */
-    top: calc(var(--nav-height, 64px) + 10px);
+    top: calc(var(--nav-height) + 10px);
     right: 12px;
     width: min(360px, calc(100vw - 24px));
-    max-height: calc(100vh - var(--nav-height, 64px) - 24px);
+    max-height: calc(100vh - var(--nav-height) - 24px);
     z-index: 90;
     background: rgba(8, 10, 22, 0.92);
     border: 1px solid rgba(94, 234, 212, 0.4);
@@ -597,10 +597,10 @@
     font-family: 'Bebas Neue', sans-serif;
     font-size: 12px;
     letter-spacing: 3px;
-    color: #4ecdc4;
+    color: #889fe7;
   }
   .debug-page-label {
-    font-size: 10px;
+    font-size: var(--size-label);
     color: rgba(220, 230, 245, 0.7);
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -611,7 +611,7 @@
     gap: 10px;
   }
   .debug-fps {
-    font-size: 10px;
+    font-size: var(--size-label);
     color: rgba(220, 230, 245, 0.7);
   }
   .debug-close {
@@ -624,7 +624,7 @@
     padding: 2px 6px;
   }
   .debug-close:hover {
-    color: #4ecdc4;
+    color: #889fe7;
   }
   .debug-tabs {
     display: flex;
@@ -636,7 +636,7 @@
     border: none;
     color: rgba(220, 230, 245, 0.7);
     font-family: inherit;
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
     text-transform: uppercase;
     padding: 6px 8px;
@@ -650,8 +650,8 @@
     color: rgba(220, 230, 245, 0.95);
   }
   .debug-tab.active {
-    color: #4ecdc4;
-    border-bottom-color: #4ecdc4;
+    color: #889fe7;
+    border-bottom-color: #889fe7;
   }
   .debug-body {
     flex: 1;
@@ -671,7 +671,7 @@
   .debug-row-heading {
     color: rgba(220, 230, 245, 0.85);
     text-transform: uppercase;
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
     padding-bottom: 4px;
   }
@@ -687,7 +687,7 @@
     color: rgba(220, 230, 245, 0.95);
   }
   .debug-toggle input {
-    accent-color: #4ecdc4;
+    accent-color: #889fe7;
   }
   .debug-slider {
     display: inline-flex;
@@ -696,11 +696,11 @@
   }
   .debug-slider input[type='range'] {
     width: 120px;
-    accent-color: #4ecdc4;
+    accent-color: #889fe7;
   }
   .debug-slider-val {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     color: rgba(94, 234, 212, 0.8);
     min-width: 32px;
     text-align: right;
@@ -713,7 +713,7 @@
   }
   .debug-key {
     color: rgba(94, 234, 212, 0.8);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 1.5px;
     text-transform: uppercase;
   }
@@ -725,13 +725,12 @@
   }
   .debug-stub {
     margin-top: 8px;
-    font-size: 10px;
+    font-size: var(--size-label);
     color: rgba(220, 230, 245, 0.5);
-    font-style: italic;
   }
   .debug-val em {
     color: rgba(220, 230, 245, 0.5);
     font-style: italic;
-    font-size: 9px;
+    font-size: var(--size-label);
   }
 </style>

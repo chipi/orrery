@@ -28,18 +28,17 @@
   "firsts": [
     {
       "year": 1962,
-      "label": "Mariner 2 — 初の金星フライバイ (アメリカ)",
-      "mission_id": "mariner-2"
+      "label": "Mariner 2 — 初の金星フライバイ"
     },
     {
       "year": 1965,
-      "label": "Mariner 4 — 初の火星フライバイ (アメリカ)",
-      "mission_id": "mariner-4"
+      "label": "Mariner 4 — 初の火星フライバイ",
+      "mission_id": "mariner4"
     },
     {
       "year": 1974,
-      "label": "Mariner 10 — 初の水星フライバイ (アメリカ)",
-      "mission_id": "mariner-10"
+      "label": "Mariner 10 — 初の水星フライバイ",
+      "mission_id": "mariner10"
     }
   ],
   "science_link": {

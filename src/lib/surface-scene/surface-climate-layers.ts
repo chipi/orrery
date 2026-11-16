@@ -51,7 +51,7 @@ interface ZonePalette {
 // null = no climate (airless body). Mars uses a colder palette than Earth
 // to read as "same zones, but frozen".
 const CLIMATE: Record<string, ZonePalette | null> = {
-  earth: { tropical: 0x2e8b57, temperate: 0x4a90a4, polar: 0xdfeeff },
+  earth: { tropical: 0x2e8b57, temperate: 0x4a90a4, polar: 0xdfeeff }, // a3-keep: science layer colour, palette review at the end
   mars: { tropical: 0xb0673c, temperate: 0x8390a6, polar: 0xe6eefb },
   moon: null,
 };

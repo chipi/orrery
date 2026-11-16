@@ -87,5 +87,19 @@
     "/fleet?id=gaganyaan": "Flota — la nave Gaganyaan",
     "/programs/chandrayaan": "Chandrayaan: el programa lunar de la India",
     "/programs/mangalyaan": "Mangalyaan: la misión a Marte de la India, lograda al primer intento"
+  },
+  "roster": {
+    "Announced": {
+      "note": "la India se compromete a enviar a sus propios astronautas en su propio cohete — el objetivo que la convertiría en la cuarta nación con vuelo espacial tripulado independiente",
+      "name": "Anunciado"
+    },
+    "Test Vehicle abort": {
+      "note": "la primera prueba de vuelo demuestra el sistema de escape de la tripulación, que debe apartar la cápsula de un cohete que falla — la capacidad de seguridad en torno a la cual se construye un programa tripulado",
+      "name": "Aborto del vehículo de pruebas"
+    },
+    "First crewed flight": {
+      "note": "el estreno previsto de una tripulación india en una nave india — previsto para principios de 2027, uniéndose a Rusia, Estados Unidos y China como potencias de vuelo espacial tripulado independiente",
+      "name": "Primer vuelo tripulado"
+    }
   }
 }

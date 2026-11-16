@@ -107,5 +107,28 @@
     "/science/propulsion/tsiolkovsky": "ロケット方程式",
     "/moon?site=apollo15": "Apollo 15 — ハドリー・アペニン",
     "/moon?site=apollo16": "Apollo 16 — デカルト高地"
+  },
+  "roster": {
+    "Ranger": {
+      "note": "ロボットによる準備——衝突探査機が月面の初のクローズアップ画像を送り返し、衝突の瞬間まで表面を撮影し続けて、Apolloが直面する地形を明らかにした",
+      "name": "Ranger"
+    },
+    "Lunar Orbiter": {
+      "note": "ロボットによる準備——5機の周回機が月のほぼ全域を撮影し、Apolloの着陸地点を選定・認証した。安全な着陸を可能にした偵察活動",
+      "name": "Lunar Orbiter"
+    },
+    "Surveyor": {
+      "note": "ロボットによる準備——軟着陸機が、月面は宇宙船を飲み込まず重さを支えられることを実証した。Apollo 12はSurveyor 3のそばに着陸し、その部品を持ち帰った",
+      "name": "Surveyor"
+    },
+    "mission:apollo-1": {
+      "note": "キャビン火災——地上試験中にクルーを失う"
+    },
+    "mission:apollo7": {
+      "note": "初の有人飛行"
+    },
+    "mission:apollo9": {
+      "note": "地球周回軌道での月着陸船の有人試験"
+    }
   }
 }

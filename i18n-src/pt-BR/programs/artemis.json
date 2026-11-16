@@ -95,5 +95,22 @@
     "/moon": "Lua — o destino",
     "/fleet?id=orion": "Frota — Orion, SLS e o equipamento lunar",
     "/programs/apollo": "Apollo — o programa que dá nome ao Artemis e que ele supera"
+  },
+  "roster": {
+    "mission:artemis1": {
+      "note": "uma Orion não tripulada contorna a Lua no primeiro lançamento do SLS — o hardware de espaço profundo é comprovado antes que alguém viaje nele"
+    },
+    "mission:artemis2": {
+      "note": "a primeira tripulação — quatro astronautas, incluindo o primeiro não americano a voar à Lua; o sobrevoo de abril de 2026 levou seres humanos mais longe da Terra do que nunca"
+    },
+    "mission:artemis3": {
+      "note": "um teste tripulado em órbita da Terra — a Orion acopla-se aos módulos de pouso comerciais antes que alguém viaje neles até a Lua, como a Apollo 9 fez em 1969"
+    },
+    "mission:artemis4": {
+      "note": "o retorno à superfície — o primeiro pouso lunar tripulado desde 1972 e o primeiro de todos perto do polo sul"
+    },
+    "mission:artemis5": {
+      "note": "o segundo pouso, previsto para o fim de 2028 — o início do trabalho rumo a uma base no polo sul"
+    }
   }
 }

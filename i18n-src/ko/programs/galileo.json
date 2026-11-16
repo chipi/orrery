@@ -86,5 +86,26 @@
   "link_labels": {
     "/explore": "3D 탐색기의 목성",
     "/programs/cassini": "Cassini — 같은 아이디어를 토성에서"
+  },
+  "roster": {
+    "mission:galileo": {
+      "note": "목성 궤도에 진입한 첫 우주선 — 거의 8년 동안 이 거대 행성과 주요 위성들을 가까이서 연구했다"
+    },
+    "The atmospheric probe": {
+      "note": "도착 직후 Galileo는 목성 구름 속으로 뛰어드는 탐사선을 분리했다 — 거대 행성 대기의 최초이자 유일한 직접 시료",
+      "name": "대기 탐사선"
+    },
+    "Europa's hidden ocean": {
+      "note": "Galileo의 자기장 및 영상 자료는 목성의 위성 유로파의 얼음 아래에 액체 물의 바다가 있다는 지금까지 가장 강력한 근거를 제시했다",
+      "name": "유로파의 숨은 바다"
+    },
+    "The stuck antenna": {
+      "note": "주 안테나가 완전히 펴지지 않았다. 우주선에 전송된 새로운 데이터 압축 소프트웨어로 임무가 구해졌고, 느린 통신 회선으로도 과학 성과 대부분을 건졌다",
+      "name": "펴지지 않은 안테나"
+    },
+    "The deliberate end": {
+      "note": "연료가 바닥난 Galileo는 유로파에 추락해 그 바다를 오염시키는 일이 결코 없도록 일부러 목성에 돌입시켜졌다",
+      "name": "의도된 최후"
+    }
   }
 }

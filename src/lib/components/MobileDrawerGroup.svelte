@@ -14,6 +14,7 @@
   MobileControlsDrawer). Position above the route's primary bar via --mcd-bottom.
 -->
 <script lang="ts">
+  import Chip from '$lib/components/Chip.svelte';
   import type { Snippet } from 'svelte';
   import * as m from '$lib/paraglide/messages';
   import { viewport } from '$lib/viewport.svelte';
@@ -89,9 +90,12 @@
     }
     const b = btn.getBoundingClientRect();
     const container = mdgEl.getBoundingClientRect();
-    const panelW = Math.min(400, window.innerWidth * 0.92);
+    const panelW = Math.min(400, container.width);
     const centre = b.left + b.width / 2;
-    const leftVp = Math.max(8, Math.min(centre - panelW / 2, window.innerWidth - panelW - 8));
+    const leftVp = Math.max(
+      container.left,
+      Math.min(centre - panelW / 2, container.right - panelW),
+    );
     panelLeft = Math.round(leftVp - container.left);
   }
 
@@ -104,12 +108,18 @@
     positionPanel();
   });
 
-  // Re-measure on resize (width feeds the clamp + the container origin).
+  // Re-measure on resize (width feeds the clamp + the container origin), and when the row's own
+  // width changes because a detail drawer opened or closed beside it.
   $effect(() => {
     if (typeof window === 'undefined') return;
     const h = () => positionPanel();
     window.addEventListener('resize', h);
-    return () => window.removeEventListener('resize', h);
+    const ro = mdgEl && typeof ResizeObserver !== 'undefined' ? new ResizeObserver(h) : null;
+    if (mdgEl) ro?.observe(mdgEl);
+    return () => {
+      window.removeEventListener('resize', h);
+      ro?.disconnect();
+    };
   });
 
   // Swipe-down on the panel body collapses it.
@@ -159,14 +169,14 @@
     <!-- --panel-left (landscape only) centres this above the open tab; portrait
          leaves it unset and the panel stays a full-width flex child. -->
     <div class="mdg-panel" style:--panel-left={panelLeft != null ? `${panelLeft}px` : null}>
-      <button
-        type="button"
-        class="mdg-close"
+      <Chip
+        kind="action"
+        class="mdg-close ui-chip--close"
         aria-label={m.panel_close()}
         onclick={() => (openId = null)}
       >
         ×
-      </button>
+      </Chip>
       <!-- swipe-down-to-close is a supplementary gesture; Esc + tap-dim are the
            accessible closes, so the body needs no interactive role. -->
       <!-- svelte-ignore a11y_no_static_element_interactions -->
@@ -232,25 +242,11 @@
       width: 100%;
     }
     /* Discoverable close on the expanded panel (tap-away + Esc still work). */
-    .mdg-close {
+    :global(.mdg-close) {
       position: absolute;
       top: 6px;
       right: 6px;
       z-index: 2;
-      width: 30px;
-      height: 30px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(15, 18, 35, 0.85);
-      backdrop-filter: blur(4px);
-      -webkit-backdrop-filter: blur(4px);
-      border: 1px solid var(--color-border);
-      border-radius: 8px;
-      color: rgba(255, 255, 255, 0.85);
-      font-size: 20px;
-      line-height: 1;
-      cursor: pointer;
     }
 
     .mdg-body {
@@ -280,7 +276,7 @@
     }
 
     /* Each tab is a rounded pill matching the time-scrubber below it (same
-       border / blur / teal-active), icon inline beside a short label. */
+       border / blur / accent-active), icon inline beside a short label. */
     .mdg-tab {
       flex: 1;
       display: flex;
@@ -293,19 +289,19 @@
       background: rgba(15, 18, 35, 0.62);
       backdrop-filter: blur(6px);
       -webkit-backdrop-filter: blur(6px);
-      border: 1px solid rgba(75, 156, 211, 0.3);
+      border: 1px solid var(--color-accent-edge);
       border-radius: 8px;
       box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
       font-family: var(--font-mono, 'Space Mono', monospace);
-      font-size: 10px;
+      font-size: var(--size-label);
       letter-spacing: 0.6px;
       color: rgba(207, 224, 255, 0.75);
       cursor: pointer;
       white-space: nowrap;
     }
     .mdg-tab.active {
-      color: #4ecdc4;
-      border-color: rgba(78, 205, 196, 0.6);
+      color: var(--color-state);
+      border-color: var(--color-accent-strong);
       background: rgba(20, 26, 50, 0.85);
     }
     .mdg-icon {
@@ -314,10 +310,10 @@
       color: #cfe0ff;
     }
     .mdg-tab.active .mdg-icon {
-      color: #4ecdc4;
+      color: var(--color-state);
     }
     .mdg-tab:focus-visible {
-      outline: 2px solid var(--color-accent, #4ecdc4);
+      outline: 2px solid var(--color-accent, var(--color-focus));
       outline-offset: -2px;
       border-radius: 2px;
     }
@@ -360,6 +356,16 @@
   :global(html[data-touch][data-orientation='landscape']) .mdg.bottom-inline .mdg-panel {
     pointer-events: auto;
   }
+  /* A 667 px landscape phone (iPhone SE) fits the route's 385 px strip and the three tabs on one
+     line only with tighter tabs. */
+  @media (max-width: 719px) {
+    :global(html[data-touch][data-orientation='landscape']) .mdg.bottom-inline .mdg-tabs {
+      gap: 4px;
+    }
+    :global(html[data-touch][data-orientation='landscape']) .mdg.bottom-inline .mdg-tab {
+      padding: 6px 7px;
+    }
+  }
   /* All landscape drawers (inline or not): the opened panel is a constrained
      floating card CENTRED ABOVE the tab that opened it, not a full-width sheet.
      --panel-left is measured + clamped in JS so a left tab reads left, centre
@@ -369,9 +375,30 @@
     position: absolute;
     bottom: calc(100% + 8px);
     left: var(--panel-left, 8px);
-    width: min(400px, 92vw);
+    width: min(400px, 100%);
+  }
+  /* An open detail panel is a side drawer in landscape (Panel.svelte, z 30): the tab row and the
+     card it opens end at the drawer's edge, so they never cross the drawer's actions and stay
+     usable for the scene beside it (the Worlds). */
+  :global(html[data-touch][data-orientation='landscape']:has(aside.panel:not(.covered))) .mdg {
+    right: calc(var(--panel-width) + 12px);
+  }
+  /* An inline row shares the bottom line with the route's strip (/explore: the time dock is most of
+     the width left beside the drawer, and the scale strip and level card fill the rest), so there
+     is no room to narrow it. Its part left of the drawer would still take a tap and open a card
+     under the drawer, so the route hides the row while a drawer is open (HudControls
+     `drawerUnderPanel`, from the page's panel width; a `:has()` rule here was not re-evaluated in
+     time under reduced motion); closing the panel brings it back. */
+  :global(html[data-touch][data-orientation='landscape']:has(aside.panel:not(.covered)))
+    .mdg.bottom-inline {
+    right: 8px;
+    z-index: 25;
   }
   :global(html[data-touch][data-orientation='landscape']) .mdg-body {
     max-height: min(46vh, 240px);
+    padding-block: 6px;
+    /* The floating card sits over the level card and the scale chips: opaque enough that their
+       text does not show through it. */
+    background: rgba(8, 10, 22, 0.98);
   }
 </style>

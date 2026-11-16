@@ -10,6 +10,10 @@
       "tab": "orbits",
       "section": "semi-major-axis",
       "why": "Vesta orbita a 2,36 au — cinturão interno. Sua proximidade levou Dawn a escolher visitar Vesta primeiro (2011), depois partir para Ceres (2015)."
+    },
+    {
+      "tab": "propulsion",
+      "section": "ion-drive"
     }
   ]
 }

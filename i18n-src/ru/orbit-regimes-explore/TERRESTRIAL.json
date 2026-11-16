@@ -28,17 +28,16 @@
   "firsts": [
     {
       "year": 1962,
-      "label": "Mariner 2 — первый пролёт мимо Венеры (США)",
-      "mission_id": "mariner2"
+      "label": "Mariner 2 — первый пролёт мимо Венеры"
     },
     {
       "year": 1965,
-      "label": "Mariner 4 — первый пролёт мимо Марса (США)",
+      "label": "Mariner 4 — первый пролёт мимо Марса",
       "mission_id": "mariner4"
     },
     {
       "year": 1974,
-      "label": "Mariner 10 — первый пролёт мимо Меркурия (США)",
+      "label": "Mariner 10 — первый пролёт мимо Меркурия",
       "mission_id": "mariner10"
     }
   ],

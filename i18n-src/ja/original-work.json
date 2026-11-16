@@ -1991,6 +1991,86 @@
       "title": "Sputnik 1",
       "what": "磨き上げた直径58 cmの球体。半球の継ぎ目、36本のボルト、後方へ傾いた長さ2.4 mと2.9 mのホイップアンテナ4本。",
       "where": "飛行・探査"
+    },
+    "/images/colophon/model-pad-apollo-lut_webp": {
+      "title": "発射台：アポロ、LC-39",
+      "what": "サターン V の発射台：離昇時に外れるスイングアームを備えた高さ 380 フィートのアンビリカルタワーと、フレームトレンチ。寸法はウィキペディア掲載の NASA の数値による。",
+      "where": "飛行 · 発射台"
+    },
+    "/images/colophon/model-pad-shuttle_webp": {
+      "title": "発射台：スペースシャトル、LC-39",
+      "what": "シャトルの発射台：固定式サービス構造物（マスト込みで 350 フィート）、後ろへ回した回転式サービス構造物、高さ 290 フィートの給水塔。主な高さはウィキペディアによる。その他は概算。",
+      "where": "飛行 · 発射台"
+    },
+    "/images/colophon/model-pad-sls_webp": {
+      "title": "発射台：SLS、LC-39B",
+      "what": "アルテミスの発射台：ロケットの脇のモバイルランチャーのタワーと、3 本の高い避雷塔。大きさは概算です。",
+      "where": "飛行 · 発射台"
+    },
+    "/images/colophon/model-pad-soyuz_webp": {
+      "title": "発射台：ソユーズ、バイコヌールとプレセツク",
+      "what": "R-7 系の発射台：離昇時に外側へ倒れる 4 本の支持アーム、後退した 2 基のサービスキャビン、避雷マスト、フレームピット。大きさは概算です。",
+      "where": "飛行 · 発射台"
+    },
+    "/images/colophon/model-pad-proton_webp": {
+      "title": "発射台：プロトン、バイコヌール",
+      "what": "離昇時に引き込まれるスイングアームを備えた固定式サービスタワー。フレームトレンチの脇。大きさは概算です。",
+      "where": "飛行 · 発射台"
+    },
+    "/images/colophon/model-pad-f9-39a_webp": {
+      "title": "発射台：ファルコン、LC-39A",
+      "what": "39A のスペース X：離昇前に 1.5 度、離昇時に 45 度後ろへ倒れるトランスポーターエレクター、350 フィートを超えて延長された旧タワー。数値はウィキペディアによる。",
+      "where": "飛行 · 発射台"
+    },
+    "/images/colophon/model-pad-f9-cat_webp": {
+      "title": "発射台：ファルコン、SLC-40 と乗員タワー",
+      "what": "2023 年の乗員用アクセスタワー以降の SLC-40 のスペース X。離昇時に倒れて離れるトランスポーターエレクター付き。タワーの高さは概算です。",
+      "where": "飛行 · 発射台"
+    },
+    "/images/colophon/model-pad-f9-te_webp": {
+      "title": "発射台：ファルコン、SLC-40 と SLC-4E",
+      "what": "簡素なファルコンの発射台：離昇時に倒れて離れるトランスポーターエレクターと避雷マスト。大きさは概算です。",
+      "where": "飛行 · 発射台"
+    },
+    "/images/colophon/model-pad-starbase_webp": {
+      "title": "発射台：スターシップ、スターベース",
+      "what": "キャッチアームを開いたスターベースの発射タワー。タワーの高さは概算です。",
+      "where": "飛行 · 発射台"
+    },
+    "/images/colophon/model-pad-atlas-v_webp": {
+      "title": "発射台：アトラス V、SLC-41",
+      "what": "ULA の発射台：移動式発射台、アンビリカルタワー、4 本の避雷塔。垂直統合棟は発射台から離れており省略。大きさは概算です。",
+      "where": "飛行 · 発射台"
+    },
+    "/images/colophon/model-pad-cape-classic_webp": {
+      "title": "発射台：ケープのサービスタワー式発射台",
+      "what": "ケープのアトラス、デルタ、タイタン、サターン IB の発射台：機体の脇にスイングアーム付きのアンビリカルタワー。大きさは概算です。",
+      "where": "飛行 · 発射台"
+    },
+    "/images/colophon/model-pad-kourou-a5_webp": {
+      "title": "発射台：アリアン 4 と 5、クールー",
+      "what": "ELA-2 と ELA-3 の発射台：ロケットの脇のアンビリカルマストと 4 本の高い避雷塔。大きさは概算です。",
+      "where": "飛行 · 発射台"
+    },
+    "/images/colophon/model-pad-kourou-a6_webp": {
+      "title": "発射台：アリアン 6、クールー",
+      "what": "ELA-4 の発射台：アンビリカルマスト、2 本の避雷塔、遠く後退した移動式ガントリー。大きさは概算です。",
+      "where": "飛行 · 発射台"
+    },
+    "/images/colophon/model-pad-chinese-fst_webp": {
+      "title": "発射台：中国のサービスタワー",
+      "what": "酒泉、西昌、文昌、太原の固定式サービスタワー。作業台は離昇時に折りたたまれる。大きさは概算です。",
+      "where": "飛行 · 発射台"
+    },
+    "/images/colophon/model-pad-tanegashima_webp": {
+      "title": "発射台：種子島",
+      "what": "吉信の発射台：H-II ロケットのアンビリカルタワーと避雷塔。大きさは概算です。",
+      "where": "飛行 · 発射台"
+    },
+    "/images/colophon/model-pad-sriharikota_webp": {
+      "title": "発射台：シュリハリコタ",
+      "what": "ISRO の発射台：機体の脇のアンビリカルタワーと、遠く後退した移動式サービスタワー。大きさは概算です。",
+      "where": "飛行 · 発射台"
     }
   },
   "capsules": {
@@ -2351,6 +2431,21 @@
       "title": "感覚レイヤー",
       "what": "波形が横切るコンパスの針 — 感覚設定（音 / 振動 / 傾き）を開く。",
       "where": "ナビゲーション"
+    },
+    "scale-glyphs": {
+      "title": "スケールレベルのグリフ",
+      "what": "/explore の各レベルに1つずつある小さな絵柄。太陽系からコズミック・ウェブまで。レベル選択、ナビゲーションの行、レベルカードに表示される。",
+      "where": "エクスプローラー · ナビゲーション · レベル選択",
+      "variants": {
+        "Solar System": "太陽系",
+        "Stellar Neighborhood": "恒星近傍",
+        "Milky Way": "銀河系",
+        "Local Group": "局所銀河群",
+        "Local Sheet": "ローカルシート",
+        "Virgo Supercluster": "おとめ座超銀河団",
+        "Laniakea": "ラニアケア",
+        "Cosmic Web": "コズミック・ウェブ"
+      }
     }
   }
 }

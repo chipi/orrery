@@ -1,0 +1,30 @@
+{
+  "name": "Mars 2",
+  "vehicle": "Proton-K / D",
+  "payload": "4650 kg (orbiter + lander combined)",
+  "delta_v": "~5.5 km/s (estimate)",
+  "type": "ORBITER OPERATED · LANDER LOST",
+  "first": "A Soviet orbiter and lander launched to Mars in 1971: the lander crashed, the orbiter worked",
+  "description": "Mars 2 was a Soviet spacecraft made of an orbiter and a lander. It launched on 1971-05-19 on a Proton-K with a Blok D upper stage, nine days before its twin Mars 3. The descent module separated about 4.5 hours before arrival. Its descent system malfunctioned, the parachute did not deploy and the lander crashed on Mars. The orbiter entered Mars orbit on 1971-11-27 into an 18-hour orbit and sent data until about August 1972.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Proton-K with Blok-D upper stage from Baikonur, 1971-05-19.",
+      "type": "nominal"
+    },
+    {
+      "met": 192,
+      "label": "ORBITER MOI",
+      "note": "Orbiter enters Mars orbit on 1971-11-27.",
+      "type": "nominal"
+    },
+    {
+      "met": 192.1,
+      "label": "LANDER LOST",
+      "note": "The descent module separated about 4.5 hours before arrival; the lander crashed.",
+      "type": "warning"
+    }
+  ],
+  "vehicle_stage": "Blok-D upper stage"
+}

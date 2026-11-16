@@ -1,0 +1,195 @@
+# Slice A2 baseline hits — output of the brief's a2-check.sh at HEAD dd2812e1011 (A1 landed), 2026-11-11.
+# Format: KIND file:line  selector-or-tag.  191 violations in 27 files (32 routes).
+H1-MARKUP      src/routes/credits/+page.svelte:271  <h1 id="credits-title">
+LEAD-MARKUP    src/routes/credits/+page.svelte:273  <p class="intro">
+LEAD-MARKUP    src/routes/credits/+page.svelte:274  <p class="intro">
+NO-SHELL       src/routes/credits/+page.svelte:1  root .credits has no page-shell class
+ROOT-CSS       src/routes/credits/+page.svelte:936  .credits
+H1-CSS         src/routes/credits/+page.svelte:942  .head h1
+H2-CSS         src/routes/credits/+page.svelte:949  .head h2
+LEAD-CSS       src/routes/credits/+page.svelte:957  .intro
+H2-CSS         src/routes/credits/+page.svelte:1050  .src-meta h2
+ROOT-CSS       src/routes/credits/+page.svelte:1253  .credits
+H1-MARKUP      src/routes/colophon/+page.svelte:133  <h1 id="colophon-title">
+LEAD-MARKUP    src/routes/colophon/+page.svelte:134  <p class="intro">
+NO-SHELL       src/routes/colophon/+page.svelte:1  root .colophon has no page-shell class
+ROOT-CSS       src/routes/colophon/+page.svelte:628  .colophon
+H1-CSS         src/routes/colophon/+page.svelte:685  h1
+LEAD-CSS       src/routes/colophon/+page.svelte:692  .intro
+H2-CSS         src/routes/colophon/+page.svelte:719  .block h2
+H1-MARKUP      src/routes/library/+page.svelte:143  <h1 id="library-title">
+LEAD-MARKUP    src/routes/library/+page.svelte:145  <p class="intro">
+LEAD-MARKUP    src/routes/library/+page.svelte:146  <p class="intro">
+NO-SHELL       src/routes/library/+page.svelte:1  root .library has no page-shell class
+ROOT-CSS       src/routes/library/+page.svelte:301  .library
+H1-CSS         src/routes/library/+page.svelte:307  .head h1
+H2-CSS         src/routes/library/+page.svelte:314  .head h2
+LEAD-CSS       src/routes/library/+page.svelte:322  .intro
+H2-CSS         src/routes/library/+page.svelte:449  .src-meta h2
+ROOT-CSS       src/routes/library/+page.svelte:611  .library
+H1-MARKUP      src/routes/library/episodes/+page.svelte:129  <h1 id="ep-index-title">
+LEAD-MARKUP    src/routes/library/episodes/+page.svelte:130  <p class="ep-index-blurb">
+NO-SHELL       src/routes/library/episodes/+page.svelte:1  root .ep-index has no page-shell class
+ROOT-CSS       src/routes/library/episodes/+page.svelte:223  .ep-index
+H1-CSS         src/routes/library/episodes/+page.svelte:232  .ep-index-head h1
+LEAD-CSS       src/routes/library/episodes/+page.svelte:237  .ep-index-blurb
+ROOT-CSS       src/routes/library/episodes/+page.svelte:441  .ep-index
+H1-MARKUP      src/routes/gallery/+page.svelte:55  <h1>
+LEAD-MARKUP    src/routes/gallery/+page.svelte:56  <p class="lede">
+NO-SHELL       src/routes/gallery/+page.svelte:1  root .gallery-hub has no page-shell class
+ROOT-CSS       src/routes/gallery/+page.svelte:112  .gallery-hub
+NAV-PAD        src/routes/gallery/+page.svelte:112  .gallery-hub
+H1-CSS         src/routes/gallery/+page.svelte:118  h1
+LEAD-CSS       src/routes/gallery/+page.svelte:124  .lede
+H2-CSS         src/routes/gallery/+page.svelte:197  .strip-text h2
+H1-MARKUP      src/routes/gallery/deep-sky/+page.svelte:154  <h1>
+LEAD-MARKUP    src/routes/gallery/deep-sky/+page.svelte:155  <p class="lede">
+NO-SHELL       src/routes/gallery/deep-sky/+page.svelte:1  root .gallery has no page-shell class
+ROOT-CSS       src/routes/gallery/deep-sky/+page.svelte:285  .gallery
+HEADER-CENTER  src/routes/gallery/deep-sky/+page.svelte:291  header
+H1-CSS         src/routes/gallery/deep-sky/+page.svelte:309  h1
+LEAD-CSS       src/routes/gallery/deep-sky/+page.svelte:315  .lede
+H2-CSS         src/routes/gallery/deep-sky/+page.svelte:547  .lb-figure h2
+H1-CSS         src/routes/gallery/deep-sky/+page.svelte:706  h1
+ROOT-CSS       src/routes/gallery/deep-sky/+page.svelte:712  .gallery
+H1-MARKUP      src/routes/posters/+page.svelte:66  <h1>
+LEAD-MARKUP    src/routes/posters/+page.svelte:67  <p class="lede">
+NO-SHELL       src/routes/posters/+page.svelte:1  root .gallery has no page-shell class
+ROOT-CSS       src/routes/posters/+page.svelte:112  .gallery
+HEADER-CENTER  src/routes/posters/+page.svelte:118  header
+H1-CSS         src/routes/posters/+page.svelte:136  h1
+LEAD-CSS       src/routes/posters/+page.svelte:142  .lede
+ROOT-CSS       src/routes/posters/+page.svelte:212  .gallery
+H1-CSS         src/routes/posters/+page.svelte:220  h1
+H1-MARKUP      src/routes/patches/+page.svelte:31  <h1>
+LEAD-MARKUP    src/routes/patches/+page.svelte:32  <p class="lede">
+NO-SHELL       src/routes/patches/+page.svelte:1  root .patches has no page-shell class
+ROOT-CSS       src/routes/patches/+page.svelte:144  .patches
+NAV-PAD        src/routes/patches/+page.svelte:144  .patches
+H1-CSS         src/routes/patches/+page.svelte:164  h1
+LEAD-CSS       src/routes/patches/+page.svelte:170  .lede
+LEAD-CSS       src/routes/patches/+page.svelte:177  .lede :global(a), .patches-footer :global(a)
+H2-CSS         src/routes/patches/+page.svelte:180  .group h2
+H1-MARKUP      src/routes/sourcing/+page.svelte:31  <h1>
+LEAD-MARKUP    src/routes/sourcing/+page.svelte:32  <p class="lede">
+NO-SHELL       src/routes/sourcing/+page.svelte:1  root .sourcing has no page-shell class
+ROOT-CSS       src/routes/sourcing/+page.svelte:93  .sourcing
+NAV-PAD        src/routes/sourcing/+page.svelte:93  .sourcing
+H1-CSS         src/routes/sourcing/+page.svelte:99  h1
+LEAD-CSS       src/routes/sourcing/+page.svelte:105  .lede
+H1-MARKUP      src/routes/programs/+page.svelte:120  <h1>
+LEAD-MARKUP    src/routes/programs/+page.svelte:121  <p class="intro">
+LEAD-MARKUP    src/routes/programs/+page.svelte:127  <p class="lede">
+NO-SHELL       src/routes/programs/+page.svelte:1  root .programs-index has no page-shell class
+ROOT-CSS       src/routes/programs/+page.svelte:181  .programs-index
+H1-CSS         src/routes/programs/+page.svelte:229  h1
+LEAD-CSS       src/routes/programs/+page.svelte:235  .intro
+LEAD-CSS       src/routes/programs/+page.svelte:242  .intro :global(em)
+LEAD-CSS       src/routes/programs/+page.svelte:246  .lede
+H2-CSS         src/routes/programs/+page.svelte:281  .group h2
+H1-MARKUP      src/routes/programs/[id]/+page.svelte:171  <h1>
+LEAD-MARKUP    src/routes/programs/[id]/+page.svelte:176  <p class="tagline">
+NO-SHELL       src/routes/programs/[id]/+page.svelte:1  root .program has no page-shell class
+ROOT-CSS       src/routes/programs/[id]/+page.svelte:363  .program
+H1-CSS         src/routes/programs/[id]/+page.svelte:404  h1
+LEAD-CSS       src/routes/programs/[id]/+page.svelte:411  .tagline
+H2-CSS         src/routes/programs/[id]/+page.svelte:452  .spine h2, .roster h2, .assembly h2, .surface h2, .see-also h2, .related h2, .sources h2
+H1-MARKUP      src/routes/privacy/+page.svelte:54  <h1 id="privacy-title">
+LEAD-MARKUP    src/routes/privacy/+page.svelte:55  <p class="intro">
+NO-SHELL       src/routes/privacy/+page.svelte:1  root .privacy has no page-shell class
+ROOT-CSS       src/routes/privacy/+page.svelte:148  .privacy
+H1-CSS         src/routes/privacy/+page.svelte:154  .head h1
+LEAD-CSS       src/routes/privacy/+page.svelte:160  .intro
+H2-CSS         src/routes/privacy/+page.svelte:173  .card h2
+ROOT-CSS       src/routes/privacy/+page.svelte:248  .privacy
+H1-MARKUP      src/routes/live/+page.svelte:54  <h1 id="live-title">
+LEAD-MARKUP    src/routes/live/+page.svelte:55  <p class="live-intro">
+NO-SHELL       src/routes/live/+page.svelte:1  root .live has no page-shell class
+ROOT-CSS       src/routes/live/+page.svelte:149  .live
+H1-CSS         src/routes/live/+page.svelte:155  .live-head h1
+LEAD-CSS       src/routes/live/+page.svelte:158  .live-intro
+H2-CSS         src/routes/live/+page.svelte:247  .launches h2
+LEAD-MARKUP    src/routes/essays/+page.svelte:66  <p class="intro">
+NO-SHELL       src/routes/essays/+page.svelte:1  root .longview has no page-shell class
+ROOT-CSS       src/routes/essays/+page.svelte:96  .longview
+LEAD-CSS       src/routes/essays/+page.svelte:102  .intro
+H2-CSS         src/routes/essays/+page.svelte:113  .movement h2
+H1-MARKUP      src/routes/essays/[slug]/+page.svelte:86  <h1>
+LEAD-MARKUP    src/routes/essays/[slug]/+page.svelte:88  <p class="dek">
+NO-SHELL       src/routes/essays/[slug]/+page.svelte:1  root .essay has no page-shell class
+ROOT-CSS       src/routes/essays/[slug]/+page.svelte:147  .essay
+H1-CSS         src/routes/essays/[slug]/+page.svelte:173  h1
+LEAD-CSS       src/routes/essays/[slug]/+page.svelte:180  .dek
+H2-CSS         src/routes/essays/[slug]/+page.svelte:248  .body h2
+H2-CSS         src/routes/essays/[slug]/+page.svelte:257  .body h2::after
+H1-MARKUP      src/routes/science/+page.svelte:37  <h1>
+LEAD-MARKUP    src/routes/science/+page.svelte:38  <p class="lede">
+H1-CSS         src/routes/science/+page.svelte:127  .hero h1
+LEAD-CSS       src/routes/science/+page.svelte:133  .lede
+H2-CSS         src/routes/science/+page.svelte:147  .chapter h2
+H1-MARKUP      src/routes/science/[tab]/+page.svelte:64  <h1>
+H1-CSS         src/routes/science/[tab]/+page.svelte:105  h1
+H1-MARKUP      src/routes/science/[tab]/[section]/+page.svelte:140  <h1>
+LEAD-MARKUP    src/routes/science/[tab]/[section]/+page.svelte:141  <p class="lede">
+H1-CSS         src/routes/science/[tab]/[section]/+page.svelte:283  h1
+LEAD-CSS       src/routes/science/[tab]/[section]/+page.svelte:289  .lede
+H2-CSS         src/routes/science/[tab]/[section]/+page.svelte:397  .see-in-app h2, .learn-more h2
+H1-MARKUP      src/routes/science/glossary/+page.svelte:31  <h1>
+LEAD-MARKUP    src/routes/science/glossary/+page.svelte:32  <p class="lede">
+NO-SHELL       src/routes/science/glossary/+page.svelte:1  root .glossary has no page-shell class
+ROOT-CSS       src/routes/science/glossary/+page.svelte:72  .glossary
+H1-CSS         src/routes/science/glossary/+page.svelte:78  h1
+LEAD-CSS       src/routes/science/glossary/+page.svelte:85  .lede
+ROOT-CSS       src/routes/science/glossary/+page.svelte:92  .glossary
+H1-MARKUP      src/routes/science/reading-list/+page.svelte:222  <h1>
+LEAD-MARKUP    src/routes/science/reading-list/+page.svelte:223  <p class="lede">
+NO-SHELL       src/routes/science/reading-list/+page.svelte:1  root .resources has no page-shell class
+ROOT-CSS       src/routes/science/reading-list/+page.svelte:328  .resources
+H1-CSS         src/routes/science/reading-list/+page.svelte:334  .head h1
+LEAD-CSS       src/routes/science/reading-list/+page.svelte:341  .head .lede
+H2-CSS         src/routes/science/reading-list/+page.svelte:350  .block h2
+ROOT-CSS       src/routes/science/reading-list/+page.svelte:472  .resources
+H1-CSS         src/routes/science/reading-list/+page.svelte:475  .head h1
+LEAD-CSS       src/routes/science/reading-list/+page.svelte:478  .head .lede
+H1-MARKUP      src/routes/science/watch-list/+page.svelte:230  <h1>
+LEAD-MARKUP    src/routes/science/watch-list/+page.svelte:231  <p class="lede">
+NO-SHELL       src/routes/science/watch-list/+page.svelte:1  root .resources has no page-shell class
+ROOT-CSS       src/routes/science/watch-list/+page.svelte:367  .resources
+H1-CSS         src/routes/science/watch-list/+page.svelte:373  .head h1
+LEAD-CSS       src/routes/science/watch-list/+page.svelte:380  .head .lede
+H2-CSS         src/routes/science/watch-list/+page.svelte:389  .block h2
+ROOT-CSS       src/routes/science/watch-list/+page.svelte:492  .resources
+H1-CSS         src/routes/science/watch-list/+page.svelte:495  .head h1
+LEAD-CSS       src/routes/science/watch-list/+page.svelte:498  .head .lede
+H1-MARKUP      src/lib/components/SectionHub.svelte:36  <h1>
+LEAD-MARKUP    src/lib/components/SectionHub.svelte:37  <p class="hub-intro">
+NO-SHELL       src/lib/components/SectionHub.svelte:1  root .section-hub has no page-shell class
+ROOT-CSS       src/lib/components/SectionHub.svelte:44  .section-hub
+H1-CSS         src/lib/components/SectionHub.svelte:53  .hub-head h1
+LEAD-CSS       src/lib/components/SectionHub.svelte:60  .hub-intro
+ROOT-CSS       src/lib/components/SectionHub.svelte:68  .section-hub
+H1-CSS         src/lib/components/SectionHub.svelte:72  .hub-head h1
+LEAD-CSS       src/lib/components/SectionHub.svelte:76  .hub-intro
+ROOT-CSS       src/lib/components/SectionHub.svelte:81  .section-hub
+ROOT-CSS       src/lib/components/SectionHub.svelte:88  .section-hub
+H1-MARKUP      src/routes/missions/[id]/+page.svelte:74  <h1>
+LEAD-MARKUP    src/routes/missions/[id]/+page.svelte:75  <p class="lede">
+NO-SHELL       src/routes/missions/[id]/+page.svelte:1  root .entity has no page-shell class
+H1-MARKUP      src/routes/fleet/[id]/+page.svelte:96  <h1>
+LEAD-MARKUP    src/routes/fleet/[id]/+page.svelte:97  <p class="lede">
+NO-SHELL       src/routes/fleet/[id]/+page.svelte:1  root .entity has no page-shell class
+H1-MARKUP      src/routes/explore/[id]/+page.svelte:52  <h1>
+LEAD-MARKUP    src/routes/explore/[id]/+page.svelte:53  <p class="lede">
+NO-SHELL       src/routes/explore/[id]/+page.svelte:1  root .entity has no page-shell class
+H1-MARKUP      src/routes/lab/[id]/+page.svelte:52  <h1>
+NO-SHELL       src/routes/lab/[id]/+page.svelte:1  root .entity has no page-shell class
+H1-MARKUP      src/lib/components/SiteEntityPage.svelte:63  <h1>
+LEAD-MARKUP    src/lib/components/SiteEntityPage.svelte:64  <p class="lede">
+NO-SHELL       src/lib/components/SiteEntityPage.svelte:1  root .entity has no page-shell class
+ROOT-CSS       src/lib/components/entity-page.css:6  .entity
+H1-CSS         src/lib/components/entity-page.css:37  .entity h1
+LEAD-CSS       src/lib/components/entity-page.css:43  .entity .lede
+H2-CSS         src/lib/components/entity-page.css:85  .entity h2
+G1-STRIP-INSET src/routes/gallery/+page.svelte:194  padding: 0 clamp(24px, 5vw, 56px);
+by kind: {'H1-MARKUP': 26, 'LEAD-MARKUP': 28, 'NO-SHELL': 24, 'ROOT-CSS': 32, 'H1-CSS': 27, 'H2-CSS': 20, 'LEAD-CSS': 28, 'NAV-PAD': 3, 'HEADER-CENTER': 2, 'G1-STRIP-INSET': 1}
+A2-CHECK violations: 191

@@ -19,7 +19,7 @@ function attachConsoleAndError(page: Page) {
  * J.1). Click the eyebrow toggle so the radios + epoch strip enter the DOM.
  */
 async function expandFilters(page: Page) {
-  const toggle = page.locator('.filters-toggle');
+  const toggle = page.locator('.filters-strip');
   await toggle.click();
   // Wait for at least one radio inside the filters region to confirm expand.
   await expect(page.locator('#fleet-filters [role="radio"]').first()).toBeVisible({
@@ -34,7 +34,7 @@ async function expandFilters(page: Page) {
  * window.
  */
 async function waitForFleetReady(page: Page) {
-  await expect(page.locator('.filters-toggle .filters-count').first()).toBeVisible({
+  await expect(page.locator('.filters-strip .filters-count').first()).toBeVisible({
     timeout: 10_000,
   });
 }
@@ -60,7 +60,7 @@ test.describe('/fleet', () => {
   test('filter-bar count reflects filter state', async ({ page }) => {
     await page.goto('/fleet');
     await waitForFleetReady(page);
-    const count = page.locator('.filters-toggle .filters-count').first();
+    const count = page.locator('.filters-strip .filters-count').first();
     const totalText = (await count.textContent())?.trim() ?? '';
     // Unfiltered total — total-only chip shows just the number.
     const total = parseInt(totalText, 10);
@@ -156,7 +156,7 @@ test.describe('/fleet', () => {
   test('list view fallback renders rows', async ({ page }) => {
     const errors = attachConsoleAndError(page);
     await page.goto('/fleet?view=list');
-    const rows = page.locator('.fleet-list .list-row');
+    const rows = page.locator('[data-testid="entity-list"] .list-row');
     await expect(rows.first()).toBeVisible({ timeout: 10_000 });
     expect(await rows.count()).toBeGreaterThanOrEqual(100);
     expect(errors).toEqual([]);
@@ -184,8 +184,8 @@ test.describe('/fleet', () => {
   test('capsule and spacecraft line-up draws every crewed and cargo craft', async ({ page }) => {
     const errors = attachConsoleAndError(page);
     await page.goto('/fleet?category=launcher&view=lineup');
-    await page.getByRole('button', { name: /Capsules/ }).click();
-    await expect(page).toHaveURL(/category=crewed-spacecraft/);
+    await page.getByRole('radio', { name: /Capsules/ }).click();
+    await expect(page).toHaveURL(/kind=spacecraft/);
     const labels = page.locator('section.lineup .label');
     await expect(labels.first()).toBeVisible({ timeout: 15_000 });
     expect(await labels.count()).toBeGreaterThanOrEqual(35);
@@ -243,7 +243,30 @@ test.describe('/fleet', () => {
     await panel.getByRole('tab', { name: /MISSIONS/i }).click();
     // Saturn V's linked_missions includes apollo11 + apollo17 (Phase E).
     const missionLinks = panel.locator('.missions-list a.mission-link');
+    await expect(missionLinks.nth(1)).toBeVisible();
     expect(await missionLinks.count()).toBeGreaterThanOrEqual(2);
+  });
+
+  // The tab printed the raw mission id ("new-horizons"); /fleet/<id> prints the name. Each row now
+  // also leads with the mission's round photo (L45-T4, UXD-025).
+  test('MISSIONS tab names its missions and leads each row with a round photo', async ({
+    page,
+  }) => {
+    await page.goto('/fleet?id=atlas-v');
+    const panel = page.locator('aside.panel');
+    await expect(panel).toBeVisible({ timeout: 10_000 });
+    await panel.getByRole('tab', { name: /MISSIONS/i }).click();
+    const rows = panel.locator('.missions-list a.mission-link');
+    // 15 when this was written; the catalogue grows (16 with Viking 2 and the content7 missions).
+    await expect(rows.first()).toBeVisible();
+    expect(await rows.count()).toBeGreaterThanOrEqual(15);
+    await expect(rows.filter({ hasText: 'New Horizons' })).toHaveCount(1);
+    for (const text of await rows.allInnerTexts()) expect(text).not.toMatch(/^[a-z0-9-]+\s*→?$/);
+    const thumb = rows.filter({ hasText: 'New Horizons' }).locator('img.entity-thumb');
+    await expect(thumb).toHaveAttribute('alt', '');
+    await expect(thumb).toHaveAttribute('loading', 'lazy');
+    await expect(thumb).toHaveAttribute('width', '28');
+    await expect(thumb).toHaveAttribute('src', /credit-thumbs\/images\/missions\/new-horizons\//);
   });
 
   test('mobile (375 px) renders without horizontal scroll', async ({ page }) => {

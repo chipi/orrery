@@ -1,0 +1,24 @@
+{
+  "name": "Mariner 2",
+  "vehicle": "Atlas-Agena B",
+  "payload": "202,8 kg",
+  "delta_v": "~3,5 km/s (schatting)",
+  "type": "VOORBIJVLUCHT · GEVLOGEN",
+  "first": "NASA noemt het de allereerste succesvolle planetaire wetenschappelijke missie in de geschiedenis",
+  "description": "Mariner 2 werd op 1962-08-27 gelanceerd met een Atlas-Agena B en passeerde Venus op 1962-12-14, met een dichtste nadering van 34.773 km. De magnetometer, deeltjesdetectoren, zonneplasmaspectrometer, stofdetector en twee radiometers leverden een eerste blik op Venus: NASA meldt temperaturen van 216 °C aan de nachtzijde tot 237 °C aan de dagzijde, een dichte wolkenlaag op 56 tot 80 km hoogte, een langzame retrograde rotatie, een atmosfeer die grotendeels uit kooldioxide bestaat en geen waarneembaar magnetisch veld. In de ruimte toonde het aan dat de zonnewind continu stroomt. Het contact eindigde op 1963-01-03. NASA zegt dat het de eer behoudt de allereerste succesvolle planetaire wetenschappelijke missie in de geschiedenis te zijn.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCERING",
+      "note": "Atlas-Agena B vanaf Cape Canaveral, 1962-08-27.",
+      "type": "nominal"
+    },
+    {
+      "met": 109,
+      "label": "SCHEERVLUCHT LANGS VENUS",
+      "note": "Dichtste nadering 34.773 km op 1962-12-14.",
+      "type": "nominal"
+    }
+  ],
+  "vehicle_stage": "bovenste trap Agena B"
+}

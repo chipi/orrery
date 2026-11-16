@@ -44,21 +44,24 @@ Every pattern here was arrived at through iteration, not specification upfront. 
 | `bg-panel` | `rgba(4, 4, 12, 0.96–0.98)` | Detail panels, preview panels |
 | `border-subtle` | `rgba(255, 255, 255, 0.07)` | Default borders |
 | `border-active` | `rgba(255, 255, 255, 0.18)` | Hover state borders |
-| `accent-blue` | `#4466ff` / `rgba(68, 102, 255)` | Primary interactive accent. Selection rings, active states, mission arc |
-| `accent-teal` | `#4ecdc4` | Secondary accent. Active mission status, Earth orbit regime, confirmation states |
+| `accent` (`--color-accent`) | `#5070ff` / `rgba(80, 112, 255)` | The one UI accent (UX A3, UXD-001). Links, selection, active states, chips, HUD values, mission arc. Tints: `--color-accent-soft/-edge/-strong` (0.12 / 0.35 / 0.7); hover and focus `#8aa0ff` |
+| `state` (`--color-state`) | `#889fe7` | Annotation rings, hover, status; the colour for small text on a lifted card |
+| `ok` (`--color-ok`) | `#4ade80` | Success and confirmation states (a green, not an accent) |
 | `text-primary` | `#ffffff` | Primary text, selected labels |
 | `text-secondary` | `rgba(255, 255, 255, 0.55–0.65)` | Body text, descriptions |
 | `text-dim` | `rgba(255, 255, 255, 0.25–0.35)` | Labels, metadata |
 | `text-faint` | `rgba(255, 255, 255, 0.12–0.18)` | Decorative text, watermarks |
 
+**Contrast rule (UX A3).** The accent `#5070ff` is 4.96:1 on the page and the HUD, 4.37 on a 7 % lifted card and 3.84 on a 12 % lift. Text at or above 14 px bold / 18 px, borders, fills, glyphs and rings use the accent; smaller text on a lifted surface uses `--color-state` (6.1:1 or better). A solid accent fill takes dark text (`#04040c`, 4.96:1), not white (4.12:1). UAE/MBRSC (agency) below is an identity / data colour (palette review at the end of the redesign), not a UI accent. The orbit-regime colours (§2.5) have no teal ([UXD-037](../uxs/decisions/UXD-037-orbit-band-palette-no-teal.md)).
+
 ### 2.2 Status colours
 
 | Status | Colour | Background |
 |---|---|---|
-| ACTIVE | `#4ecdc4` | `rgba(78, 205, 196, 0.15)` |
+| ACTIVE | `#889fe7` | `rgba(80, 112, 255, 0.15)` |
 | FLOWN | `rgba(255,255,255,0.45)` | `rgba(255,255,255,0.06)` |
 | PLANNED | `#7b9cff` | `rgba(123,156,255,0.12)` |
-| MINE / personal | `#4ecdc4` | `rgba(78,205,196,0.12)` |
+| MINE / personal | `#889fe7` | `rgba(80,112,255,0.12)` |
 | PRIVATE sector | `#ff9940` | `rgba(255,153,0,0.12)` |
 | RECONSTRUCTED | `#ff8060` | `rgba(240,80,40,0.10)` |
 | PARTIAL DATA | `#f0b428` | `rgba(240,180,40,0.10)` |
@@ -69,41 +72,105 @@ The three-tier educational link system uses a consistent colour language across 
 
 | Tier | Label colour | Background | Dot |
 |---|---|---|---|
-| INTRO | `#4ecdc4` | `#0d2e2b` | `#4ecdc4` |
-| CORE | `#7b9cff` | `#0d1535` | `#4466ff` |
+| INTRO | `#889fe7` | `#0d1535` | `#889fe7` |
+| CORE | `#7b9cff` | `#0d1535` | `#5070ff` |
 | DEEP | `#ff9090` | `#2e0d0d` | `#ff4444` |
 
 ### 2.4 Agency colours
 
-Used for card accent borders (3px top), pin markers, label text, and logo backgrounds.
+Confirmed by the operator on 2026-11-13 (the swatch page "Orrery agency palette"), teal and cyan
+identity colours included. The code is the source: `src/lib/agencies.ts` (badge fill, card and
+mission accents; a compound agency takes its first partner's colour) and
+`src/lib/surface-map/nation-palette.ts` (surface-site markers, the nation legend, the Worlds' INDEX dots (§5.13) and the Earth
+regime panel's resident dots, which use a lighter chip colour for some agencies). A badge's text is
+white or dark by contrast.
 
-| Agency | Display colour | Logo background |
+**The 14 agencies that fly on `/missions` carry one palette** ([UXD-048](../uxs/decisions/UXD-048-missions-one-agency-palette-era-tiles-with-photos-and-agency-dots.md),
+operator 2026-11-15, brief decision 10b): one value per agency, the same on the card accent, the card's agency bar, the
+filter chip's dot and the era tiles' dots. Every value is 4.5:1 or better on the page (`#04040c`) and on the card
+(`#0a0a16`), avoids cyan and teal, and keeps every pair of agencies apart under normal vision and protan, deutan and
+tritan simulation (CIEDE2000 above 5; neighbours in the filter row 7 or more). `src/lib/agency-palette.test.ts` holds all
+of it. The other 23 agencies keep their brand colour, and the Badge column below is the one source for both. The chip
+column (`nationChipFor`, map and regime markers) and the mission `color` of the data files (the 3D scenes' path and ring
+colour) are separate roles and unchanged.
+
+| Agency | Badge | Map / regime chip (where it differs) |
 |---|---|---|
-| NASA | `#4b9cd3` | `#0B3D91` |
-| ESA | `#7b9cff` | `#1C3C8A` |
-| CNSA | `#ff5555` | `#DE2910` |
-| ISRO | `#ff8c3c` | `#1a1a2e` |
-| Roscosmos | `#cc4444` | `#0d0d1a` |
-| UAE/MBRSC | `#4ecdc4` | `#ffffff` |
-| JAXA | `#5588ff` | `#0062AC` |
-| SpaceX | `#ffcc66` | `#000000` |
-| Personal mission | `#4ecdc4` | `rgba(78,205,196,0.08)` |
-| Planned (generic) | `#7b9cff` | `rgba(68,102,255,0.15)` |
+| NASA | `#2e72fa` | `#3b82f6` |
+| ESA | `#e444c9` | `#1d4ed8` |
+| JAXA | `#eb7085` | `#1d4ed8` |
+| ISRO | `#fa942e` | `#f97316` |
+| CNSA | `#fa2e2e` | `#dc2626` |
+| CMSA | `#fc92b5` | — |
+| CASC | `#DE2910` | — |
+| Roscosmos | `#f1ab9d` | `#ef4444` |
+| CSA | `#D52B1E` | — |
+| UAESA | `#60fb7a` | `#00732F` |
+| USSF | `#ab9df1` | — |
+| NOAA | `#003087` | — |
+| USGS | `#00833F` | — |
+| ASI | `#9df1b9` | `#1d4ed8` |
+| SpaceX | `#d5d9e2` | `#3b82f6` |
+| Boeing | `#1D4E89` | — |
+| Northrop Grumman | `#005EB8` | — |
+| ULA | `#1A3668` | — |
+| Blue Origin | `#2e94fa` | — |
+| Arianespace | `#0033A0` | — |
+| Axiom Space | `#1F3A93` | — |
+| Intuitive Machines | `#e44494` | — |
+| ispace | `#003E7E` | — |
+| SpaceIL | `#92c7fc` | `#1d4ed8` |
+| Amazon | `#FF9900` | — |
+| SES | `#003C71` | — |
+| Sirius XM | `#0067B1` | — |
+| Viasat | `#005CAB` | — |
+| Eutelsat OneWeb | `#003DA5` | — |
+| Iridium | `#00477F` | — |
+| Planet Labs | `#1B9E77` | — |
+| Rocket Lab | `#000000` | `#00A6A6` |
+| Avio | `#003c71` | — |
+| Firefly | `#ff6600` | — |
+| Relativity | `#5d2a86` | — |
+| MHI | `#cc0000` | — |
+| Astra | `#000000` | — |
+
+Nations (surface-site markers and the nation legend):
+
+| Nation | Colour |
+|---|---|
+| USA | `#0B3D91` |
+| USSR/Russia | `#8B0000` |
+| Europe | `#003299` |
+| China | `#DE2910` |
+| India | `#FF9933` |
+| Japan | `#003087` |
+| UAE | `#00732F` |
+| Israel | `#0038B8` |
+| New Zealand | `#00A6A6` |
+| South Korea | `#5B8DEF` |
+| North Korea | `#9B59B6` |
+| Iran | `#6BBF59` |
+| Australia | `#E0B400` |
+| Brazil | `#C2185B` |
 
 ### 2.5 Orbital regime colours (Earth Orbit)
 
 | Regime | Colour |
 |---|---|
-| LEO | `#4ecdc4` |
-| MEO | `#7b9cff` |
+| LEO | `#8fd16a` |
+| MEO | `#f28bb8` |
 | GEO | `#ffc850` |
 | HEO | `#ff8c3c` |
 | MOON distance | `#aaaacc` |
 | L2 | `#ffd700` |
 
+These are data colours: the dot of a ruler row, the regime chip and the regime panel's eyebrow carry them. Every world shares two band hues ([UXD-037](../uxs/decisions/UXD-037-orbit-band-palette-no-teal.md)): the lowest band (LEO, Moon LLO, Mars LMO, Explore TERRESTRIAL) is green `#8fd16a`, the second (Earth MEO, HLO, HMO, KUIPER) rose `#f28bb8`; neither is teal, and neither is the highlight blue. The Moon, Mars and Explore tables are `static/data/orbit-regimes-{moon,mars,explore}.json`. The ruler's highlight in the scene is NOT drawn in them but in the highlight blue `#889fe7`, so no ring is teal (§5.16, [UXD-024](../uxs/decisions/UXD-024-orbit-ruler-one-row-draws-its-regime.md)).
+
 ---
 
 ## 3. Typography
+
+> Type scale and the 11 px floor: decision record [UXD-002](../uxs/decisions/UXD-002-type-scale-and-the-11px-floor.md).
 
 ### 3.1 Typefaces
 
@@ -120,32 +187,34 @@ Three typefaces only, all loaded from Google Fonts:
 |---|---|---|
 | **Bebas Neue** | Hero names, screen titles, mission names | All-caps, wide letter-spacing (2–4px). The "poster" voice — bold, spatial, unapologetic |
 | **Space Mono** | All UI elements — labels, data values, buttons, nav, metadata | Monospace precision. Numbers align. Technical without being cold |
-| **Crimson Pro italic** | Descriptions, editorial text, facts, quotes | Humanist serif. Emotional and precise in the same stroke. The "historian" voice |
+| **Crimson Pro italic** | Real quotes and photo captions only (14px minimum) | Humanist serif. The "historian" voice — kept for the few places that are literally quoted or captioned |
 
-Never mix faces within a semantic role. Descriptions are always Crimson Pro italic. Data is always Space Mono. Titles are always Bebas Neue.
+Never mix faces within a semantic role. Descriptions and overviews are Space Mono upright (lead size). Data is always Space Mono. Titles are always Bebas Neue. Nothing is set below 11px (UX A1 / Q2).
 
 ### 3.2 Type scale
 
 | Role | Face | Size | Weight | Letter-spacing |
 |---|---|---|---|---|
+| Page title (text pages, `.page-title`) | Bebas Neue | `clamp(40px, 8vw, 64px)` (`--size-title`) | — | 1px |
 | Screen title | Bebas Neue | 20–26px | — | 3–4px |
 | Mission/object name (hero) | Bebas Neue | 26–42px | — | 2–3px |
 | Mission name (card) | Bebas Neue | 20–26px | — | 2px |
-| Section label | Space Mono | 7px | 700 | 3px |
-| Data label | Space Mono | 6–7px | 400 | 2px |
-| Data value | Space Mono | 10–14px | 700 | — |
-| Body label / button | Space Mono | 7–9px | 700 | 2px |
-| Metadata / credit | Space Mono | 6–7px | 400 | 1px |
-| Description | Crimson Pro | 11–13px | 400 italic | — |
-| Fact / editorial | Crimson Pro | 12–13px | 400 italic | — |
+| Section label (`.page-section-label`) | Space Mono | 11px, 60% white, uppercase | 700 | 3px |
+| Page section title (`.page-section-title`) | Bebas Neue | 28px | — | 2px |
+| Data label | Space Mono | 11px (60% white) | 400 | 2px |
+| Data value | Space Mono | 12–14px | 700 | — |
+| Body label / button | Space Mono | 11–12px | 700 | 2px |
+| Metadata / credit | Space Mono | 11px | 400 | 1px |
+| Description / lead | Space Mono | 16px, 15px under 600px width (`--size-lead`) | 400 upright | — |
+| Photo caption / quote | Crimson Pro | 14px (`--size-caption`) | 400 italic | — |
 
 ### 3.3 Type rendering notes
 
 - All labels use `letter-spacing` explicitly — never rely on browser defaults
-- Section labels are ALL CAPS by content, not CSS `text-transform`
+- Section labels are uppercase through CSS `text-transform` (`.page-section-label`), so translations keep their own case in the source
 - Bebas Neue renders well at all sizes; use it large — 26px minimum for mission names
-- Space Mono at 7px is the practical minimum for readability on dark backgrounds
-- Crimson Pro italic is the emotional register — use it only for descriptions and facts, never for data
+- Floor is 11px for every text (UX A1 / Q2); labels 11px at 60% white (`--size-label`, `--color-text-label`), meta 12px, body 14px, lead 15–16px
+- Crimson Pro italic is only for real quotes and photo captions, never for data or overviews
 
 ---
 
@@ -164,7 +233,7 @@ Never mix faces within a semantic role. Descriptions are always Crimson Pro ital
 | Panel | Width |
 |---|---|
 | Mission library preview | 360px |
-| Solar system detail panel | 314px |
+| Solar system detail panel | 400px (`--panel-width`) |
 | Mission arc HUD left | 220px |
 | Mission arc HUD right | 220px |
 | Moon map detail panel | 330px |
@@ -172,7 +241,7 @@ Never mix faces within a semantic role. Descriptions are always Crimson Pro ital
 
 ### 4.3 Card grid
 
-Cards use CSS Grid with `auto-fill` and `minmax(280–290px, 1fr)`. Gap is 12–14px. Cards animate in with `fadeUp` staggered by 35–40ms per card.
+Cards use CSS Grid with `auto-fill` and `minmax(280–290px, 1fr)`. Gap is 12–14px. Cards animate in with `fadeUp` staggered by 35–40ms per card. The program page's rails and compact hardware cards are §5.19.
 
 ### 4.4 Internal spacing
 
@@ -191,12 +260,60 @@ Cards use CSS Grid with `auto-fill` and `minmax(280–290px, 1fr)`. Gap is 12–
 | Cards | 8px |
 | Panels | 0 (flush to screen edge) |
 | Stats cells | 4px |
-| Buttons (filter) | 3px |
+| Chip (§5.7) | 4px |
 | Pills (status badges) | 3px |
-| Toggle pill container | 20px |
-| Toggle pill buttons | 16px |
 | Close button | 50% (circle) |
 | Agency logo container | 6–8px |
+
+### 4.6 Page shell (text pages, UXD-012)
+
+Every text page (credits, colophon, library, gallery and its sub-pages, posters, patches, sourcing, programs, privacy, live, essays, science, the four hubs, the entity pages) uses `src/lib/styles/page-shell.css`. A page adds the classes to its own elements and defines no h1, lead or container rules of its own; no page adds `--nav-height` padding (the nav is sticky and already takes its height in flow).
+
+| Class | Values |
+|---|---|
+| `.page-shell` | `max-width: 1080px`, centred, `padding: 24px 20px 80px`; `--reading` 760px, `--wide` 1400px, `--inset` (the science host owns the container) |
+| `.page-crumb` | Space Mono 11px, 1px spacing, 60% white |
+| `.page-title` | Bebas Neue `--size-title` (`clamp(40px, 8vw, 64px)`), 1px spacing, line-height 1.05 |
+| `.page-lead` | `--size-lead` (16px, 15px under 600px) upright Space Mono, 78% white, 64ch |
+| `.page-section-label` | §5.8 values, uppercase; `--rule` adds the top rule |
+| `.page-section-title` | Bebas Neue 28px, 2px spacing |
+| `.page-note` | The `<footer>` under a page where sources and licences are discussed ([UXD-040](../uxs/decisions/UXD-040-gallery-viewer-fits-hub-strips-keep-text-and-one-page-note.md)): 1px frame at 8% white, 4px corners, `20px 24px` padding, 44px above; Space Mono `--size-meta` (12px), line-height 1.7, 70% white; `strong` and links `--color-state` (the muted blue), links underlined. `/gallery/deep-sky`, `/posters`, `/patches` and `/sourcing` use it and write no footer rule |
+
+**Long lists ([UXD-038](../uxs/decisions/UXD-038-one-length-rule-for-the-long-text-pages.md)).** A list on a text page draws its first 10 rows and a "Show all N" chip (`ShowAll`, §5.7); the source or section header above it stays open, so a contents link lands on it. `/credits` (every source's photo and text lists, audio, video, insignia, data; its contents list below 768px only) and `/colophon` (every section) use it; the opened state is runtime only. `/colophon` opens with one `.totals` line under the lead (Space Mono 11px, 1px spacing, label colour), "N original works in K sections", counted from the sections the page draws; its launcher sketches are portrait cards (`.thumb-grid.portrait`: 170px-min columns, 2:3, two per row on a phone), a section of their own after the spacecraft cutaways.
+
+Not on the shell: the home page (below), the scene routes, the Lab, the missions/launches/fleet browse tools, card stubs and dev pages.
+
+**The home page ([UXD-039](../uxs/decisions/UXD-039-home-two-column-hero-one-glyph-component-and-type-scale.md)).** It keeps its own column (`.landing`, 880px at 1024px, 720px at 768px) and its own display type: the wordmark (Bebas, 48, 80, 96px), the section h2 (24, 32px), the card route names (22px), the grid headings (13px), the CTA labels (14px). Everything that reads as text uses the shell's tokens: `--size-body` (14px: subhead, prose), `--size-lead` (16px: the "What is this?" intro, the card titles, upright Space Mono per [UXD-003](../uxs/decisions/UXD-003-home-route-card-titles-upright.md)) and `--size-meta` (12px: card descriptions, the About block). From 1024px the copy and the three CTAs sit left over the picture: the same picture, `min(800px, 56vw)` wide, right-aligned and breaking out of the column toward the window edge, runs behind the copy, its copy side faded out (mask from transparent to opaque over the first 42%, the other edges feathered 18%; the fade flips in RTL, the picture never mirrors), so the CTAs and the first heading are in the first screen of a 1366x768 laptop; below 1024px it is the single stack. The TV layout (coarse pointer, no hover, 1100px or wider, 1.5 dppx or less) is two panels, the hero pinned and centred left, the route grid right.
+
+### 4.7 Layering (z-index)
+
+The layers that meet on `/explore` and the other scene routes, bottom to top. A new fixed element takes a slot in this table; it does not pick a number to win a local fight.
+
+| z-index | Layer | Source |
+|---|---|---|
+| 7 | The bottom-left HUD column of `/earth`, `/moon`, `/mars` (readout, locate chip, orbit ruler; the ruler inside it has no layer of its own) | `HudStackBL.svelte` |
+| 6 | The welcome hint (`/explore` and the four Worlds, §5.17) | `ExploreHint.svelte` |
+| 7 | The `/explore` level card (§5.17), under the scale navigator row | `LevelContextCard.svelte` |
+| 8 | The `/explore` scale navigator while its ladder is closed | `ScaleNav.svelte` |
+| 28 | Regime panel (the Earth-orbit ruler), under a satellite panel opened from it | `RegimePanel.svelte` (`zIndex={28}`) |
+| 30 | Detail panel (default, `--panel-z`) | `Panel.svelte` |
+| 39 | Nav dropdown click-catcher | `Nav.svelte` (`.group-backdrop`) |
+| 40 | Nav bar; the Phase panel (`zIndex={40}`) | `Nav.svelte`, `PhasePanel.svelte` |
+| 44 | INDEX handle (§5.13) | `index-panel.css` (`.scale-index-handle`) |
+| 45 | INDEX rail (§5.13) | `index-panel.css` (`.scale-index`) |
+| 46 | The scale navigator while its ladder is open, so the rungs are not covered by the rail. Beside a docked drawer the row moves left of it (§5.15) instead of rising above it: the drawer's bar carries Share and ×, which a higher layer would cover | `ScaleNav.svelte` |
+| 79 / 80 | Touch portrait only: the panel's backdrop and the panel as a bottom sheet (`--panel-z` + 49 and + 50) | `Panel.svelte` |
+| 88 / 89 | Settings backdrop and the mobile nav drawer's backdrop (88); the mobile nav drawer (89) | `SensorySheet.svelte`, `Nav.svelte` |
+| 90 | DebugPanel; the settings sheet (`SensorySheet`) | `DebugPanel.svelte`, `SensorySheet.svelte` |
+| 91 / 92 | More menu backdrop / More menu (above the DebugPanel and the settings sheet, which open from the same corner) | `Nav.svelte` |
+| 95 | First-time sensory hint (toast) | `Nav.svelte` (`.sensory-hint`) |
+
+Rules:
+
+- A panel (30) sits under the nav bar (40). The INDEX rail (45) sits over the panels and the nav bar; the touch portrait bottom sheet (80) sits over the rail.
+- The scale navigator is the one element that changes layer by state: 8 at rest (under panels, so it never covers a panel bar at the solar scale), 46 while its ladder is open (over the INDEX rail, which otherwise covers the rungs and swallows the clicks).
+- The nav's dropdown menu (`.group-menu`, 50) is inside the nav's own stacking context (40); its number orders it among the nav's children only.
+- Panel stacking inside a route is set by `Panel`'s `zIndex` prop, never by a literal in the page.
 
 ---
 
@@ -204,25 +321,21 @@ Cards use CSS Grid with `auto-fill` and `minmax(280–290px, 1fr)`. Gap is 12–
 
 ### 5.1 Navigation bar
 
-Consistent across all six screens. Height 52px. Translucent dark background with `backdrop-filter: blur(14px)`. Three zones: left (wordmark + subtitle), centre (nav links), right (view toggle + status).
+Consistent across all six screens. Height 52px (`--nav-bar-height`, one token). Translucent dark background with `backdrop-filter: blur(14px)`. Three zones: left (wordmark), centre (nav links), right (audio tour, locale, science lens, settings, More). Right-hand controls share one box, `.nav-btn`: 32px on a fine pointer, 44px on touch (`--nav-btn-fine`, `--nav-btn-touch`), 4px corners, outline at rest and the chip active look when on ([UXD-014](../uxs/decisions/UXD-014-one-chip-and-filter.md)). High contrast, Share and Debug sit in the More menu, a menu button whose panel uses the group-menu chrome; on phones they are drawer rows ([UXD-016](../uxs/decisions/UXD-016-compact-nav-and-more-menu.md)).
 
 ```
-[ORRERY  mission simulator]  [EXPLORE | PLAN | FLY | MISSIONS]  [3D | 2D]  [● LIVE]
+[ORRERY]  [HOME | EXPLORE ▾ | WORLDS ▾ | FLY | PLAN | CATALOG ▾ | LEARN ▾]  [audio | EN | lens | settings | ⋯]
 ```
 
 Active nav item: white text, `rgba(68,102,255,0.2)` background, `rgba(68,102,255,0.45)` border.
 
-The wordmark is always `font-family: 'Bebas Neue'; font-size: 26px; letter-spacing: 4px`. The subtitle is Space Mono 8px at 20% opacity.
+The EXPLORE dropdown's eight rows (and the phone drawer's EXPLORE group) come from the shell table (`SCALE_SHELLS`) and lead with the level's glyph: a 20px `ScaleGlyphIcon`, 10px gap, then the name; the row keeps its 9px 12px padding, its look and its accessible name (the glyph is `aria-hidden`). The other groups' rows have no glyph ([UXD-027](../uxs/decisions/UXD-027-explore-levels-one-table-glyphs-card-and-hint.md)).
+
+The wordmark is always `font-family: 'Bebas Neue'; font-size: 26px; letter-spacing: 4px`. The subtitle is Space Mono 11px at 60% opacity.
 
 ### 5.2 3D / 2D view toggle
 
-A pill-shaped container holding two buttons. The active button has a blue tint background and glow. The inactive button is transparent. Transitions on both buttons are 0.2s.
-
-```css
-container: border-radius: 20px; padding: 3px; gap: 2px;
-active:    background: rgba(68,102,255,0.35); box-shadow: 0 0 12px rgba(68,102,255,0.3);
-inactive:  background: transparent;
-```
+A single toggle chip (`<Chip kind="toggle">`, §5.7), whose label the page supplies, with `aria-pressed` true while 2D is showing. It has no container: the chip is outline at rest and takes the on look (soft accent fill, accent edge, white text; the world tint on `/moon`, `/mars`, `/venus`) in 2D.
 
 The toggle controls `opacity` and `pointer-events` on two sibling elements — the canvas (2D) and the renderer div (3D). Transition is 0.4–0.5s ease on opacity.
 
@@ -230,7 +343,7 @@ This pattern appears on P01, P03, P05, and P06. It must be identical on every sc
 
 ### 5.3 Detail panel (right slide-in)
 
-Used on the solar system explorer, mission arc, Earth orbit viewer, and Moon map. Slides in from the right. Pushes the grid content left in the mission library (using `margin-right`). Overlaps the 3D view on other screens.
+Used on the solar system explorer, mission arc, Earth orbit viewer, and Moon map. Slides in from the right. Pushes the grid content left in the mission library (using `margin-right`). Overlaps the 3D view on other screens; in the 3D view of `/explore` and of the Worlds (`/earth`, `/moon`, `/mars`, `/venus`) the focus sits in the middle of what the panel leaves (Panel-aware framing, below; [UXD-030](../uxs/decisions/UXD-030-worlds-selected-orbiter-stays-visible-and-framed.md)).
 
 ```css
 position: absolute; top: 52px; right: 0; bottom: 60–68px;
@@ -241,17 +354,28 @@ animation: slideIn / fadeIn 0.22s ease;
 ```
 
 The panel always contains, top to bottom:
-1. Header (object identity — name, type, agency, key stat)
-2. Tab strip (OVERVIEW | GALLERY | LEARN) — where applicable
-3. Stats grid (2-column)
+0. Header (`.panel-head`, fixed above the scroll container, solid `--color-panel-bg`, UXD-018 as amended by B1.1): one block, no separate bar row. Line 1 is the eyebrow (the kind line: agency badge and status, the type, a category and designation) with, at the inline end of its first row, only back `←` (after a card link) and close `×` (operator 2026-11-13): `<Chip>`s drawn at the badges' 24px, square, with a 44px tap area on touch through an invisible extension; they sit on the left in RTL. Share is not in the header: it is the last chip of the action row (1a). Line 2 is the entity name at the full panel width: a long name wraps under the actions, never beside them. A panel with no eyebrow (a place with only a name) leaves line 1 to the actions. The header does not scroll with the content, so the name is always visible and nothing scrolls under the actions. `Panel` takes the two parts as the `eyebrow` and `heading` snippets and owns the layout. Line 1 is one centre line: the agency badge, the status chip and × have the same 24px height; badges that wrap keep × on their first row, and a 6px gap separates line 1 from the name.
+1. Identity details below the header (key stats, type line, tagline)
+1a. Action row (`PanelActions`): at most three chips, in-scene, then view, then simulate, then plan, then Share last when the entity has a collectible card (opens the card overlay; `Panel` provides it, a panel with no row of its own gets one holding Share); above the hero, on every tab; absent when there is no action and no card. Nothing is stacked at the foot of a panel. The "view" chip of Earth, Mars, Venus and the Moon is "Go to Mars" (and so on), a link to the body's world page ([UXD-028](../uxs/decisions/UXD-028-explore-and-worlds-link-both-ways.md), `WorldLinkChip`); no other body has one.
+2. Hero image (no hover glow; keyboard focus draws an inset 2px `--color-focus` ring; a **planet's** hero is `object-fit: contain` on `#000` so the whole disc shows, UXD-029 — every other panel keeps the 16:9 cover), then the tab strip (OVERVIEW | GALLERY | LEARN) — where applicable
+2b. A Worlds panel (a Moon, Mars or Venus site, an orbiter, an Earth object): the same order, so the photograph comes first and the tabs after it (a guard test checks it for every Moon and Mars site with a gallery). The tab that holds the craft's drawing depends on what the craft did: a lander's is STORY (the landing sheet, then "On the surface" and the drawing), an orbiter's, and an Earth object's that has a drawing, is DETAIL (the existing `panel_tab_detail`), whose body is headed "The spacecraft" and holds the drawing, its exploded cutaway when it has one, and the fleet link. An orbiter never gets "On the surface" ([UXD-034](../uxs/decisions/UXD-034-worlds-orbiter-detail-tab-and-panorama-opening.md))
+2a. Star, outer-scale and black-hole panels (`UniversePanelBody`, [UXD-023](../uxs/decisions/UXD-023-star-and-outer-panels-follow-the-planet-pattern.md)): the same order, one hero or none (no hero, no slot; a part-of photo captions what is pictured), GALLERY second only with two or more images, a star's IN THE SKY tab holds the constellation finder, and so does a deep-sky object's (the object ringed in the figure, then six computed cells in the planet cell look, [UXD-049](../uxs/decisions/UXD-049-deep-sky-panel-in-the-sky-tab.md)); lead `.editorial`, facts in the planet cell look; no colour or size of their own
+3. Stats grid: three cells per row (`repeat(3, minmax(0, 1fr))`), so up to nine values take three rows (UXD-018, amendment "Overview three per row")
 4. Signature element (the "still on the surface" section for Moon; the "scale fact" for Earth orbit; the editorial fact for planets)
-5. Description (Crimson Pro italic)
+5. Description (lead text, Space Mono upright)
+5a. Science cards (`ScienceCard`): at most five distinct `/science` sections, through `pickScienceLinks` (`src/lib/science-links.ts`, [UXD-022](../uxs/decisions/UXD-022-science-link-lists.md)); `expanded={false}` (title and intro) for the compact lists of a station module and an Earth object; a body with no curated list shows none, there is no per-type default
 6. Educational links
 7. Credit footer
 
-The close button (×) is always top-right within the header, 24px circle, `rgba(255,255,255,0.06)` background.
+Rule and reasoning: [UXD-018](../uxs/decisions/UXD-018-panel-shell-and-actions.md).
+
+The star and deep-sky panels take their editorial text from the reader's locale overlay (`i18n-src/<locale>/universe/<kind>/<id>.json`, en-US as the fallback): `fact` is the lead (`.editorial`, item 4) and `bio` the body (`.prose`, item 5), above the values grid. The deep-sky panel keeps its gallery caption after the bio and its Data sources block ahead of the credit; an object with no overlay shows none of it, no placeholder.
 
 ### 5.4 Card (mission library)
+
+**One catalogue card and one grid (UXD-048).** `/missions` and `/fleet` render the same `EntityCard` (`src/lib/components/EntityCard.svelte`) in the same `<ul class="entity-card-grid">` (`src/lib/styles/entity-card-grid.css`); `/patches`, `/essays` and `/posters` use the same card in the same grid, for the card and grid sizing only (`git grep entity-card-grid`; no era strip, no agency chips). One footprint: a 16:9 photo, then a **fixed 142 px body of four rows**: the name (Bebas Neue 22 px, one line, ellipsis) with the year at the row's end; one line per agency (a 3 px bar in the agency's colour, `agencyDataColor`, then its name in uppercase mono; a joint record lists each partner); the pills (the status pill, then the data-quality pill on `/missions` or the kind of the craft on `/fleet`, one line); the story (two lines, clamped). Every card of a grid has the same size whatever a record carries (287 px tall at 1440 px, 340 at 768, 241 at 390; `tests/e2e/missions-filters-cards.spec.ts` holds equal heights and the same size on both pages). The photo slot is a soft gradient, never a black box, while the image has no `src` (the image-ladder manifest gates it) and for a record with no hero (`.cover-missing`). The 4 px edge at the card's left is the accent (the lead agency on `/missions`, the category on `/fleet`). Year, destination and country are also a visually hidden definition list (`facts`). A page differs only in the data and in what it puts in `pills`; it never forks the card. Off-screen cards skip layout (`content-visibility`, from `/fleet`, now for both).
+
+**The card's shapes (props of `EntityCard`, one component).** The root is a button (`onclick`, the catalogue), a link (`href`, `download`: an essay, a poster) or a plain box (neither: an insignia, whose credit line is the only link). `aspect` is `wide` (16:9, the default) or `portrait` (2:3, a print, so it is never cropped); `fit="contain"` shows a whole insignia on the photo gradient. `body` is `full` (the four rows), `compact` (the name over one `extra` row, a fixed 106 px) or `none` (the photo alone). `nameLines={2}` lets a title take two lines (the row keeps both, so cards stay equal; an ellipsis ends a longer one and `title` carries the full text); `level={3}` under a section heading. `agencies`, `year` and `accent` are optional: no accent keeps the 4 px edge in a neutral tone so the footprint is the catalogue's exact one. `editorial` is the essay's variant of the same card: the same 142 px body and the same grid, the summary set in the editorial serif (`--font-editorial`, Crimson Pro 15.5 px, line 1.4) on three lines, and no pills row (a modifier class, `.essay`, not `.editorial`, which is a global panel rule). Per page: `/essays` is a wide photo and the editorial body (title on two lines, three lines of the dek), 330 px at 1440, 341 at 768, 338 at 390; `/patches` is a wide photo with the insignia whole and a compact body (name, credit and licence line), 294 px at 1440, 305 at 768, 200 at 390; `/posters` is a portrait photo and no body, 499 px at 1440, 529 at 768, 248 at 390. **Frames:** these reading pages keep the 1080 px frame (`page-shell`), while `/missions` and `/fleet` use the wide frame (`browse-main`, 1400 px); the same grid rule (auto-fill from 260 px, 14 px gap; 150 px and 10 px under 600 px) therefore gives them 3 columns at 1440 against 5. `/essays` is one column under 600 px (`narrow-single`), so a long title (German, Arabic) fits on two lines at 390; the other two keep two columns. `tests/e2e/catalogue-pattern.spec.ts` holds one card size per grid, no empty band over 50 px, the catalogue's gap, 3 columns at 1100 px and up, one essay column on a phone, and the essay body (142 px, serif, three lines, no stray margin).
 
 Cards have a 3px top border in the agency colour. The rest of the border is `rgba(255,255,255,0.07)`, shifting to `rgba(255,255,255,0.18)` on hover with a -2px Y translate.
 
@@ -259,8 +383,8 @@ Structure:
 1. 3px agency colour top border
 2. Header: agency logo (52×52px) + mission name (Bebas Neue) + status pills + data quality badge + collaborator chips
 3. Stats strip: 3-column grid (departure / transit / Δv or payload) — `rgba(7,7,15,1)` background
-4. Description: Crimson Pro italic + "first" badge if applicable
-5. Bottom prompt: "CLICK TO PREVIEW ›" — Space Mono 7px, `text-dim`
+4. Description: Space Mono upright + "first" badge if applicable
+5. Bottom prompt: "CLICK TO PREVIEW ›" — Space Mono 11px, `text-dim`
 
 Selected card: `border-color: rgba(68,102,255,0.7)` + `box-shadow: 0 0 20px rgba(68,102,255,0.2)`.
 
@@ -270,7 +394,7 @@ Selected card: `border-color: rgba(68,102,255,0.7)` + `box-shadow: 0 0 20px rgba
 [● ACTIVE]  [FLOWN]  [◌ PLANNED]  [★ MINE]
 ```
 
-All pills: `font-size: 7px; letter-spacing: 2px; font-weight: 700; padding: 3px 8px; border-radius: 3px`.
+All pills: `font-size: 11px; letter-spacing: 2px; font-weight: 700; padding: 3px 8px; border-radius: 3px`.
 
 The ACTIVE pill includes a pulsing dot (`animation: pulse 1.5s infinite`) in the status colour.
 
@@ -287,29 +411,61 @@ The ACTIVE pill includes a pulsing dot (`animation: pulse 1.5s infinite`) in the
 
 The abbreviation is always visible. The real logo loads on top. Never breaks offline. In production: host logos locally from official media kits.
 
-### 5.7 Filter buttons
+### 5.7 Chip (toggle, filter, choice, HUD action)
+
+One control for every toggle, filter, choice and HUD action, drawn by `src/lib/styles/chip.css` and rendered by `<Chip>` ([UXD-014](../uxs/decisions/UXD-014-one-chip-and-filter.md)). A page never defines its own chip, pill or toggle rules.
+
+A link chip (`kind="link"`, an `<a>`) is the way between two pages: "Go to Mars" in an Explore panel's action row and "Back to Explore" at the head of a Worlds page's view row (the top-left cluster on touch); plain words, no arrow glyph ([UXD-028](../uxs/decisions/UXD-028-explore-and-worlds-link-both-ways.md)). The same chip is the action row of a standalone entity page (`/missions/<id>`, `/fleet/<id>`, `/explore/…/<id>`, `/moon|mars|venus/<id>`, `/lab/<id>`: "Open in Orrery" and its sibling; a long label wraps inside the chip, `.entity .actions .ui-chip` in `entity-page.css`) and `/plan`'s FLY MISSION (an `action` chip with the trajectory-arc glyph, full width in the summary column). The retired private blues `#1a33bb` and `#2244dd` are gone. The home hero's three buttons, the 404 page's buttons and the `/fly` demo buttons are not chips.
+
+"Show all N" under a list capped at its first 10 rows is an `action` chip (`ShowAll`, [UXD-038](../uxs/decisions/UXD-038-one-length-rule-for-the-long-text-pages.md)): the label `colophon_show_all`, no icon, 14px under the list, drawn only while the list is longer than 10 and not yet opened.
+
+Layer chips sit in one flat horizontal row (`LayerChipRow`, [UXD-015](../uxs/decisions/UXD-015-flat-chip-row.md)): 6px gaps, wrapping between chips where the width runs out, no captions, groups or master chips, and on a touch drawer the same run of 44px chips. On a fine pointer the view actions (2D, RESET VIEW, SPIN, AR, SKY) and the layer chips are one row: the actions group, a 12px gap, then the layer group, wrapping between the groups. RESET VIEW is always in its slot (disabled, not removed) so no chip shifts. On `/explore` ICONIC MISSIONS is the first layer chip, ahead of PLANETS, DWARFS, COMETS and ISM, because it opens the legend below the row (C7, [UXD-026](../uxs/decisions/UXD-026-iconic-missions-legend-and-milestone-boxes.md)).
 
 ```css
-padding: 4-5px 11-12px;
-font-size: 7px; letter-spacing: 2px; font-weight: 700;
-border: 1px solid rgba(255,255,255,0.1);
-border-radius: 3px;
-color: rgba(255,255,255,0.35);
+min-height: 30px;               /* fine pointer; 44px on (pointer: coarse) */
+padding: 0 12px;
+font: 700 11px Space Mono; letter-spacing: 1px; text-transform: uppercase;
+border: 1px solid var(--color-chip-edge);     /* outline at rest, rgba(255,255,255,0.18) */
+border-radius: 4px;
+color: var(--color-chip-text);              /* rgba(255,255,255,0.72) */
+background: var(--color-chip-glass);         /* rgba(8,10,22,0.65) */
 ```
 
-Active state: `background: rgba(68,102,255,0.25); border-color: rgba(68,102,255,0.5); color: #fff`.
+The rest values are the tokens `--color-chip-glass`, `--color-chip-edge` and `--color-chip-text` (`src/lib/styles/tokens.css`); a literal never replaces them.
+
+Two phone rules from the 44px height (plan L26, measured at 390px in en, de, ru, fr). **A label that cannot fit takes two lines, not an overflow:** the RESET VIEW chip carries `.ui-chip--wrap` (normal white space, centred, 3px block padding), so in de ("ANSICHT ZURÜCKSETZEN") it narrows beside the Explore navigator instead of running past its own edge. **A dock never leaves the screen:** the Explore time dock (`.time-controls`) is capped at the viewport width less 16px, and at 440px and narrower its default "SCALE" word gives way to the Earth image (the chip keeps its `aria-label`; a ratio such as "0.53×" stays), 324 to 346px wide where it was 385 (en) to 419px (ru). The drawer's tab row sits 4px above the dock (`--mcd-bottom` = the dock's bottom, 8px or the safe area, plus 60px).
+
+Hover: `border-color: var(--color-state)`, white text. Focus-visible: `2px solid var(--color-focus)`, offset 2px. On (`aria-pressed="true"`, `aria-checked="true"`): fill `color-mix(in srgb, var(--color-accent) 22%, glass)`, edge `var(--color-accent)`, white text. The Worlds (`/moon`, `/mars`, `/venus`) set `--chip-tint` to their world colour, used for the edge and fill of an on chip and the hover edge of every chip; Earth keeps the accent. `--chip-tone` is a per-chip data colour (fleet status, epoch band, nation, live): the leading dot and the on edge. Disabled: 42 % opacity. Kinds: `toggle` (`aria-pressed`), `choice` (`role="radio"` in a `ChipGroup` radiogroup with arrow keys), `action`, `link`. A count badge follows the label. Small controls that are not chips (Why?, provenance, timeline names) get a 24 px hit area with the `.ui-hit` class. A non-interactive label with the on look (the core tier of a link list) is `.ui-chip-label`, a span, never a control.
+
+### 5.7a FILTERS strip
+
+A compact chip on the left above the grid: `FILTERS  12 / 150  ▾`. The count sits right after the label (accent state colour when a filter is on, 60 % white for the total alone), the chevron last. One label key (`filters_eyebrow`), uppercase by CSS. The visible count is `aria-hidden`; a visually hidden sibling reads "12 of 150" (`filters_count_of`, word order per language). CLEAR FILTERS is a quiet chip with a `×` beside it while a filter is on. Used by `/missions`, `/fleet` and `/missions/launches`.
+
+A **view toggle** is a `ChipGroup role="radiogroup"` of `Chip kind="choice"`, one chip per view, named by its own key (`fleet_view_aria`, "View"). It sits on the FILTERS row, right after the FILTERS chip (and CLEAR FILTERS), never inside the collapsible strip, so it is always visible. On `/fleet` it is GRID and LINE-UP; a second radiogroup (Launchers, Capsules & spacecraft) follows it only while LINE-UP is on. A view that does not obey the filters disables the FILTERS chip while it is on (`disabled`, not removed, so nothing on the row moves) and draws neither the filters panel nor CLEAR FILTERS ([UXD-035](../uxs/decisions/UXD-035-fleet-view-toggle-and-one-missions-list.md)).
+
+**One page pattern for `/missions` and `/fleet` (UXD-048)**, in this order, from the same components: the search field; the FILTERS chip with the total and CLEAR FILTERS (shown whenever a filter is on); the **era strip** (`EpochTimelineStrip`); the **agency row** (`AgencyFilterRow`); the collapsible filters (`/missions`: destination, status, crew; `/fleet`: category, status); the **toolbar** (`BrowseToolbar`); the grid of `EntityCard`s or the list (`EntityList`). Only the data and those type-specific filters differ.
+
+- **Era strip**: a `ChipGroup role="radiogroup"` of nine `Chip kind="choice"` tiles, one per era (`epoch-bands.ts`), arrow keys with roving focus (reversed in right-to-left), Home and End. A tile is a `block-size: 96px` chip (the chip's own minimum stays; `chip.spec.ts` holds it): the era's flagship photo (`src/lib/era-flagships.ts`, one fixed mission hero per era, never a new image, credits as every hero) **drawn across the whole tile, its subject large on the end side**: each photo has its own focus point and height (`ERA_PHOTO` in `era-flagships.ts`: the `-640` or `-1280` rung, the aspect, `focus`, `height`; `eraPhotoPlacement` puts the focus at 72 % of the tile, 28 % in right-to-left, and the picture always covers the tile's full height, `era-flagships.test.ts`), with its own edge fading in so a narrow tile shows no seam; a symmetric picture may be mirrored in right-to-left. Over it, a **gradient from the text edge**: the tile's dark surface solid at the start, thinning through 55 % and clear from 70 % (from 78 % on the phone), so the text sits on dark that fades out, never on a hard block: the name (whole words, `keep-all`, within the start 52 %), the years (`bdi dir="ltr"`), the count, at most three 7 px agency dots, then "+N" (none where the page brings no colours); the count row stays within the start 58 % so it never runs onto the photo. The chosen tile has the `--color-state` (#889fe7) edge and ring; pressing it again clears the choice. An era with no entries on the page (Mars Era on /programs) stays as a tile but is dimmed and not selectable (`disabled`, so `aria-disabled`, skipped by the arrow keys, no hover); an era that is already chosen stays selectable so a link into it can be cleared (`eraSelectable`). Nine columns from a 1100 px strip, five and four below, one scroll row under 560 px (tiles 172 px); right-to-left mirrors the order. The bands do not overlap: First Stations is 1973-1980 and Shuttle & Mir 1981-1998, so a tile's years are exactly what it counts (`epochForYear` keeps "the band that starts later wins" for a future overlap).
+- **Agency row**: one `Chip kind="choice"` per agency: a 10 px dot in its colour (`dotColor`, no ring, `agencyDataColor`: the palette colour, or a brand colour lifted to 4.5:1), its name as text (22 characters at most, then an ellipsis), its count (`count`). No logo: several are dark on the dark chip. The accessible name is the full name and the count. The selected chip keeps the accent edge. A long row (`/fleet`, 44 agencies) shows the 14 with the most records and the chosen one, then "Show all 44" (`colophon_show_all`); opened, it ends in "Show fewer" (`browse_show_fewer`).
+- **Toolbar**: the catalogue total with its noun (`nav_missions`, `nav_fleet`), "`Showing: <era> (<n>)`" (`browse_showing`, live region), then at the end the sort select (`fleet_filter_sort`; newest, oldest, alphabetical, and by category on `/fleet`; `?sort=`) and the view toggle (Grid, List, and Line-up on `/fleet`; `?view=`). The total, "Showing" and the sort are hidden in the line-up.
+- **List**: `EntityList`, one 44 px row per record: name, kind, agency, year, status; a button that opens the same panel as the card.
+- **`/programs` and `/missions/launches` on the same pattern (UXD-048, round 4)**: the same parts in the same order from the same components (search, FILTERS with CLEAR FILTERS, `EpochTimelineStrip`, `AgencyFilterRow`, `BrowseToolbar`, `EntityCard` in `entity-card-grid`). `/programs`: a program sits in the era of its **start year** (`epochForYear`; `$lib/programs-browse`), its agencies are the chips, kind is the one filter in FILTERS, a card is a link (`href`) with the name on up to two lines and one pill, the kind (singular, whole; the status is in the list view and read out, the years already say running or ended), the tagline on one line; on the two-column phone grid the years go under the name and the tagline gives way; the frame is the wide text-page shell because the title, lead and patch wall stay. `/missions/launches`: opens as the **month-grouped list** (`LaunchRow`, which carries the countdown, provenance, editorial note and links that `EntityList` cannot), Grid is one card per launch (the date in the story line, the year at the row's end, the status pill, a link to the mission or launcher where the manifest names one, a plain box otherwise); eras count from `launches-years.json` and an era loads the decades it spans; providers are chips by short name. Empty eras stay in the strip with a 0, as on `/missions`.
+
+### 5.7b Canvas proxies: hidden, and visible on focus
+
+The canvas routes keep two kinds of invisible buttons that stand in for 3D objects. **Tour anchors** (`.tour-anchors`, the Curator Tour's "select mercury" click targets): a 1 px clipped box, `aria-hidden`, `tabindex="-1"`, never focusable, never drawn. **Screen-reader lists** (`.sr-site-list` on the Worlds, `.sr-module-list` on `/iss` and `/tiangong`, GH #256): the same clip, but in the tab order, one button per site or module. While focus is inside a list only the focused row is drawn, as a panel-coloured chip with a 2 px `--color-focus` ring at the bottom centre, 56 px above the edge (clear of the footer dock); the other rows stay clipped but focusable, so Tab keeps walking the list. The rule is in `app.css`; the components' own `.sr-only` clip is the resting state. A new canvas proxy that is in the tab order uses the same class pair, or it is a tab stop nobody can see. Guard: `tests/e2e/sr-list-focus.spec.ts`.
 
 ### 5.8 Section label (grid divider)
 
 ```css
 grid-column: 1 / -1;
-font-size: 7px; letter-spacing: 3px; font-weight: 700;
-color: rgba(255,255,255,0.22);
+font-size: 11px; letter-spacing: 3px; font-weight: 700;
+color: rgba(255,255,255,0.6);
 border-bottom: 1px solid rgba(255,255,255,0.05);
 padding: 6px 0 4px;
 ```
 
-Content examples: `YOUR MISSIONS`, `CURRENTLY ACTIVE`, `MISSION ARCHIVE — PATH TO MARS`.
+Content examples: `YOUR MISSIONS`, `CURRENTLY ACTIVE`, `MISSION ARCHIVE — PATH TO MARS`. The same values are the text pages' section label, `.page-section-label` (§4.6, UXD-012).
 
 ### 5.9 Stats cell
 
@@ -320,7 +476,7 @@ border-radius: 4px;
 padding: 8–9px 10–11px;
 ```
 
-Label: Space Mono 6px, letter-spacing 2px, `rgba(255,255,255,0.25)`. Value: Space Mono 10–12px, weight 700, white.
+Label: Space Mono 11px, letter-spacing 2px, `rgba(255,255,255,0.6)`. Value: Space Mono 12px, weight 700, white.
 
 ### 5.10 Educational link row
 
@@ -330,11 +486,11 @@ A single link entry within a tier section:
 [●] Link label text                                              ↗
 ```
 
-The dot is 5×5px in the tier colour. The label is Space Mono 9–10px at 65–68% opacity. The arrow `↗` is Space Mono at 20% opacity. The full row has 7–8px horizontal padding, 7px vertical, 4px border radius, and transitions to `rgba(255,255,255,0.05–0.07)` on hover.
+The dot is 5×5px in the tier colour. The label is Space Mono 11px at 65–68% opacity. The arrow `↗` is Space Mono at 20% opacity. The full row has 7–8px horizontal padding, 7px vertical, 4px border radius, and transitions to `rgba(255,255,255,0.05–0.07)` on hover.
 
 ### 5.11 Gallery grid
 
-3×3 grid of images, gap 4px. Each cell: `aspect-ratio: 1; overflow: hidden; border-radius: 3px; background: #0a0a18`. The image is `object-fit: cover; loading: lazy`. Credit footer below the grid: Space Mono 6.5–7px at 15–18% opacity.
+3×3 grid of images, gap 4px. Each cell: `aspect-ratio: 1; overflow: hidden; border-radius: 3px; background: #0a0a18`. The image is `object-fit: cover; loading: lazy`. Credit footer below the grid: Space Mono 11px at 60% opacity.
 
 For NASA missions: live-fetched from the NASA Images API. For others: curated Wikimedia Commons URLs. For unresolved gaps: honest placeholder text.
 
@@ -351,13 +507,195 @@ The mission arc fly screen uses HTML overlays over the full-screen 3D renderer, 
 
 All HUD panels: `background: rgba(4,4,12,0.82); border: 1px solid rgba(255,255,255,0.07); backdrop-filter: blur(12px); border-radius: 6px`.
 
+**Label/value grid** ([UXD-043](../uxs/decisions/UXD-043-fly-2d-seen-on-the-dark-destination-drawn-and-hud-grid.md)). Every label/value block in `/fly` (the `.hud` panels, the spacecraft info card, the CAPCOM communications rows) is a two-column grid, `grid-template-columns: fit-content(50%) minmax(0, 1fr)`, 10 px column gap. The row element is `display: contents`, so one label column is shared by every row of a panel and every value starts at the same x; the value is left-aligned, starts in the label's row and wraps only inside its own column (`overflow-wrap: anywhere` for a long single token). A panel's other children (title, phase pill, notes, bars) span both columns (`.hud > :not(.hud-row)`). No label/value row uses `flex-wrap`.
+
+**2D canvas** (`draw2d`, values in `src/lib/fly/fly-2d-style.ts`, tested over `#04040c`): orbit rings (Earth, the destination, the Moon's) neutral white `rgba(255,255,255,0.45)` at 1.25 px (4.45:1); LAUNCH / ARRIVAL anchor rings white 0.7 (9.87:1); not-yet-flown arcs 0.75 alpha in the arc colours, dashed `[4, 6]` (3.19:1 outbound, 3.51:1 return); flown arcs solid 2 px (4.96:1, 5.54:1); stars alpha 0.15 to 0.51 (1.33:1 to 4.21:1); labels 11 px bold Space Mono at 85 % white. The planet identity colour is on the live body, its halo and its label only. The scale fits the destination or trajectory (`fly-2d-scale.ts`: outermost point at 85 % of the shorter half-extent, 1.5 AU floor, eased over about 0.8 s) and a bottom-left bar reads "1 AU = N px". Only the active destination is drawn beside Earth (`fly-2d-targets.ts`); a planetary-moon flight draws the host plus the named moon on a short ring.
+
+**Play bar marker row ([UXD-042](../uxs/decisions/UXD-042-plan-to-fly-handoff-grouped-destinations-and-the-journey-bar.md)).** One row of markers on the bar's track for the whole journey, in every act (it no longer hides during the launch): the launch's flight-plan beats and the descent beats as 2 px ticks in `#889fe7` (`--color-state`, muted blue, no teal; `rgba(136,159,231,0.5)` once passed, `#c3d0ff` on hover and focus), the cruise milestones as gold dots and the flight-director stages as gold diamonds (as before). A label (the beat's `hudLabel` text and its clock, or the milestone's text) shows on hover and on keyboard focus, kept inside the viewport at the bar's two ends; a click seeks there. Each tick's hit area is 10 px wide, and ticks closer than 10 px on the measured track collapse into the first with a `+N` in the label (the ascent slice is about 32 px on a 390 px phone). The row's positions come from the master clock, so a tick sits where the same point on the bar would seek. Accessible names: `fly_beat_aria` for a beat, `fly_milestone_aria` and `fly_stage_tick_aria` as before.
+
+**The launch scene.** Its camera is a seeded director with clouds, smoke and a Sun-lit sky ([UXD-046](../uxs/decisions/UXD-046-the-launch-runs-a-seeded-camera-director.md)) and it stands on the pad of its launch site and year ([UXD-047](../uxs/decisions/UXD-047-the-launch-draws-the-real-pad-of-its-site-and-era.md)); the rules are in [UXS-003](../uxs/UXS-003.md) and the records.
+
+**A long list is a native `select` with `<optgroup>`s**, not chips and not a custom popover (the phone's own picker, free accessibility): `/plan`'s destination (five groups, UXD-042) and `/lab`'s goal list.
+
+### 5.13 INDEX panel (one on every /explore scale)
+
+The searchable, keyboard-reachable list of every selectable object of the scale on screen: the DOM mirror of the canvas ([UXD-017](../uxs/decisions/UXD-017-one-index-on-every-scale.md)). One component, `ScaleIndex.svelte`, one stylesheet, `src/lib/styles/index-panel.css`, one open state, on all eight scales (solar system, neighbourhood, Milky Way, Local Group, Local Sheet, Virgo, Laniakea, Cosmic web). The Worlds (`/moon`, `/mars`, `/venus`, `/earth`) still use `SurfaceIndexPanel`, which shares the look and moves onto `ScaleIndex` in a later slice.
+
+```
+ handle              rail (320px)
+┌──┐   ┌────────────────────────────────┐
+│IN│   │ [ search…            ] [ × ]   │  search + close chip
+│DE│   │ [All] [★ Notable] [Kind] …     │  kind chips (ChipGroup)
+│X │   │ 12 / 150                       │  count
+└──┘   │ SECTION                        │  section label
+       │ ● Name              meta    ↗  │  row + page link
+       └────────────────────────────────┘
+```
+
+**Handle.** A pull-out tab on the left edge at every viewport, vertically centred (`top: 50%`), away from the top-left controls. A `<Chip kind="toggle">` labelled INDEX, set vertically (`writing-mode: vertical-rl`), `aria-pressed` while the rail is open. Its accessible name says which scale's INDEX it opens. `z-index: 44`; in a window 600px wide or less with a mouse it is 25, under the detail panel (z 30), which is then as wide as the window (the Worlds' handle does the same); on touch the panel is a bottom sheet and covers it already.
+
+**Rail.** `aside.scale-index`, `position: fixed`, `left: 12px`, `bottom: 12px`, width `min(320px, 100vw − 24px)`, 12px padding, `--color-panel-bg`, 1px `--color-border`, 10px radius, `backdrop-filter: blur(8px)`, `z-index: 45`. The top edge is `--index-top`: the measured bottom of the HUD chip row plus 8px (152px before it is measured; the HUD wraps on narrow windows and is absent on touch). In a window 500px high or less (a phone held sideways) the rail starts at `--nav-height` + 8px, keeps at least three rows and scrolls as a whole.
+
+**Parts, top to bottom.**
+
+| Part | Look |
+|---|---|
+| Search | `type="search"`, 12px, 6px radius; focus draws the `--color-accent-strong` edge |
+| Close chip | `<Chip kind="action" class="ui-chip--close">` with `×` beside the search: a 30px / 44px square, the same close chip as the panel header of §5.3 and every dialog, overlay, drawer and banner close (UXD-014), in the header outside the scrolling list, the same close control as the panel bar of §5.3 (B1 brief O6, [UXD-018](../uxs/decisions/UXD-018-panel-shell-and-actions.md)) |
+| Kind chips | `ChipGroup` radiogroup of `<Chip kind="choice">`: All, then the scale's kinds (the solar system: Planets, Dwarfs, Asteroids with Arrokoth, Moons, Comets with ʻOumuamua; only the Sun and the two belts are under All alone), plus Notable objects where the data has headliners; at most five besides All; no distance or size filter. A chip that filters on a badge carries its glyph (⊕ ★ ◈ ●). A chip with no matching row is not shown. **Folded** (C6-F): only the chips that fit one line beside All are drawn (the widths are measured, so it follows the language; Planets and Moons are taken first on the solar system, otherwise the scale's own order); the others are in a second radiogroup that opens in place under the count, behind the FILTERS button |
+| FILTERS button (C6-F) | `IndexFiltersToggle.svelte` on every INDEX: an action chip (`ui-chip`, `.idx-filters-btn`) with the word `filters_eyebrow` (FILTERS), a ▾ when closed and ▴ when open (11px, `aria-hidden`), `aria-expanded` and `aria-controls` on the folded region; when a folded filter is on, its number sits before the chevron in `--color-accent-strong` (the solar INDEX: 1 when the active chip is in the fold; the Worlds: how many of agency, era and status are not on All). It sits on the count line, at the inline end, and shows only when something is folded. Open, its edge is `--color-accent`. The fold is `.idx-fold`: groups of a small label (`--size-label`, 1.5px, uppercase, dim: AGENCY, ERA, STATUS on the Worlds) over their chips, 6px between groups, hidden by the `hidden` attribute |
+| Count | `shown / total`, `--size-label`, `--color-text-dim` |
+| Section label | Space Mono `--size-label`, uppercase, 1.5px spacing, `--color-text-dim`, top rule; absent at the head of an unsectioned list |
+| Row | A button, 8px / 10px padding, 6px radius. Lead slot (26px wide, so names line up; 28px on the solar-system scale): an 8px colour dot (a solar-system body's own colour) or the badges ⊕ system, ◈ culture door, ★ headliner, ● black hole. Name 13px, ellipsis. **The kind is a glyph, not text** (UXD-045; every scale but the solar system and the Local Group): a 14px inline SVG in `--color-state` at the row's end (`IndexKindGlyph`, 14 drawings in `index-kind-glyph.ts`: star, galaxy, cluster, globular, nebula, shell, group, network, wall, void, attractor, black hole, arm, other), so the name keeps the row's width; the exact localized type is a tooltip (the glyph hovered, or the row focused by keyboard; `data-tip`, drawn inside the row so the list's scroll box never clips it) and visually hidden text after the name for a screen reader ("M13 · Hercules Globular Cluster, Globular cluster"). A star keeps its constellation as text (`--size-label`, `--color-state`) before its glyph; the solar-system rows keep their two-line meta and the Local Group rows their group line; a meta text is at most 45% of the row beside the name. **The solar-system rows are two lines** (C6): a grid of the 28px lead slot (spanning both lines) and the name over the meta, **the lead slot holding the body's round photo** (`EntityThumb`, L45, [UXD-025](../uxs/decisions/UXD-025-lists-carry-a-round-photo.md): 40 of the 51 rows, ring the planet's colour or neutral, the 11 rows with no image keep the dot, centred in the same slot; only on this scale, and only once the INDEX is open: a closed INDEX is `hidden` and its lazy images do not load), which runs the full width, wraps after a " · " (two lines at most, then an ellipsis; no-break spaces keep "139,820 km" whole) and carries a `title` with the whole text; the meta is distance, diameter and, for a planet, its listed moons (`1.52 AU · 6,779 km · 2 major moons`; dwarf, asteroid, Kuiper object `2.77 AU · 939 km`; comet its distance; moon `Jupiter · 3,643 km`; belt `2.2–3.2 AU`; the Sun "Star") in the reader's number and unit forms (`format.ts` `planetIndexMeta` and its siblings). The other seven scales keep one line |
+| Row states | Hover and focus: 18% accent fill. Selected (`aria-current`): 28% accent fill, 55% accent edge. A fiction row (Gargantua): dashed edge, dim text |
+| ↗ page link | Beside the row, only where the object has an entity page. 14px glyph; 44px square on a coarse pointer, 30px wide on a fine one (`(hover: hover) and (pointer: fine)`) |
+| Empty | "No match" line, 11px, dim, centred |
+
+**Keyboard.** One Tab stop for the whole list (`use:roving`, vertical, wraps); ↑ ↓ or D-pad move over the rows and the ↗ links; Enter selects.
+
+**Hidden but in the DOM.** One instance per scale is always mounted; a closed instance, or one whose scale is not on screen, has the `hidden` attribute, so its rows stay in the page. `/explore` is one prerendered HTML file for every `?context=`, so all eight lists are in it. Before hydration only the rows that have a page are written, as plain link rows, so the static page holds every entity link and no dead button; after hydration every row is a button and the ↗ link joins it.
+
+**Layering.** The INDEX handle is z 44, z 25 in a window 600px wide or less with a mouse, where the open detail panel is full-width (z 30); the same rule holds for the HUD cluster and the time dock ([§5.15](#515-explore-hud-scale-bar-level-picker-direction-pills-references-grid-reset-slot-uxd-021), Layering under an open detail panel).
+
+**One open state.** `indexOpen` is one flag for all eight scales. On a scale jump it stays open on a fine pointer and closes on a coarse one, where the 320px rail covers most of the width. The rail is not offered while a takeover owns the screen (black-hole lensing view, deep-sky immersion, an exoplanet's BodyScene), outside the solar system in the 2D view, or in Exhibit Mode. Selecting a black-hole row closes it.
+
+**The Worlds' index** (`SurfaceIndexPanel` on `/moon /mars /venus /earth`, still its own component) draws a site's 8px dot in its nation's colour (`colorFor(site)`, the nation legend's swatch colour, §2.4) with a 1px `rgba(255,255,255,0.35)` ring so the dark navy and dark red read on the panel; an Earth object keeps its own object colour. The orbit-or-land cue is in words, the last part of the meta line (`1976 · ACTIVE · ON LAND` / `· IN ORBIT`, uppercase, the words of the Orbit and Land chips). The Worlds row is two lines: the lead slot (28px, spanning both lines), the name and agency badge over the meta, which wraps only after a " · " (two lines at most, `title` with the whole text). **The lead slot holds the site's round photo** (`EntityThumb`, L45, [UXD-025](../uxs/decisions/UXD-025-lists-carry-a-round-photo.md)): the 192px thumb of the folder and blessed slot the site's panel gallery resolves to (`thumbOfSite`; an Earth launch pad is a fleet entry, `thumbOf('fleet', id)`), ring the nation colour (an Earth object's own colour; teal or cyan, e.g. the ISS, drawn neutral). 28 of 28 `/moon`, 27 of 27 `/mars`, 3 of 3 `/venus`, 73 of 73 `/earth` (31 objects, 42 pads) rows have one; a row without keeps the 8px dot, centred in the same slot.
+
+**Selecting.** A row does what a canvas click does, including the camera move (§7.5, [UXD-019](../uxs/decisions/UXD-019-select-equals-focus.md)); the INDEX stays open after a select. Black holes sit in the INDEX of the scale their distance puts them in (Sagittarius A\* and Cygnus X-1 in the Milky Way, M87\* in Virgo, Gargantua under a Fiction section at the foot of the Cosmic web).
+
+### 5.14 Scene pins, rings and labels (UXD-020)
+
+Text and markers drawn inside the 3D scenes of `/explore`, as opposed to HTML overlays ([UXD-020](../uxs/decisions/UXD-020-explore-readability-pins-rings-labels.md)). `src/lib/universe/scene-pins.ts` holds the constants and the maths; `scene-pin-sprites.ts` builds the sprites. The seven pin scenes (neighbourhood through Cosmic web) and the deep-sky scene share them.
+
+| Element | Rule |
+|---|---|
+| Scene label | 12px (`--size-meta`) in CSS pixels at every scale and viewport. The sprite is sized in pixels from the pin's view-space depth (`viewDepth`, what the sprite shader projects with; not the Euclidean distance, which draws a pin 40 degrees off axis 1.3 times too big), the field of view and the viewport height, not as a fraction of the distance |
+| 2D map text | 11px (the floor) at every zoom, alpha 0.58 or more; it does not grow with the zoom |
+| Pin ring | A thin annulus, 44px across, 1.5px stroke, screen-constant. On every pin, on the deep-sky glints and on the label point of every Milky Way arm. Hidden at rest; full opacity on hover and selection (both at once: a selected pin keeps its ring while another is hovered), in `#889fe7` (`--color-state`). The ring is the pick target only in the neighbourhood (a 48px sprite) and on the arm label points; elsewhere the glow is |
+| Anchor ring ("you are here") | Gold `#ffcf8f`, 44px, up at opacity 0.55 at rest and full on hover or selection. The same colour and size at all seven levels: the Sun, the Milky Way in the Local Group, the Local Group in the Local Sheet and Virgo, the Virgo Supercluster in Laniakea, Laniakea in the Cosmic web, Sol in the neighbourhood. It is a literal, not `--color-gold` (`#ffc850`) |
+| Solar-scene rings | The selection ring and the hover ring of a planet, moon, small body or the Sun are the same `#889fe7`, but they are outlines sized to the body (a 1.2px line), not the 44px pin ring. The selected one pulses between 0.3 and 0.55 opacity; the hover one is steady at 0.35 |
+| Light-year rings | Four 2px lines at opacity 0.55 on a ramp from `#889fe7` to white; the label is the localised unit (`m.unit_ly_value`) with a dark halo, at the lowest label priority |
+| Colour | No teal or cyan in rings, anchor glows or labels. Galaxy glows by kind keep their data colours |
+| Milestone box (iconic missions, C7, [UXD-026](../uxs/decisions/UXD-026-iconic-missions-legend-and-milestone-boxes.md)) | A canvas sprite per labelled waypoint of the highlighted mission, drawn at the device pixel ratio (2 at least) and sized each frame from the view depth so its text is 12px at every zoom. Pill `rgba(15,18,35,0.86)`, 1.5px edge and the body text in the trajectory's own colour (a data colour, teal included). Header `n/N · date`, 11px bold, 78% white: the milestone's number of the labelled waypoints (Today excluded) and the data's ISO date, language-neutral. Body: the milestone name, 12px bold, wrapped by measuring to two lines in 200px, an ellipsis only when two lines do not hold it; the width follows the text. No mission name in it. Lifted a steady 12px above its marker along screen-up; placed by the pass below (Launch first, then by index; the box of the marker under the pointer is forced); right-to-left locales right-align the lines, the header stays left-to-right. Click opens the mission (UXD-019) |
+| Mission box | One per highlighted mission, at its Today marker: the mission name (11px, upper case) over `current_distance_label` (12px, up to 3 lines in 240px). First in the placement pass (only a forced hovered milestone box wins over it); it moves below Today where the heading pill would meet it, and the pill is a required obstacle of the pass (a forced slot, never hidden; the box yields). Not a pick target |
+
+Scene code cannot read CSS variables, so the blue is a literal (`RING_BLUE`, `0x889fe7`) that mirrors `--color-state`; change both together.
+
+**Label placement pass.** Each frame the candidate labels are placed in priority order (`placeLabels`); a label that overlaps one already placed is hidden and returns when space frees. Order: hovered or selected (always shown, placed first), the anchor, headliners, the rest. The Milky Way's order is the Sun, Sagittarius A\*, the headliner globulars, the Magellanic Clouds, the arms; the light-year ring labels come last. A hidden arm label's sprite is not a pick target; the arm's ring is, hidden label or not, and hovering it shows the label. Equal ranks resolve by creation order.
+
+**Steady label offset.** A label sits above its pin by the steady glow size and the ring, never the hover-grown one (`labelOffset`), so hovering does not move it. The lift runs along the camera's screen-up (`liftOnScreen`), not world Y, so it is the same on screen when the camera looks straight down.
+
+### 5.15 /explore HUD: scale bar, level picker, direction pills, REFERENCES grid, Reset slot (UXD-021)
+
+The HUD parts of `/explore` that carry a number, a choice or a name ([UXD-021](../uxs/decisions/UXD-021-explore-hud-scale-bar-picker-pills-references.md)).
+
+| Element | Rule |
+|---|---|
+| Scale bar | One component (`ScaleBar.svelte`) and one module (`scale-bar.ts`) for the Explore strip and both Worlds bars. The bar is 120px wide (64px under 600px wide), 3px high with end ticks, at every zoom; the label to its right (`--size-label`, 70% white) is the value it spans to three significant digits in the page locale (`1.37`, `13,7`, `137`), in the unit of the existing ladders (km, AU, ly, pc; km and m on the Worlds, through `distanceWithUnit`). The value follows the zoom; the width does not. No bar is drawn at the six schematic scales (Milky Way to Cosmic web: not to scale) |
+| Scale strip | A fixed 232px box (190px under 600px wide, the bar's own breakpoint): it does not resize with its text; the label sits under the bar (`ScaleBar` `stacked`), because beside it the box holds only 81px for a label of about 108px (de). Bottom right, z 6. Panel-cover rule: with a drawer docked at the right edge (desktop, touch landscape) its right offset is 12px plus the drawer's width (`panelCoverPx`), so it sits left of the drawer, not under it; a bottom sheet (touch portrait) moves nothing (cover 0). The schematic note keeps its content width (max 260px, 190px on a phone). Bottom offset: the lifts clear the time dock, so they apply only where the dock is drawn (the solar system): 104px under 900px wide (the fixed box reaches back over the dock's right end), 50px on touch landscape (above the drawer's tab row), 112px on touch portrait (the 44px chips put the tab row's top 108px up, L26); at every other scale (`no-dock`) 46px above the footer, and on touch 12px from the bottom edge |
+| Level picker glyphs (C8, [UXD-027](../uxs/decisions/UXD-027-explore-levels-one-table-glyphs-card-and-hint.md)) | The chip leads with the current level's glyph (a 20px `ScaleGlyphIcon`, in place of the 6px dot), then the name and the caret; each rung leads with its 24px glyph, then the name in the chip's 11px uppercase and, with a pointer (`hover: hover`, `pointer: fine`, 700px or wider), the home-grid `desc` on a second line: 11px, normal case, 0 tracking, `--color-text-label`, 15rem wide with an ellipsis, referenced by the rung's `aria-describedby`. Phones and coarse pointers show glyph and name only. A rung has 4px block padding. The glyphs are the home grid's drawings, each in its own `<svg viewBox="0 0 48 48">` with its own `<defs>` under per-instance ids (no id is shared by two icons) |
+| Level picker | One `Chip` toggle that opens the ladder as a popover downward. Flush right (the solar system) the ladder lines up with the chip's right edge and opens leftward (`align="right"`); flush left (the other seven scales) it lines up with the left edge. Physical offsets, not logical ones (the navigator's `right: 8px` is physical in every direction). Never wider than `100vw - 16px`, and its position is clamped to 8px from either screen edge |
+| Scale navigator row | Back, picker, Reset (the seven outer scales only: the solar system's Reset is the HUD row's). Flush right at the solar system, flush left elsewhere. With a drawer docked at the right edge (desktop, touch landscape) the flush-right row sits left of it by the drawer's width plus 8px (`panelCoverPx`, the measurement the camera framing of §7.5 takes); a bottom sheet moves nothing. z 8, 46 while the ladder is open (§4.7) |
+| Reset slot | One RESET VIEW per scale, always drawn, disabled while there is nothing to reset, so the row never shifts. At the solar system it is the HUD row's (top left, A5, UXD-015; enabled by a selection of any kind); at the seven outer scales it is the navigator's (a selection; at the neighbourhood also the Sun out of frame). Never two on screen. The Explore HUD row stops 12px before the navigator's left edge (cover + 8px + its width), like the worlds' `hud-beside-panel` |
+| Iconic missions legend (C7, [UXD-026](../uxs/decisions/UXD-026-iconic-missions-legend-and-milestone-boxes.md)) | Opened by the first layer chip, ICONIC MISSIONS, 280px wide under the HUD row. Title line (`explore_iconic_tagline_placeholder`, 12px mono, may wrap) with the (i) at its inline end: a 20px round trigger with a 24px `.ui-hit` area that opens `WhyPopover` (title "Why are they all in one plane?", the body `explore_why_plane_body`, the "Read full" link to `/science/transfers/coplanar-trajectories`), right-aligned inside the legend. Then 18 rows, 28px with a fine pointer (36px on touch), 12px name, 11px year, a 28px round mission photo (`EntityThumb`, L45-T3b, [UXD-025](../uxs/decisions/UXD-025-lists-carry-a-round-photo.md)) in the lead slot ringed in the trajectory colour (Voyager 2's path is magenta `#da47eb`, [UXD-037](../uxs/decisions/UXD-037-orbit-band-palette-no-teal.md); a photo that fails to load shows the 8px dot in the path colour) in place of the swatch line, so the 28px and 36px rows keep their height; only the list scrolls, and the legend ends above the lower-left stack (the folded ruler header, PLANET SCALES, the time dock), so on a short window the list scrolls and those controls stay reachable. The hovered craft's tagline is a 240px card beside the legend, level with its row (upright Crimson 16px, `rgba(15,18,35,0.92)`, edge `--color-accent-edge`), never in the list, so nothing shifts; it is `aria-hidden` and a separate visually hidden `aria-live="polite"` region reads the tagline after the pointer has rested 250 ms. The (i) is 20px with a 24px hit area (44px on touch); its popover has no eyebrow (`WhyPopover` `eyebrow=""`) and opens with logical offsets, so it stays inside the legend in right-to-left. Desktop only; the phone drawer has the title and the rows |
+| Layering under an open detail panel | In a window 600px wide or less with a mouse the detail panel (`Panel.svelte`, z 30) is as wide as the window, so no HUD piece may sit above it: the HUD cluster (view actions, layer chips, PATHS legend) is z 25 and the time dock z 24 there (the cluster one above the dock, so the legend still covers the scrubber), as the INDEX handle is z 25 (§5.13). Wider, the cluster stays z 45 and the dock z 40 beside a docked drawer. The site footer strip and its More popover (z 35, `+layout.svelte`) are z 25 in the same window while a panel is open (`html:has(aside.panel:not(.covered))`); they do not move, and touch has no footer. On touch the portrait sheet is z 80 and covers the HUD. A landscape phone's detail panel is a side drawer: the Worlds' drawer tab row (`MobileDrawerGroup`, RULER / LAYERS / NATIONS / SCAN) and the card a tab opens end at its edge (`right: panel-width + 12px`, the card clamped to the row) and the Worlds' top-left chip row starts after the 44px INDEX tab on a landscape phone (so the tab never covers BACK TO EXPLORE) and ends there too and scrolls sideways; `/explore`'s inline tab row shares the bottom line with the time dock, the scale strip and the level card, so it is hidden while one is open (visible part would open a card under the drawer) and returns when it closes. Guard: `hud-under-panel.spec.ts` samples a grid over the open panel on nine routes and names anything else on top, and on a landscape phone asserts the Worlds' tabs are visible, left of the drawer and on top |
+| Direction pills | ʻOumuamua's "← Vega" and a heading craft's "→ star" (Voyager 1 and 2, Pioneer 10 and 11): hidden at rest, shown while the owner is hovered or selected (a craft's with its path highlight). The arrow lines stay. A named star's name is the star panel's (`getNamedStarI18n`); a catalogue-only star keeps its data name |
+| REFERENCES overlay | The canvas (`SizesCanvas`) draws the eight bodies only: true relative size, a common baseline, size order. The names are a DOM grid under it (`SizesOverlay`): eight columns in the same left-to-right order on the 640px card, 4 x 2 under 620px; a cell holds a swatch in the planet's colour, the name in the viewer's language (`planetName`, `lab_body_*`) and the diameter (the `planet-stats.ts` mean diameter) in the page locale and unit form; a name never breaks mid-word from 360px up (Space Mono 11px, -0.02em tracking; the longest, nl MERCURIUS, is 58.6px in a 61px text box at 360px). The open planet's cell is marked; hover, focus or a tap on a cell rings its body. Heading above the canvas, source line under the grid |
+
+---
+
+### 5.16 Orbit ruler, bottom-left column and regime highlight (UXD-024)
+
+The ruler is `OrbitRuler.svelte`; on the three Worlds it stands in `HudStackBL.svelte`, on `/explore` alone at the lower left. Behaviour in [UXS-014](../uxs/UXS-014.md#the-orbit-ruler).
+
+| Element | Rule |
+|---|---|
+| Ruler card | `rgba(8,12,22,0.62)`, 1px `rgba(255,255,255,0.08)` border, 6px radius, 10px 12px padding, Space Mono 11px. `width: max-content`, `min-width: 208px`, `max-width: min(280px, 44vw)` (152px to 56vw under 720px on a non-touch window); in the touch drawer full width and flush |
+| Row | One line: an 8px dot in the regime colour, the short name (700, `letter-spacing: .04em`, ellipsis, the full name as `title`), the altitude or distance at 62% white, tabular. 1px `rgba(255,255,255,0.06)` border, 4px radius, 4px 8px padding |
+| Row hover, focus, open | `#889fe7` edge and `rgba(136,159,231,0.14)` fill; the dot keeps the regime colour. A row flagged for the selected orbiter keeps its regime-colour look until hovered |
+| Header | A disclosure `<button class="ui-hit">` with the title and a `▾` / `▸` box (1px `rgba(255,255,255,0.16)` border, 4px radius); not a Chip (§5.7: a Chip is `aria-pressed`, this is `aria-expanded`). Folded: the header alone, plus ` · <short name>` of the flagged regime. Remembered in `localStorage`; folded by default under 560px window height. The touch drawer has no header button |
+| Header, forced fold (C7) | On `/explore` while the Iconic missions legend is open (§5.15) the ruler is drawn as its header only (`forceFolded`): `aria-expanded="false"`, the header does nothing, the saved choice (`orrery.ruler.collapsed`) is neither read nor written, and closing the legend gives the ruler its own state back ([UXD-026](../uxs/decisions/UXD-026-iconic-missions-legend-and-milestone-boxes.md) decision 10) |
+| Bottom-left column | `position: absolute; left: 12px; bottom: max(14px, --ruler-clear)`, z 7 (§4.7), flex column, 8px gap, top to bottom: readout (Moon), locate chip, ruler. `max-height` leaves 150px at the top for the chip rows; the ruler shrinks and scrolls first. On touch only the readout stays, at `bottom: 106px + safe area`, above the scene's bar. The imagery card (`TierContextCard`) is outside the column and rises above it by `--hud-stack-top`. The nation legend strip (z 5, `bottom: 48px`) starts 8px right of the column's right edge (`--hud-stack-right`, 0 where there is no column), so no legend chip is under the readout, chip or ruler |
+| Regime highlight (scene) | `#889fe7` (`RING_BLUE`) only. Band: annulus at opacity 0.14 and two 1.5px screen-width lines. One altitude: one 2px line. Hill sphere: three great circles, 1.2px. Lagrange point: the 44px pin ring (§5.14) on each resident, no ring at its own radius. A schematic regime (beyond the scene: `/explore` SCATTERED, HELIOPAUSE, OORT) is dashed. Hover 0.9; the open panel's regime pulses 0.55 to 0.9 over 1.6s, steady under `prefers-reduced-motion`. Equatorial plane on the Worlds, the ecliptic on `/explore`; the 2D view draws the same shapes in the units of `orbitR`. Hidden while the camera is below the orbits |
+| Resident photo, founding-mission photo, solar and Worlds INDEX rows, station module rows, belt members, fleet-panel and entity-page lists, museum object rows (`EntityThumb`, [UXD-025](../uxs/decisions/UXD-025-lists-carry-a-round-photo.md)) | 28px circle, `object-fit: cover`, 2px border; the image is the 192px WebP of the entity's blessed hero slot (`thumbOf`), `alt=""`, `loading="lazy"`, `decoding="async"`, never inside a Chip. Ring: the row's identity colour (a resident's agency, `agencyRingColor`), `rgba(255,255,255,0.5)` when the row has none (a founding mission) or the colour is teal or cyan (hue 160 to 200°; UXD-001). A row with no file, or one that fails to load, keeps the 8px dot (the data colour, teal included) centred in the same 28px slot so labels line up. Founding missions: grid `28px 52px 1fr`, photo before the year. Station rows (`/iss`, `/tiangong`): a flex row, photo then name, agency badge and agency line, ring `agencyRingColor`. Fleet and entity pages: a `has-thumb` list item (flex, photo then a text block; the photo top-aligned with the link), ring the agency, `fallback="none"` (a prerendered list shows nothing for a row with no file); the fleet panel's lists centre the photo on the row and keep the dot. A patched program row keeps its patch and gets no photo. Neighbourhood and outer-scale INDEX rows (L46, UXD-025 T5): the photo sits in its own 28px `si-photo` slot before the name (`align-items: center` on the row), ring neutral, the centred dot where there is no photo; the badges (⊕ ◈ ★) move behind the name and meta at the row's end; a stand-in for a part of the row (a hero marked `pictured`) carries "Pictured: `<part>`" as the hover text of the photo. The Related lists of the galaxy and structure pages use the `has-thumb` item with the dot kept so names line up |
+
+Scene code cannot read CSS variables: the highlight blue is the literal `RING_BLUE` (§5.14).
+
+---
+
+### 5.17 Level card and welcome hint (UXD-027)
+
+`LevelContextCard.svelte` on `/explore`; `ExploreHint.svelte` on `/explore` and, once in `SurfaceScene`, on the four Worlds. Behaviour in [UXS-014](../uxs/UXS-014.md#the-level-picker-the-level-card-and-the-welcome-hint).
+
+| Element | Rule |
+|---|---|
+| Level card | `position: absolute`, `top: 44px` in the scene frame (8px row offset + the 30px chip + 6px; 58px on touch, where the chip is 44px), `right: panelCoverPx + 8px`, z 7 (§4.7). 280px wide, at most `100vw - 16px`; `max-height` leaves 52px at the top and 56px at the bottom, and it scrolls inside. `rgba(8,10,22,0.86)`, 1px `rgba(255,255,255,0.18)` border, 6px radius, 8px 12px padding, `backdrop-filter: blur(6px)`, Space Mono 11px, line height 1.5, 85% white. Drawn wherever the level picker is: not in 2D, a black-hole or deep-sky takeover, or a body scene |
+| Card header | The level's glyph (24px `ScaleGlyphIcon`), the name (13px, white, 0.5px tracking, ellipsis), the fold button at the inline end: `▾` / `▸`, a 44px target pulled in by a negative margin so the header stays 24px tall, 70% white, `#889fe7` text and `rgba(136,159,231,0.1)` fill on hover and focus, a 2px `#889fe7` focus outline; `aria-expanded`, `aria-controls`, label `explore_level_card_collapse_aria` / `explore_level_card_expand_aria` |
+| Card body | What the level is (the home-grid `desc`, 90% white, 8px above), the story (`explore_lens_story_*_body`, `--color-text-label`, 8px above), then a hairline (`rgba(255,255,255,0.08)`) and up to five links (`--color-state`, underline on hover and focus, 3px block padding): the sections' titles from `science-index.<locale>.json`, hrefs `/science/<tab>/<section>` |
+| Card state | Open with a pointer in a window 900px wide and 560px tall or more; folded on touch and in a smaller window with a mouse (there, folded, only the glyph and the fold button show: the picker chip names the level). Folded, the card is as wide as its header (`width: max-content`). The choice is kept in `localStorage` `orrery.explore.levelCardExpanded` (blocked storage: the default for this view) |
+| Welcome hint | One line, `rgba(8,10,22,0.86)`, 1px `rgba(255,255,255,0.18)` border, 6px radius, 5px 6px 5px 12px padding, Space Mono 11px, line height 1.4, 90% white, `max-width: 100% - 32px`, centred, z 6 (§4.7). A pointer device: 64px above the bottom edge of the scene frame (on the Worlds above the nation legend: `--hint-bottom`); in a window under 900px wide or 560px tall, left-aligned at 40% of the frame height, 48px from the left edge and, from 600px wide, ending 300px short of the right edge (the scale strip). A touch device: `top: 110px` in the frame, under the top row and the card's header; on `/explore` the top is the measured height of the phone's HUD rows plus 16px, so a long Reset label that wraps them to three rows (de at 390px) does not put the hint over the third. The close button is a 24px `.ui-hit` `×` (16px, 70% white, `#889fe7` on hover and focus; 44px area on touch). `role="status"`, `aria-live="polite"`. Fades over 300ms (a CSS transition: reduced motion cuts it). Goes at the first wheel turn, pinch, tap or 6px drag on the canvas, at the ×, or after 12s; never stored. On `/explore` it is not drawn while a side panel is docked (`panelCoverPx` > 0) |
+
+### 5.18 Station assembly player (UXD-031)
+
+`StationAssemblyControl.svelte`, shared by `/iss` and `/tiangong`. One box, one height across every phase and width.
+
+| Element | Rule |
+|---|---|
+| Box | `position: absolute`, centred, `bottom: 5.5rem`, `width: min(92vw, 640px)`, `rgba(8,12,18,0.92)`, 1px accent-edge border, 12px radius, `0.9rem 1.2rem 0.7rem` padding, z 12. Never `min-height`-driven: the height is the sum of fixed parts. |
+| Control row | Play, reset, scrub, date (`#ffd57a`, `5.5rem` min at 480px and below, else `6.2rem`), close; chips 30px fine pointer, 44px touch. The scrub input has `min-width: 0` so the date stays inside the box on a phone. |
+| Chip block | Two rows, each `1.3em` high, one line, `white-space: nowrap`, ellipsis: row 1 the glyph and the phase name (bold; a dotted-underline button where the phase has a module panel), row 2 "launcher · date" indented under the name (the date `flex: none`, the launcher cut). The empty state uses the same two rows. The whole phase is in the block's `title` and in a visually hidden `aria-live="polite"` element. |
+| Hint | `0.74rem`, one row with an ellipsis; at 480px and below two rows reserved (`2.5em`, clamped at two). |
+
+A new phase string never changes the box height; do not let a row wrap.
+
+### 5.19 Mini card, card rail, compact hardware card and the mission pane (UXD-032)
+
+`/programs/<id>`. Not the mission-library card (§5.4) and not the programs index card (300 px, tagline).
+
+| Element | Rule |
+|---|---|
+| `MiniCard` | A link, 176 px wide, 1px `rgba(255,255,255,0.1)` border, 8px radius, `rgba(255,255,255,0.02)` fill, hover and focus edge `rgba(127,176,224,0.5)`. A 16:9 hero (decorative, `alt=""`), a kind line (Space Mono 11px, 1px tracking, uppercase, label colour), a title (Bebas 20px, one line, ellipsis, full text in `title`), an optional meta line (as the kind line). The hero is the entity's existing hero; no hero is a flat panel. |
+| `CardRail` | A `ul` with `aria-label` (the section label), `display: flex`, 10px gap, horizontal scroll inside its own box, scroll-snap `x proximity`, no arrow buttons. The page never scrolls sideways. |
+| Hardware card | A link, 56px tall, `72px 1fr` grid, 4px padding, same border, radius and hover as the mini card. A rectangular 72×48 hero (4px radius, `object-fit: cover`), the name (14px, 600, accent, one line) over the role (11px label). Grid `minmax(260px, 1fr)`, 8px gap, one column at 480px and below. Replaces the round 28px thumb on this page only. |
+| Mission pane | `aside.detail`: meta and name one line with an ellipsis, blurb `min-height: 4.65em` and clamped at three lines. One height for every mission. |
+| Empty section | A section with no rows draws no label and no box. |
+| Missions list of a fleet entry (UXD-035) | The fleet panel's MISSIONS tab (shown from 2 rows) and `/fleet/<id>`: one list, the union of `flights` and `linked_missions`, oldest first (`fleetMissionRows`). A header line (label colour, 11px uppercase): "5 missions · 2 in the catalogue". A row whose mission exists is a link (min 44px tall, the §5.7 link-chip fill): a 28px round `EntityThumb` with the agency ring, the name, the year (label colour, tabular), `→`. A row without a mission is plain text, no fill, no hover, no link: the 8px dot, the flight designation, 70 % ink, its note under it. The crew is one line under either kind, "CREW" in label colour then names, comma-joined, no roles, no portrait, no patch, no empty circle. |
+| Milestones (UXD-033) | After Missions: the mission timeline look (rail, hollow dot, year, name in label colour, note) with no pane, no photo and no link. A context row that has a `link` (a craft or station module) is a mission-timeline row whose name is a link in accent colour, regular weight, underline on hover. |
+
+### 5.20 Route-card glyphs ([UXD-039](../uxs/decisions/UXD-039-home-two-column-hero-one-glyph-component-and-type-scale.md))
+
+The 48 x 48 icon on a route card (the home grid and the section hubs `/learn`, `/worlds`, `/catalog`, `/explore/hub`). One component draws them: `RouteGlyph` (SVG children, keyed by glyph id; `ROUTE_GLYPHS` lists the ids; the eight Explore level glyphs are `ScaleGlyph`'s), with `RouteGlyphDefs` as the one block of 16 `ic-*` gradients (mounted once per page, before the cards). The caller owns `<svg class="card-icon" viewBox="0 0 48 48">` (44px square) and the card. Colours: `--color-accent`, `--color-accent-hover`, `--color-accent-edge`, `--color-accent-strong` and the explicit planet gradients; no teal, no cyan. `variant="hub"` (what `RouteCardGrid` passes) keeps the hub's own drawing of earth, programs, live and essays, `variant="home"` (the default) the home grid's; the other glyphs are one drawing. The Lab glyph: a notebook page with a grid, a dashed throw parabola ending in a gold marker, a thrust arrow. A new route card needs one branch in `RouteGlyph`, an id in `ROUTE_GLYPHS`, and `RouteGlyph.test.ts` fails until it has both.
+
+### 5.21 Deep-sky viewer ([UXD-040](../uxs/decisions/UXD-040-gallery-viewer-fits-hub-strips-keep-text-and-one-page-note.md), [UXD-009](../uxs/decisions/UXD-009-deep-sky-viewer-fits-one-screen.md))
+
+The full-window viewer of `/gallery/deep-sky` (the panel galleries have their own, `PanelLightbox`). `.lb-figure` is a grid of two rows, the image (`minmax(200px, 1fr)`) and the caption stack (`auto`), `max-height: calc(100svh - 80px)`, `overflow: auto`: the image keeps its aspect and takes the height the stack leaves, so the facts row (`dt` label above `dd` value, 11px caps over 13px), the credit line and the "show in the sky" button are inside the window at 1366x768 and 1440x900 for every image and locale, with the image at least 300px high. On a phone, and in a window too short for both (a phone in landscape), the figure scrolls and every element is reachable. The caption stays italic Crimson Pro at `--size-caption` (14px, [UXD-002](../uxs/decisions/UXD-002-type-scale-and-the-11px-floor.md)). The "show in the sky" button is the accent gradient (`--color-accent` to `--color-accent-hover`) with `--color-bg` text (4.96:1 on the dark end, 8.32:1 on the light end), never a teal.
+
+### 5.22 Traverse: a rover or EVA route on a Worlds page ([UXD-044](../uxs/decisions/UXD-044-moon-traverses-take-the-mars-line-style.md))
+
+One look for a route on every world; `TRAVERSE_STYLE` and the helpers `cumulativeKm`, `traverseRampParams`, `solRampColor` in `src/lib/surface-scene/surface-traverses.ts` hold it.
+
+| Element | Spec | Needs |
+|---|---|---|
+| Casing | `#06080b`, 8 px, 0.75 alpha, under the line | geometry |
+| Line | 4 px, vertex-coloured, 0.95 alpha (active) or 0.7 (ended); ramp (136,159,231) blue to (226,240,236) white to (251,191,36) amber, a data colour (`a3-keep`) | geometry |
+| Ramp position | by sol over the mission when the route carries `point_sols` (Mars); by distance driven from the lander otherwise (Moon) | `point_sols` or geometry |
+| Kilometre milestones | pills "N km" `#cbd5e1` on the side away from the sol labels; step from `distanceMilestoneStepKm` (0.5 km under 3 km, 1 to 15, 5 to 60, else 10) | geometry |
+| Landing ring | green `#22c55e` ring on the path's first point, pickable as the landing site | geometry |
+| Start and end captions, end dot | "LANDED ON date" green, "N KM · N DAYS" amber (red while active) | none |
+| Stop rings and pills | ring in the stop kind's colour, pill "name · Sol N" (name only without a sol) | `stops` |
+| Hover card | "Sol N", "≈ date · N km from landing" (Mars); "N km from landing" (Moon) | geometry (+ `point_sols`) |
+| Sol ticks and labels, replay marker, photo pins, JOURNEY tab | Mars only | `point_sols`, `route_photos`, `point_elev_m` |
+| "Approximate route" note | one line above the credit in the OVERVIEW tab when the file says `approximate: true`; the outline is not a surveyed track | `approximate` |
+
+The nation colour stays on the site marker, the INDEX dot and the panel. A route draws no time or photo element unless its file carries that data; nothing is invented to fill the style.
+
 ---
 
 ## 6. Screen patterns
 
 ### 6.1 Solar system explorer (P01)
 
-Full-screen 3D/2D. Detail panel slides in from right (314px). Planet pills strip below nav. Bottom bar with speed controls and sim date. The 3D view is the default — the 2D top-down view is educationally valuable for showing ecliptic geometry.
+Full-screen 3D/2D. Detail panel slides in from right (400px). Planet pills strip below nav. Bottom bar with speed controls and sim date. The 3D view is the default — the 2D top-down view is educationally valuable for showing ecliptic geometry.
 
 **Notable:** Planet labels are HTML overlay divs, not canvas text or Three.js sprites, positioned using `position.clone().project(camera)`. This is the correct pattern for all 3D screens.
 
@@ -391,6 +729,10 @@ Scrollable card grid. Preview panel is `position: fixed; right: 0` at z-index 50
 
 Full-screen 3D/2D. Regime legend strip below nav. Bottom bar with speed controls. The log scale is the central design decision — the legend makes it explicit.
 
+**Back to Explore.** The view row (and the top-left cluster on touch) starts with the "Back to Explore" link chip, to `/explore?id=earth` ([UXD-028](../uxs/decisions/UXD-028-explore-and-worlds-link-both-ways.md)); the same chip is first on /moon, /mars and /venus.
+
+**Selected orbiter.** An orbiter selected in the 3D view (ISS, Hubble, a GNSS craft) is marked with the outline pass, the same look as hover (no halo, no new art). The orbits stay in view while it is selected: the orbiter, its ring, the other orbiters and the ruler are drawn even though the fly-in lands under one body radius, and the view shifts so the orbiter sits in the middle of the space the panel leaves ([UXD-030](../uxs/decisions/UXD-030-worlds-selected-orbiter-stays-visible-and-framed.md)).
+
 **Notable:** HTML label overlays for orbital objects in 3D use the same `project()` pattern as P01, but with a graceful opacity fade when objects pass behind the body. Labels disappear at `wp.z > 1`.
 
 ![P05 Earth Orbit Viewer — ISS selected, log-scale display from ISS to JWST, regime legend](screenshots/p05_earth_orbit.png)
@@ -398,6 +740,18 @@ Full-screen 3D/2D. Regime legend strip below nav. Bottom bar with speed controls
 ### 6.6 Moon map (P06)
 
 Full-screen 3D/2D. The 3D view is a sphere — the camera orbits the Moon, not the Moon rotating. The 2D flat map uses a cylindrical projection (near side centred at 0° longitude). Filter strip replaces the planet pills. Agency filter stacks with status filter.
+
+**Index.** The INDEX rail's dot is the site's nation colour, the legend's (§5.13).
+
+**Rover routes.** The eight Moon routes use the Mars traverse style (§5.22), the ramp by distance; Yutu and Pragyan are labelled "Approximate route" ([UXD-044](../uxs/decisions/UXD-044-moon-traverses-take-the-mars-line-style.md)).
+
+**Back to Explore.** The first chip of the view row (the top-left cluster on touch) is "Back to Explore", a link to `/explore?id=earth:moon` (the satellite key) that opens the Moon's panel with the camera on it ([UXD-028](../uxs/decisions/UXD-028-explore-and-worlds-link-both-ways.md)).
+
+**Selected orbiter.** An orbiter site (LRO, Lunar Prospector and the others; on /mars, MRO) selected in the 3D view keeps its dot, its ring, the other orbiters and the ruler in view, wears the outline pass as on hover, and sits in the middle of the space the panel leaves; closing the panel ends the selection and the orbits hide again when the camera is under one radius ([UXD-030](../uxs/decisions/UXD-030-worlds-selected-orbiter-stays-visible-and-framed.md)).
+
+**Orbiter panel.** An orbiter site's tabs are OVERVIEW, GALLERY, DETAIL and LEARN: DETAIL (17 of the 19 Moon and Mars orbiters; TGO and Tianwen-1 orbiter have no drawing and no tab) shows "The spacecraft" over the craft's drawing, with the fleet link. STORY is for landers ([UXD-034](../uxs/decisions/UXD-034-worlds-orbiter-detail-tab-and-panorama-opening.md)).
+
+**Stand here.** The panorama opens on the photograph, not on the generated fill that pads a partial panorama: at `entry_yaw_deg` (0 when absent), which must lie inside `photo_span_deg` and clear of its edge (35° or 40 % of the span, the smaller; the view is 70° wide). A running fly-in is ended first, or it would overwrite the opening view. A `?yaw=` deep link still wins ([UXD-007](../uxs/decisions/UXD-007-panorama-opens-facing-the-photo.md), UXD-034).
 
 **Notable:** The far side missions (Chang'e 4, Chang'e 6) can only be seen in 3D by rotating the camera — this is intentional design, not a bug. The far side is literally hidden from Earth. The 2D flat map reveals it at the edges.
 
@@ -427,9 +781,11 @@ On hover:
 - 2D: cursor changes to `pointer`; object brightens
 - HTML label: opacity increases to 0.9
 
+On `/explore` a hovered pin or body also shows its ring (§5.14) and a hovered or selected label is always shown. Selection is §7.5.
+
 ### 7.3 Speed controls
 
-Consistent bottom-bar pattern: `0.25× | 1× | 5× | 20–25×` buttons. Active button has blue border and teal text. Inactive has subtle border and dim text. Speed multiplier applies to `simT` advance per frame.
+Consistent bottom-bar pattern: `0.25× | 1× | 5× | 20–25×` buttons. Active button has blue border and accent-blue text. Inactive has subtle border and dim text. Speed multiplier applies to `simT` advance per frame.
 
 ### 7.4 Animation conventions
 
@@ -442,6 +798,19 @@ Consistent bottom-bar pattern: `0.25× | 1× | 5× | 20–25×` buttons. Active 
 | HUD bar fill transition | 0.3s | linear |
 | Label opacity | 0.15–0.2s | — |
 | Arrival zoom (mission arc) | 1.2s | ease-out |
+| Select-focus camera flight (`/explore`, §7.5) | 600ms | ease-out |
+
+### 7.5 Selection on /explore: select = focus
+
+Selected means three things at once: the panel is open, the object is ringed, the camera is on it ([UXD-019](../uxs/decisions/UXD-019-select-equals-focus.md)). Every way of choosing an object ends in one funnel, so the result is the same: a canvas click, an INDEX row (§5.13), a resident of the ruler, a belt member, `?id=`, a link in a panel.
+
+- **Ring for every kind that has a body.** Planets, moons, small bodies and the Sun take the ring (look in §5.14). A belt has no ring: its particles brighten (opacity ×1.8, size ×1.3) while it is selected. Pluto is a small body with one panel everywhere, and takes the ring and the focus like the others.
+- **One ring rule: the ring follows the selection, not the panel.** × closes the panel; the body stays selected, ringed and centred until another selection, Reset View, or the chip of its kind turned off clears it.
+- **Camera focus (600ms, ease-out).** A planet or a moon lands at 8 radii (zoom range 1.5 to 50 radii); a small body at 14 radii (4 to 600 units); a belt frames the whole ring from the Sun (570 units for the asteroid belt, 1,430 for the Kuiper belt). The Sun, and an object the scene does not draw, fly to the heliocentric home view. At the outer scales a member pans the camera to it and eases the zoom to 0.6 × the scale's entry distance, never below the floor and never out from a closer view the visitor chose; all eight scales have a Reset that flies back to the entry pose.
+- **Panel-aware framing.** With a side drawer open, the look-at point sits in the middle of the space the drawer leaves (the projection shifts by half the drawer's width). A bottom sheet (touch portrait) moves nothing. The maths is `src/lib/three/panel-framing.ts`; the per-frame mechanism (measure `aside.panel`, ease, `camera.setViewOffset`) is `createPanelFramer` in `src/lib/three/panel-framing-host.ts`, called by the Explore host and by `SurfaceScene` (the Worlds' 3D view and route view; not the 2D map, the flat patch or a panorama).
+- **Chips own kinds.** Turning a layer chip off clears a selection of its kind (panel, ring and focus; the camera flies to the home view). Selecting an object whose chip is off turns the chip on. PATHS off closes a mission opened from a path.
+- **No object, no link.** A resident or a belt member is a button only when the scene has an object for it; otherwise it is plain text.
+- **A mission opens in place.** A mission id in a body panel's Missions tab opens the mission panel over the body panel. The body stays selected and its panel stays mounted but covered (not painted, not focusable, Escape leaves it), so its tab and scroll return. The mission panel's bar carries a back chip (`←`, `panel-back`) that returns to the body panel; × is the same return. Selecting another body closes the mission. The lists run newest first.
 
 ---
 
@@ -461,10 +830,14 @@ This version is pinned. Upgrading requires audit of all six screens — r128 has
 ```javascript
 const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
 renderer.setPixelRatio(Math.min(devicePixelRatio, 2)); // cap at 2× for performance
-renderer.setClearColor(0x04040c, 1);
+renderer.setClearColor(0x000000, 1); // /explore and the Worlds (createSceneRenderer's clearColor)
 ```
 
-`alpha: false` is intentional — the background colour is always `#04040c`, never transparent.
+`alpha: false` is intentional: a scene is never transparent. The space around a body is pure black on
+/explore and on every World (/earth, /moon, /mars, /venus; operator 2026-11-13). The page's `bg-base`
+(`#04040c`) is not used as a scene clear: the composer's OutputPass, on every quality tier above low,
+lifts that dark indigo to a visible purple. `createSceneRenderer` still defaults to `0x04040c` for
+/fly's heliocentric scene.
 
 ### 8.3 Material conventions
 

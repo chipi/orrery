@@ -9,6 +9,7 @@
   Dismiss on Escape, backdrop, or the close button — focus restored to the opener.
 -->
 <script lang="ts">
+  import Chip from '$lib/components/Chip.svelte';
   import { tick } from 'svelte';
   import * as m from '$lib/paraglide/messages';
   import { sensory } from '$lib/sensory/state.svelte';
@@ -133,11 +134,11 @@
   >
     <header class="sheet-head">
       <h2 id="sensory-sheet-title">{m.settings_title()}</h2>
-      <button
-        type="button"
-        class="sheet-close"
+      <Chip
+        kind="action"
+        class="sheet-close ui-chip--close"
         aria-label={m.sensory_sheet_close_aria()}
-        onclick={onClose}>×</button
+        onclick={onClose}>×</Chip
       >
     </header>
 
@@ -355,25 +356,6 @@
     letter-spacing: 1px;
     color: var(--color-text);
   }
-  .sheet-close {
-    width: 44px;
-    height: 44px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: transparent;
-    border: none;
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 22px;
-    line-height: 1;
-    cursor: pointer;
-    border-radius: 6px;
-  }
-  .sheet-close:hover,
-  .sheet-close:focus-visible {
-    color: rgba(255, 255, 255, 0.95);
-    outline: none;
-  }
 
   /* Section grouping — a labelled subsection (Sound / Haptics / Tilt / Graphics). */
   .section {
@@ -396,11 +378,11 @@
   }
   .section-hint {
     font-size: 11px;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
     padding: 2px 10px 4px;
   }
   .active-tier {
-    color: #4ecdc4;
+    color: var(--color-state);
     text-transform: uppercase;
   }
 
@@ -429,7 +411,7 @@
   }
   .row-desc {
     font-size: 12px;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
     line-height: 1.3;
   }
 
@@ -459,15 +441,15 @@
     transition: transform 140ms ease;
   }
   .switch[aria-checked='true'] {
-    background: rgba(78, 205, 196, 0.28);
-    border-color: rgba(78, 205, 196, 0.7);
+    background: color-mix(in srgb, var(--color-accent) 28%, transparent);
+    border-color: var(--color-accent-strong);
   }
   .switch[aria-checked='true'] .knob {
     transform: translateX(18px);
-    background: #4ecdc4;
+    background: var(--color-accent);
   }
   .switch:focus-visible {
-    outline: 2px solid var(--color-accent, #4466ff);
+    outline: 2px solid var(--color-accent, var(--color-focus));
     outline-offset: 2px;
   }
 
@@ -482,7 +464,7 @@
     color: var(--color-text);
   }
   .radio input {
-    accent-color: #4ecdc4;
+    accent-color: var(--color-accent);
     cursor: pointer;
   }
   .reload-hint {
@@ -497,9 +479,9 @@
   .reload-btn {
     display: inline-block;
     margin-top: 6px;
-    background: rgba(78, 205, 196, 0.2);
-    border: 1px solid #4ecdc4;
-    color: #4ecdc4;
+    background: color-mix(in srgb, var(--color-accent) 20%, transparent);
+    border: 1px solid var(--color-accent);
+    color: var(--color-state);
     padding: 4px 8px;
     border-radius: 3px;
     cursor: pointer;
@@ -507,7 +489,7 @@
     font-size: 11px;
   }
   .reload-btn:hover {
-    background: rgba(78, 205, 196, 0.35);
+    background: var(--color-accent-edge);
   }
 
   .sheet-note {
@@ -519,7 +501,7 @@
   .sheet-help {
     margin: 2px 10px 4px;
     font-size: 11px;
-    color: rgba(255, 255, 255, 0.45);
+    color: var(--color-text-label);
     font-family: var(--font-mono, 'Space Mono', monospace);
     letter-spacing: 0.5px;
   }

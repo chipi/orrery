@@ -1,0 +1,23 @@
+{
+  "name": "STS-1",
+  "vehicle": "Space Shuttle Columbia (OV-102)",
+  "payload": "승무원 2명(영, 크리펜); DFI 및 ACIP 계측 장비",
+  "delta_v": "~9.4 km/s (저궤도)",
+  "type": "유인 궤도 시험 · 비행 완료",
+  "first": "Space Shuttle의 첫 궤도 시험 비행으로, 우주비행사 두 명이 조종했다",
+  "description": "STS-1은 Space Shuttle의 첫 궤도 시험 비행이었다. 존 영 선장과 로버트 크리펜 조종사는 1981-04-12 7:00:03 EST(12:00:03 UTC)에 케네디 우주 센터의 Launch Complex 39A에서 Columbia를 타고 이륙해 고도 166해리(약 307 km), 궤도 경사각 40.3도의 궤도에 올랐다. NASA의 NSSDCA 목록은 이 비행을 우주 수송 시스템의 첫 유인 궤도 시험 비행으로, 왕복선 전체의 종합 성능을 검증하기 위한 것이었다고 설명한다. 승무원들은 54시간 20분 53초 동안 지구를 37바퀴 돌고, 1981-04-14 10:20:57 PST(18:20:57 UTC)에 캘리포니아주 Edwards Air Force Base의 23번 활주로에 착륙했다. 탑재물은 계측 장비였고, Developmental Flight Instrumentation과 ACIP 팔레트가 온도, 압력, 가속도를 기록했다. 발사와 고체 로켓 부스터의 과압 충격파로 궤도선은 타일 16장을 잃었고 148장이 추가로 손상되었다.",
+  "events": [
+    {
+      "met": 0,
+      "label": "이륙",
+      "note": "Columbia가 1981-04-12 7:00:03 EST(12:00:03 UTC)에 39A 발사대에서 이륙한다.",
+      "type": "nominal"
+    },
+    {
+      "met": 2.2645,
+      "label": "착륙",
+      "note": "1981-04-14 10:20:57 PST, 37바퀴를 돈 뒤 Edwards Air Force Base의 23번 활주로에 착륙한다.",
+      "type": "nominal"
+    }
+  ]
+}

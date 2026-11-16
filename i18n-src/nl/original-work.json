@@ -1991,6 +1991,86 @@
       "title": "Sputnik 1",
       "what": "De gepolijste bol van 58 cm met de naad tussen de halve bollen, 36 bouten en vier naar achteren gezwaaide zweepantennes van 2,4 en 2,9 m.",
       "where": "Vliegen + Verkennen"
+    },
+    "/images/colophon/model-pad-apollo-lut_webp": {
+      "title": "Lanceerplatform: Apollo, LC-39",
+      "what": "Het Saturnus V-platform: de 380 ft hoge navelstrengtoren met zwenkarmen die bij de lancering wegvallen, en de vlammengoot. Maten uit NASA-cijfers op Wikipedia.",
+      "where": "Vliegen · lanceerplatform"
+    },
+    "/images/colophon/model-pad-shuttle_webp": {
+      "title": "Lanceerplatform: Spaceshuttle, LC-39",
+      "what": "Het shuttleplatform: de vaste servicestructuur (350 ft met mast), de teruggedraaide draaibare servicestructuur, de 290 ft hoge watertoren. Hoofdhoogten van Wikipedia; de rest bij benadering.",
+      "where": "Vliegen · lanceerplatform"
+    },
+    "/images/colophon/model-pad-sls_webp": {
+      "title": "Lanceerplatform: SLS, LC-39B",
+      "what": "Het Artemis-platform: de toren van de Mobile Launcher naast de raket en drie hoge bliksemtorens. Afmetingen bij benadering.",
+      "where": "Vliegen · lanceerplatform"
+    },
+    "/images/colophon/model-pad-soyuz_webp": {
+      "title": "Lanceerplatform: Sojoez, Bajkonoer en Plesetsk",
+      "what": "Het platform van de R-7-familie: vier steunarmen die bij de lancering naar buiten vallen, twee teruggetrokken servicecabines, bliksemmasten, de vlammenput. Afmetingen bij benadering.",
+      "where": "Vliegen · lanceerplatform"
+    },
+    "/images/colophon/model-pad-proton_webp": {
+      "title": "Lanceerplatform: Proton, Bajkonoer",
+      "what": "Een vaste servicetoren met zwenkarmen die bij de lancering intrekken, naast de vlammengoot. Afmetingen bij benadering.",
+      "where": "Vliegen · lanceerplatform"
+    },
+    "/images/colophon/model-pad-f9-39a_webp": {
+      "title": "Lanceerplatform: Falcon, LC-39A",
+      "what": "SpaceX bij 39A: de transporter-erector die 1,5 graad achterover leunt vóór de lancering en 45 bij de lancering, de oude toren verhoogd tot boven 350 ft. Cijfers van Wikipedia.",
+      "where": "Vliegen · lanceerplatform"
+    },
+    "/images/colophon/model-pad-f9-cat_webp": {
+      "title": "Lanceerplatform: Falcon, SLC-40 met bemanningstoren",
+      "what": "SpaceX bij SLC-40 sinds de bemanningstoegangstoren van 2023, met de transporter-erector die bij de lancering wegkantelt. Hoogte van de toren bij benadering.",
+      "where": "Vliegen · lanceerplatform"
+    },
+    "/images/colophon/model-pad-f9-te_webp": {
+      "title": "Lanceerplatform: Falcon, SLC-40 en SLC-4E",
+      "what": "Een kaal Falcon-platform: de transporter-erector die bij de lancering wegkantelt, en bliksemmasten. Afmetingen bij benadering.",
+      "where": "Vliegen · lanceerplatform"
+    },
+    "/images/colophon/model-pad-starbase_webp": {
+      "title": "Lanceerplatform: Starship, Starbase",
+      "what": "De lanceertoren van Starbase met geopende vangarmen. Hoogte van de toren bij benadering.",
+      "where": "Vliegen · lanceerplatform"
+    },
+    "/images/colophon/model-pad-atlas-v_webp": {
+      "title": "Lanceerplatform: Atlas V, SLC-41",
+      "what": "Het ULA-platform: mobiel lanceerplatform, navelstrengtoren en vier bliksemtorens; het Vertical Integration Facility staat los van het platform en ontbreekt. Afmetingen bij benadering.",
+      "where": "Vliegen · lanceerplatform"
+    },
+    "/images/colophon/model-pad-cape-classic_webp": {
+      "title": "Lanceerplatform: Lanceerplatform met servicetoren op Cape Canaveral",
+      "what": "De Atlas-, Delta-, Titan- en Saturnus IB-platforms op Cape Canaveral: een navelstrengtoren met zwenkarmen naast het voertuig. Afmetingen bij benadering.",
+      "where": "Vliegen · lanceerplatform"
+    },
+    "/images/colophon/model-pad-kourou-a5_webp": {
+      "title": "Lanceerplatform: Ariane 4 en 5, Kourou",
+      "what": "De platforms ELA-2 en ELA-3: een navelstrengmast naast de draagraket en vier hoge bliksemtorens. Afmetingen bij benadering.",
+      "where": "Vliegen · lanceerplatform"
+    },
+    "/images/colophon/model-pad-kourou-a6_webp": {
+      "title": "Lanceerplatform: Ariane 6, Kourou",
+      "what": "Het platform ELA-4: de navelstrengmast, twee bliksemtorens en het mobiele portaal ver teruggereden. Afmetingen bij benadering.",
+      "where": "Vliegen · lanceerplatform"
+    },
+    "/images/colophon/model-pad-chinese-fst_webp": {
+      "title": "Lanceerplatform: Chinese servicetoren",
+      "what": "De vaste servicetoren van Jiuquan, Xichang, Wenchang en Taiyuan, waarvan de werkplatforms bij de lancering wegklappen. Afmetingen bij benadering.",
+      "where": "Vliegen · lanceerplatform"
+    },
+    "/images/colophon/model-pad-tanegashima_webp": {
+      "title": "Lanceerplatform: Tanegashima",
+      "what": "Het Yoshinobu-platform: de navelstrengtoren van de H-II-raket en een bliksemtoren. Afmetingen bij benadering.",
+      "where": "Vliegen · lanceerplatform"
+    },
+    "/images/colophon/model-pad-sriharikota_webp": {
+      "title": "Lanceerplatform: Sriharikota",
+      "what": "Het ISRO-platform: de navelstrengtoren naast het voertuig en de mobiele servicetoren ver teruggereden. Afmetingen bij benadering.",
+      "where": "Vliegen · lanceerplatform"
     }
   },
   "capsules": {
@@ -2351,6 +2431,21 @@
       "title": "Zintuiglaag",
       "what": "Kompasnaald gekruist door een golf — opent de zintuiglijke instellingen (geluid / trilling / kantelen).",
       "where": "Navigatie"
+    },
+    "scale-glyphs": {
+      "title": "Glyphs van de schaalniveaus",
+      "what": "Een kleine tekening per niveau van /explore, van het zonnestelsel tot het kosmisch web — in de niveaukiezer, de navigatierijen en de niveaukaart.",
+      "where": "Verkennen · navigatie · niveaukiezer",
+      "variants": {
+        "Solar System": "Zonnestelsel",
+        "Stellar Neighborhood": "Stellaire omgeving",
+        "Milky Way": "Melkweg",
+        "Local Group": "Lokale Groep",
+        "Local Sheet": "Lokale Plaat",
+        "Virgo Supercluster": "Virgosupercluster",
+        "Laniakea": "Laniakea",
+        "Cosmic Web": "Kosmisch web"
+      }
     }
   }
 }

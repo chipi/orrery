@@ -3,6 +3,8 @@ import {
   DETAIL_FLY_TARGET_R,
   mobileDrawerHidden,
   nationFilterAway,
+  ORBIT_RULER_HIDE_RADII,
+  orbitsInViewNext,
   shouldFlyToDetail,
 } from './surface-view-state';
 
@@ -58,5 +60,48 @@ describe('shouldFlyToDetail', () => {
   it('is a no-op when already at the target', () => {
     expect(shouldFlyToDetail(DETAIL_FLY_TARGET_R)).toBe(false);
     expect(shouldFlyToDetail(30.1)).toBe(false);
+  });
+});
+
+describe('orbitsInViewNext', () => {
+  const radiusKm = 1737;
+  const lroFlyInKm = 1129;
+  it('hides once the camera is under one radius when nothing is focused', () => {
+    expect(
+      orbitsInViewNext({
+        altitudeKm: lroFlyInKm,
+        radiusKm,
+        wasInView: true,
+        focusOnOrbiter: false,
+      }),
+    ).toBe(false);
+  });
+
+  it('keeps the orbits in view under one radius while an orbiter is the focus (W3)', () => {
+    expect(
+      orbitsInViewNext({ altitudeKm: lroFlyInKm, radiusKm, wasInView: true, focusOnOrbiter: true }),
+    ).toBe(true);
+    expect(
+      orbitsInViewNext({ altitudeKm: 10, radiusKm, wasInView: false, focusOnOrbiter: true }),
+    ).toBe(true);
+  });
+
+  it('returns to the old rule the frame the focus clears', () => {
+    expect(
+      orbitsInViewNext({
+        altitudeKm: lroFlyInKm,
+        radiusKm,
+        wasInView: true,
+        focusOnOrbiter: false,
+      }),
+    ).toBe(false);
+  });
+
+  it('shows again only past the 12 % band, and holds inside it', () => {
+    const hideKm = radiusKm * ORBIT_RULER_HIDE_RADII;
+    const args = { radiusKm, focusOnOrbiter: false, wasInView: false };
+    expect(orbitsInViewNext({ ...args, altitudeKm: hideKm * 1.05 })).toBe(false);
+    expect(orbitsInViewNext({ ...args, altitudeKm: hideKm * 1.13 })).toBe(true);
+    expect(orbitsInViewNext({ ...args, wasInView: true, altitudeKm: hideKm * 1.05 })).toBe(true);
   });
 });

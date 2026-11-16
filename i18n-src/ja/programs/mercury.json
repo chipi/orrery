@@ -103,5 +103,15 @@
     "/earth": "地球 — 軌道、再突入、打ち上げ地点",
     "/science/mission-phases/edl": "突入・降下・着陸",
     "/science/propulsion/tsiolkovsky": "ロケット方程式 — Redstone が軌道に届かなかった理由"
+  },
+  "roster": {
+    "Mercury-Redstone 2 (Ham)": {
+      "note": "チンパンジーによる弾道飛行試験——Redstoneの有人飛行を承認させた",
+      "name": "Mercury-Redstone 2 (Ham)"
+    },
+    "Mercury-Atlas 5 (Enos)": {
+      "note": "チンパンジーによる2周回の試験——グレンが飛ぶ前にAtlasを承認させた",
+      "name": "Mercury-Atlas 5 (Enos)"
+    }
   }
 }

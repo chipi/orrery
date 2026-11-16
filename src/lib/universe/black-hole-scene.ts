@@ -6,8 +6,9 @@
  * far side bends up over the shadow and under the bottom — the wrap is emergent
  * physics, not painted. Matches the approved Slice-0 mock. Per-hole spin sets the
  * disk's inner edge; inclination sets the camera tilt; framing scales the hole
- * down + shifts it up on narrow screens. Step count is tier-scaled; the caller
- * shows a static fallback on the lowest tiers.
+ * down + shifts it up on narrow screens. Step count is tier-scaled; every tier
+ * draws the hole (there is no static fallback), medium renders at a smaller
+ * `lensScale` of the buffer instead.
  *
  * WebGL builder — coverage-excluded (see vite.config.ts). The pure GR / framing
  * math lives in black-hole-visual.ts (unit-tested).
@@ -29,19 +30,27 @@ export interface BlackHoleScene {
   dispose(): void;
 }
 
-/** Ray-march steps per quality tier — the heaviest knob. */
+/** Step length of the ray march (shader units). */
+export const BH_DT = 0.18;
+/** Camera distance from the hole in the shader (`cam = (0, uCamY, -30)`) for the
+ *  largest `uCamY` (1 + min(4, inclination * 0.12) = 5), the far case. */
+export const BH_CAMERA_DISTANCE = Math.hypot(30, 5);
+/** How far past the hole's centre a ray must get: the horizon (1) and the disk's inner
+ *  edge (1.8 to 2.6) sit inside it. A longer march also draws the far disk out to
+ *  radius 14 (needs 247 steps), which washes out the ring the approved look has. */
+export const BH_REACH_PAST_HOLE = 2.5;
+
+/** Ray-march steps per quality tier — the heaviest knob. Every tier needs
+ *  steps x BH_DT >= BH_CAMERA_DISTANCE + BH_REACH_PAST_HOLE or its rays stop short
+ *  of the hole and the frame has no shadow and no ring (unit-tested). */
 export function stepsForTier(tier: string): number {
-  // The camera sits ~30 units out; a ray must march far enough (steps × dt) to
-  // reach the hole, so the floor can't drop below ~150 or rays never arrive.
   switch (tier) {
     case 'cinematic':
       return 260;
     case 'high':
       return 220;
-    case 'medium':
-      return 185;
     default:
-      return 155; // low — still reaches the hole; 'minimal' uses the static fallback
+      return 185; // medium, low, minimal (155 stopped 5.4 units short of the horizon)
   }
 }
 
@@ -102,7 +111,7 @@ const FRAG = /* glsl */ `
     float fov=0.3;
     vec3 pos=cam, vel=normalize(fwd+uv.x*fov*rt+uv.y*fov*up);
     vec3 hvec=cross(pos,vel); float h2=dot(hvec,hvec);
-    vec3 acc=vec3(0.0); float trans=1.0; float dt=0.18; bool hor=false;
+    vec3 acc=vec3(0.0); float trans=1.0; float dt=BH_DT_VALUE; bool hor=false;
     for(int i=0;i<STEP_COUNT;i++){
       float r=length(pos);
       if(r<HORIZON){ hor=true; break; }
@@ -172,7 +181,10 @@ export function createBlackHoleScene(hole: BlackHole, tier = 'high'): BlackHoleS
     glslVersion: THREE.GLSL3,
     uniforms,
     vertexShader: VERT,
-    fragmentShader: FRAG.replace('STEP_COUNT', String(stepsForTier(tier))),
+    fragmentShader: FRAG.replace('STEP_COUNT', String(stepsForTier(tier))).replace(
+      'BH_DT_VALUE',
+      BH_DT.toFixed(2),
+    ),
     depthTest: false,
     depthWrite: false,
   });

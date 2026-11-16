@@ -86,5 +86,21 @@
   "link_labels": {
     "/explore": "3D 探索器中的土星",
     "/programs/voyager": "Voyager — 先行的飞掠"
+  },
+  "roster": {
+    "mission:cassini": {
+      "note": "在土星轨道上度过了十三年——唯一做到这一点的航天器——以任何飞掠都无法企及的细节测绘了光环、卫星和风暴"
+    },
+    "mission:huygens": {
+      "note": "欧洲的Huygens探测器于2005年1月乘降落伞降落在土卫六上——外太阳系中第一次也是唯一一次着陆"
+    },
+    "The geysers of Enceladus": {
+      "note": "Cassini发现微小的土卫二南极喷出水冰射流，这是其冰层之下存在全球海洋的证据——寻找生命最有希望的地方之一",
+      "name": "土卫二的间歇泉"
+    },
+    "The Grand Finale": {
+      "note": "燃料耗尽后，Cassini被驾驶着在土星与光环之间穿越了二十二次，然后被有意投入土星，以确保它绝不会污染那些带有海洋的卫星",
+      "name": "大结局"
+    }
   }
 }

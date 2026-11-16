@@ -5,7 +5,7 @@
   "agency": "Roscosmos",
   "country": "USSR",
   "manufacturer": "NPO Lavochkin",
-  "first_flight": "1971-11-27",
+  "first_flight": "1971-05-19",
   "status": "FAILED",
   "era": "1969-1981",
   "epoch": "lunar-era",
@@ -27,6 +27,9 @@
       "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1971-045A",
       "t": "deep"
     }
+  ],
+  "linked_missions": [
+    "mars2"
   ],
   "linked_sites": [
     {

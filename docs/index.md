@@ -13,7 +13,7 @@ hero:
   actions:
     - theme: brand
       text: ↗ Launch the app
-      link: https://chipi.github.io/orrery/
+      link: https://www.orrerylearn.com/
     - theme: alt
       text: User guide
       link: /guides/user-guide
@@ -23,11 +23,11 @@ hero:
 
 features:
   - icon: 🌌
-    title: 12 routes · real physics
-    details: 'Solar System Explorer · Mission Configurator · Mission Arc · Mission Catalog · Earth / Moon / Mars surface maps · ISS + Tiangong explorers · Science encyclopedia · Spaceflight Fleet. Keplerian orbits, Lambert porkchops, vis-viva, Tsiolkovsky — the math behind real mission planning, presented so a curious person can understand by doing.'
+    title: Eight scales · real physics
+    details: 'Solar System Explorer (eight nested scales, solar system to cosmic web) · Mission Configurator · Mission Arc with a launch camera director · Programs, Missions, Launches and Fleet on one catalogue pattern · Earth / Moon / Mars / Venus worlds · ISS + Tiangong explorers · Science encyclopedia · Essays · Physics Lab. Keplerian orbits, Lambert porkchops, vis-viva, Tsiolkovsky — the math behind real mission planning, presented so a curious person can understand by doing.'
   - icon: 🛰️
-    title: 37 missions · 137 fleet entries
-    details: 'Every flown crewed and robotic mission from Luna 9 to Chandrayaan-3, replayable with real flight parameters. Cross-referenced bidirectionally to a curated inventory of every machine used in spaceflight — launchers, capsules, stations, rovers, landers, orbiters, observatories, suits.'
+    title: 139 missions · 299 fleet entries
+    details: '139 missions from Sputnik 1 to the flights planned for 2031, replayable with real flight parameters, plus 42 programs. Cross-referenced bidirectionally to a curated inventory of every machine used in spaceflight — launchers, capsules, stations, rovers, landers, orbiters, observatories, suits.'
   - icon: 🌍
     title: 14 locales · 100% UI parity
     details: 'English, Español, Français, Deutsch, Português (BR), Italiano, Nederlands, 中文, 日本語, 한국어, हिन्दी, العربية (RTL), Русский, Српски (Cyrillic). Browser locale auto-detected on first visit. No backend, no database, no personal data — a static PWA that works offline after first load.'
@@ -35,8 +35,8 @@ features:
     title: The Science Lens
     details: 'Toggle the lens icon and every 3D scene gets live physics annotations: gravity / velocity / centripetal arrows, sphere-of-influence rings, apsides and true anomaly, engine-off coast preview, conic-section family detection, microgravity axes, atmosphere shells, tidal-lock and ozone indicators. Casual users see clean scenes; curious users opt into the entire physics layer.'
   - icon: 📚
-    title: 85 encyclopedia sections
-    details: '/science is a 10-tab encyclopedia covering every term, formula, and named law the simulator references — Orbits · Transfers · Propulsion · Mission Phases · Scales & Time · Porkchop · Space Stations · History · Observation · Life in Space. KaTeX-rendered math, 71 hand-coded SVG diagrams, Cmd-K search. Every "?" chip elsewhere in the app deep-links straight to the relevant chapter.'
+    title: 175 encyclopedia sections
+    details: '/science is a 13-tab encyclopedia covering every term, formula, and named law the simulator references — Scales & Time · Planets · Exoplanets · Orbits · Transfers · Porkchop · Propulsion · Mission Phases · Space Stations · Life in Space · Observation · Cosmology · History — plus a glossary. KaTeX-rendered math, hand-coded SVG diagrams, Cmd-K search. Every "?" chip elsewhere in the app deep-links straight to the relevant chapter.'
   - icon: 🛡️
     title: Honest provenance
     details: 'Every image, every outbound link, every paraphrased text fragment has a provenance row with source, license, and last-verified date. Agency-first sourcing prioritises operator-published material; failures are surfaced (Apollo 1, Challenger, Columbia, N1) with the same editorial weight as successes. /credits and /library make the bill of materials public.'
@@ -48,7 +48,7 @@ features:
 
 Source: **[github.com/chipi/orrery](https://github.com/chipi/orrery)**
 
-Live build: **[chipi.github.io/orrery](https://chipi.github.io/orrery/)** — every screen, fully offline-capable after first load. First-time visitors land on a 30-second orientation page; returning users skip past in one click via the nav.
+Live build: **[www.orrerylearn.com](https://www.orrerylearn.com/)** — every screen, fully offline-capable after first load. First-time visitors land on a 30-second orientation page; returning users skip past in one click via the nav.
 
 ## Documentation layout
 
@@ -56,7 +56,7 @@ This is the architecture and design documentation, not the user-facing help. Rea
 
 ### Start here
 
-- **[User guide](/guides/user-guide)** — read-this-first walk-through of the live app, screen by screen, with screenshots for all 11 primary nav routes plus the read-only provenance pages.
+- **[User guide](/guides/user-guide)** — read-this-first walk-through of the live app, screen by screen, with screenshots for every nav group (Explore, Worlds, Fly, Plan, Catalog, Learn) plus the gallery and the read-only provenance pages.
 - **[Architecture (TA.md)](/adr/TA)** — single-page architecture map. Every route, subsystem, 3D scene, asset pipeline, contract, and constraint with the ADR that locked it. See **§mobile** for the Capacitor wrapper.
 - **[Mobile build & deploy](/guides/mobile-build-and-deploy)** — contributor runbook for the iOS/Android app: toolchain, `build:mobile` + stream-heavy prune, `cap sync`/run, TestFlight, and the safe-area / scroll / lockfile sharp edges.
 - **[Mobile testing strategy](/guides/mobile-testing)** — the test pyramid for the Capacitor app: what Layer 1 (`test:e2e:mobile`, device-free) asserts about the streaming contract + size budget, the Appium Layer 2 roadmap, and the on-device manual checklist.
@@ -65,9 +65,9 @@ This is the architecture and design documentation, not the user-facing help. Rea
 
 ### Decision history
 
-- **[ADRs](/adr/)** — 78 Architecture Decision Records, the load-bearing decisions of the project. Three of these (ADR-052/053/054) document the Spaceflight Fleet schema retrospectively.
-- **[RFCs](/rfc/)** — 18 RFCs, the open architectural questions before they became ADRs. RFC-030 (responsive image delivery — size ladder + `srcset` for mobile/web/Google TV, ADR-080) is the current open image-weight design.
-- **[PRDs](/prd/)** — 14 Product Requirements Documents, the user-value arguments for every shipped feature.
+- **[ADRs](/adr/)** — 95 Architecture Decision Records, the load-bearing decisions of the project. Three of these (ADR-052/053/054) document the Spaceflight Fleet schema retrospectively.
+- **[RFCs](/rfc/)** — 40 RFCs, the open architectural questions before they became ADRs. RFC-030 (responsive image delivery — size ladder + `srcset` for mobile/web/Google TV, ADR-080) is the current open image-weight design.
+- **[PRDs](/prd/)** — 38 Product Requirements Documents, the user-value arguments for every shipped feature.
 
 ### Concept package
 
@@ -101,7 +101,7 @@ The **Flight Director banner** on `/fly` narrates 5 physics phases (Departure ·
 
 ## How it's built
 
-**Stack:** SvelteKit + Three.js r128 + TypeScript (strict) + Vite. No backend, no database. Pure static SPA. PWA-installable, offline-capable after first paint. Hosted free on GitHub Pages.
+**Stack:** SvelteKit + Three.js r128 + TypeScript (strict) + Vite. No backend, no database. Pure static SPA. PWA-installable, offline-capable after first paint. Self-hosted on a VPS; GitHub Pages serves only these docs.
 
 **Data:** All static JSON under `static/data/`. 33 ajv schemas validate every file fail-closed at build time. Locale overlays for 14 languages. Pre-computed Lambert porkchop grids for 9 destinations.
 

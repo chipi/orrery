@@ -96,5 +96,33 @@
     "/fleet?id=tiangong": "Flotte — Shenzhou, Tianzhou et la famille Long March",
     "/programs/iss": "ISS — la station dont Tiangong a été tenu à l'écart",
     "/earth?site=tiangong": "Tiangong au-dessus de nous"
+  },
+  "roster": {
+    "module:tianhe": {
+      "note": "Le module central — quartiers d'habitation, survie, propulsion et centre de contrôle de la station. La première pièce lancée, et le cœur de la station."
+    },
+    "module:chinarm": {
+      "note": "Le bras robotique de la station, monté sur Tianhe, utilisé pour déplacer des modules et assister les sorties dans l'espace."
+    },
+    "module:wentian": {
+      "note": "Le premier module laboratoire — avec un centre de contrôle de secours et un sas pour les sorties dans l'espace."
+    },
+    "module:mengtian": {
+      "note": "Le second module laboratoire, qui complète la station en forme de T ; une installation pour la science en microgravité."
+    },
+    "mission:shenzhou-1": {
+      "note": "premier vol d'essai sans équipage de Shenzhou — la preuve que la Chine pouvait faire voler sa propre capsule d'équipage"
+    },
+    "mission:shenzhou-5": {
+      "note": "Yang Liwei devient le premier astronaute chinois en orbite — la Chine rejoint les États-Unis et l'URSS comme troisième nation à lancer un humain sur sa propre fusée"
+    },
+    "Shenzhou 9 → Tiangong-1": {
+      "note": "premier amarrage habité avec une station chinoise ; Liu Yang devient la première femme chinoise dans l'espace",
+      "name": "Shenzhou 9 → Tiangong-1"
+    },
+    "Continuous occupation": {
+      "note": "l'équipage permanent commence avec Shenzhou-14 en juin 2022 ; la CSS est habitée en continu depuis",
+      "name": "Occupation continue"
+    }
   }
 }

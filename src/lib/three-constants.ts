@@ -14,7 +14,7 @@
  * EffectComposer + OutlinePass tuning for hover/selection feedback.
  * Used by /iss, /tiangong, /mars hover raycasters.
  *
- * - `edgeStrength` 4: makes the cyan glow visible against dark backdrops
+ * - `edgeStrength` 4: makes the blue glow visible against dark backdrops
  *   without washing out the underlying mesh. 1–10 range; 4 is the sweet
  *   spot from the v0.4.0 ISS polish pass.
  * - `edgeGlow` 0.4: medium falloff. Higher → softer; lower → razor-sharp.

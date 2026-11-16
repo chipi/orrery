@@ -3260,9 +3260,10 @@ function buildAriane1(vehLen: number): LauncherModel {
  */
 function buildDeltaII(vehLen: number): LauncherModel {
   const spec = getLauncherEngines('delta-ii')!;
-  const teal = new THREE.MeshStandardMaterial({
+  const deltaPaint = new THREE.MeshStandardMaterial({
+    // a3-keep: vehicle paint colour, palette review at the end
     map: livery({
-      base: '#3f9aa3',
+      base: '#3f9aa3', // a3-keep: vehicle paint colour, palette review at the end
       wordmark: { text: 'D E L T A', color: '#f4f6f7', size: 0.045, y: 0.55 },
       flag: 'usa',
     }),
@@ -3279,7 +3280,7 @@ function buildDeltaII(vehLen: number): LauncherModel {
 
   // ── Stage 1: isogrid LOX tank, centre body, fuel tank; RS-27A + 2 verniers.
   const booster = new THREE.Group();
-  const s1 = new THREE.Mesh(new THREE.CylinderGeometry(r, r, vehLen * 0.59, 48), teal);
+  const s1 = new THREE.Mesh(new THREE.CylinderGeometry(r, r, vehLen * 0.59, 48), deltaPaint); // a3-keep: vehicle paint colour, palette review at the end
   s1.position.y = vehLen * 0.325;
   booster.add(s1);
   booster.add(ringFrames(r, vehLen * 0.06, vehLen * 0.6, 7, frame));

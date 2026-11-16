@@ -82,5 +82,18 @@
   "link_labels": {
     "/explore": "Pluto im 3D-Explorer",
     "/gallery/deep-sky": "Pluto in der Deep-Sky-Galerie"
+  },
+  "roster": {
+    "mission:new-horizons": {
+      "note": "das schnellste je gestartete Raumfahrzeug, quer durch das Sonnensystem geschickt, um Pluto erstmals aus der Nähe zu untersuchen — und danach eine Welt jenseits davon"
+    },
+    "Pluto, up close": {
+      "note": "am 14. Juli 2015 flog es an Pluto vorbei und enthüllte eine junge, aktive Welt mit Stickstoffgletschern und Wassereisbergen, wo Wissenschaftler einen toten Felsklumpen erwartet hatten",
+      "name": "Pluto aus der Nähe"
+    },
+    "Arrokoth": {
+      "note": "am Neujahrstag 2019 flog es an Arrokoth vorbei, einem winzigen zweilappigen Körper, anderthalb Milliarden Kilometer hinter Pluto — das entfernteste Objekt, das je aus der Nähe erkundet wurde",
+      "name": "Arrokoth"
+    }
   }
 }

@@ -1,0 +1,54 @@
+{
+  "id": "sts-51-l",
+  "agency": "NASA",
+  "agency_full": "National Aeronautics and Space Administration",
+  "sector": "gov",
+  "dest": "EARTH",
+  "color": "#0B3D91",
+  "year": 1986,
+  "status": "FLOWN",
+  "departure_date": "1986-01-28",
+  "arrival_date": "1986-01-28",
+  "transit_days": 0,
+  "vehicle": "Space Shuttle Challenger (OV-099)",
+  "payload": "TDRS-B and Spartan-Halley; crew of seven",
+  "delta_v": "0 km/s (orbit not reached; vehicle lost 73 s after liftoff)",
+  "data_quality": "good",
+  "credit": "© NASA / Rogers Commission report. Public domain / archive.",
+  "links": [
+    {
+      "l": "STS-51L — NASA",
+      "u": "https://www.nasa.gov/mission/sts-51l/",
+      "t": "core"
+    },
+    {
+      "l": "Space Shuttle Challenger disaster — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Space_Shuttle_Challenger_disaster",
+      "t": "intro"
+    },
+    {
+      "l": "Rogers Commission report, Chapter IV: the cause of the accident (NASA)",
+      "u": "https://www.nasa.gov/history/rogersrep/v1ch4.htm",
+      "t": "deep"
+    },
+    {
+      "l": "Rogers Commission report, Chapter V: the contributing cause, the launch decision (NASA)",
+      "u": "https://www.nasa.gov/history/rogersrep/v1ch5.htm",
+      "t": "deep"
+    }
+  ],
+  "fleet_refs": [
+    {
+      "id": "space-shuttle-stack",
+      "role": "launcher"
+    },
+    {
+      "id": "challenger",
+      "role": "spacecraft"
+    },
+    {
+      "id": "lc-39b",
+      "role": "launch-site"
+    }
+  ]
+}

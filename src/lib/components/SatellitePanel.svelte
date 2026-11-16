@@ -16,9 +16,11 @@
   import PanelGalleryGrid from './PanelGalleryGrid.svelte';
   import PanelLightbox from './PanelLightbox.svelte';
   import Panel from './Panel.svelte';
+  import WorldLinkChip from './WorldLinkChip.svelte';
+  import PanelActions from './PanelActions.svelte';
   import { page } from '$app/state';
   import { formatKm } from '$lib/format';
-  import { localeFromPage, localHref } from '$lib/locale';
+  import { localeFromPage } from '$lib/locale';
   import * as m from '$lib/paraglide/messages';
   import {
     getSatellites,
@@ -27,11 +29,17 @@
     type SatelliteEntry,
     type SatelliteI18n,
   } from '$lib/data';
-  import { linkifyMission, loadMissionIndex } from '$lib/missions-linkify';
+  import {
+    linkifyMission,
+    loadMissionIndex,
+    onMissionLinkClick,
+    sortNewestFirst,
+  } from '$lib/missions-linkify';
   import { assetUrl } from '$lib/asset-url';
   import type { CardSpec } from '$lib/cards/card-spec';
   import { loadCardModules, type CardModules } from '$lib/cards/lazy-card';
   import ScienceCard from './ScienceCard.svelte';
+  import { pickScienceLinks } from '$lib/science-links';
   import type { ScienceTabId } from '$types/science';
   import { dataLoadFailed } from '$lib/data/core';
 
@@ -46,8 +54,12 @@
     satelliteKey: string | null;
     open: boolean;
     onClose: () => void;
+    /** A mission link opens the mission in place (the host's mission panel); absent: navigate. */
+    onMissionOpen?: (missionId: string) => void;
+    /** A mission is open over this panel (the host stacks it): this one is not painted. */
+    covered?: boolean;
   };
-  let { satelliteKey, open, onClose }: Props = $props();
+  let { satelliteKey, open, onClose, onMissionOpen, covered }: Props = $props();
 
   let satellites: SatelliteEntry[] = $state([]);
   let loaded = $state(false);
@@ -89,6 +101,7 @@
     };
   }
   let entry = $derived<SatelliteEntry | null>(baseEntry ? mergeOverlay(baseEntry, overlay) : null);
+  let scienceLinks = $derived(pickScienceLinks(entry?.science_sections));
 
   // #547 S5b — the collectible card (the loaded satellite list doubles
   // as the collection for numbering).
@@ -130,13 +143,24 @@
   });
 </script>
 
-<Panel {open} {onClose} title={entry?.name ?? ''}>
+<Panel
+  {open}
+  {onClose}
+  {covered}
+  title={entry?.name ?? ''}
+  onShare={cardSpec ? () => (cardOpen = true) : undefined}
+>
+  {#snippet eyebrow()}
+    {#if entry}<div class="kind-row">
+        <span class="kind">{m.panel_satellite_kind({ planet: entry.parent_planet_name })}</span>
+      </div>{/if}
+  {/snippet}
+  {#snippet heading()}
+    {#if entry}<div class="name">{entry.name}</div>{/if}
+  {/snippet}
+
   {#if entry}
     <div class="head">
-      <div class="kind-row">
-        <span class="kind">{m.panel_satellite_kind({ planet: entry.parent_planet_name })}</span>
-      </div>
-      <div class="name">{entry.name}</div>
       <div class="stat-row">
         <div class="stat">
           <div class="stat-label">{m.panel_label_orbital_period()}</div>
@@ -150,6 +174,10 @@
         </div>
       </div>
     </div>
+
+    <PanelActions>
+      <WorldLinkChip bodyId={entry.id} />
+    </PanelActions>
 
     {#if gallery.length > 0}
       <PanelHeroImage
@@ -184,10 +212,10 @@
             <div class="cell-value">{entry.surface_composition}</div>
           </div>
         {/if}
-        {#if (entry.science_sections ?? []).length > 0}
+        {#if scienceLinks.length > 0}
           <div class="science-section">
             <h3 class="library-heading">{m.panel_tab_science()}</h3>
-            {#each entry.science_sections ?? [] as sec (sec.tab + sec.section)}
+            {#each scienceLinks as sec (sec.tab + sec.section)}
               <ScienceCard tab={sec.tab as ScienceTabId} section={sec.section} why={sec.why} />
             {/each}
           </div>
@@ -243,11 +271,15 @@
           <p class="empty-tab">{m.panel_smallbody_no_spacecraft()}</p>
         {:else}
           <ul class="mission-list">
-            {#each entry.mission_visits as visit (visit)}
+            {#each sortNewestFirst(entry.mission_visits) as visit (visit)}
               {@const link = linkifyMission(visit)}
               <li>
                 {#if link}
-                  <a href={link.href} class="mission-link">{link.label}</a><span>{link.rest}</span>
+                  <a
+                    href={link.href}
+                    class="mission-link"
+                    onclick={(e) => onMissionLinkClick(e, link, onMissionOpen)}>{link.label}</a
+                  ><span>{link.rest}</span>
                 {:else}
                   {visit}
                 {/if}
@@ -257,27 +289,6 @@
         {/if}
       {/if}
     </div>
-    {#if entry?.id === 'moon'}
-      <div class="cta-bar">
-        <a class="cta cta-secondary" href={localHref(`/moon`)}>
-          {m.panel_explore_surface_cta({ name: entry.name.toUpperCase() })}
-        </a>
-      </div>
-    {/if}
-
-    <!-- #547 S5b — every natural satellite carries its collectible card. -->
-    {#if cardSpec}
-      <div class="cta-bar">
-        <button
-          type="button"
-          class="cta cta-card"
-          onclick={() => (cardOpen = true)}
-          data-testid="open-card-btn"
-        >
-          {m.card_open_button()}
-        </button>
-      </div>
-    {/if}
   {/if}
 </Panel>
 
@@ -308,7 +319,7 @@
   }
   .kind {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 8px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
     color: rgba(160, 200, 255, 0.85);
     text-transform: uppercase;
@@ -328,9 +339,9 @@
   }
   .stat-label {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
     text-transform: uppercase;
     margin-bottom: 4px;
   }
@@ -349,31 +360,24 @@
     background: transparent;
     border: 0;
     border-bottom: 2px solid transparent;
-    color: rgba(255, 255, 255, 0.45);
+    color: var(--color-text-label);
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
     padding: 8px 12px;
     cursor: pointer;
   }
   :global(.tabs.sat-tabs button.active) {
     color: #fff;
-    border-bottom-color: #4466ff;
+    border-bottom-color: var(--color-accent);
   }
   :global(.tabs.sat-tabs button:hover:not(.active)),
   :global(.tabs.sat-tabs button:focus-visible) {
     color: rgba(255, 255, 255, 0.8);
     outline: none;
   }
-  .editorial {
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 14px;
-    line-height: 1.5;
-    color: rgba(255, 255, 255, 0.85);
-  }
   .editorial.empty {
-    color: rgba(255, 255, 255, 0.4);
+    color: var(--color-text-label);
   }
   .composition {
     margin-top: 14px;
@@ -382,9 +386,9 @@
   }
   .cell-label {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 8px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
-    color: rgba(255, 255, 255, 0.45);
+    color: var(--color-text-label);
     margin-bottom: 4px;
     text-transform: uppercase;
   }
@@ -396,7 +400,7 @@
   }
   .grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 14px 16px;
   }
   /* .mission-list / .mission-link moved to src/lib/styles/panel-tabs.css
@@ -410,65 +414,19 @@
     gap: 10px;
   }
   .learn-list a {
-    color: #4ecdc4;
+    color: var(--color-accent);
     text-decoration: none;
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 1px;
     padding: 8px 10px;
-    background: rgba(78, 205, 196, 0.06);
-    border-left: 2px solid rgba(78, 205, 196, 0.5);
+    background: color-mix(in srgb, var(--color-accent) 6%, transparent);
+    border-left: 2px solid color-mix(in srgb, var(--color-accent) 50%, transparent);
     display: block;
   }
   .learn-list a:hover,
   .learn-list a:focus-visible {
-    background: rgba(78, 205, 196, 0.12);
+    background: var(--color-accent-soft);
     outline: none;
-  }
-  .cta-bar {
-    padding: 12px 0 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
-    flex-shrink: 0;
-    margin-top: 12px;
-  }
-  .cta {
-    width: 100%;
-    min-height: 44px;
-    padding: 12px;
-    border-radius: 4px;
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
-    letter-spacing: 3px;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition:
-      background 120ms,
-      border-color 120ms;
-  }
-  .cta-secondary {
-    background: transparent;
-    border: 1px solid rgba(68, 102, 255, 0.55);
-    color: #dde4ff;
-    text-decoration: none;
-  }
-  .cta-secondary:hover,
-  .cta-secondary:focus-visible {
-    background: rgba(68, 102, 255, 0.15);
-    border-color: #4466ff;
-    color: #fff;
-    outline: none;
-  }
-  /* #547 — card CTA in the quiet register (mirrors the missions panel). */
-  .cta.cta-card {
-    background: rgba(255, 255, 255, 0.05);
-    border-color: rgba(255, 255, 255, 0.22);
-    cursor: pointer;
-  }
-  .cta.cta-card:hover,
-  .cta.cta-card:focus-visible {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.45);
   }
 </style>

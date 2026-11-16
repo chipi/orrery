@@ -107,5 +107,28 @@
     "/science/propulsion/tsiolkovsky": "Die Raketengleichung",
     "/moon?site=apollo15": "Apollo 15 — Hadley–Apennin",
     "/moon?site=apollo16": "Apollo 16 — Descartes-Hochland"
+  },
+  "roster": {
+    "Ranger": {
+      "note": "robotische Vorbereitung — Einschlagsonden, die die ersten Nahaufnahmen des Mondes zurückschickten und die Oberfläche bis zum Augenblick des Aufpralls fotografierten; sie zeigten das Gelände, dem Apollo begegnen würde",
+      "name": "Ranger"
+    },
+    "Lunar Orbiter": {
+      "note": "robotische Vorbereitung — fünf Orbiter fotografierten fast den gesamten Mond, um die Apollo-Landeplätze auszuwählen und zu bestätigen; die Erkundung, die eine sichere Landung möglich machte",
+      "name": "Lunar Orbiter"
+    },
+    "Surveyor": {
+      "note": "robotische Vorbereitung — Softlander bewiesen, dass die Mondoberfläche das Gewicht eines Raumfahrzeugs trägt, statt es zu verschlucken; Apollo 12 landete neben Surveyor 3 und brachte Teile davon nach Hause",
+      "name": "Surveyor"
+    },
+    "mission:apollo-1": {
+      "note": "Kabinenbrand — Besatzung bei einem Bodentest verloren"
+    },
+    "mission:apollo7": {
+      "note": "erster bemannter Flug"
+    },
+    "mission:apollo9": {
+      "note": "bemannter Test der Mondlandefähre im Erdorbit"
+    }
   }
 }

@@ -103,5 +103,15 @@
     "/earth": "Земља — орбите, повратак у атмосферу и места лансирања",
     "/science/mission-phases/edl": "Улазак, спуштање и слетање",
     "/science/propulsion/tsiolkovsky": "Ракетна једначина — зашто Redstone није могао у орбиту"
+  },
+  "roster": {
+    "Mercury-Redstone 2 (Ham)": {
+      "note": "суборбитални тест са шимпанзом — потврдио ракету Redstone за лет са посадом",
+      "name": "Mercury-Redstone 2 (Ham)"
+    },
+    "Mercury-Atlas 5 (Enos)": {
+      "note": "тест у две орбите са шимпанзом — потврдио ракету Atlas пре Гленовог лета",
+      "name": "Mercury-Atlas 5 (Enos)"
+    }
   }
 }

@@ -1,0 +1,24 @@
+{
+  "name": "Mariner 2",
+  "vehicle": "Atlas-Agena B",
+  "payload": "202,8 kg",
+  "delta_v": "~3,5 km/s (estimativa)",
+  "type": "SOBREVOO · REALIZADA",
+  "first": "A NASA a chama de a primeiríssima missão científica planetária bem-sucedida da história",
+  "description": "A Mariner 2 foi lançada em 1962-08-27 em um Atlas-Agena B e passou por Vênus em 1962-12-14, com aproximação máxima de 34.773 km. Seu magnetômetro, detectores de partículas, espectrômetro de plasma solar, detector de poeira e dois radiômetros trouxeram uma primeira visão de Vênus: a NASA relata temperaturas de 216 °C no lado escuro a 237 °C no lado iluminado, uma densa camada de nuvens entre 56 e 80 km de altitude, uma rotação retrógrada lenta, uma atmosfera composta principalmente de dióxido de carbono e nenhum campo magnético perceptível. No espaço, mostrou que o vento solar flui continuamente. O contato terminou em 1963-01-03. A NASA diz que ela mantém a honra de ser a primeiríssima missão científica planetária bem-sucedida da história.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANÇAMENTO",
+      "note": "Atlas-Agena B de Cabo Canaveral, 1962-08-27.",
+      "type": "nominal"
+    },
+    {
+      "met": 109,
+      "label": "SOBREVOO DE VÊNUS",
+      "note": "Aproximação máxima de 34.773 km em 1962-12-14.",
+      "type": "nominal"
+    }
+  ],
+  "vehicle_stage": "estágio superior Agena B"
+}

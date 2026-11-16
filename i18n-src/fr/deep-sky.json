@@ -4,11 +4,11 @@
     "caption": "Le bord d'une pépinière stellaire dans la Nébuleuse de la Carène (NGC 3324), creusé par de jeunes étoiles.",
     "subject": "Nébuleuse",
     "type": "Région de formation stellaire",
-    "distance": "~7 600 années-lumière",
+    "distance": "~7 900 années-lumière",
     "taken": "Publié le 12 juil 2022"
   },
   "jwst-southern-ring": {
-    "title": "Nébuleuse du Anneau austral",
+    "title": "Nébuleuse de l'Anneau austral",
     "caption": "Une étoile mourante (NGC 3132) rejetant des enveloppes de gaz et de poussière sur une demi-année-lumière.",
     "subject": "Nébuleuse",
     "type": "Nébuleuse planétaire",
@@ -24,11 +24,11 @@
     "taken": "Publié le 12 juil 2022"
   },
   "jwst-pillars": {
-    "title": "Piliers de la Création",
+    "title": "Piliers de la création",
     "caption": "Tours de gaz froid et de poussière dans la Nébuleuse de l'Aigle (M16), éclairées de l'intérieur par des étoiles nouveau-nées.",
     "subject": "Nébuleuse",
     "type": "Nébuleuse d'émission / région de formation stellaire (M16)",
-    "distance": "~6 500 années-lumière",
+    "distance": "~5 540 années-lumière",
     "taken": "Publié le 19 oct 2022"
   },
   "jwst-tarantula": {
@@ -36,7 +36,7 @@
     "caption": "30 Doradus — la région de formation stellaire la plus active connue dans notre voisinage galactique.",
     "subject": "Nébuleuse",
     "type": "Région de formation stellaire (30 Dor)",
-    "distance": "~161 000 années-lumière",
+    "distance": "~162 000 années-lumière",
     "taken": "Publié le 6 sep 2022"
   },
   "jwst-cartwheel": {
@@ -48,7 +48,7 @@
     "taken": "Publié le 2 aoû 2022"
   },
   "jwst-phantom": {
-    "title": "Galaxie du Fantôme",
+    "title": "Galaxie Fantôme",
     "caption": "M74 — une spirale de grand design, son squelette de gaz et de poussière mis à nu dans l'infrarouge.",
     "subject": "Galaxies",
     "type": "Galaxie spirale (M74)",
@@ -56,7 +56,7 @@
     "taken": "2022"
   },
   "hst-pillars": {
-    "title": "Piliers de la Création",
+    "title": "Piliers de la création",
     "caption": "La vue emblématique de 2014 du télescope Hubble des tours de gaz de formation stellaire de la Nébuleuse de l'Aigle.",
     "subject": "Nébuleuse",
     "type": "Nébuleuse d'émission / région de formation stellaire (M16)",
@@ -68,7 +68,7 @@
     "caption": "Un pilier de trois années-lumière dans la Nébuleuse de la Carène, issu de l'anniversaire des 20 ans du télescope Hubble.",
     "subject": "Nébuleuse",
     "type": "Pilier de formation d'étoiles",
-    "distance": "~7 500 années-lumière",
+    "distance": "~7 700 années-lumière",
     "taken": "2010 · 20e anniversaire de Hubble"
   },
   "hst-butterfly": {
@@ -76,15 +76,15 @@
     "caption": "NGC 6302 — ailes de gaz chauffé au-delà de 20 000 °C, éjectées par une étoile mourante.",
     "subject": "Nébuleuse",
     "type": "Nébuleuse planétaire (NGC 6302)",
-    "distance": "~3 400 années-lumière",
+    "distance": "~3 800 années-lumière",
     "taken": "2009"
   },
   "hst-antennae": {
-    "title": "Galaxies Antennae",
+    "title": "Galaxies des Antennes",
     "caption": "Deux galaxies (NGC 4038/4039) en collision, allumant des milliards de nouvelles étoiles.",
     "subject": "Galaxies",
     "type": "Galaxies en collision",
-    "distance": "~45–65 millions d'années-lumière",
+    "distance": "~69 millions d'années-lumière",
     "taken": "2006"
   },
   "hst-bubble": {
@@ -92,7 +92,7 @@
     "caption": "NGC 7635 — une bulle de sept années-lumière soufflée par le vent féroce d'une étoile massive.",
     "subject": "Nébuleuse",
     "type": "Nébuleuse d'émission (NGC 7635)",
-    "distance": "~7 100 années-lumière",
+    "distance": "~9 130 années-lumière",
     "taken": "2016 · 26e anniversaire de Hubble"
   },
   "hst-westerlund2": {
@@ -108,7 +108,7 @@
     "caption": "NGC 6543 — l'une des nébuleuses planétaires les plus complexes jamais observées.",
     "subject": "Nébuleuse",
     "type": "Nébuleuse planétaire (NGC 6543)",
-    "distance": "~3 300 années-lumière",
+    "distance": "~4 460 années-lumière",
     "taken": "2004"
   },
   "hst-whirlpool": {
@@ -116,7 +116,7 @@
     "caption": "M51 — une spirale de manuel, les bras rougeoyant de rose avec des étoiles nouvellement nées.",
     "subject": "Galaxies",
     "type": "Galaxie spirale (M51)",
-    "distance": "~31 millions d'années-lumière",
+    "distance": "~27 millions d'années-lumière",
     "taken": "2005"
   },
   "hst-crab": {
@@ -128,8 +128,8 @@
     "taken": "2005"
   },
   "hst-veil": {
-    "title": "Nébuleuse du Voile",
-    "caption": "Un filament de la Boucle du Cygnus — une onde de choc de supernova encore en expansion après 10 000 ans.",
+    "title": "Dentelles du Cygne",
+    "caption": "Un filament de la Boucle du Cygnus — une onde de choc de supernova encore en expansion après environ 20 000 ans.",
     "subject": "Nébuleuse",
     "type": "Reste de supernova · Boucle du Cygnus",
     "distance": "~2 400 années-lumière",
@@ -148,7 +148,7 @@
     "caption": "NGC 2392 — une étoile semblable au Soleil enveloppée dans les enveloppes de gaz qu'elle a éjectées il y a 10 000 ans.",
     "subject": "Nébuleuse",
     "type": "Nébuleuse planétaire (NGC 2392)",
-    "distance": "~3 000 années-lumière",
+    "distance": "~5 980 années-lumière",
     "taken": "2000"
   },
   "chandra-crab": {
@@ -159,11 +159,11 @@
     "distance": "~6 500 années-lumière"
   },
   "chandra-tycho": {
-    "title": "Reste de supernova de Tycho",
+    "title": "Rémanent de la supernova de Tycho",
     "caption": "L'enveloppe aux rayons X d'une étoile que Tycho Brahe a vu exploser en 1572.",
     "subject": "Supernova",
     "type": "Reste de supernova · Rayons X (SN 1572)",
-    "distance": "~10 000 années-lumière"
+    "distance": "~9 000 années-lumière"
   },
   "spitzer-helix": {
     "title": "Nébuleuse de l'Hélice (infrarouge)",
@@ -222,7 +222,7 @@
     "taken": "Publié 12 septembre 2022"
   },
   "jwst-ring": {
-    "title": "Nébuleuse de l'Anneau",
+    "title": "Nébuleuse de la Lyre",
     "caption": "M57 — une étoile semblable au Soleil en fin de vie, ses couches extérieures brillant dans les moindres détails.",
     "subject": "Nébuleuse",
     "type": "Nébuleuse planétaire (M57)",
@@ -258,12 +258,12 @@
     "caption": "Un panorama de 50 années-lumière de largeur de l'une des plus grandes usines d'étoiles de la galaxie.",
     "subject": "Nébuleuse",
     "type": "Région de formation d'étoiles",
-    "distance": "~7 500 années-lumière",
+    "distance": "~7 700 années-lumière",
     "taken": "2007 · Hubble 17e anniversaire"
   },
   "jwst-casa": {
-    "title": "Cassiopeia A",
-    "caption": "L'œil infrarouge du Webb sur le plus jeune vestige de supernova connu de la galaxie.",
+    "title": "Cassiopée A",
+    "caption": "L'œil infrarouge du Webb sur l'un des plus jeunes rémanents de supernova connus de la galaxie.",
     "subject": "Supernova",
     "type": "Vestige de supernova",
     "distance": "~11 000 années-lumière",
@@ -274,7 +274,7 @@
     "caption": "Une tour de gaz froid de sept années-lumière dans une lointaine pouponnière stellaire.",
     "subject": "Nébuleuse",
     "type": "Nébuleuse par émission",
-    "distance": "~2 700 années-lumière",
+    "distance": "~2 280 années-lumière",
     "taken": "2002 · Premier éclairage de l'ACS"
   },
   "hst-omega-centauri": {
@@ -282,7 +282,7 @@
     "caption": "L'amas globulaire le plus brillant du ciel — des millions d'étoiles liées par la gravité.",
     "subject": "Amas",
     "type": "Amas globulaire",
-    "distance": "~17 000 années-lumière",
+    "distance": "~18 000 années-lumière",
     "taken": "2008"
   },
   "jwst-ngc1365": {
@@ -290,7 +290,7 @@
     "caption": "Une spirale barrée colossale dont la barre canalise le gaz vers un trou noir vorace.",
     "subject": "Galaxie",
     "type": "Galaxie spirale barrée",
-    "distance": "~56 millions d'années-lumière",
+    "distance": "~61 millions d'années-lumière",
     "taken": "2023"
   },
   "hst-ngc602": {
@@ -306,7 +306,7 @@
     "caption": "La région de formation d'étoiles la plus proche de la Terre, embrasée de jeunes soleils — image anniversaire de Webb.",
     "subject": "Nébuleuse",
     "type": "Région de formation d'étoiles",
-    "distance": "~430 années-lumière",
+    "distance": "~450 années-lumière",
     "taken": "Diffusée 12 juil. 2023"
   },
   "jwst-wr124": {
@@ -314,7 +314,7 @@
     "caption": "Une étoile rare et massive expulsant ses couches externes au moment où elle s'apprête à devenir supernova.",
     "subject": "Étoile",
     "type": "Étoile Wolf–Rayet",
-    "distance": "~15 000 années-lumière",
+    "distance": "~21 000 années-lumière",
     "taken": "Diffusée 14 mars 2023"
   },
   "hst-cosmic-reef": {
@@ -322,15 +322,15 @@
     "caption": "NGC 2014 et NGC 2020 — un récif d'hydrogène luminescent, lors du 30e anniversaire de Hubble.",
     "subject": "Nébuleuse",
     "type": "Nébuleuse d'émission",
-    "distance": "~163 000 années-lumière",
+    "distance": "~162 000 années-lumière",
     "taken": "2020 · Hubble 30e"
   },
   "hst-hen2104": {
-    "title": "Nébuleuse de la Crabe australe",
+    "title": "Nébuleuse australe du Crabe",
     "caption": "Des sabliers imbriqués de gaz éjectés par une étoile mourante et son compagnon.",
     "subject": "Nébuleuse",
     "type": "Nébuleuse planétaire",
-    "distance": "~7 000 années-lumière",
+    "distance": "~11 000 années-lumière",
     "taken": "2019 · Hubble 29e"
   },
   "hst-monkey-head": {
@@ -359,10 +359,10 @@
   },
   "hst-ngc1300": {
     "title": "NGC 1300",
-    "caption": "Une spirale barrée exemplaire, ses bras enroulés autour d'une barre de 200 000 années-lumière.",
+    "caption": "Une spirale barrée exemplaire, dont les bras rejoignent les extrémités d'une barre droite d'étoiles.",
     "subject": "Galaxie",
     "type": "Galaxie spirale barrée",
-    "distance": "~61 millions d'années-lumière",
+    "distance": "~62 millions d'années-lumière",
     "taken": "2005"
   },
   "jwst-ngc604": {
@@ -396,5 +396,758 @@
     "type": "Écho lumineux",
     "distance": "~20 000 années-lumière",
     "taken": "2004"
+  },
+  "m2": {
+    "title": "M2 · NGC 7089",
+    "subject": "Amas globulaire",
+    "type": "Amas globulaire",
+    "distance": "~38 000 al"
+  },
+  "m4": {
+    "title": "M4 · NGC 6121",
+    "subject": "Amas globulaire",
+    "type": "Amas globulaire",
+    "distance": "~6 030 al"
+  },
+  "m3": {
+    "title": "M3 · NGC 5272",
+    "subject": "Amas globulaire",
+    "type": "Amas globulaire",
+    "distance": "~33 000 al"
+  },
+  "m5": {
+    "title": "M5 · NGC 5904",
+    "subject": "Amas globulaire",
+    "type": "Amas globulaire",
+    "distance": "~24 000 al"
+  },
+  "m6": {
+    "title": "M6 · Butterfly Cluster",
+    "subject": "Amas d'étoiles",
+    "type": "Amas d'étoiles",
+    "distance": "~1 470 al"
+  },
+  "m9": {
+    "title": "M9 · NGC 6333",
+    "subject": "Amas globulaire",
+    "type": "Amas globulaire",
+    "distance": "~27 000 al"
+  },
+  "m10": {
+    "title": "M10 · NGC 6254",
+    "subject": "Amas globulaire",
+    "type": "Amas globulaire",
+    "distance": "~17 000 al"
+  },
+  "m7": {
+    "title": "M7 · Ptolemy's Cluster",
+    "subject": "Amas d'étoiles",
+    "type": "Amas d'étoiles",
+    "distance": "~900 al"
+  },
+  "m11": {
+    "title": "M11 · Wild Duck Cluster",
+    "subject": "Amas d'étoiles",
+    "type": "Amas d'étoiles",
+    "distance": "~7 280 al"
+  },
+  "m12": {
+    "title": "M12 · NGC 6218",
+    "subject": "Amas globulaire",
+    "type": "Amas globulaire",
+    "distance": "~17 000 al"
+  },
+  "m14": {
+    "title": "M14 · NGC 6402",
+    "subject": "Amas globulaire",
+    "type": "Amas globulaire",
+    "distance": "~30 000 al"
+  },
+  "m13": {
+    "title": "M13 · Hercules Globular Cluster",
+    "subject": "Amas globulaire",
+    "type": "Amas globulaire",
+    "distance": "~24 000 al"
+  },
+  "m17": {
+    "title": "M17 · Omega Nebula",
+    "subject": "Nébuleuse",
+    "type": "Nébuleuse",
+    "distance": "~5 460 al"
+  },
+  "m15": {
+    "title": "M15 · NGC 7078",
+    "subject": "Amas globulaire",
+    "type": "Amas globulaire",
+    "distance": "~35 000 al"
+  },
+  "m19": {
+    "title": "M19 · NGC 6273",
+    "subject": "Amas globulaire",
+    "type": "Amas globulaire",
+    "distance": "~27 000 al"
+  },
+  "m20": {
+    "title": "M20 · Trifid Nebula",
+    "subject": "Nébuleuse",
+    "type": "Nébuleuse",
+    "distance": "~3 960 al"
+  },
+  "m21": {
+    "title": "M21 · NGC 6531",
+    "subject": "Amas d'étoiles",
+    "type": "Amas d'étoiles",
+    "distance": "~3 920 al"
+  },
+  "m22": {
+    "title": "M22 · NGC 6656",
+    "subject": "Amas globulaire",
+    "type": "Amas globulaire",
+    "distance": "~11 000 al"
+  },
+  "m23": {
+    "title": "M23 · NGC 6494",
+    "subject": "Amas d'étoiles",
+    "type": "Amas d'étoiles",
+    "distance": "~2 330 al"
+  },
+  "m24": {
+    "title": "M24 · Small Sgr Star Cloud",
+    "subject": "Objet du ciel profond",
+    "type": "Objet du ciel profond"
+  },
+  "m26": {
+    "title": "M26 · NGC 6694",
+    "subject": "Amas d'étoiles",
+    "type": "Amas d'étoiles",
+    "distance": "~5 990 al"
+  },
+  "m27": {
+    "title": "M27 · Dumbbell Nebula",
+    "subject": "Nébuleuse planétaire",
+    "type": "Nébuleuse planétaire",
+    "distance": "~1 270 al"
+  },
+  "m28": {
+    "title": "M28 · NGC 6626",
+    "subject": "Amas globulaire",
+    "type": "Amas globulaire",
+    "distance": "~18 000 al"
+  },
+  "m29": {
+    "title": "M29 · NGC 6913",
+    "subject": "Amas d'étoiles",
+    "type": "Amas d'étoiles",
+    "distance": "~5 570 al"
+  },
+  "m32": {
+    "title": "M32 · NGC 221",
+    "subject": "Galaxie",
+    "type": "Galaxie",
+    "distance": "~2,6 millions al"
+  },
+  "m33": {
+    "title": "M33 · Triangulum Galaxy",
+    "subject": "Galaxie",
+    "type": "Galaxie",
+    "distance": "~2,6 millions al"
+  },
+  "m34": {
+    "title": "M34 · NGC 1039",
+    "subject": "Amas d'étoiles",
+    "type": "Amas d'étoiles",
+    "distance": "~1 600 al"
+  },
+  "m30": {
+    "title": "M30 · NGC 7099",
+    "subject": "Amas globulaire",
+    "type": "Amas globulaire",
+    "distance": "~28 000 al"
+  },
+  "m35": {
+    "title": "M35 · NGC 2168",
+    "subject": "Amas d'étoiles",
+    "type": "Amas d'étoiles",
+    "distance": "~2 740 al"
+  },
+  "m37": {
+    "title": "M37 · NGC 2099",
+    "subject": "Amas d'étoiles",
+    "type": "Amas d'étoiles",
+    "distance": "~4 570 al"
+  },
+  "m38": {
+    "title": "M38 · NGC 1912",
+    "subject": "Amas d'étoiles",
+    "type": "Amas d'étoiles",
+    "distance": "~3 540 al"
+  },
+  "m39": {
+    "title": "M39 · NGC 7092",
+    "subject": "Amas d'étoiles",
+    "type": "Amas d'étoiles",
+    "distance": "~965 al"
+  },
+  "m41": {
+    "title": "M41 · NGC 2287",
+    "subject": "Amas d'étoiles",
+    "type": "Amas d'étoiles",
+    "distance": "~2 330 al"
+  },
+  "m43": {
+    "title": "M43 · Mairan's Nebula",
+    "subject": "Région de formation d'étoiles",
+    "type": "Région de formation d'étoiles"
+  },
+  "m44": {
+    "title": "M44 · Beehive",
+    "subject": "Amas d'étoiles",
+    "type": "Amas d'étoiles",
+    "distance": "~598 al"
+  },
+  "m47": {
+    "title": "M47 · NGC 2422",
+    "subject": "Amas d'étoiles",
+    "type": "Amas d'étoiles",
+    "distance": "~1 530 al"
+  },
+  "m46": {
+    "title": "M46 · NGC 2437",
+    "subject": "Amas d'étoiles",
+    "type": "Amas d'étoiles",
+    "distance": "~5 070 al"
+  },
+  "m48": {
+    "title": "M48 · NGC 2548",
+    "subject": "Amas d'étoiles",
+    "type": "Amas d'étoiles",
+    "distance": "~2 440 al"
+  },
+  "m49": {
+    "title": "M49 · NGC 4472",
+    "subject": "Galaxie",
+    "type": "Galaxie",
+    "distance": "~55 millions al"
+  },
+  "m50": {
+    "title": "M50 · NGC 2323",
+    "subject": "Amas d'étoiles",
+    "type": "Amas d'étoiles",
+    "distance": "~3 120 al"
+  },
+  "m52": {
+    "title": "M52 · NGC 7654",
+    "subject": "Amas d'étoiles",
+    "type": "Amas d'étoiles",
+    "distance": "~5 120 al"
+  },
+  "m53": {
+    "title": "M53 · NGC 5024",
+    "subject": "Amas globulaire",
+    "type": "Amas globulaire",
+    "distance": "~60 000 al"
+  },
+  "m55": {
+    "title": "M55 · NGC 6809",
+    "subject": "Amas globulaire",
+    "type": "Amas globulaire",
+    "distance": "~17 000 al"
+  },
+  "m54": {
+    "title": "M54 · NGC 6715",
+    "subject": "Amas globulaire",
+    "type": "Amas globulaire",
+    "distance": "~86 000 al"
+  },
+  "m58": {
+    "title": "M58 · NGC 4579",
+    "subject": "Galaxie",
+    "type": "Galaxie",
+    "distance": "~64 millions al"
+  },
+  "m56": {
+    "title": "M56 · NGC 6779",
+    "subject": "Amas globulaire",
+    "type": "Amas globulaire",
+    "distance": "~34 000 al"
+  },
+  "m59": {
+    "title": "M59 · NGC 4621",
+    "subject": "Galaxie",
+    "type": "Galaxie",
+    "distance": "~50 millions al"
+  },
+  "m61": {
+    "title": "M61 · NGC 4303",
+    "subject": "Galaxie",
+    "type": "Galaxie",
+    "distance": "~55 millions al"
+  },
+  "m63": {
+    "title": "M63 · Sunflower Galaxy",
+    "subject": "Galaxie",
+    "type": "Galaxie",
+    "distance": "~29 millions al"
+  },
+  "m60": {
+    "title": "M60 · NGC 4649",
+    "subject": "Galaxie",
+    "type": "Galaxie",
+    "distance": "~54 millions al"
+  },
+  "m64": {
+    "title": "M64 · Black Eye Galaxy",
+    "subject": "Galaxie",
+    "type": "Galaxie",
+    "distance": "~14 millions al"
+  },
+  "m65": {
+    "title": "M65 · NGC 3623",
+    "subject": "Galaxie",
+    "type": "Galaxie",
+    "distance": "~42 millions al"
+  },
+  "m66": {
+    "title": "M66 · NGC 3627",
+    "subject": "Galaxie",
+    "type": "Galaxie",
+    "distance": "~34 millions al"
+  },
+  "m68": {
+    "title": "M68 · NGC 4590",
+    "subject": "Amas globulaire",
+    "type": "Amas globulaire",
+    "distance": "~34 000 al"
+  },
+  "m69": {
+    "title": "M69 · NGC 6637",
+    "subject": "Amas globulaire",
+    "type": "Amas globulaire",
+    "distance": "~29 000 al"
+  },
+  "m70": {
+    "title": "M70 · NGC 6681",
+    "subject": "Amas globulaire",
+    "type": "Amas globulaire",
+    "distance": "~31 000 al"
+  },
+  "m71": {
+    "title": "M71 · NGC 6838",
+    "subject": "Amas globulaire",
+    "type": "Amas globulaire",
+    "distance": "~13 000 al"
+  },
+  "m72": {
+    "title": "M72 · NGC 6981",
+    "subject": "Amas globulaire",
+    "type": "Amas globulaire",
+    "distance": "~54 000 al"
+  },
+  "m75": {
+    "title": "M75 · NGC 6864",
+    "subject": "Amas globulaire",
+    "type": "Amas globulaire",
+    "distance": "~67 000 al"
+  },
+  "m73": {
+    "title": "M73 · NGC 6994",
+    "subject": "Objet du ciel profond",
+    "type": "Objet du ciel profond",
+    "distance": "~2 240 al"
+  },
+  "m77": {
+    "title": "M77 · NGC 1068",
+    "subject": "Galaxie",
+    "type": "Galaxie",
+    "distance": "~50 millions al"
+  },
+  "m78": {
+    "title": "M78 · NGC 2068",
+    "subject": "Nébuleuse",
+    "type": "Nébuleuse",
+    "distance": "~1 320 al"
+  },
+  "m79": {
+    "title": "M79 · NGC 1904",
+    "subject": "Amas globulaire",
+    "type": "Amas globulaire",
+    "distance": "~43 000 al"
+  },
+  "m76": {
+    "title": "M76 · Little Dumbbell Nebula",
+    "subject": "Nébuleuse planétaire",
+    "type": "Nébuleuse planétaire",
+    "distance": "~4 680 al"
+  },
+  "m80": {
+    "title": "M80 · NGC 6093",
+    "subject": "Amas globulaire",
+    "type": "Amas globulaire",
+    "distance": "~34 000 al"
+  },
+  "m81": {
+    "title": "M81 · Bode's Galaxy",
+    "subject": "Galaxie",
+    "type": "Galaxie",
+    "distance": "~12 millions al"
+  },
+  "m82": {
+    "title": "M82 · Cigar Galaxy",
+    "subject": "Galaxie",
+    "type": "Galaxie",
+    "distance": "~12 millions al"
+  },
+  "m83": {
+    "title": "M83 · Southern Pinwheel Galaxy",
+    "subject": "Galaxie",
+    "type": "Galaxie",
+    "distance": "~16 millions al"
+  },
+  "m85": {
+    "title": "M85 · NGC 4382",
+    "subject": "Galaxie",
+    "type": "Galaxie",
+    "distance": "~58 millions al"
+  },
+  "m84": {
+    "title": "M84 · NGC 4374",
+    "subject": "Galaxie",
+    "type": "Galaxie",
+    "distance": "~58 millions al"
+  },
+  "m86": {
+    "title": "M86 · NGC 4406",
+    "subject": "Galaxie",
+    "type": "Galaxie",
+    "distance": "~55 millions al"
+  },
+  "m87": {
+    "title": "M87 · Virgo A",
+    "subject": "Galaxie",
+    "type": "Galaxie",
+    "distance": "~55 millions al"
+  },
+  "m88": {
+    "title": "M88 · NGC 4501",
+    "subject": "Galaxie",
+    "type": "Galaxie",
+    "distance": "~63 millions al"
+  },
+  "m89": {
+    "title": "M89 · NGC 4552",
+    "subject": "Galaxie",
+    "type": "Galaxie",
+    "distance": "~53 millions al"
+  },
+  "m90": {
+    "title": "M90 · NGC 4569",
+    "subject": "Galaxie",
+    "type": "Galaxie",
+    "distance": "~54 millions al"
+  },
+  "m91": {
+    "title": "M91 · NGC 4548",
+    "subject": "Galaxie",
+    "type": "Galaxie",
+    "distance": "~53 millions al"
+  },
+  "m92": {
+    "title": "M92 · NGC 6341",
+    "subject": "Amas globulaire",
+    "type": "Amas globulaire",
+    "distance": "~28 000 al"
+  },
+  "m93": {
+    "title": "M93 · NGC 2447",
+    "subject": "Amas d'étoiles",
+    "type": "Amas d'étoiles",
+    "distance": "~3 170 al"
+  },
+  "m94": {
+    "title": "M94 · NGC 4736",
+    "subject": "Galaxie",
+    "type": "Galaxie",
+    "distance": "~14 millions al"
+  },
+  "m95": {
+    "title": "M95 · NGC 3351",
+    "subject": "Galaxie",
+    "type": "Galaxie",
+    "distance": "~32 millions al"
+  },
+  "m96": {
+    "title": "M96 · NGC 3368",
+    "subject": "Galaxie",
+    "type": "Galaxie",
+    "distance": "~34 millions al"
+  },
+  "m98": {
+    "title": "M98 · NGC 4192",
+    "subject": "Galaxie",
+    "type": "Galaxie",
+    "distance": "~55 millions al"
+  },
+  "m97": {
+    "title": "M97 · Owl Nebula",
+    "subject": "Nébuleuse planétaire",
+    "type": "Nébuleuse planétaire",
+    "distance": "~2 640 al"
+  },
+  "m100": {
+    "title": "M100 · NGC 4321",
+    "subject": "Galaxie",
+    "type": "Galaxie",
+    "distance": "~50 millions al"
+  },
+  "m99": {
+    "title": "M99 · Coma Pinwheel",
+    "subject": "Galaxie",
+    "type": "Galaxie",
+    "distance": "~54 millions al"
+  },
+  "m103": {
+    "title": "M103 · NGC 581",
+    "subject": "Amas d'étoiles",
+    "type": "Amas d'étoiles",
+    "distance": "~8 240 al"
+  },
+  "m106": {
+    "title": "M106 · NGC 4258",
+    "subject": "Galaxie",
+    "type": "Galaxie",
+    "distance": "~25 millions al"
+  },
+  "m107": {
+    "title": "M107 · NGC 6171",
+    "subject": "Amas globulaire",
+    "type": "Amas globulaire",
+    "distance": "~18 000 al"
+  },
+  "m108": {
+    "title": "M108 · NGC 3556",
+    "subject": "Galaxie",
+    "type": "Galaxie",
+    "distance": "~30 millions al"
+  },
+  "m109": {
+    "title": "M109 · NGC 3992",
+    "subject": "Galaxie",
+    "type": "Galaxie",
+    "distance": "~82 millions al"
+  },
+  "m110": {
+    "title": "M110 · NGC 205",
+    "subject": "Galaxie",
+    "type": "Galaxie",
+    "distance": "~2,7 millions al"
+  },
+  "ngc-104": {
+    "title": "NGC 104 · 47 Tucanae",
+    "subject": "Amas globulaire",
+    "type": "Amas globulaire",
+    "distance": "~15 000 al"
+  },
+  "ngc-6752": {
+    "title": "NGC 6752",
+    "subject": "Amas globulaire",
+    "type": "Amas globulaire",
+    "distance": "~13 000 al"
+  },
+  "m105": {
+    "title": "M105 · NGC 3379",
+    "subject": "Galaxie",
+    "type": "Galaxie",
+    "distance": "~36 millions al"
+  },
+  "cygnus-x-1": {
+    "title": "Cygnus X-1",
+    "subject": "Trou noir stellaire",
+    "type": "Trou noir stellaire",
+    "distance": "~7 240 al"
+  },
+  "milky-way": {
+    "title": "Galactic Center",
+    "subject": "Galaxie",
+    "type": "Galaxie"
+  },
+  "sculptor-dwarf": {
+    "title": "Sculptor Dwarf Galaxy",
+    "subject": "Galaxie",
+    "type": "Galaxie sphéroïdale naine",
+    "distance": "~280 000 al"
+  },
+  "leo-i": {
+    "title": "Leo I",
+    "subject": "Galaxie",
+    "type": "Galaxie sphéroïdale naine",
+    "distance": "~830 000 al"
+  },
+  "ngc-185": {
+    "title": "NGC 185",
+    "subject": "Galaxie",
+    "type": "Galaxie elliptique naine",
+    "distance": "~2 millions al"
+  },
+  "ngc-147": {
+    "title": "NGC 147",
+    "subject": "Galaxie",
+    "type": "Galaxie elliptique naine",
+    "distance": "~2,2 millions al"
+  },
+  "andromeda-i": {
+    "title": "Andromède I",
+    "subject": "Galaxie",
+    "type": "Galaxie sphéroïdale naine",
+    "distance": "~2,4 millions al"
+  },
+  "andromeda-ii": {
+    "title": "Andromède II",
+    "subject": "Galaxie",
+    "type": "Galaxie sphéroïdale naine",
+    "distance": "~2,1 millions al"
+  },
+  "andromeda-iii": {
+    "title": "Andromède III",
+    "subject": "Galaxie",
+    "type": "Galaxie sphéroïdale naine",
+    "distance": "~2,4 millions al"
+  },
+  "pegasus-dsph": {
+    "title": "Andromeda VI (Pegasus Dwarf Spheroidal)",
+    "subject": "Galaxie",
+    "type": "Galaxie sphéroïdale naine",
+    "distance": "~2,6 millions al"
+  },
+  "ic-1613": {
+    "title": "IC 1613",
+    "subject": "Galaxie",
+    "type": "Galaxie irrégulière naine",
+    "distance": "~2,5 millions al"
+  },
+  "ngc-6822": {
+    "title": "Barnard's Galaxy (NGC 6822)",
+    "subject": "Galaxie",
+    "type": "Galaxie irrégulière naine",
+    "distance": "~1,5 million al"
+  },
+  "ic-10": {
+    "title": "IC 10",
+    "subject": "Galaxie",
+    "type": "Galaxie irrégulière naine",
+    "distance": "~2,6 millions al"
+  },
+  "wlm": {
+    "title": "WLM",
+    "subject": "Galaxie",
+    "type": "Galaxie irrégulière naine",
+    "distance": "~3 millions al"
+  },
+  "leo-a": {
+    "title": "Leo A",
+    "subject": "Galaxie",
+    "type": "Galaxie irrégulière naine",
+    "distance": "~2,6 millions al"
+  },
+  "phoenix-dwarf": {
+    "title": "Galaxie naine du Phénix",
+    "subject": "Galaxie",
+    "type": "Galaxie irrégulière naine",
+    "distance": "~1,4 million al"
+  },
+  "aquarius-dwarf": {
+    "title": "Galaxie naine du Verseau",
+    "subject": "Galaxie",
+    "type": "Galaxie irrégulière naine",
+    "distance": "~3,5 millions al"
+  },
+  "sagittarius-dirr": {
+    "title": "Sagittarius Dwarf Irregular Galaxy",
+    "subject": "Galaxie",
+    "type": "Galaxie irrégulière naine",
+    "distance": "~3,5 millions al"
+  },
+  "pegasus-dirr": {
+    "title": "Pegasus Dwarf Irregular Galaxy",
+    "subject": "Galaxie",
+    "type": "Galaxie irrégulière naine",
+    "distance": "~3 millions al"
+  },
+  "m81-group": {
+    "title": "M81 and M82",
+    "subject": "Galaxie",
+    "type": "Galaxie",
+    "distance": "~12 millions al"
+  },
+  "centaurus-a-group": {
+    "title": "Centaurus A",
+    "subject": "Galaxie",
+    "type": "Galaxie",
+    "distance": "~12 millions al"
+  },
+  "sculptor-group": {
+    "title": "NGC 253",
+    "subject": "Galaxie",
+    "type": "Galaxie",
+    "distance": "~12 millions al"
+  },
+  "canes-venatici-i": {
+    "title": "NGC 4214",
+    "subject": "Galaxie",
+    "type": "Galaxie",
+    "distance": "~13 millions al"
+  },
+  "maffei-group": {
+    "title": "Maffei 2",
+    "subject": "Galaxie",
+    "type": "Galaxie",
+    "distance": "~19 millions al"
+  },
+  "ngc-6946-group": {
+    "title": "NGC 6946",
+    "subject": "Galaxie",
+    "type": "Galaxie",
+    "distance": "~25 millions al"
+  },
+  "leo-i-cloud": {
+    "title": "M96",
+    "subject": "Galaxie",
+    "type": "Galaxie",
+    "distance": "~35 millions al"
+  },
+  "virgo-cluster": {
+    "title": "amas de la Vierge",
+    "subject": "Amas de galaxies",
+    "type": "Amas de galaxies",
+    "distance": "~54 millions al"
+  },
+  "ngc-5846-group": {
+    "title": "NGC 5846",
+    "subject": "Galaxie",
+    "type": "Galaxie",
+    "distance": "~85 millions al"
+  },
+  "centaurus-cluster": {
+    "title": "Amas du Centaure",
+    "subject": "Amas de galaxies",
+    "type": "Amas de galaxies",
+    "distance": "~160 millions al"
+  },
+  "antlia-cluster": {
+    "title": "Amas de la Machine pneumatique",
+    "subject": "Amas de galaxies",
+    "type": "Amas de galaxies",
+    "distance": "~130 millions al"
+  },
+  "shapley-concentration": {
+    "title": "Shapley Supercluster core",
+    "subject": "Amas de galaxies",
+    "type": "Amas de galaxies",
+    "distance": "~650 millions al"
+  },
+  "coma-great-wall": {
+    "title": "Amas de la Chevelure de Bérénice",
+    "subject": "Amas de galaxies",
+    "type": "Amas de galaxies",
+    "distance": "~330 millions al"
   }
 }

@@ -104,7 +104,7 @@ const rrect = (x0: number, y0: number, x1: number, y1: number, r: number): THREE
 const SKIN = [0xf1c7a1, 0xc68a5e, 0x8d5a3b, 0xe0ac7e, 0x5c3a28];
 const HAIR = [0x2b1d14, 0x5a3825, 0x15110e, 0xb07a3e, 0x3a2a20];
 const SHIRT = [0xe07a4f, 0x4f9fd9, 0x6cbf84, 0xe2b64a, 0xc65d8a];
-const TROUSERS = [0x3b5b8c, 0x4a4f5a, 0x6b4f3a, 0x2f6a5f];
+const TROUSERS = [0x3b5b8c, 0x4a4f5a, 0x6b4f3a, 0x2f6a5f]; // a3-keep: figure paint colour, palette review at the end
 
 /** A man, front view, waving one arm. */
 function man(v: number): Layer[] {
@@ -344,7 +344,7 @@ function elephant(): Layer[] {
 /** A London Routemaster, side view, rear platform on the left. */
 function routemaster(): Layer[] {
   const red = 0xc8202a;
-  const glass = 0xbcd6e8;
+  const glass = 0xbcd6e8; // a3-keep: figure paint colour, palette review at the end
   const L: Layer[] = [];
   L.push({ shape: rrect(-4.19, 0.35, 4.19, 4.38, 0.35), color: red, line: true });
   L.push({ shape: rrect(-4.15, 2.2, 4.15, 2.32, 0.02), color: 0xf3efe6 });
@@ -442,7 +442,7 @@ function bear(): Layer[] {
 
 /** A Volkswagen Beetle, side view, facing right. */
 function beetle(): Layer[] {
-  const paint = 0x8fc3d8;
+  const paint = 0x8fc3d8; // a3-keep: figure paint colour, palette review at the end
   const body = new THREE.Shape();
   body.moveTo(-2.04, 0.35);
   body.lineTo(2.04, 0.35);
@@ -453,8 +453,8 @@ function beetle(): Layer[] {
   body.quadraticCurveTo(-2.1, 0.7, -2.04, 0.35);
   return [
     { shape: body, color: paint, line: true },
-    { shape: ellipse(-1.2, 0.62, 0.62, 0.42), color: 0x7ab1c8, line: true },
-    { shape: ellipse(1.2, 0.62, 0.6, 0.4), color: 0x7ab1c8, line: true },
+    { shape: ellipse(-1.2, 0.62, 0.62, 0.42), color: 0x7ab1c8, line: true }, // a3-keep: figure paint colour, palette review at the end
+    { shape: ellipse(1.2, 0.62, 0.6, 0.4), color: 0x7ab1c8, line: true }, // a3-keep: figure paint colour, palette review at the end
     {
       shape: poly([
         [-0.85, 1.0],
@@ -463,7 +463,7 @@ function beetle(): Layer[] {
         [-0.45, 1.42],
         [-0.8, 1.3],
       ]),
-      color: 0xbcd6e8,
+      color: 0xbcd6e8, // a3-keep: figure paint colour, palette review at the end
       line: true,
     },
     { shape: rrect(-0.15, 1.0, -0.08, 1.4, 0.01), color: paint },

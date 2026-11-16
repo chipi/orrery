@@ -94,5 +94,15 @@
   "link_labels": {
     "/programs/esa-human": "A ESA no voo espacial tripulado — Spacelab, Columbus, ATV",
     "/fleet?id=ariane-5": "Frota — lançadores Ariane"
+  },
+  "roster": {
+    "Ariane 4": {
+      "note": "o confiável burro de carga comercial que conquistou cerca de metade dos lançamentos comerciais de satélites do mundo nos anos 1990 e tornou a Arianespace dominante",
+      "name": "Ariane 4"
+    },
+    "Flight 501": {
+      "note": "o voo inaugural do Ariane 5 se autodestruiu após 37 segundos, quando o software de orientação reaproveitado do Ariane 4 estourou na velocidade maior do novo foguete — um caso exemplar de advertência na engenharia de software",
+      "name": "Voo 501"
+    }
   }
 }

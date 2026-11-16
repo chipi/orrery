@@ -94,5 +94,37 @@
     "/moon?site=change3": "Chang’e 3 — Rover Yutu",
     "/moon?site=change4": "Chang’e 4 — die Rückseite",
     "/moon?site=change2": "Chang’e 2"
+  },
+  "roster": {
+    "mission:change1": {
+      "note": "Chinas erste Mondmission — ein Orbiter, der die Mondoberfläche kartierte und China als Mondmacht ankündigte"
+    },
+    "mission:change2": {
+      "note": "ein zweiter Mondorbiter, der den Mond zum Sonne-Erde-Punkt L2 verließ und dann am Asteroiden Toutatis vorbeiflog"
+    },
+    "mission:change3": {
+      "note": "Chinas erste weiche Landung auf dem Mond mit dem Rover Yutu — das erste Raumfahrzeug seit den 1970er-Jahren, das dort landete"
+    },
+    "mission:change4": {
+      "note": "das erste Raumfahrzeug überhaupt auf der Mondrückseite — einem Ort ohne Sichtverbindung zur Erde, erreicht mit Hilfe des Relaissatelliten Queqiao"
+    },
+    "mission:change5": {
+      "note": "Chinas erste Mondprobenrückführung — die ersten frischen Mondgesteine, die seit 1976 jemand zur Erde brachte"
+    },
+    "mission:change6": {
+      "note": "die erste Probenrückführung von der Mondrückseite — Material, das noch nie ein Mensch in der Hand hielt"
+    },
+    "Queqiao relay": {
+      "note": "ein Satellit jenseits des Mondes, der Signale von der Rückseite weiterleitet, die nie zur Erde zeigt — der Kunstgriff hinter Chang'e 4 und 6",
+      "name": "Queqiao-Relaissatellit"
+    },
+    "Crewed landing": {
+      "note": "Chinas erklärtes Ziel, vor 2030 Astronauten auf dem Mond zu landen, mit einer neuen Tiefraum-Besatzungskapsel und einem neuen Lander",
+      "name": "Bemannte Landung"
+    },
+    "ILRS": {
+      "note": "die International Lunar Research Station — Chinas geplante Basis am Mondsüdpol, zunächst robotisch, dann bemannt, mit internationalen Partnern als Alternative zu Artemis gebaut",
+      "name": "ILRS"
+    }
   }
 }

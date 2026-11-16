@@ -217,6 +217,7 @@ function makeMainArrayTexture(): THREE.CanvasTexture {
     }
   }
   const tex = new THREE.CanvasTexture(cvs);
+  tex.colorSpace = THREE.SRGBColorSpace;
   tex.wrapS = THREE.RepeatWrapping;
   tex.wrapT = THREE.RepeatWrapping;
   return tex;
@@ -1982,7 +1983,7 @@ function buildVisitingFleet(root: THREE.Group) {
     // Faint dotted approach corridor extending past the vehicle in the
     // out-direction — suggests the rendezvous trajectory.
     const corridorMat = new THREE.LineDashedMaterial({
-      color: 0x4ecdc4,
+      color: 0x5070ff,
       transparent: true,
       opacity: 0.35,
       dashSize: 0.08,

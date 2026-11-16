@@ -7611,12 +7611,6 @@
     320,
     1280
   ],
-  "/images/missions/mars2/04": [
-    320,
-    640,
-    1280,
-    1600
-  ],
   "/images/missions/mars3/05": [
     320,
     640,
@@ -10783,11 +10777,11 @@
     1280,
     1600
   ],
-  "/images/planets/earth/04": [
+  "/images/missions/apollo-soyuz/05": [
     320,
     1274
   ],
-  "/images/planets/earth/05": [
+  "/images/planets/earth/04": [
     320,
     640,
     1280,
@@ -10945,11 +10939,11 @@
     2048,
     3072
   ],
-  "/images/planets/venus/03": [
+  "/images/missions/magellan/06": [
     320,
     818
   ],
-  "/images/planets/venus/04": [
+  "/images/planets/venus/03": [
     320,
     1024
   ],
@@ -14950,7 +14944,7 @@
     640,
     800
   ],
-  "/images/planets/venus/05": [
+  "/images/planets/venus/04": [
     320,
     640,
     1280,
@@ -19777,5 +19771,789 @@
   ],
   "/images/missions/thumbnails/card/voyager-2": [
     420
+  ],
+  "/images/black-holes/sagittarius-a-star/01": [
+    1280,
+    2048,
+    3072
+  ],
+  "/images/planets/mars/06": [
+    320,
+    640,
+    1280,
+    2048,
+    2560
+  ],
+  "/images/stars/51-pegasi/01": [
+    512
+  ],
+  "/images/stars/achernar/01": [
+    512
+  ],
+  "/images/stars/acrux/01": [
+    512
+  ],
+  "/images/stars/adhara/01": [
+    512
+  ],
+  "/images/stars/aldebaran/01": [
+    512
+  ],
+  "/images/stars/algol/01": [
+    512
+  ],
+  "/images/stars/alhena/01": [
+    512
+  ],
+  "/images/stars/alioth/01": [
+    512
+  ],
+  "/images/stars/alkaid/01": [
+    512
+  ],
+  "/images/stars/almach/01": [
+    512
+  ],
+  "/images/stars/alnair/01": [
+    512
+  ],
+  "/images/stars/alnilam/01": [
+    512
+  ],
+  "/images/stars/alnitak/01": [
+    512
+  ],
+  "/images/stars/alphard/01": [
+    512
+  ],
+  "/images/stars/alphecca/01": [
+    512
+  ],
+  "/images/stars/alpheratz/01": [
+    512
+  ],
+  "/images/stars/arcturus/01": [
+    512
+  ],
+  "/images/stars/atria/01": [
+    512
+  ],
+  "/images/stars/avior/01": [
+    512
+  ],
+  "/images/stars/bellatrix/01": [
+    512
+  ],
+  "/images/stars/canopus/01": [
+    512
+  ],
+  "/images/stars/capella/01": [
+    512
+  ],
+  "/images/stars/castor/01": [
+    512
+  ],
+  "/images/stars/deneb/01": [
+    512
+  ],
+  "/images/stars/denebola/01": [
+    512
+  ],
+  "/images/stars/diphda/01": [
+    512
+  ],
+  "/images/stars/dubhe/01": [
+    512
+  ],
+  "/images/stars/elnath/01": [
+    512
+  ],
+  "/images/stars/gacrux/01": [
+    512
+  ],
+  "/images/stars/hadar/01": [
+    512
+  ],
+  "/images/stars/hamal/01": [
+    512
+  ],
+  "/images/stars/kaus-australis/01": [
+    512
+  ],
+  "/images/stars/lalande-21185/01": [
+    512
+  ],
+  "/images/stars/luytens-star/01": [
+    512
+  ],
+  "/images/stars/menkalinan/01": [
+    512
+  ],
+  "/images/stars/menkent/01": [
+    512
+  ],
+  "/images/stars/miaplacidus/01": [
+    512
+  ],
+  "/images/stars/mimosa/01": [
+    512
+  ],
+  "/images/stars/mintaka/01": [
+    512
+  ],
+  "/images/stars/mirfak/01": [
+    512
+  ],
+  "/images/stars/nunki/01": [
+    512
+  ],
+  "/images/stars/peacock/01": [
+    512
+  ],
+  "/images/stars/polaris/01": [
+    512
+  ],
+  "/images/stars/pollux/01": [
+    512
+  ],
+  "/images/stars/procyon/01": [
+    512
+  ],
+  "/images/stars/rasalhague/01": [
+    512
+  ],
+  "/images/stars/regulus/01": [
+    512
+  ],
+  "/images/stars/sadr/01": [
+    512
+  ],
+  "/images/stars/saiph/01": [
+    512
+  ],
+  "/images/stars/sargas/01": [
+    512
+  ],
+  "/images/stars/spica/01": [
+    512
+  ],
+  "/images/stars/van-maanens-star/01": [
+    512
+  ],
+  "/images/stars/wezen/01": [
+    512
+  ],
+  "/images/missions/thumbnails/chandrayaan2": [
+    736
+  ],
+  "/images/missions/thumbnails/card/chandrayaan2": [
+    420
+  ],
+  "/images/missions/thumbnails/kaguya": [
+    736
+  ],
+  "/images/missions/thumbnails/card/kaguya": [
+    420
+  ],
+  "/images/fleet-galleries/chandrayaan2/01": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/fleet-galleries/chandrayaan2/02": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/fleet-galleries/kaguya/01": [
+    320,
+    640,
+    1280,
+    2048
+  ],
+  "/images/missions/chandrayaan2/01": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/missions/chandrayaan2/02": [
+    320,
+    854,
+    1367,
+    2050
+  ],
+  "/images/missions/chandrayaan2/03": [
+    320,
+    1100
+  ],
+  "/images/missions/chandrayaan2/04": [
+    320,
+    1100
+  ],
+  "/images/missions/kaguya/01": [
+    320,
+    640,
+    1280
+  ],
+  "/images/missions/kaguya/02": [
+    320,
+    1280
+  ],
+  "/images/missions/kaguya/03": [
+    320,
+    512,
+    819,
+    1229
+  ],
+  "/images/missions/thumbnails/sts-1": [
+    736
+  ],
+  "/images/missions/thumbnails/card/sts-1": [
+    420
+  ],
+  "/images/missions/thumbnails/sts-51-l": [
+    736
+  ],
+  "/images/missions/thumbnails/card/sts-51-l": [
+    420
+  ],
+  "/images/missions/thumbnails/sts-107": [
+    736
+  ],
+  "/images/missions/thumbnails/card/sts-107": [
+    420
+  ],
+  "/images/missions/thumbnails/artemis1": [
+    736
+  ],
+  "/images/missions/thumbnails/card/artemis1": [
+    420
+  ],
+  "/images/fleet-galleries/challenger/06": [
+    320,
+    1280,
+    2048,
+    3000
+  ],
+  "/images/fleet-galleries/columbia/06": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/fleet-galleries/orion/05": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/fleet-galleries/orion/06": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/fleet-galleries/sls-block-1/06": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/missions/artemis1/01": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/missions/artemis1/02": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/missions/artemis1/03": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/missions/artemis1/04": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/missions/artemis1/05": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/missions/artemis1/06": [
+    320,
+    960,
+    1536,
+    2250
+  ],
+  "/images/missions/artemis1/07": [
+    320,
+    1280,
+    2048,
+    3000
+  ],
+  "/images/missions/artemis1/08": [
+    320,
+    853,
+    1365,
+    2048
+  ],
+  "/images/missions/sts-1/01": [
+    320,
+    640,
+    1013,
+    1620,
+    2430
+  ],
+  "/images/missions/sts-1/02": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/missions/sts-1/03": [
+    320,
+    1280,
+    2048,
+    3000
+  ],
+  "/images/missions/sts-1/04": [
+    320,
+    1280,
+    2048,
+    2283
+  ],
+  "/images/missions/sts-1/05": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/missions/sts-1/06": [
+    320,
+    1280,
+    2048,
+    3000
+  ],
+  "/images/missions/sts-1/07": [
+    320,
+    1280,
+    2048,
+    3000
+  ],
+  "/images/missions/sts-107/01": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/missions/sts-107/02": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/missions/sts-107/03": [
+    320,
+    1280,
+    1952
+  ],
+  "/images/missions/sts-107/04": [
+    320,
+    1280,
+    1600
+  ],
+  "/images/missions/sts-107/05": [
+    320,
+    842,
+    1347,
+    2021
+  ],
+  "/images/missions/sts-107/06": [
+    320,
+    960,
+    1536,
+    2304
+  ],
+  "/images/missions/sts-51-l/01": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/missions/sts-51-l/02": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/missions/sts-51-l/03": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/missions/sts-51-l/04": [
+    320,
+    1280,
+    2048,
+    3000
+  ],
+  "/images/missions/sts-51-l/05": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/missions/sts-51-l/06": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/missions/thumbnails/change2": [
+    736
+  ],
+  "/images/missions/thumbnails/card/change2": [
+    420
+  ],
+  "/images/missions/thumbnails/im-1": [
+    736
+  ],
+  "/images/missions/thumbnails/card/im-1": [
+    420
+  ],
+  "/images/missions/thumbnails/mariner2": [
+    736
+  ],
+  "/images/missions/thumbnails/card/mariner2": [
+    420
+  ],
+  "/images/missions/thumbnails/mars2": [
+    736
+  ],
+  "/images/missions/thumbnails/card/mars2": [
+    420
+  ],
+  "/images/missions/thumbnails/mro": [
+    736
+  ],
+  "/images/missions/thumbnails/card/mro": [
+    420
+  ],
+  "/images/missions/thumbnails/shenzhou-5": [
+    736
+  ],
+  "/images/missions/thumbnails/card/shenzhou-5": [
+    420
+  ],
+  "/images/missions/thumbnails/viking2": [
+    736
+  ],
+  "/images/missions/thumbnails/card/viking2": [
+    420
+  ],
+  "/images/fleet-galleries/atlas-agena-b/01": [
+    320,
+    640,
+    1024,
+    1638,
+    2400
+  ],
+  "/images/fleet-galleries/atlas-agena-b/02": [
+    320,
+    1024,
+    1638,
+    2400
+  ],
+  "/images/fleet-galleries/atlas-agena-b/03": [
+    320,
+    994,
+    1591,
+    2330
+  ],
+  "/images/fleet-galleries/atlas-agena-b/04": [
+    320,
+    1023,
+    1637,
+    1852
+  ],
+  "/images/fleet-galleries/mariner-2/01": [
+    320,
+    640,
+    1280,
+    1515
+  ],
+  "/images/fleet-galleries/mariner-2/02": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/fleet-galleries/mariner-2/03": [
+    320,
+    800
+  ],
+  "/images/fleet-galleries/mariner-2/04": [
+    320,
+    1280,
+    2048,
+    2832
+  ],
+  "/images/fleet-galleries/viking-2/01": [
+    320,
+    640,
+    1280,
+    2048,
+    3000
+  ],
+  "/images/fleet-galleries/viking-2/02": [
+    320,
+    1280,
+    2048,
+    2818
+  ],
+  "/images/fleet-galleries/viking-2/03": [
+    320,
+    626
+  ],
+  "/images/fleet-galleries/viking-2/04": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/fleet-galleries/viking-2/05": [
+    320,
+    1280,
+    1614
+  ],
+  "/images/fleet-galleries/viking-2/06": [
+    320,
+    976,
+    1562,
+    2288
+  ],
+  "/images/missions/change2/01": [
+    320,
+    640,
+    1280,
+    2048,
+    2400
+  ],
+  "/images/missions/change2/02": [
+    320,
+    1280,
+    1575
+  ],
+  "/images/missions/im-1/01": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/missions/im-1/02": [
+    320,
+    853,
+    1365,
+    2048
+  ],
+  "/images/missions/im-1/03": [
+    320,
+    853,
+    1365,
+    2048
+  ],
+  "/images/missions/im-1/04": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/missions/mariner2/01": [
+    320,
+    640,
+    1280,
+    1515
+  ],
+  "/images/missions/mariner2/02": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/missions/mariner2/03": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/missions/mariner2/04": [
+    320,
+    1280,
+    2048,
+    2832
+  ],
+  "/images/missions/mariner2/05": [
+    320,
+    1002,
+    1603,
+    2404
+  ],
+  "/images/missions/mariner2/06": [
+    320,
+    800
+  ],
+  "/images/missions/mars2/04": [
+    320,
+    1280,
+    2048,
+    2880
+  ],
+  "/images/missions/mro/01": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/missions/mro/02": [
+    320,
+    1280,
+    2048,
+    3008
+  ],
+  "/images/missions/mro/03": [
+    320,
+    871,
+    1394,
+    2042
+  ],
+  "/images/missions/mro/04": [
+    320,
+    848,
+    1356,
+    1992
+  ],
+  "/images/missions/mro/05": [
+    320,
+    851,
+    1362,
+    2000
+  ],
+  "/images/missions/mro/06": [
+    320,
+    1280,
+    1930
+  ],
+  "/images/missions/mro/07": [
+    320,
+    506,
+    810,
+    1214
+  ],
+  "/images/missions/shenzhou-5/01": [
+    320,
+    640,
+    960,
+    1536,
+    1600
+  ],
+  "/images/missions/shenzhou-5/02": [
+    320,
+    853,
+    1365,
+    1600
+  ],
+  "/images/missions/shenzhou-5/03": [
+    320,
+    1280,
+    2048,
+    2400
+  ],
+  "/images/missions/shenzhou-5/04": [
+    320,
+    1280,
+    2048,
+    2400
+  ],
+  "/images/missions/shenzhou-5/05": [
+    320,
+    1280
+  ],
+  "/images/missions/shenzhou-5/06": [
+    320,
+    1280
+  ],
+  "/images/missions/shenzhou-5/07": [
+    320,
+    1280
+  ],
+  "/images/missions/viking2/01": [
+    320,
+    640,
+    1280,
+    2048,
+    2818
+  ],
+  "/images/missions/viking2/02": [
+    320,
+    626
+  ],
+  "/images/missions/viking2/03": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/missions/viking2/04": [
+    320,
+    1280,
+    1614
+  ],
+  "/images/missions/viking2/05": [
+    320,
+    1280,
+    2048,
+    3000
+  ],
+  "/images/missions/viking2/06": [
+    320,
+    976,
+    1562,
+    2288
+  ],
+  "/images/colophon/model-probe-mariner-2": [
+    320,
+    640,
+    800
+  ],
+  "/images/colophon/model-probe-mro": [
+    320,
+    640,
+    800
+  ],
+  "/images/colophon/model-probe-nova-c": [
+    320,
+    640,
+    800
   ]
 }

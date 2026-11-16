@@ -90,5 +90,19 @@
   "link_labels": {
     "/programs/iss": "ISS — ヨーロッパが建設に参加したステーション",
     "/programs/ariane": "Ariane — ATV を運んだロケット"
+  },
+  "roster": {
+    "Spacelab": {
+      "note": "欧州初の有人宇宙飛行への貢献——Space Shuttleのペイロードベイに搭載されて22回のミッションで飛行した有人実験室で、1983年に初のESA宇宙飛行士ウルフ・メルボルドを運んだ",
+      "name": "Spacelab"
+    },
+    "Columbus": {
+      "note": "国際宇宙ステーションにおけるESAの恒久的な研究実験棟——欧州を、独自の施設を持つISSの正式なパートナーにしたモジュール",
+      "name": "Columbus"
+    },
+    "European Service Module": {
+      "note": "ATV技術の再生：欧州は今、Artemisの下で月周回軌道へ向かうNASAのOrion宇宙船に動力と推進力を与えるサービスモジュールを製造している",
+      "name": "欧州サービスモジュール"
+    }
   }
 }

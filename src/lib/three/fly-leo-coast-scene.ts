@@ -22,6 +22,13 @@ import { parkingOrbit } from '$lib/orbital/cislunar/cislunar-geometry';
 import type { FlightPhaseScene, ForceKey } from './flight-phase-scene';
 import { BoldArrow } from './bold-arrow';
 import { buildGlowTube } from './glow-line';
+import {
+  CRAFT_ENLARGEMENT,
+  craftScreenFraction,
+  keplerRing,
+  markerOpacity,
+  markerWorldSize,
+} from '$lib/orbital/coast-craft';
 
 const R_EARTH_KM = 6371;
 /** Rendered orbit loops are capped here; the REV counter still shows real N. */
@@ -48,6 +55,9 @@ export interface CoastCamDebug {
   camPos: [number, number, number];
   lookAt: [number, number, number];
   camDistKm: number;
+  /** The enlarged craft's size (km) and its share of the view height in this frame. */
+  craftKm: number;
+  craftFraction: number;
 }
 
 export interface LeoCoastSceneOptions {
@@ -55,6 +65,10 @@ export interface LeoCoastSceneOptions {
   aspect: number;
   /** Orbit altitude (km) — apogee/perigee mean is fine for the ring. */
   altitudeKm: number;
+  /** The orbit's real apsides (km above the surface): an eccentric orbit (OTV-7) draws its ellipse,
+   *  a near-circular one keeps the mean-altitude circle. */
+  apogeeKm?: number;
+  perigeeKm?: number;
   inclinationDeg: number;
   /** Real total revolutions (drives the rendered-loop cap + is shown as N). */
   totalRevs: number;
@@ -89,7 +103,24 @@ export function createLeoCoastScene(opts: LeoCoastSceneOptions): LeoCoastScene {
 
   const renderedLoops = Math.max(1, Math.min(LOOP_CAP, Math.round(opts.totalRevs)));
   const incRad = (opts.inclinationDeg * Math.PI) / 180;
-  const rOrbit = R_EARTH_KM + opts.altitudeKm;
+  // An eccentric orbit (apsides more than 1,500 km apart) is drawn as its ellipse.
+  const eccentric =
+    !opts.suborbital &&
+    opts.apogeeKm != null &&
+    opts.perigeeKm != null &&
+    Math.abs(opts.apogeeKm - opts.perigeeKm) > 1500;
+  const rOrbit = R_EARTH_KM + (eccentric ? (opts.apogeeKm as number) : opts.altitudeKm);
+  // The establishing camera's distance: 2.4 orbit radii; a tall narrow view (a phone) also fits an
+  // eccentric orbit's width, which a circular LEO ring never needs.
+  const camDist =
+    eccentric && opts.aspect < 1
+      ? Math.max(rOrbit * 2.4, (rOrbit * 1.15) / (Math.tan((24 * Math.PI) / 180) * opts.aspect))
+      : rOrbit * 2.4;
+  // The star shell lies beyond the camera at every distance (a star seen from outside the shell
+  // was a big square) and the far plane beyond the shell.
+  const starShell = Math.max(120_000, camDist * 1.8);
+  camera.far = starShell * 1.6;
+  camera.updateProjectionMatrix();
 
   // ── Lighting: a sun key + soft fill so the day side reads + the capsule glints.
   const sun = new THREE.DirectionalLight(0xfff2d8, 2.6);
@@ -131,15 +162,19 @@ export function createLeoCoastScene(opts: LeoCoastSceneOptions): LeoCoastScene {
     const a = i * 2.399963; // golden-angle spiral
     const y = 1 - (2 * (i + 0.5)) / starN;
     const r = Math.sqrt(Math.max(0, 1 - y * y));
-    starPos[i * 3] = Math.cos(a) * r * 120_000;
-    starPos[i * 3 + 1] = y * 120_000;
-    starPos[i * 3 + 2] = Math.sin(a) * r * 120_000;
+    starPos[i * 3] = Math.cos(a) * r * starShell;
+    starPos[i * 3 + 1] = y * starShell;
+    starPos[i * 3 + 2] = Math.sin(a) * r * starShell;
   }
   starGeo.setAttribute('position', new THREE.BufferAttribute(starPos, 3));
   scene.add(
     new THREE.Points(
       starGeo,
-      new THREE.PointsMaterial({ color: 0xcfd8ff, size: 260, sizeAttenuation: true }),
+      new THREE.PointsMaterial({
+        color: 0xcfd8ff,
+        size: 260 * (starShell / 120_000),
+        sizeAttenuation: true,
+      }),
     ),
   );
 
@@ -156,7 +191,9 @@ export function createLeoCoastScene(opts: LeoCoastSceneOptions): LeoCoastScene {
           z: R_EARTH_KM + opts.altitudeKm * Math.cos(ang) - 0, // peak at apogee
         };
       }).map((p) => ({ x: p.x, y: p.y, z: p.z }))
-    : parkingOrbit(opts.altitudeKm, 0, 1, RING_STEPS);
+    : eccentric
+      ? keplerRing(opts.perigeeKm as number, opts.apogeeKm as number, RING_STEPS)
+      : parkingOrbit(opts.altitudeKm, 0, 1, RING_STEPS);
   const ringPts = ringRaw
     .map((p) => inclined(p, incRad))
     .map((p) => new THREE.Vector3(p.x, p.y, p.z));
@@ -174,8 +211,63 @@ export function createLeoCoastScene(opts: LeoCoastSceneOptions): LeoCoastScene {
   const capsule = opts.buildCapsule();
   // Scale the ~1-unit model up so it reads against the 6371-km Earth — heavily
   // exaggerated (a real capsule would be sub-pixel), like every /fly subject.
-  capsule.scale.setScalar(460);
+  capsule.scale.setScalar(CRAFT_ENLARGEMENT);
   scene.add(capsule);
+  // A modest self-lit fill so the craft reads on the night side (the limb shot): a share of each
+  // material's own colour, so no light touches the Earth's dark side. Materials already emissive
+  // (lit windows, engine glow) keep theirs.
+  capsule.traverse((o) => {
+    const mats = (o as THREE.Mesh).material;
+    for (const m of Array.isArray(mats) ? mats : mats ? [mats] : []) {
+      const std = m as THREE.MeshStandardMaterial;
+      if (std.emissive && std.color && std.emissive.getHex() === 0) {
+        std.emissive.copy(std.color).multiplyScalar(0.32);
+      }
+    }
+  });
+  // Its size in km once enlarged (the debug readout and the marker's fade read it).
+  const craftBox = new THREE.Box3().setFromObject(capsule);
+  const craftKm = Math.max(...craftBox.getSize(new THREE.Vector3()).toArray()) || 1;
+
+  // A marker ring that keeps the craft findable in the wide establishing shot, where even the
+  // enlarged craft is a few pixels: a constant 7 % of the view's height, fading out as the craft
+  // itself grows to a readable size (the follow and limb shots show the craft alone).
+  const markerTex = (() => {
+    const cv = document.createElement('canvas');
+    cv.width = cv.height = 128;
+    const ctx = cv.getContext('2d')!;
+    ctx.strokeStyle = '#c4d0ff';
+    ctx.lineWidth = 7;
+    ctx.beginPath();
+    ctx.arc(64, 64, 52, 0, Math.PI * 2);
+    ctx.stroke();
+    ctx.lineWidth = 5;
+    for (const [dx, dy] of [
+      [0, -1],
+      [0, 1],
+      [-1, 0],
+      [1, 0],
+    ]) {
+      ctx.beginPath();
+      ctx.moveTo(64 + dx * 52, 64 + dy * 52);
+      ctx.lineTo(64 + dx * 62, 64 + dy * 62);
+      ctx.stroke();
+    }
+    const t = new THREE.CanvasTexture(cv);
+    t.colorSpace = THREE.SRGBColorSpace;
+    return t;
+  })();
+  const marker = new THREE.Sprite(
+    new THREE.SpriteMaterial({
+      map: markerTex,
+      transparent: true,
+      depthTest: false,
+      depthWrite: false,
+      opacity: 0,
+    }),
+  );
+  marker.renderOrder = 999;
+  scene.add(marker);
 
   // ── Science-Lens force vectors (orbit trio) ───────────────────────────
   // A LEO coast is free-fall: no thrust or drag. The teachable diagram is
@@ -183,8 +275,8 @@ export function createLeoCoastScene(opts: LeoCoastSceneOptions): LeoCoastScene {
   // point of orbit is that gravity IS the centripetal force, so the inward
   // gravity + inward centripetal arrows sit alongside each other to show they
   // coincide. Colors match the ascent/descent force legend (weight=red,
-  // velocity=cyan) with a distinct gold centripetal.
-  const COAST_FORCE_COLORS = { weight: 0xff5a5a, velocity: 0x7fe0ff, centripetal: 0xffc850 };
+  // velocity=accent blue) with a distinct gold centripetal.
+  const COAST_FORCE_COLORS = { weight: 0xff5a5a, velocity: 0x8aa0ff, centripetal: 0xffc850 };
   // Length is set per-frame from the camera distance so the arrows hold a
   // constant on-screen size (~11% of the view) instead of a fixed world size
   // that balloons on the close TRACK shots — construct at a placeholder.
@@ -194,7 +286,7 @@ export function createLeoCoastScene(opts: LeoCoastSceneOptions): LeoCoastScene {
   const arrVel = mkArrow(COAST_FORCE_COLORS.velocity);
   const arrCentripetal = mkArrow(COAST_FORCE_COLORS.centripetal);
   arrWeight.setLabel('GRAVITY', '#ffb3b3');
-  arrVel.setLabel('VELOCITY', '#bfeaff');
+  arrVel.setLabel('VELOCITY', '#c4d0ff');
   arrCentripetal.setLabel('CENTRIPETAL', '#ffdf9a');
   arrWeight.visible = false;
   arrVel.visible = false;
@@ -212,7 +304,7 @@ export function createLeoCoastScene(opts: LeoCoastSceneOptions): LeoCoastScene {
   // reads as a crisp trail on the rotating Earth.
   const track = new THREE.Line(
     trackGeo,
-    new THREE.LineBasicMaterial({ color: 0x9fe0ff, transparent: true, opacity: 1 }),
+    new THREE.LineBasicMaterial({ color: 0x8aa0ff, transparent: true, opacity: 1 }),
   );
   trackGeo.setDrawRange(0, 0);
   scene.add(track);
@@ -230,7 +322,6 @@ export function createLeoCoastScene(opts: LeoCoastSceneOptions): LeoCoastScene {
   //    sunlit Earth → a trailing tracking shot → a low limb shot with the blue
   //    atmosphere rim behind → a high ground-track shot. The pose lerps toward
   //    each shot's target so the cuts read as smooth crane/dolly moves.
-  const camDist = rOrbit * 2.4;
   const baseCamPos = new THREE.Vector3(camDist * 0.7, camDist * 0.55, camDist * 0.7);
   camera.position.copy(baseCamPos);
   const camLookAt = new THREE.Vector3(0, 0, 0);
@@ -288,6 +379,8 @@ export function createLeoCoastScene(opts: LeoCoastSceneOptions): LeoCoastScene {
   };
 
   let earthSpin = 0;
+  let lastCamMs: number | null = null;
+  let lastCraftPos: THREE.Vector3 | null = null;
   let camDebug: CoastCamDebug | null = null;
 
   const setState = (s: CoastState): void => {
@@ -342,9 +435,34 @@ export function createLeoCoastScene(opts: LeoCoastSceneOptions): LeoCoastScene {
 
     // Cinematic camera: lerp toward the active shot's pose for smooth crane moves.
     const shot = coastShotPose(s.coastFraction, pos, radial);
-    camera.position.lerp(shot.pos, 0.06);
-    camLookAt.lerp(shot.target, 0.06);
+    // The ease is 0.06 per 60 Hz frame, scaled to the real frame time: a per-frame factor made the
+    // camera trail the craft by seconds on a slow device (the craft left the frame in the follow
+    // and limb shots).
+    const nowMs = performance.now();
+    const frames =
+      lastCamMs == null ? 1 : Math.min(12, Math.max(0, (nowMs - lastCamMs) / (1000 / 60)));
+    lastCamMs = nowMs;
+    const kCam = 1 - Math.pow(1 - 0.06, frames);
+    // The follow shots (track, limb, ground-track) ride with the craft: the camera is carried by the
+    // craft's own motion each frame and only the shot's offset is eased, so a fast pass (perigee of
+    // an eccentric orbit, a quick coast) never leaves it behind. The establishing wide stays fixed.
+    if (shotIndexAt(s.coastFraction) > 0 && lastCraftPos) {
+      const carry = pos.clone().sub(lastCraftPos);
+      camera.position.add(carry);
+      camLookAt.add(carry);
+    }
+    lastCraftPos = pos.clone();
+    camera.position.lerp(shot.pos, kCam);
+    camLookAt.lerp(shot.target, kCam);
     camera.lookAt(camLookAt);
+
+    // The craft marker: sized to a constant share of the view, faded out once the craft is readable.
+    const dCraft = camera.position.distanceTo(pos);
+    const frac = craftScreenFraction(craftKm, dCraft, camera.fov);
+    marker.position.copy(pos);
+    marker.scale.setScalar(markerWorldSize(dCraft, camera.fov, 0.07));
+    (marker.material as THREE.SpriteMaterial).opacity = 0.9 * markerOpacity(frac);
+    marker.visible = frac < 0.16;
 
     // Debug mirror for the DebugPanel + __flyCoastCamDebug hook (dev-only).
     const si = shotIndexAt(s.coastFraction);
@@ -358,6 +476,8 @@ export function createLeoCoastScene(opts: LeoCoastSceneOptions): LeoCoastScene {
       camPos: [camera.position.x, camera.position.y, camera.position.z],
       lookAt: [camLookAt.x, camLookAt.y, camLookAt.z],
       camDistKm: camera.position.distanceTo(pos),
+      craftKm,
+      craftFraction: frac,
     };
   };
 

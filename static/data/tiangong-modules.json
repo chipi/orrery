@@ -24,7 +24,12 @@
         "t": "core"
       }
     ],
-    "launch_vehicle_fleet_id": "long-march-5"
+    "launch_vehicle_fleet_id": "long-march-5",
+    "science": [
+      "life-in-space/crewed-station-design",
+      "life-in-space/eclss-life-support",
+      "space-stations/pressurized-volume"
+    ]
   },
   {
     "id": "wentian",
@@ -51,7 +56,12 @@
         "t": "core"
       }
     ],
-    "launch_vehicle_fleet_id": "long-march-5"
+    "launch_vehicle_fleet_id": "long-march-5",
+    "science": [
+      "mission-phases/eva",
+      "life-in-space/eva-physiology",
+      "life-in-space/microgravity-physiology"
+    ]
   },
   {
     "id": "mengtian",
@@ -78,7 +88,12 @@
         "t": "core"
       }
     ],
-    "launch_vehicle_fleet_id": "long-march-5"
+    "launch_vehicle_fleet_id": "long-march-5",
+    "science": [
+      "space-stations/pressurized-volume",
+      "life-in-space/microgravity-physiology",
+      "life-in-space/long-duration-effects"
+    ]
   },
   {
     "id": "chinarm",
@@ -105,6 +120,11 @@
         "t": "core"
       }
     ],
-    "launch_vehicle_fleet_id": "long-march-5"
+    "launch_vehicle_fleet_id": "long-march-5",
+    "science": [
+      "mission-phases/eva",
+      "life-in-space/eva-operations",
+      "life-in-space/eva-suits"
+    ]
   }
 ]

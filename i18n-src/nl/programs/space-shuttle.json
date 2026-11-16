@@ -94,5 +94,25 @@
   "link_labels": {
     "/earth": "Aarde — banen & lanceerplaatsen",
     "/fleet?id=discovery": "Vloot — Space Shuttle-orbiters"
+  },
+  "roster": {
+    "mission:galileo": {
+      "note": "uitgezet vanuit het laadruim van Shuttle Atlantis tijdens STS-34 in oktober 1989, daarna met een bovenste trap naar Jupiter gestuurd"
+    },
+    "mission:ulysses": {
+      "note": "uitgezet vanuit het laadruim van Shuttle Discovery tijdens STS-41 in oktober 1990, daarna langs Jupiter in een poolbaan om de zon gestuurd"
+    },
+    "mission:magellan": {
+      "note": "uitgezet vanuit het laadruim van Shuttle Atlantis tijdens STS-30 in mei 1989, daarna met een bovenste trap naar Venus gestuurd"
+    },
+    "mission:sts-1": {
+      "note": "de eerste orbitale vlucht — de eerste keer dat een bemand ruimtevaartuig bij zijn eerste lancering naar een baan werd gevlogen, en de eerste herbruikbare"
+    },
+    "mission:sts-51-l": {
+      "note": "verloren 73 seconden na de lancering toen een door kou verstijfde boosterafdichting het begaf; zeven bemanningsleden kwamen om, en de ramp legde een cultuur bloot die een bekend risico had genormaliseerd"
+    },
+    "mission:sts-107": {
+      "note": "verloren tijdens de terugkeer toen schuimresten bij de lancering een gat in de vleugel hadden geslagen; zeven bemanningsleden kwamen om, en hetzelfde organisatorische falen bleek zich te hebben herhaald"
+    }
   }
 }

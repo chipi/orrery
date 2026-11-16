@@ -91,5 +91,26 @@
     "/mars?site=opportunity": "Opportunity — Meridiani Planum",
     "/mars?site=curiosity": "Curiosity — cráter Gale",
     "/mars?site=perseverance": "Perseverance — cráter Jezero"
+  },
+  "roster": {
+    "mission:mars-pathfinder": {
+      "note": "la misión de bajo coste que rebotó sobre Marte con airbags y dejó que Sojourner, un rover del tamaño de un microondas, fuera las primeras ruedas en rodar en otro planeta"
+    },
+    "mission:spirit": {
+      "note": "aterrizó en 2004 para una misión de 90 días y trabajó seis años, hallando rastros químicos del pasado más cálido y húmedo de Marte"
+    },
+    "mission:opportunity": {
+      "note": "el gemelo de Spirit, que recorrió más de 45 kilómetros en 14 años — la mayor distancia cubierta por un vehículo en otro mundo"
+    },
+    "mission:curiosity": {
+      "note": "un rover del tamaño de un coche y de propulsión nuclear, depositado sobre Marte por una grúa celeste con cohetes en 2012, que confirmó que el cráter Gale albergó antaño un lago habitable"
+    },
+    "mission:perseverance": {
+      "note": "aterrizó en 2021 en el fondo del cráter Jezero — un antiguo delta fluvial y lecho de lago — para buscar señales de vida pasada y sellar muestras en tubos que una futura misión traerá a casa"
+    },
+    "Ingenuity": {
+      "note": "un pequeño helicóptero llevado por Perseverance realizó en 2021 el primer vuelo propulsado en otro planeta y siguió volando decenas de veces más",
+      "name": "Ingenuity"
+    }
   }
 }

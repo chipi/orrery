@@ -89,5 +89,20 @@
     "/mars?site=viking1-lander": "Viking 1 — Chryse Planitia",
     "/mars?site=viking2-lander": "Viking 2 — Utopia Planitia",
     "/mars?site=viking1-orbiter": "orbiteur Viking 1"
+  },
+  "roster": {
+    "fleet:viking-1": {
+      "note": "le premier vaisseau à se poser avec succès sur Mars et à y fonctionner — un orbiteur pour cartographier d'en haut et un atterrisseur pour travailler en surface"
+    },
+    "mission:viking1": {
+      "note": "le 20 juillet 1976, l'atterrisseur Viking 1 s'est posé en Chryse Planitia et a renvoyé les premières images nettes de la surface de Mars"
+    },
+    "mission:viking2": {
+      "note": "une seconde paire orbiteur-atterrisseur, posée à des milliers de kilomètres en Utopia Planitia six semaines plus tard"
+    },
+    "The biology experiments": {
+      "note": "chaque atterrisseur a mené des expériences conçues pour détecter la vie dans le sol martien ; les résultats étaient ambigus, et font encore débat aujourd'hui",
+      "name": "Les expériences de biologie"
+    }
   }
 }

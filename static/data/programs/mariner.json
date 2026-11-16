@@ -13,7 +13,8 @@
   "hero": "fleet/mariner-4/01",
   "roster": [
     {
-      "name": "Mariner 2 reaches Venus",
+      "linked_id": "mariner2",
+      "ref": "mission",
       "year": 1962,
       "note": "in December 1962 Mariner 2 became the first spacecraft to reach another planet, finding Venus not a tropical twin of Earth but a furnace hundreds of degrees hot"
     },
@@ -32,9 +33,20 @@
       "note": "became the first spacecraft to orbit another planet, mapping the whole of Mars and revealing giant volcanoes, a canyon system the size of a continent, and dry riverbeds"
     },
     {
-      "name": "Mariner 10 at Mercury",
+      "linked_id": "mariner10",
+      "ref": "mission",
       "year": 1974,
       "note": "the first spacecraft to visit Mercury, and the first to use one planet's gravity to reach another — the slingshot trick every deep-space mission has used since"
+    },
+    {
+      "linked_id": "mariner4",
+      "ref": "mission",
+      "year": 1964
+    },
+    {
+      "linked_id": "mariner9",
+      "ref": "mission",
+      "year": 1971
     }
   ],
   "related_programs": [

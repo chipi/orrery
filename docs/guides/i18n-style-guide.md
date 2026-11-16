@@ -22,7 +22,7 @@ You are translating Orrery into a new language. Before you start:
 
 Files you will be touching:
 - `messages/<code>.json` — Paraglide UI strings (informal register where the en-US source uses a friendly tone; UI labels follow §4a).
-- `i18n-src/<code>/<surface>/…json` — per-entity content overlays mirroring `i18n-src/en-US/` (missions, fleet, programs, science, sites, …), bundled at build into `static/data/i18n/<code>.json`. Keep every `id`; names follow §2.
+- `i18n-src/<code>/<surface>/…json` — per-entity content overlays mirroring `i18n-src/en-US/` (missions, fleet, programs, science, sites, …), bundled at build into `static/data/i18n/<code>.json`. Keep every `id`; names follow §2. A program overlay may also carry `roster: { "<ref:linked_id | English name>": { note, name } }` for the roster rows whose English is in `static/data/programs` (see the program runbook §3).
 - `scripts/i18n-tools/native-terms.json` — the glossary: native forms of names and terms per locale. A name goes there before it goes into any text (strategy §3.5).
 
 Per ADR-017's fallback chain, any key you omit will fall back to en-US — broken translation is bounded, not user-blocking.
@@ -175,6 +175,9 @@ For the technical terms in the glossary's `term` class (`scripts/i18n-tools/nati
 | sphere of influence (SOI) | esfera de influencia | — | — | — | — | — | ESA Spanish glossary |
 | porkchop plot | diagrama porkchop *(no Spanish equivalent in wide use)* | — | — | — | — | — | ESA Spanish glossary uses English |
 | Astronomical Unit | unidad astronómica (au) | unité astronomique (au) | Astronomische Einheit (AE) | unidade astronômica (au) | unità astronomica (au) | астрономска јединица (АЈ) | §1a |
+| naked eye (the viewing band, magnitude up to 6; UXD-049) | a simple vista | à l'œil nu | bloßes Auge (mit bloßem Auge in a sentence) | a olho nu | ad occhio nudo | голим оком | the locale's own existing wording in `lab_conn_g9_why` |
+| binoculars (magnitude up to 9) | binoculares | jumelles | Fernglas | binóculos | binocolo | двоглед | the existing overlays (batch 06 Andromeda text) |
+| telescope (magnitude above 9) | telescopio | télescope | Teleskop | telescópio | telescopio | телескоп | `explore_ds_telescope` |
 
 Empty cells are populated by the translator for that language ticket.
 
@@ -275,7 +278,7 @@ Operator decision (2026-10-30). These stay exactly as written in every locale. A
 "fix" that translates one of them is a regression:
 
 - **Developer panels and debug readouts**: `DebugPanel`, `FlybyDebugViewer`,
-  `AscentCameraDebug`, `TargetEnvSwitcher`, the `label` of `DebugPanelRegistrar` /
+  `AscentCameraDebug`, the `label` of `DebugPanelRegistrar` /
   `RenderingDebugRegistrar`, anything inside `{#if …debug…}` or a `{#snippet …Debug…}`
   (the /fly Tier-1 and cislunar debug readouts, the coast-camera readout, the
   surface-scene debug box), and everything under `src/routes/dev/`.

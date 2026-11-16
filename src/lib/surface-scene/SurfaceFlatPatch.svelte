@@ -27,6 +27,14 @@
   import { statusTone } from '$lib/surface-scene/status-tone';
   import { getLocale } from '$lib/paraglide/runtime';
   import { formatNumber } from '$lib/format';
+  import { distanceWithUnit } from '$lib/explore/distance-format';
+  import {
+    fixedScaleBar,
+    formatBarValue,
+    scaleBarWidth,
+    worldsBarQuantity,
+  } from '$lib/universe/scale-bar';
+  import ScaleBar from '$lib/components/ScaleBar.svelte';
   import { imageStats, tintFromMean, tintedCopy } from '$lib/surface-scene/globe-tint';
   import type { LocaleCode } from '$lib/locale';
   import {
@@ -462,7 +470,7 @@
     ctx.strokeRect(x, y, w, h);
     // Label in corner — REGIONAL · CTX (Mars) / LROC WAC (Moon).
     ctx.fillStyle = '#ffc850';
-    ctx.font = "bold 10px 'Space Mono', monospace";
+    ctx.font = "bold 11px 'Space Mono', monospace";
     ctx.textAlign = 'left';
     ctx.textBaseline = 'top';
     const KIND: Record<string, () => string> = {
@@ -510,15 +518,15 @@
     if (detailReady && detailImage) {
       ctx.drawImage(detailImage, x, y, w, h);
     } else {
-      ctx.fillStyle = 'rgba(78, 205, 196, 0.10)';
+      ctx.fillStyle = 'rgba(80, 112, 255, 0.10)';
       ctx.fillRect(x, y, w, h);
     }
-    ctx.strokeStyle = 'rgba(78, 205, 196, 0.85)';
+    ctx.strokeStyle = 'rgba(80, 112, 255, 0.85)';
     ctx.lineWidth = 1.5;
     ctx.strokeRect(x, y, w, h);
     if (w > 80) {
-      ctx.fillStyle = '#4ecdc4';
-      ctx.font = "bold 9px 'Space Mono', monospace";
+      ctx.fillStyle = '#5070ff';
+      ctx.font = "bold 11px 'Space Mono', monospace";
       ctx.textAlign = 'left';
       ctx.textBaseline = 'top';
       ctx.fillText(`DETAIL · ${detailBadge}`, x + 6, y + 6);
@@ -644,7 +652,7 @@
   /**
    * Stops as a white ring with a kind-coloured core + a "name · Sol N"
    * pill (#641), same as the 3D route. Kind colours:
-   *   sample orange · drill red-orange · panorama cyan · helicopter
+   *   sample orange · drill red-orange · panorama blue · helicopter
    *   magenta · feature yellow.
    */
   function drawTraverseStops(
@@ -656,7 +664,7 @@
     const KIND_COLOR: Record<string, string> = {
       sample: '#fb923c',
       drill: '#f97316',
-      panorama: '#22d3ee',
+      panorama: '#8aa0ff', // marker kind: blue (operator 2026-11-12, A3 Q14)
       helicopter: '#e879f9',
       feature: '#fde047',
     };
@@ -890,23 +898,14 @@
     return kmPerPx <= floor * 1.05;
   });
 
-  // Scale-bar length & label — pick a "round" km value that fits in
-  // ~120 px of screen real estate.
+  // Scale bar (UXD-021): constant width (shorter on a phone, where the scale shares one
+  // line with the lat/lon readout); the km or m value beside it follows the zoom.
   let scaleBar = $derived.by(() => {
-    // Shorter on a phone: the scale shares one line with the lat/lon readout.
-    const targetPx = viewW > 0 && viewW < 600 ? 64 : 120;
-    const targetKm = targetPx * kmPerPx;
-    const niceValues = [
-      0.001, 0.002, 0.005, 0.01, 0.02, 0.05, 0.1, 0.2, 0.5, 1, 2, 5, 10, 20, 50, 100, 200, 500,
-    ];
-    let chosen = niceValues[0];
-    for (const v of niceValues) {
-      if (v <= targetKm) chosen = v;
-      else break;
-    }
-    const widthPx = chosen / kmPerPx;
-    const label = chosen >= 1 ? `${chosen} km` : `${chosen * 1000} m`;
-    return { widthPx, label };
+    const widthPx = scaleBarWidth(viewW);
+    const bar = fixedScaleBar(kmPerPx, widthPx);
+    if (!bar) return { widthPx, label: '' };
+    const q = worldsBarQuantity(bar.units);
+    return { widthPx, label: distanceWithUnit(formatBarValue(q.value, getLocale()), q.unit) };
   });
 
   // One pixel-limit chip by the scale bar: the deepest-zoom stop says it more strongly
@@ -1004,8 +1003,7 @@
     <div class="hud-scale-row">
       <div class="hud-scale" aria-hidden="true">
         <span class="scale-word">{m.surface_flat_scale_label()}</span>
-        <span class="bar" style:width="{scaleBar.widthPx}px"></span>
-        <span class="mono">{scaleBar.label}</span>
+        <ScaleBar widthPx={scaleBar.widthPx} label={scaleBar.label} />
       </div>
       {#if limitNotice}
         <div class="hud-limit-chip mono" aria-hidden="true" data-testid="flat-limit-chip">
@@ -1054,7 +1052,7 @@
     padding: 6px 12px;
     border-radius: 3px;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 0.08em;
     cursor: pointer;
     backdrop-filter: blur(4px);
@@ -1081,14 +1079,14 @@
     padding: 6px 10px;
     border-radius: 3px;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 0.08em;
     cursor: pointer;
     backdrop-filter: blur(4px);
   }
   .chip.on {
     color: #fff;
-    border-color: rgba(78, 205, 196, 0.6);
+    border-color: var(--color-accent-strong);
   }
   .hud-bottom {
     display: contents;
@@ -1104,17 +1102,12 @@
     padding: 6px 10px;
     border-radius: 3px;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 0.08em;
     display: flex;
     align-items: center;
     gap: 10px;
     backdrop-filter: blur(4px);
-  }
-  .hud-scale .bar {
-    display: inline-block;
-    height: 3px;
-    background: #fff;
   }
   .hud-latlon {
     position: absolute;
@@ -1127,7 +1120,7 @@
     padding: 6px 10px;
     border-radius: 3px;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 0.08em;
     backdrop-filter: blur(4px);
   }
@@ -1166,7 +1159,7 @@
     background: rgba(5, 5, 20, 0.88);
     border: 1px solid rgba(255, 200, 80, 0.45);
     border-radius: 3px;
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 0.06em;
     color: #ffc850;
     backdrop-filter: blur(4px);

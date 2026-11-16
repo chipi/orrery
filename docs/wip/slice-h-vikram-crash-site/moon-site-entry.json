@@ -1,0 +1,53 @@
+{
+  "_about": "GATED (slice H, H-5): append this object to static/data/moon-sites.json only after the operator approves the LROC crash-site image (staged at static/images/_staging/moon-sites/chandrayaan2/context.png; NASA/GSFC/Arizona State University, LROC post 1131, https://lroc.im-ldi.com/posts/1131, 2019-12-02, Commons says Public domain). Then: promote the hotspot image to static/images/hotspots/moon/chandrayaan2/context.webp with provenance (as beresheet), add i18n-src/<locale>/moon-sites/chandrayaan2.json in 14 locales (en-US draft below), add the id to the surface-site lists the validators name, run npm run validate-data.",
+  "entry": {
+    "id": "chandrayaan2",
+    "marker": "lander",
+    "kind": "surface",
+    "agency": "ISRO",
+    "nation": "India",
+    "year": 2019,
+    "landing_date": "2019-09-06",
+    "lat": -70.881,
+    "lon": 22.784,
+    "region_bounds": {
+      "lat_min": -70.9,
+      "lat_max": -70.86,
+      "lon_min": 22.74,
+      "lon_max": 22.83
+    },
+    "region_kind": "landing_ellipse",
+    "crewed": false,
+    "status": "CRASHED",
+    "surface_status": "completed",
+    "data_quality": "good",
+    "credit": "Vikram, the lander of ISRO's Chandrayaan-2, crashed during its powered descent on 2019-09-06. NASA's Lunar Reconnaissance Orbiter found the impact site at 70.881° S, 22.784° E, announced 2019-12-02.",
+    "mission_id": "chandrayaan2",
+    "links": [
+      {
+        "l": "Vikram Lander Found — LROC (NASA/GSFC/Arizona State University)",
+        "u": "https://lroc.im-ldi.com/posts/1131",
+        "t": "core"
+      },
+      {
+        "l": "Chandrayaan-2 — Wikipedia",
+        "u": "https://en.wikipedia.org/wiki/Chandrayaan-2",
+        "t": "intro"
+      }
+    ],
+    "fleet_refs": [
+      {
+        "id": "vikram-cy2",
+        "role": "spacecraft"
+      }
+    ]
+  },
+  "overlay_en_US": {
+    "name": "Vikram (Chandrayaan-2)",
+    "mission_type": "Lander · Crashed 2019",
+    "site_name": "South polar region, near Manzinus C and Simpelius N",
+    "fact": "India's first attempt at a soft landing on the Moon. Vikram lost contact at about 2.1 km altitude during its powered descent and crashed. NASA's Lunar Reconnaissance Orbiter found the impact site and debris field in images from 2019, after a volunteer from Chennai spotted the first debris.",
+    "capability": "None: the lander was lost. The Chandrayaan-2 orbiter kept working."
+  },
+  "notes": "Coordinates and the find: LROC post 1131. The crater names in site_name come from Wikipedia (Manzinus C, Simpelius N) and are NOT verified against LROC or the IAU gazetteer; drop them if not confirmed. region_bounds are a ~2 km box around the point, not a published ellipse. The Vikram site must be checked against the surface-site validators (hotspot image, galleries, 14 locales) once approved."
+}

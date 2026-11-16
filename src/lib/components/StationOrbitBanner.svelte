@@ -153,22 +153,15 @@
             body={m.why_station_sunrises_body()}
           /></span
         >
+        <!-- b2-keep: banner, two science links in all (the cap is three; science-links.test.ts counts them) -->
         <a class="banner-link" href={localHref(`/science/orbits/orbit-regimes`)}>
           {m.station_banner_read_more()}
         </a>
       </p>
       <p class="banner-foot banner-foot-secondary">
+        <!-- b2-keep: banner, second and last science link -->
         <a class="banner-link" href={localHref(`/science/scales-time/long-duration`)}>
           {m.station_banner_long_duration_link()}
-        </a>
-        <a class="banner-link" href={localHref(`/science/life-in-space/eva-operations`)}>
-          {m.station_banner_eva_link()}
-        </a>
-        <a class="banner-link" href={localHref(`/science/space-stations/expedition-cadence`)}>
-          {m.chip_label_expedition_cadence()}
-        </a>
-        <a class="banner-link" href={localHref(`/science/space-stations/solar-power-budget`)}>
-          {m.chip_label_solar_power_budget()}
         </a>
       </p>
     {/if}
@@ -224,7 +217,7 @@
   }
   .banner-eyebrow {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 3px;
     color: #ffc850;
     margin-bottom: 8px;
@@ -242,9 +235,9 @@
   }
   .cell-label {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 8px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--color-text-label);
     margin: 0;
   }
   .cell-value {
@@ -263,9 +256,7 @@
     margin: 0;
     padding-top: 8px;
     border-top: 1px solid rgba(255, 200, 80, 0.18);
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 12px;
+    font-size: var(--size-meta);
     color: rgba(255, 255, 255, 0.78);
   }
   .banner-foot.banner-foot-secondary {
@@ -280,7 +271,7 @@
   .banner-link {
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-style: normal;
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     color: rgba(255, 200, 80, 0.85);
     text-decoration: none;

@@ -11,16 +11,25 @@
     .head     — kind eyebrow (regime short, regime-coloured)
                + name (Bebas Neue big title)
                + stat-row (altitude + first-year)
-    .editorial — comparison line + story paragraph (Crimson Pro italic)
-    Residents — agency-dot list (Space Mono mono labels)
-    Firsts    — year + label list
-    ScienceCard — standard /science cross-link card
+    .editorial — comparison line + story paragraph (shared, panel-tabs.css)
+    Residents — 28 px photo in an agency-colour ring, or the agency dot (Space Mono mono labels)
+    Firsts    — year + label list; a first with a mission page is a link
+    ScienceCard — the regime's own best /science card (one per pane; no card repeats inside a ruler,
+                  UXD-010; the data rule is tested in science-links.test.ts)
 -->
 <script lang="ts">
   import Panel from './Panel.svelte';
-  import { localHref } from '$lib/locale';
+  import { localHref, localeFromPage } from '$lib/locale';
+  import { page } from '$app/state';
+  import { fmtRegimeBand } from '$lib/orbit-regime-format';
+  import { onMissionLinkClick } from '$lib/missions-linkify';
+  import { thumbOf, thumbOfRef } from '$lib/entity-thumb';
+  import { agencyRingColor } from '$lib/surface-map/nation-palette';
   import ScienceCard from './ScienceCard.svelte';
+  import EntityThumb from './EntityThumb.svelte';
   import * as m from '$lib/paraglide/messages';
+  import thumbRefs from '$data/orbit-regime-thumbs.json';
+  import firstAgency from '$data/orbit-regime-first-agency.json';
   import type { OrbitRegime } from '$types/orbit-regime';
   import type { ScienceTabId } from '$types/science';
 
@@ -28,6 +37,14 @@
     regime: OrbitRegime | null;
     open: boolean;
     onClose: () => void;
+    /** The ruler bundle the regime and its residents belong to: a resident id means different
+     *  things per bundle (`lro`, `queqiao`, `galileo` appear in two), so the thumbnail map is
+     *  keyed `<bundle>/<id>`. */
+    bundle?:
+      'orbit-regimes' | 'orbit-regimes-moon' | 'orbit-regimes-mars' | 'orbit-regimes-explore';
+    /** Open a founding mission in place (/explore: the mission panel stacks over this one, which
+     *  stays mounted). Without it a first is an anchor to /missions?id=. */
+    onMissionOpen?: (missionId: string) => void;
     /** Set of object ids currently selectable in the scene (#354 /earth
      *  EarthObjects; #355 lunar orbiter SurfaceSites; #356 Mars orbiter
      *  sites). A resident whose `id` matches becomes a clickable button
@@ -42,53 +59,21 @@
     regime,
     open,
     onClose,
+    bundle = 'orbit-regimes',
+    onMissionOpen,
     selectableIds = new Set<string>(),
     onResidentClick,
   }: Props = $props();
 
-  function fmtKm(alt: number | [number, number]): string {
-    if (typeof alt === 'number') {
-      return alt >= 1000 ? `${alt.toLocaleString('en-US')} km` : `${alt} km`;
-    }
-    const f = (x: number) => x.toLocaleString('en-US');
-    return `${f(alt[0])} - ${f(alt[1])} km`;
-  }
-  function fmtAU(d: number | [number, number]): string {
-    const f = (x: number) => (x >= 1000 ? x.toLocaleString('en-US') : x.toString());
-    if (typeof d === 'number') return `${f(d)} AU`;
-    return `${f(d[0])} - ${f(d[1])} AU`;
-  }
-  function fmtDistance(r: OrbitRegime): string {
-    if (r.altitude_km != null) return fmtKm(r.altitude_km);
-    if (r.distance_au != null) return fmtAU(r.distance_au);
-    return '';
-  }
-
-  // Per-agency accent for resident dots. Mirrors `nationChipFor` in
-  // src/lib/surface-map/nation-palette.ts so the regime panel reads
-  // consistent with the nation legend at the bottom of the scene.
-  function agencyColor(agency: string): string {
-    switch (agency) {
-      case 'NASA':
-      case 'SpaceX':
-        return '#3b82f6';
-      case 'ROSCOSMOS':
-        return '#ef4444';
-      case 'CNSA':
-        return '#dc2626';
-      case 'ISRO':
-        return '#f97316';
-      case 'JAXA':
-        return '#1d4ed8';
-      case 'ESA':
-      case 'Arianespace':
-        return '#1d4ed8';
-      case 'UAESA':
-        return '#00732F';
-      default:
-        return 'rgba(255,255,255,0.5)';
-    }
-  }
+  const loc = $derived(localeFromPage(page));
+  // The map says which entity a resident is (`<surface>/<id>`), because a resident id means
+  // different things per bundle; the file is the entity's blessed-hero thumb (entity-thumb.ts).
+  const residentThumb = (id: string): string | null =>
+    thumbOfRef((thumbRefs as Record<string, string>)[`${bundle}/${id}`]);
+  // A first carries only its mission id; the ring is that mission's agency colour. The agency
+  // comes from a 17-entry map, not missions/index.json (23 KB), which the data test keeps in step.
+  const firstRing = (id: string | undefined): string | undefined =>
+    id ? agencyRingColor((firstAgency as Record<string, string>)[id] ?? '') : undefined;
 </script>
 
 <!--
@@ -99,16 +84,23 @@
   satellite panel reveals the regime panel underneath.
 -->
 <Panel {open} {onClose} title={regime?.name ?? ''} zIndex={28}>
-  {#if regime}
-    <div class="head" style:--regime-color={regime.color}>
-      <div class="kind-row">
+  {#snippet eyebrow()}
+    {#if regime}<div style:--regime-color={regime.color} class="kind-row">
         <span class="kind">{regime.short ?? regime.id}</span>
-      </div>
-      <div class="name">{regime.name ?? regime.id}</div>
+      </div>{/if}
+  {/snippet}
+  {#snippet heading()}
+    {#if regime}<div style:--regime-color={regime.color} class="name">
+        {regime.name ?? regime.id}
+      </div>{/if}
+  {/snippet}
+
+  {#if regime}
+    <div class="head">
       <div class="stat-row">
         <div>
           <div class="stat-label">{m.earth_regime_altitude_label()}</div>
-          <div class="stat-value">{fmtDistance(regime)}</div>
+          <div class="stat-value">{fmtRegimeBand(regime, loc, { round: false })}</div>
         </div>
         {#if regime.firsts && regime.firsts.length > 0}
           <div>
@@ -137,8 +129,7 @@
           {#each regime.residents as r (r.id)}
             {@const clickable = selectableIds.has(r.id) && onResidentClick != null}
             <li>
-              <span class="agency-dot" style:background={agencyColor(r.agency)} aria-hidden="true"
-              ></span>
+              <EntityThumb src={residentThumb(r.id)} ring={agencyRingColor(r.agency)} />
               {#if clickable}
                 <button type="button" class="resident-link" onclick={() => onResidentClick?.(r.id)}>
                   {r.label}
@@ -159,9 +150,18 @@
         <ul class="firsts">
           {#each regime.firsts as f (f)}
             <li>
+              <EntityThumb
+                src={f.mission_id ? thumbOf('missions', f.mission_id) : null}
+                ring={firstRing(f.mission_id)}
+              />
               <span class="firsts-year">{f.year}</span>
               {#if f.mission_id}
-                <a class="firsts-link" href={localHref(`/missions?id=${f.mission_id}`)}>
+                <a
+                  class="firsts-link"
+                  href={localHref(`/missions?id=${f.mission_id}`)}
+                  onclick={(e) =>
+                    onMissionLinkClick(e, { kind: 'mission', id: f.mission_id }, onMissionOpen)}
+                >
                   {f.label}
                   <span class="resident-arrow" aria-hidden="true">↗</span>
                 </a>
@@ -201,7 +201,7 @@
   }
   .kind {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 8px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
     color: var(--regime-color);
     text-transform: uppercase;
@@ -222,9 +222,9 @@
   }
   .stat-label {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
     text-transform: uppercase;
     margin-bottom: 4px;
   }
@@ -234,21 +234,11 @@
     color: var(--color-text);
   }
 
-  .editorial {
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 14px;
-    line-height: 1.5;
-    color: rgba(255, 255, 255, 0.85);
-    margin: 0 0 14px;
-  }
-
   .story {
     margin-bottom: 14px;
   }
   .story-text {
-    font-family: 'Crimson Pro', serif;
-    font-size: 15px;
+    font-size: var(--size-lead);
     line-height: 1.55;
     color: rgba(255, 255, 255, 0.88);
     margin: 0;
@@ -256,9 +246,9 @@
 
   .cell-label {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 8px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
-    color: rgba(255, 255, 255, 0.45);
+    color: var(--color-text-label);
     margin-bottom: 6px;
     text-transform: uppercase;
   }
@@ -286,15 +276,12 @@
     color: rgba(255, 255, 255, 0.88);
     line-height: 1.45;
   }
-  .agency-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    flex-shrink: 0;
-  }
+  /* A first: the mission's photo (EntityThumb, 28 px) before the year; a first with no mission
+     or no photo keeps the dot in the same slot so the years and labels line up (UXD-025). */
   .firsts li {
     display: grid;
-    grid-template-columns: 52px 1fr;
+    grid-template-columns: 28px 52px 1fr;
+    align-items: center;
     gap: 8px;
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
@@ -302,7 +289,7 @@
     line-height: 1.45;
   }
   .firsts-year {
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
     font-weight: 700;
   }
   .resident-link,
@@ -327,7 +314,7 @@
     outline: none;
   }
   .resident-arrow {
-    font-size: 9px;
+    font-size: var(--size-label);
     opacity: 0.75;
     margin-left: 2px;
   }
@@ -339,10 +326,10 @@
   }
   .library-heading {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
     margin: 0 0 10px;
     font-weight: 700;
   }

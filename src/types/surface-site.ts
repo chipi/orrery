@@ -285,6 +285,13 @@ export interface PanoramaMetadata {
    * `scripts/hotspots/panorama-entry-yaw.mjs`.
    */
   entry_yaw_deg?: number;
+  /**
+   * Where the photograph sits on a partial panorama (under 90 % of the
+   * 360°): yaw degrees `[from, to]`, increasing, wrapping through 0 when
+   * from > to. Absent on a full 360°. The opening view (`entry_yaw_deg`,
+   * else 0) must be inside it — `panorama-entry.data.test.ts`.
+   */
+  photo_span_deg?: [number, number];
 }
 
 /**
@@ -451,6 +458,11 @@ export interface Traverse {
   has_route_photos?: boolean;
   /** The rover's own photos, placed on the path at their sol (#641). */
   route_photos?: RoutePhoto[];
+  /**
+   * True when the polyline is a simplified outline anchored at the lander, not
+   * a surveyed track (no published track found). The panel says so (UXD-044).
+   */
+  approximate?: boolean;
 }
 
 /** A photo the rover took, pinned on its traverse (#641). Caption = the

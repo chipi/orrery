@@ -94,5 +94,37 @@
     "/moon?site=change3": "Chang’e 3 — rover Yutu",
     "/moon?site=change4": "Chang’e 4 — la faccia nascosta",
     "/moon?site=change2": "Chang’e 2"
+  },
+  "roster": {
+    "mission:change1": {
+      "note": "la prima missione lunare della Cina — un orbiter che mappò la superficie lunare e annunciò la Cina come potenza lunare"
+    },
+    "mission:change2": {
+      "note": "un secondo orbiter lunare che ha lasciato la Luna per il punto L2 Sole-Terra e poi ha sorvolato l'asteroide Toutatis"
+    },
+    "mission:change3": {
+      "note": "il primo atterraggio morbido della Cina sulla Luna, con il rover Yutu — la prima sonda a posarsi lassù dagli anni Settanta"
+    },
+    "mission:change4": {
+      "note": "la prima sonda ad atterrare sul lato nascosto della Luna — un luogo che non vede la Terra, raggiunto grazie al satellite relè Queqiao"
+    },
+    "mission:change5": {
+      "note": "il primo ritorno di campioni lunari della Cina — le prime rocce lunari fresche portate sulla Terra da chiunque dal 1976"
+    },
+    "mission:change6": {
+      "note": "il primo ritorno di campioni dal lato nascosto della Luna — materiale che nessuno aveva mai tenuto in mano"
+    },
+    "Queqiao relay": {
+      "note": "un satellite collocato oltre la Luna per ritrasmettere i segnali dal lato nascosto, che non guarda mai la Terra — l'espediente che ha reso possibili Chang'e 4 e 6",
+      "name": "Satellite relè Queqiao"
+    },
+    "Crewed landing": {
+      "note": "l'obiettivo dichiarato della Cina di far atterrare astronauti sulla Luna prima del 2030, con una nuova capsula per equipaggio da spazio profondo e un lander",
+      "name": "Allunaggio con equipaggio"
+    },
+    "ILRS": {
+      "note": "la International Lunar Research Station — la base prevista dalla Cina al polo sud lunare, prima robotica e poi con equipaggio, costruita con partner internazionali come alternativa ad Artemis",
+      "name": "ILRS"
+    }
   }
 }

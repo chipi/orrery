@@ -103,5 +103,15 @@
     "/earth": "الأرض — المدارات والعودة ومواقع الإطلاق",
     "/science/mission-phases/edl": "الدخول والهبوط والنزول",
     "/science/propulsion/tsiolkovsky": "معادلة الصاروخ — لماذا لم يستطع Redstone بلوغ المدار"
+  },
+  "roster": {
+    "Mercury-Redstone 2 (Ham)": {
+      "note": "اختبار دون مداري بشمبانزي — أجاز صاروخ Redstone لرحلة مأهولة",
+      "name": "Mercury-Redstone 2 (Ham)"
+    },
+    "Mercury-Atlas 5 (Enos)": {
+      "note": "اختبار بمدارين بشمبانزي — أجاز صاروخ Atlas قبل أن يطير غلين",
+      "name": "Mercury-Atlas 5 (Enos)"
+    }
   }
 }

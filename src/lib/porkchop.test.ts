@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { dvToRGB, dvToCss, dayToDate, dayToLongDate, dayToShortDate } from './porkchop';
+import { dvToRGB, dvToCss, dvLegend, dayToDate, dayToLongDate, dayToShortDate } from './porkchop';
 
 describe('dvToRGB', () => {
   it('clamps below DV_MIN to deep blue', () => {
@@ -59,5 +59,24 @@ describe('day-to-date helpers', () => {
     const s = dayToShortDate(0);
     expect(s).toMatch(/26$/);
     expect(s).not.toContain('2026');
+  });
+});
+
+describe('dvLegend', () => {
+  it('draws the plot’s own ramp: deep blue at the cheap end, dark red at the expensive end', () => {
+    const { gradient } = dvLegend();
+    expect(gradient.startsWith(`linear-gradient(90deg, ${dvToCss(3.2)} 0%`)).toBe(true);
+    expect(gradient.endsWith(`${dvToCss(16.2)} 100%)`)).toBe(true);
+    expect(gradient).not.toMatch(/78, ?205, ?196/); // the old teal swatch is gone
+  });
+
+  it('ticks span the heliocentric window in whole km/s', () => {
+    expect(dvLegend().ticks).toEqual(['3', '6', '10', '13', '16']);
+  });
+
+  it('a narrow window (Earth→Moon) gets one-decimal ticks across its own range', () => {
+    const { gradient, ticks } = dvLegend(3.9, 4.3);
+    expect(ticks).toEqual(['3.9', '4.0', '4.1', '4.2', '4.3']);
+    expect(gradient.startsWith(`linear-gradient(90deg, ${dvToCss(3.9, 3.9, 4.3)} 0%`)).toBe(true);
   });
 });

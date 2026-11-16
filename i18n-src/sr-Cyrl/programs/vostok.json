@@ -94,5 +94,11 @@
   "link_labels": {
     "/earth": "Земља — орбите и места лансирања",
     "/science/mission-phases/edl": "Улазак, спуштање и слетање"
+  },
+  "roster": {
+    "Korabl-Sputnik 2 (Belka & Strelka)": {
+      "note": "пси Belka и Strelka — прве животиње које су орбитирале и вратиле се живе, на пробној летелици Vostok",
+      "name": "Korabl-Sputnik 2 (Belka и Strelka)"
+    }
   }
 }

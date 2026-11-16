@@ -24,8 +24,19 @@ export function landingGridCounts(): { cards: number; headings: number } {
   const start = src.indexOf('const grid: GridItem[]');
   const end = src.indexOf(']);', start);
   const block = src.slice(start, end);
+  // The Explore cards are one `...SCALE_SHELL_CARD_LIST.map(…)` entry (one `glyph:` line) that
+  // renders a card per scale level: count the levels in the card table instead.
+  const levels = (() => {
+    const cards = read('src/lib/explore/scale-shell-cards.ts');
+    const table = cards.slice(
+      cards.indexOf('const CARD_TEXTS'),
+      cards.indexOf('\n};', cards.indexOf('const CARD_TEXTS')),
+    );
+    return (table.match(/^ {2}(?:'[a-z-]+'|[a-z]+): \{/gm) ?? []).length;
+  })();
+  const mapped = block.includes('SCALE_SHELL_CARD_LIST.map') ? levels - 1 : 0;
   return {
-    cards: (block.match(/^\s+glyph:/gm) ?? []).length,
+    cards: (block.match(/^\s+glyph:/gm) ?? []).length + mapped,
     headings: (block.match(/\{ heading:/g) ?? []).length,
   };
 }

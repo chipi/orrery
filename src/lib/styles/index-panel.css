@@ -1,0 +1,407 @@
+/* The INDEX of an /explore scale (UXD-017): the left-edge handle, the side panel, its search,
+   filter chips, count and rows. One look for all eight scales; ScaleIndex.svelte is the markup
+   and src/routes/explore/+page.svelte mounts the handle. The filter chips are <Chip>s
+   (chip.css). Rows are buttons (select) with a trailing ↗ link when the object has a page. */
+
+/* A pull-out tab on the left edge at every viewport, vertically centred away from the
+   top-left controls (the /iss and /tiangong module handles sit there too). */
+.scale-index-handle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  left: 0;
+  top: 50%;
+  z-index: 44;
+  writing-mode: vertical-rl;
+  transform: translateY(-50%) rotate(180deg);
+}
+
+/* A narrow window with a mouse: the detail panel (Panel.svelte, z 30) is then as wide as the window,
+   so the tab sits under it instead of over its text, as the Worlds' handle already does
+   (SurfaceScene.svelte). On touch the panel is a bottom sheet and covers the tab already. */
+@media (hover: hover) and (pointer: fine) and (max-width: 600px) {
+  .scale-index-handle {
+    z-index: 25;
+  }
+}
+
+/* Starts under the HUD chip row, which wraps on narrow windows: ScaleIndex publishes the
+   measured bottom as --index-top; nothing on touch, where the HUD is hidden. */
+.scale-index {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 12px;
+  top: var(--index-top, 152px);
+  bottom: 12px;
+  z-index: 45;
+  width: min(320px, calc(100vw - 24px));
+  min-height: 0;
+  padding: 12px;
+  background: var(--color-panel-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(8px);
+  color: var(--color-text);
+}
+.scale-index[hidden] {
+  display: none;
+}
+
+.si-top {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+.si-input {
+  flex: 1;
+  min-width: 0;
+  padding: 7px 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 6px;
+  color: var(--color-text);
+  font: inherit;
+  font-size: 12px;
+}
+.si-input:focus-visible {
+  outline: none;
+  border-color: var(--color-accent-strong);
+}
+.si-top ~ .si-filters {
+  margin-bottom: 8px;
+}
+
+/* Folded filters (C6-F): the chips that fit one line stay, the rest sit behind a FILTERS button
+   that opens them in place, under the count. IndexFiltersToggle is the button, shared with the
+   Worlds' index. Before the chips are measured they wrap, as they always did. */
+.si-filters {
+  position: relative;
+}
+.si-filters.is-fitted > .ui-chip-group {
+  flex-wrap: nowrap;
+}
+.idx-count-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+.idx-count-line .si-count {
+  margin-bottom: 0;
+}
+.idx-filters-btn {
+  flex: none;
+  gap: 4px;
+  margin-inline-start: auto;
+}
+.idx-filters-btn[aria-expanded='true'] {
+  border-color: var(--color-accent);
+}
+.idx-filters-n {
+  color: var(--color-accent-strong);
+}
+.idx-filters-chevron {
+  font-size: 11px;
+  line-height: 1;
+}
+.idx-fold {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+.idx-fold[hidden] {
+  display: none;
+}
+.idx-fold-group {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.idx-fold-label {
+  font-family: var(--font-mono);
+  font-size: var(--size-label);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--color-text-dim);
+}
+/* Off-screen copy of the chips: their widths decide how many fit one line. */
+.idx-measure {
+  position: absolute;
+  visibility: hidden;
+  pointer-events: none;
+  display: flex;
+  gap: 6px;
+  white-space: nowrap;
+  inset-inline-start: 0;
+  top: 0;
+}
+.si-count {
+  margin-bottom: 4px;
+  font-size: var(--size-label);
+  letter-spacing: 0.5px;
+  color: var(--color-text-dim);
+}
+.si-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+/* A short window (a phone held sideways): from 152 px down there is no room left for rows once
+   the search and the 44 px filter chips are in, so the panel starts under the nav, keeps at least
+   three rows and scrolls as a whole. */
+@media (max-height: 500px) {
+  .scale-index {
+    top: calc(var(--nav-height) + 8px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+  .si-list {
+    flex: none;
+    min-height: 132px;
+    overflow-y: visible;
+  }
+}
+
+.si-item {
+  display: flex;
+  align-items: stretch;
+  gap: 4px;
+}
+.si-item .si-row {
+  flex: 1;
+  min-width: 0;
+}
+.si-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 8px 10px;
+  background: none;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  color: var(--color-text);
+  font: inherit;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+}
+.si-row:has(.si-photo) {
+  align-items: center;
+}
+/* With a photo in front the badges (⊕ ◈ ★) move behind the name and its meta, at the row's end: the names
+   start at one x and keep the width the 26 px lead slot would take (a row without badges draws none). */
+.si-row:has(.si-photo) .si-lead {
+  order: 5;
+  width: auto;
+}
+.si-row:has(.si-photo) .si-lead:not(:has(*)) {
+  display: none;
+}
+.si-row:hover,
+.si-row:focus-visible {
+  background: color-mix(in srgb, var(--color-accent) 18%, transparent);
+  outline: none;
+}
+.si-row.selected {
+  background: color-mix(in srgb, var(--color-accent) 28%, transparent);
+  border-color: color-mix(in srgb, var(--color-accent) 55%, transparent);
+}
+/* Fiction is not an object of the universe: dashed and muted, as on its page. */
+.si-row--fiction {
+  border-style: dashed;
+  border-color: var(--color-chip-edge);
+  color: var(--color-text-dim);
+}
+
+/* The trailing ↗ to the object's page: 44 px on touch, 30 px on a fine pointer. */
+.si-page {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  color: var(--color-text-dim);
+  text-decoration: none;
+  font-size: 14px;
+}
+@media (hover: hover) and (pointer: fine) {
+  .si-page {
+    min-width: 30px;
+    min-height: 0;
+  }
+}
+.si-page:hover,
+.si-page:focus-visible {
+  background: color-mix(in srgb, var(--color-accent) 18%, transparent);
+  color: var(--color-text);
+  outline: none;
+}
+
+/* The lead slot: a body's colour dot or the row's badges, one width so names line up. */
+.si-lead {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  flex: none;
+  width: 26px;
+  font-size: 11px;
+}
+/* The round photo of a neighbourhood or outer-scale row (L46, UXD-025): 28 px, a row with no photo
+   centres its dot in the same slot so the names line up. The solar system keeps its photo in the lead. */
+.si-photo {
+  display: inline-flex;
+  flex: none;
+  width: 28px;
+  height: 28px;
+  align-items: center;
+  justify-content: center;
+}
+.si-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #b0b0bd;
+}
+.si-badge--system {
+  color: var(--color-state);
+}
+.si-badge--culture {
+  color: #d3a4ff;
+}
+.si-badge--headliner {
+  color: var(--color-gold);
+}
+.si-badge--black-hole {
+  color: #f0a35e;
+}
+/* The name keeps its width and the type (meta) gives way first: the name sizes to its text and
+   shrinks only when the meta has shrunk to its floor; the meta's shrink factor is 100x. */
+.si-name {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 13px;
+}
+.si-meta {
+  flex: 0 100 auto;
+  min-width: 3.5em;
+  max-width: 45%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: var(--size-label);
+  color: var(--color-state);
+}
+/* The type of a row as a 14 px glyph (UXD-045): it takes 14 px, the name the rest. The exact type is a
+   tooltip (the glyph hovered, or its row focused by keyboard) and, for a screen reader, the text after
+   the name. The tooltip opens toward the name, inside the row, so the list's scroll box never clips it. */
+.si-kind {
+  position: relative;
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  align-self: center;
+  color: var(--color-state);
+}
+.si-kind-text {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.si-kind::after {
+  content: attr(data-tip);
+  position: absolute;
+  inset-inline-end: calc(100% + 6px);
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  padding: 3px 7px;
+  background: var(--color-panel-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.45);
+  color: var(--color-text);
+  font-size: var(--size-label);
+  white-space: nowrap;
+  pointer-events: none;
+  visibility: hidden;
+}
+.si-kind:hover::after,
+.si-row:focus-visible .si-kind::after {
+  visibility: visible;
+}
+
+/* The solar system's rows are two lines (UXD-017, C6): the name over its meta (distance, size, moons),
+   which is too long to sit beside the name in a 320 px rail. The other seven scales keep one line.
+   Only the button rows: the prerendered link rows have a name and no meta, and must not shift. */
+.scale-index[data-scale='solar-system'] button.si-row {
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr);
+  grid-template-areas:
+    'lead name'
+    'lead meta';
+  column-gap: 8px;
+  row-gap: 2px;
+  align-items: center;
+}
+/* 28 px: the EntityThumb (L45, UXD-025); a row without a photo centres its dot in the same slot,
+   so names align with and without thumbs. */
+.scale-index[data-scale='solar-system'] .si-lead {
+  grid-area: lead;
+  width: 28px;
+  justify-content: center;
+}
+.scale-index[data-scale='solar-system'] .si-name {
+  grid-area: name;
+}
+/* A planet's "1.52 AU · 6,779 km · 2 major moons" is wider than the ~205 px beside the lead slot and
+   the ↗: it wraps on a balanced break (two lines at most, then an ellipsis; `title` has it all). */
+.scale-index[data-scale='solar-system'] .si-meta {
+  grid-area: meta;
+  max-width: none;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  white-space: normal;
+  text-wrap: balance;
+}
+.si-section {
+  margin-top: 6px;
+  padding: 10px 10px 4px;
+  border-top: 1px solid var(--color-border);
+  font-family: var(--font-mono);
+  font-size: var(--size-label);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--color-text-dim);
+}
+.si-section:first-child {
+  margin-top: 0;
+  border-top: 0;
+}
+.si-empty {
+  padding: 16px 8px;
+  list-style: none;
+  color: var(--color-text-dim);
+  font-size: 11px;
+  text-align: center;
+}

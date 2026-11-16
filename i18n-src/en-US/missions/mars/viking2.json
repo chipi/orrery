@@ -1,0 +1,30 @@
+{
+  "name": "Viking 2",
+  "vehicle": "Titan IIIE-Centaur",
+  "payload": "3530 kg (orbiter + lander)",
+  "delta_v": "~4.5 km/s (estimate)",
+  "type": "ORBITER · LANDER · FLOWN",
+  "first": "The second Viking lander, set down in Utopia Planitia about 6,460 km from the Viking 1 landing site",
+  "description": "Viking 2 was the second of NASA's two Viking spacecraft, each an orbiter carrying a lander. It launched on 1975-09-09 on a Titan IIIE-Centaur, entered Mars orbit on 1976-08-07 and set its lander down in Utopia Planitia on 1976-09-03, about 6,460 km from the Viking 1 landing site. The lander worked until 1980-04-12. The orbiter returned almost 16,000 images in 706 orbits before it was turned off on 1978-07-24 after a leak in its propulsion system. Its soil experiments, like those of Viking 1, were inconclusive on whether life exists or ever has existed on Mars. The two orbiters together returned 52,663 images and mapped about 97% of the planet; the two landers returned 4,500 photographs.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Titan IIIE-Centaur from Cape Canaveral, 1975-09-09.",
+      "type": "nominal"
+    },
+    {
+      "met": 333,
+      "label": "MARS ORBIT INSERTION",
+      "note": "Orbiter captured on 1976-08-07 into a 1500 x 33,000 km orbit.",
+      "type": "nominal"
+    },
+    {
+      "met": 360,
+      "label": "TOUCHDOWN",
+      "note": "Lander lands in Utopia Planitia on 1976-09-03.",
+      "type": "nominal"
+    }
+  ],
+  "vehicle_stage": "Centaur upper stage"
+}

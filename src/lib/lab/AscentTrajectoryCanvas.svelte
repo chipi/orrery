@@ -81,15 +81,15 @@
     // Earth surface — a LABELLED solid ground line (+ a faint ground band below it) so
     // the plot floor reads as the planet and liftoff clearly sits ON it (FB4: "what is
     // Earth? liftoff seems not on Earth").
-    ctx.fillStyle = 'rgba(120,200,190,0.07)';
+    ctx.fillStyle = 'rgba(120,200,190,0.07)'; // a3-keep: Lab figure art, palette review at the end
     ctx.fillRect(px0, py1, px1 - px0, Math.min(6, H - py1));
-    ctx.strokeStyle = 'rgba(130,235,225,0.55)';
+    ctx.strokeStyle = 'rgba(130,235,225,0.55)'; // a3-keep: Lab figure art, palette review at the end
     ctx.lineWidth = 2;
     ctx.beginPath();
     ctx.moveTo(px0, py1);
     ctx.lineTo(px1, py1);
     ctx.stroke();
-    ctx.fillStyle = 'rgba(130,235,225,0.75)';
+    ctx.fillStyle = 'rgba(130,235,225,0.75)'; // a3-keep: Lab figure art, palette review at the end
     ctx.font = "7px 'Space Mono', monospace";
     ctx.textAlign = 'left';
     ctx.fillText(t('lab.figure.earth-surface'), px0 + 3, py1 - 4);
@@ -145,14 +145,14 @@
         ctx.arc(ex, ey, 2.5, 0, Math.PI * 2);
         ctx.fill();
         const label = ev.type.replace(/_/g, '-');
-        ctx.fillStyle = 'rgba(200,215,225,0.75)';
+        ctx.fillStyle = 'rgba(200,215,225,0.75)'; // a3-keep: Lab figure art, palette review at the end
         ctx.textAlign = ev.x > maxX * 0.7 ? 'right' : 'left';
         ctx.fillText(label, ex + (ev.x > maxX * 0.7 ? -5 : 5), ey - 4);
       }
     }
 
     // Axis ticks.
-    ctx.fillStyle = 'rgba(78,205,196,0.55)';
+    ctx.fillStyle = 'rgba(78,205,196,0.55)'; // a3-keep: Lab figure art, palette review at the end
     ctx.font = "7px 'Space Mono', monospace";
     ctx.textAlign = 'center';
     ctx.fillText(`downrange → ${maxX.toFixed(0)} km`, (px0 + px1) / 2, py1 + 14);
@@ -198,7 +198,7 @@
     // Verdict.
     ctx.textAlign = 'center';
     ctx.font = "9px 'Space Mono', monospace";
-    ctx.fillStyle = figure.reachedOrbit ? 'rgb(78,205,196)' : 'rgb(210,70,50)';
+    ctx.fillStyle = figure.reachedOrbit ? 'rgb(78,205,196)' : 'rgb(210,70,50)'; // a3-keep: Lab figure art, palette review at the end
     ctx.fillText(
       figure.reachedOrbit
         ? `IN ORBIT — ${figure.finalSpeedKms.toFixed(2)} km/s at ${figure.orbitAltKm.toFixed(0)} km`

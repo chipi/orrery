@@ -1,0 +1,23 @@
+{
+  "name": "STS-51-L",
+  "vehicle": "Space Shuttle Challenger (OV-099)",
+  "payload": "TDRS-B e Spartan-Halley; sete tripulantes",
+  "delta_v": "0 km/s (órbita não alcançada; veículo perdido 73 s após a decolagem)",
+  "type": "VOO TRIPULADO DO ÔNIBUS ESPACIAL · PERDIDO NA SUBIDA",
+  "first": "A Challenger e seus sete tripulantes foram perdidos 73 segundos após a decolagem",
+  "description": "STS-51-L foi a 25ª missão do Space Shuttle e o 10º voo da Challenger. Suas cargas úteis eram o Tracking and Data Relay Satellite TDRS-B e o satélite Spartan-Halley, e o voo estava previsto para durar seis dias a cerca de 153 milhas náuticas de altitude. A tripulação de sete era formada por Francis R. Scobee, comandante; Michael J. Smith, piloto; Judith A. Resnik, Ellison S. Onizuka e Ronald E. McNair, especialistas de missão; S. Christa McAuliffe, professora no espaço (Teacher in Space); e Gregory B. Jarvis, especialista de carga útil. Após três adiamentos e um cancelamento em relação à data prevista de 1986-01-22, a Challenger decolou da plataforma B às 11:38:00 EST (16:38:00 UTC) de 1986-01-28, com temperatura do ar de 36 °F (cerca de 2 °C), 15 °F mais fria que em qualquer lançamento anterior. Um vazamento de gás pela junta de campo traseira do motor de combustível sólido direito enfraqueceu o tanque externo e, 73 segundos após a decolagem, a Mach 1.92 e a 46.000 pés (cerca de 14 km), o veículo se desintegrou. A tripulação foi perdida. A Comissão Rogers concluiu que a perda foi causada pela falha da junta entre os dois segmentos inferiores do motor de combustível sólido direito, que destruiu as vedações destinadas a conter os gases quentes, e que, se os responsáveis pela decisão soubessem de todos os fatos, era muito improvável que tivessem decidido lançar.",
+  "events": [
+    {
+      "met": 0,
+      "label": "DECOLAGEM",
+      "note": "A Challenger decola da plataforma B às 11:38:00 EST (16:38:00 UTC) de 1986-01-28.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.000845,
+      "label": "VEÍCULO PERDIDO",
+      "note": "73 segundos após a decolagem, o veículo se desintegra a Mach 1.92 e a 46.000 pés. Os sete tripulantes são perdidos.",
+      "type": "warning"
+    }
+  ]
+}

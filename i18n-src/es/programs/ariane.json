@@ -94,5 +94,15 @@
   "link_labels": {
     "/programs/esa-human": "La ESA en los vuelos espaciales tripulados: Spacelab, Columbus, ATV",
     "/fleet?id=ariane-5": "Flota — lanzadores Ariane"
+  },
+  "roster": {
+    "Ariane 4": {
+      "note": "el fiable caballo de batalla comercial que captó cerca de la mitad de los lanzamientos comerciales de satélites del mundo durante los años noventa e hizo dominante a Arianespace",
+      "name": "Ariane 4"
+    },
+    "Flight 501": {
+      "note": "el vuelo inaugural del Ariane 5 se autodestruyó a los 37 segundos cuando el software de guiado reutilizado del Ariane 4 se desbordó a la mayor velocidad del nuevo cohete — una lección ejemplar de la ingeniería de software",
+      "name": "Vuelo 501"
+    }
   }
 }

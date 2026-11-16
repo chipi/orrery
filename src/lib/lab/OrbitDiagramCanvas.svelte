@@ -7,7 +7,7 @@
 -->
 <script lang="ts">
   import type { FigureSpec } from '$lib/physics/spec';
-  import { fidelityLabel, TEAL } from './figure-style';
+  import { fidelityLabel, TEAL } from './figure-style'; // a3-keep: Lab figure art, palette review at the end
   import { BODY_PALETTE } from '$lib/body-palette';
   import {
     HERO_W as W,
@@ -41,7 +41,7 @@
 
   const palette = $derived.by(() => {
     const id = figure.bodyLabelKey.split('.').pop() ?? '';
-    return BODY_PALETTE[id] ?? { core: '#dffcfa', bright: '#7fe0ff', glowRGB: '90,190,255' };
+    return BODY_PALETTE[id] ?? { core: '#dffcfa', bright: '#7fe0ff', glowRGB: '90,190,255' }; // a3-keep: Lab figure art, palette review at the end
   });
 
   let canvas = $state<HTMLCanvasElement | null>(null);
@@ -75,16 +75,16 @@
       ctx.fillText('stationary', cx, cy - refPx - 4);
     }
 
-    // Satellite orbit ring — teal, with a glow, drawn as an arc growing to `progress`.
+    // Satellite orbit ring — teal, with a glow, drawn as an arc growing to `progress`. // a3-keep: Lab figure art, palette review at the end
     ctx.save();
     ctx.globalCompositeOperation = 'lighter';
-    ctx.strokeStyle = 'rgba(78,205,196,0.28)';
+    ctx.strokeStyle = 'rgba(78,205,196,0.28)'; // a3-keep: Lab figure art, palette review at the end
     ctx.lineWidth = 5;
     ctx.beginPath();
     ctx.arc(cx, cy, orbitPx, -Math.PI / 2, -Math.PI / 2 + Math.PI * 2 * progress);
     ctx.stroke();
     ctx.restore();
-    ctx.strokeStyle = TEAL;
+    ctx.strokeStyle = TEAL; // a3-keep: Lab figure art, palette review at the end
     ctx.lineWidth = 1.5;
     ctx.beginPath();
     ctx.arc(cx, cy, orbitPx, -Math.PI / 2, -Math.PI / 2 + Math.PI * 2 * progress);
@@ -118,7 +118,7 @@
     ctx.fill();
 
     // Body label under the body.
-    ctx.fillStyle = 'rgba(78,205,196,0.85)';
+    ctx.fillStyle = 'rgba(78,205,196,0.85)'; // a3-keep: Lab figure art, palette review at the end
     ctx.font = "8px 'Space Mono', monospace";
     ctx.textAlign = 'center';
     ctx.fillText(t(figure.bodyLabelKey), cx, cy + Math.max(3, bodyPx) + 12);
@@ -132,7 +132,7 @@
       `speed ${figure.speedKms.toFixed(2)} km/s`,
     ];
     lines.forEach((ln, i) => {
-      ctx.fillStyle = 'rgba(78,205,196,0.82)';
+      ctx.fillStyle = 'rgba(78,205,196,0.82)'; // a3-keep: Lab figure art, palette review at the end
       ctx.fillText(ln, 12, 22 + i * 13);
     });
 

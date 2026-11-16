@@ -90,5 +90,11 @@
   "link_labels": {
     "/earth": "地球 — 軌道、ランデブー、打ち上げ地点",
     "/science/mission-phases/edl": "突入・降下・着陸"
+  },
+  "roster": {
+    "Soyuz 4 & 5": {
+      "note": "有人宇宙船2機の初のドッキングと、2隻の間で宇宙遊泳によって行われた初のクルー移乗",
+      "name": "Soyuz 4 & 5"
+    }
   }
 }

@@ -10,7 +10,7 @@ import { waitForHydration } from './_helpers/hydration';
  * On mobile (≤767 px) the three speed pills collapse into a popover behind a
  * `.speed-slot` trigger (showing the current "N×"); the inline desktop pills
  * stay in the DOM (hidden, direct children of `.speed-group`) as a state
- * mirror. `speedMirror` reads aria-pressed on either viewport; `pickSpeed`
+ * mirror. `speedMirror` reads aria-checked on either viewport; `pickSpeed`
  * performs the selection (opening the popover first on mobile).
  */
 
@@ -70,8 +70,8 @@ test.describe('/explore — time playback controls', () => {
 
   test('selecting a speed pill marks it active and unpauses', async ({ page, isMobile }) => {
     await pickSpeed(page, 100, isMobile);
-    await expect(speedMirror(page, 100, isMobile)).toHaveAttribute('aria-pressed', 'true');
-    await expect(speedMirror(page, 10, isMobile)).toHaveAttribute('aria-pressed', 'false');
+    await expect(speedMirror(page, 100, isMobile)).toHaveAttribute('aria-checked', 'true');
+    await expect(speedMirror(page, 10, isMobile)).toHaveAttribute('aria-checked', 'false');
     // Picking a speed always implies playing.
     await expect(play(page)).toHaveAttribute('aria-pressed', 'false');
   });
@@ -83,7 +83,7 @@ test.describe('/explore — time playback controls', () => {
     await pickSpeed(page, 100, isMobile);
     await play(page).click(); // pause
     await expect(play(page)).toHaveAttribute('aria-pressed', 'true');
-    await expect(speedMirror(page, 100, isMobile)).toHaveAttribute('aria-pressed', 'false');
+    await expect(speedMirror(page, 100, isMobile)).toHaveAttribute('aria-checked', 'false');
 
     // Frozen: the date must not change while paused.
     const frozen = await date(page).textContent();

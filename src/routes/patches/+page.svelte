@@ -3,6 +3,10 @@
   sourced, with per-badge credit + licence. Sister page to /posters under the
   Gallery hub. English-only, matching /posters. Badges + provenance come from
   scripts/fetch-badges.ts (badges.json + badge-provenance.json).
+
+  The cards are the catalogue's (EntityCard in an `entity-card-grid`, UXD-048): the same photo slot,
+  the same grid, the same type; an insignia is shown whole (`fit="contain"`) with a compact body of
+  its name and its credit line.
 -->
 <script lang="ts">
   import { base } from '$app/paths';
@@ -12,8 +16,11 @@
   import { localizeHref } from '$lib/paraglide/runtime';
   import type { PageData } from './$types';
   import { licenseLabel } from '$lib/license-label';
+  import EntityCard from '$lib/components/EntityCard.svelte';
 
   let { data }: { data: PageData } = $props();
+
+  type Badge = PageData['programs'][number];
 </script>
 
 <svelte:head>
@@ -21,15 +28,40 @@
   <meta name="description" content={metaDescription(m.patches_meta_description())} />
 </svelte:head>
 
-<article class="patches" data-route-ready="true">
+{#snippet badges(items: Badge[])}
+  <ul class="entity-card-grid">
+    {#each items as p (p.key)}
+      <EntityCard
+        photo="{assetOrigin}{p.img}"
+        ladder={false}
+        alt={m.patches_alt({ name: p.name })}
+        name={p.name}
+        nameLines={2}
+        level={3}
+        fit="contain"
+        body="compact"
+      >
+        {#snippet extra()}
+          {#if p.credit}
+            <a href={p.credit.source_url} target="_blank" rel="noopener noreferrer"
+              >{p.credit.author} · {licenseLabel(p.credit.license_short)}</a
+            >
+          {/if}
+        {/snippet}
+      </EntityCard>
+    {/each}
+  </ul>
+{/snippet}
+
+<article class="patches page-shell" data-route-ready="true">
   <header>
-    <nav class="crumb">
+    <nav class="crumb page-crumb">
       <a href="{base}{localizeHref('/gallery')}">{m.layout_footer_gallery()}</a><span class="sep"
         >›</span
       ><span>{m.patches_crumb()}</span>
     </nav>
-    <h1>{m.patches_h1()}</h1>
-    <p class="lede">
+    <h1 class="page-title">{m.patches_h1()}</h1>
+    <p class="lede page-lead">
       <!-- eslint-disable-next-line svelte/no-at-html-tags -- safe: m.*() output + base path, no user input -->
       {@html m.patches_lede({
         link: `<a href="${base}${localizeHref('/sourcing')}">${m.patches_link_sourcing()}</a>`,
@@ -38,98 +70,23 @@
   </header>
 
   <section class="group">
-    <h2>{m.patches_group_programs()}</h2>
-    <div class="grid">
-      {#each data.programs as p (p.key)}
-        <figure class="badge-card">
-          <div class="badge-frame">
-            <img
-              src="{assetOrigin}{p.img}"
-              alt={m.patches_alt({ name: p.name })}
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
-          <figcaption>
-            <span class="b-name">{p.name}</span>
-            {#if p.credit}
-              <a
-                class="b-credit"
-                href={p.credit.source_url}
-                target="_blank"
-                rel="noopener noreferrer"
-                >{p.credit.author} · {licenseLabel(p.credit.license_short)}</a
-              >
-            {/if}
-          </figcaption>
-        </figure>
-      {/each}
-    </div>
+    <h2 class="page-section-label page-section-label--rule">{m.patches_group_programs()}</h2>
+    {@render badges(data.programs)}
   </section>
 
   <section class="group">
-    <h2>{m.patches_group_missions()}</h2>
-    <div class="grid">
-      {#each data.missions as mi (mi.key)}
-        <figure class="badge-card">
-          <div class="badge-frame">
-            <img
-              src="{assetOrigin}{mi.img}"
-              alt={m.patches_alt({ name: mi.name })}
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
-          <figcaption>
-            <span class="b-name">{mi.name}</span>
-            {#if mi.credit}
-              <a
-                class="b-credit"
-                href={mi.credit.source_url}
-                target="_blank"
-                rel="noopener noreferrer"
-                >{mi.credit.author} · {licenseLabel(mi.credit.license_short)}</a
-              >
-            {/if}
-          </figcaption>
-        </figure>
-      {/each}
-    </div>
+    <h2 class="page-section-label page-section-label--rule">{m.patches_group_missions()}</h2>
+    {@render badges(data.missions)}
   </section>
 
   {#if data.fleet.length}
     <section class="group">
-      <h2>{m.credits_category_fleet()}</h2>
-      <div class="grid">
-        {#each data.fleet as fl (fl.key)}
-          <figure class="badge-card">
-            <div class="badge-frame">
-              <img
-                src="{assetOrigin}{fl.img}"
-                alt={m.patches_alt({ name: fl.name })}
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-            <figcaption>
-              <span class="b-name">{fl.name}</span>
-              {#if fl.credit}
-                <a
-                  class="b-credit"
-                  href={fl.credit.source_url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >{fl.credit.author} · {licenseLabel(fl.credit.license_short)}</a
-                >
-              {/if}
-            </figcaption>
-          </figure>
-        {/each}
-      </div>
+      <h2 class="page-section-label page-section-label--rule">{m.credits_category_fleet()}</h2>
+      {@render badges(data.fleet)}
     </section>
   {/if}
 
-  <footer class="patches-footer">
+  <footer class="page-note">
     <p>
       <!-- eslint-disable-next-line svelte/no-at-html-tags -- safe: m.*() output + base path, no user input -->
       {@html m.patches_footer({
@@ -141,114 +98,14 @@
 </article>
 
 <style>
-  .patches {
-    max-width: 1040px;
-    margin: 0 auto;
-    padding: calc(var(--nav-height, 64px) + 24px) 20px 80px;
-    color: var(--color-text, #eef);
-  }
-  .crumb {
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 11px;
-    letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.5);
-    margin-bottom: 14px;
-  }
   .crumb a {
-    color: rgba(255, 255, 255, 0.7);
     text-decoration: underline;
   }
   .crumb .sep {
     margin: 0 8px;
   }
-  h1 {
-    font-family: 'Bebas Neue', 'Space Mono', sans-serif;
-    font-size: clamp(40px, 8vw, 64px);
-    letter-spacing: 1px;
-    margin: 0 0 10px;
-  }
-  .lede {
-    font-size: 17px;
-    line-height: 1.5;
-    color: rgba(255, 255, 255, 0.75);
-    max-width: 62ch;
-  }
-  .lede :global(a),
-  .patches-footer :global(a) {
-    color: #cfe3fb;
-  }
-  .group h2 {
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 12px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #7fb0e0;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 16px;
-    margin: 40px 0 20px;
-  }
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-    gap: 22px 16px;
-  }
-  .badge-card {
-    margin: 0;
-    text-align: center;
-  }
-  .badge-frame {
-    aspect-ratio: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: radial-gradient(
-      circle at 50% 40%,
-      rgba(127, 176, 224, 0.08),
-      rgba(255, 255, 255, 0.02)
-    );
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    padding: 14px;
-    transition: border-color 0.15s;
-  }
-  .badge-card:hover .badge-frame {
-    border-color: rgba(127, 176, 224, 0.5);
-  }
-  .badge-frame img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-    filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.5));
-  }
-  figcaption {
-    margin-top: 8px;
-  }
-  .b-name {
-    display: block;
-    font-family: 'Bebas Neue', 'Space Mono', sans-serif;
-    font-size: 16px;
-    letter-spacing: 0.5px;
-    color: rgba(255, 255, 255, 0.9);
-  }
-  .b-credit {
-    display: block;
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.55);
-    text-decoration: none;
-    margin-top: 2px;
-  }
-  .b-credit:hover {
-    color: rgba(255, 255, 255, 0.65);
-  }
-  .patches-footer {
-    margin-top: 46px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 18px;
-    font-size: 14px;
-    line-height: 1.55;
-    color: rgba(255, 255, 255, 0.6);
+  /* a2-keep: link colour inside the lead; slice A3 owns colour */
+  .lede :global(a) {
+    color: var(--color-state);
   }
 </style>

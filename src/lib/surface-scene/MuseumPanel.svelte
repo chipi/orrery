@@ -7,6 +7,8 @@
   import { page } from '$app/state';
   import Panel from '$lib/components/Panel.svelte';
   import PlaceHero from '$lib/components/PlaceHero.svelte';
+  import EntityThumb from '$lib/components/EntityThumb.svelte';
+  import { thumbOf } from '$lib/entity-thumb';
   import { getFleet, getFleetIndex, getScienceSection, holdingNotYetOpen } from '$lib/data';
   import { localeFromPage, localHref } from '$lib/locale';
   import * as m from '$lib/paraglide/messages';
@@ -69,11 +71,16 @@
 </script>
 
 <Panel {open} title={museum?.name ?? ''} {onClose}>
+  {#snippet eyebrow()}
+    {#if museum}<p class="city">{museum.city}</p>{/if}
+  {/snippet}
+  {#snippet heading()}
+    {#if museum}<h1 class="name">{museum.name}</h1>{/if}
+  {/snippet}
+
   {#if museum}
     <div class="museum" data-testid="museum-panel" data-museum-id={museum.id}>
       <PlaceHero src="/images/museums/{museum.id}/01.webp" {locale} />
-      <h1 class="name">{museum.name}</h1>
-      <p class="city">{museum.city}</p>
       <p class="description">{museum.description}</p>
       <a
         class="site"
@@ -86,11 +93,14 @@
       <ul>
         {#each rows as r (r.ref)}
           <li data-testid="museum-panel-object">
-            <a href={r.href} data-sveltekit-preload-data="hover">{r.name}</a>
-            {#if r.item}<p class="item">{r.item}</p>{/if}
-            {#if r.from && holdingNotYetOpen({ from: r.from })}
-              <p class="opens">{m.museum_opens({ date: opens(r.from) })}</p>
-            {/if}
+            <EntityThumb src={r.ref.startsWith('/') ? null : thumbOf('fleet', r.ref)} />
+            <div class="obj">
+              <a href={r.href} data-sveltekit-preload-data="hover">{r.name}</a>
+              {#if r.item}<p class="item">{r.item}</p>{/if}
+              {#if r.from && holdingNotYetOpen({ from: r.from })}
+                <p class="opens">{m.museum_opens({ date: opens(r.from) })}</p>
+              {/if}
+            </div>
           </li>
         {/each}
       </ul>
@@ -126,9 +136,9 @@
   }
   .site {
     align-self: flex-start;
-    color: #4ecdc4;
-    background: rgba(78, 205, 196, 0.1);
-    border: 1px solid rgba(78, 205, 196, 0.4);
+    color: var(--color-state);
+    background: var(--color-accent-soft);
+    border: 1px solid var(--color-accent-edge);
     border-radius: 4px;
     padding: 8px 12px;
     min-height: 36px;
@@ -140,17 +150,17 @@
   }
   .site:hover,
   .site:focus-visible {
-    background: rgba(78, 205, 196, 0.18);
-    border-color: #4ecdc4;
+    background: color-mix(in srgb, var(--color-accent) 18%, transparent);
+    border-color: var(--color-accent);
   }
   h3 {
     margin: 8px 0 0;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10.5px;
+    font-size: var(--size-label);
     font-weight: normal;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--color-text-label);
   }
   ul {
     list-style: none;
@@ -159,6 +169,14 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+  }
+  li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .obj {
+    min-width: 0;
   }
   li a {
     color: var(--color-earth);

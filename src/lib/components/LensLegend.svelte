@@ -31,7 +31,7 @@
 
   // Mirrors the on-globe colours in surface-climate-layers.ts.
   const CLIMATE_COLORS: Record<string, { trop: string; temp: string; polar: string } | null> = {
-    earth: { trop: '#2e8b57', temp: '#4a90a4', polar: '#dfeeff' },
+    earth: { trop: '#2e8b57', temp: '#4a90a4', polar: '#dfeeff' }, // a3-keep: science layer colour, palette review at the end
     mars: { trop: '#b0673c', temp: '#8390a6', polar: '#e6eefb' },
     moon: null,
   };
@@ -126,9 +126,9 @@
     display: none;
   }
   .ll-head {
-    font-size: 8px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
-    color: rgba(255, 255, 255, 0.4);
+    color: var(--color-text-label);
     margin-bottom: 6px;
   }
   .ll-group + .ll-group {
@@ -137,7 +137,7 @@
     border-top: 1px solid rgba(255, 255, 255, 0.08);
   }
   .ll-title {
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.85);
     margin-bottom: 4px;
@@ -180,13 +180,12 @@
     margin: 0 4px;
   }
   .ll-label {
-    font-size: 10px;
+    font-size: var(--size-label);
     color: rgba(255, 255, 255, 0.72);
     line-height: 1.15;
   }
   .ll-note {
-    font-style: italic;
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--color-text-label);
   }
   @media (min-width: 601px) {
     .lens-legend {

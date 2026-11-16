@@ -52,5 +52,24 @@ describe('projectConstellation', () => {
     const out = projectConstellation([]);
     expect(out.segments).toHaveLength(0);
     expect(out.star).toBeNull();
+    expect(out.hop).toBeNull();
+  });
+
+  it('returns a hop point that falls inside the fitted box without changing the figure or the star', () => {
+    const base = projectConstellation(vertices, [100, 5, 0]);
+    const withHop = projectConstellation(vertices, [100, 5, 0], 0.08, [60, 60, 0]);
+    expect(withHop.hop).not.toBeNull();
+    expect(withHop.segments).toEqual(base.segments);
+    expect(withHop.star).toEqual(base.star);
+    expect(base.hop).toBeNull();
+  });
+
+  it('leaves a hop point out when it lies outside the box or behind the viewer, and the figure keeps its scale', () => {
+    const base = projectConstellation(vertices, [100, 5, 0]);
+    const far = projectConstellation(vertices, [100, 5, 0], 0.08, [1, 1, -1.2]);
+    expect(far.hop).toBeNull();
+    expect(far.segments).toEqual(base.segments);
+    const behind = projectConstellation(vertices, [100, 5, 0], 0.08, [-100, -100, -100]);
+    expect(behind.hop).toBeNull();
   });
 });

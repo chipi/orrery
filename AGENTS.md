@@ -88,26 +88,28 @@ Do not propose alternatives. If a locked decision needs revisiting, write an ADR
 | 3D rendering | Three.js r128, local bundle | ADR-001 |
 | Bundler | Vite (via SvelteKit) | ADR-012 |
 | Routing | History API via SvelteKit router | ADR-013 |
-| CI + staging | GitHub Actions + GitHub Pages (staging tier; dev → staging → prod) | ADR-014 |
+| CI + deploy | GitHub Actions; the app ships to the self-hosted VPS (dev → prod, no staging); GitHub Pages serves only the project docs | ADR-014 |
 | Unit tests | Vitest | ADR-015 |
 | E2e tests | Playwright | ADR-015 |
 | External assets | Resolved at build time | ADR-016 |
 | Imagery sourcing | Agency-first fetch priority; NASA as fallback library | ADR-046 |
 | Outbound LEARN links | Agency-first per-link provenance; native-language priority; `rel="noopener noreferrer external"` + `hreflang` everywhere; public `/library` bill-of-links; link-checker chained into `npm run fetch` | ADR-051 |
-| SEO surface | Indexable entity pages (`/missions/[id]`, `/fleet/[id]`, `/moon\|mars\|venus/[id]`, `/explore/[id]`, `/lab/[id]`) in 14 locales from the panels' data; `pageTitle()` / `metaDescription()`; OG + Twitter from `hooks.server.ts`; JSON-LD; split sitemaps from `scripts/site-routes.mjs`; staging mirror noindex; `check-seo.mjs` gate in every build. A change to what a panel shows should reach its entity page | ADR-096 |
+| SEO surface | Indexable entity pages (`/missions/[id]`, `/fleet/[id]`, `/moon\|mars\|venus/[id]`, `/explore/[id]`, `/explore/stars/[id]`, `/explore/black-holes/[id]`, `/explore/deep-sky/[id]`, `/explore/galaxies/[id]`, `/explore/structures/[id]`, `/lab/[id]`) in 14 locales from the panels' data, linked from the INDEX of the scale each object belongs to; `pageTitle()` / `metaDescription()`; OG + Twitter from `hooks.server.ts`; JSON-LD; split sitemaps from `scripts/site-routes.mjs`; base-path mirror builds noindex; `check-seo.mjs` gate in every build. A change to what a panel shows should reach its entity page | ADR-096 |
 | Provenance + license stewardship | Per-image manifest + text manifest + fail-closed validate-data; public `/credits` page | ADR-047 |
 | i18n | Paraglide-js + locale overlay files | ADR-017 |
 | Design approach | Mobile-first, bottom sheet panels | ADR-018 |
 | Data validation | ajv JSON schema on PR | ADR-019 |
 | Mission data | Static JSON under `static/data/` (served as `/data/...`) | ADR-006 |
 | Mission flight params | Optional `flight` sub-object + `flight_data_quality` honesty flag | ADR-027 |
-| Panel tabs + galleries | Tabbed detail panels (OVERVIEW · GALLERY · TECHNICAL · SIZES · LEARN · FLIGHT); GALLERY is always the 2nd tab when present (conditional on per-category manifest); LEARN links in locale overlays | ADR-017, ADR-016 |
+| Panel tabs + galleries | Tabbed detail panels (OVERVIEW · GALLERY · IN THE SKY (stars and deep-sky objects) · TECHNICAL · SIZES · LEARN · FLIGHT); GALLERY is always the 2nd tab when present (conditional on per-category manifest); LEARN links in locale overlays | ADR-017, ADR-016 |
+| Star / outer-scale / black-hole panels | One shared `UniversePanelBody` (and `UniverseFacts`): one hero or none (no hero, no slot), GALLERY second and only with two or more images, a star's IN THE SKY tab holds the constellation finder, lead `.editorial`, no `rem` font size; heroes from `static/data/universe/panel-heroes.json` (every key needs a file and a provenance row, checked by validate-data); a black hole opens in place and "See the lensing simulation" enters the takeover; enforced by `bash scripts/check-universe-panels.sh` | UXD-023 |
 | Lambert solver | Web Worker | ADR-008 |
 | Default fly scenario | ORRERY-1 free-return flyby (library missions add landings / cislunar arcs) | ADR-009 |
 | Transfer arc | Keplerian half-ellipses | ADR-010 |
 | `/science` math rendering | KaTeX server-rendered at build; client receives plain HTML, no JS math library | ADR-034 |
 | `/science` diagrams | Hand-coded SVG sources committed under `static/diagrams/science/`; fail-closed `validate-diagrams.ts` integrity check chained into `validate-data` | ADR-035 |
 | `/science` cross-screen `?` chips | Click navigates to `/science/[tab]/[section]`; desktop hover shows section intro_sentence as `title` tooltip; min 24×24px hit area | ADR-036 |
+| Science link lists in panels | At most 5 `ScienceCard`s per panel through `pickScienceLinks` (`src/lib/science-links.ts`); no per-type default list; lists curated per body (overlay `science_sections`), per module / Earth object (`science` slugs) and ranked per mission class; the `tab`/`section` pair identical in all 14 locales; enforced by `src/lib/science-links.test.ts` and `node scripts/check-science-links.mjs` | UXD-022 |
 | Service worker / PWA | `@vite-pwa/sveltekit`; offline shell after first paint; `data-high-contrast` attribute on `<html>` is the pattern Science Lens copies | ADR-029 |
 | Translation workflow | Hand edits first (`scripts/i18n-tools/`, glossary first); paid LLM runs via `scripts/translate-*.mjs` + `scripts/retranslate-fields.mjs` only with the operator's go, model per locale from `translationModel()` (Haiku; Sonnet for problem locales, today sr-Cyrl), shared rules + output checks in `scripts/lib/translate-quality.mjs`; names by the origin rule (i18n style guide §2) | ADR-033 |
 | Fonts + script strategy | Wave 1 (Latin+Cyrillic) bundled Inter + Crimson Pro; Wave 2 CJK Noto Sans/Serif CJK; RTL Arabic via `dir="rtl"`; sr-Cyrl Cyrillic gate | ADR-032, ADR-043, ADR-044, ADR-045 |
@@ -155,7 +157,7 @@ Superseded (do not use): ADR-002 (vanilla JS), ADR-003 (Vite standalone), ADR-00
 │   │   └── library/+page.svelte        ← v0.5.0 (ADR-051) — outbound link inventory
 │   ├── lib/
 │   │   ├── components/
-│   │   │   ├── Nav.svelte                     ← shared 52px nav bar + locale picker
+│   │   │   ├── Nav.svelte                     ← shared 52px nav bar + compact controls + More menu
 │   │   │   ├── AudioOverlay.svelte            ← v0.7 audio narration overlay (PRD-016 / RFC-019)
 │   │   │   ├── ScienceLensBanner.svelte       ← collapsible banner (ADR-055)
 │   │   │   ├── ScienceLayersPanel.svelte      ← per-layer sub-toggles (12 layers)
@@ -248,7 +250,7 @@ Superseded (do not use): ADR-002 (vanilla JS), ADR-003 (Vite standalone), ADR-00
 │   │   ├── earth-objects.json        ← satellites + observatories (`fleet_refs` per ADR-052)
 │   │   ├── planets.json
 │   │   └── rockets.json
-│   └── .nojekyll           ← required for GitHub Pages
+│   └── .nojekyll           ← legacy: the app no longer ships to GitHub Pages
 │
 ├── scripts/                            ← standing build-time tools (full map: docs/reference/tooling/)
 │   │                                      one-shots live in scripts/_archive/ (see tooling/archive.md)
@@ -280,9 +282,9 @@ Superseded (do not use): ADR-002 (vanilla JS), ADR-003 (Vite standalone), ADR-00
 └── .github/workflows/
     ├── ci.yml
     ├── docker-e2e.yml         # canonical Playwright gate + GHCR publish (ADR-071 supersedes ADR-066 trigger surface)
-    ├── deploy-docs.yml        # docs site, CI-gated (ADR-070)
-    ├── staging.yml            # full app+docs, docker-e2e-gated (ADR-070, retargeted by ADR-071)
+    ├── deploy-docs.yml        # docs-only gh-pages publish + root forwarder, CI-gated (ADR-070)
     ├── deploy-prod.yml        # tailnet VPS deploy, manual (#260)
+    ├── validate-prod.yml      # deep validation after every prod deploy + daily
     ├── refresh-launches.yml   # cron — launches.json refresh
     ├── regen-snapshots.yml    # manual — visual-baseline regen
     └── release.yml            # tag → GitHub Release
@@ -294,7 +296,7 @@ Superseded (do not use): ADR-002 (vanilla JS), ADR-003 (Vite standalone), ADR-00
 
 **Before reaching for a script, check [`docs/reference/tooling/`](docs/reference/tooling/README.md)** — the canonical map of every *standing* tool (build/CI, data validation, image pipeline, content pipelines) with what/when/gotchas. It supersedes guessing from `scripts/` filenames: one-shot wave/slice/migration scripts now live in `scripts/_archive/` (don't re-run them — read for the recipe, then use the standing tool). Deep end-to-end references stay authoritative: [TA.md §pipelines](docs/adr/TA.md), [`scripts/IMAGE-PIPELINE.md`](scripts/IMAGE-PIPELINE.md), the `docs/guides/` runbooks.
 
-Highest-frequency surface: `npm run preflight` (pre-push gate, no e2e), `npm run validate-data` (data gates), `npm run validate-prod` (**post-deploy** live-site validator — browser-based, ~60 checks incl. a regression guard per prod fix; `VALIDATE_URL=…` to target staging/local; see `docs/ops/prod-validator.md`), `npm run audit:images` (every shipped image is used), `npm run fetch-assets` (stages to `_staging/` → review at `/dev/staging` → `npm run build-image-provenance -- --offline`), `npm run images:hotspots` (Mars/Moon surface detail, Node 22 + gdal). New standing tool → add a row to the matching tooling page; retired tool → move to `_archive/` + note in `tooling/archive.md`.
+Highest-frequency surface: `npm run preflight` (pre-push gate, no e2e), `npm run validate-data` (data gates), `npm run validate-prod` (**post-deploy** live-site validator — browser-based, ~60 checks incl. a regression guard per prod fix; `VALIDATE_URL=…` to target a local preview; see `docs/ops/prod-validator.md`), `npm run audit:images` (every shipped image is used), `npm run fetch-assets` (stages to `_staging/` → review at `/dev/staging` → `npm run build-image-provenance -- --offline`), `npm run images:hotspots` (Mars/Moon surface detail, Node 22 + gdal). New standing tool → add a row to the matching tooling page; retired tool → move to `_archive/` + note in `tooling/archive.md`.
 
 ---
 
@@ -461,7 +463,7 @@ The image sourcing + dedup + attribution pipeline has four parts that have to st
 
 **pHash baseline snapshotting.** `scripts/snapshot-phash-baseline.ts` writes the residual pairs that pass through to `static/data/phash-baseline-allowlist.json`. It MUST read `INLINE_ALLOWLIST` from `scripts/validate-image-phash-dupes.ts` and exclude those pairs — otherwise re-running the snapshot after categorisation re-bloats the baseline JSON with the same pairs you just moved inline. The snapshot script parses the TS source as text for the keys; this is brittle but avoids a circular import.
 
-**Gallery count manifests** (`static/data/fleet-galleries.json`, `mission-galleries.json`) are `<id, slot-count>` maps the gallery loader uses to enumerate URLs. **Drift produces silent 404s** when manifest > disk, or hidden images when manifest < disk. `validate-gallery-counts` (in preflight as of 2026-06-14) catches drift. If you ever delete or rename gallery slots, sync the count manifest in the same commit. **One image library per place (2026-11-09):** a gallery has as many slots as there are real photos (the old "5 slots" was a one-off prune convention, not a gate); supporting surfaces — Apollo annotation ring photos (`moon-annotation-photos.json`), site stories — reference gallery slots instead of keeping separate image pools, and the hero stays slot 01. New photos for a place are the next numbered slot; `scripts/move-image-to-gallery.ts` moves an already-built ladder in with every manifest.
+**Gallery count manifests** (`static/data/fleet-galleries.json`, `mission-galleries.json`) are `<id, slot-count>` maps the gallery loader uses to enumerate URLs. **Drift produces silent 404s** when manifest > disk, or hidden images when manifest < disk. `validate-gallery-counts` (in preflight as of 2026-06-14) catches drift. If you ever delete or rename gallery slots, sync the count manifest in the same commit. **One image library per place (2026-11-09):** a gallery has as many slots as there are real photos (the old "5 slots" was a one-off prune convention, not a gate); supporting surfaces — Apollo annotation ring photos (`moon-annotation-photos.json`), site stories — reference gallery slots instead of keeping separate image pools, and the hero stays slot 01. New photos for a place are the next numbered slot; `scripts/move-image-to-gallery.ts` moves an already-built ladder in with every manifest. **Planet heroes (UXD-029, B-033):** a planet panel's hero is one picture of the planet itself in natural or published colour (no artist concept, spacecraft, map or inset), drawn `contain` on `#000` in the 16:9 box so the whole disc shows; never change a planet hero without the side-by-side sheet and the operator's yes.
 
 **Spacecraft anatomy art is a SEPARATE pipeline** — AI-generated watercolor cutaways / pencil sketches under `static/images/anatomy/*.webp`, surfaced on the fleet DETAIL tab + `/colophon` (#367). To generate more **without style drift**, follow [`docs/anatomy-art-runbook.md`](docs/anatomy-art-runbook.md) — the verbatim prompt recipes, fixed model/aspect, reference-image anti-drift, the auto-derived `anatomy-ids.json` manifest, and the remaining-craft list. Do NOT hand-edit `src/lib/anatomy-ids.json` (regenerated by `scripts/build-anatomy-webp.mjs`).
 
@@ -498,14 +500,14 @@ Design at 375px first. Desktop is progressive enhancement.
 ```css
 /* correct — mobile base, desktop enhancement */
 .panel { position: fixed; bottom: 0; width: 100%; }
-@media (min-width: 768px) { .panel { right: 0; width: 314px; top: 52px; bottom: 0; } }
+@media (min-width: 768px) { .panel { right: 0; width: 400px; top: 52px; bottom: 0; } }
 
 /* wrong — desktop base, mobile override */
-.panel { position: fixed; right: 0; width: 314px; }
+.panel { position: fixed; right: 0; width: 400px; }
 @media (max-width: 767px) { .panel { bottom: 0; width: 100%; } }
 ```
 
-Touch targets: minimum 44×44px. Three.js screens: single-finger orbit, two-finger zoom. Bottom sheet dismisses with swipe-down.
+Touch targets: minimum 44×44px. Three.js screens: single-finger orbit, two-finger pinch to zoom and drag to pan (`src/lib/three/touch-gestures.ts`; OrbitControls scenes set `ORBIT_CONTROLS_TOUCHES`). Bottom sheet dismisses with swipe-down.
 
 ---
 
@@ -716,19 +718,117 @@ Only genuinely amd64-specific work (visual snapshot **baselines**) actually need
 
 ```
 Background:    #04040c
-Accent blue:   #4466ff
-Teal:          #4ecdc4
+Accent blue:   #5070ff   --color-accent, the one UI accent: links, active states, chips,
+                         HUD values, glyphs (UX A3, docs/uxs/decisions/UXD-001-ui-accent-blue-replaces-teal.md)
+Muted blue:    #889fe7   --color-state: annotation rings, hover, status; also the colour for
+                         small text (< 14px bold / < 18px) on a lifted card (D is 4.37:1 there)
+Success green: #4ade80   --color-ok (a state, not an accent; hue 142, never teal)
+No teal or cyan in the UI. Lab art, science diagrams and data colours (orbit regimes, agency /
+nation identity, era bands, star colours, axes, the /plan heat map) keep their own and carry
+`a3-keep: <why>`. No page or component writes its own accent colour: use the tokens
+(--color-accent, -hover, -soft, -edge, -strong, --color-state, --color-focus, --color-ok).
+Solid accent fills take dark text (#04040c), not white. Enforced by the A3 check script and
+tests/e2e/accent-colour.spec.ts.
 Mars red:      #c1440e
 Earth blue:    #4b9cd3
 Gold:          #ffc850
 
 font-display:   'Bebas Neue'    titles, names
 font-mono:      'Space Mono'    data, labels, HUD
-font-editorial: 'Crimson Pro'   descriptions (always italic)
+font-editorial: 'Crimson Pro'   real quotes + photo captions only (italic, >= 14px)
 
-Nav bar:        height 52px, z-index 20
+Type scale (src/lib/styles/tokens.css, UX A1 / Q2, docs/uxs/decisions/UXD-002-type-scale-and-the-11px-floor.md): floor 11px for all DOM and
+SVG UI text and for the 2D UI canvases —
+  --size-label 11px (60% white, --color-text-label) · --size-meta 12px ·
+  --size-body 14px · --size-lead 16px (15px under 600px width; panel overview,
+  upright in Space Mono) · --size-caption 14px (Crimson italic).
+  No text below 11px; no italic outside real quotes and photo captions
+  (mark each kept italic line `a1-keep: <why>`). Text under 12px keeps an
+  effective alpha >= 0.58. Enforced by tests/e2e/type-floor.spec.ts.
+  3D sprite labels of the /explore pin scenes (src/lib/universe/*-scene.ts) are one 12 px
+    in CSS px at every scale and the 2D view's canvas text is 11 px (slice C2, UXD-020;
+    scene-pins.ts, guarded by tests/e2e/explore-readability.spec.ts).
+  Canvas / WebGL text outside the floor (allow-list):
+    not measured, outside C2 — the solar scene's own sprite labels (explore-scene-host.ts),
+      fly-frame-runner.ts, three-label.ts, iconic-trajectory.ts labels (C7), the Milky Way
+      lens overlay labels;
+    keep their own sizes — science charts (CausalityMap, HrDiagram,
+      MassPeriodChart), Lab canvases (src/lib/lab/*Canvas.svelte, hero-canvas.ts,
+      FigureRenderer SVG), station-blueprint.ts texture, static/ diagrams, and
+      dev tools (DebugPanel, AscentCameraDebug, FlybyDebugViewer, src/routes/dev/).
+  Canvases that ARE UI and meet the floor: plan/+page.svelte, SurfaceFlatPatch,
+    surface-2d-map.ts, ConstellationFinder, InstrumentTiles (SizesCanvas draws bodies only
+    since UXD-021; its names are DOM).
+
+Scale bar and HUD (src/lib/universe/scale-bar.ts, src/lib/components/ScaleBar.svelte, UX C3,
+docs/uxs/decisions/UXD-021-explore-hud-scale-bar-picker-pills-references.md):
+  one scale bar for the whole app: a fixed width (120 px, 64 px under 600 px) at every zoom and
+  the value beside it follows the zoom, to three significant digits in the page locale; the
+  Explore strip (a fixed 232 px box, 190 px under 600 px, the label under the bar), the Worlds 3D bar and the flat-patch
+  bar all draw through scale-bar.ts and ScaleBar.svelte, never their own rounding; the six
+  schematic scales draw no bar. The scale picker's ladder opens leftward when the navigator is
+  flush right (align="right", physical offsets) and the flush-right row sits left of a docked
+  side panel (bridge.panelCoverPx), and so do the strip and, by its max-width, the Explore HUD
+  row; the ladder's position is clamped to 8 px from either edge. ONE RESET VIEW per scale, always
+  drawn, disabled when inert: the HUD row's at the solar system, the navigator's at the other seven. The direction pills ("← Vega", "→ star") show only while their owner is
+  hovered or selected. The REFERENCES overlay draws bodies only; names and diameters are a DOM
+  grid in the reader's language (planetName, $lib/explore/planet-sizes.ts). Guarded by
+  tests/e2e/explore-hud.spec.ts.
+
+Pins, rings and labels (src/lib/universe/scene-pins.ts, UX C2, docs/uxs/decisions/UXD-020-explore-readability-pins-rings-labels.md):
+  one 12 px label in CSS px at every /explore scale; one 44 px screen-constant ring on every
+  pin and arm label point (hover and selection #889fe7, the "you are here" anchor gold #ffcf8f
+  at opacity 0.55 at the seven levels that have one, not the solar system); one placement pass
+  (hovered and selected first, ring labels last); sizes come from the pin's view-space depth
+  (`viewDepth`), never the Euclidean distance; the label offset uses the steady glow, never the
+  hover size, and lifts along the camera's screen-up (`liftOnScreen`). A scene writes none of
+  these itself: it takes the constants and helpers from scene-pins.ts. No teal or cyan in a
+  ring, anchor glow or label.
+
+Page shell (src/lib/styles/page-shell.css, UX A2, docs/uxs/decisions/UXD-012-one-page-shell.md):
+  every text page uses .page-shell (1080px; --reading 760, --wide 1400, --inset in the
+  science host), .page-crumb, .page-title (Bebas --size-title clamp(40px, 8vw, 64px)),
+  .page-lead (--size-lead upright), .page-section-label (11px 700 uppercase 60% white),
+  .page-section-title (Bebas 28px). No page defines its own h1 / lead / container rules
+  and no page adds --nav-height padding (the nav is sticky, already in flow). Kept
+  exceptions carry `a2-keep: <why>`. Not on the shell: home (home slice), scenes, Lab,
+  missions/launches/fleet browse tools. A long list on a text page draws its first 10 rows
+  and a "Show all N" chip (UXD-038). Enforced by tests/e2e/page-shell.spec.ts.
+
+Chip (src/lib/styles/chip.css, UX A4, docs/uxs/decisions/UXD-014-one-chip-and-filter.md):
+  every toggle, filter, choice and HUD action is a <Chip> (kind toggle | choice | action
+  | link); 30px on a fine pointer, 44px on a coarse one; 4px radius; 11px uppercase; outline at
+  rest; one active look (soft accent fill, accent edge, white text; the Worlds set --chip-tint
+  for their world colour, Earth keeps the accent); --chip-tone is a per-chip data colour. Filter
+  and choice groups are <ChipGroup role="radiogroup"> (arrow keys). Reset view is
+  ResetViewButton. The FILTERS strip is a compact chip with the count right after the label
+  (key filters_eyebrow). No page or component defines its own chip, pill or toggle rules; kept
+  exceptions carry `a4-keep: <why>`. Small non-chip controls take .ui-hit (24px hit area).
+  Enforced by tests/e2e/chip.spec.ts.
+
+Layer chips (src/lib/components/LayerChipRow.svelte, UXD-015): one flat horizontal row on
+  /explore and every world, from LayerChipRow; a route does not draw its own chip column and the
+  row has no group captions, no master switches, no greyed chip. On a fine pointer the view actions
+  (2D, RESET VIEW, SPIN, AR, SKY) are the first group of the same row, then a 12 px gap and the layer
+  group; RESET VIEW is always rendered (disabled when inert) so no chip shifts. /earth = SURFACE, LAUNCHPADS,
+  MUSEUMS, OBSERVATORIES, ORBITERS (one ORBITERS chip switches every orbiter, as on the other
+  worlds). The scene routes (/moon /mars /venus /explore) have no separate A-Z tab: their INDEX
+  panel carries a real link to each entity page (prerendered while closed, ADR-096 item 11). `/explore` has the same INDEX on all eight scales (`ScaleIndex`, UXD-017; a row's type is a glyph with a tooltip, UXD-045): the neighbourhood's links `/explore/stars/<id>`, the Milky Way's (Sagittarius A*, Cygnus X-1), Virgo's (M87*) and the Cosmic web's (Gargantua, "Fiction") link `/explore/black-holes/<id>`, the neighbourhood's deep-sky rows (and the twin Milky Way globular and Local Group rows, one page per object) link `/explore/deep-sky/<id>`, the Local Group's, Milky Way Magellanic and the four structure scales' rows link `/explore/galaxies/<id>` and `/explore/structures/<id>` (item 18: the files decide; 29 galaxy and 30 structure pages since 2026-11-13), and `/explore` renders every scale's INDEX, hidden unless on screen, so its prerendered HTML is the crawl path (items 13–14, 16 and 17); a scale's rows are built by `getScaleIndexRows` / `src/lib/explore/scale-index.ts`;
+  /missions and /fleet keep EntityIndex at the page foot. Enforced by tests/e2e/chip-row.spec.ts
+  and tests/e2e/index-links.spec.ts.
+
+Select = focus (src/lib/explore/body-ref.ts, UXD-019): selecting an object on /explore, by canvas
+  click, INDEX row, resident, belt member, link or ?id=, opens its panel, rings it (a belt brightens)
+  and takes the camera; a chip turned off clears a selection of its kind and a select turns its chip
+  on; an id with no scene object is plain text, never a link; mission links open in place, newest
+  first; the five outbound craft open the mission panel (their message is a section of it).
+  Enforced by tests/e2e/select-focus.spec.ts.
+
+Nav bar:        height 52px (--nav-bar-height), z-index 40; right-hand controls 32px on fine
+                pointers, 44px on touch (--nav-btn-fine / --nav-btn-touch); High contrast,
+                Share and Debug live in the More menu, drawer rows on phones (UXD-016)
 Panel (mobile): bottom sheet, full width
-Panel (desktop): right drawer, 314px wide
+Panel (desktop): right drawer, 400px wide (--panel-width)
 Touch targets:  min 44×44px
 ```
 
@@ -788,7 +888,7 @@ Hooks self-activate after `npm install` via the `prepare` script (`git config co
 
 ### Before tagging or releasing — full local e2e on BOTH projects
 
-**The pre-push hook is not enough to ship a release.** It runs preflight, which excludes e2e. The CI e2e gate is what holds the auto-deploy chain (`ci.yml` → `docker-e2e.yml` → `staging.yml`) together (per ADR-071); if docker-e2e is red on the tagged commit, the GH Pages deploy never fires and shipping turns into a CI ping-pong.
+**The pre-push hook is not enough to ship a release.** It runs preflight, which excludes e2e. The CI e2e gate (`ci.yml` → `docker-e2e.yml`, per ADR-071) is what proves a commit is safe to deploy; the prod deploy itself is a manual dispatch, so a red docker-e2e on the tagged commit is only caught if you look. Check it before dispatching "Deploy to prod VPS (orrery)".
 
 **Rule: before moving a tag or cutting a GitHub Release, run the full e2e suite locally against both viewports until both are clean.**
 
@@ -817,7 +917,7 @@ The bot regenerates the four linux baselines (credits-head + science-tabs × des
 
 **Pre-tag dry run checklist:**
 
-1. `npm run preflight` — green (it now includes `npm run docs:build`, the VitePress site; a docs build error otherwise first shows up in Deploy preview / Deploy docs after the merge)
+1. `npm run preflight` — green (it now includes `npm run docs:build`, the VitePress site; a docs build error otherwise first shows up in Deploy docs after the merge)
 2. `npm run test:e2e -- --workers=1` — both projects green (or known-broken specs explicitly skipped with a comment)
 3. `git push` — pre-push hook runs preflight again, must pass
 4. Push completes — wait for CI + e2e workflows on main, confirm both green
@@ -935,10 +1035,24 @@ Where the body comes from the matching `## [X.Y.Z]` section in `CHANGELOG.md` (e
 | Action | What it does | What it doesn't do |
 |---|---|---|
 | `git tag v0.6.1` + `git push --tags` | Tag exists; gh sees it; CI deploy chain MAY fire | No GH Release entry; no release notes; no notification |
-| `gh release create v0.6.1 …` | Creates the Release entry tied to the tag | Doesn't trigger Pages deploy; doesn't move the tag |
-| `gh workflow run "Deploy preview" --ref main` | Manually publishes the **staging** site (GitHub Pages) from current main | Doesn't tag; doesn't create a Release; **does NOT touch prod** (the VPS) |
+| `gh release create v0.6.1 …` | Creates the Release entry tied to the tag | Doesn't deploy anything; doesn't move the tag |
+| `gh workflow run "Deploy to prod VPS (orrery)" --ref main` | Deploys current main to **prod** (the VPS); `validate-prod.yml` then validates it automatically | Doesn't tag; doesn't create a Release |
 
-All three steps are needed for a complete release: tag + GH Release + deploy. The **staging** deploy (GitHub Pages, workflow "Deploy preview" / `preview.yml`) auto-fires from a push-to-main IF the CI + e2e workflows pass; if either is red, use `workflow_dispatch` to force it. **Prod (the VPS) is a separate, always-manual step** — `gh workflow run "Deploy to prod VPS (orrery)"` — never auto-triggered. Tiers: **dev → staging (GitHub Pages) → prod (VPS)**; see TA.md §pipelines "Deploy tiers".
+**Release PR regeneration.** The version bump, the offline manifest (`node scripts/mobile/build-offline-manifest.mjs`), the tech BOM (`npm run build-tech-bom`) and the sitemap dates (`npm run route-lastmod`) all go INTO the release PR, before merge. `route-lastmod` writes `src/lib/generated/route-lastmod.json`, the `<lastmod>` of every sitemap URL, from git history, so it needs a full-history checkout (it refuses a shallow clone) and runs LAST, after the content commits it dates and with the tree clean. CI cannot check that it is fresh (it builds from depth 1); `src/lib/route-lastmod.test.ts` only fails when a route has no entry or a date is invalid. A route with no entry gets no `<lastmod>`, never a made-up one.
+
+After the deploy is verified (`orrery-deploy-verify`), run `npm run indexnow -- --dry-run` and, with the operator's go, `npm run indexnow` (IndexNow submission of every sitemap URL; `docs/ops/indexnow.md`). It is not a release gate and CI does not run it.
+
+All three steps are needed for a complete release: tag + GH Release + deploy. There is **no staging tier** (2026-11 decision). **Release order** (fixed after 0.9.8 shipped saying "v0.9.7" in the footer, because the bump came after the deploy):
+
+| # | Step | Gate |
+|---|---|---|
+| 1 | The release PR carries the version bump, the CHANGELOG entry, the offline manifest, the tech BOM, the iOS version and the sitemap dates | `check-version-sync.mjs` green |
+| 2 | Merge; CI + docker-e2e green on the merge commit | CI |
+| 3 | `gh workflow run "Deploy to prod VPS (orrery)" --ref main` deploys that exact commit | manual dispatch |
+| 4 | Verify on prod (`validate-prod`, `orrery-deploy-verify`): the footer version equals `package.json` (`version` suite, `scripts/lib/footer-version.mjs`) | `validate-prod` exit 0 |
+| 5 | Tag that same deployed commit and `gh release create` | after step 4 |
+
+Never bump the version in a separate commit after the deploy, and never tag before step 4. The deploy is always manual, never auto-triggered, so dispatch it only for a commit whose CI + docker-e2e are green. GitHub Pages serves only the project docs (`deploy-docs.yml`, CI-gated). Tiers: **dev → prod (VPS)**; see TA.md §pipelines "Deploy tiers".
 
 ---
 
@@ -986,7 +1100,7 @@ When code and TA.md / ADRs disagree, one is wrong. Fix the wrong one. Do not tol
 - Do not introduce `waitForTimeout(<magic>)` in Playwright tests — use a deterministic readiness signal (`window.__pickAt`, `data-route-ready`, `data-loading`, `expect(...).toHave...`). Brittle on slow CI. See ADR-056.
 - Do not call `console.error` from production code paths the user sees — pipe through a centralised handler instead, so we don't pollute Sentry-style error feeds when added.
 - Do not add a fleet entry without bidirectional `fleet_refs` ↔ `linked_missions` / `linked_sites` pointers — the symmetric-link validator in `validate-data.ts` will fail closed. See ADR-052.
-- Do not include artist's-impression imagery for vehicles that exist or existed. Planned-only vehicles carry an explicit `artistic-impression: true` waiver flag. See ADR-046, ADR-053.
+- A flown vehicle's hero (the blessed slot: `*-hero-overrides.json`, else 01) is a photograph, not an artist's concept, illustration or computer graphic. Planned-only vehicles (`status: PLANNED`) are exempt; a vehicle with no photograph gets an `artistic_impressions` waiver in `static/data/license-waivers.json` (exact slot, justification, reviewer, decided_at). A gallery slot that is a concept says so in **both** its provenance title (`(artist's concept)`, `(computer render)`, …) and its en-US alt text; a false-positive word goes in `not_concept` with a reason. `scripts/validate-image-depiction.ts` (validate-data) fails otherwise; the concept heroes that exist today are frozen in `static/data/hero-concept-baseline.json`, which the hero review clears and which only shrinks. See ADR-046, ADR-053 (amendment 2026-11-13).
 - Do not generate science / fleet / station / spacecraft SVG diagrams via AI tools — every diagram is hand-authored and the SVG file *is* the committed source. See ADR-035, ADR-053.
 - Do not introduce a new 3D model builder ad-hoc — follow the per-mission pattern in `src/lib/earth-satellite-models.ts` (orbiters) or `src/lib/moon-lander-models.ts` (surface) and add it to the BUILDERS dispatch + tests.
 - Do not bypass the `flight.cislunar_profile` contract on Moon missions — `/fly` reads it via `cislunar-geometry.ts` to render the Earth-centered second camera. See ADR-058.

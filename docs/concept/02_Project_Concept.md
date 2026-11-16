@@ -53,13 +53,13 @@ Data quality is stated honestly. Missions with sparse records carry a RECONSTRUC
 
 The visual language is WIRED magazine spread meets NASA trajectory diagram. Neither dominates. Both are present.
 
-Three typefaces only. Bebas Neue for mission names and screen titles — bold, spatial, poster-scale. Space Mono for all data — monospace precision, numbers that align. Crimson Pro italic for editorial descriptions and facts — the historian's voice, humanist and precise in the same stroke.
+Three typefaces only. Bebas Neue for mission names and screen titles — bold, spatial, poster-scale. Space Mono for all data — monospace precision, numbers that align. Space Mono upright for descriptions and facts too, at lead size. Crimson Pro italic only for real quotes and photo captions — the historian's voice, kept for the few places that are literally quoted or captioned.
 
 Background: `#04040c` — near-black with a blue undertone. Space, not void.
 
 Agency colours are used consistently across every screen. NASA blue. CNSA red. ISRO orange. Roscosmos dark crimson. The colour of a mission card is the colour of the agency that flew it.
 
-The detail panel that slides in from the right is the heart of the interface. Every planet, every orbital object, every landing site, every historical mission has one. It contains the same structure every time: identity, data, a left-border "still on the surface" or "road to Mars" contextual block, an editorial description in Crimson Pro italic, and educational links in three tiers — INTRO (Wikipedia, agency pages), CORE (MIT OpenCourseWare, technical overviews), DEEP (peer-reviewed papers, primary sources). The tier system is colour-coded consistently across all six screens.
+The detail panel that slides in from the right is the heart of the interface. Every planet, every orbital object, every landing site, every historical mission has one. It contains the same structure every time: identity, data, a left-border "still on the surface" or "road to Mars" contextual block, an editorial description (Space Mono upright lead), and educational links in three tiers — INTRO (Wikipedia, agency pages), CORE (MIT OpenCourseWare, technical overviews), DEEP (peer-reviewed papers, primary sources). The tier system is colour-coded consistently across all six screens.
 
 ---
 

@@ -86,5 +86,26 @@
   "link_labels": {
     "/explore": "Jupiter dans l'explorateur 3D",
     "/programs/cassini": "Cassini — la même idée, autour de Saturne"
+  },
+  "roster": {
+    "mission:galileo": {
+      "note": "le premier vaisseau en orbite autour de Jupiter — près de huit ans à étudier de près la planète géante et ses grandes lunes"
+    },
+    "The atmospheric probe": {
+      "note": "à son arrivée, Galileo a largué une sonde qui a plongé dans les nuages de Jupiter — le premier et seul échantillon direct de l'atmosphère d'une planète géante",
+      "name": "La sonde atmosphérique"
+    },
+    "Europa's hidden ocean": {
+      "note": "les données magnétiques et d'imagerie de Galileo ont fourni l'argument le plus solide à ce jour qu'un océan d'eau liquide se trouve sous la glace de la lune jovienne Europe",
+      "name": "L'océan caché d'Europe"
+    },
+    "The stuck antenna": {
+      "note": "l'antenne principale ne s'est pas entièrement déployée ; la mission a été sauvée par un nouveau logiciel de compression de données envoyé au vaisseau, qui a sauvé l'essentiel de la science par une liaison au débit d'escargot",
+      "name": "L'antenne coincée"
+    },
+    "The deliberate end": {
+      "note": "à court de carburant, Galileo a été précipitée volontairement dans Jupiter, pour être certain qu'elle ne puisse jamais s'écraser sur Europe et contaminer son océan",
+      "name": "La fin délibérée"
+    }
   }
 }

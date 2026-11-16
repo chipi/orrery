@@ -19,5 +19,19 @@
   "models-ref-agencies": "宇宙機関とメーカーの公式ページ（Roscosmos、SpaceX、ユナイテッド・ローンチ・アライアンス、ボーイング、ノースロップ・グラマン、ファイアフライ、アリアンスペース、中国有人宇宙事業弁公室とCASC、米国宇宙軍）。ロケットと宇宙船モデルの機体寸法の出典です。",
   "models-ref-independent": "独立した宇宙飛行の資料と博物館のページ（Gunter’s Space Page、Encyclopedia Astronautica、RussianSpaceWeb、スミソニアン国立航空宇宙博物館、シュパイヤー技術博物館など）。ソ連、スペースシャトル、Buran時代の機体の大きさの出典です。",
   "nasa-mmgis-rover-traverses": "Curiosity と Perseverance のローバーチームが公開した走行経路。火星表面ビューにソルと走行距離とともに描画します。",
-  "pds-mer-traverses": "Spirit と Opportunity の科学チームが公開した走行経路。火星表面ビューにソルと走行距離とともに描画します。"
+  "pds-mer-traverses": "Spirit と Opportunity の科学チームが公開した走行経路。火星表面ビューにソルと走行距離とともに描画します。",
+  "cds-simbad-vizier": "出典付きの各値のリンク先となる天体ページと、距離とV等級の根拠となるSIMBADおよびVizieRの表。",
+  "ned": "銀河の距離のリンク先となる銀河ページと、銀河の照合に使う名称と位置。",
+  "gaia-dpac": "星団と球状星団の距離の根拠となるGaiaの測定（Hunt & Reffert 2023、Baumgardt & Vasiliev 2021）。",
+  "open-cluster-catalogues": "Gaiaに基づくメシエ星団と星団星雲の距離。Hunt & Reffert 2023を優先し、Cantat-Gaudin et al. 2020は代替値として、また注記の別案として使用。",
+  "globular-cluster-catalogues": "球状星団の距離はBaumgardt & Vasiliev 2021、総合V等級はハリスのカタログによる（ハリス自身の距離は注記に残す）。",
+  "cosmicflows-4": "メシエ銀河とギャラリー銀河の距離はCosmicflows-4による。",
+  "mcconnachie-2012": "局所銀河群の銀河、およびマゼラン雲とM33内の星団・星雲の距離は、McConnachie 2012による。",
+  "jpl-keplerian-elements": "惑星の位置のための JPL の近似ケプラー要素（Standish）。物理ラボはこの要素から計算し、ミッション軌道に使う惑星モデルがそこから 0.6° 以内に収まることをテストで確認しています。",
+  "jpl-horizons-sun": "2026 年の毎日の太陽の見かけの位置（赤経/赤緯）。JPL の Horizons システム（DE441）から取得し、スナップショットとして保存。深宇宙天体の「星空で」タブはこれを読み、天体が高度 20° 以上にあり、かつ太陽が地平線の 18° より下にある月と、その時間数を求める。月ごとの範囲は、4 地点の Horizons の表と米海軍天文台の天測航法サービスと照合している。",
+  "jpl-planetary-parameters": "惑星の物理パラメータ（大きさ、質量、自転、表面の値）をまとめた JPL の表。科学記事の惑星統計の出典として引用しています。",
+  "jpl-satellite-parameters": "惑星の衛星の軌道要素と物理パラメータをまとめた JPL の資料。科学記事で衛星の軌道と大きさ、ヒル球の数値の出典として引用しています。",
+  "lroc-nac-traverses": "LRO カメラチームが狭角カメラ（NAC）の画像から地図化した走行経路：Apollo 15 と 16、Lunokhod 1 と 2、Yutu-2。Orrery が単純化して月面ビューに描画します。",
+  "usgs-apollo17-traverse": "USGS Astrogeology が地図化した Apollo 17 の月面車の走行経路（Haase ほか 2019）。タウルス・リトロー谷の LROC オルソモザイクに位置合わせし、各ステーションとともに月面ビューに描画します。",
+  "hirise-zhurong-traverse": "Mars Reconnaissance Orbiter の HiRISE カメラがとらえた中国の火星ローバー Zhurong の車輪跡（NASA/JPL/アリゾナ大学）。Orrery がこれをたどって火星表面ビューの経路を描いており、精度は約 20 m です。"
 }

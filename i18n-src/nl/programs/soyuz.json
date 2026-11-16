@@ -90,5 +90,11 @@
   "link_labels": {
     "/earth": "Aarde — banen, rendez-vous & lanceerplaatsen",
     "/science/mission-phases/edl": "Intrede, daling & landing"
+  },
+  "roster": {
+    "Soyuz 4 & 5": {
+      "note": "eerste koppeling van twee bemande ruimtevaartuigen + de eerste bemanningsoverdracht, per ruimtewandeling tussen de twee schepen",
+      "name": "Soyuz 4 en 5"
+    }
   }
 }

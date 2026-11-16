@@ -83,5 +83,19 @@
     "/programs/mir": "Mir: la estación modular de la que desciende el segmento ruso",
     "/programs/salyut": "Salyut: las primeras estaciones de Rusia",
     "/programs/iss": "EEI: la colaboración que Rusia abandona"
+  },
+  "roster": {
+    "Announced": {
+      "note": "Rusia declara que abandonará la asociación de la ISS y construirá su propia estación nacional — un regreso al modelo de ir por libre de Salyut y Mir",
+      "name": "Anunciada"
+    },
+    "First module": {
+      "note": "el lanzamiento previsto del primer módulo UUM de la Estación Orbital Rusa (ROS); se espera la estación completa a finales de los años 2020",
+      "name": "Primer módulo"
+    },
+    "ISS withdrawal": {
+      "note": "el calendario declarado por Rusia para poner fin a su participación en la ISS y trasladar a sus cosmonautas a su propia estación",
+      "name": "Salida de la ISS"
+    }
   }
 }

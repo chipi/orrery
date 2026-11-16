@@ -1,0 +1,48 @@
+{
+  "name": "Chandrayaan-2",
+  "vehicle": "LVM3 M1 (ehemals GSLV Mk III)",
+  "payload": "3850 kg Startmasse; 2379 kg Orbiter; 1471 kg Vikram-Lander einschließlich des 27 kg schweren Pragyan-Rovers",
+  "delta_v": "~3.5 km/s (Schätzwert)",
+  "type": "ORBITER ARBEITET · LANDER VERLOREN",
+  "first": "Indiens erster Versuch einer Weichlandung auf dem Mond",
+  "description": "Chandrayaan-2 war die zweite Mondmission der ISRO und ihr erster Versuch einer Weichlandung: ein Orbiter, der Vikram-Lander und der 27 kg schwere Pragyan-Rover, die am 2019-07-22 gemeinsam von Sriharikota starteten. Der Orbiter wurde am 2019-08-20 in die Mondumlaufbahn eingefangen, Vikram trennte sich am 2019-09-02, und der Lander begann am 2019-09-06 seinen Bremsabstieg zur südlichen Polarregion. In etwa 2.1 km Höhe riss der Kontakt ab, und Vikram stürzte ab; ein Untersuchungsausschuss führte den Verlust auf eine Kombination von Faktoren zurück, darunter ein Softwarefehler bei Lenkung und Steuerung des Abstiegs. Der Lunar Reconnaissance Orbiter (LRO) der NASA fand später die Einschlagstelle (70.881° S, 22.784° E), nachdem ein Freiwilliger aus Chennai in seinen Bildern Trümmer entdeckt hatte. Der Orbiter arbeitete weiter: Seine acht Instrumente (CLASS, XSM, DFSAR, IIRS, ChACE-2, TMC-2, RAMBHA-DFRS und OHRC) kartierten den Mond 2026 noch immer aus einer polaren Bahn, und seine OHRC-Kamera bildete später auch die Landestelle von Chandrayaan-3 ab.",
+  "events": [
+    {
+      "met": 0,
+      "label": "START",
+      "note": "LVM3 M1 (ehemals GSLV Mk III) von Sriharikota 2019-07-22.",
+      "type": "nominal"
+    },
+    {
+      "met": 22.49,
+      "label": "TLI",
+      "note": "Einschuss zum Mond 2019-08-13, nach einer Reihe von Zündungen zur Anhebung der Erdumlaufbahn.",
+      "type": "nominal"
+    },
+    {
+      "met": 28.76,
+      "label": "LOI",
+      "note": "Mondorbiteinschwung 2019-08-20 in eine Bahn von 18,072 x 114 km.",
+      "type": "nominal"
+    },
+    {
+      "met": 41.94,
+      "label": "VIKRAM-TRENNUNG",
+      "note": "Vikram trennt sich mit dem Pragyan-Rover im Inneren am 2019-09-02 vom Orbiter.",
+      "type": "nominal"
+    },
+    {
+      "met": 46.45,
+      "label": "LANDER VERLOREN",
+      "note": "Der Bremsabstieg beginnt gegen 20:08 UTC am 2019-09-06 (in Indien der 7. September); in etwa 2.1 km Höhe reißt der Kontakt ab, und Vikram stürzt ab.",
+      "type": "warning"
+    },
+    {
+      "met": 133,
+      "label": "ABSTURZSTELLE GEFUNDEN",
+      "note": "Der LRO der NASA lokalisiert die Einschlagstelle von Vikram (70.881° S, 22.784° E), bekanntgegeben am 2019-12-02; der Orbiter kartiert weiter.",
+      "type": "info"
+    }
+  ],
+  "vehicle_stage": "kryogene Oberstufe der LVM3"
+}

@@ -80,7 +80,8 @@
       "note": "first uncrewed Shenzhou test flight — the proof that China could fly its own crew capsule"
     },
     {
-      "name": "Shenzhou 5",
+      "linked_id": "shenzhou-5",
+      "ref": "mission",
       "year": 2003,
       "note": "Yang Liwei becomes the first Chinese astronaut in orbit — China joins the US and USSR as the third nation to launch a human on its own rocket"
     },
@@ -92,7 +93,8 @@
     {
       "name": "Continuous occupation",
       "year": 2022,
-      "note": "permanent crewing begins with Shenzhou-14 in June 2022; the CSS has been continuously crewed ever since"
+      "note": "permanent crewing begins with Shenzhou-14 in June 2022; the CSS has been continuously crewed ever since",
+      "milestone": true
     }
   ],
   "related_programs": [

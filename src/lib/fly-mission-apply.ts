@@ -5,7 +5,11 @@ import {
   type MissionTimeline,
   type Vec2,
 } from '$lib/physics/transfer/mission-arc';
-import { type DestinationId } from '$lib/physics/transfer/lambert-grid.constants';
+import {
+  type DestinationId,
+  type MoonMissionDestId,
+} from '$lib/physics/transfer/lambert-grid.constants';
+import { moonFlightName } from '$lib/plan/flight-destination';
 import { ARC_STEPS, moonHelioPos, moonHelioArc, buildArcs } from '$lib/fly-moon-arc';
 import {
   buildSplineFromTrajectoryWaypoints,
@@ -101,12 +105,20 @@ export interface LoadedMission {
   /** The /fly window ends at a perihelion, not at a body (Parker, Solar Orbiter): the camera
    *  frames the craft by the Sun, and activeDestination's Mars is only a stand-in. */
   sunTarget?: boolean;
+  /** The mission record has neither a `flight` block nor a `flight_data_quality`: the mission
+   *  panel offers no Fly chip, and a typed URL must not play a launch either (the launcher
+   *  falls back to a generic profile for any vehicle string, so STS-51-L would reach orbit). */
+  noFlight?: boolean;
   /** Transit days from the raw mission index — used by #86 opening
    *  to surface "TRANSIT · 6.7 years" without recomputing. */
   transit_days?: number;
   /** Cross-links to fleet entries (Phase 3 backfill). Surfaced by
    *  #86 opening as labeled chips. */
   fleet_refs?: Array<{ id: string; role: 'launcher' | 'spacecraft' | 'payload' | 'launch-site' }>;
+  /** A /plan flight to a planetary moon (ADR-086): the arc is the HOST planet's
+   *  (`activeDestination`), and this names the moon the flight is going to. The moon is
+   *  drawn from it. */
+  targetMoon?: MoonMissionDestId;
 }
 
 export interface MissionApplyDefaults {
@@ -234,6 +246,7 @@ function buildMissionMeta(
     isFromData: true,
     flight: m.flight,
     flight_data_quality: m.flight_data_quality,
+    noFlight: m.flight == null && m.flight_data_quality == null,
     description: m.description,
     agency: m.agency,
     agency_full: m.agency_full,
@@ -606,6 +619,17 @@ export interface PlanApplyDefaults {
   dvFallback: number;
 }
 
+/** What /plan hands /fly beyond the arc: the chosen rocket, its payload line, the mission's
+ *  destination enum and, for a planetary moon, the moon (UXD-042). All optional: a /fly URL
+ *  without `rocket=` still flies, as before. */
+export interface PlanFlightExtras {
+  vehicle?: string;
+  payload?: string;
+  fleet_refs?: LoadedMission['fleet_refs'];
+  dest?: Destination;
+  targetMoon?: MoonMissionDestId;
+}
+
 export interface PlanApplyResult {
   timeline: MissionTimeline;
   /** FLYBY = free-return; LANDING = one-way. */
@@ -646,6 +670,7 @@ export function computePlanApply(
   depDay: number,
   tofDays: number,
   defaults: PlanApplyDefaults,
+  extras: PlanFlightExtras = {},
 ): PlanApplyResult {
   const isFlyby = type === 'FLYBY';
   const flybyOffset = isFlyby ? tofDays : Math.floor(tofDays * FLYBY_OFFSET_FRACTION);
@@ -667,9 +692,14 @@ export function computePlanApply(
     cislunarTrajectory: null,
     interplanetaryTrajectory: null,
     missionMeta: {
-      name: `EARTH → ${destLabel.toUpperCase()} · ${type}`,
-      vehicle: '—',
-      payload: '—',
+      name: extras.targetMoon
+        ? moonFlightName(extras.targetMoon, type)
+        : `EARTH → ${destLabel.toUpperCase()} · ${type}`,
+      vehicle: extras.vehicle ?? '—',
+      payload: extras.payload ?? '—',
+      ...(extras.dest ? { dest: extras.dest } : {}),
+      ...(extras.fleet_refs ? { fleet_refs: extras.fleet_refs } : {}),
+      ...(extras.targetMoon ? { targetMoon: extras.targetMoon } : {}),
       dv_total: defaults.dvFallback,
       dv_used: null,
       dep_label: `Day ${depDay}`,
@@ -678,7 +708,7 @@ export function computePlanApply(
       isFromData: true,
     },
     missionEvents: [],
-    appliedId: `plan-${dest}-${type}`,
+    appliedId: `plan-${extras.targetMoon ?? dest}-${type}`,
   };
 }
 
@@ -713,6 +743,7 @@ export function computePlanApplyMoon(
   depDay: number,
   tofDays: number,
   defaults: PlanApplyDefaults,
+  extras: PlanFlightExtras = {},
 ): MoonPlanApplyResult {
   const timeline: MissionTimeline = {
     dep_day: depDay,
@@ -743,8 +774,10 @@ export function computePlanApplyMoon(
     interplanetaryTrajectory: null,
     missionMeta: {
       name: 'EARTH → MOON · LANDING',
-      vehicle: '—',
-      payload: '—',
+      vehicle: extras.vehicle ?? '—',
+      payload: extras.payload ?? '—',
+      ...(extras.dest ? { dest: extras.dest } : {}),
+      ...(extras.fleet_refs ? { fleet_refs: extras.fleet_refs } : {}),
       dv_total: defaults.dvFallback,
       dv_used: null,
       dep_label: `Day ${depDay}`,

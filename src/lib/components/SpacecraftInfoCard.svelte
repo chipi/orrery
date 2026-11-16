@@ -103,24 +103,25 @@
     border-radius: 4px;
     backdrop-filter: blur(6px);
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.85);
     min-width: 180px;
     width: 220px;
     box-sizing: border-box;
   }
+  /* Label/value grid, the same rule as /fly's .hud: one label column shared by the rows,
+     the value wraps inside its own column. */
   .rows {
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
+    display: grid;
+    grid-template-columns: fit-content(50%) minmax(0, 1fr);
+    column-gap: 10px;
+    row-gap: 3px;
+    align-items: baseline;
     margin: 0;
   }
   .row {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 8px;
+    display: contents;
   }
   /* Match the .hud-key / .hud-val typography in /fly's upper panels so
      this card reads as part of the same column rather than a different
@@ -128,20 +129,24 @@
      7px/2px/0.35 — looked off when stacked together). */
   .row dt {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 7px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
     font-weight: 700;
-    color: rgba(255, 255, 255, 0.35);
+    color: var(--color-text-label);
     margin: 0;
+    min-width: 0;
+    overflow-wrap: anywhere;
     display: inline-flex;
     align-items: baseline;
     gap: 2px;
   }
   .row dd {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     font-weight: 700;
     color: rgba(255, 255, 255, 0.9);
     margin: 0;
+    min-width: 0;
+    overflow-wrap: anywhere;
   }
 </style>

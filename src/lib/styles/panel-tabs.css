@@ -16,7 +16,7 @@
  * because they're scoped by usage (only the 5 detail-panel surfaces
  * carry these classes; verified with a repo-wide grep). Components
  * may add scoped overrides in their own <style> block — e.g. SunPanel
- * uses #ffc850 active-tab borders instead of #4466ff to match its
+ * uses #ffc850 active-tab borders instead of var(--color-accent) to match its
  * gold theme.
  */
 
@@ -39,17 +39,14 @@
   padding: 10px 10px;
   min-height: 44px;
   font-family: var(--font-mono, 'Space Mono', monospace);
-  /* 10px to match /mars's .tab-btn — 8px was too small to read
-   * across MissionPanel, PlanetPanel, SunPanel, /earth, /moon,
-   * StationModulePanel, SmallBodyPanel (2026-05-22 feedback). */
-  font-size: 10px;
+  font-size: var(--size-label);
   letter-spacing: 1.6px;
   white-space: nowrap;
   font-weight: 700;
   background: transparent;
   border: none;
   border-bottom: 2px solid transparent;
-  color: rgba(255, 255, 255, 0.55);
+  color: var(--color-text-label);
   cursor: pointer;
   margin-bottom: -1px;
   transition:
@@ -58,7 +55,7 @@
 }
 .tabs button.active {
   color: var(--color-text, #fff);
-  border-bottom-color: #4466ff;
+  border-bottom-color: var(--color-accent);
 }
 .tabs button:hover:not(.active) {
   color: rgba(255, 255, 255, 0.65);
@@ -66,6 +63,17 @@
 
 .tab-content {
   flex: 1;
+}
+
+/* Panel overview / lead text — one rule for every panel (Planet, Mission,
+   Sun, Satellite, SmallBody, Belt, Star, Regime, StationModule, EarthObject,
+   Exoplanet, the surface site panel). Upright in the body font at lead size
+   (UX A1 / Q2); the panels no longer carry their own copy. */
+.editorial {
+  font-size: var(--size-lead);
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0 0 14px;
 }
 
 /* ─── Hero (first gallery image, above tabs) ───────────────────── */
@@ -83,15 +91,12 @@
   overflow: hidden;
   background: rgba(0, 0, 0, 0.45);
   cursor: zoom-in;
-  transition:
-    border-color 120ms,
-    box-shadow 120ms;
 }
-.panel-hero-btn:hover,
+/* The pointer is the hover cue; the ring is for the keyboard. Inset so .fleet-hero's
+   overflow: hidden does not clip it. */
 .panel-hero-btn:focus-visible {
-  border-color: rgba(68, 102, 255, 0.55);
-  box-shadow: 0 0 0 1px rgba(68, 102, 255, 0.25);
-  outline: none;
+  outline: 2px solid var(--color-focus);
+  outline-offset: -2px;
 }
 .panel-hero-btn img {
   width: 100%;
@@ -101,11 +106,18 @@
   display: block;
 }
 
+/* A planet hero shows the whole disc (UXD-029): contain, not cover, on pure black — the pictures'
+   own space is rgb(0,0,0), so any other ground would show as a seam at the picture edge. */
+.planet-hero .panel-hero-btn {
+  background: #000;
+}
+.planet-hero .panel-hero-btn img {
+  object-fit: contain;
+}
+
 .empty-tab {
-  font-family: 'Crimson Pro', serif;
-  font-style: italic;
-  font-size: 12px;
-  color: rgba(255, 255, 255, 0.4);
+  font-size: var(--size-meta);
+  color: var(--color-text-label);
   margin: 0;
 }
 
@@ -121,7 +133,7 @@
 }
 .mission-list li {
   font-family: var(--font-mono, 'Space Mono', monospace);
-  font-size: 11px;
+  font-size: var(--size-label);
   color: rgba(255, 255, 255, 0.85);
   padding: 6px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
@@ -161,7 +173,7 @@
 }
 .gallery-thumb:hover,
 .gallery-thumb:focus-visible {
-  border-color: rgba(68, 102, 255, 0.6);
+  border-color: var(--color-accent-strong);
   transform: scale(1.02);
   outline: none;
 }
@@ -183,7 +195,11 @@
   width: 100%;
   height: 100%;
   background:
-    radial-gradient(circle at 50% 40%, rgba(68, 102, 255, 0.28), transparent 60%),
+    radial-gradient(
+      circle at 50% 40%,
+      color-mix(in srgb, var(--color-accent) 28%, transparent),
+      transparent 60%
+    ),
     linear-gradient(160deg, #12213f, #0a0f1e);
 }
 .video-play {
@@ -206,7 +222,7 @@
 }
 .video-thumb:hover .video-play,
 .video-thumb:focus-visible .video-play {
-  background: rgba(68, 102, 255, 0.85);
+  background: color-mix(in srgb, var(--color-accent) 85%, transparent);
 }
 .video-duration {
   position: absolute;
@@ -217,7 +233,7 @@
   background: rgba(8, 12, 22, 0.82);
   color: #dfe6f2;
   font-family: var(--font-mono, 'Space Mono', monospace);
-  font-size: 9px;
+  font-size: var(--size-label);
   pointer-events: none;
 }
 
@@ -244,7 +260,7 @@
   right: 0;
   text-align: center;
   font-family: var(--font-mono, 'Space Mono', monospace);
-  font-size: 8px;
+  font-size: var(--size-label);
   letter-spacing: 1.5px;
   text-transform: uppercase;
   color: rgba(127, 176, 224, 0.85);
@@ -264,9 +280,9 @@
 }
 .gallery-credit {
   margin: 4px 0 0;
-  font-size: 7px;
+  font-size: var(--size-label);
   letter-spacing: 1px;
-  color: rgba(255, 255, 255, 0.35);
+  color: var(--color-text-label);
 }
 
 /* ─── In-overview SCIENCE section (B2 — 2026-06-21) ────────────────
@@ -291,10 +307,10 @@
 }
 .library-heading {
   font-family: var(--font-mono, 'Space Mono', monospace);
-  font-size: 8px;
+  font-size: var(--size-label);
   letter-spacing: 3px;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--color-text-label);
   margin: 0 0 12px;
 }
 
@@ -304,17 +320,17 @@
 }
 .link-tier h3 {
   font-family: var(--font-mono, 'Space Mono', monospace);
-  font-size: 7px;
+  font-size: var(--size-label);
   letter-spacing: 2px;
   margin: 0 0 6px;
 }
 .link-tier.tier-intro h3,
 .tier-intro h3 {
-  color: #4ecdc4;
+  color: var(--color-state);
 }
 .link-tier.tier-core h3,
 .tier-core h3 {
-  color: var(--color-accent-text, #5070ff);
+  color: #fff; /* core tier: white like the active chip text; intro muted blue, deep gold (A3 Q12) */
 }
 .link-tier.tier-deep h3,
 .tier-deep h3 {
@@ -336,7 +352,7 @@
   border-radius: 4px;
   color: rgba(255, 255, 255, 0.75);
   font-family: var(--font-mono, 'Space Mono', monospace);
-  font-size: 9px;
+  font-size: var(--size-label);
   text-decoration: none;
   line-height: 1.5;
   min-height: 44px;

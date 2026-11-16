@@ -18,6 +18,12 @@
       "note": "China's first Moon mission — an orbiter that mapped the lunar surface and announced China as a lunar power"
     },
     {
+      "linked_id": "change2",
+      "ref": "mission",
+      "year": 2010,
+      "note": "a second lunar orbiter that left the Moon for the Sun-Earth L2 point and then flew past the asteroid Toutatis"
+    },
+    {
       "linked_id": "change3",
       "ref": "mission",
       "year": 2013,
@@ -54,12 +60,49 @@
     {
       "name": "Crewed landing",
       "year": 2030,
-      "note": "China's stated goal of landing astronauts on the Moon before 2030, using a new deep-space crew capsule and lander"
+      "note": "China's stated goal of landing astronauts on the Moon before 2030, using a new deep-space crew capsule and lander",
+      "milestone": true
     },
     {
       "name": "ILRS",
       "year": 2035,
-      "note": "the International Lunar Research Station — China's planned robotic-then-crewed base at the lunar south pole, built with international partners as an alternative to Artemis"
+      "note": "the International Lunar Research Station — China's planned robotic-then-crewed base at the lunar south pole, built with international partners as an alternative to Artemis",
+      "milestone": true
+    },
+    {
+      "linked_id": "change1",
+      "ref": "fleet",
+      "role": "lunar orbiter"
+    },
+    {
+      "linked_id": "long-march-3b",
+      "ref": "fleet",
+      "role": "launcher"
+    },
+    {
+      "linked_id": "change-3",
+      "ref": "fleet",
+      "role": "lander"
+    },
+    {
+      "linked_id": "yutu",
+      "ref": "fleet",
+      "role": "rover"
+    },
+    {
+      "linked_id": "change-4",
+      "ref": "fleet",
+      "role": "lander"
+    },
+    {
+      "linked_id": "long-march-5",
+      "ref": "fleet",
+      "role": "launcher"
+    },
+    {
+      "linked_id": "change-5",
+      "ref": "fleet",
+      "role": "lander"
     }
   ],
   "related_programs": [

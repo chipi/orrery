@@ -1,6 +1,5 @@
 import { base } from '$app/paths';
 import { DEFAULT_LOCALE } from './locale';
-import { targetConfig } from './target-env';
 import { resolveOffline } from './native/offline/offline-assets';
 
 /**
@@ -23,39 +22,27 @@ import { resolveOffline } from './native/offline/offline-assets';
  * Origin the mobile build streams pruned buckets from. Injected at build time
  * from the `STREAM_ORIGIN` env var (vite `define`) — NOT hardcoded, so a dev
  * build points at a local server and a release build points at the current
- * host (GitHub Pages → VPS IP → domain), changed by one env var per build.
+ * host (the VPS, www.orrerylearn.com), changed by one env var per build.
  * Defaults to the current prod origin when the env var is unset.
  */
 // Normalised at the single consumption chokepoint: any trailing slash on the
 // injected origin would produce `//images/…` 404s (see vite.config define).
 export const STREAM_ORIGIN = __STREAM_ORIGIN__.replace(/\/+$/, '');
 
-// ADR-083: an INTERNAL mobile build resolves the stream origin from the runtime
-// target (staging/prod), read once here at module-eval — flip + relaunch to
-// change (the @sentry/capacitor native sink rebinds on relaunch too). Web + App
-// Store release builds (`__MOBILE_INTERNAL__` false) use the single baked
-// STREAM_ORIGIN — byte-identical to before, and `targetConfig()` is tree-shaken
-// out. SSR/prerender of an internal build has no localStorage → staging default.
-const ACTIVE_STREAM_ORIGIN = __MOBILE_INTERNAL__
-  ? targetConfig().streamOrigin.replace(/\/+$/, '')
-  : STREAM_ORIGIN;
-
 // ─── Pure resolvers ──────────────────────────────────────────────────────
 // The logic, parameterised on `mobile` + `base` so both the browser and the
 // Capacitor path are unit-testable (the public API below binds them to the
 // build's compile-time `__MOBILE__` and the runtime `base`).
 
-/** Origin for images + audio: the (active) stream origin under mobile, else `base`. */
+/** Origin for images + audio: the stream origin under mobile, else `base`. */
 export function resolveAssetOrigin(mobile: boolean, localBase: string): string {
-  return mobile ? ACTIVE_STREAM_ORIGIN : localBase;
+  return mobile ? STREAM_ORIGIN : localBase;
 }
 
 /** Prefix a root-relative streamed-bucket URL with the stream origin (mobile only). */
 export function resolveStreamedUrl(url: string, mobile: boolean): string {
   if (!mobile) return url;
-  return url.startsWith('/images/') || url.startsWith('/audio/')
-    ? `${ACTIVE_STREAM_ORIGIN}${url}`
-    : url;
+  return url.startsWith('/images/') || url.startsWith('/audio/') ? `${STREAM_ORIGIN}${url}` : url;
 }
 
 /**
@@ -73,7 +60,7 @@ export function resolveLocaleBundleOrigin(
   ssr: boolean = false,
 ): string {
   if (ssr) return localBase;
-  return mobile && locale !== defaultLocale ? ACTIVE_STREAM_ORIGIN : localBase;
+  return mobile && locale !== defaultLocale ? STREAM_ORIGIN : localBase;
 }
 
 // ─── Public API (bound to the build) ─────────────────────────────────────

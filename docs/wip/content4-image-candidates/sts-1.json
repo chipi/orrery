@@ -1,0 +1,83 @@
+[
+  {
+    "staged": "static/images/_staging/missions/sts-1/01.jpg",
+    "note": "hero candidate (portrait 4:5); Columbia lifting off from LC-39A, 12 Apr 1981. Fleet columbia/03 is a different, wider frame of the same launch",
+    "source_url": "https://images.nasa.gov/details/S81-30459",
+    "nasa_id": "S81-30459",
+    "size": "2373x3000",
+    "license": "NASA media usage (public domain)",
+    "author": "NASA",
+    "credit": "NASA"
+  },
+  {
+    "staged": "static/images/_staging/missions/sts-1/02.jpg",
+    "note": "gallery (landscape alternative hero); Columbia on final approach to Rogers Dry Lake, Edwards AFB, 14 Apr 1981, with a chase aircraft",
+    "source_url": "https://images.nasa.gov/details/S81-30425",
+    "nasa_id": "S81-30425",
+    "size": "3000x1993",
+    "license": "NASA media usage (public domain)",
+    "author": "NASA",
+    "credit": "NASA"
+  },
+  {
+    "staged": "static/images/_staging/missions/sts-1/03.jpg",
+    "note": "gallery; Columbia on the Rogers Dry Lake bed after landing, ground crew and tug, 14 Apr 1981",
+    "source_url": "https://commons.wikimedia.org/wiki/File:The_Space_Shuttle_Columbia_on_Rogers_Dry_lakebed_at_Edwards_AFB_after_landing_to_complete_its_first_orbital_mission_on_April_14,_1981_(ECN-14697).jpg",
+    "commons": "File:The Space Shuttle Columbia on Rogers Dry lakebed at Edwards AFB after landing to complete its first orbital mission on April 14, 1981 (ECN-14697).jpg",
+    "nasa_id": "ECN-14697",
+    "size": "3000x2400",
+    "license": "Public domain (NASA, Commons tag)",
+    "author": "NASA",
+    "credit": "NASA/Dryden (AFRC)"
+  },
+  {
+    "staged": "static/images/_staging/missions/sts-1/04.jpg",
+    "note": "gallery; Columbia stack on the mobile launcher/crawler arriving at pad 39A, aerial. Fleet columbia/02 appears to be the same frame (check before using in both)",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Columbia_STS-1_arrival_at_launch_pad.jpg",
+    "commons": "File:Columbia STS-1 arrival at launch pad.jpg",
+    "size": "2283x1800",
+    "license": "Public domain (NASA, Commons tag)",
+    "author": "NASA",
+    "credit": "NASA"
+  },
+  {
+    "staged": "static/images/_staging/missions/sts-1/05.jpg",
+    "note": "gallery; official crew portrait: John Young (left) and Robert Crippen in launch/entry suits with an orbiter model",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Sts-1_crew.jpg",
+    "commons": "File:Sts-1 crew.jpg",
+    "size": "3000x2374",
+    "license": "Public domain (NASA, Commons tag)",
+    "author": "NASA",
+    "credit": "NASA"
+  },
+  {
+    "staged": "static/images/_staging/missions/sts-1/06.jpg",
+    "note": "gallery; Young and Crippen (tan suits) greeted by ground crew beside Columbia after landing, Edwards, 14 Apr 1981",
+    "source_url": "https://images.nasa.gov/details/EC81-15177",
+    "nasa_id": "EC81-15177",
+    "size": "3000x2412",
+    "license": "NASA media usage (public domain)",
+    "author": "NASA",
+    "credit": "NASA/Dryden (AFRC)"
+  },
+  {
+    "staged": "static/images/_staging/missions/sts-1/07.jpg",
+    "note": "gallery (lower priority); crew in suits being checked by technicians in the suit-up room, KSC, launch morning (NASA title is only 'KSC-81PC-0347'; the suit-up reading is from the picture and the API date 1981-04-12, not from a caption)",
+    "source_url": "https://images.nasa.gov/details/81PC0347",
+    "nasa_id": "81PC0347",
+    "size": "3000x2054",
+    "license": "NASA media usage (public domain)",
+    "author": "NASA",
+    "credit": "NASA/KSC"
+  },
+  {
+    "staged": "static/images/_staging/fleet-galleries/columbia/06.jpg",
+    "note": "FLEET columbia gallery candidate (not in existing 01-05): Young and Crippen crew portrait, same file as missions/sts-1/05",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Sts-1_crew.jpg",
+    "commons": "File:Sts-1 crew.jpg",
+    "size": "3000x2374",
+    "license": "Public domain (NASA, Commons tag)",
+    "author": "NASA",
+    "credit": "NASA"
+  }
+]

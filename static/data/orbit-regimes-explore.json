@@ -17,7 +17,7 @@
   {
     "id": "KUIPER",
     "distance_au": [30, 50],
-    "color": "#7fd9d2"
+    "color": "#f28bb8"
   },
   {
     "id": "GIANTS",
@@ -32,7 +32,7 @@
   {
     "id": "TERRESTRIAL",
     "distance_au": [0.4, 1.5],
-    "color": "#4ecdc4"
+    "color": "#8fd16a"
   },
   {
     "id": "SUN",

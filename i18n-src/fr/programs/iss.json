@@ -95,5 +95,69 @@
     "/fleet?id=iss": "Flotte — la Station spatiale internationale",
     "/programs/mir": "Mir — la station dont l'ISS a hérité",
     "/earth?site=iss": "L'ISS au-dessus de nous"
+  },
+  "roster": {
+    "module:zarya": {
+      "note": "Le premier module — un bloc de contrôle et d'énergie financé par les États-Unis et construit en Russie : le germe de toute la station."
+    },
+    "module:unity": {
+      "note": "Le premier module américain, un nœud de liaison à six ports relié à Zarya deux semaines plus tard."
+    },
+    "module:zvezda": {
+      "note": "Le module de service russe qui a rendu la station habitable : quartiers de l'équipage, survie et propulsion."
+    },
+    "module:destiny": {
+      "note": "Le laboratoire américain — le principal module de recherche et le centre de commande de la station."
+    },
+    "module:canadarm2": {
+      "note": "Le bras robotique du Canada, qui a assemblé une grande partie de la station et capture les vaisseaux qui arrivent."
+    },
+    "module:quest": {
+      "note": "Le sas américain, qui permet des sorties dans l'espace en scaphandres américains comme russes."
+    },
+    "module:pirs": {
+      "note": "Un compartiment d'amarrage et sas russe — désorbité en 2021 pour faire place à Nauka."
+    },
+    "module:harmony": {
+      "note": "Le nœud qui a ouvert la voie aux laboratoires internationaux."
+    },
+    "module:columbus": {
+      "note": "Le laboratoire de l'Europe — la contribution phare de l'ESA à la station."
+    },
+    "module:kibo": {
+      "note": "Le laboratoire du Japon — le plus grand module unique, avec sa propre plateforme externe."
+    },
+    "module:poisk": {
+      "note": "Un module russe d'amarrage et de sas au zénith de Zvezda."
+    },
+    "module:tranquility": {
+      "note": "Survie et équipements d'exercice — et le support de la Cupola."
+    },
+    "module:cupola": {
+      "note": "Le dôme d'observation à sept fenêtres, source des vues les plus célèbres de la Terre depuis la station."
+    },
+    "module:rassvet": {
+      "note": "Un module russe d'amarrage et de stockage."
+    },
+    "module:leonardo": {
+      "note": "Un module de stockage permanent, converti à partir d'un transporteur de fret réutilisable."
+    },
+    "module:beam": {
+      "note": "Un module gonflable expérimental, qui teste des habitats extensibles en orbite."
+    },
+    "module:nauka": {
+      "note": "Le module scientifique russe, longtemps retardé, ajouté plus de vingt ans après le début de l'assemblage."
+    },
+    "module:prichal": {
+      "note": "Un nœud d'amarrage russe — l'un des ajouts les plus récents."
+    },
+    "Expedition 1": {
+      "note": "le premier équipage résident est arrivé le 2 novembre 2000 ; des humains vivent à bord sans interruption depuis — la plus longue présence humaine ininterrompue hors de la Terre de l'histoire",
+      "name": "Expédition 1"
+    },
+    "Commercial Crew": {
+      "note": "la Crew Dragon de SpaceX a rétabli les lancements d'équipages américains après neuf ans, amorçant le passage de l'accès à l'orbite basse à des fournisseurs commerciaux",
+      "name": "Commercial Crew"
+    }
   }
 }

@@ -1,9 +1,9 @@
 <script lang="ts">
-  import EntityIndex from '$lib/components/EntityIndex.svelte';
+  import Chip from '$lib/components/Chip.svelte';
   let { data } = $props();
   import { metaDescription } from '$lib/seo';
   import { dataLoadFailed } from '$lib/data/core';
-  import { onMount, onDestroy } from 'svelte';
+  import { onMount, onDestroy, untrack } from 'svelte';
   import { exploreContext } from '$lib/explore-context';
   import { page } from '$app/state';
   import { goto } from '$app/navigation';
@@ -31,7 +31,17 @@
   // /explore v2 "The Known Universe" (PRD-030 / RFC-032). The neighborhood scene
   // is dynamically imported at the boundary so v1's bundle + first paint stay
   // untouched (RFC C-F).
-  import type { ShellId } from '$lib/explore/scale-shell-controller';
+  import { CTX_ORDER, type ShellId } from '$lib/explore/scale-shell-controller';
+  import {
+    chipOf,
+    isBodyHidden,
+    isBodyInScene,
+    resolveBodyRef,
+    type BodyChip,
+    type BodyRef,
+    type SceneMembers,
+  } from '$lib/explore/body-ref';
+  import { INDEX_NEEDS_3D, type ScaleIndexRow } from '$lib/explore/scale-index';
   import { createExploreSolarScene } from '$lib/three/explore-solar-scene';
   import {
     createExploreSceneHost,
@@ -45,7 +55,7 @@
     getSun,
     getMissionIndex,
     getMission,
-    getBlackHoles,
+    getLocalGroup,
     type MilkyWayObject,
     type LocalGroupMember,
     type LocalSheetMember,
@@ -60,8 +70,10 @@
     type ExoplanetOverlay,
     type LocalizedCultureDoor,
     type DeepSkyObject,
+    type DeepSkyTextOverlay,
   } from '$lib/data';
   import { findDeepSkyImage, type DeepSkyImage } from '$lib/deep-sky';
+  import { outerOverlay } from '$lib/explore/outer-overlay.svelte';
   import StarPanel from '$lib/components/StarPanel.svelte';
   import ExoplanetPanel from '$lib/components/ExoplanetPanel.svelte';
   import MassPeriodChart from '$lib/components/MassPeriodChart.svelte';
@@ -76,7 +88,7 @@
   import CosmicWebPanel from '$lib/components/CosmicWebPanel.svelte';
   import BlackHolePanel from '$lib/components/BlackHolePanel.svelte';
   import CultureDoorCard from '$lib/components/CultureDoorCard.svelte';
-  import StarIndex from '$lib/components/StarIndex.svelte';
+  import ScaleIndex, { indexAriaLabel } from '$lib/components/ScaleIndex.svelte';
   import type { AnonymousStar } from '$lib/universe/anonymous-star';
   import { localeFromPage, localHref } from '$lib/locale';
   import { createIconicSelectionService } from './iconic-selection.svelte';
@@ -102,9 +114,6 @@
   import type { Mission } from '$types/mission';
   import PlanetPanel from '$lib/components/PlanetPanel.svelte';
   import SunPanel from '$lib/components/SunPanel.svelte';
-  import ExploreBodyIndex from '$lib/components/ExploreBodyIndex.svelte';
-  import MessagePanel from '$lib/components/MessagePanel.svelte';
-  import { getInterstellarCraft, type InterstellarCraft } from '$lib/data/interstellar';
   import SizesOverlay from './SizesOverlay.svelte';
   import HoverTooltip from './HoverTooltip.svelte';
   import BlackHoleNotes from './BlackHoleNotes.svelte';
@@ -112,6 +121,8 @@
   import DeepSkyImmersion from './DeepSkyImmersion.svelte';
   import WarpOverlays from './WarpOverlays.svelte';
   import ScaleNav from './ScaleNav.svelte';
+  import LevelContextCard from '$lib/components/LevelContextCard.svelte';
+  import ExploreHint from '$lib/components/ExploreHint.svelte';
   import SunCompass from './SunCompass.svelte';
   import ScaleStrip from './ScaleStrip.svelte';
   import TimeDock from './TimeDock.svelte';
@@ -135,7 +146,7 @@
   import { computeLensPanel, scaleNavBackTarget, type ScaleNavExit } from '$lib/explore/lens-panel';
   import { watchExploreLayers } from '$lib/explore/layer-watchers';
   import { createUrlGuards, setupExploreUrlSync } from '$lib/explore/explore-url-sync.svelte';
-  import { distanceWithUnit, fmtScale, SATELLITE_STATS } from '$lib/explore/format';
+  import { distanceWithUnit, SATELLITE_STATS } from '$lib/explore/format';
 
   // Planet visual config (PlanetVisual / SatelliteDef / PLANETS) now lives in
   // $lib/explore-scene as the single source of truth, shared with the AR
@@ -148,24 +159,23 @@
   let localizedSun: LocalizedSun | null = $state(null);
   let selectedId: string | null = $state(null);
 
-  // Keyboard / screen-reader / TV body index (RFC-031 S2): the accessible way
-  // to reach every selectable body without the pointer-only canvas.
-  let bodyIndexOpen = $state(false);
-  let bodyIndexList = $derived.by(() => {
-    const list: { kind: 'sun' | 'planet' | 'small'; id: string; name: string }[] = [];
-    // Dedupe by id: Pluto was promoted SMALL_BODIES → PLANETS (#287) but lingers
-    // in both lists, so it would otherwise appear twice. Planets are pushed first,
-    // so Pluto keeps its (correct) planet kind + selectPlanet handler.
-    const seen = new Set<string>();
-    const add = (item: (typeof list)[number]) => {
-      if (seen.has(item.id)) return;
-      seen.add(item.id);
-      list.push(item);
-    };
-    if (localizedSun) add({ kind: 'sun', id: 'sun', name: localizedSun.name });
-    for (const p of localizedPlanets) add({ kind: 'planet', id: p.id, name: p.name });
-    for (const b of SMALL_BODIES) add({ kind: 'small', id: b.id, name: b.name });
-    return list;
+  // The INDEX of the scale on screen (UXD-017): the keyboard / screen-reader / TV way to every
+  // selectable object without the pointer-only canvas. One open state for all eight scales; it
+  // stays open across a scale jump on a fine pointer and closes on a coarse one.
+  let indexOpen = $state(false);
+  // The Sun and each planet carry their own colour as the dot of their row (the scene's catalogue);
+  // every other solar-system row keeps the default grey dot.
+  const SOLAR_DOT: Record<string, string> = {
+    sun: '#ffcc33',
+    ...Object.fromEntries(PLANETS.map((p) => [p.id, p.css])),
+  };
+  const indexRows = $derived({
+    ...data.scaleIndex,
+    'solar-system': data.scaleIndex['solar-system'].map((r) =>
+      !SOLAR_DOT[r.id] || (r.kind !== 'sun' && r.kind !== 'planet')
+        ? r
+        : { ...r, color: SOLAR_DOT[r.id] },
+    ),
   });
 
   // ─── Consolidated panel / layer / camera state (Action 7, #326) ──
@@ -188,9 +198,6 @@
 
   // /explore v2 Slice 1 — named-star selection + the anonymous-star tap readout.
   let namedStars = $state<NamedStar[]>([]);
-  // 2026-09-11 — black holes in the index rail: before this the lensing
-  // takeovers had no in-app entry beyond the Sgr A* pin (?bh= URLs only).
-  let blackHoleIndex = $state<Array<{ id: string; name: string }>>([]);
   // Slice 2 — the exoplanet selected inside a BodyScene (drives ExoplanetPanel).
   let selectedExoplanet = $state<{
     planet: ExoplanetPlanet;
@@ -210,13 +217,35 @@
   let exploreRegimes: OrbitRegime[] = $state([]);
   let exploreRegimePanelOpen = $state(false);
   let selectedExploreRegimeId = $state<string | null>(null);
+  // The ruler row under the pointer or keyboard focus, and the host's drawing hook (UXD-024).
+  let hoverExploreRegimeId = $state<string | null>(null);
+  let setRegimeHighlightFn = $state<((hover: string | null, active: string | null) => void) | null>(
+    null,
+  );
+  // The zones belong to the solar-system scale: leaving it (or a black-hole takeover) clears the
+  // drawing even while a zone panel is still open.
+  $effect(() => {
+    const here = contextId === 'solar-system' && !activeBlackHole;
+    setRegimeHighlightFn?.(
+      here ? hoverExploreRegimeId : null,
+      here && exploreRegimePanelOpen ? selectedExploreRegimeId : null,
+    );
+  });
   let selectedExploreRegime = $derived(
     selectedExploreRegimeId
       ? (exploreRegimes.find((r) => r.id === selectedExploreRegimeId) ?? null)
       : null,
   );
+  // A resident is a link only when the scene has an object for it (UXD-019): Pallas, Hygiea,
+  // Quaoar and Sedna list as plain text until they have data.
+  function hasSceneObject(id: string): boolean {
+    const ref = resolveBodyRef(id, bodyMembership);
+    return !!ref && isBodyInScene(ref, sceneMembers);
+  }
   let exploreSelectableIds = $derived(
-    new Set(exploreRegimes.flatMap((r) => r.residents?.map((res) => res.id) ?? [])),
+    new Set(
+      exploreRegimes.flatMap((r) => r.residents?.map((res) => res.id) ?? []).filter(hasSceneObject),
+    ),
   );
 
   function openExploreRegime(id: string) {
@@ -236,37 +265,6 @@
       keepFocus: true,
     });
   }
-  function onExploreResidentClick(id: string) {
-    // Call /explore's existing select* functions DIRECTLY — mirrors
-    // how /earth /moon /mars wire their residents through the
-    // `__surfaceSceneSelectSite` window hook (no URL mutation,
-    // no deep-link resolver bounce). 2026-06-22 user direction:
-    // "we update url with planet we open from belt panel and that
-    // confuses system and not working well. we dont have that in
-    // earth, moon and mars. we also dont need this here since just
-    // creating issues". Resolves to the right panel by type, same
-    // lookup ladder the `?id=` deep-link resolver uses.
-    if (id === 'sun') {
-      selectSun();
-    } else if (id === 'pluto' && smallBodyById.has(id)) {
-      // Pluto exists in both planets.json + small-bodies.json;
-      // prefer the small-body panel (richer science_sections).
-      selectSmallBody(id);
-    } else if (planetById.has(id)) {
-      selectPlanet(id);
-    } else if (smallBodyById.has(id)) {
-      selectSmallBody(id);
-    } else if (id === 'asteroid-belt' || id === 'belt:asteroid') {
-      selectBelt('asteroid');
-    } else if (id === 'kuiper-belt' || id === 'belt:kuiper') {
-      selectBelt('kuiper');
-    } else if (id.includes(':')) {
-      const [parent, sat] = id.split(':', 2);
-      if (parent && sat && planetById.has(parent)) selectSatellite(parent, sat);
-    }
-    // Unknown id → no-op; regime panel stays open underneath either way.
-  }
-
   // Load /explore zones — must be browser-only (relative-URL fetch
   // breaks during SSR per @sveltejs/kit; same pattern /moon and /mars
   // use). The deep-link `?regime=` resolver fires once the regimes
@@ -296,22 +294,22 @@
   // mutate-not-reassign on the shared object).
   const iconic = createIconicSelectionService();
 
-  // #410 — interstellar-craft MessagePanel. A Today-marker click on a
-  // Voyager/Pioneer/New Horizons path opens this (the message it carries)
-  // instead of the MissionPanel; the panel's "Full mission details" hands
-  // off to iconic.openMission. Seq-guarded so the latest click wins.
-  let activeCraft = $state<InterstellarCraft | null>(null);
-  let craftPanelOpen = $state(false);
-  let craftOpenSeq = 0;
-  async function openMessageCraft(craftId: string, locale: string): Promise<void> {
-    const seq = ++craftOpenSeq;
-    const c = await getInterstellarCraft(craftId, locale);
-    if (seq !== craftOpenSeq || !c) return;
-    activeCraft = c;
-    craftPanelOpen = true;
-  }
-  function openCraftMission(missionId: string): void {
-    craftPanelOpen = false;
+  // A mission link in a body panel opens the MissionPanel in place, over the body panel: the
+  // body stays selected and closing the mission returns to it. A path mission opened from the
+  // legend or a trajectory is the other kind; selecting another body closes only the first.
+  let missionFromBodyId = $state<string | null>(null);
+  // The mission panel is stacked on a body panel: that one is covered, and the mission's back chip
+  // returns to it.
+  const missionOverBody = $derived(
+    missionFromBodyId !== null &&
+      iconic.state.panelOpen &&
+      iconic.state.selectedId === missionFromBodyId,
+  );
+  $effect(() => {
+    if (!iconic.state.panelOpen) missionFromBodyId = null;
+  });
+  function openMissionInPlace(missionId: string): void {
+    missionFromBodyId = missionId;
     void iconic.openMission(missionId, localeFromPage(page));
   }
 
@@ -404,6 +402,8 @@
   // 'asteroid' | 'kuiper'; opens the BeltPanel via the same pickAid
   // raycast path the planets / small bodies use.
   let selectedBeltId: string | null = $state(null);
+  // The Sun's selection: its panel has no id of its own to hold.
+  let selectedSun = $state(false);
 
   // ─── Layers (issue #32) ──────────────────────────────────────────
   // Four toggleable visibility layers — Sun is always on (centre of
@@ -443,11 +443,23 @@
     const el = pathsLegendEl;
     if (!el) return;
     const top = el.getBoundingClientRect().top;
-    el.style.maxHeight = Math.max(140, window.innerHeight - top - 16) + 'px';
+    // The lower-left stack (the folded orbit ruler, PLANET SCALES, the time dock) stays reachable:
+    // the legend ends above its highest member and the list scrolls when that is not enough.
+    let stackTop = window.innerHeight - 16;
+    for (const sel of [
+      '.ruler-desktop-only .ruler',
+      '[data-testid="sizes-toggle"]',
+      '.time-controls',
+    ]) {
+      const r = document.querySelector(sel)?.getBoundingClientRect();
+      if (r && r.height > 0 && r.top > top) stackTop = Math.min(stackTop, r.top - 8);
+    }
+    el.style.maxHeight = Math.max(140, stackTop - top) + 'px';
   }
   $effect(() => {
     // Re-measure whenever the legend is shown — after the DOM commits so
     // getBoundingClientRect().top reflects the rendered chip stack.
+    void exploreRegimes.length; // the ruler arrives with its data: measure again
     if (layers.paths) requestAnimationFrame(sizePathsLegend);
   });
 
@@ -586,6 +598,15 @@
   let scaleReadout = $state<ScaleReadout | null>(null);
   let scaleBarPx = $state(0);
   let scaleBarLabel = $state('');
+  // How far a docked side panel reaches in from the right edge (measured by the host).
+  let panelCoverPx = $state(0);
+  // The solar system's navigator is flush right (right = panel cover + 8); the HUD row stops
+  // 12 px before its left edge, so the two rows never overlap.
+  // The level card hangs under that row at the same right edge and can be wider than the picker
+  // (de at 390 px: the HUD row's second line ran under it), so the HUD row clears the wider.
+  let scaleNavWidth = $state(0);
+  let levelCardWidth = $state(0);
+  let hudMobileRowsHeight = $state(0);
   let contextId = $state<ExploreContextId>('solar-system');
   // Publish the live scale context to the global store so the Nav highlights the
   // active scale-shell menu item (the URL ?context is cleared after the jump, so
@@ -614,8 +635,6 @@
   // Host-id → full system, for the StarPanel "System" tab summary (planet count,
   // sizes, periods) without re-fetching. Populated alongside exoplanetHostIds.
   let exoplanetSystemsById = $state<Map<string, ExoplanetSystem>>(new Map());
-  // Object ids carrying a culture door — drives the star-index ◈ badge + filter.
-  let cultureObjectIds = $state<Set<string>>(new Set());
   // A distance caption shown during a Navigator warp into/out of a system.
   let warpCaption = $state('');
   let enterSystemFn: ((hostId: string, planetId?: string) => void) | null = null;
@@ -661,34 +680,80 @@
   let activeDeepSky = $state<DeepSkyObject | null>(null);
   // #410 — culture door(s) for the selected deep-sky object (M13 ← Arecibo).
   let deepSkyCultureDoors = $state<LocalizedCultureDoor[]>([]);
+  let deepSkyOverlay = $state<DeepSkyTextOverlay | null>(null);
   let deepSkyImmersed = $state(false);
   let deepSkyPhotoUrl = $state('');
   let deepSkyPanelOpen = $state(false);
   let exitDeepSkyFn: (() => void) | null = null;
   let deepSkyGatewayFn: ((hostId: string) => void) | null = null;
   let deepSkyDeepLinkFn: ((designation: string) => void) | null = null;
+  // The INDEX row's select: the same function a canvas click on a glint runs.
+  let selectDeepSkyFn: ((id: string) => void) | null = null;
   let activeDeepSkyImage = $derived(
     activeDeepSky ? findDeepSkyImage(deepSkyGallery, activeDeepSky.photoKey) : undefined,
   );
-  // Named-star index (search + list) open state.
-  let starIndexOpen = $state(false);
   // Sun "compass": the needle angle (deg) toward the Sun's on-screen position,
   // whether it's currently in frame, and camera→Sun distance (ly). Drives the
   // persistent "you are here / home" indicator in the neighborhood (item: never
   // get lost). Updated (throttled) from the render loop.
   let sunCompass = $state<{ ang: number; on: boolean; ly: number } | null>(null);
-  // Reset-view lives in the breadcrumb row now; visible once the current scale's
-  // view is "dirty" (a selection, or the Sun panned out of frame).
-  let scaleResetVisible = $derived.by(() => {
-    if (contextId === 'neighborhood') return !!(selectedStarId || (sunCompass && !sunCompass.on));
+  // The solar system's "dirty" view: a selection of any kind. The HUD's RESET VIEW (the solar
+  // scale's one Reset, UXD-021) reads it and runs `resetSolarView`.
+  let solarHasSelection = $derived(
+    !!(
+      selectedId ||
+      selectedSmallBodyId ||
+      selectedSatelliteKey ||
+      selectedBeltId ||
+      selectedSun ||
+      iconic.state.panelOpen
+    ),
+  );
+  function resetSolarView(): void {
+    resetExplorePanelState();
+    // Out of the neighbourhood first: the fly home starts from the solar camera, not from it.
+    exitNeighborhoodFn?.();
+    clearBodySelection();
+  }
+  // The navigator's Reset at the seven outer scales (always drawn, UXD-021); it is enabled once
+  // the current scale's view is "dirty" (a selection, or the Sun panned out of frame). The solar
+  // system has none here: its Reset is the HUD row's.
+  let scaleSelection = $derived.by(() => {
+    // A black hole's panel open in place is a selection at its scale (B3, UXD-023).
+    if (bhPanelOpen && bhPanelHole) return true;
+    if (contextId === 'neighborhood') return !!selectedStarId;
     if (contextId === 'milky-way') return !!selectedMwId;
     if (contextId === 'local-group') return !!selectedLgMember;
+    if (contextId === 'local-sheet') return !!selectedLsMember;
+    if (contextId === 'virgo') return !!selectedVirgoMember;
+    if (contextId === 'laniakea') return !!selectedLaniakeaMember;
+    if (contextId === 'cosmic-web') return !!selectedCosmicWebMember;
     return false;
   });
+  // A member's × closes its panel but keeps the camera on it (UXD-019), so Reset stays live
+  // until the view is reset or the scale changes, not only while something is selected.
+  let scaleFocusKept = $state(false);
+  $effect(() => {
+    if (scaleSelection) scaleFocusKept = true;
+  });
+  $effect(() => {
+    void contextId;
+    scaleFocusKept = untrack(() => scaleSelection);
+  });
+  let scaleResetEnabled = $derived(
+    scaleSelection ||
+      scaleFocusKept ||
+      (contextId === 'neighborhood' && !!sunCompass && !sunCompass.on),
+  );
   function resetCurrentScale(): void {
+    scaleFocusKept = false;
     if (contextId === 'neighborhood') resetNeighborhoodFn?.();
     else if (contextId === 'milky-way') resetMilkyWayFn?.();
     else if (contextId === 'local-group') resetLocalGroupFn?.();
+    else if (contextId === 'local-sheet') resetLocalSheetFn?.();
+    else if (contextId === 'virgo') resetVirgoFn?.();
+    else if (contextId === 'laniakea') resetLaniakeaFn?.();
+    else if (contextId === 'cosmic-web') resetCosmicWebFn?.();
   }
 
   // PRD-023 Slice E.2/E.4 — script-level state for the close-zoom HUD
@@ -725,13 +790,13 @@
     return auLightTime(planet.a, earth?.a ?? 1);
   });
 
-  // Plumbed into the 3D scene's RAF tween from inside onMount once
-  // the planetObjs array is built. Top-level selectPlanet / selectSun
-  // wrappers call through so the camera flies to the target body when
+  // Plumbed into the 3D scene's RAF tween (the host's `focusBody`) once
+  // the scene objects are built. Every select* below calls through so
+  // the camera flies to the selected body (a planet, moon, small body, belt or the Sun) when
   // the user picks one — without this the camera was stuck looking at
   // the Sun, and per-planet 4K LOD swaps (#287) never fired for
-  // anything past Mercury. See `focusOnBody` inside onMount.
-  let flyToBodyFn: ((bodyId: string | null) => void) | null = null;
+  // anything past Mercury.
+  let focusBodyFn: ((ref: BodyRef | null) => void) | null = null;
   // Set in onMount; called by Reset View so resetting while out in the stellar
   // neighborhood first crosses back to the solar system (no-op when already there).
   let exitNeighborhoodFn: (() => void) | null = null;
@@ -741,6 +806,10 @@
   // Same, for the Milky Way + Local Group scales.
   let resetMilkyWayFn: (() => void) | null = null;
   let resetLocalGroupFn: (() => void) | null = null;
+  let resetLocalSheetFn: (() => void) | null = null;
+  let resetVirgoFn: (() => void) | null = null;
+  let resetLaniakeaFn: (() => void) | null = null;
+  let resetCosmicWebFn: (() => void) | null = null;
   // #451 (WS-2) — the Milky Way science lens overlays (rotation curve · dark-matter
   // halo · stellar populations). WS-3 (RFC-039 Contract D) promoted these to
   // standard science-layer keys, so they're driven by the ScienceLayersPanel via
@@ -761,52 +830,126 @@
   // climbing out or in. `$state` so the picker's `disabled` gate flips reactively
   // once onMount wires the host handle (it's null until the scene is ready).
   let contextDeepLinkFn = $state<((ctx: string) => Promise<void>) | null>(null);
+  let pickDeepLinkFn: ((scale: string, id: string) => void) | null = null;
   // Slice 8: the Local Group context — leave it back in to the Milky Way; the
   // selected member galaxy → LocalGroupPanel.
   let exitLocalGroupFn: (() => void) | null = null;
   let selectedLgMember = $state<LocalGroupMember | null>(null);
   let lgPanelOpen = $state(false);
   let closeLgFn: (() => void) | null = null;
+  let selectLgFn: ((id: string) => void) | null = null;
   // #454 (WS-1) — the Local Sheet shell.
   let exitLocalSheetFn: (() => void) | null = null;
   let selectedLsMember = $state<LocalSheetMember | null>(null);
   let lsPanelOpen = $state(false);
   let lsMembers = $state<LocalSheetMember[]>([]);
   let closeLsFn: (() => void) | null = null;
+  let selectLsFn: ((id: string) => void) | null = null;
   // #455 (WS-5b) — the Virgo Supercluster shell.
   let exitVirgoFn: (() => void) | null = null;
   let selectedVirgoMember = $state<VirgoMember | null>(null);
   let virgoPanelOpen = $state(false);
   let virgoMembers = $state<VirgoMember[]>([]);
   let closeVirgoFn: (() => void) | null = null;
+  let selectVirgoFn: ((id: string) => void) | null = null;
   // #456 (WS-5c) — the Laniakea Supercluster shell.
   let exitLaniakeaFn: (() => void) | null = null;
   let selectedLaniakeaMember = $state<LaniakeaMember | null>(null);
   let laniakeaPanelOpen = $state(false);
   let laniakeaMembers = $state<LaniakeaMember[]>([]);
   let closeLaniakeaFn: (() => void) | null = null;
+  let selectLaniakeaFn: ((id: string) => void) | null = null;
   // #457 (WS-5d) — the Cosmic Web shell (outermost).
   let exitCosmicWebFn: (() => void) | null = null;
   let selectedCosmicWebMember = $state<CosmicWebMember | null>(null);
   let cosmicWebPanelOpen = $state(false);
   let cosmicWebMembers = $state<CosmicWebMember[]>([]);
   let closeCosmicWebFn: (() => void) | null = null;
+  let selectCosmicWebFn: ((id: string) => void) | null = null;
   // Slice 6 — the black hole currently rendered full-screen (geodesic lensing).
   let activeBlackHole = $state<BlackHole | null>(null);
+  // The level picker and the card under it show in a scale level; not in a takeover (black hole,
+  // deep-sky, body scene), where the lens panel keeps the story.
+  let showLevelPicker = $derived(!activeBlackHole && !activeDeepSky && contextId !== 'body-scene');
+  let hudClearRightPx = $derived(
+    view === '3d' && scaleNavWidth > 0 ? panelCoverPx + 8 + scaleNavWidth + 12 : panelCoverPx + 16,
+  );
+  // The phone's top rows wrap to a second and third line under the card, so they clear the card
+  // too; the desktop row (one band, the card hangs under it) keeps the navigator's width only.
+  let hudMobileClearRightPx = $derived(
+    view === '3d' && scaleNavWidth > 0
+      ? panelCoverPx + 8 + Math.max(scaleNavWidth, showLevelPicker ? levelCardWidth : 0) + 12
+      : panelCoverPx + 16,
+  );
+  // The welcome hint is shown once per visit: closed, timed out or acted on, it stays gone through
+  // a docked panel, a 2D toggle or a takeover.
+  let hintDone = $state(false);
+  // A docked panel means the visitor is already in: the hint is not drawn beside it, nor after it.
+  $effect(() => {
+    if (panelCoverPx > 0) hintDone = true;
+  });
   let bhPanelOpen = $state(false);
+  let bhPanelHole = $state<BlackHole | null>(null);
   let exitBlackHoleFn: (() => void) | null = null;
+  let seeBlackHoleLensingFn: (() => void) | null = null;
   let bhDeepLinkFn: ((id: string) => void) | null = null;
+  let bhTakeoverFn: ((id: string) => void) | null = null;
   // Slice 6 physics lenses (curvature grid + time-dilation readout), on the BH view.
   let bhCurvatureLens = $state(false);
   let bhTimeLens = $state(false);
   let setBhCurvatureFn: ((on: boolean) => void) | null = null;
   let bhCultureDoors = $state<LocalizedCultureDoor[]>([]);
-  let bhLearnHref = $derived(
-    activeBlackHole
-      ? localHref(`/science/observation/${activeBlackHole.science_section}`)
-      : localHref('/'),
+  let bhLearnHref = $derived.by(() => {
+    const hole = activeBlackHole ?? bhPanelHole;
+    return hole ? localHref(`/science/observation/${hole.science_section}`) : localHref('/');
+  });
+  // One name per object (UXD-017): a panel is named as its INDEX row and its page name it. A Milky
+  // Way pin keeps the data's name unless it has a page (a globular) or is a Magellanic Cloud; the
+  // outer scales' members are all in the glossary.
+  const rowName = (scale: keyof typeof data.scaleIndex, id: string): string | undefined =>
+    data.scaleIndex[scale].find((r) => r.id === id)?.name;
+  let selectedMwObject = $derived.by(() => {
+    const o = mwObjects.find((x) => x.id === selectedMwId);
+    if (!o) return null;
+    const row = data.scaleIndex['milky-way'].find((r) => r.id === o.id);
+    return row?.href || row?.kind === 'satellite-galaxy' ? { ...o, name: row.name } : o;
+  });
+  const lgPanelNamed = (mbr: LocalGroupMember | null | undefined) => {
+    const name = mbr && rowName('local-group', mbr.id);
+    return mbr && name ? { ...mbr, name } : (mbr ?? null);
+  };
+  let lgPanelMember = $derived(lgPanelNamed(selectedLgMember));
+  // A Magellanic Cloud's numbers and kind are the Local Group census record's (as on its galaxy
+  // page), so its Milky Way panel and the page print one string.
+  let mwCensus = $state<LocalGroupMember[]>([]);
+  $effect(() => {
+    if (selectedMwObject?.kind !== 'satellite-galaxy' || mwCensus.length) return;
+    void getLocalGroup(fetch).then((d) => (mwCensus = d?.members ?? []));
+  });
+  let mwPanelMember = $derived(
+    selectedMwObject?.kind === 'satellite-galaxy'
+      ? lgPanelNamed(mwCensus.find((x) => x.id === selectedMwObject.id))
+      : null,
   );
-  let selectedMwObject = $derived(mwObjects.find((o) => o.id === selectedMwId) ?? null);
+  // The fact and bio the five outer panels show in place of the kind blurb (the files decide which
+  // ids have one).
+  const galaxyTarget = (id: string | undefined) => (id ? { kind: 'galaxy' as const, id } : null);
+  const structureTarget = (id: string | undefined) =>
+    id ? { kind: 'structure' as const, id } : null;
+  const outerIds = () => data.outerOverlays;
+  const mwOverlay = outerOverlay(
+    () =>
+      galaxyTarget(selectedMwObject?.kind === 'satellite-galaxy' ? selectedMwObject.id : undefined),
+    outerIds,
+  );
+  const lgOverlay = outerOverlay(() => galaxyTarget(selectedLgMember?.id), outerIds);
+  const lsOverlay = outerOverlay(() => structureTarget(selectedLsMember?.id), outerIds);
+  const virgoOverlay = outerOverlay(() => structureTarget(selectedVirgoMember?.id), outerIds);
+  const laniakeaOverlay = outerOverlay(() => structureTarget(selectedLaniakeaMember?.id), outerIds);
+  const cosmicWebOverlay = outerOverlay(
+    () => structureTarget(selectedCosmicWebMember?.id),
+    outerIds,
+  );
   let mwLearnHref = $derived(
     selectedMwObject
       ? localHref(`/science/observation/${selectedMwObject.science_section}`)
@@ -842,22 +985,136 @@
     return target && { run: () => SCALE_EXITS[target.exit]()?.(), label: target.label };
   });
 
-  // Panel mutex: each select* below opens its own panel and explicitly
-  // closes the four other planet/sun/smallBody/satellite/belt panels.
-  // The full `resetExplorePanelState()` funnel is deliberately NOT used
-  // here — it would also close the iconic-mission panel + the sizes
-  // overlay, which should remain open across a body selection so the
-  // user can pick a body while the legend / sizes overlay stays up.
+  // Select = focus (UXD-019). Selecting a solar-system body is four things: its panel opens (the
+  // body panels are a mutex: only one is ever open), the body is the one selection (the ring
+  // follows it), the camera focuses it, and, when it came from a list or a link, its chip turns
+  // on. Each select* below is one kind's panel + selection + camera; `selectBody` takes a
+  // BodyRef to the right one, and every entry point that holds an id (INDEX row, resident, belt
+  // member, `?id=`) goes through it. The canvas calls the select* directly.
+  // The full `resetExplorePanelState()` funnel is deliberately NOT used here: it would also
+  // close the iconic-mission panel and the sizes overlay, which should stay open across a body
+  // selection so the user can pick a body while the legend or the overlay stays up.
+
+  const planetIds = new Set(PLANETS.map((p) => p.id));
+  const sceneMembers: SceneMembers = {
+    planets: planetIds,
+    smallBodies: new Set(SMALL_BODIES.map((b) => b.id)),
+    moons: new Set(PLANETS.flatMap((p) => (p.satellites ?? []).map((sat) => `${p.id}:${sat.id}`))),
+  };
+  const bodyMembership = {
+    isPlanet: (id: string) => planetIds.has(id),
+    isSmallBody: (id: string) => smallBodyById.has(id),
+  };
+  const smallBodyTypeOf = (id: string) => smallBodyById.get(id)?.type;
+
+  /**
+   * The one selection: exactly one of the five (planet, small body, moon, belt, Sun) is set. It
+   * is the body's ring, not its panel: × closes the panel and leaves the body selected and
+   * ringed, for every kind. Another selection, Reset View or its chip turned off clears it.
+   */
+  function holdSelection(ref: BodyRef | null): void {
+    selectedSun = ref?.kind === 'sun';
+    selectedId = ref?.kind === 'planet' ? ref.id : null;
+    selectedSmallBodyId = ref?.kind === 'small-body' ? ref.id : null;
+    selectedSatelliteKey = ref?.kind === 'moon' ? `${ref.parent}:${ref.id}` : null;
+    selectedBeltId = ref?.kind === 'belt' ? ref.id : null;
+    // A mission opened in place from the previous body's panel belongs to that body.
+    if (missionFromBodyId) {
+      if (iconic.state.panelOpen && iconic.state.selectedId === missionFromBodyId) iconic.reset();
+      missionFromBodyId = null;
+    }
+  }
+
+  function showPanel(which: 'planet' | 'sun' | 'smallBody' | 'satellite' | 'belt' | null): void {
+    panelState.planet = which === 'planet';
+    panelState.sun = which === 'sun';
+    panelState.smallBody = which === 'smallBody';
+    panelState.satellite = which === 'satellite';
+    panelState.belt = which === 'belt';
+  }
+
+  /** The ref of the body that is selected now (its ring is drawn), or null. */
+  function selectedBodyRef(): BodyRef | null {
+    if (selectedSatelliteKey) {
+      const [parent, id] = selectedSatelliteKey.split(':');
+      return { kind: 'moon', id, parent };
+    }
+    if (selectedId) return { kind: 'planet', id: selectedId };
+    if (selectedSmallBodyId) return { kind: 'small-body', id: selectedSmallBodyId };
+    if (selectedBeltId) return { kind: 'belt', id: selectedBeltId };
+    if (selectedSun) return { kind: 'sun', id: 'sun' };
+    return null;
+  }
+
+  /** Clear the selection of every body: ring, panel and camera focus (Reset View, chip off). */
+  function clearBodySelection(): void {
+    holdSelection(null);
+    showPanel(null);
+    focusBodyFn?.(null);
+  }
+
+  /**
+   * A chip turned off clears a selection of its kind: the body is no longer drawn, so its
+   * panel, ring and focus go with it. PATHS off closes a mission that was opened from a path.
+   */
+  function clearSelectionIfHidden(key: keyof typeof layers): void {
+    if (key === 'paths') {
+      const fromPath = PATHS_LEGEND.some((r) => r.mission_id === iconic.state.selectedId);
+      if (!layers.paths && fromPath) iconic.reset();
+      return;
+    }
+    const ref = selectedBodyRef();
+    if (ref && !layers[key] && chipOf(ref, smallBodyTypeOf) === key) clearBodySelection();
+  }
+
+  /** The reverse: selecting a body whose chip is off turns the chip on, so it is drawn. */
+  function showKind(ref: BodyRef): void {
+    untrack(() => {
+      const chip: BodyChip | null = isBodyHidden(ref, layers, smallBodyTypeOf)
+        ? chipOf(ref, smallBodyTypeOf)
+        : null;
+      if (chip) layers[chip] = true;
+    });
+  }
+
+  function selectBody(ref: BodyRef): void {
+    switch (ref.kind) {
+      case 'sun':
+        selectSun();
+        break;
+      case 'planet':
+        selectPlanet(ref.id);
+        break;
+      case 'moon':
+        if (ref.parent) selectSatellite(ref.parent, ref.id);
+        break;
+      case 'belt':
+        selectBelt(ref.id);
+        break;
+      case 'small-body':
+        selectSmallBody(ref.id);
+        break;
+    }
+  }
+
+  /** A link, a resident or a belt member: chip on, then the select funnel. No object, no-op. */
+  function openBody(ref: BodyRef): void {
+    if (!isBodyInScene(ref, sceneMembers)) return;
+    showKind(ref);
+    untrack(() => selectBody(ref));
+  }
+  function openBodyById(id: string): void {
+    const ref = resolveBodyRef(id, bodyMembership);
+    if (ref) openBody(ref);
+  }
 
   function selectPlanet(id: string) {
+    // Pluto is one body with one panel, the small-body panel, however it is reached.
+    if (resolveBodyRef(id, bodyMembership)?.kind === 'small-body') return selectSmallBody(id);
     cue('select');
-    selectedId = id;
-    panelState.planet = true;
-    panelState.sun = false;
-    panelState.smallBody = false;
-    panelState.satellite = false;
-    panelState.belt = false;
-    flyToBodyFn?.(id);
+    holdSelection({ kind: 'planet', id });
+    showPanel('planet');
+    focusBodyFn?.({ kind: 'planet', id });
     trackItemClick('planet', id, '/explore');
   }
 
@@ -872,23 +1129,17 @@
 
   function selectSun() {
     cue('select');
-    panelState.sun = true;
-    panelState.planet = false;
-    panelState.smallBody = false;
-    panelState.satellite = false;
-    panelState.belt = false;
+    holdSelection({ kind: 'sun', id: 'sun' });
+    showPanel('sun');
     exitNeighborhoodFn?.();
-    flyToBodyFn?.(null);
+    focusBodyFn?.({ kind: 'sun', id: 'sun' });
   }
 
   function selectSmallBody(id: string) {
     cue('select');
-    selectedSmallBodyId = id;
-    panelState.smallBody = true;
-    panelState.planet = false;
-    panelState.sun = false;
-    panelState.satellite = false;
-    panelState.belt = false;
+    holdSelection({ kind: 'small-body', id });
+    showPanel('smallBody');
+    focusBodyFn?.({ kind: 'small-body', id });
     trackItemClick('small-body', id, '/explore');
   }
 
@@ -899,26 +1150,105 @@
   // the other select* — only one detail panel is ever open.
   function selectSatellite(parentPlanetId: string, satelliteId: string) {
     cue('select');
-    selectedSatelliteKey = `${parentPlanetId}:${satelliteId}`;
-    panelState.satellite = true;
-    panelState.planet = false;
-    panelState.sun = false;
-    panelState.smallBody = false;
-    panelState.belt = false;
-    trackItemClick('satellite', selectedSatelliteKey, '/explore');
+    holdSelection({ kind: 'moon', id: satelliteId, parent: parentPlanetId });
+    showPanel('satellite');
+    focusBodyFn?.({ kind: 'moon', id: satelliteId, parent: parentPlanetId });
+    trackItemClick('satellite', `${parentPlanetId}:${satelliteId}`, '/explore');
   }
 
   // Belt selection (v0.7.x). Same panel-mutex pattern.
   function selectBelt(id: string) {
     cue('select');
-    selectedBeltId = id;
-    panelState.belt = true;
-    panelState.planet = false;
-    panelState.sun = false;
-    panelState.smallBody = false;
-    panelState.satellite = false;
+    holdSelection({ kind: 'belt', id });
+    showPanel('belt');
+    focusBodyFn?.({ kind: 'belt', id });
     trackItemClick('belt', id, '/explore');
   }
+
+  // The INDEX rail: shown at every scale but while a takeover owns the screen (black hole, deep-sky
+  // immersion, an exoplanet's BodyScene), and, outside the solar system, only in the 3D view.
+  const indexAvailable = $derived(
+    !activeBlackHole &&
+      !activeDeepSky &&
+      contextId !== 'body-scene' &&
+      (view === '3d' || !INDEX_NEEDS_3D[contextId as ShellId]),
+  );
+  function selectedSolarIndexId(): string | null {
+    if (panelState.planet) return selectedId;
+    if (panelState.sun) return 'sun';
+    if (panelState.smallBody) return selectedSmallBodyId;
+    if (panelState.satellite) return selectedSatelliteKey?.split(':')[1] ?? null;
+    if (panelState.belt) return selectedBeltId;
+    return null;
+  }
+  const selectedIndexIds: Record<ShellId, string | null> = $derived({
+    'solar-system': selectedSolarIndexId(),
+    neighborhood: selectedStarId ?? selectedDeepSkyId,
+    'milky-way': selectedMwId,
+    'local-group': selectedLgMember?.id ?? null,
+    'local-sheet': selectedLsMember?.id ?? null,
+    virgo: selectedVirgoMember?.id ?? null,
+    laniakea: selectedLaniakeaMember?.id ?? null,
+    'cosmic-web': selectedCosmicWebMember?.id ?? null,
+  });
+
+  function solarRowRef(row: ScaleIndexRow): BodyRef {
+    if (row.kind === 'sun') return { kind: 'sun', id: 'sun' };
+    if (row.kind === 'moon' && row.parent) return { kind: 'moon', id: row.id, parent: row.parent };
+    if (row.kind === 'belt') return { kind: 'belt', id: row.id };
+    if (row.kind === 'planet')
+      return resolveBodyRef(row.id, bodyMembership) ?? { kind: 'planet', id: row.id };
+    return { kind: 'small-body', id: row.id };
+  }
+
+  /** A row does exactly what a click on its object in the canvas does. */
+  function selectIndexRow(scale: ShellId, row: ScaleIndexRow) {
+    if (row.badges?.includes('black-hole')) {
+      indexOpen = false;
+      bhDeepLinkFn?.(row.id);
+      return;
+    }
+    switch (scale) {
+      case 'solar-system': {
+        const ref = solarRowRef(row);
+        // A row is listed whether or not its chip is on: selecting it turns the chip on.
+        showKind(ref);
+        selectBody(ref);
+        break;
+      }
+      case 'neighborhood':
+        if (row.section === 'deep-sky') selectDeepSkyFn?.(row.id);
+        else indexSelectStarFn?.(row.id);
+        break;
+      case 'milky-way':
+        mwDeepLinkFn?.(row.id);
+        break;
+      case 'local-group':
+        selectLgFn?.(row.id);
+        break;
+      case 'local-sheet':
+        selectLsFn?.(row.id);
+        break;
+      case 'virgo':
+        selectVirgoFn?.(row.id);
+        break;
+      case 'laniakea':
+        selectLaniakeaFn?.(row.id);
+        break;
+      case 'cosmic-web':
+        selectCosmicWebFn?.(row.id);
+        break;
+    }
+  }
+
+  // A scale jump keeps the INDEX open on a fine pointer; on a touch screen the 320 px rail covers
+  // most of the width, so it closes.
+  let indexContext: ExploreContextId = 'solar-system';
+  $effect(() => {
+    if (contextId === indexContext) return;
+    indexContext = contextId;
+    if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) indexOpen = false;
+  });
 
   // Deep-link resolvers + shallow URL mirrors (?id ?goto ?system/?planet ?deepsky
   // ?galaxy ?bh ?context ?paths/?focus) live in explore-url-sync; these deriveds
@@ -939,18 +1269,39 @@
   let openStarUrlId = $derived(panelState.star && selectedStarId ? selectedStarId : null);
   let bodySysUrl = $derived(contextId === 'body-scene' ? activeBodyHostId : null);
   let deepSkyUrlDesignation = $derived(activeDeepSky ? activeDeepSky.designation : null);
-  let galaxyUrlId = $derived(contextId === 'milky-way' && selectedMwId ? selectedMwId : null);
+  // A Milky Way hole's panel open in place is mirrored too, so it is shareable and reloads to the
+  // same panel (?galaxy=sagittarius-a-star opens it in place; ?bh= is the takeover).
+  let galaxyUrlId = $derived(
+    contextId !== 'milky-way'
+      ? null
+      : (selectedMwId ??
+          (!activeBlackHole &&
+          bhPanelOpen &&
+          (bhPanelHole?.id === 'sagittarius-a-star' || bhPanelHole?.id === 'cygnus-x-1')
+            ? bhPanelHole.id
+            : null)),
+  );
   let bhUrlId = $derived(activeBlackHole ? activeBlackHole.id : null);
   const urlGuards = createUrlGuards();
+  // The five outer scales with no URL parameter of their own (UXD-019): the selected member is
+  // mirrored as ?context=<scale>&pick=<id>.
+  const PICK_SCALES: readonly string[] = [
+    'local-group',
+    'local-sheet',
+    'virgo',
+    'laniakea',
+    'cosmic-web',
+  ];
+  let pickUrl = $derived.by(() => {
+    const id = PICK_SCALES.includes(contextId) ? selectedIndexIds[contextId as ShellId] : null;
+    return id ? { scale: contextId, id } : null;
+  });
   setupExploreUrlSync({
     guards: urlGuards,
     planetById: () => planetById,
     smallBodyById: () => smallBodyById,
-    selectSun,
+    openBody,
     selectPlanet,
-    selectSmallBody,
-    selectBelt,
-    selectSatellite,
     openBodyUrlId: () => openBodyUrlId,
     openStarUrlId: () => openStarUrlId,
     bodySystemUrl: () => ({
@@ -960,11 +1311,13 @@
     deepSkyUrlDesignation: () => deepSkyUrlDesignation,
     galaxyUrlId: () => galaxyUrlId,
     bhUrlId: () => bhUrlId,
+    pickUrl: () => pickUrl,
+    pickDeepLink: () => pickDeepLinkFn,
     gotoStar: () => gotoStarFn,
     enterSystem: () => enterSystemFn,
     deepSkyDeepLink: () => deepSkyDeepLinkFn,
     mwDeepLink: () => mwDeepLinkFn,
-    bhDeepLink: () => bhDeepLinkFn,
+    bhDeepLink: () => bhTakeoverFn,
     contextDeepLink: () => contextDeepLinkFn,
     showPaths: () => (layers.paths = true),
   });
@@ -1039,12 +1392,6 @@
         localizedSun = s;
       })
       .catch((err) => console.error('Failed to load sun:', err));
-    // Black holes for the index rail (2026-09-11) — small manifest, no locale.
-    getBlackHoles()
-      .then((holes) => {
-        blackHoleIndex = holes.map((h) => ({ id: h.id, name: h.name }));
-      })
-      .catch((err) => console.error('Failed to load black holes:', err));
 
     // ──────────────────────────────────────────────────────────────
     // 3D — Three.js scene
@@ -1109,6 +1456,8 @@
       getSelectedSatelliteKey: () => selectedSatelliteKey,
     });
     const {
+      asteroidBelt,
+      kuiperBelt,
       asteroidBeltPick,
       kuiperBeltPick,
       localGroup,
@@ -1117,6 +1466,8 @@
       planetOrbitLines,
       selHalo,
       selRingMat,
+      hoverHalo,
+      hoverRingMat,
       smallBodyObjs,
       stopExploreCentripetalLayer,
       stopExploreGalaxiesLayer,
@@ -1208,6 +1559,12 @@
       set scaleBarLabel(v) {
         scaleBarLabel = v;
       },
+      get panelCoverPx() {
+        return panelCoverPx;
+      },
+      set panelCoverPx(v) {
+        panelCoverPx = v;
+      },
       get contextId() {
         return contextId;
       },
@@ -1231,12 +1588,6 @@
       },
       set exoplanetSystemsById(v) {
         exoplanetSystemsById = v;
-      },
-      get cultureObjectIds() {
-        return cultureObjectIds;
-      },
-      set cultureObjectIds(v) {
-        cultureObjectIds = v;
       },
       get warpCaption() {
         return warpCaption;
@@ -1476,6 +1827,12 @@
       set bhPanelOpen(v) {
         bhPanelOpen = v;
       },
+      get bhPanelHole() {
+        return bhPanelHole;
+      },
+      set bhPanelHole(v) {
+        bhPanelHole = v;
+      },
       get bhCurvatureLens() {
         return bhCurvatureLens;
       },
@@ -1493,6 +1850,12 @@
       },
       set bhCultureDoors(v) {
         bhCultureDoors = v;
+      },
+      get deepSkyOverlay() {
+        return deepSkyOverlay;
+      },
+      set deepSkyOverlay(v) {
+        deepSkyOverlay = v;
       },
       get deepSkyCultureDoors() {
         return deepSkyCultureDoors;
@@ -1550,6 +1913,15 @@
       },
       get selectedId() {
         return selectedId;
+      },
+      get selectedSmallBodyId() {
+        return selectedSmallBodyId;
+      },
+      get selectedBeltId() {
+        return selectedBeltId;
+      },
+      get selectedSun() {
+        return selectedSun;
       },
       get panelState() {
         return panelState;
@@ -1613,16 +1985,16 @@
       smallBodyById,
       smallBodyPosition,
       DAYS_PER_YEAR,
-      fmtScale,
       distanceWithUnit,
       iconic,
-      openMessageCraft,
       sizePathsLegend,
       selectSun,
       selectPlanet,
       selectSmallBody,
       selectSatellite,
       selectBelt,
+      asteroidBelt,
+      kuiperBelt,
       asteroidBeltPick,
       kuiperBeltPick,
       localGroup,
@@ -1631,6 +2003,8 @@
       planetOrbitLines,
       selHalo,
       selRingMat,
+      hoverHalo,
+      hoverRingMat,
       smallBodyObjs,
       tmpWorldPos,
       updatePlanetLods,
@@ -1659,29 +2033,43 @@
     exitDeepSkyFn = exploreHost.exitDeepSkyFn;
     deepSkyGatewayFn = exploreHost.deepSkyGatewayFn;
     deepSkyDeepLinkFn = exploreHost.deepSkyDeepLinkFn;
-    flyToBodyFn = exploreHost.flyToBodyFn;
+    selectDeepSkyFn = exploreHost.selectDeepSkyFn;
+    focusBodyFn = exploreHost.focusBodyFn;
+    setRegimeHighlightFn = exploreHost.setRegimeHighlightFn;
     exitNeighborhoodFn = exploreHost.exitNeighborhoodFn;
     resetNeighborhoodFn = exploreHost.resetNeighborhoodFn;
     resetMilkyWayFn = exploreHost.resetMilkyWayFn;
     setMwLensFn = exploreHost.setMilkyWayLens;
     resetLocalGroupFn = exploreHost.resetLocalGroupFn;
+    resetLocalSheetFn = exploreHost.resetLocalSheetFn;
+    resetVirgoFn = exploreHost.resetVirgoFn;
+    resetLaniakeaFn = exploreHost.resetLaniakeaFn;
+    resetCosmicWebFn = exploreHost.resetCosmicWebFn;
     exitBodySceneFn = exploreHost.exitBodySceneFn;
     exitMilkyWayFn = exploreHost.exitMilkyWayFn;
     closeMwFn = exploreHost.closeMwFn;
     mwDeepLinkFn = exploreHost.mwDeepLinkFn;
     contextDeepLinkFn = exploreHost.contextDeepLinkFn;
+    pickDeepLinkFn = exploreHost.pickDeepLinkFn;
     exitLocalGroupFn = exploreHost.exitLocalGroupFn;
     closeLgFn = exploreHost.closeLgFn;
+    selectLgFn = exploreHost.selectLgFn;
     exitLocalSheetFn = exploreHost.exitLocalSheetFn;
     closeLsFn = exploreHost.closeLsFn;
+    selectLsFn = exploreHost.selectLsFn;
     exitVirgoFn = exploreHost.exitVirgoFn;
     closeVirgoFn = exploreHost.closeVirgoFn;
+    selectVirgoFn = exploreHost.selectVirgoFn;
     exitLaniakeaFn = exploreHost.exitLaniakeaFn;
     closeLaniakeaFn = exploreHost.closeLaniakeaFn;
+    selectLaniakeaFn = exploreHost.selectLaniakeaFn;
     exitCosmicWebFn = exploreHost.exitCosmicWebFn;
     closeCosmicWebFn = exploreHost.closeCosmicWebFn;
+    selectCosmicWebFn = exploreHost.selectCosmicWebFn;
     exitBlackHoleFn = exploreHost.exitBlackHoleFn;
+    seeBlackHoleLensingFn = exploreHost.seeBlackHoleLensingFn;
     bhDeepLinkFn = exploreHost.bhDeepLinkFn;
+    bhTakeoverFn = exploreHost.bhTakeoverFn;
     setBhCurvatureFn = exploreHost.setBhCurvatureFn;
     closeStarFn = exploreHost.closeStarFn;
     gotoStarFn = exploreHost.gotoStarFn;
@@ -1736,23 +2124,36 @@
     aria-label={m.explore_canvas_aria_2d()}
   ></canvas>
 
-  <!-- #45 top scale-navigator (replaces the v2 breadcrumb + the old bottom-right
-       picker; UXS-014 "you always know where you are"). One row under the nav:
-       `‹ back` (out one shell, or exit a takeover) · the scale chip (jump to ANY
-       shell) · `⟲ reset`. The chip alone names the current scale, so the redundant
-       breadcrumb is gone. In a full-screen takeover (black-hole / body-scene /
-       deep-sky) only the back arrow shows — the ladder isn't meaningful there. -->
+  <!-- #45 top scale-navigator (replaces the old bottom-right picker; UXS-014 "you always know
+       where you are"). One row under the nav: `‹ back` (out one shell, or exit a takeover) ·
+       the level chip (glyph + name, jump to ANY shell) · `⟲ reset`. In a full-screen takeover
+       (black-hole / body-scene / deep-sky) only the back arrow shows — the ladder isn't
+       meaningful there. C8: under the row hangs the level card ("what you are looking at"),
+       shown wherever the picker is. -->
   {#if view === '3d'}
     <ScaleNav
       atSolar={contextId === 'solar-system' && !activeBlackHole}
       back={scaleNavBack}
-      showPicker={!activeBlackHole && !activeDeepSky && contextId !== 'body-scene'}
+      showPicker={showLevelPicker}
       activeShell={contextId as ShellId}
       pickerDisabled={!contextDeepLinkFn}
       onJump={(shell) => void contextDeepLinkFn?.(shell)}
-      showReset={scaleResetVisible}
+      resetEnabled={scaleResetEnabled}
+      {panelCoverPx}
+      bind:width={scaleNavWidth}
       onReset={resetCurrentScale}
     />
+    {#if showLevelPicker}
+      <LevelContextCard shell={contextId as ShellId} {panelCoverPx} bind:width={levelCardWidth} />
+    {/if}
+    {#if !hintDone && panelCoverPx === 0}
+      <ExploreHint
+        text={m.explore_hint_zoom()}
+        topOnTouch
+        touchTopPx={hudMobileRowsHeight > 0 ? hudMobileRowsHeight + 16 : undefined}
+        ondismiss={() => (hintDone = true)}
+      />
+    {/if}
   {/if}
 
   <!-- Slice 5/8 honesty badges (Milky Way … Cosmic Web are labelled schematics,
@@ -1776,27 +2177,10 @@
     <SunCompass ang={sunCompass.ang} ly={sunCompass.ly} />
   {/if}
 
-  <!-- Neighborhood star index — the left INDEX rail. WS-3 (RFC-039 Contract D)
-       retired the bespoke .nb-hud chip row: constellations, deep-sky, the H–R
-       diagram and light-cones are now standard science layers, surfaced uniformly
-       through the ScienceLayersPanel lens (see lensPanel derived + onLayerChange
-       subscriptions). -->
-  {#if view === '3d' && contextId === 'neighborhood' && !activeBlackHole}
-    <StarIndex
-      stars={namedStars}
-      open={starIndexOpen}
-      selectedId={selectedStarId}
-      hostIds={exoplanetHostIds}
-      cultureIds={cultureObjectIds}
-      blackHoles={blackHoleIndex}
-      onSelect={(id) => indexSelectStarFn?.(id)}
-      onSelectBlackHole={(id) => {
-        starIndexOpen = false;
-        bhDeepLinkFn?.(id);
-      }}
-      onClose={() => (starIndexOpen = false)}
-    />
-  {/if}
+  <!-- WS-3 (RFC-039 Contract D) retired the bespoke .nb-hud chip row: constellations,
+       deep-sky, the H–R diagram and light-cones are standard science layers, surfaced
+       uniformly through the ScienceLayersPanel lens (see lensPanel derived + onLayerChange
+       subscriptions). The INDEX rail of every scale is mounted below, with its handle. -->
 
   <!-- #451 (WS-2) — the Milky Way science lens (rotation curve / dark-matter halo /
        stellar populations) now lives in the unified ScienceLayersPanel, like every
@@ -1817,6 +2201,8 @@
       barPx={scaleBarPx}
       barLabel={scaleBarLabel}
       {bodyHostName}
+      {panelCoverPx}
+      dockBelow={contextId === 'solar-system' && !activeBlackHole}
     />
   {/if}
 
@@ -1907,31 +2293,23 @@
 
   <HudControls
     hidden={contextId !== 'solar-system' || !!activeBlackHole}
+    drawerUnderPanel={panelCoverPx > 0}
     {view}
     {toggleView}
-    hasSelection={!!(
-      selectedId ||
-      selectedSmallBodyId ||
-      selectedSatelliteKey ||
-      selectedBeltId ||
-      panelState.sun
-    )}
-    onResetView={() => {
-      selectedId = null;
-      selectedSmallBodyId = null;
-      selectedSatelliteKey = null;
-      selectedBeltId = null;
-      resetExplorePanelState();
-      exitNeighborhoodFn?.();
-      flyToBodyFn?.(null);
-    }}
+    hasSelection={solarHasSelection}
+    onResetView={resetSolarView}
+    clearRightPx={hudClearRightPx}
+    mobileClearRightPx={hudMobileClearRightPx}
+    bind:mobileRowsHeight={hudMobileRowsHeight}
     {layers}
-    onToggleLayer={(key) => (layers[key] = !layers[key])}
+    onToggleLayer={(key) => {
+      layers[key] = !layers[key];
+      clearSelectionIfHidden(key);
+    }}
     onShowPaths={() => (layers.paths = true)}
     bind:pathsLegendEl
     {legendRowEls}
     {iconic}
-    {openMessageCraft}
     {onLegendKeydown}
     {exploreRegimes}
     {openExploreRegime}
@@ -1951,16 +2329,22 @@
   {/if}
 </div>
 
-<EntityIndex hub="explore" title={m.entity_index_explore()} links={data.entityIndex} floating />
-
 <PlanetPanel
   planet={selectedPlanet}
   open={panelState.planet}
   onClose={closePanel}
+  onMissionOpen={openMissionInPlace}
+  covered={missionOverBody}
   onPlanMission={selectedPlanet?.missionable ? onPlanMission : undefined}
 />
 
-<SunPanel sun={localizedSun} open={panelState.sun} onClose={closeSunPanel} />
+<SunPanel
+  sun={localizedSun}
+  open={panelState.sun}
+  onClose={closeSunPanel}
+  onMissionOpen={openMissionInPlace}
+  covered={missionOverBody}
+/>
 
 <!-- v2 named-star detail (Slice 1). closeStarFn set in onMount. -->
 <StarPanel
@@ -1985,6 +2369,7 @@
 <DeepSkyPanel
   object={activeDeepSky}
   image={activeDeepSkyImage}
+  overlay={deepSkyOverlay}
   galleryHref={localHref(`/gallery/deep-sky`)}
   open={deepSkyPanelOpen}
   onClose={() => exitDeepSkyFn?.()}
@@ -1997,62 +2382,91 @@
 
 <MilkyWayPanel
   object={selectedMwObject}
+  overlay={mwOverlay.current}
+  member={mwPanelMember}
   learnHref={mwLearnHref}
   open={mwPanelOpen}
   onClose={() => closeMwFn?.()}
+  covered={bhPanelOpen}
 />
 
-<LocalGroupPanel member={selectedLgMember} open={lgPanelOpen} onClose={() => closeLgFn?.()} />
+<LocalGroupPanel
+  member={lgPanelMember}
+  overlay={lgOverlay.current}
+  open={lgPanelOpen}
+  onClose={() => closeLgFn?.()}
+  covered={bhPanelOpen}
+/>
 
-<LocalSheetPanel member={selectedLsMember} open={lsPanelOpen} onClose={() => closeLsFn?.()} />
-<VirgoPanel member={selectedVirgoMember} open={virgoPanelOpen} onClose={() => closeVirgoFn?.()} />
+<LocalSheetPanel
+  member={selectedLsMember}
+  overlay={lsOverlay.current}
+  name={selectedLsMember ? rowName('local-sheet', selectedLsMember.id) : undefined}
+  open={lsPanelOpen}
+  onClose={() => closeLsFn?.()}
+  covered={bhPanelOpen}
+/>
+<VirgoPanel
+  member={selectedVirgoMember}
+  overlay={virgoOverlay.current}
+  name={selectedVirgoMember ? rowName('virgo', selectedVirgoMember.id) : undefined}
+  open={virgoPanelOpen}
+  onClose={() => closeVirgoFn?.()}
+  covered={bhPanelOpen}
+/>
 <CosmicWebPanel
   member={selectedCosmicWebMember}
+  overlay={cosmicWebOverlay.current}
+  name={selectedCosmicWebMember ? rowName('cosmic-web', selectedCosmicWebMember.id) : undefined}
   open={cosmicWebPanelOpen}
   onClose={() => closeCosmicWebFn?.()}
+  covered={bhPanelOpen}
 />
 <LaniakeaPanel
   member={selectedLaniakeaMember}
+  overlay={laniakeaOverlay.current}
+  name={selectedLaniakeaMember ? rowName('laniakea', selectedLaniakeaMember.id) : undefined}
   open={laniakeaPanelOpen}
   onClose={() => closeLaniakeaFn?.()}
+  covered={bhPanelOpen}
 />
 
 <BlackHolePanel
-  hole={activeBlackHole}
+  hole={activeBlackHole ?? bhPanelHole}
   learnHref={bhLearnHref}
   open={bhPanelOpen}
   onClose={() => exitBlackHoleFn?.()}
+  onSeeLensing={activeBlackHole ? undefined : () => seeBlackHoleLensingFn?.()}
 >
   {#each bhCultureDoors as door (door.id)}
     <CultureDoorCard {door} />
   {/each}
 </BlackHolePanel>
 
-<!-- #410 — the message an interstellar craft carries. Opened from its PATHS
-     trajectory Today marker; "Full mission details" hands off to MissionPanel. -->
-<MessagePanel
-  craft={activeCraft}
-  open={craftPanelOpen}
-  onClose={() => (craftPanelOpen = false)}
-  onMissionDetails={openCraftMission}
-/>
-
 <SmallBodyPanel
   body={selectedSmallBody}
   open={panelState.smallBody}
   onClose={() => (panelState.smallBody = false)}
+  onMissionOpen={openMissionInPlace}
+  covered={missionOverBody}
 />
 
 <SatellitePanel
   satelliteKey={selectedSatelliteKey}
   open={panelState.satellite}
   onClose={() => (panelState.satellite = false)}
+  onMissionOpen={openMissionInPlace}
+  covered={missionOverBody}
 />
 
 <BeltPanel
   beltId={selectedBeltId}
   open={panelState.belt}
   onClose={() => (panelState.belt = false)}
+  onMissionOpen={openMissionInPlace}
+  covered={missionOverBody}
+  bodyInScene={hasSceneObject}
+  onSelectBody={openBodyById}
 />
 
 <MissionPanel
@@ -2060,6 +2474,7 @@
   open={iconic.state.panelOpen}
   onClose={() => iconic.reset()}
   onFly={(id) => goto(localHref(`/fly?mission=${id}`))}
+  onBack={missionOverBody ? () => iconic.reset() : undefined}
 />
 
 <!-- Heliocentric scale ruler + zone panel (#357). Lower-left, always
@@ -2075,72 +2490,59 @@
     <OrbitRuler
       regimes={exploreRegimes}
       highlightRegime={null}
+      activeRegime={exploreRegimePanelOpen ? selectedExploreRegimeId : null}
       onSelect={openExploreRegime}
+      onPreview={(id) => (hoverExploreRegimeId = id)}
       surfaceAnchor={null}
+      forceFolded={layers.paths}
     />
   </div>
 {/if}
 
 <RegimePanel
+  bundle="orbit-regimes-explore"
   regime={selectedExploreRegime}
   open={exploreRegimePanelOpen}
   onClose={closeExploreRegime}
+  onMissionOpen={(id) => void iconic.openMission(id, localeFromPage(page))}
   selectableIds={exploreSelectableIds}
-  onResidentClick={onExploreResidentClick}
+  onResidentClick={openBodyById}
 />
+
+<!-- The INDEX of each scale (UXD-017, RFC-031 S2): a left-edge pull-out tab toggles the searchable
+     side panel of the scale on screen, master → detail, staying open on select. One instance per
+     scale, hidden unless it is the scale on screen, so the prerendered page links every entity
+     page. The accessible counterpart to canvas picking. -->
+{#if indexAvailable}
+  <div class="scale-index-handle">
+    <Chip
+      kind="toggle"
+      active={indexOpen}
+      data-testid="scale-index-toggle"
+      aria-label={indexAriaLabel(contextId as ShellId)}
+      title={indexAriaLabel(contextId as ShellId)}
+      onclick={() => (indexOpen = !indexOpen)}
+    >
+      {m.explore_body_index_toggle()}
+    </Chip>
+  </div>
+{/if}
+{#each CTX_ORDER as scale (scale)}
+  <ScaleIndex
+    {scale}
+    rows={indexRows[scale]}
+    selectedId={selectedIndexIds[scale]}
+    open={indexOpen && indexAvailable && contextId === scale}
+    onClose={() => (indexOpen = false)}
+    onSelect={(row) => selectIndexRow(scale, row)}
+  />
+{/each}
 
 <!-- Hidden tour anchors (PRD-016 §S11 / RFC-019 §12). Programmatic
      triggers used by the audio executor's `click` action so the tour
      can demonstrate planet-selection on a canvas-driven scene where
      there's no clickable DOM element for a planet. These buttons are
      visually offscreen but click()-able. -->
-<!-- Body index (RFC-031 S2): the desktop edge-handle "little side tab" (mirrors
-     the surface index handle) toggles the searchable side panel — master → detail,
-     stays open on select. Mobile uses the Index drawer tab. The accessible
-     counterpart to canvas picking. -->
-<!-- The body index is the solar-system's INDEX rail. Out in the stellar
-     neighborhood the star index (below) takes over the same left rail + handle,
-     so gate the body index to the solar-system context (no cross-scale bleed). -->
-{#if contextId === 'solar-system'}
-  <button
-    type="button"
-    class="body-index-handle body-index-toggle"
-    data-testid="explore-body-index-toggle"
-    aria-pressed={bodyIndexOpen}
-    aria-label={m.explore_body_index_aria()}
-    title={m.explore_body_index_aria()}
-    onclick={() => (bodyIndexOpen = !bodyIndexOpen)}
-  >
-    <span class="bih-label">{m.explore_body_index_toggle()}</span>
-  </button>
-  <ExploreBodyIndex
-    bodies={bodyIndexList}
-    {selectedId}
-    open={bodyIndexOpen}
-    onClose={() => (bodyIndexOpen = false)}
-    onSelect={(b) => {
-      if (b.kind === 'sun') selectSun();
-      else if (b.kind === 'planet') selectPlanet(b.id);
-      else selectSmallBody(b.id);
-      // Desktop master → detail: keep the index open on select (matches surface).
-    }}
-  />
-{/if}
-<!-- Neighborhood INDEX handle — same left-edge tab as the body index, toggles the
-     star index (the neighborhood's primary index). -->
-{#if view === '3d' && contextId === 'neighborhood' && !activeBlackHole}
-  <button
-    type="button"
-    class="star-index-handle"
-    aria-pressed={starIndexOpen}
-    aria-label={m.star_index_aria()}
-    title={m.star_index_aria()}
-    onclick={() => (starIndexOpen = !starIndexOpen)}
-  >
-    <span class="bih-label">{m.explore_body_index_toggle()}</span>
-  </button>
-{/if}
-
 <div class="tour-anchors" aria-hidden="true">
   {#each ['mercury', 'venus', 'earth', 'mars', 'jupiter', 'saturn', 'uranus', 'neptune'] as planetId (planetId)}
     <button
@@ -2171,10 +2573,10 @@
      panel's toggles were dead switches. -->
 {#if view === '3d'}
   <ScienceLayersPanel
-    title={lensPanel.title}
-    body={lensPanel.body}
-    tab={lensPanel.tab}
-    section={lensPanel.section}
+    title={showLevelPicker ? undefined : lensPanel.title}
+    body={showLevelPicker ? undefined : lensPanel.body}
+    tab={showLevelPicker ? undefined : lensPanel.tab}
+    section={showLevelPicker ? undefined : lensPanel.section}
     available={lensPanel.available}
     historicalFoundations={lensPanel.historicalFoundations}
   />
@@ -2202,37 +2604,6 @@
   /* .nb-hud chip-row styles removed 2026-09-11 — the last bespoke chip
      (mass–period) moved into the science-lens layer panel; WS-3 had
      already retired the rest. */
-  /* The neighborhood star-index handle mirrors the body-index tab but stays
-     available on touch — the body index falls back to a mobile drawer; the star
-     index has no drawer, so its handle must show at every viewport. */
-  .star-index-handle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    left: 0;
-    top: 50%;
-    z-index: 44;
-    writing-mode: vertical-rl;
-    transform: translateY(-50%) rotate(180deg);
-    padding: 12px 6px;
-    background: rgba(8, 10, 22, 0.85);
-    border: 1px solid rgba(154, 166, 189, 0.34);
-    border-left: none;
-    border-radius: 0 6px 6px 0;
-    color: rgba(220, 227, 240, 0.82);
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 11px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    cursor: pointer;
-    backdrop-filter: blur(6px);
-  }
-  .star-index-handle:hover,
-  .star-index-handle[aria-pressed='true'] {
-    color: #aab6cc;
-    border-color: rgba(154, 166, 189, 0.6);
-  }
   /* .nb-controls/.nb-chip removed 2026-09-11 — the black-hole curvature/time
      chips (their last consumer) moved into the science-lens layer panel. */
 
@@ -2245,43 +2616,6 @@
   /* Hidden tour-anchor buttons (PRD-016 §S11 / RFC-019 §12). Visually
      offscreen but click()-able so the audio executor can drive planet
      selection without a DOM hit on the 3D canvas. */
-  /* Desktop object-index edge-handle "little side tab" — mirrors the surface
-     index handle. Hidden on touch (mobile uses the Index drawer tab); a fine
-     pointer gets the left-edge vertical handle that toggles the side panel. */
-  /* A1: solar-system object index is a left-edge pullout tab on ALL viewports
-     (was desktop-only via a hover gate; mobile used a bottom-drawer tab) —
-     matching the stellar-neighborhood .star-index-handle and the body scenes. */
-  .body-index-handle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    left: 0;
-    /* Vertically centred on the left edge — away from the top-left control
-       chips, matching the /iss + /tiangong module handles (.handle-left). */
-    top: 50%;
-    z-index: 44;
-    writing-mode: vertical-rl;
-    transform: translateY(-50%) rotate(180deg);
-    padding: 12px 6px;
-    background: rgba(8, 10, 22, 0.85);
-    border: 1px solid var(--border-subtle, #23232e);
-    border-left: none;
-    border-radius: 0 6px 6px 0;
-    color: rgba(255, 255, 255, 0.8);
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 11px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    cursor: pointer;
-    backdrop-filter: blur(6px);
-  }
-  .body-index-handle:hover,
-  .body-index-handle[aria-pressed='true'] {
-    color: #4ecdc4;
-    border-color: rgba(78, 205, 196, 0.5);
-  }
-
   .tour-anchors {
     position: absolute;
     width: 1px;
@@ -2300,23 +2634,24 @@
   .ruler-desktop-only {
     display: contents;
   }
-  /* The left rail (PLANETS…ICONIC MISSIONS chips, 124-368 px from the top) and
-     the ruler must not share pixels. Tall windows: the ruler sits below the
-     chips (--ruler-top-clear caps its height). Short ones: it moves right,
-     beside the chips. Up to 600 px wide the time dock is 96 px tall, so the
-     ruler clears it (--ruler-clear). */
+  /* The layer chip row (PLANETS…PATHS, one line, to about 140 px from the top) and the
+     ruler must not share pixels: --ruler-top-clear caps the ruler's height below it.
+     Up to 600 px wide the time dock is 96 px tall, so the ruler clears it (--ruler-clear). */
   .ruler-desktop-only {
-    --ruler-top-clear: 376px;
+    --ruler-top-clear: 150px;
   }
-  @media (max-height: 759px) {
-    .ruler-desktop-only {
-      --ruler-top-clear: 0px;
-      --ruler-left: 159px;
-    }
-  }
+  /* The ruler keeps its left edge; on short windows the left-edge INDEX tab (z 44) simply lies
+     over it (the ruler is z 1). Operator 2026-11-12: the tab must not push the ruler inward. */
   @media (max-width: 600px) {
     .ruler-desktop-only {
       --ruler-clear: 104px;
+    }
+    /* The scale panel is 190 px wide at the right here (ScaleStrip): the ruler stops 8 px short of
+       it and cuts a name with an ellipsis (its title carries the full name) rather than run under
+       it. */
+    .ruler-desktop-only :global(.ruler) {
+      min-width: 0;
+      max-width: calc(100vw - 12px - 190px - 12px - 8px);
     }
   }
   @media (hover: none), (pointer: coarse) {
@@ -2329,6 +2664,8 @@
     :global(.mdg-body .ruler) {
       position: static;
       width: 100%;
+      min-width: 0;
+      max-width: none;
       max-height: 32vh;
       left: auto;
       bottom: auto;

@@ -1,0 +1,48 @@
+{
+  "name": "Chandrayaan-2",
+  "vehicle": "LVM3 M1 (구 GSLV Mk III)",
+  "payload": "발사 질량 3850 kg; 궤도선 2379 kg; Vikram 착륙선 1471 kg (27 kg의 Pragyan 로버 포함)",
+  "delta_v": "~3.5 km/s (추정)",
+  "type": "궤도선 작동 중 · 착륙선 상실",
+  "first": "인도 최초의 달 연착륙 시도",
+  "description": "Chandrayaan-2는 ISRO의 두 번째 달 탐사 임무이자 첫 연착륙 시도였다. 궤도선, Vikram 착륙선, 27 kg의 Pragyan 로버가 2019-07-22 스리하리코타에서 함께 발사되었다. 궤도선은 2019-08-20 달 궤도에 포획되었고, Vikram은 2019-09-02 분리되었으며, 착륙선은 2019-09-06 남극 지역을 향한 동력 하강을 시작했다. 고도 약 2.1 km에서 교신이 끊겼고 Vikram은 추락했다. 고장 분석 위원회는 하강 유도·제어의 소프트웨어 오류를 포함한 여러 요인의 조합을 원인으로 꼽았다. 이후 NASA의 달 정찰 궤도선(LRO)이, 첸나이의 한 자원봉사자가 그 영상에서 잔해를 발견한 뒤 충돌 지점(70.881° S, 22.784° E)을 찾아냈다. 궤도선은 계속 작동했다. 8개 관측 장비(CLASS, XSM, DFSAR, IIRS, ChACE-2, TMC-2, RAMBHA-DFRS, OHRC)는 2026년에도 극궤도에서 달을 지도화하고 있었으며, OHRC 카메라는 나중에 Chandrayaan-3의 착륙 지점도 촬영했다.",
+  "events": [
+    {
+      "met": 0,
+      "label": "발사",
+      "note": "스리하리코타에서 LVM3 M1 (구 GSLV Mk III), 2019-07-22.",
+      "type": "nominal"
+    },
+    {
+      "met": 22.49,
+      "label": "TLI",
+      "note": "지구 궤도 상승 기동을 거듭한 뒤 2019-08-13 달 전이 궤도 진입.",
+      "type": "nominal"
+    },
+    {
+      "met": 28.76,
+      "label": "달 궤도 진입",
+      "note": "달 궤도 진입 2019-08-20, 18,072 x 114 km 궤도.",
+      "type": "nominal"
+    },
+    {
+      "met": 41.94,
+      "label": "Vikram 분리",
+      "note": "Pragyan 로버를 품은 Vikram이 2019-09-02 궤도선에서 분리됨.",
+      "type": "nominal"
+    },
+    {
+      "met": 46.45,
+      "label": "착륙선 상실",
+      "note": "2019-09-06 약 20:08 UTC(인도에서는 9월 7일)에 동력 하강 시작; 고도 약 2.1 km에서 교신이 끊기고 Vikram이 추락함.",
+      "type": "warning"
+    },
+    {
+      "met": 133,
+      "label": "추락 지점 발견",
+      "note": "NASA의 LRO가 Vikram의 충돌 지점(70.881° S, 22.784° E)을 찾아내 2019-12-02 발표; 궤도선은 지도화를 계속함.",
+      "type": "info"
+    }
+  ],
+  "vehicle_stage": "LVM3 극저온 상단"
+}

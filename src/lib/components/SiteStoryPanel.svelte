@@ -173,7 +173,7 @@
   }
   .essay-kicker {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10.5px;
+    font-size: var(--size-label);
     letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--body-tint, rgba(255, 255, 255, 0.6));
@@ -184,9 +184,7 @@
     line-height: 1.2;
   }
   .essay-dek {
-    font-family: 'Crimson Pro', Georgia, serif;
-    font-style: italic;
-    font-size: 14px;
+    font-size: var(--size-lead);
     line-height: 1.4;
     color: rgba(255, 255, 255, 0.7);
   }
@@ -207,8 +205,7 @@
      * page body font is Space Mono (var(--font-mono)) — without an
      * explicit override the story text inherits the monospace, which
      * Marko flagged as visually inconsistent with other tabs. */
-    font-family: 'Crimson Pro', serif;
-    font-size: 14px;
+    font-size: var(--size-lead);
     line-height: 1.5;
     color: rgba(255, 255, 255, 0.82);
     margin: 0;
@@ -230,7 +227,7 @@
   .chapter-sub {
     font-size: 11px;
     line-height: 1.45;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
     margin: 0;
   }
   .images {
@@ -274,7 +271,7 @@
     left: 8px;
     padding: 3px 8px;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     font-weight: 600;
     letter-spacing: 1.2px;
     color: #fff;
@@ -289,9 +286,7 @@
     margin: 0;
   }
   .credit {
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--color-text-label);
     margin-left: 4px;
   }
 </style>

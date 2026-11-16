@@ -1,0 +1,115 @@
+{
+  "id": "artemis1",
+  "agency": "NASA",
+  "agency_full": "National Aeronautics and Space Administration",
+  "sector": "gov",
+  "dest": "MOON",
+  "color": "#0B3D91",
+  "year": 2022,
+  "status": "FLOWN",
+  "departure_date": "2022-11-16",
+  "arrival_date": "2022-11-25",
+  "transit_days": 9,
+  "round_trip": true,
+  "vehicle": "SLS Block 1 + Orion (uncrewed)",
+  "payload": "Orion with the instrumented manikin Commander Moonikin Campos; ten CubeSats",
+  "delta_v": "~0.43 km/s (DRO departure and return flyby burns only; total not stated)",
+  "data_quality": "good",
+  "credit": "© NASA — Artemis I, November–December 2022. Public domain / archive.",
+  "links": [
+    {
+      "l": "Artemis I — NASA",
+      "u": "https://www.nasa.gov/mission/artemis-i/",
+      "t": "core"
+    },
+    {
+      "l": "Artemis I — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Artemis_1",
+      "t": "intro"
+    },
+    {
+      "l": "Artemis 1 (NASA NSSDCA)",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2022-156A",
+      "t": "deep"
+    },
+    {
+      "l": "Artemis I flight day 20: Orion conducts return powered flyby (NASA)",
+      "u": "https://www.nasa.gov/blogs/artemis/2022/12/05/artemis-i-flight-day-20-orion-conducts-return-powered-flyby/",
+      "t": "deep"
+    }
+  ],
+  "flight_data_quality": "sparse",
+  "fleet_refs": [
+    {
+      "id": "sls-block-1",
+      "role": "launcher"
+    },
+    {
+      "id": "orion",
+      "role": "spacecraft"
+    },
+    {
+      "id": "lc-39b",
+      "role": "launch-site"
+    }
+  ],
+  "flight": {
+    "arrival": {
+      "periapsis_km": 130,
+      "source": "NASA Artemis I: outbound powered flyby 2022-11-21 about 80 miles above the lunar surface (flight day 5 blog); return powered flyby 2022-12-05, 80.6 miles above the surface (flight day 20 blog). The distant retrograde orbit between them is not drawn: the trajectory model has no such arrival type."
+    },
+    "events": [
+      {
+        "met_days": 0,
+        "type": "launch",
+        "label": "Launch — SLS Block 1 / Orion",
+        "description": "Kennedy Space Center LC-39B, 2022-11-16, 06:47 UTC (1:47 a.m. EST). The first flight of the Space Launch System, with Orion uncrewed."
+      },
+      {
+        "met_days": 5.26,
+        "type": "flyby",
+        "label": "Moon — outbound powered flyby",
+        "description": "2022-11-21, closest approach at 7:57 a.m. EST (12:57 UTC), about 80 miles above the lunar surface after a 2 minute 30 second burn: the first of two maneuvers to enter a distant retrograde orbit."
+      },
+      {
+        "met_days": 9.63,
+        "type": "arrival",
+        "label": "Distant retrograde orbit insertion",
+        "description": "2022-11-25. Orion enters the distant retrograde orbit around the Moon."
+      },
+      {
+        "met_days": 15.63,
+        "type": "tei",
+        "label": "Distant retrograde departure burn",
+        "description": "2022-12-01. A 1 minute 45 second burn of the main engine on the European Service Module, about 454 feet per second, takes Orion out of the orbit.",
+        "dv_km_s": 0.138
+      },
+      {
+        "met_days": 19.41,
+        "type": "tcm",
+        "label": "Return powered flyby",
+        "description": "2022-12-05, 80.6 miles above the lunar surface. A 3 minute 27 second burn of about 961 feet per second redirects Orion toward Earth.",
+        "dv_km_s": 0.293
+      },
+      {
+        "met_days": 25.45,
+        "type": "earth_return",
+        "label": "Splashdown — Pacific Ocean",
+        "description": "2022-12-11, 12:40 p.m. EST (17:40 UTC), off the coast of San Diego, after 25 days 10 hours 53 minutes."
+      }
+    ],
+    "cislunar_profile": {
+      "source_tier": "tier_1_analytic",
+      "translunar": {
+        "type": "direct"
+      },
+      "lunar_arrival": {
+        "type": "flyby",
+        "periselene_km": 130
+      },
+      "return": {
+        "type": "none"
+      }
+    }
+  }
+}

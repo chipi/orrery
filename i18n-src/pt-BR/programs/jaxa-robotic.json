@@ -91,5 +91,16 @@
     "/moon": "Lua — o local de pouso do SLIM",
     "/explore": "Explorar — Vênus e os planetas internos",
     "/programs/hayabusa": "Hayabusa — a campanha da JAXA de retorno de amostras de asteroides"
+  },
+  "roster": {
+    "mission:kaguya": {
+      "note": "a maior missão lunar desde a Apollo — um orbitador lunar que mapeou a superfície com detalhe sem precedentes e gravou o primeiro vídeo em alta definição de um nascer da Terra sobre o horizonte lunar"
+    },
+    "mission:akatsuki": {
+      "note": "depois que o motor de inserção orbital falhou em Vênus em 2010, a sonda circulou o Sol por cinco anos e, numa segunda tentativa, usou seus minúsculos propulsores de atitude para entrar em órbita — uma missão salva de uma perda certa"
+    },
+    "mission:slim": {
+      "note": "o “Moon Sniper” pousou a cerca de 10 metros de seu alvo — uma precisão pontual que ninguém havia alcançado — e depois sobrevive a um pouso tombado para devolver ciência com energia solar"
+    }
   }
 }

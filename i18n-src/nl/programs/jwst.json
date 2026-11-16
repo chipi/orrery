@@ -95,5 +95,27 @@
     "/programs/great-observatories": "De Great Observatories — de lijn die JWST voortzet",
     "/programs/ariane": "Ariane — de raket die hem lanceerde",
     "/earth?site=jwst": "James Webb-ruimtetelescoop"
+  },
+  "roster": {
+    "Conceived": {
+      "note": "de planning begint voor een 'Next Generation Space Telescope' als opvolger van Hubble — het begin van een saga van 25 jaar vol herontwerpen, vertragingen en een budget dat ongeveer tienvoudig groeide",
+      "name": "Bedacht"
+    },
+    "Nearly cancelled": {
+      "note": "jaren achter op schema en miljarden boven budget werd het programma door het Congres als doelwit voor annulering aangewezen voordat het werd gered — een overleving zo krap als geen andere in deze atlas",
+      "name": "Bijna geannuleerd"
+    },
+    "Launch": {
+      "note": "op eerste kerstdag lanceert een door ESA geleverde Ariane 5 JWST vlekkeloos — zo nauwkeurig dat de telescoop genoeg brandstof bespaarde om zijn verwachte levensduur ruwweg te verdubbelen",
+      "name": "Lancering"
+    },
+    "The unfolding": {
+      "note": "in twee weken ontvouwen 344 stappen met een enkelvoudig faalrisico het zonnescherm ter grootte van een tennisbaan en de gesegmenteerde spiegel een miljoen mijl verwijderd van elke hoop op reparatie — elk daarvan werkte",
+      "name": "De ontvouwing"
+    },
+    "First images": {
+      "note": "de eerste beelden in volle kleur verbazen de wereld — het diepste infraroodbeeld van het heelal ooit gemaakt, sterrenstelsels uit de dageraad van de kosmische tijd",
+      "name": "Eerste beelden"
+    }
   }
 }

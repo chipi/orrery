@@ -1,0 +1,30 @@
+{
+  "name": "IM-1",
+  "vehicle": "Falcon 9 Block 5",
+  "payload": "1900 kg着陆器（Nova-C Odysseus）；六项NASA载荷",
+  "delta_v": "~3.8 km/s（地月转移入轨 + 月球轨道入轨，估算）",
+  "type": "商业着陆器 · 倾倒，仍在运行",
+  "first": "月球上的一台商业着陆器：它倾倒着陆，但仍在工作",
+  "description": "IM-1是Intuitive Machines的首次月球任务，在NASA的Commercial Lunar Payload Services计划下执行，搭载六项NASA载荷。其Nova-C着陆器名为Odysseus，于2024-02-15由Falcon 9发射，2024-02-21进入月球轨道，并于2024-02-22的23:23:53 UTC在Malapert A撞击坑附近着陆。它着陆后仍在运行，但最终倾倒停下，倾斜约30度。它一直工作到2024-02-29月夜开始时失去电力。",
+  "events": [
+    {
+      "met": 0,
+      "label": "发射",
+      "note": "2024-02-15，Falcon 9从LC-39A发射。",
+      "type": "nominal"
+    },
+    {
+      "met": 6,
+      "label": "月球轨道入轨",
+      "note": "Odysseus于2024-02-21进入月球轨道。",
+      "type": "nominal"
+    },
+    {
+      "met": 7,
+      "label": "着陆",
+      "note": "2024-02-22在Malapert A附近着陆，并倾倒停下。",
+      "type": "nominal"
+    }
+  ],
+  "vehicle_stage": "Falcon 9 第二级"
+}

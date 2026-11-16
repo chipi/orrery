@@ -33,7 +33,7 @@
   );
   const ariaLabel = $derived(ariaLabelKey ? t(ariaLabelKey) : `Assist chain · ${provenanceText}`);
 
-  const TEAL = '78,205,196';
+  const TEAL = '78,205,196'; // a3-keep: Lab figure art, palette review at the end
   const GOLD = '255,200,80';
   const PAD = { left: 46, right: 96, top: 44, bottom: 40 };
   const px0 = PAD.left;
@@ -53,14 +53,14 @@
     const yOf = (v: number): number => py1 - (v / yMax) * (py1 - py0);
 
     // axes
-    ctx.strokeStyle = `rgba(${TEAL},0.35)`;
+    ctx.strokeStyle = `rgba(${TEAL},0.35)`; // a3-keep: Lab figure art, palette review at the end
     ctx.lineWidth = 1;
     ctx.beginPath();
     ctx.moveTo(px0, py0);
     ctx.lineTo(px0, py1);
     ctx.lineTo(px1, py1);
     ctx.stroke();
-    ctx.fillStyle = `rgba(${TEAL},0.5)`;
+    ctx.fillStyle = `rgba(${TEAL},0.5)`; // a3-keep: Lab figure art, palette review at the end
     ctx.font = "7px 'Space Mono', monospace";
     ctx.textAlign = 'center';
     ctx.fillText('flyby', (px0 + px1) / 2, H - 16);
@@ -72,7 +72,7 @@
 
     // staircase (drawn-in)
     const shown = Math.max(1, Math.floor(n * progress + 0.001));
-    ctx.strokeStyle = `rgba(${TEAL},0.95)`;
+    ctx.strokeStyle = `rgba(${TEAL},0.95)`; // a3-keep: Lab figure art, palette review at the end
     ctx.lineWidth = 2;
     ctx.lineJoin = 'round';
     ctx.beginPath();
@@ -95,7 +95,7 @@
       ctx.beginPath();
       ctx.arc(x, y, 3, 0, Math.PI * 2);
       ctx.fill();
-      ctx.fillStyle = `rgba(${TEAL},0.5)`;
+      ctx.fillStyle = `rgba(${TEAL},0.5)`; // a3-keep: Lab figure art, palette review at the end
       ctx.font = "7px 'Space Mono', monospace";
       ctx.fillText(String(s.n), x, py1 + 12);
     }
@@ -103,11 +103,11 @@
     // readouts
     ctx.textAlign = 'left';
     const rx = px1 + 10;
-    ctx.fillStyle = `rgba(${TEAL},0.85)`;
+    ctx.fillStyle = `rgba(${TEAL},0.85)`; // a3-keep: Lab figure art, palette review at the end
     ctx.font = "700 9px 'Space Mono', monospace";
     ctx.fillText('ASSIST CHAIN', rx, 60);
     ctx.font = "8px 'Space Mono', monospace";
-    ctx.fillStyle = 'rgba(200,222,235,0.8)';
+    ctx.fillStyle = 'rgba(200,222,235,0.8)'; // a3-keep: Lab figure art, palette review at the end
     ctx.fillText(`${n} flybys`, rx, 78);
     ctx.fillText(`${figure.perFlybyKms.toFixed(0)} km/s`, rx, 90);
     ctx.fillText('each (max)', rx, 100);
@@ -115,7 +115,7 @@
     ctx.font = "700 10px 'Space Mono', monospace";
     ctx.fillText(`≤ ${figure.totalKms.toFixed(0)}`, rx, 122);
     ctx.font = "8px 'Space Mono', monospace";
-    ctx.fillStyle = 'rgba(200,222,235,0.6)';
+    ctx.fillStyle = 'rgba(200,222,235,0.6)'; // a3-keep: Lab figure art, palette review at the end
     ctx.fillText('km/s total', rx, 134);
     ctx.fillText('upper bound', rx, 150);
 

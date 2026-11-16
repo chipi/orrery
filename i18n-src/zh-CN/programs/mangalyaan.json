@@ -88,5 +88,18 @@
     "/fleet?id=mangalyaan": "航天器 — Mars Orbiter Mission",
     "/programs/chandrayaan": "Chandrayaan — 印度的探月计划",
     "/mars?site=mangalyaan": "环绕火星的 Mangalyaan"
+  },
+  "roster": {
+    "mission:mangalyaan": {
+      "note": "火星轨道器任务首次尝试即进入火星轨道——印度成为有史以来首个首次尝试便在火星任务上取得成功的国家，也是首个到达火星轨道的亚洲国家"
+    },
+    "The cost": {
+      "note": "整个任务耗资约7,400万美元——低于好莱坞电影《Gravity》，只是同类西方火星任务的一小部分",
+      "name": "成本"
+    },
+    "Eight years on station": {
+      "note": "设计寿命为六个月，轨道器却工作了大约八年，直到最终失去联系——一台小型技术演示器变成了长寿的科学任务",
+      "name": "在轨八年"
+    }
   }
 }

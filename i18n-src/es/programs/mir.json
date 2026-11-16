@@ -94,5 +94,23 @@
   "link_labels": {
     "/earth": "Tierra: órbitas, encuentros y bases de lanzamiento",
     "/fleet?id=mir": "Flota — la estación espacial Mir"
+  },
+  "roster": {
+    "Modular assembly": {
+      "note": "construida en órbita durante una década — el módulo central (1986), luego Kvant, Kvant-2, Kristall, Spektr y Priroda — la primera estación ensamblada con módulos lanzados por separado",
+      "name": "Ensamblaje modular"
+    },
+    "Polyakov — 437 days": {
+      "note": "la única estancia de Valeri Poliakov, de 437 días a bordo de la Mir, sigue siendo el vuelo espacial tripulado continuo más largo jamás realizado, y demostró que una tripulación podía sobrevivir a una misión de duración marciana",
+      "name": "Poliakov — 437 días"
+    },
+    "Shuttle-Mir": {
+      "note": "los Space Shuttle estadounidenses se acoplaron a la Mir y astronautas estadounidenses vivieron a bordo (1995–1998) — las primeras operaciones conjuntas en una estación de los rivales de la Guerra Fría y el ensayo directo de la ISS",
+      "name": "Shuttle-Mir"
+    },
+    "The 1997 crises": {
+      "note": "un incendio a bordo y luego la colisión de un carguero Progress que perforó el módulo Spektr y despresurizó parte de la estación — la peor colisión que una tripulación ha sobrevivido en órbita",
+      "name": "Las crisis de 1997"
+    }
   }
 }

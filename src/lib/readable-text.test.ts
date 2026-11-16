@@ -15,8 +15,8 @@ describe('readableTextOn', () => {
   });
 
   it('composites translucent fills over the page background', () => {
-    // The default badge fill, teal at 16% over near-black, is dark.
-    expect(readableTextOn('rgba(78, 205, 196, 0.16)')).toBe(LIGHT_TEXT);
+    // The default badge fill, accent blue at 16% over near-black, is dark.
+    expect(readableTextOn('rgba(80, 112, 255, 0.16)')).toBe(LIGHT_TEXT);
     expect(readableTextOn('rgba(255, 255, 255, 0.9)')).toBe(DARK_TEXT);
     expect(readableTextOn('rgb(255 204 0 / 100%)')).toBe(DARK_TEXT);
   });

@@ -86,5 +86,21 @@
   "link_labels": {
     "/explore": "Saturno nell'esploratore 3D",
     "/programs/voyager": "Voyager — i sorvoli che arrivarono per primi"
+  },
+  "roster": {
+    "mission:cassini": {
+      "note": "trascorse tredici anni in orbita intorno a Saturno — l'unica sonda ad averlo fatto — mappando anelli, lune e tempeste con un dettaglio che nessun sorvolo poteva raggiungere"
+    },
+    "mission:huygens": {
+      "note": "la sonda europea Huygens scese con il paracadute su Titano nel gennaio 2005 — il primo e unico atterraggio in qualsiasi punto del sistema solare esterno"
+    },
+    "The geysers of Enceladus": {
+      "note": "Cassini scoprì getti di ghiaccio d'acqua che eruttano dal polo sud della minuscola luna Encelado, prova di un oceano globale sotto il suo ghiaccio — uno dei luoghi più promettenti dove cercare la vita",
+      "name": "I geyser di Encelado"
+    },
+    "The Grand Finale": {
+      "note": "a corto di carburante, Cassini fu fatta passare ventidue volte tra Saturno e i suoi anelli e poi gettata deliberatamente nel pianeta, per essere certi che non potesse mai contaminare le lune con oceano",
+      "name": "Il gran finale"
+    }
   }
 }

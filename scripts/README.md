@@ -23,6 +23,35 @@ before you open the file:
 Conventions: tsx or .mjs, colocated `*.test.ts` where logic warrants it;
 script headers cite the ADR/PRD/RFC that governs them — keep that up.
 
+## Credits — which check, when
+
+| Question | Run |
+|---|---|
+| does every image file under the Moon, Mars and Earth folders have a credit row | `npx vitest run src/lib/credits-coverage.test.ts` (in `npm run test`; stems matched as `/credits` bundles them, width rungs told apart by `image-ladder.json`) |
+| does a browser request any Moon, Mars or Earth image that has no credit row | `node scripts/audit-scene-image-credits.mjs [--base=http://[::1]:5180] [--sites=3]` — loads `/moon`, `/mars`, `/earth` and each scene's first N sites, lists repo images with no row, external image hosts and failed requests; needs a running server and one headless Chromium; read-only |
+| is a credit row a real credit or a placeholder | `npx tsx scripts/validate-gallery-credits.ts` (the placeholder ceiling) |
+| regenerate `/colophon`'s inventory (and each cutaway's `kind`) | `node scripts/build-original-work.mjs` |
+
+## Catalogue values — which tool, when
+
+Every catalogue-derived number on a panel or entity page carries `{ value, source, bibcode, record_url }`
+(GitHub #658; method and service notes: `docs/wip/2026-11-12-catalogue-layer-brief.md`). All of these
+fetch over the network, are run by hand and commit their output; CDS Strasbourg answers 404 from the dev
+box, so SIMBAD and VizieR are read from the CfA mirrors (`lib/catalogue-sources.mjs`). Downloaded tables are
+cached under `~/.cache/orrery` (`CATALOGUE_REFRESH=1` refetches).
+
+| Question | Run |
+|---|---|
+| refresh the deep-sky snapshot (OpenNGC + Harris, Baumgardt & Vasiliev, Hunt & Reffert, Cantat-Gaudin, Cosmicflows-4, McConnachie, SIMBAD, NED), then the served file | `node scripts/refresh-messier-catalog.mjs && npx tsx scripts/build-universe-deep-sky.ts` |
+| write the black holes' published mass and distance (cross-checked against SIMBAD) | `node scripts/refresh-black-hole-catalogue.mjs` |
+| refresh the Local Group distances (McConnachie 2012) in both Local Group files | `node scripts/refresh-local-group-catalogue.mjs` |
+| refresh the JPL Horizons Sun table (apparent RA / Dec per day of 2026) behind the deep-sky IN THE SKY best months | `node scripts/refresh-sun-ephemeris.mjs` |
+| compare those months and altitudes with Horizons observer tables and USNO (writes `data-snapshots/sky-rows-reference.json` and `docs/wip/2026-11-15-sky-rows-ephemeris-check.md`; raw replies cached under `~/.cache/orrery/horizons-sky`) | `npx tsx scripts/check-sky-rows-ephemeris.ts` |
+| add the SIMBAD / Exoplanet Archive record links to the named stars (HYG values unchanged) / the exoplanet systems | `npx tsx scripts/build-named-stars.ts` / `npx tsx scripts/build-exoplanet-systems.ts` (the snapshot's `disc_year` of Proxima Cen d is 2025, the committed file's hand correction 2022: merge the record links, do not overwrite) |
+| which catalogue answers which value; the pure transforms | `lib/deep-sky-catalogues.mjs`, `lib/black-hole-catalogue.mjs`, `lib/local-group-catalogue.mjs`, `lib/structure-distance-catalogue.mjs`, `lib/catalogue-sources.mjs` (each with a `.test.ts`) |
+| write the source of each structure distance (Local Sheet, Virgo, Laniakea, Cosmic web; hand-reviewed, offline) | edit `lib/structure-distance-catalogue.mjs`, then `node scripts/apply-structure-distance-catalogue.mjs` (an id not in the table has no source link: the anchors and the values batch 6's review found unsourced) |
+| the gate | `npm run validate-data` (`findCatalogueProblems` in `validate-data-helpers.ts`) |
+
 ## Mission thumbnails — which tool, when
 
 | Question | Run |
@@ -44,6 +73,11 @@ it picks the model per locale (Haiku; Sonnet for the locales in
 `BASE_RULES`, `NAME_POLICY`, per-locale rules) to every prompt, and checks
 every answer with `problems()`, retrying on failure. Run them with the API key
 from `.env` (`set -a; . ./.env; set +a`).
+
+**Compiling the messages:** only `npm run i18n:compile` (output `src/lib/paraglide/`). A bare
+`paraglide-js compile` writes `src/paraglide/`, gitignored, whose ~3,700 generated files leave
+svelte-check checking almost nothing (106 files, 0 errors, on 2026-11-13);
+`check-stray-paraglide.mjs` (in `validate-data`) fails while that folder exists.
 
 **New English content → create its 13 translations.** Each tool skips locale
 files that already exist, so re-runs are safe.
@@ -93,6 +127,21 @@ column order of a hand-written table, so do not swap those lists for
 the provenance store that `native-terms.json` cites (the `wikidata-*.tsv`
 tables); keep it.
 
+## Explore readability — which tool, when
+
+| Question | Run |
+|---|---|
+| how dark and how readable is each /explore level in a real browser: frame luma percentiles, the WCAG contrast of orbit lines (planets, small bodies, moons at a Jupiter pose), the two belts, light-year rings and anchor rings on the rendered pixels (target 3:1) and after a 12 % white veil (target 2:1), each judged as the element minus a negative control shifted 8 px off it (p50 decides, p10 is printed), the label text and ring sizes the scenes drew | start a dev server or a preview build, then run it at BOTH device pixel ratios: `node scripts/readability-probe.mjs --base=http://127.0.0.1:5173 --dpr=1` and `--dpr=2` (also `[--viewport=1440x900] [--contexts=solar-system,neighborhood] [--out=file.json] [--shots=dir]`) (UXD-020; reads `window.__exploreLinePoints` and `window.__scenePins`) |
+| the same numbers BEFORE a lift (the pre-slice opacities, with the probe's hooks) | `bash scripts/readability-before.sh <new worktree dir>` makes a detached worktree at HEAD with the four pre-slice element opacities put back (asteroid belt 0.5, Kuiper belt 0.4, planet orbit lines 0.25, small-body orbit lines 0.22, all in `src/lib/three/explore-solar-scene.ts`); serve that worktree and run the probe against it with the same flags; only the solar-system rows have a "before" |
+| the contrast maths behind it (pure, browser-free) | `lib/readability-contrast.mjs` (with `lib/readability-contrast.test.ts`) |
+
+## Science links — which tool, when
+
+| Question | Run | Where it runs |
+| --- | --- | --- |
+| does every panel list its /science links through `pickScienceLinks` (at most five), with no per-type default list, no mission push-chain, no hand-written link list in a panel or banner, no section pair that differs between locales, no regime card repeated inside a ruler, no two bodies of one type with the same list (UXD-022) | `check-science-links.mjs` (prints `B2-CHECK violations: 0`; `b2-keep: <why>` marks an allowed single link); the cap over all 289 panels, the family share and the locale drift are `src/lib/science-links.test.ts` | by hand and in `npm run test` (the test file) |
+| do the nine star, outer-scale and black-hole panels sit on the shared `UniversePanelBody` (one hero or none, a star's finder only in IN THE SKY, no private head/cell rule, no `rem` font size), does a black hole open in place with the lensing action, do the hero data, the EHT file and its provenance, the five locale keys, the tests and the docs exist (UXD-023) | `check-universe-panels.sh` (prints `B3-CHECK violations: 0`; `b3-keep: <why>` marks an allowed hit) | by hand |
+
 ## Links and 404s — which tool, when
 
 | Question | Run | Where it runs |
@@ -101,6 +150,7 @@ tables); keep it.
 | does data / an overlay / a message link to a missing route, a query parameter the route ignores, an id that doesn't exist, or a missing / pruned file (all 14 locales) | `check-data-links.mjs` | `validate-data` |
 | are the outbound links readers can click still alive (pages, image-credit sources, references, components) | `check-external-links.mjs` → `docs/provenance/external-link-check.md` | weekly `link-check.yml` (`--strict`, red on a dead link, report as artifact; no prerendered HTML) and by hand; cached 7 days in `.cache/`, Wikipedia/Commons via their API |
 | are the curated LEARN links alive (`link-provenance.json`) | `check-learn-links.ts` | `npm run fetch` |
+| regenerate the outbound-link manifest `/library` lists (entity `links`, /science article links, essay sources; fails closed on a host with no `HOST_RULES` row and no `source-logos.json` publisher) | `npm run build-link-provenance` (guard: `src/lib/link-provenance-coverage.test.ts`) | `npm run fetch`, by hand after a link edit |
 | what did prod answer 404 to, who asked, and does it still 404 | `prod-404-report.mjs [--days=7]` | by hand, on the tailnet (VictoriaLogs) |
 | a dead outbound link: what could replace it (Wayback snapshot, wiki search hits) | `link-fix-candidates.mjs` → `.cache/link-fix-candidates.json` | by hand, after the outbound check |
 | replace reviewed dead links everywhere they are written (all locales, labels too) | `apply-link-fixes.mjs <map.json>` (probes every replacement first; maps under `link-fixes/`) | by hand |
@@ -116,6 +166,8 @@ tables); keep it.
 | drop gallery slots (logos, patches, near-duplicates, no better picture) and renumber the gallery everywhere it is referenced (files, masters, credits, alt text, hero overrides, program figures; round records under `i18n-tools/maps/` are left as written) | `node drop-gallery-slots.mjs <surface>/<id>/<NN> … [--apply]` (dry run by default; header lists the rebuilds to run after) | by hand, after looking at each slot |
 | move an already-built image (a served ladder + master, or a slot of another gallery) into a gallery as its next numbered slot, with 1x1 crop, provenance, alt text in 14 locales, vision, approved, pHash, ladder, credit thumb; every JSON reference follows it | `npx tsx move-image-to-gallery.ts <from>=<to>[@x,y] … [--apply]` (dry run by default; header lists the rebuilds to run after) | by hand |
 | fold a moon/mars site's own gallery into its mission's gallery so the site panel and the mission panel show one list (pHash dedupe, site hero kept as the hero, references re-pointed, the site gallery retired) | `npx tsx merge-place-galleries.ts [<site id> …] [--apply]` (dry run by default; uses the two tools above) | by hand |
+| the round list thumbnails (UXD-025): which 192 px WebP is each gallery entity's thumb (its blessed hero slot) → `static/data/entity-thumbs.json`; `--check` exits 1 when stale, `--missing F` writes the blessed slots that still need a thumb or a 1x1 crop; also `sites`: the thumb of each Moon, Mars, Venus site and Earth object, by the gallery loaders' ladder | `npx tsx build-entity-thumbs.ts [--check] [--missing F]` | after any gallery slot, hero override or 1x1 change (`validate-data` fails when it is stale) |
+| 192 px WebP thumbs of the listed `/images` paths only (a JSON array or the `needThumb` of the row above), credited or not; without `--paths` it builds every credited non-ladder raster (the /credits thumbs) | `node vision/build-credit-thumbs.mjs --paths F [--dry-run]` | after `build-entity-thumbs.ts --missing F` |
 | an audio tour against the screen: a screenshot after each stage beside the narration words of its VTT window, as contact sheets | `npx tsx audio/stage-review.ts --url http://localhost:4193 --out <dir> [episode-id …]` (read-only; against `vite preview` of a build) | by hand, after re-timing a tour (AGENTS.md tour re-listen rule) |
 
 Runbook: the `orrery-link-health` skill. The two outbound checkers share
@@ -125,7 +177,9 @@ Runbook: the `orrery-link-health` skill. The two outbound checkers share
 
 | Question | Run | Where it runs |
 | --- | --- | --- |
-| does every indexable page have one title (not the bare brand, ≤90 chars), one description (≤160), a self-referencing canonical, the full hreflang set with built targets, og:title / og:url / og:image and a Twitter card, JSON-LD that parses and one H1, with no noindex leak, and (entity pages) at least the locale's character floor (`THIN_MIN_CHARS`, ADR-096 decision 12) of text in `<main>` — and do the sitemaps list exactly those pages; on the GH Pages mirror (`VITE_BASE`), is every page noindex with no canonical | `check-seo.mjs` | every `npm run build` |
+| does every indexable page have one title (not the bare brand, ≤90 chars), one description (≤160), a self-referencing canonical, the full hreflang set with built targets, og:title / og:url / og:image and a Twitter card, JSON-LD that parses and one H1, with no noindex leak, and (entity pages) at least the locale's character floor (`THIN_MIN_CHARS`, ADR-096 decision 12; the `/explore/stars/<id>` and `/explore/black-holes/<id>` pages included) of text in `<main>` — and do the sitemaps list exactly those pages; on the GH Pages mirror (`VITE_BASE`), is every page noindex with no canonical | `check-seo.mjs` | every `npm run build` |
+| what date did each sitemap URL's content last change (the `<lastmod>`): per route and locale, the newest git commit date among the files the page is built from; writes `src/lib/generated/route-lastmod.json`; refuses a shallow clone | `build-route-lastmod.mjs` (`npm run route-lastmod`) | by hand in the release PR, last, on a full-history checkout; `src/lib/route-lastmod.test.ts` gates coverage in CI |
+| tell Bing, Yandex and the other IndexNow engines which URLs exist: reads the live `/sitemap.xml` index and every locale sitemap, dedupes, and POSTs in batches of ≤ 10,000 after checking `static/<key>.txt` is live (`--dry-run` sends nothing; `--since YYYY-MM-DD`; `--base`; `--key`) | `indexnow-submit.mjs` (`npm run indexnow`; runbook `docs/ops/indexnow.md`) | by hand, once after each verified prod deploy; the real submission needs the operator's go |
 
 The SEO code it checks: `src/lib/seo.ts` (canonical, hreflang, `metaDescription`,
 `pageTitle`, `isMirrorBuild`), `src/lib/social-meta.ts` (Open Graph + Twitter,

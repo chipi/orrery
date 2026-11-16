@@ -40,6 +40,9 @@ export interface QualityConfig {
    *  pixelRatio 1 (no retina upscale); 2.0 = let the device decide
    *  up to the renderer's clamp. */
   pixelRatioCap: number;
+  /** Share of the renderer pixel ratio the black-hole lensing takeover renders at
+   *  (1 = full; 0.75 = 56 % of the pixels). Applied on enter, restored on exit. */
+  lensScale: number;
   /** Whether to wire the EffectComposer + RenderPass + bloom pass. */
   postEnabled: boolean;
   /** Whether to include the UnrealBloomPass when post is on. */
@@ -107,6 +110,7 @@ const CONFIGS: Record<QualityTier, QualityConfig> = {
   minimal: {
     tier: 'minimal',
     pixelRatioCap: 0.75,
+    lensScale: 0.75,
     postEnabled: false,
     bloomEnabled: false,
     bloomStrength: 0,
@@ -130,6 +134,7 @@ const CONFIGS: Record<QualityTier, QualityConfig> = {
   low: {
     tier: 'low',
     pixelRatioCap: 1.0,
+    lensScale: 1,
     postEnabled: false,
     bloomEnabled: false,
     bloomStrength: 0,
@@ -153,6 +158,7 @@ const CONFIGS: Record<QualityTier, QualityConfig> = {
   medium: {
     tier: 'medium',
     pixelRatioCap: 1.25,
+    lensScale: 0.75,
     postEnabled: true,
     bloomEnabled: true,
     bloomStrength: 0.3,
@@ -176,6 +182,7 @@ const CONFIGS: Record<QualityTier, QualityConfig> = {
   high: {
     tier: 'high',
     pixelRatioCap: 2.0,
+    lensScale: 1,
     postEnabled: true,
     bloomEnabled: true,
     bloomStrength: 0.35,
@@ -199,6 +206,7 @@ const CONFIGS: Record<QualityTier, QualityConfig> = {
   cinematic: {
     tier: 'cinematic',
     pixelRatioCap: 2.0,
+    lensScale: 1,
     postEnabled: true,
     bloomEnabled: true,
     bloomStrength: 0.42,

@@ -25,7 +25,11 @@
     {
       "name": "N1 — four launch failures",
       "year": 1969,
-      "note": "every one of the four N1 test launches (1969-1972) failed; the second, in July 1969, fell back onto the pad in one of the largest non-nuclear explosions ever recorded"
+      "note": "every one of the four N1 test launches (1969-1972) failed; the second, in July 1969, fell back onto the pad in one of the largest non-nuclear explosions ever recorded",
+      "link": {
+        "ref": "fleet",
+        "id": "n1"
+      }
     },
     {
       "name": "LK lunar lander",
@@ -36,6 +40,31 @@
       "name": "L3 complex",
       "year": 1972,
       "note": "the full N1-L3 lunar stack: one N1 launch, a two-cosmonaut Soyuz 7K-LOK in lunar orbit, a single cosmonaut to the surface in the LK"
+    },
+    {
+      "linked_id": "luna9",
+      "ref": "mission",
+      "year": 1966
+    },
+    {
+      "linked_id": "luna10",
+      "ref": "mission",
+      "year": 1966
+    },
+    {
+      "linked_id": "luna16",
+      "ref": "mission",
+      "year": 1970
+    },
+    {
+      "linked_id": "luna17",
+      "ref": "mission",
+      "year": 1970
+    },
+    {
+      "linked_id": "luna21",
+      "ref": "mission",
+      "year": 1973
     }
   ],
   "related_programs": [

@@ -208,6 +208,8 @@ export const ORIGIN_NAMES = {
     Kounotori: 'こうのとり',
     Kibo: 'きぼう',
     Kaguya: 'かぐや',
+    Okina: 'おきな',
+    Ouna: 'おうな',
     Ikaros: 'イカロス',
     IKAROS: 'イカロス',
     Tanegashima: '種子島',

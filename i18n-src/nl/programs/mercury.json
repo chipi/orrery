@@ -103,5 +103,15 @@
     "/earth": "Aarde — banen, terugkeer & lanceerplaatsen",
     "/science/mission-phases/edl": "Intrede, daling & landing",
     "/science/propulsion/tsiolkovsky": "De raketvergelijking — waarom de Redstone geen baan haalde"
+  },
+  "roster": {
+    "Mercury-Redstone 2 (Ham)": {
+      "note": "suborbitale test met een chimpansee — gaf de Redstone vrij voor een bemande vlucht",
+      "name": "Mercury-Redstone 2 (Ham)"
+    },
+    "Mercury-Atlas 5 (Enos)": {
+      "note": "test van twee omlopen met een chimpansee — gaf de Atlas vrij voordat Glenn vloog",
+      "name": "Mercury-Atlas 5 (Enos)"
+    }
   }
 }

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { onDestroy, onMount, untrack } from 'svelte';
+  import { onDestroy, onMount, tick, untrack } from 'svelte';
   import { localHref } from '$lib/locale';
   import { page } from '$app/state';
   import { base } from '$app/paths';
@@ -16,7 +16,9 @@
   import { localizeHref } from '$lib/paraglide/runtime';
   import { exploreContext, type ExploreContextId } from '$lib/explore-context';
   import LocalePicker from '$lib/components/LocalePicker.svelte';
-  import TargetEnvSwitcher from '$lib/components/TargetEnvSwitcher.svelte';
+  import ScaleGlyphIcon from '$lib/components/ScaleGlyphIcon.svelte';
+  import type { ShellId } from '$lib/explore/scale-shell-controller';
+  import { SCALE_SHELL_NAV_LIST } from '$lib/explore/scale-shell-nav';
   import { audio } from '$lib/audio-state.svelte';
   import { sensory } from '$lib/sensory/state.svelte';
   import SensorySheet from '$lib/components/SensorySheet.svelte';
@@ -29,10 +31,6 @@
   } from '$lib/components/icons';
   import { shareCurrent } from '$lib/share';
   import { formatDisplayVersion } from '$lib/version';
-  import type { Snippet } from 'svelte';
-
-  type Props = { right?: Snippet };
-  let { right }: Props = $props();
 
   // Footer version chip (mirrors +layout.svelte via the shared helper). The
   // floating .site-footer is hidden on touch, so the version is restored at the
@@ -55,7 +53,7 @@
     key: string;
     label: () => string;
     hub: string;
-    children: { path: string; label: () => string; query?: string }[];
+    children: { path: string; label: () => string; query?: string; glyph?: ShellId }[];
   };
   type NavItem = NavLink | NavGroup;
 
@@ -66,25 +64,16 @@
       key: 'explore',
       label: m.nav_group_explore,
       hub: '/explore/hub',
-      children: [
-        // Explicit ?context=solar-system so this jumps back to the solar system from
-        // any scale (a bare /explore is a no-op when you're already on /explore — the
-        // URL doesn't change, so nothing fires; the param gives the effect a trigger).
-        { path: '/explore', query: '?context=solar-system', label: m.nav_explore },
-        // /explore v2 scale-shells — jump straight to a context (RFC-032).
-        {
-          path: '/explore',
-          query: '?context=neighborhood',
-          label: m.explore_ctx_stellar_neighborhood,
-        },
-        { path: '/explore', query: '?context=milky-way', label: m.explore_ctx_milky_way },
-        { path: '/explore', query: '?context=local-group', label: m.explore_ctx_local_group },
-        // The outward cosmology tiers (RFC-039 shells; surfaced 2026-08).
-        { path: '/explore', query: '?context=local-sheet', label: m.explore_ctx_local_sheet },
-        { path: '/explore', query: '?context=virgo', label: m.explore_ctx_virgo },
-        { path: '/explore', query: '?context=laniakea', label: m.explore_ctx_laniakea },
-        { path: '/explore', query: '?context=cosmic-web', label: m.explore_ctx_cosmic_web },
-      ],
+      // One row per scale level from the shell table. Each carries an explicit
+      // ?context=<id> (the solar system's too) so it jumps back from any scale: a bare /explore is
+      // a no-op when you're already on /explore — the URL doesn't change, so nothing fires; the
+      // param gives the effect a trigger.
+      children: SCALE_SHELL_NAV_LIST.map((s) => ({
+        path: '/explore',
+        query: s.query,
+        label: s.navName,
+        glyph: s.glyph,
+      })),
     },
     // WORLDS (2026-08 IA split, RFC-038) — the worlds you can stand on. Split out
     // of the EXPLORE group so EXPLORE reads as the pure zoom-out scale ladder and
@@ -179,6 +168,7 @@
   // outside click (backdrop), selecting a child, or opening another group.
   let openGroup = $state<string | null>(null);
   function toggleGroup(key: string) {
+    moreOpen = false;
     openGroup = openGroup === key ? null : key;
   }
   function closeGroups() {
@@ -186,6 +176,7 @@
   }
   function onWindowKeydown(e: KeyboardEvent) {
     if (e.key === 'Escape' && openGroup) closeGroups();
+    if (e.key === 'Escape' && moreOpen) closeMore(true);
   }
 
   // ─── High-contrast toggle (Theme C.C2 / v0.1.12 / ADR-029) ─────────
@@ -244,12 +235,98 @@
     trackScienceLensToggle(!scienceLens, 'nav');
   }
 
+  // ─── More menu (UXD-016, WAI-ARIA menu button) ─────────────────────
+  // High contrast, Share and Debug sit behind one bar button. The bar menu and the phone
+  // drawer render from this one list, so the two can never disagree. The switch rows
+  // (`checked`) keep the menu open so the flip is visible; Share closes it.
+  type MoreItem = {
+    id: 'contrast' | 'share' | 'debug';
+    label: () => string;
+    checked?: () => boolean;
+    run: () => void;
+  };
+  const moreItems: MoreItem[] = [
+    {
+      id: 'contrast',
+      label: m.nav_high_contrast_aria,
+      checked: () => hiContrast,
+      run: onToggleHiContrast,
+    },
+    { id: 'share', label: m.nav_share, run: () => void shareCurrent() },
+    {
+      id: 'debug',
+      label: m.nav_debug_group_aria,
+      checked: () => debugMode.enabled,
+      run: toggleDebugMode,
+    },
+  ];
+  let moreOpen = $state(false);
+  let moreTrigger = $state<HTMLButtonElement>();
+  let moreMenu = $state<HTMLElement>();
+  const moreRows = () =>
+    Array.from(moreMenu?.querySelectorAll<HTMLElement>('[role^="menuitem"]') ?? []);
+  async function openMore(at: 'first' | 'last' = 'first') {
+    openGroup = null;
+    mobileMenuOpen = false;
+    moreOpen = true;
+    await tick();
+    const rows = moreRows();
+    (at === 'last' ? rows.at(-1) : rows[0])?.focus();
+  }
+  function closeMore(returnFocus = false) {
+    moreOpen = false;
+    if (returnFocus) moreTrigger?.focus();
+  }
+  // At <= 600 px the trigger and menu are display:none (the drawer rows take over), so a menu
+  // left open across the breakpoint (window resize, tablet rotation) would hold focus in a
+  // hidden element and reopen when widened again.
+  $effect(() => {
+    const phone = matchMedia('(max-width: 600px)');
+    const onChange = () => {
+      if (phone.matches) moreOpen = false;
+    };
+    phone.addEventListener('change', onChange);
+    return () => phone.removeEventListener('change', onChange);
+  });
+  function activateMore(item: MoreItem) {
+    item.run();
+    if (!item.checked) closeMore(true);
+  }
+  function activateInDrawer(item: MoreItem) {
+    item.run();
+    if (!item.checked) closeMobileMenu();
+  }
+  function onMoreTriggerKeydown(e: KeyboardEvent) {
+    if (e.key !== 'ArrowDown' && e.key !== 'ArrowUp') return;
+    e.preventDefault();
+    void openMore(e.key === 'ArrowUp' ? 'last' : 'first');
+  }
+  // Tab is not handled: the rows are tabindex -1, so Tab leaves the menu in one step and
+  // the focusout below closes it.
+  function onMoreKeydown(e: KeyboardEvent) {
+    const rows = moreRows();
+    const at = rows.indexOf(document.activeElement as HTMLElement);
+    let next: HTMLElement | undefined;
+    if (e.key === 'ArrowDown') next = rows[(at + 1) % rows.length];
+    else if (e.key === 'ArrowUp') next = rows[(at - 1 + rows.length) % rows.length];
+    else if (e.key === 'Home') next = rows[0];
+    else if (e.key === 'End') next = rows.at(-1);
+    else return;
+    e.preventDefault();
+    next?.focus();
+  }
+  function onMoreFocusout(e: FocusEvent) {
+    const to = e.relatedTarget as Node | null;
+    if (to && !moreMenu?.contains(to) && to !== moreTrigger) closeMore();
+  }
+
   // ─── Mobile nav drawer ─────────────────────────────────────────
   // On viewports ≤1219px (see the media rule) the inline .center row can't fit
   // all 12 nav links and the locale-picker + 2 toggles next to it,
   // so a hamburger toggle exposes the full list as a vertical drawer.
   let mobileMenuOpen = $state(false);
   function toggleMobileMenu() {
+    moreOpen = false;
     mobileMenuOpen = !mobileMenuOpen;
   }
   function closeMobileMenu() {
@@ -344,8 +421,13 @@
                   href={`${base}${localizeHref(child.path)}${child.query ?? ''}`}
                   role="menuitem"
                   class="group-menu-link"
+                  class:has-glyph={child.glyph}
                   class:active={childActive(child, page.url, $exploreContext)}
-                  onclick={closeGroups}>{child.label()}</a
+                  onclick={closeGroups}
+                  >{#if child.glyph}<ScaleGlyphIcon
+                      glyph={child.glyph}
+                      size={20}
+                    />{/if}{child.label()}</a
                 >
               {/each}
             </div>
@@ -358,7 +440,7 @@
   <div class="right">
     <button
       type="button"
-      class="menu-toggle"
+      class="nav-btn menu-toggle"
       aria-label={m.nav_mobile_menu_open_aria()}
       aria-expanded={mobileMenuOpen}
       aria-controls={mobileMenuOpen ? 'mobile-nav-drawer' : undefined}
@@ -368,7 +450,7 @@
     </button>
     <button
       type="button"
-      class="audio-toggle"
+      class="nav-btn audio-toggle"
       class:active={audio.open}
       class:playing={audio.playing}
       aria-label={m.nav_audio_tour_aria()}
@@ -387,9 +469,9 @@
     <LocalePicker />
     <button
       type="button"
-      class="lens-toggle"
+      class="nav-btn lens-toggle"
       data-audio-stage="science-lens-toggle"
-      class:active={scienceLens}
+      class:active={scienceLens && scienceLensAvailable}
       disabled={!scienceLensAvailable}
       aria-disabled={!scienceLensAvailable}
       aria-label={scienceLensAvailable
@@ -406,24 +488,13 @@
            draws. Outer ring + crosshair when on, just outer ring off. -->
       <ScienceLensIcon active={scienceLens} />
     </button>
-    <button
-      type="button"
-      class="contrast-toggle"
-      class:active={hiContrast}
-      aria-label={m.nav_high_contrast_aria()}
-      aria-pressed={hiContrast}
-      title={m.nav_high_contrast_aria()}
-      onclick={onToggleHiContrast}
-    >
-      Aa
-    </button>
     <!-- Unified settings ⚙ (2026-07-13). One always-available button opens the
          settings panel — Sound / Haptics / Tilt on every route, plus a Graphics
          quality section on 3D routes (gated by settingsState.available inside
          the panel). Merges the former sensory button + graphics gear. -->
     <button
       type="button"
-      class="settings-toggle"
+      class="nav-btn settings-toggle"
       class:active={sensory.settingsOpen || sensory.anyActive}
       aria-label={m.settings_title()}
       aria-haspopup="dialog"
@@ -435,46 +506,29 @@
       <!-- 8-spoke gear glyph as inline SVG. -->
       <SettingsGearIcon />
     </button>
+    <!-- The rarely used actions (High contrast, Share, Debug) live behind this one
+         menu button; the panel itself renders just after the nav, so the nav's
+         roving arrows never reach its rows. On phones (≤600px) the same actions
+         are drawer rows instead. -->
     <button
       type="button"
-      class="share-toggle"
-      aria-label={m.nav_share()}
-      title={m.nav_share()}
-      onclick={() => void shareCurrent()}
+      class="nav-btn nav-more-trigger"
+      class:active={moreOpen}
+      aria-label={m.layout_footer_more()}
+      aria-haspopup="menu"
+      aria-expanded={moreOpen}
+      aria-controls={moreOpen ? 'nav-more-menu' : undefined}
+      title={m.layout_footer_more()}
+      bind:this={moreTrigger}
+      onclick={() => (moreOpen ? closeMore() : void openMore())}
+      onkeydown={onMoreTriggerKeydown}
     >
-      <ShareIcon />
-    </button>
-    <!-- Unified debug toggle (#54) — gates every debug overlay (the DebugPanel
-         + the AR diagnostic HUD). Available in all builds so an on-device
-         prod/staging build can flip it on to diagnose. -->
-    <button
-      type="button"
-      class="debug-toggle"
-      class:active={debugMode.enabled}
-      aria-label={m.nav_debug_aria()}
-      aria-pressed={debugMode.enabled}
-      title={m.nav_debug_title()}
-      onclick={toggleDebugMode}
-    >
-      <!-- Simple bug glyph as inline SVG (reliable across font stacks). -->
-      <svg
-        viewBox="0 0 24 24"
-        width="18"
-        height="18"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="1.8"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        aria-hidden="true"
-      >
-        <rect x="8" y="6" width="8" height="12" rx="4" />
-        <path
-          d="M12 3v3M5 9h3M5 14h3M16 9h3M16 14h3M6.5 5.5 8 7M17.5 5.5 16 7M7 18l-1.5 2M17 18l1.5 2"
-        />
+      <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true">
+        <circle cx="3" cy="8" r="1.4" />
+        <circle cx="8" cy="8" r="1.4" />
+        <circle cx="13" cy="8" r="1.4" />
       </svg>
     </button>
-    {@render right?.()}
   </div>
 </nav>
 
@@ -487,6 +541,101 @@
     aria-label={m.nav_mobile_menu_close_aria()}
     onclick={closeGroups}
   ></button>
+{/if}
+
+{#snippet moreRow(item: MoreItem, drawer: boolean)}
+  <button
+    type="button"
+    class={drawer ? 'drawer-link drawer-more-row' : 'nav-more-item'}
+    class:is-checked={item.checked?.()}
+    data-more={item.id}
+    role={drawer ? undefined : item.checked ? 'menuitemcheckbox' : 'menuitem'}
+    aria-checked={!drawer && item.checked ? item.checked() : undefined}
+    aria-pressed={drawer && item.checked ? item.checked() : undefined}
+    tabindex={drawer ? undefined : -1}
+    onclick={() => (drawer ? activateInDrawer(item) : activateMore(item))}
+  >
+    <span class="more-icon" aria-hidden="true">
+      {#if item.id === 'contrast'}
+        <svg
+          viewBox="0 0 16 16"
+          width="16"
+          height="16"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.4"
+        >
+          <circle cx="8" cy="8" r="6" />
+          <path d="M8 2a6 6 0 0 1 0 12Z" fill="currentColor" />
+        </svg>
+      {:else if item.id === 'share'}
+        <ShareIcon />
+      {:else}
+        <svg
+          viewBox="0 0 24 24"
+          width="16"
+          height="16"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <rect x="8" y="6" width="8" height="12" rx="4" />
+          <path
+            d="M12 3v3M5 9h3M5 14h3M16 9h3M16 14h3M6.5 5.5 8 7M17.5 5.5 16 7M7 18l-1.5 2M17 18l1.5 2"
+          />
+        </svg>
+      {/if}
+    </span>
+    <span class="more-label">{item.label()}</span>
+    {#if item.checked}
+      <span class="more-check" aria-hidden="true">
+        {#if item.checked()}
+          <svg
+            viewBox="0 0 16 16"
+            width="16"
+            height="16"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M3 8.5 6.5 12 13 4.5" />
+          </svg>
+        {/if}
+      </span>
+    {/if}
+  </button>
+{/snippet}
+
+{#if moreOpen}
+  <!-- Outside click closes the menu; the bar stays clickable above it, so the trigger can
+       toggle it. Not a Tab stop: Tab leaves the menu through its focusout. -->
+  <button
+    type="button"
+    class="nav-more-backdrop"
+    data-exhibit-hide
+    tabindex="-1"
+    aria-hidden="true"
+    onclick={() => closeMore()}
+  ></button>
+  <div
+    id="nav-more-menu"
+    class="nav-more-menu"
+    data-exhibit-hide
+    role="menu"
+    tabindex="-1"
+    aria-label={m.layout_footer_more()}
+    bind:this={moreMenu}
+    onkeydown={onMoreKeydown}
+    onfocusout={onMoreFocusout}
+  >
+    {#each moreItems as item (item.id)}
+      {@render moreRow(item, false)}
+    {/each}
+  </div>
 {/if}
 
 <SensorySheet />
@@ -534,8 +683,13 @@
             <a
               href={`${base}${localizeHref(child.path)}${child.query ?? ''}`}
               class="drawer-link drawer-group-item"
+              class:has-glyph={child.glyph}
               class:active={childActive(child, page.url, $exploreContext)}
-              onclick={closeMobileMenu}>{child.label()}</a
+              onclick={closeMobileMenu}
+              >{#if child.glyph}<ScaleGlyphIcon
+                  glyph={child.glyph}
+                  size={20}
+                />{/if}{child.label()}</a
             >
           {/each}
         </div>
@@ -554,22 +708,16 @@
         ⌕ {m.nav_search()}
       </button>
     {/if}
-    <!-- Locale + high-contrast live in the drawer on phones (they don't fit
-         the 375px top bar beside the 44px touch targets). The lens toggle
-         stays in the bar as a primary feature. -->
+    <!-- Locale + the More menu's actions (high contrast, share, debug) live in the
+         drawer on phones (they don't fit the 375px top bar beside the 44px touch
+         targets). The lens toggle stays in the bar as a primary feature. -->
     <div class="drawer-controls">
       <LocalePicker />
-      <button
-        type="button"
-        class="contrast-toggle"
-        class:active={hiContrast}
-        aria-label={m.nav_high_contrast_aria()}
-        aria-pressed={hiContrast}
-        title={m.nav_high_contrast_aria()}
-        onclick={onToggleHiContrast}
-      >
-        Aa
-      </button>
+    </div>
+    <div class="drawer-more" role="group" aria-label={m.layout_footer_more()}>
+      {#each moreItems as item (item.id)}
+        {@render moreRow(item, true)}
+      {/each}
     </div>
     <!-- Footer links live here on touch — the floating .site-footer is hidden
          on touch (see +layout.svelte), so its bill-of-materials links move into
@@ -636,24 +784,6 @@
       title="{m.version_info_title()}: v{displayVersion} · {__BUILD_DATE__}"
       hreflang="en">v{displayVersion} · {__BUILD_TAG__}</a
     >
-    <!-- Unified debug toggle (#54) — sits next to the prod/stage switcher; gates
-         all debug overlays (DebugPanel + AR HUD). All builds; default off. -->
-    <aside class="debug-switcher" aria-label={m.nav_debug_group_aria()}>
-      <span class="label">{m.nav_debug_label()}</span>
-      <button
-        type="button"
-        role="switch"
-        aria-checked={debugMode.enabled}
-        class:active={debugMode.enabled}
-        onclick={toggleDebugMode}
-      >
-        {debugMode.enabled ? 'On' : 'Off'}
-      </button>
-    </aside>
-    <!-- Internal-only staging↔prod target switcher — lives at the very bottom of
-         the drawer (moved out of the floating bottom-left panel, 2026-08 user
-         direction). MOBILE_INTERNAL-gated inside the component → no-op elsewhere. -->
-    <TargetEnvSwitcher />
   </div>
   <button
     type="button"
@@ -709,12 +839,17 @@
        lines its cap-height up with the link text x-height. */
     line-height: 1;
   }
+  @media (hover: hover) and (pointer: fine) {
+    .brand {
+      min-height: 32px;
+    }
+  }
   .brand:hover,
   .brand:focus-visible {
     opacity: 0.85;
   }
   .brand:focus-visible {
-    outline: 2px solid var(--color-accent, #4466ff);
+    outline: 2px solid var(--color-accent, var(--color-focus));
     outline-offset: 2px;
   }
   .brand.active {
@@ -782,8 +917,8 @@
 
   .link.active {
     color: var(--color-text);
-    background: rgba(68, 102, 255, 0.28);
-    border-color: rgba(68, 102, 255, 0.55);
+    background: color-mix(in srgb, var(--color-accent) 28%, transparent);
+    border-color: color-mix(in srgb, var(--color-accent) 55%, transparent);
   }
 
   /* ── Grouped-nav dropdowns (2026-07 IA restructure) ───────────────── */
@@ -804,7 +939,7 @@
     gap: 3px;
   }
   .caret {
-    font-size: 0.7em;
+    font-size: max(var(--size-label), 0.7em);
     opacity: 0.65;
     transition: transform 0.15s;
   }
@@ -843,6 +978,13 @@
     white-space: nowrap;
     transition: all 0.12s;
   }
+  /* The Explore rows lead with the level's glyph, the same one the picker and the home grid draw. */
+  .group-menu-link.has-glyph,
+  .drawer-group-item.has-glyph {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
   .group-menu-link:hover,
   .group-menu-link:focus-visible {
     color: rgba(255, 255, 255, 0.95);
@@ -851,8 +993,8 @@
   }
   .group-menu-link.active {
     color: var(--color-text);
-    background: rgba(68, 102, 255, 0.28);
-    border-color: rgba(68, 102, 255, 0.55);
+    background: color-mix(in srgb, var(--color-accent) 28%, transparent);
+    border-color: color-mix(in srgb, var(--color-accent) 55%, transparent);
   }
   /* Transparent full-page click-catcher behind an open dropdown. */
   .group-backdrop {
@@ -867,254 +1009,83 @@
   .right {
     display: flex;
     align-items: center;
-    gap: 14px;
+    gap: 4px;
     flex-shrink: 0;
   }
-
-  .contrast-toggle {
-    width: 32px;
-    height: 32px;
-    min-width: 44px;
-    min-height: 44px;
-    flex-shrink: 0;
-    background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    border-radius: 4px;
-    color: rgba(255, 255, 255, 0.6);
-    font-family: var(--font-display);
-    font-size: 13px;
-    letter-spacing: 1px;
-    cursor: pointer;
-    transition:
-      background 120ms,
-      border-color 120ms,
-      color 120ms;
-  }
-  .contrast-toggle:hover,
-  .contrast-toggle:focus-visible {
-    border-color: rgba(255, 255, 255, 0.4);
-    color: rgba(255, 255, 255, 0.95);
-    outline: none;
-  }
-  .contrast-toggle.active {
-    background: rgba(78, 205, 196, 0.18);
-    border-color: rgba(78, 205, 196, 0.6);
-    color: #4ecdc4;
+  @media (hover: hover) and (pointer: fine) {
+    .right {
+      gap: 6px;
+    }
   }
 
-  /* Science Lens toggle — same shape as the contrast toggle for visual
-     consistency. Symbol is ⊙ off / ⊕ on (closed circle vs marked circle). */
-  .lens-toggle {
-    width: 32px;
-    height: 32px;
-    min-width: 44px;
-    min-height: 44px;
+  /* One box for every right-hand control (UXD-016): the touch size by default, the compact
+     one on a fine primary pointer. The look is the A4 chip's (chip.css): outline at rest,
+     soft accent fill + accent edge + white glyph when on, hover lifts a control at rest only.
+     Each toggle's own rule below carries state colours only. */
+  .nav-btn {
+    --nav-btn: var(--nav-btn-touch);
+    box-sizing: border-box;
+    inline-size: var(--nav-btn);
+    block-size: var(--nav-btn);
     flex-shrink: 0;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 0;
+    background: var(--color-chip-glass);
+    border: 1px solid var(--color-chip-edge);
     border-radius: 4px;
-    color: rgba(255, 255, 255, 0.6);
+    color: var(--color-chip-text);
     cursor: pointer;
     transition:
       background 120ms,
       border-color 120ms,
       color 120ms;
   }
-  .lens-toggle :global(svg) {
+  @media (hover: hover) and (pointer: fine) {
+    .nav-btn {
+      --nav-btn: var(--nav-btn-fine);
+    }
+  }
+  .nav-btn :global(svg) {
     display: block;
   }
-  /* Hover-affordance only on routes that actually surface lens content
-     (ScienceLayersPanel sets <html data-science-lens-available> on
-     mount). On routes without it (e.g. /missions, /fleet, /library,
-     /credits, /), clicking the toggle still works but doesn't change
-     anything visible — so the hover color shift would be misleading
-     (2026-06-15 user note: "physics layer button should not change
-     color on hover when on pages that do not have science lens").
-     focus-visible still applies everywhere — it's a keyboard-nav
-     affordance, not a "this will do something" hint. */
-  :global([data-science-lens-available]) .lens-toggle:hover,
-  .lens-toggle:focus-visible {
+  .nav-btn:hover:not(:disabled, .active) {
+    border-color: var(--color-state);
+    color: var(--color-text);
+  }
+  .nav-btn:focus-visible {
+    outline: 2px solid var(--color-focus);
+    outline-offset: 2px;
+  }
+  .nav-btn.active {
+    background: color-mix(in srgb, var(--color-accent) 22%, var(--color-chip-glass));
+    border-color: var(--color-accent);
+    color: var(--color-text);
+  }
+  .nav-btn:disabled {
+    opacity: 0.42;
+    cursor: not-allowed;
+  }
+
+  /* Science Lens toggle. a6-keep: gold is the lens's own "this route has lens content" state,
+     not the accent. The button is disabled (no hover, no gold) on routes without lens
+     content, and .active is only set where the lens is available (script). */
+  .lens-toggle:hover:not(:disabled, .active) {
     border-color: rgba(255, 200, 80, 0.5);
     color: rgba(255, 200, 80, 0.95);
-    outline: none;
   }
-  /* Active-state yellow gated to the same scope as hover. The lens
-     state is a single global toggle, so after the user enables it on
-     /science and then navigates to /missions or /fleet the button
-     would otherwise keep glowing yellow as if it were doing something
-     on a route where the lens has no effect (2026-06-17 user note:
-     "science button in nav still changes color to yellow and looks
-     as an option when we're on pages that do not have science lens —
-     we don't want that. it should call for action by giving yellow
-     change of state only on pages where it makes sense since science
-     lens is there"). Toggle still works everywhere — the underlying
-     `scienceLens` state is preserved — just doesn't display yellow on
-     routes where it has no effect. */
-  :global([data-science-lens-available]) .lens-toggle.active {
+  .lens-toggle.active {
     background: rgba(255, 200, 80, 0.18);
     border-color: rgba(255, 200, 80, 0.65);
     color: #ffc850;
   }
-  /* Disabled state — matches the settings-toggle disabled chrome
-     (2026-06-17 user direction: "can we also disable science button
-     in the same way when not being able to be used"). The button
-     still exists in the DOM and gets focused for screen-reader users,
-     but :disabled blocks the click + dims the chrome so it reads as
-     "not actionable here" instead of "actionable but does nothing"
-     — same UX as the gear toggle on non-3D routes. */
-  .lens-toggle:disabled {
-    cursor: not-allowed;
-    color: rgba(255, 255, 255, 0.28);
-    border-color: rgba(255, 255, 255, 0.1);
-  }
 
-  /* Graphics-settings ⚙ toggle. Same chrome family as the lens +
-     contrast buttons for visual consistency, with a third state
-     (disabled) for routes that don't surface settings. The disabled
-     visual mirrors the "no-action affordance" the lens-toggle already
-     uses on lens-unavailable routes (no hover-yellow), so the row
-     reads coherently regardless of which buttons are active.
-     (2026-06-17 user direction: "have it disabled when page does not
-     need it, and when it needs it add hover and glow as for other
-     buttons".) */
-  .settings-toggle,
-  .share-toggle,
-  .debug-toggle {
-    width: 32px;
-    height: 32px;
-    min-width: 44px;
-    min-height: 44px;
-    flex-shrink: 0;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    border-radius: 4px;
-    color: rgba(255, 255, 255, 0.6);
-    cursor: pointer;
-    transition:
-      background 120ms,
-      border-color 120ms,
-      color 120ms;
-  }
-  .settings-toggle :global(svg),
-  .share-toggle :global(svg),
-  .debug-toggle :global(svg) {
-    display: block;
-  }
-  .share-toggle:hover,
-  .share-toggle:focus-visible,
-  .debug-toggle:hover,
-  .debug-toggle:focus-visible {
-    border-color: rgba(78, 205, 196, 0.55);
-    color: rgba(78, 205, 196, 0.95);
-    outline: none;
-  }
-  /* Debug toggle lit when debug mode is on. */
-  .debug-toggle.active {
-    border-color: rgba(246, 173, 85, 0.7);
-    color: #f6ad55;
-    background: rgba(246, 173, 85, 0.12);
-  }
-  /* Drawer debug row — mirrors the .target-switcher idiom just below it. */
-  .debug-switcher {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-top: 10px;
-    padding: 8px 10px;
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    font:
-      11px / 1.4 ui-monospace,
-      monospace;
-    color: #cfd3e0;
-  }
-  .debug-switcher .label {
-    opacity: 0.6;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-  .debug-switcher button {
-    padding: 2px 12px;
-    border-radius: 5px;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    background: transparent;
-    color: inherit;
-    cursor: pointer;
-  }
-  .debug-switcher button.active {
-    background: #f6ad55;
-    border-color: #f6ad55;
-    color: #1a1207;
-    font-weight: 600;
-  }
-  /* Hover + focus glow only when the route surfaces settings (i.e. the
-     button isn't [disabled]). Teal accent — matches the popup panel's
-     border so opening it reads as a continuation of the same control. */
-  .settings-toggle:not(:disabled):hover,
-  .settings-toggle:not(:disabled):focus-visible {
-    border-color: rgba(78, 205, 196, 0.55);
-    color: rgba(78, 205, 196, 0.95);
-    outline: none;
-  }
-  .settings-toggle.active {
-    background: rgba(78, 205, 196, 0.18);
-    border-color: rgba(78, 205, 196, 0.7);
-    color: #4ecdc4;
-  }
-  .settings-toggle:disabled {
-    cursor: not-allowed;
-    color: rgba(255, 255, 255, 0.28);
-    border-color: rgba(255, 255, 255, 0.1);
-  }
-
-  /* Audio overlay toggle — same shape as the other right-rail toggles
-     for visual consistency. Active state when the overlay is open. */
-  .audio-toggle {
-    width: 32px;
-    height: 32px;
-    min-width: 44px;
-    min-height: 44px;
-    flex-shrink: 0;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    border-radius: 4px;
-    color: rgba(255, 255, 255, 0.6);
-    cursor: pointer;
-    transition:
-      background 120ms,
-      border-color 120ms,
-      color 120ms;
-  }
-  .audio-toggle :global(svg) {
-    display: block;
-  }
-  .audio-toggle:hover,
-  .audio-toggle:focus-visible {
-    border-color: rgba(68, 102, 255, 0.5);
-    color: rgba(150, 175, 255, 0.95);
-    outline: none;
-  }
-  .audio-toggle.active {
-    background: rgba(68, 102, 255, 0.18);
-    border-color: rgba(68, 102, 255, 0.65);
-    color: #96afff;
-  }
-  /* Discreet pulse while audio.playing — bounded opacity wave on the
+  /* Audio overlay toggle: a discreet pulse while audio.playing — bounded opacity wave on the
      icon stroke (PRD-016 S3 / RFC-019 §7.2). Animation suspended under
-     prefers-reduced-motion so motion-sensitive users see only the
-     border-color treatment. */
+     prefers-reduced-motion so motion-sensitive users see only the border treatment. */
   .audio-toggle.playing {
-    border-color: rgba(150, 175, 255, 0.6);
+    border-color: var(--color-accent-strong);
   }
   .audio-toggle.playing :global(svg) {
     animation: audio-toggle-pulse 1.6s ease-in-out infinite;
@@ -1145,7 +1116,7 @@
     max-width: min(360px, calc(100vw - 24px));
     padding: 10px 16px;
     background: rgba(20, 22, 34, 0.95);
-    border: 1px solid rgba(78, 205, 196, 0.5);
+    border: 1px solid color-mix(in srgb, var(--color-accent) 50%, transparent);
     border-radius: 999px;
     color: var(--color-text);
     font-size: 13px;
@@ -1157,29 +1128,101 @@
 
   /* Hamburger menu toggle — hidden on desktop, shown on mobile. */
   .menu-toggle {
-    width: 32px;
-    height: 32px;
-    min-width: 44px;
-    min-height: 44px;
-    flex-shrink: 0;
     display: none;
-    align-items: center;
-    justify-content: center;
+  }
+
+  /* The More menu (UXD-016): High contrast, Share and Debug behind one menu button. Rendered
+     outside <nav> (like the drawer) so the nav's roving arrows never reach its rows; same
+     chrome as .group-menu so the bar has one dropdown look. Above the DebugPanel and the
+     settings sheet (z 90), which open from the same top-right corner. */
+  .nav-more-backdrop {
+    position: fixed;
+    inset: var(--nav-height) 0 0 0;
+    z-index: 91;
     background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.18);
+    border: none;
+    cursor: default;
+  }
+  .nav-more-menu {
+    position: fixed;
+    top: calc(var(--nav-height) + 6px);
+    inset-inline-end: 24px;
+    z-index: 92;
+    box-sizing: border-box;
+    min-inline-size: 220px;
+    max-inline-size: min(320px, calc(100vw - 16px));
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 6px;
+    background: var(--color-nav-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+  }
+  .nav-more-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-sizing: border-box;
+    inline-size: 100%;
+    min-block-size: var(--nav-btn-touch);
+    padding: 6px 10px;
+    background: transparent;
+    border: 1px solid transparent;
     border-radius: 4px;
-    color: rgba(255, 255, 255, 0.6);
+    color: var(--color-chip-text);
+    font-family: var(--font-mono);
+    font-size: var(--size-meta);
+    font-weight: 700;
+    letter-spacing: 1px;
+    line-height: 1.3;
+    text-align: start;
     cursor: pointer;
     transition:
       background 120ms,
       border-color 120ms,
       color 120ms;
   }
-  .menu-toggle:hover,
-  .menu-toggle:focus-visible {
-    border-color: rgba(255, 255, 255, 0.4);
-    color: rgba(255, 255, 255, 0.95);
-    outline: none;
+  @media (hover: hover) and (pointer: fine) {
+    .nav-more-item {
+      min-block-size: var(--nav-btn-fine);
+    }
+  }
+  .nav-more-item:hover,
+  .nav-more-item:focus-visible {
+    background: var(--color-accent-soft);
+    border-color: var(--color-chip-edge);
+    color: var(--color-text);
+  }
+  .nav-more-item:focus-visible {
+    outline: 2px solid var(--color-focus);
+    outline-offset: -2px;
+  }
+  .more-icon {
+    flex: none;
+    display: inline-flex;
+  }
+  .more-label {
+    flex: 1;
+    min-inline-size: 0;
+    overflow-wrap: anywhere;
+  }
+  .more-check {
+    flex: none;
+    inline-size: 16px;
+    block-size: 16px;
+    color: var(--color-state);
+  }
+  .is-checked {
+    color: var(--color-text);
+  }
+  /* a6-keep: debug orange is the debug overlays' own "on" colour, not the accent. */
+  .is-checked[data-more='debug'] .more-icon,
+  .is-checked[data-more='debug'] .more-check {
+    color: #f6ad55;
   }
 
   /* Mobile drawer — slides down under the nav with all link items
@@ -1216,11 +1259,11 @@
     border-left: 3px solid transparent;
     transition: all 0.12s;
   }
-  /* Locale + high-contrast, moved out of the top bar on phones — the same
-     buttons, just relocated. Only the row that positions them. */
+  /* The locale picker, moved out of the top bar on phones — the same component, just
+     relocated. Only the row that positions it. */
   .drawer-controls {
-    /* Hidden by default — only narrow phones (≤500px) move the locale +
-       contrast controls in here; wider touch screens keep them in the bar. */
+    /* Hidden by default — only phones (≤600px) move the locale picker and the More
+       menu's actions in here; wider touch screens keep them in the bar. */
     display: none;
     align-items: center;
     gap: 10px;
@@ -1228,18 +1271,27 @@
     border-top: 1px solid var(--color-border);
     margin-top: 4px;
   }
-  /* The locale chip (its own component) uses a different font + left-aligns
-     its label; align it to the contrast toggle beside it so the two read as
-     one matched pair. Scoped to the drawer — the desktop bar chip is
-     unchanged. */
-  .drawer-controls :global(.chip) {
-    justify-content: center;
-    font-family: var(--font-display);
-    font-size: 13px;
-    letter-spacing: 1px;
-    border-radius: 4px;
-    border-color: rgba(255, 255, 255, 0.18);
-    color: rgba(255, 255, 255, 0.6);
+  /* The More menu's three actions on phones: the same list as the bar menu, as drawer rows. */
+  .drawer-more {
+    display: none;
+  }
+  .drawer-more-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-sizing: border-box;
+    inline-size: 100%;
+    min-block-size: var(--nav-btn-touch);
+    background: transparent;
+    border: none;
+    border-left: 3px solid transparent;
+    font-family: inherit;
+    text-align: start;
+    cursor: pointer;
+  }
+  .drawer-more-row.is-checked {
+    background: color-mix(in srgb, var(--color-accent) 18%, transparent);
+    border-left-color: color-mix(in srgb, var(--color-accent) 85%, transparent);
   }
   /* The picker's dropdown opens downward by default; from this bottom-of-drawer
      position that gets clipped by the drawer's own scroll (overflow-y:auto).
@@ -1276,7 +1328,7 @@
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 1.5px;
-    color: rgba(255, 255, 255, 0.4);
+    color: var(--color-text-label);
   }
   .drawer-group-item {
     padding-left: 32px;
@@ -1290,8 +1342,8 @@
   }
   .drawer-link.active {
     color: var(--color-text);
-    background: rgba(68, 102, 255, 0.18);
-    border-left-color: rgba(68, 102, 255, 0.85);
+    background: color-mix(in srgb, var(--color-accent) 18%, transparent);
+    border-left-color: color-mix(in srgb, var(--color-accent) 85%, transparent);
   }
   .drawer-backdrop {
     position: fixed;
@@ -1324,10 +1376,10 @@
      wants the touch menu, and its inline strip was a cramped horizontal
      scroller). Keyed on capability, not width, so the footer-in-drawer section
      reaches every touch size (0.7.2 model).
-     Width: the inline bar (brand + links + the seven-control cluster) needs
-     1210 px in the widest locale (ru; fr / es 1165, en 1038 — measured
-     2026-11-04). The old 640 px break left 641–1209 px with the cluster running
-     off the right edge (page scrollWidth up to 1032 at 760 px). */
+     Width: the inline bar needed 1210 px in the widest locale (ru; fr / es 1165,
+     en 1038 — measured 2026-11-04 with the old 392 px, seven-control cluster). The
+     compact cluster is ~200 px narrower; the break stays at 1219 until the 14-locale
+     measurement (tests/e2e/nav-controls.spec.ts) says where it can move (UXD-016). */
   @media (max-width: 1219px), (pointer: coarse) {
     .center {
       display: none;
@@ -1365,7 +1417,7 @@
     font-size: 11px;
     font-weight: 400;
     letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--color-text-label);
     border-left-color: transparent;
   }
   /* "About" sub-group in the drawer footer — a muted first-cap sub-heading
@@ -1377,9 +1429,9 @@
     display: block;
     padding: 9px 18px 2px;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.38);
+    color: var(--color-text-label);
   }
   .drawer-about-item {
     padding-left: 32px;
@@ -1391,7 +1443,7 @@
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.35);
+    color: var(--color-text-label);
     text-decoration: none;
   }
   .drawer-version:hover,
@@ -1407,27 +1459,29 @@
     }
   }
 
-  /* Up to 600 px the full seven-control cluster + the hamburger (≈591 px with the
-     brand, measured 2026-11-04) does not fit, so three controls move to the drawer. */
+  /* Up to 600 px the cluster + the hamburger does not fit beside the brand at 44 px, so the
+     locale picker and the More menu's three actions move into the drawer. */
   @media (max-width: 600px) {
-    /* Keep every target at 44 px on a 375 px bar by moving the locale picker +
-       high-contrast into the hamburger drawer on phones (see .drawer-controls).
-       The lens toggle stays as a primary feature; the unified settings ⚙ stays
-       in the bar too — it's the ONLY way to reach sound/haptics/tilt on mobile
-       (it replaced the former sensory button, so the button count is unchanged). */
+    /* Keep every target at 44 px on a 375 px bar: audio, lens, settings and the hamburger
+       stay. The lens toggle is a primary feature; the unified settings ⚙ is the ONLY way to
+       reach sound/haptics/tilt on mobile. */
     .right {
       gap: 2px;
     }
     .right :global(.locale-picker),
-    .right .contrast-toggle,
-    .right .debug-toggle {
+    .right .nav-more-trigger,
+    .nav-more-menu,
+    .nav-more-backdrop {
       display: none;
     }
     /* ...and surface them in the drawer instead. On wider touch screens
        (landscape) the bar has room, so the cluster stays inline there and the
-       drawer row is hidden (base rule) — no duplication. */
+       drawer rows are hidden (base rule) — no duplication. */
     .drawer-controls {
       display: flex;
+    }
+    .drawer-more {
+      display: block;
     }
   }
 </style>

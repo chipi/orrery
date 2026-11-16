@@ -83,5 +83,19 @@
     "/programs/mir": "Mir — 俄罗斯舱段所源自的模块化空间站",
     "/programs/salyut": "Salyut — 俄罗斯最早的空间站",
     "/programs/iss": "国际空间站 — 俄罗斯正在退出的合作"
+  },
+  "roster": {
+    "Announced": {
+      "note": "俄罗斯宣布将退出国际空间站伙伴关系，并建造自己的国家空间站——回归Salyut与Mir时代单打独斗的模式",
+      "name": "正式宣布"
+    },
+    "First module": {
+      "note": "俄罗斯轨道站（ROS）首个UUM舱段的计划发射；整个空间站预计在2020年代后期建成",
+      "name": "首个舱段"
+    },
+    "ISS withdrawal": {
+      "note": "俄罗斯公布的结束参与国际空间站并将其宇航员转移到自己空间站的时间表",
+      "name": "退出国际空间站"
+    }
   }
 }

@@ -146,7 +146,7 @@ export const FORCE_COLORS = {
   thrust: 0x54e08a,
   weight: 0xff5a5a,
   drag: 0x5aa0ff,
-  velocity: 0x7fe0ff,
+  velocity: 0x8aa0ff,
 } as const;
 
 export interface DescentSceneOptions {
@@ -185,10 +185,10 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
   // ── Lighting: a warm sun toward the camera hemisphere + a cool fill so the
   //    shadowed limb never crushes to black (×π for r155+ physical lights, #203).
   const sunDir = new THREE.Vector3(0.35, 0.55, 0.75).normalize();
-  const sun = new THREE.DirectionalLight(0xfff4d0, 1.6 * Math.PI);
+  const sun = new THREE.DirectionalLight(0xfff4d0, 1.0 * Math.PI);
   sun.position.copy(sunDir).multiplyScalar(1000);
   scene.add(sun);
-  scene.add(new THREE.AmbientLight(0xeeeeff, 0.7 * Math.PI));
+  scene.add(new THREE.AmbientLight(0xeeeeff, 0.3 * Math.PI));
 
   // ── Destination body: a big textured sphere a full radius below the landing
   //    site (surface at y=0), oriented so the site's geography sits under the
@@ -364,7 +364,7 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
   arrThrust.setLabel('RETRO', '#8fe8b0');
   arrWeight.setLabel('WEIGHT', '#ffb3b3');
   arrDrag.setLabel('DRAG', '#a8c8ff');
-  arrVel.setLabel('VELOCITY', '#bfeaff');
+  arrVel.setLabel('VELOCITY', '#c4d0ff');
   forces.add(arrThrust, arrWeight, arrDrag, arrVel);
   scene.add(forces);
   let showForces = false;

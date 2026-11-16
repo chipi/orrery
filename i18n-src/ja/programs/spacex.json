@@ -91,5 +91,25 @@
     "/fleet?id=falcon-9": "フリート — Falcon 9、Falcon Heavy、Dragon",
     "/programs/iss": "ISS — Crew Dragon が向かうステーション",
     "/earth": "地球 — 軌道、ランデブー、打ち上げ地点"
+  },
+  "roster": {
+    "Falcon 1, flight 4": {
+      "note": "軌道に到達した初の民間開発の液体燃料ロケット——会社が資金を使い果たすわずか数週間前に、余力で打てた最後の飛行で飛んだ",
+      "name": "Falcon 1 4回目の飛行"
+    },
+    "First Dragon to the ISS": {
+      "note": "ステーションに係留された初の商業宇宙船——民間セクターが有人宇宙飛行の補給を始める",
+      "name": "ISSへの初のDragon"
+    },
+    "First booster landing": {
+      "note": "Falcon 9の第1段が戻ってきて直立着陸する——数十年にわたり不経済だと退けられてきた再使用が実証された",
+      "name": "初のブースター着陸"
+    },
+    "mission:inspiration4": {
+      "note": "軌道に到達した初の全員民間人のクルー——プロの宇宙飛行士は一人も搭乗していない"
+    },
+    "mission:polaris-dawn": {
+      "note": "初の商業宇宙遊泳。Crew Dragonから、新たに設計されたSpaceXの宇宙服で行われた"
+    }
   }
 }

@@ -87,5 +87,19 @@
     "/fleet?id=gaganyaan": "Vloot — het ruimtevaartuig Gaganyaan",
     "/programs/chandrayaan": "Chandrayaan — het maanprogramma van India",
     "/programs/mangalyaan": "Mangalyaan — India's Marsmissie die in één keer slaagde"
+  },
+  "roster": {
+    "Announced": {
+      "note": "India verbindt zich ertoe eigen astronauten te lanceren met een eigen raket — het doel dat het het vierde land met onafhankelijke bemande ruimtevaart zou maken",
+      "name": "Aangekondigd"
+    },
+    "Test Vehicle abort": {
+      "note": "de eerste vliegtest demonstreert het ontsnappingssysteem voor de bemanning, dat de capsule weg moet trekken van een falende raket — het veiligheidsvermogen waaromheen een bemand programma is gebouwd",
+      "name": "Afbreektest Test Vehicle"
+    },
+    "First crewed flight": {
+      "note": "het geplande debuut van een Indiase bemanning in een Indiaas ruimtevaartuig — beoogd voor begin 2027, waarmee India zich voegt bij Rusland, de VS en China als machten met onafhankelijke bemande ruimtevaart",
+      "name": "Eerste bemande vlucht"
+    }
   }
 }

@@ -29,11 +29,10 @@ export interface AgencyInfo {
    */
   logo: string | null;
   /**
-   * Canonical brand color hex (e.g. `"#0B3D91"` for NASA blue). Used as
-   * the mission-card / fleet-card accent. Pull from the agency's own
-   * brand identity where possible (matches the logo SVG fill where the
-   * SVG carries a brand color). null when no canonical brand color
-   * applies (e.g. defunct concepts, brand-agnostic shorthands).
+   * The agency's data colour: the mission-card accent and badge, the agency filter dot. The 14
+   * agencies that fly on /missions carry the one palette of UXD-048 (4.5:1 on the page and the
+   * card, told apart under colour-blind simulation, no cyan or teal); the rest keep their brand
+   * colour. null when no colour applies (e.g. defunct concepts, brand-agnostic shorthands).
    */
   color: string | null;
   /**
@@ -50,35 +49,35 @@ export const AGENCIES: AgencyInfo[] = [
     short: 'NASA',
     full: 'NASA',
     logo: 'nasa.svg',
-    color: '#0B3D91',
+    color: '#2e72fa', // UXD-048 palette
     aliases: ['nasa', 'national aeronautics and space administration'],
   },
   {
     short: 'ESA',
     full: 'European Space Agency',
     logo: 'esa.svg',
-    color: '#003247',
+    color: '#e444c9', // UXD-048 palette
     aliases: ['esa', 'european space agency'],
   },
   {
     short: 'JAXA',
     full: 'Japan Aerospace Exploration Agency',
     logo: 'jaxa.svg',
-    color: '#003087',
+    color: '#eb7085', // UXD-048 palette
     aliases: ['jaxa', 'japan aerospace exploration agency'],
   },
   {
     short: 'ISRO',
     full: 'Indian Space Research Organisation',
     logo: 'isro.svg',
-    color: '#FF9933',
+    color: '#fa942e', // UXD-048 palette
     aliases: ['isro', 'indian space research organisation', 'indian space research organization'],
   },
   {
     short: 'CNSA',
     full: 'China National Space Administration',
     logo: 'cnsa.svg',
-    color: '#DE2910',
+    color: '#fa2e2e', // UXD-048 palette
     aliases: ['cnsa', 'china national space administration'],
   },
   {
@@ -89,7 +88,7 @@ export const AGENCIES: AgencyInfo[] = [
     short: 'CMSA',
     full: 'China Manned Space Agency',
     logo: null,
-    color: '#DE2910',
+    color: '#fc92b5', // UXD-048 palette
     aliases: ['cmsa', 'china manned space agency'],
   },
   {
@@ -105,7 +104,7 @@ export const AGENCIES: AgencyInfo[] = [
     short: 'Roscosmos',
     full: 'Roscosmos',
     logo: 'roscosmos.svg',
-    color: '#cc4444',
+    color: '#f1ab9d', // UXD-048 palette
     aliases: [
       'roscosmos',
       'russian federal space agency',
@@ -124,14 +123,14 @@ export const AGENCIES: AgencyInfo[] = [
     short: 'UAESA',
     full: 'MBRSC / UAE Space Agency',
     logo: 'uaesa.svg',
-    color: '#00833F',
+    color: '#60fb7a', // UXD-048 palette
     aliases: ['uaesa', 'mbrsc', 'mohammed bin rashid space centre', 'uae space agency'],
   },
   {
     short: 'USSF',
     full: 'United States Space Force',
     logo: 'ussf.svg',
-    color: '#1D2951',
+    color: '#ab9df1', // UXD-048 palette
     aliases: ['ussf', 'united states space force', 'us space force'],
   },
   {
@@ -152,7 +151,7 @@ export const AGENCIES: AgencyInfo[] = [
     short: 'ASI',
     full: 'Agenzia Spaziale Italiana',
     logo: 'asi.svg',
-    color: '#008C45',
+    color: '#9df1b9', // UXD-048 palette
     aliases: ['asi', 'agenzia spaziale italiana', 'italian space agency'],
   },
 
@@ -161,7 +160,7 @@ export const AGENCIES: AgencyInfo[] = [
     short: 'SpaceX',
     full: 'SpaceX',
     logo: 'spacex.svg',
-    color: '#005288',
+    color: '#d5d9e2', // UXD-048 palette
     aliases: ['spacex'],
   },
   {
@@ -196,7 +195,7 @@ export const AGENCIES: AgencyInfo[] = [
     short: 'Blue Origin',
     full: 'Blue Origin',
     logo: 'blue-origin.svg',
-    color: '#00264D',
+    color: '#2e94fa', // UXD-048 palette
     aliases: ['blue origin', 'blue-origin'],
   },
   {
@@ -219,7 +218,7 @@ export const AGENCIES: AgencyInfo[] = [
     short: 'Intuitive Machines',
     full: 'Intuitive Machines',
     logo: 'intuitive-machines.svg',
-    color: '#00A3E0',
+    color: '#e44494', // UXD-048 palette
     aliases: ['intuitive machines', 'intuitive-machines'],
   },
   {
@@ -234,7 +233,7 @@ export const AGENCIES: AgencyInfo[] = [
     full: 'SpaceIL',
     // No SpaceIL SVG on Wikimedia Commons. Falls back to text-only.
     logo: null,
-    color: '#0038B8',
+    color: '#92c7fc', // UXD-048 palette
     aliases: ['spaceil'],
   },
 
@@ -285,7 +284,7 @@ export const AGENCIES: AgencyInfo[] = [
     short: 'Planet Labs',
     full: 'Planet Labs PBC',
     logo: 'planet-labs.svg',
-    color: '#1B9E77',
+    color: '#1B9E77', // a3-keep: agency identity colour, confirmed by the operator 2026-11-13
     aliases: ['planet labs', 'planet-labs', 'planet labs pbc'],
   },
 
@@ -424,4 +423,35 @@ export function agencyFullName(input: string | null | undefined): string {
 export function agencyColor(input: string | null | undefined): string | null {
   const compound = resolveAgencyCompound(input);
   return compound[0]?.color ?? null;
+}
+
+/**
+ * The colour to draw an agency as a DATA mark (a dot, a bar) on the dark page: its registry colour,
+ * lifted toward white until it clears 4.5:1 on the page and the card for the agencies that still
+ * carry a dark brand colour (the 14 agencies of /missions already do, so they are returned as
+ * they are). null when the agency has no colour.
+ */
+export function agencyDataColor(input: string | null | undefined): string | null {
+  const c = agencyColor(input);
+  if (!c || !/^#[0-9a-f]{6}$/i.test(c)) return c;
+  const lum = (hex: string) => {
+    const lin = (v: number) => {
+      const s = v / 255;
+      return s <= 0.03928 ? s / 12.92 : ((s + 0.055) / 1.055) ** 2.4;
+    };
+    const [r, g, b] = [1, 3, 5].map((i) => lin(parseInt(hex.slice(i, i + 2), 16)));
+    return 0.2126 * r + 0.7152 * g + 0.0722 * b;
+  };
+  const ratio = (hex: string) => (lum(hex) + 0.05) / (lum('#0a0a16') + 0.05);
+  let out = c;
+  for (let t = 0.1; ratio(out) < 4.5 && t <= 1; t += 0.1) {
+    const mix = [1, 3, 5].map((i) => {
+      const v = parseInt(c.slice(i, i + 2), 16);
+      return Math.round(v + (255 - v) * t)
+        .toString(16)
+        .padStart(2, '0');
+    });
+    out = '#' + mix.join('');
+  }
+  return out;
 }

@@ -1,26 +1,35 @@
 <!--
   BlackHolePanel — detail panel for the /explore v2 black-hole lensing render
-  (Slice 6). Mirrors the MilkyWayPanel / DeepSkyPanel family: mass / distance /
-  spin / Schwarzschild radius + a link into the /science black-holes article.
+  (Slice 6). On the shared UniversePanelBody (B3): mass / distance / spin /
+  Schwarzschild radius + a link into the /science black-holes article, the hole's own picture as
+  hero where one exists, and the action that enters the lensing takeover.
   Gargantua carries the Interstellar culture door (Slice 6 Part 5) via the
   optional children slot. Real holes cite EHT/GRAVITY; Gargantua is badged fiction.
 -->
 <script lang="ts">
   import type { Snippet } from 'svelte';
-  import Panel from './Panel.svelte';
+  import UniversePanelBody from './UniversePanelBody.svelte';
+  import Chip from './Chip.svelte';
   import ScienceCard from './ScienceCard.svelte';
   import type { BlackHole, BlackHoleKind } from '$lib/data';
   import * as m from '$lib/paraglide/messages';
+  import { getLocale } from '$lib/paraglide/runtime';
+  import { dataSourceItems, recordLinks, sourceLink } from '$lib/catalogue';
+  import DataSources from './DataSources.svelte';
 
   type Props = {
     hole: BlackHole | null;
     learnHref: string;
     open: boolean;
     onClose: () => void;
+    /** Another panel is stacked on this one. */
+    covered?: boolean;
+    /** Enters the lensing takeover; absent while the takeover is already on screen. */
+    onSeeLensing?: () => void;
     /** Optional extra content (e.g. Gargantua's culture door). */
     children?: Snippet;
   };
-  let { hole, learnHref, open, onClose, children }: Props = $props();
+  let { hole, learnHref, open, onClose, covered = false, onSeeLensing, children }: Props = $props();
 
   const KIND: Record<BlackHoleKind, () => string> = {
     supermassive: m.explore_bh_kind_supermassive,
@@ -29,128 +38,101 @@
   };
   let kindLabel = $derived(hole ? KIND[hole.kind]() : '');
   let title = $derived(hole?.name ?? '');
+  // Fiction has no catalogue; a real hole's spin is a render parameter with no published value
+  // behind it here, so it is not shown as a measurement.
+  let real = $derived(hole !== null && hole.kind !== 'fictional');
+  let massSrc = $derived(sourceLink(hole?.catalogue?.mass_solar));
+  let distSrc = $derived(sourceLink(hole?.catalogue?.dist_ly));
+  let sources = $derived(
+    dataSourceItems(hole?.catalogue, (k) =>
+      k === 'mass_solar'
+        ? m.explore_bh_label_mass()
+        : k === 'dist_ly'
+          ? m.explore_bh_label_distance()
+          : null,
+    ),
+  );
 
-  // Human-friendly big-number formatting for mass + radius.
+  // Big numbers in the reader's language ("4.3 million", "4,3 миллиона", "430万"), not the
+  // browser's locale with an English word appended.
   function bigNum(n: number): string {
-    if (n >= 1e9)
-      return `${(n / 1e9).toLocaleString(undefined, { maximumFractionDigits: 1 })} billion`;
-    if (n >= 1e6)
-      return `${(n / 1e6).toLocaleString(undefined, { maximumFractionDigits: 1 })} million`;
-    return n.toLocaleString(undefined, { maximumFractionDigits: 0 });
+    return n >= 1e6
+      ? new Intl.NumberFormat(getLocale(), {
+          notation: 'compact',
+          compactDisplay: 'long',
+          maximumFractionDigits: 1,
+        }).format(n)
+      : n.toLocaleString(getLocale(), { maximumFractionDigits: 0 });
   }
   function dist(ly: number): string {
-    if (ly >= 1e6)
-      return `${(ly / 1e6).toLocaleString(undefined, { maximumFractionDigits: 1 })}M ly`;
-    return `${ly.toLocaleString(undefined, { maximumFractionDigits: 0 })} ly`;
+    return m.unit_ly_value({
+      value:
+        ly >= 1e6 ? bigNum(ly) : ly.toLocaleString(getLocale(), { maximumSignificantDigits: 3 }),
+    });
   }
+  let facts = $derived(
+    hole
+      ? [
+          {
+            label: m.explore_bh_label_mass(),
+            value: bigNum(hole.mass_solar),
+            unit: m.explore_bh_solar_masses(),
+            accent: true,
+            source: massSrc ?? undefined,
+          },
+          {
+            label: m.explore_bh_label_distance(),
+            value: dist(hole.dist_ly),
+            source: distSrc ?? undefined,
+          },
+          ...(!real
+            ? [
+                {
+                  label: m.explore_bh_label_spin(),
+                  value: hole.spin.toLocaleString(getLocale(), { maximumFractionDigits: 2 }),
+                },
+              ]
+            : []),
+          { label: m.explore_bh_label_rs(), value: rs(hole.rs_km) },
+        ]
+      : [],
+  );
+
   function rs(km: number): string {
-    if (km >= 1e9)
-      return `~${(km / 1e9).toLocaleString(undefined, { maximumFractionDigits: 1 })}B km`;
-    if (km >= 1e6)
-      return `~${(km / 1e6).toLocaleString(undefined, { maximumFractionDigits: 1 })}M km`;
-    return `~${km.toLocaleString(undefined, { maximumFractionDigits: 0 })} km`;
+    return `~${bigNum(km)} km`;
   }
 </script>
 
-<Panel {open} {onClose} {title} mobileSheet="partial">
-  {#if hole}
-    <div class="head">
-      <div class="kind">{kindLabel}</div>
-      <div class="name">{hole.name}</div>
-    </div>
-
-    <p class="prose">{hole.discovery}</p>
-
-    <div class="grid">
-      <div class="cell">
-        <div class="cell-label">{m.explore_bh_label_mass()}</div>
-        <div class="cell-value teal">
-          {bigNum(hole.mass_solar)}
-          <span class="unit">{m.explore_bh_solar_masses()}</span>
-        </div>
-      </div>
-      <div class="cell">
-        <div class="cell-label">{m.explore_bh_label_distance()}</div>
-        <div class="cell-value">{dist(hole.dist_ly)}</div>
-      </div>
-      <div class="cell">
-        <div class="cell-label">{m.explore_bh_label_spin()}</div>
-        <div class="cell-value">
-          {hole.spin.toLocaleString(undefined, { maximumFractionDigits: 2 })}
-        </div>
-      </div>
-      <div class="cell">
-        <div class="cell-label">{m.explore_bh_label_rs()}</div>
-        <div class="cell-value">{rs(hole.rs_km)}</div>
-      </div>
-    </div>
-
-    {@render children?.()}
-
-    <a class="learn-link" href={learnHref}>{m.explore_bh_learn_more()} →</a>
+<UniversePanelBody
+  {open}
+  {onClose}
+  {covered}
+  {title}
+  entityId={hole?.id ?? ''}
+  heroOf={hole ? { level: 'black-holes', id: hole.id } : undefined}
+  kind={hole ? kindLabel : undefined}
+  name={hole?.name}
+  lead={hole ? [hole.discovery] : []}
+  {facts}
+  learn={hole ? { href: learnHref, label: m.explore_bh_learn_more() } : undefined}
+>
+  {#snippet actions()}
+    {#if onSeeLensing}
+      <Chip kind="action" onclick={onSeeLensing}>{m.explore_bh_see_lensing()}</Chip>
+    {/if}
+  {/snippet}
+  {#snippet extra()}
+    {#if hole}
+      {#if real}<DataSources
+          variant="panel"
+          items={sources}
+          links={recordLinks(hole.records)}
+        />{/if}
+      {@render children?.()}
+    {/if}
+  {/snippet}
+  {#snippet science()}
     <!-- Where black-hole geometry leads next in the encyclopedia. -->
     <ScienceCard tab="observation" section="wormholes" />
-  {/if}
-</Panel>
-
-<style>
-  .head {
-    margin-bottom: 0.5rem;
-  }
-  .kind {
-    font-size: 0.7rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--muted, #9aa4bf);
-  }
-  .name {
-    font-size: 1.1rem;
-    font-weight: 700;
-  }
-  .prose {
-    font-size: 0.85rem;
-    line-height: 1.5;
-    color: var(--text, #e9eefc);
-    margin: 0.5rem 0 0.75rem;
-  }
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
-    gap: 0.5rem;
-    margin-bottom: 0.75rem;
-  }
-  .cell {
-    min-width: 0;
-    background: rgba(255, 255, 255, 0.04);
-    border-radius: 6px;
-    padding: 0.4rem 0.55rem;
-  }
-  .cell-label {
-    font-size: 0.62rem;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--muted, #9aa4bf);
-  }
-  .cell-value {
-    font-size: 0.82rem;
-    font-weight: 600;
-  }
-  .cell-value.teal {
-    color: #4ecdc4;
-  }
-  .unit {
-    font-size: 0.68rem;
-    font-weight: 400;
-    color: var(--muted, #9aa4bf);
-  }
-  .learn-link {
-    display: inline-block;
-    font-size: 0.8rem;
-    color: #4ecdc4;
-    text-decoration: none;
-    font-weight: 600;
-  }
-  .learn-link:hover {
-    text-decoration: underline;
-  }
-</style>
+  {/snippet}
+</UniversePanelBody>

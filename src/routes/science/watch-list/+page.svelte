@@ -26,14 +26,14 @@
   // Tiny deterministic title→gradient mapping so placeholders look
   // intentional + varied. Same palette as /science/reading-list.
   const PALETTE: Array<[string, string]> = [
-    ['#4466ff', '#7f55ff'],
-    ['#4ecdc4', '#2196a0'],
+    ['#5070ff', '#7f55ff'],
+    ['#5070ff', '#2a3fb0'], // cover palette in the blue family (operator 2026-11-12, A3 Q13)
     ['#ffc850', '#ff8a3d'],
     ['#c1440e', '#fa7268'],
     ['#7f55ff', '#ff4e8b'],
-    ['#2196a0', '#4466ff'],
+    ['#2a3fb0', '#889fe7'], // cover palette in the blue family
     ['#a0844c', '#6f5530'],
-    ['#3d8b8b', '#0e6b7a'],
+    ['#3d4f8b', '#1e2a6a'], // cover palette in the blue family
   ];
   function gradientFor(title: string): string {
     let h = 0;
@@ -225,14 +225,14 @@
   <meta name="description" content={metaDescription(m.watch_list_meta_description())} />
 </svelte:head>
 
-<article class="resources">
+<article class="resources page-shell page-shell--inset page-shell--reading">
   <header class="head">
-    <h1>{m.watch_list_title()}</h1>
-    <p class="lede">{m.watch_list_lede()}</p>
+    <h1 class="page-title">{m.watch_list_title()}</h1>
+    <p class="lede page-lead">{m.watch_list_lede()}</p>
   </header>
 
   <section class="block">
-    <h2>{m.watch_list_section_scifi()}</h2>
+    <h2 class="page-section-title">{m.watch_list_section_scifi()}</h2>
     <ul class="entries">
       {#each films as f (f.title)}
         <li class="entry">
@@ -262,7 +262,7 @@
   </section>
 
   <section class="block">
-    <h2>{m.watch_list_section_documentaries()}</h2>
+    <h2 class="page-section-title">{m.watch_list_section_documentaries()}</h2>
     <ul class="entries">
       {#each docs as d (d.title)}
         <li class="entry">
@@ -296,7 +296,7 @@
   </section>
 
   <section class="block">
-    <h2>{m.watch_list_section_podcasts()}</h2>
+    <h2 class="page-section-title">{m.watch_list_section_podcasts()}</h2>
     <ul class="entries">
       {#each podcasts as p (p.title)}
         <li class="entry">
@@ -328,7 +328,7 @@
   </section>
 
   <section class="block">
-    <h2>{m.watch_list_section_youtube()}</h2>
+    <h2 class="page-section-title">{m.watch_list_section_youtube()}</h2>
     <ul class="entries">
       {#each channels as c (c.title)}
         <li class="entry">
@@ -364,37 +364,11 @@
   /* Inherits visual language from the /science/reading-list sibling
    * page; intentional copy-paste rather than a shared component since
    * the entry-card layout is the same but the data shape isn't. */
-  .resources {
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 32px 24px 80px;
-    color: var(--color-text);
-  }
-  .head h1 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 56px;
-    letter-spacing: 2px;
-    margin: 0 0 8px;
-    color: #ffc850;
-  }
-  .head .lede {
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 20px;
-    line-height: 1.5;
-    margin: 0 0 16px;
-    color: rgba(255, 255, 255, 0.92);
-  }
   .block {
     margin-top: 40px;
   }
-  .block h2 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 28px;
-    letter-spacing: 1.5px;
-    margin: 0 0 16px;
-    color: #4ecdc4;
-    border-bottom: 1px solid rgba(78, 205, 196, 0.3);
+  .block .page-section-title {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     padding-bottom: 6px;
   }
   .entries {
@@ -482,25 +456,15 @@
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
   }
   .blurb {
-    font-family: 'Crimson Pro', serif;
-    font-size: 16px;
+    font-size: var(--size-lead);
     line-height: 1.55;
     margin: 0;
     color: rgba(255, 255, 255, 0.82);
   }
   @media (max-width: 600px) {
-    .resources {
-      padding: 20px 16px 60px;
-    }
-    .head h1 {
-      font-size: 40px;
-    }
-    .head .lede {
-      font-size: 17px;
-    }
     .entry {
       gap: 12px;
     }

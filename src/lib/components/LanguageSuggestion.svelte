@@ -8,6 +8,7 @@
 </script>
 
 <script lang="ts">
+  import Chip from '$lib/components/Chip.svelte';
   import { browser } from '$app/environment';
   import { base } from '$app/paths';
   import { page } from '$app/state';
@@ -104,11 +105,11 @@
     >
       <span class="native">{suggested.nativeName}</span>
     </button>
-    <button
-      type="button"
-      class="corner dismiss"
+    <Chip
+      kind="action"
+      class="corner dismiss ui-chip--close"
       aria-label={m.explore_anon_dismiss()}
-      onclick={dismiss}>✕</button
+      onclick={dismiss}>×</Chip
     >
   </div>
 {/if}
@@ -134,14 +135,14 @@
     padding: 5px 38px;
     max-width: calc(100vw - 24px);
     background: rgba(15, 18, 35, 0.96);
-    border: 1px solid rgba(78, 205, 196, 0.4);
+    border: 1px solid var(--color-accent-edge);
     border-radius: 999px;
     box-shadow: 0 6px 24px rgba(0, 0, 0, 0.45);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
   }
-  /* No inner border: the pill container is the single teal frame. The switch
-     used to carry its own teal border ~10px inside the pill's — two concentric
+  /* No inner border: the pill container is the single accent blue frame. The switch
+     used to carry its own accent blue border ~10px inside the pill's — two concentric
      borders that visually crowded the pill's edge (operator report). It's now a
      borderless clickable region with a hover-background tint instead. */
   /* The centered language name — the only thing in normal flow, so it sits dead
@@ -164,7 +165,7 @@
     transition: color 0.15s ease;
   }
   .switch:hover {
-    color: #4ecdc4;
+    color: var(--color-state);
   }
   .native {
     display: inline-flex;
@@ -198,13 +199,21 @@
     opacity: 0.8;
     pointer-events: none;
   }
-  .dismiss {
+  /* The close chip (UXD-018 header sizes), in the globe's mirrored corner. */
+  .lang-suggest :global(.dismiss) {
+    position: absolute;
+    top: 50%;
     right: 4px;
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.55);
-    transition: color 0.15s ease;
+    transform: translateY(-50%);
   }
-  .dismiss:hover {
-    color: var(--color-text);
+  /* Touch: the close chip is 44 px square, so each side's zone grows from 38 to 52 px and the pill
+     from 44 to 52 px tall; the 34 px zone left the chip over the language name (L26). */
+  @media (hover: none), (pointer: coarse) {
+    .lang-suggest {
+      padding: 8px 52px;
+    }
+    .globe {
+      left: 9px;
+    }
   }
 </style>

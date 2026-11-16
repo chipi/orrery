@@ -12,7 +12,7 @@
       "inclination_deg": 92.65,
       "launched": "2005-08-12",
       "status": "ACTIVE",
-      "color": "#4ecdc4"
+      "color": "#8fd16a"
     },
     {
       "parent": "mars",
@@ -25,7 +25,7 @@
       "inclination_deg": 75.0,
       "launched": "2013-11-18",
       "status": "ACTIVE",
-      "color": "#4ecdc4"
+      "color": "#8fd16a"
     },
     {
       "parent": "mars",
@@ -103,7 +103,7 @@
       "inclination_deg": 90.0,
       "launched": "2011-08-05",
       "status": "ACTIVE",
-      "color": "#4ecdc4"
+      "color": "#8fd16a"
     },
     {
       "parent": "venus",

@@ -75,7 +75,7 @@
   }
   .crs__heading {
     font-family: 'Space Mono', monospace;
-    font-size: 0.6rem;
+    font-size: var(--size-label);
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: rgba(255, 200, 80, 0.75);
@@ -94,21 +94,21 @@
     gap: 0.5rem;
     text-decoration: none;
     padding: 0.3rem 0.45rem;
-    border: 1px solid rgba(78, 205, 196, 0.16);
+    border: 1px solid color-mix(in srgb, var(--color-accent) 16%, transparent);
     border-radius: 6px;
     background: rgba(4, 4, 12, 0.35);
   }
   .crs__link:hover {
-    border-color: rgba(78, 205, 196, 0.45);
+    border-color: color-mix(in srgb, var(--color-accent) 45%, transparent);
   }
   /* Link affordance (UX review: the rows read as an inert table — no one taps). */
   .crs__name {
     text-decoration: underline;
-    text-decoration-color: rgba(78, 205, 196, 0.5);
+    text-decoration-color: color-mix(in srgb, var(--color-accent) 50%, transparent);
     text-underline-offset: 3px;
   }
   .crs__go {
-    color: rgba(78, 205, 196, 0.85);
+    color: var(--color-state);
     font-size: 0.8rem;
     flex: 0 0 auto;
     margin-left: 0.35rem;
@@ -122,14 +122,14 @@
   }
   .crs__name {
     font-family: 'Space Mono', monospace;
-    font-size: 0.68rem;
+    font-size: var(--size-label);
     color: #e8e8e8;
     white-space: nowrap;
   }
   .crs__stats {
     font-family: 'Space Mono', monospace;
-    font-size: 0.62rem;
-    color: rgba(200, 222, 235, 0.7);
+    font-size: var(--size-label);
+    color: var(--color-state);
     margin-left: auto;
     text-align: right;
   }

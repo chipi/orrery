@@ -31,7 +31,8 @@
       "role": "lunar lander (HLS)"
     },
     {
-      "name": "Artemis I",
+      "linked_id": "artemis1",
+      "ref": "mission",
       "year": 2022,
       "note": "an uncrewed Orion flies around the Moon on the first SLS launch — the deep-space hardware is proven before anyone rides it"
     },

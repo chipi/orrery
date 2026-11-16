@@ -37,6 +37,7 @@
     INJECTION_BEAT_S,
     injectionSepT,
     payloadSepTFor,
+    launchInjection,
     buildAscentBeats,
     ascentStatus,
     countdownSeconds,
@@ -48,11 +49,26 @@
     type InjectionBurnParams,
   } from '$lib/physics/transfer/injection-burn';
   import { formatAscentClock } from '$lib/orbital/ascent-clock';
+  import { buildPlanBeats } from '$lib/orbital/flight-plan-beats';
   import * as m from '$lib/paraglide/messages';
+  import Chip from '$lib/components/Chip.svelte';
   import { hudLabel } from '$lib/orbital/hud-labels';
   import { buildShotSchedule, defaultTuning } from '$lib/orbital/ascent-cameras';
   import AscentCameraDebug from '$lib/components/AscentCameraDebug.svelte';
   import { createAnimateLoop, type AnimateLoop } from '$lib/three/animate-loop';
+  import { createLaunchDirector, type LaunchDirector } from '$lib/three/launch-director-rig';
+  import type { LaunchInstant } from '$lib/orbital/launch-sun';
+  import type { PadSpec } from '$lib/launches/pad-family';
+  import type { SafeArea } from '$lib/orbital/ascent-director';
+  import { prefersReducedMotion } from '$lib/reduced-motion';
+  import {
+    buildPlotModel,
+    liveReadout,
+    pushTrail,
+    type DirectorDebugData,
+    type PlotModel,
+    type Pt,
+  } from '$lib/orbital/launch-director-debug-plot';
   import { onLayerChange } from '$lib/science-layers';
   import { LAUNCH_FORCE_LAYER_ENTRIES } from '$lib/orbital/launch-force-layers';
 
@@ -89,6 +105,13 @@
     /** When true, LaunchScene does NOT self-advance `t` — the parent's master
      *  clock owns time (the extensibility seam a future DescentScene reuses). */
     externalClock?: boolean;
+    /** The mission's real launch instant and pad (null for a Plan flight or a date-only mission):
+     *  the launch's light comes from the Sun there; else it is seeded. */
+    launchInstant?: LaunchInstant | null;
+    /** The launch site's pad model at the launch year (G4); null keeps the generic lattice tower. */
+    launchPadSpec?: PadSpec | null;
+    /** ?debug=1: what the camera-debug view draws (the /fly DebugPanel Page tab). */
+    onDirectorDebug?: (d: DirectorDebugData) => void;
   }
   let {
     profile,
@@ -100,7 +123,19 @@
     playing = $bindable(true),
     speed = $bindable(5),
     externalClock = false,
+    launchInstant = null,
+    launchPadSpec = null,
+    onDirectorDebug,
   }: Props = $props();
+
+  // ?cam=classic keeps today's camera and scene for one release (A/B); the default is the director.
+  const classicCam =
+    typeof window !== 'undefined' &&
+    new URLSearchParams(window.location.search).get('cam') === 'classic';
+  /** The active director shot (data-director-shot), '' under the classic camera. */
+  let directorShot = $state('');
+  let debugTrail: Pt[] = [];
+  let debugFrame = 0;
 
   const tuning = $state(defaultTuning()); // live per-shot camera tuning (debug sliders → scene)
   const debugMode =
@@ -113,7 +148,7 @@
   // Post-SECO injection beat (RFC-034 §3.1): a parking-orbit coast, the kick stage
   // firing with the spacecraft still on it, then the spacecraft separating — appended
   // to the ascent before the warp. Absent when the mission has no injection stage.
-  const injection = $derived(mission.injectionBurn ?? null);
+  const injection = $derived(launchInjection(profile, mission.injectionBurn));
   const injectionBurnStart = $derived(duration + INJECTION_COAST_S);
   /** The burn's end. */
   const injectionBurnEnd = $derived(injectionSepT(duration));
@@ -174,25 +209,8 @@
   const beats = $derived(buildAscentBeats(summary));
   // The flight plan: liftoff, the ascent beats, then the parking orbit, injection burn and
   // spacecraft separation when the mission leaves orbit.
-  const planBeats = $derived([
-    { label: 'LIFTOFF', t: 0 },
-    // ORBIT and SECO land on the same second: the cutoff is the beat.
-    ...beats.filter(
-      (b) =>
-        !(b.label === 'ORBIT' && beats.some((x) => x.label === 'SECO' && Math.abs(x.t - b.t) < 2)),
-    ),
-    ...(injection
-      ? [
-          { label: 'PARKING ORBIT', t: duration, untimed: true },
-          {
-            label: injectionBurnLabel(injection.burnType),
-            t: injectionBurnStart,
-            untimed: true,
-          },
-          { label: 'SPACECRAFT SEP', t: injectionBurnEnd, untimed: true },
-        ]
-      : []),
-  ]);
+  // (One source with the markers on /fly's play bar: $lib/orbital/flight-plan-beats.)
+  const planBeats = $derived(buildPlanBeats(summary, injection));
 
   let container: HTMLDivElement;
 
@@ -226,6 +244,9 @@
 
   let ar: AscentRenderer | undefined;
   let sceneObj: AscentScene | undefined;
+  let director: LaunchDirector | undefined;
+  let directorDebugModel: PlotModel | null = null;
+  let onSafeResize: (() => void) | undefined;
   let loop: AnimateLoop | undefined;
 
   let hud = $state({ altKm: 0, velKms: 0, stage: 'S1', met: 'T-00:12' });
@@ -294,6 +315,7 @@
       boosterCount: profile.boosters?.count ?? 0,
       boosterAirLitCount: profile.boosters?.airLitCount ?? 0,
       payloadSepT,
+      payloadInBay: profile.payloadInBay === true,
       kickStage: injection?.kickStage === true,
       injectionBurnEndT: injection ? injectionBurnEnd : undefined,
       groundSite: (() => {
@@ -304,9 +326,57 @@
 
     // Hero IBL only on capable GPUs (high+); software-GL / weak renderers skip
     // the per-frame reflection cost. quality-tier.ts iblEnabled.
+    const quality = resolveQualitySync();
     ar = createAscentRenderer(container, sceneObj, {
-      iblEnabled: resolveQualitySync().iblEnabled,
+      iblEnabled: quality.iblEnabled,
     });
+
+    // The launch camera director (G3): shot plan, conditions, ground-relative path. One
+    // implementation shared with /dev/launch-director. Skipped under ?cam=classic.
+    if (!classicCam) {
+      // The HUD strips cover the top and bottom of a phone's frame: frame the vehicle in what is left.
+      const safeNow = (): SafeArea | null => {
+        const narrow = window.innerWidth <= 700 || window.matchMedia('(pointer: coarse)').matches;
+        if (!narrow) return null;
+        return window.innerHeight >= window.innerWidth
+          ? { top: 0.13, bottom: 0.27 }
+          : { top: 0.16, bottom: 0.24 };
+      };
+      onSafeResize = () => director?.setSafeArea(safeNow());
+      window.addEventListener('resize', onSafeResize);
+      director = createLaunchDirector({
+        safe: safeNow(),
+        asc: sceneObj,
+        summary,
+        profile,
+        vehLen: VEHICLE_LENGTH_KM,
+        missionId: mission.spacecraftId,
+        launch: launchInstant,
+        // ?pad=generic keeps the one lattice tower (A/B, frame-time comparison)
+        pad:
+          new URLSearchParams(window.location.search).get('pad') === 'generic'
+            ? null
+            : launchPadSpec,
+        launcherHeightM: mission.launcherHeightM,
+        payloadSepT,
+        endT: ascentEnd,
+        reducedMotion: prefersReducedMotion(),
+        nightUrl: `${base}/textures/2k_earth_nightmap.jpg`,
+        // weak GPUs and touch devices get the lighter conditions rig
+        lite:
+          quality.tier === 'minimal' ||
+          quality.tier === 'low' ||
+          window.matchMedia('(pointer: coarse)').matches,
+      });
+      if (debugMode) {
+        directorDebugModel = buildPlotModel({
+          plan: director.plan,
+          stateAt: (tt) => sampleAscentAt(summary.states, tt),
+          latDeg: profile.launchSite?.lat ?? 28.5,
+          vehLen: VEHICLE_LENGTH_KM,
+        });
+      }
+    }
 
     // Science-Lens force vectors — the lens panel's thrust / drag / gravity /
     // velocity layers drive the scene's force arrows (RFC-034 §11.2); the lens
@@ -366,7 +436,27 @@
       // Past the last state the physics holds, but the clock runs on: the scene times the
       // injection-beat animations (spacecraft separation) off s.t.
       const s = t > sampled.t ? { ...sampled, t } : sampled;
-      sceneObj!.setState(s);
+      if (director) {
+        // Ground-relative state and the planned camera; the HUD below keeps the inertial `s`.
+        const fr = director.apply(s);
+        if (fr.shot !== directorShot) directorShot = fr.shot;
+        if (directorDebugModel && t >= 0 && ++debugFrame % 3 === 0) {
+          const lr = liveReadout(director.plan, t, fr.state, VEHICLE_LENGTH_KM);
+          debugTrail = pushTrail(debugTrail, { x: lr.rel.dx, y: lr.rel.dz });
+          onDirectorDebug?.({
+            model: directorDebugModel,
+            live: lr,
+            trail: debugTrail,
+            vehicle: { x: fr.state.downrangeKm, y: fr.state.altKm },
+            light: director.plan.conditions.light,
+            cover: director.plan.conditions.cover,
+            opening: director.plan.opening,
+            seed: director.plan.seed,
+          });
+        }
+      } else {
+        sceneObj!.setState(s);
+      }
       sceneObj!.setInjectionBurn(injectionFiring);
       if (import.meta.env.DEV && debugMode) applyDebugCamera();
       liveState = s;
@@ -418,6 +508,8 @@
   });
 
   onDestroy(() => {
+    if (onSafeResize) window.removeEventListener('resize', onSafeResize);
+    director?.dispose();
     loop?.cleanup();
     sceneObj?.dispose();
     ar?.dispose();
@@ -429,6 +521,8 @@
   class:hud-hidden={hudHidden}
   class:external={externalClock}
   data-testid="launch-scene"
+  data-camera-mode={classicCam ? 'classic' : 'director'}
+  data-director-shot={directorShot}
 >
   <div class="stage" bind:this={container}></div>
 
@@ -460,15 +554,16 @@
 
   <!-- HUD collapse — the shared toggle (same one that manages the sim HUD). -->
   {#if !warping}
-    <button
+    <Chip
+      kind="toggle"
       class="hud-collapse"
+      active={hudHidden}
       onclick={() => onToggleHud?.()}
       aria-label={hudHidden ? m.hud_show_panels_aria() : m.hud_hide_panels_aria()}
-      aria-pressed={hudHidden}
       title={hudHidden ? m.coast_show_hud() : m.coast_hide_hud()}
     >
       {hudHidden ? '◐' : '◑'}
-    </button>
+    </Chip>
   {/if}
 
   <div class="header">
@@ -578,7 +673,7 @@
 
   <!-- Launch camera-debug (?debug=1): shot timeline, live camera plot,
        per-shot tuning sliders. -->
-  {#if debugMode && !warping}
+  {#if debugMode && classicCam && !warping}
     <div class="cam-debug">
       <AscentCameraDebug
         {summary}
@@ -611,7 +706,7 @@
   .launch.external .timeline,
   .launch.external .readouts,
   .launch.external .continue,
-  .launch.external .hud-collapse {
+  .launch.external :global(.hud-collapse) {
     display: none;
   }
   .stage {
@@ -669,7 +764,7 @@
   .telemetry.tel-scroll {
     overflow-y: auto;
     scrollbar-width: thin;
-    scrollbar-color: rgba(127, 223, 255, 0.35) transparent;
+    scrollbar-color: var(--color-accent-edge) transparent;
   }
   .launch.hud-hidden .telemetry {
     opacity: 0;
@@ -714,7 +809,7 @@
   }
   /* Phones start with the HUD collapsed; instead of nothing, keep a minimal set — mission,
      clock + phase, speed + altitude — compact and on its own dark backing. */
-  @media (hover: none), (pointer: coarse) {
+  @media (hover: none), (pointer: coarse), (max-width: 640px) {
     .launch.hud-hidden .header,
     .launch.hud-hidden .clock,
     .launch.hud-hidden .readouts {
@@ -730,6 +825,12 @@
     .launch.hud-hidden .header {
       top: 12px;
       left: 12px;
+      /* Header (left) and clock (right) share the top row: the clock keeps its width, the
+         title wraps in what is left. */
+      max-width: calc(100% - 224px);
+    }
+    .launch.hud-hidden .clock {
+      max-width: 190px;
     }
     .launch.hud-hidden .mission {
       font-size: 20px;
@@ -806,7 +907,7 @@
     margin-top: 6px;
   }
   .inj-fuel-label {
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     color: #b58a4a;
   }
@@ -824,35 +925,22 @@
     transition: width 0.12s linear;
   }
   .inj-fuel-pct {
-    font-size: 9px;
+    font-size: var(--size-label);
     color: #ffcf6a;
     width: 30px;
     text-align: left;
   }
   .inj-dv {
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
     color: #ffbe7a;
     margin-top: 3px;
   }
-  .hud-collapse {
+  .launch :global(.hud-collapse) {
     position: absolute;
     left: 22px;
     bottom: 26px;
     z-index: 6;
-    width: 34px;
-    height: 34px;
-    border-radius: 50%;
-    background: rgba(10, 20, 34, 0.82);
-    border: 1px solid rgba(127, 223, 255, 0.4);
-    color: #cfeaff;
-    font-size: 16px;
-    line-height: 1;
-    cursor: pointer;
-  }
-  .hud-collapse:hover {
-    background: rgba(90, 200, 255, 0.25);
-    color: #fff;
   }
   .warp {
     position: absolute;
@@ -871,6 +959,16 @@
     position: absolute;
     top: 20px;
     left: 22px;
+    /* The clock is centred: the title wraps before it reaches the clock's half-width. */
+    max-width: calc(50% - 110px);
+    overflow-wrap: anywhere;
+  }
+  @media (max-width: 767px) {
+    /* Three wrapped lines + the subtitle still end above the telemetry panel (top 116px). */
+    .mission {
+      font-size: 20px;
+      letter-spacing: 2px;
+    }
   }
   .mission {
     font-family: 'Bebas Neue', sans-serif;
@@ -882,7 +980,7 @@
   .sub {
     font-size: 11px;
     letter-spacing: 2px;
-    color: #8fbfe0;
+    color: var(--color-accent-hover);
     margin-top: 3px;
   }
   .clock {
@@ -904,8 +1002,8 @@
   .status {
     font-size: 11px;
     letter-spacing: 3px;
-    color: #7fdfff;
-    border: 1px solid rgba(127, 223, 255, 0.4);
+    color: var(--color-state);
+    border: 1px solid var(--color-accent-edge);
     border-radius: 3px;
     padding: 2px 9px;
     background: rgba(3, 8, 18, 0.45);
@@ -923,7 +1021,7 @@
     font-size: 140px;
     line-height: 1;
     color: #fff;
-    text-shadow: 0 0 40px rgba(90, 200, 255, 0.6);
+    text-shadow: 0 0 40px var(--color-accent-strong);
     animation: pop 1s ease-out;
   }
   @keyframes pop {
@@ -939,14 +1037,14 @@
       opacity: 0.9;
     }
   }
-  /* 2026 clean dossier — no panel; hangs off a hairline cyan accent rail. */
+  /* 2026 clean dossier — no panel; hangs off a hairline blue accent rail. */
   .dossier {
     position: absolute;
     top: 90px;
     right: 22px;
     width: 250px;
     padding: 2px 14px 2px 0;
-    border-right: 1px solid rgba(127, 212, 255, 0.35);
+    border-right: 1px solid color-mix(in srgb, var(--color-state) 35%, transparent);
     text-align: right;
     text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
     opacity: 0;
@@ -960,16 +1058,16 @@
     transform: translateX(0);
   }
   .dossier-title {
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
-    color: #5ac8ff;
+    color: var(--color-state);
     margin: 0 0 8px;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
   .rep {
-    font-size: 8px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     color: #ffbe4a;
     border: 1px solid rgba(255, 190, 74, 0.5);
@@ -987,7 +1085,7 @@
     text-align: left;
   }
   .dossier dt {
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     color: #7d99b5;
   }
@@ -1014,7 +1112,7 @@
   }
   .fill {
     height: 100%;
-    background: linear-gradient(90deg, #5ac8ff, #eafaff);
+    background: linear-gradient(90deg, var(--color-accent), #eafaff);
   }
   .beat {
     position: absolute;
@@ -1032,9 +1130,9 @@
     background: rgba(255, 255, 255, 0.35);
   }
   .beat .lbl {
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
-    color: rgba(200, 225, 255, 0.5);
+    color: rgba(200, 225, 255, 0.6);
     white-space: nowrap;
     display: inline-block;
   }
@@ -1045,10 +1143,10 @@
     height: 20px;
   }
   .beat.done .lbl {
-    color: #7fdfff;
+    color: var(--color-state);
   }
   .beat.done .tick {
-    background: #5ac8ff;
+    background: var(--color-accent);
   }
   .head {
     position: absolute;
@@ -1096,13 +1194,13 @@
     letter-spacing: 2px;
     color: #cfeaff;
     background: rgba(10, 20, 34, 0.85);
-    border: 1px solid rgba(127, 223, 255, 0.5);
+    border: 1px solid color-mix(in srgb, var(--color-accent) 50%, transparent);
     border-radius: 5px;
     padding: 8px 14px;
     cursor: pointer;
   }
   .continue:hover {
-    background: rgba(90, 200, 255, 0.25);
+    background: color-mix(in srgb, var(--color-accent) 25%, transparent);
     color: #fff;
   }
 </style>

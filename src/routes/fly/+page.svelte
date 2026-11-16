@@ -43,9 +43,16 @@
   import {
     type LoadedMission,
     type MissionApplyDefaults,
+    type PlanFlightExtras,
     type TrajectoryOverride,
     flyDestinationOf,
   } from '$lib/fly-mission-apply';
+  import { resolveRocketHandoff } from '$lib/plan/rocket-handoff';
+  import {
+    genericPayloadLine,
+    resolvePlanFlightDestination,
+    type PlanFlightDestination,
+  } from '$lib/plan/flight-destination';
   import {
     CINEMATIC_TIMINGS,
     createCinematicBeatState,
@@ -93,6 +100,11 @@
   import PhaseMarkerLabel from '$lib/components/PhaseMarkerLabel.svelte';
   import FdPhaseMarkerLabel from '$lib/components/FdPhaseMarkerLabel.svelte';
   import FlybyDebugViewer from '$lib/components/FlybyDebugViewer.svelte';
+  import LaunchDirectorDebugViewer from '$lib/components/LaunchDirectorDebugViewer.svelte';
+  import { resolveLaunchContext } from '$lib/launches/launch-instant';
+  import type { PadSpec } from '$lib/launches/pad-family';
+  import type { LaunchInstant } from '$lib/orbital/launch-sun';
+  import type { DirectorDebugData } from '$lib/orbital/launch-director-debug-plot';
   import DebugPanelRegistrar from '$lib/components/DebugPanelRegistrar.svelte';
   import RenderingDebugRegistrar from '$lib/components/RenderingDebugRegistrar.svelte';
   import QualitySettingsModal from '$lib/components/QualitySettingsModal.svelte';
@@ -115,7 +127,6 @@
   } from '$lib/fly/apply-to-page';
   import {
     coastAscentFraction,
-    cruiseTickPercent,
     descentSeparationTimes,
     isCinematicCutJump,
     OI_WINDOW_DAYS,
@@ -128,7 +139,10 @@
     masterScrubFraction,
     masterScrubTarget,
     type JumpToMetContext,
+    type MasterScrubTarget,
   } from '$lib/fly/fly-clock';
+  import { declutterMarkers, journeyMarkers, type JourneyMarker } from '$lib/fly/journey-markers';
+  import { buildPlanBeats, descentPlanBeats } from '$lib/orbital/flight-plan-beats';
   import {
     anomalyLevel as deriveAnomalyLevel,
     dvRemaining as deriveDvRemaining,
@@ -153,6 +167,9 @@
   import type { Mission, MissionEvent } from '$types/mission';
   import type { LocalizedScenario } from '$types/scenario';
   import * as m from '$lib/paraglide/messages';
+  import Chip from '$lib/components/Chip.svelte';
+  import ChipGroup from '$lib/components/ChipGroup.svelte';
+  import { closesPopover } from '$lib/components/chip-nav';
   import { hudLabel } from '$lib/orbital/hud-labels';
   import { destinationLabel } from '$lib/destination-label';
   import { qualityTierLabel } from '$lib/quality/quality-tier-label';
@@ -183,6 +200,8 @@
   } from '$lib/physics/descent/descent-physics';
   import {
     makeTimeline,
+    formatAscentClock,
+    formatDescentClock,
     ASCENT_SPEED_MULTIPLIERS,
     DESCENT_SPEED_MULTIPLIERS,
     type JourneyTimeline,
@@ -304,6 +323,13 @@
     );
   }
   let launchProfile = $state<LaunchProfile | null>(null);
+  // The launch's real instant + pad (light) and the director's debug data (?debug=1 Page tab).
+  let launchInstant = $state<LaunchInstant | null>(null);
+  // The displayed pad: the mission's launch-site ref, else the launches entry's pad, else the profile's.
+  let launchSiteName = $state<string | undefined>(undefined);
+  // The pad model of that site at the launch year (G4); null keeps the generic tower.
+  let launchPadSpec = $state<PadSpec | null>(null);
+  let launchDirectorDebug = $state<DirectorDebugData | null>(null);
   // The launcher's real height (fleet specs), so a showcase craft rides it at true scale.
   let launcherHeightM = $state<number | undefined>(undefined);
   async function loadLauncherHeight(): Promise<void> {
@@ -318,7 +344,9 @@
   // `launchSpeed` is the ascent real-time multiplier the shared speed pills set.
   let launchT = $state(-T_MINUS_S);
   let launchSpeed = $state(5);
-  let launchAvailable = $derived(hasLaunchProfile(mission.fleet_refs, mission.vehicle));
+  let launchAvailable = $derived(
+    !mission.noFlight && hasLaunchProfile(mission.fleet_refs, mission.vehicle),
+  );
   // #83 — trajectory-tube thickness invariant now lives in
   // $lib/three/trajectory-tube (pure + unit-tested): trajectoryTubeRadius()
   // scales the world radius with camera distance so every trajectory reads
@@ -327,7 +355,7 @@
   // upper stage that leaves parking orbit. Null when the mission has no
   // injection stage; the LaunchScene beat is then absent.
   let launchInjectionBurn = $derived(
-    launchProfile && launchAvailable
+    launchProfile && launchAvailable && !launchProfile.payloadInBay
       ? resolveInjectionBurn(
           resolveLauncher(mission.fleet_refs, mission.vehicle)?.id,
           mission.flight?.launch?.vehicle_stage,
@@ -340,7 +368,7 @@
   let launchDossier = $derived({
     name: mission.name,
     agency: mission.agency ?? mission.agency_full ?? '',
-    site: launchProfile?.launchSite?.name ?? m.hud_launch_complex(),
+    site: launchSiteName ?? launchProfile?.launchSite?.name ?? m.hud_launch_complex(),
     destination: mission.arr_label ?? '',
     spacecraftId: mission.id,
     launcherHeightM,
@@ -358,8 +386,27 @@
       preloadFlyCraft(mission.id ?? ''),
       loadLauncherHeight(),
     ])
-      .then(([p]) => {
+      .then(async ([p]) => {
         if (!p) return;
+        // The real launch time and pad for the launch's light (null for a Plan flight or a
+        // mission with no time of day: the light is then seeded).
+        const depDate = /^\d{4}-\d{2}-\d{2}$/.test(mission.dep_label)
+          ? mission.dep_label
+          : undefined;
+        const ctx = await resolveLaunchContext(
+          {
+            missionId: mission.id,
+            departureDate: depDate,
+            launcherId: launcher.id,
+            launchSiteRef: mission.fleet_refs?.find((r) => r.role === 'launch-site')?.id,
+          },
+          p.launchSite,
+          fetch,
+          base,
+        ).catch(() => null);
+        launchInstant = ctx?.instant ?? null;
+        launchSiteName = ctx?.pad?.name;
+        launchPadSpec = ctx?.padSpec ?? null;
         launchProfile = p;
         dispatchPhase({ type: 'startLaunch' });
       })
@@ -372,15 +419,14 @@
   const deepMissionId = launchDeepParams?.get('mission') ?? null;
   let launchAutoStarted = false;
   $effect(() => {
-    // Only auto-start when the LOADED mission is the one the URL asked for —
-    // otherwise the deep-link fires on the default scenario mid-load.
-    if (
-      wantLaunchDeep &&
-      !launchAutoStarted &&
-      launchAvailable &&
-      deepMissionId != null &&
-      mission.id === deepMissionId
-    ) {
+    // Only auto-start when the LOADED flight is the one the URL asked for —
+    // otherwise the deep-link fires on the default scenario mid-load. A /plan URL has no
+    // mission id: its flight is loaded once the plan selection has been applied.
+    const urlFlightLoaded =
+      deepMissionId != null
+        ? mission.id === deepMissionId
+        : (lastAppliedMissionId?.startsWith('plan-') ?? false);
+    if (wantLaunchDeep && !launchAutoStarted && launchAvailable && urlFlightLoaded) {
       launchAutoStarted = true;
       startLaunch();
     }
@@ -757,6 +803,16 @@
     mobilePanel = mobilePanel === p ? null : p;
     hudHidden = mobilePanel === null;
   }
+  // A narrow mouse window takes the same scene-hero collapse as touch (the tab accordion
+  // is its only HUD); widening it hands the desktop HUD back, since no desktop control
+  // can un-collapse it.
+  $effect(() => {
+    if (viewport.isTouch || viewport.isNarrow) {
+      if (mobilePanel === null) hudHidden = true;
+    } else {
+      hudHidden = false;
+    }
+  });
   $effect(() => {
     // svelte-check flow-analysis misses the template reads at the
     // `{#if lensOnState}` / CON-button gate sites; nudge it with
@@ -948,7 +1004,7 @@
   let fdPhaseMarkerScreens = $state.raw<FdPhaseMarkerRender[]>([]);
 
   /** Milestone overlay (#306-companion) — labeled `flight.events[]`
-   *  entries surface as teal chips on the trajectory. Distinct from
+   *  entries surface as accent blue chips on the trajectory. Distinct from
    *  the gold FD stage markers above: FD stages are the 7-stage
    *  cinematic cadence (INJECTION → CRUISE → APPROACH → ARRIVAL × 2
    *  legs) shared by every mission, milestones are the per-mission
@@ -1021,7 +1077,7 @@
   // Round-trip return anchor — third torus + label at retPts[last]
   // (Earth on return-arrival day). Visible only when the loaded
   // mission has a non-empty retPts geometry (round-trip / sample
-  // return / free-return). Distinct teal chrome so it doesn't read
+  // return / free-return). Distinct accent blue chrome so it doesn't read
   // as a duplicate of the blue LAUNCH ring at Earth-on-dep.
   let retMarker: THREE.Mesh | undefined;
   let retLabelSprite: THREE.Sprite | undefined;
@@ -1231,19 +1287,19 @@
       flyUpdaters.helio.refreshLabelSprites(
         m.fly_event_launch(),
         depLabel,
-        '#4b9cd3',
+        '#4b9cd3', // a3-keep: Earth identity colour (trajectory labels), palette review at the end
         m.fly_event_arrival(),
         arrSubLabel,
         arrColor,
         m.hud_return(),
         m.hud_body_arrival({ body: m.lab_body_earth() }),
-        '#4b9cd3',
+        '#4b9cd3', // a3-keep: Earth identity colour (trajectory labels), palette review at the end
       );
     } else {
       flyUpdaters.helio.refreshLabelSprites(
         m.fly_event_launch(),
         depLabel,
-        '#4b9cd3',
+        '#4b9cd3', // a3-keep: Earth identity colour (trajectory labels), palette review at the end
         m.fly_event_arrival(),
         arrSubLabel,
         arrColor,
@@ -1665,6 +1721,7 @@
       launchSummaryFly
         ? payloadSepTFor(launchSummaryFly.totalDurationS, launchInjectionBurn)
         : undefined,
+      launchProfile?.payloadInBay === true,
     ),
   );
   let descentSepTimes = $derived(descentSeparationTimes(descentSummaryFly));
@@ -1715,11 +1772,58 @@
   // The value the scrubber input + fill render: the master fraction once a
   // launch act exists, else the plain cruise progress (unchanged).
   let scrubValue = $derived(hasLaunchAct ? masterU : Math.max(0, Math.min(1, arcProgress)));
-  // A cruise MET (days) → its % position on the ACTIVE bar. On the unified bar
-  // the cruise occupies `[seam, 1]`; on the cruise-only bar it is `[0, 1]`.
-  function cruiseTickPct(metDays: number): number {
-    const seam = hasLaunchAct ? masterTimeline.ascentScrubberFraction : 0;
-    return cruiseTickPercent(metDays, arcTotalDays, seam);
+  // The marker row on the bar (UXD-042): ascent beats, cruise milestones and stages, descent
+  // beats, one row. Positions come from the same clock map the bar scrubs with; ticks closer
+  // than 10 px on the measured track collapse into the first. The ascent beats are the flight
+  // plan the launch HUD lists, so the two cannot disagree.
+  let trackWidthPx = $state(0);
+  let journeyRow = $derived(
+    declutterMarkers(
+      journeyMarkers({
+        timeline: hasLaunchAct ? masterTimeline : null,
+        arcTotalDays,
+        ascentBeats: launchSummaryFly
+          ? buildPlanBeats(launchSummaryFly, launchInjectionBurn).map((b) => ({
+              label: hudLabel(b.label),
+              t: b.t,
+            }))
+          : [],
+        descentBeats: descentSummaryFly
+          ? descentPlanBeats(descentSummaryFly).map((b) => ({ label: hudLabel(b.label), t: b.t }))
+          : [],
+        milestones:
+          arcTotalDays > 0
+            ? (mission.flight?.events ?? []).flatMap((e, idx) =>
+                e.label && e.met_days != null
+                  ? [
+                      {
+                        id: `ms-${idx}-${e.met_days}`,
+                        label: e.label,
+                        metDays: e.met_days,
+                        description: e.description,
+                      },
+                    ]
+                  : [],
+              )
+            : [],
+        stages:
+          arcTotalDays > 0
+            ? fdScrubberTicks.map((t) => ({ id: t.id, label: t.label, metDays: t.met_days }))
+            : [],
+      }),
+      trackWidthPx,
+    ),
+  );
+  /** A click on a marker seeks there. A cruise marker on the cruise-only bar (or in the cruise
+   *  act) is the old milestone jump; everything else goes through the unified bar's own scrub,
+   *  so a marker lands exactly where the same spot on the bar would. */
+  function seekMarker(mk: JourneyMarker) {
+    if (mk.seek.phase === 'cruise' && (!hasLaunchAct || flyAct === 'cruise')) {
+      jumpToMet(mk.seek.metDays);
+      return;
+    }
+    isPlaying = false;
+    applyScrubTarget(masterScrubTarget(mk.pct / 100, masterTimeline, !!earthCoast));
   }
   function masterTogglePlay() {
     if (showLaunch || showDescent) {
@@ -1742,7 +1846,9 @@
   }
   function onMasterScrub(event: Event) {
     const u = Number((event.target as HTMLInputElement).value);
-    const target = masterScrubTarget(u, masterTimeline, !!earthCoast);
+    applyScrubTarget(masterScrubTarget(u, masterTimeline, !!earthCoast));
+  }
+  function applyScrubTarget(target: MasterScrubTarget) {
     if (target.phase === 'ascent') {
       // Scrubbing back into the ascent re-mounts LaunchScene fresh (resets any
       // completed warp) and drives it to the scrubbed MET.
@@ -2206,12 +2312,34 @@
     type: 'LANDING' | 'FLYBY',
     depDay: number,
     tofDays: number,
+    extras?: PlanFlightExtras,
   ) {
-    applyPlanSelectionToPage(flyApplyCtx, dest, type, depDay, tofDays);
+    applyPlanSelectionToPage(flyApplyCtx, dest, type, depDay, tofDays, extras);
   }
 
-  function applyPlanSelectionMoon(depDay: number, tofDays: number) {
-    applyPlanSelectionMoonToPage(flyApplyCtx, depDay, tofDays);
+  function applyPlanSelectionMoon(depDay: number, tofDays: number, extras?: PlanFlightExtras) {
+    applyPlanSelectionMoonToPage(flyApplyCtx, depDay, tofDays, extras);
+  }
+
+  /** What /plan hands /fly besides the arc (UXD-042): the destination enum, the moon a
+   *  moon flight is going to, and the chosen rocket (`rocket=`) as vehicle, launcher ref and
+   *  the payload line, which names the mass the ascent integrates for that launcher. */
+  async function planFlightExtras(
+    resolved: PlanFlightDestination,
+    rocketParam: string | null,
+  ): Promise<PlanFlightExtras> {
+    const extras: PlanFlightExtras = { dest: resolved.missionDest };
+    if (resolved.kind === 'planet' && resolved.targetMoon) extras.targetMoon = resolved.targetMoon;
+    const handoff = resolveRocketHandoff(rocketParam);
+    if (!handoff) return extras;
+    extras.vehicle = handoff.vehicle;
+    extras.fleet_refs = handoff.fleetRefs;
+    const launcher = resolveLauncher(handoff.fleetRefs, handoff.vehicle);
+    const profile = launcher
+      ? await loadLaunchProfile(launcher.id, fetch, base, launcher.name).catch(() => null)
+      : null;
+    if (profile) extras.payload = genericPayloadLine(m.fly_payload_generic(), profile.payloadKg);
+    return extras;
   }
 
   async function loadMissionFromUrl(url: URL): Promise<void> {
@@ -2226,22 +2354,29 @@
     // /plan-driven entry: dep + tof set (no mission). dest is
     // optional — /plan omits it when the user picked the default
     // (Mars), so we coalesce missing/empty dest to 'mars'. Synthesise
-    // an outbound-only arc to the chosen destination.
+    // an outbound-only arc to the chosen destination. Every /plan destination
+    // resolves: the Moon to the cislunar flight (ADR-085), a planetary moon to
+    // its host planet's arc with the moon named (ADR-086), the rest to their own arc.
     if (!id && depParam !== null && tofParam !== null) {
-      const destResolved = destParam || 'mars';
+      const resolved = resolvePlanFlightDestination(destParam || 'mars');
       const depDay = Number(depParam);
       const tofDays = Number(tofParam);
       const validPlanParams = Number.isFinite(depDay) && Number.isFinite(tofDays) && tofDays > 0;
-      // Geocentric Moon (ADR-085): not a heliocentric DESTINATIONS entry — route
-      // it to the cislunar synthesis so /plan's Earth→Moon selection flies here.
-      if (destResolved === 'moon' && validPlanParams) {
-        applyPlanSelectionMoon(depDay, tofDays);
+      if (resolved && validPlanParams) {
+        const extras = await planFlightExtras(resolved, url.searchParams.get('rocket'));
+        if (myLoadId !== currentLoadId) return; // newer load superseded us
+        if (resolved.kind === 'moon') {
+          applyPlanSelectionMoon(depDay, tofDays, extras);
+        } else {
+          const type: 'LANDING' | 'FLYBY' = typeParam === 'FLYBY' ? 'FLYBY' : 'LANDING';
+          applyPlanSelection(resolved.dest, type, depDay, tofDays, extras);
+        }
         return;
       }
-      if (Object.prototype.hasOwnProperty.call(DESTINATIONS, destResolved) && validPlanParams) {
-        const dest = destResolved as DestinationId;
-        const type: 'LANDING' | 'FLYBY' = typeParam === 'FLYBY' ? 'FLYBY' : 'LANDING';
-        applyPlanSelection(dest, type, depDay, tofDays);
+      // A heliocentric body /plan does not list (a hand-written /fly URL): its own arc, no rocket.
+      const bare = (destParam || 'mars') as DestinationId;
+      if (Object.prototype.hasOwnProperty.call(DESTINATIONS, bare) && validPlanParams) {
+        applyPlanSelection(bare, typeParam === 'FLYBY' ? 'FLYBY' : 'LANDING', depDay, tofDays);
         return;
       }
     }
@@ -3154,6 +3289,9 @@
     bind:t={launchT}
     bind:playing={isPlaying}
     bind:speed={launchSpeed}
+    {launchInstant}
+    {launchPadSpec}
+    onDirectorDebug={(d) => (launchDirectorDebug = d)}
     externalClock={true}
     onComplete={() => {
       // ascent → coast (Tier-1 Earth-orbit: loop Earth → re-entry) or → cruise
@@ -3255,7 +3393,20 @@
 {/if}
 
 {#snippet flyDebugContent()}
-  {#if earthCoast}
+  {#if showLaunch && launchDirectorDebug}
+    <!-- The launch camera director (G3): the ascent path, every planned shot's camera, the live
+         camera and a readout. Plot maths: $lib/orbital/launch-director-debug-plot.ts -->
+    <LaunchDirectorDebugViewer
+      model={launchDirectorDebug.model}
+      live={launchDirectorDebug.live}
+      trail={launchDirectorDebug.trail}
+      vehicle={launchDirectorDebug.vehicle}
+      light={launchDirectorDebug.light}
+      cover={launchDirectorDebug.cover}
+      opening={launchDirectorDebug.opening}
+      seed={launchDirectorDebug.seed}
+    />
+  {:else if earthCoast}
     <!-- Tier-1 Earth-orbit re-entry (RFC-034 §13) — pad→coast→re-entry phase state,
          the counterpart of the flyby/cislunar debug for the launch/descent acts. -->
     {@const phase = showLaunch
@@ -3484,28 +3635,27 @@
   <!-- Mobile HUD-collapse toggle. Always rendered, hidden on desktop
        via CSS @media. Tapping it hides hud-stack + capcom-panel so the
        canvas is visible; tap again to restore. -->
-  <button
-    type="button"
+  <Chip
+    kind="toggle"
     class="hud-collapse"
+    active={hudHidden}
     onclick={toggleHud}
     aria-label={hudHidden ? m.hud_show_panels_aria() : m.hud_hide_panels_aria()}
-    aria-pressed={hudHidden}
     title={hudHidden ? m.coast_show_hud() : m.coast_hide_hud()}
   >
     {hudHidden ? '◐' : '◑'}
-  </button>
+  </Chip>
   <!-- Mobile top-left: 2D/3D view toggle. The remaining toggles fold into
        the bottom tab accordion, so the canonical view switch lives here. -->
   <div class="fly-top-mobile">
-    <button
-      type="button"
-      class="toggle"
+    <Chip
+      kind="toggle"
+      active={view === '2d'}
       data-testid="fly-view-toggle-mobile"
       onclick={toggleView}
-      aria-pressed={view === '2d'}
     >
       {view === '3d' ? m.fly_label_view_2d() : m.fly_label_view_3d()}
-    </button>
+    </Chip>
   </div>
   <!-- Phone mini-HUD: touch screens start with the full HUD collapsed, which left the
        cruise view with no numbers at all. One strip keeps the essentials; tapping it
@@ -3539,8 +3689,9 @@
   <QualitySettingsModal {activeQualityTier} />
   <!-- Runtime adaptive — wave 2/3 punch #4. Non-blocking toast at
        bottom-right when the rolling-average frame time has stayed over
-       budget. Suggests the next-lower quality tier; user decides. -->
-  {#if perfToastVisible && perfToastSuggestedTier}
+       budget. Suggests the next-lower quality tier; user decides. It steps aside while the
+       speed menu is open: on a phone it lay over the menu's pills and took their taps. -->
+  {#if perfToastVisible && perfToastSuggestedTier && !speedPopoverOpen}
     <div class="perf-toast" role="status" aria-live="polite">
       <div class="perf-toast-title">{m.fly_perf_title()}</div>
       <div class="perf-toast-body">
@@ -3628,7 +3779,7 @@
     </div>
   {/if}
 
-  <!-- Milestone overlay — labeled flight.events render as small teal
+  <!-- Milestone overlay — labeled flight.events render as small accent blue
        chips at the spacecraft's projected position at the event MET.
        Always rendered (not lens-gated): milestones are the
        per-mission historical narrative beats (Cassini's Venus #1,
@@ -4183,7 +4334,7 @@
         </div>
         <div class="hud-row">
           <span class="hud-key">{m.fly_hud_dv_remaining()}</span>
-          <span class="hud-val teal">{m.fly_hud_kms({ value: dvRemaining.toFixed(2) })}</span>
+          <span class="hud-val accent">{m.fly_hud_kms({ value: dvRemaining.toFixed(2) })}</span>
         </div>
         <div class="dv-bar" aria-hidden="true">
           <div
@@ -4216,16 +4367,15 @@
     class:launch-active={showLaunch || showCoast || showDescent}
     aria-label={m.fly_scrub_label()}
   >
-    <button
-      type="button"
-      class="play-btn"
+    <Chip
+      kind="action"
       data-audio-stage="fly-play"
       onclick={masterTogglePlay}
       aria-label={isPlaying ? m.fly_pause() : m.fly_play()}
     >
-      {isPlaying ? '⏸' : '▶'}
-    </button>
-    <div class="scrub-track-wrap" data-audio-stage="fly-timeline">
+      {#snippet icon()}{isPlaying ? '⏸' : '▶'}{/snippet}
+    </Chip>
+    <div class="scrub-track-wrap" data-audio-stage="fly-timeline" bind:clientWidth={trackWidthPx}>
       <!-- Custom-styled track underneath the (transparent) native input.
            The native input still owns drag + click interactions for
            accessibility; the styled track + progress fill render the
@@ -4251,101 +4401,124 @@
         aria-label={m.fly_scrub_label()}
         aria-valuetext={m.fly_hud_met_value({ day: Math.round(met).toString() })}
       />
-      {#if arcTotalDays > 0 && mission.flight?.events && !showLaunch}
+      <!-- One marker row for the whole journey (UXD-042): the launch's flight-plan beats, the
+           mission's milestones (gold dots), the flight-director stages (gold diamonds) and the
+           descent beats. A click seeks there; ticks closer than 10 px collapse into the first.
+           The test id is the one the milestone specs already use. -->
+      {#if journeyRow.length > 0}
         <div class="milestone-track" data-testid="milestone-track">
-          {#each mission.flight.events as evt, idx (idx + '@' + evt.met_days + '@' + (evt.label ?? ''))}
-            {#if evt.label && evt.met_days != null}
-              {@const pct = cruiseTickPct(evt.met_days)}
-              {@const past = (evt.met_days ?? 0) < simDay - arcTimeline.dep_day}
+          {#each journeyRow as mk (mk.id)}
+            {@const past = mk.pct / 100 < scrubValue}
+            {@const more = mk.more ?? 0}
+            {#if mk.kind === 'milestone' && mk.seek.phase === 'cruise'}
               <button
                 type="button"
                 class="milestone-tick-button"
                 class:past
-                style="left: {pct}%;"
-                aria-label={m.fly_milestone_aria({ label: evt.label, days: evt.met_days ?? 0 })}
-                onclick={() => jumpToMet(evt.met_days ?? 0)}
-                data-met-days={evt.met_days}
+                class:edge-start={mk.pct < 12}
+                class:edge-end={mk.pct > 88}
+                style="left: {mk.pct}%;"
+                aria-label={m.fly_milestone_aria({ label: mk.label, days: mk.seek.metDays })}
+                onclick={() => seekMarker(mk)}
+                data-met-days={mk.seek.metDays}
+                data-marker-kind="milestone"
               >
                 <span class="milestone-tooltip">
-                  <span class="milestone-tooltip-label">{evt.label}</span>
-                  <span class="milestone-tooltip-met">MET {evt.met_days}d</span>
-                  {#if evt.description}
-                    <span class="milestone-tooltip-desc">{evt.description}</span>
+                  <span class="milestone-tooltip-label">{mk.label}</span>
+                  <span class="milestone-tooltip-met">MET {mk.seek.metDays}d</span>
+                  {#if mk.description}
+                    <span class="milestone-tooltip-desc">{mk.description}</span>
                   {/if}
+                  {#if more > 0}<span class="milestone-tooltip-met">+{more}</span>{/if}
+                </span>
+              </button>
+            {:else if mk.kind === 'stage'}
+              <button
+                type="button"
+                class="fd-stage-tick-button"
+                class:past
+                class:edge-start={mk.pct < 12}
+                class:edge-end={mk.pct > 88}
+                style="left: {mk.pct}%;"
+                aria-label={m.fly_stage_tick_aria({ label: mk.label })}
+                onclick={() => seekMarker(mk)}
+                data-fd-stage={mk.id}
+                data-marker-kind="stage"
+              >
+                <span class="fd-stage-tooltip">
+                  <span class="fd-stage-tooltip-label">{mk.label}</span>
+                  {#if more > 0}<span class="fd-stage-tooltip-label">+{more}</span>{/if}
+                </span>
+              </button>
+            {:else}
+              {@const clock =
+                mk.seek.phase === 'descent'
+                  ? formatDescentClock(mk.seek.t)
+                  : mk.seek.phase === 'ascent'
+                    ? formatAscentClock(mk.seek.t)
+                    : ''}
+              <button
+                type="button"
+                class="journey-tick-button"
+                class:past
+                class:edge-start={mk.pct < 12}
+                class:edge-end={mk.pct > 88}
+                style="left: {mk.pct}%;"
+                aria-label={m.fly_beat_aria({
+                  label: more > 0 ? `${mk.label} (+${more})` : mk.label,
+                  time: clock,
+                })}
+                onclick={() => seekMarker(mk)}
+                data-marker-kind={mk.kind}
+              >
+                <span class="journey-tooltip">
+                  <span class="journey-tooltip-label">{mk.label}</span>
+                  <span class="journey-tooltip-time">{clock}</span>
+                  {#if more > 0}<span class="journey-tooltip-time">+{more}</span>{/if}
                 </span>
               </button>
             {/if}
           {/each}
         </div>
       {/if}
-      <!-- FD stage ticks on the scrubber — small gold marks at each
-           narrative stage (separation, cruise, approach, arrival).
-           Same scrubber-jump behaviour as milestones. Mirrors the
-           on-canvas gold diamonds so the user can see the FD cadence
-           on the timeline too. -->
-      {#if arcTotalDays > 0 && fdScrubberTicks.length > 0 && !showLaunch}
-        <div class="fd-stage-track" data-testid="fd-stage-track">
-          {#each fdScrubberTicks as t (t.id)}
-            {@const past = t.met_days < simDay - arcTimeline.dep_day}
-            <button
-              type="button"
-              class="fd-stage-tick-button"
-              class:past
-              style="left: {cruiseTickPct(t.met_days)}%;"
-              aria-label={m.fly_stage_tick_aria({ label: t.label })}
-              onclick={() => jumpToMet(t.met_days)}
-              data-fd-stage={t.id}
-            >
-              <span class="fd-stage-tooltip">
-                <span class="fd-stage-tooltip-label">{t.label}</span>
-              </span>
-            </button>
-          {/each}
-        </div>
-      {/if}
     </div>
-    <div class="speed-group" role="group" aria-label={m.fly_speed_label()}>
+    <div class="speed-group">
       <!-- Mobile: single active-speed slot; tap to reveal all speeds stacked
            above so the scrubber track reclaims the horizontal space. -->
       <div class="speed-slot">
-        <button
-          type="button"
-          class="speed-pill"
-          class:active={isPlaying}
+        <Chip
+          kind="action"
+          active={isPlaying}
           aria-expanded={speedPopoverOpen}
-          aria-haspopup="listbox"
+          aria-haspopup="true"
           aria-label="{activeSpeed}× — {m.fly_speed_label()}"
-          onclick={() => (speedPopoverOpen = !speedPopoverOpen)}>{activeSpeed}×</button
+          onclick={() => (speedPopoverOpen = !speedPopoverOpen)}>{activeSpeed}×</Chip
         >
         {#if speedPopoverOpen}
-          <div class="speed-popover" role="listbox" aria-label={m.fly_speed_label()}>
+          <ChipGroup role="radiogroup" class="speed-popover" label={m.fly_speed_label()}>
             {#each speedPills as sp (sp)}
-              <button
-                type="button"
-                class="speed-pill"
-                class:active={activeSpeed === sp}
-                role="option"
-                aria-selected={activeSpeed === sp}
-                onclick={() => {
+              <Chip
+                kind="choice"
+                active={activeSpeed === sp}
+                onclick={(e: MouseEvent) => {
                   masterSetSpeed(sp);
-                  speedPopoverOpen = false;
-                }}>{sp}×</button
+                  const slot = (e.currentTarget as HTMLElement).closest('.speed-slot');
+                  if (closesPopover(e, () => slot?.querySelector<HTMLElement>(':scope > .ui-chip')))
+                    speedPopoverOpen = false;
+                }}>{sp}×</Chip
               >
             {/each}
-          </div>
+          </ChipGroup>
         {/if}
       </div>
-      <!-- Desktop: all speed pills visible inline. -->
-      {#each speedPills as sp (sp)}
-        <button
-          type="button"
-          class="speed-pill speed-desktop-pill"
-          class:active={activeSpeed === sp}
-          onclick={() => masterSetSpeed(sp)}
-        >
-          {sp}×
-        </button>
-      {/each}
+      <!-- Desktop: all speed chips visible inline. -->
+      <ChipGroup role="radiogroup" class="speed-desktop-group" label={m.fly_speed_label()}>
+        {#each speedPills as sp (sp)}
+          <Chip kind="choice" active={activeSpeed === sp} onclick={() => masterSetSpeed(sp)}>
+            {sp}×
+          </Chip>
+        {/each}
+      </ChipGroup>
     </div>
   </div>
 
@@ -4363,34 +4536,34 @@
         role="group"
         aria-label={m.fly_science_lens_toggles_aria()}
       >
-        <button
-          type="button"
-          class="toggle toggle-lens"
-          aria-pressed={showFlightDirector}
+        <Chip
+          kind="toggle"
+          tone="var(--color-gold)"
+          active={showFlightDirector}
           title={m.fly_toggle_flight_director_title()}
           onclick={() => (showFlightDirector = !showFlightDirector)}
         >
           FD
-        </button>
-        <button
-          type="button"
-          class="toggle toggle-lens"
-          aria-pressed={showLayersPanel}
+        </Chip>
+        <Chip
+          kind="toggle"
+          tone="var(--color-gold)"
+          active={showLayersPanel}
           title={m.fly_toggle_science_layers_title()}
           onclick={() => (showLayersPanel = !showLayersPanel)}
         >
           LYR
-        </button>
+        </Chip>
         {#if conicsLayerOnState}
-          <button
-            type="button"
-            class="toggle toggle-lens"
-            aria-pressed={showConicPanel}
+          <Chip
+            kind="toggle"
+            tone="var(--color-gold)"
+            active={showConicPanel}
             title={m.fly_toggle_conic_title()}
             onclick={() => (showConicPanel = !showConicPanel)}
           >
             CON
-          </button>
+          </Chip>
         {/if}
       </div>
     {/if}
@@ -4403,33 +4576,25 @@
       role="group"
       aria-label={m.fly_view_toggles_aria()}
     >
-      <button
-        type="button"
-        class="toggle"
-        aria-pressed={showHud}
+      <Chip
+        kind="toggle"
+        active={showHud}
         title={m.fly_toggle_hud_title()}
         onclick={() => (showHud = !showHud)}
       >
         HUD
-      </button>
-      <button
-        type="button"
-        class="toggle"
-        aria-pressed={showCapcom}
+      </Chip>
+      <Chip
+        kind="toggle"
+        active={showCapcom}
         title={m.fly_toggle_capcom_title()}
         onclick={() => (showCapcom = !showCapcom)}
       >
         CAP
-      </button>
-      <button
-        class="toggle"
-        type="button"
-        data-testid="fly-view-toggle"
-        onclick={toggleView}
-        aria-pressed={view === '2d'}
-      >
+      </Chip>
+      <Chip kind="toggle" active={view === '2d'} data-testid="fly-view-toggle" onclick={toggleView}>
         {view === '3d' ? m.fly_label_view_2d() : m.fly_label_view_3d()}
-      </button>
+      </Chip>
     </div>
   {/snippet}
 
@@ -4507,15 +4672,18 @@
 
         <section class="capcom-section">
           <h3>{m.fly_capcom_comms_title()}</h3>
-          <div class="comm-row">
-            <span class="comm-key">{m.fly_capcom_signal_delay()}</span>
-            <span class="comm-val">{m.fly_capcom_lmin({ value: signalDelayMin.toFixed(2) })}</span>
-          </div>
-          <div class="comm-row">
-            <span class="comm-key">{m.fly_capcom_rtt()}</span>
-            <span class="comm-val"
-              >{m.fly_capcom_lmin({ value: (signalDelayMin * 2).toFixed(2) })}</span
-            >
+          <div class="comm-grid">
+            <div class="comm-row">
+              <span class="comm-key">{m.fly_capcom_signal_delay()}</span>
+              <span class="comm-val">{m.fly_capcom_lmin({ value: signalDelayMin.toFixed(2) })}</span
+              >
+            </div>
+            <div class="comm-row">
+              <span class="comm-key">{m.fly_capcom_rtt()}</span>
+              <span class="comm-val"
+                >{m.fly_capcom_lmin({ value: (signalDelayMin * 2).toFixed(2) })}</span
+              >
+            </div>
           </div>
         </section>
       </div>
@@ -4556,7 +4724,7 @@
        which all pass title + body + tab + section. LYR toggle hides it. -->
   <ScienceLayersPanel
     title={m.fly_mission_arc_title()}
-    body="Every interplanetary trajectory is a slice of an ellipse with the Sun at one focus. Two endpoints (Earth at launch, the target at arrival) plus a time of flight pin a unique Lambert solution; the porkchop plot is the surface of all such solutions."
+    body={m.fly_mission_arc_body()}
     tab="transfers"
     section="transfer-ellipse"
     available={availableLayers}
@@ -4678,7 +4846,7 @@
     margin-top: 3px;
   }
   .oi-status {
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
     color: #ffbe7a;
     margin-top: 3px;
@@ -4704,7 +4872,6 @@
   }
   .cislunar-hero-comp {
     opacity: 0.7;
-    font-style: italic;
   }
   /* Tier-1 Earth-orbit re-entry debug (RFC-034 §13). */
   .tier1-debug {
@@ -4762,7 +4929,7 @@
     pointer-events: none;
     z-index: 13;
   }
-  /* Milestone overlay — labeled flight.events. Teal accent
+  /* Milestone overlay — labeled flight.events. Accent blue
      distinguishes per-mission historical beats from the gold FD
      stage cadence. Sits ABOVE FD markers (z 14) so a Cassini Venus
      #1 chip is readable even if a CRUISE diamond projects close. */
@@ -4772,8 +4939,8 @@
     pointer-events: none;
     z-index: 14;
   }
-  /* Milestone diamonds (polish-wave-2). Past = dim teal pinprick;
-     future = mid teal pinprick; active = larger glowing teal pulse
+  /* Milestone diamonds (polish-wave-2). Past = dim accent blue pinprick;
+     future = mid accent blue pinprick; active = larger glowing accent blue pulse
      so the eye can pick out the "we're here now" anchor on the path.
      The label / description live in the HUD ACTIVE row now (see
      `.hud-row-active-event` below). */
@@ -4781,26 +4948,26 @@
     position: absolute;
     width: 6px;
     height: 6px;
-    background: #2dd4a8;
+    background: var(--color-ok);
     transform: translate(-50%, -50%) rotate(45deg);
-    box-shadow: 0 0 3px rgba(45, 212, 168, 0.65);
+    box-shadow: 0 0 3px color-mix(in srgb, var(--color-ok) 65%, transparent);
     z-index: 12;
     pointer-events: none;
     user-select: none;
   }
   .milestone-diamond.past {
-    background: rgba(45, 212, 168, 0.55);
-    box-shadow: 0 0 2px rgba(45, 212, 168, 0.35);
+    background: color-mix(in srgb, var(--color-ok) 55%, transparent);
+    box-shadow: 0 0 2px color-mix(in srgb, var(--color-ok) 35%, transparent);
   }
   .milestone-diamond.future {
-    background: rgba(45, 212, 168, 0.75);
+    background: color-mix(in srgb, var(--color-ok) 75%, transparent);
   }
   .milestone-diamond.active {
     width: 11px;
     height: 11px;
-    background: #5eead4;
+    background: var(--color-accent);
     box-shadow:
-      0 0 10px rgba(127, 212, 255, 0.95),
+      0 0 10px color-mix(in srgb, var(--color-state) 95%, transparent),
       0 0 4px rgba(255, 255, 255, 0.7);
     animation: milestone-pulse 1.6s ease-in-out infinite;
   }
@@ -4809,13 +4976,13 @@
     100% {
       transform: translate(-50%, -50%) rotate(45deg) scale(1);
       box-shadow:
-        0 0 10px rgba(127, 212, 255, 0.95),
+        0 0 10px color-mix(in srgb, var(--color-state) 95%, transparent),
         0 0 4px rgba(255, 255, 255, 0.7);
     }
     50% {
       transform: translate(-50%, -50%) rotate(45deg) scale(1.35);
       box-shadow:
-        0 0 18px rgba(127, 212, 255, 1),
+        0 0 18px var(--color-state),
         0 0 8px rgba(255, 255, 255, 0.85);
     }
   }
@@ -4832,10 +4999,10 @@
     transform: translate(-50%, 0);
     white-space: nowrap;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 1.4px;
     text-transform: uppercase;
-    color: rgba(45, 212, 168, 0.85);
+    color: color-mix(in srgb, var(--color-ok) 85%, transparent);
     text-shadow:
       0 0 4px rgba(8, 10, 22, 0.95),
       0 0 8px rgba(8, 12, 24, 0.42);
@@ -4844,46 +5011,47 @@
     z-index: 12;
   }
   .milestone-marker-label.past {
-    color: rgba(45, 212, 168, 0.5);
+    color: color-mix(in srgb, var(--color-ok) 60%, transparent);
   }
   .milestone-marker-label.future {
-    color: rgba(45, 212, 168, 0.7);
+    color: color-mix(in srgb, var(--color-ok) 70%, transparent);
   }
   .milestone-marker-label.active {
-    color: #5eead4;
+    color: var(--color-state);
     font-weight: 700;
     text-shadow:
-      0 0 6px rgba(127, 212, 255, 0.55),
+      0 0 6px color-mix(in srgb, var(--color-state) 55%, transparent),
       0 0 4px rgba(8, 10, 22, 1),
       0 0 10px rgba(8, 10, 22, 0.9);
   }
   /* HUD ACTIVE EVENT row — paired with the pulsing on-canvas diamond.
      Wraps label + italic description vertically so a one-line key on
      the left tracks a multi-line value on the right. */
-  .hud-row-active-event {
-    align-items: flex-start;
-  }
   .hud-row-active-event .accent-active {
     display: inline-flex;
     flex-direction: column;
     gap: 4px;
-    color: rgba(127, 212, 255, 0.98);
+    color: color-mix(in srgb, var(--color-state) 98%, transparent);
   }
   .active-event-label {
     font-weight: 600;
     letter-spacing: 1.4px;
     text-transform: uppercase;
   }
+  /* The full text is in the Mission Events panel; here it is a three-line note at the HUD's own
+     size, so a long description never runs out of the panel. */
   .active-event-description {
     color: rgba(255, 255, 255, 0.82);
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 13px;
+    font-size: var(--size-label);
     line-height: 1.45;
     letter-spacing: 0.2px;
     text-transform: none;
     white-space: normal;
-    max-width: 22ch;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    overflow: hidden;
   }
 
   /* Bottom strips row — centered band above the timeline scrubber
@@ -5047,7 +5215,7 @@
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
     letter-spacing: 5px;
-    color: rgba(127, 212, 255, 0.85);
+    color: color-mix(in srgb, var(--color-state) 85%, transparent);
     text-transform: uppercase;
   }
   .epilogue-name {
@@ -5166,7 +5334,7 @@
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 5px;
-    color: rgba(127, 212, 255, 0.85);
+    color: color-mix(in srgb, var(--color-state) 85%, transparent);
     text-transform: uppercase;
   }
   .opening-name {
@@ -5185,7 +5353,7 @@
   }
   .opening-name-link:hover,
   .opening-name-link:focus-visible {
-    color: rgba(127, 212, 255, 0.95);
+    color: color-mix(in srgb, var(--color-state) 95%, transparent);
     outline: none;
   }
   .opening-years {
@@ -5208,7 +5376,7 @@
     gap: 12px;
     text-align: center;
     pointer-events: auto;
-    border-top: 1px solid rgba(127, 212, 255, 0.18);
+    border-top: 1px solid color-mix(in srgb, var(--color-state) 18%, transparent);
     padding-top: 14px;
   }
   .opening-context {
@@ -5222,9 +5390,7 @@
     transition: opacity 200ms linear;
   }
   .opening-story {
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 15px;
+    font-size: var(--size-lead);
     line-height: 1.5;
     color: rgba(255, 255, 255, 0.88);
     letter-spacing: 0.3px;
@@ -5249,7 +5415,7 @@
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 2.5px;
-    color: rgba(127, 212, 255, 0.7);
+    color: color-mix(in srgb, var(--color-state) 70%, transparent);
     text-transform: uppercase;
   }
   .opening-stat-val {
@@ -5268,12 +5434,12 @@
     gap: 12px;
     pointer-events: auto;
     transition: opacity 200ms linear;
-    border-top: 1px solid rgba(127, 212, 255, 0.18);
+    border-top: 1px solid color-mix(in srgb, var(--color-state) 18%, transparent);
     padding-top: 14px;
   }
   .opening-fleet-label {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 3.5px;
     color: rgba(255, 200, 80, 0.78);
     text-transform: uppercase;
@@ -5311,7 +5477,7 @@
     gap: 3px;
     padding: 8px 16px;
     background: rgba(8, 12, 24, 0.42);
-    border: 1px solid rgba(127, 212, 255, 0.35);
+    border: 1px solid color-mix(in srgb, var(--color-state) 35%, transparent);
     border-radius: 4px;
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
@@ -5320,7 +5486,7 @@
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 2px;
-    color: rgba(127, 212, 255, 0.8);
+    color: color-mix(in srgb, var(--color-state) 80%, transparent);
     text-transform: uppercase;
   }
   .opening-fleet-id {
@@ -5342,7 +5508,7 @@
     height: 120px;
     object-fit: cover;
     border-radius: 6px;
-    border: 1px solid rgba(127, 212, 255, 0.35);
+    border: 1px solid color-mix(in srgb, var(--color-state) 35%, transparent);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.65);
   }
 
@@ -5357,7 +5523,7 @@
     gap: 10px;
     padding: 10px 22px;
     background: rgba(8, 10, 22, 0.55);
-    border: 1px solid rgba(127, 212, 255, 0.5);
+    border: 1px solid color-mix(in srgb, var(--color-state) 50%, transparent);
     border-radius: 4px;
     color: rgba(255, 255, 255, 0.92);
     font-family: var(--font-mono, 'Space Mono', monospace);
@@ -5372,14 +5538,14 @@
   }
   .opening-skip:hover,
   .opening-skip:focus-visible {
-    background: rgba(127, 212, 255, 0.15);
-    border-color: rgba(127, 212, 255, 0.9);
+    background: color-mix(in srgb, var(--color-state) 15%, transparent);
+    border-color: color-mix(in srgb, var(--color-state) 90%, transparent);
     color: #fff;
     outline: none;
   }
   .opening-skip-arrow {
     font-size: 14px;
-    color: rgba(127, 212, 255, 0.85);
+    color: color-mix(in srgb, var(--color-state) 85%, transparent);
   }
   .opening-actions {
     display: flex;
@@ -5406,7 +5572,7 @@
     display: grid;
     gap: 0.55rem;
     padding: 1.4rem 2.6rem 2rem;
-    border-top: 1px solid rgba(127, 212, 255, 0.4);
+    border-top: 1px solid color-mix(in srgb, var(--color-state) 40%, transparent);
     max-width: 30rem;
     text-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
   }
@@ -5414,7 +5580,7 @@
     border-top-color: rgba(255, 120, 96, 0.55);
   }
   .recovery-eyebrow {
-    color: #7fd4ff;
+    color: var(--color-state);
     letter-spacing: 0.24em;
     font-size: 0.7rem;
   }
@@ -5439,8 +5605,8 @@
     margin-top: 0.8rem;
     justify-self: center;
     background: transparent;
-    color: #7fd4ff;
-    border: 1px solid rgba(127, 212, 255, 0.45);
+    color: var(--color-state);
+    border: 1px solid color-mix(in srgb, var(--color-state) 45%, transparent);
     border-radius: 4px;
     padding: 0.45rem 1.3rem;
     font-family: inherit;
@@ -5449,7 +5615,7 @@
     cursor: pointer;
   }
   .recovery-close:hover {
-    border-color: rgba(127, 212, 255, 0.8);
+    border-color: color-mix(in srgb, var(--color-state) 80%, transparent);
   }
   /* START WITH LAUNCH — the launch-act entry point (amber accent). */
   .opening-launch {
@@ -5518,7 +5684,7 @@
     gap: 14px;
     padding: 10px 14px;
     background: rgba(14, 18, 32, 0.55);
-    border: 1px solid rgba(127, 212, 255, 0.25);
+    border: 1px solid color-mix(in srgb, var(--color-state) 25%, transparent);
     border-radius: 6px;
     max-width: 360px;
     text-decoration: none;
@@ -5530,7 +5696,7 @@
   }
   .opening-fleet-card:hover,
   .opening-fleet-card:focus-visible {
-    border-color: rgba(127, 212, 255, 0.65);
+    border-color: color-mix(in srgb, var(--color-state) 65%, transparent);
     background: rgba(20, 26, 50, 0.65);
     outline: none;
     transform: translateY(-1px);
@@ -5566,7 +5732,7 @@
   .opening-fleet-card .opening-fleet-role {
     font-size: 11px;
     letter-spacing: 2px;
-    color: rgba(127, 212, 255, 0.75);
+    color: color-mix(in srgb, var(--color-state) 75%, transparent);
   }
   .opening-fleet-card.hero .opening-fleet-role {
     color: rgba(255, 200, 80, 0.85);
@@ -5583,16 +5749,12 @@
     letter-spacing: 3px;
   }
   .opening-fleet-tagline {
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 12px;
+    font-size: var(--size-lead);
     line-height: 1.4;
     color: rgba(255, 255, 255, 0.78);
   }
   .opening-fleet-bio {
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 13px;
+    font-size: var(--size-lead);
     line-height: 1.5;
     color: rgba(255, 255, 255, 0.82);
     /* Multi-line clamp for long bios — keep card compact */
@@ -5693,9 +5855,18 @@
     color: rgba(255, 255, 255, 0.85);
     min-width: 180px;
     width: 220px;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
+    /* Label/value grid (UXD-042): one label column per panel, shared by every row; a row's
+       value starts in the label's row and wraps only inside the value column. Everything
+       that is not a row (title, phase pill, notes, bars) spans both columns. */
+    display: grid;
+    grid-template-columns: fit-content(50%) minmax(0, 1fr);
+    column-gap: 10px;
+    row-gap: 4px;
+    align-content: start;
+    align-items: baseline;
+  }
+  .hud > :not(.hud-row) {
+    grid-column: 1 / -1;
   }
   /* Systems HUD now stacks flush right after flight-params instead of
      being pushed to the bottom — the previous `margin-top: auto` left
@@ -5705,9 +5876,7 @@
   }
   .hud-demo-hint {
     margin: 4px 0 6px;
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 11px;
+    font-size: var(--size-meta);
     color: rgba(255, 200, 80, 0.85);
     line-height: 1.4;
   }
@@ -5721,8 +5890,8 @@
     align-self: stretch;
     padding: 6px 10px;
     margin-bottom: 4px;
-    background: rgba(68, 102, 255, 0.18);
-    border: 1px solid rgba(68, 102, 255, 0.55);
+    background: color-mix(in srgb, var(--color-accent) 18%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-accent) 55%, transparent);
     color: #fff;
     text-decoration: none;
     text-align: center;
@@ -5736,18 +5905,18 @@
   }
   .hud-demo-cta:hover,
   .hud-demo-cta:focus-visible {
-    background: rgba(68, 102, 255, 0.32);
-    border-color: #4466ff;
+    background: var(--color-accent-edge);
+    border-color: var(--color-accent);
     outline: none;
   }
   .hud-demo-cta-secondary {
-    background: rgba(78, 205, 196, 0.14);
-    border-color: rgba(78, 205, 196, 0.5);
+    background: var(--color-accent-soft);
+    border-color: color-mix(in srgb, var(--color-accent) 50%, transparent);
   }
   .hud-demo-cta-secondary:hover,
   .hud-demo-cta-secondary:focus-visible {
-    background: rgba(78, 205, 196, 0.28);
-    border-color: #4ecdc4;
+    background: color-mix(in srgb, var(--color-accent) 28%, transparent);
+    border-color: var(--color-accent);
   }
 
   .hud-title {
@@ -5758,7 +5927,7 @@
     margin-bottom: 2px;
   }
   .hud-phase {
-    align-self: flex-start;
+    justify-self: start;
     padding: 2px 8px;
     border-radius: 3px;
     border: 1px solid;
@@ -5782,65 +5951,59 @@
     outline: none;
   }
   .phase-pre-launch {
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--color-text-label);
     border-color: rgba(255, 255, 255, 0.2);
   }
   .phase-outbound {
-    color: var(--color-accent-text, #5070ff);
-    border-color: rgba(68, 102, 255, 0.5);
+    color: var(--color-accent);
+    border-color: color-mix(in srgb, var(--color-accent) 50%, transparent);
   }
   .phase-return {
     color: #9966ff;
     border-color: rgba(153, 102, 255, 0.5);
   }
   .phase-arrived {
-    color: #4ecdc4;
-    border-color: rgba(78, 205, 196, 0.5);
+    color: var(--color-state);
+    border-color: color-mix(in srgb, var(--color-accent) 50%, transparent);
   }
 
-  /* hud-row gets a long val (e.g. "Sputnik 8K71PS (R-7 Semyorka
-     derivative)") that overflows the .hud's 220 px width and, because
-     .hud is position:fixed, the overflow extends past the viewport
-     and triggers a horizontal scrollbar on the page (2026-06-19 user
-     report: "when we have launcher and vehicle a bit too narrow so at
-     bottom horizontal bar appears, we don't want that").
-     Fix: allow the val to wrap onto its own line when the row's flex
-     constraints can't accommodate the natural width, and break very
-     long single tokens at any character. The typical short-value
-     layout (one-line "MARS · 2011") is unchanged. */
+  /* A long val (e.g. "Sputnik 8K71PS (R-7 Semyorka derivative)") must not overflow the
+     .hud's 220 px width: .hud is position:fixed, so the overflow extends past the viewport and
+     triggers a horizontal scrollbar on the page (2026-06-19 user report: "when we have launcher
+     and vehicle a bit too narrow so at bottom horizontal bar appears, we don't want that").
+     The row is transparent to layout: its key and val are cells of the .hud grid, so the val
+     wraps inside its own column (very long single tokens break at any character) and the
+     label is never left alone on a line (FY4). */
   .hud-row {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-    flex-wrap: wrap;
-    align-items: baseline;
+    display: contents;
   }
   .hud-key {
-    color: rgba(255, 255, 255, 0.35);
+    color: var(--color-text-label);
     font-size: 11px;
     letter-spacing: 2px;
     font-weight: 700;
-    flex-shrink: 0;
+    min-width: 0;
+    overflow-wrap: anywhere;
   }
   .hud-val {
     color: rgba(255, 255, 255, 0.9);
     font-weight: 700;
     min-width: 0;
-    flex: 1 1 auto;
-    text-align: right;
+    text-align: left;
     overflow-wrap: anywhere;
   }
   .hud-val.dim {
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--color-text-label);
     font-weight: 400;
   }
-  .hud-val.teal {
-    color: #4ecdc4;
+  .hud-val.accent {
+    color: var(--color-state);
   }
   /* Dim continuation inside a value cell (e.g. light-minute alongside Mkm). */
   .hud-val-sub {
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--color-text-label);
     font-weight: 400;
+    white-space: nowrap;
   }
 
   .dv-bar {
@@ -5852,7 +6015,11 @@
   }
   .dv-fill {
     height: 100%;
-    background: linear-gradient(to right, #4466ff, #4466ff88);
+    background: linear-gradient(
+      to right,
+      var(--color-accent),
+      color-mix(in srgb, var(--color-accent) 53%, transparent)
+    );
   }
 
   .scrubber {
@@ -5888,32 +6055,11 @@
      #342 Phase 30 — mobile-first: visible by default (mobile is the
      base), hidden at @min-width: 768 (desktop never sees the
      button). */
-  .hud-collapse {
+  .fly :global(.hud-collapse) {
     position: fixed;
     top: calc(var(--nav-height) + 12px);
     left: 16px;
     z-index: 36;
-    width: 36px;
-    height: 36px;
-    min-width: 44px;
-    min-height: 44px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(15, 18, 35, 0.85);
-    border: 1px solid rgba(78, 205, 196, 0.4);
-    color: rgba(220, 230, 245, 0.95);
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 16px;
-    border-radius: 4px;
-    cursor: pointer;
-    backdrop-filter: blur(6px);
-  }
-  .hud-collapse:hover,
-  .hud-collapse:focus-visible {
-    border-color: #4ecdc4;
-    background: rgba(20, 26, 50, 0.95);
-    outline: none;
   }
 
   /* ─── ≥ 768 px — restore the desktop HUD layout ────────────────── */
@@ -5921,12 +6067,12 @@
     .hud-navigation,
     .hud-systems,
     .hud-flight-params {
-      display: block;
+      display: grid;
     }
     .hud-stack {
       bottom: 80px;
     }
-    .hud-collapse {
+    .fly :global(.hud-collapse) {
       display: none;
     }
     /* Wider rail on desktop so long button labels (PROBE TRAJECTORY,
@@ -5953,7 +6099,8 @@
      vocabulary as the settings panel so it reads as native chrome. */
   .perf-toast {
     position: fixed;
-    bottom: 20px;
+    /* Clear of the play bar (14 px + its ~58 px height) so it never covers the transport. */
+    bottom: 88px;
     right: 16px;
     z-index: 38;
     max-width: 280px;
@@ -5986,7 +6133,7 @@
   .perf-toast-dismiss {
     flex: 1;
     background: transparent;
-    border: 1px solid rgba(78, 205, 196, 0.5);
+    border: 1px solid color-mix(in srgb, var(--color-accent) 50%, transparent);
     color: rgba(220, 230, 245, 0.95);
     padding: 5px 8px;
     border-radius: 3px;
@@ -5995,11 +6142,11 @@
     font-size: 11px;
   }
   .perf-toast-apply {
-    background: rgba(78, 205, 196, 0.2);
-    color: #4ecdc4;
+    background: color-mix(in srgb, var(--color-accent) 20%, transparent);
+    color: var(--color-state);
   }
   .perf-toast-apply:hover {
-    background: rgba(78, 205, 196, 0.35);
+    background: var(--color-accent-edge);
   }
   .perf-toast-dismiss:hover {
     border-color: rgba(220, 230, 245, 0.7);
@@ -6030,19 +6177,17 @@
   }
   .hud-trajectory-caveat {
     margin: 8px 0 0;
-    font-family: 'Crimson Pro', Georgia, serif;
-    font-size: 12px;
-    font-style: italic;
+    font-size: var(--size-meta);
     line-height: 1.35;
     color: rgba(255, 220, 180, 0.95);
     border-top: 1px solid rgba(255, 200, 80, 0.25);
     padding-top: 8px;
   }
   .accent-c3 {
-    color: #4b9cd3;
+    color: var(--color-state);
   }
   .accent-vinf {
-    color: #4ecdc4;
+    color: var(--color-state);
   }
   .accent-dv {
     color: #ffc850;
@@ -6053,22 +6198,6 @@
     .scrubber {
       right: 16px;
     }
-  }
-  .play-btn {
-    min-width: 44px;
-    min-height: 44px;
-    padding: 6px 10px;
-    background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 3px;
-    color: #fff;
-    cursor: pointer;
-    font-size: 14px;
-  }
-  .play-btn:hover,
-  .play-btn:focus-visible {
-    border-color: #4466ff;
-    outline: none;
   }
   .scrub-track-wrap {
     flex: 1;
@@ -6108,8 +6237,8 @@
     height: 12px;
     border-radius: 50%;
     background: #fff;
-    border: 2px solid #2dd4a8;
-    box-shadow: 0 0 8px rgba(45, 212, 168, 0.85);
+    border: 2px solid var(--color-ok);
+    box-shadow: 0 0 8px color-mix(in srgb, var(--color-ok) 85%, transparent);
     cursor: pointer;
     margin-top: -3px;
   }
@@ -6118,8 +6247,8 @@
     height: 12px;
     border-radius: 50%;
     background: #fff;
-    border: 2px solid #2dd4a8;
-    box-shadow: 0 0 8px rgba(45, 212, 168, 0.85);
+    border: 2px solid var(--color-ok);
+    box-shadow: 0 0 8px color-mix(in srgb, var(--color-ok) 85%, transparent);
     cursor: pointer;
   }
   .scrub:focus-visible {
@@ -6142,7 +6271,7 @@
   }
   .scrub-fill {
     height: 100%;
-    background: linear-gradient(to right, #2dd4a8, #5eead4);
+    background: linear-gradient(to right, var(--color-ok), var(--color-accent));
     border-radius: 3px;
     transition: width 90ms linear;
   }
@@ -6166,7 +6295,7 @@
     z-index: 4;
   }
   /* FD stage track — sits ABOVE the milestone track so the gold
-     stage marks read in front of the teal milestone marks when
+     stage marks read in front of the accent blue milestone marks when
      they happen to project at the same x. Same pointer-events
      model: track none, children auto. */
   .fd-stage-track {
@@ -6243,7 +6372,7 @@
   }
   .fd-stage-tooltip-label {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     font-weight: 700;
     letter-spacing: 0.08em;
     color: #ffc850;
@@ -6322,7 +6451,7 @@
   }
   .milestone-tooltip-label {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     font-weight: 700;
     letter-spacing: 0.06em;
     color: #fff;
@@ -6335,36 +6464,105 @@
     letter-spacing: 0.05em;
   }
   .milestone-tooltip-desc {
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 12px;
+    font-size: var(--size-meta);
     line-height: 1.4;
     color: rgba(255, 255, 255, 0.78);
     margin-top: 2px;
     white-space: normal;
   }
+  /* Ascent and descent beats (UXD-042): 2 px ticks, muted blue, a label on hover and focus.
+     The hit area is 10 px, the declutter gap, so neighbours never overlap. */
+  .journey-tick-button {
+    position: absolute;
+    top: -9px;
+    width: 10px;
+    height: 18px;
+    margin-left: -5px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    pointer-events: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .journey-tick-button::before {
+    content: '';
+    width: 2px;
+    height: 14px;
+    border-radius: 1px;
+    background: #889fe7;
+    transition:
+      transform 120ms,
+      background 120ms;
+  }
+  .journey-tick-button.past::before {
+    background: rgba(136, 159, 231, 0.5);
+  }
+  .journey-tick-button:hover::before,
+  .journey-tick-button:focus-visible::before {
+    background: #c3d0ff;
+    transform: scaleY(1.2);
+  }
+  .journey-tick-button:focus-visible {
+    outline: none;
+  }
+  .journey-tooltip {
+    position: absolute;
+    bottom: 22px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 5px 9px;
+    background: rgba(15, 18, 30, 0.96);
+    border: 1px solid rgba(136, 159, 231, 0.55);
+    border-radius: 3px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 120ms;
+    z-index: 5;
+    display: flex;
+    gap: 8px;
+    align-items: baseline;
+    backdrop-filter: blur(4px);
+  }
+  .journey-tick-button:hover .journey-tooltip,
+  .journey-tick-button:focus-visible .journey-tooltip {
+    opacity: 1;
+  }
+  .journey-tooltip-label {
+    font-family: var(--font-mono, 'Space Mono', monospace);
+    font-size: var(--size-label);
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: #fff;
+    text-transform: uppercase;
+  }
+  .journey-tooltip-time {
+    font-family: var(--font-mono, 'Space Mono', monospace);
+    font-size: 11px;
+    color: #889fe7;
+    letter-spacing: 0.05em;
+  }
+  /* The first and last ticks sit at the bar's ends: keep their label inside the viewport. */
+  .edge-start .milestone-tooltip,
+  .edge-start .fd-stage-tooltip,
+  .edge-start .journey-tooltip {
+    left: 0;
+    transform: none;
+  }
+  .edge-end .milestone-tooltip,
+  .edge-end .fd-stage-tooltip,
+  .edge-end .journey-tooltip {
+    left: auto;
+    right: 0;
+    transform: none;
+  }
   .speed-group {
     display: flex;
     gap: 4px;
-  }
-  .speed-pill {
-    min-width: 44px;
-    min-height: 44px;
-    padding: 6px 10px;
-    background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 3px;
-    color: rgba(255, 255, 255, 0.5);
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 11px;
-    letter-spacing: 1px;
-    font-weight: 700;
-    cursor: pointer;
-  }
-  .speed-pill.active {
-    background: rgba(68, 102, 255, 0.2);
-    border-color: rgba(68, 102, 255, 0.5);
-    color: #fff;
   }
   /* Mobile: single active-speed slot + tap-to-reveal stacked popover (matches
      /explore) so the scrubber track reclaims the horizontal space. */
@@ -6372,7 +6570,7 @@
     display: none;
     position: relative;
   }
-  .speed-popover {
+  .speed-slot :global(.speed-popover) {
     position: absolute;
     bottom: calc(100% + 4px);
     right: 0;
@@ -6380,7 +6578,7 @@
     flex-direction: column;
     gap: 2px;
     background: rgba(8, 10, 22, 0.95);
-    border: 1px solid rgba(68, 102, 255, 0.4);
+    border: 1px solid var(--color-accent-edge);
     border-radius: 5px;
     padding: 3px;
     min-width: 48px;
@@ -6391,7 +6589,7 @@
     .speed-slot {
       display: block;
     }
-    .speed-desktop-pill {
+    .speed-group :global(.speed-desktop-group) {
       display: none;
     }
   }
@@ -6446,14 +6644,17 @@
     display: none;
   }
 
-  /* ─── ≤ 767 px — HUD folds into the bottom tab accordion ────────── */
-  @media (hover: none), (pointer: coarse) {
+  /* ─── touch or ≤ 640 px (viewport.isNarrow) — HUD folds into the bottom tab accordion ──
+     The width clause matters for a narrow window with a mouse: the desktop
+     layout pins a 260 px HUD rail left and a 320 px CAPCOM column right, which
+     cannot both fit under ~640 px and so used to cover each other. */
+  @media (hover: none), (pointer: coarse), (max-width: 640px) {
     .fly-toggle-rows-desktop {
       display: none;
     }
     /* The single "Show HUD" pile-reveal + the toggle drawer are replaced by
        the bottom tab accordion (MISSION / EVENTS / PHASE). */
-    .hud-collapse,
+    .fly :global(.hud-collapse),
     .fly-mobile-view-drawer {
       display: none;
     }
@@ -6476,7 +6677,7 @@
       right: 8px;
       z-index: 45;
       padding: 7px 10px;
-      border: 1px solid rgba(127, 212, 255, 0.25);
+      border: 1px solid color-mix(in srgb, var(--color-state) 25%, transparent);
       border-radius: 8px;
       background: rgba(8, 10, 22, 0.78);
       backdrop-filter: blur(4px);
@@ -6501,9 +6702,9 @@
       text-overflow: ellipsis;
     }
     .fly-mini-hud .mh-phase {
-      font-size: 10px;
+      font-size: var(--size-label);
       letter-spacing: 1.5px;
-      color: #7fd4ff;
+      color: var(--color-state);
       white-space: nowrap;
     }
     .fly-mini-hud .mh-row {
@@ -6532,15 +6733,15 @@
       border: 1px solid rgba(255, 255, 255, 0.14);
       color: rgba(255, 255, 255, 0.6);
       font-family: var(--font-mono, 'Space Mono', monospace);
-      font-size: 10px;
+      font-size: var(--size-label);
       letter-spacing: 1.5px;
       border-radius: 6px;
       cursor: pointer;
       backdrop-filter: blur(6px);
     }
     .fly-mtab.active {
-      background: rgba(68, 102, 255, 0.18);
-      border-color: rgba(68, 102, 255, 0.7);
+      background: color-mix(in srgb, var(--color-accent) 18%, transparent);
+      border-color: var(--color-accent-strong);
       color: #dde4ff;
     }
     /* Landscape inline row — parity with explore's bottomInline drawer: the
@@ -6597,7 +6798,7 @@
     .hud-stack.m-open .hud-navigation,
     .hud-stack.m-open .hud-systems,
     .hud-stack.m-open .hud-flight-params {
-      display: flex;
+      display: grid;
     }
     /* PHASE tab: the FD + conic strips are centered rows on desktop; let them
        stack full-width in the sheet. */
@@ -6606,59 +6807,23 @@
       align-items: stretch;
       gap: 8px;
     }
-  }
-  .toggle {
-    min-width: 44px;
-    min-height: 44px;
-    padding: 0 10px;
-    background: rgba(15, 18, 35, 0.85);
-    border: 1px solid rgba(68, 102, 255, 0.4);
-    color: #dde4ff;
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 11px;
-    letter-spacing: 0.04em;
-    border-radius: 4px;
-    cursor: pointer;
-    backdrop-filter: blur(6px);
-    white-space: nowrap;
-  }
-  .toggle:hover,
-  .toggle:focus-visible {
-    border-color: #4466ff;
-    background: rgba(20, 26, 50, 0.95);
-    outline: none;
-  }
-  /* Dimmed appearance when a panel toggle is OFF — the button still
-     reads as clickable, but its panel is hidden. */
-  .toggle[aria-pressed='false'] {
-    color: rgba(221, 228, 255, 0.5);
-    border-color: rgba(68, 102, 255, 0.2);
-  }
-  /* Gold-themed variant for the lens-gated cluster on the left. Reuses
-     the same gold accent as ScienceLayersPanel + FlightDirectorBanner
-     so the user reads the cluster as part of the lens chrome. */
-  .toggle.toggle-lens {
-    color: #ffc850;
-    border-color: rgba(255, 200, 80, 0.55);
-  }
-  .toggle.toggle-lens:hover,
-  .toggle.toggle-lens:focus-visible {
-    border-color: #ffc850;
-    background: rgba(48, 38, 16, 0.95);
-  }
-  .toggle.toggle-lens[aria-pressed='false'] {
-    color: rgba(255, 200, 80, 0.5);
-    border-color: rgba(255, 200, 80, 0.22);
+    /* The performance toast rides above the tab bar (and over an open sheet), not
+       over the tabs or the play bar. */
+    .perf-toast {
+      bottom: calc(132px + env(safe-area-inset-bottom, 0px));
+      right: 8px;
+      max-width: calc(100vw - 16px);
+      z-index: 42;
+    }
+    :global(html[data-touch][data-orientation='landscape']) .perf-toast {
+      bottom: 90px;
+      right: 16px;
+    }
   }
   /* User-dismissed panels use display:none so they release their
      bottom/edge real-estate to the canvas. */
   .hud-stack.hidden {
     display: none;
-  }
-  .toggle:hover,
-  .toggle:focus-visible {
-    border-color: #4466ff;
-    outline: none;
   }
 
   .capcom-panel {
@@ -6672,7 +6837,7 @@
     max-height: 50vh;
     z-index: 32;
     background: rgba(8, 10, 22, 0.96);
-    border: 1px solid rgba(78, 205, 196, 0.3);
+    border: 1px solid var(--color-accent-edge);
     border-radius: 4px;
     backdrop-filter: blur(8px);
     padding: 14px 16px;
@@ -6717,7 +6882,7 @@
   .capcom-section h3 {
     font-size: 11px;
     letter-spacing: 2px;
-    color: rgba(78, 205, 196, 0.6);
+    color: var(--color-state);
     margin: 0 0 6px;
   }
 
@@ -6730,9 +6895,9 @@
     border: 1px solid;
   }
   .anomaly-nominal {
-    color: #4ecdc4;
-    border-color: rgba(78, 205, 196, 0.4);
-    background: rgba(78, 205, 196, 0.06);
+    color: var(--color-state);
+    border-color: var(--color-accent-edge);
+    background: color-mix(in srgb, var(--color-accent) 6%, transparent);
   }
   .anomaly-caution {
     color: #ffc850;
@@ -6762,16 +6927,27 @@
     color: rgba(255, 255, 255, 0.6);
   }
 
+  /* Same label/value grid as .hud: the rows share one label column, the value wraps inside
+     its own column. Each row draws its own rule across both columns. */
+  .comm-grid {
+    display: grid;
+    grid-template-columns: fit-content(50%) minmax(0, 1fr);
+    column-gap: 10px;
+    align-items: baseline;
+  }
   .comm-row {
-    display: flex;
-    justify-content: space-between;
+    display: contents;
+  }
+  .comm-key,
+  .comm-val {
     padding: 4px 0;
     font-size: 11px;
+    min-width: 0;
+    overflow-wrap: anywhere;
     border-bottom: 1px solid rgba(255, 255, 255, 0.04);
   }
   .comm-key {
-    color: rgba(255, 255, 255, 0.4);
-    font-size: 11px;
+    color: var(--color-text-label);
     letter-spacing: 2px;
     font-weight: 700;
   }
@@ -6795,10 +6971,10 @@
     border-radius: 0 3px 3px 0;
   }
   .event-nominal {
-    border-left-color: rgba(78, 205, 196, 0.5);
+    border-left-color: color-mix(in srgb, var(--color-accent) 50%, transparent);
   }
   .event-info {
-    border-left-color: rgba(68, 102, 255, 0.5);
+    border-left-color: color-mix(in srgb, var(--color-accent) 50%, transparent);
   }
   .event-warning {
     border-left-color: #ffc850;
@@ -6807,7 +6983,7 @@
   .event-time {
     font-size: 11px;
     letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.35);
+    color: var(--color-text-label);
     margin-right: 8px;
   }
   .event-label {
@@ -6818,16 +6994,12 @@
   }
   .event-note {
     margin: 4px 0 0;
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 11px;
+    font-size: var(--size-meta);
     line-height: 1.4;
     color: rgba(255, 255, 255, 0.6);
   }
   .empty {
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 11px;
-    color: rgba(255, 255, 255, 0.4);
+    font-size: var(--size-meta);
+    color: var(--color-text-label);
   }
 </style>

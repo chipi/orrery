@@ -73,6 +73,14 @@
   } from '$lib/surface-scene/tier-layer-spec';
   import { getImageAlt } from '$lib/image-alt';
   import { getLocale } from '$lib/paraglide/runtime';
+  import {
+    fixedScaleBar,
+    formatBarValue,
+    scaleBarWidth,
+    worldsBarQuantity,
+  } from '$lib/universe/scale-bar';
+  import { distanceWithUnit } from '$lib/explore/distance-format';
+  import ScaleBar from '$lib/components/ScaleBar.svelte';
   import { buildContextCap, contextOpacity } from '$lib/surface-scene/surface-context';
   import { ladderRungUrl, loadLadder, type LadderManifest } from '$lib/image-srcset';
   import { createSurfaceMarkers, type MarkerObj } from '$lib/surface-scene/surface-markers';
@@ -86,6 +94,8 @@
   import RegimeChip from '$lib/components/RegimeChip.svelte';
   import AgencyRow from '$lib/components/AgencyRow.svelte';
   import { regimeForAltitude } from '$lib/physics/util/orbit-regime-match';
+  import { buildRegimeHighlight, type RegimeHighlight } from '$lib/three/regime-highlight';
+  import { regimeShape, type RegimeShape, type RulerScene } from '$lib/orbit-regime-geometry';
   import {
     getMissionIndex,
     getMission,
@@ -105,8 +115,12 @@
   } from '$lib/three/scene-renderer';
   import { heroEnvironment } from '$lib/three/hero-materials';
   import { createCanvasResizer } from '$lib/three/canvas-resizer';
+  import { createPanelFramer, openPanelRects, watchPanels } from '$lib/three/panel-framing-host';
   import { bindCanvasInputs } from '$lib/three/canvas-input-listeners';
   import PanelTabRow from '$lib/components/PanelTabRow.svelte';
+  import Chip from '$lib/components/Chip.svelte';
+  import PanelActions from '$lib/components/PanelActions.svelte';
+  import ResetViewButton from '$lib/components/ResetViewButton.svelte';
   import LayerChipRow from '$lib/components/LayerChipRow.svelte';
   import { canonicalId } from '$lib/data/retired-ids';
   import PanelLightbox from '$lib/components/PanelLightbox.svelte';
@@ -127,6 +141,7 @@
   import { siteAnatomy, siteLandingSequence } from '$lib/surface-scene/site-anatomy';
   import type { PanoramaAnnotation, PanoramaSetEntry } from '$types/surface-site';
   import ViewToggleButton from '$lib/components/ViewToggleButton.svelte';
+  import { explorePathFor } from '$lib/explore/world-links';
   import View3dControls from '$lib/components/View3dControls.svelte';
   import MobileDrawerGroup from '$lib/components/MobileDrawerGroup.svelte';
   import SurfaceIndexPanel from '$lib/surface-scene/SurfaceIndexPanel.svelte';
@@ -139,6 +154,7 @@
   // cycleSurfaceMode below).
   import PanoramaToggleButton from '$lib/components/PanoramaToggleButton.svelte';
   import TierContextCard from '$lib/components/TierContextCard.svelte';
+  import ExploreHint from '$lib/components/ExploreHint.svelte';
   import {
     buildTierContext,
     type TierContext,
@@ -191,6 +207,7 @@
     DETAIL_FLY_TARGET_R,
     mobileDrawerHidden,
     nationFilterAway,
+    orbitsInViewNext,
     shouldFlyToDetail,
   } from '$lib/surface-scene/surface-view-state';
   import {
@@ -307,11 +324,14 @@
      *  references nothing on screen). `true` = orbits in view (ruler
      *  meaningful), `false` = zoomed below them (hide). */
     onOrbitsInViewChange?: (inView: boolean) => void;
+    /** The flat true-scale view opened (`true`) or closed. Its scale bar owns the bottom-left
+     *  corner, so a page drops what it keeps there for the globe (the Moon's locate chip). */
+    onFlatViewChange?: (active: boolean) => void;
     /** Museums where real hardware is on display (PRD-027). When given,
      *  the globe gets museum pins, a MUSEUMS chip, the museum card and the
      *  ?museum=<id> deep link. /earth only. */
     loadMuseums?: (locale: string) => Promise<Museum[]>;
-    /** Observatories on Earth (PRD-028): pins, a TELESCOPES chip, the
+    /** Observatories on Earth (PRD-028): pins, an OBSERVATORIES chip, the
      *  observatory card and the ?observatory=<id> deep link. /earth only. */
     loadObservatories?: (locale: string) => Promise<Observatory[]>;
     /** Height the host route's bottom-left button ("Center on my location")
@@ -320,6 +340,10 @@
     /** The host route's globe button ("View from my location"): on a phone it
      *  becomes the first icon of the single bottom bar. */
     barStart?: Snippet;
+    /** Every entity page of this hub (`/<body>/<id>`), from the route's server load. The
+     *  object index links the rows that have a page and prerenders this list while
+     *  closed, so crawlers reach every page from the hub (ADR-096 item 11). */
+    entityLinks?: { id: string; name: string }[];
   }
   let {
     config,
@@ -336,8 +360,10 @@
     regimes,
     onRegimeOpen,
     onOrbitsInViewChange,
+    onFlatViewChange,
     locateReservePx = 0,
     barStart,
+    entityLinks = [],
   }: Props = $props();
 
   // AR (#150): earth/moon/mars have tabletop AR scenes. `body` matches
@@ -352,6 +378,7 @@
   // needed (the component still self-gates on the 'planet-stats' lens).
   const bodyStats = $derived(PLANET_STATS[config.planet] ?? null);
   const bodyKinematics = $derived(SURFACE_BODY_KINEMATICS[config.planet]);
+  const explorePath = $derived(explorePathFor(config.planet));
 
   // Orbit-ruler auto-hide threshold (#363). The literal "below the lowest
   // orbit band" test hid far too late — at LEO (160 km) you're already
@@ -362,11 +389,10 @@
   // meaningful); below it the planet fills the view and the orbits have
   // scrolled off-screen. Radius-relative so it's right for Earth, Moon and
   // Mars without per-body tuning. Earth ≈ 6.4 Mm, Moon ≈ 1.7 Mm, Mars ≈
-  // 3.4 Mm.
-  const ORBIT_RULER_HIDE_RADII = 1.0;
+  // 3.4 Mm. The rule (with its 12% hysteresis band) is orbitsInViewNext in surface-view-state;
+  // it keeps the orbits in view while an orbiter is the focus, because that fly-in lands under
+  // one radius and would hide the very thing just picked.
   // Last emitted in-view state — drives onOrbitsInViewChange edge calls.
-  // 12% hysteresis band so parking the camera exactly at the threshold
-  // can't flicker the ruler frame-to-frame.
   let orbitsInView = true;
 
   // ─── Nation palette (per IA §shared-tokens) ──────────────────────
@@ -440,14 +466,6 @@
   // (rover-path data exists for this body). Defaults on.
   let layerTraverses = $state(true);
 
-  // Earth satellite-category chips (#290 Slice 6). Only surfaced when
-  // config.earthOrbitalLayers.satellites is configured. Sub-gating on
-  // top of the master layerOrbiters toggle — each category can be hid
-  // independently. Defaults come from the route config.
-  let layerStations = $state(true);
-  let layerObservatories = $state(true);
-  let layerConstellations = $state(true);
-  let layerComsats = $state(true);
   let autoSpin = $state(true);
   let resetCamera: () => void = () => {};
 
@@ -720,6 +738,28 @@
   // carries its category so the per-frame loop can sub-gate against
   // the relevant layer{Stations,Observatories,...} flag.
   let earthSats: Array<import('$lib/surface-scene/earth-satellite-layer').SatObj> = [];
+
+  // The orbit ruler's regime drawn in the scene (UXD-024). The route calls setRegimeHighlight
+  // from the ruler's hover / focus and the open panel; the handle is built in onMount once the
+  // regimes and (on /earth) the Moon ghost's radius are known.
+  let regimeHover: string | null = null;
+  let regimeActive: string | null = null;
+  let regimeMoonR = 0;
+  let regimeHl: RegimeHighlight | null = null;
+  let syncRegimeHighlightImpl: (() => void) | undefined;
+  /** `ID:hover` / `ID:active` / '' — the e2e hook (`data-regime-highlight` on the scene root). */
+  let regimeHlState = $state('');
+  /** Draw `hover` (pointer or focus on a ruler row) and `active` (the open panel's regime). */
+  export function setRegimeHighlight(hover: string | null, active: string | null): void {
+    regimeHover = hover;
+    regimeActive = active;
+    regimeHl?.set(hover, active);
+    regimeHlState = regimeHl ? regimeHl.state() : '';
+  }
+  $effect(() => {
+    void regimes;
+    syncRegimeHighlightImpl?.();
+  });
   // EarthObject cache + selection state (#290 Slice 6b). Cached for the
   // pointer-click handler to look up the clicked sat. selectedSat
   // drives EarthObjectPanel; nulled out when the user selects a
@@ -736,14 +776,15 @@
   let observatoriesCache: Observatory[] = [];
   let observatoryPins: MuseumPin[] = [];
   let selectedObservatory = $state<Observatory | null>(null);
+  // Any open detail panel (site, orbiter, museum, observatory) — all wrap the same Panel.
+  const detailPanelOpen = $derived(
+    panelOpen || selectedSat != null || selectedMuseum != null || selectedObservatory != null,
+  );
   let layerTelescopes = $state(true);
-  // /earth chip groups: ON EARTH is a master over launchpads, museums and
-  // ground telescopes (IN SPACE is the existing ORBITERS master).
-  let layerGround = $state(true);
   let layerLaunchpads = $state(true);
-  const padsOn = $derived(layerSurface && layerGround && layerLaunchpads);
-  const museumsOn = $derived(layerGround && layerMuseums);
-  const telescopesOn = $derived(layerGround && layerTelescopes);
+  const padsOn = $derived(layerSurface && layerLaunchpads);
+  const museumsOn = $derived(layerMuseums);
+  const telescopesOn = $derived(layerTelescopes);
   /** Close an open launchpad card when the pads are hidden. */
   function dropHiddenPadSelection() {
     if (padsOn || !selected) return;
@@ -751,6 +792,23 @@
       selected = null;
       panelOpen = false;
     }
+  }
+  /** Close an open orbiter card (a satellite on /earth, an orbiter site on /moon and /mars) when
+   *  the orbiters are hidden (UXD-019: a chip turned off clears a selection of its kind). */
+  function dropHiddenOrbiterSelection() {
+    if (layerOrbiters) return;
+    selectedSat = null;
+    const sel = selected as SurfaceSite | null;
+    if (sel?.kind === 'orbiter') {
+      selected = null;
+      panelOpen = false;
+    }
+  }
+  /** The traverse has no selection of its own (its trail draws for the selected rover, which the
+   *  chip does not hide), so turning TRAVERSES off drops only the stop tooltip it was showing. */
+  function dropHiddenTraverseSelection() {
+    if (layerTraverses) return;
+    hoveredStopInfo = null;
   }
 
   // ─── Object index (searchable orbit/land list) ───────────────────
@@ -1052,8 +1110,24 @@
   // Nation legend height: the imagery card and the right-edge readouts stack
   // above the strip (--legend-top) instead of overlapping its wrapped rows.
   let legendH = $state(0);
+  // The welcome hint is shown once per visit: it stays gone through a panorama or 2D toggle.
+  let hintDone = $state(false);
   // Site icons have started to show at this zoom (#641 legend gate).
   let tagStageOn = $state(false);
+  $effect(() => onFlatViewChange?.(flatPatchActive));
+  // The nation legend faded away (near the ground, route view, the flat view). It stays in the
+  // DOM with its height, so the imagery card and the hint must not keep clearing it then.
+  let legendAway = $derived(
+    nationFilterAway({
+      view,
+      tagStageOn,
+      altitudeKm,
+      radiusKm: config.radiusKm,
+      routeViewActive,
+      flatPatchActive,
+      detailFlying,
+    }),
+  );
   // Globe colour at the flat-patch site (Mars): its greyscale imagery is
   // tinted to it, like the 3D patches (#641).
   let flatPatchTint = $state<[number, number, number] | undefined>();
@@ -1106,8 +1180,8 @@
     else delete root.dataset.surfacePanorama;
     return () => delete root.dataset.surfacePanorama;
   });
-  // The flat ground view owns the bottom edge with its own bar: the host route's
-  // floating A–Z tab and the imagery card key their phone position off this.
+  // The flat ground view owns the bottom edge with its own bar: the imagery card keys
+  // its phone position off this.
   $effect(() => {
     const root = document.documentElement;
     if (flatPatchActive) root.dataset.surfaceFlat = '';
@@ -1119,12 +1193,28 @@
   // touch.
   let sceneRoot = $state<HTMLDivElement | undefined>();
   let indexHandleTop = $state<number | null>(null);
-  // On <html> too: the host route's A–Z tab sits just above the INDEX tab.
+  // The object-index panel starts just under the HUD, whose chip row wraps to a
+  // second line on narrow windows and long labels (nothing on touch: HUD hidden).
+  let indexTopPx = $state<number | null>(null);
   $effect(() => {
-    const root = document.documentElement;
-    if (indexHandleTop != null) root.style.setProperty('--index-handle-top', `${indexHandleTop}px`);
-    else root.style.removeProperty('--index-handle-top');
-    return () => root.style.removeProperty('--index-handle-top');
+    void panoramaActive;
+    const hud = sceneRoot?.querySelector('.hud-controls');
+    if (!hud) {
+      indexTopPx = null;
+      return;
+    }
+    const measure = () => {
+      const r = hud.getBoundingClientRect();
+      indexTopPx = r.width && r.height ? Math.round(r.bottom + 8) : null;
+    };
+    measure();
+    const ro = new ResizeObserver(measure);
+    ro.observe(hud);
+    window.addEventListener('resize', measure);
+    return () => {
+      ro.disconnect();
+      window.removeEventListener('resize', measure);
+    };
   });
   const tierLayerCount = $derived(tierContext?.layers.length ?? 0);
   $effect(() => {
@@ -1135,15 +1225,22 @@
     if (!root) return;
     let raf = 0;
     const check = () => {
-      const card = root.querySelector('.tier-context-card');
       const handle = root.querySelector('.surface-index-handle');
-      if (!card || !handle) {
+      if (!handle) {
         indexHandleTop = null;
         return;
       }
-      const cardTop = card.getBoundingClientRect().top;
-      const half = handle.getBoundingClientRect().height / 2;
-      const centre = Math.min(window.innerHeight / 2, cardTop - half - 12);
+      const hr = handle.getBoundingClientRect();
+      // Whatever sits in the lower-left under the tab (imagery card, the HUD column of locate
+      // chip, readout and orbit ruler) pushes it up.
+      const lowest = [
+        root.querySelector('.tier-context-card'),
+        document.querySelector('.hud-stack-bl'),
+      ]
+        .map((el) => el?.getBoundingClientRect())
+        .filter((r) => r && r.width && r.height && r.left < hr.right)
+        .reduce((top, r) => Math.min(top, r!.top), Infinity);
+      const centre = Math.min(window.innerHeight / 2, lowest - hr.height / 2 - 12);
       indexHandleTop = centre < window.innerHeight / 2 ? Math.round(centre) : null;
     };
     const schedule = () => {
@@ -1153,17 +1250,17 @@
     schedule();
     const ro = new ResizeObserver(schedule);
     ro.observe(root);
-    const card = root.querySelector('.tier-context-card');
-    if (card) ro.observe(card);
+    const mo = new MutationObserver(schedule);
+    mo.observe(document.body, { childList: true, subtree: true });
     return () => {
       cancelAnimationFrame(raf);
       ro.disconnect();
+      mo.disconnect();
     };
   });
-  // The route's Orbit Ruler (bottom-left, behind everything) moves right of
-  // the layer chips — and of the locate button where they share rows — when
-  // the chip column reaches down into it (short windows, e.g. 1280x720 on
-  // /earth). Published on <html>: the ruler lives in the route, not here.
+  // The route's bottom-left HUD column (locate chip, readout, orbit ruler: HudStackBL) clears
+  // the centred footer on narrow windows, where its width runs under it. Published on <html>
+  // for the column's `bottom`.
   $effect(() => {
     const root = sceneRoot;
     if (!root) return;
@@ -1173,40 +1270,10 @@
       const r = el?.getBoundingClientRect();
       return r && r.width && r.height ? r : null;
     };
-    const clearProps = () => {
-      html.style.removeProperty('--ruler-left');
-      html.style.removeProperty('--ruler-clear');
-    };
     const check = () => {
-      const ruler = [...document.querySelectorAll('.ruler')].map(visible).find(Boolean);
-      if (!ruler) {
-        clearProps();
-        return;
-      }
-      let right = 0;
-      const chips = root.querySelector('.hud-controls');
-      if (chips && visible(chips)) {
-        let bottom = 0;
-        for (const el of chips.querySelectorAll('*')) {
-          const r = visible(el);
-          if (!r) continue;
-          right = Math.max(right, r.right);
-          bottom = Math.max(bottom, r.bottom);
-        }
-        if (ruler.top >= bottom + 8) right = 0;
-      }
-      // The locate chip sits at the ruler's default spot on /earth and /moon, so
-      // wherever they share rows the ruler steps right of it (not only on short windows).
-      const locate = visible(document.querySelector('.locate-me'));
-      if (locate && locate.top < ruler.bottom && locate.bottom > ruler.top) {
-        right = Math.max(right, locate.right);
-      }
-      const left = right ? Math.round(right + 12) : 12;
-      if (right) html.style.setProperty('--ruler-left', `${left}px`);
-      else html.style.removeProperty('--ruler-left');
-      // On narrow windows the ruler's column runs under the centred footer: lift it clear.
+      const stack = visible(document.querySelector('.hud-stack-bl'));
       const foot = visible(document.querySelector('.site-footer'));
-      if (foot && left < foot.right && left + ruler.width > foot.left) {
+      if (stack && foot && stack.left < foot.right && stack.right > foot.left) {
         html.style.setProperty('--ruler-clear', `${Math.round(innerHeight - foot.top + 8)}px`);
       } else {
         html.style.removeProperty('--ruler-clear');
@@ -1225,7 +1292,7 @@
       cancelAnimationFrame(raf);
       ro.disconnect();
       mo.disconnect();
-      clearProps();
+      html.style.removeProperty('--ruler-clear');
     };
   });
   // .by(): a closure, so TS sees `selected` as SurfaceSite | null, not the
@@ -1327,6 +1394,8 @@
   let panelTab: PanelTab = $state('overview');
   // The anatomy drawings of what is on this site's surface (top of STORY).
   let panelAnatomy = $derived(selected ? siteAnatomy(selected) : []);
+  // An orbiter never touched a surface: its drawing is the DETAIL tab, not STORY.
+  let panelIsOrbiter = $derived((selected as SurfaceSite | null)?.kind === 'orbiter');
   const panelSequenceId = $derived((selected as SurfaceSite | null)?.id ?? null);
   let panelSequence = $derived(panelSequenceId ? siteLandingSequence(panelSequenceId) : null);
   let panelGallery: string[] = $state([]);
@@ -1506,6 +1575,7 @@
   // Orbiter-marker focus by site id (moon/mars orbital missions). Assigned
   // in onMount (captures orbitalMarkers + the shared fly-in).
   let faceCameraAtOrbiter: ((siteId: string) => void) | undefined;
+  let pendingOrbiterFace: string | null = null;
   /**
    * "Zoom to detail" — fly the camera in to the close range where the
    * HiRISE / LROC NAC detail patch is fully visible (camR ≈ 31, just
@@ -1526,6 +1596,7 @@
       // launch sites). No-op on /moon, /mars (earthObjectsCache === []).
       const o = earthObjectsCache.find((x) => x.id === id);
       if (o) {
+        layerOrbiters = true;
         selectedSat = o;
         selected = null;
         selectedMuseum = null;
@@ -1537,6 +1608,7 @@
       return;
     }
     if (s) {
+      if (s.kind === 'orbiter') layerOrbiters = true;
       selected = s;
       selectedSat = null;
       selectedMuseum = null;
@@ -1705,6 +1777,26 @@
         const r = renderer.domElement.getBoundingClientRect();
         return { x: r.left + ((ndc.x + 1) / 2) * r.width, y: r.top + ((1 - ndc.y) / 2) * r.height };
       };
+      // Test hook: an orbiter marker's or Earth satellite's drawn state, client px (the dot's
+      // own centre through the live camera, view offset included). Null for an unknown id.
+      window.__surfaceSceneObjectState = (id) => {
+        const om = orbitalMarkers.find((m) => m.siteId === id);
+        const sat = om ? undefined : earthSats.find((s) => s.id === id);
+        const dot = om?.dotGroup ?? sat?.group;
+        if (!dot) return null;
+        const ring = om?.ringMesh ?? sat?.ringMesh;
+        const wp = dot.getWorldPosition(new THREE.Vector3()).project(camera);
+        const r = renderer.domElement.getBoundingClientRect();
+        let drawn = dot.visible;
+        for (let p = dot.parent; drawn && p; p = p.parent) drawn = p.visible;
+        return {
+          visible: drawn && wp.z < 1,
+          ringVisible: !!ring && ring.visible,
+          outlined: !!outlinePass?.selectedObjects.includes(dot),
+          x: r.left + ((wp.x + 1) / 2) * r.width,
+          y: r.top + ((1 - wp.y) / 2) * r.height,
+        };
+      };
     }
 
     loadSites(localeFromPage(page))
@@ -1781,6 +1873,10 @@
     try {
       renderer = createSceneRenderer(container, {
         pixelRatioCap: quality.pixelRatioCap,
+        // Pure black space, as on /explore (operator 2026-11-13). The default dark indigo
+        // (0x04040c) is lifted to a visible purple by the composer's OutputPass on every tier
+        // that renders through it (all but minimal and low).
+        clearColor: 0x000000,
       });
     } catch (e) {
       // WebGL unavailable — fallback notice is shown in the container; bail init.
@@ -1831,6 +1927,7 @@
           camera,
           width: container.clientWidth,
           height: container.clientHeight,
+          outputPass: true,
         })
       : null;
     const composer = composerSetup?.composer ?? null;
@@ -1872,6 +1969,7 @@
     const planetMap2k = textureLoader.load(config.textureUrl, (tex) => {
       globeColourAt = globeSampler(tex.image as HTMLImageElement);
     });
+    planetMap2k.colorSpace = THREE.SRGBColorSpace;
     const planetRadius = 30;
     // Axial-tilt group wraps the planet mesh so Mars's 25.19° obliquity
     // is visible (no-op rotation for Moon's ~0°). Orbital markers
@@ -1913,6 +2011,7 @@
       textureLoader.load(
         config.textureUrl4k,
         (tex) => {
+          tex.colorSpace = THREE.SRGBColorSpace;
           planetMap4k = tex;
         },
         undefined,
@@ -2108,6 +2207,7 @@
         });
         scene.add(mg.mesh);
         earthMoonR = mg.moonR;
+        regimeMoonR = mg.moonR;
         earthLayerHandles.push(mg);
       }
       if (eol.tides) {
@@ -2146,14 +2246,6 @@
           .loadObjects(localeFromPage(page))
           .then((raw) => {
             const objects = raw as EarthObject[];
-
-            // Apply route-provided per-category defaults before the
-            // animate loop's first sub-gating pass.
-            const defaults = satCfg.categoryDefaultVisible;
-            layerStations = defaults.station;
-            layerObservatories = defaults.observatory;
-            layerConstellations = defaults.constellation;
-            layerComsats = defaults.comsat;
 
             const satLayer = buildSatelliteLayer({
               scene,
@@ -2394,7 +2486,15 @@
     // markers gets it.
     faceCameraAtOrbiter = (siteId) => {
       const om = orbitalMarkers.find((m) => m.siteId === siteId);
-      if (!om) return;
+      if (!om) {
+        // A deep link selects as the site list loads, before the frame loop has built the
+        // markers: the fly-in waits for them.
+        pendingOrbiterFace = siteId;
+        return;
+      }
+      // Place the dot on its ring now (a new marker sits at the centre until its first tick),
+      // without advancing the phase.
+      tickOrbiterDot(om, 0, true);
       const worldPos = new THREE.Vector3();
       om.dotGroup.getWorldPosition(worldPos);
       flyToWorldPos(worldPos);
@@ -2434,7 +2534,7 @@
 
     // J.4 — Tidal-lock indicator. The Moon is in 1:1 synchronous
     // rotation with Earth, so one hemisphere (the "near side") always
-    // faces Earth. We mark that hemisphere with a faint teal tint that
+    // faces Earth. We mark that hemisphere with a faint accent blue tint that
     // PARENTS to planetMesh — so when the user rotates the Moon (autoSpin
     // or drag), the marker rotates with the body, demonstrating that
     // a fixed lunar hemisphere is what stays Earth-facing in real life
@@ -2688,7 +2788,6 @@
       orbitalMarkers,
       hotspots,
       originalMaxTier,
-      composerActive: composer !== null,
     });
 
     // Camera + controls.
@@ -2951,6 +3050,9 @@
         child.visible = false;
       }
       savedCamR = camR;
+      // A fly-in still running (the site was just selected) would overwrite camT/camP every
+      // frame and open the panorama on the globe's longitude, not on the photograph.
+      flyActive = false;
       // Move camera close to origin so the user's drag-to-rotate
       // feels like spinning their head inside the skybox.
       camR = 0.5;
@@ -3531,6 +3633,16 @@
       onContextMenu,
     });
 
+    // Read-only camera probe for the touch-gesture e2e (orbit, zoom radius, pan offset).
+    if (typeof window !== 'undefined') {
+      window.__surfaceSceneCamera = () => ({
+        camR,
+        camT,
+        camP,
+        focus: [focusOffset.x, focusOffset.y, focusOffset.z],
+      });
+    }
+
     // A ring's tap target sits over the canvas: scrolling there still zooms.
     if (ringsHost) lifecycle.on(ringsHost, 'wheel', onWheel, { passive: false });
 
@@ -3590,6 +3702,55 @@
     });
     lifecycle.add(stopReducedMotionWatch);
 
+    // Regime highlight (UXD-024): one build per regime list; shapes come from the same functions
+    // that place the orbiters (orbit-regime-geometry.ts).
+    const rulerScene: RulerScene | null =
+      config.planet === 'earth' || config.planet === 'moon' || config.planet === 'mars'
+        ? config.planet
+        : null;
+    let regimeHlKey = '';
+    const regimeMarkerPts: THREE.Vector3[] = [];
+    const markerVec = (i: number) => (regimeMarkerPts[i] ??= new THREE.Vector3());
+    // A Lagrange-point regime is a point: it rings each of its residents instead.
+    const regimeMarkerPoints = (id: string): THREE.Vector3[] => {
+      let n = 0;
+      if (config.planet === 'earth') {
+        const regimeOf = new Map(earthObjectsCache.map((o) => [o.id, o.regime]));
+        for (const s of earthSats) {
+          if (regimeOf.get(s.id) === id) s.group.getWorldPosition(markerVec(n++));
+        }
+      } else {
+        for (const om of orbitalMarkers) {
+          const site = orbiterSites.find((x) => x.id === om.siteId);
+          if (regimeForAltitude(site?.altitude_km, regimes ?? [])?.id === id) {
+            om.dotGroup.getWorldPosition(markerVec(n++));
+          }
+        }
+      }
+      return regimeMarkerPts.slice(0, n);
+    };
+    syncRegimeHighlightImpl = () => {
+      if (!rulerScene || !regimes || regimes.length === 0) return;
+      const key = `${regimes.map((r) => r.id).join(',')}:${regimeMoonR}`;
+      if (key === regimeHlKey) return;
+      regimeHlKey = key;
+      regimeHl?.dispose();
+      const shapes: Record<string, RegimeShape> = {};
+      for (const r of regimes) {
+        const s = regimeShape(rulerScene, r, { planetRadius, moonR: regimeMoonR });
+        if (s) shapes[r.id] = s;
+      }
+      regimeHl = buildRegimeHighlight({ shapes, markerPoints: regimeMarkerPoints });
+      regimeHl.set(regimeHover, regimeActive);
+      scene.add(regimeHl.group);
+    };
+    syncRegimeHighlightImpl();
+    lifecycle.add(() => {
+      syncRegimeHighlightImpl = undefined;
+      regimeHl?.dispose();
+      regimeHl = null;
+    });
+
     let lastTime = performance.now();
 
     // raf pump with the TA.md document.hidden contract baked in. The
@@ -3599,6 +3760,24 @@
     // because the surface scene's render still has to run when the
     // user prefers reduced motion (the camera stays put but the
     // scene + 2D overlay still paints).
+    // Panel-aware framing (UXD-030): the focus point sits in the middle of the space an open side
+    // panel leaves, for every selection in the 3D view. Route view keeps the shift (a 3D framing);
+    // the flat patch and the panorama are their own views.
+    const framer = createPanelFramer({
+      camera,
+      getReducedMotion: () => reducedMotion,
+      getRects: openPanelRects,
+      getViewportW: () => window.innerWidth,
+      getSize: () => ({
+        w: container?.clientWidth || window.innerWidth,
+        h: container?.clientHeight || window.innerHeight,
+      }),
+    });
+    watchPanels(framer, lifecycle);
+    lifecycle.add(() => {
+      if (camera.view?.enabled) camera.clearViewOffset();
+    });
+
     const loop = createAnimateLoop({
       onFrame: () => {
         frameMonitor.tick();
@@ -3620,6 +3799,8 @@
         // still need the sphere rendered so the cross-fade reads as a
         // cross-fade rather than a flicker).
         if (flatPatchPhase === 'visible') return;
+
+        framer.apply(dt, view === '3d' && !flatPatchActive && !panoramaActive);
 
         // Panorama HUD yaw + pitch readouts (PRD-022 / ADR-074 Phase 2C/2D).
         // camT/camP are in radians; convert + normalise for compass-rose
@@ -3740,6 +3921,13 @@
         // rebuild (8 lunar orbiters added in v0.4 — Issue #40 / PRD-009).
         if (surfaceSiteCount !== markers.length) rebuildMarkers();
         if (orbiterSites.length !== orbitalMarkers.length) rebuildOrbitalMarkers();
+        if (pendingOrbiterFace) {
+          const id = pendingOrbiterFace;
+          if (orbitalMarkers.some((m) => m.siteId === id)) {
+            pendingOrbiterFace = null;
+            if (selected?.id === id) faceCameraAtOrbiter?.(id);
+          }
+        }
 
         // Apply layer visibility every frame so chip toggles take effect
         // immediately (cheap — small static arrays).
@@ -3792,7 +3980,7 @@
             if (mk.halo.visible) fadeHalo(mk.halo, routeHaloFade);
           }
           if (mk.hoverHalo) {
-            // Teal hover ring — only when the mouse is over this
+            // Accent blue hover ring — only when the mouse is over this
             // marker AND it isn't already selected (selection halo
             // wins, avoids double-ring). Hover stays on the marker for ALL
             // sites incl. traverse rovers (same as InSight) — only the
@@ -3827,25 +4015,14 @@
           if (om.halo) om.halo.visible = false;
         }
 
-        // Earth satellites — gated by master layerOrbiters + per-category
-        // chips. Per-spacecraft orbit rings track the master toggle.
-        // Empty loop on /moon and /mars (earthSats stays []).
+        // Earth satellites — every category rides the one ORBITERS chip. Per-spacecraft
+        // orbit rings track the same toggle. Empty loop on /moon and /mars (earthSats
+        // stays []).
         if (earthSats.length > 0) {
           for (const s of earthSats) {
-            const catVisible =
-              s.category === 'station'
-                ? layerStations
-                : s.category === 'telescope'
-                  ? layerObservatories
-                  : s.category === 'constellation'
-                    ? layerConstellations
-                    : s.category === 'comsat'
-                      ? layerComsats
-                      : true; // moon-orbiters (+ uncategorised) ride the master ORBITERS toggle
             // Nation filter (#363) — earth orbiters bucketed by primary agency.
             // Body-focus gate (#zoom) — drop sats + rings on deep zoom too.
-            const on =
-              orbitsInView && layerOrbiters && catVisible && nationEnabled(nationBySatId.get(s.id));
+            const on = orbitsInView && layerOrbiters && nationEnabled(nationBySatId.get(s.id));
             s.group.visible = on;
             if (s.ringMesh) s.ringMesh.visible = on;
           }
@@ -3877,9 +4054,17 @@
           const om = orbitalMarkers.find((x) => x.dotGroup.userData.siteId === hoveredSiteId);
           if (om) outlineMeshes.push(om.dotGroup);
         }
-        // /earth — Earth-satellite hover outline. Skipped if the same
-        // satellite is currently selected so the outline doesn't
-        // double up with the selection chrome.
+        // A selected orbiter or Earth satellite wears the same outline as on hover (the only
+        // selection mark an orbiter has: no halo, and its panel may cover the label).
+        if (selected?.kind === 'orbiter') {
+          const om = orbitalMarkers.find((x) => x.dotGroup.userData.siteId === selected?.id);
+          if (om?.dotGroup.visible) outlineMeshes.push(om.dotGroup);
+        }
+        // /earth — Earth-satellite hover outline, and the selected satellite's mark.
+        if (selectedSat) {
+          const sat = earthSats.find((s) => s.id === selectedSat?.id);
+          if (sat?.group.visible) outlineMeshes.push(sat.group);
+        }
         if (hoveredSatId && hoveredSatId !== selectedSat?.id) {
           const sat = earthSats.find((s) => s.id === hoveredSatId);
           if (sat) outlineMeshes.push(sat.group);
@@ -3923,13 +4108,15 @@
         // ruler. Hysteresis (hide < threshold, re-show > threshold × 1.12)
         // keeps it from flickering when parked near the boundary.
         if (onOrbitsInViewChange) {
-          const orbitRulerHideKm = config.radiusKm * ORBIT_RULER_HIDE_RADII;
-          if (orbitsInView && altitudeKm < orbitRulerHideKm) {
-            orbitsInView = false;
-            onOrbitsInViewChange(false);
-          } else if (!orbitsInView && altitudeKm > orbitRulerHideKm * 1.12) {
-            orbitsInView = true;
-            onOrbitsInViewChange(true);
+          const next = orbitsInViewNext({
+            altitudeKm,
+            radiusKm: config.radiusKm,
+            wasInView: orbitsInView,
+            focusOnOrbiter: selected?.kind === 'orbiter' || selectedSat != null,
+          });
+          if (next !== orbitsInView) {
+            orbitsInView = next;
+            onOrbitsInViewChange(next);
           }
         }
 
@@ -4471,7 +4658,7 @@
           const lander3dFade = Math.max(0, 1 - regionalOpacity * 4);
           for (const h of lander3dFade < 0.999 ? hotspots : []) {
             if (h.tier1Group) {
-              h.tier1Group.visible = layerGround && layerLaunchpads && lander3dFade > 0.01;
+              h.tier1Group.visible = layerLaunchpads && lander3dFade > 0.01;
               h.tier1Group.traverse((obj) => {
                 if (!(obj instanceof THREE.Mesh)) return;
                 const mat = obj.material as THREE.Material & { opacity: number };
@@ -4482,7 +4669,7 @@
               });
             }
             if (h.tier0Group) {
-              h.tier0Group.visible = layerGround && layerLaunchpads && lander3dFade > 0.01;
+              h.tier0Group.visible = layerLaunchpads && lander3dFade > 0.01;
               h.tier0Group.traverse((obj) => {
                 if (!(obj instanceof THREE.Mesh)) return;
                 const mat = obj.material as THREE.Material & { opacity: number };
@@ -4880,11 +5067,8 @@
             }
           }
 
-          // Distance scale bar — visible whenever either tier-2 layer
-          // is fading in (regional CTX or detail HiRISE). Picks a
-          // "nice" 1 / 2 / 5 × 10ⁿ round-number km value whose pixel
-          // width is closest to TARGET_BAR_PX (≈ 110 px); the bar
-          // overlay below the canvas renders at the resolved width.
+          // Distance scale bar — visible whenever either tier-2 layer is fading in.
+          // Constant pixel width (UXD-021); the km or m value beside it follows the zoom.
           if (regionalOpacity > 0.01 || detailOpacity > 0.01) {
             const surfaceDistanceForBar = Math.max(0.05, camR - 30);
             const viewportHForBar = renderer.domElement.clientHeight || window.innerHeight;
@@ -4892,32 +5076,18 @@
               (2 * surfaceDistanceForBar * Math.tan((camera.fov * Math.PI) / 360)) /
               viewportHForBar;
             const kmPerWorldUnit = config.radiusKm / planetRadius;
-            const kmPerPx = worldPerPxForBar * kmPerWorldUnit;
-            const TARGET_BAR_PX = 110;
-            const targetKm = kmPerPx * TARGET_BAR_PX;
-            const exp = Math.floor(Math.log10(targetKm));
-            const base = targetKm / Math.pow(10, exp);
-            let mantissa: number;
-            if (base < 1.5) mantissa = 1;
-            else if (base < 3.5) mantissa = 2;
-            else if (base < 7.5) mantissa = 5;
-            else mantissa = 10;
-            const niceKm = mantissa * Math.pow(10, exp);
-            const widthPx = niceKm / kmPerPx;
-            const label =
-              niceKm >= 1
-                ? `${niceKm} km`
-                : niceKm >= 0.001
-                  ? `${Math.round(niceKm * 1000)} m`
-                  : `${(niceKm * 1000).toFixed(1)} m`;
-            // Skip the assignment if values are unchanged — keeps
-            // Svelte from re-rendering the overlay every frame.
-            if (
-              !scaleBar ||
-              Math.abs(scaleBar.widthPx - widthPx) > 0.5 ||
-              scaleBar.label !== label
-            ) {
-              scaleBar = { widthPx, label };
+            const barPx = scaleBarWidth(renderer.domElement.clientWidth || window.innerWidth);
+            const bar = fixedScaleBar(worldPerPxForBar * kmPerWorldUnit, barPx);
+            if (bar) {
+              const q = worldsBarQuantity(bar.units);
+              const label = distanceWithUnit(formatBarValue(q.value, getLocale()), q.unit);
+              // Skip the assignment if values are unchanged — keeps
+              // Svelte from re-rendering the overlay every frame.
+              if (!scaleBar || scaleBar.widthPx !== bar.widthPx || scaleBar.label !== label) {
+                scaleBar = { widthPx: bar.widthPx, label };
+              }
+            } else if (scaleBar !== null) {
+              scaleBar = null;
             }
           } else if (scaleBar !== null) {
             scaleBar = null;
@@ -5350,6 +5520,19 @@
           }
         }
 
+        // The ruler's regime, drawn only while the orbits are in view (the ruler's own gate).
+        if (regimeHl) {
+          if (orbitsInView) {
+            regimeHl.update(
+              camera,
+              container?.clientWidth ?? 1,
+              container?.clientHeight ?? 1,
+              now,
+              reducedMotion,
+            );
+          } else regimeHl.group.visible = false;
+        }
+
         if (view === '3d') {
           // composer is null on minimal/low tiers — render direct.
           if (composer) composer.render();
@@ -5396,11 +5579,17 @@
 
 <div
   bind:this={sceneRoot}
+  data-regime-highlight={regimeHlState || undefined}
   class="surface-scene"
   style:--body-tint={config.bodyTintCss}
+  style:--chip-tint={config.planet === 'earth' ? undefined : config.bodyTintCss}
   style:--mcd-bottom="calc(8px + env(safe-area-inset-bottom, 0px))"
   style:--index-handle-top={indexHandleTop != null ? `${indexHandleTop}px` : undefined}
-  style:--card-bottom={legendH ? `${48 + legendH + 8 + locateReservePx}px` : undefined}
+  style:--index-top={indexTopPx != null ? `${indexTopPx}px` : undefined}
+  style:--card-bottom={legendH && !legendAway
+    ? `${48 + legendH + 8 + locateReservePx}px`
+    : undefined}
+  style:--hint-bottom={legendH && !legendAway ? `${48 + legendH + 8}px` : undefined}
 >
   <div
     class="layer"
@@ -5418,7 +5607,15 @@
         blocked={ringBlocked}
         onOpenPhoto={(src) => (panelLightbox = src)}
         onZoomTo={(_x, _y, factor) => zoomPatchBy(factor)}
-        onRingTap={reopenPanelAt}
+        onRingTap={(x, y, id, e) => {
+          // The ring overlay shifts with the view while a panel is docked or the shift settles,
+          // so the crosshair test reads the click's own position in container px.
+          if (e && container) {
+            const r = container.getBoundingClientRect();
+            return reopenPanelAt(e.clientX - r.left, e.clientY - r.top, id);
+          }
+          return reopenPanelAt(x, y, id);
+        }}
       />
     {/if}
   </div>
@@ -5441,18 +5638,9 @@
        ground-view skybox, and their stack visually buried the
        Exit-panorama floating button (image 21 feedback, 2026-06-03). -->
   {#snippet layerChips()}
-    <!-- /earth groups its chips under ON EARTH and IN SPACE; each header is
-         the master switch for its group (IN SPACE is the ORBITERS master,
-         keeping its testid). /moon and /mars keep the flat row. -->
-    {@const earthGroups = config.earthOrbitalLayers?.satellites != null}
-    {@const orbitersChip = {
-      testid: 'layer-orbiters',
-      label: earthGroups ? m.earth_layer_group_space() : m.ui_layer_orbiters(),
-      title: earthGroups ? m.earth_layer_group_space_tip() : m.moon_layer_tip_orbiters(),
-      active: () => layerOrbiters,
-      toggle: () => (layerOrbiters = !layerOrbiters),
-      header: earthGroups,
-    }}
+    <!-- One flat row on every world (UXD-015): no groups, no master switches.
+         The ORBITERS chip switches every orbiter at once; on /earth that is
+         stations, space telescopes, constellations, comsats and Moon orbiters. -->
     <div class="ctrl-row chips" role="group" aria-label={m.ui_visibility_layers()}>
       <LayerChipRow
         chips={[
@@ -5465,24 +5653,9 @@
             active: () => !surfaceOff,
             toggle: cycleSurfaceMode,
           },
-          ...(earthGroups ? [] : [orbitersChip]),
-          ...(earthGroups
+          // LAUNCHPADS — /earth only (the route passes the launch-site config).
+          ...(config.earthOrbitalLayers?.satellites != null
             ? [
-                {
-                  testid: 'layer-group-earth',
-                  label: m.earth_layer_group_ground(),
-                  title: m.earth_layer_group_ground_tip(),
-                  active: () => layerGround,
-                  toggle: () => {
-                    layerGround = !layerGround;
-                    if (!layerGround) {
-                      selectedMuseum = null;
-                      selectedObservatory = null;
-                    }
-                    dropHiddenPadSelection();
-                  },
-                  header: true,
-                },
                 {
                   testid: 'layer-launchpads',
                   label: m.launchpad_layer_chip(),
@@ -5492,21 +5665,9 @@
                     layerLaunchpads = !layerLaunchpads;
                     dropHiddenPadSelection();
                   },
-                  disabled: () => !layerGround,
                 },
               ]
             : []),
-          {
-            testid: 'layer-orbits',
-            label: m.ui_layer_orbits(),
-            title: m.moon_layer_tip_orbit_rings(),
-            active: () => layerOrbits,
-            toggle: () => (layerOrbits = !layerOrbits),
-            // ORBITS toggles the per-orbiter inclined rings on /moon + /mars.
-            // /earth had no such rings under this chip — it only drove the
-            // regime bands, now removed (#363) — so the chip is hidden there.
-            visible: config.earthOrbitalLayers == null,
-          },
           // MUSEUMS (PRD-027) — /earth only, when the route passes loadMuseums.
           ...(loadMuseums != null
             ? [
@@ -5519,27 +5680,49 @@
                     layerMuseums = !layerMuseums;
                     if (!layerMuseums) selectedMuseum = null;
                   },
-                  disabled: () => !layerGround,
                 },
               ]
             : []),
-          // TELESCOPES (PRD-028) — observatories on the ground; the existing
-          // OBSERVATORIES chip is the space telescopes in orbit.
+          // OBSERVATORIES (PRD-028) — telescopes on the ground. The testid
+          // keeps its old name (layer-telescopes) so the specs do not move.
           ...(loadObservatories != null
             ? [
                 {
                   testid: 'layer-telescopes',
-                  label: m.observatory_layer_chip(),
+                  label: m.earth_layer_chip_observatories(),
                   title: m.observatory_layer_tip(),
                   active: () => layerTelescopes,
                   toggle: () => {
                     layerTelescopes = !layerTelescopes;
                     if (!layerTelescopes) selectedObservatory = null;
                   },
-                  disabled: () => !layerGround,
                 },
               ]
             : []),
+          {
+            testid: 'layer-orbiters',
+            label: m.ui_layer_orbiters(),
+            title:
+              config.earthOrbitalLayers?.satellites != null
+                ? m.earth_layer_tip_orbiters()
+                : m.moon_layer_tip_orbiters(),
+            active: () => layerOrbiters,
+            toggle: () => {
+              layerOrbiters = !layerOrbiters;
+              dropHiddenOrbiterSelection();
+            },
+          },
+          {
+            testid: 'layer-orbits',
+            label: m.ui_layer_orbits(),
+            title: m.moon_layer_tip_orbit_rings(),
+            active: () => layerOrbits,
+            toggle: () => (layerOrbits = !layerOrbits),
+            // ORBITS toggles the per-orbiter inclined rings on /moon + /mars.
+            // /earth had no such rings under this chip — it only drove the
+            // regime bands, now removed (#363) — so the chip is hidden there.
+            visible: config.earthOrbitalLayers == null,
+          },
           // TRAVERSES chip shows only when this body has vendored
           // rover paths (Mars today; Moon EVA / Lunokhod future).
           ...(loadTraverses != null
@@ -5549,65 +5732,11 @@
                   label: m.ui_layer_traverses(),
                   title: m.mars_layer_tip_traverses(),
                   active: () => layerTraverses,
-                  toggle: () => (layerTraverses = !layerTraverses),
+                  toggle: () => {
+                    layerTraverses = !layerTraverses;
+                    dropHiddenTraverseSelection();
+                  },
                 },
-              ]
-            : []),
-          // Earth-only satellite-category chips (#290 Slice 6), under the
-          // IN SPACE header (the ORBITERS master) — visible only when
-          // earthOrbitalLayers.satellites is configured.
-          ...(config.earthOrbitalLayers?.satellites != null
-            ? [
-                orbitersChip,
-                // The 5 Earth-only sub-chips are gated on the master
-                // ORBITERS toggle (per-frame visibility = layerOrbiters
-                // && catVisible). When the master is off, clicking a
-                // sub-chip silently flips state but the scene doesn't
-                // change — the user reads this as "chip is broken"
-                // (2026-06-15 user note: "tuned off orbiters [and the
-                // sub-chips appeared dead] -- grayed out solution
-                // please and disable in UI"). Each sub-chip now reads
-                // disabled when ORBITERS is off, which dims it via
-                // .chip:disabled CSS in LayerChipRow + blocks clicks
-                // natively. Turning ORBITERS back on makes the chips
-                // live again at whatever individual state they held.
-                {
-                  testid: 'layer-stations',
-                  label: m.ui_layer_stations(),
-                  title: m.earth_layer_tip_habitats(),
-                  active: () => layerStations,
-                  toggle: () => (layerStations = !layerStations),
-                  disabled: () => !layerOrbiters,
-                },
-                {
-                  testid: 'layer-observatories',
-                  // Space telescopes; the IN SPACE header says where they are.
-                  label: m.observatory_layer_chip(),
-                  title: m.earth_layer_tip_telescopes(),
-                  active: () => layerObservatories,
-                  toggle: () => (layerObservatories = !layerObservatories),
-                  disabled: () => !layerOrbiters,
-                },
-                {
-                  testid: 'layer-constellations',
-                  label: m.ui_layer_constellations(),
-                  title: m.earth_layer_tip_nav(),
-                  active: () => layerConstellations,
-                  toggle: () => (layerConstellations = !layerConstellations),
-                  disabled: () => !layerOrbiters,
-                },
-                {
-                  testid: 'layer-comsats',
-                  label: m.ui_layer_comsats(),
-                  title: m.earth_layer_tip_geo(),
-                  active: () => layerComsats,
-                  toggle: () => (layerComsats = !layerComsats),
-                  disabled: () => !layerOrbiters,
-                },
-                // MOON ORBITERS chip removed (2026-06-29 user direction):
-                // the master ORBITERS toggle already covers lunar orbiters,
-                // so a separate sub-chip was redundant. Moon-orbiters now
-                // ride the ORBITERS master like any other orbiter.
               ]
             : []),
         ]}
@@ -5619,8 +5748,18 @@
     </div>
   {/snippet}
 
+  <!-- The way back to the same body on /explore (UXD-028): the first control of the view row. -->
+  {#snippet backToExplore(testid: string)}
+    {#if explorePath}
+      <Chip kind="link" href={localHref(explorePath)} data-testid={testid}
+        >{m.world_back_to_explore()}</Chip
+      >
+    {/if}
+  {/snippet}
+
   {#snippet surfaceControls()}
     <div class="ctrl-row">
+      {@render backToExplore('surface-back-to-explore')}
       {#if !config.disable2D}
         <ViewToggleButton
           is2d={view === '2d'}
@@ -5628,13 +5767,12 @@
           onToggle={toggleView}
         />
       {/if}
-      {#if view === '3d'}
-        <View3dControls
-          onReset={() => resetCamera()}
-          {autoSpin}
-          onToggleSpin={() => (autoSpin = !autoSpin)}
-        />
-      {/if}
+      <View3dControls
+        onReset={() => resetCamera()}
+        {autoSpin}
+        onToggleSpin={() => (autoSpin = !autoSpin)}
+        disabled={view !== '3d'}
+      />
       {#if arType}
         <EnterArButton onEnter={() => void launchArScene(arType)} />
         <EnterSkyButton onEnter={() => void launchSkyScene()} />
@@ -5659,6 +5797,7 @@
       <OrbitRuler
         {regimes}
         highlightRegime={null}
+        collapsible={false}
         onSelect={(id) => {
           onRegimeOpen?.(id);
           close();
@@ -5694,20 +5833,19 @@
   {#snippet mobileNationsContent(close: () => void)}
     <div class="nations-drawer" role="group" aria-label={m.moon_legend_nation_aria()}>
       {#each Object.entries(legendPalette) as [nation, color] (nation)}
-        <button
-          type="button"
-          class="legend-item"
-          class:legend-item--off={!nationEnabled(nation)}
-          aria-pressed={nationEnabled(nation)}
+        <Chip
+          kind="toggle"
+          dot
+          tone={color}
+          active={nationEnabled(nation)}
           data-testid="legend-nation-{nation}"
           onclick={() => {
             toggleNation(nation);
             close();
           }}
         >
-          <span class="legend-dot" style:background={color}></span>
           {countryLabel(nation)}
-        </button>
+        </Chip>
       {/each}
     </div>
   {/snippet}
@@ -5715,6 +5853,7 @@
   {#if !panoramaActive}
     <div
       class="hud-controls"
+      class:hud-beside-panel={detailPanelOpen}
       class:flat-hidden={flatPatchActive}
       data-audio-stage="surface-hud"
       role="group"
@@ -5731,6 +5870,7 @@
       role="group"
       aria-label={m.ui_view_controls()}
     >
+      {@render backToExplore('surface-back-to-explore-mobile')}
       {#if !config.disable2D}
         <ViewToggleButton
           is2d={view === '2d'}
@@ -5738,26 +5878,21 @@
           onToggle={toggleView}
         />
       {/if}
-      {#if view === '3d'}
-        <button
-          type="button"
-          class="toggle"
-          data-testid="surface-reset-view-mobile"
-          onclick={() => resetCamera()}
-        >
-          {m.ui_reset_view()}
-        </button>
-        <button
-          type="button"
-          class="toggle"
-          data-testid="surface-spin-toggle-mobile"
-          aria-pressed={!autoSpin}
-          title={m.iss_btn_spin_title()}
-          onclick={() => (autoSpin = !autoSpin)}
-        >
-          {m.iss_btn_spin()}
-        </button>
-      {/if}
+      <ResetViewButton
+        data-testid="surface-reset-view-mobile"
+        onclick={() => resetCamera()}
+        disabled={view !== '3d'}
+      />
+      <Chip
+        kind="toggle"
+        active={!autoSpin}
+        data-testid="surface-spin-toggle-mobile"
+        title={m.iss_btn_spin_title()}
+        onclick={() => (autoSpin = !autoSpin)}
+        disabled={view !== '3d'}
+      >
+        {m.iss_btn_spin()}
+      </Chip>
       {#if arType}
         <EnterArButton onEnter={() => void launchArScene(arType)} />
         <EnterSkyButton onEnter={() => void launchSkyScene()} />
@@ -5781,31 +5916,40 @@
         ]}
         onOpen={(id) => (mobileDrawerOpen = id !== null)}
       />
-      <!-- Desktop object index: an edge-handle toggles a left side panel.
-           Mobile uses the Index drawer tab above; both are gated by CSS so
-           only one shows per device. Selecting keeps the list open on desktop
-           (master → detail on the right) but closes the drawer on mobile. -->
-      <button
-        type="button"
-        class="surface-index-handle"
-        data-testid="surface-index-toggle"
-        aria-pressed={indexOpen}
-        aria-label={m.surface_index_open()}
-        title={m.surface_index_open()}
-        onclick={() => (indexOpen = !indexOpen)}
-      >
-        <span class="sih-label">{m.surface_index_open()}</span>
-      </button>
-      {#if indexOpen}
-        <aside class="surface-index-desktop" aria-label={m.surface_index_aria()}>
+      <!-- Object index: an edge-handle toggles a left side panel on every viewport.
+           Selecting keeps the list open (master → detail on the right). -->
+      <div class="surface-index-handle">
+        <Chip
+          kind="toggle"
+          active={indexOpen}
+          data-testid="surface-index-toggle"
+          aria-label={m.surface_index_open()}
+          title={m.surface_index_open()}
+          onclick={() => (indexOpen = !indexOpen)}
+        >
+          {m.surface_index_open()}
+        </Chip>
+      </div>
+      <!-- On a hub body (moon / mars / venus) the panel is always in the DOM, hidden while
+           closed: its list carries the real links to every entity page, so the prerendered
+           HTML links them all (ADR-096 item 11; the A–Z tab it replaced is gone). -->
+      {#if indexOpen || entityLinks.length > 0}
+        <aside
+          class="surface-index-desktop"
+          hidden={!indexOpen}
+          aria-label={m.surface_index_aria()}
+        >
           <SurfaceIndexPanel
             items={indexItems}
+            {entityLinks}
+            hub={body}
             selectedId={indexSelectedId}
             onSelect={(id) => {
               cue('select');
               selectSite(id, { face: true });
             }}
             onClose={() => (indexOpen = false)}
+            open={indexOpen}
           />
         </aside>
       {/if}
@@ -5870,8 +6014,7 @@ sample      ${debugInfo.projectedPxSample}`}
          inside the inverted skybox. -->
     {#if scaleBar && view === '3d' && !panoramaActive && !flatPatchActive}
       <div class="distance-scale" class:beside-panel={panelOpen} data-testid="distance-scale">
-        <div class="distance-scale-bar" style="width: {scaleBar.widthPx}px"></div>
-        <div class="distance-scale-label mono">{scaleBar.label}</div>
+        <ScaleBar widthPx={scaleBar.widthPx} label={scaleBar.label} />
       </div>
     {/if}
     {#if view === '3d' && !flatPatchActive && !panoramaActive && !mobileDrawerOpen && altitudeKm >= config.radiusKm * 0.044}
@@ -5960,6 +6103,17 @@ sample      ${debugInfo.projectedPxSample}`}
       howItWorksHref={HOW_IMAGERY_WORKS[config.planet]
         ? localHref(HOW_IMAGERY_WORKS[config.planet]!)
         : undefined}
+    />
+  {/if}
+
+  <!-- W1 welcome hint (UXD-027): one dismissible line inviting a zoom, the same component as
+       /explore's. Gone after the first wheel, pinch, tap or drag on the canvas, or in 12 s. -->
+  {#if !hintDone && view === '3d' && !panoramaActive}
+    <ExploreHint
+      text={m.surface_hint_zoom()}
+      testid="surface-hint"
+      topOnTouch
+      ondismiss={() => (hintDone = true)}
     />
   {/if}
 
@@ -6088,43 +6242,46 @@ sample      ${debugInfo.projectedPxSample}`}
        buttons sometimes hide them. Put them in upper right corner
        instead"). Esc remains the keyboard shortcut for both modes. -->
   {#if panoramaActive && !panelOpen}
-    <button
-      type="button"
-      class="surface-floating-exit"
-      onclick={() => exitPanorama()}
-      data-testid="panorama-floating-exit"
-      title={m.surface_exit_panorama_title()}
-    >
-      <span class="x mono" aria-hidden="true">✕</span>
-      <span>{m.surface_exit_panorama()}</span>
-    </button>
+    <div class="surface-floating-exit">
+      <Chip
+        kind="action"
+        onclick={() => exitPanorama()}
+        data-testid="panorama-floating-exit"
+        title={m.surface_exit_panorama_title()}
+      >
+        {#snippet icon()}✕{/snippet}
+        {m.surface_exit_panorama()}
+      </Chip>
+    </div>
   {/if}
   {#if flatPatchActive && !panoramaActive && !panelOpen}
-    <button
-      type="button"
-      class="surface-floating-exit"
-      onclick={() => closeFlatPatch()}
-      data-testid="zoom-floating-exit"
-      title={m.surface_exit_zoom_title()}
-    >
-      <span class="x mono" aria-hidden="true">✕</span>
-      <span>{m.surface_exit_zoom()}</span>
-    </button>
+    <div class="surface-floating-exit">
+      <Chip
+        kind="action"
+        onclick={() => closeFlatPatch()}
+        data-testid="zoom-floating-exit"
+        title={m.surface_exit_zoom_title()}
+      >
+        {#snippet icon()}✕{/snippet}
+        {m.surface_exit_zoom()}
+      </Chip>
+    </div>
   {/if}
   <!-- #380 — route-view auto-closes the panel on mobile (so the whole route is
        visible), so surface an exit control outside the panel too. Esc works on
        desktop; the in-panel toggle covers the panel-open case. -->
   {#if routeViewActive && !panoramaActive && !flatPatchActive && !panelOpen}
-    <button
-      type="button"
-      class="surface-floating-exit"
-      onclick={() => exitRouteView()}
-      data-testid="route-floating-exit"
-      title={m.surface_exit_route_title()}
-    >
-      <span class="x mono" aria-hidden="true">✕</span>
-      <span>{m.surface_exit_route()}</span>
-    </button>
+    <div class="surface-floating-exit">
+      <Chip
+        kind="action"
+        onclick={() => exitRouteView()}
+        data-testid="route-floating-exit"
+        title={m.surface_exit_route_title()}
+      >
+        {#snippet icon()}✕{/snippet}
+        {m.surface_exit_route()}
+      </Chip>
+    </div>
   {/if}
 
   <!-- Auto-tour guided mode (PRD-022 / ADR-074, #286 Phase 3C).
@@ -6159,32 +6316,23 @@ sample      ${debugInfo.projectedPxSample}`}
   {#if !panoramaActive}
     <div
       class="legend-3d"
-      class:legend-3d--away={nationFilterAway({
-        view,
-        tagStageOn,
-        altitudeKm,
-        radiusKm: config.radiusKm,
-        routeViewActive,
-        flatPatchActive,
-        detailFlying,
-      })}
+      class:legend-3d--away={legendAway}
       class:beside-panel={panelOpen}
       bind:this={legendEl}
       role="group"
       aria-label={m.moon_legend_nation_aria()}
     >
       {#each Object.entries(legendPalette) as [nation, color] (nation)}
-        <button
-          type="button"
-          class="legend-item"
-          class:legend-item--off={!nationEnabled(nation)}
-          aria-pressed={nationEnabled(nation)}
+        <Chip
+          kind="toggle"
+          dot
+          tone={color}
+          active={nationEnabled(nation)}
           data-testid="legend-nation-{nation}"
           onclick={() => toggleNation(nation)}
         >
-          <span class="legend-dot" style:background={color}></span>
           {countryLabel(nation)}
-        </button>
+        </Chip>
       {/each}
     </div>
   {/if}
@@ -6219,11 +6367,17 @@ sample      ${debugInfo.projectedPxSample}`}
   <Panel
     open={panelOpen}
     title={selected?.name ?? selected?.id ?? ''}
-    onClose={() => (panelOpen = false)}
+    onClose={() => {
+      panelOpen = false;
+      // An orbiter's focus ends with its panel (as an Earth satellite's does): the dot is released
+      // and the orbit gate returns to the camera's height.
+      if (selected?.kind === 'orbiter') selected = null;
+    }}
+    onShare={cardSpec ? () => (cardOpen = true) : undefined}
   >
-    {#if selected}
-      {@const tone = statusTone(selected.status, selected.kind, selected.site_role)}
-      <div class="head" style:--accent={colorFor(selected)}>
+    {#snippet eyebrow()}
+      {#if selected}
+        {@const tone = statusTone(selected.status, selected.kind, selected.site_role)}
         <AgencyRow agency={selected.agency} color={colorFor(selected)}>
           {#if inlineRegime && onRegimeOpen}
             <RegimeChip regime={inlineRegime} onClick={() => onRegimeOpen?.(inlineRegime.id)} />
@@ -6235,7 +6389,16 @@ sample      ${debugInfo.projectedPxSample}`}
             {tone.label}
           </span>
         </AgencyRow>
+      {/if}
+    {/snippet}
+    {#snippet heading()}
+      {#if selected}
         <h1 class="name">{selected.name ?? selected.id}</h1>
+      {/if}
+    {/snippet}
+
+    {#if selected}
+      <div class="head" style:--accent={colorFor(selected)}>
         {#if selected.mission_type || selected.site_name}
           <p class="type">
             {selected.mission_type ?? ''}
@@ -6249,7 +6412,9 @@ sample      ${debugInfo.projectedPxSample}`}
             {/if}
           </p>
         {/if}
-        <!-- Site CTA row — Approach · Stand at site · Zoom to detail.
+      </div>
+
+      <!-- Site CTA row — Approach · Stand at site · Zoom to detail.
              (2026-06-17 user direction: "can we on all landing sites
              [add] approach, stand at site and zoom to details buttons
              as we did on missions, color them and put them next to
@@ -6276,77 +6441,72 @@ sample      ${debugInfo.projectedPxSample}`}
                Flips to "Exit zoom view" while flatPatchActive. When
                clicked from inside a panorama it first exits the pano
                (which restores camR) then flies to the detail patch. -->
-        <div class="site-cta-bar">
-          <!-- Approach button removed (user direction): selecting a site now
+      <PanelActions>
+        <!-- Approach button removed (user direction): selecting a site now
                auto-frames it via faceCameraAtSite (the focus-on-select
                behaviour), same as orbiters — so a manual "Approach" was
                redundant, and pulled the camera BACK to R≈85 after the
                select had already flown in to R≈50. Zoom-to-detail + Stand
                at site stay (distinct actions). -->
 
-          <PanoramaToggleButton
-            panoramaUrl={selected.hotspot_tier3_panorama}
-            siteId={selected.id}
-            {panoramaActive}
-            onEnter={(url, id) => {
-              routeViewActive = false; // switching route-view → panorama
-              enterPanorama(url, id);
-            }}
-            onExit={exitPanorama}
-          />
-          <!-- #380 — frame the whole rover route (line + tiles + regional). -->
-          {#if (traverses[selected.id]?.points?.length ?? 0) >= 2}
-            {#if routeViewActive}
-              <button
-                type="button"
-                class="zoom-to-detail-button zoom-to-detail-button--exit"
-                data-testid="exit-route-view"
-                onclick={() => exitRouteView()}
-                title={m.surface_exit_route_title()}
-              >
-                <span>{m.surface_exit_route()}</span>
-              </button>
-            {:else}
-              <button
-                type="button"
-                class="zoom-to-detail-button"
-                data-testid="view-route"
-                onclick={() => selected && enterRouteView(selected)}
-              >
-                <span>{m.surface_view_route()}</span>
-              </button>
-            {/if}
+        <PanoramaToggleButton
+          panoramaUrl={selected.hotspot_tier3_panorama}
+          siteId={selected.id}
+          {panoramaActive}
+          onEnter={(url, id) => {
+            routeViewActive = false; // switching route-view → panorama
+            enterPanorama(url, id);
+          }}
+          onExit={exitPanorama}
+        />
+        <!-- #380 — frame the whole rover route (line + tiles + regional). -->
+        {#if (traverses[selected.id]?.points?.length ?? 0) >= 2}
+          {#if routeViewActive}
+            <Chip
+              kind="action"
+              data-testid="exit-route-view"
+              onclick={() => exitRouteView()}
+              title={m.surface_exit_route_title()}
+            >
+              {m.surface_exit_route()}
+            </Chip>
+          {:else}
+            <Chip
+              kind="action"
+              data-testid="view-route"
+              onclick={() => selected && enterRouteView(selected)}
+            >
+              {m.surface_view_route()}
+            </Chip>
           {/if}
-          {#if selected.hotspot_tier2_source}
-            {#if flatPatchActive}
-              <button
-                type="button"
-                class="zoom-to-detail-button zoom-to-detail-button--exit"
-                data-testid="exit-zoom"
-                onclick={() => closeFlatPatch()}
-                title={m.surface_exit_zoom_title()}
-              >
-                <span>{m.surface_exit_zoom_view()}</span>
-              </button>
-            {:else}
-              <button
-                type="button"
-                class="zoom-to-detail-button"
-                data-testid="zoom-to-detail"
-                onclick={() => {
-                  // Switching pano → zoom: exit pano first so camR is
-                  // restored above flyToDetail's camR<32 guard.
-                  if (panoramaActive) exitPanorama();
-                  routeViewActive = false; // switching route-view → zoom
-                  if (selected) flyToDetail?.(selected);
-                }}
-              >
-                <span>{m.surface_zoom_detail()}</span>
-              </button>
-            {/if}
+        {/if}
+        {#if selected.hotspot_tier2_source}
+          {#if flatPatchActive}
+            <Chip
+              kind="action"
+              data-testid="exit-zoom"
+              onclick={() => closeFlatPatch()}
+              title={m.surface_exit_zoom_title()}
+            >
+              {m.surface_exit_zoom_view()}
+            </Chip>
+          {:else}
+            <Chip
+              kind="action"
+              data-testid="zoom-to-detail"
+              onclick={() => {
+                // Switching pano → zoom: exit pano first so camR is
+                // restored above flyToDetail's camR<32 guard.
+                if (panoramaActive) exitPanorama();
+                routeViewActive = false; // switching route-view → zoom
+                if (selected) flyToDetail?.(selected);
+              }}
+            >
+              {m.surface_zoom_detail()}
+            </Chip>
           {/if}
-        </div>
-      </div>
+        {/if}
+      </PanelActions>
 
       {#if panelGallery.length > 0}
         <PanelHeroImage
@@ -6361,6 +6521,7 @@ sample      ${debugInfo.projectedPxSample}`}
 
       <PanelTabRow
         tabs={buildSurfacePanelTabs({
+          kind: panelIsOrbiter ? 'orbiter' : 'site',
           hasGallery: panelGallery.length > 0 || panelVideos.length > 0,
           hasStory: !!panelStory,
           hasLinks: panelHasLinks,
@@ -6599,19 +6760,24 @@ sample      ${debugInfo.projectedPxSample}`}
             <ul class="launches-from-here-chips">
               {#each selected.linked_missions as missionId (missionId)}
                 <li>
-                  <a
-                    class="launches-chip"
+                  <Chip
+                    kind="link"
                     href={localHref(`/missions?id=${missionId}`)}
                     data-testid="launches-from-here-chip"
                   >
                     {missionId.replace(/([a-z])(\d)/g, '$1 $2').toUpperCase()}
-                  </a>
+                  </Chip>
                 </li>
               {/each}
             </ul>
           </section>
         {/if}
 
+        {#if traverses[selected.id]?.approximate}
+          <div class="credit" data-testid="traverse-approximate">
+            {m.traverse_approximate_route()}
+          </div>
+        {/if}
         {#if selected.credit}
           <div class="credit">{selected.credit}</div>
         {/if}
@@ -6645,9 +6811,24 @@ sample      ${debugInfo.projectedPxSample}`}
           </PanelGalleryGrid>
           <p class="gallery-credit">{panelGalleryCredit(selected.agency)}</p>
         {/if}
-      {:else if panelTab === 'story' && (panelStory || panelAnatomy.length > 0 || panelSequence)}
+      {:else if panelTab === 'details' && panelIsOrbiter && panelAnatomy.length > 0}
+        <SiteLandingPanel
+          heading="spacecraft"
+          anatomy={panelAnatomy}
+          locale={localeFromPage(page)}
+          onOpen={(src) => (panelLightbox = src)}
+        />
+        {#if panelAnatomy.some((a) => a.exploded)}
+          <SiteLandingPanel
+            part="exploded"
+            anatomy={panelAnatomy}
+            locale={localeFromPage(page)}
+            onOpen={(src) => (panelLightbox = src)}
+          />
+        {/if}
+      {:else if panelTab === 'story' && (panelStory || (!panelIsOrbiter && (panelAnatomy.length > 0 || panelSequence)))}
         {#snippet landingGraphics()}
-          {#if panelAnatomy.length > 0 || panelSequence}
+          {#if !panelIsOrbiter && (panelAnatomy.length > 0 || panelSequence)}
             <SiteLandingPanel
               anatomy={panelAnatomy}
               sequence={panelSequence}
@@ -6657,7 +6838,7 @@ sample      ${debugInfo.projectedPxSample}`}
           {/if}
         {/snippet}
         {#snippet cutawayGraphics()}
-          {#if panelAnatomy.some((a) => a.exploded)}
+          {#if !panelIsOrbiter && panelAnatomy.some((a) => a.exploded)}
             <SiteLandingPanel
               part="exploded"
               anatomy={panelAnatomy}
@@ -6683,15 +6864,14 @@ sample      ${debugInfo.projectedPxSample}`}
       {:else if panelTab === 'journey'}
         {#if replayRange}
           <div class="replay" data-testid="journey-replay">
-            <button
-              type="button"
-              class="replay-play"
+            <Chip
+              kind="toggle"
+              active={replayPlaying}
               data-testid="journey-replay-play"
-              aria-pressed={replayPlaying}
               onclick={toggleReplay}
             >
               {replayPlaying ? m.journey_replay_pause() : m.journey_replay_play()}
-            </button>
+            </Chip>
             <input
               id="journey-replay-scrub"
               class="replay-scrub"
@@ -6789,21 +6969,6 @@ sample      ${debugInfo.projectedPxSample}`}
         {:else}
           <PanelLinkTiers links={(selected as SurfaceSite).links} entityId={selected.id} />
         {/if}
-      {/if}
-
-      <!-- #547 S5 — every site carries its collectible card (mission card
-           when the site aliases one, fleet card for earth pads). -->
-      {#if cardSpec}
-        <div class="card-cta-bar">
-          <button
-            type="button"
-            class="cta-card"
-            onclick={() => (cardOpen = true)}
-            data-testid="open-card-btn"
-          >
-            {m.card_open_button()}
-          </button>
-        </div>
       {/if}
     {/if}
   </Panel>
@@ -6924,7 +7089,7 @@ sample      ${debugInfo.projectedPxSample}`}
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 4px;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.78);
     text-transform: uppercase;
@@ -7018,13 +7183,12 @@ sample      ${debugInfo.projectedPxSample}`}
      toggle, distance-scale) have phone-tight base values; the two
      @min-width blocks at the end of this stylesheet layer back the
      desktop sizing. */
-  /* ── Desktop object-index edge-handle + side panel ──────────────────
-     Mirrors the ISS modules handle. Hidden on touch (mobile uses the Index
-     drawer tab); shown only for a fine pointer. The open panel is a left
-     side-drawer — master list, with the detail panel opening on the right. */
-  /* A1: the object index is a left-edge pullout tab on ALL viewports
-     (was desktop-only via a hover gate; mobile used a bottom-drawer tab).
-     The panel width is already responsive, so it fits the 375px viewport. */
+  /* ── Object-index edge-handle + side panel ──────────────────────────
+     Mirrors the ISS modules handle and the /explore INDEX (scale-index-handle,
+     src/lib/styles/index-panel.css). A1: a left-edge pullout tab on ALL viewports
+     (there is no Index drawer tab). The open panel is a left side-drawer — master
+     list, with the detail panel opening on the right. Its width is already
+     responsive, so it fits the 375px viewport. */
   .surface-index-handle {
     display: flex;
     align-items: center;
@@ -7037,31 +7201,14 @@ sample      ${debugInfo.projectedPxSample}`}
     z-index: 44;
     writing-mode: vertical-rl;
     transform: translateY(-50%) rotate(180deg);
-    padding: 12px 6px;
-    background: rgba(8, 10, 22, 0.85);
-    border: 1px solid var(--color-border);
-    border-left: none;
-    border-radius: 0 6px 6px 0;
-    color: rgba(255, 255, 255, 0.8);
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 11px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    cursor: pointer;
-    backdrop-filter: blur(6px);
-  }
-  .surface-index-handle:hover,
-  .surface-index-handle[aria-pressed='true'] {
-    color: #4ecdc4;
-    border-color: rgba(78, 205, 196, 0.5);
   }
   .surface-index-desktop {
     display: block;
     position: fixed;
     left: 12px;
-    /* Start below the top-left view controls (matches the ISS modules drawer
-       top:152) so the panel sits UNDER the buttons rather than over them. */
-    top: 152px;
+    /* Starts just under the top-left HUD (published as --index-top from its measured
+       bottom, so a wrapped chip row pushes it down); touch has no HUD and keeps 152. */
+    top: var(--index-top, 152px);
     bottom: 12px;
     width: min(320px, calc(100vw - 24px));
     z-index: 45;
@@ -7072,13 +7219,20 @@ sample      ${debugInfo.projectedPxSample}`}
     box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
     backdrop-filter: blur(8px);
   }
-  /* Landscape phones are very short: the tall top:152 offset leaves too little
+  .surface-index-desktop[hidden] {
+    display: none;
+  }
+  /* Landscape phones are very short: the tall top offset leaves too little
      height and the search + wrapped filter chips squeeze the flex:1 list to 0.
      Tighten the top/bottom on short viewports so the list keeps its scroll area. */
   @media (max-height: 500px) {
     .surface-index-desktop {
-      top: 60px;
       bottom: 8px;
+    }
+  }
+  @media (max-height: 500px) and (hover: none), (max-height: 500px) and (pointer: coarse) {
+    .surface-index-desktop {
+      top: var(--nav-height);
     }
   }
   .hud-controls {
@@ -7107,94 +7261,9 @@ sample      ${debugInfo.projectedPxSample}`}
     gap: 6px;
     pointer-events: auto;
   }
-  /* Port of /mars's stand-at-site button — same slot in the detail
-     panel handles both enter + exit states. Glyph + transparent
-     dark-glass styling match Mars; enter glyph "◐" (planet at
-     night), exit glyph "✕". */
-  .head :global(.stand-at-site) {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    width: 100%;
-    padding: 10px 14px;
-    margin-top: 12px;
-    background: rgba(255, 255, 255, 0.04);
-    color: rgba(255, 255, 255, 0.92);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    border-radius: 2px;
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 1.4px;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition:
-      background 0.15s ease,
-      border-color 0.15s ease,
-      color 0.15s ease;
-  }
-  .head :global(.stand-at-site::before) {
-    content: '◐';
-    font-size: 13px;
-    line-height: 1;
-    color: var(--accent, #4ecdc4);
-  }
-  .head :global(.stand-at-site--exit::before) {
-    content: '✕';
-    color: var(--accent, #4ecdc4);
-  }
-  .head :global(.stand-at-site:hover),
-  .head :global(.stand-at-site:focus-visible) {
-    background: rgba(255, 255, 255, 0.08);
-    border-color: var(--accent, #4ecdc4);
-    color: #fff;
-    outline: none;
-  }
-  /* "Zoom to detail" button — sibling of stand-at-site, same dark-
-     glass chrome but with a downward-arrow glyph instead of the
-     panorama half-moon. Stacks below stand-at-site when both render. */
-  .head .zoom-to-detail-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    width: 100%;
-    padding: 10px 14px;
-    margin-top: 8px;
-    background: rgba(255, 255, 255, 0.04);
-    color: rgba(255, 255, 255, 0.92);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    border-radius: 2px;
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 1.4px;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition:
-      background 0.15s ease,
-      border-color 0.15s ease,
-      color 0.15s ease;
-  }
-  .head .zoom-to-detail-button:hover,
-  .head .zoom-to-detail-button:focus-visible {
-    background: rgba(255, 255, 255, 0.08);
-    border-color: var(--accent, #4ecdc4);
-    color: #fff;
-    outline: none;
-  }
-
-  /* Site CTA row — Approach · Stand at site · Zoom to detail
-     (2026-06-17). Horizontal flex container that overrides the
-     three child buttons' prior full-width stacked styling so they
-     sit side-by-side, each tinted with the site's nation accent
-     colour (--accent set on `.head`). Mirrors the MissionPanel
-     `.cta-bar` pattern (coloured, prominent) but uses the site's
-     own palette instead of MissionPanel's fixed blue. */
   /* Panel-tab active underline tinted to --body-tint inside the
      surface-scene scope. The default in panel-tabs.css is a fixed
-     #4466ff blue — fine across MissionPanel / PlanetPanel / etc., but
+     var(--color-accent) blue — fine across MissionPanel / PlanetPanel / etc., but
      on /moon /mars /earth detail panels the user wants the underline
      to read as part of the current world's palette. Scoped to
      `.surface-scene` so the global default still wins on every other
@@ -7203,68 +7272,7 @@ sample      ${debugInfo.projectedPxSample}`}
      blue [on earth]" — also catches the tab underline since that's
      the panel's primary active-state indicator.) */
   :global(.surface-scene .tabs button.active) {
-    border-bottom-color: var(--body-tint, #4466ff);
-  }
-
-  .head .site-cta-bar {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    margin-top: 14px;
-  }
-  /* Shared chrome — applies to the global `.stand-at-site` rendered by
-     PanoramaToggleButton, and `.zoom-to-detail-button` (Approach removed:
-     selection now auto-frames the site). Equal-flex
-     so each button takes a fair share of the row, with min-width
-     so they wrap to a second row instead of squishing illegibly
-     on narrow viewports. */
-  .head .site-cta-bar :global(.stand-at-site),
-  .head .site-cta-bar .zoom-to-detail-button {
-    flex: 1 1 0;
-    min-width: 0;
-    min-height: 30px;
-    width: auto;
-    margin-top: 0;
-    padding: 5px 4px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    line-height: 1.25;
-    /* Tinted with the body's --body-tint (Mars rust, Moon rocky grey,
-       Earth deep blue) so the CTA row reads as belonging to the
-       current world, not the selected site's nation. The agency badge
-       above still carries the per-site nation accent for identity. */
-    background: color-mix(in srgb, var(--body-tint, #4ecdc4) 8%, rgba(8, 10, 22, 0.6));
-    color: rgba(255, 255, 255, 0.88);
-    border: 1px solid color-mix(in srgb, var(--body-tint, #4ecdc4) 50%, transparent);
-    border-radius: 3px;
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.2px;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition:
-      background 0.15s ease,
-      border-color 0.15s ease,
-      color 0.15s ease,
-      transform 0.15s ease;
-  }
-  .head .site-cta-bar :global(.stand-at-site:hover),
-  .head .site-cta-bar :global(.stand-at-site:focus-visible),
-  .head .site-cta-bar .zoom-to-detail-button:hover,
-  .head .site-cta-bar .zoom-to-detail-button:focus-visible {
-    background: color-mix(in srgb, var(--body-tint, #4ecdc4) 38%, rgba(8, 10, 22, 0.85));
-    border-color: var(--body-tint, #4ecdc4);
-    color: #fff;
-    outline: none;
-    transform: translateY(-1px);
-  }
-  /* Text-only in the CTA row: the PanoramaToggleButton's ::before glyph
-     (◐ / ✕) is hidden here; elsewhere it keeps it. */
-  .head .site-cta-bar :global(.stand-at-site::before) {
-    display: none;
+    border-bottom-color: var(--body-tint, var(--color-accent));
   }
 
   /* #641 — Journey tab: the traverse as a timeline. A thin rule down the
@@ -7276,26 +7284,10 @@ sample      ${debugInfo.projectedPxSample}`}
     gap: 8px 10px;
     margin-top: 12px;
   }
-  .replay-play {
-    padding: 5px 10px;
-    background: color-mix(in srgb, var(--body-tint, #4ecdc4) 18%, rgba(8, 10, 22, 0.85));
-    border: 1px solid color-mix(in srgb, var(--body-tint, #4ecdc4) 70%, transparent);
-    border-radius: 3px;
-    color: #fff;
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
-    letter-spacing: 0.6px;
-    text-transform: uppercase;
-    cursor: pointer;
-  }
-  .replay-play:focus-visible {
-    outline: 2px solid var(--body-tint, #4ecdc4);
-    outline-offset: 2px;
-  }
   .replay-scrub {
     flex: 1 1 160px;
     min-width: 0;
-    accent-color: var(--body-tint, #4ecdc4);
+    accent-color: var(--body-tint, var(--color-accent));
   }
   .replay-at {
     flex: 1 1 100%;
@@ -7333,11 +7325,11 @@ sample      ${debugInfo.projectedPxSample}`}
     border-radius: 3px;
   }
   .profile-area {
-    fill: color-mix(in srgb, var(--body-tint, #4ecdc4) 22%, transparent);
+    fill: color-mix(in srgb, var(--body-tint, var(--color-accent)) 22%, transparent);
   }
   .profile-line {
     fill: none;
-    stroke: color-mix(in srgb, var(--body-tint, #4ecdc4) 60%, #ffffff);
+    stroke: color-mix(in srgb, var(--body-tint, var(--color-accent)) 60%, #ffffff);
     stroke-width: 1.5;
   }
   .profile-cursor {
@@ -7367,7 +7359,7 @@ sample      ${debugInfo.projectedPxSample}`}
   }
   .journey-row:hover,
   .journey-row:focus-visible {
-    border-color: var(--body-tint, #4ecdc4);
+    border-color: var(--body-tint, var(--color-accent));
     background: rgba(255, 255, 255, 0.07);
     outline: none;
   }
@@ -7391,7 +7383,7 @@ sample      ${debugInfo.projectedPxSample}`}
   }
   .journey-sol {
     font-size: 11px;
-    color: var(--body-tint, #4ecdc4);
+    color: var(--body-tint, var(--color-state));
     letter-spacing: 0.6px;
   }
   .journey-label {
@@ -7415,145 +7407,50 @@ sample      ${debugInfo.projectedPxSample}`}
     border: 0;
   }
   .ctrl-row.chips {
-    /* Mobile: wrapped chip row that fits inside the viewport without
-       horizontal scroll. Desktop returns to a vertical column at
-       @min-width: 768. */
+    /* One flat row (UXD-015): wraps between chips where the width runs out. */
     flex-direction: row;
     flex-wrap: wrap;
     width: auto;
     max-width: calc(100vw - 24px);
     align-items: center;
   }
-  .hud-controls :global(.chip),
-  .ctrl-row.chips :global(.chip) {
-    min-height: 44px;
-    /* Mobile (≤ 500): tight 6 px horizontal padding, 8.5 px font,
-       78 px min-width — fits two chips per row on a 375 px viewport.
-       Relaxed back at @min-width: 501. */
-    min-width: 78px;
-    padding: 0 6px;
-    background: rgba(8, 10, 22, 0.72);
-    border: 1px solid rgba(255, 255, 255, 0.22);
-    color: rgba(255, 255, 255, 0.78);
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 8.5px;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    text-align: center;
-    border-radius: 999px;
-    cursor: pointer;
-    backdrop-filter: blur(6px);
-    transition:
-      border-color 120ms,
-      background 120ms,
-      color 120ms;
-  }
-  /* Hover + active states tint with --body-tint (set per route on the
-     `.surface-scene` root). Falls back to the prior cool-grey if no
-     tint is provided. (2026-06-17 user direction: "chips on mars used
-     to be red colored, want that back. chips and all buttons on
-     details panel should be red tinted. on moon grey (moon rock)
-     tinted. and on earth blue tinted".) */
-  .hud-controls :global(.chip:hover),
-  .hud-controls :global(.chip:focus-visible),
-  .ctrl-row.chips :global(.chip:hover),
-  .ctrl-row.chips :global(.chip:focus-visible) {
-    color: #fff;
-    border-color: color-mix(in srgb, var(--body-tint, rgb(190, 195, 210)) 55%, transparent);
-    outline: none;
-  }
-  /* Active: tinted over a DARK base (was tint-on-transparent — rust text on
-     a rust wash over orange terrain read at ~1.5:1, #641). */
-  .hud-controls :global(.chip.active),
-  .ctrl-row.chips :global(.chip.active) {
-    background: color-mix(in srgb, var(--body-tint, rgb(190, 195, 210)) 22%, rgba(8, 10, 22, 0.82));
-    border-color: color-mix(in srgb, var(--body-tint, rgb(190, 195, 210)) 75%, transparent);
-    color: color-mix(in srgb, var(--body-tint, #c8cdda) 45%, #ffffff);
-  }
-  .hud-controls :global(.toggle) {
-    min-width: 44px;
-    min-height: 44px;
-    /* Mobile (≤ 500): 3×5 padding, 9 px font, 54 px max-width — keeps
-       the toggle row compact enough that two toggles + the chip rail
-       all fit on a phone. Relaxed at @min-width: 501. */
-    max-width: 54px;
-    padding: 3px 5px;
-    background: rgba(15, 18, 35, 0.85);
-    border: 1px solid rgba(190, 195, 210, 0.4);
-    color: #d6d9e2;
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
-    line-height: 1.15;
-    letter-spacing: 0.04em;
-    text-align: center;
-    white-space: normal;
-    border-radius: 4px;
-    cursor: pointer;
-    backdrop-filter: blur(6px);
-    transition:
-      border-color 120ms,
-      background 120ms;
-  }
-  .hud-controls :global(.toggle:hover),
-  .hud-controls :global(.toggle:focus-visible) {
-    border-color: rgba(220, 225, 240, 0.7);
-    background: rgba(34, 38, 56, 0.95);
-    outline: none;
-  }
 
-  /* ─── ≥ 501 px — relax phone-tight chip / toggle dimensions ───── */
+  /* ─── ≥ 501 px — relax phone-tight HUD spacing ───────────────── */
   @media (min-width: 501px) {
     .hud-controls {
       left: 16px;
       gap: 8px;
     }
-    .hud-controls :global(.chip),
-    .ctrl-row.chips :global(.chip) {
-      padding: 0 10px;
-      font-size: 10px;
-      min-width: 110px;
-    }
-    .hud-controls :global(.toggle) {
-      padding: 4px 8px;
-      font-size: 11px;
-      max-width: 70px;
-    }
   }
 
-  /* ─── ≥ 768 px — chip rail returns to vertical column + z-index ── */
+  /* ─── fine pointer — HUD shown, above the canvas ─────────────────── */
   @media (hover: hover) and (pointer: fine) {
+    /* One HUD row (operator 2026-11-12): the view actions, a 12 px gap, then the layer
+       chips; it wraps where the width runs out. Touch keeps the actions up top and the
+       layers in the drawer. */
     .hud-controls {
       display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px 12px;
       z-index: 35;
       /* Clear of the INDEX pull tab (~28 px) on the left edge. */
       left: 36px;
+      max-width: calc(100vw - 36px - 16px);
     }
     .ctrl-row.chips {
-      flex-direction: column;
-      /* Chips share one width that's NOT inherited from the toggle row
-         above: 140 px, or the longest label when a locale needs more
-         (de KOMMUNIKATIONSSATELLITEN). */
       width: max-content;
-      min-width: 140px;
-      max-width: none;
-      align-items: stretch;
+      max-width: 100%;
     }
-    /* Wrap at spaces, never clip a word (de ANSICHT ZURÜCKSETZEN). */
-    .hud-controls :global(.toggle) {
-      max-width: none;
-    }
-    /* 44 px is the touch-target size; with a mouse 34 px is plenty (WCAG
-       2.2 minimum is 24) and saves ~94 px of column on /earth, which
-       otherwise runs into the Orbit Ruler on 768 px-high windows. */
-    .hud-controls :global(.chip),
-    .ctrl-row.chips :global(.chip),
-    .hud-controls :global(.toggle) {
-      min-height: 34px;
+    /* With a detail panel open the row stops before it. */
+    .hud-controls.hud-beside-panel {
+      max-width: calc(100vw - 36px - var(--panel-width) - 28px);
     }
   }
 
-  /* Narrow window with a mouse: the 400 px detail panel reaches the chip
-     column and the right-edge scale bar + altitude readout, so they sit
+  /* Narrow window with a mouse: the 400 px detail panel reaches the chip row
+     and the right-edge scale bar + altitude readout, so they sit
      under the panel (z 30) instead of on top of its text. */
   @media (hover: hover) and (pointer: fine) and (max-width: 600px) {
     .hud-controls,
@@ -7577,7 +7474,31 @@ sample      ${debugInfo.projectedPxSample}`}
       top: calc(var(--nav-height) + 8px);
       left: 8px;
       gap: 6px;
+      /* "Back to Explore" leads the row: where the width runs out (a long label, AR / SKY) the
+         row wraps rather than leaving the screen. */
+      flex-wrap: wrap;
+      max-width: calc(100vw - 16px);
       z-index: 45;
+    }
+    /* Landscape: the row starts after the INDEX tab (44 px wide, left edge). On a short screen the
+       imagery card pushes the tab up to the row's height, so the tab would cover BACK TO EXPLORE. */
+    :global(html[data-touch][data-orientation='landscape']) .hud-top-mobile {
+      left: 52px;
+      max-width: calc(100vw - 60px);
+    }
+    /* …and, with the detail panel open as a side drawer, ends at its edge and scrolls sideways
+       (a second line would run into the site card below it). */
+    :global(html[data-touch][data-orientation='landscape']:has(aside.panel:not(.covered)))
+      .hud-top-mobile {
+      max-width: calc(100vw - var(--panel-width) - 64px);
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    :global(html[data-touch][data-orientation='landscape']:has(aside.panel:not(.covered)))
+      .hud-top-mobile
+      > :global(*) {
+      flex-shrink: 0;
     }
   }
   /* The sphere controls (2D / reset / spin) are inert in the flat-patch
@@ -7586,33 +7507,6 @@ sample      ${debugInfo.projectedPxSample}`}
   .hud-top-mobile.flat-hidden,
   .hud-controls.flat-hidden {
     display: none;
-  }
-
-  /* The top-cluster controls (view / reset / spin) sit OUTSIDE .hud-controls,
-     so they missed the scoped .toggle chrome above and fell back to the UA
-     default white button. Re-apply the standard surface toggle look here;
-     white-space:nowrap keeps the wider RESET VIEW / PAUSE SPIN labels on one
-     line, and :global crosses into ViewToggleButton. */
-  .hud-top-mobile :global(.toggle) {
-    min-width: 44px;
-    min-height: 44px;
-    padding: 0 8px;
-    background: rgba(15, 18, 35, 0.85);
-    border: 1px solid rgba(190, 195, 210, 0.4);
-    color: #d6d9e2;
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
-    letter-spacing: 0.04em;
-    border-radius: 4px;
-    cursor: pointer;
-    backdrop-filter: blur(6px);
-    white-space: nowrap;
-  }
-  .hud-top-mobile :global(.toggle:hover),
-  .hud-top-mobile :global(.toggle:focus-visible) {
-    border-color: rgba(220, 225, 240, 0.7);
-    background: rgba(34, 38, 56, 0.95);
-    outline: none;
   }
 
   .load-banner {
@@ -7626,7 +7520,7 @@ sample      ${debugInfo.projectedPxSample}`}
     border: 1px solid rgba(193, 68, 14, 0.5);
     color: #ffc850;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
     border-radius: 4px;
   }
@@ -7645,18 +7539,20 @@ sample      ${debugInfo.projectedPxSample}`}
        footer. On desktop always visible; on mobile replaced by the
        Nations tab in the MobileDrawerGroup accordion. */
     bottom: 48px;
-    left: 0;
+    /* Starts 8 px right of the lower-left HUD column (HudStackBL, z 7, over this strip's z 5);
+       0 where there is none: -8px is the fallback that cancels the +8px. */
+    left: calc(var(--hud-stack-right, -8px) + 8px);
     right: 0;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    gap: 2px 10px;
+    gap: 6px;
     padding: 3px 10px;
     background: rgba(4, 5, 14, 0.5);
     border-top: 1px solid rgba(255, 255, 255, 0.06);
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     font-weight: 700;
     letter-spacing: 1.2px;
     color: rgba(255, 255, 255, 0.65);
@@ -7664,77 +7560,6 @@ sample      ${debugInfo.projectedPxSample}`}
        the buttons re-enable them (#363). */
     pointer-events: none;
     z-index: 5;
-  }
-  /* Interactive toggle button — reset native chrome back to the old
-     span look, then layer on hover / focus / pressed-off states (#363). */
-  .legend-item {
-    pointer-events: auto;
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    margin: 0;
-    padding: 2px 4px;
-    background: transparent;
-    border: 0;
-    border-radius: 3px;
-    color: inherit;
-    font: inherit;
-    letter-spacing: inherit;
-    cursor: pointer;
-    transition:
-      opacity 120ms ease,
-      background 120ms ease;
-  }
-  .legend-item:hover,
-  .legend-item:focus-visible {
-    background: rgba(255, 255, 255, 0.1);
-    outline: none;
-  }
-  .legend-item:focus-visible {
-    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.5);
-  }
-  /* Toggled off — dim + strike, but keep the colour dot legible so the
-     key still reads. */
-  .legend-item--off {
-    opacity: 0.4;
-    text-decoration: line-through;
-  }
-  .legend-dot {
-    width: 6px;
-    height: 6px;
-    flex-shrink: 0;
-    border-radius: 50%;
-    box-shadow: 0 0 3px currentColor;
-  }
-
-  /* #547 S5 — card CTA, mirroring the missions/fleet panels' quiet register. */
-  .card-cta-bar {
-    padding: 12px 0 4px;
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
-    margin-top: 12px;
-  }
-  .cta-card {
-    width: 100%;
-    min-height: 48px;
-    padding: 12px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.22);
-    border-radius: 4px;
-    color: #fff;
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
-    letter-spacing: 3px;
-    font-weight: 700;
-    cursor: pointer;
-    transition:
-      background 120ms,
-      border-color 120ms;
-  }
-  .cta-card:hover,
-  .cta-card:focus-visible {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.45);
-    outline: none;
   }
   .head {
     padding: 0 0 12px;
@@ -7770,7 +7595,7 @@ sample      ${debugInfo.projectedPxSample}`}
   }
   .grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 7px;
     margin-bottom: 14px;
   }
@@ -7786,9 +7611,9 @@ sample      ${debugInfo.projectedPxSample}`}
   /* #641 contrast: was 6 px at 25 %. */
   .cell-label {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.6);
+    color: var(--color-text-label);
     margin-bottom: 3px;
   }
   .cell-value {
@@ -7798,7 +7623,7 @@ sample      ${debugInfo.projectedPxSample}`}
     font-weight: 700;
   }
   .cell-value.short {
-    font-size: 9px;
+    font-size: var(--size-label);
     font-weight: 400;
     color: rgba(255, 255, 255, 0.7);
   }
@@ -7806,21 +7631,19 @@ sample      ${debugInfo.projectedPxSample}`}
   .left-block {
     margin-bottom: 14px;
     padding: 12px 14px;
-    border-left: 4px solid var(--accent, #4466ff);
-    background: rgb(from var(--accent, #4466ff) r g b / 0.08);
+    border-left: 4px solid var(--accent, var(--color-accent));
+    background: rgb(from var(--accent, var(--color-accent)) r g b / 0.08);
     border-radius: 0 4px 4px 0;
   }
   .left-block h3 {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 7px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
     margin: 0 0 6px;
-    color: var(--accent, #4466ff);
+    color: var(--accent, var(--color-state));
   }
   .left-block p {
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 12px;
+    font-size: var(--size-meta);
     color: rgba(255, 255, 255, 0.85);
     line-height: 1.5;
     margin: 0;
@@ -7831,8 +7654,7 @@ sample      ${debugInfo.projectedPxSample}`}
      brighter than the italic .editorial, set apart by a hairline. Matches
      Mission/FleetEntryPanel. */
   .site-dispatch {
-    font-family: 'Crimson Pro', serif;
-    font-size: 15px;
+    font-size: var(--size-lead);
     line-height: 1.65;
     color: rgba(255, 255, 255, 0.92);
     margin: 0 0 14px;
@@ -7840,32 +7662,23 @@ sample      ${debugInfo.projectedPxSample}`}
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
 
-  .editorial {
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 13px;
-    color: rgba(255, 255, 255, 0.6);
-    line-height: 1.6;
-    margin: 0 0 14px;
-  }
-
   .capability-block {
     padding: 10px 12px;
-    background: rgba(78, 205, 196, 0.06);
-    border: 1px solid rgba(78, 205, 196, 0.25);
+    background: color-mix(in srgb, var(--color-accent) 6%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-accent) 25%, transparent);
     border-radius: 4px;
     margin-bottom: 14px;
   }
   .capability-block h3 {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 7px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
-    color: #4ecdc4;
+    color: var(--color-state);
     margin: 0 0 4px;
   }
   .capability-block p {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     color: rgba(255, 255, 255, 0.85);
     margin: 0;
     line-height: 1.5;
@@ -7876,21 +7689,21 @@ sample      ${debugInfo.projectedPxSample}`}
     display: inline-block;
     margin-top: 10px;
     padding: 8px 12px;
-    background: rgba(68, 102, 255, 0.18);
-    border: 1px solid rgba(68, 102, 255, 0.55);
+    background: color-mix(in srgb, var(--color-accent) 18%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-accent) 55%, transparent);
     color: #fff;
     text-decoration: none;
     border-radius: 3px;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
     font-weight: 700;
     transition: all 0.15s;
   }
   .mission-link:hover,
   .mission-link:focus-visible {
-    background: rgba(68, 102, 255, 0.32);
-    border-color: #4466ff;
+    background: var(--color-accent-edge);
+    border-color: var(--color-accent);
     outline: none;
   }
 
@@ -7902,9 +7715,9 @@ sample      ${debugInfo.projectedPxSample}`}
   .launches-from-here h3 {
     margin: 0 0 8px;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 2.5px;
-    color: rgba(255, 255, 255, 0.45);
+    color: var(--color-text-label);
     font-weight: 700;
   }
   .launches-from-here-chips {
@@ -7915,32 +7728,11 @@ sample      ${debugInfo.projectedPxSample}`}
     flex-wrap: wrap;
     gap: 6px;
   }
-  .launches-chip {
-    display: inline-block;
-    padding: 5px 10px;
-    background: rgba(78, 205, 196, 0.1);
-    border: 1px solid rgba(78, 205, 196, 0.4);
-    color: #4ecdc4;
-    text-decoration: none;
-    border-radius: 999px;
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
-    letter-spacing: 1.5px;
-    font-weight: 700;
-    transition: all 0.15s;
-  }
-  .launches-chip:hover,
-  .launches-chip:focus-visible {
-    background: rgba(78, 205, 196, 0.22);
-    border-color: rgba(78, 205, 196, 0.75);
-    color: #fff;
-    outline: none;
-  }
 
   .credit {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 7px;
-    color: rgba(255, 255, 255, 0.25);
+    font-size: var(--size-label);
+    color: var(--color-text-label);
     line-height: 1.6;
     border-top: 1px solid rgba(255, 255, 255, 0.06);
     padding-top: 10px;
@@ -7975,19 +7767,6 @@ sample      ${debugInfo.projectedPxSample}`}
     border-radius: 4px;
     backdrop-filter: blur(6px);
     z-index: 60;
-  }
-  .distance-scale-bar {
-    height: 4px;
-    background: rgba(255, 255, 255, 0.85);
-    border-left: 2px solid rgba(255, 255, 255, 0.95);
-    border-right: 2px solid rgba(255, 255, 255, 0.95);
-    box-sizing: content-box;
-  }
-  .distance-scale-label {
-    font-family: 'Space Mono', 'Courier New', monospace;
-    font-size: 11px;
-    letter-spacing: 0.04em;
-    color: rgba(255, 255, 255, 0.92);
   }
   /* Phone: one bar above the tab row holds the route's globe button, the scale
      and the altitude. Elsewhere it is transparent to layout. */
@@ -8029,9 +7808,6 @@ sample      ${debugInfo.projectedPxSample}`}
       border-radius: 0;
       backdrop-filter: none;
       z-index: auto;
-    }
-    .surface-bottom-bar .distance-scale-bar {
-      max-width: 40vw;
     }
     .surface-bottom-bar .altitude-indicator {
       margin-inline-start: auto;
@@ -8098,7 +7874,7 @@ sample      ${debugInfo.projectedPxSample}`}
     max-width: 240px;
   }
   .traverse-stop-tooltip .sol {
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 0.08em;
     color: rgba(255, 220, 140, 0.95);
     text-transform: uppercase;
@@ -8115,30 +7891,9 @@ sample      ${debugInfo.projectedPxSample}`}
      above) so it doesn't sit on top of the panel. */
   .surface-floating-exit {
     position: fixed;
-    top: calc(var(--nav-height, 64px) + 18px);
+    top: calc(var(--nav-height) + 18px);
     right: 24px;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 8px 12px;
-    background: rgba(5, 5, 20, 0.88);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    color: var(--color-text-on-dark, #ffffff);
-    font-family: 'Space Mono', 'Courier New', monospace;
-    font-size: 12px;
-    letter-spacing: 0.02em;
-    cursor: pointer;
-    backdrop-filter: blur(6px);
     z-index: 60;
-  }
-  .surface-floating-exit:hover,
-  .surface-floating-exit:focus-visible {
-    border-color: rgba(255, 255, 255, 0.4);
-    outline: none;
-  }
-  .surface-floating-exit .x {
-    color: rgba(255, 255, 255, 0.65);
-    font-size: 11px;
   }
 
   /* Mobile accordion: nations tab content layout. */
@@ -8157,7 +7912,7 @@ sample      ${debugInfo.projectedPxSample}`}
        top-left is free — move the immersive-exit button there and leave the
        top-right clear for the flat-patch layer chips. */
     .surface-floating-exit {
-      top: calc(var(--nav-height, 64px) + 8px);
+      top: calc(var(--nav-height) + 8px);
       left: 8px;
       right: auto;
     }
@@ -8168,6 +7923,8 @@ sample      ${debugInfo.projectedPxSample}`}
     :global(.mdg-body .ruler) {
       position: static;
       width: 100%;
+      min-width: 0;
+      max-width: none;
       max-height: 32vh;
       left: auto;
       bottom: auto;

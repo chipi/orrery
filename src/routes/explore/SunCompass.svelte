@@ -62,7 +62,7 @@
   }
   .sc-ly {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     color: rgba(255, 224, 190, 0.82);
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);

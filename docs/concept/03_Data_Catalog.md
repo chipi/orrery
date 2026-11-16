@@ -134,7 +134,7 @@ Every mission in Orrery is defined by a JavaScript object conforming to this sch
 | `arr` | string | Arrival date, human-readable. e.g. `"Aug 6, 2012"` |
 | `tof` | number or null | Transit time in days. `null` for TBD planned missions |
 | `vehicle` | string | Launch vehicle name |
-| `description` | string | Editorial description, 2–4 sentences, Crimson Pro italic in UI |
+| `description` | string | Editorial description, 2–4 sentences, Space Mono upright lead in UI |
 | `data_quality` | string | `"good"`, `"partial"`, `"reconstructed"`, or `"planned"` |
 | `credit` | string | Full image/data credit line |
 | `links` | array | Array of `{l, u, t}` educational link objects (see 2.3) |
@@ -394,7 +394,7 @@ Orrery uses a three-tier educational link system, colour-coded consistently acro
 
 | Tier | Colour | Purpose | Examples |
 |---|---|---|---|
-| **INTRO** | Teal `#4ecdc4` | Wikipedia, NASA fact pages, agency mission pages | Wikipedia articles, nasa.gov/mission/ |
+| **INTRO** | Muted blue `#889fe7` | Wikipedia, NASA fact pages, agency mission pages | Wikipedia articles, nasa.gov/mission/ |
 | **CORE** | Blue `#7b9cff` | Technical explainers, MIT OCW, deeper mission science | MIT OpenCourseWare, JPL education pages |
 | **DEEP** | Red `#ff9090` | Peer-reviewed papers, JPL technical reports, primary sources | Science, Nature, AJ, NTRS |
 

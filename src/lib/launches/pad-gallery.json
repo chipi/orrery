@@ -1,0 +1,98 @@
+[
+  {
+    "variant": "apollo-lut",
+    "label": "Launch pad: Apollo, LC-39",
+    "vehM": 110.6,
+    "what": "The Saturn V pad: the 380 ft Launch Umbilical Tower with swing arms that fall away at liftoff, and the flame trench. Sizes from NASA figures on Wikipedia."
+  },
+  {
+    "variant": "shuttle",
+    "label": "Launch pad: Space Shuttle, LC-39",
+    "vehM": 56,
+    "what": "The Shuttle pad: the Fixed Service Structure (350 ft with its mast), the Rotating Service Structure swung back, the 290 ft water tower. Main heights from Wikipedia; the rest approximate."
+  },
+  {
+    "variant": "sls",
+    "label": "Launch pad: SLS, LC-39B",
+    "vehM": 98,
+    "what": "The Artemis pad: the Mobile Launcher tower beside the rocket and three tall lightning towers. Sizes approximate."
+  },
+  {
+    "variant": "soyuz",
+    "label": "Launch pad: Soyuz, Baikonur and Plesetsk",
+    "vehM": 46,
+    "what": "The R-7 family pad: four support arms that fall outward at liftoff, two retracted service cabins, lightning masts, the flame pit. Sizes approximate."
+  },
+  {
+    "variant": "proton",
+    "label": "Launch pad: Proton, Baikonur",
+    "vehM": 58,
+    "what": "A fixed service tower with swing arms that retract at liftoff, beside the flame trench. Sizes approximate."
+  },
+  {
+    "variant": "f9-39a",
+    "label": "Launch pad: Falcon, LC-39A",
+    "vehM": 70,
+    "what": "SpaceX at 39A: the transporter-erector that leans back 1.5 degrees before liftoff and 45 at it, the old tower extended above 350 ft. Figures from Wikipedia."
+  },
+  {
+    "variant": "f9-cat",
+    "label": "Launch pad: Falcon, SLC-40 with crew tower",
+    "vehM": 70,
+    "what": "SpaceX at SLC-40 since the crew access tower of 2023, with the transporter-erector tilting away at liftoff. Tower height approximate."
+  },
+  {
+    "variant": "f9-te",
+    "label": "Launch pad: Falcon, SLC-40 and SLC-4E",
+    "vehM": 70,
+    "what": "A bare Falcon pad: the transporter-erector tilting away at liftoff, and lightning masts. Sizes approximate."
+  },
+  {
+    "variant": "starbase",
+    "label": "Launch pad: Starship, Starbase",
+    "vehM": 121,
+    "what": "The Starbase launch tower with its catching arms held open. Tower height approximate."
+  },
+  {
+    "variant": "atlas-v",
+    "label": "Launch pad: Atlas V, SLC-41",
+    "vehM": 58,
+    "what": "The ULA pad: mobile launch platform, umbilical tower and four lightning towers; the Vertical Integration Facility stands off the pad and is left out. Sizes approximate."
+  },
+  {
+    "variant": "cape-classic",
+    "label": "Launch pad: Cape service-tower pad",
+    "vehM": 60,
+    "what": "The Cape's Atlas, Delta, Titan and Saturn IB pads: an umbilical tower with swing arms beside the vehicle. Sizes approximate."
+  },
+  {
+    "variant": "kourou-a5",
+    "label": "Launch pad: Ariane 4 and 5, Kourou",
+    "vehM": 52,
+    "what": "The ELA-2 and ELA-3 pads: an umbilical mast beside the launcher and four tall lightning towers. Sizes approximate."
+  },
+  {
+    "variant": "kourou-a6",
+    "label": "Launch pad: Ariane 6, Kourou",
+    "vehM": 63,
+    "what": "The ELA-4 pad: the umbilical mast, two lightning towers and the mobile gantry rolled well back. Sizes approximate."
+  },
+  {
+    "variant": "chinese-fst",
+    "label": "Launch pad: Chinese service tower",
+    "vehM": 57,
+    "what": "The fixed service tower of Jiuquan, Xichang, Wenchang and Taiyuan, its working platforms folding away at liftoff. Sizes approximate."
+  },
+  {
+    "variant": "tanegashima",
+    "label": "Launch pad: Tanegashima",
+    "vehM": 53,
+    "what": "The Yoshinobu pad: the H-II launcher's umbilical tower and a lightning tower. Sizes approximate."
+  },
+  {
+    "variant": "sriharikota",
+    "label": "Launch pad: Sriharikota",
+    "vehM": 44,
+    "what": "The ISRO pad: the umbilical tower beside the vehicle and the mobile service tower rolled well back. Sizes approximate."
+  }
+]

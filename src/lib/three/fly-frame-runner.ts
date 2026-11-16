@@ -30,7 +30,6 @@ import { defaultEventLabel } from '$lib/fly-event-labels';
 import {
   destinationPos,
   earthPos,
-  marsPos,
   orbitPath,
   earthOrbitPath,
   spacecraftHeading,
@@ -51,11 +50,31 @@ import { markerStateFor } from '$lib/orbital/cislunar/cislunar-marker-reveal';
 import { moonHelioPos } from '$lib/fly-moon-arc';
 import { parseFlybyMetFromSubPhase } from '$lib/fly-cinematic-beats';
 import { runCinematicFrame } from '$lib/fly-cinematic-frame';
-import { SCALE_3D } from '$lib/fly-scene-constants';
+import { DESTINATION_LABEL_COLORS, SCALE_3D } from '$lib/fly-scene-constants';
+import { destinationLabel } from '$lib/destination-label';
+import {
+  FLY_2D_STYLE,
+  hexToRgb,
+  rgba,
+  starAlpha,
+  type Line2d,
+  type Rgb,
+} from '$lib/fly/fly-2d-style';
+import {
+  destinationExtentAu,
+  easeScale2d,
+  fitScale2d,
+  pointsExtentAu,
+} from '$lib/fly/fly-2d-scale';
+import { moonPeriodDays, select2dTargets } from '$lib/fly/fly-2d-targets';
+import { DEST_STYLE } from '$lib/three/fly-helio-scene';
 import { sensory } from '$lib/sensory/state.svelte';
 import { sepSlowmoFactor } from '$lib/orbital/ascent-cameras';
 import type { MissionTimeline } from '$lib/physics/transfer/mission-arc';
-import type { DestinationId } from '$lib/physics/transfer/lambert-grid.constants';
+import type {
+  DestinationId,
+  MoonMissionDestId,
+} from '$lib/physics/transfer/lambert-grid.constants';
 import type { CislunarTrajectory } from '$lib/orbital/cislunar/cislunar-geometry';
 import type { PhaseMarker } from '$lib/orbital/cislunar/cislunar-events';
 import type { InterplanetaryPhaseMarker } from '$lib/interplanetary-events';
@@ -234,10 +253,32 @@ function impactEventOf(mission: {
 }
 /** Scene radius of the impact shot's primary (Didymos's DEST_STYLE size in fly-helio-scene). */
 const IMPACT_PRIMARY_R = 0.4;
-/** Mars's eccentric orbit for the 2D fallback ring (the planet sits on it every day). */
-const MARS_ORBIT_PATH = orbitPath('mars', 180);
-/** Earth's eccentric orbit for the same fallback ring. */
+/** Distance of the 2D scale readout's bar from the canvas bottom: above the scrubber on a
+ *  desktop, above the MISSION / EVENTS tabs and the scrubber on a phone. */
+const SCALE_READOUT_BOTTOM_PX = 104;
+const SCALE_READOUT_BOTTOM_TOUCH_PX = 160;
+/** Earth's eccentric orbit for the 2D reference ring. */
 const EARTH_ORBIT_PATH = earthOrbitPath(180);
+/** Each destination's eccentric orbit for the 2D ring (the body sits on it every day), built on
+ *  first use. */
+const DEST_ORBIT_PATHS = new Map<DestinationId, Vec2[]>();
+function destOrbitPath(id: DestinationId): Vec2[] {
+  let p = DEST_ORBIT_PATHS.get(id);
+  if (!p) {
+    p = orbitPath(id, 180);
+    DEST_ORBIT_PATHS.set(id, p);
+  }
+  return p;
+}
+const DEST_EXTENT_AU = new Map<DestinationId, number>();
+function destExtentAu(id: DestinationId): number {
+  let e = DEST_EXTENT_AU.get(id);
+  if (e === undefined) {
+    e = destinationExtentAu(id);
+    DEST_EXTENT_AU.set(id, e);
+  }
+  return e;
+}
 
 export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs) {
   const {
@@ -341,7 +382,9 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
         grad.addColorStop(1, 'rgba(255,140,60,0)');
         g.fillStyle = grad;
         g.fillRect(0, 0, 64, 64);
-        return new THREE.CanvasTexture(c);
+        const tex = new THREE.CanvasTexture(c);
+        tex.colorSpace = THREE.SRGBColorSpace;
+        return tex;
       })(),
       transparent: true,
       depthWrite: false,
@@ -371,6 +414,17 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
   let cis2dTargetCenterZ = 0;
   const CIS2D_WIDE_SCALE = 1;
   const CIS2D_CLOSEUP_SCALE = 8;
+  // Helio 2D scale (px per AU), eased toward the fit of the destination / trajectory.
+  let fit2dScale = 0;
+  let fit2dLastMs = 0;
+  // The moon currently highlighted in the 3D helio scene.
+  let highlightedMoon: MoonMissionDestId | null = null;
+
+  function strokeLine2d(l: Line2d, rgb: Rgb = l.rgb) {
+    ctx2.strokeStyle = rgba(rgb, l.alpha);
+    ctx2.lineWidth = l.width;
+    ctx2.stroke();
+  }
 
   function draw2d() {
     if (c2.width !== c2.clientWidth || c2.height !== c2.clientHeight) {
@@ -386,12 +440,42 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
 
     const cx = W / 2;
     const cy = H / 2;
-    const BASE_SCALE_2D = Math.min(W, H) / 4;
+    // Active destination (and the named moon of a planetary-moon flight). Earth is the origin
+    // and always drawn; no other planet is.
+    const targets = select2dTargets(
+      bridge.activeDestination,
+      bridge.mission.targetMoon ?? null,
+      !!bridge.mission.sunTarget,
+    );
+    let BASE_SCALE_2D = Math.min(W, H) / 4;
+    if (!bridge.isMoonMission) {
+      // Fit the destination's orbit or the trajectory, whichever reaches farther (G-11a).
+      const extentAu = Math.max(
+        targets.bodyId ? destExtentAu(targets.bodyId) : 0,
+        pointsExtentAu(bridge.outPts, bridge.retPts),
+      );
+      const nowMs = performance.now();
+      const dtS = fit2dLastMs ? Math.min((nowMs - fit2dLastMs) / 1000, 0.1) : 0;
+      fit2dLastMs = nowMs;
+      const target = fitScale2d(extentAu, W, H);
+      fit2dScale = bridge.reducedMotion ? target : easeScale2d(fit2dScale, target, dtS);
+      BASE_SCALE_2D = fit2dScale;
+      // What the canvas drew, for the e2e (fly-visuals.spec.ts); the canvas has no DOM text.
+      c2.dataset.body2d = targets.bodyId ?? '';
+      c2.dataset.moon2d = targets.moonId ?? '';
+      c2.dataset.scale2d = fit2dScale.toFixed(3);
+      c2.dataset.extent2d = extentAu.toFixed(3);
+    } else {
+      c2.dataset.body2d = 'moon';
+      c2.dataset.moon2d = '';
+      c2.dataset.scale2d = '';
+      c2.dataset.extent2d = '';
+    }
     // Moon-mode 2D mirrors 3D camera: origin is live Earth (so the
     // Earth+Moon system stays centred as Earth orbits the Sun) and
     // the scale is zoomed 6× so the 0.15 AU Moon offset reads as
-    // ~90 px instead of ~30 px. Mars-mode keeps Sun-centred origin
-    // at canvas centre and the original scale.
+    // ~90 px instead of ~30 px. Heliocentric flights keep the Sun-centred origin
+    // at canvas centre and the fitted scale.
     const originAU = bridge.isMoonMission ? earthPos(bridge.simDay) : { x: 0, z: 0 };
     const SCALE_2D = bridge.isMoonMission ? BASE_SCALE_2D * 6 : BASE_SCALE_2D;
     const ptX = (au: number) => cx + (au - originAU.x) * SCALE_2D;
@@ -402,34 +486,26 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
       const sy = (i * 137.5 * 17 + i * 53) % H;
       ctx2.beginPath();
       ctx2.arc(sx, sy, i % 8 === 0 ? 1.2 : 0.5, 0, Math.PI * 2);
-      ctx2.fillStyle = `rgba(210,215,255,${0.06 + (i % 5) * 0.04})`;
+      ctx2.fillStyle = rgba(FLY_2D_STYLE.star.rgb, starAlpha(i));
       ctx2.fill();
     }
 
-    // Earth + Mars orbits + Sun (Mars-bound only — Moon-mode is
-    // Earth-centered; rings + Sun would be misleading reference
-    // points for a cislunar transit).
+    // Earth + destination orbits + Sun (Moon-mode is Earth-centered;
+    // rings + Sun would be misleading reference points for a cislunar
+    // transit). Rings are neutral white: the identity colour is on the live body.
     if (!bridge.isMoonMission) {
-      ctx2.beginPath();
-      for (const [i, p] of EARTH_ORBIT_PATH.entries()) {
-        const x = cx + p.x * SCALE_2D;
-        const y = cy + p.z * SCALE_2D;
-        if (i === 0) ctx2.moveTo(x, y);
-        else ctx2.lineTo(x, y);
-      }
-      ctx2.strokeStyle = 'rgba(75,156,211,0.35)';
-      ctx2.lineWidth = 1;
-      ctx2.stroke();
-      ctx2.beginPath();
-      for (const [i, p] of MARS_ORBIT_PATH.entries()) {
-        const x = cx + p.x * SCALE_2D;
-        const y = cy + p.z * SCALE_2D;
-        if (i === 0) ctx2.moveTo(x, y);
-        else ctx2.lineTo(x, y);
-      }
-      ctx2.strokeStyle = 'rgba(193,68,14,0.35)';
-      ctx2.lineWidth = 1;
-      ctx2.stroke();
+      const ringOf = (path: Vec2[]) => {
+        ctx2.beginPath();
+        for (const [i, p] of path.entries()) {
+          const x = cx + p.x * SCALE_2D;
+          const y = cy + p.z * SCALE_2D;
+          if (i === 0) ctx2.moveTo(x, y);
+          else ctx2.lineTo(x, y);
+        }
+        strokeLine2d(FLY_2D_STYLE.ring);
+      };
+      ringOf(EARTH_ORBIT_PATH);
+      if (targets.bodyId) ringOf(destOrbitPath(targets.bodyId));
 
       const sg = ctx2.createRadialGradient(cx, cy, 0, cx, cy, 30);
       sg.addColorStop(0, 'rgba(255,228,130,0.4)');
@@ -445,7 +521,7 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
     }
 
     // Past/future split — past solid, future dashed at low opacity.
-    function drawSplit(pts: Vec2[], t: number, past: string, future: string) {
+    function drawSplit(pts: Vec2[], t: number, past: Line2d, future: Line2d) {
       if (pts.length < 2) return;
       const split = Math.max(0, Math.min(pts.length - 1, Math.floor(t * (pts.length - 1))));
       if (split > 0) {
@@ -454,20 +530,16 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
         for (let i = 1; i <= split; i++) {
           ctx2.lineTo(ptX(pts[i].x), ptZ(pts[i].z));
         }
-        ctx2.strokeStyle = past;
-        ctx2.lineWidth = 2;
         ctx2.setLineDash([]);
-        ctx2.stroke();
+        strokeLine2d(past);
       }
       ctx2.beginPath();
       ctx2.moveTo(ptX(pts[split].x), ptZ(pts[split].z));
       for (let i = split + 1; i < pts.length; i++) {
         ctx2.lineTo(ptX(pts[i].x), ptZ(pts[i].z));
       }
-      ctx2.strokeStyle = future;
-      ctx2.lineWidth = 1.5;
       ctx2.setLineDash([4, 6]);
-      ctx2.stroke();
+      strokeLine2d(future);
       ctx2.setLineDash([]);
     }
 
@@ -529,20 +601,18 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
       // Moon orbit ring (centred on Earth).
       ctx2.beginPath();
       ctx2.arc(cx, cy, A_MOON_KM * SCALE_CIS_2D, 0, Math.PI * 2);
-      ctx2.strokeStyle = 'rgba(170,170,204,0.25)';
-      ctx2.lineWidth = 0.6;
-      ctx2.stroke();
+      strokeLine2d(FLY_2D_STYLE.ring);
 
       const PHASE_COLORS_2D: Record<string, string> = {
-        parking: '#4b9cd3',
+        parking: '#4b9cd3', // a3-keep: trajectory phase / Earth identity colour, palette review at the end
         tli_coast: '#ffd166',
         lunar_orbit: '#c77dff',
         lunar_flyby: '#ff9933',
         descent: '#ef476f',
         ascent: '#ef476f',
-        tei_coast: '#06d6a0',
+        tei_coast: '#06d6a0', // a3-keep: trajectory phase / Earth identity colour, palette review at the end
         reentry: '#ef476f',
-        spiral_earth: '#4b9cd3',
+        spiral_earth: '#4b9cd3', // a3-keep: trajectory phase / Earth identity colour, palette review at the end
         spiral_lunar: '#c77dff',
       };
 
@@ -565,18 +635,18 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
 
       // Earth at origin.
       const eg = ctx2.createRadialGradient(cx, cy, 0, cx, cy, 12);
-      eg.addColorStop(0, 'rgba(75,156,211,0.55)');
-      eg.addColorStop(1, 'rgba(75,156,211,0)');
+      eg.addColorStop(0, 'rgba(75,156,211,0.55)'); // a3-keep: trajectory phase / Earth identity colour, palette review at the end
+      eg.addColorStop(1, 'rgba(75,156,211,0)'); // a3-keep: trajectory phase / Earth identity colour, palette review at the end
       ctx2.beginPath();
       ctx2.arc(cx, cy, 12, 0, Math.PI * 2);
       ctx2.fillStyle = eg;
       ctx2.fill();
       ctx2.beginPath();
       ctx2.arc(cx, cy, 5, 0, Math.PI * 2);
-      ctx2.fillStyle = '#4b9cd3';
+      ctx2.fillStyle = '#4b9cd3'; // a3-keep: trajectory phase / Earth identity colour, palette review at the end
       ctx2.fill();
-      ctx2.font = "bold 9px 'Space Mono', monospace";
-      ctx2.fillStyle = 'rgba(255,255,255,0.85)';
+      ctx2.font = FLY_2D_STYLE.label.font;
+      ctx2.fillStyle = FLY_2D_STYLE.label.color;
       ctx2.textAlign = 'left';
       ctx2.fillText(m.nav_earth(), cx + 9, cy + 3);
 
@@ -640,12 +710,17 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
       return;
     }
 
-    drawSplit(bridge.outPts, Math.min(1, sc.progress / 0.5), '#4466ff', 'rgba(68,102,255,0.2)');
+    drawSplit(
+      bridge.outPts,
+      Math.min(1, sc.progress / 0.5),
+      FLY_2D_STYLE.pastOut,
+      FLY_2D_STYLE.futureOut,
+    );
     drawSplit(
       bridge.retPts,
       Math.max(0, (sc.progress - 0.5) / 0.5),
-      '#9966ff',
-      'rgba(153,102,255,0.2)',
+      FLY_2D_STYLE.pastRet,
+      FLY_2D_STYLE.futureRet,
     );
 
     // Bodies at simDay. Moon-mode: heliocentric like Mars but
@@ -661,34 +736,30 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
       // LAUNCH anchor ring (where Earth was at depDay).
       ctx2.beginPath();
       ctx2.arc(ptX(eAnchor.x), ptZ(eAnchor.z), 14, 0, Math.PI * 2);
-      ctx2.strokeStyle = 'rgba(75,156,211,0.7)';
-      ctx2.lineWidth = 1.2;
-      ctx2.stroke();
-      ctx2.font = "bold 9px 'Space Mono', monospace";
-      ctx2.fillStyle = 'rgba(255,255,255,0.85)';
+      strokeLine2d(FLY_2D_STYLE.anchor);
+      ctx2.font = FLY_2D_STYLE.label.font;
+      ctx2.fillStyle = FLY_2D_STYLE.label.color;
       ctx2.textAlign = 'left';
       ctx2.fillText(m.fly_event_launch(), ptX(eAnchor.x) + 18, ptZ(eAnchor.z) + 3);
       // ARRIVAL anchor ring (where Moon will be at arrDay).
       ctx2.beginPath();
       ctx2.arc(ptX(mAnchor.x), ptZ(mAnchor.z), 13, 0, Math.PI * 2);
-      ctx2.strokeStyle = 'rgba(220,220,220,0.7)';
-      ctx2.lineWidth = 1.2;
-      ctx2.stroke();
-      ctx2.fillStyle = 'rgba(255,255,255,0.85)';
+      strokeLine2d(FLY_2D_STYLE.anchor);
+      ctx2.fillStyle = FLY_2D_STYLE.label.color;
       ctx2.fillText(m.fly_event_arrival(), ptX(mAnchor.x) + 16, ptZ(mAnchor.z) + 3);
       // Live Earth — halo + disc.
       const ex = ptX(eLive.x);
       const ey = ptZ(eLive.z);
       const eg = ctx2.createRadialGradient(ex, ey, 0, ex, ey, 14);
-      eg.addColorStop(0, 'rgba(75,156,211,0.6)');
-      eg.addColorStop(1, 'rgba(75,156,211,0)');
+      eg.addColorStop(0, 'rgba(75,156,211,0.6)'); // a3-keep: trajectory phase / Earth identity colour, palette review at the end
+      eg.addColorStop(1, 'rgba(75,156,211,0)'); // a3-keep: trajectory phase / Earth identity colour, palette review at the end
       ctx2.beginPath();
       ctx2.arc(ex, ey, 14, 0, Math.PI * 2);
       ctx2.fillStyle = eg;
       ctx2.fill();
       ctx2.beginPath();
       ctx2.arc(ex, ey, 6, 0, Math.PI * 2);
-      ctx2.fillStyle = '#4b9cd3';
+      ctx2.fillStyle = '#4b9cd3'; // a3-keep: trajectory phase / Earth identity colour, palette review at the end
       ctx2.fill();
       ctx2.fillText(m.nav_earth(), ex + 11, ey + 3);
       // Live Moon — halo + disc.
@@ -707,19 +778,17 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
       ctx2.fill();
       ctx2.fillText(m.nav_moon(), mx + 9, my + 3);
     } else {
-      // Mars-bound: live Earth + Mars orbit the Sun as the spacecraft
+      // Heliocentric: live Earth + the active destination orbit the Sun as the spacecraft
       // flies; the launch / arrival anchors stay pinned to outPts[0]
       // and outPts[N-1]. Two pieces of state to read separately so
-      // the user can watch Mars travel toward the ARRIVAL ring as the
+      // the user can watch the destination travel toward the ARRIVAL ring as the
       // rocket transits.
       const eLive = earthPos(bridge.simDay);
-      const mLive = marsPos(bridge.simDay);
       const eAnchor = bridge.outPts.length > 0 ? bridge.outPts[0] : eLive;
-      const mAnchor = bridge.outPts.length > 0 ? bridge.outPts[bridge.outPts.length - 1] : mLive;
+      const mAnchor =
+        bridge.outPts.length > 0 ? bridge.outPts[bridge.outPts.length - 1] : { x: 0, z: 0 };
       const ex = ptX(eLive.x);
       const ey = ptZ(eLive.z);
-      const mx = ptX(mLive.x);
-      const my = ptZ(mLive.z);
       const eAx = ptX(eAnchor.x);
       const eAy = ptZ(eAnchor.z);
       const mAx = ptX(mAnchor.x);
@@ -727,47 +796,91 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
       // LAUNCH anchor ring (where Earth was at depDay).
       ctx2.beginPath();
       ctx2.arc(eAx, eAy, 12, 0, Math.PI * 2);
-      ctx2.strokeStyle = 'rgba(75,156,211,0.7)';
-      ctx2.lineWidth = 1.2;
-      ctx2.stroke();
-      ctx2.font = "bold 9px 'Space Mono', monospace";
-      ctx2.fillStyle = 'rgba(255,255,255,0.85)';
+      strokeLine2d(FLY_2D_STYLE.anchor);
+      ctx2.font = FLY_2D_STYLE.label.font;
+      ctx2.fillStyle = FLY_2D_STYLE.label.color;
       ctx2.textAlign = 'left';
       ctx2.fillText(m.fly_event_launch(), eAx + 16, eAy + 3);
       // ARRIVAL anchor ring (where the arc terminates).
       ctx2.beginPath();
       ctx2.arc(mAx, mAy, 11, 0, Math.PI * 2);
-      ctx2.strokeStyle = 'rgba(193,68,14,0.7)';
-      ctx2.lineWidth = 1.2;
-      ctx2.stroke();
-      ctx2.fillStyle = 'rgba(255,255,255,0.85)';
+      strokeLine2d(FLY_2D_STYLE.anchor);
+      ctx2.fillStyle = FLY_2D_STYLE.label.color;
       ctx2.fillText(m.fly_event_arrival(), mAx + 14, mAy + 3);
       // Live Earth — halo + disc.
       const eg = ctx2.createRadialGradient(ex, ey, 0, ex, ey, 14);
-      eg.addColorStop(0, 'rgba(75,156,211,0.6)');
-      eg.addColorStop(1, 'rgba(75,156,211,0)');
+      eg.addColorStop(0, 'rgba(75,156,211,0.6)'); // a3-keep: trajectory phase / Earth identity colour, palette review at the end
+      eg.addColorStop(1, 'rgba(75,156,211,0)'); // a3-keep: trajectory phase / Earth identity colour, palette review at the end
       ctx2.beginPath();
       ctx2.arc(ex, ey, 14, 0, Math.PI * 2);
       ctx2.fillStyle = eg;
       ctx2.fill();
       ctx2.beginPath();
       ctx2.arc(ex, ey, 5, 0, Math.PI * 2);
-      ctx2.fillStyle = '#4b9cd3';
+      ctx2.fillStyle = '#4b9cd3'; // a3-keep: trajectory phase / Earth identity colour, palette review at the end
       ctx2.fill();
       ctx2.fillText(m.nav_earth(), ex + 9, ey + 3);
-      // Live Mars — halo + disc.
-      const mg = ctx2.createRadialGradient(mx, my, 0, mx, my, 12);
-      mg.addColorStop(0, 'rgba(193,68,14,0.6)');
-      mg.addColorStop(1, 'rgba(193,68,14,0)');
+      // Live destination — halo + disc in its identity colour, the label beside it. A
+      // planetary-moon flight draws the host plus the named moon on a short ring.
+      if (targets.bodyId) {
+        const bLive = destinationPos(bridge.simDay, targets.bodyId);
+        const bx = ptX(bLive.x);
+        const by = ptZ(bLive.z);
+        const bRgb = hexToRgb(DESTINATION_LABEL_COLORS[targets.bodyId]);
+        const discR = Math.min(9, Math.max(3.5, 2 + (DEST_STYLE[targets.bodyId]?.size ?? 1)));
+        const bg = ctx2.createRadialGradient(bx, by, 0, bx, by, discR + 8);
+        bg.addColorStop(0, rgba(bRgb, 0.6));
+        bg.addColorStop(1, rgba(bRgb, 0));
+        ctx2.beginPath();
+        ctx2.arc(bx, by, discR + 8, 0, Math.PI * 2);
+        ctx2.fillStyle = bg;
+        ctx2.fill();
+        ctx2.beginPath();
+        ctx2.arc(bx, by, discR, 0, Math.PI * 2);
+        ctx2.fillStyle = rgba(bRgb, 1);
+        ctx2.fill();
+        ctx2.fillStyle = FLY_2D_STYLE.label.color;
+        if (targets.moonId) {
+          const ringR = discR + 14;
+          ctx2.beginPath();
+          ctx2.arc(bx, by, ringR, 0, Math.PI * 2);
+          strokeLine2d(FLY_2D_STYLE.ring);
+          const phase = (bridge.simDay / moonPeriodDays(targets.moonId)) * Math.PI * 2;
+          const moonX = bx + Math.cos(phase) * ringR;
+          const moonY = by + Math.sin(phase) * ringR;
+          ctx2.beginPath();
+          ctx2.arc(moonX, moonY, 3, 0, Math.PI * 2);
+          ctx2.fillStyle = '#dddddd';
+          ctx2.fill();
+          ctx2.fillStyle = FLY_2D_STYLE.label.color;
+          ctx2.fillText(destinationLabel(targets.moonId), moonX + 7, moonY + 3);
+          // Under the ring, centred: the moon's label follows its dot and never meets it.
+          ctx2.textAlign = 'center';
+          ctx2.fillText(destinationLabel(targets.bodyId), bx, by + ringR + 14);
+          ctx2.textAlign = 'left';
+        } else {
+          ctx2.fillText(destinationLabel(targets.bodyId), bx + discR + 5, by + 3);
+        }
+      }
+    }
+
+    // Scale readout (G-11a): a 1 AU bar and its pixel length, so the fitted compression is
+    // honest. Heliocentric view only; the Moon view has its own scale.
+    if (!bridge.isMoonMission) {
+      const barPx = Math.round(SCALE_2D);
+      const barX = 16;
+      const barY =
+        H - (W < 768 || H < 500 ? SCALE_READOUT_BOTTOM_TOUCH_PX : SCALE_READOUT_BOTTOM_PX);
       ctx2.beginPath();
-      ctx2.arc(mx, my, 12, 0, Math.PI * 2);
-      ctx2.fillStyle = mg;
-      ctx2.fill();
-      ctx2.beginPath();
-      ctx2.arc(mx, my, 4, 0, Math.PI * 2);
-      ctx2.fillStyle = '#c1440e';
-      ctx2.fill();
-      ctx2.fillText(m.nav_mars(), mx + 9, my + 3);
+      ctx2.moveTo(barX, barY - 4);
+      ctx2.lineTo(barX, barY);
+      ctx2.lineTo(barX + barPx, barY);
+      ctx2.lineTo(barX + barPx, barY - 4);
+      strokeLine2d(FLY_2D_STYLE.ring);
+      ctx2.font = FLY_2D_STYLE.label.font;
+      ctx2.fillStyle = FLY_2D_STYLE.label.color;
+      ctx2.textAlign = 'left';
+      ctx2.fillText(m.fly_2d_scale_label({ px: barPx }), barX, barY - 9);
     }
 
     // Spacecraft glyph — gold chevron sitting at sc.pos. The
@@ -1859,6 +1972,11 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
       bridge.activeDestination === 'mars' &&
       !bridge.mission.sunTarget;
     moonSoI.visible = helioReactive.soiLayerOn && bridge.isMoonMission;
+    const wantTargetMoon = bridge.isMoonMission ? null : (bridge.mission.targetMoon ?? null);
+    if (wantTargetMoon !== highlightedMoon) {
+      highlightedMoon = wantTargetMoon;
+      helioHandles.setTargetMoon(wantTargetMoon);
+    }
     if (earthSoI.visible) earthSoI.position.copy(earthWorld);
     if (marsSoI.visible) marsSoI.position.copy(marsWorld);
     if (moonSoI.visible) moonSoI.position.copy(moonMesh.position);

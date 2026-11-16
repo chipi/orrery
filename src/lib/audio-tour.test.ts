@@ -352,6 +352,8 @@ describe('staged-episode invariants (RFC-019 §12.6 rollout)', () => {
         const name = match[1];
         const literalPresent =
           haystack.includes(`data-audio-stage="${name}"`) ||
+          // LayerChipRow chips carry the anchor in their `attrs` config (Explore's PATHS chip).
+          haystack.includes(`'data-audio-stage': '${name}'`) ||
           (tabRowEmitsAnchor && haystack.includes(`audioStage: '${name}'`));
         const templatedPresent = TEMPLATED_PREFIXES.some(
           (prefix) => name.startsWith(prefix) && haystack.includes(`data-audio-stage="${prefix}`),

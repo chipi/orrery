@@ -94,5 +94,11 @@
   "link_labels": {
     "/earth": "地球 — 軌道と打ち上げ地点",
     "/science/mission-phases/edl": "突入・降下・着陸"
+  },
+  "roster": {
+    "Korabl-Sputnik 2 (Belka & Strelka)": {
+      "note": "犬のBelkaとStrelka——軌道を周回して生きて帰還した初の動物。Vostok試験宇宙船で",
+      "name": "Korabl-Sputnik 2 (Belka & Strelka)"
+    }
   }
 }

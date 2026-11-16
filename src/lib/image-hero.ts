@@ -47,7 +47,9 @@ export type HeroSurface =
   | 'satellites'
   | 'belts'
   | 'iss-modules'
-  | 'tiangong-modules';
+  | 'tiangong-modules'
+  | 'stars'
+  | 'black-holes';
 
 const SURFACE_TO_DIR: Record<HeroSurface, string> = {
   missions: 'missions',
@@ -61,6 +63,8 @@ const SURFACE_TO_DIR: Record<HeroSurface, string> = {
   belts: 'belts',
   'iss-modules': 'iss-modules',
   'tiangong-modules': 'tiangong-modules',
+  stars: 'stars',
+  'black-holes': 'black-holes',
 };
 
 const DEFAULT_SLOT = '01.jpg';

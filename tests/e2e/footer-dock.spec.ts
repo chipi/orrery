@@ -122,8 +122,8 @@ for (const size of SIZES) {
 }
 
 /**
- * /explore HUD: the left chip rail, the orbit ruler, the bottom-left card, the
- * time dock, the A-Z index tab, the footer and the scale panel own separate
+ * /explore HUD: the flat chip row, the orbit ruler, the bottom-left card, the
+ * time dock, the INDEX tab, the footer and the scale panel own separate
  * pixels on a non-touch window.
  */
 const HUD_SIZES = [
@@ -139,11 +139,13 @@ const HUD_SIZES = [
 const HUD_PARTS: Array<[string, string]> = [
   ['chips', '.ctrl-row.chips'],
   ['ruler', '.ruler'],
-  ['earth-compare', '.earth-compare'],
+  ['earth-compare', '.scales-dock'],
   ['dock', '.time-controls'],
-  ['index tab', '.entity-index summary'],
+  ['index tab', '.scale-index-handle'],
   ['footer', '.footer-menu'],
   ['scale panel', '.scale-strip'],
+  ['level card', '[data-testid="explore-level-card"]'],
+  ['welcome hint', '[data-testid="explore-hint"]'],
 ];
 
 for (const size of HUD_SIZES) {
@@ -160,13 +162,18 @@ for (const size of HUD_SIZES) {
       for (const [name, sel] of HUD_PARTS) {
         const l = page.locator(sel).first();
         if (!(await l.isVisible())) continue;
-        boxes.push([name, await box(l)]);
+        const b = await l.boundingBox();
+        if (!b) continue; // the welcome hint can fade out between the two calls
+        boxes.push([name, b]);
       }
       expect(boxes.length).toBeGreaterThanOrEqual(6);
       const clashes: string[] = [];
       for (let i = 0; i < boxes.length; i++)
         for (let j = i + 1; j < boxes.length; j++) {
           const id = `${boxes[i][0]}|${boxes[j][0]}`;
+          // By design (operator 2026-11-12): on short windows the INDEX tab lies over the ruler's
+          // left edge rather than pushing the ruler inward.
+          if (id === 'ruler|index tab') continue;
           if (intersects(boxes[i][1], boxes[j][1])) clashes.push(id);
         }
       expect(clashes, `overlapping HUD parts: ${clashes.join(', ')}`).toEqual([]);
@@ -175,56 +182,195 @@ for (const size of HUD_SIZES) {
 }
 
 /**
- * The floating A-Z tab exists on every full-screen scene (/explore, /mars, /moon,
- * /venus). On a non-touch window it must own pixels of its own: clear of the
- * footer (strip or More button), the time dock, the scale panel, the HUD chips
- * and the surface HUD (distance scale, index handle, controls), and topmost at
- * its own centre (nothing painted over it, no ghost text behind a footer link).
+ * The nation legend is faded out until the site icons arrive with zoom (#641), so the generic
+ * "no two HUD parts intersect" test below never sees it. With the legend in, its chips and the
+ * lower-left column (readout, locate chip, orbit ruler: HudStackBL, UXD-024) must own separate
+ * pixels, and each chip must be what a click at its centre hits. Touch keeps the legend in the
+ * drawer's Nations tab, so this is a non-touch contract.
  */
-const TAB_ROUTES = ['/explore', '/mars', '/moon', '/venus'];
-const TAB_NEIGHBOURS: Array<[string, string]> = [
-  ['footer', '.footer-menu'],
-  ['dock', '.time-controls'],
-  ['scale panel', '.scale-strip'],
-  ['chips', '.ctrl-row.chips'],
-  ['surface hud', '.hud-controls'],
-  ['distance scale', '.distance-scale'],
-  ['surface index', '.surface-index-desktop'],
-  ['side panel', '.detail-panel'],
-];
-
-for (const route of TAB_ROUTES) {
-  for (const size of HUD_SIZES) {
-    const key = `${size.width}x${size.height}`;
-    test.describe(`A-Z tab ${route} — ${key} non-touch`, () => {
+for (const route of ['/earth', '/moon', '/mars']) {
+  for (const size of [
+    { width: 1280, height: 720 },
+    { width: 1366, height: 768 },
+    { width: 1440, height: 900 },
+  ]) {
+    test.describe(`nation legend vs lower-left column ${route} — ${size.width}x${size.height}`, () => {
       test.use({ viewport: size, hasTouch: false, isMobile: false });
 
-      test('the tab clears the footer and the HUD, and nothing paints over it', async ({
+      test('legend chips clear the locate chip and the ruler, and are on top at their centre', async ({
         page,
       }) => {
-        test.slow(route === '/explore');
+        test.slow();
         await page.goto(route, { waitUntil: 'networkidle' });
-        await page.waitForTimeout(500);
-        const tab = page.locator('.entity-index.floating summary');
-        await expect(tab).toBeVisible();
-        const t = await box(tab);
-        const clashes: string[] = [];
-        for (const [name, sel] of TAB_NEIGHBOURS) {
+        await page.waitForFunction(
+          () =>
+            typeof (window as { __surfaceSceneSelectSite?: unknown }).__surfaceSceneSelectSite ===
+            'function',
+          null,
+          { timeout: 20_000 },
+        );
+        const canvas = await page.locator('canvas').first().boundingBox();
+        if (!canvas) throw new Error('no scene canvas');
+        await page.mouse.move(canvas.x + canvas.width / 2, canvas.y + canvas.height / 2);
+        const arrived = page.locator('.legend-3d:not(.legend-3d--away)');
+        for (let i = 0; i < 40 && (await arrived.count()) === 0; i++) {
+          await page.mouse.wheel(0, -150);
+          await page.waitForTimeout(150);
+        }
+        await expect(arrived).toHaveCount(1);
+        await page.waitForTimeout(600);
+
+        const chips = page.locator('.legend-3d [data-testid^="legend-nation-"]');
+        const n = await chips.count();
+        expect(n).toBeGreaterThan(4);
+        const column: Array<[string, Box]> = [];
+        for (const [name, sel] of [
+          ['locate', '.locate-slot'],
+          ['ruler', '.ruler'],
+          ['readout', '.moon-observer'],
+        ]) {
           const l = page.locator(sel).first();
           if (!(await l.isVisible())) continue;
-          const o = await box(l);
-          if (intersects(t, o)) clashes.push(`${name} ${JSON.stringify(o)}`);
+          const b = await l.boundingBox();
+          if (b) column.push([name, b]);
         }
-        expect(clashes, `tab ${JSON.stringify(t)} overlaps: ${clashes.join('; ')}`).toEqual([]);
-        const covered = await tab.evaluate((el) => {
-          const r = el.getBoundingClientRect();
-          const hits = document.elementsFromPoint(r.left + r.width / 2, r.top + r.height / 2);
-          return hits
-            .slice(0, hits.indexOf(el) < 0 ? hits.length : hits.indexOf(el))
-            .filter((h) => !el.contains(h))
-            .map((h) => `${h.tagName.toLowerCase()}.${h.className}`);
-        });
-        expect(covered, `painted over the tab: ${covered.join(', ')}`).toEqual([]);
+        expect(column.length, 'the column renders at least the locate chip').toBeGreaterThan(0);
+
+        const problems: string[] = [];
+        for (let i = 0; i < n; i++) {
+          const chip = chips.nth(i);
+          const id = (await chip.getAttribute('data-testid')) ?? `chip ${i}`;
+          const b = await chip.boundingBox();
+          if (!b) continue;
+          for (const [name, cb] of column)
+            if (intersects(b, cb)) problems.push(`${id} under ${name}`);
+          const hit = await chip.evaluate((el) => {
+            const r = el.getBoundingClientRect();
+            const top = document.elementFromPoint(r.x + r.width / 2, r.y + r.height / 2);
+            return !!top && el.contains(top);
+          });
+          if (!hit) problems.push(`${id} not on top at its centre`);
+        }
+        expect(problems, `legend chips covered: ${problems.join(', ')}`).toEqual([]);
+      });
+    });
+  }
+}
+
+/**
+ * The worlds' HUD (/earth /moon /mars /venus): the view-control row, the one flat chip
+ * row, the INDEX pull tab (and its panel, opened), the orbit ruler, the distance scale,
+ * the nation legend, the locate chip and the footer own separate pixels on a non-touch
+ * window. The A–Z tab is gone: the INDEX panel carries the entity-page links (ADR-096 #11).
+ */
+const WORLD_ROUTES = ['/earth', '/moon', '/mars', '/venus'];
+const WORLD_SIZES = [
+  { width: 1440, height: 900 },
+  { width: 1366, height: 768 },
+  { width: 1280, height: 720 },
+  { width: 1100, height: 700 },
+  { width: 800, height: 375 },
+];
+const WORLD_HUD_PARTS: Array<[string, string]> = [
+  ['view row', '.hud-controls > .ctrl-row:not(.chips)'],
+  ['chips', '.ctrl-row.chips'],
+  ['ruler', '.ruler'],
+  ['index tab', '.surface-index-handle'],
+  ['distance scale', '.distance-scale'],
+  ['nation legend', '.legend-3d'],
+  ['welcome hint', '[data-testid="surface-hint"]'],
+  ['locate', '.locate-slot'],
+  // The column's readout (/moon, once a location is resolved): own pixels above the chip. The
+  // column itself (.hud-stack-bl) holds the others, so it is not a part.
+  ['readout', '.moon-observer'],
+  ['footer', '.footer-menu'],
+];
+
+for (const route of WORLD_ROUTES) {
+  for (const size of WORLD_SIZES) {
+    const key = `${size.width}x${size.height}`;
+    test.describe(`world HUD ${route} — ${key} non-touch`, () => {
+      test.use({ viewport: size, hasTouch: false, isMobile: false });
+
+      test('no two HUD parts intersect, with the INDEX panel closed and open', async ({ page }) => {
+        test.slow();
+        await page.goto(route, { waitUntil: 'networkidle' });
+        await expect(page.locator('.ctrl-row.chips')).toBeVisible();
+        await page.waitForTimeout(500);
+        const measure = async (parts: Array<[string, string]>) => {
+          const boxes: Array<[string, Box]> = [];
+          for (const [name, sel] of parts) {
+            const l = page.locator(sel).first();
+            if (!(await l.isVisible())) continue;
+            const b = await l.boundingBox();
+            if (!b) continue;
+            boxes.push([name, b]);
+          }
+          const clashes: string[] = [];
+          for (let i = 0; i < boxes.length; i++)
+            for (let j = i + 1; j < boxes.length; j++)
+              if (intersects(boxes[i][1], boxes[j][1]))
+                clashes.push(`${boxes[i][0]}|${boxes[j][0]}`);
+          return { boxes, clashes };
+        };
+        const closed = await measure(WORLD_HUD_PARTS);
+        expect(closed.boxes.length).toBeGreaterThanOrEqual(4);
+        expect(closed.clashes, `overlapping HUD parts: ${closed.clashes.join(', ')}`).toEqual([]);
+
+        await page.getByTestId('surface-index-toggle').click();
+        await expect(page.locator('.surface-index-desktop')).toBeVisible();
+        const open = await measure([
+          ['view row', '.hud-controls > .ctrl-row:not(.chips)'],
+          ['chips', '.ctrl-row.chips'],
+          ['index panel', '.surface-index-desktop'],
+        ]);
+        expect(
+          open.clashes,
+          `overlapping with the INDEX panel: ${open.clashes.join(', ')}`,
+        ).toEqual([]);
+      });
+    });
+  }
+}
+
+/**
+ * An orbiter selected with its panel open (UXD-030): the ruler stays in view beside it, so the
+ * same HUD parts, plus the panel, own separate pixels.
+ */
+for (const [route, label] of [
+  ['/moon?site=lro', '/moon LRO'],
+  ['/mars?site=mro', '/mars MRO'],
+] as const) {
+  for (const size of WORLD_SIZES.slice(0, 4)) {
+    const key = `${size.width}x${size.height}`;
+    test.describe(`world HUD, orbiter selected ${label} — ${key} non-touch`, () => {
+      test.use({ viewport: size, hasTouch: false, isMobile: false });
+
+      test('no HUD part intersects another or the panel', async ({ page }) => {
+        test.slow();
+        await page.goto(route, { waitUntil: 'networkidle' });
+        await expect(page.locator('aside.panel')).toBeVisible();
+        await page.waitForTimeout(1500);
+        const boxes: Array<[string, Box]> = [];
+        for (const [name, sel] of [
+          // The welcome hint and the footer sit under a panel by design; the rest must not.
+          ...WORLD_HUD_PARTS.filter(([n]) => n !== 'welcome hint' && n !== 'footer'),
+          ['panel', 'aside.panel'] as [string, string],
+        ]) {
+          const l = page.locator(sel).first();
+          if (!(await l.isVisible())) continue;
+          const b = await l.boundingBox();
+          if (b) boxes.push([name, b]);
+        }
+        expect(
+          boxes.some(([n]) => n === 'ruler'),
+          'the ruler stays in view',
+        ).toBe(true);
+        const clashes: string[] = [];
+        for (let i = 0; i < boxes.length; i++)
+          for (let j = i + 1; j < boxes.length; j++)
+            if (intersects(boxes[i][1], boxes[j][1])) clashes.push(`${boxes[i][0]}|${boxes[j][0]}`);
+        expect(clashes, `overlapping HUD parts: ${clashes.join(', ')}`).toEqual([]);
       });
     });
   }

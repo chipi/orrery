@@ -76,3 +76,41 @@ export function makeRng(seed: number): () => number {
     return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
   };
 }
+
+const DEG = Math.PI / 180;
+
+/**
+ * Galactic longitude and latitude (degrees, l in 0..360) of an equatorial J2000 position, by the
+ * IAU rotation: the north galactic pole at (192.85948°, +27.12825°), l of the north celestial
+ * pole 122.93192°.
+ */
+export function equatorialToGalactic(raDeg: number, decDeg: number): { l: number; b: number } {
+  const aG = 192.85948 * DEG;
+  const dG = 27.12825 * DEG;
+  const lNcp = 122.93192 * DEG;
+  const ra = raDeg * DEG;
+  const dec = decDeg * DEG;
+  const sinB = Math.sin(dec) * Math.sin(dG) + Math.cos(dec) * Math.cos(dG) * Math.cos(ra - aG);
+  const y = Math.cos(dec) * Math.sin(ra - aG);
+  const x = Math.sin(dec) * Math.cos(dG) - Math.cos(dec) * Math.sin(dG) * Math.cos(ra - aG);
+  const l = ((((lNcp - Math.atan2(y, x)) / DEG) % 360) + 360) % 360;
+  return { l, b: Math.asin(Math.max(-1, Math.min(1, sinB))) / DEG };
+}
+
+/**
+ * Schematic placement of an object seen from the Sun (galactic l, b, distance in kpc) on the
+ * face-on disk: Sagittarius A* at the origin, the Sun where the schematic puts it, l = 0
+ * towards the centre and l growing the way the schematic's arms are labelled (Perseus at
+ * l ~ 65 deg lies at a smaller angle than the Sun-centre line). In-plane distance is d cos b.
+ */
+export function galacticPlanePin(
+  lDeg: number,
+  bDeg: number,
+  distKpc: number,
+  sun: { x: number; z: number },
+): { x: number; z: number } {
+  const toCentre = Math.atan2(-sun.z, -sun.x);
+  const theta = toCentre - lDeg * DEG;
+  const inPlane = distKpc * Math.cos(bDeg * DEG);
+  return { x: sun.x + inPlane * Math.cos(theta), z: sun.z + inPlane * Math.sin(theta) };
+}

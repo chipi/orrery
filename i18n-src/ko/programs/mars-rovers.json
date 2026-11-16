@@ -91,5 +91,26 @@
     "/mars?site=opportunity": "Opportunity — 메리디아니 평원",
     "/mars?site=curiosity": "Curiosity — 게일 분화구",
     "/mars?site=perseverance": "Perseverance — 예제로 분화구"
+  },
+  "roster": {
+    "mission:mars-pathfinder": {
+      "note": "에어백으로 튀어 오르며 화성에 착륙한 저비용 임무로, 전자레인지만 한 로버 Sojourner가 다른 행성에서 구른 최초의 바퀴가 되게 했다"
+    },
+    "mission:spirit": {
+      "note": "2004년 90일 임무로 착륙해 6년간 작동하며, 화성의 더 따뜻하고 습했던 과거를 말해 주는 화학적 흔적을 찾아냈다"
+    },
+    "mission:opportunity": {
+      "note": "Spirit의 쌍둥이로, 14년 동안 45km 넘게 달렸다 — 다른 세계에서 어떤 탈것이 이동한 가장 긴 거리"
+    },
+    "mission:curiosity": {
+      "note": "2012년 로켓 추진 스카이 크레인으로 화성에 내려놓은, 자동차만 한 원자력 로버. Gale Crater에 한때 거주 가능한 호수가 있었음을 확인했다"
+    },
+    "mission:perseverance": {
+      "note": "2021년 Jezero Crater 바닥 — 고대의 강 삼각주이자 호수 바닥 — 에 착륙해 과거 생명의 흔적을 찾고, 미래의 임무가 가져올 수 있도록 시료를 관에 봉인한다"
+    },
+    "Ingenuity": {
+      "note": "Perseverance가 싣고 간 작은 헬리콥터가 2021년 다른 행성에서 최초의 동력 비행을 했고, 이후 수십 차례 더 날았다",
+      "name": "Ingenuity"
+    }
   }
 }

@@ -263,6 +263,30 @@ describe('textSourceId', () => {
       'wikipedia',
     );
   });
+  it('finds the sources of the black-hole texts: ESO, APS, IOP, A&A, Science', () => {
+    expect(
+      textSourceId(
+        makeText({
+          source_publisher: 'ESO (European Southern Observatory)',
+          source_url: 'https://www.eso.org/public/news/eso1907/',
+        }),
+      ),
+    ).toBe('eso');
+    expect(
+      textSourceId(makeText({ source_publisher: 'APS News (American Physical Society)' })),
+    ).toBe('aps');
+    expect(
+      textSourceId(
+        makeText({ source_publisher: 'IOP Publishing (Classical and Quantum Gravity)' }),
+      ),
+    ).toBe('iop');
+    expect(
+      textSourceId(
+        makeText({ source_publisher: 'Astronomy & Astrophysics (GRAVITY Collaboration)' }),
+      ),
+    ).toBe('aanda');
+    expect(textSourceId(makeText({ source_publisher: 'Science (AAAS)' }))).toBe('science-aaas');
+  });
   it('falls back to wikipedia when no hint matches', () => {
     expect(textSourceId(makeText({ source_publisher: undefined }))).toBe('wikipedia');
   });

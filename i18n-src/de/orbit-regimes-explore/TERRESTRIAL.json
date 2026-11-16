@@ -28,15 +28,17 @@
   "firsts": [
     {
       "year": 1962,
-      "label": "Mariner 2 — erster Vorbeiflug an Venus (USA)"
+      "label": "Mariner 2 — erster Vorbeiflug an Venus"
     },
     {
       "year": 1965,
-      "label": "Mariner 4 — erster Vorbeiflug an Mars (USA)"
+      "label": "Mariner 4 — erster Vorbeiflug an Mars",
+      "mission_id": "mariner4"
     },
     {
       "year": 1974,
-      "label": "Mariner 10 — erster Vorbeiflug an Merkur (USA)"
+      "label": "Mariner 10 — erster Vorbeiflug an Merkur",
+      "mission_id": "mariner10"
     }
   ],
   "science_link": {

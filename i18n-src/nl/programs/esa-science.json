@@ -93,5 +93,18 @@
     "/programs/ariane": "Ariane — de raket die de wetenschap van ESA lanceert",
     "/earth?site=gaia": "Gaia bij L2",
     "/earth?site=xmm": "XMM-Newton"
+  },
+  "roster": {
+    "mission:rosetta": {
+      "note": "na een jacht van tien jaar komt Rosetta in een baan om komeet 67P en zet de lander Philae op het oppervlak — het eerste ruimtevaartuig ooit dat om een komeet draaide en erop landde"
+    },
+    "Gaia's map": {
+      "note": "Gaia begint met de publicatie van de nauwkeurigste driedimensionale kaart van de Melkweg ooit gemaakt — de posities, afstanden en bewegingen van bijna twee miljard sterren",
+      "name": "Gaia's kaart"
+    },
+    "Euclid opens its eyes": {
+      "note": "een telescoop gebouwd om een derde van de hemel in kaart te brengen en te laten zien hoe donkere materie en donkere energie het heelal hebben gevormd",
+      "name": "Euclid opent zijn ogen"
+    }
   }
 }

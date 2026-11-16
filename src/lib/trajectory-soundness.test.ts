@@ -148,7 +148,7 @@ function buildMissionArcs(m: MissionFile): {
 }
 
 describe('Trajectory soundness — every mission renders a valid arc', () => {
-  it(`fixture loads expected counts (20 Mars + 32 Moon + 41 Earth + 12 outer + 8 inner)`, () => {
+  it(`fixture loads expected counts (23 Mars + 37 Moon + 45 Earth + 12 outer + 9 inner)`, () => {
     const mars = MISSIONS.filter((m) => m.destDir === 'mars');
     const moon = MISSIONS.filter((m) => m.destDir === 'moon');
     const earth = MISSIONS.filter((m) => m.destDir === 'earth');
@@ -164,15 +164,18 @@ describe('Trajectory soundness — every mission renders a valid arc', () => {
     // 2026-07-12 — /programs Earth flights (Mercury freedom-7…, Gemini
     // 3/4/6a/7/8/12, Soyuz 1 & 11). 32 → 40 Earth.
     // 2026-10-20 — Artemis III became an Earth-orbit test (Moon → Earth); Artemis V added (Moon). 40 → 41 Earth, Moon unchanged.
+    // 2026-11-15 — slice H added Kaguya and Chandrayaan-2 (Moon). 32 → 34 Moon.
+    // 2026-11-15 — content4 added Artemis I (Moon) and STS-1, STS-51-L, STS-107 (Earth). 34 → 35 Moon, 41 → 44 Earth.
+    // 2026-11-15 — content7 added Viking 2, Mars 2, MRO (Mars), Chang'e 2, IM-1 (Moon), Shenzhou 5 (Earth), Mariner 2 (Venus).
     if (
-      mars.length !== 20 ||
-      moon.length !== 32 ||
-      earth.length !== 41 ||
+      mars.length !== 23 ||
+      moon.length !== 37 ||
+      earth.length !== 45 ||
       outer.length !== 12 ||
-      inner.length !== 8
+      inner.length !== 9
     ) {
       throw new Error(
-        `Expected 20 Mars + 32 Moon + 41 Earth + 12 outer + 8 inner; got ${mars.length} + ${moon.length} + ${earth.length} + ${outer.length} + ${inner.length}`,
+        `Expected 23 Mars + 37 Moon + 45 Earth + 12 outer + 9 inner; got ${mars.length} + ${moon.length} + ${earth.length} + ${outer.length} + ${inner.length}`,
       );
     }
   });

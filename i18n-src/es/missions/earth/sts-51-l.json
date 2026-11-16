@@ -1,0 +1,23 @@
+{
+  "name": "STS-51-L",
+  "vehicle": "Space Shuttle Challenger (OV-099)",
+  "payload": "TDRS-B y Spartan-Halley; siete tripulantes",
+  "delta_v": "0 km/s (órbita no alcanzada; vehículo perdido 73 s después del despegue)",
+  "type": "VUELO TRIPULADO DEL TRANSBORDADOR · PERDIDO EN EL ASCENSO",
+  "first": "Challenger y sus siete tripulantes se perdieron 73 segundos después del despegue",
+  "description": "STS-51-L fue la 25.ª misión del Space Shuttle y el 10.º vuelo del Challenger. Sus cargas útiles eran el satélite Tracking and Data Relay Satellite TDRS-B y el satélite Spartan-Halley, y el vuelo estaba previsto para durar seis días a unas 153 millas náuticas de altitud. La tripulación de siete la formaban Francis R. Scobee, comandante; Michael J. Smith, piloto; Judith A. Resnik, Ellison S. Onizuka y Ronald E. McNair, especialistas de misión; S. Christa McAuliffe, maestra en el espacio (Teacher in Space); y Gregory B. Jarvis, especialista de carga útil. Tras tres aplazamientos y una suspensión respecto a la fecha prevista del 1986-01-22, el Challenger despegó de la plataforma B a las 11:38:00 EST (16:38:00 UTC) del 1986-01-28, con una temperatura del aire de 36 °F (unos 2 °C), 15 °F más fría que en cualquier lanzamiento anterior. Una fuga de gas por la junta de campo trasera del motor de combustible sólido derecho debilitó el tanque externo y, 73 segundos después del despegue, a Mach 1.92 y a 46 000 pies (unos 14 km), el vehículo se rompió. La tripulación se perdió. La Comisión Rogers concluyó que la pérdida fue causada por el fallo de la junta entre los dos segmentos inferiores del motor de combustible sólido derecho, que destruyó los sellos destinados a retener los gases calientes, y que, de haber conocido los responsables todos los hechos, era muy improbable que hubieran decidido lanzar.",
+  "events": [
+    {
+      "met": 0,
+      "label": "DESPEGUE",
+      "note": "El Challenger despega de la plataforma B a las 11:38:00 EST (16:38:00 UTC) del 1986-01-28.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.000845,
+      "label": "VEHÍCULO PERDIDO",
+      "note": "73 segundos después del despegue el vehículo se rompe a Mach 1.92 y a 46 000 pies. Los siete tripulantes se pierden.",
+      "type": "warning"
+    }
+  ]
+}

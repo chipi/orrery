@@ -974,7 +974,7 @@
     flex-direction: column;
     gap: 2px;
     width: 100%;
-    font-size: 10px;
+    font-size: var(--size-label);
     color: rgba(220, 230, 245, 0.8);
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -988,7 +988,7 @@
     color: rgba(220, 230, 245, 0.95);
     border: 1px solid rgba(94, 234, 212, 0.4);
     font-family: inherit;
-    font-size: 10px;
+    font-size: var(--size-label);
     padding: 2px 4px;
   }
   canvas {
@@ -999,7 +999,7 @@
     max-width: 320px;
   }
   .readouts {
-    font-size: 9px;
+    font-size: var(--size-label);
     color: rgba(220, 230, 245, 0.7);
     font-family: monospace;
     line-height: 1.5;
@@ -1013,7 +1013,7 @@
     margin: 4px 0;
   }
   .frame-label {
-    font-size: 9px;
+    font-size: var(--size-label);
     color: rgba(94, 234, 212, 0.7);
     letter-spacing: 1.5px;
     text-transform: uppercase;
@@ -1022,7 +1022,7 @@
   .legend-row {
     gap: 10px;
     align-items: center;
-    font-size: 9px;
+    font-size: var(--size-label);
     flex-wrap: wrap;
   }
   .key {
@@ -1044,7 +1044,7 @@
     color: rgba(220, 230, 245, 0.8);
     border-radius: 4px;
     padding: 2px 8px;
-    font-size: 9px;
+    font-size: var(--size-label);
     cursor: pointer;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -1058,7 +1058,7 @@
     color: #5eead4;
     border-radius: 4px;
     padding: 3px 10px;
-    font-size: 10px;
+    font-size: var(--size-label);
     cursor: pointer;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -1068,7 +1068,7 @@
     margin-left: 0;
   }
   .solve-result {
-    font-size: 9px;
+    font-size: var(--size-label);
     color: rgba(94, 234, 212, 0.85);
     font-family: ui-monospace, monospace;
     padding: 2px 0;

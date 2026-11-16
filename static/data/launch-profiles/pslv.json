@@ -5,6 +5,7 @@
   "payloadKg": 1337,
   "fairingKg": 1182,
   "fairingJettisonAltM": 113000,
+  "fairingJettisonS": 118,
   "refAreaM2": 11,
   "cd": 0.3,
   "launchSite": { "lat": 13.7333, "lon": 80.2347, "name": "First Launch Pad · Sriharikota" },
@@ -20,6 +21,7 @@
     "thrustVacKN": 650,
     "ispSlS": 245,
     "ispVacS": 262,
+    "separationDelayS": 20,
     "chamberTempK": 3000
   },
   "stages": [
@@ -27,11 +29,12 @@
       "name": "PS1 (S139)",
       "wetKg": 168000,
       "dryKg": 30000,
-      "thrustSlKN": 3300,
-      "thrustVacKN": 3700,
+      "thrustSlKN": 3135,
+      "thrustVacKN": 3515,
       "ispSlS": 237,
       "ispVacS": 269,
       "engines": 1,
+      "separationDelayS": 9.7,
       "chamberTempK": 3300
     },
     {
@@ -64,7 +67,7 @@
   ],
   "provenance": [
     {
-      "l": "ISRO — PSLV-C25 Mars Orbiter Mission brochure (flight events: 4 ground-lit PSOM-XL at liftoff, 2 air-lit at T+25 s, separations at 70 and 92 s, fairing at 113 km; stage propellant loads; 320 t at liftoff)",
+      "l": "ISRO — PSLV-C25 Mars Orbiter Mission brochure (flight events: 4 ground-lit PSOM-XL at liftoff, 2 air-lit at T+25 s, separations at 70 and 92 s, fairing at 113 km; stage propellant loads; 320 t at liftoff). Flight events: PSOM-XL separations 69.94 / 92.04 s (burnt-out motors ride ~20 s), PS1 burn 103 s and separation 112.75 s, fairing 117.95 s, PS2 separation 264.74 s",
       "u": "https://new1.isro.gov.in/media_isro/pdf/Missions/PSLVC25/publication_PSLVC25.pdf"
     },
     {

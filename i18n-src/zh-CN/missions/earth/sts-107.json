@@ -1,0 +1,29 @@
+{
+  "name": "STS-107",
+  "vehicle": "Space Shuttle Columbia (OV-102)",
+  "payload": "SPACEHAB 研究用双模块（80 多项实验）；七名机组成员",
+  "delta_v": "~9.4 km/s（近地轨道）",
+  "type": "载人研究飞行 · 再入时损失",
+  "first": "一次为期 16 天的科学飞行，以 Columbia 在再入时损失而告终",
+  "description": "STS-107 是一次为期 16 天的微重力研究任务（Microgravity Research Mission），携带 SPACEHAB 研究用双模块，进行 80 多项实验：商业载荷、欧洲空间局的研究以及 NASA 的生物和物理研究。七名机组成员为：指令长里克·赫斯本德；驾驶员威廉·麦库尔；载荷指令长迈克尔·安德森；任务专家戴维·布朗、卡尔帕娜·乔拉和劳雷尔·克拉克；以及代表以色列航天局的载荷专家伊兰·拉蒙。Columbia 于 2003-01-16 的 10:39 EST（15:39 UTC）从 39A 发射台升空。发射后约 82 秒，外储箱的隔热泡沫击中了左翼。NASA 报告称，航天员在 16 天中取得的科学成果超出了科学家的预期。2003-02-01，在东德克萨斯上空再入期间的 9:00 EST 左右，Columbia 和机组成员在预定于肯尼迪航天中心着陆前 16 分钟损失。哥伦比亚号事故调查委员会（Columbia Accident Investigation Board）由退役海军上将 Harold W. Gehman 担任主席，将损伤追溯到泡沫对左翼的撞击，并认定机翼因过热被毁导致了 Columbia 解体。委员会于 2003-08-26 公布了报告。",
+  "events": [
+    {
+      "met": 0,
+      "label": "发射升空",
+      "note": "Columbia 于 2003-01-16 的 10:39 EST（15:39 UTC）从 39A 发射台升空。",
+      "type": "nominal"
+    },
+    {
+      "met": 0.00095,
+      "label": "泡沫撞击",
+      "note": "发射后约 82 秒，外储箱的隔热泡沫击中左翼。",
+      "type": "warning"
+    },
+    {
+      "met": 15.93,
+      "label": "Columbia 损失",
+      "note": "2003-02-01 的 9:00 EST 左右，Columbia 和七名机组成员在东德克萨斯上空再入时损失，距预定着陆还有 16 分钟。",
+      "type": "warning"
+    }
+  ]
+}

@@ -103,5 +103,15 @@
     "/earth": "地球 — 轨道、再入与发射场",
     "/science/mission-phases/edl": "进入、下降与着陆",
     "/science/propulsion/tsiolkovsky": "火箭方程 — Redstone 为何无法入轨"
+  },
+  "roster": {
+    "Mercury-Redstone 2 (Ham)": {
+      "note": "黑猩猩亚轨道测试——为Redstone载人飞行扫清了障碍",
+      "name": "Mercury-Redstone 2 (Ham)"
+    },
+    "Mercury-Atlas 5 (Enos)": {
+      "note": "黑猩猩两圈轨道测试——在格伦飞行之前为Atlas扫清了障碍",
+      "name": "Mercury-Atlas 5 (Enos)"
+    }
   }
 }

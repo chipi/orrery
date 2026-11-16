@@ -92,5 +92,23 @@
     "/programs/spacex": "SpaceX — de Falcon die haar lanceert",
     "/earth": "Aarde — banen en de drukte in de lage baan",
     "/earth?site=starlink": "De Starlink-constellatie"
+  },
+  "roster": {
+    "First 60 satellites": {
+      "note": "één Falcon 9 zet 60 platgevouwen satellieten tegelijk uit — de operationele constellatie begint, en de nachtelijke hemel krijgt zijn eerste Starlink-'trein'",
+      "name": "De eerste 60 satellieten"
+    },
+    "Service goes live": {
+      "note": "de openbare bèta start; een constellatie wordt een consumenteninternetdienst die plekken bereikt waar glasvezel en zendmasten nooit kwamen",
+      "name": "Dienst gaat live"
+    },
+    "Ukraine": {
+      "note": "Starlink-terminals houden een land online tijdens een oorlog — en maken de constellatie van één bedrijf van de ene op de andere dag tot een factor voor de nationale veiligheid",
+      "name": "Oekraïne"
+    },
+    "Direct to cell": {
+      "note": "satellieten beginnen gewone telefoons rechtstreeks te verbinden, zonder terminal — de constellatie begint een wereldwijde zendmast te worden",
+      "name": "Direct naar mobiel"
+    }
   }
 }

@@ -5,7 +5,7 @@
   frame, so the same overlay serves the flat ground view and the 3D detail
   patch.
 
-  Hover (or keyboard focus) turns a ring cyan, brings it to the front,
+  Hover (or keyboard focus) turns a ring blue, brings it to the front,
   highlights its label chip and shows a small preview card (name + thumbnail,
   same look as the traverse route-photo card). A click / tap opens the full
   popover; on a coarse pointer that is a bottom sheet, kept clear of the HUD.
@@ -15,6 +15,7 @@
   panel, and are dropped where they would collide; the rings never are.
 -->
 <script lang="ts">
+  import Chip from '$lib/components/Chip.svelte';
   import { onMount } from 'svelte';
   import * as m from '$lib/paraglide/messages';
   import { loadLadder, ladderSources } from '$lib/image-srcset';
@@ -61,8 +62,13 @@
     onOpenPhoto?: (src: string) => void;
     /** Zoom the view in by `factor` around a screen point; false when already at the zoom limit. */
     onZoomTo?: (x: number, y: number, factor: number) => boolean;
-    /** First look at a tap on a ring (`id`) or badge at (x, y) in overlay px: true when the page handled it (no popover, no zoom). */
-    onRingTap?: (x: number, y: number, id?: string) => boolean;
+    /**
+     * First look at a tap on a ring (`id`) or badge at (x, y) in overlay px: true when the page
+     * handled it (no popover, no zoom). `e` is the click itself: the overlay frame shifts with the
+     * view (a panel docked beside it), so a page testing the tap against its own marks uses the
+     * click's client position, not the ring's overlay one.
+     */
+    onRingTap?: (x: number, y: number, id?: string, e?: MouseEvent) => boolean;
     /** Screen rectangles (e.g. WebGL traverse stop pills) that ring labels keep clear of. */
     blocked?: Rect[];
   } = $props();
@@ -342,7 +348,7 @@
       aria-label={c.members.map((r) => r.annotation.label).join(', ')}
       data-testid="annotation-cluster"
       data-count={c.members.length}
-      onclick={() => !onRingTap?.(c.x, c.y) && clickCluster(c)}
+      onclick={(e) => !onRingTap?.(c.x, c.y, undefined, e) && clickCluster(c)}
       onpointerenter={(e) => e.pointerType !== 'touch' && (previewCluster = c.key)}
       onpointerleave={() => previewCluster === c.key && (previewCluster = null)}
       onfocus={(e) =>
@@ -375,7 +381,7 @@
       onclick={(e) => {
         const hit = tappedRing(e, id);
         const h = singles.find((s) => s.annotation.id === hit) ?? r;
-        if (!onRingTap?.(h.x, h.y, hit)) toggle(hit);
+        if (!onRingTap?.(h.x, h.y, hit, e)) toggle(hit);
       }}
       onpointerenter={(e) => enter(e, id)}
       onpointerleave={() => leave(id)}
@@ -454,11 +460,11 @@
           ? undefined
           : `${height - open.y + HIT_PX / 2}px`}
     >
-      <button
-        type="button"
-        class="pop-close"
+      <Chip
+        kind="action"
+        class="pop-close ui-chip--close"
         aria-label={m.drawer_close_panel_aria()}
-        onclick={() => (annotationUi.openId = null)}>×</button
+        onclick={() => (annotationUi.openId = null)}>×</Chip
       >
       {#if open.annotation.photo}
         {@const photo = open.annotation.photo}
@@ -513,8 +519,8 @@
     pointer-events: none;
     overflow: hidden;
   }
-  /* --hl (set inline, #889fe7): the site's --color-tier-core #7b9cff blended 65/35 toward
-     a neutral grey, so it reads as a calm blue against the ring yellow, not cyan. */
+  /* --hl (set inline, #889fe7): the former --color-tier-core #7b9cff blended 65/35 toward
+     a neutral grey, so it reads as a calm blue against the ring yellow, not blue. */
   .ring {
     position: absolute;
     width: var(--hit-px);
@@ -578,7 +584,7 @@
       animation: none;
     }
   }
-  /* hover / focus / list highlight: cyan accent, thicker stroke, brighter glow, in front */
+  /* hover / focus / list highlight: blue accent, thicker stroke, brighter glow, in front */
   .ring.active .dot,
   .ring:hover .dot,
   .ring:focus-visible .dot {
@@ -744,7 +750,7 @@
     margin-bottom: 4px;
   }
   .card .name {
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 0.08em;
     color: rgba(255, 220, 140, 0.95);
     text-transform: uppercase;
@@ -802,28 +808,21 @@
     margin: 0 0 6px;
   }
   .pop .position-note {
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 0.06em;
     color: rgba(255, 255, 255, 0.65);
   }
   .pop .sources {
     margin: 8px 0 0;
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 0.06em;
   }
   .pop a {
     color: var(--hl);
   }
-  .pop-close {
+  :global(.pop-close) {
     position: absolute;
     top: 0;
     right: 0;
-    width: 44px;
-    height: 44px;
-    border: 0;
-    background: transparent;
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 20px;
-    cursor: pointer;
   }
 </style>

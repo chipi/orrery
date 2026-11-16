@@ -1,14 +1,15 @@
 <script lang="ts">
   /**
-   * /missions/launches — global launches calendar (PRD-020 / RFC-023).
+   * /missions/launches — global launches calendar (PRD-020 / RFC-023), on the catalogue pattern of
+   * /missions and /fleet (UXD-048): search, FILTERS (view, tier, decade, outcome, year), the era
+   * strip by launch year, the provider chips, the "N launches | Showing" line with sort and
+   * List / Grid, then the manifest. It is a long manifest, so it opens as the month-grouped list;
+   * the grid is one card of one size per launch. A launch card links to its mission or its
+   * launcher in Orrery where the manifest names one, and is a plain card where it does not.
    *
-   * Layout consolidated to mirror /missions and /fleet:
-   * - No visible H1 / subtitle / explainer in the page body (title in svelte:head; a
-   *   screen-reader-only H1 carries it for the heading outline).
-   * - Single `.launches` container (max-width 1400 px, matches .library).
-   * - Single `.filters-toggle` button (FILTERS ▸ N/total).
-   * - When expanded: `.filters` nav with .filter-group × N of .pill buttons.
-   * - Timeline below, full-width.
+   * Eras: the page holds one manifest at a time (the upcoming list or one decade). The era tiles
+   * count from `launches-years.json`; choosing an era loads the decades it spans (and the upcoming
+   * list when it runs into the present) and keeps the launches of its years.
    */
 
   import { onMount, untrack } from 'svelte';
@@ -19,43 +20,74 @@
   import {
     loadUpcoming,
     loadHistoricDecade,
+    loadYearIndex,
     decadeForYear,
+    formatNet,
     groupByMonth,
+    feedText,
     ALL_DECADES,
+    type LaunchEntry,
     type Manifest,
   } from '$lib/launches/manifest.js';
+  import {
+    launchEra,
+    launchSources,
+    launchYear,
+    listMode,
+    mergeEntries,
+    providerCounts,
+    providerOf,
+    sortLaunches,
+    type LaunchMode,
+    type LaunchSort,
+  } from '$lib/launches/browse';
+  import { countsByEra, providersByEra, type YearIndex } from '$lib/launches/year-index';
   import Timeline from '$lib/components/launches/Timeline.svelte';
-  import PillDropdown from '$lib/components/PillDropdown.svelte';
-  import { launchAgencyLogo, launchAgencyShortName } from '$lib/launches/agency-logos.js';
+  import Chip from '$lib/components/Chip.svelte';
+  import ChipGroup from '$lib/components/ChipGroup.svelte';
+  import EpochTimelineStrip from '$lib/components/EpochTimelineStrip.svelte';
+  import AgencyFilterRow from '$lib/components/AgencyFilterRow.svelte';
+  import BrowseToolbar from '$lib/components/BrowseToolbar.svelte';
+  import EntityCard from '$lib/components/EntityCard.svelte';
+  import { EPOCH_BANDS } from '$lib/epoch-bands';
+  import { epochLabel } from '$lib/epoch-label';
+  import { agencyDataColor, agencyFullName, agencyShortName } from '$lib/agencies';
+  import { matchesQuery } from '$lib/list-search';
+  import { launchStatusLabel } from '$lib/launches/status-label';
+  import { nativeCompound } from '$lib/name-origins.js';
+  import { getLocale } from '$lib/paraglide/runtime';
+  import { pickHero, loadHeroOverrides } from '$lib/image-hero';
   import * as m from '$lib/paraglide/messages';
   import VisuallyHiddenH1 from '$lib/components/VisuallyHiddenH1.svelte';
+  import type { FleetEpoch } from '$types/fleet';
 
-  type Mode = 'upcoming' | 'historic';
   type TierFilter = 'ALL' | 'FEATURED';
   type OutcomeFilter = 'ALL' | 'SUCCESS' | 'FAILURE';
 
-  let mode: Mode = $state('upcoming');
-  let manifest: Manifest = $state({
-    version: 1,
-    generated_at: null,
-    sources_active: [],
-    entries: {},
-  });
+  const THIS_YEAR = new Date().getUTCFullYear();
+  const DEFAULT_DECADE = decadeForYear(THIS_YEAR);
+
+  let mode: LaunchMode = $state('upcoming');
+  let entries: LaunchEntry[] = $state([]);
   let loading = $state(true);
-  let activeDecade: string = $state(decadeForYear(new Date().getUTCFullYear()));
+  let loadedOnce = $state(false);
+  let activeDecade: string = $state(DEFAULT_DECADE);
+  let yearIndex: YearIndex = $state({ version: 1, years: {} });
 
   /**
-   * Launches list filter state. Bagged into a single typed `$state`
-   * per #330 C.1 — replaces 5 scattered `$state` declarations with
-   * one shape that's passed to the reset funnel + future URL-sync.
-   * `expanded` is a UI-only field (filter strip disclosure); the
-   * funnel doesn't touch it so clearing filters keeps the strip open.
+   * Launches list filter state, one typed `$state` (#330 C.1). `expanded` is a UI-only field (the
+   * filter strip's disclosure); clearing filters keeps the strip open. `sort` is null for the
+   * default order (oldest first, soonest first in the upcoming list: the order the list always had).
    */
   interface LaunchFilterState {
     tier: TierFilter;
     agency: string;
     outcome: OutcomeFilter;
     year: string; // 'ALL' or 4-digit year
+    epoch: FleetEpoch | 'ALL';
+    q: string;
+    sort: LaunchSort | null;
+    view: 'list' | 'grid';
     expanded: boolean;
   }
   const filterState = $state<LaunchFilterState>({
@@ -63,6 +95,10 @@
     agency: 'ALL',
     outcome: 'ALL',
     year: 'ALL',
+    epoch: 'ALL',
+    q: '',
+    sort: null,
+    view: 'list',
     expanded: false,
   });
 
@@ -71,85 +107,139 @@
     filterState.agency = 'ALL';
     filterState.outcome = 'ALL';
     filterState.year = 'ALL';
+    filterState.epoch = 'ALL';
+    filterState.q = '';
   }
 
-  let allEntries = $derived(Object.values(manifest.entries));
-  let agencies = $derived(
-    Array.from(new Set(allEntries.map((e) => e.agency_name).filter(Boolean))).sort(),
+  const eraOn = $derived(filterState.epoch !== 'ALL');
+  const shown = $derived(listMode(filterState.epoch, mode, THIS_YEAR)); // what the list holds
+  const sourceKeys = $derived(launchSources(filterState.epoch, mode, activeDecade, THIS_YEAR));
+
+  // The launches in scope: the manifest(s) loaded, narrowed to the era's years when an era is chosen.
+  let scoped = $derived(
+    filterState.epoch === 'ALL'
+      ? entries
+      : entries.filter((e) => launchEra(e) === filterState.epoch),
   );
-  let years = $derived(Array.from(new Set(allEntries.map((e) => e.net.slice(0, 4)))).sort());
+  let agencyCount = $derived(providerCounts(scoped));
+  let agencies = $derived([...agencyCount.keys()].sort());
+  let years = $derived(Array.from(new Set(scoped.map((e) => String(launchYear(e))))).sort());
+
+  const locale = getLocale();
+  const nativeOr = (name: string) => nativeCompound(locale, name) ?? name;
+  const missionLine = (e: LaunchEntry) => feedText(nativeOr(e.mission_name ?? e.name));
+  const vehicle = (e: LaunchEntry) => nativeOr(e.rocket_config_name);
+
+  // The old links carry the provider as the manifest names it ("National Aeronautics and Space
+  // Administration"); the chips carry the short name. Both select the same launches.
+  const agencyWanted = $derived(
+    filterState.agency === 'ALL' ? 'ALL' : agencyShortName(filterState.agency),
+  );
 
   let filtered = $derived(
-    allEntries.filter((e) => {
+    scoped.filter((e) => {
       if (filterState.tier === 'FEATURED' && e.tier !== 'T1') return false;
-      if (filterState.agency !== 'ALL' && e.agency_name !== filterState.agency) return false;
-      if (
-        mode === 'historic' &&
-        filterState.outcome !== 'ALL' &&
-        e.status.code !== filterState.outcome
-      )
-        return false;
+      if (agencyWanted !== 'ALL' && providerOf(e) !== agencyWanted) return false;
+      if (filterState.outcome !== 'ALL' && e.status.code !== filterState.outcome) return false;
       if (filterState.year !== 'ALL' && !e.net.startsWith(filterState.year)) return false;
-      return true;
+      return matchesQuery(
+        [
+          vehicle(e),
+          missionLine(e),
+          e.rocket_config_name,
+          e.mission_name,
+          e.agency_name,
+          providerOf(e),
+          e.pad_name,
+          e.orbit_name,
+          e.editorial_note,
+        ],
+        filterState.q,
+      );
     }),
   );
 
-  let sorted = $derived(
-    filtered
-      .slice()
-      .sort((a, b) =>
-        mode === 'upcoming' ? a.net.localeCompare(b.net) : b.net.localeCompare(a.net),
-      ),
+  const effectiveSort = $derived<LaunchSort>(filterState.sort ?? 'chrono-asc');
+  let sorted = $derived(sortLaunches(filtered, effectiveSort, vehicle));
+  let months = $derived(
+    effectiveSort === 'alpha'
+      ? [{ key: 'all', label: '', entries: sorted }]
+      : groupByMonth(sorted, effectiveSort === 'chrono-desc' ? 'desc' : 'asc'),
   );
 
-  let months = $derived(groupByMonth(sorted));
-
-  async function loadForMode(m: Mode, decade?: string) {
-    loading = true;
-    if (m === 'upcoming') {
-      manifest = await loadUpcoming();
-    } else {
-      const d = decade ?? activeDecade;
-      activeDecade = d;
-      manifest = await loadHistoricDecade(d);
+  // The era strip counts the whole catalogue (the year index), not the manifest in scope.
+  let countByEpoch = $derived(countsByEra(yearIndex));
+  let colorsByEpoch = $derived.by(() => {
+    const out = new Map<FleetEpoch, string[]>();
+    for (const [ep, byName] of providersByEra(yearIndex)) {
+      const merged = new Map<string, number>();
+      for (const [name, n] of byName) {
+        const short = agencyShortName(name);
+        merged.set(short, (merged.get(short) ?? 0) + n);
+      }
+      // One dot per colour: the strip keys its dots by colour, and two providers can share one.
+      out.set(ep, [
+        ...new Set(
+          [...merged.entries()]
+            .sort((x, y) => y[1] - x[1] || x[0].localeCompare(y[0]))
+            .map(([a]) => agencyDataColor(a))
+            .filter((c): c is string => !!c),
+        ),
+      ]);
     }
+    return out;
+  });
+
+  let anyFilterActive = $derived(
+    filterState.tier !== 'ALL' ||
+      filterState.agency !== 'ALL' ||
+      filterState.outcome !== 'ALL' ||
+      filterState.year !== 'ALL' ||
+      filterState.epoch !== 'ALL' ||
+      filterState.q.trim() !== '',
+  );
+
+  // ─── Loading: one request per manifest, kept for the visit ────────
+  const manifests = new Map<string, Promise<Manifest>>();
+  const manifestOf = (key: string): Promise<Manifest> => {
+    let p = manifests.get(key);
+    if (!p) {
+      p = key === 'upcoming' ? loadUpcoming() : loadHistoricDecade(key);
+      manifests.set(key, p);
+    }
+    return p;
+  };
+  let loadToken = 0;
+  async function load(keys: string[]) {
+    const token = ++loadToken;
+    loading = true;
+    const loaded = await Promise.all(keys.map(manifestOf));
+    if (token !== loadToken) return; // a newer request superseded this one
+    entries = mergeEntries(loaded);
     loading = false;
+    loadedOnce = true;
   }
 
-  function setMode(m: Mode) {
-    if (m === mode) return;
-    mode = m;
-    if (m === 'upcoming') filterState.outcome = 'ALL';
-    filterState.year = 'ALL'; // reset year when switching modes; available years change
+  // ─── Setters (each writes the URL) ───────────────────────────────
+  function setMode(next: LaunchMode) {
+    if (next === mode) return;
+    mode = next;
+    if (next === 'upcoming') filterState.outcome = 'ALL';
+    filterState.year = 'ALL'; // the years on offer change with the manifest
     pushUrl();
-    void loadForMode(m);
   }
 
   function setDecade(d: string) {
     if (d === activeDecade) return;
     activeDecade = d;
-    filterState.year = 'ALL'; // reset year when switching decades
-    pushUrl();
-    void loadForMode('historic', d);
-  }
-
-  function setYear(y: string) {
-    filterState.year = y;
+    filterState.year = 'ALL';
     pushUrl();
   }
 
-  function setTier(t: TierFilter) {
-    filterState.tier = t;
-    pushUrl();
-  }
-
-  function setAgency(a: string) {
-    filterState.agency = a;
-    pushUrl();
-  }
-
-  function setOutcome(o: OutcomeFilter) {
-    filterState.outcome = o;
+  function setEpoch(v: FleetEpoch | 'ALL') {
+    filterState.epoch = v;
+    filterState.year = 'ALL';
+    if (v !== 'ALL' && listMode(v, mode, THIS_YEAR) === 'upcoming') filterState.outcome = 'ALL';
     pushUrl();
   }
 
@@ -158,26 +248,32 @@
     pushUrl();
   }
 
+  // ─── URL ↔ filter sync ───────────────────────────────────────────
+  const epochValid = (v: string) => EPOCH_BANDS.some((b) => b.id === v);
+
   function applyUrl(url: URL) {
-    const m = url.searchParams.get('mode');
-    mode = m === 'historic' ? 'historic' : 'upcoming';
-    const d = url.searchParams.get('decade');
+    const sp = url.searchParams;
+    mode = sp.get('mode') === 'historic' ? 'historic' : 'upcoming';
+    const d = sp.get('decade');
     if (d && (ALL_DECADES as readonly string[]).includes(d)) activeDecade = d;
-    const t = url.searchParams.get('tier');
-    filterState.tier = t === 'FEATURED' ? 'FEATURED' : 'ALL';
-    const a = url.searchParams.get('agency');
-    filterState.agency = a ?? 'ALL';
-    const o = url.searchParams.get('outcome');
+    filterState.tier = sp.get('tier') === 'FEATURED' ? 'FEATURED' : 'ALL';
+    filterState.agency = sp.get('agency') ?? 'ALL';
+    const o = sp.get('outcome');
     filterState.outcome = o === 'SUCCESS' || o === 'FAILURE' ? o : 'ALL';
-    const y = url.searchParams.get('year');
+    const y = sp.get('year');
     filterState.year = y && /^\d{4}$/.test(y) ? y : 'ALL';
+    const ep = sp.get('epoch');
+    filterState.epoch = ep && epochValid(ep) ? (ep as FleetEpoch) : 'ALL';
+    filterState.q = sp.get('q') ?? '';
+    const so = sp.get('sort');
+    filterState.sort = so === 'chrono-desc' || so === 'alpha' ? so : null;
+    filterState.view = sp.get('view') === 'grid' ? 'grid' : 'list';
     if (
-      url.searchParams.has('mode') ||
-      url.searchParams.has('decade') ||
-      url.searchParams.has('tier') ||
-      url.searchParams.has('agency') ||
-      url.searchParams.has('outcome') ||
-      url.searchParams.has('year')
+      sp.has('mode') ||
+      sp.has('decade') ||
+      sp.has('tier') ||
+      sp.has('outcome') ||
+      sp.has('year')
     ) {
       filterState.expanded = true;
     }
@@ -186,14 +282,15 @@
   function pushUrl() {
     const params = new URLSearchParams();
     if (mode !== 'upcoming') params.set('mode', mode);
-    if (mode === 'historic' && activeDecade !== decadeForYear(new Date().getUTCFullYear())) {
-      params.set('decade', activeDecade);
-    }
+    if (mode === 'historic' && activeDecade !== DEFAULT_DECADE) params.set('decade', activeDecade);
     if (filterState.tier !== 'ALL') params.set('tier', filterState.tier);
     if (filterState.agency !== 'ALL') params.set('agency', filterState.agency);
-    if (mode === 'historic' && filterState.outcome !== 'ALL')
-      params.set('outcome', filterState.outcome);
+    if (filterState.outcome !== 'ALL') params.set('outcome', filterState.outcome);
     if (filterState.year !== 'ALL') params.set('year', filterState.year);
+    if (filterState.epoch !== 'ALL') params.set('epoch', filterState.epoch);
+    if (filterState.q.trim() !== '') params.set('q', filterState.q.trim());
+    if (filterState.sort) params.set('sort', filterState.sort);
+    if (filterState.view === 'grid') params.set('view', 'grid');
     const qs = params.toString();
     const target = localHref(`/missions/launches${qs ? `?${qs}` : ''}`);
     if (target !== page.url.pathname + page.url.search) {
@@ -201,18 +298,47 @@
     }
   }
 
+  let urlApplied = $state(false);
   onMount(() => {
-    applyUrl(page.url);
-    void loadForMode(mode);
+    void loadHeroOverrides('fleet');
+    void loadYearIndex().then((idx) => (yearIndex = idx));
   });
-
   $effect(() => {
     const url = page.url;
     untrack(() => {
       applyUrl(url);
-      void loadForMode(mode);
+      urlApplied = true;
     });
   });
+  $effect(() => {
+    if (!urlApplied) return;
+    const keys = sourceKeys;
+    untrack(() => void load(keys));
+  });
+
+  // ─── Cards ───────────────────────────────────────────────────────
+  const dateLabel = (e: LaunchEntry) =>
+    formatNet(
+      e.net,
+      ['second', 'minute', 'hour'].includes(e.net_precision) ? 'day' : e.net_precision,
+    );
+  const destination = (e: LaunchEntry): string | undefined =>
+    e.orrery_mission_ref
+      ? localHref(`/missions?id=${e.orrery_mission_ref}`)
+      : e.orrery_launcher_ref
+        ? localHref(`/fleet?id=${e.orrery_launcher_ref}`)
+        : undefined;
+  // Done launches look like a flown mission, a failure like a failed one, the rest like a planned one.
+  const statusClass = (code: string) =>
+    code === 'SUCCESS'
+      ? 'flown'
+      : code === 'FAILURE'
+        ? 'failed'
+        : code === 'GO'
+          ? 'active'
+          : 'planned';
+  const sortLabel = (): string =>
+    mode === 'upcoming' && !eraOn ? m.launches_sort_soonest() : m.fleet_sort_oldest();
 </script>
 
 <svelte:head>
@@ -222,171 +348,253 @@
 <VisuallyHiddenH1 title={m.launches_page_title()} />
 
 <div
-  class="launches entity-browse-page"
+  class="launches entity-browse-page browse-main"
   data-route-ready={!loading}
   data-loading={loading ? 'true' : null}
-  data-mode={mode}
+  data-mode={shown === 'upcoming' ? 'upcoming' : eraOn ? 'historic' : mode}
 >
   <a class="back-link" href={localHref(`/missions`)} data-sveltekit-preload-data="hover">
     <span class="back-arrow" aria-hidden="true">←</span>
     <span class="back-label">{m.launches_back_to_missions()}</span>
   </a>
 
-  <button
-    type="button"
-    class="filters-toggle"
-    aria-expanded={filterState.expanded}
-    aria-controls="launches-filters"
-    onclick={() => (filterState.expanded = !filterState.expanded)}
-  >
-    <span class="filters-eyebrow">{m.launches_filters_label().toUpperCase()}</span>
-    <span class="filters-right">
-      {#if filtered.length !== allEntries.length}
-        <span class="filters-count count-fraction">{filtered.length} / {allEntries.length}</span>
+  <div class="search-row">
+    <input
+      type="search"
+      class="search-input"
+      placeholder={m.launches_search_placeholder()}
+      aria-label={m.launches_search_placeholder()}
+      data-testid="launches-search"
+      value={filterState.q}
+      oninput={(e) => {
+        filterState.q = (e.currentTarget as HTMLInputElement).value;
+        pushUrl();
+      }}
+    />
+  </div>
+
+  <div class="filters-bar">
+    <Chip
+      kind="action"
+      class="filters-strip"
+      aria-expanded={filterState.expanded}
+      aria-controls="launches-filters"
+      onclick={() => (filterState.expanded = !filterState.expanded)}
+    >
+      {m.filters_eyebrow()}
+      {#if filtered.length !== scoped.length}
+        <span class="filters-count count-fraction" aria-hidden="true"
+          >{filtered.length} / {scoped.length}</span
+        >
+        <span class="filters-count-sr"
+          >{m.filters_count_of({ shown: filtered.length, total: scoped.length })}</span
+        >
       {:else}
-        <span class="filters-count count-total-only">{allEntries.length}</span>
+        <span class="filters-count count-total-only">{scoped.length}</span>
       {/if}
       <span class="filters-chevron" aria-hidden="true">{filterState.expanded ? '▾' : '▸'}</span>
-    </span>
-  </button>
+    </Chip>
+    {#if anyFilterActive}
+      <Chip kind="action" quiet dismiss class="filters-clear" onclick={clearFilters}>
+        {m.missions_clear_filters()}
+      </Chip>
+    {/if}
+  </div>
+
+  <EpochTimelineStrip
+    {countByEpoch}
+    {colorsByEpoch}
+    selected={filterState.epoch}
+    onSelect={(v) => setEpoch(v)}
+  />
+  <div class="filters agency-row">
+    {#if agencies.length > 0}
+      <AgencyFilterRow
+        agencies={agencies.map((name) => ({ name, count: agencyCount.get(name) ?? 0 }))}
+        value={agencyWanted}
+        onSelect={(v) => {
+          filterState.agency = v;
+          pushUrl();
+        }}
+        label={m.launches_filter_agency()}
+        allLabel={m.launches_filter_all()}
+      />
+    {/if}
+  </div>
 
   {#if filterState.expanded}
-    <nav id="launches-filters" class="filters" aria-label={m.launches_filters_label()}>
-      <div class="filter-group" role="radiogroup" aria-label={m.launches_filter_view()}>
+    <nav id="launches-filters" class="filters" aria-label={m.filters_eyebrow()}>
+      <ChipGroup role="radiogroup" class="filter-group" label={m.launches_filter_view()}>
         <span class="filter-label">{m.launches_filter_view()}</span>
-        <button
-          type="button"
-          class="pill"
-          class:active={mode === 'upcoming'}
-          role="radio"
-          aria-checked={mode === 'upcoming'}
-          onclick={() => setMode('upcoming')}>{m.launches_tab_upcoming().toUpperCase()}</button
+        <Chip
+          kind="choice"
+          active={shown === 'upcoming' || (!eraOn && mode === 'upcoming')}
+          disabled={eraOn}
+          onclick={() => setMode('upcoming')}>{m.launches_tab_upcoming().toUpperCase()}</Chip
         >
-        <button
-          type="button"
-          class="pill"
-          class:active={mode === 'historic'}
-          role="radio"
-          aria-checked={mode === 'historic'}
-          onclick={() => setMode('historic')}>{m.launches_tab_historic().toUpperCase()}</button
+        <Chip
+          kind="choice"
+          active={eraOn ? shown !== 'upcoming' : mode === 'historic'}
+          disabled={eraOn}
+          onclick={() => setMode('historic')}>{m.launches_tab_historic().toUpperCase()}</Chip
         >
-      </div>
+      </ChipGroup>
 
-      <div class="filter-group" role="radiogroup" aria-label={m.launches_filter_tier()}>
+      <ChipGroup role="radiogroup" class="filter-group" label={m.launches_filter_tier()}>
         <span class="filter-label">{m.launches_filter_tier()}</span>
-        <button
-          type="button"
-          class="pill"
-          class:active={filterState.tier === 'ALL'}
-          role="radio"
-          aria-checked={filterState.tier === 'ALL'}
-          onclick={() => setTier('ALL')}>{m.launches_filter_all()}</button
+        <Chip
+          kind="choice"
+          active={filterState.tier === 'ALL'}
+          onclick={() => {
+            filterState.tier = 'ALL';
+            pushUrl();
+          }}>{m.launches_filter_all()}</Chip
         >
-        <button
-          type="button"
-          class="pill"
-          class:active={filterState.tier === 'FEATURED'}
-          role="radio"
-          aria-checked={filterState.tier === 'FEATURED'}
-          onclick={() => setTier('FEATURED')}>{m.launches_tier_featured()}</button
+        <Chip
+          kind="choice"
+          active={filterState.tier === 'FEATURED'}
+          onclick={() => {
+            filterState.tier = 'FEATURED';
+            pushUrl();
+          }}>{m.launches_tier_featured()}</Chip
         >
-      </div>
+      </ChipGroup>
 
-      {#if mode === 'historic'}
-        <div class="filter-group" role="radiogroup" aria-label={m.launches_filter_decade()}>
+      {#if mode === 'historic' && !eraOn}
+        <ChipGroup role="radiogroup" class="filter-group" label={m.launches_filter_decade()}>
           <span class="filter-label">{m.launches_filter_decade()}</span>
           {#each ALL_DECADES as d (d)}
-            <button
-              type="button"
-              class="pill"
-              class:active={d === activeDecade}
-              role="radio"
-              aria-checked={d === activeDecade}
-              onclick={() => setDecade(d)}
-              >{d === '1957-1969' ? '1957-69' : d.replace('-', '–')}</button
+            <Chip kind="choice" active={d === activeDecade} onclick={() => setDecade(d)}
+              >{d === '1957-1969' ? '1957-69' : d.replace('-', '–')}</Chip
             >
           {/each}
-        </div>
-
-        <div class="filter-group" role="radiogroup" aria-label={m.launches_filter_outcome()}>
-          <span class="filter-label">{m.launches_filter_outcome()}</span>
-          <button
-            type="button"
-            class="pill"
-            class:active={filterState.outcome === 'ALL'}
-            role="radio"
-            aria-checked={filterState.outcome === 'ALL'}
-            onclick={() => setOutcome('ALL')}>{m.launches_outcome_all()}</button
-          >
-          <button
-            type="button"
-            class="pill"
-            class:active={filterState.outcome === 'SUCCESS'}
-            role="radio"
-            aria-checked={filterState.outcome === 'SUCCESS'}
-            onclick={() => setOutcome('SUCCESS')}>{m.launches_outcome_success()}</button
-          >
-          <button
-            type="button"
-            class="pill"
-            class:active={filterState.outcome === 'FAILURE'}
-            role="radio"
-            aria-checked={filterState.outcome === 'FAILURE'}
-            onclick={() => setOutcome('FAILURE')}>{m.launches_outcome_failure()}</button
-          >
-        </div>
+        </ChipGroup>
       {/if}
 
-      <div class="filter-group">
-        <span class="filter-label">{m.launches_filter_agency()}</span>
-        <PillDropdown
-          value={filterState.agency}
-          options={agencies}
-          placeholder={m.launches_filter_all()}
-          label={m.launches_filter_agency()}
-          logoFor={launchAgencyLogo}
-          shortNameFor={launchAgencyShortName}
-          searchable
-          onChange={setAgency}
-        />
-      </div>
+      {#if shown !== 'upcoming'}
+        <ChipGroup role="radiogroup" class="filter-group" label={m.launches_filter_outcome()}>
+          <span class="filter-label">{m.launches_filter_outcome()}</span>
+          <Chip
+            kind="choice"
+            active={filterState.outcome === 'ALL'}
+            onclick={() => {
+              filterState.outcome = 'ALL';
+              pushUrl();
+            }}>{m.launches_outcome_all()}</Chip
+          >
+          <Chip
+            kind="choice"
+            active={filterState.outcome === 'SUCCESS'}
+            onclick={() => {
+              filterState.outcome = 'SUCCESS';
+              pushUrl();
+            }}>{m.launches_outcome_success()}</Chip
+          >
+          <Chip
+            kind="choice"
+            active={filterState.outcome === 'FAILURE'}
+            onclick={() => {
+              filterState.outcome = 'FAILURE';
+              pushUrl();
+            }}>{m.launches_outcome_failure()}</Chip
+          >
+        </ChipGroup>
+      {/if}
 
       {#if years.length > 1}
-        <div class="filter-group" role="radiogroup" aria-label={m.launches_filter_year()}>
+        <ChipGroup role="radiogroup" class="filter-group" label={m.launches_filter_year()}>
           <span class="filter-label">{m.launches_filter_year()}</span>
-          <button
-            type="button"
-            class="pill"
-            class:active={filterState.year === 'ALL'}
-            role="radio"
-            aria-checked={filterState.year === 'ALL'}
-            onclick={() => setYear('ALL')}>{m.launches_filter_all()}</button
+          <Chip
+            kind="choice"
+            active={filterState.year === 'ALL'}
+            onclick={() => {
+              filterState.year = 'ALL';
+              pushUrl();
+            }}>{m.launches_filter_all()}</Chip
           >
           {#each years as y (y)}
-            <button
-              type="button"
-              class="pill"
-              class:active={y === filterState.year}
-              role="radio"
-              aria-checked={y === filterState.year}
-              onclick={() => setYear(y)}>{y}</button
+            <Chip
+              kind="choice"
+              active={y === filterState.year}
+              onclick={() => {
+                filterState.year = y;
+                pushUrl();
+              }}>{y}</Chip
             >
           {/each}
-        </div>
-      {/if}
-
-      {#if filterState.tier !== 'ALL' || filterState.agency !== 'ALL' || filterState.outcome !== 'ALL' || filterState.year !== 'ALL'}
-        <button type="button" class="clear-btn" onclick={clearFilters}>{m.launches_clear()}</button>
+        </ChipGroup>
       {/if}
     </nav>
   {/if}
 
+  {#if loadedOnce}
+    <BrowseToolbar
+      total={scoped.length}
+      noun={m.launches_page_title()}
+      showing={m.browse_showing({
+        era: filterState.epoch === 'ALL' ? m.epoch_all() : epochLabel(filterState.epoch),
+        count: filtered.length,
+      })}
+      sortOptions={[
+        { value: 'chrono-desc', label: m.fleet_sort_newest() },
+        { value: 'chrono-asc', label: sortLabel() },
+        { value: 'alpha', label: m.fleet_sort_alpha() },
+      ]}
+      sort={effectiveSort}
+      onSort={(v) => {
+        filterState.sort = v === 'chrono-asc' ? null : (v as LaunchSort);
+        pushUrl();
+      }}
+      views={[
+        { value: 'list', label: m.browse_view_list() },
+        { value: 'grid', label: m.fleet_view_grid() },
+      ]}
+      view={filterState.view}
+      onView={(v) => {
+        filterState.view = v as 'list' | 'grid';
+        pushUrl();
+      }}
+    />
+  {/if}
+
   {#if loading}
     <p class="loading">{m.launches_loading()}</p>
-  {:else if months.length === 0}
+  {:else if filtered.length === 0}
     <p class="empty">{m.launches_no_matches()}</p>
+  {:else if filterState.view === 'grid'}
+    <ul class="entity-card-grid" aria-label={m.launches_timeline_aria()}>
+      {#each sorted as e (e.id)}
+        {@const lead = agencyDataColor(providerOf(e))}
+        <EntityCard
+          photo={e.orrery_launcher_ref ? pickHero('fleet', e.orrery_launcher_ref) : ''}
+          name={vehicle(e)}
+          year={launchYear(e)}
+          agencies={[{ name: providerOf(e), color: lead }]}
+          agencyTitle={agencyFullName(e.agency_name)}
+          accent={lead ?? 'var(--color-state)'}
+          story={`${dateLabel(e)} · ${e.editorial_note ?? missionLine(e)}`}
+          testid="launch-card-{e.id}"
+          href={destination(e)}
+          facts={[
+            { label: m.missions_card_year_label(), value: dateLabel(e) },
+            ...(e.pad_name ? [{ label: m.card_stat_launch(), value: feedText(e.pad_name) }] : []),
+          ]}
+        >
+          {#snippet pills()}
+            <span class="card-status status-{statusClass(e.status.code)}" title={e.status.label}
+              >{launchStatusLabel(e.status)}</span
+            >
+            {#if e.tier === 'T1'}
+              <span class="card-kind">{m.launches_tier_featured()}</span>
+            {:else if e.tier === 'T4'}
+              <span class="card-kind">{m.launches_tier_routine()}</span>
+            {/if}
+          {/snippet}
+        </EntityCard>
+      {/each}
+    </ul>
   {:else}
-    <Timeline {months} {mode} />
+    <Timeline {months} mode={shown} flat={effectiveSort === 'alpha'} />
   {/if}
 
   <footer class="footer-note">
@@ -404,15 +612,10 @@
 </div>
 
 <style>
-  /* Container mirrors .library on /missions and .fleet on /fleet. */
-  .launches {
-    padding: 18px 22px 40px;
-    max-width: 1400px;
-    margin: 0 auto;
-  }
+  /* The frame is .browse-main (entity-browse-page.css), the same as /missions and /fleet. */
 
-  /* Back link sits above the filters strip. Matches the visual weight
-     of .filters-toggle so the two read as a vertical stack. */
+  /* Back link sits above the search row. Matches the visual weight of the FILTERS strip so the
+     two read as a vertical stack. */
   .back-link {
     display: inline-flex;
     align-items: center;
@@ -440,44 +643,21 @@
     line-height: 1;
   }
 
-  /* Page chrome (.filters-toggle, .filters-right, .filters-count,
-     .filters-eyebrow, .filters-chevron, .filters, .filter-group,
-     .filter-label, .pill + variants) lives in
-     src/lib/styles/entity-browse-page.css — opted into by the
-     `entity-browse-page` class on the page root. Shared with /missions
-     and /fleet so chrome can't visually drift across the three
-     browse-and-filter routes. */
+  /* Page chrome (.search-row, .filters-bar, .filters-count, .filters-chevron, .filters,
+     .filter-group, .filter-label) lives in src/lib/styles/entity-browse-page.css; the card, the
+     grid, the toolbar, the agency row are the shared components /missions and /fleet render. */
 
-  /* Launches-specific: keep `.filters { align-items: center }` so the
-     inline `.clear-btn` (margin-left:auto, sits at the row's end)
-     stays vertically centred with the filter groups. /missions and
-     /fleet put their clear-action above the strip, so the shared
-     rule omits this and they don't need it. */
-  .filters {
-    align-items: center;
-  }
-
-  .clear-btn {
-    margin-left: auto;
-    padding: 6px 10px;
-    background: transparent;
-    border: 1px solid rgba(255, 82, 82, 0.4);
-    border-radius: 3px;
-    color: #ff5252;
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 8px;
-    letter-spacing: 2px;
-    font-weight: 700;
-    cursor: pointer;
-  }
-  .clear-btn:hover {
-    background: rgba(255, 82, 82, 0.12);
+  /* The two-column phone grid has room for the status alone; the tier shows in the list. */
+  @media (max-width: 600px) {
+    .launches :global(.entity-card-grid .card-kind) {
+      display: none;
+    }
   }
 
   .loading,
   .empty {
     padding: 40px 16px;
-    color: rgba(230, 232, 238, 0.5);
+    color: rgba(230, 232, 238, 0.6);
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 1px;
@@ -489,13 +669,13 @@
     padding-top: 14px;
     border-top: 1px solid rgba(255, 255, 255, 0.06);
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     color: rgba(230, 232, 238, 0.6);
     line-height: 1.6;
   }
   .footer-note a {
-    color: #4ecdc4;
+    color: var(--color-accent);
     text-decoration: underline;
     text-underline-offset: 2px;
   }

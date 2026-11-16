@@ -34,6 +34,11 @@
       "ref": "mission",
       "year": 2018,
       "note": "reaches Ryugu, fires a projectile to make an artificial crater, collects subsurface material, and returns it to Earth in 2020 — a flawless run"
+    },
+    {
+      "linked_id": "h-iia",
+      "ref": "fleet",
+      "role": "launcher"
     }
   ],
   "related_programs": [

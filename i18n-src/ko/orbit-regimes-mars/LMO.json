@@ -43,12 +43,13 @@
   "firsts": [
     {
       "year": 1971,
-      "label": "Mariner 9 — 최초의 인공 화성 위성 (미국)",
+      "label": "Mariner 9 — 최초의 인공 화성 위성",
       "mission_id": "mariner9"
     },
     {
       "year": 2003,
-      "label": "Mars Express — 최초의 ESA 화성 임무"
+      "label": "Mars Express — 최초의 ESA 화성 임무",
+      "mission_id": "mars-express"
     }
   ],
   "science_link": {

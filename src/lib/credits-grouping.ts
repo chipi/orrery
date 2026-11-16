@@ -292,6 +292,11 @@ export function provenanceSourceId(p: ImageProvenanceEntry): string {
 
 const TEXT_PUBLISHER_HINTS: Array<[RegExp, string]> = [
   [/wikipedia/i, 'wikipedia'],
+  [/european southern observatory|eso\.org/i, 'eso'],
+  [/american physical society|aps\.org/i, 'aps'],
+  [/iop publishing|iopscience/i, 'iop'],
+  [/astronomy & astrophysics|aanda\.org/i, 'aanda'],
+  [/\baaas\b|science\.org/i, 'science-aaas'],
   [/nasa|jpl|goddard|apollo program/i, 'nasa'],
   [/european space agency|esa/i, 'esa'],
   [/jaxa|japan aerospace/i, 'jaxa'],

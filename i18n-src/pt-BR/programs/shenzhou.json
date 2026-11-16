@@ -91,5 +91,29 @@
     "/fleet?id=shenzhou": "Frota — a nave Shenzhou",
     "/programs/tiangong": "Tiangong — a estação que as tripulações Shenzhou construíram e visitam",
     "/programs/soyuz": "Soyuz — a nave da qual descende o projeto da Shenzhou"
+  },
+  "roster": {
+    "mission:shenzhou-1": {
+      "note": "primeiro voo de teste não tripulado — a cápsula voa e retorna antes que alguém viaje nela"
+    },
+    "mission:shenzhou-5": {
+      "note": "Yang Liwei dá 14 voltas na Terra — o primeiro astronauta chinês no espaço, e a China torna-se a terceira nação a lançar um humano em seu próprio foguete, 42 anos depois de Gagarin"
+    },
+    "Shenzhou 7": {
+      "note": "Zhai Zhigang realiza a primeira caminhada espacial da China — o terceiro país a realizar uma atividade extraveicular",
+      "name": "Shenzhou 7"
+    },
+    "Shenzhou 9": {
+      "note": "primeiro acoplamento tripulado, com a Tiangong-1; Liu Yang torna-se a primeira mulher chinesa no espaço",
+      "name": "Shenzhou 9"
+    },
+    "Shenzhou 11": {
+      "note": "uma estadia de 30 dias a bordo da Tiangong-2 — a mais longa missão tripulada da China até então, provando a habitação em escala de um mês",
+      "name": "Shenzhou 11"
+    },
+    "Shenzhou 12": {
+      "note": "a primeira tripulação a embarcar na Estação Espacial Chinesa permanente; a Shenzhou-14 (2022) inicia a ocupação contínua",
+      "name": "Shenzhou 12"
+    }
   }
 }

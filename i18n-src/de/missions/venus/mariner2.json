@@ -1,0 +1,24 @@
+{
+  "name": "Mariner 2",
+  "vehicle": "Atlas-Agena B",
+  "payload": "202,8 kg",
+  "delta_v": "~3,5 km/s (Schätzwert)",
+  "type": "VORBEIFLUG · GEFLOGEN",
+  "first": "Die NASA nennt sie die allererste erfolgreiche planetare Wissenschaftsmission der Geschichte",
+  "description": "Mariner 2 startete am 1962-08-27 auf einer Atlas-Agena B und passierte die Venus am 1962-12-14 in einer größten Annäherung von 34.773 km. Ihr Magnetometer, ihre Teilchendetektoren, das Sonnenplasma-Spektrometer, der Staubdetektor und zwei Radiometer lieferten einen ersten Blick auf die Venus: Die NASA berichtet von Temperaturen von 216 °C auf der Nachtseite bis 237 °C auf der Tagseite, einer dichten Wolkenschicht in 56 bis 80 km Höhe, einer langsamen rückläufigen Rotation, einer Atmosphäre überwiegend aus Kohlendioxid und keinem erkennbaren Magnetfeld. Im Weltraum zeigte sie, dass der Sonnenwind ununterbrochen strömt. Der Kontakt endete am 1963-01-03. Die NASA sagt, dass sie die Ehre behält, die allererste erfolgreiche planetare Wissenschaftsmission der Geschichte zu sein.",
+  "events": [
+    {
+      "met": 0,
+      "label": "START",
+      "note": "Atlas-Agena B von Cape Canaveral, 1962-08-27.",
+      "type": "nominal"
+    },
+    {
+      "met": 109,
+      "label": "VENUS-VORBEIFLUG",
+      "note": "Größte Annäherung 34.773 km am 1962-12-14.",
+      "type": "nominal"
+    }
+  ],
+  "vehicle_stage": "Agena-B-Oberstufe"
+}

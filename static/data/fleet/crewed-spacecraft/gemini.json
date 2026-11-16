@@ -35,11 +35,11 @@
   ],
   "flights": [
     {
-      "mission_id": "gemini-3",
+      "mission_id": "gemini3",
       "flight_designation": "Gemini 3 (1965-03-23) · Molly Brown · Grissom + Young — first Gemini crewed flight; 3 orbits; Young smuggled corned-beef sandwich on board"
     },
     {
-      "mission_id": "gemini-4",
+      "mission_id": "gemini4",
       "flight_designation": "Gemini 4 (1965-06-03) · McDivitt + White — first American EVA (Ed White, 23 min); 4-day mission"
     },
     {
@@ -47,15 +47,15 @@
       "flight_designation": "Gemini 5 (1965-08-21) · Cooper + Conrad — 8-day duration record; first fuel-cell-powered crewed flight"
     },
     {
-      "mission_id": "gemini-6a",
+      "mission_id": "gemini6a",
       "flight_designation": "Gemini 6A (1965-12-15) · Schirra + Stafford — first crewed rendezvous (with Gemini 7, within 30 cm); skipped Gemini 6 after Agena failed"
     },
     {
-      "mission_id": "gemini-7",
+      "mission_id": "gemini7",
       "flight_designation": "Gemini 7 (1965-12-04) · Borman + Lovell — 14-day endurance record (stood for years); target for Gemini 6A rendezvous"
     },
     {
-      "mission_id": "gemini-8",
+      "mission_id": "gemini8",
       "flight_designation": "Gemini 8 (1966-03-16) · Neil Armstrong + Scott — first space docking (with Agena target); emergency abort after stuck thruster spun the stack"
     },
     {
@@ -71,7 +71,7 @@
       "flight_designation": "Gemini 11 (1966-09-12) · Conrad + Gordon — direct-ascent first-orbit rendezvous; record-altitude 1374 km on Agena tether"
     },
     {
-      "mission_id": "gemini-12",
+      "mission_id": "gemini12",
       "flight_designation": "Gemini 12 (1966-11-11) · Lovell + Aldrin — last Gemini; 5+ hours EVA proved choreographed crew tasks were feasible; cleared Apollo EVAs"
     }
   ],

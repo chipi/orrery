@@ -26,7 +26,6 @@ and for the day-to-day push discipline see [AGENTS.md §"Preflight before push"]
 | Mockups | `node scripts/mockups/render-*.mjs` | Slice-0 visual previews (docs) |
 | Docker | `npm run docker:*` | Local compose stack + pipeline-runner |
 | Deploy prod | `gh workflow run "Deploy to prod VPS (orrery)"` | Manual VPS deploy |
-| Deploy preview | auto on docker-e2e green / `gh workflow run "Deploy preview"` | GH Pages app+docs publish |
 
 ---
 
@@ -202,7 +201,12 @@ the playwright image and aren't needed for visuals).
 **When** — When a showcased screen/interaction changes. Add a `Shot` entry for new states.
 **I/O** — Writes `docs/screenshots/`.
 **Gotchas** — Serial by design for determinism; uses `reducedMotion: 'reduce'` to freeze simT.
-**State** — healthy.
+**State** — behind the UI (2026-11-16). The 0.9.9 screenshots in `docs/screenshots/` were taken on the
+dev server by hand, not by this script. The script predates: the `/fly` briefing card (it never
+clicks PROCEED TO SIMULATION), locale-prefixed routes (`/ja/explore`, not `?lang=ja`), and the
+files `11-science-lens-iss.png` and `16`–`22` (fleet, programs and launches catalogues, launch
+director, deep-sky IN THE SKY, gallery, Moon traverse). Running it as is would overwrite the new
+shots with the old states and write `11-science-lens-explore.png` again.
 
 ## `npm run screenshots:launchers` → `scripts/capture-launcher-lineup.mjs`
 
@@ -308,26 +312,17 @@ Compose project/port differs from `.env.workspace` (another stream's or the prim
 
 ## Deploy — GitHub Actions workflows
 
-The deploy chain is `ci.yml → docker-e2e.yml → staging.yml`, with `deploy-docs.yml` branching
-off CI directly and prod/release as separate manual/tag triggers.
-
-### Deploy staging (`staging.yml`) — GH Pages app + docs
-
-**Trigger** — `workflow_run` on **docker-e2e** completion (success only, branch main);
-also `workflow_dispatch` and a weekly Monday 06:00 UTC cron (fresh imagery, ADR-016).
-**What** — Builds with `VITE_BASE=/orrery/` + `npm run docs:build` (`DOCS_BASE=/orrery/docs/`),
-copies docs into `build/docs`, publishes the full `build/` to the `gh-pages` branch.
-**Manual** — `gh workflow run "Deploy staging" --ref main` (force-publish when the e2e gate
-blocked the auto-deploy).
-**Gotchas** — Deploys the exact SHA that passed docker-e2e. Shares concurrency group
-`gh-pages-publish` with deploy-docs (serialized, no cancel-in-progress).
+There is no staging tier (ADR-097). `ci.yml → docker-e2e.yml` is the test gate; `deploy-docs.yml`
+branches off CI directly and publishes the docs only; prod is a manual dispatch (merge →
+`gh workflow run "Deploy to prod VPS (orrery)" --ref main` → validate-prod) and release is a tag trigger.
 
 ### Deploy docs (`deploy-docs.yml`) — docs-only
 
 **Trigger** — `workflow_run` on **CI** success (branch main), plus `workflow_dispatch`.
 Independent of e2e so docs fixes ship even when the app e2e suite is red (ADR-070).
-**What** — Builds VitePress and publishes only `docs/.vitepress/dist` to `gh-pages` under
-`docs/` with `keep_files: true` (overlay — leaves the app bundle intact).
+**What** — Builds VitePress, assembles `pages/` (a root `index.html` that forwards to the prod
+site, from `docs/.vitepress/gh-pages-root/`, plus the build as `docs/`) and publishes it as the
+whole `gh-pages` tree. GitHub Pages serves only the docs.
 **Manual** — `gh workflow run "Deploy docs" --ref main`.
 **Gotchas** — Needs `npm run i18n:compile` + `npx svelte-kit sync` before `docs:build` (both
 generate files svelte.config/tsconfig import but `npm ci` doesn't produce).

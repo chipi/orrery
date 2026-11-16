@@ -28,12 +28,14 @@
       "note": "robotic prep — soft-landers proved the lunar surface would bear a spacecraft's weight rather than swallow it; Apollo 12 landed beside Surveyor 3 and brought pieces of it home"
     },
     {
-      "name": "Apollo 1",
+      "linked_id": "apollo-1",
+      "ref": "mission",
       "year": 1967,
       "note": "cabin fire — crew lost in a ground test"
     },
     {
-      "name": "Apollo 7",
+      "linked_id": "apollo7",
+      "ref": "mission",
       "year": 1968,
       "note": "first crewed flight"
     },
@@ -43,7 +45,8 @@
       "year": 1968
     },
     {
-      "name": "Apollo 9",
+      "linked_id": "apollo9",
+      "ref": "mission",
       "year": 1969,
       "note": "Lunar Module crewed test in Earth orbit"
     },

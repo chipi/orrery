@@ -77,7 +77,7 @@ export async function getImageProvenanceManifest(): Promise<ImageProvenanceManif
 /**
  * Normalise an image URL to its provenance-index key. Strips the stream origin
  * (mobile `assetOrigin` is the full CDN URL, e.g.
- * `https://chipi.github.io/orrery/images/...`), then the `${base}` prefix, then
+ * `https://www.orrerylearn.com/images/...`), then the `${base}` prefix, then
  * query/hash, and treats a missing leading slash as relative — so a served
  * `<img src>` resolves to the same key on web and mobile (RFC-030). Pure +
  * unit-tested; `basePath` is injectable for tests.
@@ -190,7 +190,13 @@ export interface TextSourceEntry {
     | 'iss-module'
     | 'rocket'
     | 'ui'
-    | 'credits';
+    | 'credits'
+    | 'star'
+    | 'exoplanet'
+    | 'black-hole'
+    | 'deep-sky'
+    | 'galaxy'
+    | 'structure';
   relationship:
     'original' | 'paraphrased-from' | 'quoted-from' | 'translated-from' | 'adapted-from';
   snippet?: string;
@@ -243,6 +249,8 @@ export interface DataSourceEntry {
   version?: string;
   category: string;
   description: string;
+  /** The catalogue's required acknowledgement, verbatim (English by convention). */
+  acknowledgement?: string;
   source_url: string;
   license_short: string;
   license_url: string;

@@ -2,7 +2,7 @@
   ScienceChip — the small "info" chip that links a label to its
   `/science/[tab]/[section]` explainer (ADR-036, PRD-008 Phase 2).
 
-  Visual: a 14×14 px outlined teal circle with a lowercase `i` glyph
+  Visual: a 14×14 px outlined accent blue circle with a lowercase `i` glyph
   inside. The glyph is hand-drawn in SVG (not a text character) so it
   renders identically across font stacks AND sits exactly in the
   geometric centre of the circle — text glyphs have baseline + sidebearing
@@ -88,7 +88,7 @@
     justify-content: center;
     width: 14px;
     height: 14px;
-    color: rgba(78, 205, 196, 0.85);
+    color: var(--color-state);
     background: transparent;
     border-radius: 50%;
     transition:
@@ -97,11 +97,11 @@
   }
   .chip:hover .dot,
   .chip:focus-visible .dot {
-    background: rgba(78, 205, 196, 0.18);
-    color: #4ecdc4;
+    background: color-mix(in srgb, var(--color-accent) 18%, transparent);
+    color: var(--color-state);
   }
   .chip:focus-visible {
-    outline: 2px solid rgba(78, 205, 196, 0.6);
+    outline: 2px solid var(--color-focus);
     outline-offset: 2px;
     border-radius: 50%;
   }

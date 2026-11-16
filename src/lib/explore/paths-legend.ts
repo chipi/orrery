@@ -1,8 +1,7 @@
 import * as m from '$lib/paraglide/messages';
 
-// The interstellar-bound craft whose legend row / trajectory opens the
-// MessagePanel rather than the MissionPanel (mirrors the host's category
-// detection for the canvas Today-marker click).
+// The interstellar-bound craft: their MissionPanel carries the message they hold (heading,
+// signal, culture door) as a section. Every legend row opens the MissionPanel (UXD-019).
 export const INTERSTELLAR_CRAFT = new Set([
   'voyager-1',
   'voyager-2',
@@ -34,7 +33,7 @@ export const PATHS_LEGEND = [
   },
   {
     mission_id: 'voyager-2',
-    color: '#4ecdc4',
+    color: '#da47eb', // Voyager 2; matches static/data/trajectories/voyager-2.json
     name: 'Voyager 2',
     launch_year: 1977,
     agency: 'NASA',
@@ -147,7 +146,7 @@ export const PATHS_LEGEND = [
 ];
 
 // Iconic-mission tagline lookup — one-line "why it's iconic" copy
-// surfaced as an italic subtitle under each legend row. Keys are in
+// shown in the card beside the hovered legend row (C7). Keys are in
 // messages/*.json under `explore_iconic_tagline_<mission_id>`. The
 // mapping is hand-rolled because Paraglide's tree-shake only sees
 // statically-referenced message functions.

@@ -39,10 +39,12 @@
   "mission phase opens in panel that is under capcom").
 -->
 <Panel {open} {onClose} title={phaseLabel} zIndex={40}>
-  <div class="phase-head">
+  {#snippet eyebrow()}
     <div class="eyebrow">{m.fly_phase_panel_eyebrow()}</div>
+  {/snippet}
+  {#snippet heading()}
     <h2 class="phase-name">{phaseLabel}</h2>
-  </div>
+  {/snippet}
 
   {#if scienceRef}
     <div class="phase-science">
@@ -52,14 +54,9 @@
 </Panel>
 
 <style>
-  .phase-head {
-    padding: 0 0 14px;
-    border-bottom: 1px solid var(--color-border);
-    margin-bottom: 14px;
-  }
   .eyebrow {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
     color: rgba(160, 200, 255, 0.85);
     text-transform: uppercase;

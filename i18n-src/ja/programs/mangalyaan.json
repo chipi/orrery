@@ -88,5 +88,18 @@
     "/fleet?id=mangalyaan": "フリート — Mars Orbiter Mission",
     "/programs/chandrayaan": "Chandrayaan — インドの月探査計画",
     "/mars?site=mangalyaan": "火星周回軌道の Mangalyaan"
+  },
+  "roster": {
+    "mission:mangalyaan": {
+      "note": "Mars Orbiter Missionは初挑戦で火星周回軌道に入る——インドは初挑戦で火星に成功した史上初の国となり、火星周回軌道に到達した初のアジアの国となった"
+    },
+    "The cost": {
+      "note": "ミッション全体の費用はおよそ7400万ドル——ハリウッド映画『Gravity』より安く、西側の同等の火星ミッションのわずかな一部",
+      "name": "費用"
+    },
+    "Eight years on station": {
+      "note": "設計寿命は6か月だったが、周回機は交信が途絶えるまでおよそ8年間稼働した——小さな技術実証機が、長寿の科学ミッションとなった",
+      "name": "8年間の運用"
+    }
   }
 }

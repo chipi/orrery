@@ -9,10 +9,20 @@
 
   Filter logic lives in the pure `surface-index` module (unit-tested); this file
   is presentation + local filter state only. Mirrors /fleet's filter model.
+
+  A row whose object has an entity page (`/<hub>/<id>`, from the route's server load) also
+  carries a real link to it. Before the sites load (the prerender), the list is the plain
+  link list of every page, so the hub links all its pages in the static HTML (ADR-096 item 11).
 -->
 <script lang="ts">
   import AgencyBadge from '$lib/components/AgencyBadge.svelte';
+  import Chip from '$lib/components/Chip.svelte';
+  import ChipGroup from '$lib/components/ChipGroup.svelte';
+  import EntityThumb from '$lib/components/EntityThumb.svelte';
+  import IndexFiltersToggle from '$lib/components/IndexFiltersToggle.svelte';
+  import '$lib/styles/index-panel.css';
   import { roving } from '$lib/a11y/roving';
+  import { localHref } from '$lib/locale';
   import {
     filterIndexItems,
     indexAgencies,
@@ -24,18 +34,42 @@
 
   interface Props {
     items: IndexItem[];
+    /** Entity pages of this hub; rows with a page get a link, and they are the list until `items` load. */
+    entityLinks?: { id: string; name: string }[];
+    /** Hub path segment of those pages (`moon`, `mars`, `venus`). */
+    hub?: string;
     selectedId?: string | null;
     onSelect: (id: string) => void;
     /** Desktop passes a close; mobile omits it (the drawer's own × handles it). */
     onClose?: () => void;
+    /** False while the host hides the panel; re-runs roving when it opens. */
+    open?: boolean;
   }
-  let { items, selectedId = null, onSelect, onClose }: Props = $props();
+  let {
+    items,
+    entityLinks = [],
+    hub = '',
+    selectedId = null,
+    onSelect,
+    onClose,
+    open = true,
+  }: Props = $props();
+  const pageIds = $derived(new Set(entityLinks.map((l) => l.id)));
+  const pageHref = (id: string) => localHref(`/${hub}/${id}`);
 
   let query = $state('');
   let domainFilter = $state<'ALL' | 'orbit' | 'land'>('ALL');
   let agencyFilter = $state<string>('ALL');
   let statusFilter = $state<string>('ALL');
   let eraFilter = $state<string>('ALL');
+  // The agency, era and status groups are folded behind the FILTERS button; starts closed. The
+  // filter state is not touched by folding.
+  let foldOpen = $state(false);
+  const foldedOn = $derived(
+    [agencyFilter, eraFilter, statusFilter].filter((v) => v !== 'ALL').length,
+  );
+  const uid = $props.id();
+  const foldId = `sidx-fold-${uid}`;
 
   const agencies = $derived(indexAgencies(items));
   const statuses = $derived(indexStatuses(items));
@@ -67,9 +101,24 @@
     items.some((i) => i.domain === 'land') && items.some((i) => i.domain === 'orbit'),
   );
 
+  // The orbit/land cue the dot's old blue/red carried is now words: the dot is the nation's colour.
+  const metaOf = (item: IndexItem): string =>
+    [
+      item.year,
+      surfaceStatusLabel(item.status),
+      item.domain === 'orbit' ? m.surface_index_orbit() : m.surface_index_land(),
+    ].join(' · ');
+  // A long meta (de "ABGESTÜRZT · AUF DER OBERFLÄCHE") wraps only after a " · ", as the solar
+  // INDEX does: no-break spaces inside each part and before each dot.
+  const metaShown = (item: IndexItem): string =>
+    metaOf(item)
+      .split(' · ')
+      .map((p) => p.replaceAll(' ', ' '))
+      .join(' · ');
+
   function domainColor(item: IndexItem): string {
     if (item.color) return item.color;
-    return item.domain === 'orbit' ? '#7b9cff' : '#c1440e';
+    return item.domain === 'orbit' ? '#5070ff' : '#c1440e';
   }
 </script>
 
@@ -84,91 +133,88 @@
       bind:value={query}
     />
     {#if onClose}
-      <button type="button" class="sidx-close" aria-label={m.panel_close()} onclick={onClose}
-        >×</button
+      <Chip
+        kind="action"
+        class="sidx-close ui-chip--close"
+        aria-label={m.panel_close()}
+        onclick={onClose}>×</Chip
       >
     {/if}
   </div>
 
   <div class="sidx-filters">
     {#if hasBoth}
-      <div class="sidx-chiprow" role="group" aria-label={m.surface_index_filter_domain()}>
-        <button
-          type="button"
-          class="sidx-chip"
-          class:active={domainFilter === 'ALL'}
-          onclick={() => (domainFilter = 'ALL')}>{m.surface_index_all()}</button
+      <ChipGroup role="radiogroup" label={m.surface_index_filter_domain()}>
+        <Chip kind="choice" active={domainFilter === 'ALL'} onclick={() => (domainFilter = 'ALL')}
+          >{m.surface_index_all()}</Chip
         >
-        <button
-          type="button"
-          class="sidx-chip"
-          class:active={domainFilter === 'orbit'}
-          onclick={() => (domainFilter = 'orbit')}>{m.surface_index_orbit()}</button
+        <Chip
+          kind="choice"
+          active={domainFilter === 'orbit'}
+          onclick={() => (domainFilter = 'orbit')}>{m.surface_index_orbit()}</Chip
         >
-        <button
-          type="button"
-          class="sidx-chip"
-          class:active={domainFilter === 'land'}
-          onclick={() => (domainFilter = 'land')}>{m.surface_index_land()}</button
+        <Chip kind="choice" active={domainFilter === 'land'} onclick={() => (domainFilter = 'land')}
+          >{m.surface_index_land()}</Chip
         >
-      </div>
+      </ChipGroup>
     {/if}
-
-    <div class="sidx-chiprow" role="group" aria-label={m.surface_index_filter_agency()}>
-      <button
-        type="button"
-        class="sidx-chip"
-        class:active={agencyFilter === 'ALL'}
-        onclick={() => (agencyFilter = 'ALL')}>{m.surface_index_all()}</button
-      >
-      {#each agencies as a (a)}
-        <button
-          type="button"
-          class="sidx-chip sidx-chip-agency"
-          class:active={agencyFilter === a}
-          onclick={() => (agencyFilter = a)}
-        >
-          <AgencyBadge agency={a} /><span>{a}</span>
-        </button>
-      {/each}
-    </div>
-
-    <div class="sidx-chiprow" role="group" aria-label={m.surface_index_filter_era()}>
-      <button
-        type="button"
-        class="sidx-chip"
-        class:active={eraFilter === 'ALL'}
-        onclick={() => (eraFilter = 'ALL')}>{m.surface_index_all()}</button
-      >
-      {#each ERAS as e (e.id)}
-        <button
-          type="button"
-          class="sidx-chip"
-          class:active={eraFilter === e.id}
-          onclick={() => (eraFilter = e.id)}>{e.label}</button
-        >
-      {/each}
-    </div>
-
-    <div class="sidx-chiprow" role="group" aria-label={m.surface_index_filter_status()}>
-      <button
-        type="button"
-        class="sidx-chip"
-        class:active={statusFilter === 'ALL'}
-        onclick={() => (statusFilter = 'ALL')}>{m.surface_index_all()}</button
-      >
-      {#each statuses as s (s)}
-        <button
-          type="button"
-          class="sidx-chip"
-          class:active={statusFilter === s}
-          onclick={() => (statusFilter = s)}>{surfaceStatusLabel(s)}</button
-        >
-      {/each}
-    </div>
   </div>
 
-  <div class="sidx-count">{filtered.length} / {items.length}</div>
+  <!-- Folded filters (C6-F): agency, era and status sit behind the FILTERS button beside the
+       count; the button keeps the number of filters on while the fold is closed. -->
+  <div class="sidx-count-line">
+    <div class="sidx-count">{filtered.length} / {items.length}</div>
+    <IndexFiltersToggle
+      open={foldOpen}
+      count={foldedOn}
+      controls={foldId}
+      onclick={() => (foldOpen = !foldOpen)}
+    />
+  </div>
+
+  <div class="sidx-fold idx-fold" id={foldId} hidden={!foldOpen}>
+    <div class="idx-fold-group">
+      <span class="idx-fold-label">{m.fleet_filter_agency()}</span>
+      <ChipGroup role="radiogroup" label={m.surface_index_filter_agency()}>
+        <Chip kind="choice" active={agencyFilter === 'ALL'} onclick={() => (agencyFilter = 'ALL')}
+          >{m.surface_index_all()}</Chip
+        >
+        {#each agencies as a (a)}
+          <Chip kind="choice" active={agencyFilter === a} onclick={() => (agencyFilter = a)}>
+            <AgencyBadge agency={a} /><span>{a}</span>
+          </Chip>
+        {/each}
+      </ChipGroup>
+    </div>
+
+    <div class="idx-fold-group">
+      <span class="idx-fold-label">{m.card_stat_era()}</span>
+      <ChipGroup role="radiogroup" label={m.surface_index_filter_era()}>
+        <Chip kind="choice" active={eraFilter === 'ALL'} onclick={() => (eraFilter = 'ALL')}
+          >{m.surface_index_all()}</Chip
+        >
+        {#each ERAS as e (e.id)}
+          <Chip kind="choice" active={eraFilter === e.id} onclick={() => (eraFilter = e.id)}
+            >{e.label}</Chip
+          >
+        {/each}
+      </ChipGroup>
+    </div>
+
+    <div class="idx-fold-group">
+      <span class="idx-fold-label">{m.fleet_filter_status()}</span>
+      <ChipGroup role="radiogroup" label={m.surface_index_filter_status()}>
+        <Chip kind="choice" active={statusFilter === 'ALL'} onclick={() => (statusFilter = 'ALL')}
+          >{m.surface_index_all()}</Chip
+        >
+        {#each statuses as s (s)}
+          <Chip kind="choice" active={statusFilter === s} onclick={() => (statusFilter = s)}
+            >{surfaceStatusLabel(s)}</Chip
+          >
+        {/each}
+      </ChipGroup>
+    </div>
+  </div>
 
   <!-- Roving (RFC-031 S3): the surface site index (moon/mars/earth) is one Tab
        stop; ↑↓ / TV D-pad move between sites, Enter selects. Gives the canvas
@@ -176,10 +222,15 @@
   <ul
     class="sidx-list"
     data-testid="surface-index-list"
-    use:roving={{ orientation: 'vertical', wrap: true }}
+    use:roving={{
+      orientation: 'vertical',
+      wrap: true,
+      itemSelector: 'button.sidx-row, a.sidx-page',
+      active: open,
+    }}
   >
     {#each filtered as item (item.id)}
-      <li>
+      <li class="sidx-item">
         <button
           type="button"
           class="sidx-row"
@@ -188,14 +239,37 @@
           aria-current={item.id === selectedId ? 'true' : undefined}
           onclick={() => onSelect(item.id)}
         >
-          <span class="row-dot" style:background={domainColor(item)} aria-hidden="true"></span>
+          <span class="row-lead" aria-hidden="true">
+            {#if item.thumb}
+              <EntityThumb src={item.thumb} ring={item.color} />
+            {:else}
+              <span class="row-dot" style:background={domainColor(item)}></span>
+            {/if}
+          </span>
           <span class="row-name">{item.name}</span>
-          <AgencyBadge agency={item.agencies.join(' / ')} />
-          <span class="row-meta">{item.year} · {surfaceStatusLabel(item.status)}</span>
+          <span class="row-badge"><AgencyBadge agency={item.agencies.join(' / ')} /></span>
+          <span class="row-meta" title={metaOf(item)}>{metaShown(item)}</span>
         </button>
+        {#if pageIds.has(item.id)}
+          <a
+            class="sidx-page"
+            href={pageHref(item.id)}
+            title={m.surface_index_open_page()}
+            aria-label="{m.surface_index_open_page()}: {item.name}"
+            data-testid="surface-index-page-link"
+            data-index-id={item.id}>↗</a
+          >
+        {/if}
       </li>
     {/each}
-    {#if filtered.length === 0}
+    {#if items.length === 0}
+      {#each entityLinks as link (link.id)}
+        <li class="sidx-item">
+          <a class="sidx-page sidx-page--name" href={pageHref(link.id)}>{link.name}</a>
+        </li>
+      {/each}
+    {/if}
+    {#if (items.length > 0 || entityLinks.length === 0) && filtered.length === 0}
       <li class="sidx-empty">{m.surface_index_empty()}</li>
     {/if}
   </ul>
@@ -229,19 +303,7 @@
   }
   .sidx-input:focus-visible {
     outline: none;
-    border-color: rgba(78, 205, 196, 0.6);
-  }
-  .sidx-close {
-    flex-shrink: 0;
-    width: 30px;
-    height: 30px;
-    background: rgba(15, 18, 35, 0.85);
-    border: 1px solid var(--color-border);
-    border-radius: 8px;
-    color: rgba(255, 255, 255, 0.85);
-    font-size: 20px;
-    line-height: 1;
-    cursor: pointer;
+    border-color: var(--color-accent-strong);
   }
   .sidx-filters {
     display: flex;
@@ -249,44 +311,23 @@
     gap: 5px;
     margin-bottom: 8px;
   }
-  .sidx-chiprow {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 4px;
+  .sidx-filters:empty {
+    display: none;
   }
-  .sidx-chip {
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    padding: 3px 8px;
-    background: rgba(15, 18, 35, 0.55);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 999px;
-    color: rgba(207, 224, 255, 0.75);
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
-    letter-spacing: 0.4px;
-    text-transform: uppercase;
-    cursor: pointer;
-    white-space: nowrap;
-  }
-  .sidx-chip.active {
-    color: #4ecdc4;
-    border-color: rgba(78, 205, 196, 0.6);
-    background: rgba(20, 26, 50, 0.85);
-  }
-  .sidx-chip:focus-visible {
-    outline: 2px solid var(--color-accent, #4ecdc4);
-    outline-offset: -2px;
-  }
-  .sidx-chip-agency :global(.badge) {
+  .sidx-fold :global(.badge) {
     height: 13px;
   }
+  .sidx-count-line {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 4px;
+  }
   .sidx-count {
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 0.5px;
     color: var(--color-text-dim);
-    margin-bottom: 4px;
   }
   .sidx-list {
     list-style: none;
@@ -297,24 +338,72 @@
     overflow-y: auto;
     overscroll-behavior: contain;
   }
-  /* Landscape phones are short: the wrapped filter chips (esp. under Linux font
-     metrics) can eat the whole panel and squeeze the flex:1 list to zero. Cap
-     the filters so they scroll internally and the list always keeps a real
-     scroll area, and guarantee the list a minimum visible height. */
+  /* Landscape phones are short: an open FILTERS fold (the agency chips wrap to several lines) can
+     eat the whole panel and squeeze the flex:1 list to zero. The panel scrolls as a whole, as the
+     solar INDEX does, and the list keeps a real minimum height. */
   @media (max-height: 500px) {
-    .sidx-filters {
-      max-height: 42%;
+    .sidx {
       overflow-y: auto;
+      overscroll-behavior: contain;
     }
     .sidx-list {
-      min-height: 96px;
+      flex: none;
+      min-height: 132px;
     }
   }
-  .sidx-row {
+  .sidx-item {
+    display: flex;
+    align-items: stretch;
+    gap: 4px;
+  }
+  .sidx-page {
+    flex-shrink: 0;
     display: flex;
     align-items: center;
-    gap: 8px;
-    width: 100%;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    color: var(--color-text-dim);
+    text-decoration: none;
+    font-size: 14px;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .sidx-page {
+      min-width: 30px;
+      min-height: 0;
+    }
+  }
+  .sidx-page:hover,
+  .sidx-page:focus-visible {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.12);
+    color: var(--color-text);
+    outline: none;
+  }
+  .sidx-page--name {
+    flex: 1;
+    justify-content: flex-start;
+    padding: 8px;
+    font-family: var(--font-display);
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    color: var(--color-text);
+  }
+  /* Two lines: the name and the agency logos over `year · status · In orbit|On land`, which
+     would squeeze the name to nothing beside it. */
+  .sidx-row {
+    display: grid;
+    grid-template-columns: 28px minmax(0, 1fr) auto;
+    grid-template-areas:
+      'lead name badge'
+      'lead meta meta';
+    align-items: center;
+    column-gap: 8px;
+    row-gap: 2px;
+    flex: 1;
+    min-width: 0;
     padding: 8px 8px;
     background: transparent;
     border: 1px solid transparent;
@@ -330,17 +419,27 @@
     outline: none;
   }
   .sidx-row.selected {
-    background: rgba(78, 205, 196, 0.12);
-    border-color: rgba(78, 205, 196, 0.55);
+    background: var(--color-accent-soft);
+    border-color: color-mix(in srgb, var(--color-accent) 55%, transparent);
+  }
+  /* 28 px: the EntityThumb (L45, UXD-025); a row without a photo centres its dot in the same slot. */
+  .row-lead {
+    grid-area: lead;
+    display: grid;
+    place-items: center;
   }
   .row-dot {
-    flex-shrink: 0;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.35);
     width: 8px;
     height: 8px;
     border-radius: 50%;
   }
+  .row-badge {
+    grid-area: badge;
+    display: flex;
+  }
   .row-name {
-    flex: 1;
+    grid-area: name;
     min-width: 0;
     font-family: var(--font-display);
     font-size: 13px;
@@ -350,8 +449,13 @@
     white-space: nowrap;
   }
   .row-meta {
-    flex-shrink: 0;
-    font-size: 9px;
+    grid-area: meta;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    overflow: hidden;
+    font-size: var(--size-label);
     letter-spacing: 0.4px;
     color: var(--color-text-dim);
     text-transform: uppercase;

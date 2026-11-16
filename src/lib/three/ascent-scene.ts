@@ -83,6 +83,9 @@ export interface AscentSceneOptions {
    *  injection burn it rides the stage through the burn and separates at its end, as on a
    *  real flight. The scene's clock (s.t) runs past the last physics state for this. */
   payloadSepT?: number;
+  /** The payload stays in the vehicle's bay for the whole launch (LaunchProfile.payloadInBay):
+   *  no deployment, burst or separation shot is drawn. */
+  payloadInBay?: boolean;
   /** A kick stage carrying the spacecraft fires once the spacecraft has left the launcher
    *  (payloadSepT): for the whole burn when it is deployed first (Shuttle + IUS), for the
    *  second part when the last stage fires first (Delta II + Star 48B). */
@@ -124,7 +127,7 @@ export const FORCE_COLORS = {
   thrust: 0x54e08a,
   weight: 0xff5a5a,
   drag: 0x5aa0ff,
-  velocity: 0x7fe0ff,
+  velocity: 0x8aa0ff,
 } as const;
 
 /** Generic payload for the ~110 missions without a dedicated model — a small
@@ -239,8 +242,9 @@ export function buildPayload(
   const probe = spacecraftId ? buildInterplanetarySpacecraft(spacecraftId) : null;
   // The /fleet showcase craft (preloaded by /fly) — the full CSM, Soyuz, Dragon, X-37B or probe.
   const craft = probe ? null : flyCraft(spacecraftId);
-  const capsuleId =
-    !probe && spacecraftId ? getEarthOrbitCoast(spacecraftId)?.capsuleId : undefined;
+  // A winged orbiter (the Shuttle) is the showcase craft in its bay, not a capsule on the stack.
+  const coastOfCraft = !probe && spacecraftId ? getEarthOrbitCoast(spacecraftId) : null;
+  const capsuleId = coastOfCraft && !coastOfCraft.winged ? coastOfCraft.capsuleId : undefined;
   // Artemis flights ride Orion (crew module + service module + wings): the cruise model, not
   // the generic bus every SLS flight showed before.
   const orion =
@@ -397,7 +401,7 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   const scene = new THREE.Scene();
   // Sky colour is altitude-driven in setState: daylight blue on the pad →
   // deep black by ~70 km, the signature "blue sky to space" of an ascent.
-  const SKY_GROUND = new THREE.Color('#5b8fc9');
+  const SKY_GROUND = new THREE.Color('#25559a');
   const SKY_SPACE = new THREE.Color('#03040a');
   scene.background = SKY_GROUND.clone();
 
@@ -411,10 +415,10 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   // × Math.PI to restore the r128 look under three r155+ physical lights (#203).
   // The dark, un-×π ambient here before was what crushed the Earth to black.
   const sunDir = new THREE.Vector3(0.32, 0.5, 0.8).normalize();
-  const sun = new THREE.DirectionalLight(0xfff4d0, 1.6 * Math.PI);
+  const sun = new THREE.DirectionalLight(0xfff4d0, 1.2 * Math.PI);
   sun.position.copy(sunDir).multiplyScalar(1000);
   scene.add(sun);
-  scene.add(new THREE.AmbientLight(0xeeeeff, 0.7 * Math.PI));
+  scene.add(new THREE.AmbientLight(0xeeeeff, 0.3 * Math.PI));
 
   const texLoader = new THREE.TextureLoader();
   const loadColor = (url?: string): THREE.Texture | null => {
@@ -478,7 +482,7 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
     new THREE.MeshBasicMaterial({
       color: 0x8ec5ff,
       transparent: true,
-      opacity: 0.5,
+      opacity: 0.15,
       side: THREE.BackSide,
       blending: THREE.AdditiveBlending,
       depthWrite: false,
@@ -493,8 +497,8 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   const skyMat = new THREE.ShaderMaterial({
     uniforms: {
       uAlt: { value: 0 },
-      uHorizon: { value: new THREE.Color(0xbcd6ec) },
-      uZenith: { value: new THREE.Color(0x2f6fd0) },
+      uHorizon: { value: new THREE.Color(0x4a7bbb) },
+      uZenith: { value: new THREE.Color(0x153f95) },
     },
     side: THREE.BackSide,
     transparent: true,
@@ -914,7 +918,7 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   arrThrust.setLabel('THRUST', '#8fe8b0');
   arrWeight.setLabel('WEIGHT', '#ffb3b3');
   arrDrag.setLabel('DRAG', '#a8c8ff');
-  arrVel.setLabel('VELOCITY', '#bfeaff');
+  arrVel.setLabel('VELOCITY', '#c4d0ff');
   forces.add(arrThrust, arrWeight, arrDrag, arrVel);
   scene.add(forces);
   let showForces = false;
@@ -971,7 +975,14 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   // lone 'staging' for un-boosted two-stage vehicles. A boosted single-stage core (the
   // stage-and-a-half Atlas) has no MECO: its lone 'staging' is the booster-section drop,
   // and the core flies on to SECO.
-  const stagingT = metOf('meco') ?? (strapOnGroup ? metOf('seco') : metOf('staging'));
+  const mecoT = metOf('meco');
+  // The tank drops at its separation, which trails MECO when the stage rides on after cutoff
+  // (the Shuttle's external tank, ~18 s after MECO).
+  const mecoSepT =
+    mecoT == null
+      ? undefined
+      : opts.events?.find((e) => e.type === 'staging' && e.t >= mecoT && e.t <= mecoT + 60)?.t;
+  const stagingT = mecoSepT ?? mecoT ?? (strapOnGroup ? metOf('seco') : metOf('staging'));
   // Strap-on solids jettison at the FIRST 'staging' (their burnout, ~94 s for
   // Atlas V AJ-60As) — earlier than the core drop at MECO above.
   const strapOnSepT = metOf('staging');
@@ -984,8 +995,10 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   const fairingT = metOf('fairing_jettison');
   const secoT = metOf('seco');
   // The spacecraft leaves the stage at SECO, or after the injection burn when it rides it.
-  const sepAfterSeco = opts.payloadSepT != null && (secoT == null || opts.payloadSepT > secoT);
-  const payloadSepT = sepAfterSeco ? opts.payloadSepT : secoT;
+  // A payload that stays in its bay (the Shuttle) never separates during the launch.
+  const sepAfterSeco =
+    !opts.payloadInBay && opts.payloadSepT != null && (secoT == null || opts.payloadSepT > secoT);
+  const payloadSepT = opts.payloadInBay ? undefined : sepAfterSeco ? opts.payloadSepT : secoT;
   // Riding the launcher's stage through its injection burn (not deployed before a kick stage).
   const ridesInjection = sepAfterSeco && !opts.kickStage;
   // Intermediate serial stage (e.g. Saturn V's S-II) drops at the SECOND core

@@ -12,6 +12,7 @@
   import { canonicalUrl, metaDescription, pageTitle } from '$lib/seo';
   import { ogTitle } from '$lib/social-meta';
   import { article, breadcrumbList } from '$lib/json-ld';
+  import Chip from '$lib/components/Chip.svelte';
   import JsonLd from '$lib/components/JsonLd.svelte';
   import type { PageData } from './$types';
 
@@ -42,14 +43,14 @@
 </svelte:head>
 <JsonLd data={jsonLd} />
 
-<article class="entity">
-  <nav class="crumb">
+<article class="entity page-shell page-shell--reading">
+  <nav class="crumb page-crumb">
     <a href={localHref('/lab')}>{section}</a>
     <span class="sep">›</span>
     <span>{data.title}</span>
   </nav>
 
-  <h1>{data.title}</h1>
+  <h1 class="page-title">{data.title}</h1>
 
   {#if data.equation}
     <!-- eslint-disable-next-line svelte/no-at-html-tags -- KaTeX HTML rendered at build from registry LaTeX (author-controlled) -->
@@ -60,7 +61,7 @@
 
   {#if data.parameters.length}
     <section class="parameters">
-      <h2>{m.lab_ui_aria_parameters()}</h2>
+      <h2 class="page-section-label">{m.lab_ui_aria_parameters()}</h2>
       <dl class="facts">
         {#each data.parameters as row (row.label)}
           <div>
@@ -74,7 +75,7 @@
 
   {#if data.results.length}
     <section class="results">
-      <h2>{m.lab_ui_aria_results()}</h2>
+      <h2 class="page-section-label">{m.lab_ui_aria_results()}</h2>
       <dl class="facts">
         {#each data.results as row (row.label)}
           <div>
@@ -86,7 +87,7 @@
     </section>
   {:else if data.outputs.length}
     <section class="results">
-      <h2>{m.lab_ui_aria_results()}</h2>
+      <h2 class="page-section-label">{m.lab_ui_aria_results()}</h2>
       <ul>
         {#each data.outputs as label (label)}<li>{label}</li>{/each}
       </ul>
@@ -102,7 +103,7 @@
 
   {#if data.buildsOn.length}
     <section class="builds-on">
-      <h2>{m.lab_ui_builds_on()}</h2>
+      <h2 class="page-section-label">{m.lab_ui_builds_on()}</h2>
       <ul class="linklist">
         {#each data.buildsOn as f (f.id)}
           <li><a href={localHref(`/lab/${f.id}`)}>{f.title}</a></li>
@@ -113,7 +114,7 @@
 
   {#if data.sameDomain.length}
     <section class="same-domain">
-      <h2>{m.lab_ui_title()}</h2>
+      <h2 class="page-section-label">{m.lab_ui_title()}</h2>
       <ul class="linklist">
         {#each data.sameDomain as f (f.id)}
           <li><a href={localHref(`/lab/${f.id}`)}>{f.title}</a></li>
@@ -137,6 +138,6 @@
   {/if}
 
   <p class="actions">
-    <a class="cta" href={localHref('/lab')}>{m.launches_open_in_orrery()}</a>
+    <Chip kind="link" href={localHref('/lab')}>{m.launches_open_in_orrery()}</Chip>
   </p>
 </article>

@@ -7,7 +7,19 @@ export type ProgramKind =
 
 export type ProgramStatus = 'PLANNED' | 'ACTIVE' | 'COMPLETED' | 'CANCELLED';
 
-/** A roster item is either linked (to an existing orrery entry) or context-only. */
+/** A name-only row that is an event about an existing craft or station module: it keeps its year and note and gains a link. */
+export interface ProgramRosterLink {
+  ref: 'fleet' | 'module';
+  id: string;
+  /** The station whose page opens the module (`iss` | `tiangong`); required when `ref` is `module`. */
+  station?: 'iss' | 'tiangong';
+}
+
+/**
+ * A roster item is linked (to an existing orrery entry), context-only, or context-only with a
+ * `link`. `milestone` marks a row that is an episode, phase, decision or plan inside the program,
+ * not a flight: it is drawn under Milestones, never under Missions.
+ */
 export interface ProgramRosterItem {
   linked_id?: string;
   ref?: 'mission' | 'fleet' | 'module';
@@ -15,6 +27,8 @@ export interface ProgramRosterItem {
   name?: string;
   year?: number;
   note?: string;
+  link?: ProgramRosterLink;
+  milestone?: true;
 }
 
 export interface ProgramLink {
@@ -26,7 +40,7 @@ export interface ProgramLink {
 export interface ProgramSeeAlso {
   label: string;
   href: string;
-  kind: 'body' | 'science' | 'explore';
+  kind: 'body' | 'science' | 'explore' | 'fleet' | 'gallery' | 'program';
 }
 
 export interface ProgramBase {
@@ -80,9 +94,12 @@ export interface ProgramOverlay {
   /** Translated see-also and surface-site link text, keyed by the link's href
    *  (surface sites: `/<surface>?site=<site>`). */
   link_labels?: Record<string, string>;
+  /** Locale text for roster rows, keyed by `rosterKey()` (`ref:linked_id`, else the English
+   *  name); only the rows a locale translates. Merged into `roster` by getProgram(). */
+  roster?: Record<string, { name?: string; note?: string }>;
 }
 
-export type Program = ProgramBase & ProgramOverlay;
+export type Program = ProgramBase & Omit<ProgramOverlay, 'roster'>;
 
 /** Lightweight index row for the /programs browse cards. */
 export interface ProgramIndexEntry {

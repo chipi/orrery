@@ -128,8 +128,7 @@ export function buildContextCap(input: {
       tex.dispose();
       return;
     }
-    // No colorSpace, like the planet map and the patches: the cap must decode
-    // its pixels the same way as the globe it blends into.
+    tex.colorSpace = THREE.SRGBColorSpace;
     tex.wrapS = THREE.ClampToEdgeWrapping;
     tex.wrapT = THREE.ClampToEdgeWrapping;
     tex.anisotropy = 8;

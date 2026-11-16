@@ -2,12 +2,12 @@
   {
     "id": "LEO",
     "altitude_km": [160, 2000],
-    "color": "#4ecdc4"
+    "color": "#8fd16a"
   },
   {
     "id": "MEO",
     "altitude_km": [2000, 35786],
-    "color": "#7b9cff"
+    "color": "#f28bb8"
   },
   {
     "id": "GEO",

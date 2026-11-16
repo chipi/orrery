@@ -41,7 +41,7 @@
           ? m.climate_retain_thin()
           : m.climate_retain_none(),
   );
-  const accent = $derived(BODY_PALETTE[bodyKey]?.bright ?? '#7fe0ff');
+  const accent = $derived(BODY_PALETTE[bodyKey]?.bright ?? '#889fe7');
 </script>
 
 {#if (inline || on) && stats && kin}
@@ -83,7 +83,7 @@
   }
   .cr-retain {
     margin-top: 3px;
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.6);
   }

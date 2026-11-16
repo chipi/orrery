@@ -221,4 +221,29 @@ describe('roving action', () => {
       destroy();
     });
   });
+
+  describe('a container hidden at mount', () => {
+    // jsdom has no layout: model "hidden ancestor" by the offsetParent the browser would report.
+    const setLaidOut = (laidOut: boolean) => {
+      for (const b of buttons)
+        Object.defineProperty(b, 'offsetParent', {
+          configurable: true,
+          get: () => (laidOut ? document.body : null),
+        });
+    };
+
+    it('leaves one tab stop once the container opens and the action is updated', async () => {
+      setLaidOut(false);
+      const action = roving(container, { active: false });
+      await Promise.resolve();
+      expect(buttons.map((b) => b.tabIndex)).toEqual([0, 0, 0, 0, 0]);
+
+      setLaidOut(true);
+      action.update({ active: true });
+      await Promise.resolve();
+      expect(buttons.map((b) => b.tabIndex)).toEqual([0, -1, -1, -1, -1]);
+
+      action.destroy();
+    });
+  });
 });

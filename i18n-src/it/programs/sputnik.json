@@ -87,5 +87,18 @@
     "/earth": "Terra — il mondo che per primo circumnavigò",
     "/programs/vostok": "Vostok — seguono i primi esseri umani",
     "/posters": "Il poster dello Sputnik"
+  },
+  "roster": {
+    "mission:sputnik1": {
+      "note": "4 ottobre 1957 — il primo satellite artificiale, una sfera lucida di 58 centimetri con quattro antenne a frusta che girava intorno alla Terra ogni 96 minuti e emetteva bip in onde corte per tre settimane"
+    },
+    "Sputnik 2": {
+      "note": "3 novembre 1957 — portava Laika, una cagna randagia di Mosca e il primo essere vivente in orbita intorno alla Terra; la capsula non aveva modo di riportarla a casa",
+      "name": "Sputnik 2"
+    },
+    "Sputnik 3": {
+      "note": "15 maggio 1958 — un laboratorio geofisico di 1,3 tonnellate, l'elaborato satellite scientifico che il programma aveva inizialmente voluto lanciare per primo",
+      "name": "Sputnik 3"
+    }
   }
 }

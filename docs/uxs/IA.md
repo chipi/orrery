@@ -22,13 +22,22 @@ The narrative arc: Moon Map (prologue) → Solar System Explorer (Act 1) → Mis
 
 | Surface | Route | File | Primary canvas |
 |---|---|---|---|
-| Moon Map | `/moon` | `src/routes/moon/+page.svelte` | Three.js sphere + Canvas 2D flat map |
-| Solar System Explorer | `/explore` | `src/routes/explore/+page.svelte` | Three.js 3D + Canvas 2D toggle |
+| Moon Map | `/moon` | `src/routes/moon/+page.svelte` | Three.js sphere + Canvas 2D flat map; on the Worlds an orbiter's panel has a DETAIL tab and a panorama opens facing the photo ([UXD-034](decisions/UXD-034-worlds-orbiter-detail-tab-and-panorama-opening.md)); the Venus galleries use the Worlds' ladder ([UXD-036](decisions/UXD-036-venus-galleries-use-the-worlds-ladder.md)) |
+| Solar System Explorer | `/explore` | `src/routes/explore/+page.svelte` | Three.js 3D + Canvas 2D toggle; its deep-sky panel shows the object's reviewed fact and bio (loaded by `getDeepSkyI18n`) |
+| Black holes | `/explore/black-holes/<id>` | `src/routes/explore/black-holes/` | One page per black hole (three real, Gargantua badged as fiction); linked from the black-hole rows of the Milky Way, Virgo and Cosmic web INDEX (`↗`; [UXD-017](decisions/UXD-017-one-index-on-every-scale.md)), which `/explore` prerenders for every scale |
+| Deep-sky objects | `/explore/deep-sky/<id>` | `src/routes/explore/deep-sky/` | One page per deep-sky object with reviewed text (120 of 141); one real object, one page: the Milky Way globular and Local Group rows of the same object link it too (`andromeda` → `m31`); linked from the neighbourhood INDEX rows (`↗`), which `/explore` prerenders for every scale; opens in the scene with `/explore?deepsky=<id>` (ADR-096 item 17) |
+| Galaxies | `/explore/galaxies/<id>` | `src/routes/explore/galaxies/`, `OuterEntityPage.svelte` | One page per Local Group galaxy that is not a deep-sky twin (29: the Milky Way, the Magellanic Clouds, 26 dwarfs); the set is the overlay files under `i18n-src/en-US/universe/galaxies/`, so none until their text lands; rows (membership, distance with its catalogue, diameter), a Related list computed from the census, opens in the scene with `/explore?context=local-group&pick=<id>` (ADR-096 item 18) |
+| Structures | `/explore/structures/<id>` | `src/routes/explore/structures/`, `OuterEntityPage.svelte` | One page per galaxy group, cloud, cluster, supercluster, attractor, concentration, wall and void of the Local Sheet, Virgo, Laniakea and Cosmic web scales (30); the set is the overlay files under `…/universe/structures/`; rows (distance, diameter or span), a Related list, opens with `?context=<scale>&pick=<id>`; `local-group` is one page for two scales (ADR-096 item 18) |
+| Stars and their planets | `/explore/stars/<id>` | `src/routes/explore/stars/` | One page per named star and exoplanet host (the host's system as a section); linked from the neighbourhood INDEX rows (`↗`), which `/explore` prerenders for every scale |
+| INDEX on every scale | `/explore` | `src/lib/components/ScaleIndex.svelte` | The same left-edge INDEX panel at all eight scales (solar system … Cosmic web): every selectable object of the scene, search, kind chips, a `↗` link where the object has a page; one handle, one open state ([UXD-017](decisions/UXD-017-one-index-on-every-scale.md)); a row also takes the camera, as a canvas click does ([UXD-019](decisions/UXD-019-select-equals-focus.md), select = focus); the solar-system rows are two lines (name over distance, size and moons) and every row but the Sun and the two belts is under a kind chip (C6, UXD-017 amendment); 40 of the 51 rows lead with a round photo (L45-T2, UXD-025); the Worlds' `SurfaceIndexPanel` rows do too, and so do the neighbourhood and outer-scale rows where a photo exists (L46, UXD-025 T5); chips that would wrap past one line sit behind a FILTERS button beside the count, on every INDEX (C6-F, UXD-017 amendment); a row's type is a 14 px glyph with a tooltip, not text ([UXD-045](decisions/UXD-045-index-row-type-is-a-glyph-with-a-tooltip.md)) |
+| Explore HUD numbers and names | `/explore` | `src/lib/components/ScaleBar.svelte`, `src/routes/explore/ScaleStrip.svelte`, `ScaleNav.svelte`, `SizesOverlay.svelte` | The fixed-width scale bar (120 px, value follows the zoom; also on `/moon /mars /venus /earth`), the scale navigator (back, picker with a ladder that stays on screen, one RESET VIEW per scale, always drawn: the HUD row's at the solar system, the navigator's at the other seven) and the REFERENCES overlay (bodies in a canvas, names and diameters in an aligned DOM grid in the reader's language) ([UXD-021](decisions/UXD-021-explore-hud-scale-bar-picker-pills-references.md)) |
 | Mission Configurator | `/plan` | `src/routes/plan/+page.svelte` | Canvas 2D porkchop plot |
-| Mission Arc | `/fly` | `src/routes/fly/+page.svelte` | Three.js 3D + Canvas 2D toggle |
+| Mission Arc | `/fly` | `src/routes/fly/+page.svelte` | Three.js 3D + Canvas 2D toggle; the 2D view draws the active destination at a scale that fits it ([UXD-043](decisions/UXD-043-fly-2d-seen-on-the-dark-destination-drawn-and-hud-grid.md)); the launch runs a seeded camera director ([UXD-046](decisions/UXD-046-the-launch-runs-a-seeded-camera-director.md)) and draws the pad of its site and era ([UXD-047](decisions/UXD-047-the-launch-draws-the-real-pad-of-its-site-and-era.md)) |
 | Mission Catalog | `/missions` | `src/routes/missions/+page.svelte` | CSS grid card layout |
 | Earth Orbit | `/earth` | `src/routes/earth/+page.svelte` | Canvas 2D logarithmic scale |
-| Physics Lab | `/lab` | `src/routes/lab/+page.svelte` | SVG figures on the `station-blueprint` teal grid (Notebook / Focus; Canvas at T2) |
+| ISS and Tiangong explorers | `/iss`, `/tiangong` | `src/lib/components/StationAssemblyControl.svelte` | The assembly player keeps one box height in every phase ([UXD-031](decisions/UXD-031-station-assembly-player-fixed-box.md)) |
+| Physics Lab | `/lab` | `src/routes/lab/+page.svelte` | SVG figures on the `station-blueprint` grid (Notebook / Focus; Canvas at T2) |
+| Library | `/library` | `src/routes/library/+page.svelte`, `+page.server.ts` | A text page on the page shell ([UXD-012](decisions/UXD-012-one-page-shell.md)): the intro and totals, then five data blocks (`aside.data-sources`, one style) at the head, then the sources table of contents and one section per source. **Audio episodes**: a link to `/library/episodes`. **Launches data**: the historic (GCAT) and upcoming (Launch Library 2) launch sources, the agency-direct sources, and a link to the launches calendar. **Astrophysics data**: one sentence saying that star, deep-sky, black-hole and Local Group values name their source and link to the object's record, with licences and acknowledgements on `/credits`; then a wrapped link list of the 12 catalogues and papers behind those values, names and URLs read from `data-sources.json` by the server load (`src/routes/library/source-ids.ts`), each opening in a new tab. **Planetary models (NASA JPL)** ([UXD-041](decisions/UXD-041-library-names-its-data-sources-and-lists-every-link.md)): three rows (the approximate Keplerian elements the Physics Lab computes from and the planet model is tested against, the planetary physical parameters, the satellite parameters), each a link with the entry's description. **Moon and Mars surface data**: five rows (LROC NAC traverses, the USGS Apollo 17 traverse, the HiRISE-traced Zhurong route, the MMGIS and PDS Mars traverses). Names and links come from the server load, descriptions from the `/credits` overlay. Every source section below draws its first 10 entity clusters and a "Show all N" chip ([UXD-038](decisions/UXD-038-one-length-rule-for-the-long-text-pages.md)); the manifest behind it includes the /science article links and the essay sources. |
 
 *(This table predates several later surfaces — `/missions`, `/science`, `/iss`, `/programs`, etc. — and is maintained additively; the "six screens" framing in §overview is historical.)*
 
@@ -43,7 +52,7 @@ The Physics Lab (`/lab`) is a subsystem, not a single screen — **one card mode
 - **Focus** (v1 detail) — one card full-screen: big figure stage + control rail + `/science` derivation. Uses the `Panel` bottom-sheet on mobile.
 - **Canvas** (T2, second workspace) — a spatial graph with output→input wiring; desktop-first, read-only fallback on mobile.
 
-Cards **promote** from Canvas into a Notebook. The Lab reuses the shared tokens (§shared-tokens) and components (`Panel`, `ScienceChip`, `WhyPopover`, `.readout-grid`, `ImageCredit`) wholesale; the teal figure grid is `station-blueprint.ts`. Colour discipline: teal = figure/selection, **gold = explanation**, mars-red = fail-honest. The Lab is the first surface to persist state (see §state-persistence).
+Cards **promote** from Canvas into a Notebook. The Lab reuses the shared tokens (§shared-tokens) and components (`Panel`, `ScienceChip`, `WhyPopover`, `.readout-grid`, `ImageCredit`) wholesale; the figure grid is `station-blueprint.ts`. Colour discipline: accent blue = selection/navigation (the figures themselves keep their own strokes, UXD-001), **gold = explanation**, mars-red = fail-honest. The Lab is the first surface to persist state (see §state-persistence).
 
 ---
 
@@ -58,9 +67,9 @@ One topbar pattern: the persistent 52px nav bar.
 - Backdrop-filter: `blur(14px)`
 - Z-index: `20`
 
-Left region: ORRERY wordmark (Bebas Neue 26px, letter-spacing 4px) + "MISSION SIMULATOR" subtitle (Space Mono 8px, rgba(255,255,255,0.22)).
+Left region: ORRERY wordmark (Bebas Neue 26px, letter-spacing 4px) + "MISSION SIMULATOR" subtitle (Space Mono 11px, rgba(255,255,255,0.6)).
 
-Centre region: six screen links. Active screen: white text, `rgba(68,102,255,0.28)` background, `rgba(68,102,255,0.55)` border. Inactive: `rgba(255,255,255,0.28)`, transparent border, hover to `rgba(255,255,255,0.85)`.
+Centre region: six screen links. Active screen: white text, `rgba(80,112,255,0.28)` background, `rgba(80,112,255,0.55)` border. Inactive: `rgba(255,255,255,0.28)`, transparent border, hover to `rgba(255,255,255,0.85)`.
 
 Right region: screen-specific controls (3D/2D toggle on explore and fly, CAPCOM toggle on fly, status indicator on fly).
 
@@ -94,12 +103,12 @@ HOME  ·  EXPLORE ▾  ·  WORLDS ▾  ·  FLY  ·  PLAN  ·  CATALOG ▾  ·  L
 | Slot | Kind | Members (children) | Group hub (TV) |
 |---|---|---|---|
 | Home | link → `/` | — | — |
-| **Explore** | group | Solar System · Stellar Neighborhood · Milky Way · Local Group (the `/explore` scale shells, via `?context=`) | `/explore/hub` |
+| **Explore** | group | the eight `/explore` scale levels, Solar System to Cosmic Web (rows from the shell table `SCALE_SHELLS`, each with the level's glyph, via `?context=`, [UXD-027](decisions/UXD-027-explore-levels-one-table-glyphs-card-and-hint.md)) | `/explore/hub` |
 | **Worlds** | group | Earth · Moon · Mars · Venus (the `SurfaceScene` routes) | `/worlds` |
 | Fly | link → `/fly` | — | — |
 | Plan | link → `/plan` | — | — |
 | **Catalog** | group | Programs · Missions · Fleet · ISS · Tiangong · Live | `/catalog` |
-| **Learn** | group | Essays · Science | `/learn` |
+| **Learn** | group | Lab · Essays · Science | `/learn` |
 
 **Two axes — Explore vs Worlds (2026-08 split).** `/explore` was doing two jobs:
 the zoom-out *scale* ladder (solar system → cosmic web) **and** the close-up of a
@@ -113,10 +122,24 @@ keep working. Cosmology content is **not** an Explore nav item: it lives under
 `/science` (a cosmology tab) in the **Learn** group; the scale shells link to it
 contextually via each shell's science-lens "→ Read in /science" link.
 
+**The Explore dropdown is derived, and it stays (D4, [UXD-027](decisions/UXD-027-explore-levels-one-table-glyphs-card-and-hint.md)).**
+Its eight rows, the hub's eight tiles, the home grid's eight cards and the level picker's ladder
+are one list, `SCALE_SHELLS` (`src/lib/explore/scale-shells.ts`), read four times; no copy
+carries a level's name, query or glyph. The plan's question "drop the second-level nav and
+use the breadcrumb?" is answered **keep**: the picker is the way through the levels *on* `/explore`,
+the dropdown the way in from any page, and neither is a page: a level is `?context=` on the one
+prerendered `/explore` (the sitemap lists `/explore` and `/explore/hub`).
+
 **TV (10-foot / D-pad).** A dropdown is unusable with a D-pad, so on TV each
 group renders as a single link to its **big-box hub** (`/explore/hub`, `/worlds`,
 `/catalog`, `/learn`), each a `SectionHub` tile grid of the group's members.
 Desktop + mobile are unchanged (gated on `isTv`).
+
+**The two axes are linked, both ways, never by zooming (E6, D5, [UXD-028](decisions/UXD-028-explore-and-worlds-link-both-ways.md)).**
+The planet panel of Earth, Mars and Venus and the satellite panel of the Moon carry a "Go to Mars" (and so on) chip to the
+world page, and each Worlds page's view row starts with "Back to Explore", a link to `/explore?id=<body>`
+(`earth:moon` for the Moon) that opens the body's panel with the camera on it. One table,
+`src/lib/explore/world-links.ts`, feeds both directions and the `/explore/<id>` page's link; a fifth world is one row.
 
 ## §home-cards (2026-08 — the landing IA)
 
@@ -128,8 +151,9 @@ should reveal breadth. So the two need not be identical — only **reconcilable*
 
 - The landing shows **the whole nav tree, unpacked and sectioned** — every group
   is a labeled section, every leaf its own rich card (with a hand-drawn glyph):
-  **Explore** (the 4 scale shells) · **Worlds** (Earth/Moon/Mars/Venus) · **Plan
-  & Fly** · **Catalog** (all six) · **Learn** (Essays · Science).
+  **Explore** (the 8 scale levels, from the same `SCALE_SHELLS` table as the nav, the hub and the picker) · **Worlds** (Earth/Moon/Mars/Venus) · **Plan
+  & Fly** · **Catalog** (all six) · **Learn** (Lab · Essays · Science): 23 cards under 5
+  headings, the number printed in the section heading from the grid itself ([UXD-039](decisions/UXD-039-home-two-column-hero-one-glyph-component-and-type-scale.md)).
 - Section headers **reuse the nav group labels**, so the landing *teaches* the
   nav's grouping by showing it — the two surfaces reinforce each other.
 - Why unpacked (not one card per group): **information scent.** "Missions",
@@ -155,15 +179,21 @@ features that warrant top-level prominence.
 
 ```
 /explore                                       Solar System Explorer
+/explore?context=milky-way                     One of the eight scale levels (solar-system, neighborhood, milky-way, local-group, local-sheet, virgo, laniakea, cosmic-web): a jump on the one prerendered page, not a page of its own (UXD-027)
 /plan                                          Mission Configurator (Mars default)
-/plan?dest=jupiter&type=flyby                  Multi-destination (ADR-026): dest=mercury|venus|mars|jupiter|saturn; type=landing|flyby
+/plan?dest=jupiter&type=flyby                  Multi-destination (ADR-026): dest=mercury|venus|mars|jupiter|saturn; type=landing|flyby; rocket=<rockets.json id> (kept in the URL once picked); the destination select has five groups (UXD-042)
 /fly                                           Mission Arc (default scenario: ORRERY DEMO free-return)
 /fly?mission=id                                Mission Arc (specific mission from library)
-/fly?dest=jupiter&type=flyby&dep=N&tof=N       Mission Arc (synthesised from /plan selection, ADR-026)
+/fly?dest=jupiter&type=flyby&dep=N&tof=N&rocket=id  Mission Arc (synthesised from /plan selection, ADR-026; rocket = rockets.json id, optional; a planetary moon flies its host's arc; launch=1 starts the launch)
 /missions                                      Mission Catalog (all missions)
 /missions?dest=MARS&status=ACTIVE&agency=NASA  Mission Catalog filtered (ADR-024)
+/fleet                                         Spaceflight Fleet (card grid); `?view=lineup&kind=launchers|spacecraft` is the true-scale line-up (UXD-035; `category=launcher&view=lineup` still opens it); `?id=<id>` opens an entry's panel, `/fleet/<id>` is its page
+/programs                                      Programs index on the catalogue pattern (UXD-048): the title, lead and patch wall, then search, the era strip, the agency row, FILTERS (kind), the toolbar and the cards; `?epoch=<era-id>` (the era of a program's start year), `?agency=`, `?kind=crewed-campaign|station|robotic-campaign|infrastructure|funding-line`, `?q=`, `?sort=chrono-asc|alpha` (newest first is the default), `?view=list`; every card links `/programs/<id>`
+/missions/launches                             Launch manifest on the catalogue pattern (UXD-048, PRD-020): search, the era strip by launch year, the provider chips, FILTERS (view, tier, decade, outcome, year), the toolbar, then the month-grouped list (the default) or `?view=grid`; `?mode=historic`, `?decade=1970-1979`, `?tier=FEATURED`, `?agency=<short name, or the name the manifest gives>`, `?outcome=SUCCESS|FAILURE`, `?year=YYYY`, `?epoch=<era-id>` (loads the decades the era spans; the view and decade chips step aside), `?q=`, `?sort=chrono-desc|alpha` (oldest first, soonest first in the upcoming list, is the default)
 /earth                                         Earth Orbit
-/moon                                          Moon Map
+/moon                                          Moon Map (/mars and /venus are the other two Worlds; each links back to /explore?id=<body>, UXD-028)
+/explore?id=mars                               A body's panel opens and the camera focuses it (a planet, a small body, `parent:moon` for a satellite); the return deep link of the Worlds' "Back to Explore" chip (UXD-028)
+/programs/<id>                                 A program page (UXD-032): the spine, Missions, Milestones (UXD-033; episodes, phases, decisions and plans of the program), On the surface (rail), Hardware (compact cards), Related programs (rail), Go deeper, Sources; a section with no rows draws nothing; an Earth surface card links `/earth?object=<id>` (Moon and Mars `?site=<id>`)
 /lab                                           Physics Lab (empty Notebook)
 /lab?doc=<compact>                             Shared worksheet (URL-encoded card graph; grammar frozen in RFC-037 D-serialize)
 ```
@@ -176,13 +206,37 @@ Routes resolve client-side via SvelteKit's router. Every route is prerendered, s
 
 Regions that persist across or within a screen.
 
-**Nav bar** — `height: 52px`, `top: 0`, `left: 0`, `right: 0`. Present on all screens. Z-index 20. Contains wordmark, screen links, screen-specific controls.
+**Nav bar** — `height: 52px` (`--nav-bar-height`, one token; `--nav-height` adds the safe-area inset), `top: 0`, `left: 0`, `right: 0`, z-index 40. Present on all screens. Contains wordmark, screen links, and the right-hand cluster: audio tour, locale, science lens, settings, and a More menu holding High contrast, Share and Debug (drawer rows on phones). Cluster controls are 32px on a fine pointer, 44px on touch, in both axes (`--nav-btn-fine`, `--nav-btn-touch`; [UXD-016](decisions/UXD-016-compact-nav-and-more-menu.md)). The hamburger replaces the links at ≤ 1219px or on any touch device.
 
-**Right detail panel** — `width: 314px`, `top: 52px`, `right: 0`, `bottom: 68px` (68px on fly screen) or `bottom: 0`. Slides in on click. Present on: explore (planet/body panels), missions (mission detail), moon (site panels). Absent on: plan, fly, earth (these have dedicated HUD layouts).
+**Right detail panel** — `width: 400px` (`--panel-width`), `top: 52px`, `right: 0`, `bottom: 68px` (68px on fly screen) or `bottom: 0`. Slides in on click. Present on: explore (planet/body panels), missions (mission detail), moon (site panels). Absent on: plan, fly, earth (these have dedicated HUD layouts). A fixed one-block header sits above the scrolling content: line 1 is the eyebrow with back (after a card link), Share (when the entity has a collectible card) and close at its end, line 2 is the entity name at full width, so the name is always visible; the entity's actions are one row of at most three chips under the identity block, above the hero, and nothing is stacked at the panel's foot ([UXD-018](decisions/UXD-018-panel-shell-and-actions.md)).
+
+**Science links in panels** — a panel offers at most five `/science` sections as cards, through one helper (`pickScienceLinks`), never a per-type default list ([UXD-022](decisions/UXD-022-science-link-lists.md)); each orbit-ruler pane has its own card, none repeating inside a ruler ([UXD-010](decisions/UXD-010-ruler-regimes-each-get-their-own-science-card.md)).
+
+**Star, outer-scale and black-hole panels** — one body for all nine (`UniversePanelBody`, [UXD-023](decisions/UXD-023-star-and-outer-panels-follow-the-planet-pattern.md)): one hero or none, GALLERY second with two or more images, a star's IN THE SKY tab (finder, constellation, zodiac note, "Show constellation lines"), and a deep-sky object's OVERVIEW · IN THE SKY (finder with the object ringed, position, nearest bright star, best months, latitude, viewing band, [UXD-049](decisions/UXD-049-deep-sky-panel-in-the-sky-tab.md)); a black hole opens in place and "See the lensing simulation" enters the takeover.
 
 **Bottom bar** — `height: 68px`, `bottom: 0`, `left: 0`, `right: 0`. Present on: fly (timeline scrubber, play/pause, speed controls). Absent on all other screens.
 
 **HUD panels** — fly screen has four fixed-position panels (left identity, right navigation, right systems, CAPCOM panels). These are screen-specific, not shared shell regions.
+
+## §page-shell
+
+Text pages (everything that is not a scene, the home page, the Lab or a browse tool) share one shell, `src/lib/styles/page-shell.css` ([UXD-012](decisions/UXD-012-one-page-shell.md)): `.page-shell` container (1080px; `--reading` 760px; `--wide` 1400px; `--inset` inside the science host), `.page-crumb`, `.page-title` (Bebas `clamp(40px, 8vw, 64px)`), `.page-lead` (`--size-lead` upright), `.page-section-label` (11px 700 uppercase 60% white) and `.page-section-title` (Bebas 28px). The container starts right under the sticky nav with 24px of air; no page adds `--nav-height`. Full table: Design System §4.6. The note under a gallery page's content (where sources and licences are discussed) is one class in the same file, `.page-note` ([UXD-040](decisions/UXD-040-gallery-viewer-fits-hub-strips-keep-text-and-one-page-note.md)). **Long lists** on a text page follow one rule ([UXD-038](decisions/UXD-038-one-length-rule-for-the-long-text-pages.md)): a list draws its first 10 rows and a "Show all N" chip (`ShowAll`, `$lib/preview-list`), the source and section headers stay open, so a contents link lands on its header; `/credits` and `/colophon` use it (`/library` follows in F2); `/colophon` also opens with one totals line, "N original works in K sections", computed from the sections it draws.
+
+---
+
+## §controls
+
+The level card's fold on `/explore` (`LevelContextCard`) is the same kind of control as the orbit ruler's header: a disclosure `<button>` with `aria-expanded` and `aria-controls`, a 44 px target ([UXD-027](decisions/UXD-027-explore-levels-one-table-glyphs-card-and-hint.md)). The welcome hint's × is a 24 px `.ui-hit` (44 px on touch). The level picker stays one `Chip` and its rungs `Chip`s; each leads with the level's glyph.
+
+With a side panel open, the 3D views of `/explore` and of the Worlds shift the projection by half the panel's width so the selected thing sits in the middle of what is left (one mechanism, `createPanelFramer`); on the Worlds a selected orbiter also keeps the orbits, their ring and the ruler in view, and wears the outline ([UXD-030](decisions/UXD-030-worlds-selected-orbiter-stays-visible-and-framed.md)).
+
+The orbit ruler's header is the one disclosure control that is not a chip: a `<button class="ui-hit">` with `aria-expanded` and `aria-controls` (a Chip's contract is `aria-pressed`), 24 px minimum hit area ([UXD-024](decisions/UXD-024-orbit-ruler-one-row-draws-its-regime.md)).
+
+Every toggle, filter, choice and HUD action is a `<Chip>` (`src/lib/components/Chip.svelte`, look in `src/lib/styles/chip.css`, [UXD-014](decisions/UXD-014-one-chip-and-filter.md)): 30px on a fine pointer, 44px on a coarse one, 4px corners, 11px uppercase, outline at rest, one active look (soft accent fill, accent edge, white text; the world tint on `/moon`, `/mars` and `/venus`). Four kinds: toggle (`aria-pressed`), choice (`role="radio"` inside `ChipGroup role="radiogroup"`, arrow keys), action, link. Reset view is `ResetViewButton`. Filter groups on missions, fleet, launches, deep-sky, programs, the star and surface indexes and `/plan` are radiogroups. The FILTERS strip is a compact chip with the count after the label. A view toggle (GRID / LINE-UP on `/fleet`) is a choice radiogroup on the same row, right after FILTERS, which is disabled (not removed) while a view that ignores the filters is on (UXD-035). Panels' close, back, Share and action chips are chips too (UXD-018). Kept outside the chip: tabs (`PanelTabRow`), nav toggles, cards, the standalone pages' CTAs, status and label pills, the Lab. Design System §5.7 and §5.7a hold the values. **Layer chips are one flat horizontal row** on Explore and every world (`LayerChipRow`, [UXD-015](decisions/UXD-015-flat-chip-row.md)): no groups, no captions, no master switches, no greyed chip, no vertical column; on a fine pointer the view actions (2D, RESET VIEW, SPIN, AR, SKY) sit first in the same row, 12px apart, RESET VIEW always present (disabled when inert); the row wraps between chips, and `/earth` is SURFACE, LAUNCHPADS, MUSEUMS, OBSERVATORIES, ORBITERS (one ORBITERS chip for every orbiter). The INDEX panels on `/moon`, `/mars`, `/venus` and `/explore` carry a real link to each entity page (the neighbourhood INDEX links each star's `/explore/stars/<id>` page, the Milky Way, Virgo and Cosmic web INDEX the black holes'; `/explore` has the same INDEX at all eight scales, UXD-017); there is no separate A–Z tab there (`/missions` and `/fleet` keep it at the page foot).
+
+"Go to Mars" (the Explore panel's view chip, one string per body) and "Back to Explore" (the first chip of a Worlds page's view row, the top-left cluster on touch) are `Chip kind="link"`s: one link, no arrow glyph, the label wraps inside the chip ([UXD-028](decisions/UXD-028-explore-and-worlds-link-both-ways.md)).
+
+On `/moon` and `/mars` the "View entire route" chip and a selected rover's line follow one traverse style on both worlds ([UXD-044](decisions/UXD-044-moon-traverses-take-the-mars-line-style.md), Design System §5.22): ramp, casing, kilometre milestones, landing ring and hover card; time-based elements are Mars-only.
 
 ---
 
@@ -194,8 +248,13 @@ Tokens that apply across all surfaces. UXSes inherit these by name and do not re
 
 ```
 color-bg:         #04040c    Background — near-black with blue undertone
-color-accent:     #4466ff    Primary accent — blue
-color-teal:       #4ecdc4    Secondary accent — teal (CAPCOM, active states)
+color-accent:     #5070ff    The one UI accent — blue D (links, active states, chips, HUD values, CAPCOM; UXD-001, A3)
+color-accent-text: var(--color-accent)   alias, removed after 0.9.9
+color-accent-hover: #8aa0ff  Hover and active text
+color-accent-soft/-edge/-strong: rgba(80,112,255, 0.12 / 0.35 / 0.7)   Tinted fill, border, strong border
+color-state:      #889fe7    Annotation rings, hover, status; small text on a lifted card (D is 4.37:1 there)
+color-focus:      #8aa0ff    Focus ring
+color-ok:         #4ade80    Success / "ok" state (green, not an accent)
 color-mars:       #c1440e    Mars red — danger, Mars-specific
 color-earth:      #4b9cd3    Earth blue — information, Earth-specific
 color-gold:       #ffc850    Gold — Sun, perihelion, caution
@@ -207,34 +266,38 @@ color-panel-bg:   rgba(4,4,12,0.97)        Panel background
 color-hud-bg:     rgba(5,5,20,0.88)        HUD panel background
 ```
 
+The orbit-band data colours (the regime bands of the ruler, the explore zones) carry no teal and keep neighbouring bands apart ([UXD-037](decisions/UXD-037-orbit-band-palette-no-teal.md)).
+
 ### Link tier colours
 
 ```
-color-tier-intro: #4ecdc4    Introductory links (Wikipedia, agency pages)
+intro links use color-state #889fe7 (Wikipedia, agency pages); there is no color-tier-intro token
 color-tier-core:  #7b9cff    Core links (MIT OCW, technical overviews)
 color-tier-deep:  #ff9966    Deep links (peer-reviewed papers)
 ```
 
 ### Typography tokens
 
+> Decision record: [UXD-002](decisions/UXD-002-type-scale-and-the-11px-floor.md) (11 px floor, labels at 60 %, upright leads, italic only for quotes and captions).
+
 ```
 font-display:   'Bebas Neue', sans-serif    Titles, screen names, mission names
 font-mono:      'Space Mono', monospace     All data, labels, HUD values, UI chrome
-font-editorial: 'Crimson Pro', serif        Editorial descriptions, fact text (always italic)
+font-editorial: 'Crimson Pro', serif        Real quotes and photo captions only (italic, >= 14px)
 
-size-nav-title:   26px    Nav bar wordmark
+size-nav-title:   30px    Nav bar wordmark
 size-panel-title: 32–42px Panel planet/mission name (varies by name length)
-size-hud-value:   10–16px HUD telemetry values
-size-label:       7–8px   UI labels (Space Mono, letter-spacing 2px)
-size-data:        9–11px  Data values
-size-editorial:   12–13px Crimson Pro italic body text
+size-hud-value:   11–16px HUD telemetry values
+size-label:       11px    UI labels (Space Mono, letter-spacing 2px, 60% white) = --size-label; floor for ALL text
+size-data:        12–14px Data values (--size-meta 12px, --size-body 14px)
+size-lead:        16px    Panel overview / lead text, upright Space Mono (--size-lead; 15px under 600px width); captions 14px Crimson italic (--size-caption)
 ```
 
 ### Spacing tokens
 
 ```
 nav-height:     52px
-panel-width:    314px
+panel-width:    400px
 bottom-bar-h:   68px
 panel-pad:      14px 18px
 hud-pad:        12px 16px
@@ -243,15 +306,7 @@ border-radius:  4–6px   Panels and cards
 
 ### Agency colours
 
-```
-color-nasa:       #0B3D91
-color-esa:        #003299
-color-cnsa:       #DE2910
-color-isro:       #FF9933
-color-roscosmos:  #8B0000
-color-jaxa:       #003087
-color-spacex:     #005288
-```
+One table, [Design System §2.4](../concept/05_Design_System.md) (the code is `src/lib/agencies.ts`; the 14 agencies of `/missions` have the palette of [UXD-048](decisions/UXD-048-missions-one-agency-palette-era-tiles-with-photos-and-agency-dots.md)). The seven values this section listed were older than the code and are removed.
 
 ---
 
@@ -261,7 +316,7 @@ No state is persisted between sessions on the original surfaces. All screen stat
 
 The one cross-surface exception is URL-encoded state: mission ID and filter params allow a specific view to be bookmarked and shared.
 
-**The Physics Lab (`/lab`) is the deliberate exception** — a worksheet is a document the user builds, so it persists: URL-compact for sharing, `localStorage` for the working session, and a `.orrlab.json` export/import for durable documents (one codec, RFC-037 §5 / D-serialize). This is scoped to `/lab`; the other surfaces remain memory-only.
+**The Physics Lab (`/lab`) is the deliberate exception** — a worksheet is a document the user builds, so it persists: URL-compact for sharing, `localStorage` for the working session, and a `.orrlab.json` export/import for durable documents (one codec, RFC-037 §5 / D-serialize). This is scoped to `/lab`; the other surfaces remain memory-only, with three small exceptions that are UI preferences, not user data: whether the Moon/Mars imagery card is expanded (`orrery.surface.tierCardExpanded`), whether the orbit ruler is folded (`orrery.ruler.collapsed`, [UXD-024](decisions/UXD-024-orbit-ruler-one-row-draws-its-regime.md)) and whether the `/explore` level card is expanded (`orrery.explore.levelCardExpanded`, [UXD-027](decisions/UXD-027-explore-levels-one-table-glyphs-card-and-hint.md)), each a `localStorage` flag with a blocked-storage fallback. The welcome hint (`/explore` and the four Worlds) is **not** stored: it shows on every visit until the first zoom or drag.
 
 ---
 
@@ -305,3 +360,13 @@ SvelteKit's standard entry: `src/app.html` is the document shell; `src/routes/+l
 | v1.1 | April 2026 | §overview, §surfaces, §navigation, §url-structure, §entry-points updated to reflect History API routing (ADR-013) and SvelteKit routes/components (ADR-012). Hash-routing examples replaced with clean URLs. |
 | v1.2 | August 2026 | Added §lab (Physics Lab surface — one card model, three views; UXS-015 / RFC-037 / PRD-033), §surfaces + §url-structure rows for `/lab`, and the §state-persistence exception for Lab worksheet persistence. |
 | v1.3 | August 2026 | Added §nav-groups (EXPLORE / WORLDS / PLAN & FLY / CATALOG / LEARN top-level split; the 4 surface bodies moved out of EXPLORE into a new WORLDS group + `/worlds` TV hub) and §home-cards (the landing rebuilt as the whole nav tree, sectioned; every leaf a rich hand-drawn card). RFC-038. Known Universe epic renumbered to PRD-034 / RFC-039 / UXS-016 to clear the Physics Lab numbers. |
+| v1.4 | November 2026 | Added §controls (the one chip, UXD-014). |
+| v1.6 | November 2026 | §controls: the orbit ruler's disclosure header; §state-persistence: the ruler fold as the second UI-preference exception (UXD-024). |
+| v1.5 | November 2026 | §surfaces row for `/library` with its three data blocks (Audio episodes, Launches data, Astrophysics data). |
+| v1.7 | November 2026 | §nav-groups: the Explore dropdown is derived from the shell table and stays (D4); §home-cards: the 8 levels from the same table; §url-structure: `?context=` levels are not pages; §controls: the level card fold, the hint ×; §state-persistence: the level card fold as the third UI-preference exception, the hint not stored (UXD-027). |
+| v1.8 | November 2026 | §controls: the panel framing on the Worlds and the selected orbiter (UXD-030). |
+| v1.9 | November 2026 | §controls: the view toggle on the FILTERS row; §url-structure: `/fleet` and `?view=lineup&kind=` (UXD-035). |
+| v1.10 | November 2026 | §surfaces row for `/library`: five data blocks (Planetary models and Moon and Mars surface data added), the 10-cluster rule on the source sections (UXD-041). |
+| v1.11 | November 2026 | §layout and §shared-tokens: the right detail panel is 400 px (`--panel-width`), not 314 px (UXS-000 SC-2 closed, plan L34). |
+| v1.12 | November 2026 | §surfaces rows for `/fly`, `/iss` and `/tiangong`, `/moon`, the INDEX row type; §shared-tokens: the orbit-band colours (UXD-031, 034, 036, 037, 043, 045, 046, 047; plan L10). |
+| v1.13 | November 2026 | §url-structure: `/programs` and `/missions/launches` with their parameters, on the page pattern of `/missions` and `/fleet` (UXD-048, round 4; plan L59). |

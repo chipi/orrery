@@ -86,5 +86,21 @@
   "link_labels": {
     "/explore": "3D 탐색기의 목성",
     "/programs/voyager": "Voyager — Pioneer가 정찰한 그랜드 투어"
+  },
+  "roster": {
+    "mission:pioneer-10": {
+      "note": "소행성대를 가로질러 목성에 도달한 첫 우주선이자, 태양계를 완전히 벗어나는 경로에 오른 첫 우주선"
+    },
+    "mission:pioneer-11": {
+      "note": "목성을 통과한 뒤 토성에 도달한 첫 우주선이 되었다 — Voyager가 뒤따를 경로와 고리의 위험을 정찰했다"
+    },
+    "The Pioneer plaque": {
+      "note": "각 우주선에 붙은 작은 금 양극 산화 명판으로, 남자와 여자, 그리고 지구의 위치를 보여 준다 — 별을 향해 보낸 인류 최초의 물리적 메시지",
+      "name": "Pioneer 명판"
+    },
+    "Pioneer Venus": {
+      "note": "별개의 Pioneer 한 쌍이 1978년 금성에 도착했다 — 구름 너머로 행성을 레이더로 지도화한 궤도선과, 짓누르는 대기로 뛰어든 탐사선들",
+      "name": "Pioneer Venus"
+    }
   }
 }

@@ -82,5 +82,18 @@
   "link_labels": {
     "/explore": "Pluto in de 3D-verkenner",
     "/gallery/deep-sky": "Pluto, in de Deep-sky-galerij"
+  },
+  "roster": {
+    "mission:new-horizons": {
+      "note": "het snelste ruimtevaartuig ooit gelanceerd, dwars door het zonnestelsel gestuurd om Pluto voor het eerst van dichtbij te bestuderen — en daarna een wereld daarachter"
+    },
+    "Pluto, up close": {
+      "note": "op 14 juli 2015 vloog het voorbij Pluto en onthulde een jonge, actieve wereld van stikstofgletsjers en bergen van waterijs waar wetenschappers een dode rotsbol hadden verwacht",
+      "name": "Pluto van dichtbij"
+    },
+    "Arrokoth": {
+      "note": "op nieuwjaarsdag 2019 vloog het voorbij Arrokoth, een klein lichaam met twee lobben, anderhalf miljard kilometer voorbij Pluto — het verste object dat ooit van dichtbij is verkend",
+      "name": "Arrokoth"
+    }
   }
 }

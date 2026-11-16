@@ -43,12 +43,13 @@
   "firsts": [
     {
       "year": 1971,
-      "label": "Mariner 9 — 首个火星人造卫星(美国)",
+      "label": "Mariner 9 — 首个火星人造卫星",
       "mission_id": "mariner9"
     },
     {
       "year": 2003,
-      "label": "Mars Express — ESA首个火星任务"
+      "label": "Mars Express — ESA首个火星任务",
+      "mission_id": "mars-express"
     }
   ],
   "science_link": {

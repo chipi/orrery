@@ -13,11 +13,13 @@
   "firsts": [
     {
       "year": 2018,
-      "label": "Parker Solar Probe — најближи прелет поред Сунца икада (САД)"
+      "label": "Parker Solar Probe — најближи прелет поред Сунца икада",
+      "mission_id": "parker-solar-probe"
     },
     {
       "year": 2020,
-      "label": "Solar Orbiter — прво снимање Сунца изблиза (ESA)"
+      "label": "Solar Orbiter — прво снимање Сунца изблиза",
+      "mission_id": "solar-orbiter"
     }
   ],
   "science_link": {

@@ -92,5 +92,23 @@
     "/programs/spacex": "SpaceX: el Falcon que la lanza",
     "/earth": "Tierra: órbitas y la saturación de la órbita baja",
     "/earth?site=starlink": "La constelación Starlink"
+  },
+  "roster": {
+    "First 60 satellites": {
+      "note": "un solo Falcon 9 despliega a la vez 60 satélites apilados en plano — empieza la constelación operativa y el cielo nocturno recibe su primer «tren» de Starlink",
+      "name": "Los primeros 60 satélites"
+    },
+    "Service goes live": {
+      "note": "se abre la beta pública; una constelación se convierte en un servicio de internet para consumidores que llega a lugares donde nunca llegaron la fibra ni las torres de telefonía",
+      "name": "El servicio entra en funcionamiento"
+    },
+    "Ukraine": {
+      "note": "los terminales de Starlink mantienen conectado a un país durante una guerra — y convierten de la noche a la mañana la constelación de una sola empresa en un factor de seguridad nacional",
+      "name": "Ucrania"
+    },
+    "Direct to cell": {
+      "note": "los satélites empiezan a conectar teléfonos corrientes directamente, sin terminal — la constelación empieza a convertirse en una torre de telefonía móvil global",
+      "name": "Directo al móvil"
+    }
   }
 }

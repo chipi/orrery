@@ -13,6 +13,7 @@
 <script lang="ts">
   import { onMount, onDestroy, untrack } from 'svelte';
   import * as m from '$lib/paraglide/messages';
+  import Chip from '$lib/components/Chip.svelte';
   import { hudLabel } from '$lib/orbital/hud-labels';
   import { base } from '$app/paths';
   import {
@@ -288,7 +289,7 @@
   <div class="stage" bind:this={container}></div>
 
   {#if !flashing && !hudHidden}
-    <!-- 2026 HUD frame — thin cyan corner brackets, no panel. -->
+    <!-- 2026 HUD frame — thin blue corner brackets, no panel. -->
     <span class="frame tl"></span>
     <span class="frame tr"></span>
     <span class="frame bl"></span>
@@ -300,15 +301,16 @@
   {/if}
 
   {#if !flashing}
-    <button
+    <Chip
+      kind="toggle"
       class="hud-collapse"
+      active={hudHidden}
       onclick={() => onToggleHud?.()}
       aria-label={hudHidden ? m.hud_show_panels_aria() : m.hud_hide_panels_aria()}
-      aria-pressed={hudHidden}
       title={hudHidden ? m.coast_show_hud() : m.coast_hide_hud()}
     >
       {hudHidden ? '◐' : '◑'}
-    </button>
+    </Chip>
   {/if}
 
   <div class="header">
@@ -478,7 +480,7 @@
   .descent.external .timeline,
   .descent.external .readouts,
   .descent.external .continue,
-  .descent.external .hud-collapse {
+  .descent.external :global(.hud-collapse) {
     display: none;
   }
   .stage {
@@ -530,7 +532,7 @@
   .sub {
     font-size: 11px;
     letter-spacing: 2px;
-    color: #7fd4ff;
+    color: var(--color-state);
     margin-top: 3px;
     display: inline-flex;
     align-items: center;
@@ -540,8 +542,8 @@
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background: #7fd4ff;
-    box-shadow: 0 0 8px rgba(127, 212, 255, 0.9);
+    background: var(--color-state);
+    box-shadow: 0 0 8px color-mix(in srgb, var(--color-state) 90%, transparent);
     animation: live-pulse 1.6s ease-in-out infinite;
   }
   @keyframes live-pulse {
@@ -569,7 +571,7 @@
   .status {
     font-size: 11px;
     letter-spacing: 3px;
-    color: #7fd4ff;
+    color: var(--color-state);
   }
   .status.hot {
     color: #ffcf6a;
@@ -586,7 +588,7 @@
     gap: 10px;
   }
   .lamp {
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
     color: #55606e;
     border: 1px solid rgba(120, 130, 145, 0.3);
@@ -594,9 +596,9 @@
     padding: 2px 8px;
   }
   .lamp.on {
-    color: #7fd4ff;
-    border-color: rgba(127, 212, 255, 0.7);
-    box-shadow: 0 0 12px rgba(127, 212, 255, 0.3);
+    color: var(--color-state);
+    border-color: color-mix(in srgb, var(--color-state) 70%, transparent);
+    box-shadow: 0 0 12px color-mix(in srgb, var(--color-state) 30%, transparent);
   }
   /* Plasma comms-blackout — hotter, pulsing amber-red. */
   .lamp.blackout.on {
@@ -610,12 +612,12 @@
       opacity: 0.55;
     }
   }
-  /* 2026 corner-bracket frame — thin cyan L's, no fill. */
+  /* 2026 corner-bracket frame — thin blue L's, no fill. */
   .frame {
     position: absolute;
     width: 16px;
     height: 16px;
-    border: 1px solid rgba(127, 212, 255, 0.4);
+    border: 1px solid color-mix(in srgb, var(--color-state) 40%, transparent);
     pointer-events: none;
     z-index: 5;
   }
@@ -650,23 +652,23 @@
     right: 22px;
     width: 250px;
     padding: 2px 14px 2px 0;
-    border-right: 1px solid rgba(127, 212, 255, 0.35);
+    border-right: 1px solid color-mix(in srgb, var(--color-state) 35%, transparent);
     text-align: right;
   }
   .dossier-title {
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
-    color: #7fd4ff;
+    color: var(--color-state);
     margin: 0 0 8px;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
   .rep {
-    font-size: 8px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
-    color: #7fd4ff;
-    border: 1px solid rgba(127, 212, 255, 0.4);
+    color: var(--color-state);
+    border: 1px solid color-mix(in srgb, var(--color-state) 40%, transparent);
     border-radius: 3px;
     padding: 1px 4px;
   }
@@ -681,7 +683,7 @@
     margin: 0;
   }
   .dossier dt {
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     color: #7d99b5;
   }
@@ -726,9 +728,9 @@
     background: rgba(255, 255, 255, 0.35);
   }
   .beat .lbl {
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
-    color: rgba(240, 220, 200, 0.5);
+    color: rgba(240, 220, 200, 0.6);
     white-space: nowrap;
     display: inline-block;
   }
@@ -781,33 +783,20 @@
     letter-spacing: 1px;
     color: #7d99b5;
   }
-  /* Guided-entry cells tint cyan; a target the computer can't reach flags amber. */
+  /* Guided-entry cells tint blue; a target the computer can't reach flags amber. */
   .ro[data-testid='descent-guidance'] .rl,
   .ro[data-testid='descent-downrange'] .rl {
-    color: #6fd8cf;
+    color: var(--color-state);
   }
   .ro.guidance-miss .rl,
   .ro.guidance-miss .rv {
     color: #e8a24a;
   }
-  .hud-collapse {
+  .descent :global(.hud-collapse) {
     position: absolute;
     left: 22px;
     bottom: 26px;
     z-index: 6;
-    width: 34px;
-    height: 34px;
-    border-radius: 50%;
-    background: rgba(10, 20, 34, 0.82);
-    border: 1px solid rgba(216, 168, 130, 0.4);
-    color: #f0d8bf;
-    font-size: 16px;
-    line-height: 1;
-    cursor: pointer;
-  }
-  .hud-collapse:hover {
-    background: rgba(216, 168, 130, 0.25);
-    color: #fff;
   }
   .continue {
     position: absolute;
@@ -859,7 +848,7 @@
     color: #fff;
   }
   .descent-mstrip .ms-val i {
-    font-size: 9px;
+    font-size: var(--size-label);
     font-style: normal;
     color: #7d99b5;
     margin-left: 2px;

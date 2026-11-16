@@ -94,5 +94,31 @@
   "link_labels": {
     "/earth": "지구 — 궤도, 랑데부, 발사장",
     "/science/mission-phases/edl": "진입·하강·착륙"
+  },
+  "roster": {
+    "Gemini 1": {
+      "note": "무인 구조 + 발사체 시험",
+      "name": "Gemini 1"
+    },
+    "Gemini 2": {
+      "note": "무인 준궤도 열 차폐 시험",
+      "name": "Gemini 2"
+    },
+    "Gemini 5": {
+      "note": "8일간의 비행 — 첫 1주일 이상의 비행으로, 승무원이 달 왕복을 견딜 수 있음을 입증했다",
+      "name": "Gemini 5"
+    },
+    "Gemini 9A": {
+      "note": "열리지 않은 '성난 악어' 표적. EVA는 지치게 했고 거의 재앙이 될 뻔했다",
+      "name": "Gemini 9A"
+    },
+    "Gemini 10": {
+      "note": "도킹한 뒤 Agena의 엔진으로 궤도를 바꾸고, 두 번째 표적과 랑데부했다",
+      "name": "Gemini 10"
+    },
+    "Gemini 11": {
+      "note": "첫 공전에서 직접 상승 랑데부. 기록적인 원지점 1,374km에 도달했다",
+      "name": "Gemini 11"
+    }
   }
 }

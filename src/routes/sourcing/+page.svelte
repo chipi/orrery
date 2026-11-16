@@ -26,10 +26,10 @@
   <meta name="description" content={metaDescription(m.sourcing_meta_description())} />
 </svelte:head>
 
-<article class="sourcing" data-route-ready="true">
+<article class="sourcing page-shell page-shell--reading" data-route-ready="true">
   <header>
-    <h1>{m.sourcing_h1()}</h1>
-    <p class="lede">{data.note}</p>
+    <h1 class="page-title">{m.sourcing_h1()}</h1>
+    <p class="lede page-lead">{data.note}</p>
   </header>
 
   {#if data.gaps.length === 0}
@@ -78,7 +78,7 @@
     {/each}
   </ol>
 
-  <footer class="sourcing-footer">
+  <footer class="page-note">
     <p>
       <!-- eslint-disable-next-line svelte/no-at-html-tags -- safe: m.*() output + base path, no user input -->
       {@html m.sourcing_footer({
@@ -90,23 +90,6 @@
 </article>
 
 <style>
-  .sourcing {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: calc(var(--nav-height, 64px) + 24px) 20px 80px;
-    color: var(--color-text, #eef);
-  }
-  h1 {
-    font-family: 'Bebas Neue', 'Space Mono', sans-serif;
-    font-size: clamp(38px, 8vw, 60px);
-    letter-spacing: 1px;
-    margin: 0 0 12px;
-  }
-  .lede {
-    font-size: 16px;
-    line-height: 1.55;
-    color: rgba(255, 255, 255, 0.72);
-  }
   .empty {
     color: rgba(255, 255, 255, 0.6);
     margin-top: 30px;
@@ -132,7 +115,7 @@
   }
   .status {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     text-transform: uppercase;
     padding: 3px 9px;
@@ -149,7 +132,7 @@
   }
   .status-resolved {
     color: #9fe6c2;
-    border-color: rgba(120, 200, 160, 0.5);
+    border-color: color-mix(in srgb, var(--color-ok) 50%, transparent);
   }
   .area {
     font-family: 'Bebas Neue', 'Space Mono', sans-serif;
@@ -160,7 +143,7 @@
     margin-left: auto;
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
   }
   .subjects {
     display: flex;
@@ -170,7 +153,7 @@
   }
   .chip {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 0.5px;
     padding: 3px 8px;
     border: 1px solid rgba(255, 255, 255, 0.15);
@@ -186,10 +169,10 @@
   .k {
     display: block;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: #7fb0e0;
+    color: var(--color-state);
     margin-bottom: 4px;
   }
   .two {
@@ -217,16 +200,5 @@
     border-top: 1px solid rgba(255, 255, 255, 0.08);
     padding-top: 12px;
     margin-bottom: 0;
-  }
-  .sourcing-footer {
-    margin-top: 40px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 18px;
-    font-size: 14px;
-    line-height: 1.55;
-    color: rgba(255, 255, 255, 0.6);
-  }
-  .sourcing-footer :global(a) {
-    color: #cfe3fb;
   }
 </style>

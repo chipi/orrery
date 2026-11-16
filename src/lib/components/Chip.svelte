@@ -1,0 +1,109 @@
+<!--
+  The one chip (UXD-014). kind decides the element and the ARIA wiring; the look is
+  src/lib/styles/chip.css. There is no size prop: a second size is how 17 recipes happened.
+
+  toggle  <button aria-pressed>      layers, group-by, on/off HUD buttons
+  choice  <button role=radio>        one of a set; the parent is <ChipGroup role="radiogroup">
+  action  <button>                   Reset view, Clear filters, Show all
+  link    <a href>                   Watch live, launches from here
+-->
+<script lang="ts">
+  import type { Snippet } from 'svelte';
+
+  interface Props {
+    kind?: 'toggle' | 'choice' | 'action' | 'link';
+    active?: boolean;
+    disabled?: boolean;
+    /** Tab stop for a choice group in which no chip is on (paused speed). */
+    tabstop?: boolean;
+    count?: number | string;
+    /** Data colour: the leading dot and, when on, the edge. */
+    tone?: string;
+    /** Colour of the leading dot alone (an agency colour): the dot is drawn, the edge stays the accent. */
+    dotColor?: string;
+    dot?: boolean;
+    quiet?: boolean;
+    dismiss?: boolean;
+    href?: string;
+    icon?: Snippet;
+    children?: Snippet;
+    class?: string;
+    /** The rendered element, for focus management (bind:ref). */
+    ref?: HTMLElement;
+    [key: string]: unknown;
+  }
+
+  let {
+    kind = 'action',
+    active = false,
+    disabled = false,
+    tabstop = false,
+    count,
+    tone,
+    dotColor,
+    dot = false,
+    quiet = false,
+    dismiss = false,
+    href,
+    icon,
+    children,
+    class: extra = '',
+    ref = $bindable(),
+    style = '',
+    ...rest
+  }: Props = $props();
+
+  const classes = $derived(
+    ['ui-chip', quiet && 'ui-chip--quiet', kind === 'action' && active && 'is-on', extra]
+      .filter(Boolean)
+      .join(' '),
+  );
+  const styled = $derived([tone ? `--chip-tone: ${tone}` : '', style].filter(Boolean).join(';'));
+</script>
+
+{#snippet inner()}
+  {#if dot || dotColor}<span
+      class="ui-chip__dot"
+      class:ui-chip__dot--data={dotColor}
+      style:background={dotColor}
+      aria-hidden="true"
+    ></span>{/if}
+  {#if icon}<span class="ui-chip__icon" aria-hidden="true">{@render icon()}</span>{/if}
+  {#if children}{@render children()}{/if}
+  {#if count !== undefined && count !== ''}<span class="ui-chip__count">{count}</span>{/if}
+  {#if dismiss}<span class="ui-chip__x" aria-hidden="true">×</span>{/if}
+{/snippet}
+
+{#if kind === 'link'}
+  <a bind:this={ref} {...rest} {href} class={classes} style={styled || undefined}
+    >{@render inner()}</a
+  >
+{:else if kind === 'choice'}
+  <button
+    bind:this={ref}
+    type="button"
+    {...rest}
+    class={classes}
+    style={styled || undefined}
+    role="radio"
+    aria-checked={active}
+    tabindex={active || tabstop ? 0 : -1}
+    aria-disabled={disabled || undefined}
+    {disabled}
+  >
+    {@render inner()}
+  </button>
+{:else}
+  <button
+    bind:this={ref}
+    type="button"
+    {...rest}
+    class={classes}
+    style={styled || undefined}
+    aria-pressed={kind === 'toggle' ? active : undefined}
+    aria-disabled={disabled || undefined}
+    {disabled}
+  >
+    {@render inner()}
+  </button>
+{/if}

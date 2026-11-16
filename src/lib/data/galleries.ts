@@ -5,54 +5,8 @@
 
 import { get } from './core';
 import { assetOrigin } from '../asset-url';
-import { loadHeroOverrides, applyHeroOverride } from '$lib/image-hero';
-
-/**
- * Hand-curated aliases for cases where a site id and its gallery's
- * curated id are semantically related but not derivable by
- * normalization. Add cautiously — only when a real gallery exists
- * under a name that wouldn't be reached by the variant generator.
- */
-const GALLERY_ID_ALIASES: Record<string, string> = {
-  // Luna 21's surface mission was the Lunokhod 2 rover; the gallery
-  // under fleet-galleries/lunokhod-2/ is the right surface imagery
-  // for the luna21 site, but neither "luna21" nor "luna-21" derives
-  // from "lunokhod-2" by id-variant rules.
-  luna21: 'lunokhod-2',
-};
-
-/**
- * Generate id-variants to probe across manifests with inconsistent
- * naming conventions. fleet-galleries.json was hand-curated with
- * dash-separated names ("viking-1", "luna-16"); mission-galleries
- * and site-id conventions tend toward no-dash ("viking1", "luna16",
- * with site ids sometimes carrying a "-lander" / "-orbiter" suffix).
- * Try every reasonable form so a single canonical-id callsite hits
- * whatever the manifests happen to have.
- *
- * Examples:
- *   viking1-lander → [viking1-lander, viking1, viking-1, viking-1-lander]
- *   luna16          → [luna16, luna-16]
- *   change5         → [change5, change-5]
- */
-function gallerySiteIdVariants(id: string): string[] {
-  const variants = new Set<string>([id]);
-  const stripped = id.replace(/-(lander|orbiter|rover)$/, '');
-  if (stripped !== id) variants.add(stripped);
-  // Insert a dash before trailing digits. "viking1" → "viking-1".
-  for (const candidate of [id, stripped]) {
-    const dashed = candidate.replace(/^([a-z]+)(\d+)$/, '$1-$2');
-    if (dashed !== candidate) variants.add(dashed);
-  }
-  // Hand-curated alias (e.g. luna21 → lunokhod-2).
-  if (GALLERY_ID_ALIASES[id]) variants.add(GALLERY_ID_ALIASES[id]);
-  return Array.from(variants);
-}
-
-/** Venus sites have no image galleries yet — returns an empty set. */
-export async function getVenusSiteGallery(): Promise<string[]> {
-  return [];
-}
+import { loadHeroOverrides, applyHeroOverride, type HeroSurface } from '$lib/image-hero';
+import { gallerySiteIdVariants } from './gallery-ids';
 
 /**
  * ISS module photo gallery URLs (manifest `iss-galleries.json`). Empty when
@@ -199,22 +153,41 @@ export async function getEarthObjectGallery(
   return getMissionGallery(fallbackId);
 }
 
-export async function getMoonSiteGallery(
+/**
+ * The gallery ladder of a Worlds site panel (/moon, /mars, /venus). Multi-tier so a panel
+ * surfaces SOMETHING from every image manifest before going silent: the body's own per-site
+ * manifest → mission gallery (by mission_id, then by site id) → fleet gallery (by every
+ * id-variant of mission_id, then of the site id), then the body's hero-override JSON so the
+ * audit-blessed slot becomes the gallery hero.
+ *
+ * Why all the steps: the image inventory is split across three manifests
+ * (<body>-site-galleries.json, mission-galleries.json, fleet-galleries.json) by historical
+ * capture pipelines. Some sites (spirit, phoenix, early Luna landers) only have fleet images
+ * under dash-separated ids like "luna-16" while site ids use "luna16"; others (curiosity,
+ * perseverance, the Venus landers) sit in the mission manifest. Walking every rung covers
+ * today's inventory without an asset re-organisation. #PE-mars (2026-05-22), VE1 (2026-11).
+ *
+ * Venus has no own manifest and no hero-override file: its "own" rung is skipped and the mission
+ * and fleet rungs apply their own overrides.
+ */
+const SITE_BODIES = {
+  moon: { surface: 'moon-sites', manifest: 'moon-site-galleries.json' },
+  mars: { surface: 'mars-sites', manifest: 'mars-site-galleries.json' },
+  venus: {},
+} as const satisfies Record<string, { surface?: HeroSurface; manifest?: string }>;
+
+export async function getSurfaceSiteGallery(
+  body: keyof typeof SITE_BODIES,
   siteId: string,
   missionIdFallback?: string,
 ): Promise<string[]> {
-  // Same fallback ladder as getMarsSiteGallery (#PE 2026-05-22) —
-  // per-site override → mission-gallery (by mission_id then site id)
-  // → fleet-gallery (by every id-variant). Captures the cases where
-  // lunar surface missions (e.g. Surveyor-class, early Luna landers,
-  // Chang'e 3/4) have images only in fleet-galleries.json under
-  // dash-separated ids like "luna-16" while site ids use "luna16".
-  // Final step: respect the moon-sites hero override JSON (#5 Phase 5+)
-  // so the audit-blessed slot becomes the gallery hero.
-  await loadHeroOverrides('moon-sites');
-  const reorder = (g: string[]) => applyHeroOverride('moon-sites', siteId, g);
-  const own = await getCategoryGallery('moon-sites', 'moon-site-galleries.json', siteId);
-  if (own.length > 0) return reorder(own);
+  const { surface, manifest } = SITE_BODIES[body] as { surface?: HeroSurface; manifest?: string };
+  if (surface) await loadHeroOverrides(surface);
+  const reorder = (g: string[]) => (surface ? applyHeroOverride(surface, siteId, g) : g);
+  if (surface && manifest) {
+    const own = await getCategoryGallery(surface, manifest, siteId);
+    if (own.length > 0) return reorder(own);
+  }
   if (missionIdFallback) {
     const byMission = await getMissionGallery(missionIdFallback);
     if (byMission.length > 0) return reorder(byMission);
@@ -233,6 +206,15 @@ export async function getMoonSiteGallery(
   }
   return [];
 }
+
+export const getMoonSiteGallery = (siteId: string, missionIdFallback?: string) =>
+  getSurfaceSiteGallery('moon', siteId, missionIdFallback);
+
+export const getMarsSiteGallery = (siteId: string, missionIdFallback?: string) =>
+  getSurfaceSiteGallery('mars', siteId, missionIdFallback);
+
+export const getVenusSiteGallery = (siteId: string, missionIdFallback?: string) =>
+  getSurfaceSiteGallery('venus', siteId, missionIdFallback);
 
 /**
  * /explore small-body panel (dwarfs, comets, interstellar). Manifest
@@ -263,55 +245,4 @@ export async function getBeltGallery(beltId: string): Promise<string[]> {
   const gallery = await getCategoryGallery('belts', 'belt-galleries.json', beltId);
   await loadHeroOverrides('belts');
   return applyHeroOverride('belts', beltId, gallery);
-}
-
-/**
- * Mars site gallery loader. Multi-tier fallback so /mars detail panels
- * surface SOMETHING from every available image manifest before falling
- * silent. Order: per-site override → mission-gallery (by mission_id
- * AND by site id) → fleet-gallery (by mission_id AND by site id),
- * with id-normalization at every fleet probe.
- *
- * Why all the steps: the existing image inventory is split across
- * three manifests (mars-site-galleries.json, mission-galleries.json,
- * fleet-galleries.json) due to historical capture pipelines. Some
- * Mars hotspot sites (spirit, opportunity, phoenix, schiaparelli,
- * zhurong) only have images in fleet-galleries.json; others
- * (curiosity, perseverance) are in mission-galleries.json. Walking
- * all lookups gives us coverage today without an asset
- * re-organization pass. #PE-mars (2026-05-22).
- */
-export async function getMarsSiteGallery(
-  siteId: string,
-  missionIdFallback?: string,
-): Promise<string[]> {
-  // Mars hero overrides (#5 Phase 5+) — reorder so the audit-blessed
-  // slot becomes first whenever a non-empty gallery is found.
-  await loadHeroOverrides('mars-sites');
-  const reorder = (g: string[]) => applyHeroOverride('mars-sites', siteId, g);
-  // 1. Per-site override (preferred — currently empty manifest).
-  const own = await getCategoryGallery('mars-sites', 'mars-site-galleries.json', siteId);
-  if (own.length > 0) return reorder(own);
-  // 2. Mission gallery by explicit mission_id, if set.
-  if (missionIdFallback) {
-    const byMission = await getMissionGallery(missionIdFallback);
-    if (byMission.length > 0) return reorder(byMission);
-  }
-  // 3. Mission gallery by site id (site_id == mission_id case).
-  const bySite = await getMissionGallery(siteId);
-  if (bySite.length > 0) return reorder(bySite);
-  // 4 + 5. Fleet gallery by mission_id and by every id-variant of
-  // the site id (covers "luna16" vs "luna-16", "viking1-lander" vs
-  // "viking-1" naming-convention drift).
-  if (missionIdFallback) {
-    for (const v of gallerySiteIdVariants(missionIdFallback)) {
-      const g = await getFleetGallery(v);
-      if (g.length > 0) return reorder(g);
-    }
-  }
-  for (const v of gallerySiteIdVariants(siteId)) {
-    const g = await getFleetGallery(v);
-    if (g.length > 0) return reorder(g);
-  }
-  return [];
 }

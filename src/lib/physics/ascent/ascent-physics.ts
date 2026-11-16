@@ -55,6 +55,10 @@ export interface LaunchStage {
   /** Stage 0 only: mission time (s) the core lights, when it is air-lit after liftoff
    *  (LVM3's L110 at ~T+110 s, the S200s alone lifting it off). Absent = at liftoff. */
   ignitionS?: number;
+  /** Seconds the spent stage stays attached after its cutoff before it separates (the
+   *  Shuttle's external tank leaves ~18 s after MECO, the orbiter coasting with it). The
+   *  MECO beat is at the cutoff, the STAGE SEP beat this long after. Absent = at the cutoff. */
+  separationDelayS?: number;
 }
 
 /**
@@ -84,6 +88,10 @@ export interface LaunchBoosters {
   airLitCount?: number;
   /** Mission time (s) the air-lit group lights; absent = at the ground-lit group's burnout. */
   airLitIgnitionS?: number;
+  /** Seconds a burnt-out booster stays attached before it is jettisoned (Atlas V holds its
+   *  AJ-60As from burnout at T+94 s to T+117 s; SRB-A 10 s; PSLV's PSOM-XLs ~20 s). The
+   *  STAGE SEP beat is at the jettison. Absent = jettisoned at burnout. */
+  separationDelayS?: number;
 }
 
 /** A launch vehicle's ascent profile. See RFC-034 §6 for the shipped JSON schema. */
@@ -104,6 +112,18 @@ export interface LaunchProfile {
   fairingKg?: number;
   /** Altitude to jettison the fairing (m). Defaults to the Kármán line. */
   fairingJettisonAltM?: number;
+  /**
+   * Mission time (s) the fairing is jettisoned, when the real flight schedules it by time
+   * (the free-molecular-heating criterion lands on a fixed time for a given trajectory:
+   * Delta II M+39 s, Proton-M T+345 s). Takes precedence over `fairingJettisonAltM`.
+   */
+  fairingJettisonS?: number;
+  /**
+   * The payload stays in the vehicle's bay for the whole launch (the Space Shuttle: it is
+   * deployed hours later in orbit). No spacecraft-separation beat, no injection beat and no
+   * payload deployment are drawn: the launch ends with the vehicle alone in orbit.
+   */
+  payloadInBay?: boolean;
   /**
    * Pitch program: `[t_seconds, flightPathAngleDeg]` knots, angle measured
    * from the LOCAL HORIZONTAL (90 = straight up, 0 = downrange). Linearly
@@ -218,6 +238,10 @@ export interface AscentEvent {
   massKg: number;
   /** Free-text detail (e.g. which stage). */
   note?: string;
+  /** Bookkeeping only, not a flight event: the end of powered flight on a vehicle that has no
+   *  final cutoff of its own (the Shuttle's orbiter coasts after the tank leaves; its OMS burns
+   *  come later). The HUD beat lists leave it out; the camera / clock code still reads it. */
+  silent?: boolean;
 }
 
 /** The result of integrating an ascent. */
@@ -552,7 +576,13 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
     Math.max(0, (profile.boosters?.count ?? 0) - 1),
   );
   const groundCount = (profile.boosters?.count ?? 0) - airLit;
-  type BoosterGroup = { stage: LaunchStage; prop: number; air: boolean; dropped: boolean };
+  type BoosterGroup = {
+    stage: LaunchStage;
+    prop: number;
+    air: boolean;
+    dropped: boolean;
+    burnoutAt?: number;
+  };
   const groups: BoosterGroup[] = profile.boosters
     ? [
         {
@@ -698,10 +728,20 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
     };
   };
 
-  const pushEvent = (type: AscentEvent['type'], note?: string): void => {
+  const pushEvent = (type: AscentEvent['type'], note?: string, silent = false): void => {
     const s = snapshot();
-    events.push({ type, t, altKm: s.altKm, speedKms: s.speedKms, massKg: s.massKg, note });
+    events.push({
+      type,
+      t,
+      altKm: s.altKm,
+      speedKms: s.speedKms,
+      massKg: s.massKg,
+      note,
+      ...(silent ? { silent: true } : {}),
+    });
   };
+  // A spent stage that rides on for `separationDelayS` after its cutoff (the Shuttle's tank).
+  let sepPendingAtS = -1;
 
   // Liftoff: engine lit at full stage-0 (+ booster) thrust so the t=0 snapshot
   // isn't engine-dark before the loop first updates lastThrust.
@@ -926,6 +966,8 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
     }
     for (const g of groups) {
       if (!g.dropped && g.prop <= 0) {
+        g.burnoutAt ??= t + (profile.boosters?.separationDelayS ?? 0);
+        if (t < g.burnoutAt) continue;
         g.dropped = true;
         pushEvent(
           'staging',
@@ -943,22 +985,36 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
     // Stage burnout → jettison + advance.
     if (stageIndex >= 0 && remainingProp <= 0) {
       const isLast = stageIndex >= profile.stages.length - 1;
+      const delayS = isLast ? 0 : (profile.stages[stageIndex].separationDelayS ?? 0);
       if (!mecoSeen && !isLast) {
         pushEvent('meco', profile.stages[stageIndex].name);
         mecoSeen = true;
       }
-      pushEvent(isLast ? 'seco' : 'staging', profile.stages[stageIndex].name);
-      if (isLast) {
-        stageIndex = -1; // all propellant spent → coast
-        secoT = t;
+      if (delayS > 0 && sepPendingAtS < 0) sepPendingAtS = t + delayS;
+      if (sepPendingAtS >= 0 && t < sepPendingAtS) {
+        // cut off, tank still attached: coast until it separates
       } else {
-        stageIndex += 1;
-        remainingProp = stagePropellant(profile.stages[stageIndex]);
+        sepPendingAtS = -1;
+        pushEvent(
+          isLast ? 'seco' : 'staging',
+          profile.stages[stageIndex].name,
+          isLast && profile.payloadInBay === true,
+        );
+        if (isLast) {
+          stageIndex = -1; // all propellant spent → coast
+          secoT = t;
+        } else {
+          stageIndex += 1;
+          remainingProp = stagePropellant(profile.stages[stageIndex]);
+        }
       }
     }
 
     // Fairing jettison once above the atmosphere.
-    if (fairingOn && alt >= fairingJettAlt) {
+    if (
+      fairingOn &&
+      (profile.fairingJettisonS != null ? t >= profile.fairingJettisonS : alt >= fairingJettAlt)
+    ) {
       fairingOn = false;
       pushEvent('fairing_jettison');
     }
@@ -973,7 +1029,11 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
       orbitSeen = true;
       reachedOrbit = true;
       if (stageIndex === profile.stages.length - 1) {
-        pushEvent('seco', `${profile.stages[stageIndex].name} — orbit`);
+        pushEvent(
+          'seco',
+          `${profile.stages[stageIndex].name} — orbit`,
+          profile.payloadInBay === true,
+        );
         stageIndex = -1; // SECO on target; residual propellant is margin
         secoT = t;
       }

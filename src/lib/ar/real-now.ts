@@ -83,7 +83,7 @@ export function buildRealNowEarth(
 
   const userPin = new THREE.Mesh(
     new THREE.SphereGeometry(EARTH_RADIUS * 0.05, 12, 12),
-    new THREE.MeshBasicMaterial({ color: 0x4ecdc4 }),
+    new THREE.MeshBasicMaterial({ color: 0x8aa0ff }),
   );
   userPin.visible = false;
   group.add(userPin);

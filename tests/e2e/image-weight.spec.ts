@@ -50,8 +50,15 @@ type Device = keyof typeof DEVICES;
 // mid-scroll is not counted, so a measurement can only come out low, not high.
 const BUDGET_MB: Record<string, Record<Device, number>> = {
   '/fleet': { phone: 17, tablet: 37, desktop: 6, tv: 17 },
-  '/missions': { phone: 16, tablet: 16, desktop: 4, tv: 8 },
-  '/credits': { phone: 43, tablet: 43, desktop: 43, tv: 43 },
+  // 2026-11-16 (0.9.9): 13 more missions (139 cards) and the era strip's nine photos; tablet
+  // re-measured on the production build at 16.2 MB (phone 7.4, desktop 3.4, tv 7.4), oversize 0.
+  // Tablet only, 1.15x rounded up.
+  '/missions': { phone: 16, tablet: 19, desktop: 4, tv: 8 },
+  // 2026-11-14 (F1, UXD-038): every list shows 10 rows until "Show all". The same page with every
+  // chip opened (the old rendering) was 40.8 MB on a phone; capped it is 3.6 to 3.7 MB on all four
+  // devices, oversize 0 (measured on the dev server, which serves the same image files; not a
+  // production build), 1.15x rounded up. The reading waits for the sources to render first.
+  '/credits': { phone: 5, tablet: 5, desktop: 5, tv: 5 },
   // 62 more cutaways (45 anatomy + 17 exploded) on 2026-10-23: re-measured on the
   // production build at 46.8 / 42.1 / 8.2 / 40.1 MB, oversize 0, same 1.15x rule.
   // 2026-11-06: landing sequences, science diagrams and 18 mission blueprints since — phone
@@ -59,7 +66,15 @@ const BUDGET_MB: Record<string, Record<Device, number>> = {
   // art costs it ~3x what it costs a tablet: 47.0 / 9.9 / 45.0 MB, still inside). Phone only, 1.15x.
   // 2026-11-08: each section now shows 10 items until "Show all" — re-measured on the production
   // build at 4.1 / 4.1 / 2.6 / 3.9 MB, oversize 0; same 1.15x rule, rounded up.
-  '/colophon': { phone: 5, tablet: 5, desktop: 3, tv: 5 },
+  // 2026-11-14 (F1): the launcher sketches are their own section (10 more portrait images shown)
+  // and the page has grown since 11-08; re-measured on the dev server at 5.0 / 5.0 / 2.9 / 4.8 MB,
+  // oversize 0, 1.15x rounded up.
+  '/colophon': { phone: 6, tablet: 6, desktop: 4, tv: 6 },
+};
+
+const READY_SELECTOR: Record<string, string> = {
+  '/credits': 'article.source-block',
+  '/colophon': 'section.block',
 };
 
 async function measure(browser: Browser, baseURL: string, route: string, device: Device) {
@@ -75,6 +90,10 @@ async function measure(browser: Browser, baseURL: string, route: string, device:
     }
   });
   await page.goto(route, { waitUntil: 'load' });
+  // A page that fetches its manifest after load has nothing to scroll until that lands; a
+  // reading taken before it comes out at ~0 MB and would pass any budget.
+  const ready = READY_SELECTOR[route];
+  if (ready) await page.waitForSelector(ready, { state: 'attached', timeout: 60_000 });
   await page.waitForTimeout(2500);
   await page.evaluate(async () => {
     for (let y = 0; y < document.body.scrollHeight; y += 600) {

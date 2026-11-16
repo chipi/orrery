@@ -1,7 +1,7 @@
 // Scale readout for /explore — turns a camera distance into the human measure
 // that fits it, so zooming teaches the ladder of cosmic distance units:
 // kilometres → astronomical units → light-years → parsecs. Also the light-travel
-// time (how long light takes to cross the distance) and a map-style scale bar.
+// time (how long light takes to cross the distance). The scale bar is scale-bar.ts.
 //
 // Pure + framework-free so it can be unit-tested; the /explore HUD renders it.
 // Everything is driven from a canonical distance in astronomical units (AU),
@@ -89,27 +89,4 @@ export function describeDistanceAu(au: number): ScaleReadout {
     companion: { value: round(au / AU_PER_PC), unit: 'pc' },
     lightTravel: light,
   };
-}
-
-export interface ScaleBar {
-  /** Round-number world length the bar spans, in AU. */
-  au: number;
-  /** On-screen width of the bar, in pixels. */
-  px: number;
-}
-
-/**
- * A map-style scale bar: given how many AU one screen pixel covers, pick a
- * round length (1/2/5 × 10ⁿ) near `targetPx` wide and return its exact pixel
- * width. Returns null when the input isn't a usable positive number.
- */
-export function niceScaleBar(auPerPixel: number, targetPx = 130): ScaleBar | null {
-  if (!Number.isFinite(auPerPixel) || auPerPixel <= 0) return null;
-  const rawAu = auPerPixel * targetPx;
-  const mag = Math.floor(Math.log10(rawAu));
-  const base = 10 ** mag;
-  const mantissa = rawAu / base;
-  const niceMantissa = mantissa >= 5 ? 5 : mantissa >= 2 ? 2 : 1;
-  const au = niceMantissa * base;
-  return { au, px: au / auPerPixel };
 }

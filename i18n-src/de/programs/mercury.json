@@ -103,5 +103,15 @@
     "/earth": "Erde — Umlaufbahnen, Wiedereintritt & Startplätze",
     "/science/mission-phases/edl": "Eintritt, Abstieg & Landung",
     "/science/propulsion/tsiolkovsky": "Die Raketengleichung — warum die Redstone keinen Orbit erreichte"
+  },
+  "roster": {
+    "Mercury-Redstone 2 (Ham)": {
+      "note": "suborbitaler Test mit einem Schimpansen — gab die Redstone für einen bemannten Flug frei",
+      "name": "Mercury-Redstone 2 (Ham)"
+    },
+    "Mercury-Atlas 5 (Enos)": {
+      "note": "Zwei-Orbit-Test mit einem Schimpansen — gab die Atlas frei, bevor Glenn flog",
+      "name": "Mercury-Atlas 5 (Enos)"
+    }
   }
 }

@@ -1,9 +1,18 @@
 <script lang="ts">
+  import Chip from '$lib/components/Chip.svelte';
+  import ChipGroup from '$lib/components/ChipGroup.svelte';
   import { onMount, onDestroy, untrack } from 'svelte';
   import { goto } from '$app/navigation';
   import { page } from '$app/state';
   import { metaDescription } from '$lib/seo';
-  import { dvToRGB, dvToCss, dayToDate, dayToLongDate, dayToShortDate } from '$lib/porkchop';
+  import {
+    dvToRGB,
+    dvToCss,
+    dvLegend,
+    dayToDate,
+    dayToLongDate,
+    dayToShortDate,
+  } from '$lib/porkchop';
   import { geoTransferDv } from '$lib/physics/transfer/lambert-geocentric';
   import { interplanetaryMoonDv } from '$lib/moon-transfer';
   import { MOONS } from '$lib/moon-transfer.constants';
@@ -38,6 +47,8 @@
   } from '$lib/types/remote-data';
   import { dataLoadFailed } from '$lib/data/core';
   import { createBitmapSlot } from '$lib/plan/bitmap-slot';
+  import { PLAN_DESTINATION_GROUPS, PLAN_DESTINATION_IDS } from '$lib/plan/destinations';
+  import { ROCKET_FLEET_ID } from '$lib/plan/rocket-handoff';
 
   // v0.8 (#312 / ADR-076 / RFC-026): /plan ships the full twelve-destination
   // set. Every destination now has a committed porkchop grid at
@@ -46,31 +57,8 @@
   // + Pluto. FLYBY_ONLY marks destinations with no LANDING at this fidelity (no
   // LOI ∆v term); GRAVITY_ASSIST_CAVEAT_DESTINATIONS flags those whose realistic
   // trajectory needs a gravity assist.
-  // Ordered as an outward tour — each planet's moons follow it (ADR-086).
-  const DESTINATION_IDS: PlanDestinationId[] = [
-    'moon',
-    'mercury',
-    'venus',
-    'mars',
-    'phobos',
-    'deimos',
-    'vesta',
-    'ceres',
-    'psyche',
-    'jupiter',
-    'io',
-    'europa',
-    'ganymede',
-    'callisto',
-    'saturn',
-    'titan',
-    'enceladus',
-    'uranus',
-    'neptune',
-    'triton',
-    'pluto',
-    'bennu',
-  ];
+  // The list itself is shared with the body panels' "Plan mission" chip.
+  const DESTINATION_IDS = PLAN_DESTINATION_IDS;
   /** FLYBY-only: gas / ice giants + Pluto (no LANDING at this fidelity). ADR-026 + ADR-028. */
   const FLYBY_ONLY: DestinationId[] = ['jupiter', 'saturn', 'uranus', 'neptune', 'pluto'];
   const GRAVITY_ASSIST_CAVEAT_DESTINATIONS: DestinationId[] = [
@@ -82,25 +70,14 @@
   ];
   let invalidDestWarned = false;
 
-  /** rocket id → fleet entry id. Variants (atlas-v-541 → atlas-v) +
-   *  Fregat-upper Soyuz mapped onto the modern Soyuz-2 fleet entry.
-   *  Every rocket /plan surfaces now has a fleet entry — the prior
-   *  fallback path (external rockets.json links for starship / pslv-xl
-   *  / long-march-3b) was removed after their fleet entries landed. */
-  const ROCKET_FLEET_ID: Record<string, string> = {
-    'falcon-heavy': 'falcon-heavy',
-    starship: 'starship',
-    'sls-block-1': 'sls-block-1',
-    'atlas-v-541': 'atlas-v',
-    'long-march-5': 'long-march-5',
-    'ariane-6': 'ariane-6',
-    lvm3: 'lvm3',
-    'pslv-xl': 'pslv-xl',
-    h3: 'h3',
-    'h-iia': 'h-iia',
-    'long-march-3b': 'long-march-3b',
-    'soyuz-fregat': 'soyuz-2',
-    'proton-m': 'proton-m',
+  // rocket id → fleet entry id lives with the /fly handoff table ($lib/plan/rocket-handoff).
+
+  const GROUP_LABEL: Record<(typeof PLAN_DESTINATION_GROUPS)[number]['id'], () => string> = {
+    inner: m.plan_group_inner,
+    asteroids: m.plan_group_asteroids,
+    jupiter: m.plan_group_jupiter,
+    saturn: m.plan_group_saturn,
+    outer: m.plan_group_outer,
   };
 
   // ─── Grid state — driven by loaded JSON (v0.1.6 / ADR-026) ───────
@@ -156,6 +133,8 @@
   /** Optional per-grid heatmap colour window (geo Moon has a narrow range,
    *  ADR-085). `null` → dvToRGB/dvToCss use their heliocentric defaults. */
   let DV_COLOR_RANGE = $derived(activeGrid?.dv_color_range ?? null);
+  // The legend reads the plot's own colour stops over the same window, so they never disagree.
+  let dvKey = $derived(dvLegend(DV_COLOR_RANGE?.[0], DV_COLOR_RANGE?.[1]));
   /** True for a geocentric destination (the Moon): different ∆v semantics
    *  (TLI+LOI from LEO), narrow colour range, cislunar /fly handoff. ADR-085. */
   let isGeoDestination = $derived(destinationId === 'moon');
@@ -333,6 +312,13 @@
     ) {
       params.set('type', missionType.toLowerCase());
     }
+    // The rocket the user picked stays in the URL, so a reload or a shared link keeps it.
+    // Before the rocket list has loaded, an incoming ?rocket= is carried through unchanged.
+    if (userPickedRocket && selectedRocketId) {
+      params.set('rocket', selectedRocketId);
+    } else if (rocketList.length === 0 && pendingRocketDeepLink) {
+      params.set('rocket', pendingRocketDeepLink);
+    }
     // Porkchop point selection (#337 gap 4). Rounded to integer days
     // so the URL stays human-readable; the resolver finds the closest
     // grid cell, which round-trips cleanly because grid cells are
@@ -408,6 +394,11 @@
   // user can share their picked cell.
   $effect(() => {
     void selected;
+    untrack(() => pushFiltersToUrl());
+  });
+  $effect(() => {
+    void selectedRocketId;
+    void userPickedRocket;
     untrack(() => pushFiltersToUrl());
   });
 
@@ -532,7 +523,7 @@
 
     // Axes
     ctx.fillStyle = 'rgba(255,255,255,0.55)';
-    ctx.font = "9px 'Space Mono', monospace";
+    ctx.font = "11px 'Space Mono', monospace";
     ctx.textAlign = 'center';
     ctx.textBaseline = 'top';
     const xTicks = 5;
@@ -547,13 +538,13 @@
       ctx.stroke();
       ctx.fillText(dayToShortDate(d), x, MT + PH + 8);
     }
-    ctx.font = "8px 'Space Mono', monospace";
+    ctx.font = "11px 'Space Mono', monospace";
     ctx.fillStyle = 'rgba(255,255,255,0.35)';
     ctx.fillText(m.plan_axis_departure_window(), ML + PW / 2, MT + PH + 26);
 
     // Y-axis ticks. Outer-planet grids (Jupiter, Saturn) render TOF
     // in years (per ADR-026 §Y-axis units, auto-switch threshold = 730d).
-    ctx.font = "9px 'Space Mono', monospace";
+    ctx.font = "11px 'Space Mono', monospace";
     ctx.fillStyle = 'rgba(255,255,255,0.55)';
     ctx.textAlign = 'right';
     ctx.textBaseline = 'middle';
@@ -574,7 +565,7 @@
     ctx.save();
     ctx.translate(14, MT + PH / 2);
     ctx.rotate(-Math.PI / 2);
-    ctx.font = "8px 'Space Mono', monospace";
+    ctx.font = "11px 'Space Mono', monospace";
     ctx.fillStyle = 'rgba(255,255,255,0.35)';
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
@@ -585,7 +576,7 @@
     );
     ctx.restore();
 
-    ctx.font = "9px 'Space Mono', monospace";
+    ctx.font = "11px 'Space Mono', monospace";
     ctx.fillStyle = 'rgba(255,255,255,0.7)';
     ctx.textAlign = 'left';
     ctx.textBaseline = 'top';
@@ -798,6 +789,8 @@
     const params = new URLSearchParams();
     if (destinationId !== 'mars') params.set('dest', destinationId);
     params.set('type', missionType.toLowerCase());
+    // The rocket the Δv budget was checked against (`viable`): /fly flies that launcher.
+    if (selectedRocketId) params.set('rocket', selectedRocketId);
     params.set('dep', String(Math.round(depDays[selected.i])));
     params.set('tof', String(Math.round(arrDays[selected.j])));
     goto(localHref(`/fly?${params.toString()}`));
@@ -854,7 +847,7 @@
     ctx.restore();
 
     // Outer ring
-    ctx.strokeStyle = 'rgba(68,102,255,0.7)';
+    ctx.strokeStyle = 'rgba(80,112,255,0.7)';
     ctx.lineWidth = 2;
     ctx.beginPath();
     ctx.arc(MAG_RADIUS, MAG_RADIUS, MAG_RADIUS - 1, 0, Math.PI * 2);
@@ -947,38 +940,34 @@
           onchange={() => setDestination(destinationId)}
           class="dest-select"
         >
-          {#each DESTINATION_IDS as destOpt (destOpt)}
-            <option value={destOpt}>{destinationLabel(destOpt)}</option>
+          {#each PLAN_DESTINATION_GROUPS as grp (grp.id)}
+            <optgroup label={GROUP_LABEL[grp.id]()}>
+              {#each grp.members as destOpt (destOpt)}
+                <option value={destOpt}>{destinationLabel(destOpt)}</option>
+              {/each}
+            </optgroup>
           {/each}
         </select>
       </label>
-      <div class="mission-type-group" role="radiogroup" aria-label={m.plan_label_mission_type()}>
-        <button
-          type="button"
-          class="mission-type-pill"
-          class:active={missionType === 'LANDING' && isLandingAvailable}
-          role="radio"
-          aria-checked={missionType === 'LANDING'}
-          aria-disabled={!isLandingAvailable}
+      <ChipGroup role="radiogroup" label={m.plan_label_mission_type()}>
+        <Chip
+          kind="choice"
+          active={missionType === 'LANDING' && isLandingAvailable}
           disabled={!isLandingAvailable}
           title={!isLandingAvailable ? m.plan_mission_type_disabled_flyby_only() : ''}
           onclick={() => setMissionType('LANDING')}
         >
           {m.plan_mission_type_landing()}
-        </button>
-        <button
-          type="button"
-          class="mission-type-pill"
-          class:active={missionType === 'FLYBY' && isFlybyAvailable}
-          role="radio"
-          aria-checked={missionType === 'FLYBY'}
-          aria-disabled={!isFlybyAvailable}
+        </Chip>
+        <Chip
+          kind="choice"
+          active={missionType === 'FLYBY' && isFlybyAvailable}
           disabled={!isFlybyAvailable}
           onclick={() => setMissionType('FLYBY')}
         >
           {m.plan_mission_type_flyby()}
-        </button>
-      </div>
+        </Chip>
+      </ChipGroup>
     </div>
     <canvas
       class="porkchop"
@@ -1072,17 +1061,14 @@
         </dt>
         <dd>
           {m.plan_explainer_color_desc()}
-          <div class="color-bar" aria-hidden="true">
-            <span class="cb-stop teal"></span>
-            <span class="cb-stop blue"></span>
-            <span class="cb-stop yellow"></span>
-            <span class="cb-stop orange"></span>
-            <span class="cb-stop red"></span>
-          </div>
+          <!-- a3-keep: data colour (the porkchop heat map's own ramp, src/lib/porkchop.ts) -->
+          <div class="color-bar" aria-hidden="true" style="background: {dvKey.gradient}"></div>
           <div class="color-bar-labels" aria-hidden="true">
-            <span>3</span><span>5</span><span>7</span><span>9</span><span
-              >{m.mp_flight_unit_kms({ value: '11+' })}</span
-            >
+            {#each dvKey.ticks as tick, i (i)}
+              <span
+                >{i === dvKey.ticks.length - 1 ? m.mp_flight_unit_kms({ value: tick }) : tick}</span
+              >
+            {/each}
           </div>
         </dd>
         <dt>
@@ -1155,9 +1141,7 @@
                 count: pinnedReadout.tof.toFixed(0),
               })} · {m.mp_flight_unit_kms({ value: pinnedReadout.dv.toFixed(2) })}
             </span>
-            <button type="button" class="sandbox-clear" onclick={clearPin}>
-              {m.plan_sandbox_clear()}
-            </button>
+            <Chip kind="action" quiet onclick={clearPin}>{m.plan_sandbox_clear()}</Chip>
           </div>
           {#if compareDelta}
             <dl class="sandbox-compare" data-testid="plan-sandbox-compare">
@@ -1185,14 +1169,9 @@
             </dl>
           {/if}
         {:else}
-          <button
-            type="button"
-            class="sandbox-pin"
-            data-testid="plan-sandbox-pin"
-            onclick={pinSelectedCell}
-          >
+          <Chip kind="action" data-testid="plan-sandbox-pin" onclick={pinSelectedCell}>
             {m.plan_sandbox_pin_button()}
-          </button>
+          </Chip>
           <p class="sandbox-hint">{m.plan_sandbox_pin_hint()}</p>
         {/if}
       </div>
@@ -1286,16 +1265,12 @@
       {#if (GRAVITY_ASSIST_CAVEAT_DESTINATIONS as readonly string[]).includes(destinationId)}
         <p class="gravity-caveat">{m.plan_gravity_assist_caveat()}</p>
       {/if}
-      <button class="fly" type="button" disabled={!viable} onclick={flyMission}>
-        <!-- Trajectory-arc glyph — same custom SVG used on the
-             /missions panel's Fly button so the cross-route action
-             is visually consistent (2026-06-15 user direction: "let's
-             adjust fly mission with same logo on plan page"). -->
-        <span class="fly-icon" aria-hidden="true">
-          <TrajectoryArrowIcon />
-        </span>
-        <span class="fly-text">{m.plan_fly_button()}</span>
-      </button>
+      <!-- The one chip (UXD-014, plan L30/L31): the same action chip and trajectory-arc glyph as
+           the mission panel's Fly. Full width in the summary column. -->
+      <Chip kind="action" class="plan-fly" disabled={!viable} onclick={flyMission}>
+        {#snippet icon()}<TrajectoryArrowIcon />{/snippet}
+        {m.plan_fly_button()}
+      </Chip>
     {/if}
   </aside>
 </div>
@@ -1303,8 +1278,8 @@
 <!-- Unified Science Lens panel — lens story only on /plan (no layer
      toggles meaningful for the porkchop view). -->
 <ScienceLayersPanel
+  body={m.plan_lens_body()}
   title={m.plan_porkchop_title()}
-  body="Each pixel solves a Lambert problem. The cheap teal lobe marks the natural Hohmann window — physics decides when interplanetary travel is affordable, not the calendar."
   tab="porkchop"
   section="what-is-a-porkchop"
 />
@@ -1352,9 +1327,9 @@
   }
   .selector-key {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 8px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--color-text-label);
     font-weight: 700;
   }
   .dest-select {
@@ -1370,42 +1345,8 @@
     cursor: pointer;
   }
   .dest-select:focus-visible {
-    outline: 2px solid #4466ff;
+    outline: 2px solid var(--color-focus);
     outline-offset: 1px;
-  }
-  .mission-type-group {
-    display: inline-flex;
-    gap: 6px;
-  }
-  .mission-type-pill {
-    min-width: 64px;
-    min-height: 44px;
-    padding: 0 14px;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    color: rgba(255, 255, 255, 0.7);
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
-    letter-spacing: 2px;
-    font-weight: 700;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: all 0.12s;
-  }
-  .mission-type-pill:hover:not(:disabled),
-  .mission-type-pill:focus-visible:not(:disabled) {
-    border-color: rgba(68, 102, 255, 0.55);
-    color: var(--color-text);
-    outline: none;
-  }
-  .mission-type-pill.active {
-    background: rgba(68, 102, 255, 0.2);
-    border-color: #4466ff;
-    color: #fff;
-  }
-  .mission-type-pill:disabled {
-    cursor: not-allowed;
-    opacity: 0.4;
   }
   @media (max-width: 767px) {
     .selector-bar {
@@ -1444,14 +1385,14 @@
     border: 1px solid rgba(193, 68, 14, 0.55);
     color: #ffc850;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     border-radius: 4px;
   }
 
   /* Phase 36 (#342) — touch affordance hint for the magnifier gesture.
      Visible only on (hover: none) so desktop users don't see it. Sits
-     at the top-right of the porkchop canvas; muted teal so it reads
+     at the top-right of the porkchop canvas; muted accent blue so it reads
      as guidance rather than UI chrome. */
   .touch-hint {
     display: none;
@@ -1466,9 +1407,9 @@
     margin: 0;
     padding: 6px 10px;
     background: rgba(15, 18, 35, 0.7);
-    border: 1px solid rgba(78, 205, 196, 0.35);
+    border: 1px solid var(--color-accent-edge);
     border-radius: 4px;
-    color: rgba(78, 205, 196, 0.85);
+    color: var(--color-state);
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 0.5px;
@@ -1524,14 +1465,14 @@
   }
   .loading-fill {
     height: 100%;
-    background: #4466ff;
+    background: var(--color-accent);
     border-radius: 2px;
     transition: width 0.1s;
   }
   .loading-pct {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 8px;
-    color: rgba(255, 255, 255, 0.3);
+    font-size: var(--size-label);
+    color: var(--color-text-label);
     margin-top: 8px;
     letter-spacing: 2px;
   }
@@ -1557,8 +1498,8 @@
 
   .explainer {
     padding: 10px 14px 12px;
-    background: rgba(68, 102, 255, 0.04);
-    border: 1px solid rgba(68, 102, 255, 0.25);
+    background: color-mix(in srgb, var(--color-accent) 4%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-accent) 25%, transparent);
     border-radius: 4px;
     margin-bottom: 8px;
   }
@@ -1579,8 +1520,8 @@
   }
   .explainer > summary::before {
     content: '▸';
-    font-size: 10px;
-    color: rgba(68, 102, 255, 0.85);
+    font-size: var(--size-label);
+    color: var(--color-state);
     transition: transform 150ms ease;
     display: inline-block;
   }
@@ -1589,9 +1530,9 @@
   }
   .explainer-title {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
-    color: var(--color-accent-text, #5070ff);
+    color: var(--color-accent);
     font-weight: 700;
   }
   .explainer[open] > .explainer-intro,
@@ -1600,9 +1541,7 @@
   }
   .explainer-intro {
     margin: 0 0 10px;
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 12px;
+    font-size: var(--size-lead);
     color: rgba(255, 255, 255, 0.78);
     line-height: 1.45;
   }
@@ -1614,52 +1553,32 @@
   }
   .explainer-list dt {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 7px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
-    color: rgba(78, 205, 196, 0.85);
+    color: var(--color-state);
     font-weight: 700;
     margin-bottom: 1px;
   }
   .explainer-list dd {
     margin: 0;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     line-height: 1.5;
     color: rgba(255, 255, 255, 0.7);
   }
 
+  /* The gradient comes from dvLegend() (the plot's own colour stops), set inline. */
   .color-bar {
-    display: flex;
     height: 8px;
     margin: 6px 0 2px;
     border-radius: 2px;
-    overflow: hidden;
-  }
-  .color-bar .cb-stop {
-    flex: 1;
-    height: 100%;
-  }
-  .color-bar .teal {
-    background: #4ecdc4;
-  }
-  .color-bar .blue {
-    background: #4466ff;
-  }
-  .color-bar .yellow {
-    background: #ffc850;
-  }
-  .color-bar .orange {
-    background: #ff8c3c;
-  }
-  .color-bar .red {
-    background: #c1440e;
   }
   .color-bar-labels {
     display: flex;
     justify-content: space-between;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 7px;
-    color: rgba(255, 255, 255, 0.55);
+    font-size: var(--size-label);
+    color: var(--color-text-label);
     letter-spacing: 1px;
   }
   @media (max-width: 767px) {
@@ -1682,9 +1601,7 @@
     color: var(--color-text);
   }
   .empty-hint {
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 13px;
+    font-size: var(--size-body);
     color: rgba(255, 255, 255, 0.5);
     line-height: 1.5;
     margin: 0;
@@ -1704,11 +1621,11 @@
   }
   .rocket-link {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 0.5px;
-    color: var(--color-tier-intro);
+    color: var(--color-state);
     text-decoration: none;
-    border-bottom: 1px dotted rgba(78, 205, 196, 0.4);
+    border-bottom: 1px dotted var(--color-accent-edge);
     padding: 1px 0;
     align-self: flex-start;
     transition:
@@ -1718,7 +1635,7 @@
   .rocket-link:hover,
   .rocket-link:focus-visible {
     color: #fff;
-    border-bottom-color: #4ecdc4;
+    border-bottom-color: var(--color-accent);
     outline: none;
   }
   /* .row.strong .value rule removed — selector flagged as unused after
@@ -1741,9 +1658,9 @@
   }
   .readout-grid .cell .label {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 7px;
+    font-size: var(--size-label);
     letter-spacing: 1.5px;
-    color: rgba(255, 255, 255, 0.4);
+    color: var(--color-text-label);
   }
   .readout-grid .cell .value {
     font-family: var(--font-mono, 'Space Mono', monospace);
@@ -1754,15 +1671,15 @@
     white-space: nowrap;
   }
   .readout-grid .cell.strong .value {
-    color: #4ecdc4;
+    color: var(--color-state);
     font-weight: 700;
     font-size: 12px;
   }
   .label {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 7px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
-    color: rgba(255, 255, 255, 0.35);
+    color: var(--color-text-label);
   }
   .value {
     font-family: var(--font-mono, 'Space Mono', monospace);
@@ -1786,38 +1703,11 @@
     border: 1px solid rgba(255, 200, 80, 0.18);
     border-radius: 4px;
   }
-  .sandbox-pin {
-    display: block;
-    width: 100%;
-    min-height: 26px;
-    padding: 4px 10px;
-    background: transparent;
-    border: 1px dashed rgba(255, 200, 80, 0.5);
-    border-radius: 4px;
-    color: rgba(255, 200, 80, 0.85);
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
-    letter-spacing: 1.5px;
-    cursor: pointer;
-    transition:
-      border-color 120ms,
-      background 120ms,
-      color 120ms;
-  }
-  .sandbox-pin:hover,
-  .sandbox-pin:focus-visible {
-    background: rgba(255, 200, 80, 0.08);
-    border-color: rgba(255, 200, 80, 0.85);
-    color: #ffc850;
-    outline: none;
-  }
   .sandbox-hint {
     margin: 3px 0 0;
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 10px;
+    font-size: var(--size-label);
     line-height: 1.3;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
   }
   .sandbox-pinned {
     display: flex;
@@ -1828,30 +1718,15 @@
   }
   .sandbox-eyebrow {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 8px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
     color: #ffc850;
   }
   .sandbox-pin-summary {
     flex: 1;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     color: rgba(255, 255, 255, 0.78);
-  }
-  .sandbox-clear {
-    background: transparent;
-    border: none;
-    color: rgba(255, 200, 80, 0.7);
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
-    letter-spacing: 1px;
-    cursor: pointer;
-    padding: 2px 4px;
-  }
-  .sandbox-clear:hover,
-  .sandbox-clear:focus-visible {
-    color: #ffc850;
-    outline: none;
   }
   .sandbox-compare {
     margin: 0;
@@ -1869,9 +1744,9 @@
   }
   .sandbox-row dt {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 8px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
-    color: rgba(255, 255, 255, 0.4);
+    color: var(--color-text-label);
     margin: 0;
   }
   .sandbox-row dd {
@@ -1885,12 +1760,12 @@
     font-weight: 700;
   }
   .sandbox-row.strong.cheaper dd {
-    color: #4ecdc4;
+    color: var(--color-state);
   }
   .sandbox-tag {
-    font-size: 8px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
     margin-left: 4px;
   }
 
@@ -1912,7 +1787,7 @@
     cursor: pointer;
   }
   .vehicle select:focus-visible {
-    outline: 1px solid #4466ff;
+    outline: 1px solid var(--color-focus);
     outline-offset: 2px;
   }
 
@@ -1945,7 +1820,11 @@
   .budget-fill {
     position: absolute;
     inset: 0 auto 0 0;
-    background: linear-gradient(to right, #4ecdc4, #4ecdc488);
+    background: linear-gradient(
+      to right,
+      var(--color-accent),
+      color-mix(in srgb, var(--color-accent) 53%, transparent)
+    );
     transition: width 200ms;
   }
   .budget.deficit .budget-fill {
@@ -1957,7 +1836,7 @@
     text-align: center;
     line-height: 24px;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.95);
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
@@ -1969,52 +1848,13 @@
     border-radius: 4px;
     background: rgba(255, 200, 80, 0.12);
     border: 1px solid rgba(255, 200, 80, 0.35);
-    font-family: 'Crimson Pro', Georgia, serif;
-    font-size: 13px;
-    font-style: italic;
+    font-size: var(--size-body);
     line-height: 1.35;
     color: rgba(255, 235, 200, 0.92);
   }
 
-  .fly {
+  :global(.plan-fly) {
     margin-top: 8px;
     width: 100%;
-    min-height: 48px;
-    padding: 12px;
-    background: #1a33bb;
-    border: 1px solid rgba(68, 102, 255, 0.55);
-    border-radius: 4px;
-    color: #fff;
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
-    letter-spacing: 3px;
-    font-weight: 700;
-    cursor: pointer;
-    transition:
-      background 120ms,
-      border-color 120ms;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-  }
-  .fly .fly-icon {
-    flex: 0 0 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: rgba(200, 215, 255, 0.95);
-  }
-  .fly:hover:not(:disabled),
-  .fly:focus-visible:not(:disabled) {
-    background: #2244dd;
-    border-color: #4466ff;
-    outline: none;
-  }
-  .fly:disabled {
-    background: rgba(255, 255, 255, 0.04);
-    border-color: rgba(255, 255, 255, 0.08);
-    color: rgba(255, 255, 255, 0.25);
-    cursor: not-allowed;
   }
 </style>

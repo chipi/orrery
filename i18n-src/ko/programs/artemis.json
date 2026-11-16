@@ -95,5 +95,22 @@
     "/moon": "달 — 목적지",
     "/fleet?id=orion": "함대 — Orion, SLS와 달 탐사 장비",
     "/programs/apollo": "Apollo — Artemis의 이름이 유래했고 그것을 넘어서는 계획"
+  },
+  "roster": {
+    "mission:artemis1": {
+      "note": "무인 Orion이 첫 SLS 발사에서 달을 돌아온다 — 누군가 탑승하기 전에 심우주 하드웨어를 검증한다"
+    },
+    "mission:artemis2": {
+      "note": "첫 승무원 — 달까지 비행하는 최초의 비미국인을 포함한 우주비행사 네 명. 2026년 4월의 근접 통과로 인류는 지구에서 역대 가장 먼 곳까지 갔다"
+    },
+    "mission:artemis3": {
+      "note": "지구 궤도에서의 유인 시험 — 1969년 Apollo 9처럼, 누군가 달로 타고 가기 전에 Orion이 상업용 착륙선과 도킹한다"
+    },
+    "mission:artemis4": {
+      "note": "표면 복귀 — 1972년 이후 첫 유인 달 착륙이자, 남극 부근에서는 사상 최초"
+    },
+    "mission:artemis5": {
+      "note": "2028년 말로 계획된 두 번째 착륙 — 남극 기지를 향한 작업의 시작"
+    }
   }
 }

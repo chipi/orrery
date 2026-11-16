@@ -1,9 +1,13 @@
 {
   "science_sections": [
     {
-      "tab": "planets",
-      "section": "asteroid-belt",
+      "tab": "orbits",
+      "section": "lagrange-points",
       "why": "Polymele is an L4 Trojan — Lucy flyby September 2027. The Trojans are dynamically locked at Jupiter's L4/L5 Lagrange points and may be captured Kuiper-belt bodies."
+    },
+    {
+      "tab": "orbits",
+      "section": "inclination"
     }
   ]
 }

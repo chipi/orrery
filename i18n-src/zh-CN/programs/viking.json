@@ -89,5 +89,20 @@
     "/mars?site=viking1-lander": "Viking 1 — 克律塞平原",
     "/mars?site=viking2-lander": "Viking 2 — 乌托邦平原",
     "/mars?site=viking1-orbiter": "Viking 1 轨道器"
+  },
+  "roster": {
+    "fleet:viking-1": {
+      "note": "首个成功在火星着陆并运行的航天器——一个从空中绘制地图的轨道器，和一个在地表工作的着陆器"
+    },
+    "mission:viking1": {
+      "note": "1976年7月20日，Viking 1着陆器降落在克律塞平原，传回了首批来自火星地表的清晰图像"
+    },
+    "mission:viking2": {
+      "note": "第二对轨道器与着陆器，六周后降落在数千公里之外的乌托邦平原"
+    },
+    "The biology experiments": {
+      "note": "每个着陆器都进行了旨在探测火星土壤中生命的实验；结果含糊不清，至今仍争论不休",
+      "name": "生物学实验"
+    }
   }
 }

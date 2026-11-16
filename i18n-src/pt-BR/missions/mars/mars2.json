@@ -1,0 +1,30 @@
+{
+  "name": "Mars 2",
+  "vehicle": "Proton-K / D",
+  "payload": "4650 kg (orbitador + módulo de pouso combinados)",
+  "delta_v": "~5,5 km/s (estimativa)",
+  "type": "ORBITADOR OPEROU · MÓDULO DE POUSO PERDIDO",
+  "first": "Um orbitador e módulo de pouso soviéticos lançados a Marte em 1971: o módulo de pouso colidiu, o orbitador funcionou",
+  "description": "A Mars 2 foi uma espaçonave soviética composta por um orbitador e um módulo de pouso. Foi lançada em 1971-05-19 em um Proton-K com estágio superior Blok D, nove dias antes de sua gêmea Mars 3. O módulo de descida se separou cerca de 4,5 horas antes da chegada. Seu sistema de descida falhou, o paraquedas não abriu e o módulo de pouso colidiu com Marte. O orbitador entrou em órbita de Marte em 1971-11-27, em uma órbita de 18 horas, e enviou dados até cerca de agosto de 1972.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANÇAMENTO",
+      "note": "Proton-K com estágio superior Blok-D de Baikonur, 1971-05-19.",
+      "type": "nominal"
+    },
+    {
+      "met": 192,
+      "label": "INSERÇÃO ORBITAL DO ORBITADOR",
+      "note": "Orbitador entra em órbita de Marte em 1971-11-27.",
+      "type": "nominal"
+    },
+    {
+      "met": 192.1,
+      "label": "MÓDULO DE POUSO PERDIDO",
+      "note": "O módulo de descida se separou cerca de 4,5 horas antes da chegada; o módulo de pouso colidiu.",
+      "type": "warning"
+    }
+  ],
+  "vehicle_stage": "estágio superior Blok-D"
+}

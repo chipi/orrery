@@ -6,11 +6,13 @@
 <script lang="ts">
   import '$lib/components/entity-page.css';
   import { localHref } from '$lib/locale';
+  import { worldLinkLabel, worldPathFor } from '$lib/explore/world-links';
   import * as m from '$lib/paraglide/messages';
   import { getLocale } from '$lib/paraglide/runtime';
   import { canonicalUrl, metaDescription, pageTitle } from '$lib/seo';
   import { ogTitle } from '$lib/social-meta';
   import { article, breadcrumbList } from '$lib/json-ld';
+  import Chip from '$lib/components/Chip.svelte';
   import JsonLd from '$lib/components/JsonLd.svelte';
   import type { PageData } from './$types';
 
@@ -21,6 +23,7 @@
   let appHref = $derived(
     localHref(`/explore?id=${body.parent ? `${body.parent}:${body.id}` : body.id}`),
   );
+  let worldPath = $derived(worldPathFor(body.id));
   let jsonLd = $derived.by(() => {
     const loc = getLocale();
     const url = canonicalUrl(`/explore/${body.id}`, loc);
@@ -40,8 +43,8 @@
 </svelte:head>
 <JsonLd data={jsonLd} />
 
-<article class="entity">
-  <nav class="crumb">
+<article class="entity page-shell page-shell--reading">
+  <nav class="crumb page-crumb">
     <a href={localHref('/explore')}>{section}</a>
     <span class="sep">›</span>
     <span>{body.name}</span>
@@ -49,8 +52,8 @@
 
   <header>
     {#if body.type}<p class="meta">{body.type}</p>{/if}
-    <h1>{body.name}</h1>
-    {#if body.fact}<p class="lede">{body.fact}</p>{/if}
+    <h1 class="page-title">{body.name}</h1>
+    {#if body.fact}<p class="lede page-lead">{body.fact}</p>{/if}
   </header>
 
   {#if body.text}<p class="dispatch">{body.text}</p>{/if}
@@ -69,7 +72,7 @@
 
   {#if data.science.length}
     <section class="science">
-      <h2>{m.panel_tab_science()}</h2>
+      <h2 class="page-section-label">{m.panel_tab_science()}</h2>
       <ul class="linklist wide">
         {#each data.science as sec (sec.href)}
           <li>
@@ -84,7 +87,7 @@
 
   {#if body.visits.length}
     <section class="visits">
-      <h2>{m.panel_tab_missions()}</h2>
+      <h2 class="page-section-label">{m.panel_tab_missions()}</h2>
       <ul>
         {#each body.visits as v (v)}<li>{v}</li>{/each}
       </ul>
@@ -92,6 +95,11 @@
   {/if}
 
   <p class="actions">
-    <a class="cta" href={appHref}>{m.launches_open_in_orrery()}</a>
+    <Chip kind="link" href={appHref}>{m.launches_open_in_orrery()}</Chip>
+    {#if worldPath}
+      <Chip kind="link" href={localHref(worldPath)} data-testid="entity-world-link"
+        >{worldLinkLabel(body.id)}</Chip
+      >
+    {/if}
   </p>
 </article>

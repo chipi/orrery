@@ -26,7 +26,6 @@
   import ExhibitOverlay from '$lib/components/ExhibitOverlay.svelte';
   import { exhibit } from '$lib/exhibit.svelte';
   import DebugPanel from '$lib/components/DebugPanel.svelte';
-  import { reconcilePrerenderedAssetOrigins } from '$lib/target-env';
   import {
     createDebugPanelContext,
     type RenderingDebugRegistration,
@@ -59,7 +58,8 @@
   // TV/keyboard escape hatch that beats D-pad-ing across long lists.
   let footerMoreOpen = $state(false);
   // The full link strip is ~720 px wide: compact (More button) below 1000 px, and
-  // below 1450 px on the floating-A-Z-tab routes (/explore also has the time dock, to 542 px).
+  // below 1450 px on the scene routes (/explore has the time dock, to 542 px; the floating A–Z
+  // tab that once shared this rule is gone — whether /moon /mars /venus still need it is unmeasured).
   let narrow1000 = $state(false);
   let narrowExplore = $state(false);
 
@@ -122,11 +122,11 @@
   // noindex instead (isMirrorBuild).
   const mirrorBuild = isMirrorBuild(base);
   let seoRoute = $derived(canonicalRoute(page.url.pathname, base));
-  // Routes with the floating A-Z tab (EntityIndex `floating`): it parks beside the
-  // compact footer's More button below 1450 px, so the footer must be compact there.
-  const FLOATING_TAB_ROUTES = ['/explore', '/mars', '/moon', '/venus'];
+  // Scene routes whose bottom-left HUD (dock, legend) crowds the full strip: it goes
+  // compact (More button) below 1450 px.
+  const COMPACT_FOOTER_ROUTES = ['/explore', '/mars', '/moon', '/venus'];
   let footerCompact = $derived(
-    narrow1000 || (narrowExplore && FLOATING_TAB_ROUTES.includes(seoRoute)),
+    narrow1000 || (narrowExplore && COMPACT_FOOTER_ROUTES.includes(seoRoute)),
   );
   let canonicalHref = $derived(canonicalUrl(seoRoute, activeLocale));
   // Card share stubs (#547, /c/*) and the OAuth callback are en-US-only pages
@@ -416,10 +416,6 @@
     // + event API.
     initAnalytics();
     startEngagementHeartbeat();
-    // Internal builds (ADR-083): the first prerendered page's images carry the
-    // build-default origin; rewrite them to the active target so assets follow
-    // the switch too. No-op in web/release.
-    reconcilePrerenderedAssetOrigins();
     // Stamp the session with the running build so the live version
     // distribution is visible in the dashboard — a cohort stuck on an old
     // build (e.g. the iOS-precache freeze) is then obvious, not a surprise.
@@ -676,7 +672,7 @@
     padding: 10px 16px;
     background: var(--color-nav-bg, #04040c);
     color: var(--color-text, #fff);
-    border: 2px solid var(--color-accent, #4466ff);
+    border: 2px solid var(--color-accent);
     border-radius: 4px;
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 14px;
@@ -729,6 +725,16 @@
   .site-footer.more-open {
     z-index: 60;
   }
+  /* A narrow window with a mouse: an open detail panel (Panel.svelte, z 30) is as wide as the
+     window, so the strip and its More popover sit under it rather than over its lower corner. Only
+     while a panel is open; the strip does not move. Wider, the drawer is clear of the strip's
+     dock rules (footer-dock.spec); touch has no footer. */
+  @media (hover: hover) and (pointer: fine) and (max-width: 600px) {
+    :global(html:has(aside.panel:not(.covered))) .site-footer,
+    :global(html:has(aside.panel:not(.covered))) .site-footer.more-open {
+      z-index: 25;
+    }
+  }
   /* Touch: the floating footer is hidden entirely — its links move into the
      nav hamburger drawer as a bottom section (see Nav.svelte). This frees the
      whole bottom edge for each route's drawer buttons instead of the strip
@@ -751,7 +757,7 @@
   .footer-link {
     pointer-events: auto;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 0.5px;
     color: rgba(255, 255, 255, 0.6);
     text-decoration: none;
@@ -761,20 +767,20 @@
   }
   .footer-link:hover,
   .footer-link:focus-visible {
-    color: #4ecdc4;
+    color: var(--color-state);
     outline: none;
   }
   .footer-sep {
     pointer-events: none;
-    color: rgba(255, 255, 255, 0.22);
+    color: var(--color-text-label);
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     user-select: none;
   }
   .footer-version {
     pointer-events: auto;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 0.5px;
     /* Was 0.4 — bumped to 0.6 (F3) to clear AA at 10 px against the
        page background. */
@@ -799,7 +805,7 @@
   }
   .footer-about-label {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 0.5px;
     color: rgba(255, 255, 255, 0.6);
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
@@ -899,7 +905,7 @@
     background: none;
     border: 0;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 0.5px;
     color: rgba(255, 255, 255, 0.6);
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
@@ -913,7 +919,7 @@
   .footer-menu.compact .footer-more-btn:hover,
   .footer-menu.compact .footer-more-btn:focus-visible,
   .footer-menu.compact.more-open .footer-more-btn {
-    color: #4ecdc4;
+    color: var(--color-state);
     outline: none;
   }
   .footer-menu.compact .footer-more-btn:focus-visible {
@@ -962,7 +968,7 @@
   .footer-menu.compact .footer-links .footer-about-menu li {
     text-align: start;
     line-height: 1.2;
-    font-size: 10px;
+    font-size: var(--size-label);
     display: flex;
   }
   .footer-menu.compact .footer-links .footer-about-menu .footer-link-extra {

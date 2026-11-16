@@ -94,5 +94,11 @@
   "link_labels": {
     "/earth": "Tierra: órbitas y bases de lanzamiento",
     "/science/mission-phases/edl": "Entrada, descenso y aterrizaje"
+  },
+  "roster": {
+    "Korabl-Sputnik 2 (Belka & Strelka)": {
+      "note": "las perras Belka y Strelka — los primeros animales en orbitar y regresar con vida, en la nave de pruebas Vostok",
+      "name": "Korabl-Sputnik 2 (Belka y Strelka)"
+    }
   }
 }

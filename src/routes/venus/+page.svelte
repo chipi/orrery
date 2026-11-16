@@ -1,5 +1,4 @@
 <script lang="ts">
-  import EntityIndex from '$lib/components/EntityIndex.svelte';
   let { data } = $props();
   // /venus is a thin shell over the shared SurfaceScene (ADR-072), the
   // destination of /fly's Venus descents (RFC-034 §12). Venus-specific config
@@ -64,10 +63,10 @@
 <VisuallyHiddenH1 title={m.venus_page_title()} />
 
 <SurfaceScene
+  entityLinks={data.entityIndex}
   config={VENUS_CONFIG}
   body="venus"
   initialFacing={VENUS_SITES_SIDE}
   loadSites={getVenusSites}
   loadGallery={getVenusSiteGallery}
 />
-<EntityIndex hub="venus" title={m.entity_index_venus()} links={data.entityIndex} floating />

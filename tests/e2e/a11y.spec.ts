@@ -31,6 +31,7 @@ const GATED_ROUTES: { path: string; label: string; exclude?: string }[] = [
   { path: '/science', label: 'science encyclopedia' },
   { path: '/library', label: 'library / outbound-link disclosure' },
   { path: '/explore', label: 'explore (planet bodies)' },
+  { path: '/explore?context=milky-way', label: 'explore level card and welcome hint' },
   { path: '/earth', label: 'earth (orbit bodies)' },
   { path: '/moon', label: 'moon (landing sites)' },
   { path: '/mars', label: 'mars (landing sites)' },
@@ -71,10 +72,15 @@ const GATED_ROUTES: { path: string; label: string; exclude?: string }[] = [
   { path: '/missions?id=apollo11', label: 'mission panel open' },
   { path: '/fleet?id=saturn-v', label: 'fleet panel open' },
   { path: '/programs/apollo', label: 'program page' },
+  { path: '/programs/sputnik', label: 'program page, no hardware' },
+  { path: '/programs/cassini', label: 'program page, missions and milestones' },
+  { path: '/programs/jwst', label: 'program page, milestones only' },
   { path: '/essays/delta-v', label: 'essay page' },
   { path: '/science/orbits/keplerian-orbit', label: 'science section' },
   { path: '/science/history/apollo-11-1969', label: 'science history page' },
   { path: '/c/mission/apollo11', label: 'share card' },
+  { path: '/moon?site=lro', label: 'moon orbiter selected' },
+  { path: '/venus?site=vega-1', label: 'venus site selected, hero and gallery' },
 ];
 
 test.describe('a11y gate (ADR-025 — 0 critical or serious violations)', () => {

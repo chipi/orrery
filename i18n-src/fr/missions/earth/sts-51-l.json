@@ -1,0 +1,23 @@
+{
+  "name": "STS-51-L",
+  "vehicle": "Space Shuttle Challenger (OV-099)",
+  "payload": "TDRS-B et Spartan-Halley ; sept membres d’équipage",
+  "delta_v": "0 km/s (orbite non atteinte ; véhicule perdu 73 s après le décollage)",
+  "type": "VOL HABITÉ DE LA NAVETTE · PERDU À L’ASCENSION",
+  "first": "Challenger et ses sept membres d’équipage ont été perdus 73 secondes après le décollage",
+  "description": "STS-51-L était la 25e mission du Space Shuttle et le 10e vol de Challenger. Ses charges utiles étaient le satellite Tracking and Data Relay Satellite TDRS-B et le satellite Spartan-Halley, et le vol devait durer six jours à environ 153 milles marins d’altitude. L’équipage de sept personnes comprenait Francis R. Scobee, commandant ; Michael J. Smith, pilote ; Judith A. Resnik, Ellison S. Onizuka et Ronald E. McNair, spécialistes de mission ; S. Christa McAuliffe, enseignante dans l’espace (Teacher in Space) ; et Gregory B. Jarvis, spécialiste de charge utile. Après trois reports et une annulation par rapport à la date prévue du 1986-01-22, Challenger a décollé du pas de tir B à 11:38:00 EST (16:38:00 UTC) le 1986-01-28, par une température de l’air de 36 °F (environ 2 °C), soit 15 °F de moins que lors de tout lancement précédent. Une fuite de gaz par le joint de champ arrière du propulseur à poudre droit a fragilisé le réservoir externe, et 73 secondes après le décollage, à Mach 1.92 et à 46 000 pieds (environ 14 km), le véhicule s’est disloqué. L’équipage a été perdu. La commission Rogers a conclu que la perte avait été causée par la défaillance du joint entre les deux segments inférieurs du propulseur à poudre droit, qui avait détruit les joints d’étanchéité censés retenir les gaz chauds, et que, si les décideurs avaient connu tous les faits, il était très improbable qu’ils aient décidé de lancer.",
+  "events": [
+    {
+      "met": 0,
+      "label": "DÉCOLLAGE",
+      "note": "Challenger décolle du pas de tir B à 11:38:00 EST (16:38:00 UTC) le 1986-01-28.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.000845,
+      "label": "VÉHICULE PERDU",
+      "note": "73 secondes après le décollage, le véhicule se disloque à Mach 1.92 et à 46 000 pieds. Les sept membres d’équipage sont perdus.",
+      "type": "warning"
+    }
+  ]
+}

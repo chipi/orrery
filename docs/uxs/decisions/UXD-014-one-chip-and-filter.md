@@ -1,0 +1,85 @@
+# UXD-014 — One chip and one filter for every toggle, filter, choice and HUD action
+
+- **Status**: accepted
+- **Date**: 2026-11-12 (proposed and decided)
+- **Decider**: the operator, 2026-11-12 — chip option A on the prototype sheets, decisions D1 to D8, and
+  the answers O1 to O3 (`docs/wip/2026-11-11-ux-feedback-plan.md`, lines "A4 chips", "A4/A5
+  follow-up", "A3–A6 answers", "A5 last two", "A4–A6 open items"). Inputs: C1, C3, G3, PG1, MI1, FL1,
+  E8, ISS1
+- **Answers**: C1, C3, G3, PG1, MI1, FL1, E8, ISS1; slice A4
+- **Changes**: `src/lib/styles/chip.css` (new, loaded by `app.css`), `src/lib/components/Chip.svelte`,
+  `ChipGroup.svelte`, `ResetViewButton.svelte`, `.ui-chip-label` in chip.css; [IA §controls](../IA.md); Design System §5.7 and §5.7a
+  (`docs/concept/05_Design_System.md`); AGENTS.md "Design system" block; `docs/adr/TA.md`;
+  `src/lib/components/README.md`; `src/lib/surface-scene/README.md`
+
+## Context
+
+At `6c6925ccd5d` 17 recipes (and 18 HUD action looks that the 2026-11-12 runtime crawl added) drew
+chips, pills, toggles and filter buttons: 8 heights (21–44 px), 7 radii, 8 active looks, 3 ARIA
+patterns for one job, a 44 px chip on desktop pointers, oval chips that were the only oval things in
+the UI, a FILTERS bar with the count at the far end, 4 looks of Reset view and a plain-text
+Watch-live link. Full inventory: `docs/wip/2026-11-12-slice-A4-brief.md` §1.
+
+## Options
+
+1. One CSS file (`.ui-chip`) plus a thin `Chip` component (markup and ARIA contract), values from the
+   tokens. 2. CSS only, as the page shell. 3. A component only, each page keeps its own CSS.
+
+## Decision
+
+Option 1. 30 px on fine pointers, 44 px on coarse pointers, 11 px uppercase text, 4 px radius,
+outline at rest, one active look (soft accent fill, `--color-accent` edge, white text; the world
+tint replaces the accent on /moon, /mars and /venus only, Earth keeps the accent), hover
+`--color-state`, focus `--color-focus`. Four kinds: toggle (`aria-pressed`), choice (`role="radio"`
+in a radiogroup with arrow keys), action, link. A count badge and a data-tone dot. The compact
+FILTERS strip has the count right after the label (one key, `filters_eyebrow`, uppercase by CSS,
+`launches_filters_label` removed). Every HUD action button, Reset view, Watch live, the programs
+group-by, the `/fly` toggles, play and speed chips, the `/plan` mission-type pills and the INDEX /
+MODULES / TIMELINE pull tabs use the same chip. Worlds HUD actions are the outline at rest and take
+the world tint when on or hovered. Small controls that are not chips (Why?, provenance, timeline
+names, credits summary, fleet cross-references) get a 24 px minimum hit area (`.ui-hit`) with no
+visual change. Allow-list: tabs, status and label pills, cards, CTAs, Lab, nav, home, the `/fly`
+scene CTAs and `fly-mtab`. (Superseded in part by [UXD-018](UXD-018-panel-shell-and-actions.md): the
+panels' close, back, Share and action chips are chips. Amended 2026-11-15 (plan L30, L31): the
+standalone entity pages' `.cta` links and `/plan`'s FLY MISSION are `<Chip kind="link">` /
+`kind="action"` too; the retired private blues `#1a33bb` / `#2244dd` are gone. The home hero's
+buttons, the 404 page's buttons and the `/fly` demo buttons stay as they are.)
+
+The per-world tint rule (requested 2026-06-17, re-confirmed 2026-11-12): the Worlds set
+`--chip-tint` from the route's `bodyTintCss`; `.ui-chip` reads `var(--chip-tint, var(--color-accent))`
+for the edge and soft fill. `--chip-tone` is the other hook: a data colour per chip (fleet status,
+epoch band, nation, live), never set by a page.
+
+## Consequences
+
+About 80 private rules and 120 markup lines go; 16 or more visual baselines change; one message key
+is removed in 14 locales; MI3 (mission colour) builds on `--chip-tone`, A5 (flat row, no groups) on
+`.ui-chip`. Pages must not define their own chip, pill or toggle rules (kept exceptions carry
+`a4-keep: <why>`); scoped rules would beat the global one, so the old rules were deleted, not
+overridden.
+
+## Verification
+
+`tests/e2e/chip.spec.ts` on three projects is the gate: size, corners, active look, FILTERS count,
+hit areas, and a sweep in which every visible button on the crawled routes is a `.ui-chip` or a
+control the sweep names by class. `src/lib/components/Chip.test.ts` covers the component. The A4
+check (the slice check kept in the brief, `docs/wip/2026-11-12-slice-A4-brief.md` §10, which
+prints `A4-CHECK violations: 0`) is re-run by the independent checker; it is not a script in the
+repo.
+
+## Deviation from the brief
+
+`ResetViewButton` is an outlined action chip, not `quiet` as the brief (§4, Replacement map)
+proposed. Consistency: the Reset view chip sits beside SPIN and the 2D toggle, which are outlined at
+rest, and a borderless Reset would be the odd one in that row.
+
+## Controls that stay as they are (lead, 2026-11-12)
+
+Besides the brief's §6 allow-list, these keep their own look, because each is furniture of a panel,
+dialog or scene rather than a filter, toggle or HUD action: the Flight Director / Station Orbit banner
+collapse carets (`.collapse-btn`) and the tier card caret (`.tcc-toggle`), a site's annotation rows (`.annotation-row`, name + explanation like the module rows), the launch scene's skip CTA (`.continue`, a scene CTA like the
+opening ones), the gallery wave tiles (`.wave-tile`, cards), the illustrated site map image button (`.site-illustration .open`), the lightbox zoom buttons, toast
+dismiss buttons and the panorama caption reopen. `tests/e2e/chip.spec.ts` names each one in its
+sweep allow-list; anything new outside the list fails the sweep.
+
+**Closes are not furniture (operator, 2026-11-12).** Every control that closes or dismisses something is the one close chip (`<Chip class="ui-chip--close">`, UXD-018 "header sizes"): the panel, the INDEX, the surface index, the station index and timeline, the lightbox, the video player, the settings sheet, the REFERENCES overlay, the why popover, the phone drawer, the anonymous-star tag, the deep-sky gallery viewer, the language suggestion, the site annotation pop-up, the mass–period, HR and causality overlays, and the audio tour's resume dismiss and stop. They left the allow-list. Not closes, so unchanged: the lab's remove-cell ×, the debug panel's close (a developer tool), /fly's recovery "Close" (a text CTA in the scene).

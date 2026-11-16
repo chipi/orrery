@@ -103,5 +103,15 @@
     "/earth": "지구 — 궤도, 재진입, 발사장",
     "/science/mission-phases/edl": "진입·하강·착륙",
     "/science/propulsion/tsiolkovsky": "로켓 방정식 — Redstone이 궤도에 오르지 못한 이유"
+  },
+  "roster": {
+    "Mercury-Redstone 2 (Ham)": {
+      "note": "침팬지 준궤도 시험 — Redstone이 유인 비행에 쓰일 수 있도록 승인받게 했다",
+      "name": "Mercury-Redstone 2 (Ham)"
+    },
+    "Mercury-Atlas 5 (Enos)": {
+      "note": "침팬지 두 바퀴 공전 시험 — 글렌이 비행하기 전에 Atlas가 승인받게 했다",
+      "name": "Mercury-Atlas 5 (Enos)"
+    }
   }
 }

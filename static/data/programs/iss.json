@@ -149,12 +149,14 @@
     {
       "name": "Expedition 1",
       "year": 2000,
-      "note": "the first resident crew arrived 2 November 2000; humans have lived aboard continuously ever since — the longest unbroken human presence off Earth in history"
+      "note": "the first resident crew arrived 2 November 2000; humans have lived aboard continuously ever since — the longest unbroken human presence off Earth in history",
+      "milestone": true
     },
     {
       "name": "Commercial Crew",
       "year": 2020,
-      "note": "SpaceX's Crew Dragon restored US crew launch after nine years, beginning the handover of low-orbit access to commercial providers"
+      "note": "SpaceX's Crew Dragon restored US crew launch after nine years, beginning the handover of low-orbit access to commercial providers",
+      "milestone": true
     }
   ],
   "related_programs": [

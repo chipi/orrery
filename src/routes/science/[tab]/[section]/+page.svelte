@@ -137,8 +137,8 @@
   </nav>
 
   <header>
-    <h1>{section.title}</h1>
-    <p class="lede">{section.intro_sentence}</p>
+    <h1 class="page-title">{section.title}</h1>
+    <p class="lede page-lead">{section.intro_sentence}</p>
   </header>
 
   {#if section.diagram}
@@ -208,7 +208,7 @@
 
   {#if section.see_in_app && section.see_in_app.length > 0}
     <section class="see-in-app">
-      <h2>{m.science_see_in_app()}</h2>
+      <h2 class="page-section-label">{m.science_see_in_app()}</h2>
       <ul>
         {#each section.see_in_app as link (link.route + link.context_key)}
           <li>
@@ -231,11 +231,11 @@
 
   {#if section.links.length > 0}
     <section class="learn-more">
-      <h2>{m.science_learn_more()}</h2>
+      <h2 class="page-section-label">{m.science_learn_more()}</h2>
       <ul>
         {#each section.links as link (link.u)}
           <li>
-            <span class="tier tier-{link.t}">{link.t}</span>
+            <span class="tier tier-{link.t}" class:ui-chip-label={link.t === 'core'}>{link.t}</span>
             <a href={link.u} target="_blank" rel="noopener noreferrer external">{link.l}</a>
           </li>
         {/each}
@@ -245,6 +245,7 @@
 </article>
 
 <style>
+  /* a2-keep: the reading measure inside the science host column */
   .reading {
     max-width: 720px;
   }
@@ -260,13 +261,13 @@
   .term {
     color: inherit;
     text-decoration: underline dotted;
-    text-decoration-color: rgba(78, 205, 196, 0.75);
+    text-decoration-color: var(--color-accent-strong);
     text-decoration-thickness: 1px;
     text-underline-offset: 3px;
   }
   .term:hover,
   .term:focus-visible {
-    color: #4ecdc4;
+    color: var(--color-state);
     text-decoration-style: solid;
   }
   .crumb a {
@@ -274,24 +275,14 @@
     text-decoration: underline;
   }
   .crumb a:hover {
-    color: #4ecdc4;
+    color: var(--color-accent);
   }
   .sep {
     margin: 0 8px;
     opacity: 0.6;
   }
-  h1 {
-    font-family: var(--font-display);
-    font-size: 28px;
-    letter-spacing: 4px;
-    margin: 0 0 8px;
-  }
-  .lede {
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 17px;
-    color: rgba(255, 255, 255, 0.85);
-    margin: 0 0 24px;
+  header {
+    margin-bottom: 24px;
   }
   .hero-diagram {
     margin: 0 0 24px;
@@ -326,9 +317,9 @@
   .section-photo figcaption {
     padding: 8px 12px;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 1.2px;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
     background: rgba(255, 255, 255, 0.02);
     border-top: 1px solid rgba(255, 255, 255, 0.06);
   }
@@ -336,22 +327,22 @@
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
     margin-top: 12px;
   }
   .narrative-101 {
     margin: 24px 0;
     padding: 18px 20px;
-    background: rgba(78, 205, 196, 0.05);
-    border-left: 3px solid rgba(78, 205, 196, 0.6);
+    background: color-mix(in srgb, var(--color-accent) 5%, transparent);
+    border-left: 3px solid var(--color-accent-strong);
     border-radius: 4px;
   }
   .narrative-101 .badge {
     font-family: var(--font-display);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 3px;
     text-transform: uppercase;
-    color: #4ecdc4;
+    color: var(--color-accent);
     margin: 0 0 10px;
   }
   .narrative-101 p:not(.badge) {
@@ -367,8 +358,8 @@
   .formula {
     margin: 24px 0;
     padding: 16px;
-    background: rgba(78, 205, 196, 0.06);
-    border: 1px solid rgba(78, 205, 196, 0.2);
+    background: color-mix(in srgb, var(--color-accent) 6%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-accent) 20%, transparent);
     border-radius: 6px;
     text-align: center;
     overflow-x: auto;
@@ -377,7 +368,7 @@
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
     margin-top: 8px;
   }
   .body {
@@ -395,12 +386,8 @@
     padding-top: 16px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
   }
-  .see-in-app h2,
-  .learn-more h2 {
-    font-family: var(--font-display);
-    font-size: 14px;
-    letter-spacing: 3px;
-    color: rgba(255, 255, 255, 0.6);
+  .see-in-app .page-section-label,
+  .learn-more .page-section-label {
     margin: 0 0 12px;
   }
   .see-in-app ul,
@@ -419,7 +406,7 @@
   }
   .see-in-app a,
   .learn-more a {
-    color: #4ecdc4;
+    color: var(--color-accent);
     text-decoration: underline;
   }
   .see-in-app a:hover,
@@ -427,7 +414,7 @@
     text-decoration: underline;
   }
   .ctx {
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
     margin-left: 8px;
   }
   .tier {
@@ -435,21 +422,19 @@
     width: 56px;
     padding: 2px 6px;
     margin-right: 8px;
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     text-transform: uppercase;
     text-align: center;
+  }
+  .tier:not(.ui-chip-label) {
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 2px;
     color: rgba(255, 255, 255, 0.6);
   }
   .tier-intro {
-    border-color: rgba(78, 205, 196, 0.5);
-    color: #4ecdc4;
-  }
-  .tier-core {
-    border-color: rgba(123, 156, 255, 0.5);
-    color: #7b9cff;
+    border-color: color-mix(in srgb, var(--color-accent) 50%, transparent);
+    color: var(--color-state);
   }
   .tier-deep {
     border-color: rgba(255, 200, 80, 0.5);

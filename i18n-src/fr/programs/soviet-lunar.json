@@ -97,5 +97,23 @@
     "/moon?site=luna16": "Luna 16 — premier retour d'échantillons robotisé",
     "/moon?site=luna17": "Luna 17 — Lunokhod 1",
     "/moon?site=luna21": "Luna 21 — Lunokhod 2"
+  },
+  "roster": {
+    "Zond 5": {
+      "note": "premier vaisseau à faire le tour de la Lune et à revenir sain et sauf sur Terre — ses deux tortues ont été les premiers êtres vivants à voyager autour de la Lune et à en revenir, trois mois avant Apollo 8",
+      "name": "Zond 5"
+    },
+    "N1 — four launch failures": {
+      "note": "les quatre lancements d'essai du N1 (1969–1972) ont tous échoué ; le deuxième, en juillet 1969, est retombé sur son pas de tir dans l'une des plus grandes explosions non nucléaires jamais enregistrées",
+      "name": "N1 — quatre échecs au lancement"
+    },
+    "LK lunar lander": {
+      "note": "l'atterrisseur à un seul cosmonaute — environ 40 % de la masse du module lunaire d'Apollo — testé en vol sans équipage en orbite terrestre mais jamais envoyé vers la Lune",
+      "name": "Atterrisseur lunaire LK"
+    },
+    "L3 complex": {
+      "note": "la pile lunaire N1-L3 complète : un lancement N1, un Soyuz 7K-LOK à deux cosmonautes en orbite lunaire, un seul cosmonaute vers la surface dans le LK",
+      "name": "Complexe L3"
+    }
   }
 }

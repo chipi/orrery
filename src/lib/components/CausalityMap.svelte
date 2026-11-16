@@ -7,6 +7,7 @@
   camera sits inside the shells, where 3-D wireframe spheres read as an inside-out web.
 -->
 <script lang="ts">
+  import Chip from '$lib/components/Chip.svelte';
   import { bvToRgb } from '$lib/universe/bv-to-rgb';
   import type { LightShell } from '$lib/universe/causality';
   import * as m from '$lib/paraglide/messages';
@@ -81,20 +82,20 @@
       const a = 0.34 - i * 0.05;
       ctx.beginPath();
       ctx.arc(cx, cy, r, 0, Math.PI * 2);
-      ctx.strokeStyle = `rgba(99,230,219,${a})`;
+      ctx.strokeStyle = `rgba(99,230,219,${a})`; // a3-keep: canvas figure (causal-horizon map), palette review at the end
       ctx.lineWidth = 1.25;
       ctx.stroke();
       // leading-edge glow
       ctx.beginPath();
       ctx.arc(cx, cy, r, 0, Math.PI * 2);
-      ctx.strokeStyle = `rgba(140,245,236,${a * 0.5 * (1 - local * 0.6)})`;
+      ctx.strokeStyle = `rgba(140,245,236,${a * 0.5 * (1 - local * 0.6)})`; // a3-keep: canvas figure (causal-horizon map), palette review at the end
       ctx.lineWidth = 3.5;
       ctx.stroke();
       // ring label on the upper-right diagonal (clear of the centred header),
       // once the front is near its true radius
       if (local > 0.85) {
         ctx.globalAlpha = (local - 0.85) / 0.15;
-        ctx.fillStyle = 'rgba(180,240,234,0.92)';
+        ctx.fillStyle = 'rgba(180,240,234,0.92)'; // a3-keep: canvas figure (causal-horizon map), palette review at the end
         ctx.textAlign = 'left';
         const la = -Math.PI * 0.32; // up-and-to-the-right
         ctx.fillText(
@@ -186,8 +187,11 @@
       <div class="cz-title">{m.explore_causality_title()}</div>
       <div class="cz-note">{m.explore_causality_note()}</div>
     </div>
-    <button type="button" class="cz-close" aria-label={m.explore_anon_dismiss()} onclick={onClose}
-      >×</button
+    <Chip
+      kind="action"
+      class="cz-close ui-chip--close"
+      aria-label={m.explore_anon_dismiss()}
+      onclick={onClose}>×</Chip
     >
   </div>
 {/if}
@@ -224,30 +228,18 @@
     max-width: min(90vw, 460px);
     text-align: center;
   }
-  .cz-close {
+  :global(.cz-close) {
     position: absolute;
     top: 74px;
     right: 16px;
-    width: 40px;
-    height: 40px;
-    border-radius: 999px;
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    background: rgba(10, 14, 22, 0.6);
-    color: #eaf6ff;
-    font-size: 22px;
-    line-height: 1;
-    cursor: pointer;
-    pointer-events: auto;
   }
-  .cz-close:hover {
-    background: rgba(30, 40, 55, 0.8);
-  }
+
   .cz-title {
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
     letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: #b4f0ea;
+    color: var(--color-state);
   }
   .cz-note {
     margin-top: 5px;

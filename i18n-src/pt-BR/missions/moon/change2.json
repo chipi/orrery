@@ -1,0 +1,24 @@
+{
+  "name": "Chang'e 2",
+  "vehicle": "Long March 3C",
+  "payload": "2480 kg",
+  "delta_v": "~3,8 km/s (TLI + LOI, estimativa)",
+  "type": "ORBITADOR · REALIZADA",
+  "first": "O segundo orbitador lunar da China, depois enviado ao ponto L2 Sol-Terra e ao asteroide Toutatis",
+  "description": "A Chang'e 2 foi lançada de Xichang em 2010-10-01 em um Long March 3C e entrou em órbita lunar em 2010-10-06; sua órbita de trabalho de 100 km veio em 2010-10-09, e seu perilúnio foi reduzido a 15 km no fim da missão. A China divulgou imagens lunares obtidas por ela com resolução de até 1,3 m. Em 2011-06-08 ela deixou a órbita lunar, alcançou o ponto L2 Sol-Terra em 2011-08-25 e o deixou em 2012-04-15 para sobrevoar o asteroide 4179 Toutatis em 2012-12-13, imageando-o a até 10 m por pixel; a aproximação máxima é relatada como 3,2 km. Foi construída sobre o barramento de satélite DFH-3.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANÇAMENTO",
+      "note": "Long March 3C de Xichang, 2010-10-01.",
+      "type": "nominal"
+    },
+    {
+      "met": 5,
+      "label": "INSERÇÃO EM ÓRBITA LUNAR",
+      "note": "Entra em órbita lunar em 2010-10-06.",
+      "type": "nominal"
+    }
+  ],
+  "vehicle_stage": "estágio superior do Long March 3C"
+}

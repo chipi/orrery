@@ -59,6 +59,18 @@
     "why": "engine name left in English (Liquid Apogee Motor)",
     "tr": "4924c9f2e3"
   },
+  "apparent magnitude|de|glossary/terms.json :: apparent magnitude": {
+    "why": "read 2026-11-12: the match is the value \"magnitude 6\" inside the definition of the term itself, written as the plain value word in this locale",
+    "tr": "1408ce2bd8"
+  },
+  "apparent magnitude|ru|glossary/terms.json :: apparent magnitude": {
+    "why": "read 2026-11-12: the match is the value \"magnitude 6\" inside the definition of the term itself, written as the plain value word in this locale",
+    "tr": "0ca10d5a8c"
+  },
+  "apparent magnitude|zh-CN|glossary/terms.json :: apparent magnitude": {
+    "why": "read 2026-11-12: the match is the value \"magnitude 6\" inside the definition of the term itself, written as the plain value word in this locale",
+    "tr": "5cc05061c3"
+  },
   "booster|ar|essays/going-to-the-moon.json :: body.24.md": {
     "why": "read 2026-11-06 (second race): the Long March 10-series test vehicle that flew on 11 Feb 2026 is a core first stage, not a side booster; \"first stage\" / \"test stage\" is the accurate word",
     "tr": "6c2755a077"
@@ -2383,9 +2395,61 @@
     "why": "Chinese Docking Mechanism is a proper name left in English",
     "tr": "7a82c63b61"
   },
+  "dwarf elliptical galaxy|de|universe/deep-sky/m54.json :: bio": {
+    "why": "Sagittarius Dwarf Elliptical Galaxy is a proper name; the locale's own name for it (de Sagittarius-Zwerggalaxie, nl Sagittarius-dwergstelsel) has no word for elliptical",
+    "tr": "6355d14c45"
+  },
+  "dwarf elliptical galaxy|nl|universe/deep-sky/m54.json :: bio": {
+    "why": "Sagittarius Dwarf Elliptical Galaxy is a proper name; the locale's own name for it (de Sagittarius-Zwerggalaxie, nl Sagittarius-dwergstelsel) has no word for elliptical",
+    "tr": "476844a297"
+  },
+  "dwarf spheroidal galaxy|de|universe/galaxies/sagittarius-dirr.json :: bio": {
+    "why": "reviewed 2026-11-13: 'Sagittarius Dwarf Spheroidal' is the galaxy's name here (messages galaxy_name_sagittarius_dwarf, glossary star entry), written in the locale's name form, not the term dwarf spheroidal galaxy; one name per language",
+    "tr": "45e7b63e72"
+  },
+  "dwarf spheroidal galaxy|es|universe/galaxies/sagittarius-dirr.json :: bio": {
+    "why": "reviewed 2026-11-13: 'Sagittarius Dwarf Spheroidal' is the galaxy's name here (messages galaxy_name_sagittarius_dwarf, glossary star entry), written in the locale's name form, not the term dwarf spheroidal galaxy; one name per language",
+    "tr": "851a607a4e"
+  },
+  "dwarf spheroidal galaxy|fr|universe/galaxies/sagittarius-dirr.json :: bio": {
+    "why": "reviewed 2026-11-13: 'Sagittarius Dwarf Spheroidal' is the galaxy's name here (messages galaxy_name_sagittarius_dwarf, glossary star entry), written in the locale's name form, not the term dwarf spheroidal galaxy; one name per language",
+    "tr": "22c78ffcd3"
+  },
+  "dwarf spheroidal galaxy|it|universe/galaxies/sagittarius-dirr.json :: bio": {
+    "why": "reviewed 2026-11-13: 'Sagittarius Dwarf Spheroidal' is the galaxy's name here (messages galaxy_name_sagittarius_dwarf, glossary star entry), written in the locale's name form, not the term dwarf spheroidal galaxy; one name per language",
+    "tr": "ba569f66c7"
+  },
+  "dwarf spheroidal galaxy|ja|universe/galaxies/sagittarius-dirr.json :: bio": {
+    "why": "reviewed 2026-11-13: 'Sagittarius Dwarf Spheroidal' is the galaxy's name here (messages galaxy_name_sagittarius_dwarf, glossary star entry), written in the locale's name form, not the term dwarf spheroidal galaxy; one name per language",
+    "tr": "b0b42351af"
+  },
+  "dwarf spheroidal galaxy|ko|universe/galaxies/sagittarius-dirr.json :: bio": {
+    "why": "reviewed 2026-11-13: 'Sagittarius Dwarf Spheroidal' is the galaxy's name here (messages galaxy_name_sagittarius_dwarf, glossary star entry), written in the locale's name form, not the term dwarf spheroidal galaxy; one name per language",
+    "tr": "1143f9d279"
+  },
+  "dwarf spheroidal galaxy|pt-BR|universe/galaxies/sagittarius-dirr.json :: bio": {
+    "why": "reviewed 2026-11-13: 'Sagittarius Dwarf Spheroidal' is the galaxy's name here (messages galaxy_name_sagittarius_dwarf, glossary star entry), written in the locale's name form, not the term dwarf spheroidal galaxy; one name per language",
+    "tr": "4a46758231"
+  },
+  "dwarf spheroidal galaxy|ru|universe/galaxies/sagittarius-dirr.json :: bio": {
+    "why": "reviewed 2026-11-13: 'Sagittarius Dwarf Spheroidal' is the galaxy's name here (messages galaxy_name_sagittarius_dwarf, glossary star entry), written in the locale's name form, not the term dwarf spheroidal galaxy; one name per language",
+    "tr": "48e04f0f7e"
+  },
   "eccentricity|de|science/orbits/eccentricity.json :: diagram_caption": {
     "why": "read 2026-11-04 (chunk 3): written as the symbol e in a caption",
     "tr": "bd46456464"
+  },
+  "elliptical galaxy|de|universe/deep-sky/m54.json :: bio": {
+    "why": "Sagittarius Dwarf Elliptical Galaxy is a proper name; the locale's own name for it (zh 人马座矮椭球星系 dwarf spheroidal, de Sagittarius-Zwerggalaxie, nl Sagittarius-dwergstelsel) has no word for elliptical",
+    "tr": "6355d14c45"
+  },
+  "elliptical galaxy|nl|universe/deep-sky/m54.json :: bio": {
+    "why": "Sagittarius Dwarf Elliptical Galaxy is a proper name; the locale's own name for it (zh 人马座矮椭球星系 dwarf spheroidal, de Sagittarius-Zwerggalaxie, nl Sagittarius-dwergstelsel) has no word for elliptical",
+    "tr": "476844a297"
+  },
+  "elliptical galaxy|zh-CN|universe/deep-sky/m54.json :: bio": {
+    "why": "Sagittarius Dwarf Elliptical Galaxy is a proper name; the locale's own name for it (zh 人马座矮椭球星系 dwarf spheroidal, de Sagittarius-Zwerggalaxie, nl Sagittarius-dwergstelsel) has no word for elliptical",
+    "tr": "42e3c8cad6"
   },
   "entry|ar|essays/reusable-launchers.json :: body.9.md": {
     "why": "variant: العودة = reentry (the atmospheric reentry of a returning stage)",
@@ -2614,6 +2678,162 @@
   "flyby|ko|science/transfers/conic-sections.json :: narrative_101.2": {
     "why": "verb: 스치고 지나가는 것",
     "tr": "35a1da45b8"
+  },
+  "galaxy group|ar|universe/deep-sky/m65.json :: bio": {
+    "why": "Leo Triplet is the proper name of one group (the locale's nickname for it); the text uses the name, not the phrase galaxy group",
+    "tr": "3a1331b357"
+  },
+  "galaxy group|ar|universe/deep-sky/m65.json :: fact": {
+    "why": "Leo Triplet is the proper name of one group (the locale's nickname for it); the text uses the name, not the phrase galaxy group",
+    "tr": "9b63594563"
+  },
+  "galaxy group|ar|universe/deep-sky/m66.json :: bio": {
+    "why": "Leo Triplet is the proper name of one group (the locale's nickname for it); the text uses the name, not the phrase galaxy group",
+    "tr": "814baed324"
+  },
+  "galaxy group|de|universe/deep-sky/m65.json :: bio": {
+    "why": "Leo Triplet is the proper name of one group (the locale's nickname for it); the text uses the name, not the phrase galaxy group",
+    "tr": "ea0dabec91"
+  },
+  "galaxy group|de|universe/deep-sky/m65.json :: fact": {
+    "why": "Leo Triplet is the proper name of one group (the locale's nickname for it); the text uses the name, not the phrase galaxy group",
+    "tr": "e8a22a46c6"
+  },
+  "galaxy group|de|universe/deep-sky/m66.json :: bio": {
+    "why": "Leo Triplet is the proper name of one group (the locale's nickname for it); the text uses the name, not the phrase galaxy group",
+    "tr": "474b85f85c"
+  },
+  "galaxy group|es|universe/deep-sky/m65.json :: bio": {
+    "why": "Leo Triplet is the proper name of one group (the locale's nickname for it); the text uses the name, not the phrase galaxy group",
+    "tr": "3e17ac11d0"
+  },
+  "galaxy group|es|universe/deep-sky/m65.json :: fact": {
+    "why": "Leo Triplet is the proper name of one group (the locale's nickname for it); the text uses the name, not the phrase galaxy group",
+    "tr": "43d1229d63"
+  },
+  "galaxy group|es|universe/deep-sky/m66.json :: bio": {
+    "why": "Leo Triplet is the proper name of one group (the locale's nickname for it); the text uses the name, not the phrase galaxy group",
+    "tr": "d90431a245"
+  },
+  "galaxy group|fr|universe/deep-sky/m65.json :: bio": {
+    "why": "Leo Triplet is the proper name of one group (the locale's nickname for it); the text uses the name, not the phrase galaxy group",
+    "tr": "8e6a672078"
+  },
+  "galaxy group|fr|universe/deep-sky/m65.json :: fact": {
+    "why": "Leo Triplet is the proper name of one group (the locale's nickname for it); the text uses the name, not the phrase galaxy group",
+    "tr": "a04742b6fc"
+  },
+  "galaxy group|fr|universe/deep-sky/m66.json :: bio": {
+    "why": "Leo Triplet is the proper name of one group (the locale's nickname for it); the text uses the name, not the phrase galaxy group",
+    "tr": "24d98be33a"
+  },
+  "galaxy group|hi|universe/deep-sky/m65.json :: bio": {
+    "why": "Leo Triplet is the proper name of one group (the locale's nickname for it); the text uses the name, not the phrase galaxy group",
+    "tr": "cb97410c62"
+  },
+  "galaxy group|hi|universe/deep-sky/m65.json :: fact": {
+    "why": "Leo Triplet is the proper name of one group (the locale's nickname for it); the text uses the name, not the phrase galaxy group",
+    "tr": "237b90b5c4"
+  },
+  "galaxy group|hi|universe/deep-sky/m66.json :: bio": {
+    "why": "Leo Triplet is the proper name of one group (the locale's nickname for it); the text uses the name, not the phrase galaxy group",
+    "tr": "2524a52a1d"
+  },
+  "galaxy group|it|universe/deep-sky/m65.json :: bio": {
+    "why": "Leo Triplet is the proper name of one group (the locale's nickname for it); the text uses the name, not the phrase galaxy group",
+    "tr": "03d01eac08"
+  },
+  "galaxy group|it|universe/deep-sky/m65.json :: fact": {
+    "why": "Leo Triplet is the proper name of one group (the locale's nickname for it); the text uses the name, not the phrase galaxy group",
+    "tr": "51b1e1ce9d"
+  },
+  "galaxy group|it|universe/deep-sky/m66.json :: bio": {
+    "why": "Leo Triplet is the proper name of one group (the locale's nickname for it); the text uses the name, not the phrase galaxy group",
+    "tr": "17254ca12b"
+  },
+  "galaxy group|ja|universe/deep-sky/m65.json :: bio": {
+    "why": "Leo Triplet is the proper name of one group (the locale's nickname for it); the text uses the name, not the phrase galaxy group",
+    "tr": "15be9c626b"
+  },
+  "galaxy group|ja|universe/deep-sky/m65.json :: fact": {
+    "why": "Leo Triplet is the proper name of one group (the locale's nickname for it); the text uses the name, not the phrase galaxy group",
+    "tr": "0a60ccd57a"
+  },
+  "galaxy group|ja|universe/deep-sky/m66.json :: bio": {
+    "why": "Leo Triplet is the proper name of one group (the locale's nickname for it); the text uses the name, not the phrase galaxy group",
+    "tr": "313fa51dff"
+  },
+  "galaxy group|ko|universe/deep-sky/m65.json :: bio": {
+    "why": "Leo Triplet is the proper name of one group (the locale's nickname for it); the text uses the name, not the phrase galaxy group",
+    "tr": "a39f083b28"
+  },
+  "galaxy group|ko|universe/deep-sky/m65.json :: fact": {
+    "why": "Leo Triplet is the proper name of one group (the locale's nickname for it); the text uses the name, not the phrase galaxy group",
+    "tr": "ef84a70d75"
+  },
+  "galaxy group|ko|universe/deep-sky/m66.json :: bio": {
+    "why": "Leo Triplet is the proper name of one group (the locale's nickname for it); the text uses the name, not the phrase galaxy group",
+    "tr": "024b749536"
+  },
+  "galaxy group|nl|universe/deep-sky/m65.json :: bio": {
+    "why": "Leo Triplet is the proper name of one group (the locale's nickname for it); the text uses the name, not the phrase galaxy group",
+    "tr": "62c7b32843"
+  },
+  "galaxy group|nl|universe/deep-sky/m65.json :: fact": {
+    "why": "Leo Triplet is the proper name of one group (the locale's nickname for it); the text uses the name, not the phrase galaxy group",
+    "tr": "25b3ba7f69"
+  },
+  "galaxy group|nl|universe/deep-sky/m66.json :: bio": {
+    "why": "Leo Triplet is the proper name of one group (the locale's nickname for it); the text uses the name, not the phrase galaxy group",
+    "tr": "a8f11a1274"
+  },
+  "galaxy group|pt-BR|universe/deep-sky/m65.json :: bio": {
+    "why": "Leo Triplet is the proper name of one group (the locale's nickname for it); the text uses the name, not the phrase galaxy group",
+    "tr": "9edfa4a231"
+  },
+  "galaxy group|pt-BR|universe/deep-sky/m65.json :: fact": {
+    "why": "Leo Triplet is the proper name of one group (the locale's nickname for it); the text uses the name, not the phrase galaxy group",
+    "tr": "8f93b7a734"
+  },
+  "galaxy group|pt-BR|universe/deep-sky/m66.json :: bio": {
+    "why": "Leo Triplet is the proper name of one group (the locale's nickname for it); the text uses the name, not the phrase galaxy group",
+    "tr": "9e14fd34df"
+  },
+  "galaxy group|ru|universe/deep-sky/m65.json :: bio": {
+    "why": "Leo Triplet is the proper name of one group (the locale's nickname for it); the text uses the name, not the phrase galaxy group",
+    "tr": "39fef48b53"
+  },
+  "galaxy group|ru|universe/deep-sky/m65.json :: fact": {
+    "why": "Leo Triplet is the proper name of one group (the locale's nickname for it); the text uses the name, not the phrase galaxy group",
+    "tr": "41ff7ca603"
+  },
+  "galaxy group|ru|universe/deep-sky/m66.json :: bio": {
+    "why": "Leo Triplet is the proper name of one group (the locale's nickname for it); the text uses the name, not the phrase galaxy group",
+    "tr": "95ea4d3deb"
+  },
+  "galaxy group|sr-Cyrl|universe/deep-sky/m65.json :: bio": {
+    "why": "Leo Triplet is the proper name of one group (the locale's nickname for it); the text uses the name, not the phrase galaxy group",
+    "tr": "ce21826586"
+  },
+  "galaxy group|sr-Cyrl|universe/deep-sky/m65.json :: fact": {
+    "why": "Leo Triplet is the proper name of one group (the locale's nickname for it); the text uses the name, not the phrase galaxy group",
+    "tr": "90d4697e44"
+  },
+  "galaxy group|sr-Cyrl|universe/deep-sky/m66.json :: bio": {
+    "why": "Leo Triplet is the proper name of one group (the locale's nickname for it); the text uses the name, not the phrase galaxy group",
+    "tr": "88082e0697"
+  },
+  "galaxy group|zh-CN|universe/deep-sky/m65.json :: bio": {
+    "why": "Leo Triplet is the proper name of one group (the locale's nickname for it); the text uses the name, not the phrase galaxy group",
+    "tr": "89c68dc01b"
+  },
+  "galaxy group|zh-CN|universe/deep-sky/m65.json :: fact": {
+    "why": "Leo Triplet is the proper name of one group (the locale's nickname for it); the text uses the name, not the phrase galaxy group",
+    "tr": "e29893d027"
+  },
+  "galaxy group|zh-CN|universe/deep-sky/m66.json :: bio": {
+    "why": "Leo Triplet is the proper name of one group (the locale's nickname for it); the text uses the name, not the phrase galaxy group",
+    "tr": "2449c91086"
   },
   "gravity assist|sr-Cyrl|science/mission-phases/trans-x-injection.json :: body_paragraphs.1": {
     "why": "'гравитационим маневрима' is the binding word inflected",
@@ -2890,6 +3110,10 @@
   "microgravity|ar|essays/asteroid-mining.json :: body.26.md": {
     "why": "read 2026-11-04 (chunk 2): the everyday word, weightlessness",
     "tr": "3df812810c"
+  },
+  "nebula|fr|universe/deep-sky/cygnus-loop.json :: fact": {
+    "why": "Les Dentelles du Cygne is the French proper name of the Veil Nebula; the name holds no word for nebula",
+    "tr": "c9c21b0ea8"
   },
   "orbit insertion|ar|science/mission-phases/orbit-insertion.json :: body_paragraphs.1": {
     "why": "\"إدخال ... في مدار\" matches the accepted pattern with a name inserted",
@@ -3307,6 +3531,10 @@
     "why": "variant: 周 (revolution counter)",
     "tr": "08c0dd2469"
   },
+  "orbit|ja|missions/earth/shenzhou-5.json :: events.1.note": {
+    "why": "read 2026-11-15 (content7): '14 orbits' counts revolutions of the Earth; Japanese counts them as 14周 (laps), not the orbit as a path",
+    "tr": "29c7ddd7c0"
+  },
   "orbit|ja|science/_landing.json :: chapters.0.diagram": {
     "why": "filename",
     "tr": "72874f8e10"
@@ -3334,6 +3562,10 @@
   "orbit|ko|missions/earth/friendship-7.json :: events.3.note": {
     "why": "variant: 바퀴 (revolution counter)",
     "tr": "3b8465974d"
+  },
+  "orbit|ko|missions/earth/shenzhou-5.json :: events.1.note": {
+    "why": "read 2026-11-15 (content7): '14 orbits' counts revolutions of the Earth; Korean counts them as 14바퀴 (laps), not the orbit as a path",
+    "tr": "e834ba3824"
   },
   "orbit|ko|missions/earth/vostok-6.json :: dispatch": {
     "why": "variant: 돈 / 바퀴 (verb to orbit)",
@@ -3726,6 +3958,10 @@
   "orbit|ru|missions/earth/gemini7.json :: type": {
     "why": "variant: ОКОЛОЗЕМНЫЙ (Earth-orbit adjective, same as sibling pages)",
     "tr": "f4dd31e0df"
+  },
+  "orbit|ru|missions/earth/shenzhou-5.json :: events.1.note": {
+    "why": "read 2026-11-15 (content7): '14 orbits' counts revolutions of the Earth; the Russian word is витки (revolutions), not the orbit as a path",
+    "tr": "82b6182299"
   },
   "orbit|ru|missions/earth/sigma-7.json :: dispatch": {
     "why": "variant: виток (count of revolutions)",
@@ -4663,6 +4899,22 @@
     "why": "combustion/burning of propellant or fuel (not an engine firing)",
     "tr": "080f3933a3"
   },
+  "red giant|es|universe/deep-sky/m35.json :: bio": {
+    "why": "elliptical coordination: 'orange and red giants' shares one head noun, so the colour adjective stands beside 'et/y/e' without its own noun",
+    "tr": "8e9c1207b2"
+  },
+  "red giant|fr|universe/deep-sky/m35.json :: bio": {
+    "why": "elliptical coordination: 'orange and red giants' shares one head noun, so the colour adjective stands beside 'et/y/e' without its own noun",
+    "tr": "3ccef564ec"
+  },
+  "red giant|it|universe/deep-sky/m35.json :: bio": {
+    "why": "elliptical coordination: 'orange and red giants' shares one head noun, so the colour adjective stands beside 'et/y/e' without its own noun",
+    "tr": "82144cdb7f"
+  },
+  "red giant|pt-BR|universe/deep-sky/m35.json :: bio": {
+    "why": "elliptical coordination: 'orange and red giants' shares one head noun, so the colour adjective stands beside 'et/y/e' without its own noun",
+    "tr": "cdba0d8717"
+  },
   "regolith|ja|missions/itokawa/hayabusa1.json :: description": {
     "why": "read 2026-11-04 (chunk 2): a plain word for the surface material (soil, surface material, gravel) or left out; re-read 2026-11-06 after the fact-check fixes",
     "tr": "540fbf7484"
@@ -5258,6 +5510,50 @@
   "stage|zh-CN|programs/mars-rovers.json :: outcome.1.md": {
     "why": "phase of a campaign, not a rocket stage",
     "tr": "9575bb09bc"
+  },
+  "star-forming region|ar|glossary/terms.json :: maser": {
+    "why": "read 2026-11-12: the maser definition says \"star-forming clouds\", a cloud where stars form, not the term \"star-forming region\"; the translation renders that phrase",
+    "tr": "b56b1b1378"
+  },
+  "star-forming region|es|glossary/terms.json :: maser": {
+    "why": "read 2026-11-12: the maser definition says \"star-forming clouds\", a cloud where stars form, not the term \"star-forming region\"; the translation renders that phrase",
+    "tr": "ba526a265d"
+  },
+  "star-forming region|fr|glossary/terms.json :: maser": {
+    "why": "read 2026-11-12: the maser definition says \"star-forming clouds\", a cloud where stars form, not the term \"star-forming region\"; the translation renders that phrase",
+    "tr": "e21265400b"
+  },
+  "star-forming region|it|glossary/terms.json :: maser": {
+    "why": "read 2026-11-12: the maser definition says \"star-forming clouds\", a cloud where stars form, not the term \"star-forming region\"; the translation renders that phrase",
+    "tr": "abe65b9329"
+  },
+  "star-forming region|ja|glossary/terms.json :: maser": {
+    "why": "read 2026-11-12: the maser definition says \"star-forming clouds\", a cloud where stars form, not the term \"star-forming region\"; the translation renders that phrase",
+    "tr": "f816c38746"
+  },
+  "star-forming region|ko|glossary/terms.json :: maser": {
+    "why": "read 2026-11-12: the maser definition says \"star-forming clouds\", a cloud where stars form, not the term \"star-forming region\"; the translation renders that phrase",
+    "tr": "2af5cab557"
+  },
+  "star-forming region|nl|glossary/terms.json :: maser": {
+    "why": "read 2026-11-12: the maser definition says \"star-forming clouds\", a cloud where stars form, not the term \"star-forming region\"; the translation renders that phrase",
+    "tr": "4a4b395327"
+  },
+  "star-forming region|pt-BR|glossary/terms.json :: maser": {
+    "why": "read 2026-11-12: the maser definition says \"star-forming clouds\", a cloud where stars form, not the term \"star-forming region\"; the translation renders that phrase",
+    "tr": "3f73abf7aa"
+  },
+  "star-forming region|ru|glossary/terms.json :: maser": {
+    "why": "read 2026-11-12: the maser definition says \"star-forming clouds\", a cloud where stars form, not the term \"star-forming region\"; the translation renders that phrase",
+    "tr": "1d31511514"
+  },
+  "star-forming region|sr-Cyrl|glossary/terms.json :: maser": {
+    "why": "read 2026-11-12: the maser definition says \"star-forming clouds\", a cloud where stars form, not the term \"star-forming region\"; the translation renders that phrase",
+    "tr": "f56c22ef3e"
+  },
+  "star-forming region|zh-CN|glossary/terms.json :: maser": {
+    "why": "read 2026-11-12: the maser definition says \"star-forming clouds\", a cloud where stars form, not the term \"star-forming region\"; the translation renders that phrase",
+    "tr": "0ec03b25b0"
   },
   "thrust|ar|missions/psyche/psyche-mission.json :: events.3.note": {
     "why": "variant: محرك أيوني (ion engine)",

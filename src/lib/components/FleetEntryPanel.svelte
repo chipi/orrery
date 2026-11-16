@@ -1,10 +1,16 @@
 <script lang="ts">
+  import { untrack } from 'svelte';
   import PanelTabRow from './PanelTabRow.svelte';
   import PanelHeroImage from './PanelHeroImage.svelte';
   import PanelLightbox from './PanelLightbox.svelte';
   import PanelGalleryGrid from './PanelGalleryGrid.svelte';
   import Panel from './Panel.svelte';
+  import Chip from './Chip.svelte';
+  import PanelActions from './PanelActions.svelte';
   import AgencyRow from './AgencyRow.svelte';
+  import EntityThumb from './EntityThumb.svelte';
+  import { thumbOf } from '$lib/entity-thumb';
+  import { agencyRingColor } from '$lib/surface-map/nation-palette';
   import { page } from '$app/state';
   import { assetUrl } from '$lib/asset-url';
   import {
@@ -25,13 +31,16 @@
   import { track, trackGalleryImageOpen } from '$lib/analytics';
   import type { FleetEntry, FleetSiteLink } from '$types/fleet';
   import type { ScienceTabId } from '$types/science';
+  import { pickScienceLinks, refsFromSlugs } from '$lib/science-links';
   import ScienceCard from './ScienceCard.svelte';
   import LauncherFlightsWidget from '$lib/components/launches/LauncherFlightsWidget.svelte';
   import { MissionOrbitIcon } from '$lib/components/icons';
   import * as m from '$lib/paraglide/messages';
   import { countryLabel } from '$lib/country-label';
   import { epochLabel } from '$lib/epoch-label';
+  import { fleetCategoryLabel } from '$lib/fleet-category-label';
   import { fleetSpecRows } from '$lib/fleet-spec-rows';
+  import { fleetMissionRows } from '$lib/fleet-missions';
   import { fleetStatusLabel } from '$lib/status-label';
   import MuseumsForObject from './MuseumsForObject.svelte';
   import VideoThumb from './VideoThumb.svelte';
@@ -45,11 +54,10 @@
   import { dataLoadFailed } from '$lib/data/core';
 
   /**
-   * Fleet detail panel. Six tabs (OVERVIEW / GALLERY / ANATOMY / CREW /
-   * MISSIONS / LEARN) per PRD-012 v0.2; tabs render conditionally based
-   * on what the entry actually has (skeleton entries from Phase A only
-   * have OVERVIEW + LEARN populated; later phases progressively unlock
-   * GALLERY, ANATOMY, CREW, MISSIONS).
+   * Fleet detail panel. Four tabs (OVERVIEW / MISSIONS / GALLERY / DETAIL);
+   * tabs render conditionally based on what the entry actually has.
+   * MISSIONS is one list of flights and linked missions (fleet-missions.ts),
+   * a link only where the mission exists, the crew as one line of names.
    *
    * Cloned/streamlined from StationModulePanel.svelte (RFC-016 OQ-4) so
    * station-specific concerns (microgravity-axes, station context links)
@@ -206,17 +214,63 @@
 
   let hasGallery = $derived(gallery.length > 0);
   let hasVideos = $derived(videos.length > 0);
-  let hasFlights = $derived((entry?.flights?.length ?? 0) > 0);
-  // Mission-link CTA on OVERVIEW renders whenever there's at least
-  // one linked mission. MISSIONS tab is shown only when there are
-  // 2+ — the single-mission case is fully served by the
-  // .spec-cta--mission button (which direct-links to that one
-  // mission), so showing a tab containing a list-of-one would just
-  // duplicate the CTA (2026-06-15 user note: "when we have 1
-  // mission only, I don't think we need missions tab?").
-  let hasAnyMission = $derived((entry?.linked_missions?.length ?? 0) > 0);
-  let hasMissions = $derived((entry?.linked_missions?.length ?? 0) > 1);
   let hasLinks = $derived((entry?.links?.length ?? 0) > 0);
+
+  // One list of missions per entry (flights + linked_missions, see fleet-missions.ts): the MISSIONS
+  // tab, the OVERVIEW button's count and /fleet/<id> all read it. The tab shows from 2 rows; one row
+  // is served by the OVERVIEW button alone (2026-06-15 user note: "when we have 1 mission only, I
+  // don't think we need missions tab?").
+  let missionNames = $state<Record<string, string>>({});
+  let namesLocale = '';
+  let missionIds = $derived(
+    entry && missionIndex.length > 0
+      ? fleetMissionRows(entry, missionIndex, () => undefined)
+          .filter((r) => r.missionId)
+          .map((r) => r.key)
+      : [],
+  );
+  let missionRows = $derived(
+    entry && missionIndex.length > 0
+      ? fleetMissionRows(entry, missionIndex, (id) => missionNames[id])
+      : [],
+  );
+  let hasMissions = $derived(missionRows.length > 1);
+  let soleMission = $derived(
+    missionRows.length === 1 && missionRows[0].missionId ? missionRows[0] : null,
+  );
+  // Names load for the tab, and for a single mission whose name the OVERVIEW button prints; until
+  // they are in, a mission's raw id never shows.
+  let namesReady = $derived(missionIds.every((id) => id in missionNames));
+  $effect(() => {
+    const loc = localeFromPage(page);
+    const ids = tab === 'missions' || missionIds.length === 1 ? missionIds : [];
+    const have = untrack(() => (namesLocale === loc ? missionNames : {}));
+    const missing = ids.filter((id) => !(id in have));
+    if (missing.length === 0) return;
+    let live = true;
+    void getMissionIndex()
+      .then((idx) =>
+        Promise.all(
+          missing.map(async (id) => {
+            const row = idx.find((x) => x.id === id);
+            const full = row ? await getMission(row.id, row.dest, loc).catch(() => null) : null;
+            return [id, full?.name ?? id] as const;
+          }),
+        ),
+      )
+      .then((pairs) => {
+        if (!live) return;
+        namesLocale = loc;
+        missionNames = { ...have, ...Object.fromEntries(pairs) };
+      })
+      .catch(dataLoadFailed);
+    return () => {
+      live = false;
+    };
+  });
+  const ringFor = (agency: string | null | undefined) => (agency ? agencyRingColor(agency) : null);
+  // Hardware rows know their agency from the fleet index (loaded when an entry opens).
+  const fleetAgency = (id: string) => fleetIndex.find((x) => x.id === id)?.agency;
 
   let linksByTier = $derived.by(() => {
     const out = {
@@ -258,15 +312,15 @@
     const cycleSlug = entry?.specs?.cycle
       ? scienceSlugForCycle(String(entry.specs.cycle) as EngineCycle)
       : null;
-    const seen = new Set<string>();
-    const out: { slug: string; label: string }[] = [];
-    for (const slug of [...ENGINE_SCIENCE_PRIMERS, cycleSlug, ...(entry?.science ?? [])]) {
-      if (!slug || seen.has(slug)) continue;
-      seen.add(slug);
-      out.push({ slug, label: SCIENCE_LABELS[slug]?.() ?? slug.split('/').pop()! });
-    }
-    return out;
+    const refs = pickScienceLinks(
+      refsFromSlugs([...ENGINE_SCIENCE_PRIMERS, cycleSlug ?? '', ...(entry?.science ?? [])]),
+    );
+    return refs.map((r) => {
+      const slug = `${r.tab}/${r.section}`;
+      return { slug, label: SCIENCE_LABELS[slug]?.() ?? r.section };
+    });
   });
+  const entryScience = $derived(pickScienceLinks(refsFromSlugs(entry?.science)));
 
   function siteRoute(ls: FleetSiteLink): string {
     if (ls.type === 'moon') return localHref(`/moon?site=${encodeURIComponent(ls.site_id)}`);
@@ -311,15 +365,25 @@
 
 <!-- grabFocus={false}: keep focus on the triggering fleet card so the
      grid's arrow-key nav keeps working immediately after the first open. -->
-<Panel {open} {onClose} grabFocus={false} title={entry?.name ?? entry?.id ?? ''}>
-  {#if entry}
-    <div class="head">
+<Panel
+  {open}
+  {onClose}
+  grabFocus={false}
+  title={entry?.name ?? entry?.id ?? ''}
+  onShare={cardSpec ? () => (cardOpen = true) : undefined}
+>
+  {#snippet eyebrow()}
+    {#if entry}
       <AgencyRow agency={entry.agency}>
         <span class="status status-{entry.status.toLowerCase()}">
           {fleetStatusLabel(entry.status)}
         </span>
-        <span class="category-chip">{entry.category}</span>
+        <span class="category-chip">{fleetCategoryLabel(entry.category)}</span>
       </AgencyRow>
+    {/if}
+  {/snippet}
+  {#snippet heading()}
+    {#if entry}
       <div class="name-row">
         <h1 class="name">{entry.name}</h1>
         {#if badges[`fleet:${entry.id}`]}
@@ -331,10 +395,25 @@
           />
         {/if}
       </div>
+    {/if}
+  {/snippet}
+
+  {#if entry}
+    <div class="head">
       {#if entry.tagline ?? entry.best_known_for}
         <p class="tagline">{entry.tagline ?? entry.best_known_for}</p>
       {/if}
     </div>
+
+    <PanelActions>
+      {#if entry.explorer_route}
+        <Chip
+          kind="link"
+          href={localHref(`${entry.explorer_route}?id=${entry.id}`)}
+          data-sveltekit-preload-data="hover">{m.fleet_open_explorer({ name: entry.name })}</Chip
+        >
+      {/if}
+    </PanelActions>
 
     {#if hasGallery}
       <PanelHeroImage
@@ -349,13 +428,9 @@
       />
     {/if}
 
-    <!-- Tab order: OVERVIEW · MISSIONS (cond) · GALLERY · ANATOMY · CREW
-         · LEARN. MISSIONS sits 2nd whenever the vehicle has linked
-         missions, so the "what has actually flown on this" surface is
-         the user's first follow-on after the overview (2026-06-17 user
-         direction: "on fly details, can we get missions tab to be
-         second when available"). -->
-    <!-- MISSIONS + CREW merged (user direction): crewed vehicles show their flights + crew rosters under "CREW"; everything else shows the linked-mission list under "MISSIONS". Hidden when neither. -->
+    <!-- Tab order: OVERVIEW · MISSIONS (cond) · GALLERY · DETAIL. MISSIONS sits 2nd, so
+         "what has actually flown on this" is the first follow-on after the overview
+         (2026-06-17 user direction). One tab named MISSIONS for every entry (UXD-035). -->
     <!-- ANATOMY + LEARN merged (user direction) to keep the tab row from overflowing. Shows the diagram (if any) then the tiered links. -->
     <PanelTabRow
       rowClass="tabs fleet-tabs"
@@ -363,8 +438,8 @@
         { id: 'overview', label: m.panel_tab_overview(), audioStage: 'fleet-tab-overview' },
         {
           id: 'missions',
-          label: hasFlights ? m.panel_tab_crew() : m.panel_tab_missions(),
-          visible: hasMissions || hasFlights,
+          label: m.panel_tab_missions(),
+          visible: hasMissions,
           audioStage: 'fleet-tab-missions',
         },
         { id: 'gallery', label: m.panel_tab_gallery(), visible: hasGallery || hasVideos },
@@ -383,16 +458,6 @@
         {#if entry.dispatch}
           <p class="dispatch">{entry.dispatch}</p>
         {/if}
-        {#if entry.explorer_route}
-          <a
-            class="explorer-cta"
-            href={localHref(`${entry.explorer_route}?id=${entry.id}`)}
-            data-sveltekit-preload-data="hover"
-          >
-            {m.fleet_open_explorer({ name: entry.name })}
-          </a>
-        {/if}
-
         <MuseumsForObject objectRef={entry.id} />
 
         <!-- Fleet -> Mission back-link CTA. Mirrors the Vehicle +
@@ -400,49 +465,51 @@
              navigation is symmetric (2026-06-15 user direction:
              "make feedback from fleet to mission as we have from
              mission to fleet with same style buttons"). Label adapts
-             to cardinality: 1 mission -> direct deep-link with the
-             mission ID; N missions -> tab switcher to the MISSIONS
-             tab. 0 missions -> nothing rendered (consistent with the
-             MISSIONS tab being auto-hidden for those entries). -->
-        {#if hasAnyMission}
-          {@const missionIds = entry.linked_missions ?? []}
-          {#if missionIds.length === 1}
-            <div class="mission-cta-bar">
-              <a
-                class="spec-cta spec-cta--mission"
-                href={localHref(`/missions?id=${missionIds[0]}`)}
-                data-testid="fleet-mission-cta-single"
-                data-sveltekit-preload-data="hover"
-              >
-                <span class="spec-icon" aria-hidden="true">
-                  <MissionOrbitIcon />
-                </span>
-                <span class="spec-text">
-                  <span class="spec-label">{m.fleet_mission_cta_label()}</span>
-                  <span class="spec-value">{missionIds[0]}</span>
-                </span>
-              </a>
-            </div>
-          {:else}
-            <div class="mission-cta-bar">
-              <button
-                type="button"
-                class="spec-cta spec-cta--mission"
-                onclick={() => (tab = 'missions')}
-                data-testid="fleet-mission-cta-multi"
-              >
-                <span class="spec-icon" aria-hidden="true">
-                  <MissionOrbitIcon />
-                </span>
-                <span class="spec-text">
-                  <span class="spec-label">{m.panel_tab_missions()}</span>
-                  <span class="spec-value"
-                    >{m.fleet_missions_count({ count: missionIds.length })}</span
-                  >
-                </span>
-              </button>
-            </div>
-          {/if}
+             to the rows of the one Missions list: 1 mission in the
+             catalogue -> direct deep-link printing its name; 2+ rows
+             -> tab switcher to the MISSIONS tab with the same count.
+             A single flight whose mission is not in the catalogue
+             has nothing to link to -> nothing rendered. -->
+        {#if soleMission}
+          <!-- b1-keep: navigation cards (label + value), not actions -->
+          <div class="mission-cta-bar">
+            <a
+              // b1-keep: navigation card (label + value), not an action
+              class="spec-cta spec-cta--mission"
+              href={localHref(`/missions?id=${soleMission.missionId}`)}
+              data-testid="fleet-mission-cta-single"
+              data-sveltekit-preload-data="hover"
+            >
+              <span class="spec-icon" aria-hidden="true">
+                <MissionOrbitIcon />
+              </span>
+              <span class="spec-text">
+                <span class="spec-label">{m.fleet_mission_cta_label()}</span>
+                <span class="spec-value">{namesReady ? soleMission.title : ' '}</span>
+              </span>
+            </a>
+          </div>
+        {:else if hasMissions}
+          <!-- b1-keep: navigation cards (label + value), not actions -->
+          <div class="mission-cta-bar">
+            <button
+              type="button"
+              // b1-keep: navigation card (label + value), not an action
+              class="spec-cta spec-cta--mission"
+              onclick={() => (tab = 'missions')}
+              data-testid="fleet-mission-cta-multi"
+            >
+              <span class="spec-icon" aria-hidden="true">
+                <MissionOrbitIcon />
+              </span>
+              <span class="spec-text">
+                <span class="spec-label">{m.panel_tab_missions()}</span>
+                <span class="spec-value"
+                  >{m.fleet_missions_count({ count: missionRows.length })}</span
+                >
+              </span>
+            </button>
+          </div>
         {/if}
 
         {#if entry.description}
@@ -496,10 +563,14 @@
           <ul class="xref-list">
             {#each engineLaunchers as v (v.launcherId)}
               <li>
+                <EntityThumb
+                  src={thumbOf('fleet', v.launcherId)}
+                  ring={ringFor(fleetAgency(v.launcherId))}
+                />
                 {#if knownIds?.has(v.launcherId) && onNavigate}
                   <button
                     type="button"
-                    class="xref-link"
+                    class="xref-link ui-hit"
                     onclick={() => onNavigate?.(v.launcherId)}
                   >
                     {v.launcherName}
@@ -516,7 +587,7 @@
             {#each engineScience as s (s.slug)}
               <li>
                 <a
-                  class="xref-link"
+                  class="xref-link ui-hit"
                   href={localHref(`/science/${s.slug}`)}
                   data-sveltekit-preload-data="hover">{s.label} →</a
                 >
@@ -530,8 +601,9 @@
           <ul class="xref-list">
             {#each launcherEngines as e (e.id)}
               <li>
+                <EntityThumb src={thumbOf('fleet', e.id)} ring={ringFor(fleetAgency(e.id))} />
                 {#if onNavigate}
-                  <button type="button" class="xref-link" onclick={() => onNavigate?.(e.id)}>
+                  <button type="button" class="xref-link ui-hit" onclick={() => onNavigate?.(e.id)}>
                     {e.name}
                   </button>
                 {:else}
@@ -564,10 +636,10 @@
              separately — see commit message. -->
         <!-- Science articles named in the entry's data (suits today); engines list
              theirs, with the cycle primers, under DETAIL instead. -->
-        {#if entry.category !== 'engine' && entry.science?.length}
+        {#if entry.category !== 'engine' && entryScience.length}
           <h3 class="section-h">{m.fleet_entry_learn_science()}</h3>
-          {#each entry.science as slug (slug)}
-            <ScienceCard tab={slug.split('/')[0] as ScienceTabId} section={slug.split('/')[1]!} />
+          {#each entryScience as r (r.tab + r.section)}
+            <ScienceCard tab={r.tab as ScienceTabId} section={r.section} />
           {/each}
         {/if}
 
@@ -716,81 +788,48 @@
             {/if}
           </ul>
         {/if}
-      {:else if tab === 'missions' && (hasMissions || hasFlights)}
-        {#if hasFlights}
-          <ul class="flights">
-            {#each entry.flights ?? [] as flight (flight.mission_id)}
-              <li class="flight">
-                <header class="flight-head">
-                  <span class="flight-designation">{flight.flight_designation}</span>
-                  <a
-                    class="mission-link"
-                    href={localHref(`/missions?id=${flight.mission_id}`)}
-                    data-sveltekit-preload-data="hover"
-                  >
-                    {m.fleet_flight_mission_link()}
-                  </a>
-                </header>
-                {#if flight.patch_path}
-                  <img
-                    class="patch"
-                    src={flight.patch_path}
-                    alt=""
-                    loading="lazy"
-                    decoding="async"
-                  />
-                {/if}
-                {#if flight.crew && flight.crew.length > 0}
-                  <ul class="crew-grid">
-                    {#each flight.crew as crew (crew.name)}
-                      <li class="crew-card">
-                        {#if crew.portrait_path}
-                          <img src={crew.portrait_path} alt="" loading="lazy" decoding="async" />
-                        {:else}
-                          <div class="crew-portrait-empty" aria-hidden="true">—</div>
-                        {/if}
-                        <span class="crew-name">{crew.name}</span>
-                        <span class="crew-role">{crew.role}</span>
-                      </li>
-                    {/each}
-                  </ul>
-                {/if}
-              </li>
-            {/each}
-          </ul>
-        {:else}
-          <ul class="missions-list">
-            {#each entry.linked_missions ?? [] as mid (mid)}
-              <li>
+      {:else if tab === 'missions' && hasMissions && namesReady}
+        {@const inCatalogue = missionIds.length}
+        <p class="missions-summary" data-testid="fleet-missions-summary">
+          {inCatalogue === missionRows.length
+            ? m.fleet_missions_count({ count: missionRows.length })
+            : m.fleet_missions_in_catalogue({ count: missionRows.length, open: inCatalogue })}
+        </p>
+        <ul class="missions-list">
+          {#each missionRows as row (row.key)}
+            <li class="mission-row" class:plain={!row.missionId}>
+              {#if row.missionId}
                 <a
                   class="mission-link"
-                  href={localHref(`/missions?id=${mid}`)}
+                  href={localHref(`/missions?id=${row.missionId}`)}
                   data-sveltekit-preload-data="hover"
                 >
-                  {mid}
-                  <span class="mission-arrow">→</span>
+                  <EntityThumb
+                    src={thumbOf('missions', row.missionId)}
+                    ring={ringFor(row.agency)}
+                  />
+                  <span class="mission-name">{row.title}</span>
+                  {#if row.sub}<span class="mission-sub">{row.sub}</span>{/if}
+                  <span class="mission-arrow" aria-hidden="true">→</span>
                 </a>
-              </li>
-            {/each}
-          </ul>
-        {/if}
+              {:else}
+                <div class="mission-plain">
+                  <EntityThumb src={null} />
+                  <span class="mission-name">{row.title}</span>
+                </div>
+                {#if row.sub}<p class="mission-note">{row.sub}</p>{/if}
+              {/if}
+              {#if row.crew.length > 0}
+                <p class="mission-crew">
+                  <span class="mission-crew-label">{m.panel_tab_crew()}</span>
+                  {row.crew.join(', ')}
+                </p>
+              {/if}
+            </li>
+          {/each}
+        </ul>
       {/if}
     </div>
-
-    <!-- #547 S4 — every fleet entry carries its collectible card. Same
-         quiet register as the missions panel's card CTA. -->
-    {#if cardSpec}
-      <div class="card-cta-bar">
-        <button
-          type="button"
-          class="cta-card"
-          onclick={() => (cardOpen = true)}
-          data-testid="open-card-btn"
-        >
-          <span class="cta-text">{m.card_open_button()}</span>
-        </button>
-      </div>
-    {/if}
   {/if}
 </Panel>
 
@@ -811,35 +850,9 @@
   .head {
     padding: 12px 16px 4px;
   }
-  /* #547 S4 — card CTA, mirroring MissionPanel's quiet .cta-card register. */
-  .card-cta-bar {
-    padding: 12px 16px 16px;
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
-    margin-top: 12px;
-    flex-shrink: 0;
-  }
-  .cta-card {
-    width: 100%;
-    min-height: 48px;
-    padding: 12px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.22);
-    border-radius: 4px;
-    color: #fff;
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
-    letter-spacing: 3px;
-    font-weight: 700;
-    cursor: pointer;
-    transition:
-      background 120ms,
-      border-color 120ms;
-  }
-  .cta-card:hover,
-  .cta-card:focus-visible {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.45);
-    outline: none;
+  /* The head ends with 4 px padding; the other panels leave 12 px above the action row. */
+  .head + :global(.panel-actions) {
+    margin-top: 8px;
   }
   /* .agency-row / .agency-badge / .status base now from AgencyRow.svelte;
      status chips converted from filled to the shared bordered treatment. */
@@ -849,9 +862,9 @@
     background: rgba(136, 159, 231, 0.08);
   }
   .status-flown {
-    color: #4b9cd3;
-    border-color: rgba(75, 156, 211, 0.4);
-    background: rgba(75, 156, 211, 0.08);
+    color: var(--color-state);
+    border-color: var(--color-accent-edge);
+    background: color-mix(in srgb, var(--color-accent) 8%, transparent);
   }
   .status-retired {
     color: #ffc850;
@@ -870,7 +883,7 @@
   }
   .category-chip {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 7px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
     font-weight: 700;
     padding: 3px 8px;
@@ -888,9 +901,7 @@
   }
   .tagline {
     margin: 0 0 6px;
-    font-family: 'Crimson Pro', Georgia, serif;
-    font-style: italic;
-    font-size: 14px;
+    font-size: var(--size-lead);
     color: rgba(255, 255, 255, 0.7);
     line-height: 1.4;
   }
@@ -918,42 +929,19 @@
 
   /* Tab base styles inherited from src/lib/styles/panel-tabs.css —
      matches the rest of the detail-panel family. Fleet keeps its
-     teal accent on the active-tab indicator as a category cue. */
+     accent blue on the active-tab indicator as a category cue. */
   :global(.tabs.fleet-tabs button.active) {
-    color: #4ecdc4;
-    border-bottom-color: #4ecdc4;
+    color: var(--color-state);
+    border-bottom-color: var(--color-accent);
   }
 
   .tab-body {
     padding: 14px 16px 20px;
   }
 
-  .explorer-cta {
-    display: block;
-    text-align: center;
-    background: rgba(78, 205, 196, 0.1);
-    border: 1px solid rgba(78, 205, 196, 0.4);
-    color: #4ecdc4;
-    padding: 10px 14px;
-    border-radius: 4px;
-    text-decoration: none;
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 12px;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    margin-bottom: 12px;
-    transition:
-      background 0.15s,
-      border-color 0.15s;
-  }
-  .explorer-cta:hover {
-    background: rgba(78, 205, 196, 0.18);
-    border-color: #4ecdc4;
-  }
-
   /* Fleet -> Mission back-link CTA. Mirrors the .spec-cta system on
      /missions MissionPanel.svelte. Third blue in the same family:
-     vehicle = #0c1660 (darkest), payload = #1788d4 (lightest),
+     vehicle = #0c1660 (darkest), payload = var(--color-accent) (lightest),
      mission = #1f4ca8 (mid). Lives on a different panel so the three
      never appear together; the modifier color exists for sibling
      identity, not for in-panel disambiguation. Both <a> (single
@@ -1009,7 +997,7 @@
     text-align: left;
   }
   .spec-cta .spec-label {
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 2.5px;
     font-weight: 700;
     text-transform: uppercase;
@@ -1040,8 +1028,7 @@
      as a magazine standfirst: prominent roman serif, brighter than the italic
      .description below, set apart by a hairline. Matches MissionPanel. */
   .dispatch {
-    font-family: 'Crimson Pro', Georgia, serif;
-    font-size: 15px;
+    font-size: var(--size-lead);
     line-height: 1.65;
     color: rgba(255, 255, 255, 0.92);
     margin: 0 0 14px;
@@ -1051,9 +1038,7 @@
 
   .description {
     margin: 0 0 14px;
-    font-family: 'Crimson Pro', Georgia, serif;
-    font-style: italic;
-    font-size: 14px;
+    font-size: var(--size-lead);
     color: rgba(255, 255, 255, 0.78);
     line-height: 1.5;
   }
@@ -1070,10 +1055,10 @@
   }
   .spec dt {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9.5px;
+    font-size: var(--size-label);
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    color: rgba(255, 255, 255, 0.45);
+    color: var(--color-text-label);
     margin-bottom: 1px;
   }
   .spec dd {
@@ -1087,10 +1072,10 @@
   .section-h {
     margin: 14px 0 6px;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10.5px;
+    font-size: var(--size-label);
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
     font-weight: normal;
   }
   /* PRD-032 — engine ↔ launcher cross-reference list. */
@@ -1104,7 +1089,7 @@
   }
   .xref-list li {
     display: flex;
-    align-items: baseline;
+    align-items: center;
     flex-wrap: wrap;
     gap: 4px 8px;
   }
@@ -1130,8 +1115,8 @@
   }
   .xref-sub {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
-    color: rgba(255, 255, 255, 0.45);
+    font-size: var(--size-label);
+    color: var(--color-text-label);
   }
   .site-list {
     list-style: none;
@@ -1144,31 +1129,87 @@
   .site-link,
   .mission-link {
     display: inline-block;
-    color: #4ecdc4;
+    color: var(--color-state);
     text-decoration: none;
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
     padding: 4px 8px;
     border-radius: 3px;
-    background: rgba(78, 205, 196, 0.08);
+    background: color-mix(in srgb, var(--color-accent) 8%, transparent);
     transition: background 0.15s;
   }
   .site-link:hover,
   .mission-link:hover {
-    background: rgba(78, 205, 196, 0.18);
+    background: color-mix(in srgb, var(--color-accent) 18%, transparent);
     text-decoration: underline;
   }
   .mission-arrow {
     margin-left: 6px;
-    color: rgba(78, 205, 196, 0.7);
+    color: var(--color-state);
+  }
+  .missions-list .mission-link,
+  .mission-plain {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 4px 10px 4px 6px;
+    box-sizing: border-box;
+  }
+  .missions-list .mission-link {
+    min-height: 44px;
+  }
+  .mission-plain {
+    min-height: 32px;
+    color: rgba(255, 255, 255, 0.7);
+    font-family: var(--font-mono, 'Space Mono', monospace);
+    font-size: 12px;
+  }
+  .missions-list .mission-name {
+    flex: 1;
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+  .mission-sub {
+    color: var(--color-text-label);
+    font-size: var(--size-label);
+    font-variant-numeric: tabular-nums;
+  }
+  .missions-list .mission-arrow {
+    margin-inline-start: 0;
+  }
+  /* Notes and crew sit under the title, in line with it: 6 px padding + 28 px thumb + 10 px gap. */
+  .mission-note,
+  .mission-crew {
+    margin: 0;
+    padding-inline: 44px 10px;
+    font-family: var(--font-mono, 'Space Mono', monospace);
+    font-size: 11px;
+    line-height: 1.4;
+    color: var(--color-text-label);
+    overflow-wrap: anywhere;
+  }
+  .mission-crew {
+    padding-block-end: 4px;
+  }
+  .mission-crew-label {
+    margin-inline-end: 6px;
+    font-size: var(--size-label);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .missions-summary {
+    margin: 0 0 8px;
+    font-family: var(--font-mono, 'Space Mono', monospace);
+    font-size: var(--size-label);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-text-label);
   }
 
   .credit {
     margin: 16px 0 0;
-    font-family: 'Crimson Pro', Georgia, serif;
-    font-style: italic;
-    font-size: 12px;
-    color: rgba(255, 255, 255, 0.4);
+    font-size: var(--size-meta);
+    color: var(--color-text-label);
     line-height: 1.5;
   }
 
@@ -1218,86 +1259,9 @@
   .anatomy-caption {
     margin: 8px 0 0;
     font-family: 'Crimson Pro', Georgia, serif;
-    font-style: italic;
-    font-size: 11.5px;
+    font-style: italic; /* a1-keep: caption */
+    font-size: var(--size-caption);
     color: rgba(255, 255, 255, 0.5);
-  }
-
-  .flights {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-  }
-  .flight {
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 4px;
-    padding: 10px;
-  }
-  .flight-head {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 8px;
-  }
-  .flight-designation {
-    font-family: 'Bebas Neue', system-ui, sans-serif;
-    font-size: 16px;
-    color: #fff;
-  }
-  .patch {
-    width: 90px;
-    height: 90px;
-    object-fit: contain;
-    margin-bottom: 8px;
-  }
-  .crew-grid {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
-    gap: 8px;
-  }
-  .crew-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 4px;
-    text-align: center;
-  }
-  .crew-card img {
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    border-radius: 50%;
-  }
-  .crew-portrait-empty {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.04);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: rgba(255, 255, 255, 0.3);
-    font-size: 18px;
-  }
-  .crew-name {
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 11px;
-    color: #fff;
-    line-height: 1.2;
-  }
-  .crew-role {
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9.5px;
-    color: rgba(255, 255, 255, 0.5);
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
   }
 
   .missions-list {
@@ -1320,10 +1284,10 @@
   .tier h4 {
     margin: 0 0 4px;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10.5px;
+    font-size: var(--size-label);
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--color-text-label);
     font-weight: normal;
   }
   .tier ul {
@@ -1335,7 +1299,7 @@
     gap: 4px;
   }
   .tier ul a {
-    color: #4ecdc4;
+    color: var(--color-accent);
     text-decoration: none;
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;

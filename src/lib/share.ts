@@ -39,9 +39,8 @@ export async function sharePath(
   path: string,
   title: string,
 ): Promise<'shared' | 'copied' | 'cancelled'> {
-  // `base` matters on base-prefixed deploys (GH Pages staging serves under
-  // a base path) — without it the shared stub URL 404s. Capacitor rebuilds
-  // against the public STREAM_ORIGIN, which is base-less prod.
+  // `base` matters on subpath deploys — without it the shared stub URL 404s.
+  // Capacitor rebuilds against the public STREAM_ORIGIN, which is base-less prod.
   const origin = Capacitor.isNativePlatform() ? STREAM_ORIGIN : window.location.origin;
   const prefix = Capacitor.isNativePlatform() ? '' : base;
   return shareUrl(`${origin}${prefix}${path}`, title);

@@ -2,8 +2,22 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "black-hole.schema.json",
   "title": "Black-hole catalogue (PRD-030 / RFC-032, Slice 6)",
-  "description": "The black holes rendered with the /explore v2 geodesic gravitational-lensing shader. Three real (M87*, Sagittarius A*, Cygnus X-1) with cited parameters + one fictional (Gargantua, badged). Masses in solar masses, distances in light-years, spin is the dimensionless a*, rs_km the Schwarzschild radius, inclination_deg the render disk tilt.",
+  "description": "The black holes rendered with the /explore v2 geodesic gravitational-lensing shader. Three real (M87*, Sagittarius A*, Cygnus X-1) with cited parameters + one fictional (Gargantua, badged). Masses in solar masses, distances in light-years, spin is the dimensionless a*, rs_km the Schwarzschild radius, inclination_deg the render disk tilt. Mass and distance of the real holes carry sibling `catalogue` entries (the paper, its bibcode and a record link, #658); `records` holds the SIMBAD object page. Gargantua is fiction and has neither.",
   "type": "object",
+  "definitions": {
+    "catalogueEntry": {
+      "type": "object",
+      "required": ["value", "source", "bibcode", "record_url"],
+      "additionalProperties": false,
+      "properties": {
+        "value": { "type": "number" },
+        "source": { "type": "string", "minLength": 1 },
+        "bibcode": { "type": ["string", "null"], "pattern": "^[0-9]{4}[A-Za-z0-9&.+]{14}[A-Za-z.]$" },
+        "record_url": { "type": "string", "pattern": "^https://" },
+        "note": { "type": "string", "minLength": 1 }
+      }
+    }
+  },
   "required": ["objects"],
   "additionalProperties": false,
   "properties": {
@@ -26,7 +40,9 @@
           "dec",
           "science_section",
           "culture_door",
-          "discovery"
+          "discovery",
+          "records",
+          "catalogue"
         ],
         "additionalProperties": false,
         "properties": {
@@ -42,7 +58,20 @@
           "dec": { "type": ["number", "null"], "minimum": -90, "maximum": 90 },
           "science_section": { "type": "string", "pattern": "^[a-z0-9-]+$" },
           "culture_door": { "type": ["string", "null"], "pattern": "^[a-z0-9-]+$" },
-          "discovery": { "type": "string", "minLength": 1 }
+          "discovery": { "type": "string", "minLength": 1 },
+          "records": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": { "simbad": { "type": "string", "pattern": "^https://" } }
+          },
+          "catalogue": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "mass_solar": { "$ref": "#/definitions/catalogueEntry" },
+              "dist_ly": { "$ref": "#/definitions/catalogueEntry" }
+            }
+          }
         }
       }
     }

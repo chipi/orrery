@@ -52,13 +52,18 @@
   import * as m from '$lib/paraglide/messages';
   import { getLocale } from '$lib/paraglide/runtime';
   import { licenseLabel } from '$lib/license-label';
+  import { plural } from '$lib/plural';
+  import ShowAll from '$lib/components/ShowAll.svelte';
+  import { previewList } from '$lib/preview-list';
+  import { scrollToHash } from '$lib/scroll-to-hash';
+  import { tick } from 'svelte';
+
+  // Every list shows its first PREVIEW rows and a "Show all N" chip ($lib/preview-list); source
+  // headers stay open, so a contents link lands on its header with the first rows below it.
+  let expanded = $state<Record<string, boolean>>({});
+  const expand = (key: string) => (expanded = { ...expanded, [key]: true });
 
   // Counts in the locale's plural form (1 photo; sr 2–4 фотографије; ar dual …); the plain key is "other".
-  type CountMsg = (p: { n: number }) => string;
-  const plural =
-    (other: CountMsg, forms: Partial<Record<Intl.LDMLPluralRule, CountMsg>>) =>
-    (n: number): string =>
-      (forms[new Intl.PluralRules(getLocale()).select(n)] ?? other)({ n });
   const photosLabel = plural(m.credits_count_photos, {
     one: m.credits_count_photos_one,
     two: m.credits_count_photos_two,
@@ -122,6 +127,11 @@
         loaded = true;
       })
       .catch(dataLoadFailed);
+  });
+
+  // The sources draw after the fetch above; the browser's load-time hash scroll found nothing.
+  $effect(() => {
+    if (loaded) void tick().then(scrollToHash);
   });
 
   // Our OWN assets are not third-party imagery and must not appear in the
@@ -208,6 +218,19 @@
         return m.credits_category_ui();
       case 'credits':
         return m.credits_category_credits();
+      // The deep-level entity pages' text sources (0.9.9); labels shared with the library and Explore.
+      case 'star':
+        return m.library_category_star();
+      case 'exoplanet':
+        return m.science_tab_exoplanets_title();
+      case 'black-hole':
+        return m.star_index_black_holes();
+      case 'deep-sky':
+        return m.deepsky_name();
+      case 'galaxy':
+        return m.library_category_galaxy();
+      case 'structure':
+        return m.library_category_structure();
       default:
         return c;
     }
@@ -266,12 +289,12 @@
   <meta name="description" content={metaDescription(m.credits_intro_body_2())} />
 </svelte:head>
 
-<section class="credits" aria-labelledby="credits-title" data-route-ready="true">
+<section class="credits page-shell" aria-labelledby="credits-title" data-route-ready="true">
   <header class="head">
-    <h1 id="credits-title">{m.credits_title()}</h1>
-    <h2>{m.credits_intro_heading()}</h2>
-    <p class="intro">{m.credits_intro_body_1()}</p>
-    <p class="intro">{m.credits_intro_body_2()}</p>
+    <h1 id="credits-title" class="page-title">{m.credits_title()}</h1>
+    <h2 class="page-section-label">{m.credits_intro_heading()}</h2>
+    <p class="intro page-lead">{m.credits_intro_body_1()}</p>
+    <p class="intro page-lead">{m.credits_intro_body_2()}</p>
     <p class="totals">
       {m.credits_totals({
         photos: totals.photos,
@@ -287,7 +310,7 @@
   {:else}
     <nav class="toc" aria-label={m.credits_toc_label()}>
       <h3>{m.credits_toc_label()}</h3>
-      <ul>
+      <ul class="preview-narrow" class:is-open={expanded['toc']}>
         {#each groups as group (group)}
           <li>
             <a href="#src-{group.source.id}">{group.source.name}</a>
@@ -298,6 +321,13 @@
           </li>
         {/each}
       </ul>
+      <ShowAll
+        narrow
+        count={groups.length}
+        expanded={expanded['toc']}
+        onexpand={() => expand('toc')}
+        list="toc"
+      />
     </nav>
 
     {#each groups as group (group)}
@@ -315,7 +345,7 @@
             />
           {/if}
           <div class="src-meta">
-            <h2>
+            <h2 class="page-section-title">
               <a href={group.source.url} target="_blank" rel="noopener noreferrer">
                 {group.source.name}
               </a>
@@ -333,7 +363,7 @@
             <span class="bom-count">{photosLabel(group.bundles.length)}</span>
           </h3>
           <ul class="photo-list">
-            {#each group.bundles as bundle (bundle)}
+            {#each previewList(group.bundles, expanded[`${group.source.id}:photos`]) as bundle (bundle)}
               {@const photo = bundle.representative}
               <li class="photo">
                 <a
@@ -421,6 +451,12 @@
               </li>
             {/each}
           </ul>
+          <ShowAll
+            count={group.bundles.length}
+            expanded={expanded[`${group.source.id}:photos`]}
+            onexpand={() => expand(`${group.source.id}:photos`)}
+            list="{group.source.id}:photos"
+          />
         {/if}
 
         {#if group.texts.length > 0}
@@ -429,7 +465,7 @@
             <span class="bom-count">{textsLabel(group.texts.length)}</span>
           </h3>
           <ul class="text-list">
-            {#each group.texts as t (t)}
+            {#each previewList(group.texts, expanded[`${group.source.id}:texts`]) as t (t)}
               <li class="text-entry">
                 <p class="t-row">
                   <span class="t-cat">{categoryLabel(t.category)}</span>
@@ -474,6 +510,12 @@
               </li>
             {/each}
           </ul>
+          <ShowAll
+            count={group.texts.length}
+            expanded={expanded[`${group.source.id}:texts`]}
+            onexpand={() => expand(`${group.source.id}:texts`)}
+            list="{group.source.id}:texts"
+          />
         {/if}
       </article>
     {/each}
@@ -496,7 +538,7 @@
       </p>
       <p class="storage-blurb">{m.credits_audio_intro()}</p>
       <ul class="audio-list">
-        {#each audioProv.entries as a (a.id)}
+        {#each previewList(audioProv.entries, expanded['audio']) as a (a.id)}
           <li class="audio-row">
             <span class="audio-body">{a.body}</span>
             <span class="audio-text">
@@ -515,6 +557,12 @@
           </li>
         {/each}
       </ul>
+      <ShowAll
+        count={audioProv.entries.length}
+        expanded={expanded['audio']}
+        onexpand={() => expand('audio')}
+        list="audio"
+      />
     </article>
   {/if}
 
@@ -532,7 +580,7 @@
       </p>
       <p class="storage-blurb">{m.credits_video_intro()}</p>
       <ul class="photo-list">
-        {#each videoProv.entries as v (v.id)}
+        {#each previewList(videoProv.entries, expanded['video']) as v (v.id)}
           {@const poster = posterUrlFor(v)}
           <li class="photo">
             <a
@@ -543,15 +591,12 @@
               aria-label={v.title}
             >
               {#if poster}
-                <!-- eager: only ~N video posters, and they sit far down a long
-                     page where the lazy trigger is unreliable (they simply
-                     never requested). Small 64px thumbs, so eager is safe. -->
                 <img
                   src={poster}
                   alt=""
                   width="64"
                   height="64"
-                  loading="eager"
+                  loading="lazy"
                   decoding="async"
                   onerror={(e) => ((e.currentTarget as HTMLImageElement).style.display = 'none')}
                 />
@@ -571,6 +616,12 @@
           </li>
         {/each}
       </ul>
+      <ShowAll
+        count={videoProv.entries.length}
+        expanded={expanded['video']}
+        onexpand={() => expand('video')}
+        list="video"
+      />
     </article>
   {/if}
 
@@ -587,7 +638,7 @@
         {[...new Set(badges.map((b) => licenseLabel(b.license_short)))].join(' · ')}
       </p>
       <ul class="insignia-list">
-        {#each badges as bdg (bdg.path)}
+        {#each previewList(badges, expanded['insignia']) as bdg (bdg.path)}
           <li class="insignia-row">
             <img
               class="insignia-thumb"
@@ -614,6 +665,12 @@
           </li>
         {/each}
       </ul>
+      <ShowAll
+        count={badges.length}
+        expanded={expanded['insignia']}
+        onexpand={() => expand('insignia')}
+        list="insignia"
+      />
     </article>
   {/if}
 
@@ -631,7 +688,7 @@
       </p>
       <p class="storage-blurb">{m.credits_data_intro()}</p>
       <ul class="data-list">
-        {#each dataSources.entries as d, i (d.id)}
+        {#each previewList(dataSources.entries, expanded['data']) as d, i (d.id)}
           {#if d.category === 'model-reference' && dataSources.entries[i - 1]?.category !== 'model-reference'}
             <li class="data-note">{m.credits_data_models_note()}</li>
           {/if}
@@ -641,9 +698,12 @@
               {#if !d.references}<span class="d-catalog">{d.catalog}</span>{/if}
             </p>
             <p class="d-desc">{d.description}</p>
+            {#if d.acknowledgement}<p class="d-ack">{d.acknowledgement}</p>{/if}
             {#if d.references}
               <details class="d-refs">
-                <summary>{m.credits_data_references({ count: d.references.length })}</summary>
+                <summary class="ui-hit"
+                  >{m.credits_data_references({ count: d.references.length })}</summary
+                >
                 <ul>
                   {#each d.references as r (r.u)}
                     <li><a href={r.u} target="_blank" rel="noopener noreferrer">{r.l}</a></li>
@@ -666,6 +726,12 @@
           </li>
         {/each}
       </ul>
+      <ShowAll
+        count={dataSources.entries.length}
+        expanded={expanded['data']}
+        onexpand={() => expand('data')}
+        list="data"
+      />
     </article>
   {/if}
 
@@ -733,10 +799,10 @@
     flex: 0 0 auto;
     min-width: 46px;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--color-text-label);
   }
   .audio-text {
     display: flex;
@@ -749,7 +815,7 @@
   }
   .audio-meta {
     font-size: 11px;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
   }
   .audio-meta a {
     color: inherit;
@@ -787,8 +853,8 @@
     font-size: 12.5px;
   }
   .insignia-meta {
-    font-size: 10.5px;
-    color: rgba(255, 255, 255, 0.55);
+    font-size: var(--size-label);
+    color: var(--color-text-label);
   }
   .insignia-meta a {
     color: inherit;
@@ -824,7 +890,7 @@
   .d-catalog {
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--color-text-label);
   }
   .data-note {
     padding: 4px 2px 0;
@@ -867,11 +933,19 @@
     color: rgba(255, 255, 255, 0.78);
     margin: 0 0 6px;
   }
+  .d-ack {
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--color-text-label);
+    margin: 0 0 6px;
+    padding-left: 10px;
+    border-left: 2px solid var(--color-border);
+  }
   .d-row {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     line-height: 1.5;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
     margin: 0;
     display: flex;
     flex-wrap: wrap;
@@ -879,12 +953,12 @@
     align-items: baseline;
   }
   .d-row .lbl {
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
   }
   .d-row a {
-    color: #4ecdc4;
+    color: var(--color-accent);
     text-decoration: none;
-    border-bottom: 1px dotted rgba(78, 205, 196, 0.4);
+    border-bottom: 1px dotted var(--color-accent-edge);
   }
 
   .storage-card {
@@ -929,45 +1003,20 @@
     color: rgba(201, 170, 111, 0.85);
   }
   .storage-fine {
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
     font-size: 12px;
   }
 
-  .credits {
-    max-width: 1080px;
-    margin: 0 auto;
-    padding: 24px 16px 96px;
-    color: #dde4ff;
-  }
-  .head h1 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 56px;
-    letter-spacing: 4px;
-    margin: 0 0 4px;
-    color: #fff;
-  }
-  .head h2 {
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 12px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.6);
-    margin: 0 0 16px;
-  }
-  .intro {
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 16px;
-    line-height: 1.6;
-    color: rgba(255, 255, 255, 0.8);
-    margin: 0 0 12px;
+  /* The section label sits right under the title here. */
+  .head .page-section-label {
+    margin-top: 0;
   }
   .totals,
   .disclaimer {
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--color-text-label);
     margin: 8px 0 0;
   }
   .disclaimer {
@@ -993,7 +1042,7 @@
     font-size: 11px;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
     margin: 0 0 12px;
   }
   .toc ul {
@@ -1009,13 +1058,13 @@
     line-height: 1.5;
   }
   .toc a {
-    color: #4ecdc4;
+    color: var(--color-accent);
     text-decoration: none;
-    border-bottom: 1px dotted rgba(78, 205, 196, 0.4);
+    border-bottom: 1px dotted var(--color-accent-edge);
   }
   .toc a:hover,
   .toc a:focus-visible {
-    color: #7ddfd8;
+    color: var(--color-accent);
     outline: none;
   }
   .counts {
@@ -1049,12 +1098,8 @@
     object-fit: contain;
     flex-shrink: 0;
   }
-  .src-meta h2 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 28px;
-    letter-spacing: 2px;
-    margin: 0 0 4px;
-    color: #fff;
+  .src-meta .page-section-title {
+    margin-bottom: 4px;
   }
   .src-meta a {
     color: #fff;
@@ -1065,7 +1110,7 @@
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     line-height: 1.6;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
     margin: 0;
     max-width: 720px;
   }
@@ -1087,8 +1132,8 @@
     gap: 8px;
   }
   .bom-count {
-    color: rgba(255, 255, 255, 0.55);
-    font-size: 10px;
+    color: var(--color-text-label);
+    font-size: var(--size-label);
   }
 
   .photo-list,
@@ -1141,9 +1186,9 @@
   .ph-row,
   .t-row {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     line-height: 1.5;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
     margin: 0 0 2px;
     display: flex;
     flex-wrap: wrap;
@@ -1151,13 +1196,13 @@
     align-items: baseline;
   }
   .ph-row .lbl {
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
   }
   .ph-row a,
   .t-row a {
-    color: #4ecdc4;
+    color: var(--color-accent);
     text-decoration: none;
-    border-bottom: 1px dotted rgba(78, 205, 196, 0.4);
+    border-bottom: 1px dotted var(--color-accent-edge);
   }
   .sep {
     color: rgba(255, 255, 255, 0.2);
@@ -1166,11 +1211,10 @@
     background: rgba(0, 0, 0, 0.3);
     padding: 1px 4px;
     border-radius: 2px;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
   }
   .ph-row.mods {
-    color: rgba(255, 255, 255, 0.55);
-    font-style: italic;
+    color: var(--color-text-label);
   }
   /* Satellite attribution chip — links surface imagery to the spacecraft
      that captured it (#360). */
@@ -1181,7 +1225,7 @@
     display: inline-flex;
     align-items: center;
     gap: 5px;
-    font-size: 0.85em;
+    font-size: max(var(--size-label), 0.85em);
     color: #ffd479 !important;
     border-bottom: 1px dotted rgba(255, 212, 121, 0.45) !important;
   }
@@ -1195,18 +1239,18 @@
     align-items: baseline;
   }
   .variant-chip {
-    background: rgba(78, 205, 196, 0.12);
-    color: #4ecdc4;
+    background: var(--color-accent-soft);
+    color: var(--color-state);
     padding: 1px 5px;
     border-radius: 2px;
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 0.5px;
     text-transform: uppercase;
     font-family: var(--font-mono, 'Space Mono', monospace);
   }
   .ph-row.stems {
     margin-top: 2px;
-    color: rgba(255, 255, 255, 0.45);
+    color: var(--color-text-label);
     gap: 4px;
   }
   .stem-sep {
@@ -1220,20 +1264,20 @@
     border-radius: 4px;
   }
   .t-cat {
-    background: rgba(78, 205, 196, 0.12);
-    color: #4ecdc4;
+    background: var(--color-accent-soft);
+    color: var(--color-state);
     padding: 1px 6px;
     border-radius: 2px;
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     text-transform: uppercase;
   }
   .t-rel {
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
   }
   .t-snippet {
     font-family: 'Crimson Pro', serif;
-    font-style: italic;
+    font-style: italic; /* a1-keep: quote */
     font-size: 14px;
     line-height: 1.6;
     color: rgba(255, 255, 255, 0.75);
@@ -1241,8 +1285,8 @@
   }
   .t-loc {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
-    color: rgba(255, 255, 255, 0.55);
+    font-size: var(--size-label);
+    color: var(--color-text-label);
     margin: 0;
   }
   .t-loc code {
@@ -1253,9 +1297,6 @@
   }
 
   @media (min-width: 768px) {
-    .credits {
-      padding: 36px 32px 96px;
-    }
     .toc ul {
       grid-template-columns: 1fr 1fr;
     }

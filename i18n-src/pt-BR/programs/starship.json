@@ -95,5 +95,29 @@
     "/fleet?id=starship": "Frota — o sistema de lançamento Starship",
     "/programs/spacex": "SpaceX — a reutilização sobre a qual a Starship é construída",
     "/mars": "Marte — o destino"
+  },
+  "roster": {
+    "Starhopper": {
+      "note": "um protótipo de teste de um único motor salta 150 metros e pousa — o primeiro voo do programa, provando o controle básico",
+      "name": "Starhopper"
+    },
+    "SN15 lands": {
+      "note": "após uma série de explosões espetaculares, um estágio superior da Starship voa alto e pousa intacto — o método voar-falhar-corrigir aplicado ao maior foguete já construído",
+      "name": "A SN15 pousa"
+    },
+    "First integrated flight": {
+      "note": "a pilha completa — o propulsor Super Heavy e a Starship — é lançada junta pela primeira vez; ela deixa a plataforma e é perdida minutos depois, e os dados alimentam a tentativa seguinte",
+      "name": "Primeiro voo integrado"
+    },
+    "Booster catch": {
+      "note": "o propulsor Super Heavy volta e é pego no ar pelos braços da torre de lançamento — um método de pouso que ninguém havia tentado nessa escala",
+      "name": "Captura do propulsor"
+    },
+    "mission:starship-demo": {
+      "note": "os voos de demonstração não tripulados rumo à órbita, à Lua e a Marte"
+    },
+    "mission:starship-mars-crew": {
+      "note": "o estado final pretendido — Starships tripuladas levando pessoas à superfície de Marte"
+    }
   }
 }

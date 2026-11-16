@@ -94,5 +94,25 @@
   "link_labels": {
     "/earth": "地球 — 轨道与发射场",
     "/fleet?id=discovery": "航天器 — Space Shuttle 轨道器"
+  },
+  "roster": {
+    "mission:galileo": {
+      "note": "1989年10月在 STS-34 任务中从航天飞机 Atlantis 的货舱部署，随后由上面级送往木星"
+    },
+    "mission:ulysses": {
+      "note": "1990年10月在 STS-41 任务中从航天飞机 Discovery 的货舱部署，随后飞越木星，进入环绕太阳的极轨道"
+    },
+    "mission:magellan": {
+      "note": "1989年5月在 STS-30 任务中从航天飞机 Atlantis 的货舱部署，随后由上面级送往金星"
+    },
+    "mission:sts-1": {
+      "note": "首次轨道飞行——载人航天器首次在首飞中就进入轨道，也是首个可重复使用的航天器"
+    },
+    "mission:sts-51-l": {
+      "note": "发射73秒后因受冻变硬的助推器密封件失效而损毁；七名乘组成员罹难，这场灾难暴露出一种将已知风险视为常态的文化"
+    },
+    "mission:sts-107": {
+      "note": "在再入大气层时损毁，起因是发射时泡沫碎片击穿了机翼；七名乘组成员罹难，调查发现同样的组织性失误再次出现"
+    }
   }
 }

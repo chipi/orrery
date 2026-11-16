@@ -1,0 +1,29 @@
+{
+  "name": "STS-107",
+  "vehicle": "Space Shuttle Columbia (OV-102)",
+  "payload": "Module de recherche double SPACEHAB avec plus de 80 expériences ; sept membres d’équipage",
+  "delta_v": "~9.4 km/s (LEO)",
+  "type": "VOL DE RECHERCHE HABITÉ · PERDU À LA RENTRÉE",
+  "first": "Un vol scientifique de 16 jours qui s’est achevé par la perte de Columbia à la rentrée",
+  "description": "STS-107 était une mission de recherche en microgravité (Microgravity Research Mission) de 16 jours, transportant un module de recherche double SPACEHAB avec plus de 80 expériences : charges utiles commerciales, études de l’Agence spatiale européenne et recherches biologiques et physiques de la NASA. L’équipage de sept personnes comprenait Rick D. Husband, commandant ; William C. McCool, pilote ; Michael P. Anderson, commandant de charge utile ; David M. Brown, Kalpana Chawla et Laurel B. Clark, spécialistes de mission ; et Ilan Ramon, spécialiste de charge utile, représentant l’Agence spatiale israélienne. Columbia a décollé du pas de tir 39A à 10:39 EST (15:39 UTC) le 2003-01-16. Environ 82 secondes après le lancement, de la mousse isolante du réservoir externe a heurté l’aile gauche. La NASA indique que les astronautes ont dépassé les attentes des scientifiques quant aux résultats obtenus pendant leurs 16 jours. Le 2003-02-01, lors de la rentrée au-dessus de l’est du Texas vers 9:00 EST, Columbia et son équipage ont été perdus, 16 minutes avant l’atterrissage prévu au Centre spatial Kennedy. Le Columbia Accident Investigation Board, présidé par l’amiral à la retraite Harold W. Gehman, a relié les dégâts à l’impact de la mousse sur l’aile gauche et déterminé que la destruction de l’aile par surchauffe avait causé la désintégration de Columbia. Il a publié son rapport le 2003-08-26.",
+  "events": [
+    {
+      "met": 0,
+      "label": "DÉCOLLAGE",
+      "note": "Columbia décolle du pas de tir 39A à 10:39 EST (15:39 UTC) le 2003-01-16.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.00095,
+      "label": "IMPACT DE MOUSSE",
+      "note": "Environ 82 secondes après le lancement, de la mousse isolante du réservoir externe heurte l’aile gauche.",
+      "type": "warning"
+    },
+    {
+      "met": 15.93,
+      "label": "COLUMBIA PERDUE",
+      "note": "Le 2003-02-01, vers 9:00 EST, Columbia et ses sept membres d’équipage sont perdus à la rentrée au-dessus de l’est du Texas, 16 minutes avant l’atterrissage prévu.",
+      "type": "warning"
+    }
+  ]
+}

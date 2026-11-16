@@ -1,21 +1,62 @@
 <!--
   DeepSkyPanel — detail panel for a deep-sky object in the /explore v2 immersive
-  view (Slice 4). Mirrors the shared Panel + detail-panel family. Shows the
-  object's type / distance / telescope + the curated gallery caption & credit,
-  a link back to the /gallery/deep-sky wall, and — for star-forming regions — a
-  "forming-system" gateway CTA into an exoplanet BodyScene. Gallery text is
+  view (Slice 4). On the shared UniversePanelBody (B3): the object's photo as the hero
+  (the same photo is the immersive main area), type / distance / telescope + the curated
+  gallery caption, a link back to the /gallery/deep-sky wall, and — for star-forming
+  regions — a "forming-system" gateway action into an exoplanet BodyScene. Gallery text is
   English-only (matching the #391 gallery); only the chrome is localized.
 -->
 <script lang="ts">
-  import Panel from './Panel.svelte';
-  import type { DeepSkyObject, DeepSkyCategory } from '$lib/data';
+  import UniversePanelBody from './UniversePanelBody.svelte';
+  import Chip from './Chip.svelte';
+  import type { DeepSkyObject, DeepSkyTextOverlay } from '$lib/data';
   import type { DeepSkyImage } from '$lib/deep-sky';
   import type { Snippet } from 'svelte';
   import * as m from '$lib/paraglide/messages';
+  import { getLocale } from '$lib/paraglide/runtime';
+  import {
+    deepSkyCategoryLabel,
+    deepSkyConstellation,
+    deepSkyDistance,
+    deepSkyTitle,
+  } from '$lib/explore/format';
+  import { dataSourceItems, recordLinks, sourceLink } from '$lib/catalogue';
+  import DataSources from './DataSources.svelte';
+  import ConstellationFinder from './ConstellationFinder.svelte';
+  import UniverseFacts, { type Fact } from './UniverseFacts.svelte';
+  import {
+    getConstellationLines,
+    getNamedStars,
+    getSunEphemeris,
+    getNamedStarI18n,
+    type NamedStar,
+  } from '$lib/data';
+  import { dataLoadFailed } from '$lib/data/core';
+  import { isZodiacConstellation } from '$lib/universe/iau-constellations';
+  import { showConstellationLines } from '$lib/universe/constellation-actions';
+  import {
+    altitudeBand,
+    bestMonths,
+    eyeBand,
+    figureVertices,
+    formatDec,
+    formatRa,
+    maxAltitude,
+    nearestNamedStar,
+    raDecToHyg,
+    toDate,
+    type SunEphemeris,
+  } from '$lib/universe/sky-finder';
+  import { viewerLatLon } from '$lib/viewer-location';
+
+  // The Sun table behind BEST MONTHS: a proper noun, never translated (like the Exoplanet Archive).
+  const HORIZONS = { label: 'JPL Horizons', url: 'https://ssd.jpl.nasa.gov/horizons/' };
 
   type Props = {
     object: DeepSkyObject | null;
     image?: DeepSkyImage | undefined;
+    /** The object's reviewed fact + bio in the reader's locale (null until loaded or when none exists). */
+    overlay?: DeepSkyTextOverlay | null;
     galleryHref: string;
     open: boolean;
     onClose: () => void;
@@ -25,159 +66,269 @@
      *  was beamed at M13). */
     children?: Snippet;
   };
-  let { object, image, galleryHref, open, onClose, onGateway, children }: Props = $props();
+  let {
+    object,
+    image,
+    overlay = null,
+    galleryHref,
+    open,
+    onClose,
+    onGateway,
+    children,
+  }: Props = $props();
 
-  const CAT_LABEL: Record<DeepSkyCategory, () => string> = {
-    galaxy: m.explore_ds_cat_galaxy,
-    'galaxy-cluster': m.explore_ds_cat_galaxy_cluster,
-    nebula: m.explore_ds_cat_nebula,
-    'planetary-nebula': m.explore_ds_cat_planetary_nebula,
-    'supernova-remnant': m.explore_ds_cat_supernova_remnant,
-    'star-forming-region': m.explore_ds_cat_star_forming_region,
-    'dark-nebula': m.explore_ds_cat_dark_nebula,
-    'star-cluster': m.explore_ds_cat_star_cluster,
-    'globular-cluster': m.explore_ds_cat_globular_cluster,
-    star: m.explore_ds_cat_star,
-    other: m.explore_ds_cat_other,
-  };
-  let categoryLabel = $derived(object ? CAT_LABEL[object.category]() : '');
-  let title = $derived(object?.name ?? '');
+  let categoryLabel = $derived(object ? deepSkyCategoryLabel(object.category) : '');
+  let title = $derived(object ? deepSkyTitle(object) : '');
+  let distance = $derived(
+    object?.dist_ly != null ? deepSkyDistance(object.dist_ly, getLocale()) : object?.dist_label,
+  );
+  let distSrc = $derived(sourceLink(object?.catalogue?.dist_ly));
+  let magSrc = $derived(sourceLink(object?.catalogue?.mag));
+  let sources = $derived(
+    dataSourceItems(object?.catalogue, (k) =>
+      k === 'dist_ly'
+        ? m.explore_ds_distance()
+        : k === 'mag'
+          ? `${m.star_label_apparent_mag()} (V)`
+          : null,
+    ),
+  );
+  let facts = $derived(
+    object
+      ? [
+          ...(distance
+            ? [
+                {
+                  label: m.explore_ds_distance(),
+                  value: distance,
+                  accent: true,
+                  source: distSrc ?? undefined,
+                },
+              ]
+            : []),
+          ...(object.mag !== null && magSrc
+            ? [
+                {
+                  label: `${m.star_label_apparent_mag()} (V)`,
+                  value: object.mag.toLocaleString(undefined, { maximumFractionDigits: 2 }),
+                  source: magSrc,
+                },
+              ]
+            : []),
+          ...(image?.telescope
+            ? [{ label: m.explore_ds_telescope(), value: image.telescope }]
+            : []),
+          ...(object.con
+            ? [{ label: m.explore_ds_constellation(), value: deepSkyConstellation(object.con) }]
+            : []),
+        ]
+      : [],
+  );
+  // IN THE SKY (L42, UXD-049): the figure of the object's constellation with the object ringed,
+  // and rows computed from its own RA / Dec / magnitude, the JPL Horizons Sun and the reader's
+  // latitude (src/lib/universe/sky-finder.ts).
+  let lastId = $state<string | null>(null);
+  let conVertices = $state<number[] | null>(null);
+  let namedStars = $state<NamedStar[]>([]);
+  let sun = $state<SunEphemeris | null>(null);
+  let hopNames = $state<Record<string, string>>({});
+  $effect(() => {
+    if (object && object.id !== lastId) {
+      lastId = object.id;
+      conVertices = null;
+      const forId = object.id;
+      const con = object.con;
+      void getConstellationLines()
+        .then((all) => {
+          if (object && object.id === forId) conVertices = figureVertices(all, con);
+        })
+        .catch(dataLoadFailed);
+      if (namedStars.length === 0) {
+        void getNamedStars()
+          .then((s) => (namedStars = s))
+          .catch(dataLoadFailed);
+      }
+      if (sun === null) {
+        void getSunEphemeris()
+          .then((s) => (sun = s))
+          .catch(dataLoadFailed);
+      }
+    }
+  });
+
+  // The object's own direction from RA / Dec in the HYG frame: its scene x, y, z is a different frame.
+  let skyDir = $derived(object ? raDecToHyg(object.ra, object.dec) : null);
+  let hop = $derived(skyDir ? nearestNamedStar(skyDir, namedStars, 15) : null);
+  $effect(() => {
+    const star = hop?.star;
+    const locale = getLocale();
+    if (!star) return;
+    const key = `${locale}:${star.id}`;
+    if (hopNames[key]) return;
+    void getNamedStarI18n(locale, star.id)
+      .then((o) => (hopNames = { ...hopNames, [key]: o?.name ?? star.proper }))
+      .catch(() => (hopNames = { ...hopNames, [key]: star.proper }));
+  });
+  let hopName = $derived(hop ? (hopNames[`${getLocale()}:${hop.star.id}`] ?? hop.star.proper) : '');
+
+  let skyFacts = $derived.by((): Fact[] => {
+    if (!object) return [];
+    const locale = getLocale();
+    const month = (i: number) =>
+      new Intl.DateTimeFormat(locale, { month: 'short', timeZone: 'UTC' }).format(
+        new Date(Date.UTC(2001, i, 15)),
+      );
+    const lat = viewerLatLon()?.latDeg;
+    // Both rows read the object's position at the date of the Sun table (J2000 precessed).
+    const eq = toDate(object.ra, object.dec);
+    const months = lat !== undefined && sun ? bestMonths(eq.ra, eq.dec, lat, sun) : null;
+    const alt = lat === undefined ? null : altitudeBand(maxAltitude(eq.dec, lat));
+    const eye = eyeBand(object.mag);
+    return [
+      {
+        label: m.star_label_constellation(),
+        value: deepSkyConstellation(object.con),
+        accent: true,
+      },
+      {
+        label: m.sky_label_position(),
+        value: `${formatRa(object.ra)} · ${formatDec(object.dec)}`,
+      },
+      ...(hop
+        ? [
+            {
+              label: m.sky_label_hop(),
+              value: m.sky_hop_value({
+                star: hopName,
+                deg: hop.sepDeg.toLocaleString(locale, { maximumFractionDigits: 1 }),
+              }),
+            },
+          ]
+        : []),
+      ...(months
+        ? [
+            {
+              label: m.sky_label_best_months(),
+              value:
+                months.from === months.to
+                  ? month(months.from)
+                  : m.sky_months_range({ from: month(months.from), to: month(months.to) }),
+              source: HORIZONS,
+            },
+          ]
+        : []),
+      ...(alt
+        ? [
+            {
+              label: m.sky_label_altitude(),
+              value:
+                alt === 'high'
+                  ? m.sky_alt_high()
+                  : alt === 'low'
+                    ? m.sky_alt_low()
+                    : m.sky_alt_never(),
+            },
+          ]
+        : []),
+      ...(eye
+        ? [
+            {
+              label: m.sky_label_eye(),
+              value:
+                eye === 'naked'
+                  ? m.sky_eye_naked()
+                  : eye === 'binoculars'
+                    ? m.sky_eye_binoculars()
+                    : m.sky_eye_telescope(),
+            },
+          ]
+        : []),
+    ];
+  });
+
+  let hero = $derived(
+    object?.photoKey && image
+      ? {
+          src: `/images/deep-sky/${object.photoKey}.thumb.jpg`,
+          full: `/images/deep-sky/${object.photoKey}.jpg`,
+        }
+      : null,
+  );
 </script>
 
-<Panel {open} {onClose} {title} mobileSheet="partial">
-  {#if object}
-    <div class="head">
-      <div class="kind">{categoryLabel} · {object.designation}</div>
-      <div class="name">{object.name}</div>
-    </div>
-
-    {#if image?.caption}<p class="prose">{image.caption}</p>{/if}
-
-    <div class="grid">
-      {#if object.dist_label}
-        <div class="cell">
-          <div class="cell-label">{m.explore_ds_distance()}</div>
-          <div class="cell-value teal">{object.dist_label}</div>
+<UniversePanelBody
+  {open}
+  {onClose}
+  {title}
+  entityId={object?.id ?? ''}
+  {hero}
+  kind={object ? `${categoryLabel} · ${object.designation}` : undefined}
+  name={object ? title : undefined}
+  lead={[overlay?.fact, overlay?.bio, image?.caption].filter((t): t is string => !!t)}
+  {facts}
+  idPrefix="deepsky"
+  tabs={[{ id: 'sky', label: m.panel_tab_sky(), visible: !!object?.con }]}
+>
+  {#snippet tabContent(active)}
+    {#if object && active === 'sky'}
+      {#if conVertices && skyDir}
+        <div class="sky-finder">
+          <ConstellationFinder
+            vertices={conVertices}
+            starXYZ={[skyDir[0], skyDir[1], skyDir[2]]}
+            marker="object"
+            label={deepSkyConstellation(object.con)}
+            hop={hop ? { xyz: [hop.star.x, hop.star.y, hop.star.z], label: hopName } : undefined}
+          />
+          <p class="finder-caption">
+            {m.star_finder_caption({ con: deepSkyConstellation(object.con) })}
+          </p>
         </div>
       {/if}
-      {#if image?.telescope}
-        <div class="cell">
-          <div class="cell-label">{m.explore_ds_telescope()}</div>
-          <div class="cell-value">{image.telescope}</div>
-        </div>
+      <UniverseFacts facts={skyFacts} />
+      {#if isZodiacConstellation(object.con)}
+        <p class="editorial">{m.star_zodiac_note({ con: deepSkyConstellation(object.con) })}</p>
       {/if}
-      {#if object.con}
-        <div class="cell">
-          <div class="cell-label">{m.explore_ds_constellation()}</div>
-          <div class="cell-value">{object.con}</div>
-        </div>
-      {/if}
-    </div>
-
-    {#if object.gatewaySystem && onGateway}
-      <div class="gateway">
-        <p class="gateway-note">{m.explore_ds_gateway_note()}</p>
-        <button
-          type="button"
-          class="gateway-btn"
-          onclick={() => onGateway?.(object.gatewaySystem!)}
-        >
-          {m.explore_ds_gateway()} →
-        </button>
+      <div class="ui-chip-group">
+        <Chip kind="action" onclick={showConstellationLines}>{m.star_show_constellations()}</Chip>
       </div>
     {/if}
-
-    {#if children}<div class="doors">{@render children()}</div>{/if}
-
-    {#if image?.credit}<p class="credit">{image.credit}</p>{/if}
-
-    <a class="gallery-link" href={galleryHref}>{m.explore_ds_gallery_link()} →</a>
-  {/if}
-</Panel>
+  {/snippet}
+  {#snippet actions()}
+    {#if object?.gatewaySystem && onGateway}
+      <Chip kind="action" onclick={() => onGateway?.(object.gatewaySystem!)}
+        >{m.explore_ds_gateway()} →</Chip
+      >
+    {/if}
+    {#if object}<Chip kind="link" href={galleryHref}>{m.explore_ds_gallery_link()} →</Chip>{/if}
+  {/snippet}
+  {#snippet extra()}
+    {#if object}
+      {#if object.gatewaySystem && onGateway}<p class="gateway-note">
+          {m.explore_ds_gateway_note()}
+        </p>{/if}
+      <DataSources variant="panel" items={sources} links={recordLinks(object.records)} />
+      {#if children}<div class="doors">{@render children()}</div>{/if}
+    {/if}
+  {/snippet}
+</UniversePanelBody>
 
 <style>
-  .head {
-    margin-bottom: 0.5rem;
+  .sky-finder {
+    margin-bottom: 12px;
   }
-  .kind {
-    font-size: 0.7rem;
-    letter-spacing: 0.08em;
+  .finder-caption {
+    font-family: var(--font-mono, 'Space Mono', monospace);
+    font-size: var(--size-label);
+    letter-spacing: 1px;
     text-transform: uppercase;
-    color: var(--muted, #9aa4bf);
-  }
-  .name {
-    font-size: 1.1rem;
-    font-weight: 700;
-  }
-  .prose {
-    font-size: 0.85rem;
-    line-height: 1.5;
-    color: var(--text, #e9eefc);
-    margin: 0.5rem 0 0.75rem;
-  }
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
-    gap: 0.5rem;
-    margin-bottom: 0.75rem;
-  }
-  .cell {
-    min-width: 0;
-    background: rgba(255, 255, 255, 0.04);
-    border-radius: 6px;
-    padding: 0.4rem 0.55rem;
-  }
-  .cell-label {
-    font-size: 0.62rem;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--muted, #9aa4bf);
-  }
-  .cell-value {
-    font-size: 0.82rem;
-    font-weight: 600;
-  }
-  .cell-value.teal {
-    color: #4ecdc4;
-  }
-  .gateway {
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-    padding-top: 0.6rem;
-    margin-bottom: 0.6rem;
+    color: var(--color-text-label);
+    margin: 4px 0 0;
   }
   .gateway-note {
-    font-size: 0.75rem;
-    color: var(--muted, #9aa4bf);
-    margin: 0 0 0.45rem;
+    font-size: var(--size-meta);
     line-height: 1.4;
-  }
-  .gateway-btn {
-    display: inline-block;
-    background: linear-gradient(135deg, #ff9bb0, #ffc850);
-    color: #1a1030;
-    font-weight: 700;
-    font-size: 0.8rem;
-    border: none;
-    border-radius: 6px;
-    padding: 0.5rem 0.85rem;
-    cursor: pointer;
-  }
-  .gateway-btn:hover {
-    filter: brightness(1.08);
-  }
-  .credit {
-    font-size: 0.68rem;
-    color: var(--muted, #9aa4bf);
-    margin: 0.4rem 0;
-  }
-  .gallery-link {
-    display: inline-block;
-    font-size: 0.8rem;
-    color: #4ecdc4;
-    text-decoration: none;
-    font-weight: 600;
-  }
-  .gallery-link:hover {
-    text-decoration: underline;
+    color: var(--color-text-label);
+    margin: 0 0 12px;
   }
 </style>

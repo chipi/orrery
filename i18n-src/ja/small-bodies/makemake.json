@@ -10,6 +10,10 @@
       "tab": "planets",
       "section": "kuiper-belt",
       "why": "マケマケは4番目に大きい既知のKBOであり、Hubbleが2016年にMK2を発見するまで、IAUが認定した矮小惑星の中で唯一の衛星未確認天体である。"
+    },
+    {
+      "tab": "orbits",
+      "section": "inclination"
     }
   ]
 }

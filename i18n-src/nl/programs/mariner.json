@@ -87,5 +87,19 @@
     "/mars": "Mars — de wereld die Mariner als eerste fotografeerde",
     "/programs/viking": "Viking — de landers waarvoor Mariner de weg verkende",
     "/mars?site=mariner9": "Mariner 9 in een baan om Mars"
+  },
+  "roster": {
+    "mission:mariner2": {
+      "note": "in december 1962 werd Mariner 2 het eerste ruimtevaartuig dat een andere planeet bereikte; het vond Venus niet als een tropische tweeling van de Aarde maar als een oven die honderden graden heet is"
+    },
+    "fleet:mariner-4": {
+      "note": "vloog in 1965 voorbij Mars en stuurde de eerste foto's ooit van een andere planeet van dichtbij terug — een bekraterde, kennelijk dode wereld die een einde maakte aan de oude dromen van Marskanalen en leven"
+    },
+    "fleet:mariner-9": {
+      "note": "werd het eerste ruimtevaartuig in een baan om een andere planeet, bracht heel Mars in kaart en onthulde gigantische vulkanen, een canyonstelsel zo groot als een continent en droge rivierbeddingen"
+    },
+    "mission:mariner10": {
+      "note": "het eerste ruimtevaartuig dat Mercurius bezocht, en het eerste dat de zwaartekracht van de ene planeet gebruikte om een andere te bereiken — de katapulttruc die elke missie in de diepe ruimte sindsdien heeft gebruikt"
+    }
   }
 }

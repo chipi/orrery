@@ -95,5 +95,27 @@
     "/programs/great-observatories": "大型轨道天文台计划 — JWST 延续的谱系",
     "/programs/ariane": "Ariane — 发射它的火箭",
     "/earth?site=jwst": "James Webb 空间望远镜"
+  },
+  "roster": {
+    "Conceived": {
+      "note": "接替Hubble的“下一代空间望远镜”的规划开始——这是一段长达25年的重新设计、延期和预算膨胀约十倍的传奇的开端",
+      "name": "构想"
+    },
+    "Nearly cancelled": {
+      "note": "进度落后多年、超支数十亿美元，该计划曾被国会列为取消对象，最终得以保住——其幸存之惊险不输本图集中任何一例",
+      "name": "险遭取消"
+    },
+    "Launch": {
+      "note": "圣诞节当天，ESA提供的Ariane 5完美发射了JWST——精准到望远镜节省的燃料足以使其预期寿命大约翻倍",
+      "name": "发射"
+    },
+    "The unfolding": {
+      "note": "两周内，344个单点故障步骤在距离任何维修希望一百万英里之外展开网球场大小的遮阳板和分块镜面——每一步都成功了",
+      "name": "展开"
+    },
+    "First images": {
+      "note": "首批全彩图像震惊世界——迄今拍摄的最深的宇宙红外景象，来自宇宙黎明时期的星系",
+      "name": "首批图像"
+    }
   }
 }

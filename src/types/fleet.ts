@@ -57,12 +57,14 @@ export interface FleetCrewMember {
   role: string;
   agency?: string;
   country?: string;
+  /** Not shown by the panel (ADR-053 amendment, UXD-035): the Missions list prints crew as names. */
   portrait_path?: string;
 }
 
 export interface FleetFlight {
   mission_id: string;
   flight_designation: string;
+  /** Not shown by the panel (ADR-053 amendment, UXD-035). */
   patch_path?: string;
   crew?: FleetCrewMember[];
 }

@@ -94,5 +94,31 @@
   "link_labels": {
     "/earth": "地球 — 轨道、交会对接与发射场",
     "/science/mission-phases/edl": "进入、下降与着陆"
+  },
+  "roster": {
+    "Gemini 1": {
+      "note": "无人结构+运载火箭测试",
+      "name": "Gemini 1"
+    },
+    "Gemini 2": {
+      "note": "无人亚轨道隔热罩测试",
+      "name": "Gemini 2"
+    },
+    "Gemini 5": {
+      "note": "在空中飞行八天——首次超过一周的飞行，证明乘组能够经受住往返月球的行程",
+      "name": "Gemini 5"
+    },
+    "Gemini 9A": {
+      "note": "那个没能打开的“愤怒的鳄鱼”目标；舱外活动让人精疲力竭，差点酿成灾难",
+      "name": "Gemini 9A"
+    },
+    "Gemini 10": {
+      "note": "完成对接，利用Agena的发动机变轨，并与第二个目标完成交会",
+      "name": "Gemini 10"
+    },
+    "Gemini 11": {
+      "note": "第一圈即实现直接上升交会；到达创纪录的1,374公里远地点",
+      "name": "Gemini 11"
+    }
   }
 }

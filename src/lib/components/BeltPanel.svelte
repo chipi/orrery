@@ -19,12 +19,19 @@
   import PanelHeroImage from './PanelHeroImage.svelte';
   import PanelLightbox from './PanelLightbox.svelte';
   import Panel from './Panel.svelte';
+  import EntityThumb from './EntityThumb.svelte';
+  import { beltMemberThumb } from '$lib/entity-thumb';
   import ScienceCard from './ScienceCard.svelte';
+  import { pickScienceLinks } from '$lib/science-links';
   import * as m from '$lib/paraglide/messages';
   import { page } from '$app/state';
-  import { goto } from '$app/navigation';
   import { localeFromPage, localHref } from '$lib/locale';
-  import { linkifyMission, loadMissionIndex } from '$lib/missions-linkify';
+  import {
+    linkifyMission,
+    loadMissionIndex,
+    onMissionLinkClick,
+    sortNewestFirst,
+  } from '$lib/missions-linkify';
   import type { ScienceTabId } from '$types/science';
   import { getBelts, getBeltGallery, getBeltI18n, type BeltEntry, type BeltI18n } from '$lib/data';
   import { dataLoadFailed } from '$lib/data/core';
@@ -41,8 +48,17 @@
     beltId: string | null;
     open: boolean;
     onClose: () => void;
+    /** A mission link opens the mission in place (the host's mission panel); absent: navigate. */
+    onMissionOpen?: (missionId: string) => void;
+    /** A mission is open over this panel (the host stacks it): this one is not painted. */
+    covered?: boolean;
+    /** Whether the scene has an object for a body id: only those members are links. */
+    bodyInScene?: (id: string) => boolean;
+    /** A member link selects the body in place (panel, ring, camera); absent: navigate. */
+    onSelectBody?: (id: string) => void;
   };
-  let { beltId, open, onClose }: Props = $props();
+  let { beltId, open, onClose, onMissionOpen, covered, bodyInScene, onSelectBody }: Props =
+    $props();
 
   let belts: BeltEntry[] = $state([]);
   let loaded = $state(false);
@@ -92,6 +108,7 @@
     };
   }
   let entry = $derived<BeltEntry | null>(baseEntry ? mergeOverlay(baseEntry, overlay) : null);
+  let scienceLinks = $derived(pickScienceLinks(entry?.science_sections));
 
   $effect(() => {
     if (baseEntry && baseEntry.id !== lastKey) {
@@ -115,29 +132,16 @@
     }
   });
 
-  // Cross-link table — the largest_members strings begin with a body
-  // name then a dash. If the leading word matches a small-body id we
-  // ship today (Ceres / Pluto / Eris / Haumea / Makemake), make the
-  // list item clickable; it deep-links into /explore?id=<small-body>
-  // which the existing $effect resolves to a SmallBodyPanel open.
-  // Quaoar etc. that aren't in our small-bodies.json render as plain
-  // text — fall back, not error.
-  const SMALL_BODY_IDS: Record<string, string> = {
-    ceres: 'ceres',
-    pluto: 'pluto',
-    eris: 'eris',
-    haumea: 'haumea',
-    makemake: 'makemake',
-  };
-  function memberLink(member: string): string | null {
+  // The largest_members strings begin with a body name then a dash. When the scene has an
+  // object for that name (UXD-019: Ceres, Vesta, Pluto, Eris, Haumea, Makemake, Arrokoth) the
+  // item is a link that selects the body in place; Pallas, Hygiea, Quaoar and the rest render as
+  // plain text until they have data.
+  function memberId(member: string): string | null {
     const firstWord = member
       .split(/[\s—–-]/)[0]
       ?.toLowerCase()
       .trim();
-    if (!firstWord) return null;
-    const sbId = SMALL_BODY_IDS[firstWord];
-    if (!sbId) return null;
-    return localHref(`/explore?id=${sbId}`);
+    return firstWord && bodyInScene?.(firstWord) ? firstWord : null;
   }
   // Member strings come from the locale overlay ("Церера — …"); the link is
   // keyed on the English name, so read it from the base list at the same
@@ -146,32 +150,25 @@
     const baseList = baseEntry?.largest_members;
     return baseList && baseList.length === entry?.largest_members.length ? baseList[i] : undefined;
   }
-  function openMember(href: string, event: Event) {
+  function openMember(id: string, event: Event) {
+    if (!onSelectBody) return;
     event.preventDefault();
-    void goto(href);
+    onSelectBody(id);
   }
-
-  // Cross-link to the matching /science/planets/<id>-belt article. Both
-  // belts ship as `asteroid-belt` and `kuiper-belt` under the existing
-  // PRD-024 planets tab. The path literals below are deliberately
-  // spelled out so the science-orphan-detector regex resolves them
-  // (`/science/planets/asteroid-belt` + `/science/planets/kuiper-belt`).
-  const SCIENCE_PATHS: Record<string, string> = {
-    asteroid: '/science/planets/asteroid-belt',
-    kuiper: '/science/planets/kuiper-belt',
-  };
-  let scienceHref = $derived(
-    entry && SCIENCE_PATHS[entry.id] ? localHref(SCIENCE_PATHS[entry.id]!) : null,
-  );
 </script>
 
-<Panel {open} {onClose} title={entry?.name ?? ''}>
+<Panel {open} {onClose} {covered} title={entry?.name ?? ''}>
+  {#snippet eyebrow()}
+    {#if entry}<div class="kind-row">
+        <span class="kind">{entry.kind}</span>
+      </div>{/if}
+  {/snippet}
+  {#snippet heading()}
+    {#if entry}<div class="name">{entry.name}</div>{/if}
+  {/snippet}
+
   {#if entry}
     <div class="head">
-      <div class="kind-row">
-        <span class="kind">{entry.kind}</span>
-      </div>
-      <div class="name">{entry.name}</div>
       <div class="stat-row">
         <div class="stat">
           <div class="stat-label">{m.belt_label_location()}</div>
@@ -221,14 +218,10 @@
           <div class="cell-label">{m.sbp_label_discovered()}</div>
           <div class="cell-value">{entry.discovered}</div>
         </div>
-        <a class="science-link" href={scienceHref}>
-          <span class="science-cta">{m.belt_science_cta()}</span>
-          <span class="science-label">/science/planets/{entry.id}-belt</span>
-        </a>
-        {#if (entry.science_sections ?? []).length > 0}
+        {#if scienceLinks.length > 0}
           <div class="science-section">
             <h3 class="library-heading">{m.panel_tab_science()}</h3>
-            {#each entry.science_sections ?? [] as sec (sec.tab + sec.section)}
+            {#each scienceLinks as sec (sec.tab + sec.section)}
               <ScienceCard tab={sec.tab as ScienceTabId} section={sec.section} why={sec.why} />
             {/each}
           </div>
@@ -240,7 +233,10 @@
               {#each entry.library as link (link.id)}
                 <li>
                   <a href={link.url} target="_blank" rel="noopener noreferrer">{link.label}</a>
-                  <span class="tier-pill tier-{link.tier}">{link.tier}</span>
+                  <span
+                    class={link.tier === 'core' ? 'ui-chip-label' : `tier-pill tier-${link.tier}`}
+                    >{link.tier}</span
+                  >
                 </li>
               {/each}
             </ul>
@@ -261,15 +257,20 @@
         <p class="editorial">{m.belt_members_intro({ name: entry.name })}</p>
         <ul class="member-list">
           {#each entry.largest_members as member, i (member)}
-            {@const href = memberLink(baseMember(i) ?? member)}
+            {@const id = memberId(baseMember(i) ?? member)}
             <li>
-              {#if href}
-                <a {href} onclick={(e) => openMember(href, e)} class="member-link">
+              <EntityThumb src={beltMemberThumb(baseMember(i) ?? member)} />
+              {#if id}
+                <a
+                  href={localHref(`/explore?id=${id}`)}
+                  onclick={(e) => openMember(id, e)}
+                  class="member-link"
+                >
                   {member}
                   <span class="member-cta" aria-hidden="true">{m.belt_member_open()}</span>
                 </a>
               {:else}
-                {member}
+                <span class="member-plain">{member}</span>
               {/if}
             </li>
           {/each}
@@ -279,11 +280,15 @@
           <p class="editorial empty">{m.panel_belt_no_spacecraft()}</p>
         {:else}
           <ul class="mission-list">
-            {#each entry.mission_visits as mission (mission)}
+            {#each sortNewestFirst(entry.mission_visits) as mission (mission)}
               {@const link = linkifyMission(mission)}
               <li>
                 {#if link}
-                  <a href={link.href} class="mission-link">{link.label}</a><span>{link.rest}</span>
+                  <a
+                    href={link.href}
+                    class="mission-link"
+                    onclick={(e) => onMissionLinkClick(e, link, onMissionOpen)}>{link.label}</a
+                  ><span>{link.rest}</span>
                 {:else}
                   {mission}
                 {/if}
@@ -311,7 +316,7 @@
   }
   .kind {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 8px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
     color: rgba(184, 164, 112, 0.85);
     text-transform: uppercase;
@@ -331,9 +336,9 @@
   }
   .stat-label {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
     text-transform: uppercase;
     margin-bottom: 4px;
   }
@@ -354,9 +359,9 @@
     border: none;
     border-bottom: 2px solid transparent;
     padding: 8px 4px;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 1.5px;
     cursor: pointer;
     transition:
@@ -367,25 +372,17 @@
     color: rgba(184, 164, 112, 0.9);
     border-color: rgba(184, 164, 112, 0.7);
   }
-  .editorial {
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 14px;
-    line-height: 1.5;
-    color: rgba(255, 255, 255, 0.85);
-    margin: 0 0 12px;
-  }
   .editorial.empty {
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--color-text-label);
   }
   .composition {
     margin: 0 0 10px;
   }
   .cell-label {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
     margin-bottom: 4px;
   }
   .cell-value {
@@ -403,44 +400,11 @@
      serif treatment elsewhere. */
   .caption {
     font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 12px;
+    font-style: italic; /* a1-keep: caption */
+    font-size: var(--size-caption);
     line-height: 1.5;
     color: rgba(255, 255, 255, 0.7);
     margin: 6px 0 0;
-  }
-  .science-link {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    margin: 16px 0 4px;
-    padding: 10px 12px;
-    border: 1px solid rgba(78, 205, 196, 0.35);
-    border-radius: 4px;
-    background: rgba(78, 205, 196, 0.06);
-    text-decoration: none;
-    transition:
-      border-color 120ms,
-      background 120ms;
-  }
-  .science-link:hover,
-  .science-link:focus-visible {
-    border-color: rgba(78, 205, 196, 0.7);
-    background: rgba(78, 205, 196, 0.14);
-    outline: none;
-  }
-  .science-cta {
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
-    letter-spacing: 1.8px;
-    color: rgba(78, 205, 196, 0.95);
-    text-transform: uppercase;
-  }
-  .science-label {
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
-    color: rgba(255, 255, 255, 0.55);
-    letter-spacing: 1.2px;
   }
   .member-list {
     margin: 0;
@@ -454,11 +418,20 @@
     padding: 6px 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     line-height: 1.4;
+    display: flex;
+    align-items: center;
+    gap: 10px;
   }
   .member-list li:last-child {
     border-bottom: none;
   }
+  .member-plain {
+    flex: 1;
+    min-width: 0;
+  }
   .member-link {
+    flex: 1;
+    min-width: 0;
     display: flex;
     align-items: baseline;
     justify-content: space-between;
@@ -469,13 +442,13 @@
   }
   .member-link:hover,
   .member-link:focus-visible {
-    color: rgba(78, 205, 196, 0.95);
+    color: var(--color-state);
     outline: none;
   }
   .member-cta {
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 1.4px;
-    color: rgba(78, 205, 196, 0.7);
+    color: var(--color-state);
     white-space: nowrap;
   }
   .learn-list {
@@ -495,7 +468,7 @@
     border-bottom: none;
   }
   .learn-list a {
-    color: rgba(78, 205, 196, 0.95);
+    color: var(--color-accent);
     font-size: 12px;
     text-decoration: none;
     flex: 1;
@@ -505,7 +478,7 @@
   }
   .tier-pill {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 8px;
+    font-size: var(--size-label);
     letter-spacing: 1.5px;
     text-transform: uppercase;
     padding: 2px 6px;
@@ -514,12 +487,8 @@
     background: rgba(255, 255, 255, 0.08);
   }
   .tier-intro {
-    background: rgba(78, 205, 196, 0.18);
-    color: rgba(78, 205, 196, 0.95);
-  }
-  .tier-core {
-    background: rgba(184, 164, 112, 0.18);
-    color: rgba(212, 188, 130, 0.95);
+    background: color-mix(in srgb, var(--color-accent) 18%, transparent);
+    color: var(--color-state);
   }
   .tier-extra {
     background: rgba(160, 160, 200, 0.14);

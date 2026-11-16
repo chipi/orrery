@@ -5,6 +5,8 @@
   import PanelHeroImage from './PanelHeroImage.svelte';
   import PanelLightbox from './PanelLightbox.svelte';
   import Panel from './Panel.svelte';
+  import Chip from './Chip.svelte';
+  import PanelActions from './PanelActions.svelte';
   import AgencyRow from './AgencyRow.svelte';
   import { page } from '$app/state';
   import { assetOrigin, assetUrl } from '$lib/asset-url';
@@ -26,11 +28,18 @@
   import { getVideosForEntity, type VideoProvenanceEntry } from '$lib/video-provenance';
   import ScienceChip from './ScienceChip.svelte';
   import ScienceCard from './ScienceCard.svelte';
+  import { pickScienceLinks, rankMissionScience } from '$lib/science-links';
   import WhyPopover from './WhyPopover.svelte';
   import { VehicleIcon, SpacecraftIcon, TrajectoryArrowIcon } from '$lib/components/icons';
   import type { ScienceTabId } from '$types/science';
   import { dataLoadFailed } from '$lib/data/core';
-  import { hasTrajectory } from '$lib/data/interstellar';
+  import {
+    getInterstellarCraft,
+    hasTrajectory,
+    type InterstellarCraft,
+  } from '$lib/data/interstellar';
+  import { INTERSTELLAR_CRAFT } from '$lib/explore/paths-legend';
+  import MissionMessageSection from './MissionMessageSection.svelte';
   import { missionBlueprint } from '$lib/blueprints';
   import { responsive } from '$lib/responsive-image.svelte';
   import { IMAGE_SIZES } from '$lib/image-sizes';
@@ -40,13 +49,19 @@
   // crowding in the strip.
   type Tab = 'overview' | 'gallery' | 'flight' | 'science';
 
+  // Surface-site lists by destination and locale, kept while the panel lives so a second Mars or
+  // Moon mission reads its cross-link before the first paint.
+  const siteListCache = new Map<string, SurfaceSite[]>();
+
   type Props = {
     mission: Mission | null;
     open: boolean;
     onClose: () => void;
     onFly?: (id: string) => void;
+    /** Set when the mission was opened over a body panel: the bar's back chip returns to it. */
+    onBack?: () => void;
   };
-  let { mission, open, onClose, onFly }: Props = $props();
+  let { mission, open, onClose, onFly, onBack }: Props = $props();
 
   let tab: Tab = $state('overview');
   let gallery: string[] = $state([]);
@@ -84,6 +99,16 @@
   // there. Resolved from the body's surface-site catalogue —
   // matches by either mission_id field (preferred) or id parity.
   let crossSite: SurfaceSite | null = $state(null);
+  // True from the open of a Mars or Moon mission until its site list has been read (L35): the
+  // action row holds its place, and its chips appear together, instead of the surface chip
+  // arriving late, shifting Fly to the right and pushing the hero down.
+  let crossSitePending = $state(false);
+  // The message an outbound craft carries (Voyagers, Pioneers, New Horizons), a section of the
+  // overview.
+  let craft = $state<InterstellarCraft | null>(null);
+  // True from the open of one of the five craft until its message is read: the section holds its
+  // place (MissionMessageSection with no craft) instead of being inserted late.
+  let craftPending = $state(false);
 
   // Cross-links to fleet entries. Wired from mission.fleet_refs (Phase
   // 3 backfill). When present, the vehicle / payload spec cells render
@@ -112,6 +137,9 @@
       videos = [];
       playerVideo = null;
       crossSite = null;
+      crossSitePending = false;
+      craft = null;
+      craftPending = INTERSTELLAR_CRAFT.has(mission.id);
       // Popularity signal: a mission detail was opened. `open` gates it so
       // a prefetched/derived mission that never shows isn't counted.
       if (open) trackMissionView(mission.id, page.url.pathname);
@@ -143,18 +171,39 @@
         sites.find((s) => s.id === mission!.id) ??
         null;
       const loc = localeFromPage(page);
-      if (mission.dest === 'MARS') {
-        void getMarsSites(loc)
+      const forId = mission.id;
+      const settle = (list: SurfaceSite[]) => {
+        if (mission && mission.id === forId && lastId === forId) {
+          crossSite = findSite(list);
+          crossSitePending = false;
+        }
+      };
+      const siteKey = `${mission.dest}:${loc}`;
+      const cachedSites = siteListCache.get(siteKey);
+      if (cachedSites) {
+        // Read before first paint: a list already fetched this session settles at once.
+        crossSite = findSite(cachedSites);
+      } else if (mission.dest === 'MARS' || mission.dest === 'MOON') {
+        crossSitePending = true;
+        void (mission.dest === 'MARS' ? getMarsSites(loc) : getMoonSites(loc))
           .then((list) => {
-            if (mission && mission.id === lastId) crossSite = findSite(list);
+            siteListCache.set(siteKey, list);
+            settle(list);
           })
-          .catch(dataLoadFailed);
-      } else if (mission.dest === 'MOON') {
-        void getMoonSites(loc)
-          .then((list) => {
-            if (mission && mission.id === lastId) crossSite = findSite(list);
+          .catch((err) => {
+            if (mission && mission.id === forId) crossSitePending = false;
+            dataLoadFailed(err);
+          });
+      }
+      if (INTERSTELLAR_CRAFT.has(forId)) {
+        void getInterstellarCraft(forId, loc)
+          .then((c) => {
+            if (mission && mission.id === forId && lastId === forId) craft = c;
           })
-          .catch(dataLoadFailed);
+          .catch(dataLoadFailed)
+          .finally(() => {
+            if (lastId === forId) craftPending = false;
+          });
       }
     }
   });
@@ -167,56 +216,28 @@
     mission != null && (mission.flight != null || mission.flight_data_quality != null),
   );
 
-  // Curated /science cross-section list for the SCIENCE tab. Driven by what
-  // flight fields the mission actually has — only show sections relevant to
-  // this mission's actual phases. ∆v + Hohmann + mission-types always show
-  // (every mission touches them); the others gate on flight data presence.
-  let missionScienceSections = $derived.by(() => {
-    const list: { tab: ScienceTabId; section: string }[] = [
-      { tab: 'propulsion', section: 'dv-budget' },
-      { tab: 'transfers', section: 'hohmann-transfer' },
-    ];
-    const f = mission?.flight;
-    if (f?.launch?.c3_km2_s2 != null) list.push({ tab: 'propulsion', section: 'c3' });
-    if (f?.launch != null) {
-      list.push({ tab: 'mission-phases', section: 'trans-x-injection' });
-      // Launch-vehicle context — every mission's launcher draws from
-      // these foundational topics (issue #303 close-out).
-      list.push({ tab: 'propulsion', section: 'thrust-and-twr' });
-      list.push({ tab: 'propulsion', section: 'rocket-stages' });
-      list.push({ tab: 'propulsion', section: 'engine-types' });
-      list.push({ tab: 'propulsion', section: 'engine-clustering' });
-      list.push({ tab: 'propulsion', section: 'fuels-and-oxidizers' });
-      list.push({ tab: 'history', section: 'tsiolkovsky-equation-1903' });
-      // Goddard's 1926 first liquid-fueled rocket — the engineering
-      // companion to Tsiolkovsky's 1903 equation, paired in every
-      // MissionPanel that surfaces a launch vehicle. (#303 close-out.)
-      list.push({ tab: 'history', section: 'goddard-liquid-rocket-1926' });
-    }
-    if (f?.cruise?.tcm_count != null && f.cruise.tcm_count > 0)
-      list.push({ tab: 'mission-phases', section: 'tcm' });
-    // Attitude during the cruise is held by star trackers.
-    if (f?.cruise != null) list.push({ tab: 'mission-phases', section: 'star-trackers' });
-    if (f?.arrival?.v_infinity_km_s != null) {
-      list.push({ tab: 'propulsion', section: 'v-infinity' });
-      // An interplanetary arrival: its launch window repeats with the synodic period.
-      list.push({ tab: 'scales-time', section: 'sidereal-synodic' });
-    }
-    if (f?.arrival?.orbit_insertion_dv_km_s != null) {
-      list.push({ tab: 'mission-phases', section: 'orbit-insertion' });
-      // Insertion burns are placed by true anomaly (periapsis = 0°).
-      list.push({ tab: 'orbits', section: 'true-anomaly' });
-    }
-    // Flight positions and dates are given in the J2000 frame.
-    if (f != null) list.push({ tab: 'scales-time', section: 'j2000' });
-    if (f?.arrival?.entry_velocity_km_s != null) {
-      list.push({ tab: 'mission-phases', section: 'edl' });
-      // EDL phase pairs with throttling-and-gimbaling (powered descent).
-      list.push({ tab: 'propulsion', section: 'throttling-and-gimbaling' });
-    }
-    list.push({ tab: 'mission-phases', section: 'mission-types' });
-    return list;
-  });
+  // The Fly chip needs flight data backing the /fly sim, a mission that flew (not PLANNED or
+  // CANCELLED) and a host route that wired onFly (/explore iconic missions, /missions).
+  let canFly = $derived(
+    mission != null &&
+      mission.status !== 'PLANNED' &&
+      mission.status !== 'CANCELLED' &&
+      hasFlightData &&
+      !!onFly,
+  );
+
+  // Ranked /science picks for the SCIENCE tab: the mission's class and defining phase, from language-neutral
+  // facts (science-links.ts). `crewed` lives in the index only, which this panel already loads.
+  let missionScienceSections = $derived(
+    mission
+      ? pickScienceLinks(
+          rankMissionScience({
+            ...mission,
+            crewed: mission.crewed ?? missionIndex.find((e) => e.id === mission.id)?.crewed,
+          }),
+        )
+      : [],
+  );
 
   // Map of `flight_data_quality !== "measured"` → caveat banner text.
   // null when measured / missing — banner hides entirely.
@@ -283,10 +304,17 @@
 
 <!-- grabFocus={false}: keep focus on the triggering iconic-legend row so
      arrow-key legend nav works immediately after the first click. -->
-<Panel {open} {onClose} grabFocus={false} title={mission?.name ?? mission?.id ?? ''}>
-  {#if mission}
-    <div class="head">
-      <AgencyRow agency={mission.agency} color={mission.color}>
+<Panel
+  {open}
+  {onClose}
+  grabFocus={false}
+  title={mission?.name ?? mission?.id ?? ''}
+  onShare={cardSpec ? () => (cardOpen = true) : undefined}
+  {onBack}
+>
+  {#snippet eyebrow()}
+    {#if mission}
+      <AgencyRow agency={mission.agency}>
         <span class="status status-{mission.status.toLowerCase()}"
           >{missionStatusLabel(mission.status)}</span
         >
@@ -296,6 +324,10 @@
           <span class="quality">{m.mp_data_quality_reconstructed()}</span>
         {/if}
       </AgencyRow>
+    {/if}
+  {/snippet}
+  {#snippet heading()}
+    {#if mission}
       <div class="name-row">
         <h1 class="name">{mission.name ?? mission.id}</h1>
         {#if badges[`mission:${mission.id}`]}
@@ -307,10 +339,57 @@
           />
         {/if}
       </div>
+    {/if}
+  {/snippet}
+
+  {#if mission}
+    <div class="head">
       {#if mission.type}
         <p class="type">{mission.type}</p>
       {/if}
     </div>
+
+    {#if canFly || crossSite || crossSitePending}
+      <!-- Fly-mission chip: only when the mission has flight data backing the /fly sim, did not
+           stay PLANNED / CANCELLED, and a host route wired onFly. (2026-06-17 user correction:
+           iconic missions without flight-params data skip it instead of linking into a broken
+           /fly sim.) While the surface site is still being read the row only holds its place. -->
+      <div
+        class="action-slot"
+        class:reserved={crossSitePending}
+        class:two-rows={crossSitePending && canFly}
+        class:withhold={crossSitePending && !canFly}
+      >
+        {#if !crossSitePending}
+          <PanelActions>
+            {#if crossSite}
+              {@const surfaceLabel =
+                crossSite.kind === 'orbiter'
+                  ? mission.dest === 'MARS'
+                    ? m.mp_surface_mars_orbit()
+                    : m.mp_surface_lunar_orbit()
+                  : mission.dest === 'MARS'
+                    ? m.mp_surface_mars_surface()
+                    : m.mp_surface_lunar_surface()}
+              <Chip
+                kind="link"
+                href={localHref(
+                  `/${mission.dest === 'MARS' ? 'mars' : 'moon'}?site=${crossSite.id}`,
+                )}
+                data-testid="surface-link"
+                data-audio-stage="mission-surface-link">{surfaceLabel}</Chip
+              >
+            {/if}
+            {#if canFly}
+              <Chip kind="action" onclick={flyMission} data-testid="fly-mission-btn">
+                {#snippet icon()}<TrajectoryArrowIcon />{/snippet}
+                {m.mp_fly_button()}
+              </Chip>
+            {/if}
+          </PanelActions>
+        {/if}
+      </div>
+    {/if}
 
     {#if gallery.length > 0}
       <PanelHeroImage
@@ -404,9 +483,8 @@
              rendered as cramped grid cells with thin underlined links
              which the user found "not seen well and links not clear"
              (2026-06-15). Promoted to button-style anchors matching the
-             "Fly this mission" .cta template but with a distinct teal
-             tint (so the secondary navigation CTAs don't compete with
-             the primary blue Fly action). Each carries a small inline
+             the action chips but with a distinct blue tint (they are
+             navigation cards, not actions). Each carries a small inline
              SVG glyph — rocket for the launch vehicle, satellite-with-
              antenna for the payload spacecraft — so the buttons read
              at a glance even before the text resolves. When the
@@ -415,10 +493,12 @@
              falls back to a non-clickable static frame in the same
              colour so the spec stays visible but doesn't suggest a
              dead link. -->
+        <!-- b1-keep: navigation cards (label + value), not actions -->
         <div class="spec-cta-bar">
           {#if mission.vehicle}
             {#if launcherRef}
               <a
+                // b1-keep: navigation card (label + value), not an action
                 class="spec-cta spec-cta--vehicle"
                 href={localHref(`/fleet?id=${launcherRef}`)}
                 data-testid="mission-vehicle-fleet-link"
@@ -434,6 +514,7 @@
               </a>
             {:else}
               <div
+                // b1-keep: navigation card (label + value), not an action
                 class="spec-cta spec-cta--vehicle is-static"
                 data-testid="mission-vehicle-static"
               >
@@ -450,6 +531,7 @@
           {#if mission.payload}
             {#if spacecraftRef}
               <a
+                // b1-keep: navigation card (label + value), not an action
                 class="spec-cta spec-cta--payload"
                 href={localHref(`/fleet?id=${spacecraftRef}`)}
                 data-testid="mission-payload-fleet-link"
@@ -465,6 +547,7 @@
               </a>
             {:else}
               <div
+                // b1-keep: navigation card (label + value), not an action
                 class="spec-cta spec-cta--payload is-static"
                 data-testid="mission-payload-static"
               >
@@ -486,6 +569,12 @@
 
         {#if mission.description}
           <p class="editorial">{mission.description}</p>
+        {/if}
+
+        {#if craft}
+          <MissionMessageSection {craft} />
+        {:else if craftPending}
+          <MissionMessageSection craftId={mission.id} />
         {/if}
 
         {#if hasTrajectory(mission.id)}
@@ -772,10 +861,10 @@
       {:else if tab === 'science'}
         <div class="science-tab">
           <p class="science-blurb">
-            {m.mp_science_blurb({ name: mission.name ?? mission.id, tab: m.mp_tab_flight() })}
+            {m.mp_science_blurb({ name: mission.name ?? mission.id })}
           </p>
           {#each missionScienceSections as { tab: t, section } (t + section)}
-            <ScienceCard tab={t} {section} />
+            <ScienceCard tab={t as ScienceTabId} {section} />
           {/each}
           {#if mission.links && mission.links.length > 0}
             <div class="science-library">
@@ -817,66 +906,6 @@
             {/snippet}
           </PanelGalleryGrid>
           <p class="gallery-credit">{missionGalleryCredit(mission.agency)}</p>
-        {/if}
-      {/if}
-    </div>
-
-    <!-- Fly-mission CTA — only render when the mission has actual
-         flight data backing the /fly sim (hasFlightData), is not still
-         in the PLANNED or CANCELLED bucket (neither flew), AND a host route wired the onFly
-         callback. (2026-06-17 user correction: "I didn't ask to add
-         fly this mission to all cards, you added them where it makes
-         no sense. I asked to make it visible on iconic mission on
-         explore page where it was not visible." → restore onFly on
-         /explore AND gate the button at the MissionPanel level on
-         hasFlightData so iconic missions without flight-params data
-         silently skip the CTA instead of linking into a broken /fly
-         sim.) -->
-    <div class="cta-bar">
-      <!-- #547 S1 — every mission carries its collectible card. -->
-      {#if cardSpec}
-        <button
-          type="button"
-          class="cta cta-card"
-          onclick={() => (cardOpen = true)}
-          data-testid="open-card-btn"
-        >
-          <span class="cta-text">{m.card_open_button()}</span>
-        </button>
-      {/if}
-      {#if (mission.status !== 'PLANNED' && mission.status !== 'CANCELLED' && hasFlightData && onFly) || crossSite}
-        {#if mission.status !== 'PLANNED' && mission.status !== 'CANCELLED' && hasFlightData && onFly}
-          <button type="button" class="cta" onclick={flyMission} data-testid="fly-mission-btn">
-            <!-- Trajectory-arc glyph — curved path with arrowhead.
-                 Replaces the prior "▶" play-character (2026-06-15
-                 user note: "invent small logo instead of play
-                 character"). Reads as "fly this path" — visually
-                 matches what /fly actually does: animate a curved
-                 mission trajectory. Inline SVG so it ships in the
-                 same bundle as the button + tints with currentColor. -->
-            <span class="cta-icon" aria-hidden="true">
-              <TrajectoryArrowIcon />
-            </span>
-            <span class="cta-text">{m.mp_fly_button()}</span>
-          </button>
-        {/if}
-        {#if crossSite}
-          {@const surfaceLabel =
-            crossSite.kind === 'orbiter'
-              ? mission.dest === 'MARS'
-                ? 'IN MARS ORBIT ↗'
-                : 'IN LUNAR ORBIT ↗'
-              : mission.dest === 'MARS'
-                ? 'ON THE SURFACE ↗'
-                : 'ON THE LUNAR SURFACE ↗'}
-          <a
-            class="surface-link"
-            href={localHref(`/${mission.dest === 'MARS' ? 'mars' : 'moon'}?site=${crossSite.id}`)}
-            data-testid="surface-link"
-            data-audio-stage="mission-surface-link"
-          >
-            {surfaceLabel}
-          </a>
         {/if}
       {/if}
     </div>
@@ -938,8 +967,8 @@
   .blueprint figcaption {
     margin: 8px 0 0;
     font-family: 'Crimson Pro', Georgia, serif;
-    font-style: italic;
-    font-size: 11.5px;
+    font-style: italic; /* a1-keep: caption */
+    font-size: var(--size-caption);
     color: rgba(255, 255, 255, 0.55);
   }
   .blueprint-title {
@@ -964,7 +993,7 @@
     background: rgba(136, 159, 231, 0.08);
   }
   .status-flown {
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--color-text-label);
     border-color: rgba(255, 255, 255, 0.15);
     background: rgba(255, 255, 255, 0.03);
   }
@@ -974,7 +1003,7 @@
     background: rgba(136, 159, 231, 0.08);
   }
   .status-cancelled {
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--color-text-label);
     border-color: rgba(255, 255, 255, 0.15);
     text-decoration: line-through;
   }
@@ -994,9 +1023,9 @@
   }
   .type {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 8px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
     margin: 0;
   }
 
@@ -1004,7 +1033,7 @@
 
   .grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 7px;
     margin-bottom: 14px;
   }
@@ -1019,9 +1048,9 @@
   }
   .cell-label {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 6px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
-    color: rgba(255, 255, 255, 0.25);
+    color: var(--color-text-label);
     margin-bottom: 3px;
   }
   .cell-value {
@@ -1031,7 +1060,7 @@
     font-weight: 700;
   }
   .cell-value.short {
-    font-size: 9px;
+    font-size: var(--size-label);
     font-weight: 400;
     color: rgba(255, 255, 255, 0.65);
   }
@@ -1055,9 +1084,34 @@
   /* Editorial lead paragraph (PRD-029 dispatch). Reads as a magazine
      standfirst — prominent roman serif, brighter than the italic
      .editorial below, set apart by a hairline. */
+  /* L35: the action row's place while the surface site is read — one chip tall (44 px on touch,
+     30 px on a fine pointer) plus the row's 12 px margin. */
+  .action-slot.reserved {
+    min-block-size: calc(44px + 12px);
+  }
+  /* A mission that can fly and is expected to carry the surface chip fills two rows at the panel's
+     width (the surface chip, then Fly and Share), and 47 of the 60 Moon and Mars missions have a
+     site, so the two-row height is the likelier one. Measured: Apollo 11 pushed the hero 36 px
+     with the one-row reservation. */
+  .action-slot.reserved.two-rows {
+    min-block-size: calc(2 * 44px + 6px + 12px);
+  }
+  /* A mission that cannot fly has no chip to show if its site list turns up nothing, so the row
+     then leaves and everything below it moves up. Until the list is read, that part is laid out
+     but not painted: the move happens while it cannot be seen. */
+  .action-slot.withhold ~ :global(*) {
+    visibility: hidden;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .action-slot.reserved {
+      min-block-size: calc(30px + 12px);
+    }
+    .action-slot.reserved.two-rows {
+      min-block-size: calc(2 * 30px + 6px + 12px);
+    }
+  }
   .dispatch {
-    font-family: 'Crimson Pro', serif;
-    font-size: 15px;
+    font-size: var(--size-lead);
     line-height: 1.65;
     color: rgba(255, 255, 255, 0.92);
     margin: 0 0 14px;
@@ -1067,29 +1121,20 @@
 
   .first {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.85);
     padding: 10px 12px;
-    background: rgba(68, 102, 255, 0.08);
-    border-left: 3px solid #4466ff;
+    background: color-mix(in srgb, var(--color-accent) 8%, transparent);
+    border-left: 3px solid var(--color-accent);
     border-radius: 2px;
     margin-bottom: 12px;
   }
 
-  .editorial {
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 13px;
-    color: rgba(255, 255, 255, 0.65);
-    line-height: 1.6;
-    margin: 0 0 14px;
-  }
-
   .credit {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 7px;
-    color: rgba(255, 255, 255, 0.25);
+    font-size: var(--size-label);
+    color: var(--color-text-label);
     line-height: 1.6;
     border-top: 1px solid rgba(255, 255, 255, 0.06);
     padding-top: 10px;
@@ -1120,91 +1165,9 @@
 
   /* .link-tier / .tier-* / .empty-tab moved to panel-tabs.css */
 
-  .cta-bar {
-    padding: 12px 0 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
-    flex-shrink: 0;
-    margin-top: 12px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-  .surface-link {
-    align-self: stretch;
-    text-align: center;
-    padding: 10px 12px;
-    background: rgba(193, 68, 14, 0.14);
-    border: 1px solid rgba(193, 68, 14, 0.55);
-    border-radius: 4px;
-    color: #ffd2c0;
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
-    letter-spacing: 2px;
-    font-weight: 700;
-    text-decoration: none;
-    transition:
-      background 120ms,
-      border-color 120ms,
-      color 120ms;
-  }
-  .surface-link:hover,
-  .surface-link:focus-visible {
-    background: rgba(193, 68, 14, 0.28);
-    border-color: #c1440e;
-    color: #fff;
-    outline: none;
-  }
-  .cta {
-    width: 100%;
-    min-height: 48px;
-    padding: 12px;
-    background: #1a33bb;
-    border: 1px solid rgba(68, 102, 255, 0.55);
-    border-radius: 4px;
-    color: #fff;
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
-    letter-spacing: 3px;
-    font-weight: 700;
-    cursor: pointer;
-    transition:
-      background 120ms,
-      border-color 120ms;
-    /* Icon + text alignment for the trajectory-arc glyph. */
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-  }
-  .cta:hover,
-  .cta:focus-visible {
-    background: #2244dd;
-    border-color: #4466ff;
-    outline: none;
-  }
-  /* #547 — the card CTA sits in the quieter register (the fly CTA keeps
-     the loud blue; two loud buttons stacked read as noise). */
-  .cta.cta-card {
-    background: rgba(255, 255, 255, 0.05);
-    border-color: rgba(255, 255, 255, 0.22);
-  }
-  .cta.cta-card:hover,
-  .cta.cta-card:focus-visible {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.45);
-  }
-  .cta .cta-icon {
-    flex: 0 0 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: rgba(200, 215, 255, 0.95);
-  }
-
-  /* Spec-CTA buttons — vehicle + payload navigation chips at the top
-     of the overview tab. Match .cta's general shape (uppercase mono
-     label, 4px radius, prominent) but a TEAL tint so they don't read
-     as a second primary action competing with the blue Fly button.
+  /* Spec-CTA buttons — vehicle + payload navigation cards in the
+     overview tab (uppercase mono label, 4px radius) in a blue tint so
+     they don't read as an action chip.
      Layout: side-by-side flex row on desktop; wraps to stacked column
      on narrow viewports via the bar's flex-wrap. Static fallback
      (when no fleet ref exists) keeps the same chrome but loses the
@@ -1232,18 +1195,15 @@
       background 120ms,
       border-color 120ms;
   }
-  /* Per-CTA hue split — kept in the SAME blue family as the
-     primary .cta (#1a33bb) so all three buttons read as one cohesive
-     style (2026-06-15 user note: "harmonize those 2 new buttons more
-     with color of fly button — let them all be in same style, fly
-     stays as it, we just need to adjust 2 new ones"). Vehicle leans
+  /* Per-CTA hue split — the two cards share a blue family (2026-06-15
+     user note: "let them all be in same style"). Vehicle leans
      darker/cooler (deep navy); payload leans lighter/warmer (cobalt
      with slight violet push). Same hue axis; just value + slight hue
      shift so they stay sibling-to-fly but distinguishable from each
      other at a glance. */
   /* Vehicle = deep indigo / navy (darkest end of the blue axis);
-     Payload = bright sky-blue with cyan push (lightest end). Both
-     stay in the blue family that anchors Fly (#1a33bb), but with a
+     Payload = bright sky-blue with blue push (lightest end). Both
+     stay in one blue family, but with a
      dramatic value + hue spread so the two read as obviously
      different at a glance (2026-06-15 user note: "they look almost
      the same, make more difference"). */
@@ -1262,18 +1222,18 @@
     color: rgba(160, 185, 245, 0.82);
   }
   .spec-cta--payload {
-    background: #1788d4;
-    border: 1px solid rgba(120, 200, 250, 0.7);
+    background: var(--color-accent);
+    border: 1px solid var(--color-accent-strong);
   }
   .spec-cta--payload:hover,
   .spec-cta--payload:focus-visible {
-    background: #2aa0ec;
-    border-color: #80c8ff;
+    background: var(--color-accent);
+    border-color: var(--color-accent-hover);
     outline: none;
   }
   .spec-cta--payload .spec-icon,
   .spec-cta--payload .spec-label {
-    color: rgba(220, 240, 255, 0.95);
+    color: #04040c;
   }
   .spec-cta.is-static {
     cursor: default;
@@ -1284,8 +1244,8 @@
     border-color: rgba(60, 80, 180, 0.6);
   }
   .spec-cta--payload.is-static:hover {
-    background: #1788d4;
-    border-color: rgba(120, 200, 250, 0.7);
+    background: var(--color-accent);
+    border-color: var(--color-accent-strong);
   }
   .spec-cta .spec-icon {
     flex: 0 0 20px;
@@ -1302,7 +1262,7 @@
     overflow: hidden;
   }
   .spec-cta .spec-label {
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 2.5px;
     font-weight: 700;
     text-transform: uppercase;
@@ -1347,7 +1307,7 @@
   }
   .flight-caveat {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     color: #ffc850;
     background: rgba(255, 200, 80, 0.18);
@@ -1361,9 +1321,7 @@
     padding-top: 4px;
   }
   .science-blurb {
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 13px;
+    font-size: var(--size-lead);
     line-height: 1.55;
     color: rgba(255, 255, 255, 0.7);
     margin: 0 0 14px;
@@ -1392,9 +1350,9 @@
   }
   .flight-rows dt {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 7px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
-    color: rgba(180, 200, 255, 0.55);
+    color: rgba(180, 200, 255, 0.6);
     align-self: center;
   }
   .flight-rows dd {
@@ -1411,10 +1369,8 @@
     color: #ffc850;
   }
   .flight-source {
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 10px;
-    color: rgba(180, 200, 255, 0.5);
+    font-size: var(--size-label);
+    color: rgba(180, 200, 255, 0.6);
     margin: 6px 0 0;
     line-height: 1.4;
   }
@@ -1432,18 +1388,18 @@
     gap: 12px;
     padding: 6px 10px;
     background: rgba(255, 255, 255, 0.025);
-    border-left: 2px solid rgba(78, 205, 196, 0.4);
+    border-left: 2px solid var(--color-accent-edge);
     border-radius: 2px;
   }
   .flight-events .event-met {
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
-    color: #4ecdc4;
+    color: var(--color-state);
     font-weight: 700;
   }
   .flight-events .event-type {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 1.5px;
     color: rgba(255, 255, 255, 0.85);
   }

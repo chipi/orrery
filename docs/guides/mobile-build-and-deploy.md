@@ -42,7 +42,7 @@ npm run open:ios       # npx cap open ios
 npm run open:android
 ```
 
-- **`build:mobile`** is a 5-step chain (each `MOBILE=1`, since env doesn't cross `&&`): `build` → `prune-streamed-assets.mjs` (strips `build/images`, `build/audio`, `build/credit-thumbs`, the `/diagrams` width rungs, the sitemaps (`sitemap.xml` + `sitemaps/`), the `/c/*` card stubs, the indexable entity pages (`/missions/<id>`, `/fleet/<id>`, `/moon|mars|venus/<site>`, `/explore/<id>`, `/lab/<id>`, each with its `__data.json`), the 13 non-default locale HTML trees + bundles + raw i18n, dead `.br/.gz`, and the 4K LOD textures) → `downscale-diagrams.mjs` → `stamp-splash-version.mjs` → `check-mobile-size-budget.mjs` (fails over 77 MB). Takes a ~1.8 GB naive build down to **~71 MB** (2026-10-17).
+- **`build:mobile`** is a 5-step chain (each `MOBILE=1`, since env doesn't cross `&&`): `build` → `prune-streamed-assets.mjs` (strips `build/images`, `build/audio`, `build/credit-thumbs`, the `/diagrams` width rungs, the sitemaps (`sitemap.xml` + `sitemaps/`), the `/c/*` card stubs, the indexable entity pages (`/missions/<id>`, `/fleet/<id>`, `/moon|mars|venus/<site>`, `/explore/<id>`, `/lab/<id>`, each with its `__data.json`), the 13 non-default locale HTML trees + bundles + raw i18n, dead `.br/.gz`, the build-time-only `static/data` files nothing fetches (`tech-bom`, `fleet-image-sources`, `image-approved`, `image-phashes`, `hero-concept-baseline`, `entity-thumbs`), and the 4K LOD textures) → `downscale-diagrams.mjs` → `stamp-splash-version.mjs` → `check-mobile-size-budget.mjs` (fails over 77 MB). Takes a ~1.8 GB naive build down to **~71 MB** (2026-10-17).
 - **Simulator UDIDs:** `xcrun simctl list devices available | grep iPhone`. Boot one: `xcrun simctl boot <udid>`.
 - **Screenshot (headless):** `xcrun simctl io <udid> screenshot /tmp/x.png` (iOS) · `adb exec-out screencap -p > /tmp/x.png` (Android).
 
@@ -74,8 +74,8 @@ npm run dev:ios                      # runs on the booted simulator
 - In dev the app runs as a **browser build** (`__MOBILE__` false), so images are
   origin-relative → served by the dev server. Nothing is pruned or streamed.
 - **Prod origin is configurable, not hardcoded** (`STREAM_ORIGIN` env → vite define): a
-  release build points at whatever host it'll be served from — GitHub Pages today, a VPS
-  IP next, a domain later — via one env var, e.g. `STREAM_ORIGIN=https://<host> npm run
+  release build points at whatever host it'll be served from — `https://www.orrerylearn.com` (the VPS) by default, a
+  local server in dev — via one env var, e.g. `STREAM_ORIGIN=https://<host> npm run
   build:mobile`. Web builds ignore it entirely (they stream origin-relative from their
   own host). See `src/lib/asset-url.ts`.
 
@@ -90,7 +90,7 @@ npm run dev:ios                      # runs on the booted simulator
 The naive build is ~2 GB — 10× the iOS 200 MB OTA cap. So (ADR-078 / ADR-079):
 
 - **Bundled on-device:** code, planet textures, core mission/site/fleet JSON, the **en-US** locale bundle.
-- **Streamed from `chipi.github.io/orrery`** (SW-cached on first view): all gallery/hero imagery, narration audio, the other 13 locale bundles.
+- **Streamed from `www.orrerylearn.com`** (the default `STREAM_ORIGIN`; SW-cached on first view): all gallery/hero imagery, narration audio, the other 13 locale bundles.
 
 The switch is `src/lib/asset-url.ts` — `assetOrigin` / `assetUrl()` / `streamedUrl()` / `localeBundleOrigin()` resolve to the CDN origin **only when `__MOBILE__` is true** (a Vite `define`, `MOBILE=1`). In every browser build `assetOrigin === base`, so URLs are byte-identical. When adding a new consumer of `/images/…` or `/audio/…`, **route it through `assetUrl`/`streamedUrl`** or it 404s on mobile (the panorama `swapTexture` bug was exactly this).
 
@@ -115,22 +115,15 @@ The switch is `src/lib/asset-url.ts` — `assetOrigin` / `assetUrl()` / `streame
 > Before asking Apple for App Store review, work through `ios/APP_STORE_TODO.md`
 > (blockers, privacy answers, store listing, review notes).
 
-CI compile-checks the native apps (`.github/workflows/native-build.yml`: Android debug APK, iOS simulator app) but does not sign or upload them; release builds are local. The version has one source, `package.json`: the PWA/footer read it, Android `versionName`/`versionCode` are computed from it in `android/app/build.gradle` (versionCode = major·10000 + minor·100 + patch), and `build:mobile` writes iOS `MARKETING_VERSION` (numeric x.y.z, as Apple requires) via `scripts/mobile/sync-native-version.mjs`. The iOS build number comes from fastlane per TestFlight upload. A version bump also regenerates the committed files that copy the version (`node scripts/mobile/build-offline-manifest.mjs`, `npm run build-tech-bom`) and adds a `## [X.Y.Z]` CHANGELOG section; `scripts/check-version-sync.mjs`, part of `validate-data`, fails until they all match `package.json`.
+CI compile-checks the native apps (`.github/workflows/native-build.yml`: Android debug APK, iOS simulator app) but does not sign or upload them; release builds are local. The version has one source, `package.json`: the PWA/footer read it, Android `versionName`/`versionCode` are computed from it in `android/app/build.gradle` (versionCode = major·10000 + minor·100 + patch), and `build:mobile` writes iOS `MARKETING_VERSION` (numeric x.y.z, as Apple requires) via `scripts/mobile/sync-native-version.mjs`. The iOS build number comes from fastlane per TestFlight upload. A version bump also regenerates the committed files that copy the version (`node scripts/mobile/build-offline-manifest.mjs`, `npm run build-tech-bom`) and adds a `## [X.Y.Z]` CHANGELOG section (the release PR also runs `npm run route-lastmod` for the sitemap `<lastmod>` dates; it carries no version, so `check-version-sync` does not gate it); `scripts/check-version-sync.mjs`, part of `validate-data`, fails until they all match `package.json`.
 
 ### Telemetry tier — bake it before `sync:mobile` (ADR-082)
 
-Native builds are local, so **the tier is whatever you `export` at build time.** Mobile is a *segment* of the ladder, not a separate app: `environment` = the tier, the `platform` tag (ios/android) separates the app from the browser (see [ADR-082 amendment](/adr/ADR-082)). Bake **both** Sentry and Umami for the tier, or the in-app telemetry is silent:
+Native builds are local, so **the tier is whatever you `export` at build time** (prod, or nothing for a silent build). Mobile is a *segment* of the ladder, not a separate app: `environment` = the tier, the `platform` tag (ios/android) separates the app from the browser (see [ADR-082 amendment](/adr/ADR-082)). Bake **both** Sentry and Umami for the tier, or the in-app telemetry is silent:
 
 ```sh
-# Simulator / staging test build — crashes → GlitchTip project 6, pageviews → staging Umami
-export PUBLIC_SENTRY_DSN='https://<staging-key>@telemetry.orrerylearn.com/6'
-export PUBLIC_SENTRY_ENVIRONMENT=staging
-export PUBLIC_UMAMI_HOST='https://analytics.orrerylearn.com'
-export PUBLIC_UMAMI_WEBSITE_ID='<staging-umami-site-id>'
-npm run sync:mobile
-
-# Release / App Store build — ALWAYS prod: GlitchTip project 18, prod Umami
-export PUBLIC_SENTRY_DSN='https://<prod-key>@telemetry.orrerylearn.com/4'
+# Release / App Store / TestFlight build — prod: GlitchTip project 18, prod Umami
+export PUBLIC_SENTRY_DSN='https://<prod-key>@telemetry.orrerylearn.com/18'
 export PUBLIC_SENTRY_ENVIRONMENT=prod
 export PUBLIC_UMAMI_HOST='https://analytics.orrerylearn.com'
 export PUBLIC_UMAMI_WEBSITE_ID='<prod-umami-site-id>'
@@ -139,7 +132,7 @@ npm run sync:mobile
 
 Keys are public (they ship in the bundle); strip the dashes from the GlitchTip key (see `.env.example`). Native crash *symbolication* is a separate layer — App Store Connect / Play Console consoles (ADR-082 amendment / the #428 note). `STREAM_ORIGIN` (asset host) is independent of the telemetry tier.
 
-> **Coming (ADR-083, pending — iOS thread):** internal / TestFlight / simulator builds get a **runtime "target environment" switcher** (staging↔prod) that repoints assets *and* telemetry together, so you won't rebuild to flip tiers. App Store release stays **prod-locked** (no switcher). Until it lands, the per-tier `export … && sync:mobile` above is how you switch.
+> **No staging tier (2026-11 no-staging decision).** The runtime staging↔prod switcher from ADR-083 was removed with the staging tier: every build targets the one baked tier. A simulator build that exports no `PUBLIC_SENTRY_*` / `PUBLIC_UMAMI_*` stays silent.
 
 #### Manual (Xcode)
 
@@ -192,7 +185,7 @@ in `Info.plist` skips the export-compliance prompt (the app uses only standard H
 ## 6 · Deep links + share
 
 - **Deep links:** `orrery://fly?mission=curiosity` → `/fly?mission=curiosity`. Scheme registered in `ios/App/App/Info.plist` (`CFBundleURLTypes`) + `AndroidManifest.xml` (intent-filter); handled in `src/lib/native/deep-links.ts`.
-- **Share:** the nav share button (`src/lib/share.ts`) → native share sheet on Capacitor, `navigator.share` on web, copy-link fallback. It shares a **public** `chipi.github.io/orrery/<route>` URL (not the internal `capacitor://localhost` one).
+- **Share:** the nav share button (`src/lib/share.ts`) → native share sheet on Capacitor, `navigator.share` on web, copy-link fallback. It shares a **public** `www.orrerylearn.com/<route>` URL (not the internal `capacitor://localhost` one).
 
 ---
 

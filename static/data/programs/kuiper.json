@@ -25,12 +25,14 @@
     {
       "name": "Production launches",
       "year": 2025,
-      "note": "the operational constellation begins deploying — years behind Starlink, and racing a regulatory clock to keep its spectrum"
+      "note": "the operational constellation begins deploying — years behind Starlink, and racing a regulatory clock to keep its spectrum",
+      "milestone": true
     },
     {
       "name": "Multi-rocket by design",
       "year": 2025,
-      "note": "Kuiper buys launches across many providers — Atlas V, Vulcan, Ariane 6, New Glenn — rather than depending on a rival's rocket the way it would on Falcon"
+      "note": "Kuiper buys launches across many providers — Atlas V, Vulcan, Ariane 6, New Glenn — rather than depending on a rival's rocket the way it would on Falcon",
+      "milestone": true
     }
   ],
   "related_programs": [

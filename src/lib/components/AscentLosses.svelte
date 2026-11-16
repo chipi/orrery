@@ -70,7 +70,7 @@
     width: 208px;
     padding: 11px 13px;
     background: linear-gradient(180deg, rgba(6, 12, 24, 0.82), rgba(4, 9, 18, 0.72));
-    border: 1px solid rgba(127, 223, 255, 0.22);
+    border: 1px solid color-mix(in srgb, var(--color-accent) 22%, transparent);
     border-radius: 7px;
     backdrop-filter: blur(7px);
     box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
@@ -87,7 +87,7 @@
     color: #eafaff;
     padding-bottom: 8px;
     margin-bottom: 8px;
-    border-bottom: 1px solid rgba(127, 223, 255, 0.15);
+    border-bottom: 1px solid var(--color-accent-soft);
   }
   .row {
     display: flex;
@@ -96,9 +96,9 @@
     margin-bottom: 6px;
   }
   .lbl {
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
-    color: #8fbfe0;
+    color: var(--color-accent-hover);
     width: 58px;
   }
   .bar {
@@ -116,7 +116,7 @@
   .total {
     margin-top: 4px;
     padding-top: 6px;
-    border-top: 1px solid rgba(127, 223, 255, 0.15);
+    border-top: 1px solid var(--color-accent-soft);
   }
   .total .lbl {
     color: #eafaff;
@@ -135,9 +135,9 @@
     font-weight: 700;
   }
   .unit {
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 0.5px;
-    color: #6ea6cc;
+    color: var(--color-accent-hover);
     margin-top: 6px;
   }
 </style>

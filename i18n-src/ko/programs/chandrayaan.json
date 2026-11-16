@@ -86,5 +86,16 @@
   "link_labels": {
     "/moon": "달 — 남극 착륙 지역",
     "/fleet?id=chandrayaan1": "함대 — Chandrayaan 탐사선"
+  },
+  "roster": {
+    "mission:chandrayaan1": {
+      "note": "인도의 첫 달 탐사 — 충돌체와 관측 장비가 달 표면 전역에서 물 분자의 뚜렷한 증거를 찾아, 달을 이해하는 방식을 바꿔 놓았다"
+    },
+    "mission:chandrayaan2": {
+      "note": "궤도선은 성공해 지금도 작동하지만 Vikram 착륙선은 마지막 하강 중 추락했다 — 남극에서의 공개적이고 쓰라린 아쉬운 실패"
+    },
+    "mission:chandrayaan3": {
+      "note": "설욕: Vikram이 달 남극 부근에 연착륙한다 — 사상 최초이며, 인도는 달에 착륙한 네 번째 나라가 되었다"
+    }
   }
 }

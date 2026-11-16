@@ -1,0 +1,47 @@
+{
+  "name": "Artemis I",
+  "vehicle": "SLS Block 1 + Orion (unbemannt)",
+  "payload": "Orion mit der instrumentierten Puppe Commander Moonikin Campos; zehn CubeSats",
+  "delta_v": "~0.43 km/s (nur DRO-Abflug- und Rückkehr-Vorbeiflugmanöver; Gesamtwert nicht angegeben)",
+  "type": "UNBEMANNTER TIEFRAUMTEST · GEFLOGEN",
+  "first": "Der erste Flug des Space Launch System, ein unbemannter Test von Orion um den Mond",
+  "description": "Artemis I war der erste Flug des Space Launch System der NASA und ein unbemannter Test des Raumfahrzeugs Orion um den Mond. SLS Block 1 hob am 2022-11-16 um 1:47 EST (06:47 UTC) vom Launch Complex 39B des Kennedy Space Center ab. Am 2022-11-21 flog Orion in etwa 130 km (80 Meilen) Höhe über der Mondoberfläche mit gezündetem Triebwerk am Mond vorbei, dem ersten von zwei Manövern für den Einschwenk in eine distante retrograde Umlaufbahn (DRO), und trat am 2022-11-25 in diese Bahn ein. Am 2022-11-26 überschritt es den Entfernungsrekord von Apollo 13 für ein Raumfahrzeug, das Menschen befördern kann: 248.655 Meilen von der Erde. Zu seinem weitesten Punkt war Orion 268.563 Meilen (etwa 432.000 km) von der Erde und 43.471 Meilen (etwa 70.000 km) jenseits der Mondrückseite entfernt. Eine Zündung von 1 Minute 45 Sekunden brachte es am 2022-12-01 aus der Bahn, und am 2022-12-05 lenkte ein Vorbeiflug mit 3 Minuten 27 Sekunden Brenndauer, wieder in etwa 130 km Höhe über der Oberfläche, es zur Erde zurück. Orion wasserte am 2022-12-11 um 12:40 EST im Pazifik vor San Diego, nach 25 Tagen, 10 Stunden und 53 Minuten. Auf dem Kommandantensitz saß Commander Moonikin Campos, eine instrumentierte Puppe im Orion Crew Survival System-Anzug. Orion erfüllte 161 Testziele; die Analyse des unerwarteten Abtrags der Hitzeschildschicht (Char Loss) floss in Artemis II ein.",
+  "events": [
+    {
+      "met": 0,
+      "label": "START",
+      "note": "SLS Block 1 hebt am 2022-11-16 um 06:47 UTC mit Orion ohne Besatzung von LC-39B ab.",
+      "type": "nominal"
+    },
+    {
+      "met": 5.26,
+      "label": "HINFLUG-VORBEIFLUG",
+      "note": "Vorbeiflug mit gezündetem Triebwerk am 2022-11-21 in etwa 130 km Höhe über der Oberfläche, nach einer Zündung von 2 Minuten 30 Sekunden.",
+      "type": "info"
+    },
+    {
+      "met": 9.63,
+      "label": "DRO-EINSCHWENKEN",
+      "note": "Orion tritt am 2022-11-25 in die distante retrograde Umlaufbahn ein.",
+      "type": "nominal"
+    },
+    {
+      "met": 15.63,
+      "label": "DRO-ABFLUG",
+      "note": "Eine Zündung von 1 Minute 45 Sekunden am 2022-12-01 (etwa 0.14 km/s) bringt Orion aus der Bahn.",
+      "type": "nominal"
+    },
+    {
+      "met": 19.41,
+      "label": "RÜCKKEHR-VORBEIFLUG",
+      "note": "Vorbeiflug mit gezündetem Triebwerk am 2022-12-05 in etwa 130 km Höhe über der Oberfläche; eine Zündung von 3 Minuten 27 Sekunden (etwa 0.29 km/s) lenkt Orion zur Erde zurück.",
+      "type": "info"
+    },
+    {
+      "met": 25.45,
+      "label": "WASSERUNG",
+      "note": "Pazifik vor San Diego am 2022-12-11 um 12:40 EST, nach 25 Tagen 10 Stunden 53 Minuten.",
+      "type": "nominal"
+    }
+  ]
+}

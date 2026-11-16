@@ -28,11 +28,20 @@
       "minItems": 1,
       "items": {
         "type": "object",
-        "required": ["hostId", "hip", "star", "planets"],
+        "required": ["hostId", "hip", "records", "star", "planets"],
         "additionalProperties": false,
         "properties": {
           "hostId": { "type": "string", "pattern": "^[a-z0-9-]+$" },
           "hip": { "type": ["integer", "null"] },
+          "records": {
+            "type": "object",
+            "required": ["exoplanet_archive", "simbad"],
+            "additionalProperties": false,
+            "properties": {
+              "exoplanet_archive": { "type": "string", "pattern": "^https://exoplanetarchive.ipac.caltech.edu/" },
+              "simbad": { "type": "string", "pattern": "^https://simbad.cds.unistra.fr/" }
+            }
+          },
           "star": {
             "type": "object",
             "required": ["name", "spect", "dist_pc", "bv", "con", "x", "y", "z", "iconic"],
@@ -64,7 +73,8 @@
                 "radius_earth",
                 "mass_earth",
                 "disc_year",
-                "disc_method"
+                "disc_method",
+                "record_url"
               ],
               "additionalProperties": false,
               "properties": {
@@ -77,7 +87,8 @@
                 "radius_earth": { "type": ["number", "null"], "exclusiveMinimum": 0 },
                 "mass_earth": { "type": ["number", "null"], "exclusiveMinimum": 0 },
                 "disc_year": { "type": ["integer", "null"] },
-                "disc_method": { "type": ["string", "null"] }
+                "disc_method": { "type": ["string", "null"] },
+                "record_url": { "type": "string", "pattern": "^https://exoplanetarchive.ipac.caltech.edu/overview/" }
               }
             }
           }

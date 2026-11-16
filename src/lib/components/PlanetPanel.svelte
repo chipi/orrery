@@ -5,14 +5,22 @@
   import PanelHeroImage from './PanelHeroImage.svelte';
   import PanelLightbox from './PanelLightbox.svelte';
   import Panel from './Panel.svelte';
-  import { base } from '$app/paths';
+  import Chip from './Chip.svelte';
+  import WorldLinkChip from './WorldLinkChip.svelte';
+  import PanelActions from './PanelActions.svelte';
   import { getPlanetGallery, getPlanets } from '$lib/data';
   import type { CardSpec } from '$lib/cards/card-spec';
   import { loadCardModules, type CardModules } from '$lib/cards/lazy-card';
-  import { linkifyMissionEntry, loadMissionIndex } from '$lib/missions-linkify';
+  import {
+    linkifyMissionEntry,
+    loadMissionIndex,
+    onMissionLinkClick,
+    sortNewestFirst,
+  } from '$lib/missions-linkify';
   import type { LocalizedPlanet } from '$types/planet';
   import * as m from '$lib/paraglide/messages';
   import ScienceCard from './ScienceCard.svelte';
+  import { pickScienceLinks } from '$lib/science-links';
   import ScienceChip from './ScienceChip.svelte';
   import WhyPopover from './WhyPopover.svelte';
   import { MU_SUN_AU3_YR2, AU_PER_YR_TO_KMS, AU_TO_KM } from '$lib/fly-physics-constants';
@@ -27,30 +35,19 @@
   // full long-form content. 4 tabs fit comfortably without overflow.
   type Tab = 'overview' | 'gallery' | 'technical' | 'missions';
 
-  // Curated /science cross-section list — the Keplerian-mechanics core +
-  // the planets-tab PRD-024 set. Same for every planet; the user's
-  // planet-specific values live on the TECHNICAL tab and the cards
-  // here unpack what those values mean.
-  const PLANET_SCIENCE_SECTIONS: { tab: ScienceTabId; section: string; why?: string }[] = [
-    { tab: 'orbits', section: 'keplerian-orbit' },
-    { tab: 'orbits', section: 'semi-major-axis' },
-    { tab: 'orbits', section: 'eccentricity' },
-    { tab: 'orbits', section: 'inclination' },
-    { tab: 'orbits', section: 'apsides' },
-    { tab: 'orbits', section: 'vis-viva' },
-    { tab: 'orbits', section: 'keplers-laws' },
-    { tab: 'planets', section: 'axial-tilt-and-seasons' },
-    { tab: 'planets', section: 'moons-of-the-system' },
-    { tab: 'planets', section: 'active-spacecraft-survey' },
-  ];
-
   type Props = {
     planet: LocalizedPlanet | null;
     open: boolean;
     onClose: () => void;
     onPlanMission?: () => void;
+    /** A mission link opens the mission in place (the host's mission panel); absent: navigate. */
+    onMissionOpen?: (missionId: string) => void;
+    /** A mission is open over this panel (the host stacks it): this one is not painted. */
+    covered?: boolean;
   };
-  let { planet, open, onClose, onPlanMission }: Props = $props();
+  let { planet, open, onClose, onPlanMission, onMissionOpen, covered }: Props = $props();
+  // Each planet's `science_sections` (locale overlay) are its curated /science cards; there is no default list.
+  let scienceLinks = $derived(pickScienceLinks(planet?.science_sections));
 
   let tab: Tab = $state('overview');
   let gallery: string[] = $state([]);
@@ -148,11 +145,22 @@
   );
 </script>
 
-<Panel {open} {onClose} title={planet?.name ?? ''}>
+<Panel
+  {open}
+  {onClose}
+  {covered}
+  title={planet?.name ?? ''}
+  onShare={cardSpec ? () => (cardOpen = true) : undefined}
+>
+  {#snippet eyebrow()}
+    {#if planet}<div class="type">{planet.type.toUpperCase()}</div>{/if}
+  {/snippet}
+  {#snippet heading()}
+    {#if planet}<div class="name">{planet.name}</div>{/if}
+  {/snippet}
+
   {#if planet}
     <div class="head">
-      <div class="type">{planet.type.toUpperCase()}</div>
-      <div class="name">{planet.name}</div>
       <div class="stat-row">
         <div class="stat">
           <div class="stat-label">{m.panel_label_from_sun()}</div>
@@ -165,10 +173,18 @@
       </div>
     </div>
 
+    <PanelActions>
+      <WorldLinkChip bodyId={planet.id} />
+      {#if planet.missionable && onPlanMission}
+        <Chip kind="action" onclick={onPlanMission}>{m.panel_action_plan()}</Chip>
+      {/if}
+    </PanelActions>
+
     {#if gallery.length > 0}
       <PanelHeroImage
         src={gallery[0]}
         name={planet.name}
+        heroClass="planet-hero"
         onOpen={() => {
           if (Date.now() - panelOpenedAt < 400) return;
           lightboxSrc = gallery[0]!;
@@ -195,10 +211,10 @@
       {#if tab === 'overview'}
         <p class="editorial">{planet.fact}</p>
         <p class="editorial">{planet.bio}</p>
-        {#if (planet.science_sections ?? PLANET_SCIENCE_SECTIONS).length > 0}
+        {#if scienceLinks.length > 0}
           <div class="science-section">
             <h3 class="library-heading">{m.panel_tab_science()}</h3>
-            {#each planet.science_sections ?? PLANET_SCIENCE_SECTIONS as entry (entry.tab + entry.section)}
+            {#each scienceLinks as entry (entry.tab + entry.section)}
               <ScienceCard
                 tab={entry.tab as ScienceTabId}
                 section={entry.section}
@@ -243,7 +259,7 @@
                 label={m.chip_label_inclination()}
               />
             </div>
-            <div class="cell-value teal">{planet.incl.toFixed(2)}°</div>
+            <div class="cell-value accent">{planet.incl.toFixed(2)}°</div>
           </div>
           <div class="cell">
             <div class="cell-label">
@@ -325,11 +341,12 @@
           <p class="empty-tab">{m.panel_planet_no_missions()}</p>
         {:else}
           <ul class="mission-list">
-            {#each planet.mission_visits ?? [] as entry (entry)}
+            {#each sortNewestFirst(planet.mission_visits ?? []) as entry (entry)}
               <li>
                 {#each linkifyMissionEntry(entry) as seg, i (i)}{#if seg.href}<a
                       href={seg.href}
-                      class="mission-link">{seg.text}</a
+                      class="mission-link"
+                      onclick={(e) => onMissionLinkClick(e, seg, onMissionOpen)}>{seg.text}</a
                     >{:else}{seg.text}{/if}{/each}
               </li>
             {/each}
@@ -351,36 +368,6 @@
     </div>
 
     <PanelLightbox src={lightboxSrc} images={gallery} onClose={() => (lightboxSrc = null)} />
-
-    {#if planet.missionable && onPlanMission}
-      <div class="cta-bar">
-        <button type="button" class="cta" onclick={onPlanMission}>
-          {m.panel_plan_mission_cta({ name: planet.name.toUpperCase() })}
-        </button>
-      </div>
-    {/if}
-
-    {#if planet.id === 'earth' || planet.id === 'mars'}
-      <div class="cta-bar">
-        <a class="cta cta-secondary" href="{base}/{planet.id}">
-          {m.panel_explore_surface_cta({ name: planet.name.toUpperCase() })}
-        </a>
-      </div>
-    {/if}
-
-    <!-- #547 S5b — every planet carries its collectible card. -->
-    {#if cardSpec}
-      <div class="cta-bar">
-        <button
-          type="button"
-          class="cta cta-card"
-          onclick={() => (cardOpen = true)}
-          data-testid="open-card-btn"
-        >
-          {m.card_open_button()}
-        </button>
-      </div>
-    {/if}
   {/if}
 </Panel>
 
@@ -396,9 +383,9 @@
   }
   .type {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 8px;
+    font-size: var(--size-label);
     letter-spacing: 3px;
-    color: rgba(255, 255, 255, 0.25);
+    color: var(--color-text-label);
     margin-bottom: 4px;
   }
   .name {
@@ -423,9 +410,9 @@
   .stat-label,
   .cell-label {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 6px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
-    color: rgba(255, 255, 255, 0.25);
+    color: var(--color-text-label);
     margin-bottom: 3px;
   }
   .stat-value,
@@ -435,8 +422,8 @@
     color: var(--color-text);
     font-weight: 700;
   }
-  .cell-value.teal {
-    color: #4ecdc4;
+  .cell-value.accent {
+    color: var(--color-state);
   }
   .cell-value.gold {
     color: #ffc850;
@@ -444,17 +431,9 @@
 
   /* .tabs / .tab-content moved to src/lib/styles/panel-tabs.css (v0.1.10) */
 
-  .editorial {
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 13px;
-    color: rgba(255, 255, 255, 0.6);
-    line-height: 1.6;
-    margin: 0 0 12px 0;
-  }
   .grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 7px;
     margin-bottom: 12px;
   }
@@ -474,9 +453,9 @@
   }
   .shape-meta {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 6px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
-    color: rgba(255, 255, 255, 0.22);
+    color: var(--color-text-label);
     margin-bottom: 6px;
   }
   .shape-display {
@@ -484,88 +463,29 @@
     align-items: center;
     gap: 12px;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 8px;
-    color: rgba(255, 255, 255, 0.4);
+    font-size: var(--size-label);
+    color: var(--color-text-label);
   }
   .shape-ellipse {
     width: var(--shape-w, 70px);
     height: 26px;
-    border: 1.5px solid #4466ff;
+    border: 1.5px solid var(--color-accent);
     border-radius: 50%;
     flex-shrink: 0;
   }
 
   .dist-row {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 8px;
-    color: rgba(255, 255, 255, 0.35);
+    font-size: var(--size-label);
+    color: var(--color-text-label);
     margin-bottom: 10px;
   }
 
   .src {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 7px;
-    color: rgba(255, 255, 255, 0.15);
+    font-size: var(--size-label);
+    color: var(--color-text-label);
     line-height: 1.8;
-  }
-
-  .cta-bar {
-    padding: 12px 0 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
-    flex-shrink: 0;
-    margin-top: 12px;
-  }
-  .cta {
-    width: 100%;
-    min-height: 44px;
-    padding: 12px;
-    background: #1a33bb;
-    border: 1px solid rgba(68, 102, 255, 0.55);
-    border-radius: 4px;
-    cursor: pointer;
-    color: #fff;
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
-    letter-spacing: 3px;
-    font-weight: 700;
-    transition:
-      background 120ms,
-      border-color 120ms;
-  }
-  .cta:hover,
-  .cta:focus-visible {
-    background: #2244dd;
-    border-color: #4466ff;
-    outline: none;
-  }
-  /* Secondary CTA — anchor styled like the primary button, but with
-     a subdued surface so it reads as the second option below the
-     primary mission-planning CTA (or as a standalone link when the
-     primary isn't shown). */
-  .cta-secondary {
-    background: transparent;
-    border-color: rgba(68, 102, 255, 0.55);
-    color: #dde4ff;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .cta-secondary:hover,
-  .cta-secondary:focus-visible {
-    background: rgba(68, 102, 255, 0.15);
-    border-color: #4466ff;
-    color: #fff;
-  }
-  /* #547 — card CTA in the quiet register (mirrors the missions panel). */
-  .cta.cta-card {
-    background: rgba(255, 255, 255, 0.05);
-    border-color: rgba(255, 255, 255, 0.22);
-  }
-  .cta.cta-card:hover,
-  .cta.cta-card:focus-visible {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.45);
   }
 
   /* GALLERY + LEARN tab CSS moved to src/lib/styles/panel-tabs.css (v0.1.10) */

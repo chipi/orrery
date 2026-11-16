@@ -3,7 +3,7 @@
  * v0.2 §epochs / RFC-016 v0.2 OQ-17).
  *
  * Used by:
- *   - EpochTimelineStrip.svelte (renders the bands)
+ *   - EpochTimelineStrip.svelte (renders the nine bands as equal tiles; the years only label them)
  *   - /fleet (filters entries by their explicit `epoch` field)
  *   - /missions (filters by year-range membership — missions have no
  *     `epoch` field, only `year`)
@@ -27,9 +27,9 @@ export interface EpochBand {
   yearEnd: number;
   /**
    * Narrative accent colour — picked to evoke each era's identity
-   * (Sputnik amber, Cold War red, Apollo gold, Skylab cyan, Mir
-   * purple, ISS silver, Falcon teal, Artemis amber, Mars rust). Used
-   * by EpochTimelineStrip for hover + active states.
+   * (Sputnik amber, Cold War red, Apollo gold, Skylab magenta, Mir
+   * purple, ISS silver, Falcon green, Artemis amber, Mars rust). Used
+   * by EpochTimelineStrip for the dot of a tile.
    *
    * Verified WCAG-AA against the dark page background (~#0a0a16) at
    * the 9.5 / 11 px label sizes the strip renders — every hue here
@@ -46,8 +46,10 @@ export const EPOCH_BANDS: readonly EpochBand[] = [
   {
     id: 'first-stations',
     yearStart: 1973,
-    yearEnd: 1986,
-    color: '#5fc4e0',
+    // 1981-1986 belong to Shuttle & Mir (the later band wins the shared years, UXD-048), so the
+    // tile's label and its count both stop at 1980.
+    yearEnd: 1980,
+    color: '#da47eb',
   },
   {
     id: 'shuttle-and-mir',
@@ -60,7 +62,7 @@ export const EPOCH_BANDS: readonly EpochBand[] = [
     id: 'commercial-era',
     yearStart: 2011,
     yearEnd: 2024,
-    color: '#4ecdc4',
+    color: '#8fd16a',
   },
   { id: 'lunar-return', yearStart: 2024, yearEnd: 2030, color: '#ffb14e' },
   // Mars Era — starts at the first planned crewed-Mars / sample-return
@@ -90,13 +92,28 @@ export const AXIS_MAX = 2040;
  * why on missions it is not — I would expect to see same on missions".)
  */
 export function epochForYear(year: number): FleetEpoch | null {
-  for (const band of EPOCH_BANDS) {
-    if (year >= band.yearStart && year <= band.yearEnd) return band.id;
+  // Where two bands share more than a boundary year the band that starts later wins (UXD-048,
+  // operator 2026-11-15). First Stations now ends at 1980, so no two bands overlap today; the
+  // rule stays for a future band edit.
+  const hits = EPOCH_BANDS.filter((b) => year >= b.yearStart && year <= b.yearEnd);
+  if (hits.length > 1) {
+    const [a, b] = hits;
+    if (Math.min(a.yearEnd, b.yearEnd) - Math.max(a.yearStart, b.yearStart) > 1) return b.id;
   }
+  if (hits.length > 0) return hits[0].id;
   // Past the last band's end — bucket into the final band (Mars Era)
   // so a 2045 mission still counts somewhere instead of vanishing.
   if (year >= EPOCH_BANDS[EPOCH_BANDS.length - 1].yearStart) {
     return EPOCH_BANDS[EPOCH_BANDS.length - 1].id;
   }
   return null;
+}
+
+/**
+ * Whether an era tile can be chosen: an era with no entries on the page stays in the strip (the
+ * nine eras read the same everywhere) but is dimmed and not selectable. An era that is already
+ * chosen stays selectable, so a link into an empty era can still be cleared.
+ */
+export function eraSelectable(count: number | undefined, chosen: boolean): boolean {
+  return chosen || (count ?? 0) > 0;
 }

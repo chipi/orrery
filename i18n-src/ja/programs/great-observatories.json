@@ -93,5 +93,15 @@
     "/explore": "探索 — これらの望遠鏡が明らかにしたディープスカイ天体",
     "/earth?site=hubble": "地球低軌道の Hubble",
     "/earth?site=chandra": "Chandra X 線観測衛星"
+  },
+  "roster": {
+    "Compton Gamma Ray Observatory": {
+      "note": "当初の4基のうちのガンマ線担当——2000年に意図的に軌道離脱させられるまで、宇宙で最も激しい現象を地図化した",
+      "name": "Comptonガンマ線観測衛星"
+    },
+    "Nancy Grace Roman": {
+      "note": "NASAの系譜における次の一基——Hubbleの100倍を超える視野を持つ広視野赤外線サーベイ望遠鏡で、宇宙の一角を見つめるのではなく宇宙を地図化するために作られた",
+      "name": "Nancy Grace Roman"
+    }
   }
 }

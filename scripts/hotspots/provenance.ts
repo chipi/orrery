@@ -166,10 +166,8 @@ export function buildCtxMosaicProvenanceEntry(input: {
  * the JAXA-OPEN license precedent; the credits page groups these into a
  * dedicated "JAXA · Kaguya TC" section via the `instrument` field.
  *
- * No spacecraft_id is set: there is no kaguya/selene orbiter site to
- * deep-link the 📡 credit chip to yet, so the section groups by
- * instrument but the per-row satellite chip stays off (avoids a dead
- * link). Add a Kaguya orbiter site later to light the chip up.
+ * `spacecraft_id: 'kaguya'` deep-links the 📡 credit chip to the Kaguya
+ * orbiter site on /moon.
  */
 export function buildKaguyaTcProvenanceEntry(input: {
   outputPath: string;
@@ -205,6 +203,7 @@ export function buildKaguyaTcProvenanceEntry(input: {
     nasa_id: input.productId,
     fetched_at: new Date().toISOString(),
     spacecraft_name: 'Kaguya (SELENE)',
+    spacecraft_id: 'kaguya',
     instrument: 'Kaguya TC',
   };
 }

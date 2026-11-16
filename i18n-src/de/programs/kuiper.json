@@ -88,5 +88,19 @@
     "/programs/starlink": "Starlink — die Konstellation, der es nacheifert",
     "/earth": "Erde — Umlaufbahnen und die enge niedrige Umlaufbahn",
     "/earth?site=kuiper": "Die Kuiper-Konstellation"
+  },
+  "roster": {
+    "KuiperSat prototypes": {
+      "note": "zwei Testsatelliten erreichen den Orbit, um das Design vor Beginn der Serienfertigung zu bestätigen",
+      "name": "KuiperSat-Prototypen"
+    },
+    "Production launches": {
+      "note": "die operative Konstellation beginnt mit dem Aufbau — Jahre hinter Starlink und im Wettlauf mit einer regulatorischen Frist, um ihr Spektrum zu behalten",
+      "name": "Serienstarts"
+    },
+    "Multi-rocket by design": {
+      "note": "Kuiper kauft Starts bei vielen Anbietern — Atlas V, Vulcan, Ariane 6, New Glenn — statt wie bei Falcon von der Rakete eines Rivalen abzuhängen",
+      "name": "Bewusst mehrere Raketen"
+    }
   }
 }

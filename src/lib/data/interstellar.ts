@@ -1,5 +1,5 @@
 /**
- * #410 — interstellar-craft message data for the /explore MessagePanel.
+ * #410 — interstellar-craft message data for the MissionPanel's message section.
  *
  * Composes the existing iconic-trajectory JSON (status: current distance,
  * interstellar-since, heading) with the culture-door catalogue (the message
@@ -59,7 +59,7 @@ export interface InterstellarCraft {
 }
 
 /**
- * Load the message-panel record for one interstellar craft by its trajectory id
+ * Load the message record for one interstellar craft by its trajectory id
  * (voyager-1/-2, pioneer-10/-11, new-horizons). Returns null if the trajectory
  * is missing or isn't an interstellar-bound craft.
  */

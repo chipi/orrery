@@ -1,16 +1,15 @@
 <script lang="ts">
   import EntityIndex from '$lib/components/EntityIndex.svelte';
+  import Chip from '$lib/components/Chip.svelte';
+  import ChipGroup from '$lib/components/ChipGroup.svelte';
   let { data } = $props();
   import { metaDescription } from '$lib/seo';
-  import { responsive } from '$lib/responsive-image.svelte';
-  import { IMAGE_SIZES } from '$lib/image-sizes';
   import { onMount, untrack } from 'svelte';
   import { canonicalId } from '$lib/data/retired-ids';
   import { page } from '$app/state';
   import { audio } from '$lib/audio-state.svelte';
   import { afterNavigate, goto } from '$app/navigation';
   import { trackCardNavigation, seedBackTarget } from '$lib/card-chain.svelte';
-  import { assetUrl } from '$lib/asset-url';
   import { getFleet, getFleetGallery, getFleetIndex, getBadges } from '$lib/data';
   import type {
     FleetCategory,
@@ -20,17 +19,23 @@
     FleetStatus,
   } from '$types/fleet';
   import EpochTimelineStrip from '$lib/components/EpochTimelineStrip.svelte';
+  import EntityCard from '$lib/components/EntityCard.svelte';
+  import EntityList from '$lib/components/EntityList.svelte';
+  import AgencyFilterRow from '$lib/components/AgencyFilterRow.svelte';
+  import BrowseToolbar from '$lib/components/BrowseToolbar.svelte';
+  import { epochLabel } from '$lib/epoch-label';
   import FleetEntryPanel from '$lib/components/FleetEntryPanel.svelte';
   import VisuallyHiddenH1 from '$lib/components/VisuallyHiddenH1.svelte';
   import { LINEUP_LIVE, lineupKindFor, type LineupKind } from '$lib/three/lineup/lineup-kind';
   import { handleGridKeydown } from '$lib/grid-keyboard-nav';
-  import { agencyLogo, agencyFullName, splitAgencies } from '$lib/agencies';
+  import { agencyDataColor, splitAgencies } from '$lib/agencies';
   import { matchesQuery } from '$lib/list-search';
   import { trackFilterChange, trackSearch } from '$lib/analytics';
   import * as m from '$lib/paraglide/messages';
   import { countryLabel } from '$lib/country-label';
   import { fleetStatusLabel } from '$lib/status-label';
-  import { pickHero, loadHeroOverrides, heroPositionFor } from '$lib/image-hero';
+  import { fleetCategoryLabel } from '$lib/fleet-category-label';
+  import { pickHero, loadHeroOverrides } from '$lib/image-hero';
   import { cue } from '$lib/sensory/feedback';
   import {
     type RemoteData,
@@ -42,7 +47,6 @@
   } from '$lib/types/remote-data';
   import { dataLoadFailed } from '$lib/data/core';
   import { localeFromPage, localHref } from '$lib/locale';
-  import { readableTextOn, DARK_TEXT } from '$lib/readable-text';
 
   // ─── State ───────────────────────────────────────────────────────
   // RemoteData<E,T> per #330 C.2. `entries` is the success-branch
@@ -91,13 +95,11 @@
   let statusFilter: FleetStatus | 'ALL' = $state('ALL');
   let sortMode: 'chrono-desc' | 'chrono-asc' | 'alpha' | 'category' = $state('chrono-desc');
   let listView = $state(false);
-  /** True-scale line-up (`?view=lineup`), for launchers or capsules and spacecraft. */
+  /** True-scale line-up (`?view=lineup&kind=`), for launchers or capsules and spacecraft. */
   let lineupView = $state(false);
   let lineupFocus = $state<string | null>(null);
-  const lineupKind = $derived.by(() => {
-    const k = lineupKindFor(categoryFilter);
-    return k && LINEUP_LIVE.includes(k) ? k : null;
-  });
+  // The line-up's own kind: choosing it never touches the category filter.
+  let lineupKind = $state<LineupKind>('launchers');
   /** RFC-027 — free-text search across name + agency + category + tagline + country. */
   let query = $state('');
 
@@ -138,8 +140,32 @@
   // Agency logo + full-name lookups delegate to the unified registry
   // at src/lib/agencies.ts. Add new agencies / logos there — every
   // consumer (fleet, missions, ISS modules, launches) picks them up.
-  const logoFor = agencyLogo;
-  const fullNameFor = (agency: string) => agencyFullName(agency);
+  // Agencies per era and per chip: the era tiles' dots and the chips' counts (unfiltered inventory).
+  let agencyCount: Map<string, number> = $derived.by(() => {
+    const map = new Map<string, number>();
+    for (const e of entries)
+      for (const a of new Set(splitAgencies(e.agency))) map.set(a, (map.get(a) ?? 0) + 1);
+    return map;
+  });
+  let colorsByEpoch: Map<FleetEpoch, string[]> = $derived.by(() => {
+    const perEra = new Map<FleetEpoch, Map<string, number>>();
+    for (const e of entries) {
+      const counts = perEra.get(e.epoch) ?? new Map<string, number>();
+      for (const a of new Set(splitAgencies(e.agency))) counts.set(a, (counts.get(a) ?? 0) + 1);
+      perEra.set(e.epoch, counts);
+    }
+    const out = new Map<FleetEpoch, string[]>();
+    for (const [ep, counts] of perEra) {
+      out.set(
+        ep,
+        [...counts.entries()]
+          .sort((x, y) => y[1] - x[1] || x[0].localeCompare(y[0]))
+          .map(([a]) => agencyDataColor(a))
+          .filter((c): c is string => !!c),
+      );
+    }
+    return out;
+  });
 
   // ─── Filtering + sorting ─────────────────────────────────────────
   function firstFlightYear(e: FleetIndexEntry): number {
@@ -194,21 +220,7 @@
     'engine',
   ];
 
-  const CATEGORY_MSG: Record<FleetCategory, () => string> = {
-    launcher: m.fleet_cat_launcher,
-    'crewed-spacecraft': m.fleet_cat_crewed,
-    'cargo-spacecraft': m.fleet_cat_cargo,
-    station: m.fleet_cat_station,
-    rover: m.fleet_cat_rover,
-    lander: m.fleet_cat_lander,
-    orbiter: m.fleet_cat_orbiter,
-    observatory: m.fleet_cat_observatory,
-    'space-suit': m.fleet_cat_suit,
-    constellation: m.fleet_cat_constellation,
-    'launch-site': m.fleet_cat_launch_site,
-    engine: m.fleet_cat_engine,
-  };
-  const categoryLabel = (c: FleetCategory): string => CATEGORY_MSG[c]?.() ?? c;
+  const categoryLabel = (c: FleetCategory): string => fleetCategoryLabel(c);
   // first_flight is a date, or "planned" for hardware that has not flown.
   const firstFlightLabel = (f: string): string =>
     f === 'planned' ? m.fleet_value_planned() : f.slice(0, 4);
@@ -217,11 +229,11 @@
     launcher: '#ffc850', // gold — boosters
     'crewed-spacecraft': '#c1440e', // mars-red — humans
     'cargo-spacecraft': '#ff8c42', // orange
-    station: '#4b9cd3', // earth-blue — habitats
+    station: '#4b9cd3', // earth-blue — habitats // a3-keep: category / Earth identity colour, palette review at the end
     rover: '#a05a2c', // mars surface
     lander: '#9c8c4e', // dust-tan
     orbiter: '#7a4ecd', // violet — outer space
-    observatory: '#4ecdc4', // teal — scientific
+    observatory: '#8fd16a', // green — the lowest-orbit band
     'space-suit': '#cbd5e1', // ice-white — pressure shell
     constellation: '#9bdbff', // pale sky-blue — Earth-orbiting collectives
     'launch-site': '#6b8e6b', // moss-green — Earth-surface launch sites (#285)
@@ -229,6 +241,15 @@
   };
 
   const STATUSES: Array<FleetStatus> = ['ACTIVE', 'FLOWN', 'RETIRED', 'FAILED', 'PLANNED'];
+
+  // Data colour of each status chip (its dot, and its edge when on).
+  const STATUS_TONE: Record<FleetStatus, string> = {
+    ACTIVE: 'var(--color-state)',
+    FLOWN: 'var(--color-accent)',
+    RETIRED: 'var(--color-gold)',
+    FAILED: 'var(--color-mars)',
+    PLANNED: 'var(--color-text-dim)',
+  };
 
   // ─── URL ↔ filter sync ───────────────────────────────────────────
   function applyUrl(url: URL) {
@@ -247,6 +268,15 @@
     listView = view === 'list';
     lineupView = view === 'lineup';
     lineupFocus = url.searchParams.get('focus');
+    // Old links carry the kind as `category=launcher&view=lineup`.
+    const kind = url.searchParams.get('kind') as LineupKind | null;
+    const fromCategory = lineupKindFor(categoryFilter);
+    lineupKind =
+      kind && LINEUP_LIVE.includes(kind)
+        ? kind
+        : fromCategory && LINEUP_LIVE.includes(fromCategory)
+          ? fromCategory
+          : 'launchers';
     query = url.searchParams.get('q') ?? '';
   }
 
@@ -286,7 +316,11 @@
     if (lineupView) params.set('view', 'lineup');
     else if (listView) params.set('view', 'list');
     else params.delete('view');
-    if (!lineupView) params.delete('focus');
+    if (lineupView) params.set('kind', lineupKind);
+    else {
+      params.delete('focus');
+      params.delete('kind');
+    }
     // Write the raw query (not trimmed): the URL→state effect re-reads `q`
     // on every goto, so a trimmed write would strip the trailing space the
     // instant it's typed — making " " un-typeable in the search box (e.g.
@@ -300,13 +334,29 @@
     });
   }
 
-  function openLineup(kind: LineupKind | null) {
-    if (kind) categoryFilter = kind === 'launchers' ? 'launcher' : 'crewed-spacecraft';
-    lineupView = kind != null;
-    listView = false;
+  function setView(view: 'grid' | 'list' | 'lineup') {
+    lineupView = view === 'lineup';
+    listView = view === 'list';
+    syncUrl();
+  }
+  function setLineupKind(kind: LineupKind) {
+    lineupKind = kind;
     syncUrl();
   }
 
+  let anyFilterActive = $derived(
+    categoryFilter !== 'ALL' ||
+      agencyFilter !== 'ALL' ||
+      epochFilter !== 'ALL' ||
+      statusFilter !== 'ALL',
+  );
+  function clearAllFilters() {
+    categoryFilter = 'ALL';
+    agencyFilter = 'ALL';
+    epochFilter = 'ALL';
+    statusFilter = 'ALL';
+    syncUrl();
+  }
   function setCategory(v: FleetCategory | 'ALL') {
     categoryFilter = v;
     syncUrl();
@@ -447,7 +497,7 @@
 </svelte:head>
 <VisuallyHiddenH1 title={m.fleet_page_title()} />
 
-<div class="fleet entity-browse-page">
+<div class="fleet entity-browse-page browse-main">
   {#if !isSuccess(entriesRequest) && !isError(entriesRequest)}
     <p class="status">{m.fleet_loading()}</p>
   {:else if isError(entriesRequest)}
@@ -467,175 +517,138 @@
         oninput={(e) => setQuery((e.currentTarget as HTMLInputElement).value)}
       />
     </div>
-    <!-- Filters collapsed by default. Count lives on the right end of
-         the toggle bar (fraction when active, total-only otherwise) —
-         matches /missions for visual consistency. -->
-    <button
-      type="button"
-      class="filters-toggle"
-      data-audio-stage="fleet-filters-toggle"
-      aria-expanded={filtersExpanded}
-      aria-controls={filtersExpanded ? 'fleet-filters' : undefined}
-      onclick={() => (filtersExpanded = !filtersExpanded)}
-    >
-      <span class="filters-eyebrow">{m.filters_eyebrow()}</span>
-      <span class="filters-right">
+    <!-- Filters collapsed by default. The count sits right after the FILTERS
+         label (fraction when active, total-only otherwise) — matches /missions. -->
+    <div class="filters-bar">
+      <Chip
+        kind="action"
+        class="filters-strip"
+        data-audio-stage="fleet-filters-toggle"
+        aria-expanded={filtersExpanded && !lineupView}
+        aria-controls={filtersExpanded && !lineupView ? 'fleet-filters' : undefined}
+        disabled={lineupView}
+        onclick={() => (filtersExpanded = !filtersExpanded)}
+      >
+        {m.filters_eyebrow()}
         {#if filtered.length !== entries.length}
-          <span class="filters-count count-fraction count"
+          <span class="filters-count count-fraction count" aria-hidden="true"
             >{filtered.length} / {entries.length}</span
+          >
+          <span class="filters-count-sr"
+            >{m.filters_count_of({ shown: filtered.length, total: entries.length })}</span
           >
         {:else}
           <span class="filters-count count-total-only count">{entries.length}</span>
         {/if}
         <span class="filters-chevron" aria-hidden="true">{filtersExpanded ? '▾' : '▸'}</span>
-      </span>
-    </button>
+      </Chip>
+      {#if anyFilterActive && !lineupView}
+        <Chip kind="action" quiet dismiss class="filters-clear" onclick={clearAllFilters}>
+          {m.missions_clear_filters()}
+        </Chip>
+      {/if}
+      <!-- The view toggle is in the toolbar (BrowseToolbar), the same on /missions. FILTERS is
+           disabled, not removed, while the line-up is on: it is a fixed true-scale comparison. -->
+      {#if lineupView}
+        <ChipGroup role="radiogroup" class="view-group" label={m.fleet_lineup_toggle_aria()}>
+          <Chip
+            kind="choice"
+            active={lineupKind === 'launchers'}
+            onclick={() => setLineupKind('launchers')}>{m.fleet_lineup_launchers()}</Chip
+          >
+          {#if LINEUP_LIVE.includes('spacecraft')}
+            <Chip
+              kind="choice"
+              active={lineupKind === 'spacecraft'}
+              onclick={() => setLineupKind('spacecraft')}>{m.fleet_lineup_spacecraft()}</Chip
+            >
+          {/if}
+        </ChipGroup>
+      {/if}
+    </div>
 
-    {#if filtersExpanded}
+    {#if !lineupView}
       <div data-audio-stage="fleet-epoch-timeline">
-        <EpochTimelineStrip {countByEpoch} selected={epochFilter} onSelect={(v) => setEpoch(v)} />
+        <EpochTimelineStrip
+          {countByEpoch}
+          {colorsByEpoch}
+          selected={epochFilter}
+          onSelect={(v) => setEpoch(v)}
+        />
       </div>
+      <div class="filters agency-row" data-audio-stage="fleet-agency-filter">
+        {#if agencies.length > 0}
+          <AgencyFilterRow
+            agencies={agencies.map((name) => ({ name, count: agencyCount.get(name) ?? 0 }))}
+            value={agencyFilter}
+            onSelect={setAgency}
+            label={m.fleet_filter_agency()}
+            allLabel={m.lib_filter_status_all()}
+          />
+        {/if}
+      </div>
+    {/if}
+    {#if filtersExpanded && !lineupView}
       <nav
         id="fleet-filters"
         class="filters"
         data-audio-stage="fleet-filters"
         aria-label={m.fleet_filters_aria()}
       >
-        <div class="filter-group" role="radiogroup" aria-label={m.fleet_category_aria()}>
+        <ChipGroup role="radiogroup" class="filter-group" label={m.fleet_category_aria()}>
           <span class="filter-label">{m.fleet_filter_category()}</span>
-          <button
-            type="button"
-            class="pill"
-            class:active={categoryFilter === 'ALL'}
-            role="radio"
-            aria-checked={categoryFilter === 'ALL'}
-            onclick={() => setCategory('ALL')}>{m.lib_filter_status_all()}</button
+          <Chip kind="choice" active={categoryFilter === 'ALL'} onclick={() => setCategory('ALL')}
+            >{m.lib_filter_status_all()}</Chip
           >
           {#each CATEGORIES as cat (cat)}
-            <button
-              type="button"
-              class="pill"
-              class:active={categoryFilter === cat}
-              role="radio"
-              aria-checked={categoryFilter === cat}
-              onclick={() => setCategory(cat)}>{categoryLabel(cat)}</button
+            <Chip kind="choice" active={categoryFilter === cat} onclick={() => setCategory(cat)}
+              >{categoryLabel(cat)}</Chip
             >
           {/each}
-        </div>
+        </ChipGroup>
 
-        <div class="filter-group" role="radiogroup" aria-label={m.fleet_status_aria()}>
+        <ChipGroup role="radiogroup" class="filter-group" label={m.fleet_status_aria()}>
           <span class="filter-label">{m.fleet_filter_status()}</span>
-          <button
-            type="button"
-            class="pill"
-            class:active={statusFilter === 'ALL'}
-            role="radio"
-            aria-checked={statusFilter === 'ALL'}
-            onclick={() => setStatus('ALL')}>{m.lib_filter_status_all()}</button
+          <Chip kind="choice" active={statusFilter === 'ALL'} onclick={() => setStatus('ALL')}
+            >{m.lib_filter_status_all()}</Chip
           >
           {#each STATUSES as st (st)}
-            <button
-              type="button"
-              class="pill status-pill status-{st.toLowerCase()}"
-              class:active={statusFilter === st}
-              role="radio"
-              aria-checked={statusFilter === st}
-              onclick={() => setStatus(st)}>{fleetStatusLabel(st)}</button
+            <Chip
+              kind="choice"
+              dot
+              tone={STATUS_TONE[st]}
+              active={statusFilter === st}
+              onclick={() => setStatus(st)}>{fleetStatusLabel(st)}</Chip
             >
           {/each}
-        </div>
-
-        {#if agencies.length > 0}
-          <div class="filter-group" role="radiogroup" aria-label={m.fleet_agency_aria()}>
-            <span class="filter-label">{m.fleet_filter_agency()}</span>
-            <button
-              type="button"
-              class="pill"
-              class:active={agencyFilter === 'ALL'}
-              role="radio"
-              aria-checked={agencyFilter === 'ALL'}
-              onclick={() => setAgency('ALL')}>{m.lib_filter_status_all()}</button
-            >
-            {#each agencies as agency (agency)}
-              {@const logo = logoFor(agency)}
-              {@const fullName = fullNameFor(agency)}
-              <button
-                type="button"
-                class="pill agency-pill"
-                class:active={agencyFilter === agency}
-                class:logo-pill={logo != null}
-                role="radio"
-                aria-checked={agencyFilter === agency}
-                aria-label={fullName}
-                title={fullName}
-                onclick={() => setAgency(agency)}
-              >
-                {#if logo}
-                  <img
-                    src={logo}
-                    alt={fullName}
-                    class="agency-pill-logo"
-                    onerror={(e) => {
-                      const img = e.currentTarget as HTMLImageElement;
-                      img.style.display = 'none';
-                      const fb = img.nextElementSibling as HTMLElement | null;
-                      if (fb) fb.style.display = 'inline';
-                    }}
-                    loading="lazy"
-                    decoding="async"
-                  />
-                  <span class="agency-pill-fallback" hidden>{agency}</span>
-                {:else}
-                  {agency}
-                {/if}
-              </button>
-            {/each}
-          </div>
-        {/if}
-
-        <div class="filter-group sort-group">
-          <span class="filter-label">{m.fleet_filter_sort()}</span>
-          <select
-            aria-label={m.fleet_sort_aria()}
-            value={sortMode}
-            onchange={(e) =>
-              setSort((e.currentTarget as HTMLSelectElement).value as typeof sortMode)}
-          >
-            <option value="chrono-desc">{m.fleet_sort_newest()}</option>
-            <option value="chrono-asc">{m.fleet_sort_oldest()}</option>
-            <option value="alpha">{m.fleet_sort_alpha()}</option>
-            <option value="category">{m.fleet_sort_category()}</option>
-          </select>
-        </div>
+        </ChipGroup>
       </nav>
     {/if}
-
-    <div class="lineup-bar" role="group" aria-label={m.fleet_lineup_toggle_aria()}>
-      <span class="filter-label">{m.fleet_lineup_toggle()}</span>
-      <button
-        type="button"
-        class="pill"
-        class:active={lineupView && lineupKind === 'launchers'}
-        aria-pressed={lineupView && lineupKind === 'launchers'}
-        onclick={() => openLineup('launchers')}>{m.fleet_lineup_launchers()}</button
-      >
-      {#if LINEUP_LIVE.includes('spacecraft')}
-        <button
-          type="button"
-          class="pill"
-          class:active={lineupView && lineupKind === 'spacecraft'}
-          aria-pressed={lineupView && lineupKind === 'spacecraft'}
-          onclick={() => openLineup('spacecraft')}>{m.fleet_lineup_spacecraft()}</button
-        >
-      {/if}
-      {#if lineupView}
-        <button type="button" class="pill" onclick={() => openLineup(null)}
-          >{m.fleet_lineup_back()}</button
-        >
-      {/if}
-    </div>
-
-    {#if lineupView && lineupKind}
+    <BrowseToolbar
+      total={entries.length}
+      noun={m.nav_fleet()}
+      showing={m.browse_showing({
+        era: epochFilter === 'ALL' ? m.epoch_all() : epochLabel(epochFilter),
+        count: filtered.length,
+      })}
+      sortOptions={[
+        { value: 'chrono-desc', label: m.fleet_sort_newest() },
+        { value: 'chrono-asc', label: m.fleet_sort_oldest() },
+        { value: 'alpha', label: m.fleet_sort_alpha() },
+        { value: 'category', label: m.fleet_sort_category() },
+      ]}
+      sort={sortMode}
+      onSort={(v) => setSort(v as typeof sortMode)}
+      views={[
+        { value: 'grid', label: m.fleet_view_grid() },
+        { value: 'list', label: m.browse_view_list() },
+        { value: 'lineup', label: m.fleet_lineup_toggle() },
+      ]}
+      view={lineupView ? 'lineup' : listView ? 'list' : 'grid'}
+      onView={(v) => setView(v as 'grid' | 'list' | 'lineup')}
+      bare={lineupView}
+    />
+    {#if lineupView}
       {#key lineupKind + localeFromPage(page)}
         <!-- Loaded only when a line-up opens: its landmark/cast lists and labels stay off the grid. -->
         {#await import('$lib/components/FleetLineup.svelte') then { default: FleetLineup }}
@@ -654,21 +667,22 @@
     {:else if filtered.length === 0}
       <p class="status">{m.fleet_empty()}</p>
     {:else if listView}
-      <ul class="fleet-list">
-        {#each filtered as entry (entry.id)}
-          <li>
-            <button type="button" class="list-row" onclick={() => openEntry(entry)}>
-              <span class="list-name">{entry.name}</span>
-              <span class="list-cat">{categoryLabel(entry.category)}</span>
-              <span class="list-agency">{entry.agency}</span>
-              <span class="list-year">{firstFlightLabel(entry.first_flight)}</span>
-              <span class="list-status status-{entry.status.toLowerCase()}"
-                >{fleetStatusLabel(entry.status)}</span
-              >
-            </button>
-          </li>
-        {/each}
-      </ul>
+      <EntityList
+        label={m.fleet_grid_aria()}
+        rows={filtered.map((entry) => ({
+          id: entry.id,
+          name: entry.name,
+          kind: categoryLabel(entry.category),
+          agency: entry.agency,
+          year: firstFlightLabel(entry.first_flight),
+          status: entry.status,
+          statusLabel: fleetStatusLabel(entry.status),
+        }))}
+        onOpen={(id) => {
+          const e = entries.find((x) => x.id === id);
+          if (e) openEntry(e);
+        }}
+      />
     {:else}
       <ul
         class="fleet-grid entity-card-grid"
@@ -676,85 +690,33 @@
         aria-label={m.fleet_grid_aria()}
       >
         {#each filtered as entry (entry.id)}
-          {@const primaryAgency = (entry.agency ?? '').split(/\s*\/\s*/)[0]?.trim() ?? entry.agency}
-          {@const cardLogo = logoFor(primaryAgency)}
-          {@const cardFullName = fullNameFor(primaryAgency)}
-          {@const accent = CATEGORY_COLOR[entry.category]}
-          <li class="card-li">
-            <button
-              type="button"
-              class="card"
-              class:selected={selectedEntry?.id === entry.id}
-              style:--accent={accent}
-              data-testid="fleet-card-{entry.id}"
-              data-audio-stage="fleet-select-{entry.id}"
-              onclick={() => openEntry(entry)}
-              onkeydown={(e) => handleGridKeydown(e, closePanel)}
-              aria-label="{entry.name} ({entry.agency}, {firstFlightLabel(entry.first_flight)})"
-            >
-              <div class="card-accent" aria-hidden="true"></div>
-              <figure class="card-photo">
-                <img
-                  class="card-cover"
-                  {...responsive(pickHero('fleet', entry.id), IMAGE_SIZES.card)}
-                  style:object-position={heroPositionFor(pickHero('fleet', entry.id))}
-                  alt=""
-                  loading="lazy"
-                  onerror={(e) => {
-                    const fig = (e.currentTarget as HTMLImageElement).closest('figure');
-                    if (fig) fig.classList.add('cover-missing');
-                  }}
-                  decoding="async"
-                />
-              </figure>
-              <div class="card-body">
-                <header class="card-head">
-                  <span
-                    class="agency-badge"
-                    style:background-color={accent}
-                    style:color={readableTextOn(accent)}
-                    style:text-shadow={readableTextOn(accent) === DARK_TEXT ? 'none' : null}
-                    title={cardFullName}
-                  >
-                    {#if cardLogo}
-                      <img
-                        src={cardLogo}
-                        alt=""
-                        class="agency-logo"
-                        aria-hidden="true"
-                        onerror={(e) =>
-                          ((e.currentTarget as HTMLImageElement).style.display = 'none')}
-                        loading="lazy"
-                        decoding="async"
-                      />
-                    {/if}
-                    {primaryAgency}
-                  </span>
-                  <span class="card-status status-{entry.status.toLowerCase()}">
-                    {fleetStatusLabel(entry.status)}
-                  </span>
-                </header>
-                <div class="card-name-row">
-                  <h2 class="card-name">{entry.name}</h2>
-                  {#if badges[`fleet:${entry.id}`]}
-                    <img
-                      class="card-badge"
-                      src={assetUrl(badges[`fleet:${entry.id}`])}
-                      alt=""
-                      loading="lazy"
-                      decoding="async"
-                    />
-                  {/if}
-                </div>
-                <p class="card-type">{categoryLabel(entry.category)}</p>
-                <div class="card-meta">
-                  <span class="card-year">{firstFlightLabel(entry.first_flight)}</span>
-                  <span class="card-country">{countryLabel(entry.country)}</span>
-                </div>
-                <p class="card-first">{entry.tagline}</p>
-              </div>
-            </button>
-          </li>
+          <EntityCard
+            photo={pickHero('fleet', entry.id)}
+            name={entry.name}
+            year={entry.first_flight === 'planned' ? null : firstFlightLabel(entry.first_flight)}
+            agencies={splitAgencies(entry.agency).map((a) => ({
+              name: a,
+              color: agencyDataColor(a),
+            }))}
+            agencyTitle={entry.agency}
+            accent={CATEGORY_COLOR[entry.category]}
+            story={entry.tagline}
+            badge={badges[`fleet:${entry.id}`]}
+            selected={selectedEntry?.id === entry.id}
+            testid="fleet-card-{entry.id}"
+            audioStage="fleet-select-{entry.id}"
+            ariaLabel="{entry.name} ({entry.agency}, {firstFlightLabel(entry.first_flight)})"
+            facts={[{ label: m.card_stat_country(), value: countryLabel(entry.country) }]}
+            onclick={() => openEntry(entry)}
+            onkeydown={(e) => handleGridKeydown(e, closePanel)}
+          >
+            {#snippet pills()}
+              <span class="card-status status-{entry.status.toLowerCase()}">
+                {fleetStatusLabel(entry.status)}
+              </span>
+              <span class="card-kind">{categoryLabel(entry.category)}</span>
+            {/snippet}
+          </EntityCard>
         {/each}
       </ul>
     {/if}
@@ -796,13 +758,6 @@
 />
 
 <style>
-  .fleet {
-    padding: 18px 22px 40px;
-    max-width: 1400px;
-    margin: 0 auto;
-    position: relative;
-  }
-
   .status {
     text-align: center;
     color: rgba(255, 255, 255, 0.6);
@@ -815,199 +770,18 @@
     color: #c1440e;
   }
 
-  /* Page chrome (.search-row, .search-input, .filters-toggle,
-     .filters-right, .filters-count, .filters-eyebrow, .filters-chevron,
-     .filters, .filter-group, .filter-label, .pill + variants) lives in
+  /* Page chrome (.search-row, .search-input, .filters-bar, .filters-count,
+     .filters-chevron, .filters, .filter-group, .filter-label) lives in
      src/lib/styles/entity-browse-page.css — opted into by the
-     `entity-browse-page` class on the page root. Shared with /missions
-     so chrome can't visually drift. */
-
-  .status-pill.status-active.active {
-    background: rgba(136, 159, 231, 0.25);
-    border-color: rgba(136, 159, 231, 0.55);
-  }
-  .status-pill.status-flown.active {
-    background: rgba(75, 156, 211, 0.25);
-    border-color: rgba(75, 156, 211, 0.55);
-  }
-  .status-pill.status-retired.active {
-    background: rgba(255, 200, 80, 0.22);
-    border-color: rgba(255, 200, 80, 0.55);
-  }
-  .status-pill.status-failed.active {
-    background: rgba(193, 68, 14, 0.28);
-    border-color: rgba(193, 68, 14, 0.7);
-  }
-  .status-pill.status-planned.active {
-    background: rgba(255, 255, 255, 0.12);
-    border-color: rgba(255, 255, 255, 0.5);
-  }
-
-  .sort-group {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-  .sort-group select {
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    color: rgba(255, 255, 255, 0.85);
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 11px;
-    cursor: pointer;
-  }
+     `entity-browse-page` class on the page root. The chips are <Chip>
+     (src/lib/styles/chip.css); the status colours are STATUS_TONE.
+     Shared with /missions so chrome can't visually drift. */
 
   /* Grid layout itself (display, columns, gap, breakpoints) lives in
      src/lib/styles/entity-card-grid.css — shared with /missions so the
      column count tracks viewport identically across both routes. */
 
-  /* W4 (GH #274) — content-visibility: auto lets the browser skip
-   * layout + paint for off-screen cards (152 fleet entries × ~280px
-   * each = ~21000px tall before virtualisation; we only need ~3-4
-   * rows visible at any time). `contain-intrinsic-size` is the
-   * scrollbar-friendly height hint that prevents jump-scroll when
-   * cards come back into view. CSS-native solution — no JS, no
-   * virtualizer library, no scroll-listener; relies on Chromium
-   * (mobile-chromium e2e target) + modern Safari/Firefox support.
-   * Trade-off vs DOM virtualisation: DOM nodes still exist (cheap
-   * memory), but layout/paint cost drops to ~0 for off-screen items.
-   * Route-local because /missions doesn't yet have enough entries to
-   * benefit from the optimisation. */
-  .fleet-grid > .card-li {
-    content-visibility: auto;
-    contain-intrinsic-size: auto 280px;
-  }
-  /* content-visibility:auto applies paint containment, which clips the
-     SHARED focus outline / selected glow — they draw OUTSIDE the card box
-     (outline-offset, box-shadow) and get cropped to the card-li. /missions
-     has no content-visibility so the identical highlight shows there. Lift
-     content-visibility for the focused/selected card so the keyboard
-     roving-nav highlight renders the same on both routes. One card opts
-     out of the optimisation at a time — negligible. The audio tour's flash glow
-     is a box-shadow too: without the opt-out every fleet roll-call flash was
-     invisible (stage-review 2026-11-08). */
-  .fleet-grid > .card-li:has(.card:focus-visible),
-  .fleet-grid > .card-li:has(.card.selected),
-  .fleet-grid > .card-li:has(.card:global(.audio-stage-flash)) {
-    content-visibility: visible;
-  }
-
-  /* Card chrome (.card, .card-photo, .card-body, .card-head,
-     .agency-badge, .card-status, .card-name, .card-type, .card-meta,
-     .card-country, .card-first, plus interactive states) lives in
-     src/lib/styles/entity-card-grid.css and is opted into by the
-     `entity-card-grid` class on `<ul class="fleet-grid entity-card-grid">`.
-     Shared with /missions so the two routes can't visually drift again. */
-
-  .fleet-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
-  }
-  /* W4 (GH #274) — same content-visibility treatment as the grid; list
-   * rows are ~50px each so a list-view scroll skips layout/paint for
-   * the ~140 off-screen rows. See note on .fleet-grid above. */
-  .fleet-list > li {
-    content-visibility: auto;
-    contain-intrinsic-size: auto 50px;
-  }
-  .list-row {
-    width: 100%;
-    background: transparent;
-    border: 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-    color: inherit;
-    text-align: left;
-    padding: 8px 12px;
-    cursor: pointer;
-    display: grid;
-    grid-template-columns: 2fr 1fr 1.2fr 0.6fr 0.7fr;
-    align-items: center;
-    gap: 10px;
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 11.5px;
-  }
-  .list-row:hover {
-    background: rgba(255, 255, 255, 0.03);
-  }
-  .list-name {
-    color: #fff;
-    font-weight: 600;
-  }
-  .list-cat,
-  .list-agency,
-  .list-year {
-    color: rgba(255, 255, 255, 0.6);
-  }
-  .list-status {
-    text-transform: uppercase;
-    font-size: 10px;
-    letter-spacing: 0.06em;
-    padding: 1px 6px;
-    border-radius: 3px;
-    text-align: center;
-  }
-  .list-status.status-active {
-    background: rgba(136, 159, 231, 0.18);
-    color: #889fe7;
-  }
-  .list-status.status-flown {
-    background: rgba(75, 156, 211, 0.18);
-    color: #4b9cd3;
-  }
-  .list-status.status-retired {
-    background: rgba(255, 200, 80, 0.18);
-    color: #ffc850;
-  }
-  .list-status.status-failed {
-    background: rgba(193, 68, 14, 0.22);
-    color: #ff6b3a;
-  }
-  .list-status.status-planned {
-    background: rgba(255, 255, 255, 0.1);
-    color: rgba(255, 255, 255, 0.78);
-  }
-
-  /* Mobile-first: stack filters cleanly at 375 px */
-  @media (max-width: 600px) {
-    .fleet {
-      padding: 14px 12px 30px;
-    }
-    .filter-label {
-      min-width: 100%;
-      margin-bottom: 2px;
-    }
-    /* Mobile grid floor lives in entity-card-grid.css.
-       Fleet-specific name shrink — selector tightened to .fleet-grid
-       so Svelte's scoped-CSS specificity wins over the shared
-       entity-card-grid.css default of 22 px. */
-    .fleet-grid .card-name {
-      font-size: 18px;
-    }
-    .list-row {
-      grid-template-columns: 2fr 1fr 0.6fr;
-      grid-template-areas:
-        'name name year'
-        'cat agency status';
-    }
-    .list-name {
-      grid-area: name;
-    }
-    .list-year {
-      grid-area: year;
-      text-align: right;
-    }
-    .list-cat {
-      grid-area: cat;
-    }
-    .list-agency {
-      grid-area: agency;
-    }
-    .list-status {
-      grid-area: status;
-    }
-  }
+  /* The card, the grid, the toolbar, the agency row and the list are the shared components
+     (EntityCard, entity-card-grid.css, BrowseToolbar, AgencyFilterRow, EntityList): /missions
+     renders the same ones. */
 </style>

@@ -134,7 +134,19 @@ test.describe('SurfaceFlatPatch — sphere → flat-patch transition (desktop)',
   // Where the zoom is still easing in the three nearby rings read as one count badge; a tap there
   // zooms instead of opening a ring (a slow runner reaches the tap before the zoom has finished).
   async function ringsSettled(page: Page, ring: Locator): Promise<void> {
-    await expect(page.getByTestId('annotation-cluster')).toHaveCount(0, { timeout: 30000 });
+    // Zoom on until the nearby rings part: on a slow runner the 25-wheel burst of zoomIntoSurface
+    // ends before the flat view has eased in, and the zoom then never gets there on its own
+    // (docker, 2 CPUs, 5 runs: the badge stayed for the full 30 s in 3 of 5).
+    await expect
+      .poll(
+        async () => {
+          await page.mouse.wheel(0, -100);
+          await page.waitForTimeout(200);
+          return page.getByTestId('annotation-cluster').count();
+        },
+        { timeout: 45000 },
+      )
+      .toBe(0);
     let last = '';
     await expect
       .poll(

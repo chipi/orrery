@@ -31,16 +31,16 @@ describe('sentry non-dev rung', () => {
     const cfg = initMock.mock.calls[0][0];
     expect(cfg.environment).toBe('prod');
     expect(cfg.initialScope.tags.component).toBe('orrery');
-    // The worktree tag is dev-only — it must NOT leak into staging/prod events.
+    // The worktree tag is dev-only — it must NOT leak into deployed events.
     expect(cfg.initialScope.tags.worktree).toBeUndefined();
   });
 
   it('respects an explicit environment override', () => {
     publicEnv.PUBLIC_SENTRY_DSN = 'https://pub@glitch.example/6';
-    publicEnv.PUBLIC_SENTRY_ENVIRONMENT = 'staging';
+    publicEnv.PUBLIC_SENTRY_ENVIRONMENT = 'canary';
 
     initSentry();
 
-    expect(initMock.mock.calls[0][0].environment).toBe('staging');
+    expect(initMock.mock.calls[0][0].environment).toBe('canary');
   });
 });

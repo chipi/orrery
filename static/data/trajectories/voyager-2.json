@@ -3,7 +3,7 @@
   "name": "Voyager 2",
   "mission_id": "voyager-2",
   "category": "interstellar-bound",
-  "color": "#4ecdc4",
+  "color": "#da47eb",
   "schema_version": 1,
   "_doc": "Iconic trajectory for /explore PATHS layer (#306 Slice A). Decoupled from static/data/missions/neptune/voyager-2.json's tier_1_5_hybrid Lambert data — this file targets the visual story (launch → all four outer planets → interstellar space), with waypoints in heliocentric ecliptic J2000 AU. Not ephemeris-grade; sufficient for the heliocentric log-scale view at /explore.",
   "current_position_au": [

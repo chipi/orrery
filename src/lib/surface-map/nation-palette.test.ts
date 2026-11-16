@@ -2,11 +2,13 @@ import { describe, expect, it } from 'vitest';
 import {
   NATION_COLORS,
   agencyNationKey,
+  agencyRingColor,
   colorFor,
   nationChipFor,
   nationKey,
   objectNationKey,
 } from './nation-palette';
+import missionIndex from '../../../static/data/missions/index.json';
 
 describe('nationKey', () => {
   it('collapses USSR + Russia to USSR/Russia', () => {
@@ -125,5 +127,44 @@ describe('objectNationKey', () => {
     expect(objectNationKey({ agencies: ['CSA'] })).toBeNull();
     expect(objectNationKey({ agencies: [] })).toBeNull();
     expect(objectNationKey({})).toBeNull();
+  });
+});
+
+describe('agencyRingColor', () => {
+  it.each([
+    ['NASA', '#3b82f6'],
+    ['SpaceX', '#3b82f6'],
+    ['ROSCOSMOS', '#ef4444'],
+    ['CNSA', '#dc2626'],
+    ['ISRO', '#f97316'],
+    ['JAXA', '#1d4ed8'],
+    ['ESA', '#1d4ed8'],
+    ['Arianespace', '#1d4ed8'],
+    ['UAESA', '#00732F'],
+  ])('%s is %s, the colour the regime panel ring and dot always had', (agency, color) => {
+    expect(agencyRingColor(agency)).toBe(color);
+  });
+
+  it.each([
+    ['Roscosmos', '#ef4444'],
+    ['CMSA', '#dc2626'],
+    ['USSF', '#3b82f6'],
+    ['Blue Origin', '#3b82f6'],
+    ['Intuitive Machines', '#3b82f6'],
+    ['ESA / NASA', '#1d4ed8'],
+    ['NASA / Roscosmos', '#3b82f6'],
+  ])('mission-index spelling %s is %s', (agency, color) => {
+    expect(agencyRingColor(agency)).toBe(color);
+  });
+
+  it('every agency in the mission index has a ring colour', () => {
+    for (const { id, agency } of missionIndex) {
+      expect(agencyRingColor(agency), `${id}: ${agency}`).not.toBe('rgba(255,255,255,0.5)');
+    }
+  });
+
+  it('is the neutral grey for an agency without a palette entry', () => {
+    expect(agencyRingColor('NATURAL')).toBe('rgba(255,255,255,0.5)');
+    expect(agencyRingColor('')).toBe('rgba(255,255,255,0.5)');
   });
 });

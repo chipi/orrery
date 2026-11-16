@@ -95,5 +95,29 @@
     "/fleet?id=starship": "Flotte — das Startsystem Starship",
     "/programs/spacex": "SpaceX — die Wiederverwendbarkeit, auf der Starship aufbaut",
     "/mars": "Mars — das Ziel"
+  },
+  "roster": {
+    "Starhopper": {
+      "note": "ein Testträger mit einem Triebwerk hüpft 150 Meter und landet — der erste Flug des Programms, der die grundlegende Steuerung beweist",
+      "name": "Starhopper"
+    },
+    "SN15 lands": {
+      "note": "nach einer Serie spektakulärer Explosionen fliegt eine Starship-Oberstufe hoch und landet unversehrt — die Methode „fliegen, scheitern, beheben“ an der größten je gebauten Rakete",
+      "name": "SN15 landet"
+    },
+    "First integrated flight": {
+      "note": "der vollständige Stapel — Super-Heavy-Booster und Starship — startet erstmals gemeinsam; er verlässt die Rampe und geht Minuten später verloren, und die Daten speisen den nächsten Versuch",
+      "name": "Erster integrierter Flug"
+    },
+    "Booster catch": {
+      "note": "der Super-Heavy-Booster fliegt zurück und wird von den Armen des Startturms aus der Luft gefangen — eine Landemethode, die niemand je in dieser Größenordnung versucht hatte",
+      "name": "Booster-Fang"
+    },
+    "mission:starship-demo": {
+      "note": "die unbemannten Demonstrationsflüge auf dem Weg zum Orbit, zum Mond und zum Mars"
+    },
+    "mission:starship-mars-crew": {
+      "note": "der angestrebte Endzustand — bemannte Starships, die Menschen zur Marsoberfläche bringen"
+    }
   }
 }

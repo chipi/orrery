@@ -44,6 +44,10 @@
       "description": "A <rover>.route-photos.json sidecar exists (#641).",
       "type": "boolean"
     },
+    "approximate": {
+      "description": "The polyline is a simplified outline anchored at the lander, not a surveyed track (UXD-044).",
+      "type": "boolean"
+    },
     "points": {
       "type": "array",
       "minItems": 1,

@@ -23,6 +23,7 @@
   import { exhibit } from '$lib/exhibit.svelte';
   import { trackStageFire } from '$lib/analytics';
   import * as m from '$lib/paraglide/messages';
+  import Chip from '$lib/components/Chip.svelte';
 
   let audioEl: HTMLAudioElement | null = $state(null);
   let overlayRoot: HTMLDivElement | null = $state(null);
@@ -948,14 +949,14 @@
           <button type="button" class="resume-btn resume-accept" onclick={acceptResume}>
             {m.audio_resume_button()}
           </button>
-          <button
-            type="button"
-            class="resume-btn resume-dismiss"
+          <Chip
+            kind="action"
+            class="resume-btn resume-dismiss ui-chip--close"
             aria-label={m.audio_resume_dismiss_aria()}
             onclick={dismissResume}
           >
             ×
-          </button>
+          </Chip>
         </span>
       </section>
     {/if}
@@ -994,14 +995,14 @@
           ↑
         </button>
         {#if audio.tourActive}
-          <button
-            type="button"
-            class="compact-btn compact-stop"
+          <Chip
+            kind="action"
+            class="compact-btn compact-stop ui-chip--close"
             aria-label={m.audio_compact_stop_aria()}
             onclick={() => audio.stopTour()}
           >
             ×
-          </button>
+          </Chip>
         {/if}
       </section>
     {/if}
@@ -1144,19 +1145,18 @@
               <option value={1.5}>1.5×</option>
             </select>
           </label>
-          <button
-            type="button"
+          <Chip
+            kind="toggle"
             class="cc-toggle"
-            class:active={audio.captionsOn}
+            active={audio.captionsOn}
             aria-label={audio.captionsOn
               ? m.audio_captions_hide_aria()
               : m.audio_captions_show_aria()}
-            aria-pressed={audio.captionsOn}
             title={m.audio_captions_title()}
             onclick={toggleCaptions}
           >
             CC
-          </button>
+          </Chip>
         </div>
 
         <input
@@ -1341,7 +1341,7 @@
     font-family: var(--font-display, inherit);
     font-size: 11px;
     letter-spacing: 2px;
-    color: rgba(255, 255, 255, 0.45);
+    color: var(--color-text-label);
   }
 
   .overlay-title {
@@ -1398,8 +1398,8 @@
   }
 
   .play-pause {
-    background: rgba(68, 102, 255, 0.2);
-    border: 1px solid rgba(68, 102, 255, 0.55);
+    background: color-mix(in srgb, var(--color-accent) 20%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-accent) 55%, transparent);
     border-radius: 4px;
     color: var(--color-text);
     width: 44px;
@@ -1409,7 +1409,7 @@
   }
   .play-pause:hover,
   .play-pause:focus-visible {
-    background: rgba(68, 102, 255, 0.3);
+    background: var(--color-accent-edge);
     outline: none;
   }
 
@@ -1432,7 +1432,7 @@
 
   .scrubber {
     width: 100%;
-    accent-color: #4466ff;
+    accent-color: var(--color-accent);
   }
 
   .sr-only {
@@ -1461,7 +1461,7 @@
   .scope-tab {
     flex: 1;
     background: transparent;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 4px;
     padding: 6px 8px;
@@ -1479,9 +1479,9 @@
     cursor: not-allowed;
   }
   .scope-tab.active {
-    background: rgba(68, 102, 255, 0.18);
-    border-color: rgba(68, 102, 255, 0.5);
-    color: rgba(150, 175, 255, 0.95);
+    background: color-mix(in srgb, var(--color-accent) 18%, transparent);
+    border-color: color-mix(in srgb, var(--color-accent) 50%, transparent);
+    color: var(--color-state);
   }
   .episode-list {
     list-style: none;
@@ -1515,8 +1515,8 @@
     outline: none;
   }
   .episode-row.current {
-    background: rgba(68, 102, 255, 0.16);
-    border-color: rgba(68, 102, 255, 0.45);
+    background: color-mix(in srgb, var(--color-accent) 16%, transparent);
+    border-color: color-mix(in srgb, var(--color-accent) 45%, transparent);
     color: var(--color-text);
   }
   .episode-row.heard:not(.current) .ep-title {
@@ -1532,9 +1532,9 @@
     gap: 6px;
     align-items: center;
     flex-wrap: wrap;
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 0.5px;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
   }
   .persona-tag {
     text-transform: uppercase;
@@ -1549,25 +1549,25 @@
     background: rgba(201, 170, 111, 0.08);
   }
   .persona-tag.persona-guide {
-    color: #6fb3c9;
-    border-color: rgba(111, 179, 201, 0.4);
-    background: rgba(111, 179, 201, 0.08);
+    color: var(--color-state);
+    border-color: var(--color-accent-edge);
+    background: color-mix(in srgb, var(--color-accent) 8%, transparent);
   }
   .persona-tag.persona-enthusiast {
-    color: #6fc99f;
-    border-color: rgba(111, 201, 159, 0.4);
-    background: rgba(111, 201, 159, 0.08);
+    color: var(--color-ok);
+    border-color: color-mix(in srgb, var(--color-ok) 40%, transparent);
+    background: color-mix(in srgb, var(--color-ok) 8%, transparent);
   }
   .route-tag {
     font-family: var(--font-mono, monospace);
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--color-text-label);
   }
   .dur-tag {
     font-variant-numeric: tabular-nums;
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--color-text-label);
   }
   .heard-tag {
-    color: rgba(111, 201, 159, 0.85);
+    color: color-mix(in srgb, var(--color-ok) 85%, transparent);
   }
 
   .tour-bar {
@@ -1605,10 +1605,10 @@
   .tour-note {
     flex-basis: 100%;
     margin: 6px 0 0;
-    font-size: 10px;
+    font-size: var(--size-label);
     line-height: 1.4;
     letter-spacing: 0.5px;
-    color: rgba(255, 255, 255, 0.45);
+    color: var(--color-text-label);
   }
   .tour-note :global(strong) {
     color: rgba(201, 170, 111, 0.85);
@@ -1660,14 +1660,14 @@
     }
   }
   .tour-start-extended {
-    background: rgba(78, 205, 196, 0.06);
-    color: #4ecdc4;
-    border-color: rgba(78, 205, 196, 0.35);
+    background: color-mix(in srgb, var(--color-accent) 6%, transparent);
+    color: var(--color-state);
+    border-color: var(--color-accent-edge);
   }
   .tour-start-extended:hover,
   .tour-start-extended:focus-visible {
-    background: rgba(78, 205, 196, 0.12);
-    border-color: rgba(78, 205, 196, 0.6);
+    background: var(--color-accent-soft);
+    border-color: var(--color-accent-strong);
   }
   .tour-start {
     width: 100%;
@@ -1696,9 +1696,9 @@
     cursor: not-allowed;
   }
   .tour-meta {
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 0.5px;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
     font-family: var(--font-mono, monospace);
     text-transform: none;
   }
@@ -1715,7 +1715,7 @@
     margin: 0;
     padding: 12px 18px 16px;
     font-size: 12px;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
     line-height: 1.5;
   }
   .inventory-empty.error {
@@ -1732,44 +1732,15 @@
     font-size: 11px;
     line-height: 1.5;
     letter-spacing: 0.3px;
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--color-text-label);
   }
   .origin-disclosure a {
-    color: rgba(150, 175, 255, 0.8);
+    color: var(--color-accent);
     text-decoration: underline;
-    text-decoration-color: rgba(150, 175, 255, 0.4);
+    text-decoration-color: var(--color-accent-edge);
   }
   .origin-detail {
-    color: rgba(255, 255, 255, 0.4);
-  }
-
-  .cc-toggle {
-    background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 3px;
-    color: rgba(255, 255, 255, 0.65);
-    width: auto;
-    padding: 4px 8px;
-    min-height: 32px;
-    font-size: 11px;
-    letter-spacing: 1px;
-    font-weight: 700;
-    cursor: pointer;
-    transition:
-      background 120ms,
-      border-color 120ms,
-      color 120ms;
-  }
-  .cc-toggle:hover,
-  .cc-toggle:focus-visible {
-    border-color: rgba(255, 255, 255, 0.4);
-    color: rgba(255, 255, 255, 0.95);
-    outline: none;
-  }
-  .cc-toggle.active {
-    background: rgba(68, 102, 255, 0.22);
-    border-color: rgba(68, 102, 255, 0.6);
-    color: #96afff;
+    color: var(--color-text-label);
   }
 
   .caption-banner {
@@ -1793,7 +1764,7 @@
   .link-btn {
     background: transparent;
     border: none;
-    color: rgba(150, 175, 255, 0.7);
+    color: var(--color-state);
     font-size: 11px;
     letter-spacing: 0.5px;
     cursor: pointer;
@@ -1802,8 +1773,8 @@
   }
   .link-btn:hover,
   .link-btn:focus-visible {
-    color: rgba(150, 175, 255, 1);
-    background: rgba(150, 175, 255, 0.08);
+    color: var(--color-state);
+    background: color-mix(in srgb, var(--color-accent) 8%, transparent);
     outline: none;
   }
 
@@ -1943,7 +1914,7 @@
     background: #c9aa6f;
   }
   .compact-bar .persona-dot.persona-guide {
-    background: #6fb6c9;
+    background: var(--color-accent);
   }
   .compact-bar .persona-dot.persona-enthusiast {
     background: #c96fa0;
@@ -1994,9 +1965,6 @@
     color: #c9aa6f;
     outline: none;
   }
-  .compact-btn.compact-stop {
-    border-color: rgba(255, 255, 255, 0.25);
-  }
 
   /* Floating banner stack — bottom-center of the viewport. Always
      above other UI so the tour overlays stay legible in expanded /
@@ -2026,10 +1994,10 @@
      rather than "the narrator just said X". */
   :global(.tour-banners .manual-action) {
     padding: 6px 12px;
-    background: rgba(78, 205, 196, 0.12);
-    border: 1px solid rgba(78, 205, 196, 0.45);
+    background: var(--color-accent-soft);
+    border: 1px solid color-mix(in srgb, var(--color-accent) 45%, transparent);
     border-radius: 4px;
-    color: rgba(78, 205, 196, 0.95);
+    color: var(--color-state);
     font-family: var(--font-mono, monospace);
     font-size: 11px;
     letter-spacing: 1px;
@@ -2079,13 +2047,7 @@
     padding: 4px 10px;
     cursor: pointer;
   }
-  .resume-btn.resume-dismiss {
-    border-color: rgba(255, 255, 255, 0.2);
-    color: rgba(255, 255, 255, 0.6);
-    padding: 4px 8px;
-    font-size: 14px;
-    line-height: 1;
-  }
+
   .resume-btn:hover,
   .resume-btn:focus-visible {
     border-color: rgba(201, 170, 111, 0.8);

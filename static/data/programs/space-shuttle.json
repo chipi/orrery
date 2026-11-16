@@ -15,9 +15,12 @@
     { "linked_id": "discovery", "ref": "fleet", "role": "orbiter", "year": 1984 },
     { "linked_id": "atlantis", "ref": "fleet", "role": "orbiter", "year": 1985 },
     { "linked_id": "endeavour", "ref": "fleet", "role": "orbiter", "year": 1992 },
-    { "name": "STS-1", "year": 1981, "note": "the first orbital flight — the first time a crewed spacecraft was flown to orbit on its maiden launch, and the first reusable one" },
-    { "name": "Challenger (STS-51-L)", "year": 1986, "note": "lost 73 seconds after launch when a cold-stiffened booster seal failed; seven crew died, and the disaster exposed a culture that had normalised known risk" },
-    { "name": "Columbia (STS-107)", "year": 2003, "note": "lost during reentry when foam debris had holed the wing at launch; seven crew died, and the same organisational failure was found to have recurred" }
+    { "linked_id": "sts-1", "ref": "mission", "year": 1981, "note": "the first orbital flight — the first time a crewed spacecraft was flown to orbit on its maiden launch, and the first reusable one" },
+    { "linked_id": "sts-51-l", "ref": "mission", "year": 1986, "note": "lost 73 seconds after launch when a cold-stiffened booster seal failed; seven crew died, and the disaster exposed a culture that had normalised known risk" },
+    { "linked_id": "sts-107", "ref": "mission", "year": 2003, "note": "lost during reentry when foam debris had holed the wing at launch; seven crew died, and the same organisational failure was found to have recurred" },
+    { "linked_id": "galileo", "ref": "mission", "year": 1989, "note": "deployed from Atlantis's payload bay on STS-34 in October 1989, then sent to Jupiter on an upper stage" },
+    { "linked_id": "ulysses", "ref": "mission", "year": 1990, "note": "deployed from Discovery's payload bay on STS-41 in October 1990, then sent past Jupiter into a polar orbit of the Sun" },
+    { "linked_id": "magellan", "ref": "mission", "year": 1989, "note": "deployed from Atlantis's payload bay on STS-30 in May 1989, then sent to Venus on an upper stage" }
   ],
   "related_programs": ["apollo", "mir", "iss", "buran", "esa-human"],
   "see_also": [

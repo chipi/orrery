@@ -95,5 +95,69 @@
     "/fleet?id=iss": "Flota — la Estación Espacial Internacional",
     "/programs/mir": "Mir: la estación de la que heredó la EEI",
     "/earth?site=iss": "La EEI sobre nosotros"
+  },
+  "roster": {
+    "module:zarya": {
+      "note": "El primer módulo — un bloque de control y energía financiado por Estados Unidos y construido en Rusia: la semilla de toda la estación."
+    },
+    "module:unity": {
+      "note": "El primer módulo estadounidense, un nodo de conexión de seis puertos unido a Zarya dos semanas después."
+    },
+    "module:zvezda": {
+      "note": "El módulo de servicio ruso que hizo habitable la estación: alojamiento de la tripulación, soporte vital y propulsión."
+    },
+    "module:destiny": {
+      "note": "El laboratorio estadounidense — el principal módulo de investigación y el centro de mando de la estación."
+    },
+    "module:canadarm2": {
+      "note": "El brazo robótico de Canadá, que ensambló gran parte de la estación y atrapa las naves que llegan."
+    },
+    "module:quest": {
+      "note": "La esclusa estadounidense, que permite paseos espaciales tanto con trajes estadounidenses como rusos."
+    },
+    "module:pirs": {
+      "note": "Un compartimento de acoplamiento y esclusa ruso — desorbitado en 2021 para dejar sitio a Nauka."
+    },
+    "module:harmony": {
+      "note": "El nodo que abrió el camino a los laboratorios internacionales."
+    },
+    "module:columbus": {
+      "note": "El laboratorio de Europa — la contribución fundamental de la ESA a la estación."
+    },
+    "module:kibo": {
+      "note": "El laboratorio de Japón — el mayor módulo individual, con su propia plataforma exterior."
+    },
+    "module:poisk": {
+      "note": "Un módulo ruso de acoplamiento y esclusa en el cénit de Zvezda."
+    },
+    "module:tranquility": {
+      "note": "Soporte vital y equipo de ejercicio — y el soporte de la Cupola."
+    },
+    "module:cupola": {
+      "note": "La cúpula de observación de siete ventanas, fuente de las vistas más famosas de la Tierra desde la estación."
+    },
+    "module:rassvet": {
+      "note": "Un módulo ruso de acoplamiento y almacenamiento."
+    },
+    "module:leonardo": {
+      "note": "Un módulo de almacenamiento permanente, convertido a partir de un transportador de carga reutilizable."
+    },
+    "module:beam": {
+      "note": "Un módulo hinchable experimental, que prueba hábitats expandibles en órbita."
+    },
+    "module:nauka": {
+      "note": "El módulo científico ruso, muy retrasado, añadido más de dos décadas después de empezar el ensamblaje."
+    },
+    "module:prichal": {
+      "note": "Un nodo de acoplamiento ruso — una de las incorporaciones más recientes."
+    },
+    "Expedition 1": {
+      "note": "la primera tripulación residente llegó el 2 de noviembre de 2000; desde entonces hay seres humanos a bordo de forma continua — la presencia humana ininterrumpida más larga fuera de la Tierra de la historia",
+      "name": "Expedición 1"
+    },
+    "Commercial Crew": {
+      "note": "la Crew Dragon de SpaceX restableció los lanzamientos tripulados de Estados Unidos tras nueve años y dio comienzo al traspaso del acceso a la órbita baja a proveedores comerciales",
+      "name": "Commercial Crew"
+    }
   }
 }

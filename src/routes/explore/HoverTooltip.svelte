@@ -72,7 +72,7 @@
     min-width: 170px;
     pointer-events: none;
     background: rgba(8, 10, 22, 0.92);
-    border: 1px solid rgba(68, 102, 255, 0.5);
+    border: 1px solid color-mix(in srgb, var(--color-accent) 50%, transparent);
     border-radius: 4px;
     padding: 8px 12px;
     font-family: var(--font-mono, 'Space Mono', monospace);
@@ -88,13 +88,13 @@
     padding: 10px 12px 8px;
   }
   .tt-line {
-    font-size: 9px;
+    font-size: var(--size-label);
     line-height: 1.5;
     color: rgba(230, 235, 255, 0.85);
   }
   .tt-line.dim {
-    color: rgba(255, 255, 255, 0.5);
-    font-size: 8px;
+    color: var(--color-text-label);
+    font-size: var(--size-label);
   }
   .tt-eyebrow {
     font-family: 'Bebas Neue', sans-serif;
@@ -110,7 +110,7 @@
     justify-content: space-between;
     align-items: baseline;
     gap: 10px;
-    font-size: 9px;
+    font-size: var(--size-label);
     line-height: 1.55;
   }
   .tt-row + .tt-row {
@@ -118,9 +118,9 @@
     padding-top: 2px;
   }
   .tt-key {
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
     letter-spacing: 1px;
-    font-size: 8px;
+    font-size: var(--size-label);
     display: inline-flex;
     align-items: baseline;
   }

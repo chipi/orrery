@@ -100,6 +100,7 @@ export class BoldArrow extends THREE.Object3D {
       ctx.fillText(text, W / 2, H / 2);
     }
     const tex = new THREE.CanvasTexture(canvas);
+    tex.colorSpace = THREE.SRGBColorSpace;
     tex.minFilter = THREE.LinearFilter;
     const sprite = new THREE.Sprite(
       new THREE.SpriteMaterial({

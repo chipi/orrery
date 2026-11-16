@@ -1,0 +1,30 @@
+{
+  "name": "IM-1",
+  "vehicle": "Falcon 9 Block 5",
+  "payload": "1900 kgのランダー（Nova-C Odysseus）；NASAのペイロード六つ",
+  "delta_v": "~3.8 km/s（月遷移軌道投入＋月周回軌道投入、推定）",
+  "type": "商業ランダー・横転、運用",
+  "first": "月面の商業ランダー。横転して着陸したが、それでも運用できた",
+  "description": "IM-1はIntuitive Machinesの最初の月ミッションで、NASAのCommercial Lunar Payload Servicesプログラムのもと、NASAのペイロード六つを載せて実施された。Odysseusと名付けられたNova-Cランダーは、2024-02-15にFalcon 9で打ち上げられ、2024-02-21に月周回軌道に入り、2024-02-22の23:23:53 UTCにMalapert Aクレーター付近に着陸した。着陸して運用されたが、約30度傾いた横転状態で静止した。2024-02-29に月の夜が始まって電力を失うまで、動作を続けた。",
+  "events": [
+    {
+      "met": 0,
+      "label": "打ち上げ",
+      "note": "LC-39AからFalcon 9、2024-02-15。",
+      "type": "nominal"
+    },
+    {
+      "met": 6,
+      "label": "月周回軌道投入",
+      "note": "Odysseusは2024-02-21に月周回軌道に入る。",
+      "type": "nominal"
+    },
+    {
+      "met": 7,
+      "label": "着陸",
+      "note": "2024-02-22にMalapert A付近に着陸し、横転して静止した。",
+      "type": "nominal"
+    }
+  ],
+  "vehicle_stage": "Falcon 9 第2段"
+}

@@ -6,6 +6,9 @@
   import { page } from '$app/state';
   import { cardChain, goBackCard, isCardUrl } from '$lib/card-chain.svelte';
   import { audio } from '$lib/audio-state.svelte';
+  import Chip from './Chip.svelte';
+  import PanelActions from './PanelActions.svelte';
+  import { providePanelShare } from './panel-share.svelte';
 
   type Props = {
     open: boolean;
@@ -38,6 +41,30 @@
      * content and must stay visible above the info card.
      */
     mobileSheet?: 'full' | 'partial';
+    /**
+     * The entity's Share action (opens its collectible card). Passed by the
+     * panels that carry a card; the bar shows the chip only when it is set.
+     */
+    onShare?: () => void;
+    /**
+     * A card stacked on this one (a mission opened in place over a body panel). The bar then
+     * shows the back chip, and it returns to the card underneath. Without it the back chip
+     * follows the ?id= card chain.
+     */
+    onBack?: () => void;
+    /**
+     * Another panel is open over this one and covers it. It stays mounted (its tab and scroll
+     * come back with it) but is not painted, not focusable and not read out, and Escape leaves it.
+     */
+    covered?: boolean;
+    /**
+     * The kind line above the name (agency badge and status, "PLANET", a category and designation).
+     * It shares the header's first line with the actions, right-aligned. Omit it and that line
+     * carries the actions alone.
+     */
+    eyebrow?: Snippet;
+    /** The entity name, full panel width on the line below the actions (UXD-018). */
+    heading?: Snippet;
     children?: Snippet;
   };
   let {
@@ -47,8 +74,15 @@
     grabFocus = true,
     zIndex = 30,
     mobileSheet = 'full',
+    onShare,
+    onBack,
+    covered = false,
+    eyebrow,
+    heading,
     children,
   }: Props = $props();
+  // Share is drawn in the action row (PanelActions), or in a row of its own when the host has none.
+  const shareCtx = providePanelShare(() => onShare);
 
   let panelEl: HTMLElement | undefined = $state();
 
@@ -65,7 +99,7 @@
 
     // Escape-to-close is always wired, independent of focus management.
     const handler = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') onClose();
+      if (e.key === 'Escape' && !covered) onClose();
     };
     window.addEventListener('keydown', handler);
 
@@ -93,22 +127,33 @@
     };
   });
 
+  let headEl: HTMLElement | undefined = $state();
+  let contentEl: HTMLElement | undefined = $state();
+
   let touchStartY = $state(0);
   let touchDeltaY = $state(0);
+  // Swipe-down closes from the header, or from the content only while it sits at the top:
+  // a finger pulling a scrolled list back up must not close the panel.
+  let swipeAllowed = false;
 
   function onTouchStart(e: TouchEvent) {
+    const target = e.target as Node;
+    swipeAllowed =
+      !!headEl?.contains(target) || (!!contentEl?.contains(target) && contentEl.scrollTop === 0);
     touchStartY = e.touches[0].clientY;
     touchDeltaY = 0;
   }
 
   function onTouchMove(e: TouchEvent) {
+    if (!swipeAllowed) return;
     const delta = e.touches[0].clientY - touchStartY;
     touchDeltaY = Math.max(0, delta);
   }
 
   function onTouchEnd() {
-    if (touchDeltaY > 80) onClose();
+    if (swipeAllowed && touchDeltaY > 80) onClose();
     touchDeltaY = 0;
+    swipeAllowed = false;
   }
 </script>
 
@@ -132,6 +177,8 @@
     class="panel"
     class:partial-sheet={mobileSheet === 'partial'}
     class:tour-docked={tourDocked}
+    class:covered
+    inert={covered}
     bind:this={panelEl}
     tabindex="-1"
     aria-label={title ?? m.panel_default_label()}
@@ -150,28 +197,36 @@
          docked affordances (HUD chips, breadcrumb, etc.) can land here
          in future without re-plumbing every consumer panel. -->
     <div class="panel-dock" aria-hidden="true"></div>
-    <!-- Global close affordance — lives on Panel itself so every
-         consumer (Planet/Sun/SmallBody/Mission/Fleet/Station/etc) gets
-         the same control without re-implementing it. Floats on top of
-         the content's first row so consumers don't need to leave room
-         for it in their layout. -->
-    {#if canGoBack}
-      <button
-        type="button"
-        class="panel-back"
-        onclick={goBackCard}
-        aria-label={m.panel_back()}
-        data-audio-stage="panel-back">←</button
-      >
-    {/if}
-    <button
-      type="button"
-      class="panel-close"
-      onclick={onClose}
-      aria-label={m.panel_close()}
-      data-audio-stage="panel-close">×</button
-    >
-    <div class="content" class:has-back={canGoBack}>
+    <!-- The panel's header (UXD-018, B1.1): one fixed block above the scroll container, so
+         nothing scrolls under the actions. Row 1 is the eyebrow with back, Share and close
+         right-aligned on the same line; the name is row 2 at full width. The actions come first
+         in the DOM so the keyboard reaches them before the eyebrow's own chips and the content.
+         Back and close live on Panel itself, so every consumer gets the same controls; Share
+         shows when the host passes onShare (the entity has a collectible card). -->
+    <div class="panel-head" bind:this={headEl}>
+      <div class="panel-actions-line">
+        {#if onBack || canGoBack}
+          <Chip
+            kind="action"
+            class="panel-back"
+            onclick={onBack ?? goBackCard}
+            aria-label={m.panel_back()}
+            data-audio-stage="panel-back">←</Chip
+          >
+        {/if}
+        <Chip
+          kind="action"
+          class="panel-close ui-chip--close"
+          onclick={onClose}
+          aria-label={m.panel_close()}
+          data-audio-stage="panel-close">×</Chip
+        >
+      </div>
+      {#if eyebrow}<div class="panel-eyebrow">{@render eyebrow()}</div>{/if}
+      <div class="panel-heading">{@render heading?.()}</div>
+    </div>
+    <div class="content" bind:this={contentEl}>
+      {#if onShare && shareCtx.rows === 0}<PanelActions own />{/if}
       {@render children?.()}
     </div>
   </aside>
@@ -191,6 +246,9 @@
   }
   .panel.tour-docked {
     --panel-dock-h: 64px;
+  }
+  .panel.covered {
+    visibility: hidden;
   }
 
   /* Right side drawer — pointer/desktop AND touch-landscape. A wide landscape
@@ -268,74 +326,96 @@
     height: 0;
   }
 
-  .panel-close {
-    position: absolute;
-    top: calc(var(--panel-dock-h) + 14px);
-    inset-inline-end: 14px;
-    width: 44px;
-    height: 44px;
-    background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 4px;
-    color: rgba(255, 255, 255, 0.65);
-    font-size: 18px;
-    line-height: 1;
-    cursor: pointer;
-    display: inline-flex;
+  /* Header: eyebrow and actions on one line, the name below at full width. A grid, so the
+     eyebrow takes whatever the actions leave and wraps inside it, and the actions stay at the
+     inline end (the left in RTL). The chips are 30 px on a fine pointer and 44 px on touch;
+     the first line is as tall as the chip. */
+  .panel-head {
+    flex: none;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: 8px;
+    /* The first line is as tall as the badges (24 px): a gap keeps the name off it. */
+    row-gap: 6px;
     align-items: center;
-    justify-content: center;
-    z-index: 1;
+    padding: 0 18px 10px;
+    background: var(--color-panel-bg);
+    /* Inset rule, not a border: it must not change the header's height. */
+    box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.06);
   }
-  .panel-close:hover,
-  .panel-close:focus-visible {
-    border-color: rgba(255, 255, 255, 0.4);
-    color: var(--color-text);
-    outline: none;
+  @media (hover: hover) and (pointer: fine) {
+    .panel-head {
+      padding-top: 4px;
+    }
   }
-  :global(html[data-touch][data-orientation='portrait']) .panel-close {
-    top: 14px;
-  }
-
-  /* Back affordance (#29) — mirrors .panel-close on the top-LEFT. */
-  .panel-back {
-    position: absolute;
-    top: calc(var(--panel-dock-h) + 14px);
-    inset-inline-start: 14px;
-    width: 44px;
-    height: 44px;
-    background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 4px;
-    color: rgba(255, 255, 255, 0.65);
-    font-size: 20px;
-    line-height: 1;
-    cursor: pointer;
-    display: inline-flex;
+  .panel-actions-line {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: start;
+    display: flex;
     align-items: center;
-    justify-content: center;
-    z-index: 1;
+    gap: 6px;
   }
-  .panel-back:hover,
-  .panel-back:focus-visible {
-    border-color: rgba(255, 255, 255, 0.4);
-    color: var(--color-text);
-    outline: none;
+  /* Operator 2026-11-13: only × (and ← after a card link) shares the first line with the badges,
+     drawn at the badges' 24 px and aligned with their first row; Share is in the action row. On
+     touch the tap area stays 44 px through an invisible extension, the gap wide enough that two
+     extensions never overlap. */
+  .panel-actions-line :global(.ui-chip) {
+    position: relative;
+    block-size: 24px;
+    min-block-size: 24px;
+    min-inline-size: 24px;
+    padding-inline: 8px;
   }
-  :global(html[data-touch][data-orientation='portrait']) .panel-back {
-    top: 14px;
+  .panel-actions-line :global(.ui-chip--close),
+  .panel-actions-line :global(.panel-back) {
+    inline-size: 24px;
+    padding-inline: 0;
+    font-size: 16px;
   }
-  /* When the back button is present it shares the top-left with the content's
-     first row (agency badges); push the content down so nothing overlaps. */
-  .content.has-back {
-    padding-top: 58px;
+  @media not ((hover: hover) and (pointer: fine)) {
+    .panel-head {
+      padding-top: 10px;
+    }
+    .panel-actions-line {
+      gap: 20px;
+    }
+    .panel-actions-line :global(.ui-chip)::before {
+      content: '';
+      position: absolute;
+      inset: -10px;
+    }
+  }
+  .panel-head {
+    align-items: start;
+  }
+  .panel-eyebrow {
+    grid-column: 1;
+    grid-row: 1;
+    min-width: 0;
+  }
+  /* The eyebrow's own bottom margins would pull it off the actions' centre line. */
+  .panel-eyebrow > :global(*),
+  .panel-eyebrow :global(.agency-row) {
+    margin-bottom: 0;
+  }
+  .panel-heading {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    min-width: 0;
+  }
+  /* On touch the header is flush with the panel's top edge (overflow hidden), so a chip's
+     outside focus ring would be clipped; draw it inside. */
+  .panel-head :global(.ui-chip:focus-visible) {
+    outline-offset: -3px;
   }
 
   .content {
     overflow-y: auto;
     padding: 14px 18px;
     /* Bottom safe-area inset + room for the fixed footer pill so the
-       last CTA inside the panel (Plan / Fly mission) doesn't slip
-       under the version chip in the bottom-right corner. */
+       last line of the panel doesn't slip under the version chip in the
+       bottom-right corner. */
     padding-bottom: calc(40px + env(safe-area-inset-bottom, 0px));
     flex: 1;
   }

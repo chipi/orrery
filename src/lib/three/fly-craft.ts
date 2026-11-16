@@ -22,6 +22,10 @@ const FLY_CRAFT: Record<string, readonly [string, string]> = {
   'soyuz-1': ['soyuz-progress', 'soyuz-7k-ok'],
   'soyuz-11': ['soyuz-progress', 'soyuz-7k-ok'],
   'shenzhou-1': ['station-freighters', 'shenzhou'],
+  'shenzhou-5': ['station-freighters', 'shenzhou'],
+  'sts-1': ['winged', 'columbia'],
+  'sts-107': ['winged', 'columbia'],
+  'sts-51-l': ['winged', 'challenger'],
   inspiration4: ['capsules-commercial', 'crew-dragon'],
   'polaris-dawn': ['capsules-commercial', 'crew-dragon'],
   ...Object.fromEntries(
@@ -45,6 +49,12 @@ const FLY_CRAFT: Record<string, readonly [string, string]> = {
   // MMX: box bus with two wings, like Mars Express.
   mmx: ['orbiters', 'mars-express'],
   mariner4: ['orbiters', 'mariner-4'],
+  mariner2: ['orbiters', 'buildMariner2'],
+  mro: ['orbiters', 'buildMro'],
+  // IM-1 (Nova-C Odysseus), shown upright on its legs.
+  'im-1': ['landers', 'buildNovaC'],
+  // Chang'e 2 was built on the same DFH-3 bus as Chang'e 1.
+  change2: ['orbiters', 'buildChange1'],
   mariner9: ['orbiters', 'mariner-9'],
   mariner10: ['orbiters', 'buildMariner10'],
   lro: ['orbiters', 'lro'],
@@ -52,6 +62,9 @@ const FLY_CRAFT: Record<string, readonly [string, string]> = {
   'smart-1': ['orbiters', 'buildSmart1'],
   change1: ['orbiters', 'buildChange1'],
   chandrayaan1: ['orbiters', 'buildChandrayaan1'],
+  // The Chandrayaan-2 orbiter: another ISRO gold box with one wing; the Chandrayaan-1 shape is close enough.
+  chandrayaan2: ['orbiters', 'buildChandrayaan1'],
+  kaguya: ['orbiters', 'buildKaguya'],
   'lunar-prospector': ['orbiters', 'buildLunarProspector'],
   luna10: ['orbiters', 'buildLuna10'],
   sputnik1: ['early-stations', 'buildSputnik1'],

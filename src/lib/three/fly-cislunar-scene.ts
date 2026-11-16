@@ -84,7 +84,7 @@ export interface CislunarOverlays {
   gravityEarth: BoldArrow;
   /** Moon-gravity arrow (gray) on the spacecraft → Moon direction. */
   gravityMoon: BoldArrow;
-  /** Velocity tangent arrow (teal). */
+  /** Velocity tangent arrow (accent blue). */
   velocity: BoldArrow;
   /** Centripetal arrow (red), points toward the dominant body. */
   centripetal: BoldArrow;
@@ -130,6 +130,7 @@ export function buildCislunarScene(opts: CislunarSceneOptions): CislunarSceneHan
 
   // Earth at origin. True physical radius scaled by SCALE_CISLUNAR.
   const earthTex2k = texLoader.load(opts.earthTextureUrl);
+  earthTex2k.colorSpace = THREE.SRGBColorSpace;
   let earthTex4k: THREE.Texture | null = null;
   let earth4kLoadStarted = false;
   let earthLodLevel: '2k' | '4k' = '2k';
@@ -146,6 +147,7 @@ export function buildCislunarScene(opts: CislunarSceneOptions): CislunarSceneHan
 
   // Moon — position updated each frame from moonEciPos(simDay).
   const moonTex2k = texLoader.load(opts.moonTextureUrl);
+  moonTex2k.colorSpace = THREE.SRGBColorSpace;
   let moonTex4k: THREE.Texture | null = null;
   let moon4kLoadStarted = false;
   let moonLodLevel: '2k' | '4k' = '2k';
@@ -166,6 +168,7 @@ export function buildCislunarScene(opts: CislunarSceneOptions): CislunarSceneHan
     texLoader.load(
       opts.earthTextureUrl4k,
       (tex) => {
+        tex.colorSpace = THREE.SRGBColorSpace;
         earthTex4k = tex;
       },
       undefined,
@@ -180,6 +183,7 @@ export function buildCislunarScene(opts: CislunarSceneOptions): CislunarSceneHan
     texLoader.load(
       opts.moonTextureUrl4k,
       (tex) => {
+        tex.colorSpace = THREE.SRGBColorSpace;
         moonTex4k = tex;
       },
       undefined,
@@ -295,11 +299,11 @@ export function buildCislunarScene(opts: CislunarSceneOptions): CislunarSceneHan
     new THREE.Vector3(1, 0, 0),
     new THREE.Vector3(0, 0, 0),
     ARROW_LEN,
-    0x4ecdc4,
+    0x8aa0ff,
     ARROW_HEAD_LEN,
     ARROW_HEAD_W,
   );
-  velocity.setLabel('VELOCITY', '#bfeaff');
+  velocity.setLabel('VELOCITY', '#c4d0ff');
   velocity.visible = false;
   scene.add(velocity);
 

@@ -8,7 +8,9 @@
  */
 
 import { get, type FetchLike } from './core';
+import type { CatalogueEntry, CatalogueMap } from '$lib/catalogue';
 import { localizeDeepSky, type DeepSkyImage, type DeepSkyOverlay } from '$lib/deep-sky';
+import type { SunEphemeris } from '$lib/universe/sky-finder';
 
 // ─── Named stars (PRD-030 / RFC-032 — /explore v2 Slice 1) ─────────────────
 // The curated ~60 stars that get a marker + label + Panel in the stellar
@@ -27,7 +29,12 @@ export interface NamedStar {
   x: number;
   y: number;
   z: number;
+  /** The star's SIMBAD page (#658). */
+  records?: { simbad: string };
 }
+
+/** `catalogue_source` of named-stars.json: a catalogue entry without a value. */
+export type CatalogueEntryLike = Omit<CatalogueEntry, 'value'>;
 
 export interface NamedStarOverlay {
   /** Localized proper name (falls back to the base `proper`). */
@@ -49,6 +56,8 @@ export type LocalizedNamedStar = NamedStar & NamedStarOverlay;
 
 interface NamedStarsManifest {
   schema_version: number;
+  /** The catalogue every star's values come from (HYG): one source for the whole file. */
+  catalogue_source?: CatalogueEntryLike;
   count: number;
   stars: NamedStar[];
 }
@@ -76,6 +85,15 @@ export async function getConstellationLines(
       .catch(() => []);
   }
   return constellationLinesCache;
+}
+
+let sunEphemerisCache: Promise<SunEphemeris | null> | null = null;
+/** The JPL Horizons Sun table of the deep-sky IN THE SKY rows (universe/sun-ephemeris.json), cached. */
+export async function getSunEphemeris(fetchFn: FetchLike = fetch): Promise<SunEphemeris | null> {
+  if (!sunEphemerisCache) {
+    sunEphemerisCache = get<SunEphemeris>('universe/sun-ephemeris.json', fetchFn).catch(() => null);
+  }
+  return sunEphemerisCache;
 }
 
 export async function getNamedStarI18n(
@@ -109,10 +127,13 @@ export interface ExoplanetPlanet {
   mass_earth: number | null;
   disc_year: number | null;
   disc_method: string | null;
+  /** The planet's NASA Exoplanet Archive overview page. */
+  record_url?: string;
 }
 export interface ExoplanetSystem {
   hostId: string;
   hip: number | null;
+  records?: { exoplanet_archive: string; simbad: string };
   star: {
     name: string;
     spect: string;
@@ -190,6 +211,10 @@ export interface DeepSkyObject {
   photoTitle: string | null;
   /** Curated exoplanet host id this star-forming region gateways to, or null. */
   gatewaySystem: string | null;
+  /** The object's SIMBAD / NED pages (#658). */
+  records?: { simbad?: string; ned?: string };
+  /** Source, bibcode and record link per catalogue-derived value: mag, dist_ly, size_arcmin, position. */
+  catalogue?: CatalogueMap;
 }
 interface DeepSkyObjectsManifest {
   _count: number;
@@ -213,6 +238,58 @@ export async function getDeepSkyObject(
   const objs = await getDeepSkyObjects(fetchFn);
   return objs.find((o) => o.id === idOrDesignation || o.designation === idOrDesignation) ?? null;
 }
+/** The per-object editorial overlay under i18n-src/<locale>/universe/deep-sky/<id>.json. */
+export interface DeepSkyTextOverlay {
+  /** One-line overview. */
+  fact?: string;
+  /** Longer editorial paragraph. */
+  bio?: string;
+  /** Curated learn-more links: { l: label, u: url, t: tier }, one or two per object. */
+  links?: Array<{ l: string; u: string; t: 'intro' | 'core' | 'deep' }>;
+}
+
+/** A deep-sky object's overlay text in the reader's locale, en-US as the fallback; null if neither exists. */
+export async function getDeepSkyI18n(
+  locale: string,
+  id: string,
+  fetchFn: FetchLike = fetch,
+): Promise<DeepSkyTextOverlay | null> {
+  const path = (l: string) => `i18n/${l}/universe/deep-sky/${id}.json`;
+  const overlay = await get<DeepSkyTextOverlay>(path(locale), fetchFn).catch(() => null);
+  if (overlay) return overlay;
+  if (locale === 'en-US') return null;
+  return get<DeepSkyTextOverlay>(path('en-US'), fetchFn).catch(() => null);
+}
+
+/** The editorial overlay of a galaxy or structure: the deep-sky shape (fact, bio, one or two links). */
+export type OuterTextOverlay = DeepSkyTextOverlay;
+
+async function getOuterOverlay(
+  dir: 'galaxies' | 'structures',
+  locale: string,
+  id: string,
+  fetchFn: FetchLike,
+): Promise<OuterTextOverlay | null> {
+  const path = (l: string) => `i18n/${l}/universe/${dir}/${id}.json`;
+  const overlay = await get<OuterTextOverlay>(path(locale), fetchFn).catch(() => null);
+  if (overlay) return overlay;
+  if (locale === 'en-US') return null;
+  return get<OuterTextOverlay>(path('en-US'), fetchFn).catch(() => null);
+}
+
+/** A Local Group galaxy's overlay (i18n-src/<locale>/universe/galaxies/<id>.json), en-US as the fallback; null if neither exists. */
+export const getGalaxyI18n = (
+  locale: string,
+  id: string,
+  fetchFn: FetchLike = fetch,
+): Promise<OuterTextOverlay | null> => getOuterOverlay('galaxies', locale, id, fetchFn);
+
+/** A group, cloud, cluster or other structure's overlay (…/universe/structures/<id>.json), en-US as the fallback; null if neither exists. */
+export const getStructureI18n = (
+  locale: string,
+  id: string,
+  fetchFn: FetchLike = fetch,
+): Promise<OuterTextOverlay | null> => getOuterOverlay('structures', locale, id, fetchFn);
 const deepSkyGalleryCache = new Map<string, Promise<DeepSkyImage[]>>();
 /** The curated deep-sky gallery images (cached per locale) — the caption/credit/
  *  telescope source joined to deep-sky objects via photoKey. A locale's overlay
@@ -244,6 +321,7 @@ export interface MilkyWayObject {
   name: string;
   kind:
     | 'supermassive-black-hole'
+    | 'stellar-black-hole'
     | 'star'
     | 'globular-cluster'
     | 'satellite-galaxy'
@@ -330,6 +408,8 @@ export interface LocalGroupMember {
   x: number;
   y: number;
   z: number;
+  /** McConnachie 2012 entry for `dist_mly` (#658); the Milky Way has none. */
+  catalogue?: { dist_mly?: CatalogueEntry };
 }
 export interface LocalGroupData {
   extent_mly: number;
@@ -358,6 +438,8 @@ export interface LocalSheetMember {
   x: number;
   y: number;
   z: number;
+  /** Source of `dist_mpc` (#658); absent where the value is an anchor or no source was confirmed. */
+  catalogue?: { dist_mpc?: CatalogueEntry };
 }
 export interface LocalSheetData {
   extent_mpc: number;
@@ -387,6 +469,8 @@ export interface VirgoMember {
   x: number;
   y: number;
   z: number;
+  /** Source of `dist_mpc` (#658); absent where the value is an anchor or no source was confirmed. */
+  catalogue?: { dist_mpc?: CatalogueEntry };
 }
 export interface VirgoData {
   extent_mpc: number;
@@ -415,6 +499,8 @@ export interface LaniakeaMember {
   x: number;
   y: number;
   z: number;
+  /** Source of `dist_mpc` (#658); absent where the value is an anchor or no source was confirmed. */
+  catalogue?: { dist_mpc?: CatalogueEntry };
 }
 export interface LaniakeaData {
   extent_mpc: number;
@@ -443,6 +529,8 @@ export interface CosmicWebMember {
   x: number;
   y: number;
   z: number;
+  /** Source of `dist_mpc` (#658); absent where the value is an anchor or no source was confirmed. */
+  catalogue?: { dist_mpc?: CatalogueEntry };
 }
 export interface CosmicWebData {
   extent_mpc: number;
@@ -475,6 +563,10 @@ export interface BlackHole {
   science_section: string;
   culture_door: string | null;
   discovery: string;
+  /** SIMBAD page of the real holes (#658). */
+  records?: { simbad?: string };
+  /** The paper behind mass_solar and dist_ly; empty for fiction. */
+  catalogue?: { mass_solar?: CatalogueEntry; dist_ly?: CatalogueEntry };
 }
 interface BlackHolesManifest {
   objects: BlackHole[];
@@ -496,6 +588,35 @@ export async function getBlackHole(
 ): Promise<BlackHole | null> {
   const holes = await getBlackHoles(fetchFn);
   return holes.find((h) => h.id === id) ?? null;
+}
+
+/** The per-black-hole editorial overlay under i18n-src/<locale>/universe/black-holes/<id>.json. */
+export interface BlackHoleOverlay {
+  /** Localized name; falls back to the catalogue name (M87*, Gargantua stay as written). */
+  name?: string;
+  /** One-line overview. */
+  fact?: string;
+  /** Longer editorial paragraph. */
+  bio?: string;
+  /** The discovery / measurement line the panel shows, in the reader's language. */
+  discovery?: string;
+}
+
+/** A black hole with its locale overlay's name and discovery line, en-US as the fallback. */
+export async function getBlackHoleI18n(
+  id: string,
+  locale: string,
+  fetchFn: FetchLike = fetch,
+): Promise<BlackHole | null> {
+  const hole = await getBlackHole(id, fetchFn);
+  if (!hole) return null;
+  const path = (l: string) => `i18n/${l}/universe/black-holes/${id}.json`;
+  const o =
+    (await get<BlackHoleOverlay>(path(locale), fetchFn).catch(() => null)) ??
+    (locale === 'en-US'
+      ? null
+      : await get<BlackHoleOverlay>(path('en-US'), fetchFn).catch(() => null));
+  return { ...hole, name: o?.name ?? hole.name, discovery: o?.discovery ?? hole.discovery };
 }
 
 // Per-planet editorial overlay (Slice 2) — a "why this world matters" note that
@@ -586,4 +707,157 @@ export async function getCultureDoors(
       return { ...d, blurb: ov?.blurb ?? '' };
     }),
   );
+}
+
+// ─── Panel heroes (B3, UXD-023) ────────────────────────────────────────────
+// The picture an outer-scale or black-hole panel shows as its hero, from the hand-curated
+// universe/panel-heroes.json. A deep-sky gallery photo is served as its 700 px thumb (the
+// originals are not on the WebP ladder); a part-of photo (Tarantula for the LMC) says so.
+export type UniverseLevel =
+  | 'milky-way'
+  | 'local-group'
+  | 'local-sheet'
+  | 'virgo'
+  | 'laniakea'
+  | 'cosmic-web'
+  | 'black-holes';
+
+interface PanelHeroEntry {
+  photoKey?: string;
+  src?: string;
+  pictured?: boolean;
+  position?: string;
+}
+
+export interface UniverseHero {
+  /** Root-relative path of the image the hero box draws. */
+  src: string;
+  /** Root-relative path of the full image (the lightbox), also its provenance key. */
+  full: string;
+  /** The gallery title of the pictured part, when the photo shows a part of the entity. */
+  pictured?: string;
+  position?: string;
+}
+
+let panelHeroesCache: Promise<Record<string, PanelHeroEntry>> | null = null;
+function panelHeroes(fetchFn: FetchLike): Promise<Record<string, PanelHeroEntry>> {
+  if (!panelHeroesCache) {
+    panelHeroesCache = get<{ heroes: Record<string, PanelHeroEntry> }>(
+      'universe/panel-heroes.json',
+      fetchFn,
+    )
+      .then((doc) => doc.heroes ?? {})
+      .catch(() => {
+        // A failed fetch is no heroes for this call only; caching it would hide every hero for the session.
+        panelHeroesCache = null;
+        return {};
+      });
+  }
+  return panelHeroesCache;
+}
+
+/** Every entry of universe/panel-heroes.json, by `<level>/<id>` (the INDEX rows and Related lists read their photos from it). */
+export const getPanelHeroEntries = (fetchFn: FetchLike = fetch): Promise<Record<string, PanelHeroEntry>> =>
+  panelHeroes(fetchFn);
+
+/** Start the hero manifest fetch early so a panel opened later finds it cached. */
+export function warmUniverseHeroes(fetchFn: FetchLike = fetch): void {
+  void panelHeroes(fetchFn);
+}
+
+/** The hero of an outer-scale or black-hole panel, or null: no hero, no slot. */
+export async function getUniverseHero(
+  level: UniverseLevel,
+  id: string,
+  locale = 'en-US',
+  fetchFn: FetchLike = fetch,
+): Promise<UniverseHero | null> {
+  const entry = (await panelHeroes(fetchFn))[`${level}/${id}`];
+  if (!entry) return null;
+  if (entry.src) return { src: entry.src, full: entry.src, position: entry.position };
+  if (!entry.photoKey) return null;
+  const hero = deepSkyPhotoHero(entry.photoKey, entry.position);
+  if (entry.pictured) {
+    const gallery = await getDeepSkyGallery(fetchFn, locale);
+    hero.pictured = gallery.find((i) => i.key === entry.photoKey)?.title;
+  }
+  return hero;
+}
+
+/** A deep-sky gallery photo as a hero: its 700 px thumb, the full image as its provenance key. */
+export function deepSkyPhotoHero(key: string, position?: string): UniverseHero {
+  return {
+    src: `/images/deep-sky/${key}.thumb.jpg`,
+    full: `/images/deep-sky/${key}.jpg`,
+    position,
+  };
+}
+
+/** What an entity page draws as its hero: the panel's picture with what the page also needs. */
+export interface PageHero extends UniverseHero {
+  /** The image's alt text in the reader's language (en-US where a locale has none). */
+  alt: string;
+  /** Pixel width of the full image when `src` is a thumb of it (a srcset pair), else absent. */
+  fullWidth?: number;
+  /** Author or agency from the full image's provenance row. */
+  credit?: string;
+}
+
+const deepSkyKey = (full: string) => /^\/images\/deep-sky\/(.+)\.jpg$/.exec(full)?.[1];
+
+/**
+ * The hero of an entity page: the same picture its panel shows (getUniverseHero, or a deep-sky
+ * object's own photo), with alt text, the srcset width and the credit. Takes the prerender `fetch`.
+ */
+export async function getPageHero(
+  hero: UniverseHero | null,
+  locale: string,
+  fetchFn: FetchLike = fetch,
+): Promise<PageHero | null> {
+  if (!hero) return null;
+  const alts = async (l: string) =>
+    (await get<Record<string, string>>(`image-alt-text/${l}.json`, fetchFn).catch(() => null)) ??
+    {};
+  const key = deepSkyKey(hero.full);
+  const [local, fallback, prov, gallery] = await Promise.all([
+    alts(locale),
+    locale === 'en-US' ? Promise.resolve({}) : alts('en-US'),
+    get<{ entries: { path: string; author?: string | null; agency?: string | null }[] }>(
+      'image-provenance.json',
+      fetchFn,
+    ).catch(() => null),
+    key ? getDeepSkyGallery(fetchFn, locale) : Promise.resolve([] as DeepSkyImage[]),
+  ]);
+  const row = prov?.entries.find((e) => e.path === hero.full);
+  const width = gallery.find((i) => i.key === key)?.w;
+  return {
+    ...hero,
+    alt: local[hero.full] || (fallback as Record<string, string>)[hero.full] || '',
+    ...(key && width ? { fullWidth: width } : {}),
+    ...(row && (row.author ?? row.agency) ? { credit: (row.author ?? row.agency) as string } : {}),
+  };
+}
+
+// ─── Named-star gallery (B3, UXD-023) ──────────────────────────────────────
+// Second and further images of a star, language-neutral. The first image stays the overlay's
+// `photo` (the hero); the panel's GALLERY tab shows only when a star has two or more in all.
+export interface NamedStarGalleryImage {
+  src: string;
+  kind: 'real' | 'artist';
+}
+
+let starGalleryCache: Promise<Record<string, NamedStarGalleryImage[]>> | null = null;
+export async function getNamedStarGallery(
+  id: string,
+  fetchFn: FetchLike = fetch,
+): Promise<NamedStarGalleryImage[]> {
+  if (!starGalleryCache) {
+    starGalleryCache = get<{ stars: Record<string, NamedStarGalleryImage[]> }>(
+      'universe/star-gallery.json',
+      fetchFn,
+    )
+      .then((doc) => doc.stars ?? {})
+      .catch(() => ({}));
+  }
+  return (await starGalleryCache)[id] ?? [];
 }

@@ -1,0 +1,112 @@
+[
+  {
+    "staged": "static/images/_staging/missions/artemis1/01.jpg",
+    "note": "hero candidate; SLS and Orion lifting off from LC-39B at night, 16 Nov 2022 (1:47 a.m. EST)",
+    "source_url": "https://images.nasa.gov/details/NHQ202211160200",
+    "nasa_id": "NHQ202211160200",
+    "size": "3000x2494",
+    "license": "NASA media usage (public domain)",
+    "author": "NASA/Bill Ingalls",
+    "credit": "NASA/Bill Ingalls"
+  },
+  {
+    "staged": "static/images/_staging/missions/artemis1/02.jpg",
+    "note": "gallery; SLS and Orion on pad 39B at night under floodlights, between the lightning towers (NASA title 'Artemis I Rollout for Launch', 4 Nov 2022)",
+    "source_url": "https://images.nasa.gov/details/KSC-20221104-PH-ILW01_0298",
+    "nasa_id": "KSC-20221104-PH-ILW01_0298",
+    "size": "3000x2000",
+    "license": "NASA media usage (public domain)",
+    "author": "NASA/Isaac Watson",
+    "credit": "NASA/Isaac Watson"
+  },
+  {
+    "staged": "static/images/_staging/missions/artemis1/03.jpg",
+    "note": "gallery; Orion crew module with the Moon and Earth as two dots (flight day 13, 28 Nov 2022), taken by an Orion external camera",
+    "source_url": "https://images.nasa.gov/details/art001e000672",
+    "nasa_id": "art001e000672",
+    "size": "3000x2250",
+    "license": "NASA media usage (public domain)",
+    "author": "NASA",
+    "credit": "NASA"
+  },
+  {
+    "staged": "static/images/_staging/missions/artemis1/04.jpg",
+    "note": "gallery; Orion and a solar array with the Moon's far side during the outbound powered flyby approach (21 Nov 2022)",
+    "source_url": "https://images.nasa.gov/details/art001e000268",
+    "nasa_id": "art001e000268",
+    "size": "3000x2250",
+    "license": "NASA media usage (public domain)",
+    "author": "NASA",
+    "credit": "NASA"
+  },
+  {
+    "staged": "static/images/_staging/missions/artemis1/05.jpg",
+    "note": "gallery; Orion 'selfie' during external inspection, crew module and service module surface (18 Nov 2022), 1920 px (large rendition; orig not served)",
+    "source_url": "https://images.nasa.gov/details/cmasaw1_20221118204608_034",
+    "nasa_id": "cmasaw1_20221118204608_034",
+    "size": "1920x1440",
+    "license": "NASA media usage (public domain)",
+    "author": "NASA",
+    "credit": "NASA"
+  },
+  {
+    "staged": "static/images/_staging/missions/artemis1/06.jpg",
+    "note": "gallery (portrait); Orion capsule floating in the Pacific after splashdown with its flotation balloons and a recovery boat, 11 Dec 2022",
+    "source_url": "https://images.nasa.gov/details/KSC-20221211-PH-JNV01-0008",
+    "nasa_id": "KSC-20221211-PH-JNV01-0008",
+    "size": "2250x3000",
+    "license": "NASA media usage (public domain)",
+    "author": "NASA/Josh Valcarcel",
+    "credit": "NASA/Josh Valcarcel"
+  },
+  {
+    "staged": "static/images/_staging/missions/artemis1/07.jpg",
+    "note": "gallery; Orion splashdown seen from afar with the recovery ship USS Portland and a helicopter, 11 Dec 2022 (capsule is a tiny object lower left)",
+    "source_url": "https://images.nasa.gov/details/KSC-20221211-PH-JNV01-0001",
+    "nasa_id": "KSC-20221211-PH-JNV01-0001",
+    "size": "3000x2250",
+    "license": "NASA media usage (public domain)",
+    "author": "NASA/Josh Valcarcel",
+    "credit": "NASA/Josh Valcarcel"
+  },
+  {
+    "staged": "static/images/_staging/missions/artemis1/08.jpg",
+    "note": "gallery (lower priority, portrait); Moonikin Campos in his orange suit being unpacked after the flight (post-flight payload processing, 10 Jan 2023). Not the in-seat shot; none found",
+    "source_url": "https://images.nasa.gov/details/KSC-20230110-PH-CSH01_0035",
+    "nasa_id": "KSC-20230110-PH-CSH01_0035",
+    "size": "2000x3000",
+    "license": "NASA media usage (public domain)",
+    "author": "NASA/Cory Huston",
+    "credit": "NASA/Cory Huston"
+  },
+  {
+    "staged": "static/images/_staging/fleet-galleries/orion/05.jpg",
+    "note": "FLEET orion gallery candidate (existing 01-04 are CG/studio renders): real flight 'selfie', same file as missions/artemis1/05",
+    "source_url": "https://images.nasa.gov/details/cmasaw1_20221118204608_034",
+    "nasa_id": "cmasaw1_20221118204608_034",
+    "size": "1920x1440",
+    "license": "NASA media usage (public domain)",
+    "author": "NASA",
+    "credit": "NASA"
+  },
+  {
+    "staged": "static/images/_staging/fleet-galleries/orion/06.jpg",
+    "note": "FLEET orion gallery candidate: Orion in flight with Moon and Earth, same file as missions/artemis1/03",
+    "source_url": "https://images.nasa.gov/details/art001e000672",
+    "nasa_id": "art001e000672",
+    "size": "3000x2250",
+    "license": "NASA media usage (public domain)",
+    "author": "NASA",
+    "credit": "NASA"
+  },
+  {
+    "staged": "static/images/_staging/fleet-galleries/sls-block-1/06.jpg",
+    "note": "FLEET sls-block-1 gallery candidate (existing 01-05 are VAB stacking photos): night launch, same file as missions/artemis1/01",
+    "source_url": "https://images.nasa.gov/details/NHQ202211160200",
+    "nasa_id": "NHQ202211160200",
+    "size": "3000x2494",
+    "license": "NASA media usage (public domain)",
+    "author": "NASA/Bill Ingalls",
+    "credit": "NASA/Bill Ingalls"
+  }
+]

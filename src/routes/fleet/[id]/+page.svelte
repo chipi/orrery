@@ -14,10 +14,13 @@
   import { countryLabel } from '$lib/country-label';
   import { epochLabel } from '$lib/epoch-label';
   import { fleetSpecRows } from '$lib/fleet-spec-rows';
+  import { fleetCategoryLabel } from '$lib/fleet-category-label';
   import { canonicalUrl, metaDescription, pageTitle } from '$lib/seo';
   import { ogTitle, DEFAULT_OG_IMAGE } from '$lib/social-meta';
   import { article, breadcrumbList, absoluteUrl } from '$lib/json-ld';
+  import Chip from '$lib/components/Chip.svelte';
   import JsonLd from '$lib/components/JsonLd.svelte';
+  import EntityThumb from '$lib/components/EntityThumb.svelte';
   import type { PageData } from './$types';
 
   let { data }: { data: PageData } = $props();
@@ -26,20 +29,6 @@
   let summary = $derived(
     metaDescription([entry.tagline, entry.description].filter(Boolean).join(' ')),
   );
-  const CATEGORY: Record<string, () => string> = {
-    launcher: m.fleet_cat_launcher,
-    'crewed-spacecraft': m.fleet_cat_crewed,
-    'cargo-spacecraft': m.fleet_cat_cargo,
-    station: m.fleet_cat_station,
-    rover: m.fleet_cat_rover,
-    lander: m.fleet_cat_lander,
-    orbiter: m.fleet_cat_orbiter,
-    observatory: m.fleet_cat_observatory,
-    'space-suit': m.fleet_cat_suit,
-    constellation: m.fleet_cat_constellation,
-    'launch-site': m.fleet_cat_launch_site,
-    engine: m.fleet_cat_engine,
-  };
   let siteHeading = $derived(
     entry.category === 'lander' || entry.category === 'rover'
       ? m.surface_landing_site()
@@ -81,8 +70,8 @@
 </svelte:head>
 <JsonLd data={jsonLd} />
 
-<article class="entity">
-  <nav class="crumb">
+<article class="entity page-shell page-shell--reading">
+  <nav class="crumb page-crumb">
     <a href={localHref('/fleet')}>{section}</a>
     <span class="sep">›</span>
     <span>{entry.name}</span>
@@ -90,11 +79,11 @@
 
   <header>
     <p class="meta">
-      {entry.agency} · {CATEGORY[entry.category]?.() ?? entry.category} ·
+      {entry.agency} · {fleetCategoryLabel(entry.category)} ·
       <span class="status">{fleetStatusLabel(entry.status)}</span>
     </p>
-    <h1>{entry.name}</h1>
-    {#if entry.tagline}<p class="lede">{entry.tagline}</p>{/if}
+    <h1 class="page-title">{entry.name}</h1>
+    {#if entry.tagline}<p class="lede page-lead">{entry.tagline}</p>{/if}
   </header>
 
   {#if data.hero}
@@ -150,29 +139,24 @@
 
   {#if data.missions.length}
     <section class="missions">
-      <h2>{m.panel_tab_missions()}</h2>
+      <h2 class="page-section-label">{m.panel_tab_missions()}</h2>
       <ul class="linklist">
-        {#each data.missions as mission (mission.id)}
-          <li>
-            <a href={localHref(`/missions/${mission.id}`)}>{mission.name}</a>
-            <span class="year">{mission.year}</span>
-            {#if mission.first}<span class="note">{mission.first}</span>{/if}
-          </li>
-        {/each}
-      </ul>
-    </section>
-  {/if}
-
-  {#if data.crewed.length}
-    <section class="crew">
-      <h2>{m.panel_tab_crew()}</h2>
-      <ul>
-        {#each data.crewed as fl (fl.designation)}
-          <li>
-            {#if fl.missionId}<a class="inline" href={localHref(`/missions/${fl.missionId}`)}
-                >{fl.mission}</a
-              >{:else}{fl.mission}{/if}
-            — {fl.crew.join(', ')}
+        {#each data.missions as mission (mission.key)}
+          <li class="has-thumb">
+            <EntityThumb src={mission.thumb} ring={mission.ring} />
+            <span class="lt-body">
+              {#if mission.missionId}
+                <a href={localHref(`/missions/${mission.missionId}`)}>{mission.title}</a>
+              {:else}
+                {mission.title}
+              {/if}
+              {#if mission.missionId}<span class="year">{mission.sub}</span>{/if}
+              {#if mission.first}<span class="note">{mission.first}</span>{/if}
+              {#if !mission.missionId && mission.sub}<span class="note">{mission.sub}</span>{/if}
+              {#if mission.crew.length}
+                <span class="note">{m.panel_tab_crew()}: {mission.crew.join(', ')}</span>
+              {/if}
+            </span>
           </li>
         {/each}
       </ul>
@@ -181,7 +165,7 @@
 
   {#if data.sites.length}
     <section class="sites">
-      <h2>{siteHeading}</h2>
+      <h2 class="page-section-label">{siteHeading}</h2>
       <ul class="linklist wide">
         {#each data.sites as site (site.href)}
           <li>
@@ -194,15 +178,18 @@
     </section>
   {/if}
 
-  {#each [{ title: m.fleet_engines_heading(), items: data.engines }, { title: m.fleet_used_on(), items: data.usedOn }, { title: section, items: data.alongside }, { title: CATEGORY[entry.category]?.() ?? entry.category, items: data.kin }] as group (group.title)}
+  {#each [{ title: m.fleet_engines_heading(), items: data.engines }, { title: m.fleet_used_on(), items: data.usedOn }, { title: section, items: data.alongside }, { title: fleetCategoryLabel(entry.category), items: data.kin }] as group (group.title)}
     {#if group.items.length}
       <section class="related">
-        <h2>{group.title}</h2>
+        <h2 class="page-section-label">{group.title}</h2>
         <ul class="linklist">
           {#each group.items as h (h.id)}
-            <li>
-              <a href={localHref(`/fleet/${h.id}`)}>{h.name}</a>
-              {#if h.tagline}<span class="note">{h.tagline}</span>{/if}
+            <li class="has-thumb">
+              <EntityThumb src={h.thumb} ring={h.ring} fallback="none" />
+              <span class="lt-body">
+                <a href={localHref(`/fleet/${h.id}`)}>{h.name}</a>
+                {#if h.tagline}<span class="note">{h.tagline}</span>{/if}
+              </span>
             </li>
           {/each}
         </ul>
@@ -212,7 +199,7 @@
 
   {#if data.museums.length}
     <section class="museums">
-      <h2>{m.museum_block_heading()}</h2>
+      <h2 class="page-section-label">{m.museum_block_heading()}</h2>
       <ul>
         {#each data.museums as museum (museum.id)}
           <li>
@@ -224,6 +211,6 @@
   {/if}
 
   <p class="actions">
-    <a class="cta" href={localHref(`/fleet?id=${entry.id}`)}>{m.launches_open_in_orrery()}</a>
+    <Chip kind="link" href={localHref(`/fleet?id=${entry.id}`)}>{m.launches_open_in_orrery()}</Chip>
   </p>
 </article>

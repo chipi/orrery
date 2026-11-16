@@ -94,5 +94,25 @@
   "link_labels": {
     "/earth": "Erde — Umlaufbahnen & Startplätze",
     "/fleet?id=discovery": "Flotte — Space-Shuttle-Orbiter"
+  },
+  "roster": {
+    "mission:galileo": {
+      "note": "aus der Nutzlastbucht der Atlantis auf STS-34 im Oktober 1989 ausgesetzt, dann mit einer Oberstufe zum Jupiter geschickt"
+    },
+    "mission:ulysses": {
+      "note": "aus der Nutzlastbucht der Discovery auf STS-41 im Oktober 1990 ausgesetzt, dann am Jupiter vorbei in eine polare Sonnenumlaufbahn geschickt"
+    },
+    "mission:magellan": {
+      "note": "aus der Nutzlastbucht der Atlantis auf STS-30 im Mai 1989 ausgesetzt, dann mit einer Oberstufe zur Venus geschickt"
+    },
+    "mission:sts-1": {
+      "note": "der erste Orbitalflug — das erste Mal, dass ein bemanntes Raumfahrzeug beim Jungfernstart in den Orbit flog, und das erste wiederverwendbare"
+    },
+    "mission:sts-51-l": {
+      "note": "73 Sekunden nach dem Start verloren, als eine kältestarre Booster-Dichtung versagte; sieben Besatzungsmitglieder starben, und die Katastrophe legte eine Kultur offen, die bekannte Risiken normalisiert hatte"
+    },
+    "mission:sts-107": {
+      "note": "beim Wiedereintritt verloren, nachdem Schaumtrümmer beim Start den Flügel durchlöchert hatten; sieben Besatzungsmitglieder starben, und es zeigte sich, dass sich dasselbe organisatorische Versagen wiederholt hatte"
+    }
   }
 }

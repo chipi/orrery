@@ -53,6 +53,8 @@ const TASKS: Task[] = [
   { name: 'check-tech-bom', cmd: 'tsx', args: ['scripts/build-tech-bom.ts', '--check'] },
   { name: 'check-doc-counts', cmd: 'node', args: ['scripts/gen-doc-counts.mjs', '--check'] },
   { name: 'check-version-sync', cmd: 'node', args: ['scripts/check-version-sync.mjs'] },
+  // A bare paraglide compile writes src/paraglide/, which empties svelte-check's program.
+  { name: 'check-stray-paraglide', cmd: 'node', args: ['scripts/check-stray-paraglide.mjs'] },
   // In-app links held in data, overlays and messages (every locale): route,
   // query parameter and selected id must exist. Panel links never reach the
   // prerendered HTML that check-internal-links.mjs reads.
@@ -123,6 +125,15 @@ const TASKS: Task[] = [
     name: 'validate-hero-coverage',
     cmd: 'tsx',
     args: ['scripts/validate-hero-coverage.ts'],
+    groups: ['image'],
+  },
+  // Flown-vehicle galleries: a concept, illustration or computer graphic says so in the provenance
+  // title and the alt text (Rule B), and a hero is a photograph unless the vehicle is PLANNED or the
+  // slot is waived (Rule A; today's concept heroes are frozen in hero-concept-baseline.json). ADR-053.
+  {
+    name: 'validate-image-depiction',
+    cmd: 'tsx',
+    args: ['scripts/validate-image-depiction.ts'],
     groups: ['image'],
   },
   {

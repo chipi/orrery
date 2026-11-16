@@ -144,10 +144,6 @@
 
   onMount(() => {
     ensureLayerDefaults();
-    // Advertise to <html data-science-lens-available> so the nav
-    // lens-toggle knows it can do something on this route — gates
-    // the hover-affordance in Nav.svelte.
-    stops.push(markScienceLensAvailable());
     stops.push(
       onScienceLensChange((on) => {
         lensOn = on;
@@ -430,6 +426,14 @@
   let visibleLayers = $derived(available.filter((k) => LAYER_ORDER.includes(k)));
   let hasLensStory = $derived(Boolean(title && body && tab && section));
   let hasLayers = $derived(visibleLayers.length > 0);
+
+  // Advertise to <html data-science-lens-available> so the nav lens-toggle knows it can do
+  // something here: only while the panel has something to draw (a /explore level with no layers
+  // has none, so the toggle reads "unavailable here" instead of doing nothing).
+  $effect(() => {
+    if (!(hasLensStory || hasLayers)) return;
+    return markScienceLensAvailable();
+  });
 </script>
 
 {#if lensOn && (hasLensStory || hasLayers)}
@@ -541,6 +545,13 @@
     box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
     color: var(--color-text);
   }
+  /* /explore and the world scenes (Earth, Moon, Mars) pin a control row (`.hud-controls`) at the
+     top of the page that reaches past the centre at laptop widths; the panel drops below it, as
+     it already does on a phone, instead of sliding under the chips. The station pages keep their
+     row on the left and stack the panel under the orbit banner instead. */
+  :global(html:has(.hud-controls):not(:has([data-testid='station-orbit-banner']))) .panel {
+    top: calc(var(--nav-height) + var(--lens-banner-height, 0px) + 56px);
+  }
   /* Clickable strip header. Acts as the collapse toggle when expanded
      is true; when collapsed, only this strip is visible so the panel
      is compact. */
@@ -579,7 +590,7 @@
   }
   .eyebrow {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 8px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
     color: #ffc850;
     text-align: left;
@@ -612,16 +623,14 @@
     transition: color 120ms;
   }
   .lens-body {
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 13px;
+    font-size: var(--size-body);
     line-height: 1.5;
     color: rgba(255, 255, 255, 0.78);
     margin-bottom: 6px;
   }
   .lens-link {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     color: rgba(255, 200, 80, 0.85);
   }
@@ -635,7 +644,7 @@
   }
   .foundations-eyebrow {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
     color: rgba(255, 200, 80, 0.65);
     margin-bottom: 6px;
@@ -714,17 +723,15 @@
   }
   .row-name {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.92);
   }
   .row-desc {
     margin: 2px 0 0 22px;
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 11px;
+    font-size: var(--size-meta);
     line-height: 1.3;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
   }
   .row-learn {
     display: inline-block;
@@ -732,7 +739,7 @@
     color: rgba(255, 215, 102, 0.85);
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-style: normal;
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 1.5px;
     text-decoration: none;
     border-bottom: 1px solid rgba(255, 215, 102, 0.25);

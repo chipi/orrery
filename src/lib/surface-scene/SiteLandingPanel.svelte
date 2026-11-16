@@ -3,6 +3,7 @@
   came down), then the anatomy drawings of what is on the surface
   (site-anatomy.ts), each with its exploded cutaway when it has one, opening
   full-size and linking to its fleet entry. Styled as /fleet's anatomy figure.
+  With heading="spacecraft" it is the body of an orbiter's (or an Earth object's) DETAIL tab.
 -->
 <script lang="ts">
   import * as m from '$lib/paraglide/messages';
@@ -18,7 +19,10 @@
     locale,
     onOpen,
     part = 'main',
+    heading = 'surface',
   }: {
+    /** surface = "On the surface" (a lander); spacecraft = "The spacecraft" (an orbiter, DETAIL tab). */
+    heading?: 'surface' | 'spacecraft';
     anatomy: SiteAnatomy[];
     sequence?: string | null;
     locale: string;
@@ -107,7 +111,9 @@
       <p class="anatomy-caption">{m.site_landing_sequence_caption()}</p>
     {/if}
     {#if anatomy.length > 0}
-      <h3 class="landing-heading">{m.programs_on_surface()}</h3>
+      <h3 class="landing-heading">
+        {heading === 'spacecraft' ? m.site_spacecraft_heading() : m.programs_on_surface()}
+      </h3>
       {#each anatomy as a (a.fleetId)}
         {@const name = names[a.fleetId] ?? a.fleetId}
         {@const ladder = ladderReady ? ladderSources(a.src) : null}
@@ -193,8 +199,8 @@
   .anatomy-caption {
     margin: 0;
     font-family: 'Crimson Pro', Georgia, serif;
-    font-style: italic;
-    font-size: 11.5px;
+    font-style: italic; /* a1-keep: caption */
+    font-size: var(--size-caption);
     color: rgba(255, 255, 255, 0.5);
   }
 </style>

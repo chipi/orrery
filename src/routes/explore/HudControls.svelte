@@ -4,11 +4,17 @@
   import { launchArScene, launchSkyScene } from '$lib/ar/launch-ar';
   import EnterArButton from '$lib/components/EnterArButton.svelte';
   import EnterSkyButton from '$lib/components/EnterSkyButton.svelte';
+  import Chip from '$lib/components/Chip.svelte';
+  import EntityThumb from '$lib/components/EntityThumb.svelte';
+  import { thumbOf } from '$lib/entity-thumb';
+  import LayerChipRow from '$lib/components/LayerChipRow.svelte';
+  import ResetViewButton from '$lib/components/ResetViewButton.svelte';
   import MobileDrawerGroup from '$lib/components/MobileDrawerGroup.svelte';
   import OrbitRuler from '$lib/components/OrbitRuler.svelte';
   import TacticalScan from '$lib/components/TacticalScan.svelte';
-  import { INTERSTELLAR_CRAFT, PATHS_LEGEND, iconicTagline } from '$lib/explore/paths-legend';
-  import { localeFromPage, localHref } from '$lib/locale';
+  import WhyPopover from '$lib/components/WhyPopover.svelte';
+  import { PATHS_LEGEND, iconicTagline } from '$lib/explore/paths-legend';
+  import { localeFromPage } from '$lib/locale';
   import * as m from '$lib/paraglide/messages';
   import type { LightTime, PlanetStats } from '$lib/physics/util/planet-stats';
   import type { OrbitRegime } from '$types/orbit-regime';
@@ -28,13 +34,14 @@
     toggleView,
     hasSelection,
     onResetView,
+    clearRightPx = 16,
+    mobileClearRightPx = clearRightPx,
     layers,
     onToggleLayer,
     onShowPaths,
     pathsLegendEl = $bindable(),
     legendRowEls,
     iconic,
-    openMessageCraft,
     onLegendKeydown,
     exploreRegimes,
     openExploreRegime,
@@ -43,13 +50,27 @@
     focusedRotationHours,
     focusedLightTime,
     focusedOnPlanet,
+    drawerUnderPanel = false,
+    mobileRowsHeight = $bindable(0),
   }: {
+    /** The measured height of the phone's top rows (0 when they are not drawn), for the hint that
+     *  hangs under them. */
+    mobileRowsHeight?: number;
     /** True outside the solar system (or in a black-hole takeover). */
     hidden: boolean;
+    /** A side panel is docked (landscape phone): the inline drawer row has no room beside it, and
+     *  its visible part would open a card under the panel, so the row is hidden until it closes. */
+    drawerUnderPanel?: boolean;
     view: '3d' | '2d';
     toggleView: () => void;
     hasSelection: boolean;
     onResetView: () => void;
+    /** Pixels kept free at the right edge: a docked panel plus the scale navigator (flush right
+     *  at the solar system, beside the panel). The row wraps before it, the worlds' "stop before
+     *  the panel" rule (hud-beside-panel). */
+    clearRightPx?: number;
+    /** The same for the phone's top rows, which also clear the level card under the navigator. */
+    mobileClearRightPx?: number;
     layers: ExploreLayers;
     onToggleLayer: (key: keyof ExploreLayers) => void;
     onShowPaths: () => void;
@@ -57,7 +78,6 @@
     /** The page's array; the desktop legend rows fill it (keyboard nav). */
     legendRowEls: HTMLButtonElement[];
     iconic: IconicSelectionService;
-    openMessageCraft: (craftId: string, locale: string) => Promise<void>;
     onLegendKeydown: (e: KeyboardEvent, i: number) => void;
     exploreRegimes: OrbitRegime[];
     openExploreRegime: (id: string) => void;
@@ -67,95 +87,118 @@
     focusedLightTime: LightTime | null;
     focusedOnPlanet: boolean;
   } = $props();
+
+  const LAYER_CHIPS: {
+    key: 'planets' | 'dwarfs' | 'comets' | 'interstellar';
+    label: () => string;
+    tip: () => string;
+  }[] = [
+    { key: 'planets', label: m.ui_layer_planets, tip: m.explore_layer_tip_planets },
+    { key: 'dwarfs', label: m.ui_layer_dwarfs, tip: m.explore_layer_tip_dwarfs },
+    { key: 'comets', label: m.ui_layer_comets, tip: m.explore_layer_tip_comets },
+    {
+      key: 'interstellar',
+      label: m.ui_layer_interstellar_short,
+      tip: m.explore_layer_tip_interstellar,
+    },
+  ];
+
+  /** The layer chips for LayerChipRow, ICONIC MISSIONS first (it opens the legend below the row,
+   *  C7 IM7). The phone controls drawer closes after a toggle and leaves PATHS to its own Iconic
+   *  Missions tab. */
+  function layerChips(after?: () => void, withPaths = true) {
+    return [
+      ...(withPaths
+        ? [
+            {
+              testid: 'layer-paths',
+              label: m.ui_layer_paths,
+              title: m.explore_layer_tip_paths(),
+              active: () => layers.paths,
+              toggle: () => onToggleLayer('paths'),
+              attrs: { 'data-audio-stage': 'explore-layer-paths' },
+            },
+          ]
+        : []),
+      ...LAYER_CHIPS.map((chip) => ({
+        testid: `layer-${chip.key}`,
+        label: chip.label,
+        title: chip.tip(),
+        active: () => layers[chip.key],
+        toggle: () => {
+          onToggleLayer(chip.key);
+          after?.();
+        },
+      })),
+    ];
+  }
+
+  // The hovered craft's tagline is a card beside the legend, level with its row, so the list
+  // never shifts (C7 IM1, UXD-026). Only the hovered row: a selection opens its panel.
+  let tipEl: HTMLDivElement | undefined = $state();
+  let tipTop = $state(0);
+  const tipId = $derived(iconic.state.hoveredId);
+  $effect(() => {
+    const id = tipId;
+    const legend = pathsLegendEl;
+    if (!id || !legend) return;
+    const row = legendRowEls[PATHS_LEGEND.findIndex((e) => e.mission_id === id)];
+    if (!row) return;
+    const box = legend.getBoundingClientRect();
+    const r = row.getBoundingClientRect();
+    const h = tipEl?.offsetHeight ?? 0;
+    // Level with the row, kept inside the viewport (a card beside the last rows would run off it).
+    tipTop = Math.max(0, Math.min(r.top - box.top - 4, window.innerHeight - 8 - box.top - h));
+  });
+  let liveText = $state('');
+  $effect(() => {
+    const id = tipId;
+    const t = setTimeout(() => (liveText = id ? iconicTagline(id) : ''), id ? 250 : 0);
+    return () => clearTimeout(t);
+  });
 </script>
 
-<!-- Secondary HUD controls: 2D/3D toggle + layer chips + paths-legend.
+<!-- The legend's title (IM1) with the (i) behind which the "why one plane" explanation sits:
+     the WhyPopover, click-to-open, with its "Read full" link into /science. -->
+{#snippet legendHead()}
+  <div class="paths-legend-head">
+    <p class="paths-legend-title">{m.explore_iconic_tagline_placeholder()}</p>
+    <span class="paths-legend-why" data-testid="paths-legend-why">
+      <WhyPopover
+        title={m.explore_why_plane()}
+        body={m.explore_why_plane_body()}
+        tab="transfers"
+        section="coplanar-trajectories"
+        triggerLabel="ⓘ"
+        eyebrow=""
+      />
+    </span>
+  </div>
+{/snippet}
+<!-- Secondary HUD controls: 2D/3D chip + layer chips + paths-legend.
      Defined once as a snippet; rendered inline on desktop, inside
      MobileDrawerGroup accordion on mobile (≤767 px). -->
 {#snippet exploreControls()}
   <div class="ctrl-row">
-    <button
-      class="toggle"
-      type="button"
+    <Chip
+      kind="toggle"
+      active={view === '2d'}
       onclick={toggleView}
-      aria-pressed={view === '2d'}
       data-testid="explore-view-toggle"
     >
       {view === '3d' ? m.ui_view_2d() : m.ui_view_3d()}
-    </button>
-    {#if hasSelection}
-      <button
-        class="toggle"
-        type="button"
-        onclick={onResetView}
-        data-testid="explore-reset-view"
-        data-audio-stage="explore-reset-view"
-      >
-        {m.ui_reset_view()}
-      </button>
-    {/if}
+    </Chip>
+    <ResetViewButton
+      onclick={onResetView}
+      data-testid="explore-reset-view"
+      data-audio-stage="explore-reset-view"
+      disabled={!hasSelection}
+    />
     <EnterArButton onEnter={() => void launchArScene('explore')} />
     <EnterSkyButton onEnter={() => void launchSkyScene()} />
   </div>
-  <!-- Inline chips rather than LayerChipRow: the PATHS chip carries
-       data-audio-stage which LayerChipRow's interface doesn't expose. -->
   <div class="ctrl-row chips" role="group" aria-label={m.ui_visibility_layers()}>
-    <button
-      type="button"
-      class="chip"
-      class:active={layers.planets}
-      aria-pressed={layers.planets}
-      onclick={() => onToggleLayer('planets')}
-      data-testid="layer-planets"
-      title={m.explore_layer_tip_planets()}
-    >
-      {m.ui_layer_planets()}
-    </button>
-    <button
-      type="button"
-      class="chip"
-      class:active={layers.dwarfs}
-      aria-pressed={layers.dwarfs}
-      onclick={() => onToggleLayer('dwarfs')}
-      data-testid="layer-dwarfs"
-      title={m.explore_layer_tip_dwarfs()}
-    >
-      {m.ui_layer_dwarfs()}
-    </button>
-    <button
-      type="button"
-      class="chip"
-      class:active={layers.comets}
-      aria-pressed={layers.comets}
-      onclick={() => onToggleLayer('comets')}
-      data-testid="layer-comets"
-      title={m.explore_layer_tip_comets()}
-    >
-      {m.ui_layer_comets()}
-    </button>
-    <button
-      type="button"
-      class="chip"
-      class:active={layers.interstellar}
-      aria-pressed={layers.interstellar}
-      onclick={() => onToggleLayer('interstellar')}
-      data-testid="layer-interstellar"
-      title={m.explore_layer_tip_interstellar()}
-    >
-      {m.ui_layer_interstellar_short()}
-    </button>
-    <button
-      type="button"
-      class="chip"
-      class:active={layers.paths}
-      aria-pressed={layers.paths}
-      onclick={() => onToggleLayer('paths')}
-      data-audio-stage="explore-layer-paths"
-      data-testid="layer-paths"
-      title={m.explore_layer_tip_paths()}
-    >
-      {m.ui_layer_paths()}
-    </button>
+    <LayerChipRow chips={layerChips()} />
   </div>
   {#if layers.paths}
     <div
@@ -164,65 +207,65 @@
       role="group"
       aria-label={m.explore_trajectory_legend_aria()}
     >
-      <a
-        class="paths-legend-why"
-        href={localHref(`/science/transfers/coplanar-trajectories`)}
-        data-testid="paths-legend-why"
+      {@render legendHead()}
+      <!-- Hover brightens the arc + shows the tagline in the card beside the row but does NOT
+           open the panel — click commits. Intentional after the 2026-06-19 render-storm from
+           async getMission() on every mouseenter. The card is drawn at once; a separate live region
+           reads the tagline once the pointer has rested 250 ms, so a sweep over the rows is not
+           read row by row. -->
+      <div
+        class="paths-legend-tip"
+        class:is-on={!!tipId}
+        bind:this={tipEl}
+        style:top="{tipTop}px"
+        aria-hidden="true"
+        data-testid="paths-legend-tip"
       >
-        {m.explore_why_plane()}
-      </a>
-      <!-- Hover brightens the arc + swaps the tagline but does NOT open
-           the panel — click commits. Intentional after the 2026-06-19
-           render-storm from async getMission() on every mouseenter. -->
-      <div class="paths-legend-tagline" aria-live="polite">
-        {#if iconic.state.hoveredId}
-          {iconicTagline(iconic.state.hoveredId)}
-        {:else if iconic.state.selectedId}
-          {iconicTagline(iconic.state.selectedId)}
-        {:else}
-          {m.explore_iconic_tagline_placeholder()}
-        {/if}
+        {#if tipId}{iconicTagline(tipId)}{/if}
       </div>
-      {#each PATHS_LEGEND as entry, i (entry.mission_id)}
-        <button
-          type="button"
-          class="paths-legend-row"
-          bind:this={legendRowEls[i]}
-          class:is-selected={iconic.state.selectedId === entry.mission_id}
-          class:is-hovered={iconic.state.hoveredId === entry.mission_id}
-          aria-pressed={iconic.state.selectedId === entry.mission_id}
-          onclick={() =>
-            INTERSTELLAR_CRAFT.has(entry.mission_id)
-              ? openMessageCraft(entry.mission_id, localeFromPage(page))
-              : iconic.selectMission(entry.mission_id, localeFromPage(page))}
-          onkeydown={(e) => onLegendKeydown(e, i)}
-          onmouseenter={() => {
-            iconic.state.hoveredId = entry.mission_id;
-          }}
-          onfocus={() => {
-            iconic.state.hoveredId = entry.mission_id;
-          }}
-          onblur={() => {
-            if (iconic.state.hoveredId === entry.mission_id) {
+      <div class="paths-legend-live" aria-live="polite" data-testid="paths-legend-live">
+        {liveText}
+      </div>
+      <div class="paths-legend-list">
+        {#each PATHS_LEGEND as entry, i (entry.mission_id)}
+          <button
+            type="button"
+            class="paths-legend-row"
+            data-a4-keep="legend row, not a chip"
+            bind:this={legendRowEls[i]}
+            class:is-selected={iconic.state.selectedId === entry.mission_id}
+            class:is-hovered={iconic.state.hoveredId === entry.mission_id}
+            aria-pressed={iconic.state.selectedId === entry.mission_id}
+            onclick={() => iconic.selectMission(entry.mission_id, localeFromPage(page))}
+            onkeydown={(e) => onLegendKeydown(e, i)}
+            onmouseenter={() => {
+              iconic.state.hoveredId = entry.mission_id;
+            }}
+            onfocus={() => {
+              iconic.state.hoveredId = entry.mission_id;
+            }}
+            onblur={() => {
+              if (iconic.state.hoveredId === entry.mission_id) {
+                iconic.state.hoveredId = null;
+              }
+            }}
+            onmouseleave={() => {
               iconic.state.hoveredId = null;
-            }
-          }}
-          onmouseleave={() => {
-            iconic.state.hoveredId = null;
-          }}
-          data-testid="paths-legend-row-{entry.mission_id}"
-          data-audio-stage="iconic-mission-{entry.mission_id}"
-        >
-          <span class="swatch" style="background-color: {entry.color};" aria-hidden="true"></span>
-          <span class="name">{entry.name}</span>
-          <span class="logos" aria-hidden="true">
-            {#each agencyToLogoPaths(entry.agency) as logoPath (logoPath)}
-              <img src={logoPath} alt="" loading="lazy" />
-            {/each}
-          </span>
-          <span class="year">{entry.launch_year}</span>
-        </button>
-      {/each}
+            }}
+            data-testid="paths-legend-row-{entry.mission_id}"
+            data-audio-stage="iconic-mission-{entry.mission_id}"
+          >
+            <EntityThumb src={thumbOf('missions', entry.mission_id)} ring={entry.color} />
+            <span class="name">{entry.name}</span>
+            <span class="logos" aria-hidden="true">
+              {#each agencyToLogoPaths(entry.agency) as logoPath (logoPath)}
+                <img src={logoPath} alt="" loading="lazy" />
+              {/each}
+            </span>
+            <span class="year">{entry.launch_year}</span>
+          </button>
+        {/each}
+      </div>
     </div>
   {/if}
 {/snippet}
@@ -230,6 +273,7 @@
 <div
   class="hud-controls"
   class:context-hidden={hidden}
+  style:--hud-clear-right="{clearRightPx}px"
   data-audio-stage="explore-hud"
   role="group"
   aria-label={m.ui_view_controls()}
@@ -240,30 +284,26 @@
      desktop .hud-controls corner; .hud-controls itself is desktop-only). -->
 <div
   class="hud-top-mobile"
+  bind:clientHeight={mobileRowsHeight}
   class:context-hidden={hidden}
+  style:--hud-clear-right="{mobileClearRightPx}px"
   role="group"
   aria-label={m.ui_view_controls()}
 >
-  <button
-    class="toggle"
-    type="button"
+  <Chip
+    kind="toggle"
+    active={view === '2d'}
     onclick={toggleView}
-    aria-pressed={view === '2d'}
     data-testid="explore-view-toggle-mobile"
   >
     {view === '3d' ? m.ui_view_2d() : m.ui_view_3d()}
-  </button>
-  {#if hasSelection}
-    <button
-      class="toggle"
-      type="button"
-      onclick={onResetView}
-      data-testid="explore-reset-view-mobile"
-      data-audio-stage="explore-reset-view"
-    >
-      {m.ui_reset_view()}
-    </button>
-  {/if}
+  </Chip>
+  <ResetViewButton
+    onclick={onResetView}
+    data-testid="explore-reset-view-mobile"
+    data-audio-stage="explore-reset-view"
+    disabled={!hasSelection}
+  />
   <EnterArButton onEnter={() => void launchArScene('explore')} />
   <EnterSkyButton onEnter={() => void launchSkyScene()} />
 </div>
@@ -274,6 +314,7 @@
     <OrbitRuler
       regimes={exploreRegimes}
       highlightRegime={null}
+      collapsible={false}
       onSelect={(id) => {
         openExploreRegime(id);
         close();
@@ -284,140 +325,71 @@
 {/snippet}
 {#snippet mobileControlsContent(close: () => void)}
   <div class="ctrl-row chips" role="group" aria-label={m.ui_visibility_layers()}>
-    <button
-      type="button"
-      class="chip"
-      class:active={layers.planets}
-      aria-pressed={layers.planets}
-      onclick={() => {
-        onToggleLayer('planets');
-        close();
-      }}
-      data-testid="layer-planets"
-      title={m.explore_layer_tip_planets()}
-    >
-      {m.ui_layer_planets()}
-    </button>
-    <button
-      type="button"
-      class="chip"
-      class:active={layers.dwarfs}
-      aria-pressed={layers.dwarfs}
-      onclick={() => {
-        onToggleLayer('dwarfs');
-        close();
-      }}
-      data-testid="layer-dwarfs"
-      title={m.explore_layer_tip_dwarfs()}
-    >
-      {m.ui_layer_dwarfs()}
-    </button>
-    <button
-      type="button"
-      class="chip"
-      class:active={layers.comets}
-      aria-pressed={layers.comets}
-      onclick={() => {
-        onToggleLayer('comets');
-        close();
-      }}
-      data-testid="layer-comets"
-      title={m.explore_layer_tip_comets()}
-    >
-      {m.ui_layer_comets()}
-    </button>
-    <button
-      type="button"
-      class="chip"
-      class:active={layers.interstellar}
-      aria-pressed={layers.interstellar}
-      onclick={() => {
-        onToggleLayer('interstellar');
-        close();
-      }}
-      data-testid="layer-interstellar"
-      title={m.explore_layer_tip_interstellar()}
-    >
-      {m.ui_layer_interstellar_short()}
-    </button>
+    <LayerChipRow chips={layerChips(close, false)} />
   </div>
 {/snippet}
 {#snippet mobileIconicContent(close: () => void)}
   <!-- Compact trajectory on/off — a much smaller stand-in for the desktop
        chip. onOpen enables the layer when the drawer opens; this toggle lets
        you switch the arcs off without closing the drawer. -->
-  <button
-    type="button"
-    class="iconic-toggle"
-    class:active={layers.paths}
-    aria-pressed={layers.paths}
-    onclick={() => onToggleLayer('paths')}
-    data-testid="layer-paths"
-    title={m.explore_layer_tip_paths()}
-  >
-    <span class="iconic-toggle-dot" class:on={layers.paths} aria-hidden="true"></span>
-    {m.ui_layer_paths()}
-  </button>
-  <div class="paths-legend" role="group" aria-label={m.explore_trajectory_legend_aria()}>
-    <a
-      class="paths-legend-why"
-      href={localHref(`/science/transfers/coplanar-trajectories`)}
-      data-testid="paths-legend-why"
-    >
-      {m.explore_why_plane()}
-    </a>
-    <div class="paths-legend-tagline" aria-live="polite">
-      {#if iconic.state.hoveredId}
-        {iconicTagline(iconic.state.hoveredId)}
-      {:else if iconic.state.selectedId}
-        {iconicTagline(iconic.state.selectedId)}
-      {:else}
-        {m.explore_iconic_tagline_placeholder()}
-      {/if}
-    </div>
-    {#each PATHS_LEGEND as entry, i (entry.mission_id)}
-      <button
-        type="button"
-        class="paths-legend-row"
-        class:is-selected={iconic.state.selectedId === entry.mission_id}
-        class:is-hovered={iconic.state.hoveredId === entry.mission_id}
-        aria-pressed={iconic.state.selectedId === entry.mission_id}
-        onclick={() => {
-          if (INTERSTELLAR_CRAFT.has(entry.mission_id)) {
-            void openMessageCraft(entry.mission_id, localeFromPage(page));
-          } else {
-            iconic.selectMission(entry.mission_id, localeFromPage(page));
-          }
-          close();
-        }}
-        onkeydown={(e) => onLegendKeydown(e, i)}
-        onmouseenter={() => {
-          iconic.state.hoveredId = entry.mission_id;
-        }}
-        onfocus={() => {
-          iconic.state.hoveredId = entry.mission_id;
-        }}
-        onblur={() => {
-          if (iconic.state.hoveredId === entry.mission_id) {
-            iconic.state.hoveredId = null;
-          }
-        }}
-        onmouseleave={() => {
-          iconic.state.hoveredId = null;
-        }}
-        data-testid="paths-legend-row-{entry.mission_id}"
-        data-audio-stage="iconic-mission-{entry.mission_id}"
+  <div class="iconic-drawer">
+    <div class="iconic-row">
+      <Chip
+        kind="toggle"
+        dot
+        active={layers.paths}
+        onclick={() => onToggleLayer('paths')}
+        data-testid="layer-paths"
+        title={m.explore_layer_tip_paths()}
       >
-        <span class="swatch" style="background-color: {entry.color};" aria-hidden="true"></span>
-        <span class="name">{entry.name}</span>
-        <span class="logos" aria-hidden="true">
-          {#each agencyToLogoPaths(entry.agency) as logoPath (logoPath)}
-            <img src={logoPath} alt="" loading="lazy" />
-          {/each}
-        </span>
-        <span class="year">{entry.launch_year}</span>
-      </button>
-    {/each}
+        {m.ui_layer_paths()}
+      </Chip>
+    </div>
+    <div class="paths-legend" role="group" aria-label={m.explore_trajectory_legend_aria()}>
+      {@render legendHead()}
+      <div class="paths-legend-list">
+        {#each PATHS_LEGEND as entry, i (entry.mission_id)}
+          <button
+            type="button"
+            class="paths-legend-row"
+            data-a4-keep="legend row, not a chip"
+            class:is-selected={iconic.state.selectedId === entry.mission_id}
+            class:is-hovered={iconic.state.hoveredId === entry.mission_id}
+            aria-pressed={iconic.state.selectedId === entry.mission_id}
+            onclick={() => {
+              iconic.selectMission(entry.mission_id, localeFromPage(page));
+              close();
+            }}
+            onkeydown={(e) => onLegendKeydown(e, i)}
+            onmouseenter={() => {
+              iconic.state.hoveredId = entry.mission_id;
+            }}
+            onfocus={() => {
+              iconic.state.hoveredId = entry.mission_id;
+            }}
+            onblur={() => {
+              if (iconic.state.hoveredId === entry.mission_id) {
+                iconic.state.hoveredId = null;
+              }
+            }}
+            onmouseleave={() => {
+              iconic.state.hoveredId = null;
+            }}
+            data-testid="paths-legend-row-{entry.mission_id}"
+            data-audio-stage="iconic-mission-{entry.mission_id}"
+          >
+            <EntityThumb src={thumbOf('missions', entry.mission_id)} ring={entry.color} />
+            <span class="name">{entry.name}</span>
+            <span class="logos" aria-hidden="true">
+              {#each agencyToLogoPaths(entry.agency) as logoPath (logoPath)}
+                <img src={logoPath} alt="" loading="lazy" />
+              {/each}
+            </span>
+            <span class="year">{entry.launch_year}</span>
+          </button>
+        {/each}
+      </div>
+    </div>
   </div>
 {/snippet}
 <!-- Mobile "Scan" tab (#49) — the planet-stats tactical scan folded into the
@@ -438,27 +410,40 @@
 <!-- Mobile solar-system drawers (ruler/controls/missions/index) — solar-system
      only; the neighborhood + BodyScenes have their own chrome. -->
 {#if !hidden}
-  <MobileDrawerGroup
-    tabs={[
-      // B3: fixed semantic slot order [Measure][Overlays][Highlight][Scene];
-      // empty slots (no Overlays in solar-system) are simply omitted.
-      { id: 'ruler', label: m.drawer_tab_ruler(), icon: '◎', content: mobileRulerContent },
-      { id: 'missions', label: m.drawer_tab_missions(), icon: '➤', content: mobileIconicContent },
-      { id: 'controls', label: m.drawer_tab_controls(), icon: '▤', content: mobileControlsContent },
-      // Scan appears only when a focused planet has a tactical readout (#49).
-      ...(focusedOnPlanet && focusedStats
-        ? [{ id: 'scan', label: m.drawer_tab_scan(), icon: '◈', content: mobileScanContent }]
-        : []),
-    ]}
-    onOpen={(id) => {
-      if (id === 'missions') onShowPaths();
-    }}
-    bottomInline
-    --mcd-bottom="calc(56px + env(safe-area-inset-bottom, 0px))"
-  />
+  <div class="drawer-wrap" class:under-panel={drawerUnderPanel}>
+    <MobileDrawerGroup
+      tabs={[
+        // B3: fixed semantic slot order [Measure][Overlays][Highlight][Scene];
+        // empty slots (no Overlays in solar-system) are simply omitted.
+        { id: 'ruler', label: m.drawer_tab_ruler(), icon: '◎', content: mobileRulerContent },
+        { id: 'missions', label: m.drawer_tab_missions(), icon: '➤', content: mobileIconicContent },
+        {
+          id: 'controls',
+          label: m.drawer_tab_controls(),
+          icon: '▤',
+          content: mobileControlsContent,
+        },
+        // Scan appears only when a focused planet has a tactical readout (#49).
+        ...(focusedOnPlanet && focusedStats
+          ? [{ id: 'scan', label: m.drawer_tab_scan(), icon: '◈', content: mobileScanContent }]
+          : []),
+      ]}
+      onOpen={(id) => {
+        if (id === 'missions') onShowPaths();
+      }}
+      bottomInline
+      --mcd-bottom="calc(max(8px, env(safe-area-inset-bottom, 0px)) + 60px)"
+    />
+  </div>
 {/if}
 
 <style>
+  .drawer-wrap {
+    display: contents;
+  }
+  .drawer-wrap.under-panel {
+    visibility: hidden;
+  }
   /* Solar-system chrome hidden out in the stellar neighborhood. */
   .context-hidden {
     display: none !important;
@@ -473,12 +458,11 @@
   }
 
   /* HUD controls cluster — top-left, opposite the detail panel.
-     Two rows (mode toggles + visibility chips). Stays under the nav
+     One row on a fine pointer (view actions + visibility chips). Stays under the nav
      but always above the canvas. Pinned to the left so it never
      collides with the right-drawer detail panel on desktop.
      Phone (≤767 px): hidden — MobileDrawerGroup replaces it.
-     @min-width: 501 + @min-width: 769 layer desktop spacing + chip
-     stretch column back. */
+     @min-width: 501 relaxes the spacing; a fine pointer shows it. */
   .hud-controls {
     position: fixed;
     /* Mobile: tucked at left:8 / top:nav+8 / gap:6 to fit a 375 px
@@ -491,12 +475,6 @@
     z-index: 45;
     display: none;
     flex-direction: column;
-    /* Mobile: flex-start so each row takes its natural width (the chip
-       row wraps; the toggle row hugs left). align-items: stretch is
-       restored at @min-width: 769 so the chip column inherits the
-       top-row's computed width — 2026-06-06 user direction: "resize
-       those 4 filter chips to fit new width of remaining 2 buttons
-       on top". */
     align-items: flex-start;
     gap: 6px;
     pointer-events: none; /* children re-enable */
@@ -508,161 +486,193 @@
     pointer-events: auto;
   }
   .ctrl-row.chips {
-    /* Mobile: chip row is a single horizontally-scrollable line (A3) so it
-       never wraps to a second row and crowds the top edge — even when the
-       science lens adds its HR/Light-cone chips. At @min-width: 769 the rail
-       returns to a vertical column matching the toggle row's stretch width. */
+    /* One flat row (UXD-015), the same as on the worlds: wraps between chips where the
+       width runs out. */
     flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     align-items: center;
     max-width: calc(100vw - 24px);
-    overflow-x: auto;
-    scrollbar-width: none;
   }
-  .ctrl-row.chips::-webkit-scrollbar {
-    display: none;
+  .ctrl-row.chips :global(.ui-chip) {
+    flex: none;
   }
-  .toggle {
-    min-width: 44px;
-    min-height: 44px;
-    /* Mobile: 12 px font, 0/10 padding. Desktop bumps to 13 / 0 14. */
-    padding: 0 10px;
-    background: rgba(15, 18, 35, 0.85);
-    border: 1px solid rgba(68, 102, 255, 0.4);
-    color: #dde4ff;
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 12px;
-    letter-spacing: 0.06em;
-    border-radius: 4px;
-    cursor: pointer;
-    backdrop-filter: blur(6px);
-    transition:
-      border-color 120ms,
-      background 120ms;
-  }
-  .toggle:hover,
-  .toggle:focus-visible {
-    border-color: #4466ff;
-    background: rgba(20, 26, 50, 0.95);
-    outline: none;
-  }
-
-  /* Layer chips — always-visible visibility toggles. Inactive chips
-     are dim outlines; active chips are filled with the teal accent
-     so the on-state is obvious. 44 px tall preserves the ADR-018
-     touch-target floor.
-     #342 Phase 30 — mobile-first: phone values default; desktop
-     bumps padding/font/letter-spacing at @min-width: 501 and
-     width:100% + chip-stretch column at @min-width: 769. */
-  .chip {
-    min-height: 44px;
-    /* Mobile: chips flow side-by-side, natural width. width: 100%
-       (chip-stretch column) reinstated at @min-width: 769. */
-    width: auto;
-    min-width: 110px;
-    padding: 0 8px;
-    background: rgba(8, 10, 22, 0.65);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    color: rgba(255, 255, 255, 0.55);
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
-    letter-spacing: 1.2px;
-    text-align: center;
-    border-radius: 999px;
-    cursor: pointer;
-    backdrop-filter: blur(6px);
-    transition:
-      border-color 120ms,
-      background 120ms,
-      color 120ms;
-  }
-  .chip:hover,
-  .chip:focus-visible {
-    color: #fff;
-    border-color: rgba(78, 205, 196, 0.6);
-    outline: none;
-  }
-  .chip.active {
-    background: rgba(78, 205, 196, 0.18);
-    border-color: rgba(78, 205, 196, 0.7);
-    color: #4ecdc4;
-  }
-  .chip.active:hover,
-  .chip.active:focus-visible {
-    color: #fff;
-    background: rgba(78, 205, 196, 0.32);
-    border-color: #4ecdc4;
-  }
-
-  /* Compact trajectory on/off inside the Iconic Missions drawer (mobile). */
-  .iconic-toggle {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
+  .iconic-row {
     margin-bottom: 8px;
-    padding: 4px 10px;
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
-    letter-spacing: 0.08em;
-    color: rgba(207, 224, 255, 0.6);
-    background: rgba(15, 18, 35, 0.55);
-    border: 1px solid rgba(75, 156, 211, 0.3);
-    border-radius: 12px;
-    cursor: pointer;
-  }
-  .iconic-toggle.active {
-    color: #4ecdc4;
-    border-color: rgba(78, 205, 196, 0.5);
-  }
-  .iconic-toggle-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: rgba(207, 224, 255, 0.25);
-    flex-shrink: 0;
-  }
-  .iconic-toggle-dot.on {
-    background: #4ecdc4;
-    box-shadow: 0 0 6px rgba(78, 205, 196, 0.7);
   }
   .paths-legend {
     pointer-events: auto;
-    /* Hidden by default on phones; shown at @min-width: 769 (desktop
-       always-on) and inside the MobileDrawerGroup via :global below. */
+    /* Hidden by default on phones; shown on a fine pointer (always on) and inside the
+       MobileDrawerGroup via :global below. */
     display: none;
     flex-direction: column;
-    gap: 2px;
     padding: 8px 10px;
     background: rgba(15, 18, 35, 0.85);
-    border: 1px solid rgba(68, 102, 255, 0.4);
+    border: 1px solid var(--color-accent-edge);
     border-radius: 4px;
-    /* Cap height so the 18-row roster doesn't spill off the bottom on
-       short viewports (laptop 13" landscape ≈ 720 px; chips row above
-       eats ~140 px). Scroll inside the panel when it exceeds the
-       available chrome-budget instead of clipping invisibly past the
-       footer. The viewport units leave room for nav + the chips
-       cluster + a 24 px breathing tail at the bottom. */
-    max-height: calc(100vh - var(--nav-height, 60px) - 180px);
-    overflow-y: auto;
-    overscroll-behavior: contain;
+    /* Cap height so the 18-row roster never spills past the footer on a short window; the page
+       measures the legend's real top and tightens this (sizePathsLegend). Only the row list
+       scrolls: the title and the (i)'s popover stay put and are never clipped. */
+    max-height: calc(100vh - var(--nav-height) - 180px);
   }
   /* Inside the mobile drawer the legend flows naturally; no fixed
      positioning needed — the drawer handles its own scroll. */
   :global(.mdg-body) .paths-legend {
     display: flex;
+    max-height: none;
   }
-  .paths-legend::-webkit-scrollbar {
+  /* The drawer body scrolls (46vh, 240px in landscape); a list with its own cap collapsed to no
+     rows on a 390 px-high phone. The title is one line: a touch screen cannot hover, and the (i)
+     holds the explanation. */
+  :global(.mdg-body) .paths-legend-list {
+    flex: none;
+    overflow: visible;
+  }
+  :global(.mdg-body) .paths-legend-title {
+    min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  /* A landscape phone's card is 130 to 180 px high (46vh of a 293 to 390 px window): the chip and
+     the title share one line (the legend's own box dissolves into a grid), the rows tighten, and
+     2 to 3 rows show; the card scrolls for the rest. */
+  :global(html[data-touch][data-orientation='landscape'] .mdg-body) .iconic-drawer {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: center;
+    column-gap: 8px;
+  }
+  :global(html[data-touch][data-orientation='landscape'] .mdg-body) .iconic-drawer .paths-legend {
+    display: contents;
+  }
+  :global(html[data-touch][data-orientation='landscape'] .mdg-body) .iconic-row {
+    margin-bottom: 4px;
+  }
+  :global(html[data-touch][data-orientation='landscape'] .mdg-body) .paths-legend-head {
+    /* the card's × is 44 px wide in the corner: the (i) ends before it */
+    padding: 0 40px 0 0;
+    margin: 0 0 4px;
+    border-bottom: none;
+    align-items: center;
+  }
+  :global(html[data-touch][data-orientation='landscape'] .mdg-body) .paths-legend-list {
+    grid-column: 1 / -1;
+  }
+  :global(html[data-touch][data-orientation='landscape'] .mdg-body) .paths-legend-row {
+    min-height: 30px;
+    padding-block: 1px;
+  }
+  .paths-legend-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+  .paths-legend-list::-webkit-scrollbar {
     width: 6px;
   }
-  .paths-legend::-webkit-scrollbar-thumb {
-    background: rgba(68, 102, 255, 0.5);
+  .paths-legend-list::-webkit-scrollbar-thumb {
+    background: color-mix(in srgb, var(--color-accent) 50%, transparent);
     border-radius: 3px;
   }
-  /* Single-line row — name + logos + year. Slightly more compact
-     than the pre-tagline original (44 px → 36 px min-height) per
-     2026-06-17 user feedback; the "why it's iconic" copy lives in
-     the .paths-legend-tagline strip above so individual rows stay
-     stable-width regardless of tagline length. */
+  /* Title row (C7 IM1): the line that says what to do, with the (i) at its inline end. */
+  .paths-legend-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 2px 2px 6px;
+    margin-bottom: 4px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    flex: none;
+  }
+  .paths-legend-title {
+    margin: 0;
+    font-family: var(--font-mono, 'Space Mono', monospace);
+    font-size: var(--size-meta);
+    line-height: 1.35;
+    letter-spacing: 0.02em;
+    color: rgba(221, 228, 255, 0.78);
+  }
+  .paths-legend-why {
+    flex: none;
+    display: inline-flex;
+  }
+  /* The WhyPopover's trigger is a 14 px "Why?" chip; here it is a 20 px (i) (24 px hit area from
+     .ui-hit), and its popover opens under it, right-aligned inside the legend's width. */
+  .paths-legend-why :global(.trigger) {
+    width: 20px;
+    height: 20px;
+    margin-left: 0;
+    padding: 0;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: var(--size-meta);
+    letter-spacing: 0;
+    text-transform: none;
+  }
+  .paths-legend-why :global(.popover) {
+    font-family: var(--font-editorial);
+  }
+  /* AGENTS.md: a touch target is 44 x 44 px; the 20 px (i) keeps its look, the hit area grows. */
+  @media (hover: none), (pointer: coarse) {
+    .paths-legend-why :global(.trigger)::after {
+      width: 44px;
+      height: 44px;
+    }
+  }
+  @media (min-width: 601px) {
+    /* The popover hangs from the bottom of the head row, not from the (i), so a title of three
+       lines (de) is not covered; the head is its containing block, in LTR and RTL. */
+    .paths-legend-head {
+      position: relative;
+    }
+    .paths-legend-why :global(.wrap) {
+      position: static;
+    }
+    .paths-legend-why :global(.popover) {
+      top: calc(100% + 4px);
+      left: auto;
+      right: auto;
+      inset-inline-start: auto;
+      inset-inline-end: 0;
+      width: 250px;
+    }
+  }
+  /* The hovered craft's tagline: a card beside the legend, level with its row. Desktop only. */
+  .paths-legend-tip {
+    display: none;
+    position: absolute;
+    left: calc(100% + 8px);
+    width: 240px;
+    box-sizing: border-box;
+    padding: 8px 10px;
+    background: rgba(15, 18, 35, 0.92);
+    border: 1px solid var(--color-accent-edge);
+    border-radius: 4px;
+    font-family: var(--font-editorial);
+    font-size: var(--size-lead);
+    line-height: 1.4;
+    color: rgba(221, 228, 255, 0.92);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 80ms linear;
+  }
+  .paths-legend-live {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+  .paths-legend-tip.is-on {
+    opacity: 1;
+  }
+  /* Single-line row: the round photo (ringed in the path colour), name, agency logos, launch year. */
   .paths-legend-row {
     display: flex;
     align-items: center;
@@ -670,7 +680,7 @@
     background: none;
     border: none;
     color: #dde4ff;
-    padding: 5px 6px;
+    padding: 4px 6px;
     border-radius: 3px;
     cursor: pointer;
     text-align: left;
@@ -680,40 +690,18 @@
     min-height: 36px;
     width: 100%;
   }
-  /* Hovered-mission tagline strip. Always rendered (with a placeholder
-     when no row is hovered) so the legend's vertical footprint is
-     stable; only the strip's text changes. Italic + dim by default,
-     full-opacity when a row is hovered. Sized generously (2026-06-17
-     user note: "text is so small for description I cannot read, be
-     generous and use few rows if needed there somehow") — 13.5 px
-     italic Crimson Pro with 1.45 line-height, min-height reserves
-     ~3 lines so short and long taglines both render without a
-     vertical layout shift. */
-  .paths-legend-tagline {
-    margin: 4px 0 8px;
-    padding: 8px 8px 10px;
-    font-family: 'Crimson Pro', 'Space Mono', serif;
-    font-style: italic;
-    font-size: 13.5px;
-    line-height: 1.45;
-    color: rgba(221, 228, 255, 0.78);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-    min-height: 76px;
-    background: rgba(8, 10, 22, 0.4);
-    border-radius: 3px;
-  }
   .paths-legend-row:hover,
   .paths-legend-row:focus-visible,
   /* is-hovered mirrors :hover but is driven by iconic.state.hoveredId, so
      hovering a trajectory in the 3D scene highlights its legend row too
      (reverse of row-hover → arc highlight). #306 follow-up. */
   .paths-legend-row.is-hovered {
-    background: rgba(68, 102, 255, 0.15);
+    background: var(--color-accent-soft);
     color: #fff;
     outline: none;
   }
   .paths-legend-row.is-selected {
-    background: rgba(68, 102, 255, 0.28);
+    background: color-mix(in srgb, var(--color-accent) 28%, transparent);
     color: #fff;
     box-shadow: inset 2px 0 0 rgba(140, 170, 255, 0.95);
   }
@@ -723,30 +711,6 @@
   }
   .paths-legend-row.is-selected .year {
     color: rgba(255, 255, 255, 0.95);
-  }
-  .paths-legend-why {
-    display: block;
-    padding: 4px 6px 6px;
-    margin-bottom: 4px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    color: rgba(221, 228, 255, 0.65);
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 11px;
-    letter-spacing: 0.02em;
-    text-decoration: none;
-  }
-  .paths-legend-why:hover,
-  .paths-legend-why:focus-visible {
-    color: #fff;
-    background: rgba(68, 102, 255, 0.12);
-    outline: none;
-  }
-  .paths-legend-row .swatch {
-    display: inline-block;
-    width: 18px;
-    height: 3px;
-    border-radius: 2px;
-    flex-shrink: 0;
   }
   .paths-legend-row .name {
     flex: 1;
@@ -773,7 +737,7 @@
     filter: none;
   }
   .paths-legend-row .year {
-    color: rgba(221, 228, 255, 0.55);
+    color: rgba(221, 228, 255, 0.6);
     font-size: 11px;
     letter-spacing: 0.02em;
     margin-left: 8px;
@@ -791,31 +755,16 @@
       top: calc(var(--nav-height) + 12px);
       gap: 8px;
     }
-    .toggle {
-      padding: 0 14px;
-      font-size: 13px;
-    }
-    .chip {
-      padding: 0 10px;
-      font-size: 10px;
-      letter-spacing: 1.5px;
-    }
   }
 
-  /* ─── ≥ 769 px — chip-stretch column + always-on paths legend ──── */
+  /* ─── fine pointer — HUD shown + always-on paths legend ─────────── */
   @media (hover: hover) and (pointer: fine) {
     .paths-legend {
       display: flex;
-      /* position: absolute, anchored to the fixed-positioned
-         .hud-controls parent. Removed from the flex-column flow so
-         its intrinsic content width can no longer drive the chip
-         column wider via the parent's align-items: stretch.
-         top:100% places it just below the in-flow children (toggle
-         row + chip column). (2026-06-17 iteration 2: align-self
-         + width was insufficient — the legend still expanded the
-         flex container's natural width because flex items
-         participate in max-content sizing. Absolute positioning
-         fully decouples.) */
+      /* position: absolute, anchored to the fixed-positioned .hud-controls parent, so its
+         content width cannot widen the chip row (flex items take part in max-content
+         sizing, so align-self + width was not enough — 2026-06-17). top:100% places it just
+         below the in-flow children (view row + chip row). */
       position: absolute;
       top: 100%;
       left: 0;
@@ -824,52 +773,41 @@
       margin-top: 8px;
       width: 280px;
       box-sizing: border-box;
-      max-height: calc(100vh - var(--nav-height, 60px) - 220px);
+      max-height: calc(100vh - var(--nav-height) - 220px);
       z-index: 36;
     }
-    .ctrl-row.chips {
-      /* Layer chips stack vertically so their on/off state reads as a
-         compact left-edge column rather than a wide horizontal strip.
-         Individual chips set width: 100% so they stretch to match the
-         top toggle row via .hud-controls align-items: stretch. */
-      flex-direction: column;
-      flex-wrap: nowrap;
-      align-items: stretch;
-      max-width: none;
+    /* 28 px rows, the 28 px thumb filling the row (above the 24 px hit floor): the 18 rows and the title fit a 900 px-high
+       window without a scrollbar (C7 IM7). A touch row keeps its 36 px. */
+    .paths-legend-row {
+      min-height: 28px;
+      padding: 0 6px;
     }
+    .paths-legend-tip {
+      display: block;
+    }
+    /* One HUD row (operator 2026-11-12), the same as on the worlds: the view actions, a 12 px
+       gap, then the layer chips; it wraps where the width runs out. */
     .hud-controls {
       display: flex;
-      align-items: stretch;
-    }
-    .chip {
-      width: 100%;
-    }
-  }
-
-  /* FB5 — controls drawer: chips wrap two-per-row inside the full-width
-     accordion panel. flex-grow lets a lone chip (the Iconic-Missions PATHS
-     toggle, which lives in its own drawer) stretch to full width, while the
-     four Controls chips settle into a tidy 2x2 grid. Scoped to .mdg-body. */
-  @media (hover: none), (pointer: coarse) {
-    :global(.mdg-body) .ctrl-row.chips {
-      display: flex;
+      flex-direction: row;
       flex-wrap: wrap;
-      gap: 6px;
+      align-items: center;
+      gap: 6px 12px;
+      /* left 16 (above) to the navigator's left edge minus its gutter. */
+      max-width: calc(100vw - 16px - var(--hud-clear-right, 16px));
     }
-    :global(.mdg-body) .ctrl-row.chips .chip {
-      flex: 1 1 calc(50% - 3px);
-      text-align: center;
+    .ctrl-row.chips {
+      max-width: 100%;
     }
   }
 
-  /* Short window: the 244 px chip rail would run down onto the PLANET SCALES card
-     and the time dock (both pinned bottom-left, 62 px tall), so it stops 70 px
-     above the bottom edge and scrolls. */
-  @media (max-height: 440px) {
-    .ctrl-row.chips {
-      max-height: calc(100vh - 124px - 70px);
-      overflow-y: auto;
-      scrollbar-width: none;
+  /* A narrow window with a mouse: the detail panel (Panel.svelte, z 30) is as wide as the window,
+     so the cluster sits under it instead of over its eyebrow and title, as the INDEX handle does
+     (index-panel.css). Still above the time dock (24, TimeDock.svelte), so the paths legend
+     hanging off it covers the scrubber. On touch the portrait sheet (z 80) covers it already. */
+  @media (hover: hover) and (pointer: fine) and (max-width: 600px) {
+    .hud-controls {
+      z-index: 25;
     }
   }
 
@@ -886,6 +824,10 @@
       left: 8px;
       gap: 6px;
       z-index: 45;
+      /* Stops before the navigator, as the desktop row does; a long Reset label (fr at 360 px)
+         wraps onto a second line instead of running under the picker. */
+      flex-wrap: wrap;
+      max-width: calc(100vw - 8px - var(--hud-clear-right, 16px));
     }
   }
 </style>

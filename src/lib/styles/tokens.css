@@ -6,21 +6,29 @@
   --color-bg: #04040c;
 
   /* Accents */
-  --color-accent: #4466ff;
-  /* The accent as TEXT on the dark background: 4.96:1 on --color-bg, 4.65 on
-     panels (WCAG AA needs 4.5). The brand #4466ff (4.47) stays for borders,
-     outlines and fills, where 3:1 is enough. */
-  --color-accent-text: #5070ff;
-  --color-teal: #4ecdc4;
+  --color-accent: #5070ff;
+  /* The one UI accent (UX A3, UXD-001 blue D): links, active states, chips, HUD values,
+     glyphs. 4.96:1 on --color-bg, 4.37 on a 7 % lifted card, 3.84 on 12 %: small text on a
+     lifted card uses --color-state; solid fills take dark text (#04040c, 4.96), not white. */
+  --color-accent-text: var(--color-accent); /* alias, removed after 0.9.9 */
+  --color-accent-hover: #8aa0ff;
+  --color-accent-soft: rgba(80, 112, 255, 0.12);
+  --color-accent-edge: rgba(80, 112, 255, 0.35);
+  --color-accent-strong: rgba(80, 112, 255, 0.7);
+  /* UXD-001: annotation rings, hover and status states; the safe blue for small text. */
+  --color-state: #889fe7;
+  --color-focus: #8aa0ff;
+  /* a3-keep: success "ok" state, a green (hue 163), not an accent */
+  --color-ok: #4ade80; /* a clear green (hue 142), never mistaken for teal (A3) */
   --color-mars: #c1440e;
-  --color-earth: #4b9cd3;
+  --color-earth: #4b9cd3; /* a3-keep: body / agency identity colour token, palette review at the end */
   --color-gold: #ffc850;
 
   /* Text */
   --color-text: #ffffff;
-  /* 0.55, not 0.35: 0.35 on the #04040c page is ~3.1:1, under WCAG AA (4.5:1) for text;
-     0.55 matches the nav's inactive links (~6:1). */
-  --color-text-dim: rgba(255, 255, 255, 0.55);
+  /* 0.6 (UX A1: labels read at ~60 %): 0.35 on the #04040c page is ~3.1:1, under WCAG AA
+     (4.5:1) for text; 0.6 is ~7:1 and matches the label token. */
+  --color-text-dim: rgba(255, 255, 255, 0.6);
   --color-text-faint: rgba(255, 255, 255, 0.15);
 
   /* Surfaces */
@@ -29,10 +37,14 @@
   --color-hud-bg: rgba(5, 5, 20, 0.88);
   --color-nav-bg: rgba(4, 4, 12, 0.88); /* prototype value (IA says 0.92 — drift) */
 
-  /* Link tier colours */
-  --color-tier-intro: #4ecdc4;
-  --color-tier-core: #7b9cff;
-  --color-tier-deep: #ff9966;
+  /* The one chip at rest (UXD-014): glass fill, 18 % edge, 72 % text */
+  --color-chip-glass: rgba(8, 10, 22, 0.65);
+  --color-chip-edge: rgba(255, 255, 255, 0.18);
+  --color-chip-text: rgba(255, 255, 255, 0.72);
+
+  /* Link tier colours (intro uses --color-state) */
+  --color-tier-core: var(--color-accent);
+  --color-tier-deep: var(--color-gold);
 
   /* Typography */
   --font-display: 'Bebas Neue', sans-serif;
@@ -41,8 +53,20 @@
 
   /* Sizes */
   --size-nav-title: 30px;
-  --size-label: 10px;
   --size-link: 12px;
+
+  /* Type scale (UX A1 / Q2). The floor is 11px everywhere; labels are 11px at
+     60% white, body 14px, panel overview/lead text 16px (15px on phones), all upright in the
+     body font (Space Mono). Italic Crimson Pro is only for real quotes and
+     photo captions, at --size-caption. Canvas/WebGL label textures are out
+     of scope. */
+  --size-label: 11px;
+  --size-meta: 12px;
+  --size-body: 14px;
+  --size-lead: 16px;
+  --size-caption: 14px;
+  --size-title: clamp(40px, 8vw, 64px); /* page h1, UXD-012 */
+  --color-text-label: rgba(255, 255, 255, 0.6);
 
   /* Spacing */
   /* Total nav footprint. Includes the iOS status-bar / Dynamic Island safe
@@ -50,10 +74,13 @@
      canvas control positioned at `calc(var(--nav-height) + Npx)` move down
      together. env() is 0 in every browser + non-notched context — no-op off
      device. Base bar height is --nav-bar-height. */
-  --nav-bar-height: 60px;
+  --nav-bar-height: 52px;
   /* The native shim (SafeAreaViewController) sets --safe-area-inset-top under
      Capacitor iOS where env() is broken; env() is the browser fallback. */
-  --nav-height: calc(60px + var(--safe-area-inset-top, env(safe-area-inset-top)));
+  --nav-height: calc(var(--nav-bar-height) + var(--safe-area-inset-top, env(safe-area-inset-top)));
+  /* Nav control box (UXD-016): fine pointers get the compact one, touch the 44 px target. */
+  --nav-btn-fine: 32px;
+  --nav-btn-touch: 44px;
   /* Panel width — bumped from 314 → 360 in v0.4, then → 400 in v0.7
      so the four-tab strip (OVERVIEW · GALLERY · TECHNICAL · SCIENCE)
      fits without the last tab being clipped. Touch-portrait uses a
@@ -71,7 +98,13 @@
   --color-isro: #ff9933;
   --color-roscosmos: #8b0000;
   --color-jaxa: #003087;
-  --color-spacex: #005288;
+  --color-spacex: #005288; /* a3-keep: body / agency identity colour token, palette review at the end */
+}
+
+@media (max-width: 600px) {
+  :root {
+    --size-lead: 15px;
+  }
 }
 
 /* ─── High-contrast mode (v0.1.10 / Theme C.C2 / issue #18) ─────────

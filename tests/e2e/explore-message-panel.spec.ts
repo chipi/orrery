@@ -2,11 +2,12 @@ import { test, expect, type Page } from '@playwright/test';
 import { waitForHydration } from './_helpers/hydration';
 
 /**
- * /explore message-object panel (#410) — the outbound interstellar craft
- * (Voyager 1/2, Pioneer 10/11, New Horizons) surface a "message to the cosmos"
- * panel from their PATHS legend row / trajectory, carrying the culture door for
- * the message they hold (Golden Record, Pioneer Plaque) and their heading. New
- * Horizons carries no formal message, so it shows the honest no-message note.
+ * /explore message section (#410, UXD-019) — the outbound interstellar craft
+ * (Voyager 1/2, Pioneer 10/11, New Horizons) open the MissionPanel from their PATHS
+ * legend row / trajectory like every other iconic mission, and the message they carry is a
+ * section of it: the culture door (Golden Record, Pioneer Plaque), their heading and how far a
+ * signal reaches. New Horizons carries no formal message, so it shows the honest no-message
+ * note. The MessagePanel they used to open is gone.
  *
  * On desktop the PATHS legend sits in the HUD; on mobile it lives inside the
  * "Missions" MobileControlsDrawer, so the legend row is only reachable after the
@@ -14,7 +15,7 @@ import { waitForHydration } from './_helpers/hydration';
  * scoped to the visible instance.
  */
 
-const panel = (p: Page) => p.getByTestId('explore-message-panel');
+const panel = (p: Page) => p.getByTestId('mission-message-section');
 const legendRow = (p: Page, id: string) =>
   p.locator(`[data-testid="paths-legend-row-${id}"]:visible`);
 
@@ -33,7 +34,7 @@ test.describe('/explore — message-object panel (#410)', () => {
     await waitForHydration(page);
   });
 
-  test('a craft that carries a message opens the panel with its culture door', async ({
+  test('a craft that carries a message opens the mission panel with its culture door', async ({
     page,
     isMobile,
   }) => {
@@ -41,6 +42,9 @@ test.describe('/explore — message-object panel (#410)', () => {
     await legendRow(page, 'voyager-1').click();
     await expect(panel(page)).toBeVisible({ timeout: 8_000 });
     await expect(panel(page)).toHaveAttribute('data-craft', 'voyager-1');
+    // One panel kind for all 18 rows: the mission panel itself, its name in the header.
+    await expect(page.locator('aside.panel h1.name').first()).toContainText('Voyager 1');
+    await expect(page.getByTestId('explore-message-panel')).toHaveCount(0);
     // The message it carries — the Golden Record culture door (title + link both
     // contain the phrase, so match the first).
     await expect(panel(page).getByText('Golden Record', { exact: false }).first()).toBeVisible();
@@ -74,10 +78,53 @@ test.describe('/explore — Arecibo message at M13 (#410)', () => {
   test('M13 opens a panel carrying the Arecibo Message culture door', async ({ page }) => {
     await page.goto('/explore?deepsky=M13');
     await waitForHydration(page);
-    await expect(page.getByText('Hercules Globular Cluster', { exact: false })).toBeVisible({
+    // Scoped to the panel: the neighbourhood INDEX (in the DOM, hidden) also lists M13 by name.
+    await expect(
+      page.getByRole('complementary', { name: 'Hercules Globular Cluster' }),
+    ).toBeVisible({
       timeout: 12_000,
     });
     await expect(page.getByText('The Arecibo Message', { exact: false }).first()).toBeVisible();
-    await expect(page.getByText('25,000 light-years', { exact: false }).first()).toBeVisible();
+    // The reviewed overlay text (fact, then bio) sits above the values, in the reader's locale.
+    await expect(
+      page.getByText('The Hercules Cluster, over 100,000 stars', { exact: false }),
+    ).toBeVisible();
+    await expect(
+      page.getByText('Edmond Halley discovered it in 1714', { exact: false }),
+    ).toBeVisible();
+    // #658: the distance is Baumgardt & Vasiliev 2021 (24.2 kly), the magnitude Harris V_t, each
+    // naming its catalogue with a link to the record, and the Data sources block lists the papers.
+    await expect(page.getByText('~24,000 ly', { exact: false }).first()).toBeVisible();
+    const baumgardt = page.getByRole('link', { name: 'Baumgardt & Vasiliev 2021' }).first();
+    await expect(baumgardt).toHaveAttribute(
+      'href',
+      /HolgerBaumgardt\/globular\/fits\/ngc6205\.html$/, // M13 = NGC 6205
+    );
+    const harris = page.getByRole('link', { name: 'Harris 1996 (2010 edition)' }).first();
+    await expect(harris).toHaveAttribute('href', /mcmaster\.ca\/~harris\/mwgc\.dat$/);
+    const sources = page.getByTestId('data-sources');
+    await sources.locator('summary').click(); // the panel's block is folded
+    await expect(sources.getByRole('link', { name: '2021MNRAS.505.5957B' })).toHaveAttribute(
+      'href',
+      /ui\.adsabs\.harvard\.edu\/abs\/2021MNRAS\.505\.5957B\/abstract$/,
+    );
+    await expect(sources.getByRole('link', { name: 'SIMBAD' })).toHaveAttribute(
+      'href',
+      /simbad\.cds\.unistra\.fr\/simbad\/sim-id\?Ident=M%2013$/,
+    );
+  });
+
+  test('the panel text follows the page locale (de overlay, not en-US)', async ({ page }) => {
+    await page.goto('/de/explore?deepsky=M13');
+    await waitForHydration(page);
+    await expect(
+      page.getByText('Der Herkuleshaufen, über 100.000 Sterne', { exact: false }),
+    ).toBeVisible({ timeout: 12_000 });
+    await expect(
+      page.getByText('Edmond Halley entdeckte ihn 1714', { exact: false }),
+    ).toBeVisible();
+    await expect(
+      page.getByText('The Hercules Cluster, over 100,000', { exact: false }),
+    ).toHaveCount(0);
   });
 });

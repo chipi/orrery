@@ -94,5 +94,11 @@
   "link_labels": {
     "/earth": "الأرض — المدارات ومواقع الإطلاق",
     "/science/mission-phases/edl": "الدخول والهبوط والنزول"
+  },
+  "roster": {
+    "Korabl-Sputnik 2 (Belka & Strelka)": {
+      "note": "الكلبتان Belka وStrelka — أول حيوانين يدوران في المدار ويعودان أحياء، على مركبة الاختبار Vostok",
+      "name": "Korabl-Sputnik 2 (Belka وStrelka)"
+    }
   }
 }

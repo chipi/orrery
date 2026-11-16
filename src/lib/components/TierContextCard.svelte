@@ -116,7 +116,7 @@
     left: 12px;
     /* Above the nation legend (and the route's locate button) when the
        scene sets --card-bottom. */
-    bottom: var(--card-bottom, 56px);
+    bottom: max(var(--card-bottom, 56px), calc(var(--hud-stack-top, 0px) + 8px));
     /* Over the layer chips (.hud-controls, z 35 on desktop) — while a site is in
        detail the imagery card is what the user is reading. */
     z-index: 36;
@@ -144,7 +144,7 @@
   }
   .tcc-ground {
     margin-bottom: 4px;
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 0.04em;
     color: rgba(255, 255, 255, 0.6);
   }
@@ -184,13 +184,13 @@
     letter-spacing: 0.5px;
   }
   .tcc-chip {
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     text-transform: uppercase;
   }
   .tcc-mission {
     color: rgba(255, 255, 255, 0.6);
-    font-size: 10px;
+    font-size: var(--size-label);
     margin-bottom: 6px;
   }
   .tcc-layer-block-next {
@@ -199,10 +199,10 @@
     border-top: 1px solid rgba(255, 255, 255, 0.08);
   }
   .tcc-layer {
-    color: #4ecdc4;
+    color: var(--color-state);
     letter-spacing: 1px;
     text-transform: uppercase;
-    font-size: 10px;
+    font-size: var(--size-label);
     margin-bottom: 4px;
   }
   .tcc-source {
@@ -210,16 +210,16 @@
     font-size: 11px;
   }
   .tcc-author {
-    color: rgba(255, 255, 255, 0.55);
-    font-size: 10px;
+    color: var(--color-text-label);
+    font-size: var(--size-label);
     margin-bottom: 6px;
   }
   .tcc-footer {
     display: flex;
     gap: 10px;
     align-items: center;
-    font-size: 10px;
-    color: rgba(255, 255, 255, 0.5);
+    font-size: var(--size-label);
+    color: var(--color-text-label);
   }
   .tcc-license {
     border: 1px solid rgba(255, 255, 255, 0.25);
@@ -232,7 +232,7 @@
   }
   .tcc-link {
     margin-left: auto;
-    color: rgba(78, 205, 196, 0.85);
+    color: var(--color-state);
     text-decoration: none;
   }
   .tcc-link:hover {
@@ -241,8 +241,8 @@
   .tcc-how {
     display: inline-block;
     margin-top: 8px;
-    font-size: 10px;
-    color: rgba(78, 205, 196, 0.85);
+    font-size: var(--size-label);
+    color: var(--color-state);
     text-decoration: none;
   }
   .tcc-how:hover {
@@ -252,10 +252,9 @@
     margin-top: 10px;
     padding-top: 8px;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
-    font-size: 9.5px;
+    font-size: var(--size-label);
     line-height: 1.45;
-    color: rgba(255, 255, 255, 0.45);
-    font-style: italic;
+    color: var(--color-text-label);
   }
   @keyframes tcc-fade-in {
     from {

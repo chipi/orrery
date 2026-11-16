@@ -11,34 +11,37 @@ import { test, expect } from '@playwright/test';
  */
 
 test.describe('/explore — Milky Way leveling (#451)', () => {
+  // Scoped to the open panel: the level picker's rung descriptions ("the spiral arms, …") are in
+  // the DOM too, hidden until the picker opens.
   test('a globular cluster opens a panel with its kind + distance', async ({ page }) => {
     await page.goto('/explore?galaxy=omega-centauri');
-    await expect(page.getByText('Globular cluster', { exact: false }).first()).toBeVisible({
-      timeout: 15_000,
-    });
-    await expect(page.getByText('16,000 ly', { exact: false }).first()).toBeVisible();
+    const panel = page.locator('aside.panel:not(.covered)').first();
+    await expect(panel).toContainText(/Globular cluster/i, { timeout: 15_000 });
+    await expect(panel).toContainText('16,000 ly');
   });
 
   test('an arm opens a panel', async ({ page }) => {
     await page.goto('/explore?galaxy=perseus');
-    await expect(page.getByText('Spiral arm', { exact: false }).first()).toBeVisible({
-      timeout: 15_000,
-    });
+    const panel = page.locator('aside.panel:not(.covered)').first();
+    await expect(panel).toContainText(/Spiral arm/i, { timeout: 15_000 });
+    await expect(panel).toContainText('Perseus Arm');
   });
 
   test('a Magellanic Cloud opens a panel with its distance', async ({ page }) => {
     await page.goto('/explore?galaxy=lmc');
-    await expect(page.getByText('Satellite galaxy', { exact: false }).first()).toBeVisible({
-      timeout: 15_000,
-    });
-    await expect(page.getByText('163,000 ly', { exact: false }).first()).toBeVisible();
+    // The Milky Way pin prints what the Local Group panel and /explore/galaxies/lmc print (one
+    // string per entity, shared galaxyFacts): kind and distance to three significant figures.
+    const panel = page.locator('aside.panel:not(.covered)').first();
+    await expect(panel).toContainText(/Irregular galaxy/i, { timeout: 15_000 });
+    await expect(panel).toContainText('162,000 ly');
   });
 
   test('the MW shell shows a distance reference + the science lens chips', async ({ page }) => {
     await page.goto('/explore?context=milky-way');
-    await expect(page.getByText('across', { exact: false }).first()).toBeVisible({
-      timeout: 12_000,
-    });
+    // The scale strip's note; the level card (folded on touch) carries "across" in its story too.
+    await expect(
+      page.locator('.scale-schematic-size').filter({ visible: true }).first(),
+    ).toContainText('across', { timeout: 12_000 });
     // The lens ships COLLAPSED to its strip on first paint (all viewports) — turn
     // it on (same attribute the Nav toggle writes) and expand before the chips show.
     await page.evaluate(() => document.documentElement.setAttribute('data-science-lens', 'on'));

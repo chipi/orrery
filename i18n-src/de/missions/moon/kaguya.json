@@ -1,0 +1,54 @@
+{
+  "name": "Kaguya (SELENE)",
+  "vehicle": "H-IIA 2022",
+  "payload": "3020 kg Startmasse; 2914 kg Hauptorbiter; zwei Subsatelliten à 53 kg (Okina, Ouna)",
+  "delta_v": "~4 km/s (TLI + LOI, Schätzwert)",
+  "type": "ORBITER · SUBSATELLITEN · GEFLOGEN",
+  "first": "Hochauflösendes Video eines Erdaufgangs über dem Mondhorizont",
+  "description": "Kaguya, offiziell SELENE (Selenological and Engineering Explorer), war nach Hiten der zweite japanische Mondorbiter. Gestartet am 2007-09-14 mit einer H-IIA von Tanegashima, trug sie einen 2914 kg schweren Hauptorbiter und zwei Subsatelliten von je 53 kg, Okina und Ouna. Alle drei Namen stammen aus dem „Märchen vom Bambusschneider“, dessen Heldin Kaguya eine Prinzessin vom Mond ist. Okina leitete die Funkverbindung zum Orbiter hinter dem Mond weiter, was eine Doppler-Verfolgung der Schwerkraft der Rückseite ermöglichte, und Ouna diente als Funkquelle für die VLBI-Bahnverfolgung. Nach dem Einschwenken in die Mondumlaufbahn am 2007-10-03 stabilisierte sich der Orbiter am 2007-10-19 auf einer kreisförmigen polaren Bahn in 100 km Höhe. Dort kartierten seine Geländekamera, der Multiband-Imager, der Spektralprofiler, die Röntgen- und Gammastrahlenspektrometer, der Laserhöhenmesser und das Radar-Sounder Form, Zusammensetzung, Schwerefeld und Magnetismus des Mondes, während seine hochauflösende Kamera die über dem Horizont aufgehende Erde filmte. 2009 wurde der Orbiter auf etwa 50 km abgesenkt und am 2009-06-10 per Kommando kontrolliert nahe dem Krater Gill zum Aufprall gebracht.",
+  "events": [
+    {
+      "met": 0,
+      "label": "START",
+      "note": "H-IIA 2022 (F13) von Tanegashima 2007-09-14.",
+      "type": "nominal"
+    },
+    {
+      "met": 19,
+      "label": "LOI",
+      "note": "Mondorbiteinschwung 2007-10-03 in eine polare Bahn mit 100 km Periselen.",
+      "type": "nominal"
+    },
+    {
+      "met": 25,
+      "label": "OKINA AUSGESETZT",
+      "note": "Der Relaissatellit wird 2007-10-09 in eine 100 x 2400 km Bahn ausgesetzt.",
+      "type": "info"
+    },
+    {
+      "met": 28.1,
+      "label": "OUNA AUSGESETZT",
+      "note": "Der VLBI-Funkquellen-Satellit wird 2007-10-12 in eine 100 x 800 km Bahn ausgesetzt.",
+      "type": "info"
+    },
+    {
+      "met": 35,
+      "label": "100-KM-BAHN",
+      "note": "Kreisförmige polare Bahn in 100 km Höhe am 2007-10-19 erreicht; die Hauptphase der Wissenschaft beginnt.",
+      "type": "nominal"
+    },
+    {
+      "met": 517.4,
+      "label": "OKINA-AUFPRALL",
+      "note": "Okina schlägt am 2009-02-12 auf der Mondrückseite nahe dem Krater Mineur D auf.",
+      "type": "info"
+    },
+    {
+      "met": 635.7,
+      "label": "KONTROLLIERTER AUFPRALL",
+      "note": "Der Hauptorbiter wird am 2009-06-10 18:25 UTC nahe dem Krater Gill auf die Oberfläche gelenkt; die Mission endet.",
+      "type": "nominal"
+    }
+  ],
+  "vehicle_stage": "H-IIA 2. Stufe"
+}

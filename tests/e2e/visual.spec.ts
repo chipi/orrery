@@ -233,11 +233,11 @@ test.describe('visual regression baselines (#388 full-coverage — element-scope
         `${label} anchor is desktop-only (surface HUD is hidden on touch viewports)`,
       );
       await page.goto(path, { waitUntil: 'networkidle' });
-      // /missions and /fleet collapse the filter strip behind .filters-toggle
+      // /missions and /fleet collapse the filter strip behind .filters-strip
       // on mobile. Expand it before the selector resolves so the screenshot
       // captures the strip, not a hidden node. No-op on desktop.
       if (label === 'missions-filters' || label === 'fleet-filters') {
-        const toggle = page.locator('.filters-toggle');
+        const toggle = page.locator('.filters-strip');
         if (await toggle.count()) {
           await toggle
             .first()

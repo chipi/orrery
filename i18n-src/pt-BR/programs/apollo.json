@@ -107,5 +107,28 @@
     "/science/propulsion/tsiolkovsky": "A equação do foguete",
     "/moon?site=apollo15": "Apollo 15 — Hadley–Apennine",
     "/moon?site=apollo16": "Apollo 16 — Terras Altas de Descartes"
+  },
+  "roster": {
+    "Ranger": {
+      "note": "preparação robótica — sondas de impacto que devolveram as primeiras imagens de perto da Lua, fotografando a superfície até o instante da colisão e revelando o terreno que a Apollo enfrentaria",
+      "name": "Ranger"
+    },
+    "Lunar Orbiter": {
+      "note": "preparação robótica — cinco orbitadores fotografaram quase toda a Lua para escolher e certificar os locais de pouso da Apollo; o reconhecimento que tornou possível um pouso seguro",
+      "name": "Lunar Orbiter"
+    },
+    "Surveyor": {
+      "note": "preparação robótica — módulos de pouso suave provaram que a superfície lunar suportaria o peso de uma nave em vez de engoli-la; a Apollo 12 pousou ao lado da Surveyor 3 e trouxe peças dela para casa",
+      "name": "Surveyor"
+    },
+    "mission:apollo-1": {
+      "note": "incêndio na cabine — tripulação perdida em um teste em solo"
+    },
+    "mission:apollo7": {
+      "note": "primeiro voo tripulado"
+    },
+    "mission:apollo9": {
+      "note": "teste tripulado do módulo lunar em órbita da Terra"
+    }
   }
 }

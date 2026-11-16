@@ -94,5 +94,15 @@
   "link_labels": {
     "/programs/esa-human": "有人宇宙飛行における ESA — Spacelab、Columbus、ATV",
     "/fleet?id=ariane-5": "フリート — Ariane ロケット"
+  },
+  "roster": {
+    "Ariane 4": {
+      "note": "信頼性の高い商業用の主力ロケット。1990年代を通じて世界の商業衛星打ち上げのおよそ半分を獲得し、Arianespaceを業界の支配的存在にした",
+      "name": "Ariane 4"
+    },
+    "Flight 501": {
+      "note": "Ariane 5の初飛行は、再利用されたAriane 4の誘導ソフトウェアが新しいロケットの高速でオーバーフローしたため、37秒後に自爆した——ソフトウェア工学における画期的な教訓",
+      "name": "Flight 501"
+    }
   }
 }

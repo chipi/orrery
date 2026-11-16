@@ -87,5 +87,25 @@
     "/explore": "Les planètes extérieures dans l'explorateur 3D",
     "/gallery/deep-sky": "Le « point bleu pâle », dans la galerie Ciel profond",
     "/programs/pioneer": "Pioneer — les sondes qui sont parties en premier"
+  },
+  "roster": {
+    "mission:voyager-2": {
+      "note": "le seul vaisseau à avoir visité les quatre planètes géantes, et le seul regard rapproché que l'humanité ait jamais eu sur Uranus et Neptune"
+    },
+    "mission:voyager-1": {
+      "note": "a survolé Jupiter et Saturne, s'est retourné pour photographier tout le système solaire et est devenu le premier objet fabriqué par l'humain à atteindre l'espace interstellaire"
+    },
+    "The Golden Record": {
+      "note": "un disque microsillon plaqué or fixé à chaque vaisseau — sons, musique et salutations de la Terre, adressés à qui pourrait le trouver dans un milliard d'années",
+      "name": "Le Golden Record"
+    },
+    "The Pale Blue Dot": {
+      "note": "le 14 février 1990, depuis au-delà de Neptune, Voyager 1 s'est retournée et a photographié la Terre comme un unique pixel",
+      "name": "Le Pale Blue Dot"
+    },
+    "Interstellar space": {
+      "note": "Voyager 1 a franchi l'héliopause en 2012, Voyager 2 en 2018 — les premières machines à quitter la bulle du Soleil et à entrer dans l'espace entre les étoiles, et qui appellent encore la maison",
+      "name": "Espace interstellaire"
+    }
   }
 }

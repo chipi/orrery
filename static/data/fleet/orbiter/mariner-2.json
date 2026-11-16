@@ -1,0 +1,37 @@
+{
+  "id": "mariner-2",
+  "name": "Mariner 2",
+  "category": "orbiter",
+  "agency": "NASA",
+  "country": "USA",
+  "manufacturer": "NASA JPL",
+  "first_flight": "1962-08-27",
+  "status": "RETIRED",
+  "era": "1957-1969",
+  "epoch": "space-race",
+  "best_known_for": "Venus flyby, December 1962: NASA's first successful planetary science mission",
+  "credit": "Launched 1962-08-27 on an Atlas-Agena B; closest approach to Venus 1962-12-14 at 34,773 km; last contact 1963-01-03; mass 202.8 kg (NSSDCA 1962-041A, NASA science.nasa.gov/mission/mariner-2/). Builder copied from the Mariner 4 record.",
+  "links": [
+    {
+      "l": "Mariner 2 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Mariner_2",
+      "t": "intro"
+    },
+    {
+      "l": "Mariner 2 (NASA)",
+      "u": "https://science.nasa.gov/mission/mariner-2/",
+      "t": "core"
+    },
+    {
+      "l": "Mariner 2 (NSSDCA)",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1962-041A",
+      "t": "deep"
+    }
+  ],
+  "linked_missions": [
+    "mariner2"
+  ],
+  "specs": {
+    "mass_kg": 202.8
+  }
+}

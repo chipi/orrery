@@ -62,13 +62,13 @@ describe('sentry dev rung (vite dev, no deploy env)', () => {
 
   it('a deploy-injected DSN overrides the dev default', () => {
     publicEnv.PUBLIC_SENTRY_DSN = 'https://pub@glitch.example/6';
-    publicEnv.PUBLIC_SENTRY_ENVIRONMENT = 'staging';
+    publicEnv.PUBLIC_SENTRY_ENVIRONMENT = 'canary';
 
     initSentry();
 
     const cfg = initMock.mock.calls[0][0];
     expect(cfg.dsn).toBe('https://pub@glitch.example/6');
-    expect(cfg.environment).toBe('staging');
+    expect(cfg.environment).toBe('canary');
   });
 
   it('beforeSend strips query+hash, nulls headers/cookies, discards the ip', () => {

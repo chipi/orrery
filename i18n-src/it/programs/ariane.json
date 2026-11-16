@@ -94,5 +94,15 @@
   "link_labels": {
     "/programs/esa-human": "L'ESA nel volo spaziale umano — Spacelab, Columbus, ATV",
     "/fleet?id=ariane-5": "Flotta — lanciatori Ariane"
+  },
+  "roster": {
+    "Ariane 4": {
+      "note": "l'affidabile cavallo da battaglia commerciale che si aggiudicò circa metà dei lanci commerciali di satelliti del mondo negli anni Novanta e rese dominante Arianespace",
+      "name": "Ariane 4"
+    },
+    "Flight 501": {
+      "note": "il volo inaugurale di Ariane 5 si autodistrusse dopo 37 secondi quando il software di guida riutilizzato da Ariane 4 andò in overflow alla maggiore velocità del nuovo razzo — un caso esemplare di ingegneria del software",
+      "name": "Volo 501"
+    }
   }
 }

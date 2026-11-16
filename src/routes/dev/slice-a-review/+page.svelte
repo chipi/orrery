@@ -1053,7 +1053,7 @@
     min-height: 200px;
   }
   .imgs .label {
-    font-size: 10px;
+    font-size: var(--size-label);
     text-transform: uppercase;
     letter-spacing: 0.08em;
     color: #6b7484;
@@ -1097,7 +1097,7 @@
     border: 1px solid #b08a2a;
   }
   .imgs .empty-slot .detail {
-    font-size: 10px;
+    font-size: var(--size-label);
     color: #6b7484;
     word-break: break-all;
     max-width: 100%;
@@ -1125,7 +1125,7 @@
     display: inline-block;
     padding: 2px 6px;
     border-radius: 3px;
-    font-size: 10px;
+    font-size: var(--size-label);
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.05em;
@@ -1273,7 +1273,7 @@
   }
   .trail-steps .step-body .mono {
     font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-    font-size: 10px;
+    font-size: var(--size-label);
     color: #6b7484;
   }
   .trail-steps .step-body code {

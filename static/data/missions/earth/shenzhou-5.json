@@ -1,0 +1,51 @@
+{
+  "id": "shenzhou-5",
+  "agency": "CMSA",
+  "agency_full": "China Manned Space Agency / China Aerospace Science and Technology Corporation",
+  "sector": "gov",
+  "dest": "EARTH",
+  "color": "#de2910",
+  "year": 2003,
+  "status": "FLOWN",
+  "departure_date": "2003-10-15",
+  "arrival_date": "2003-10-16",
+  "transit_days": 1,
+  "round_trip": true,
+  "vehicle": "Long March 2F",
+  "payload": "7840 kg; one astronaut (Yang Liwei)",
+  "delta_v": "~9.4 km/s (LEO)",
+  "data_quality": "partial",
+  "credit": "Plain figures from Wikipedia, not from a CMSA page; see the search backlog. China Manned Space Agency.",
+  "links": [
+    {
+      "l": "Shenzhou 5 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Shenzhou_5",
+      "t": "intro"
+    },
+    {
+      "l": "神舟五号 — 中文维基百科",
+      "u": "https://zh.wikipedia.org/wiki/%E7%A5%9E%E8%88%9F%E4%BA%94%E5%8F%B7",
+      "t": "core"
+    },
+    {
+      "l": "China Manned Space (CMSE)",
+      "u": "https://en.cmse.gov.cn/",
+      "t": "deep"
+    }
+  ],
+  "flight_data_quality": "reconstructed",
+  "fleet_refs": [
+    {
+      "id": "long-march-2f",
+      "role": "launcher"
+    },
+    {
+      "id": "shenzhou",
+      "role": "spacecraft"
+    },
+    {
+      "id": "jiuquan-slc-43",
+      "role": "launch-site"
+    }
+  ]
+}

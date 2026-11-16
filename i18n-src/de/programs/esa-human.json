@@ -90,5 +90,19 @@
   "link_labels": {
     "/programs/iss": "ISS — die Station, die Europa mitgebaut hat",
     "/programs/ariane": "Ariane — die Trägerrakete, die das ATV beförderte"
+  },
+  "roster": {
+    "Spacelab": {
+      "note": "Europas erster Beitrag zur bemannten Raumfahrt — ein bemanntes Labor, das in der Nutzlastbucht des Space Shuttle auf 22 Missionen flog und 1983 den ersten ESA-Astronauten, Ulf Merbold, mitnahm",
+      "name": "Spacelab"
+    },
+    "Columbus": {
+      "note": "das ständige Forschungslabor der ESA auf der Internationalen Raumstation — das Modul, das Europa mit einer eigenen Einrichtung zum vollwertigen ISS-Partner machte",
+      "name": "Columbus"
+    },
+    "European Service Module": {
+      "note": "ATV-Technologie neu belebt: Europa baut nun das Servicemodul, das das Raumschiff Orion der NASA auf seinen Flügen in den Mondorbit unter Artemis antreibt und mit Energie versorgt",
+      "name": "Europäisches Servicemodul"
+    }
   }
 }

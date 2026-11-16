@@ -22,7 +22,7 @@ export const NATION_COLORS: Record<string, string> = {
   UAE: '#00732F',
   Israel: '#0038B8',
   // /earth launch sites beyond the big programmes.
-  'New Zealand': '#00A6A6',
+  'New Zealand': '#00A6A6', // a3-keep: nation identity colour, confirmed by the operator 2026-11-13
   'South Korea': '#5B8DEF',
   'North Korea': '#9B59B6',
   Iran: '#6BBF59',
@@ -55,7 +55,7 @@ export function nationChipFor(site: Pick<SurfaceSite, 'nation' | 'agency'>): {
   if (agency === 'CNES') return { label: `${countryLabel('France')} · CNES`, color: '#1d4ed8' };
   if (agency === 'ASI') return { label: `${countryLabel('Italy')} · ASI`, color: '#1d4ed8' };
   if (agency === 'Rocket Lab')
-    return { label: `${countryLabel('New Zealand')} · Rocket Lab`, color: '#00A6A6' };
+    return { label: `${countryLabel('New Zealand')} · Rocket Lab`, color: '#00A6A6' }; // a3-keep: nation identity colour, confirmed by the operator 2026-11-13
   if (agency === 'KARI')
     return { label: `${countryLabel('South Korea')} · KARI`, color: '#5B8DEF' };
   if (agency === 'NADA')
@@ -89,6 +89,26 @@ export function nationChipFor(site: Pick<SurfaceSite, 'nation' | 'agency'>): {
     label: nation ? countryLabel(nation) : agency || '—',
     color: 'rgba(255,255,255,0.5)',
   };
+}
+
+/**
+ * Colour of an operating agency for a row marker (the regime panel's resident ring and dot, the
+ * list thumbnails): the palette of `nationChipFor` keyed by the agency alone, neutral grey when the
+ * agency has none. Not `agencies.ts` `agencyColor`, which is the brand colour of a card accent.
+ * A joint mission ("ESA / NASA") takes its lead agency; the mission index spells some agencies
+ * differently from the regime data (`Roscosmos`, `CMSA`) or names a US operator that is not NASA.
+ */
+const RING_ALIAS: Record<string, { agency?: string; nation?: string }> = {
+  Roscosmos: { agency: 'ROSCOSMOS' },
+  CMSA: { agency: 'CNSA' },
+  USSF: { nation: 'USA' },
+  'Blue Origin': { nation: 'USA' },
+  'Intuitive Machines': { nation: 'USA' },
+};
+export function agencyRingColor(agency: string): string {
+  const lead = agency.split('/')[0].trim();
+  const key = RING_ALIAS[lead] ?? { agency: lead };
+  return nationChipFor(key as Parameters<typeof nationChipFor>[0]).color;
 }
 
 /**

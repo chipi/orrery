@@ -22,7 +22,9 @@
   import Panel from '$lib/components/Panel.svelte';
   import PanelTabRow from '$lib/components/PanelTabRow.svelte';
   import WhyPopover from '$lib/components/WhyPopover.svelte';
-  import ScienceChip from '$lib/components/ScienceChip.svelte';
+  import ScienceCard from '$lib/components/ScienceCard.svelte';
+  import { pickScienceLinks, refsFromSlugs } from '$lib/science-links';
+  import type { ScienceTabId } from '$types/science';
   import {
     getEarthObjectGallery,
     getFleet,
@@ -45,6 +47,8 @@
   import { spacecraftDiagramPath, launcherCutawayPath } from '$lib/spacecraft-diagrams';
   import type { OrbitRegime } from '$types/orbit-regime';
   import RegimeChip from '$lib/components/RegimeChip.svelte';
+  import SiteLandingPanel from '$lib/surface-scene/SiteLandingPanel.svelte';
+  import { siteAnatomy } from '$lib/surface-scene/site-anatomy';
   import { regimeById } from '$lib/physics/util/orbit-regime-match';
   import { dataLoadFailed } from '$lib/data/core';
   import { readableTextOn, DARK_TEXT } from '$lib/readable-text';
@@ -66,14 +70,24 @@
     onRegimeOpen?: (regimeId: string) => void;
   }
   let { selected, open, onClose, missionIds, regimes, onRegimeOpen }: Props = $props();
+  let scienceLinks = $derived(pickScienceLinks(refsFromSlugs(selected?.science)));
 
   let matchedRegime = $derived(regimes ? regimeById(selected?.regime, regimes) : null);
 
-  type PanelTab = 'overview' | 'gallery' | 'learn';
+  type PanelTab = 'overview' | 'gallery' | 'details' | 'learn';
   let panelTab: PanelTab = $state('overview');
   let panelGallery: string[] = $state([]);
   let panelGalleryGrid = $derived(panelGallery.length <= 1 ? panelGallery : panelGallery.slice(1));
   let panelLightbox = $state<string | null>(null);
+  // The craft's own drawing (a satellite, station or observatory): the DETAIL tab, as for a
+  // Moon or Mars orbiter.
+  let panelAnatomy = $derived(selected ? siteAnatomy(selected) : []);
+  let panelDrawings = $derived(
+    panelAnatomy.flatMap((a) => [a.src, a.exploded]).filter((p): p is string => !!p),
+  );
+  let panelLightboxImages = $derived(
+    panelLightbox && panelDrawings.includes(panelLightbox) ? panelDrawings : panelGallery,
+  );
   let lastSelectedId = $state<string | null>(null);
 
   // #547 S5c — the collectible card. Every earth-object aliases an
@@ -171,9 +185,14 @@
   });
 </script>
 
-<Panel {open} title={selected?.name ?? selected?.short ?? selected?.id ?? ''} {onClose}>
-  {#if selected}
-    <div class="head">
+<Panel
+  {open}
+  title={selected?.name ?? selected?.short ?? selected?.id ?? ''}
+  {onClose}
+  onShare={cardSpec ? () => (cardOpen = true) : undefined}
+>
+  {#snippet eyebrow()}
+    {#if selected}
       <div class="agency-row">
         <span
           class="agency-badge"
@@ -190,8 +209,16 @@
           >{surfaceStatusLabel(selected.status)}</span
         >
       </div>
+    {/if}
+  {/snippet}
+  {#snippet heading()}
+    {#if selected}
       <h1 class="name">{selected.name ?? selected.id}</h1>
-    </div>
+    {/if}
+  {/snippet}
+
+  {#if selected}
+    <!-- No PanelActions row of its own: an Earth object has no entity action; Panel draws Share in a row of its own here. -->
 
     {#if panelGallery.length > 0}
       <PanelHeroImage
@@ -205,6 +232,12 @@
       tabs={[
         { id: 'overview', label: m.panel_tab_overview() },
         { id: 'gallery', label: m.panel_tab_gallery(), visible: panelGallery.length > 0 },
+        {
+          id: 'details',
+          label: m.panel_tab_detail(),
+          visible: panelAnatomy.length > 0,
+          testid: 'panel-tab-details',
+        },
         { id: 'learn', label: m.panel_tab_learn(), visible: panelHasLinks },
       ]}
       bind:active={panelTab}
@@ -300,57 +333,20 @@
            the orbital era. Per-id check keeps the pattern open for
            additional EarthObject → history mappings later. -->
       {#if selected.id === 'iss'}
+        <!-- b2-keep: one contextual milestone link, not a list -->
         <a class="mission-link" href={localHref(`/science/history/sputnik-1957`)}>
           {m.surface_panel_historic_milestone()}
         </a>
       {/if}
 
-      <!--
-        Related orbital concepts — five PRD-024 cross-link chips covering
-        the Earth-orbital topics not already linked from the cell rows
-        (orbit-regimes, keplers-laws, inclination are pinned above).
-        Each row is a label + tiny info chip; the label is the click
-        target (anchor wraps the text). Issue #303 close-out.
-      -->
-      <ul class="related-orbital-concepts">
-        <li>
-          <a href={localHref(`/science/orbits/cislunar-orbits`)}>{m.chip_label_cislunar_orbits()}</a
-          ><ScienceChip
-            tab="orbits"
-            section="cislunar-orbits"
-            label={m.chip_label_cislunar_orbits()}
-          />
-        </li>
-        <li>
-          <a href={localHref(`/science/orbits/sun-synchronous`)}>{m.chip_label_sun_synchronous()}</a
-          ><ScienceChip
-            tab="orbits"
-            section="sun-synchronous"
-            label={m.chip_label_sun_synchronous()}
-          />
-        </li>
-        <li>
-          <a href={localHref(`/science/orbits/special-orbits`)}>{m.chip_label_special_orbits()}</a
-          ><ScienceChip
-            tab="orbits"
-            section="special-orbits"
-            label={m.chip_label_special_orbits()}
-          />
-        </li>
-        <li>
-          <a href={localHref(`/science/orbits/space-debris`)}>{m.chip_label_space_debris()}</a
-          ><ScienceChip tab="orbits" section="space-debris" label={m.chip_label_space_debris()} />
-        </li>
-        <li>
-          <a href={localHref(`/science/orbits/disposal-end-of-life`)}
-            >{m.chip_label_disposal_end_of_life()}</a
-          ><ScienceChip
-            tab="orbits"
-            section="disposal-end-of-life"
-            label={m.chip_label_disposal_end_of_life()}
-          />
-        </li>
-      </ul>
+      {#if scienceLinks.length > 0}
+        <div class="science-section">
+          <h3 class="library-heading">{m.panel_tab_science()}</h3>
+          {#each scienceLinks as r (r.tab + r.section)}
+            <ScienceCard tab={r.tab as ScienceTabId} section={r.section} expanded={false} />
+          {/each}
+        </div>
+      {/if}
 
       {#if selected.credit}
         <div class="credit">{selected.credit}</div>
@@ -369,26 +365,27 @@
           {panelGalleryCredit(selected.agencies?.join(' / '))}
         </p>
       {/if}
+    {:else if panelTab === 'details' && panelAnatomy.length > 0}
+      <SiteLandingPanel
+        heading="spacecraft"
+        anatomy={panelAnatomy}
+        locale={localeFromPage(page)}
+        onOpen={(src) => (panelLightbox = src)}
+      />
+      {#if panelAnatomy.some((a) => a.exploded)}
+        <SiteLandingPanel
+          part="exploded"
+          anatomy={panelAnatomy}
+          locale={localeFromPage(page)}
+          onOpen={(src) => (panelLightbox = src)}
+        />
+      {/if}
     {:else if panelTab === 'learn'}
       {#if !panelHasLinks}
         <p class="empty-tab">{m.panel_no_links()}</p>
       {:else}
         <PanelLinkTiers links={selected.links} entityId={selected.id} />
       {/if}
-    {/if}
-
-    <!-- #547 S5c — canonical collectible card (mission or fleet alias). -->
-    {#if cardSpec}
-      <div class="card-cta-bar">
-        <button
-          type="button"
-          class="cta-card"
-          onclick={() => (cardOpen = true)}
-          data-testid="open-card-btn"
-        >
-          {m.card_open_button()}
-        </button>
-      </div>
     {/if}
   {/if}
 </Panel>
@@ -397,43 +394,13 @@
   <cards.CardOverlay spec={cardSpec} open={cardOpen} onClose={() => (cardOpen = false)} />
 {/if}
 
-<PanelLightbox src={panelLightbox} images={panelGallery} onClose={() => (panelLightbox = null)} />
+<PanelLightbox
+  src={panelLightbox}
+  images={panelLightboxImages}
+  onClose={() => (panelLightbox = null)}
+/>
 
 <style>
-  /* #547 — card CTA in the quiet register (mirrors the missions panel). */
-  .card-cta-bar {
-    padding: 12px 0 4px;
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
-    margin-top: 12px;
-  }
-  .cta-card {
-    width: 100%;
-    min-height: 48px;
-    padding: 12px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.22);
-    border-radius: 4px;
-    color: #fff;
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
-    letter-spacing: 3px;
-    font-weight: 700;
-    cursor: pointer;
-    transition:
-      background 120ms,
-      border-color 120ms;
-  }
-  .cta-card:hover,
-  .cta-card:focus-visible {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.45);
-    outline: none;
-  }
-  .head {
-    padding: 0 0 12px;
-    border-bottom: 1px solid var(--color-border);
-    margin-bottom: 12px;
-  }
   .agency-row {
     display: flex;
     flex-wrap: wrap;
@@ -444,7 +411,7 @@
   .agency-badge,
   .status {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 7px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
     font-weight: 700;
     padding: 3px 8px;
@@ -463,7 +430,7 @@
     background: rgba(136, 159, 231, 0.08);
   }
   .status-retired {
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--color-text-label);
     border-color: rgba(255, 255, 255, 0.15);
     background: rgba(255, 255, 255, 0.03);
   }
@@ -482,7 +449,7 @@
   }
   .grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 7px;
     margin-bottom: 14px;
   }
@@ -494,9 +461,9 @@
   }
   .cell-label {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 6px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
-    color: rgba(255, 255, 255, 0.25);
+    color: var(--color-text-label);
     margin-bottom: 3px;
   }
   .cell-value {
@@ -508,78 +475,42 @@
   .scale-fact {
     margin: 0 0 14px;
     padding: 10px 12px;
-    border-left: 3px solid var(--accent, #4466ff);
+    border-left: 3px solid var(--accent, var(--color-accent));
     background: rgba(255, 255, 255, 0.02);
     border-radius: 2px;
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 12px;
+    font-size: var(--size-meta);
     color: rgba(255, 255, 255, 0.75);
     line-height: 1.5;
-  }
-  .editorial {
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 13px;
-    color: rgba(255, 255, 255, 0.6);
-    line-height: 1.6;
-    margin: 0 0 14px;
   }
   .mission-link {
     align-self: flex-start;
     display: inline-block;
     margin: 4px 0 10px;
     padding: 8px 12px;
-    background: rgba(68, 102, 255, 0.18);
-    border: 1px solid rgba(68, 102, 255, 0.55);
+    background: color-mix(in srgb, var(--color-accent) 18%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-accent) 55%, transparent);
     color: #fff;
     text-decoration: none;
     border-radius: 3px;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
     font-weight: 700;
     transition: all 0.15s;
   }
   .mission-link:hover,
   .mission-link:focus-visible {
-    background: rgba(68, 102, 255, 0.32);
-    border-color: #4466ff;
+    background: var(--color-accent-edge);
+    border-color: var(--color-accent);
     outline: none;
   }
   .credit {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 7px;
-    color: rgba(255, 255, 255, 0.25);
+    font-size: var(--size-label);
+    color: var(--color-text-label);
     line-height: 1.6;
     border-top: 1px solid rgba(255, 255, 255, 0.06);
     padding-top: 10px;
-  }
-  .related-orbital-concepts {
-    list-style: none;
-    margin: 12px 0 0;
-    padding: 8px 0 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
-  }
-  .related-orbital-concepts li {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-  .related-orbital-concepts a {
-    color: rgba(255, 255, 255, 0.6);
-    text-decoration: none;
-    line-height: 1.4;
-  }
-  .related-orbital-concepts a:hover,
-  .related-orbital-concepts a:focus-visible {
-    color: rgba(120, 220, 200, 0.95);
-    outline: none;
   }
   /* Detail-panel tabs / gallery / learn / lightbox CSS in src/lib/styles/panel-tabs.css (v0.1.10) */
 </style>

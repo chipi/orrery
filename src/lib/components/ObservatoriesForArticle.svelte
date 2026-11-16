@@ -85,7 +85,7 @@
     font-size: 15px;
   }
   .place {
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
   }
@@ -94,7 +94,7 @@
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
     text-decoration: none;
-    border: 1px solid rgba(75, 156, 211, 0.4);
+    border: 1px solid var(--color-accent-edge);
     border-radius: 4px;
     padding: 4px 8px;
   }

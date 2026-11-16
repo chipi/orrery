@@ -26,7 +26,7 @@ declare global {
   /**
    * True only in the Capacitor stream-heavy build (MOBILE=1, ADR-078).
    * App + SW code branch on this to fetch pruned asset buckets (images,
-   * audio, non-default-locale overlays) from chipi.github.io. `false` in
+   * audio, non-default-locale overlays) from the STREAM_ORIGIN host. `false` in
    * every browser build.
    */
   const __MOBILE__: boolean;
@@ -39,14 +39,6 @@ declare global {
    * IP/domain for release. Empty-string `base` in browser builds ignore it.
    */
   const __STREAM_ORIGIN__: string;
-
-  /**
-   * True only in an INTERNAL mobile build (`MOBILE_INTERNAL=1`, ADR-083) —
-   * simulator / TestFlight. Gates the runtime staging↔prod target switcher
-   * (`src/lib/target-env.ts`); `false` in web + App Store release builds, where
-   * the switcher + all-tier config tree-shake out.
-   */
-  const __MOBILE_INTERNAL__: boolean;
 
   /**
    * Live-state windows used by /fly for chrome-devtools-mcp verification
@@ -91,6 +83,42 @@ declare global {
     __exploreSelectLocalGroup?: (id: string) => void;
     __exploreEnterBlackHole?: (id: string) => Promise<void>;
     __explore2dBodyOffset?: (id: string) => { x: number; y: number } | null;
+    /** Where the /explore camera looks, whether the selection ring is up, the panel-aware view shift. */
+    __exploreCameraState?: () => {
+      origin: number[];
+      camR: number;
+      camT: number;
+      camP: number;
+      flying: boolean;
+      ringVisible: boolean;
+      ringAt: number[];
+      viewShiftPx: number;
+    };
+    /** The direction pills (ʻOumuamua's and the heading craft's): drawn (whole chain visible) and text, by owner id. */
+    __exploreDirectionLabels?: () => Record<
+      string,
+      { drawn: boolean; text: string; x: number; y: number; w: number; h: number }
+    >;
+    /** Pin scenes (neighbourhood to cosmic web): every label and ring as drawn, client px; null elsewhere. */
+    __scenePins?: () => import('$lib/universe/scene-pins').PinsSnapshot | null;
+    /** Iconic-mission boxes (milestones and the mission box) of the highlighted missions, as drawn, canvas px. */
+    __iconicBoxes?: () => import('$lib/three/iconic-trajectory').IconicBoxSnapshot[];
+    /** Screen points (canvas-box px) on a kind of solar line or the neighbourhood's light-year rings, for the readability probe. */
+    __exploreLinePoints?: (
+      kind:
+        | 'planet-orbits'
+        | 'moon-orbits'
+        | 'small-orbits'
+        | 'asteroid-belt'
+        | 'kuiper-belt'
+        | 'ly-rings',
+    ) => Array<{ x: number; y: number }>;
+    /** The 2D view's labels of the last frame (only the ones pushed that frame): text, the font the canvas drew it with and its size in CSS px (0 when not drawn), whether it was drawn. */
+    __explore2dLabels?: () => Array<{ text: string; font: string; fontPx: number; shown: boolean }>;
+    /** A solar-system body's world position: planet:<id>, small:<id>, moon:<parent>:<id>, belt:<id>. */
+    __exploreBodyPosition?: (key: string) => number[] | null;
+    /** Where a body (or marker:<missionId>) is on screen, client pixels, or null when behind the camera. */
+    __exploreBodyScreen?: (key: string) => { x: number; y: number } | null;
     /** /earth, /moon, /mars surface scene (SurfaceScene, TourAnchors). */
     __surfaceSceneSelectSite?: (id: string) => void;
     __surfaceSceneFrameRoute?: (id: string) => void;
@@ -100,6 +128,18 @@ declare global {
     __surfaceSceneFaceSite?: (id: string, targetR?: number) => void;
     /** Test hook: where the site's own spot (through the route's magnified frame) is drawn, client px. */
     __surfaceSceneDrawnSiteXY?: (id: string) => { x: number; y: number } | null;
+    /** Test hook: an orbiter marker's or Earth satellite's drawn state (dot visible, ring visible, outlined) and centre, client px. */
+    __surfaceSceneObjectState?: (id: string) => {
+      visible: boolean;
+      ringVisible: boolean;
+      outlined: boolean;
+      x: number;
+      y: number;
+    } | null;
+    /** Test hook: the Worlds camera (orbit angles, radius, pan offset). */
+    __surfaceSceneCamera?: () => { camR: number; camT: number; camP: number; focus: number[] };
+    /** Test hook: the /iss, /tiangong, /fly orbit camera as [position xyz, target xyz]. */
+    __orbitCamera?: () => number[] | null;
     /** /iss, /tiangong (StationRoute, as `__${config.id}PickAt`). */
     __issPickAt?: (moduleId?: string) => { x: number; y: number; moduleId: string } | null;
     __tiangongPickAt?: (moduleId?: string) => { x: number; y: number; moduleId: string } | null;

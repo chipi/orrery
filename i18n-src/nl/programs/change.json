@@ -94,5 +94,37 @@
     "/moon?site=change3": "Chang’e 3 — Yutu-rover",
     "/moon?site=change4": "Chang’e 4 — de achterkant",
     "/moon?site=change2": "Chang’e 2"
+  },
+  "roster": {
+    "mission:change1": {
+      "note": "China's eerste maanmissie — een orbiter die het maanoppervlak in kaart bracht en China aankondigde als maanmacht"
+    },
+    "mission:change2": {
+      "note": "een tweede maanorbiter die de Maan verliet voor het Zon-Aarde-L2-punt en daarna langs de asteroïde Toutatis vloog"
+    },
+    "mission:change3": {
+      "note": "China's eerste zachte landing op de Maan, met de Yutu-rover — het eerste ruimtevaartuig dat daar landde sinds de jaren zeventig"
+    },
+    "mission:change4": {
+      "note": "het eerste ruimtevaartuig ooit dat op de achterkant van de Maan landde — een plek die de Aarde niet kan zien, bereikt met behulp van de relaissatelliet Queqiao"
+    },
+    "mission:change5": {
+      "note": "China's eerste maanmonsterterugkeer — de eerste verse maanstenen die sinds 1976 door wie dan ook naar de Aarde werden gebracht"
+    },
+    "mission:change6": {
+      "note": "de eerste monsterterugkeer van de achterkant van de Maan — materiaal dat nog nooit iemand had vastgehouden"
+    },
+    "Queqiao relay": {
+      "note": "een satelliet voorbij de Maan geplaatst om signalen door te geven van de achterkant, die nooit naar de Aarde kijkt — de truc die Chang'e-4 en -6 mogelijk maakte",
+      "name": "Queqiao-relais"
+    },
+    "Crewed landing": {
+      "note": "China's uitgesproken doel om vóór 2030 astronauten op de Maan te laten landen, met een nieuwe bemanningscapsule voor de diepe ruimte en een lander",
+      "name": "Bemande landing"
+    },
+    "ILRS": {
+      "note": "het International Lunar Research Station — de door China geplande basis bij de zuidpool van de Maan, eerst robotisch en daarna bemand, gebouwd met internationale partners als alternatief voor Artemis",
+      "name": "ILRS"
+    }
   }
 }

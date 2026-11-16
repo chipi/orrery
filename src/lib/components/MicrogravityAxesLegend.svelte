@@ -43,7 +43,7 @@
     <ul class="rows">
       <li class="row">
         <div class="row-head">
-          <span class="swatch swatch-teal" aria-hidden="true"></span>
+          <span class="swatch swatch-zenith" aria-hidden="true"></span>
           <span class="label">{m.microgravity_legend_zenith_nadir()}</span>
         </div>
         <span class="desc">{m.microgravity_legend_zenith_nadir_desc()}</span>
@@ -98,7 +98,7 @@
   }
   .eyebrow {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 8px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
     color: #ffc850;
     margin-bottom: 6px;
@@ -116,7 +116,7 @@
     flex-direction: column;
     gap: 2px;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     color: rgba(255, 255, 255, 0.85);
   }
   .row-head {
@@ -126,11 +126,9 @@
   }
   .desc {
     margin-left: 22px;
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 10px;
+    font-size: var(--size-label);
     line-height: 1.35;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
   }
   .swatch {
     display: block;
@@ -139,7 +137,8 @@
     border-radius: 2px;
     flex-shrink: 0;
   }
-  .swatch-teal {
+  /* a3-keep: data colour, matches the zenith/nadir axes (microgravity-axes.ts), palette review at the end */
+  .swatch-zenith {
     background: #4ecdc4;
   }
   .swatch-red {
@@ -151,7 +150,7 @@
   .link {
     margin-top: 6px;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     color: rgba(255, 200, 80, 0.85);
   }

@@ -5,6 +5,8 @@
   "payloadKg": 9800,
   "fairingKg": 4000,
   "fairingJettisonAltM": 120000,
+  "fairingJettisonS": 210,
+  "liftoffThrustKN": 10579,
   "refAreaM2": 20.4,
   "cd": 0.3,
   "launchSite": {
@@ -43,10 +45,11 @@
     "count": 4,
     "wetKg": 46697,
     "dryKg": 5800,
-    "thrustSlKN": 1688,
-    "thrustVacKN": 1900,
-    "ispSlS": 280,
-    "ispVacS": 285,
+    "thrustSlKN": 1045,
+    "thrustVacKN": 1190,
+    "ispSlS": 245,
+    "ispVacS": 279,
+    "separationDelayS": 23,
     "chamberTempK": 3300
   },
   "stages": [
@@ -54,11 +57,12 @@
       "name": "CCB",
       "wetKg": 305000,
       "dryKg": 21000,
-      "thrustSlKN": 3827,
-      "thrustVacKN": 4152,
+      "thrustSlKN": 3445,
+      "thrustVacKN": 3737,
       "ispSlS": 311,
       "ispVacS": 338,
       "engines": 1,
+      "separationDelayS": 8,
       "chamberTempK": 3600
     },
     {
@@ -80,6 +84,10 @@
     {
       "l": "Spaceflight101 — Atlas V 541 (Curiosity/Perseverance/New Horizons class)",
       "u": "https://web.archive.org/web/20240614182605/https://spaceflight101.com/spacerockets/atlas-v-541/"
+    },
+    {
+      "l": "ULA — Atlas V Launch Services User's Guide Rev 11 (March 2010), Table 2.4.1-1: SRB jettison T+116-118 s, fairing 206-212 s, BECO 249-252 s, booster/Centaur separation 257-260 s. AJ-60A modelled at its burn-average thrust (94 s burn, jettisoned 23 s after burnout); the RD-180 at its throttled burn average",
+      "u": "https://www.ulalaunch.com/docs/default-source/rockets/atlasvusersguide2010a.pdf"
     }
   ]
 }

@@ -81,16 +81,16 @@
   }
   .compact .k {
     color: #ffbe4a;
-    font-size: 10px;
+    font-size: var(--size-label);
   }
   .plan {
     font-family: var(--font-mono, 'Space Mono', monospace);
     text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
   }
   .title {
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
-    color: #5ac8ff;
+    color: var(--color-state);
     margin: 0 0 6px;
     text-align: right;
   }
@@ -121,31 +121,31 @@
     color: #6f8399;
   }
   li.done .mark {
-    color: #3fc59a;
+    color: var(--color-state);
   }
   li.active {
-    background: rgba(90, 200, 255, 0.12);
-    border-color: rgba(90, 200, 255, 0.45);
+    background: var(--color-accent-soft);
+    border-color: color-mix(in srgb, var(--color-accent) 45%, transparent);
     color: #fff;
   }
   li.active .mark {
-    color: #5ac8ff;
+    color: var(--color-state);
     animation: pulse 1.6s ease-in-out infinite;
   }
   li.next .mark {
     color: #ffbe4a;
   }
   .mark {
-    font-size: 10px;
+    font-size: var(--size-label);
     text-align: center;
   }
   .time {
-    font-size: 10px;
+    font-size: var(--size-label);
     color: #7d99b5;
     font-variant-numeric: tabular-nums;
   }
   li.active .time {
-    color: #bfe6ff;
+    color: var(--color-state);
   }
   @keyframes pulse {
     50% {

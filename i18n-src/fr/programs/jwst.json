@@ -95,5 +95,27 @@
     "/programs/great-observatories": "Les Grands Observatoires — la lignée que prolonge le JWST",
     "/programs/ariane": "Ariane — la fusée qui l'a lancé",
     "/earth?site=jwst": "Télescope spatial James Webb"
+  },
+  "roster": {
+    "Conceived": {
+      "note": "la planification d'un « Next Generation Space Telescope » pour succéder à Hubble commence — le début d'une saga de 25 ans de refontes, de retards et d'un budget multiplié par dix environ",
+      "name": "Conçu"
+    },
+    "Nearly cancelled": {
+      "note": "avec des années de retard et des milliards de dépassement, le programme a été visé par une annulation du Congrès avant d'être sauvé — une survie aussi étroite que n'importe quelle autre de cet atlas",
+      "name": "Presque annulé"
+    },
+    "Launch": {
+      "note": "le jour de Noël, une Ariane 5 fournie par l'ESA lance JWST sans faute — avec une telle précision que le télescope a économisé assez de carburant pour doubler à peu près sa durée de vie prévue",
+      "name": "Lancement"
+    },
+    "The unfolding": {
+      "note": "en deux semaines, 344 étapes à point de défaillance unique déploient le pare-soleil grand comme un court de tennis et le miroir segmenté à un million de miles de tout espoir de réparation — chacune a fonctionné",
+      "name": "Le déploiement"
+    },
+    "First images": {
+      "note": "les premières images en couleur stupéfient le monde — la vue infrarouge la plus profonde de l'univers jamais prise, des galaxies de l'aube du temps cosmique",
+      "name": "Premières images"
+    }
   }
 }

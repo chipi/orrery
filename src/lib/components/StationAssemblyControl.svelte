@@ -7,8 +7,13 @@
    *   - a scrub-bar (0 → 1, mapped to nowEpoch ∈ [startEpoch, endEpoch])
    *   - a reset button (jump to t=0)
    *   - a current-date readout
-   *   - a "🚀 launched on <launcher> · <date>" chip for whatever module
-   *     most recently entered the timeline.
+   *   - a two-row "🚀 <name>" / "<launcher> · <date>" chip for whatever
+   *     phase most recently entered the timeline.
+   *
+   * The box keeps ONE height across every phase and width (UXD-031): the
+   * chip is two fixed one-line rows cut with an ellipsis (whole text in the
+   * title and the live region), the hint is one row (two at 480 px and
+   * below). Never let the chip or the hint wrap or grow.
    *
    * The component is purely a controller — the actual mesh tweening
    * happens in the parent's Three.js animate() loop via
@@ -20,6 +25,7 @@
    */
   import { fmtDate } from '$lib/station-assembly-anim';
   import * as m from '$lib/paraglide/messages';
+  import Chip from '$lib/components/Chip.svelte';
 
   type Props = {
     playing: boolean;
@@ -64,31 +70,36 @@
 
   const nowEpoch = $derived(startEpoch + progress * (endEpoch - startEpoch));
   const nowDate = $derived(fmtDate(nowEpoch));
+  // The chip is cut to two one-line rows; the whole phase stays here for the
+  // title and the live region.
+  const fullText = $derived(
+    latestChip
+      ? `${latestChip.name} · ${latestChip.launcher} · ${latestChip.date}`
+      : m.assembly_waiting_first_launch(),
+  );
 </script>
 
 <div class="assembly-overlay" data-testid="station-assembly">
   <div class="assembly-row">
-    <button
-      type="button"
-      class="ctrl"
+    <Chip
+      kind="action"
       data-testid="assembly-play"
       aria-label={playing ? m.station_assembly_pause_aria() : m.station_assembly_play_aria()}
       title={playing ? m.fly_pause() : m.fly_play()}
       onclick={onTogglePlay}
     >
       {playing ? '⏸' : '▶'}
-    </button>
+    </Chip>
 
-    <button
-      type="button"
-      class="ctrl"
+    <Chip
+      kind="action"
       data-testid="assembly-reset"
       aria-label={m.assembly_reset_aria()}
       title={m.assembly_reset_title()}
       onclick={onReset}
     >
       ⟲
-    </button>
+    </Chip>
 
     <input
       class="scrub"
@@ -104,50 +115,56 @@
 
     <span class="date" data-testid="assembly-date">{nowDate}</span>
 
-    <button
-      type="button"
-      class="assembly-close"
+    <Chip
+      kind="action"
       aria-label={m.assembly_close()}
       title={m.assembly_close()}
       onclick={onClose}
     >
       ×
-    </button>
+    </Chip>
   </div>
 
   {#if latestChip}
-    <p class="chip" data-testid="assembly-chip">
-      <span aria-hidden="true">🚀</span>
-      {#if latestChip.pickableId}
-        <button
-          type="button"
-          class="chip-name"
-          data-testid="assembly-chip-name"
-          title={m.assembly_open_module_title()}
-          onclick={() => onChipClick(latestChip!.pickableId!)}
-        >
-          {latestChip.name}
-        </button>
-      {:else}
-        <!-- Truss / iROSA phases have no panel target — render the chip
-             name as plain text, no click affordance. -->
-        <span class="chip-name chip-name-static" data-testid="assembly-chip-name">
-          {latestChip.name}
-        </span>
-      {/if}
-      <span class="sep">·</span>
-      <span>{latestChip.launcher}</span>
-      <span class="sep">·</span>
-      <time>{latestChip.date}</time>
-    </p>
+    <div class="chip" data-testid="assembly-chip" title={fullText}>
+      <p class="chip-line">
+        <span class="glyph" aria-hidden="true">🚀</span>
+        {#if latestChip.pickableId}
+          <button
+            type="button"
+            class="chip-name"
+            data-testid="assembly-chip-name"
+            title={m.assembly_open_module_title()}
+            onclick={() => onChipClick(latestChip!.pickableId!)}
+          >
+            {latestChip.name}
+          </button>
+        {:else}
+          <!-- Truss / iROSA phases have no panel target — render the chip
+               name as plain text, no click affordance. -->
+          <span class="chip-name chip-name-static" data-testid="assembly-chip-name">
+            {latestChip.name}
+          </span>
+        {/if}
+      </p>
+      <p class="chip-line chip-meta">
+        <span class="cut">{latestChip.launcher}</span>
+        <span class="sep">·</span>
+        <time>{latestChip.date}</time>
+      </p>
+    </div>
   {:else}
-    <p class="chip empty" data-testid="assembly-chip">
-      <span aria-hidden="true">·</span>
-      <span>{m.assembly_waiting_first_launch()}</span>
-    </p>
+    <div class="chip empty" data-testid="assembly-chip">
+      <p class="chip-line">
+        <span class="glyph" aria-hidden="true">·</span>
+        <span class="cut">{m.assembly_waiting_first_launch()}</span>
+      </p>
+      <p class="chip-line chip-meta"></p>
+    </div>
   {/if}
+  <span class="sr-only" aria-live="polite">{fullText}</span>
 
-  <p class="hint" aria-live="polite">
+  <p class="hint">
     {m.station_assembly_hint({ seconds: Math.round(durationMs / 1000) })}
   </p>
 </div>
@@ -160,32 +177,13 @@
     transform: translateX(-50%);
     width: min(92vw, 640px);
     background: rgba(8, 12, 18, 0.92);
-    border: 1px solid rgba(120, 180, 255, 0.35);
+    border: 1px solid var(--color-accent-edge);
     border-radius: 12px;
     padding: 0.9rem 1.2rem 0.7rem;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    color: #cfe2ff;
+    color: var(--color-text);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.55);
     z-index: 12;
-  }
-
-  .assembly-close {
-    width: 1.8rem;
-    height: 1.8rem;
-    border: 1px solid rgba(120, 180, 255, 0.35);
-    background: rgba(20, 28, 40, 0.6);
-    color: #cfe2ff;
-    font-size: 1.05rem;
-    line-height: 1;
-    cursor: pointer;
-    border-radius: 50%;
-    flex: none;
-    display: grid;
-    place-items: center;
-  }
-  .assembly-close:hover {
-    background: rgba(120, 180, 255, 0.22);
-    color: #fff;
   }
 
   .assembly-row {
@@ -194,28 +192,11 @@
     gap: 0.6rem;
   }
 
-  .ctrl {
-    width: 2rem;
-    height: 2rem;
-    border: 1px solid rgba(120, 180, 255, 0.45);
-    background: rgba(20, 28, 40, 0.6);
-    color: #cfe2ff;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 0.95rem;
-    line-height: 1;
-    display: grid;
-    place-items: center;
-    flex: none;
-  }
-  .ctrl:hover {
-    background: rgba(120, 180, 255, 0.2);
-  }
-
   .scrub {
     flex: 1;
-    accent-color: #6fb3ff;
+    accent-color: var(--color-accent);
     height: 1.4rem;
+    min-width: 0;
   }
 
   .date {
@@ -226,14 +207,45 @@
     color: #ffd57a;
   }
 
+  /* Two fixed one-line rows (name, then launcher · date): the box keeps one
+     height across every phase and every width (UXD-031). */
   .chip {
     margin: 0.55rem 0 0;
     font-size: 0.86rem;
+    line-height: 1.3;
+  }
+  .chip-line {
+    margin: 0;
+    height: 1.3em;
     display: flex;
     align-items: baseline;
     gap: 0.4rem;
-    flex-wrap: wrap;
-    line-height: 1.3;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .glyph {
+    flex: none;
+    width: 1.4em;
+  }
+  .chip-meta {
+    padding-inline-start: calc(1.4em + 0.4rem);
+  }
+  .cut,
+  .chip-name {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .chip-meta time {
+    flex: none;
+  }
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
   }
   .chip-name {
     color: #fff;
@@ -242,17 +254,18 @@
     padding: 0;
     font: inherit;
     font-weight: 700;
+    text-align: start;
     cursor: pointer;
-    text-decoration: underline dotted rgba(120, 180, 255, 0.6);
+    text-decoration: underline dotted var(--color-accent-strong);
     text-underline-offset: 3px;
   }
   .chip-name:hover {
-    color: #cfe2ff;
-    text-decoration: underline solid rgba(160, 200, 255, 0.9);
+    color: var(--color-text);
+    text-decoration: underline solid var(--color-accent-hover);
   }
   .chip-name:focus-visible {
-    outline: 2px solid #6fb3ff;
-    outline-offset: 2px;
+    outline: 2px solid var(--color-focus);
+    outline-offset: -2px;
     border-radius: 2px;
   }
   .chip-name-static {
@@ -272,5 +285,39 @@
     font-size: 0.74rem;
     opacity: 0.6;
     line-height: 1.25;
+    height: 1.25em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  /* A landscape phone is ~290 px tall: sit the box just above the drawer tabs
+     and tighten it so it clears the top-left HUD chips (3D, RESET VIEW, SPIN)
+     instead of covering the play and reset buttons (UXD-031). */
+  @media (max-height: 480px) and (pointer: coarse) {
+    .assembly-overlay {
+      bottom: 3.5rem;
+      padding: 0.6rem 1.2rem 0.5rem;
+    }
+    .chip {
+      margin-top: 0.35rem;
+    }
+    .hint {
+      margin-top: 0.25rem;
+    }
+  }
+  /* A phone reserves the second row, so the sentence stays whole and the box
+     never changes height (UXD-031). */
+  @media (max-width: 480px) {
+    .date {
+      min-width: 5.5rem;
+    }
+    .hint {
+      height: 2.5em;
+      white-space: normal;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
   }
 </style>

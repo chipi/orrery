@@ -1,0 +1,51 @@
+{
+  "id": "sts-1",
+  "agency": "NASA",
+  "agency_full": "National Aeronautics and Space Administration",
+  "sector": "gov",
+  "dest": "EARTH",
+  "color": "#0B3D91",
+  "year": 1981,
+  "status": "FLOWN",
+  "departure_date": "1981-04-12",
+  "arrival_date": "1981-04-14",
+  "transit_days": 2,
+  "round_trip": true,
+  "vehicle": "Space Shuttle Columbia (OV-102)",
+  "payload": "Crew of two (Young, Crippen); DFI and ACIP instrumentation",
+  "delta_v": "~9.4 km/s (LEO)",
+  "data_quality": "good",
+  "credit": "© NASA mission records. Public domain / archive.",
+  "links": [
+    {
+      "l": "STS-1 — NASA",
+      "u": "https://www.nasa.gov/mission/sts-1/",
+      "t": "core"
+    },
+    {
+      "l": "STS-1 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/STS-1",
+      "t": "intro"
+    },
+    {
+      "l": "STS-1 (NASA NSSDCA)",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1981-034A",
+      "t": "deep"
+    }
+  ],
+  "flight_data_quality": "reconstructed",
+  "fleet_refs": [
+    {
+      "id": "space-shuttle-stack",
+      "role": "launcher"
+    },
+    {
+      "id": "columbia",
+      "role": "spacecraft"
+    },
+    {
+      "id": "lc-39a",
+      "role": "launch-site"
+    }
+  ]
+}

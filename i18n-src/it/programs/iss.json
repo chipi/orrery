@@ -95,5 +95,69 @@
     "/fleet?id=iss": "Flotta — la Stazione spaziale internazionale",
     "/programs/mir": "Mir — la stazione da cui la SSI ha ereditato",
     "/earth?site=iss": "La SSI sopra di noi"
+  },
+  "roster": {
+    "module:zarya": {
+      "note": "Il primo modulo — un blocco di controllo ed energia finanziato dagli Stati Uniti e costruito in Russia: il seme dell'intera stazione."
+    },
+    "module:unity": {
+      "note": "Il primo modulo statunitense, un nodo di collegamento a sei porte unito a Zarya due settimane dopo."
+    },
+    "module:zvezda": {
+      "note": "Il modulo di servizio russo che rese abitabile la stazione: alloggi dell'equipaggio, supporto vitale e propulsione."
+    },
+    "module:destiny": {
+      "note": "Il laboratorio statunitense — il principale modulo di ricerca e il centro di comando della stazione."
+    },
+    "module:canadarm2": {
+      "note": "Il braccio robotico del Canada, che ha assemblato gran parte della stazione e cattura i veicoli in arrivo."
+    },
+    "module:quest": {
+      "note": "La camera di equilibrio statunitense, che consente passeggiate spaziali sia con tute americane sia russe."
+    },
+    "module:pirs": {
+      "note": "Un compartimento russo di aggancio e camera di equilibrio — fatto rientrare nel 2021 per fare posto a Nauka."
+    },
+    "module:harmony": {
+      "note": "Il nodo che aprì la strada ai laboratori internazionali."
+    },
+    "module:columbus": {
+      "note": "Il laboratorio dell'Europa — il contributo fondamentale dell'ESA alla stazione."
+    },
+    "module:kibo": {
+      "note": "Il laboratorio del Giappone — il più grande modulo singolo, con una propria piattaforma esterna."
+    },
+    "module:poisk": {
+      "note": "Un modulo russo di aggancio e camera di equilibrio allo zenit di Zvezda."
+    },
+    "module:tranquility": {
+      "note": "Supporto vitale e attrezzature per l'esercizio fisico — e l'attacco per la Cupola."
+    },
+    "module:cupola": {
+      "note": "La cupola di osservazione a sette finestre, fonte delle vedute più famose della Terra dalla stazione."
+    },
+    "module:rassvet": {
+      "note": "Un modulo russo di aggancio e stoccaggio."
+    },
+    "module:leonardo": {
+      "note": "Un modulo di stoccaggio permanente, ricavato da un trasportatore di carico riutilizzabile."
+    },
+    "module:beam": {
+      "note": "Un modulo gonfiabile sperimentale, che collauda habitat espandibili in orbita."
+    },
+    "module:nauka": {
+      "note": "Il modulo scientifico russo, a lungo in ritardo, aggiunto più di due decenni dopo l'inizio dell'assemblaggio."
+    },
+    "module:prichal": {
+      "note": "Un nodo di aggancio russo — tra le aggiunte più recenti."
+    },
+    "Expedition 1": {
+      "note": "il primo equipaggio residente arrivò il 2 novembre 2000; da allora ci sono esseri umani a bordo ininterrottamente — la più lunga presenza umana ininterrotta fuori dalla Terra della storia",
+      "name": "Expedition 1"
+    },
+    "Commercial Crew": {
+      "note": "la Crew Dragon di SpaceX ha ripristinato i lanci di equipaggi statunitensi dopo nove anni, avviando il passaggio dell'accesso all'orbita bassa a fornitori commerciali",
+      "name": "Commercial Crew"
+    }
   }
 }

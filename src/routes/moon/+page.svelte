@@ -1,5 +1,4 @@
 <script lang="ts">
-  import EntityIndex from '$lib/components/EntityIndex.svelte';
   let { data } = $props();
   import { metaDescription } from '$lib/seo';
   import { dataLoadFailed } from '$lib/data/core';
@@ -14,7 +13,8 @@
   import SurfacePreloadLinks from '$lib/components/SurfacePreloadLinks.svelte';
   import TourAnchors from '$lib/components/TourAnchors.svelte';
   import OrbitRuler from '$lib/components/OrbitRuler.svelte';
-  import RegimePanel from '$lib/components/RegimePanel.svelte';
+  import HudStackBL from '$lib/components/HudStackBL.svelte';
+  import { hudTouch } from '$lib/hud-touch.svelte';
   import { onMount } from 'svelte';
   import { page } from '$app/state';
   import { goto } from '$app/navigation';
@@ -33,6 +33,7 @@
   import { regimeForAltitude } from '$lib/physics/util/orbit-regime-match';
   import { getLocale } from '$lib/paraglide/runtime';
   import * as m from '$lib/paraglide/messages';
+  import Chip from '$lib/components/Chip.svelte';
   import VisuallyHiddenH1 from '$lib/components/VisuallyHiddenH1.svelte';
   import { getObserverLocation } from '$lib/geolocation';
   import {
@@ -105,7 +106,7 @@
     radiusKm: 1737.4,
     // Moon's near-side tidal-lock indicator (Mars rotates freely; no
     // analog). Science Lens 'tidal-lock' layer toggles visibility.
-    tidalLockOverlay: { color: 0x4ecdc4, opacity: 0.18 },
+    tidalLockOverlay: { color: 0x4ecdc4, opacity: 0.18 }, // a3-keep: tidal-lock hemisphere overlay (science), palette review at the end
     // Sub-Earth point + libration envelope ('sub-earth' lens) and the
     // far-side tint ('far-side' lens) — both attach to the lunar surface.
     lunarLayers: {
@@ -147,8 +148,13 @@
   // Orbit ruler auto-hides once the camera dips below the lowest orbit
   // band (#363) — SurfaceScene flips this via onOrbitsInViewChange.
   let orbitsInView = $state(true);
+  // The flat true-scale view: its scale bar takes the bottom-left corner and the locate chip
+  // (which turns the globe) has nothing to turn there.
+  let flatView = $state(false);
   let regimePanelOpen = $state(false);
   let selectedRegimeId = $state<string | null>(null);
+  // The ruler row under the pointer or keyboard focus; the scene draws it (UXD-024).
+  let hoverRegimeId = $state<string | null>(null);
   let selectedRegime = $derived(
     selectedRegimeId ? (regimes.find((r) => r.id === selectedRegimeId) ?? null) : null,
   );
@@ -198,6 +204,10 @@
   function onResidentClick(id: string) {
     window.__surfaceSceneSelectSite?.(id);
   }
+
+  $effect(() => {
+    surfaceScene?.setRegimeHighlight(hoverRegimeId, regimePanelOpen ? selectedRegimeId : null);
+  });
 
   onMount(async () => {
     try {
@@ -263,6 +273,7 @@
 <DebugPanelRegistrar label="MOON" />
 
 <SurfaceScene
+  entityLinks={data.entityIndex}
   locateReservePx={44}
   bind:this={surfaceScene}
   config={MOON_CONFIG}
@@ -275,119 +286,105 @@
   {regimes}
   onRegimeOpen={openRegime}
   onOrbitsInViewChange={(v) => (orbitsInView = v)}
+  onFlatViewChange={(v) => (flatView = v)}
 >
   {#snippet barStart()}
-    <!-- #48 — opt-in precise centering. On a phone it is the first icon of the scene's
-         bottom bar (the label stays for assistive tech and tests). -->
-    <button
-      type="button"
-      class="locate-me"
+    {#if hudTouch.value}
+      {@render locateChip()}
+    {/if}
+  {/snippet}
+</SurfaceScene>
+
+<TourAnchors route="moon" anchors={MOON_TOUR_ANCHORS} />
+
+{#snippet locateChip()}
+  <!-- #48 — opt-in precise centering. On a phone it is the first icon of the scene's
+       bottom bar (the label stays for assistive tech and tests). -->
+  <div class="locate-slot">
+    <Chip
+      kind="action"
       onclick={viewFromMyLocation}
       disabled={locating}
       data-testid="moon-locate-me"
       title={m.moon_locate_me()}
     >
-      <span class="locate-icon" aria-hidden="true">☾</span>
+      {#snippet icon()}☾{/snippet}
       <span class="locate-label">{locating ? m.moon_locate_working() : m.moon_locate_me()}</span>
-    </button>
-  {/snippet}
-</SurfaceScene>
+    </Chip>
+  </div>
+{/snippet}
 
 <!-- #48 — observer view. Opt-in (no prompt on load): resolves the observer's
      location, orients to tonight's sub-Earth point + surfaces phase/visibility. -->
-{#if observerView}
-  <div class="moon-observer" data-testid="moon-observer-readout">
-    <div class="mo-eyebrow">{m.moon_view_eyebrow()}</div>
-    <div class="mo-phase">{PHASE_LABEL[observerView.phase.phaseName]()}</div>
-    <div class="mo-row">
-      {m.moon_view_lit({ pct: Math.round(observerView.phase.illuminatedFraction * 100) })}
-    </div>
-    <div class="mo-row">
-      {#if observerView.aboveHorizon}
-        {m.moon_view_alt_above({ deg: Math.round(observerView.altitudeDeg) })}
-      {:else}
-        {m.moon_view_alt_below()}
-      {/if}
-    </div>
-    <div class="mo-row mo-dim">
-      {m.moon_view_libration({
-        lon: `${observerView.libration.lonDeg >= 0 ? '+' : ''}${observerView.libration.lonDeg.toFixed(1)}°`,
-        lat: `${observerView.libration.latDeg >= 0 ? '+' : ''}${observerView.libration.latDeg.toFixed(1)}°`,
-      })}
-    </div>
-  </div>
-{/if}
-
-<EntityIndex hub="moon" title={m.entity_index_moon()} links={data.entityIndex} floating />
-
-<TourAnchors route="moon" anchors={MOON_TOUR_ANCHORS} />
-
-<!-- Desktop-only ruler — on mobile the SurfaceScene accordion Ruler tab
-     replaces this. .ruler-desktop-only renders display:none at ≤767px. -->
-<div class="ruler-desktop-only">
+<!-- Bottom-left column (UXD-024): the readout, the locate chip and the orbit ruler, top to
+     bottom. On a phone the chip is the first icon of the scene's bottom bar, the readout stays
+     above it and the ruler is the drawer's Ruler tab. -->
+<HudStackBL>
+  {#snippet readout()}
+    {#if observerView}
+      <div class="moon-observer" data-testid="moon-observer-readout">
+        <div class="mo-eyebrow">{m.moon_view_eyebrow()}</div>
+        <div class="mo-phase">{PHASE_LABEL[observerView.phase.phaseName]()}</div>
+        <div class="mo-row">
+          {m.moon_view_lit({ pct: Math.round(observerView.phase.illuminatedFraction * 100) })}
+        </div>
+        <div class="mo-row">
+          {#if observerView.aboveHorizon}
+            {m.moon_view_alt_above({ deg: Math.round(observerView.altitudeDeg) })}
+          {:else}
+            {m.moon_view_alt_below()}
+          {/if}
+        </div>
+        <div class="mo-row mo-dim">
+          {m.moon_view_libration({
+            lon: `${observerView.libration.lonDeg >= 0 ? '+' : ''}${observerView.libration.lonDeg.toFixed(1)}°`,
+            lat: `${observerView.libration.latDeg >= 0 ? '+' : ''}${observerView.libration.latDeg.toFixed(1)}°`,
+          })}
+        </div>
+      </div>
+    {/if}
+  {/snippet}
+  {#snippet chip()}
+    {#if !flatView}{@render locateChip()}{/if}
+  {/snippet}
   {#if regimes.length > 0 && orbitsInView}
     <!-- Hidden once the camera dips below LLO — orbits then sit overhead
          and the ruler references nothing on screen (#363). -->
-    <OrbitRuler {regimes} {highlightRegime} onSelect={openRegime} anchorBottomPx={14} />
+    <OrbitRuler
+      {regimes}
+      {highlightRegime}
+      activeRegime={regimePanelOpen ? selectedRegimeId : null}
+      onSelect={openRegime}
+      onPreview={(id) => (hoverRegimeId = id)}
+      anchorBottomPx={14}
+    />
   {/if}
-</div>
+</HudStackBL>
 
-<RegimePanel
-  regime={selectedRegime}
-  open={regimePanelOpen}
-  onClose={closeRegime}
-  {selectableIds}
-  {onResidentClick}
-/>
+{#await import('$lib/components/RegimePanel.svelte') then { default: RegimePanel }}
+  <RegimePanel
+    bundle="orbit-regimes-moon"
+    regime={selectedRegime}
+    open={regimePanelOpen}
+    onClose={closeRegime}
+    {selectableIds}
+    {onResidentClick}
+  />
+{/await}
 
 <style>
-  /* #48 — observer button + readout, bottom-left. Same treatment as /earth;
-     the readout stacks above the button when a location has been resolved. */
-  .locate-me {
-    position: absolute;
-    /* On the nation legend's top edge when the scene publishes it. */
-    bottom: var(--legend-top, calc(60px + env(safe-area-inset-bottom, 0px)));
-    left: 12px;
-    z-index: 7;
-    display: inline-flex;
-    align-items: center;
-    gap: 7px;
-    padding: 8px 12px;
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 12px;
-    letter-spacing: 0.04em;
-    color: var(--text-base, #e8e8ed);
-    background: rgba(8, 10, 22, 0.62);
-    border: 1px solid rgba(78, 205, 196, 0.35);
-    border-radius: 8px;
-    backdrop-filter: blur(5px);
-    cursor: pointer;
-    min-height: 34px;
+  /* #48 — observer button + readout: rows of the bottom-left column (HudStackBL); on a phone
+     the chip is the first icon of the scene's bottom bar and the readout rides above it. */
+  .locate-slot {
+    display: block;
   }
-  .locate-me:hover:not(:disabled) {
-    border-color: rgba(78, 205, 196, 0.7);
-  }
-  .locate-me:disabled {
-    opacity: 0.6;
-    cursor: default;
-  }
-  /* Globe controls: the panorama's compass sits in this corner. */
-  :global(html[data-surface-panorama]) .locate-me,
+  /* A globe control: the panorama's compass sits in this corner. */
+  :global(html[data-surface-panorama]) .locate-slot,
   :global(html[data-surface-panorama]) .moon-observer {
     display: none;
   }
-  /* Phone: an icon button in the scene's bottom bar; the words stay for screen readers. */
+  /* Phone: a chip in the scene's bottom bar; the words stay for screen readers. */
   @media (hover: none), (pointer: coarse) {
-    .locate-me {
-      position: static;
-      width: 40px;
-      min-height: 40px;
-      padding: 0;
-      justify-content: center;
-      background: none;
-      border: none;
-      backdrop-filter: none;
-    }
     .locate-label {
       position: absolute;
       width: 1px;
@@ -396,34 +393,22 @@
       clip-path: inset(50%);
       white-space: nowrap;
     }
-    .locate-me .locate-icon {
-      font-size: 20px;
-    }
-  }
-  .locate-icon {
-    color: #4ecdc4;
-    font-size: 14px;
-    line-height: 1;
   }
   .moon-observer {
-    position: absolute;
-    bottom: calc(106px + env(safe-area-inset-bottom, 0px));
-    left: 12px;
-    z-index: 7;
     min-width: 190px;
     max-width: min(70vw, 260px);
     padding: 10px 12px;
     font-family: var(--font-mono, 'Space Mono', monospace);
     color: var(--text-base, #e8e8ed);
     background: rgba(8, 10, 22, 0.72);
-    border: 1px solid rgba(78, 205, 196, 0.3);
+    border: 1px solid var(--color-accent-edge);
     border-radius: 8px;
     backdrop-filter: blur(6px);
   }
   .mo-eyebrow {
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 0.18em;
-    color: rgba(78, 205, 196, 0.85);
+    color: var(--color-state);
     margin-bottom: 6px;
   }
   .mo-phase {
@@ -439,16 +424,5 @@
     color: var(--text-dim, #9a9aa7);
     font-size: 11px;
     margin-top: 2px;
-  }
-  .ruler-desktop-only {
-    display: contents;
-  }
-  /* Hide the persistent desktop ruler on touch — the RULER drawer replaces it.
-     Keyed on capability, not width, so a landscape phone (wide but touch)
-     doesn't show BOTH the default ruler and the drawer one. */
-  @media (hover: none), (pointer: coarse) {
-    .ruler-desktop-only {
-      display: none;
-    }
   }
 </style>

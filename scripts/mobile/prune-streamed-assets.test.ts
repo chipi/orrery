@@ -62,6 +62,76 @@ describe('prune-streamed-assets (MOBILE=1)', () => {
     expect(existsSync(path.join(b, 'data/i18n/en-US.core.json'))).toBe(true); // default chunk
     expect(existsSync(path.join(b, 'app.js'))).toBe(true);
   });
+
+  it('drops the build-time-only data files, keeps the data the app fetches', () => {
+    const b = seed(dir);
+    for (const f of [
+      'tech-bom.json',
+      'image-phashes.json',
+      'entity-thumbs.json',
+      'credit-thumbs.json',
+    ])
+      writeFileSync(path.join(b, 'data', f), '{}');
+    run(dir, true);
+    expect(existsSync(path.join(b, 'data/tech-bom.json'))).toBe(false);
+    expect(existsSync(path.join(b, 'data/image-phashes.json'))).toBe(false);
+    expect(existsSync(path.join(b, 'data/entity-thumbs.json'))).toBe(false);
+    expect(existsSync(path.join(b, 'data/credit-thumbs.json'))).toBe(true); // /credits fetches it
+  });
+});
+
+describe('prune-streamed-assets (MOBILE=1) star pages', () => {
+  it('drops every /explore/stars/<id> page and its __data.json; keeps the scene route', () => {
+    const b = seed(dir);
+    for (const prefix of ['', 'de/']) {
+      mkdirSync(path.join(b, prefix, 'explore/stars/sirius'), { recursive: true });
+      writeFileSync(path.join(b, prefix, 'explore/stars/sirius.html'), 'x');
+      writeFileSync(path.join(b, prefix, 'explore/stars/sirius/__data.json'), '{}');
+    }
+    writeFileSync(path.join(b, 'explore.html'), 'x'); // the scene route — must survive
+    run(dir, true);
+    expect(existsSync(path.join(b, 'explore/stars'))).toBe(false);
+    expect(existsSync(path.join(b, 'de'))).toBe(false);
+    expect(existsSync(path.join(b, 'explore.html'))).toBe(true);
+  });
+});
+
+describe('prune-streamed-assets (MOBILE=1) black-hole pages', () => {
+  it('drops every /explore/black-holes/<id> page and its __data.json; keeps the scene route', () => {
+    const b = seed(dir);
+    for (const prefix of ['', 'de/']) {
+      mkdirSync(path.join(b, prefix, 'explore/black-holes/gargantua'), { recursive: true });
+      writeFileSync(path.join(b, prefix, 'explore/black-holes/gargantua.html'), 'x');
+      writeFileSync(path.join(b, prefix, 'explore/black-holes/gargantua/__data.json'), '{}');
+    }
+    writeFileSync(path.join(b, 'explore.html'), 'x'); // the scene route — must survive
+    run(dir, true);
+    expect(existsSync(path.join(b, 'explore/black-holes'))).toBe(false);
+    expect(existsSync(path.join(b, 'de'))).toBe(false);
+    expect(existsSync(path.join(b, 'explore.html'))).toBe(true);
+  });
+});
+
+describe('prune-streamed-assets (MOBILE=1) galaxy and structure pages', () => {
+  it('drops every /explore/galaxies/<id> and /explore/structures/<id> page and its __data.json; keeps the scene route', () => {
+    const b = seed(dir);
+    for (const prefix of ['', 'de/']) {
+      for (const [folder, id] of [
+        ['galaxies', 'lmc'],
+        ['structures', 'virgo-cluster'],
+      ]) {
+        mkdirSync(path.join(b, prefix, `explore/${folder}/${id}`), { recursive: true });
+        writeFileSync(path.join(b, prefix, `explore/${folder}/${id}.html`), 'x');
+        writeFileSync(path.join(b, prefix, `explore/${folder}/${id}/__data.json`), '{}');
+      }
+    }
+    writeFileSync(path.join(b, 'explore.html'), 'x'); // the scene route — must survive
+    run(dir, true);
+    expect(existsSync(path.join(b, 'explore/galaxies'))).toBe(false);
+    expect(existsSync(path.join(b, 'explore/structures'))).toBe(false);
+    expect(existsSync(path.join(b, 'de'))).toBe(false);
+    expect(existsSync(path.join(b, 'explore.html'))).toBe(true);
+  });
 });
 
 describe('prune-streamed-assets (MOBILE unset)', () => {

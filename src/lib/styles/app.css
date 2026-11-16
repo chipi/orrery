@@ -3,6 +3,8 @@
 @import './panel-tabs.css';
 @import './entity-card-grid.css';
 @import './entity-browse-page.css';
+@import './page-shell.css';
+@import './chip.css';
 
 * {
   box-sizing: border-box;
@@ -22,7 +24,7 @@ body {
 }
 
 a {
-  color: var(--color-accent-text, #5070ff);
+  color: var(--color-accent);
 }
 
 /* Native <select> option lists render in the OS picker, which on Android
@@ -63,7 +65,7 @@ html {
   border-radius: 8px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(78, 205, 196, 0.55);
+  background: color-mix(in srgb, var(--color-accent) 55%, transparent);
 }
 
 .scroll-thin {
@@ -123,6 +125,54 @@ html {
   pointer-events: auto;
 }
 
+/* The screen-reader site / module lists (GH #256) are clipped to 1 px, so a keyboard user
+ * tabbing through them saw no focus at all. While focus is inside one, only the focused
+ * row is drawn, as a chip at the bottom centre with the focus ring; every other row stays
+ * clipped but focusable, so Tab keeps walking the list. Specificity beats the components'
+ * scoped `.sr-only`. */
+ul.sr-only.sr-site-list:focus-within,
+ul.sr-only.sr-module-list:focus-within {
+  position: fixed;
+  left: 50%;
+  bottom: calc(56px + env(safe-area-inset-bottom, 0px));
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: calc(100vw - 32px);
+  height: auto;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+  clip: auto;
+  list-style: none;
+  z-index: 60;
+}
+ul.sr-only.sr-site-list:focus-within > li:not(:focus-within),
+ul.sr-only.sr-module-list:focus-within > li:not(:focus-within) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+ul.sr-only.sr-site-list:focus-within button,
+ul.sr-only.sr-module-list:focus-within button {
+  display: block;
+  padding: 8px 14px;
+  border: 1px solid var(--color-accent-edge, rgba(255, 255, 255, 0.3));
+  border-radius: 6px;
+  background: var(--color-panel-bg);
+  color: #fff;
+  font: 12px/1.3 var(--font-mono);
+  white-space: normal;
+  text-align: center;
+}
+ul.sr-only.sr-site-list:focus-within button:focus-visible,
+ul.sr-only.sr-module-list:focus-within button:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
 /* ── TV / 10-foot layer (RFC-031 S6) ─────────────────────────────────────────
    Gated to a large, no-hover, coarse-pointer screen — i.e. a TV driven by a
    D-pad remote — so desktop + phone/tablet-portrait are completely untouched
@@ -145,7 +195,7 @@ html {
     --safe-area-inset-left: 48px;
   }
   :focus-visible {
-    outline: 3px solid var(--brand, #4a7dff) !important;
+    outline: 3px solid var(--color-focus) !important;
     outline-offset: 3px !important;
   }
   /* Let each route's wide page container use the 10-foot width instead of a
@@ -203,7 +253,7 @@ html.ar-active
   background: rgba(5, 5, 20, 0.82);
   border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: 6px;
-  color: #b8f0d8;
+  color: var(--color-ok);
   font:
     11px / 1.5 ui-monospace,
     'Space Mono',
@@ -214,7 +264,7 @@ html.ar-active
 }
 
 /* Sky-mode layer toggles (RFC-041 redesign) — ONE dark-glass strip of text
-   buttons (no emoji, no per-chip borders). On = teal text + a teal dot; off =
+   buttons (no emoji, no per-chip borders). On = accent blue text + a accent blue dot; off =
    dim. Editorial, matches the /fly HUD idiom rather than a debug chip pile. */
 .ar-layers {
   position: fixed;
@@ -240,9 +290,9 @@ html.ar-active
   background: none;
   border: none;
   border-radius: 4px;
-  color: var(--color-teal, #4ecdc4);
+  color: var(--color-state);
   font-family: var(--font-mono, 'Space Mono', monospace);
-  font-size: 10px;
+  font-size: var(--size-label);
   letter-spacing: 1.5px;
   text-transform: uppercase;
   white-space: nowrap;
@@ -251,13 +301,13 @@ html.ar-active
     color 0.2s ease,
     opacity 0.2s ease;
 }
-/* Teal status dot before each on-label. */
+/* Accent blue status dot before each on-label. */
 .ar-layer-btn::before {
   content: '';
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: var(--color-teal, #4ecdc4);
+  background: var(--color-accent);
   transition:
     background 0.2s ease,
     transform 0.2s ease;
@@ -277,9 +327,9 @@ html.ar-active
   min-height: 44px;
   padding: 0 16px;
   background: rgba(8, 10, 22, 0.75);
-  border: 1px solid rgba(78, 205, 196, 0.6);
+  border: 1px solid var(--color-accent-strong);
   border-radius: 8px;
-  color: #4ecdc4;
+  color: var(--color-state);
   font-family: var(--font-mono, 'Space Mono', monospace);
   font-size: 13px;
   letter-spacing: 1px;
@@ -299,9 +349,7 @@ html.ar-active
   background: var(--color-hud-bg, rgba(5, 5, 20, 0.88));
   border: 1px solid var(--color-border, rgba(255, 255, 255, 0.09));
   border-radius: var(--border-radius-lg, 6px);
-  color: #eaf6f5;
-  font-family: var(--font-editorial, 'Crimson Pro', serif);
-  font-style: italic;
+  color: var(--color-state);
   font-size: 15px;
   line-height: 1.35;
   text-align: center;
@@ -334,11 +382,12 @@ body.exhibit-mode .hud-top-mobile,
 body.exhibit-mode .time-controls,
 body.exhibit-mode .ruler-desktop-only,
 body.exhibit-mode .ruler,
-body.exhibit-mode .body-index-toggle,
+body.exhibit-mode .scale-index-handle,
+body.exhibit-mode .scale-index,
 body.exhibit-mode .surface-index-handle,
 body.exhibit-mode .surface-index-desktop,
 body.exhibit-mode .paths-legend,
-body.exhibit-mode .earth-compare,
+body.exhibit-mode .scales-dock,
 body.exhibit-mode .cta-row {
   display: none !important;
 }

@@ -1,0 +1,30 @@
+{
+  "name": "IM-1",
+  "vehicle": "Falcon 9 Block 5",
+  "payload": "1900 kg lander (Nova-C Odysseus); six NASA payloads",
+  "delta_v": "~3.8 km/s (TLI + LOI, estimate)",
+  "type": "COMMERCIAL LANDER · TIPPED OVER, OPERATED",
+  "first": "A commercial lander on the Moon: it landed tipped over and still operated",
+  "description": "IM-1 was Intuitive Machines' first Moon mission, flown for NASA's Commercial Lunar Payload Services programme with six NASA payloads. Its Nova-C lander, named Odysseus, launched on a Falcon 9 on 2024-02-15, entered lunar orbit on 2024-02-21 and landed on 2024-02-22 at 23:23:53 UTC near the crater Malapert A. It landed and operated, but came to rest tipped over, at about 30 degrees. It kept working until it lost power as the lunar night began on 2024-02-29.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Falcon 9 from LC-39A, 2024-02-15.",
+      "type": "nominal"
+    },
+    {
+      "met": 6,
+      "label": "LUNAR ORBIT INSERTION",
+      "note": "Odysseus enters lunar orbit on 2024-02-21.",
+      "type": "nominal"
+    },
+    {
+      "met": 7,
+      "label": "LANDING",
+      "note": "Lands near Malapert A on 2024-02-22 and comes to rest tipped over.",
+      "type": "nominal"
+    }
+  ],
+  "vehicle_stage": "Falcon 9 second stage"
+}

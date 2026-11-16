@@ -94,5 +94,25 @@
   "link_labels": {
     "/earth": "지구 — 궤도와 발사장",
     "/fleet?id=discovery": "함대 — Space Shuttle 궤도선"
+  },
+  "roster": {
+    "mission:galileo": {
+      "note": "1989년 10월 STS-34에서 Shuttle Atlantis의 페이로드 베이로부터 배치된 뒤, 상단 로켓으로 목성을 향해 보내졌다"
+    },
+    "mission:ulysses": {
+      "note": "1990년 10월 STS-41에서 Shuttle Discovery의 페이로드 베이로부터 배치된 뒤, 목성을 지나 태양 극궤도로 보내졌다"
+    },
+    "mission:magellan": {
+      "note": "1989년 5월 STS-30에서 Shuttle Atlantis의 페이로드 베이로부터 배치된 뒤, 상단 로켓으로 금성을 향해 보내졌다"
+    },
+    "mission:sts-1": {
+      "note": "첫 궤도 비행 — 유인 우주선이 첫 발사에서 곧장 궤도에 오른 최초의 사례이자, 첫 재사용 우주선"
+    },
+    "mission:sts-51-l": {
+      "note": "추위로 굳은 부스터 실이 파손되어 발사 73초 만에 잃었다. 승무원 일곱 명이 사망했고, 이 참사는 알려진 위험을 일상화한 조직 문화를 드러냈다"
+    },
+    "mission:sts-107": {
+      "note": "발사 때 떨어진 단열재 파편이 날개에 구멍을 내 재진입 중 잃었다. 승무원 일곱 명이 사망했고, 같은 조직적 실패가 되풀이되었음이 밝혀졌다"
+    }
   }
 }

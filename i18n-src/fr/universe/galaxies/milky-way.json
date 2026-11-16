@@ -1,0 +1,16 @@
+{
+  "fact": "La Voie lactée est la galaxie spirale barrée qui contient le Soleil, un disque d'étoiles qui s'étend sur environ 100 000 années-lumière.",
+  "bio": "Elle compte 100 à 400 milliards d'étoiles ; sa masse est incertaine de plus d'un facteur deux. Le Soleil se trouve à environ 26 700 années-lumière du centre, mesurées en 2019 par la collaboration GRAVITY à partir de l'orbite de l'étoile S2 autour du trou noir central, Sagittarius A*. On débat de savoir si elle a deux ou quatre bras spiraux. Les données de Gaia montrent que le disque a été perturbé il y a 300 à 900 millions d'années, en accord avec les estimations du dernier passage de la galaxie naine elliptique du Sagittaire (Antoja et ses collègues, 2018).",
+  "links": [
+    {
+      "l": "NASA Imagine",
+      "u": "https://imagine.gsfc.nasa.gov/science/objects/milkyway1.html",
+      "t": "intro"
+    },
+    {
+      "l": "arXiv",
+      "u": "https://arxiv.org/abs/1904.05721",
+      "t": "core"
+    }
+  ]
+}

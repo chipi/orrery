@@ -97,5 +97,23 @@
     "/moon?site=luna16": "Luna 16 — primo ritorno robotico di campioni",
     "/moon?site=luna17": "Luna 17 — Lunokhod 1",
     "/moon?site=luna21": "Luna 21 — Lunokhod 2"
+  },
+  "roster": {
+    "Zond 5": {
+      "note": "prima sonda a circumnavigare la Luna e a tornare sana e salva sulla Terra — le sue due tartarughe furono i primi esseri viventi a viaggiare intorno alla Luna e ritorno, tre mesi prima di Apollo 8",
+      "name": "Zond 5"
+    },
+    "N1 — four launch failures": {
+      "note": "tutti e quattro i lanci di prova dell'N1 (1969–1972) fallirono; il secondo, nel luglio 1969, ricadde sulla rampa in una delle più grandi esplosioni non nucleari mai registrate",
+      "name": "N1 — quattro lanci falliti"
+    },
+    "LK lunar lander": {
+      "note": "il lander per un solo cosmonauta — circa il 40 % della massa del modulo lunare di Apollo — collaudato in volo senza equipaggio in orbita terrestre ma mai inviato sulla Luna",
+      "name": "Lander lunare LK"
+    },
+    "L3 complex": {
+      "note": "l'intera pila lunare N1-L3: un lancio dell'N1, una Soyuz 7K-LOK con due cosmonauti in orbita lunare, un solo cosmonauta in superficie nell'LK",
+      "name": "Complesso L3"
+    }
   }
 }

@@ -8542,7 +8542,7 @@
       "scored_at": "2026-06-08T11:12:37.740Z",
       "scoring_cost_usd": 0.007209
     },
-    "/images/planets/earth/04.jpg": {
+    "/images/missions/apollo-soyuz/05.jpg": {
       "score": 8,
       "subject": "A circular spacecraft module photographed from orbit with Earth's limb and cloud cover visible in the background below.",
       "category": "orbital",
@@ -8551,23 +8551,23 @@
         "y": 0.47
       },
       "variants": {
-        "1x1": "/images/planets/earth/04.1x1.jpg"
+        "1x1": "/images/missions/apollo-soyuz/05.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
       "scored_at": "2026-06-08T11:12:40.847Z",
       "scoring_cost_usd": 0.007311
     },
-    "/images/planets/earth/05.jpg": {
+    "/images/planets/earth/04.jpg": {
       "score": 7,
-      "subject": "A spacecraft module, likely a Space Shuttle payload or ISS component, photographed against the black void of space during an orbital rendezvous or deployment operation.",
-      "category": "spacecraft",
+      "subject": "Full disk of Earth seen from space, centred on Africa, the Middle East and India, with white clouds over deep blue oceans against a black background.",
+      "category": "orbital",
       "focal_point": {
         "x": 0.47,
         "y": 0.48
       },
       "variants": {
-        "1x1": "/images/planets/earth/05.1x1.jpg"
+        "1x1": "/images/planets/earth/04.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
@@ -9057,7 +9057,7 @@
       "scoring_cost_usd": 0,
       "subject_match": true
     },
-    "/images/planets/venus/03.jpg": {
+    "/images/missions/magellan/06.jpg": {
       "score": 6,
       "subject": "Artist's concept rendering of the Magellan spacecraft in multiple orbital positions around Venus, with radar mapping swath visible on the planet surface.",
       "category": "render",
@@ -9066,14 +9066,14 @@
         "y": 0.42
       },
       "variants": {
-        "1x1": "/images/planets/venus/03.1x1.jpg"
+        "1x1": "/images/missions/magellan/06.1x1.jpg"
       },
       "rejected_by": "score-below-threshold",
       "fallback": false,
       "scored_at": "2026-06-08T11:14:33.830Z",
       "scoring_cost_usd": 0.0050160000000000005
     },
-    "/images/planets/venus/04.jpg": {
+    "/images/planets/venus/03.jpg": {
       "score": 8,
       "subject": "Venus with its cloud swirls seen in ultraviolet by Japan's Akatsuki orbiter on 2 December 2022.",
       "category": "orbital",
@@ -9082,7 +9082,7 @@
         "y": 0.5
       },
       "variants": {
-        "1x1": "/images/planets/venus/04.1x1.jpg"
+        "1x1": "/images/planets/venus/03.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
@@ -12863,22 +12863,6 @@
       "fallback": false,
       "scored_at": "2026-06-08T10:54:17.760Z",
       "scoring_cost_usd": 0.0072569999999999996
-    },
-    "/images/missions/mars2/04.jpg": {
-      "score": 9,
-      "subject": "Full-disk view of Mars showing reddish-orange terrain, surface features, and a polar ice cap against a black background.",
-      "category": "orbital",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.48
-      },
-      "variants": {
-        "1x1": "/images/missions/mars2/04.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T10:54:23.696Z",
-      "scoring_cost_usd": 0.003909
     },
     "/images/missions/mars3/05.jpg": {
       "score": 2,
@@ -29451,6 +29435,1176 @@
       "subject_match": true,
       "rejected_by": null,
       "scored_at": "2026-11-09T13:32:45.179Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/planets/mars/06.jpg": {
+      "score": 8,
+      "subject": "Mars globe rendered in true colour from Mars Global Surveyor and Viking data: a full orange disk with dark grey-blue regions, the pale Hellas basin and a white polar cap, on black space.",
+      "category": "orbital",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-13T20:37:49.950Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/kaguya/01.jpg": {
+      "score": 8,
+      "subject": "An H-IIA rocket lifting off from Tanegashima with the Kaguya lunar orbiter.",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.62,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T10:24:26.504Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/kaguya/02.jpg": {
+      "score": 8,
+      "subject": "A SMART-1 image of the lunar surface with the Kaguya impact site ringed in red.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.69,
+        "y": 0.33
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T10:24:26.516Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/kaguya/03.jpg": {
+      "score": 8,
+      "subject": "A strip of overlapping SMART-1 images crossing the lunar surface, with the Kaguya impact site ringed in red.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T10:24:26.524Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/kaguya/01.jpg": {
+      "score": 8,
+      "subject": "A 1:10 scale model of the Kaguya spacecraft on display.",
+      "category": "spacecraft",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.6
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T10:24:26.535Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/chandrayaan2/01.jpg": {
+      "score": 8,
+      "subject": "The Chandrayaan-2 orbiter in gold thermal foil on its transport trolley in a clean room.",
+      "category": "spacecraft",
+      "focal_point": {
+        "x": 0.55,
+        "y": 0.45
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T10:24:26.543Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/chandrayaan2/02.jpg": {
+      "score": 8,
+      "subject": "The Vikram lander mounted on top of the Chandrayaan-2 orbiter in a clean room.",
+      "category": "spacecraft",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.4
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T10:24:26.772Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/chandrayaan2/03.jpg": {
+      "score": 8,
+      "subject": "An LRO image of the Vikram crash site with the impact site, debris and soil disturbance marked.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.4
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T10:24:26.925Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/chandrayaan2/04.jpg": {
+      "score": 8,
+      "subject": "An LRO after/before ratio image of the Vikram crash site.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T10:24:26.932Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/chandrayaan2/01.jpg": {
+      "score": 8,
+      "subject": "Technicians examining the Chandrayaan-2 orbiter in a clean room during payload integration.",
+      "category": "spacecraft",
+      "focal_point": {
+        "x": 0.55,
+        "y": 0.4
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T10:24:26.937Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/chandrayaan2/02.jpg": {
+      "score": 8,
+      "subject": "The Chandrayaan-3 lander on the lunar surface, imaged by the Chandrayaan-2 orbiter's OHRC camera.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.45,
+        "y": 0.52
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T10:24:26.965Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/sts-1/01.jpg": {
+      "score": 8,
+      "subject": "Space Shuttle Columbia lifting off from Launch Complex 39A on STS-1, 12 April 1981.",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.4
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T13:29:38.164Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/sts-1/02.jpg": {
+      "score": 8,
+      "subject": "Columbia on final approach to Rogers Dry Lake, 14 April 1981, with a chase aircraft.",
+      "category": "spacecraft",
+      "focal_point": {
+        "x": 0.63,
+        "y": 0.45
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T13:29:38.232Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/sts-1/03.jpg": {
+      "score": 8,
+      "subject": "Columbia on the lake bed after landing with a tow tug and ground crew.",
+      "category": "spacecraft",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.4
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T13:29:38.256Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/sts-1/04.jpg": {
+      "score": 8,
+      "subject": "Aerial view of the Columbia stack arriving at Launch Complex 39A on the mobile launcher.",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.55
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T13:29:38.316Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/sts-1/05.jpg": {
+      "score": 8,
+      "subject": "Official STS-1 crew portrait, two astronauts in orange suits holding an orbiter model.",
+      "category": "people",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.4
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T13:29:38.330Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/sts-1/06.jpg": {
+      "score": 8,
+      "subject": "The STS-1 astronauts walking beside Columbia after landing, with ground crew.",
+      "category": "people",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.65
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T13:29:38.419Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/sts-1/07.jpg": {
+      "score": 8,
+      "subject": "Two astronauts in launch-and-entry suits in a suit-up room with technicians.",
+      "category": "people",
+      "focal_point": {
+        "x": 0.4,
+        "y": 0.55
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T13:29:38.456Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/sts-107/01.jpg": {
+      "score": 8,
+      "subject": "Official STS-107 crew portrait, seven astronauts in orange suits.",
+      "category": "people",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.4
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T13:29:38.465Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/sts-107/02.jpg": {
+      "score": 8,
+      "subject": "The seven STS-107 crew members floating in the SPACEHAB module in orbit.",
+      "category": "people",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.4
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T13:29:38.498Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/sts-107/03.jpg": {
+      "score": 8,
+      "subject": "The STS-107 crew in blue flight suits before the Columbia white room.",
+      "category": "people",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.4
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T13:29:38.520Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/sts-107/04.jpg": {
+      "score": 8,
+      "subject": "Columbia lifting off from Launch Pad 39A on 16 January 2003.",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.4
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T13:29:38.529Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/sts-107/05.jpg": {
+      "score": 8,
+      "subject": "Columbia rising on its exhaust plume just after liftoff, 16 January 2003.",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.6,
+        "y": 0.4
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T13:29:38.535Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/sts-107/06.jpg": {
+      "score": 8,
+      "subject": "The STS-107 mission poster with crew portrait, patch and printed mission text.",
+      "category": "other",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.3
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T13:29:38.573Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/sts-51-l/01.jpg": {
+      "score": 8,
+      "subject": "Official STS-51-L crew portrait, seven astronauts in light-blue flight suits.",
+      "category": "people",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T13:29:38.591Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/sts-51-l/02.jpg": {
+      "score": 8,
+      "subject": "The STS-51-L crew at the pre-launch breakfast, 28 January 1986.",
+      "category": "people",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T13:29:38.612Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/sts-51-l/03.jpg": {
+      "score": 8,
+      "subject": "The STS-51-L crew in flight suits holding helmets in a white-room-style setting.",
+      "category": "people",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.45
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T13:29:38.638Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/sts-51-l/04.jpg": {
+      "score": 8,
+      "subject": "Aerial view of the Challenger stack on the crawler-transporter heading to Launch Pad 39B.",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.45
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T13:29:38.663Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/sts-51-l/05.jpg": {
+      "score": 8,
+      "subject": "The STS-51-L mission patch with the seven crew surnames.",
+      "category": "other",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T13:29:38.682Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/sts-51-l/06.jpg": {
+      "score": 8,
+      "subject": "Challenger lifting off from Launch Pad 39B on 28 January 1986.",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.45,
+        "y": 0.3
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T13:29:38.742Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/artemis1/01.jpg": {
+      "score": 8,
+      "subject": "SLS and Orion lifting off from Launch Pad 39B at night, 16 November 2022.",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.55,
+        "y": 0.45
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T13:29:38.788Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/artemis1/02.jpg": {
+      "score": 8,
+      "subject": "SLS and Orion on Launch Pad 39B at night under floodlights after rollout.",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T13:29:38.832Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/artemis1/03.jpg": {
+      "score": 8,
+      "subject": "Orion crew module in flight with the Moon and Earth as two dots.",
+      "category": "orbital",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.45
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T13:29:39.032Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/artemis1/04.jpg": {
+      "score": 8,
+      "subject": "The far side of the Moon beside the Orion service module and a solar array.",
+      "category": "orbital",
+      "focal_point": {
+        "x": 0.7,
+        "y": 0.55
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T13:29:39.050Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/artemis1/05.jpg": {
+      "score": 8,
+      "subject": "Orion crew module and service module seen by a solar-array camera.",
+      "category": "spacecraft",
+      "focal_point": {
+        "x": 0.55,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T13:29:39.071Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/artemis1/06.jpg": {
+      "score": 8,
+      "subject": "The Orion capsule floating after splashdown with its flotation balloons.",
+      "category": "spacecraft",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.6
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T13:29:39.093Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/artemis1/07.jpg": {
+      "score": 8,
+      "subject": "Orion splashdown seen from afar with a helicopter and the recovery ship.",
+      "category": "other",
+      "focal_point": {
+        "x": 0.4,
+        "y": 0.6
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T13:29:39.117Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/artemis1/08.jpg": {
+      "score": 8,
+      "subject": "Moonikin Campos being unpacked from a crate after the flight.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.55
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T13:29:39.145Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/orion/05.jpg": {
+      "score": 8,
+      "subject": "Orion crew module and service module seen by a solar-array camera in flight.",
+      "category": "spacecraft",
+      "focal_point": {
+        "x": 0.55,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T13:29:39.269Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/orion/06.jpg": {
+      "score": 8,
+      "subject": "Orion crew module in flight with the Moon and Earth as two dots.",
+      "category": "orbital",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.45
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T13:29:39.289Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/sls-block-1/06.jpg": {
+      "score": 8,
+      "subject": "SLS and Orion lifting off from Launch Pad 39B at night.",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.55,
+        "y": 0.45
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T13:29:39.308Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/columbia/06.jpg": {
+      "score": 8,
+      "subject": "Official STS-1 crew portrait, two astronauts in orange suits holding an orbiter model.",
+      "category": "people",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.4
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T13:29:39.351Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/challenger/06.jpg": {
+      "score": 8,
+      "subject": "Aerial view of the Challenger stack on the crawler-transporter heading to Launch Pad 39B.",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.45
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T13:29:39.440Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/viking2/01.jpg": {
+      "score": 8,
+      "subject": "The Viking 2 lander on the rock-strewn plain of Utopia Planitia, with its flag, instrument deck and antenna mast.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:39.187Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/viking2/02.jpg": {
+      "score": 8,
+      "subject": "The first colour image of the Viking Lander 2 site, a rocky plain under a dust-pink sky.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.55
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:39.200Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/viking2/03.jpg": {
+      "score": 8,
+      "subject": "A Viking 2 view south across the plain on 7 September 1976, a print scan with film-edge scale marks.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:39.204Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/viking2/04.jpg": {
+      "score": 8,
+      "subject": "The first picture Viking Lander 2 took on the surface of Mars: rocks and a lander footpad, black and white.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.6,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:39.228Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/viking2/05.jpg": {
+      "score": 8,
+      "subject": "Technicians inspecting Viking Lander 2 in the encapsulation facility at Kennedy Space Center, 6 February 1975.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:39.234Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/viking2/06.jpg": {
+      "score": 8,
+      "subject": "The mated Viking lander and orbiter being handled in the Kennedy encapsulation facility, 8 March 1975.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.45
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:39.244Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/mars2/04.jpg": {
+      "score": 8,
+      "subject": "An orbital view of terrain searched for the lost Mars 2 lander; the lander is not identified in it.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:39.253Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/mro/01.jpg": {
+      "score": 8,
+      "subject": "An artist's concept of Mars Reconnaissance Orbiter, front view, over the Martian surface.",
+      "category": "render",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:39.264Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/mro/02.jpg": {
+      "score": 8,
+      "subject": "An Atlas V launching Mars Reconnaissance Orbiter from Cape Canaveral, 12 August 2005.",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.55
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:39.302Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/mro/03.jpg": {
+      "score": 8,
+      "subject": "The Atlas V carrying Mars Reconnaissance Orbiter climbing over the Atlantic, 12 August 2005.",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.4
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:39.312Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/mro/04.jpg": {
+      "score": 8,
+      "subject": "Technicians working on the Mars Reconnaissance Orbiter structure during assembly, August 2004.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:39.323Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/mro/05.jpg": {
+      "score": 8,
+      "subject": "The encapsulated Mars Reconnaissance Orbiter being hoisted up the Vertical Integration Facility, 28 July 2005.",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.45,
+        "y": 0.4
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:39.333Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/mro/06.jpg": {
+      "score": 8,
+      "subject": "A HiRISE view of Perseverance on the surface after landing, with its parachute and descent stage.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.45,
+        "y": 0.45
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:39.343Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/mro/07.jpg": {
+      "score": 8,
+      "subject": "A HiRISE false-colour view of layered deposits exposed in a polar canyon.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.45
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:39.353Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/mariner2/01.jpg": {
+      "score": 8,
+      "subject": "An artist's concept of Mariner 2 in space.",
+      "category": "render",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:39.411Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/mariner2/02.jpg": {
+      "score": 8,
+      "subject": "The Mariner 2 engineering model at the Smithsonian National Air and Space Museum, a ground model.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.45
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:39.417Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/mariner2/03.jpg": {
+      "score": 8,
+      "subject": "Engineers at JPL looking at data from the Mariner 2 Venus flyby of 14 December 1962.",
+      "category": "people",
+      "focal_point": {
+        "x": 0.4,
+        "y": 0.45
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:39.466Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/mariner2/04.jpg": {
+      "score": 8,
+      "subject": "A Mariner 2 model presented to the US President in the Oval Office, 17 January 1963.",
+      "category": "people",
+      "focal_point": {
+        "x": 0.65,
+        "y": 0.45
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:39.479Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/mariner2/05.jpg": {
+      "score": 8,
+      "subject": "A scroll of Venus data in front of the JPL Mariner 2 mission board, January 1963.",
+      "category": "people",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:39.504Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/mariner2/06.jpg": {
+      "score": 8,
+      "subject": "A team member making a final check of the Mariner 2 spacecraft in a hangar, 1962.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.55
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:39.539Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/change2/01.jpg": {
+      "score": 8,
+      "subject": "A Chang'e 2 mock-up hanging in the Beijing Air and Space Museum.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:39.543Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/change2/02.jpg": {
+      "score": 8,
+      "subject": "Asteroid Toutatis imaged by Chang'e 2 on its flyby of 13 December 2012, processed by Jiang et al.",
+      "category": "diagram",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:39.565Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/im-1/01.jpg": {
+      "score": 8,
+      "subject": "A Falcon 9 with the Nova-C lander lifting off from Pad 39A at night, 15 February 2024.",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.55
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:39.570Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/im-1/02.jpg": {
+      "score": 8,
+      "subject": "A Falcon 9 just off Pad 39A with the IM-1 mission, a close view of the exhaust plume.",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.45
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:39.690Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/im-1/03.jpg": {
+      "score": 8,
+      "subject": "A Falcon 9 lifting off from Pad 39A with the Nova-C lander, the water tower in frame.",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.55,
+        "y": 0.45
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:39.822Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/im-1/04.jpg": {
+      "score": 8,
+      "subject": "A helicopter carrying Intuitive Machines navigation sensors for Nova-C during testing at Kennedy, 18 November 2022.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:39.968Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/shenzhou-5/01.jpg": {
+      "score": 8,
+      "subject": "The Shenzhou 5 return capsule on display at the National Museum of China.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:40.091Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/shenzhou-5/02.jpg": {
+      "score": 8,
+      "subject": "The Shenzhou 5 space suit on display at the National Museum of China.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.55,
+        "y": 0.4
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:40.107Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/shenzhou-5/03.jpg": {
+      "score": 8,
+      "subject": "Items used on the Shenzhou 5 flight, on display at the National Museum of China.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:40.128Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/shenzhou-5/04.jpg": {
+      "score": 8,
+      "subject": "A Shenzhou 5 spacecraft mock-up and parachute at the National Museum of China.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.65,
+        "y": 0.4
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:40.148Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/shenzhou-5/05.jpg": {
+      "score": 8,
+      "subject": "A view of Earth from orbit through the Shenzhou 5 window, a video frame.",
+      "category": "orbital",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:40.168Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/shenzhou-5/06.jpg": {
+      "score": 8,
+      "subject": "The Shenzhou 5 astronaut in space holding the Chinese and UN flags, a video frame.",
+      "category": "people",
+      "focal_point": {
+        "x": 0.55,
+        "y": 0.45
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:40.172Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/shenzhou-5/07.jpg": {
+      "score": 8,
+      "subject": "The Shenzhou 5 astronaut waving after the landing, a video frame.",
+      "category": "people",
+      "focal_point": {
+        "x": 0.55,
+        "y": 0.4
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:40.175Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/viking-2/01.jpg": {
+      "score": 8,
+      "subject": "Technicians inspecting Viking Lander 2 in the encapsulation facility at Kennedy Space Center, 6 February 1975.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:40.179Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/viking-2/02.jpg": {
+      "score": 8,
+      "subject": "The Viking 2 lander on the rock-strewn plain of Utopia Planitia, with its flag, instrument deck and antenna mast.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:40.190Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/viking-2/03.jpg": {
+      "score": 8,
+      "subject": "The first colour image of the Viking Lander 2 site, a rocky plain under a dust-pink sky.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.55
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:40.200Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/viking-2/04.jpg": {
+      "score": 8,
+      "subject": "A Viking 2 view south across the plain on 7 September 1976, a print scan with film-edge scale marks.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:40.202Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/viking-2/05.jpg": {
+      "score": 8,
+      "subject": "The first picture Viking Lander 2 took on the surface of Mars: rocks and a lander footpad, black and white.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.6,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:40.229Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/viking-2/06.jpg": {
+      "score": 8,
+      "subject": "The mated Viking lander and orbiter being handled in the Kennedy encapsulation facility, 8 March 1975.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.45
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:40.233Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/atlas-agena-b/01.jpg": {
+      "score": 8,
+      "subject": "The liftoff of Ranger 3 on an Atlas-Agena B from Pad 12, 26 January 1962.",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:40.243Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/atlas-agena-b/02.jpg": {
+      "score": 8,
+      "subject": "The Atlas-Agena B on the pad before the Ranger 5 launch, 18 October 1962, black and white.",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.45
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:40.309Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/atlas-agena-b/03.jpg": {
+      "score": 8,
+      "subject": "An Atlas-Agena launching Ranger 4, 23 April 1962.",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:40.337Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/atlas-agena-b/04.jpg": {
+      "score": 8,
+      "subject": "The launch of an Atlas Agena B with Ranger 7, 28 July 1964.",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.55,
+        "y": 0.4
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:40.386Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/mariner-2/01.jpg": {
+      "score": 8,
+      "subject": "An artist's concept of Mariner 2 in space.",
+      "category": "render",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:40.397Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/mariner-2/02.jpg": {
+      "score": 8,
+      "subject": "The Mariner 2 engineering model at the Smithsonian National Air and Space Museum, a ground model.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.45
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:40.403Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/mariner-2/03.jpg": {
+      "score": 8,
+      "subject": "A team member making a final check of the Mariner 2 spacecraft in a hangar, 1962.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.55
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:40.462Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/mariner-2/04.jpg": {
+      "score": 8,
+      "subject": "A Mariner 2 model presented to the US President in the Oval Office, 17 January 1963.",
+      "category": "people",
+      "focal_point": {
+        "x": 0.65,
+        "y": 0.45
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-15T14:29:40.466Z",
       "scoring_cost_usd": 0
     }
   }

@@ -3,7 +3,8 @@
   "agency": "ISRO",
   "status": "ENDED",
   "snapshot_date": "2023-09-03",
-  "credit": "© ISRO — Pragyan rover traverse (Chandrayaan-3, ~600 km from the south pole, Aug–Sep 2023; ~101 m, the southernmost surface drive). V1 simplified polyline anchored at the Vikram lander.",
+  "approximate": true,
+  "credit": "© ISRO — Pragyan rover traverse (Chandrayaan-3, ~600 km from the south pole, Aug–Sep 2023; ~101 m, the southernmost surface drive). Approximate route: a simplified polyline anchored at the Vikram lander, not a surveyed track. No published track was found (the LROC featured-sites list, lroc.im-ldi.com/featured_sites, checked 2026-11-15, has no Chandrayaan-3 entry).",
   "points": [
     [
       -69.373,

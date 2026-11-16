@@ -11,6 +11,7 @@
  */
 import * as THREE from 'three';
 import { disposeObject3d } from '$lib/three/dispose-object3d';
+import { surfaceOrbitRadius } from '$lib/orbit-regime-geometry';
 import { createMarkerHalo } from '$lib/three/marker-halo';
 import { attachPickableHit } from '$lib/three/pickable-hit';
 import { buildOrbiterGroup, type OrbiterMarker } from '$lib/three/orbiter-group';
@@ -37,27 +38,13 @@ import type { SurfaceSite, Traverse } from '$types/surface-site';
 // halo, in the site's muted blue (#889fe7). Lays flat against the surface with a
 // small Y offset to avoid z-fighting. Two variants:
 //   - circular: outer soft disc (radius 2.4, opacity 0.16) + crisp
-//     teal ring (1.7–2.4, opacity 0.95). Reads at heliocentric
+//     accent blue ring (1.7–2.4, opacity 0.95). Reads at heliocentric
 //     framing where the lander cone is sub-pixel.
 //   - rectangular: 4 corner brackets + soft fill, sized via aspect.
 //     Brighter / thicker than the selection-style brackets so the
 //     "I'm hovering this" cue beats the LROC patch underneath.
-// With the surface EffectComposer (no OutputPass) linear values reach the screen unencoded, so
-// the colour must be given as its display bytes (Linear space) or #889fe7 shows as (63,88,204).
-// Without the composer (minimal / low tiers) the renderer sRGB-encodes the output itself, so the
-// colour is plain sRGB.
-function hoverBlue(composerActive: boolean): THREE.Color {
-  return new THREE.Color().setHex(
-    0x889fe7,
-    composerActive ? THREE.LinearSRGBColorSpace : THREE.SRGBColorSpace,
-  );
-}
-function buildHoverHalo(
-  aspect: number | undefined,
-  diameter = 4.4,
-  composerActive = true,
-): THREE.Object3D {
-  const HOVER_BLUE = hoverBlue(composerActive);
+const HOVER_BLUE = new THREE.Color(0x889fe7);
+function buildHoverHalo(aspect: number | undefined, diameter = 4.4): THREE.Object3D {
   const group = new THREE.Group();
   // Corner-bracket hover affordance for every region-bounds site, incl.
   // near-square ones — matches the selection halo (no leftover circles).
@@ -68,7 +55,7 @@ function buildHoverHalo(
     const width = aspect * height;
     const w2 = width / 2;
     const h2 = height / 2;
-    // Soft fill — teal at 0.10 opacity. Subtle but adds the "lit"
+    // Soft fill — accent blue at 0.10 opacity. Subtle but adds the "lit"
     // feeling vs the dim selection halo fill (0.04).
     const fillGeo = new THREE.PlaneGeometry(width, height);
     const fillMat = new THREE.MeshBasicMaterial({
@@ -80,7 +67,7 @@ function buildHoverHalo(
     });
     group.add(new THREE.Mesh(fillGeo, fillMat));
     // Corner brackets — same L-shape pattern as the selection halo
-    // but in teal at full opacity for the hover cue.
+    // but in accent blue at full opacity for the hover cue.
     const armLen = Math.min(width, height) * 0.18;
     // prettier-ignore
     const bracketVerts = new Float32Array([
@@ -102,7 +89,7 @@ function buildHoverHalo(
     });
     group.add(new THREE.LineSegments(bracketGeo, bracketMat));
   } else {
-    // Outer glow disc — translucent teal fill, soft radial feel.
+    // Outer glow disc — translucent accent blue fill, soft radial feel.
     const glowGeo = new THREE.CircleGeometry(2.4, 48);
     const glowMat = new THREE.MeshBasicMaterial({
       color: HOVER_BLUE,
@@ -112,7 +99,7 @@ function buildHoverHalo(
       depthWrite: false,
     });
     group.add(new THREE.Mesh(glowGeo, glowMat));
-    // Crisp ring — bright teal outline at the disc edge.
+    // Crisp ring — bright accent blue outline at the disc edge.
     const ringGeo = new THREE.RingGeometry(1.7, 2.4, 48);
     const ringMat = new THREE.MeshBasicMaterial({
       color: HOVER_BLUE,
@@ -230,8 +217,6 @@ export interface SurfaceMarkersContext {
   orbitalMarkers: OrbiterMarker[];
   hotspots: HotspotEntry[];
   originalMaxTier: Map<string, 0 | 1 | 2 | 3>;
-  /** False on the tiers that render without the EffectComposer (it changes how colours reach the screen). Default true. */
-  composerActive?: boolean;
 }
 
 export function createSurfaceMarkers(ctx: SurfaceMarkersContext): {
@@ -255,7 +240,7 @@ export function createSurfaceMarkers(ctx: SurfaceMarkersContext): {
       // Lunar orbital altitudes range from ~50 km (LRO) to ~470 km
       // (SMART-1). Compress with log scale so all rings fit cleanly
       // around the 30u Moon sphere without overlapping.
-      const ringRadius = planetRadius + 4 + Math.log10(1 + site.altitude_km / 50) * 5;
+      const ringRadius = surfaceOrbitRadius(planetRadius, site.altitude_km);
       const dimmed = site.status !== 'ACTIVE';
       const marker = buildOrbiterGroup({
         site,
@@ -395,20 +380,16 @@ export function createSurfaceMarkers(ctx: SurfaceMarkersContext): {
       // but built with a much thicker stroke + soft inner fill so the
       // "I'm hovering this" cue actually reads at default zoom
       // (2026-06-15 user note: first pass was "almost invisible — make
-      // them a bit stronger"). For point sites: an outer teal disc
+      // them a bit stronger"). For point sites: an outer accent blue disc
       // (radius 2.4) at 0.16 opacity for a soft glow, plus a bright
-      // teal ring (1.7–2.4) at 0.95 opacity for the crisp outline.
-      // For region-bounds sites: same teal corner brackets the
+      // accent blue ring (1.7–2.4) at 0.95 opacity for the crisp outline.
+      // For region-bounds sites: same accent blue corner brackets the
       // selection halo uses, just at full opacity + a slightly
       // wider rectangle so the affordance reads against the LROC
       // patch below.
       // Hover bracket keeps its historical 4.4/3.0 ratio over the
       // selection bracket, scaled to the same outer patch.
-      const hoverHalo = buildHoverHalo(
-        haloAspect,
-        haloOuterDiam * (4.4 / 3.0),
-        ctx.composerActive ?? true,
-      );
+      const hoverHalo = buildHoverHalo(haloAspect, haloOuterDiam * (4.4 / 3.0));
       group.add(northSpun(hoverHalo));
 
       // Surface Hotspot LOD enrolment (PRD-014 / RFC-017 S1).
@@ -447,9 +428,9 @@ export function createSurfaceMarkers(ctx: SurfaceMarkersContext): {
                   // #360/#361: Mars rovers tile HiRISE patches along the
                   // magnified route, so their landing regional is rendered at
                   // the traverse midpoint instead (skip it here to avoid a
-                  // duplicate disc). Moon traverses no longer tile patches —
-                  // the whole short drive fits the single LROC detail /
-                  // Kaguya regional — so when a traverse has NO route_patches
+                  // duplicate disc). Only Apollo 16 and 17 tile LROC patches
+                  // along the Moon route; the other routes fit the single LROC
+                  // detail / Kaguya regional — so when a traverse has NO route_patches
                   // we render the landing regional here, exactly like a
                   // non-traverse site, and the polyline overlays it.
                   const siteTrav = ctx.getTraverses()[site.id];

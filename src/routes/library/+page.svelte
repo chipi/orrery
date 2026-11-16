@@ -21,7 +21,7 @@
   import { base } from '$app/paths';
   import { metaDescription } from '$lib/seo';
   import { localHref } from '$lib/locale';
-  import { getSourceLogos, type SourceLogosManifest } from '$lib/data';
+  import { getDataSources, getSourceLogos, type SourceLogosManifest } from '$lib/data';
   import {
     getLinkProvenanceManifest,
     type LinkProvenanceManifest,
@@ -37,10 +37,32 @@
   import * as m from '$lib/paraglide/messages';
   import { getLocale } from '$lib/paraglide/runtime';
   import { dataLoadFailed } from '$lib/data/core';
+  import ShowAll from '$lib/components/ShowAll.svelte';
+  import { previewList } from '$lib/preview-list';
+  import type { PageData } from './$types';
+
+  let { data }: { data: PageData } = $props();
+
+  // Each source block draws its first PREVIEW entity clusters and a "Show all N" chip
+  // ($lib/preview-list); source headers and the contents list stay open, so a #src-<id> link
+  // lands on its header with the first clusters below it.
+  let expanded = $state<Record<string, boolean>>({});
+  const expand = (key: string) => (expanded = { ...expanded, [key]: true });
 
   let logos = $state<SourceLogosManifest | null>(null);
   let provenance = $state<LinkProvenanceManifest | null>(null);
   let loaded = $state(false);
+  // The planetary and surface blocks draw name and link from the server load and the localised
+  // description from data-sources.json's overlay, so they read the same as on /credits.
+  let descriptions = $state<Record<string, string>>({});
+
+  $effect(() => {
+    void getDataSources(getLocale())
+      .then((d) => {
+        descriptions = Object.fromEntries(d.entries.map((e) => [e.id, e.description]));
+      })
+      .catch(dataLoadFailed);
+  });
 
   $effect(() => {
     void Promise.all([getSourceLogos(getLocale()), getLinkProvenanceManifest()])
@@ -117,6 +139,16 @@
         return m.library_category_fleet();
       case 'star':
         return m.library_category_star();
+      case 'deep-sky':
+        return m.deepsky_name();
+      case 'galaxy':
+        return m.library_category_galaxy();
+      case 'structure':
+        return m.library_category_structure();
+      case 'science':
+        return m.nav_science();
+      case 'essay':
+        return m.essays_label();
       default:
         return c;
     }
@@ -138,12 +170,12 @@
   <meta name="description" content={metaDescription(m.library_intro_body_1())} />
 </svelte:head>
 
-<section class="library" aria-labelledby="library-title" data-route-ready="true">
+<section class="library page-shell" aria-labelledby="library-title" data-route-ready="true">
   <header class="head">
-    <h1 id="library-title">{m.library_title()}</h1>
-    <h2>{m.library_intro_heading()}</h2>
-    <p class="intro">{m.library_intro_body_1()}</p>
-    <p class="intro">{m.library_intro_body_2()}</p>
+    <h1 id="library-title" class="page-title">{m.library_title()}</h1>
+    <h2 class="page-section-label">{m.library_intro_heading()}</h2>
+    <p class="intro page-lead">{m.library_intro_body_1()}</p>
+    <p class="intro page-lead">{m.library_intro_body_2()}</p>
     <p class="totals">
       {m.library_totals({
         links: totals.links,
@@ -192,6 +224,65 @@
         })}
       </p>
     </aside>
+
+    <aside
+      class="data-sources"
+      aria-label={m.library_astro_sources_aria()}
+      data-testid="library-astro-sources"
+    >
+      <h3>{m.library_astro_data()}</h3>
+      <p>
+        <!-- eslint-disable-next-line svelte/no-at-html-tags -- safe: m.*() output + local path, no user input -->
+        {@html m.library_astro_intro({
+          link: `<a href="${localHref('/credits')}">${m.credits_section_data()}</a>`,
+        })}
+      </p>
+      <ul class="astro-sources">
+        {#each data.astroSources as s (s.id)}
+          <li>
+            <a href={s.url} target="_blank" rel="noopener noreferrer external" hreflang="en"
+              >{s.name}</a
+            >
+          </li>
+        {/each}
+      </ul>
+    </aside>
+
+    <aside
+      class="data-sources"
+      aria-labelledby="library-planetary-title"
+      data-testid="library-planetary-sources"
+    >
+      <h3 id="library-planetary-title">{m.library_planetary_models()}</h3>
+      <ul class="source-rows">
+        {#each data.planetarySources as s (s.id)}
+          <li data-source-id={s.id}>
+            <a href={s.url} target="_blank" rel="noopener noreferrer external" hreflang="en"
+              >{s.name}</a
+            >
+            {#if descriptions[s.id]}<p>{descriptions[s.id]}</p>{/if}
+          </li>
+        {/each}
+      </ul>
+    </aside>
+
+    <aside
+      class="data-sources"
+      aria-labelledby="library-surface-title"
+      data-testid="library-surface-sources"
+    >
+      <h3 id="library-surface-title">{m.library_surface_data()}</h3>
+      <ul class="source-rows">
+        {#each data.surfaceSources as s (s.id)}
+          <li data-source-id={s.id}>
+            <a href={s.url} target="_blank" rel="noopener noreferrer external" hreflang="en"
+              >{s.name}</a
+            >
+            {#if descriptions[s.id]}<p>{descriptions[s.id]}</p>{/if}
+          </li>
+        {/each}
+      </ul>
+    </aside>
   </header>
 
   {#if !loaded}
@@ -227,7 +318,7 @@
             />
           {/if}
           <div class="src-meta">
-            <h2>
+            <h2 class="page-section-title">
               <a href={group.source.url} target="_blank" rel="noopener noreferrer external">
                 {group.source.name}
               </a>
@@ -244,7 +335,7 @@
         </header>
 
         <ul class="entity-list">
-          {#each group.entities as cluster (cluster)}
+          {#each previewList(group.entities, expanded[group.source.id]) as cluster (cluster)}
             <li class="entity">
               <header class="entity-head">
                 <span class="ent-cat">{categoryLabel(cluster.category)}</span>
@@ -269,7 +360,11 @@
                       </a>
                     </p>
                     <p class="ln-row meta">
-                      <span class="ln-tier ln-tier-{link.tier}">{tierLabel(link.tier)}</span>
+                      <span
+                        class={link.tier === 'core'
+                          ? 'ui-chip-label'
+                          : `ln-tier ln-tier-${link.tier}`}>{tierLabel(link.tier)}</span
+                      >
                       <span class="sep">·</span>
                       <span class="ln-kind">{kindLabel(link.kind)}</span>
                       <span class="sep">·</span>
@@ -292,40 +387,21 @@
             </li>
           {/each}
         </ul>
+        <ShowAll
+          count={group.entities.length}
+          expanded={expanded[group.source.id]}
+          onexpand={() => expand(group.source.id)}
+          list={group.source.id}
+        />
       </article>
     {/each}
   {/if}
 </section>
 
 <style>
-  .library {
-    max-width: 1080px;
-    margin: 0 auto;
-    padding: 24px 16px 96px;
-    color: #dde4ff;
-  }
-  .head h1 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 56px;
-    letter-spacing: 4px;
-    margin: 0 0 4px;
-    color: #fff;
-  }
-  .head h2 {
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 12px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.6);
-    margin: 0 0 16px;
-  }
-  .intro {
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 16px;
-    line-height: 1.6;
-    color: rgba(255, 255, 255, 0.8);
-    margin: 0 0 12px;
+  /* The section label sits right under the title here. */
+  .head .page-section-label {
+    margin-top: 0;
   }
   .totals,
   .newest,
@@ -333,11 +409,11 @@
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--color-text-label);
     margin: 8px 0 0;
   }
   .newest {
-    color: rgba(78, 205, 196, 0.8);
+    color: var(--color-state);
   }
   .disclaimer {
     margin-top: 4px;
@@ -359,12 +435,32 @@
     margin: 0 0 6px;
   }
   .data-sources p {
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
     font-size: 16px;
     line-height: 1.6;
     color: rgba(255, 255, 255, 0.8);
     margin: 0 0 6px;
+  }
+  .astro-sources {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 20px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  .source-rows {
+    display: grid;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  .source-rows p {
+    margin: 2px 0 0;
   }
   .data-sources :global(a) {
     color: rgba(255, 255, 255, 0.95);
@@ -397,7 +493,7 @@
     font-size: 11px;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
     margin: 0 0 12px;
   }
   .toc ul {
@@ -413,13 +509,13 @@
     line-height: 1.5;
   }
   .toc a {
-    color: #4ecdc4;
+    color: var(--color-accent);
     text-decoration: none;
-    border-bottom: 1px dotted rgba(78, 205, 196, 0.4);
+    border-bottom: 1px dotted var(--color-accent-edge);
   }
   .toc a:hover,
   .toc a:focus-visible {
-    color: #7ddfd8;
+    color: var(--color-accent);
     outline: none;
   }
   .counts {
@@ -450,12 +546,8 @@
     object-fit: contain;
     flex-shrink: 0;
   }
-  .src-meta h2 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 28px;
-    letter-spacing: 2px;
-    margin: 0 0 4px;
-    color: #fff;
+  .src-meta .page-section-title {
+    margin-bottom: 4px;
   }
   .src-meta a {
     color: #fff;
@@ -467,14 +559,14 @@
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     line-height: 1.6;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
     margin: 0;
     max-width: 720px;
   }
   .src-counts {
     /* Was 0.4 — bumped to 0.65 (F3) for AA at 10 px. */
     color: rgba(255, 255, 255, 0.65);
-    font-size: 10px;
+    font-size: var(--size-label);
   }
   .src-license .lbl {
     /* Was 0.4 — bumped to 0.6 (F3); still clearly secondary vs the
@@ -506,11 +598,11 @@
     margin: 0 0 8px;
   }
   .ent-cat {
-    background: rgba(78, 205, 196, 0.12);
-    color: #4ecdc4;
+    background: var(--color-accent-soft);
+    color: var(--color-state);
     padding: 1px 6px;
     border-radius: 2px;
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     text-transform: uppercase;
   }
@@ -521,9 +613,9 @@
     color: rgba(255, 255, 255, 0.6);
   }
   .ent-route {
-    color: #4ecdc4;
+    color: var(--color-state);
     text-decoration: none;
-    border-bottom: 1px dotted rgba(78, 205, 196, 0.4);
+    border-bottom: 1px dotted var(--color-accent-edge);
   }
   .sep {
     color: rgba(255, 255, 255, 0.2);
@@ -536,7 +628,7 @@
   .link {
     padding: 8px 10px;
     background: rgba(255, 255, 255, 0.02);
-    border-left: 2px solid rgba(78, 205, 196, 0.3);
+    border-left: 2px solid var(--color-accent-edge);
     border-radius: 0 3px 3px 0;
   }
   .ln-row {
@@ -556,20 +648,19 @@
     margin-bottom: 6px;
   }
   .ln-row.meta {
-    font-size: 10px;
+    font-size: var(--size-label);
     /* Was 0.45 — bumped to 0.65 (F3) to clear AA at 10 px non-bold. */
     color: rgba(255, 255, 255, 0.65);
   }
   .ln-row.rationale {
-    font-size: 10px;
+    font-size: var(--size-label);
     /* Was 0.45 — bumped to 0.65 (F3). Italic + dim hierarchy preserved. */
     color: rgba(255, 255, 255, 0.65);
-    font-style: italic;
   }
   .ln-row .lbl {
     /* Was 0.35 — bumped to 0.55 (F3). Still clearly secondary against
        the 0.65 body text. */
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
     margin-right: 4px;
   }
   .ln-target {
@@ -580,42 +671,35 @@
   }
   .ln-target:hover,
   .ln-target:focus-visible {
-    color: #4ecdc4;
-    border-bottom-color: rgba(78, 205, 196, 0.5);
+    color: var(--color-state);
+    border-bottom-color: color-mix(in srgb, var(--color-accent) 50%, transparent);
     outline: none;
   }
   .ln-tier {
     padding: 0 6px;
     border-radius: 2px;
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 0.5px;
     text-transform: uppercase;
   }
   .ln-tier-intro {
-    background: rgba(255, 200, 80, 0.15);
-    color: #ffc850;
-  }
-  .ln-tier-core {
-    background: rgba(78, 205, 196, 0.15);
-    color: #4ecdc4;
+    background: color-mix(in srgb, var(--color-state) 15%, transparent);
+    color: var(--color-state);
   }
   .ln-tier-deep {
-    background: rgba(150, 180, 255, 0.15);
-    color: #8aa9ff;
+    background: rgba(255, 200, 80, 0.15);
+    color: #ffc850;
   }
   .ln-kind,
   .ln-lang,
   .ln-verified {
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--color-text-label);
   }
   .ln-verified time {
-    color: rgba(78, 205, 196, 0.75);
+    color: var(--color-state);
   }
 
   @media (min-width: 768px) {
-    .library {
-      padding: 36px 32px 96px;
-    }
     .toc ul {
       grid-template-columns: 1fr 1fr;
     }

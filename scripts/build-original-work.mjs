@@ -97,6 +97,15 @@ const science = scanDiagrams('static/diagrams/science', '/diagrams/science');
 const fleetNames = Object.fromEntries(
   JSON.parse(readFileSync('static/data/fleet/index.json', 'utf8')).map((e) => [e.id, e.name]),
 );
+const fleetCategory = Object.fromEntries(
+  JSON.parse(readFileSync('static/data/fleet/index.json', 'utf8')).map((e) => [e.id, e.category]),
+);
+// Pencil launcher drawings (docs/anatomy-art-runbook.md §1) that have no fleet entry to say so.
+const LAUNCHER_ART_WITHOUT_ENTRY = new Set(['m-v', 'pslv']);
+const anatomyKind = (id) =>
+  fleetCategory[id] === 'launcher' || LAUNCHER_ART_WITHOUT_ENTRY.has(id)
+    ? 'launcher'
+    : 'spacecraft';
 const anatomyIdSet = new Set(JSON.parse(readFileSync('src/lib/anatomy-ids.json', 'utf8')));
 const anatomyArt = (() => {
   try {
@@ -113,6 +122,7 @@ const anatomyArt = (() => {
             title: fleetNames[id] ?? humanize(id),
             file: `/images/anatomy/${f}`,
             cover: false,
+            kind: anatomyKind(id),
           };
         })
     );
@@ -1001,7 +1011,28 @@ const flyEarlyProbes = [
     'Sputnik 1',
     'The polished 58 cm sphere with its hemisphere seam, 36 bolts and four swept-back whip antennas of 2.4 and 2.9 m.',
   ],
+  [
+    'mariner-2',
+    'Mariner 2',
+    'NASA’s 3.66 m Venus flyby — the 1.04 m hexagonal bus, two solar panels (one with its solar-pressure extension, 5.05 m across), the dish on its arm and the omni antenna atop the pyramid mast. Sizes from NASA NSSDCA; the dish and mast are schematic.',
+  ],
+  [
+    'mro',
+    'Mars Reconnaissance Orbiter',
+    'NASA’s Mars mapper — two 5.35 × 2.53 m solar arrays, the 3 m high-gain dish, the 1.6 m HiRISE barrel and the 10 m SHARAD dipole. Dish, HiRISE and SHARAD sizes from NASA; the array size from Wikipedia; the bus is schematic.',
+  ],
+  [
+    'nova-c',
+    'Nova-C (IM-1 Odysseus)',
+    'Intuitive Machines’ 4.3 m lunar lander — a 1.57 m hexagonal body, six legs, the methane engine below and three solar panels. Height and width from Wikipedia; the leg splay and deck are schematic.',
+  ],
 ].map(mk('model-probe', 'Fly + Explore', '/fly'));
+
+// Launch pads (G4) — src/lib/three/launch-pads.ts, drawn under the rocket in the /fly launch
+// scene; one entry per pad model, from the catalogue the /dev/models gallery also reads.
+const launchPads = JSON.parse(readFileSync('src/lib/launches/pad-gallery.json', 'utf8'))
+  .map((p) => [p.variant, p.label, p.what])
+  .map(mk('model-pad', 'Fly · launch pad', '/fly'));
 
 const models3d = [
   ...spacecraft,
@@ -1012,6 +1043,7 @@ const models3d = [
   ...lineupSpacecraft,
   ...flyProbes,
   ...flyEarlyProbes,
+  ...launchPads,
   ...moonModels,
   ...marsModels,
   ...venusModels,

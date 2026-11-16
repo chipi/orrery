@@ -1,4 +1,4 @@
-import type { LinkTier } from './mission';
+import type { FleetRef, LinkTier } from './mission';
 
 export type Body = 'EARTH' | 'MOON' | 'SUN_EARTH_L2';
 export type Regime = 'LEO' | 'MEO' | 'GEO' | 'HEO' | 'MOON' | 'L2';
@@ -24,6 +24,10 @@ export interface EarthObject {
   crew: number;
   credit: string;
   links: Array<{ l: string; u: string; t: LinkTier }>;
+  /** The fleet entries this object is; the ones with a drawing give the DETAIL tab. */
+  fleet_refs?: FleetRef[];
+  /** /science articles (`tab/section`) offered as cards; at most 5. */
+  science?: string[];
   /** Editorial overlay fields merged at fetch time */
   name?: string;
   short?: string;

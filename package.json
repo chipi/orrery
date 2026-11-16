@@ -1,6 +1,6 @@
 {
   "name": "orrery",
-  "version": "0.9.8",
+  "version": "0.9.9",
   "description": "Browser-based solar system explorer + Mars / lunar mission simulator. Real Keplerian orbital mechanics, real missions from Luna 9 to Artemis II, fully static SPA.",
   "homepage": "https://www.orrerylearn.com/",
   "repository": {
@@ -50,8 +50,8 @@
     "format": "prettier --write .",
     "typecheck": "npm run i18n:compile && svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "typecheck:scripts": "npm run i18n:compile && svelte-kit sync && tsc -p tsconfig.scripts.json",
-    "test": "npm run i18n:compile && npm run build-i18n-bundles && vitest run --passWithNoTests",
-    "test:coverage": "npm run i18n:compile && npm run build-i18n-bundles && vitest run --coverage --passWithNoTests",
+    "test": "npm run i18n:compile && npm run build-i18n-bundles && npm run build-science-index && vitest run --passWithNoTests",
+    "test:coverage": "npm run i18n:compile && npm run build-i18n-bundles && npm run build-science-index && vitest run --coverage --passWithNoTests",
     "test:e2e": "npm run build && playwright test",
     "test:e2e:ui": "npm run build && playwright test --ui",
     "test:e2e:mobile": "npm run build:mobile && playwright test --config=playwright.mobile.config.ts",
@@ -68,6 +68,7 @@
     "build-video-provenance": "tsx scripts/build-video-provenance.ts",
     "check-learn-links": "tsx scripts/check-learn-links.ts",
     "precompute-porkchops": "tsx scripts/precompute-porkchops.ts",
+    "route-lastmod": "node scripts/build-route-lastmod.mjs",
     "build-tech-bom": "tsx scripts/build-tech-bom.ts",
     "check-tech-bom": "tsx scripts/build-tech-bom.ts --check",
     "check-no-secrets": "tsx scripts/check-no-secrets.ts",
@@ -128,6 +129,7 @@
     "preflight:full": "node scripts/with-lock.mjs preflight -- npm run preflight:full:body",
     "build-i18n-bundles": "node scripts/build-i18n-bundles.mjs",
     "validate-prod": "node scripts/validate-prod.mjs",
+    "indexnow": "node scripts/indexnow-submit.mjs",
     "build-cards": "node scripts/cards/generate-card-images.mjs"
   },
   "devDependencies": {

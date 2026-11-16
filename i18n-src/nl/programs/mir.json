@@ -94,5 +94,23 @@
   "link_labels": {
     "/earth": "Aarde — banen, rendez-vous & lanceerplaatsen",
     "/fleet?id=mir": "Vloot — ruimtestation Mir"
+  },
+  "roster": {
+    "Modular assembly": {
+      "note": "in een decennium in een baan opgebouwd — de kernmodule (1986), daarna Kvant, Kvant-2, Kristall, Spektr en Priroda — het eerste station dat uit afzonderlijk gelanceerde modules werd samengesteld",
+      "name": "Modulaire assemblage"
+    },
+    "Polyakov — 437 days": {
+      "note": "het ene verblijf van Valeri Poljakov van 437 dagen aan boord van Mir blijft de langste ononderbroken bemande ruimtevlucht ooit en bewees dat een bemanning een missie ter lengte van een Marsreis kon overleven",
+      "name": "Poljakov — 437 dagen"
+    },
+    "Shuttle-Mir": {
+      "note": "Amerikaanse Space Shuttles koppelden aan Mir en Amerikaanse astronauten woonden aan boord (1995-1998) — de eerste gezamenlijke stationsoperaties van de rivalen uit de Koude Oorlog, en de directe generale repetitie voor het ISS",
+      "name": "Shuttle-Mir"
+    },
+    "The 1997 crises": {
+      "note": "een brand aan boord en daarna een botsing met een Progress-vrachtschip die de Spektr-module doorboorde en een deel van het station deed decomprimeren — de ergste botsing die een bemanning in een baan heeft overleefd",
+      "name": "De crises van 1997"
+    }
   }
 }

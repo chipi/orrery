@@ -44,12 +44,20 @@
  * 0.37 MB to static/data and took the pruned build to 75.4 MB (data 32.7 ·
  * textures 14.4 · _app 10.4 · science 6.5 · diagrams 4.7). Operator chose the
  * re-baseline over cutting credits or alt text from the offline bundle.
+ *
+ * 2026-11-16 re-baseline 77 → 80 MB (a data floor, not a leak): the 0.9.9 arc
+ * (13 missions, their galleries, deep-sky and galaxy pages) added 2.4 MB to
+ * static/data, mostly image alt text in 14 locales (+0.81), link provenance
+ * (+0.54), image provenance (+0.34) and universe (+0.22), and took the pruned
+ * build to 77.6 MB (data 35.1 · textures 13.6 · _app 10.4 · science 7.1 ·
+ * diagrams 4.9); no locale tree or texture bucket leaked. The same rule as the
+ * route budgets that day (operator 2026-11-16: raise to measured).
  */
 import { statSync, readdirSync, existsSync } from 'node:fs';
 import path from 'node:path';
 
 const BUILD = path.resolve(process.cwd(), 'build');
-const BUDGET_MB = 77;
+const BUDGET_MB = 80;
 
 if (process.env.MOBILE !== '1') {
   console.log('[size-budget] MOBILE != 1 — skipping (browser build is not budgeted).');

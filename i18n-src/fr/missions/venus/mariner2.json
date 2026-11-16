@@ -1,0 +1,24 @@
+{
+  "name": "Mariner 2",
+  "vehicle": "Atlas-Agena B",
+  "payload": "202,8 kg",
+  "delta_v": "~3,5 km/s (estimation)",
+  "type": "SURVOL · RÉALISÉE",
+  "first": "La NASA la présente comme la toute première mission scientifique planétaire réussie de l'histoire",
+  "description": "Mariner 2 a été lancée le 1962-08-27 sur un Atlas-Agena B et a survolé Vénus le 1962-12-14, à une distance minimale de 34 773 km. Son magnétomètre, ses détecteurs de particules, son spectromètre de plasma solaire, son détecteur de poussières et deux radiomètres ont livré un premier aperçu de Vénus : la NASA rapporte des températures allant de 216 °C du côté nocturne à 237 °C du côté diurne, une couche de nuages dense entre 56 et 80 km d'altitude, une lente rotation rétrograde, une atmosphère composée surtout de dioxyde de carbone et aucun champ magnétique décelable. Dans l'espace, elle a montré que le vent solaire souffle en continu. Le contact a pris fin le 1963-01-03. La NASA affirme qu'elle garde l'honneur d'être la toute première mission scientifique planétaire réussie de l'histoire.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCEMENT",
+      "note": "Atlas-Agena B depuis Cap Canaveral, 1962-08-27.",
+      "type": "nominal"
+    },
+    {
+      "met": 109,
+      "label": "SURVOL DE VÉNUS",
+      "note": "Approche minimale de 34 773 km le 1962-12-14.",
+      "type": "nominal"
+    }
+  ],
+  "vehicle_stage": "étage supérieur Agena B"
+}

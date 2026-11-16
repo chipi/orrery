@@ -5,6 +5,8 @@
   import { base } from '$app/paths';
   import { metaDescription } from '$lib/seo';
   import { localHref } from '$lib/locale';
+  import Chip from '$lib/components/Chip.svelte';
+  import ChipGroup from '$lib/components/ChipGroup.svelte';
   import { localizeHref } from '$lib/paraglide/runtime';
   import { assetOrigin } from '$lib/asset-url';
   import * as m from '$lib/paraglide/messages';
@@ -144,31 +146,32 @@
   <meta name="description" content={metaDescription(m.deepsky_meta_description())} />
 </svelte:head>
 
-<article class="gallery" data-route-ready="true">
+<article class="gallery page-shell page-shell--wide" data-route-ready="true">
   <header>
-    <nav class="crumb">
+    <nav class="crumb page-crumb">
       <a href="{base}{localizeHref('/gallery')}">{m.layout_footer_gallery()}</a><span class="sep"
         >›</span
       ><span>{m.deepsky_name()}</span>
     </nav>
-    <h1>{m.deepsky_h1()}</h1>
-    <p class="lede">{m.deepsky_lede({ count: data.images.length })}</p>
+    <h1 class="page-title">{m.deepsky_h1()}</h1>
+    <p class="lede page-lead">{m.deepsky_lede({ count: data.images.length })}</p>
   </header>
 
-  <div class="filters" role="tablist" aria-label={m.deepsky_filter_observatory()}>
-    {#each CHIP_ORDER as chip (chip)}
-      {#if counts[chip]}
-        <button
-          class="chip"
-          class:active={filter === chip}
-          role="tab"
-          aria-selected={filter === chip}
-          onclick={() => (filter = chip)}
-        >
-          {chip}<span class="n">{counts[chip]}</span>
-        </button>
-      {/if}
-    {/each}
+  <div class="filters">
+    <ChipGroup role="radiogroup" label={m.deepsky_filter_observatory()}>
+      {#each CHIP_ORDER as chip (chip)}
+        {#if counts[chip]}
+          <Chip
+            kind="choice"
+            active={filter === chip}
+            count={counts[chip]}
+            onclick={() => (filter = chip)}
+          >
+            {chip}
+          </Chip>
+        {/if}
+      {/each}
+    </ChipGroup>
   </div>
 
   <div class="masonry">
@@ -177,7 +180,7 @@
         <button
           type="button"
           onclick={() => open(i)}
-          aria-label={m.deepsky_view_aria({ title: img.title, caption: img.caption })}
+          aria-label={m.deepsky_view_aria({ title: img.title, caption: img.caption || img.type })}
         >
           <img
             src="{assetOrigin}/images/deep-sky/{img.key}.thumb.jpg"
@@ -201,7 +204,7 @@
     {/each}
   </div>
 
-  <footer class="gallery-footer">
+  <footer class="page-note">
     <p>
       <strong>{m.deepsky_footer_obs_title()}</strong>
       {m.deepsky_footer_obs_body()}
@@ -217,7 +220,12 @@
   <div class="lightbox" role="dialog" aria-modal="true" aria-label={current.title} tabindex="-1">
     <!-- Full-area backdrop; a real <button> so click-to-close is keyboard-accessible. -->
     <button class="lb-backdrop" onclick={close} aria-label={m.deepsky_close()}></button>
-    <button class="lb-close" onclick={close} aria-label={m.deepsky_close()}>×</button>
+    <Chip
+      kind="action"
+      class="lb-close ui-chip--close"
+      onclick={close}
+      aria-label={m.deepsky_close()}>×</Chip
+    >
     <button class="lb-nav lb-prev" onclick={() => step(-1)} aria-label={m.deepsky_prev()}>‹</button>
     <figure class="lb-figure">
       <img src="{assetOrigin}/images/deep-sky/{current.key}.jpg" alt={current.title} />
@@ -236,7 +244,7 @@
               >{current.constellation}{/if}
           </div>
         {/if}
-        <p class="lb-caption">{current.caption}</p>
+        {#if current.caption}<p class="lb-caption">{current.caption}</p>{/if}
         <dl class="lb-facts">
           <div>
             <dt>{m.deepsky_fact_object()}</dt>
@@ -248,18 +256,24 @@
               <dd>{current.constellation}</dd>
             </div>
           {/if}
-          <div>
-            <dt>{m.explore_ds_distance()}</dt>
-            <dd>{current.distance}</dd>
-          </div>
-          <div>
-            <dt>{m.deepsky_fact_captured()}</dt>
-            <dd>{current.taken}</dd>
-          </div>
-          <div>
-            <dt>{m.deepsky_fact_instrument()}</dt>
-            <dd>{current.instrument}</dd>
-          </div>
+          {#if current.distance}
+            <div>
+              <dt>{m.explore_ds_distance()}</dt>
+              <dd>{current.distance}</dd>
+            </div>
+          {/if}
+          {#if current.taken}
+            <div>
+              <dt>{m.deepsky_fact_captured()}</dt>
+              <dd>{current.taken}</dd>
+            </div>
+          {/if}
+          {#if current.instrument}
+            <div>
+              <dt>{m.deepsky_fact_instrument()}</dt>
+              <dd>{current.instrument}</dd>
+            </div>
+          {/if}
         </dl>
         <p class="lb-meta">
           <span class="lb-credit">{current.credit}</span>
@@ -282,84 +296,23 @@
 {/if}
 
 <style>
-  .gallery {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 32px 24px 64px;
-    color: var(--color-text);
-  }
   header {
-    text-align: center;
     margin-bottom: 26px;
   }
-  .crumb {
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 11px;
-    letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.5);
-    margin-bottom: 14px;
-  }
   .crumb a {
-    color: rgba(255, 255, 255, 0.7);
     text-decoration: underline;
   }
   .crumb .sep {
     margin: 0 8px;
   }
-  h1 {
-    font-family: var(--font-display);
-    font-size: 42px;
-    letter-spacing: 10px;
-    margin: 0 0 12px;
-  }
-  .lede {
-    font-family: var(--font-editorial), 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 17px;
-    color: rgba(255, 255, 255, 0.75);
-    max-width: 760px;
-    margin: 0 auto;
-    line-height: 1.55;
-  }
   .filters {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    /* Left-aligned under the page title (UXD-012 page shell). */
+    justify-content: flex-start;
     gap: 10px;
-    margin: 0 auto 30px;
+    margin: 0 0 30px;
     max-width: 900px;
-  }
-  .chip {
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 12px;
-    letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.7);
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.14);
-    border-radius: 999px;
-    padding: 7px 14px;
-    cursor: pointer;
-    transition:
-      border-color 0.15s,
-      color 0.15s,
-      background 0.15s;
-  }
-  .chip:hover {
-    border-color: rgba(127, 176, 224, 0.5);
-    color: #fff;
-  }
-  .chip.active {
-    color: #06121f;
-    background: #7fb0e0;
-    border-color: #7fb0e0;
-  }
-  .chip .n {
-    margin-left: 7px;
-    opacity: 0.8;
-    font-size: 10px;
-  }
-  .chip.active .n {
-    opacity: 0.75;
   }
 
   /* Brick mosaic — a dense spanning grid. Feature tiles (2×2) and panorama /
@@ -449,7 +402,7 @@
     align-items: center;
     gap: 6px;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 2.5px;
     text-transform: uppercase;
     color: #9fc4ea;
@@ -459,7 +412,7 @@
     content: '·';
     margin-right: 2px;
     letter-spacing: 0;
-    color: rgba(255, 255, 255, 0.4);
+    color: var(--color-text-label);
   }
   /* Specificity must beat `.tile img` (which forces width:100%/height:auto). */
   .t-scope .t-logo {
@@ -470,37 +423,15 @@
   }
   .t-desig {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 1.5px;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--color-text-label);
   }
   .t-desig::before {
     content: '·';
     margin-right: 5px;
-    color: rgba(255, 255, 255, 0.35);
-  }
-
-  .gallery-footer {
-    margin-top: 44px;
-    padding: 20px 24px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 4px;
-  }
-  .gallery-footer p {
-    font-family: var(--font-mono), monospace;
-    font-size: 12px;
-    line-height: 1.7;
-    color: rgba(255, 255, 255, 0.7);
-    margin: 0 0 10px;
-  }
-  .gallery-footer p:last-child {
-    margin-bottom: 0;
-  }
-  .gallery-footer strong {
-    color: #7fb0e0;
-    font-weight: normal;
-    letter-spacing: 1px;
+    color: var(--color-text-label);
   }
 
   /* Lightbox */
@@ -528,24 +459,30 @@
     position: relative;
     z-index: 1;
     margin: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    /* G6 (UXD-009): the image takes the height the caption stack leaves, so the facts, the
+       credit and the button always show. The 200px floor stops a short window (a phone in
+       landscape) from shrinking the picture to nothing: there the figure scrolls instead. */
+    display: grid;
+    grid-template-rows: minmax(200px, 1fr) auto;
+    justify-items: center;
     max-width: min(1200px, 92vw);
-    max-height: 90vh;
+    max-height: calc(100svh - 80px);
+    overflow: hidden auto;
   }
-  .lb-figure img {
+  .lb-figure > img {
+    min-height: 0;
     max-width: 100%;
-    max-height: 72vh;
+    max-height: 100%;
     object-fit: contain;
     border-radius: 4px;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
   }
   .lb-figure figcaption {
     text-align: center;
-    margin-top: 16px;
+    margin-top: 12px;
     max-width: 680px;
   }
+  /* a2-keep: lightbox figure title, not a page section heading */
   .lb-figure h2 {
     font-family: var(--font-display);
     font-size: 26px;
@@ -577,7 +514,7 @@
   }
   .lb-desig-sep {
     margin: 0 8px;
-    color: rgba(255, 255, 255, 0.4);
+    color: var(--color-text-label);
   }
   .lb-logo {
     height: 20px;
@@ -586,19 +523,19 @@
   }
   .lb-caption {
     font-family: var(--font-editorial), 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 16px;
+    font-style: italic; /* a1-keep: caption */
+    font-size: var(--size-caption);
     line-height: 1.5;
     color: rgba(255, 255, 255, 0.82);
-    margin: 0 0 14px;
+    margin: 0 0 10px;
   }
   .lb-facts {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 6px 22px;
-    margin: 0 0 14px;
-    padding: 12px 0;
+    margin: 0 0 10px;
+    padding: 10px 0;
     border-top: 1px solid rgba(255, 255, 255, 0.12);
     border-bottom: 1px solid rgba(255, 255, 255, 0.12);
   }
@@ -607,10 +544,10 @@
   }
   .lb-facts dt {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 1.5px;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.45);
+    color: var(--color-text-label);
     margin-bottom: 3px;
   }
   .lb-facts dd {
@@ -626,7 +563,7 @@
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
   }
   .lb-scope {
     color: #9fc4ea;
@@ -644,8 +581,8 @@
     margin-top: 0.6rem;
     padding: 0.45rem 0.85rem;
     border-radius: 6px;
-    background: linear-gradient(135deg, #4ecdc4, #7ff0e0);
-    color: #06231f;
+    background: linear-gradient(135deg, var(--color-accent), var(--color-accent-hover));
+    color: var(--color-bg);
     font-weight: 700;
     font-size: 0.85rem;
     text-decoration: none;
@@ -653,17 +590,11 @@
   .lb-sky:hover {
     filter: brightness(1.08);
   }
-  .lb-close {
+  :global(.lb-close) {
     position: fixed;
     top: 18px;
     right: 22px;
     z-index: 2;
-    font-size: 32px;
-    line-height: 1;
-    color: rgba(255, 255, 255, 0.8);
-    background: none;
-    border: none;
-    cursor: pointer;
   }
   .lb-nav {
     position: fixed;
@@ -705,15 +636,8 @@
     .tile.feature {
       grid-row: span 1;
     }
-    h1 {
-      font-size: 32px;
-      letter-spacing: 6px;
-    }
   }
   @media (max-width: 480px) {
-    .gallery {
-      padding: 16px 14px 32px;
-    }
     .masonry {
       grid-auto-rows: 150px;
     }

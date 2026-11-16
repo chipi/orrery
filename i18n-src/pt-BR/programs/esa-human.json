@@ -90,5 +90,19 @@
   "link_labels": {
     "/programs/iss": "EEI — a estação que a Europa ajudou a construir",
     "/programs/ariane": "Ariane — o lançador que levou o ATV"
+  },
+  "roster": {
+    "Spacelab": {
+      "note": "a primeira contribuição da Europa ao voo espacial humano — um laboratório tripulado que voou no compartimento de carga do Space Shuttle em 22 missões e levou o primeiro astronauta da ESA, Ulf Merbold, em 1983",
+      "name": "Spacelab"
+    },
+    "Columbus": {
+      "note": "o laboratório de pesquisa permanente da ESA na Estação Espacial Internacional — o módulo que fez da Europa uma parceira plena da ISS, com uma instalação própria",
+      "name": "Columbus"
+    },
+    "European Service Module": {
+      "note": "a tecnologia do ATV renascida: a Europa agora constrói o módulo de serviço que fornece energia e propulsão à nave Orion da NASA em seus voos à órbita lunar na Artemis",
+      "name": "Módulo de Serviço Europeu"
+    }
   }
 }

@@ -29,6 +29,7 @@ import {
 import type { LaunchSource } from '../src/lib/launches/sources/provider.js';
 import type { RawLaunchEntry } from '../src/lib/launches/types.js';
 import { resolveSpacecraftRefs } from '../src/lib/launches/resolve-spacecraft-refs.js';
+import { buildYearIndex } from '../src/lib/launches/year-index.js';
 import {
   resolveLaunchSiteRef,
   type PadMappingFile,
@@ -313,6 +314,12 @@ async function main(): Promise<void> {
     });
     console.log(`  ✓ launches-historic/${decade}.json — ${Object.keys(entries).length} entries`);
   }
+
+  writeJson(
+    join(DATA_ROOT, 'launches-years.json'),
+    buildYearIndex([...Object.values(upcomingEntries), ...Object.values(historicEntries)]),
+  );
+  console.log('  ✓ launches-years.json — launches per year for the era strip');
 
   console.log('[fetch-launches] done.');
 }

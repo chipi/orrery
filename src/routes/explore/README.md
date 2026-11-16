@@ -7,23 +7,50 @@ z-indexes) is unchanged. Components write page state through callbacks or
 `bind:`; two shared objects are written in place on purpose: the page's
 plain `legendRowEls` array (legend keyboard nav) and `iconic.state`.
 
-- `HudControls` — solar-system HUD: 2D/3D + reset + AR/Sky, layer chips, the
-  PATHS legend, the mobile top row and the mobile drawers (incl. Scan).
-- `TimeDock` — PLANET SCALES button + time controls (coupled positions).
-- `ScaleNav` — top row: back arrow, scale picker, reset.
+- `HudControls` — solar-system HUD: one row on a fine pointer, the view actions (2D/3D, reset, always rendered and disabled when nothing is selected, AR/Sky) then the layer chips (`LayerChipRow`, UXD-015; the PATHS chip, ICONIC MISSIONS, is the first and carries `data-audio-stage` through the config `attrs`), the
+  PATHS legend (UXD-026: a one-line title with the (i) `WhyPopover`, the scrolling `.paths-legend-list` of 28 px rows (36 px on touch) that lead with the mission's round `EntityThumb` ringed in the path colour, Voyager 2 neutral (UXD-025 T3b), the hovered craft's tagline in an `aria-live` card level with its row; the `legendHead` snippet is shared with the drawer copy, which has no card), the mobile top row and the mobile drawers (incl. Scan).
+- The orbit ruler (`OrbitRuler`, mounted in `+page.svelte`, the touch drawer's tab in `HudControls`) draws its hovered or open zone through the host's `setRegimeHighlightFn` (3D and 2D, [UXD-024](../../../docs/uxs/decisions/UXD-024-orbit-ruler-one-row-draws-its-regime.md)); a founding mission opens in place over the regime panel (`onMissionOpen`).
+- `TimeDock` — PLANET SCALES chip + time controls (play, speed radiogroup, reset; coupled positions).
+- `LevelContextCard` (`$lib/components`, mounted in `+page.svelte` under `ScaleNav`, UXD-027) — "what you are looking at": the level's glyph, name, what it is, its story, up to five `/science` links; folded on touch, remembered; hidden with the picker. `ExploreHint` (same folder, mounted next to it) — the welcome hint; `topOnTouch` hangs it under the top row on a touch screen.
+- `ScaleNav` — top row: back chip, scale picker (glyph in the chip and every rung, UXD-027), `ResetViewButton` (the seven outer scales only: the solar system's one RESET VIEW is the HUD row's; always drawn, disabled when inert; flush right at the solar system and then left of a docked panel, UXD-021).
 - `SunCompass` — off-screen Sun needle (neighborhood).
-- `ScaleStrip` — bottom-right ruler / schematic honesty note.
+- `ScaleStrip` — bottom-right scale strip: a fixed 232 px box (190 px under 600 px, left of a docked panel) with the unit ladder and the fixed-width `ScaleBar` with its label under it (solar system, neighbourhood), or the schematic honesty note (UXD-021).
 - `BlackHoleNotes`, `AnonStarTag`, `DeepSkyImmersion`, `WarpOverlays` —
   read-only scene overlays.
-- `SizesOverlay` — size-comparison modal; `HoverTooltip` — cursor tooltip.
+- `SizesOverlay` — REFERENCES modal: the bodies-only `SizesCanvas` and the aligned DOM legend grid (UXD-021); `HoverTooltip` — cursor tooltip.
 
 Logic lives in `src/lib/explore/` (see its README). Source-reading tests:
 `audio-tour.test.ts` lists every file carrying a `data-audio-stage` anchor
-in `SOURCE_FILES` (page, `TimeDock`, `HudControls`); a component that takes
+in `SOURCE_FILES` (page, `TimeDock`, `HudControls`; it also accepts the `attrs` form `'data-audio-stage': 'name'`); a component that takes
 over an anchor must join it. `tactical-scan-mobile.test.ts` reads
 `HudControls` for the drawer's Scan tab.
 
 `[id]/` is not part of the explorer: it is the indexable page of one planet,
 moon or small body (server load `+page.server.ts` → `$lib/data/body-entity`,
 names from the glossary `body` section), linking back to `/explore?id=`
-(ADR-096). `hub/` is the nav-group hub.
+(ADR-096) and, for Earth, the Moon, Mars and Venus, to the world page (`entity-world-link`,
+`$lib/explore/world-links`, UXD-028). `stars/` holds the indexable star pages: `stars/[id]/` is one named star or
+exoplanet host (server load `+page.server.ts` → `$lib/data/star-entity`; the host's system is a
+section of the page; back-links `/explore?goto=` or `?system=`; ids from `starPageIds()` in
+`scripts/site-routes.mjs`, ADR-096 items 13–14). `black-holes/[id]/` is one black hole (ADR-096
+item 16; server load → `$lib/data/black-hole-entity`; Gargantua carries a fiction badge and no
+figures; back-link `/explore?bh=`; ids from `blackHolePageIds()`). `deep-sky/[id]/` is one deep-sky
+object with reviewed text (ADR-096 item 17; server load → `$lib/data/deep-sky-entity`; ids from
+`deepSkyPageIds()`, the overlay files; the title is `deepSkyTitle`, the values the `format.ts`
+formatters the panel uses; back-link `/explore?deepsky=<id>`). One real object has one page: the
+Milky Way globular and Local Group rows of the same object link it (`DEEP_SKY_ALIAS`).
+`galaxies/[id]/` and `structures/[id]/` are the Local Group galaxies that are not deep-sky twins and
+the groups, clouds, clusters, superclusters, walls and void of the four outer scales (ADR-096 item 18;
+server loads → `$lib/data/outer-entity`, `getGalaxyEntity` / `getStructureEntity`; ids from
+`galaxyPageIds()` / `structurePageIds()`, the overlay files under `i18n-src/en-US/universe/galaxies|structures/`,
+so a page exists only once its text does (29 galaxies and 30 structures since 2026-11-13, deep-text batches 05 and 06); names are the glossary's (`getOuterNames`, one string in the INDEX row, the panel and the page; the load also hands the panels `outerOverlays`, the ids whose text they may ask for); both
+`+page.svelte` are one line over `$lib/components/OuterEntityPage.svelte`; `svelte.config.js`
+tolerates the two empty page types in `handleUnseenRoutes`; back-link `/explore?context=<scale>&pick=<id>`). There is no list page: the
+INDEX does that job. `+page.svelte` mounts one `ScaleIndex` per scale (`CTX_ORDER`), all hidden
+unless on screen, with one left-edge handle and one `indexOpen`; their rows are the server load's
+`scaleIndex` (`getScaleIndexRows` in `$lib/server/entity-index`, built by
+`$lib/explore/scale-index.ts`), so the prerendered HTML links every body, star, black-hole and deep-sky page
+and a row with no page joins on hydration. A row's select is the scene host's select function for
+that scale (`selectLgFn` … `selectCosmicWebFn`, `indexSelectStarFn`, `selectDeepSkyFn`,
+`mwDeepLinkFn`, `bhDeepLinkFn`) or the page's `selectPlanet` / `selectSun` / `selectSmallBody` /
+`selectSatellite` / `selectBelt`. The Sun and each planet take their own colour as the row dot (`SOLAR_DOT`, from `PLANETS[].css`); every other solar-system row keeps the grey dot. `hub/` is the nav-group hub.

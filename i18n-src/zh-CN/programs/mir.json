@@ -94,5 +94,23 @@
   "link_labels": {
     "/earth": "地球 — 轨道、交会对接与发射场",
     "/fleet?id=mir": "航天器 — Mir 空间站"
+  },
+  "roster": {
+    "Modular assembly": {
+      "note": "历时十年在轨道上建成——核心舱（1986年），随后是Kvant、Kvant-2、Kristall、Spektr和Priroda——首个由分别发射的舱段组装而成的空间站",
+      "name": "模块化组装"
+    },
+    "Polyakov — 437 days": {
+      "note": "瓦列里·波利亚科夫在Mir上单次驻留437天，至今仍是有史以来最长的连续载人航天飞行，证明乘组能够熬过火星往返时长的任务",
+      "name": "波利亚科夫——437天"
+    },
+    "Shuttle-Mir": {
+      "note": "美国航天飞机与Mir对接，美国宇航员在站上居住（1995-1998年）——冷战对手的首次联合空间站运营，也是国际空间站的直接预演",
+      "name": "Shuttle-Mir"
+    },
+    "The 1997 crises": {
+      "note": "舱内起火，随后一艘Progress货运飞船碰撞，撞穿Spektr舱并使空间站部分泄压——乘组在轨道上幸存下来的最严重的一次碰撞",
+      "name": "1997年的危机"
+    }
   }
 }

@@ -355,7 +355,7 @@
 </script>
 
 <!-- Notebook toolbar glyphs (V3): compact icon buttons top-right. 16px stroke
-     icons on currentColor so they inherit the button's teal/gold state. -->
+     icons on currentColor so they inherit the button's accent blue/gold state. -->
 {#snippet toolIcon(name: 'share' | 'check' | 'print' | 'card' | 'save' | 'load')}
   <svg
     class="nb__tool-icon"
@@ -638,9 +638,13 @@
   .nb__conn {
     margin-top: 0.25rem;
     padding: 1.25rem 1.4rem;
-    border: 1px solid rgba(78, 205, 196, 0.28);
+    border: 1px solid color-mix(in srgb, var(--color-accent) 28%, transparent);
     border-radius: 10px;
-    background: linear-gradient(180deg, rgba(78, 205, 196, 0.07), rgba(78, 205, 196, 0.02));
+    background: linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--color-accent) 7%, transparent),
+      color-mix(in srgb, var(--color-accent) 2%, transparent)
+    );
     display: flex;
     flex-direction: column;
     gap: 0.85rem;
@@ -651,7 +655,7 @@
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.09em;
-    color: #4ecdc4;
+    color: var(--color-state);
   }
   .nb__conn-why {
     margin: 0;
@@ -664,7 +668,7 @@
   }
   .nb__conn-hook-label {
     display: block;
-    font-size: 0.68rem;
+    font-size: var(--size-label);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.09em;
@@ -675,7 +679,6 @@
     margin: 0;
     line-height: 1.55;
     color: #d8d8d8;
-    font-style: italic;
   }
   .nb__conn-links {
     list-style: none;
@@ -702,22 +705,22 @@
   }
   .nb__conn-a:hover,
   .nb__conn-a:focus-visible {
-    background: rgba(78, 205, 196, 0.12);
-    border-color: rgba(78, 205, 196, 0.45);
+    background: var(--color-accent-soft);
+    border-color: color-mix(in srgb, var(--color-accent) 45%, transparent);
   }
   .nb__conn-label {
     line-height: 1.35;
   }
   .nb__conn-agency {
     flex-shrink: 0;
-    font-size: 0.64rem;
+    font-size: var(--size-label);
     font-weight: 700;
     letter-spacing: 0.04em;
     text-transform: uppercase;
     padding: 0.15rem 0.5rem;
     border-radius: 999px;
-    background: rgba(78, 205, 196, 0.16);
-    color: #9fe0da;
+    background: color-mix(in srgb, var(--color-accent) 16%, transparent);
+    color: var(--color-state);
   }
   .nb__conn-next {
     margin: 0;
@@ -730,9 +733,9 @@
   /* Label on its own line (UX review: inline it read as one merged sentence). */
   .nb__conn-next-label {
     display: block;
-    color: #4ecdc4;
+    color: var(--color-state);
     font-weight: 700;
-    font-size: 0.68rem;
+    font-size: var(--size-label);
     text-transform: uppercase;
     letter-spacing: 0.08em;
     margin-bottom: 0.2rem;
@@ -750,7 +753,7 @@
     display: flex;
     flex-direction: column;
     gap: 0.2rem;
-    border-left: 2px solid #4ecdc4;
+    border-left: 2px solid var(--color-accent);
     padding-left: 0.75rem;
   }
 
@@ -783,7 +786,7 @@
   /* Visible function label (UX review: five icon-only buttons were opaque). */
   .nb__tool-label {
     font-family: 'Space Mono', monospace;
-    font-size: 0.45rem;
+    font-size: var(--size-label);
     letter-spacing: 0.04em;
     text-transform: uppercase;
     color: rgba(232, 232, 232, 0.6);
@@ -803,15 +806,15 @@
   }
 
   .nb__tool--accent {
-    color: #4ecdc4;
-    background: rgba(78, 205, 196, 0.08);
-    border-color: rgba(78, 205, 196, 0.4);
+    color: var(--color-state);
+    background: color-mix(in srgb, var(--color-accent) 8%, transparent);
+    border-color: var(--color-accent-edge);
   }
 
   .nb__tool--accent:hover,
   .nb__tool--accent:focus-visible {
-    background: rgba(78, 205, 196, 0.16);
-    outline-color: #4ecdc4;
+    background: color-mix(in srgb, var(--color-accent) 16%, transparent);
+    outline-color: var(--color-focus);
   }
 
   .nb__tool--done {
@@ -837,7 +840,7 @@
 
   .nb__flightmap {
     margin: 0 0 0.5rem;
-    border: 1px solid rgba(78, 205, 196, 0.18);
+    border: 1px solid color-mix(in srgb, var(--color-accent) 18%, transparent);
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 2px 24px rgba(0, 0, 0, 0.35);
@@ -854,16 +857,16 @@
      (fixed, not sticky: an ancestor overflow container defeats sticky here). */
   .nb__progress {
     position: fixed;
-    top: 60px;
+    top: calc(var(--nav-height) + 8px);
     right: 12px;
     z-index: 15;
     font-family: 'Space Mono', monospace;
-    font-size: 0.6rem;
+    font-size: var(--size-label);
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: rgba(78, 205, 196, 0.9);
+    color: var(--color-state);
     background: rgba(4, 4, 12, 0.85);
-    border: 1px solid rgba(78, 205, 196, 0.3);
+    border: 1px solid var(--color-accent-edge);
     border-radius: 999px;
     padding: 0.25rem 0.7rem;
     pointer-events: none;
@@ -871,10 +874,10 @@
 
   .nb__goal-kicker {
     font-family: 'Space Mono', monospace;
-    font-size: 0.6rem;
+    font-size: var(--size-label);
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: rgba(78, 205, 196, 0.6);
+    color: var(--color-state);
   }
 
   .nb__goal-title {
@@ -901,7 +904,7 @@
   .nb__goal-prereq {
     margin: 0.45rem 0 0;
     font-family: 'Space Mono', monospace;
-    font-size: 0.68rem;
+    font-size: var(--size-label);
     letter-spacing: 0.3px;
     color: rgba(232, 232, 232, 0.78);
     display: inline-block;
@@ -947,7 +950,7 @@
     font-size: 0.75rem;
     font-weight: bold;
     color: #04040c;
-    background: #4ecdc4;
+    background: var(--color-accent);
     border-radius: 50%;
     width: 1.6rem;
     height: 1.6rem;
@@ -960,7 +963,10 @@
   .nb__rail {
     flex: 1;
     width: 1px;
-    background: linear-gradient(rgba(78, 205, 196, 0.4), rgba(78, 205, 196, 0.08));
+    background: linear-gradient(
+      var(--color-accent-edge),
+      color-mix(in srgb, var(--color-accent) 8%, transparent)
+    );
     margin-top: 0.25rem;
     min-height: 0.5rem;
   }
@@ -998,7 +1004,7 @@
     color: #ffc850;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    font-size: 0.6rem;
+    font-size: var(--size-label);
     margin-right: 0.4rem;
   }
 
@@ -1020,9 +1026,9 @@
     font-family: 'Space Mono', monospace;
     font-size: 0.95rem;
     line-height: 1;
-    color: rgba(78, 205, 196, 0.85);
+    color: var(--color-state);
     background: rgba(4, 4, 12, 0.7);
-    border: 1px solid rgba(78, 205, 196, 0.3);
+    border: 1px solid var(--color-accent-edge);
     border-radius: 3px;
     width: 1.7rem;
     height: 1.7rem;
@@ -1034,8 +1040,8 @@
 
   .nb__act:hover,
   .nb__act:focus-visible {
-    background: rgba(78, 205, 196, 0.14);
-    outline: 2px solid #4ecdc4;
+    background: var(--color-accent-soft);
+    outline: 2px solid var(--color-focus);
     outline-offset: 1px;
   }
 
@@ -1063,7 +1069,7 @@
     font-size: 0.7rem;
     letter-spacing: 1px;
     text-transform: uppercase;
-    color: #4ecdc4;
+    color: var(--color-state);
     background: none;
     border: none;
     padding: 0.4rem 0;
@@ -1100,23 +1106,23 @@
     align-items: center;
     gap: 0.5rem;
     flex-wrap: wrap;
-    border-top: 1px dashed rgba(78, 205, 196, 0.2);
+    border-top: 1px dashed color-mix(in srgb, var(--color-accent) 20%, transparent);
     padding-top: 1rem;
   }
 
   .nb__add-label {
     font-family: 'Space Mono', monospace;
-    font-size: 0.62rem;
+    font-size: var(--size-label);
     letter-spacing: 0.5px;
     text-transform: uppercase;
-    color: rgba(78, 205, 196, 0.65);
+    color: var(--color-state);
   }
 
   .nb__add-select {
     font-family: 'Space Mono', monospace;
     font-size: 0.75rem;
-    background: rgba(78, 205, 196, 0.06);
-    border: 1px solid rgba(78, 205, 196, 0.25);
+    background: color-mix(in srgb, var(--color-accent) 6%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-accent) 25%, transparent);
     border-radius: 2px;
     color: #e8e8e8;
     padding: 0.35rem 0.5rem;
@@ -1127,7 +1133,7 @@
   }
 
   .nb__add-select:focus-visible {
-    outline: 2px solid #4ecdc4;
+    outline: 2px solid var(--color-focus);
     outline-offset: 2px;
   }
 
@@ -1135,9 +1141,9 @@
     font-family: 'Space Mono', monospace;
     font-size: 0.7rem;
     letter-spacing: 1px;
-    color: #4ecdc4;
-    background: rgba(78, 205, 196, 0.08);
-    border: 1px solid rgba(78, 205, 196, 0.4);
+    color: var(--color-state);
+    background: color-mix(in srgb, var(--color-accent) 8%, transparent);
+    border: 1px solid var(--color-accent-edge);
     border-radius: 2px;
     padding: 0 1rem;
     min-height: 44px;
@@ -1147,8 +1153,8 @@
 
   .nb__add-btn:hover,
   .nb__add-btn:focus-visible {
-    background: rgba(78, 205, 196, 0.16);
-    outline: 2px solid #4ecdc4;
+    background: color-mix(in srgb, var(--color-accent) 16%, transparent);
+    outline: 2px solid var(--color-focus);
     outline-offset: 2px;
   }
 

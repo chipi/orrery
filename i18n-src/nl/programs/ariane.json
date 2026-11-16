@@ -94,5 +94,15 @@
   "link_labels": {
     "/programs/esa-human": "ESA in de bemande ruimtevaart — Spacelab, Columbus, ATV",
     "/fleet?id=ariane-5": "Vloot — Ariane-draagraketten"
+  },
+  "roster": {
+    "Ariane 4": {
+      "note": "het betrouwbare commerciële werkpaard dat in de jaren negentig ongeveer de helft van alle commerciële satellietlanceringen ter wereld binnenhaalde en Arianespace dominant maakte",
+      "name": "Ariane 4"
+    },
+    "Flight 501": {
+      "note": "de eerste vlucht van de Ariane 5 vernietigde zichzelf na 37 seconden toen hergebruikte geleidingssoftware van de Ariane 4 overliep bij de hogere snelheid van de nieuwe raket — een toonaangevend waarschuwend voorbeeld uit de softwaretechniek",
+      "name": "Vlucht 501"
+    }
   }
 }

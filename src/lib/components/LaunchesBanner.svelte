@@ -119,7 +119,7 @@
     margin: 0;
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
-    color: var(--color-accent-text, #5070ff);
+    color: var(--color-accent);
     text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: 700;
@@ -153,14 +153,14 @@
   .all-link {
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
-    color: #4ecdc4;
+    color: var(--color-state);
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     /* Keep the link clear of the sticky nav when it's scrolled into view
        (anchor scroll + Playwright's scrollIntoView both align it to the
        viewport top, where the stuck nav would otherwise intercept the click). */
-    scroll-margin-top: calc(var(--nav-height, 64px) + 12px);
+    scroll-margin-top: calc(var(--nav-height) + 12px);
   }
 
   .all-link:hover {
@@ -202,8 +202,8 @@
   }
 
   .card:hover {
-    background: rgba(68, 102, 255, 0.08);
-    border-color: rgba(68, 102, 255, 0.4);
+    background: color-mix(in srgb, var(--color-accent) 8%, transparent);
+    border-color: var(--color-accent-edge);
   }
 
   .card-head {
@@ -243,21 +243,19 @@
     margin: 2px 0 0;
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
-    color: #4ecdc4;
+    color: var(--color-state);
   }
 
   .editorial-note {
     margin: 4px 0 0;
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 12px;
+    font-size: var(--size-meta);
     color: rgba(230, 232, 238, 0.85);
   }
 
   .meta {
     margin: 6px 0 0;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     color: rgba(230, 232, 238, 0.6);
   }
 </style>

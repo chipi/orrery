@@ -21,6 +21,8 @@ import TrajectoryArrowIcon from './TrajectoryArrowIcon.svelte';
 import MissionOrbitIcon from './MissionOrbitIcon.svelte';
 import ShareIcon from './ShareIcon.svelte';
 import SensoryIcon from './SensoryIcon.svelte';
+import ScaleGlyphIcon from '../ScaleGlyphIcon.svelte';
+import { SCALE_SHELL_NAV_LIST } from '$lib/explore/scale-shell-nav';
 
 export {
   MenuIcon,
@@ -48,6 +50,18 @@ export type IconShowcaseEntry = {
   route: string;
   component: Component<Record<string, unknown>>;
   variants?: Array<{ label?: string; props: Record<string, unknown> }>;
+};
+
+/** English level names, the keys of the colophon overlay's `variants` for `scale-glyphs`. */
+const LEVEL_NAMES: Record<string, string> = {
+  'solar-system': 'Solar System',
+  neighborhood: 'Stellar Neighborhood',
+  'milky-way': 'Milky Way',
+  'local-group': 'Local Group',
+  'local-sheet': 'Local Sheet',
+  virgo: 'Virgo Supercluster',
+  laniakea: 'Laniakea',
+  'cosmic-web': 'Cosmic Web',
 };
 
 export const ICON_SHOWCASE: IconShowcaseEntry[] = [
@@ -181,5 +195,17 @@ export const ICON_SHOWCASE: IconShowcaseEntry[] = [
     route: '/',
     component: SensoryIcon as Component<Record<string, unknown>>,
     variants: [{ props: { size: 24 } }],
+  },
+  {
+    id: 'scale-glyphs',
+    label: 'Scale-level glyphs',
+    what: 'One small drawing per /explore level, from the solar system out to the cosmic web — in the level picker, the nav rows and the level card.',
+    where: 'Explore · nav · level picker',
+    route: '/explore',
+    component: ScaleGlyphIcon as Component<Record<string, unknown>>,
+    variants: SCALE_SHELL_NAV_LIST.map((s) => ({
+      label: LEVEL_NAMES[s.glyph] ?? s.glyph,
+      props: { glyph: s.glyph, size: 32 },
+    })),
   },
 ];

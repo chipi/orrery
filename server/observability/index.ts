@@ -52,16 +52,12 @@ interface TierTargets {
 }
 
 // The telemetry ladder (ADR-082 + its 2026-10-17 amendment), same rule as the browser
-// bundle. A deploy-provided value always wins. Otherwise only dev and staging have
-// built-in targets; prod has none in code, so a prod run missing a target sends
+// bundle (dev → prod). A deploy-provided value always wins. Otherwise only dev has a
+// built-in target; prod has none in code, so a prod run missing a target sends
 // nothing for it (fail closed, never to another tier), and tests never send.
 // - dev: a local run, through the tailnet TLS nodes that only the operator's machines
 //   reach (anyone else's run sends nothing). Errors share the web's dev project 30,
 //   separated by the `service` tag. Logs are pushed directly (no Alloy on laptops).
-// - staging: no server runs there today (GitHub Pages is static); these make a future
-//   staging server consistent from day one. Errors and Umami go through the public
-//   edges (as the staging web does); traces need a tailnet box. No log push: a
-//   staging host would ship stdout with Alloy, like prod.
 // DSN keys are public ingest keys, the same ones the browser bundles ship.
 export const TIER_TARGETS: Record<string, TierTargets> = {
   dev: {
@@ -73,14 +69,6 @@ export const TIER_TARGETS: Record<string, TierTargets> = {
     umami: {
       host: 'https://umami.tail6d0ed4.ts.net',
       websiteId: '90cbabf7-ae88-45c9-a417-0cd808749602',
-    },
-  },
-  staging: {
-    sentryDsn: 'https://bb3908e53882411cb896caa31072a4db@telemetry.orrerylearn.com/6',
-    otlpTracesEndpoint: 'https://vtraces.tail6d0ed4.ts.net/insert/opentelemetry/v1/traces',
-    umami: {
-      host: 'https://analytics.orrerylearn.com',
-      websiteId: '6e7ddfce-1437-49b9-8b77-a36d3584ccad',
     },
   },
 };
@@ -174,7 +162,7 @@ export function initObservability(
   state = { cfg, log, sentry: false, tracing: false };
 
   // Dev only by default: no Alloy on a laptop, so ship our own stdout (access lines
-  // included, via the console tee) to VictoriaLogs. Prod/staging never set this.
+  // included, via the console tee) to VictoriaLogs. Prod never sets this.
   if (cfg.logsPushUrl) {
     state.logPusher = createLogPusher({
       url: cfg.logsPushUrl,

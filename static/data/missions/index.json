@@ -423,6 +423,27 @@
     "crewed": false
   },
   {
+    "id": "kaguya",
+    "agency": "JAXA",
+    "dest": "MOON",
+    "status": "FLOWN",
+    "year": 2007,
+    "sector": "gov",
+    "color": "#003087",
+    "crewed": false
+  },
+  {
+    "id": "chandrayaan2",
+    "agency": "ISRO",
+    "dest": "MOON",
+    "status": "ACTIVE",
+    "year": 2019,
+    "sector": "gov",
+    "color": "#FF9933",
+    "crewed": false,
+    "outcome": "failure"
+  },
+  {
     "id": "blue-moon-mk1",
     "agency": "Blue Origin",
     "dest": "MOON",
@@ -1263,5 +1284,118 @@
     "sector": "gov",
     "color": "#D97D2C",
     "crewed": false
+  },
+  {
+    "id": "sts-1",
+    "agency": "NASA",
+    "dest": "EARTH",
+    "status": "FLOWN",
+    "year": 1981,
+    "sector": "gov",
+    "color": "#0B3D91",
+    "crewed": true
+  },
+  {
+    "id": "sts-51-l",
+    "agency": "NASA",
+    "dest": "EARTH",
+    "status": "FLOWN",
+    "year": 1986,
+    "sector": "gov",
+    "color": "#0B3D91",
+    "crewed": true,
+    "outcome": "failure"
+  },
+  {
+    "id": "sts-107",
+    "agency": "NASA",
+    "dest": "EARTH",
+    "status": "FLOWN",
+    "year": 2003,
+    "sector": "gov",
+    "color": "#0B3D91",
+    "crewed": true,
+    "outcome": "failure"
+  },
+  {
+    "id": "artemis1",
+    "agency": "NASA",
+    "dest": "MOON",
+    "status": "FLOWN",
+    "year": 2022,
+    "sector": "gov",
+    "color": "#0B3D91",
+    "crewed": false
+  },
+  {
+    "agency": "NASA",
+    "sector": "gov",
+    "color": "#0B3D91",
+    "id": "viking2",
+    "dest": "MARS",
+    "status": "FLOWN",
+    "year": 1975,
+    "crewed": false
+  },
+  {
+    "agency": "Roscosmos",
+    "id": "mars2",
+    "dest": "MARS",
+    "status": "FLOWN",
+    "year": 1971,
+    "sector": "gov",
+    "color": "#cc4444",
+    "crewed": false,
+    "outcome": "failure"
+  },
+  {
+    "agency": "NASA",
+    "sector": "gov",
+    "color": "#0B3D91",
+    "id": "mro",
+    "dest": "MARS",
+    "status": "ACTIVE",
+    "year": 2005,
+    "crewed": false
+  },
+  {
+    "agency": "NASA",
+    "sector": "gov",
+    "color": "#0B3D91",
+    "id": "mariner2",
+    "dest": "VENUS",
+    "status": "FLOWN",
+    "year": 1962,
+    "crewed": false
+  },
+  {
+    "agency": "CNSA",
+    "id": "change2",
+    "dest": "MOON",
+    "status": "FLOWN",
+    "year": 2010,
+    "sector": "gov",
+    "color": "#DE2910",
+    "crewed": false
+  },
+  {
+    "agency": "Intuitive Machines",
+    "id": "im-1",
+    "dest": "MOON",
+    "status": "FLOWN",
+    "year": 2024,
+    "sector": "private",
+    "color": "#0B3D91",
+    "crewed": false
+  },
+  {
+    "agency": "CMSA",
+    "id": "shenzhou-5",
+    "dest": "EARTH",
+    "status": "FLOWN",
+    "year": 2003,
+    "sector": "gov",
+    "color": "#de2910",
+    "crewed": true
   }
 ]

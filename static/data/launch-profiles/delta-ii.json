@@ -6,6 +6,7 @@
   "loftBoost": true,
   "fairingKg": 840,
   "fairingJettisonAltM": 120000,
+  "fairingJettisonS": 303,
   "refAreaM2": 11,
   "cd": 0.3,
   "launchSite": { "lat": 28.44667, "lon": -80.56611, "name": "SLC-17 · Cape Canaveral" },
@@ -20,6 +21,7 @@
     "thrustVacKN": 516.2,
     "ispSlS": 274,
     "ispVacS": 283.4,
+    "separationDelayS": 3,
     "chamberTempK": 3300
   },
   "stages": [
@@ -32,6 +34,7 @@
       "ispSlS": 255,
       "ispVacS": 302,
       "engines": 1,
+      "separationDelayS": 8,
       "chamberTempK": 3400
     },
     {
@@ -46,7 +49,7 @@
   ],
   "provenance": [
     {
-      "l": "Boeing/ULA — Delta II Payload Planners Guide, Dec 2006 (6 ground-lit + 3 air-lit GEMs; event table: ground-lit burnout T+63, air-lit lit T+66; MECO T+264; second-stage restart; Star 48B third stage)",
+      "l": "Boeing/ULA — Delta II Payload Planners Guide, Dec 2006 (6 ground-lit + 3 air-lit GEMs; second-stage restart; Star 48B third stage). Table 2-1 (7925, eastern range): solids separate T+66 / T+132, MECO T+264, stage I/II separation M+8, fairing M+39 (T+303), SECO-1 T+617 (Figure 2-5)",
       "u": "https://www.ulalaunch.com/docs/default-source/rockets/deltaiipayloadplannersguide2007.pdf"
     },
     {

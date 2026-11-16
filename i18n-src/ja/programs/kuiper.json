@@ -88,5 +88,19 @@
     "/programs/starlink": "Starlink — 追いかけている衛星コンステレーション",
     "/earth": "地球 — 軌道と混み合う低軌道",
     "/earth?site=kuiper": "Kuiper 衛星コンステレーション"
+  },
+  "roster": {
+    "KuiperSat prototypes": {
+      "note": "量産が始まる前に設計を検証するため、2機の試験衛星が軌道に到達する",
+      "name": "KuiperSatのプロトタイプ"
+    },
+    "Production launches": {
+      "note": "運用コンステレーションの展開が始まる——Starlinkに何年も遅れ、周波数を確保するための規制上の期限と競争しながら",
+      "name": "量産機の打ち上げ"
+    },
+    "Multi-rocket by design": {
+      "note": "Kuiperは多くの事業者から打ち上げを購入する——Atlas V、Vulcan、Ariane 6、New Glenn——Falconに頼るような、競合のロケットへの依存を避けて",
+      "name": "設計段階からのマルチロケット"
+    }
   }
 }

@@ -3,7 +3,7 @@
  *
  * Canonical + hreflang tags always point at the PRODUCTION origin, so prod
  * is the authoritative copy and the sitemap and the on-page tags agree
- * byte-for-byte. The GH Pages staging mirror emits noindex instead (see
+ * byte-for-byte. A base-path mirror build emits noindex instead (see
  * `isMirrorBuild`).
  *
  * URL shape mirrors scripts/gh-pages-compat.mjs#expandLocalizedRoots and
@@ -16,8 +16,8 @@ import { SUPPORTED_LOCALES, DEFAULT_LOCALE, isSupportedLocale, type LocaleCode }
 export const SITE_ORIGIN = 'https://www.orrerylearn.com';
 
 /**
- * True for a build served under a base path — the GH Pages staging mirror
- * (`VITE_BASE=/orrery/`, staging.yml). Prod, Docker and the native apps build
+ * True for a build served under a base path — a mirror of the app
+ * (`VITE_BASE=/orrery/`). Prod, Docker and the native apps build
  * with no base. Google indexed the mirror (it outranked prod) even though its
  * canonical pointed at prod — a canonical is only a hint — so the mirror says
  * noindex and leaves out canonical + hreflang, which would contradict it.

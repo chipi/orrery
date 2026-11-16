@@ -19,5 +19,19 @@
   "models-ref-agencies": "航天机构和制造商的官方页面（Roscosmos、SpaceX、联合发射联盟、波音、诺斯罗普·格鲁曼、萤火虫、阿丽亚娜空间、中国载人航天工程办公室和中国航天科技集团、美国太空军），提供了运载火箭和航天器模型的飞行器尺寸。",
   "models-ref-independent": "独立的航天参考资料和博物馆页面（Gunter’s Space Page、Encyclopedia Astronautica、RussianSpaceWeb、史密森尼国家航空航天博物馆、施派尔技术博物馆等），提供了苏联、航天飞机和Buran 时代飞行器的大小。",
   "nasa-mmgis-rover-traverses": "Curiosity 和 Perseverance 漫游车团队发布的行驶路线，在火星表面视图中连同火星日（sol）和行驶距离一起绘出。",
-  "pds-mer-traverses": "Spirit 和 Opportunity 科学团队发布的行驶路线，在火星表面视图中连同火星日（sol）和行驶距离一起绘出。"
+  "pds-mer-traverses": "Spirit 和 Opportunity 科学团队发布的行驶路线，在火星表面视图中连同火星日（sol）和行驶距离一起绘出。",
+  "cds-simbad-vizier": "每个带出处的数值所链接的天体页面，以及距离和V星等所依据的SIMBAD与VizieR表格。",
+  "ned": "星系距离所链接的星系页面，以及用于匹配星系的名称和位置。",
+  "gaia-dpac": "星团和球状星团距离所依据的盖亚（Gaia）测量（Hunt & Reffert 2023、Baumgardt & Vasiliev 2021）。",
+  "open-cluster-catalogues": "梅西耶星团和星团星云的距离，基于 Gaia 数据：以 Hunt & Reffert 2023 为主，Cantat-Gaudin et al. 2020 作为后备，并在注释中列为替代值。",
+  "globular-cluster-catalogues": "球状星团的距离取自 Baumgardt & Vasiliev 2021，总V星等取自哈里斯星表（其自身的距离保留在注释中）。",
+  "cosmicflows-4": "梅西耶星系和图库星系的距离取自 Cosmicflows-4。",
+  "mcconnachie-2012": "本星系群星系的距离，以及麦哲伦云和M33内星团与星云的距离，取自 McConnachie 2012。",
+  "jpl-keplerian-elements": "JPL 用于行星位置的近似开普勒根数（Standish）。物理实验室依据这些根数计算，并有测试确保任务轨迹所用的行星模型与其偏差不超过 0.6°。",
+  "jpl-horizons-sun": "2026 年每一天的太阳视位置（赤经/赤纬），取自 JPL 的 Horizons 系统（DE441），以快照形式保存。深空天体的“天空中”标签读取它，找出天体高度至少 20° 且太阳在地平线下 18° 以上的月份，以及持续多少小时。月份范围已与四个地点的 Horizons 表和美国海军天文台的天文导航服务核对。",
+  "jpl-planetary-parameters": "JPL 的行星物理参数表（大小、质量、自转与表面数值），在科学文章的行星统计数据中被引用。",
+  "jpl-satellite-parameters": "JPL 的行星卫星轨道根数与物理参数，在科学文章中被引用，用于卫星的轨道和大小以及希尔球数值。",
+  "lroc-nac-traverses": "LRO 相机团队根据窄角相机（NAC）影像绘出的路线：Apollo 15 和 16、Lunokhod 1 和 2 以及玉兔二号。Orrery 将其简化后绘制在月面视图中。",
+  "usgs-apollo17-traverse": "USGS Astrogeology 绘制的 Apollo 17 月球车行驶路线（Haase 等，2019），与金牛—利特罗山谷的 LROC 正射镶嵌图配准，并连同各停靠点绘制在月面视图中。",
+  "hirise-zhurong-traverse": "HiRISE 相机（火星勘测轨道飞行器，NASA/JPL/亚利桑那大学）拍到的祝融号火星车车轮痕迹。Orrery 沿着这些痕迹描出火星表面视图中的路线，精度约 20 米。"
 }

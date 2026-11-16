@@ -2,8 +2,27 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "deep-sky-object.schema.json",
   "title": "Deep-sky object catalogue (PRD-030 / RFC-032, Slice 4)",
-  "description": "Messier set + curated-gallery NGC/IC objects, joined from the vendored OpenNGC snapshot to static/data/deep-sky.json. Placement is a unit sky-sphere direction (RA/Dec → xyz, Local-Group billboard convention); real distance drives the panel, not xyz. photoKey is set when a curated gallery photo backs the object; catalogue-only objects render as labelled dots and keep dist_ly null rather than guess.",
+  "description": "Messier set + curated-gallery NGC/IC objects, joined from the vendored OpenNGC snapshot to static/data/deep-sky.json. Placement is a unit sky-sphere direction (RA/Dec → xyz, Local-Group billboard convention); real distance drives the panel, not xyz. photoKey is set when a curated gallery photo backs the object; catalogue-only objects render as labelled dots and keep dist_ly null rather than guess. Each catalogue-derived value (mag, dist_ly, size_arcmin, position) has a sibling entry in `catalogue` with its source, ADS bibcode, record link and an optional note (#658); `records` holds the object pages at SIMBAD / NED.",
   "type": "object",
+  "definitions": {
+    "catalogueEntry": {
+      "type": "object",
+      "required": ["value", "source", "bibcode", "record_url"],
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "oneOf": [
+            { "type": "number" },
+            { "type": "array", "items": { "type": "number" }, "minItems": 2, "maxItems": 2 }
+          ]
+        },
+        "source": { "type": "string", "minLength": 1 },
+        "bibcode": { "type": ["string", "null"], "pattern": "^[0-9]{4}[A-Za-z0-9&.+]{14}[A-Za-z.]$" },
+        "record_url": { "type": "string", "pattern": "^https://" },
+        "note": { "type": "string", "minLength": 1 }
+      }
+    }
+  },
   "required": ["_count", "objects"],
   "additionalProperties": false,
   "properties": {
@@ -33,7 +52,9 @@
           "dist_label",
           "photoKey",
           "photoTitle",
-          "gatewaySystem"
+          "gatewaySystem",
+          "records",
+          "catalogue"
         ],
         "additionalProperties": false,
         "properties": {
@@ -68,7 +89,25 @@
           "dist_label": { "type": ["string", "null"] },
           "photoKey": { "type": ["string", "null"] },
           "photoTitle": { "type": ["string", "null"] },
-          "gatewaySystem": { "type": ["string", "null"] }
+          "gatewaySystem": { "type": ["string", "null"] },
+          "records": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "simbad": { "type": "string", "pattern": "^https://" },
+              "ned": { "type": "string", "pattern": "^https://" }
+            }
+          },
+          "catalogue": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "mag": { "$ref": "#/definitions/catalogueEntry" },
+              "dist_ly": { "$ref": "#/definitions/catalogueEntry" },
+              "size_arcmin": { "$ref": "#/definitions/catalogueEntry" },
+              "position": { "$ref": "#/definitions/catalogueEntry" }
+            }
+          }
         }
       }
     }

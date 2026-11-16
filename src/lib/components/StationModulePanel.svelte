@@ -7,12 +7,15 @@
   import Panel from './Panel.svelte';
   import AgencyRow from './AgencyRow.svelte';
   import { formatNumber } from '$lib/format';
-  import { localeFromPage, localHref } from '$lib/locale';
+  import { localeFromPage } from '$lib/locale';
   import { page } from '$app/state';
   import type { StationModule } from '$types/station';
   import * as m from '$lib/paraglide/messages';
   import { panelGalleryCredit } from '$lib/image-credits';
   import WhyPopover from './WhyPopover.svelte';
+  import ScienceCard from './ScienceCard.svelte';
+  import { pickScienceLinks, refsFromSlugs } from '$lib/science-links';
+  import type { ScienceTabId } from '$types/science';
   import { spacecraftDiagramPath } from '$lib/spacecraft-diagrams';
   import { loadLadder, ladderSources } from '$lib/image-srcset';
   import { dataLoadFailed } from '$lib/data/core';
@@ -26,6 +29,7 @@
     galleryFetcher: (id: string) => Promise<string[]>;
   };
   let { module: mod, open, onClose, galleryFetcher }: Props = $props();
+  let scienceLinks = $derived(pickScienceLinks(refsFromSlugs(mod?.science)));
 
   let tab: Tab = $state('overview');
   let gallery: string[] = $state([]);
@@ -79,8 +83,8 @@
 <!-- grabFocus={false}: keep focus on the triggering module-list row so
      arrow-key list nav works immediately after the first click. -->
 <Panel {open} {onClose} grabFocus={false} title={mod?.name ?? mod?.id ?? ''}>
-  {#if mod}
-    <div class="head">
+  {#snippet eyebrow()}
+    {#if mod}
       <AgencyRow agency={mod.agency}>
         <span
           class="status"
@@ -88,9 +92,15 @@
           class:status-retired={mod.status === 'RETIRED'}>{statusLabel}</span
         >
       </AgencyRow>
+    {/if}
+  {/snippet}
+  {#snippet heading()}
+    {#if mod}
       <h1 class="name">{mod.name}</h1>
-    </div>
+    {/if}
+  {/snippet}
 
+  {#if mod}
     {#if gallery.length > 0}
       <PanelHeroImage src={gallery[0]} name={mod.name} onOpen={() => (lightboxSrc = gallery[0]!)} />
     {/if}
@@ -227,71 +237,14 @@
         {:else}
           <PanelLinkTiers links={mod.links} entityId={mod.id} />
         {/if}
-        <!--
-          Related crew + life-support topics — issue #303 close-out.
-          Module-agnostic cross-link cluster covering the seven
-          life-in-space + 2 space-stations articles that lacked a
-          natural anchor elsewhere. Always rendered; complements the
-          tier-driven external-link rails above.
-        -->
-        <section class="related-science">
-          <h3>{m.panel_related_science_heading()}</h3>
-          <ul>
-            <li>
-              <a href={localHref(`/science/space-stations/pressurized-volume`)}
-                >{m.chip_label_pressurized_volume()}</a
-              >
-            </li>
-            <li>
-              <a href={localHref(`/science/space-stations/node-module`)}
-                >{m.chip_label_node_module()}</a
-              >
-            </li>
-            <li>
-              <a href={localHref(`/science/life-in-space/crewed-station-design`)}
-                >{m.chip_label_crewed_station_design()}</a
-              >
-            </li>
-            <li>
-              <a href={localHref(`/science/life-in-space/eclss-life-support`)}
-                >{m.chip_label_eclss_life_support()}</a
-              >
-            </li>
-            <li>
-              <a href={localHref(`/science/life-in-space/crew-selection`)}
-                >{m.chip_label_crew_selection()}</a
-              >
-            </li>
-            <li>
-              <a href={localHref(`/science/life-in-space/pre-flight-training`)}
-                >{m.chip_label_pre_flight_training()}</a
-              >
-            </li>
-            <li>
-              <a href={localHref(`/science/life-in-space/crew-dynamics-psychology`)}
-                >{m.chip_label_crew_dynamics_psychology()}</a
-              >
-            </li>
-            <li>
-              <a href={localHref(`/science/life-in-space/sleep-nutrition-circadian`)}
-                >{m.chip_label_sleep_nutrition_circadian()}</a
-              >
-            </li>
-            <li>
-              <a href={localHref(`/science/life-in-space/suit-lineage`)}
-                >{m.chip_label_suit_lineage()}</a
-              >
-            </li>
-            <li>
-              <a href={localHref(`/science/mission-phases/eva`)}>{m.chip_label_eva()}</a>
-            </li>
-            <li>
-              <a href={localHref(`/science/life-in-space/eva-physiology`)}
-                >{m.chip_label_eva_physiology()}</a
-              >
-            </li>
-          </ul>
-        </section>
+        {#if scienceLinks.length > 0}
+          <section class="related-science">
+            <h3>{m.panel_related_science_heading()}</h3>
+            {#each scienceLinks as r (r.tab + r.section)}
+              <ScienceCard tab={r.tab as ScienceTabId} section={r.section} expanded={false} />
+            {/each}
+          </section>
+        {/if}
       {/if}
     </div>
   {/if}
@@ -300,10 +253,6 @@
 <PanelLightbox src={lightboxSrc} images={gallery} onClose={() => (lightboxSrc = null)} />
 
 <style>
-  .head {
-    flex-shrink: 0;
-    margin-bottom: 12px;
-  }
   /* .agency-row / .agency-badge / .status base now come from AgencyRow.svelte. */
   .status-active {
     color: #889fe7;
@@ -311,7 +260,7 @@
     background: rgba(136, 159, 231, 0.08);
   }
   .status-retired {
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--color-text-label);
     border-color: rgba(255, 255, 255, 0.15);
     background: rgba(255, 255, 255, 0.03);
   }
@@ -323,40 +272,30 @@
     line-height: 1;
     margin: 0;
   }
-  .editorial {
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 13px;
-    color: rgba(255, 255, 255, 0.65);
-    line-height: 1.6;
-    margin: 0 0 12px;
-  }
   .function-block {
     margin: 0 0 14px;
     padding: 10px 12px;
-    border-left: 3px solid #4ecdc4;
+    border-left: 3px solid var(--color-accent);
     background: rgba(255, 255, 255, 0.02);
     border-radius: 2px;
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 12px;
+    font-size: var(--size-meta);
     color: rgba(255, 255, 255, 0.78);
     line-height: 1.5;
   }
   .first {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.85);
     padding: 10px 12px;
-    background: rgba(68, 102, 255, 0.08);
-    border-left: 3px solid #4466ff;
+    background: color-mix(in srgb, var(--color-accent) 8%, transparent);
+    border-left: 3px solid var(--color-accent);
     border-radius: 2px;
     margin: 0 0 12px;
   }
   .grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 7px;
     margin-bottom: 14px;
   }
@@ -368,9 +307,9 @@
   }
   .cell-label {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 6px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
-    color: rgba(255, 255, 255, 0.25);
+    color: var(--color-text-label);
     margin-bottom: 3px;
   }
   .cell-value {
@@ -380,14 +319,14 @@
     font-weight: 700;
   }
   .cell-value.short {
-    font-size: 9px;
+    font-size: var(--size-label);
     font-weight: 400;
     color: rgba(255, 255, 255, 0.65);
   }
   .credit {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 7px;
-    color: rgba(255, 255, 255, 0.25);
+    font-size: var(--size-label);
+    color: var(--color-text-label);
     line-height: 1.6;
     border-top: 1px solid rgba(255, 255, 255, 0.06);
     padding-top: 10px;
@@ -395,7 +334,7 @@
   }
   .anatomy-frame {
     background: rgba(4, 8, 15, 0.85);
-    border: 1px solid rgba(78, 205, 196, 0.18);
+    border: 1px solid color-mix(in srgb, var(--color-accent) 18%, transparent);
     border-radius: 4px;
     padding: 8px;
     margin: 0 0 10px;
@@ -405,12 +344,7 @@
     width: 100%;
     height: auto;
   }
-  /* Related-science cross-link cluster (life-in-space + space-stations
-     articles, always-on under the link tiers). The bare <h3> + <ul>
-     + <a> renders with browser defaults — huge dark heading, oversize
-     blue underlined links — which clashes with the rest of the panel.
-     Style it to match the .link-tier visual language: small Space
-     Mono header, padded chip-style anchors. */
+  /* The module's science cards (module `science` slugs, at most five), under the link tiers. */
   .related-science {
     margin-top: 16px;
     padding-top: 14px;
@@ -418,51 +352,19 @@
   }
   .related-science h3 {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 7px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
-    /* Muted accent, distinct from INTRO teal / CORE blue / DEEP gold
+    /* Muted accent, distinct from INTRO accent blue / CORE blue / DEEP gold
        so the related-science cluster reads as a footer cross-link,
        not a fourth link-tier. */
-    color: rgba(255, 255, 255, 0.45);
+    color: var(--color-text-label);
     margin: 0 0 6px;
     text-transform: uppercase;
   }
-  .related-science ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-  }
-  .related-science li {
-    margin: 0;
-  }
-  .related-science a {
-    display: block;
-    padding: 8px 10px;
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 4px;
-    color: rgba(255, 255, 255, 0.75);
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
-    text-decoration: none;
-    line-height: 1.5;
-    min-height: 44px;
-    transition: all 0.15s;
-  }
-  .related-science a:hover,
-  .related-science a:focus-visible {
-    border-color: rgba(255, 255, 255, 0.2);
-    background: rgba(255, 255, 255, 0.05);
-    color: #fff;
-    outline: none;
-  }
   .anatomy-caption {
     font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 11px;
+    font-style: italic; /* a1-keep: caption */
+    font-size: var(--size-caption);
     color: rgba(255, 255, 255, 0.55);
     line-height: 1.5;
     margin: 0 0 12px;

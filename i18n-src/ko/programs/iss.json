@@ -95,5 +95,69 @@
     "/fleet?id=iss": "함대 — 국제우주정거장",
     "/programs/mir": "Mir — ISS가 물려받은 정거장",
     "/earth?site=iss": "머리 위의 ISS"
+  },
+  "roster": {
+    "module:zarya": {
+      "note": "첫 번째 모듈 — 미국이 자금을 대고 러시아가 만든 제어 및 전력 블록으로, 정거장 전체의 씨앗이다."
+    },
+    "module:unity": {
+      "note": "첫 번째 미국 모듈로, 포트 여섯 개를 가진 연결 허브이며 2주 뒤 Zarya와 결합했다."
+    },
+    "module:zvezda": {
+      "note": "정거장을 거주 가능하게 만든 러시아 서비스 모듈: 승무원 거주 공간, 생명 유지 장치, 추진 장치."
+    },
+    "module:destiny": {
+      "note": "미국 실험실 — 주요 연구 모듈이자 정거장의 지휘 센터."
+    },
+    "module:canadarm2": {
+      "note": "정거장 대부분을 조립했고 도착하는 우주선을 붙잡는 캐나다의 로봇 팔."
+    },
+    "module:quest": {
+      "note": "미국 에어락으로, 미국과 러시아 우주복 모두로 우주유영을 할 수 있게 한다."
+    },
+    "module:pirs": {
+      "note": "러시아의 도킹 구획 겸 에어락 — Nauka를 위한 자리를 만들려고 2021년 궤도에서 이탈시켰다."
+    },
+    "module:harmony": {
+      "note": "국제 실험실들로 가는 길을 연 허브."
+    },
+    "module:columbus": {
+      "note": "유럽의 실험실 — 정거장에 대한 ESA의 핵심 기여."
+    },
+    "module:kibo": {
+      "note": "일본의 실험실 — 자체 외부 플랫폼을 가진 가장 큰 단일 모듈."
+    },
+    "module:poisk": {
+      "note": "Zvezda의 천정 쪽에 있는 러시아 도킹 및 에어락 모듈."
+    },
+    "module:tranquility": {
+      "note": "생명 유지 장치와 운동 장비 — 그리고 Cupola의 장착부."
+    },
+    "module:cupola": {
+      "note": "창이 일곱 개인 관측 돔으로, 정거장에서 보는 가장 유명한 지구 풍경의 원천."
+    },
+    "module:rassvet": {
+      "note": "러시아 도킹 및 보관 모듈."
+    },
+    "module:leonardo": {
+      "note": "재사용 화물 운반선에서 전환된 상설 보관 모듈."
+    },
+    "module:beam": {
+      "note": "궤도에서 확장형 거주 시설을 시험하는 실험용 팽창식 모듈."
+    },
+    "module:nauka": {
+      "note": "오랫동안 지연된 러시아 과학 모듈로, 조립이 시작된 지 20년이 넘어 추가되었다."
+    },
+    "module:prichal": {
+      "note": "러시아 도킹 노드 — 가장 최근에 추가된 것 중 하나."
+    },
+    "Expedition 1": {
+      "note": "첫 상주 승무원이 2000년 11월 2일 도착했다. 이후 인류는 끊임없이 그곳에 살아 왔다 — 역사상 지구 밖에서 가장 긴 끊김 없는 인류의 존재",
+      "name": "Expedition 1"
+    },
+    "Commercial Crew": {
+      "note": "SpaceX의 Crew Dragon이 9년 만에 미국의 승무원 발사를 되살리며, 저궤도 접근을 상업 사업자에게 넘기는 일을 시작했다",
+      "name": "Commercial Crew"
+    }
   }
 }

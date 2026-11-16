@@ -6,10 +6,16 @@
   import PanelLightbox from './PanelLightbox.svelte';
   import Panel from './Panel.svelte';
   import { getSunGallery } from '$lib/data';
-  import { linkifyMission, loadMissionIndex } from '$lib/missions-linkify';
+  import {
+    linkifyMission,
+    loadMissionIndex,
+    onMissionLinkClick,
+    sortNewestFirst,
+  } from '$lib/missions-linkify';
   import type { LocalizedSun } from '$types/sun';
   import * as m from '$lib/paraglide/messages';
   import ScienceCard from './ScienceCard.svelte';
+  import { pickScienceLinks } from '$lib/science-links';
   import WhyPopover from './WhyPopover.svelte';
   import type { ScienceTabId } from '$types/science';
   import { dataLoadFailed } from '$lib/data/core';
@@ -20,23 +26,18 @@
   // SmallBodyPanel.
   type Tab = 'overview' | 'gallery' | 'technical' | 'missions';
 
-  /** /science cross-sections relevant to the Sun: it's the central focus of
-   * every heliocentric orbit, so vis-viva and Kepler's laws sit on it. */
-  const SUN_SCIENCE_SECTIONS: { tab: ScienceTabId; section: string; why?: string }[] = [
-    { tab: 'orbits', section: 'keplerian-orbit' },
-    { tab: 'orbits', section: 'vis-viva' },
-    { tab: 'orbits', section: 'keplers-laws' },
-    { tab: 'scales-time', section: 'au' },
-    { tab: 'scales-time', section: 'ecliptic-plane' },
-    { tab: 'scales-time', section: 'frames' },
-  ];
-
   type Props = {
     sun: LocalizedSun | null;
     open: boolean;
     onClose: () => void;
+    /** A mission link opens the mission in place (the host's mission panel); absent: navigate. */
+    onMissionOpen?: (missionId: string) => void;
+    /** A mission is open over this panel (the host stacks it): this one is not painted. */
+    covered?: boolean;
   };
-  let { sun, open, onClose }: Props = $props();
+  let { sun, open, onClose, onMissionOpen, covered }: Props = $props();
+  // The Sun's `science_sections` (locale overlay) are its curated /science cards; there is no default list.
+  let scienceLinks = $derived(pickScienceLinks(sun?.science_sections));
 
   let tab: Tab = $state('overview');
   let gallery: string[] = $state([]);
@@ -70,11 +71,16 @@
   let hasLinks = $derived((sun?.links?.length ?? 0) > 0);
 </script>
 
-<Panel {open} {onClose} title={sun?.name ?? ''}>
+<Panel {open} {onClose} {covered} title={sun?.name ?? ''}>
+  {#snippet eyebrow()}
+    {#if sun}<div class="type">{sun.type.toUpperCase()}</div>{/if}
+  {/snippet}
+  {#snippet heading()}
+    {#if sun}<div class="name">{sun.name}</div>{/if}
+  {/snippet}
+
   {#if sun}
     <div class="head">
-      <div class="type">{sun.type.toUpperCase()}</div>
-      <div class="name">{sun.name}</div>
       <div class="stat-row">
         <div class="stat">
           <div class="stat-label">{m.sun_label_spectral_class()}</div>
@@ -111,10 +117,10 @@
       {#if tab === 'overview'}
         <p class="editorial">{sun.fact}</p>
         <p class="editorial">{sun.bio}</p>
-        {#if (sun.science_sections ?? SUN_SCIENCE_SECTIONS).length > 0}
+        {#if scienceLinks.length > 0}
           <div class="science-section">
             <h3 class="library-heading">{m.panel_tab_science()}</h3>
-            {#each sun.science_sections ?? SUN_SCIENCE_SECTIONS as entry (entry.tab + entry.section)}
+            {#each scienceLinks as entry (entry.tab + entry.section)}
               <ScienceCard
                 tab={entry.tab as ScienceTabId}
                 section={entry.section}
@@ -193,11 +199,15 @@
           <p class="empty-tab">{m.panel_sun_no_observatory()}</p>
         {:else}
           <ul class="mission-list">
-            {#each sun.mission_visits ?? [] as visit (visit)}
+            {#each sortNewestFirst(sun.mission_visits ?? []) as visit (visit)}
               {@const link = linkifyMission(visit)}
               <li>
                 {#if link}
-                  <a href={link.href} class="mission-link">{link.label}</a><span>{link.rest}</span>
+                  <a
+                    href={link.href}
+                    class="mission-link"
+                    onclick={(e) => onMissionLinkClick(e, link, onMissionOpen)}>{link.label}</a
+                  ><span>{link.rest}</span>
                 {:else}
                   {visit}
                 {/if}
@@ -232,9 +242,9 @@
   }
   .type {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 8px;
+    font-size: var(--size-label);
     letter-spacing: 3px;
-    color: rgba(255, 220, 100, 0.5);
+    color: rgba(255, 220, 100, 0.6);
     margin-bottom: 4px;
   }
   .name {
@@ -259,9 +269,9 @@
   .stat-label,
   .cell-label {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 6px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
-    color: rgba(255, 255, 255, 0.25);
+    color: var(--color-text-label);
     margin-bottom: 3px;
   }
   .stat-value,
@@ -276,8 +286,8 @@
   }
   .cell-sub {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 7px;
-    color: rgba(255, 255, 255, 0.3);
+    font-size: var(--size-label);
+    color: var(--color-text-label);
     margin-top: 2px;
   }
 
@@ -287,17 +297,9 @@
     border-bottom-color: #ffc850;
   }
 
-  .editorial {
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 13px;
-    color: rgba(255, 255, 255, 0.6);
-    line-height: 1.6;
-    margin: 0 0 12px 0;
-  }
   .grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 7px;
     margin-bottom: 12px;
   }
@@ -309,8 +311,8 @@
   }
   .src {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 7px;
-    color: rgba(255, 255, 255, 0.15);
+    font-size: var(--size-label);
+    color: var(--color-text-label);
     line-height: 1.8;
   }
 

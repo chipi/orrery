@@ -88,5 +88,18 @@
     "/fleet?id=mangalyaan": "Flotte — die Mars Orbiter Mission",
     "/programs/chandrayaan": "Chandrayaan — Indiens Mondprogramm",
     "/mars?site=mangalyaan": "Mangalyaan in der Marsumlaufbahn"
+  },
+  "roster": {
+    "mission:mangalyaan": {
+      "note": "die Mars Orbiter Mission schwenkt im ersten Versuch in die Marsumlaufbahn ein — Indien ist die erste Nation überhaupt, der das beim Mars gleich beim Debüt gelingt, und die erste asiatische Nation im Marsorbit"
+    },
+    "The cost": {
+      "note": "die gesamte Mission kostete etwa 74 Millionen Dollar — weniger als der Hollywoodfilm Gravity und ein Bruchteil vergleichbarer westlicher Marsmissionen",
+      "name": "Die Kosten"
+    },
+    "Eight years on station": {
+      "note": "ausgelegt für sechs Monate, arbeitete der Orbiter etwa acht Jahre, bevor der Kontakt endgültig abbrach — ein kleiner Technologiedemonstrator, der zu einer langlebigen Wissenschaftsmission wurde",
+      "name": "Acht Jahre im Einsatz"
+    }
   }
 }

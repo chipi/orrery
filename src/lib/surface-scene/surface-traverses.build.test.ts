@@ -1,16 +1,15 @@
 // @vitest-environment jsdom
-import { liftForDark } from '$lib/three-label';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import * as THREE from 'three';
 import { Line2 } from 'three/examples/jsm/lines/Line2.js';
 import {
   createSurfaceTraverses,
   daysBetween,
+  solRampColor,
   traversePathKm,
   type SurfaceTraversesContext,
   type TraverseLine,
 } from './surface-traverses';
-import { colorFor } from '$lib/surface-map/nation-palette';
 import { latLonToUnitSphere } from '$lib/moon-projection';
 import { REGIONAL_PATCH_DIAMETER_WORLD_UNITS } from '$lib/hotspot-surface-patch';
 import * as m from '$lib/paraglide/messages';
@@ -153,8 +152,9 @@ describe('rebuildTraverses basics', () => {
     expect(tl.isActive).toBe(false);
     expect(tl.surfaceRadius).toBeCloseTo(R + 0.05, 10);
 
-    // casing + line + startDot + endDot + 2 caption groups
-    expect(planetMesh.children).toHaveLength(6);
+    // casing + line + startDot + endDot + 2 caption groups, plus the landing
+    // ring and 3 km milestone pills every route now gets (UXD-044)
+    expect(planetMesh.children).toHaveLength(10);
     expect(tl.casing?.parent).toBe(planetMesh);
     expect(tl.line).toBeInstanceOf(Line2);
     expect(tl.line.userData).toEqual({ roverId: 'perseverance', kind: 'traverse' });
@@ -162,10 +162,9 @@ describe('rebuildTraverses basics', () => {
     // first point equals the site → nothing prepended → 3 points = 2 segments
     expect(segments(tl.line)).toBe(2);
 
-    // path colour: the nation palette lifted for dark ground, ended = 0.7 opacity
-    expect(tl.lineMaterial.color.getHexString()).toBe(
-      liftForDark(colorFor(rover)).slice(1).toLowerCase(),
-    );
+    // path colour: the shared ramp by distance (UXD-044), not the nation colour; ended = 0.7 opacity
+    expect(tl.lineMaterial.vertexColors).toBe(true);
+    expect(tl.lineMaterial.color.getHexString()).toBe('ffffff');
     expect(tl.lineMaterial.opacity).toBe(0.7);
     expect(tl.lineMaterial.linewidth).toBe(4);
     expect(tl.lineMaterial.depthTest).toBe(false);
@@ -289,10 +288,65 @@ describe('rebuildTraverses basics', () => {
     expect(photos[0].userData.thumb).toBe('/images/a-320.webp');
   });
 
-  it('falls back to a white path for a rover with no site', () => {
+  it('a rover with no site still gets the ramp', () => {
     const { rebuildTraverses, ctx } = setup({ traverses: { r: traverse({ rover_id: 'r' }) } });
     rebuildTraverses();
-    expect(ctx.traverseLines[0].lineMaterial.color.getHexString()).toBe('ffffff');
+    expect(ctx.traverseLines[0].lineMaterial.vertexColors).toBe(true);
+  });
+
+  it('sol-less route (Moon, UXD-044): distance ramp, km milestones, landing ring, km hover, no sol ticks', () => {
+    // ~3.4 km of path, no point_sols, no length_km: a milestone every 0.5 km.
+    const moonSite = site({ id: 'luna', lat: 18.4, lon: 77.4, landing_date: '1970-11-17' });
+    const points: Array<[number, number]> = [
+      [18.4, 77.4],
+      [18.4, 77.43],
+      [18.4, 77.46],
+      [18.4, 77.5],
+    ];
+    const { rebuildTraverses, ctx } = setup({
+      sites: [moonSite],
+      traverses: { luna: traverse({ rover_id: 'luna', points }) },
+    });
+    rebuildTraverses();
+    const tl = ctx.traverseLines[0];
+    // Ramp: first vertex = ramp(0) blue, last = ramp(1) amber (both read from the colour attribute).
+    const col = tl.line.geometry.getAttribute('instanceColorStart');
+    const first = solRampColor(0);
+    const lastC = solRampColor(1);
+    expect(col.getX(0)).toBeCloseTo(first.r, 5);
+    expect(col.getZ(0)).toBeCloseTo(first.b, 5);
+    const colEnd = tl.line.geometry.getAttribute('instanceColorEnd');
+    expect(colEnd.getX(2)).toBeCloseTo(lastC.r, 5);
+    expect(colEnd.getZ(2)).toBeCloseTo(lastC.b, 5);
+    // No sol ticks, no sol labels; km milestones present.
+    expect(tl.ticks).toHaveLength(0);
+    const kinds = (tl.tickLabels ?? []).map((l) => l.userData.kind);
+    expect(kinds).not.toContain('traverse-tick-label');
+    const km = kinds.filter((k) => k === 'traverse-km-label').length;
+    expect(km).toBeGreaterThanOrEqual(3);
+    // Landing ring on the first point, no sol.
+    expect(tl.stopPins[0].userData.kind).toBe('traverse-landing');
+    expect(tl.stopPins[0].userData.stopSol).toBeUndefined();
+    // Hover by distance: km per point, no sols.
+    expect(tl.pointSols).toBeUndefined();
+    expect(tl.pointKm?.[0]).toBe(0);
+    expect(tl.pointKm?.[3]).toBeGreaterThan(3);
+    expect(tl.pathWorld).toHaveLength(4);
+    // No replay marker (needs sols).
+    expect(tl.replayMarker).toBeUndefined();
+  });
+
+  it('a sol-less route with a prepended landing leg keeps the ramp, milestones and hover aligned to the drawn points', () => {
+    const far = site({ id: 'far', lat: 18.0, lon: 77.0 });
+    const { rebuildTraverses, ctx } = setup({
+      sites: [far],
+      traverses: { far: traverse({ rover_id: 'far' }) },
+    });
+    rebuildTraverses();
+    const tl = ctx.traverseLines[0];
+    expect(tl.pathWorld).toHaveLength(4);
+    expect(tl.pointKm).toHaveLength(4);
+    expect(segments(tl.line)).toBe(3);
   });
 });
 
@@ -433,9 +487,11 @@ describe('rebuildTraverses stops', () => {
     });
     rebuildTraverses();
     const tl = ctx.traverseLines[0];
-    expect(tl.stopPins).toHaveLength(3);
-    expect(tl.stopPinTextures).toHaveLength(3);
-    const [p0, p1] = tl.stopPins;
+    // the landing ring comes first (UXD-044), then one pin per stop
+    expect(tl.stopPins[0].userData.kind).toBe('traverse-landing');
+    expect(tl.stopPins).toHaveLength(4);
+    expect(tl.stopPinTextures).toHaveLength(4);
+    const [, p0, p1] = tl.stopPins;
     expect(p0.userData).toEqual({
       roverId: 'r',
       kind: 'traverse-stop',
@@ -466,10 +522,10 @@ describe('rebuildTraverses stops', () => {
     expect(fills).toContain('#fde047'); // unknown -> feature yellow
   });
 
-  it('has no pins when the traverse lists no stops', () => {
+  it('has only the landing ring when the traverse lists no stops', () => {
     const { rebuildTraverses, ctx } = setup({ traverses: { r: traverse({ rover_id: 'r' }) } });
     rebuildTraverses();
-    expect(ctx.traverseLines[0].stopPins).toEqual([]);
+    expect(ctx.traverseLines[0].stopPins.map((p) => p.userData.kind)).toEqual(['traverse-landing']);
   });
 });
 

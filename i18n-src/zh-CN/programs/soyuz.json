@@ -90,5 +90,11 @@
   "link_labels": {
     "/earth": "地球 — 轨道、交会对接与发射场",
     "/science/mission-phases/edl": "进入、下降与着陆"
+  },
+  "roster": {
+    "Soyuz 4 & 5": {
+      "note": "两艘载人航天器的首次对接，以及首次乘组转移，通过两艘飞船之间的太空行走完成",
+      "name": "Soyuz 4 & 5"
+    }
   }
 }

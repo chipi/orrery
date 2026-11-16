@@ -1,0 +1,47 @@
+{
+  "name": "Artemis I",
+  "vehicle": "SLS Block 1 + Orion（无人）",
+  "payload": "搭载带传感器假人 Commander Moonikin Campos 的 Orion；10 颗 CubeSats",
+  "delta_v": "~0.43 km/s（仅含离开 DRO 与返程飞越的点火；总量未给出）",
+  "type": "无人深空试验 · 已飞行",
+  "first": "Space Launch System 的首次飞行，Orion 绕月无人试验",
+  "description": "Artemis I 是 NASA Space Launch System 的首次飞行，也是 Orion 飞船绕月的无人试验。SLS Block 1 于 2022-11-16 的 1:47 EST（06:47 UTC）从肯尼迪航天中心的 Launch Complex 39B 发射。2022-11-21，Orion 在月面上空约 130 km（80 英里）处进行了带动力的去程飞越，这是进入远距逆行轨道（DRO）所需两次机动中的第一次，并于 2022-11-25 进入该轨道。2022-11-26，它超过了 Apollo 13 创下的、为载人设计的航天器距地球最远的纪录（248,655 英里）。在最远点，Orion 距地球 268,563 英里（约 432,000 km），在月球背面之外 43,471 英里（约 70,000 km）。2022-12-01 一次 1 分 45 秒的点火使其离开轨道，2022-12-05 一次 3 分 27 秒的返程带动力飞越（同样在月面上空约 130 km）使其转向地球。Orion 于 2022-12-11 的 12:40 EST 在圣迭戈外海的太平洋溅落，历时 25 天 10 小时 53 分钟。指令长座椅上坐着穿着 Orion Crew Survival System 航天服的带传感器假人 Commander Moonikin Campos。Orion 完成了 161 项试验目标；对隔热罩意外烧蚀（char loss）的分析已用于 Artemis II。",
+  "events": [
+    {
+      "met": 0,
+      "label": "发射",
+      "note": "SLS Block 1 于 2022-11-16 的 06:47 UTC 从 LC-39B 发射，Orion 无人。",
+      "type": "nominal"
+    },
+    {
+      "met": 5.26,
+      "label": "去程飞越",
+      "note": "2022-11-21，在 2 分 30 秒的点火后，于月面上空约 130 km 进行带动力飞越。",
+      "type": "info"
+    },
+    {
+      "met": 9.63,
+      "label": "进入 DRO",
+      "note": "Orion 于 2022-11-25 进入远距逆行轨道。",
+      "type": "nominal"
+    },
+    {
+      "met": 15.63,
+      "label": "离开 DRO",
+      "note": "2022-12-01 一次 1 分 45 秒的点火（约 0.14 km/s）使 Orion 离开轨道。",
+      "type": "nominal"
+    },
+    {
+      "met": 19.41,
+      "label": "返程飞越",
+      "note": "2022-12-05，在月面上空约 130 km 进行带动力飞越；一次 3 分 27 秒的点火（约 0.29 km/s）使 Orion 转向地球。",
+      "type": "info"
+    },
+    {
+      "met": 25.45,
+      "label": "溅落",
+      "note": "2022-12-11 的 12:40 EST，在圣迭戈外海的太平洋，历时 25 天 10 小时 53 分钟。",
+      "type": "nominal"
+    }
+  ]
+}

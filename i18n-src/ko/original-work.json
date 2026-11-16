@@ -1991,6 +1991,86 @@
       "title": "Sputnik 1",
       "what": "반구 이음매와 볼트 36개, 뒤로 젖혀진 길이 2.4 m와 2.9 m의 채찍 안테나 4개를 갖춘 지름 58 cm의 매끈한 구.",
       "where": "비행 + 탐험"
+    },
+    "/images/colophon/model-pad-apollo-lut_webp": {
+      "title": "발사대: 아폴로, LC-39",
+      "what": "새턴 V 발사대: 이륙 때 떨어져 나가는 스윙 암을 갖춘 높이 380피트의 엄빌리컬 타워와 화염 도랑. 치수는 위키백과에 실린 NASA 수치에 따랐습니다.",
+      "where": "비행 · 발사대"
+    },
+    "/images/colophon/model-pad-shuttle_webp": {
+      "title": "발사대: 우주왕복선, LC-39",
+      "what": "우주왕복선 발사대: 고정 서비스 구조물(마스트 포함 350피트), 뒤로 젖힌 회전 서비스 구조물, 높이 290피트의 급수탑. 주요 높이는 위키백과에 따랐고 나머지는 대략적입니다.",
+      "where": "비행 · 발사대"
+    },
+    "/images/colophon/model-pad-sls_webp": {
+      "title": "발사대: SLS, LC-39B",
+      "what": "아르테미스 발사대: 로켓 옆의 모바일 런처 타워와 높은 피뢰탑 세 개. 크기는 대략적입니다.",
+      "where": "비행 · 발사대"
+    },
+    "/images/colophon/model-pad-soyuz_webp": {
+      "title": "발사대: 소유스, 바이코누르와 플레세츠크",
+      "what": "R-7 계열 발사대: 이륙 때 바깥으로 넘어지는 지지 암 네 개, 물러난 서비스 캐빈 두 개, 피뢰 마스트, 화염 구덩이. 크기는 대략적입니다.",
+      "where": "비행 · 발사대"
+    },
+    "/images/colophon/model-pad-proton_webp": {
+      "title": "발사대: 프로톤, 바이코누르",
+      "what": "이륙 때 들어가는 스윙 암이 달린 고정 서비스 타워. 화염 도랑 옆. 크기는 대략적입니다.",
+      "where": "비행 · 발사대"
+    },
+    "/images/colophon/model-pad-f9-39a_webp": {
+      "title": "발사대: 팰컨, LC-39A",
+      "what": "39A의 스페이스X: 이륙 전 1.5도, 이륙 때 45도 뒤로 젖혀지는 트랜스포터 이렉터와 350피트 위로 높인 옛 타워. 수치는 위키백과에 따랐습니다.",
+      "where": "비행 · 발사대"
+    },
+    "/images/colophon/model-pad-f9-cat_webp": {
+      "title": "발사대: 팰컨, SLC-40과 승무원 타워",
+      "what": "2023년 승무원 접근 타워 이후의 SLC-40 스페이스X. 이륙 때 멀어지는 트랜스포터 이렉터가 있습니다. 타워 높이는 대략적입니다.",
+      "where": "비행 · 발사대"
+    },
+    "/images/colophon/model-pad-f9-te_webp": {
+      "title": "발사대: 팰컨, SLC-40과 SLC-4E",
+      "what": "단순한 팰컨 발사대: 이륙 때 멀어지는 트랜스포터 이렉터와 피뢰 마스트. 크기는 대략적입니다.",
+      "where": "비행 · 발사대"
+    },
+    "/images/colophon/model-pad-starbase_webp": {
+      "title": "발사대: 스타십, 스타베이스",
+      "what": "포획 암을 벌린 스타베이스 발사 타워. 타워 높이는 대략적입니다.",
+      "where": "비행 · 발사대"
+    },
+    "/images/colophon/model-pad-atlas-v_webp": {
+      "title": "발사대: 아틀라스 V, SLC-41",
+      "what": "ULA 발사대: 이동식 발사 플랫폼, 엄빌리컬 타워, 피뢰탑 네 개. 수직 통합 건물은 발사대와 떨어져 있어 생략했습니다. 크기는 대략적입니다.",
+      "where": "비행 · 발사대"
+    },
+    "/images/colophon/model-pad-cape-classic_webp": {
+      "title": "발사대: 케이프의 서비스 타워 발사대",
+      "what": "케이프의 아틀라스, 델타, 타이탄, 새턴 IB 발사대: 기체 옆에 스윙 암이 달린 엄빌리컬 타워. 크기는 대략적입니다.",
+      "where": "비행 · 발사대"
+    },
+    "/images/colophon/model-pad-kourou-a5_webp": {
+      "title": "발사대: 아리안 4와 5, 쿠루",
+      "what": "ELA-2와 ELA-3 발사대: 발사체 옆의 엄빌리컬 마스트와 높은 피뢰탑 네 개. 크기는 대략적입니다.",
+      "where": "비행 · 발사대"
+    },
+    "/images/colophon/model-pad-kourou-a6_webp": {
+      "title": "발사대: 아리안 6, 쿠루",
+      "what": "ELA-4 발사대: 엄빌리컬 마스트, 피뢰탑 두 개, 멀리 물러난 이동식 갠트리. 크기는 대략적입니다.",
+      "where": "비행 · 발사대"
+    },
+    "/images/colophon/model-pad-chinese-fst_webp": {
+      "title": "발사대: 중국의 서비스 타워",
+      "what": "주취안, 시창, 원창, 타이위안의 고정 서비스 타워. 작업 플랫폼이 이륙 때 접힙니다. 크기는 대략적입니다.",
+      "where": "비행 · 발사대"
+    },
+    "/images/colophon/model-pad-tanegashima_webp": {
+      "title": "발사대: 다네가시마",
+      "what": "요시노부 발사대: H-II 로켓의 엄빌리컬 타워와 피뢰탑. 크기는 대략적입니다.",
+      "where": "비행 · 발사대"
+    },
+    "/images/colophon/model-pad-sriharikota_webp": {
+      "title": "발사대: 스리하리코타",
+      "what": "ISRO 발사대: 기체 옆의 엄빌리컬 타워와 멀리 물러난 이동식 서비스 타워. 크기는 대략적입니다.",
+      "where": "비행 · 발사대"
     }
   },
   "capsules": {
@@ -2351,6 +2431,21 @@
       "title": "감각 레이어",
       "what": "파형이 가로지르는 나침반 바늘 — 감각 설정(소리 / 진동 / 기울기)을 엽니다.",
       "where": "내비게이션"
+    },
+    "scale-glyphs": {
+      "title": "스케일 단계 글리프",
+      "what": "/explore의 각 단계마다 하나씩 있는 작은 그림으로, 태양계에서 우주 웹까지 이어진다. 단계 선택기, 내비게이션 행, 단계 카드에 쓰인다.",
+      "where": "탐험 · 내비게이션 · 단계 선택기",
+      "variants": {
+        "Solar System": "태양계",
+        "Stellar Neighborhood": "항성 근방",
+        "Milky Way": "우리 은하",
+        "Local Group": "국부 은하군",
+        "Local Sheet": "국부 시트",
+        "Virgo Supercluster": "처녀자리 초은하단",
+        "Laniakea": "라니아케아",
+        "Cosmic Web": "우주 웹"
+      }
     }
   }
 }

@@ -1,0 +1,30 @@
+{
+  "name": "Viking 2",
+  "vehicle": "Titan IIIE-Centaur",
+  "payload": "3530 kg (orbiter en lander)",
+  "delta_v": "~4,5 km/s (schatting)",
+  "type": "ORBITER · LANDER · GEVLOGEN",
+  "first": "De tweede Viking-lander, geland op Utopia Planitia, ongeveer 6.460 km van de landingsplaats van Viking 1",
+  "description": "Viking 2 was de tweede van de twee Viking-ruimtevaartuigen van NASA, elk een orbiter met een lander. Het werd op 1975-09-09 gelanceerd met een Titan IIIE-Centaur, kwam op 1976-08-07 in een baan om Mars en zette zijn lander op 1976-09-03 neer op Utopia Planitia, ongeveer 6.460 km van de landingsplaats van Viking 1. De lander werkte tot 1980-04-12. De orbiter stuurde bijna 16.000 beelden terug in 706 banen voordat hij op 1978-07-24 werd uitgeschakeld na een lek in het voortstuwingssysteem. De bodemexperimenten, net als die van Viking 1, waren niet doorslaggevend over de vraag of er leven op Mars bestaat of ooit heeft bestaan. De twee orbiters stuurden samen 52.663 beelden terug en brachten ongeveer 97% van de planeet in kaart; de twee landers stuurden 4.500 foto's terug.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCERING",
+      "note": "Titan IIIE-Centaur vanaf Cape Canaveral, 1975-09-09.",
+      "type": "nominal"
+    },
+    {
+      "met": 333,
+      "label": "MARSBAANINSERTIE",
+      "note": "Orbiter werd op 1976-08-07 ingevangen in een baan van 1500 × 33.000 km.",
+      "type": "nominal"
+    },
+    {
+      "met": 360,
+      "label": "OPPERVLAKTECONTACT",
+      "note": "Lander landt op Utopia Planitia op 1976-09-03.",
+      "type": "nominal"
+    }
+  ],
+  "vehicle_stage": "bovenste trap Centaur"
+}

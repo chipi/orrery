@@ -31,14 +31,14 @@ I cannot guarantee a bounty.
 In scope:
 
 - Bundled JavaScript / WASM
-- The static SPA on `chipi.github.io/orrery/` (and any future production hosting)
+- The static SPA on `www.orrerylearn.com` (self-hosted VPS)
 - `scripts/fetch-assets.ts` (build-time only — but image-fetch URLs are public input)
 - Mission-data JSON files (could in theory carry XSS via `description` if rendered as HTML — they're not, but the schema is the trust boundary)
 
 Out of scope:
 
 - Third-party dependencies (file with the upstream maintainer instead).
-- The GitHub Pages CDN itself.
+- The GitHub Pages host itself (it serves only the project docs).
 - The NASA Images API / Wikimedia Commons / Solar System Scope (upstream sources).
 
 ## Public-disclosure policy

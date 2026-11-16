@@ -22,27 +22,32 @@
     {
       "name": "Conceived",
       "year": 1996,
-      "note": "planning begins on a 'Next Generation Space Telescope' to succeed Hubble — the start of a 25-year saga of redesigns, delays, and a budget that grew roughly tenfold"
+      "note": "planning begins on a 'Next Generation Space Telescope' to succeed Hubble — the start of a 25-year saga of redesigns, delays, and a budget that grew roughly tenfold",
+      "milestone": true
     },
     {
       "name": "Nearly cancelled",
       "year": 2011,
-      "note": "years behind schedule and billions over budget, the program was targeted for cancellation by Congress before being saved — a survival as narrow as any in this atlas"
+      "note": "years behind schedule and billions over budget, the program was targeted for cancellation by Congress before being saved — a survival as narrow as any in this atlas",
+      "milestone": true
     },
     {
       "name": "Launch",
       "year": 2021,
-      "note": "on Christmas Day, an ESA-provided Ariane 5 launches JWST flawlessly — so precisely that the telescope saved enough fuel to roughly double its expected lifetime"
+      "note": "on Christmas Day, an ESA-provided Ariane 5 launches JWST flawlessly — so precisely that the telescope saved enough fuel to roughly double its expected lifetime",
+      "milestone": true
     },
     {
       "name": "The unfolding",
       "year": 2022,
-      "note": "over two weeks, 344 single-point-failure steps deploy the tennis-court sunshield and the segmented mirror a million miles from any hope of repair — every one of them worked"
+      "note": "over two weeks, 344 single-point-failure steps deploy the tennis-court sunshield and the segmented mirror a million miles from any hope of repair — every one of them worked",
+      "milestone": true
     },
     {
       "name": "First images",
       "year": 2022,
-      "note": "the first full-colour images stun the world — the deepest infrared view of the universe ever taken, galaxies from the dawn of cosmic time"
+      "note": "the first full-colour images stun the world — the deepest infrared view of the universe ever taken, galaxies from the dawn of cosmic time",
+      "milestone": true
     }
   ],
   "related_programs": [

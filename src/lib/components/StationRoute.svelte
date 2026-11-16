@@ -7,6 +7,7 @@
   import { base } from '$app/paths';
   import * as THREE from 'three';
   import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+  import { ORBIT_CONTROLS_TOUCHES } from '$lib/three/touch-gestures';
   import { createSpinAccumulator } from '$lib/three/spin-accumulator';
   import { createLayeredStarField } from '$lib/three/star-field';
   import { tickSunTrackingArrays } from '$lib/three/sun-tracking';
@@ -44,6 +45,9 @@
   import ScienceLayersPanel from '$lib/components/ScienceLayersPanel.svelte';
   import StationBlueprint from '$lib/components/StationBlueprint.svelte';
   import AgencyBadge from '$lib/components/AgencyBadge.svelte';
+  import EntityThumb from '$lib/components/EntityThumb.svelte';
+  import { thumbOf } from '$lib/entity-thumb';
+  import { agencyRingColor } from '$lib/surface-map/nation-palette';
   import StationTimelineStrip from '$lib/components/StationTimelineStrip.svelte';
   import StationAssemblyControl from '$lib/components/StationAssemblyControl.svelte';
   import MobileDrawerGroup from '$lib/components/MobileDrawerGroup.svelte';
@@ -58,6 +62,8 @@
   } from '$lib/station-assembly-anim';
   import { createAssemblyRef, syncAssemblyRef } from '$lib/station-assembly-state';
   import * as m from '$lib/paraglide/messages';
+  import Chip from './Chip.svelte';
+  import ResetViewButton from './ResetViewButton.svelte';
   import VisuallyHiddenH1 from '$lib/components/VisuallyHiddenH1.svelte';
   import { metaDescription } from '$lib/seo';
   import { cue } from '$lib/sensory/feedback';
@@ -370,7 +376,7 @@
   // the whole run wraps round at the very ends. Home/End jump to the
   // first module / last visitor.
   //
-  // Arrows move DOM FOCUS ONLY — the committed selection (teal
+  // Arrows move DOM FOCUS ONLY — the committed selection (accent blue
   // aria-current) and the open panel stay put while you traverse. Each
   // focused row's onfocus lights the canvas-hover outline so you preview
   // where you are without committing. Enter/Space open the focused row
@@ -516,7 +522,7 @@
     // highlights from clipping flat-white when the bloom pass +
     // bright Earth backdrop stack on the sun-lit side of the station.
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
-    renderer.toneMappingExposure = 1.05;
+    renderer.toneMappingExposure = 1.25;
     // Hero IBL — the PBR station proxy (MeshStandard) gets real reflections.
     // The Earth backdrop is MeshPhong (unaffected); ACES is already on above.
     scene.environment = heroEnvironment(renderer);
@@ -533,6 +539,8 @@
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true;
     controls.dampingFactor = 0.06;
+    controls.touches.ONE = ORBIT_CONTROLS_TOUCHES.ONE;
+    controls.touches.TWO = ORBIT_CONTROLS_TOUCHES.TWO;
     controls.target.set(...config.camera.target);
     controls.update();
 
@@ -578,17 +586,19 @@
       width: container.clientWidth,
       height: container.clientHeight,
       pixelRatioCap: quality.pixelRatioCap,
+      outputPass: true,
       bloom: quality.bloomEnabled
         ? {
             strength: quality.bloomStrength,
             radius: quality.bloomRadius,
             // #323 — Earth's lit day side is intrinsically bright;
-            // lift the threshold ≥ 0.95 so ONLY the atmospheric limb
+            // lift the threshold to ≥ 1.15 (the OutputPass sRGB-encodes the
+            // bloom, so a 0.95 floor haloed the white modules) so ONLY the atmospheric limb
             // blooms (not the whole day side becoming a halo). The
             // base tier value (0.9–0.94) is tuned for /fly's helio
             // scene where bright Sun + dim planets give bloom room
             // to breathe — different here.
-            threshold: Math.max(quality.bloomThreshold, 0.95),
+            threshold: Math.max(quality.bloomThreshold, 1.15),
           }
         : null,
     });
@@ -650,6 +660,7 @@
     // exists so a deliberate zoom toward the backdrop reads sharply
     // and stays consistent with the surface routes.
     const earthBackdropTex2k = texLoader.load(`${base}/textures/2k_earth_daymap.jpg`);
+    earthBackdropTex2k.colorSpace = THREE.SRGBColorSpace;
     let earthBackdropTex4k: THREE.Texture | null = null;
     let earthBackdrop4kLoadStarted = false;
     let earthBackdropLodLevel: '2k' | '4k' = '2k';
@@ -684,6 +695,7 @@
           texLoader.load(
             `${base}/textures/4k_earth_daymap.jpg`,
             (tex) => {
+              tex.colorSpace = THREE.SRGBColorSpace;
               earthBackdropTex4k = tex;
             },
             undefined,
@@ -868,6 +880,16 @@
     }
 
     requestMaterialRefresh = () => refreshMeshMaterials(performance.now() / 1000);
+
+    // Read-only camera probe for the touch-gesture e2e: position xyz + orbit target xyz.
+    window.__orbitCamera = () => [
+      camera.position.x,
+      camera.position.y,
+      camera.position.z,
+      controls.target.x,
+      controls.target.y,
+      controls.target.z,
+    ];
 
     resetCamera = () => {
       camera.position.copy(initialCamPos);
@@ -1150,6 +1172,16 @@
 <QualitySettingsModal {activeQualityTier} />
 
 <div class="{config.id}-root">
+  {#snippet rowBody(mod: StationModule)}
+    <EntityThumb src={thumbOf(`${config.id}-modules`, mod.id)} ring={agencyRingColor(mod.agency)} />
+    <span class="mod-text">
+      <span class="mod-name-row">
+        <span class="mod-name">{mod.name}</span>
+        <AgencyBadge agency={mod.agency} />
+      </span>
+      <span class="mod-meta">{mod.agency}</span>
+    </span>
+  {/snippet}
   {#if loadFailed}
     <p class="load-banner" role="alert">{config.msg.loadFailed()}</p>
   {:else}
@@ -1224,25 +1256,25 @@
       aria-label={config.msg.listHeading()}
     >
       {#if viewMode === 'list'}
-        <button
-          type="button"
-          class="index-close"
+        <Chip
+          kind="action"
+          class="index-close ui-chip--close"
           onclick={toggleViewMode}
           aria-label={config.msg.indexClose()}
           data-testid="{config.id}-list-close"
         >
           ×
-        </button>
+        </Chip>
       {:else}
-        <button
-          type="button"
-          class="index-close"
+        <Chip
+          kind="action"
+          class="index-close ui-chip--close"
           onclick={() => (indexOpen = false)}
           aria-label={config.msg.indexClose()}
           data-testid="{config.id}-index-close"
         >
           ×
-        </button>
+        </Chip>
       {/if}
       <h2 class="list-heading">{config.msg.listHeading()}</h2>
       <ul class="module-list">
@@ -1279,11 +1311,7 @@
               }}
               aria-current={selection.state.selectedId === mod.id ? 'true' : undefined}
             >
-              <span class="mod-name-row">
-                <span class="mod-name">{mod.name}</span>
-                <AgencyBadge agency={mod.agency} />
-              </span>
-              <span class="mod-meta">{mod.agency}</span>
+              {@render rowBody(mod)}
             </button>
           </li>
         {/each}
@@ -1324,11 +1352,7 @@
                 }}
                 aria-current={selection.state.selectedId === ship.id ? 'true' : undefined}
               >
-                <span class="mod-name-row">
-                  <span class="mod-name">{ship.name}</span>
-                  <AgencyBadge agency={ship.agency} />
-                </span>
-                <span class="mod-meta">{ship.agency}</span>
+                {@render rowBody(ship)}
               </button>
             </li>
           {/each}
@@ -1338,15 +1362,15 @@
 
     {#if timelineOpen}
       <div class="timeline-overlay" data-testid="{config.id}-timeline">
-        <button
-          type="button"
-          class="timeline-close"
+        <Chip
+          kind="action"
+          class="timeline-close ui-chip--close"
           aria-label={m.timeline_close()}
           title={m.timeline_close()}
           onclick={() => (timelineOpen = false)}
         >
           ×
-        </button>
+        </Chip>
         <StationTimelineStrip
           modules={sortedModules}
           visitors={sortedVisitors}
@@ -1411,37 +1435,38 @@
          (overlay slides up from below). Hidden in list mode where the
          page IS the modules list. -->
     {#if viewMode !== 'list'}
-      <button
-        type="button"
-        class="edge-handle handle-left"
-        data-testid="{config.id}-view-toggle"
-        aria-pressed={indexOpen}
-        aria-label={config.msg.btnModulesTitle()}
-        title={config.msg.btnModulesTitle()}
-        onclick={() => (indexOpen = !indexOpen)}
-      >
-        <span class="handle-label">{m.station_handle_modules()}</span>
-      </button>
-      <button
-        type="button"
-        class="edge-handle handle-bottom"
-        data-testid="{config.id}-timeline-toggle"
-        aria-pressed={timelineOpen}
-        aria-label={config.msg.toggleTimelineAria()}
-        title={config.msg.timelineTitle()}
-        onclick={() => (timelineOpen = !timelineOpen)}
-      >
-        <span class="handle-label">{m.station_handle_timeline()}</span>
-      </button>
+      <div class="edge-handle handle-left">
+        <Chip
+          kind="toggle"
+          active={indexOpen}
+          data-testid="{config.id}-view-toggle"
+          aria-label={config.msg.btnModulesTitle()}
+          title={config.msg.btnModulesTitle()}
+          onclick={() => (indexOpen = !indexOpen)}
+        >
+          {m.station_handle_modules()}
+        </Chip>
+      </div>
+      <div class="edge-handle handle-bottom">
+        <Chip
+          kind="toggle"
+          active={timelineOpen}
+          data-testid="{config.id}-timeline-toggle"
+          aria-label={config.msg.toggleTimelineAria()}
+          title={config.msg.timelineTitle()}
+          onclick={() => (timelineOpen = !timelineOpen)}
+        >
+          {m.station_handle_timeline()}
+        </Chip>
+      </div>
     {/if}
 
     <!-- Mobile-only: view toggle + Reset View + Spin pinned top-left,
          below nav. Edge handles are hidden on mobile by CSS, so this
          cluster + the MobileDrawerGroup tabs below replace them. -->
     <div class="hud-top-mobile" role="group" aria-label={config.msg.hudAria()}>
-      <button
-        type="button"
-        class="toggle"
+      <Chip
+        kind="action"
         data-testid="{config.id}-blueprint-toggle-mobile"
         onclick={cycleBlueprintView}
         title={config.msg.btnBlueprintTitle()}
@@ -1453,27 +1478,22 @@
             : viewMode === '2d-front'
               ? config.msg.blueprintLabelFront()
               : config.msg.blueprintLabel3d()}
-      </button>
+      </Chip>
       {#if viewMode !== 'list'}
-        <button
-          type="button"
-          class="toggle"
+        <ResetViewButton
           data-testid="{config.id}-reset-camera-mobile"
           onclick={() => resetCamera()}
           disabled={viewMode !== '3d'}
-        >
-          {m.ui_reset_view()}
-        </button>
-        <button
-          type="button"
-          class="toggle"
-          aria-pressed={!autoSpin}
+        />
+        <Chip
+          kind="toggle"
+          active={!autoSpin}
           onclick={() => (autoSpin = !autoSpin)}
           disabled={viewMode !== '3d'}
           title={config.msg.btnSpinTitle()}
         >
           {config.msg.btnSpin()}
-        </button>
+        </Chip>
       {/if}
     </div>
 
@@ -1507,9 +1527,8 @@
            doesn't jump between modes. -->
       {#if viewMode !== 'list'}
         <div class="ctrl-row">
-          <button
-            type="button"
-            class="toggle"
+          <Chip
+            kind="action"
             data-testid="{config.id}-blueprint-toggle"
             onclick={cycleBlueprintView}
             title={config.msg.btnBlueprintTitle()}
@@ -1521,34 +1540,28 @@
                 : viewMode === '2d-side'
                   ? config.msg.blueprintLabelSide()
                   : config.msg.blueprintLabelFront()}
-          </button>
-          <button
-            type="button"
-            class="toggle"
+          </Chip>
+          <ResetViewButton
             data-testid="{config.id}-reset-camera"
             onclick={() => resetCamera()}
             disabled={viewMode !== '3d'}
             title={config.msg.btnResetTitle()}
-          >
-            {m.ui_reset_view()}
-          </button>
-          <button
-            type="button"
-            class="toggle"
+          />
+          <Chip
+            kind="toggle"
+            active={!autoSpin}
             data-testid="{config.id}-spin-toggle"
-            aria-pressed={!autoSpin}
             onclick={() => (autoSpin = !autoSpin)}
             disabled={viewMode !== '3d'}
             title={config.msg.btnSpinTitle()}
           >
             {config.msg.btnSpin()}
-          </button>
-          <button
-            type="button"
-            class="toggle"
+          </Chip>
+          <Chip
+            kind="toggle"
+            active={assemblyOpen}
             data-testid="{config.id}-assembly-toggle"
             data-audio-stage="{config.id}-assembly-toggle"
-            aria-pressed={assemblyOpen}
             disabled={viewMode !== '3d'}
             onclick={() => {
               assemblyOpen = !assemblyOpen;
@@ -1562,18 +1575,13 @@
             title={config.msg.watchAssemblyTitle()}
           >
             {m.station_assembly_btn()}
-          </button>
+          </Chip>
         </div>
       {:else}
         <div class="ctrl-row">
-          <button
-            type="button"
-            class="toggle"
-            data-testid="{config.id}-view-toggle"
-            onclick={toggleViewMode}
-          >
+          <Chip kind="action" data-testid="{config.id}-view-toggle" onclick={toggleViewMode}>
             {m.iss_view_3d()}
-          </button>
+          </Chip>
         </div>
       {/if}
     {/snippet}
@@ -1581,9 +1589,16 @@
       {@render issControls()}
       <EnterArButton onEnter={() => void launchArScene(config.id)} />
       {#if config.liveLinkLabel}
-        <a class="hud-live-link" href={localHref(`/live`)} data-testid="{config.id}-watch-live">
-          <span class="live-dot" aria-hidden="true"></span>{config.liveLinkLabel()}
-        </a>
+        <!-- a4-keep: live red is the data colour of "live" (LaunchesBanner uses the same dot) -->
+        <Chip
+          kind="link"
+          dot
+          tone="#c62f2f"
+          href={localHref(`/live`)}
+          data-testid="{config.id}-watch-live"
+        >
+          {config.liveLinkLabel()}
+        </Chip>
       {/if}
     </div>
 
@@ -1620,11 +1635,7 @@
               }}
               aria-current={selection.state.selectedId === mod.id ? 'true' : undefined}
             >
-              <span class="mod-name-row">
-                <span class="mod-name">{mod.name}</span>
-                <AgencyBadge agency={mod.agency} />
-              </span>
-              <span class="mod-meta">{mod.agency}</span>
+              {@render rowBody(mod)}
             </button>
           </li>
         {/each}
@@ -1643,11 +1654,7 @@
                 }}
                 aria-current={selection.state.selectedId === ship.id ? 'true' : undefined}
               >
-                <span class="mod-name-row">
-                  <span class="mod-name">{ship.name}</span>
-                  <AgencyBadge agency={ship.agency} />
-                </span>
-                <span class="mod-meta">{ship.agency}</span>
+                {@render rowBody(ship)}
               </button>
             </li>
           {/each}
@@ -1837,27 +1844,13 @@
       padding-top: 24px;
     }
   }
-  .index-close {
+  :global(.index-close) {
     position: absolute;
     top: 6px;
     right: 6px;
-    width: 44px;
-    height: 44px;
-    background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 4px;
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 20px;
-    line-height: 1;
-    cursor: pointer;
     z-index: 1;
   }
-  .index-close:hover,
-  .index-close:focus-visible {
-    border-color: rgba(78, 205, 196, 0.55);
-    color: #4ecdc4;
-    outline: none;
-  }
+
   .list-heading {
     font-family: var(--font-display);
     font-size: 18px;
@@ -1867,7 +1860,7 @@
   }
   .list-heading-visitors {
     margin-top: 28px;
-    color: rgba(78, 205, 196, 0.85);
+    color: var(--color-state);
   }
   /* Touch devices: no hover, suppress the label entirely.
      Component-side .hover-label lives in $lib/components/HoverLabel.svelte. */
@@ -1886,6 +1879,9 @@
     max-width: 560px;
   }
   .module-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
     width: 100%;
     min-height: 48px;
     padding: 12px 14px;
@@ -1902,22 +1898,26 @@
   .module-row:hover,
   .module-row:focus-visible,
   .module-row.canvas-hovered {
-    border-color: rgba(68, 102, 255, 0.55);
-    background: rgba(68, 102, 255, 0.12);
+    border-color: color-mix(in srgb, var(--color-accent) 55%, transparent);
+    background: var(--color-accent-soft);
     outline: none;
   }
   /* Selection (current open module) — stronger accent than hover so
      it persists visually after the user clicks and the panel opens. */
   .module-row[aria-current='true'] {
-    border-color: #4ecdc4;
-    background: rgba(78, 205, 196, 0.16);
+    border-color: var(--color-accent);
+    background: color-mix(in srgb, var(--color-accent) 16%, transparent);
     color: #fff;
   }
   .module-row[aria-current='true']:hover,
   .module-row[aria-current='true']:focus-visible,
   .module-row[aria-current='true'].canvas-hovered {
-    border-color: #4ecdc4;
-    background: rgba(78, 205, 196, 0.24);
+    border-color: var(--color-accent);
+    background: color-mix(in srgb, var(--color-accent) 24%, transparent);
+  }
+  .mod-text {
+    flex: 1;
+    min-width: 0;
   }
   .mod-name-row {
     display: flex;
@@ -1933,9 +1933,9 @@
   .mod-meta {
     display: block;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.4);
+    color: var(--color-text-label);
     margin-top: 4px;
   }
   .hud-controls {
@@ -1963,58 +1963,13 @@
   /* Close-button on the timeline overlay (mirrors the module-panel
      close affordance). Sits in the top-right of the strip so users
      can dismiss without hunting for the TIMELINE toggle. */
-  .timeline-close {
+  :global(.timeline-close) {
     position: absolute;
     top: 4px;
     right: 8px;
     z-index: 6;
-    width: 28px;
-    height: 28px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(0, 0, 0, 0.55);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    border-radius: 50%;
-    color: rgba(255, 255, 255, 0.85);
-    font-size: 18px;
-    line-height: 1;
-    cursor: pointer;
-    transition:
-      background 120ms,
-      border-color 120ms,
-      color 120ms;
   }
-  .timeline-close:hover,
-  .timeline-close:focus-visible {
-    background: rgba(0, 0, 0, 0.75);
-    border-color: rgba(255, 255, 255, 0.4);
-    color: #fff;
-    outline: none;
-  }
-  .hud-controls :global(button),
-  .hud-controls :global(.toggle) {
-    pointer-events: auto;
-  }
-  .hud-live-link {
-    pointer-events: auto;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 0.8rem;
-    color: #ffd0d0;
-    text-decoration: none;
-    white-space: nowrap;
-  }
-  .hud-live-link:hover {
-    text-decoration: underline;
-  }
-  .hud-live-link .live-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: #c62f2f;
-  }
+
   .ctrl-row {
     display: flex;
     flex-wrap: wrap;
@@ -2027,65 +1982,24 @@
      so they ride below the global nav and don't overlap unrelated UI. */
   .edge-handle {
     position: absolute;
-    background: rgba(8, 10, 22, 0.82);
-    color: rgba(255, 255, 255, 0.78);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
-    letter-spacing: 2px;
-    padding: 0;
-    cursor: pointer;
     z-index: 10;
-    pointer-events: auto;
-    backdrop-filter: blur(4px);
-  }
-  .edge-handle:hover {
-    background: rgba(40, 50, 80, 0.92);
-    color: #fff;
-  }
-  .edge-handle:focus-visible {
-    outline: 2px solid #6fb3ff;
-    outline-offset: 2px;
-  }
-  .edge-handle[aria-pressed='true'] {
-    background: rgba(60, 110, 200, 0.85);
-    color: #fff;
-    border-color: rgba(120, 180, 255, 0.55);
   }
   .handle-left {
     left: 0;
     top: 50%;
     transform: translateY(-50%);
-    width: 28px;
-    height: 110px;
-    border-top-right-radius: 6px;
-    border-bottom-right-radius: 6px;
-    border-left: none;
-  }
-  .handle-left .handle-label {
-    display: inline-block;
     writing-mode: vertical-rl;
   }
   .handle-bottom {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    height: 24px;
-    min-width: 110px;
-    padding: 0 14px;
-    border-top-left-radius: 6px;
-    border-top-right-radius: 6px;
-    border-bottom: none;
-  }
-  .handle-bottom .handle-label {
-    display: inline-block;
-    line-height: 22px;
   }
   .hint {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.45);
+    color: var(--color-text-label);
     background: rgba(8, 10, 22, 0.75);
     border: 1px solid rgba(255, 255, 255, 0.08);
     padding: 6px 10px;
@@ -2100,38 +2014,9 @@
     min-height: 56px;
     align-content: flex-start;
   }
-  .toggle {
-    min-width: 44px;
-    min-height: 44px;
-    padding: 0 8px;
-    background: rgba(15, 18, 35, 0.85);
-    border: 1px solid rgba(68, 102, 255, 0.4);
-    color: #dde4ff;
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 11px;
-    letter-spacing: 0.04em;
-    border-radius: 4px;
-    cursor: pointer;
-    backdrop-filter: blur(6px);
-    pointer-events: auto;
-    white-space: nowrap;
-  }
-  .toggle:hover,
-  .toggle:focus-visible {
-    border-color: #4466ff;
-    outline: none;
-  }
-  .toggle:disabled {
-    opacity: 0.4;
-    cursor: not-allowed;
-    border-color: rgba(68, 102, 255, 0.18);
-  }
-  .toggle:disabled:hover {
-    border-color: rgba(68, 102, 255, 0.18);
-  }
   .banner {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 0.04em;
     line-height: 1.45;
     color: #ffc850;
@@ -2143,9 +2028,9 @@
     pointer-events: none;
   }
   .banner.mem {
-    color: #4ecdc4;
-    border-color: rgba(78, 205, 196, 0.45);
-    background: rgba(78, 205, 196, 0.1);
+    color: var(--color-state);
+    border-color: color-mix(in srgb, var(--color-accent) 45%, transparent);
+    background: var(--color-accent-soft);
   }
   .load-banner {
     padding: 24px;

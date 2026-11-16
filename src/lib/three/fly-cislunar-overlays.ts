@@ -23,15 +23,15 @@ import * as THREE from 'three';
 
 /** Per-phase trajectory-line colours (parking, TLI coast, lunar orbit, …). */
 export const CISLUNAR_PHASE_COLORS: Record<string, number> = {
-  parking: 0x4b9cd3,
+  parking: 0x4b9cd3, // a3-keep: trajectory phase / Earth identity colour, palette review at the end
   tli_coast: 0xffd166,
   lunar_orbit: 0xc77dff,
   lunar_flyby: 0xff9933,
   descent: 0xef476f,
   ascent: 0xef476f,
-  tei_coast: 0x06d6a0,
+  tei_coast: 0x06d6a0, // a3-keep: trajectory phase / Earth identity colour, palette review at the end
   reentry: 0xef476f,
-  spiral_earth: 0x4b9cd3,
+  spiral_earth: 0x4b9cd3, // a3-keep: trajectory phase / Earth identity colour, palette review at the end
   spiral_lunar: 0xc77dff,
 };
 
@@ -177,6 +177,7 @@ export function buildCislunarSpacecraftSprite(): CislunarSpacecraftSprite {
     tctx.fill();
   }
   const cisScTex = new THREE.CanvasTexture(cisScCanvas);
+  cisScTex.colorSpace = THREE.SRGBColorSpace;
   cisScTex.minFilter = THREE.LinearFilter;
   cisScTex.magFilter = THREE.LinearFilter;
   const cislunarSpacecraft = new THREE.Sprite(
@@ -220,6 +221,7 @@ export function buildAnnotationSprite(
     ctx2.fillText(line2, canvas.width / 2, 66);
   }
   const tex = new THREE.CanvasTexture(canvas);
+  tex.colorSpace = THREE.SRGBColorSpace;
   tex.minFilter = THREE.LinearFilter;
   const sprite = new THREE.Sprite(
     new THREE.SpriteMaterial({ map: tex, depthWrite: false, depthTest: false }),

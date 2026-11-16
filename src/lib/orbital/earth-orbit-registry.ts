@@ -26,6 +26,12 @@ export interface EarthOrbitCoast {
   coastDurationS: number;
   /** Suborbital ballistic hop — a single arc, no orbital loop. */
   suborbital?: boolean;
+  /**
+   * A winged orbiter (the Space Shuttle): the craft is the /fleet showcase model
+   * (`flyCraftInOrbit`), not a capsule builder, the payload stays in the bay on the way up and the
+   * landing is a runway. `capsuleId` is then only a label ('orbiter'), never a builder id.
+   */
+  winged?: boolean;
 }
 
 const COASTS: Record<string, EarthOrbitCoast> = {
@@ -309,6 +315,115 @@ const COASTS: Record<string, EarthOrbitCoast> = {
     inclinationDeg: 42.6,
     revolutions: 14,
     coastDurationS: 86400,
+  },
+  // Space Shuttle flights: after the climb the orbiter coasts in Earth orbit (no cislunar or
+  // heliocentric arc). No re-entry descent profile exists for a winged glide, so the act holds
+  // at the end of the coast.
+  'sts-1': {
+    // The mission record: a 166 nautical mile (307 km) orbit inclined 40.3 degrees, 54 h 20 min
+    // 53 s and 37 revolutions (about 88 min each).
+    missionId: 'sts-1',
+    capsuleId: 'orbiter',
+    winged: true,
+    apogeeKm: 307,
+    perigeeKm: 307,
+    inclinationDeg: 40.3,
+    revolutions: 37,
+    coastDurationS: 195000,
+  },
+  // Shenzhou 5 (Yang Liwei, 2003): the mission record gives 14 orbits at 332 to 336 km and the
+  // 21 h 22 min 45 s flight; the 42.4 degree inclination is a plain figure from the English
+  // Wikipedia infobox (backlog row S29). No re-entry descent profile exists for it, so the act
+  // holds at the end of the coast.
+  'shenzhou-5': {
+    missionId: 'shenzhou-5',
+    capsuleId: 'shenzhou',
+    apogeeKm: 336,
+    perigeeKm: 332,
+    inclinationDeg: 42.4,
+    revolutions: 14,
+    coastDurationS: 76965,
+  },
+  // STS-107 has no Fly (the operator, 2026-11-15; its record is flightless like STS-51-L's): no
+  // descriptor, and the launch is not offered.
+  //
+  // X-37B Orbital Test Vehicle flights (a winged spaceplane, landing on a runway): the coast is the
+  // record's days on orbit (`transit_days`). The orbit is classified at launch; the figures are the
+  // tracked orbits on the English Wikipedia satellite pages (USA-212, USA-226, USA-240, USA-261,
+  // USA-277, USA-299, USSF-52): plain figures, not a primary source (backlog row S25). The record
+  // itself gives only OTV-5's 54.5 degrees and OTV-7's "highly elliptical, to about the GEO belt
+  // at apogee". Revolutions are derived: coast seconds / the Kepler period of the mean altitude.
+  'otv-1': {
+    missionId: 'otv-1',
+    capsuleId: 'orbiter',
+    winged: true,
+    apogeeKm: 287,
+    perigeeKm: 279,
+    inclinationDeg: 40,
+    revolutions: 3599,
+    coastDurationS: 19440000, // 225 days
+  },
+  'otv-2': {
+    missionId: 'otv-2',
+    capsuleId: 'orbiter',
+    winged: true,
+    apogeeKm: 289.3,
+    perigeeKm: 278.5,
+    inclinationDeg: 41.9,
+    revolutions: 7500,
+    coastDurationS: 40521600, // 469 days
+  },
+  'otv-3': {
+    missionId: 'otv-3',
+    capsuleId: 'orbiter',
+    winged: true,
+    apogeeKm: 333,
+    perigeeKm: 320,
+    inclinationDeg: 43.5,
+    revolutions: 10691,
+    coastDurationS: 58320000, // 675 days
+  },
+  'otv-4': {
+    missionId: 'otv-4',
+    capsuleId: 'orbiter',
+    winged: true,
+    apogeeKm: 325,
+    perigeeKm: 312,
+    inclinationDeg: 43.5,
+    revolutions: 11393,
+    coastDurationS: 62035200, // 718 days
+  },
+  'otv-5': {
+    missionId: 'otv-5',
+    capsuleId: 'orbiter',
+    winged: true,
+    apogeeKm: 356,
+    perigeeKm: 355,
+    inclinationDeg: 54.5,
+    revolutions: 12275,
+    coastDurationS: 67392000, // 780 days
+  },
+  'otv-6': {
+    missionId: 'otv-6',
+    capsuleId: 'orbiter',
+    winged: true,
+    apogeeKm: 404,
+    perigeeKm: 388,
+    inclinationDeg: 44.6,
+    revolutions: 14177,
+    coastDurationS: 78537600, // 909 days
+  },
+  'otv-7': {
+    // Highly elliptical (USSF-52): 323 x 38,838 km at 59.1 degrees, about 11.6 h per orbit; the
+    // October 2024 aerobraking lowered it, so the revolution count is approximate.
+    missionId: 'otv-7',
+    capsuleId: 'orbiter',
+    winged: true,
+    apogeeKm: 38838,
+    perigeeKm: 323,
+    inclinationDeg: 59.1,
+    revolutions: 901,
+    coastDurationS: 37497600, // 434 days
   },
 };
 

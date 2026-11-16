@@ -1,0 +1,104 @@
+/* One page shell for every text page (UXD-012, slice A2). Container, title, lead, crumb and
+   section headings live here; a page adds the classes to its own elements and keeps its own
+   class for hooks. Pages must not redefine h1/lead/container rules (scoped rules would win). */
+
+.page-shell {
+  max-width: var(--page-width, 1080px);
+  margin: 0 auto;
+  padding: 24px 20px 80px;
+  color: var(--color-text);
+}
+.page-shell--reading {
+  --page-width: 760px;
+}
+.page-shell--wide {
+  --page-width: 1400px;
+}
+/* The host layout (science) owns the container and its spacing; a width modifier
+   (--reading) still caps the measure. */
+.page-shell--inset {
+  max-width: var(--page-width, none);
+  margin: 0;
+  padding: 0;
+}
+
+.page-crumb {
+  font-family: 'Space Mono', monospace;
+  font-size: var(--size-label);
+  letter-spacing: 1px;
+  color: var(--color-text-label);
+  margin: 0 0 14px;
+}
+.page-crumb a {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.page-title {
+  font-family: var(--font-display);
+  font-size: var(--size-title);
+  letter-spacing: 1px;
+  line-height: 1.05;
+  margin: 0 0 10px;
+  color: var(--color-text);
+}
+
+.page-lead {
+  font-size: var(--size-lead);
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.78);
+  max-width: 64ch;
+  margin: 0 0 12px;
+  font-style: normal;
+}
+
+/* The note under a page's content, where sources and licences are discussed (UXD-040): one
+   framed box in the meta size, the muted blue for what it names and links. Gallery, posters,
+   insignia and sourcing use it; a page adds the class to its <footer>. */
+.page-note {
+  margin-top: 44px;
+  padding: 20px 24px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--border-radius);
+  font-family: var(--font-mono), monospace;
+  font-size: var(--size-meta);
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.7);
+}
+.page-note p {
+  margin: 0 0 10px;
+}
+.page-note p:last-child {
+  margin-bottom: 0;
+}
+.page-note strong {
+  color: var(--color-state);
+  font-weight: normal;
+  letter-spacing: 1px;
+}
+.page-note a {
+  color: var(--color-state);
+  text-decoration: underline;
+}
+
+.page-section-label {
+  --page-label-color: var(--color-text-label);
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  font-size: var(--size-label);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--page-label-color);
+  margin: 32px 0 16px;
+}
+.page-section-label--rule {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 16px;
+}
+
+.page-section-title {
+  font-family: var(--font-display);
+  font-size: 28px;
+  letter-spacing: 2px;
+  color: var(--color-text);
+  margin: 0 0 16px;
+}

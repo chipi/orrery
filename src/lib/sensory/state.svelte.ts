@@ -52,7 +52,7 @@ class SensoryState {
     return this.on && wanted && this.capabilities[ch];
   }
 
-  /** Any channel active — drives the nav-button "teal fill" indicator. */
+  /** Any channel active — drives the nav-button "accent blue fill" indicator. */
   get anyActive(): boolean {
     return this.active('gyro') || this.active('audio') || this.active('haptic');
   }

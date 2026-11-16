@@ -227,7 +227,7 @@
     width: 100%;
     max-width: 580px;
     background: rgba(10, 10, 24, 0.96);
-    border: 1px solid rgba(78, 205, 196, 0.4);
+    border: 1px solid var(--color-accent-edge);
     border-radius: 8px;
     box-shadow: 0 18px 60px rgba(0, 0, 0, 0.6);
     overflow: hidden;
@@ -245,8 +245,7 @@
     outline: none;
   }
   .input::placeholder {
-    color: rgba(255, 255, 255, 0.45);
-    font-style: italic;
+    color: var(--color-text-label);
   }
   .results {
     list-style: none;
@@ -268,10 +267,10 @@
   }
   .result.active,
   .result:hover {
-    background: rgba(78, 205, 196, 0.08);
+    background: color-mix(in srgb, var(--color-accent) 8%, transparent);
   }
   .result.active {
-    border-left: 2px solid #4ecdc4;
+    border-left: 2px solid var(--color-accent);
     padding-left: 16px;
   }
   .result-title {
@@ -284,16 +283,14 @@
   .result-meta {
     grid-area: meta;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
-    color: rgba(78, 205, 196, 0.85);
+    color: var(--color-state);
     text-transform: uppercase;
   }
   .result-intro {
     grid-area: intro;
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 13px;
+    font-size: var(--size-body);
     color: rgba(255, 255, 255, 0.65);
     line-height: 1.4;
   }
@@ -301,16 +298,16 @@
     padding: 14px 18px;
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
-    color: rgba(255, 255, 255, 0.45);
+    color: var(--color-text-label);
   }
   .hint {
     padding: 8px 18px;
     background: rgba(255, 255, 255, 0.02);
     border-top: 1px solid rgba(255, 255, 255, 0.06);
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--color-text-label);
   }
   kbd {
     display: inline-block;
@@ -319,7 +316,7 @@
     border-radius: 3px;
     background: rgba(255, 255, 255, 0.05);
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     color: rgba(255, 255, 255, 0.85);
     margin-right: 2px;
   }

@@ -12,6 +12,7 @@
   the controls sit above it. The credit strip follows the image shown.
 -->
 <script lang="ts">
+  import Chip from '$lib/components/Chip.svelte';
   import * as m from '$lib/paraglide/messages';
   import ImageCredit from '$lib/components/ImageCredit.svelte';
   import { responsive } from '$lib/responsive-image.svelte';
@@ -310,11 +311,11 @@
       >
     </div>
 
-    <button
-      type="button"
-      class="lightbox-close"
+    <Chip
+      kind="action"
+      class="lightbox-close ui-chip--close"
       aria-label={m.panel_lightbox_close()}
-      onclick={onClose}>×</button
+      onclick={onClose}>×</Chip
     >
 
     {#if many}
@@ -450,7 +451,6 @@
     border-color: rgba(255, 255, 255, 0.5);
     outline: none;
   }
-  .lightbox-close,
   .lightbox-nav {
     position: absolute;
     z-index: 2;
@@ -467,9 +467,11 @@
     align-items: center;
     justify-content: center;
   }
-  /* panel-tabs.css still carries a global .lightbox-close { right: 16px }: reset it,
-     or the × would stay on the right in RTL. */
-  .lightbox-close {
+  /* The close chip (UXD-018 header sizes). panel-tabs.css still carries a global
+     .lightbox-close { right: 16px }: reset it, or the × would stay on the right in RTL. */
+  :global(.lightbox-close) {
+    position: absolute;
+    z-index: 2;
     top: 16px;
     right: auto;
     inset-inline-end: 16px;
@@ -489,8 +491,6 @@
   :global([dir='rtl']) .lightbox-nav {
     transform: translateY(-50%) scaleX(-1);
   }
-  .lightbox-close:hover,
-  .lightbox-close:focus-visible,
   .lightbox-nav:hover,
   .lightbox-nav:focus-visible {
     border-color: rgba(255, 255, 255, 0.5);

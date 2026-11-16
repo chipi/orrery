@@ -10,6 +10,8 @@ import {
   filterIndexItems,
   type IndexItem,
 } from './surface-index';
+import { colorFor } from './nation-palette';
+import { thumbOf, thumbOfSite } from '$lib/entity-thumb';
 
 // Minimal fixtures — the adapter only reads a handful of fields, so partial
 // objects cast to the full type keep the tests readable.
@@ -61,7 +63,7 @@ const hubble = {
   launched: 1990,
   status: 'ACTIVE',
   altitude_km: 538,
-  color: '#4ecdc4',
+  color: '#5070ff',
   count: 1,
   crew: 0,
   name: 'Hubble',
@@ -118,6 +120,31 @@ describe('surfaceSiteToIndexItem', () => {
     const noName = { ...marsRover, name: undefined } as SurfaceSite;
     expect(surfaceSiteToIndexItem(noName, 'mars').name).toBe('curiosity');
   });
+
+  it("takes the dot colour from the site's nation, the colour of the legend swatch (WM3)", () => {
+    const of = (nation: string, body: 'mars' | 'moon') =>
+      surfaceSiteToIndexItem({ ...marsRover, nation } as unknown as SurfaceSite, body).color;
+    expect(of('USA', 'mars')).toBe(colorFor({ nation: 'USA' }));
+    expect(of('USA', 'mars')).toBe('#0B3D91');
+    expect(of('China', 'moon')).toBe('#DE2910');
+    expect(of('USSR', 'moon')).toBe(of('Russia', 'moon'));
+    expect(of('Narnia', 'moon')).toBe('#888');
+  });
+
+  it('carries the thumb of the folder its panel shows, per body (L45, T2)', () => {
+    expect(surfaceSiteToIndexItem(moonCrewed, 'moon').thumb).toBe(thumbOfSite('moon', 'apollo11'));
+    expect(surfaceSiteToIndexItem(moonCrewed, 'moon').thumb).toContain('/credit-thumbs/images/');
+    expect(surfaceSiteToIndexItem(marsRover, 'mars').thumb).toBe(thumbOfSite('mars', 'curiosity'));
+  });
+
+  it('an earth launch pad takes the fleet launch-site thumb, not a site folder', () => {
+    expect(surfaceSiteToIndexItem(baikonur, 'earth').thumb).toBe(thumbOf('fleet', 'baikonur'));
+  });
+
+  it('a site with no thumb carries null (the row keeps its dot)', () => {
+    const none = { ...marsRover, id: 'no-such-site' } as SurfaceSite;
+    expect(surfaceSiteToIndexItem(none, 'mars').thumb).toBeNull();
+  });
 });
 
 describe('earthObjectToIndexItem', () => {
@@ -131,7 +158,7 @@ describe('earthObjectToIndexItem', () => {
       year: 1990,
       status: 'ACTIVE',
       regime: 'LEO',
-      color: '#4ecdc4',
+      color: '#5070ff',
       body: 'earth',
     });
     expect(item.agencies).toEqual(['NASA', 'ESA']);

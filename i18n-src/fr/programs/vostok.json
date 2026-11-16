@@ -94,5 +94,11 @@
   "link_labels": {
     "/earth": "Terre — orbites et sites de lancement",
     "/science/mission-phases/edl": "Entrée, descente et atterrissage"
+  },
+  "roster": {
+    "Korabl-Sputnik 2 (Belka & Strelka)": {
+      "note": "les chiennes Belka et Strelka — les premiers animaux à orbiter et à revenir vivants, sur le vaisseau d'essai Vostok",
+      "name": "Korabl-Sputnik 2 (Belka et Strelka)"
+    }
   }
 }

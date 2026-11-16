@@ -34,19 +34,21 @@
 </script>
 
 <Panel {open} {onClose} {title}>
-  {#if planet}
-    <div class="head">
-      <div class="kind">{m.exo_kind()} · {hostName}</div>
-      <div class="name">{planet.name}</div>
-    </div>
+  {#snippet eyebrow()}
+    {#if planet}<div class="kind">{m.exo_kind()} · {hostName}</div>{/if}
+  {/snippet}
+  {#snippet heading()}
+    {#if planet}<div class="name">{planet.name}</div>{/if}
+  {/snippet}
 
+  {#if planet}
     {#if overlay?.fact}<p class="editorial">{overlay.fact}</p>{/if}
     {#if overlay?.bio}<p class="prose">{overlay.bio}</p>{/if}
 
     <div class="grid">
       <div class="cell">
         <div class="cell-label">{m.exo_label_period()}</div>
-        <div class="cell-value teal">{fmt(planet.period_days, 3)} {m.exo_days()}</div>
+        <div class="cell-value accent">{fmt(planet.period_days, 3)} {m.exo_days()}</div>
       </div>
       <div class="cell">
         <div class="cell-label">{m.exo_label_axis()}</div>
@@ -101,17 +103,12 @@
 </Panel>
 
 <style>
-  .head {
-    padding: 0 0 12px;
-    border-bottom: 1px solid var(--color-border);
-    margin-bottom: 12px;
-  }
   .kind {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 8px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
   }
   .name {
     font-family: 'Bebas Neue', sans-serif;
@@ -123,14 +120,14 @@
   }
   .grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 10px 16px;
   }
   .cell-label {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 8px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
-    color: rgba(255, 255, 255, 0.45);
+    color: var(--color-text-label);
     margin-bottom: 2px;
   }
   .cell-value {
@@ -138,25 +135,17 @@
     font-size: 12px;
     color: rgba(255, 255, 255, 0.92);
   }
-  .cell-value.teal {
-    color: #4ecdc4;
+  .cell-value.accent {
+    color: var(--color-state);
   }
   .caption {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 8px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.4);
+    color: var(--color-text-label);
     margin: 14px 0 0;
     line-height: 1.5;
-  }
-  .editorial {
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 14px;
-    line-height: 1.5;
-    color: rgba(255, 255, 255, 0.85);
-    margin: 0 0 12px;
   }
   .prose {
     font-size: 14px;
@@ -169,9 +158,9 @@
   }
   .library-heading {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--color-text-label);
     margin: 0 0 8px;
   }
   .learn-list {
@@ -183,21 +172,21 @@
     gap: 10px;
   }
   .learn-list :global(a) {
-    color: #4ecdc4;
+    color: var(--color-state);
     text-decoration: none;
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 1px;
     padding: 8px 10px;
-    background: rgba(78, 205, 196, 0.06);
-    border: 1px solid rgba(78, 205, 196, 0.25);
+    background: color-mix(in srgb, var(--color-accent) 6%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-accent) 25%, transparent);
     border-radius: 3px;
     display: block;
   }
   .learn-list :global(a:hover),
   .learn-list :global(a:focus-visible) {
-    background: rgba(78, 205, 196, 0.14);
-    border-color: rgba(78, 205, 196, 0.5);
+    background: var(--color-accent-soft);
+    border-color: color-mix(in srgb, var(--color-accent) 50%, transparent);
     outline: none;
   }
 </style>

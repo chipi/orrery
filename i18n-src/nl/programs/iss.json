@@ -95,5 +95,69 @@
     "/fleet?id=iss": "Vloot — het Internationaal ruimtestation",
     "/programs/mir": "Mir — het station waarvan het ISS de erfgenaam is",
     "/earth?site=iss": "Het ISS boven ons"
+  },
+  "roster": {
+    "module:zarya": {
+      "note": "De eerste module — een door de VS gefinancierd, in Rusland gebouwd besturings- en energieblok: het zaadje van het hele station."
+    },
+    "module:unity": {
+      "note": "De eerste Amerikaanse module, een verbindingsknoop met zes poorten die twee weken later aan Zarya werd gekoppeld."
+    },
+    "module:zvezda": {
+      "note": "De Russische servicemodule die het station bewoonbaar maakte: verblijven voor de bemanning, levensondersteuning en voortstuwing."
+    },
+    "module:destiny": {
+      "note": "Het Amerikaanse laboratorium — de belangrijkste onderzoeksmodule en het commandocentrum van het station."
+    },
+    "module:canadarm2": {
+      "note": "De robotarm van Canada, die een groot deel van het station assembleerde en aankomende ruimtevaartuigen vangt."
+    },
+    "module:quest": {
+      "note": "De Amerikaanse luchtsluis, die ruimtewandelingen mogelijk maakt in zowel Amerikaanse als Russische ruimtepakken."
+    },
+    "module:pirs": {
+      "note": "Een Russisch koppelcompartiment en luchtsluis — in 2021 uit zijn baan gebracht om ruimte te maken voor Nauka."
+    },
+    "module:harmony": {
+      "note": "De knoop die de weg opende voor de internationale laboratoria."
+    },
+    "module:columbus": {
+      "note": "Het laboratorium van Europa — de hoeksteenbijdrage van ESA aan het station."
+    },
+    "module:kibo": {
+      "note": "Het laboratorium van Japan — de grootste afzonderlijke module, met een eigen buitenplatform."
+    },
+    "module:poisk": {
+      "note": "Een Russische koppel- en luchtsluismodule aan het zenit van Zvezda."
+    },
+    "module:tranquility": {
+      "note": "Levensondersteuning en trainingsapparatuur — en de bevestiging voor de Cupola."
+    },
+    "module:cupola": {
+      "note": "De waarnemingskoepel met zeven ramen, bron van de beroemdste uitzichten van het station op de Aarde."
+    },
+    "module:rassvet": {
+      "note": "Een Russische koppel- en opslagmodule."
+    },
+    "module:leonardo": {
+      "note": "Een permanente opslagmodule, omgebouwd uit een herbruikbare vrachtdrager."
+    },
+    "module:beam": {
+      "note": "Een experimentele opblaasbare module, waarmee uitbreidbare leefruimtes in een baan worden getest."
+    },
+    "module:nauka": {
+      "note": "De lang vertraagde Russische wetenschapsmodule, meer dan twee decennia na het begin van de assemblage toegevoegd."
+    },
+    "module:prichal": {
+      "note": "Een Russische koppelknoop — een van de meest recente toevoegingen."
+    },
+    "Expedition 1": {
+      "note": "de eerste vaste bemanning arriveerde op 2 november 2000; sindsdien wonen er onafgebroken mensen aan boord — de langste ononderbroken menselijke aanwezigheid buiten de Aarde in de geschiedenis",
+      "name": "Expeditie 1"
+    },
+    "Commercial Crew": {
+      "note": "de Crew Dragon van SpaceX herstelde na negen jaar de Amerikaanse bemanningslanceringen en begon met de overdracht van de toegang tot een lage baan aan commerciële aanbieders",
+      "name": "Commercial Crew"
+    }
   }
 }

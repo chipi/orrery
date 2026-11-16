@@ -81,6 +81,55 @@ describe('i18n-coverage gate', () => {
   });
 });
 
+describe('i18n-coverage · program roster text', () => {
+  const scan = (root: string, ...extra: string[]) => {
+    try {
+      return execFileSync('node', [SCAN, '--examples=10', ...extra], {
+        encoding: 'utf8',
+        env: { ...process.env, I18N_COVERAGE_ROOT: root },
+      });
+    } catch (e) {
+      return (e as { stdout: string }).stdout;
+    }
+  };
+  const withRoster = (deRoster: unknown) => {
+    const f = fixture({ title: 'Die Sonde landete sanft', intro: 'Ein zweites Feld' });
+    put(f.root, 'static/data/programs/p.json', {
+      roster: [
+        { linked_id: 'a', ref: 'mission', note: 'a note in English' },
+        { linked_id: 'b', ref: 'mission', note: 'another note in English' },
+        { linked_id: 'c', ref: 'fleet' },
+        { name: 'Event one', note: 'an event note in English' },
+      ],
+    });
+    put(f.root, 'i18n-src/en-US/programs/p.json', { name: 'P' });
+    put(f.root, 'i18n-src/de/programs/p.json', { name: 'P', roster: deRoster });
+    return f;
+  };
+
+  it('reports each untranslated note and name-only name per locale, and does not fail the gate', () => {
+    const f = withRoster({ 'mission:a': { note: 'eine Notiz' } });
+    const out = scan(f.root);
+    expect(out).toMatch(/3\s+rosterMissing/);
+    expect(out).toContain('programs/p.json :: roster.mission:b.note');
+    expect(out).toContain('programs/p.json :: roster.Event one.name');
+    expect(out).toContain('programs/p.json :: roster.Event one.note');
+    expect(out).not.toContain('roster.mission:a');
+    expect(out).not.toContain('extraKey');
+    expect(gate(f)).toMatchObject({ code: 0 });
+    rmSync(f.root, { recursive: true });
+  });
+
+  it('counts a locale with no roster overlay as missing every row, and flags an orphan key', () => {
+    const f = withRoster({ 'mission:gone': { note: 'verwaist' } });
+    const out = scan(f.root);
+    expect(out).toMatch(/4\s+rosterMissing/);
+    expect(out).toMatch(/1\s+extraKey/);
+    expect(out).toContain('roster.mission:gone');
+    rmSync(f.root, { recursive: true });
+  });
+});
+
 describe('i18n-coverage · reviewed exceptions', () => {
   const reviewed = JSON.parse(
     readFileSync('scripts/i18n-tools/coverage-reviewed.json', 'utf8'),

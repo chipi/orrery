@@ -9,6 +9,10 @@
       "tab": "orbits",
       "section": "semi-major-axis",
       "why": "Vesta orbits at 2.36 AU — inner belt. Its proximity drove Dawn's choice to visit Vesta first (2011), then leave for Ceres (2015)."
+    },
+    {
+      "tab": "propulsion",
+      "section": "ion-drive"
     }
   ]
 }

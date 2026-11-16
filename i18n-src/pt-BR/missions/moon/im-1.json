@@ -1,0 +1,30 @@
+{
+  "name": "IM-1",
+  "vehicle": "Falcon 9 Block 5",
+  "payload": "módulo de pouso de 1900 kg (Nova-C Odysseus); seis cargas úteis da NASA",
+  "delta_v": "~3,8 km/s (TLI + LOI, estimativa)",
+  "type": "MÓDULO DE POUSO COMERCIAL · TOMBADO, OPERACIONAL",
+  "first": "Um módulo de pouso comercial na Lua: pousou tombado e mesmo assim operou",
+  "description": "A IM-1 foi a primeira missão lunar da Intuitive Machines, realizada para o programa Commercial Lunar Payload Services da NASA com seis cargas úteis da NASA. Seu módulo de pouso Nova-C, chamado Odysseus, foi lançado em um Falcon 9 em 2024-02-15, entrou em órbita lunar em 2024-02-21 e pousou em 2024-02-22 às 23:23:53 UTC perto da cratera Malapert A. Pousou e operou, mas parou tombado, a cerca de 30 graus. Continuou funcionando até ficar sem energia quando a noite lunar começou, em 2024-02-29.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANÇAMENTO",
+      "note": "Falcon 9 de LC-39A, 2024-02-15.",
+      "type": "nominal"
+    },
+    {
+      "met": 6,
+      "label": "INSERÇÃO EM ÓRBITA LUNAR",
+      "note": "O Odysseus entra em órbita lunar em 2024-02-21.",
+      "type": "nominal"
+    },
+    {
+      "met": 7,
+      "label": "POUSO",
+      "note": "Pousa perto de Malapert A em 2024-02-22 e para tombado.",
+      "type": "nominal"
+    }
+  ],
+  "vehicle_stage": "segundo estágio do Falcon 9"
+}

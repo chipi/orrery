@@ -29,17 +29,30 @@
     {
       "name": "The Golden Record",
       "year": 1977,
-      "note": "a gold-plated phonograph record bolted to each craft — sounds, music, and greetings from Earth, aimed at whoever might find it in a billion years"
+      "note": "a gold-plated phonograph record bolted to each craft — sounds, music, and greetings from Earth, aimed at whoever might find it in a billion years",
+      "milestone": true
     },
     {
       "name": "The Pale Blue Dot",
       "year": 1990,
-      "note": "on 14 February 1990, from beyond Neptune, Voyager 1 turned back and photographed the Earth as a single pixel"
+      "note": "on 14 February 1990, from beyond Neptune, Voyager 1 turned back and photographed the Earth as a single pixel",
+      "milestone": true
     },
     {
       "name": "Interstellar space",
       "year": 2012,
-      "note": "Voyager 1 crossed the heliopause in 2012, Voyager 2 in 2018 — the first machines to leave the Sun's bubble and enter the space between the stars, still calling home"
+      "note": "Voyager 1 crossed the heliopause in 2012, Voyager 2 in 2018 — the first machines to leave the Sun's bubble and enter the space between the stars, still calling home",
+      "milestone": true
+    },
+    {
+      "linked_id": "voyager-1",
+      "ref": "fleet",
+      "role": "spacecraft"
+    },
+    {
+      "linked_id": "voyager-2",
+      "ref": "fleet",
+      "role": "spacecraft"
     }
   ],
   "related_programs": [

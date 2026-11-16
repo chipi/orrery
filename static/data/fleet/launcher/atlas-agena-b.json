@@ -1,0 +1,37 @@
+{
+  "id": "atlas-agena-b",
+  "name": "Atlas-Agena B",
+  "category": "launcher",
+  "agency": "NASA",
+  "country": "USA",
+  "manufacturer": "Convair / General Dynamics (Atlas); Lockheed (Agena B)",
+  "first_flight": "1961-07-12",
+  "status": "RETIRED",
+  "era": "1957-1969",
+  "epoch": "space-race",
+  "best_known_for": "Launched the Ranger lunar probes and Mariner 2 to Venus",
+  "credit": "Atlas first stage with the Agena B upper stage. Plain figures (first flight, dimensions, thrust, flight record) from Wikipedia, not from a NASA page; see the search backlog.",
+  "links": [
+    {
+      "l": "Atlas-Agena — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Atlas-Agena",
+      "t": "intro"
+    },
+    {
+      "l": "Mariner 2 (NASA)",
+      "u": "https://science.nasa.gov/mission/mariner-2/",
+      "t": "core"
+    },
+    {
+      "l": "Mariner 2 (NSSDCA)",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1962-041A",
+      "t": "deep"
+    }
+  ],
+  "linked_missions": [
+    "mariner2"
+  ],
+  "specs": {
+    "diameter_m": 3
+  }
+}

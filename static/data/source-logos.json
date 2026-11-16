@@ -31,6 +31,13 @@
       "license_summary": "Outbound reference links only; no Annual Reviews copy is redistributed in-app."
     },
     {
+      "id": "aps",
+      "name": "American Physical Society (APS News)",
+      "kind": "publisher",
+      "url": "https://www.aps.org/",
+      "license_summary": "Cited as a source of facts; no APS copy is redistributed in-app."
+    },
+    {
       "id": "arianespace",
       "name": "Arianespace",
       "kind": "private-operator",
@@ -198,6 +205,13 @@
       "url": "https://www.esa.int/",
       "logo_path": "/logos/esa.svg",
       "license_summary": "Creative Commons CC BY-SA 3.0 IGO for most imagery; some material under CC BY 4.0 IGO. Logos under permissive ESA emblem terms."
+    },
+    {
+      "id": "eso",
+      "name": "European Southern Observatory (ESO)",
+      "kind": "research-institute",
+      "url": "https://www.eso.org/",
+      "license_summary": "ESO press releases and images are released under Creative Commons CC BY 4.0; credit ESO."
     },
     {
       "id": "euspa",
@@ -679,6 +693,76 @@
       "license_summary": "SpaceNews — independent space-industry news. © SpaceNews; outbound reference links only."
     },
     {
+      "id": "cnn",
+      "name": "CNN",
+      "kind": "media-platform",
+      "url": "https://www.cnn.com/",
+      "license_summary": "CNN — international news network. © CNN; outbound reference links only."
+    },
+    {
+      "id": "cgtn",
+      "name": "CGTN",
+      "kind": "media-platform",
+      "url": "https://news.cgtn.com/",
+      "license_summary": "CGTN — China Global Television Network, the Chinese state broadcaster’s international service. © CGTN; outbound reference links only."
+    },
+    {
+      "id": "universetoday",
+      "name": "Universe Today",
+      "kind": "media-platform",
+      "url": "https://www.universetoday.com/",
+      "license_summary": "Universe Today — independent space and astronomy news. © Universe Today; outbound reference links only."
+    },
+    {
+      "id": "theregister",
+      "name": "The Register",
+      "kind": "media-platform",
+      "url": "https://www.theregister.com/",
+      "license_summary": "The Register — independent technology news. © Situation Publishing; outbound reference links only."
+    },
+    {
+      "id": "space-com",
+      "name": "Space.com",
+      "kind": "media-platform",
+      "url": "https://www.space.com/",
+      "license_summary": "Space.com — space and astronomy news. © Future US; outbound reference links only."
+    },
+    {
+      "id": "irishnews",
+      "name": "The Irish News",
+      "kind": "media-platform",
+      "url": "https://www.irishnews.com/",
+      "license_summary": "The Irish News — daily newspaper from Belfast. © The Irish News; outbound reference links only."
+    },
+    {
+      "id": "eurekalert",
+      "name": "EurekAlert!",
+      "kind": "media-platform",
+      "url": "https://www.eurekalert.org/",
+      "license_summary": "EurekAlert! — AAAS news-release service for research institutions. © AAAS and the releasing institutions; outbound reference links only."
+    },
+    {
+      "id": "arxiv",
+      "name": "arXiv",
+      "kind": "publisher",
+      "url": "https://arxiv.org/",
+      "license_summary": "arXiv — Cornell University’s open preprint server for physics and astronomy. Papers © their authors; outbound reference links only."
+    },
+    {
+      "id": "spitzer",
+      "name": "Spitzer Space Telescope (Caltech/IPAC)",
+      "kind": "research-institute",
+      "url": "https://www.spitzer.caltech.edu/",
+      "license_summary": "Spitzer Space Telescope — NASA mission pages run by Caltech/IPAC. Outbound reference links only."
+    },
+    {
+      "id": "baumgardt-uq",
+      "name": "University of Queensland (Baumgardt globular cluster catalogue)",
+      "kind": "research-institute",
+      "url": "https://people.smp.uq.edu.au/HolgerBaumgardt/globular/",
+      "license_summary": "Baumgardt and Vasiliev globular cluster catalogue, University of Queensland. Outbound reference links only."
+    },
+    {
       "id": "nasaspaceflight",
       "name": "NASASpaceflight",
       "kind": "media-platform",
@@ -754,6 +838,216 @@
       "kind": "publisher",
       "url": "https://www.engineersaustralia.org.au/",
       "license_summary": "Engineers Australia — engineering heritage register. Outbound reference links only."
+    },
+    {
+      "id": "lroc-website",
+      "name": "LROC website (Arizona State University)",
+      "kind": "research-institute",
+      "url": "https://lroc.im-ldi.com/",
+      "license_summary": "LROC website: Lunar Reconnaissance Orbiter Camera team, Arizona State University. Outbound reference links only. Its images are copyrighted but may be used by educational organisations when credited NASA/GSFC/Arizona State University (LROC terms, lroc.im-ldi.com/about/terms)."
+    },
+    {
+      "id": "asu-themis",
+      "name": "THEMIS (Arizona State University)",
+      "kind": "research-institute",
+      "url": "https://themis.asu.edu/",
+      "license_summary": "Mars Odyssey THEMIS camera team, Arizona State University. Outbound reference links only; no THEMIS copy is redistributed in-app."
+    },
+    {
+      "id": "msss",
+      "name": "Malin Space Science Systems",
+      "kind": "private-operator",
+      "url": "https://www.msss.com/",
+      "license_summary": "Malin Space Science Systems — builder and operator of the MRO Context Camera. Outbound reference links only; no MSSS copy is redistributed in-app."
+    },
+    {
+      "id": "alma",
+      "name": "ALMA Observatory",
+      "kind": "research-institute",
+      "url": "https://www.almaobservatory.org/",
+      "license_summary": "Atacama Large Millimeter/submillimeter Array. Outbound reference links only; no ALMA copy is redistributed in-app."
+    },
+    {
+      "id": "keck-observatory",
+      "name": "W. M. Keck Observatory",
+      "kind": "research-institute",
+      "url": "https://keckobservatory.org/",
+      "license_summary": "W. M. Keck Observatory, Maunakea. Outbound reference links only; no Keck copy is redistributed in-app."
+    },
+    {
+      "id": "eht",
+      "name": "Event Horizon Telescope",
+      "kind": "research-institute",
+      "url": "https://eventhorizontelescope.org/",
+      "license_summary": "Event Horizon Telescope collaboration. Outbound reference links only; no EHT copy is redistributed in-app."
+    },
+    {
+      "id": "breakthrough-initiatives",
+      "name": "Breakthrough Initiatives",
+      "kind": "research-institute",
+      "url": "https://breakthroughinitiatives.org/",
+      "license_summary": "Breakthrough Initiatives — Listen and Starshot programmes. Outbound reference links only; no Breakthrough Initiatives copy is redistributed in-app."
+    },
+    {
+      "id": "lco",
+      "name": "Las Cumbres Observatory",
+      "kind": "research-institute",
+      "url": "https://lco.global/",
+      "license_summary": "Las Cumbres Observatory, Global Sky Partners education pages. Outbound reference links only; no LCO copy is redistributed in-app."
+    },
+    {
+      "id": "lpi",
+      "name": "Lunar and Planetary Institute",
+      "kind": "research-institute",
+      "url": "https://www.lpi.usra.edu/",
+      "license_summary": "Lunar and Planetary Institute (USRA). Outbound reference links only; no LPI copy is redistributed in-app."
+    },
+    {
+      "id": "minor-planet-center",
+      "name": "Minor Planet Center",
+      "kind": "research-institute",
+      "url": "https://www.minorplanetcenter.net/",
+      "license_summary": "Minor Planet Center (IAU, hosted at the Smithsonian Astrophysical Observatory). Outbound reference links only; no MPC copy is redistributed in-app."
+    },
+    {
+      "id": "nrao",
+      "name": "National Radio Astronomy Observatory",
+      "kind": "research-institute",
+      "url": "https://public.nrao.edu/",
+      "license_summary": "National Radio Astronomy Observatory public pages. Outbound reference links only; no NRAO copy is redistributed in-app."
+    },
+    {
+      "id": "caltech-thorne",
+      "name": "Kip Thorne (Caltech)",
+      "kind": "research-institute",
+      "url": "https://www.its.caltech.edu/~kip/",
+      "license_summary": "Kip Thorne’s Caltech web pages. Outbound reference links only; no Caltech copy is redistributed in-app."
+    },
+    {
+      "id": "umd-astronomy",
+      "name": "University of Maryland Astronomy",
+      "kind": "research-institute",
+      "url": "https://www.astro.umd.edu/",
+      "license_summary": "University of Maryland Department of Astronomy; author reprints. Outbound reference links only; no UMD copy is redistributed in-app."
+    },
+    {
+      "id": "cern",
+      "name": "CERN",
+      "kind": "research-institute",
+      "url": "https://home.cern/",
+      "license_summary": "CERN public pages. Outbound reference links only; no CERN copy is redistributed in-app."
+    },
+    {
+      "id": "nobel-prize",
+      "name": "The Nobel Prize",
+      "kind": "publisher",
+      "url": "https://www.nobelprize.org/",
+      "license_summary": "Nobel Prize Outreach. Outbound reference links only; no Nobel Prize copy is redistributed in-app."
+    },
+    {
+      "id": "nss",
+      "name": "National Space Society",
+      "kind": "publisher",
+      "url": "https://nss.org/",
+      "license_summary": "National Space Society. Outbound reference links only; no NSS copy is redistributed in-app."
+    },
+    {
+      "id": "bis",
+      "name": "British Interplanetary Society",
+      "kind": "publisher",
+      "url": "https://www.bis-space.com/",
+      "license_summary": "British Interplanetary Society. Outbound reference links only; no BIS copy is redistributed in-app."
+    },
+    {
+      "id": "ibiblio",
+      "name": "ibiblio",
+      "kind": "publisher",
+      "url": "https://www.ibiblio.org/",
+      "license_summary": "ibiblio digital library, hosting the Apollo document archive. Outbound reference links only; no ibiblio copy is redistributed in-app."
+    },
+    {
+      "id": "library-of-congress",
+      "name": "Library of Congress",
+      "kind": "publisher",
+      "url": "https://www.loc.gov/",
+      "license_summary": "Library of Congress digital collections. Outbound reference links only; no Library of Congress copy is redistributed in-app."
+    },
+    {
+      "id": "google-books",
+      "name": "Google Books",
+      "kind": "publisher",
+      "url": "https://www.google.com/books/",
+      "license_summary": "Google Books catalogue pages. Outbound reference links only; no Google copy is redistributed in-app."
+    },
+    {
+      "id": "gctc",
+      "name": "Gagarin Cosmonaut Training Center",
+      "kind": "space-agency",
+      "url": "https://www.gctc.ru/",
+      "license_summary": "Yuri Gagarin Cosmonaut Training Center (Roscosmos). Outbound reference links only; no GCTC copy is redistributed in-app."
+    },
+    {
+      "id": "linz",
+      "name": "Land Information New Zealand",
+      "kind": "space-agency",
+      "url": "https://data.linz.govt.nz/",
+      "license_summary": "Land Information New Zealand open data service. Outbound reference links only; no LINZ copy is redistributed in-app."
+    },
+    {
+      "id": "us-doe",
+      "name": "U.S. Department of Energy",
+      "kind": "space-agency",
+      "url": "https://www.energy.gov/",
+      "license_summary": "U.S. Department of Energy. Outbound reference links only; no DOE copy is redistributed in-app."
+    },
+    {
+      "id": "fcc",
+      "name": "Federal Communications Commission",
+      "kind": "space-agency",
+      "url": "https://www.fcc.gov/",
+      "license_summary": "U.S. Federal Communications Commission. Outbound reference links only; no FCC copy is redistributed in-app."
+    },
+    {
+      "id": "iadc",
+      "name": "Inter-Agency Space Debris Coordination Committee",
+      "kind": "space-agency",
+      "url": "https://www.iadc-home.org/",
+      "license_summary": "Inter-Agency Space Debris Coordination Committee. Outbound reference links only; no IADC copy is redistributed in-app."
+    },
+    {
+      "id": "rfc-editor",
+      "name": "RFC Editor",
+      "kind": "publisher",
+      "url": "https://www.rfc-editor.org/",
+      "license_summary": "RFC Editor — Internet standards documents. Outbound reference links only; no RFC copy is redistributed in-app."
+    },
+    {
+      "id": "researchgate",
+      "name": "ResearchGate",
+      "kind": "publisher",
+      "url": "https://www.researchgate.net/",
+      "license_summary": "ResearchGate author-hosted papers. Outbound reference links only; no ResearchGate copy is redistributed in-app."
+    },
+    {
+      "id": "iflscience",
+      "name": "IFLScience",
+      "kind": "media-platform",
+      "url": "https://www.iflscience.com/",
+      "license_summary": "IFLScience — science news. © IFLScience; outbound reference links only."
+    },
+    {
+      "id": "phys-org",
+      "name": "Phys.org",
+      "kind": "media-platform",
+      "url": "https://phys.org/",
+      "license_summary": "Phys.org — science news. © Science X; outbound reference links only."
+    },
+    {
+      "id": "youtube",
+      "name": "YouTube",
+      "kind": "media-platform",
+      "url": "https://www.youtube.com/",
+      "license_summary": "YouTube videos linked, never embedded or redistributed. Outbound reference links only; no YouTube copy is redistributed in-app."
     }
   ]
 }

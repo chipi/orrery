@@ -49,7 +49,7 @@ describe('publicShareUrl', () => {
 
   it('uses the real href on web (already a public URL)', () => {
     const web = {
-      href: 'https://chipi.github.io/orrery/fly?mission=curiosity',
+      href: 'https://cdn.example.test/orrery/fly?mission=curiosity',
       pathname: '/orrery/fly',
       search: '?mission=curiosity',
       hash: '',

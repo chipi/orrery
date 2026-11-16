@@ -29,6 +29,11 @@ test.describe('museums', () => {
     await expect(panel).toBeVisible({ timeout: 20_000 });
     await expect(panel).toHaveAttribute('data-museum-id', 'nasm-washington');
     await expect(panel.getByTestId('museum-panel-object').first()).toBeVisible();
+    // L45-T4: each object row leads with the object's round photo
+    const objThumb = panel.getByTestId('museum-panel-object').first().locator('img.entity-thumb');
+    await expect(objThumb).toHaveAttribute('alt', '');
+    await expect(objThumb).toHaveAttribute('loading', 'lazy');
+    await expect(objThumb).toHaveAttribute('src', /credit-thumbs\/images\/fleet-galleries\//);
     const hero = panel.getByTestId('place-hero').locator('img');
     await expect(hero).toHaveAttribute('src', /\/images\/museums\/nasm-washington\/01\.webp$/);
     await expect(hero).toHaveAttribute('alt', /.+/);
@@ -92,7 +97,7 @@ test.describe('observatories', () => {
     await expect(page.getByTestId('observatory-panel')).toBeVisible({ timeout: 20_000 });
   });
 
-  test('/earth has a TELESCOPES layer chip', async ({ page }) => {
+  test('/earth has an OBSERVATORIES layer chip', async ({ page }) => {
     await page.goto('/earth');
     await expect(page.getByTestId('layer-telescopes').first()).toBeAttached({ timeout: 15_000 });
   });

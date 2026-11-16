@@ -1,0 +1,24 @@
+{
+  "name": "Mariner 2",
+  "vehicle": "Atlas-Agena B",
+  "payload": "202,8 kg",
+  "delta_v": "~3,5 km/s (stima)",
+  "type": "SORVOLO · COMPLETATA",
+  "first": "La NASA la definisce la primissima missione scientifica planetaria di successo della storia",
+  "description": "Mariner 2 è stata lanciata il 1962-08-27 su un Atlas-Agena B e ha sorvolato Venere il 1962-12-14, con un avvicinamento minimo di 34.773 km. Il suo magnetometro, i rilevatori di particelle, lo spettrometro del plasma solare, il rilevatore di polveri e due radiometri hanno fornito una prima visione di Venere: la NASA riporta temperature da 216 °C sul lato notturno a 237 °C sul lato diurno, un denso strato di nubi a 56-80 km di quota, una lenta rotazione retrograda, un'atmosfera composta in prevalenza da anidride carbonica e nessun campo magnetico rilevabile. Nello spazio ha mostrato che il vento solare soffia in modo continuo. Il contatto è terminato il 1963-01-03. La NASA afferma che conserva l'onore di essere la primissima missione scientifica planetaria di successo della storia.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCIO",
+      "note": "Atlas-Agena B da Cape Canaveral, 1962-08-27.",
+      "type": "nominal"
+    },
+    {
+      "met": 109,
+      "label": "SORVOLO DI VENERE",
+      "note": "Massimo avvicinamento di 34.773 km il 1962-12-14.",
+      "type": "nominal"
+    }
+  ],
+  "vehicle_stage": "stadio superiore Agena B"
+}

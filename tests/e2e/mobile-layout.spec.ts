@@ -76,12 +76,9 @@ test.describe('mobile layer-filter chip horizontal flow (v0.6 fix)', () => {
       // MobileDrawerGroup Controls/Layers tab on touch devices. Open that
       // tab so the chip flow is visible and measurable.
       await openControlsDrawer(page);
-      // /earth groups its chips under full-row headers (ON EARTH / IN SPACE),
-      // so compare the first two chips of one group, not across a header.
-      const grouped = (await page.locator('.mdg-body .chip-group').count()) > 0;
-      const chips = grouped
-        ? page.locator('.mdg-body .chip-group').first().locator('~ .chip')
-        : page.locator('.mdg-body .chip');
+      // One flat row on every route (UXD-015): no group headers, no master chips.
+      await expect(page.locator('.mdg-body .chip-group')).toHaveCount(0);
+      const chips = page.locator('.mdg-body .ui-chip');
       const count = await chips.count();
       expect(count).toBeGreaterThanOrEqual(2);
       const first = await chips.first().boundingBox();
@@ -125,18 +122,16 @@ test.describe('mobile footer / CTA clearance', () => {
 });
 
 test.describe('mobile nav touch-target floor across primary buttons', () => {
-  // Sample a handful of nav buttons (locale picker chip, lens toggle,
-  // contrast toggle, hamburger) and confirm each meets the 44×44 floor.
-  test('locale, lens, contrast, hamburger all ≥ 40×40 px (visual size; hit area may be larger)', async ({
-    page,
-    isMobile,
-  }) => {
+  // Sample the nav buttons (hamburger, lens toggle, the More menu button on touch windows wider
+  // than a phone, locale picker chip) and confirm each meets the 44×44 touch floor (UXD-016;
+  // the full per-control check is in nav-controls.spec.ts).
+  test('hamburger, lens, More and locale are all ≥ 44×44 px', async ({ page, isMobile }) => {
     test.skip(!isMobile, 'mobile-only');
     await page.goto('/', { waitUntil: 'networkidle' });
     const selectors = [
       'button.menu-toggle',
       'button.lens-toggle',
-      'button.contrast-toggle',
+      'button.nav-more-trigger', // hidden ≤ 600 px: its actions are drawer rows there
       'nav .right button.chip', // locale picker
     ];
     for (const sel of selectors) {
@@ -145,12 +140,8 @@ test.describe('mobile nav touch-target floor across primary buttons', () => {
       if (!visible) continue; // some are conditional (e.g. locale chip)
       const box = await el.boundingBox();
       expect(box, `${sel} has bounding box`).not.toBeNull();
-      // Visible footprint must be at least 28×28 (some chrome elements
-      // run smaller than 44 to fit the nav row; CSS padding pads the hit
-      // area). We assert a conservative floor that catches regressions
-      // where a button collapses to a few pixels.
-      expect(box!.width, `${sel} width ≥ 28`).toBeGreaterThanOrEqual(28);
-      expect(box!.height, `${sel} height ≥ 28`).toBeGreaterThanOrEqual(28);
+      expect(box!.width, `${sel} width ≥ 44`).toBeGreaterThanOrEqual(43.5);
+      expect(box!.height, `${sel} height ≥ 44`).toBeGreaterThanOrEqual(43.5);
     }
   });
 });

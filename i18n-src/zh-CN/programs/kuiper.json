@@ -88,5 +88,19 @@
     "/programs/starlink": "Starlink — 它正在追赶的星座",
     "/earth": "地球 — 轨道与日益拥挤的近地轨道",
     "/earth?site=kuiper": "Kuiper 卫星星座"
+  },
+  "roster": {
+    "KuiperSat prototypes": {
+      "note": "两颗试验卫星进入轨道，在量产开始之前验证设计",
+      "name": "KuiperSat原型星"
+    },
+    "Production launches": {
+      "note": "运营星座开始部署——落后Starlink数年，并与保住频谱的监管时限赛跑",
+      "name": "量产发射"
+    },
+    "Multi-rocket by design": {
+      "note": "Kuiper向多家供应商购买发射服务——Atlas V、Vulcan、Ariane 6、New Glenn——而不是像依赖Falcon那样依赖竞争对手的火箭",
+      "name": "设计上采用多种火箭"
+    }
   }
 }

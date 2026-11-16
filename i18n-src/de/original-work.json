@@ -1991,6 +1991,86 @@
       "title": "Sputnik 1",
       "what": "Die polierte Kugel von 58 cm mit der Naht zwischen den Halbschalen, 36 Bolzen und vier nach hinten gepfeilten Peitschenantennen von 2,4 und 2,9 m.",
       "where": "Erkunden + Fliegen"
+    },
+    "/images/colophon/model-pad-apollo-lut_webp": {
+      "title": "Startrampe: Apollo, LC-39",
+      "what": "Die Saturn-V-Rampe: der 380 ft hohe Nabelschnurturm mit Schwenkarmen, die beim Start wegfallen, und der Flammgraben. Maße nach NASA-Angaben auf Wikipedia.",
+      "where": "Fliegen · Startrampe"
+    },
+    "/images/colophon/model-pad-shuttle_webp": {
+      "title": "Startrampe: Space Shuttle, LC-39",
+      "what": "Die Shuttle-Rampe: die feste Wartungsstruktur (350 ft mit Mast), die zurückgeschwenkte drehbare Wartungsstruktur, der 290 ft hohe Wasserturm. Haupthöhen von Wikipedia; der Rest ungefähr.",
+      "where": "Fliegen · Startrampe"
+    },
+    "/images/colophon/model-pad-sls_webp": {
+      "title": "Startrampe: SLS, LC-39B",
+      "what": "Die Artemis-Rampe: der Turm des Mobile Launchers neben der Rakete und drei hohe Blitzschutztürme. Größen ungefähr.",
+      "where": "Fliegen · Startrampe"
+    },
+    "/images/colophon/model-pad-soyuz_webp": {
+      "title": "Startrampe: Sojus, Baikonur und Plessezk",
+      "what": "Die Rampe der R-7-Familie: vier Stützarme, die beim Start nach außen wegkippen, zwei zurückgefahrene Wartungskabinen, Blitzschutzmasten, die Flammgrube. Größen ungefähr.",
+      "where": "Fliegen · Startrampe"
+    },
+    "/images/colophon/model-pad-proton_webp": {
+      "title": "Startrampe: Proton, Baikonur",
+      "what": "Ein fester Wartungsturm mit Schwenkarmen, die beim Start einfahren, neben dem Flammgraben. Größen ungefähr.",
+      "where": "Fliegen · Startrampe"
+    },
+    "/images/colophon/model-pad-f9-39a_webp": {
+      "title": "Startrampe: Falcon, LC-39A",
+      "what": "SpaceX an der 39A: der Transporter-Erektor, der sich vor dem Start um 1,5 Grad und beim Start um 45 zurücklehnt, der alte Turm über 350 ft erhöht. Angaben von Wikipedia.",
+      "where": "Fliegen · Startrampe"
+    },
+    "/images/colophon/model-pad-f9-cat_webp": {
+      "title": "Startrampe: Falcon, SLC-40 mit Besatzungsturm",
+      "what": "SpaceX an der SLC-40 seit dem Besatzungszugangsturm von 2023, mit dem Transporter-Erektor, der beim Start wegkippt. Turmhöhe ungefähr.",
+      "where": "Fliegen · Startrampe"
+    },
+    "/images/colophon/model-pad-f9-te_webp": {
+      "title": "Startrampe: Falcon, SLC-40 und SLC-4E",
+      "what": "Eine schlichte Falcon-Rampe: der Transporter-Erektor, der beim Start wegkippt, und Blitzschutzmasten. Größen ungefähr.",
+      "where": "Fliegen · Startrampe"
+    },
+    "/images/colophon/model-pad-starbase_webp": {
+      "title": "Startrampe: Starship, Starbase",
+      "what": "Der Startturm von Starbase mit geöffneten Fangarmen. Turmhöhe ungefähr.",
+      "where": "Fliegen · Startrampe"
+    },
+    "/images/colophon/model-pad-atlas-v_webp": {
+      "title": "Startrampe: Atlas V, SLC-41",
+      "what": "Die ULA-Rampe: Startplattform, Nabelschnurturm und vier Blitzschutztürme; die Montagehalle steht abseits der Rampe und fehlt. Größen ungefähr.",
+      "where": "Fliegen · Startrampe"
+    },
+    "/images/colophon/model-pad-cape-classic_webp": {
+      "title": "Startrampe: Wartungsturm-Rampe am Cape",
+      "what": "Die Atlas-, Delta-, Titan- und Saturn-IB-Rampen am Cape: ein Nabelschnurturm mit Schwenkarmen neben der Rakete. Größen ungefähr.",
+      "where": "Fliegen · Startrampe"
+    },
+    "/images/colophon/model-pad-kourou-a5_webp": {
+      "title": "Startrampe: Ariane 4 und 5, Kourou",
+      "what": "Die Rampen ELA-2 und ELA-3: ein Nabelschnurmast neben der Trägerrakete und vier hohe Blitzschutztürme. Größen ungefähr.",
+      "where": "Fliegen · Startrampe"
+    },
+    "/images/colophon/model-pad-kourou-a6_webp": {
+      "title": "Startrampe: Ariane 6, Kourou",
+      "what": "Die Rampe ELA-4: der Nabelschnurmast, zwei Blitzschutztürme und der weit zurückgefahrene bewegliche Montageturm. Größen ungefähr.",
+      "where": "Fliegen · Startrampe"
+    },
+    "/images/colophon/model-pad-chinese-fst_webp": {
+      "title": "Startrampe: Chinesischer Wartungsturm",
+      "what": "Der feste Wartungsturm von Jiuquan, Xichang, Wenchang und Taiyuan, dessen Arbeitsbühnen beim Start wegklappen. Größen ungefähr.",
+      "where": "Fliegen · Startrampe"
+    },
+    "/images/colophon/model-pad-tanegashima_webp": {
+      "title": "Startrampe: Tanegashima",
+      "what": "Die Yoshinobu-Rampe: der Nabelschnurturm der H-II-Rakete und ein Blitzschutzturm. Größen ungefähr.",
+      "where": "Fliegen · Startrampe"
+    },
+    "/images/colophon/model-pad-sriharikota_webp": {
+      "title": "Startrampe: Sriharikota",
+      "what": "Die ISRO-Rampe: der Nabelschnurturm neben der Rakete und der weit zurückgefahrene bewegliche Wartungsturm. Größen ungefähr.",
+      "where": "Fliegen · Startrampe"
     }
   },
   "capsules": {
@@ -2351,6 +2431,21 @@
       "title": "Sinnesebene",
       "what": "Kompassnadel, von einer Welle gekreuzt — öffnet die Sinneseinstellungen (Ton / Vibration / Neigung).",
       "where": "Navigation"
+    },
+    "scale-glyphs": {
+      "title": "Symbole der Maßstabsebenen",
+      "what": "Eine kleine Zeichnung für jede Ebene in /explore, vom Sonnensystem bis zum Kosmischen Netz — in der Ebenenauswahl, den Navigationszeilen und der Ebenenkarte.",
+      "where": "Erkunden · Navigation · Ebenenauswahl",
+      "variants": {
+        "Solar System": "Sonnensystem",
+        "Stellar Neighborhood": "Sonnenumgebung",
+        "Milky Way": "Milchstraße",
+        "Local Group": "Lokale Gruppe",
+        "Local Sheet": "Lokales Blatt",
+        "Virgo Supercluster": "Virgo-Superhaufen",
+        "Laniakea": "Laniakea",
+        "Cosmic Web": "Kosmisches Netz"
+      }
     }
   }
 }

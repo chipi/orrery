@@ -5,6 +5,7 @@
  * and vehicles that stayed in orbit (the Apollo CSM, Orion, a Mars 2
  * orbiter); those are left out — a landing site shows only what is on its
  * surface (operator, 2026-11-06: Apollo 15–17 = the LM and the LRV, no CSM).
+ * That filter is for landers; an orbiter site (`kind: 'orbiter'`) shows its own craft.
  */
 import { spacecraftDiagramPath, launcherCutawayPath } from '$lib/spacecraft-diagrams';
 import { assetOrigin } from '$lib/asset-url';
@@ -35,10 +36,17 @@ export interface SiteAnatomy {
 }
 
 export function siteAnatomy(
-  site: Pick<SurfaceSite, 'id' | 'fleet_refs'>,
+  site: Pick<SurfaceSite, 'id' | 'fleet_refs'> & { kind?: SurfaceSite['kind'] },
   pathFor: (id: string) => string | null = spacecraftDiagramPath,
   explodedFor: (id: string) => string | null = launcherCutawayPath,
 ): SiteAnatomy[] {
+  if (site.kind === 'orbiter') {
+    // An orbiter is the craft that stayed up, so the lander filter below does not apply. A site
+    // row without fleet_refs (Clementine, MAVEN, Hope) is drawn under its own id.
+    const drawn = (site.fleet_refs ?? []).filter((r) => pathFor(r.id) != null);
+    const ids = drawn.length > 0 ? drawn.map((r) => r.id) : pathFor(site.id) ? [site.id] : [];
+    return ids.map((id) => ({ fleetId: id, src: pathFor(id)!, exploded: explodedFor(id) }));
+  }
   const special = SITE_DRAWINGS[site.id];
   if (special) {
     return special

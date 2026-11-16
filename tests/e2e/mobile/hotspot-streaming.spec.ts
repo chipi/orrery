@@ -19,7 +19,7 @@ import { test, expect } from '@playwright/test';
  * Mirrors streaming.spec.ts patterns (stubbed CDN, no network dependence).
  */
 
-const CDN = 'https://chipi.github.io/orrery';
+const CDN = 'https://www.orrerylearn.com';
 const PAN_PATH = '/images/hotspots/earth/baikonur-31-6/tier3-pan.jpg';
 
 test.describe('mobile stream-heavy contract — earth hotspot tiers (#546)', () => {

@@ -90,5 +90,19 @@
   "link_labels": {
     "/programs/iss": "ISS — 유럽이 건설을 도운 정거장",
     "/programs/ariane": "Ariane — ATV를 실어 나른 발사체"
+  },
+  "roster": {
+    "Spacelab": {
+      "note": "유럽의 첫 유인 우주비행 기여 — Space Shuttle의 화물칸에 실려 22차례 임무에서 비행한 유인 실험실로, 1983년 첫 ESA 우주비행사 울프 메르볼트를 태웠다",
+      "name": "Spacelab"
+    },
+    "Columbus": {
+      "note": "국제우주정거장에 있는 ESA의 상설 연구 실험실 — 유럽을 자체 시설을 갖춘 ISS의 정식 파트너로 만든 모듈",
+      "name": "Columbus"
+    },
+    "European Service Module": {
+      "note": "ATV 기술의 부활: 유럽은 이제 Artemis에서 달 궤도로 향하는 NASA의 Orion 우주선에 동력과 추진력을 제공하는 서비스 모듈을 만든다",
+      "name": "유럽 서비스 모듈"
+    }
   }
 }

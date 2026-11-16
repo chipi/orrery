@@ -8,6 +8,57 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 For deep-dive engineering rationale, see [`IMPLEMENTATION.md`](IMPLEMENTATION.md). For locked architectural decisions, see [`docs/adr/`](docs/adr/).
 
+## [0.9.9] — 2026-11-16
+
+A UI release: the teal accent is gone, one chip, filter and card system runs through every page,
+the catalogue pages share one pattern with photo era tiles, /fly launches from the real pad of each
+mission under a camera director, and 13 missions join the catalogue.
+
+### Added
+
+- **13 missions**: Kaguya, Chandrayaan-2, STS-1, STS-51-L, STS-107, Artemis I, Viking 2, Mars 2,
+  MRO, Mariner 2, Chang'e 2, IM-1 Odysseus and Shenzhou 5 (139 in all), with models for Nova-C,
+  MRO and Mariner 2 and a new Atlas-Agena B launcher.
+- **Launch director** on /fly: a seeded camera sequence over the ascent (`?cam=classic` keeps the
+  old view), and **real launch pads**: each launch draws the pad of its site and year (16 models).
+- **IN THE SKY** on the deep-sky panel: where to find the object, with its constellation.
+- **Era tiles** on /missions, /fleet, /programs and /missions/launches: one photo per era with its
+  subject placed by hand, the era's count and agency colours.
+- **List thumbnails** on the neighbourhood and outer-scale INDEXes; a meta line on every
+  solar-system INDEX row.
+- **Two-finger pan** on touch screens in /explore.
+
+### Changed
+
+- **Colour**: the UI accent is blue (`--color-accent`, `--color-state` #889fe7); no teal or cyan
+  in UI states.
+- **One chip, filter and card system** across Explore, the Worlds, the gallery, programs,
+  missions, fleet, launches, the stations, /fly and /plan; one page shell for text pages; one type
+  scale with an 11 px floor.
+- **Catalogue pages**: /missions, /fleet, /programs and /missions/launches share search, FILTERS,
+  the era strip, the agency row (one palette, "Show all" / "Show fewer"), the toolbar (sort, Grid /
+  List) and one card size; /patches, /essays and /posters use the same card and grid.
+- **Panels**: one header bar, a shared cap of five science links, Moon traverses in the Mars line
+  style, Venus site galleries.
+- **Plan to Fly**: destinations in five groups; the chosen rocket and payload carry into /fly.
+- **Launcher timelines** pinned to published event tables (Shuttle SRB separation at T+123 s, MECO
+  T+510 s; Atlas V 541, Delta II, Saturn V, PSLV, Delta IV Heavy, Ariane 5 ECA); Earth-orbit
+  missions coast in orbit.
+- **Home**: a two-column hero; **credits and colophon**: "Show all N" on every list and a totals
+  line.
+- **README, user guide and docs** retaken from the finished UI.
+
+### Fixed
+
+- The Science Lens panel no longer hides under the top controls on /explore and the Worlds.
+- The /fly ACTIVE event note stays three lines inside the HUD.
+- Worlds: a tap on the selected site's crosshair reopens its panel after the view shifts back from
+  beside the panel; the imagery card sits just above the bottom-left controls near the ground;
+  the flat true-scale view's scale bar no longer lies under "View from my location".
+- Black hole rendering, with a minimal quality tier.
+- Sitemap `<lastmod>` dates track the pages' real changes.
+- A duplicate Russian Lab page title.
+
 ## [0.9.8] — 2026-11-11
 
 A surfaces and polish release: sharper Mars and Moon imagery with more annotation rings, a

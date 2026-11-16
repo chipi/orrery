@@ -6,6 +6,7 @@ import {
   type LoadedMission,
   type MissionApplyDefaults,
   type PlanApplyDefaults,
+  type PlanFlightExtras,
   type PlanSelectionType,
   type TrajectoryOverride,
 } from '$lib/fly-mission-apply';
@@ -143,8 +144,9 @@ export function applyPlanSelectionToPage(
   type: PlanSelectionType,
   depDay: number,
   tofDays: number,
+  extras?: PlanFlightExtras,
 ): void {
-  const r = computePlanApply(dest, type, depDay, tofDays, ctx.planDefaults);
+  const r = computePlanApply(dest, type, depDay, tofDays, ctx.planDefaults, extras);
   ctx.setArcTimeline(r.timeline);
   ctx.setIsFreeReturn(r.isFreeReturn);
   ctx.setActiveDestination(r.activeDestination);
@@ -175,8 +177,9 @@ export function applyPlanSelectionMoonToPage(
   ctx: FlyApplyContext,
   depDay: number,
   tofDays: number,
+  extras?: PlanFlightExtras,
 ): void {
-  const r = computePlanApplyMoon(depDay, tofDays, ctx.planDefaults);
+  const r = computePlanApplyMoon(depDay, tofDays, ctx.planDefaults, extras);
   ctx.setArcTimeline(r.timeline);
   ctx.setIsFreeReturn(r.isFreeReturn);
   ctx.setActiveDestination(r.activeDestination);

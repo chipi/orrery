@@ -51,6 +51,41 @@
       "name": "Ingenuity",
       "year": 2021,
       "note": "a small helicopter carried by Perseverance made the first powered flight on another planet in 2021, and went on to fly dozens more times"
+    },
+    {
+      "linked_id": "delta-ii",
+      "ref": "fleet",
+      "role": "launcher"
+    },
+    {
+      "linked_id": "sojourner",
+      "ref": "fleet",
+      "role": "rover"
+    },
+    {
+      "linked_id": "spirit",
+      "ref": "fleet",
+      "role": "rover"
+    },
+    {
+      "linked_id": "opportunity",
+      "ref": "fleet",
+      "role": "rover"
+    },
+    {
+      "linked_id": "atlas-v",
+      "ref": "fleet",
+      "role": "launcher"
+    },
+    {
+      "linked_id": "curiosity",
+      "ref": "fleet",
+      "role": "rover"
+    },
+    {
+      "linked_id": "perseverance",
+      "ref": "fleet",
+      "role": "rover"
     }
   ],
   "related_programs": [

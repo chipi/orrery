@@ -14,8 +14,9 @@
 
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname } from 'node:path';
+import { simbadRecordUrl } from './lib/catalogue-sources.mjs';
 
-const SCRIPT_VERSION = 'build-named-stars@1.0.0';
+const SCRIPT_VERSION = 'build-named-stars@1.1.0';
 const HYG_URL =
   'https://raw.githubusercontent.com/astronexus/HYG-Database/main/hyg/CURRENT/hygdata_v41.csv';
 const OUT_PATH = 'static/data/universe/named-stars.json';
@@ -178,6 +179,9 @@ async function main(): Promise<void> {
       x: round(num(cols[COL.x]), 4),
       y: round(num(cols[COL.y]), 4),
       z: round(num(cols[COL.z]), 4),
+      // The star's SIMBAD page (#658). The values stay HYG's; the page is where a reader
+      // checks them against Hipparcos and the other catalogues.
+      records: { simbad: simbadRecordUrl(Number.isFinite(hip) ? `HIP ${hip}` : name) },
     });
   }
 
@@ -192,6 +196,11 @@ async function main(): Promise<void> {
     generated_at: new Date().toISOString(),
     script_version: SCRIPT_VERSION,
     catalog: 'HYG Database v4.1 (astronexus)',
+    catalogue_source: {
+      source: 'HYG Database v4.1 (merges the Hipparcos, Yale Bright Star and Gliese catalogues)',
+      bibcode: null,
+      record_url: 'https://github.com/astronexus/HYG-Database',
+    },
     count: stars.length,
     stars,
   };

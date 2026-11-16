@@ -1,0 +1,30 @@
+{
+  "name": "Viking 2",
+  "vehicle": "Titan IIIE-Centaur",
+  "payload": "3530 kg (orbitador + módulo de pouso)",
+  "delta_v": "~4,5 km/s (estimativa)",
+  "type": "ORBITADOR · MÓDULO DE POUSO · REALIZADA",
+  "first": "O segundo módulo de pouso Viking, pousado em Utopia Planitia a cerca de 6.460 km do local de pouso da Viking 1",
+  "description": "A Viking 2 foi a segunda das duas espaçonaves Viking da NASA, cada uma um orbitador com um módulo de pouso. Foi lançada em 1975-09-09 em um Titan IIIE-Centaur, entrou em órbita de Marte em 1976-08-07 e pousou seu módulo em Utopia Planitia em 1976-09-03, a cerca de 6.460 km do local de pouso da Viking 1. O módulo de pouso funcionou até 1980-04-12. O orbitador retornou quase 16.000 imagens em 706 órbitas antes de ser desligado em 1978-07-24, após um vazamento no sistema de propulsão. Seus experimentos com o solo, assim como os da Viking 1, foram inconclusivos quanto a existir ou ter existido vida em Marte. Os dois orbitadores juntos retornaram 52.663 imagens e mapearam cerca de 97% do planeta; os dois módulos de pouso retornaram 4.500 fotografias.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANÇAMENTO",
+      "note": "Titan IIIE-Centaur de Cabo Canaveral, 1975-09-09.",
+      "type": "nominal"
+    },
+    {
+      "met": 333,
+      "label": "INSERÇÃO EM ÓRBITA DE MARTE",
+      "note": "Orbitador capturado em 1976-08-07 em uma órbita de 1500 × 33.000 km.",
+      "type": "nominal"
+    },
+    {
+      "met": 360,
+      "label": "CONTATO COM A SUPERFÍCIE",
+      "note": "O módulo de pouso pousa em Utopia Planitia em 1976-09-03.",
+      "type": "nominal"
+    }
+  ],
+  "vehicle_stage": "estágio superior Centaur"
+}

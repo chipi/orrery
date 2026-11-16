@@ -28,12 +28,12 @@
   "firsts": [
     {
       "year": 1966,
-      "label": "Luna 10 — premier orbiteur lunaire artificiel (URSS)",
+      "label": "Luna 10 — premier orbiteur lunaire artificiel",
       "mission_id": "luna10"
     },
     {
       "year": 1968,
-      "label": "Apollo 8 — première orbite lunaire habitée (États-Unis)",
+      "label": "Apollo 8 — première orbite lunaire habitée",
       "mission_id": "apollo8"
     }
   ],

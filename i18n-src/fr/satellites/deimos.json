@@ -15,6 +15,10 @@
       "tab": "orbits",
       "section": "semi-major-axis",
       "why": "Déimos est la lune extérieure de Mars (23 460 km) — sa période orbitale (1,26 j) est plus longue que le jour martien, si bien que les forces de marée la repoussent lentement vers l'extérieur."
+    },
+    {
+      "tab": "planets",
+      "section": "tides"
     }
   ]
 }

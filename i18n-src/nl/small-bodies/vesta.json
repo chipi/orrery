@@ -10,6 +10,10 @@
       "tab": "orbits",
       "section": "semi-major-axis",
       "why": "Vesta beweegt in een baan op 2,36 AE — binnenste gordel. De nabijheid ervan bepaalde Dawns keuze om Vesta eerst te bezoeken (2011), daarna naar Ceres te gaan (2015)."
+    },
+    {
+      "tab": "propulsion",
+      "section": "ion-drive"
     }
   ]
 }

@@ -1,0 +1,30 @@
+{
+  "name": "Mars 2",
+  "vehicle": "Proton-K / D",
+  "payload": "4650 kg (orbiteur + atterrisseur réunis)",
+  "delta_v": "~5,5 km/s (estimation)",
+  "type": "ORBITEUR OPÉRATIONNEL · ATTERRISSEUR PERDU",
+  "first": "Un orbiteur et un atterrisseur soviétiques lancés vers Mars en 1971 : l'atterrisseur s'est écrasé, l'orbiteur a fonctionné",
+  "description": "Mars 2 était une sonde soviétique composée d'un orbiteur et d'un atterrisseur. Lancée le 1971-05-19 sur un Proton-K avec un étage supérieur Blok D, neuf jours avant sa jumelle Mars 3, elle a vu son module de descente se séparer environ 4,5 heures avant l'arrivée. Son système de descente a mal fonctionné, le parachute ne s'est pas déployé et l'atterrisseur s'est écrasé sur Mars. L'orbiteur est entré en orbite martienne le 1971-11-27 sur une orbite de 18 heures et a envoyé des données jusqu'en août 1972 environ.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCEMENT",
+      "note": "Proton-K avec étage supérieur Blok-D depuis Baïkonour, 1971-05-19.",
+      "type": "nominal"
+    },
+    {
+      "met": 192,
+      "label": "MOI DE L'ORBITEUR",
+      "note": "L'orbiteur entre en orbite martienne le 1971-11-27.",
+      "type": "nominal"
+    },
+    {
+      "met": 192.1,
+      "label": "ATTERRISSEUR PERDU",
+      "note": "Le module de descente s'est séparé environ 4,5 heures avant l'arrivée ; l'atterrisseur s'est écrasé.",
+      "type": "warning"
+    }
+  ],
+  "vehicle_stage": "étage supérieur Blok-D"
+}

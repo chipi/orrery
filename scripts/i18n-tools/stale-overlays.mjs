@@ -17,7 +17,9 @@
  *
  * --manifest=check|write is the gate that needs no git history (CI has none). The manifest,
  * scripts/i18n-tools/en-source-hashes.json, holds a hash of every English string
- * ({rel: {dotted key: hash}}; rel "messages" is messages/en-US.json) as it was when the
+ * ({rel: {dotted key: hash}}; rel "messages" is messages/en-US.json; rel "programs-roster/<id>.json"
+ * holds a program's roster notes and name-only names from static/data/programs, keyed as the locale
+ * overlays' `roster` map is: `<rosterKey>.note` / `<rosterKey>.name`) as it was when the
  * translations were last checked against it. check exits 1 on a string whose English now differs
  * (the translations were not re-checked after the edit) or that is not in the manifest yet; a
  * manifest entry whose English is gone is only counted. After re-checking the translations of the
@@ -26,6 +28,7 @@
 import { execFileSync } from 'node:child_process';
 import { existsSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import { textHash } from './term-match.mjs';
+import { rosterKey } from '../../src/lib/program-roster-overlay.js';
 
 const arg = (k) => process.argv.find((a) => a.startsWith(`--${k}=`))?.split('=')[1];
 const SINCE = arg('since') ? Date.parse(arg('since')) / 1000 : 0;
@@ -57,6 +60,20 @@ if (MANIFEST) {
     put(p.slice('i18n-src/en-US/'.length), JSON.parse(readFileSync(p, 'utf8')), false);
   if (existsSync('messages/en-US.json'))
     put('messages', JSON.parse(readFileSync('messages/en-US.json', 'utf8')), true);
+  // Program roster English lives in the base record, not in an en-US overlay: hash each note and
+  // each name-only name under the key a locale overlay's `roster` map uses.
+  const programs = 'static/data/programs';
+  if (existsSync(programs))
+    for (const f of readdirSync(programs).sort()) {
+      if (!f.endsWith('.json') || f === 'index.json') continue;
+      const doc = {};
+      for (const row of JSON.parse(readFileSync(`${programs}/${f}`, 'utf8')).roster ?? []) {
+        const key = rosterKey(row);
+        if (row.note) (doc[key] ||= {}).note = row.note;
+        if (!row.linked_id && row.name) (doc[key] ||= {}).name = row.name;
+      }
+      put(`programs-roster/${f}`, doc, false);
+    }
   const sorted = Object.fromEntries(
     Object.entries(now)
       .sort(([a], [b]) => (a < b ? -1 : 1))

@@ -93,5 +93,15 @@
     "/explore": "Explorer — les objets du ciel profond révélés par ces télescopes",
     "/earth?site=hubble": "Hubble en orbite terrestre basse",
     "/earth?site=chandra": "Observatoire de rayons X Chandra"
+  },
+  "roster": {
+    "Compton Gamma Ray Observatory": {
+      "note": "le membre gamma des quatre d'origine — il a cartographié les événements les plus violents de l'univers jusqu'à sa désorbitation volontaire en 2000",
+      "name": "Observatoire Compton Gamma Ray"
+    },
+    "Nancy Grace Roman": {
+      "note": "le suivant dans la lignée de la NASA — un télescope de relevé infrarouge à grand champ, au champ de vision plus de cent fois celui de Hubble, conçu pour cartographier l'univers plutôt que de fixer une seule zone",
+      "name": "Nancy Grace Roman"
+    }
   }
 }

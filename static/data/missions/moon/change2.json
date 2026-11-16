@@ -1,0 +1,76 @@
+{
+  "id": "change2",
+  "agency": "CNSA",
+  "agency_full": "China National Space Administration",
+  "sector": "gov",
+  "dest": "MOON",
+  "color": "#DE2910",
+  "year": 2010,
+  "status": "FLOWN",
+  "departure_date": "2010-10-01",
+  "arrival_date": "2010-10-06",
+  "transit_days": 5,
+  "vehicle": "Long March 3C",
+  "payload": "2480 kg",
+  "delta_v": "~3.8 km/s (TLI + LOI, estimate)",
+  "data_quality": "partial",
+  "credit": "Plain figures (dates, vehicle, orbit, mass) from Wikipedia, not from a CNSA page; see the search backlog. CNSA / CLEP.",
+  "links": [
+    {
+      "l": "Chang'e 2 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Chang%27e_2",
+      "t": "intro"
+    },
+    {
+      "l": "嫦娥二号 — 中文维基百科",
+      "u": "https://zh.wikipedia.org/wiki/%E5%AB%A6%E5%A8%A5%E4%BA%8C%E5%8F%B7",
+      "t": "core"
+    },
+    {
+      "l": "Chang'e 2 (NSSDCA)",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2010-050A",
+      "t": "deep"
+    }
+  ],
+  "flight_data_quality": "sparse",
+  "fleet_refs": [
+    {
+      "id": "change-2",
+      "role": "spacecraft"
+    }
+  ],
+  "flight": {
+    "launch": {
+      "vehicle_stage": "Long March 3C upper stage",
+      "mass_at_tli_kg": 2480,
+      "source": "Wikipedia Chang'e 2 (mass 2,480 kg)"
+    },
+    "events": [
+      {
+        "met_days": 0,
+        "type": "launch",
+        "label": "Launch — Long March 3C",
+        "description": "Xichang, 2010-10-01, 10:59:57 UT."
+      },
+      {
+        "met_days": 5,
+        "type": "edl_or_oi",
+        "label": "Lunar orbit insertion",
+        "description": "2010-10-06, into lunar orbit; the 100 km working orbit followed on 2010-10-09."
+      }
+    ],
+    "cislunar_profile": {
+      "source_tier": "tier_1_analytic",
+      "translunar": {
+        "type": "direct"
+      },
+      "lunar_arrival": {
+        "type": "orbit",
+        "altitude_km": 100
+      },
+      "return": {
+        "type": "none"
+      }
+    }
+  }
+}

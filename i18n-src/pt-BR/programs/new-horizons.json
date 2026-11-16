@@ -82,5 +82,18 @@
   "link_labels": {
     "/explore": "Plutão no explorador 3D",
     "/gallery/deep-sky": "Plutão, na galeria Céu profundo"
+  },
+  "roster": {
+    "mission:new-horizons": {
+      "note": "a nave mais rápida já lançada, enviada através do sistema solar para fazer o primeiro estudo de perto de Plutão — e depois de um mundo além dele"
+    },
+    "Pluto, up close": {
+      "note": "em 14 de julho de 2015 sobrevoou Plutão, revelando um mundo jovem e ativo de geleiras de nitrogênio e montanhas de gelo de água onde os cientistas esperavam uma bola de rocha morta",
+      "name": "Plutão de perto"
+    },
+    "Arrokoth": {
+      "note": "no Dia de Ano-Novo de 2019 sobrevoou Arrokoth, um minúsculo corpo de dois lóbulos a um bilhão e meio de quilômetros além de Plutão — o objeto mais distante já explorado de perto",
+      "name": "Arrokoth"
+    }
   }
 }

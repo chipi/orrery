@@ -19,6 +19,8 @@ export interface TiangongModuleBase {
   status: 'ACTIVE' | 'RETIRED';
   credit: string;
   links: TiangongModuleLink[];
+  /** /science articles (`tab/section`) offered as cards; at most 5. */
+  science?: string[];
 }
 
 /** Overlay fields merged at fetch time */

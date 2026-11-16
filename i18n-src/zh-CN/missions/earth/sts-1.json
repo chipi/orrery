@@ -1,0 +1,23 @@
+{
+  "name": "STS-1",
+  "vehicle": "Space Shuttle Columbia (OV-102)",
+  "payload": "两名航天员（扬、克里彭）；DFI 与 ACIP 测量设备",
+  "delta_v": "~9.4 km/s（近地轨道）",
+  "type": "载人轨道试飞 · 已飞行",
+  "first": "Space Shuttle的首次轨道试飞，由两名航天员驾驶",
+  "description": "STS-1 是Space Shuttle的首次轨道试飞。指令长约翰·扬和驾驶员罗伯特·克里彭于 1981-04-12 的 7:00:03 EST（12:00:03 UTC）乘 Columbia 从肯尼迪航天中心的 Launch Complex 39A 发射，进入高度 166 海里（约 307 km）、倾角 40.3 度的轨道。NASA 的 NSSDCA 目录称其为航天运输系统首次载人轨道试飞，目的是检验Space Shuttle整体系统的综合性能。机组在 54 小时 20 分 53 秒内绕地球飞行 37 圈，随后于 1981-04-14 的 10:20:57 PST（18:20:57 UTC）降落在加利福尼亚州 Edwards Air Force Base 的 23 号跑道。载荷为测量仪器：Developmental Flight Instrumentation 和 ACIP 平台记录温度、压力和加速度。发射以及固体火箭助推器的超压波使轨道器失去 16 块隔热瓦，另有 148 块受损。",
+  "events": [
+    {
+      "met": 0,
+      "label": "发射升空",
+      "note": "Columbia 于 1981-04-12 的 7:00:03 EST（12:00:03 UTC）从 39A 发射台升空。",
+      "type": "nominal"
+    },
+    {
+      "met": 2.2645,
+      "label": "着陆",
+      "note": "1981-04-14 的 10:20:57 PST，绕地球 37 圈后降落在 Edwards Air Force Base 的 23 号跑道。",
+      "type": "nominal"
+    }
+  ]
+}

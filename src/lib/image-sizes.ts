@@ -10,6 +10,10 @@ export const IMAGE_SIZES = {
   card: 'auto, (max-width: 840px) 50vw, 340px',
   /** 300px-min card grids (/programs, /essays): one column on phones. */
   wideCard: 'auto, (max-width: 700px) 100vw, 420px',
+  /** MiniCard hero: 176px wide, rails on /programs/<id>. */
+  miniCard: 'auto, 176px',
+  /** Hardware card mini hero: 72px wide (/programs/<id>). */
+  miniHero: 'auto, 72px',
   /** Side panel hero: full width on phones, --panel-width (400px) on desktop. */
   panel: '(max-width: 768px) 100vw, 400px',
   /** Panel gallery-tab grid thumbnails (2-3 columns inside the panel). */
@@ -26,6 +30,8 @@ export const IMAGE_SIZES = {
   colophonThumb: 'auto, (max-width: 560px) 50vw, 260px',
   /** /colophon wide thumbnail grid (230px-min columns; two columns on phones). */
   colophonWide: 'auto, (max-width: 560px) 50vw, 360px',
+  /** /colophon launcher sketches (portrait cards, 170px-min columns; two per row on phones). */
+  colophonPortrait: 'auto, (max-width: 560px) 50vw, 200px',
   /** /credits row thumbnail: 64px, 96px from 768px. */
   creditThumb: 'auto, (min-width: 768px) 96px, 64px',
 } as const;

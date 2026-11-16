@@ -207,10 +207,10 @@
       margin-left: auto;
       font-family: var(--font-mono, 'Space Mono', monospace);
       font-size: 12px;
-      color: rgba(255, 255, 255, 0.55);
+      color: var(--color-text-label);
     }
     .mcd-handle:focus-visible {
-      outline: 2px solid var(--color-accent, #4ecdc4);
+      outline: 2px solid var(--color-accent, var(--color-focus));
       outline-offset: -2px;
       border-radius: 8px;
     }

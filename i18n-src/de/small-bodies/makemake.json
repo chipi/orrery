@@ -10,6 +10,10 @@
       "tab": "planets",
       "section": "kuiper-belt",
       "why": "Makemake ist das viertgrößte bekannte KBO und das einzige der von der IAU anerkannten Zwergplaneten ohne bestätigten Mond, bis Hubble 2016 MK2 entdeckte."
+    },
+    {
+      "tab": "orbits",
+      "section": "inclination"
     }
   ]
 }

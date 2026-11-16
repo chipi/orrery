@@ -90,5 +90,15 @@
   "link_labels": {
     "/programs/space-shuttle": "Space Shuttle — das Fahrzeug, auf das es die Antwort war",
     "/fleet?id=buran": "Flotte — Raumgleiter Buran & Energia"
+  },
+  "roster": {
+    "The single flight": {
+      "note": "am 15. November 1988 flog Buran eine einzige unbemannte Orbitalmission — ein vollautomatischer Start, zwei Umläufe, Wiedereintritt und Landung auf der Piste bei Seitenwind, ohne dass zu irgendeinem Zeitpunkt ein Pilot an Bord war",
+      "name": "Der einzige Flug"
+    },
+    "Cancellation": {
+      "note": "mit dem Ende der Sowjetunion und ohne Budget und Auftrag wurde das Programm nach seinem einzigen Flug eingestellt; der geflogene Orbiter wurde 2002 zerstört, als das Hallendach in Baikonur einstürzte",
+      "name": "Einstellung"
+    }
   }
 }

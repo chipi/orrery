@@ -82,5 +82,31 @@
   "link_labels": {
     "/programs/iss": "国际空间站 — 它们旨在接替的空间站",
     "/programs/spacex": "SpaceX — 它们将依赖的乘员与货运运输"
+  },
+  "roster": {
+    "Commercial LEO Destinations": {
+      "note": "NASA资助多家公司建造私营空间站，打算成为轨道前哨站的客户，而不是运营者",
+      "name": "商业近地轨道目的地"
+    },
+    "Vast Haven-1": {
+      "note": "Vast公司的单舱商业自由飞行空间站——预计最早进入轨道的商业空间站之一",
+      "name": "Vast Haven-1"
+    },
+    "Axiom Station": {
+      "note": "Axiom Space将其作为独立的自由飞行空间站来组装；其首个舱段先短暂对接国际空间站，随后分离，在自由飞行中与后续舱段会合——计划已于2024年12月重新调整",
+      "name": "Axiom Station"
+    },
+    "Orbital Reef": {
+      "note": "Blue Origin与Sierra Space的合资项目，被定位为轨道上的“综合用途商业园区”——研究、制造和旅游",
+      "name": "Orbital Reef"
+    },
+    "Starlab": {
+      "note": "Voyager与Airbus设计的空间站，为单个大型自由飞行器，旨在国际空间站之后持续开展科学研究",
+      "name": "Starlab"
+    },
+    "ISS retirement": {
+      "note": "国际空间站将在2030年前后离轨；商业空间站要在它退役之前投入飞行，使人类在近地轨道上的存在不会中断",
+      "name": "国际空间站退役"
+    }
   }
 }

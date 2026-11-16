@@ -129,8 +129,8 @@
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: #4ecdc4;
-    box-shadow: 0 0 6px rgba(78, 205, 196, 0.55);
+    background: var(--color-accent);
+    box-shadow: 0 0 6px color-mix(in srgb, var(--color-accent) 55%, transparent);
     transition: opacity 220ms ease-out;
   }
   .dot-btn {
@@ -142,19 +142,19 @@
     pointer-events: auto;
   }
   .dot-btn:focus-visible {
-    outline: 2px solid rgba(78, 205, 196, 0.95);
+    outline: 2px solid var(--color-focus);
     outline-offset: 3px;
   }
   .dot-btn:hover {
     transform: scale(1.4);
-    box-shadow: 0 0 10px rgba(78, 205, 196, 0.85);
+    box-shadow: 0 0 10px color-mix(in srgb, var(--color-accent) 85%, transparent);
   }
   .marker.fresh .dot {
     /* Brief halo pulse during the fresh-reveal window. */
-    box-shadow: 0 0 12px rgba(78, 205, 196, 0.95);
+    box-shadow: 0 0 12px color-mix(in srgb, var(--color-accent) 95%, transparent);
   }
   .marker.visited .dot {
-    background: rgba(78, 205, 196, 0.7);
+    background: var(--color-accent-strong);
     box-shadow: none;
   }
   .label {
@@ -165,7 +165,7 @@
     white-space: nowrap;
     padding: 2px 6px;
     background: rgba(4, 4, 12, 0.6);
-    border: 1px solid rgba(78, 205, 196, 0.45);
+    border: 1px solid color-mix(in srgb, var(--color-accent) 45%, transparent);
     border-radius: 3px;
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);

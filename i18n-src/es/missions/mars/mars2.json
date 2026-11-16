@@ -1,0 +1,30 @@
+{
+  "name": "Mars 2",
+  "vehicle": "Proton-K / D",
+  "payload": "4650 kg (orbitador + módulo de aterrizaje combinados)",
+  "delta_v": "~5,5 km/s (estimación)",
+  "type": "ORBITADOR OPERATIVO · MÓDULO PERDIDO",
+  "first": "Un orbitador y un módulo de aterrizaje soviéticos lanzados a Marte en 1971: el módulo se estrelló, el orbitador funcionó",
+  "description": "Mars 2 fue una nave soviética formada por un orbitador y un módulo de aterrizaje. Se lanzó el 1971-05-19 en un Proton-K con etapa superior Blok D, nueve días antes de su gemela Mars 3. El módulo de descenso se separó unas 4,5 horas antes de la llegada. Su sistema de descenso falló, el paracaídas no se desplegó y el módulo se estrelló en Marte. El orbitador entró en órbita de Marte el 1971-11-27 en una órbita de 18 horas y envió datos hasta aproximadamente agosto de 1972.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANZAMIENTO",
+      "note": "Proton-K con etapa superior Blok-D desde Baikonur, 1971-05-19.",
+      "type": "nominal"
+    },
+    {
+      "met": 192,
+      "label": "MOI DEL ORBITADOR",
+      "note": "El orbitador entra en órbita de Marte el 1971-11-27.",
+      "type": "nominal"
+    },
+    {
+      "met": 192.1,
+      "label": "MÓDULO PERDIDO",
+      "note": "El módulo de descenso se separó unas 4,5 horas antes de la llegada; el módulo se estrelló.",
+      "type": "warning"
+    }
+  ],
+  "vehicle_stage": "etapa superior Blok-D"
+}

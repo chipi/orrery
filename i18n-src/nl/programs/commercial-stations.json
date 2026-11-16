@@ -82,5 +82,31 @@
   "link_labels": {
     "/programs/iss": "ISS — het station waarvan ze de opvolgers moeten worden",
     "/programs/spacex": "SpaceX — het bemannings- en vrachtvervoer waarop ze zullen rekenen"
+  },
+  "roster": {
+    "Commercial LEO Destinations": {
+      "note": "NASA financiert verschillende bedrijven om particuliere stations te bouwen, met de bedoeling klant te worden van orbitale buitenposten in plaats van de exploitant van één ervan",
+      "name": "Commercial LEO Destinations"
+    },
+    "Vast Haven-1": {
+      "note": "een commercieel station van één module van Vast, vrij vliegend — een van de eerste commerciële stations die naar verwachting een baan om de Aarde bereiken",
+      "name": "Vast Haven-1"
+    },
+    "Axiom Station": {
+      "note": "Axiom Space bouwt het als onafhankelijk, vrij vliegend station; de eerste module koppelt kort aan het ISS en maakt zich dan los om zich in vrije vlucht bij latere modules te voegen — plan herzien in december 2024",
+      "name": "Axiom Station"
+    },
+    "Orbital Reef": {
+      "note": "een onderneming van Blue Origin en Sierra Space, gepresenteerd als een 'bedrijventerrein voor gemengd gebruik' in een baan om de Aarde — onderzoek, productie en toerisme",
+      "name": "Orbital Reef"
+    },
+    "Starlab": {
+      "note": "een station van Voyager en Airbus, ontworpen als één groot vrij vliegend station, gericht op ononderbroken wetenschap na het ISS",
+      "name": "Starlab"
+    },
+    "ISS retirement": {
+      "note": "het ISS wordt rond 2030 uit zijn baan gebracht; de commerciële stations moeten vliegen voordat het verdwijnt, zodat menselijke aanwezigheid in een lage baan nooit wordt onderbroken",
+      "name": "Uitdienstneming van het ISS"
+    }
   }
 }

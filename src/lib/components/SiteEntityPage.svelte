@@ -13,8 +13,12 @@
   import { canonicalUrl, metaDescription, pageTitle } from '$lib/seo';
   import { ogTitle } from '$lib/social-meta';
   import { article, breadcrumbList } from '$lib/json-ld';
+  import Chip from '$lib/components/Chip.svelte';
   import JsonLd from '$lib/components/JsonLd.svelte';
   import SiteIllustrationFigure from '$lib/components/SiteIllustrationFigure.svelte';
+  import EntityThumb from '$lib/components/EntityThumb.svelte';
+  import { thumbOf } from '$lib/entity-thumb';
+  import { agencyRingColor } from '$lib/surface-map/nation-palette';
   import type { SiteBody, SiteEntity } from '$lib/data/site-entity';
 
   let { body, entity, mapTitle }: { body: SiteBody; entity: SiteEntity; mapTitle: string } =
@@ -48,8 +52,8 @@
 </svelte:head>
 <JsonLd data={jsonLd} />
 
-<article class="entity">
-  <nav class="crumb">
+<article class="entity page-shell page-shell--reading">
+  <nav class="crumb page-crumb">
     <a href={localHref(`/${body}`)}>{section}</a>
     <span class="sep">›</span>
     <span>{name}</span>
@@ -60,8 +64,8 @@
       {site.agency} · {site.year} ·
       <span class="status">{surfaceStatusLabel(site.surface_status ?? site.status)}</span>
     </p>
-    <h1>{name}</h1>
-    {#if text.site_name}<p class="lede">{text.site_name}</p>{/if}
+    <h1 class="page-title">{name}</h1>
+    {#if text.site_name}<p class="lede page-lead">{text.site_name}</p>{/if}
   </header>
 
   {#if entity.illustration}
@@ -129,7 +133,7 @@
 
   {#if entity.mission}
     <section class="mission">
-      <h2>{ogTitle(m.missions_page_title())}</h2>
+      <h2 class="page-section-label">{ogTitle(m.missions_page_title())}</h2>
       <ul class="linklist wide">
         <li>
           <a href={localHref(`/missions/${entity.mission.id}`)}>{entity.mission.name}</a>
@@ -139,12 +143,19 @@
     </section>
     {#if entity.mission.hardware.length}
       <section class="hardware">
-        <h2>{ogTitle(m.fleet_page_title()).split(/\s[—–]\s/)[0]}</h2>
+        <h2 class="page-section-label">{ogTitle(m.fleet_page_title()).split(/\s[—–]\s/)[0]}</h2>
         <ul class="linklist wide">
           {#each entity.mission.hardware as h (h.id)}
-            <li>
-              <a href={localHref(`/fleet/${h.id}`)}>{h.name}</a>
-              {#if h.tagline}<span class="note">{h.tagline}</span>{/if}
+            <li class="has-thumb">
+              <EntityThumb
+                src={thumbOf('fleet', h.id)}
+                ring={agencyRingColor(h.agency)}
+                fallback="none"
+              />
+              <span class="lt-body">
+                <a href={localHref(`/fleet/${h.id}`)}>{h.name}</a>
+                {#if h.tagline}<span class="note">{h.tagline}</span>{/if}
+              </span>
             </li>
           {/each}
         </ul>
@@ -153,10 +164,12 @@
   {/if}
 
   <p class="actions">
-    <a class="cta" href={localHref(`/${body}?site=${site.id}`)}>{m.launches_open_in_orrery()}</a>
+    <Chip kind="link" href={localHref(`/${body}?site=${site.id}`)}
+      >{m.launches_open_in_orrery()}</Chip
+    >
     {#if site.mission_id}
-      <a class="cta" href={localHref(`/missions/${site.mission_id}`)}
-        >{name} · {ogTitle(m.missions_page_title())}</a
+      <Chip kind="link" href={localHref(`/missions/${site.mission_id}`)}
+        >{name} · {ogTitle(m.missions_page_title())}</Chip
       >
     {/if}
   </p>

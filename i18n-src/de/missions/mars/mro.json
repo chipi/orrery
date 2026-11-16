@@ -1,0 +1,24 @@
+{
+  "name": "Mars Reconnaissance Orbiter",
+  "vehicle": "Atlas V 401",
+  "payload": "2180 kg betankt (1031 kg im Betrieb)",
+  "delta_v": "~3,6 km/s (Schätzwert)",
+  "type": "ORBITER · AKTIV",
+  "first": "Ein Marsorbiter, dessen HiRISE-Kamera Objekte von der Größe eines Esstischs erkennen kann",
+  "description": "Der Mars Reconnaissance Orbiter startete am 2005-08-12 auf einer Atlas V 401 und erreichte den Mars am 2006-03-10, als ihn eine Zündung von 1641 Sekunden in eine polare Einfangbahn von 400 × 35.000 km brachte. Etwa sechs Monate Aerobraking senkten ihn auf seine Arbeitsbahn von 255 × 320 km, die sonnensynchron und polar ist. Die wissenschaftliche Arbeit begann im November 2006 nach der Sonnenkonjunktion. Er trägt sechs Instrumente, darunter die HiRISE-Kamera, das CRISM-Spektrometer, das SHARAD-Radar und die Context Camera. Die NASA baute ihn, um nach Hinweisen zu suchen, dass Wasser lange Zeit auf der Oberfläche Bestand hatte: Er hat in Wasser entstandene Mineralablagerungen, mögliche alte Küstenlinien und geschichtete Ablagerungen gefunden. Er dient außerdem als Relais für andere Marsmissionen und ist weiterhin in Betrieb.",
+  "events": [
+    {
+      "met": 0,
+      "label": "START",
+      "note": "Atlas V 401 von Cape Canaveral, 2005-08-12.",
+      "type": "nominal"
+    },
+    {
+      "met": 210,
+      "label": "MARSORBITEINSCHWUNG",
+      "note": "Zündung von 1641 Sekunden am 2006-03-10 in eine Umlaufbahn von 400 × 35.000 km.",
+      "type": "nominal"
+    }
+  ],
+  "vehicle_stage": "Centaur-Oberstufe"
+}

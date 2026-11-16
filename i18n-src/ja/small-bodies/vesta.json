@@ -10,6 +10,10 @@
       "tab": "orbits",
       "section": "semi-major-axis",
       "why": "ベスタは2.36 auで公転しており — 内側の帯にあります。その近さがDawnがベスタを最初に訪問(2011年)してからセレスに向かう(2015年)ことを選択した理由です。"
+    },
+    {
+      "tab": "propulsion",
+      "section": "ion-drive"
     }
   ]
 }

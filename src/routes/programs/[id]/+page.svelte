@@ -11,6 +11,18 @@
   import { IMAGE_SIZES } from '$lib/image-sizes';
   import { assetUrl } from '$lib/asset-url';
   import AgencyBadge from '$lib/components/AgencyBadge.svelte';
+  import EntityThumb from '$lib/components/EntityThumb.svelte';
+  import MiniCard from '$lib/components/MiniCard.svelte';
+  import CardRail from '$lib/components/CardRail.svelte';
+  import {
+    deeperLinks,
+    hardwareRows,
+    milestoneRows,
+    missionRows,
+    programSections,
+    rowPath,
+    surfaceSiteHref,
+  } from '$lib/program-page';
   import { base } from '$app/paths';
   import * as m from '$lib/paraglide/messages';
   import JsonLd from '$lib/components/JsonLd.svelte';
@@ -85,12 +97,13 @@
   }
 
   function href(r: ProgramRosterItem): string | null {
-    if (!r.linked_id) return null;
-    if (r.ref === 'mission') return localHref(`/missions?id=${r.linked_id}&from=program:${p.id}`);
-    if (r.ref === 'fleet') return localHref(`/fleet?id=${r.linked_id}&from=program:${p.id}`);
-    if (r.ref === 'module') return localHref(`/${p.id}?module=${r.linked_id}`);
-    return null;
+    const path = rowPath(p.id, r);
+    return path ? localHref(path) : null;
   }
+
+  // The real (localised) name of a linked mission or craft; an id only when it could not be read.
+  const missionName = (id: string) => data.missionDetails[id]?.name ?? pretty(id);
+  const fleetName = (id: string) => data.fleetNames[id] ?? pretty(id);
 
   let sections = $derived([
     { label: m.program_section_land(), blocks: p.the_land },
@@ -101,17 +114,16 @@
     { label: m.program_section_lessons(), blocks: p.lessons },
   ]);
 
-  let missions = $derived(
-    p.roster
-      .filter((r) => r.ref === 'mission' || (!r.ref && !!r.name))
-      .slice()
-      // Chronological; entries without a date (future/TBD) sort to the bottom.
-      .sort((a, b) => (a.year ?? Infinity) - (b.year ?? Infinity)),
-  );
+  // Chronological; entries without a date (future/TBD) sort to the bottom.
+  let missions = $derived(missionRows(p.roster));
+  let milestones = $derived(milestoneRows(p.roster));
+  // A section with no rows draws nothing, label included.
+  let has = $derived(new Set(programSections(p)));
+  let deeper = $derived(deeperLinks(p.see_also));
   // Whether any roster entry is actually a clickable mission — drives the
   // master-detail pane. With none, we don't prompt the user to "select" one.
   let hasClickable = $derived(missions.some((r) => !!r.linked_id));
-  let fleet = $derived(p.roster.filter((r) => r.ref === 'fleet'));
+  let fleet = $derived(hardwareRows(p.roster));
   let modules = $derived(
     p.roster
       .filter((r) => r.ref === 'module')
@@ -142,6 +154,8 @@
   let firstLinked = $derived(missions.find((r) => r.linked_id)?.linked_id ?? null);
   let selected = $state<string | null>(null);
   let activeSel = $derived(selected ?? firstLinked);
+  const metaOf = (d: { year: number; agency: string; type?: string }) =>
+    `${d.year} · ${d.agency}${d.type ? ` · ${d.type}` : ''}`;
   let selectedDetail = $derived(activeSel ? (data.missionDetails[activeSel] ?? null) : null);
 </script>
 
@@ -151,8 +165,8 @@
 </svelte:head>
 <JsonLd data={jsonLd} />
 
-<article class="program">
-  <nav class="crumb">
+<article class="program page-shell page-shell--reading">
+  <nav class="crumb page-crumb">
     <a href={localHref(`/programs`)}>{m.programs_index_title()}</a>
     <span class="sep">›</span>
     <span>{p.name}</span>
@@ -168,15 +182,15 @@
         >
       </p>
       <div class="title-row">
-        <h1>{p.name}</h1>
+        <h1 class="page-title">{p.name}</h1>
         {#if badges[`program:${p.id}`]}
           <img class="prog-badge" src={assetUrl(badges[`program:${p.id}`])} alt="" />
         {/if}
       </div>
-      <p class="tagline">{p.tagline}</p>
-      <p class="chips">
-        <span class="chip">{KIND_LABEL[p.kind]?.() ?? p.kind}</span>
-        <span class="chip chip-status status-{p.status.toLowerCase()}"
+      <p class="tagline page-lead">{p.tagline}</p>
+      <p class="meta-tags">
+        <span class="meta-tag">{KIND_LABEL[p.kind]?.() ?? p.kind}</span>
+        <span class="meta-tag meta-tag-status status-{p.status.toLowerCase()}"
           >{programStatusLabel(p.status)}</span
         >
       </p>
@@ -194,7 +208,7 @@
 
   {#each sections as sec (sec.label)}
     <section class="spine">
-      <h2>{sec.label}</h2>
+      <h2 class="page-section-label page-section-label--rule">{sec.label}</h2>
       {#each sec.blocks as block, i (i)}
         {#if block.type === 'prose'}
           <p>{block.md}</p>
@@ -219,7 +233,7 @@
 
   {#if modules.length}
     <section class="assembly">
-      <h2>{m.program_assembly_h()}</h2>
+      <h2 class="page-section-label page-section-label--rule">{m.program_assembly_h()}</h2>
       <ol class="timeline mod-timeline">
         {#each modules as m, i (i)}
           <li>
@@ -227,7 +241,9 @@
             <span class="t-dot"></span>
             <span class="t-body">
               {#if href(m)}
-                <a class="t-name t-mod" href={href(m)}>{m.name ?? pretty(m.linked_id ?? '')}</a>
+                <a class="t-name t-mod ui-hit" href={href(m)}
+                  >{m.name ?? pretty(m.linked_id ?? '')}</a
+                >
               {:else}
                 <span class="t-name">{m.name ?? pretty(m.linked_id ?? '')}</span>
               {/if}
@@ -242,80 +258,127 @@
     </section>
   {/if}
 
-  <section class="roster">
-    <h2>{m.program_section_missions()}</h2>
-    <div class="roster-split" class:solo={!hasClickable}>
+  {#if has.has('missions')}
+    <section class="roster">
+      <h2 class="page-section-label page-section-label--rule">{m.program_section_missions()}</h2>
+      <div class="roster-split" class:solo={!hasClickable}>
+        <ol class="timeline">
+          {#each missions as r, i (i)}
+            <li class:context={!r.linked_id} class:sel={!!r.linked_id && r.linked_id === activeSel}>
+              <span class="t-year">{r.year ?? ''}</span>
+              <span class="t-dot"></span>
+              <span class="t-body">
+                {#if r.linked_id}
+                  {#if badges[`mission:${r.linked_id}`]}
+                    <img class="t-patch" src={assetUrl(badges[`mission:${r.linked_id}`])} alt="" />
+                  {:else}
+                    <span class="t-thumb"
+                      ><EntityThumb
+                        src={data.thumbs[`mission:${r.linked_id}`] ?? null}
+                        fallback="none"
+                      /></span
+                    >
+                  {/if}
+                  <button
+                    type="button"
+                    class="t-name ui-hit"
+                    onclick={() => (selected = r.linked_id ?? null)}
+                    >{missionName(r.linked_id)}</button
+                  >
+                {:else if href(r)}
+                  <a class="t-name t-link ui-hit" href={href(r)}>{r.name}</a>
+                {:else}
+                  <span class="t-name t-ctx">{r.name}</span>
+                {/if}
+                {#if r.note}<span class="t-note">{r.note}</span>{/if}
+              </span>
+            </li>
+          {/each}
+        </ol>
+        {#if hasClickable}
+          <aside class="detail" aria-live="polite">
+            {#if selectedDetail}
+              <img
+                class="d-hero"
+                {...responsive(imgSrc({ reuse: selectedDetail.hero }), IMAGE_SIZES.panel)}
+                alt=""
+                decoding="async"
+              />
+              <p class="d-meta" title={metaOf(selectedDetail)}>{metaOf(selectedDetail)}</p>
+              <h3 class="d-name" title={selectedDetail.name}>{selectedDetail.name}</h3>
+              <p class="d-blurb">{selectedDetail.blurb}</p>
+              <a class="d-open" href={localHref(`${selectedDetail.href}&from=program:${p.id}`)}
+                >{m.program_open_mission()}</a
+              >
+            {:else}
+              <p class="d-empty">{m.program_select_mission()}</p>
+            {/if}
+          </aside>
+        {/if}
+      </div>
+    </section>
+  {/if}
+
+  {#if has.has('milestones')}
+    <section class="milestones">
+      <h2 class="page-section-label page-section-label--rule">{m.program_section_milestones()}</h2>
       <ol class="timeline">
-        {#each missions as r, i (i)}
-          <li class:context={!r.linked_id} class:sel={!!r.linked_id && r.linked_id === activeSel}>
+        {#each milestones as r, i (i)}
+          <li class="context">
             <span class="t-year">{r.year ?? ''}</span>
             <span class="t-dot"></span>
             <span class="t-body">
-              {#if r.linked_id}
-                {#if badges[`mission:${r.linked_id}`]}
-                  <img class="t-patch" src={assetUrl(badges[`mission:${r.linked_id}`])} alt="" />
-                {/if}
-                <button
-                  type="button"
-                  class="t-name"
-                  onclick={() => (selected = r.linked_id ?? null)}>{pretty(r.linked_id)}</button
-                >
-              {:else}
-                <span class="t-name t-ctx">{r.name}</span>
-              {/if}
+              <span class="t-name t-ctx">{r.name}</span>
               {#if r.note}<span class="t-note">{r.note}</span>{/if}
             </span>
           </li>
         {/each}
       </ol>
-      {#if hasClickable}
-        <aside class="detail" aria-live="polite">
-          {#if selectedDetail}
-            <img
-              class="d-hero"
-              {...responsive(imgSrc({ reuse: selectedDetail.hero }), IMAGE_SIZES.panel)}
-              alt=""
-              decoding="async"
-            />
-            <p class="d-meta">
-              {selectedDetail.year} · {selectedDetail.agency}{selectedDetail.type
-                ? ` · ${selectedDetail.type}`
-                : ''}
-            </p>
-            <h3 class="d-name">{selectedDetail.name}</h3>
-            <p class="d-blurb">{selectedDetail.blurb}</p>
-            <a class="d-open" href={localHref(`${selectedDetail.href}&from=program:${p.id}`)}
-              >{m.program_open_mission()}</a
-            >
-          {:else}
-            <p class="d-empty">{m.program_select_mission()}</p>
-          {/if}
-        </aside>
-      {/if}
-    </div>
+    </section>
+  {/if}
 
-    <h2>{m.program_section_hardware()}</h2>
-    <ul class="hardware">
-      {#each fleet as r, i (i)}
-        <li>
-          <a href={href(r)}>{pretty(r.linked_id ?? '')}</a>
-          {#if r.role}<span class="role">{r.role}</span>{/if}
-        </li>
-      {/each}
-    </ul>
-  </section>
-
-  {#if p.surface_sites && p.surface_sites.length}
+  {#if has.has('surface')}
     <section class="surface">
-      <h2>{m.programs_on_surface()}</h2>
-      <ul class="surface-list">
-        {#each p.surface_sites as s (s.surface + s.site)}
+      <h2 class="page-section-label page-section-label--rule">{m.programs_on_surface()}</h2>
+      <CardRail label={m.programs_on_surface()}>
+        {#each data.siteCards as s (s.surface + s.site)}
           <li>
-            <a href={localHref(`/${s.surface}?site=${s.site}`)}>
-              <span class="s-body">{SURFACE_NAME[s.surface]?.() ?? s.surface}</span><span
-                class="s-label">{s.label}</span
-              >
-              <span class="s-go">→</span>
+            <MiniCard
+              href={localHref(surfaceSiteHref(s.surface, s.site))}
+              hero={s.hero}
+              kind={SURFACE_NAME[s.surface]?.() ?? s.surface}
+              title={s.label}
+            />
+          </li>
+        {/each}
+      </CardRail>
+    </section>
+  {/if}
+
+  {#if has.has('hardware')}
+    <section class="hardware-section">
+      <h2 class="page-section-label page-section-label--rule">{m.program_section_hardware()}</h2>
+      <ul class="hardware">
+        {#each fleet as r, i (i)}
+          <li>
+            <a class="hw-card" href={href(r)}>
+              {#if r.linked_id && data.heroes[r.linked_id]}
+                <img
+                  class="hw-hero"
+                  {...responsive(assetUrl(data.heroes[r.linked_id]), IMAGE_SIZES.miniHero)}
+                  alt=""
+                  width="72"
+                  height="48"
+                  loading="lazy"
+                  decoding="async"
+                />
+              {:else}
+                <span class="hw-hero hw-none" aria-hidden="true"></span>
+              {/if}
+              <span class="hw-body">
+                <span class="hw-name">{fleetName(r.linked_id ?? '')}</span>
+                {#if r.role}<span class="role">{r.role}</span>{/if}
+              </span>
             </a>
           </li>
         {/each}
@@ -323,11 +386,30 @@
     </section>
   {/if}
 
-  {#if p.see_also && p.see_also.length}
+  {#if has.has('related')}
+    <section class="related">
+      <h2 class="page-section-label page-section-label--rule">{m.programs_related()}</h2>
+      <CardRail label={m.programs_related()}>
+        {#each data.related as r (r.id)}
+          <li>
+            <MiniCard
+              href={localHref(`/programs/${r.id}`)}
+              hero={r.hero}
+              kind={r.agency}
+              title={r.name}
+              meta={r.start_year ? `${r.start_year}–${r.end_year ?? m.programs_meta_now()}` : null}
+            />
+          </li>
+        {/each}
+      </CardRail>
+    </section>
+  {/if}
+
+  {#if has.has('deeper')}
     <section class="see-also">
-      <h2>{m.programs_go_deeper()}</h2>
+      <h2 class="page-section-label page-section-label--rule">{m.programs_go_deeper()}</h2>
       <ul>
-        {#each p.see_also as s (s.href)}
+        {#each deeper as s (s.href)}
           <li>
             <a href={localHref(s.href)}
               ><span class="k">{LINK_KIND[s.kind]?.() ?? s.kind}</span>{s.label} →</a
@@ -338,45 +420,21 @@
     </section>
   {/if}
 
-  {#if p.related_programs && p.related_programs.length}
-    <section class="related">
-      <h2>{m.programs_related()}</h2>
-      <p>
-        {#each p.related_programs as rid (rid)}
-          <a class="rel" href={localHref(`/programs/${rid}`)}>{pretty(rid)}</a>
+  {#if has.has('sources')}
+    <section class="sources">
+      <h2 class="page-section-label page-section-label--rule">{m.program_section_sources()}</h2>
+      <ul>
+        {#each p.links as l (l.u)}
+          <li><a href={l.u} target="_blank" rel="noopener noreferrer">{l.l} ↗</a></li>
         {/each}
-      </p>
+      </ul>
     </section>
   {/if}
-
-  <section class="sources">
-    <h2>{m.program_section_sources()}</h2>
-    <ul>
-      {#each p.links as l (l.u)}
-        <li><a href={l.u} target="_blank" rel="noopener noreferrer">{l.l} ↗</a></li>
-      {/each}
-    </ul>
-  </section>
 </article>
 
 <style>
-  .program {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 10px 20px 80px;
-    font-family: var(--font-editorial, 'Crimson Pro', serif);
-    color: var(--color-text, #eef);
-  }
-  .crumb {
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 11px;
-    letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.5);
-    margin-bottom: 6px;
-  }
   .crumb a {
-    color: rgba(255, 255, 255, 0.7);
-    text-decoration: none;
+    text-decoration: underline;
   }
   .crumb .sep {
     margin: 0 6px;
@@ -399,28 +457,15 @@
     font-size: 11px;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--color-text-label);
   }
-  h1 {
-    font-family: 'Bebas Neue', 'Space Mono', sans-serif;
-    font-size: clamp(40px, 9vw, 72px);
-    line-height: 1;
-    letter-spacing: 1px;
-    margin: 6px 0 10px;
-  }
-  .tagline {
-    font-size: 19px;
-    line-height: 1.4;
-    color: rgba(255, 255, 255, 0.85);
-    max-width: 40ch;
-  }
-  .chips {
+  .meta-tags {
     margin-top: 14px;
   }
-  .chip {
+  .meta-tag {
     display: inline-block;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     padding: 4px 9px;
     border: 1px solid rgba(255, 255, 255, 0.18);
@@ -429,7 +474,7 @@
     color: rgba(255, 255, 255, 0.75);
   }
   .status-completed {
-    border-color: rgba(120, 200, 160, 0.5);
+    border-color: color-mix(in srgb, var(--color-ok) 50%, transparent);
     color: #9fe6c2;
   }
   .status-active {
@@ -443,21 +488,9 @@
   .spine {
     margin: 0 0 34px;
   }
-  .spine h2,
-  .roster h2,
-  .assembly h2,
-  .surface h2,
-  .see-also h2,
-  .related h2,
-  .sources h2 {
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 12px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: #7fb0e0;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 14px;
-    margin: 0 0 14px;
+  /* Sections carry their own spacing; the label sits at their top. */
+  .program .page-section-label {
+    margin-top: 0;
   }
   .spine p {
     font-size: 17px;
@@ -499,11 +532,12 @@
     display: block;
   }
   .fig figcaption {
-    font-size: 13px;
+    font-size: var(--size-caption);
     line-height: 1.4;
     color: rgba(255, 255, 255, 0.55);
     margin-top: 8px;
-    font-style: italic;
+    font-style: italic; /* a1-keep: caption */
+    font-family: 'Crimson Pro', serif;
   }
   .timeline {
     list-style: none;
@@ -523,7 +557,7 @@
     width: 11px;
     height: 11px;
     border-radius: 50%;
-    background: #7fb0e0;
+    background: var(--color-state);
     box-shadow: 0 0 0 3px rgba(8, 10, 22, 1);
   }
   .timeline li.context .t-dot {
@@ -538,13 +572,13 @@
     margin-right: 10px;
   }
   .timeline .t-name {
-    color: #cfe3fb;
+    color: var(--color-accent);
     text-decoration: none;
     font-weight: 600;
     font-size: 15px;
   }
   .timeline .t-name.t-ctx {
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
     font-weight: 400;
   }
   .timeline .t-note {
@@ -559,10 +593,15 @@
   .mod-timeline {
     margin-bottom: 16px;
   }
-  a.t-mod {
+  a.t-mod,
+  .timeline a.t-link {
     text-decoration: none;
   }
-  a.t-mod:hover {
+  .timeline a.t-link {
+    font-weight: 400;
+  }
+  a.t-mod:hover,
+  .timeline a.t-link:hover {
     text-decoration: underline;
   }
   .assembly-foot {
@@ -570,7 +609,7 @@
     font-size: 14px;
   }
   .assembly-foot a {
-    color: #cfe3fb;
+    color: var(--color-accent);
     text-decoration: none;
     font-weight: 600;
   }
@@ -613,7 +652,7 @@
   }
   .detail {
     position: sticky;
-    top: calc(var(--nav-height, 64px) + 20px);
+    top: calc(var(--nav-height) + 20px);
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 8px;
     background: rgba(255, 255, 255, 0.02);
@@ -628,26 +667,41 @@
   }
   .d-meta {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 1.5px;
     text-transform: uppercase;
     color: rgba(255, 255, 255, 0.6);
     margin: 14px 16px 0;
   }
+  /* The pane keeps one box for every mission (PG4, UXD-032): meta and name are one line, the blurb
+     reserves three (the longest of the 70 linked missions' blurbs is three at pane width). */
+  .d-meta,
+  .d-name {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
   .d-name {
     font-family: 'Bebas Neue', 'Space Mono', sans-serif;
     font-size: 30px;
+    line-height: 1.2;
     letter-spacing: 1px;
     margin: 4px 16px 8px;
   }
   .d-blurb {
     font-size: 14px;
     line-height: 1.55;
+    min-height: 4.65em;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    overflow: hidden;
     color: rgba(255, 255, 255, 0.78);
     margin: 0 16px 14px;
   }
   .d-open {
-    color: #cfe3fb;
+    color: var(--color-accent);
     text-decoration: none;
     font-weight: 600;
     font-size: 14px;
@@ -656,6 +710,7 @@
   .d-empty {
     color: rgba(255, 255, 255, 0.5);
     padding: 22px 16px;
+    min-height: 4.65em;
     font-size: 14px;
   }
   .title-row {
@@ -668,6 +723,12 @@
     height: 80px;
     object-fit: contain;
     flex: 0 0 auto;
+  }
+  .t-thumb {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 8px;
+    line-height: 0;
   }
   .t-patch {
     width: 26px;
@@ -684,62 +745,23 @@
   .see-also li {
     margin-bottom: 12px;
   }
-  .surface-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 10px;
-  }
-  .surface-list a {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 11px 14px;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 6px;
-    text-decoration: none;
-    color: rgba(255, 255, 255, 0.85);
-    transition:
-      border-color 0.15s,
-      background 0.15s;
-  }
-  .surface-list a:hover {
-    border-color: rgba(127, 176, 224, 0.55);
-    background: rgba(127, 176, 224, 0.06);
-  }
-  .surface-list .s-body {
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.6);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    border-radius: 3px;
-    padding: 2px 6px;
-    flex: 0 0 auto;
-  }
-  .surface-list .s-label {
-    flex: 1 1 auto;
-    font-size: 14px;
-  }
-  .surface-list .s-go {
-    color: #7fb0e0;
-    flex: 0 0 auto;
+  .surface,
+  .hardware-section,
+  .related {
+    margin: 0 0 30px;
   }
   .see-also a {
-    color: #cfe3fb;
+    color: var(--color-accent);
     text-decoration: none;
     font-size: 15px;
   }
   .see-also .k {
     display: inline-block;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 3px;
     padding: 1px 6px;
@@ -748,30 +770,67 @@
   .hardware {
     list-style: none;
     padding: 0;
-    margin: 0 0 20px;
+    margin: 0;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
     gap: 8px;
   }
-  .hardware li a {
-    color: #cfe3fb;
+  @media (max-width: 480px) {
+    .hardware {
+      grid-template-columns: 1fr;
+    }
+  }
+  /* A compact card: 56 px tall, a rectangular mini hero at the left (E1, UXD-032). */
+  .hw-card {
+    display: grid;
+    grid-template-columns: 72px 1fr;
+    align-items: center;
+    gap: 10px;
+    height: 56px;
+    padding: 4px;
+    box-sizing: border-box;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.02);
     text-decoration: none;
+    transition: border-color 0.15s;
+  }
+  .hw-card:hover,
+  .hw-card:focus-visible {
+    border-color: rgba(127, 176, 224, 0.5);
+  }
+  .hw-hero {
+    width: 72px;
+    height: 48px;
+    object-fit: cover;
+    border-radius: 4px;
+    display: block;
+  }
+  .hw-none {
+    background: rgba(255, 255, 255, 0.04);
+  }
+  .hardware .hw-body {
+    min-width: 0;
+  }
+  .hw-name {
+    display: block;
+    color: var(--color-accent);
     font-weight: 600;
     font-size: 14px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
   .hardware .role {
     display: block;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.55);
-  }
-  .rel {
-    color: #cfe3fb;
-    text-decoration: none;
-    margin-right: 14px;
-    font-weight: 600;
+    color: var(--color-text-label);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
   .sources ul {
     list-style: none;

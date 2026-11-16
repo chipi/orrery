@@ -89,5 +89,20 @@
     "/mars?site=viking1-lander": "Viking 1 — Chryse Planitia",
     "/mars?site=viking2-lander": "Viking 2 — Utopia Planitia",
     "/mars?site=viking1-orbiter": "Orbiter von Viking 1"
+  },
+  "roster": {
+    "fleet:viking-1": {
+      "note": "das erste Raumfahrzeug, das erfolgreich auf dem Mars landete und arbeitete — ein Orbiter zum Kartieren von oben und ein Lander für die Arbeit an der Oberfläche"
+    },
+    "mission:viking1": {
+      "note": "am 20. Juli 1976 setzte der Lander Viking 1 in Chryse Planitia auf und lieferte die ersten klaren Bilder von der Marsoberfläche"
+    },
+    "mission:viking2": {
+      "note": "ein zweites Orbiter-Lander-Paar, sechs Wochen später Tausende Kilometer entfernt in Utopia Planitia abgesetzt"
+    },
+    "The biology experiments": {
+      "note": "jeder Lander führte Experimente zum Nachweis von Leben im Marsboden durch; die Ergebnisse waren uneindeutig und werden bis heute diskutiert",
+      "name": "Die Biologieexperimente"
+    }
   }
 }

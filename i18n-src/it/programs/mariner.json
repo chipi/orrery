@@ -87,5 +87,19 @@
     "/mars": "Marte — il mondo che Mariner fotografò per primo",
     "/programs/viking": "Viking — i lander a cui Mariner aprì la strada",
     "/mars?site=mariner9": "Mariner 9 in orbita marziana"
+  },
+  "roster": {
+    "mission:mariner2": {
+      "note": "nel dicembre 1962 Mariner 2 diventò la prima sonda a raggiungere un altro pianeta, scoprendo che Venere non era un gemello tropicale della Terra ma una fornace a centinaia di gradi"
+    },
+    "fleet:mariner-4": {
+      "note": "sorvolò Marte nel 1965 e restituì le prime fotografie di un altro pianeta scattate da vicino — un mondo butterato di crateri, apparentemente morto, che pose fine ai vecchi sogni di canali e vita marziani"
+    },
+    "fleet:mariner-9": {
+      "note": "divenne la prima sonda a orbitare intorno a un altro pianeta, mappando tutto Marte e rivelando vulcani giganteschi, un sistema di canyon grande come un continente e letti di fiumi asciutti"
+    },
+    "mission:mariner10": {
+      "note": "la prima sonda a visitare Mercurio, e la prima a usare la gravità di un pianeta per raggiungerne un altro — il trucco della fionda gravitazionale usato da ogni missione nello spazio profondo da allora"
+    }
   }
 }

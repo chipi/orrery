@@ -1,0 +1,30 @@
+{
+  "name": "Viking 2",
+  "vehicle": "Titan IIIE-Centaur",
+  "payload": "3530 kg (orbiter e lander)",
+  "delta_v": "~4,5 km/s (stima)",
+  "type": "ORBITER · LANDER · COMPLETATA",
+  "first": "Il secondo lander Viking, posato a Utopia Planitia a circa 6460 km dal sito di atterraggio di Viking 1",
+  "description": "Viking 2 è stata la seconda delle due sonde Viking della NASA, ciascuna un orbiter che portava un lander. È stata lanciata il 1975-09-09 su un Titan IIIE-Centaur, è entrata in orbita attorno a Marte il 1976-08-07 e ha posato il suo lander a Utopia Planitia il 1976-09-03, a circa 6460 km dal sito di atterraggio di Viking 1. Il lander ha funzionato fino al 1980-04-12. L'orbiter ha restituito quasi 16.000 immagini in 706 orbite prima di essere spento il 1978-07-24 a causa di una perdita nel sistema di propulsione. I suoi esperimenti sul suolo, come quelli di Viking 1, non sono stati conclusivi sull'esistenza, attuale o passata, di vita su Marte. I due orbiter insieme hanno restituito 52.663 immagini e mappato circa il 97% del pianeta; i due lander hanno restituito 4500 fotografie.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCIO",
+      "note": "Titan IIIE-Centaur da Cape Canaveral, 1975-09-09.",
+      "type": "nominal"
+    },
+    {
+      "met": 333,
+      "label": "INSERIMENTO IN ORBITA MARZIANA",
+      "note": "L'orbiter viene catturato il 1976-08-07 in un'orbita di 1500 × 33.000 km.",
+      "type": "nominal"
+    },
+    {
+      "met": 360,
+      "label": "ATTERRAGGIO",
+      "note": "Il lander atterra a Utopia Planitia il 1976-09-03.",
+      "type": "nominal"
+    }
+  ],
+  "vehicle_stage": "stadio superiore Centaur"
+}

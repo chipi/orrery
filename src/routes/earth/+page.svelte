@@ -23,7 +23,8 @@
   import DebugPanelRegistrar from '$lib/components/DebugPanelRegistrar.svelte';
   import TourAnchors from '$lib/components/TourAnchors.svelte';
   import OrbitRuler from '$lib/components/OrbitRuler.svelte';
-  import RegimePanel from '$lib/components/RegimePanel.svelte';
+  import HudStackBL from '$lib/components/HudStackBL.svelte';
+  import { hudTouch } from '$lib/hud-touch.svelte';
   import { base } from '$app/paths';
   import { onMount } from 'svelte';
   import { page } from '$app/state';
@@ -36,6 +37,7 @@
   import { viewerLatLon } from '$lib/viewer-location';
   import { getObserverLocation } from '$lib/geolocation';
   import * as m from '$lib/paraglide/messages';
+  import Chip from '$lib/components/Chip.svelte';
   import VisuallyHiddenH1 from '$lib/components/VisuallyHiddenH1.svelte';
 
   const earthSurfaceConfig = makeEarthLaunchSitesConfig(base);
@@ -66,6 +68,8 @@
   let orbitsInView = $state(true);
   let regimePanelOpen = $state(false);
   let selectedRegimeId = $state<string | null>(null);
+  // The ruler row under the pointer or keyboard focus; the scene draws it (UXD-024).
+  let hoverRegimeId = $state<string | null>(null);
   let selectedRegime = $derived(
     selectedRegimeId ? (regimes.find((r) => r.id === selectedRegimeId) ?? null) : null,
   );
@@ -111,6 +115,10 @@
       keepFocus: true,
     });
   }
+
+  $effect(() => {
+    surfaceScene?.setRegimeHighlight(hoverRegimeId, regimePanelOpen ? selectedRegimeId : null);
+  });
 
   onMount(async () => {
     try {
@@ -191,19 +199,9 @@
   onOrbitsInViewChange={(v) => (orbitsInView = v)}
 >
   {#snippet barStart()}
-    <!-- #48 — opt-in precise centering. On a phone it is the first icon of the scene's
-         bottom bar (the label stays for assistive tech and tests). -->
-    <button
-      type="button"
-      class="locate-me"
-      onclick={centerOnMe}
-      disabled={locating}
-      data-testid="earth-locate-me"
-      title={m.earth_locate_me()}
-    >
-      <span class="locate-icon" aria-hidden="true">◎</span>
-      <span class="locate-label">{locating ? m.earth_locate_working() : m.earth_locate_me()}</span>
-    </button>
+    {#if hudTouch.value}
+      {@render locateChip()}
+    {/if}
   {/snippet}
 </SurfaceScene>
 
@@ -211,9 +209,29 @@
      load; this flies to the GPS fix on demand (no auto-prompt). -->
 <TourAnchors route="earth" anchors={EARTH_TOUR_ANCHORS} />
 
-<!-- Desktop-only ruler — on mobile the SurfaceScene accordion Ruler tab
-     replaces this. .ruler-desktop-only renders display:none at ≤767px. -->
-<div class="ruler-desktop-only">
+{#snippet locateChip()}
+  <!-- #48 — opt-in precise centering. On a phone it is the first icon of the scene's
+       bottom bar (the label stays for assistive tech and tests). -->
+  <div class="locate-slot">
+    <Chip
+      kind="action"
+      onclick={centerOnMe}
+      disabled={locating}
+      data-testid="earth-locate-me"
+      title={m.earth_locate_me()}
+    >
+      {#snippet icon()}◎{/snippet}
+      <span class="locate-label">{locating ? m.earth_locate_working() : m.earth_locate_me()}</span>
+    </Chip>
+  </div>
+{/snippet}
+
+<!-- Bottom-left column (UXD-024): the locate chip over the orbit ruler. On a phone the chip is
+     the first icon of the scene's bottom bar and the ruler is the drawer's Ruler tab. -->
+<HudStackBL>
+  {#snippet chip()}
+    {@render locateChip()}
+  {/snippet}
   {#if regimes.length > 0 && orbitsInView}
     <!-- Curated order: HEO sits between LEO and MEO since its perigee/
          apogee span straddles both; pure altitude-sort would place HEO
@@ -223,68 +241,38 @@
     <OrbitRuler
       {regimes}
       {highlightRegime}
+      activeRegime={regimePanelOpen ? selectedRegimeId : null}
       onSelect={openRegime}
+      onPreview={(id) => (hoverRegimeId = id)}
       order={['L2', 'MOON', 'GEO', 'MEO', 'HEO', 'LEO']}
       anchorBottomPx={14}
     />
   {/if}
-</div>
+</HudStackBL>
 
-<RegimePanel
-  regime={selectedRegime}
-  open={regimePanelOpen}
-  onClose={closeRegime}
-  {selectableIds}
-  {onResidentClick}
-/>
+{#await import('$lib/components/RegimePanel.svelte') then { default: RegimePanel }}
+  <RegimePanel
+    bundle="orbit-regimes"
+    regime={selectedRegime}
+    open={regimePanelOpen}
+    onClose={closeRegime}
+    {selectableIds}
+    {onResidentClick}
+  />
+{/await}
 
 <style>
-  /* #48 — "center on my location" button. Bottom-left, above the agency legend
-     and clear of the top-left reset/spin cluster + the left-edge layer chips. */
-  .locate-me {
-    position: absolute;
-    /* On the nation legend's top edge when the scene publishes it. */
-    bottom: var(--legend-top, calc(60px + env(safe-area-inset-bottom, 0px)));
-    left: 12px;
-    z-index: 7;
-    display: inline-flex;
-    align-items: center;
-    gap: 7px;
-    padding: 8px 12px;
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 12px;
-    letter-spacing: 0.04em;
-    color: var(--text-base, #e8e8ed);
-    background: rgba(8, 10, 22, 0.62);
-    border: 1px solid rgba(78, 205, 196, 0.35);
-    border-radius: 8px;
-    backdrop-filter: blur(5px);
-    cursor: pointer;
-    min-height: 34px;
-  }
-  .locate-me:hover:not(:disabled) {
-    border-color: rgba(78, 205, 196, 0.7);
-  }
-  .locate-me:disabled {
-    opacity: 0.6;
-    cursor: default;
+  /* #48 — "center on my location" button: a row of the bottom-left column (HudStackBL), or the
+     first icon of the scene's bottom bar on a phone. */
+  .locate-slot {
+    display: block;
   }
   /* A globe control: the panorama's compass sits in this corner. */
-  :global(html[data-surface-panorama]) .locate-me {
+  :global(html[data-surface-panorama]) .locate-slot {
     display: none;
   }
-  /* Phone: an icon button in the scene's bottom bar; the words stay for screen readers. */
+  /* Phone: a chip in the scene's bottom bar; the words stay for screen readers. */
   @media (hover: none), (pointer: coarse) {
-    .locate-me {
-      position: static;
-      width: 40px;
-      min-height: 40px;
-      padding: 0;
-      justify-content: center;
-      background: none;
-      border: none;
-      backdrop-filter: none;
-    }
     .locate-label {
       position: absolute;
       width: 1px;
@@ -292,25 +280,6 @@
       overflow: hidden;
       clip-path: inset(50%);
       white-space: nowrap;
-    }
-    .locate-me .locate-icon {
-      font-size: 20px;
-    }
-  }
-  .locate-icon {
-    color: #4ecdc4;
-    font-size: 14px;
-    line-height: 1;
-  }
-  .ruler-desktop-only {
-    display: contents;
-  }
-  /* Hide the persistent desktop ruler on touch — the RULER drawer replaces it.
-     Keyed on capability, not width, so a landscape phone (wide but touch)
-     doesn't show BOTH the default ruler and the drawer one. */
-  @media (hover: none), (pointer: coarse) {
-    .ruler-desktop-only {
-      display: none;
     }
   }
 </style>

@@ -87,5 +87,19 @@
     "/mars": "Marte — o mundo que a Mariner fotografou primeiro",
     "/programs/viking": "Viking — os módulos de pouso para os quais a Mariner abriu caminho",
     "/mars?site=mariner9": "Mariner 9 em órbita de Marte"
+  },
+  "roster": {
+    "mission:mariner2": {
+      "note": "em dezembro de 1962 a Mariner 2 tornou-se a primeira nave a chegar a outro planeta, descobrindo Vênus não como um gêmeo tropical da Terra, mas como uma fornalha a centenas de graus"
+    },
+    "fleet:mariner-4": {
+      "note": "sobrevoou Marte em 1965 e devolveu as primeiras fotografias de outro planeta tiradas de perto — um mundo cheio de crateras, aparentemente morto, que pôs fim aos velhos sonhos de canais e vida em Marte"
+    },
+    "fleet:mariner-9": {
+      "note": "tornou-se a primeira nave a orbitar outro planeta, mapeando todo Marte e revelando vulcões gigantes, um sistema de cânions do tamanho de um continente e leitos de rios secos"
+    },
+    "mission:mariner10": {
+      "note": "a primeira nave a visitar Mercúrio, e a primeira a usar a gravidade de um planeta para chegar a outro — o truque do estilingue gravitacional que toda missão de espaço profundo usa desde então"
+    }
   }
 }

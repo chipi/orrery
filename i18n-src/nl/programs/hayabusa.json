@@ -90,5 +90,13 @@
   "link_labels": {
     "/fleet?id=hayabusa-2": "Vloot — de Hayabusa-sondes",
     "/explore": "Verkennen — de planetoïden Itokawa en Ryugu"
+  },
+  "roster": {
+    "mission:hayabusa1": {
+      "note": "bereikt asteroïde Itokawa, raakt twee keer het oppervlak aan en brengt — ondanks verlammende storingen — het eerste monster ooit van een asteroïde naar huis"
+    },
+    "mission:hayabusa2": {
+      "note": "bereikt Ryugu, vuurt een projectiel af om een kunstmatige krater te maken, verzamelt materiaal van onder het oppervlak en brengt het in 2020 naar de Aarde — een vlekkeloze missie"
+    }
   }
 }

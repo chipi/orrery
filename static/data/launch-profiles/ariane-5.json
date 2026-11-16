@@ -24,23 +24,23 @@
     ],
     [
       50,
-      70
+      68
     ],
     [
       130,
-      45
+      42
     ],
     [
       250,
-      25
+      22
     ],
     [
       400,
-      12
+      10
     ],
     [
       540,
-      4
+      3
     ]
   ],
   "boosters": {
@@ -52,6 +52,7 @@
     "thrustVacKN": 5400,
     "ispSlS": 260,
     "ispVacS": 274,
+    "separationDelayS": 23,
     "chamberTempK": 3300
   },
   "stages": [
@@ -82,7 +83,7 @@
       "u": "https://web.archive.org/web/20240814145416/https://www.arianespace.com/vehicle/ariane-5/"
     },
     {
-      "l": "Spaceflight101 — Ariane 5 ECA",
+      "l": "Spaceflight101 — Ariane 5 ECA (boosters jettisoned 143 s into the mission; secondary source; modelled as burnout at 120 s, jettison 23 s later)",
       "u": "https://web.archive.org/web/20240730152559/https://spaceflight101.com/spacerockets/ariane-5-eca/"
     },
     {

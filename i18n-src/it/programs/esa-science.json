@@ -93,5 +93,18 @@
     "/programs/ariane": "Ariane — il razzo che lancia la scienza dell'ESA",
     "/earth?site=gaia": "Gaia in L2",
     "/earth?site=xmm": "XMM-Newton"
+  },
+  "roster": {
+    "mission:rosetta": {
+      "note": "dopo un inseguimento di dieci anni, Rosetta entra in orbita intorno alla cometa 67P e fa scendere il lander Philae sulla sua superficie — la prima sonda a orbitare intorno a una cometa e ad atterrarvi"
+    },
+    "Gaia's map": {
+      "note": "Gaia comincia a rilasciare la mappa tridimensionale più precisa della Via Lattea mai realizzata — le posizioni, le distanze e i moti di quasi due miliardi di stelle",
+      "name": "La mappa di Gaia"
+    },
+    "Euclid opens its eyes": {
+      "note": "un telescopio costruito per scandagliare un terzo del cielo e mappare come materia oscura ed energia oscura hanno plasmato l'universo",
+      "name": "Euclid apre gli occhi"
+    }
   }
 }

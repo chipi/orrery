@@ -4,992 +4,1190 @@
     {
       "title": "Akatsuki",
       "file": "/images/anatomy/akatsuki.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Antares",
       "file": "/images/anatomy/antares.webp",
-      "cover": false
+      "cover": false,
+      "kind": "launcher"
     },
     {
       "title": "Apollo CSM (Block I)",
       "file": "/images/anatomy/apollo-csm-block-i.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Apollo CSM Block II",
       "file": "/images/anatomy/apollo-csm-block-ii.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Apollo Lunar Module",
       "file": "/images/anatomy/apollo-lm.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Ariane 1",
       "file": "/images/anatomy/ariane-1.webp",
-      "cover": false
+      "cover": false,
+      "kind": "launcher"
     },
     {
       "title": "Ariane 5",
       "file": "/images/anatomy/ariane-5.webp",
-      "cover": false
+      "cover": false,
+      "kind": "launcher"
     },
     {
       "title": "Ariane 6",
       "file": "/images/anatomy/ariane-6.webp",
-      "cover": false
+      "cover": false,
+      "kind": "launcher"
     },
     {
       "title": "Space Shuttle Atlantis",
       "file": "/images/anatomy/atlantis.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Atlas LV-3B",
       "file": "/images/anatomy/atlas-lv-3b.webp",
-      "cover": false
+      "cover": false,
+      "kind": "launcher"
     },
     {
       "title": "Atlas SLV-3D Centaur",
       "file": "/images/anatomy/atlas-slv-3d.webp",
-      "cover": false
+      "cover": false,
+      "kind": "launcher"
     },
     {
       "title": "Atlas V",
       "file": "/images/anatomy/atlas-v.webp",
-      "cover": false
+      "cover": false,
+      "kind": "launcher"
     },
     {
       "title": "ATV (Automated Transfer Vehicle)",
       "file": "/images/anatomy/atv.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Beagle 2",
       "file": "/images/anatomy/beagle2.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "BepiColombo",
       "file": "/images/anatomy/bepicolombo.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Beresheet",
       "file": "/images/anatomy/beresheet.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Blue Moon Mk1",
       "file": "/images/anatomy/blue-moon-mk1.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Buran OK-GLI (BTS-002)",
       "file": "/images/anatomy/buran-ok-gli.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Buran",
       "file": "/images/anatomy/buran.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Cargo Dragon 2",
       "file": "/images/anatomy/cargo-dragon-2.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Cargo Dragon v1",
       "file": "/images/anatomy/cargo-dragon-v1.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Cassini-Huygens",
       "file": "/images/anatomy/cassini.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Space Shuttle Challenger",
       "file": "/images/anatomy/challenger.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Chandra X-ray Observatory",
       "file": "/images/anatomy/chandra.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Chandrayaan-1",
       "file": "/images/anatomy/chandrayaan1.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Chang'e 2",
       "file": "/images/anatomy/change-2.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Chang'e 3",
       "file": "/images/anatomy/change-3.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Chang'e 4",
       "file": "/images/anatomy/change-4.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Chang'e 5",
       "file": "/images/anatomy/change-5.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Chang'e 1",
       "file": "/images/anatomy/change1.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Chang'e 6",
       "file": "/images/anatomy/change6.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Clementine",
       "file": "/images/anatomy/clementine.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Space Shuttle Columbia",
       "file": "/images/anatomy/columbia.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Compton Gamma Ray Observatory",
       "file": "/images/anatomy/compton-gro.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Crew Dragon",
       "file": "/images/anatomy/crew-dragon.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Curiosity (MSL)",
       "file": "/images/anatomy/curiosity.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Cygnus Enhanced",
       "file": "/images/anatomy/cygnus-enhanced.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "DART",
       "file": "/images/anatomy/dart.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Dawn",
       "file": "/images/anatomy/dawn.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Delta II",
       "file": "/images/anatomy/delta-ii.webp",
-      "cover": false
+      "cover": false,
+      "kind": "launcher"
     },
     {
       "title": "Space Shuttle Discovery",
       "file": "/images/anatomy/discovery.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Space Shuttle Endeavour",
       "file": "/images/anatomy/endeavour.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Energia",
       "file": "/images/anatomy/energia.webp",
-      "cover": false
+      "cover": false,
+      "kind": "launcher"
     },
     {
       "title": "Space Shuttle Enterprise",
       "file": "/images/anatomy/enterprise.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Euclid",
       "file": "/images/anatomy/euclid.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Europa Clipper",
       "file": "/images/anatomy/europa-clipper.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Rosalind Franklin (ExoMars rover)",
       "file": "/images/anatomy/exomars-rosalind-franklin.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "ExoMars TGO",
       "file": "/images/anatomy/exomars-tgo.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Falcon 9 Block 5",
       "file": "/images/anatomy/falcon-9.webp",
-      "cover": false
+      "cover": false,
+      "kind": "launcher"
     },
     {
       "title": "Falcon Heavy",
       "file": "/images/anatomy/falcon-heavy.webp",
-      "cover": false
+      "cover": false,
+      "kind": "launcher"
     },
     {
       "title": "Gaganyaan",
       "file": "/images/anatomy/gaganyaan.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Gaia",
       "file": "/images/anatomy/gaia.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Galileo",
       "file": "/images/anatomy/galileo.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Gemini",
       "file": "/images/anatomy/gemini.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Giotto",
       "file": "/images/anatomy/giotto.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "H-IIA",
       "file": "/images/anatomy/h-iia.webp",
-      "cover": false
+      "cover": false,
+      "kind": "launcher"
     },
     {
       "title": "H3",
       "file": "/images/anatomy/h3.webp",
-      "cover": false
+      "cover": false,
+      "kind": "launcher"
     },
     {
       "title": "Hakuto-R program",
       "file": "/images/anatomy/hakuto-r.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Hayabusa2",
       "file": "/images/anatomy/hayabusa-2.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Hayabusa",
       "file": "/images/anatomy/hayabusa.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Hitomi (ASTRO-H)",
       "file": "/images/anatomy/hitomi.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Hope (EMM)",
       "file": "/images/anatomy/hope.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "HTV-X",
       "file": "/images/anatomy/htv-x.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "HTV (Kounotori)",
       "file": "/images/anatomy/htv.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Hubble Space Telescope",
       "file": "/images/anatomy/hubble.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "IM-1 Odysseus",
       "file": "/images/anatomy/im-1-odysseus.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "InSight",
       "file": "/images/anatomy/insight.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "International Space Station",
       "file": "/images/anatomy/iss.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "JUICE",
       "file": "/images/anatomy/juice.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Juno",
       "file": "/images/anatomy/juno.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "James Webb Space Telescope",
       "file": "/images/anatomy/jwst.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Kepler",
       "file": "/images/anatomy/kepler.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Long March 2F",
       "file": "/images/anatomy/long-march-2f.webp",
-      "cover": false
+      "cover": false,
+      "kind": "launcher"
     },
     {
       "title": "Long March 3B",
       "file": "/images/anatomy/long-march-3b.webp",
-      "cover": false
+      "cover": false,
+      "kind": "launcher"
     },
     {
       "title": "Long March 5 / 5B",
       "file": "/images/anatomy/long-march-5.webp",
-      "cover": false
+      "cover": false,
+      "kind": "launcher"
     },
     {
       "title": "Long March 7",
       "file": "/images/anatomy/long-march-7.webp",
-      "cover": false
+      "cover": false,
+      "kind": "launcher"
     },
     {
       "title": "Lunar Reconnaissance Orbiter (LRO)",
       "file": "/images/anatomy/lro.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Lunar Roving Vehicle",
       "file": "/images/anatomy/lrv-apollo.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Lucy",
       "file": "/images/anatomy/lucy.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Luna 16",
       "file": "/images/anatomy/luna-16.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Luna 9",
       "file": "/images/anatomy/luna-9.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Luna 10",
       "file": "/images/anatomy/luna10.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Luna 24",
       "file": "/images/anatomy/luna24.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Lunar Orbiter 1",
       "file": "/images/anatomy/lunar-orbiter-1.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Lunar Orbiter 2",
       "file": "/images/anatomy/lunar-orbiter-2.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Lunar Orbiter 3",
       "file": "/images/anatomy/lunar-orbiter-3.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Lunar Orbiter 4",
       "file": "/images/anatomy/lunar-orbiter-4.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Lunar Orbiter 5",
       "file": "/images/anatomy/lunar-orbiter-5.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Lunar Prospector",
       "file": "/images/anatomy/lunar-prospector.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Lunokhod 1",
       "file": "/images/anatomy/lunokhod-1.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Lunokhod 2",
       "file": "/images/anatomy/lunokhod-2.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "LVM3 (GSLV Mk III)",
       "file": "/images/anatomy/lvm3.webp",
-      "cover": false
+      "cover": false,
+      "kind": "launcher"
     },
     {
       "title": "M V",
       "file": "/images/anatomy/m-v.webp",
-      "cover": false
+      "cover": false,
+      "kind": "launcher"
     },
     {
       "title": "Magellan",
       "file": "/images/anatomy/magellan.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Mangalyaan (MOM)",
       "file": "/images/anatomy/mangalyaan.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Mariner 4",
       "file": "/images/anatomy/mariner-4.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Mariner 9",
       "file": "/images/anatomy/mariner-9.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Mars 2",
       "file": "/images/anatomy/mars-2.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Mars 3",
       "file": "/images/anatomy/mars-3.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Mars Express",
       "file": "/images/anatomy/mars-express.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "2001 Mars Odyssey",
       "file": "/images/anatomy/mars-odyssey.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Mars Polar Lander",
       "file": "/images/anatomy/mars-polar-lander.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Mars 2 Orbiter",
       "file": "/images/anatomy/mars2-orbiter.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Mars 3 Orbiter",
       "file": "/images/anatomy/mars3-orbiter.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Mars 6",
       "file": "/images/anatomy/mars6.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "MAVEN",
       "file": "/images/anatomy/maven.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Mercury capsule",
       "file": "/images/anatomy/mercury-capsule.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Mercury-Redstone",
       "file": "/images/anatomy/mercury-redstone.webp",
-      "cover": false
+      "cover": false,
+      "kind": "launcher"
     },
     {
       "title": "MESSENGER",
       "file": "/images/anatomy/messenger.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Mir",
       "file": "/images/anatomy/mir.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Mars Reconnaissance Orbiter",
       "file": "/images/anatomy/mro.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "N1",
       "file": "/images/anatomy/n1.webp",
-      "cover": false
+      "cover": false,
+      "kind": "launcher"
     },
     {
       "title": "New Glenn",
       "file": "/images/anatomy/new-glenn.webp",
-      "cover": false
+      "cover": false,
+      "kind": "launcher"
     },
     {
       "title": "New Shepard",
       "file": "/images/anatomy/new-shepard.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Opportunity (MER-B)",
       "file": "/images/anatomy/opportunity.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Orion",
       "file": "/images/anatomy/orion.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "OSIRIS-REx",
       "file": "/images/anatomy/osiris-rex.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Parker Solar Probe",
       "file": "/images/anatomy/parker-solar-probe.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Perseverance (Mars 2020)",
       "file": "/images/anatomy/perseverance.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Phobos 2",
       "file": "/images/anatomy/phobos-2.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Phoenix",
       "file": "/images/anatomy/phoenix.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Pioneer 10",
       "file": "/images/anatomy/pioneer-10.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Pioneer 11",
       "file": "/images/anatomy/pioneer-11.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Pragyan",
       "file": "/images/anatomy/pragyan.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Progress 7K-TG",
       "file": "/images/anatomy/progress-7k-tg.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Progress M",
       "file": "/images/anatomy/progress-m.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Progress MS",
       "file": "/images/anatomy/progress-ms.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Proton-K",
       "file": "/images/anatomy/proton-k.webp",
-      "cover": false
+      "cover": false,
+      "kind": "launcher"
     },
     {
       "title": "Proton-M",
       "file": "/images/anatomy/proton-m.webp",
-      "cover": false
+      "cover": false,
+      "kind": "launcher"
     },
     {
       "title": "PSLV-XL",
       "file": "/images/anatomy/pslv-xl.webp",
-      "cover": false
+      "cover": false,
+      "kind": "launcher"
     },
     {
       "title": "Pslv",
       "file": "/images/anatomy/pslv.webp",
-      "cover": false
+      "cover": false,
+      "kind": "launcher"
     },
     {
       "title": "Psyche",
       "file": "/images/anatomy/psyche-spacecraft.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "R-7 / Vostok rocket",
       "file": "/images/anatomy/r-7-vostok.webp",
-      "cover": false
+      "cover": false,
+      "kind": "launcher"
     },
     {
       "title": "Rosetta",
       "file": "/images/anatomy/rosetta.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Salyut 1",
       "file": "/images/anatomy/salyut-1.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Salyut 2 (OPS-1)",
       "file": "/images/anatomy/salyut-2.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Salyut 3 (OPS-2)",
       "file": "/images/anatomy/salyut-3.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Salyut 4 (DOS-4)",
       "file": "/images/anatomy/salyut-4.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Salyut 5 (OPS-3)",
       "file": "/images/anatomy/salyut-5.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Salyut 6",
       "file": "/images/anatomy/salyut-6.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Salyut 7",
       "file": "/images/anatomy/salyut-7.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Saturn IB",
       "file": "/images/anatomy/saturn-ib.webp",
-      "cover": false
+      "cover": false,
+      "kind": "launcher"
     },
     {
       "title": "Saturn V",
       "file": "/images/anatomy/saturn-v.webp",
-      "cover": false
+      "cover": false,
+      "kind": "launcher"
     },
     {
       "title": "Schiaparelli",
       "file": "/images/anatomy/schiaparelli.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Shenzhou",
       "file": "/images/anatomy/shenzhou.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Skylab",
       "file": "/images/anatomy/skylab.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "SLIM",
       "file": "/images/anatomy/slim.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "SLS Block 1",
       "file": "/images/anatomy/sls-block-1.webp",
-      "cover": false
+      "cover": false,
+      "kind": "launcher"
     },
     {
       "title": "SMART-1",
       "file": "/images/anatomy/smart-1.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Sojourner",
       "file": "/images/anatomy/sojourner.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Solar Orbiter",
       "file": "/images/anatomy/solar-orbiter.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Soyuz-2",
       "file": "/images/anatomy/soyuz-2.webp",
-      "cover": false
+      "cover": false,
+      "kind": "launcher"
     },
     {
       "title": "Soyuz 7K-OK",
       "file": "/images/anatomy/soyuz-7k-ok.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Soyuz-FG",
       "file": "/images/anatomy/soyuz-fg.webp",
-      "cover": false
+      "cover": false,
+      "kind": "launcher"
     },
     {
       "title": "Soyuz MS",
       "file": "/images/anatomy/soyuz-ms.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Soyuz T",
       "file": "/images/anatomy/soyuz-t.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Soyuz TM",
       "file": "/images/anatomy/soyuz-tm.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Soyuz TMA",
       "file": "/images/anatomy/soyuz-tma.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Soyuz-U",
       "file": "/images/anatomy/soyuz-u.webp",
-      "cover": false
+      "cover": false,
+      "kind": "launcher"
     },
     {
       "title": "Soyuz (11A511)",
       "file": "/images/anatomy/soyuz.webp",
-      "cover": false
+      "cover": false,
+      "kind": "launcher"
     },
     {
       "title": "Space Shuttle Orbiter",
       "file": "/images/anatomy/space-shuttle-orbiter.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Space Shuttle stack",
       "file": "/images/anatomy/space-shuttle-stack.webp",
-      "cover": false
+      "cover": false,
+      "kind": "launcher"
     },
     {
       "title": "Spektr-RG",
       "file": "/images/anatomy/spektr-rg.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Spirit (MER-A)",
       "file": "/images/anatomy/spirit.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Spitzer Space Telescope",
       "file": "/images/anatomy/spitzer.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Starliner (CST-100)",
       "file": "/images/anatomy/starliner.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Starship Hls",
       "file": "/images/anatomy/starship-hls.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Starship",
       "file": "/images/anatomy/starship.webp",
-      "cover": false
+      "cover": false,
+      "kind": "launcher"
     },
     {
       "title": "Surveyor 3",
       "file": "/images/anatomy/surveyor-3.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "TESS",
       "file": "/images/anatomy/tess.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Tiangong-1",
       "file": "/images/anatomy/tiangong-1.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Tiangong-2",
       "file": "/images/anatomy/tiangong-2.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Tiangong",
       "file": "/images/anatomy/tiangong.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Tianwen-1",
       "file": "/images/anatomy/tianwen-1.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Tianzhou",
       "file": "/images/anatomy/tianzhou.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Titan II GLV",
       "file": "/images/anatomy/titan-ii-glv.webp",
-      "cover": false
+      "cover": false,
+      "kind": "launcher"
     },
     {
       "title": "Ulysses",
       "file": "/images/anatomy/ulysses.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Vega 1",
       "file": "/images/anatomy/vega-1.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Vega 2",
       "file": "/images/anatomy/vega-2.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Venera 13",
       "file": "/images/anatomy/venera-13.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Venera 7-class",
       "file": "/images/anatomy/venera-7.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Viking 1",
       "file": "/images/anatomy/viking-1.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Viking 1 Orbiter",
       "file": "/images/anatomy/viking1-orbiter.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Viking 2 Lander",
       "file": "/images/anatomy/viking2-lander.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Vikram (Chandrayaan-2)",
       "file": "/images/anatomy/vikram-cy2.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Vikram (Chandrayaan-3)",
       "file": "/images/anatomy/vikram-cy3.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Voskhod (11A57)",
       "file": "/images/anatomy/voskhod-11a57.webp",
-      "cover": false
+      "cover": false,
+      "kind": "launcher"
     },
     {
       "title": "Voskhod",
       "file": "/images/anatomy/voskhod.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Vostok-K (8K72K)",
       "file": "/images/anatomy/vostok-k.webp",
-      "cover": false
+      "cover": false,
+      "kind": "launcher"
     },
     {
       "title": "Vostok",
       "file": "/images/anatomy/vostok.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Voyager 1",
       "file": "/images/anatomy/voyager-1.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Voyager 2",
       "file": "/images/anatomy/voyager-2.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Vulcan Centaur",
       "file": "/images/anatomy/vulcan.webp",
-      "cover": false
+      "cover": false,
+      "kind": "launcher"
     },
     {
       "title": "X-37B OTV",
       "file": "/images/anatomy/x37b.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "XMM-Newton",
       "file": "/images/anatomy/xmm-newton.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Yutu-2",
       "file": "/images/anatomy/yutu-2.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Yutu",
       "file": "/images/anatomy/yutu.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     },
     {
       "title": "Zhurong",
       "file": "/images/anatomy/zhurong.webp",
-      "cover": false
+      "cover": false,
+      "kind": "spacecraft"
     }
   ],
   "exploded_art": [
@@ -1806,6 +2004,12 @@
       "cover": false
     },
     {
+      "title": "Artemis I",
+      "file": "/images/missions/thumbnails/artemis1.webp",
+      "route": "/missions?id=artemis1",
+      "cover": false
+    },
+    {
       "title": "Artemis II",
       "file": "/images/missions/thumbnails/artemis2.webp",
       "route": "/missions?id=artemis2",
@@ -1866,6 +2070,12 @@
       "cover": false
     },
     {
+      "title": "Chandrayaan-2",
+      "file": "/images/missions/thumbnails/chandrayaan2.webp",
+      "route": "/missions?id=chandrayaan2",
+      "cover": false
+    },
+    {
       "title": "Chandrayaan-3",
       "file": "/images/missions/thumbnails/chandrayaan3.webp",
       "route": "/missions?id=chandrayaan3",
@@ -1875,6 +2085,12 @@
       "title": "Chang'e 1",
       "file": "/images/missions/thumbnails/change1.webp",
       "route": "/missions?id=change1",
+      "cover": false
+    },
+    {
+      "title": "Chang'e 2",
+      "file": "/images/missions/thumbnails/change2.webp",
+      "route": "/missions?id=change2",
       "cover": false
     },
     {
@@ -2028,6 +2244,12 @@
       "cover": false
     },
     {
+      "title": "IM-1",
+      "file": "/images/missions/thumbnails/im-1.webp",
+      "route": "/missions?id=im-1",
+      "cover": false
+    },
+    {
       "title": "InSight",
       "file": "/images/missions/thumbnails/insight.webp",
       "route": "/missions?id=insight",
@@ -2049,6 +2271,12 @@
       "title": "Juno",
       "file": "/images/missions/thumbnails/juno.webp",
       "route": "/missions?id=juno",
+      "cover": false
+    },
+    {
+      "title": "Kaguya (SELENE)",
+      "file": "/images/missions/thumbnails/kaguya.webp",
+      "route": "/missions?id=kaguya",
       "cover": false
     },
     {
@@ -2130,6 +2358,12 @@
       "cover": false
     },
     {
+      "title": "Mariner 2",
+      "file": "/images/missions/thumbnails/mariner2.webp",
+      "route": "/missions?id=mariner2",
+      "cover": false
+    },
+    {
       "title": "Mariner 4",
       "file": "/images/missions/thumbnails/mariner4.webp",
       "route": "/missions?id=mariner4",
@@ -2154,6 +2388,12 @@
       "cover": false
     },
     {
+      "title": "Mars 2",
+      "file": "/images/missions/thumbnails/mars2.webp",
+      "route": "/missions?id=mars2",
+      "cover": false
+    },
+    {
       "title": "Mars 3",
       "file": "/images/missions/thumbnails/mars3.webp",
       "route": "/missions?id=mars3",
@@ -2175,6 +2415,12 @@
       "title": "MMX",
       "file": "/images/missions/thumbnails/mmx.webp",
       "route": "/missions?id=mmx",
+      "cover": false
+    },
+    {
+      "title": "Mars Reconnaissance Orbiter",
+      "file": "/images/missions/thumbnails/mro.webp",
+      "route": "/missions?id=mro",
       "cover": false
     },
     {
@@ -2304,6 +2550,12 @@
       "cover": false
     },
     {
+      "title": "Shenzhou 5",
+      "file": "/images/missions/thumbnails/shenzhou-5.webp",
+      "route": "/missions?id=shenzhou-5",
+      "cover": false
+    },
+    {
       "title": "Sigma 7 / MA-8",
       "file": "/images/missions/thumbnails/sigma-7.webp",
       "route": "/missions?id=sigma-7",
@@ -2382,6 +2634,24 @@
       "cover": false
     },
     {
+      "title": "STS-1",
+      "file": "/images/missions/thumbnails/sts-1.webp",
+      "route": "/missions?id=sts-1",
+      "cover": false
+    },
+    {
+      "title": "STS-107",
+      "file": "/images/missions/thumbnails/sts-107.webp",
+      "route": "/missions?id=sts-107",
+      "cover": false
+    },
+    {
+      "title": "STS-51-L",
+      "file": "/images/missions/thumbnails/sts-51-l.webp",
+      "route": "/missions?id=sts-51-l",
+      "cover": false
+    },
+    {
       "title": "Tianwen-1",
       "file": "/images/missions/thumbnails/tianwen1.webp",
       "route": "/missions?id=tianwen1",
@@ -2415,6 +2685,12 @@
       "title": "Viking 1",
       "file": "/images/missions/thumbnails/viking1.webp",
       "route": "/missions?id=viking1",
+      "cover": false
+    },
+    {
+      "title": "Viking 2",
+      "file": "/images/missions/thumbnails/viking2.webp",
+      "route": "/missions?id=viking2",
       "cover": false
     },
     {
@@ -4178,6 +4454,139 @@
       "thumb": "/images/colophon/model-probe-sputnik-1.webp"
     },
     {
+      "title": "Mariner 2",
+      "what": "NASA’s 3.66 m Venus flyby — the 1.04 m hexagonal bus, two solar panels (one with its solar-pressure extension, 5.05 m across), the dish on its arm and the omni antenna atop the pyramid mast. Sizes from NASA NSSDCA; the dish and mast are schematic.",
+      "where": "Fly + Explore",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-probe-mariner-2.webp"
+    },
+    {
+      "title": "Mars Reconnaissance Orbiter",
+      "what": "NASA’s Mars mapper — two 5.35 × 2.53 m solar arrays, the 3 m high-gain dish, the 1.6 m HiRISE barrel and the 10 m SHARAD dipole. Dish, HiRISE and SHARAD sizes from NASA; the array size from Wikipedia; the bus is schematic.",
+      "where": "Fly + Explore",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-probe-mro.webp"
+    },
+    {
+      "title": "Nova-C (IM-1 Odysseus)",
+      "what": "Intuitive Machines’ 4.3 m lunar lander — a 1.57 m hexagonal body, six legs, the methane engine below and three solar panels. Height and width from Wikipedia; the leg splay and deck are schematic.",
+      "where": "Fly + Explore",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-probe-nova-c.webp"
+    },
+    {
+      "title": "Launch pad: Apollo, LC-39",
+      "what": "The Saturn V pad: the 380 ft Launch Umbilical Tower with swing arms that fall away at liftoff, and the flame trench. Sizes from NASA figures on Wikipedia.",
+      "where": "Fly · launch pad",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-pad-apollo-lut.webp"
+    },
+    {
+      "title": "Launch pad: Space Shuttle, LC-39",
+      "what": "The Shuttle pad: the Fixed Service Structure (350 ft with its mast), the Rotating Service Structure swung back, the 290 ft water tower. Main heights from Wikipedia; the rest approximate.",
+      "where": "Fly · launch pad",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-pad-shuttle.webp"
+    },
+    {
+      "title": "Launch pad: SLS, LC-39B",
+      "what": "The Artemis pad: the Mobile Launcher tower beside the rocket and three tall lightning towers. Sizes approximate.",
+      "where": "Fly · launch pad",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-pad-sls.webp"
+    },
+    {
+      "title": "Launch pad: Soyuz, Baikonur and Plesetsk",
+      "what": "The R-7 family pad: four support arms that fall outward at liftoff, two retracted service cabins, lightning masts, the flame pit. Sizes approximate.",
+      "where": "Fly · launch pad",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-pad-soyuz.webp"
+    },
+    {
+      "title": "Launch pad: Proton, Baikonur",
+      "what": "A fixed service tower with swing arms that retract at liftoff, beside the flame trench. Sizes approximate.",
+      "where": "Fly · launch pad",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-pad-proton.webp"
+    },
+    {
+      "title": "Launch pad: Falcon, LC-39A",
+      "what": "SpaceX at 39A: the transporter-erector that leans back 1.5 degrees before liftoff and 45 at it, the old tower extended above 350 ft. Figures from Wikipedia.",
+      "where": "Fly · launch pad",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-pad-f9-39a.webp"
+    },
+    {
+      "title": "Launch pad: Falcon, SLC-40 with crew tower",
+      "what": "SpaceX at SLC-40 since the crew access tower of 2023, with the transporter-erector tilting away at liftoff. Tower height approximate.",
+      "where": "Fly · launch pad",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-pad-f9-cat.webp"
+    },
+    {
+      "title": "Launch pad: Falcon, SLC-40 and SLC-4E",
+      "what": "A bare Falcon pad: the transporter-erector tilting away at liftoff, and lightning masts. Sizes approximate.",
+      "where": "Fly · launch pad",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-pad-f9-te.webp"
+    },
+    {
+      "title": "Launch pad: Starship, Starbase",
+      "what": "The Starbase launch tower with its catching arms held open. Tower height approximate.",
+      "where": "Fly · launch pad",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-pad-starbase.webp"
+    },
+    {
+      "title": "Launch pad: Atlas V, SLC-41",
+      "what": "The ULA pad: mobile launch platform, umbilical tower and four lightning towers; the Vertical Integration Facility stands off the pad and is left out. Sizes approximate.",
+      "where": "Fly · launch pad",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-pad-atlas-v.webp"
+    },
+    {
+      "title": "Launch pad: Cape service-tower pad",
+      "what": "The Cape's Atlas, Delta, Titan and Saturn IB pads: an umbilical tower with swing arms beside the vehicle. Sizes approximate.",
+      "where": "Fly · launch pad",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-pad-cape-classic.webp"
+    },
+    {
+      "title": "Launch pad: Ariane 4 and 5, Kourou",
+      "what": "The ELA-2 and ELA-3 pads: an umbilical mast beside the launcher and four tall lightning towers. Sizes approximate.",
+      "where": "Fly · launch pad",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-pad-kourou-a5.webp"
+    },
+    {
+      "title": "Launch pad: Ariane 6, Kourou",
+      "what": "The ELA-4 pad: the umbilical mast, two lightning towers and the mobile gantry rolled well back. Sizes approximate.",
+      "where": "Fly · launch pad",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-pad-kourou-a6.webp"
+    },
+    {
+      "title": "Launch pad: Chinese service tower",
+      "what": "The fixed service tower of Jiuquan, Xichang, Wenchang and Taiyuan, its working platforms folding away at liftoff. Sizes approximate.",
+      "where": "Fly · launch pad",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-pad-chinese-fst.webp"
+    },
+    {
+      "title": "Launch pad: Tanegashima",
+      "what": "The Yoshinobu pad: the H-II launcher's umbilical tower and a lightning tower. Sizes approximate.",
+      "where": "Fly · launch pad",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-pad-tanegashima.webp"
+    },
+    {
+      "title": "Launch pad: Sriharikota",
+      "what": "The ISRO pad: the umbilical tower beside the vehicle and the mobile service tower rolled well back. Sizes approximate.",
+      "where": "Fly · launch pad",
+      "route": "/fly",
+      "thumb": "/images/colophon/model-pad-sriharikota.webp"
+    },
+    {
       "title": "Apollo Lunar Module",
       "what": "Descent + ascent stage, gold MLI foil, and RCS quads.",
       "where": "Moon landing sites",
@@ -4883,12 +5292,12 @@
     "exploded_art": 76,
     "landing_art": 39,
     "blueprint_art": 18,
-    "mission_trajectories": 126,
+    "mission_trajectories": 139,
     "site_illustrations": 16,
     "lab_illustrations": 25,
     "diagrams_science": 117,
     "posters": 27,
-    "models3d": 179,
+    "models3d": 198,
     "capsules": 8,
     "canvas2d": 6,
     "ui": 4,

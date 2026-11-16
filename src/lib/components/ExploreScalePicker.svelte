@@ -6,11 +6,15 @@
   `scale-shell-controller` · `planShellJump`).
 
   #45 promoted this into the top scale-navigator: on EVERY viewport it renders as
-  one "Scale" chip (`◉ <current shell> ▾`) that opens the ladder as a popover
-  DOWNWARD and auto-closes on pick. It replaces both the old always-on desktop
-  rail and the redundant breadcrumb — the chip is the single "where am I + jump to
+  one chip (`<level glyph> <current shell> ▾`) that opens the ladder as a popover
+  DOWNWARD and auto-closes on pick. It replaced the old always-on desktop rail
+  (the breadcrumb was retired earlier) — the chip is the single "where am I + jump to
   any scale" control, flanked by the host's back/reset affordances. The parent
   positions it (this component is layout-neutral: `position: relative`).
+
+  C8 (UXD-027): the levels come from `SCALE_SHELLS`; the chip and every rung lead with the
+  level's glyph (`ScaleGlyphIcon`, the one the home grid and hub draw), and a rung adds the
+  home-grid line under its name where there is a pointer to read it with.
 
   The caller hides this entirely during full-screen sub-views (body-scene /
   black-hole / deep-sky) — `contextDeepLinkFn` only knows the shells, not those
@@ -18,46 +22,35 @@
 -->
 <script lang="ts">
   import * as m from '$lib/paraglide/messages';
-  import { CTX_ORDER, type ShellId } from '$lib/explore/scale-shell-controller';
+  import Chip from './Chip.svelte';
+  import ScaleGlyphIcon from './ScaleGlyphIcon.svelte';
+  import type { ShellId } from '$lib/explore/scale-shell-controller';
+  import { SCALE_SHELLS, SCALE_SHELL_LIST } from '$lib/explore/scale-shells';
 
   let {
     activeShell,
     onJump,
     disabled = false,
+    align = 'left',
   }: {
     activeShell: ShellId;
     /** Jump to a shell; a no-op walk (same shell) is handled upstream. */
     onJump: (shell: ShellId) => void;
     /** True until the host has wired `contextDeepLinkFn` (scene not ready). */
     disabled?: boolean;
+    /** The screen edge the ladder lines up with: `right` opens it leftward from a chip that
+     *  sits flush right (the solar system), so it cannot pass the edge. Physical, not
+     *  logical: the navigator's flush-right is `right: 8px` in every direction, so in RTL a
+     *  logical `end` would put the ladder past the right edge instead of away from it. */
+    align?: 'left' | 'right';
   } = $props();
 
   // Top-to-bottom the rail reads outermost → innermost, so "zoom out" is "up".
-  const rungs = [...CTX_ORDER].reverse();
+  const rungs = [...SCALE_SHELL_LIST].reverse();
+  const uid = $props.id();
 
   // Mobile popover open state; ignored on desktop (the rail is always shown).
   let open = $state(false);
-
-  function labelFor(shell: ShellId): string {
-    switch (shell) {
-      case 'solar-system':
-        return m.explore_ctx_solar_system();
-      case 'neighborhood':
-        return m.explore_ctx_stellar_neighborhood();
-      case 'milky-way':
-        return m.explore_ctx_milky_way();
-      case 'local-group':
-        return m.explore_ctx_local_group();
-      case 'local-sheet':
-        return m.explore_ctx_local_sheet();
-      case 'virgo':
-        return m.explore_ctx_virgo();
-      case 'laniakea':
-        return m.explore_ctx_laniakea();
-      case 'cosmic-web':
-        return m.explore_ctx_cosmic_web();
-    }
-  }
 
   function pick(shell: ShellId) {
     open = false;
@@ -79,16 +72,46 @@
     }
   }
 
-  let rungButtons: HTMLButtonElement[] = $state([]);
-  let toggleButton = $state<HTMLButtonElement | null>(null);
+  let rungButtons: HTMLElement[] = $state([]);
+  let toggleButton = $state<HTMLElement | undefined>();
+
+  // The ladder's position is clamped to [8, viewport - 8], not only its width: its natural edge
+  // (the chip's left, or its right with `align="right"`) can lie within a long label's width of
+  // the screen edge in any language or direction. Offsets are relative to the picker, so the
+  // clamp holds wherever the navigator sits.
+  const EDGE_GAP = 8;
+  let pickerEl = $state<HTMLElement | undefined>();
+  let railEl = $state<HTMLElement | undefined>();
+  let railLeft = $state<number | null>(null);
+  function placeRail() {
+    if (!pickerEl || !railEl) return;
+    const p = pickerEl.getBoundingClientRect();
+    const w = railEl.getBoundingClientRect().width;
+    const vw = document.documentElement.clientWidth;
+    const want = align === 'right' ? p.right - w : p.left;
+    const left = Math.min(Math.max(want, EDGE_GAP), Math.max(EDGE_GAP, vw - EDGE_GAP - w));
+    railLeft = left - p.left;
+  }
+  $effect(() => {
+    if (!open) return;
+    placeRail();
+    window.addEventListener('resize', placeRail);
+    return () => window.removeEventListener('resize', placeRail);
+  });
 </script>
 
-<div class="scale-picker" class:open data-testid="explore-scale-picker">
-  <!-- Mobile-only trigger: shows the current shell + a caret; opens the ladder. -->
-  <button
-    bind:this={toggleButton}
-    type="button"
-    class="toggle"
+<div
+  bind:this={pickerEl}
+  class="scale-picker"
+  class:open
+  data-align={align}
+  data-testid="explore-scale-picker"
+>
+  <!-- The trigger: the current level's glyph + name + a caret; opens the ladder. -->
+  <Chip
+    bind:ref={toggleButton}
+    kind="action"
+    active={open}
     data-testid="explore-scale-toggle"
     aria-haspopup="true"
     aria-expanded={open}
@@ -96,26 +119,37 @@
     {disabled}
     onclick={() => (open = !open)}
   >
-    <span class="toggle-label">{labelFor(activeShell)}</span>
+    {#snippet icon()}<ScaleGlyphIcon glyph={SCALE_SHELLS[activeShell].glyph} size={20} />{/snippet}
+    <span class="toggle-label">{SCALE_SHELLS[activeShell].name()}</span>
     <span class="caret" aria-hidden="true">{open ? '▴' : '▾'}</span>
-  </button>
+  </Chip>
 
-  <nav class="rail" aria-label={m.explore_scale_jump_aria()}>
-    {#each rungs as shell, i (shell)}
-      <button
-        bind:this={rungButtons[i]}
-        type="button"
+  <nav
+    bind:this={railEl}
+    class="rail"
+    style:left={railLeft === null ? undefined : `${railLeft}px`}
+    style:right={railLeft === null ? undefined : 'auto'}
+    aria-label={m.explore_scale_jump_aria()}
+  >
+    {#each rungs as s, i (s.id)}
+      <Chip
+        bind:ref={rungButtons[i]}
+        kind="action"
+        active={s.id === activeShell}
         class="rung"
-        data-testid="explore-scale-rung-{shell}"
-        class:active={shell === activeShell}
-        aria-current={shell === activeShell ? 'true' : undefined}
+        data-testid="explore-scale-rung-{s.id}"
+        aria-current={s.id === activeShell ? 'true' : undefined}
+        aria-describedby="{uid}-desc-{s.id}"
         {disabled}
-        onclick={() => pick(shell)}
-        onkeydown={(e) => onRungKeydown(e, i)}
+        onclick={() => pick(s.id)}
+        onkeydown={(e: KeyboardEvent) => onRungKeydown(e, i)}
       >
-        <span class="dot" aria-hidden="true"></span>
-        <span class="rung-label">{labelFor(shell)}</span>
-      </button>
+        {#snippet icon()}<ScaleGlyphIcon glyph={s.glyph} size={24} />{/snippet}
+        <span class="rung-text">
+          <span class="rung-label">{s.name()}</span>
+          <span class="rung-desc" id="{uid}-desc-{s.id}">{s.desc()}</span>
+        </span>
+      </Chip>
     {/each}
   </nav>
 </div>
@@ -123,8 +157,7 @@
 <style>
   /* #45 — one chip on every viewport; the parent (the top scale-navigator)
      positions it, so this stays layout-neutral. `position: relative` anchors the
-     popover ladder, which drops DOWNWARD from the chip. Slate glass tokens mirror
-     the surrounding nav chrome so it reads as native, not a new widget. */
+     popover ladder, which drops DOWNWARD from the chip. */
   .scale-picker {
     position: relative;
     display: inline-flex;
@@ -132,54 +165,8 @@
     align-items: stretch;
     font-family: var(--font-mono, 'Space Mono', monospace);
   }
-
-  /* The trigger chip: current shell + a caret. Shown on all viewports now. */
-  .toggle {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    min-height: 34px;
-    padding: 6px 12px;
-    background: rgba(10, 14, 24, 0.62);
-    border: 1px solid rgba(90, 200, 210, 0.5);
-    border-radius: 5px;
-    backdrop-filter: blur(5px);
-    color: #d7f6f6;
-    font: inherit;
-    font-size: 11px;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    white-space: nowrap;
-    cursor: pointer;
-    transition:
-      border-color 120ms,
-      background 120ms,
-      color 120ms;
-  }
-  .toggle::before {
-    /* The ◉ "you are here" dot from the mockup. */
-    content: '';
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: #5ac8d2;
-    box-shadow: 0 0 8px rgba(90, 200, 210, 0.7);
-    flex: none;
-  }
-  .toggle:hover:not(:disabled),
-  .toggle:focus-visible:not(:disabled) {
-    background: rgba(90, 200, 210, 0.18);
-    border-color: rgba(90, 200, 210, 0.7);
-    color: #eaffff;
-    outline: none;
-  }
-  .toggle:disabled {
-    opacity: 0.4;
-    cursor: default;
-  }
   .caret {
     opacity: 0.7;
-    font-size: 10px;
   }
 
   /* Popover ladder: hidden until open, then drops down below the chip. */
@@ -188,86 +175,57 @@
     position: absolute;
     top: calc(100% + 6px);
     left: 0;
+    max-inline-size: calc(100vw - 16px);
+    /* Eight rungs are taller than a landscape phone: the ladder scrolls inside. */
+    max-block-size: calc(100dvh - 130px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
     flex-direction: column;
     gap: 6px;
     padding: 8px;
     background: rgba(8, 18, 26, 0.95);
-    border: 1px solid rgba(90, 200, 210, 0.3);
+    border: 1px solid var(--color-accent-edge);
     border-radius: 10px;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.55);
     z-index: 2;
   }
+  .scale-picker[data-align='right'] .rail {
+    left: auto;
+    right: 0;
+  }
   .scale-picker.open .rail {
     display: flex;
   }
-
-  .rung {
+  .rail :global(.ui-chip) {
+    justify-content: flex-start;
+  }
+  /* A rung: the level's glyph, its name, and (with a pointer) the home-grid line under it, cut
+     to one line. Phones and coarse pointers get the glyph and name only: the card under the
+     row carries the full text. */
+  .rail :global(.ui-chip.rung) {
+    padding-block: 4px;
+    text-align: start;
+  }
+  .rung-text {
     display: flex;
-    align-items: center;
-    gap: 8px;
-    min-height: 40px;
-    padding: 6px 12px;
-    background: rgba(10, 14, 24, 0.62);
-    border: 1px solid rgba(154, 166, 189, 0.34);
-    border-radius: 5px;
-    color: rgba(200, 210, 228, 0.82);
-    font: inherit;
-    font-size: 11px;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    white-space: nowrap;
-    cursor: pointer;
-    transition:
-      border-color 120ms,
-      background 120ms,
-      color 120ms;
+    flex-direction: column;
+    gap: 3px;
+    min-inline-size: 0;
   }
-  .rung:hover:not(:disabled),
-  .rung:focus-visible:not(:disabled) {
-    background: rgba(154, 166, 189, 0.18);
-    border-color: rgba(154, 166, 189, 0.55);
-    color: #eaf1ff;
-    outline: none;
+  .rung-desc {
+    display: none;
+    inline-size: 15rem;
+    max-inline-size: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 400;
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--color-text-label);
   }
-  .rung.active {
-    background: rgba(90, 200, 210, 0.16);
-    border-color: rgba(90, 200, 210, 0.66);
-    color: #d7f6f6;
-    cursor: default;
-  }
-  .rung:disabled {
-    opacity: 0.4;
-    cursor: default;
-  }
-
-  .dot {
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: currentColor;
-    opacity: 0.6;
-    flex: none;
-  }
-  .rung.active .dot {
-    opacity: 1;
-    box-shadow: 0 0 8px rgba(90, 200, 210, 0.7);
-  }
-
-  /* Touch: bigger tap targets. */
-  @media (max-width: 640px) {
-    .toggle {
-      min-height: 44px;
-      padding: 8px 12px;
-    }
-    .rung {
-      min-height: 44px;
-    }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .rung,
-    .toggle {
-      transition: none;
+  @media (hover: hover) and (pointer: fine) and (min-width: 700px) {
+    .rung-desc {
+      display: block;
     }
   }
 </style>

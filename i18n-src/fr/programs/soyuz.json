@@ -90,5 +90,11 @@
   "link_labels": {
     "/earth": "Terre — orbites, rendez-vous et sites de lancement",
     "/science/mission-phases/edl": "Entrée, descente et atterrissage"
+  },
+  "roster": {
+    "Soyuz 4 & 5": {
+      "note": "premier amarrage de deux vaisseaux habités + premier transfert d'équipage, par sortie dans l'espace entre les deux vaisseaux",
+      "name": "Soyuz 4 et 5"
+    }
   }
 }

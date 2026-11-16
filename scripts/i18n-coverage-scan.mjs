@@ -12,6 +12,8 @@
  *   lengthMismatch list length differs from en-US
  *   extraKey     key only in the locale (orphan, never shown or stale)
  *   sameAsEnglish  prose identical to en-US (not just names/designations)
+ *   rosterMissing  program roster note / name-only name (English in static/data/programs) with no
+ *                  text in the locale overlay's `roster` map; reported, not gated
  * UI messages (messages/<loc>.json vs messages/en-US.json): missingKey, empty,
  *   extraKey, sameAsEnglish, placeholder ({x} sets differ).
  * nativeNameMissing: in a name's origin locale the English form is still used
@@ -35,6 +37,7 @@ import { designations, knownNamesIn } from './lib/translate-quality.mjs';
 import { ORIGIN_NAMES, nativeName } from '../src/lib/name-origins.js';
 import { KEEP_ENGLISH_FILES, keepEnglish } from './lib/native-skip.mjs';
 import { textHash } from './i18n-tools/term-match.mjs';
+import { rosterKey } from '../src/lib/program-roster-overlay.js';
 
 const ROOT = process.env.I18N_COVERAGE_ROOT ?? path.resolve(import.meta.dirname, '..');
 const SRC = path.join(ROOT, 'i18n-src');
@@ -243,6 +246,8 @@ function compare(loc, rel, en, tr, at = '') {
           en: '',
           tr: tr[k],
         });
+      else if (k === 'roster' && !at && rel.startsWith('programs/'))
+        continue; // checked against the base roster in section 1b
       else add(loc, 'extraKey', where);
     }
   }
@@ -267,6 +272,35 @@ for (const loc of LOCALES) {
     // hotspot-metadata overlays legitimately exist without an en-US twin
     // (English comes from static/data/surface-hotspots.json).
     if (!have.has(rel) && !rel.startsWith('hotspot-metadata/')) add(loc, 'extraFile', rel);
+  }
+}
+
+// 1b. Program roster text. The English is in static/data/programs/<id>.json (note on any row,
+// name on a name-only row); a locale's text is the overlay's `roster` map keyed by rosterKey().
+// A row with no locale text shows English, so it is counted as rosterMissing — reported, not
+// gated: translating the roster is decided per program, not by a red gate.
+const PROGRAMS = path.join(ROOT, 'static', 'data', 'programs');
+if (fs.existsSync(PROGRAMS)) {
+  for (const f of fs
+    .readdirSync(PROGRAMS)
+    .filter((n) => n.endsWith('.json') && n !== 'index.json')
+    .sort()) {
+    const rows = JSON.parse(fs.readFileSync(path.join(PROGRAMS, f), 'utf8')).roster ?? [];
+    const rel = `programs/${f}`;
+    for (const loc of LOCALES) {
+      const lp = path.join(SRC, loc, rel);
+      const have = fs.existsSync(lp) ? (JSON.parse(fs.readFileSync(lp, 'utf8')).roster ?? {}) : {};
+      const keys = new Set();
+      for (const row of rows) {
+        const key = rosterKey(row);
+        keys.add(key);
+        for (const field of [row.note && 'note', !row.linked_id && row.name && 'name'])
+          if (field && !String(have[key]?.[field] ?? '').trim())
+            add(loc, 'rosterMissing', `${rel} :: roster.${key}.${field}`);
+      }
+      for (const k of Object.keys(have))
+        if (!keys.has(k)) add(loc, 'extraKey', `${rel} :: roster.${k}`);
+    }
   }
 }
 
@@ -400,6 +434,7 @@ const order = [
   'typeMismatch',
   'lengthMismatch',
   'sameAsEnglish',
+  'rosterMissing',
   'extraKey',
   'extraFile',
   'messages:missingFile',

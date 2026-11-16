@@ -1,7 +1,9 @@
 <!--
   ScienceCard — compact inline preview of a /science section. Used by the
-  SCIENCE tab on detail panels (mission, planet, earth-object, moon site,
-  mars site, ISS module, Tiangong module).
+  science block on detail panels (mission, planet, small body, moon, belt, Sun,
+  fleet suit, regime, Earth object, ISS and Tiangong module). A panel lists at
+  most five, through pickScienceLinks (`$lib/science-links`); `expanded={false}`
+  is the compact form for lists of three or more.
 
   Renders:
     - section title (clickable into /science/[tab]/[section])
@@ -35,8 +37,8 @@
      * lists where space is tight. */
     expanded?: boolean;
     /** Optional body-specific context — one short sentence about why
-     * this section matters FOR THIS BODY. Renders as a small italic
-     * prefix above the card title. When the body's overlay supplies a
+     * this section matters FOR THIS BODY. Renders as a small upright
+     * line above the card title. When the body's overlay supplies a
      * per-body `why` for this section, the panel passes it through. */
     why?: string;
   };
@@ -92,17 +94,14 @@
   }
   .card:hover,
   .card:focus-visible {
-    border-color: rgba(78, 205, 196, 0.55);
-    background: rgba(78, 205, 196, 0.06);
+    border-color: color-mix(in srgb, var(--color-accent) 55%, transparent);
+    background: color-mix(in srgb, var(--color-accent) 6%, transparent);
     outline: none;
   }
   .why {
-    /* Per-body context — small italic prefix above the title that
-     * answers "why this section, for this body". Italicised serif to
-     * differentiate from the encyclopedia content below. */
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 12px;
+    /* Per-body context — an upright line above the title that answers "why this
+     * section, for this body"; the dashed rule separates it from the article below. */
+    font-size: var(--size-meta);
     line-height: 1.4;
     color: rgba(255, 255, 255, 0.6);
     margin: 0 0 6px;
@@ -117,15 +116,13 @@
     margin: 0 0 4px;
   }
   .intro {
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 13px;
+    font-size: var(--size-lead);
     line-height: 1.4;
     color: rgba(255, 255, 255, 0.7);
     margin: 0 0 6px;
   }
   .intro.placeholder {
-    color: rgba(255, 255, 255, 0.4);
+    color: var(--color-text-label);
   }
   .preview {
     font-family: 'Crimson Pro', serif;
@@ -150,15 +147,15 @@
   }
   .tab-tag {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
-    color: rgba(78, 205, 196, 0.85);
+    color: var(--color-state);
     text-transform: uppercase;
   }
   .more {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
   }
 </style>

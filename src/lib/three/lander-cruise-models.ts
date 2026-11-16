@@ -776,7 +776,9 @@ const BUILDERS: Record<string, () => THREE.Group> = {
   opportunity: buildOpportunityCruise,
   schiaparelli: buildSchiaparelliCruise,
   viking1: buildViking1Cruise,
+  viking2: buildViking1Cruise,
   mars3: buildMars3Cruise,
+  mars2: buildMars3Cruise,
   tianwen1: buildTianwen1Cruise,
   // Moon batch
   apollo11: buildApolloCruise,
@@ -788,6 +790,7 @@ const BUILDERS: Record<string, () => THREE.Group> = {
   // Apollo 10 and 13 flew the full CSM + LM stack too (Apollo 8 had no LM: fly-craft's CSM).
   apollo10: buildApolloCruise,
   apollo13: buildApolloCruise,
+  artemis1: buildOrionCruise,
   artemis2: buildOrionCruise,
   artemis3: buildOrionCruise,
   artemis5: buildOrionCruise,

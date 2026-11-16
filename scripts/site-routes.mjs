@@ -135,6 +135,156 @@ function bodyRoutes() {
   return [...ids].map((id) => `/explore/${id}`);
 }
 
+/**
+ * Every id with a star page (/explore/stars/<id>): the named stars plus the exoplanet
+ * hosts. Seven hosts are named stars; trappist-1, 51-pegasi, toi-700 and kepler-16 are
+ * not, and get a page built from the system record. The one id list that the page's
+ * `entries` generator, the mobile prune and the route-list test share.
+ *
+ * @returns {string[]}
+ */
+export function starPageIds() {
+  /** @param {string} p */
+  const read = (p) => (existsSync(p) ? JSON.parse(readFileSync(p, 'utf8')) : null);
+  const ids = new Set();
+  for (const s of read('static/data/universe/named-stars.json')?.stars ?? []) ids.add(s.id);
+  for (const s of read('static/data/universe/exoplanet-systems.json')?.systems ?? [])
+    ids.add(s.hostId);
+  return [...ids];
+}
+
+/** One indexable page per named star and exoplanet host (/explore/stars/<id>). */
+function starRoutes() {
+  return starPageIds().map((id) => `/explore/stars/${id}`);
+}
+
+/**
+ * Every id with a black-hole page (/explore/black-holes/<id>): the three real holes and
+ * Gargantua (fiction, badged on its page). The one id list that the page's `entries`
+ * generator, the mobile prune and the route-list test share.
+ *
+ * @returns {string[]}
+ */
+export function blackHolePageIds() {
+  const p = 'static/data/universe/black-holes.json';
+  return existsSync(p)
+    ? JSON.parse(readFileSync(p, 'utf8')).objects.map((/** @type {{ id: string }} */ o) => o.id)
+    : [];
+}
+
+/** One indexable page per black hole (/explore/black-holes/<id>). */
+function blackHoleRoutes() {
+  return blackHolePageIds().map((id) => `/explore/black-holes/${id}`);
+}
+
+/**
+ * Every id with a deep-sky page (/explore/deep-sky/<id>): the objects in deep-sky-objects.json
+ * that have reviewed text, i.e. an overlay under i18n-src/en-US/universe/deep-sky/, except an id
+ * in DEEP_SKY_ALIAS (one real object, one page: the alias keeps its overlay for its panel, the
+ * page is its target's). The files decide, so a batch of new overlays adds its pages with no code
+ * change. The one id list that
+ * the page's `entries` generator, the INDEX, the mobile prune and the tests share.
+ *
+ * @returns {string[]}
+ */
+export function deepSkyPageIds() {
+  const p = 'static/data/universe/deep-sky-objects.json';
+  if (!existsSync(p)) return [];
+  return JSON.parse(readFileSync(p, 'utf8'))
+    .objects.map((/** @type {{ id: string }} */ o) => o.id)
+    .filter(
+      (/** @type {string} */ id) =>
+        !Object.hasOwn(DEEP_SKY_ALIAS, id) &&
+        existsSync(`i18n-src/en-US/universe/deep-sky/${id}.json`),
+    );
+}
+
+/**
+ * One real object, one page. These scene ids name an object that deep-sky-objects.json
+ * holds under another id, and their INDEX rows link that object's page instead of getting a
+ * second one. The Milky Way globulars m3 m4 m5 m13 m15 m22 m92 and the Local Group members
+ * m32 m110 carry the deep-sky id already, so they need no entry; omega-centauri is
+ * ngc-5139's alias, and links a page only once ngc-5139 has text; 47-tucanae is ngc-104's. carina-nebula is the one alias
+ * that is also an object of deep-sky-objects.json (a second scene object and photo, Mystic
+ * Mountain, of the nebula ngc-3372 holds): it keeps its overlay for its panel, has no page of its
+ * own, and its INDEX row links ngc-3372's.
+ */
+export const DEEP_SKY_ALIAS = {
+  andromeda: 'm31',
+  triangulum: 'm33',
+  'omega-centauri': 'ngc-5139',
+  '47-tucanae': 'ngc-104',
+  'carina-nebula': 'ngc-3372',
+};
+
+/** One indexable page per deep-sky object with text (/explore/deep-sky/<id>). */
+function deepSkyRoutes() {
+  return deepSkyPageIds().map((id) => `/explore/deep-sky/${id}`);
+}
+
+/** The data file of the galaxy pages, and the four of the structure pages. */
+export const GALAXY_DATA_FILE = 'static/data/universe/local-group.json';
+export const STRUCTURE_DATA_FILES = [
+  'static/data/universe/local-sheet.json',
+  'static/data/universe/virgo-cluster.json',
+  'static/data/universe/laniakea.json',
+  'static/data/universe/cosmic-web.json',
+];
+
+/** @param {string} p @returns {string[]} the `members[]` ids of a universe data file */
+function memberIds(p) {
+  return existsSync(p)
+    ? JSON.parse(readFileSync(p, 'utf8')).members.map((/** @type {{ id: string }} */ m) => m.id)
+    : [];
+}
+
+/**
+ * Every id with a galaxy page (/explore/galaxies/<id>): the Local Group members that have an
+ * overlay under i18n-src/en-US/universe/galaxies/ (the files decide, as for deep-sky), except the
+ * four whose page is a deep-sky one: andromeda and triangulum (DEEP_SKY_ALIAS) and m32 and m110
+ * (an object of deep-sky-objects.json under the same id). One real object, one page.
+ *
+ * @returns {string[]}
+ */
+export function galaxyPageIds() {
+  const deepSky = new Set(
+    existsSync('static/data/universe/deep-sky-objects.json')
+      ? JSON.parse(readFileSync('static/data/universe/deep-sky-objects.json', 'utf8')).objects.map(
+          (/** @type {{ id: string }} */ o) => o.id,
+        )
+      : [],
+  );
+  return memberIds(GALAXY_DATA_FILE).filter(
+    (id) =>
+      !Object.hasOwn(DEEP_SKY_ALIAS, id) &&
+      !deepSky.has(id) &&
+      existsSync(`i18n-src/en-US/universe/galaxies/${id}.json`),
+  );
+}
+
+/**
+ * Every id with a structure page (/explore/structures/<id>): the members of the Local Sheet,
+ * Virgo, Laniakea and Cosmic web files that have an overlay under
+ * i18n-src/en-US/universe/structures/. `local-group` is a member of two of the files: once.
+ *
+ * @returns {string[]}
+ */
+export function structurePageIds() {
+  return [...new Set(STRUCTURE_DATA_FILES.flatMap(memberIds))].filter((id) =>
+    existsSync(`i18n-src/en-US/universe/structures/${id}.json`),
+  );
+}
+
+/** One indexable page per galaxy with text (/explore/galaxies/<id>). */
+function galaxyRoutes() {
+  return galaxyPageIds().map((id) => `/explore/galaxies/${id}`);
+}
+
+/** One indexable page per structure with text (/explore/structures/<id>). */
+function structureRoutes() {
+  return structurePageIds().map((id) => `/explore/structures/${id}`);
+}
+
 /** One indexable page per Lab formula (/lab/<id>, 0.9.8 SEO). The id list is
  *  guarded against the TS registry by lab-formulas-json.test.ts. */
 function labRoutes() {
@@ -161,6 +311,11 @@ export function collectCanonicalRoutes() {
     ...fleetRoutes(),
     ...siteRoutes(),
     ...bodyRoutes(),
+    ...starRoutes(),
+    ...blackHoleRoutes(),
+    ...deepSkyRoutes(),
+    ...galaxyRoutes(),
+    ...structureRoutes(),
     ...labRoutes(),
   ];
 }

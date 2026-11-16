@@ -21,6 +21,7 @@ import { join } from 'node:path';
 import { isAllowedLicense } from './license-allowlist.js';
 // Plain .mjs shared enumerator (scripts/site-routes.mjs pattern; JSDoc-typed).
 import { canonicalCardTargets, aliasStubTargets } from './card-targets.mjs';
+import { DEEP_SKY_ALIAS } from './site-routes.mjs';
 import { isAllowedChannel } from './video-channel-allowlist.js';
 import { isJpegBytes } from './lib/image-bytes.ts';
 import { isNonDescriptiveAlt } from './lib/alt-text.ts';
@@ -34,6 +35,8 @@ import {
   findLaunchesOrphanRocketMappingTargets,
   scienceReviewHash,
   findHotspotAnnotationProblems,
+  findCatalogueProblems,
+  type CatalogueRow,
   type HotspotEntryForAnnotations,
   type FleetRef,
   type LicenseWaiver,
@@ -42,6 +45,11 @@ import {
   type LaunchEntryMinimal,
 } from './validate-data-helpers.js';
 import { TRANSLATED_LOCALES } from './lib/locales.mjs';
+import {
+  buildEntityThumbs,
+  serialize,
+  MANIFEST_PATH as ENTITY_THUMBS_PATH,
+} from './build-entity-thumbs.ts';
 
 const DATA_ROOT = 'static/data';
 
@@ -235,6 +243,8 @@ const validateBadgeProvenance = ajv.compile(loadSchema('badge-provenance.schema.
 const validateOrbitRegimes = ajv.compile(loadSchema('orbit-regimes.schema.json'));
 const validateOrbitRegimesExplore = ajv.compile(loadSchema('orbit-regimes-explore.schema.json'));
 const validateLocalGroupGalaxies = ajv.compile(loadSchema('local-group-galaxies.schema.json'));
+const validatePanelHeroes = ajv.compile(loadSchema('panel-heroes.schema.json'));
+const validateStarGallery = ajv.compile(loadSchema('star-gallery.schema.json'));
 const validateExploreOrbiters = ajv.compile(loadSchema('explore-orbiters.schema.json'));
 const validateStationTles = ajv.compile(loadSchema('station-tles.schema.json'));
 const validateLabIllustrations = ajv.compile(loadSchema('lab-illustrations.schema.json'));
@@ -495,6 +505,41 @@ validateFile(join(DATA_ROOT, 'culture-doors.json'), validateCultureDoors);
 validateFile(join(DATA_ROOT, 'museums.json'), validateMuseums);
 validateFile(join(DATA_ROOT, 'observatories.json'), validateObservatories);
 validateFile(join(DATA_ROOT, 'universe', 'deep-sky-objects.json'), validateDeepSkyObjects);
+// Catalogue layer (#658): every catalogue-derived value carries source + record_url, the sourced
+// number equals the displayed one, and magnitudes are single-band V. Shared by the deep-sky,
+// black-hole and Local Group files below.
+function checkCatalogue(
+  file: string,
+  rows: CatalogueRow[],
+  scalarOf: Record<string, (row: CatalogueRow) => unknown>,
+  required: (row: CatalogueRow) => string[],
+) {
+  const problems = findCatalogueProblems(rows, scalarOf, required);
+  if (problems.length === 0) {
+    passed++;
+    return;
+  }
+  failed += problems.length;
+  console.error(`\n  ✗ ${file}`);
+  for (const p of problems) console.error(`      ${p}`);
+}
+{
+  const dsoPath = join(DATA_ROOT, 'universe', 'deep-sky-objects.json');
+  if (existsSync(dsoPath)) {
+    const dso = readJson(dsoPath) as { objects: CatalogueRow[] };
+    checkCatalogue(
+      'universe/deep-sky-objects.json',
+      dso.objects,
+      {
+        mag: (r) => r.mag,
+        dist_ly: (r) => r.dist_ly,
+        size_arcmin: (r) => r.size_arcmin,
+        position: (r) => [r.ra, r.dec],
+      },
+      (r) => (r.mag != null ? ['mag'] : []),
+    );
+  }
+}
 // /explore v2 Slice 4 — every deep-sky photoKey must resolve to a real curated
 // gallery entry (the sky↔gallery join is load-bearing for the immersion panel).
 {
@@ -522,6 +567,69 @@ validateFile(join(DATA_ROOT, 'universe', 'deep-sky-objects.json'), validateDeepS
         );
       } else {
         passed++;
+      }
+    }
+    // An entity with reviewed text has a page (/explore/deep-sky|galaxies|structures/<id>, listed from
+    // the en-US overlay files): the overlay then exists in all 14 locales, each with a fact, a bio and
+    // one or two links. The overlay must belong to an entity, or no page and no panel would ever show it.
+    const members = (file: string): string[] => {
+      const p = join(DATA_ROOT, 'universe', file);
+      return existsSync(p)
+        ? (readJson(p) as { members: Array<{ id: string }> }).members.map((m) => m.id)
+        : [];
+    };
+    const dsIds = new Set(dso.objects.map((o) => o.id));
+    const overlaySets: Array<{ dir: string; ids: Set<string>; what: string }> = [
+      { dir: 'deep-sky', ids: dsIds, what: 'an object of deep-sky-objects.json' },
+      {
+        dir: 'galaxies',
+        // The four twins (andromeda, triangulum, m32, m110) keep their deep-sky page.
+        ids: new Set(
+          members('local-group.json').filter(
+            (id) => !Object.hasOwn(DEEP_SKY_ALIAS, id) && !dsIds.has(id),
+          ),
+        ),
+        what: 'a Local Group member without a deep-sky page (local-group.json)',
+      },
+      {
+        dir: 'structures',
+        ids: new Set(
+          ['local-sheet', 'virgo-cluster', 'laniakea', 'cosmic-web'].flatMap((n) =>
+            members(`${n}.json`),
+          ),
+        ),
+        what: 'a member of local-sheet, virgo-cluster, laniakea or cosmic-web .json',
+      },
+    ];
+    for (const { dir, ids, what } of overlaySets) {
+      const overlayDir = (loc: string) => join(I18N_SRC, loc, 'universe', dir);
+      const withText = existsSync(overlayDir('en-US'))
+        ? readdirSync(overlayDir('en-US'))
+            .filter((n) => n.endsWith('.json'))
+            .map((n) => n.slice(0, -5))
+        : [];
+      for (const id of withText) {
+        const problems: string[] = [];
+        if (!ids.has(id)) problems.push(`not ${what}`);
+        for (const loc of ['en-US', ...TRANSLATED_LOCALES]) {
+          const p = join(overlayDir(loc), `${id}.json`);
+          if (!existsSync(p)) {
+            problems.push(`${loc}: missing`);
+            continue;
+          }
+          const ov = readJson(p) as { fact?: unknown; bio?: unknown; links?: unknown };
+          for (const k of ['fact', 'bio'] as const)
+            if (typeof ov[k] !== 'string' || !ov[k].trim()) problems.push(`${loc}: empty ${k}`);
+          const n = Array.isArray(ov.links) ? ov.links.length : 0;
+          if (n < 1 || n > 2) problems.push(`${loc}: ${n} links (want 1-2)`);
+        }
+        if (problems.length) {
+          failed++;
+          console.error(`\n  ✗ i18n-src/*/universe/${dir}/${id}.json`);
+          for (const p of problems) console.error(`      ${p}`);
+        } else {
+          passed++;
+        }
       }
     }
     // Every gatewaySystem must resolve to a real exoplanet host id.
@@ -567,6 +675,27 @@ validateFile(join(DATA_ROOT, 'universe', 'milky-way-schematic.json'), validateMi
 // /explore v2 Slice 6 — black holes; science_section must resolve to a real
 // /science/observation article, and any culture_door must exist in culture-doors.json.
 validateFile(join(DATA_ROOT, 'universe', 'black-holes.json'), validateBlackHoles);
+{
+  const bhPath = join(DATA_ROOT, 'universe', 'black-holes.json');
+  if (existsSync(bhPath)) {
+    const bh = readJson(bhPath) as { objects: Array<CatalogueRow & { kind: string }> };
+    // The three real holes' mass and distance are published values; fiction carries none.
+    checkCatalogue(
+      'universe/black-holes.json',
+      bh.objects,
+      { mass_solar: (r) => r.mass_solar, dist_ly: (r) => r.dist_ly },
+      (r) => (r.kind === 'fictional' ? [] : ['mass_solar', 'dist_ly']),
+    );
+    for (const o of bh.objects) {
+      if (o.kind === 'fictional' && Object.keys(o.catalogue ?? {}).length > 0) {
+        failed++;
+        console.error(
+          `\n  ✗ universe/black-holes.json\n      ${o.id}: fiction must carry no catalogue entries`,
+        );
+      }
+    }
+  }
+}
 {
   const bhPath = join(DATA_ROOT, 'universe', 'black-holes.json');
   const obsIndexPath = join(DATA_ROOT, 'science', 'observation', '_index.json');
@@ -698,6 +827,8 @@ for (const f of [
   'planets',
   'satellites',
   'small-bodies',
+  'stars',
+  'black-holes',
   'tiangong-modules',
 ]) {
   validateFile(join(DATA_ROOT, `${f}-hero-overrides.json`), validateHeroOverrides);
@@ -713,6 +844,100 @@ for (const f of ['orbit-regimes', 'orbit-regimes-mars', 'orbit-regimes-moon']) {
 }
 validateFile(join(DATA_ROOT, 'orbit-regimes-explore.json'), validateOrbitRegimesExplore);
 validateFile(join(DATA_ROOT, 'local-group-galaxies.json'), validateLocalGroupGalaxies);
+{
+  // #658: Local Group distances are McConnachie 2012; a member without a catalogue entry is a
+  // distance with no source.
+  const sprites = join(DATA_ROOT, 'local-group-galaxies.json');
+  if (existsSync(sprites)) {
+    const doc = readJson(sprites) as { entries: CatalogueRow[] };
+    checkCatalogue(
+      'local-group-galaxies.json',
+      doc.entries,
+      { distance_kpc: (r) => r.distance_kpc },
+      () => ['distance_kpc'],
+    );
+  }
+  const schematic = join(DATA_ROOT, 'universe', 'local-group.json');
+  if (existsSync(schematic)) {
+    const doc = readJson(schematic) as { members: CatalogueRow[] };
+    checkCatalogue(
+      'universe/local-group.json',
+      doc.members,
+      { dist_mly: (r) => r.dist_mly },
+      (r) => (r.id === 'milky-way' ? [] : ['dist_mly']),
+    );
+  }
+}
+// Structure distances: an entry is optional (an anchor, or no paper states the value), but one that
+// exists must be sourced and equal the displayed distance.
+for (const f of ['local-sheet', 'virgo-cluster', 'laniakea', 'cosmic-web']) {
+  const path = join(DATA_ROOT, 'universe', `${f}.json`);
+  if (!existsSync(path)) continue;
+  const doc = readJson(path) as { members: CatalogueRow[] };
+  checkCatalogue(`universe/${f}.json`, doc.members, { dist_mpc: (r) => r.dist_mpc }, () => []);
+}
+// B3 (UXD-023): the heroes of the outer-scale and black-hole panels and the stars' extra images.
+// Every key names a file that exists and a provenance row, so /credits lists what a panel shows.
+{
+  const heroes = join(DATA_ROOT, 'universe', 'panel-heroes.json');
+  const gallery = join(DATA_ROOT, 'universe', 'star-gallery.json');
+  validateFile(heroes, validatePanelHeroes);
+  validateFile(gallery, validateStarGallery);
+  const provPaths = new Set(
+    (
+      readJson(join(DATA_ROOT, 'image-provenance.json')) as { entries: { path: string }[] }
+    ).entries.map((e) => e.path),
+  );
+  const need = (where: string, served: string, credited: string) => {
+    const problems: string[] = [];
+    if (!existsSync(join('static', served))) problems.push(`${served} is not on disk`);
+    if (!provPaths.has(credited)) problems.push(`no provenance row for ${credited}`);
+    if (problems.length) {
+      failed++;
+      console.error(`\n  ✗ ${where}`);
+      for (const pr of problems) console.error(`      ${pr}`);
+    }
+  };
+  if (existsSync(heroes)) {
+    const doc = readJson(heroes) as {
+      heroes: Record<string, { photoKey?: string; src?: string }>;
+    };
+    const keys = new Set(
+      (readJson(join(DATA_ROOT, 'deep-sky.json')) as { key: string }[]).map((i) => i.key),
+    );
+    for (const [k, h] of Object.entries(doc.heroes)) {
+      if (h.photoKey) {
+        if (!keys.has(h.photoKey)) {
+          failed++;
+          console.error(
+            `\n  ✗ universe/panel-heroes.json ${k}: ${h.photoKey} is not a deep-sky.json key`,
+          );
+          continue;
+        }
+        need(
+          `universe/panel-heroes.json ${k}`,
+          `images/deep-sky/${h.photoKey}.thumb.jpg`,
+          `/images/deep-sky/${h.photoKey}.jpg`,
+        );
+      } else if (h.src) need(`universe/panel-heroes.json ${k}`, h.src.slice(1), h.src);
+    }
+  }
+  if (existsSync(gallery)) {
+    const doc = readJson(gallery) as { stars: Record<string, { src: string }[]> };
+    const ids = new Set(
+      (
+        readJson(join(DATA_ROOT, 'universe', 'named-stars.json')) as { stars: { id: string }[] }
+      ).stars.map((s) => s.id),
+    );
+    for (const [id, imgs] of Object.entries(doc.stars)) {
+      if (!ids.has(id)) {
+        failed++;
+        console.error(`\n  ✗ universe/star-gallery.json: ${id} is not a named star`);
+      }
+      for (const im of imgs) need(`universe/star-gallery.json ${id}`, im.src.slice(1), im.src);
+    }
+  }
+}
 validateFile(join(DATA_ROOT, 'explore-orbiters.json'), validateExploreOrbiters);
 validateFile(join(DATA_ROOT, 'station-tles.json'), validateStationTles);
 validateFile(join(DATA_ROOT, 'lab-illustrations.json'), validateLabIllustrations);
@@ -2319,6 +2544,67 @@ let surfaceHotspotVariantFailed = 0;
 }
 
 // ─────────────────────────────────────────────────────────────────────
+// Round list thumbnails (L45, UXD-025). static/data/entity-thumbs.json says which 192 px WebP is
+// each gallery entity's thumb (its blessed hero slot). It must be what scripts/build-entity-thumbs.ts
+// writes from the files on disk, every listed file must exist, and an entity whose blessed slot has
+// a 1x1 crop or a master must not be left without a thumb (a row would show the dot for a picture
+// that exists). Entities with no image at all are listed in the manifest's `none` and are fine.
+console.log('\nValidating the list-thumbnail manifest (entity-thumbs.json)...');
+let entityThumbsFailed = 0;
+{
+  const problems: string[] = [];
+  try {
+    const { manifest, missing } = buildEntityThumbs();
+    if (
+      !existsSync(ENTITY_THUMBS_PATH) ||
+      readFileSync(ENTITY_THUMBS_PATH, 'utf-8') !== serialize(manifest)
+    ) {
+      problems.push(
+        `${ENTITY_THUMBS_PATH} is stale — re-run: npx tsx scripts/build-entity-thumbs.ts`,
+      );
+    }
+    for (const s of Object.values(manifest.surfaces)) {
+      for (const [id, slot] of Object.entries(s.slots)) {
+        const rel = `${s.dir}${s.flat ? '' : `/${id}`}/${slot}.1x1.webp`;
+        if (!existsSync(join('static/credit-thumbs/images', rel))) {
+          problems.push(`entity-thumbs ${rel}: listed but not on disk`);
+        }
+      }
+    }
+    for (const [body, s] of Object.entries(manifest.sites)) {
+      for (const [id, frag] of Object.entries(s.slots)) {
+        if (!existsSync(join('static/credit-thumbs/images', `${frag}.1x1.webp`))) {
+          problems.push(`entity-thumbs sites.${body}.${id} ${frag}: listed but not on disk`);
+        }
+      }
+    }
+    if (missing.need1x1.length > 0) {
+      problems.push(
+        `${missing.need1x1.length} blessed slot(s) have a master but no 1x1 crop — re-run: ` +
+          `npx tsx scripts/hotspots/regenerate-tier3-variants.mjs --slots ${missing.need1x1.join(' ')}`,
+      );
+    }
+    if (missing.needThumb.length > 0) {
+      problems.push(
+        `${missing.needThumb.length} blessed slot(s) have a 1x1 crop but no 192 px thumb ` +
+          `(${missing.needThumb.slice(0, 3).join(', ')}${missing.needThumb.length > 3 ? ', …' : ''}) — re-run: ` +
+          `npx tsx scripts/build-entity-thumbs.ts --missing /tmp/entity-thumbs-missing.json && ` +
+          `node scripts/vision/build-credit-thumbs.mjs --paths /tmp/entity-thumbs-missing.json && ` +
+          `npx tsx scripts/build-entity-thumbs.ts`,
+      );
+    }
+  } catch (err) {
+    problems.push(`entity-thumbs check error: ${(err as Error).message}`);
+  }
+  if (problems.length === 0) {
+    console.log('  ✓ entity-thumbs.json is current, every thumb is on disk, none is left unbuilt');
+  } else {
+    for (const p of problems) console.log(`  ✗ ${p}`);
+    entityThumbsFailed = problems.length;
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────────
 // Overlay-completeness check (AGENTS.md non-negotiable, GH #83 follow-up).
 //
 // History: GH #83 added 11 constellation entries to earth-objects.json but
@@ -2695,6 +2981,7 @@ if (
     imageMimeFailed +
     imagePipelineFailed +
     surfaceHotspotVariantFailed +
+    entityThumbsFailed +
     overlayFailed +
     audioFailed +
     episodeSourcesFailed +

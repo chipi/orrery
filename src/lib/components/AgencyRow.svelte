@@ -20,7 +20,7 @@
   }
 
   let { agency, color = null, children }: Props = $props();
-  const bg = $derived(color ?? agencyColor(agency) ?? 'rgba(78, 205, 196, 0.16)');
+  const bg = $derived(color ?? agencyColor(agency) ?? 'rgba(80, 112, 255, 0.16)');
 </script>
 
 <div class="agency-row">
@@ -48,13 +48,16 @@
   .agency-row :global(.status),
   .agency-row :global(.quality) {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 7px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
     font-weight: 700;
     padding: 3px 8px;
     border-radius: 3px;
   }
   .agency-badge {
+    /* The status chip beside it has a 1 px border: the same border here gives both the same
+       outer size (operator 2026-11-12). */
+    border: 1px solid transparent;
     color: #fff;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
   }

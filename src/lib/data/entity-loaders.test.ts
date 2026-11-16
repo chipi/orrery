@@ -122,14 +122,14 @@ describe('getSiteEntity', () => {
     files['missions/moon/a11.json'] = { id: 'a11', fleet_refs: [{ id: 'saturn-v', role: 'launcher' }] };
     files['i18n/de/missions/moon/a11.json'] = { name: 'Apollo 11', first: 'Erste Landung.' };
     files['fleet/index.json'] = [{ id: 'saturn-v', category: 'launcher' }];
-    files['fleet/launcher/saturn-v.json'] = { id: 'saturn-v', name: 'Saturn V' };
+    files['fleet/launcher/saturn-v.json'] = { id: 'saturn-v', name: 'Saturn V', agency: 'NASA' };
     files['i18n/de/fleet/launcher/saturn-v.json'] = { name: 'Saturn V', tagline: 'Mondrakete.' };
     const e = await getSiteEntity('moon', 'apollo11', 'de');
     expect(e?.mission).toEqual({
       id: 'a11',
       name: 'Apollo 11',
       first: 'Erste Landung.',
-      hardware: [{ id: 'saturn-v', name: 'Saturn V', tagline: 'Mondrakete.' }],
+      hardware: [{ id: 'saturn-v', name: 'Saturn V', tagline: 'Mondrakete.', agency: 'NASA' }],
     });
   });
 

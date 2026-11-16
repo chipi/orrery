@@ -94,5 +94,23 @@
   "link_labels": {
     "/earth": "Erde — Umlaufbahnen, Rendezvous & Startplätze",
     "/fleet?id=mir": "Flotte — Raumstation Mir"
+  },
+  "roster": {
+    "Modular assembly": {
+      "note": "über ein Jahrzehnt im Orbit aufgebaut — das Kernmodul (1986), dann Kvant, Kvant-2, Kristall, Spektr und Priroda — die erste aus einzeln gestarteten Modulen zusammengesetzte Station",
+      "name": "Modularer Aufbau"
+    },
+    "Polyakov — 437 days": {
+      "note": "Waleri Poljakows einziger Aufenthalt von 437 Tagen an Bord von Mir bleibt der längste ununterbrochene bemannte Raumflug überhaupt und bewies, dass eine Besatzung eine Mission von der Dauer eines Marsflugs überleben kann",
+      "name": "Poljakow — 437 Tage"
+    },
+    "Shuttle-Mir": {
+      "note": "US-Space-Shuttles dockten an Mir an und amerikanische Astronauten lebten an Bord (1995–1998) — die ersten gemeinsamen Stationsoperationen der Rivalen des Kalten Krieges und die direkte Generalprobe für die ISS",
+      "name": "Shuttle-Mir"
+    },
+    "The 1997 crises": {
+      "note": "ein Brand an Bord und dann die Kollision eines Progress-Frachters, die das Modul Spektr durchschlug und einen Teil der Station dekomprimierte — die schwerste Kollision, die eine Besatzung im Orbit überlebt hat",
+      "name": "Die Krisen von 1997"
+    }
   }
 }

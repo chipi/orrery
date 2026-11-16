@@ -94,5 +94,37 @@
     "/moon?site=change3": "Chang’e 3 — rover Yutu",
     "/moon?site=change4": "Chang’e 4 — o lado oculto",
     "/moon?site=change2": "Chang’e 2"
+  },
+  "roster": {
+    "mission:change1": {
+      "note": "a primeira missão lunar da China — um orbitador que mapeou a superfície lunar e anunciou a China como potência lunar"
+    },
+    "mission:change2": {
+      "note": "um segundo orbitador lunar que deixou a Lua rumo ao ponto L2 Sol-Terra e depois sobrevoou o asteroide Toutatis"
+    },
+    "mission:change3": {
+      "note": "o primeiro pouso suave da China na Lua, levando o rover Yutu — a primeira nave a pousar lá desde os anos 1970"
+    },
+    "mission:change4": {
+      "note": "a primeira nave a pousar no lado oculto da Lua — um lugar que não enxerga a Terra, alcançado com o satélite de retransmissão Queqiao"
+    },
+    "mission:change5": {
+      "note": "o primeiro retorno de amostras lunares da China — as primeiras rochas lunares frescas trazidas à Terra por alguém desde 1976"
+    },
+    "mission:change6": {
+      "note": "o primeiro retorno de amostras do lado oculto da Lua — material que ninguém jamais havia segurado"
+    },
+    "Queqiao relay": {
+      "note": "um satélite posicionado além da Lua para retransmitir sinais do lado oculto, que nunca fica voltado para a Terra — o truque que viabilizou a Chang'e 4 e a 6",
+      "name": "Satélite de retransmissão Queqiao"
+    },
+    "Crewed landing": {
+      "note": "o objetivo declarado da China de pousar astronautas na Lua antes de 2030, usando uma nova cápsula tripulada de espaço profundo e um módulo de pouso",
+      "name": "Pouso tripulado"
+    },
+    "ILRS": {
+      "note": "a International Lunar Research Station — a base planejada pela China no polo sul lunar, primeiro robótica e depois tripulada, construída com parceiros internacionais como alternativa à Artemis",
+      "name": "ILRS"
+    }
   }
 }

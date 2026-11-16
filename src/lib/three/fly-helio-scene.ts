@@ -5,6 +5,7 @@ import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPa
 import { BokehPass } from 'three/examples/jsm/postprocessing/BokehPass.js';
 import { FilmPass } from 'three/examples/jsm/postprocessing/FilmPass.js';
 import { ShaderPass } from 'three/examples/jsm/postprocessing/ShaderPass.js';
+import { OutputPass } from 'three/examples/jsm/postprocessing/OutputPass.js';
 import { VignetteShader } from 'three/examples/jsm/shaders/VignetteShader.js';
 import { buildSkydome } from './skydome';
 import { buildSunLensFlare, type SunLensFlare } from './sun-lens-flare';
@@ -74,6 +75,9 @@ export interface HelioSceneOptions {
     halley?: string;
     '67p'?: string;
   };
+  /** Moon texture URLs keyed by the moon's lowercase name (`europa`). Each loads when its moon
+   *  is first shown or targeted, not at build. A moon without one keeps its stylised colour. */
+  moonTextures?: Record<string, string>;
   /** Resolved quality config — auto-detected or user-chosen per the
    *  `src/lib/quality/quality-tier.ts` system. Drives pixelRatio,
    *  bloom on/off, sphere segments, particle counts, etc. The component
@@ -182,6 +186,10 @@ export interface HelioSceneHandles {
     parentZ: number,
     simDay: number,
   ) => void;
+  /** Highlight the moon a plan flight targets (lowercase name, `europa`) or clear it with null:
+   *  its orbit ring takes the highlight colour, the body is drawn larger and stays visible
+   *  when the moon layer is off. */
+  setTargetMoon: (name: string | null) => void;
 }
 
 interface DestinationStyle {
@@ -202,7 +210,7 @@ export const DEST_STYLE: Record<string, DestinationStyle> = {
   mars: { size: 1.9, color: 0xc1440e },
   jupiter: { size: 5.5, color: 0xc88b3a },
   saturn: { size: 4.8, color: 0xe4d191 },
-  uranus: { size: 3.4, color: 0x7de8e8 },
+  uranus: { size: 3.4, color: 0x7de8e8 }, // a3-keep: planet / Earth identity colour, palette review at the end
   neptune: { size: 3.4, color: 0x3f54ba },
   pluto: { size: 0.9, color: 0xb9a895 },
   ceres: { size: 0.6, color: 0xa8a499 },
@@ -408,9 +416,12 @@ export function buildHelioScene(opts: HelioSceneOptions): HelioSceneHandles {
   if (opts.quality.vignetteEnabled) {
     vignettePass = new ShaderPass(VignetteShader);
     vignettePass.uniforms['offset'].value = 0.95;
-    vignettePass.uniforms['darkness'].value = 0.6;
+    vignettePass.uniforms['darkness'].value = 1.0;
     composer.addPass(vignettePass);
   }
+  // Last: the composer targets are linear, so this applies the renderer's ACES + sRGB once
+  // (after every effect, so grain and vignette modulate linear light like the rest).
+  composer.addPass(new OutputPass());
   // Procedural skydome — wave 2/3 punch #9. Large inverted sphere with
   // a CanvasTexture painting a Milky Way band gradient + sparse bright
   // stars. Augments the Points-based starfield rather than replacing it
@@ -462,11 +473,17 @@ export function buildHelioScene(opts: HelioSceneOptions): HelioSceneHandles {
   // Texture loader shared by Sun + Earth + every destination body.
   const texLoader = new THREE.TextureLoader();
   const sunTex = texLoader.load(opts.bodyTextures.sun);
+  sunTex.colorSpace = THREE.SRGBColorSpace;
   const earthTex = texLoader.load(opts.bodyTextures.earth);
+  earthTex.colorSpace = THREE.SRGBColorSpace;
   const destinationTextures: Partial<Record<DestinationId, THREE.Texture>> = {};
   for (const id of Object.keys(DEST_STYLE) as DestinationId[]) {
     const url = opts.bodyTextures[id as keyof HelioSceneOptions['bodyTextures']];
-    if (url) destinationTextures[id] = texLoader.load(url);
+    if (url) {
+      const destTex = texLoader.load(url);
+      destTex.colorSpace = THREE.SRGBColorSpace;
+      destinationTextures[id] = destTex;
+    }
   }
 
   // Sun — textured emissive core + additive-blend halo. The texture
@@ -564,7 +581,7 @@ export function buildHelioScene(opts: HelioSceneOptions): HelioSceneHandles {
   scene.add(kuiperBelt);
 
   // Earth orbit + initial destination orbit (Mars by default).
-  const earthOrbitLine = buildPathRing(earthOrbitPath(), 0x4b9cd3);
+  const earthOrbitLine = buildPathRing(earthOrbitPath(), 0x4b9cd3); // a3-keep: planet / Earth identity colour, palette review at the end
   let destinationOrbitLine = buildBodyOrbitRing('mars', 0xc1440e);
   scene.add(earthOrbitLine);
   scene.add(destinationOrbitLine);
@@ -747,8 +764,31 @@ export function buildHelioScene(opts: HelioSceneOptions): HelioSceneHandles {
       inclDeg: 156.89,
     },
   ];
-  type MoonEntry = { spec: MoonSpec; mesh: THREE.Mesh; orbit: THREE.LineLoop };
+  type MoonEntry = {
+    spec: MoonSpec;
+    mesh: THREE.Mesh;
+    orbit: THREE.LineLoop;
+    textured: boolean;
+  };
   const moonEntries: MoonEntry[] = [];
+  const MOON_HIGHLIGHT_COLOR = 0x889fe7;
+  const MOON_TARGET_SCALE = 1.6;
+  let targetMoonName: string | null = null;
+  const isTargetMoon = (e: MoonEntry): boolean =>
+    targetMoonName !== null && e.spec.name.toLowerCase() === targetMoonName;
+  function ensureMoonTexture(e: MoonEntry): void {
+    const url = opts.moonTextures?.[e.spec.name.toLowerCase()];
+    if (e.textured || !url) return;
+    e.textured = true;
+    texLoader.load(url, (tex) => {
+      tex.colorSpace = THREE.SRGBColorSpace;
+      const mat = e.mesh.material as THREE.MeshPhongMaterial;
+      mat.map = tex;
+      mat.color.setHex(0xffffff);
+      mat.emissiveIntensity = 0.05;
+      mat.needsUpdate = true;
+    });
+  }
   for (const spec of MOON_SYSTEM) {
     const mat = new THREE.MeshPhongMaterial({
       color: spec.color,
@@ -772,15 +812,31 @@ export function buildHelioScene(opts: HelioSceneOptions): HelioSceneHandles {
     );
     orbit.visible = false;
     scene.add(orbit);
-    moonEntries.push({ spec, mesh, orbit });
+    moonEntries.push({ spec, mesh, orbit, textured: false });
   }
   let moonsVisible = false;
+  function applyMoonVisibility(): void {
+    for (const m of moonEntries) {
+      const show = moonsVisible || isTargetMoon(m);
+      m.mesh.visible = show;
+      m.orbit.visible = show;
+      if (show) ensureMoonTexture(m);
+    }
+  }
   function setMoonsVisible(on: boolean): void {
     moonsVisible = on;
+    applyMoonVisibility();
+  }
+  function setTargetMoon(name: string | null): void {
+    targetMoonName = name ? name.toLowerCase() : null;
     for (const m of moonEntries) {
-      m.mesh.visible = on;
-      m.orbit.visible = on;
+      const target = isTargetMoon(m);
+      const lineMat = m.orbit.material as THREE.LineBasicMaterial;
+      lineMat.color.setHex(target ? MOON_HIGHLIGHT_COLOR : m.spec.color);
+      lineMat.opacity = target ? 0.9 : 0.55;
+      m.mesh.scale.setScalar(target ? MOON_TARGET_SCALE : 1);
     }
+    applyMoonVisibility();
   }
   /** Update every moon's position + orbit-ring centre for the given
    *  parent-planet world position + a wall-clock drift phase. Component
@@ -796,9 +852,10 @@ export function buildHelioScene(opts: HelioSceneOptions): HelioSceneHandles {
     parentZ: number,
     driftSec: number,
   ): void {
-    if (!moonsVisible) return;
+    if (!moonsVisible && targetMoonName === null) return;
     for (const m of moonEntries) {
       if (m.spec.parent !== parent) continue;
+      if (!moonsVisible && !isTargetMoon(m)) continue;
       m.orbit.position.set(parentX, 0, parentZ);
       // Inclination-tilt the orbit ring around the X axis so it
       // visibly diverges from the ecliptic.
@@ -955,7 +1012,7 @@ export function buildHelioScene(opts: HelioSceneOptions): HelioSceneHandles {
     if (planetRadius == null) continue;
     const geo = new THREE.SphereGeometry(planetRadius * 4, 24, 16);
     const mat = new THREE.MeshBasicMaterial({
-      color: id === 'jupiter' ? 0xff66dd : 0x66ddff,
+      color: id === 'jupiter' ? 0xff66dd : 0x66ddff, // a3-keep: planet / Earth identity colour, palette review at the end
       transparent: true,
       opacity: 0.08,
       side: THREE.BackSide,
@@ -1069,5 +1126,6 @@ export function buildHelioScene(opts: HelioSceneOptions): HelioSceneHandles {
     updateMagnetosphereForBody,
     setMoonsVisible,
     updateMoonsForParent,
+    setTargetMoon,
   };
 }

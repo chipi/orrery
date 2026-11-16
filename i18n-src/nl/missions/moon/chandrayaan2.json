@@ -1,0 +1,48 @@
+{
+  "name": "Chandrayaan-2",
+  "vehicle": "LVM3 M1 (voorheen GSLV Mk III)",
+  "payload": "3850 kg lanceermassa; 2379 kg orbiter; 1471 kg Vikram-lander inclusief de 27 kg zware Pragyan-rover",
+  "delta_v": "~3.5 km/s (schatting)",
+  "type": "ORBITER WERKT · LANDER VERLOREN",
+  "first": "Eerste Indiase poging tot een zachte landing op de maan",
+  "description": "Chandrayaan-2 was de tweede maanmissie van de ISRO en haar eerste poging tot een zachte landing: een orbiter, de Vikram-lander en de 27 kg zware Pragyan-rover, samen gelanceerd vanaf Sriharikota op 2019-07-22. De orbiter werd op 2019-08-20 in een maanbaan gevangen, Vikram scheidde zich af op 2019-09-02 en de lander begon op 2019-09-06 aan zijn aangedreven afdaling naar het zuidelijke poolgebied. Op ongeveer 2.1 km hoogte viel het contact weg en Vikram stortte neer; een commissie voor foutanalyse schreef het verlies toe aan een combinatie van factoren, waaronder een softwarefout in de geleiding en besturing van de afdaling. De Lunar Reconnaissance Orbiter (LRO) van NASA vond later de inslagplek (70.881° S, 22.784° E), nadat een vrijwilliger uit Chennai puin op zijn beelden had opgemerkt. De orbiter bleef werken: zijn acht instrumenten (CLASS, XSM, DFSAR, IIRS, ChACE-2, TMC-2, RAMBHA-DFRS en OHRC) brachten de maan in 2026 nog steeds vanuit een poolbaan in kaart, en zijn OHRC-camera legde later ook de landingsplek van Chandrayaan-3 vast.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCERING",
+      "note": "LVM3 M1 (voorheen GSLV Mk III) vanaf Sriharikota, 2019-07-22.",
+      "type": "nominal"
+    },
+    {
+      "met": 22.49,
+      "label": "TLI",
+      "note": "Trans-lunaire injectie op 2019-08-13, na een reeks ontstekingen om de aardbaan te verhogen.",
+      "type": "nominal"
+    },
+    {
+      "met": 28.76,
+      "label": "LOI",
+      "note": "Maanbaaninsertie op 2019-08-20 in een baan van 18,072 x 114 km.",
+      "type": "nominal"
+    },
+    {
+      "met": 41.94,
+      "label": "VIKRAM-SCHEIDING",
+      "note": "Vikram scheidt zich met de Pragyan-rover aan boord op 2019-09-02 van de orbiter.",
+      "type": "nominal"
+    },
+    {
+      "met": 46.45,
+      "label": "LANDER VERLOREN",
+      "note": "De aangedreven afdaling begint rond 20:08 UTC op 2019-09-06 (7 september in India); op ongeveer 2.1 km hoogte valt het contact weg en Vikram stort neer.",
+      "type": "warning"
+    },
+    {
+      "met": 133,
+      "label": "NEERSTORTPLEK GEVONDEN",
+      "note": "NASA's LRO lokaliseert de inslagplek van Vikram (70.881° S, 22.784° E), bekendgemaakt op 2019-12-02; de orbiter blijft in kaart brengen.",
+      "type": "info"
+    }
+  ],
+  "vehicle_stage": "cryogene bovenste trap van de LVM3"
+}

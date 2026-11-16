@@ -45,6 +45,16 @@ beforeAll(() => {
   write('missions/edge.html', page(`<p>${chars(348)}</p>`));
   write('missions/ok.html', page(`<p>${chars(349)}</p>`));
   write('missions/spaces.html', page(`<p>${'ab '.repeat(120)}</p>`));
+  write('explore/stars/thin.html', page(`<p>${chars(100)}</p>`));
+  write('explore/stars/ok.html', page(`<p>${chars(349)}</p>`));
+  write('explore/black-holes/thin.html', page(`<p>${chars(100)}</p>`));
+  write('explore/black-holes/ok.html', page(`<p>${chars(349)}</p>`));
+  write('explore/deep-sky/thin.html', page(`<p>${chars(100)}</p>`));
+  write('explore/deep-sky/ok.html', page(`<p>${chars(349)}</p>`));
+  write('explore/galaxies/thin.html', page(`<p>${chars(100)}</p>`));
+  write('explore/galaxies/ok.html', page(`<p>${chars(349)}</p>`));
+  write('explore/structures/thin.html', page(`<p>${chars(100)}</p>`));
+  write('explore/structures/ok.html', page(`<p>${chars(349)}</p>`));
   write('fr/fleet/edge.html', page(`<p>${chars(428)}</p>`));
   write('fr/fleet/ok.html', page(`<p>${chars(429)}</p>`));
   write('de/lab/edge.html', page(`<p>${chars(388)}</p>`));
@@ -67,8 +77,13 @@ afterAll(() => rmSync(dir, { recursive: true, force: true }));
 describe('check-seo thin entity pages', () => {
   it("flags pages under their locale's character floor, counting <main> text only", () => {
     const out = gate();
-    expect(out).toContain("thin entity page (under en-US's 350 characters): 3");
+    expect(out).toContain("thin entity page (under en-US's 350 characters): 8");
     expect(out).toContain('/missions/thin (101)');
+    expect(out).toContain('/explore/stars/thin (101)');
+    expect(out).toContain('/explore/black-holes/thin (101)');
+    expect(out).toContain('/explore/deep-sky/thin (101)');
+    expect(out).toContain('/explore/galaxies/thin (101)');
+    expect(out).toContain('/explore/structures/thin (101)');
     expect(out).toContain('/missions/edge (349)');
     expect(out).toContain('/missions/spaces (241)');
     expect(out).toContain('/fr/explore/empty (0)');
@@ -77,6 +92,11 @@ describe('check-seo thin entity pages', () => {
   it('accepts a page at the floor and above', () => {
     const out = gate();
     expect(out).not.toContain('/missions/ok');
+    expect(out).not.toContain('/explore/stars/ok');
+    expect(out).not.toContain('/explore/black-holes/ok');
+    expect(out).not.toContain('/explore/deep-sky/ok');
+    expect(out).not.toContain('/explore/galaxies/ok');
+    expect(out).not.toContain('/explore/structures/ok');
     expect(out).not.toContain('/moon/ok');
   });
 

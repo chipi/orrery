@@ -23,7 +23,7 @@ export const BODY_PALETTE: Record<string, BodyPalette> = {
   },
   earth: {
     core: '#ecffff',
-    bright: '#7fe0ff',
+    bright: '#7fe0ff', // a3-keep: body identity colour, palette review at the end
     mid: '#3aa0ff',
     deep: '#2b6cff',
     glowRGB: '90,190,255',

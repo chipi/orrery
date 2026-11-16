@@ -86,5 +86,16 @@
   "link_labels": {
     "/moon": "Lua — a região de pouso no polo sul",
     "/fleet?id=chandrayaan1": "Frota — as sondas Chandrayaan"
+  },
+  "roster": {
+    "mission:chandrayaan1": {
+      "note": "a primeira missão lunar da Índia — seu impactador e seus instrumentos encontram evidências claras de moléculas de água por toda a superfície lunar, uma descoberta que mudou a forma como entendemos a Lua"
+    },
+    "mission:chandrayaan2": {
+      "note": "o orbitador teve sucesso e ainda funciona, mas o módulo de pouso Vikram caiu na descida final — um quase sucesso público e doloroso no polo sul"
+    },
+    "mission:chandrayaan3": {
+      "note": "o retorno: a Vikram pousa suavemente perto do polo sul lunar — a primeira nave a conseguir isso, o que faz da Índia a quarta nação a pousar na Lua"
+    }
   }
 }

@@ -1,0 +1,746 @@
+{
+  "id": "chandrayaan2",
+  "agency": "ISRO",
+  "agency_full": "Indian Space Research Organisation",
+  "sector": "gov",
+  "dest": "MOON",
+  "color": "#FF9933",
+  "year": 2019,
+  "status": "ACTIVE",
+  "departure_date": "2019-07-22",
+  "arrival_date": "2019-09-06",
+  "transit_days": 46,
+  "vehicle": "LVM3 M1 (formerly GSLV Mk III)",
+  "payload": "3850 kg launch mass; 2379 kg orbiter; 1471 kg Vikram lander including the 27 kg Pragyan rover",
+  "delta_v": "~3.5 km/s (estimate)",
+  "data_quality": "good",
+  "credit": "© ISRO — Chandrayaan-2 mission. India's first attempt at a soft landing on the Moon: the orbiter reached lunar orbit and still works, but the Vikram lander, with the Pragyan rover on board, crashed during its descent on 2019-09-06.",
+  "links": [
+    {
+      "l": "Chandrayaan-2 — ISRO",
+      "u": "https://www.isro.gov.in/Chandrayaan2.html",
+      "t": "intro"
+    },
+    {
+      "l": "Chandrayaan-2 — NASA Science",
+      "u": "https://science.nasa.gov/mission/chandrayaan-2/",
+      "t": "intro"
+    },
+    {
+      "l": "Chandrayaan-2 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Chandrayaan-2",
+      "t": "intro"
+    },
+    {
+      "l": "चंद्रयान-2 — हिन्दी विकिपीडिया",
+      "u": "https://hi.wikipedia.org/wiki/%E0%A4%9A%E0%A4%82%E0%A4%A6%E0%A5%8D%E0%A4%B0%E0%A4%AF%E0%A4%BE%E0%A4%A8-2",
+      "t": "core"
+    },
+    {
+      "l": "Vikram Lander Found (NASA/GSFC/Arizona State University, LROC)",
+      "u": "https://lroc.im-ldi.com/posts/1131",
+      "t": "deep"
+    }
+  ],
+  "flight_data_quality": "sparse",
+  "fleet_refs": [
+    {
+      "id": "lvm3",
+      "role": "launcher"
+    },
+    {
+      "id": "chandrayaan2",
+      "role": "spacecraft"
+    },
+    {
+      "id": "vikram-cy2",
+      "role": "spacecraft"
+    },
+    {
+      "id": "sriharikota-slp",
+      "role": "launch-site"
+    }
+  ],
+  "flight": {
+    "launch": {
+      "vehicle_stage": "LVM3 cryogenic upper stage",
+      "mass_at_tli_kg": 3850,
+      "source": "ISRO: launch 2019-07-22 09:13:12 UTC on GSLV Mk III M1; combined mass 3850 kg (orbiter 2379 kg, Vikram 1471 kg, Pragyan 27 kg). The orbiter's own engine raised the orbit in a series of burns.",
+      "departure": "spacecraft"
+    },
+    "cruise": {
+      "tcm_count": 0,
+      "source": "No dated trajectory corrections between the trans-lunar injection (2019-08-13) and the lunar orbit insertion (2019-08-20) were found, so none is listed."
+    },
+    "arrival": {
+      "v_infinity_km_s": 0.85,
+      "periapsis_km": 114,
+      "inclination_deg": 90,
+      "orbit_insertion_dv_km_s": 0.85,
+      "source": "Lunar orbit insertion 2019-08-20 03:32 UTC into an 18,072 x 114 km orbit (ISRO, as reported on Wikipedia); the v-infinity, the inclination and the insertion delta-v are schematic estimates, not published figures.",
+      "edl_system": "powered"
+    },
+    "totals": {
+      "total_dv_km_s": 3.5,
+      "source": "Schematic estimate for Earth-orbit raising, trans-lunar injection and lunar orbit insertion; the mission's propellant budget was not found."
+    },
+    "events": [
+      {
+        "met_days": 0,
+        "type": "launch",
+        "label": "Launch — LVM3 M1",
+        "description": "Satish Dhawan Space Centre, Sriharikota, India, 2019-07-22 09:13 UTC. The orbiter, the Vikram lander and the Pragyan rover are lifted to an Earth orbit of 45,475 x 169 km."
+      },
+      {
+        "met_days": 22.49,
+        "type": "tli_or_tmi",
+        "label": "Trans-lunar injection",
+        "description": "2019-08-13 20:51 UTC. After a series of apogee-raising burns the orbiter's engine sends the stack toward the Moon from an Earth orbit of 142,975 x 276 km."
+      },
+      {
+        "met_days": 28.76,
+        "type": "arrival",
+        "label": "Lunar orbit insertion",
+        "description": "2019-08-20 03:32 UTC. Captured into an 18,072 x 114 km lunar orbit; four lowering burns follow, reaching a near-circular orbit of about 127 x 119 km on 2019-09-01."
+      },
+      {
+        "met_days": 41.94,
+        "type": "separation",
+        "label": "Vikram separation",
+        "description": "2019-09-02 07:45 UTC. The Vikram lander, with the Pragyan rover inside, separates from the orbiter."
+      },
+      {
+        "met_days": 46.45,
+        "type": "edl_or_oi",
+        "label": "Lunar powered descent — Vikram lost",
+        "description": "2019-09-06 about 20:08 UTC. Vikram begins its powered descent toward the south polar region; signal is lost at about 2.1 km altitude and the lander crashes. The orbiter continues its mission."
+      }
+    ],
+    "cislunar_profile": {
+      "source_tier": "tier_1_5_hybrid",
+      "parking_orbit": {
+        "altitude_km": 169,
+        "inclination_deg": 21.4,
+        "revs": 5
+      },
+      "tli": {
+        "dv_kms": 1.4
+      },
+      "translunar": {
+        "type": "direct"
+      },
+      "lunar_arrival": {
+        "type": "orbit",
+        "altitude_km": 114,
+        "inclination_deg": 90,
+        "periselene_km": 114
+      },
+      "return": {
+        "type": "none"
+      },
+      "waypoints_source": "Chandrayaan-2 (ISRO), as reported on en.wikipedia.org/wiki/Chandrayaan-2: injection orbit 45,475 x 169 km (2019-07-22), final Earth orbit 142,975 x 276 km, trans-lunar injection 2019-08-13 20:51 UTC, lunar orbit insertion 2019-08-20 03:32 UTC into 18,072 x 114 km, Vikram separation 2019-09-02 07:45 UTC, powered descent 2019-09-06 about 20:08 UTC. Intermediate orbits of the apogee-raising burns were not found, so the transfer is drawn as a parametric direct arc, not the real apogee-raising loops. Ecliptic plane; orbit phase schematic.",
+      "waypoints_km": [
+        [
+          0,
+          6547,
+          0,
+          0
+        ],
+        [
+          0.0001,
+          6547,
+          0,
+          1
+        ],
+        [
+          0.9853,
+          1258,
+          -2323,
+          5928
+        ],
+        [
+          1.478,
+          -3065,
+          -2080,
+          5308
+        ],
+        [
+          1.9706,
+          -5979,
+          -895,
+          2283
+        ],
+        [
+          2.4633,
+          -6173,
+          695,
+          -1774
+        ],
+        [
+          2.9559,
+          -3559,
+          1969,
+          -5025
+        ],
+        [
+          3.4486,
+          681,
+          2350,
+          -5997
+        ],
+        [
+          3.9412,
+          4631,
+          1662,
+          -4242
+        ],
+        [
+          4.4339,
+          6497,
+          212,
+          -541
+        ],
+        [
+          4.9265,
+          5401,
+          -1344,
+          3429
+        ],
+        [
+          5.4192,
+          1827,
+          -2279,
+          5815
+        ],
+        [
+          5.9118,
+          -2547,
+          -2176,
+          5552
+        ],
+        [
+          6.4045,
+          -5741,
+          -1088,
+          2775
+        ],
+        [
+          6.8971,
+          -6320,
+          490,
+          -1251
+        ],
+        [
+          7.3898,
+          -4026,
+          1844,
+          -4704
+        ],
+        [
+          7.8824,
+          101,
+          2359,
+          -6021
+        ],
+        [
+          8.3751,
+          4195,
+          1803,
+          -4600
+        ],
+        [
+          8.8677,
+          6400,
+          422,
+          -1076
+        ],
+        [
+          9.3604,
+          5704,
+          -1162,
+          2965
+        ],
+        [
+          9.853,
+          2384,
+          -2217,
+          5658
+        ],
+        [
+          10.3457,
+          -2008,
+          -2256,
+          5756
+        ],
+        [
+          10.8383,
+          -5460,
+          -1273,
+          3248
+        ],
+        [
+          11.331,
+          -6420,
+          282,
+          -719
+        ],
+        [
+          11.8236,
+          -4463,
+          1704,
+          -4349
+        ],
+        [
+          12.3163,
+          -478,
+          2351,
+          -6000
+        ],
+        [
+          12.8089,
+          3730,
+          1929,
+          -4923
+        ],
+        [
+          13.3016,
+          6255,
+          627,
+          -1601
+        ],
+        [
+          13.7942,
+          5945,
+          -968,
+          2471
+        ],
+        [
+          14.2869,
+          2923,
+          -2136,
+          5449
+        ],
+        [
+          14.7795,
+          -1452,
+          -2319,
+          5917
+        ],
+        [
+          15.2722,
+          -5137,
+          -1449,
+          3698
+        ],
+        [
+          15.7648,
+          -6472,
+          71,
+          -181
+        ],
+        [
+          16.2575,
+          -4866,
+          1552,
+          -3961
+        ],
+        [
+          16.7502,
+          -1054,
+          2325,
+          -5934
+        ],
+        [
+          17.2428,
+          3237,
+          2041,
+          -5209
+        ],
+        [
+          17.7355,
+          6064,
+          827,
+          -2111
+        ],
+        [
+          18.2281,
+          6142,
+          -769,
+          1961
+        ],
+        [
+          18.7208,
+          3421,
+          -2025,
+          5167
+        ],
+        [
+          19.2134,
+          -882,
+          -2365,
+          6036
+        ],
+        [
+          19.7061,
+          -4774,
+          -1615,
+          4122
+        ],
+        [
+          20.1987,
+          -6476,
+          -141,
+          360
+        ],
+        [
+          20.6914,
+          -5234,
+          1388,
+          -3543
+        ],
+        [
+          21.184,
+          -1622,
+          2282,
+          -5824
+        ],
+        [
+          21.6767,
+          2721,
+          2138,
+          -5455
+        ],
+        [
+          22.1693,
+          5829,
+          1021,
+          -2605
+        ],
+        [
+          22.49,
+          6547,
+          0,
+          0
+        ],
+        [
+          23.1546,
+          8107,
+          0,
+          284
+        ],
+        [
+          23.6473,
+          9646,
+          0,
+          590
+        ],
+        [
+          24.1399,
+          11663,
+          0,
+          1018
+        ],
+        [
+          24.6326,
+          14378,
+          0,
+          1632
+        ],
+        [
+          25.1252,
+          18150,
+          0,
+          2540
+        ],
+        [
+          25.6179,
+          23600,
+          0,
+          3930
+        ],
+        [
+          26.1105,
+          31864,
+          0,
+          6161
+        ],
+        [
+          26.6032,
+          45167,
+          0,
+          9958
+        ],
+        [
+          27.0958,
+          68234,
+          0,
+          16914
+        ],
+        [
+          27.5885,
+          111695,
+          0,
+          30790
+        ],
+        [
+          28.0811,
+          197534,
+          0,
+          60018
+        ],
+        [
+          28.76,
+          365313,
+          0,
+          125446
+        ],
+        [
+          29.0664,
+          365160,
+          752,
+          125393
+        ],
+        [
+          29.5591,
+          364369,
+          1642,
+          125121
+        ],
+        [
+          30.0517,
+          363225,
+          1817,
+          124729
+        ],
+        [
+          30.5444,
+          362228,
+          1198,
+          124386
+        ],
+        [
+          31.037,
+          361814,
+          58,
+          124244
+        ],
+        [
+          31.5297,
+          362161,
+          -1107,
+          124363
+        ],
+        [
+          32.0223,
+          363118,
+          -1789,
+          124692
+        ],
+        [
+          32.515,
+          364270,
+          -1692,
+          125087
+        ],
+        [
+          33.0077,
+          365113,
+          -857,
+          125377
+        ],
+        [
+          33.5003,
+          365281,
+          353,
+          125434
+        ],
+        [
+          33.993,
+          364697,
+          1408,
+          125234
+        ],
+        [
+          34.4856,
+          363620,
+          1848,
+          124864
+        ],
+        [
+          34.9783,
+          362518,
+          1484,
+          124486
+        ],
+        [
+          35.4709,
+          361871,
+          472,
+          124264
+        ],
+        [
+          35.9636,
+          361811,
+          0,
+          124243
+        ],
+        [
+          36.4562,
+          361811,
+          0,
+          124243
+        ],
+        [
+          36.9489,
+          361811,
+          0,
+          124243
+        ],
+        [
+          37.4415,
+          361811,
+          0,
+          124243
+        ],
+        [
+          37.9342,
+          361811,
+          0,
+          124243
+        ],
+        [
+          38.4268,
+          361811,
+          0,
+          124243
+        ],
+        [
+          38.9195,
+          361811,
+          0,
+          124243
+        ],
+        [
+          39.4121,
+          361811,
+          0,
+          124243
+        ],
+        [
+          39.9048,
+          361811,
+          0,
+          124243
+        ],
+        [
+          40.3974,
+          361811,
+          0,
+          124243
+        ],
+        [
+          40.8901,
+          361811,
+          0,
+          124243
+        ],
+        [
+          41.3827,
+          361811,
+          0,
+          124243
+        ],
+        [
+          41.94,
+          361811,
+          0,
+          124243
+        ],
+        [
+          42.368,
+          361811,
+          0,
+          124243
+        ],
+        [
+          42.8607,
+          361811,
+          0,
+          124243
+        ],
+        [
+          43.3533,
+          361811,
+          0,
+          124243
+        ],
+        [
+          43.846,
+          361811,
+          0,
+          124243
+        ],
+        [
+          44.3386,
+          361811,
+          0,
+          124243
+        ],
+        [
+          44.8313,
+          361811,
+          0,
+          124243
+        ],
+        [
+          45.3239,
+          361811,
+          0,
+          124243
+        ],
+        [
+          45.8166,
+          361811,
+          0,
+          124243
+        ],
+        [
+          46.45,
+          361811,
+          0,
+          124243
+        ],
+        [
+          46.8019,
+          361811,
+          0,
+          124243
+        ],
+        [
+          47.2945,
+          361811,
+          0,
+          124243
+        ],
+        [
+          47.7872,
+          361811,
+          0,
+          124243
+        ],
+        [
+          48.2798,
+          361811,
+          0,
+          124243
+        ],
+        [
+          48.7725,
+          361811,
+          0,
+          124243
+        ]
+      ]
+    }
+  }
+}

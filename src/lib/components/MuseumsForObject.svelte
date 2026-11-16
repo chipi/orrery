@@ -87,10 +87,10 @@
   h4 {
     margin: 0 0 8px;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10.5px;
+    font-size: var(--size-label);
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--color-text-label);
     font-weight: normal;
   }
   ul {
@@ -112,7 +112,7 @@
     font-size: 14px;
   }
   .city {
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
     font-size: 12px;
   }
   .item {
@@ -144,18 +144,18 @@
     align-items: center;
   }
   .site {
-    color: #4ecdc4;
-    background: rgba(78, 205, 196, 0.1);
-    border: 1px solid rgba(78, 205, 196, 0.4);
+    color: var(--color-state);
+    background: var(--color-accent-soft);
+    border: 1px solid var(--color-accent-edge);
   }
   .site:hover,
   .site:focus-visible {
-    background: rgba(78, 205, 196, 0.18);
-    border-color: #4ecdc4;
+    background: color-mix(in srgb, var(--color-accent) 18%, transparent);
+    border-color: var(--color-accent);
   }
   .map {
     color: var(--color-earth);
-    border: 1px solid rgba(75, 156, 211, 0.4);
+    border: 1px solid var(--color-accent-edge);
   }
   .map:hover,
   .map:focus-visible {

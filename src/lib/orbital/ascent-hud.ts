@@ -29,6 +29,15 @@ export const INJECTION_SEP_S = 8;
 /** The whole post-SECO injection beat: parking coast, burn, spacecraft separation. */
 export const INJECTION_BEAT_S = INJECTION_COAST_S + INJECTION_BURN_S + INJECTION_SEP_S;
 
+/** The injection beat a launch really shows: none when the payload stays in the vehicle's
+ *  bay (the Shuttle), whatever the mission's later injection burn is. */
+export function launchInjection<T>(
+  profile: { payloadInBay?: boolean } | null | undefined,
+  injection: T | null | undefined,
+): T | null {
+  return profile?.payloadInBay ? null : (injection ?? null);
+}
+
 /** Mission time (s) the spacecraft leaves the upper stage on a flight with an injection
  *  burn: the burn's end. `ascentDurationS` is `summary.totalDurationS`. */
 export function injectionSepT(ascentDurationS: number): number {
@@ -96,7 +105,7 @@ export function buildAscentBeats(summary: AscentSummary): AscentBeat[] {
   const raw: AscentBeat[] = [
     { label: 'MAX-Q', t: summary.maxQ.t },
     ...summary.events
-      .filter((e) => BEAT_LABEL[e.type])
+      .filter((e) => BEAT_LABEL[e.type] && !e.silent)
       .map((e) => ({ label: BEAT_LABEL[e.type], t: e.t })),
   ].filter((b) => b.t > 0 && b.t <= duration);
   const hasSepNear = (t: number) =>

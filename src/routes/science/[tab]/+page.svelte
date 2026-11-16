@@ -61,7 +61,7 @@
 </nav>
 
 <header class="tab-hero">
-  <h1>{tabLabel(data.tab)}</h1>
+  <h1 class="page-title">{tabLabel(data.tab)}</h1>
 </header>
 
 <figure class="tab-cover">
@@ -85,7 +85,7 @@
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.45);
+    color: var(--color-text-label);
     margin-bottom: 12px;
   }
   .crumb a {
@@ -93,7 +93,7 @@
     text-decoration: none;
   }
   .crumb a:hover {
-    color: #4ecdc4;
+    color: var(--color-accent);
   }
   .sep {
     margin: 0 8px;
@@ -101,12 +101,6 @@
   }
   .tab-hero {
     margin-bottom: 16px;
-  }
-  h1 {
-    font-family: var(--font-display);
-    font-size: 28px;
-    letter-spacing: 4px;
-    margin: 0;
   }
   .tab-cover {
     margin: 0 0 24px;
@@ -119,31 +113,29 @@
     max-height: 260px;
     opacity: 0.95;
   }
+  /* a2-keep: the boxed 101 intro card with its own tiers, not the page lead */
   .tab-intro {
     margin: 0 0 24px;
     padding: 18px 20px;
-    background: rgba(78, 205, 196, 0.05);
-    border-left: 3px solid rgba(78, 205, 196, 0.6);
+    background: color-mix(in srgb, var(--color-accent) 5%, transparent);
+    border-left: 3px solid var(--color-accent-strong);
     border-radius: 4px;
   }
   .tab-intro .badge {
     font-family: var(--font-display);
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 3px;
     text-transform: uppercase;
-    color: #4ecdc4;
+    color: var(--color-accent);
     margin: 0 0 10px;
   }
   .tab-intro .headline {
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 17px;
+    font-size: var(--size-lead);
     color: rgba(255, 255, 255, 0.95);
     margin: 0 0 14px;
   }
   .tab-intro p:not(.badge):not(.headline) {
-    font-family: 'Crimson Pro', serif;
-    font-size: 15px;
+    font-size: var(--size-lead);
     line-height: 1.7;
     color: rgba(255, 255, 255, 0.85);
     margin: 0 0 12px;
@@ -155,7 +147,7 @@
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
     letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--color-text-label);
     margin: 8px 0 0;
   }
   @media (max-width: 768px) {

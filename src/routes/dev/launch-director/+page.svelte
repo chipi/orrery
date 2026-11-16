@@ -1,0 +1,408 @@
+<!--
+  /dev/launch-director — G3 review prototype (dev-only, 404 in production like all of /dev).
+  Plays one launch with the camera DIRECTOR (src/lib/orbital/ascent-director.ts) driving the
+  existing launch scene's camera, over a seeded sky, sun, cloud deck and pad smoke
+  (src/lib/three/launch-conditions-scene.ts). /fly is untouched.
+
+  Query: launcher= (profile id, default falcon-9)  name= (flown variant, e.g. "Atlas V 541")
+  mission= (seed + payload model id: artemis2, galileo, curiosity)  seed= (overrides the
+  vehicle+mission seed)  mode=director|today  speed=1|5|20  light=midday|golden|dusk|night
+  cover=clear|scattered|deck|heavy  opening=tower_clear|pad_wide|overhead_drop|pad_dusk
+  utc=<ISO instant> (the real launch time: the light comes from the Sun at the pad then; else the
+  mission's minute-precision net in launches-historic; real=0 forces the seeded light)
+  reduced=1  cond=0 (no sky/cloud rig)  ui=0 (no overlay)  paused=1  t0=<flight s>  pr=<pixel ratio>.
+  window.__g3 drives it from a script: setT(t), plan, duration.
+-->
+<script lang="ts">
+  import { onMount } from 'svelte';
+  import { base } from '$app/paths';
+  import { streamedUrl } from '$lib/asset-url';
+  import { createAscentScene, VEHICLE_LENGTH_KM, type AscentScene } from '$lib/three/ascent-scene';
+  import { createAscentRenderer, type AscentRenderer } from '$lib/three/ascent-renderer';
+  import { resolveLaunchGround } from '$lib/three/launch-ground';
+  import {
+    integrateAscent,
+    sampleAscentAt,
+    type AscentSummary,
+    type LaunchProfile,
+  } from '$lib/physics/ascent/ascent-physics';
+  import { loadLaunchProfile } from '$lib/physics/ascent/launch-profile-registry';
+  import { padState, T_MINUS_S } from '$lib/orbital/ascent-hud';
+  import { buildShotSchedule } from '$lib/orbital/ascent-cameras';
+  import {
+    type CoverId,
+    type DirectorPlan,
+    type LightId,
+    type OpeningId,
+  } from '$lib/orbital/ascent-director';
+  import {
+    buildPlotModel,
+    liveReadout,
+    pushTrail,
+    type LiveReadout,
+    type PlotModel,
+    type Pt,
+  } from '$lib/orbital/launch-director-debug-plot';
+  import type { LaunchInstant } from '$lib/orbital/launch-sun';
+  import { resolveLaunchInstant } from '$lib/launches/launch-instant';
+  import { createLaunchDirector } from '$lib/three/launch-director-rig';
+  import LaunchDirectorDebugViewer from '$lib/components/LaunchDirectorDebugViewer.svelte';
+  import DebugPanelRegistrar from '$lib/components/DebugPanelRegistrar.svelte';
+
+  // ?debug=1: the DebugPanel's Page tab shows the director's plan, path and live camera.
+  let debugModel = $state<PlotModel | null>(null);
+  let debugLive = $state<LiveReadout | null>(null);
+  let debugTrail = $state<Pt[]>([]);
+  let debugVehicle = $state<Pt | null>(null);
+  let debugFrame = 0;
+
+  let container: HTMLDivElement;
+  const q =
+    typeof window === 'undefined'
+      ? new URLSearchParams()
+      : new URLSearchParams(window.location.search);
+  const launcher = q.get('launcher') ?? 'falcon-9';
+  const flown = q.get('name') ?? undefined;
+  const missionId = q.get('mission') ?? undefined;
+  const seedParam = q.get('seed');
+  const showUi = q.get('ui') !== '0';
+
+  let mode = $state<'director' | 'today'>(q.get('mode') === 'today' ? 'today' : 'director');
+  let playing = $state(q.get('paused') !== '1');
+  let speed = $state(Number(q.get('speed') ?? 5));
+  let t = $state(q.get('t0') != null ? Number(q.get('t0')) : -T_MINUS_S + 8);
+  let status = $state('loading…');
+  let plan = $state<DirectorPlan | null>(null);
+  let endT = $state(0);
+  let shotLabel = $state('');
+  let seedInput = $state(seedParam ?? '');
+
+  const link = (extra: Record<string, string>): string => {
+    const u = new URLSearchParams(q);
+    for (const [k, v] of Object.entries(extra)) u.set(k, v);
+    return `?${u.toString()}`;
+  };
+
+  onMount(() => {
+    let disposed = false;
+    let ar: AscentRenderer | undefined;
+    let asc: AscentScene | undefined;
+    let raf = 0;
+    const cleanups: (() => void)[] = [];
+
+    (async () => {
+      const profile: LaunchProfile | null = await loadLaunchProfile(launcher, fetch, base, flown);
+      if (!profile || disposed) {
+        status = `no profile for ${launcher}`;
+        return;
+      }
+      const summary: AscentSummary = integrateAscent(profile);
+      const duration = summary.totalDurationS;
+      const reduced = q.get('reduced') === '1';
+      // The real launch instant: ?utc= wins (at the profile's pad), else the launches dataset
+      // (the mission's time of day and pad). None (a date-only mission, no entry, ?real=0): the
+      // light is seeded.
+      let launch: LaunchInstant | null = null;
+      if (q.get('real') !== '0') {
+        const utcParam = q.get('utc');
+        const site = profile.launchSite;
+        if (utcParam && Number.isFinite(Date.parse(utcParam)) && site)
+          launch = { utcMs: Date.parse(utcParam), latDeg: site.lat, lonDeg: site.lon };
+        else if (missionId)
+          launch = await resolveLaunchInstant(
+            { missionId, departureDate: q.get('date') ?? undefined, launcherId: profile.id },
+            site,
+            fetch,
+            base,
+          );
+      }
+
+      const schedule = buildShotSchedule({
+        events: summary.events,
+        maxQt: summary.maxQ.t,
+        duration,
+        endT: duration,
+      });
+      const w = container.clientWidth;
+      const h = container.clientHeight;
+      const launchSite = profile.launchSite;
+      asc = createAscentScene({
+        aspect: w / h,
+        earthDayUrl: `${base}/textures/4k_earth_daymap.jpg`,
+        earthNightUrl: `${base}/textures/2k_earth_nightmap.jpg`,
+        launchSite,
+        vehicleLengthKm: VEHICLE_LENGTH_KM,
+        schedule,
+        events: summary.events,
+        spacecraftId: missionId,
+        launcherId: profile.id,
+        boosterCount: profile.boosters?.count ?? 0,
+        boosterAirLitCount: profile.boosters?.airLitCount ?? 0,
+        payloadInBay: profile.payloadInBay === true,
+        groundSite: (() => {
+          const g = resolveLaunchGround(launchSite);
+          return g ? { ...g, textureUrl: streamedUrl(`${base}${g.textureUrl}`) } : undefined;
+        })(),
+      });
+      ar = createAscentRenderer(container, asc, { iblEnabled: false });
+      const pr = q.get('pr');
+      if (pr) ar.renderer.setPixelRatio(Number(pr));
+      // The same director /fly's launch runs (one implementation: launch-director-rig.ts).
+      const director = createLaunchDirector({
+        asc,
+        summary,
+        profile,
+        vehLen: VEHICLE_LENGTH_KM,
+        missionId,
+        seed: seedParam != null && seedParam !== '' ? Number(seedParam) : undefined,
+        launch,
+        speed,
+        reducedMotion: reduced,
+        force: {
+          opening: (q.get('opening') as OpeningId | null) ?? undefined,
+          light: (q.get('light') as LightId | null) ?? undefined,
+          cover: (q.get('cover') as CoverId | null) ?? undefined,
+        },
+        nightUrl: `${base}/textures/2k_earth_nightmap.jpg`,
+        conditions: q.get('cond') !== '0',
+      });
+      cleanups.push(() => director.dispose());
+      const thePlan = director.plan;
+      plan = thePlan;
+      endT = thePlan.shots[thePlan.shots.length - 1].tEnd;
+      if (q.get('debug') === '1') {
+        debugModel = buildPlotModel({
+          plan: thePlan,
+          stateAt: (tt) => sampleAscentAt(summary.states, tt),
+          latDeg: profile.launchSite?.lat ?? 28.5,
+          vehLen: VEHICLE_LENGTH_KM,
+        });
+      }
+
+      const renderAt = (tt: number): void => {
+        if (!asc || !ar) return;
+        const sampled = tt < 0 ? padState(summary, tt) : sampleAscentAt(summary.states, tt);
+        const raw = tt > sampled.t ? { ...sampled, t: tt } : sampled;
+        const fr = director.apply(raw, { camera: mode === 'director' });
+        const s = fr.state;
+        shotLabel = mode === 'director' ? fr.shot : `today: ${asc.activeShot}`;
+        if (debugModel && tt >= 0 && ++debugFrame % 3 === 0) {
+          const lr = liveReadout(thePlan, tt, s, VEHICLE_LENGTH_KM);
+          debugLive = lr;
+          debugVehicle = { x: s.downrangeKm, y: s.altKm };
+          debugTrail = pushTrail(debugTrail, { x: lr.rel.dx, y: lr.rel.dz });
+        }
+        ar.render();
+      };
+
+      const g3 = window as unknown as Record<string, unknown>;
+      g3.__g3 = {
+        plan: thePlan,
+        duration,
+        endT,
+        setT: (tt: number) => {
+          playing = false;
+          t = tt;
+          asc?.snapCamera();
+          renderAt(tt);
+        },
+        setMode: (m: 'director' | 'today') => {
+          mode = m;
+        },
+        ready: true,
+      };
+      cleanups.push(() => delete g3.__g3);
+
+      status = '';
+      let last = performance.now();
+      const frame = (now: number): void => {
+        if (disposed) return;
+        const dt = Math.min(0.1, (now - last) / 1000);
+        last = now;
+        if (playing) {
+          t = Math.min(endT, t + dt * speed);
+          if (t >= endT) playing = false;
+        }
+        renderAt(t);
+        raf = requestAnimationFrame(frame);
+      };
+      raf = requestAnimationFrame(frame);
+
+      const onResize = (): void => ar?.resize();
+      window.addEventListener('resize', onResize);
+      cleanups.push(() => window.removeEventListener('resize', onResize));
+    })();
+
+    return () => {
+      disposed = true;
+      cancelAnimationFrame(raf);
+      cleanups.forEach((f) => f());
+      ar?.dispose();
+      asc?.dispose();
+    };
+  });
+
+  $effect(() => {
+    // a scrub back resets the trail
+    if (t < 1) debugTrail = [];
+  });
+
+  const fmt = (x: number): string => `${x < 0 ? '-' : '+'}${Math.abs(Math.round(x))}s`;
+</script>
+
+<svelte:head><title>launch director (dev)</title></svelte:head>
+
+<!-- with ?debug=1 the stage sits under the DebugPanel (z-index 90) instead of over everything -->
+<div class="stage" style:z-index={q.get('debug') === '1' ? 80 : 9000} bind:this={container}></div>
+
+{#snippet directorDebug()}
+  {#if debugModel && plan}
+    <LaunchDirectorDebugViewer
+      model={debugModel}
+      live={debugLive}
+      trail={debugTrail}
+      vehicle={debugVehicle}
+      light={plan.conditions.light}
+      cover={plan.conditions.cover}
+      opening={plan.opening}
+      seed={plan.seed}
+    />
+  {:else}
+    <div>Open with ?debug=1 once the launch has loaded.</div>
+  {/if}
+{/snippet}
+
+<DebugPanelRegistrar label="LAUNCH DIRECTOR" content={directorDebug} />
+
+{#if showUi}
+  <div class="bar" style:z-index={q.get('debug') === '1' ? 81 : 9001}>
+    <div class="row">
+      <strong>{launcher}{flown ? ` · ${flown}` : ''}</strong>
+      <span>mission {missionId ?? '—'}</span>
+      <span>T{fmt(t)}</span>
+      <span class="shot">{shotLabel}</span>
+      {#if plan}
+        <span>opening {plan.opening}</span>
+        <span
+          >{plan.conditions.light} · {plan.conditions.cover} · sun {Math.round(
+            plan.conditions.sunElevDeg,
+          )}°</span
+        >
+        <span>seed {plan.seed}</span>
+      {/if}
+      <span>{status}</span>
+    </div>
+    <div class="row">
+      <button type="button" onclick={() => (playing = !playing)}
+        >{playing ? 'pause' : 'play'}</button
+      >
+      <button type="button" onclick={() => (mode = mode === 'director' ? 'today' : 'director')}>
+        camera: {mode}
+      </button>
+      {#each [1, 5, 20] as sp (sp)}
+        <button type="button" class:on={speed === sp} onclick={() => (speed = sp)}>x{sp}</button>
+      {/each}
+      <input
+        type="range"
+        min={-T_MINUS_S}
+        max={endT || 600}
+        step="0.5"
+        bind:value={t}
+        aria-label="flight time"
+      />
+      <label>seed <input type="number" bind:value={seedInput} aria-label="seed" /></label>
+      <a href={link({ seed: String(Math.floor(Math.random() * 100000)) })}>reroll</a>
+      <a href={link({ seed: seedInput })}>apply seed</a>
+    </div>
+    {#if plan}
+      <div class="strip" aria-hidden="true">
+        {#each plan.shots as sh (sh.tStart)}
+          <div
+            class="seg {sh.kind}"
+            class:cur={shotLabel === sh.id}
+            style:flex={sh.tEnd - sh.tStart}
+            title="{sh.id} {Math.round(sh.tStart)}-{Math.round(sh.tEnd)}"
+          >
+            {sh.id}
+          </div>
+        {/each}
+      </div>
+    {/if}
+  </div>
+{/if}
+
+<style>
+  .stage {
+    position: fixed;
+    inset: 0;
+    z-index: 9000;
+    background: #000;
+  }
+  .bar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9001;
+    padding: 6px 10px;
+    background: rgb(5 7 15 / 82%);
+    color: #dde6f5;
+    font:
+      12px/1.4 system-ui,
+      sans-serif;
+  }
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 4px;
+  }
+  .shot {
+    color: #889fe7;
+  }
+  button,
+  input[type='number'] {
+    background: #14182b;
+    color: inherit;
+    border: 1px solid #2a3150;
+    border-radius: 3px;
+    padding: 1px 8px;
+  }
+  button.on {
+    border-color: #889fe7;
+  }
+  input[type='number'] {
+    width: 80px;
+  }
+  input[type='range'] {
+    flex: 1;
+    min-width: 160px;
+  }
+  a {
+    color: #889fe7;
+  }
+  .strip {
+    display: flex;
+    gap: 1px;
+    height: 16px;
+  }
+  .seg {
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 9px;
+    padding: 0 2px;
+    background: #1a2040;
+    color: #9aa6d0;
+  }
+  .seg.beat {
+    background: #3a2a52;
+  }
+  .seg.kept,
+  .seg.opening {
+    background: #24304a;
+  }
+  .seg.cur {
+    outline: 1px solid #889fe7;
+  }
+</style>

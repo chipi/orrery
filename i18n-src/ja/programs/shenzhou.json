@@ -91,5 +91,29 @@
     "/fleet?id=shenzhou": "フリート — Shenzhou 宇宙船",
     "/programs/tiangong": "Tiangong — Shenzhou の乗組員が建設し、通うステーション",
     "/programs/soyuz": "Soyuz — Shenzhou の構成の元になった宇宙船"
+  },
+  "roster": {
+    "mission:shenzhou-1": {
+      "note": "最初の無人試験飛行——誰かが乗る前に、カプセルが飛んで帰還する"
+    },
+    "mission:shenzhou-5": {
+      "note": "楊利偉が地球を14周する——宇宙に出た初の中国人宇宙飛行士であり、中国は自国のロケットで人間を打ち上げた3番目の国となった。ガガーリンから42年後"
+    },
+    "Shenzhou 7": {
+      "note": "翟志剛が中国初の宇宙遊泳を行う——EVAを行った史上3番目の国",
+      "name": "Shenzhou 7"
+    },
+    "Shenzhou 9": {
+      "note": "Tiangong-1との初の有人ドッキング。劉洋が宇宙に出た初の中国人女性となる",
+      "name": "Shenzhou 9"
+    },
+    "Shenzhou 11": {
+      "note": "Tiangong-2での30日間の滞在——それまでで中国最長の有人ミッションで、月単位の居住が可能なことを実証した",
+      "name": "Shenzhou 11"
+    },
+    "Shenzhou 12": {
+      "note": "恒久的な中国宇宙ステーションに初めて搭乗したクルー。Shenzhou-14(2022年)が継続的な有人運用を開始する",
+      "name": "Shenzhou 12"
+    }
   }
 }

@@ -46,7 +46,7 @@ which don't read env files themselves).
 
 The generated `VITE_*` client values (today `VITE_LAB_API_URL`) configure the
 local Vite **dev server** only (`vite dev`). They are deliberately excluded from
-every build (`npm run build`, `build:mobile`, the Docker/E2E and staging/prod
+every build (`npm run build`, `build:mobile`, the Docker/E2E and prod
 images keep the production/default lab-api URL unless you set one explicitly in
 the shell or `.env*`) and from Vitest, which loads the same config
 (`workspaceClientEnv` in `scripts/workspace/env.mjs`). So `npm run test` behaves

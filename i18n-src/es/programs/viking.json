@@ -89,5 +89,20 @@
     "/mars?site=viking1-lander": "Viking 1 — Chryse Planitia",
     "/mars?site=viking2-lander": "Viking 2 — Utopia Planitia",
     "/mars?site=viking1-orbiter": "orbitador Viking 1"
+  },
+  "roster": {
+    "fleet:viking-1": {
+      "note": "la primera nave en aterrizar con éxito en Marte y operar — un orbitador para cartografiar desde arriba y un módulo de aterrizaje para trabajar en la superficie"
+    },
+    "mission:viking1": {
+      "note": "el 20 de julio de 1976 el módulo de aterrizaje Viking 1 se posó en Chryse Planitia y devolvió las primeras imágenes nítidas de la superficie de Marte"
+    },
+    "mission:viking2": {
+      "note": "un segundo par de orbitador y módulo de aterrizaje, posado a miles de kilómetros de distancia, en Utopia Planitia, seis semanas después"
+    },
+    "The biology experiments": {
+      "note": "cada módulo de aterrizaje realizó experimentos diseñados para detectar vida en el suelo marciano; los resultados fueron ambiguos y siguen debatiéndose hasta hoy",
+      "name": "Los experimentos de biología"
+    }
   }
 }

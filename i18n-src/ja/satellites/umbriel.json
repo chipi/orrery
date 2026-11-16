@@ -14,6 +14,10 @@
       "tab": "orbits",
       "section": "semi-major-axis",
       "why": "アンブリエルは266,000 kmの距離でウラヌスを公転しており、その軌道面は惑星に対して傾いているため、その季節は親天体の極端な自転軸の幾何学を反映している。"
+    },
+    {
+      "tab": "planets",
+      "section": "axial-tilt-and-seasons"
     }
   ]
 }

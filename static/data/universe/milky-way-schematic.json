@@ -34,32 +34,32 @@
     {
       "id": "perseus",
       "name": "Perseus Arm",
-      "label_x": -12.5,
-      "label_z": -3.5,
+      "label_x": -8.7,
+      "label_z": -2.4,
       "minor": false,
       "science_section": "our-galaxy"
     },
     {
       "id": "scutum-centaurus",
       "name": "Scutum–Centaurus Arm",
-      "label_x": 8.5,
-      "label_z": 10.5,
+      "label_x": 4.6,
+      "label_z": 5.6,
       "minor": false,
       "science_section": "our-galaxy"
     },
     {
       "id": "sagittarius",
       "name": "Sagittarius Arm",
-      "label_x": 7.5,
-      "label_z": -11.5,
+      "label_x": 1.5,
+      "label_z": -7.8,
       "minor": false,
       "science_section": "our-galaxy"
     },
     {
       "id": "norma",
       "name": "Norma Arm",
-      "label_x": -9.5,
-      "label_z": 11.5,
+      "label_x": -3.4,
+      "label_z": -1.2,
       "minor": false,
       "science_section": "our-galaxy"
     },
@@ -84,7 +84,7 @@
     {
       "id": "47-tucanae",
       "name": "47 Tucanae",
-      "dist_from_sun_ly": 14500,
+      "dist_from_sun_ly": 14742,
       "x": 4.6,
       "z": -5.8,
       "headliner": true
@@ -140,7 +140,7 @@
     {
       "id": "ngc-6752",
       "name": "NGC 6752",
-      "dist_from_sun_ly": 13000,
+      "dist_from_sun_ly": 13438,
       "x": 3.1,
       "z": -2.6,
       "headliner": false
@@ -158,7 +158,7 @@
     {
       "id": "lmc",
       "name": "Large Magellanic Cloud",
-      "dist_from_sun_ly": 163000,
+      "dist_from_sun_ly": 161741,
       "x": -14,
       "z": -12.5,
       "diam_kly": 32
@@ -166,7 +166,7 @@
     {
       "id": "smc",
       "name": "Small Magellanic Cloud",
-      "dist_from_sun_ly": 200000,
+      "dist_from_sun_ly": 203650,
       "x": -12,
       "z": -14.5,
       "diam_kly": 18.9

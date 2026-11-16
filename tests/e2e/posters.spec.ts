@@ -26,14 +26,14 @@ test.describe('/posters — Orrery gallery', () => {
     // h1 "POSTERS" (was "ORRERY GALLERY" before the hub restructure).
     await expect(page.locator('article.gallery h1')).toContainText('POSTERS');
 
-    const posters = page.locator('article.gallery .grid > figure.poster');
+    const posters = page.locator('article.gallery ul.entity-card-grid > li > a.card');
     await expect(posters).toHaveCount(POSTER_COUNT);
 
     // Each poster is a raster <img> wrapped in a download link.
-    const imgs = page.locator('article.gallery .grid > figure.poster a[download] img');
+    const imgs = page.locator('article.gallery ul.entity-card-grid > li > a.card[download] img');
     await expect(imgs).toHaveCount(POSTER_COUNT);
 
-    await expect(page.locator('article.gallery footer.gallery-footer')).toBeVisible();
+    await expect(page.locator('article.gallery footer.page-note')).toBeVisible();
 
     expect(errors).toEqual([]);
   });

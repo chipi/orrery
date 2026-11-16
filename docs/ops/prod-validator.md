@@ -2,6 +2,8 @@
 
 **Status 2026-11-04:** reference/runbook, live and still accurate in structure. Tool and both workflows exist (`scripts/validate-prod.mjs`, `.github/workflows/validate-prod.yml`, `deploy-prod.yml`). Doc drift: the schedule is no longer every 6 h; `validate-prod.yml` now runs on deploy-prod completion (`workflow_run`, line 22) plus a daily cron `0 6 * * *` (line 31), changed in `6aa2d113449`. The env.js no-cache check exists as a WARN (`scripts/validate-prod.mjs:254-270`). Not verified (no remote access): whether the Tailscale/CF DNS gotcha still applies.
 
+**2026-11:** there is no staging validator any more (`validate-staging.yml` was removed with the staging tier); `validate-prod` after the prod deploy is the only release gate. The `VALIDATE_TIER` knob in the script is a leftover: nothing sets it, and the default `prod` is what runs.
+
 `npm run validate-prod` — a detailed, repeatable, browser-based validator for a
 live Orrery deployment. Elevated from the ad-hoc post-deploy spot-checks used to
 verify the 2026-07-22 prod fixes; those one-off Playwright snippets are now a
@@ -13,7 +15,7 @@ non-zero exit on failure.
 ```sh
 npm run validate-prod                                   # → https://www.orrerylearn.com
 VALIDATE_URL=http://127.0.0.1:4173 npm run validate-prod # local vite preview
-VALIDATE_URL=https://<staging> npm run validate-prod     # any target
+VALIDATE_URL=https://<host> npm run validate-prod        # any target
 VALIDATE_JSON=/tmp/report.json npm run validate-prod     # + machine report
 ```
 
@@ -30,7 +32,15 @@ A curl/header check would have passed while the site was actually broken — whi
 is exactly how three of the 2026-07-22 bugs hid (edge/CORS tests green, page
 context broken).
 
-## What it asserts (8 suites, ~60 checks)
+## What it asserts (9 suites, ~60 checks)
+
+The **version** suite (after headers) reads the served footer (`a.footer-version`)
+and fails unless it equals the label `package.json` produces
+(`scripts/lib/footer-version.mjs`, tested in `footer-version.test.ts`). It enforces
+the release order: the bump goes into the release PR, so the deployed commit
+carries it; a footer that shows the previous version means the deploy is stale or
+the bump came after the deploy. Because the daily run checks out `main`, a merged
+but not yet deployed bump turns that run red until the deploy.
 
 1. **headers** — reachable; HSTS / X-Content-Type-Options / X-Frame-Options /
    Referrer-Policy / CSP present; and the exact CSP directives the fixes need

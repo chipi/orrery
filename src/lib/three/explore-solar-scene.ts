@@ -3,6 +3,7 @@ import { Line2 } from 'three/examples/jsm/lines/Line2.js';
 import { LineGeometry } from 'three/examples/jsm/lines/LineGeometry.js';
 import { LineMaterial } from 'three/examples/jsm/lines/LineMaterial.js';
 import { PLANETS, type PlanetVisual, type SatelliteDef } from '$lib/explore-scene';
+import { ASTEROID_BELT_R, KUIPER_BELT_R } from '$lib/orbit-regime-geometry';
 import { buildDirectionLabelSprite } from '$lib/three/iconic-trajectory';
 import { onLayerChange } from '$lib/science-layers';
 import { buildLocalGroupLayer } from '$lib/galaxies-layer';
@@ -114,7 +115,7 @@ export function createExploreSolarScene(deps: ExploreSolarSceneDeps) {
   const asteroidBeltGeo = new THREE.BufferGeometry();
   asteroidBeltGeo.setAttribute(
     'position',
-    new THREE.BufferAttribute(sampleBelt(1800, 195, 237, 8), 3),
+    new THREE.BufferAttribute(sampleBelt(1800, ASTEROID_BELT_R[0], ASTEROID_BELT_R[1], 8), 3),
   );
   const asteroidBelt = new THREE.Points(
     asteroidBeltGeo,
@@ -123,7 +124,7 @@ export function createExploreSolarScene(deps: ExploreSolarSceneDeps) {
       size: 1.0,
       sizeAttenuation: true,
       transparent: true,
-      opacity: 0.5,
+      opacity: 0.65,
     }),
   );
   scene.add(asteroidBelt);
@@ -137,7 +138,7 @@ export function createExploreSolarScene(deps: ExploreSolarSceneDeps) {
   const kuiperBeltGeo = new THREE.BufferGeometry();
   kuiperBeltGeo.setAttribute(
     'position',
-    new THREE.BufferAttribute(sampleBelt(2200, 460, 620, 14), 3),
+    new THREE.BufferAttribute(sampleBelt(2200, KUIPER_BELT_R[0], KUIPER_BELT_R[1], 14), 3),
   );
   const kuiperBelt = new THREE.Points(
     kuiperBeltGeo,
@@ -146,7 +147,7 @@ export function createExploreSolarScene(deps: ExploreSolarSceneDeps) {
       size: 1.1,
       sizeAttenuation: true,
       transparent: true,
-      opacity: 0.4,
+      opacity: 0.55,
     }),
   );
   scene.add(kuiperBelt);
@@ -169,8 +170,8 @@ export function createExploreSolarScene(deps: ExploreSolarSceneDeps) {
     mesh.userData = { beltId: id };
     return mesh;
   };
-  const asteroidBeltPick = buildBeltPickAid('asteroid', 195, 237);
-  const kuiperBeltPick = buildBeltPickAid('kuiper', 460, 620);
+  const asteroidBeltPick = buildBeltPickAid('asteroid', ...ASTEROID_BELT_R);
+  const kuiperBeltPick = buildBeltPickAid('kuiper', ...KUIPER_BELT_R);
   scene.add(asteroidBeltPick);
   scene.add(kuiperBeltPick);
 
@@ -189,10 +190,11 @@ export function createExploreSolarScene(deps: ExploreSolarSceneDeps) {
     // 2026-06-03 user direction: "Make planet orbits look more
     // like moon orbits (more visible)." Bumped opacity 0.06 → 0.25
     // and tinted the line pale-blue to match the moon-orbit style.
+    // C2 (E2, daylight readability): 0.25 → 0.4, an element lift; exposure is UXD-004's.
     const mat = new THREE.LineBasicMaterial({
       color: 0xc0d0ff,
       transparent: true,
-      opacity: 0.25,
+      opacity: 0.4,
       depthWrite: false,
     });
     const line = new THREE.LineLoop(new THREE.BufferGeometry().setFromPoints(pts), mat);
@@ -650,7 +652,7 @@ export function createExploreSolarScene(deps: ExploreSolarSceneDeps) {
     ) {
       const magGeo = new THREE.SphereGeometry(p.size3 * 4, 24, 16);
       const magMat = new THREE.MeshBasicMaterial({
-        color: p.id === 'jupiter' ? 0xff66dd : 0x66ddff,
+        color: p.id === 'jupiter' ? 0xff66dd : 0x66ddff, // a3-keep: science colour (magnetic axis, comet tint), palette review at the end
         transparent: true,
         opacity: 0.08,
         side: THREE.BackSide,
@@ -774,7 +776,7 @@ export function createExploreSolarScene(deps: ExploreSolarSceneDeps) {
       ];
       const magGeo = new THREE.BufferGeometry().setFromPoints(magPts);
       const magMat = new THREE.LineBasicMaterial({
-        color: 0x66ddff,
+        color: 0x66ddff, // a3-keep: science colour (magnetic axis, comet tint), palette review at the end
         transparent: true,
         opacity: 0.65,
         depthWrite: false,
@@ -1031,13 +1033,13 @@ export function createExploreSolarScene(deps: ExploreSolarSceneDeps) {
     gravity.visible = false;
     group.add(gravity);
 
-    // Velocity arrow — teal, tangent to orbit (perpendicular to
+    // Velocity arrow — accent blue, tangent to orbit (perpendicular to
     // gravity in the planet's orbital plane).
     const velocity = new THREE.ArrowHelper(
       new THREE.Vector3(0, 0, 1),
       new THREE.Vector3(0, 0, 0),
       12,
-      0x4ecdc4,
+      0x8aa0ff,
       2.5,
       1.4,
     );
@@ -1068,7 +1070,7 @@ export function createExploreSolarScene(deps: ExploreSolarSceneDeps) {
     const formatG = (g: number) =>
       g >= 1 ? `${g.toFixed(2)} m/s²` : `${(g * 1000).toFixed(g >= 0.001 ? 1 : 2)} mm/s²`;
     const gravityLabel = buildArrowTipLabel(formatG(aG), '#aac6ff', 14);
-    const velocityLabel = buildArrowTipLabel(`${v.toFixed(1)} km/s`, '#92e8df', 14);
+    const velocityLabel = buildArrowTipLabel(`${v.toFixed(1)} km/s`, '#c4d0ff', 14);
     const centripetalLabel = buildArrowTipLabel(formatG(aG), '#ffb1b1', 14);
     gravityLabel.userData.layerKey = 'gravity';
     velocityLabel.userData.layerKey = 'velocity';
@@ -1169,6 +1171,8 @@ export function createExploreSolarScene(deps: ExploreSolarSceneDeps) {
     tail?: THREE.Line;
     orbit: THREE.Object3D;
     body: ExploreSmallBody;
+    /** "← <star>" pill at the inbound end of an interstellar body's path; hidden until hover or selection. */
+    directionLabel: THREE.Sprite | null;
   };
   // #287 Slice E — Pluto promoted to PLANETS so the planet-relative
   // camera + Charon satellite pick it up. Filter from the small-body
@@ -1186,14 +1190,14 @@ export function createExploreSolarScene(deps: ExploreSolarSceneDeps) {
       (p: { x: number; y: number; z: number }) => new THREE.Vector3(p.x, p.y, p.z),
     );
     const trajColor =
-      b.type === 'interstellar' ? 0xff8866 : b.type === 'comet' ? 0x88ddff : 0xc8b48c;
+      b.type === 'interstellar' ? 0xff8866 : b.type === 'comet' ? 0x88ddff : 0xc8b48c; // a3-keep: science colour (magnetic axis, comet tint), palette review at the end
     const TrajCtor = b.type === 'interstellar' ? THREE.Line : THREE.LineLoop;
     const orbit = new TrajCtor(
       new THREE.BufferGeometry().setFromPoints(orbitPts),
       new THREE.LineBasicMaterial({
         color: trajColor,
         transparent: true,
-        opacity: b.type === 'interstellar' ? 0.4 : 0.22,
+        opacity: b.type === 'interstellar' ? 0.4 : 0.35,
         depthWrite: false,
       }),
     );
@@ -1202,6 +1206,7 @@ export function createExploreSolarScene(deps: ExploreSolarSceneDeps) {
     // short "← Vega" arrow + label. Added as a CHILD of the orbit line so it
     // inherits the interstellar layer's visibility toggle. Schematic like the
     // arc itself — a direction cue, not a to-scale line to Vega (25 ly away).
+    let directionLabel: THREE.Sprite | null = null;
     if (b.type === 'interstellar' && b.inbound_radiant && orbitPts.length >= 2) {
       const inEnd = orbitPts[0];
       const inDir = new THREE.Vector3().subVectors(orbitPts[0], orbitPts[1]).normalize();
@@ -1212,8 +1217,10 @@ export function createExploreSolarScene(deps: ExploreSolarSceneDeps) {
       );
       orbit.add(vec);
       const label = buildDirectionLabelSprite(`← ${b.inbound_radiant}`, `#${b.color.slice(1)}`);
+      label.visible = false; // shown while the body is hovered or selected (UXD-021)
       label.position.copy(tip);
       orbit.add(label);
+      directionLabel = label;
     }
     scene.add(orbit);
 
@@ -1257,7 +1264,7 @@ export function createExploreSolarScene(deps: ExploreSolarSceneDeps) {
       scene.add(tail);
     }
 
-    return { mesh, pickAid, tail, orbit, body: b };
+    return { mesh, pickAid, tail, orbit, body: b, directionLabel };
   });
 
   // Selection ring (3D) — single torus reused for whichever planet is
@@ -1289,7 +1296,7 @@ export function createExploreSolarScene(deps: ExploreSolarSceneDeps) {
   const selRingGeo = new LineGeometry();
   selRingGeo.setPositions(selRingPositions);
   const selRingMat = new LineMaterial({
-    color: 0xa8c8ff, // pale-blue, same family as orbit lines
+    color: 0x889fe7, // --color-state, one ring colour with the universe scenes (UXD-020); scene code cannot read the CSS variable
     linewidth: 1.2, // screen pixels — Line2 holds this regardless of zoom
     transparent: true,
     opacity: 0.45,
@@ -1306,7 +1313,26 @@ export function createExploreSolarScene(deps: ExploreSolarSceneDeps) {
   selHalo.renderOrder = 999;
   scene.add(selHalo);
 
+  // Hover ring: the same outline in the same colour, dimmer and steady (no pulse), on the
+  // planet or small body under the cursor. Shares the selection ring's geometry.
+  const hoverRingMat = new LineMaterial({
+    color: 0x889fe7, // --color-state (UXD-020)
+    linewidth: 1.2,
+    transparent: true,
+    opacity: 0.35,
+    depthTest: false,
+    dashed: false,
+  });
+  hoverRingMat.resolution.set(window.innerWidth, window.innerHeight);
+  const hoverHalo = new Line2(selRingGeo, hoverRingMat);
+  hoverHalo.computeLineDistances();
+  hoverHalo.visible = false;
+  hoverHalo.renderOrder = 998;
+  scene.add(hoverHalo);
+
   return {
+    asteroidBelt,
+    kuiperBelt,
     asteroidBeltPick,
     kuiperBeltPick,
     localGroup,
@@ -1315,6 +1341,8 @@ export function createExploreSolarScene(deps: ExploreSolarSceneDeps) {
     planetOrbitLines,
     selHalo,
     selRingMat,
+    hoverHalo,
+    hoverRingMat,
     smallBodyObjs,
     stopExploreCentripetalLayer,
     stopExploreGalaxiesLayer,

@@ -96,5 +96,33 @@
     "/fleet?id=tiangong": "Vloot — Shenzhou, Tianzhou & de Long March-familie",
     "/programs/iss": "ISS — het station waarvan Tiangong werd buitengesloten",
     "/earth?site=tiangong": "Tiangong boven ons"
+  },
+  "roster": {
+    "module:tianhe": {
+      "note": "De kernmodule — verblijven, levensondersteuning, voortstuwing en het controlecentrum van het station. Het eerste gelanceerde onderdeel, en het hart van het station."
+    },
+    "module:chinarm": {
+      "note": "De robotarm van het station, gemonteerd op Tianhe, gebruikt om modules te verplaatsen en bij ruimtewandelingen te helpen."
+    },
+    "module:wentian": {
+      "note": "De eerste laboratoriummodule — met een reservecontrolecentrum en een luchtsluis voor ruimtewandelingen."
+    },
+    "module:mengtian": {
+      "note": "De tweede laboratoriummodule, die het T-vormige station voltooit; een faciliteit voor microzwaartekrachtwetenschap."
+    },
+    "mission:shenzhou-1": {
+      "note": "eerste onbemande Shenzhou-testvlucht — het bewijs dat China zijn eigen bemanningscapsule kon vliegen"
+    },
+    "mission:shenzhou-5": {
+      "note": "Yang Liwei wordt de eerste Chinese astronaut in een baan — China voegt zich bij de VS en de USSR als derde land dat een mens met een eigen raket lanceert"
+    },
+    "Shenzhou 9 → Tiangong-1": {
+      "note": "eerste bemande koppeling met een Chinees station; Liu Yang wordt China's eerste vrouw in de ruimte",
+      "name": "Shenzhou 9 → Tiangong-1"
+    },
+    "Continuous occupation": {
+      "note": "permanente bemanning begint met Shenzhou-14 in juni 2022; het CSS is sindsdien onafgebroken bemand",
+      "name": "Ononderbroken bewoning"
+    }
   }
 }

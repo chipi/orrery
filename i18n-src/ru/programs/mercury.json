@@ -103,5 +103,15 @@
     "/earth": "Земля — орбиты, вход в атмосферу и космодромы",
     "/science/mission-phases/edl": "Вход, спуск и посадка",
     "/science/propulsion/tsiolkovsky": "Уравнение Циолковского — почему Redstone не мог выйти на орбиту"
+  },
+  "roster": {
+    "Mercury-Redstone 2 (Ham)": {
+      "note": "суборбитальное испытание с шимпанзе — открыло Redstone для пилотируемого полёта",
+      "name": "Mercury-Redstone 2 (Хэм)"
+    },
+    "Mercury-Atlas 5 (Enos)": {
+      "note": "двухвитковое испытание с шимпанзе — открыло Atlas для полёта Гленна",
+      "name": "Mercury-Atlas 5 (Энос)"
+    }
   }
 }

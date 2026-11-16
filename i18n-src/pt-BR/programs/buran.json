@@ -90,5 +90,15 @@
   "link_labels": {
     "/programs/space-shuttle": "Space Shuttle — o veículo ao qual respondia",
     "/fleet?id=buran": "Frota — o orbitador Buran e a Energia"
+  },
+  "roster": {
+    "The single flight": {
+      "note": "em 15 de novembro de 1988, a Buran realizou uma única missão orbital não tripulada — lançamento totalmente automático, duas órbitas, reentrada e pouso em pista com vento de través, sem nenhum piloto a bordo em momento algum",
+      "name": "O único voo"
+    },
+    "Cancellation": {
+      "note": "com a União Soviética extinta e sem orçamento nem missão, o programa foi cancelado após seu único voo; o orbitador que voou foi destruído em 2002, quando o teto de seu hangar desabou em Baikonur",
+      "name": "Cancelamento"
+    }
   }
 }

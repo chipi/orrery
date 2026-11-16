@@ -223,6 +223,14 @@ npx tsx scripts/rebuild-gallery-manifests.ts && node scripts/vision/build-credit
   && npm run validate-image-integrity
 ```
 
+After any change to a gallery's slots, a hero override or a 1x1 crop, the round list thumbnails
+(UXD-025) need their manifest rebuilt, or `validate-data` fails with the commands to run:
+`npx tsx scripts/build-entity-thumbs.ts --missing F` lists the blessed slots with no 192 px thumb
+(`needThumb`) or no 1x1 crop yet (`need1x1`); `node scripts/vision/build-credit-thumbs.mjs --paths F`
+builds the thumbs (credited or not); `npx tsx scripts/hotspots/regenerate-tier3-variants.mjs --slots
+<master> …` makes a missing crop first; then `npx tsx scripts/build-entity-thumbs.ts` writes
+`static/data/entity-thumbs.json`.
+
 The move needs the master (not an LFS pointer: `git lfs pull -I masters/<path>`) and the target to be
 the next free number. A bare image gets its 1x1 crop, provenance row, alt text under the 1x1 key,
 a hand-set vision row and approved entries; a slot moving from another gallery already has all of
@@ -249,7 +257,9 @@ npx tsx scripts/rebuild-gallery-manifests.ts && node scripts/build-i18n-bundles.
 It renumbers the kept slots in order and moves their files (served WebP + rungs + 1x1, credit
 thumbs, masters). It rewrites every JSON under `static/data/`, `scripts/i18n-tools/` and `i18n-src/`
 that names the gallery: provenance rows, alt text in 14 locales, ladder, phashes, approved list
-(and its `count`), vision, curation, a story's image list. Hero overrides are renumbered. When a
+(and its `count`), vision, curation, a story's image list. Hero overrides are renumbered. `--gone`
+takes slots that already left the gallery (`move-image-to-gallery.ts` leaves a gap in the source) and
+only closes the gap: `node scripts/drop-gallery-slots.mjs --gone --apply planets/earth/04`. When a
 dropped slot was the hero, the override is removed and the script names the gallery, so you pick a
 new hero. Read the dry run's JSON list before applying. A content file (a story, a program) that
 loses an image deserves a look. Program figures (`"reuse": "fleet/<id>/<NN>"`) are renumbered and
@@ -266,7 +276,15 @@ When a slot should hold a better picture rather than disappear, write a map unde
 alt: { all 14 locales }, agency, author? } }`), smudge the galleries' masters and run. `agency` is
 required because the credit tools keep a row's old agency, which named the old picture's source
 (batch 1 came out with "JAXA / NASA" on a JAXA render); `author` overrides a Commons author field that
-holds a licence text instead of a name (MMX-CG02.jpg):
+holds a licence text instead of a name (MMX-CG02.jpg). A key that names the **next free slot** of a
+gallery (the slot after the last served one) **adds** a new picture instead of replacing one
+(`planets/mars/06`, UXD-029); so does slot 01 of a gallery with no served picture, and a slot that
+follows another slot of the same map, so a new mission or fleet gallery is built in one run (slice H
+part 2, 2026-11-15, `scripts/link-fixes/2026-11-15-slice-h-images.json`); a rendering or composite says so in its provenance `title` and alt text,
+which the tool does not write (edit the row after the run). The run ends with `build-credit-thumbs.mjs
+--paths` over its own slots only (it used to be whole-repo and wrote 709 untracked files in a tree that
+lacked other galleries' thumbs, 2026-11-13). The credit tools can mis-record a row: check the licence
+short and the author of every new row (a Commons file with no machine-readable author came out empty).
 
 ```bash
 npx tsx scripts/replace-gallery-slots.ts <map.json> --dry-run   # fetches every original, writes nothing
@@ -286,6 +304,33 @@ upright (re-encoded at q92): the ladder ignores the flag, and on 2026-11-08 a ph
 replace: on 2026-11-08 several rows still described pictures replaced earlier, so the review was by
 eye over contact sheets of every live mission gallery image.
 
+### Concept labels and photograph heroes — `validate-image-depiction.ts` (ADR-053, 2026-11-13)
+
+Two rules over the vehicle galleries (`missions`, `fleet-galleries`, `iss-modules`, `tiangong-modules`,
+`earth-objects`, `mars-sites`, `moon-sites`), both a `validate-data` task in the `image` group, logic and
+unit tests in `image-depiction.ts`:
+
+- **Rule B — honest labels.** A slot whose picture is an artist's concept, illustration, computer graphic,
+  painting or diagram says so in its provenance **title** and its en-US **alt text**; the gate fails when
+  exactly one of them says it. When you add a concept image, append the label to the title
+  (`File:Juno spacecraft model.png (computer render)`) and write the alt text as "Artist's concept of …".
+  A slot whose word is a false positive (a photograph of a museum model "painted white", a perspective
+  view computed from real radar data) goes in `not_concept` in `static/data/license-waivers.json`, with
+  the reason. The vocabulary is `CONCEPT_RE` in `image-depiction.ts`.
+- **Rule A — the hero is a photograph.** The blessed hero slot (the `*-hero-overrides.json` slot, else 01,
+  as `entity-thumbs.json` lists it; it feeds the card and the list thumbs) of a vehicle must not be a
+  slot Rule B recognises as a concept. Exempt: `status` `PLANNED`, a slot in `not_concept`, a slot in
+  `artistic_impressions` (use it when no photograph of the vehicle exists; exact slot, justification,
+  reviewer, `decided_at`). A missing `status` is not exempt. The heroes that fail on 2026-11-13 are frozen
+  in `static/data/hero-concept-baseline.json`: the gate fails on a hero not in it **and** on an entry that
+  was fixed, so remove the entry in the commit that replaces the hero. The operator reviewed the list
+  and kept every hero on it (plan row L47, 2026-11-14); changing any hero needs the operator's
+  side-by-side and a yes. `tsx scripts/validate-image-depiction.ts
+  --write-baseline` regenerates the file; do not use it to silence a new finding.
+
+A concept slot nobody labelled is invisible to the gate when title and alt text are both neutral: look at
+the picture when you add it.
+
 ### Hero crop positions — `vision/hero-crop-sheet.mjs`
 
 A hero is shown as a cover crop in three places: the collectible card's hero band (about 1.6–2.6:1,
@@ -293,7 +338,9 @@ its lower half faded under the title), the browse-page covers (16:9) and every e
 (16:9). All crop at the centre unless the hero's entry in `static/data/<surface>-hero-overrides.json`
 carries a reviewed `position` (CSS object-position, `"50% 22%"`), which `heroPositionFor()` in
 `src/lib/image-hero.ts` applies everywhere. A hero without an override entry gets one with its own
-slot (`"slot": "01.jpg"`) when it needs a position.
+slot (`"slot": "01.jpg"`) when it needs a position. **Exception — planets (UXD-029):** the planet
+panel hero is `object-fit: contain` on `#000` so the whole disc shows; `position` has no effect there
+(the card band and the browse covers still crop).
 
 ```bash
 node scripts/vision/hero-crop-sheet.mjs --out /tmp/crops                       # every surface

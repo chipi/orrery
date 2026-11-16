@@ -1,0 +1,16 @@
+{
+  "fact": "The globular cluster 47 Tucanae lies in the southern constellation Tucana, about 14,700 light-years away.",
+  "bio": "Nicolas-Louis de Lacaille found it from the Cape of Good Hope in 1751 and listed it as a nebula. N-body fits give it about 850,000 solar masses (Baumgardt's globular cluster database). More than 40 radio pulsars are known in it. Hubble photometry splits its main sequence in two: about 30% of the stars have primeval abundances and the rest are enriched in nitrogen and slightly in helium, so it holds more than one stellar population (Milone and colleagues, 2012).",
+  "links": [
+    {
+      "l": "arXiv",
+      "u": "https://arxiv.org/abs/1109.0900",
+      "t": "intro"
+    },
+    {
+      "l": "Baumgardt",
+      "u": "https://people.smp.uq.edu.au/HolgerBaumgardt/globular/fits/ngc0104.html",
+      "t": "core"
+    }
+  ]
+}

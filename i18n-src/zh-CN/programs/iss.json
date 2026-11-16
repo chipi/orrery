@@ -95,5 +95,69 @@
     "/fleet?id=iss": "航天器 — 国际空间站",
     "/programs/mir": "Mir — 国际空间站继承的空间站",
     "/earth?site=iss": "头顶上的国际空间站"
+  },
+  "roster": {
+    "module:zarya": {
+      "note": "第一个舱段——美国出资、俄罗斯建造的控制与动力舱：整个空间站的种子。"
+    },
+    "module:unity": {
+      "note": "第一个美国舱段，一个六端口的连接枢纽，两周后与Zarya相连。"
+    },
+    "module:zvezda": {
+      "note": "使空间站适于居住的俄罗斯服务舱：乘组舱室、生命保障和推进系统。"
+    },
+    "module:destiny": {
+      "note": "美国实验舱——主要的研究舱，也是空间站的指挥中心。"
+    },
+    "module:canadarm2": {
+      "note": "加拿大的机械臂，组装了空间站的大部分，并捕获到访的航天器。"
+    },
+    "module:quest": {
+      "note": "美国的气闸舱，使宇航员能够穿着美国和俄罗斯两种舱外服进行太空行走。"
+    },
+    "module:pirs": {
+      "note": "一个俄罗斯对接舱兼气闸舱——2021年离轨，为Nauka腾出位置。"
+    },
+    "module:harmony": {
+      "note": "为国际实验舱打开通路的枢纽。"
+    },
+    "module:columbus": {
+      "note": "欧洲的实验舱——ESA对空间站的基石性贡献。"
+    },
+    "module:kibo": {
+      "note": "日本的实验舱——最大的单个舱段，带有自己的外部平台。"
+    },
+    "module:poisk": {
+      "note": "位于Zvezda天顶方向的俄罗斯对接与气闸舱。"
+    },
+    "module:tranquility": {
+      "note": "生命保障和锻炼设备——以及Cupola的安装座。"
+    },
+    "module:cupola": {
+      "note": "拥有七扇窗户的观测穹顶，是空间站最著名的地球景象的来源。"
+    },
+    "module:rassvet": {
+      "note": "一个俄罗斯对接与储存舱。"
+    },
+    "module:leonardo": {
+      "note": "一个永久性储存舱，由可重复使用的货运舱改装而成。"
+    },
+    "module:beam": {
+      "note": "一个实验性充气舱，在轨道上测试可展开的居住舱。"
+    },
+    "module:nauka": {
+      "note": "久经延误的俄罗斯科学舱，在组装开始二十多年后才加入。"
+    },
+    "module:prichal": {
+      "note": "一个俄罗斯对接节点——最新加入的部分之一。"
+    },
+    "Expedition 1": {
+      "note": "首批常驻乘组于2000年11月2日抵达；从那时起人类一直不间断地驻留其上——这是人类历史上在地球之外持续时间最长、从未中断的存在",
+      "name": "Expedition 1"
+    },
+    "Commercial Crew": {
+      "note": "SpaceX的Crew Dragon在九年后恢复了美国的载人发射，并开始把近地轨道的进入权移交给商业供应商",
+      "name": "Commercial Crew"
+    }
   }
 }

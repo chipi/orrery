@@ -7,6 +7,7 @@
   cores (the Milky-Way balance), elegant teal axes, region + Sun labels.
 -->
 <script lang="ts">
+  import Chip from '$lib/components/Chip.svelte';
   import { createAnimateLoop } from '$lib/three/animate-loop';
   import { bvToRgb } from '$lib/universe/bv-to-rgb';
   import { hrX, hrY, SPECTRAL_CLASSES, SUN_BV, SUN_ABSMAG } from '$lib/universe/property-space';
@@ -112,7 +113,7 @@
     // chart labels fade in over the second half of the morph
     const labelA = Math.max(0, (ease - 0.4) / 0.6);
     ctx.globalAlpha = labelA;
-    ctx.strokeStyle = 'rgba(78,205,196,0.26)';
+    ctx.strokeStyle = 'rgba(78,205,196,0.26)'; // a3-keep: science chart (HR diagram), palette review at the end
     ctx.lineWidth = 1;
     ctx.beginPath();
     ctx.moveTo(L, B);
@@ -149,12 +150,12 @@
     // the Sun
     const sx = px(SUN_BV);
     const sy = py(SUN_ABSMAG);
-    ctx.strokeStyle = '#4ecdc4';
+    ctx.strokeStyle = '#4ecdc4'; // a3-keep: science chart (HR diagram), palette review at the end
     ctx.lineWidth = 1.5;
     ctx.beginPath();
     ctx.arc(sx, sy, 7, 0, Math.PI * 2);
     ctx.stroke();
-    ctx.fillStyle = '#4ecdc4';
+    ctx.fillStyle = '#4ecdc4'; // a3-keep: science chart (HR diagram), palette review at the end
     ctx.textAlign = 'left';
     ctx.font = `bold ${mob ? 9 : 11}px 'Space Mono', monospace`;
     ctx.fillText(m.explore_hr_sun(), sx + 11, sy + 3);
@@ -166,8 +167,11 @@
   <div class="hr-overlay">
     <canvas bind:this={canvas} aria-label={m.explore_hr_badge()}></canvas>
     <div class="hr-badge" role="note">{m.explore_hr_badge()}</div>
-    <button type="button" class="hr-close" aria-label={m.explore_anon_dismiss()} onclick={onClose}
-      >×</button
+    <Chip
+      kind="action"
+      class="hr-close ui-chip--close"
+      aria-label={m.explore_anon_dismiss()}
+      onclick={onClose}>×</Chip
     >
   </div>
 {/if}
@@ -181,24 +185,12 @@
     background: #04060d;
     animation: hr-fade 500ms ease-out;
   }
-  .hr-close {
+  :global(.hr-close) {
     position: absolute;
     top: 74px;
     right: 16px;
-    width: 40px;
-    height: 40px;
-    border-radius: 999px;
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    background: rgba(10, 14, 22, 0.6);
-    color: #eaf6ff;
-    font-size: 22px;
-    line-height: 1;
-    cursor: pointer;
-    pointer-events: auto; /* overlay is click-through; the close button is not */
   }
-  .hr-close:hover {
-    background: rgba(30, 40, 55, 0.8);
-  }
+
   @keyframes hr-fade {
     from {
       opacity: 0;

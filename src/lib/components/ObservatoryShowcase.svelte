@@ -111,14 +111,14 @@
   }
   .caption {
     font-family: 'Crimson Pro', serif;
-    font-size: 14px;
+    font-size: var(--size-caption);
     color: rgba(255, 255, 255, 0.7);
-    font-style: italic;
+    font-style: italic; /* a1-keep: caption */
     margin: 0;
     line-height: 1.5;
   }
   .status {
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--color-text-label);
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
     padding: 16px 0;
@@ -161,7 +161,7 @@
   }
   .card:hover,
   .card:focus-visible {
-    border-color: rgba(78, 205, 196, 0.5);
+    border-color: color-mix(in srgb, var(--color-accent) 50%, transparent);
     transform: translateY(-2px);
     outline: none;
   }
@@ -190,14 +190,14 @@
     display: flex;
     justify-content: space-between;
     margin-top: 2px;
-    font-size: 8px;
+    font-size: var(--size-label);
     letter-spacing: 1.5px;
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--color-text-label);
   }
   .agency {
     text-transform: uppercase;
   }
   .year {
-    color: #4ecdc4;
+    color: var(--color-state);
   }
 </style>

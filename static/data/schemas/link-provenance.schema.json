@@ -74,13 +74,18 @@
             "scenario",
             "fleet",
             "star",
-            "lab-formula"
+            "deep-sky",
+            "galaxy",
+            "structure",
+            "lab-formula",
+            "science",
+            "essay"
           ]
         },
         "route": {
           "type": "string",
-          "description": "App route where the link is rendered (e.g. /missions, /iss, /moon, /mars, /earth, /explore).",
-          "pattern": "^/[a-z][a-z0-9-]*$"
+          "description": "App route where the link is rendered (e.g. /missions, /iss, /moon, /mars, /earth, /explore; the /science articles and essays carry their own page: /science/<tab>/<id>, /essays/<slug>). /library links to it.",
+          "pattern": "^/[a-z][a-z0-9-]*(/[a-z0-9][a-z0-9-]*)*$"
         },
         "url": {
           "type": "string",

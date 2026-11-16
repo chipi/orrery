@@ -366,7 +366,7 @@
     margin-bottom: 8px;
   }
   .dbg-head span {
-    font-size: 8px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     color: #5d7fa0;
   }
@@ -380,7 +380,7 @@
     margin-top: 2px;
   }
   .sub {
-    font-size: 8px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     color: #5d7fa0;
     margin: 6px 0 2px;
@@ -391,7 +391,7 @@
     gap: 3px;
   }
   .tune-lbl {
-    font-size: 10px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     color: #8fbfe0;
     display: flex;
@@ -403,7 +403,7 @@
     grid-template-columns: 52px 1fr 42px;
     align-items: center;
     gap: 6px;
-    font-size: 9px;
+    font-size: var(--size-label);
     color: #6ea6cc;
   }
   .tune input[type='range'] {
@@ -417,7 +417,7 @@
   }
   .reset {
     font-family: inherit;
-    font-size: 8px;
+    font-size: var(--size-label);
     color: #cfe3f5;
     background: transparent;
     border: 1px solid rgba(127, 223, 255, 0.4);
@@ -430,7 +430,7 @@
     grid-template-columns: 1fr 1fr;
     gap: 3px 10px;
     margin: 8px 0;
-    font-size: 10px;
+    font-size: var(--size-label);
   }
   .readout div span {
     color: #6ea6cc;
@@ -447,7 +447,7 @@
   }
   .strip button {
     font-family: inherit;
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     color: #cfe3f5;
     border: 1px solid;

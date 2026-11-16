@@ -17,7 +17,7 @@ import * as THREE from 'three';
  */
 export interface LabelOptions {
   text: string;
-  color: string; // hex string e.g. "#4ecdc4" — line + text color
+  color: string; // hex string e.g. "#5070ff" — line + text color
   offset?: THREE.Vector3; // label position relative to marker origin
   /** Sprite world-size scale. 0.6 ≈ readable at 30u camera distance. */
   size?: number;
@@ -101,6 +101,7 @@ export function buildLabel(opts: LabelOptions): BuiltLabel {
     ctx.fillText(upperText, canvas.width / 2, canvas.height / 2);
   }
   const texture = new THREE.Texture(canvas);
+  texture.colorSpace = THREE.SRGBColorSpace;
   texture.needsUpdate = true;
   texture.minFilter = THREE.LinearFilter;
   texture.magFilter = THREE.LinearFilter;

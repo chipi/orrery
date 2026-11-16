@@ -9,26 +9,25 @@
   import smallBodiesData from '$data/small-bodies.json';
   import type { CardSpec, SmallBodyLike } from '$lib/cards/card-spec';
   import { loadCardModules, type CardModules } from '$lib/cards/lazy-card';
-  import { linkifyMission, loadMissionIndex } from '$lib/missions-linkify';
+  import {
+    linkifyMission,
+    loadMissionIndex,
+    onMissionLinkClick,
+    sortNewestFirst,
+  } from '$lib/missions-linkify';
   import { formatKm } from '$lib/format';
   import type { ScienceSectionRef } from '$types/planet';
-  import { localeFromPage } from '$lib/locale';
+  import { localeFromPage, localHref } from '$lib/locale';
+  import { isPlanDestination } from '$lib/plan/destinations';
+  import Chip from './Chip.svelte';
+  import PanelActions from './PanelActions.svelte';
   import * as m from '$lib/paraglide/messages';
   import LearnLink from './LearnLink.svelte';
   import ScienceCard from './ScienceCard.svelte';
+  import { pickScienceLinks } from '$lib/science-links';
   import WhyPopover from './WhyPopover.svelte';
   import type { ScienceTabId } from '$types/science';
   import { dataLoadFailed } from '$lib/data/core';
-
-  /** /science cross-sections relevant to small bodies — eccentric, often
-   * inclined orbits with extreme apsides. */
-  const SMALL_BODY_SCIENCE_SECTIONS: ScienceSectionRef[] = [
-    { tab: 'orbits', section: 'keplerian-orbit' },
-    { tab: 'orbits', section: 'eccentricity' },
-    { tab: 'orbits', section: 'inclination' },
-    { tab: 'orbits', section: 'apsides' },
-    { tab: 'orbits', section: 'semi-major-axis' },
-  ];
 
   // Mirrors the SmallBody type used in /explore. Kept inline because
   // the data file is the only consumer outside this component.
@@ -63,9 +62,8 @@
       tier: 'intro' | 'core' | 'deep';
       kind?: string;
     }>;
-    /** Per-body curated science-card selection. Falls back to the
-     *  panel default SMALL_BODY_SCIENCE_SECTIONS when absent. Overlay
-     *  takes precedence; see scienceSections derived. */
+    /** Per-body curated science-card selection. The overlay takes
+     *  precedence; a body with neither shows no science block. */
     science_sections?: ScienceSectionRef[];
   };
 
@@ -80,19 +78,21 @@
     body: SmallBody | null;
     open: boolean;
     onClose: () => void;
+    /** A mission link opens the mission in place (the host's mission panel); absent: navigate. */
+    onMissionOpen?: (missionId: string) => void;
+    /** A mission is open over this panel (the host stacks it): this one is not painted. */
+    covered?: boolean;
   };
-  let { body, open, onClose }: Props = $props();
+  let { body, open, onClose, onMissionOpen, covered }: Props = $props();
 
   let tab: Tab = $state('overview');
   let gallery: string[] = $state([]);
   let galleryGrid = $derived(gallery.length <= 1 ? gallery : gallery.slice(1));
   let lightboxSrc = $state<string | null>(null);
   let overlay = $state<SmallBodyI18n | null>(null);
-  // Effective science-section list: overlay overrides body.science_sections
-  // when present; the panel-default for small-bodies is empty (opt-in
-  // per body via overlay or base data).
+  // Effective science-section list: overlay overrides body.science_sections when present.
   let scienceSections = $derived<ScienceSectionRef[]>(
-    overlay?.science_sections ?? body?.science_sections ?? SMALL_BODY_SCIENCE_SECTIONS,
+    pickScienceLinks(overlay?.science_sections ?? body?.science_sections),
   );
   const loc = $derived(localeFromPage(page));
 
@@ -144,11 +144,13 @@
     }
   });
   let missionEntries = $derived<string[]>(
-    body?.mission_visits && body.mission_visits.length > 0
-      ? body.mission_visits
-      : body?.mission_visited
-        ? [body.mission_visited]
-        : [],
+    sortNewestFirst(
+      body?.mission_visits && body.mission_visits.length > 0
+        ? body.mission_visits
+        : body?.mission_visited
+          ? [body.mission_visited]
+          : [],
+    ),
   );
 
   // Period in years (T is days in the data file).
@@ -179,19 +181,39 @@
   );
 </script>
 
-<Panel {open} {onClose} title={body?.name ?? ''}>
-  {#if body}
-    <div class="head" style:--accent={body.color}>
-      <div class="kind-row">
+<Panel
+  {open}
+  {onClose}
+  {covered}
+  title={body?.name ?? ''}
+  onShare={cardSpec ? () => (cardOpen = true) : undefined}
+>
+  {#snippet eyebrow()}
+    {#if body}<div style:--accent={body.color} class="kind-row">
         <span class="kind">{typeLabel}</span>
-      </div>
-      <div class="name">{body.name}</div>
-    </div>
+      </div>{/if}
+  {/snippet}
+  {#snippet heading()}
+    {#if body}<div style:--accent={body.color} class="name">{body.name}</div>{/if}
+  {/snippet}
+
+  {#if body}
+    <!-- The one entity action: Plan mission, for the bodies /plan lists (Pluto lost the planet
+         panel's chip when it moved here). Known at first paint, so the row never shifts the hero.
+         Share is the row's last chip (PanelActions). -->
+    <PanelActions>
+      {#if isPlanDestination(body.id)}
+        <Chip kind="link" href={localHref(`/plan?dest=${body.id}`)} data-testid="plan-mission-chip"
+          >{m.panel_action_plan()}</Chip
+        >
+      {/if}
+    </PanelActions>
 
     {#if gallery.length > 0}
       <PanelHeroImage
         src={gallery[0]}
         name={body.name}
+        heroClass={body.id === 'pluto' ? 'planet-hero' : ''}
         onOpen={() => (lightboxSrc = gallery[0]!)}
       />
     {/if}
@@ -258,7 +280,7 @@
                 section="inclination"
               />
             </div>
-            <div class="cell-value teal">{body.incl.toFixed(2)}°</div>
+            <div class="cell-value accent">{body.incl.toFixed(2)}°</div>
           </div>
           {#if body.type !== 'interstellar'}
             <div class="cell">
@@ -356,7 +378,11 @@
               {@const link = linkifyMission(entry)}
               <li>
                 {#if link}
-                  <a href={link.href} class="mission-link">{link.label}</a><span>{link.rest}</span>
+                  <a
+                    href={link.href}
+                    class="mission-link"
+                    onclick={(e) => onMissionLinkClick(e, link, onMissionOpen)}>{link.label}</a
+                  ><span>{link.rest}</span>
                 {:else}
                   {entry}
                 {/if}
@@ -380,20 +406,6 @@
     </div>
 
     <PanelLightbox src={lightboxSrc} images={gallery} onClose={() => (lightboxSrc = null)} />
-
-    <!-- #547 S5c — every small body carries its collectible card. -->
-    {#if cardSpec}
-      <div class="card-cta-bar">
-        <button
-          type="button"
-          class="cta-card"
-          onclick={() => (cardOpen = true)}
-          data-testid="open-card-btn"
-        >
-          {m.card_open_button()}
-        </button>
-      </div>
-    {/if}
   {/if}
 </Panel>
 
@@ -402,40 +414,6 @@
 {/if}
 
 <style>
-  /* #547 — card CTA in the quiet register (mirrors the missions panel). */
-  .card-cta-bar {
-    padding: 12px 0 4px;
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
-    margin-top: 12px;
-  }
-  .cta-card {
-    width: 100%;
-    min-height: 48px;
-    padding: 12px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.22);
-    border-radius: 4px;
-    color: #fff;
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
-    letter-spacing: 3px;
-    font-weight: 700;
-    cursor: pointer;
-    transition:
-      background 120ms,
-      border-color 120ms;
-  }
-  .cta-card:hover,
-  .cta-card:focus-visible {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.45);
-    outline: none;
-  }
-  .head {
-    padding: 0 0 12px;
-    border-bottom: 1px solid var(--color-border);
-    margin-bottom: 12px;
-  }
   .kind-row {
     display: flex;
     align-items: center;
@@ -443,7 +421,7 @@
   }
   .kind {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 8px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
     color: var(--accent, rgba(255, 255, 255, 0.6));
   }
@@ -458,19 +436,12 @@
   /* Tab base styles inherited from src/lib/styles/panel-tabs.css —
      matches the rest of the detail-panel family (Planet, Sun, Mission,
      Fleet, Station). */
-  .editorial {
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 14px;
-    line-height: 1.5;
-    color: rgba(255, 255, 255, 0.85);
-  }
   .editorial.empty {
-    color: rgba(255, 255, 255, 0.4);
+    color: var(--color-text-label);
   }
   .note {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     color: rgba(255, 200, 80, 0.8);
     margin-top: 12px;
@@ -480,14 +451,14 @@
   }
   .grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 10px 16px;
   }
   .cell-label {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 8px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
-    color: rgba(255, 255, 255, 0.45);
+    color: var(--color-text-label);
     margin-bottom: 2px;
   }
   .cell-value {
@@ -495,15 +466,15 @@
     font-size: 12px;
     color: rgba(255, 255, 255, 0.92);
   }
-  .cell-value.teal {
-    color: #4ecdc4;
+  .cell-value.accent {
+    color: var(--color-state);
   }
   .dist-row {
     margin-top: 14px;
     padding-top: 10px;
     border-top: 1px solid rgba(255, 255, 255, 0.06);
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 10px;
+    font-size: var(--size-label);
     color: rgba(255, 255, 255, 0.7);
   }
   .learn-list {
@@ -518,21 +489,21 @@
      <LearnLink/> component which has its own scoped style; the
      route-level visual is what the panel wants. */
   .learn-list :global(a) {
-    color: #4ecdc4;
+    color: var(--color-state);
     text-decoration: none;
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 1px;
     padding: 8px 10px;
-    background: rgba(78, 205, 196, 0.06);
-    border: 1px solid rgba(78, 205, 196, 0.25);
+    background: color-mix(in srgb, var(--color-accent) 6%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-accent) 25%, transparent);
     border-radius: 3px;
     display: block;
   }
   .learn-list :global(a:hover),
   .learn-list :global(a:focus-visible) {
-    background: rgba(78, 205, 196, 0.14);
-    border-color: rgba(78, 205, 196, 0.5);
+    background: var(--color-accent-soft);
+    border-color: color-mix(in srgb, var(--color-accent) 50%, transparent);
     outline: none;
   }
   /* .panel-hero, .gallery-grid, .lightbox → src/lib/styles/panel-tabs.css */

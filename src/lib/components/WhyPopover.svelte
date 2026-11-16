@@ -25,6 +25,7 @@
       into /science for users who want the full chapter.
 -->
 <script lang="ts">
+  import Chip from '$lib/components/Chip.svelte';
   import { onDestroy, onMount } from 'svelte';
   import { localHref } from '$lib/locale';
   import * as m from '$lib/paraglide/messages.js';
@@ -37,8 +38,10 @@
     section?: string;
     /** Override the trigger label. Defaults to "Why?". */
     triggerLabel?: string;
+    /** The small heading over the title. Defaults to "Why this number"; pass '' to draw none. */
+    eyebrow?: string;
   };
-  let { title, body, tab, section, triggerLabel }: Props = $props();
+  let { title, body, tab, section, triggerLabel, eyebrow }: Props = $props();
 
   let open = $state(false);
   let trigger: HTMLButtonElement | null = $state(null);
@@ -78,7 +81,7 @@
 <span class="wrap">
   <button
     type="button"
-    class="trigger"
+    class="trigger ui-hit"
     class:open
     bind:this={trigger}
     aria-expanded={open}
@@ -97,9 +100,12 @@
       data-testid="why-popover"
     >
       <div class="header">
-        <span class="eyebrow">{m.why_popover_eyebrow()}</span>
-        <button type="button" class="close" aria-label={m.why_popover_aria_close()} onclick={close}
-          >×</button
+        {#if eyebrow !== ''}<span class="eyebrow">{eyebrow ?? m.why_popover_eyebrow()}</span>{/if}
+        <Chip
+          kind="action"
+          class="close ui-chip--close"
+          aria-label={m.why_popover_aria_close()}
+          onclick={close}>×</Chip
         >
       </div>
       <p class="title">{title}</p>
@@ -121,7 +127,7 @@
   }
 
   /* Tiny chip-style trigger; matches the size of ScienceChip so the two
-     visually rhyme without overlapping in role. ScienceChip is teal+arrow,
+     visually rhyme without overlapping in role. ScienceChip is accent blue+arrow,
      WhyPopover is gold+text. */
   .trigger {
     display: inline-flex;
@@ -134,7 +140,7 @@
     border-radius: 7px;
     color: rgba(255, 200, 80, 0.85);
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 8px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     text-transform: uppercase;
     cursor: pointer;
@@ -170,26 +176,16 @@
     align-items: center;
     margin-bottom: 6px;
   }
+  .header :global(.close) {
+    margin-inline-start: auto;
+  }
   .eyebrow {
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 8px;
+    font-size: var(--size-label);
     letter-spacing: 2px;
     color: #ffc850;
   }
-  .close {
-    background: transparent;
-    border: none;
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 18px;
-    line-height: 1;
-    padding: 0 4px;
-    cursor: pointer;
-  }
-  .close:hover,
-  .close:focus-visible {
-    color: #fff;
-    outline: none;
-  }
+
   .title {
     font-family: var(--font-display);
     font-size: 13px;
@@ -198,9 +194,7 @@
     margin: 0 0 5px;
   }
   .body {
-    font-family: 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 13px;
+    font-size: var(--size-body);
     line-height: 1.5;
     color: rgba(255, 255, 255, 0.78);
     margin: 0 0 6px;
@@ -208,7 +202,7 @@
   .more {
     display: inline-block;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 1px;
     color: rgba(255, 200, 80, 0.85);
     text-decoration: none;

@@ -86,5 +86,21 @@
   "link_labels": {
     "/explore": "Saturno no explorador 3D",
     "/programs/voyager": "Voyager — os sobrevoos que vieram primeiro"
+  },
+  "roster": {
+    "mission:cassini": {
+      "note": "passou treze anos em órbita de Saturno — a única nave a fazê-lo — mapeando os anéis, as luas e as tempestades em um detalhe que nenhum sobrevoo alcançaria"
+    },
+    "mission:huygens": {
+      "note": "a sonda europeia Huygens desceu de paraquedas em Titã em janeiro de 2005 — o primeiro e único pouso em qualquer lugar do sistema solar exterior"
+    },
+    "The geysers of Enceladus": {
+      "note": "a Cassini descobriu jatos de gelo de água jorrando do polo sul da minúscula lua Encélado, evidência de um oceano global sob seu gelo — um dos lugares mais promissores para procurar vida",
+      "name": "Os gêiseres de Encélado"
+    },
+    "The Grand Finale": {
+      "note": "sem combustível, a Cassini foi lançada vinte e duas vezes entre Saturno e seus anéis e depois mergulhada deliberadamente no planeta, para garantir que nunca pudesse contaminar as luas com oceano",
+      "name": "O Grande Final"
+    }
   }
 }

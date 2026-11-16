@@ -1,0 +1,23 @@
+{
+  "name": "Shenzhou 5",
+  "vehicle": "Long March 2F",
+  "payload": "7840 kg; un astronauta (Yang Liwei)",
+  "delta_v": "~9,4 km/s (LEO)",
+  "type": "VOLO ORBITALE CON EQUIPAGGIO · COMPLETATO",
+  "first": "Il primo volo spaziale con equipaggio della Cina, compiuto da Yang Liwei",
+  "description": "Shenzhou 5 è stato il primo volo spaziale con equipaggio della Cina. Yang Liwei, tenente colonnello di 38 anni ed ex pilota da caccia, è decollato da solo su un Long March 2F da Jiuquan il 2003-10-15 alle 09:00 ora standard della Cina. Ha compiuto 14 giri attorno alla Terra a un'altitudine di circa 332-336 km ed è atterrato in Mongolia Interna il 2003-10-16 (ora standard della Cina), dopo 21 ore, 22 minuti e 45 secondi di volo.",
+  "events": [
+    {
+      "met": 0,
+      "label": "DECOLLO",
+      "note": "Long March 2F da Jiuquan alle 09:00 ora standard della Cina, 2003-10-15.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.8908,
+      "label": "ATTERRAGGIO",
+      "note": "Atterra in Mongolia Interna il 2003-10-16 (ora standard della Cina) dopo 14 orbite e 21 h 22 min 45 s.",
+      "type": "nominal"
+    }
+  ]
+}

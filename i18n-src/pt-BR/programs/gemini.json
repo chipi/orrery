@@ -94,5 +94,31 @@
   "link_labels": {
     "/earth": "Terra — órbitas, encontros e bases de lançamento",
     "/science/mission-phases/edl": "Entrada, descida e pouso"
+  },
+  "roster": {
+    "Gemini 1": {
+      "note": "teste estrutural e do veículo de lançamento, não tripulado",
+      "name": "Gemini 1"
+    },
+    "Gemini 2": {
+      "note": "teste suborbital não tripulado do escudo térmico",
+      "name": "Gemini 2"
+    },
+    "Gemini 5": {
+      "note": "oito dias no ar — o primeiro voo de mais de uma semana, provando que as tripulações aguentariam uma viagem de ida e volta à Lua",
+      "name": "Gemini 5"
+    },
+    "Gemini 9A": {
+      "note": "o “jacaré furioso”, o alvo que não abria; a atividade extraveicular foi exaustiva e quase desastrosa",
+      "name": "Gemini 9A"
+    },
+    "Gemini 10": {
+      "note": "acoplou-se, usou o motor da Agena para mudar de órbita e encontrou-se com um segundo alvo",
+      "name": "Gemini 10"
+    },
+    "Gemini 11": {
+      "note": "encontro por ascensão direta na primeira órbita; alcançou um apogeu recorde de 1.374 km",
+      "name": "Gemini 11"
+    }
   }
 }

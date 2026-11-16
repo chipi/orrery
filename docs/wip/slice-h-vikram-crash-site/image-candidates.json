@@ -1,0 +1,117 @@
+[
+  {
+    "staged": "static/images/_staging/missions/kaguya/01.jpg",
+    "note": "hero candidate",
+    "commons": "https://commons.wikimedia.org/wiki/File%3AH-IIA_F13_launching_KAGUYA.jpg",
+    "size": "1280x960",
+    "license": "CC BY 2.1 jp",
+    "author": "Naritama (NARITA Masahiro)",
+    "credit": "photo taken by Naritama (NARITA Masahiro)"
+  },
+  {
+    "staged": "static/images/_staging/missions/kaguya/02.png",
+    "note": "gallery; JAXA/NHK HDTV frame, CC0 label by uploader",
+    "commons": "https://commons.wikimedia.org/wiki/File%3ADiamond_Ring_Earth_Seen_From_The_Moon_By_Japan's_Selene_Lunar_Probe_(51044862303).png",
+    "size": "1920x1080",
+    "license": "CC0",
+    "author": "Raziel Abulafia",
+    "credit": "Diamond Ring Earth Seen From The Moon By Japan's Selene Lunar Probe"
+  },
+  {
+    "staged": "static/images/_staging/missions/kaguya/03.jpg",
+    "note": "gallery; JAXA/NHK Earthrise, 700x700 crop via Flickr (JAXA no-modification flag)",
+    "commons": "https://commons.wikimedia.org/wiki/File%3AEarthrise_(2936828414).jpg",
+    "size": "700x700",
+    "license": "CC BY-SA 2.0",
+    "author": "RidingWithRobots",
+    "credit": "Earthrise"
+  },
+  {
+    "staged": "static/images/_staging/missions/kaguya/04.jpg",
+    "note": "gallery; SMART-1 view of impact site",
+    "commons": "https://commons.wikimedia.org/wiki/File%3AKaguya_impact_site_ESA200870.jpg",
+    "size": "1280x1280",
+    "license": "CC BY-SA 3.0 igo",
+    "author": "European Space Agency",
+    "credit": "http://www.esa.int/spaceinimages/Images/2009/06/Kaguya_impact_site"
+  },
+  {
+    "staged": "static/images/_staging/missions/kaguya/05.jpg",
+    "note": "gallery; SMART-1 strip",
+    "commons": "https://commons.wikimedia.org/wiki/File%3AKaguya_impact_approach_strip_ESA206139.jpg",
+    "size": "1280x3200",
+    "license": "CC BY-SA 3.0 igo",
+    "author": "European Space Agency",
+    "credit": "https://www.esa.int/spaceinimages/Images/2009/06/Kaguya_impact_approach_strip"
+  },
+  {
+    "staged": "static/images/_staging/fleet-galleries/kaguya/01.jpg",
+    "note": "fleet hero candidate: model",
+    "commons": "https://commons.wikimedia.org/wiki/File%3A%E6%9C%88%E5%91%A8%E5%9B%9E%E8%A1%9B%E6%98%9F%E3%80%8C%E3%81%8B%E3%81%90%E3%82%84%EF%BC%88SELENE)%E3%80%8D%E3%81%AE%E6%A8%A1%E5%9E%8B.JPG",
+    "size": "2048x1536",
+    "license": "CC BY-SA 3.0"
+  },
+  {
+    "staged": "static/images/_staging/missions/chandrayaan2/01.jpg",
+    "note": "hero candidate (ISRO, GODL-India)",
+    "commons": "https://commons.wikimedia.org/wiki/File%3AGSLV_Mk_III_M1%2C_Chandrayaan-2_-_Orbiter_at_SDSC_SHAR.jpg",
+    "size": "7360x4912",
+    "license": "GODL-India",
+    "author": "Indian Space Research Organisation",
+    "credit": "https://www.isro.gov.in/chandrayaan2-gallery"
+  },
+  {
+    "staged": "static/images/_staging/missions/chandrayaan2/02.jpg",
+    "note": "gallery (ISRO, GODL-India)",
+    "commons": "https://commons.wikimedia.org/wiki/File%3AGSLV_Mk_III_M1%2C_Chandrayaan-2_-_Vikram_lander_mounted_on_top_of_orbiter.jpg",
+    "size": "4912x7360",
+    "license": "GODL-India",
+    "author": "Indian Space Research Organisation",
+    "credit": "https://www.isro.gov.in/chandrayaan2-gallery"
+  },
+  {
+    "staged": "static/images/_staging/missions/chandrayaan2/03.png",
+    "note": "gallery: LROC crash site (NASA PD)",
+    "commons": "https://commons.wikimedia.org/wiki/File%3AChandrayaan-2_Vikram_lander_Impact_Ejecta_with_scalebar.png",
+    "size": "1100x1100",
+    "license": "Public domain",
+    "author": "NASA/GSFC/Arizona State University",
+    "credit": "http://lroc.sese.asu.edu/posts/1131"
+  },
+  {
+    "staged": "static/images/_staging/missions/chandrayaan2/04.png",
+    "note": "gallery: LROC before/after ratio (NASA PD)",
+    "commons": "https://commons.wikimedia.org/wiki/File%3AChandrayaan-2_Vikram_lander_Impact_Ratio.png",
+    "size": "1100x1100",
+    "license": "Public domain",
+    "author": "NASA/GSFC/Arizona State University",
+    "credit": "http://lroc.sese.asu.edu/posts/1131"
+  },
+  {
+    "staged": "static/images/_staging/fleet-galleries/chandrayaan2/01.jpg",
+    "note": "fleet hero candidate (U R Rao Satellite Centre, GODL-India)",
+    "commons": "https://commons.wikimedia.org/wiki/File%3AChandrayaan-2_orbiter_in_clean-room_being_integrated_with_payloads.jpg",
+    "size": "6016x4016",
+    "license": "GODL-India",
+    "author": "U R Rao Satellite Centre",
+    "credit": "https://www.prl.res.in/ch2xsm/gallery"
+  },
+  {
+    "staged": "static/images/_staging/fleet-galleries/chandrayaan2/02.webp",
+    "note": "fleet gallery: OHRC image (ISRO, GODL-India)",
+    "commons": "https://commons.wikimedia.org/wiki/File%3AImage_of_Chandrayaan-3_Lander_captured_by_OHRC_camera_aboard_Chandrayaan-2_Orbiter.webp",
+    "size": "5410x3567",
+    "license": "GODL-India",
+    "author": "Indian Space Research Organisation",
+    "credit": "https://www.isro.gov.in/chandrayaan3_gallery.html"
+  },
+  {
+    "staged": "static/images/_staging/moon-sites/chandrayaan2/context.png",
+    "note": "GATED: Vikram crash-site hotspot candidate (needs operator approval of LROC image)",
+    "commons": "https://commons.wikimedia.org/wiki/File%3AChandrayaan-2_Vikram_lander_Impact_Ejecta_with_scalebar.png",
+    "size": "1100x1100",
+    "license": "Public domain",
+    "author": "NASA/GSFC/Arizona State University",
+    "credit": "http://lroc.sese.asu.edu/posts/1131"
+  }
+]

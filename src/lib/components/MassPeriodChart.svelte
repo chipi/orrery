@@ -6,6 +6,7 @@
   THIS system sits among all the others — and next to Earth, Jupiter, Saturn.
 -->
 <script lang="ts">
+  import Chip from '$lib/components/Chip.svelte';
   import {
     mpX,
     mpY,
@@ -93,7 +94,7 @@
       ctx.fillText(`${me}`, L - 6, y + 3);
     }
     // axis frame
-    ctx.strokeStyle = 'rgba(120,190,235,0.3)';
+    ctx.strokeStyle = 'rgba(136,159,231,0.3)';
     ctx.beginPath();
     ctx.moveTo(L, T);
     ctx.lineTo(L, B);
@@ -142,7 +143,7 @@
       .filter((pl) => pl.hostId === activeHostId)
       .sort((a, b) => a.periodDays - b.periodDays);
     if (active.length > 1) {
-      ctx.strokeStyle = `rgba(120,230,255,${0.5 * ease})`;
+      ctx.strokeStyle = `rgba(138,160,255,${0.5 * ease})`;
       ctx.lineWidth = 1.25;
       ctx.beginPath();
       active.forEach((pl, i) => {
@@ -160,16 +161,16 @@
       const y = py(pl.massEarth);
       ctx.globalCompositeOperation = 'lighter';
       const gl = ctx.createRadialGradient(x, y, 0, x, y, mob ? 8 : 11);
-      gl.addColorStop(0, `rgba(120,230,255,${0.5 * ease})`);
-      gl.addColorStop(1, 'rgba(120,230,255,0)');
+      gl.addColorStop(0, `rgba(138,160,255,${0.5 * ease})`);
+      gl.addColorStop(1, 'rgba(138,160,255,0)');
       ctx.fillStyle = gl;
       ctx.fillRect(x - 11, y - 11, 22, 22);
       ctx.globalCompositeOperation = 'source-over';
-      ctx.fillStyle = `rgba(210,245,255,${ease})`;
+      ctx.fillStyle = `rgba(226,232,255,${ease})`;
       ctx.beginPath();
       ctx.arc(x, y, mob ? 2.6 : 3.4, 0, Math.PI * 2);
       ctx.fill();
-      ctx.fillStyle = `rgba(224,246,255,${ease})`;
+      ctx.fillStyle = `rgba(226,232,255,${ease})`;
       ctx.fillText(pl.name, x + (mob ? 6 : 8), y - (mob ? 6 : 8));
     }
   }
@@ -182,8 +183,11 @@
       <div class="mp-title">{m.explore_mp_title()}</div>
       <div class="mp-note">{m.explore_mp_note()}</div>
     </div>
-    <button type="button" class="mp-close" aria-label={m.explore_anon_dismiss()} onclick={onClose}
-      >×</button
+    <Chip
+      kind="action"
+      class="mp-close ui-chip--close"
+      aria-label={m.explore_anon_dismiss()}
+      onclick={onClose}>×</Chip
     >
   </div>
 {/if}
@@ -212,24 +216,12 @@
     height: 100%;
     display: block;
   }
-  .mp-close {
+  :global(.mp-close) {
     position: absolute;
     top: 74px;
     right: 16px;
-    width: 40px;
-    height: 40px;
-    border-radius: 999px;
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    background: rgba(10, 14, 22, 0.6);
-    color: #eaf6ff;
-    font-size: 22px;
-    line-height: 1;
-    cursor: pointer;
-    pointer-events: auto;
   }
-  .mp-close:hover {
-    background: rgba(30, 40, 55, 0.8);
-  }
+
   .mp-head {
     position: absolute;
     top: 74px;
@@ -243,7 +235,7 @@
     font-size: 12px;
     letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: #a7e6ff;
+    color: var(--color-state);
   }
   .mp-note {
     margin-top: 5px;

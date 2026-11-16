@@ -11,6 +11,7 @@
   import { localizeHref } from '$lib/paraglide/runtime';
   import { assetOrigin } from '$lib/asset-url';
   import { roving } from '$lib/a11y/roving';
+  import EntityCard from '$lib/components/EntityCard.svelte';
   import * as m from '$lib/paraglide/messages';
 
   type Poster = { id: string; title: string; sub: string };
@@ -56,40 +57,38 @@
   <meta name="description" content={metaDescription(m.posters_lede())} />
 </svelte:head>
 
-<article class="gallery" data-route-ready="true">
+<article class="gallery page-shell" data-route-ready="true">
   <header>
-    <nav class="crumb">
+    <nav class="crumb page-crumb">
       <a href="{base}{localizeHref('/gallery')}">{m.layout_footer_gallery()}</a><span class="sep"
         >›</span
       ><span>{m.gallery_posters_title()}</span>
     </nav>
-    <h1>{m.posters_h1()}</h1>
-    <p class="lede">{m.posters_lede()}</p>
+    <h1 class="page-title">{m.posters_h1()}</h1>
+    <p class="lede page-lead">{m.posters_lede()}</p>
   </header>
 
   <!-- Spatial roving (RFC-031 S1): one Tab stop; arrows / TV D-pad move between
        posters by 2D geometry instead of 27 separate Tab stops. -->
-  <div class="grid" use:roving={{ mode: 'spatial' }}>
+  <ul class="entity-card-grid" use:roving={{ mode: 'spatial' }}>
     {#each posters as p (p.id)}
-      <figure class="poster">
-        <a
-          href="{assetOrigin}/images/posters/{p.id}.jpg"
-          download="orrery-{p.id}.jpg"
-          aria-label={m.posters_download_aria({ title: p.title, sub: p.sub })}
-        >
-          <img
-            src="{assetOrigin}/images/posters/{p.id}.thumb.jpg"
-            alt={m.posters_alt({ title: p.title, sub: p.sub })}
-            width="700"
-            height="1050"
-            loading="lazy"
-          />
-        </a>
-      </figure>
+      <EntityCard
+        href="{assetOrigin}/images/posters/{p.id}.jpg"
+        download="orrery-{p.id}.jpg"
+        ariaLabel={m.posters_download_aria({ title: p.title, sub: p.sub })}
+        photo="{assetOrigin}/images/posters/{p.id}.thumb.jpg"
+        ladder={false}
+        alt={m.posters_alt({ title: p.title, sub: p.sub })}
+        imgWidth={700}
+        imgHeight={1050}
+        name={p.title}
+        aspect="portrait"
+        body="none"
+      />
     {/each}
-  </div>
+  </ul>
 
-  <footer class="gallery-footer">
+  <footer class="page-note">
     <p>
       <strong>{m.posters_footer_free_title()}</strong>
       {m.posters_footer_free_body()}
@@ -109,119 +108,13 @@
 </article>
 
 <style>
-  .gallery {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 32px 24px 64px;
-    color: var(--color-text);
-  }
   header {
-    text-align: center;
     margin-bottom: 36px;
   }
-  .crumb {
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 11px;
-    letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.5);
-    margin-bottom: 14px;
-  }
   .crumb a {
-    color: rgba(255, 255, 255, 0.7);
-    text-decoration: none;
+    text-decoration: underline;
   }
   .crumb .sep {
     margin: 0 8px;
-  }
-  h1 {
-    font-family: var(--font-display);
-    font-size: 42px;
-    letter-spacing: 10px;
-    margin: 0 0 12px;
-  }
-  .lede {
-    font-family: var(--font-editorial), 'Crimson Pro', serif;
-    font-style: italic;
-    font-size: 17px;
-    color: rgba(255, 255, 255, 0.75);
-    max-width: 760px;
-    margin: 0 auto;
-    line-height: 1.55;
-  }
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 28px;
-  }
-  .poster {
-    margin: 0;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 4px;
-    overflow: hidden;
-    background: #000;
-    transition:
-      border-color 0.2s,
-      transform 0.2s;
-  }
-  .poster:hover {
-    border-color: rgba(78, 205, 196, 0.4);
-    transform: translateY(-2px);
-  }
-  .poster a {
-    display: block;
-  }
-  .poster img {
-    display: block;
-    width: 100%;
-    height: auto;
-    aspect-ratio: 2 / 3;
-    object-fit: cover;
-  }
-  .gallery-footer {
-    margin-top: 48px;
-    padding: 20px 24px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 4px;
-  }
-  .gallery-footer p {
-    font-family: var(--font-mono), monospace;
-    font-size: 12px;
-    line-height: 1.7;
-    color: rgba(255, 255, 255, 0.7);
-    margin: 0 0 10px;
-  }
-  .gallery-footer p:last-child {
-    margin-bottom: 0;
-  }
-  .gallery-footer strong {
-    color: #4ecdc4;
-    font-weight: normal;
-    letter-spacing: 1px;
-  }
-  .gallery-footer :global(a) {
-    color: #4ecdc4;
-    text-decoration: underline;
-  }
-  .gallery-footer :global(a:hover) {
-    text-decoration: underline;
-  }
-  @media (max-width: 1023px) {
-    .grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-  @media (max-width: 639px) {
-    .gallery {
-      padding: 16px 16px 32px;
-    }
-    .grid {
-      grid-template-columns: 1fr;
-      max-width: 480px;
-      margin: 0 auto;
-    }
-    h1 {
-      font-size: 32px;
-      letter-spacing: 6px;
-    }
   }
 </style>

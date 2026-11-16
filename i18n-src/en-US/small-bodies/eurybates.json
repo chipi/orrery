@@ -1,9 +1,13 @@
 {
   "science_sections": [
     {
-      "tab": "planets",
-      "section": "asteroid-belt",
+      "tab": "orbits",
+      "section": "lagrange-points",
       "why": "Eurybates orbits in the L4 Jupiter Trojan cloud — leading the planet by 60°. Lucy will be the first spacecraft to visit a Trojan (August 2027)."
+    },
+    {
+      "tab": "transfers",
+      "section": "gravity-assist"
     }
   ]
 }

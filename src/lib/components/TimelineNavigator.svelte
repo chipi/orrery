@@ -18,6 +18,7 @@
   import { prefersReducedMotion, onReducedMotionChange } from '$lib/reduced-motion';
   import * as m from '$lib/paraglide/messages';
   import { onDestroy } from 'svelte';
+  import Chip from '$lib/components/Chip.svelte';
 
   type Props = {
     missions: Mission[];
@@ -233,7 +234,9 @@
         aria-label={m.lib_timeline_to()}
       />
     </label>
-    <button type="button" class="rm-reset" onclick={resetRange}>{m.lib_timeline_reset()}</button>
+    <div class="rm-reset-slot">
+      <Chip kind="action" onclick={resetRange}>{m.lib_timeline_reset()}</Chip>
+    </div>
   </div>
 {:else}
   <div class="timeline" role="group" aria-label={m.lib_timeline_label()}>
@@ -333,7 +336,9 @@
       </button>
     </div>
     {#if fromYear !== MIN_YEAR || toYear !== MAX_YEAR}
-      <button type="button" class="reset" onclick={resetRange}>{m.lib_timeline_reset()}</button>
+      <div class="reset-slot">
+        <Chip kind="action" onclick={resetRange}>{m.lib_timeline_reset()}</Chip>
+      </div>
     {/if}
   </div>
 {/if}
@@ -361,8 +366,8 @@
     position: absolute;
     transform: translateX(-50%);
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
-    color: rgba(180, 200, 255, 0.55);
+    font-size: var(--size-label);
+    color: rgba(180, 200, 255, 0.6);
     letter-spacing: 1px;
   }
   .strip {
@@ -376,9 +381,9 @@
     position: absolute;
     top: 0;
     bottom: 0;
-    background: rgba(78, 205, 196, 0.18);
-    border-left: 1px solid rgba(78, 205, 196, 0.3);
-    border-right: 1px solid rgba(78, 205, 196, 0.3);
+    background: color-mix(in srgb, var(--color-accent) 18%, transparent);
+    border-left: 1px solid var(--color-accent-edge);
+    border-right: 1px solid var(--color-accent-edge);
     pointer-events: none;
   }
 
@@ -399,7 +404,7 @@
     left: 50%;
     transform: translateX(-50%);
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 7px;
+    font-size: var(--size-label);
     letter-spacing: 1.5px;
     color: rgba(255, 200, 80, 0.85);
     background: rgba(8, 10, 22, 0.85);
@@ -441,11 +446,11 @@
     width: 14px;
     height: 44px;
     padding: 0;
-    background: #4ecdc4;
+    background: var(--color-accent);
     border: 1px solid rgba(255, 255, 255, 0.6);
     border-radius: 3px;
     cursor: ew-resize;
-    box-shadow: 0 0 8px rgba(78, 205, 196, 0.5);
+    box-shadow: 0 0 8px color-mix(in srgb, var(--color-accent) 50%, transparent);
     z-index: 10;
   }
   .handle:hover,
@@ -459,37 +464,20 @@
     left: 50%;
     transform: translateX(-50%);
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     font-weight: 700;
-    color: #4ecdc4;
+    color: var(--color-state);
     letter-spacing: 1px;
     background: rgba(8, 10, 22, 0.85);
     padding: 1px 4px;
     border-radius: 2px;
     white-space: nowrap;
   }
-  .reset {
+  .reset-slot {
     position: absolute;
     top: 4px;
     right: 6px;
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 8px;
-    letter-spacing: 1.5px;
-    color: rgba(255, 255, 255, 0.7);
-    background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 3px;
-    padding: 4px 8px;
-    cursor: pointer;
     z-index: 6;
-    min-width: 44px;
-    min-height: 24px;
-  }
-  .reset:hover,
-  .reset:focus-visible {
-    border-color: rgba(255, 255, 255, 0.6);
-    color: #fff;
-    outline: none;
   }
   .desktop-only {
     display: none;
@@ -526,7 +514,7 @@
     align-items: center;
     gap: 6px;
     font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
+    font-size: var(--size-label);
     letter-spacing: 1.5px;
     color: rgba(180, 200, 255, 0.85);
   }
@@ -541,17 +529,7 @@
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 12px;
   }
-  .rm-reset {
+  .rm-reset-slot {
     margin-left: auto;
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 9px;
-    letter-spacing: 1.5px;
-    color: rgba(255, 255, 255, 0.7);
-    background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 3px;
-    padding: 6px 10px;
-    cursor: pointer;
-    min-height: 36px;
   }
 </style>

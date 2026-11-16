@@ -82,5 +82,31 @@
   "link_labels": {
     "/programs/iss": "ISS — la station qu'ils doivent remplacer",
     "/programs/spacex": "SpaceX — le transport d'équipages et de fret dont elles dépendront"
+  },
+  "roster": {
+    "Commercial LEO Destinations": {
+      "note": "la NASA finance plusieurs entreprises pour construire des stations privées, avec l'intention de devenir cliente d'avant-postes orbitaux plutôt que d'en exploiter un",
+      "name": "Commercial LEO Destinations"
+    },
+    "Vast Haven-1": {
+      "note": "une station commerciale à module unique en vol libre de Vast — parmi les premières stations commerciales attendues en orbite",
+      "name": "Vast Haven-1"
+    },
+    "Axiom Station": {
+      "note": "Axiom Space l'assemble comme une station indépendante en vol libre ; son premier module s'amarre brièvement à l'ISS puis s'en détache pour rejoindre d'autres modules en vol libre — plan restructuré en décembre 2024",
+      "name": "Axiom Station"
+    },
+    "Orbital Reef": {
+      "note": "une entreprise de Blue Origin et Sierra Space présentée comme un « parc d'affaires polyvalent » en orbite — recherche, fabrication et tourisme",
+      "name": "Orbital Reef"
+    },
+    "Starlab": {
+      "note": "une station de Voyager et Airbus conçue comme un unique grand module en vol libre, visant une science continue après l'ISS",
+      "name": "Starlab"
+    },
+    "ISS retirement": {
+      "note": "l'ISS doit être désorbitée vers 2030 ; les stations commerciales sont censées voler avant son départ, pour que la présence humaine en orbite basse ne soit jamais interrompue",
+      "name": "Retrait de l'ISS"
+    }
   }
 }

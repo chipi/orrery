@@ -95,5 +95,29 @@
     "/fleet?id=starship": "Vloot — het lanceersysteem Starship",
     "/programs/spacex": "SpaceX — de herbruikbaarheid waarop Starship voortbouwt",
     "/mars": "Mars — de bestemming"
+  },
+  "roster": {
+    "Starhopper": {
+      "note": "een testmodel met één motor maakt een sprong van 150 meter en landt — de eerste vlucht van het programma, die de basisbesturing bewees",
+      "name": "Starhopper"
+    },
+    "SN15 lands": {
+      "note": "na een reeks spectaculaire explosies vliegt een Starship-bovenste trap hoog en landt intact — de vlieg-faal-herstel-methode toegepast op de grootste raket ooit gebouwd",
+      "name": "SN15 landt"
+    },
+    "First integrated flight": {
+      "note": "de volledige stack — Super Heavy-booster en Starship — lanceert voor het eerst samen; hij komt van het platform los en gaat enkele minuten later verloren, en de data voeden de volgende poging",
+      "name": "Eerste geïntegreerde vlucht"
+    },
+    "Booster catch": {
+      "note": "de Super Heavy-booster vliegt terug en wordt uit de lucht gevangen door de armen van de lanceertoren — een landingsmethode die niemand ooit op deze schaal had geprobeerd",
+      "name": "Booster gevangen"
+    },
+    "mission:starship-demo": {
+      "note": "de onbemande demonstratievluchten op weg naar een baan, de Maan en Mars"
+    },
+    "mission:starship-mars-crew": {
+      "note": "de beoogde eindtoestand — bemande Starships die mensen naar het oppervlak van Mars brengen"
+    }
   }
 }

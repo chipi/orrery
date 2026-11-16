@@ -15,6 +15,7 @@
 <script lang="ts">
   import * as m from '$lib/paraglide/messages';
   import { FullscreenIcon } from '$lib/components/icons';
+  import Chip from '$lib/components/Chip.svelte';
 
   interface Props {
     active: boolean;
@@ -62,27 +63,28 @@
 </script>
 
 {#if active}
-  <button
-    type="button"
-    class="fullscreen-toggle"
-    aria-label={isFullscreen
-      ? m.panorama_fullscreen_exit_aria()
-      : m.panorama_fullscreen_enter_aria()}
-    title={isSupported
-      ? isFullscreen
+  <div class="fullscreen-slot">
+    <Chip
+      kind="action"
+      aria-label={isFullscreen
         ? m.panorama_fullscreen_exit_aria()
-        : m.panorama_fullscreen_enter_aria()
-      : m.panorama_fullscreen_unsupported_title()}
-    onclick={() => void toggle()}
-    data-testid="panorama-fullscreen-toggle"
-    disabled={!isSupported}
-  >
-    <FullscreenIcon active={isFullscreen} />
-  </button>
+        : m.panorama_fullscreen_enter_aria()}
+      title={isSupported
+        ? isFullscreen
+          ? m.panorama_fullscreen_exit_aria()
+          : m.panorama_fullscreen_enter_aria()
+        : m.panorama_fullscreen_unsupported_title()}
+      onclick={() => void toggle()}
+      data-testid="panorama-fullscreen-toggle"
+      disabled={!isSupported}
+    >
+      <FullscreenIcon active={isFullscreen} />
+    </Chip>
+  </div>
 {/if}
 
 <style>
-  .fullscreen-toggle {
+  .fullscreen-slot {
     position: fixed;
     /* Single-row bottom-left panorama-controls layout (#286 audit).
        Sits to the right of the compass (left: 24px, width 78px) +
@@ -90,27 +92,6 @@
        right. */
     bottom: 40px;
     left: 110px;
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    background: rgba(5, 5, 20, 0.88);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    color: var(--color-text-on-dark, #ffffff);
-    cursor: pointer;
-    backdrop-filter: blur(6px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
     z-index: 60;
-    /* Sit to the right of the caption-overlay's dismiss-reopen ⓘ button
-       so they don't overlap when caption is dismissed. */
-  }
-  .fullscreen-toggle:hover:not(:disabled),
-  .fullscreen-toggle:focus-visible:not(:disabled) {
-    border-color: rgba(255, 255, 255, 0.4);
-  }
-  .fullscreen-toggle:disabled {
-    opacity: 0.4;
-    cursor: not-allowed;
   }
 </style>

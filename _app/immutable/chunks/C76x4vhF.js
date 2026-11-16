@@ -1,1 +1,0 @@
-var e={launchers:[`launcher`],spacecraft:[`crewed-spacecraft`,`cargo-spacecraft`]},t=[`launchers`,`spacecraft`];function n(e){return e===`launcher`?`launchers`:e===`crewed-spacecraft`||e===`cargo-spacecraft`?`spacecraft`:null}export{t as n,n as r,e as t};

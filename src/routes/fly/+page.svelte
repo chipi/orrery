@@ -3689,8 +3689,9 @@
   <QualitySettingsModal {activeQualityTier} />
   <!-- Runtime adaptive — wave 2/3 punch #4. Non-blocking toast at
        bottom-right when the rolling-average frame time has stayed over
-       budget. Suggests the next-lower quality tier; user decides. -->
-  {#if perfToastVisible && perfToastSuggestedTier}
+       budget. Suggests the next-lower quality tier; user decides. It steps aside while the
+       speed menu is open: on a phone it lay over the menu's pills and took their taps. -->
+  {#if perfToastVisible && perfToastSuggestedTier && !speedPopoverOpen}
     <div class="perf-toast" role="status" aria-live="polite">
       <div class="perf-toast-title">{m.fly_perf_title()}</div>
       <div class="perf-toast-body">

@@ -122,6 +122,10 @@ for (const station of STATIONS) {
       page,
       isMobile,
     }) => {
+      // The sweep is the work of the test: 60 phase samples, two frames each, over the 3D
+      // station. On the CI runner (no GPU, 2 cores) it ran past 30 s on all six desktop cases
+      // (2026-11-16, docker-e2e on a092a5b17ca); it passes in the same image on a faster host.
+      test.slow();
       await page.goto(`${loc.prefix}/${station.id}`, { waitUntil: 'networkidle' });
       await openAssembly(page, station.id, isMobile);
       const samples = await sweep(page);
@@ -157,6 +161,7 @@ test.describe('a 360 px phone', () => {
       isMobile,
     }, testInfo) => {
       test.skip(testInfo.project.name !== 'mobile-chromium', 'phone portrait only');
+      test.slow(); // the same 60-sample sweep as above
       await page.goto(`/${station.id}`, { waitUntil: 'networkidle' });
       await openAssembly(page, station.id, isMobile);
       const samples = await sweep(page);

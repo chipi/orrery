@@ -16,6 +16,9 @@ For deep-dive engineering rationale, see [`IMPLEMENTATION.md`](IMPLEMENTATION.md
   finished loading its interactive parts: two of its related-hardware lists had the same title in
   those languages ("Engines" and "Engine" are one word there) and the page stopped on a duplicate
   key (GitHub #657).
+- /fly: LAUNCH on a mission's opening card could start before the mission had loaded and fly the
+  default flight's Falcon Heavy under the mission's name (seen on Apollo 11); it now appears once
+  the mission is loaded.
 
 ## [0.9.9] — 2026-11-16
 

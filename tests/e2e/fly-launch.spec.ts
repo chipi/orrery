@@ -197,6 +197,25 @@ test('a mission record with no flight (STS-51-L) offers no launch, and ?launch=1
   await expect(page.locator('[data-testid="launch-scene"]')).toHaveCount(0);
 });
 
+// Prod 0.9.9 (plan A9): LAUNCH was live while the page still held the default ORRERY-1 flight,
+// so a quick click flew its Falcon Heavy under the Apollo 11 title. The mission file is held
+// back here so that window is always open.
+test('LAUNCH clicked as soon as it shows flies the requested mission’s rocket', async ({
+  page,
+}) => {
+  await page.route('**/data/missions/moon/apollo11.json', async (route) => {
+    await new Promise((r) => setTimeout(r, 4_000));
+    await route.continue();
+  });
+  await page.goto('/fly?mission=apollo11');
+  const launch = page.locator('[data-testid="fly-opening-launch"]');
+  await launch.click({ timeout: 30_000 });
+  await expect(page.locator('[data-testid="launch-scene"] .header .sub')).toContainText(
+    'Saturn V',
+    { timeout: 20_000 },
+  );
+});
+
 test('STS-1 (reconstructed flight data) still offers its launch', async ({ page }) => {
   await page.goto('/fly?mission=sts-1');
   await expect(page.locator('[data-testid="fly-opening-launch"]')).toBeVisible({ timeout: 30_000 });

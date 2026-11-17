@@ -375,6 +375,9 @@
     injectionBurn: launchInjectionBurn,
   });
   function startLaunch() {
+    // Until the URL's flight is applied, `mission` is still the default ORRERY-1 flight: a launch
+    // started now would fly its Falcon Heavy under the requested mission's title (plan A9).
+    if (!requestedFlightLoaded) return;
     const launcher = resolveLauncher(mission.fleet_refs, mission.vehicle);
     if (!launcher) return;
     // Load the profile first, THEN swap the opening for the launch overlay — no
@@ -416,16 +419,17 @@
   const launchDeepParams =
     typeof window !== 'undefined' ? new URLSearchParams(window.location.search) : null;
   const wantLaunchDeep = launchDeepParams?.get('launch') === '1';
-  const deepMissionId = launchDeepParams?.get('mission') ?? null;
+  const deepMissionId = launchDeepParams?.get('mission') || null;
+  const deepPlanUrl =
+    deepMissionId == null &&
+    (launchDeepParams?.has('dep') ?? false) &&
+    (launchDeepParams?.has('tof') ?? false);
   let launchAutoStarted = false;
   $effect(() => {
     // Only auto-start when the LOADED flight is the one the URL asked for —
     // otherwise the deep-link fires on the default scenario mid-load. A /plan URL has no
     // mission id: its flight is loaded once the plan selection has been applied.
-    const urlFlightLoaded =
-      deepMissionId != null
-        ? mission.id === deepMissionId
-        : (lastAppliedMissionId?.startsWith('plan-') ?? false);
+    const urlFlightLoaded = deepMissionId != null || deepPlanUrl ? requestedFlightLoaded : false;
     if (wantLaunchDeep && !launchAutoStarted && launchAvailable && urlFlightLoaded) {
       launchAutoStarted = true;
       startLaunch();
@@ -2256,6 +2260,15 @@
   // has actually been applied" — fixes the v0.6.1 fly-render-validation
   // flake (issue #133). Null until the first apply* function runs.
   let lastAppliedMissionId = $state<string | null>(null);
+  // The flight the URL asked for has been applied: its mission, its /plan selection, or (a bare
+  // /fly) the default scenario. Before that `mission` is the static default flight (plan A9).
+  let requestedFlightLoaded = $derived(
+    deepMissionId != null
+      ? mission.id === deepMissionId
+      : deepPlanUrl
+        ? (lastAppliedMissionId?.startsWith('plan-') ?? false)
+        : lastAppliedMissionId != null,
+  );
 
   const MISSION_APPLY_DEFAULTS: MissionApplyDefaults = {
     depFallback: defaultScenarioBase.dep_day,
@@ -4071,7 +4084,7 @@
            section. Always visible while openingActive so users can
            fast-forward at any opening fade state. -->
       <div class="opening-actions">
-        {#if launchAvailable}
+        {#if launchAvailable && requestedFlightLoaded}
           <button
             type="button"
             class="opening-launch"

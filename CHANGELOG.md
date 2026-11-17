@@ -26,6 +26,9 @@ For deep-dive engineering rationale, see [`IMPLEMENTATION.md`](IMPLEMENTATION.md
 - 26 more lists that were keyed by their visible text (stats, facts, legends, reading and watch
   lists, Lab rows) now key by position as well, so two rows with the same text in some language
   can no longer stop a page; a unit test keeps new ones out.
+- The era tiles on /missions/launches counted the launches of the last deploy, not of the
+  6-hourly data refresh (7,645 against 7,849 on 2026-11-17): the refresh left the deploy's
+  compressed copy of the year index in place.
 
 ### Changed
 

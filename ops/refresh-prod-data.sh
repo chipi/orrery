@@ -57,8 +57,11 @@ if "${COMPOSE[@]}" scripts/fetch-launches.ts && [ "$(wc -c < "$LIVE")" -ge "$MIN
   # would keep serving the STALE compressed copy. Drop the precompressed
   # siblings of every file the fetch regenerates; nginx then gzips the fresh
   # .json on the fly (its documented behaviour for the dynamic /data path).
+  # launches-years.json (the era strip's counts) was missing here until 2026-11-17: prod
+  # served the deploy's .br for every refresh after it (7,645 launches against 7,849).
   rm -f static/data/launches.json.gz static/data/launches.json.br \
         static/data/launches-historic/*.json.gz static/data/launches-historic/*.json.br \
+        static/data/launches-years.json.gz static/data/launches-years.json.br \
         static/data/missions/index.json.gz static/data/missions/index.json.br 2>/dev/null || true
   rm -f "$BAK"
   echo "[refresh-prod-data] $(date -u +%FT%TZ) ok — launches.json $(wc -c < "$LIVE") bytes"

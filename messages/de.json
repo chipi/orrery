@@ -1123,6 +1123,8 @@
   "fly_hud_trajectory": "FLUGBAHN",
   "fly_traj_type_cislunar": "Transfer Erde–Mond",
   "fly_traj_type_cislunar_free_return": "Erde–Mond mit freier Rückkehr",
+  "fly_traj_type_earth_orbit": "Erdumlaufbahn",
+  "fly_traj_type_suborbital": "Suborbitaler Flug",
   "fly_traj_type_helio_hohmann": "Heliozentrischer Hohmann-Transfer",
   "fly_traj_type_helio_free_return": "Heliozentrische freie Rückkehr",
   "fly_traj_type_helio_flyby": "Heliozentrischer Vorbeiflug",

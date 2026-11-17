@@ -1123,6 +1123,8 @@
   "fly_hud_trajectory": "المسار",
   "fly_traj_type_cislunar": "انتقال قمري أرضي",
   "fly_traj_type_cislunar_free_return": "عودة حرة قمرية أرضية",
+  "fly_traj_type_earth_orbit": "المدار الأرضي",
+  "fly_traj_type_suborbital": "رحلة تحت مدارية",
   "fly_traj_type_helio_hohmann": "انتقال هوهمان مركزي شمسي",
   "fly_traj_type_helio_free_return": "عودة حرة مركزية شمسية",
   "fly_traj_type_helio_flyby": "تحليق مركزي شمسي",

@@ -19,6 +19,10 @@ For deep-dive engineering rationale, see [`IMPLEMENTATION.md`](IMPLEMENTATION.md
 - /fly: LAUNCH on a mission's opening card could start before the mission had loaded and fly the
   default flight's Falcon Heavy under the mission's name (seen on Apollo 11); it now appears once
   the mission is loaded.
+- /fly HUD: Earth-orbit flights (Vostok, Gemini, Shenzhou, the Shuttle) said "Cislunar transfer";
+  they now say "Earth orbit" or "Suborbital flight". Their ETA shows the real time on orbit
+  (Vostok 1 read DAY 500), and the HUD no longer shows the demo flight's values while a mission
+  loads.
 
 ## [0.9.9] — 2026-11-16
 

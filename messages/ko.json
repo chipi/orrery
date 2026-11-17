@@ -1123,6 +1123,8 @@
   "fly_hud_trajectory": "궤적",
   "fly_traj_type_cislunar": "지구-달 전이",
   "fly_traj_type_cislunar_free_return": "지구-달 자유 귀환",
+  "fly_traj_type_earth_orbit": "지구 궤도",
+  "fly_traj_type_suborbital": "준궤도 비행",
   "fly_traj_type_helio_hohmann": "태양중심 호만 전이",
   "fly_traj_type_helio_free_return": "태양중심 자유 귀환",
   "fly_traj_type_helio_flyby": "태양중심 근접 비행",

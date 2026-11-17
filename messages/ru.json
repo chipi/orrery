@@ -1123,6 +1123,8 @@
   "fly_hud_trajectory": "ТРАЕКТОРИЯ",
   "fly_traj_type_cislunar": "Перелёт Земля–Луна",
   "fly_traj_type_cislunar_free_return": "Перелёт Земля–Луна с возвратом",
+  "fly_traj_type_earth_orbit": "Околоземная орбита",
+  "fly_traj_type_suborbital": "Суборбитальный полёт",
   "fly_traj_type_helio_hohmann": "Гелиоцентрический перелёт Гомана",
   "fly_traj_type_helio_free_return": "Гелиоцентрический с возвратом",
   "fly_traj_type_helio_flyby": "Гелиоцентрический пролёт",

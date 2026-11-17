@@ -1123,6 +1123,8 @@
   "fly_hud_trajectory": "ТРАЈЕКТОРИЈА",
   "fly_traj_type_cislunar": "Прелазак Земља–Месец",
   "fly_traj_type_cislunar_free_return": "Земља–Месец са слободним повратком",
+  "fly_traj_type_earth_orbit": "Земљина орбита",
+  "fly_traj_type_suborbital": "Суборбитални лет",
   "fly_traj_type_helio_hohmann": "Хелиоцентрични Хоманов прелаз",
   "fly_traj_type_helio_free_return": "Хелиоцентрични слободан повратак",
   "fly_traj_type_helio_flyby": "Хелиоцентрични прелет",

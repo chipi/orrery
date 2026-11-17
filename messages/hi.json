@@ -1123,6 +1123,8 @@
   "fly_hud_trajectory": "प्रक्षेपवक्र",
   "fly_traj_type_cislunar": "चंद्र-पार्थिव स्थानांतरण",
   "fly_traj_type_cislunar_free_return": "चंद्र-पार्थिव मुक्त-वापसी",
+  "fly_traj_type_earth_orbit": "पृथ्वी कक्षा",
+  "fly_traj_type_suborbital": "उप-कक्षीय उड़ान",
   "fly_traj_type_helio_hohmann": "सूर्यकेंद्रित होमान",
   "fly_traj_type_helio_free_return": "सूर्यकेंद्रित मुक्त-वापसी",
   "fly_traj_type_helio_flyby": "सूर्यकेंद्रित फ्लाईबाई",

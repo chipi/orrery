@@ -752,16 +752,22 @@
     'neptune',
     'pluto',
   ]);
+  // Earth-orbit flights (Vostok, Shenzhou, the Shuttle) fly in the Earth-centred scene too, but
+  // never leave Earth orbit: they are not a cislunar transfer (plan A10).
   let trajectoryTypeLabel = $derived(
-    isMoonMission
-      ? isFreeReturn
-        ? m.fly_traj_type_cislunar_free_return()
-        : m.fly_traj_type_cislunar()
-      : HELIO_FLYBY_DESTINATIONS.has(activeDestination)
-        ? m.fly_traj_type_helio_flyby()
-        : isFreeReturn
-          ? m.fly_traj_type_helio_free_return()
-          : m.fly_traj_type_helio_hohmann(),
+    earthCoast
+      ? earthCoast.suborbital
+        ? m.fly_traj_type_suborbital()
+        : m.fly_traj_type_earth_orbit()
+      : isMoonMission
+        ? isFreeReturn
+          ? m.fly_traj_type_cislunar_free_return()
+          : m.fly_traj_type_cislunar()
+        : HELIO_FLYBY_DESTINATIONS.has(activeDestination)
+          ? m.fly_traj_type_helio_flyby()
+          : isFreeReturn
+            ? m.fly_traj_type_helio_free_return()
+            : m.fly_traj_type_helio_hohmann(),
   );
   let outPts: Vec2[] = $state(INITIAL_ARCS.out);
   let retPts: Vec2[] = $state(INITIAL_ARCS.ret);
@@ -1460,6 +1466,10 @@
   let arcTotalDays = $derived(arcTimeline.arr_day - arcTimeline.dep_day);
   let arcProgress = $derived((simDay - arcTimeline.dep_day) / arcTotalDays);
   let totalDays = $derived(mission.timeline.arr_day - mission.timeline.dep_day);
+  // The HUD's ETA. An Earth-orbit record's transit_days is already the whole flight (0 for a
+  // same-day one), and the timeline doubles it as a round trip or falls back to 250 days when it
+  // is 0 (Vostok 1 read DAY 500), so these flights show their real time on orbit (plan A10).
+  let etaDays = $derived(earthCoast ? earthCoast.coastDurationS / 86400 : totalDays);
   let met = $derived(Math.max(0, arcProgress * totalDays));
 
   // Fire mission-complete once when the trajectory reaches arrival (by
@@ -4142,6 +4152,7 @@
     class:hidden={!showHud}
     class:cinematic-hidden={inCinematicHeldBeat}
     class:m-open={mobilePanel === 'mission'}
+    class:flight-pending={!requestedFlightLoaded}
   >
     <aside
       class="hud hud-identity"
@@ -4361,8 +4372,7 @@
       {/if}
       <div class="hud-row">
         <span class="hud-key">{m.fly_hud_eta()}</span>
-        <span class="hud-val">{m.fly_hud_eta_value({ day: Math.round(totalDays).toString() })}</span
-        >
+        <span class="hud-val">{m.fly_hud_eta_value({ day: Math.round(etaDays).toString() })}</span>
       </div>
     </aside>
 
@@ -6837,6 +6847,11 @@
      bottom/edge real-estate to the canvas. */
   .hud-stack.hidden {
     display: none;
+  }
+  /* Until the URL's flight is applied the HUD would show the default ORRERY-1 flight's
+     values (plan A10); keep its place, show nothing. */
+  .hud-stack.flight-pending {
+    visibility: hidden;
   }
 
   .capcom-panel {

@@ -1123,6 +1123,8 @@
   "fly_hud_trajectory": "TRAIETTORIA",
   "fly_traj_type_cislunar": "Trasferimento cislunare",
   "fly_traj_type_cislunar_free_return": "Ritorno libero cislunare",
+  "fly_traj_type_earth_orbit": "Orbita terrestre",
+  "fly_traj_type_suborbital": "Volo suborbitale",
   "fly_traj_type_helio_hohmann": "Trasferimento di Hohmann eliocentrico",
   "fly_traj_type_helio_free_return": "Ritorno libero eliocentrico",
   "fly_traj_type_helio_flyby": "Sorvolo eliocentrico",

@@ -1123,6 +1123,8 @@
   "fly_hud_trajectory": "軌道",
   "fly_traj_type_cislunar": "地月圏遷移",
   "fly_traj_type_cislunar_free_return": "地月圏自由帰還",
+  "fly_traj_type_earth_orbit": "地球軌道",
+  "fly_traj_type_suborbital": "弾道飛行",
   "fly_traj_type_helio_hohmann": "太陽中心ホーマン遷移",
   "fly_traj_type_helio_free_return": "太陽中心自由帰還",
   "fly_traj_type_helio_flyby": "太陽中心フライバイ",

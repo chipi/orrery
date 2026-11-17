@@ -87,6 +87,8 @@
     "validate-data": "tsx scripts/validate-data-runner.ts",
     "validate-image-integrity": "tsx scripts/validate-data-runner.ts --group=image",
     "gen:doc-counts": "node scripts/gen-doc-counts.mjs",
+    "llms:build": "node scripts/build-llms-txt.mjs",
+    "llms:check": "node scripts/build-llms-txt.mjs --check",
     "validate-diagrams": "tsx scripts/validate-diagrams.ts",
     "build-science-index": "tsx scripts/build-science-index.ts",
     "build-glossary": "node scripts/build-glossary.mjs",

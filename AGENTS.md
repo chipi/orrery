@@ -1079,6 +1079,8 @@ Reading order for any non-trivial task:
 
 When code and TA.md / ADRs disagree, one is wrong. Fix the wrong one. Do not tolerate divergence.
 
+**`llms.txt`** at the repo root is the agent index of all of this (llmstxt.org): one line per section of this file, the per-type indexes, and the docs per code area and per running service. It is generated (`npm run llms:build`, hand-kept part in `scripts/llms/llms-hand.mjs`) and `validate-data` fails when it is stale, so after adding or renaming a guide or a section here, rebuild it.
+
 ---
 
 ## What not to do

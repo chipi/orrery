@@ -10,6 +10,12 @@ For deep-dive engineering rationale, see [`IMPLEMENTATION.md`](IMPLEMENTATION.md
 
 ## [Unreleased]
 
+### Added
+
+- `llms.txt`: an index of the docs for coding agents (llmstxt.org), with the rules by section, the
+  decision indexes and the docs for each code area and service, generated and checked in
+  validate-data; a generated index of the guides (GitHub #666).
+
 ### Fixed
 
 - A fleet engine page (`/fleet/rd-180`, `/fleet/j-2`, …) in Hindi, Japanese and Korean never

@@ -186,6 +186,13 @@ The SEO code it checks: `src/lib/seo.ts` (canonical, hreflang, `metaDescription`
 applied in `src/hooks.server.ts`), `src/lib/json-ld.ts` + `JsonLd.svelte`, and
 `src/lib/sitemap.ts` (the `/sitemap.xml` index and `/sitemaps/<locale>.xml`).
 
+## Agent docs index — which tool, when
+
+| Question | Run | Where it runs |
+| --- | --- | --- |
+| rebuild `llms.txt` (the agent index of the docs, llmstxt.org, GitHub #666) and the generated `docs/guides/index.md` after adding or renaming a guide, an AGENTS.md section, or a doc in the hand-kept part (`llms/llms-hand.mjs`) | `npm run llms:build` | by hand |
+| are they current, does every link and AGENTS.md anchor resolve, is `llms.txt` under 30 KB | `npm run llms:check` | validate-data (`check-llms-txt`), so CI and the pre-push hook |
+
 **Manual tools no npm script or workflow runs** (read the header first):
 
 - `mobile/build-offline-manifest.mjs` — regenerates the committed

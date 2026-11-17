@@ -9,7 +9,7 @@ Operator guide for browser telemetry. **Source of truth: [ADR-082](../adr/ADR-08
 | Rung | GlitchTip project | Umami site | env tag | selected by |
 |---|---|---|---|---|
 | prod | 18 | prod | `prod` | `deploy-prod.yml` (`prod` GH env) |
-| dev | 7 | dev | `dev` | `sentry.ts` / `analytics.ts` fallback, over the Tailscale `homelab` host |
+| dev | 30 | dev | `dev` | `sentry.ts` / `analytics.ts` fallback, over the Tailscale `homelab` host |
 
 The integration shape is **env-gated, fork-silent by construction.** Deploy rungs bake `PUBLIC_*` from GH environment secrets a fork doesn't have; the dev rung's endpoints resolve only on our tailnet (`homelab`), so a stranger's `vite dev` transport-fails silently. `vite preview` / CI / screenshots are not `dev` and carry no baked vars → silent. No committed secrets — only the public DSN/site-id browser ids, which ship in the bundle by design.
 

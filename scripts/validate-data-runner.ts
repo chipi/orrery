@@ -119,6 +119,9 @@ const TASKS: Task[] = [
     cmd: 'node',
     args: ['scripts/i18n-coverage-scan.mjs', '--gate'],
   },
+  // llms.txt (the agent index of the docs, GitHub #666) and the generated guides index: stale,
+  // a link or AGENTS.md anchor that does not resolve, or over 30 KB. Fix with npm run llms:build.
+  { name: 'check-llms-txt', cmd: 'node', args: ['scripts/build-llms-txt.mjs', '--check'] },
   { name: 'validate-satellites', cmd: 'tsx', args: ['scripts/validate-satellites.ts'] },
   { name: 'validate-universe-stars', cmd: 'tsx', args: ['scripts/validate-universe-stars.ts'] },
   {

@@ -195,8 +195,7 @@ Superseded (do not use): ADR-002 (vanilla JS), ADR-003 (Vite standalone), ADR-00
 │   │   ├── link-provenance.ts            ← LEARN-link locale fallback chain (ADR-051)
 │   │   ├── image-credits.ts              ← per-image TASL parsing for lightbox
 │   │   ├── credits-grouping.ts           ← /credits page section grouping
-│   │   ├── library-grouping.ts           ← /library page section grouping
-│   │   └── license-allowlist.ts          ← canonical license allowlist (ADR-047)
+│   │   └── library-grouping.ts           ← /library page section grouping
 │   ├── workers/
 │   │   └── lambert.worker.ts
 │   └── types/

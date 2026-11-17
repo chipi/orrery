@@ -4,6 +4,7 @@
   "source_tier": "flagship",
   "payloadKg": 8000,
   "fairingKg": 1400,
+  "payloadSeparationDelayS": 50,
   "fairingJettisonAltM": 110000,
   "refAreaM2": 12,
   "cd": 0.3,
@@ -84,6 +85,10 @@
     {
       "l": "Spaceflight101 — H-IIA 202",
       "u": "https://web.archive.org/web/20240623022842/https://spaceflight101.com/spacerockets/h-iia-202/"
+    },
+    {
+      "l": "JAXA — H-IIA F15 (IBUKI, a 202) launch sequence: SECO 15:11, IBUKI separation 16:01, the payload separation delay 50 s (F14: 51 s)",
+      "u": "https://global.jaxa.jp/countdown/f15/overview/sequence_e.html"
     }
   ]
 }

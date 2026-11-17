@@ -4,6 +4,7 @@
   "source_tier": "flagship",
   "payloadKg": 9800,
   "fairingKg": 4000,
+  "payloadSeparationDelayS": 169,
   "fairingJettisonAltM": 120000,
   "fairingJettisonS": 210,
   "liftoffThrustKN": 10579,
@@ -86,7 +87,7 @@
       "u": "https://web.archive.org/web/20240614182605/https://spaceflight101.com/spacerockets/atlas-v-541/"
     },
     {
-      "l": "ULA — Atlas V Launch Services User's Guide Rev 11 (March 2010), Table 2.4.1-1: SRB jettison T+116-118 s, fairing 206-212 s, BECO 249-252 s, booster/Centaur separation 257-260 s. AJ-60A modelled at its burn-average thrust (94 s burn, jettisoned 23 s after burnout); the RD-180 at its throttled burn average",
+      "l": "ULA — Atlas V Launch Services User's Guide Rev 11 (March 2010), Table 2.4.1-1: SRB jettison T+116-118 s, fairing 206-212 s, BECO 249-252 s, booster/Centaur separation 257-260 s. AJ-60A modelled at its burn-average thrust (94 s burn, jettisoned 23 s after burnout); the RD-180 at its throttled burn average; 'Separate SC' 169 s after the last Centaur cutoff in every column (401 LEO 1,015 → 1,184 s; 401 GTO 1,689 → 1,858 s), the payload separation delay",
       "u": "https://www.ulalaunch.com/docs/default-source/rockets/atlasvusersguide2010a.pdf"
     }
   ]

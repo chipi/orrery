@@ -4,6 +4,7 @@
   "source_tier": "flagship",
   "payloadKg": 1337,
   "fairingKg": 1182,
+  "payloadSeparationDelayS": 47,
   "fairingJettisonAltM": 113000,
   "fairingJettisonS": 118,
   "refAreaM2": 11,
@@ -81,6 +82,10 @@
     {
       "l": "Dry masses derived from the 320 t liftoff mass less sourced propellant; solid thrusts are burn averages matching the ISRO burn times",
       "u": "https://www.isro.gov.in/mission_PSLV_C11.html"
+    },
+    {
+      "l": "ISRO — PSLV-C46 (RISAT-2B) and PSLV-C61 (EOS-09) brochures: payload separation 47.0 s after PS4 cutoff (882.42 → 929.42 s; 1,012.24 → 1,059.24 s), the payload separation delay",
+      "u": "https://www.isro.gov.in/media_isro/pdf/Missions/PSLVC46/PSLV_C46RISAT2B.pdf"
     }
   ]
 }

@@ -42,6 +42,8 @@
     ascentStatus,
     countdownSeconds,
     injectionPhaseStatus,
+    launchActEndS,
+    separationCoastStatus,
     padState,
   } from '$lib/orbital/ascent-hud';
   import {
@@ -153,10 +155,12 @@
   /** The burn's end. */
   const injectionBurnEnd = $derived(injectionSepT(duration));
   const injectionEnd = $derived(duration + INJECTION_BEAT_S);
+  /** The vehicle's published SECO → separation delay (backlog F1); used without an injection beat. */
+  const separationDelayS = $derived(profile.payloadSeparationDelayS ?? 0);
   /** End of the launch phase — SECO, or the end of the injection beat when present. */
-  const ascentEnd = $derived(injection ? injectionEnd : duration);
+  const ascentEnd = $derived(launchActEndS(duration, injection, separationDelayS));
   /** When the spacecraft separates, if not at SECO. */
-  const payloadSepT = $derived(payloadSepTFor(duration, injection));
+  const payloadSepT = $derived(payloadSepTFor(duration, injection, separationDelayS));
   const schedule = $derived(
     buildShotSchedule({
       events: summary.events,
@@ -210,7 +214,7 @@
   // The flight plan: liftoff, the ascent beats, then the parking orbit, injection burn and
   // spacecraft separation when the mission leaves orbit.
   // (One source with the markers on /fly's play bar: $lib/orbital/flight-plan-beats.)
-  const planBeats = $derived(buildPlanBeats(summary, injection));
+  const planBeats = $derived(buildPlanBeats(summary, injection, separationDelayS));
 
   let container: HTMLDivElement;
 
@@ -270,7 +274,7 @@
     injection
       ? (injectionPhaseStatus(t, duration, injectionBurnLabel(injection.burnType)) ??
           ascentStatus(t, beats))
-      : ascentStatus(t, beats),
+      : (separationCoastStatus(t, duration, payloadSepT) ?? ascentStatus(t, beats)),
   );
 
   // Begin the re-basing warp. The real handoff (onComplete) fires when it ends.

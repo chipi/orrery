@@ -169,6 +169,23 @@ test.describe('launch ascent HUD (desktop)', () => {
     expect(labels.some((l) => l.includes('PARKING'))).toBe(false);
   });
 
+  test('an Atlas V Earth-orbit flight (OTV-1) separates 169 s after SECO, not at it', async ({
+    page,
+  }) => {
+    await enterLaunch(page, 'otv-1');
+    // The plan lists a window of seven beats around the current one; seek to SECO on the play
+    // bar so the separation after it is in the window.
+    await page.locator('.journey-tick-button', { hasText: 'SECO' }).first().click();
+    const next = page.locator('.launch .plan li.next .lbl');
+    await expect(next).toHaveText(/separation|spacecraft sep/i, { timeout: 10_000 });
+    const nextTime = (await page.locator('.launch .plan li.next .time').textContent())?.trim();
+    expect(nextTime).toBeTruthy();
+    const rows = (await page.locator('.launch .plan .lbl').allTextContents()).map((s) =>
+      s.trim().toUpperCase(),
+    );
+    expect(rows.some((l) => l.includes('PARKING'))).toBe(false);
+  });
+
   test('scrubbing the master clock drives the ascent (MET advances)', async ({ page }) => {
     await enterLaunch(page, 'curiosity');
     const met = page.locator('.launch .clock .met');

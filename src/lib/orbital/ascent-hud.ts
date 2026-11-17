@@ -45,22 +45,49 @@ export function injectionSepT(ascentDurationS: number): number {
 }
 
 /**
- * When the spacecraft leaves the launcher, if not at SECO (undefined = at SECO, or no
- * injection beat). With a launcher injection it rides the stage through the burn and leaves
- * at its end; with its own kick stage (Shuttle + IUS) it is deployed midway through the
- * parking coast and the kick stage fires after; when the stage fires first and then the
- * kick stage (Delta II + Star 48B), they share the burn and part halfway through it.
+ * When the spacecraft leaves the launcher, if not at SECO (undefined = at SECO). With a launcher
+ * injection it rides the stage through the burn and leaves at its end; with its own kick stage
+ * (Shuttle + IUS) it is deployed midway through the parking coast and the kick stage fires after;
+ * when the stage fires first and then the kick stage (Delta II + Star 48B), they share the burn
+ * and part halfway through it. With no injection beat it leaves `separationDelayS` after SECO,
+ * the vehicle's published delay (LaunchProfile.payloadSeparationDelayS, backlog F1). The
+ * injection beat is cinematic time (its parking coast stands for hours), so the real delay is
+ * not added there.
  */
 export function payloadSepTFor(
   ascentDurationS: number,
   injection: { kickStage?: boolean; stageFiresFirst?: boolean } | null | undefined,
+  separationDelayS = 0,
 ): number | undefined {
-  if (!injection) return undefined;
+  if (!injection) return separationDelayS > 0 ? ascentDurationS + separationDelayS : undefined;
   const burnStart = ascentDurationS + INJECTION_COAST_S;
   if (injection.kickStage && injection.stageFiresFirst) return burnStart + INJECTION_BURN_S / 2;
   return injection.kickStage
     ? ascentDurationS + INJECTION_COAST_S * 0.5
     : injectionSepT(ascentDurationS);
+}
+
+/** Mission time (s) the launch act ends: the end of the injection beat, else spacecraft
+ *  separation (SECO when the vehicle has no published delay). */
+export function launchActEndS(
+  ascentDurationS: number,
+  injection: unknown,
+  separationDelayS = 0,
+): number {
+  return injection
+    ? ascentDurationS + INJECTION_BEAT_S
+    : ascentDurationS + Math.max(0, separationDelayS);
+}
+
+/** The status line between SECO and a delayed separation on a flight with no injection beat:
+ *  null before SECO (the caller falls back to `ascentStatus`), COAST, then SPACECRAFT SEP. */
+export function separationCoastStatus(
+  t: number,
+  ascentDurationS: number,
+  payloadSepT: number | undefined,
+): string | null {
+  if (payloadSepT === undefined || t < ascentDurationS) return null;
+  return t < payloadSepT ? 'COAST' : 'SPACECRAFT SEP';
 }
 
 /**

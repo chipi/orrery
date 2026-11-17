@@ -119,6 +119,15 @@ export interface LaunchProfile {
    */
   fairingJettisonS?: number;
   /**
+   * Seconds from SECO to spacecraft separation on a flight with no injection beat, from the
+   * vehicle's published sequence (backlog F1, sources in
+   * docs/wip/2026-11-17-launcher-timelines-sourced.md): Atlas V 169 s after the last Centaur
+   * cutoff (ULA user's guide, every column), PSLV-XL 47 s after PS4 cutoff (C46, C61), LVM3 15 s
+   * after C25 shut-off (M4), H-IIA 50 s after SECO (F15). The injection beat is cinematic time and ignores it. Unset:
+   * separation at SECO.
+   */
+  payloadSeparationDelayS?: number;
+  /**
    * The payload stays in the vehicle's bay for the whole launch (the Space Shuttle: it is
    * deployed hours later in orbit). No spacecraft-separation beat, no injection beat and no
    * payload deployment are drawn: the launch ends with the vehicle alone in orbit.

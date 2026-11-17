@@ -6,6 +6,7 @@
   "liftoffThrustKN": 10300,
   "loftBoost": true,
   "fairingKg": 3500,
+  "payloadSeparationDelayS": 15,
   "fairingJettisonAltM": 114800,
   "refAreaM2": 20,
   "cd": 0.3,
@@ -47,7 +48,7 @@
   ],
   "provenance": [
     {
-      "l": "ISRO — LVM3-M4 / Chandrayaan-3 brochure (nominal sequence: S200s alone at liftoff, L110 lit at 108.1 s, S200 separation 127 s, fairing 195 s at 114.8 km, C25 307.96–954.42 s; 642 t; propellant loads; 3,895 kg)",
+      "l": "ISRO — LVM3-M4 / Chandrayaan-3 brochure (nominal sequence: S200s alone at liftoff, L110 lit at 108.1 s, S200 separation 127 s, fairing 195 s at 114.8 km, C25 307.96–954.42 s; 642 t; propellant loads; 3,895 kg); satellite separation 969.42 s, 15 s after C25 shut-off, the payload separation delay",
       "u": "https://new1.isro.gov.in/media_isro/pdf/Missions/LVM3/LVM3M4_Chandrayaan3_brochure.pdf"
     },
     {

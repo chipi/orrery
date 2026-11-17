@@ -206,7 +206,7 @@
     DESCENT_SPEED_MULTIPLIERS,
     type JourneyTimeline,
   } from '$lib/orbital/ascent-clock';
-  import { T_MINUS_S, INJECTION_BEAT_S, payloadSepTFor } from '$lib/orbital/ascent-hud';
+  import { T_MINUS_S, launchActEndS, payloadSepTFor } from '$lib/orbital/ascent-hud';
   import { resolveInjectionBurn } from '$lib/physics/transfer/injection-burn';
   import { resolveOrbitInsertion } from '$lib/physics/transfer/orbit-insertion';
   import { orbitInsertionBurn } from '$lib/physics/transfer/orbit-insertion-burns';
@@ -1683,7 +1683,11 @@
   // spacecraft leaves the stage, not at SECO.
   let launchDurationS = $derived(
     launchSummaryFly
-      ? launchSummaryFly.totalDurationS + (launchInjectionBurn ? INJECTION_BEAT_S : 0)
+      ? launchActEndS(
+          launchSummaryFly.totalDurationS,
+          launchInjectionBurn,
+          launchProfile?.payloadSeparationDelayS,
+        )
       : 540,
   );
   // ─── Orbit-insertion beat (RFC-034 §12) — the arrival mirror of the launch
@@ -1733,7 +1737,11 @@
     launchSeparationTimes(
       launchSummaryFly,
       launchSummaryFly
-        ? payloadSepTFor(launchSummaryFly.totalDurationS, launchInjectionBurn)
+        ? payloadSepTFor(
+            launchSummaryFly.totalDurationS,
+            launchInjectionBurn,
+            launchProfile?.payloadSeparationDelayS,
+          )
         : undefined,
       launchProfile?.payloadInBay === true,
     ),
@@ -1797,7 +1805,11 @@
         timeline: hasLaunchAct ? masterTimeline : null,
         arcTotalDays,
         ascentBeats: launchSummaryFly
-          ? buildPlanBeats(launchSummaryFly, launchInjectionBurn).map((b) => ({
+          ? buildPlanBeats(
+              launchSummaryFly,
+              launchInjectionBurn,
+              launchProfile?.payloadSeparationDelayS,
+            ).map((b) => ({
               label: hudLabel(b.label),
               t: b.t,
             }))

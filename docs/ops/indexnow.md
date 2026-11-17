@@ -43,7 +43,7 @@ npm run indexnow -- --base https://www.orrerylearn.com --key <key>
 | 200 | URLs submitted |
 | 202 | accepted; the key file validation is still pending (normal on the first submission) |
 | 400 | invalid format |
-| 403 | key not valid: the key file is missing or its content differs from the key |
+| 403 | key not valid: the key file is missing or its content differs from the key. Also seen on the very first submission (2026-11-17) with a correct, live key file: both batches 403, then minutes later a one-URL request returned 200 and the full re-run 200. Check the key file, send one URL by hand, re-run |
 | 422 | URLs do not belong to the host, or the key does not match the schema |
 | 429 | too many requests (potential spam); the tool backs off and retries |
 

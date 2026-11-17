@@ -206,7 +206,7 @@
     {/if}
   </header>
 
-  {#each sections as sec (sec.label)}
+  {#each sections as sec, ki (ki + ':' + sec.label)}
     <section class="spine">
       <h2 class="page-section-label page-section-label--rule">{sec.label}</h2>
       {#each sec.blocks as block, i (i)}

@@ -226,7 +226,7 @@
   <section class="block">
     <h2 class="page-section-title">{m.reading_list_section_books()}</h2>
     <ul class="entries">
-      {#each books as book (book.title)}
+      {#each books as book, ki (ki + ':' + book.title)}
         <li class="entry">
           {#if book.cover}
             <div class="thumb thumb--portrait" aria-hidden="true">
@@ -265,7 +265,7 @@
   <section class="block">
     <h2 class="page-section-title">{m.reading_list_section_references()}</h2>
     <ul class="entries">
-      {#each references as ref (ref.title)}
+      {#each references as ref, ki (ki + ':' + ref.title)}
         <li class="entry">
           <div
             class="thumb thumb--square thumb--placeholder"
@@ -292,7 +292,7 @@
   <section class="block">
     <h2 class="page-section-title">{m.reading_list_section_blogs()}</h2>
     <ul class="entries">
-      {#each blogs as blog (blog.title)}
+      {#each blogs as blog, ki (ki + ':' + blog.title)}
         <li class="entry">
           {#if blog.cover}
             <div class="thumb thumb--square" aria-hidden="true">

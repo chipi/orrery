@@ -102,7 +102,7 @@
   <section class="technical">
     <h2 class="page-section-label">{m.panel_tab_technical()}</h2>
     <dl class="facts">
-      {#each data.rows as row (row.label)}
+      {#each data.rows as row, ki (ki + ':' + row.label)}
         <div>
           <dt>{row.label}</dt>
           <dd>
@@ -129,7 +129,7 @@
           {#if p.fact}<p class="dispatch">{p.fact}</p>{/if}
           {#if p.bio}<p>{p.bio}</p>{/if}
           <dl class="facts">
-            {#each data.planetRows[p.id] as row (row.label)}
+            {#each data.planetRows[p.id] as row, ki (ki + ':' + row.label)}
               <div>
                 <dt>{row.label}</dt>
                 <dd>{row.value}</dd>

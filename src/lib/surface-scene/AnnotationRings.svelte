@@ -430,7 +430,7 @@
       aria-hidden="true"
     >
       {#if preview.names}
-        {#each preview.names as name (name)}
+        {#each preview.names as name, ki (ki + ':' + name)}
           <span class="name mono">{name}</span>
         {/each}
       {:else if preview.annotation}

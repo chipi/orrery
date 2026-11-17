@@ -234,7 +234,7 @@
   <section class="block">
     <h2 class="page-section-title">{m.watch_list_section_scifi()}</h2>
     <ul class="entries">
-      {#each films as f (f.title)}
+      {#each films as f, ki (ki + ':' + f.title)}
         <li class="entry">
           {#if f.cover}
             <div class="thumb thumb--portrait" aria-hidden="true">
@@ -264,7 +264,7 @@
   <section class="block">
     <h2 class="page-section-title">{m.watch_list_section_documentaries()}</h2>
     <ul class="entries">
-      {#each docs as d (d.title)}
+      {#each docs as d, ki (ki + ':' + d.title)}
         <li class="entry">
           {#if d.cover}
             <div class="thumb thumb--portrait" aria-hidden="true">
@@ -298,7 +298,7 @@
   <section class="block">
     <h2 class="page-section-title">{m.watch_list_section_podcasts()}</h2>
     <ul class="entries">
-      {#each podcasts as p (p.title)}
+      {#each podcasts as p, ki (ki + ':' + p.title)}
         <li class="entry">
           {#if p.cover}
             <div class="thumb thumb--square" aria-hidden="true">
@@ -330,7 +330,7 @@
   <section class="block">
     <h2 class="page-section-title">{m.watch_list_section_youtube()}</h2>
     <ul class="entries">
-      {#each channels as c (c.title)}
+      {#each channels as c, ki (ki + ':' + c.title)}
         <li class="entry">
           {#if c.cover}
             <div class="thumb thumb--square" aria-hidden="true">

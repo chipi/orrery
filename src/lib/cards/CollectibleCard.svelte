@@ -101,7 +101,7 @@
 
     <div class="lower">
       <dl class="stats">
-        {#each spec.stats as s (s.label)}
+        {#each spec.stats as s, ki (ki + ':' + s.label)}
           <div class="stat">
             <dt>{s.label}</dt>
             <dd>{s.value}</dd>

@@ -183,7 +183,7 @@
             {#if epSources.length > 0}
               <span class="ep-sources-label">{m.library_episodes_sources_label()}</span>
               <ul class="ep-sources-list">
-                {#each epSources as src (src.label)}
+                {#each epSources as src, ki (ki + ':' + src.label)}
                   <li class="ep-source">
                     {#if logoFor(src.source_id)}
                       {@const logo = logoFor(src.source_id)}

@@ -38,7 +38,7 @@
 <ChipGroup role="radiogroup" {label} class="filter-group agency-filter">
   <span class="filter-label">{label}</span>
   <Chip kind="choice" active={value === 'ALL'} onclick={() => onSelect('ALL')}>{allLabel}</Chip>
-  {#each shown as a (a.name)}
+  {#each shown as a, ki (ki + ':' + a.name)}
     {@const full = agencyFullName(a.name)}
     <Chip
       kind="choice"

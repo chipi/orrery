@@ -23,7 +23,7 @@ The integration shape is **env-gated, fork-silent by construction.** Deploy rung
 
 - **Unhandled exceptions** during route navigation, load functions, and Svelte component lifecycle (wired via `handleErrorWithSentry()` in `src/hooks.client.ts`).
 - **Unhandled promise rejections** (Sentry's default `globalHandlers` integration catches `window.onerror` + `unhandledrejection`).
-- **NOTHING else.** No performance tracing (`tracesSampleRate: 0`). No Web Vitals. No session replay. No user identifiers. The `beforeSend` hook strips URL query + hash, nulls headers + cookies, and sets `ip_address: '0.0.0.0'` (Sentry's discard sentinel). The `beforeBreadcrumb` hook drops `ui.input` breadcrumbs entirely.
+- **NOTHING else.** No performance tracing (`tracesSampleRate: 0`). No Web Vitals. No session replay. No user identifiers. The `beforeSend` hook strips URL query + hash, nulls headers + cookies, and sets `ip_address: '0.0.0.0'` (Sentry's discard sentinel); it sends nothing from a crawler or automated browser (`isLikelyBot`, `src/lib/bot-ua.ts`, the same check analytics uses), from deploy chunk skew, or from a device without WebGL. The `beforeBreadcrumb` hook drops `ui.input` breadcrumbs entirely.
 
 See **[`src/lib/observability/sentry.ts`](../../src/lib/observability/sentry.ts)** for the full scrubber implementation.
 

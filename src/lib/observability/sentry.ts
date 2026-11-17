@@ -30,6 +30,7 @@ import { env as publicEnv } from '$env/dynamic/public';
 import { dev } from '$app/environment';
 import { isGuardReloading } from './preload-guard';
 import { scrubBreadcrumb } from './scrub-breadcrumb';
+import { isLikelyBot } from '$lib/bot-ua';
 
 // Git branch, injected by vite.config's `define`. Tags dev events by worktree.
 declare const __DEV_WORKTREE__: string;
@@ -98,7 +99,7 @@ export function initSentry(): void {
 
     // Tag every event `component: orrery` (+ `platform`) so streams stay separable in the
     // self-hosted GlitchTip shared with the podcast app. Per-environment projects: prod = 18,
-    // dev = 7 (the DSN's project id selects it). In dev, also tag the worktree
+    // dev = 30 (the DSN's project id selects it). In dev, also tag the worktree
     // (git branch) so parallel local sessions are distinguishable.
     initialScope: {
       tags: {
@@ -130,7 +131,11 @@ export function initSentry(): void {
       //    - deploy chunk-skew — a lazily-imported chunk 404s after a deploy; the
       //      vite:preloadError guard reloads to the fresh build.
       //    - anything thrown after the preload guard started a reload of this page (#616).
+      //    - a crawler's renderer (Googlebot, bingbot) or an automated browser: they abort
+      //      resource loads a visitor's browser completes ("Unable to preload CSS" for a file
+      //      nginx served with 200, ORRERY-PROD-4G/4H, 2026-11-16), and they are not visitors.
       if (isGuardReloading()) return null;
+      if (isLikelyBot()) return null;
       const exc = event.exception?.values?.[0];
       const sig = `${exc?.type ?? ''} ${exc?.value ?? ''}`;
       if (

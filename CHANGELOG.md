@@ -23,6 +23,14 @@ For deep-dive engineering rationale, see [`IMPLEMENTATION.md`](IMPLEMENTATION.md
   they now say "Earth orbit" or "Suborbital flight". Their ETA shows the real time on orbit
   (Vostok 1 read DAY 500), and the HUD no longer shows the demo flight's values while a mission
   loads.
+- 26 more lists that were keyed by their visible text (stats, facts, legends, reading and watch
+  lists, Lab rows) now key by position as well, so two rows with the same text in some language
+  can no longer stop a page; a unit test keeps new ones out.
+
+### Changed
+
+- Error reports from search-engine crawlers and automated browsers are no longer sent: their
+  renderers abort loads that visitors' browsers complete.
 
 ## [0.9.9] — 2026-11-16
 

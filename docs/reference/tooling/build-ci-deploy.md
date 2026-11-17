@@ -79,8 +79,11 @@ under the default 2 workers. Preflight does NOT run e2e.
 
 **Command** — `npm run preflight` (= `with-lock preflight -- node scripts/preflight-smart.mjs`).
 `npm run ci` aliases it.
-**What** — Smart runner: `git fetch origin main`, diffs `origin/main...HEAD` + working tree,
-categorizes changed paths, and runs only the relevant check subset. Routing: docs-only →
+**What** — Smart runner: `git fetch origin main`, diffs `origin/main...HEAD` + working tree
+(or, with `PREFLIGHT_BASE=<sha>`, only `<sha>..HEAD`: the husky hook sets it to the remote tip
+when a push updates one existing non-main branch, so a push checks what it adds, not the whole
+arc; a base that is not an ancestor after a rebase falls back to main, `scripts/lib/preflight-range.mjs`;
+`PREFLIGHT_FULL=1 git push` runs the full mirror, for the release push), categorizes changed paths, and runs only the relevant check subset. Routing: docs-only →
 secret scan; data-only → validate-data + build; messages-only → i18n + typecheck + build;
 audio-only → audio cost + build; tests-only → vitest `--changed` + build; source-code →
 typecheck + lint + vitest `--changed` + validate-data + secrets + build; static-asset-only →

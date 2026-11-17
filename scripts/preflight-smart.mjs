@@ -27,6 +27,7 @@
  */
 
 import { execSync, spawnSync } from 'node:child_process';
+import { preflightRange } from './lib/preflight-range.mjs';
 
 const log = (msg) => console.log(`▶ ${msg}`);
 const sh = (cmd) => execSync(cmd, { encoding: 'utf-8' });
@@ -54,10 +55,21 @@ function getChangedFiles() {
   // uncommitted working-tree changes. Empty if everything has shipped.
   let committed;
   let workingTree = '';
+  // PREFLIGHT_BASE: only what this push adds (scripts/lib/preflight-range.mjs, plan E3).
+  const { range, note } = preflightRange(process.env.PREFLIGHT_BASE, (sha) => {
+    try {
+      execSync(`git merge-base --is-ancestor ${sha} HEAD`, { stdio: 'pipe' });
+      return true;
+    } catch {
+      return false;
+    }
+  });
+  if (note) log(note);
+  log(`changed files from ${range}`);
   try {
-    committed = sh('git diff --name-only origin/main...HEAD').trim();
+    committed = sh(`git diff --name-only ${range}`).trim();
   } catch {
-    log('could not diff against origin/main — full preflight');
+    log(`could not diff ${range} — full preflight`);
     return null;
   }
   try {

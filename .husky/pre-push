@@ -45,7 +45,26 @@ echo "▶ preflight (mirror of CI: typecheck · lint · test · validate-data ·
 echo "  to skip: git push --no-verify"
 echo
 
-npm run preflight
+# What this push adds (plan E3): one branch ref, already on the remote, not main → the smart
+# preflight checks only <remote tip>..HEAD instead of everything since main, which on a long
+# arc branch always held a config file and so always ran the full mirror. A push to main, a
+# new branch or several refs at once keep the diff against origin/main; PREFLIGHT_FULL=1 (the
+# release push) runs the full mirror.
+if [ "${PREFLIGHT_FULL:-0}" = "1" ]; then
+  echo "▶ PREFLIGHT_FULL=1 → full preflight"
+  npm run preflight:full
+else
+  refs_n="$(printf '%s\n' "$non_delete" | grep -c . || true)"
+  remote_ref="$(printf '%s\n' "$non_delete" | awk 'NR==1{print $3}')"
+  remote_sha="$(printf '%s\n' "$non_delete" | awk 'NR==1{print $4}')"
+  if [ "$refs_n" = "1" ] && [ "$remote_ref" != "refs/heads/main" ] \
+    && [ -n "$remote_sha" ] && [ "$remote_sha" != "$ZERO_SHA" ]; then
+    echo "▶ checking what this push adds: ${remote_sha:0:11}..HEAD (PREFLIGHT_FULL=1 for the full mirror)"
+    PREFLIGHT_BASE="$remote_sha" npm run preflight
+  else
+    npm run preflight
+  fi
+fi
 
 if [ "${PREFLIGHT_INCLUDE_SMOKE:-0}" = "1" ]; then
   echo

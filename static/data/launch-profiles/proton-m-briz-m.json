@@ -6,6 +6,7 @@
   "loftBoost": true,
   "fairingKg": 2000,
   "fairingJettisonAltM": 120000,
+  "fairingJettisonS": 348.2,
   "refAreaM2": 43,
   "cd": 0.3,
   "launchSite": { "lat": 46.0336, "lon": 63.0289, "name": "Site 200/39 · Baikonur Cosmodrome" },
@@ -62,6 +63,10 @@
     {
       "l": "Spaceflight101 — ExoMars 2016 launch (14 Mar 2016; four Briz-M burns, separation 10 h 41 min after liftoff). Briz-M flies as stage 4 (its first burn completes the parking orbit); payload = TGO and Schiaparelli (4,332 kg); fairing mass estimated",
       "u": "https://web.archive.org/web/20220309130414/https://spaceflight101.com/exomars/exomars-2016-launch-timeline/"
+    },
+    {
+      "l": "ILS — Proton Launch System Mission Planner's Guide Rev 7 (July 2009), Table 2.3.1-1 and Figure 2.3.1-1: PLF jettison T+348.2 s (text: 340-350 s at 121-125 km), stage 3 / OU separation 588.4 s, Briz-M first burn 680-1129 s. The fairing is jettisoned at that time (backlog F3)",
+      "u": "https://www.ilslaunch.com/wp-content/uploads/pdf/PMPG%20Section%202.pdf"
     }
   ]
 }

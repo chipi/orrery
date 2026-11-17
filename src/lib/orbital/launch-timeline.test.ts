@@ -34,13 +34,12 @@ interface Row {
 
 const TIMELINES: Record<string, Row[]> = {
   'space-shuttle-stack': [
-    // SRBs jettisoned ~2 min after launch at ~45 km, burn 123 s (secondary: Wikipedia
-    // "Space Shuttle Solid Rocket Booster", "Space Shuttle").
-    { event: 'SRB sep', type: 'staging', nth: 0, real: 123, tol: 10 },
-    // MECO at T+8:30 (secondary: Wikipedia "Space Shuttle external tank").
-    { event: 'MECO', type: 'meco', real: 510, tol: 10 },
-    // ET separated 18 s after MECO (secondary: Wikipedia "Space Shuttle").
-    { event: 'ET sep', type: 'staging', nth: 1, real: 528, tol: 10 },
+    // NASA STS-68 Space Shuttle Mission Report (NSTS-08294), Table I: SRB separation command
+    // T+124 s ("T + 123.96 seconds"), MECO command 514 s, ET separation command 534 s
+    // (STS-39: 125, 515, 532; ET separation 17-20 s after MECO across the two flights).
+    { event: 'SRB sep', type: 'staging', nth: 0, real: 124, tol: 10 },
+    { event: 'MECO', type: 'meco', real: 514, tol: 10 },
+    { event: 'ET sep', type: 'staging', nth: 1, real: 534, tol: 10 },
   ],
   'atlas-v': [
     // Atlas V Launch Services User's Guide Rev 11 (March 2010), Table 2.4.1-1, the 521/531-class
@@ -50,6 +49,11 @@ const TIMELINES: Record<string, Row[]> = {
     { event: 'PLF jettison', type: 'fairing_jettison', real: 210, tol: 10 },
     { event: 'BECO', type: 'meco', real: 251, tol: 10 },
     { event: 'Centaur separation', type: 'staging', nth: 1, real: 259, tol: 10 },
+    // The 541 itself, ULA Mars 2020 mission booklet: SRB jettison 00:01:49.3, PLF 00:03:27.6,
+    // Atlas / Centaur separation 00:04:28.1.
+    { event: '541 SRB jettison', type: 'staging', nth: 0, real: 109.3, tol: 10 },
+    { event: '541 PLF jettison', type: 'fairing_jettison', real: 207.6, tol: 10 },
+    { event: '541 Centaur separation', type: 'staging', nth: 1, real: 268.1, tol: 10 },
   ],
   'delta-ii': [
     // Delta II Payload Planners Guide (Dec 2006), Table 2-1, 7925, eastern range:
@@ -90,8 +94,60 @@ const TIMELINES: Record<string, Row[]> = {
     { event: 'MECO-1', type: 'seco', real: 637.1, tol: 30 },
   ],
   'ariane-5': [
-    // EAP jettisoned 143 s into the mission (secondary: spaceflight101, Ariane 5 ECA).
-    { event: 'EAP jettison', type: 'staging', nth: 0, real: 143, tol: 10 },
+    // Ariane 5 VA256 (Webb) launch kit, Arianespace: EAP jettison +02:21, EPC shutdown and
+    // separation +08:47 (VA229 per spaceflight101: EAP 143 s).
+    { event: 'EAP jettison', type: 'staging', nth: 0, real: 141, tol: 10 },
+    { event: 'EPC separation', type: 'staging', nth: 1, real: 527, tol: 10 },
+  ],
+  'falcon-9': [
+    // NASA CRS-22 press kit: MECO 00:02:26, stage separation 00:02:30 (CRS-9: 141 / 144).
+    { event: 'MECO', type: 'meco', real: 146, tol: 10 },
+    { event: 'stage separation', type: 'staging', nth: 0, real: 150, tol: 10 },
+  ],
+  'falcon-heavy': [
+    // NASA Psyche press kit (SpaceX timeline): side boosters separate 00:02:28.
+    { event: 'side booster separation', type: 'staging', nth: 0, real: 148, tol: 10 },
+  ],
+  'soyuz-fg-fregat': [
+    // Soyuz CSG User's Manual Issue 2 (Arianespace, 2012), Figure 2.3.1a, Soyuz ST-B / Fregat
+    // (the guide's only table; Soyuz-FG from Baikonur has none): I-II separation 118.1, III
+    // stage cut-off 558.6.
+    { event: 'I-II separation', type: 'staging', nth: 0, real: 118.1, tol: 10 },
+    { event: 'III stage cut-off', type: 'seco', real: 558.6, tol: 30 },
+  ],
+  'saturn-ib': [
+    // NASA SP-4029 Apollo 7 timeline: S-IB outboard cutoff 144.32, S-IB/S-IVB separation 145.59.
+    { event: 'S-IB cutoff', type: 'meco', real: 144.32, tol: 10 },
+    { event: 'S-IB/S-IVB separation', type: 'staging', nth: 0, real: 145.59, tol: 10 },
+  ],
+  lvm3: [
+    // ISRO LVM3-M4 / Chandrayaan-3 brochure, nominal flight sequence: 2xS200 separation 127.00,
+    // L110 separation 305.56.
+    { event: 'S200 separation', type: 'staging', nth: 0, real: 127, tol: 10 },
+    { event: 'L110 separation', type: 'staging', nth: 1, real: 305.56, tol: 10 },
+  ],
+  'new-glenn': [
+    // NASA ESCAPADE blog, NG-2 launch milestones: MECO T+00:03:05, stage separation 00:03:09.
+    { event: 'MECO', type: 'meco', real: 185, tol: 10 },
+    { event: 'stage separation', type: 'staging', nth: 0, real: 189, tol: 10 },
+  ],
+  'vostok-k': [
+    // Vostok 1 launch timeline (secondary: russianspaceweb): stage I separation T+119, stage
+    // II separation T+299.
+    { event: 'stage I separation', type: 'staging', nth: 0, real: 119, tol: 10 },
+    { event: 'stage II separation', type: 'staging', nth: 1, real: 299, tol: 10 },
+  ],
+  'titan-iiie-centaur': [
+    // Voyager 2 launch sequence (secondary transcription of the JPL sequence): SRM separation
+    // T+2:02, stage 1 separation 4:15, stage 2 separation 7:50, Centaur MECO-1 9:48.
+    { event: 'SRM separation', type: 'staging', nth: 0, real: 122, tol: 10 },
+    { event: 'stage 1 separation', type: 'staging', nth: 1, real: 255, tol: 10 },
+    { event: 'stage 2 separation', type: 'staging', nth: 2, real: 470, tol: 10 },
+    { event: 'Centaur MECO-1', type: 'seco', real: 588, tol: 30 },
+  ],
+  'mercury-redstone': [
+    // Mercury-Redstone 3 (secondary: Wikipedia): engine shutdown two minutes 22 seconds after launch.
+    { event: 'Redstone shutdown', type: 'seco', real: 142, tol: 30 },
   ],
   'ariane-5g': [
     // Rosetta (Ariane 5 G+): the boosters burnt ~139 s before being jettisoned (ESA).
@@ -103,6 +159,8 @@ const TIMELINES: Record<string, Row[]> = {
     { event: 'stage 1 sep', type: 'staging', nth: 0, real: 119.7, tol: 10 },
     { event: 'stage 2 sep', type: 'staging', nth: 1, real: 327, tol: 10 },
     { event: 'stage 3 cutoff', type: 'staging', nth: 2, real: 571, tol: 10 },
+    // ILS Proton Mission Planner's Guide Rev 7, Table 2.3.1-1: PLF jettison 348.2 (backlog F3).
+    { event: 'fairing jettison', type: 'fairing_jettison', real: 348.2, tol: 10 },
   ],
   'long-march-2f': [
     // Strap-ons jettisoned at T+126 s, first stage burn 166 s (secondary: spaceflight101).
@@ -134,7 +192,34 @@ describe('launcher staging timelines vs the real nominal flight', () => {
   // Known gaps (docs/wip/2026-11-15-launcher-timeline-audit.md): the model cannot hold the
   // real time without losing the orbit, or the real time is unsourced.
   it.todo('h-iia: SRB-A jettison T+110 s (burn 100 s + 10 s; spaceflight101); model 73 s');
-  it.todo('proton-m-briz-m: fairing T+345 s (ExoMars 2016); model 174 s');
+  it.todo(
+    'proton-m-briz-m: Briz-M first-burn cutoff T+1129 s (ILS guide Figure 2.3.1-1); model 1099 s, 30.1 s early: no coast between stage 3 separation (588 s) and Briz-M ignition (680 s)',
+  );
+  it.todo(
+    'space-shuttle-stack: max-Q T+51 s (STS-68) / 67 s (STS-39); model 77 s: burn-average SRB thrust and no SSME throttle bucket (27 s down to 67 %)',
+  );
+  it.todo(
+    'atlas-v 541 (Mars 2020 booklet): BECO 262.1 s, MECO-1 into the parking orbit 687.9 s; model 251.9 / 878.6 s',
+  );
+  it.todo(
+    'falcon-heavy (Psyche press kit): core MECO 235 s, stage separation 239 s, fairing 264 s, SECO-1 506 s; model 183.8 / 183.8 / 157.3 / 427.5 s (no core throttle-down)',
+  );
+  it.todo(
+    'soyuz-fg-fregat (Soyuz CSG guide, ST-B): II-III separation 287.6 s, fairing 208.4 s ("tuned" per flight); model 313.8 / 165.0 s',
+  );
+  it.todo(
+    'saturn-ib (Apollo 7): S-IVB cutoff 616.76 s; model 543.2 s (the model cuts at a 180 km circular orbit)',
+  );
+  it.todo(
+    'lvm3 (M4): fairing 194.96 s, C25 shut-off 954.42 s; model 183.2 / 745.9 s (the model cuts at LEO, M4 went to 170 x 36,500 km)',
+  );
+  it.todo('new-glenn (NG-2): fairing 230 s, SECO-1 773 s; model 207.0 / 692.7 s');
+  it.todo('vostok-k (russianspaceweb): fairing T+154 s (150 s in another source); model 143.5 s');
+  it.todo('titan-iiie-centaur (Voyager 2 transcription): shroud jettison 266 s; model 198.1 s');
+  it.todo('ariane-5 (VA256): fairing 206 s; model 158.3 s');
+  it.todo(
+    'h3: the only sourced timeline (F8) is an H3-22S; the profile is an H3-24L, not compared',
+  );
   it.todo('long-march-5: stage-2 shutdown T+752 s (Chang e-5, everydayastronaut); model 720 s');
 });
 

@@ -12,6 +12,8 @@ For deep-dive engineering rationale, see [`IMPLEMENTATION.md`](IMPLEMENTATION.md
 
 ### Added
 
+- /fly: Artemis I flies its real path, from NASA/JPL's published ephemeris of Orion: both lunar
+  flybys and the distant retrograde orbit between them, drawn around /fly's Moon.
 - `llms.txt`: an index of the docs for coding agents (llmstxt.org), with the rules by section, the
   decision indexes and the docs for each code area and service, generated and checked in
   validate-data; a generated index of the guides (GitHub #666).

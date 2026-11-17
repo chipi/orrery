@@ -96,6 +96,33 @@ describe('computeMissionApply', () => {
       expect(r.timeline.arr_day - r.timeline.dep_day).toBe(2194);
     });
 
+    // Plan A12: a Moon round trip stopped at 2 x transit, so Artemis I could not be played past
+    // day 18 of 25.45 (its return flyby, the trip home) and Apollo 17 past day 8 of 12.6.
+    it('a Moon round trip ends at its recorded splashdown, not at twice the outbound', () => {
+      const moonTrip = (transit: number, splash: number) =>
+        computeMissionApply(
+          makeMission({
+            round_trip: true,
+            dest: 'MOON',
+            transit_days: transit,
+            flight: {
+              events: [
+                { met_days: 0, type: 'launch', label: 'Launch' },
+                { met_days: splash, type: 'earth_return', label: 'Splashdown' },
+              ],
+            },
+          } as Partial<Mission>),
+          DEFAULTS,
+        ).timeline;
+      const artemis = moonTrip(9, 25.45);
+      expect(artemis.arr_day - artemis.dep_day).toBeCloseTo(25.45, 6);
+      const apollo13 = moonTrip(4, 5.95); // shorter than 2 x 4: the free return
+      expect(apollo13.arr_day - apollo13.dep_day).toBeCloseTo(5.95, 6);
+      // A splashdown recorded before the arrival is a data error: twice the outbound stays.
+      const bad = moonTrip(4, 3);
+      expect(bad.arr_day - bad.dep_day).toBe(8);
+    });
+
     it('falls back to defaults.depFallback when departure_date is unparseable', () => {
       const m = makeMission({ departure_date: 'not-a-date', transit_days: 50 });
       const r = computeMissionApply(m, DEFAULTS);

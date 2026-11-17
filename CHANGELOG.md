@@ -37,6 +37,9 @@ For deep-dive engineering rationale, see [`IMPLEMENTATION.md`](IMPLEMENTATION.md
 - The era tiles on /missions/launches counted the launches of the last deploy, not of the
   6-hourly data refresh (7,645 against 7,849 on 2026-11-17): the refresh left the deploy's
   compressed copy of the year index in place.
+- /fly: a Moon round trip plays to its recorded splashdown. It used to stop at twice the
+  outbound time, so the last days could not be played: Artemis I stopped at day 18 of 25,
+  Apollo 17 at day 8 of 12.6, Chang'e 5 at day 16 of 23.
 - /explore and the Worlds: on a slow device the controls beside an opening side panel (the
   level card, the scale strip) could keep a position measured while the panel was still
   sliding in and end up under its edge; they now re-measure until the panel has settled.

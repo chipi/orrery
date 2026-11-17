@@ -919,7 +919,7 @@ The bot regenerates the four linux baselines (credits-head + science-tabs × des
 **Pre-tag dry run checklist:**
 
 1. `npm run preflight` — green (it now includes `npm run docs:build`, the VitePress site; a docs build error otherwise first shows up in Deploy docs after the merge)
-2. `npm run test:e2e -- --workers=1` — both projects green (or known-broken specs explicitly skipped with a comment)
+2. `npm run test:e2e -- --workers=1` — both projects green (or known-broken specs explicitly skipped with a comment); for the release push also in the CI image, `npm run docker:e2e -- --ci-image -- --project=<each project>` (four specs passed on the host and timed out on the CI runners in 0.9.9)
 3. `git push` — pre-push hook runs preflight again, must pass
 4. Push completes — wait for CI + e2e workflows on main, confirm both green
 5. Only then move the tag / cut the GitHub Release

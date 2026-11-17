@@ -20,20 +20,26 @@
 // The service is left running afterwards (like the primary's); stop it with
 // `npm run docker:down`. Worktree removal stops it via .config/workspace/teardown.
 import { spawnSync } from 'node:child_process';
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { pick, readWorkspaceEnv } from './workspace/env.mjs';
 
 const USAGE =
-  'usage: docker-e2e.mjs [--skip-build] [--smoke-only] [-- <playwright args>]\n' +
-  '  default Playwright args: --workers=1 --project=desktop-chromium';
+  'usage: docker-e2e.mjs [--skip-build] [--smoke-only] [--ci-image] [-- <playwright args>]\n' +
+  '  default Playwright args: --workers=1 --project=desktop-chromium\n' +
+  '  --ci-image: run Playwright in the CI image (the release gate, plan E5)';
 
 /**
  * @param {string[]} argv
- * @returns {{ skipBuild: boolean, smokeOnly: boolean, playwright: string[] }}
+ * @returns {{ skipBuild: boolean, smokeOnly: boolean, ciImage: boolean, playwright: string[] }}
  */
 export function parseArgs(argv) {
-  const opts = { skipBuild: false, smokeOnly: false, playwright: /** @type {string[]} */ ([]) };
+  const opts = {
+    skipBuild: false,
+    smokeOnly: false,
+    ciImage: false,
+    playwright: /** @type {string[]} */ ([]),
+  };
   for (let i = 0; i < argv.length; i++) {
     const a = argv[i];
     if (a === '--') {
@@ -42,9 +48,46 @@ export function parseArgs(argv) {
     }
     if (a === '--skip-build') opts.skipBuild = true;
     else if (a === '--smoke-only') opts.smokeOnly = true;
+    else if (a === '--ci-image') opts.ciImage = true;
     else throw new Error(`unexpected argument '${a}'\n${USAGE}`);
   }
   return opts;
+}
+
+/**
+ * `docker run` argv for Playwright in the image CI uses (`mcr.microsoft.com/playwright`
+ * at the pinned @playwright/test version), with the Linux node_modules that
+ * scripts/regenerate-visual-baselines-linux.sh keeps in `.linux-node-modules/`. The CI
+ * runners are slow (2 cores, no GPU) and four specs timed out there on 2026-11-16 that
+ * passed on the host; the release gate runs the suite in the same image (plan E5). Host
+ * networking reaches this checkout's `web` on localhost.
+ * @param {{ repoRoot: string, uid: number, gid: number, playwrightVersion: string, base: string, pwArgs: string[] }} o
+ * @returns {string[]}
+ */
+export function ciImageArgs(o) {
+  return [
+    'run',
+    '--rm',
+    '--ipc=host',
+    '--network=host',
+    '--user',
+    `${o.uid}:${o.gid}`,
+    '-v',
+    `${o.repoRoot}:/repo`,
+    '-v',
+    `${o.repoRoot}/.linux-node-modules:/repo/node_modules`,
+    '-w',
+    '/repo',
+    '-e',
+    'CI=true',
+    '-e',
+    'HOME=/tmp',
+    '-e',
+    `PLAYWRIGHT_BASE_URL=${o.base}`,
+    `mcr.microsoft.com/playwright:v${o.playwrightVersion.replace(/^[\^~]/, '')}-noble`,
+    'npx',
+    ...o.pwArgs,
+  ];
 }
 
 /**
@@ -151,9 +194,12 @@ export async function smokeCheck(base, hostVersion, fetchImpl) {
  *   exec: (cmd: string, args: string[], opts?: { capture?: boolean, env?: Record<string, string | undefined> }) => ExecResult,
  *   fetch: typeof fetch,
  *   readFile: (path: string) => string,
+ *   exists: (path: string) => boolean,
  *   log: (msg: string) => void,
  *   env: Record<string, string | undefined>,
  *   workspaceEnv: Record<string, string>,
+ *   uid: number,
+ *   gid: number,
  * }} Deps
  */
 
@@ -253,8 +299,31 @@ export async function run(argv, deps) {
 
   if (!opts.smokeOnly) {
     const pwArgs = playwrightArgs(opts.playwright);
-    step(`npx ${pwArgs.join(' ')} (PLAYWRIGHT_BASE_URL=${base})`);
-    const pw = exec('npx', pwArgs, { env: { ...deps.env, PLAYWRIGHT_BASE_URL: base } });
+    let pw;
+    if (opts.ciImage) {
+      const repoRoot = process.cwd();
+      if (!deps.exists(`${repoRoot}/.linux-node-modules/@playwright/test/package.json`)) {
+        log(
+          'docker-e2e: --ci-image needs the Linux node_modules in .linux-node-modules/ — ' +
+            'run scripts/regenerate-visual-baselines-linux.sh once (it installs them), then retry',
+        );
+        return fail('ci image (no .linux-node-modules)', 1);
+      }
+      const pkg = JSON.parse(deps.readFile('package.json'));
+      const args = ciImageArgs({
+        repoRoot,
+        uid: deps.uid,
+        gid: deps.gid,
+        playwrightVersion: pkg.devDependencies['@playwright/test'],
+        base,
+        pwArgs,
+      });
+      step(`docker ${args.join(' ')}`);
+      pw = exec('docker', args);
+    } else {
+      step(`npx ${pwArgs.join(' ')} (PLAYWRIGHT_BASE_URL=${base})`);
+      pw = exec('npx', pwArgs, { env: { ...deps.env, PLAYWRIGHT_BASE_URL: base } });
+    }
     if (pw.status !== 0) {
       dumpLogs();
       return fail('playwright', pw.status);
@@ -279,9 +348,12 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
     },
     fetch,
     readFile: (p) => readFileSync(p, 'utf8'),
+    exists: (p) => existsSync(p),
     log: (m) => console.log(m),
     env: process.env,
     workspaceEnv: readWorkspaceEnv(),
+    uid: process.getuid?.() ?? 1000,
+    gid: process.getgid?.() ?? 1000,
   };
   process.exitCode = await run(process.argv.slice(2), deps);
 }

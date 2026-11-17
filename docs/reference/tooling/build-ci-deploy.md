@@ -317,7 +317,11 @@ with `web` running leaves it serving the deleted `build/` until recreated: use `
 
 ## `npm run docker:e2e` → `scripts/docker-e2e.mjs`
 
-**Command** — `npm run docker:e2e [-- [--skip-build] [--smoke-only] [-- <playwright args>]]`
+**Command** — `npm run docker:e2e [-- [--skip-build] [--smoke-only] [--ci-image] [-- <playwright args>]]`
+`--ci-image` runs Playwright in `mcr.microsoft.com/playwright:v<pinned>-noble` (the image CI
+uses) with the Linux node_modules from `.linux-node-modules/` (installed by
+`scripts/regenerate-visual-baselines-linux.sh`), on the host network against this checkout's
+`web`: the release gate (plan E5), since specs that pass on the host can time out in that image.
 **What** — Local mirror of `docker-e2e.yml` for this checkout: `npm run build` →
 `docker compose up -d --build --force-recreate --wait web` → the workflow's smoke checks plus
 served `/_app/version.json` == host `build/_app/version.json` → `npx playwright test`

@@ -8,6 +8,15 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 For deep-dive engineering rationale, see [`IMPLEMENTATION.md`](IMPLEMENTATION.md). For locked architectural decisions, see [`docs/adr/`](docs/adr/).
 
+## [Unreleased]
+
+### Fixed
+
+- A fleet engine page (`/fleet/rd-180`, `/fleet/j-2`, …) in Hindi, Japanese and Korean never
+  finished loading its interactive parts: two of its related-hardware lists had the same title in
+  those languages ("Engines" and "Engine" are one word there) and the page stopped on a duplicate
+  key (GitHub #657).
+
 ## [0.9.9] — 2026-11-16
 
 A UI release: the teal accent is gone, one chip, filter and card system runs through every page,

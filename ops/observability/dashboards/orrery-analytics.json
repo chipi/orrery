@@ -26,7 +26,7 @@
         "name": "site",
         "label": "Site",
         "type": "custom",
-        "query": "prod : 4a25d8da-63a1-4ef7-b9d3-1b6b8c8a6bce, staging : 6e7ddfce-1437-49b9-8b77-a36d3584ccad",
+        "query": "prod : 4a25d8da-63a1-4ef7-b9d3-1b6b8c8a6bce, dev : 90cbabf7-ae88-45c9-a417-0cd808749602",
         "current": {
           "text": "prod",
           "value": "4a25d8da-63a1-4ef7-b9d3-1b6b8c8a6bce"

@@ -32,6 +32,10 @@ interface Row {
   tol: number;
 }
 
+/** The event time a row reads: Max-Q from the summary (it is not an event), else the event. */
+const rowTime = (sum: ReturnType<typeof integrateAscent>, r: Row): number | undefined =>
+  r.type === 'max_q' ? sum.maxQ.t : first(sum.events, r.type, r.nth ?? 0);
+
 const TIMELINES: Record<string, Row[]> = {
   'space-shuttle-stack': [
     // NASA STS-68 Space Shuttle Mission Report (NSTS-08294), Table I: SRB separation command
@@ -40,6 +44,9 @@ const TIMELINES: Record<string, Row[]> = {
     { event: 'SRB sep', type: 'staging', nth: 0, real: 124, tol: 10 },
     { event: 'MECO', type: 'meco', real: 514, tol: 10 },
     { event: 'ET sep', type: 'staging', nth: 1, real: 534, tol: 10 },
+    // Max dynamic pressure T+51 s (STS-68, the flight whose throttle schedule the profile flies;
+    // STS-39, with a different schedule, 67 s).
+    { event: 'max-Q', type: 'max_q', real: 51, tol: 10 },
   ],
   'atlas-v': [
     // Atlas V Launch Services User's Guide Rev 11 (March 2010), Table 2.4.1-1, the 521/531-class
@@ -105,8 +112,24 @@ const TIMELINES: Record<string, Row[]> = {
     { event: 'stage separation', type: 'staging', nth: 0, real: 150, tol: 10 },
   ],
   'falcon-heavy': [
-    // NASA Psyche press kit (SpaceX timeline): side boosters separate 00:02:28.
-    { event: 'side booster separation', type: 'staging', nth: 0, real: 148, tol: 10 },
+    // NASA, key milestones for Europa Clipper's launch (all cores expended; the profile's
+    // flight): side boosters separate 3:07, core MECO 4:02, stage separation 4:06, fairing
+    // 4:31, SECO-1 7:53. Max Q 1:07 and MECO are what the core throttle (100 % to 20 s, then
+    // 46 %) is fitted to; SECO-1 is not fitted. (Psyche, side boosters recovered: 148 / 235 s.)
+    { event: 'side booster separation', type: 'staging', nth: 0, real: 187, tol: 10 },
+    { event: 'max-Q (fitted)', type: 'max_q', real: 67, tol: 10 },
+    { event: 'core MECO (fitted)', type: 'meco', real: 242, tol: 10 },
+    { event: 'stage separation', type: 'staging', nth: 1, real: 246, tol: 10 },
+    { event: 'fairing (scheduled input)', type: 'fairing_jettison', real: 271, tol: 10 },
+    { event: 'SECO-1', type: 'seco', real: 473, tol: 30 },
+  ],
+  'h-iia': [
+    // JAXA H-IIA brochure 2025, H2A202 flight sequence example: SRB-A separation 107 s (burnout
+    // 97 s), fairing 250 s, MECO 396 s, first / second stage separation 404 s.
+    { event: 'SRB-A separation', type: 'staging', nth: 0, real: 107, tol: 10 },
+    { event: 'fairing (scheduled input)', type: 'fairing_jettison', real: 250, tol: 10 },
+    { event: 'MECO', type: 'meco', real: 396, tol: 10 },
+    { event: 'stage separation', type: 'staging', nth: 1, real: 404, tol: 10 },
   ],
   'soyuz-fg-fregat': [
     // Soyuz CSG User's Manual Issue 2 (Arianespace, 2012), Figure 2.3.1a, Soyuz ST-B / Fregat
@@ -181,7 +204,7 @@ describe('launcher staging timelines vs the real nominal flight', () => {
       const sum = integrateAscent(load(id));
       for (const r of rows) {
         it(`${r.event} at ~T+${r.real} s (±${r.tol})`, () => {
-          const t = first(sum.events, r.type, r.nth ?? 0);
+          const t = rowTime(sum, r);
           expect(t).toBeDefined();
           expect(Math.abs((t as number) - r.real)).toBeLessThanOrEqual(r.tol);
         });
@@ -191,18 +214,14 @@ describe('launcher staging timelines vs the real nominal flight', () => {
 
   // Known gaps (docs/wip/2026-11-15-launcher-timeline-audit.md): the model cannot hold the
   // real time without losing the orbit, or the real time is unsourced.
-  it.todo('h-iia: SRB-A jettison T+110 s (burn 100 s + 10 s; spaceflight101); model 73 s');
   it.todo(
     'proton-m-briz-m: Briz-M first-burn cutoff T+1129 s (ILS guide Figure 2.3.1-1); model 1099 s, 30.1 s early: no coast between stage 3 separation (588 s) and Briz-M ignition (680 s)',
   );
   it.todo(
-    'space-shuttle-stack: max-Q T+51 s (STS-68) / 67 s (STS-39); model 77 s: burn-average SRB thrust and no SSME throttle bucket (27 s down to 67 %)',
+    'space-shuttle-stack: the real MECO leaves a low perigee and OMS-2 completes the orbit (STS-68 OMS-2 at T+2110 s, 99 s); the model, flying to a 180 km circular target, reaches orbit 1.7 s before MECO, and MECO is 521.8 s against 514 s. A heavier orbiter (the STS-68 report implies about 110 t with payload, model 105 t) loses the orbit: the 53 kN OMS insertion does not close',
   );
   it.todo(
     'atlas-v 541 (Mars 2020 booklet): BECO 262.1 s, MECO-1 into the parking orbit 687.9 s; model 251.9 / 878.6 s',
-  );
-  it.todo(
-    'falcon-heavy (Psyche press kit): core MECO 235 s, stage separation 239 s, fairing 264 s, SECO-1 506 s; model 183.8 / 183.8 / 157.3 / 427.5 s (no core throttle-down)',
   );
   it.todo(
     'soyuz-fg-fregat (Soyuz CSG guide, ST-B): II-III separation 287.6 s, fairing 208.4 s ("tuned" per flight); model 313.8 / 165.0 s',
@@ -226,10 +245,11 @@ describe('launcher staging timelines vs the real nominal flight', () => {
 describe('Space Shuttle ascent: no SECO, the tank leaves 18 s after MECO', () => {
   const sum = integrateAscent(load('space-shuttle-stack'));
 
-  it('the SRBs burn a real 123 s on a burn-average thrust, not 94 s at peak thrust', () => {
+  it('the SRBs follow the STS-68 impulse gates and separate at T+123.4 s', () => {
     const srb = load('space-shuttle-stack').boosters!;
-    expect(srb.thrustSlKN).toBeLessThan(12000); // average, not the 12 MN liftoff figure
-    expect(first(sum.events, 'staging', 0)).toBeGreaterThan(115);
+    expect(srb.thrustSlKN).toBeLessThan(12000); // the rating the gates scale, not the 12 MN peak
+    expect(srb.impulseGates?.length).toBe(3);
+    expect(Math.abs(first(sum.events, 'staging', 0)! - 123.4)).toBeLessThan(1);
   });
 
   it('ET separation trails MECO by the stage separationDelayS', () => {
@@ -251,7 +271,11 @@ describe('Space Shuttle ascent: no SECO, the tank leaves 18 s after MECO', () =>
     const labels = beats.map((b) => b.label);
     expect(labels).not.toContain('SECO');
     expect(labels.filter((l) => l === 'MECO')).toHaveLength(1);
-    expect(labels.at(-1)).toBe('ORBIT');
+    // The model reaches its 180 km orbit on the main engines about 2 s before MECO (the
+    // STS-68 throttle schedule and impulse gates); see the it.todo above for the real flight.
+    expect(labels).toContain('ORBIT');
+    const orbit = beats.find((b) => b.label === 'ORBIT')!;
+    expect(orbit.t).toBeGreaterThan(beats.find((b) => b.label === 'MECO')!.t - 5);
     const meco = beats.find((b) => b.label === 'MECO')!;
     const sep = beats.filter((b) => b.label === 'STAGE SEP').at(-1)!;
     expect(sep.t - meco.t).toBeGreaterThan(17);

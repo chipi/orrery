@@ -45,8 +45,13 @@ describe('payloadInBay (the Space Shuttle keeps its payload in the bay)', () => 
   it('the slow-motion separation times drop the SECO payload event for the Shuttle only', () => {
     const sum = integrateAscent(shuttle);
     const seco = sum.events.find((e) => e.type === 'seco')!.t;
-    expect(launchSeparationTimes(sum, undefined, false)).toContain(seco);
-    expect(launchSeparationTimes(sum, undefined, true)).not.toContain(seco);
+    const withSeco = launchSeparationTimes(sum, undefined, false);
+    const inBay = launchSeparationTimes(sum, undefined, true);
+    expect(withSeco).toContain(seco);
+    // The Shuttle's SECO can share its step with the tank separation (it reaches orbit on the
+    // main engines), so compare the lists: the flag drops exactly the one SECO entry.
+    expect(inBay).toEqual(withSeco.slice(0, -1));
+    expect(withSeco.at(-1)).toBe(seco);
   });
 
   it('a non-Shuttle profile keeps its beats unchanged', () => {

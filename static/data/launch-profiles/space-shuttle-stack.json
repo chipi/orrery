@@ -15,12 +15,30 @@
     "name": "LC-39 · Kennedy Space Center"
   },
   "pitchProgram": [
-    [0, 90],
-    [12, 89],
-    [45, 80],
-    [140, 64],
-    [320, 48],
-    [500, 34]
+    [
+      0,
+      90
+    ],
+    [
+      12,
+      89
+    ],
+    [
+      45,
+      80
+    ],
+    [
+      140,
+      64
+    ],
+    [
+      320,
+      48
+    ],
+    [
+      500,
+      34
+    ]
   ],
   "boosters": {
     "name": "SRB",
@@ -31,20 +49,25 @@
     "thrustVacKN": 10660,
     "ispSlS": 242,
     "ispVacS": 268,
-    "chamberTempK": 3500
+    "chamberTempK": 3500,
+    "impulseGates": [{ "t": 20, "fraction": 0.222 }, { "t": 60, "fraction": 0.5919 }, { "t": 120.55, "fraction": 1 }],
+    "separationDelayS": 2.85
   },
   "stages": [
     {
       "name": "SSME + ET",
       "wetKg": 751000,
       "dryKg": 26500,
-      "thrustSlKN": 5250,
+      "thrustSlKN": 5010,
       "thrustVacKN": 6270,
       "ispSlS": 366,
       "ispVacS": 452,
       "engines": 3,
       "separationDelayS": 18,
-      "chamberTempK": 3600
+      "chamberTempK": 3600,
+      "throttle": [{ "t": 3.8, "level": 1.04 }, { "t": 27.3, "level": 0.67 }, { "t": 60.4, "level": 1.04 }],
+      "maxAccelG": 3,
+      "minThrottle": 0.67
     },
     {
       "name": "Orbiter",
@@ -62,7 +85,7 @@
       "u": "https://www.nasa.gov/space-shuttle/"
     },
     {
-      "l": "Space Shuttle Solid Rocket Booster — 123 s burn, 500 t propellant, Isp 242 s SL / 268 s vac, SRB sep ~45 km (modelled at burn-average thrust: constant 4,057 kg/s so burnout lands at 123 s; the ~12 MN liftoff peak is liftoffThrustKN)",
+      "l": "Space Shuttle Solid Rocket Booster — 123 s burn, 500 t propellant, Isp 242 s SL / 268 s vac, SRB sep ~45 km; the thrust-time curve is the STS-68 report's impulse gates (the model's liftoff thrust, from the first gate segment, is about 31.3 MN; the HUD's liftoff figure is liftoffThrustKN)",
       "u": "https://en.wikipedia.org/wiki/Space_Shuttle_Solid_Rocket_Booster"
     },
     {
@@ -72,6 +95,14 @@
     {
       "l": "NASA — STS-68 Space Shuttle Mission Report (NSTS-08294), Table I: SRB separation T+124 s, MECO 514 s, ET separation 534 s (20 s after MECO; STS-39: 17 s), max dynamic pressure T+51 s (STS-39: 67 s)",
       "u": "https://ibiblio.org/apollo/Shuttle/Reports/Mission%20Reports/STS-68%20Space%20Shuttle%20Mission%20Report.pdf"
+    },
+    {
+      "l": "NASA — STS-68 Space Shuttle Mission Report, RSRM propulsion performance (p. 12), actual: impulse gates I-20 65.9, I-60 175.7, I-AT 296.9 million lbf-s per motor, action time 120.6 s, separation command 123.4 s; Table I: main engines 104 % at T+3.8 s, 67 % at 27.3 s, 104 % at 60.4 s, throttled for 3 g at 450.2 s",
+      "u": "https://ibiblio.org/apollo/Shuttle/Reports/Mission%20Reports/STS-68%20Space%20Shuttle%20Mission%20Report.pdf#page=14"
+    },
+    {
+      "l": "RS-25 — Wikipedia: 1,670 kN sea level / 2,090 kN vacuum at 100 % RPL (the 104.5 % figures are 1,750 / 2,170 kN), throttle range 67-109 %",
+      "u": "https://en.wikipedia.org/wiki/RS-25"
     }
   ]
 }

@@ -59,6 +59,16 @@ export interface LaunchStage {
    *  Shuttle's external tank leaves ~18 s after MECO, the orbiter coasting with it). The
    *  MECO beat is at the cutoff, the STAGE SEP beat this long after. Absent = at the cutoff. */
   separationDelayS?: number;
+  /** Throttle commands in mission time, held until the next one (the Shuttle's main engines:
+   *  104 % at T+4 s, 67 % at T+27 s through max-Q, 104 % at T+60 s). The thrust values above
+   *  are the 100 % rating. Absent = 100 % throughout. */
+  throttle?: ThrottleStep[];
+  /** Acceleration limit (multiples of g0): the stage throttles down to hold it (the Shuttle's
+   *  3 g from about T+450 s to MECO). Absent = no limit. */
+  maxAccelG?: number;
+  /** Lowest throttle level the engines reach (the RS-25: 67 %); the acceleration limit cannot
+   *  throttle below it. Absent = no floor. */
+  minThrottle?: number;
 }
 
 /**
@@ -92,6 +102,25 @@ export interface LaunchBoosters {
    *  AJ-60As from burnout at T+94 s to T+117 s; SRB-A 10 s; PSLV's PSOM-XLs ~20 s). The
    *  STAGE SEP beat is at the jettison. Absent = jettisoned at burnout. */
   separationDelayS?: number;
+  /** The motor's published thrust-time curve as impulse gates: the fraction of its total
+   *  impulse delivered by `t` seconds after ignition, rising to 1 at the last gate (the action
+   *  time). Each segment between gates burns at the constant mass flow that delivers its share
+   *  of the propellant, so the boost phase follows the real curve (the Shuttle RSRM's high
+   *  liftoff thrust and its max-Q bucket) and burns out at the last gate. Absent = constant
+   *  thrust until the propellant is spent. */
+  impulseGates?: ImpulseGate[];
+}
+
+/** One impulse gate: `fraction` (0-1) of the total impulse delivered by `t` s after ignition. */
+export interface ImpulseGate {
+  t: number;
+  fraction: number;
+}
+
+/** One throttle command: from mission time `t` (s) the stage runs at `level` x its rated thrust. */
+export interface ThrottleStep {
+  t: number;
+  level: number;
 }
 
 /** A launch vehicle's ascent profile. See RFC-034 §6 for the shipped JSON schema. */
@@ -390,14 +419,22 @@ export function stackIdealDv(profile: LaunchProfile): number {
   let m = aboveCore + core.wetKg + groups.reduce((k, g) => k + g.wetKg, 0); // on the pad
   let t = 0;
   for (const g of groups) {
-    const Tb = (g.thrustVacKN ?? 0) * 1000;
     const veB = g.ispVacS * G0;
-    const mdotB = veB > 0 ? Tb / veB : 0;
     const prop = stagePropellant(g);
-    const tBurn = mdotB > 0 ? prop / mdotB : 0;
-    const coreOn = Math.max(0, t + tBurn - Math.max(t, ignition));
-    const coreDuring = Math.min(coreLeft, mdotC * coreOn);
-    const share = tBurn > 0 ? coreOn / tBurn : 0; // the core's average share of the phase
+    // With impulse gates the motor burns out at its last gate, at the average flow that spends
+    // its propellant by then, not at the rated mass flow.
+    const gates = profile.boosters.impulseGates;
+    const mdotRated = veB > 0 ? ((g.thrustVacKN ?? 0) * 1000) / veB : 0;
+    const tBurn = gates?.length ? gates[gates.length - 1].t : mdotRated > 0 ? prop / mdotRated : 0;
+    const mdotB = gates?.length ? (tBurn > 0 ? prop / tBurn : 0) : mdotRated;
+    const Tb = mdotB * veB;
+    // The core burns at its commanded throttle (the Falcon Heavy core at 46 % beside its side
+    // boosters); its acceleration limit acts late in its own burn and is not modelled here.
+    const coreStart = Math.max(t, ignition);
+    const coreOn = Math.max(0, t + tBurn - coreStart);
+    const level = coreOn > 0 ? meanThrottle(core, coreStart, coreStart + coreOn) : 1;
+    const coreDuring = Math.min(coreLeft, mdotC * level * coreOn);
+    const share = tBurn > 0 ? (coreOn * level) / tBurn : 0; // the core's average flow share
     const ve = mdotB + mdotC * share > 0 ? (Tb + Tc * share) / (mdotB + mdotC * share) : veB;
     const burn = prop + coreDuring;
     if (burn > 0 && m - burn > 0) dv += ve * Math.log(m / (m - burn));
@@ -427,6 +464,56 @@ export function stageThrustN(stage: LaunchStage, altM: number): number {
 export function stageIspS(stage: LaunchStage, altM: number): number {
   if (stage.ispSlS == null) return stage.ispVacS;
   return stage.ispVacS - (stage.ispVacS - stage.ispSlS) * pressureRatio(altM);
+}
+
+/** The mean commanded throttle level of a stage over mission time [t0, t1] (step commands). */
+export function meanThrottle(stage: LaunchStage, t0: number, t1: number): number {
+  const steps = stage.throttle ?? [];
+  if (steps.length === 0 || t1 <= t0) return 1;
+  const edges = [t0, ...steps.map((st) => st.t).filter((x) => x > t0 && x < t1), t1];
+  let sum = 0;
+  for (let i = 0; i + 1 < edges.length; i++) {
+    sum += throttleLevel(stage, edges[i]) * (edges[i + 1] - edges[i]);
+  }
+  return sum / (t1 - t0);
+}
+
+/** The throttle level (fraction of rated thrust) a stage is commanded to at mission time t. */
+export function throttleLevel(stage: LaunchStage, t: number): number {
+  let level = 1;
+  for (const step of stage.throttle ?? []) {
+    if (t >= step.t) level = step.level;
+  }
+  return level;
+}
+
+/**
+ * Thrust multiplier of a booster `sinceIgnitionS` seconds into its burn, from its impulse
+ * gates: on each segment the mass flow that spends that segment's share of `propKg`, against
+ * the booster's rated vacuum mass flow. 1 when the booster has no gates. Past the last gate
+ * the last segment's value holds (any propellant left from the altitude-dependent Isp burns
+ * out at the same rate).
+ */
+export function boosterThrustMultiplier(
+  b: Pick<LaunchBoosters, 'impulseGates' | 'thrustSlKN' | 'thrustVacKN' | 'ispSlS' | 'ispVacS'>,
+  propKg: number,
+  sinceIgnitionS: number,
+): number {
+  const gates = b.impulseGates;
+  if (!gates || gates.length === 0) return 1;
+  const mdotVac = ((b.thrustVacKN ?? b.thrustSlKN) * N_PER_KN) / ((b.ispVacS ?? b.ispSlS) * G0);
+  if (mdotVac <= 0) return 1;
+  let t0 = 0;
+  let f0 = 0;
+  for (const g of gates) {
+    if (sinceIgnitionS < g.t || g === gates[gates.length - 1]) {
+      const dt = g.t - t0;
+      return dt > 0 ? ((g.fraction - f0) * propKg) / dt / mdotVac : 1;
+    }
+    t0 = g.t;
+    f0 = g.fraction;
+  }
+  return 1;
 }
 
 // ─── Pitch program ──────────────────────────────────────────────────
@@ -591,6 +678,8 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
     air: boolean;
     dropped: boolean;
     burnoutAt?: number;
+    /** Mission time the group lit (its impulse gates count from here). */
+    litAt?: number;
   };
   const groups: BoosterGroup[] = profile.boosters
     ? [
@@ -613,6 +702,33 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
       ]
     : [];
   for (const g of groups) g.prop = stagePropellant(g.stage);
+  const boosterPropEach = profile.boosters
+    ? Math.max(0, profile.boosters.wetKg - profile.boosters.dryKg)
+    : 0;
+  // A lit group's thrust (and mass flow) follows the booster's impulse gates, timed from when
+  // the group lit. The gates fix the MASS FLOW of each segment; at altitude the thrust is that
+  // flow times the local Isp, so a motor whose sea-level and vacuum flows differ (H-IIA SRB-A,
+  // Falcon side boosters) still burns out on its last gate.
+  const groupMultiplier = (g: BoosterGroup, alt: number): number => {
+    const b = profile.boosters;
+    if (!b?.impulseGates?.length) return 1;
+    const k = boosterThrustMultiplier(b, boosterPropEach, t - (g.litAt ?? t));
+    const mdotVac = stageThrustN(g.stage, Infinity) / (stageIspS(g.stage, Infinity) * G0);
+    const mdotHere = stageThrustN(g.stage, alt) / (stageIspS(g.stage, alt) * G0);
+    return mdotHere > 0 ? (k * mdotVac) / mdotHere : k;
+  };
+  // The active stage's thrust at this altitude and time: its throttle command, capped by its
+  // acceleration limit (the boosters' thrust counts against the cap).
+  const coreThrustAt = (alt: number, mass: number, boostThrust: number): number => {
+    const stage = profile.stages[stageIndex];
+    const rated = stageThrustN(stage, alt);
+    let thrust = rated * throttleLevel(stage, t);
+    if (stage.maxAccelG != null) {
+      const floor = rated * (stage.minThrottle ?? 0);
+      thrust = Math.min(thrust, Math.max(floor, stage.maxAccelG * G0 * mass - boostThrust));
+    }
+    return thrust;
+  };
   const airLitAt = profile.boosters?.airLitIgnitionS;
   const groupLit = (g: BoosterGroup): boolean =>
     !g.dropped && g.prop > 0 && (!g.air || (airLitAt != null ? t >= airLitAt : groups[0].dropped));
@@ -755,8 +871,13 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
   // Liftoff: engine lit at full stage-0 (+ booster) thrust so the t=0 snapshot
   // isn't engine-dark before the loop first updates lastThrust.
   lastThrust =
-    (coreIgnitionS <= 0 ? stageThrustN(profile.stages[0], 0) : 0) +
-    groups.reduce((k, g) => k + (groupLit(g) ? stageThrustN(g.stage, 0) : 0), 0);
+    (coreIgnitionS <= 0
+      ? stageThrustN(profile.stages[0], 0) * throttleLevel(profile.stages[0], 0)
+      : 0) +
+    groups.reduce(
+      (k, g) => k + (groupLit(g) ? stageThrustN(g.stage, 0) * groupMultiplier(g, 0) : 0),
+      0,
+    );
   pushEvent('liftoff');
   states.push(snapshot());
   let nextSampleT = sampleDt;
@@ -798,11 +919,15 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
 
     // Strap-on boosters (fire in parallel with stage 0 along the body axis).
     const litGroups = stageIndex === 0 ? groups.filter(groupLit) : [];
-    const boostThrust = litGroups.reduce((k, g) => k + stageThrustN(g.stage, alt), 0);
+    for (const g of litGroups) g.litAt ??= t;
+    const boostThrust = litGroups.reduce(
+      (k, g) => k + stageThrustN(g.stage, alt) * groupMultiplier(g, alt),
+      0,
+    );
     // Core thrust IF the engine is lit (propellant remaining on the active stage).
     const coreThrustLit =
       stageIndex >= 0 && remainingProp > 0 && !(stageIndex === 0 && t < coreIgnitionS)
-        ? stageThrustN(profile.stages[stageIndex], alt)
+        ? coreThrustAt(alt, m, boostThrust)
         : 0;
 
     // Guidance. Below the handover the aero-safe pitch table drives the gravity
@@ -971,7 +1096,9 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
     // Each lit group burns its own propellant (shared Isp); a spent group jettisons while
     // the core fires on.
     for (const g of litGroups) {
-      g.prop -= (stageThrustN(g.stage, alt) / (stageIspS(g.stage, alt) * G0)) * dt;
+      g.prop -=
+        ((stageThrustN(g.stage, alt) * groupMultiplier(g, alt)) / (stageIspS(g.stage, alt) * G0)) *
+        dt;
     }
     for (const g of groups) {
       if (!g.dropped && g.prop <= 0) {
@@ -1053,7 +1180,13 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
     // for the later injection burn (the scene's injection beat) — instead of letting it burn
     // to depletion onto an escape path, which nothing else would ever cut off.
     if (orbitSeen && secoT < 0 && stageIndex === profile.stages.length - 1) {
-      pushEvent('seco', `${profile.stages[stageIndex].name} — held for injection`);
+      // The Shuttle reaches orbit on its main engines: its orbiter's held engines are no SECO
+      // beat either (silent, as at the end of its powered flight).
+      pushEvent(
+        'seco',
+        `${profile.stages[stageIndex].name} — held for injection`,
+        profile.payloadInBay === true,
+      );
       stageIndex = -1;
       secoT = t;
     }

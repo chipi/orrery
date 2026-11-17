@@ -19,19 +19,23 @@
     "thrustVacKN": 8227,
     "ispSlS": 282,
     "ispVacS": 311,
-    "chamberTempK": 3600
+    "chamberTempK": 3600,
+    "impulseGates": [{ "t": 20, "fraction": 0.1326 }, { "t": 183, "fraction": 1 }],
+    "separationDelayS": 4
   },
   "stages": [
     {
       "name": "Centre core (9× Merlin 1D, throttled)",
       "wetKg": 433100,
       "dryKg": 22200,
-      "thrustSlKN": 6280,
-      "thrustVacKN": 6790,
+      "thrustSlKN": 7607,
+      "thrustVacKN": 8227,
       "ispSlS": 282,
       "ispVacS": 311,
       "engines": 9,
-      "chamberTempK": 3600
+      "chamberTempK": 3600,
+      "throttle": [{ "t": 20, "level": 0.46 }, { "t": 187, "level": 1 }],
+      "separationDelayS": 4
     },
     {
       "name": "Second stage (Merlin Vacuum)",
@@ -57,8 +61,9 @@
       "u": "https://science.nasa.gov/blogs/europa-clipper/2024/10"
     },
     {
-      "l": "The centre core's thrust is the average of its throttle-down, matching MECO ~3 min after liftoff against BECO ~2.5 min",
-      "u": "https://science.nasa.gov/blogs/psyche/2023/10"
+      "l": "NASA — Key milestones for Europa Clipper's launch (Falcon Heavy, all cores expended): Max Q 1:07, side boosters BECO 3:03 and separation 3:07, core MECO 4:02, stage separation 4:06, fairing 4:31, SECO-1 7:53. The side boosters burn out at the published 183 s; every core runs at 100 % to T+20 s, then the side boosters at the level that ends at 183 s and the centre core at 46 % until side-booster separation. The 20 s and the 46 % are fitted to Max Q and MECO (SpaceX publishes no throttle schedule); SECO-1 (model 476.7 s against 473 s) is the independent check; the core separates 4 s after MECO",
+      "u": "https://science.nasa.gov/blogs/europa-clipper/2024/10/14/key-milestones-for-todays-europa-clipper-launch-2"
     }
-  ]
+  ],
+  "fairingJettisonS": 271
 }

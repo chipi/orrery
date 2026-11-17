@@ -2,7 +2,7 @@
   "id": "h-iia",
   "name": "H-IIA 202",
   "source_tier": "flagship",
-  "payloadKg": 8000,
+  "payloadKg": 3020,
   "fairingKg": 1400,
   "payloadSeparationDelayS": 50,
   "fairingJettisonAltM": 110000,
@@ -52,7 +52,9 @@
     "thrustVacKN": 2520,
     "ispSlS": 265,
     "ispVacS": 284,
-    "chamberTempK": 3300
+    "chamberTempK": 3300,
+    "impulseGates": [{ "t": 97, "fraction": 1 }],
+    "separationDelayS": 10
   },
   "stages": [
     {
@@ -64,7 +66,8 @@
       "ispSlS": 338,
       "ispVacS": 440,
       "engines": 1,
-      "chamberTempK": 3500
+      "chamberTempK": 3500,
+      "separationDelayS": 8
     },
     {
       "name": "Upper",
@@ -89,6 +92,19 @@
     {
       "l": "JAXA — H-IIA F15 (IBUKI, a 202) launch sequence: SECO 15:11, IBUKI separation 16:01, the payload separation delay 50 s (F14: 51 s)",
       "u": "https://global.jaxa.jp/countdown/f15/overview/sequence_e.html"
+    },
+    {
+      "l": "JAXA — H-IIA brochure 2025, H2A202 flight sequence example: SRB-A burnout 97 s, separation 107 s (burnout = chamber pressure at 10 % of maximum); SRB-A burn time 120 s, vacuum Isp 281 s. The SRB-A burns its propellant evenly over the 97 s (no sourced thrust-time curve); flights pick a short- or long-burn variant (F37 92 / 106 s, F40 111 / 127 s, F15 116 / 126 s, JAXA flight sequences); fairing 250 s, MECO 396 s, first / second stage separation 404 s (8 s after MECO, also on F14 and F15)",
+      "u": "https://www.jaxa.jp/projects/pr/model/files/p_h2a_2025.pdf"
+    },
+    {
+      "l": "JAXA — H-IIA F37 and F40 launch sequences (速報): SRB-A burnout 1:32 / 1:51, separation 1:46 / 2:07",
+      "u": "https://www.jaxa.jp/press/2018/10/files/H-IIA_F40_Flight_Sequence_jp.pdf"
+    },
+    {
+      "l": "Payload 3,020 kg: Kaguya's launch mass (about 3 t; Orrery mission record kaguya, after Kato et al., Space Science Reviews 2010), the heaviest H-IIA payload Orrery flies (Hayabusa2, Akatsuki, Hope, SLIM are lighter); was an unsourced 8,000 kg",
+      "u": "https://link.springer.com/article/10.1007/s11214-010-9678-3"
     }
-  ]
+  ],
+  "fairingJettisonS": 250
 }

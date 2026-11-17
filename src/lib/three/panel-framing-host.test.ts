@@ -63,6 +63,26 @@ describe('createPanelFramer', () => {
     expect(framer.shift()).toBe(0);
   });
 
+  // docker-e2e 43965529959 (explore-level-card "clear of a docked planet panel"): on a GPU-less
+  // runner frames come far apart, the one sample in the settle window caught the drawer mid-slide,
+  // and nothing measured again, so the level card kept a cover 8 px short and touched the panel.
+  it('keeps measuring until two samples agree, however far apart the frames are', () => {
+    const rects = [{ left: 1240, right: 1440 }]; // the drawer half way through its slide-in
+    const { framer, onCover, advance } = setup({ reduced: true, rects });
+    framer.apply(0.016, true);
+    expect(onCover).toHaveBeenLastCalledWith(200);
+    rects[0] = { left: 1040, right: 1440 }; // the slide ends
+    advance(450); // the next frame comes after the settle window
+    framer.apply(0.016, true);
+    expect(onCover).toHaveBeenLastCalledWith(400);
+    advance(450);
+    framer.apply(0.016, true); // agrees with the last sample: measuring stops
+    rects[0] = { left: 0, right: 1440 };
+    advance(450);
+    framer.apply(0.016, true);
+    expect(onCover).toHaveBeenLastCalledWith(400);
+  });
+
   it('not wanted (2D, an immersive view) takes the shift off', () => {
     const { framer, camera } = setup({ reduced: true });
     framer.apply(0.016, true);

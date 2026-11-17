@@ -35,6 +35,9 @@ For deep-dive engineering rationale, see [`IMPLEMENTATION.md`](IMPLEMENTATION.md
 - The era tiles on /missions/launches counted the launches of the last deploy, not of the
   6-hourly data refresh (7,645 against 7,849 on 2026-11-17): the refresh left the deploy's
   compressed copy of the year index in place.
+- /explore and the Worlds: on a slow device the controls beside an opening side panel (the
+  level card, the scale strip) could keep a position measured while the panel was still
+  sliding in and end up under its edge; they now re-measure until the panel has settled.
 
 ### Changed
 

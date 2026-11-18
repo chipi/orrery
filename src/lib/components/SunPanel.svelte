@@ -1,4 +1,6 @@
 <script lang="ts">
+  import EntityThumb from './EntityThumb.svelte';
+  import { missionTargetThumb } from '$lib/entity-thumb';
   import PanelGalleryGrid from './PanelGalleryGrid.svelte';
   import PanelLinkTiers from './PanelLinkTiers.svelte';
   import PanelTabRow from './PanelTabRow.svelte';
@@ -202,15 +204,18 @@
             {#each sortNewestFirst(sun.mission_visits ?? []) as visit (visit)}
               {@const link = linkifyMission(visit)}
               <li>
-                {#if link}
-                  <a
-                    href={link.href}
-                    class="mission-link"
-                    onclick={(e) => onMissionLinkClick(e, link, onMissionOpen)}>{link.label}</a
-                  ><span>{link.rest}</span>
-                {:else}
-                  {visit}
-                {/if}
+                <EntityThumb src={missionTargetThumb(link)} />
+                <span class="mission-text">
+                  {#if link}
+                    <a
+                      href={link.href}
+                      class="mission-link"
+                      onclick={(e) => onMissionLinkClick(e, link, onMissionOpen)}>{link.label}</a
+                    ><span>{link.rest}</span>
+                  {:else}
+                    {visit}
+                  {/if}
+                </span>
               </li>
             {/each}
           </ul>

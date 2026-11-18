@@ -5,18 +5,20 @@
  * Chip 0 is All and always stays. When every chip fits the line there is no fold and no button;
  * otherwise the line is All plus the chips taken in `priority` order while they fit. The first chip
  * that does not fit ends the walk, so which chips are visible does not jump around with a width a
- * few pixels apart. (The button is not on this line: it sits beside the count, so it reserves no
- * width here.)
+ * few pixels apart. `reserve` is the width the FILTERS button takes on the same line (plan D13:
+ * the button joined the chip row); it is kept free only when something folds.
  */
 export function fitChips(
   widths: number[],
   gap: number,
   available: number,
   priority: number[],
+  reserve = 0,
 ): { visible: number[]; folded: number[] } {
   const all = widths.map((_, i) => i);
   const total = widths.reduce((a, w) => a + w, 0) + gap * Math.max(0, widths.length - 1);
   if (widths.length <= 1 || total <= available) return { visible: all, folded: [] };
+  available -= reserve;
   const taken = new Set<number>([0]);
   let used = widths[0];
   for (const i of priority) {

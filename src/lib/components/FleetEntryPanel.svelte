@@ -9,7 +9,7 @@
   import PanelActions from './PanelActions.svelte';
   import AgencyRow from './AgencyRow.svelte';
   import EntityThumb from './EntityThumb.svelte';
-  import { thumbOf } from '$lib/entity-thumb';
+  import { thumbOf, thumbOfSite } from '$lib/entity-thumb';
   import { agencyRingColor } from '$lib/surface-map/nation-palette';
   import { page } from '$app/state';
   import { assetUrl } from '$lib/asset-url';
@@ -621,7 +621,13 @@
             {#each entry.linked_sites as ls (ls.type + ls.site_id)}
               <li>
                 <a class="site-link" href={siteRoute(ls)} data-sveltekit-preload-data="hover">
-                  {siteLabel(ls)} →
+                  <EntityThumb
+                    src={thumbOfSite(
+                      ls.type === 'moon' || ls.type === 'mars' ? ls.type : 'earth-objects',
+                      ls.site_id,
+                    )}
+                  />
+                  <span>{siteLabel(ls)} →</span>
                 </a>
               </li>
             {/each}
@@ -1125,6 +1131,11 @@
     display: flex;
     flex-direction: column;
     gap: 4px;
+  }
+  .site-list .site-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
   }
   .site-link,
   .mission-link {

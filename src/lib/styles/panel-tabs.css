@@ -138,6 +138,13 @@
   padding: 6px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   line-height: 1.4;
+  /* The row's photo (plan D10, UXD-025) before the text, centred on the row. */
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.mission-list .mission-text {
+  min-width: 0;
 }
 .mission-list li:last-child {
   border-bottom: none;

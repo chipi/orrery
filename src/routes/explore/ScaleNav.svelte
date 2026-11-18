@@ -3,6 +3,7 @@
   import ExploreScalePicker from '$lib/components/ExploreScalePicker.svelte';
   import ResetViewButton from '$lib/components/ResetViewButton.svelte';
   import type { ShellId } from '$lib/explore/scale-shell-controller';
+  import { levelCardBodyId, type LevelCardState } from '$lib/explore/level-card-state.svelte';
   import * as m from '$lib/paraglide/messages';
   import { cue } from '$lib/sensory/feedback';
 
@@ -15,6 +16,7 @@
     onJump,
     resetEnabled,
     onReset,
+    levelCard,
     panelCoverPx = 0,
     width = $bindable(0),
   }: {
@@ -28,6 +30,8 @@
      *  system the HUD row's RESET VIEW is the one Reset, so the navigator draws none. */
     resetEnabled: boolean;
     onReset: () => void;
+    /** The level card under the row: its fold chip sits beside the picker (plan D15). */
+    levelCard?: LevelCardState;
     /** Width a docked side panel covers at the right edge; the flush-right row sits left of it. */
     panelCoverPx?: number;
     /** The row's measured width, for the HUD row that must stop before it (solar system). */
@@ -67,6 +71,27 @@
         onJump(shell);
       }}
     />
+    {#if levelCard}
+      <Chip
+        kind="action"
+        active={levelCard.expanded}
+        aria-expanded={levelCard.expanded}
+        aria-controls={levelCardBodyId}
+        aria-label={levelCard.expanded
+          ? m.explore_level_card_collapse_aria()
+          : m.explore_level_card_expand_aria()}
+        title={levelCard.expanded
+          ? m.explore_level_card_collapse_aria()
+          : m.explore_level_card_expand_aria()}
+        data-testid="explore-level-card-toggle"
+        onclick={() => {
+          cue('select');
+          levelCard.toggle();
+        }}
+      >
+        {#snippet icon()}<span class="info" aria-hidden="true">i</span>{/snippet}
+      </Chip>
+    {/if}
     {#if !atSolar}
       <ResetViewButton
         onclick={onReset}
@@ -101,8 +126,20 @@
   /* While the scale ladder is open it sits above the INDEX rail (z 45), which otherwise covers
      it and swallows the clicks; closed, the row stays under the panels (z 30) so it never
      covers a panel's bar at the solar scale. */
-  .scale-nav:has(:global([aria-expanded='true'])) {
+  .scale-nav:has(:global(.scale-picker [aria-expanded='true'])) {
     z-index: 46;
+  }
+  .info {
+    display: inline-grid;
+    place-items: center;
+    inline-size: 16px;
+    block-size: 16px;
+    border: 1.5px solid currentColor;
+    border-radius: 50%;
+    font-size: 11px;
+    font-weight: 700;
+    font-style: italic;
+    line-height: 1;
   }
   .scale-nav.at-solar {
     left: auto;

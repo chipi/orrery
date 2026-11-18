@@ -23,7 +23,7 @@ for (const prefix of ['', '/de', '/ru']) {
     await page.goto(`${prefix}/explore`);
     await page.waitForSelector('.time-controls', { state: 'visible', timeout: 45_000 });
     await page.waitForSelector('[data-testid="explore-hint"]', { timeout: 20_000 });
-    await page.waitForSelector('[data-testid="explore-level-card"]', { timeout: 20_000 });
+    await page.waitForSelector('[data-testid="explore-level-card-toggle"]', { timeout: 20_000 });
     // The HUD rows clear the navigator and the level card by their measured widths: wait until the
     // page has measured them (the clearance leaves its 16 px default), then let the rows re-wrap.
     await page.waitForFunction(

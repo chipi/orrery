@@ -11,7 +11,7 @@
   "arrival_date": "1976-08-07",
   "transit_days": 333,
   "vehicle": "Titan IIIE-Centaur",
-  "payload": "3530 kg (orbiter + lander)",
+  "payload": "3527 kg (orbiter + lander)",
   "delta_v": "~4.5 km/s (estimate)",
   "data_quality": "good",
   "credit": "© NASA / Viking Project — public domain. Orbit insertion 1976-08-07; lander touchdown 1976-09-03, 22:37:50 UT; orbiter ended 1978-07-24 (NASA mission page; NSSDCA gives 25 July); lander ended 1980-04-12.",
@@ -46,7 +46,7 @@
   "flight": {
     "launch": {
       "vehicle_stage": "Centaur upper stage",
-      "mass_at_tli_kg": 3530,
+      "mass_at_tli_kg": 3527,
       "source": "Wikipedia Viking 2 (launch mass 3,530 kg); NASA science.nasa.gov/mission/viking-2/ (launch 1975-09-09 18:39:00 UT)"
     },
     "cruise": {
@@ -55,8 +55,8 @@
     },
     "arrival": {
       "periapsis_km": 1500,
-      "inclination_deg": 80.5,
-      "source": "NSSDCA Viking 2: 1500 x 33,000 km, 24.6 hr orbit; inclination from Wikipedia (80.5 deg)"
+      "inclination_deg": 55.2,
+      "source": "NSSDCA Viking 2: 1500 x 33,000 km, 24.6 hr orbit; NSSDCA gives no inclination for the insertion orbit; 55.2 deg is the first stated one, after the 9 August 1976 trim (75 deg from 30 September and 80 deg from 20 December 1976)"
     },
     "totals": {
       "total_dv_km_s": 4.5,

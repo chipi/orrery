@@ -2988,8 +2988,8 @@
     "tr": "91c0b4ac76"
   },
   "lander|ja|fleet/lander/viking2-lander.json :: description": {
-    "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
-    "tr": "9513c7064c"
+    "why": "re-read 2026-11-18 after the S-row fix (text changed): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
+    "tr": "055e2eb53e"
   },
   "lander|ja|fleet/lander/vikram-cy3.json :: description": {
     "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",
@@ -3532,8 +3532,8 @@
     "tr": "08c0dd2469"
   },
   "orbit|ja|missions/earth/shenzhou-5.json :: events.1.note": {
-    "why": "read 2026-11-15 (content7): '14 orbits' counts revolutions of the Earth; Japanese counts them as 14周 (laps), not the orbit as a path",
-    "tr": "29c7ddd7c0"
+    "why": "re-read 2026-11-18 after the S-row fix (text changed): '14 orbits' counts revolutions of the Earth; Japanese counts them as 14周 (laps), not the orbit as a path",
+    "tr": "a5e558c6ee"
   },
   "orbit|ja|science/_landing.json :: chapters.0.diagram": {
     "why": "filename",
@@ -3564,8 +3564,8 @@
     "tr": "3b8465974d"
   },
   "orbit|ko|missions/earth/shenzhou-5.json :: events.1.note": {
-    "why": "read 2026-11-15 (content7): '14 orbits' counts revolutions of the Earth; Korean counts them as 14바퀴 (laps), not the orbit as a path",
-    "tr": "e834ba3824"
+    "why": "re-read 2026-11-18 after the S-row fix (text changed): '14 orbits' counts revolutions of the Earth; Korean counts them as 14바퀴 (laps), not the orbit as a path",
+    "tr": "58e165e28c"
   },
   "orbit|ko|missions/earth/vostok-6.json :: dispatch": {
     "why": "variant: 돈 / 바퀴 (verb to orbit)",
@@ -3960,8 +3960,8 @@
     "tr": "f4dd31e0df"
   },
   "orbit|ru|missions/earth/shenzhou-5.json :: events.1.note": {
-    "why": "read 2026-11-15 (content7): '14 orbits' counts revolutions of the Earth; the Russian word is витки (revolutions), not the orbit as a path",
-    "tr": "82b6182299"
+    "why": "re-read 2026-11-18 after the S-row fix (text changed): '14 orbits' counts revolutions of the Earth; the Russian word is витки (revolutions), not the orbit as a path",
+    "tr": "fb8b8cca46"
   },
   "orbit|ru|missions/earth/sigma-7.json :: dispatch": {
     "why": "variant: виток (count of revolutions)",

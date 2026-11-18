@@ -8,12 +8,12 @@
     "year": 1971,
     "landing_date": "1971-11-27",
     "lat": -45,
-    "lon": 313,
+    "lon": 47,
     "region_bounds": {
       "lat_min": -45.5,
       "lat_max": -44.5,
-      "lon_min": 312.5,
-      "lon_max": 313.5
+      "lon_min": 46.5,
+      "lon_max": 47.5
     },
     "region_kind": "landing_ellipse",
     "crewed": false,
@@ -21,7 +21,7 @@
     "surface_status": "completed",
     "samples_kg": 0,
     "data_quality": "partial",
-    "credit": "© Soviet Academy of Sciences (historical) — landing site approximate, NSSDCA catalogue.",
+    "credit": "© Soviet Academy of Sciences (historical) — landing site approximate: NSSDCA gives 45° S, 313° W in the Soviet west-positive convention, i.e. 47° E.",
     "fleet_refs": [
       {
         "id": "mars-2",

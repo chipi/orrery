@@ -2419,13 +2419,13 @@
   },
   "fleet/crewed-spacecraft/challenger.json": {
     "best_known_for": "5e5c20f45a",
-    "description": "f23011582b",
-    "dispatch": "249b89ed27",
+    "description": "ae54e5bb18",
+    "dispatch": "ee30c7740b",
     "tagline": "4a0c68cc27"
   },
   "fleet/crewed-spacecraft/columbia.json": {
     "best_known_for": "93315b005f",
-    "description": "04320e9668",
+    "description": "69a9a2d278",
     "dispatch": "3e5923306b",
     "tagline": "5056cf57fd"
   },
@@ -2555,7 +2555,7 @@
   },
   "fleet/crewed-spacecraft/x37b.json": {
     "best_known_for": "83bfec33cf",
-    "description": "b6646bcfee",
+    "description": "8130a071f3",
     "tagline": "318db79b6e"
   },
   "fleet/engine/ce-20.json": {
@@ -2737,7 +2737,7 @@
   },
   "fleet/lander/im-1-odysseus.json": {
     "best_known_for": "660d598023",
-    "description": "707d4a8047",
+    "description": "ddd64de442",
     "name": "8598409cc1",
     "tagline": "660d598023"
   },
@@ -2843,7 +2843,7 @@
   },
   "fleet/lander/viking2-lander.json": {
     "best_known_for": "dfb1f8cbae",
-    "description": "e8057075db",
+    "description": "240d665c57",
     "tagline": "dfb1f8cbae"
   },
   "fleet/lander/vikram-cy2.json": {
@@ -3138,7 +3138,7 @@
   },
   "fleet/launcher/atlas-agena-b.json": {
     "best_known_for": "f45f9f2135",
-    "description": "abc56e0353",
+    "description": "60ca80ce7f",
     "name": "85f24b5420",
     "tagline": "f45f9f2135"
   },
@@ -3535,7 +3535,7 @@
   },
   "fleet/orbiter/kaguya.json": {
     "best_known_for": "0607579df7",
-    "description": "4bbc5c18e3",
+    "description": "c4f316eb94",
     "tagline": "0607579df7"
   },
   "fleet/orbiter/lro.json": {
@@ -4369,7 +4369,7 @@
     "fact": "fc9b7a38b9",
     "mission_type": "bbff3adf98",
     "name": "219b4e2510",
-    "site_name": "a97332c248"
+    "site_name": "a7b8d476ed"
   },
   "mars-sites/mars3-orbiter.json": {
     "capability": "1c24b8a5b9",
@@ -8933,9 +8933,9 @@
     "events.2.label": "062b45fc77",
     "events.2.note": "8dea867842",
     "events.2.type": "586d612861",
-    "first": "262021699d",
-    "name": "a978bddbba",
-    "payload": "9fb5d18d3e",
+    "first": "6adc5de775",
+    "name": "aa97103d46",
+    "payload": "98c70ab7c4",
     "type": "80a1172dca",
     "vehicle": "d1b5b43a2f"
   },
@@ -8983,16 +8983,16 @@
   },
   "missions/earth/shenzhou-5.json": {
     "delta_v": "dba9cc13e9",
-    "description": "8eeac2f5a0",
+    "description": "cc99591e9a",
     "events.0.label": "25ef1d7636",
     "events.0.note": "dc6ce499e3",
     "events.0.type": "586d612861",
     "events.1.label": "062b45fc77",
-    "events.1.note": "b0f8ef36f2",
+    "events.1.note": "3be9866fc3",
     "events.1.type": "586d612861",
     "first": "6ae420d270",
     "name": "4c967a38a2",
-    "payload": "bd0070834d",
+    "payload": "d9224b1ade",
     "type": "8133bc47bb",
     "vehicle": "d4bdeac7aa"
   },
@@ -9830,9 +9830,9 @@
     "events.1.label": "43fb9e07ac",
     "events.1.note": "2011d83d6c",
     "events.1.type": "586d612861",
-    "first": "6b7bc087dc",
+    "first": "b460aa2b38",
     "name": "45da8da847",
-    "payload": "a8713d8efe",
+    "payload": "dfe9b324ed",
     "type": "9e4b4e6da1",
     "vehicle": "5a7ad615d3",
     "vehicle_stage": "5ea01f8577"
@@ -10118,7 +10118,7 @@
     "events.2.type": "586d612861",
     "first": "ea847b235a",
     "name": "a62bd402f0",
-    "payload": "7272b6a39a",
+    "payload": "97a7160283",
     "type": "0aba459e9c",
     "vehicle": "087352d935",
     "vehicle_stage": "5ea01f8577"
@@ -10720,7 +10720,7 @@
   },
   "missions/moon/chandrayaan2.json": {
     "delta_v": "4cc166d53f",
-    "description": "f925c6b1f4",
+    "description": "207575c2b3",
     "events.0.label": "89006102d3",
     "events.0.note": "4253b70667",
     "events.0.type": "586d612861",
@@ -10801,7 +10801,7 @@
   },
   "missions/moon/change2.json": {
     "delta_v": "ca8cf391ab",
-    "description": "ab266c349a",
+    "description": "322eb13563",
     "events.0.label": "89006102d3",
     "events.0.note": "cc01a38b81",
     "events.0.type": "586d612861",
@@ -10945,7 +10945,7 @@
   },
   "missions/moon/im-1.json": {
     "delta_v": "ca8cf391ab",
-    "description": "21cd0d27e7",
+    "description": "4302b0fd07",
     "events.0.label": "89006102d3",
     "events.0.note": "981169ab10",
     "events.0.type": "586d612861",
@@ -10964,7 +10964,7 @@
   },
   "missions/moon/kaguya.json": {
     "delta_v": "faf40213b1",
-    "description": "c299059214",
+    "description": "d9e8f9a7b8",
     "events.0.label": "89006102d3",
     "events.0.note": "d561688e2e",
     "events.0.type": "586d612861",
@@ -10978,7 +10978,7 @@
     "events.3.note": "6c71f1e2e3",
     "events.3.type": "59bd0a3ff4",
     "events.4.label": "558c9b561b",
-    "events.4.note": "c7a2ef59b5",
+    "events.4.note": "2d2263645e",
     "events.4.type": "586d612861",
     "events.5.label": "3546a249a4",
     "events.5.note": "5999108daa",
@@ -15187,7 +15187,7 @@
     "narrative.1.type": "ca70aa1fca",
     "narrative.2.md": "e10818c2b9",
     "narrative.2.type": "ca70aa1fca",
-    "outcome.0.md": "530a427fa5",
+    "outcome.0.md": "0b3fd5289f",
     "outcome.0.type": "ca70aa1fca",
     "outcome.1.align": "52e6d8ab88",
     "outcome.1.caption": "bb32e54b32",

@@ -5,7 +5,7 @@
   "delta_v": "~4 km/s (TLI + LOI, estimation)",
   "type": "ORBITEUR · SOUS-SATELLITES · RÉALISÉE",
   "first": "Vidéo haute définition d'un lever de Terre au-dessus de l'horizon lunaire",
-  "description": "Kaguya, officiellement SELENE (Selenological and Engineering Explorer), fut le deuxième orbiteur lunaire japonais après Hiten. Lancé par une H-IIA depuis Tanegashima le 2007-09-14, il emportait un orbiteur principal de 2914 kg et deux sous-satellites de 53 kg, Okina et Ouna. Les trois noms viennent du « Conte du coupeur de bambou », dont l'héroïne, Kaguya, est une princesse venue de la Lune. Okina relayait la liaison radio de l'orbiteur derrière la Lune, ce qui permettait un suivi Doppler de la gravité de la face cachée, et Ouna servait de source radio pour le suivi VLBI. Après l'insertion en orbite lunaire le 2007-10-03, l'orbiteur s'est installé le 2007-10-19 sur une orbite polaire circulaire à 100 km. Là, sa caméra topographique, son imageur multibande, son profileur spectral, ses spectromètres X et gamma, son altimètre laser et son sondeur radar ont cartographié la forme, la composition, la gravité et le magnétisme de la Lune, tandis que sa caméra haute définition filmait la Terre se levant au-dessus de l'horizon. L'orbiteur a été abaissé à environ 50 km en 2009 puis, le 2009-06-10, commandé vers un impact contrôlé près du cratère Gill.",
+  "description": "Kaguya, officiellement SELENE (Selenological and Engineering Explorer), fut le deuxième orbiteur lunaire japonais après Hiten. Lancé par une H-IIA depuis Tanegashima le 2007-09-14, il emportait un orbiteur principal de 2914 kg et deux sous-satellites de 53 kg, Okina et Ouna. Les trois noms viennent du « Conte du coupeur de bambou », dont l'héroïne, Kaguya, est une princesse venue de la Lune. Okina relayait la liaison radio de l'orbiteur derrière la Lune, ce qui permettait un suivi Doppler de la gravité de la face cachée, et Ouna servait de source radio pour le suivi VLBI. Après l'insertion en orbite lunaire le 2007-10-03, l'orbiteur s'est installé le 2007-10-18 (heure du Japon) sur une orbite polaire circulaire à 100 km. Là, sa caméra topographique, son imageur multibande, son profileur spectral, ses spectromètres X et gamma, son altimètre laser et son sondeur radar ont cartographié la forme, la composition, la gravité et le magnétisme de la Lune, tandis que sa caméra haute définition filmait la Terre se levant au-dessus de l'horizon. L'orbiteur a été abaissé à environ 50 km le 2009-02-01 puis, le 2009-06-10, commandé vers un impact contrôlé près du cratère Gill.",
   "events": [
     {
       "met": 0,
@@ -34,7 +34,7 @@
     {
       "met": 35,
       "label": "ORBITE À 100 KM",
-      "note": "Orbite polaire circulaire à 100 km atteinte le 2007-10-19 ; la phase scientifique principale commence.",
+      "note": "Orbite polaire circulaire à 100 km atteinte le 2007-10-18 (heure du Japon) ; la phase scientifique principale commence.",
       "type": "nominal"
     },
     {

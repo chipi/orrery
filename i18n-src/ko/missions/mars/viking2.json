@@ -1,7 +1,7 @@
 {
   "name": "Viking 2",
   "vehicle": "Titan IIIE-Centaur",
-  "payload": "3530 kg(궤도선 + 착륙선)",
+  "payload": "3527 kg(궤도선 + 착륙선)",
   "delta_v": "~4.5 km/s (추정)",
   "type": "궤도선 · 착륙선 · 비행 완료",
   "first": "두 번째 Viking 착륙선으로, Viking 1 착륙 지점에서 약 6,460 km 떨어진 유토피아 평원에 착륙했다",

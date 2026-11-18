@@ -1,7 +1,7 @@
 {
   "name": "Viking 2",
   "vehicle": "Titan IIIE-Centaur",
-  "payload": "3530 kg（轨道器 + 着陆器）",
+  "payload": "3527 kg（轨道器 + 着陆器）",
   "delta_v": "~4.5 km/s（估算）",
   "type": "轨道器 · 着陆器 · 已飞行",
   "first": "第二个Viking着陆器，降落在乌托邦平原，距Viking 1着陆点约6,460 km",

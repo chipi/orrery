@@ -5,7 +5,7 @@
   "delta_v": "~3,8 km/s (TLI + LOI, stima)",
   "type": "LANDER COMMERCIALE · RIBALTATO, OPERATIVO",
   "first": "Un lander commerciale sulla Luna: è atterrato ribaltato e ha comunque funzionato",
-  "description": "IM-1 è stata la prima missione lunare di Intuitive Machines, svolta per il programma Commercial Lunar Payload Services della NASA con sei carichi utili NASA. Il suo lander Nova-C, chiamato Odysseus, è stato lanciato su un Falcon 9 il 2024-02-15, è entrato in orbita lunare il 2024-02-21 ed è atterrato il 2024-02-22 alle 23:23:53 UTC vicino al cratere Malapert A. È atterrato e ha operato, ma si è fermato ribaltato, a circa 30 gradi. Ha continuato a funzionare fino a perdere energia all'inizio della notte lunare il 2024-02-29.",
+  "description": "IM-1 è stata la prima missione lunare di Intuitive Machines, svolta per il programma Commercial Lunar Payload Services della NASA con sei carichi utili NASA. Il suo lander Nova-C, chiamato Odysseus, è stato lanciato su un Falcon 9 il 2024-02-15, è entrato in orbita lunare il 2024-02-21 ed è atterrato il 2024-02-22 alle 23:23:53 UTC vicino al cratere Malapert A. È atterrato e ha operato, ma si è fermato ribaltato, a circa 30 gradi. Ha funzionato per circa sette giorni, fino alla notte lunare; Intuitive Machines ha annunciato la fine della missione il 2024-02-29.",
   "events": [
     {
       "met": 0,

@@ -14,7 +14,7 @@
   "payload": "1900 kg lander (Nova-C Odysseus); six NASA payloads",
   "delta_v": "~3.8 km/s (TLI + LOI, estimate)",
   "data_quality": "partial",
-  "credit": "NASA CLPS page for the six NASA payloads; plain figures (dates, vehicle, mass, site) from Wikipedia, not from a NASA or Intuitive Machines page; see the search backlog.",
+  "credit": "NASA CLPS page for the six NASA payloads; NASA NSSDCA IM-1 and NASA TM-20250010290 for the launch, lunar orbit insertion, landing time and site, and the 30 degree tilt; NASA and Intuitive Machines (2024-02-29) for the end of operations seven days after landing (NSSDCA says it powered down on 2024-02-28); mass about 1,900 kg (NSSDCA 1,908 kg; NASA TM 2,035 kg wet).",
   "links": [
     {
       "l": "IM-1 — Wikipedia",
@@ -53,7 +53,7 @@
         "met_days": 0,
         "type": "launch",
         "label": "Launch — Falcon 9",
-        "description": "Kennedy Space Center LC-39A, 2024-02-15, 06:05:37 UTC."
+        "description": "Kennedy Space Center LC-39A, 2024-02-15, 06:05 UTC."
       },
       {
         "met_days": 6,
@@ -65,7 +65,7 @@
         "met_days": 7,
         "type": "edl_or_oi",
         "label": "Lunar landing near Malapert A",
-        "description": "2024-02-22, 23:23:53 UTC, near the crater Malapert A (80°08′ S, 1°26′ E). Odysseus came to rest tipped over, at about 30 degrees, and worked until it lost power on 2024-02-29."
+        "description": "2024-02-22, 23:23:53 UTC, near the crater Malapert A (80°08′ S, 1°26′ E). Odysseus came to rest tipped over, at about 30 degrees, and worked for about seven days, until the lunar night; Intuitive Machines announced the end of the mission on 2024-02-29."
       }
     ],
     "cislunar_profile": {

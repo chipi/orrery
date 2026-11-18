@@ -47,6 +47,8 @@ const CITED: [RegExp, string][] = [
   [/HiRISE ESP_/, 'hirise-zhurong-traverse'],
   [/MMGIS/, 'nasa-mmgis-rover-traverses'],
   [/Analyst.s Notebook|PDS/, 'pds-mer-traverses'],
+  [/Wan W\. et al\. 2014/, 'wan2014-yutu-traverse'],
+  [/Vadawale S\. V\. et al\. 2024/, 'vadawale2024-pragyan-stops'],
 ];
 
 describe('every Moon and Mars traverse credit names a source the page lists', () => {
@@ -61,7 +63,7 @@ describe('every Moon and Mars traverse credit names a source the page lists', ()
       for (const f of files) {
         const credit: string = readJson(`static/data/${dir}/${f}`).credit ?? '';
         const hits = CITED.filter(([re]) => re.test(credit)).map(([, id]) => id);
-        // Chandrayaan-3 and Chang'e 3 are Orrery's own polylines, anchored at the lander.
+        // A route with no published source is Orrery's own polyline and must say so.
         if (!hits.length) {
           expect(credit, f).toMatch(/Approximate route: a simplified polyline/);
           continue;

@@ -12,10 +12,10 @@
   "transit_days": 1,
   "round_trip": true,
   "vehicle": "Long March 2F",
-  "payload": "7840 kg; one astronaut (Yang Liwei)",
+  "payload": "One astronaut (Yang Liwei)",
   "delta_v": "~9.4 km/s (LEO)",
   "data_quality": "partial",
-  "credit": "Plain figures from Wikipedia, not from a CMSA page; see the search backlog. China Manned Space Agency.",
+  "credit": "China Manned Space Agency (CMSE): mission summary, timetable and spacecraft pages (cmse.gov.cn, 2008-09-17) for the launch, the 343 km orbit, the 42.4 degree inclination, 14 orbits and 21 h 23 min; NASA NSSDCA 2003-045A for the landing time. The mass is left out: Britannica gives 7840 kg, NASA SPACEWARN 8.5 t, and no CMSE page gives one.",
   "links": [
     {
       "l": "Shenzhou 5 — Wikipedia",

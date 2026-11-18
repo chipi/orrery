@@ -1,11 +1,11 @@
 {
   "name": "Shenzhou 5",
   "vehicle": "Long March 2F",
-  "payload": "7840 kg ; un astronaute (Yang Liwei)",
+  "payload": "Un astronaute (Yang Liwei)",
   "delta_v": "~9,4 km/s (LEO)",
   "type": "VOL ORBITAL HABITÉ · RÉALISÉ",
   "first": "Le premier vol spatial habité de la Chine, effectué par Yang Liwei",
-  "description": "Shenzhou 5 était le premier vol spatial habité de la Chine. Yang Liwei, lieutenant-colonel de 38 ans et ancien pilote de chasse, a décollé seul sur un Long March 2F depuis Jiuquan le 2003-10-15 à 09:00, heure normale de la Chine. Il a fait 14 fois le tour de la Terre à une altitude d'environ 332 à 336 km et s'est posé en Mongolie-Intérieure le 2003-10-16 (heure normale de la Chine), après 21 heures, 22 minutes et 45 secondes de vol.",
+  "description": "Shenzhou 5 était le premier vol spatial habité de la Chine. Yang Liwei, lieutenant-colonel de 38 ans et ancien pilote de chasse, a décollé seul sur un Long March 2F depuis Jiuquan le 2003-10-15 à 09:00, heure normale de la Chine. Il a fait 14 fois le tour de la Terre , sur une orbite circulaire à 343 km à partir de la cinquième orbite, et s'est posé en Mongolie-Intérieure le 2003-10-16 (heure normale de la Chine), après 21 heures et 23 minutes de vol.",
   "events": [
     {
       "met": 0,
@@ -16,7 +16,7 @@
     {
       "met": 0.8908,
       "label": "ATTERRISSAGE",
-      "note": "Se pose en Mongolie-Intérieure le 2003-10-16 (heure normale de la Chine) après 14 orbites et 21 h 22 min 45 s.",
+      "note": "Se pose en Mongolie-Intérieure le 2003-10-16 (heure normale de la Chine) après 14 orbites et 21 h 23 min.",
       "type": "nominal"
     }
   ]

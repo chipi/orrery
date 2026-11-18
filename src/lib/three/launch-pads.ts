@@ -35,7 +35,6 @@ const FT = 0.3048;
 /** Heights of the main tower relative to the vehicle: variants whose height is not a fixed
  *  published figure. Approximate; see the pad-model table in docs (NOT VERIFIED rows). */
 const CHINESE_REL: Record<string, number> = {
-  'jiuquan-slc-43': 1.7,
   'xichang-lc-2': 1.45,
   'xichang-lc-3': 1.5,
   'wenchang-lc-101': 1.6,
@@ -43,8 +42,17 @@ const CHINESE_REL: Record<string, number> = {
   'taiyuan-lc-9': 1.45,
 };
 
+/** Chinese towers with a published height, metres. Jiuquan's umbilical tower is 105.52 m with
+ *  its 16 m lightning rod (CMSE, 2015-09-11), so 89.5 m of tower. */
+const CHINESE_FIXED_M: Record<string, number> = {
+  'jiuquan-slc-43': 89.5,
+};
+
 /** Main-tower height above the vehicle's base, metres, for a pad and a vehicle of vehM metres.
- *  Fixed figures: LUT 380 ft (Wikipedia, Launch Complex 39), 39A FSS + mast 350 ft. */
+ *  Fixed figures: LUT 380 ft (Wikipedia, Launch Complex 39), 39A FSS + mast 350 ft, the SLS
+ *  Mobile Launcher tower 108 m (NASA gives both 345 and 355 ft), SLC-40's crew tower about
+ *  300 ft (FAA written re-evaluation), the Starbase tower 480 ft (FAA PEA), Tanegashima's
+ *  mobile launcher 65.5 m (JAXA Tanegashima guide). */
 export function padTowerHeightM(spec: PadSpec, vehM: number): number {
   switch (spec.variant) {
     case 'apollo-lut':
@@ -60,7 +68,7 @@ export function padTowerHeightM(spec: PadSpec, vehM: number): number {
     case 'f9-39a':
       return 350 * FT;
     case 'f9-cat':
-      return 80;
+      return 300 * FT;
     case 'f9-te':
       return 0.9 * vehM;
     case 'starbase':
@@ -74,9 +82,9 @@ export function padTowerHeightM(spec: PadSpec, vehM: number): number {
     case 'kourou-a6':
       return 0.95 * vehM;
     case 'chinese-fst':
-      return (CHINESE_REL[spec.siteId] ?? 1.5) * vehM;
+      return CHINESE_FIXED_M[spec.siteId] ?? (CHINESE_REL[spec.siteId] ?? 1.5) * vehM;
     case 'tanegashima':
-      return 0.8 * vehM;
+      return 65.5;
     case 'sriharikota':
       return 0.9 * vehM;
   }
@@ -450,8 +458,8 @@ function spacex(kit: Kit, variant: 'f9-39a' | 'f9-cat' | 'f9-te' | 'starbase'): 
     addStatic(
       kit,
       (a) => {
-        a.lattice(22, 0, 9, 9, 80, mats.steel);
-        a.box(22, 80, 0, 11, 2, 11, mats.paint);
+        a.lattice(22, 0, 9, 9, 300 * FT, mats.steel);
+        a.box(22, 300 * FT, 0, 11, 2, 11, mats.paint);
       },
       'pad-tower',
     );
@@ -545,7 +553,7 @@ function serviceTower(kit: Kit, spec: PadSpec): void {
     });
   } else if (v === 'tanegashima') {
     addStatic(kit, (a) => {
-      a.mast(-60, -40, 1.6 * vehM, mats.steel);
+      a.mast(-60, -40, 74.5, mats.steel);
     });
   } else if (v === 'sriharikota') {
     addStatic(kit, (a) => {

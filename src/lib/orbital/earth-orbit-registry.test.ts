@@ -149,12 +149,12 @@ describe('X-37B flights coast in Earth orbit from their records (no cislunar fal
 });
 
 describe('Shenzhou 5 coasts from its record', () => {
-  it('14 orbits at 332 x 336 km in 21 h 22 min 45 s, a capsule with a Shenzhou model', () => {
+  it('14 orbits on the 343 km circle in 21 h 23 min (CMSE), a capsule with a Shenzhou model', () => {
     const c = getEarthOrbitCoast('shenzhou-5')!;
     expect(c.revolutions).toBe(14);
-    expect(c.perigeeKm).toBe(332);
-    expect(c.apogeeKm).toBe(336);
-    expect(c.coastDurationS).toBe(21 * 3600 + 22 * 60 + 45);
+    expect(c.perigeeKm).toBe(343);
+    expect(c.apogeeKm).toBe(343);
+    expect(c.coastDurationS).toBe(21 * 3600 + 23 * 60);
     expect(c.capsuleId).toBe('shenzhou');
     expect(CAPSULE_FAMILY_IDS).toContain(c.capsuleId);
     expect(c.winged).toBeUndefined();

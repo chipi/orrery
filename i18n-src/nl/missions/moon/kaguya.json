@@ -5,7 +5,7 @@
   "delta_v": "~4 km/s (TLI + LOI, schatting)",
   "type": "ORBITER · SUBSATELLIETEN · GEVLOGEN",
   "first": "Hogeresolutievideo van een aardopkomst boven de maanhorizon",
-  "description": "Kaguya, officieel SELENE (Selenological and Engineering Explorer), was na Hiten de tweede Japanse maanorbiter. Gelanceerd met een H-IIA vanaf Tanegashima op 2007-09-14, droeg hij een hoofdorbiter van 2914 kg en twee subsatellieten van 53 kg, Okina en Ouna. Alle drie de namen komen uit «Het verhaal van de bamboesnijder», waarvan de heldin, Kaguya, een prinses van de maan is. Okina gaf de radioverbinding met de orbiter door vanachter de maan, waardoor de zwaartekracht van de achterkant met dopplermetingen kon worden gevolgd, en Ouna diende als radiobron voor VLBI-tracking. Na de maanbaaninsertie op 2007-10-03 vestigde de orbiter zich op 2007-10-19 in een cirkelvormige poolbaan op 100 km. Daar brachten zijn terreincamera, multibandbeeldvormer, spectraalprofiler, röntgen- en gammaspectrometers, laserhoogtemeter en radarsounder de vorm, samenstelling, zwaartekracht en het magnetisme van de maan in kaart, terwijl zijn hogeresolutiecamera de aarde filmde die boven de horizon opkwam. In 2009 werd de orbiter verlaagd tot ongeveer 50 km en op 2009-06-10 op commando gecontroleerd laten inslaan nabij de krater Gill.",
+  "description": "Kaguya, officieel SELENE (Selenological and Engineering Explorer), was na Hiten de tweede Japanse maanorbiter. Gelanceerd met een H-IIA vanaf Tanegashima op 2007-09-14, droeg hij een hoofdorbiter van 2914 kg en twee subsatellieten van 53 kg, Okina en Ouna. Alle drie de namen komen uit «Het verhaal van de bamboesnijder», waarvan de heldin, Kaguya, een prinses van de maan is. Okina gaf de radioverbinding met de orbiter door vanachter de maan, waardoor de zwaartekracht van de achterkant met dopplermetingen kon worden gevolgd, en Ouna diende als radiobron voor VLBI-tracking. Na de maanbaaninsertie op 2007-10-03 vestigde de orbiter zich op 2007-10-18 (Japanse tijd) in een cirkelvormige poolbaan op 100 km. Daar brachten zijn terreincamera, multibandbeeldvormer, spectraalprofiler, röntgen- en gammaspectrometers, laserhoogtemeter en radarsounder de vorm, samenstelling, zwaartekracht en het magnetisme van de maan in kaart, terwijl zijn hogeresolutiecamera de aarde filmde die boven de horizon opkwam. Op 2009-02-01 werd de orbiter verlaagd tot ongeveer 50 km en op 2009-06-10 op commando gecontroleerd laten inslaan nabij de krater Gill.",
   "events": [
     {
       "met": 0,
@@ -34,7 +34,7 @@
     {
       "met": 35,
       "label": "BAAN OP 100 KM",
-      "note": "Cirkelvormige polaire baan op 100 km bereikt op 2007-10-19; de hoofdfase van de wetenschap begint.",
+      "note": "Cirkelvormige polaire baan op 100 km bereikt op 2007-10-18 (Japanse tijd); de hoofdfase van de wetenschap begint.",
       "type": "nominal"
     },
     {

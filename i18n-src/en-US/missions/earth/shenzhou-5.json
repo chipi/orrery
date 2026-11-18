@@ -1,11 +1,11 @@
 {
   "name": "Shenzhou 5",
   "vehicle": "Long March 2F",
-  "payload": "7840 kg; one astronaut (Yang Liwei)",
+  "payload": "One astronaut (Yang Liwei)",
   "delta_v": "~9.4 km/s (LEO)",
   "type": "CREWED ORBITAL FLIGHT · FLOWN",
   "first": "China's first crewed spaceflight, flown by Yang Liwei",
-  "description": "Shenzhou 5 was China's first crewed spaceflight. Yang Liwei, a 38-year-old lieutenant colonel and former fighter pilot, launched alone on a Long March 2F from Jiuquan on 2003-10-15 at 09:00 China Standard Time. He circled the Earth 14 times at an altitude of about 332 to 336 km and landed in Inner Mongolia on 2003-10-16 (China Standard Time), after 21 hours, 22 minutes and 45 seconds of flight.",
+  "description": "Shenzhou 5 was China's first crewed spaceflight. Yang Liwei, a 38-year-old lieutenant colonel and former fighter pilot, launched alone on a Long March 2F from Jiuquan on 2003-10-15 at 09:00 China Standard Time. He circled the Earth 14 times, in a 343 km circular orbit from the fifth orbit on, and landed in Inner Mongolia on 2003-10-16 (China Standard Time), after 21 hours and 23 minutes of flight.",
   "events": [
     {
       "met": 0,
@@ -16,7 +16,7 @@
     {
       "met": 0.8908,
       "label": "LANDING",
-      "note": "Lands in Inner Mongolia on 2003-10-16 (China Standard Time) after 14 orbits and 21 h 22 min 45 s.",
+      "note": "Lands in Inner Mongolia on 2003-10-16 (China Standard Time) after 14 orbits and 21 h 23 min.",
       "type": "nominal"
     }
   ]

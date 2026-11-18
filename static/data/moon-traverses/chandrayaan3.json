@@ -3,7 +3,7 @@
   "agency": "ISRO",
   "status": "ENDED",
   "snapshot_date": "2023-09-03",
-  "credit": "© ISRO — Pragyan rover traverse (Chandrayaan-3, Aug–Sep 2023): Vikram, the rover's 23 APXS stops and its final position, digitised from Figure 1c of Vadawale S. V. et al. 2024, \"Chandrayaan-3 APXS elemental abundance measurements at lunar high latitude\" (Nature 633, doi:10.1038/s41586-024-07870-7), a map with latitude/longitude axes. The stops are joined in path order (the labelled stops 01, 03, 13, 16, 21, 26 and 29 fix it; the unlabelled ones are chained between them), straight lines between stops, 96 m against the 101.4 m ISRO reports driven. Placed from Vikram at 69.3741 S, 32.32 E (LROC post 1314, the site marker); the figure's frame puts Vikram at 69.3731 S, 32.3198 E (ISRO: 69.373 S, 32.319 E), 35 m from LRO's",
+  "credit": "© ISRO — Pragyan rover traverse (Chandrayaan-3, Aug–Sep 2023): Vikram, the rover's 23 APXS stops and its final position, digitised from Figure 1c of Vadawale S. V. et al. 2024, \"Chandrayaan-3 APXS elemental abundance measurements at lunar high latitude\" (Nature 633, doi:10.1038/s41586-024-07870-7), a map with latitude/longitude axes. The stops are joined in path order (the labelled stops 01, 03, 13, 16, 21, 26 and 29 fix it; the unlabelled ones are chained between them), straight lines between stops, 96 m against the 101.4 m ISRO reports driven. Placed from Vikram at 69.3741 S, 32.32 E (LROC post 1314, the site marker); the figure's frame puts Vikram at 69.3731 S, 32.3198 E (ISRO: 69.373 S, 32.319 E), about 30 m from LRO's position, so the whole route is shifted onto the marker",
   "points": [
     [
       -69.3741,

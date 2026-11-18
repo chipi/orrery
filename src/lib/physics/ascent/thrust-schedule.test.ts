@@ -348,3 +348,9 @@ describe('the vehicle after SECO keeps its spent final stage', () => {
     expect(s.reachedOrbit).toBe(true);
   });
 });
+
+describe('H-IIA 202 capacity with the real SRB-A burn', () => {
+  it('still puts 8 t into orbit (about 10 t to LEO quoted; the old pitch program managed 4.6 t)', () => {
+    expect(integrateAscent({ ...load('h-iia'), payloadKg: 8000 }).reachedOrbit).toBe(true);
+  });
+});

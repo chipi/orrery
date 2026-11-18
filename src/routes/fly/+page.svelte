@@ -207,6 +207,7 @@
     type JourneyTimeline,
   } from '$lib/orbital/ascent-clock';
   import { T_MINUS_S, launchActEndS, payloadSepTFor } from '$lib/orbital/ascent-hud';
+  import { launchCoastWarp, toMissionT, toSceneT } from '$lib/orbital/launch-coast-warp';
   import { resolveInjectionBurn } from '$lib/physics/transfer/injection-burn';
   import { resolveOrbitInsertion } from '$lib/physics/transfer/orbit-insertion';
   import { orbitInsertionBurn } from '$lib/physics/transfer/orbit-insertion-burns';
@@ -1747,12 +1748,18 @@
     ),
   );
   let descentSepTimes = $derived(descentSeparationTimes(descentSummaryFly));
+  // A direct insertion's coast to OMS-2 plays compressed (launch-coast-warp): the master bar's
+  // ascent band is laid out on the play clock, `launchT` stays mission time.
+  let launchCoastWarpFly = $derived(
+    launchSummaryFly ? launchCoastWarp(launchSummaryFly.events) : null,
+  );
+  let launchSceneDurationS = $derived(toSceneT(launchCoastWarpFly, launchDurationS));
   // Compressive coast-band width (RFC-034 §13): a 1-orbit hop and an 84-day
   // marathon shouldn't own the same slice of the scrubber (see fly-clock).
   let coastAscentFrac = $derived(coastAscentFraction(!!earthCoast, coastDurationDays));
   let masterTimeline: JourneyTimeline = $derived(
     makeTimeline(
-      launchDurationS,
+      launchSceneDurationS,
       // Earth-orbit missions: the "cruise" act IS the orbit-coast, so its duration
       // is the on-orbit time (days). Interplanetary: the transfer arc.
       earthCoast ? Math.max(0.01, coastDurationDays) : Math.max(1, arcTotalDays),
@@ -1782,9 +1789,9 @@
     masterScrubFraction({
       timeline: masterTimeline,
       live: showLaunch ? 'ascent' : showDescent ? 'descent' : showCoast ? 'coast' : 'cruise',
-      launchT,
+      launchT: toSceneT(launchCoastWarpFly, launchT),
       descentT,
-      launchDurationS,
+      launchDurationS: launchSceneDurationS,
       cruiseDays: earthCoast ? coastDurationDays : arcTotalDays,
       coastMetDays,
       simDay,
@@ -1811,7 +1818,7 @@
               launchProfile?.payloadSeparationDelayS,
             ).map((b) => ({
               label: hudLabel(b.label),
-              t: b.t,
+              t: toSceneT(launchCoastWarpFly, b.t),
             }))
           : [],
         descentBeats: descentSummaryFly
@@ -1879,7 +1886,7 @@
       // Scrubbing back into the ascent re-mounts LaunchScene fresh (resets any
       // completed warp) and drives it to the scrubbed MET.
       dispatchPhase({ type: 'scrubTo', phase: 'ascent' });
-      launchT = target.launchT;
+      launchT = toMissionT(launchCoastWarpFly, target.launchT);
     } else if (target.phase === 'descent') {
       // Scrubbing into the tail enters the descent act at the scrubbed EDL time.
       dispatchPhase({ type: 'scrubTo', phase: 'descent' });
@@ -3180,6 +3187,9 @@
       },
       get launchDurationS() {
         return launchDurationS;
+      },
+      get launchCoastWarp() {
+        return launchCoastWarpFly;
       },
       get launchSepTimes() {
         return launchSepTimes;
@@ -4490,7 +4500,7 @@
                 mk.seek.phase === 'descent'
                   ? formatDescentClock(mk.seek.t)
                   : mk.seek.phase === 'ascent'
-                    ? formatAscentClock(mk.seek.t)
+                    ? formatAscentClock(toMissionT(launchCoastWarpFly, mk.seek.t))
                     : ''}
               <button
                 type="button"

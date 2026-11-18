@@ -300,7 +300,16 @@ export interface AscentState {
 
 /** A discrete ascent beat (liftoff, staging, Max-Q, MECO, SECO, …). */
 export interface AscentEvent {
-  type: 'liftoff' | 'max_q' | 'staging' | 'meco' | 'fairing_jettison' | 'seco' | 'orbit';
+  type:
+    | 'liftoff'
+    | 'max_q'
+    | 'staging'
+    | 'meco'
+    | 'fairing_jettison'
+    | 'seco'
+    | 'orbit'
+    /** A direct insertion's circularising burn lights at apogee (the Shuttle's OMS-2). */
+    | 'insertion_burn';
   t: number;
   altKm: number;
   speedKms: number;
@@ -1064,7 +1073,9 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
       const burnS = (dvCirc * m) / coreThrustLit;
       if (!insertionBurnLit && (timeToApoapsisS(r, velUp, vhAbs) <= burnS / 2 || velUp <= 0)) {
         insertionBurnLit = true;
-        circulariseAtM = apoapsisAltM; // the apogee it lights at (drag trims it on the coast)
+        // the apogee it lights at (drag trims it on the coast); an unbound orbit keeps the target
+        if (Number.isFinite(apoapsisAltM)) circulariseAtM = apoapsisAltM;
+        pushEvent('insertion_burn', profile.stages[stageIndex].name);
       }
       pitch = Math.atan2(velUp, vhAbs);
       engineOn = insertionBurnLit;

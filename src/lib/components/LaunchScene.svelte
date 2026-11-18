@@ -44,6 +44,7 @@
     injectionPhaseStatus,
     launchActEndS,
     separationCoastStatus,
+    directInsertionCoastStatus,
     padState,
   } from '$lib/orbital/ascent-hud';
   import {
@@ -52,6 +53,7 @@
   } from '$lib/physics/transfer/injection-burn';
   import { formatAscentClock } from '$lib/orbital/ascent-clock';
   import { buildPlanBeats } from '$lib/orbital/flight-plan-beats';
+  import { advanceMissionT, launchCoastWarp, toSceneT } from '$lib/orbital/launch-coast-warp';
   import * as m from '$lib/paraglide/messages';
   import Chip from '$lib/components/Chip.svelte';
   import { hudLabel } from '$lib/orbital/hud-labels';
@@ -211,6 +213,10 @@
   ]);
 
   const beats = $derived(buildAscentBeats(summary));
+  // A direct insertion's 26-minute coast to OMS-2 plays compressed (launch-coast-warp); the
+  // progress bar and the beat strip are laid out on the play clock, the MET stays mission time.
+  const coastWarp = $derived(launchCoastWarp(summary.events));
+  const sceneDuration = $derived(toSceneT(coastWarp, duration));
   // The flight plan: liftoff, the ascent beats, then the parking orbit, injection burn and
   // spacecraft separation when the mission leaves orbit.
   // (One source with the markers on /fly's play bar: $lib/orbital/flight-plan-beats.)
@@ -269,12 +275,16 @@
   const countdown = $derived(countdownSeconds(t));
   const speedKmh = $derived(Math.round(hud.velKms * 3600));
   const dossierOpen = $derived(!warping); // keep the mission panel up through the whole launch
-  const progressPct = $derived(Math.max(0, Math.min(1, t / duration)) * 100);
+  const progressPct = $derived(
+    Math.max(0, Math.min(1, toSceneT(coastWarp, t) / sceneDuration)) * 100,
+  );
   const status = $derived(
     injection
       ? (injectionPhaseStatus(t, duration, injectionBurnLabel(injection.burnType)) ??
           ascentStatus(t, beats))
-      : (separationCoastStatus(t, duration, payloadSepT) ?? ascentStatus(t, beats)),
+      : (directInsertionCoastStatus(t, summary.events) ??
+          separationCoastStatus(t, duration, payloadSepT) ??
+          ascentStatus(t, beats)),
   );
 
   // Begin the re-basing warp. The real handoff (onComplete) fires when it ends.
@@ -364,6 +374,7 @@
         launcherHeightM: mission.launcherHeightM,
         payloadSepT,
         endT: ascentEnd,
+        coastWarp,
         reducedMotion: prefersReducedMotion(),
         nightUrl: `${base}/textures/2k_earth_nightmap.jpg`,
         // weak GPUs and touch devices get the lighter conditions rig
@@ -445,7 +456,12 @@
         const fr = director.apply(s);
         if (fr.shot !== directorShot) directorShot = fr.shot;
         if (directorDebugModel && t >= 0 && ++debugFrame % 3 === 0) {
-          const lr = liveReadout(director.plan, t, fr.state, VEHICLE_LENGTH_KM);
+          const lr = liveReadout(
+            director.plan,
+            toSceneT(coastWarp, t),
+            fr.state,
+            VEHICLE_LENGTH_KM,
+          );
           debugTrail = pushTrail(debugTrail, { x: lr.rel.dx, y: lr.rel.dz });
           onDirectorDebug?.({
             model: directorDebugModel,
@@ -479,7 +495,7 @@
           // externalClock: the /fly master clock owns `t` (it advances launchT
           // and binds it in) — LaunchScene only renders + still triggers the
           // orbit-reached warp when time crosses the seam (after injection).
-          if (!externalClock) t = Math.min(ascentEnd, t + dt * speed);
+          if (!externalClock) t = Math.min(ascentEnd, advanceMissionT(coastWarp, t, dt * speed));
           if (t >= ascentEnd) complete();
         }
         applyState();
@@ -651,7 +667,7 @@
         class="beat"
         class:done={t >= b.t}
         class:alt={i % 2 === 1}
-        style="left:{(b.t / duration) * 100}%"
+        style="left:{(toSceneT(coastWarp, b.t) / sceneDuration) * 100}%"
       >
         <span class="tick"></span><span class="lbl">{hudLabel(b.label)}</span>
       </div>

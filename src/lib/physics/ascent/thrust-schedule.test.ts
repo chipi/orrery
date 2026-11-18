@@ -289,10 +289,11 @@ describe('the sourced profiles (STS-68, H-IIA 202, Falcon Heavy / Europa Clipper
       apogeeAltM: 160 * nmi,
       perigeeAltM: 35 * nmi,
     });
-    // Table: 25,871 ft/s, 0.792 deg. The model's sphere (R 6,371 km) is not the table's Earth.
+    // Table: 25,871 ft/s, 0.792 deg (computed 25,869 ft/s, 0.801 deg). The model's sphere
+    // (R 6,371 km) is not the table's Earth.
     expect(st.speed / ft).toBeGreaterThan(25_871 * 0.995);
     expect(st.speed / ft).toBeLessThan(25_871 * 1.005);
-    expect((Math.atan2(st.vr, st.vh) * 180) / Math.PI).toBeCloseTo(0.792, 0);
+    expect(Math.abs((Math.atan2(st.vr, st.vh) * 180) / Math.PI - 0.792)).toBeLessThan(0.02);
     // Standard insertion, 85 x 0 nmi: 25,725 ft/s, 0.675 deg.
     const std = mecoTargetState({ altM: 360_000 * ft, apogeeAltM: 85 * nmi, perigeeAltM: 0 });
     expect(std.speed / ft).toBeGreaterThan(25_725 * 0.995);

@@ -105,7 +105,7 @@
       "u": "https://en.wikipedia.org/wiki/RS-25"
     },
     {
-      "l": "NASA — TD0358A Ascent Guidance and Flight Control Training Manual, Table 3-1 MECO targets: MECO at 360,000 ft; direct insertion 25,871 ft/s, 0.792 deg, 160 x 35 nmi (inertial velocity chosen to fall short of orbit so the tank re-enters; OMS-2 then circularises). The orbit at MECO (58 x 221 km) is derived from STS-68's OMS-2 (T+2110 s, 98 s, 160.1 ft/s = 48.8 m/s, to 119.7 x 119.4 nmi): the 221 km apogee less the OMS-2 Δv at apogee gives the 58 km perigee",
+      "l": "NASA — TD0358A Ascent Guidance and Flight Control Training Manual, Table 3-1 MECO targets: MECO at 360,000 ft; direct insertion 25,871 ft/s, 0.792 deg, 160 x 35 nmi; text: \"The inertial velocity is chosen to fall short of orbit insertion but close enough for the OMS to insert the orbiter into orbit. This keeps the ET out of orbit so its reentry can be controlled.\" The profile's target takes the table's 360,000 ft MECO altitude and STS-68's orbit, not the table's 160 x 35 nmi: the orbit at MECO (58 x 221 km) is derived from STS-68's OMS-2 (T+2110 s, 98 s, 160.1 ft/s = 48.8 m/s, to 119.7 x 119.4 nmi): the 221 km apogee less the OMS-2 Δv at apogee gives the 58 km perigee",
       "u": "https://ibiblio.org/apollo/Shuttle/TD0358A%20-%20ASC%20G&C%202102%20-%20Ascent%20Guidance%20and%20Flight%20Control%20Training%20Manual.pdf"
     }
   ],

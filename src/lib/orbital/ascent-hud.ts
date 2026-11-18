@@ -114,6 +114,8 @@ export const BEAT_LABEL: Record<string, string> = {
   fairing_jettison: 'FAIRING',
   seco: 'SECO',
   orbit: 'ORBIT',
+  // The Shuttle's direct-insertion circularising burn (the only vehicle that flies one).
+  insertion_burn: 'OMS-2',
 };
 
 /** A labelled beat on the ascent timeline strip. */
@@ -157,10 +159,24 @@ export function ascentStatus(t: number, beats: AscentBeat[], ignitionT = IGNITIO
   return STATE_LABELS.has(last.label) || t - last.t <= EVENT_LABEL_HOLD_S ? last.label : 'ASCENT';
 }
 
+/** The status line on a direct insertion's coast to apogee: COAST from when the tank
+ *  separation's label has had its beat until the circularising burn lights, else null (the
+ *  caller falls back to `ascentStatus`, which then holds OMS-2 until ORBIT). */
+export function directInsertionCoastStatus(
+  t: number,
+  events: ReadonlyArray<{ type: string; t: number }>,
+): string | null {
+  const burn = events.find((e) => e.type === 'insertion_burn');
+  if (!burn) return null;
+  const sep = events.filter((e) => e.type === 'staging' && e.t < burn.t).at(-1);
+  if (!sep) return null;
+  return t >= sep.t + EVENT_LABEL_HOLD_S && t < burn.t ? 'COAST' : null;
+}
+
 /** Seconds an event label stays up after its beat. */
 export const EVENT_LABEL_HOLD_S = 20;
 /** Beat labels that describe a lasting state rather than a moment. */
-const STATE_LABELS = new Set(['MECO', 'SECO', 'ORBIT']);
+const STATE_LABELS = new Set(['MECO', 'SECO', 'ORBIT', 'OMS-2']);
 
 /** Whole seconds remaining in the countdown, or null once t ≥ 0. */
 export function countdownSeconds(t: number): number | null {

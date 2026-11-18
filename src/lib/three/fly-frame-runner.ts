@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { advanceMissionT, type LaunchCoastWarp } from '$lib/orbital/launch-coast-warp';
 import * as m from '$lib/paraglide/messages';
 import { A_MOON_KM, moonEciPos } from '$lib/orbital/cislunar/cislunar-geometry';
 import { BODY_MASS_KG, gravityAccel, logScaleLength } from '$lib/orbit-overlays';
@@ -163,6 +164,8 @@ export interface FlyFrameBridge {
   readonly interplanetaryPhaseMarkers: InterplanetaryPhaseMarker[];
   readonly launchDurationS: number;
   readonly launchSepTimes: number[];
+  /** The launch act's compressed coast (a direct insertion), or null. */
+  readonly launchCoastWarp: LaunchCoastWarp | null;
   readonly phaseMarkers: PhaseMarker[];
   readonly viewMode: 'heliocentric' | 'cislunar';
   readonly showLaunch: boolean;
@@ -1044,7 +1047,7 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
       const slow = sepSlowmoFactor(bridge.launchT, bridge.launchSepTimes);
       bridge.launchT = Math.min(
         bridge.launchDurationS,
-        bridge.launchT + dt * bridge.launchSpeed * slow,
+        advanceMissionT(bridge.launchCoastWarp, bridge.launchT, dt * bridge.launchSpeed * slow),
       );
     }
     // Master clock — descent phase: advance the EDL time (DescentScene is

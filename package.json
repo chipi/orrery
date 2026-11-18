@@ -146,7 +146,7 @@
     "@playwright/test": "1.64.0",
     "@sentry/vite-plugin": "5.4.0",
     "@sveltejs/adapter-static": "^3.0.10",
-    "@sveltejs/kit": "2.70.3",
+    "@sveltejs/kit": "2.70.4",
     "@sveltejs/vite-plugin-svelte": "7.2.0",
     "@types/katex": "^0.16.8",
     "@types/node": "^26.1.0",

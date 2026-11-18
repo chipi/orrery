@@ -33,7 +33,7 @@
   );
   const ariaLabel = $derived(ariaLabelKey ? t(ariaLabelKey) : `Assist chain · ${provenanceText}`);
 
-  const TEAL = '78,205,196'; // a3-keep: Lab figure art, palette review at the end
+  const TEAL = '136,159,231'; // a3-keep: Lab figure art, palette review at the end
   const GOLD = '255,200,80';
   const PAD = { left: 46, right: 96, top: 44, bottom: 40 };
   const px0 = PAD.left;

@@ -32,7 +32,7 @@
   const py0 = PAD.top;
   const py1 = H - PAD.bottom;
   const OPEN = '255,150,60';
-  const CLOSED = '78,205,196';
+  const CLOSED = '136,159,231';
 
   const provenanceText = $derived(
     `${t('lab.fidelity.' + fidelityLabel(figure.provenance.fidelity))} · ${figure.provenance.module}`,
@@ -64,13 +64,13 @@
     for (const d of [90, 45, 0, Math.round(yMin + 5)]) {
       if (d > yMax || d < yMin) continue;
       const y = yToPx(d);
-      ctx.strokeStyle = d === 0 ? 'rgba(230,255,251,0.4)' : 'rgba(78,205,196,0.12)'; // a3-keep: Lab figure art, palette review at the end
+      ctx.strokeStyle = d === 0 ? 'rgba(230,255,251,0.4)' : 'rgba(136,159,231,0.12)'; // a3-keep: Lab figure art, palette review at the end
       ctx.lineWidth = d === 0 ? 1.2 : 1;
       ctx.beginPath();
       ctx.moveTo(px0, y);
       ctx.lineTo(px1, y);
       ctx.stroke();
-      ctx.fillStyle = d === 0 ? 'rgba(230,255,251,0.7)' : 'rgba(78,205,196,0.5)'; // a3-keep: Lab figure art, palette review at the end
+      ctx.fillStyle = d === 0 ? 'rgba(230,255,251,0.7)' : 'rgba(136,159,231,0.5)'; // a3-keep: Lab figure art, palette review at the end
       ctx.fillText(`${d}°`, px0 - 3, y + 3);
     }
     // horizon label
@@ -145,7 +145,7 @@
     ctx.fillText('■ open-loop pitch table', px0, py0 + 2);
     ctx.fillStyle = `rgb(${CLOSED})`;
     ctx.fillText('■ closed-loop PEG', px0 + 118, py0 + 2);
-    ctx.fillStyle = 'rgba(78,205,196,0.55)'; // a3-keep: Lab figure art, palette review at the end
+    ctx.fillStyle = 'rgba(136,159,231,0.55)'; // a3-keep: Lab figure art, palette review at the end
     ctx.textAlign = 'center';
     ctx.fillText(`time → ${maxT.toFixed(0)} s`, (px0 + px1) / 2, py1 + 14);
     ctx.save();

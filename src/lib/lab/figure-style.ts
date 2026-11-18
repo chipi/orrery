@@ -1,15 +1,15 @@
 import type { Fidelity } from '$lib/physics/spec';
 
 export const FIGURE_BG = '#04040c';
-export const TEAL = '#4ecdc4'; // a3-keep: Lab figure art, palette review at the end
+export const TEAL = '#889fe7'; // a3-keep: Lab figure art, palette review at the end
 export const GOLD = '#ffc850';
 export const MARS = '#c1440e';
-export const GRID = 'rgba(78,205,196,0.09)'; // a3-keep: Lab figure art, palette review at the end
+export const GRID = 'rgba(136,159,231,0.09)'; // a3-keep: Lab figure art, palette review at the end
 export const GRID_STEP = 32;
 // Curve-plot chrome (v0.9 renderer lift). Tick marks + labels sit brighter than the
 // data-aligned gridlines, which sit brighter than the cosmetic graph-paper GRID.
-export const AXIS_TICK = 'rgba(78,205,196,0.5)'; // tick marks + numeric labels // a3-keep: Lab figure art, palette review at the end
-export const AXIS_GRIDLINE = 'rgba(78,205,196,0.1)'; // gridlines aligned to tick values // a3-keep: Lab figure art, palette review at the end
+export const AXIS_TICK = 'rgba(136,159,231,0.5)'; // tick marks + numeric labels // a3-keep: Lab figure art, palette review at the end
+export const AXIS_GRIDLINE = 'rgba(136,159,231,0.1)'; // gridlines aligned to tick values // a3-keep: Lab figure art, palette review at the end
 
 /**
  * "Nice" axis ticks for a [min,max] range — round decimal steps for linear, decade

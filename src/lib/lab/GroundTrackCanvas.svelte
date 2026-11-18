@@ -78,10 +78,10 @@
     ctx.fillRect(x0, y0, x1 - x0, y1 - y0);
 
     // Graticule — lon every 60°, lat every 30°.
-    ctx.strokeStyle = 'rgba(78,205,196,0.12)'; // a3-keep: Lab figure art, palette review at the end
+    ctx.strokeStyle = 'rgba(136,159,231,0.12)'; // a3-keep: Lab figure art, palette review at the end
     ctx.lineWidth = 1;
     ctx.font = "7px 'Space Mono', monospace";
-    ctx.fillStyle = 'rgba(78,205,196,0.4)'; // a3-keep: Lab figure art, palette review at the end
+    ctx.fillStyle = 'rgba(136,159,231,0.4)'; // a3-keep: Lab figure art, palette review at the end
     ctx.textAlign = 'center';
     for (let lon = -180; lon <= 180; lon += 60) {
       const px = lonToX(lon);
@@ -102,7 +102,7 @@
     }
 
     // Equator emphasized.
-    ctx.strokeStyle = 'rgba(78,205,196,0.3)'; // a3-keep: Lab figure art, palette review at the end
+    ctx.strokeStyle = 'rgba(136,159,231,0.3)'; // a3-keep: Lab figure art, palette review at the end
     ctx.beginPath();
     ctx.moveTo(x0, latToY(0));
     ctx.lineTo(x1, latToY(0));
@@ -130,12 +130,12 @@
       // glow
       ctx.save();
       ctx.globalCompositeOperation = 'lighter';
-      ctx.strokeStyle = `rgba(78,205,196,${0.28 * alpha})`; // a3-keep: Lab figure art, palette review at the end
+      ctx.strokeStyle = `rgba(136,159,231,${0.28 * alpha})`; // a3-keep: Lab figure art, palette review at the end
       ctx.lineWidth = 5;
       strokeTrack(ctx, pts, progress);
       ctx.restore();
       // crisp
-      ctx.strokeStyle = `rgba(120,235,225,${alpha})`; // a3-keep: Lab figure art, palette review at the end
+      ctx.strokeStyle = `rgba(136,159,231,${alpha})`; // a3-keep: Lab figure art, palette review at the end
       ctx.lineWidth = i === 0 ? 2 : 1.3;
       strokeTrack(ctx, pts, progress);
     });
@@ -147,7 +147,7 @@
       const idx = Math.min(head.length - 1, Math.max(1, Math.floor(head.length * progress) - 1));
       const sx = lonToX(wrapLon(head[idx].x));
       const sy = latToY(head[idx].y);
-      heroGlow(ctx, sx, sy, 9, '120,235,225', 0.6);
+      heroGlow(ctx, sx, sy, 9, '136,159,231', 0.6);
       ctx.fillStyle = '#eafffb';
       ctx.beginPath();
       ctx.arc(sx, sy, 3, 0, Math.PI * 2);
@@ -159,13 +159,13 @@
     ctx.font = "8px 'Space Mono', monospace";
     ctx.fillStyle = GOLD;
     ctx.fillText(`incl ${figure.inclinationDeg.toFixed(1)}°`, x0 + 4, y0 + 12);
-    ctx.fillStyle = 'rgba(120,235,225,0.9)'; // a3-keep: Lab figure art, palette review at the end
+    ctx.fillStyle = 'rgba(136,159,231,0.9)'; // a3-keep: Lab figure art, palette review at the end
     ctx.fillText(`west drift ${figure.shiftDeg.toFixed(1)}°/orbit`, x0 + 4, y0 + 23);
 
     // The longitude axis is RELATIVE, not geographic (the zero is arbitrary) — say so, so the
     // −180…180 ticks aren't read as Greenwich-referenced coordinates.
     ctx.textAlign = 'center';
-    ctx.fillStyle = 'rgba(78,205,196,0.5)'; // a3-keep: Lab figure art, palette review at the end
+    ctx.fillStyle = 'rgba(136,159,231,0.5)'; // a3-keep: Lab figure art, palette review at the end
     ctx.font = "7px 'Space Mono', monospace";
     ctx.fillText('relative longitude (arbitrary zero) · latitude', (x0 + x1) / 2, y1 + 22);
 

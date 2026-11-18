@@ -44,7 +44,7 @@
   );
 
   const stageColor = (stage: number): string =>
-    stage <= 0 ? '255,150,60' : stage === 1 ? '78,205,196' : '150,170,200';
+    stage <= 0 ? '255,150,60' : stage === 1 ? '136,159,231' : '150,170,200';
 
   let canvas = $state<HTMLCanvasElement | null>(null);
   let hasAnimated = false;
@@ -61,7 +61,7 @@
 
     // Kármán line (100 km) + target-orbit reference.
     for (const [alt, label, rgb] of [
-      [100, 'Kármán 100 km', '120,235,225'],
+      [100, 'Kármán 100 km', '136,159,231'],
       [figure.orbitAltKm, `target ${figure.orbitAltKm.toFixed(0)} km`, '255,200,80'],
     ] as [number, string, string][]) {
       const y = yToPx(alt);
@@ -81,15 +81,15 @@
     // Earth surface — a LABELLED solid ground line (+ a faint ground band below it) so
     // the plot floor reads as the planet and liftoff clearly sits ON it (FB4: "what is
     // Earth? liftoff seems not on Earth").
-    ctx.fillStyle = 'rgba(120,200,190,0.07)'; // a3-keep: Lab figure art, palette review at the end
+    ctx.fillStyle = 'rgba(136,159,231,0.07)'; // a3-keep: Lab figure art, palette review at the end
     ctx.fillRect(px0, py1, px1 - px0, Math.min(6, H - py1));
-    ctx.strokeStyle = 'rgba(130,235,225,0.55)'; // a3-keep: Lab figure art, palette review at the end
+    ctx.strokeStyle = 'rgba(136,159,231,0.55)'; // a3-keep: Lab figure art, palette review at the end
     ctx.lineWidth = 2;
     ctx.beginPath();
     ctx.moveTo(px0, py1);
     ctx.lineTo(px1, py1);
     ctx.stroke();
-    ctx.fillStyle = 'rgba(130,235,225,0.75)'; // a3-keep: Lab figure art, palette review at the end
+    ctx.fillStyle = 'rgba(136,159,231,0.75)'; // a3-keep: Lab figure art, palette review at the end
     ctx.font = "7px 'Space Mono', monospace";
     ctx.textAlign = 'left';
     ctx.fillText(t('lab.figure.earth-surface'), px0 + 3, py1 - 4);
@@ -152,7 +152,7 @@
     }
 
     // Axis ticks.
-    ctx.fillStyle = 'rgba(78,205,196,0.55)'; // a3-keep: Lab figure art, palette review at the end
+    ctx.fillStyle = 'rgba(136,159,231,0.55)'; // a3-keep: Lab figure art, palette review at the end
     ctx.font = "7px 'Space Mono', monospace";
     ctx.textAlign = 'center';
     ctx.fillText(`downrange → ${maxX.toFixed(0)} km`, (px0 + px1) / 2, py1 + 14);
@@ -165,7 +165,7 @@
     // ── Loss ledger (top) — orbital speed + the three taxes = ideal Δv ──
     const orbit = figure.targetSpeedKms;
     const segs: [string, number, string][] = [
-      ['orbit', orbit, '78,205,196'],
+      ['orbit', orbit, '136,159,231'],
       ['gravity', figure.losses.gravityKms, '255,150,60'],
       ['drag', figure.losses.dragKms, '210,70,50'],
       ['steer', figure.losses.steeringKms, '255,200,80'],
@@ -198,7 +198,7 @@
     // Verdict.
     ctx.textAlign = 'center';
     ctx.font = "9px 'Space Mono', monospace";
-    ctx.fillStyle = figure.reachedOrbit ? 'rgb(78,205,196)' : 'rgb(210,70,50)'; // a3-keep: Lab figure art, palette review at the end
+    ctx.fillStyle = figure.reachedOrbit ? 'rgb(136,159,231)' : 'rgb(210,70,50)'; // a3-keep: Lab figure art, palette review at the end
     ctx.fillText(
       figure.reachedOrbit
         ? `IN ORBIT — ${figure.finalSpeedKms.toFixed(2)} km/s at ${figure.orbitAltKm.toFixed(0)} km`

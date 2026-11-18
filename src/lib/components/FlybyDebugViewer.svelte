@@ -315,7 +315,7 @@
       pts.push({
         horiz: horizOf(plan.shipPos.x, plan.shipPos.z),
         y: plan.shipPos.y,
-        color: '#4ecdc4',
+        color: '#889fe7',
         label: 'ship',
         r: 4,
       });
@@ -358,14 +358,14 @@
 
     // Orbital-plane baseline (y = 0).
     const base0 = proj(0, 0);
-    ctx.strokeStyle = 'rgba(94,234,212,0.25)';
+    ctx.strokeStyle = 'rgba(136,159,231,0.25)';
     ctx.setLineDash([4, 3]);
     ctx.beginPath();
     ctx.moveTo(margin, base0.py);
     ctx.lineTo(W - margin, base0.py);
     ctx.stroke();
     ctx.setLineDash([]);
-    ctx.fillStyle = 'rgba(94,234,212,0.5)';
+    ctx.fillStyle = 'rgba(136,159,231,0.5)';
     ctx.font = '8px monospace';
     ctx.fillText('orbital plane (y=0)', margin, base0.py - 3);
 
@@ -429,7 +429,7 @@
     });
 
     // Background grid (every scene unit).
-    ctx.strokeStyle = 'rgba(94, 234, 212, 0.06)';
+    ctx.strokeStyle = 'rgba(136,159,231, 0.06)';
     ctx.lineWidth = 1;
     for (let gx = Math.ceil(minX); gx <= maxX; gx += 5) {
       const a = project(gx, minZ);
@@ -450,7 +450,7 @@
 
     // Trajectory line.
     if (trajectory.length >= 2) {
-      ctx.strokeStyle = 'rgba(94, 234, 212, 0.5)';
+      ctx.strokeStyle = 'rgba(136,159,231, 0.5)';
       ctx.lineWidth = 1.5;
       ctx.beginPath();
       for (let i = 0; i < trajectory.length; i++) {
@@ -512,7 +512,7 @@
     // Ship + velocity arrow.
     if (plan) {
       const sp = project(plan.shipPos.x, plan.shipPos.z);
-      ctx.fillStyle = '#4ecdc4';
+      ctx.fillStyle = '#889fe7';
       ctx.beginPath();
       ctx.arc(sp.px, sp.py, 4, 0, Math.PI * 2);
       ctx.fill();
@@ -524,13 +524,13 @@
       const VEL_ARROW_LEN = 24;
       const vx = plan.shipVelocityXZ.x * VEL_ARROW_LEN;
       const vz = plan.shipVelocityXZ.z * VEL_ARROW_LEN;
-      ctx.strokeStyle = '#4ecdc4';
+      ctx.strokeStyle = '#889fe7';
       ctx.lineWidth = 2;
       ctx.beginPath();
       ctx.moveTo(sp.px, sp.py);
       ctx.lineTo(sp.px + vx, sp.py - vz);
       ctx.stroke();
-      ctx.fillStyle = '#4ecdc4';
+      ctx.fillStyle = '#889fe7';
       ctx.font = '8px monospace';
       ctx.fillText('vel', sp.px + vx + 2, sp.py - vz);
 
@@ -757,8 +757,8 @@
         ctx.fill();
         ctx.stroke();
       } else {
-        ctx.fillStyle = '#4ecdc4';
-        ctx.strokeStyle = 'rgba(220, 255, 250, 1)';
+        ctx.fillStyle = '#889fe7';
+        ctx.strokeStyle = 'rgba(136,159,231, 1)';
         ctx.lineWidth = 1;
         ctx.beginPath();
         ctx.arc(px, py, Math.max(rPx, 2), 0, Math.PI * 2);
@@ -796,7 +796,7 @@
     // Verdict badge.
     const badge = shotQuality.isIconic ? 'ICONIC' : 'NOT ICONIC';
     const badgeColor = shotQuality.isIconic
-      ? 'rgba(78, 205, 196, 0.95)'
+      ? 'rgba(136,159,231, 0.95)'
       : 'rgba(255, 120, 120, 0.95)';
     ctx.fillStyle = badgeColor;
     ctx.font = 'bold 10px monospace';
@@ -981,19 +981,19 @@
   }
   .control-label input[type='range'] {
     width: 100%;
-    accent-color: #4ecdc4;
+    accent-color: #889fe7;
   }
   .control-label select {
     background: rgba(8, 10, 22, 0.6);
     color: rgba(220, 230, 245, 0.95);
-    border: 1px solid rgba(94, 234, 212, 0.4);
+    border: 1px solid rgba(136, 159, 231, 0.4);
     font-family: inherit;
     font-size: var(--size-label);
     padding: 2px 4px;
   }
   canvas {
     background: rgba(0, 0, 0, 0.7);
-    border: 1px solid rgba(94, 234, 212, 0.3);
+    border: 1px solid rgba(136, 159, 231, 0.3);
     border-radius: 4px;
     width: 100%;
     max-width: 320px;
@@ -1009,12 +1009,12 @@
   }
   .readout-divider {
     height: 1px;
-    background: rgba(94, 234, 212, 0.15);
+    background: rgba(136, 159, 231, 0.15);
     margin: 4px 0;
   }
   .frame-label {
     font-size: var(--size-label);
-    color: rgba(94, 234, 212, 0.7);
+    color: rgba(136, 159, 231, 0.7);
     letter-spacing: 1.5px;
     text-transform: uppercase;
     margin-top: 4px;
@@ -1053,9 +1053,9 @@
     gap: 6px;
   }
   .solve-btn {
-    background: rgba(94, 234, 212, 0.18);
-    border: 1px solid #5eead4;
-    color: #5eead4;
+    background: rgba(136, 159, 231, 0.18);
+    border: 1px solid #889fe7;
+    color: #889fe7;
     border-radius: 4px;
     padding: 3px 10px;
     font-size: var(--size-label);
@@ -1069,7 +1069,7 @@
   }
   .solve-result {
     font-size: var(--size-label);
-    color: rgba(94, 234, 212, 0.85);
+    color: rgba(136, 159, 231, 0.85);
     font-family: ui-monospace, monospace;
     padding: 2px 0;
   }

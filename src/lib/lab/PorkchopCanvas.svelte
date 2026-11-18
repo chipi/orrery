@@ -95,7 +95,7 @@
     }
 
     // Plot frame.
-    ctx.strokeStyle = 'rgba(120,235,225,0.35)'; // a3-keep: Lab figure art, palette review at the end
+    ctx.strokeStyle = 'rgba(136,159,231,0.35)'; // a3-keep: Lab figure art, palette review at the end
     ctx.lineWidth = 1;
     ctx.strokeRect(px0, py0, px1 - px0, py1 - py0);
 
@@ -117,7 +117,7 @@
     }
 
     // Axes labels.
-    ctx.fillStyle = 'rgba(78,205,196,0.6)'; // a3-keep: Lab figure art, palette review at the end
+    ctx.fillStyle = 'rgba(136,159,231,0.6)'; // a3-keep: Lab figure art, palette review at the end
     ctx.font = "7.5px 'Space Mono', monospace";
     ctx.textAlign = 'center';
     ctx.fillText('departure day →', (px0 + px1) / 2, py1 + 18);
@@ -141,9 +141,9 @@
       ctx.fillStyle = ramp(min + f * 7, min);
       ctx.fillRect(cbx, py1 - f * (py1 - py0), cbw, (py1 - py0) / 40 + 1);
     }
-    ctx.strokeStyle = 'rgba(120,235,225,0.3)'; // a3-keep: Lab figure art, palette review at the end
+    ctx.strokeStyle = 'rgba(136,159,231,0.3)'; // a3-keep: Lab figure art, palette review at the end
     ctx.strokeRect(cbx, py0, cbw, py1 - py0);
-    ctx.fillStyle = 'rgba(78,205,196,0.7)'; // a3-keep: Lab figure art, palette review at the end
+    ctx.fillStyle = 'rgba(136,159,231,0.7)'; // a3-keep: Lab figure art, palette review at the end
     ctx.textAlign = 'left';
     ctx.font = "7px 'Space Mono', monospace";
     ctx.fillText(`${min.toFixed(1)}`, cbx + cbw + 2, py1);

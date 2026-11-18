@@ -33,7 +33,7 @@
   );
   const ariaLabel = $derived(ariaLabelKey ? t(ariaLabelKey) : `Gravity assist · ${provenanceText}`);
 
-  const TEAL = '78,205,196'; // a3-keep: Lab figure art, palette review at the end
+  const TEAL = '136,159,231'; // a3-keep: Lab figure art, palette review at the end
   const GOLD = '255,200,80';
   let canvas = $state<HTMLCanvasElement | null>(null);
   let hasAnimated = false;
@@ -74,7 +74,7 @@
     // planet at the origin (the deflector)
     heroGlow(ctx, ox, oy, 16, TEAL, 0.4); // a3-keep: Lab figure art, palette review at the end
     const g = ctx.createRadialGradient(ox - 3, oy - 3, 1, ox, oy, 9);
-    g.addColorStop(0, 'rgba(120,215,235,0.95)'); // a3-keep: Lab figure art, palette review at the end
+    g.addColorStop(0, 'rgba(136,159,231,0.95)'); // a3-keep: Lab figure art, palette review at the end
     g.addColorStop(1, 'rgba(40,90,120,0.7)'); // a3-keep: Lab figure art, palette review at the end
     ctx.fillStyle = g;
     ctx.beginPath();

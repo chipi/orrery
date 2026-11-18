@@ -27,9 +27,9 @@ describe('fidelityStyle register golden-master', () => {
     expect(unique.size).toBe(3);
   });
 
-  it('computed is solid teal at full opacity', () => {
+  it('computed is solid accent blue at full opacity', () => {
     const s = fidelityStyle('computed');
-    expect(s.stroke).toBe('#4ecdc4');
+    expect(s.stroke).toBe('#889fe7');
     expect(s.dasharray).toBe('none');
     expect(s.opacity).toBe(1);
     expect(s.registerClass).toBe('fidelity-computed');

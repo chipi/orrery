@@ -211,8 +211,8 @@
       </radialGradient>
       <radialGradient id="fig-benchglow" cx="42%" cy="40%" r="55%">
         <!-- a3-keep: Lab figure art, palette review at the end -->
-        <stop offset="0%" stop-color="rgba(78,205,196,0.06)" />
-        <stop offset="100%" stop-color="rgba(78,205,196,0)" />
+        <stop offset="0%" stop-color="rgba(136,159,231,0.06)" />
+        <stop offset="100%" stop-color="rgba(136,159,231,0)" />
       </radialGradient>
       <radialGradient id="fig-vignette" cx="50%" cy="46%" r="72%">
         <stop offset="60%" stop-color="rgba(0,0,0,0)" />
@@ -220,7 +220,7 @@
       </radialGradient>
       <pattern id="fig-grid-minor" width="8" height="8" patternUnits="userSpaceOnUse">
         <!-- a3-keep: Lab figure art, palette review at the end -->
-        <path d="M8 0H0V8" fill="none" stroke="rgba(78,205,196,0.032)" stroke-width="1" />
+        <path d="M8 0H0V8" fill="none" stroke="rgba(136,159,231,0.032)" stroke-width="1" />
       </pattern>
       <pattern
         id="fig-grid"
@@ -244,8 +244,8 @@
       </filter>
       <linearGradient id="fig-area" x1="0" y1="0" x2="0" y2="1">
         <!-- a3-keep: Lab figure art, palette review at the end -->
-        <stop offset="0%" stop-color="rgba(78,205,196,0.22)" />
-        <stop offset="100%" stop-color="rgba(78,205,196,0)" />
+        <stop offset="0%" stop-color="rgba(136,159,231,0.22)" />
+        <stop offset="100%" stop-color="rgba(136,159,231,0)" />
       </linearGradient>
     </defs>
     <rect width={W} height={H} fill="url(#fig-bg)" />
@@ -438,20 +438,20 @@
   .axis-label {
     font-family: 'Space Mono', monospace;
     font-size: var(--size-label);
-    fill: rgba(78, 205, 196, 0.65); /* a3-keep: Lab figure art, palette review at the end */
+    fill: rgba(136, 159, 231, 0.65); /* a3-keep: Lab figure art, palette review at the end */
     letter-spacing: 0.5px;
   }
 
   .series-label {
     font-family: 'Space Mono', monospace;
     font-size: var(--size-label);
-    fill: rgba(78, 205, 196, 0.8); /* a3-keep: Lab figure art, palette review at the end */
+    fill: rgba(136, 159, 231, 0.8); /* a3-keep: Lab figure art, palette review at the end */
   }
 
   .tick-label {
     font-family: 'Space Mono', monospace;
     font-size: var(--size-label);
-    fill: rgba(78, 205, 196, 0.55); /* a3-keep: Lab figure art, palette review at the end */
+    fill: rgba(136, 159, 231, 0.55); /* a3-keep: Lab figure art, palette review at the end */
   }
 
   .mark-label {
@@ -477,7 +477,7 @@
   .honesty-prov {
     font-family: 'Space Mono', monospace;
     font-size: var(--size-label);
-    fill: rgba(78, 205, 196, 0.5); /* a3-keep: Lab figure art, palette review at the end */
+    fill: rgba(136, 159, 231, 0.5); /* a3-keep: Lab figure art, palette review at the end */
     letter-spacing: 0.5px;
   }
 

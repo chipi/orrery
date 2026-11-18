@@ -209,7 +209,7 @@
   }
   .readout {
     font-size: 12px;
-    color: #9fe8e2;
+    color: #889fe7;
     margin: 4px 0 8px;
   }
   .note {

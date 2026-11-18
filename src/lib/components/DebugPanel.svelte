@@ -554,7 +554,7 @@
     max-height: calc(100vh - var(--nav-height) - 24px);
     z-index: 90;
     background: rgba(8, 10, 22, 0.92);
-    border: 1px solid rgba(94, 234, 212, 0.4);
+    border: 1px solid rgba(136, 159, 231, 0.4);
     border-radius: 6px;
     color: rgba(220, 230, 245, 0.95);
     font-family: var(--font-mono, 'Space Mono', monospace);
@@ -571,7 +571,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 8px 12px;
-    border-bottom: 1px solid rgba(94, 234, 212, 0.25);
+    border-bottom: 1px solid rgba(136, 159, 231, 0.25);
     background: rgba(8, 10, 22, 0.5);
     /* Drag handle — grab to move the panel off the nav / content (esp. mobile). */
     cursor: grab;
@@ -584,7 +584,7 @@
   }
   .debug-grip {
     margin-left: 4px;
-    color: rgba(94, 234, 212, 0.55);
+    color: rgba(136, 159, 231, 0.55);
     font-size: 13px;
     letter-spacing: -1px;
   }
@@ -628,7 +628,7 @@
   }
   .debug-tabs {
     display: flex;
-    border-bottom: 1px solid rgba(94, 234, 212, 0.2);
+    border-bottom: 1px solid rgba(136, 159, 231, 0.2);
   }
   .debug-tab {
     flex: 1;
@@ -666,7 +666,7 @@
   .debug-section-stack {
     margin-top: 12px;
     padding-top: 8px;
-    border-top: 1px solid rgba(94, 234, 212, 0.15);
+    border-top: 1px solid rgba(136, 159, 231, 0.15);
   }
   .debug-row-heading {
     color: rgba(220, 230, 245, 0.85);
@@ -701,7 +701,7 @@
   .debug-slider-val {
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: var(--size-label);
-    color: rgba(94, 234, 212, 0.8);
+    color: rgba(136, 159, 231, 0.8);
     min-width: 32px;
     text-align: right;
   }
@@ -712,7 +712,7 @@
     padding: 3px 0;
   }
   .debug-key {
-    color: rgba(94, 234, 212, 0.8);
+    color: rgba(136, 159, 231, 0.8);
     font-size: var(--size-label);
     letter-spacing: 1.5px;
     text-transform: uppercase;

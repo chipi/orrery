@@ -39,7 +39,7 @@
   let canvas = $state<HTMLCanvasElement | null>(null);
   let hasAnimated = false;
 
-  const TEAL = '78,205,196'; // a3-keep: Lab figure art, palette review at the end
+  const TEAL = '136,159,231'; // a3-keep: Lab figure art, palette review at the end
   const GOLD = '255,200,80';
   const departR = $derived(figure.departInner ? figure.innerDrawR : figure.outerDrawR);
   const arriveR = $derived(figure.departInner ? figure.outerDrawR : figure.innerDrawR);

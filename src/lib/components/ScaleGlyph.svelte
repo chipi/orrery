@@ -52,7 +52,14 @@
     stroke-dasharray="3 2"
   />
   <!-- Shell 2 — the galaxy -->
-  <circle cx="24" cy="24" r="10" fill="none" stroke="var(--color-accent-strong)" stroke-width="1" />
+  <circle
+    cx="24"
+    cy="24"
+    r="10"
+    fill="none"
+    style:stroke="var(--color-accent-strong)"
+    stroke-width="1"
+  />
   <!-- Shell 1 — the solar system -->
   <circle cx="24" cy="24" r="5.5" fill="none" stroke="rgba(255,216,120,0.75)" stroke-width="1.1" />
   <!-- Core: the Sun -->
@@ -150,7 +157,7 @@
     transform="rotate(-12 24 24)"
   />
   <g transform="rotate(-12 24 24)">
-    <circle cx="24" cy="24" r="1.6" fill="var(--color-accent)" />
+    <circle cx="24" cy="24" r="1.6" style:fill="var(--color-accent)" />
     <circle cx="10" cy="23" r="1.3" fill="#dfe8ff" />
     <circle cx="16" cy="26" r="1" fill="#cfe0ff" />
     <circle cx="32" cy="22" r="1.4" fill="#ffe6c0" />
@@ -165,7 +172,7 @@
   <circle cx="28" cy="22" r="4" fill="url(#ic-sun-corona{idSuffix})" />
   <circle cx="28" cy="22" r="2" fill="#ffd87a" />
   <circle cx="13" cy="32" r="3" fill="url(#ic-glow-accent{idSuffix})" />
-  <circle cx="13" cy="32" r="1.4" fill="var(--color-accent)" />
+  <circle cx="13" cy="32" r="1.4" style:fill="var(--color-accent)" />
   <circle cx="16" cy="14" r="1.2" fill="#dfe8ff" />
   <circle cx="38" cy="34" r="1.3" fill="#dfe8ff" />
   <circle cx="40" cy="16" r="1" fill="#cfe0ff" />
@@ -178,18 +185,18 @@
   <path
     d="M 6 10 Q 20 18 29 24"
     fill="none"
-    stroke="color-mix(in srgb, var(--color-accent) 55%, transparent)"
+    style:stroke="color-mix(in srgb, var(--color-accent) 55%, transparent)"
     stroke-width="1"
   />
   <path
     d="M 8 38 Q 22 32 29 27"
     fill="none"
-    stroke="color-mix(in srgb, var(--color-accent) 50%, transparent)"
+    style:stroke="color-mix(in srgb, var(--color-accent) 50%, transparent)"
     stroke-width="1"
   />
   <path d="M 44 12 Q 36 18 31 24" fill="none" stroke="rgba(180,205,255,0.45)" stroke-width="0.9" />
   <circle cx="6" cy="10" r="2" fill="url(#ic-glow-accent{idSuffix})" />
-  <circle cx="6" cy="10" r="1" fill="var(--color-accent)" />
+  <circle cx="6" cy="10" r="1" style:fill="var(--color-accent)" />
 {:else if glyph === 'cosmic-web'}
   <!-- Cosmic Web — nodes joined by faint filaments around a dark
        void: the largest-scale foam. -->

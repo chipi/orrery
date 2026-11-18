@@ -13,8 +13,8 @@
       <stop offset="100%" stop-color="#ffc850" stop-opacity="0" />
     </radialGradient>
     <radialGradient id="ic-earth" cx="0.35" cy="0.35" r="0.7">
-      <stop offset="0%" stop-color="var(--color-accent-hover)" />
-      <stop offset="50%" stop-color="var(--color-accent)" />
+      <stop offset="0%" style:stop-color="var(--color-accent-hover)" />
+      <stop offset="50%" style:stop-color="var(--color-accent)" />
       <stop offset="100%" stop-color="#0a1b30" />
     </radialGradient>
     <radialGradient id="ic-mars" cx="0.35" cy="0.35" r="0.7">
@@ -42,34 +42,34 @@
       <stop offset="100%" stop-color="#e6b84a" stop-opacity="0" />
     </radialGradient>
     <radialGradient id="ic-craft" cx="0.5" cy="0.5" r="0.5">
-      <stop offset="0%" stop-color="var(--color-accent-hover)" />
-      <stop offset="60%" stop-color="var(--color-accent)" />
-      <stop offset="100%" stop-color="color-mix(in srgb, var(--color-accent) 45%, #04040c)" />
+      <stop offset="0%" style:stop-color="var(--color-accent-hover)" />
+      <stop offset="60%" style:stop-color="var(--color-accent)" />
+      <stop offset="100%" style:stop-color="color-mix(in srgb, var(--color-accent) 45%, #04040c)" />
     </radialGradient>
     <radialGradient id="ic-glow-blue" cx="0.5" cy="0.5" r="0.5">
-      <stop offset="40%" stop-color="var(--color-accent)" stop-opacity="0.45" />
-      <stop offset="100%" stop-color="var(--color-accent)" stop-opacity="0" />
+      <stop offset="40%" style:stop-color="var(--color-accent)" stop-opacity="0.45" />
+      <stop offset="100%" style:stop-color="var(--color-accent)" stop-opacity="0" />
     </radialGradient>
     <radialGradient id="ic-glow-red" cx="0.5" cy="0.5" r="0.5">
       <stop offset="40%" stop-color="#c1440e" stop-opacity="0.45" />
       <stop offset="100%" stop-color="#c1440e" stop-opacity="0" />
     </radialGradient>
     <radialGradient id="ic-glow-accent" cx="0.5" cy="0.5" r="0.5">
-      <stop offset="40%" stop-color="var(--color-accent)" stop-opacity="0.5" />
-      <stop offset="100%" stop-color="var(--color-accent)" stop-opacity="0" />
+      <stop offset="40%" style:stop-color="var(--color-accent)" stop-opacity="0.5" />
+      <stop offset="100%" style:stop-color="var(--color-accent)" stop-opacity="0" />
     </radialGradient>
     <radialGradient id="ic-glow-magenta" cx="0.5" cy="0.5" r="0.5">
       <stop offset="40%" stop-color="#c14ad8" stop-opacity="0.5" />
       <stop offset="100%" stop-color="#c14ad8" stop-opacity="0" />
     </radialGradient>
     <linearGradient id="ic-traj" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="var(--color-accent)" stop-opacity="0.2" />
-      <stop offset="60%" stop-color="var(--color-accent)" stop-opacity="1" />
+      <stop offset="0%" style:stop-color="var(--color-accent)" stop-opacity="0.2" />
+      <stop offset="60%" style:stop-color="var(--color-accent)" stop-opacity="1" />
       <stop offset="100%" stop-color="#c14ad8" stop-opacity="0.7" />
     </linearGradient>
     <linearGradient id="ic-panel" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="var(--color-accent-hover)" />
-      <stop offset="100%" stop-color="var(--color-accent)" />
+      <stop offset="0%" style:stop-color="var(--color-accent-hover)" />
+      <stop offset="100%" style:stop-color="var(--color-accent)" />
     </linearGradient>
     <linearGradient id="ic-panel-gold" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%" stop-color="#ffd87a" />

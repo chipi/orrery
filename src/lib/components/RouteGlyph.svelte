@@ -47,7 +47,7 @@
     cy="24"
     r="11.5"
     fill="none"
-    stroke="color-mix(in srgb, var(--color-accent) 45%, transparent)"
+    style:stroke="color-mix(in srgb, var(--color-accent) 45%, transparent)"
     stroke-width="0.6"
   />
   <!-- ISS orbit -->
@@ -57,12 +57,12 @@
     rx="18"
     ry="6"
     fill="none"
-    stroke="var(--color-accent)"
+    style:stroke="var(--color-accent)"
     stroke-width="1"
     stroke-dasharray="2 2"
   />
   <circle cx="42" cy="24" r="2" fill="url(#ic-glow-accent)" />
-  <circle cx="42" cy="24" r="1.2" fill="var(--color-accent)" />
+  <circle cx="42" cy="24" r="1.2" style:fill="var(--color-accent)" />
 {:else if glyph === 'earth'}
   <!-- Earth: blue gradient + atmosphere halo + ISS orbit + GPS dot -->
   <circle cx="24" cy="24" r="16" fill="url(#ic-glow-blue)" />
@@ -73,7 +73,7 @@
     cy="24"
     r="11.5"
     fill="none"
-    stroke="color-mix(in srgb, var(--color-accent) 45%, transparent)"
+    style:stroke="color-mix(in srgb, var(--color-accent) 45%, transparent)"
     stroke-width="0.6"
   />
   <ellipse
@@ -82,15 +82,20 @@
     rx="18"
     ry="6"
     fill="none"
-    stroke="var(--color-accent)"
+    style:stroke="var(--color-accent)"
     stroke-width="1"
     stroke-dasharray="2 2"
   />
   <circle cx="42" cy="24" r="2" fill="url(#ic-glow-accent)" />
-  <circle cx="42" cy="24" r="1.2" fill="var(--color-accent)" />
+  <circle cx="42" cy="24" r="1.2" style:fill="var(--color-accent)" />
 {:else if glyph === 'moon'}
   <!-- Moon: grey disc + craters + Apollo flag marker -->
-  <circle cx="22" cy="24" r="16" fill="color-mix(in srgb, var(--color-accent) 18%, transparent)" />
+  <circle
+    cx="22"
+    cy="24"
+    r="16"
+    style:fill="color-mix(in srgb, var(--color-accent) 18%, transparent)"
+  />
   <circle cx="22" cy="24" r="13" fill="url(#ic-moon)" />
   <ellipse cx="18" cy="20" rx="2.4" ry="2.2" fill="rgba(60,55,50,0.7)" />
   <ellipse cx="18.5" cy="19.5" rx="1.8" ry="1.6" fill="rgba(168,160,156,0.7)" />
@@ -120,11 +125,11 @@
   <circle cx="24" cy="24" r="13.6" fill="none" stroke="rgba(255,236,190,0.55)" stroke-width="0.9" />
 {:else if glyph === 'missions'}
   <!-- Capsule with engine glow on a rising trajectory + planet horizon -->
-  <path d="M 0 44 Q 24 36 48 44 L 48 48 L 0 48 Z" fill="var(--color-accent-edge)" />
+  <path d="M 0 44 Q 24 36 48 44 L 48 48 L 0 48 Z" style:fill="var(--color-accent-edge)" />
   <path
     d="M 0 44 Q 24 36 48 44"
     fill="none"
-    stroke="var(--color-accent-strong)"
+    style:stroke="var(--color-accent-strong)"
     stroke-width="0.8"
   />
   <path
@@ -150,8 +155,8 @@
       stroke="rgba(255,255,255,0.55)"
       stroke-width="0.7"
     />
-    <rect x="3" y="10" width="3" height="4" fill="var(--color-accent-strong)" />
-    <rect x="18" y="10" width="3" height="4" fill="var(--color-accent-strong)" />
+    <rect x="3" y="10" width="3" height="4" style:fill="var(--color-accent-strong)" />
+    <rect x="18" y="10" width="3" height="4" style:fill="var(--color-accent-strong)" />
   </g>
   <g>
     <rect
@@ -160,13 +165,13 @@
       width="20"
       height="9"
       rx="1.2"
-      fill="color-mix(in srgb, var(--color-accent) 18%, transparent)"
-      stroke="var(--color-accent)"
+      style:fill="color-mix(in srgb, var(--color-accent) 18%, transparent)"
+      style:stroke="var(--color-accent)"
       stroke-width="1.2"
     />
     <rect x="15" y="22" width="5" height="5" fill="url(#ic-panel)" />
     <rect x="40" y="22" width="5" height="5" fill="url(#ic-panel)" />
-    <circle cx="30" cy="24.5" r="1.2" fill="var(--color-accent-hover)" />
+    <circle cx="30" cy="24.5" r="1.2" style:fill="var(--color-accent-hover)" />
   </g>
   <g opacity="0.7">
     <rect
@@ -206,7 +211,7 @@
   <rect x="35" y="14" width="6.8" height="6.8" fill="rgba(220,108,40,0.6)" />
   <rect x="7" y="21" width="6.8" height="6.8" fill="rgba(240,200,80,0.7)" />
   <rect x="14" y="21" width="6.8" height="6.8" fill="rgba(180,220,180,0.85)" />
-  <rect x="21" y="21" width="6.8" height="6.8" fill="var(--color-accent)" />
+  <rect x="21" y="21" width="6.8" height="6.8" style:fill="var(--color-accent)" />
   <rect x="28" y="21" width="6.8" height="6.8" fill="rgba(180,220,180,0.85)" />
   <rect x="35" y="21" width="6.8" height="6.8" fill="rgba(240,200,80,0.7)" />
   <rect x="7" y="28" width="6.8" height="6.8" fill="rgba(220,108,40,0.7)" />
@@ -244,7 +249,7 @@
     cy="46"
     rx="24"
     ry="6"
-    fill="color-mix(in srgb, var(--color-accent) 18%, transparent)"
+    style:fill="color-mix(in srgb, var(--color-accent) 18%, transparent)"
   />
   <line x1="6" y1="22" x2="42" y2="22" stroke="rgba(255,255,255,0.65)" stroke-width="1" />
   <line x1="6" y1="26" x2="42" y2="26" stroke="rgba(255,255,255,0.45)" stroke-width="0.7" />
@@ -255,7 +260,7 @@
     width="6"
     height="12"
     fill="url(#ic-panel)"
-    stroke="var(--color-accent-strong)"
+    style:stroke="var(--color-accent-strong)"
     stroke-width="0.5"
   />
   <rect
@@ -264,7 +269,7 @@
     width="6"
     height="12"
     fill="url(#ic-panel)"
-    stroke="var(--color-accent-strong)"
+    style:stroke="var(--color-accent-strong)"
     stroke-width="0.5"
   />
   <line x1="2" y1="22" x2="8" y2="22" stroke="rgba(15,40,38,0.6)" stroke-width="0.4" />
@@ -300,7 +305,7 @@
     stroke-width="0.8"
   />
   <!-- Cupola dot -->
-  <circle cx="24" cy="36" r="1.4" fill="var(--color-accent)" />
+  <circle cx="24" cy="36" r="1.4" style:fill="var(--color-accent)" />
 {:else if glyph === 'tiangong'}
   <!-- Tiangong: T-shape with multi-color modules + glowing solar panels -->
   <ellipse cx="24" cy="46" rx="24" ry="6" fill="rgba(193,68,14,0.18)" />
@@ -324,18 +329,32 @@
     y="20"
     width="36"
     height="8"
-    fill="color-mix(in srgb, var(--color-accent) 18%, transparent)"
-    stroke="var(--color-accent)"
+    style:fill="color-mix(in srgb, var(--color-accent) 18%, transparent)"
+    style:stroke="var(--color-accent)"
     stroke-width="0.9"
   />
-  <line x1="14" y1="20" x2="14" y2="28" stroke="var(--color-accent-edge)" stroke-width="0.4" />
-  <line x1="34" y1="20" x2="34" y2="28" stroke="var(--color-accent-edge)" stroke-width="0.4" />
+  <line
+    x1="14"
+    y1="20"
+    x2="14"
+    y2="28"
+    style:stroke="var(--color-accent-edge)"
+    stroke-width="0.4"
+  />
+  <line
+    x1="34"
+    y1="20"
+    x2="34"
+    y2="28"
+    style:stroke="var(--color-accent-edge)"
+    stroke-width="0.4"
+  />
   <!-- Solar panel wings (gold) -->
   <rect x="0" y="22" width="6" height="4" fill="url(#ic-panel-gold)" />
   <rect x="42" y="22" width="6" height="4" fill="url(#ic-panel-gold)" />
   <!-- Center docking port glow -->
   <circle cx="24" cy="24" r="2.5" fill="url(#ic-glow-accent)" />
-  <circle cx="24" cy="24" r="1.2" fill="var(--color-accent)" />
+  <circle cx="24" cy="24" r="1.2" style:fill="var(--color-accent)" />
 {:else if glyph === 'science'}
   <!-- Atomic / orbital science glyph: nucleus + 3 multi-colored electron orbits + ∆v formula -->
   <ellipse
@@ -344,7 +363,7 @@
     rx="20"
     ry="7"
     fill="none"
-    stroke="var(--color-accent)"
+    style:stroke="var(--color-accent)"
     stroke-width="1.2"
   />
   <ellipse
@@ -368,7 +387,7 @@
     transform="rotate(-60 24 24)"
   />
   <!-- Electron / planet markers on each orbit -->
-  <circle cx="44" cy="24" r="1.6" fill="var(--color-accent)" />
+  <circle cx="44" cy="24" r="1.6" style:fill="var(--color-accent)" />
   <circle cx="14" cy="14" r="1.6" fill="#c14ad8" />
   <circle cx="34" cy="36" r="1.6" fill="#ffc850" />
   <!-- Nucleus glow -->
@@ -399,13 +418,13 @@
   <circle cx="16" cy="16" r="1.2" fill="#ffc850" />
   <circle cx="30" cy="31" r="1.2" fill="#c14ad8" />
   <circle cx="24" cy="12.5" r="1.4" fill="url(#ic-glow-accent)" />
-  <circle cx="24" cy="12.5" r="0.7" fill="var(--color-accent-hover)" />
+  <circle cx="24" cy="12.5" r="0.7" style:fill="var(--color-accent-hover)" />
 {:else if glyph === 'programs'}
   <!-- Programs — an era spine: a vertical timeline with program-era
    dots (each a different agency accent) + a small pennant. -->
   <line x1="14" y1="6" x2="14" y2="42" stroke="rgba(255,255,255,0.35)" stroke-width="1" />
-  <polygon points="14,7 30,10 14,13" fill="var(--color-accent-strong)" />
-  <circle cx="14" cy="12" r="2.4" fill="var(--color-accent)" />
+  <polygon points="14,7 30,10 14,13" style:fill="var(--color-accent-strong)" />
+  <circle cx="14" cy="12" r="2.4" style:fill="var(--color-accent)" />
   <circle cx="14" cy="22" r="2.4" fill="#ffc850" />
   <circle cx="14" cy="32" r="2.4" fill="#c14ad8" />
   <circle cx="14" cy="40" r="2.4" fill="#6aa9ff" />
@@ -467,7 +486,7 @@
   <path
     d="M 4 18 A 24 24 0 0 1 42 18"
     fill="none"
-    stroke="var(--color-accent-edge)"
+    style:stroke="var(--color-accent-edge)"
     stroke-width="0.8"
     stroke-dasharray="2 2"
   />
@@ -482,8 +501,8 @@
   />
   <path
     d="M 24 15 C 30 12 37 12 42 14 L 42 34 C 37 32 30 32 24 35 Z"
-    fill="color-mix(in srgb, var(--color-accent) 8%, transparent)"
-    stroke="var(--color-accent)"
+    style:fill="color-mix(in srgb, var(--color-accent) 8%, transparent)"
+    style:stroke="var(--color-accent)"
     stroke-width="1"
   />
   <line x1="24" y1="15" x2="24" y2="35" stroke="rgba(255,255,255,0.5)" stroke-width="0.8" />
@@ -499,8 +518,8 @@
    bookmark ribbon. -->
   <path
     d="M 24 12 Q 14 9 6 12 L 6 36 Q 14 33 24 36 Z"
-    fill="var(--color-accent-soft)"
-    stroke="var(--color-accent)"
+    style:fill="var(--color-accent-soft)"
+    style:stroke="var(--color-accent)"
     stroke-width="1"
   />
   <path
@@ -510,7 +529,7 @@
     stroke-width="1"
   />
   <line x1="24" y1="13" x2="24" y2="35" stroke="rgba(255,255,255,0.4)" />
-  <g stroke="color-mix(in srgb, var(--color-accent) 50%, transparent)" stroke-width="0.7">
+  <g style:stroke="color-mix(in srgb, var(--color-accent) 50%, transparent)" stroke-width="0.7">
     <line x1="10" y1="17" x2="20" y2="16" />
     <line x1="10" y1="21" x2="20" y2="20" />
     <line x1="10" y1="25" x2="19" y2="24" />
@@ -553,6 +572,6 @@
   <circle cx="24" cy="22" r="1.8" fill="#ffc850" />
   <polygon
     points="14,31 17.5,35.5 14.8,35.5 14.8,39 13.2,39 13.2,35.5 10.5,35.5"
-    fill="var(--color-accent)"
+    style:fill="var(--color-accent)"
   />
 {/if}

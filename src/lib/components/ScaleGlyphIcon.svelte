@@ -32,16 +32,16 @@
       <stop offset="100%" stop-color="#ffc850" stop-opacity="0" />
     </radialGradient>
     <radialGradient id="ic-glow-blue{sfx}" cx="0.5" cy="0.5" r="0.5">
-      <stop offset="40%" stop-color="var(--color-accent)" stop-opacity="0.45" />
-      <stop offset="100%" stop-color="var(--color-accent)" stop-opacity="0" />
+      <stop offset="40%" style:stop-color="var(--color-accent)" stop-opacity="0.45" />
+      <stop offset="100%" style:stop-color="var(--color-accent)" stop-opacity="0" />
     </radialGradient>
     <radialGradient id="ic-glow-gold{sfx}" cx="0.5" cy="0.5" r="0.5">
       <stop offset="40%" stop-color="#e6b84a" stop-opacity="0.45" />
       <stop offset="100%" stop-color="#e6b84a" stop-opacity="0" />
     </radialGradient>
     <radialGradient id="ic-glow-accent{sfx}" cx="0.5" cy="0.5" r="0.5">
-      <stop offset="40%" stop-color="var(--color-accent)" stop-opacity="0.5" />
-      <stop offset="100%" stop-color="var(--color-accent)" stop-opacity="0" />
+      <stop offset="40%" style:stop-color="var(--color-accent)" stop-opacity="0.5" />
+      <stop offset="100%" style:stop-color="var(--color-accent)" stop-opacity="0" />
     </radialGradient>
   </defs>
   <ScaleGlyph {glyph} idSuffix={sfx} />

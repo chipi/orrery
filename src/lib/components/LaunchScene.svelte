@@ -329,6 +329,7 @@
       boosterCount: profile.boosters?.count ?? 0,
       boosterAirLitCount: profile.boosters?.airLitCount ?? 0,
       payloadSepT,
+      sceneTime: (x: number) => toSceneT(coastWarp, x),
       payloadInBay: profile.payloadInBay === true,
       kickStage: injection?.kickStage === true,
       injectionBurnEndT: injection ? injectionBurnEnd : undefined,

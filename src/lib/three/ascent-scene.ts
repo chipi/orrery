@@ -83,6 +83,10 @@ export interface AscentSceneOptions {
    *  injection burn it rides the stage through the burn and separates at its end, as on a
    *  real flight. The scene's clock (s.t) runs past the last physics state for this. */
   payloadSepT?: number;
+  /** Mission time → the launch act's play clock (launch-coast-warp; identity when absent): a
+   *  dropped stage drifts away over play-clock seconds, so the Shuttle's tank does not vanish
+   *  in the first half-second of the compressed coast. */
+  sceneTime?: (missionT: number) => number;
   /** The payload stays in the vehicle's bay for the whole launch (LaunchProfile.payloadInBay):
    *  no deployment, burst or separation shot is drawn. */
   payloadInBay?: boolean;
@@ -1018,9 +1022,10 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   const VACUUM_SEP_AFTER_S = 240;
   const VACUUM_SEP_S = 60;
   /** Progress, and drift length in vehicle lengths, of a serial stage dropped at `sepT`. */
+  const playT = opts.sceneTime ?? ((x: number) => x);
   const stageDrop = (t: number, sepT: number | null | undefined): [number, number] =>
     sepT != null && sepT > VACUUM_SEP_AFTER_S
-      ? [sepProgress(t, sepT, VACUUM_SEP_S), 0.6]
+      ? [sepProgress(playT(t), playT(sepT), VACUUM_SEP_S), 0.6]
       : [sepProgress(t, sepT ?? undefined, BOOSTER_SEP_S), 3];
   // Fairing clamshell drifts slowly (item 4) so the halves linger in frame while
   // the payload is revealed — a held beat, not a snap-away.

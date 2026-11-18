@@ -1,0 +1,51 @@
+{
+  "missionId": "chandrayaan2",
+  "siteId": "chandrayaan2",
+  "body": "moon",
+  "landingSite": {
+    "lat": -70.881,
+    "lon": 22.784
+  },
+  "entryState": {
+    "altitudeM": 30000,
+    "velocityMs": 1683,
+    "flightPathAngleDeg": 1.9
+  },
+  "entryMassKg": 1471,
+  "entryCdA": 0,
+  "retroPropellantKg": 845,
+  "archetype": "LUNAR_POWERED",
+  "params": {
+    "ispS": 311,
+    "terminalVelocityMs": 1,
+    "descentRateGain": 0.065,
+    "brakingFpaDeg": 1.9,
+    "brakingMaxThrustN": 2550,
+    "highGateSpeedMs": 146,
+    "approachFpaDeg": 12,
+    "lowGateAltM": 150,
+    "brakingRateGain": 0.01
+  },
+  "recordEndsAltM": 7400,
+  "source_tier": "flagship",
+  "estimatedFields": [
+    "retroPropellantKg",
+    "brakingFpaDeg",
+    "approachFpaDeg",
+    "brakingMaxThrustN"
+  ],
+  "provenance": [
+    {
+      "l": "Government of India, PIB (Department of Space, written reply in the Lok Sabha, 20 Nov 2019): \"The first phase of descent was performed nominally from an altitude of 30 km to 7.4 km above the moon surface. The velocity was reduced from 1683 m/s to 146 m/s. During the second phase of descent, the reduction in velocity was more than the designed value. Due to this deviation, the initial conditions at the start of the fine braking phase were beyond the designed parameters. As a result, Vikram hard landed within 500 m of the designated landing site.\" The descent is flown to 7.4 km and ends there on DATA ENDS (operator 2026-11-18): nothing below 7.4 km is published, so no crash is modelled; contact was lost lower, at about 2.1 km (the site text)",
+      "u": "https://pib.gov.in/PressReleasePage.aspx?PRID=1592495"
+    },
+    {
+      "l": "ISRO GSLV MkIII-M1 / Chandrayaan-2 brochure: Vikram lander mass 1,471 kg; landing target about 70.9 S 22.7 E. The braking guidance parameters follow the Chandrayaan-3 profile (the same lander design), except the braking thrust cap: 2,550 N is fitted so the model reaches the published 146 m/s at about 7.4 km (7.67 km; 3,000 N reached it at 11 km); the propellant is an estimate",
+      "u": "https://www.isro.gov.in/media_isro/pdf/GSLVMkIII_M1.pdf"
+    },
+    {
+      "l": "NASA LRO / LROC: Vikram impact site at 70.881 S 22.784 E (Orrery moon-sites chandrayaan2; LROC post 1131, 2 Dec 2019)",
+      "u": "https://lroc.im-ldi.com/posts/1131"
+    }
+  ]
+}

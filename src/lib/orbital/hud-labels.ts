@@ -43,6 +43,7 @@ const HUD_LABEL: Record<string, () => string> = {
   SAMPLE: m.hud_sample,
   'CHUTE SEP': m.hud_chute_sep,
   'SIGNAL LOST': m.hud_signal_lost,
+  'DATA ENDS': m.hud_data_ends,
   'SKIP OUT': m.hud_skip_out,
   '2ND ENTRY': m.hud_second_entry,
   TOUCHDOWN: m.hud_touchdown,

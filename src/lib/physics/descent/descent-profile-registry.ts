@@ -473,6 +473,8 @@ export interface RawDescentProfile {
   dynamicGamma?: boolean;
   retroPropellantKg?: number;
   survivableTouchdownMs?: number;
+  /** The published record stops at this altitude (m): the descent ends there (see DescentProfile). */
+  recordEndsAltM?: number;
   archetype: ArchetypeName;
   params?: ArchetypeParams;
   source_tier: 'flagship' | 'generic';
@@ -497,6 +499,7 @@ export function expandDescentProfile(raw: RawDescentProfile): DescentProfile {
     retroPropellantKg: raw.retroPropellantKg,
     phases: build(raw.params ?? {}),
     survivableTouchdownMs: raw.survivableTouchdownMs ?? ARCHETYPE_SURVIVABLE[raw.archetype],
+    ...(raw.recordEndsAltM != null ? { recordEndsAltM: raw.recordEndsAltM } : {}),
     source_tier: raw.source_tier,
     provenance: raw.provenance,
   };
@@ -504,9 +507,9 @@ export function expandDescentProfile(raw: RawDescentProfile): DescentProfile {
 
 // ─── Mission gate + loader ──────────────────────────────────────────
 
-/** Every mission that ships a descent profile (the 37 Moon/Mars/Venus landers). */
+/** Every mission that ships a descent profile (Moon, Mars, Venus and other landers, and the Earth-return capsules). */
 export const DESCENT_MISSION_IDS = new Set<string>([
-  // Moon (21)
+  // Moon (22)
   'apollo11',
   'apollo12',
   'apollo14',
@@ -522,6 +525,7 @@ export const DESCENT_MISSION_IDS = new Set<string>([
   'change4',
   'change5',
   'change6',
+  'chandrayaan2',
   'chandrayaan3',
   'slim',
   'beresheet',

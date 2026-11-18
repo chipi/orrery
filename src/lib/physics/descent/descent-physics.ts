@@ -103,6 +103,7 @@ export type DescentEventType =
   | 'sample_collected' // touch-and-go sample horn fired, ascent begins
   | 'parachute_jettison' // drogue/main chute released (Huygens two-chute, Galileo)
   | 'probe_signal_lost' // atmospheric probe crushed / comms end (Galileo, no surface)
+  | 'record_ends' // the published record of the descent stops in the air (recordEndsAltM)
   | 'skip_out' // super-circular lifting entry lofts back above the atmosphere (Apollo-4 skip)
   | 'second_entry' // the lofted capsule falls back into the atmosphere for the second pulse
   | 'touchdown';
@@ -208,6 +209,11 @@ export interface DescentProfile {
   /** Max touchdown speed the lander survives (m·s⁻¹). Default 3; airbags ~25;
    *  crash reconstructions keep it low so the impact reads as a failure. */
   survivableTouchdownMs?: number;
+  /** The descent ends at this altitude (m), where the published record of the descent stops
+   *  (Chandrayaan-2's Vikram: ISRO's account covers rough braking to 7.4 km, then only that it
+   *  hard-landed; contact was lost lower, at about 2.1 km). It closes on a `record_ends` beat
+   *  (HUD DATA ENDS); nothing below is modelled. Absent = to the ground. */
+  recordEndsAltM?: number;
   source_tier: 'flagship' | 'generic';
   provenance?: { l: string; u: string }[];
 }
@@ -689,6 +695,9 @@ export function integrateDescent(
         pushEvent('probe_signal_lost');
         break;
       }
+    } else if (profile.recordEndsAltM != null && h <= profile.recordEndsAltM) {
+      pushEvent('record_ends');
+      break;
     } else if (h <= 0) {
       h = 0;
       pushEvent('touchdown');
@@ -717,7 +726,11 @@ export function integrateDescent(
   // `touchdown` — don't append a spurious touchdown when the probe already ended.
   const final = makeState();
   states.push(final);
-  if (!events.some((e) => e.type === 'touchdown' || e.type === 'probe_signal_lost')) {
+  if (
+    !events.some(
+      (e) => e.type === 'touchdown' || e.type === 'probe_signal_lost' || e.type === 'record_ends',
+    )
+  ) {
     pushEvent('touchdown', 'timeout');
   }
 

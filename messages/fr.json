@@ -3739,5 +3739,6 @@
   "programs_filter_kind": "TYPE",
   "programs_empty": "Aucun programme ne correspond aux filtres actuels.",
   "launches_search_placeholder": "Rechercher des lancements…",
-  "launches_sort_soonest": "Plus proche d'abord"
+  "launches_sort_soonest": "Plus proche d'abord",
+  "hud_data_ends": "FIN DES DONNÉES"
 }

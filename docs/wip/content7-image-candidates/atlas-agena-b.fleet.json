@@ -5,7 +5,7 @@
     "source_url": "https://images.nasa.gov/details/62PC-3",
     "nasa_id": "62PC-3",
     "size": "2400x3000",
-    "license": "NASA media usage (public domain)",
+    "license": "Public domain: NASA Image and Video Library original (images.nasa.gov), NASA media usage guidelines",
     "author": "NASA",
     "credit": "NASA"
   },
@@ -15,7 +15,7 @@
     "source_url": "https://images.nasa.gov/details/62P-165",
     "nasa_id": "62P-165",
     "size": "2400x3000",
-    "license": "NASA media usage (public domain)",
+    "license": "Public domain: NASA Image and Video Library original (images.nasa.gov), NASA media usage guidelines",
     "author": "NASA",
     "credit": "NASA"
   },
@@ -25,16 +25,16 @@
     "source_url": "https://images.nasa.gov/details/9139569",
     "nasa_id": "9139569",
     "size": "2330x3000",
-    "license": "NASA media usage (public domain)",
+    "license": "Public domain: NASA Image and Video Library original (images.nasa.gov), NASA media usage guidelines",
     "author": "NASA",
     "credit": "NASA (MSFC archive)"
   },
   {
     "staged": "static/images/_staging/fleet-galleries/atlas-agena-b/04.jpg",
-    "note": "gallery; launch of Atlas Agena B with Ranger 7, 28 Jul 1964 (KSC-64C-2793); 1852x2317",
+    "note": "gallery; launch of Atlas Agena B with Ranger 7, 28 Jul 1964 (KSC-64C-2793); 1852x2317 KSC caption describes it as \"Ranger 6 lift off\" while its keywords say Ranger 7; caption it as an Atlas-Agena B Ranger launch of 1964 unless the frame is identified.",
     "source_url": "https://commons.wikimedia.org/wiki/File:Atlas_Agena_B_with_Ranger_7_(Jul._28_1964).jpg",
     "size": "1852x2317",
-    "license": "Public domain (PD-USGov-NASA per the Commons file page; NASA original page not reachable from this machine)",
+    "license": "Public domain: KSC caption KSC-64C-2793 (Wayback 2014-08-21): \"No copyright protection is asserted for these photographs\" (checked 2026-11-18)",
     "author": "NASA",
     "credit": "NASA"
   }

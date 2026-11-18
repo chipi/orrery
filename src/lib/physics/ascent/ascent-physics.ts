@@ -798,8 +798,20 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
       (k, g) => k + (g.dropped ? 0 : g.stage.dryKg + Math.max(0, g.prop)),
       0,
     );
-    if (stageIndex < 0)
-      return profile.payloadKg + (fairingOn ? (profile.fairingKg ?? 0) : 0) + boosterMass;
+    if (stageIndex < 0) {
+      // After SECO the spent final stage is still there (its dry mass and any residual): the
+      // upper stage carries the spacecraft until it separates, the Shuttle's orbiter is the
+      // vehicle. Dropping it left the payload alone (100 % payload on the HUD; with no
+      // payload, zero mass).
+      const last = profile.stages[profile.stages.length - 1];
+      return (
+        profile.payloadKg +
+        (fairingOn ? (profile.fairingKg ?? 0) : 0) +
+        boosterMass +
+        last.dryKg +
+        Math.max(0, remainingProp)
+      );
+    }
     const s = profile.stages[stageIndex];
     return (
       profile.payloadKg +

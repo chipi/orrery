@@ -330,3 +330,21 @@ describe('the sourced profiles (STS-68, H-IIA 202, Falcon Heavy / Europa Clipper
     }
   });
 });
+
+describe('the vehicle after SECO keeps its spent final stage', () => {
+  it('post-SECO mass is the payload plus the final stage dry mass and residual', () => {
+    const p = load('falcon-9');
+    const s = integrateAscent(p);
+    const last = s.states.at(-1)!;
+    expect(last.stageIndex).toBe(-1);
+    expect(last.massKg).toBeGreaterThanOrEqual(p.payloadKg + p.stages.at(-1)!.dryKg);
+  });
+
+  it('a profile with no payload integrates to a finite end (no zero-mass coast)', () => {
+    const s = integrateAscent({ ...load('space-shuttle-stack'), payloadKg: 0 });
+    const last = s.states.at(-1)!;
+    expect(Number.isFinite(last.speedKms)).toBe(true);
+    expect(last.altKm).toBeGreaterThan(200);
+    expect(s.reachedOrbit).toBe(true);
+  });
+});

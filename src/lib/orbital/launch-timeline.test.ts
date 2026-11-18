@@ -107,6 +107,8 @@ const TIMELINES: Record<string, Row[]> = {
     // separation +08:47 (VA229 per spaceflight101: EAP 143 s).
     { event: 'EAP jettison', type: 'staging', nth: 0, real: 141, tol: 10 },
     { event: 'EPC separation', type: 'staging', nth: 1, real: 527, tol: 10 },
+    // VA256 launch kit: the profile's fairingJettisonS.
+    { event: 'fairing (scheduled input)', type: 'fairing_jettison', real: 206, tol: 10 },
   ],
   'falcon-9': [
     // NASA CRS-22 press kit: MECO 00:02:26, stage separation 00:02:30 (CRS-9: 141 / 144).
@@ -139,6 +141,8 @@ const TIMELINES: Record<string, Row[]> = {
     // stage cut-off 558.6.
     { event: 'I-II separation', type: 'staging', nth: 0, real: 118.1, tol: 10 },
     { event: 'III stage cut-off', type: 'seco', real: 558.6, tol: 30 },
+    // Soyuz CSG guide, ST-B: the profile's fairingJettisonS.
+    { event: 'fairing (scheduled input)', type: 'fairing_jettison', real: 208.4, tol: 10 },
   ],
   'saturn-ib': [
     // NASA SP-4029 Apollo 7 timeline: S-IB outboard cutoff 144.32, S-IB/S-IVB separation 145.59.
@@ -150,17 +154,23 @@ const TIMELINES: Record<string, Row[]> = {
     // L110 separation 305.56.
     { event: 'S200 separation', type: 'staging', nth: 0, real: 127, tol: 10 },
     { event: 'L110 separation', type: 'staging', nth: 1, real: 305.56, tol: 10 },
+    // LVM3-M4 brochure: the profile's fairingJettisonS.
+    { event: 'fairing (scheduled input)', type: 'fairing_jettison', real: 194.96, tol: 10 },
   ],
   'new-glenn': [
     // NASA ESCAPADE blog, NG-2 launch milestones: MECO T+00:03:05, stage separation 00:03:09.
     { event: 'MECO', type: 'meco', real: 185, tol: 10 },
     { event: 'stage separation', type: 'staging', nth: 0, real: 189, tol: 10 },
+    // NASA ESCAPADE milestones: the profile's fairingJettisonS.
+    { event: 'fairing (scheduled input)', type: 'fairing_jettison', real: 230, tol: 10 },
   ],
   'vostok-k': [
     // Vostok 1 launch timeline (secondary: russianspaceweb): stage I separation T+119, stage
     // II separation T+299.
     { event: 'stage I separation', type: 'staging', nth: 0, real: 119, tol: 10 },
     { event: 'stage II separation', type: 'staging', nth: 1, real: 299, tol: 10 },
+    // russianspaceweb (secondary): the profile's fairingJettisonS.
+    { event: 'fairing (scheduled input)', type: 'fairing_jettison', real: 154, tol: 10 },
   ],
   'titan-iiie-centaur': [
     // Voyager 2 launch sequence (secondary transcription of the JPL sequence): SRM separation
@@ -169,6 +179,8 @@ const TIMELINES: Record<string, Row[]> = {
     { event: 'stage 1 separation', type: 'staging', nth: 1, real: 255, tol: 10 },
     { event: 'stage 2 separation', type: 'staging', nth: 2, real: 470, tol: 10 },
     { event: 'Centaur MECO-1', type: 'seco', real: 588, tol: 30 },
+    // Voyager 2 transcription (secondary): the profile's fairingJettisonS.
+    { event: 'fairing (scheduled input)', type: 'fairing_jettison', real: 266, tol: 10 },
   ],
   'mercury-redstone': [
     // Mercury-Redstone 3 (secondary: Wikipedia): engine shutdown two minutes 22 seconds after launch.
@@ -217,7 +229,7 @@ describe('launcher staging timelines vs the real nominal flight', () => {
   // Known gaps (docs/wip/2026-11-15-launcher-timeline-audit.md): the model cannot hold the
   // real time without losing the orbit, or the real time is unsourced.
   it.todo(
-    'proton-m-briz-m: Briz-M first-burn cutoff T+1129 s (ILS guide Figure 2.3.1-1); model 1099 s, 30.1 s early: no coast between stage 3 separation (588 s) and Briz-M ignition (680 s)',
+    'proton-m-briz-m: Briz-M first-burn cutoff T+1129 s (ILS guide Figure 2.3.1-1); model 1099 s, 30.1 s early: no coast between stage 3 separation (588 s) and Briz-M ignition (680 s). Tried 2026-11-18: adding the 91.6 s coast moves the cutoff to 1210.5 s (81.5 s late), because the model first Briz-M burn is about 547 s against 449 s in the guide (its standard GTO profile, not ExoMars); the burn length is the fault, and no sourced ExoMars Briz-M burn was found',
   );
   it.todo(
     'space-shuttle-stack: OMS-2 lights at 2081.5 s against STS-68 2110 s (cutoff 2176 / 2208 s); the MECO altitude is the generic TD0358A 360,000 ft, not STS-68 own (not in its report), which sets where on the orbit MECO falls',
@@ -225,19 +237,14 @@ describe('launcher staging timelines vs the real nominal flight', () => {
   it.todo(
     'atlas-v 541 (Mars 2020 booklet): BECO 262.1 s, MECO-1 into the parking orbit 687.9 s; model 251.9 / 878.6 s',
   );
-  it.todo(
-    'soyuz-fg-fregat (Soyuz CSG guide, ST-B): II-III separation 287.6 s, fairing 208.4 s ("tuned" per flight); model 313.8 / 165.0 s',
-  );
+  it.todo('soyuz-fg-fregat (Soyuz CSG guide, ST-B): II-III separation 287.6 s; model 313.8 s');
   it.todo(
     'saturn-ib (Apollo 7): S-IVB cutoff 616.76 s; model 543.2 s (the model cuts at a 180 km circular orbit)',
   );
   it.todo(
-    'lvm3 (M4): fairing 194.96 s, C25 shut-off 954.42 s; model 183.2 / 745.9 s (the model cuts at LEO, M4 went to 170 x 36,500 km)',
+    'lvm3 (M4): C25 shut-off 954.42 s; model 746.5 s (the model cuts at LEO, M4 went to 170 x 36,500 km)',
   );
-  it.todo('new-glenn (NG-2): fairing 230 s, SECO-1 773 s; model 207.0 / 692.7 s');
-  it.todo('vostok-k (russianspaceweb): fairing T+154 s (150 s in another source); model 143.5 s');
-  it.todo('titan-iiie-centaur (Voyager 2 transcription): shroud jettison 266 s; model 198.1 s');
-  it.todo('ariane-5 (VA256): fairing 206 s; model 158.3 s');
+  it.todo('new-glenn (NG-2): SECO-1 773 s; model 692.4 s');
   it.todo(
     'h3: the only sourced timeline (F8) is an H3-22S; the profile is an H3-24L, not compared',
   );

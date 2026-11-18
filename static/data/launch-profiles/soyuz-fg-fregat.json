@@ -58,6 +58,11 @@
     {
       "l": "Mars Express — Wikipedia (Site 31/6, 2 June 2003). Fairing mass not found: estimated",
       "u": "https://en.wikipedia.org/wiki/Mars_Express"
+    },
+    {
+      "l": "Arianespace — Soyuz CSG User's Manual Issue 2 (2012), Figure 2.3.1a, Soyuz ST-B / Fregat: fairing jettisoning 208.4 s (the guide: the fairing time is tuned per flight; Soyuz-FG from Baikonur has no table there)",
+      "u": "https://courses.edx.org/asset-v1:DelftX+AEASM1x+1T2023+type@asset+block/Soyuz-Users-Manual-March-2012.pdf"
     }
-  ]
+  ],
+  "fairingJettisonS": 208.4
 }

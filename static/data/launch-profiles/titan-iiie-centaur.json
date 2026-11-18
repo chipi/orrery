@@ -69,6 +69,11 @@
     {
       "l": "NSSDCA — Viking 1 (3,527 kg). SRM inert mass and shroud mass are estimates (not published); SRM thrust is the burn average through tail-off to jettison at 121.7 s (2 × 1.2 Mlbf peak is the HUD's liftoff figure)",
       "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1975-075A"
+    },
+    {
+      "l": "Voyager 2 launch sequence, a secondary transcription of the JPL sequence: CSS (shroud) jettison T+4:26 = 266 s",
+      "u": "https://teamnathanftw2.blogspot.com/1997/08/voyager-2.html"
     }
-  ]
+  ],
+  "fairingJettisonS": 266
 }

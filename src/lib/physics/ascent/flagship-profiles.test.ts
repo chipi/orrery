@@ -159,7 +159,9 @@ describe.each(GENUINE_ORBIT)('flagship profile %s — genuine orbit', (id) => {
     expect(seco).toBeDefined();
     expect(seco!.t).toBeGreaterThan(120);
     // A single-RL10 Centaur / LE-5B insertion burn runs 12–15 min — widened from
-    // 900 s (#416); the 2000 s integrator cap still bounds a runaway.
-    expect(seco!.t).toBeLessThan(1500);
+    // 900 s (#416); the 2000 s integrator cap still bounds a runaway. A direct insertion ends
+    // with the circularising burn at apogee half an orbit after MECO (the Shuttle's OMS-2:
+    // STS-68 cutoff T+2208 s), under its own 4000 s cap.
+    expect(seco!.t).toBeLessThan(load(id).mecoTarget ? 2400 : 1500);
   });
 });

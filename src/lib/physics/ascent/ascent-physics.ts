@@ -111,6 +111,26 @@ export interface LaunchBoosters {
   impulseGates?: ImpulseGate[];
 }
 
+/** A direct-insertion MECO target (altitudes in m above the surface). */
+export interface MecoTarget {
+  altM: number;
+  apogeeAltM: number;
+  perigeeAltM: number;
+}
+
+/** The inertial speed, horizontal and radial (climbing) velocity (m/s) of a MECO target: the
+ *  target orbit's state at the MECO altitude, on its way up to apogee. */
+export function mecoTargetState(m: MecoTarget): { speed: number; vh: number; vr: number } {
+  const r = R_EARTH_M + m.altM;
+  const ra = R_EARTH_M + m.apogeeAltM;
+  const rp = R_EARTH_M + m.perigeeAltM;
+  const a = (ra + rp) / 2;
+  const speed = Math.sqrt(MU_EARTH_M3_S2 * (2 / r - 1 / a));
+  const vh = Math.sqrt(2 * MU_EARTH_M3_S2 * ((ra * rp) / (ra + rp))) / r; // h / r
+  const vr = Math.sqrt(Math.max(0, speed * speed - vh * vh));
+  return { speed, vh, vr };
+}
+
 /** One impulse gate: `fraction` (0-1) of the total impulse delivered by `t` s after ignition. */
 export interface ImpulseGate {
   t: number;
@@ -174,6 +194,17 @@ export interface LaunchProfile {
    * arrive level here at circular speed. Defaults to `GUIDANCE_TARGET_ALT_M`.
    */
   targetOrbitAltM?: number;
+  /**
+   * Direct insertion (the Space Shuttle): the core stage steers (PEG) to a MECO state at
+   * `altM` on the orbit `apogeeAltM` x `perigeeAltM` (climbing toward apogee) and cuts off when
+   * its inertial speed reaches that orbit's speed there, leaving its residual propellant in the
+   * tank, short of orbit so the tank re-enters. The final stage coasts to apogee and
+   * circularises there (OMS-2); its cutoff waits for the circular orbit. NASA TD0358A Table
+   * 3-1: MECO altitude 360,000 ft; STS-68: OMS-2 of 48.8 m/s at T+2110 s to 221 x 221 km, so
+   * MECO onto about 58 x 221 km. Absent = the core burns to depletion and the first stable
+   * perigee ends the ascent.
+   */
+  mecoTarget?: MecoTarget;
   /** Aerodynamic reference area (m²) for drag. Default 10. */
   refAreaM2?: number;
   /** Drag coefficient (dimensionless). Default 0.3. */
@@ -642,7 +673,19 @@ export interface AscentOptions {
 export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}): AscentSummary {
   const dt = opts.dtS ?? 0.05;
   const sampleDt = opts.sampleDtS ?? 1;
-  const maxT = opts.maxTS ?? 2000; // a low-TWR upper stage burns for many minutes
+  // A low-TWR upper stage burns for many minutes; a direct insertion coasts half an orbit to
+  // its circularising burn (STS-68's OMS-2 at T+2110 s).
+  const maxT = opts.maxTS ?? (profile.mecoTarget ? 4000 : 2000);
+  const mecoTarget = profile.mecoTarget;
+  const directInsertion = mecoTarget != null;
+  const mecoState = mecoTarget ? mecoTargetState(mecoTarget) : null;
+  // The core stage has been cut off on its insertion orbit (direct insertion only).
+  let stageCutOff = false;
+  // The altitude the final stage circularises at on a direct insertion: the apoapsis MECO
+  // delivered (OMS-2 burns at apogee, whatever it is), set when the final stage takes over.
+  let circulariseAtM: number | null = null;
+  // OMS-2 lit: the circularising burn has started (it then runs to the circular orbit).
+  let insertionBurnLit = false;
   const refArea = profile.refAreaM2 ?? 10;
   const cd = profile.cd ?? 0.3;
 
@@ -925,8 +968,22 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
       0,
     );
     // Core thrust IF the engine is lit (propellant remaining on the active stage).
+    // Direct insertion: the core stage cuts off on its insertion orbit, before depletion.
+    if (
+      directInsertion &&
+      !stageCutOff &&
+      stageIndex >= 0 &&
+      stageIndex < profile.stages.length - 1 &&
+      alt > GUIDANCE.handoverAltM &&
+      speed >= mecoState!.speed
+    ) {
+      stageCutOff = true;
+    }
     const coreThrustLit =
-      stageIndex >= 0 && remainingProp > 0 && !(stageIndex === 0 && t < coreIgnitionS)
+      stageIndex >= 0 &&
+      remainingProp > 0 &&
+      !stageCutOff &&
+      !(stageIndex === 0 && t < coreIgnitionS)
         ? coreThrustAt(alt, m, boostThrust)
         : 0;
 
@@ -938,7 +995,8 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
     // that can't circularise in one continuous burn. PEG only STEERS; the honest
     // perigee gate below still decides SECO + reachedOrbit.
     const isFinalStage = stageIndex === profile.stages.length - 1;
-    const targetAltM = profile.targetOrbitAltM ?? GUIDANCE.targetAltM;
+    const targetAltM =
+      circulariseAtM ?? mecoTarget?.apogeeAltM ?? profile.targetOrbitAltM ?? GUIDANCE.targetAltM;
     let pitch: number;
     let engineOn: boolean; // set by every guidance branch below
 
@@ -948,7 +1006,13 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
     // and sinks. So: run the heuristic by default; the instant its circularise
     // command provably saturates, LATCH onto PEG for the rest of the stage (no
     // vehicle list, no chatter). PEG then flies the lofted low-TWR insertion.
-    if (!pegLatched && isFinalStage && coreThrustLit > 0 && alt > GUIDANCE.handoverAltM) {
+    if (
+      circulariseAtM == null &&
+      !pegLatched &&
+      isFinalStage &&
+      coreThrustLit > 0 &&
+      alt > GUIDANCE.handoverAltM
+    ) {
       if (profile.loftBoost) {
         // Lofted low-TWR upper stage: we know it's PEG's job — latch on ignition.
         pegLatched = true;
@@ -960,7 +1024,51 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
       }
     }
 
-    if (pegLatched && isFinalStage && coreThrustLit > 0) {
+    if (mecoState && !isFinalStage && coreThrustLit > 0 && alt > GUIDANCE.handoverAltM) {
+      // Direct insertion: the core steers (PEG, linear tangent) to the MECO state. Blended in
+      // from the pitch table like the heuristic so the command does not step.
+      const ve = stageIspS(profile.stages[stageIndex], alt) * G0;
+      const a = (coreThrustLit + boostThrust) / m;
+      const mdot = coreThrustLit / ve;
+      const maxBurnS = mdot > 0 ? remainingProp / mdot : 0;
+      const frozen = peg?.ok === true && peg.tgo < PEG.freezeTgoS;
+      if (!frozen && (t - pegSolveT >= PEG.majorCycleS || !peg?.ok)) {
+        peg = pegSolve(
+          r,
+          velUp,
+          Math.abs(horizSpeed),
+          a,
+          ve,
+          g,
+          R_EARTH_M + mecoTarget!.altM,
+          mecoState.vh,
+          maxBurnS,
+          peg,
+          mecoState.vr,
+        );
+        pegSolveT = t;
+      }
+      const guided = peg?.ok
+        ? pegPitchRad(peg, t - pegSolveT)
+        : Math.atan2(velUp, Math.abs(horizSpeed));
+      const table = pitchAngleRad(profile, t);
+      const blend = Math.max(0, Math.min(1, (alt - GUIDANCE.handoverAltM) / GUIDANCE.blendM));
+      pitch = table * (1 - blend) + guided * blend;
+      engineOn = true;
+    } else if (circulariseAtM != null && isFinalStage && coreThrustLit > 0) {
+      // Direct insertion, OMS-2: coast to apoapsis, light half the burn before it (the burn is
+      // the circularising Δv there over the stage's acceleration), burn prograde to circular.
+      const vhAbs = Math.abs(horizSpeed);
+      const rA = R_EARTH_M + circulariseAtM;
+      const dvCirc = Math.max(0, Math.sqrt(MU_EARTH_M3_S2 / rA) - (r * vhAbs) / rA);
+      const burnS = (dvCirc * m) / coreThrustLit;
+      if (!insertionBurnLit && (timeToApoapsisS(r, velUp, vhAbs) <= burnS / 2 || velUp <= 0)) {
+        insertionBurnLit = true;
+        circulariseAtM = apoapsisAltM; // the apogee it lights at (drag trims it on the coast)
+      }
+      pitch = Math.atan2(velUp, vhAbs);
+      engineOn = insertionBurnLit;
+    } else if (pegLatched && isFinalStage && coreThrustLit > 0) {
       const ve = stageIspS(profile.stages[stageIndex], alt) * G0;
       const a = coreThrustLit / m;
       const mdot = coreThrustLit / ve;
@@ -1119,7 +1227,7 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
     if (q > maxQ.qPa) maxQ = { t, altKm: alt / 1000, qPa: q };
 
     // Stage burnout → jettison + advance.
-    if (stageIndex >= 0 && remainingProp <= 0) {
+    if (stageIndex >= 0 && (remainingProp <= 0 || stageCutOff)) {
       const isLast = stageIndex >= profile.stages.length - 1;
       const delayS = isLast ? 0 : (profile.stages[stageIndex].separationDelayS ?? 0);
       if (!mecoSeen && !isLast) {
@@ -1141,7 +1249,15 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
           secoT = t;
         } else {
           stageIndex += 1;
-          remainingProp = stagePropellant(profile.stages[stageIndex]);
+          remainingProp = stagePropellant(profile.stages[stageIndex]); // the residual leaves with the spent stage
+          stageCutOff = false;
+          if (directInsertion && stageIndex === profile.stages.length - 1) {
+            circulariseAtM = Number.isFinite(apoapsisAltM) ? apoapsisAltM : null;
+          }
+          if (directInsertion) {
+            peg = null; // the core's MECO solution is not the orbiter's
+            pegSolveT = -Infinity;
+          }
         }
       }
     }
@@ -1164,7 +1280,7 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
       pushEvent('orbit');
       orbitSeen = true;
       reachedOrbit = true;
-      if (stageIndex === profile.stages.length - 1) {
+      if (stageIndex === profile.stages.length - 1 && !directInsertion) {
         pushEvent(
           'seco',
           `${profile.stages[stageIndex].name} — orbit`,
@@ -1175,11 +1291,28 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
       }
     }
 
+    // Direct insertion: the circularising burn ends once the orbit is circular at the target
+    // (its perigee within 2 km of the apoapsis target), not at the first stable perigee.
+    if (
+      directInsertion &&
+      secoT < 0 &&
+      stageIndex === profile.stages.length - 1 &&
+      perigeeAltM >= (circulariseAtM ?? mecoTarget!.apogeeAltM) - 2_000
+    ) {
+      pushEvent(
+        'seco',
+        `${profile.stages[stageIndex].name} — circular`,
+        profile.payloadInBay === true,
+      );
+      stageIndex = -1;
+      secoT = t;
+    }
+
     // Orbit already reached on an EARLIER stage (SLS: the core stage alone inserts Orion +
     // ICPS): the final stage has no insertion left to fly. Hold it dark — its propellant is
     // for the later injection burn (the scene's injection beat) — instead of letting it burn
     // to depletion onto an escape path, which nothing else would ever cut off.
-    if (orbitSeen && secoT < 0 && stageIndex === profile.stages.length - 1) {
+    if (!directInsertion && orbitSeen && secoT < 0 && stageIndex === profile.stages.length - 1) {
       // The Shuttle reaches orbit on its main engines: its orbiter's held engines are no SECO
       // beat either (silent, as at the end of its powered flight).
       pushEvent(

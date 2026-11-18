@@ -4,6 +4,7 @@ import { resolve } from 'node:path';
 import {
   boosterThrustMultiplier,
   integrateAscent,
+  mecoTargetState,
   stackIdealDv,
   stageThrustN,
   throttleLevel,
@@ -278,6 +279,48 @@ describe('the sourced profiles (STS-68, H-IIA 202, Falcon Heavy / Europa Clipper
     const s = integrateAscent(load('space-shuttle-stack'));
     const sep = s.events.find((e) => e.type === 'staging')!;
     expect(Math.abs(sep.t - 123.4)).toBeLessThan(1); // STS-68 separation command 123.4 s
+  });
+
+  it('mecoTargetState reproduces NASA TD0358A Table 3-1 (direct insertion: 160 x 35 nmi at 360 kft)', () => {
+    const nmi = 1852;
+    const ft = 0.3048;
+    const st = mecoTargetState({
+      altM: 360_000 * ft,
+      apogeeAltM: 160 * nmi,
+      perigeeAltM: 35 * nmi,
+    });
+    // Table: 25,871 ft/s, 0.792 deg. The model's sphere (R 6,371 km) is not the table's Earth.
+    expect(st.speed / ft).toBeGreaterThan(25_871 * 0.995);
+    expect(st.speed / ft).toBeLessThan(25_871 * 1.005);
+    expect((Math.atan2(st.vr, st.vh) * 180) / Math.PI).toBeCloseTo(0.792, 0);
+    // Standard insertion, 85 x 0 nmi: 25,725 ft/s, 0.675 deg.
+    const std = mecoTargetState({ altM: 360_000 * ft, apogeeAltM: 85 * nmi, perigeeAltM: 0 });
+    expect(std.speed / ft).toBeGreaterThan(25_725 * 0.995);
+    expect(std.speed / ft).toBeLessThan(25_725 * 1.005);
+  });
+
+  it('Shuttle direct insertion: MECO short of orbit with propellant left, one OMS-2 burn to circular', () => {
+    const p = load('space-shuttle-stack');
+    const s = integrateAscent(p, { sampleDtS: 0.5 });
+    const meco = s.events.find((e) => e.type === 'meco')!;
+    expect(Math.abs(meco.t - 514)).toBeLessThan(10); // STS-68 MECO 513.4 s
+    const atMeco = s.states.find((x) => x.t >= meco.t + 1)!;
+    expect(atMeco.stageIndex).toBe(0); // the tank is still on (separates 18 s later)
+    expect(atMeco.propRemainingKg).toBeGreaterThan(1000); // a residual, not depletion
+    expect(atMeco.altKm).toBeGreaterThan(100);
+    expect(atMeco.altKm).toBeLessThan(120); // 360,000 ft
+    // The orbiter burns once: a single run of lit samples, about 98 s long (STS-68).
+    const lit = s.states.filter((x) => x.stageIndex === 1 && x.thrustN > 0);
+    expect(lit.length).toBeGreaterThan(0);
+    const span = lit.at(-1)!.t - lit[0].t;
+    expect(lit.length).toBeGreaterThan(span / 0.5 - 2); // no gap inside the burn
+    expect(Math.abs(span - 98)).toBeLessThan(10);
+    // Δv about 48.8 m/s and a circular orbit at the end.
+    const before = s.states.filter((x) => x.t < lit[0].t).at(-1)!;
+    const after = s.states.find((x) => x.t > lit.at(-1)!.t + 1)!;
+    expect(Math.abs((after.speedKms - before.speedKms) * 1000 - 48.8)).toBeLessThan(5);
+    expect(s.reachedOrbit).toBe(true);
+    expect(Math.abs(after.velUpKms)).toBeLessThan(0.01);
   });
 
   it('every changed profile still reaches orbit', () => {

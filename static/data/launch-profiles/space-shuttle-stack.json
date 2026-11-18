@@ -103,6 +103,11 @@
     {
       "l": "RS-25 — Wikipedia: 1,670 kN sea level / 2,090 kN vacuum at 100 % RPL (the 104.5 % figures are 1,750 / 2,170 kN), throttle range 67-109 %",
       "u": "https://en.wikipedia.org/wiki/RS-25"
+    },
+    {
+      "l": "NASA — TD0358A Ascent Guidance and Flight Control Training Manual, Table 3-1 MECO targets: MECO at 360,000 ft; direct insertion 25,871 ft/s, 0.792 deg, 160 x 35 nmi (inertial velocity chosen to fall short of orbit so the tank re-enters; OMS-2 then circularises). The orbit at MECO (58 x 221 km) is derived from STS-68's OMS-2 (T+2110 s, 98 s, 160.1 ft/s = 48.8 m/s, to 119.7 x 119.4 nmi): the 221 km apogee less the OMS-2 Δv at apogee gives the 58 km perigee",
+      "u": "https://ibiblio.org/apollo/Shuttle/TD0358A%20-%20ASC%20G&C%202102%20-%20Ascent%20Guidance%20and%20Flight%20Control%20Training%20Manual.pdf"
     }
-  ]
+  ],
+  "mecoTarget": { "altM": 109728, "apogeeAltM": 221500, "perigeeAltM": 58000 }
 }

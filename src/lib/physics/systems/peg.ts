@@ -87,6 +87,7 @@ export function pegSolve(
   vhT: number,
   maxBurnS: number,
   prior: PegState | null,
+  vrT = 0,
 ): PegState {
   if (a <= 1e-6 || ve <= 1e-6) return prior ?? { A: 0, B: 0, tgo: 0, ok: false };
   const tau = ve / a; // mass-flow time constant (a(t) = a/(1 − t/τ))
@@ -138,7 +139,7 @@ export function pegSolve(
       pr += pvr * h;
     }
 
-    const dvr = -vr + gr;
+    const dvr = vrT - vr + gr; // target radial speed: 0 (circular) or a climbing MECO state
     const dr = rT - r - vr * T + gpos;
     A = (c1 * dvr - b1 * dr) / det;
     B = (b0 * dr - c0 * dvr) / det;

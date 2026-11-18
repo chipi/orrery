@@ -47,6 +47,8 @@ const TIMELINES: Record<string, Row[]> = {
     // Max dynamic pressure T+51 s (STS-68, the flight whose throttle schedule the profile flies;
     // STS-39, with a different schedule, 67 s).
     { event: 'max-Q', type: 'max_q', real: 51, tol: 10 },
+    // OMS-2 cutoff 273:11:52:48.2 = T+2208 s, the end of the direct insertion (a silent SECO).
+    { event: 'OMS-2 cutoff', type: 'seco', real: 2208, tol: 40 },
   ],
   'atlas-v': [
     // Atlas V Launch Services User's Guide Rev 11 (March 2010), Table 2.4.1-1, the 521/531-class
@@ -218,7 +220,7 @@ describe('launcher staging timelines vs the real nominal flight', () => {
     'proton-m-briz-m: Briz-M first-burn cutoff T+1129 s (ILS guide Figure 2.3.1-1); model 1099 s, 30.1 s early: no coast between stage 3 separation (588 s) and Briz-M ignition (680 s)',
   );
   it.todo(
-    'space-shuttle-stack: the real MECO leaves a low perigee and OMS-2 completes the orbit (STS-68 OMS-2 at T+2110 s, 99 s); the model, flying to a 180 km circular target, reaches orbit 1.7 s before MECO, and MECO is 521.8 s against 514 s. A heavier orbiter (the STS-68 report implies about 110 t with payload, model 105 t) loses the orbit: the 53 kN OMS insertion does not close',
+    'space-shuttle-stack: OMS-2 lights at 2081.5 s against STS-68 2110 s (cutoff 2176 / 2208 s); the MECO altitude is the generic TD0358A 360,000 ft, not STS-68 own (not in its report), which sets where on the orbit MECO falls',
   );
   it.todo(
     'atlas-v 541 (Mars 2020 booklet): BECO 262.1 s, MECO-1 into the parking orbit 687.9 s; model 251.9 / 878.6 s',
@@ -271,11 +273,8 @@ describe('Space Shuttle ascent: no SECO, the tank leaves 18 s after MECO', () =>
     const labels = beats.map((b) => b.label);
     expect(labels).not.toContain('SECO');
     expect(labels.filter((l) => l === 'MECO')).toHaveLength(1);
-    // The model reaches its 180 km orbit on the main engines about 2 s before MECO (the
-    // STS-68 throttle schedule and impulse gates); see the it.todo above for the real flight.
-    expect(labels).toContain('ORBIT');
-    const orbit = beats.find((b) => b.label === 'ORBIT')!;
-    expect(orbit.t).toBeGreaterThan(beats.find((b) => b.label === 'MECO')!.t - 5);
+    // Direct insertion: MECO short of orbit, the tank off, then OMS-2 completes the orbit.
+    expect(labels.at(-1)).toBe('ORBIT');
     const meco = beats.find((b) => b.label === 'MECO')!;
     const sep = beats.filter((b) => b.label === 'STAGE SEP').at(-1)!;
     expect(sep.t - meco.t).toBeGreaterThan(17);

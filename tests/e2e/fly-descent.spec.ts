@@ -66,6 +66,15 @@ test.describe('descent EDL HUD (desktop)', () => {
     await expect(dossier).toContainText('km/s'); // entry velocity
   });
 
+  test('the CHUTE lamp only where there is air for a parachute (plan L64)', async ({ page }) => {
+    const lamps = page.locator('.descent .lamps .lamp');
+    await enterDescent(page, 'apollo11'); // LUNAR_POWERED, the Chandrayaan-2 and -3 archetype
+    await expect(lamps.filter({ hasText: /RETRO/ })).toHaveCount(1);
+    await expect(lamps.filter({ hasText: /CHUTE/ })).toHaveCount(0);
+    await enterDescent(page, 'curiosity');
+    await expect(lamps.filter({ hasText: /CHUTE/ })).toHaveCount(1);
+  });
+
   test('touchdown hands off to the destination body SurfaceScene', async ({ page }) => {
     // Beresheet is the shortest descent (~19 s → a few wall-seconds at 3×), so the
     // full pad→surface handoff completes fast + deterministically. It closes the

@@ -179,6 +179,11 @@
   const hasRetro = $derived(
     profile.phases.some((ph) => ph.kind === 'powered_retro' || ph.kind === 'skycrane'),
   );
+  // Likewise the CHUTE lamp only for a descent with a parachute: an airless Moon landing
+  // (Chandrayaan-2 and -3, plan L64) has no air to open one in.
+  const hasChute = $derived(
+    profile.phases.some((ph) => ph.kind === 'parachute' || ph.kind === 'aeroshell_descent'),
+  );
   // Earth capsule re-entry indicators (RFC-034 §13): the plasma comms-blackout
   // during the hypersonic entry, and the drogue → main canopy sequence.
   const isEarthReentry = $derived(profile.body === 'earth');
@@ -342,7 +347,9 @@
       <span class="lamp" class:on={drogueOut}>{m.hud_drogue()}</span>
       <span class="lamp" class:on={mainOut}>{m.hud_main()}</span>
     {:else}
-      <span class="lamp" class:on={chuteOut}>{m.hud_chute()}</span>
+      {#if hasChute}
+        <span class="lamp" class:on={chuteOut}>{m.hud_chute()}</span>
+      {/if}
       {#if hasRetro}
         <span class="lamp" class:on={retroOn}
           >{m.hud_retro()}<ScienceChip

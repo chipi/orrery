@@ -30,7 +30,16 @@ describe('preflightRange (plan E3: a push checks what it adds)', () => {
     expect(asked).toBe(false);
   });
 
-  it('agrees with git on this checkout: HEAD~1 is an ancestor of HEAD', () => {
+  // CI checks out one commit (shallow): there is no HEAD~1 to agree with there.
+  const hasParent = (() => {
+    try {
+      execSync('git rev-parse --verify --quiet HEAD~1', { stdio: 'pipe' });
+      return true;
+    } catch {
+      return false;
+    }
+  })();
+  it.skipIf(!hasParent)('agrees with git on this checkout: HEAD~1 is an ancestor of HEAD', () => {
     const isAncestor = (sha: string) => {
       try {
         execSync(`git merge-base --is-ancestor ${sha} HEAD`, { stdio: 'pipe' });

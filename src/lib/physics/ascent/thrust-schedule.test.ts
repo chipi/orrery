@@ -310,6 +310,9 @@ describe('the sourced profiles (STS-68, H-IIA 202, Falcon Heavy / Europa Clipper
     expect(atMeco.propRemainingKg).toBeGreaterThan(1000); // a residual, not depletion
     expect(atMeco.altKm).toBeGreaterThan(100);
     expect(atMeco.altKm).toBeLessThan(120); // 360,000 ft
+    // STS-68 as flown (TM-2011-216142 p. 2-77): MECO inertial velocity 25,775 ft/s = 7,856 m/s.
+    const atCut = s.states.filter((x) => x.t <= meco.t + 0.5).at(-1)!;
+    expect(Math.abs(atCut.speedKms * 1000 - 7856)).toBeLessThan(20);
     // The orbiter burns once: a single run of lit samples, about 98 s long (STS-68).
     const lit = s.states.filter((x) => x.stageIndex === 1 && x.thrustN > 0);
     expect(lit.length).toBeGreaterThan(0);

@@ -232,7 +232,7 @@ describe('launcher staging timelines vs the real nominal flight', () => {
     'proton-m-briz-m: Briz-M first-burn cutoff T+1129 s (ILS guide Figure 2.3.1-1); model 1099 s, 30.1 s early: no coast between stage 3 separation (588 s) and Briz-M ignition (680 s). Tried 2026-11-18: adding the 91.6 s coast moves the cutoff to 1210.5 s (81.5 s late), because the model first Briz-M burn is about 547 s against 449 s in the guide (its standard GTO profile, not ExoMars); the burn length is the fault, and no sourced ExoMars Briz-M burn was found',
   );
   it.todo(
-    'space-shuttle-stack: OMS-2 lights at 2081.5 s against STS-68 2110 s (cutoff 2176 / 2208 s); the MECO altitude is the generic TD0358A 360,000 ft, not STS-68 own (not in its report), which sets where on the orbit MECO falls',
+    'space-shuttle-stack: OMS-2 lights at 2081.5 s against STS-68 2110 s (cutoff 2176 / 2208 s); the MECO altitude is the generic TD0358A 360,000 ft: neither the STS-68 report nor TM-2011-216142 gives it (the TM confirms the MECO inertial velocity, 25,775 ft/s against the model 7,861 m/s), and it sets where on the orbit MECO falls',
   );
   it.todo(
     'atlas-v 541 (Mars 2020 booklet): BECO 262.1 s, MECO-1 into the parking orbit 687.9 s; model 251.9 / 878.6 s',

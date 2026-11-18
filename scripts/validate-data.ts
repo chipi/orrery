@@ -2310,6 +2310,37 @@ if (existsSync(LAUNCHES_CURATION_PATH) && existsSync(LAUNCHES_PATH)) {
       }
     }
   }
+  // mission_refs (F9 / L56): the launch must be a historic entry (warn: a renamed source launch)
+  // and the mission must exist (error: a typo would silently link nothing).
+  const missionRefs =
+    (curation as { mission_refs?: Array<{ launch_id: string; orrery_mission_ref: string }> })
+      .mission_refs ?? [];
+  if (missionRefs.length > 0) {
+    const historicDir = join(DATA_ROOT, 'launches-historic');
+    const historicIds = new Set<string>();
+    for (const f of readdirSync(historicDir).filter((x) => x.endsWith('.json'))) {
+      const j = readJson(join(historicDir, f)) as { entries?: Record<string, unknown> };
+      for (const id of Object.keys(j.entries ?? {})) historicIds.add(id);
+    }
+    const missionIds = new Set(
+      (readJson(join(DATA_ROOT, 'missions', 'index.json')) as Array<{ id: string }>).map(
+        (m) => m.id,
+      ),
+    );
+    for (const r of missionRefs) {
+      if (!historicIds.has(r.launch_id)) {
+        console.warn(
+          `  ⚠ launches-curation.json[mission_refs]: launch_id '${r.launch_id}' not in launches-historic`,
+        );
+      }
+      if (!missionIds.has(r.orrery_mission_ref)) {
+        failed++;
+        console.error(
+          `\n  ✗ launches-curation.json[mission_refs]: orrery_mission_ref '${r.orrery_mission_ref}' is not a mission`,
+        );
+      }
+    }
+  }
 }
 
 // ──────────────────────────────────────────────────────────────────────

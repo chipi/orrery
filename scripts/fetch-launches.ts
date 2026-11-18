@@ -43,6 +43,8 @@ type CurationFile = {
   featured: Array<{ launch_id: string; reason: string; editorial_note?: string }>;
   demoted: Array<{ launch_id: string; reason: string }>;
   first_flight_configs?: Array<{ rocket_config_id: string; reason: string }>;
+  /** Hand links launch → mission, for names that do not contain the mission id (L56 / F9). */
+  mission_refs?: Array<{ launch_id: string; orrery_mission_ref: string; reason: string }>;
 };
 
 type RocketMappingFile = {
@@ -228,6 +230,10 @@ async function main(): Promise<void> {
   );
   const tierContext = { firstFlightIds };
   const catalogue = loadCatalogue();
+  const curatedMissionRefs = new Map(
+    (curation.mission_refs ?? []).map((r) => [r.launch_id, r.orrery_mission_ref]),
+  );
+  const usedMissionRefs = new Set<string>();
 
   // ── Phase 4+5: tier + curation + provenance_chain ───────────────
   function enrich(
@@ -257,10 +263,13 @@ async function main(): Promise<void> {
       void _url;
       void _prior;
       void _own;
-      const missionRef = findCatalogMatch(
-        { net: m.entry.net, name: m.entry.name, mission_name: m.entry.mission_name },
-        catalogue,
-      );
+      const missionRef =
+        curatedMissionRefs.get(id) ??
+        findCatalogMatch(
+          { net: m.entry.net, name: m.entry.name, mission_name: m.entry.mission_name },
+          catalogue,
+        );
+      if (curatedMissionRefs.has(id)) usedMissionRefs.add(id);
       const spacecraftRefs = resolveSpacecraftRefs(launcherRef, m.entry.mission_name, m.entry.name);
       const launchSiteRef = resolveLaunchSiteRef(
         m.entry.pad_name,
@@ -284,6 +293,13 @@ async function main(): Promise<void> {
 
   const upcomingEntries = enrich(mergedUpcoming);
   const historicEntries = enrich(mergedHistoric);
+  // A curated launch id that no longer exists (a source renamed the launch) would silently drop
+  // its link: say so.
+  for (const id of curatedMissionRefs.keys()) {
+    if (!usedMissionRefs.has(id)) {
+      console.warn(`  ! launches-curation mission_refs: launch ${id} not in this fetch`);
+    }
+  }
 
   // ── Phase 6: write manifest files ───────────────────────────────
   const upcomingManifest = {

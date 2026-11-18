@@ -2,45 +2,80 @@
   "rover_id": "change3",
   "agency": "CNSA",
   "status": "ENDED",
-  "snapshot_date": "2014-01-25",
-  "approximate": true,
-  "credit": "© CNSA — Yutu rover traverse (Chang'e 3, Mare Imbrium, Dec 2013–Jan 2014; ~114 m before immobilisation). Approximate route: a simplified polyline anchored at the lander, not a surveyed track. No published track was found (the LROC featured-sites list, lroc.im-ldi.com/featured_sites, checked 2026-11-15, has Chang'e 3 landing-site images but no traverse).",
+  "snapshot_date": "2014-01-16",
+  "credit": "© CNSA — Yutu rover traverse (Chang'e 3, Mare Imbrium, Dec 2013–Jan 2014): the lander and the rover's 17 sites N0101 to N0209, digitised from Figure 5 of Wan W. et al. 2014, \"Cross-site visual localization of Yutu rover\" (ISPRS Archives XL-4, 279, doi:10.5194/isprsarchives-XL-4-279-2014), the mission team's localisation results \"as of January 16th, 2014\" (114.8 m travelled; the digitised sites give 114.8 m), placed from the lander at 44.1214 N, 19.5116 W; sites accurate to about 0.2 m (the figure's 10 m scale bar)",
   "points": [
     [
       44.1214,
       -19.5116
     ],
     [
-      44.12094,
-      -19.51197
+      44.12162,
+      -19.51159
+    ],
+    [
+      44.1217,
+      -19.51153
+    ],
+    [
+      44.12158,
+      -19.51119
+    ],
+    [
+      44.12123,
+      -19.51121
+    ],
+    [
+      44.12109,
+      -19.51159
     ],
     [
       44.12074,
-      -19.51261
+      -19.51161
     ],
     [
-      44.12114,
-      -19.51298
+      44.12056,
+      -19.5116
     ],
     [
-      44.12166,
-      -19.51279
+      44.12037,
+      -19.51163
     ],
     [
-      44.12199,
-      -19.51215
+      44.12033,
+      -19.51163
     ],
     [
-      44.12186,
-      -19.51142
+      44.12029,
+      -19.51196
     ],
     [
-      44.12133,
-      -19.51114
+      44.12019,
+      -19.51222
     ],
     [
-      44.12087,
-      -19.51151
+      44.12036,
+      -19.51242
+    ],
+    [
+      44.12031,
+      -19.51276
+    ],
+    [
+      44.12038,
+      -19.51265
+    ],
+    [
+      44.12062,
+      -19.5124
+    ],
+    [
+      44.12083,
+      -19.51245
+    ],
+    [
+      44.12101,
+      -19.51221
     ]
   ]
 }

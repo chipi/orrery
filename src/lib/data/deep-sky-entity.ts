@@ -30,6 +30,9 @@ export interface DeepSkyEntity {
   mag: number | null;
   /** IAU constellation code. */
   con: string;
+  /** J2000 right ascension and declination, degrees: the IN THE SKY finder and rows. */
+  ra: number;
+  dec: number;
   fact: string;
   bio: string;
   links: Link[];
@@ -90,6 +93,8 @@ export async function getDeepSkyEntity(
     distLy: obj.dist_ly,
     mag: obj.mag,
     con: obj.con,
+    ra: obj.ra,
+    dec: obj.dec,
     fact: o.fact,
     bio: o.bio,
     links: o.links ?? [],

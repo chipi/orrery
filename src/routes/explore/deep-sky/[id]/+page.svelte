@@ -86,6 +86,16 @@
     </dl>
   {/if}
 
+  {#if obj.con}
+    <section class="in-the-sky" data-testid="entity-in-the-sky">
+      <h2 class="page-section-label">{m.panel_tab_sky()}</h2>
+      <!-- Lazy: the finder and the sky maths stay out of the page's eager JS (route budget). -->
+      {#await import('$lib/components/DeepSkyInTheSky.svelte') then { default: InTheSky }}
+        <InTheSky object={obj} explorerHref={localHref(`/explore?deepsky=${obj.id}`)} />
+      {/await}
+    </section>
+  {/if}
+
   {#if obj.gatewaySystem}
     <p>{m.explore_ds_gateway_note()}</p>
     <ul class="linklist wide">

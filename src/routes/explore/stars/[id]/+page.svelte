@@ -118,6 +118,19 @@
     </dl>
   </section>
 
+  {#if star.con && star.skyXyz}
+    <section class="in-the-sky" data-testid="entity-in-the-sky">
+      <h2 class="page-section-label">{m.panel_tab_sky()}</h2>
+      <!-- Lazy: the finder stays out of the page's eager JS (route budget). -->
+      {#await import('$lib/components/StarInTheSky.svelte') then { default: InTheSky }}
+        <InTheSky
+          star={{ id: star.id, con: star.con, xyz: star.skyXyz }}
+          explorerHref={localHref(`/explore?goto=${star.id}`)}
+        />
+      {/await}
+    </section>
+  {/if}
+
   {#if star.planets.length}
     <section class="system" id="system">
       <h2 class="page-section-label">{m.star_tab_system()}</h2>

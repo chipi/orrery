@@ -24,6 +24,9 @@ describe('getStarEntity', () => {
       mag: -1.44,
       planets: [],
     });
+    // The IN THE SKY finder direction (plan D1): the star's HYG position; host-only stars have none.
+    expect(sirius?.skyXyz).toHaveLength(3);
+    expect(Math.hypot(...sirius!.skyXyz!)).toBeGreaterThan(0);
     expect(sirius?.fact).toContain('brightest star');
     expect(sirius?.bio).toBeTruthy();
     expect(sirius?.cultural).toBeTruthy();
@@ -55,6 +58,7 @@ describe('getStarEntity', () => {
     const t1 = await getStarEntity('trappist-1', 'en-US');
     expect(t1).toMatchObject({ name: 'TRAPPIST-1', named: false, spect: 'M8.0 V', con: null });
     expect(t1?.mag).toBeUndefined();
+    expect(t1?.skyXyz).toBeNull();
     expect(t1?.fact).toBeUndefined();
     expect(t1?.planets).toHaveLength(7);
     expect(t1?.planets.every((p) => p.fact && p.bio)).toBe(true);

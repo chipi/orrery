@@ -169,3 +169,8 @@
   text-decoration: underline;
   text-underline-offset: 2px;
 }
+/* IN THE SKY (plan D1): the constellation finder at the panel's scale, not the reading column's. */
+.entity .in-the-sky .sky-finder,
+.entity .in-the-sky .star-finder {
+  max-width: 28rem;
+}

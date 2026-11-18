@@ -24,11 +24,13 @@ On `?deepsky=M42` the reader learned "Constellation: Orion" and could not see wh
 4. **The zodiac note and the "Show constellation lines" action** are the star tab's (same keys, one shared `showConstellationLines`).
 5. **The frame is never guessed.** The figures and the named stars are in the HYG frame (z toward the north pole); a deep-sky object's `x, y, z` is the scene frame (y north), `(x, z, y)` of it. The finder is fed `raDecToHyg(ra, dec)` only; a test compares it with all 143 objects' `x, y, z`.
 6. **Serpens' two-part figure merges** (`figureVertices` returns every entry of a code), so M5, M16 and the Serpens Nebula see both halves; `StarPanel`, which took the first entry only, uses the same helper.
-7. **The entity pages are not touched** (L42-5a); the latitude row would be client-only there. Plan row L60.
+7. **The entity pages are not touched** (L42-5a); the latitude row would be client-only there. Plan row L61.
+8. **Amended 2026-11-18 (plan D1 / L61): the entity pages carry the section.** The tab body is one component per kind, `DeepSkyInTheSky.svelte` and `StarInTheSky.svelte`, rendered by the panels' IN THE SKY tab and by `/explore/deep-sky/<id>` and `/explore/stars/<id>` as an "IN THE SKY" section after the facts (named stars only: a host-only star has no sky position). On the prerendered page the latitude rows (BEST MONTHS, FROM YOUR LATITUDE) are read after mount, from the reader's browser, never from the build machine. The lines action is a link there: it turns the lines on and opens the object in the explorer (`?deepsky=<id>`, `?goto=<id>`). The finder is held to 28 rem on the reading page. e2e: `tests/e2e/entity-in-the-sky.spec.ts`.
 
 ## Not done here
 
-- The entity pages (`/explore/deep-sky/<id>`, `/explore/stars/<id>`) draw no finder (plan L60).
+- ~~The entity pages draw no finder~~ (done 2026-11-18, item 8).
+- At panel width the three-column facts grid breaks long labels mid-word ("CONSTELLAT ION", "NEAREST BRIGHT STAR"; `UniverseFacts` `overflow-wrap: anywhere`), in every universe panel, not only this tab: raised with the operator 2026-11-18.
 - 20 objects have no catalogue magnitude, so no SEEN WITH row (M35 and the Carina Nebula are visible to the eye in reality; filling `mag` is a catalogue task).
 - The nearest-star list is the 62 curated stars, not a bright-star catalogue.
 - Constellation names are English in all 14 locales (B3 finding 6), unchanged.

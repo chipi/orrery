@@ -6,8 +6,8 @@ import { waitForHydration } from './_helpers/hydration';
  * Nav bar controls (UXD-016, slice A6): the right-hand cluster is 32 px on a fine pointer and
  * 44 px on touch in both axes, the bar is one height from one token, and High contrast, Share
  * and Debug sit behind one More menu (a WAI-ARIA menu button) on the bar and as drawer rows on
- * phones. The hamburger break stays at 1219 px; the per-locale measurement at the end only
- * reports the widths the follow-up needs (deferred list L2).
+ * phones. The hamburger break is 1023 px (plan D2); the per-locale measurement at the end
+ * holds every locale's full bar under 1000 px, so the bar fits from 1024 px.
  *
  * Written without a browser run: tolerances are 1 px on sizes and gaps.
  */
@@ -60,7 +60,7 @@ test.describe('nav controls — fine pointer (desktop)', () => {
     expect(Math.abs(bar.height - DECIDED_BAR_HEIGHT)).toBeLessThanOrEqual(1);
 
     const controls = await visibleBarControls(page);
-    // audio, locale, lens, settings, More (the hamburger is hidden above 1219 px)
+    // audio, locale, lens, settings, More (the hamburger is hidden above 1023 px)
     expect(controls).toHaveLength(5);
     const boxes = [];
     for (const c of controls) boxes.push(await box(c));
@@ -388,9 +388,10 @@ test.describe('nav controls — phone drawer', () => {
   });
 });
 
-// Reports, never fails (deferred list L2): the width the full link row + the compact cluster
-// need in each of the 14 locales, so the hamburger break (1219 px today) can be lowered to a
-// measured value in a later step. The link row is forced visible below the break to measure it.
+// The width the full link row + the compact cluster need in each of the 14 locales: the
+// hamburger break is 1023 px (plan D2, measured 2026-11-18: ru 984, fr / es 939), so every
+// locale must fit in 1000 px (24 px of slack at 1024) with no overlap and no page scroll. The
+// link row is forced visible to measure it at the narrower widths too.
 const LOCALES = [
   '',
   'es',
@@ -408,13 +409,13 @@ const LOCALES = [
   'ru',
 ];
 
-test.describe('nav bar width per locale (report only)', () => {
+test.describe('nav bar width per locale', () => {
   test.use({ hasTouch: false, isMobile: false });
   test.beforeEach(() => {
     test.skip(project() !== 'desktop-chromium', 'measurement runs once, on desktop');
   });
 
-  test('14 locales x 1024 / 1100 / 1219 px: needed width and overlap of the full bar', async ({
+  test('14 locales x 1024 / 1100 / 1219 px: the full bar fits from 1024 px', async ({
     page,
   }, testInfo) => {
     test.setTimeout(240_000);
@@ -442,6 +443,10 @@ test.describe('nav bar width per locale (report only)', () => {
           };
         }, NAV);
         expect(m.needed).toBeGreaterThan(0);
+        const where = `${code || 'en-US'} at ${width}`;
+        expect(m.needed, where).toBeLessThanOrEqual(1000);
+        expect(m.overlap, where).toBe(false);
+        expect(m.pageScroll, where).toBeLessThanOrEqual(0);
         rows.push(
           `${code || 'en-US'}\t${width}\tneeded ${m.needed}\toverlap ${m.overlap}\tpageScroll ${m.pageScroll}`,
         );

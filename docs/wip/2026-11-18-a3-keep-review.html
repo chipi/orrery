@@ -1,0 +1,150 @@
+<title>Orrery a3-keep Palette</title>
+<style>
+/* Layout: one column of group cards, swatches in a wrapping grid. Dark-first, like the site. */
+:root {
+  --bg: #07070e; --panel: #0e0f1a; --line: #262a3d; --fg: #e8eaf4; --muted: #8d93ab; --accent: #889fe7;
+  --keep: #7fd19b; --move: #f0b45c; --decide: #c9a2f5;
+  --display: 'Bebas Neue', Impact, 'Arial Narrow', sans-serif; --mono: 'Space Mono', ui-monospace, Menlo, monospace;
+  --body: 'Inter Tight', system-ui, sans-serif; color-scheme: dark;
+}
+@media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) { --bg: #f4f5fa; --panel: #ffffff; --line: #d9dceb; --fg: #151827; --muted: #5a6077; --accent: #4659c4; --keep: #237a45; --move: #9a5a00; --decide: #6b3fb0; color-scheme: light; } }
+:root[data-theme="light"] { --bg: #f4f5fa; --panel: #ffffff; --line: #d9dceb; --fg: #151827; --muted: #5a6077; --accent: #4659c4; --keep: #237a45; --move: #9a5a00; --decide: #6b3fb0; color-scheme: light; }
+body { background: var(--bg); color: var(--fg); font-family: var(--body); line-height: 1.5; }
+main { max-width: 980px; margin: 0 auto; padding-inline: 16px; padding-block: 32px 64px; display: grid; gap: 20px; }
+h1 { font-family: var(--display); font-weight: 400; font-size: clamp(2.2rem, 6vw, 3.4rem); letter-spacing: .04em; margin: 0; text-wrap: balance; }
+.lede { color: var(--muted); max-width: 65ch; margin: 0; }
+.summary { display: flex; flex-wrap: wrap; gap: 8px 20px; font-family: var(--mono); font-size: .8rem; color: var(--muted); }
+.summary b { color: var(--fg); font-variant-numeric: tabular-nums; }
+.group { background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 16px 18px; display: grid; gap: 10px; min-width: 0; }
+.group header { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+h2 { font-family: var(--mono); font-size: .95rem; letter-spacing: .12em; text-transform: uppercase; margin: 0; }
+h3 { font-family: var(--mono); font-size: .7rem; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin: 4px 0 0; }
+.verdict { font-family: var(--mono); font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; padding: 2px 8px; border: 1px solid currentColor; border-radius: 3px; }
+.v-keep { color: var(--keep); } .v-move-teal { color: var(--move); } .v-decide { color: var(--decide); }
+.meta { font-family: var(--mono); font-size: .75rem; color: var(--muted); margin: 0; font-variant-numeric: tabular-nums; }
+.why { margin: 0; max-width: 70ch; }
+.swatches { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(118px, 1fr)); gap: 8px; }
+.sw { display: grid; gap: 4px; }
+.sw span { display: block; height: 40px; border-radius: 4px; border: 1px solid var(--line); }
+.sw code { font-family: var(--mono); font-size: .72rem; color: var(--muted); }
+.sw.teal span { outline: 2px solid var(--move); outline-offset: 2px; }
+details summary { font-family: var(--mono); font-size: .75rem; color: var(--accent); cursor: pointer; }
+details summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.files { margin: 8px 0 0; padding-left: 18px; font-size: .8rem; }
+.files code { font-family: var(--mono); word-break: break-all; }
+.ref { display: flex; gap: 10px; align-items: center; font-family: var(--mono); font-size: .75rem; color: var(--muted); }
+.ref span { width: 28px; height: 28px; border-radius: 4px; background: #889fe7; border: 1px solid var(--line); }
+</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter+Tight:wght@400;600&family=Space+Mono&display=swap">
+<main>
+  <h1>a3-keep palette review</h1>
+  <p class="lede">Every colour in the code tagged <code>a3-keep</code> after the teal accent was retired (UXD-001), grouped by the reason in its tag. Plan row D3 asks, per group: move to the new palette, or keep. The standing rules: no cyan or teal in UI states, rings, dioramas or reference maps; science diagrams keep their style. Teal and cyan swatches carry an outline. Each group shows a recommendation; the decision is yours.</p>
+  <div class="summary"><span><b>242</b> tagged lines</span><span><b>15</b> groups</span><span><b>51</b> distinct teal / cyan colours</span></div>
+  <div class="ref"><span></span>Replacement colour for UI teal: muted blue #889fe7</div>
+  <article class="group" id="lab-figure-art">
+  <header><h2>Lab figure art</h2><span class="verdict v-move-teal">move teal</span></header>
+  <p class="meta">142 tagged lines · 21 files · 10 teal / cyan · 10 other · 4 lines with no literal next to the tag</p>
+  <p class="why">The teal is the retired site accent #4ecdc4 drawn into teaching figures, so it reads as the old brand. Recommend: the figures&#x27; teal strokes move to the muted blue #889fe7; their other hues stay.</p>
+  <h3>Teal / cyan</h3><ul class="swatches"><li class="sw teal"><span style="background:#4ecdc4"></span><code>#4ecdc4</code></li><li class="sw teal"><span style="background:#5ab4d2"></span><code>#5ab4d2</code></li><li class="sw teal"><span style="background:#78c8be"></span><code>#78c8be</code></li><li class="sw teal"><span style="background:#78d7eb"></span><code>#78d7eb</code></li><li class="sw teal"><span style="background:#78ebe1"></span><code>#78ebe1</code></li><li class="sw teal"><span style="background:#7fe0ff"></span><code>#7fe0ff</code></li><li class="sw teal"><span style="background:#82ebe1"></span><code>#82ebe1</code></li><li class="sw teal"><span style="background:#dcebeb"></span><code>#dcebeb</code></li><li class="sw teal"><span style="background:#dffcfa"></span><code>#dffcfa</code></li><li class="sw teal"><span style="background:#e6fffb"></span><code>#e6fffb</code></li></ul>
+  <h3>Other</h3><ul class="swatches"><li class="sw other"><span style="background:#0e121c"></span><code>#0e121c</code></li><li class="sw other"><span style="background:#285a78"></span><code>#285a78</code></li><li class="sw other"><span style="background:#8ab4ff"></span><code>#8ab4ff</code></li><li class="sw other"><span style="background:#9be07a"></span><code>#9be07a</code></li><li class="sw other"><span style="background:#c88bff"></span><code>#c88bff</code></li><li class="sw other"><span style="background:#c8d7e1"></span><code>#c8d7e1</code></li><li class="sw other"><span style="background:#c8deeb"></span><code>#c8deeb</code></li><li class="sw other"><span style="background:#d24632"></span><code>#d24632</code></li><li class="sw other"><span style="background:#ff7a6b"></span><code>#ff7a6b</code></li><li class="sw other"><span style="background:#ffc850"></span><code>#ffc850</code></li></ul>
+  <details><summary>Files</summary><ul class="files"><li><code>src/lib/lab/AscentTrajectoryCanvas.svelte</code></li><li><code>src/lib/lab/AssistStaircaseCanvas.svelte</code></li><li><code>src/lib/lab/AssistTurnCanvas.svelte</code></li><li><code>src/lib/lab/CislunarEciCanvas.svelte</code></li><li><code>src/lib/lab/DescentGuidanceCanvas.svelte</code></li><li><code>src/lib/lab/DvWaterfallCanvas.svelte</code></li><li><code>src/lib/lab/EntryCorridorCanvas.svelte</code></li><li><code>src/lib/lab/EntryRangeCanvas.svelte</code></li><li><code>src/lib/lab/EntrySteeringCanvas.svelte</code></li><li><code>src/lib/lab/FigureRenderer.svelte</code></li><li><code>src/lib/lab/FlightMapCanvas.svelte</code></li><li><code>src/lib/lab/ForceDiagramCanvas.svelte</code></li><li><code>src/lib/lab/GroundTrackCanvas.svelte</code></li><li><code>src/lib/lab/GuidanceTimelineCanvas.svelte</code></li><li><code>src/lib/lab/LaunchWindowCanvas.svelte</code></li><li><code>src/lib/lab/OrbitDiagramCanvas.svelte</code></li><li><code>src/lib/lab/PorkchopCanvas.svelte</code></li><li><code>src/lib/lab/SkyChartCanvas.svelte</code></li><li><code>src/lib/lab/TransferEllipseCanvas.svelte</code></li><li><code>src/lib/lab/figure-style.ts</code></li><li><code>src/lib/lab/hero-canvas.ts</code></li></ul></details>
+</article><article class="group" id="trajectory-phase--earth-identity">
+  <header><h2>Trajectory phase / Earth identity</h2><span class="verdict v-keep">keep</span></header>
+  <p class="meta">27 tagged lines · 7 files · 3 teal / cyan · 2 other</p>
+  <p class="why">Data identity matched to legends on /fly and /plan (phase colours, Earth&#x27;s colour). Changing them changes every legend.</p>
+  <h3>Teal / cyan</h3><ul class="swatches"><li class="sw teal"><span style="background:#06d6a0"></span><code>#06d6a0</code></li><li class="sw teal"><span style="background:#66ddff"></span><code>#66ddff</code></li><li class="sw teal"><span style="background:#7de8e8"></span><code>#7de8e8</code></li></ul>
+  <h3>Other</h3><ul class="swatches"><li class="sw other"><span style="background:#4b9cd3"></span><code>#4b9cd3</code></li><li class="sw other"><span style="background:#ff66dd"></span><code>#ff66dd</code></li></ul>
+  <details><summary>Files</summary><ul class="files"><li><code>src/lib/three/fly-cislunar-overlays.ts</code></li><li><code>src/lib/three/fly-cislunar-reactive.ts</code></li><li><code>src/lib/three/fly-frame-runner.ts</code></li><li><code>src/lib/three/fly-helio-mission.ts</code></li><li><code>src/lib/three/fly-helio-scene.ts</code></li><li><code>src/routes/fleet/+page.svelte</code></li><li><code>src/routes/fly/+page.svelte</code></li></ul></details>
+</article><article class="group" id="universe-scenes">
+  <header><h2>Universe scenes</h2><span class="verdict v-move-teal">move teal</span></header>
+  <p class="meta">20 tagged lines · 5 files · 16 teal / cyan · 3 other</p>
+  <p class="why">Glows and halos in the Milky Way and Local Group scenes: dioramas, which the no-cyan rule covers. Recommend: muted blue.</p>
+  <h3>Teal / cyan</h3><ul class="swatches"><li class="sw teal"><span style="background:#285f78"></span><code>#285f78</code></li><li class="sw teal"><span style="background:#34788c"></span><code>#34788c</code></li><li class="sw teal"><span style="background:#4696a5"></span><code>#4696a5</code></li><li class="sw teal"><span style="background:#46a09e"></span><code>#46a09e</code></li><li class="sw teal"><span style="background:#5abeb4"></span><code>#5abeb4</code></li><li class="sw teal"><span style="background:#5cb6b0"></span><code>#5cb6b0</code></li><li class="sw teal"><span style="background:#60b6b0"></span><code>#60b6b0</code></li><li class="sw teal"><span style="background:#6cb6b0"></span><code>#6cb6b0</code></li><li class="sw teal"><span style="background:#6ecdc3"></span><code>#6ecdc3</code></li><li class="sw teal"><span style="background:#78cac0"></span><code>#78cac0</code></li><li class="sw teal"><span style="background:#78cec4"></span><code>#78cec4</code></li><li class="sw teal"><span style="background:#7ff0e0"></span><code>#7ff0e0</code></li><li class="sw teal"><span style="background:#80c8c0"></span><code>#80c8c0</code></li><li class="sw teal"><span style="background:#aaebe1"></span><code>#aaebe1</code></li><li class="sw teal"><span style="background:#c2eae2"></span><code>#c2eae2</code></li><li class="sw teal"><span style="background:#c6e8e2"></span><code>#c6e8e2</code></li></ul>
+  <h3>Other</h3><ul class="swatches"><li class="sw other"><span style="background:#7fb8dd"></span><code>#7fb8dd</code></li><li class="sw other"><span style="background:#9fd0ee"></span><code>#9fd0ee</code></li><li class="sw other"><span style="background:#e2f4ff"></span><code>#e2f4ff</code></li></ul>
+  <details><summary>Files</summary><ul class="files"><li><code>src/lib/universe/body-scene.ts</code></li><li><code>src/lib/universe/deep-sky-visual.ts</code></li><li><code>src/lib/universe/local-group-scene.ts</code></li><li><code>src/lib/universe/milky-way-scene.ts</code></li><li><code>src/lib/universe/neighborhood-scene.ts</code></li></ul></details>
+</article><article class="group" id="science-diagrams">
+  <header><h2>Science diagrams</h2><span class="verdict v-keep">keep</span></header>
+  <p class="meta">13 tagged lines · 8 files · 5 teal / cyan · 5 other</p>
+  <p class="why">Science diagrams keep their style (standing rule).</p>
+  <h3>Teal / cyan</h3><ul class="swatches"><li class="sw teal"><span style="background:#4a90a4"></span><code>#4a90a4</code></li><li class="sw teal"><span style="background:#4ecdc4"></span><code>#4ecdc4</code></li><li class="sw teal"><span style="background:#66ddff"></span><code>#66ddff</code></li><li class="sw teal"><span style="background:#6fd3f0"></span><code>#6fd3f0</code></li><li class="sw teal"><span style="background:#88ddff"></span><code>#88ddff</code></li></ul>
+  <h3>Other</h3><ul class="swatches"><li class="sw other"><span style="background:#2e8b57"></span><code>#2e8b57</code></li><li class="sw other"><span style="background:#c8b48c"></span><code>#c8b48c</code></li><li class="sw other"><span style="background:#dfeeff"></span><code>#dfeeff</code></li><li class="sw other"><span style="background:#ff66dd"></span><code>#ff66dd</code></li><li class="sw other"><span style="background:#ff8866"></span><code>#ff8866</code></li></ul>
+  <details><summary>Files</summary><ul class="files"><li><code>src/lib/components/HrDiagram.svelte</code></li><li><code>src/lib/components/LensLegend.svelte</code></li><li><code>src/lib/surface-scene/earth-geophysics-layers.ts</code></li><li><code>src/lib/surface-scene/surface-climate-layers.ts</code></li><li><code>src/lib/three/explore-scene-host.ts</code></li><li><code>src/lib/three/explore-solar-scene.ts</code></li><li><code>src/routes/earth/earth-launch-sites-config.ts</code></li><li><code>src/routes/moon/+page.svelte</code></li></ul></details>
+</article><article class="group" id="planet--body-colours">
+  <header><h2>Planet / body colours</h2><span class="verdict v-keep">keep</span></header>
+  <p class="meta">11 tagged lines · 6 files · 4 teal / cyan · 3 other</p>
+  <p class="why">Physical tints (Uranus, Neptune, ice): they describe the body, not the UI.</p>
+  <h3>Teal / cyan</h3><ul class="swatches"><li class="sw teal"><span style="background:#207878"></span><code>#207878</code></li><li class="sw teal"><span style="background:#7de8e8"></span><code>#7de8e8</code></li><li class="sw teal"><span style="background:#7fe0ff"></span><code>#7fe0ff</code></li><li class="sw teal"><span style="background:#a8f0f0"></span><code>#a8f0f0</code></li></ul>
+  <h3>Other</h3><ul class="swatches"><li class="sw other"><span style="background:#005288"></span><code>#005288</code></li><li class="sw other"><span style="background:#4b9cd3"></span><code>#4b9cd3</code></li><li class="sw other"><span style="background:#6ab8e8"></span><code>#6ab8e8</code></li></ul>
+  <details><summary>Files</summary><ul class="files"><li><code>src/lib/body-palette.ts</code></li><li><code>src/lib/explore-scene.ts</code></li><li><code>src/lib/explore/planet-sizes.ts</code></li><li><code>src/lib/fly-scene-constants.ts</code></li><li><code>src/lib/styles/tokens.css</code></li><li><code>src/lib/three/explore-scene-host.ts</code></li></ul></details>
+</article><article class="group" id="figure-paint-(line-ups)">
+  <header><h2>Figure paint (line-ups)</h2><span class="verdict v-keep">keep</span></header>
+  <p class="meta">6 tagged lines · 1 files · 3 teal / cyan · 4 other</p>
+  <p class="why">Paint of the people and vehicles in the line-ups: real colours of real objects.</p>
+  <h3>Teal / cyan</h3><ul class="swatches"><li class="sw teal"><span style="background:#2f6a5f"></span><code>#2f6a5f</code></li><li class="sw teal"><span style="background:#7ab1c8"></span><code>#7ab1c8</code></li><li class="sw teal"><span style="background:#8fc3d8"></span><code>#8fc3d8</code></li></ul>
+  <h3>Other</h3><ul class="swatches"><li class="sw other"><span style="background:#3b5b8c"></span><code>#3b5b8c</code></li><li class="sw other"><span style="background:#4a4f5a"></span><code>#4a4f5a</code></li><li class="sw other"><span style="background:#6b4f3a"></span><code>#6b4f3a</code></li><li class="sw other"><span style="background:#bcd6e8"></span><code>#bcd6e8</code></li></ul>
+  <details><summary>Files</summary><ul class="files"><li><code>src/lib/three/lineup/cartoon-figures.ts</code></li></ul></details>
+</article><article class="group" id="sky-scene">
+  <header><h2>Sky scene</h2><span class="verdict v-move-teal">move teal</span></header>
+  <p class="meta">5 tagged lines · 1 files · 5 teal / cyan · 0 other</p>
+  <p class="why">The AR sky scene&#x27;s teal tints are UI over the sky, not a sky colour. Recommend: muted blue.</p>
+  <h3>Teal / cyan</h3><ul class="swatches"><li class="sw teal"><span style="background:#8af0dc"></span><code>#8af0dc</code></li><li class="sw teal"><span style="background:#96cee8"></span><code>#96cee8</code></li><li class="sw teal"><span style="background:#9fd4e0"></span><code>#9fd4e0</code></li><li class="sw teal"><span style="background:#a4d6e0"></span><code>#a4d6e0</code></li><li class="sw teal"><span style="background:#d6f2f6"></span><code>#d6f2f6</code></li></ul>
+  
+  <details><summary>Files</summary><ul class="files"><li><code>src/lib/ar/sky-scene.ts</code></li></ul></details>
+</article><article class="group" id="zenith--sky-gradient">
+  <header><h2>Zenith / sky gradient</h2><span class="verdict v-move-teal">move teal</span></header>
+  <p class="meta">4 tagged lines · 2 files · 2 teal / cyan · 0 other</p>
+  <p class="why">The zenith tint is the old accent #4ecdc4. Recommend: a real twilight blue.</p>
+  <h3>Teal / cyan</h3><ul class="swatches"><li class="sw teal"><span style="background:#4ecdc4"></span><code>#4ecdc4</code></li><li class="sw teal"><span style="background:#92e8df"></span><code>#92e8df</code></li></ul>
+  
+  <details><summary>Files</summary><ul class="files"><li><code>src/lib/components/MicrogravityAxesLegend.svelte</code></li><li><code>src/lib/microgravity-axes.ts</code></li></ul></details>
+</article><article class="group" id="agency--nation-identity">
+  <header><h2>Agency / nation identity</h2><span class="verdict v-keep">keep</span></header>
+  <p class="meta">3 tagged lines · 2 files · 2 teal / cyan · 0 other</p>
+  <p class="why">Identity colours of a specific agency or nation; they come from that body&#x27;s own marks.</p>
+  <h3>Teal / cyan</h3><ul class="swatches"><li class="sw teal"><span style="background:#00a6a6"></span><code>#00a6a6</code></li><li class="sw teal"><span style="background:#1b9e77"></span><code>#1b9e77</code></li></ul>
+  
+  <details><summary>Files</summary><ul class="files"><li><code>src/lib/agencies.ts</code></li><li><code>src/lib/surface-map/nation-palette.ts</code></li></ul></details>
+</article><article class="group" id="other:-canvas-figure-(causal-horizon-map">
+  <header><h2>Other: canvas figure (causal-horizon map), pale</h2><span class="verdict v-keep">keep</span></header>
+  <p class="meta">3 tagged lines · 1 files · 3 teal / cyan · 0 other</p>
+  <p class="why">A science figure (the causal-horizon map): science diagrams keep their style.</p>
+  <h3>Teal / cyan</h3><ul class="swatches"><li class="sw teal"><span style="background:#63e6db"></span><code>#63e6db</code></li><li class="sw teal"><span style="background:#8cf5ec"></span><code>#8cf5ec</code></li><li class="sw teal"><span style="background:#b4f0ea"></span><code>#b4f0ea</code></li></ul>
+  
+  <details><summary>Files</summary><ul class="files"><li><code>src/lib/components/CausalityMap.svelte</code></li></ul></details>
+</article><article class="group" id="vehicle-paint">
+  <header><h2>Vehicle paint</h2><span class="verdict v-keep">keep</span></header>
+  <p class="meta">3 tagged lines · 1 files · 1 teal / cyan · 0 other · 1 lines with no literal next to the tag</p>
+  <p class="why">A vehicle&#x27;s real paint.</p>
+  <h3>Teal / cyan</h3><ul class="swatches"><li class="sw teal"><span style="background:#3f9aa3"></span><code>#3f9aa3</code></li></ul>
+  
+  <details><summary>Files</summary><ul class="files"><li><code>src/lib/three/launcher-models.ts</code></li></ul></details>
+</article><article class="group" id="other:-landmark-paint-colour,-palette-re">
+  <header><h2>Other: landmark paint colour, palette review at</h2><span class="verdict v-keep">keep</span></header>
+  <p class="meta">2 tagged lines · 1 files · 1 teal / cyan · 3 other</p>
+  <p class="why">Landmark paint of a real structure.</p>
+  <h3>Teal / cyan</h3><ul class="swatches"><li class="sw teal"><span style="background:#6fae9a"></span><code>#6fae9a</code></li></ul>
+  <h3>Other</h3><ul class="swatches"><li class="sw other"><span style="background:#4f8a72"></span><code>#4f8a72</code></li><li class="sw other"><span style="background:#8c8a82"></span><code>#8c8a82</code></li><li class="sw other"><span style="background:#cdb48c"></span><code>#cdb48c</code></li></ul>
+  <details><summary>Files</summary><ul class="files"><li><code>src/lib/three/lineup/scale-figures.ts</code></li></ul></details>
+</article><article class="group" id="star-class-colours">
+  <header><h2>Star class colours</h2><span class="verdict v-keep">keep</span></header>
+  <p class="meta">1 tagged lines · 1 files · 1 teal / cyan · 2 other</p>
+  <p class="why">Stellar colour by spectral class: physics.</p>
+  <h3>Teal / cyan</h3><ul class="swatches"><li class="sw teal"><span style="background:#8fe6d8"></span><code>#8fe6d8</code></li></ul>
+  <h3>Other</h3><ul class="swatches"><li class="sw other"><span style="background:#a9c8ff"></span><code>#a9c8ff</code></li><li class="sw other"><span style="background:#ffc39a"></span><code>#ffc39a</code></li></ul>
+  <details><summary>Files</summary><ul class="files"><li><code>src/lib/components/StarPanel.svelte</code></li></ul></details>
+</article><article class="group" id="status-(ok)">
+  <header><h2>Status (ok)</h2><span class="verdict v-keep">keep</span></header>
+  <p class="meta">1 tagged lines · 1 files · 0 teal / cyan · 1 other</p>
+  <p class="why">Semantic success green, not an accent.</p>
+  
+  <h3>Other</h3><ul class="swatches"><li class="sw other"><span style="background:#4ade80"></span><code>#4ade80</code></li></ul>
+  <details><summary>Files</summary><ul class="files"><li><code>src/lib/styles/tokens.css</code></li></ul></details>
+</article><article class="group" id="plan-heat-map">
+  <header><h2>/plan heat map</h2><span class="verdict v-keep">keep</span></header>
+  <p class="meta">1 tagged lines · 1 files · 0 teal / cyan · 0 other · 1 lines with no literal next to the tag</p>
+  <p class="why">Heat-map ramp; no teal.</p>
+  
+  
+  <details><summary>Files</summary><ul class="files"><li><code>src/routes/plan/+page.svelte</code></li></ul></details>
+</article>
+</main>

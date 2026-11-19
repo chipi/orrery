@@ -16,7 +16,6 @@
     "status",
     "era",
     "epoch",
-    "credit",
     "links"
   ],
   "properties": {
@@ -171,7 +170,7 @@
     },
     "linked_iss_modules": {
       "type": "array",
-      "description": "ISS module IDs (from iss-modules.json) this entry is the reciprocal of. Used on Shuttle orbiter entries to surface which ISS modules each orbiter delivered (e.g. Endeavour \u2192 [unity, canadarm2, tranquility, cupola]).",
+      "description": "ISS module IDs (from iss-modules.json) this entry is the reciprocal of. Used on Shuttle orbiter entries to surface which ISS modules each orbiter delivered (e.g. Endeavour → [unity, canadarm2, tranquility, cupola]).",
       "items": {
         "type": "string",
         "minLength": 1
@@ -260,12 +259,13 @@
     },
     "explorer_route": {
       "type": "string",
-      "description": "Optional route to dedicated explorer (e.g., '/iss', '/tiangong'). Renders 'Open Explorer \u2192' CTA in OVERVIEW per RFC-016 OQ-12.",
+      "description": "Optional route to dedicated explorer (e.g., '/iss', '/tiangong'). Renders 'Open Explorer →' CTA in OVERVIEW per RFC-016 OQ-12.",
       "pattern": "^/[a-z][a-z0-9-]*$"
     },
     "credit": {
       "type": "string",
-      "minLength": 1
+      "minLength": 1,
+      "description": "Internal provenance / editorial note, English only; not displayed (operator 2026-11-19)."
     },
     "links": {
       "type": "array",

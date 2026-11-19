@@ -12261,23 +12261,22 @@
     {
       "id": "395ae12fdcb38968",
       "path": "/images/fleet-galleries/hayabusa/01.webp",
-      "source_type": "direct-other",
-      "title": "Uncurated panel image — fleet-galleries/hayabusa (computer render)",
-      "author": "JAXA — Hayabusa mission archive",
+      "source_type": "wikimedia-commons",
+      "title": "File:Hayabusa hover.jpg (computer render)",
+      "author": "JGarry at English Wikipedia",
       "agency": "JAXA — Hayabusa mission archive",
-      "source_url": "https://commons.wikimedia.org/",
-      "image_url": null,
-      "license_short": "CC-BY-4.0",
-      "license_url": "https://creativecommons.org/licenses/by/4.0/",
-      "license_rationale": "Reuse with attribution.",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Hayabusa_hover.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/59/Hayabusa_hover.jpg",
+      "license_short": "PD-self",
+      "license_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "license_rationale": "Public domain on Commons, template PD-user (released by its author, JGarry, on English Wikipedia), checked 2026-11-19.",
       "modifications": [
-        "curated-no-upstream-record",
-        "walker-fallback"
+        "identified-by-image-match"
       ],
       "revid": null,
-      "pageid": null,
+      "pageid": 6385449,
       "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.959Z"
+      "fetched_at": "2026-11-19T11:43:37.419Z"
     },
     {
       "id": "fe7d807b7b41ee90",
@@ -14619,23 +14618,22 @@
     {
       "id": "b916d901030768fe",
       "path": "/images/fleet-galleries/landsat/03.webp",
-      "source_type": "direct-other",
-      "title": "Uncurated panel image — fleet-galleries/landsat (illustration)",
-      "author": "NASA",
+      "source_type": "wikimedia-commons",
+      "title": "File:ERT - LANDSAT SATELLITE AND LAKE MICHIGAN - NARA - 17426525.jpg (artist's concept)",
+      "author": "Unknown author or not provided",
       "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/",
-      "image_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:ERT_-_LANDSAT_SATELLITE_AND_LAKE_MICHIGAN_-_NARA_-_17426525.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e1/ERT_-_LANDSAT_SATELLITE_AND_LAKE_MICHIGAN_-_NARA_-_17426525.jpg",
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "license_rationale": "Public domain on Commons, template PD-USGov-NASA (a NASA / US-government work), checked 2026-11-19.",
       "modifications": [
-        "curated-no-upstream-record",
-        "walker-fallback"
+        "identified-by-image-match"
       ],
       "revid": null,
-      "pageid": null,
+      "pageid": 80708506,
       "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.960Z"
+      "fetched_at": "2026-11-19T11:42:16.473Z"
     },
     {
       "id": "c289331ac8fff050",
@@ -95265,23 +95263,24 @@
     {
       "id": "7b7582def0db0566",
       "path": "/images/fleet-galleries/hayabusa/01.1x1.jpg",
-      "source_type": "direct-other",
-      "title": "Uncurated panel image — fleet-galleries/hayabusa (computer render)",
-      "author": "JAXA — Hayabusa mission archive",
+      "source_type": "wikimedia-commons",
+      "title": "File:Hayabusa hover.jpg (computer render)",
+      "author": "JGarry at English Wikipedia",
       "agency": "JAXA — Hayabusa mission archive",
-      "source_url": "https://commons.wikimedia.org/",
-      "image_url": null,
-      "license_short": "CC-BY-4.0",
-      "license_url": "https://creativecommons.org/licenses/by/4.0/",
-      "license_rationale": "Reuse with attribution.",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Hayabusa_hover.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/59/Hayabusa_hover.jpg",
+      "license_short": "PD-self",
+      "license_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "license_rationale": "Public domain on Commons, template PD-user (released by its author, JGarry, on English Wikipedia), checked 2026-11-19.",
       "modifications": [
         "cropped-1x1",
-        "crop-verified-from-base"
+        "crop-verified-from-base",
+        "identified-by-image-match"
       ],
       "revid": null,
-      "pageid": null,
+      "pageid": 6385449,
       "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.959Z"
+      "fetched_at": "2026-11-19T11:43:37.423Z"
     },
     {
       "id": "2eec767d46e33166",
@@ -95958,23 +95957,24 @@
     {
       "id": "810a41828a35931b",
       "path": "/images/fleet-galleries/landsat/03.1x1.jpg",
-      "source_type": "direct-other",
-      "title": "Uncurated panel image — fleet-galleries/landsat (illustration)",
-      "author": "NASA",
+      "source_type": "wikimedia-commons",
+      "title": "File:ERT - LANDSAT SATELLITE AND LAKE MICHIGAN - NARA - 17426525.jpg (artist's concept)",
+      "author": "Unknown author or not provided",
       "agency": "NASA",
-      "source_url": "https://commons.wikimedia.org/",
-      "image_url": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:ERT_-_LANDSAT_SATELLITE_AND_LAKE_MICHIGAN_-_NARA_-_17426525.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e1/ERT_-_LANDSAT_SATELLITE_AND_LAKE_MICHIGAN_-_NARA_-_17426525.jpg",
       "license_short": "PD-NASA",
       "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105). Use is permitted; trademark + endorsement rules apply.",
+      "license_rationale": "Public domain on Commons, template PD-USGov-NASA (a NASA / US-government work), checked 2026-11-19.",
       "modifications": [
         "cropped-1x1",
-        "crop-verified-from-base"
+        "crop-verified-from-base",
+        "identified-by-image-match"
       ],
       "revid": null,
-      "pageid": null,
+      "pageid": 80708506,
       "nasa_id": null,
-      "fetched_at": "2026-06-19T09:26:46.960Z"
+      "fetched_at": "2026-11-19T11:42:16.477Z"
     },
     {
       "id": "c5873bbab6caeb54",

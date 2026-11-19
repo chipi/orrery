@@ -50,5 +50,22 @@
       "type": "nominal"
     }
   ],
-  "vehicle_stage": "H-IIA 第2段"
+  "vehicle_stage": "H-IIA 第2段",
+  "flight_events": [
+    {
+      "met": 0.78,
+      "label": "軌道修正 ΔVc1",
+      "description": "2007年9月15日(JST)。500 N エンジンで打ち上げの投入誤差を修正し、軌道は 232,782 x 956 km になる。"
+    },
+    {
+      "met": 5.5,
+      "label": "周期調整 ΔVp1",
+      "description": "2007年9月19日(JST)までに実施。軌道を 377,809 x 1,039 km、周期約10日に引き伸ばし、月との会合に合わせる。"
+    },
+    {
+      "met": 15.6,
+      "label": "周期調整 ΔVp2",
+      "description": "2007年9月30日(JST)までに実施。月周回軌道投入の前に 378,132 x 2,243 km へ微調整する。"
+    }
+  ]
 }

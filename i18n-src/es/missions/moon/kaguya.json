@@ -50,5 +50,22 @@
       "type": "nominal"
     }
   ],
-  "vehicle_stage": "segunda etapa del H-IIA"
+  "vehicle_stage": "segunda etapa del H-IIA",
+  "flight_events": [
+    {
+      "met": 0.78,
+      "label": "Corrección de órbita ΔVc1",
+      "description": "15/09/2007 (JST). Corrige el error de inyección del lanzamiento con el motor de 500 N; después la órbita es de 232.782 x 956 km."
+    },
+    {
+      "met": 5.5,
+      "label": "Ajuste de periodo ΔVp1",
+      "description": "Antes del 19/09/2007 (JST). Alarga la órbita a 377.809 x 1.039 km, un periodo de casi diez días, sincronizado con la Luna."
+    },
+    {
+      "met": 15.6,
+      "label": "Ajuste de periodo ΔVp2",
+      "description": "Antes del 30/09/2007 (JST). Un retoque a 378.132 x 2.243 km antes de la inserción en órbita lunar."
+    }
+  ]
 }

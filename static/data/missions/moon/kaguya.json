@@ -65,8 +65,8 @@
       "departure": "spacecraft"
     },
     "cruise": {
-      "tcm_count": 0,
-      "source": "Kato et al. 2010 and the NASA GSFC overview describe a phasing orbit of 2.5 revolutions around the Earth before lunar orbit insertion; no dated trajectory corrections were found, so none is listed."
+      "tcm_count": 3,
+      "source": "JAXA countdown bulletins (2007, jaxa.jp/countdown/f13): three corrections with the 500 N OME and 20 N thrusters on the way out, the orbit injection error correction ΔVc1 (then 232,782 x 956 km, period 4 d 23 h 37 min) and the period adjustments ΔVp1 (377,809 x 1,039 km, 9 d 23 h 31 min) and ΔVp2 (378,132 x 2,243 km, 10 d 0 h 55 min); the phasing orbit of 2.5 revolutions before lunar orbit insertion (Kato et al. 2010). Their Δv was not published."
     },
     "arrival": {
       "v_infinity_km_s": 0.85,
@@ -85,6 +85,24 @@
         "type": "launch",
         "label": "Launch — H-IIA F13",
         "description": "Tanegashima Space Center, Japan, 2007-09-14. SELENE (Kaguya) rides an H-IIA 2022 with a 2914 kg main orbiter and two 53 kg subsatellites, Okina and Ouna."
+      },
+      {
+        "met_days": 0.78,
+        "type": "tcm",
+        "label": "Orbit correction ΔVc1",
+        "description": "2007-09-15 (JST). Corrects the launch injection error with the 500 N engine; the orbit afterwards runs 232,782 x 956 km."
+      },
+      {
+        "met_days": 5.5,
+        "type": "tcm",
+        "label": "Period adjustment ΔVp1",
+        "description": "By 2007-09-19 (JST). Stretches the orbit to 377,809 x 1,039 km, a period of almost ten days, timed for the Moon."
+      },
+      {
+        "met_days": 15.6,
+        "type": "tcm",
+        "label": "Period adjustment ΔVp2",
+        "description": "By 2007-09-30 (JST). A trim to 378,132 x 2,243 km before lunar orbit insertion."
       },
       {
         "met_days": 19,

@@ -50,5 +50,22 @@
       "type": "nominal"
     }
   ],
-  "vehicle_stage": "tweede trap van de H-IIA"
+  "vehicle_stage": "tweede trap van de H-IIA",
+  "flight_events": [
+    {
+      "met": 0.78,
+      "label": "Baancorrectie ΔVc1",
+      "description": "15-09-2007 (JST). Corrigeert de injectiefout van de lancering met de 500 N-motor; daarna loopt de baan 232.782 x 956 km."
+    },
+    {
+      "met": 5.5,
+      "label": "Periodeaanpassing ΔVp1",
+      "description": "Uiterlijk 19-09-2007 (JST). Rekt de baan op tot 377.809 x 1.039 km, een omlooptijd van bijna tien dagen, afgestemd op de Maan."
+    },
+    {
+      "met": 15.6,
+      "label": "Periodeaanpassing ΔVp2",
+      "description": "Uiterlijk 30-09-2007 (JST). Een bijstelling naar 378.132 x 2.243 km vóór het intreden in een baan om de Maan."
+    }
+  ]
 }

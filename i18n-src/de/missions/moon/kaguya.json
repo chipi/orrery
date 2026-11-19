@@ -50,5 +50,22 @@
       "type": "nominal"
     }
   ],
-  "vehicle_stage": "H-IIA 2. Stufe"
+  "vehicle_stage": "H-IIA 2. Stufe",
+  "flight_events": [
+    {
+      "met": 0.78,
+      "label": "Bahnkorrektur ΔVc1",
+      "description": "15.09.2007 (JST). Korrigiert den Einschussfehler des Starts mit dem 500-N-Triebwerk; die Bahn verläuft danach 232.782 x 956 km."
+    },
+    {
+      "met": 5.5,
+      "label": "Periodenanpassung ΔVp1",
+      "description": "Bis 19.09.2007 (JST). Dehnt die Bahn auf 377.809 x 1.039 km, eine Umlaufzeit von fast zehn Tagen, abgestimmt auf den Mond."
+    },
+    {
+      "met": 15.6,
+      "label": "Periodenanpassung ΔVp2",
+      "description": "Bis 30.09.2007 (JST). Eine Feinkorrektur auf 378.132 x 2.243 km vor dem Einschwenken in die Mondumlaufbahn."
+    }
+  ]
 }

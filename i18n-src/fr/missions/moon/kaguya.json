@@ -50,5 +50,22 @@
       "type": "nominal"
     }
   ],
-  "vehicle_stage": "deuxième étage de la H-IIA"
+  "vehicle_stage": "deuxième étage de la H-IIA",
+  "flight_events": [
+    {
+      "met": 0.78,
+      "label": "Correction d'orbite ΔVc1",
+      "description": "15/09/2007 (JST). Corrige l'erreur d'injection du lancement avec le moteur de 500 N ; l'orbite passe ensuite à 232 782 x 956 km."
+    },
+    {
+      "met": 5.5,
+      "label": "Ajustement de période ΔVp1",
+      "description": "Avant le 19/09/2007 (JST). Étire l'orbite à 377 809 x 1 039 km, une période de près de dix jours, calée sur la Lune."
+    },
+    {
+      "met": 15.6,
+      "label": "Ajustement de période ΔVp2",
+      "description": "Avant le 30/09/2007 (JST). Un affinage à 378 132 x 2 243 km avant l'insertion en orbite lunaire."
+    }
+  ]
 }

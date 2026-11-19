@@ -50,5 +50,22 @@
       "type": "nominal"
     }
   ],
-  "vehicle_stage": "H-IIA 第二级"
+  "vehicle_stage": "H-IIA 第二级",
+  "flight_events": [
+    {
+      "met": 0.78,
+      "label": "轨道修正 ΔVc1",
+      "description": "2007年9月15日（JST）。用 500 N 发动机修正发射入轨误差，此后轨道为 232,782 x 956 km。"
+    },
+    {
+      "met": 5.5,
+      "label": "周期调整 ΔVp1",
+      "description": "2007年9月19日（JST）前完成。把轨道拉长到 377,809 x 1,039 km，周期近十天，与月球会合时机相匹配。"
+    },
+    {
+      "met": 15.6,
+      "label": "周期调整 ΔVp2",
+      "description": "2007年9月30日（JST）前完成。在进入环月轨道前微调到 378,132 x 2,243 km。"
+    }
+  ]
 }

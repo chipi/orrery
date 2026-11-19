@@ -50,5 +50,22 @@
       "type": "nominal"
     }
   ],
-  "vehicle_stage": "H-IIA 2단"
+  "vehicle_stage": "H-IIA 2단",
+  "flight_events": [
+    {
+      "met": 0.78,
+      "label": "궤도 수정 ΔVc1",
+      "description": "2007-09-15(JST). 500 N 엔진으로 발사 투입 오차를 수정하며, 이후 궤도는 232,782 x 956 km다."
+    },
+    {
+      "met": 5.5,
+      "label": "주기 조정 ΔVp1",
+      "description": "2007-09-19(JST)까지. 궤도를 377,809 x 1,039 km, 주기 약 10일로 늘려 달과의 만남에 맞춘다."
+    },
+    {
+      "met": 15.6,
+      "label": "주기 조정 ΔVp2",
+      "description": "2007-09-30(JST)까지. 달 궤도 진입 전에 378,132 x 2,243 km로 미세 조정한다."
+    }
+  ]
 }

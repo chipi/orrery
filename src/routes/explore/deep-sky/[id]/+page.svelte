@@ -122,6 +122,17 @@
     </section>
   {/if}
 
+  {#if data.science.length}
+    <section class="science">
+      <h2 class="page-section-label">{m.panel_tab_science()}</h2>
+      <ul class="linklist wide">
+        {#each data.science as a (a.tab + '/' + a.section)}
+          <li><a href={localHref(`/science/${a.tab}/${a.section}`)}>{a.title}</a></li>
+        {/each}
+      </ul>
+    </section>
+  {/if}
+
   {#if obj.links.length}
     <section class="science">
       <h2 class="page-section-label">{m.science_learn_more()}</h2>

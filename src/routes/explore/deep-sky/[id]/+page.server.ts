@@ -1,6 +1,7 @@
 import { error } from '@sveltejs/kit';
 import { getLocale } from '$lib/paraglide/runtime';
 import { getDeepSkyEntity } from '$lib/data/deep-sky-entity';
+import { scienceForDeepSky, scienceLinks } from '$lib/science-for-entity';
 import * as m from '$lib/paraglide/messages';
 import { dataSourceItems, recordLinks, sourceLink } from '$lib/catalogue';
 import {
@@ -58,6 +59,7 @@ export const load: PageServerLoad = async ({ params, fetch }) => {
     });
   return {
     object,
+    science: await scienceLinks(scienceForDeepSky(object.category), locale, fetch),
     title: deepSkyTitle(object),
     kind: `${deepSkyCategoryLabel(object.category)} · ${object.designation}`,
     rows,

@@ -1,6 +1,7 @@
 import { error } from '@sveltejs/kit';
 import { getLocale } from '$lib/paraglide/runtime';
 import { getStructureEntity } from '$lib/data/outer-entity';
+import { scienceForStructure, scienceLinks } from '$lib/science-for-entity';
 import * as m from '$lib/paraglide/messages';
 import { dataSourceItems, sourceLink } from '$lib/catalogue';
 import { structureDistance, structureKindLabel, structureSpan } from '$lib/explore/format';
@@ -53,5 +54,6 @@ export const load: PageServerLoad = async ({ params, fetch }) => {
     sections: relatedSections(entity.related),
     openPath: openInOrreryPath(entity.scale, entity.id),
     hero: entity.hero,
+    science: await scienceLinks(scienceForStructure(entity.scale), getLocale(), fetch),
   };
 };

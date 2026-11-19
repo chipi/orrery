@@ -15,6 +15,7 @@ export const FALCON9_SAMPLE: LaunchProfile = {
   id: 'falcon-9',
   name: 'Falcon 9 Block 5',
   payloadKg: 15_000,
+  payloadSeparationDelayByMissionS: { inspiration4: 198, 'polaris-dawn': 197 },
   fairingKg: 1_900,
   fairingJettisonAltM: 110_000,
   refAreaM2: 10.75, // π·(3.7/2)²

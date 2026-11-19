@@ -3,6 +3,7 @@
   "name": "Ariane 5 ECA",
   "source_tier": "flagship",
   "payloadKg": 10000,
+  "payloadSeparationDelayByMissionS": { "smart-1": 884 },
   "liftoffThrustKN": 13140,
   "fairingKg": 2900,
   "fairingJettisonAltM": 110000,

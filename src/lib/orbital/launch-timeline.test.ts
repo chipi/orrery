@@ -1,8 +1,9 @@
 import { describe, it, expect } from 'vitest';
-import { readFileSync } from 'node:fs';
+import { readdirSync, readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import {
   integrateAscent,
+  payloadSeparationDelayFor,
   type LaunchProfile,
   type AscentEvent,
 } from '$lib/physics/ascent/ascent-physics';
@@ -141,6 +142,9 @@ const TIMELINES: Record<string, Row[]> = {
     // stage cut-off 558.6.
     { event: 'I-II separation', type: 'staging', nth: 0, real: 118.1, tol: 10 },
     { event: 'III stage cut-off', type: 'seco', real: 558.6, tol: 30 },
+    // II-III separation: the ST-B guide 287.6 and Soyuz-FG crewed flights 287.30 (secondary:
+    // russianspaceweb's crewed-Soyuz sequence) agree; the core thrust is fitted to it (backlog F4).
+    { event: 'II-III separation (fitted)', type: 'meco', real: 287.6, tol: 10 },
     // Soyuz CSG guide, ST-B: the profile's fairingJettisonS.
     { event: 'fairing (scheduled input)', type: 'fairing_jettison', real: 208.4, tol: 10 },
   ],
@@ -179,12 +183,17 @@ const TIMELINES: Record<string, Row[]> = {
     { event: 'stage 1 separation', type: 'staging', nth: 1, real: 255, tol: 10 },
     { event: 'stage 2 separation', type: 'staging', nth: 2, real: 470, tol: 10 },
     { event: 'Centaur MECO-1', type: 'seco', real: 588, tol: 30 },
+    // Helios A (NTRS 19760006052), primary, the same vehicle: staging 259.6 (stage 1 thrust
+    // fitted), MECO-1 584.0. Its shroud (318.6) is that flight's; the profile keeps Voyager's.
+    { event: 'Helios A staging (fitted)', type: 'meco', real: 259.6, tol: 10 },
+    { event: 'Helios A MECO-1', type: 'seco', real: 584, tol: 30 },
     // Voyager 2 transcription (secondary): the profile's fairingJettisonS.
     { event: 'fairing (scheduled input)', type: 'fairing_jettison', real: 266, tol: 10 },
   ],
   'mercury-redstone': [
-    // Mercury-Redstone 3 (secondary: Wikipedia): engine shutdown two minutes 22 seconds after launch.
-    { event: 'Redstone shutdown', type: 'seco', real: 142, tol: 30 },
+    // NASA "The Mercury-Redstone Project" (TM X-53107), Table 3-1, nominal: cutoff 142.5 s,
+    // tower separation 143.0, capsule separation 152.0 (fitted, backlog F4).
+    { event: 'Redstone cutoff (fitted)', type: 'seco', real: 142.5, tol: 10 },
   ],
   'ariane-5g': [
     // Rosetta (Ariane 5 G+): the boosters burnt ~139 s before being jettisoned (ESA).
@@ -203,6 +212,98 @@ const TIMELINES: Record<string, Row[]> = {
     // Strap-ons jettisoned at T+126 s, first stage burn 166 s (secondary: spaceflight101).
     { event: 'booster jettison', type: 'staging', nth: 0, real: 126, tol: 10 },
     { event: 'core burnout', type: 'meco', real: 166, tol: 10 },
+  ],
+  'titan-ii-glv': [
+    // NASA Gemini mission reports (GT-4, -5, -7, -10, -12): BECO 152-156 s (stage 1 thrust fitted
+    // to 154), SECO 333-344 s.
+    { event: 'BECO (fitted)', type: 'meco', real: 154, tol: 10 },
+    { event: 'SECO', type: 'seco', real: 338, tol: 30 },
+  ],
+  'atlas-lv-3b': [
+    // NASA MA-6 results report, Table 6-II: BECO 129.6, SECO 301.4, capsule separation 303.6
+    // (booster and sustainer thrust fitted; the "5:20 / 5:24" secondary figures are wrong).
+    { event: 'BECO / booster staging (fitted)', type: 'staging', nth: 0, real: 129.6, tol: 10 },
+    { event: 'SECO (fitted)', type: 'seco', real: 301.4, tol: 10 },
+  ],
+  'atlas-agena': [
+    // Gemini 12 target vehicle (GATV), NASA mission report: BECO 131.1, SECO 280.1 (fitted).
+    { event: 'BECO (fitted)', type: 'staging', nth: 0, real: 131.1, tol: 10 },
+    { event: 'SECO (fitted)', type: 'meco', real: 280.1, tol: 10 },
+  ],
+  'atlas-centaur': [
+    // NASA TM X-2278 (AC-20): BECO 147.1, fairing 228.5, sustainer SECO 270.8 (fitted).
+    { event: 'BECO (fitted)', type: 'staging', nth: 0, real: 147.1, tol: 10 },
+    { event: 'fairing (scheduled input)', type: 'fairing_jettison', real: 228.5, tol: 10 },
+    { event: 'sustainer SECO (fitted)', type: 'meco', real: 270.8, tol: 10 },
+  ],
+  'titan-ivb-centaur': [
+    // JPL Cassini launch press kit: SRMU separation 142, fairing 211, stage 2 ignition 321
+    // (stage 1 cutoff), Titan / Centaur separation 553 (thrusts fitted).
+    { event: 'SRMU separation (fitted)', type: 'staging', nth: 0, real: 142, tol: 10 },
+    { event: 'fairing (scheduled input)', type: 'fairing_jettison', real: 211, tol: 10 },
+    { event: 'stage 1 cutoff (fitted)', type: 'meco', real: 321, tol: 10 },
+    { event: 'Titan / Centaur separation (fitted)', type: 'staging', nth: 2, real: 553, tol: 10 },
+  ],
+  'athena-ii': [
+    // Lunar Prospector handbook, Table 6.3-3: stage 1 separation 89 (fitted), fairing 232.
+    { event: 'stage 1 separation (fitted)', type: 'meco', real: 89, tol: 10 },
+    { event: 'fairing (scheduled input)', type: 'fairing_jettison', real: 232, tol: 10 },
+  ],
+  starship: [
+    // Secondary only (Everyday Astronaut IFT-2 plan; no SpaceX table published): booster cutoff
+    // 159 s (fitted), hot staging 161, ship cutoff 513 (fitted).
+    { event: 'booster cutoff (fitted)', type: 'meco', real: 159, tol: 10 },
+    { event: 'ship cutoff (fitted)', type: 'seco', real: 513, tol: 30 },
+  ],
+  'sputnik-8k71ps': [
+    // Sputnik 1 (secondary: russianspaceweb, citing its references): strap-on separation 116.38,
+    // core cutoff 295.4 (both fitted); the satellite separated 19.9 s later.
+    { event: 'strap-on separation (fitted)', type: 'staging', nth: 0, real: 116.4, tol: 10 },
+    { event: 'core cutoff (fitted)', type: 'seco', real: 295.4, tol: 10 },
+  ],
+  'proton-k': [
+    // Zvezda (secondary: russianspaceweb): stage 1 separation 126.1 (fitted), stage 3 main
+    // cutoff 577. No Proton-K primary exists; the ILS Proton-M guide (sibling) gives 123.4 / 576.4.
+    { event: 'stage 1 separation (fitted)', type: 'meco', real: 126.1, tol: 10 },
+    { event: 'stage 3 cutoff', type: 'seco', real: 577, tol: 30 },
+  ],
+  'long-march-3a': [
+    // CALT/CGWIC LM-3A user's manual, Table 3-1 (typical GTO): stage 1/2 separation 147.9
+    // (fitted), fairing 236.9.
+    { event: 'stage 1/2 separation (fitted)', type: 'meco', real: 147.9, tol: 10 },
+    { event: 'fairing (scheduled input)', type: 'fairing_jettison', real: 236.9, tol: 10 },
+  ],
+  'long-march-3b': [
+    // CALT/CGWIC LM-3B user's manual, Table 3-1 (typical GTO): boosters 128.7, stage 1/2
+    // separation 146.2 (both fitted), fairing 215.2, stage 3 first shutdown 615.7.
+    { event: 'booster separation (fitted)', type: 'staging', nth: 0, real: 128.7, tol: 10 },
+    { event: 'stage 1/2 separation (fitted)', type: 'meco', real: 146.2, tol: 10 },
+    { event: 'fairing (scheduled input)', type: 'fairing_jettison', real: 215.2, tol: 10 },
+    { event: 'stage 3 first shutdown', type: 'seco', real: 615.7, tol: 30 },
+  ],
+  'long-march-5': [
+    // Y1 (secondary: Spaceflight Now live timing, 2016): boosters 173, fairing 285, core
+    // shutdown 475 (thrusts fitted). No CASC per-event table was found.
+    { event: 'booster separation (fitted)', type: 'staging', nth: 0, real: 173, tol: 10 },
+    { event: 'fairing (scheduled input)', type: 'fairing_jettison', real: 285, tol: 10 },
+    { event: 'core shutdown (fitted)', type: 'meco', real: 475, tol: 10 },
+  ],
+  'm-v': [
+    // JAXA Special Publication (2008), M-V-5 (Hayabusa) sequence: 1/2 separation 75, stage 2
+    // burnout 151, fairing 186, 2/3 separation 200, stage 3 burnout 309, 3/4 separation 370
+    // (the coasts are the stages' separationDelayS; stage 2 and 3 thrust fitted).
+    { event: '1/2 separation', type: 'staging', nth: 0, real: 75, tol: 10 },
+    { event: 'fairing (scheduled input)', type: 'fairing_jettison', real: 186, tol: 10 },
+    { event: '2/3 separation (fitted)', type: 'staging', nth: 1, real: 200, tol: 10 },
+    { event: '3/4 separation (fitted)', type: 'staging', nth: 2, real: 370, tol: 10 },
+  ],
+  h3: [
+    // JAXA H3 / MMX launch plan (H3-24L), Table 2: SRB-3 separation 116 / 118, fairing 197,
+    // MECO 292, stage separation 299 (boosters and stage 1 fitted, 7 s coast to separation).
+    { event: 'SRB-3 separation (fitted)', type: 'staging', nth: 0, real: 117, tol: 10 },
+    { event: 'fairing (scheduled input)', type: 'fairing_jettison', real: 197, tol: 10 },
+    { event: 'MECO (fitted)', type: 'meco', real: 292, tol: 10 },
+    { event: 'stage separation', type: 'staging', nth: 1, real: 299, tol: 10 },
   ],
   'sls-block-1': [
     // NASA SLS reference guide: boosters fire "approximately two minutes"; the core stage
@@ -226,29 +327,24 @@ describe('launcher staging timelines vs the real nominal flight', () => {
     });
   }
 
-  // Known gaps (docs/wip/2026-11-15-launcher-timeline-audit.md): the model cannot hold the
-  // real time without losing the orbit, or the real time is unsourced.
+  // Known gaps (docs/wip/2026-11-15-launcher-timeline-audit.md, closed out 2026-11-19 in
+  // docs/wip/2026-11-17-launcher-timelines-sourced.md): sourced, and the model cannot hold the time
+  // with a timing fit, because the cause is the trajectory, not a burn time.
   it.todo(
-    'proton-m-briz-m: Briz-M first-burn cutoff T+1129 s (ILS guide Figure 2.3.1-1); model 1099 s, 30.1 s early: no coast between stage 3 separation (588 s) and Briz-M ignition (680 s). Tried 2026-11-18: adding the 91.6 s coast moves the cutoff to 1210.5 s (81.5 s late), because the model first Briz-M burn is about 547 s against 449 s in the guide (its standard GTO profile, not ExoMars); the burn length is the fault, and no sourced ExoMars Briz-M burn was found',
+    'proton-m-briz-m: Briz-M first-burn cutoff T+1129 s (ILS guide Figure 2.3.1-1); model 1099 s. The model first Briz-M burn is ~547 s against 449 s in the guide (its standard GTO profile, not ExoMars); no sourced ExoMars Briz-M burn exists',
   );
   it.todo(
-    'space-shuttle-stack: OMS-2 lights at 2081.5 s against STS-68 2110 s (cutoff 2176 / 2208 s); the MECO altitude is the generic TD0358A 360,000 ft: neither the STS-68 report nor TM-2011-216142 gives it (the TM confirms the MECO inertial velocity, 25,775 ft/s against the model 7,861 m/s), and it sets where on the orbit MECO falls',
+    'space-shuttle-stack: OMS-2 lights at 2081.5 s against STS-68 2110 s; the MECO altitude is the generic TD0358A 360,000 ft, not the STS-68 one (unpublished)',
   );
   it.todo(
-    'atlas-v 541 (Mars 2020 booklet): BECO 262.1 s, MECO-1 into the parking orbit 687.9 s; model 251.9 / 878.6 s',
-  );
-  it.todo('soyuz-fg-fregat (Soyuz CSG guide, ST-B): II-III separation 287.6 s; model 313.8 s');
-  it.todo(
-    'saturn-ib (Apollo 7): S-IVB cutoff 616.76 s; model 543.2 s (the model cuts at a 180 km circular orbit)',
+    'elliptical / high-energy injection is not modelled (the ascent circularises): atlas-v 541 MECO-1 687.9 s (model 878.6), lvm3 C25 cut-off 954.42 s into 170 x 36,500 km (model 746.5), new-glenn SECO-1 773 s (model 692.4), atlas-centaur AC-20 Centaur MECO 725.5 s (model ~597), h3 SECO1 640 s into the MMX parking orbit (model ~496, insensitive to the target altitude)',
   );
   it.todo(
-    'lvm3 (M4): C25 shut-off 954.42 s; model 746.5 s (the model cuts at LEO, M4 went to 170 x 36,500 km)',
+    'saturn-ib (Apollo 7): S-IVB cutoff 616.76 s; model 543.2 s. NTRS 19700014017 gives the J-2 at 226,019 lbf to 454.8 s then 176,087 lbf, and 36,600 lb spacecraft + 4,280 lb IU above the S-IVB; with that real 18.5 t payload the model S-IB trajectory cannot reach orbit, so the profile keeps its 10 t stand-in',
   );
-  it.todo('new-glenn (NG-2): SECO-1 773 s; model 692.4 s');
   it.todo(
-    'h3: the only sourced timeline (F8) is an H3-22S; the profile is an H3-24L, not compared',
+    'long-march-5: stage-2 shutdown 752 s (Chang e-5, secondary); model 702 s after the core fit to Y1. No CASC per-event table found',
   );
-  it.todo('long-march-5: stage-2 shutdown T+752 s (Chang e-5, everydayastronaut); model 720 s');
 });
 
 describe('Space Shuttle ascent: no SECO, the tank leaves 18 s after MECO', () => {
@@ -318,5 +414,29 @@ describe('shared physics: booster jettison delay and a time-scheduled fairing', 
     expect(first(timed.events, 'fairing_jettison')).toBeCloseTo(200, 0);
     const altitude = integrateAscent({ ...base, fairingJettisonS: undefined });
     expect(first(altitude.events, 'fairing_jettison')).not.toBeCloseTo(200, 0);
+  });
+});
+
+describe('payload separation delay per mission (plan L63)', () => {
+  it('a mission entry overrides the vehicle delay; other missions keep the vehicle value', () => {
+    const p = { payloadSeparationDelayS: 35, payloadSeparationDelayByMissionS: { a: 198 } };
+    expect(payloadSeparationDelayFor(p, 'a')).toBe(198);
+    expect(payloadSeparationDelayFor(p, 'b')).toBe(35);
+    expect(payloadSeparationDelayFor({}, 'a')).toBeUndefined();
+  });
+
+  it('every per-mission key names a mission that exists', () => {
+    const dir = resolve(__dirname, '../../../static/data');
+    const missionIds = new Set(
+      readdirSync(resolve(dir, 'missions'), { recursive: true })
+        .map(String)
+        .filter((f) => f.endsWith('.json'))
+        .map((f) => f.replace(/^.*\//, '').replace(/\.json$/, '')),
+    );
+    for (const f of readdirSync(resolve(dir, 'launch-profiles'))) {
+      const p = load(f.replace(/\.json$/, ''));
+      for (const id of Object.keys(p.payloadSeparationDelayByMissionS ?? {}))
+        expect(missionIds.has(id), `${f}: ${id}`).toBe(true);
+    }
   });
 });

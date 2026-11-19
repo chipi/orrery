@@ -3,6 +3,7 @@
   "name": "Titan II GLV",
   "source_tier": "flagship",
   "payloadKg": 2800,
+  "payloadSeparationDelayS": 30,
   "fairingKg": 0,
   "fairingJettisonAltM": 100000,
   "refAreaM2": 7.3,
@@ -14,8 +15,8 @@
       "name": "Stage 1",
       "wetKg": 122000,
       "dryKg": 4090,
-      "thrustSlKN": 1913,
-      "thrustVacKN": 2097,
+      "thrustSlKN": 1995,
+      "thrustVacKN": 2186.9,
       "ispSlS": 258,
       "ispVacS": 296,
       "engines": 1,
@@ -32,6 +33,9 @@
     }
   ],
   "provenance": [
-    { "l": "Encyclopedia Astronautica — Titan II GLV", "u": "http://www.astronautix.com/t/titanii.html" }
+    {
+      "l": "Encyclopedia Astronautica — Titan II GLV",
+      "u": "http://www.astronautix.com/t/titanii.html"
+    }
   ]
 }

@@ -14,8 +14,8 @@
       "name": "Stage 1 (Castor 120)",
       "wetKg": 53070,
       "dryKg": 4082,
-      "thrustSlKN": 1468,
-      "thrustVacKN": 1621,
+      "thrustSlKN": 1367.4,
+      "thrustVacKN": 1509.9,
       "ispSlS": 253,
       "ispVacS": 280,
       "engines": 1,
@@ -53,5 +53,6 @@
       "l": "Payload = spacecraft + Star 37FM TLI stage (1,523 kg) + the OAM (236 kg hydrazine, dry mass estimated ~300 kg), which circularises the parking orbit; thrusts are averages that match the documented burns (Castor 120 83 s and 92 s, Orbus 21D 154 s), Castor 120 sea-level Isp derived from its SL/vacuum thrust ratio; fairing mass estimated",
       "u": "https://nssdc.gsfc.nasa.gov/planetary/text/lp_pr_971022.txt"
     }
-  ]
+  ],
+  "fairingJettisonS": 232
 }

@@ -3,48 +3,20 @@
   "name": "Mercury-Redstone",
   "source_tier": "flagship",
   "payloadKg": 1830,
+  "payloadSeparationDelayS": 9.5,
   "fairingKg": 0,
   "fairingJettisonAltM": 80000,
   "refAreaM2": 4.9,
   "cd": 0.3,
-  "launchSite": {
-    "lat": 28.44,
-    "lon": -80.57,
-    "name": "LC-5 · Cape Canaveral"
-  },
-  "pitchProgram": [
-    [
-      0,
-      90
-    ],
-    [
-      10,
-      86
-    ],
-    [
-      40,
-      70
-    ],
-    [
-      80,
-      52
-    ],
-    [
-      120,
-      45
-    ],
-    [
-      143,
-      45
-    ]
-  ],
+  "launchSite": { "lat": 28.44, "lon": -80.57, "name": "LC-5 · Cape Canaveral" },
+  "pitchProgram": [[0, 90], [10, 86], [40, 70], [80, 52], [120, 45], [143, 45]],
   "stages": [
     {
       "name": "Redstone",
       "wetKg": 30000,
       "dryKg": 4400,
-      "thrustSlKN": 350,
-      "thrustVacKN": 390,
+      "thrustSlKN": 374.9,
+      "thrustVacKN": 417.8,
       "ispSlS": 215,
       "ispVacS": 235,
       "engines": 1,

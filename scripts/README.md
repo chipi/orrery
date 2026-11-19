@@ -211,5 +211,13 @@ applied in `src/hooks.server.ts`), `src/lib/json-ld.ts` + `JsonLd.svelte`, and
   into `/tmp` review files; a human picks before `badge-sources.json`.
 - `peg-orbit-validation.mjs` — reports whether each flagship launcher
   profile reaches a real stable orbit (ascent integrator check).
+- `ascent-events.ts <launch-profile> [json-override]` — prints a profile's
+  ascent event times (staging, fairing, MECO, SECO, max-Q), optionally with
+  fields overridden, to compare against a sourced flight sequence.
+- `fit-launch-timeline.ts <spec.json> [--write]` — fits a profile's burn
+  times to a sourced sequence by scaling one lever's thrust (propellant and
+  Isp kept, so delta-v is unchanged), sets fairing times and coasts, prints
+  before / after and whether it still reaches orbit. Pin the result in
+  `src/lib/orbital/launch-timeline.test.ts` (backlog F4 / S13, 2026-11-19).
 - `__smoke__/resolver-diversity.mjs [--skip-network]` — image resolver
   diversity smoke (offline dedup unit + an optional live pass).

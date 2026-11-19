@@ -192,7 +192,11 @@
     loadDescentProfile,
     hasDescentProfile,
   } from '$lib/physics/descent/descent-profile-registry';
-  import { integrateAscent, type LaunchProfile } from '$lib/physics/ascent/ascent-physics';
+  import {
+    integrateAscent,
+    payloadSeparationDelayFor,
+    type LaunchProfile,
+  } from '$lib/physics/ascent/ascent-physics';
   import {
     integrateDescent,
     type DescentProfile,
@@ -326,6 +330,8 @@
   let launchProfile = $state<LaunchProfile | null>(null);
   // The launch's real instant + pad (light) and the director's debug data (?debug=1 Page tab).
   let launchInstant = $state<LaunchInstant | null>(null);
+  // Seconds from SECO to spacecraft separation for the flown mission (plan L63).
+  let launchSepDelayS = $state<number | undefined>(undefined);
   // The displayed pad: the mission's launch-site ref, else the launches entry's pad, else the profile's.
   let launchSiteName = $state<string | undefined>(undefined);
   // The pad model of that site at the launch year (G4); null keeps the generic tower.
@@ -411,6 +417,7 @@
         launchInstant = ctx?.instant ?? null;
         launchSiteName = ctx?.pad?.name;
         launchPadSpec = ctx?.padSpec ?? null;
+        launchSepDelayS = payloadSeparationDelayFor(p, mission.id);
         launchProfile = p;
         dispatchPhase({ type: 'startLaunch' });
       })
@@ -1684,11 +1691,7 @@
   // spacecraft leaves the stage, not at SECO.
   let launchDurationS = $derived(
     launchSummaryFly
-      ? launchActEndS(
-          launchSummaryFly.totalDurationS,
-          launchInjectionBurn,
-          launchProfile?.payloadSeparationDelayS,
-        )
+      ? launchActEndS(launchSummaryFly.totalDurationS, launchInjectionBurn, launchSepDelayS)
       : 540,
   );
   // ─── Orbit-insertion beat (RFC-034 §12) — the arrival mirror of the launch
@@ -1738,11 +1741,7 @@
     launchSeparationTimes(
       launchSummaryFly,
       launchSummaryFly
-        ? payloadSepTFor(
-            launchSummaryFly.totalDurationS,
-            launchInjectionBurn,
-            launchProfile?.payloadSeparationDelayS,
-          )
+        ? payloadSepTFor(launchSummaryFly.totalDurationS, launchInjectionBurn, launchSepDelayS)
         : undefined,
       launchProfile?.payloadInBay === true,
     ),
@@ -1812,11 +1811,7 @@
         timeline: hasLaunchAct ? masterTimeline : null,
         arcTotalDays,
         ascentBeats: launchSummaryFly
-          ? buildPlanBeats(
-              launchSummaryFly,
-              launchInjectionBurn,
-              launchProfile?.payloadSeparationDelayS,
-            ).map((b) => ({
+          ? buildPlanBeats(launchSummaryFly, launchInjectionBurn, launchSepDelayS).map((b) => ({
               label: hudLabel(b.label),
               t: toSceneT(launchCoastWarpFly, b.t),
             }))

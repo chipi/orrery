@@ -177,6 +177,12 @@ export interface LaunchProfile {
    */
   payloadSeparationDelayS?: number;
   /**
+   * Per-mission separation delays (s after SECO) where one vehicle flies payloads that leave
+   * differently (Falcon 9: Crew Dragon about 197 s after SECO, plan L63), keyed by mission id.
+   * Overrides `payloadSeparationDelayS` for that mission.
+   */
+  payloadSeparationDelayByMissionS?: Record<string, number>;
+  /**
    * The payload stays in the vehicle's bay for the whole launch (the Space Shuttle: it is
    * deployed hours later in orbit). No spacecraft-separation beat, no injection beat and no
    * payload deployment are drawn: the launch ends with the vehicle alone in orbit.
@@ -1532,4 +1538,15 @@ export function ascentToOrbit(profile: LaunchProfile, opts?: AscentOptions): Asc
     finalAltKm: s.finalAltKm,
     finalSpeedKms: s.finalSpeedKms,
   };
+}
+
+/** Seconds from SECO to spacecraft separation for this mission on this vehicle (plan L63). */
+export function payloadSeparationDelayFor(
+  profile: Pick<LaunchProfile, 'payloadSeparationDelayS' | 'payloadSeparationDelayByMissionS'>,
+  missionId: string | undefined,
+): number | undefined {
+  return (
+    (missionId ? profile.payloadSeparationDelayByMissionS?.[missionId] : undefined) ??
+    profile.payloadSeparationDelayS
+  );
 }

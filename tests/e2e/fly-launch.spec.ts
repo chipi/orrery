@@ -101,7 +101,7 @@ test('Shenzhou 5 after the climb: the Earth-orbit coast (14 orbits from its reco
   await expect(page.locator('[data-testid="coast-scene"]')).toBeVisible({ timeout: 30_000 });
   await expect(page.locator('[data-testid="launch-scene"]')).toHaveCount(0);
   if (testInfo.project.name === 'desktop-chromium') {
-    await expect(page.locator('body')).toContainText('332×336 km');
+    await expect(page.locator('body')).toContainText('343×343 km');
     await expect(page.locator('body')).toContainText('/ 14');
   }
 });

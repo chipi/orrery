@@ -3,6 +3,7 @@
   "name": "LVM3",
   "source_tier": "flagship",
   "payloadKg": 3895,
+  "injectionOrbit": { "perigeeAltM": 170000, "apogeeAltM": 36500000 },
   "liftoffThrustKN": 10300,
   "loftBoost": true,
   "fairingKg": 3500,

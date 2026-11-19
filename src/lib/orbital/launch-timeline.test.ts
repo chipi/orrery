@@ -158,6 +158,9 @@ const TIMELINES: Record<string, Row[]> = {
     // L110 separation 305.56.
     { event: 'S200 separation', type: 'staging', nth: 0, real: 127, tol: 10 },
     { event: 'L110 separation', type: 'staging', nth: 1, real: 305.56, tol: 10 },
+    // C25 shut-off 954.42 s into the brochure's injection orbit (GTO perigee 170 +/- 3.5 km, apogee
+    // 36,500 +/- 500 km): the profile's injectionOrbit, one continuous burn raising the apogee.
+    { event: 'C25 shut-off (injection orbit)', type: 'seco', real: 954.42, tol: 30 },
     // LVM3-M4 brochure: the profile's fairingJettisonS.
     { event: 'fairing (scheduled input)', type: 'fairing_jettison', real: 194.96, tol: 10 },
   ],
@@ -337,7 +340,16 @@ describe('launcher staging timelines vs the real nominal flight', () => {
     'space-shuttle-stack: OMS-2 lights at 2081.5 s against STS-68 2110 s; the MECO altitude is the generic TD0358A 360,000 ft, not the STS-68 one (unpublished)',
   );
   it.todo(
-    'elliptical / high-energy injection is not modelled (the ascent circularises): atlas-v 541 MECO-1 687.9 s (model 878.6), lvm3 C25 cut-off 954.42 s into 170 x 36,500 km (model 746.5), new-glenn SECO-1 773 s (model 692.4), atlas-centaur AC-20 Centaur MECO 725.5 s (model ~597), h3 SECO1 640 s into the MMX parking orbit (model ~496, insensitive to the target altitude)',
+    'atlas-v 541 (Mars 2020): MECO-1 into a ~270 km parking orbit (secondary: Seradata) at 687.9 s; model 878.6 s. A circular parking orbit, so a trajectory calibration, not the elliptical-injection model',
+  );
+  it.todo(
+    'h3 (MMX plan, Table 2): MECO at 208 km and 6.2 km/s, SECO1 640 s at 329 km / 7.7 km/s (a parking orbit); the model reaches MECO at 180 km and 6.89 km/s, so its second stage has less to do (SECO1 ~530 s even at 329 km). Needs the stage-1 trajectory calibrated to the plan',
+  );
+  it.todo(
+    'new-glenn (NG-2): SECO-1 773 s; model 692.4 s. The orbit at SECO-1 is unpublished (the final transfer orbit had a 100,000 km apogee), so there is no target to fit',
+  );
+  it.todo(
+    'atlas-centaur (AC-20, Mariner 7): Centaur MECO 725.5 s is a direct escape injection toward Mars, which the ascent model does not fly (it stops at an Earth orbit)',
   );
   it.todo(
     'saturn-ib (Apollo 7): S-IVB cutoff 616.76 s; model 543.2 s. NTRS 19700014017 gives the J-2 at 226,019 lbf to 454.8 s then 176,087 lbf, and 36,600 lb spacecraft + 4,280 lb IU above the S-IVB; with that real 18.5 t payload the model S-IB trajectory cannot reach orbit, so the profile keeps its 10 t stand-in',

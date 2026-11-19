@@ -211,6 +211,13 @@ export interface LaunchProfile {
    * perigee ends the ascent.
    */
   mecoTarget?: MecoTarget;
+  /**
+   * An elliptical injection by the final stage (plan item 4, 2026-11-19): it climbs to orbit at
+   * `perigeeAltM` as usual, then keeps burning prograde, raising the apogee, and cuts off when the
+   * apogee reaches `apogeeAltM` (LVM3 C25 into Chandrayaan-3's 170 x 36,500 km, one continuous
+   * burn). Absent = the stage cuts off at the first stable orbit (a circular parking orbit).
+   */
+  injectionOrbit?: { perigeeAltM: number; apogeeAltM: number };
   /** Aerodynamic reference area (m²) for drag. Default 10. */
   refAreaM2?: number;
   /** Drag coefficient (dimensionless). Default 0.3. */
@@ -863,6 +870,8 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
   let coasting = false;
   // Latched once the heuristic altitude-hold saturates (a too-weak final stage).
   let pegLatched = false;
+  // injectionOrbit: past the orbit gate, the final stage burns on to the apogee target
+  let raisingApogee = false;
 
   const snapshot = (): AscentState => {
     // Radial frame: position from Earth's centre, altitude above the surface,
@@ -1023,7 +1032,11 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
     // perigee gate below still decides SECO + reachedOrbit.
     const isFinalStage = stageIndex === profile.stages.length - 1;
     const targetAltM =
-      circulariseAtM ?? mecoTarget?.apogeeAltM ?? profile.targetOrbitAltM ?? GUIDANCE.targetAltM;
+      circulariseAtM ??
+      mecoTarget?.apogeeAltM ??
+      profile.injectionOrbit?.perigeeAltM ??
+      profile.targetOrbitAltM ??
+      GUIDANCE.targetAltM;
     let pitch: number;
     let engineOn: boolean; // set by every guidance branch below
 
@@ -1051,7 +1064,11 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
       }
     }
 
-    if (mecoState && !isFinalStage && coreThrustLit > 0 && alt > GUIDANCE.handoverAltM) {
+    if (raisingApogee && isFinalStage && coreThrustLit > 0) {
+      // Apogee raise: burn prograde (along the velocity) until the apogee reaches the target.
+      pitch = Math.atan2(velUp, Math.abs(horizSpeed));
+      engineOn = true;
+    } else if (mecoState && !isFinalStage && coreThrustLit > 0 && alt > GUIDANCE.handoverAltM) {
       // Direct insertion: the core steers (PEG, linear tangent) to the MECO state. Blended in
       // from the pitch table like the heuristic so the command does not step.
       const ve = stageIspS(profile.stages[stageIndex], alt) * G0;
@@ -1309,7 +1326,9 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
       pushEvent('orbit');
       orbitSeen = true;
       reachedOrbit = true;
-      if (stageIndex === profile.stages.length - 1 && !directInsertion) {
+      if (stageIndex === profile.stages.length - 1 && !directInsertion && profile.injectionOrbit) {
+        raisingApogee = true;
+      } else if (stageIndex === profile.stages.length - 1 && !directInsertion) {
         pushEvent(
           'seco',
           `${profile.stages[stageIndex].name} — orbit`,
@@ -1318,6 +1337,18 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
         stageIndex = -1; // SECO on target; residual propellant is margin
         secoT = t;
       }
+    }
+
+    // Elliptical injection: the apogee raise ends on the target apogee.
+    if (
+      raisingApogee &&
+      secoT < 0 &&
+      stageIndex === profile.stages.length - 1 &&
+      apoapsisAltM >= profile.injectionOrbit!.apogeeAltM
+    ) {
+      pushEvent('seco', `${profile.stages[stageIndex].name} — injection orbit`);
+      stageIndex = -1;
+      secoT = t;
     }
 
     // Direct insertion: the circularising burn ends once the orbit is circular at the target
@@ -1341,7 +1372,13 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
     // ICPS): the final stage has no insertion left to fly. Hold it dark — its propellant is
     // for the later injection burn (the scene's injection beat) — instead of letting it burn
     // to depletion onto an escape path, which nothing else would ever cut off.
-    if (!directInsertion && orbitSeen && secoT < 0 && stageIndex === profile.stages.length - 1) {
+    if (
+      !directInsertion &&
+      !raisingApogee &&
+      orbitSeen &&
+      secoT < 0 &&
+      stageIndex === profile.stages.length - 1
+    ) {
       // The Shuttle reaches orbit on its main engines: its orbiter's held engines are no SECO
       // beat either (silent, as at the end of its powered flight).
       pushEvent(

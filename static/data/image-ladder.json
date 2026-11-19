@@ -1318,7 +1318,9 @@
   ],
   "/images/earth-objects/chandra/04": [
     320,
-    1280
+    1280,
+    2048,
+    2400
   ],
   "/images/earth-objects/chandra/05": [
     320,
@@ -1518,15 +1520,21 @@
   ],
   "/images/earth-objects/iss/02": [
     320,
-    1280
+    1280,
+    2048,
+    3000
   ],
   "/images/earth-objects/iss/03": [
     320,
-    1280
+    1280,
+    2048,
+    3000
   ],
   "/images/earth-objects/iss/04": [
     320,
-    1280
+    1280,
+    2048,
+    3072
   ],
   "/images/earth-objects/iss/05": [
     320,
@@ -1821,7 +1829,7 @@
   ],
   "/images/fleet-galleries/akatsuki/01": [
     320,
-    960
+    1000
   ],
   "/images/fleet-galleries/akatsuki/02": [
     320,
@@ -2134,7 +2142,7 @@
     320,
     1280,
     2048,
-    2802
+    3072
   ],
   "/images/fleet-galleries/baikonur-1-5/05": [
     320,
@@ -3730,7 +3738,9 @@
   "/images/fleet-galleries/kepler/01": [
     320,
     640,
-    856
+    857,
+    1371,
+    2008
   ],
   "/images/fleet-galleries/kepler/02": [
     320,
@@ -3780,9 +3790,9 @@
   "/images/fleet-galleries/kourou-ela-3/02": [
     320,
     640,
-    853,
-    1365,
-    1600
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/kourou-ela-3/03": [
     320,
@@ -3932,21 +3942,21 @@
   ],
   "/images/fleet-galleries/lc-39a/02": [
     320,
-    852,
-    1363,
-    2044
+    891,
+    1426,
+    2138
   ],
   "/images/fleet-galleries/lc-39a/03": [
     320,
     1280,
     2048,
-    3000
+    3072
   ],
   "/images/fleet-galleries/lc-39a/04": [
     320,
-    1043,
-    1669,
-    1956
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/lc-39a/05": [
     320,
@@ -3969,9 +3979,9 @@
   ],
   "/images/fleet-galleries/lc-39b/03": [
     320,
-    596,
-    953,
-    1117
+    602,
+    964,
+    1446
   ],
   "/images/fleet-galleries/lc-39b/04": [
     320,
@@ -4583,7 +4593,8 @@
   "/images/fleet-galleries/mars-express/01": [
     320,
     1280,
-    1600
+    2048,
+    3072
   ],
   "/images/fleet-galleries/mars-express/02": [
     320,
@@ -4607,7 +4618,8 @@
   "/images/fleet-galleries/mars-odyssey/01": [
     320,
     1280,
-    1700
+    2048,
+    3072
   ],
   "/images/fleet-galleries/mars-odyssey/02": [
     320,
@@ -4715,7 +4727,8 @@
   "/images/fleet-galleries/maven/02": [
     320,
     1280,
-    1850
+    2048,
+    3000
   ],
   "/images/fleet-galleries/maven/03": [
     320,
@@ -4985,11 +4998,15 @@
   "/images/fleet-galleries/orion/01": [
     320,
     640,
-    1280
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/orion/02": [
     320,
-    1280
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/orion/03": [
     320,
@@ -4997,7 +5014,9 @@
   ],
   "/images/fleet-galleries/orion/04": [
     320,
-    1280
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/orlan-mks/01": [
     320,
@@ -5043,7 +5062,9 @@
   "/images/fleet-galleries/parker-solar-probe/01": [
     320,
     640,
-    1050
+    1280,
+    2048,
+    2218
   ],
   "/images/fleet-galleries/parker-solar-probe/02": [
     320,
@@ -5082,7 +5103,9 @@
   ],
   "/images/fleet-galleries/perseverance/05": [
     320,
-    1280
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/phobos-2/01": [
     320,
@@ -5342,7 +5365,9 @@
   ],
   "/images/fleet-galleries/psyche-spacecraft/02": [
     320,
-    1024
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/psyche-spacecraft/03": [
     320,
@@ -7560,7 +7585,8 @@
   "/images/mars-sites/exomars-rosalind-franklin/03": [
     320,
     1280,
-    1920
+    2048,
+    3072
   ],
   "/images/mars-sites/exomars-rosalind-franklin/04": [
     320,
@@ -10810,8 +10836,9 @@
   ],
   "/images/planets/jupiter/05": [
     320,
-    1279,
-    1600
+    1280,
+    2048,
+    3050
   ],
   "/images/planets/mars/01": [
     320,
@@ -10918,7 +10945,8 @@
   ],
   "/images/planets/uranus/02": [
     320,
-    796
+    1280,
+    1388
   ],
   "/images/planets/uranus/03": [
     320,

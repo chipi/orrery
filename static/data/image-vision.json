@@ -86,20 +86,21 @@
       "scoring_cost_usd": 0.007374
     },
     "/images/earth-objects/chandra/04.jpg": {
-      "score": 4,
-      "subject": "False-color multi-wavelength astronomical image showing a cluster of galaxies or sources represented as colored dots against a black background.",
+      "score": 8,
+      "subject": "Chandra X-ray image of the Kepler supernova remnant",
       "category": "other",
       "focal_point": {
-        "x": 0.47,
+        "x": 0.5,
         "y": 0.48
       },
       "variants": {
         "1x1": "/images/earth-objects/chandra/04.1x1.jpg"
       },
-      "rejected_by": "score-below-threshold",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-24T00:24:57.833Z",
-      "scoring_cost_usd": 0.007974
+      "scored_at": "2026-11-19T13:37:19.856Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/earth-objects/chandra/05.jpg": {
       "score": 7,
@@ -393,52 +394,55 @@
       "scoring_cost_usd": 0.005031
     },
     "/images/earth-objects/iss/02.jpg": {
-      "score": 2,
-      "subject": "A technician attaching orange tags to a labeled panel or storage unit",
-      "category": "people",
+      "score": 8,
+      "subject": "Kibo module processing at the Space Station Processing Facility",
+      "category": "hardware",
       "focal_point": {
-        "x": 0.65,
-        "y": 0.45
+        "x": 0.5,
+        "y": 0.5
       },
       "variants": {
         "1x1": "/images/earth-objects/iss/02.1x1.jpg"
       },
-      "rejected_by": "category-people",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-24T00:26:08.449Z",
-      "scoring_cost_usd": 0.006816
+      "scored_at": "2026-11-19T13:37:19.865Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/earth-objects/iss/03.jpg": {
-      "score": 3,
-      "subject": "A technician inspects a large striped panel with orange tags in what appears to be a spacecraft or aerospace facility.",
-      "category": "people",
+      "score": 8,
+      "subject": "Kibo module hatch and sliding platform at the Space Station Processing Facility",
+      "category": "hardware",
       "focal_point": {
-        "x": 0.72,
-        "y": 0.5
+        "x": 0.5,
+        "y": 0.45
       },
       "variants": {
         "1x1": "/images/earth-objects/iss/03.1x1.jpg"
       },
-      "rejected_by": "category-people",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-24T00:26:11.863Z",
-      "scoring_cost_usd": 0.007161
+      "scored_at": "2026-11-19T13:37:19.886Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/earth-objects/iss/04.jpg": {
-      "score": 9,
-      "subject": "Space Shuttle Endeavour docked to the International Space Station, with ISS modules including the Japanese Kibo laboratory visible against the black of space and Earth's limb.",
+      "score": 8,
+      "subject": "Space Shuttle Endeavour docked to the ISS",
       "category": "spacecraft",
       "focal_point": {
         "x": 0.42,
-        "y": 0.52
+        "y": 0.55
       },
       "variants": {
         "1x1": "/images/earth-objects/iss/04.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-24T00:26:18.710Z",
-      "scoring_cost_usd": 0.007482
+      "scored_at": "2026-11-19T13:37:19.808Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/earth-objects/iss/05.jpg": {
       "score": 3,
@@ -3358,20 +3362,21 @@
       "scoring_cost_usd": 0.00534
     },
     "/images/fleet-galleries/mars-express/01.jpg": {
-      "score": 2,
-      "subject": "A barely visible bright streak against a completely black background, likely a spacecraft or satellite imaged from great distance with very low resolution.",
-      "category": "spacecraft",
+      "score": 8,
+      "subject": "Mars Express HRSC view of Granicus Valles",
+      "category": "surface",
       "focal_point": {
-        "x": 0.55,
-        "y": 0.55
+        "x": 0.5,
+        "y": 0.5
       },
       "variants": {
         "1x1": "/images/fleet-galleries/mars-express/01.1x1.jpg"
       },
-      "rejected_by": "score-below-threshold",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-22T08:58:24.874Z",
-      "scoring_cost_usd": 0.003051
+      "scored_at": "2026-11-19T13:37:20.739Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/mars-express/02.jpg": {
       "score": 7,
@@ -3840,36 +3845,38 @@
       "scoring_cost_usd": 0.007356
     },
     "/images/fleet-galleries/orion/01.jpg": {
-      "score": 7,
-      "subject": "NASA Orion spacecraft with deployed solar array panels shown against a white background, displaying the crew module and service module configuration.",
+      "score": 8,
+      "subject": "Render of the Artemis I Orion spacecraft with solar arrays in a V",
       "category": "render",
       "focal_point": {
         "x": 0.5,
-        "y": 0.45
+        "y": 0.55
       },
       "variants": {
         "1x1": "/images/fleet-galleries/orion/01.1x1.jpg"
       },
-      "rejected_by": "score-below-threshold",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-22T09:00:37.097Z",
-      "scoring_cost_usd": 0.007119
+      "scored_at": "2026-11-19T13:37:20.558Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/orion/02.jpg": {
-      "score": 6,
-      "subject": "3D render of NASA Orion spacecraft with European Service Module and deployed solar arrays against a white background",
+      "score": 8,
+      "subject": "Side-view render of the Artemis I Orion spacecraft",
       "category": "render",
       "focal_point": {
-        "x": 0.48,
-        "y": 0.48
+        "x": 0.47,
+        "y": 0.5
       },
       "variants": {
         "1x1": "/images/fleet-galleries/orion/02.1x1.jpg"
       },
-      "rejected_by": "score-below-threshold",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-22T09:00:40.085Z",
-      "scoring_cost_usd": 0.007059
+      "scored_at": "2026-11-19T13:37:20.582Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/orion/03.jpg": {
       "score": 7,
@@ -3888,8 +3895,8 @@
       "scoring_cost_usd": 0.006234
     },
     "/images/fleet-galleries/orion/04.jpg": {
-      "score": 6,
-      "subject": "NASA Orion crew module capsule render or physical model shown in isolation against a white background, displaying solar panels and heat shield details.",
+      "score": 8,
+      "subject": "Three-quarter render of the Artemis I Orion spacecraft with four solar arrays",
       "category": "render",
       "focal_point": {
         "x": 0.5,
@@ -3898,10 +3905,11 @@
       "variants": {
         "1x1": "/images/fleet-galleries/orion/04.1x1.jpg"
       },
-      "rejected_by": "score-below-threshold",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-22T09:00:46.799Z",
-      "scoring_cost_usd": 0.007629
+      "scored_at": "2026-11-19T13:37:20.660Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/orlan-mks/01.jpg": {
       "score": 8,
@@ -4016,20 +4024,21 @@
       "scoring_cost_usd": 0.0068520000000000005
     },
     "/images/fleet-galleries/perseverance/05.jpg": {
-      "score": 6,
-      "subject": "Artist concept render showing NASA's Ingenuity helicopter hovering above the Martian surface while Perseverance rover watches from the foreground left.",
+      "score": 8,
+      "subject": "Illustration of Ingenuity hovering with Perseverance in the distance",
       "category": "render",
       "focal_point": {
-        "x": 0.62,
-        "y": 0.42
+        "x": 0.6,
+        "y": 0.45
       },
       "variants": {
         "1x1": "/images/fleet-galleries/perseverance/05.1x1.jpg"
       },
-      "rejected_by": "score-below-threshold",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-22T09:01:31.536Z",
-      "scoring_cost_usd": 0.0068070000000000006
+      "scored_at": "2026-11-19T13:37:19.946Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/phobos-2/02.jpg": {
       "score": 9,
@@ -8639,11 +8648,11 @@
       "scoring_cost_usd": 0.006072
     },
     "/images/planets/jupiter/05.jpg": {
-      "score": 10,
-      "subject": "Close-up view of Jupiter's Great Red Spot and surrounding cloud bands captured by NASA's Juno spacecraft, showing vivid swirling red and teal atmospheric detail.",
+      "score": 8,
+      "subject": "Hubble 2019 portrait of Jupiter with the Great Red Spot",
       "category": "orbital",
       "focal_point": {
-        "x": 0.65,
+        "x": 0.5,
         "y": 0.5
       },
       "variants": {
@@ -8651,8 +8660,9 @@
       },
       "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-06-08T11:13:00.302Z",
-      "scoring_cost_usd": 0.005495999999999999
+      "scored_at": "2026-11-19T13:37:19.844Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/planets/mars/01.jpg": {
       "score": 8,
@@ -8978,10 +8988,10 @@
     },
     "/images/planets/uranus/02.jpg": {
       "score": 8,
-      "subject": "Crescent view of Uranus showing its illuminated limb and atmosphere against black space, likely captured by Voyager 2.",
+      "subject": "Hubble image of Uranus, November 2014",
       "category": "orbital",
       "focal_point": {
-        "x": 0.35,
+        "x": 0.5,
         "y": 0.5
       },
       "variants": {
@@ -8989,24 +8999,26 @@
       },
       "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-06-08T11:14:13.580Z",
-      "scoring_cost_usd": 0.004686
+      "scored_at": "2026-11-19T13:37:20.729Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/planets/uranus/03.jpg": {
-      "score": 6,
-      "subject": "False-color composite image of Uranus showing atmospheric bands and limb brightening in orange, green, and blue tones, likely captured by Voyager 2.",
+      "score": 8,
+      "subject": "Voyager 2 crescent of Uranus",
       "category": "orbital",
       "focal_point": {
-        "x": 0.5,
-        "y": 0.5
+        "x": 0.55,
+        "y": 0.45
       },
       "variants": {
         "1x1": "/images/planets/uranus/03.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-06-08T11:14:17.177Z",
-      "scoring_cost_usd": 0.004569
+      "scored_at": "2026-11-19T13:37:19.840Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/planets/uranus/04.jpg": {
       "score": 8,
@@ -15244,20 +15256,21 @@
       "subject_match": true
     },
     "/images/fleet-galleries/kepler/01.jpg": {
-      "score": 9,
-      "subject": "NASA's Kepler Space Telescope launches aboard a United Launch Alliance Delta II rocket at night, with engine ignition illuminating billowing exhaust clouds at the launch pad.",
+      "score": 8,
+      "subject": "Kepler launch on a Delta II, 6 March 2009",
       "category": "launch",
       "focal_point": {
-        "x": 0.42,
-        "y": 0.45
+        "x": 0.5,
+        "y": 0.6
       },
       "variants": {
         "1x1": "/images/fleet-galleries/kepler/01.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-22T08:54:46.205Z",
-      "scoring_cost_usd": 0.007329
+      "scored_at": "2026-11-19T13:37:19.908Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/kepler/02.jpg": {
       "score": 8,
@@ -20358,20 +20371,21 @@
       "scoring_cost_usd": 0.007458
     },
     "/images/fleet-galleries/mars-odyssey/01.jpg": {
-      "score": 7,
-      "subject": "Artist's render of a spacecraft with extended boom, solar panels, and dish antenna against a black background, likely Mars Odyssey or similar orbital mission.",
+      "score": 8,
+      "subject": "Illustration of Mars Odyssey above the Martian south pole",
       "category": "render",
       "focal_point": {
-        "x": 0.58,
-        "y": 0.48
+        "x": 0.5,
+        "y": 0.42
       },
       "variants": {
         "1x1": ""
       },
-      "rejected_by": "score-below-threshold",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-06-12T21:04:36.922Z",
-      "scoring_cost_usd": 0.00747
+      "scored_at": "2026-11-19T13:37:19.959Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/mars-odyssey/02.jpg": {
       "score": 8,
@@ -27250,16 +27264,16 @@
     },
     "/images/fleet-galleries/psyche-spacecraft/02.jpg": {
       "score": 8,
-      "subject": "NASA Psyche spacecraft render showing the central body with a large dish antenna and two cross-shaped solar panel arrays against a black background.",
+      "subject": "Illustration of the Psyche spacecraft",
       "category": "render",
       "focal_point": {
-        "x": 0.48,
+        "x": 0.47,
         "y": 0.45
       },
       "subject_match": true,
-      "rejected_by": "score-below-threshold",
-      "scored_at": "2026-07-06T13:44:04.529Z",
-      "scoring_cost_usd": 0.007965
+      "rejected_by": null,
+      "scored_at": "2026-11-19T13:37:19.983Z",
+      "scoring_cost_usd": 0
     },
     "/images/fleet-galleries/psyche-spacecraft/03.jpg": {
       "score": 7,
@@ -30605,6 +30619,149 @@
       "subject_match": true,
       "rejected_by": null,
       "scored_at": "2026-11-15T14:29:40.466Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/baikonur-1-5/04.jpg": {
+      "score": 8,
+      "subject": "Expedition 64 crew at the Soyuz MS-17 rocket, Baikonur",
+      "category": "people",
+      "focal_point": {
+        "x": 0.4,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-19T13:37:19.917Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/maven/02.jpg": {
+      "score": 8,
+      "subject": "Illustration of MAVEN in front of Mars",
+      "category": "render",
+      "focal_point": {
+        "x": 0.4,
+        "y": 0.45
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-19T13:37:20.026Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/parker-solar-probe/01.jpg": {
+      "score": 8,
+      "subject": "Render of the Parker Solar Probe",
+      "category": "render",
+      "focal_point": {
+        "x": 0.45,
+        "y": 0.55
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-19T13:37:20.036Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/lc-39a/02.jpg": {
+      "score": 8,
+      "subject": "Falcon Heavy STP-2 launch from Launch Complex 39A, 25 June 2019",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.52,
+        "y": 0.33
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-19T13:37:20.043Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/lc-39a/03.jpg": {
+      "score": 8,
+      "subject": "Falcon Heavy STP-2 launch from Launch Complex 39A, 25 June 2019",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.68,
+        "y": 0.55
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-19T13:37:20.084Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/lc-39a/04.jpg": {
+      "score": 8,
+      "subject": "Space Shuttle Atlantis STS-135 launch from Launch Complex 39A, 8 July 2011",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.52,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-19T13:37:20.106Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/lc-39b/03.jpg": {
+      "score": 8,
+      "subject": "Skylab 2 Saturn IB launch from Pad 39B, May 1973",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.37
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-19T13:37:20.121Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/kourou-ela-3/02.jpg": {
+      "score": 8,
+      "subject": "Ariane 5 with the James Webb Space Telescope at Kourou, December 2021",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.6,
+        "y": 0.42
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-19T13:37:20.417Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/akatsuki/01.jpg": {
+      "score": 8,
+      "subject": "Computer graphic of the Akatsuki spacecraft",
+      "category": "render",
+      "focal_point": {
+        "x": 0.47,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-19T13:37:20.550Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/akatsuki/03.jpg": {
+      "score": 8,
+      "subject": "Akatsuki image of Venus, 24 October 2018",
+      "category": "orbital",
+      "focal_point": {
+        "x": 0.45,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-19T13:37:20.554Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/mars-sites/exomars-rosalind-franklin/03.jpg": {
+      "score": 8,
+      "subject": "ExoMars prototype rover on a red sand test area",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.45,
+        "y": 0.55
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-19T13:37:20.800Z",
       "scoring_cost_usd": 0
     }
   }

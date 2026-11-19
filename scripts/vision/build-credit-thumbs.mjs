@@ -12,7 +12,9 @@
  * (center-cropped, as the page shows it: object-fit: cover in a square; 192 =
  * 64 CSS px @3x and 96 @2x) to static/credit-thumbs/<path>.webp, and lists the
  * covered paths in static/data/credit-thumbs.json. Add-only: an existing thumb is
- * kept. `--dry-run` reports without writing. `--paths F` builds only the listed paths
+ * kept. `--dry-run` reports without writing. `--check` writes nothing and exits 1 when a credited
+ * raster has no thumb (validate-data runs it: 708 fleet-gallery crops credited in 0.9.8 never got
+ * one, so /credits fetched their full crops). `--paths F` builds only the listed paths
  * (see below), for the list thumbnails of build-entity-thumbs.ts.
  */
 import { existsSync, linkSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
@@ -24,7 +26,9 @@ const OUT_DIR = 'static/credit-thumbs';
 const LIST = 'static/data/credit-thumbs.json';
 const SIZE = 192;
 const QUALITY = 75;
-const DRY = process.argv.includes('--dry-run');
+const CHECK = process.argv.includes('--check');
+const DRY = CHECK || process.argv.includes('--dry-run');
+const lacking = [];
 
 const prov = JSON.parse(readFileSync('static/data/image-provenance.json', 'utf8'));
 const ladder = JSON.parse(readFileSync('static/data/image-ladder.json', 'utf8'));
@@ -105,6 +109,10 @@ for (const { path: p } of entries) {
   // Skip work for thumbs that exist. This check only saves a render; it does
   // not guard the write (that is the link inside writeThumb).
   if (existsSync(out)) continue;
+  if (CHECK) {
+    lacking.push(p);
+    continue;
+  }
   const n = await writeThumb(src, out);
   if (n === 0 && !DRY) continue; // written concurrently by someone else: keep theirs
   written += 1;
@@ -125,6 +133,21 @@ for (const p of only ?? []) {
   bytes += n;
 }
 covered.sort();
+if (CHECK) {
+  const listed = new Set(JSON.parse(readFileSync(LIST, 'utf8')));
+  const unlisted = covered.filter((p) => !listed.has(p) && !lacking.includes(p));
+  if (lacking.length || unlisted.length) {
+    console.error(
+      `[credit-thumbs] FAIL: ${lacking.length} credited rasters without a thumb, ${unlisted.length} thumbs not in ${LIST}` +
+        ` (run: node scripts/vision/build-credit-thumbs.mjs)\n  ${[...lacking, ...unlisted].slice(0, 8).join('\n  ')}`,
+    );
+    process.exit(1);
+  }
+  console.log(
+    `[credit-thumbs] OK: ${covered.length} credited non-ladder rasters, every one with a thumb`,
+  );
+  process.exit(0);
+}
 if (!DRY) writeFileSync(LIST, JSON.stringify(covered, null, 1) + '\n');
 console.log(
   `[credit-thumbs] ${DRY ? 'DRY RUN · ' : ''}${covered.length} non-ladder rasters (${(sourceBytes / 1e6).toFixed(1)} MB as served) · ` +

@@ -114,6 +114,12 @@ const TASKS: Task[] = [
   // Translation coverage: a missing file or key, an empty string, placeholder text, a type or length
   // mismatch, or a string left identical to the English — overlays and UI messages, every locale.
   // A string that is right as it is (a name kept in English) is in coverage-reviewed.json.
+  // Every credited non-ladder raster has its 192 px /credits thumb, and the list names it (#482).
+  {
+    name: 'check-credit-thumbs',
+    cmd: 'node',
+    args: ['scripts/vision/build-credit-thumbs.mjs', '--check'],
+  },
   {
     name: 'check-i18n-coverage',
     cmd: 'node',

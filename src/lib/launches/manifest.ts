@@ -76,27 +76,35 @@ export type Manifest = {
   entries: Record<string, LaunchEntry>;
 };
 
-export async function loadUpcoming(): Promise<Manifest> {
-  const res = await fetch(`${base}/data/launches.json`);
-  if (!res.ok) {
-    return { version: 1, generated_at: null, sources_active: [], entries: {} };
+/** The JSON at `path`, or null when it cannot be had: an HTTP error, or a network failure (offline,
+ *  or a fetch the browser aborted on navigation — prod ORRERY-PROD-4J / 4L / 4O, "Failed to fetch"). */
+async function fetchJson<T>(path: string): Promise<T | null> {
+  try {
+    const res = await fetch(`${base}${path}`);
+    return res.ok ? ((await res.json()) as T) : null;
+  } catch {
+    return null;
   }
-  return (await res.json()) as Manifest;
+}
+
+const emptyManifest = (): Manifest => ({
+  version: 1,
+  generated_at: null,
+  sources_active: [],
+  entries: {},
+});
+
+export async function loadUpcoming(): Promise<Manifest> {
+  return (await fetchJson<Manifest>('/data/launches.json')) ?? emptyManifest();
 }
 
 export async function loadHistoricDecade(decade: string): Promise<Manifest> {
-  const res = await fetch(`${base}/data/launches-historic/${decade}.json`);
-  if (!res.ok) {
-    return { version: 1, generated_at: null, sources_active: [], entries: {} };
-  }
-  return (await res.json()) as Manifest;
+  return (await fetchJson<Manifest>(`/data/launches-historic/${decade}.json`)) ?? emptyManifest();
 }
 
 /** Launches per year (`launches-years.json`): the era strip's counts. An empty index when it is missing. */
 export async function loadYearIndex(): Promise<YearIndex> {
-  const res = await fetch(`${base}/data/launches-years.json`);
-  if (!res.ok) return { version: 1, years: {} };
-  return (await res.json()) as YearIndex;
+  return (await fetchJson<YearIndex>('/data/launches-years.json')) ?? { version: 1, years: {} };
 }
 
 export function decadeForYear(year: number): string {

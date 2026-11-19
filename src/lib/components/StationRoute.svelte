@@ -469,13 +469,22 @@
   function startThree() {
     if (!browser || !container) return;
 
-    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
-    if (!renderer.getContext()) {
-      renderer.dispose();
+    // No WebGL context (the constructor throws on some devices, prod ORRERY-PROD-24, or hands
+    // back none): the station shows its module list instead.
+    const made = (() => {
+      try {
+        return new THREE.WebGLRenderer({ antialias: true, alpha: false });
+      } catch {
+        return null;
+      }
+    })();
+    if (!made?.getContext()) {
+      made?.dispose();
       viewMode = 'list';
       syncUrl({ view: 'list' });
       return;
     }
+    const renderer = made;
 
     stopThree();
 

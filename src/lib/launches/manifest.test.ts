@@ -15,6 +15,7 @@ import {
   groupByMonth,
   loadUpcoming,
   loadHistoricDecade,
+  loadYearIndex,
   type LaunchEntry,
   type Manifest,
 } from './manifest.js';
@@ -344,5 +345,19 @@ describe('loadHistoricDecade', () => {
     vi.mocked(fetch).mockResolvedValue({ ok: false } as Response);
     const result = await loadHistoricDecade('1980-1989');
     expect(result).toEqual({ version: 1, generated_at: null, sources_active: [], entries: {} });
+  });
+
+  // Prod ORRERY-PROD-4J / 4L / 4O: "TypeError: Failed to fetch" (offline, or aborted on
+  // navigation) escaped as an unhandled error; it degrades like an HTTP error now.
+  it('returns empty manifest when the fetch itself fails', async () => {
+    vi.mocked(fetch).mockRejectedValue(new TypeError('Failed to fetch'));
+    await expect(loadHistoricDecade('2020-2026')).resolves.toEqual({
+      version: 1,
+      generated_at: null,
+      sources_active: [],
+      entries: {},
+    });
+    await expect(loadUpcoming()).resolves.toMatchObject({ entries: {} });
+    await expect(loadYearIndex()).resolves.toEqual({ version: 1, years: {} });
   });
 });

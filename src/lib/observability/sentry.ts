@@ -145,6 +145,11 @@ export function initSentry(): void {
       ) {
         return null;
       }
+      //    - a third-party script (a browser extension or reader reading the page's JSON-LD)
+      //      that fails on our `@context`: prod ORRERY-PROD-4K / 4P point at an inline script
+      //      on line 3 of the page, where the served HTML has only `<head>`; no code of ours
+      //      reads `["@context"]`.
+      if (/\["@context"\]/.test(sig)) return null;
       // 1. URL — preserve path, strip query + hash.
       if (event.request?.url) {
         try {

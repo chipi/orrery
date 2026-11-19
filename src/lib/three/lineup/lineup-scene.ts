@@ -9,6 +9,7 @@
  * stage animate.
  */
 import * as THREE from 'three';
+import { newWebGLRenderer } from '$lib/three/scene-renderer';
 
 export interface LineupItem {
   id: string;
@@ -96,7 +97,7 @@ export function createLineupStage(
   items: LineupItem[],
   opts: LineupOptions,
 ): LineupStage {
-  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+  const renderer = newWebGLRenderer({ canvas, antialias: true, alpha: true }, canvas.parentElement);
   renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
   renderer.toneMappingExposure = 1.05;

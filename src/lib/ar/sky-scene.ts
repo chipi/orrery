@@ -8,6 +8,7 @@
 // read as "at infinity".
 
 import * as THREE from 'three';
+import { newWebGLRenderer } from '$lib/three/scene-renderer';
 import { base } from '$app/paths';
 import { pickSkyView, type SkyView } from './sky-view';
 import {
@@ -989,7 +990,7 @@ export function createSkyScene(
   canvas: HTMLCanvasElement,
   opts: SkySceneOptions = {},
 ): SkySceneHandle {
-  const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+  const renderer = newWebGLRenderer({ canvas, alpha: true, antialias: true }, canvas.parentElement);
   renderer.setClearColor(0x000000, 0); // transparent → camera shows through
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(70, 1, 0.1, 1000);

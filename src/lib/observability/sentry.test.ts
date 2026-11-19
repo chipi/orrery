@@ -177,6 +177,23 @@ describe('sentry dev rung (vite dev, no deploy env)', () => {
       expect(run(cssFail)).not.toBeNull();
     });
 
+    // Prod ORRERY-PROD-4K / 4P: an extension or reader script on the page failed on our JSON-LD.
+    it('drops a third-party script failing on the JSON-LD @context, keeps other TypeErrors', () => {
+      expect(
+        run({
+          type: 'TypeError',
+          value: 'undefined is not an object (evaluating \'r["@context"].toLowerCase\')',
+        }),
+      ).toBeNull();
+      initMock.mockClear();
+      expect(
+        run({
+          type: 'TypeError',
+          value: "undefined is not an object (evaluating 'r.toLowerCase')",
+        }),
+      ).not.toBeNull();
+    });
+
     it('keeps CSS preload failures (not skew: guard reloads, stable hash) and still drops chunk skew', () => {
       expect(
         run({

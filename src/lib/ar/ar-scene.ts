@@ -10,6 +10,7 @@
 //     the render loop that drives Camera B from the backend pose. Needs a device.
 
 import * as THREE from 'three';
+import { newWebGLRenderer } from '$lib/three/scene-renderer';
 import { base } from '$app/paths';
 import { buildSolarSystem, type SolarSystem } from '../explore-scene';
 import { getArBackend, type ArBackend, type ArHit } from '../ar';
@@ -142,7 +143,7 @@ export function createArScene(
   canvas: HTMLCanvasElement,
   opts: ArSceneOptions = {},
 ): ArSceneHandle {
-  const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+  const renderer = newWebGLRenderer({ canvas, alpha: true, antialias: true }, canvas.parentElement);
   renderer.xr.enabled = true;
   // Fully transparent clear so the native ARKit camera (behind the WebView)
   // shows through the empty space of the scene — not an opaque black backdrop.

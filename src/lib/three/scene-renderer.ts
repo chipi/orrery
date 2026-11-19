@@ -37,6 +37,24 @@ function showWebglFallback(container: HTMLElement): void {
   container.appendChild(el);
 }
 
+/**
+ * `new THREE.WebGLRenderer(params)`, which throws on constrained devices or with WebGL disabled.
+ * Shows the fallback notice in `fallbackIn` (when given) and throws a typed WebGLUnavailableError,
+ * so callers bail their init instead of an uncaught crash flooding telemetry (#474/#470/#430;
+ * prod ORRERY-PROD-24 on /iss, #648, #656).
+ */
+export function newWebGLRenderer(
+  params: THREE.WebGLRendererParameters,
+  fallbackIn?: HTMLElement | null,
+): THREE.WebGLRenderer {
+  try {
+    return new THREE.WebGLRenderer(params);
+  } catch (err) {
+    if (fallbackIn) showWebglFallback(fallbackIn);
+    throw new WebGLUnavailableError(err);
+  }
+}
+
 export function createSceneRenderer(
   container: HTMLElement,
   {
@@ -44,16 +62,7 @@ export function createSceneRenderer(
     pixelRatioCap = 2,
   }: { clearColor?: number; pixelRatioCap?: number } = {},
 ): THREE.WebGLRenderer {
-  let renderer: THREE.WebGLRenderer;
-  try {
-    renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
-  } catch (err) {
-    // Context creation can throw on constrained devices / disabled WebGL. Show a
-    // fallback + throw a typed error so callers bail init instead of an uncaught
-    // crash flooding telemetry (#474/#470/#430).
-    showWebglFallback(container);
-    throw new WebGLUnavailableError(err);
-  }
+  const renderer = newWebGLRenderer({ antialias: true, alpha: false }, container);
   // Pixel-ratio cap is the single biggest fill-rate lever on Retina/mobile.
   // Callers pass `quality.pixelRatioCap` (minimal 0.75 / low 1.0 / … / 2.0)
   // so weak GPUs don't render at full DPR; defaults to 2 (the historical cap)

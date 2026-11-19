@@ -2995,6 +2995,29 @@ let altTextFailed = 0;
       if (cut.length > 10) console.log(`  ✗ … and ${cut.length - 10} more`);
       altTextFailed += cut.length;
     }
+    // Every credited picture has a description: a .1x1 crop counts through its parent, and the
+    // hotspot tiles and context crops are 3D textures, never an <img>. Four fleet-gallery heroes
+    // shipped without one (found 2026-11-19).
+    const prov = readJson(join(DATA_ROOT, 'image-provenance.json')) as {
+      entries: { path: string }[];
+    };
+    const forms = (p: string) =>
+      [p, p.replace(/\.1x1\./, '.')].flatMap((x) => [
+        x,
+        x.replace(/\.(jpe?g|png)$/i, '.webp'),
+        x.replace(/\.webp$/i, '.jpg'),
+      ]);
+    const undescribed = prov.entries
+      .map((e) => e.path)
+      .filter((p) => p.startsWith('/images/') && !p.startsWith('/images/hotspots/'))
+      .filter((p) => !forms(p).some((k) => alt[k]));
+    if (undescribed.length === 0) {
+      console.log(`  ✓ image alt text: every credited picture has one`);
+    } else {
+      for (const p of undescribed.slice(0, 10))
+        console.log(`  ✗ credited picture without alt text: ${p}`);
+      altTextFailed += undescribed.length;
+    }
   }
 }
 

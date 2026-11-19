@@ -115,6 +115,12 @@ const TASKS: Task[] = [
   // mismatch, or a string left identical to the English — overlays and UI messages, every locale.
   // A string that is right as it is (a name kept in English) is in coverage-reviewed.json.
   // Every credited non-ladder raster has its 192 px /credits thumb, and the list names it (#482).
+  // Every credited image has a pHash, so the near-duplicate gate can see it (195 had none, 2026-11-19).
+  {
+    name: 'check-phash-coverage',
+    cmd: 'tsx',
+    args: ['scripts/compute-phash.ts', '--check'],
+  },
   {
     name: 'check-credit-thumbs',
     cmd: 'node',

@@ -17,6 +17,12 @@
  * paths whose mtime is newer than the cache's `computed_at`. Bulk re-run
  * via `--force`.
  *
+ * Images with no master (deep-sky, launch-ground, a few gallery WebPs: fetched straight into
+ * static/images) are hashed from the served file when they are added, and a regen from masters
+ * keeps their entries (it used to drop them: 195 credited images had no hash on 2026-11-19).
+ * `--check` writes nothing and exits 1 when a credited /images raster (provenance, hotspot
+ * textures aside; a .1x1 crop counts through its parent) has no hash: validate-data runs it.
+ *
  * The cache feeds two downstream consumers:
  *   - scripts/validate-image-phash-dupes.ts (preflight detective)
  *   - scripts/source-known-gaps.ts (pre-write check at sourcing-time)
@@ -79,10 +85,35 @@ function urlPathOf(diskPath: string): string {
 async function main(): Promise<void> {
   const force = process.argv.includes('--force');
   const cache = loadCache();
+  if (process.argv.includes('--check')) {
+    const prov = JSON.parse(readFileSync(join(ROOT, 'static/data/image-provenance.json'), 'utf8'));
+    const forms = (p: string) => {
+      const base = p.replace(/\.1x1\./, '.');
+      return [p, base].flatMap((x) => [
+        x,
+        x.replace(/\.(jpe?g|png)$/i, '.webp'),
+        x.replace(/\.webp$/i, '.jpg'),
+      ]);
+    };
+    const lacking = (prov.entries as { path: string }[])
+      .map((e) => e.path)
+      .filter((p) => p.startsWith('/images/') && !p.startsWith('/images/hotspots/'))
+      .filter((p) => !forms(p).some((k) => cache.phashes[k]));
+    if (lacking.length) {
+      console.error(
+        `✗ ${lacking.length} credited images have no pHash (the duplicate gate cannot see them); ` +
+          `add them from the served file:\n  ${lacking.slice(0, 8).join('\n  ')}`,
+      );
+      process.exit(1);
+    }
+    console.log(`✓ pHash coverage: every credited /images raster has a hash`);
+    return;
+  }
   // Capture the committed entry count BEFORE --force wipes the working set —
   // the shrink guard below compares against this, so a --force rebuild that
   // degrades is still caught (previously --force zeroed the count → guard dead).
   const priorCount = Object.keys(cache.phashes).length;
+  const prior = { ...cache.phashes };
   if (force) cache.phashes = {};
   const cacheCutoff = new Date(cache.computed_at).getTime();
   const startedAt = new Date();
@@ -135,6 +166,16 @@ async function main(): Promise<void> {
     }
   }
 
+  // Keep the entries of served images that have no master (hashed from static/images when added).
+  let carried = 0;
+  for (const [urlPath, h] of Object.entries(prior)) {
+    if (fresh[urlPath]) continue;
+    if (existsSync(join(IMAGES_DIR, urlPath.slice('/images'.length)))) continue;
+    if (!existsSync(join(ROOT, 'static', urlPath))) continue;
+    fresh[urlPath] = h;
+    carried++;
+  }
+
   const out: PhashCache = {
     computed_at: startedAt.toISOString(),
     algorithm: 'phash-dct-8x8',
@@ -160,7 +201,7 @@ async function main(): Promise<void> {
   const elapsedMs = Date.now() - startedAt.getTime();
   console.log(
     `pHash cache → static/data/image-phashes.json — ${total} entries ` +
-      `(${computed} computed, ${kept} reused, ${failed} failed) in ${(elapsedMs / 1000).toFixed(1)}s`,
+      `(${computed} computed, ${kept} reused, ${carried} kept without a master, ${failed} failed) in ${(elapsedMs / 1000).toFixed(1)}s`,
   );
   if (failed > 0) process.exit(1);
 }

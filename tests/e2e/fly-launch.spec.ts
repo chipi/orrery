@@ -169,16 +169,16 @@ test.describe('launch ascent HUD (desktop)', () => {
     expect(labels.some((l) => l.includes('PARKING'))).toBe(false);
   });
 
-  test('the Shuttle coast plays compressed: the OMS-2 marker seeks to its real T+34 min', async ({
+  test('the Shuttle coast plays compressed: the OMS-2 marker seeks to its T+35 min (STS-68: 2110 s)', async ({
     page,
   }) => {
     await enterLaunch(page, 'sts-1');
     // The bar lays the ascent out on the play clock; its OMS-2 marker must still seek (and
     // label itself) in mission time — the 26-minute coast between MECO and OMS-2 is 15 s of play.
     const oms = page.locator('.journey-tick-button', { hasText: 'OMS-2' }).first();
-    await expect(oms).toHaveAttribute('aria-label', /T\+34:\d\d/);
+    await expect(oms).toHaveAttribute('aria-label', /T\+35:\d\d/);
     await oms.click();
-    await expect(page.locator('.launch .clock .met')).toHaveText(/T\+34:\d\d/, { timeout: 10_000 });
+    await expect(page.locator('.launch .clock .met')).toHaveText(/T\+35:\d\d/, { timeout: 10_000 });
     await expect(page.locator('.launch .status')).toHaveText(/OMS-2|COAST/);
   });
 

@@ -3,6 +3,7 @@
   "name": "Long March 5",
   "source_tier": "flagship",
   "payloadKg": 8200,
+  "loftBoost": true,
   "liftoffThrustKN": 10636,
   "fairingKg": 3000,
   "fairingJettisonAltM": 115000,
@@ -37,7 +38,7 @@
       "name": "Second stage (2× YF-75D)",
       "wetKg": 36000,
       "dryKg": 5100,
-      "thrustVacKN": 176.7,
+      "thrustVacKN": 130,
       "ispVacS": 442.6,
       "engines": 2,
       "chamberTempK": 3500

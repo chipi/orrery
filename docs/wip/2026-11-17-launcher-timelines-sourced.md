@@ -677,6 +677,22 @@ secondary), sputnik-8k71ps 19.9 s (secondary), Falcon 9 Inspiration4 198 s and P
 (the CSM stays on the S-IVB about 3 h, TD&E). Unsourceable: OTV-5, OTV-7, Vostok-K, Voskhod, Long
 March 2F (no stage-2 cutoff time).
 
+## Gap close-out, part 2 (2026-11-19, operator: "no gaps")
+
+| Vehicle | Event | Real | Model | How |
+| --- | --- | --- | --- | --- |
+| Atlas V 541 | MECO1 (Mars 2020) | 687.9 | 706.5 | the profile carries Mars 2020's 4,040 kg (was a generic 9,800); nothing fitted |
+| Space Shuttle | OMS-2 ignition / cutoff | 2110 / 2208 | 2112.5 / 2206.8 | MECO altitude 105 km, the one unpublished value, calibrated to both times |
+| Atlas-Centaur AC-20 | Centaur MECO (Mariner VI) | 725.5 | ~701 | new `injectionOrbit.c3Km2S2`: the stage burns to the report's C3 11.185 km²/s²; the test flies the flight's 412 kg (the shipped profile keeps Mariner 9's 998 kg) |
+| New Glenn | SECO-1 (NG-2) | 773 | 773.3 | GS2 thrust fitted: 1,559.5 kN, the published 2x BE-3U (the old 1,779 was off) |
+| Proton-M / Briz-M | Briz-M first-burn cutoff | 1129 | 1128.3 | **calibrated**: Briz-M lights at the guide's T+680 (new upper-stage `ignitionS`), thrust x1.206 to 23.7 kN; the guide's GTO flight is not the ExoMars flight the stage rows pin |
+| Long March 5 | stage-2 first shutdown | 752 (secondary) | 748.9 | **calibrated**: second-stage thrust 130 kN (published 176.7) with a lofted boost |
+| H3 | SECO1 (MMX) | 640 | ~496 | **kept as the model limit** (operator): with the published hardware the model reaches MECO 0.4-0.6 km/s fast; matching needs a 142 t / 2,013 kN stage 1 |
+
+New model fields (all optional, `LaunchProfile`): upper-stage `ignitionS` (a coast before the stage
+lights), `loftTApoRefS`, `pitchTableStages` (lower stages fly the pitch table above the atmosphere),
+`injectionOrbit.c3Km2S2`. `scripts/ascent-events.ts --states` prints altitude and speed per event.
+
 ## Launch-timeline research, west vehicles (plan B: F4 / F5 / S10 / S13 / L63)
 
 Researcher output, 2026-11-19. Times are seconds after liftoff. `m:ss` converted, conversion shown. "derived" = my subtraction.
@@ -704,7 +720,7 @@ jsc.nasa.gov / historycollection.jsc.nasa.gov mission_trans PDFs return an HTML 
    `titan-iiie-centaur` already cites the TC-4 (Viking 1) flight data (TM X-73475); the Helios reports give the two-burn escape sequence and
    spacecraft separation. No primary Voyager sequence was found.
 7. **Athena II**: LMMS Lunar Prospector Mission Handbook Table 6.3-3 has the whole nominal sequence incl. separation from the OAM at 3,315 s.
-8. **Atlas-Centaur AC-19/AC-20 (Mariner 6/7)**: NASA TM X-2278 flight events: BECO 147.1 s (AC-20), spacecraft separation 820.6 s,
+8. **Atlas-Centaur AC-20/AC-19 (Mariner VI/VII; AC-20 flew Mariner VI on 1969-02-24, TM X-2278 p. 3)**: NASA TM X-2278 flight events: BECO 147.1 s (AC-20), spacecraft separation 820.6 s,
    95 s after Centaur MECO 725.5 s.
 9. **Falcon 9 Crew Dragon**: Dragon separates 198 s after SECO-1 (Inspiration4) and 197 s after SECO-1 (Polaris Dawn). Secondary (both are
    reproductions of SpaceX's published timeline; not NASA).
@@ -838,7 +854,11 @@ Primary: *Gemini Program Mission Report Gemini XII*, https://www.ibiblio.org/apo
 L63 note: Agena/payload separation from the Atlas is 20 s after SECO and 2 s after VECO (derived: 300.30 - 280.12 = 20.2; 300.30 - 298.06 = 2.2).
 The repo profile cites Mariner 5 (TM X-1826: BECO 128.6, jettison 131.6); this is a different Atlas-Agena flight.
 
-### atlas-centaur (AC-19 / AC-20, Mariner 6 / 7, 1969; and the repo's AC-23)
+### atlas-centaur (AC-20 / AC-19, Mariner VI / VII, 1969; and the repo's AC-23)
+
+AC-20 launched Mariner VI (24 February 1969), AC-19 Mariner VII (27 March); the 2026-11-19 gap note
+had them swapped. Injection (Table V-II): Mariner VI C3 11.185 km²/s², perigee altitude 91 km,
+inclination 43.4°; Mariner VII C3 16.881.
 
 Primary: NASA TM X-2278 *Atlas-Centaur AC-19 and AC-20 Performance for the 1969 Mariner Mars Missions*, NTRS 19710023020,
 https://ntrs.nasa.gov/api/citations/19710023020/downloads/19710023020.pdf (curl, 6.3 MB, worked), "Flight events" text.

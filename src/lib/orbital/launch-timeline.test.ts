@@ -50,6 +50,15 @@ const TIMELINES: Record<string, Row[]> = {
     { event: 'max-Q', type: 'max_q', real: 51, tol: 10 },
     // OMS-2 cutoff 273:11:52:48.2 = T+2208 s, the end of the direct insertion (a silent SECO).
     { event: 'OMS-2 cutoff', type: 'seco', real: 2208, tol: 40 },
+    // OMS-2 ignition 273:11:50:50 = T+2110 s (same report). The MECO altitude is the one free
+    // value: STS-68's is unpublished, so 105 km is calibrated to these two OMS-2 times (the generic
+    // TD0358A figure, 109.7 km, lit OMS-2 at 2081 s).
+    {
+      event: 'OMS-2 ignition (MECO altitude calibrated)',
+      type: 'insertion_burn',
+      real: 2110,
+      tol: 10,
+    },
   ],
   'atlas-v': [
     // Atlas V Launch Services User's Guide Rev 11 (March 2010), Table 2.4.1-1, the 521/531-class
@@ -64,6 +73,9 @@ const TIMELINES: Record<string, Row[]> = {
     { event: '541 SRB jettison', type: 'staging', nth: 0, real: 109.3, tol: 10 },
     { event: '541 PLF jettison', type: 'fairing_jettison', real: 207.6, tol: 10 },
     { event: '541 Centaur separation', type: 'staging', nth: 1, real: 268.1, tol: 10 },
+    // Same booklet: MECO1 00:11:27.9 into the parking orbit, with Mars 2020's 4,040 kg (the
+    // profile's payload; nothing fitted).
+    { event: '541 MECO1 (Mars 2020)', type: 'seco', real: 687.9, tol: 30 },
   ],
   'delta-ii': [
     // Delta II Payload Planners Guide (Dec 2006), Table 2-1, 7925, eastern range:
@@ -173,6 +185,9 @@ const TIMELINES: Record<string, Row[]> = {
     { event: 'stage separation', type: 'staging', nth: 0, real: 189, tol: 10 },
     // NASA ESCAPADE milestones: the profile's fairingJettisonS.
     { event: 'fairing (scheduled input)', type: 'fairing_jettison', real: 230, tol: 10 },
+    // SECO-1 T+00:12:53 (same blog). GS2 thrust fitted to it: 1,559.5 kN, the published 2x BE-3U
+    // (about 1,556 kN); the orbit at SECO-1 is unpublished.
+    { event: 'SECO-1 (GS2 thrust fitted)', type: 'seco', real: 773, tol: 30 },
   ],
   'vostok-k': [
     // Vostok 1 launch timeline (secondary: russianspaceweb): stage I separation T+119, stage
@@ -213,6 +228,11 @@ const TIMELINES: Record<string, Row[]> = {
     { event: 'stage 3 cutoff', type: 'staging', nth: 2, real: 571, tol: 10 },
     // ILS Proton Mission Planner's Guide Rev 7, Table 2.3.1-1: PLF jettison 348.2 (backlog F3).
     { event: 'fairing jettison', type: 'fairing_jettison', real: 348.2, tol: 10 },
+    // Same guide, Figure 2.3.1-1: Briz-M first burn from T+680 (the stage's ignitionS, after the
+    // coast from stage 3 separation) to T+1129. CALIBRATED: the burn length comes from Briz-M
+    // thrust x1.206 (23.7 kN against the published 19.62), because the guide's standard GTO flight
+    // (payload and trajectory unpublished) is not the ExoMars flight the stage times above pin.
+    { event: 'Briz-M first-burn cutoff (calibrated)', type: 'seco', real: 1129, tol: 30 },
   ],
   'long-march-2f': [
     // Strap-ons jettisoned at T+126 s, first stage burn 166 s (secondary: spaceflight101).
@@ -293,6 +313,10 @@ const TIMELINES: Record<string, Row[]> = {
     { event: 'booster separation (fitted)', type: 'staging', nth: 0, real: 173, tol: 10 },
     { event: 'fairing (scheduled input)', type: 'fairing_jettison', real: 285, tol: 10 },
     { event: 'core shutdown (fitted)', type: 'meco', real: 475, tol: 10 },
+    // Chang'e-5 (Y5) stage-2 first shutdown 752 s (secondary: everydayastronaut; no CASC table).
+    // CALIBRATED: second-stage thrust 130 kN against the published 2x YF-75D 176.7, with a lofted
+    // boost, to hold this one secondary time.
+    { event: 'stage-2 first shutdown (calibrated)', type: 'seco', real: 752, tol: 30 },
   ],
   'm-v': [
     // JAXA Special Publication (2008), M-V-5 (Hayabusa) sequence: 1/2 separation 75, stage 2
@@ -333,29 +357,32 @@ describe('launcher staging timelines vs the real nominal flight', () => {
     });
   }
 
+  // Atlas-Centaur AC-20 (NASA TM X-2278): it launched Mariner VI (412 kg) on 24 February 1969
+  // straight onto an escape trajectory, C3 11.185 km²/s² (Table V-II), Centaur MECO T+725.5 s.
+  // The shipped profile carries Mariner 9's 998 kg to a parking orbit for the /fly scene, so this
+  // flight is the same vehicle with the flight's own payload and injection.
+  describe('atlas-centaur AC-20 (Mariner VI, direct escape)', () => {
+    const sum = integrateAscent({
+      ...load('atlas-centaur'),
+      payloadKg: 412,
+      injectionOrbit: { perigeeAltM: 91_000, c3Km2S2: 11.185 },
+    });
+    it('Centaur MECO at the injection energy, ~T+725.5 s (±30)', () => {
+      const t = first(sum.events, 'seco');
+      expect(t).toBeDefined();
+      expect(Math.abs((t as number) - 725.5)).toBeLessThanOrEqual(30);
+      const last = sum.states.at(-1)!;
+      const r = 6_371_000 + last.altKm * 1000;
+      const c3 = (last.speedKms * 1000) ** 2 / 1e6 - (2 * 3.986004418e14) / r / 1e6;
+      expect(c3).toBeGreaterThan(11.0);
+    });
+  });
+
   // Known gaps (docs/wip/2026-11-15-launcher-timeline-audit.md, closed out 2026-11-19 in
   // docs/wip/2026-11-17-launcher-timelines-sourced.md): sourced, and the model cannot hold the time
   // with a timing fit, because the cause is the trajectory, not a burn time.
   it.todo(
-    'proton-m-briz-m: Briz-M first-burn cutoff T+1129 s (ILS guide Figure 2.3.1-1); model 1099 s. The model first Briz-M burn is ~547 s against 449 s in the guide (its standard GTO profile, not ExoMars); no sourced ExoMars Briz-M burn exists',
-  );
-  it.todo(
-    'space-shuttle-stack: OMS-2 lights at 2081.5 s against STS-68 2110 s; the MECO altitude is the generic TD0358A 360,000 ft, not the STS-68 one (unpublished)',
-  );
-  it.todo(
-    'atlas-v 541 (Mars 2020): MECO-1 into a ~270 km parking orbit (secondary: Seradata) at 687.9 s; model 878.6 s. A circular parking orbit, so a trajectory calibration, not the elliptical-injection model',
-  );
-  it.todo(
-    'h3 (MMX plan, Table 2): MECO at 208 km and 6.2 km/s, SECO1 640 s at 329 km / 7.7 km/s (a parking orbit); the model reaches MECO at 180 km and 6.89 km/s, so its second stage has less to do (SECO1 ~530 s even at 329 km). Tried 2026-11-19: the published LE-9 thrust with 7.5 % less stage-1 propellant puts MECO at 292 s and 6.45 km/s, but the guidance climbs to 288 km in stage 1 (real 208 km) and SECO1 lands at 565 s; matching needs a staged-altitude guidance mode, left for a later round as low value',
-  );
-  it.todo(
-    'new-glenn (NG-2): SECO-1 773 s; model 692.4 s. The orbit at SECO-1 is unpublished (the final transfer orbit had a 100,000 km apogee), so there is no target to fit',
-  );
-  it.todo(
-    'atlas-centaur (AC-20, Mariner 7): Centaur MECO 725.5 s is a direct escape injection toward Mars, which the ascent model does not fly (it stops at an Earth orbit)',
-  );
-  it.todo(
-    'long-march-5: stage-2 shutdown 752 s (Chang e-5, secondary); model 702 s after the core fit to Y1. No CASC per-event table found',
+    'h3 (MMX plan, Table 2): MECO 208 km / 6.2 km/s, SECO1 640 s at 329 km / 7.7 km/s. Kept as the model limit (operator 2026-11-19): with the published LE-9 thrust and the stage masses, the model reaches MECO 0.4-0.6 km/s faster (6.7-6.8 km/s with stage 1 flown on its pitch table to 210-260 km) and SECO1 at 520-580 s; matching both states needs stage 1 cut to ~142 t of propellant at 2,013 kN, which would show visitors a wrong H3. Measured 2026-11-19 with scripts/ascent-events.ts and a grid fit (pitchTableStages, stage-1 propellant and thrust)',
   );
 });
 

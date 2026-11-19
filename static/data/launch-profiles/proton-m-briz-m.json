@@ -45,10 +45,11 @@
       "name": "Briz-M (S5.98M)",
       "wetKg": 22300,
       "dryKg": 2500,
-      "thrustVacKN": 19.62,
+      "thrustVacKN": 23.7,
       "ispVacS": 326,
       "engines": 1,
-      "chamberTempK": 3000
+      "chamberTempK": 3000,
+      "ignitionS": 680
     }
   ],
   "provenance": [

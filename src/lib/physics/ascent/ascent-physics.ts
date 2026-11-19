@@ -52,8 +52,10 @@ export interface LaunchStage {
   engines?: number;
   /** Combustion-chamber flame temperature (K) — adiabatic flame temp of the propellant. */
   chamberTempK?: number;
-  /** Stage 0 only: mission time (s) the core lights, when it is air-lit after liftoff
-   *  (LVM3's L110 at ~T+110 s, the S200s alone lifting it off). Absent = at liftoff. */
+  /** Mission time (s) the stage lights. Stage 0: when it is air-lit after liftoff (LVM3's L110
+   *  at ~T+110 s, the S200s alone lifting it off). An upper stage: when it lights after a
+   *  ballistic coast from the previous stage's separation (Proton's Briz-M at T+680 s, 92 s after
+   *  stage 3 leaves). Absent = at liftoff / at the previous separation. */
   ignitionS?: number;
   /** Seconds the spent stage stays attached after its cutoff before it separates (the
    *  Shuttle's external tank leaves ~18 s after MECO, the orbiter coasting with it). The
@@ -205,9 +207,10 @@ export interface LaunchProfile {
    * `altM` on the orbit `apogeeAltM` x `perigeeAltM` (climbing toward apogee) and cuts off when
    * its inertial speed reaches that orbit's speed there, leaving its residual propellant in the
    * tank, short of orbit so the tank re-enters. The final stage coasts to apogee and
-   * circularises there (OMS-2); its cutoff waits for the circular orbit. NASA TD0358A Table
-   * 3-1: MECO altitude 360,000 ft; STS-68: OMS-2 of 48.8 m/s at T+2110 s to 221 x 221 km, so
-   * MECO onto about 58 x 221 km. Absent = the core burns to depletion and the first stable
+   * circularises there (OMS-2); its cutoff waits for the circular orbit. STS-68: OMS-2 of
+   * 48.8 m/s from T+2110 s to T+2208 s, to 221 x 221 km, so MECO onto about 58 x 221 km; its MECO
+   * altitude is unpublished, so the profile's 105 km is calibrated to those two times (the
+   * generic NASA TD0358A Table 3-1 figure, 360,000 ft, lit OMS-2 at 2081 s). Absent = the core burns to depletion and the first stable
    * perigee ends the ascent.
    */
   mecoTarget?: MecoTarget;
@@ -215,9 +218,18 @@ export interface LaunchProfile {
    * An elliptical injection by the final stage (plan item 4, 2026-11-19): it climbs to orbit at
    * `perigeeAltM` as usual, then keeps burning prograde, raising the apogee, and cuts off when the
    * apogee reaches `apogeeAltM` (LVM3 C25 into Chandrayaan-3's 170 x 36,500 km, one continuous
-   * burn). Absent = the stage cuts off at the first stable orbit (a circular parking orbit).
+   * burn), or when it reaches the escape energy `c3Km2S2` (a direct escape injection). Absent =
+   * the stage cuts off at the first stable orbit (a circular parking orbit).
    */
-  injectionOrbit?: { perigeeAltM: number; apogeeAltM: number };
+  injectionOrbit?: {
+    perigeeAltM: number;
+    /** Cut off when the apogee reaches this altitude (an elliptical orbit). */
+    apogeeAltM?: number;
+    /** Cut off when the injection energy C3 (km²/s², the hyperbolic excess speed squared)
+     *  reaches this: a direct escape injection (Atlas-Centaur AC-20, Mariner VI: C3 11.185 at
+     *  Centaur MECO T+725.5 s, NASA TM X-2278). */
+    c3Km2S2?: number;
+  };
   /** Aerodynamic reference area (m²) for drag. Default 10. */
   refAreaM2?: number;
   /** Drag coefficient (dimensionless). Default 0.3. */
@@ -240,6 +252,14 @@ export interface LaunchProfile {
    * hands the upper stage a dead at-apoapsis state it cannot fly out of.
    */
   loftBoost?: boolean;
+  /** The lofted boost's reference time to apoapsis (s) for this vehicle, fitted to a published
+   *  altitude (Proton: fairing jettison at 121-125 km, ILS guide). Absent = PEG.loftTApoRefS. */
+  loftTApoRefS?: number;
+  /** The first N stages fly the pitch table all the way, above the atmosphere too, instead of
+   *  the closed-loop raise / altitude-hold: for a vehicle whose published trajectory (an altitude
+   *  or speed at a staging event) the shared guidance does not fly (Proton: fairing at 121-125 km
+   *  at T+348 s; H3: MECO at 208 km). The final stage keeps its guidance. Absent = 0. */
+  pitchTableStages?: number;
   /** Provenance rows (publisher + source URL) for the shipped JSON. */
   provenance?: { l: string; u: string }[];
 }
@@ -1019,7 +1039,7 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
       stageIndex >= 0 &&
       remainingProp > 0 &&
       !stageCutOff &&
-      !(stageIndex === 0 && t < coreIgnitionS)
+      !(t < (stageIndex === 0 ? coreIgnitionS : (profile.stages[stageIndex].ignitionS ?? 0)))
         ? coreThrustAt(alt, m, boostThrust)
         : 0;
 
@@ -1159,6 +1179,11 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
         pitch = peg?.ok ? pegPitchRad(peg, t - pegSolveT) : Math.atan2(velUp, vhAbs);
         engineOn = true;
       }
+    } else if (stageIndex >= 0 && stageIndex < (profile.pitchTableStages ?? 0)) {
+      // A lower stage that flies its pitch table all the way (the published trajectory), not the
+      // closed-loop raise / altitude-hold.
+      pitch = pitchAngleRad(profile, t);
+      engineOn = coreThrustLit > 0;
     } else if (profile.loftBoost && !isFinalStage && alt > GUIDANCE.handoverAltM) {
       // Lofted boost (#416): fly near-prograde but steer the burnout GEOMETRY —
       // keep the time-to-apoapsis near a reference so the low-TWR upper stage
@@ -1169,7 +1194,10 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
       const prograde = Math.atan2(velUp, Math.max(1, Math.abs(horizSpeed)));
       const guided = Math.max(
         prograde - 0.21,
-        Math.min(prograde + 0.21, prograde + PEG.loftTApoGainRadPerS * (PEG.loftTApoRefS - tApo)),
+        Math.min(
+          prograde + 0.21,
+          prograde + PEG.loftTApoGainRadPerS * ((profile.loftTApoRefS ?? PEG.loftTApoRefS) - tApo),
+        ),
       );
       const table = pitchAngleRad(profile, t);
       const blend = Math.max(0, Math.min(1, (alt - GUIDANCE.handoverAltM) / GUIDANCE.blendM));
@@ -1339,12 +1367,16 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
       }
     }
 
-    // Elliptical injection: the apogee raise ends on the target apogee.
+    // Elliptical injection: the apogee raise ends on the target apogee; an escape injection on
+    // the target C3 (twice the specific orbital energy).
+    const inj = profile.injectionOrbit;
     if (
       raisingApogee &&
       secoT < 0 &&
       stageIndex === profile.stages.length - 1 &&
-      apoapsisAltM >= profile.injectionOrbit!.apogeeAltM
+      inj &&
+      ((inj.apogeeAltM != null && apoapsisAltM >= inj.apogeeAltM) ||
+        (inj.c3Km2S2 != null && (2 * energy) / 1e6 >= inj.c3Km2S2))
     ) {
       pushEvent('seco', `${profile.stages[stageIndex].name} — injection orbit`);
       stageIndex = -1;

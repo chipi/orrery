@@ -3659,14 +3659,9 @@
   ],
   "/images/fleet-galleries/jiuquan-slc-43/03": [
     320,
-    1280,
-    1918
-  ],
-  "/images/fleet-galleries/jiuquan-slc-43/04": [
-    320,
     854
   ],
-  "/images/fleet-galleries/jiuquan-slc-43/05": [
+  "/images/fleet-galleries/jiuquan-slc-43/04": [
     320,
     1280,
     1920
@@ -3820,16 +3815,6 @@
     1920
   ],
   "/images/fleet-galleries/kourou-ela-4/03": [
-    320,
-    1280,
-    1920
-  ],
-  "/images/fleet-galleries/kourou-ela-4/04": [
-    320,
-    1280,
-    1920
-  ],
-  "/images/fleet-galleries/kourou-ela-4/05": [
     320,
     1280,
     1920
@@ -4369,19 +4354,14 @@
   ],
   "/images/fleet-galleries/lunar-orbiter-4/02": [
     320,
-    1232,
+    1280,
     1920
   ],
   "/images/fleet-galleries/lunar-orbiter-4/03": [
     320,
-    1280,
-    1920
-  ],
-  "/images/fleet-galleries/lunar-orbiter-4/04": [
-    320,
     1000
   ],
-  "/images/fleet-galleries/lunar-orbiter-4/05": [
+  "/images/fleet-galleries/lunar-orbiter-4/04": [
     320,
     1027,
     1643,
@@ -4955,11 +4935,6 @@
     320,
     855,
     1367,
-    1920
-  ],
-  "/images/fleet-galleries/o3b-mpower/05": [
-    320,
-    1280,
     1920
   ],
   "/images/fleet-galleries/oneweb/01": [
@@ -7768,10 +7743,6 @@
     1280
   ],
   "/images/missions/spirit/08": [
-    320,
-    640
-  ],
-  "/images/missions/spirit/09": [
     320,
     640
   ],
@@ -10894,14 +10865,9 @@
   ],
   "/images/planets/neptune/02": [
     320,
-    1280,
-    1600
-  ],
-  "/images/planets/neptune/03": [
-    320,
     780
   ],
-  "/images/planets/neptune/05": [
+  "/images/planets/neptune/04": [
     320,
     682
   ],
@@ -14967,7 +14933,7 @@
     1177,
     1580
   ],
-  "/images/planets/neptune/04": [
+  "/images/planets/neptune/03": [
     320,
     640,
     800
@@ -14984,7 +14950,7 @@
     1280,
     1843
   ],
-  "/images/missions/spirit/10": [
+  "/images/missions/spirit/09": [
     320,
     640,
     1280,
@@ -18317,12 +18283,19 @@
     2048,
     3072
   ],
-  "/images/missions/spirit/13": [
+  "/images/missions/spirit/12": [
     320,
     640,
     1280,
     2048,
     2601
+  ],
+  "/images/missions/spirit/10": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
   ],
   "/images/missions/spirit/11": [
     320,
@@ -18331,14 +18304,7 @@
     2048,
     3072
   ],
-  "/images/missions/spirit/12": [
-    320,
-    640,
-    1280,
-    2048,
-    3072
-  ],
-  "/images/missions/spirit/14": [
+  "/images/missions/spirit/13": [
     320,
     640,
     1280,

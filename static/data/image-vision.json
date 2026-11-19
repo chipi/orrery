@@ -8843,22 +8843,6 @@
       "scoring_cost_usd": 0.007491
     },
     "/images/planets/neptune/02.jpg": {
-      "score": 7,
-      "subject": "Black and white spacecraft image showing Saturn's rings arcing across a dark starfield with the planet's crescent visible in the lower right corner, likely captured by a Voyager or Pioneer probe.",
-      "category": "orbital",
-      "focal_point": {
-        "x": 0.55,
-        "y": 0.45
-      },
-      "variants": {
-        "1x1": "/images/planets/neptune/02.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T11:13:43.071Z",
-      "scoring_cost_usd": 0.004422
-    },
-    "/images/planets/neptune/03.jpg": {
       "score": 4,
       "subject": "Artist's render of a small cratered dwarf planet or moon against a starfield.",
       "category": "render",
@@ -8867,14 +8851,14 @@
         "y": 0.42
       },
       "variants": {
-        "1x1": "/images/planets/neptune/03.1x1.jpg"
+        "1x1": "/images/planets/neptune/02.1x1.jpg"
       },
       "rejected_by": "score-below-threshold",
       "fallback": false,
       "scored_at": "2026-06-08T11:13:47.305Z",
       "scoring_cost_usd": 0.003921
     },
-    "/images/planets/neptune/05.jpg": {
+    "/images/planets/neptune/04.jpg": {
       "score": 8,
       "subject": "Crescent view of Earth from orbit showing the thin blue atmospheric limb against the blackness of space.",
       "category": "orbital",
@@ -8883,7 +8867,7 @@
         "y": 0.65
       },
       "variants": {
-        "1x1": "/images/planets/neptune/05.1x1.jpg"
+        "1x1": "/images/planets/neptune/04.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
@@ -13315,22 +13299,6 @@
       "scoring_cost_usd": 0.005169
     },
     "/images/missions/spirit/08.jpg": {
-      "score": 6,
-      "subject": "Anaglyph 3D stereoscopic panorama of the Martian surface showing rocky terrain and hills, captured by a Mars rover.",
-      "category": "surface",
-      "focal_point": {
-        "x": 0.5,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": "/images/missions/spirit/08.1x1.jpg"
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-08T10:56:56.900Z",
-      "scoring_cost_usd": 0.003183
-    },
-    "/images/missions/spirit/09.jpg": {
       "score": 4,
       "subject": "Anaglyph 3D panoramic view of the Martian surface showing rocky terrain with rover wheel tracks, captured by a Mars Exploration Rover.",
       "category": "surface",
@@ -13339,7 +13307,7 @@
         "y": 0.5
       },
       "variants": {
-        "1x1": "/images/missions/spirit/09.1x1.jpg"
+        "1x1": "/images/missions/spirit/08.1x1.jpg"
       },
       "rejected_by": "score-below-threshold",
       "fallback": false,
@@ -20177,22 +20145,6 @@
       "scoring_cost_usd": 0.008049
     },
     "/images/fleet-galleries/lunar-orbiter-4/02.jpg": {
-      "score": 7,
-      "subject": "Crescent Moon in sharp detail with a crescent Earth visible in the background against black space, captured from lunar orbit.",
-      "category": "orbital",
-      "focal_point": {
-        "x": 0.65,
-        "y": 0.5
-      },
-      "variants": {
-        "1x1": ""
-      },
-      "rejected_by": null,
-      "fallback": false,
-      "scored_at": "2026-06-12T21:03:49.110Z",
-      "scoring_cost_usd": 0.007566
-    },
-    "/images/fleet-galleries/lunar-orbiter-4/03.jpg": {
       "score": 5,
       "subject": "Mosaic composite of the lunar far side showing cratered terrain with visible strip-seam artifacts from image stitching.",
       "category": "surface",
@@ -20208,7 +20160,7 @@
       "scored_at": "2026-06-12T21:03:52.315Z",
       "scoring_cost_usd": 0.007311
     },
-    "/images/fleet-galleries/lunar-orbiter-4/04.jpg": {
+    "/images/fleet-galleries/lunar-orbiter-4/03.jpg": {
       "score": 6,
       "subject": "Grayscale orbital photograph of a heavily cratered lunar surface showing numerous small impact craters and a prominent ridge or escarpment in the upper right quadrant.",
       "category": "surface",
@@ -20224,7 +20176,7 @@
       "scored_at": "2026-06-12T21:03:55.807Z",
       "scoring_cost_usd": 0.006579
     },
-    "/images/fleet-galleries/lunar-orbiter-4/05.jpg": {
+    "/images/fleet-galleries/lunar-orbiter-4/04.jpg": {
       "score": 8,
       "subject": "An Atlas-Agena rising from Cape Kennedy with Lunar Orbiter 4, 4 May 1967.",
       "category": "launch",
@@ -29347,7 +29299,7 @@
       "scored_at": "2026-11-09T10:53:55.756Z",
       "scoring_cost_usd": 0
     },
-    "/images/missions/spirit/11.jpg": {
+    "/images/missions/spirit/10.jpg": {
       "score": 8,
       "subject": "Spirit's view across the rock-strewn plain of Gusev Crater toward Bonneville Crater",
       "category": "surface",
@@ -29360,7 +29312,7 @@
       "scored_at": "2026-11-09T10:53:55.756Z",
       "scoring_cost_usd": 0
     },
-    "/images/missions/spirit/12.jpg": {
+    "/images/missions/spirit/11.jpg": {
       "score": 8,
       "subject": "Spirit's panorama from Larry's Lookout on the climb up Husband Hill",
       "category": "surface",
@@ -29373,7 +29325,7 @@
       "scored_at": "2026-11-09T10:53:55.756Z",
       "scoring_cost_usd": 0
     },
-    "/images/missions/spirit/13.jpg": {
+    "/images/missions/spirit/12.jpg": {
       "score": 8,
       "subject": "Spirit's view beside Home Plate, with the rover's deck and solar panels in front",
       "category": "surface",
@@ -29386,7 +29338,7 @@
       "scored_at": "2026-11-09T10:53:55.756Z",
       "scoring_cost_usd": 0
     },
-    "/images/missions/spirit/14.jpg": {
+    "/images/missions/spirit/13.jpg": {
       "score": 8,
       "subject": "Spirit's view from Troy, where its wheels sank into soft soil",
       "category": "surface",

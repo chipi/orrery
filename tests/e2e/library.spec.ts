@@ -113,7 +113,8 @@ test.describe('/library — outbound LEARN-link bill of links', () => {
     const block = page.getByTestId('library-surface-sources');
     await expect(block.getByRole('heading', { level: 3 })).toHaveText('Moon and Mars surface data');
     const rows = block.locator('li[data-source-id]');
-    await expect(rows).toHaveCount(5);
+    // D8 (2026-11-18): the Yutu and Pragyan routes cite the mission teams' published maps.
+    await expect(rows).toHaveCount(7);
     const hosts = await rows
       .locator('a')
       .evaluateAll((as) => as.map((a) => new URL((a as HTMLAnchorElement).href).hostname));
@@ -123,9 +124,13 @@ test.describe('/library — outbound LEARN-link bill of links', () => {
       'mars.nasa.gov',
       'an.rsl.wustl.edu',
       'www.uahirise.org',
+      'doi.org',
+      'doi.org',
     ]);
     await expect(rows.nth(0).locator('p')).toContainText('Narrow Angle Camera');
     await expect(rows.nth(4).locator('p')).toContainText('Zhurong');
+    await expect(rows.nth(5)).toHaveAttribute('data-source-id', 'wan2014-yutu-traverse');
+    await expect(rows.nth(6)).toHaveAttribute('data-source-id', 'vadawale2024-pragyan-stops');
   });
 
   test('a source block draws 10 entity clusters and a "Show all N" chip; the contents link lands on the open header (25a)', async ({

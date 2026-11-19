@@ -3,8 +3,10 @@ import { test, expect, type Page } from '@playwright/test';
 /**
  * Moon traverses take the Mars line style (UXD-044). The drawing itself is
  * WebGL and is checked in the unit tests (`surface-traverses.build.test.ts`);
- * here: the route view still opens for a Moon rover and the two 9-point
- * routes say "Approximate route" in the panel, the mapped tracks do not.
+ * here: the route view opens for a Moon rover, and no mapped track says
+ * "Approximate route". Chang'e 3 / Yutu and Chandrayaan-3 / Pragyan were the two 9-point
+ * approximate routes until D8 (2026-11-18) digitised them from the mission teams' published
+ * maps; no Moon route is approximate now.
  */
 
 async function waitForScene(page: Page): Promise<void> {
@@ -18,17 +20,7 @@ async function waitForScene(page: Page): Promise<void> {
 }
 
 test.describe('Moon traverse style (UXD-044)', () => {
-  for (const site of ['change3', 'chandrayaan3']) {
-    test(`${site} — the panel says "Approximate route"`, async ({ page }) => {
-      await page.goto(`/moon?site=${site}`);
-      await waitForScene(page);
-      await expect(page.locator('[data-testid="traverse-approximate"]')).toBeVisible({
-        timeout: 15000,
-      });
-    });
-  }
-
-  for (const site of ['luna17', 'apollo17']) {
+  for (const site of ['change3', 'chandrayaan3', 'luna17', 'apollo17']) {
     test(`${site} — a mapped track has the route view and no "Approximate route"`, async ({
       page,
     }) => {

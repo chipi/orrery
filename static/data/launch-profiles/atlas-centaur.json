@@ -3,6 +3,7 @@
   "name": "Atlas SLV-3C Centaur",
   "source_tier": "flagship",
   "payloadKg": 998,
+  "liftoffThrustKN": 1752,
   "fairingKg": 1488,
   "fairingJettisonAltM": 115000,
   "refAreaM2": 7.3,

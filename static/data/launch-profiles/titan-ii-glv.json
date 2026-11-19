@@ -3,6 +3,7 @@
   "name": "Titan II GLV",
   "source_tier": "flagship",
   "payloadKg": 2800,
+  "liftoffThrustKN": 1913,
   "payloadSeparationDelayS": 30,
   "fairingKg": 0,
   "fairingJettisonAltM": 100000,

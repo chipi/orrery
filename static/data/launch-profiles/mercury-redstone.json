@@ -3,6 +3,7 @@
   "name": "Mercury-Redstone",
   "source_tier": "flagship",
   "payloadKg": 1830,
+  "liftoffThrustKN": 350,
   "payloadSeparationDelayS": 9.5,
   "fairingKg": 0,
   "fairingJettisonAltM": 80000,

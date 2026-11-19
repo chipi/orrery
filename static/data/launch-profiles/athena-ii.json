@@ -3,6 +3,7 @@
   "name": "Athena II",
   "source_tier": "flagship",
   "payloadKg": 2059,
+  "liftoffThrustKN": 1468,
   "fairingKg": 700,
   "fairingJettisonAltM": 115000,
   "refAreaM2": 4.4,

@@ -3,6 +3,7 @@
   "name": "Long March 3B/E",
   "source_tier": "flagship",
   "payloadKg": 3780,
+  "liftoffThrustKN": 5923.2,
   "fairingKg": 1500,
   "fairingJettisonAltM": 115000,
   "refAreaM2": 16,

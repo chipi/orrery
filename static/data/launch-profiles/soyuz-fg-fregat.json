@@ -3,6 +3,7 @@
   "name": "Soyuz-FG / Fregat",
   "source_tier": "flagship",
   "payloadKg": 7458,
+  "liftoffThrustKN": 4146.4,
   "payloadSeparationDelayS": 3.3,
   "fairingKg": 1000,
   "fairingJettisonAltM": 110000,

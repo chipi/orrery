@@ -3,6 +3,7 @@
   "name": "Starship / Super Heavy",
   "source_tier": "flagship",
   "payloadKg": 100000,
+  "liftoffThrustKN": 74400,
   "fairingKg": 0,
   "refAreaM2": 63.6,
   "cd": 0.3,

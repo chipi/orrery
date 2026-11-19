@@ -3,6 +3,7 @@
   "name": "Long March 5",
   "source_tier": "flagship",
   "payloadKg": 8200,
+  "liftoffThrustKN": 10636,
   "fairingKg": 3000,
   "fairingJettisonAltM": 115000,
   "refAreaM2": 35,

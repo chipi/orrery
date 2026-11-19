@@ -1,6 +1,6 @@
 /**
  * What the deep-sky BEST MONTHS row says at a set of reader latitudes: for each object, the
- * window (or "no row") and its highest altitude. A review aid for the WELL_PLACED thresholds
+ * window (or "no row") and its highest altitude. A review aid for the BEST_MONTHS rule
  * (search backlog P1 close-out, 2026-11-19).
  *
  *   npx tsx scripts/sky-rows-review.ts                 # default objects and latitudes

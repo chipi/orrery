@@ -220,34 +220,25 @@ describe('toDate (J2000 to the table year) and refractionDeg', () => {
   });
 });
 
-describe('bestMonths (JPL Horizons Sun, 20 degrees up in astronomical darkness, 4 hours)', () => {
-  it('M42 from 52.5 N: November to January; from 20 N and 34 S a wider run around December', () => {
-    expect(monthsAt('m42', 52.5)).toEqual({ from: 10, mid: 11, to: 0 });
-    expect(monthsAt('m42', 20)).toEqual({ from: 9, mid: 11, to: 1 });
-    expect(monthsAt('m42', -34)).toEqual({ from: 9, mid: 11, to: 1 });
+describe('bestMonths (opposite the Sun within 3 h of RA, above 20 degrees; backlog P1)', () => {
+  it('the summer objects are summer objects from the north (the old rule said Feb-Apr for M13)', () => {
+    expect(monthsAt('m13', 52.5)).toEqual({ from: 4, mid: 5, to: 6 });
+    expect(monthsAt('m13', 60)).toEqual({ from: 4, mid: 5, to: 6 });
+    expect(monthsAt('m57', 52.5)?.mid).toBe(6);
+    expect(monthsAt('m27', 52.5)?.mid).toBe(6);
   });
-  it('M31 from 52.5 N: August to January, best in November; from 20 N July to December', () => {
-    expect(monthsAt('m31', 52.5)).toEqual({ from: 7, mid: 10, to: 0 });
-    expect(monthsAt('m31', 20)).toEqual({ from: 6, mid: 9, to: 11 });
+  it('M42 is a December object and M31 an October one, at every latitude it rises at', () => {
+    for (const lat of [52.5, 20, -34]) expect(monthsAt('m42', lat)?.mid).toBe(11);
+    for (const lat of [52.5, 20]) expect(monthsAt('m31', lat)?.mid).toBe(9);
   });
-  it('M13 in May to August from 20 N, M8 in June from the southern hemisphere', () => {
-    expect(monthsAt('m13', 20)?.mid).toBe(4);
-    expect(monthsAt('m8', -34)?.mid).toBe(5);
-  });
-  it('a window can run across the year end and start', () => {
+  it('a window is three months and can run across the year end', () => {
     const w = monthsAt('m42', 52.5)!;
-    expect(w.from).toBeGreaterThan(w.to);
+    expect(w).toEqual({ from: 10, mid: 11, to: 0 });
   });
-  it('never well placed means null: 30 Doradus from 52.5 N and 20 N, M31 from 34 S', () => {
+  it('no row where the object never climbs 20 degrees: 30 Doradus from 52.5 N and 20 N, M31 from 34 S', () => {
     expect(monthsAt('30-doradus', 52.5)).toBeNull();
     expect(monthsAt('30-doradus', 20)).toBeNull();
     expect(monthsAt('m31', -34)).toBeNull();
-  });
-  it('a circumpolar object is well placed through the dark months: Cas A from 52.5 N is August to April', () => {
-    expect(monthsAt('cas-a', 52.5)).toEqual({ from: 7, mid: 11, to: 3 });
-  });
-  it('a southern object from far south is well placed all year (30 Doradus from 34 S)', () => {
-    expect(monthsAt('30-doradus', -34)).toEqual({ from: 0, mid: 9, to: 11 });
   });
   it('there is no astronomical darkness at 52.5 N in June, so every object scores 0 then', () => {
     for (const o of objects) {
@@ -293,7 +284,7 @@ describe('against the Horizons observer-table reference (30 objects, 3 latitudes
     for (const r of reference.rows) {
       const o = reference.objects.find((x) => x.id === r.id)!;
       const e = toDate(o.ra, o.dec);
-      const ours = bestMonths(e.ra, e.dec, r.lat, sun);
+      const ours = windowOfMonthlyHours(monthlyNightHours(e.ra, e.dec, r.lat, sun));
       if (!ours || !r.window) {
         if (ours || r.window)
           off.push(`${r.id}@${r.site}: ${JSON.stringify(ours)} vs ${JSON.stringify(r.window)}`);
@@ -313,7 +304,7 @@ describe('against the Horizons observer-table reference (30 objects, 3 latitudes
       const e = toDate(o.ra, o.dec);
       const hours = monthlyNightHours(e.ra, e.dec, r.lat, sun);
       worst = Math.max(worst, ...hours.map((h, m) => Math.abs(h - r.hours[m])));
-      const ours = bestMonths(e.ra, e.dec, r.lat, sun);
+      const ours = windowOfMonthlyHours(monthlyNightHours(e.ra, e.dec, r.lat, sun));
       if (
         JSON.stringify(ours?.from) === JSON.stringify(r.window?.from) &&
         ours?.to === r.window?.to

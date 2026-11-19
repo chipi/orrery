@@ -47,18 +47,29 @@
 {/if}
 
 <style>
+  /* Three cells a row, on six tracks so the last row can fill itself: a lone last cell takes the
+     whole row and two last cells take half each. A full grid keeps its height (nine facts, three
+     rows); a short one stops leaving a third-wide cell whose label breaks mid-word. */
   .grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(6, minmax(0, 1fr));
     gap: 7px;
     margin-bottom: 12px;
   }
   .cell {
+    grid-column: span 2;
     min-width: 0;
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.06);
     border-radius: 4px;
     padding: 8px 10px;
+  }
+  .cell:last-child:nth-child(3n + 1) {
+    grid-column: span 6;
+  }
+  .cell:nth-last-child(2):nth-child(3n + 1),
+  .cell:last-child:nth-child(3n + 2) {
+    grid-column: span 3;
   }
   .cell-label {
     font-family: var(--font-mono, 'Space Mono', monospace);

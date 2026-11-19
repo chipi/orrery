@@ -152,6 +152,9 @@ const TIMELINES: Record<string, Row[]> = {
     // NASA SP-4029 Apollo 7 timeline: S-IB outboard cutoff 144.32, S-IB/S-IVB separation 145.59.
     { event: 'S-IB cutoff', type: 'meco', real: 144.32, tol: 10 },
     { event: 'S-IB/S-IVB separation', type: 'staging', nth: 0, real: 145.59, tol: 10 },
+    // S-IVB cutoff 616.76 s (SP-4029) with the real payload (18,542 kg) and J-2 thrust schedule
+    // (AS-205 trajectory, NTRS 19700014017) on a lofted S-IVB ascent, into 228 km.
+    { event: 'S-IVB cutoff', type: 'seco', real: 616.76, tol: 30 },
   ],
   lvm3: [
     // ISRO LVM3-M4 / Chandrayaan-3 brochure, nominal flight sequence: 2xS200 separation 127.00,
@@ -350,9 +353,6 @@ describe('launcher staging timelines vs the real nominal flight', () => {
   );
   it.todo(
     'atlas-centaur (AC-20, Mariner 7): Centaur MECO 725.5 s is a direct escape injection toward Mars, which the ascent model does not fly (it stops at an Earth orbit)',
-  );
-  it.todo(
-    'saturn-ib (Apollo 7): S-IVB cutoff 616.76 s; model 543.2 s. NTRS 19700014017 gives the J-2 at 226,019 lbf to 454.8 s then 176,087 lbf, and 36,600 lb spacecraft + 4,280 lb IU above the S-IVB; with that real 18.5 t payload the model S-IB trajectory cannot reach orbit, so the profile keeps its 10 t stand-in',
   );
   it.todo(
     'long-march-5: stage-2 shutdown 752 s (Chang e-5, secondary); model 702 s after the core fit to Y1. No CASC per-event table found',

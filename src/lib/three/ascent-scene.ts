@@ -400,6 +400,20 @@ export function setWingDeploy(holder: THREE.Object3D, k: number): void {
 /** Capsules that ascended under a jettisonable nose fairing (not exposed). */
 export const FAIRED_CAPSULES = new Set(['vostok', 'voskhod', 'soyuz', 'shenzhou']);
 
+/**
+ * Euler rotation (x, y, z) of a dropped first stage in the vehicle frame, `p` 0→1 through its
+ * drop. A booster that lands (Falcon 9, New Glenn, Super Heavy; the vehicle frame is turned
+ * `-fromVertical` about z) turns by `+fromVertical` so it ends upright in the world, engines
+ * down, and drops away tail-first; a spent stage tumbles.
+ */
+export function stageDropRotation(
+  p: number,
+  fromVertical: number,
+  recovered: boolean,
+): [number, number, number] {
+  return recovered ? [0, 0, p * fromVertical] : [p * 2.4, 0, p * 1.2];
+}
+
 export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   const vehLen = opts.vehicleLengthKm ?? VEHICLE_LENGTH_KM;
   const scene = new THREE.Scene();
@@ -1103,7 +1117,7 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
     const [bp, bLen] = stageDrop(s.t, stagingT);
     booster.visible = bp < 1;
     booster.position.y = -bp * vehLen * bLen;
-    booster.rotation.set(bp * 2.4, 0, bp * 1.2);
+    booster.rotation.set(...stageDropRotation(bp, fromVertical, model.recovered?.booster === true));
     // Only a gentle shrink (item 4) — the drift-away already recedes it via
     // perspective; keep it big enough to read as a distinct spent stage.
     booster.scale.setScalar(1 - 0.18 * bp);
@@ -1137,13 +1151,17 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
         const b = strapOnBase[i];
         body.visible = sp < 1;
         body.position.set(b.x * (1 + sp * 0.8), b.y - sp * vehLen * 2.6, b.z * (1 + sp * 0.8));
-        body.rotation.z = -Math.sign(b.x || 1) * sp * 1.2;
+        body.rotation.z = model.recovered?.strapOns
+          ? sp * fromVertical
+          : -Math.sign(b.x || 1) * sp * 1.2;
       });
     } else if (strapOnGroup) {
       const sp = sepProgress(s.t, strapOnSepT, BOOSTER_SEP_S);
       strapOnGroup.visible = sp < 1;
       strapOnGroup.position.y = -sp * vehLen * 2.6;
-      strapOnGroup.rotation.set(sp * 1.6, 0, 0);
+      // Falcon Heavy's side boosters fly home and land upright, tail-down.
+      if (model.recovered?.strapOns) strapOnGroup.rotation.set(0, 0, sp * fromVertical);
+      else strapOnGroup.rotation.set(sp * 1.6, 0, 0);
       strapOnGroup.scale.setScalar(1 - 0.18 * sp);
     }
 

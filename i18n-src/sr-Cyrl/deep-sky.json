@@ -1149,5 +1149,53 @@
     "subject": "Јато галаксија",
     "type": "Јато галаксија",
     "distance": "~330 милиона св. год."
+  },
+  "m18": {
+    "title": "M18 · NGC 6613",
+    "subject": "Звездано јато",
+    "type": "Звездано јато",
+    "distance": "~4.900 св. год."
+  },
+  "m36": {
+    "title": "M36 · NGC 1960",
+    "subject": "Звездано јато",
+    "type": "Звездано јато",
+    "distance": "~3.670 св. год."
+  },
+  "m62": {
+    "title": "M62 · NGC 6266",
+    "subject": "Кугласто јато",
+    "type": "Кугласто јато",
+    "distance": "~19.670 св. год."
+  },
+  "leo-ii": {
+    "title": "Патуљаста галаксија Лав II",
+    "subject": "Галаксија",
+    "type": "Патуљаста сфероидна галаксија",
+    "distance": "~760.000 св. год."
+  },
+  "horologium-reticulum": {
+    "title": "Abell 3266",
+    "subject": "Јато галаксија",
+    "type": "Јато галаксија",
+    "distance": ""
+  },
+  "virgo-ii-groups": {
+    "title": "NGC 4753",
+    "subject": "Галаксија",
+    "type": "Галаксија",
+    "distance": ""
+  },
+  "ophiuchus-supercluster": {
+    "title": "Јато Змијоноше",
+    "subject": "Јато галаксија",
+    "type": "Јато галаксија",
+    "distance": ""
+  },
+  "fornax-eridanus": {
+    "title": "Јато Пећи",
+    "subject": "Јато галаксија",
+    "type": "Јато галаксија",
+    "distance": ""
   }
 }

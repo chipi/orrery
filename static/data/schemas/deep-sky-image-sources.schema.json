@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "deep-sky-image-sources.schema.json",
-  "title": "Deep-sky gallery image sources (Wikimedia Commons)",
-  "description": "Keyed by deep-sky gallery id; every record is a full Commons provenance record.",
+  "title": "Deep-sky gallery image sources (Wikimedia Commons, or a survey cutout)",
+  "description": "Keyed by deep-sky gallery id; every record is a full provenance record: a Commons file (commons_file required), or direct-other for an image taken straight from its publisher (the Legacy Surveys cutout of Leo II, 2026-11-19).",
   "type": "object",
   "minProperties": 1,
   "propertyNames": {
@@ -18,7 +18,6 @@
         "source_type",
         "source_url",
         "image_url",
-        "commons_file",
         "credit",
         "author",
         "agency",
@@ -30,7 +29,10 @@
       "properties": {
         "source_type": {
           "type": "string",
-          "const": "wikimedia-commons"
+          "enum": [
+            "wikimedia-commons",
+            "direct-other"
+          ]
         },
         "source_url": {
           "type": "string",
@@ -68,6 +70,18 @@
           "type": "string",
           "format": "date-time"
         }
+      },
+      "if": {
+        "properties": {
+          "source_type": {
+            "const": "wikimedia-commons"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "commons_file"
+        ]
       }
     }
   }

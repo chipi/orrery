@@ -1149,5 +1149,53 @@
     "subject": "Cúmulo de galaxias",
     "type": "Cúmulo de galaxias",
     "distance": "~330 millones años luz"
+  },
+  "m18": {
+    "title": "M18 · NGC 6613",
+    "subject": "Cúmulo estelar",
+    "type": "Cúmulo estelar",
+    "distance": "~4,900 años luz"
+  },
+  "m36": {
+    "title": "M36 · NGC 1960",
+    "subject": "Cúmulo estelar",
+    "type": "Cúmulo estelar",
+    "distance": "~3,670 años luz"
+  },
+  "m62": {
+    "title": "M62 · NGC 6266",
+    "subject": "Cúmulo globular",
+    "type": "Cúmulo globular",
+    "distance": "~19,670 años luz"
+  },
+  "leo-ii": {
+    "title": "Leo II",
+    "subject": "Galaxia",
+    "type": "Galaxia esferoidal enana",
+    "distance": "~760.000 años luz"
+  },
+  "horologium-reticulum": {
+    "title": "Abell 3266",
+    "subject": "Cúmulo de galaxias",
+    "type": "Cúmulo de galaxias",
+    "distance": ""
+  },
+  "virgo-ii-groups": {
+    "title": "NGC 4753",
+    "subject": "Galaxia",
+    "type": "Galaxia",
+    "distance": ""
+  },
+  "ophiuchus-supercluster": {
+    "title": "Cúmulo de Ofiuco",
+    "subject": "Cúmulo de galaxias",
+    "type": "Cúmulo de galaxias",
+    "distance": ""
+  },
+  "fornax-eridanus": {
+    "title": "Cúmulo de Fornax",
+    "subject": "Cúmulo de galaxias",
+    "type": "Cúmulo de galaxias",
+    "distance": ""
   }
 }

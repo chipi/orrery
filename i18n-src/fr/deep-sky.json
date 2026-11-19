@@ -1149,5 +1149,53 @@
     "subject": "Amas de galaxies",
     "type": "Amas de galaxies",
     "distance": "~330 millions al"
+  },
+  "m18": {
+    "title": "M18 · NGC 6613",
+    "subject": "Amas d'étoiles",
+    "type": "Amas d'étoiles",
+    "distance": "~4 900 al"
+  },
+  "m36": {
+    "title": "M36 · NGC 1960",
+    "subject": "Amas d'étoiles",
+    "type": "Amas d'étoiles",
+    "distance": "~3 670 al"
+  },
+  "m62": {
+    "title": "M62 · NGC 6266",
+    "subject": "Amas globulaire",
+    "type": "Amas globulaire",
+    "distance": "~19 670 al"
+  },
+  "leo-ii": {
+    "title": "Leo II",
+    "subject": "Galaxie",
+    "type": "Galaxie sphéroïdale naine",
+    "distance": "~760 000 al"
+  },
+  "horologium-reticulum": {
+    "title": "Abell 3266",
+    "subject": "Amas de galaxies",
+    "type": "Amas de galaxies",
+    "distance": ""
+  },
+  "virgo-ii-groups": {
+    "title": "NGC 4753",
+    "subject": "Galaxie",
+    "type": "Galaxie",
+    "distance": ""
+  },
+  "ophiuchus-supercluster": {
+    "title": "Amas d'Ophiuchus",
+    "subject": "Amas de galaxies",
+    "type": "Amas de galaxies",
+    "distance": ""
+  },
+  "fornax-eridanus": {
+    "title": "Amas du Fourneau",
+    "subject": "Amas de galaxies",
+    "type": "Amas de galaxies",
+    "distance": ""
   }
 }

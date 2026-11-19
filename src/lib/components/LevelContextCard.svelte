@@ -20,6 +20,7 @@
     shell,
     card,
     align = 'right',
+    covered = false,
     panelCoverPx = 0,
     width = $bindable(0),
   }: {
@@ -28,6 +29,9 @@
     card: LevelCardState;
     /** The side the navigator row sits on: the card hangs under it. */
     align?: 'left' | 'right';
+    /** An open INDEX panel lies over the card's place (the outer scales): the card steps aside
+     *  until it closes, its fold state kept. */
+    covered?: boolean;
     /** Width a docked side panel covers at the right edge; the card sits left of it. */
     panelCoverPx?: number;
     /** The card's measured width, for the HUD row that must stop before it (0 while folded). */
@@ -63,7 +67,7 @@
   class="level-card"
   class:left={align === 'left'}
   bind:clientWidth={width}
-  hidden={!card.expanded}
+  hidden={!card.expanded || covered}
   style:right={align === 'right' ? `${panelCoverPx + 8}px` : undefined}
   aria-label={s.name()}
   data-testid="explore-level-card"

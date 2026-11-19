@@ -1149,5 +1149,53 @@
     "subject": "Aglomerado de galáxias",
     "type": "Aglomerado de galáxias",
     "distance": "~330 milhões anos-luz"
+  },
+  "m18": {
+    "title": "M18 · NGC 6613",
+    "subject": "Aglomerado estelar",
+    "type": "Aglomerado estelar",
+    "distance": "~4.900 anos-luz"
+  },
+  "m36": {
+    "title": "M36 · NGC 1960",
+    "subject": "Aglomerado estelar",
+    "type": "Aglomerado estelar",
+    "distance": "~3.670 anos-luz"
+  },
+  "m62": {
+    "title": "M62 · NGC 6266",
+    "subject": "Aglomerado globular",
+    "type": "Aglomerado globular",
+    "distance": "~19.670 anos-luz"
+  },
+  "leo-ii": {
+    "title": "Leo II",
+    "subject": "Galáxia",
+    "type": "Galáxia esferoidal anã",
+    "distance": "~760.000 anos-luz"
+  },
+  "horologium-reticulum": {
+    "title": "Abell 3266",
+    "subject": "Aglomerado de galáxias",
+    "type": "Aglomerado de galáxias",
+    "distance": ""
+  },
+  "virgo-ii-groups": {
+    "title": "NGC 4753",
+    "subject": "Galáxia",
+    "type": "Galáxia",
+    "distance": ""
+  },
+  "ophiuchus-supercluster": {
+    "title": "Aglomerado do Serpentário",
+    "subject": "Aglomerado de galáxias",
+    "type": "Aglomerado de galáxias",
+    "distance": ""
+  },
+  "fornax-eridanus": {
+    "title": "Aglomerado da Fornalha",
+    "subject": "Aglomerado de galáxias",
+    "type": "Aglomerado de galáxias",
+    "distance": ""
   }
 }

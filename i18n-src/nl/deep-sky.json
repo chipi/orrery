@@ -1149,5 +1149,53 @@
     "subject": "Cluster van sterrenstelsels",
     "type": "Cluster van sterrenstelsels",
     "distance": "~330 miljoen lichtjaar"
+  },
+  "m18": {
+    "title": "M18 · NGC 6613",
+    "subject": "Sterrencluster",
+    "type": "Sterrencluster",
+    "distance": "~4.900 lichtjaar"
+  },
+  "m36": {
+    "title": "M36 · NGC 1960",
+    "subject": "Sterrencluster",
+    "type": "Sterrencluster",
+    "distance": "~3.670 lichtjaar"
+  },
+  "m62": {
+    "title": "M62 · NGC 6266",
+    "subject": "Bolhoop",
+    "type": "Bolhoop",
+    "distance": "~19.670 lichtjaar"
+  },
+  "leo-ii": {
+    "title": "Leo II",
+    "subject": "Sterrenstelsel",
+    "type": "Dwergstelsel (sferoidaal)",
+    "distance": "~760.000 lichtjaar"
+  },
+  "horologium-reticulum": {
+    "title": "Abell 3266",
+    "subject": "Cluster van sterrenstelsels",
+    "type": "Cluster van sterrenstelsels",
+    "distance": ""
+  },
+  "virgo-ii-groups": {
+    "title": "NGC 4753",
+    "subject": "Sterrenstelsel",
+    "type": "Sterrenstelsel",
+    "distance": ""
+  },
+  "ophiuchus-supercluster": {
+    "title": "Slangendragercluster",
+    "subject": "Cluster van sterrenstelsels",
+    "type": "Cluster van sterrenstelsels",
+    "distance": ""
+  },
+  "fornax-eridanus": {
+    "title": "Fornaxcluster",
+    "subject": "Cluster van sterrenstelsels",
+    "type": "Cluster van sterrenstelsels",
+    "distance": ""
   }
 }

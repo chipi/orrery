@@ -50,9 +50,11 @@ describe('getUniverseHero (B3, UXD-023)', () => {
     expect((await getUniverseHero('local-group', 'triangulum', 'ja'))?.pictured).toBeTruthy();
   });
 
-  it('no entry, no hero: Laniakea, the Virgo II groups and Gargantua have none; Cygnus X-1 has its Chandra image', async () => {
+  it('no entry, no hero: Laniakea and the Canes Venatici Spur have none; Cygnus X-1 has its Chandra image', async () => {
     expect(await getUniverseHero('laniakea', 'virgo-supercluster')).toBeNull();
-    expect(await getUniverseHero('virgo', 'virgo-ii-groups')).toBeNull();
+    expect(await getUniverseHero('virgo', 'canes-venatici-spur')).toBeNull();
+    // S5 (2026-11-19): the Virgo II groups show a member galaxy, NGC 4753, as "pictured".
+    expect((await getUniverseHero('virgo', 'virgo-ii-groups'))?.pictured).toBeTruthy();
     expect((await getUniverseHero('black-holes', 'cygnus-x-1'))?.full).toBe(
       '/images/deep-sky/cygnus-x-1.jpg',
     );

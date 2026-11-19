@@ -2166,6 +2166,7 @@
         shell={contextId as ShellId}
         card={levelCard}
         align={contextId === 'solar-system' && !activeBlackHole ? 'right' : 'left'}
+        covered={indexOpen && !(contextId === 'solar-system' && !activeBlackHole)}
         {panelCoverPx}
         bind:width={levelCardWidth}
       />

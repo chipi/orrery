@@ -120841,6 +120841,182 @@
       "pageid": null,
       "nasa_id": "101-KSC-75P-158",
       "fetched_at": "2026-11-15T14:29:38.876Z"
+    },
+    {
+      "id": "317bcb59e22d3e64",
+      "path": "/images/deep-sky/m18.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:M18, NGC 6613 (noao-m18).tiff",
+      "author": "Hillary Mathis · REU program · NOIRLab · NSF · AURA",
+      "agency": "NSF NOIRLab",
+      "source_url": "https://commons.wikimedia.org/wiki/File:M18,_NGC_6613_(noao-m18).tiff",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/M18,_NGC_6613_(noao-m18).tiff",
+      "license_short": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "license_rationale": "CC BY 4.0 per the Commons file page (checked 2026-11-19); the author is credited and the image is resized and re-encoded.",
+      "modifications": [
+        "downloaded-via-special-filepath",
+        "resized",
+        "reencoded-jpeg"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": null,
+      "fetched_at": "2026-11-19T12:00:00.000Z"
+    },
+    {
+      "id": "53504d4161267162",
+      "path": "/images/deep-sky/m36.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:M36, NGC 1960 (noao-m36).jpg",
+      "author": "NOIRLab · NSF · AURA",
+      "agency": "NSF NOIRLab",
+      "source_url": "https://commons.wikimedia.org/wiki/File:M36,_NGC_1960_(noao-m36).jpg",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/M36,_NGC_1960_(noao-m36).jpg",
+      "license_short": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "license_rationale": "CC BY 4.0 per the Commons file page (checked 2026-11-19); the author is credited and the image is resized and re-encoded.",
+      "modifications": [
+        "downloaded-via-special-filepath",
+        "resized",
+        "reencoded-jpeg"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": null,
+      "fetched_at": "2026-11-19T12:00:00.000Z"
+    },
+    {
+      "id": "e832c9f9ff7c9e92",
+      "path": "/images/deep-sky/m62.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:Messier62 - HST - Potw1915a.jpg",
+      "author": "ESA/Hubble · NASA · S. Anderson et al.",
+      "agency": "ESA / NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Messier62_-_HST_-_Potw1915a.jpg",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Messier62_-_HST_-_Potw1915a.jpg",
+      "license_short": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "license_rationale": "CC BY 4.0 per the Commons file page (checked 2026-11-19); the author is credited and the image is resized and re-encoded.",
+      "modifications": [
+        "downloaded-via-special-filepath",
+        "resized",
+        "reencoded-jpeg"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": null,
+      "fetched_at": "2026-11-19T12:00:00.000Z"
+    },
+    {
+      "id": "c04a0281d18537f4",
+      "path": "/images/deep-sky/leo-ii.jpg",
+      "source_type": "direct-other",
+      "title": "Legacy Surveys DR10 cutout, Leo II",
+      "author": "Legacy Surveys · D. Lang (Perimeter Institute)",
+      "agency": "Legacy Surveys",
+      "source_url": "https://www.legacysurvey.org/viewer?ra=168.37&dec=22.1517&layer=ls-dr10&zoom=13",
+      "image_url": "https://www.legacysurvey.org/viewer/jpeg-cutout?ra=168.37&dec=22.1517&layer=ls-dr10&pixscale=1.5&size=1024",
+      "license_short": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "license_rationale": "CC BY 4.0 per the Legacy Surveys acknowledgment page (legacysurvey.org/acknowledgment) (checked 2026-11-19); the author is credited and the image is resized and re-encoded.",
+      "modifications": [
+        "downloaded-cutout",
+        "resized",
+        "reencoded-jpeg"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": null,
+      "fetched_at": "2026-11-19T12:00:00.000Z"
+    },
+    {
+      "id": "7bd6cca75577f6bb",
+      "path": "/images/deep-sky/horologium-reticulum.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:Galaxy cluster Abell 3266 (noao0508a).tiff",
+      "author": "NOIRLab",
+      "agency": "NSF NOIRLab",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Galaxy_cluster_Abell_3266_(noao0508a).tiff",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Galaxy_cluster_Abell_3266_(noao0508a).tiff",
+      "license_short": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "license_rationale": "CC BY 4.0 per the Commons file page (checked 2026-11-19); the author is credited and the image is resized and re-encoded.",
+      "modifications": [
+        "downloaded-via-special-filepath",
+        "resized",
+        "reencoded-jpeg"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": null,
+      "fetched_at": "2026-11-19T12:00:00.000Z"
+    },
+    {
+      "id": "602bc3def9e46a16",
+      "path": "/images/deep-sky/virgo-ii-groups.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:Lenticular dust in detail (potw2420a).tiff",
+      "author": "ESA/Hubble · NASA · L. Kelsey",
+      "agency": "ESA / NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Lenticular_dust_in_detail_(potw2420a).tiff",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Lenticular_dust_in_detail_(potw2420a).tiff",
+      "license_short": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "license_rationale": "CC BY 4.0 per the Commons file page (checked 2026-11-19); the author is credited and the image is resized and re-encoded.",
+      "modifications": [
+        "downloaded-via-special-filepath",
+        "resized",
+        "reencoded-jpeg"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": null,
+      "fetched_at": "2026-11-19T12:00:00.000Z"
+    },
+    {
+      "id": "6106380dc29cd714",
+      "path": "/images/deep-sky/ophiuchus-supercluster.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:Ophiuchus Galaxy Cluster labelled.jpg",
+      "author": "X-ray: NASA/CXC/NRL/S. Giacintucci et al. · XMM: ESA/XMM · Radio: NCRA/TIFR/GMRT · Infrared: 2MASS/UMass/IPAC-Caltech/NASA/NSF",
+      "agency": "NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Ophiuchus_Galaxy_Cluster_labelled.jpg",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ophiuchus_Galaxy_Cluster_labelled.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Public domain per the Commons file page (checked 2026-11-19); the author is credited and the image is resized and re-encoded.",
+      "modifications": [
+        "downloaded-via-special-filepath",
+        "resized",
+        "reencoded-jpeg"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": null,
+      "fetched_at": "2026-11-19T12:00:00.000Z"
+    },
+    {
+      "id": "1683928096960f51",
+      "path": "/images/deep-sky/fornax-eridanus.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:Galaxies in the Fornax Cluster.jpg",
+      "author": "CTIO · NOIRLab · DOE · NSF · AURA · T.A. Rector, J. Miller, M. Zamani, D. de Martin",
+      "agency": "NSF NOIRLab",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Galaxies_in_the_Fornax_Cluster.jpg",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Galaxies_in_the_Fornax_Cluster.jpg",
+      "license_short": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "license_rationale": "CC BY 4.0 per the Commons file page (checked 2026-11-19); the author is credited and the image is resized and re-encoded.",
+      "modifications": [
+        "downloaded-via-special-filepath",
+        "resized",
+        "reencoded-jpeg"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": null,
+      "fetched_at": "2026-11-19T12:00:00.000Z"
     }
   ]
 }

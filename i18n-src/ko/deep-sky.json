@@ -1149,5 +1149,53 @@
     "subject": "은하단",
     "type": "은하단",
     "distance": "~3.3억 광년"
+  },
+  "m18": {
+    "title": "M18 · NGC 6613",
+    "subject": "성단",
+    "type": "성단",
+    "distance": "~4,900 광년"
+  },
+  "m36": {
+    "title": "M36 · NGC 1960",
+    "subject": "성단",
+    "type": "성단",
+    "distance": "~3,670 광년"
+  },
+  "m62": {
+    "title": "M62 · NGC 6266",
+    "subject": "구상 성단",
+    "type": "구상 성단",
+    "distance": "~19,670 광년"
+  },
+  "leo-ii": {
+    "title": "사자자리 II 왜소은하",
+    "subject": "은하",
+    "type": "왜소타원체은하",
+    "distance": "~760,000 광년"
+  },
+  "horologium-reticulum": {
+    "title": "Abell 3266",
+    "subject": "은하단",
+    "type": "은하단",
+    "distance": ""
+  },
+  "virgo-ii-groups": {
+    "title": "NGC 4753",
+    "subject": "은하",
+    "type": "은하",
+    "distance": ""
+  },
+  "ophiuchus-supercluster": {
+    "title": "뱀주인자리 은하단",
+    "subject": "은하단",
+    "type": "은하단",
+    "distance": ""
+  },
+  "fornax-eridanus": {
+    "title": "화로자리 은하단",
+    "subject": "은하단",
+    "type": "은하단",
+    "distance": ""
   }
 }

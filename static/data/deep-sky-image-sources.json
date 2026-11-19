@@ -2110,5 +2110,100 @@
     "license": "PD-NASA",
     "license_rationale": "Public domain: a NASA / STScI Hubble release (stsci.edu/copyright; 17 U.S.C. §105), source https://hubblesite.org/contents/media/images/2018/44/4269-Image (checked 2026-11-18); NASA-produced media is not copyrighted (17 U.S.C. §105).",
     "fetched_at": "2026-11-15T08:51:03.827Z"
+  },
+  "m18": {
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:M18,_NGC_6613_(noao-m18).tiff",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/M18,_NGC_6613_(noao-m18).tiff",
+    "commons_file": "M18, NGC 6613 (noao-m18).tiff",
+    "credit": "Hillary Mathis · REU program · NOIRLab · NSF · AURA",
+    "author": "Hillary Mathis · REU program · NOIRLab · NSF · AURA",
+    "agency": "NSF NOIRLab",
+    "license": "CC-BY-4.0",
+    "license_rationale": "CC BY 4.0 per the Commons file page (checked 2026-11-19); the author is credited and the image is resized and re-encoded.",
+    "fetched_at": "2026-11-19T12:00:00.000Z"
+  },
+  "m36": {
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:M36,_NGC_1960_(noao-m36).jpg",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/M36,_NGC_1960_(noao-m36).jpg",
+    "commons_file": "M36, NGC 1960 (noao-m36).jpg",
+    "credit": "NOIRLab · NSF · AURA",
+    "author": "NOIRLab · NSF · AURA",
+    "agency": "NSF NOIRLab",
+    "license": "CC-BY-4.0",
+    "license_rationale": "CC BY 4.0 per the Commons file page (checked 2026-11-19); the author is credited and the image is resized and re-encoded.",
+    "fetched_at": "2026-11-19T12:00:00.000Z"
+  },
+  "m62": {
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Messier62_-_HST_-_Potw1915a.jpg",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Messier62_-_HST_-_Potw1915a.jpg",
+    "commons_file": "Messier62 - HST - Potw1915a.jpg",
+    "credit": "ESA/Hubble · NASA · S. Anderson et al.",
+    "author": "ESA/Hubble · NASA · S. Anderson et al.",
+    "agency": "ESA / NASA",
+    "license": "CC-BY-4.0",
+    "license_rationale": "CC BY 4.0 per the Commons file page (checked 2026-11-19); the author is credited and the image is resized and re-encoded.",
+    "fetched_at": "2026-11-19T12:00:00.000Z"
+  },
+  "leo-ii": {
+    "source_type": "direct-other",
+    "source_url": "https://www.legacysurvey.org/viewer?ra=168.37&dec=22.1517&layer=ls-dr10&zoom=13",
+    "image_url": "https://www.legacysurvey.org/viewer/jpeg-cutout?ra=168.37&dec=22.1517&layer=ls-dr10&pixscale=1.5&size=1024",
+    "credit": "Legacy Surveys · D. Lang (Perimeter Institute)",
+    "author": "Legacy Surveys · D. Lang (Perimeter Institute)",
+    "agency": "Legacy Surveys",
+    "license": "CC-BY-4.0",
+    "license_rationale": "CC BY 4.0 per the Legacy Surveys acknowledgment page (legacysurvey.org/acknowledgment) (checked 2026-11-19); the author is credited and the image is resized and re-encoded.",
+    "fetched_at": "2026-11-19T12:00:00.000Z"
+  },
+  "horologium-reticulum": {
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Galaxy_cluster_Abell_3266_(noao0508a).tiff",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Galaxy_cluster_Abell_3266_(noao0508a).tiff",
+    "commons_file": "Galaxy cluster Abell 3266 (noao0508a).tiff",
+    "credit": "NOIRLab",
+    "author": "NOIRLab",
+    "agency": "NSF NOIRLab",
+    "license": "CC-BY-4.0",
+    "license_rationale": "CC BY 4.0 per the Commons file page (checked 2026-11-19); the author is credited and the image is resized and re-encoded.",
+    "fetched_at": "2026-11-19T12:00:00.000Z"
+  },
+  "virgo-ii-groups": {
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Lenticular_dust_in_detail_(potw2420a).tiff",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Lenticular_dust_in_detail_(potw2420a).tiff",
+    "commons_file": "Lenticular dust in detail (potw2420a).tiff",
+    "credit": "ESA/Hubble · NASA · L. Kelsey",
+    "author": "ESA/Hubble · NASA · L. Kelsey",
+    "agency": "ESA / NASA",
+    "license": "CC-BY-4.0",
+    "license_rationale": "CC BY 4.0 per the Commons file page (checked 2026-11-19); the author is credited and the image is resized and re-encoded.",
+    "fetched_at": "2026-11-19T12:00:00.000Z"
+  },
+  "ophiuchus-supercluster": {
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Ophiuchus_Galaxy_Cluster_labelled.jpg",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ophiuchus_Galaxy_Cluster_labelled.jpg",
+    "commons_file": "Ophiuchus Galaxy Cluster labelled.jpg",
+    "credit": "X-ray: NASA/CXC/NRL/S. Giacintucci et al. · XMM: ESA/XMM · Radio: NCRA/TIFR/GMRT · Infrared: 2MASS/UMass/IPAC-Caltech/NASA/NSF",
+    "author": "X-ray: NASA/CXC/NRL/S. Giacintucci et al. · XMM: ESA/XMM · Radio: NCRA/TIFR/GMRT · Infrared: 2MASS/UMass/IPAC-Caltech/NASA/NSF",
+    "agency": "NASA",
+    "license": "PD-NASA",
+    "license_rationale": "Public domain per the Commons file page (checked 2026-11-19); the author is credited and the image is resized and re-encoded.",
+    "fetched_at": "2026-11-19T12:00:00.000Z"
+  },
+  "fornax-eridanus": {
+    "source_type": "wikimedia-commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Galaxies_in_the_Fornax_Cluster.jpg",
+    "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Galaxies_in_the_Fornax_Cluster.jpg",
+    "commons_file": "Galaxies in the Fornax Cluster.jpg",
+    "credit": "CTIO · NOIRLab · DOE · NSF · AURA · T.A. Rector, J. Miller, M. Zamani, D. de Martin",
+    "author": "CTIO · NOIRLab · DOE · NSF · AURA · T.A. Rector, J. Miller, M. Zamani, D. de Martin",
+    "agency": "NSF NOIRLab",
+    "license": "CC-BY-4.0",
+    "license_rationale": "CC BY 4.0 per the Commons file page (checked 2026-11-19); the author is credited and the image is resized and re-encoded.",
+    "fetched_at": "2026-11-19T12:00:00.000Z"
   }
 }

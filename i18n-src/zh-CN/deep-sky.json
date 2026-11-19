@@ -1149,5 +1149,53 @@
     "subject": "星系团",
     "type": "星系团",
     "distance": "~3.3亿 光年"
+  },
+  "m18": {
+    "title": "M18 · NGC 6613",
+    "subject": "星团",
+    "type": "星团",
+    "distance": "~4,900 光年"
+  },
+  "m36": {
+    "title": "M36 · NGC 1960",
+    "subject": "星团",
+    "type": "星团",
+    "distance": "~3,670 光年"
+  },
+  "m62": {
+    "title": "M62 · NGC 6266",
+    "subject": "球状星团",
+    "type": "球状星团",
+    "distance": "~19,670 光年"
+  },
+  "leo-ii": {
+    "title": "狮子座II",
+    "subject": "星系",
+    "type": "矮椭球星系",
+    "distance": "~760,000 光年"
+  },
+  "horologium-reticulum": {
+    "title": "Abell 3266",
+    "subject": "星系团",
+    "type": "星系团",
+    "distance": ""
+  },
+  "virgo-ii-groups": {
+    "title": "NGC 4753",
+    "subject": "星系",
+    "type": "星系",
+    "distance": ""
+  },
+  "ophiuchus-supercluster": {
+    "title": "蛇夫座星系团",
+    "subject": "星系团",
+    "type": "星系团",
+    "distance": ""
+  },
+  "fornax-eridanus": {
+    "title": "天炉座星系团",
+    "subject": "星系团",
+    "type": "星系团",
+    "distance": ""
   }
 }

@@ -101,7 +101,7 @@ describe('getDeepSkyEntity', () => {
   });
 
   it('an object with no photo and no twin hero has none: no hero, no slot', async () => {
-    expect((await getDeepSkyEntity('m18', 'en-US'))?.hero).toBeNull();
+    expect((await getDeepSkyEntity('m25', 'en-US'))?.hero).toBeNull();
   });
 
   it('every page object with a photo has a hero whose files exist and that carries alt text', async () => {

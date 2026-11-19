@@ -1842,7 +1842,7 @@
   ],
   "/images/fleet-galleries/akatsuki/04": [
     320,
-    1024
+    875
   ],
   "/images/fleet-galleries/akatsuki/05": [
     320,
@@ -1917,7 +1917,9 @@
   ],
   "/images/fleet-galleries/apollo-lm/05": [
     320,
-    1280
+    1280,
+    2048,
+    2546
   ],
   "/images/fleet-galleries/ariane-1/01": [
     320,
@@ -5546,7 +5548,8 @@
     320,
     640,
     1280,
-    1920
+    2048,
+    2643
   ],
   "/images/fleet-galleries/salyut-5/01": [
     300
@@ -5646,7 +5649,9 @@
   ],
   "/images/fleet-galleries/saturn-v/03": [
     320,
-    1280
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/saturn-v/04": [
     320,
@@ -6034,12 +6039,15 @@
   ],
   "/images/fleet-galleries/space-shuttle-orbiter/02": [
     320,
-    1280
+    1280,
+    2048,
+    3060
   ],
   "/images/fleet-galleries/space-shuttle-orbiter/03": [
     320,
     1280,
-    1920
+    2048,
+    3000
   ],
   "/images/fleet-galleries/space-shuttle-orbiter/04": [
     320,
@@ -6121,7 +6129,7 @@
   ],
   "/images/fleet-galleries/spitzer/03": [
     320,
-    519
+    706
   ],
   "/images/fleet-galleries/spitzer/04": [
     320,
@@ -6760,7 +6768,8 @@
   "/images/fleet-galleries/vostok-5/01": [
     320,
     1280,
-    1600
+    2048,
+    3072
   ],
   "/images/fleet-galleries/vostok-5/02": [
     320,

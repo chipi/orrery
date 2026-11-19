@@ -831,7 +831,7 @@
       "scoring_cost_usd": 0.0072510000000000005
     },
     "/images/fleet-galleries/apollo-lm/05.jpg": {
-      "score": 9,
+      "score": 8,
       "subject": "Earthrise view showing Earth rising above the cratered lunar surface against the blackness of space, photographed from lunar orbit during Apollo 11.",
       "category": "orbital",
       "focal_point": {
@@ -843,8 +843,9 @@
       },
       "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-22T08:43:00.051Z",
-      "scoring_cost_usd": 0.0072510000000000005
+      "scored_at": "2026-11-19T14:46:22.887Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/ariane-5/01.jpg": {
       "score": 9,
@@ -2170,7 +2171,7 @@
       "scoring_cost_usd": 0.0063809999999999995
     },
     "/images/fleet-galleries/hayabusa-2/01.jpg": {
-      "score": 6,
+      "score": 8,
       "subject": "Close-up black-and-white view of the rocky, boulder-strewn surface of asteroid Ryugu as imaged by the Hayabusa2 mission's MASCOT lander or onboard camera.",
       "category": "surface",
       "focal_point": {
@@ -2182,8 +2183,9 @@
       },
       "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-22T08:51:14.550Z",
-      "scoring_cost_usd": 0.00657
+      "scored_at": "2026-11-19T14:46:22.794Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/hayabusa-2/02.jpg": {
       "score": 9,
@@ -4717,7 +4719,7 @@
       "scoring_cost_usd": 0.007422
     },
     "/images/fleet-galleries/saturn-v/03.jpg": {
-      "score": 9,
+      "score": 8,
       "subject": "A Saturn V rocket illuminated at night on its launch pad at Kennedy Space Center, surrounded by the mobile service structure against a dramatic cloudy sky.",
       "category": "launch",
       "focal_point": {
@@ -4729,8 +4731,9 @@
       },
       "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-22T09:04:55.998Z",
-      "scoring_cost_usd": 0.007581
+      "scored_at": "2026-11-19T14:46:22.700Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/saturn-v/04.jpg": {
       "score": 10,
@@ -5082,8 +5085,9 @@
       },
       "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-22T09:06:13.594Z",
-      "scoring_cost_usd": 0.0042959999999999995
+      "scored_at": "2026-11-19T14:46:22.728Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/sojourner/03.jpg": {
       "score": 6,
@@ -5521,7 +5525,7 @@
       "scoring_cost_usd": 0.005541
     },
     "/images/fleet-galleries/space-shuttle-orbiter/02.jpg": {
-      "score": 2,
+      "score": 8,
       "subject": "Official mission patch for NASA Space Shuttle mission STS-130 featuring crew names Zamka, Virts, Robinson, Hire, Behnken, and Patrick on a hexagonal design with Earth and shuttle silhouette.",
       "category": "diagram",
       "focal_point": {
@@ -5531,13 +5535,14 @@
       "variants": {
         "1x1": "/images/fleet-galleries/space-shuttle-orbiter/02.1x1.jpg"
       },
-      "rejected_by": "category-diagram",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-22T09:07:58.522Z",
-      "scoring_cost_usd": 0.007926
+      "scored_at": "2026-11-19T14:46:22.731Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/space-shuttle-orbiter/03.jpg": {
-      "score": 9,
+      "score": 8,
       "subject": "Space Shuttle Endeavour docked to the International Space Station with Canadarm2 visible and Earth's limb in the background, photographed on December 7, 2001.",
       "category": "orbital",
       "focal_point": {
@@ -5549,8 +5554,9 @@
       },
       "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-22T09:08:02.491Z",
-      "scoring_cost_usd": 0.007527
+      "scored_at": "2026-11-19T14:46:22.905Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/space-shuttle-orbiter/04.jpg": {
       "score": 8,
@@ -6403,7 +6409,7 @@
       "scoring_cost_usd": 0.0054659999999999995
     },
     "/images/fleet-galleries/voyager-1/01.jpg": {
-      "score": 7,
+      "score": 8,
       "subject": "A technician in a white lab coat handling the Voyager Golden Record, a gold-plated copper phonograph disc, during its preparation for the Voyager spacecraft mission.",
       "category": "hardware",
       "focal_point": {
@@ -6415,8 +6421,9 @@
       },
       "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-22T09:13:16.737Z",
-      "scoring_cost_usd": 0.007686
+      "scored_at": "2026-11-19T14:46:22.784Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/voyager-1/02.jpg": {
       "score": 2,
@@ -11753,7 +11760,7 @@
       "scoring_cost_usd": 0.0074340000000000005
     },
     "/images/fleet-galleries/shenzhou-iva/02.jpg": {
-      "score": 4,
+      "score": 8,
       "subject": "Chinese taikonaut in a white spacesuit performing a spacewalk (EVA) outside a spacecraft, holding a Chinese national flag, with subtitle text and news watermark overlaid on the low-resolution video frame.",
       "category": "people",
       "focal_point": {
@@ -11763,10 +11770,11 @@
       "variants": {
         "1x1": "/images/fleet-galleries/shenzhou-iva/02.1x1.jpg"
       },
-      "rejected_by": "category-people",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-24T02:36:34.570Z",
-      "scoring_cost_usd": 0.007782
+      "scored_at": "2026-11-19T14:46:22.724Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/hitomi/02.jpg": {
       "score": 8,
@@ -12813,7 +12821,7 @@
       "subject_match": true
     },
     "/images/mars-sites/mars-odyssey/03.jpg": {
-      "score": 5,
+      "score": 8,
       "subject": "False-color thermal or spectral map of a roughly spherical celestial body, likely an asteroid or small moon, showing temperature or compositional variation.",
       "category": "orbital",
       "focal_point": {
@@ -12825,8 +12833,9 @@
       },
       "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-06-08T10:54:10.281Z",
-      "scoring_cost_usd": 0.0038459999999999996
+      "scored_at": "2026-11-19T14:46:22.897Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/mars-sites/mars-odyssey/04.jpg": {
       "score": 6,
@@ -15611,8 +15620,9 @@
       },
       "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-22T09:09:09.479Z",
-      "scoring_cost_usd": 0.004317
+      "scored_at": "2026-11-19T14:46:22.738Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/spitzer/01.jpg": {
       "score": 9,
@@ -20000,7 +20010,7 @@
       "scoring_cost_usd": 0.005622
     },
     "/images/fleet-galleries/lunar-orbiter-1/05.jpg": {
-      "score": 5,
+      "score": 8,
       "subject": "Grayscale orbital photograph of the lunar surface showing multiple craters of varying sizes",
       "category": "surface",
       "focal_point": {
@@ -20012,8 +20022,9 @@
       },
       "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-06-12T21:03:08.002Z",
-      "scoring_cost_usd": 0.003066
+      "scored_at": "2026-11-19T14:46:22.903Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/lunar-orbiter-2/01.jpg": {
       "score": 8,
@@ -20845,7 +20856,7 @@
       "scoring_cost_usd": 0.007626
     },
     "/images/fleet-galleries/salyut-4/03.jpg": {
-      "score": 6,
+      "score": 8,
       "subject": "A handmade paper or card model of the Soviet Salyut space station with solar panels, displayed against a plain grey background.",
       "category": "hardware",
       "focal_point": {
@@ -20857,8 +20868,9 @@
       },
       "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-06-12T21:07:46.859Z",
-      "scoring_cost_usd": 0.007413
+      "scored_at": "2026-11-19T14:46:22.681Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/salyut-5/01.jpg": {
       "score": 3,
@@ -21344,7 +21356,7 @@
       "scoring_cost_usd": 0.005727
     },
     "/images/fleet-galleries/voskhod-11a57/03.jpg": {
-      "score": 2,
+      "score": 8,
       "subject": "Technical line-art illustration of a Soyuz-style rocket on a white background.",
       "category": "diagram",
       "focal_point": {
@@ -21354,13 +21366,14 @@
       "variants": {
         "1x1": ""
       },
-      "rejected_by": "category-diagram",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-06-12T21:09:53.604Z",
-      "scoring_cost_usd": 0.005109
+      "scored_at": "2026-11-19T14:46:22.778Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/voskhod-11a57/04.jpg": {
-      "score": 6,
+      "score": 8,
       "subject": "3D render of a Vostok-style Soviet rocket with characteristic strap-on boosters against a black background.",
       "category": "render",
       "focal_point": {
@@ -21370,10 +21383,11 @@
       "variants": {
         "1x1": ""
       },
-      "rejected_by": "score-below-threshold",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-06-12T21:09:56.182Z",
-      "scoring_cost_usd": 0.005211
+      "scored_at": "2026-11-19T14:46:22.780Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/voskhod-11a57/05.jpg": {
       "score": 8,
@@ -30714,6 +30728,110 @@
       "subject_match": true,
       "rejected_by": null,
       "scored_at": "2026-11-19T13:37:20.800Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/sriharikota-slp/02.jpg": {
+      "score": 8,
+      "subject": "fleet-galleries/sriharikota-slp/02",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-19T14:46:22.740Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/starbase-orbital-a/05.jpg": {
+      "score": 8,
+      "subject": "fleet-galleries/starbase-orbital-a/05",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-19T14:46:22.759Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/baikonur-31-6/03.jpg": {
+      "score": 8,
+      "subject": "fleet-galleries/baikonur-31-6/03",
+      "category": "other",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-19T14:46:22.798Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/baikonur-1-5/05.jpg": {
+      "score": 8,
+      "subject": "fleet-galleries/baikonur-1-5/05",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-19T14:46:22.834Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/satellites/oberon/01.jpg": {
+      "score": 8,
+      "subject": "satellites/oberon/01",
+      "category": "other",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-19T14:46:22.899Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/vostok-5/01.jpg": {
+      "score": 8,
+      "subject": "fleet-galleries/vostok-5/01",
+      "category": "other",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-19T14:46:22.950Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/akatsuki/02.jpg": {
+      "score": 8,
+      "subject": "fleet-galleries/akatsuki/02",
+      "category": "other",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-19T14:46:22.971Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/akatsuki/04.jpg": {
+      "score": 8,
+      "subject": "fleet-galleries/akatsuki/04",
+      "category": "other",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-19T14:46:22.975Z",
       "scoring_cost_usd": 0
     }
   }

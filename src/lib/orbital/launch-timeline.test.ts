@@ -346,7 +346,7 @@ describe('launcher staging timelines vs the real nominal flight', () => {
     'atlas-v 541 (Mars 2020): MECO-1 into a ~270 km parking orbit (secondary: Seradata) at 687.9 s; model 878.6 s. A circular parking orbit, so a trajectory calibration, not the elliptical-injection model',
   );
   it.todo(
-    'h3 (MMX plan, Table 2): MECO at 208 km and 6.2 km/s, SECO1 640 s at 329 km / 7.7 km/s (a parking orbit); the model reaches MECO at 180 km and 6.89 km/s, so its second stage has less to do (SECO1 ~530 s even at 329 km). Needs the stage-1 trajectory calibrated to the plan',
+    'h3 (MMX plan, Table 2): MECO at 208 km and 6.2 km/s, SECO1 640 s at 329 km / 7.7 km/s (a parking orbit); the model reaches MECO at 180 km and 6.89 km/s, so its second stage has less to do (SECO1 ~530 s even at 329 km). Tried 2026-11-19: the published LE-9 thrust with 7.5 % less stage-1 propellant puts MECO at 292 s and 6.45 km/s, but the guidance climbs to 288 km in stage 1 (real 208 km) and SECO1 lands at 565 s; matching needs a staged-altitude guidance mode, left for a later round as low value',
   );
   it.todo(
     'new-glenn (NG-2): SECO-1 773 s; model 692.4 s. The orbit at SECO-1 is unpublished (the final transfer orbit had a 100,000 km apogee), so there is no target to fit',

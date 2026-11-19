@@ -138,7 +138,6 @@
     border-radius: 50%;
     font-size: 11px;
     font-weight: 700;
-    font-style: italic;
     line-height: 1;
   }
   .scale-nav.at-solar {

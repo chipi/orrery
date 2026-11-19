@@ -80,15 +80,19 @@
     /* Labels read as the planet panels' do (FROM SUN, ORBITAL PERIOD); their strings are stored
        in sentence case, so the case comes from here. */
     text-transform: uppercase;
-    /* A long word (Schwarzschild) must not pass the cell edge at three columns. */
-    overflow-wrap: anywhere;
+    /* A long word (CONSTELLATION, Schwarzschild) breaks at a syllable with a hyphen where the
+       browser has the page language's dictionary (<html lang>), and only where it still does not
+       fit is it cut, so it never passes the cell edge at three columns. */
+    hyphens: auto;
+    overflow-wrap: break-word;
   }
   .cell-value {
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: var(--size-label);
     color: var(--color-text);
     font-weight: 700;
-    overflow-wrap: anywhere;
+    hyphens: auto;
+    overflow-wrap: break-word;
   }
   .cell-value.accent {
     color: var(--color-state);

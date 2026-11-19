@@ -118,6 +118,13 @@
       max-block-size: max(120px, calc(100% - 300px));
     }
   }
+  /* A narrow window with a mouse: the fold chip sits under the picker (ScaleNav), so the card at
+     the solar system hangs under that chip. */
+  @media (hover: hover) and (pointer: fine) and (max-width: 899px) {
+    .level-card:not(.left) {
+      top: 80px;
+    }
+  }
   .lead {
     margin: 0;
     color: rgba(255, 255, 255, 0.9);

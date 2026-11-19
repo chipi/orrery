@@ -145,6 +145,16 @@
     left: auto;
     right: 8px;
   }
+  /* A narrow window with a mouse: the HUD row stops before this row, and the fold chip beside the
+     picker wrapped the layer chips onto a line that reached the INDEX tab (667 x 375, footer-dock
+     spec). The chip sits under the picker instead, so the row is as wide as before (plan D15). */
+  @media (hover: hover) and (pointer: fine) and (max-width: 899px) {
+    .scale-nav.at-solar :global([data-testid='explore-level-card-toggle']) {
+      position: absolute;
+      top: calc(100% + 6px);
+      right: 0;
+    }
+  }
   /* Landscape phone: the left-edge pull tabs sit near the back button;
      the row starts past them. */
   @media ((hover: none) or (pointer: coarse)) and (max-height: 520px) {

@@ -121017,6 +121017,137 @@
       "pageid": null,
       "nasa_id": null,
       "fetched_at": "2026-11-19T12:00:00.000Z"
+    },
+    {
+      "id": "star-altair-02",
+      "path": "/images/stars/altair/02.webp",
+      "source_type": "wikimedia-commons",
+      "title": "File:Altair, Tarazed and Alshain.jpg",
+      "author": "J. Aleu",
+      "agency": "Wikimedia Commons",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Altair,_Tarazed_and_Alshain.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Altair%2C_Tarazed_and_Alshain.jpg",
+      "license_short": "PD-self",
+      "license_rationale": "Public domain on Commons, template PD-author-FlickrPDM (released by its author, J. Aleu), checked 2026-11-19.",
+      "modifications": [
+        "downloaded",
+        "resized",
+        "reencoded-webp"
+      ],
+      "fetched_at": "2026-11-19T15:00:00.000Z"
+    },
+    {
+      "id": "star-antares-02",
+      "path": "/images/stars/antares/02.webp",
+      "source_type": "wikimedia-commons",
+      "title": "File:Antares and the Rho Ophiuchus Region.jpg",
+      "author": "Dylan O'Donnell (deography.com)",
+      "agency": "Wikimedia Commons",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Antares_and_the_Rho_Ophiuchus_Region.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Antares_and_the_Rho_Ophiuchus_Region.jpg",
+      "license_short": "CC0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "license_rationale": "CC0 per the Commons file page, checked 2026-11-19.",
+      "modifications": [
+        "downloaded",
+        "resized",
+        "reencoded-webp"
+      ],
+      "fetched_at": "2026-11-19T15:00:00.000Z"
+    },
+    {
+      "id": "star-betelgeuse-02",
+      "path": "/images/stars/betelgeuse/02.webp",
+      "source_type": "wikimedia-commons",
+      "title": "File:Betelgeuse captured by ALMA.jpg",
+      "author": "ALMA (ESO/NAOJ/NRAO)/E. O’Gorman/P. Kervella",
+      "agency": "ESO",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Betelgeuse_captured_by_ALMA.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/57/Betelgeuse_captured_by_ALMA.jpg",
+      "license_short": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "license_rationale": "CC BY 4.0 per the Commons file page (ALMA / ESO), checked 2026-11-19; the author is credited and the image is resized and re-encoded.",
+      "modifications": [
+        "downloaded",
+        "resized",
+        "reencoded-webp"
+      ],
+      "fetched_at": "2026-11-19T15:00:00.000Z"
+    },
+    {
+      "id": "star-fomalhaut-02",
+      "path": "/images/stars/fomalhaut/02.webp",
+      "source_type": "wikimedia-commons",
+      "title": "File:Webb inspects dusty debris disc around Fomalhaut (weic2312a).jpg",
+      "author": "NASA, ESA, CSA, A. Pagan (STScI), A. Gáspár (University of Arizona)",
+      "agency": "ESA / NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Webb_inspects_dusty_debris_disc_around_Fomalhaut_(weic2312a).jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Webb_inspects_dusty_debris_disc_around_Fomalhaut_%28weic2312a%29.jpg",
+      "license_short": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "license_rationale": "CC BY 4.0 per the Commons file page (ESA/Webb weic2312a), checked 2026-11-19; the author is credited and the image is resized and re-encoded.",
+      "modifications": [
+        "downloaded",
+        "resized",
+        "reencoded-webp"
+      ],
+      "fetched_at": "2026-11-19T15:00:00.000Z"
+    },
+    {
+      "id": "star-rigel-02",
+      "path": "/images/stars/rigel/02.webp",
+      "source_type": "wikimedia-commons",
+      "title": "File:Rigel and IC 2118 - The Witch Head Nebula - Flickr - gjdonatiello.jpg",
+      "author": "Giuseppe Donatiello from Oria (Brindisi), Italy",
+      "agency": "Wikimedia Commons",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Rigel_and_IC_2118_-_The_Witch_Head_Nebula_-_Flickr_-_gjdonatiello.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Rigel_and_IC_2118_-_The_Witch_Head_Nebula_-_Flickr_-_gjdonatiello.jpg",
+      "license_short": "CC0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "license_rationale": "CC0 per the Commons file page, checked 2026-11-19.",
+      "modifications": [
+        "downloaded",
+        "resized",
+        "reencoded-webp"
+      ],
+      "fetched_at": "2026-11-19T15:00:00.000Z"
+    },
+    {
+      "id": "star-sirius-02",
+      "path": "/images/stars/sirius/02.webp",
+      "source_type": "wikimedia-commons",
+      "title": "File:Chandra X-ray Image with Scale Bar (2000-0065-more-3).tiff",
+      "author": "NASA/SAO/CXC",
+      "agency": "NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Chandra_X-ray_Image_with_Scale_Bar_(2000-0065-more-3).tiff",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Chandra_X-ray_Image_with_Scale_Bar_%282000-0065-more-3%29.tiff",
+      "license_short": "PD-NASA",
+      "license_rationale": "Public domain on Commons, template PD-USGov-NASA (Chandra, NASA/SAO/CXC), checked 2026-11-19.",
+      "modifications": [
+        "downloaded",
+        "resized",
+        "reencoded-webp"
+      ],
+      "fetched_at": "2026-11-19T15:00:00.000Z"
+    },
+    {
+      "id": "star-proxima-centauri-02",
+      "path": "/images/stars/proxima-centauri/02.webp",
+      "source_type": "direct-agency",
+      "title": "eso1629i — Alpha Centauri and Proxima Centauri (wide field)",
+      "author": "Digitized Sky Survey 2. Acknowledgement: Davide De Martin/Mahdi Zamani",
+      "agency": "ESO",
+      "source_url": "https://www.eso.org/public/images/eso1629i/",
+      "image_url": "https://cdn.eso.org/images/screen/eso1629i.jpg",
+      "license_short": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "license_rationale": "CC BY 4.0 per ESO (eso1629i, all ESO images are CC BY 4.0), checked 2026-11-19; the credit is kept and the image is resized and re-encoded.",
+      "modifications": [
+        "downloaded",
+        "resized",
+        "reencoded-webp"
+      ],
+      "fetched_at": "2026-11-19T15:00:00.000Z"
     }
   ]
 }

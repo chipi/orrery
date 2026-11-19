@@ -116,8 +116,12 @@ describe('getPageHero (entity pages)', () => {
 });
 
 describe('getNamedStarGallery', () => {
-  it('is empty for every star at ship (the sidecar exists, Gallery tab hidden)', async () => {
-    expect(await getNamedStarGallery('antares')).toEqual([]);
+  it('seven photographed stars have a second real image (C2, 2026-11-19); the others none', async () => {
+    for (const id of ['altair', 'antares', 'betelgeuse', 'fomalhaut', 'rigel', 'sirius', 'proxima-centauri'])
+      expect(await getNamedStarGallery(id)).toEqual([
+        { src: `/images/stars/${id}/02.webp`, kind: 'real' },
+      ]);
+    expect(await getNamedStarGallery('vega')).toEqual([]);
     expect(await getNamedStarGallery('no-such-star')).toEqual([]);
   });
 });

@@ -1,4 +1,47 @@
 {
   "schema_version": 1,
-  "stars": {}
+  "stars": {
+    "altair": [
+      {
+        "src": "/images/stars/altair/02.webp",
+        "kind": "real"
+      }
+    ],
+    "antares": [
+      {
+        "src": "/images/stars/antares/02.webp",
+        "kind": "real"
+      }
+    ],
+    "betelgeuse": [
+      {
+        "src": "/images/stars/betelgeuse/02.webp",
+        "kind": "real"
+      }
+    ],
+    "fomalhaut": [
+      {
+        "src": "/images/stars/fomalhaut/02.webp",
+        "kind": "real"
+      }
+    ],
+    "rigel": [
+      {
+        "src": "/images/stars/rigel/02.webp",
+        "kind": "real"
+      }
+    ],
+    "sirius": [
+      {
+        "src": "/images/stars/sirius/02.webp",
+        "kind": "real"
+      }
+    ],
+    "proxima-centauri": [
+      {
+        "src": "/images/stars/proxima-centauri/02.webp",
+        "kind": "real"
+      }
+    ]
+  }
 }

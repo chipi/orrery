@@ -32,12 +32,22 @@ const CASES = [
     },
   },
   {
+    // M18 has a photo since S6 (2026-11-19); M25 is the object without one.
     id: 'm18',
     title: 'M18 · NGC 6613',
-    photo: false,
+    photo: true,
     text: {
       '': 'A sparse open cluster in Sagittarius',
       '/de': 'Ein lockerer offener Sternhaufen im Schützen',
+    },
+  },
+  {
+    id: 'm25',
+    title: 'M25 · IC 4725',
+    photo: false,
+    text: {
+      '': 'A loose open cluster in Sagittarius',
+      '/de': 'Ein lockerer offener Sternhaufen im Schützen, etwa 2.100 Lichtjahre',
     },
   },
   {

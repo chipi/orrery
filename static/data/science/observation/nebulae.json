@@ -1,0 +1,37 @@
+{
+  "id": "nebulae",
+  "tab": "observation",
+  "order": 15,
+  "photo": {
+    "src": "/images/deep-sky/jwst-orion.jpg",
+    "credit": "NASA · ESA · CSA · STScI · The Orion Nebula (M42), the closest large star-forming region, seen by the James Webb Space Telescope."
+  },
+  "see_in_app": [
+    {
+      "route": "/explore",
+      "context_key": "The deep-sky level shows the Orion, Eagle, Lagoon and Tarantula nebulae; each page links back here"
+    }
+  ],
+  "links": [
+    {
+      "l": "NASA · Decoding nebulae",
+      "u": "https://science.nasa.gov/universe/decoding-nebulae",
+      "t": "intro"
+    },
+    {
+      "l": "NASA · Hubble Messier 42 (Orion Nebula)",
+      "u": "https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-42/",
+      "t": "core"
+    },
+    {
+      "l": "NASA · Hubble Messier 16 (Eagle Nebula)",
+      "u": "https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-16/",
+      "t": "core"
+    },
+    {
+      "l": "NASA · Webb's star formation discoveries",
+      "u": "https://science.nasa.gov/mission/webb/science-overview/science-explainers/webbs-star-formation-discoveries/",
+      "t": "deep"
+    }
+  ]
+}

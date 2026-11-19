@@ -1,7 +1,8 @@
 /**
  * The /science articles a deep-sky, galaxy or structure page links (plan C5a, 2026-11-19), the way
- * a star page links the H–R article. Only articles that cover the object's kind: a nebula, a
- * star-forming region, a planetary nebula or a supernova remnant has none yet (C5b), so it gets none.
+ * a star page links the H–R article. Only articles that cover the object's kind: nebulae and
+ * star-forming regions link the nebulae article, planetary nebulae and supernova remnants the one on
+ * how stars end (C5b).
  */
 import { loadScienceTitles } from '$lib/explore/science-titles';
 import type { LocalGroupKind } from '$lib/data/universe';
@@ -12,6 +13,8 @@ const HR: ScienceRef = { tab: 'observation', section: 'hertzsprung-russell' };
 const GALAXY_TYPES: ScienceRef = { tab: 'observation', section: 'galaxy-types' };
 const LOCAL_GROUP: ScienceRef = { tab: 'observation', section: 'local-group' };
 const DWARF_SPHEROIDALS: ScienceRef = { tab: 'observation', section: 'dwarf-spheroidals' };
+const NEBULAE: ScienceRef = { tab: 'observation', section: 'nebulae' };
+const STARS_END: ScienceRef = { tab: 'observation', section: 'how-stars-end' };
 const LARGE_SCALE: ScienceRef = { tab: 'cosmology', section: 'large-scale-structure' };
 const LANIAKEA: ScienceRef = { tab: 'cosmology', section: 'laniakea-and-the-great-attractor' };
 
@@ -26,6 +29,13 @@ export function scienceForDeepSky(category: string | null | undefined): ScienceR
       return [HR]; // the H–R article reads a cluster's age from its turn-off
     case 'galaxy-cluster':
       return [LARGE_SCALE];
+    case 'nebula':
+    case 'dark-nebula':
+    case 'star-forming-region':
+      return [NEBULAE];
+    case 'planetary-nebula':
+    case 'supernova-remnant':
+      return [STARS_END];
     default:
       return [];
   }

@@ -19,8 +19,11 @@ describe('science articles per deep-level page (plan C5a)', () => {
     expect(scienceForDeepSky('galaxy-cluster').map(key)).toEqual([
       'cosmology/large-scale-structure',
     ]);
-    for (const c of ['nebula', 'planetary-nebula', 'supernova-remnant', 'star-forming-region'])
-      expect(scienceForDeepSky(c), c).toEqual([]);
+    for (const c of ['nebula', 'dark-nebula', 'star-forming-region'])
+      expect(scienceForDeepSky(c).map(key), c).toEqual(['observation/nebulae']);
+    for (const c of ['planetary-nebula', 'supernova-remnant'])
+      expect(scienceForDeepSky(c).map(key), c).toEqual(['observation/how-stars-end']);
+    expect(scienceForDeepSky('other')).toEqual([]);
     expect(scienceForGalaxy('dwarf-spheroidal').map(key)).toContain(
       'observation/dwarf-spheroidals',
     );
@@ -38,6 +41,8 @@ describe('science articles per deep-level page (plan C5a)', () => {
       new Response(JSON.stringify(index), { status: 200 })) as unknown as typeof fetch;
     const refs = [
       ...scienceForDeepSky('galaxy'),
+      ...scienceForDeepSky('nebula'),
+      ...scienceForDeepSky('supernova-remnant'),
       ...scienceForDeepSky('star-cluster'),
       ...scienceForGalaxy('dwarf-spheroidal'),
       ...scienceForStructure('laniakea'),

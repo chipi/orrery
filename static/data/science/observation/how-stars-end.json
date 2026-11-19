@@ -1,0 +1,37 @@
+{
+  "id": "how-stars-end",
+  "tab": "observation",
+  "order": 16,
+  "photo": {
+    "src": "/images/deep-sky/jwst-ring.jpg",
+    "credit": "NASA · ESA · CSA · STScI · The Ring Nebula (M57), the shed outer layers of a dying Sun-like star, seen by the James Webb Space Telescope."
+  },
+  "see_in_app": [
+    {
+      "route": "/explore",
+      "context_key": "The deep-sky level shows the Ring, Dumbbell and Crab nebulae and Cassiopeia A; each page links back here"
+    }
+  ],
+  "links": [
+    {
+      "l": "NASA · Types of stars and their life cycles",
+      "u": "https://science.nasa.gov/universe/stars/types/",
+      "t": "intro"
+    },
+    {
+      "l": "NASA · Hubble Messier 1 (Crab Nebula)",
+      "u": "https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-1/",
+      "t": "core"
+    },
+    {
+      "l": "NASA · Hubble Messier 27 (Dumbbell Nebula)",
+      "u": "https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-27/",
+      "t": "core"
+    },
+    {
+      "l": "NASA Imagine the Universe · Neutron stars",
+      "u": "https://imagine.gsfc.nasa.gov/science/objects/neutron_stars.html",
+      "t": "deep"
+    }
+  ]
+}

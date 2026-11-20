@@ -3,10 +3,11 @@
  * in orbiters.ts): Intuitive Machines Nova-C, the IM-1 "Odysseus" craft. Metres, upright, the
  * landing-leg feet on y = 0, front facing +z.
  *
- * Sources: Wikipedia, Nova-C — 4.3 m tall by 1.57 m wide, six landing legs, one gimbaled VR900
- * methane / liquid-oxygen main engine (3,100 N), three solar panels (a top-deck panel and two
- * body panels). Fetched for plain dimensions only (search-backlog row S25); the NASA CLPS pages
- * carry no dimensions. The body height, leg splay and deck detail are schematic.
+ * Sources: the Intuitive Machines IM-1 press kit (2024) — height 4.3 m, hull diameter 1.6 m,
+ * landing-gear diameter 4.6 m, a liquid-methane / liquid-oxygen main engine, top-deck and side
+ * solar arrays (NASA TM-20250010290 gives 3.9 m tall by 1.6 m, hexagonal); Wikipedia for the six
+ * legs and the VR900 engine (3,100 N). Search-backlog row S27. The body height and deck detail
+ * are schematic.
  */
 import * as THREE from 'three';
 
@@ -28,7 +29,9 @@ function strut(g: THREE.Object3D, m: Mat, a: THREE.Vector3, b: THREE.Vector3, r:
 }
 
 export const NOVA_C_HEIGHT_M = 4.3;
-export const NOVA_C_WIDTH_M = 1.57;
+export const NOVA_C_WIDTH_M = 1.6;
+/** Landing-gear diameter 4.6 m (press kit): feet on a 2.3 m radius. */
+const NOVA_C_FOOT_RADIUS_M = 2.3;
 
 /** Nova-C (IM-1 Odysseus, 2024): a tall hexagonal body on six splayed legs, the engine below. */
 export function buildNovaC(): THREE.Group {
@@ -116,7 +119,7 @@ export function buildNovaC(): THREE.Group {
   for (let i = 0; i < 6; i++) {
     const a = Math.PI / 6 + (i * Math.PI) / 3;
     const dir = new THREE.Vector3(Math.sin(a), 0, Math.cos(a));
-    const foot = dir.clone().multiplyScalar(2.0).setY(0.05);
+    const foot = dir.clone().multiplyScalar(NOVA_C_FOOT_RADIUS_M).setY(0.05);
     const lower = dir
       .clone()
       .multiplyScalar(R * 0.9)

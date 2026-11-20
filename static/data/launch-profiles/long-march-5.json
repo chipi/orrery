@@ -3,6 +3,8 @@
   "name": "Long March 5",
   "source_tier": "flagship",
   "payloadKg": 8200,
+  "loftBoost": true,
+  "liftoffThrustKN": 10636,
   "fairingKg": 3000,
   "fairingJettisonAltM": 115000,
   "refAreaM2": 35,
@@ -14,8 +16,8 @@
     "count": 4,
     "wetKg": 156600,
     "dryKg": 13800,
-    "thrustSlKN": 2400,
-    "thrustVacKN": 2680,
+    "thrustSlKN": 2427.7,
+    "thrustVacKN": 2711,
     "ispSlS": 300,
     "ispVacS": 335,
     "chamberTempK": 3600
@@ -25,8 +27,8 @@
       "name": "Core stage (2× YF-77)",
       "wetKg": 186900,
       "dryKg": 21600,
-      "thrustSlKN": 1036,
-      "thrustVacKN": 1400,
+      "thrustSlKN": 1081,
+      "thrustVacKN": 1460.9,
       "ispSlS": 317,
       "ispVacS": 428,
       "engines": 2,
@@ -36,7 +38,7 @@
       "name": "Second stage (2× YF-75D)",
       "wetKg": 36000,
       "dryKg": 5100,
-      "thrustVacKN": 176.7,
+      "thrustVacKN": 130,
       "ispVacS": 442.6,
       "engines": 2,
       "chamberTempK": 3500
@@ -59,5 +61,6 @@
       "l": "Chang'e 5 — Wikipedia (8,200 kg); fairing mass estimated (not published)",
       "u": "https://en.wikipedia.org/wiki/Chang%27e_5"
     }
-  ]
+  ],
+  "fairingJettisonS": 285
 }

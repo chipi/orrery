@@ -9,7 +9,7 @@
   import PanelActions from './PanelActions.svelte';
   import AgencyRow from './AgencyRow.svelte';
   import EntityThumb from './EntityThumb.svelte';
-  import { thumbOf } from '$lib/entity-thumb';
+  import { thumbOf, thumbOfSite } from '$lib/entity-thumb';
   import { agencyRingColor } from '$lib/surface-map/nation-palette';
   import { page } from '$app/state';
   import { assetUrl } from '$lib/asset-url';
@@ -52,6 +52,8 @@
     type EngineCycle,
   } from '$lib/physics/propulsion/engine-registry';
   import { dataLoadFailed } from '$lib/data/core';
+  import { getMarsSites, getMoonSites } from '$lib/data/surface';
+  import { getEarthObjects } from '$lib/data/bodies';
 
   /**
    * Fleet detail panel. Four tabs (OVERVIEW / MISSIONS / GALLERY / DETAIL);
@@ -347,12 +349,44 @@
     return m.lab_body_earth();
   }
 
+  // The linked sites by their name in the reader's language, not their id ("Moon · apollo11").
+  let siteNames = $state<Record<string, string>>({});
+  $effect(() => {
+    const sites = entry?.linked_sites ?? [];
+    if (sites.length === 0) return;
+    const loc = localeFromPage(page);
+    const want = new Set(sites.map((s) => s.type));
+    let live = true;
+    void Promise.all([
+      want.has('moon') ? getMoonSites(loc) : [],
+      want.has('mars') ? getMarsSites(loc) : [],
+      [...want].some((t) => t !== 'moon' && t !== 'mars') ? getEarthObjects(loc) : [],
+    ])
+      .then(([moon, mars, earth]) => {
+        if (!live) return;
+        const named = (list: { id: string; name?: string }[], type: string) =>
+          list.flatMap((s) => (s.name ? [[`${type}:${s.id}`, s.name] as const] : []));
+        siteNames = Object.fromEntries([
+          ...named(moon, 'moon'),
+          ...named(mars, 'mars'),
+          ...named(earth, 'earth'),
+        ]);
+      })
+      .catch(dataLoadFailed);
+    return () => {
+      live = false;
+    };
+  });
+  const siteName = (ls: FleetSiteLink) =>
+    siteNames[`${ls.type === 'moon' || ls.type === 'mars' ? ls.type : 'earth'}:${ls.site_id}`] ??
+    ls.site_id;
+
   function siteLabel(ls: FleetSiteLink): string {
     const role = categoryRole(entry?.category);
     const body = bodyLabel(ls.type);
-    if (role === 'surface') return `${m.surface_landing_site()} · ${body} · ${ls.site_id}`;
-    if (role === 'orbital') return `${m.fleet_in_orbit({ body })} · ${ls.site_id}`;
-    return `${body} · ${ls.site_id}`;
+    if (role === 'surface') return `${m.surface_landing_site()} · ${body} · ${siteName(ls)}`;
+    if (role === 'orbital') return `${m.fleet_in_orbit({ body })} · ${siteName(ls)}`;
+    return `${body} · ${siteName(ls)}`;
   }
 
   function siteSectionHeading(): string {
@@ -621,7 +655,13 @@
             {#each entry.linked_sites as ls (ls.type + ls.site_id)}
               <li>
                 <a class="site-link" href={siteRoute(ls)} data-sveltekit-preload-data="hover">
-                  {siteLabel(ls)} →
+                  <EntityThumb
+                    src={thumbOfSite(
+                      ls.type === 'moon' || ls.type === 'mars' ? ls.type : 'earth-objects',
+                      ls.site_id,
+                    )}
+                  />
+                  <span>{siteLabel(ls)} →</span>
                 </a>
               </li>
             {/each}
@@ -644,8 +684,6 @@
         {/if}
 
         <LauncherFlightsWidget launcherId={entry.id} />
-
-        <p class="credit">{entry.credit}</p>
       {:else if tab === 'gallery'}
         {#if hasGallery || hasVideos}
           <PanelGalleryGrid
@@ -1126,6 +1164,11 @@
     flex-direction: column;
     gap: 4px;
   }
+  .site-list .site-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
   .site-link,
   .mission-link {
     display: inline-block;
@@ -1204,13 +1247,6 @@
     letter-spacing: 0.06em;
     text-transform: uppercase;
     color: var(--color-text-label);
-  }
-
-  .credit {
-    margin: 16px 0 0;
-    font-size: var(--size-meta);
-    color: var(--color-text-label);
-    line-height: 1.5;
   }
 
   :global(.gallery-grid.fleet-gallery) {

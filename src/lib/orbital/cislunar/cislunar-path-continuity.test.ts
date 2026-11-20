@@ -5,6 +5,7 @@ import {
   buildCislunarTrajectory,
   cislunarEventTimes,
   moonEciPos,
+  MOON_SOI_KM,
   smoothPhasePoints,
   SMOOTH_SAMPLES_PER_SEGMENT,
   type CislunarProfile,
@@ -31,6 +32,10 @@ const missions: MoonMission[] = readdirSync(DIR)
 // day, while the Moon has since moved on, draws a straight 100,000+ km chord across the plot
 // (Apollo 11: 245,000 km, 40 degrees) that no spacecraft flew.
 const MAX_LEAVE_MOON_KM = 20_000;
+// A published (ephemeris) path is not parked at the Moon: its trip home starts where the craft
+// leaves the Moon's sphere of influence (Artemis I), which still rules out a stale-Moon chord.
+const leaveMoonLimit = (m: MoonMission) =>
+  m.flight?.cislunar_profile?.source_tier === 'tier_2_published' ? MOON_SOI_KM : MAX_LEAVE_MOON_KM;
 
 describe('cislunar waypoint trajectories — the trip home starts on the Moon', () => {
   it('covers the catalogue (guards against the glob matching nothing)', () => {
@@ -52,7 +57,7 @@ describe('cislunar waypoint trajectories — the trip home starts on the Moon', 
         const p = ph.points[0];
         const gap = Math.hypot(p.x - moon.x, p.y - moon.y, p.z - moon.z);
         expect(gap, `${m.id} tei_coast starts ${Math.round(gap)} km from the Moon`).toBeLessThan(
-          MAX_LEAVE_MOON_KM,
+          leaveMoonLimit(m),
         );
       }
     });
@@ -145,14 +150,23 @@ describe('cislunar waypoint trajectories — no long straight chord is drawn', (
 // The Moon is 384,400 km away; Earth-orbit raising and the stay at the Moon stay inside this. The
 // old Chandrayaan-3 waypoints held the craft at 760,637 km for 40 days.
 const MAX_CRAFT_KM = 420_000;
+// A published path can go further: Artemis I reached 268,563 miles (432,210 km) above the
+// surface, 438,581 km from Earth's centre (NASA, flight day 13; JPL Horizons -1023). Drawn on
+// the schematic Moon (a fixed 384,400 km), each sample is scaled by 384,400 / the real Moon
+// distance, then 367,600 km: the drawn maximum is 458,900 km.
+const MAX_PUBLISHED_CRAFT_KM = 470_000;
 
 describe('cislunar waypoint trajectories — the craft stays near the Earth-Moon system', () => {
   for (const m of missions) {
-    it(`${m.id}: no authored waypoint is farther than ${MAX_CRAFT_KM} km from Earth`, () => {
+    const cap =
+      m.flight?.cislunar_profile?.source_tier === 'tier_2_published'
+        ? MAX_PUBLISHED_CRAFT_KM
+        : MAX_CRAFT_KM;
+    it(`${m.id}: no authored waypoint is farther than ${cap} km from Earth`, () => {
       const far = m.flight!.cislunar_profile!.waypoints_km!.filter(
-        ([, x, y, z]) => Math.hypot(x, y, z) > MAX_CRAFT_KM,
+        ([, x, y, z]) => Math.hypot(x, y, z) > cap,
       );
-      expect(far.length, `${m.id}: ${far.length} waypoints beyond ${MAX_CRAFT_KM} km`).toBe(0);
+      expect(far.length, `${m.id}: ${far.length} waypoints beyond ${cap} km`).toBe(0);
     });
   }
 });

@@ -90,7 +90,9 @@
       />
     {/if}
     <div class="hero-fade"></div>
-    <h2 class="title">{spec.title}</h2>
+    <h2 class="title" class:long={spec.title.length > 12} class:longer={spec.title.length > 20}>
+      {spec.title}
+    </h2>
   </div>
 
   <div class="body">
@@ -101,7 +103,7 @@
 
     <div class="lower">
       <dl class="stats">
-        {#each spec.stats as s (s.label)}
+        {#each spec.stats as s, ki (ki + ':' + s.label)}
           <div class="stat">
             <dt>{s.label}</dt>
             <dd>{s.value}</dd>
@@ -152,7 +154,8 @@
     --card-hairline: rgba(255, 255, 255, 0.14);
 
     width: 360px;
-    aspect-ratio: 3 / 4;
+    /* 3:4 at least; a long body makes the card taller instead of squeezing the hero (plan D12). */
+    min-height: 480px;
     display: flex;
     flex-direction: column;
     background: var(--card-bg);
@@ -187,7 +190,9 @@
   .hero {
     position: relative;
     flex: 1 1 46%;
-    min-height: 0;
+    /* The image keeps room for itself and the title (plan D12): with a long body the hero
+       collapsed to a strip and the title rose into the wordmark; the card grows instead. */
+    min-height: 150px;
   }
   .hero-img {
     position: absolute;
@@ -208,10 +213,17 @@
     bottom: 0;
     margin: 0;
     font-family: var(--font-display, 'Bebas Neue', sans-serif);
-    font-size: 52px;
+    font-size: 44px;
     line-height: 0.92;
     letter-spacing: 1px;
     text-shadow: 0 2px 18px rgba(0, 0, 0, 0.75);
+  }
+  /* A long name steps down so it stays on the image and clear of the wordmark (plan D12). */
+  .title.long {
+    font-size: 34px;
+  }
+  .title.longer {
+    font-size: 26px;
   }
 
   .body {

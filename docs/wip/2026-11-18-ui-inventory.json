@@ -1,0 +1,7220 @@
+{
+ "base": "http://localhost:4318",
+ "made": "2026-11-18T18:52:00.437Z",
+ "pages": 95,
+ "visited": 190,
+ "disclosuresOpened": 863,
+ "failed": [
+  "desktop /explore: TimeoutError: locator.getAttribute: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - ",
+  "desktop /moon?site=apollo11: TimeoutError: locator.getAttribute: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - ",
+  "desktop /mars?site=perseverance: TimeoutError: locator.getAttribute: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - ",
+  "desktop /explore?id=mars: TimeoutError: locator.getAttribute: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - ",
+  "desktop /explore?goto=antares: TimeoutError: locator.getAttribute: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - ",
+  "phone /moon?site=apollo11: TimeoutError: locator.getAttribute: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - "
+ ],
+ "looks": [
+  {
+   "tag": "button",
+   "cls": "",
+   "h": 19,
+   "radius": "0px",
+   "font": "13.3333px",
+   "tt": "none",
+   "bg": "rgb(239, 239, 239)",
+   "border": "2px rgb(0, 0, 0)",
+   "label": "select mercury",
+   "labels": [
+    "select mercury",
+    "select venus",
+    "select earth",
+    "select mars",
+    "select jupiter",
+    "select saturn"
+   ],
+   "routes": [
+    "/explore",
+    "/earth",
+    "/moon",
+    "/mars",
+    "/venus",
+    "/iss",
+    "/tiangong",
+    "/moon?site=apollo11",
+    "/mars?site=perseverance",
+    "/earth?site=ksc",
+    "/venus?site=venera13",
+    "/explore?id=mars"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop",
+    "phone"
+   ],
+   "count": 3955
+  },
+  {
+   "tag": "a",
+   "cls": "tab-card",
+   "h": 40,
+   "radius": "4px",
+   "font": "16px",
+   "tt": "none",
+   "bg": "rgba(255, 255, 255, 0.03)",
+   "border": "1px rgba(255, 255, 255, 0.08)",
+   "label": "SCALES & TIME",
+   "labels": [
+    "SCALES & TIME",
+    "PLANETS",
+    "EXOPLANETS",
+    "ORBITS",
+    "TRANSFERS",
+    "PORKCHOP"
+   ],
+   "routes": [
+    "/science",
+    "/science/cosmology",
+    "/science/cosmology/large-scale-structure",
+    "/science/cosmology/laniakea-and-the-great-attractor",
+    "/science/exoplanets",
+    "/science/exoplanets/radial-velocity",
+    "/science/exoplanets/transit",
+    "/science/history/keplers-laws-1609",
+    "/science/history/newton-principia-1687",
+    "/science/life-in-space/microgravity-physiology",
+    "/science/life-in-space/bone-density-loss",
+    "/science/mission-phases/launch"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 3488
+  },
+  {
+   "tag": "button[option]",
+   "cls": "option",
+   "h": 44,
+   "radius": "3px",
+   "font": "15px",
+   "tt": "none",
+   "bg": "rgba(0, 0, 0, 0)",
+   "border": "0px rgb(255, 255, 255)",
+   "label": "Español ES",
+   "labels": [
+    "Español ES",
+    "Français FR",
+    "Deutsch DE",
+    "Português PT",
+    "Italiano IT",
+    "Nederlands NL"
+   ],
+   "routes": [
+    "/",
+    "/explore",
+    "/explore/hub",
+    "/worlds",
+    "/catalog",
+    "/learn",
+    "/missions",
+    "/missions/launches",
+    "/fleet",
+    "/plan",
+    "/fly",
+    "/earth"
+   ],
+   "states": [
+    "open: Language"
+   ],
+   "viewports": [
+    "desktop",
+    "phone"
+   ],
+   "count": 2379
+  },
+  {
+   "tag": "a",
+   "cls": "link",
+   "h": 29,
+   "radius": "3px",
+   "font": "12px",
+   "tt": "none",
+   "bg": "rgba(0, 0, 0, 0)",
+   "border": "1px rgba(0, 0, 0, 0)",
+   "label": "FLY",
+   "labels": [
+    "FLY",
+    "PLAN",
+    "HOME"
+   ],
+   "routes": [
+    "/",
+    "/explore",
+    "/explore/hub",
+    "/worlds",
+    "/catalog",
+    "/learn",
+    "/missions",
+    "/missions/launches",
+    "/fleet",
+    "/plan",
+    "/fly",
+    "/earth"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 2316
+  },
+  {
+   "tag": "a",
+   "cls": "section-row",
+   "h": 40,
+   "radius": "4px",
+   "font": "16px",
+   "tt": "none",
+   "bg": "rgba(255, 255, 255, 0.03)",
+   "border": "1px rgba(255, 255, 255, 0.08)",
+   "label": "Large-scale structure — the cosmic web",
+   "labels": [
+    "Large-scale structure — the cosmic web",
+    "Laniakea and the Great Attractor",
+    "The cosmic distance ladder",
+    "The Radial-Velocity Method",
+    "The Transit Method",
+    "Transit-Timing Variations"
+   ],
+   "routes": [
+    "/science/cosmology",
+    "/science/cosmology/large-scale-structure",
+    "/science/cosmology/laniakea-and-the-great-attractor",
+    "/science/exoplanets",
+    "/science/exoplanets/radial-velocity",
+    "/science/exoplanets/transit",
+    "/science/history/keplers-laws-1609",
+    "/science/history/newton-principia-1687",
+    "/science/life-in-space/microgravity-physiology",
+    "/science/life-in-space/bone-density-loss",
+    "/science/mission-phases/launch",
+    "/science/mission-phases/gravity-turn"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 2288
+  },
+  {
+   "tag": "button",
+   "cls": "link.group-trigger",
+   "h": 29,
+   "radius": "3px",
+   "font": "12px",
+   "tt": "none",
+   "bg": "rgba(0, 0, 0, 0)",
+   "border": "1px rgba(0, 0, 0, 0)",
+   "label": "EXPLORE▾",
+   "labels": [
+    "EXPLORE▾",
+    "WORLDS▾",
+    "CATALOG▾",
+    "LEARN▾"
+   ],
+   "routes": [
+    "/",
+    "/explore",
+    "/explore/hub",
+    "/worlds",
+    "/catalog",
+    "/learn",
+    "/missions",
+    "/missions/launches",
+    "/fleet",
+    "/plan",
+    "/fly",
+    "/earth"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 2167
+  },
+  {
+   "tag": "a[menuitem]",
+   "cls": "footer-link.footer-link-extra",
+   "h": 20,
+   "radius": "0px",
+   "font": "11px",
+   "tt": "none",
+   "bg": "rgba(0, 0, 0, 0)",
+   "border": "0px rgba(255, 255, 255, 0.6)",
+   "label": "Privacy",
+   "labels": [
+    "Privacy",
+    "License",
+    "README"
+   ],
+   "routes": [
+    "/",
+    "/explore/hub",
+    "/worlds",
+    "/catalog",
+    "/learn",
+    "/missions",
+    "/missions/launches",
+    "/fleet",
+    "/plan",
+    "/fly",
+    "/earth",
+    "/iss"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 2070
+  },
+  {
+   "tag": "a",
+   "cls": "tab-card",
+   "h": 44,
+   "radius": "4px",
+   "font": "16px",
+   "tt": "none",
+   "bg": "rgba(255, 255, 255, 0.03)",
+   "border": "1px rgba(255, 255, 255, 0.08)",
+   "label": "SCALES & TIME",
+   "labels": [
+    "SCALES & TIME",
+    "PLANETS",
+    "EXOPLANETS",
+    "ORBITS",
+    "TRANSFERS",
+    "PORKCHOP"
+   ],
+   "routes": [
+    "/science",
+    "/science/cosmology",
+    "/science/cosmology/large-scale-structure",
+    "/science/cosmology/laniakea-and-the-great-attractor",
+    "/science/exoplanets",
+    "/science/exoplanets/radial-velocity",
+    "/science/exoplanets/transit",
+    "/science/history/keplers-laws-1609",
+    "/science/history/newton-principia-1687",
+    "/science/life-in-space/microgravity-physiology",
+    "/science/life-in-space/bone-density-loss",
+    "/science/mission-phases/launch"
+   ],
+   "states": [
+    "page",
+    "open: Open navigation menu",
+    "open: Language"
+   ],
+   "viewports": [
+    "phone"
+   ],
+   "count": 1308
+  },
+  {
+   "tag": "a[menuitem]",
+   "cls": "group-menu-link",
+   "h": 37,
+   "radius": "4px",
+   "font": "12px",
+   "tt": "uppercase",
+   "bg": "rgba(0, 0, 0, 0)",
+   "border": "1px rgba(0, 0, 0, 0)",
+   "label": "EARTH",
+   "labels": [
+    "EARTH",
+    "MOON",
+    "MARS",
+    "VENUS",
+    "PROGRAMS",
+    "MISSIONS"
+   ],
+   "routes": [
+    "/",
+    "/explore",
+    "/explore/hub",
+    "/worlds",
+    "/catalog",
+    "/learn",
+    "/missions",
+    "/missions/launches",
+    "/fleet",
+    "/plan",
+    "/fly",
+    "/earth"
+   ],
+   "states": [
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 1172
+  },
+  {
+   "tag": "button",
+   "cls": "card.wide.cover",
+   "h": 287,
+   "radius": "8px",
+   "font": "13.3333px",
+   "tt": "none",
+   "bg": "rgba(10, 10, 22, 0.95)",
+   "border": "1px rgba(255, 255, 255, 0.07)",
+   "label": "Starship Mars Crew 2031 SpaceX PLANNED U",
+   "labels": [
+    "Starship Mars Crew 2031 SpaceX PLANNED U",
+    "Artemis IV 2028 NASA PLANNED SPARSE Firs",
+    "Artemis V 2028 NASA PLANNED SPARSE Secon",
+    "Artemis III 2027 NASA PLANNED SPARSE Fir",
+    "Blue Moon MK1 2027 Blue Origin PLANNED S",
+    "Artemis II 2026 NASA FLOWN MEASURED Firs"
+   ],
+   "routes": [
+    "/missions",
+    "/fleet",
+    "/missions?id=apollo11",
+    "/fleet?id=saturn-v"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 1170
+  },
+  {
+   "tag": "a",
+   "cls": "section-row",
+   "h": 44,
+   "radius": "4px",
+   "font": "16px",
+   "tt": "none",
+   "bg": "rgba(255, 255, 255, 0.03)",
+   "border": "1px rgba(255, 255, 255, 0.08)",
+   "label": "Large-scale structure — the cosmic web",
+   "labels": [
+    "Large-scale structure — the cosmic web",
+    "Laniakea and the Great Attractor",
+    "The cosmic distance ladder",
+    "The Radial-Velocity Method",
+    "The Transit Method",
+    "Transit-Timing Variations"
+   ],
+   "routes": [
+    "/science/cosmology",
+    "/science/cosmology/large-scale-structure",
+    "/science/cosmology/laniakea-and-the-great-attractor",
+    "/science/exoplanets",
+    "/science/exoplanets/radial-velocity",
+    "/science/exoplanets/transit",
+    "/science/history/keplers-laws-1609",
+    "/science/history/newton-principia-1687",
+    "/science/life-in-space/microgravity-physiology",
+    "/science/life-in-space/bone-density-loss",
+    "/science/mission-phases/launch",
+    "/science/mission-phases/gravity-turn"
+   ],
+   "states": [
+    "page",
+    "open: Open navigation menu",
+    "open: Language"
+   ],
+   "viewports": [
+    "phone"
+   ],
+   "count": 1038
+  },
+  {
+   "tag": "button",
+   "cls": "card.wide.cover",
+   "h": 290,
+   "radius": "8px",
+   "font": "13.3333px",
+   "tt": "none",
+   "bg": "rgba(10, 10, 22, 0.95)",
+   "border": "1px rgba(255, 255, 255, 0.07)",
+   "label": "BepiColombo 2018 ESAJAXA ACTIVE SPARSE F",
+   "labels": [
+    "BepiColombo 2018 ESAJAXA ACTIVE SPARSE F",
+    "Chang'e 4 / Yutu-2 2018 CNSA ACTIVE MEAS",
+    "InSight 2018 NASA FLOWN MEASURED First t",
+    "Parker Solar Probe 2018 NASA ACTIVE MEAS",
+    "X-37B OTV-5 (USA-277) 2017 USSF FLOWN RE",
+    "OSIRIS-REx 2016 NASA FLOWN MEASURED Larg"
+   ],
+   "routes": [
+    "/missions",
+    "/fleet",
+    "/missions?id=apollo11",
+    "/fleet?id=saturn-v"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop",
+    "phone"
+   ],
+   "count": 784
+  },
+  {
+   "tag": "button",
+   "cls": "nav-btn.audio-toggle",
+   "h": 32,
+   "radius": "4px",
+   "font": "13.3333px",
+   "tt": "none",
+   "bg": "rgba(8, 10, 22, 0.65)",
+   "border": "1px rgba(255, 255, 255, 0.18)",
+   "label": "Take the tour",
+   "labels": [
+    "Take the tour"
+   ],
+   "routes": [
+    "/",
+    "/explore",
+    "/explore/hub",
+    "/worlds",
+    "/catalog",
+    "/learn",
+    "/missions",
+    "/missions/launches",
+    "/fleet",
+    "/plan",
+    "/fly",
+    "/earth"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 780
+  },
+  {
+   "tag": "button",
+   "cls": "nav-btn.lens-toggle",
+   "h": 32,
+   "radius": "4px",
+   "font": "13.3333px",
+   "tt": "none",
+   "bg": "rgba(8, 10, 22, 0.65)",
+   "border": "1px rgba(255, 255, 255, 0.18)",
+   "label": "Toggle science lens (unavailable on this",
+   "labels": [
+    "Toggle science lens (unavailable on this",
+    "Toggle science lens"
+   ],
+   "routes": [
+    "/",
+    "/explore",
+    "/explore/hub",
+    "/worlds",
+    "/catalog",
+    "/learn",
+    "/missions",
+    "/missions/launches",
+    "/fleet",
+    "/plan",
+    "/fly",
+    "/earth"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 780
+  },
+  {
+   "tag": "a[menuitem]",
+   "cls": "group-menu-link.has-glyph",
+   "h": 40,
+   "radius": "4px",
+   "font": "12px",
+   "tt": "uppercase",
+   "bg": "rgba(0, 0, 0, 0)",
+   "border": "1px rgba(0, 0, 0, 0)",
+   "label": "OUR SOLAR SYSTEM",
+   "labels": [
+    "OUR SOLAR SYSTEM",
+    "Stellar Neighborhood",
+    "Milky Way",
+    "Local Group",
+    "Local Sheet",
+    "Virgo Supercluster"
+   ],
+   "routes": [
+    "/",
+    "/explore",
+    "/explore/hub",
+    "/worlds",
+    "/catalog",
+    "/learn",
+    "/missions",
+    "/missions/launches",
+    "/fleet",
+    "/plan",
+    "/fly",
+    "/earth"
+   ],
+   "states": [
+    "open: EXPLORE\n▾"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 756
+  },
+  {
+   "tag": "button[radio]",
+   "cls": "ui-chip.agency-chip",
+   "h": 30,
+   "radius": "4px",
+   "font": "11px",
+   "tt": "uppercase",
+   "bg": "rgba(8, 10, 22, 0.65)",
+   "border": "1px rgba(255, 255, 255, 0.18)",
+   "label": "Agenzia Spaziale Italiana, 1",
+   "labels": [
+    "Agenzia Spaziale Italiana, 1",
+    "Blue Origin, 1",
+    "China Manned Space Agency, 2",
+    "China National Space Administration, 7",
+    "European Space Agency, 14",
+    "Indian Space Research Organisation, 4"
+   ],
+   "routes": [
+    "/missions",
+    "/missions/launches",
+    "/fleet",
+    "/programs",
+    "/missions?id=apollo11",
+    "/fleet?id=saturn-v"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 752
+  },
+  {
+   "tag": "button",
+   "cls": "chip",
+   "h": 32,
+   "radius": "4px",
+   "font": "11px",
+   "tt": "none",
+   "bg": "rgba(8, 10, 22, 0.65)",
+   "border": "1px rgba(255, 255, 255, 0.18)",
+   "label": "Language",
+   "labels": [
+    "Language"
+   ],
+   "routes": [
+    "/",
+    "/explore",
+    "/explore/hub",
+    "/worlds",
+    "/catalog",
+    "/learn",
+    "/missions",
+    "/missions/launches",
+    "/fleet",
+    "/plan",
+    "/fly",
+    "/earth"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: SETTINGS",
+    "open: More",
+    "open: Change scale"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 685
+  },
+  {
+   "tag": "button",
+   "cls": "nav-btn.settings-toggle",
+   "h": 32,
+   "radius": "4px",
+   "font": "13.3333px",
+   "tt": "none",
+   "bg": "rgba(8, 10, 22, 0.65)",
+   "border": "1px rgba(255, 255, 255, 0.18)",
+   "label": "SETTINGS",
+   "labels": [
+    "SETTINGS"
+   ],
+   "routes": [
+    "/",
+    "/explore",
+    "/explore/hub",
+    "/worlds",
+    "/catalog",
+    "/learn",
+    "/missions",
+    "/missions/launches",
+    "/fleet",
+    "/plan",
+    "/fly",
+    "/earth"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: More",
+    "open: Change scale"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 685
+  },
+  {
+   "tag": "button",
+   "cls": "nav-btn.nav-more-trigger",
+   "h": 32,
+   "radius": "4px",
+   "font": "13.3333px",
+   "tt": "none",
+   "bg": "rgba(8, 10, 22, 0.65)",
+   "border": "1px rgba(255, 255, 255, 0.18)",
+   "label": "More",
+   "labels": [
+    "More"
+   ],
+   "routes": [
+    "/",
+    "/explore",
+    "/explore/hub",
+    "/worlds",
+    "/catalog",
+    "/learn",
+    "/missions",
+    "/missions/launches",
+    "/fleet",
+    "/plan",
+    "/fly",
+    "/earth"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: Change scale"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 685
+  },
+  {
+   "tag": "button",
+   "cls": "link.group-trigger.active",
+   "h": 29,
+   "radius": "3px",
+   "font": "12px",
+   "tt": "none",
+   "bg": "color(srgb 0.313726 0.439216 1 / 0.28)",
+   "border": "1px color(srgb 0.313726 0.439216 1 / 0.55)",
+   "label": "EXPLORE▾",
+   "labels": [
+    "EXPLORE▾",
+    "CATALOG▾",
+    "WORLDS▾",
+    "LEARN▾"
+   ],
+   "routes": [
+    "/explore",
+    "/explore/hub",
+    "/missions",
+    "/missions/launches",
+    "/fleet",
+    "/earth",
+    "/moon",
+    "/mars",
+    "/venus",
+    "/iss",
+    "/tiangong",
+    "/science"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 652
+  },
+  {
+   "tag": "button[radio]",
+   "cls": "ui-chip.era-tile",
+   "h": 96,
+   "radius": "4px",
+   "font": "11px",
+   "tt": "uppercase",
+   "bg": "rgb(4, 4, 12)",
+   "border": "1px rgba(255, 255, 255, 0.18)",
+   "label": "First Steps (1957–1961), entries: 5",
+   "labels": [
+    "First Steps (1957–1961), entries: 5",
+    "Space Race (1961–1969), entries: 28",
+    "Lunar Era (1969–1972), entries: 12",
+    "First Stations (1973–1980), entries: 12",
+    "Shuttle & Mir (1981–1998), entries: 15",
+    "ISS Assembly (1998–2011), entries: 24"
+   ],
+   "routes": [
+    "/missions",
+    "/missions/launches",
+    "/fleet",
+    "/programs",
+    "/missions?id=apollo11",
+    "/fleet?id=saturn-v"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop",
+    "phone"
+   ],
+   "count": 621
+  },
+  {
+   "tag": "button",
+   "cls": "provenance-chip.ui-hit",
+   "h": 22,
+   "radius": "2px",
+   "font": "11px",
+   "tt": "uppercase",
+   "bg": "rgba(0, 0, 0, 0)",
+   "border": "1px rgba(255, 255, 255, 0.12)",
+   "label": "View provenance chain",
+   "labels": [
+    "View provenance chain"
+   ],
+   "routes": [
+    "/missions/launches"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop",
+    "phone"
+   ],
+   "count": 496
+  },
+  {
+   "tag": "a",
+   "cls": "section-row",
+   "h": 58,
+   "radius": "4px",
+   "font": "16px",
+   "tt": "none",
+   "bg": "rgba(255, 255, 255, 0.03)",
+   "border": "1px rgba(255, 255, 255, 0.08)",
+   "label": "EVA operations — the spacewalk procedure",
+   "labels": [
+    "EVA operations — the spacewalk procedure",
+    "Crew selection — the funnel from applica",
+    "Suit lineage — Sokol to Orlan to Feitian",
+    "Lunar surface operations — 1/6 g, regoli",
+    "Mars human architecture — what crewed Ma",
+    "Crew dynamics & psychology — Mir crises,"
+   ],
+   "routes": [
+    "/science/life-in-space/microgravity-physiology",
+    "/science/life-in-space/bone-density-loss",
+    "/science/mission-phases/launch",
+    "/science/mission-phases/gravity-turn",
+    "/science/observation/space-photography",
+    "/science/observation/adaptive-optics",
+    "/science/orbits/keplerian-orbit",
+    "/science/orbits/semi-major-axis",
+    "/science/propulsion/dv-budget",
+    "/science/propulsion/tsiolkovsky"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 480
+  },
+  {
+   "tag": "button",
+   "cls": "ui-chip",
+   "h": 30,
+   "radius": "4px",
+   "font": "11px",
+   "tt": "uppercase",
+   "bg": "rgba(8, 10, 22, 0.65)",
+   "border": "1px rgba(255, 255, 255, 0.18)",
+   "label": "Change scale",
+   "labels": [
+    "Change scale",
+    "Pause",
+    "Reset to today",
+    "2D",
+    "ICONIC MISSIONS",
+    "SPIN"
+   ],
+   "routes": [
+    "/explore",
+    "/fly",
+    "/earth",
+    "/moon",
+    "/mars",
+    "/venus",
+    "/iss",
+    "/tiangong",
+    "/colophon",
+    "/moon?site=apollo11",
+    "/mars?site=perseverance",
+    "/earth?site=ksc"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 389
+  },
+  {
+   "tag": "button",
+   "cls": "group-backdrop",
+   "h": 848,
+   "radius": "0px",
+   "font": "13.3333px",
+   "tt": "none",
+   "bg": "rgba(0, 0, 0, 0)",
+   "border": "0px rgb(0, 0, 0)",
+   "label": "Close navigation menu",
+   "labels": [
+    "Close navigation menu"
+   ],
+   "routes": [
+    "/",
+    "/explore",
+    "/explore/hub",
+    "/worlds",
+    "/catalog",
+    "/learn",
+    "/missions",
+    "/missions/launches",
+    "/fleet",
+    "/plan",
+    "/fly",
+    "/earth"
+   ],
+   "states": [
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 380
+  },
+  {
+   "tag": "button",
+   "cls": "drawer-link.drawer-more-row",
+   "h": 44,
+   "radius": "0px",
+   "font": "12px",
+   "tt": "none",
+   "bg": "rgba(0, 0, 0, 0)",
+   "border": "0px rgba(255, 255, 255, 0.65)",
+   "label": "Share this view",
+   "labels": [
+    "Share this view",
+    "Debug overlays"
+   ],
+   "routes": [
+    "/",
+    "/explore",
+    "/explore/hub",
+    "/worlds",
+    "/catalog",
+    "/learn",
+    "/missions",
+    "/missions/launches",
+    "/fleet",
+    "/plan",
+    "/fly",
+    "/earth"
+   ],
+   "states": [
+    "open: Open navigation menu",
+    "open: Language"
+   ],
+   "viewports": [
+    "phone"
+   ],
+   "count": 352
+  },
+  {
+   "tag": "button",
+   "cls": "band",
+   "h": 26,
+   "radius": "4px",
+   "font": "11px",
+   "tt": "none",
+   "bg": "rgba(0, 0, 0, 0)",
+   "border": "1px rgba(255, 255, 255, 0.06)",
+   "label": "OORT 50,000 AU",
+   "labels": [
+    "OORT 50,000 AU",
+    "SCATTERED 50–1,000 AU",
+    "HELIO 120 AU",
+    "KUIPER 30–50 AU",
+    "GIANTS 5–30 AU",
+    "BELT 2.2–3.2 AU"
+   ],
+   "routes": [
+    "/explore",
+    "/earth",
+    "/moon",
+    "/mars",
+    "/earth?site=ksc",
+    "/explore?id=mars"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 330
+  },
+  {
+   "tag": "button",
+   "cls": "link.group-trigger",
+   "h": 29,
+   "radius": "3px",
+   "font": "12px",
+   "tt": "none",
+   "bg": "rgba(0, 0, 0, 0)",
+   "border": "1px rgba(255, 255, 255, 0.12)",
+   "label": "EXPLORE▾",
+   "labels": [
+    "EXPLORE▾",
+    "WORLDS▾",
+    "CATALOG▾",
+    "LEARN▾"
+   ],
+   "routes": [
+    "/",
+    "/explore",
+    "/explore/hub",
+    "/worlds",
+    "/catalog",
+    "/learn",
+    "/missions",
+    "/missions/launches",
+    "/fleet",
+    "/plan",
+    "/fly",
+    "/earth"
+   ],
+   "states": [
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 301
+  },
+  {
+   "tag": "a",
+   "cls": "ui-chip",
+   "h": 30,
+   "radius": "4px",
+   "font": "11px",
+   "tt": "uppercase",
+   "bg": "rgba(8, 10, 22, 0.65)",
+   "border": "1px rgba(255, 255, 255, 0.18)",
+   "label": "Back to Explore",
+   "labels": [
+    "Back to Explore",
+    "Watch the ISS live →",
+    "→ Open in Orrery",
+    "Mars 3 lander · Mission Catalog",
+    "Show constellation lines",
+    "Go to Mars"
+   ],
+   "routes": [
+    "/earth",
+    "/moon",
+    "/mars",
+    "/venus",
+    "/iss",
+    "/missions/sputnik1",
+    "/fleet/a7l",
+    "/fleet/a7lb",
+    "/moon/luna9",
+    "/moon/luna16",
+    "/mars/mars2",
+    "/mars/mars3"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 299
+  },
+  {
+   "tag": "button",
+   "cls": "nav-btn.audio-toggle",
+   "h": 44,
+   "radius": "4px",
+   "font": "13.3333px",
+   "tt": "none",
+   "bg": "rgba(8, 10, 22, 0.65)",
+   "border": "1px rgba(255, 255, 255, 0.18)",
+   "label": "Take the tour",
+   "labels": [
+    "Take the tour"
+   ],
+   "routes": [
+    "/",
+    "/explore",
+    "/explore/hub",
+    "/worlds",
+    "/catalog",
+    "/learn",
+    "/missions",
+    "/missions/launches",
+    "/fleet",
+    "/plan",
+    "/fly",
+    "/earth"
+   ],
+   "states": [
+    "page",
+    "open: Open navigation menu",
+    "open: Language",
+    "open: Why this matters: Why this lan"
+   ],
+   "viewports": [
+    "phone"
+   ],
+   "count": 273
+  },
+  {
+   "tag": "button",
+   "cls": "nav-btn.lens-toggle",
+   "h": 44,
+   "radius": "4px",
+   "font": "13.3333px",
+   "tt": "none",
+   "bg": "rgba(8, 10, 22, 0.65)",
+   "border": "1px rgba(255, 255, 255, 0.18)",
+   "label": "Toggle science lens (unavailable on this",
+   "labels": [
+    "Toggle science lens (unavailable on this",
+    "Toggle science lens"
+   ],
+   "routes": [
+    "/",
+    "/explore",
+    "/explore/hub",
+    "/worlds",
+    "/catalog",
+    "/learn",
+    "/missions",
+    "/missions/launches",
+    "/fleet",
+    "/plan",
+    "/fly",
+    "/earth"
+   ],
+   "states": [
+    "page",
+    "open: Open navigation menu",
+    "open: Language",
+    "open: Why this matters: Why this lan"
+   ],
+   "viewports": [
+    "phone"
+   ],
+   "count": 273
+  },
+  {
+   "tag": "button",
+   "cls": "nav-btn.settings-toggle",
+   "h": 44,
+   "radius": "4px",
+   "font": "13.3333px",
+   "tt": "none",
+   "bg": "rgba(8, 10, 22, 0.65)",
+   "border": "1px rgba(255, 255, 255, 0.18)",
+   "label": "SETTINGS",
+   "labels": [
+    "SETTINGS"
+   ],
+   "routes": [
+    "/",
+    "/explore",
+    "/explore/hub",
+    "/worlds",
+    "/catalog",
+    "/learn",
+    "/missions",
+    "/missions/launches",
+    "/fleet",
+    "/plan",
+    "/fly",
+    "/earth"
+   ],
+   "states": [
+    "page",
+    "open: Open navigation menu",
+    "open: Language",
+    "open: Why this matters: Why this lan"
+   ],
+   "viewports": [
+    "phone"
+   ],
+   "count": 273
+  },
+  {
+   "tag": "button[radio]",
+   "cls": "ui-chip",
+   "h": 30,
+   "radius": "4px",
+   "font": "11px",
+   "tt": "uppercase",
+   "bg": "rgba(8, 10, 22, 0.65)",
+   "border": "1px rgba(255, 255, 255, 0.18)",
+   "label": "List",
+   "labels": [
+    "List",
+    "MARS",
+    "MOON",
+    "EARTH",
+    "JUPITER",
+    "NEPTUNE"
+   ],
+   "routes": [
+    "/missions",
+    "/missions/launches",
+    "/fleet",
+    "/plan",
+    "/fly",
+    "/gallery/deep-sky",
+    "/programs",
+    "/missions?id=apollo11",
+    "/fleet?id=saturn-v"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 243
+  },
+  {
+   "tag": "button",
+   "cls": "thumb-open",
+   "h": 155,
+   "radius": "0px",
+   "font": "13.3333px",
+   "tt": "none",
+   "bg": "rgba(0, 0, 0, 0)",
+   "border": "0px rgb(0, 0, 0)",
+   "label": "",
+   "labels": [],
+   "routes": [
+    "/colophon"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 240
+  },
+  {
+   "tag": "button",
+   "cls": "search-button",
+   "h": 38,
+   "radius": "4px",
+   "font": "12px",
+   "tt": "none",
+   "bg": "rgba(255, 255, 255, 0.04)",
+   "border": "1px rgba(255, 255, 255, 0.1)",
+   "label": "Search the encyclopedia (⌘K)",
+   "labels": [
+    "Search the encyclopedia (⌘K)"
+   ],
+   "routes": [
+    "/science",
+    "/science/cosmology",
+    "/science/cosmology/large-scale-structure",
+    "/science/cosmology/laniakea-and-the-great-attractor",
+    "/science/exoplanets",
+    "/science/exoplanets/radial-velocity",
+    "/science/exoplanets/transit",
+    "/science/history/keplers-laws-1609",
+    "/science/history/newton-principia-1687",
+    "/science/life-in-space/microgravity-physiology",
+    "/science/life-in-space/bone-density-loss",
+    "/science/mission-phases/launch"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 232
+  },
+  {
+   "tag": "a",
+   "cls": "card.wide.cover",
+   "h": 287,
+   "radius": "8px",
+   "font": "16px",
+   "tt": "none",
+   "bg": "rgba(10, 10, 22, 0.95)",
+   "border": "1px rgba(255, 255, 255, 0.07)",
+   "label": "Russian Orbital Station 2027–now Roscosm",
+   "labels": [
+    "Russian Orbital Station 2027–now Roscosm",
+    "Commercial Stations 2025–now Axiom Space",
+    "Project Kuiper 2023–now Amazon Infrastru",
+    "Artemis 2019–now NASAESAJAXACSASpaceX Cr",
+    "Starlink 2019–now SpaceX Infrastructure ",
+    "Starship 2019–now SpaceX Crewed campaign"
+   ],
+   "routes": [
+    "/programs"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 225
+  },
+  {
+   "tag": "button",
+   "cls": "module-row",
+   "h": 65,
+   "radius": "4px",
+   "font": "13.3333px",
+   "tt": "none",
+   "bg": "rgba(255, 255, 255, 0.04)",
+   "border": "1px rgba(255, 255, 255, 0.08)",
+   "label": "BEAM NASA",
+   "labels": [
+    "BEAM NASA",
+    "Canadarm2 CSA / NASA",
+    "Columbus ESA",
+    "Cupola NASA / ESA",
+    "Destiny NASA",
+    "Harmony (Node 2) NASA / ESA"
+   ],
+   "routes": [
+    "/iss",
+    "/tiangong"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 224
+  },
+  {
+   "tag": "a",
+   "cls": "tab-card.active",
+   "h": 40,
+   "radius": "4px",
+   "font": "16px",
+   "tt": "none",
+   "bg": "rgba(80, 112, 255, 0.12)",
+   "border": "1px rgba(80, 112, 255, 0.7)",
+   "label": "COSMOLOGY",
+   "labels": [
+    "COSMOLOGY",
+    "EXOPLANETS",
+    "HISTORY",
+    "LIFE IN SPACE",
+    "MISSION PHASES",
+    "OBSERVATION"
+   ],
+   "routes": [
+    "/science/cosmology",
+    "/science/cosmology/large-scale-structure",
+    "/science/cosmology/laniakea-and-the-great-attractor",
+    "/science/exoplanets",
+    "/science/exoplanets/radial-velocity",
+    "/science/exoplanets/transit",
+    "/science/history/keplers-laws-1609",
+    "/science/history/newton-principia-1687",
+    "/science/life-in-space/microgravity-physiology",
+    "/science/life-in-space/bone-density-loss",
+    "/science/mission-phases/launch",
+    "/science/mission-phases/gravity-turn"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 224
+  },
+  {
+   "tag": "a",
+   "cls": "section-row.active",
+   "h": 40,
+   "radius": "4px",
+   "font": "16px",
+   "tt": "none",
+   "bg": "rgba(80, 112, 255, 0.12)",
+   "border": "1px rgba(80, 112, 255, 0.7)",
+   "label": "Large-scale structure — the cosmic web",
+   "labels": [
+    "Large-scale structure — the cosmic web",
+    "Laniakea and the Great Attractor",
+    "The Radial-Velocity Method",
+    "The Transit Method",
+    "Kepler's Laws · 1609–1619",
+    "Newton's Principia · 1687"
+   ],
+   "routes": [
+    "/science/cosmology/large-scale-structure",
+    "/science/cosmology/laniakea-and-the-great-attractor",
+    "/science/exoplanets/radial-velocity",
+    "/science/exoplanets/transit",
+    "/science/history/keplers-laws-1609",
+    "/science/history/newton-principia-1687",
+    "/science/life-in-space/microgravity-physiology",
+    "/science/life-in-space/bone-density-loss",
+    "/science/mission-phases/launch",
+    "/science/mission-phases/gravity-turn",
+    "/science/observation/space-photography",
+    "/science/observation/adaptive-optics"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 208
+  },
+  {
+   "tag": "a",
+   "cls": "card.wide.cover",
+   "h": 290,
+   "radius": "8px",
+   "font": "16px",
+   "tt": "none",
+   "bg": "rgba(10, 10, 22, 0.95)",
+   "border": "1px rgba(255, 255, 255, 0.07)",
+   "label": "Space Shuttle 1981–2011 NASA Crewed camp",
+   "labels": [
+    "Space Shuttle 1981–2011 NASA Crewed camp",
+    "Ariane 1979–now ESA Infrastructure Europ",
+    "Voyager 1977–now NASA Robotic campaign T",
+    "Buran 1976–1993 Roscosmos Crewed campaig",
+    "Viking 1975–1982 NASA Robotic campaign I",
+    "Skylab 1973–1974 NASA Station America's "
+   ],
+   "routes": [
+    "/programs",
+    "/essays"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop",
+    "phone"
+   ],
+   "count": 202
+  },
+  {
+   "tag": "button[menuitemcheckbox]",
+   "cls": "nav-more-item",
+   "h": 32,
+   "radius": "4px",
+   "font": "12px",
+   "tt": "none",
+   "bg": "rgba(0, 0, 0, 0)",
+   "border": "1px rgba(0, 0, 0, 0)",
+   "label": "Toggle high-contrast mode",
+   "labels": [
+    "Toggle high-contrast mode",
+    "Debug overlays"
+   ],
+   "routes": [
+    "/",
+    "/explore",
+    "/explore/hub",
+    "/worlds",
+    "/catalog",
+    "/learn",
+    "/missions",
+    "/missions/launches",
+    "/fleet",
+    "/plan",
+    "/fly",
+    "/earth"
+   ],
+   "states": [
+    "open: More"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 190
+  },
+  {
+   "tag": "button[radio]",
+   "cls": "ui-chip.agency-chip",
+   "h": 44,
+   "radius": "4px",
+   "font": "11px",
+   "tt": "uppercase",
+   "bg": "rgba(8, 10, 22, 0.65)",
+   "border": "1px rgba(255, 255, 255, 0.18)",
+   "label": "Agenzia Spaziale Italiana, 1",
+   "labels": [
+    "Agenzia Spaziale Italiana, 1",
+    "Blue Origin, 1",
+    "China Manned Space Agency, 2",
+    "China National Space Administration, 7",
+    "European Space Agency, 14",
+    "Indian Space Research Organisation, 4"
+   ],
+   "routes": [
+    "/missions",
+    "/missions/launches",
+    "/fleet",
+    "/programs",
+    "/missions?id=apollo11",
+    "/fleet?id=saturn-v"
+   ],
+   "states": [
+    "page",
+    "open: Open navigation menu",
+    "open: Language"
+   ],
+   "viewports": [
+    "phone"
+   ],
+   "count": 190
+  },
+  {
+   "tag": "button",
+   "cls": "nav-btn.menu-toggle",
+   "h": 44,
+   "radius": "4px",
+   "font": "13.3333px",
+   "tt": "none",
+   "bg": "rgba(8, 10, 22, 0.65)",
+   "border": "1px rgba(255, 255, 255, 0.18)",
+   "label": "Open navigation menu",
+   "labels": [
+    "Open navigation menu"
+   ],
+   "routes": [
+    "/",
+    "/explore",
+    "/explore/hub",
+    "/worlds",
+    "/catalog",
+    "/learn",
+    "/missions",
+    "/missions/launches",
+    "/fleet",
+    "/plan",
+    "/fly",
+    "/earth"
+   ],
+   "states": [
+    "page",
+    "open: Language",
+    "open: Why this matters: Why this lan"
+   ],
+   "viewports": [
+    "phone"
+   ],
+   "count": 185
+  },
+  {
+   "tag": "button[option]",
+   "cls": "option.active",
+   "h": 44,
+   "radius": "3px",
+   "font": "15px",
+   "tt": "none",
+   "bg": "rgba(0, 0, 0, 0)",
+   "border": "0px rgb(136, 159, 231)",
+   "label": "English EN",
+   "labels": [
+    "English EN"
+   ],
+   "routes": [
+    "/",
+    "/explore",
+    "/explore/hub",
+    "/worlds",
+    "/catalog",
+    "/learn",
+    "/missions",
+    "/missions/launches",
+    "/fleet",
+    "/plan",
+    "/fly",
+    "/earth"
+   ],
+   "states": [
+    "open: Language"
+   ],
+   "viewports": [
+    "desktop",
+    "phone"
+   ],
+   "count": 183
+  },
+  {
+   "tag": "button",
+   "cls": "drawer-link.drawer-more-row",
+   "h": 58,
+   "radius": "0px",
+   "font": "12px",
+   "tt": "none",
+   "bg": "rgba(0, 0, 0, 0)",
+   "border": "0px rgba(255, 255, 255, 0.65)",
+   "label": "Toggle high-contrast mode",
+   "labels": [
+    "Toggle high-contrast mode"
+   ],
+   "routes": [
+    "/",
+    "/explore",
+    "/explore/hub",
+    "/worlds",
+    "/catalog",
+    "/learn",
+    "/missions",
+    "/missions/launches",
+    "/fleet",
+    "/plan",
+    "/fly",
+    "/earth"
+   ],
+   "states": [
+    "open: Open navigation menu",
+    "open: Language"
+   ],
+   "viewports": [
+    "phone"
+   ],
+   "count": 176
+  },
+  {
+   "tag": "button",
+   "cls": "drawer-backdrop",
+   "h": 792,
+   "radius": "0px",
+   "font": "13.3333px",
+   "tt": "none",
+   "bg": "rgba(0, 0, 0, 0.35)",
+   "border": "0px rgb(0, 0, 0)",
+   "label": "Close navigation menu",
+   "labels": [
+    "Close navigation menu"
+   ],
+   "routes": [
+    "/",
+    "/explore",
+    "/explore/hub",
+    "/worlds",
+    "/catalog",
+    "/learn",
+    "/missions",
+    "/missions/launches",
+    "/fleet",
+    "/plan",
+    "/fly",
+    "/earth"
+   ],
+   "states": [
+    "open: Open navigation menu",
+    "open: Language"
+   ],
+   "viewports": [
+    "phone"
+   ],
+   "count": 176
+  },
+  {
+   "tag": "button",
+   "cls": "ui-chip",
+   "h": 30,
+   "radius": "4px",
+   "font": "11px",
+   "tt": "uppercase",
+   "bg": "color(srgb 0.116727 0.160134 0.36249 / 0.727765)",
+   "border": "1px rgb(80, 112, 255)",
+   "label": "PLANETS",
+   "labels": [
+    "PLANETS",
+    "DWARFS",
+    "COMETS",
+    "ISM",
+    "HUD",
+    "CAP"
+   ],
+   "routes": [
+    "/explore",
+    "/fly",
+    "/earth",
+    "/earth?site=ksc",
+    "/explore?id=mars"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 168
+  },
+  {
+   "tag": "a",
+   "cls": "card.portrait.cover",
+   "h": 499,
+   "radius": "8px",
+   "font": "16px",
+   "tt": "none",
+   "bg": "rgba(10, 10, 22, 0.95)",
+   "border": "1px rgba(255, 255, 255, 0.07)",
+   "label": "Download the Solar System poster — Eight",
+   "labels": [
+    "Download the Solar System poster — Eight",
+    "Download the Earth poster — One planet ·",
+    "Download the Moon poster — Twelve footpr",
+    "Download the Mars poster — Two years awa",
+    "Download the Saturn V poster — The might",
+    "Download the Mir poster — Humanity's fir"
+   ],
+   "routes": [
+    "/posters"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 168
+  },
+  {
+   "tag": "a",
+   "cls": "ep-read",
+   "h": 34,
+   "radius": "3px",
+   "font": "13px",
+   "tt": "none",
+   "bg": "rgba(201, 170, 111, 0.08)",
+   "border": "1px rgba(201, 170, 111, 0.35)",
+   "label": "↳ Read transcript",
+   "labels": [
+    "↳ Read transcript"
+   ],
+   "routes": [
+    "/library/episodes"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop",
+    "phone"
+   ],
+   "count": 164
+  },
+  {
+   "tag": "button",
+   "cls": "",
+   "h": 230,
+   "radius": "6px",
+   "font": "13.3333px",
+   "tt": "none",
+   "bg": "rgb(5, 6, 13)",
+   "border": "1px rgba(255, 255, 255, 0.08)",
+   "label": "View Pillars of Creation — Hubble's icon",
+   "labels": [
+    "View Pillars of Creation — Hubble's icon",
+    "View M11 · Wild Duck Cluster — Star clus",
+    "View Cosmic Cliffs — The edge of a stell",
+    "View M14 · NGC 6402 — Globular cluster",
+    "View Bubble Nebula — NGC 7635 — a seven-",
+    "View Cat's Eye Nebula — NGC 6543 — one o"
+   ],
+   "routes": [
+    "/gallery/deep-sky"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 160
+  },
+  {
+   "tag": "button[radio]",
+   "cls": "ui-chip",
+   "h": 30,
+   "radius": "4px",
+   "font": "11px",
+   "tt": "uppercase",
+   "bg": "color(srgb 0.116727 0.160134 0.36249 / 0.727765)",
+   "border": "1px rgb(80, 112, 255)",
+   "label": "ALL",
+   "labels": [
+    "ALL",
+    "Grid",
+    "List",
+    "UPCOMING",
+    "LANDING",
+    "7×"
+   ],
+   "routes": [
+    "/missions",
+    "/missions/launches",
+    "/fleet",
+    "/plan",
+    "/fly",
+    "/gallery/deep-sky",
+    "/programs",
+    "/missions?id=apollo11",
+    "/fleet?id=saturn-v"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 153
+  },
+  {
+   "tag": "a",
+   "cls": "card",
+   "h": 184,
+   "radius": "4px",
+   "font": "16px",
+   "tt": "none",
+   "bg": "rgba(255, 255, 255, 0.02)",
+   "border": "1px rgba(255, 255, 255, 0.12)",
+   "label": "Local Sheet: The Local Sheet",
+   "labels": [
+    "Local Sheet: The Local Sheet",
+    "/earth: Earth orbit explorer",
+    "/moon: Moon surface map",
+    "/mars: Mars surface map",
+    "/plan: Pick a launch window",
+    "/fly: Fly the trajectory"
+   ],
+   "routes": [
+    "/",
+    "/explore/hub",
+    "/worlds",
+    "/catalog"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop",
+    "phone"
+   ],
+   "count": 144
+  },
+  {
+   "tag": "a",
+   "cls": "map",
+   "h": 27,
+   "radius": "4px",
+   "font": "12px",
+   "tt": "none",
+   "bg": "rgba(0, 0, 0, 0)",
+   "border": "1px rgba(80, 112, 255, 0.35)",
+   "label": "On the map",
+   "labels": [
+    "On the map"
+   ],
+   "routes": [
+    "/science/cosmology/large-scale-structure",
+    "/science/exoplanets/radial-velocity",
+    "/science/observation/space-photography",
+    "/science/observation/adaptive-optics",
+    "/science/scales-time/light-minute"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop",
+    "phone"
+   ],
+   "count": 140
+  },
+  {
+   "tag": "button",
+   "cls": "ui-chip",
+   "h": 44,
+   "radius": "4px",
+   "font": "11px",
+   "tt": "uppercase",
+   "bg": "rgba(8, 10, 22, 0.65)",
+   "border": "1px rgba(255, 255, 255, 0.18)",
+   "label": "Change scale",
+   "labels": [
+    "Change scale",
+    "REFERENCES",
+    "Pause",
+    "Reset to today",
+    "2D",
+    "Point your phone at the sky to find the "
+   ],
+   "routes": [
+    "/explore",
+    "/fly",
+    "/earth",
+    "/moon",
+    "/mars",
+    "/venus",
+    "/iss",
+    "/tiangong",
+    "/credits",
+    "/colophon",
+    "/moon?site=apollo11",
+    "/mars?site=perseverance"
+   ],
+   "states": [
+    "page",
+    "open: Open navigation menu",
+    "open: Language",
+    "open: Why this matters: Why this lan"
+   ],
+   "viewports": [
+    "phone"
+   ],
+   "count": 134
+  },
+  {
+   "tag": "button",
+   "cls": "ui-chip",
+   "h": 66,
+   "radius": "4px",
+   "font": "11px",
+   "tt": "uppercase",
+   "bg": "rgba(8, 10, 22, 0.65)",
+   "border": "1px rgba(255, 255, 255, 0.18)",
+   "label": "Body index — jump to the Sun, any planet",
+   "labels": [
+    "Body index — jump to the Sun, any planet",
+    "Index",
+    "Stellar Neighborhood index — jump to a n"
+   ],
+   "routes": [
+    "/explore",
+    "/earth",
+    "/moon",
+    "/mars",
+    "/venus",
+    "/moon?site=apollo11",
+    "/mars?site=perseverance",
+    "/earth?site=ksc",
+    "/venus?site=venera13",
+    "/explore?id=mars",
+    "/explore?goto=antares",
+    "/explore?deepsky=m42"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop",
+    "phone"
+   ],
+   "count": 131
+  },
+  {
+   "tag": "button",
+   "cls": "ui-chip.ui-chip--wrap",
+   "h": 30,
+   "radius": "4px",
+   "font": "11px",
+   "tt": "uppercase",
+   "bg": "rgba(8, 10, 22, 0.65)",
+   "border": "1px rgba(255, 255, 255, 0.18)",
+   "label": "RESET VIEW",
+   "labels": [
+    "RESET VIEW"
+   ],
+   "routes": [
+    "/explore",
+    "/earth",
+    "/moon",
+    "/mars",
+    "/venus",
+    "/iss",
+    "/tiangong",
+    "/moon?site=apollo11",
+    "/mars?site=perseverance",
+    "/earth?site=ksc",
+    "/venus?site=venera13",
+    "/explore?id=mars"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 120
+  },
+  {
+   "tag": "button",
+   "cls": "mdg-tab",
+   "h": 40,
+   "radius": "8px",
+   "font": "11px",
+   "tt": "none",
+   "bg": "rgba(15, 18, 35, 0.62)",
+   "border": "1px rgba(80, 112, 255, 0.35)",
+   "label": "◎ RULER",
+   "labels": [
+    "◎ RULER",
+    "➤ MISSIONS",
+    "▤ CONTROLS",
+    "▤ LAYERS",
+    "⚑ NATIONS",
+    "◈ SCAN"
+   ],
+   "routes": [
+    "/explore",
+    "/earth",
+    "/moon",
+    "/mars",
+    "/venus",
+    "/iss",
+    "/tiangong",
+    "/moon?site=apollo11",
+    "/mars?site=perseverance",
+    "/earth?site=ksc",
+    "/venus?site=venera13",
+    "/explore?id=mars"
+   ],
+   "states": [
+    "page",
+    "open: Open navigation menu",
+    "open: Language",
+    "open: Why this matters: Why this lan"
+   ],
+   "viewports": [
+    "phone"
+   ],
+   "count": 119
+  },
+  {
+   "tag": "a",
+   "cls": "drawer-link.drawer-group-item.active",
+   "h": 41,
+   "radius": "0px",
+   "font": "12px",
+   "tt": "uppercase",
+   "bg": "color(srgb 0.313726 0.439216 1 / 0.18)",
+   "border": "0px rgb(255, 255, 255)",
+   "label": "MISSIONS",
+   "labels": [
+    "MISSIONS",
+    "FLEET",
+    "EARTH",
+    "MOON",
+    "MARS",
+    "VENUS"
+   ],
+   "routes": [
+    "/missions",
+    "/missions/launches",
+    "/fleet",
+    "/earth",
+    "/moon",
+    "/mars",
+    "/venus",
+    "/iss",
+    "/tiangong",
+    "/science",
+    "/lab",
+    "/live"
+   ],
+   "states": [
+    "open: Open navigation menu",
+    "open: Language"
+   ],
+   "viewports": [
+    "phone"
+   ],
+   "count": 106
+  },
+  {
+   "tag": "a",
+   "cls": "ui-chip",
+   "h": 44,
+   "radius": "4px",
+   "font": "11px",
+   "tt": "uppercase",
+   "bg": "rgba(8, 10, 22, 0.65)",
+   "border": "1px rgba(255, 255, 255, 0.18)",
+   "label": "Back to Explore",
+   "labels": [
+    "Back to Explore",
+    "→ Open in Orrery",
+    "Mars 3 lander · Mission Catalog",
+    "Show constellation lines",
+    "Go to Mars",
+    "On the lunar surface"
+   ],
+   "routes": [
+    "/earth",
+    "/moon",
+    "/mars",
+    "/venus",
+    "/missions/sputnik1",
+    "/fleet/a7l",
+    "/fleet/a7lb",
+    "/moon/luna9",
+    "/moon/luna16",
+    "/mars/mars2",
+    "/mars/mars3",
+    "/venus/venera-13"
+   ],
+   "states": [
+    "page",
+    "open: Open navigation menu",
+    "open: Language",
+    "open: Why this matters: Why this lan"
+   ],
+   "viewports": [
+    "phone"
+   ],
+   "count": 105
+  },
+  {
+   "tag": "button",
+   "cls": "close.ui-hit",
+   "h": 24,
+   "radius": "4px",
+   "font": "16px",
+   "tt": "none",
+   "bg": "rgba(0, 0, 0, 0)",
+   "border": "0px rgba(255, 255, 255, 0.7)",
+   "label": "Dismiss",
+   "labels": [
+    "Dismiss"
+   ],
+   "routes": [
+    "/explore",
+    "/earth",
+    "/moon",
+    "/mars",
+    "/venus",
+    "/moon?site=apollo11",
+    "/mars?site=perseverance",
+    "/earth?site=ksc",
+    "/venus?site=venera13",
+    "/explore?deepsky=m42",
+    "/explore?id=mars",
+    "/explore?goto=antares"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop",
+    "phone"
+   ],
+   "count": 103
+  },
+  {
+   "tag": "button",
+   "cls": "chip",
+   "h": 32,
+   "radius": "4px",
+   "font": "11px",
+   "tt": "none",
+   "bg": "color(srgb 0.116727 0.160134 0.36249 / 0.727765)",
+   "border": "1px rgb(80, 112, 255)",
+   "label": "Language",
+   "labels": [
+    "Language"
+   ],
+   "routes": [
+    "/",
+    "/explore",
+    "/explore/hub",
+    "/worlds",
+    "/catalog",
+    "/learn",
+    "/missions",
+    "/missions/launches",
+    "/fleet",
+    "/plan",
+    "/fly",
+    "/earth"
+   ],
+   "states": [
+    "open: Language"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 95
+  },
+  {
+   "tag": "button",
+   "cls": "nav-btn.settings-toggle.active",
+   "h": 32,
+   "radius": "4px",
+   "font": "13.3333px",
+   "tt": "none",
+   "bg": "color(srgb 0.116727 0.160134 0.36249 / 0.727765)",
+   "border": "1px rgb(80, 112, 255)",
+   "label": "SETTINGS",
+   "labels": [
+    "SETTINGS"
+   ],
+   "routes": [
+    "/",
+    "/explore",
+    "/explore/hub",
+    "/worlds",
+    "/catalog",
+    "/learn",
+    "/missions",
+    "/missions/launches",
+    "/fleet",
+    "/plan",
+    "/fly",
+    "/earth"
+   ],
+   "states": [
+    "open: SETTINGS"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 95
+  },
+  {
+   "tag": "button",
+   "cls": "sensory-backdrop",
+   "h": 848,
+   "radius": "0px",
+   "font": "13.3333px",
+   "tt": "none",
+   "bg": "rgba(0, 0, 0, 0)",
+   "border": "0px rgb(0, 0, 0)",
+   "label": "Close sensory settings",
+   "labels": [
+    "Close sensory settings"
+   ],
+   "routes": [
+    "/",
+    "/explore",
+    "/explore/hub",
+    "/worlds",
+    "/catalog",
+    "/learn",
+    "/missions",
+    "/missions/launches",
+    "/fleet",
+    "/plan",
+    "/fly",
+    "/earth"
+   ],
+   "states": [
+    "open: SETTINGS"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 95
+  },
+  {
+   "tag": "button",
+   "cls": "ui-chip.sheet-close.ui-chip--close",
+   "h": 30,
+   "radius": "4px",
+   "font": "18px",
+   "tt": "uppercase",
+   "bg": "rgba(8, 10, 22, 0.65)",
+   "border": "1px rgba(255, 255, 255, 0.18)",
+   "label": "Close sensory settings",
+   "labels": [
+    "Close sensory settings"
+   ],
+   "routes": [
+    "/",
+    "/explore",
+    "/explore/hub",
+    "/worlds",
+    "/catalog",
+    "/learn",
+    "/missions",
+    "/missions/launches",
+    "/fleet",
+    "/plan",
+    "/fly",
+    "/earth"
+   ],
+   "states": [
+    "open: SETTINGS"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 95
+  },
+  {
+   "tag": "button[switch]",
+   "cls": "switch",
+   "h": 26,
+   "radius": "13px",
+   "font": "13.3333px",
+   "tt": "none",
+   "bg": "rgba(255, 255, 255, 0.08)",
+   "border": "1px rgba(255, 255, 255, 0.25)",
+   "label": "Sensory layer",
+   "labels": [
+    "Sensory layer"
+   ],
+   "routes": [
+    "/",
+    "/explore",
+    "/explore/hub",
+    "/worlds",
+    "/catalog",
+    "/learn",
+    "/missions",
+    "/missions/launches",
+    "/fleet",
+    "/plan",
+    "/fly",
+    "/earth"
+   ],
+   "states": [
+    "open: SETTINGS"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 95
+  },
+  {
+   "tag": "button[switch]",
+   "cls": "switch",
+   "h": 26,
+   "radius": "13px",
+   "font": "13.3333px",
+   "tt": "none",
+   "bg": "color(srgb 0.313726 0.439216 1 / 0.28)",
+   "border": "1px rgba(80, 112, 255, 0.7)",
+   "label": "Sound",
+   "labels": [
+    "Sound"
+   ],
+   "routes": [
+    "/",
+    "/explore",
+    "/explore/hub",
+    "/worlds",
+    "/catalog",
+    "/learn",
+    "/missions",
+    "/missions/launches",
+    "/fleet",
+    "/plan",
+    "/fly",
+    "/earth"
+   ],
+   "states": [
+    "open: SETTINGS"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 95
+  },
+  {
+   "tag": "button",
+   "cls": "nav-btn.nav-more-trigger.active",
+   "h": 32,
+   "radius": "4px",
+   "font": "13.3333px",
+   "tt": "none",
+   "bg": "color(srgb 0.116727 0.160134 0.36249 / 0.727765)",
+   "border": "1px rgb(80, 112, 255)",
+   "label": "More",
+   "labels": [
+    "More"
+   ],
+   "routes": [
+    "/",
+    "/explore",
+    "/explore/hub",
+    "/worlds",
+    "/catalog",
+    "/learn",
+    "/missions",
+    "/missions/launches",
+    "/fleet",
+    "/plan",
+    "/fly",
+    "/earth"
+   ],
+   "states": [
+    "open: More"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 95
+  },
+  {
+   "tag": "button",
+   "cls": "nav-more-backdrop",
+   "h": 848,
+   "radius": "0px",
+   "font": "13.3333px",
+   "tt": "none",
+   "bg": "rgba(0, 0, 0, 0)",
+   "border": "0px rgb(0, 0, 0)",
+   "label": "",
+   "labels": [],
+   "routes": [
+    "/",
+    "/explore",
+    "/explore/hub",
+    "/worlds",
+    "/catalog",
+    "/learn",
+    "/missions",
+    "/missions/launches",
+    "/fleet",
+    "/plan",
+    "/fly",
+    "/earth"
+   ],
+   "states": [
+    "open: More"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 95
+  },
+  {
+   "tag": "button[menuitem]",
+   "cls": "nav-more-item",
+   "h": 32,
+   "radius": "4px",
+   "font": "12px",
+   "tt": "none",
+   "bg": "rgba(0, 0, 0, 0)",
+   "border": "1px rgba(0, 0, 0, 0)",
+   "label": "Share this view",
+   "labels": [
+    "Share this view"
+   ],
+   "routes": [
+    "/",
+    "/explore",
+    "/explore/hub",
+    "/worlds",
+    "/catalog",
+    "/learn",
+    "/missions",
+    "/missions/launches",
+    "/fleet",
+    "/plan",
+    "/fly",
+    "/earth"
+   ],
+   "states": [
+    "open: More"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 95
+  },
+  {
+   "tag": "a",
+   "cls": "card.wide.cover",
+   "h": 330,
+   "radius": "8px",
+   "font": "16px",
+   "tt": "none",
+   "bg": "rgba(10, 10, 22, 0.95)",
+   "border": "1px rgba(255, 255, 255, 0.07)",
+   "label": "Finding Mars in the Dark How do you stee",
+   "labels": [
+    "Finding Mars in the Dark How do you stee",
+    "The Grammar of Delta-V Every spacecraft ",
+    "Running the Solar System on a Whisper Th",
+    "Louder Than a Whisper The Deep Space Net",
+    "Keep the Rocket For sixty years we built",
+    "The Exits We've Always Known The chemica"
+   ],
+   "routes": [
+    "/essays"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 88
+  },
+  {
+   "tag": "button",
+   "cls": "nav-btn.menu-toggle",
+   "h": 44,
+   "radius": "4px",
+   "font": "13.3333px",
+   "tt": "none",
+   "bg": "rgba(8, 10, 22, 0.65)",
+   "border": "1px rgb(136, 159, 231)",
+   "label": "Open navigation menu",
+   "labels": [
+    "Open navigation menu"
+   ],
+   "routes": [
+    "/",
+    "/explore",
+    "/explore/hub",
+    "/worlds",
+    "/catalog",
+    "/learn",
+    "/missions",
+    "/missions/launches",
+    "/fleet",
+    "/plan",
+    "/fly",
+    "/earth"
+   ],
+   "states": [
+    "open: Open navigation menu"
+   ],
+   "viewports": [
+    "phone"
+   ],
+   "count": 88
+  },
+  {
+   "tag": "button",
+   "cls": "chip",
+   "h": 44,
+   "radius": "4px",
+   "font": "11px",
+   "tt": "none",
+   "bg": "rgba(8, 10, 22, 0.65)",
+   "border": "1px rgba(255, 255, 255, 0.18)",
+   "label": "Language",
+   "labels": [
+    "Language"
+   ],
+   "routes": [
+    "/",
+    "/explore",
+    "/explore/hub",
+    "/worlds",
+    "/catalog",
+    "/learn",
+    "/missions",
+    "/missions/launches",
+    "/fleet",
+    "/plan",
+    "/fly",
+    "/earth"
+   ],
+   "states": [
+    "open: Open navigation menu"
+   ],
+   "viewports": [
+    "phone"
+   ],
+   "count": 88
+  },
+  {
+   "tag": "button",
+   "cls": "chip",
+   "h": 44,
+   "radius": "4px",
+   "font": "11px",
+   "tt": "none",
+   "bg": "color(srgb 0.116727 0.160134 0.36249 / 0.727765)",
+   "border": "1px rgb(80, 112, 255)",
+   "label": "Language",
+   "labels": [
+    "Language"
+   ],
+   "routes": [
+    "/",
+    "/explore",
+    "/explore/hub",
+    "/worlds",
+    "/catalog",
+    "/learn",
+    "/missions",
+    "/missions/launches",
+    "/fleet",
+    "/plan",
+    "/fly",
+    "/earth"
+   ],
+   "states": [
+    "open: Language"
+   ],
+   "viewports": [
+    "phone"
+   ],
+   "count": 88
+  },
+  {
+   "tag": "button",
+   "cls": "search-button",
+   "h": 44,
+   "radius": "4px",
+   "font": "12px",
+   "tt": "none",
+   "bg": "rgba(255, 255, 255, 0.04)",
+   "border": "1px rgba(255, 255, 255, 0.1)",
+   "label": "Search the encyclopedia (⌘K)",
+   "labels": [
+    "Search the encyclopedia (⌘K)"
+   ],
+   "routes": [
+    "/science",
+    "/science/cosmology",
+    "/science/cosmology/large-scale-structure",
+    "/science/cosmology/laniakea-and-the-great-attractor",
+    "/science/exoplanets",
+    "/science/exoplanets/radial-velocity",
+    "/science/exoplanets/transit",
+    "/science/history/keplers-laws-1609",
+    "/science/history/newton-principia-1687",
+    "/science/life-in-space/microgravity-physiology",
+    "/science/life-in-space/bone-density-loss",
+    "/science/mission-phases/launch"
+   ],
+   "states": [
+    "page",
+    "open: Open navigation menu",
+    "open: Language"
+   ],
+   "viewports": [
+    "phone"
+   ],
+   "count": 87
+  },
+  {
+   "tag": "button",
+   "cls": "footer-more-btn",
+   "h": 20,
+   "radius": "0px",
+   "font": "11px",
+   "tt": "none",
+   "bg": "rgba(0, 0, 0, 0)",
+   "border": "0px rgba(255, 255, 255, 0.6)",
+   "label": "More",
+   "labels": [
+    "More"
+   ],
+   "routes": [
+    "/explore",
+    "/moon",
+    "/mars",
+    "/venus",
+    "/moon?site=apollo11",
+    "/mars?site=perseverance",
+    "/venus?site=venera13",
+    "/explore?id=mars",
+    "/explore?goto=antares",
+    "/explore?deepsky=m42"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 84
+  },
+  {
+   "tag": "a",
+   "cls": "tab-card.active",
+   "h": 44,
+   "radius": "4px",
+   "font": "16px",
+   "tt": "none",
+   "bg": "rgba(80, 112, 255, 0.12)",
+   "border": "1px rgba(80, 112, 255, 0.7)",
+   "label": "COSMOLOGY",
+   "labels": [
+    "COSMOLOGY",
+    "EXOPLANETS",
+    "HISTORY",
+    "LIFE IN SPACE",
+    "MISSION PHASES",
+    "OBSERVATION"
+   ],
+   "routes": [
+    "/science/cosmology",
+    "/science/cosmology/large-scale-structure",
+    "/science/cosmology/laniakea-and-the-great-attractor",
+    "/science/exoplanets",
+    "/science/exoplanets/radial-velocity",
+    "/science/exoplanets/transit",
+    "/science/history/keplers-laws-1609",
+    "/science/history/newton-principia-1687",
+    "/science/life-in-space/microgravity-physiology",
+    "/science/life-in-space/bone-density-loss",
+    "/science/mission-phases/launch",
+    "/science/mission-phases/gravity-turn"
+   ],
+   "states": [
+    "page",
+    "open: Open navigation menu",
+    "open: Language"
+   ],
+   "viewports": [
+    "phone"
+   ],
+   "count": 84
+  },
+  {
+   "tag": "button",
+   "cls": "ui-chip",
+   "h": 30,
+   "radius": "4px",
+   "font": "11px",
+   "tt": "uppercase",
+   "bg": "color(srgb 0.240016 0.241932 0.259354 / 0.727765)",
+   "border": "1px rgb(184, 181, 168)",
+   "label": "SURFACE · AUTO",
+   "labels": [
+    "SURFACE · AUTO",
+    "ORBITERS",
+    "ORBITS",
+    "TRAVERSES",
+    "SPIN"
+   ],
+   "routes": [
+    "/moon",
+    "/moon?site=apollo11"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 81
+  },
+  {
+   "tag": "button",
+   "cls": "ui-chip",
+   "h": 30,
+   "radius": "4px",
+   "font": "11px",
+   "tt": "uppercase",
+   "bg": "color(srgb 0.27558 0.136424 0.114726 / 0.727765)",
+   "border": "1px rgb(214, 92, 46)",
+   "label": "SURFACE · AUTO",
+   "labels": [
+    "SURFACE · AUTO",
+    "ORBITERS",
+    "ORBITS",
+    "TRAVERSES",
+    "SPIN"
+   ],
+   "routes": [
+    "/mars",
+    "/mars?site=perseverance"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 81
+  },
+  {
+   "tag": "a",
+   "cls": "card",
+   "h": 180,
+   "radius": "4px",
+   "font": "16px",
+   "tt": "none",
+   "bg": "rgba(255, 255, 255, 0.02)",
+   "border": "1px rgba(255, 255, 255, 0.12)",
+   "label": "Virgo Supercluster: The Virgo Superclust",
+   "labels": [
+    "Virgo Supercluster: The Virgo Superclust",
+    "EARTH: Earth orbit explorer",
+    "MOON: Moon surface map",
+    "PROGRAMS: Programs, nation by nation",
+    "ISS: ISS module explorer",
+    "TIANGONG: Tiangong module explorer"
+   ],
+   "routes": [
+    "/explore/hub",
+    "/worlds",
+    "/catalog",
+    "/learn"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop",
+    "phone"
+   ],
+   "count": 80
+  },
+  {
+   "tag": "a",
+   "cls": "card",
+   "h": 128,
+   "radius": "4px",
+   "font": "16px",
+   "tt": "none",
+   "bg": "rgba(255, 255, 255, 0.03)",
+   "border": "1px rgba(255, 255, 255, 0.08)",
+   "label": "in flight Long March 7A Unknown Payload ",
+   "labels": [
+    "in flight Long March 7A Unknown Payload ",
+    "in flight Soyuz 2.1b Fregat Glonass-K1 N",
+    "in flight H3-22 Michibiki 7 (QZS-7) Mits",
+    "in flight Long March 5 Chang'e 7 China A"
+   ],
+   "routes": [
+    "/missions",
+    "/missions?id=apollo11"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop",
+    "phone"
+   ],
+   "count": 80
+  },
+  {
+   "tag": "button",
+   "cls": "",
+   "h": 472,
+   "radius": "6px",
+   "font": "13.3333px",
+   "tt": "none",
+   "bg": "rgb(5, 6, 13)",
+   "border": "1px rgba(255, 255, 255, 0.08)",
+   "label": "View Mystic Mountain — A three-light-yea",
+   "labels": [
+    "View Mystic Mountain — A three-light-yea",
+    "View M4 · NGC 6121 — Globular cluster",
+    "View Butterfly Nebula — NGC 6302 — wings",
+    "View Antennae Galaxies — Two galaxies (N",
+    "View Westerlund 2 — A giant cluster of y",
+    "View Whirlpool Galaxy — M51 — a textbook"
+   ],
+   "routes": [
+    "/gallery/deep-sky"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 80
+  },
+  {
+   "tag": "button",
+   "cls": "thumb-open",
+   "h": 265,
+   "radius": "0px",
+   "font": "13.3333px",
+   "tt": "none",
+   "bg": "rgba(0, 0, 0, 0)",
+   "border": "0px rgb(0, 0, 0)",
+   "label": "",
+   "labels": [],
+   "routes": [
+    "/colophon"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 80
+  },
+  {
+   "tag": "button",
+   "cls": "card.wide.cover",
+   "h": 241,
+   "radius": "8px",
+   "font": "13.3333px",
+   "tt": "none",
+   "bg": "rgba(10, 10, 22, 0.95)",
+   "border": "1px rgba(255, 255, 255, 0.07)",
+   "label": "Starship Mars Crew 2031 SpaceX PLANNED U",
+   "labels": [
+    "Starship Mars Crew 2031 SpaceX PLANNED U",
+    "Artemis IV 2028 NASA PLANNED SPARSE Firs",
+    "Artemis V 2028 NASA PLANNED SPARSE Secon",
+    "Artemis III 2027 NASA PLANNED SPARSE Fir",
+    "Blue Moon MK1 2027 Blue Origin PLANNED S",
+    "Artemis II 2026 NASA FLOWN MEASURED Firs"
+   ],
+   "routes": [
+    "/missions",
+    "/fleet",
+    "/missions?id=apollo11",
+    "/fleet?id=saturn-v"
+   ],
+   "states": [
+    "page",
+    "open: Open navigation menu",
+    "open: Language"
+   ],
+   "viewports": [
+    "phone"
+   ],
+   "count": 80
+  },
+  {
+   "tag": "a",
+   "cls": "section-row.active",
+   "h": 44,
+   "radius": "4px",
+   "font": "16px",
+   "tt": "none",
+   "bg": "rgba(80, 112, 255, 0.12)",
+   "border": "1px rgba(80, 112, 255, 0.7)",
+   "label": "Large-scale structure — the cosmic web",
+   "labels": [
+    "Large-scale structure — the cosmic web",
+    "Laniakea and the Great Attractor",
+    "The Radial-Velocity Method",
+    "The Transit Method",
+    "Kepler's Laws · 1609–1619",
+    "Newton's Principia · 1687"
+   ],
+   "routes": [
+    "/science/cosmology/large-scale-structure",
+    "/science/cosmology/laniakea-and-the-great-attractor",
+    "/science/exoplanets/radial-velocity",
+    "/science/exoplanets/transit",
+    "/science/history/keplers-laws-1609",
+    "/science/history/newton-principia-1687",
+    "/science/life-in-space/microgravity-physiology",
+    "/science/life-in-space/bone-density-loss",
+    "/science/mission-phases/launch",
+    "/science/mission-phases/gravity-turn",
+    "/science/observation/space-photography",
+    "/science/observation/adaptive-optics"
+   ],
+   "states": [
+    "page",
+    "open: Open navigation menu",
+    "open: Language"
+   ],
+   "viewports": [
+    "phone"
+   ],
+   "count": 78
+  },
+  {
+   "tag": "button",
+   "cls": "",
+   "h": 150,
+   "radius": "6px",
+   "font": "13.3333px",
+   "tt": "none",
+   "bg": "rgb(5, 6, 13)",
+   "border": "1px rgba(255, 255, 255, 0.08)",
+   "label": "View Pillars of Creation — Hubble's icon",
+   "labels": [
+    "View Pillars of Creation — Hubble's icon",
+    "View M11 · Wild Duck Cluster — Star clus",
+    "View Mystic Mountain — A three-light-yea",
+    "View Cosmic Cliffs — The edge of a stell",
+    "View Antennae Galaxies — Two galaxies (N",
+    "View M14 · NGC 6402 — Globular cluster"
+   ],
+   "routes": [
+    "/gallery/deep-sky"
+   ],
+   "states": [
+    "page",
+    "open: Open navigation menu",
+    "open: Language"
+   ],
+   "viewports": [
+    "phone"
+   ],
+   "count": 66
+  },
+  {
+   "tag": "a[menuitem]",
+   "cls": "group-menu-link.active",
+   "h": 37,
+   "radius": "4px",
+   "font": "12px",
+   "tt": "uppercase",
+   "bg": "color(srgb 0.313726 0.439216 1 / 0.28)",
+   "border": "1px color(srgb 0.313726 0.439216 1 / 0.55)",
+   "label": "MISSIONS",
+   "labels": [
+    "MISSIONS",
+    "FLEET",
+    "EARTH",
+    "MOON",
+    "MARS",
+    "VENUS"
+   ],
+   "routes": [
+    "/missions",
+    "/missions/launches",
+    "/fleet",
+    "/earth",
+    "/moon",
+    "/mars",
+    "/venus",
+    "/iss",
+    "/tiangong",
+    "/science",
+    "/lab",
+    "/live"
+   ],
+   "states": [
+    "open: CATALOG\n▾",
+    "open: WORLDS\n▾",
+    "open: LEARN\n▾"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 63
+  },
+  {
+   "tag": "button[tab]",
+   "cls": "",
+   "h": 44,
+   "radius": "0px",
+   "font": "11px",
+   "tt": "none",
+   "bg": "rgba(0, 0, 0, 0)",
+   "border": "0px rgba(255, 255, 255, 0.6)",
+   "label": "GALLERY",
+   "labels": [
+    "GALLERY",
+    "STORY",
+    "LEARN",
+    "JOURNEY",
+    "TECHNICAL",
+    "MISSIONS"
+   ],
+   "routes": [
+    "/moon?site=apollo11",
+    "/mars?site=perseverance",
+    "/explore?id=mars",
+    "/explore?goto=antares",
+    "/explore?deepsky=m42",
+    "/missions?id=apollo11",
+    "/fleet?id=saturn-v"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: Why this matters: Why this lan"
+   ],
+   "viewports": [
+    "desktop",
+    "phone"
+   ],
+   "count": 62
+  },
+  {
+   "tag": "button",
+   "cls": "drawer-link.drawer-search",
+   "h": 43,
+   "radius": "0px",
+   "font": "12px",
+   "tt": "none",
+   "bg": "rgb(239, 239, 239)",
+   "border": "2px rgb(0, 0, 0)",
+   "label": "Search the encyclopedia (⌘K)",
+   "labels": [
+    "Search the encyclopedia (⌘K)"
+   ],
+   "routes": [
+    "/science",
+    "/science/cosmology",
+    "/science/cosmology/large-scale-structure",
+    "/science/cosmology/laniakea-and-the-great-attractor",
+    "/science/exoplanets",
+    "/science/exoplanets/radial-velocity",
+    "/science/exoplanets/transit",
+    "/science/history/keplers-laws-1609",
+    "/science/history/newton-principia-1687",
+    "/science/life-in-space/microgravity-physiology",
+    "/science/life-in-space/bone-density-loss",
+    "/science/mission-phases/launch"
+   ],
+   "states": [
+    "open: Open navigation menu",
+    "open: Language"
+   ],
+   "viewports": [
+    "phone"
+   ],
+   "count": 58
+  },
+  {
+   "tag": "select",
+   "cls": "",
+   "h": 30,
+   "radius": "4px",
+   "font": "11px",
+   "tt": "none",
+   "bg": "rgba(255, 255, 255, 0.04)",
+   "border": "1px rgba(255, 255, 255, 0.18)",
+   "label": "Sort fleet entries",
+   "labels": [
+    "Sort fleet entries"
+   ],
+   "routes": [
+    "/missions",
+    "/missions/launches",
+    "/fleet",
+    "/programs",
+    "/missions?id=apollo11",
+    "/fleet?id=saturn-v"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 57
+  },
+  {
+   "tag": "a",
+   "cls": "card",
+   "h": 208,
+   "radius": "4px",
+   "font": "16px",
+   "tt": "none",
+   "bg": "rgba(255, 255, 255, 0.02)",
+   "border": "1px rgba(255, 255, 255, 0.12)",
+   "label": "Milky Way: Our galaxy, as a labelled sch",
+   "labels": [
+    "Milky Way: Our galaxy, as a labelled sch",
+    "/programs: Programs, nation by nation",
+    "OUR SOLAR SYSTEM: From the Sun to the co",
+    "Stellar Neighborhood: The real nearby-st",
+    "Local Group: The Milky Way's galaxy neig"
+   ],
+   "routes": [
+    "/",
+    "/explore/hub"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop",
+    "phone"
+   ],
+   "count": 54
+  },
+  {
+   "tag": "button",
+   "cls": "ui-chip",
+   "h": 30,
+   "radius": "4px",
+   "font": "11px",
+   "tt": "uppercase",
+   "bg": "color(srgb 0.287435 0.22652 0.15029 / 0.727765)",
+   "border": "1px rgb(224, 168, 76)",
+   "label": "SURFACE · AUTO",
+   "labels": [
+    "SURFACE · AUTO",
+    "ORBITERS",
+    "ORBITS"
+   ],
+   "routes": [
+    "/venus",
+    "/venus?site=venera13"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 54
+  },
+  {
+   "tag": "button",
+   "cls": "ruler-toggle.ui-hit",
+   "h": 16,
+   "radius": "0px",
+   "font": "11px",
+   "tt": "none",
+   "bg": "rgba(0, 0, 0, 0)",
+   "border": "0px rgba(255, 255, 255, 0.6)",
+   "label": "ORBIT RULER ▾",
+   "labels": [
+    "ORBIT RULER ▾"
+   ],
+   "routes": [
+    "/explore",
+    "/earth",
+    "/moon",
+    "/mars",
+    "/earth?site=ksc",
+    "/explore?id=mars"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 52
+  },
+  {
+   "tag": "button",
+   "cls": "ui-chip.filters-strip",
+   "h": 30,
+   "radius": "4px",
+   "font": "11px",
+   "tt": "uppercase",
+   "bg": "rgba(8, 10, 22, 0.65)",
+   "border": "1px rgba(255, 255, 255, 0.18)",
+   "label": "FILTERS 139 ▸",
+   "labels": [
+    "FILTERS 139 ▸",
+    "FILTERS 349 ▸",
+    "FILTERS 349 ▾",
+    "FILTERS 299 ▸",
+    "FILTERS 42 ▸"
+   ],
+   "routes": [
+    "/missions",
+    "/missions/launches",
+    "/fleet",
+    "/programs",
+    "/missions?id=apollo11",
+    "/fleet?id=saturn-v"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 49
+  },
+  {
+   "tag": "a",
+   "cls": "card",
+   "h": 152,
+   "radius": "4px",
+   "font": "16px",
+   "tt": "none",
+   "bg": "rgba(0, 0, 0, 0)",
+   "border": "1px rgba(255, 255, 255, 0.08)",
+   "label": "XMM-Newton ESA 1999",
+   "labels": [
+    "XMM-Newton ESA 1999",
+    "Kepler NASA 2009",
+    "Gaia ESA 2013",
+    "Hitomi (ASTRO-H) JAXA 2016",
+    "TESS NASA 2018",
+    "Euclid ESA 2023"
+   ],
+   "routes": [
+    "/science/observation/space-photography"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 48
+  },
+  {
+   "tag": "a",
+   "cls": "card",
+   "h": 202,
+   "radius": "4px",
+   "font": "16px",
+   "tt": "none",
+   "bg": "rgba(255, 255, 255, 0.02)",
+   "border": "1px rgba(255, 255, 255, 0.12)",
+   "label": "Laniakea: Laniakea",
+   "labels": [
+    "Laniakea: Laniakea",
+    "Cosmic Web: The Cosmic Web",
+    "/venus: Venus surface map",
+    "/fleet: Spaceflight fleet",
+    "SCIENCE: Built-in encyclopedia",
+    "Lab: Physics, from first principles"
+   ],
+   "routes": [
+    "/",
+    "/learn"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop",
+    "phone"
+   ],
+   "count": 46
+  },
+  {
+   "tag": "button",
+   "cls": "nb__tool",
+   "h": 44,
+   "radius": "3px",
+   "font": "13.3333px",
+   "tt": "none",
+   "bg": "rgba(232, 232, 232, 0.04)",
+   "border": "1px rgba(232, 232, 232, 0.2)",
+   "label": "Print or save this notebook as a PDF lab",
+   "labels": [
+    "Print or save this notebook as a PDF lab",
+    "Download a shareable image card of this ",
+    "Save as a file",
+    "Load a notebook file"
+   ],
+   "routes": [
+    "/lab"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop",
+    "phone"
+   ],
+   "count": 44
+  },
+  {
+   "tag": "button",
+   "cls": "nb__act",
+   "h": 27,
+   "radius": "3px",
+   "font": "15.2px",
+   "tt": "none",
+   "bg": "rgba(4, 4, 12, 0.7)",
+   "border": "1px rgba(80, 112, 255, 0.35)",
+   "label": "Focus this cell",
+   "labels": [
+    "Focus this cell"
+   ],
+   "routes": [
+    "/lab"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop",
+    "phone"
+   ],
+   "count": 44
+  },
+  {
+   "tag": "a",
+   "cls": "card.portrait.cover",
+   "h": 248,
+   "radius": "8px",
+   "font": "16px",
+   "tt": "none",
+   "bg": "rgba(10, 10, 22, 0.95)",
+   "border": "1px rgba(255, 255, 255, 0.07)",
+   "label": "Download the Solar System poster — Eight",
+   "labels": [
+    "Download the Solar System poster — Eight",
+    "Download the Earth poster — One planet ·",
+    "Download the Moon poster — Twelve footpr",
+    "Download the Mars poster — Two years awa",
+    "Download the Saturn V poster — The might",
+    "Download the Mir poster — Humanity's fir"
+   ],
+   "routes": [
+    "/posters"
+   ],
+   "states": [
+    "page",
+    "open: Open navigation menu",
+    "open: Language"
+   ],
+   "viewports": [
+    "phone"
+   ],
+   "count": 42
+  },
+  {
+   "tag": "a",
+   "cls": "card",
+   "h": 166,
+   "radius": "4px",
+   "font": "16px",
+   "tt": "none",
+   "bg": "rgba(0, 0, 0, 0)",
+   "border": "1px rgba(255, 255, 255, 0.08)",
+   "label": "Hubble Space Telescope NASA / ESA 1990",
+   "labels": [
+    "Hubble Space Telescope NASA / ESA 1990",
+    "Compton Gamma Ray Observatory NASA 1991",
+    "Chandra X-ray Observatory NASA 1999",
+    "Spitzer Space Telescope NASA 2003",
+    "James Webb Space Telescope NASA / ESA 20"
+   ],
+   "routes": [
+    "/science/observation/space-photography"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 40
+  },
+  {
+   "tag": "button",
+   "cls": "toggle",
+   "h": 44,
+   "radius": "6px",
+   "font": "14px",
+   "tt": "none",
+   "bg": "rgba(0, 0, 0, 0)",
+   "border": "0px rgba(255, 255, 255, 0.7)",
+   "label": "Collapse scale details",
+   "labels": [
+    "Collapse scale details",
+    "Expand scale details"
+   ],
+   "routes": [
+    "/explore",
+    "/explore?id=mars",
+    "/explore?goto=antares",
+    "/explore?deepsky=m42"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop",
+    "phone"
+   ],
+   "count": 39
+  },
+  {
+   "tag": "button[radio]",
+   "cls": "ui-chip",
+   "h": 44,
+   "radius": "4px",
+   "font": "11px",
+   "tt": "uppercase",
+   "bg": "rgba(8, 10, 22, 0.65)",
+   "border": "1px rgba(255, 255, 255, 0.18)",
+   "label": "List",
+   "labels": [
+    "List",
+    "Grid",
+    "Line-up",
+    "FLYBY",
+    "JWST 18",
+    "Hubble 82"
+   ],
+   "routes": [
+    "/missions",
+    "/missions/launches",
+    "/fleet",
+    "/plan",
+    "/gallery/deep-sky",
+    "/programs",
+    "/missions?id=apollo11",
+    "/fleet?id=saturn-v"
+   ],
+   "states": [
+    "page",
+    "open: Open navigation menu",
+    "open: Language"
+   ],
+   "viewports": [
+    "phone"
+   ],
+   "count": 39
+  },
+  {
+   "tag": "button[radio]",
+   "cls": "ui-chip.speed-desktop-chip",
+   "h": 30,
+   "radius": "4px",
+   "font": "11px",
+   "tt": "uppercase",
+   "bg": "rgba(8, 10, 22, 0.65)",
+   "border": "1px rgba(255, 255, 255, 0.18)",
+   "label": "1 day per second",
+   "labels": [
+    "1 day per second",
+    "100 days per second"
+   ],
+   "routes": [
+    "/explore",
+    "/explore?id=mars"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 36
+  },
+  {
+   "tag": "button[radio]",
+   "cls": "ui-chip",
+   "h": 44,
+   "radius": "4px",
+   "font": "11px",
+   "tt": "uppercase",
+   "bg": "color(srgb 0.116727 0.160134 0.36249 / 0.727765)",
+   "border": "1px rgb(80, 112, 255)",
+   "label": "ALL",
+   "labels": [
+    "ALL",
+    "Grid",
+    "List",
+    "LANDING",
+    "All 176"
+   ],
+   "routes": [
+    "/missions",
+    "/missions/launches",
+    "/fleet",
+    "/plan",
+    "/gallery/deep-sky",
+    "/programs",
+    "/missions?id=apollo11",
+    "/fleet?id=saturn-v"
+   ],
+   "states": [
+    "page",
+    "open: Open navigation menu",
+    "open: Language"
+   ],
+   "viewports": [
+    "phone"
+   ],
+   "count": 34
+  },
+  {
+   "tag": "button",
+   "cls": "ui-chip.ui-chip--wrap",
+   "h": 44,
+   "radius": "4px",
+   "font": "11px",
+   "tt": "uppercase",
+   "bg": "rgba(8, 10, 22, 0.65)",
+   "border": "1px rgba(255, 255, 255, 0.18)",
+   "label": "RESET VIEW",
+   "labels": [
+    "RESET VIEW"
+   ],
+   "routes": [
+    "/explore",
+    "/earth",
+    "/moon",
+    "/mars",
+    "/venus",
+    "/iss",
+    "/tiangong",
+    "/moon?site=apollo11",
+    "/mars?site=perseverance",
+    "/earth?site=ksc",
+    "/venus?site=venera13",
+    "/explore?id=mars"
+   ],
+   "states": [
+    "page",
+    "open: Open navigation menu",
+    "open: Language",
+    "open: Why this matters: Why this lan"
+   ],
+   "viewports": [
+    "phone"
+   ],
+   "count": 33
+  },
+  {
+   "tag": "button",
+   "cls": "fd-stage-tick-button",
+   "h": 10,
+   "radius": "0px",
+   "font": "13.3333px",
+   "tt": "none",
+   "bg": "rgba(0, 0, 0, 0)",
+   "border": "0px rgb(0, 0, 0)",
+   "label": "Approach stage. Click to jump.",
+   "labels": [
+    "Approach stage. Click to jump.",
+    "Arrival stage. Click to jump.",
+    "Cruise stage. Click to jump."
+   ],
+   "routes": [
+    "/fly"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop",
+    "phone"
+   ],
+   "count": 30
+  },
+  {
+   "tag": "button",
+   "cls": "thumb-open",
+   "h": 102,
+   "radius": "0px",
+   "font": "13.3333px",
+   "tt": "none",
+   "bg": "rgba(0, 0, 0, 0)",
+   "border": "0px rgb(0, 0, 0)",
+   "label": "",
+   "labels": [],
+   "routes": [
+    "/colophon"
+   ],
+   "states": [
+    "page",
+    "open: Open navigation menu",
+    "open: Language"
+   ],
+   "viewports": [
+    "phone"
+   ],
+   "count": 30
+  },
+  {
+   "tag": "button",
+   "cls": "thumb-open",
+   "h": 225,
+   "radius": "0px",
+   "font": "13.3333px",
+   "tt": "none",
+   "bg": "rgba(0, 0, 0, 0)",
+   "border": "0px rgb(0, 0, 0)",
+   "label": "",
+   "labels": [],
+   "routes": [
+    "/colophon"
+   ],
+   "states": [
+    "page",
+    "open: Open navigation menu",
+    "open: Language"
+   ],
+   "viewports": [
+    "phone"
+   ],
+   "count": 30
+  },
+  {
+   "tag": "a",
+   "cls": "card.portrait.cover",
+   "h": 290,
+   "radius": "8px",
+   "font": "16px",
+   "tt": "none",
+   "bg": "rgba(10, 10, 22, 0.95)",
+   "border": "1px rgba(255, 255, 255, 0.07)",
+   "label": "Download the Huygens poster — First touc",
+   "labels": [
+    "Download the Huygens poster — First touc",
+    "Download the Hayabusa2 poster — Touched ",
+    "Download the Artemis II poster — Four ar",
+    "Download the ISS poster — Fifteen nation",
+    "Download the Tiangong poster — Above the",
+    "Download the Perseverance poster — Dare "
+   ],
+   "routes": [
+    "/posters"
+   ],
+   "states": [
+    "page",
+    "open: Open navigation menu",
+    "open: Language"
+   ],
+   "viewports": [
+    "phone"
+   ],
+   "count": 30
+  },
+  {
+   "tag": "button",
+   "cls": "ui-chip.rung",
+   "h": 35,
+   "radius": "4px",
+   "font": "11px",
+   "tt": "uppercase",
+   "bg": "rgba(8, 10, 22, 0.65)",
+   "border": "1px rgba(255, 255, 255, 0.18)",
+   "label": "Cosmic Web The largest scale — superclus",
+   "labels": [
+    "Cosmic Web The largest scale — superclus",
+    "Laniakea The ~160-Mpc basin of galaxy fl",
+    "Virgo Supercluster Our home supercluster",
+    "Local Sheet The flat slab of galaxy grou",
+    "Local Group One step further out — Andro",
+    "Milky Way Pull back into the galaxy: the"
+   ],
+   "routes": [
+    "/explore",
+    "/explore?id=mars",
+    "/explore?goto=antares",
+    "/explore?deepsky=m42"
+   ],
+   "states": [
+    "open: Change scale"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 28
+  },
+  {
+   "tag": "button",
+   "cls": "ui-chip.ui-chip--quiet",
+   "h": 30,
+   "radius": "4px",
+   "font": "11px",
+   "tt": "uppercase",
+   "bg": "rgba(0, 0, 0, 0)",
+   "border": "1px rgba(0, 0, 0, 0)",
+   "label": "Show all 41",
+   "labels": [
+    "Show all 41",
+    "Show all 44"
+   ],
+   "routes": [
+    "/missions/launches",
+    "/fleet",
+    "/fleet?id=saturn-v"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 28
+  },
+  {
+   "tag": "a",
+   "cls": "link.active",
+   "h": 29,
+   "radius": "3px",
+   "font": "12px",
+   "tt": "none",
+   "bg": "color(srgb 0.313726 0.439216 1 / 0.28)",
+   "border": "1px color(srgb 0.313726 0.439216 1 / 0.55)",
+   "label": "HOME",
+   "labels": [
+    "HOME",
+    "PLAN",
+    "FLY"
+   ],
+   "routes": [
+    "/",
+    "/plan",
+    "/fly"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 24
+  },
+  {
+   "tag": "a",
+   "cls": "card",
+   "h": 226,
+   "radius": "4px",
+   "font": "16px",
+   "tt": "none",
+   "bg": "rgba(255, 255, 255, 0.02)",
+   "border": "1px rgba(255, 255, 255, 0.12)",
+   "label": "Solar System: From the Sun to the cosmic",
+   "labels": [
+    "Solar System: From the Sun to the cosmic",
+    "Local Group: The Milky Way's galaxy neig",
+    "Lab: Physics, from first principles"
+   ],
+   "routes": [
+    "/",
+    "/learn"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 24
+  },
+  {
+   "tag": "button",
+   "cls": "module-row",
+   "h": 84,
+   "radius": "4px",
+   "font": "13.3333px",
+   "tt": "none",
+   "bg": "rgba(255, 255, 255, 0.04)",
+   "border": "1px rgba(255, 255, 255, 0.08)",
+   "label": "Zvezda (Service Module) Roscosmos",
+   "labels": [
+    "Zvezda (Service Module) Roscosmos",
+    "Mengtian (Dreaming of the Heavens) CMSA",
+    "Wentian (Quest for the Heavens) CMSA"
+   ],
+   "routes": [
+    "/iss",
+    "/tiangong"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 24
+  },
+  {
+   "tag": "a",
+   "cls": "card.wide.cover",
+   "h": 236,
+   "radius": "8px",
+   "font": "16px",
+   "tt": "none",
+   "bg": "rgba(10, 10, 22, 0.95)",
+   "border": "1px rgba(255, 255, 255, 0.07)",
+   "label": "Russian Orbital Station 2027–now Roscosm",
+   "labels": [
+    "Russian Orbital Station 2027–now Roscosm",
+    "Commercial Stations 2025–now Axiom Space",
+    "Project Kuiper 2023–now Amazon Infrastru",
+    "Artemis 2019–now NASAESAJAXACSASpaceX Cr",
+    "Starlink 2019–now SpaceX Infrastructure ",
+    "Starship 2019–now SpaceX Crewed campaign"
+   ],
+   "routes": [
+    "/programs"
+   ],
+   "states": [
+    "page",
+    "open: Open navigation menu",
+    "open: Language"
+   ],
+   "viewports": [
+    "phone"
+   ],
+   "count": 24
+  },
+  {
+   "tag": "button",
+   "cls": "tcc-toggle",
+   "h": 44,
+   "radius": "6px",
+   "font": "14px",
+   "tt": "none",
+   "bg": "rgba(0, 0, 0, 0)",
+   "border": "0px rgba(255, 255, 255, 0.7)",
+   "label": "Collapse site details",
+   "labels": [
+    "Collapse site details",
+    "Expand site details"
+   ],
+   "routes": [
+    "/moon?site=apollo11",
+    "/mars?site=perseverance"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop",
+    "phone"
+   ],
+   "count": 22
+  },
+  {
+   "tag": "button",
+   "cls": "ui-chip.panel-close.ui-chip--close",
+   "h": 24,
+   "radius": "4px",
+   "font": "16px",
+   "tt": "uppercase",
+   "bg": "rgba(8, 10, 22, 0.65)",
+   "border": "1px rgba(255, 255, 255, 0.18)",
+   "label": "Close panel",
+   "labels": [
+    "Close panel"
+   ],
+   "routes": [
+    "/moon?site=apollo11",
+    "/mars?site=perseverance",
+    "/explore?id=mars",
+    "/explore?goto=antares",
+    "/explore?deepsky=m42",
+    "/missions?id=apollo11",
+    "/fleet?id=saturn-v"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: Why this matters: Why this lan"
+   ],
+   "viewports": [
+    "desktop",
+    "phone"
+   ],
+   "count": 21
+  },
+  {
+   "tag": "button",
+   "cls": "fd-stage-tick-button.edge-start",
+   "h": 10,
+   "radius": "0px",
+   "font": "13.3333px",
+   "tt": "none",
+   "bg": "rgba(0, 0, 0, 0)",
+   "border": "0px rgb(0, 0, 0)",
+   "label": "Separation stage. Click to jump.",
+   "labels": [
+    "Separation stage. Click to jump.",
+    "Cruise stage. Click to jump."
+   ],
+   "routes": [
+    "/fly"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop",
+    "phone"
+   ],
+   "count": 19
+  },
+  {
+   "tag": "button",
+   "cls": "ui-chip",
+   "h": 41,
+   "radius": "4px",
+   "font": "11px",
+   "tt": "uppercase",
+   "bg": "rgba(8, 10, 22, 0.65)",
+   "border": "1px rgba(255, 255, 255, 0.18)",
+   "label": "REFERENCES",
+   "labels": [
+    "REFERENCES"
+   ],
+   "routes": [
+    "/explore",
+    "/explore?id=mars"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 18
+  },
+  {
+   "tag": "button[radio]",
+   "cls": "ui-chip.speed-desktop-chip",
+   "h": 30,
+   "radius": "4px",
+   "font": "11px",
+   "tt": "uppercase",
+   "bg": "color(srgb 0.116727 0.160134 0.36249 / 0.727765)",
+   "border": "1px rgb(80, 112, 255)",
+   "label": "10 days per second",
+   "labels": [
+    "10 days per second"
+   ],
+   "routes": [
+    "/explore",
+    "/explore?id=mars"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 18
+  },
+  {
+   "tag": "a[menuitem]",
+   "cls": "footer-link.footer-link-extra",
+   "h": 15,
+   "radius": "0px",
+   "font": "11px",
+   "tt": "none",
+   "bg": "rgba(0, 0, 0, 0)",
+   "border": "0px rgba(255, 255, 255, 0.6)",
+   "label": "Privacy",
+   "labels": [
+    "Privacy",
+    "License",
+    "README"
+   ],
+   "routes": [
+    "/moon",
+    "/mars",
+    "/venus",
+    "/moon?site=apollo11",
+    "/mars?site=perseverance",
+    "/venus?site=venera13"
+   ],
+   "states": [
+    "open: More"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 18
+  },
+  {
+   "tag": "button",
+   "cls": "ui-chip",
+   "h": 30,
+   "radius": "4px",
+   "font": "11px",
+   "tt": "uppercase",
+   "bg": "color(srgb 0.034929 0.0996748 0.232088 / 0.727765)",
+   "border": "1px rgb(11, 61, 145)",
+   "label": "USA",
+   "labels": [
+    "USA"
+   ],
+   "routes": [
+    "/moon?site=apollo11",
+    "/mars?site=perseverance"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 18
+  },
+  {
+   "tag": "button",
+   "cls": "ui-chip",
+   "h": 30,
+   "radius": "4px",
+   "font": "11px",
+   "tt": "uppercase",
+   "bg": "color(srgb 0.186669 0.027361 0.0601941 / 0.727765)",
+   "border": "1px rgb(139, 0, 0)",
+   "label": "USSR / Russia",
+   "labels": [
+    "USSR / Russia"
+   ],
+   "routes": [
+    "/moon?site=apollo11",
+    "/mars?site=perseverance"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 18
+  },
+  {
+   "tag": "button",
+   "cls": "ui-chip",
+   "h": 30,
+   "radius": "4px",
+   "font": "11px",
+   "tt": "uppercase",
+   "bg": "color(srgb 0.0218888 0.0866346 0.241571 / 0.727765)",
+   "border": "1px rgb(0, 50, 153)",
+   "label": "Europe",
+   "labels": [
+    "Europe"
+   ],
+   "routes": [
+    "/moon?site=apollo11",
+    "/mars?site=perseverance"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 18
+  },
+  {
+   "tag": "button",
+   "cls": "ui-chip",
+   "h": 30,
+   "radius": "4px",
+   "font": "11px",
+   "tt": "uppercase",
+   "bg": "color(srgb 0.285064 0.0759653 0.0791617 / 0.727765)",
+   "border": "1px rgb(222, 41, 16)",
+   "label": "China",
+   "labels": [
+    "China"
+   ],
+   "routes": [
+    "/moon?site=apollo11",
+    "/mars?site=perseverance"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 18
+  },
+  {
+   "tag": "button",
+   "cls": "ui-chip",
+   "h": 30,
+   "radius": "4px",
+   "font": "11px",
+   "tt": "uppercase",
+   "bg": "color(srgb 0.324184 0.208738 0.120653 / 0.727765)",
+   "border": "1px rgb(255, 153, 51)",
+   "label": "India",
+   "labels": [
+    "India"
+   ],
+   "routes": [
+    "/moon?site=apollo11",
+    "/mars?site=perseverance"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 18
+  },
+  {
+   "tag": "button[tab]",
+   "cls": "active",
+   "h": 44,
+   "radius": "0px",
+   "font": "11px",
+   "tt": "none",
+   "bg": "rgba(0, 0, 0, 0)",
+   "border": "0px rgb(255, 255, 255)",
+   "label": "OVERVIEW",
+   "labels": [
+    "OVERVIEW"
+   ],
+   "routes": [
+    "/moon?site=apollo11",
+    "/mars?site=perseverance",
+    "/explore?id=mars",
+    "/explore?goto=antares",
+    "/explore?deepsky=m42",
+    "/missions?id=apollo11"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: Why this matters: Why this lan"
+   ],
+   "viewports": [
+    "desktop",
+    "phone"
+   ],
+   "count": 18
+  },
+  {
+   "tag": "button",
+   "cls": "trigger.ui-hit",
+   "h": 14,
+   "radius": "7px",
+   "font": "11px",
+   "tt": "uppercase",
+   "bg": "rgba(0, 0, 0, 0)",
+   "border": "1px rgba(255, 200, 80, 0.45)",
+   "label": "Why this matters: Why this landing site?",
+   "labels": [
+    "Why this matters: Why this landing site?",
+    "Why this matters: Why this surface time?",
+    "Why this matters: Why EVA time?",
+    "Why this matters: Why sample return?"
+   ],
+   "routes": [
+    "/moon?site=apollo11",
+    "/mars?site=perseverance"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: Why this matters: Why this lan"
+   ],
+   "viewports": [
+    "desktop",
+    "phone"
+   ],
+   "count": 18
+  },
+  {
+   "tag": "button",
+   "cls": "annotation-row",
+   "h": 110,
+   "radius": "3px",
+   "font": "16px",
+   "tt": "none",
+   "bg": "rgba(255, 255, 255, 0.03)",
+   "border": "1px rgba(255, 255, 255, 0.07)",
+   "label": "Eagle descent stage The lower half of th",
+   "labels": [
+    "Eagle descent stage The lower half of th",
+    "Passive seismometer (PSEP) The Passive S",
+    "US flag (LROC position) The point LROC's",
+    "TV camera (LROC position) The point LROC",
+    "Little West crater The crater LROC label"
+   ],
+   "routes": [
+    "/moon?site=apollo11"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: Why this matters: Why this lan"
+   ],
+   "viewports": [
+    "desktop",
+    "phone"
+   ],
+   "count": 18
+  },
+  {
+   "tag": "a",
+   "cls": "card",
+   "h": 167,
+   "radius": "4px",
+   "font": "16px",
+   "tt": "none",
+   "bg": "rgba(0, 0, 0, 0)",
+   "border": "1px rgba(255, 255, 255, 0.08)",
+   "label": "XMM-Newton ESA 1999",
+   "labels": [
+    "XMM-Newton ESA 1999",
+    "Kepler NASA 2009",
+    "Gaia ESA 2013",
+    "Hitomi (ASTRO-H) JAXA 2016",
+    "TESS NASA 2018",
+    "Euclid ESA 2023"
+   ],
+   "routes": [
+    "/science/observation/space-photography"
+   ],
+   "states": [
+    "page",
+    "open: Open navigation menu",
+    "open: Language"
+   ],
+   "viewports": [
+    "phone"
+   ],
+   "count": 18
+  },
+  {
+   "tag": "button",
+   "cls": "ui-chip.index-close.ui-chip--close",
+   "h": 30,
+   "radius": "4px",
+   "font": "18px",
+   "tt": "uppercase",
+   "bg": "rgba(8, 10, 22, 0.65)",
+   "border": "1px rgba(255, 255, 255, 0.18)",
+   "label": "Close index",
+   "labels": [
+    "Close index"
+   ],
+   "routes": [
+    "/iss",
+    "/tiangong"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 16
+  },
+  {
+   "tag": "button",
+   "cls": "ui-chip",
+   "h": 82,
+   "radius": "4px",
+   "font": "11px",
+   "tt": "uppercase",
+   "bg": "color(srgb 0.116727 0.160134 0.36249 / 0.727765)",
+   "border": "1px rgb(80, 112, 255)",
+   "label": "Show / hide module list",
+   "labels": [
+    "Show / hide module list"
+   ],
+   "routes": [
+    "/iss",
+    "/tiangong"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 16
+  },
+  {
+   "tag": "a",
+   "cls": "card",
+   "h": 181,
+   "radius": "4px",
+   "font": "16px",
+   "tt": "none",
+   "bg": "rgba(0, 0, 0, 0)",
+   "border": "1px rgba(255, 255, 255, 0.08)",
+   "label": "Hubble Space Telescope NASA / ESA 1990",
+   "labels": [
+    "Hubble Space Telescope NASA / ESA 1990",
+    "Compton Gamma Ray Observatory NASA 1991",
+    "Chandra X-ray Observatory NASA 1999",
+    "Spitzer Space Telescope NASA 2003",
+    "James Webb Space Telescope NASA / ESA 20"
+   ],
+   "routes": [
+    "/science/observation/space-photography"
+   ],
+   "states": [
+    "page",
+    "open: Open navigation menu",
+    "open: Language"
+   ],
+   "viewports": [
+    "phone"
+   ],
+   "count": 15
+  },
+  {
+   "tag": "a",
+   "cls": "card.wide.cover",
+   "h": 338,
+   "radius": "8px",
+   "font": "16px",
+   "tt": "none",
+   "bg": "rgba(10, 10, 22, 0.95)",
+   "border": "1px rgba(255, 255, 255, 0.07)",
+   "label": "Finding Mars in the Dark How do you stee",
+   "labels": [
+    "Finding Mars in the Dark How do you stee",
+    "The Grammar of Delta-V Every spacecraft ",
+    "Running the Solar System on a Whisper Th",
+    "Louder Than a Whisper The Deep Space Net",
+    "Keep the Rocket For sixty years we built"
+   ],
+   "routes": [
+    "/essays"
+   ],
+   "states": [
+    "page",
+    "open: Open navigation menu",
+    "open: Language"
+   ],
+   "viewports": [
+    "phone"
+   ],
+   "count": 15
+  },
+  {
+   "tag": "button",
+   "cls": "ui-chip.filters-strip",
+   "h": 44,
+   "radius": "4px",
+   "font": "11px",
+   "tt": "uppercase",
+   "bg": "rgba(8, 10, 22, 0.65)",
+   "border": "1px rgba(255, 255, 255, 0.18)",
+   "label": "FILTERS 139 ▸",
+   "labels": [
+    "FILTERS 139 ▸",
+    "FILTERS 349 ▸",
+    "FILTERS 299 ▸",
+    "FILTERS 42 ▸"
+   ],
+   "routes": [
+    "/missions",
+    "/missions/launches",
+    "/fleet",
+    "/programs",
+    "/missions?id=apollo11",
+    "/fleet?id=saturn-v"
+   ],
+   "states": [
+    "page",
+    "open: Open navigation menu",
+    "open: Language"
+   ],
+   "viewports": [
+    "phone"
+   ],
+   "count": 14
+  },
+  {
+   "tag": "select",
+   "cls": "",
+   "h": 44,
+   "radius": "4px",
+   "font": "11px",
+   "tt": "none",
+   "bg": "rgba(255, 255, 255, 0.04)",
+   "border": "1px rgba(255, 255, 255, 0.18)",
+   "label": "Sort fleet entries",
+   "labels": [
+    "Sort fleet entries"
+   ],
+   "routes": [
+    "/missions",
+    "/missions/launches",
+    "/fleet",
+    "/programs",
+    "/missions?id=apollo11",
+    "/fleet?id=saturn-v"
+   ],
+   "states": [
+    "page",
+    "open: Open navigation menu",
+    "open: Language"
+   ],
+   "viewports": [
+    "phone"
+   ],
+   "count": 14
+  },
+  {
+   "tag": "a",
+   "cls": "site",
+   "h": 33,
+   "radius": "4px",
+   "font": "12px",
+   "tt": "none",
+   "bg": "rgba(80, 112, 255, 0.12)",
+   "border": "1px rgba(80, 112, 255, 0.35)",
+   "label": "Museum website",
+   "labels": [
+    "Museum website"
+   ],
+   "routes": [
+    "/fleet?id=saturn-v"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾"
+   ],
+   "viewports": [
+    "desktop",
+    "phone"
+   ],
+   "count": 12
+  },
+  {
+   "tag": "a",
+   "cls": "map",
+   "h": 33,
+   "radius": "4px",
+   "font": "12px",
+   "tt": "none",
+   "bg": "rgba(0, 0, 0, 0)",
+   "border": "1px rgba(80, 112, 255, 0.35)",
+   "label": "On the map",
+   "labels": [
+    "On the map"
+   ],
+   "routes": [
+    "/fleet?id=saturn-v"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾"
+   ],
+   "viewports": [
+    "desktop",
+    "phone"
+   ],
+   "count": 12
+  },
+  {
+   "tag": "a",
+   "cls": "cta.cta-primary",
+   "h": 47,
+   "radius": "4px",
+   "font": "14px",
+   "tt": "none",
+   "bg": "rgba(0, 0, 0, 0)",
+   "border": "1px rgb(80, 112, 255)",
+   "label": "Explore the solar system",
+   "labels": [
+    "Explore the solar system"
+   ],
+   "routes": [
+    "/"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop",
+    "phone"
+   ],
+   "count": 11
+  },
+  {
+   "tag": "button",
+   "cls": "cta.cta-tour",
+   "h": 48,
+   "radius": "4px",
+   "font": "14px",
+   "tt": "none",
+   "bg": "rgba(80, 112, 255, 0.12)",
+   "border": "1px color(srgb 0.313726 0.439216 1 / 0.55)",
+   "label": "Take the curator tour",
+   "labels": [
+    "Take the curator tour"
+   ],
+   "routes": [
+    "/"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop",
+    "phone"
+   ],
+   "count": 11
+  },
+  {
+   "tag": "a",
+   "cls": "cta.cta-secondary",
+   "h": 47,
+   "radius": "4px",
+   "font": "14px",
+   "tt": "none",
+   "bg": "rgba(0, 0, 0, 0)",
+   "border": "1px rgba(0, 0, 0, 0)",
+   "label": "How does it work?",
+   "labels": [
+    "How does it work?"
+   ],
+   "routes": [
+    "/"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop",
+    "phone"
+   ],
+   "count": 11
+  },
+  {
+   "tag": "select",
+   "cls": "dest-select",
+   "h": 44,
+   "radius": "4px",
+   "font": "11px",
+   "tt": "none",
+   "bg": "rgba(255, 255, 255, 0.04)",
+   "border": "1px rgba(255, 255, 255, 0.12)",
+   "label": "MoonMercuryVenusMarsPhobosDeimosVestaCer",
+   "labels": [
+    "MoonMercuryVenusMarsPhobosDeimosVestaCer"
+   ],
+   "routes": [
+    "/plan"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop",
+    "phone"
+   ],
+   "count": 11
+  },
+  {
+   "tag": "summary",
+   "cls": "",
+   "h": 24,
+   "radius": "0px",
+   "font": "16px",
+   "tt": "none",
+   "bg": "rgba(0, 0, 0, 0)",
+   "border": "0px rgb(255, 255, 255)",
+   "label": "READING THE PORKCHOP",
+   "labels": [
+    "READING THE PORKCHOP"
+   ],
+   "routes": [
+    "/plan"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop",
+    "phone"
+   ],
+   "count": 11
+  },
+  {
+   "tag": "button",
+   "cls": "opening-skip",
+   "h": 43,
+   "radius": "4px",
+   "font": "11px",
+   "tt": "uppercase",
+   "bg": "rgba(8, 10, 22, 0.55)",
+   "border": "1px color(srgb 0.533333 0.623529 0.905882 / 0.5)",
+   "label": "Proceed to simulation",
+   "labels": [
+    "Proceed to simulation"
+   ],
+   "routes": [
+    "/fly"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop",
+    "phone"
+   ],
+   "count": 11
+  },
+  {
+   "tag": "button",
+   "cls": "fd-stage-tick-button.edge-end",
+   "h": 10,
+   "radius": "0px",
+   "font": "13.3333px",
+   "tt": "none",
+   "bg": "rgba(0, 0, 0, 0)",
+   "border": "0px rgb(0, 0, 0)",
+   "label": "Approach stage. Click to jump.",
+   "labels": [
+    "Approach stage. Click to jump."
+   ],
+   "routes": [
+    "/fly"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop",
+    "phone"
+   ],
+   "count": 11
+  },
+  {
+   "tag": "select",
+   "cls": "lab__picker-select",
+   "h": 44,
+   "radius": "2px",
+   "font": "12px",
+   "tt": "none",
+   "bg": "color(srgb 0.313726 0.439216 1 / 0.06)",
+   "border": "1px color(srgb 0.313726 0.439216 1 / 0.25)",
+   "label": "Select goal",
+   "labels": [
+    "Select goal"
+   ],
+   "routes": [
+    "/lab"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop",
+    "phone"
+   ],
+   "count": 11
+  },
+  {
+   "tag": "button[tab]",
+   "cls": "lab__view-btn.lab__view-btn--on",
+   "h": 26,
+   "radius": "4px",
+   "font": "11px",
+   "tt": "none",
+   "bg": "color(srgb 0.313726 0.439216 1 / 0.08)",
+   "border": "1px rgb(80, 112, 255)",
+   "label": "Notebook",
+   "labels": [
+    "Notebook"
+   ],
+   "routes": [
+    "/lab"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop",
+    "phone"
+   ],
+   "count": 11
+  },
+  {
+   "tag": "button[tab]",
+   "cls": "lab__view-btn",
+   "h": 26,
+   "radius": "4px",
+   "font": "11px",
+   "tt": "none",
+   "bg": "rgba(0, 0, 0, 0)",
+   "border": "1px rgba(255, 255, 255, 0.18)",
+   "label": "Canvas",
+   "labels": [
+    "Canvas"
+   ],
+   "routes": [
+    "/lab"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop",
+    "phone"
+   ],
+   "count": 11
+  },
+  {
+   "tag": "button",
+   "cls": "nb__tool.nb__tool--accent",
+   "h": 44,
+   "radius": "3px",
+   "font": "13.3333px",
+   "tt": "none",
+   "bg": "color(srgb 0.313726 0.439216 1 / 0.08)",
+   "border": "1px rgba(80, 112, 255, 0.35)",
+   "label": "Share this notebook — copy a link",
+   "labels": [
+    "Share this notebook — copy a link"
+   ],
+   "routes": [
+    "/lab"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop",
+    "phone"
+   ],
+   "count": 11
+  },
+  {
+   "tag": "select",
+   "cls": "card__select",
+   "h": 44,
+   "radius": "2px",
+   "font": "12px",
+   "tt": "none",
+   "bg": "color(srgb 0.313726 0.439216 1 / 0.06)",
+   "border": "1px color(srgb 0.313726 0.439216 1 / 0.2)",
+   "label": "EarthMoonMarsVenusMercury",
+   "labels": [
+    "EarthMoonMarsVenusMercury"
+   ],
+   "routes": [
+    "/lab"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop",
+    "phone"
+   ],
+   "count": 11
+  },
+  {
+   "tag": "button",
+   "cls": "annotation-row",
+   "h": 127,
+   "radius": "3px",
+   "font": "16px",
+   "tt": "none",
+   "bg": "rgba(255, 255, 255, 0.03)",
+   "border": "1px rgba(255, 255, 255, 0.07)",
+   "label": "Laser retroreflector (LRRR) The Laser Ra",
+   "labels": [
+    "Laser retroreflector (LRRR) The Laser Ra",
+    "Footpath toward Little West LROC says th",
+    "LM descent-engine blast zone LROC says t"
+   ],
+   "routes": [
+    "/moon?site=apollo11"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: Why this matters: Why this lan"
+   ],
+   "viewports": [
+    "desktop",
+    "phone"
+   ],
+   "count": 10
+  },
+  {
+   "tag": "button",
+   "cls": "ui-chip",
+   "h": 30,
+   "radius": "4px",
+   "font": "11px",
+   "tt": "uppercase",
+   "bg": "color(srgb 0.0218888 0.0842636 0.220233 / 0.727765)",
+   "border": "1px rgb(0, 48, 135)",
+   "label": "Japan",
+   "labels": [
+    "Japan"
+   ],
+   "routes": [
+    "/moon?site=apollo11"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 9
+  },
+  {
+   "tag": "button",
+   "cls": "ui-chip",
+   "h": 30,
+   "radius": "4px",
+   "font": "11px",
+   "tt": "uppercase",
+   "bg": "color(srgb 0.0218888 0.0937474 0.278321 / 0.727765)",
+   "border": "1px rgb(0, 56, 184)",
+   "label": "Israel",
+   "labels": [
+    "Israel"
+   ],
+   "routes": [
+    "/moon?site=apollo11"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 9
+  },
+  {
+   "tag": "button",
+   "cls": "panel-hero-btn",
+   "h": 205,
+   "radius": "4px",
+   "font": "13.3333px",
+   "tt": "none",
+   "bg": "rgba(0, 0, 0, 0.45)",
+   "border": "1px rgba(255, 255, 255, 0.1)",
+   "label": "Open large photo · Apollo 11",
+   "labels": [
+    "Open large photo · Apollo 11",
+    "Open large photo · Perseverance + Ingenu",
+    "Open large photo · Antares",
+    "Open large photo · M42 · Great Orion Neb"
+   ],
+   "routes": [
+    "/moon?site=apollo11",
+    "/mars?site=perseverance",
+    "/explore?goto=antares",
+    "/explore?deepsky=m42",
+    "/missions?id=apollo11"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 9
+  },
+  {
+   "tag": "button",
+   "cls": "ui-chip",
+   "h": 30,
+   "radius": "4px",
+   "font": "11px",
+   "tt": "uppercase",
+   "bg": "color(srgb 0.0218888 0.16369 0.115911 / 0.727765)",
+   "border": "1px rgb(0, 115, 47)",
+   "label": "UAE",
+   "labels": [
+    "UAE"
+   ],
+   "routes": [
+    "/mars?site=perseverance"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 9
+  },
+  {
+   "tag": "a",
+   "cls": "card",
+   "h": 236,
+   "radius": "4px",
+   "font": "16px",
+   "tt": "none",
+   "bg": "rgba(255, 255, 255, 0.02)",
+   "border": "1px rgba(255, 255, 255, 0.12)",
+   "label": "Stellar Neighborhood: The real nearby-st",
+   "labels": [
+    "Stellar Neighborhood: The real nearby-st"
+   ],
+   "routes": [
+    "/"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 8
+  },
+  {
+   "tag": "a",
+   "cls": "card",
+   "h": 194,
+   "radius": "4px",
+   "font": "16px",
+   "tt": "none",
+   "bg": "rgba(255, 255, 255, 0.02)",
+   "border": "1px rgba(255, 255, 255, 0.12)",
+   "label": "Virgo Supercluster: The Virgo Superclust",
+   "labels": [
+    "Virgo Supercluster: The Virgo Superclust"
+   ],
+   "routes": [
+    "/"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 8
+  },
+  {
+   "tag": "button",
+   "cls": "opening-launch",
+   "h": 47,
+   "radius": "4px",
+   "font": "11px",
+   "tt": "uppercase",
+   "bg": "rgba(22, 14, 6, 0.55)",
+   "border": "1px rgba(255, 190, 74, 0.55)",
+   "label": "▲ START WITH LAUNCH",
+   "labels": [
+    "▲ START WITH LAUNCH"
+   ],
+   "routes": [
+    "/fly"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 8
+  },
+  {
+   "tag": "a",
+   "cls": "hud-demo-cta",
+   "h": 30,
+   "radius": "3px",
+   "font": "11px",
+   "tt": "none",
+   "bg": "color(srgb 0.313726 0.439216 1 / 0.18)",
+   "border": "1px color(srgb 0.313726 0.439216 1 / 0.55)",
+   "label": "Plan a real mission →",
+   "labels": [
+    "Plan a real mission →"
+   ],
+   "routes": [
+    "/fly"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 8
+  },
+  {
+   "tag": "a",
+   "cls": "hud-demo-cta.hud-demo-cta-secondary",
+   "h": 30,
+   "radius": "3px",
+   "font": "11px",
+   "tt": "none",
+   "bg": "rgba(80, 112, 255, 0.12)",
+   "border": "1px color(srgb 0.313726 0.439216 1 / 0.5)",
+   "label": "Replay a flown mission →",
+   "labels": [
+    "Replay a flown mission →"
+   ],
+   "routes": [
+    "/fly"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 8
+  },
+  {
+   "tag": "button",
+   "cls": "pin-tile",
+   "h": 585,
+   "radius": "8px",
+   "font": "13.3333px",
+   "tt": "none",
+   "bg": "rgb(0, 0, 0)",
+   "border": "1px rgba(255, 255, 255, 0.12)",
+   "label": "Play video: Live from the International ",
+   "labels": [
+    "Play video: Live from the International "
+   ],
+   "routes": [
+    "/live"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 8
+  },
+  {
+   "tag": "a",
+   "cls": "strip",
+   "h": 225,
+   "radius": "0px",
+   "font": "16px",
+   "tt": "none",
+   "bg": "rgb(6, 8, 15)",
+   "border": "0px rgb(255, 255, 255)",
+   "label": "Deep-Sky The universe's greatest hits, a",
+   "labels": [
+    "Deep-Sky The universe's greatest hits, a"
+   ],
+   "routes": [
+    "/gallery"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 8
+  },
+  {
+   "tag": "a",
+   "cls": "strip.strip-beside",
+   "h": 225,
+   "radius": "0px",
+   "font": "16px",
+   "tt": "none",
+   "bg": "rgb(6, 8, 15)",
+   "border": "0px rgb(255, 255, 255)",
+   "label": "Posters Twenty-seven original art prints",
+   "labels": [
+    "Posters Twenty-seven original art prints"
+   ],
+   "routes": [
+    "/gallery"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 8
+  },
+  {
+   "tag": "a",
+   "cls": "card",
+   "h": 168,
+   "radius": "4px",
+   "font": "16px",
+   "tt": "none",
+   "bg": "rgba(0, 0, 0, 0)",
+   "border": "1px rgba(255, 255, 255, 0.08)",
+   "label": "Spektr-RG Roscosmos / DLR 2019",
+   "labels": [
+    "Spektr-RG Roscosmos / DLR 2019"
+   ],
+   "routes": [
+    "/science/observation/space-photography"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: WORLDS\n▾",
+    "open: CATALOG\n▾",
+    "open: LEARN\n▾",
+    "open: Language",
+    "open: SETTINGS",
+    "open: More"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 8
+  },
+  {
+   "tag": "a",
+   "cls": "mission-link",
+   "h": 34,
+   "radius": "3px",
+   "font": "11px",
+   "tt": "none",
+   "bg": "color(srgb 0.313726 0.439216 1 / 0.18)",
+   "border": "1px color(srgb 0.313726 0.439216 1 / 0.55)",
+   "label": "HISTORIC MILESTONE →",
+   "labels": [
+    "HISTORIC MILESTONE →",
+    "FULL MISSION CARD →"
+   ],
+   "routes": [
+    "/moon?site=apollo11",
+    "/mars?site=perseverance"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: Why this matters: Why this lan"
+   ],
+   "viewports": [
+    "desktop",
+    "phone"
+   ],
+   "count": 8
+  },
+  {
+   "tag": "button",
+   "cls": "panel-backdrop",
+   "h": 844,
+   "radius": "0px",
+   "font": "13.3333px",
+   "tt": "none",
+   "bg": "rgba(2, 2, 8, 0.5)",
+   "border": "0px rgb(0, 0, 0)",
+   "label": "Close panel",
+   "labels": [
+    "Close panel"
+   ],
+   "routes": [
+    "/moon?site=apollo11",
+    "/mars?site=perseverance",
+    "/explore?id=mars",
+    "/explore?goto=antares",
+    "/missions?id=apollo11",
+    "/fleet?id=saturn-v"
+   ],
+   "states": [
+    "page",
+    "open: Why this matters: Why this lan"
+   ],
+   "viewports": [
+    "phone"
+   ],
+   "count": 8
+  },
+  {
+   "tag": "button",
+   "cls": "ui-chip.is-on",
+   "h": 44,
+   "radius": "4px",
+   "font": "11px",
+   "tt": "uppercase",
+   "bg": "color(srgb 0.116727 0.160134 0.36249 / 0.727765)",
+   "border": "1px rgb(80, 112, 255)",
+   "label": "10× — SPEED",
+   "labels": [
+    "10× — SPEED",
+    "7× — SPEED"
+   ],
+   "routes": [
+    "/explore",
+    "/fly",
+    "/explore?id=mars"
+   ],
+   "states": [
+    "page",
+    "open: Open navigation menu",
+    "open: Language"
+   ],
+   "viewports": [
+    "phone"
+   ],
+   "count": 7
+  },
+  {
+   "tag": "button",
+   "cls": "ui-chip.ui-chip--quiet",
+   "h": 44,
+   "radius": "4px",
+   "font": "11px",
+   "tt": "uppercase",
+   "bg": "rgba(0, 0, 0, 0)",
+   "border": "1px rgba(0, 0, 0, 0)",
+   "label": "Show all 41",
+   "labels": [
+    "Show all 41",
+    "Show all 44"
+   ],
+   "routes": [
+    "/missions/launches",
+    "/fleet",
+    "/fleet?id=saturn-v"
+   ],
+   "states": [
+    "page",
+    "open: Open navigation menu",
+    "open: Language"
+   ],
+   "viewports": [
+    "phone"
+   ],
+   "count": 7
+  },
+  {
+   "tag": "button",
+   "cls": "ui-chip.filters-strip",
+   "h": 30,
+   "radius": "4px",
+   "font": "11px",
+   "tt": "uppercase",
+   "bg": "rgba(8, 10, 22, 0.65)",
+   "border": "1px rgb(136, 159, 231)",
+   "label": "FILTERS 139 ▾",
+   "labels": [
+    "FILTERS 139 ▾",
+    "FILTERS 349 ▾",
+    "FILTERS 299 ▾",
+    "FILTERS 42 ▾"
+   ],
+   "routes": [
+    "/missions",
+    "/missions/launches",
+    "/fleet",
+    "/programs",
+    "/missions?id=apollo11",
+    "/fleet?id=saturn-v"
+   ],
+   "states": [
+    "open: FILTERS\n139\n▸",
+    "open: FILTERS\n349\n▸",
+    "open: FILTERS\n299\n▸",
+    "open: FILTERS\n42\n▸"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 6
+  },
+  {
+   "tag": "button",
+   "cls": "footer-more-btn",
+   "h": 20,
+   "radius": "0px",
+   "font": "11px",
+   "tt": "none",
+   "bg": "rgba(0, 0, 0, 0)",
+   "border": "0px rgb(136, 159, 231)",
+   "label": "More",
+   "labels": [
+    "More"
+   ],
+   "routes": [
+    "/moon",
+    "/mars",
+    "/venus",
+    "/moon?site=apollo11",
+    "/mars?site=perseverance",
+    "/venus?site=venera13"
+   ],
+   "states": [
+    "open: More"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 6
+  },
+  {
+   "tag": "button",
+   "cls": "annotation-row",
+   "h": 92,
+   "radius": "3px",
+   "font": "16px",
+   "tt": "none",
+   "bg": "rgba(255, 255, 255, 0.03)",
+   "border": "1px rgba(255, 255, 255, 0.07)",
+   "label": "Little West crater The crater LROC label",
+   "labels": [
+    "Little West crater The crater LROC label",
+    "Double crater A small crater LROC labels"
+   ],
+   "routes": [
+    "/moon?site=apollo11"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: Why this matters: Why this lan"
+   ],
+   "viewports": [
+    "desktop",
+    "phone"
+   ],
+   "count": 6
+  },
+  {
+   "tag": "button",
+   "cls": "annotation-row",
+   "h": 144,
+   "radius": "3px",
+   "font": "16px",
+   "tt": "none",
+   "bg": "rgba(255, 255, 255, 0.03)",
+   "border": "1px rgba(255, 255, 255, 0.07)",
+   "label": "Perseverance landing point Where Perseve",
+   "labels": [
+    "Perseverance landing point Where Perseve",
+    "LM descent-engine blast zone LROC says t"
+   ],
+   "routes": [
+    "/mars?site=perseverance",
+    "/moon?site=apollo11"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾",
+    "open: Why this matters: Why this lan"
+   ],
+   "viewports": [
+    "desktop",
+    "phone"
+   ],
+   "count": 6
+  },
+  {
+   "tag": "button",
+   "cls": "xref-link.ui-hit",
+   "h": 20,
+   "radius": "0px",
+   "font": "13px",
+   "tt": "none",
+   "bg": "rgba(0, 0, 0, 0)",
+   "border": "0px rgb(232, 115, 74)",
+   "label": "F-1",
+   "labels": [
+    "F-1",
+    "J-2"
+   ],
+   "routes": [
+    "/fleet?id=saturn-v"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾"
+   ],
+   "viewports": [
+    "desktop",
+    "phone"
+   ],
+   "count": 6
+  },
+  {
+   "tag": "a",
+   "cls": "card",
+   "h": 182,
+   "radius": "4px",
+   "font": "16px",
+   "tt": "none",
+   "bg": "rgba(255, 255, 255, 0.02)",
+   "border": "1px rgba(255, 255, 255, 0.12)",
+   "label": "Solar System: From the Sun to the cosmic",
+   "labels": [
+    "Solar System: From the Sun to the cosmic",
+    "Stellar Neighborhood: The real nearby-st"
+   ],
+   "routes": [
+    "/"
+   ],
+   "states": [
+    "page",
+    "open: Open navigation menu",
+    "open: Language"
+   ],
+   "viewports": [
+    "phone"
+   ],
+   "count": 6
+  },
+  {
+   "tag": "button",
+   "cls": "fly-mtab",
+   "h": 40,
+   "radius": "6px",
+   "font": "11px",
+   "tt": "none",
+   "bg": "rgba(8, 10, 22, 0.92)",
+   "border": "1px rgba(255, 255, 255, 0.14)",
+   "label": "MISSION",
+   "labels": [
+    "MISSION",
+    "EVENTS"
+   ],
+   "routes": [
+    "/fly"
+   ],
+   "states": [
+    "page",
+    "open: Open navigation menu",
+    "open: Language"
+   ],
+   "viewports": [
+    "phone"
+   ],
+   "count": 6
+  },
+  {
+   "tag": "button",
+   "cls": "",
+   "h": 310,
+   "radius": "6px",
+   "font": "13.3333px",
+   "tt": "none",
+   "bg": "rgb(5, 6, 13)",
+   "border": "1px rgba(255, 255, 255, 0.08)",
+   "label": "View M4 · NGC 6121 — Globular cluster",
+   "labels": [
+    "View M4 · NGC 6121 — Globular cluster",
+    "View Butterfly Nebula — NGC 6302 — wings"
+   ],
+   "routes": [
+    "/gallery/deep-sky"
+   ],
+   "states": [
+    "page",
+    "open: Open navigation menu",
+    "open: Language"
+   ],
+   "viewports": [
+    "phone"
+   ],
+   "count": 6
+  },
+  {
+   "tag": "button",
+   "cls": "panel-hero-btn",
+   "h": 200,
+   "radius": "4px",
+   "font": "13.3333px",
+   "tt": "none",
+   "bg": "rgba(0, 0, 0, 0.45)",
+   "border": "1px rgba(255, 255, 255, 0.1)",
+   "label": "Open large photo · Apollo 11",
+   "labels": [
+    "Open large photo · Apollo 11",
+    "Open large photo · Perseverance + Ingenu",
+    "Open large photo · Antares"
+   ],
+   "routes": [
+    "/moon?site=apollo11",
+    "/mars?site=perseverance",
+    "/explore?goto=antares",
+    "/missions?id=apollo11"
+   ],
+   "states": [
+    "page",
+    "open: Why this matters: Why this lan"
+   ],
+   "viewports": [
+    "phone"
+   ],
+   "count": 6
+  },
+  {
+   "tag": "a[menuitem]",
+   "cls": "group-menu-link.has-glyph.active",
+   "h": 40,
+   "radius": "4px",
+   "font": "12px",
+   "tt": "uppercase",
+   "bg": "color(srgb 0.313726 0.439216 1 / 0.28)",
+   "border": "1px color(srgb 0.313726 0.439216 1 / 0.55)",
+   "label": "OUR SOLAR SYSTEM",
+   "labels": [
+    "OUR SOLAR SYSTEM",
+    "Stellar Neighborhood"
+   ],
+   "routes": [
+    "/explore",
+    "/explore?id=mars",
+    "/explore?goto=antares",
+    "/explore?deepsky=m42"
+   ],
+   "states": [
+    "open: EXPLORE\n▾"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 4
+  },
+  {
+   "tag": "button",
+   "cls": "ui-chip.is-on",
+   "h": 30,
+   "radius": "4px",
+   "font": "11px",
+   "tt": "uppercase",
+   "bg": "color(srgb 0.116727 0.160134 0.36249 / 0.727765)",
+   "border": "1px rgb(80, 112, 255)",
+   "label": "Change scale",
+   "labels": [
+    "Change scale"
+   ],
+   "routes": [
+    "/explore",
+    "/explore?id=mars",
+    "/explore?goto=antares",
+    "/explore?deepsky=m42"
+   ],
+   "states": [
+    "open: Change scale"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 4
+  },
+  {
+   "tag": "button",
+   "cls": "ui-chip.is-on.rung",
+   "h": 35,
+   "radius": "4px",
+   "font": "11px",
+   "tt": "uppercase",
+   "bg": "color(srgb 0.116727 0.160134 0.36249 / 0.727765)",
+   "border": "1px rgb(80, 112, 255)",
+   "label": "Solar System Zoom out through eight nest",
+   "labels": [
+    "Solar System Zoom out through eight nest",
+    "Stellar Neighborhood Fly out past the Su"
+   ],
+   "routes": [
+    "/explore",
+    "/explore?id=mars",
+    "/explore?goto=antares",
+    "/explore?deepsky=m42"
+   ],
+   "states": [
+    "open: Change scale"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 4
+  },
+  {
+   "tag": "button",
+   "cls": "provenance-chip.ui-hit",
+   "h": 22,
+   "radius": "2px",
+   "font": "11px",
+   "tt": "uppercase",
+   "bg": "rgba(0, 0, 0, 0)",
+   "border": "1px rgba(255, 255, 255, 0.3)",
+   "label": "View provenance chain",
+   "labels": [
+    "View provenance chain"
+   ],
+   "routes": [
+    "/missions/launches"
+   ],
+   "states": [
+    "open: View provenance chain"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 4
+  },
+  {
+   "tag": "button",
+   "cls": "open",
+   "h": 203,
+   "radius": "2px",
+   "font": "13.3333px",
+   "tt": "none",
+   "bg": "rgba(0, 0, 0, 0)",
+   "border": "1px rgba(255, 255, 255, 0.08)",
+   "label": "Illustrated block map of the Apollo 11 l",
+   "labels": [
+    "Illustrated block map of the Apollo 11 l",
+    "Illustrated block map of Perseverance’s "
+   ],
+   "routes": [
+    "/moon?site=apollo11",
+    "/mars?site=perseverance"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 4
+  },
+  {
+   "tag": "a",
+   "cls": "card",
+   "h": 289,
+   "radius": "4px",
+   "font": "16px",
+   "tt": "none",
+   "bg": "rgba(255, 255, 255, 0.03)",
+   "border": "1px rgba(255, 255, 255, 0.08)",
+   "label": "Mars's 25.2° axial tilt is remarkably cl",
+   "labels": [
+    "Mars's 25.2° axial tilt is remarkably cl",
+    "Mars's 0.0935 eccentricity (six times Ea"
+   ],
+   "routes": [
+    "/explore?id=mars"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 4
+  },
+  {
+   "tag": "a",
+   "cls": "drawer-link.active",
+   "h": 41,
+   "radius": "0px",
+   "font": "12px",
+   "tt": "none",
+   "bg": "color(srgb 0.313726 0.439216 1 / 0.18)",
+   "border": "0px rgb(255, 255, 255)",
+   "label": "HOME",
+   "labels": [
+    "HOME",
+    "PLAN",
+    "FLY"
+   ],
+   "routes": [
+    "/",
+    "/plan",
+    "/fly"
+   ],
+   "states": [
+    "open: Open navigation menu",
+    "open: Language"
+   ],
+   "viewports": [
+    "phone"
+   ],
+   "count": 4
+  },
+  {
+   "tag": "a",
+   "cls": "card",
+   "h": 110,
+   "radius": "4px",
+   "font": "16px",
+   "tt": "none",
+   "bg": "rgba(255, 255, 255, 0.03)",
+   "border": "1px rgba(255, 255, 255, 0.08)",
+   "label": "in flight Soyuz 2.1b Fregat Glonass-K1 N",
+   "labels": [
+    "in flight Soyuz 2.1b Fregat Glonass-K1 N"
+   ],
+   "routes": [
+    "/missions",
+    "/missions?id=apollo11"
+   ],
+   "states": [
+    "page",
+    "open: Open navigation menu",
+    "open: Language"
+   ],
+   "viewports": [
+    "phone"
+   ],
+   "count": 4
+  },
+  {
+   "tag": "a",
+   "cls": "card",
+   "h": 126,
+   "radius": "4px",
+   "font": "16px",
+   "tt": "none",
+   "bg": "rgba(255, 255, 255, 0.03)",
+   "border": "1px rgba(255, 255, 255, 0.08)",
+   "label": "in flight H3-22 Michibiki 7 (QZS-7) Mits",
+   "labels": [
+    "in flight H3-22 Michibiki 7 (QZS-7) Mits"
+   ],
+   "routes": [
+    "/missions",
+    "/missions?id=apollo11"
+   ],
+   "states": [
+    "page",
+    "open: Open navigation menu",
+    "open: Language"
+   ],
+   "viewports": [
+    "phone"
+   ],
+   "count": 4
+  },
+  {
+   "tag": "button",
+   "cls": "open",
+   "h": 198,
+   "radius": "2px",
+   "font": "13.3333px",
+   "tt": "none",
+   "bg": "rgba(0, 0, 0, 0)",
+   "border": "1px rgba(255, 255, 255, 0.08)",
+   "label": "Illustrated block map of the Apollo 11 l",
+   "labels": [
+    "Illustrated block map of the Apollo 11 l",
+    "Illustrated block map of Perseverance’s "
+   ],
+   "routes": [
+    "/moon?site=apollo11",
+    "/mars?site=perseverance"
+   ],
+   "states": [
+    "page",
+    "open: Why this matters: Why this lan"
+   ],
+   "viewports": [
+    "phone"
+   ],
+   "count": 4
+  },
+  {
+   "tag": "a",
+   "cls": "spec-cta.spec-cta--vehicle",
+   "h": 70,
+   "radius": "4px",
+   "font": "16px",
+   "tt": "none",
+   "bg": "rgb(12, 22, 96)",
+   "border": "1px rgba(60, 80, 180, 0.6)",
+   "label": "VEHICLE Saturn V (AS-506)",
+   "labels": [
+    "VEHICLE Saturn V (AS-506)"
+   ],
+   "routes": [
+    "/missions?id=apollo11"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾"
+   ],
+   "viewports": [
+    "desktop",
+    "phone"
+   ],
+   "count": 3
+  },
+  {
+   "tag": "a",
+   "cls": "spec-cta.spec-cta--payload",
+   "h": 70,
+   "radius": "4px",
+   "font": "16px",
+   "tt": "none",
+   "bg": "rgb(80, 112, 255)",
+   "border": "1px rgba(80, 112, 255, 0.7)",
+   "label": "PAYLOAD 46782 kg launched (CSM Columbia ",
+   "labels": [
+    "PAYLOAD 46782 kg launched (CSM Columbia "
+   ],
+   "routes": [
+    "/missions?id=apollo11"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾"
+   ],
+   "viewports": [
+    "desktop",
+    "phone"
+   ],
+   "count": 3
+  },
+  {
+   "tag": "button[tab]",
+   "cls": "active",
+   "h": 44,
+   "radius": "0px",
+   "font": "11px",
+   "tt": "none",
+   "bg": "rgba(0, 0, 0, 0)",
+   "border": "0px rgb(136, 159, 231)",
+   "label": "OVERVIEW",
+   "labels": [
+    "OVERVIEW"
+   ],
+   "routes": [
+    "/fleet?id=saturn-v"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾"
+   ],
+   "viewports": [
+    "desktop",
+    "phone"
+   ],
+   "count": 3
+  },
+  {
+   "tag": "button",
+   "cls": "spec-cta.spec-cta--mission",
+   "h": 55,
+   "radius": "4px",
+   "font": "13.3333px",
+   "tt": "none",
+   "bg": "rgb(31, 76, 168)",
+   "border": "1px rgba(100, 150, 240, 0.6)",
+   "label": "MISSIONS 10 missions →",
+   "labels": [
+    "MISSIONS 10 missions →"
+   ],
+   "routes": [
+    "/fleet?id=saturn-v"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾"
+   ],
+   "viewports": [
+    "desktop",
+    "phone"
+   ],
+   "count": 3
+  },
+  {
+   "tag": "a",
+   "cls": "card",
+   "h": 186,
+   "radius": "4px",
+   "font": "16px",
+   "tt": "none",
+   "bg": "rgba(255, 255, 255, 0.02)",
+   "border": "1px rgba(255, 255, 255, 0.12)",
+   "label": "Milky Way: Our galaxy, as a labelled sch",
+   "labels": [
+    "Milky Way: Our galaxy, as a labelled sch"
+   ],
+   "routes": [
+    "/"
+   ],
+   "states": [
+    "page",
+    "open: Open navigation menu",
+    "open: Language"
+   ],
+   "viewports": [
+    "phone"
+   ],
+   "count": 3
+  },
+  {
+   "tag": "a",
+   "cls": "card",
+   "h": 190,
+   "radius": "4px",
+   "font": "16px",
+   "tt": "none",
+   "bg": "rgba(255, 255, 255, 0.02)",
+   "border": "1px rgba(255, 255, 255, 0.12)",
+   "label": "Milky Way: Our galaxy, as a labelled sch",
+   "labels": [
+    "Milky Way: Our galaxy, as a labelled sch"
+   ],
+   "routes": [
+    "/explore/hub"
+   ],
+   "states": [
+    "page",
+    "open: Open navigation menu",
+    "open: Language"
+   ],
+   "viewports": [
+    "phone"
+   ],
+   "count": 3
+  },
+  {
+   "tag": "button",
+   "cls": "opening-launch",
+   "h": 38,
+   "radius": "4px",
+   "font": "11px",
+   "tt": "uppercase",
+   "bg": "rgba(22, 14, 6, 0.55)",
+   "border": "1px rgba(255, 190, 74, 0.55)",
+   "label": "▲ START WITH LAUNCH",
+   "labels": [
+    "▲ START WITH LAUNCH"
+   ],
+   "routes": [
+    "/fly"
+   ],
+   "states": [
+    "page",
+    "open: Open navigation menu",
+    "open: Language"
+   ],
+   "viewports": [
+    "phone"
+   ],
+   "count": 3
+  },
+  {
+   "tag": "button",
+   "cls": "pin-tile",
+   "h": 197,
+   "radius": "8px",
+   "font": "13.3333px",
+   "tt": "none",
+   "bg": "rgb(0, 0, 0)",
+   "border": "1px rgba(255, 255, 255, 0.12)",
+   "label": "Play video: Live from the International ",
+   "labels": [
+    "Play video: Live from the International "
+   ],
+   "routes": [
+    "/live"
+   ],
+   "states": [
+    "page",
+    "open: Open navigation menu",
+    "open: Language"
+   ],
+   "viewports": [
+    "phone"
+   ],
+   "count": 3
+  },
+  {
+   "tag": "a",
+   "cls": "strip",
+   "h": 202,
+   "radius": "0px",
+   "font": "16px",
+   "tt": "none",
+   "bg": "rgb(6, 8, 15)",
+   "border": "0px rgb(255, 255, 255)",
+   "label": "Deep-Sky The universe's greatest hits, a",
+   "labels": [
+    "Deep-Sky The universe's greatest hits, a"
+   ],
+   "routes": [
+    "/gallery"
+   ],
+   "states": [
+    "page",
+    "open: Open navigation menu",
+    "open: Language"
+   ],
+   "viewports": [
+    "phone"
+   ],
+   "count": 3
+  },
+  {
+   "tag": "a",
+   "cls": "strip.strip-beside",
+   "h": 202,
+   "radius": "0px",
+   "font": "16px",
+   "tt": "none",
+   "bg": "rgb(6, 8, 15)",
+   "border": "0px rgb(255, 255, 255)",
+   "label": "Posters Twenty-seven original art prints",
+   "labels": [
+    "Posters Twenty-seven original art prints"
+   ],
+   "routes": [
+    "/gallery"
+   ],
+   "states": [
+    "page",
+    "open: Open navigation menu",
+    "open: Language"
+   ],
+   "viewports": [
+    "phone"
+   ],
+   "count": 3
+  },
+  {
+   "tag": "a",
+   "cls": "card",
+   "h": 183,
+   "radius": "4px",
+   "font": "16px",
+   "tt": "none",
+   "bg": "rgba(0, 0, 0, 0)",
+   "border": "1px rgba(255, 255, 255, 0.08)",
+   "label": "Spektr-RG Roscosmos / DLR 2019",
+   "labels": [
+    "Spektr-RG Roscosmos / DLR 2019"
+   ],
+   "routes": [
+    "/science/observation/space-photography"
+   ],
+   "states": [
+    "page",
+    "open: Open navigation menu",
+    "open: Language"
+   ],
+   "viewports": [
+    "phone"
+   ],
+   "count": 3
+  },
+  {
+   "tag": "button",
+   "cls": "panel-hero-btn",
+   "h": 205,
+   "radius": "4px",
+   "font": "13.3333px",
+   "tt": "none",
+   "bg": "rgb(0, 0, 0)",
+   "border": "1px rgba(255, 255, 255, 0.1)",
+   "label": "Open large photo · Mars",
+   "labels": [
+    "Open large photo · Mars"
+   ],
+   "routes": [
+    "/explore?id=mars"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 2
+  },
+  {
+   "tag": "a",
+   "cls": "card",
+   "h": 334,
+   "radius": "4px",
+   "font": "16px",
+   "tt": "none",
+   "bg": "rgba(255, 255, 255, 0.03)",
+   "border": "1px rgba(255, 255, 255, 0.08)",
+   "label": "Mars launch windows open every 26 months",
+   "labels": [
+    "Mars launch windows open every 26 months"
+   ],
+   "routes": [
+    "/explore?id=mars"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 2
+  },
+  {
+   "tag": "a",
+   "cls": "card",
+   "h": 317,
+   "radius": "4px",
+   "font": "16px",
+   "tt": "none",
+   "bg": "rgba(255, 255, 255, 0.03)",
+   "border": "1px rgba(255, 255, 255, 0.08)",
+   "label": "Mars hosts the densest active spacecraft",
+   "labels": [
+    "Mars hosts the densest active spacecraft"
+   ],
+   "routes": [
+    "/explore?id=mars"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 2
+  },
+  {
+   "tag": "button",
+   "cls": "blueprint-open",
+   "h": 228,
+   "radius": "0px",
+   "font": "13.3333px",
+   "tt": "none",
+   "bg": "rgba(0, 0, 0, 0)",
+   "border": "0px rgb(0, 0, 0)",
+   "label": "Open the Apollo 11 mission blueprint ful",
+   "labels": [
+    "Open the Apollo 11 mission blueprint ful"
+   ],
+   "routes": [
+    "/missions?id=apollo11"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 2
+  },
+  {
+   "tag": "button",
+   "cls": "panel-hero-btn",
+   "h": 204,
+   "radius": "4px",
+   "font": "13.3333px",
+   "tt": "none",
+   "bg": "rgba(0, 0, 0, 0)",
+   "border": "0px rgb(0, 0, 0)",
+   "label": "View hero photo for Saturn V",
+   "labels": [
+    "View hero photo for Saturn V"
+   ],
+   "routes": [
+    "/fleet?id=saturn-v"
+   ],
+   "states": [
+    "page",
+    "open: EXPLORE\n▾"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 2
+  },
+  {
+   "tag": "button",
+   "cls": "ui-chip",
+   "h": 44,
+   "radius": "4px",
+   "font": "11px",
+   "tt": "uppercase",
+   "bg": "color(srgb 0.240016 0.241932 0.259354 / 0.727765)",
+   "border": "1px rgb(184, 181, 168)",
+   "label": "SPIN",
+   "labels": [
+    "SPIN"
+   ],
+   "routes": [
+    "/moon?site=apollo11"
+   ],
+   "states": [
+    "page",
+    "open: Why this matters: Why this lan"
+   ],
+   "viewports": [
+    "phone"
+   ],
+   "count": 2
+  },
+  {
+   "tag": "button",
+   "cls": "trigger.ui-hit.open",
+   "h": 14,
+   "radius": "7px",
+   "font": "11px",
+   "tt": "uppercase",
+   "bg": "rgba(255, 200, 80, 0.08)",
+   "border": "1px rgba(255, 200, 80, 0.85)",
+   "label": "Why this matters: Why this landing site?",
+   "labels": [
+    "Why this matters: Why this landing site?"
+   ],
+   "routes": [
+    "/moon?site=apollo11",
+    "/mars?site=perseverance"
+   ],
+   "states": [
+    "open: Why this matters: Why this lan"
+   ],
+   "viewports": [
+    "phone"
+   ],
+   "count": 2
+  },
+  {
+   "tag": "button",
+   "cls": "ui-chip.close.ui-chip--close",
+   "h": 44,
+   "radius": "4px",
+   "font": "22px",
+   "tt": "uppercase",
+   "bg": "rgba(8, 10, 22, 0.65)",
+   "border": "1px rgba(255, 255, 255, 0.18)",
+   "label": "Close explanation",
+   "labels": [
+    "Close explanation"
+   ],
+   "routes": [
+    "/moon?site=apollo11",
+    "/mars?site=perseverance"
+   ],
+   "states": [
+    "open: Why this matters: Why this lan"
+   ],
+   "viewports": [
+    "phone"
+   ],
+   "count": 2
+  },
+  {
+   "tag": "button",
+   "cls": "ui-chip",
+   "h": 44,
+   "radius": "4px",
+   "font": "11px",
+   "tt": "uppercase",
+   "bg": "color(srgb 0.27558 0.136424 0.114726 / 0.727765)",
+   "border": "1px rgb(214, 92, 46)",
+   "label": "SPIN",
+   "labels": [
+    "SPIN"
+   ],
+   "routes": [
+    "/mars?site=perseverance"
+   ],
+   "states": [
+    "page",
+    "open: Why this matters: Why this lan"
+   ],
+   "viewports": [
+    "phone"
+   ],
+   "count": 2
+  },
+  {
+   "tag": "a",
+   "cls": "card",
+   "h": 285,
+   "radius": "4px",
+   "font": "16px",
+   "tt": "none",
+   "bg": "rgba(255, 255, 255, 0.03)",
+   "border": "1px rgba(255, 255, 255, 0.08)",
+   "label": "Mars's 25.2° axial tilt is remarkably cl",
+   "labels": [
+    "Mars's 25.2° axial tilt is remarkably cl",
+    "Mars's 0.0935 eccentricity (six times Ea"
+   ],
+   "routes": [
+    "/explore?id=mars"
+   ],
+   "states": [
+    "page"
+   ],
+   "viewports": [
+    "phone"
+   ],
+   "count": 2
+  },
+  {
+   "tag": "a",
+   "cls": "card",
+   "h": 306,
+   "radius": "4px",
+   "font": "16px",
+   "tt": "none",
+   "bg": "rgba(255, 255, 255, 0.03)",
+   "border": "1px rgba(255, 255, 255, 0.08)",
+   "label": "Mars launch windows open every 26 months",
+   "labels": [
+    "Mars launch windows open every 26 months",
+    "Mars hosts the densest active spacecraft"
+   ],
+   "routes": [
+    "/explore?id=mars"
+   ],
+   "states": [
+    "page"
+   ],
+   "viewports": [
+    "phone"
+   ],
+   "count": 2
+  },
+  {
+   "tag": "summary",
+   "cls": "ui-hit",
+   "h": 16,
+   "radius": "0px",
+   "font": "11px",
+   "tt": "uppercase",
+   "bg": "rgba(0, 0, 0, 0)",
+   "border": "0px rgba(255, 255, 255, 0.6)",
+   "label": "Data sources",
+   "labels": [
+    "Data sources"
+   ],
+   "routes": [
+    "/explore?deepsky=m42"
+   ],
+   "states": [
+    "open: EXPLORE\n▾"
+   ],
+   "viewports": [
+    "desktop"
+   ],
+   "count": 1
+  },
+  {
+   "tag": "a",
+   "cls": "drawer-link.drawer-group-item.has-glyph",
+   "h": 44,
+   "radius": "0px",
+   "font": "12px",
+   "tt": "uppercase",
+   "bg": "color(srgb 0.313726 0.439216 1 / 0.18)",
+   "border": "0px rgb(255, 255, 255)",
+   "label": "OUR SOLAR SYSTEM",
+   "labels": [
+    "OUR SOLAR SYSTEM"
+   ],
+   "routes": [
+    "/explore"
+   ],
+   "states": [
+    "open: Open navigation menu"
+   ],
+   "viewports": [
+    "phone"
+   ],
+   "count": 1
+  },
+  {
+   "tag": "button",
+   "cls": "panel-hero-btn",
+   "h": 200,
+   "radius": "4px",
+   "font": "13.3333px",
+   "tt": "none",
+   "bg": "rgb(0, 0, 0)",
+   "border": "1px rgba(255, 255, 255, 0.1)",
+   "label": "Open large photo · Mars",
+   "labels": [
+    "Open large photo · Mars"
+   ],
+   "routes": [
+    "/explore?id=mars"
+   ],
+   "states": [
+    "page"
+   ],
+   "viewports": [
+    "phone"
+   ],
+   "count": 1
+  },
+  {
+   "tag": "button",
+   "cls": "blueprint-open",
+   "h": 222,
+   "radius": "0px",
+   "font": "13.3333px",
+   "tt": "none",
+   "bg": "rgba(0, 0, 0, 0)",
+   "border": "0px rgb(0, 0, 0)",
+   "label": "Open the Apollo 11 mission blueprint ful",
+   "labels": [
+    "Open the Apollo 11 mission blueprint ful"
+   ],
+   "routes": [
+    "/missions?id=apollo11"
+   ],
+   "states": [
+    "page"
+   ],
+   "viewports": [
+    "phone"
+   ],
+   "count": 1
+  },
+  {
+   "tag": "button",
+   "cls": "panel-hero-btn",
+   "h": 199,
+   "radius": "4px",
+   "font": "13.3333px",
+   "tt": "none",
+   "bg": "rgba(0, 0, 0, 0)",
+   "border": "0px rgb(0, 0, 0)",
+   "label": "View hero photo for Saturn V",
+   "labels": [
+    "View hero photo for Saturn V"
+   ],
+   "routes": [
+    "/fleet?id=saturn-v"
+   ],
+   "states": [
+    "page"
+   ],
+   "viewports": [
+    "phone"
+   ],
+   "count": 1
+  }
+ ]
+}

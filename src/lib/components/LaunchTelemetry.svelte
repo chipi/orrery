@@ -171,7 +171,7 @@
         >
       </div>
     {/if}
-    {#each stages as st, i (st.name)}
+    {#each stages as st, i (i + ':' + st.name)}
       <div class="reservoir">
         <span class="rlabel">{st.name}</span>
         <div class="rbar"><div class="rfill" style="width:{stageFuelPct(i)}%"></div></div>

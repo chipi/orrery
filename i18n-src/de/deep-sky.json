@@ -1149,5 +1149,53 @@
     "subject": "Galaxienhaufen",
     "type": "Galaxienhaufen",
     "distance": "~330 Millionen Lichtjahre"
+  },
+  "m18": {
+    "title": "M18 · NGC 6613",
+    "subject": "Sternhaufen",
+    "type": "Sternhaufen",
+    "distance": "~4.900 Lichtjahre"
+  },
+  "m36": {
+    "title": "M36 · NGC 1960",
+    "subject": "Sternhaufen",
+    "type": "Sternhaufen",
+    "distance": "~3.670 Lichtjahre"
+  },
+  "m62": {
+    "title": "M62 · NGC 6266",
+    "subject": "Kugelsternhaufen",
+    "type": "Kugelsternhaufen",
+    "distance": "~20.000 Lichtjahre"
+  },
+  "leo-ii": {
+    "title": "Leo-II-Zwerggalaxie",
+    "subject": "Galaxie",
+    "type": "Sphäroidale Zwerggalaxie",
+    "distance": "~760.000 Lichtjahre"
+  },
+  "horologium-reticulum": {
+    "title": "Abell 3266",
+    "subject": "Galaxienhaufen",
+    "type": "Galaxienhaufen",
+    "distance": ""
+  },
+  "virgo-ii-groups": {
+    "title": "NGC 4753",
+    "subject": "Galaxie",
+    "type": "Galaxie",
+    "distance": ""
+  },
+  "ophiuchus-supercluster": {
+    "title": "Ophiuchus-Galaxienhaufen",
+    "subject": "Galaxienhaufen",
+    "type": "Galaxienhaufen",
+    "distance": ""
+  },
+  "fornax-eridanus": {
+    "title": "Fornax-Galaxienhaufen",
+    "subject": "Galaxienhaufen",
+    "type": "Galaxienhaufen",
+    "distance": ""
   }
 }

@@ -192,7 +192,11 @@
     loadDescentProfile,
     hasDescentProfile,
   } from '$lib/physics/descent/descent-profile-registry';
-  import { integrateAscent, type LaunchProfile } from '$lib/physics/ascent/ascent-physics';
+  import {
+    integrateAscent,
+    payloadSeparationDelayFor,
+    type LaunchProfile,
+  } from '$lib/physics/ascent/ascent-physics';
   import {
     integrateDescent,
     type DescentProfile,
@@ -206,7 +210,8 @@
     DESCENT_SPEED_MULTIPLIERS,
     type JourneyTimeline,
   } from '$lib/orbital/ascent-clock';
-  import { T_MINUS_S, INJECTION_BEAT_S, payloadSepTFor } from '$lib/orbital/ascent-hud';
+  import { T_MINUS_S, launchActEndS, payloadSepTFor } from '$lib/orbital/ascent-hud';
+  import { launchCoastWarp, toMissionT, toSceneT } from '$lib/orbital/launch-coast-warp';
   import { resolveInjectionBurn } from '$lib/physics/transfer/injection-burn';
   import { resolveOrbitInsertion } from '$lib/physics/transfer/orbit-insertion';
   import { orbitInsertionBurn } from '$lib/physics/transfer/orbit-insertion-burns';
@@ -325,6 +330,8 @@
   let launchProfile = $state<LaunchProfile | null>(null);
   // The launch's real instant + pad (light) and the director's debug data (?debug=1 Page tab).
   let launchInstant = $state<LaunchInstant | null>(null);
+  // Seconds from SECO to spacecraft separation for the flown mission (plan L63).
+  let launchSepDelayS = $state<number | undefined>(undefined);
   // The displayed pad: the mission's launch-site ref, else the launches entry's pad, else the profile's.
   let launchSiteName = $state<string | undefined>(undefined);
   // The pad model of that site at the launch year (G4); null keeps the generic tower.
@@ -375,6 +382,9 @@
     injectionBurn: launchInjectionBurn,
   });
   function startLaunch() {
+    // Until the URL's flight is applied, `mission` is still the default ORRERY-1 flight: a launch
+    // started now would fly its Falcon Heavy under the requested mission's title (plan A9).
+    if (!requestedFlightLoaded) return;
     const launcher = resolveLauncher(mission.fleet_refs, mission.vehicle);
     if (!launcher) return;
     // Load the profile first, THEN swap the opening for the launch overlay — no
@@ -407,6 +417,7 @@
         launchInstant = ctx?.instant ?? null;
         launchSiteName = ctx?.pad?.name;
         launchPadSpec = ctx?.padSpec ?? null;
+        launchSepDelayS = payloadSeparationDelayFor(p, mission.id);
         launchProfile = p;
         dispatchPhase({ type: 'startLaunch' });
       })
@@ -416,16 +427,17 @@
   const launchDeepParams =
     typeof window !== 'undefined' ? new URLSearchParams(window.location.search) : null;
   const wantLaunchDeep = launchDeepParams?.get('launch') === '1';
-  const deepMissionId = launchDeepParams?.get('mission') ?? null;
+  const deepMissionId = launchDeepParams?.get('mission') || null;
+  const deepPlanUrl =
+    deepMissionId == null &&
+    (launchDeepParams?.has('dep') ?? false) &&
+    (launchDeepParams?.has('tof') ?? false);
   let launchAutoStarted = false;
   $effect(() => {
     // Only auto-start when the LOADED flight is the one the URL asked for —
     // otherwise the deep-link fires on the default scenario mid-load. A /plan URL has no
     // mission id: its flight is loaded once the plan selection has been applied.
-    const urlFlightLoaded =
-      deepMissionId != null
-        ? mission.id === deepMissionId
-        : (lastAppliedMissionId?.startsWith('plan-') ?? false);
+    const urlFlightLoaded = deepMissionId != null || deepPlanUrl ? requestedFlightLoaded : false;
     if (wantLaunchDeep && !launchAutoStarted && launchAvailable && urlFlightLoaded) {
       launchAutoStarted = true;
       startLaunch();
@@ -748,16 +760,22 @@
     'neptune',
     'pluto',
   ]);
+  // Earth-orbit flights (Vostok, Shenzhou, the Shuttle) fly in the Earth-centred scene too, but
+  // never leave Earth orbit: they are not a cislunar transfer (plan A10).
   let trajectoryTypeLabel = $derived(
-    isMoonMission
-      ? isFreeReturn
-        ? m.fly_traj_type_cislunar_free_return()
-        : m.fly_traj_type_cislunar()
-      : HELIO_FLYBY_DESTINATIONS.has(activeDestination)
-        ? m.fly_traj_type_helio_flyby()
-        : isFreeReturn
-          ? m.fly_traj_type_helio_free_return()
-          : m.fly_traj_type_helio_hohmann(),
+    earthCoast
+      ? earthCoast.suborbital
+        ? m.fly_traj_type_suborbital()
+        : m.fly_traj_type_earth_orbit()
+      : isMoonMission
+        ? isFreeReturn
+          ? m.fly_traj_type_cislunar_free_return()
+          : m.fly_traj_type_cislunar()
+        : HELIO_FLYBY_DESTINATIONS.has(activeDestination)
+          ? m.fly_traj_type_helio_flyby()
+          : isFreeReturn
+            ? m.fly_traj_type_helio_free_return()
+            : m.fly_traj_type_helio_hohmann(),
   );
   let outPts: Vec2[] = $state(INITIAL_ARCS.out);
   let retPts: Vec2[] = $state(INITIAL_ARCS.ret);
@@ -1456,6 +1474,10 @@
   let arcTotalDays = $derived(arcTimeline.arr_day - arcTimeline.dep_day);
   let arcProgress = $derived((simDay - arcTimeline.dep_day) / arcTotalDays);
   let totalDays = $derived(mission.timeline.arr_day - mission.timeline.dep_day);
+  // The HUD's ETA. An Earth-orbit record's transit_days is already the whole flight (0 for a
+  // same-day one), and the timeline doubles it as a round trip or falls back to 250 days when it
+  // is 0 (Vostok 1 read DAY 500), so these flights show their real time on orbit (plan A10).
+  let etaDays = $derived(earthCoast ? earthCoast.coastDurationS / 86400 : totalDays);
   let met = $derived(Math.max(0, arcProgress * totalDays));
 
   // Fire mission-complete once when the trajectory reaches arrival (by
@@ -1669,7 +1691,7 @@
   // spacecraft leaves the stage, not at SECO.
   let launchDurationS = $derived(
     launchSummaryFly
-      ? launchSummaryFly.totalDurationS + (launchInjectionBurn ? INJECTION_BEAT_S : 0)
+      ? launchActEndS(launchSummaryFly.totalDurationS, launchInjectionBurn, launchSepDelayS)
       : 540,
   );
   // ─── Orbit-insertion beat (RFC-034 §12) — the arrival mirror of the launch
@@ -1719,18 +1741,24 @@
     launchSeparationTimes(
       launchSummaryFly,
       launchSummaryFly
-        ? payloadSepTFor(launchSummaryFly.totalDurationS, launchInjectionBurn)
+        ? payloadSepTFor(launchSummaryFly.totalDurationS, launchInjectionBurn, launchSepDelayS)
         : undefined,
       launchProfile?.payloadInBay === true,
     ),
   );
   let descentSepTimes = $derived(descentSeparationTimes(descentSummaryFly));
+  // A direct insertion's coast to OMS-2 plays compressed (launch-coast-warp): the master bar's
+  // ascent band is laid out on the play clock, `launchT` stays mission time.
+  let launchCoastWarpFly = $derived(
+    launchSummaryFly ? launchCoastWarp(launchSummaryFly.events) : null,
+  );
+  let launchSceneDurationS = $derived(toSceneT(launchCoastWarpFly, launchDurationS));
   // Compressive coast-band width (RFC-034 §13): a 1-orbit hop and an 84-day
   // marathon shouldn't own the same slice of the scrubber (see fly-clock).
   let coastAscentFrac = $derived(coastAscentFraction(!!earthCoast, coastDurationDays));
   let masterTimeline: JourneyTimeline = $derived(
     makeTimeline(
-      launchDurationS,
+      launchSceneDurationS,
       // Earth-orbit missions: the "cruise" act IS the orbit-coast, so its duration
       // is the on-orbit time (days). Interplanetary: the transfer arc.
       earthCoast ? Math.max(0.01, coastDurationDays) : Math.max(1, arcTotalDays),
@@ -1760,9 +1788,9 @@
     masterScrubFraction({
       timeline: masterTimeline,
       live: showLaunch ? 'ascent' : showDescent ? 'descent' : showCoast ? 'coast' : 'cruise',
-      launchT,
+      launchT: toSceneT(launchCoastWarpFly, launchT),
       descentT,
-      launchDurationS,
+      launchDurationS: launchSceneDurationS,
       cruiseDays: earthCoast ? coastDurationDays : arcTotalDays,
       coastMetDays,
       simDay,
@@ -1783,9 +1811,9 @@
         timeline: hasLaunchAct ? masterTimeline : null,
         arcTotalDays,
         ascentBeats: launchSummaryFly
-          ? buildPlanBeats(launchSummaryFly, launchInjectionBurn).map((b) => ({
+          ? buildPlanBeats(launchSummaryFly, launchInjectionBurn, launchSepDelayS).map((b) => ({
               label: hudLabel(b.label),
-              t: b.t,
+              t: toSceneT(launchCoastWarpFly, b.t),
             }))
           : [],
         descentBeats: descentSummaryFly
@@ -1853,7 +1881,7 @@
       // Scrubbing back into the ascent re-mounts LaunchScene fresh (resets any
       // completed warp) and drives it to the scrubbed MET.
       dispatchPhase({ type: 'scrubTo', phase: 'ascent' });
-      launchT = target.launchT;
+      launchT = toMissionT(launchCoastWarpFly, target.launchT);
     } else if (target.phase === 'descent') {
       // Scrubbing into the tail enters the descent act at the scrubbed EDL time.
       dispatchPhase({ type: 'scrubTo', phase: 'descent' });
@@ -2256,6 +2284,15 @@
   // has actually been applied" — fixes the v0.6.1 fly-render-validation
   // flake (issue #133). Null until the first apply* function runs.
   let lastAppliedMissionId = $state<string | null>(null);
+  // The flight the URL asked for has been applied: its mission, its /plan selection, or (a bare
+  // /fly) the default scenario. Before that `mission` is the static default flight (plan A9).
+  let requestedFlightLoaded = $derived(
+    deepMissionId != null
+      ? mission.id === deepMissionId
+      : deepPlanUrl
+        ? (lastAppliedMissionId?.startsWith('plan-') ?? false)
+        : lastAppliedMissionId != null,
+  );
 
   const MISSION_APPLY_DEFAULTS: MissionApplyDefaults = {
     depFallback: defaultScenarioBase.dep_day,
@@ -3145,6 +3182,9 @@
       },
       get launchDurationS() {
         return launchDurationS;
+      },
+      get launchCoastWarp() {
+        return launchCoastWarpFly;
       },
       get launchSepTimes() {
         return launchSepTimes;
@@ -4071,7 +4111,7 @@
            section. Always visible while openingActive so users can
            fast-forward at any opening fade state. -->
       <div class="opening-actions">
-        {#if launchAvailable}
+        {#if launchAvailable && requestedFlightLoaded}
           <button
             type="button"
             class="opening-launch"
@@ -4129,6 +4169,7 @@
     class:hidden={!showHud}
     class:cinematic-hidden={inCinematicHeldBeat}
     class:m-open={mobilePanel === 'mission'}
+    class:flight-pending={!requestedFlightLoaded}
   >
     <aside
       class="hud hud-identity"
@@ -4348,8 +4389,7 @@
       {/if}
       <div class="hud-row">
         <span class="hud-key">{m.fly_hud_eta()}</span>
-        <span class="hud-val">{m.fly_hud_eta_value({ day: Math.round(totalDays).toString() })}</span
-        >
+        <span class="hud-val">{m.fly_hud_eta_value({ day: Math.round(etaDays).toString() })}</span>
       </div>
     </aside>
 
@@ -4455,7 +4495,7 @@
                 mk.seek.phase === 'descent'
                   ? formatDescentClock(mk.seek.t)
                   : mk.seek.phase === 'ascent'
-                    ? formatAscentClock(mk.seek.t)
+                    ? formatAscentClock(toMissionT(launchCoastWarpFly, mk.seek.t))
                     : ''}
               <button
                 type="button"
@@ -6824,6 +6864,11 @@
      bottom/edge real-estate to the canvas. */
   .hud-stack.hidden {
     display: none;
+  }
+  /* Until the URL's flight is applied the HUD would show the default ORRERY-1 flight's
+     values (plan A10); keep its place, show nothing. */
+  .hud-stack.flight-pending {
+    visibility: hidden;
   }
 
   .capcom-panel {

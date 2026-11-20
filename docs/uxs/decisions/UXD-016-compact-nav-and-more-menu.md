@@ -71,3 +71,7 @@ against 90), closes when the window crosses 600 px, and hides in exhibit mode.
 flow, the unchanged roving toolbar, axe on the open menu, the phone drawer, the per-locale width report);
 the A4 sweep in `tests/e2e/chip.spec.ts` allow-lists the new classes. Not checked yet: the screenshots
 of the brief's section 9 and a run of the specs in a browser.
+
+## Amendment 2026-11-18 (plan D2): the break moves to 1023 px
+
+The 14-locale measurement in `tests/e2e/nav-controls.spec.ts` (the full link row plus the compact cluster, link row forced visible, 1024 / 1100 / 1219 px) gives the widest bar as ru 984 px; fr and es 939, nl and pt-BR 913, sr-Cyrl 906, it 871, de 862, en-US 811, ja 762, hi 743, ar 719, zh-CN 694, ko 693; no overlap and no page scroll in any locale at any of the three widths. The hamburger now replaces the link row at ≤ 1023 px (touch devices keep it at every width). The spec is no longer report-only: it fails when a locale needs more than 1000 px, overlaps, or scrolls the page.

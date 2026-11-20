@@ -52,7 +52,7 @@ test.describe('/es/ URL smoke', () => {
   });
 
   test('selected locale persists when navigating via top nav', async ({ page }) => {
-    await page.goto('/es/explore', { waitUntil: 'networkidle' });
+    await page.goto('/es/library', { waitUntil: 'networkidle' });
     await expect(localeChip(page).first()).toContainText('ES', { timeout: 10_000 });
 
     // Click MISSIONS in the shared top nav.

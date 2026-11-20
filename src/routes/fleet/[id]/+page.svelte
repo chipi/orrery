@@ -178,7 +178,7 @@
     </section>
   {/if}
 
-  {#each [{ title: m.fleet_engines_heading(), items: data.engines }, { title: m.fleet_used_on(), items: data.usedOn }, { title: section, items: data.alongside }, { title: fleetCategoryLabel(entry.category), items: data.kin }] as group (group.title)}
+  {#each [{ key: 'engines', title: m.fleet_engines_heading(), items: data.engines }, { key: 'used-on', title: m.fleet_used_on(), items: data.usedOn }, { key: 'alongside', title: section, items: data.alongside }, { key: 'kin', title: fleetCategoryLabel(entry.category), items: data.kin }] as group (group.key)}
     {#if group.items.length}
       <section class="related">
         <h2 class="page-section-label">{group.title}</h2>

@@ -157,7 +157,7 @@
         {:else}
           {#if agencies.length > 0}
             <p class="card-agencies" title={agencyTitle}>
-              {#each agencies as a (a.name)}
+              {#each agencies as a, ki (ki + ':' + a.name)}
                 <span class="card-agency" style:--agency={a.color ?? accent}
                   ><i aria-hidden="true"></i>{a.name}</span
                 >
@@ -169,7 +169,7 @@
         {/if}
         {#if facts.length > 0}
           <dl class="sr-only">
-            {#each facts as f (f.label)}
+            {#each facts as f, ki (ki + ':' + f.label)}
               <dt>{f.label}</dt>
               <dd>{f.value}</dd>
             {/each}

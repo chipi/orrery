@@ -3,7 +3,7 @@ import { clickNavLink, localeChip } from './_helpers/nav';
 
 test.describe('/ar/ URL smoke', () => {
   test('locale chip, direction, and nav persistence work for Arabic', async ({ page }) => {
-    await page.goto('/ar/explore', { waitUntil: 'networkidle' });
+    await page.goto('/ar/library', { waitUntil: 'networkidle' });
     await expect(localeChip(page).first()).toContainText('AR');
     await expect(page.locator('html')).toHaveAttribute('lang', 'ar');
     await expect(page.locator('html')).toHaveAttribute('dir', 'rtl');

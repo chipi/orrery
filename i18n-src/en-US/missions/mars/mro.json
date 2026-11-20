@@ -1,10 +1,10 @@
 {
   "name": "Mars Reconnaissance Orbiter",
   "vehicle": "Atlas V 401",
-  "payload": "2180 kg fuelled (1031 kg operational)",
+  "payload": "2180 kg fuelled (1031 kg dry)",
   "delta_v": "~3.6 km/s (estimate)",
   "type": "ORBITER · ACTIVE",
-  "first": "A Mars orbiter whose HiRISE camera can spot objects as small as a dinner table",
+  "first": "A Mars orbiter whose HiRISE camera can spot objects as small as a kitchen table",
   "description": "The Mars Reconnaissance Orbiter launched on 2005-08-12 on an Atlas V 401 and reached Mars on 2006-03-10, when a 1641 second burn put it into a 400 x 35,000 km polar capture orbit. About six months of aerobraking lowered it to its working orbit of 255 x 320 km, which is sun-synchronous and polar. Science began in November 2006 after solar conjunction. It carries six instruments, among them the HiRISE camera, the CRISM spectrometer, the SHARAD radar and the Context Camera. NASA built it to look for evidence that water persisted on the surface for long periods: it has found mineral deposits formed in water, possible ancient shorelines and layered deposits. It also serves as a relay for other Mars missions and is still operating.",
   "events": [
     {

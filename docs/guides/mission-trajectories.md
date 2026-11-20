@@ -12,7 +12,7 @@ Companion to [ADR-058](../adr/ADR-058.md). Covers how to add a new mission's tra
 | Moon, Earth-orbit-raising missions (Chandrayaan-1/-3, SLIM) | `flight.cislunar_profile.waypoints_km`, built from `orbit_raising` / `lunar_orbits` / `waypoints_source` in the same block | `scripts/cislunar/generate-hybrid-waypoints.ts` (uses the tables when present) | ECI km |
 | Mars + outer-system | `flight.interplanetary_profile.waypoints_helio_au` | `scripts/cislunar/generate-helio-hybrid-waypoints.ts` | Heliocentric AU |
 
-Both ship at **`source_tier: tier_1_5_hybrid`** by default — analytic curve resampled to 100 waypoints with event-MET anchors pinned to slot indices. `tier_2_published` is reserved for direct NASA TND / ESA SPICE ingest (future slice).
+Both ship at **`source_tier: tier_1_5_hybrid`** by default — analytic curve resampled to 100 waypoints with event-MET anchors pinned to slot indices. `tier_2_published` is a published ephemeris (JPL Horizons today, see the last section).
 
 ---
 
@@ -143,9 +143,27 @@ Keyboard-focusable; aria-label includes the MET ("LOI at MET 3.13 days. Click to
 
 ---
 
-## Real NASA TND state-vector ingest (`tier_2_published`)
+## Published ephemeris ingest (`tier_2_published`)
 
-Currently deferred to v0.8+ (tracked as **[GH #262](https://github.com/chipi/orrery/issues/262)**). When implemented, the ingest path will:
+**JPL Horizons (built 2026-11-17, first mission Artemis I, Horizons -1023):**
+
+```sh
+npx tsx scripts/cislunar/ingest-horizons-waypoints.ts static/data/missions/moon/artemis1.json \
+  --target=-1023 --launch=2022-11-16T06:47:44Z --start="2022-11-16 08:50" --stop="2022-12-11 17:20" \
+  [--cache=<dir>] [--dry-run]
+```
+
+It fetches geocentric state vectors of the craft and the Moon (hourly, 10 min around each
+closest lunar approach), keeps at most 200, and maps each through the Earth-Moon rotating frame
+onto /fly's schematic Moon (`scripts/cislunar/horizons-frame.ts`): the real Moon lands on the
+drawn Moon at every sample, so a distant retrograde orbit keeps its shape and flyby distances
+keep their ratio to the Earth-Moon distance (drawn distances scale by 384,400 km / the real
+Moon distance at that time). The renderer gives a published path no "swing-by hold" (that
+heuristic is for analytic paths that park the craft): passes inside the Moon's sphere of
+influence become Moon-relative `lunar_flyby` phases. `--dry-run` prints the closest approaches
+and the farthest distance to check against the agency's figures before writing.
+
+**NASA Mission Report tables** (Apollo, tracked as **[GH #262](https://github.com/chipi/orrery/issues/262)**) are not built. That path will:
 
 - Read NASA Mission Report PDFs (Apollo 11 MSC-00171, Apollo 13 MSC-02680, Apollo 17 JSC-07904, Artemis II post-flight reconstruction).
 - Parse the state-vector tables (each Mission Report has its own table format — per-mission adapter).

@@ -114,11 +114,26 @@ const TASKS: Task[] = [
   // Translation coverage: a missing file or key, an empty string, placeholder text, a type or length
   // mismatch, or a string left identical to the English — overlays and UI messages, every locale.
   // A string that is right as it is (a name kept in English) is in coverage-reviewed.json.
+  // Every credited non-ladder raster has its 192 px /credits thumb, and the list names it (#482).
+  // Every credited image has a pHash, so the near-duplicate gate can see it (195 had none, 2026-11-19).
+  {
+    name: 'check-phash-coverage',
+    cmd: 'tsx',
+    args: ['scripts/compute-phash.ts', '--check'],
+  },
+  {
+    name: 'check-credit-thumbs',
+    cmd: 'node',
+    args: ['scripts/vision/build-credit-thumbs.mjs', '--check'],
+  },
   {
     name: 'check-i18n-coverage',
     cmd: 'node',
     args: ['scripts/i18n-coverage-scan.mjs', '--gate'],
   },
+  // llms.txt (the agent index of the docs, GitHub #666) and the generated guides index: stale,
+  // a link or AGENTS.md anchor that does not resolve, or over 30 KB. Fix with npm run llms:build.
+  { name: 'check-llms-txt', cmd: 'node', args: ['scripts/build-llms-txt.mjs', '--check'] },
   { name: 'validate-satellites', cmd: 'tsx', args: ['scripts/validate-satellites.ts'] },
   { name: 'validate-universe-stars', cmd: 'tsx', args: ['scripts/validate-universe-stars.ts'] },
   {

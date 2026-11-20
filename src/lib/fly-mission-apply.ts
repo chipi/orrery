@@ -159,9 +159,11 @@ export interface MissionApplyResult {
 /** Derive the mission timeline from m.departure_date + m.transit_days.
  *  For one-way landings flyby_day == arr_day (no idle gap on scrub). Round trips
  *  (`round_trip` in the record — the translated `type` once decided this, so German or
- *  Japanese readers got one-way Apollos) end at the mission's own Earth return when a
- *  heliocentric mission records one (Hayabusa2 2,194 days, not twice its 1,302 out), else
- *  at dep + 2*transit. */
+ *  Japanese readers got one-way Apollos) end at the mission's own Earth return when it records
+ *  one after the arrival (Hayabusa2 2,194 days, not twice its 1,302 out; Artemis I 25.45, not
+ *  2 x 9; Apollo 17 12.6, not 2 x 4: a Moon round trip used to stop at 2 x transit, so its last
+ *  days could not be played, plan A12), else at dep + 2*transit. An Earth-orbit record's
+ *  transit_days is already the whole flight. */
 function computeTimeline(
   m: Mission,
   depFallback: number,
@@ -170,10 +172,11 @@ function computeTimeline(
   const depDay = dateToSimDay(m.departure_date) ?? depFallback;
   const isReturnTrip = m.round_trip === true;
   const flybyOffset = totalT;
-  const cislunar = m.dest === 'MOON' || m.dest === 'EARTH';
-  const earthReturn = cislunar
-    ? undefined
-    : m.flight?.events?.find((e) => e.type === 'earth_return')?.met_days;
+  const recorded =
+    m.dest === 'EARTH'
+      ? undefined
+      : m.flight?.events?.find((e) => e.type === 'earth_return')?.met_days;
+  const earthReturn = recorded != null && recorded > flybyOffset ? recorded : undefined;
   const arrOffset = isReturnTrip ? (earthReturn ?? totalT * 2) : totalT;
   return {
     timeline: {

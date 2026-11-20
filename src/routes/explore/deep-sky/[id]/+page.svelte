@@ -70,7 +70,7 @@
 
   {#if data.rows.length}
     <dl class="facts">
-      {#each data.rows as row (row.label)}
+      {#each data.rows as row, ki (ki + ':' + row.label)}
         <div>
           <dt>{row.label}</dt>
           <dd>
@@ -84,6 +84,16 @@
         </div>
       {/each}
     </dl>
+  {/if}
+
+  {#if obj.con}
+    <section class="in-the-sky" data-testid="entity-in-the-sky">
+      <h2 class="page-section-label">{m.panel_tab_sky()}</h2>
+      <!-- Lazy: the finder and the sky maths stay out of the page's eager JS (route budget). -->
+      {#await import('$lib/components/DeepSkyInTheSky.svelte') then { default: InTheSky }}
+        <InTheSky object={obj} explorerHref={localHref(`/explore?deepsky=${obj.id}`)} />
+      {/await}
+    </section>
   {/if}
 
   {#if obj.gatewaySystem}
@@ -107,6 +117,17 @@
             <span class="note">{d.author}{d.media ? ` · ${d.media}` : ''}</span>
             {#if d.blurb}<span class="note">{d.blurb}</span>{/if}
           </li>
+        {/each}
+      </ul>
+    </section>
+  {/if}
+
+  {#if data.science.length}
+    <section class="science">
+      <h2 class="page-section-label">{m.panel_tab_science()}</h2>
+      <ul class="linklist wide">
+        {#each data.science as a (a.tab + '/' + a.section)}
+          <li><a href={localHref(`/science/${a.tab}/${a.section}`)}>{a.title}</a></li>
         {/each}
       </ul>
     </section>

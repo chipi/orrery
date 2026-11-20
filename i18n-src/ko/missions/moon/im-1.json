@@ -5,7 +5,7 @@
   "delta_v": "~3.8 km/s (달 전이 궤도 진입 + 달 궤도 진입, 추정)",
   "type": "상업용 착륙선 · 넘어진 채 운용",
   "first": "달 위의 상업용 착륙선: 넘어진 채 착륙했지만 계속 작동했다",
-  "description": "IM-1은 Intuitive Machines의 첫 달 임무로, NASA의 Commercial Lunar Payload Services 프로그램을 위해 NASA 탑재체 여섯 개를 싣고 수행되었다. Odysseus라는 이름의 Nova-C 착륙선은 2024-02-15에 Falcon 9으로 발사되어 2024-02-21에 달 궤도에 진입했고, 2024-02-22의 23:23:53 UTC에 Malapert A 크레이터 근처에 착륙했다. 착륙해서 작동했지만 약 30도로 넘어진 채 멈췄다. 2024-02-29 달의 밤이 시작되며 전력을 잃을 때까지 계속 작동했다.",
+  "description": "IM-1은 Intuitive Machines의 첫 달 임무로, NASA의 Commercial Lunar Payload Services 프로그램을 위해 NASA 탑재체 여섯 개를 싣고 수행되었다. Odysseus라는 이름의 Nova-C 착륙선은 2024-02-15에 Falcon 9으로 발사되어 2024-02-21에 달 궤도에 진입했고, 2024-02-22의 23:23:53 UTC에 Malapert A 크레이터 근처에 착륙했다. 착륙해서 작동했지만 약 30도로 넘어진 채 멈췄다. 달의 밤이 올 때까지 약 7일간 작동했고, Intuitive Machines는 2024-02-29 임무 종료를 발표했다.",
   "events": [
     {
       "met": 0,

@@ -3,6 +3,7 @@
   "name": "Long March 3A",
   "source_tier": "flagship",
   "payloadKg": 2350,
+  "liftoffThrustKN": 2961.6,
   "fairingKg": 1000,
   "fairingJettisonAltM": 115000,
   "refAreaM2": 8.8,
@@ -14,8 +15,8 @@
       "name": "Stage 1",
       "wetKg": 180800,
       "dryKg": 9000,
-      "thrustSlKN": 2961.6,
-      "thrustVacKN": 3256,
+      "thrustSlKN": 2986.6,
+      "thrustVacKN": 3283.5,
       "ispSlS": 261,
       "ispVacS": 289,
       "engines": 4,
@@ -53,5 +54,6 @@
       "l": "Dry masses derived: published liftoff mass minus sourced propellant, payload and fairing; third stage (H-18) as on the Long March 3B",
       "u": "https://en.wikipedia.org/wiki/Long_March_3B"
     }
-  ]
+  ],
+  "fairingJettisonS": 236.9
 }

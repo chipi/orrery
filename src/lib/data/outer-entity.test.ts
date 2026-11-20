@@ -175,7 +175,10 @@ describe('getStructureEntity', () => {
     expect((await at('m101-group'))?.hero?.full).toBe('/images/deep-sky/hst-pinwheel.jpg');
     expect((await at('perseus-pisces'))?.hero?.full).toBe('/images/deep-sky/euclid-perseus.jpg');
     expect((await at('virgo-cluster'))?.hero?.full).toBe('/images/deep-sky/virgo-cluster.jpg');
-    expect((await at('virgo-ii-groups'))?.hero).toBeNull();
+    expect((await at('virgo-ii-groups'))?.hero).toMatchObject({
+      full: '/images/deep-sky/virgo-ii-groups.jpg',
+      pictured: 'NGC 4753',
+    });
   });
 
   it('links what contains it, what it holds and its neighbours, each once', async () => {

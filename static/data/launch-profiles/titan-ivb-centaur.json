@@ -16,8 +16,8 @@
     "count": 2,
     "wetKg": 352000,
     "dryKg": 39000,
-    "thrustSlKN": 5800,
-    "thrustVacKN": 6300,
+    "thrustSlKN": 5679.5,
+    "thrustVacKN": 6169.1,
     "ispSlS": 262,
     "ispVacS": 286,
     "chamberTempK": 3400
@@ -28,8 +28,8 @@
       "ignitionS": 125,
       "wetKg": 143000,
       "dryKg": 8000,
-      "thrustSlKN": 2100,
-      "thrustVacKN": 2438,
+      "thrustSlKN": 1757.7,
+      "thrustVacKN": 2040.6,
       "ispSlS": 260,
       "ispVacS": 302,
       "engines": 2,
@@ -39,7 +39,7 @@
       "name": "Titan IV stage 2 (LR91-AJ-11)",
       "wetKg": 37100,
       "dryKg": 3500,
-      "thrustVacKN": 467,
+      "thrustVacKN": 448.9,
       "ispVacS": 316,
       "engines": 1,
       "chamberTempK": 3200
@@ -71,5 +71,6 @@
       "l": "Stage masses derived from thrust × burn time ÷ Isp (SRMU ~313 t propellant each; the stack sums to the published liftoff mass); dry and fairing masses estimated; Cassini 5,712 kg (Wikipedia)",
       "u": "https://en.wikipedia.org/wiki/Cassini%E2%80%93Huygens"
     }
-  ]
+  ],
+  "fairingJettisonS": 211
 }

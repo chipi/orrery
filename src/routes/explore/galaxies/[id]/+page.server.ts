@@ -1,6 +1,7 @@
 import { error } from '@sveltejs/kit';
 import { getLocale } from '$lib/paraglide/runtime';
 import { getGalaxyEntity } from '$lib/data/outer-entity';
+import { scienceForGalaxy, scienceLinks } from '$lib/science-for-entity';
 import * as m from '$lib/paraglide/messages';
 import { dataSourceItems } from '$lib/catalogue';
 import { galaxyFacts, galaxyKindLabel } from '$lib/explore/format';
@@ -45,5 +46,6 @@ export const load: PageServerLoad = async ({ params, fetch }) => {
     sections: relatedSections(entity.related),
     openPath: openInOrreryPath(entity.scale, entity.id),
     hero: entity.hero,
+    science: await scienceLinks(scienceForGalaxy(entity.kind), getLocale(), fetch),
   };
 };

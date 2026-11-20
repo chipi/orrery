@@ -396,3 +396,24 @@ describe('formatDescentAltitude', () => {
     expect(parseInt(r.value, 10)).toBeCloseTo(4999, -1);
   });
 });
+
+describe('descentStatus — a lander whose published record stops in the air (recordEndsAltM)', () => {
+  const lost = integrateDescent(
+    { ...MOON_POWERED, recordEndsAltM: 1000 },
+    { dtS: 0.1, sampleDtS: 1 },
+  );
+  it('ends on record_ends above the ground', () => {
+    expect(lost.events.at(-1)!.type).toBe('record_ends');
+    expect(lost.states.at(-1)!.altM).toBeGreaterThan(900);
+  });
+  it('reads DATA ENDS at the end, the phase label before it', () => {
+    expect(descentStatus(lost.states.at(-1)!, lost)).toBe('DATA ENDS');
+    expect(descentStatus(lost.states[1], lost)).toBe(EDL_PHASE_LABEL.powered_retro);
+  });
+  it('the flight plan closes on DATA ENDS, as a landing closes on TOUCHDOWN', () => {
+    expect(buildDescentBeats(lost).at(-1)!.label).toBe('DATA ENDS');
+  });
+  it('a lander flown to the ground still closes on TOUCHDOWN', () => {
+    expect(descentStatus(MOON_SUMMARY.states.at(-1)!, MOON_SUMMARY)).toBe('TOUCHDOWN');
+  });
+});

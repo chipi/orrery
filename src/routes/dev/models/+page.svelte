@@ -999,7 +999,7 @@
     /* Transparent: the models render on the shared canvas behind the grid, so a card
        background veils every thumbnail (they captured ~60 % dark). */
     background: transparent;
-    border: 1px solid rgba(94, 234, 212, 0.18);
+    border: 1px solid rgba(136, 159, 231, 0.18);
     border-radius: 6px;
     overflow: hidden;
     display: flex;

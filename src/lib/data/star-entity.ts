@@ -38,6 +38,8 @@ export interface StarEntity {
   /** Spectral class, constellation code, B−V and distance: the TECHNICAL rows. */
   spect: string | null;
   con: string | null;
+  /** A named star's direction in the HYG frame (the IN THE SKY finder); null for a host-only star. */
+  skyXyz: [number, number, number] | null;
   bv: number | null;
   distPc: number;
   /** Magnitudes exist only for the named-star catalogue; the four host-only stars have none. */
@@ -148,6 +150,7 @@ export async function getStarEntity(
     hip: star ? star.hip : (system!.hip ?? null),
     spect: base.spect,
     con: base.con,
+    skyXyz: star ? [star.x, star.y, star.z] : null,
     bv: base.bv,
     distPc: base.dist_pc,
     mag: star?.mag,

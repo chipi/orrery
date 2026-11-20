@@ -52,9 +52,21 @@
 
 .si-top {
   display: flex;
-  align-items: center;
+  /* The search field takes the close chip's height, so ✕ is never taller than it (plan D13). */
+  align-items: stretch;
   gap: 6px;
   margin-bottom: 8px;
+}
+/* Small surfaces (iPad, phone): narrower filter chips, so the type row holds more of them before
+   any fold behind FILTERS (plan D13). Same rule on the off-screen copy that decides the fit.
+   Height stays the 44 px touch target. */
+@media (max-width: 1366px), (pointer: coarse) {
+  .si-filters .ui-chip,
+  .idx-measure .ui-chip,
+  .idx-fold .ui-chip {
+    padding-inline: 8px;
+    letter-spacing: 0.5px;
+  }
 }
 .si-input {
   flex: 1;
@@ -83,6 +95,33 @@
 }
 .si-filters.is-fitted > .ui-chip-group {
   flex-wrap: nowrap;
+}
+/* /explore INDEX (plan D13): the FILTERS button ends the chip row, and the count sits inside the
+   search field's right edge, so neither takes a row of its own. */
+.scale-index .si-filters {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.scale-index .si-filters > .ui-chip-group {
+  min-width: 0;
+}
+.scale-index .si-search {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  display: flex;
+}
+.scale-index .si-search .si-input {
+  padding-inline-end: 64px;
+}
+.scale-index .si-search .si-count {
+  position: absolute;
+  inset-inline-end: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0;
+  pointer-events: none;
 }
 .idx-count-line {
   display: flex;

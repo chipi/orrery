@@ -1,11 +1,11 @@
 {
   "name": "Shenzhou 5",
   "vehicle": "Long March 2F",
-  "payload": "7840 kg; um astronauta (Yang Liwei)",
+  "payload": "Um astronauta (Yang Liwei)",
   "delta_v": "~9,4 km/s (LEO)",
   "type": "VOO ORBITAL TRIPULADO · REALIZADO",
   "first": "O primeiro voo espacial tripulado da China, pilotado por Yang Liwei",
-  "description": "A Shenzhou 5 foi o primeiro voo espacial tripulado da China. Yang Liwei, tenente-coronel de 38 anos e ex-piloto de caça, foi lançado sozinho em um Long March 2F de Jiuquan em 2003-10-15 às 09:00 no Horário Padrão da China. Ele deu 14 voltas ao redor da Terra a uma altitude de cerca de 332 a 336 km e pousou na Mongólia Interior em 2003-10-16 (Horário Padrão da China), após 21 horas, 22 minutos e 45 segundos de voo.",
+  "description": "A Shenzhou 5 foi o primeiro voo espacial tripulado da China. Yang Liwei, tenente-coronel de 38 anos e ex-piloto de caça, foi lançado sozinho em um Long March 2F de Jiuquan em 2003-10-15 às 09:00 no Horário Padrão da China. Ele deu 14 voltas ao redor da Terra, em uma órbita circular a 343 km a partir da quinta volta, e pousou na Mongólia Interior em 2003-10-16 (Horário Padrão da China), após 21 horas e 23 minutos de voo.",
   "events": [
     {
       "met": 0,
@@ -16,7 +16,7 @@
     {
       "met": 0.8908,
       "label": "POUSO",
-      "note": "Pousa na Mongólia Interior em 2003-10-16 (Horário Padrão da China) após 14 órbitas e 21 h 22 min 45 s.",
+      "note": "Pousa na Mongólia Interior em 2003-10-16 (Horário Padrão da China) após 14 órbitas e 21 h 23 min.",
       "type": "nominal"
     }
   ]

@@ -52,13 +52,25 @@ export interface LaunchStage {
   engines?: number;
   /** Combustion-chamber flame temperature (K) — adiabatic flame temp of the propellant. */
   chamberTempK?: number;
-  /** Stage 0 only: mission time (s) the core lights, when it is air-lit after liftoff
-   *  (LVM3's L110 at ~T+110 s, the S200s alone lifting it off). Absent = at liftoff. */
+  /** Mission time (s) the stage lights. Stage 0: when it is air-lit after liftoff (LVM3's L110
+   *  at ~T+110 s, the S200s alone lifting it off). An upper stage: when it lights after a
+   *  ballistic coast from the previous stage's separation (Proton's Briz-M at T+680 s, 92 s after
+   *  stage 3 leaves). Absent = at liftoff / at the previous separation. */
   ignitionS?: number;
   /** Seconds the spent stage stays attached after its cutoff before it separates (the
    *  Shuttle's external tank leaves ~18 s after MECO, the orbiter coasting with it). The
    *  MECO beat is at the cutoff, the STAGE SEP beat this long after. Absent = at the cutoff. */
   separationDelayS?: number;
+  /** Throttle commands in mission time, held until the next one (the Shuttle's main engines:
+   *  104 % at T+4 s, 67 % at T+27 s through max-Q, 104 % at T+60 s). The thrust values above
+   *  are the 100 % rating. Absent = 100 % throughout. */
+  throttle?: ThrottleStep[];
+  /** Acceleration limit (multiples of g0): the stage throttles down to hold it (the Shuttle's
+   *  3 g from about T+450 s to MECO). Absent = no limit. */
+  maxAccelG?: number;
+  /** Lowest throttle level the engines reach (the RS-25: 67 %); the acceleration limit cannot
+   *  throttle below it. Absent = no floor. */
+  minThrottle?: number;
 }
 
 /**
@@ -92,6 +104,45 @@ export interface LaunchBoosters {
    *  AJ-60As from burnout at T+94 s to T+117 s; SRB-A 10 s; PSLV's PSOM-XLs ~20 s). The
    *  STAGE SEP beat is at the jettison. Absent = jettisoned at burnout. */
   separationDelayS?: number;
+  /** The motor's published thrust-time curve as impulse gates: the fraction of its total
+   *  impulse delivered by `t` seconds after ignition, rising to 1 at the last gate (the action
+   *  time). Each segment between gates burns at the constant mass flow that delivers its share
+   *  of the propellant, so the boost phase follows the real curve (the Shuttle RSRM's high
+   *  liftoff thrust and its max-Q bucket) and burns out at the last gate. Absent = constant
+   *  thrust until the propellant is spent. */
+  impulseGates?: ImpulseGate[];
+}
+
+/** A direct-insertion MECO target (altitudes in m above the surface). */
+export interface MecoTarget {
+  altM: number;
+  apogeeAltM: number;
+  perigeeAltM: number;
+}
+
+/** The inertial speed, horizontal and radial (climbing) velocity (m/s) of a MECO target: the
+ *  target orbit's state at the MECO altitude, on its way up to apogee. */
+export function mecoTargetState(m: MecoTarget): { speed: number; vh: number; vr: number } {
+  const r = R_EARTH_M + m.altM;
+  const ra = R_EARTH_M + m.apogeeAltM;
+  const rp = R_EARTH_M + m.perigeeAltM;
+  const a = (ra + rp) / 2;
+  const speed = Math.sqrt(MU_EARTH_M3_S2 * (2 / r - 1 / a));
+  const vh = Math.sqrt(2 * MU_EARTH_M3_S2 * ((ra * rp) / (ra + rp))) / r; // h / r
+  const vr = Math.sqrt(Math.max(0, speed * speed - vh * vh));
+  return { speed, vh, vr };
+}
+
+/** One impulse gate: `fraction` (0-1) of the total impulse delivered by `t` s after ignition. */
+export interface ImpulseGate {
+  t: number;
+  fraction: number;
+}
+
+/** One throttle command: from mission time `t` (s) the stage runs at `level` x its rated thrust. */
+export interface ThrottleStep {
+  t: number;
+  level: number;
 }
 
 /** A launch vehicle's ascent profile. See RFC-034 §6 for the shipped JSON schema. */
@@ -119,6 +170,21 @@ export interface LaunchProfile {
    */
   fairingJettisonS?: number;
   /**
+   * Seconds from SECO to spacecraft separation on a flight with no injection beat, from the
+   * vehicle's published sequence (backlog F1, sources in
+   * docs/wip/2026-11-17-launcher-timelines-sourced.md): Atlas V 169 s after the last Centaur
+   * cutoff (ULA user's guide, every column), PSLV-XL 47 s after PS4 cutoff (C46, C61), LVM3 15 s
+   * after C25 shut-off (M4), H-IIA 50 s after SECO (F15). The injection beat is cinematic time and ignores it. Unset:
+   * separation at SECO.
+   */
+  payloadSeparationDelayS?: number;
+  /**
+   * Per-mission separation delays (s after SECO) where one vehicle flies payloads that leave
+   * differently (Falcon 9: Crew Dragon about 197 s after SECO, plan L63), keyed by mission id.
+   * Overrides `payloadSeparationDelayS` for that mission.
+   */
+  payloadSeparationDelayByMissionS?: Record<string, number>;
+  /**
    * The payload stays in the vehicle's bay for the whole launch (the Space Shuttle: it is
    * deployed hours later in orbit). No spacecraft-separation beat, no injection beat and no
    * payload deployment are drawn: the launch ends with the vehicle alone in orbit.
@@ -136,6 +202,34 @@ export interface LaunchProfile {
    * arrive level here at circular speed. Defaults to `GUIDANCE_TARGET_ALT_M`.
    */
   targetOrbitAltM?: number;
+  /**
+   * Direct insertion (the Space Shuttle): the core stage steers (PEG) to a MECO state at
+   * `altM` on the orbit `apogeeAltM` x `perigeeAltM` (climbing toward apogee) and cuts off when
+   * its inertial speed reaches that orbit's speed there, leaving its residual propellant in the
+   * tank, short of orbit so the tank re-enters. The final stage coasts to apogee and
+   * circularises there (OMS-2); its cutoff waits for the circular orbit. STS-68: OMS-2 of
+   * 48.8 m/s from T+2110 s to T+2208 s, to 221 x 221 km, so MECO onto about 58 x 221 km; its MECO
+   * altitude is unpublished, so the profile's 105 km is calibrated to those two times (the
+   * generic NASA TD0358A Table 3-1 figure, 360,000 ft, lit OMS-2 at 2081 s). Absent = the core burns to depletion and the first stable
+   * perigee ends the ascent.
+   */
+  mecoTarget?: MecoTarget;
+  /**
+   * An elliptical injection by the final stage (plan item 4, 2026-11-19): it climbs to orbit at
+   * `perigeeAltM` as usual, then keeps burning prograde, raising the apogee, and cuts off when the
+   * apogee reaches `apogeeAltM` (LVM3 C25 into Chandrayaan-3's 170 x 36,500 km, one continuous
+   * burn), or when it reaches the escape energy `c3Km2S2` (a direct escape injection). Absent =
+   * the stage cuts off at the first stable orbit (a circular parking orbit).
+   */
+  injectionOrbit?: {
+    perigeeAltM: number;
+    /** Cut off when the apogee reaches this altitude (an elliptical orbit). */
+    apogeeAltM?: number;
+    /** Cut off when the injection energy C3 (km²/s², the hyperbolic excess speed squared)
+     *  reaches this: a direct escape injection (Atlas-Centaur AC-20, Mariner VI: C3 11.185 at
+     *  Centaur MECO T+725.5 s, NASA TM X-2278). */
+    c3Km2S2?: number;
+  };
   /** Aerodynamic reference area (m²) for drag. Default 10. */
   refAreaM2?: number;
   /** Drag coefficient (dimensionless). Default 0.3. */
@@ -158,6 +252,14 @@ export interface LaunchProfile {
    * hands the upper stage a dead at-apoapsis state it cannot fly out of.
    */
   loftBoost?: boolean;
+  /** The lofted boost's reference time to apoapsis (s) for this vehicle, fitted to a published
+   *  altitude (Proton: fairing jettison at 121-125 km, ILS guide). Absent = PEG.loftTApoRefS. */
+  loftTApoRefS?: number;
+  /** The first N stages fly the pitch table all the way, above the atmosphere too, instead of
+   *  the closed-loop raise / altitude-hold: for a vehicle whose published trajectory (an altitude
+   *  or speed at a staging event) the shared guidance does not fly (Proton: fairing at 121-125 km
+   *  at T+348 s; H3: MECO at 208 km). The final stage keeps its guidance. Absent = 0. */
+  pitchTableStages?: number;
   /** Provenance rows (publisher + source URL) for the shipped JSON. */
   provenance?: { l: string; u: string }[];
 }
@@ -231,7 +333,16 @@ export interface AscentState {
 
 /** A discrete ascent beat (liftoff, staging, Max-Q, MECO, SECO, …). */
 export interface AscentEvent {
-  type: 'liftoff' | 'max_q' | 'staging' | 'meco' | 'fairing_jettison' | 'seco' | 'orbit';
+  type:
+    | 'liftoff'
+    | 'max_q'
+    | 'staging'
+    | 'meco'
+    | 'fairing_jettison'
+    | 'seco'
+    | 'orbit'
+    /** A direct insertion's circularising burn lights at apogee (the Shuttle's OMS-2). */
+    | 'insertion_burn';
   t: number;
   altKm: number;
   speedKms: number;
@@ -381,14 +492,22 @@ export function stackIdealDv(profile: LaunchProfile): number {
   let m = aboveCore + core.wetKg + groups.reduce((k, g) => k + g.wetKg, 0); // on the pad
   let t = 0;
   for (const g of groups) {
-    const Tb = (g.thrustVacKN ?? 0) * 1000;
     const veB = g.ispVacS * G0;
-    const mdotB = veB > 0 ? Tb / veB : 0;
     const prop = stagePropellant(g);
-    const tBurn = mdotB > 0 ? prop / mdotB : 0;
-    const coreOn = Math.max(0, t + tBurn - Math.max(t, ignition));
-    const coreDuring = Math.min(coreLeft, mdotC * coreOn);
-    const share = tBurn > 0 ? coreOn / tBurn : 0; // the core's average share of the phase
+    // With impulse gates the motor burns out at its last gate, at the average flow that spends
+    // its propellant by then, not at the rated mass flow.
+    const gates = profile.boosters.impulseGates;
+    const mdotRated = veB > 0 ? ((g.thrustVacKN ?? 0) * 1000) / veB : 0;
+    const tBurn = gates?.length ? gates[gates.length - 1].t : mdotRated > 0 ? prop / mdotRated : 0;
+    const mdotB = gates?.length ? (tBurn > 0 ? prop / tBurn : 0) : mdotRated;
+    const Tb = mdotB * veB;
+    // The core burns at its commanded throttle (the Falcon Heavy core at 46 % beside its side
+    // boosters); its acceleration limit acts late in its own burn and is not modelled here.
+    const coreStart = Math.max(t, ignition);
+    const coreOn = Math.max(0, t + tBurn - coreStart);
+    const level = coreOn > 0 ? meanThrottle(core, coreStart, coreStart + coreOn) : 1;
+    const coreDuring = Math.min(coreLeft, mdotC * level * coreOn);
+    const share = tBurn > 0 ? (coreOn * level) / tBurn : 0; // the core's average flow share
     const ve = mdotB + mdotC * share > 0 ? (Tb + Tc * share) / (mdotB + mdotC * share) : veB;
     const burn = prop + coreDuring;
     if (burn > 0 && m - burn > 0) dv += ve * Math.log(m / (m - burn));
@@ -418,6 +537,56 @@ export function stageThrustN(stage: LaunchStage, altM: number): number {
 export function stageIspS(stage: LaunchStage, altM: number): number {
   if (stage.ispSlS == null) return stage.ispVacS;
   return stage.ispVacS - (stage.ispVacS - stage.ispSlS) * pressureRatio(altM);
+}
+
+/** The mean commanded throttle level of a stage over mission time [t0, t1] (step commands). */
+export function meanThrottle(stage: LaunchStage, t0: number, t1: number): number {
+  const steps = stage.throttle ?? [];
+  if (steps.length === 0 || t1 <= t0) return 1;
+  const edges = [t0, ...steps.map((st) => st.t).filter((x) => x > t0 && x < t1), t1];
+  let sum = 0;
+  for (let i = 0; i + 1 < edges.length; i++) {
+    sum += throttleLevel(stage, edges[i]) * (edges[i + 1] - edges[i]);
+  }
+  return sum / (t1 - t0);
+}
+
+/** The throttle level (fraction of rated thrust) a stage is commanded to at mission time t. */
+export function throttleLevel(stage: LaunchStage, t: number): number {
+  let level = 1;
+  for (const step of stage.throttle ?? []) {
+    if (t >= step.t) level = step.level;
+  }
+  return level;
+}
+
+/**
+ * Thrust multiplier of a booster `sinceIgnitionS` seconds into its burn, from its impulse
+ * gates: on each segment the mass flow that spends that segment's share of `propKg`, against
+ * the booster's rated vacuum mass flow. 1 when the booster has no gates. Past the last gate
+ * the last segment's value holds (any propellant left from the altitude-dependent Isp burns
+ * out at the same rate).
+ */
+export function boosterThrustMultiplier(
+  b: Pick<LaunchBoosters, 'impulseGates' | 'thrustSlKN' | 'thrustVacKN' | 'ispSlS' | 'ispVacS'>,
+  propKg: number,
+  sinceIgnitionS: number,
+): number {
+  const gates = b.impulseGates;
+  if (!gates || gates.length === 0) return 1;
+  const mdotVac = ((b.thrustVacKN ?? b.thrustSlKN) * N_PER_KN) / ((b.ispVacS ?? b.ispSlS) * G0);
+  if (mdotVac <= 0) return 1;
+  let t0 = 0;
+  let f0 = 0;
+  for (const g of gates) {
+    if (sinceIgnitionS < g.t || g === gates[gates.length - 1]) {
+      const dt = g.t - t0;
+      return dt > 0 ? ((g.fraction - f0) * propKg) / dt / mdotVac : 1;
+    }
+    t0 = g.t;
+    f0 = g.fraction;
+  }
+  return 1;
 }
 
 // ─── Pitch program ──────────────────────────────────────────────────
@@ -546,7 +715,19 @@ export interface AscentOptions {
 export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}): AscentSummary {
   const dt = opts.dtS ?? 0.05;
   const sampleDt = opts.sampleDtS ?? 1;
-  const maxT = opts.maxTS ?? 2000; // a low-TWR upper stage burns for many minutes
+  // A low-TWR upper stage burns for many minutes; a direct insertion coasts half an orbit to
+  // its circularising burn (STS-68's OMS-2 at T+2110 s).
+  const maxT = opts.maxTS ?? (profile.mecoTarget ? 4000 : 2000);
+  const mecoTarget = profile.mecoTarget;
+  const directInsertion = mecoTarget != null;
+  const mecoState = mecoTarget ? mecoTargetState(mecoTarget) : null;
+  // The core stage has been cut off on its insertion orbit (direct insertion only).
+  let stageCutOff = false;
+  // The altitude the final stage circularises at on a direct insertion: the apoapsis MECO
+  // delivered (OMS-2 burns at apogee, whatever it is), set when the final stage takes over.
+  let circulariseAtM: number | null = null;
+  // OMS-2 lit: the circularising burn has started (it then runs to the circular orbit).
+  let insertionBurnLit = false;
   const refArea = profile.refAreaM2 ?? 10;
   const cd = profile.cd ?? 0.3;
 
@@ -582,6 +763,8 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
     air: boolean;
     dropped: boolean;
     burnoutAt?: number;
+    /** Mission time the group lit (its impulse gates count from here). */
+    litAt?: number;
   };
   const groups: BoosterGroup[] = profile.boosters
     ? [
@@ -604,6 +787,33 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
       ]
     : [];
   for (const g of groups) g.prop = stagePropellant(g.stage);
+  const boosterPropEach = profile.boosters
+    ? Math.max(0, profile.boosters.wetKg - profile.boosters.dryKg)
+    : 0;
+  // A lit group's thrust (and mass flow) follows the booster's impulse gates, timed from when
+  // the group lit. The gates fix the MASS FLOW of each segment; at altitude the thrust is that
+  // flow times the local Isp, so a motor whose sea-level and vacuum flows differ (H-IIA SRB-A,
+  // Falcon side boosters) still burns out on its last gate.
+  const groupMultiplier = (g: BoosterGroup, alt: number): number => {
+    const b = profile.boosters;
+    if (!b?.impulseGates?.length) return 1;
+    const k = boosterThrustMultiplier(b, boosterPropEach, t - (g.litAt ?? t));
+    const mdotVac = stageThrustN(g.stage, Infinity) / (stageIspS(g.stage, Infinity) * G0);
+    const mdotHere = stageThrustN(g.stage, alt) / (stageIspS(g.stage, alt) * G0);
+    return mdotHere > 0 ? (k * mdotVac) / mdotHere : k;
+  };
+  // The active stage's thrust at this altitude and time: its throttle command, capped by its
+  // acceleration limit (the boosters' thrust counts against the cap).
+  const coreThrustAt = (alt: number, mass: number, boostThrust: number): number => {
+    const stage = profile.stages[stageIndex];
+    const rated = stageThrustN(stage, alt);
+    let thrust = rated * throttleLevel(stage, t);
+    if (stage.maxAccelG != null) {
+      const floor = rated * (stage.minThrottle ?? 0);
+      thrust = Math.min(thrust, Math.max(floor, stage.maxAccelG * G0 * mass - boostThrust));
+    }
+    return thrust;
+  };
   const airLitAt = profile.boosters?.airLitIgnitionS;
   const groupLit = (g: BoosterGroup): boolean =>
     !g.dropped && g.prop > 0 && (!g.air || (airLitAt != null ? t >= airLitAt : groups[0].dropped));
@@ -621,8 +831,20 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
       (k, g) => k + (g.dropped ? 0 : g.stage.dryKg + Math.max(0, g.prop)),
       0,
     );
-    if (stageIndex < 0)
-      return profile.payloadKg + (fairingOn ? (profile.fairingKg ?? 0) : 0) + boosterMass;
+    if (stageIndex < 0) {
+      // After SECO the spent final stage is still there (its dry mass and any residual): the
+      // upper stage carries the spacecraft until it separates, the Shuttle's orbiter is the
+      // vehicle. Dropping it left the payload alone (100 % payload on the HUD; with no
+      // payload, zero mass).
+      const last = profile.stages[profile.stages.length - 1];
+      return (
+        profile.payloadKg +
+        (fairingOn ? (profile.fairingKg ?? 0) : 0) +
+        boosterMass +
+        last.dryKg +
+        Math.max(0, remainingProp)
+      );
+    }
     const s = profile.stages[stageIndex];
     return (
       profile.payloadKg +
@@ -668,6 +890,8 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
   let coasting = false;
   // Latched once the heuristic altitude-hold saturates (a too-weak final stage).
   let pegLatched = false;
+  // injectionOrbit: past the orbit gate, the final stage burns on to the apogee target
+  let raisingApogee = false;
 
   const snapshot = (): AscentState => {
     // Radial frame: position from Earth's centre, altitude above the surface,
@@ -746,8 +970,13 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
   // Liftoff: engine lit at full stage-0 (+ booster) thrust so the t=0 snapshot
   // isn't engine-dark before the loop first updates lastThrust.
   lastThrust =
-    (coreIgnitionS <= 0 ? stageThrustN(profile.stages[0], 0) : 0) +
-    groups.reduce((k, g) => k + (groupLit(g) ? stageThrustN(g.stage, 0) : 0), 0);
+    (coreIgnitionS <= 0
+      ? stageThrustN(profile.stages[0], 0) * throttleLevel(profile.stages[0], 0)
+      : 0) +
+    groups.reduce(
+      (k, g) => k + (groupLit(g) ? stageThrustN(g.stage, 0) * groupMultiplier(g, 0) : 0),
+      0,
+    );
   pushEvent('liftoff');
   states.push(snapshot());
   let nextSampleT = sampleDt;
@@ -789,11 +1018,29 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
 
     // Strap-on boosters (fire in parallel with stage 0 along the body axis).
     const litGroups = stageIndex === 0 ? groups.filter(groupLit) : [];
-    const boostThrust = litGroups.reduce((k, g) => k + stageThrustN(g.stage, alt), 0);
+    for (const g of litGroups) g.litAt ??= t;
+    const boostThrust = litGroups.reduce(
+      (k, g) => k + stageThrustN(g.stage, alt) * groupMultiplier(g, alt),
+      0,
+    );
     // Core thrust IF the engine is lit (propellant remaining on the active stage).
+    // Direct insertion: the core stage cuts off on its insertion orbit, before depletion.
+    if (
+      directInsertion &&
+      !stageCutOff &&
+      stageIndex >= 0 &&
+      stageIndex < profile.stages.length - 1 &&
+      alt > GUIDANCE.handoverAltM &&
+      speed >= mecoState!.speed
+    ) {
+      stageCutOff = true;
+    }
     const coreThrustLit =
-      stageIndex >= 0 && remainingProp > 0 && !(stageIndex === 0 && t < coreIgnitionS)
-        ? stageThrustN(profile.stages[stageIndex], alt)
+      stageIndex >= 0 &&
+      remainingProp > 0 &&
+      !stageCutOff &&
+      !(t < (stageIndex === 0 ? coreIgnitionS : (profile.stages[stageIndex].ignitionS ?? 0)))
+        ? coreThrustAt(alt, m, boostThrust)
         : 0;
 
     // Guidance. Below the handover the aero-safe pitch table drives the gravity
@@ -804,7 +1051,12 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
     // that can't circularise in one continuous burn. PEG only STEERS; the honest
     // perigee gate below still decides SECO + reachedOrbit.
     const isFinalStage = stageIndex === profile.stages.length - 1;
-    const targetAltM = profile.targetOrbitAltM ?? GUIDANCE.targetAltM;
+    const targetAltM =
+      circulariseAtM ??
+      mecoTarget?.apogeeAltM ??
+      profile.injectionOrbit?.perigeeAltM ??
+      profile.targetOrbitAltM ??
+      GUIDANCE.targetAltM;
     let pitch: number;
     let engineOn: boolean; // set by every guidance branch below
 
@@ -814,7 +1066,13 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
     // and sinks. So: run the heuristic by default; the instant its circularise
     // command provably saturates, LATCH onto PEG for the rest of the stage (no
     // vehicle list, no chatter). PEG then flies the lofted low-TWR insertion.
-    if (!pegLatched && isFinalStage && coreThrustLit > 0 && alt > GUIDANCE.handoverAltM) {
+    if (
+      circulariseAtM == null &&
+      !pegLatched &&
+      isFinalStage &&
+      coreThrustLit > 0 &&
+      alt > GUIDANCE.handoverAltM
+    ) {
       if (profile.loftBoost) {
         // Lofted low-TWR upper stage: we know it's PEG's job — latch on ignition.
         pegLatched = true;
@@ -826,7 +1084,57 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
       }
     }
 
-    if (pegLatched && isFinalStage && coreThrustLit > 0) {
+    if (raisingApogee && isFinalStage && coreThrustLit > 0) {
+      // Apogee raise: burn prograde (along the velocity) until the apogee reaches the target.
+      pitch = Math.atan2(velUp, Math.abs(horizSpeed));
+      engineOn = true;
+    } else if (mecoState && !isFinalStage && coreThrustLit > 0 && alt > GUIDANCE.handoverAltM) {
+      // Direct insertion: the core steers (PEG, linear tangent) to the MECO state. Blended in
+      // from the pitch table like the heuristic so the command does not step.
+      const ve = stageIspS(profile.stages[stageIndex], alt) * G0;
+      const a = (coreThrustLit + boostThrust) / m;
+      const mdot = coreThrustLit / ve;
+      const maxBurnS = mdot > 0 ? remainingProp / mdot : 0;
+      const frozen = peg?.ok === true && peg.tgo < PEG.freezeTgoS;
+      if (!frozen && (t - pegSolveT >= PEG.majorCycleS || !peg?.ok)) {
+        peg = pegSolve(
+          r,
+          velUp,
+          Math.abs(horizSpeed),
+          a,
+          ve,
+          g,
+          R_EARTH_M + mecoTarget!.altM,
+          mecoState.vh,
+          maxBurnS,
+          peg,
+          mecoState.vr,
+        );
+        pegSolveT = t;
+      }
+      const guided = peg?.ok
+        ? pegPitchRad(peg, t - pegSolveT)
+        : Math.atan2(velUp, Math.abs(horizSpeed));
+      const table = pitchAngleRad(profile, t);
+      const blend = Math.max(0, Math.min(1, (alt - GUIDANCE.handoverAltM) / GUIDANCE.blendM));
+      pitch = table * (1 - blend) + guided * blend;
+      engineOn = true;
+    } else if (circulariseAtM != null && isFinalStage && coreThrustLit > 0) {
+      // Direct insertion, OMS-2: coast to apoapsis, light half the burn before it (the burn is
+      // the circularising Δv there over the stage's acceleration), burn prograde to circular.
+      const vhAbs = Math.abs(horizSpeed);
+      const rA = R_EARTH_M + circulariseAtM;
+      const dvCirc = Math.max(0, Math.sqrt(MU_EARTH_M3_S2 / rA) - (r * vhAbs) / rA);
+      const burnS = (dvCirc * m) / coreThrustLit;
+      if (!insertionBurnLit && (timeToApoapsisS(r, velUp, vhAbs) <= burnS / 2 || velUp <= 0)) {
+        insertionBurnLit = true;
+        // the apogee it lights at (drag trims it on the coast); an unbound orbit keeps the target
+        if (Number.isFinite(apoapsisAltM)) circulariseAtM = apoapsisAltM;
+        pushEvent('insertion_burn', profile.stages[stageIndex].name);
+      }
+      pitch = Math.atan2(velUp, vhAbs);
+      engineOn = insertionBurnLit;
+    } else if (pegLatched && isFinalStage && coreThrustLit > 0) {
       const ve = stageIspS(profile.stages[stageIndex], alt) * G0;
       const a = coreThrustLit / m;
       const mdot = coreThrustLit / ve;
@@ -871,6 +1179,11 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
         pitch = peg?.ok ? pegPitchRad(peg, t - pegSolveT) : Math.atan2(velUp, vhAbs);
         engineOn = true;
       }
+    } else if (stageIndex >= 0 && stageIndex < (profile.pitchTableStages ?? 0)) {
+      // A lower stage that flies its pitch table all the way (the published trajectory), not the
+      // closed-loop raise / altitude-hold.
+      pitch = pitchAngleRad(profile, t);
+      engineOn = coreThrustLit > 0;
     } else if (profile.loftBoost && !isFinalStage && alt > GUIDANCE.handoverAltM) {
       // Lofted boost (#416): fly near-prograde but steer the burnout GEOMETRY —
       // keep the time-to-apoapsis near a reference so the low-TWR upper stage
@@ -881,7 +1194,10 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
       const prograde = Math.atan2(velUp, Math.max(1, Math.abs(horizSpeed)));
       const guided = Math.max(
         prograde - 0.21,
-        Math.min(prograde + 0.21, prograde + PEG.loftTApoGainRadPerS * (PEG.loftTApoRefS - tApo)),
+        Math.min(
+          prograde + 0.21,
+          prograde + PEG.loftTApoGainRadPerS * ((profile.loftTApoRefS ?? PEG.loftTApoRefS) - tApo),
+        ),
       );
       const table = pitchAngleRad(profile, t);
       const blend = Math.max(0, Math.min(1, (alt - GUIDANCE.handoverAltM) / GUIDANCE.blendM));
@@ -962,7 +1278,9 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
     // Each lit group burns its own propellant (shared Isp); a spent group jettisons while
     // the core fires on.
     for (const g of litGroups) {
-      g.prop -= (stageThrustN(g.stage, alt) / (stageIspS(g.stage, alt) * G0)) * dt;
+      g.prop -=
+        ((stageThrustN(g.stage, alt) * groupMultiplier(g, alt)) / (stageIspS(g.stage, alt) * G0)) *
+        dt;
     }
     for (const g of groups) {
       if (!g.dropped && g.prop <= 0) {
@@ -983,7 +1301,7 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
     if (q > maxQ.qPa) maxQ = { t, altKm: alt / 1000, qPa: q };
 
     // Stage burnout → jettison + advance.
-    if (stageIndex >= 0 && remainingProp <= 0) {
+    if (stageIndex >= 0 && (remainingProp <= 0 || stageCutOff)) {
       const isLast = stageIndex >= profile.stages.length - 1;
       const delayS = isLast ? 0 : (profile.stages[stageIndex].separationDelayS ?? 0);
       if (!mecoSeen && !isLast) {
@@ -1005,7 +1323,15 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
           secoT = t;
         } else {
           stageIndex += 1;
-          remainingProp = stagePropellant(profile.stages[stageIndex]);
+          remainingProp = stagePropellant(profile.stages[stageIndex]); // the residual leaves with the spent stage
+          stageCutOff = false;
+          if (directInsertion && stageIndex === profile.stages.length - 1) {
+            circulariseAtM = Number.isFinite(apoapsisAltM) ? apoapsisAltM : null;
+          }
+          if (directInsertion) {
+            peg = null; // the core's MECO solution is not the orbiter's
+            pegSolveT = -Infinity;
+          }
         }
       }
     }
@@ -1028,7 +1354,9 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
       pushEvent('orbit');
       orbitSeen = true;
       reachedOrbit = true;
-      if (stageIndex === profile.stages.length - 1) {
+      if (stageIndex === profile.stages.length - 1 && !directInsertion && profile.injectionOrbit) {
+        raisingApogee = true;
+      } else if (stageIndex === profile.stages.length - 1 && !directInsertion) {
         pushEvent(
           'seco',
           `${profile.stages[stageIndex].name} — orbit`,
@@ -1039,12 +1367,57 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
       }
     }
 
+    // Elliptical injection: the apogee raise ends on the target apogee; an escape injection on
+    // the target C3 (twice the specific orbital energy).
+    const inj = profile.injectionOrbit;
+    if (
+      raisingApogee &&
+      secoT < 0 &&
+      stageIndex === profile.stages.length - 1 &&
+      inj &&
+      ((inj.apogeeAltM != null && apoapsisAltM >= inj.apogeeAltM) ||
+        (inj.c3Km2S2 != null && (2 * energy) / 1e6 >= inj.c3Km2S2))
+    ) {
+      pushEvent('seco', `${profile.stages[stageIndex].name} — injection orbit`);
+      stageIndex = -1;
+      secoT = t;
+    }
+
+    // Direct insertion: the circularising burn ends once the orbit is circular at the target
+    // (its perigee within 2 km of the apoapsis target), not at the first stable perigee.
+    if (
+      directInsertion &&
+      secoT < 0 &&
+      stageIndex === profile.stages.length - 1 &&
+      perigeeAltM >= (circulariseAtM ?? mecoTarget!.apogeeAltM) - 2_000
+    ) {
+      pushEvent(
+        'seco',
+        `${profile.stages[stageIndex].name} — circular`,
+        profile.payloadInBay === true,
+      );
+      stageIndex = -1;
+      secoT = t;
+    }
+
     // Orbit already reached on an EARLIER stage (SLS: the core stage alone inserts Orion +
     // ICPS): the final stage has no insertion left to fly. Hold it dark — its propellant is
     // for the later injection burn (the scene's injection beat) — instead of letting it burn
     // to depletion onto an escape path, which nothing else would ever cut off.
-    if (orbitSeen && secoT < 0 && stageIndex === profile.stages.length - 1) {
-      pushEvent('seco', `${profile.stages[stageIndex].name} — held for injection`);
+    if (
+      !directInsertion &&
+      !raisingApogee &&
+      orbitSeen &&
+      secoT < 0 &&
+      stageIndex === profile.stages.length - 1
+    ) {
+      // The Shuttle reaches orbit on its main engines: its orbiter's held engines are no SECO
+      // beat either (silent, as at the end of its powered flight).
+      pushEvent(
+        'seco',
+        `${profile.stages[stageIndex].name} — held for injection`,
+        profile.payloadInBay === true,
+      );
       stageIndex = -1;
       secoT = t;
     }
@@ -1234,4 +1607,15 @@ export function ascentToOrbit(profile: LaunchProfile, opts?: AscentOptions): Asc
     finalAltKm: s.finalAltKm,
     finalSpeedKms: s.finalSpeedKms,
   };
+}
+
+/** Seconds from SECO to spacecraft separation for this mission on this vehicle (plan L63). */
+export function payloadSeparationDelayFor(
+  profile: Pick<LaunchProfile, 'payloadSeparationDelayS' | 'payloadSeparationDelayByMissionS'>,
+  missionId: string | undefined,
+): number | undefined {
+  return (
+    (missionId ? profile.payloadSeparationDelayByMissionS?.[missionId] : undefined) ??
+    profile.payloadSeparationDelayS
+  );
 }

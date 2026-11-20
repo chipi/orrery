@@ -1,6 +1,6 @@
 {
   "name": "orrery",
-  "version": "0.9.9",
+  "version": "0.9.10",
   "description": "Browser-based solar system explorer + Mars / lunar mission simulator. Real Keplerian orbital mechanics, real missions from Luna 9 to Artemis II, fully static SPA.",
   "homepage": "https://www.orrerylearn.com/",
   "repository": {
@@ -87,6 +87,8 @@
     "validate-data": "tsx scripts/validate-data-runner.ts",
     "validate-image-integrity": "tsx scripts/validate-data-runner.ts --group=image",
     "gen:doc-counts": "node scripts/gen-doc-counts.mjs",
+    "llms:build": "node scripts/build-llms-txt.mjs",
+    "llms:check": "node scripts/build-llms-txt.mjs --check",
     "validate-diagrams": "tsx scripts/validate-diagrams.ts",
     "build-science-index": "tsx scripts/build-science-index.ts",
     "build-glossary": "node scripts/build-glossary.mjs",
@@ -144,7 +146,7 @@
     "@playwright/test": "1.64.0",
     "@sentry/vite-plugin": "5.4.0",
     "@sveltejs/adapter-static": "^3.0.10",
-    "@sveltejs/kit": "2.70.3",
+    "@sveltejs/kit": "2.70.4",
     "@sveltejs/vite-plugin-svelte": "7.2.0",
     "@types/katex": "^0.16.8",
     "@types/node": "^26.1.0",

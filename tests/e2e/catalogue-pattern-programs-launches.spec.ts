@@ -31,8 +31,13 @@ type Launch = {
   tier: string;
   status: { code: string };
 };
-const launches = (file: string) =>
-  Object.values(rj<{ entries: Record<string, Launch> }>(`static/data/${file}`).entries);
+// The served file, not the checkout's: the launch manifest is refreshed by its own job, so a
+// deployed site can carry newer launches than this tree (prod 2026-11-17: 462 against 349).
+const launches = async (page: Page, file: string): Promise<Launch[]> => {
+  const res = await page.request.get(`/data/${file}`);
+  expect(res.ok(), file).toBe(true);
+  return Object.values(((await res.json()) as { entries: Record<string, Launch> }).entries);
+};
 
 async function openPrograms(page: Page, query = '') {
   await page.goto(`/programs${query}`);
@@ -251,7 +256,7 @@ test.describe('/missions/launches', () => {
     await openLaunches(page);
     const bar = page.getByTestId('browse-toolbar');
     await expect(bar.locator('.showing-total')).toHaveText(
-      String(launches('launches.json').length),
+      String((await launches(page, 'launches.json')).length),
     );
     await expect(bar.getByTestId('browse-showing')).toContainText('Showing: All epochs');
     await expect(bar.locator('.sort-field select')).toBeVisible();
@@ -265,11 +270,21 @@ test.describe('/missions/launches', () => {
     await openLaunches(page);
     const counts = (await page.locator('.era-count').allTextContents()).map(Number);
     expect(counts.length).toBe(9);
-    const all =
-      launches('launches.json').length +
-      ['1957-1969', '1970-1979', '1980-1989', '1990-1999', '2000-2009', '2010-2019', '2020-2026']
-        .map((d) => launches(`launches-historic/${d}.json`).length)
-        .reduce((a, b) => a + b, 0);
+    const files = [
+      'launches.json',
+      ...[
+        '1957-1969',
+        '1970-1979',
+        '1980-1989',
+        '1990-1999',
+        '2000-2009',
+        '2010-2019',
+        '2020-2026',
+      ].map((d) => `launches-historic/${d}.json`),
+    ];
+    const all = (await Promise.all(files.map((f) => launches(page, f))))
+      .map((l) => l.length)
+      .reduce((a, b) => a + b, 0);
     expect(counts.reduce((a, b) => a + b, 0)).toBe(all);
   });
 
@@ -277,7 +292,7 @@ test.describe('/missions/launches', () => {
     page,
   }) => {
     await openLaunches(page, '?epoch=first-steps');
-    const want = launches('launches-historic/1957-1969.json').filter(
+    const want = (await launches(page, 'launches-historic/1957-1969.json')).filter(
       (l) => Number(l.net.slice(0, 4)) <= 1961,
     ).length;
     await expect(page.locator('article.launch-row')).toHaveCount(want);
@@ -313,7 +328,7 @@ test.describe('/missions/launches', () => {
     await openLaunches(page);
     const chips = page.locator('.agency-chip');
     expect(await chips.count()).toBeGreaterThanOrEqual(10);
-    const nasaLike = launches('launches.json').filter(
+    const nasaLike = (await launches(page, 'launches.json')).filter(
       (l) =>
         l.agency_name === 'National Aeronautics and Space Administration' ||
         l.agency_name === 'NASA',
@@ -330,7 +345,7 @@ test.describe('/missions/launches', () => {
   test('?tier=FEATURED keeps the featured launches and opens FILTERS', async ({ page }) => {
     await openLaunches(page, '?tier=FEATURED');
     await expect(page.locator('nav.filters')).toBeVisible();
-    const want = launches('launches.json').filter((l) => l.tier === 'T1').length;
+    const want = (await launches(page, 'launches.json')).filter((l) => l.tier === 'T1').length;
     await expect(page.locator('article.launch-row')).toHaveCount(want);
     await expect(page.locator('article.launch-row:not([data-tier="T1"])')).toHaveCount(0);
   });
@@ -339,7 +354,7 @@ test.describe('/missions/launches', () => {
     page,
   }) => {
     await openLaunches(page, '?mode=historic&decade=1957-1969&outcome=FAILURE&year=1958');
-    const want = launches('launches-historic/1957-1969.json').filter(
+    const want = (await launches(page, 'launches-historic/1957-1969.json')).filter(
       (l) => l.status.code === 'FAILURE' && l.net.startsWith('1958'),
     ).length;
     expect(want).toBeGreaterThan(0);
@@ -351,7 +366,9 @@ test.describe('/missions/launches', () => {
 
   test('?year= on the upcoming list keeps the launches of that year', async ({ page }) => {
     await openLaunches(page, '?year=2027');
-    const want = launches('launches.json').filter((l) => l.net.startsWith('2027')).length;
+    const want = (await launches(page, 'launches.json')).filter((l) =>
+      l.net.startsWith('2027'),
+    ).length;
     await expect(page.locator('article.launch-row')).toHaveCount(want);
   });
 
@@ -359,7 +376,7 @@ test.describe('/missions/launches', () => {
     await openLaunches(page, '?q=starship');
     const n = await page.locator('article.launch-row').count();
     expect(n).toBeGreaterThan(0);
-    expect(n).toBeLessThan(launches('launches.json').length);
+    expect(n).toBeLessThan((await launches(page, 'launches.json')).length);
     await expect(page.getByTestId('launches-search')).toHaveValue('starship');
   });
 
@@ -389,7 +406,7 @@ test.describe('/missions/launches', () => {
   }) => {
     await openLaunches(page, '?view=grid');
     const cards = page.locator('.entity-card-grid .card');
-    await expect(cards).toHaveCount(launches('launches.json').length);
+    await expect(cards).toHaveCount((await launches(page, 'launches.json')).length);
     await page.addStyleTag({ content: '.card-li { content-visibility: visible !important; }' });
     const sizes = await cards.evaluateAll((els) =>
       els.map((e) => {

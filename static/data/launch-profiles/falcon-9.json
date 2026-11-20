@@ -3,6 +3,7 @@
   "name": "Falcon 9 Block 5",
   "source_tier": "flagship",
   "payloadKg": 15000,
+  "payloadSeparationDelayByMissionS": { "inspiration4": 198, "polaris-dawn": 197 },
   "fairingKg": 1900,
   "fairingJettisonAltM": 110000,
   "refAreaM2": 10.75,

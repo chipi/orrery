@@ -751,6 +751,8 @@
   "fly_toggle_science_layers_title": "Toggle Science Layers panel",
   "fly_traj_type_cislunar": "Cislunar transfer",
   "fly_traj_type_cislunar_free_return": "Cislunar free-return",
+  "fly_traj_type_earth_orbit": "Earth orbit",
+  "fly_traj_type_suborbital": "Suborbital flight",
   "fly_traj_type_helio_flyby": "Heliocentric flyby",
   "fly_traj_type_helio_free_return": "Heliocentric free-return",
   "fly_traj_type_helio_hohmann": "Heliocentric Hohmann",
@@ -3737,5 +3739,6 @@
   "programs_filter_kind": "KIND",
   "programs_empty": "No programs match the current filters.",
   "launches_search_placeholder": "Search launches…",
-  "launches_sort_soonest": "Soonest first"
+  "launches_sort_soonest": "Soonest first",
+  "hud_data_ends": "DATA ENDS"
 }

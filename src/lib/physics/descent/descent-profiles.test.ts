@@ -53,7 +53,7 @@ function flight(id: string): { profile: DescentProfile; s: DescentSummary } {
 }
 
 /** The missions whose EDL is an honest failure (impact, not touchdown). Mars 3 soft-landed. */
-const CRASHES = new Set(['beresheet', 'schiaparelli', 'soyuz-1']);
+const CRASHES = new Set(['beresheet', 'schiaparelli', 'soyuz-1', 'chandrayaan2']);
 
 /**
  * Peak-decel band (Earth-g) per body — a TIGHT regression guard calibrated to
@@ -106,6 +106,8 @@ describe('every descent profile expands + flies to its honest outcome', () => {
       expect(raw.missionId).toBe(id);
       const { profile, s } = flight(id);
       const noSurface = NO_SURFACE.has(id);
+      // A lander whose published record stops in the air (Vikram, recordEndsAltM) ends there.
+      const recordEnds = profile.recordEndsAltM != null;
       // Landers end at the ground; an atmospheric probe ends on a pressure crush.
       expect(profile.phases.at(-1)!.endTrigger.type).toBe(noSurface ? 'pressure_pa' : 'ground');
 
@@ -119,7 +121,9 @@ describe('every descent profile expands + flies to its honest outcome', () => {
       expectInRange(s.peakDecel.g, band[0], band[1], `${id} peak decel (g)`);
       // Beats open on entry; landers close on touchdown, probes on signal loss.
       expect(s.events[0].type).toBe('entry');
-      expect(s.events.at(-1)!.type).toBe(noSurface ? 'probe_signal_lost' : 'touchdown');
+      expect(s.events.at(-1)!.type).toBe(
+        noSurface ? 'probe_signal_lost' : recordEnds ? 'record_ends' : 'touchdown',
+      );
     });
   }
 });
@@ -272,4 +276,26 @@ describe('model-authored entry fields are declared as estimates, sourced ones ar
         expect(est).toContain('entryCdA');
     });
   }
+});
+
+describe('Chandrayaan-2 Vikram: the published rough braking, then the record ends', () => {
+  const raw = JSON.parse(
+    readFileSync(
+      resolve(__dirname, '../../../../static/data/descent-profiles/chandrayaan2.json'),
+      'utf-8',
+    ),
+  ) as RawDescentProfile;
+  const s = integrateDescent(expandDescentProfile(raw));
+  it('flies from 30 km / 1,683 m/s and ends at 7.4 km near 146 m/s (PIB, 20 Nov 2019)', () => {
+    expect(s.states[0].altKm).toBeCloseTo(30, 1);
+    expect(s.states[0].velocityMs).toBeCloseTo(1683, 0);
+    const end = s.events.at(-1)!;
+    expect(end.type).toBe('record_ends');
+    expect(Math.abs(end.altKm - 7.4)).toBeLessThan(0.05);
+    expect(Math.abs(end.velocityMs - 146)).toBeLessThan(2);
+  });
+  it('models no crash: no touchdown beat, and the run is not a success', () => {
+    expect(s.events.some((e) => e.type === 'touchdown')).toBe(false);
+    expect(s.touchdownSuccess).toBe(false);
+  });
 });

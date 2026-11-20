@@ -122,6 +122,7 @@
   import WarpOverlays from './WarpOverlays.svelte';
   import ScaleNav from './ScaleNav.svelte';
   import LevelContextCard from '$lib/components/LevelContextCard.svelte';
+  import { createLevelCardState } from '$lib/explore/level-card-state.svelte';
   import ExploreHint from '$lib/components/ExploreHint.svelte';
   import SunCompass from './SunCompass.svelte';
   import ScaleStrip from './ScaleStrip.svelte';
@@ -606,6 +607,7 @@
   // (de at 390 px: the HUD row's second line ran under it), so the HUD row clears the wider.
   let scaleNavWidth = $state(0);
   let levelCardWidth = $state(0);
+  const levelCard = createLevelCardState();
   let hudMobileRowsHeight = $state(0);
   let contextId = $state<ExploreContextId>('solar-system');
   // Publish the live scale context to the global store so the Nav highlights the
@@ -875,12 +877,27 @@
     view === '3d' && scaleNavWidth > 0 ? panelCoverPx + 8 + scaleNavWidth + 12 : panelCoverPx + 16,
   );
   // The phone's top rows wrap to a second and third line under the card, so they clear the card
-  // too; the desktop row (one band, the card hangs under it) keeps the navigator's width only.
+  // too while it is open at the right edge (the solar system); folded, or hung on the left at the
+  // outer scales, it takes no room there. The desktop row keeps the navigator's width only.
+  let cardRightPx = $derived(
+    showLevelPicker && levelCard.expanded && contextId === 'solar-system' && !activeBlackHole
+      ? levelCardWidth
+      : 0,
+  );
   let hudMobileClearRightPx = $derived(
     view === '3d' && scaleNavWidth > 0
-      ? panelCoverPx + 8 + Math.max(scaleNavWidth, showLevelPicker ? levelCardWidth : 0) + 12
+      ? panelCoverPx + 8 + Math.max(scaleNavWidth, cardRightPx) + 12
       : panelCoverPx + 16,
   );
+  // Applied a frame later: the widths come from resize observers, and re-wrapping the observed HUD
+  // rows inside the same callback raised "ResizeObserver loop completed with undelivered
+  // notifications" on phones (an error event every /explore load).
+  let hudMobileClearAppliedPx = $state(16);
+  $effect(() => {
+    const px = hudMobileClearRightPx;
+    const id = requestAnimationFrame(() => (hudMobileClearAppliedPx = px));
+    return () => cancelAnimationFrame(id);
+  });
   // The welcome hint is shown once per visit: closed, timed out or acted on, it stays gone through
   // a docked panel, a 2D toggle or a takeover.
   let hintDone = $state(false);
@@ -2142,9 +2159,17 @@
       {panelCoverPx}
       bind:width={scaleNavWidth}
       onReset={resetCurrentScale}
+      levelCard={showLevelPicker ? levelCard : undefined}
     />
     {#if showLevelPicker}
-      <LevelContextCard shell={contextId as ShellId} {panelCoverPx} bind:width={levelCardWidth} />
+      <LevelContextCard
+        shell={contextId as ShellId}
+        card={levelCard}
+        align={contextId === 'solar-system' && !activeBlackHole ? 'right' : 'left'}
+        covered={indexOpen && !(contextId === 'solar-system' && !activeBlackHole)}
+        {panelCoverPx}
+        bind:width={levelCardWidth}
+      />
     {/if}
     {#if !hintDone && panelCoverPx === 0}
       <ExploreHint
@@ -2299,7 +2324,7 @@
     hasSelection={solarHasSelection}
     onResetView={resetSolarView}
     clearRightPx={hudClearRightPx}
-    mobileClearRightPx={hudMobileClearRightPx}
+    mobileClearRightPx={hudMobileClearAppliedPx}
     bind:mobileRowsHeight={hudMobileRowsHeight}
     {layers}
     onToggleLayer={(key) => {

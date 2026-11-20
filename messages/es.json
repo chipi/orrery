@@ -1123,6 +1123,8 @@
   "fly_hud_trajectory": "TRAYECTORIA",
   "fly_traj_type_cislunar": "Transferencia cislunar",
   "fly_traj_type_cislunar_free_return": "Retorno libre cislunar",
+  "fly_traj_type_earth_orbit": "Órbita terrestre",
+  "fly_traj_type_suborbital": "Vuelo suborbital",
   "fly_traj_type_helio_hohmann": "Transferencia de Hohmann heliocéntrica",
   "fly_traj_type_helio_free_return": "Retorno libre heliocéntrico",
   "fly_traj_type_helio_flyby": "Sobrevuelo heliocéntrico",
@@ -3737,5 +3739,6 @@
   "programs_filter_kind": "TIPO",
   "programs_empty": "Ningún programa coincide con los filtros actuales.",
   "launches_search_placeholder": "Buscar lanzamientos…",
-  "launches_sort_soonest": "Más próximos primero"
+  "launches_sort_soonest": "Más próximos primero",
+  "hud_data_ends": "FIN DE LOS DATOS"
 }

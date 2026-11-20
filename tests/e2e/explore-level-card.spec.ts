@@ -3,9 +3,10 @@ import { waitForHydration } from './_helpers/hydration';
 
 /**
  * /explore "what you are looking at" card (C8, E9, UXD-027): one card per scale level under the
- * level picker's row — the level's glyph and name, the home-grid text, the story, up to five
- * /science sections — folded on a touch screen, remembered, clear of a docked panel, gone in 2D
- * and in a takeover. The picker chip and the nav dropdown draw the same glyphs (E10).
+ * level picker's row, opened by the fold chip beside the picker (plan D15: the picker names the
+ * level, the card has no second header) — the home-grid text, the story, up to five /science
+ * sections — folded on a touch screen, remembered, clear of a docked panel, gone in 2D and in a
+ * takeover. The picker chip and the nav dropdown draw the same glyphs (E10).
  */
 
 const LEVELS: Array<{ id: string; name: RegExp }> = [
@@ -30,7 +31,7 @@ async function gotoLevel(page: Page, id: string): Promise<void> {
     'true',
     { timeout: 30_000 },
   );
-  await expect(card(page)).toBeVisible({ timeout: 15_000 });
+  await expect(toggle(page)).toBeVisible({ timeout: 15_000 });
 }
 
 /** The card is open (a pointer device opens it; a touch one folds it, so open it for the content). */
@@ -48,7 +49,10 @@ test.describe('/explore — level card (C8)', () => {
     }) => {
       await gotoLevel(page, lv.id);
       await open(page);
-      await expect(page.getByTestId('explore-level-card-name')).toHaveText(lv.name);
+      await expect(page.getByTestId('explore-scale-toggle').locator('.toggle-label')).toHaveText(
+        lv.name,
+      );
+      await expect(card(page)).toBeVisible();
       await expect(page.getByTestId('explore-level-card-lead')).not.toBeEmpty();
       const links = page.getByTestId('explore-level-card-links').locator('a');
       await expect(links.first()).toBeVisible({ timeout: 15_000 });
@@ -57,7 +61,7 @@ test.describe('/explore — level card (C8)', () => {
       expect(n).toBeLessThanOrEqual(5);
       for (let i = 0; i < n; i++)
         await expect(links.nth(i)).toHaveAttribute('href', /\/science\/[a-z-]+\/[a-z0-9-]+$/);
-      await expect(card(page).locator('svg.scale-glyph-icon')).toHaveCount(1);
+      await expect(card(page).locator('svg.scale-glyph-icon')).toHaveCount(0);
     });
   }
 
@@ -94,7 +98,7 @@ test.describe('/explore — level card (C8)', () => {
     await gotoLevel(page, 'solar-system');
     await page.getByTestId('explore-scale-toggle').click();
     await page.getByTestId('explore-scale-rung-neighborhood').click();
-    await expect(page.getByTestId('explore-level-card-name')).toHaveText(/Stellar Neighborhood/i, {
+    await expect(card(page)).toHaveAttribute('aria-label', /Stellar Neighborhood/i, {
       timeout: 40_000,
     });
   });
@@ -105,9 +109,9 @@ test.describe('/explore — level card (C8)', () => {
       ? page.getByTestId('explore-view-toggle-mobile')
       : page.getByTestId('explore-view-toggle');
     await viewToggle.click();
-    await expect(card(page)).toBeHidden();
+    await expect(toggle(page)).toBeHidden();
     await viewToggle.click();
-    await expect(card(page)).toBeVisible();
+    await expect(toggle(page)).toBeVisible();
 
     await page.goto('/explore?bh=sagittarius-a-star');
     await waitForHydration(page);
@@ -122,7 +126,7 @@ test.describe('/explore — level card (C8)', () => {
     await waitForHydration(page);
     const panel = page.locator('aside.panel').first();
     await expect(panel).toBeVisible({ timeout: 40_000 });
-    await expect(card(page)).toBeVisible();
+    await open(page);
     // The docked panel is laid out after the page settles; give the card its clearance pass.
     await expect
       .poll(

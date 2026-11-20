@@ -5,7 +5,7 @@
   "delta_v": "~4 km/s (TLI + LOI, estimación)",
   "type": "ORBITADOR · SUBSATÉLITES · REALIZADA",
   "first": "Vídeo en alta definición de la salida de la Tierra sobre el horizonte lunar",
-  "description": "Kaguya, oficialmente SELENE (Selenological and Engineering Explorer), fue el segundo orbitador lunar japonés tras Hiten. Lanzado con un H-IIA desde Tanegashima el 2007-09-14, llevaba un orbitador principal de 2914 kg y dos subsatélites de 53 kg, Okina y Ouna. Los tres nombres proceden de «El cuento del cortador de bambú», cuya heroína, Kaguya, es una princesa venida de la Luna. Okina retransmitía el enlace de radio del orbitador desde detrás de la Luna, lo que permitió seguir con mediciones Doppler la gravedad de la cara oculta, y Ouna servía de fuente de radio para el seguimiento VLBI. Tras la inserción en órbita lunar el 2007-10-03, el orbitador se estabilizó el 2007-10-19 en una órbita polar circular a 100 km. Allí su cámara de terreno, su generador de imágenes multibanda, su perfilador espectral, sus espectrómetros de rayos X y gamma, su altímetro láser y su sonda de radar cartografiaron la forma, la composición, la gravedad y el magnetismo de la Luna, mientras su cámara de alta definición filmaba la Tierra saliendo sobre el horizonte. En 2009 el orbitador fue descendido a unos 50 km y, el 2009-06-10, se le ordenó un impacto controlado cerca del cráter Gill.",
+  "description": "Kaguya, oficialmente SELENE (Selenological and Engineering Explorer), fue el segundo orbitador lunar japonés tras Hiten. Lanzado con un H-IIA desde Tanegashima el 2007-09-14, llevaba un orbitador principal de 2914 kg y dos subsatélites de 53 kg, Okina y Ouna. Los tres nombres proceden de «El cuento del cortador de bambú», cuya heroína, Kaguya, es una princesa venida de la Luna. Okina retransmitía el enlace de radio del orbitador desde detrás de la Luna, lo que permitió seguir con mediciones Doppler la gravedad de la cara oculta, y Ouna servía de fuente de radio para el seguimiento VLBI. Tras la inserción en órbita lunar el 2007-10-03, el orbitador se estabilizó el 2007-10-18 (hora de Japón) en una órbita polar circular a 100 km. Allí su cámara de terreno, su generador de imágenes multibanda, su perfilador espectral, sus espectrómetros de rayos X y gamma, su altímetro láser y su sonda de radar cartografiaron la forma, la composición, la gravedad y el magnetismo de la Luna, mientras su cámara de alta definición filmaba la Tierra saliendo sobre el horizonte. El 2009-02-01 el orbitador fue descendido a unos 50 km y, el 2009-06-10, se le ordenó un impacto controlado cerca del cráter Gill.",
   "events": [
     {
       "met": 0,
@@ -34,7 +34,7 @@
     {
       "met": 35,
       "label": "ÓRBITA DE 100 KM",
-      "note": "Órbita polar circular a 100 km alcanzada el 2007-10-19; comienza la fase científica principal.",
+      "note": "Órbita polar circular a 100 km alcanzada el 2007-10-18 (hora de Japón); comienza la fase científica principal.",
       "type": "nominal"
     },
     {
@@ -50,5 +50,22 @@
       "type": "nominal"
     }
   ],
-  "vehicle_stage": "segunda etapa del H-IIA"
+  "vehicle_stage": "segunda etapa del H-IIA",
+  "flight_events": [
+    {
+      "met": 0.78,
+      "label": "Corrección de órbita ΔVc1",
+      "description": "15/09/2007 (JST). Corrige el error de inyección del lanzamiento con el motor de 500 N; después la órbita es de 232.782 x 956 km."
+    },
+    {
+      "met": 5.5,
+      "label": "Ajuste de periodo ΔVp1",
+      "description": "Antes del 19/09/2007 (JST). Alarga la órbita a 377.809 x 1.039 km, un periodo de casi diez días, sincronizado con la Luna."
+    },
+    {
+      "met": 15.6,
+      "label": "Ajuste de periodo ΔVp2",
+      "description": "Antes del 30/09/2007 (JST). Un retoque a 378.132 x 2.243 km antes de la inserción en órbita lunar."
+    }
+  ]
 }

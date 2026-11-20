@@ -151,8 +151,8 @@
     margin: 0 0 16px;
   }
   code {
-    color: #5eead4;
-    background: rgba(94, 234, 212, 0.1);
+    color: #889fe7;
+    background: rgba(136, 159, 231, 0.1);
     padding: 1px 5px;
     border-radius: 3px;
   }
@@ -202,15 +202,15 @@
     letter-spacing: 0.5px;
   }
   .controls button.active {
-    background: rgba(94, 234, 212, 0.18);
-    border-color: #5eead4;
-    color: #5eead4;
+    background: rgba(136, 159, 231, 0.18);
+    border-color: #889fe7;
+    color: #889fe7;
   }
   .controls input {
     flex: 1;
     min-width: 200px;
     background: rgba(0, 0, 0, 0.5);
-    border: 1px solid rgba(94, 234, 212, 0.3);
+    border: 1px solid rgba(136, 159, 231, 0.3);
     color: #dde6f5;
     padding: 4px 8px;
     border-radius: 5px;

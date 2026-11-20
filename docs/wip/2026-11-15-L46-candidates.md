@@ -2,7 +2,7 @@
 
 **Status (2026-11-15):** phase 1: candidates found and staged. **Phase 2 done the same day** on the operator's approval (deep sky 94 of 99, outer 32 new files + the Fornax dwarf reusing its shipped image, stars 53 of 56; the dropped ones are listed in UXD-025 T5). Each Commons file's page was re-read (licence and author matched phase 1 for all 126); the DSS licence was confirmed on `archive.stsci.edu/dss/copyright.html` (CC BY-NC-SA 4.0); the near-duplicate pairs were looked at side by side and are different pictures (dark-field hash collisions), except the Fornax dwarf, which reuses the shipped file. Dedup, provenance and manifest steps ran through the repo's tools where one exists (`build-display-ladder.mjs --only`, `regenerate-tier3-variants.mjs --slots`, `build-credit-thumbs.mjs --paths`, `build-entity-thumbs.ts`, `build-universe-deep-sky.ts`, `build-offline-manifest.mjs`); there is no tool for a deep-sky gallery row, the provenance rows of a Commons row outside the galleries, the star `photo` overlays or the alt text of a batch, nor for a surgical pHash insert (`compute-phash.ts` refuses with un-pulled masters), so those were written by one-off scripts that stay in the session scratchpad.
 
-Brief: [L45 brief](2026-11-13-L45-thumbnail-scan-brief.md) §4.2 and decision 3. Row: L46 in [the plan](2026-11-11-ux-feedback-plan.md).
+Brief: [L45 brief](2026-11-13-L45-thumbnail-scan-brief.md) §4.2 and decision 3. Row: L46 in [the plan](https://github.com/chipi/orrery/blob/v0.9.9/docs/wip/2026-11-11-ux-feedback-plan.md).
 
 ## What is missing (measured from the data files, not from the brief)
 

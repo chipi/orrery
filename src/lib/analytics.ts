@@ -87,6 +87,7 @@
 import { env as publicEnv } from '$env/dynamic/public';
 import { dev } from '$app/environment';
 import { analyticsSuppressed } from './analytics-optout';
+import { isLikelyBot } from './bot-ua';
 
 // Dev rung of the env ladder (mirrors sentry.ts). In `vite dev`, with no deploy-injected
 // PUBLIC_UMAMI_* override, analytics go to the "Orrery (dev)" Umami site (created
@@ -229,17 +230,7 @@ const PASSIVE_EVENTS: ReadonlySet<EventName> = new Set<EventName>([
   'data-load-failed',
 ]);
 
-/** JS-rendering crawlers that would otherwise count as visitors. 2026-10-19: a
- *  "Mac Chrome" with an impossible user agent (Safari's AppleWebKit/605.1.15 next to
- *  a Chrome version) walked /science around the clock, ~40% of all sessions. */
-// `(?<!cu)`: Cubot is a phone brand, not a crawler.
-const BOT_UA =
-  /(?<!cu)bot\b|bot\/|crawler|spider|headlesschrome|AppleWebKit\/605\.1\.15.*Chrome\//i;
-export function isLikelyBot(): boolean {
-  if (typeof navigator === 'undefined') return false;
-  if ((navigator as Navigator & { webdriver?: boolean }).webdriver) return true;
-  return BOT_UA.test(navigator.userAgent ?? '');
-}
+export { isLikelyBot };
 
 /** Analytics fires when a host + website id resolve for the current rung — a deploy env
  *  override (prod) or the `vite dev` default — AND the user has not opted out

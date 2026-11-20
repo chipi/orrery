@@ -469,13 +469,23 @@
   function startThree() {
     if (!browser || !container) return;
 
-    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
-    if (!renderer.getContext()) {
-      renderer.dispose();
+    // No WebGL context (the constructor throws on some devices, prod ORRERY-PROD-24, or hands
+    // back none): the station shows its module list instead. The URL is left as it was: what
+    // this device can draw is not the visitor's choice, and a shared link must not carry it
+    // (the locale picker rewrites /iss to /de/iss, not /de/iss?view=list).
+    const made = (() => {
+      try {
+        return new THREE.WebGLRenderer({ antialias: true, alpha: false });
+      } catch {
+        return null;
+      }
+    })();
+    if (!made?.getContext()) {
+      made?.dispose();
       viewMode = 'list';
-      syncUrl({ view: 'list' });
       return;
     }
+    const renderer = made;
 
     stopThree();
 

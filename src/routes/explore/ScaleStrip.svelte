@@ -277,11 +277,10 @@
   :global(html[data-touch]) .scale-strip:not(.no-dock) {
     bottom: 112px;
   }
-  /* Touch landscape at the solar system: the time dock sits bottom-left and the drawer's tab row
-     (8 px up, 34 px tall) bottom-right, under the strip; the strip sits 8 px above the tabs. */
-  @media (orientation: landscape) and (max-height: 500px) {
-    :global(html[data-touch]) .scale-strip:not(.no-dock) {
-      bottom: 50px;
-    }
+  /* Touch landscape at the solar system (phone and iPad, plan D14): the time dock sits bottom-left
+     and the drawer's tab row (8 px up, 34 px tall) bottom-right, under the strip; the strip sits
+     8 px above the tabs instead of floating at the portrait height. */
+  :global(html[data-touch][data-orientation='landscape']) .scale-strip:not(.no-dock) {
+    bottom: 50px;
   }
 </style>

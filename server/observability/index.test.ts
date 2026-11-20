@@ -78,6 +78,12 @@ const base = (over: Partial<ObsConfig> = {}): ObsConfig => ({
 });
 
 const settle = () => new Promise((r) => setTimeout(r, 30));
+/** Wait for an async side effect (an HTTP round-trip to a local sink) instead of a fixed sleep:
+ *  under a loaded machine (the pre-push build and suite at once) 30 ms was not enough. */
+async function until(cond: () => boolean, ms = 2000): Promise<void> {
+  const end = Date.now() + ms;
+  while (!cond() && Date.now() < end) await new Promise((r) => setTimeout(r, 10));
+}
 
 afterEach(async () => {
   await shutdownObservability();
@@ -98,8 +104,20 @@ describe('obsConfigFromEnv', () => {
     });
     expect(DEV_SERVER_TARGETS.sentryDsn).toMatch(/\/30$/); // orrery-dev, never prod (18)
     expect(DEV_SERVER_TARGETS.logsPushUrl).toMatch(
-      /_stream_fields=app,service,environment,instance/,
+      /_stream_fields=app,service,environment,instance,worktree/,
     );
+  });
+
+  it('dev carries the checkout branch (ORRERY_WORKTREE); other tiers never do', () => {
+    expect(obsConfigFromEnv('orrery-mcp', { ORRERY_WORKTREE: 'fix/x' }).worktree).toBe('fix/x');
+    expect(obsConfigFromEnv('orrery-mcp', { ORRERY_WORKTREE: '  ' }).worktree).toBeUndefined();
+    for (const env of [
+      { ORRERY_ENVIRONMENT: 'prod', ORRERY_WORKTREE: 'fix/x' },
+      { ORRERY_ENVIRONMENT: 'staging', ORRERY_WORKTREE: 'fix/x' },
+      { NODE_ENV: 'test', ORRERY_WORKTREE: 'fix/x' },
+    ]) {
+      expect(obsConfigFromEnv('orrery-lab-api', env).worktree).toBeUndefined();
+    }
   });
 
   it('prod fails closed: no target in code, so nothing is sent', () => {
@@ -367,11 +385,12 @@ describe('Umami server events', () => {
   });
 
   it("logs a dropped event once (Umami's bot-filter answer is 200 beep-boop)", async () => {
+    let answered = 0;
     const umami = createServer((req, res) => {
       req.resume();
       req.on('end', () => {
         res.writeHead(200, { 'content-type': 'application/json' });
-        res.end('{"beep":"boop"}');
+        res.end('{"beep":"boop"}', () => answered++);
       });
     });
     await new Promise<void>((r) => umami.listen(0, '127.0.0.1', r));
@@ -386,7 +405,8 @@ describe('Umami server events', () => {
     );
     recordToolCall('hohmann', 'ok');
     recordToolCall('hohmann', 'ok');
-    await settle();
+    await until(() => lines.length > 0 && answered === 2);
+    await settle(); // both drops answered; the second must add no line
     expect(lines).toEqual([
       '[orrery-mcp] umami event not stored (HTTP 200 {"beep":"boop"}); later drops not logged',
     ]);

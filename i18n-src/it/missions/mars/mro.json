@@ -1,10 +1,10 @@
 {
   "name": "Mars Reconnaissance Orbiter",
   "vehicle": "Atlas V 401",
-  "payload": "2180 kg con propellente (1031 kg operativo)",
+  "payload": "2180 kg con propellente (1031 kg a secco)",
   "delta_v": "~3,6 km/s (stima)",
   "type": "ORBITER · ATTIVA",
-  "first": "Un orbiter marziano la cui fotocamera HiRISE può individuare oggetti grandi quanto un tavolo da pranzo",
+  "first": "Un orbiter marziano la cui fotocamera HiRISE può individuare oggetti grandi quanto un tavolo da cucina",
   "description": "Il Mars Reconnaissance Orbiter è stato lanciato il 2005-08-12 su un Atlas V 401 ed è arrivato su Marte il 2006-03-10, quando un'accensione di 1641 secondi lo ha messo in un'orbita polare di cattura di 400 × 35.000 km. Circa sei mesi di aerofrenaggio lo hanno abbassato alla sua orbita di lavoro di 255 × 320 km, eliosincrona e polare. La scienza è iniziata a novembre 2006, dopo la congiunzione solare. Porta sei strumenti, tra cui la fotocamera HiRISE, lo spettrometro CRISM, il radar SHARAD e la Context Camera. La NASA lo ha costruito per cercare prove che l'acqua sia persistita a lungo sulla superficie: ha trovato depositi minerali formati in acqua, possibili antiche linee di costa e depositi stratificati. Funge anche da ripetitore per altre missioni su Marte ed è ancora operativo.",
   "events": [
     {

@@ -321,7 +321,7 @@
   }
 
   // ─── Mobile nav drawer ─────────────────────────────────────────
-  // On viewports ≤1219px (see the media rule) the inline .center row can't fit
+  // On viewports ≤1023px (see the media rule) the inline .center row can't fit
   // all 12 nav links and the locale-picker + 2 toggles next to it,
   // so a hamburger toggle exposes the full list as a vertical drawer.
   let mobileMenuOpen = $state(false);
@@ -1376,11 +1376,11 @@
      wants the touch menu, and its inline strip was a cramped horizontal
      scroller). Keyed on capability, not width, so the footer-in-drawer section
      reaches every touch size (0.7.2 model).
-     Width: the inline bar needed 1210 px in the widest locale (ru; fr / es 1165,
-     en 1038 — measured 2026-11-04 with the old 392 px, seven-control cluster). The
-     compact cluster is ~200 px narrower; the break stays at 1219 until the 14-locale
-     measurement (tests/e2e/nav-controls.spec.ts) says where it can move (UXD-016). */
-  @media (max-width: 1219px), (pointer: coarse) {
+     Width: with the compact cluster the full bar needs 984 px in the widest locale
+     (ru; fr / es 939, en-US 811; measured 2026-11-18 in all 14 locales by
+     tests/e2e/nav-controls.spec.ts, which now fails if a locale passes 1000 px), so
+     the bar stays inline from 1024 px (UXD-016, plan D2). */
+  @media (max-width: 1023px), (pointer: coarse) {
     .center {
       display: none;
     }

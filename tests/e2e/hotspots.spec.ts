@@ -1,6 +1,7 @@
 import { test, expect, type Page } from '@playwright/test';
 import { isExpectedNoise } from './_helpers/console-errors';
 import { openDrawerTab } from './_helpers/hud-expand';
+import { waitForHydration } from './_helpers/hydration';
 
 /**
  * Surface Hotspots e2e (PRD-014 / RFC-017 §S8, sub-issue #116).
@@ -137,6 +138,8 @@ test.describe('Surface Hotspots — SURFACE chip cycles AUTO / HIGH / LOW / OFF'
   test('chip click cycles surface label without console errors', async ({ page, isMobile }) => {
     const errors = attachConsoleAndError(page);
     await page.goto('/moon');
+    // A click before hydration is dropped (the dev server hydrates seconds late).
+    await waitForHydration(page);
     // On mobile the SURFACE chip lives in the MobileDrawerGroup Layers tab.
     if (isMobile) await openDrawerTab(page, /layers/i);
     const chip = isMobile
@@ -148,9 +151,7 @@ test.describe('Surface Hotspots — SURFACE chip cycles AUTO / HIGH / LOW / OFF'
 
     if (isMobile) await chip.tap();
     else await chip.click();
-    await page.waitForTimeout(150);
-    const secondLabel = (await chip.textContent())?.trim();
-    expect(secondLabel).not.toBe(initialLabel);
+    await expect.poll(async () => (await chip.textContent())?.trim()).not.toBe(initialLabel);
 
     expect(errors).toEqual([]);
   });

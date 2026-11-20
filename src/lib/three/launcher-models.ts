@@ -68,7 +68,21 @@ export interface LauncherModel {
   lastCoreStage?: THREE.Group;
   /** The fourth stage's own mesh (Briz-M): its orbit-completing and departure burns fire here. */
   injectionPlumeAnchor?: THREE.Object3D;
+  /** Parts that fly home and land on their engines (Falcon 9's first stage, Falcon Heavy's
+   *  side boosters, New Glenn's GS1, Super Heavy): after separation they turn tail-down and
+   *  drop away upright instead of tumbling like spent stages. */
+  recovered?: { booster?: boolean; strapOns?: boolean };
 }
+
+/** The reusable vehicles whose boosters land (the usual flight; an expended flight still shows
+ *  them landing). Falcon Heavy's centre core is expended on most flights, so only its side
+ *  boosters land. */
+const RECOVERED: Record<string, LauncherModel['recovered']> = {
+  'falcon-9': { booster: true },
+  'falcon-heavy': { strapOns: true },
+  'new-glenn': { booster: true },
+  starship: { booster: true },
+};
 
 interface Palette {
   body: THREE.MeshStandardMaterial;
@@ -5148,5 +5162,6 @@ export function buildLauncherModel(
   // model a fixed cluster (e.g. Soyuz's 4).
   const model = build ? build(vehLen, boosterCount) : buildGeneric(vehLen, boosterCount);
   closeAxisGaps(model, vehLen, launcherId);
+  if (launcherId && RECOVERED[launcherId]) model.recovered = RECOVERED[launcherId];
   return model;
 }

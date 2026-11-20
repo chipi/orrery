@@ -24,7 +24,7 @@
   const DPR = 2;
   const MAP_H = 452; // trajectory region; filmstrip below
 
-  const TEAL_RGB = '78,205,196';
+  const TEAL_RGB = '136,159,231';
   const GOLD_RGB = '255,200,80';
 
   let canvas = $state<HTMLCanvasElement | null>(null);
@@ -47,7 +47,7 @@
   function background(ctx: CanvasRenderingContext2D): void {
     ctx.fillStyle = FIGURE_BG;
     ctx.fillRect(0, 0, W, H);
-    ctx.strokeStyle = 'rgba(78,205,196,0.06)'; // a3-keep: Lab figure art, palette review at the end
+    ctx.strokeStyle = 'rgba(136,159,231,0.06)'; // a3-keep: Lab figure art, palette review at the end
     ctx.lineWidth = 1;
     for (let x = 0; x <= W; x += 32) {
       ctx.beginPath();
@@ -86,7 +86,7 @@
 
   function body(ctx: CanvasRenderingContext2D, b: FlightBody): void {
     if (b.ring) {
-      ctx.strokeStyle = 'rgba(78,205,196,0.32)'; // a3-keep: Lab figure art, palette review at the end
+      ctx.strokeStyle = 'rgba(136,159,231,0.32)'; // a3-keep: Lab figure art, palette review at the end
       ctx.lineWidth = 1;
       ctx.setLineDash([4, 4]);
       ctx.beginPath();
@@ -96,7 +96,7 @@
     }
     glow(ctx, b.x, b.y, b.r * 2.4, TEAL_RGB, 0.28);
     const g = ctx.createRadialGradient(b.x - b.r * 0.4, b.y - b.r * 0.4, b.r * 0.1, b.x, b.y, b.r);
-    g.addColorStop(0, 'rgba(120,215,235,0.9)'); // a3-keep: Lab figure art, palette review at the end
+    g.addColorStop(0, 'rgba(136,159,231,0.9)'); // a3-keep: Lab figure art, palette review at the end
     g.addColorStop(1, 'rgba(40,90,120,0.65)'); // a3-keep: Lab figure art, palette review at the end
     ctx.fillStyle = g;
     ctx.beginPath();
@@ -394,7 +394,7 @@
     ctx: CanvasRenderingContext2D,
     o: { cx: number; cy: number; r: number; label?: string },
   ): void {
-    ctx.strokeStyle = 'rgba(78,205,196,0.14)'; // a3-keep: Lab figure art, palette review at the end
+    ctx.strokeStyle = 'rgba(136,159,231,0.14)'; // a3-keep: Lab figure art, palette review at the end
     ctx.lineWidth = 1;
     ctx.setLineDash([2, 5]);
     ctx.beginPath();
@@ -402,7 +402,7 @@
     ctx.stroke();
     ctx.setLineDash([]);
     if (o.label) {
-      ctx.fillStyle = 'rgba(78,205,196,0.4)'; // a3-keep: Lab figure art, palette review at the end
+      ctx.fillStyle = 'rgba(136,159,231,0.4)'; // a3-keep: Lab figure art, palette review at the end
       ctx.font = "7px 'Space Mono', monospace";
       ctx.textAlign = 'left';
       ctx.fillText(o.label.toUpperCase(), o.cx + 3, o.cy - o.r + 9);
@@ -414,8 +414,8 @@
     const atmoPx = l.atmoPx ?? 90;
     // atmosphere band above the surface
     const atmo = ctx.createLinearGradient(0, topY - atmoPx, 0, topY);
-    atmo.addColorStop(0, 'rgba(78,205,196,0)'); // a3-keep: Lab figure art, palette review at the end
-    atmo.addColorStop(1, 'rgba(78,205,196,0.16)'); // a3-keep: Lab figure art, palette review at the end
+    atmo.addColorStop(0, 'rgba(136,159,231,0)'); // a3-keep: Lab figure art, palette review at the end
+    atmo.addColorStop(1, 'rgba(136,159,231,0.16)'); // a3-keep: Lab figure art, palette review at the end
     ctx.save();
     ctx.beginPath();
     ctx.arc(l.cx, l.cy, l.r + atmoPx, Math.PI, 2 * Math.PI);
@@ -425,21 +425,21 @@
     ctx.fill();
     ctx.restore();
     if (l.atmoKm) {
-      ctx.strokeStyle = 'rgba(78,205,196,0.28)'; // a3-keep: Lab figure art, palette review at the end
+      ctx.strokeStyle = 'rgba(136,159,231,0.28)'; // a3-keep: Lab figure art, palette review at the end
       ctx.setLineDash([3, 4]);
       ctx.lineWidth = 1;
       ctx.beginPath();
       ctx.arc(l.cx, l.cy, l.r + atmoPx, Math.PI, 2 * Math.PI);
       ctx.stroke();
       ctx.setLineDash([]);
-      ctx.fillStyle = 'rgba(78,205,196,0.5)'; // a3-keep: Lab figure art, palette review at the end
+      ctx.fillStyle = 'rgba(136,159,231,0.5)'; // a3-keep: Lab figure art, palette review at the end
       ctx.font = "7px 'Space Mono', monospace";
       ctx.textAlign = 'right';
       ctx.fillText(`— ${l.atmoKm} km (Kármán)`, W - 20, topY - atmoPx + 3);
     }
     // solid body below the surface
     const g = ctx.createLinearGradient(0, topY, 0, topY + 120);
-    g.addColorStop(0, 'rgba(90,180,210,0.85)'); // a3-keep: Lab figure art, palette review at the end
+    g.addColorStop(0, 'rgba(136,159,231,0.85)'); // a3-keep: Lab figure art, palette review at the end
     g.addColorStop(1, 'rgba(30,70,100,0.9)');
     ctx.fillStyle = g;
     ctx.beginPath();
@@ -544,7 +544,7 @@
 
     // Honesty line (very bottom).
     ctx.textAlign = 'left';
-    ctx.fillStyle = 'rgba(78,205,196,0.55)'; // a3-keep: Lab figure art, palette review at the end
+    ctx.fillStyle = 'rgba(136,159,231,0.55)'; // a3-keep: Lab figure art, palette review at the end
     ctx.font = "7px 'Space Mono', monospace";
     ctx.fillText(flight.honesty, 22, H - 8);
   }

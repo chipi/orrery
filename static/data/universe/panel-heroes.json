@@ -45,6 +45,11 @@
     "cosmic-web/shapley-concentration": { "photoKey": "shapley-concentration", "pictured": true },
     "black-holes/sagittarius-a-star": { "src": "/images/black-holes/sagittarius-a-star/01.webp" },
     "black-holes/m87-star": { "src": "/images/science/black-holes-m87.webp" },
-    "black-holes/cygnus-x-1": { "photoKey": "cygnus-x-1" }
+    "black-holes/cygnus-x-1": { "photoKey": "cygnus-x-1" },
+    "local-group/leo-ii": { "photoKey": "leo-ii" },
+    "cosmic-web/horologium-reticulum": { "photoKey": "horologium-reticulum", "pictured": true },
+    "virgo/virgo-ii-groups": { "photoKey": "virgo-ii-groups", "pictured": true },
+    "laniakea/ophiuchus-supercluster": { "photoKey": "ophiuchus-supercluster", "pictured": true },
+    "laniakea/fornax-eridanus": { "photoKey": "fornax-eridanus", "pictured": true }
   }
 }

@@ -45,22 +45,49 @@ export function injectionSepT(ascentDurationS: number): number {
 }
 
 /**
- * When the spacecraft leaves the launcher, if not at SECO (undefined = at SECO, or no
- * injection beat). With a launcher injection it rides the stage through the burn and leaves
- * at its end; with its own kick stage (Shuttle + IUS) it is deployed midway through the
- * parking coast and the kick stage fires after; when the stage fires first and then the
- * kick stage (Delta II + Star 48B), they share the burn and part halfway through it.
+ * When the spacecraft leaves the launcher, if not at SECO (undefined = at SECO). With a launcher
+ * injection it rides the stage through the burn and leaves at its end; with its own kick stage
+ * (Shuttle + IUS) it is deployed midway through the parking coast and the kick stage fires after;
+ * when the stage fires first and then the kick stage (Delta II + Star 48B), they share the burn
+ * and part halfway through it. With no injection beat it leaves `separationDelayS` after SECO,
+ * the vehicle's published delay (LaunchProfile.payloadSeparationDelayS, backlog F1). The
+ * injection beat is cinematic time (its parking coast stands for hours), so the real delay is
+ * not added there.
  */
 export function payloadSepTFor(
   ascentDurationS: number,
   injection: { kickStage?: boolean; stageFiresFirst?: boolean } | null | undefined,
+  separationDelayS = 0,
 ): number | undefined {
-  if (!injection) return undefined;
+  if (!injection) return separationDelayS > 0 ? ascentDurationS + separationDelayS : undefined;
   const burnStart = ascentDurationS + INJECTION_COAST_S;
   if (injection.kickStage && injection.stageFiresFirst) return burnStart + INJECTION_BURN_S / 2;
   return injection.kickStage
     ? ascentDurationS + INJECTION_COAST_S * 0.5
     : injectionSepT(ascentDurationS);
+}
+
+/** Mission time (s) the launch act ends: the end of the injection beat, else spacecraft
+ *  separation (SECO when the vehicle has no published delay). */
+export function launchActEndS(
+  ascentDurationS: number,
+  injection: unknown,
+  separationDelayS = 0,
+): number {
+  return injection
+    ? ascentDurationS + INJECTION_BEAT_S
+    : ascentDurationS + Math.max(0, separationDelayS);
+}
+
+/** The status line between SECO and a delayed separation on a flight with no injection beat:
+ *  null before SECO (the caller falls back to `ascentStatus`), COAST, then SPACECRAFT SEP. */
+export function separationCoastStatus(
+  t: number,
+  ascentDurationS: number,
+  payloadSepT: number | undefined,
+): string | null {
+  if (payloadSepT === undefined || t < ascentDurationS) return null;
+  return t < payloadSepT ? 'COAST' : 'SPACECRAFT SEP';
 }
 
 /**
@@ -87,6 +114,8 @@ export const BEAT_LABEL: Record<string, string> = {
   fairing_jettison: 'FAIRING',
   seco: 'SECO',
   orbit: 'ORBIT',
+  // The Shuttle's direct-insertion circularising burn (the only vehicle that flies one).
+  insertion_burn: 'OMS-2',
 };
 
 /** A labelled beat on the ascent timeline strip. */
@@ -130,10 +159,24 @@ export function ascentStatus(t: number, beats: AscentBeat[], ignitionT = IGNITIO
   return STATE_LABELS.has(last.label) || t - last.t <= EVENT_LABEL_HOLD_S ? last.label : 'ASCENT';
 }
 
+/** The status line on a direct insertion's coast to apogee: COAST from when the tank
+ *  separation's label has had its beat until the circularising burn lights, else null (the
+ *  caller falls back to `ascentStatus`, which then holds OMS-2 until ORBIT). */
+export function directInsertionCoastStatus(
+  t: number,
+  events: ReadonlyArray<{ type: string; t: number }>,
+): string | null {
+  const burn = events.find((e) => e.type === 'insertion_burn');
+  if (!burn) return null;
+  const sep = events.filter((e) => e.type === 'staging' && e.t < burn.t).at(-1);
+  if (!sep) return null;
+  return t >= sep.t + EVENT_LABEL_HOLD_S && t < burn.t ? 'COAST' : null;
+}
+
 /** Seconds an event label stays up after its beat. */
 export const EVENT_LABEL_HOLD_S = 20;
 /** Beat labels that describe a lasting state rather than a moment. */
-const STATE_LABELS = new Set(['MECO', 'SECO', 'ORBIT']);
+const STATE_LABELS = new Set(['MECO', 'SECO', 'ORBIT', 'OMS-2']);
 
 /** Whole seconds remaining in the countdown, or null once t ≥ 0. */
 export function countdownSeconds(t: number): number | null {

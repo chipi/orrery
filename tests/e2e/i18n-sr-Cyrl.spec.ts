@@ -4,7 +4,7 @@ import { clickNavLink, localeChip } from './_helpers/nav';
 test.describe('/sr-Cyrl/ URL smoke', () => {
   test('locale chip and nav persistence work for Serbian Cyrillic', async ({ page }) => {
     const chip = localeChip(page);
-    await page.goto('/sr-Cyrl/explore', { waitUntil: 'networkidle' });
+    await page.goto('/sr-Cyrl/library', { waitUntil: 'networkidle' });
     await expect(chip).toContainText('СР');
 
     await clickNavLink(page, '/missions');

@@ -71,7 +71,7 @@
     margin: 0;
   }
   header code {
-    color: #5eead4;
+    color: #889fe7;
   }
   .grid {
     display: grid;
@@ -83,7 +83,7 @@
   .card {
     margin: 0;
     background: rgba(12, 16, 28, 0.6);
-    border: 1px solid rgba(94, 234, 212, 0.18);
+    border: 1px solid rgba(136, 159, 231, 0.18);
     border-radius: 6px;
     overflow: hidden;
   }
@@ -94,8 +94,8 @@
     gap: 18px;
     padding: 24px 18px;
     min-height: 96px;
-    color: #cfe9e4;
-    background: radial-gradient(circle at 50% 38%, rgba(94, 234, 212, 0.08), transparent 70%);
+    color: #889fe7;
+    background: radial-gradient(circle at 50% 38%, rgba(136, 159, 231, 0.08), transparent 70%);
   }
   .variant {
     display: inline-flex;

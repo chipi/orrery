@@ -58,10 +58,10 @@ test.describe('/explore — per-shell science lens (WS-3)', () => {
     // The story (C8, UXD-027) moved to the card that hangs under the level picker: always there,
     // lens on or off, with its /science sections. A shell with no layers has no lens panel.
     const card = page.getByTestId('explore-level-card');
-    await expect(card).toContainText(/Andromeda/i);
-    // A touch screen folds the card; open it to see its links.
+    // A touch screen folds the card; its fold chip sits beside the picker (plan D15).
     const fold = page.getByTestId('explore-level-card-toggle');
     if ((await fold.getAttribute('aria-expanded')) !== 'true') await fold.click();
+    await expect(card).toContainText(/Andromeda/i);
     await expect(card.locator('a[href$="/science/observation/local-group"]')).toBeVisible();
     await expect(page.locator('[data-testid="science-lens-panel"]')).toHaveCount(0);
   });
@@ -69,7 +69,10 @@ test.describe('/explore — per-shell science lens (WS-3)', () => {
   test('a shell with no overlays yet has a card and no lens panel', async ({ page }) => {
     await gotoShell(page, 'local-sheet');
     await page.evaluate(() => document.documentElement.setAttribute('data-science-lens', 'on'));
-    await expect(page.getByTestId('explore-level-card')).toContainText(/Local Sheet/i);
+    await expect(page.getByTestId('explore-level-card')).toHaveAttribute(
+      'aria-label',
+      /Local Sheet/i,
+    );
     await expect(page.locator('[data-testid="science-lens-panel"]')).toHaveCount(0);
   });
 

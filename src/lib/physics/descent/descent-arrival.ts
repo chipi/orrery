@@ -55,7 +55,9 @@ export interface DerivedArrival {
   entry_velocity_km_s: number;
   edl_system: EDLSystemKind;
   edl_duration_s: number;
-  touchdown_velocity_ms: number;
+  /** Absent when the descent's record ends above the ground (`recordEndsAltM`): there is no
+   *  recorded touchdown to give a speed for. */
+  touchdown_velocity_ms?: number;
 }
 
 /** The arrival fields a profile implies, rounded as the mission JSON stores them. */
@@ -65,6 +67,7 @@ export function deriveArrival(raw: RawDescentProfile): DerivedArrival {
     entry_velocity_km_s: Number((raw.entryState.velocityMs / 1000).toFixed(3)),
     edl_system: EDL_SYSTEM[raw.archetype],
     edl_duration_s: Math.round(summary.totalDurationS),
-    touchdown_velocity_ms: Number(summary.touchdownVelocityMs.toFixed(2)),
+    touchdown_velocity_ms:
+      raw.recordEndsAltM != null ? undefined : Number(summary.touchdownVelocityMs.toFixed(2)),
   };
 }

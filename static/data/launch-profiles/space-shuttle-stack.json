@@ -2,7 +2,7 @@
   "id": "space-shuttle-stack",
   "name": "Space Shuttle",
   "source_tier": "flagship",
-  "liftoffThrustKN": 29250,
+  "liftoffThrustKN": 30160,
   "payloadKg": 19000,
   "fairingKg": 0,
   "fairingJettisonAltM": 320000,
@@ -15,12 +15,30 @@
     "name": "LC-39 · Kennedy Space Center"
   },
   "pitchProgram": [
-    [0, 90],
-    [12, 89],
-    [45, 80],
-    [140, 64],
-    [320, 48],
-    [500, 34]
+    [
+      0,
+      90
+    ],
+    [
+      12,
+      89
+    ],
+    [
+      45,
+      80
+    ],
+    [
+      140,
+      64
+    ],
+    [
+      320,
+      48
+    ],
+    [
+      500,
+      34
+    ]
   ],
   "boosters": {
     "name": "SRB",
@@ -31,20 +49,25 @@
     "thrustVacKN": 10660,
     "ispSlS": 242,
     "ispVacS": 268,
-    "chamberTempK": 3500
+    "chamberTempK": 3500,
+    "impulseGates": [{ "t": 20, "fraction": 0.222 }, { "t": 60, "fraction": 0.5919 }, { "t": 120.55, "fraction": 1 }],
+    "separationDelayS": 2.85
   },
   "stages": [
     {
       "name": "SSME + ET",
       "wetKg": 751000,
       "dryKg": 26500,
-      "thrustSlKN": 5250,
+      "thrustSlKN": 5010,
       "thrustVacKN": 6270,
       "ispSlS": 366,
       "ispVacS": 452,
       "engines": 3,
       "separationDelayS": 18,
-      "chamberTempK": 3600
+      "chamberTempK": 3600,
+      "throttle": [{ "t": 3.8, "level": 1.04 }, { "t": 27.3, "level": 0.67 }, { "t": 60.4, "level": 1.04 }],
+      "maxAccelG": 3,
+      "minThrottle": 0.67
     },
     {
       "name": "Orbiter",
@@ -62,12 +85,37 @@
       "u": "https://www.nasa.gov/space-shuttle/"
     },
     {
-      "l": "Space Shuttle Solid Rocket Booster — 123 s burn, 500 t propellant, Isp 242 s SL / 268 s vac, SRB sep ~45 km (modelled at burn-average thrust: constant 4,057 kg/s so burnout lands at 123 s; the ~12 MN liftoff peak is liftoffThrustKN)",
+      "l": "Space Shuttle Solid Rocket Booster — 123 s burn, 500 t propellant, Isp 242 s SL / 268 s vac, SRB sep ~45 km; the thrust-time curve is the STS-68 report's impulse gates (the model's integrated liftoff thrust is about 31.3 MN, 4 % over the published 30.16 MN, because the first gate segment averages the motor's 0-20 s thrust; the HUD's liftoff figure is liftoffThrustKN)",
       "u": "https://en.wikipedia.org/wiki/Space_Shuttle_Solid_Rocket_Booster"
     },
     {
       "l": "Space Shuttle — ET separated 18 s after MECO (MECO ~T+8:30; no SECO: the OMS burns come later)",
       "u": "https://en.wikipedia.org/wiki/Space_Shuttle"
+    },
+    {
+      "l": "NASA — STS-68 Space Shuttle Mission Report (NSTS-08294), Table I: SRB separation T+124 s, MECO 514 s, ET separation 534 s (20 s after MECO; STS-39: 17 s), max dynamic pressure T+51 s (STS-39: 67 s)",
+      "u": "https://ibiblio.org/apollo/Shuttle/Reports/Mission%20Reports/STS-68%20Space%20Shuttle%20Mission%20Report.pdf"
+    },
+    {
+      "l": "NASA — STS-68 Space Shuttle Mission Report, RSRM propulsion performance (p. 12), actual: impulse gates I-20 65.9, I-60 175.7, I-AT 296.9 million lbf-s per motor, action time 120.6 s, separation command 123.4 s; Table I: main engines 104 % at T+3.8 s, 67 % at 27.3 s, 104 % at 60.4 s, throttled for 3 g at 450.2 s",
+      "u": "https://ibiblio.org/apollo/Shuttle/Reports/Mission%20Reports/STS-68%20Space%20Shuttle%20Mission%20Report.pdf#page=14"
+    },
+    {
+      "l": "RS-25 — Wikipedia: 1,670 kN sea level / 2,090 kN vacuum at 100 % RPL (the 104.5 % figures are 1,750 / 2,170 kN), throttle range 67-109 %",
+      "u": "https://en.wikipedia.org/wiki/RS-25"
+    },
+    {
+      "l": "NASA — TD0358A Ascent Guidance and Flight Control Training Manual, Table 3-1 MECO targets: MECO at 360,000 ft; direct insertion 25,871 ft/s, 0.792 deg, 160 x 35 nmi; text: \"The inertial velocity is chosen to fall short of orbit insertion but close enough for the OMS to insert the orbiter into orbit. This keeps the ET out of orbit so its reentry can be controlled.\" The profile's target takes the table's 360,000 ft MECO altitude and STS-68's orbit, not the table's 160 x 35 nmi: the orbit at MECO (58 x 221 km) is derived from STS-68's OMS-2 (T+2110 s, 98 s, 160.1 ft/s = 48.8 m/s, to 119.7 x 119.4 nmi): the 221 km apogee less the OMS-2 Δv at apogee gives the 58 km perigee",
+      "u": "https://ibiblio.org/apollo/Shuttle/TD0358A%20-%20ASC%20G&C%202102%20-%20Ascent%20Guidance%20and%20Flight%20Control%20Training%20Manual.pdf"
+    },
+    {
+      "l": "ESA — Shuttle technical facts: 30.16 MN at liftoff (two SRBs 12.5 MN each, three main engines 1.752 MN at 104 %, 5.255 MN), the HUD's liftoff thrust",
+      "u": "https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/Space_Shuttle/Shuttle_technical_facts"
+    },
+    {
+      "l": "NASA — Space Shuttle Missions Summary (TM-2011-216142), p. 2-77, STS-68 as flown: MECO command 8:33.9, inertial velocity 25,775 ft/s (7,856 m/s; the model's MECO speed is 7,861 m/s), OMS-2 at 35:09.7 for 159 ft/s, 120 x 119 nmi after OMS-2",
+      "u": "https://historycollection.jsc.nasa.gov/JSCHistoryPortal/history/reference/TM-2011-216142.pdf"
     }
-  ]
+  ],
+  "mecoTarget": { "altM": 105000, "apogeeAltM": 221500, "perigeeAltM": 58000 }
 }

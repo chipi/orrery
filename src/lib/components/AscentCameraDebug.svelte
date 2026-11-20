@@ -39,7 +39,7 @@
   let { summary, schedule, vehLen, t, tuning = defaultTuning(), onJump }: Props = $props();
 
   const SHOT_COLORS: Record<AscentShotName, string> = {
-    pad: '#7fdfff',
+    pad: '#889fe7',
     tower_clear: '#9ff5c2',
     ascent: '#ffcf6a',
     onboard_down: '#ff8a4a',
@@ -47,7 +47,7 @@
     chase: '#a98bff',
     fairing: '#ffd36a',
     separation: '#c8ff5a',
-    orbit: '#5ac8ff',
+    orbit: '#889fe7',
   };
 
   const W = 384;
@@ -166,7 +166,7 @@
     ctx.fill();
     const horiz = Math.sqrt(Math.max(0, liveState.speedKms ** 2 - liveState.velUpKms ** 2));
     const spd = Math.hypot(horiz, liveState.velUpKms) || 1;
-    ctx.strokeStyle = '#7fe0ff';
+    ctx.strokeStyle = '#889fe7';
     ctx.lineWidth = 1.5;
     ctx.beginPath();
     ctx.moveTo(vX, vY);
@@ -350,7 +350,7 @@
   .dbg {
     width: 384px;
     background: rgba(4, 9, 20, 0.82);
-    border: 1px solid rgba(127, 223, 255, 0.25);
+    border: 1px solid rgba(136, 159, 231, 0.25);
     border-radius: 7px;
     padding: 10px;
     font-family: var(--font-mono, 'Space Mono', monospace);
@@ -362,7 +362,7 @@
     align-items: baseline;
     font-size: 11px;
     letter-spacing: 2px;
-    color: #7fdfff;
+    color: #889fe7;
     margin-bottom: 8px;
   }
   .dbg-head span {
@@ -408,7 +408,7 @@
   }
   .tune input[type='range'] {
     width: 100%;
-    accent-color: #5ac8ff;
+    accent-color: #889fe7;
   }
   .tune label i {
     font-style: normal;
@@ -420,7 +420,7 @@
     font-size: var(--size-label);
     color: #cfe3f5;
     background: transparent;
-    border: 1px solid rgba(127, 223, 255, 0.4);
+    border: 1px solid rgba(136, 159, 231, 0.4);
     border-radius: 3px;
     padding: 1px 5px;
     cursor: pointer;

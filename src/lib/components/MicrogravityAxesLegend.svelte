@@ -139,7 +139,7 @@
   }
   /* a3-keep: data colour, matches the zenith/nadir axes (microgravity-axes.ts), palette review at the end */
   .swatch-zenith {
-    background: #4ecdc4;
+    background: #889fe7;
   }
   .swatch-red {
     background: #ff6b6b;

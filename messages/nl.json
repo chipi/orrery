@@ -1123,6 +1123,8 @@
   "fly_hud_trajectory": "TRAJECT",
   "fly_traj_type_cislunar": "Cislunaire transfer",
   "fly_traj_type_cislunar_free_return": "Cislunaire vrije terugkeer",
+  "fly_traj_type_earth_orbit": "Aardbaan",
+  "fly_traj_type_suborbital": "Suborbitale vlucht",
   "fly_traj_type_helio_hohmann": "Heliocentrische Hohmann-transfer",
   "fly_traj_type_helio_free_return": "Heliocentrische vrije terugkeer",
   "fly_traj_type_helio_flyby": "Heliocentrische scheervlucht",
@@ -3737,5 +3739,6 @@
   "programs_filter_kind": "SOORT",
   "programs_empty": "Geen programma's komen overeen met de huidige filters.",
   "launches_search_placeholder": "Lanceringen zoeken…",
-  "launches_sort_soonest": "Eerstvolgende eerst"
+  "launches_sort_soonest": "Eerstvolgende eerst",
+  "hud_data_ends": "EINDE GEGEVENS"
 }

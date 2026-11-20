@@ -1149,5 +1149,53 @@
     "subject": "عنقود مجرات",
     "type": "عنقود مجرات",
     "distance": "~330 مليون سنة ضوئية"
+  },
+  "m18": {
+    "title": "M18 · NGC 6613",
+    "subject": "عنقود نجمي",
+    "type": "عنقود نجمي",
+    "distance": "~4,900 سنة ضوئية"
+  },
+  "m36": {
+    "title": "M36 · NGC 1960",
+    "subject": "عنقود نجمي",
+    "type": "عنقود نجمي",
+    "distance": "~3,670 سنة ضوئية"
+  },
+  "m62": {
+    "title": "M62 · NGC 6266",
+    "subject": "عنقود كروي",
+    "type": "عنقود كروي",
+    "distance": "~20,000 سنة ضوئية"
+  },
+  "leo-ii": {
+    "title": "قزمة الأسد الثانية",
+    "subject": "مجرة",
+    "type": "مجرة قزمة شبه كروية",
+    "distance": "~760,000 سنة ضوئية"
+  },
+  "horologium-reticulum": {
+    "title": "Abell 3266",
+    "subject": "عنقود مجرات",
+    "type": "عنقود مجرات",
+    "distance": ""
+  },
+  "virgo-ii-groups": {
+    "title": "NGC 4753",
+    "subject": "مجرة",
+    "type": "مجرة",
+    "distance": ""
+  },
+  "ophiuchus-supercluster": {
+    "title": "عنقود الحواء المجري",
+    "subject": "عنقود مجرات",
+    "type": "عنقود مجرات",
+    "distance": ""
+  },
+  "fornax-eridanus": {
+    "title": "عنقود الكير",
+    "subject": "عنقود مجرات",
+    "type": "عنقود مجرات",
+    "distance": ""
   }
 }

@@ -3,6 +3,7 @@
   "name": "Long March 3B/E",
   "source_tier": "flagship",
   "payloadKg": 3780,
+  "liftoffThrustKN": 5923.2,
   "fairingKg": 1500,
   "fairingJettisonAltM": 115000,
   "refAreaM2": 16,
@@ -14,8 +15,8 @@
     "count": 4,
     "wetKg": 44300,
     "dryKg": 3200,
-    "thrustSlKN": 740.4,
-    "thrustVacKN": 814,
+    "thrustSlKN": 820.9,
+    "thrustVacKN": 902.5,
     "ispSlS": 261,
     "ispVacS": 289,
     "chamberTempK": 3300
@@ -25,8 +26,8 @@
       "name": "Core stage 1",
       "wetKg": 198800,
       "dryKg": 12600,
-      "thrustSlKN": 2961.6,
-      "thrustVacKN": 3256,
+      "thrustSlKN": 3276.6,
+      "thrustVacKN": 3602.3,
       "ispSlS": 261,
       "ispVacS": 289,
       "engines": 4,
@@ -68,5 +69,6 @@
       "l": "Dry masses derived: published liftoff mass minus sourced propellant, split to match the Long March 2F core/boosters of the same family",
       "u": "https://en.wikipedia.org/wiki/Long_March_2F"
     }
-  ]
+  ],
+  "fairingJettisonS": 215.2
 }

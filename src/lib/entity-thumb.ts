@@ -33,6 +33,12 @@ export function resolveThumb(
 export const thumbOf = (surface: string, id: string): string | null =>
   resolveThumb(manifestJson as EntityThumbManifest, surface, id);
 
+/** The thumb of a linked mission-visit row (a body panel's MISSIONS tab, plan D10): the mission's
+ *  or the fleet entry's photo, or null (the dot) for a name that links nowhere. */
+export const missionTargetThumb = (
+  t: { kind?: 'mission' | 'fleet'; id?: string } | null | undefined,
+): string | null => (t?.id ? thumbOf(t.kind === 'fleet' ? 'fleet' : 'missions', t.id) : null);
+
 /**
  * The thumb of a site of a Worlds' INDEX (`moon`, `mars`, `venus`, `earth-objects`): the blessed
  * slot of the folder the site's panel gallery resolves to (own folder, else its mission, else the

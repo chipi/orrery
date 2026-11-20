@@ -1,10 +1,10 @@
 {
   "name": "Mars Reconnaissance Orbiter",
   "vehicle": "Atlas V 401",
-  "payload": "2180 kg abastecido (1031 kg operacional)",
+  "payload": "2180 kg abastecido (1031 kg a seco)",
   "delta_v": "~3,6 km/s (estimativa)",
   "type": "ORBITADOR · ATIVO",
-  "first": "Um orbitador de Marte cuja câmera HiRISE consegue distinguir objetos do tamanho de uma mesa de jantar",
+  "first": "Um orbitador de Marte cuja câmera HiRISE consegue distinguir objetos do tamanho de uma mesa de cozinha",
   "description": "O Mars Reconnaissance Orbiter foi lançado em 2005-08-12 em um Atlas V 401 e chegou a Marte em 2006-03-10, quando uma queima de 1641 segundos o colocou em uma órbita polar de captura de 400 × 35.000 km. Cerca de seis meses de aerofrenagem o levaram à sua órbita de trabalho de 255 × 320 km, que é heliossíncrona e polar. A ciência começou em novembro de 2006, após a conjunção solar. Ele carrega seis instrumentos, entre eles a câmera HiRISE, o espectrômetro CRISM, o radar SHARAD e a Context Camera. A NASA o construiu para buscar evidências de que a água persistiu na superfície por longos períodos: ele encontrou depósitos minerais formados na água, possíveis antigas linhas de costa e depósitos em camadas. Ele também serve de retransmissor para outras missões a Marte e continua em operação.",
   "events": [
     {

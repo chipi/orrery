@@ -38,6 +38,14 @@ describe('buildPlanBeats — the flight plan shared by the HUD list and the play
     expect(tail[0].t).toBeCloseTo(summary.totalDurationS, 6);
     expect(tail[2].t).toBeGreaterThan(tail[1].t);
   });
+
+  it('adds a timed separation the vehicle delay after SECO when there is no injection beat', () => {
+    const beats = buildPlanBeats(summary, null, 169);
+    const last = beats[beats.length - 1];
+    expect(last).toEqual({ label: 'SPACECRAFT SEP', t: summary.totalDurationS + 169 });
+    expect(buildPlanBeats(summary, { burnType: 'TMI' } as never, 169).at(-1)?.untimed).toBe(true);
+    expect(buildPlanBeats(summary, null).map((b) => b.label)).not.toContain('SPACECRAFT SEP');
+  });
 });
 
 describe('descentPlanBeats — descent beats in the bar’s own (unwarped) clock', () => {

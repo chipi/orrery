@@ -50,9 +50,11 @@ describe('getUniverseHero (B3, UXD-023)', () => {
     expect((await getUniverseHero('local-group', 'triangulum', 'ja'))?.pictured).toBeTruthy();
   });
 
-  it('no entry, no hero: Laniakea, the Virgo II groups and Gargantua have none; Cygnus X-1 has its Chandra image', async () => {
+  it('no entry, no hero: Laniakea and the Canes Venatici Spur have none; Cygnus X-1 has its Chandra image', async () => {
     expect(await getUniverseHero('laniakea', 'virgo-supercluster')).toBeNull();
-    expect(await getUniverseHero('virgo', 'virgo-ii-groups')).toBeNull();
+    expect(await getUniverseHero('virgo', 'canes-venatici-spur')).toBeNull();
+    // S5 (2026-11-19): the Virgo II groups show a member galaxy, NGC 4753, as "pictured".
+    expect((await getUniverseHero('virgo', 'virgo-ii-groups'))?.pictured).toBeTruthy();
     expect((await getUniverseHero('black-holes', 'cygnus-x-1'))?.full).toBe(
       '/images/deep-sky/cygnus-x-1.jpg',
     );
@@ -114,8 +116,12 @@ describe('getPageHero (entity pages)', () => {
 });
 
 describe('getNamedStarGallery', () => {
-  it('is empty for every star at ship (the sidecar exists, Gallery tab hidden)', async () => {
-    expect(await getNamedStarGallery('antares')).toEqual([]);
+  it('seven photographed stars have a second real image (C2, 2026-11-19); the others none', async () => {
+    for (const id of ['altair', 'antares', 'betelgeuse', 'fomalhaut', 'rigel', 'sirius', 'proxima-centauri'])
+      expect(await getNamedStarGallery(id)).toEqual([
+        { src: `/images/stars/${id}/02.webp`, kind: 'real' },
+      ]);
+    expect(await getNamedStarGallery('vega')).toEqual([]);
     expect(await getNamedStarGallery('no-such-star')).toEqual([]);
   });
 });

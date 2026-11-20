@@ -2310,6 +2310,37 @@ if (existsSync(LAUNCHES_CURATION_PATH) && existsSync(LAUNCHES_PATH)) {
       }
     }
   }
+  // mission_refs (F9 / L56): the launch must be a historic entry (warn: a renamed source launch)
+  // and the mission must exist (error: a typo would silently link nothing).
+  const missionRefs =
+    (curation as { mission_refs?: Array<{ launch_id: string; orrery_mission_ref: string }> })
+      .mission_refs ?? [];
+  if (missionRefs.length > 0) {
+    const historicDir = join(DATA_ROOT, 'launches-historic');
+    const historicIds = new Set<string>();
+    for (const f of readdirSync(historicDir).filter((x) => x.endsWith('.json'))) {
+      const j = readJson(join(historicDir, f)) as { entries?: Record<string, unknown> };
+      for (const id of Object.keys(j.entries ?? {})) historicIds.add(id);
+    }
+    const missionIds = new Set(
+      (readJson(join(DATA_ROOT, 'missions', 'index.json')) as Array<{ id: string }>).map(
+        (m) => m.id,
+      ),
+    );
+    for (const r of missionRefs) {
+      if (!historicIds.has(r.launch_id)) {
+        console.warn(
+          `  ⚠ launches-curation.json[mission_refs]: launch_id '${r.launch_id}' not in launches-historic`,
+        );
+      }
+      if (!missionIds.has(r.orrery_mission_ref)) {
+        failed++;
+        console.error(
+          `\n  ✗ launches-curation.json[mission_refs]: orrery_mission_ref '${r.orrery_mission_ref}' is not a mission`,
+        );
+      }
+    }
+  }
 }
 
 // ──────────────────────────────────────────────────────────────────────
@@ -2963,6 +2994,29 @@ let altTextFailed = 0;
         console.log(`  ✗ alt text cut off mid-sentence: ${k} → "…${v.slice(-60)}"`);
       if (cut.length > 10) console.log(`  ✗ … and ${cut.length - 10} more`);
       altTextFailed += cut.length;
+    }
+    // Every credited picture has a description: a .1x1 crop counts through its parent, and the
+    // hotspot tiles and context crops are 3D textures, never an <img>. Four fleet-gallery heroes
+    // shipped without one (found 2026-11-19).
+    const prov = readJson(join(DATA_ROOT, 'image-provenance.json')) as {
+      entries: { path: string }[];
+    };
+    const forms = (p: string) =>
+      [p, p.replace(/\.1x1\./, '.')].flatMap((x) => [
+        x,
+        x.replace(/\.(jpe?g|png)$/i, '.webp'),
+        x.replace(/\.webp$/i, '.jpg'),
+      ]);
+    const undescribed = prov.entries
+      .map((e) => e.path)
+      .filter((p) => p.startsWith('/images/') && !p.startsWith('/images/hotspots/'))
+      .filter((p) => !forms(p).some((k) => alt[k]));
+    if (undescribed.length === 0) {
+      console.log(`  ✓ image alt text: every credited picture has one`);
+    } else {
+      for (const p of undescribed.slice(0, 10))
+        console.log(`  ✗ credited picture without alt text: ${p}`);
+      altTextFailed += undescribed.length;
     }
   }
 }

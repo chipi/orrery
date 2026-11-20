@@ -8,6 +8,79 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 For deep-dive engineering rationale, see [`IMPLEMENTATION.md`](IMPLEMENTATION.md). For locked architectural decisions, see [`docs/adr/`](docs/adr/).
 
+## [Unreleased]
+
+## [0.9.10] — 2026-11-20
+
+A follow-through release: launches fly their published timelines (the Shuttle's direct insertion,
+Artemis I's real path, escape and elliptical injections, boosters that land), the deep levels of
+/explore link the science library and gain two articles, and the image credits are nearly all
+sourced.
+
+### Added
+
+- **Launch timelines from published sources** on /fly: event tables pinned for the Shuttle (direct
+  insertion, OMS-2), Atlas V, Saturn IB (Apollo 7), LVM3 (Chandrayaan-3, an elliptical injection),
+  Proton-M with Briz-M, New Glenn, Long March 5 and the Atlas-Centaur that sent Mariner VI
+  straight onto an escape path; the spacecraft separates at its vehicle's published delay.
+- **Boosters that land** (Falcon 9, Falcon Heavy's side boosters, New Glenn, Super Heavy) turn
+  tail-down and drop away upright.
+- **Artemis I** flies its real path (JPL Horizons); **Vikram** (Chandrayaan-2) its published
+  descent; **Kaguya** its three outbound corrections.
+- **Science on the deep levels**: deep-sky, galaxy and structure pages link the articles for
+  their kind, and two new articles, **Nebulae** and **How stars end**, in 14 languages.
+- **IN THE SKY** on the deep-sky and star pages; **second photos** for seven stars and **photos**
+  for eight more INDEX rows.
+- **Yutu and Pragyan routes** digitised from the published maps; 36 more launches linked to their
+  missions and lit at their real time.
+- `llms.txt`: an index of the docs for coding agents (llmstxt.org), with the rules by section, the
+  decision indexes and the docs for each code area and service, generated and checked in
+  validate-data; a generated index of the guides (GitHub #666).
+
+### Changed
+
+- **Image credits**: 48 placeholder credits sourced or the image replaced, 7 unsourced images
+  dropped (69 → 15 left); every credited image has a /credits thumbnail and a fingerprint.
+- **Best months** in the sky finder are the months an object stands opposite the Sun.
+- **Universe facts** keep three columns, let a short last row fill it, and hyphenate long labels.
+- **iPad**: panel list thumbnails, share alignment and the drawer close; one level control on
+  /explore with an ⓘ card.
+- The hamburger menu opens below 1024 px (measured across the 14 languages).
+- Error reports from search-engine crawlers and automated browsers are no longer sent: their
+  renderers abort loads that visitors' browsers complete.
+
+### Fixed
+
+- Errors seen on prod: WebGL failures fall back to a list or a notice instead of throwing;
+  launch data loads survive a failed fetch.
+- The CHUTE lamp only on descents with a parachute; the fleet's internal credit note is no longer
+  shown.
+- A landscape phone's drawer card shows two to three rows again.
+- Facts in many science rows sourced and corrected in 14 languages.
+- A fleet engine page (`/fleet/rd-180`, `/fleet/j-2`, …) in Hindi, Japanese and Korean never
+  finished loading its interactive parts: two of its related-hardware lists had the same title in
+  those languages ("Engines" and "Engine" are one word there) and the page stopped on a duplicate
+  key (GitHub #657).
+- /fly: LAUNCH on a mission's opening card could start before the mission had loaded and fly the
+  default flight's Falcon Heavy under the mission's name (seen on Apollo 11); it now appears once
+  the mission is loaded.
+- /fly HUD: Earth-orbit flights (Vostok, Gemini, Shenzhou, the Shuttle) said "Cislunar transfer";
+  they now say "Earth orbit" or "Suborbital flight". Their ETA shows the real time on orbit
+  (Vostok 1 read DAY 500), and the HUD no longer shows the demo flight's values while a mission
+  loads.
+- 26 more lists that were keyed by their visible text (stats, facts, legends, reading and watch
+  lists, Lab rows) now key by position as well, so two rows with the same text in some language
+  can no longer stop a page; a unit test keeps new ones out.
+- The era tiles on /missions/launches counted the launches of the last deploy, not of the
+  6-hourly data refresh (7,645 against 7,849 on 2026-11-17): the refresh left the deploy's
+  compressed copy of the year index in place.
+- /fly: a Moon round trip plays to its recorded splashdown. It used to stop at twice the
+  outbound time, so the last days could not be played: Artemis I stopped at day 18 of 25,
+  Apollo 17 at day 8 of 12.6, Chang'e 5 at day 16 of 23.
+- /explore and the Worlds: on a slow device the controls beside an opening side panel (the
+  level card, the scale strip) could keep a position measured while the panel was still
+  sliding in and end up under its edge; they now re-measure until the panel has settled.
+
 ## [0.9.9] — 2026-11-16
 
 A UI release: the teal accent is gone, one chip, filter and card system runs through every page,

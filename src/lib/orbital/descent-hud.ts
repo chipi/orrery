@@ -44,6 +44,7 @@ export const EDL_BEAT_LABEL: Record<DescentEventType, string> = {
   sample_collected: 'SAMPLE',
   parachute_jettison: 'CHUTE SEP',
   probe_signal_lost: 'SIGNAL LOST',
+  record_ends: 'DATA ENDS',
   skip_out: 'SKIP OUT',
   second_entry: '2ND ENTRY',
   touchdown: 'TOUCHDOWN',
@@ -64,6 +65,7 @@ const TIMELINE_BEATS: DescentEventType[] = [
   'skycrane_lower',
   'airbag_deploy',
   'touchdown',
+  'record_ends',
 ];
 
 /** Build the descent timeline strip (major beats only). */
@@ -82,6 +84,12 @@ export function descentStatus(s: DescentState, summary: DescentSummary): string 
   if (body === 'jupiter') {
     const deepest = summary.states.at(-1)?.altM ?? -Infinity;
     return s.altM <= deepest + 1 ? 'SIGNAL LOST' : (EDL_PHASE_LABEL[s.phaseKind] ?? 'DESCENT');
+  }
+  // A lander whose published record stops in the air (Chandrayaan-2's Vikram, `recordEndsAltM`):
+  // the descent ends there, and the last state says so.
+  const end = summary.states.at(-1);
+  if (summary.events.at(-1)?.type === 'record_ends' && end && s.t >= end.t - 0.5) {
+    return 'DATA ENDS';
   }
   if (s.altM <= 0) {
     // Touch-and-go asteroids (Hayabusa/OSIRIS-REx) sample and depart; a comet is

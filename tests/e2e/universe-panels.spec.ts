@@ -20,8 +20,10 @@ test.describe('star panel (SN2, UXD-008)', () => {
     const p = panel(page);
     await expect(p.locator('.panel-hero')).toHaveCount(1);
     await expect(p.locator('.star-finder')).toHaveCount(0);
+    // Antares has a second photo since C2 (2026-11-19), so its Gallery tab shows.
     await expect(p.locator('[role="tablist"] [role="tab"]')).toHaveText([
       'OVERVIEW',
+      'GALLERY',
       'IN THE SKY',
       'TECHNICAL',
     ]);
@@ -67,7 +69,7 @@ test.describe('star panel (SN2, UXD-008)', () => {
     await expect(p.locator('.panel-hero img')).toHaveCount(0);
   });
 
-  test('no star has a second image, so no Gallery tab', async ({ page }) => {
+  test('a star with no second image has no Gallery tab (Vega)', async ({ page }) => {
     await open(page, '/explore?goto=vega');
     await expect(panel(page).locator('#star-tab-gallery')).toHaveCount(0);
   });

@@ -3,7 +3,10 @@ import {
   IGNITION_T_S,
   INJECTION_COAST_S,
   INJECTION_BURN_S,
+  INJECTION_BEAT_S,
   payloadSepTFor,
+  launchActEndS,
+  separationCoastStatus,
   buildAscentBeats,
   ascentStatus,
   countdownSeconds,
@@ -161,5 +164,28 @@ describe('payloadSepTFor', () => {
     expect(payloadSepTFor(d, { kickStage: true, stageFiresFirst: true })).toBe(
       d + INJECTION_COAST_S + INJECTION_BURN_S / 2,
     );
+  });
+});
+
+describe('separation after SECO on a flight with no injection beat (backlog F1)', () => {
+  const d = 1015;
+  it('separates the published delay after SECO (Atlas V: 169 s)', () => {
+    expect(payloadSepTFor(d, null, 169)).toBe(1184);
+  });
+  it('ignores the delay with an injection beat, whose coast is cinematic time', () => {
+    expect(payloadSepTFor(d, {}, 169)).toBe(d + INJECTION_COAST_S + INJECTION_BURN_S);
+    expect(launchActEndS(d, {}, 169)).toBe(d + INJECTION_BEAT_S);
+  });
+  it('ends the launch act at separation, or at SECO with no delay', () => {
+    expect(launchActEndS(d, null, 169)).toBe(1184);
+    expect(launchActEndS(d, null)).toBe(d);
+    expect(launchActEndS(d, null, -5)).toBe(d);
+  });
+  it('reads COAST between SECO and separation, then SPACECRAFT SEP', () => {
+    const sep = payloadSepTFor(d, null, 169);
+    expect(separationCoastStatus(d - 1, d, sep)).toBeNull();
+    expect(separationCoastStatus(d + 1, d, sep)).toBe('COAST');
+    expect(separationCoastStatus(1184, d, sep)).toBe('SPACECRAFT SEP');
+    expect(separationCoastStatus(d + 1, d, undefined)).toBeNull();
   });
 });

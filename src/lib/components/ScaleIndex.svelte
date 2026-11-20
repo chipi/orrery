@@ -241,13 +241,15 @@
     const run = () => {
       const kids = [...probe.children] as HTMLElement[];
       const avail = host.clientWidth;
-      if (!avail || kids.length !== ids.length + 1) return;
-      const widths = kids.map((k) => k.offsetWidth);
+      // the chips (All + one per filter), then the FILTERS button's copy (plan D13: same line)
+      if (!avail || kids.length !== ids.length + 2) return;
+      const widths = kids.slice(0, -1).map((k) => k.offsetWidth);
+      const reserve = kids[kids.length - 1].offsetWidth + CHIP_GAP;
       const priority = [
         ...(PINNED[scale] ?? []).map((p) => ids.indexOf(p) + 1).filter((i) => i > 0),
         ...ids.map((_, i) => i + 1),
       ];
-      const fit = fitChips(widths, CHIP_GAP, avail, priority);
+      const fit = fitChips(widths, CHIP_GAP, avail, priority, reserve);
       const next = fit.folded.map((i) => ids[i - 1]);
       if (next.join() !== folded.join()) folded = next;
       fitted = true;
@@ -294,14 +296,17 @@
     aria-label={indexAriaLabel(scale)}
   >
     <div class="si-top">
-      <input
-        bind:value={query}
-        type="search"
-        class="si-input"
-        placeholder={m.surface_index_search()}
-        aria-label={m.surface_index_search()}
-        data-testid="scale-index-search"
-      />
+      <div class="si-search">
+        <input
+          bind:value={query}
+          type="search"
+          class="si-input"
+          placeholder={m.surface_index_search()}
+          aria-label={m.surface_index_search()}
+          data-testid="scale-index-search"
+        />
+        <span class="si-count">{filtered.length} / {shown.length}</span>
+      </div>
       <Chip
         kind="action"
         class="si-close ui-chip--close"
@@ -324,23 +329,21 @@
             >
           {/each}
         </ChipGroup>
+        {#if foldedIds.length > 0}
+          <IndexFiltersToggle
+            open={foldOpen}
+            count={foldedOn}
+            controls={foldId}
+            onclick={() => (foldOpen = !foldOpen)}
+          />
+        {/if}
         <div class="idx-measure" aria-hidden="true" bind:this={measureEl}>
           <span class="ui-chip">{m.star_index_filter_all()}</span>
           {#each filterIds as id (id)}<span class="ui-chip">{@render chipLabel(id)}</span>{/each}
+          <span class="ui-chip">{m.filters_eyebrow()} ▸</span>
         </div>
       </div>
     {/if}
-    <div class="idx-count-line">
-      <div class="si-count">{filtered.length} / {shown.length}</div>
-      {#if foldedIds.length > 0}
-        <IndexFiltersToggle
-          open={foldOpen}
-          count={foldedOn}
-          controls={foldId}
-          onclick={() => (foldOpen = !foldOpen)}
-        />
-      {/if}
-    </div>
     {#if foldedIds.length > 0}
       <div class="idx-fold" id={foldId} hidden={!foldOpen}>
         <ChipGroup role="radiogroup" label={m.explore_index_filter_aria()}>

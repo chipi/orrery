@@ -20,7 +20,7 @@
   import PanelLightbox from './PanelLightbox.svelte';
   import Panel from './Panel.svelte';
   import EntityThumb from './EntityThumb.svelte';
-  import { beltMemberThumb } from '$lib/entity-thumb';
+  import { beltMemberThumb, missionTargetThumb } from '$lib/entity-thumb';
   import ScienceCard from './ScienceCard.svelte';
   import { pickScienceLinks } from '$lib/science-links';
   import * as m from '$lib/paraglide/messages';
@@ -283,15 +283,18 @@
             {#each sortNewestFirst(entry.mission_visits) as mission (mission)}
               {@const link = linkifyMission(mission)}
               <li>
-                {#if link}
-                  <a
-                    href={link.href}
-                    class="mission-link"
-                    onclick={(e) => onMissionLinkClick(e, link, onMissionOpen)}>{link.label}</a
-                  ><span>{link.rest}</span>
-                {:else}
-                  {mission}
-                {/if}
+                <EntityThumb src={missionTargetThumb(link)} />
+                <span class="mission-text">
+                  {#if link}
+                    <a
+                      href={link.href}
+                      class="mission-link"
+                      onclick={(e) => onMissionLinkClick(e, link, onMissionOpen)}>{link.label}</a
+                    ><span>{link.rest}</span>
+                  {:else}
+                    {mission}
+                  {/if}
+                </span>
               </li>
             {/each}
           </ul>

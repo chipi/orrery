@@ -5,7 +5,7 @@
     "source_url": "https://images.nasa.gov/details/PIA04594",
     "nasa_id": "PIA04594",
     "size": "1515x1218",
-    "license": "NASA media usage (public domain)",
+    "license": "Public domain: NASA Image and Video Library original (images.nasa.gov), NASA media usage guidelines",
     "author": "NASA/JPL",
     "credit": "NASA/JPL"
   },
@@ -24,7 +24,7 @@
     "source_url": "https://images.nasa.gov/details/PIA21117",
     "nasa_id": "PIA21117",
     "size": "3000x2671",
-    "license": "NASA media usage (public domain)",
+    "license": "Public domain: NASA Image and Video Library original (images.nasa.gov), NASA media usage guidelines",
     "author": "NASA/JPL-Caltech",
     "credit": "NASA/JPL-Caltech"
   },
@@ -33,25 +33,16 @@
     "note": "gallery; JPL director William Pickering presents a Mariner 2 model to President Kennedy, with NASA Administrator James Webb, 17 Jan 1963 (NASA Great Images GPN-2000-000475)",
     "source_url": "https://commons.wikimedia.org/wiki/File:Kennedy_Receives_Mariner_2_Model.jpg",
     "size": "2832x2206",
-    "license": "Public domain (PD-USGov-NASA per the Commons file page; NASA original page not reachable from this machine)",
+    "license": "Public domain: NASA GRIN GPN-2000-000475 (JPL image P8698A, Wayback 2013-03-09) (checked 2026-11-18)",
     "author": "NASA",
     "credit": "NASA"
-  },
-  {
-    "staged": "static/images/_staging/missions/mariner2/05.jpg",
-    "note": "gallery; scroll of Venus data in front of the JPL Mariner 2 mission board, Jan 1963 (JPL image P2345B)",
-    "source_url": "https://commons.wikimedia.org/wiki/File:Mariner_2_venus_data.jpg",
-    "size": "2348x3000",
-    "license": "Public domain (PD-USGov-NASA per the Commons file page; NASA original page not reachable from this machine)",
-    "author": "NASA/JPL",
-    "credit": "NASA/JPL"
   },
   {
     "staged": "static/images/_staging/missions/mariner2/06.jpg",
     "note": "gallery; a Mariner 2 team member makes a final check of the spacecraft in a hangar, 1962; small, 800x1008",
     "source_url": "https://commons.wikimedia.org/wiki/File:Mariner_2_inspection.jpg",
     "size": "800x1008",
-    "license": "Public domain (PD-USGov-NASA per the Commons file page; NASA original page not reachable from this machine)",
+    "license": "Public domain: NASA/JPL feature \"The Grandfather of Interplanetary Exploration\" (JPL news feature 556, 2002-08-26, Wayback) hosts it; NASA material (checked 2026-11-18)",
     "author": "NASA/JPL",
     "credit": "NASA/JPL"
   }

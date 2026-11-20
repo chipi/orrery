@@ -3,6 +3,8 @@
   "name": "Soyuz-FG / Fregat",
   "source_tier": "flagship",
   "payloadKg": 7458,
+  "liftoffThrustKN": 4146.4,
+  "payloadSeparationDelayS": 3.3,
   "fairingKg": 1000,
   "fairingJettisonAltM": 110000,
   "refAreaM2": 30,
@@ -14,8 +16,8 @@
     "count": 4,
     "wetKg": 43400,
     "dryKg": 3800,
-    "thrustSlKN": 838.5,
-    "thrustVacKN": 1021.3,
+    "thrustSlKN": 867,
+    "thrustVacKN": 1056,
     "ispSlS": 263.3,
     "ispVacS": 320.2,
     "chamberTempK": 3200
@@ -25,8 +27,8 @@
       "name": "Blok A core (RD-108A)",
       "wetKg": 99500,
       "dryKg": 6550,
-      "thrustSlKN": 792.4,
-      "thrustVacKN": 921.9,
+      "thrustSlKN": 864.7,
+      "thrustVacKN": 1006.1,
       "ispSlS": 257.7,
       "ispVacS": 320.6,
       "engines": 1,
@@ -58,6 +60,11 @@
     {
       "l": "Mars Express — Wikipedia (Site 31/6, 2 June 2003). Fairing mass not found: estimated",
       "u": "https://en.wikipedia.org/wiki/Mars_Express"
+    },
+    {
+      "l": "Arianespace — Soyuz CSG User's Manual Issue 2 (2012), Figure 2.3.1a, Soyuz ST-B / Fregat: fairing jettisoning 208.4 s (the guide: the fairing time is tuned per flight; Soyuz-FG from Baikonur has no table there)",
+      "u": "https://courses.edx.org/asset-v1:DelftX+AEASM1x+1T2023+type@asset+block/Soyuz-Users-Manual-March-2012.pdf"
     }
-  ]
+  ],
+  "fairingJettisonS": 208.4
 }

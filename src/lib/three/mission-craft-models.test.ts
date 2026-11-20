@@ -38,12 +38,26 @@ describe('Nova-C (IM-1 Odysseus)', () => {
     expect(meshes(g).length).toBeGreaterThan(20);
     expect(Math.abs(new THREE.Box3().setFromObject(g).min.y)).toBeLessThan(0.05);
   });
-  it('is 4.3 m tall and 1.57 m wide across the hexagonal body', () => {
+  it('is 4.3 m tall and 1.6 m wide across the hexagonal body (IM-1 press kit)', () => {
     within(sizeOf(g).y, NOVA_C_HEIGHT_M);
     const hex = cylinders(g)
       .filter((c) => c.parameters.radialSegments === 6)
       .map((c) => c.parameters.radiusTop * 2);
     within(Math.min(...hex.filter((d) => d > 1.5)), NOVA_C_WIDTH_M, 0.02);
+  });
+  it('stands on a 4.6 m landing-gear diameter (IM-1 press kit)', () => {
+    const feet: THREE.Vector3[] = [];
+    g.updateMatrixWorld(true);
+    g.traverse((o) => {
+      if (
+        o instanceof THREE.Mesh &&
+        o.geometry instanceof THREE.CylinderGeometry &&
+        o.geometry.parameters.height === 0.05
+      )
+        feet.push(new THREE.Vector3().setFromMatrixPosition(o.matrixWorld));
+    });
+    expect(feet.length).toBe(6);
+    for (const f of feet) within(Math.hypot(f.x, f.z) * 2, 4.6, 0.02);
   });
   it('has six landing legs and three solar panels', () => {
     const pads = cylinders(g).filter((c) => c.parameters.height === 0.05);

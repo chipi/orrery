@@ -47,6 +47,7 @@ cached under `~/.cache/orrery` (`CATALOGUE_REFRESH=1` refetches).
 | refresh the Local Group distances (McConnachie 2012) in both Local Group files | `node scripts/refresh-local-group-catalogue.mjs` |
 | refresh the JPL Horizons Sun table (apparent RA / Dec per day of 2026) behind the deep-sky IN THE SKY best months | `node scripts/refresh-sun-ephemeris.mjs` |
 | compare those months and altitudes with Horizons observer tables and USNO (writes `data-snapshots/sky-rows-reference.json` and `docs/wip/2026-11-15-sky-rows-ephemeris-check.md`; raw replies cached under `~/.cache/orrery/horizons-sky`) | `npx tsx scripts/check-sky-rows-ephemeris.ts` |
+| list what the BEST MONTHS row and the highest altitude say for chosen objects at chosen reader latitudes (a review aid for the rule) | `npx tsx scripts/sky-rows-review.ts --lat=52,60 --ids=m13,m57` |
 | add the SIMBAD / Exoplanet Archive record links to the named stars (HYG values unchanged) / the exoplanet systems | `npx tsx scripts/build-named-stars.ts` / `npx tsx scripts/build-exoplanet-systems.ts` (the snapshot's `disc_year` of Proxima Cen d is 2025, the committed file's hand correction 2022: merge the record links, do not overwrite) |
 | which catalogue answers which value; the pure transforms | `lib/deep-sky-catalogues.mjs`, `lib/black-hole-catalogue.mjs`, `lib/local-group-catalogue.mjs`, `lib/structure-distance-catalogue.mjs`, `lib/catalogue-sources.mjs` (each with a `.test.ts`) |
 | write the source of each structure distance (Local Sheet, Virgo, Laniakea, Cosmic web; hand-reviewed, offline) | edit `lib/structure-distance-catalogue.mjs`, then `node scripts/apply-structure-distance-catalogue.mjs` (an id not in the table has no source link: the anchors and the values batch 6's review found unsourced) |
@@ -179,12 +180,20 @@ Runbook: the `orrery-link-health` skill. The two outbound checkers share
 | --- | --- | --- |
 | does every indexable page have one title (not the bare brand, ≤90 chars), one description (≤160), a self-referencing canonical, the full hreflang set with built targets, og:title / og:url / og:image and a Twitter card, JSON-LD that parses and one H1, with no noindex leak, and (entity pages) at least the locale's character floor (`THIN_MIN_CHARS`, ADR-096 decision 12; the `/explore/stars/<id>` and `/explore/black-holes/<id>` pages included) of text in `<main>` — and do the sitemaps list exactly those pages; on the GH Pages mirror (`VITE_BASE`), is every page noindex with no canonical | `check-seo.mjs` | every `npm run build` |
 | what date did each sitemap URL's content last change (the `<lastmod>`): per route and locale, the newest git commit date among the files the page is built from; writes `src/lib/generated/route-lastmod.json`; refuses a shallow clone | `build-route-lastmod.mjs` (`npm run route-lastmod`) | by hand in the release PR, last, on a full-history checkout; `src/lib/route-lastmod.test.ts` gates coverage in CI |
+| every control look on the site (button, tab, toggle, select, link-button) at desktop 1440x900 and phone 390x844, on every top-level page, two of each list and nine selected-panel states, plus what each disclosure (FILTERS, drawers, nav dropdowns, hamburger, popovers, index panels) shows when opened; grouped into looks with labels, routes and states (the A4 inventory, plan D4) | `ui-inventory-crawl.mjs --base=<preview url> [--out=docs/wip/<date>-ui-inventory.json] [--only=/a,/b]` | by hand before a UX review (D9) or a control redesign |
 | tell Bing, Yandex and the other IndexNow engines which URLs exist: reads the live `/sitemap.xml` index and every locale sitemap, dedupes, and POSTs in batches of ≤ 10,000 after checking `static/<key>.txt` is live (`--dry-run` sends nothing; `--since YYYY-MM-DD`; `--base`; `--key`) | `indexnow-submit.mjs` (`npm run indexnow`; runbook `docs/ops/indexnow.md`) | by hand, once after each verified prod deploy; the real submission needs the operator's go |
 
 The SEO code it checks: `src/lib/seo.ts` (canonical, hreflang, `metaDescription`,
 `pageTitle`, `isMirrorBuild`), `src/lib/social-meta.ts` (Open Graph + Twitter,
 applied in `src/hooks.server.ts`), `src/lib/json-ld.ts` + `JsonLd.svelte`, and
 `src/lib/sitemap.ts` (the `/sitemap.xml` index and `/sitemaps/<locale>.xml`).
+
+## Agent docs index — which tool, when
+
+| Question | Run | Where it runs |
+| --- | --- | --- |
+| rebuild `llms.txt` (the agent index of the docs, llmstxt.org, GitHub #666) and the generated `docs/guides/index.md` after adding or renaming a guide, an AGENTS.md section, or a doc in the hand-kept part (`llms/llms-hand.mjs`) | `npm run llms:build` | by hand |
+| are they current, does every link and AGENTS.md anchor resolve, is `llms.txt` under 30 KB | `npm run llms:check` | validate-data (`check-llms-txt`), so CI and the pre-push hook |
 
 **Manual tools no npm script or workflow runs** (read the header first):
 
@@ -203,5 +212,15 @@ applied in `src/hooks.server.ts`), `src/lib/json-ld.ts` + `JsonLd.svelte`, and
   into `/tmp` review files; a human picks before `badge-sources.json`.
 - `peg-orbit-validation.mjs` — reports whether each flagship launcher
   profile reaches a real stable orbit (ascent integrator check).
+- `ascent-events.ts <launch-profile> [json-override] [--states]` — prints a profile's
+  ascent event times (staging, fairing, MECO, SECO, max-Q), optionally with
+  fields overridden, to compare against a sourced flight sequence; `--states`
+  adds altitude, inertial speed and climb rate at each event (for sources that
+  publish the state, e.g. JAXA's "MECO at 208 km, 6.2 km/s").
+- `fit-launch-timeline.ts <spec.json> [--write]` — fits a profile's burn
+  times to a sourced sequence by scaling one lever's thrust (propellant and
+  Isp kept, so delta-v is unchanged), sets fairing times and coasts, prints
+  before / after and whether it still reaches orbit. Pin the result in
+  `src/lib/orbital/launch-timeline.test.ts` (backlog F4 / S13, 2026-11-19).
 - `__smoke__/resolver-diversity.mjs [--skip-network]` — image resolver
   diversity smoke (offline dedup unit + an optional live pass).

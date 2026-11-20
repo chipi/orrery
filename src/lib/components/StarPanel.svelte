@@ -14,9 +14,8 @@
   import CultureDoorCard from './CultureDoorCard.svelte';
   import type { LocalizedCultureDoor } from '$lib/data';
   import StarPortrait from './StarPortrait.svelte';
-  import ConstellationFinder from './ConstellationFinder.svelte';
-  import { constellationName, isZodiacConstellation } from '$lib/universe/iau-constellations';
-  import { showConstellationLines } from '$lib/universe/constellation-actions';
+  import StarInTheSky from './StarInTheSky.svelte';
+  import { constellationName } from '$lib/universe/iau-constellations';
   import { figureVertices } from '$lib/universe/sky-finder';
   import { bvToRgb, bvToKelvin } from '$lib/universe/bv-to-rgb';
   import { colorNameForKelvin } from '$lib/universe/anonymous-star';
@@ -116,7 +115,6 @@
 
   let gallery = $derived(star?.photo ? [star.photo.src, ...extraImages] : extraImages);
   let hero = $derived(star?.photo ? { src: star.photo.src, full: star.photo.src } : null);
-  let zodiac = $derived(isZodiacConstellation(star?.con));
 
   let facts = $derived.by((): Fact[] => {
     if (!star) return [];
@@ -239,29 +237,7 @@
 
   {#snippet tabContent(active)}
     {#if star && active === 'sky' && conVertices && star.con}
-      <div class="star-finder">
-        <ConstellationFinder
-          vertices={conVertices}
-          starXYZ={[star.x, star.y, star.z]}
-          label={constellationName(star.con)}
-        />
-        <p class="hero-caption">{m.star_finder_caption({ con: constellationName(star.con) })}</p>
-      </div>
-      <UniverseFacts
-        facts={[
-          {
-            label: m.star_label_constellation(),
-            value: constellationName(star.con),
-            accent: true,
-          },
-        ]}
-      />
-      {#if zodiac}
-        <p class="editorial">{m.star_zodiac_note({ con: constellationName(star.con) })}</p>
-      {/if}
-      <div class="ui-chip-group">
-        <Chip kind="action" onclick={showConstellationLines}>{m.star_show_constellations()}</Chip>
-      </div>
+      <StarInTheSky star={{ id: star.id, con: star.con, xyz: [star.x, star.y, star.z] }} />
     {:else if star && active === 'system' && system}
       <div class="system-schematic">
         <svg viewBox="0 0 240 124" role="img" aria-label={m.star_tab_system()}>
@@ -408,17 +384,6 @@
     font-size: var(--size-label);
     letter-spacing: 0.5px;
     color: var(--color-state);
-  }
-  .star-finder {
-    margin-bottom: 12px;
-  }
-  .hero-caption {
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: var(--size-label);
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: var(--color-text-label);
-    margin: 4px 0 0;
   }
   .kind-row {
     display: flex;

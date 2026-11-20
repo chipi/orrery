@@ -161,8 +161,22 @@ export function windowOfMonthlyHours(hours: readonly number[]): MonthWindow | nu
 }
 
 /**
- * The months (0 = January) in which the object (an RA / Dec of date) is well placed from
- * `latDeg`. Null when it never gets high in the dark sky from there.
+ * The BEST MONTHS row (UXD-049; rule changed 2026-11-19, search backlog P1): the months in which
+ * the object stands opposite the Sun, so it is highest around midnight: the Sun's RA on the 15th
+ * of the month within `oppositionDeg` (3 h) of the object's RA + 180 degrees. Shown only where the
+ * object climbs at least `minAltDeg` from the reader's latitude. The observing guides' convention;
+ * the dark-hours measure above put summer objects in winter from 45 N up, where summer nights have
+ * no astronomical darkness (M13 "Feb-Apr" at 52 N). `nightHours` / `windowOfMonthlyHours` stay for
+ * scripts/check-sky-rows-ephemeris.ts, which validates the ephemeris and geometry against Horizons.
+ */
+export const BEST_MONTHS = { minAltDeg: 20, oppositionDeg: 45 } as const;
+const MID_MONTH_DAY = Array.from({ length: 12 }, (_, m) =>
+  Math.round((Date.UTC(2026, m, 15) - Date.UTC(2026, 0, 1)) / 86_400_000),
+);
+
+/**
+ * The months (0 = January) in which the object (an RA / Dec of date) is best placed from
+ * `latDeg`. Null when it never climbs `BEST_MONTHS.minAltDeg` from there.
  */
 export function bestMonths(
   raDeg: number,
@@ -170,7 +184,18 @@ export function bestMonths(
   latDeg: number,
   sun: SunEphemeris,
 ): MonthWindow | null {
-  return windowOfMonthlyHours(monthlyNightHours(raDeg, decDeg, latDeg, sun));
+  if (maxAltitude(decDeg, latDeg) < BEST_MONTHS.minAltDeg) return null;
+  const off = MID_MONTH_DAY.map((d) => {
+    const x = (((sun.ra_deg[d] - raDeg - 180) % 360) + 360) % 360;
+    return Math.min(x, 360 - x);
+  });
+  let mid = 0;
+  for (let m = 1; m < 12; m++) if (off[m] < off[mid]) mid = m;
+  let from = mid;
+  let to = mid;
+  while (off[(from + 11) % 12] <= BEST_MONTHS.oppositionDeg) from = (from + 11) % 12;
+  while (off[(to + 1) % 12] <= BEST_MONTHS.oppositionDeg) to = (to + 1) % 12;
+  return { from, mid, to };
 }
 
 /**

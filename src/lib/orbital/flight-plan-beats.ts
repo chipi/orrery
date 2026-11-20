@@ -19,11 +19,13 @@ export interface PlanBeat {
 
 /**
  * Liftoff, the ascent beats, then the parking orbit, injection burn and spacecraft
- * separation when the mission leaves orbit (`injection` set).
+ * separation when the mission leaves orbit (`injection` set); without one, a separation
+ * `separationDelayS` after SECO when the vehicle publishes that delay (backlog F1).
  */
 export function buildPlanBeats(
   summary: AscentSummary,
   injection: Pick<InjectionBurnParams, 'burnType'> | null,
+  separationDelayS = 0,
 ): PlanBeat[] {
   const duration = summary.totalDurationS;
   const beats = buildAscentBeats(summary);
@@ -44,7 +46,9 @@ export function buildPlanBeats(
           },
           { label: 'SPACECRAFT SEP', t: injectionSepT(duration), untimed: true },
         ]
-      : []),
+      : separationDelayS > 0
+        ? [{ label: 'SPACECRAFT SEP', t: duration + separationDelayS }]
+        : []),
   ];
 }
 

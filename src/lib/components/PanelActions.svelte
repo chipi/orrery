@@ -26,8 +26,12 @@
 <div class="ui-chip-group panel-actions">
   {@render children?.()}
   {#if panel?.share}
-    <Chip kind="action" onclick={panel.share} aria-haspopup="dialog" data-testid="open-card-btn"
-      >{m.panel_share()}</Chip
+    <Chip
+      kind="action"
+      class="panel-share"
+      onclick={panel.share}
+      aria-haspopup="dialog"
+      data-testid="open-card-btn">{m.panel_share()}</Chip
     >
   {/if}
 </div>
@@ -35,6 +39,10 @@
 <style>
   .panel-actions {
     margin: 0 0 12px;
+  }
+  /* Share sits at the row's end (plan D11): right in LTR, left in RTL; alone, it is still at the end. */
+  .panel-actions :global(.panel-share) {
+    margin-inline-start: auto;
   }
   /* The host's chips are conditional (a site with no panorama, route or zoom): no chip, no row. */
   .panel-actions:not(:has(.ui-chip)) {

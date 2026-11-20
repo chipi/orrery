@@ -30,13 +30,13 @@ test.describe('/lab — Physics Lab', () => {
 
     // Register golden-master: the honesty line + the computed-fidelity class are in the
     // rendered figure DOM. The M1 figures are all `computed` → the `fidelity-computed`
-    // register class, solid teal stroke. (SVG geometry elements have no box, so assert
+    // register class, solid accent stroke. (SVG geometry elements have no box, so assert
     // attachment, not visibility.)
     const computed = page.locator('.fidelity-computed');
     await expect(computed.first()).toBeAttached();
     expect(await computed.count()).toBeGreaterThan(0);
-    // computed register = solid stroke (no dasharray); teal token.
-    await expect(computed.first()).toHaveAttribute('stroke', '#4ecdc4');
+    // computed register = solid stroke (no dasharray); the accent token (figure-style TEAL).
+    await expect(computed.first()).toHaveAttribute('stroke', '#889fe7');
     const prov = page.locator('.honesty-prov').first();
     await expect(prov).toBeAttached();
     expect(await prov.textContent()).toMatch(/computed/i);

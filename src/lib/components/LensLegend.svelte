@@ -91,10 +91,10 @@
 {#if entries.length > 0}
   <div class="lens-legend" class:inline aria-hidden="true">
     <div class="ll-head">{m.lens_legend_head()}</div>
-    {#each entries as e (e.title)}
+    {#each entries as e, ki (ki + ':' + e.title)}
       <div class="ll-group">
         <div class="ll-title">{e.title}</div>
-        {#each e.items as it (it.label)}
+        {#each e.items as it, ki (ki + ':' + it.label)}
           <div class="ll-item">
             {#if it.shape === 'note'}
               <span class="ll-glyph ll-note-dot"></span>

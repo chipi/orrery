@@ -291,7 +291,11 @@ test.describe('/fly render validation — Layer 4 (HUD matches arc)', () => {
       // Pause + scrub to a known mid-mission point so values are
       // stable when read.
       await page.getByRole('button', { name: /pause/i }).click();
-      await page.locator('input[type="range"][aria-label*="timeline" i]').fill('0.4');
+      // A Moon round trip plays to its recorded splashdown (plan A12: Apollo 17 12.6 d, not
+      // 2 x 4), so 40 % is past its day-4 arrival; 20 % is mid-outbound for every Moon case.
+      await page
+        .locator('input[type="range"][aria-label*="timeline" i]')
+        .fill(c.isMoon ? '0.2' : '0.4');
       // Wait for sc-phase to flip to outbound — proves the scrub took
       // effect and the rAF loop has propagated the new sim time.
       await expect(hook).toHaveAttribute('data-sc-phase', 'outbound', { timeout: 5_000 });

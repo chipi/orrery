@@ -12,12 +12,19 @@ const config = (name = 'orrery-s1', published: string | number = '16989') => ({
 
 describe('parseArgs / playwrightArgs', () => {
   it('flags, then everything after -- goes to Playwright', () => {
-    expect(parseArgs([])).toEqual({ skipBuild: false, smokeOnly: false, playwright: [] });
+    expect(parseArgs([])).toEqual({
+      skipBuild: false,
+      smokeOnly: false,
+      ciImage: false,
+      playwright: [],
+    });
     expect(parseArgs(['--skip-build', '--smoke-only', '--', '--skip-build', 'x.spec.ts'])).toEqual({
       skipBuild: true,
       smokeOnly: true,
+      ciImage: false,
       playwright: ['--skip-build', 'x.spec.ts'],
     });
+    expect(parseArgs(['--ci-image']).ciImage).toBe(true);
     expect(() => parseArgs(['--project=x'])).toThrow(/unexpected argument '--project=x'/);
   });
 
@@ -158,7 +165,14 @@ describe('smokeCheck', () => {
 });
 
 // --- orchestration -------------------------------------------------------------
-function harness(over: { status?: Record<string, number>; ps?: string; port?: string } = {}) {
+function harness(
+  over: {
+    status?: Record<string, number>;
+    ps?: string;
+    port?: string;
+    linuxModules?: boolean;
+  } = {},
+) {
   const calls: string[] = [];
   const envs: Array<Record<string, string | undefined> | undefined> = [];
   const logs: string[] = [];
@@ -182,12 +196,16 @@ function harness(over: { status?: Record<string, number>; ps?: string; port?: st
     },
     fetch: fakeFetch(healthy).impl,
     readFile: (p: string) => {
+      if (p === 'package.json') return '{"devDependencies":{"@playwright/test":"1.64.0"}}';
       if (p !== 'build/_app/version.json') throw new Error(`unexpected read ${p}`);
       return '{"version":"v2"}';
     },
+    exists: (_p: string) => over.linuxModules ?? true,
     log: (m: string) => logs.push(m),
     env: { PATH: '/bin' },
     workspaceEnv: WS,
+    uid: 1000,
+    gid: 1000,
   };
   return { deps, calls, envs, logs };
 }
@@ -222,6 +240,29 @@ describe('run', () => {
     expect(p.calls.at(-1)).toBe(
       'npx playwright test --workers=1 --project=mobile-chromium a.spec.ts',
     );
+  });
+
+  // Plan E5: the release gate runs the suite in the image CI uses, against this checkout's web.
+  it('--ci-image runs Playwright in the pinned CI image on the host network', async () => {
+    const h = harness();
+    expect(await run(['--skip-build', '--ci-image', '--', 'a.spec.ts'], h.deps)).toBe(0);
+    const last = h.calls.at(-1)!;
+    expect(last).toMatch(/^docker run --rm --ipc=host --network=host --user 1000:1000 /);
+    expect(last).toContain(':/repo -v ');
+    expect(last).toContain('/.linux-node-modules:/repo/node_modules');
+    expect(last).toContain('-e CI=true');
+    expect(last).toContain('-e PLAYWRIGHT_BASE_URL=http://localhost:16989');
+    expect(last).toMatch(
+      /mcr\.microsoft\.com\/playwright:v1\.64\.0-noble npx playwright test --workers=1 --project=desktop-chromium a\.spec\.ts$/,
+    );
+    expect(h.calls.some((c) => c.startsWith('npx'))).toBe(false);
+  });
+
+  it('--ci-image without the Linux node_modules says how to get them and runs nothing', async () => {
+    const h = harness({ linuxModules: false });
+    expect(await run(['--skip-build', '--ci-image'], h.deps)).toBe(1);
+    expect(h.calls.some((c) => c.startsWith('docker run'))).toBe(false);
+    expect(h.logs.join('\n')).toMatch(/regenerate-visual-baselines-linux\.sh/);
   });
 
   it('refuses before touching anything when the target is not this stream', async () => {

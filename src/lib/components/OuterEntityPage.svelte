@@ -37,6 +37,8 @@
       /** Locale-free `/explore?context=<scale>&pick=<id>`. */
       openPath: string;
       hero?: PageHero | null;
+      /** The /science articles for this kind of object (plan C5a), titles in the page's language. */
+      science?: { tab: string; section: string; title: string }[];
     };
   };
   let { data }: Props = $props();
@@ -86,7 +88,7 @@
 
   {#if data.rows.length}
     <dl class="facts">
-      {#each data.rows as row (row.label)}
+      {#each data.rows as row, ki (ki + ':' + row.label)}
         <div>
           <dt>{row.label}</dt>
           <dd>
@@ -124,6 +126,17 @@
       </ul>
     </section>
   {/each}
+
+  {#if (data.science ?? []).length}
+    <section class="science">
+      <h2 class="page-section-label">{m.panel_tab_science()}</h2>
+      <ul class="linklist wide">
+        {#each data.science ?? [] as a (a.tab + '/' + a.section)}
+          <li><a href={localHref(`/science/${a.tab}/${a.section}`)}>{a.title}</a></li>
+        {/each}
+      </ul>
+    </section>
+  {/if}
 
   {#if data.text.links.length}
     <section class="science">

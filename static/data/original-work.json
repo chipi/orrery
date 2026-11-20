@@ -2484,7 +2484,7 @@
       "cover": false
     },
     {
-      "title": "X-37B OTV-7 (USA-358, USSF-52)",
+      "title": "X-37B OTV-7 (USA-349, USSF-52)",
       "file": "/images/missions/thumbnails/otv-7.webp",
       "route": "/missions?id=otv-7",
       "cover": false
@@ -4490,7 +4490,7 @@
     },
     {
       "title": "Launch pad: SLS, LC-39B",
-      "what": "The Artemis pad: the Mobile Launcher tower beside the rocket and three tall lightning towers. Sizes approximate.",
+      "what": "The Artemis pad: the Mobile Launcher tower beside the rocket (about 108 m; NASA gives 345 to 355 ft) and three lightning towers of nearly 600 ft.",
       "where": "Fly · launch pad",
       "route": "/fly",
       "thumb": "/images/colophon/model-pad-sls.webp"
@@ -4518,7 +4518,7 @@
     },
     {
       "title": "Launch pad: Falcon, SLC-40 with crew tower",
-      "what": "SpaceX at SLC-40 since the crew access tower of 2023, with the transporter-erector tilting away at liftoff. Tower height approximate.",
+      "what": "SpaceX at SLC-40 since the crew access tower of 2023, with the transporter-erector tilting away at liftoff. The crew tower is about 300 ft (91 m; FAA).",
       "where": "Fly · launch pad",
       "route": "/fly",
       "thumb": "/images/colophon/model-pad-f9-cat.webp"
@@ -4567,14 +4567,14 @@
     },
     {
       "title": "Launch pad: Chinese service tower",
-      "what": "The fixed service tower of Jiuquan, Xichang, Wenchang and Taiyuan, its working platforms folding away at liftoff. Sizes approximate.",
+      "what": "The fixed service tower of Jiuquan, Xichang, Wenchang and Taiyuan, its working platforms folding away at liftoff. Jiuquan's crewed-launch tower is 89.5 m plus a 16 m lightning rod (CMSE) and is drawn for every Jiuquan launch; the others are approximate.",
       "where": "Fly · launch pad",
       "route": "/fly",
       "thumb": "/images/colophon/model-pad-chinese-fst.webp"
     },
     {
       "title": "Launch pad: Tanegashima",
-      "what": "The Yoshinobu pad: the H-II launcher's umbilical tower and a lightning tower. Sizes approximate.",
+      "what": "The Yoshinobu pad: the H-II mobile launcher, 65.5 m high, and a 74.5 m lightning tower (JAXA).",
       "where": "Fly · launch pad",
       "route": "/fly",
       "thumb": "/images/colophon/model-pad-tanegashima.webp"

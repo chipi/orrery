@@ -40,6 +40,14 @@ describe('getDeepSkyEntity', () => {
     expect(m13?.cultureDoors[0].blurb).toBeTruthy();
   });
 
+  it('carries the catalogue RA and Dec for the page’s IN THE SKY section (plan D1)', async () => {
+    const [m13, rec] = await Promise.all([getDeepSkyEntity('m13', 'en-US'), getDeepSkyObject('m13')]);
+    expect(m13?.ra).toBe(rec?.ra);
+    expect(m13?.dec).toBe(rec?.dec);
+    expect(m13?.ra).toBeCloseTo(250.42, 1);
+    expect(m13?.dec).toBeCloseTo(36.46, 1);
+  });
+
   it('cites a paper for the distance and magnitude, and the SIMBAD page', async () => {
     const m13 = await getDeepSkyEntity('m13', 'en-US');
     expect(m13?.distLy).toBe(24201);
@@ -93,7 +101,7 @@ describe('getDeepSkyEntity', () => {
   });
 
   it('an object with no photo and no twin hero has none: no hero, no slot', async () => {
-    expect((await getDeepSkyEntity('m18', 'en-US'))?.hero).toBeNull();
+    expect((await getDeepSkyEntity('m25', 'en-US'))?.hero).toBeNull();
   });
 
   it('every page object with a photo has a hero whose files exist and that carries alt text', async () => {

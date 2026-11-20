@@ -9,7 +9,7 @@ Operator guide for browser telemetry. **Source of truth: [ADR-082](../adr/ADR-08
 | Rung | GlitchTip project | Umami site | env tag | selected by |
 |---|---|---|---|---|
 | prod | 18 | prod | `prod` | `deploy-prod.yml` (`prod` GH env) |
-| dev | 7 | dev | `dev` | `sentry.ts` / `analytics.ts` fallback, over the Tailscale `homelab` host |
+| dev | 30 | dev | `dev` | `sentry.ts` / `analytics.ts` fallback, over the Tailscale `homelab` host |
 
 The integration shape is **env-gated, fork-silent by construction.** Deploy rungs bake `PUBLIC_*` from GH environment secrets a fork doesn't have; the dev rung's endpoints resolve only on our tailnet (`homelab`), so a stranger's `vite dev` transport-fails silently. `vite preview` / CI / screenshots are not `dev` and carry no baked vars → silent. No committed secrets — only the public DSN/site-id browser ids, which ship in the bundle by design.
 
@@ -23,7 +23,7 @@ The integration shape is **env-gated, fork-silent by construction.** Deploy rung
 
 - **Unhandled exceptions** during route navigation, load functions, and Svelte component lifecycle (wired via `handleErrorWithSentry()` in `src/hooks.client.ts`).
 - **Unhandled promise rejections** (Sentry's default `globalHandlers` integration catches `window.onerror` + `unhandledrejection`).
-- **NOTHING else.** No performance tracing (`tracesSampleRate: 0`). No Web Vitals. No session replay. No user identifiers. The `beforeSend` hook strips URL query + hash, nulls headers + cookies, and sets `ip_address: '0.0.0.0'` (Sentry's discard sentinel). The `beforeBreadcrumb` hook drops `ui.input` breadcrumbs entirely.
+- **NOTHING else.** No performance tracing (`tracesSampleRate: 0`). No Web Vitals. No session replay. No user identifiers. The `beforeSend` hook strips URL query + hash, nulls headers + cookies, and sets `ip_address: '0.0.0.0'` (Sentry's discard sentinel); it sends nothing from a crawler or automated browser (`isLikelyBot`, `src/lib/bot-ua.ts`, the same check analytics uses), from deploy chunk skew, or from a device without WebGL. The `beforeBreadcrumb` hook drops `ui.input` breadcrumbs entirely.
 
 See **[`src/lib/observability/sentry.ts`](../../src/lib/observability/sentry.ts)** for the full scrubber implementation.
 
@@ -41,7 +41,7 @@ Done once on the self-hosted GlitchTip (over the tailnet). Already provisioned: 
 
 ### Local-dev posture (the dev rung)
 
-- `vite dev` **now reports** — with no `PUBLIC_SENTRY_*` override it falls back to the dev DSN (GlitchTip project 30) via `homelab:8090`. On the maintainer's tailnet this is live; off the tailnet the host doesn't resolve, the transport fails, and nothing leaves the browser (fork-silent by construction). Dev events carry a `worktree` tag (git branch) so parallel local sessions are separable.
+- `vite dev` **now reports** — with no `PUBLIC_SENTRY_*` override it falls back to the dev DSN (GlitchTip project 30) via `homelab:8090`. On the maintainer's tailnet this is live; off the tailnet the host doesn't resolve, the transport fails, and nothing leaves the browser (fork-silent by construction). Dev events carry a `worktree` tag (git branch) so parallel local sessions are separable. The lab-api and mcp dev servers carry it too (2026-11-16, the homelab dev telemetry contract): `scripts/workspace/with-env.mjs` sets `ORRERY_WORKTREE` to the checkout's branch, and in dev only the server tags its GlitchTip events, its pushed log lines (a `worktree` stream field) and its trace resource with it. Agents read their branch's dev telemetry with the homelab skill `o11y-dev` before a PR; dev errors never become GitHub issues.
 - `vite preview`, the screenshot pipeline, and CI are **not** `dev` and carry no baked vars → silent. To point local dev at a *different* project, set `PUBLIC_SENTRY_DSN=…` in your gitignored `.env` (the `scripts/check-no-secrets.ts` gate still scans the staged diff).
 
 ### Verifying it works

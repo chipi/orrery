@@ -5,9 +5,16 @@
     "source_url": "https://images.nasa.gov/details/KSC-20240215-PH-KLS01_0020",
     "nasa_id": "KSC-20240215-PH-KLS01_0020",
     "size": "3000x2000",
-    "license": "NASA media usage (public domain)",
+    "license": "Public domain: NASA Image and Video Library original (images.nasa.gov), NASA media usage guidelines",
     "author": "NASA/Kim Shiflett",
     "credit": "NASA/Kim Shiflett"
+  },
+  {
+    "source_url": "https://lroc.im-ldi.com/images/1360",
+    "image_url": "https://lroc.im-ldi.com/ckeditor_assets/pictures/1425/content_Nova_C_1100x1100_crop.png",
+    "license": "LROC-EDU: LROC website image, educational use permitted when credited \"NASA/GSFC/Arizona State University\" (lroc.im-ldi.com/about/terms, the repo's LROC-EDU class); post 1360 by Mark Robinson, 26 Feb 2024 (checked 2026-11-18)",
+    "credit": "NASA/GSFC/Arizona State University",
+    "note": "gallery (or hero): LRO NAC M1463440322L, 24 Feb 2024, image width 973 m, arrow on the Odysseus lander at 80.13 S, 1.44 E inside a degraded 1 km crater; an arrow-free version is /ckeditor_assets/pictures/1426/content_Nova_C_no_arrow_1100x1100_crop.png"
   },
   {
     "staged": "static/images/_staging/missions/im-1/02.jpg",
@@ -15,7 +22,7 @@
     "source_url": "https://images.nasa.gov/details/KSC-20240215-PH-KLS01_0089",
     "nasa_id": "KSC-20240215-PH-KLS01_0089",
     "size": "2000x3000",
-    "license": "NASA media usage (public domain)",
+    "license": "Public domain: NASA Image and Video Library original (images.nasa.gov), NASA media usage guidelines",
     "author": "NASA/Kim Shiflett",
     "credit": "NASA/Kim Shiflett"
   },
@@ -25,7 +32,7 @@
     "source_url": "https://images.nasa.gov/details/KSC-20240215-PH-KLS01_0085",
     "nasa_id": "KSC-20240215-PH-KLS01_0085",
     "size": "2000x3000",
-    "license": "NASA media usage (public domain)",
+    "license": "Public domain: NASA Image and Video Library original (images.nasa.gov), NASA media usage guidelines",
     "author": "NASA/Kim Shiflett",
     "credit": "NASA/Kim Shiflett"
   },
@@ -35,7 +42,7 @@
     "source_url": "https://images.nasa.gov/details/KSC-20221118-PH-ILW01_0113",
     "nasa_id": "KSC-20221118-PH-ILW01_0113",
     "size": "3000x2000",
-    "license": "NASA media usage (public domain)",
+    "license": "Public domain: NASA Image and Video Library original (images.nasa.gov), NASA media usage guidelines",
     "author": "NASA/Isaac Watson",
     "credit": "NASA/Isaac Watson"
   }

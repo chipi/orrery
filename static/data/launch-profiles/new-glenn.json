@@ -27,7 +27,7 @@
       "name": "GS2 (2× BE-3U)",
       "wetKg": 282400,
       "dryKg": 20000,
-      "thrustVacKN": 1779,
+      "thrustVacKN": 1559.5,
       "ispVacS": 445,
       "engines": 2,
       "chamberTempK": 3300
@@ -45,6 +45,11 @@
     {
       "l": "Stage masses are not published: propellant derived from thrust × burn time / (Isp × g0) (GS1 ~1,135 t, GS2 ~262 t); dry masses and fairing mass estimated. Blue Moon MK1 is planned for 2027 and its own BE-7 makes the trans-lunar burn from low Earth orbit",
       "u": "https://en.wikipedia.org/wiki/Blue_Moon_(spacecraft)"
+    },
+    {
+      "l": "NASA — Important launch milestones for ESCAPADE (NG-2): fairings jettison T+00:03:50 = 230 s (MECO 185 s, stage separation 189 s)",
+      "u": "https://science.nasa.gov/blogs/escapade/2025/11/13/important-launch-milestones-for-nasas-escapade"
     }
-  ]
+  ],
+  "fairingJettisonS": 230
 }

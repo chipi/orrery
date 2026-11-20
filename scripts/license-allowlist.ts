@@ -157,6 +157,33 @@ export const LICENSE_ALLOWLIST: readonly LicenseAllowlistEntry[] = [
     share_alike: false,
   },
   {
+    short: 'CC-BY-2.1-JP',
+    display: 'Creative Commons Attribution 2.1 Japan',
+    url: 'https://creativecommons.org/licenses/by/2.1/jp/',
+    rationale:
+      'Reuse with attribution (the Japanese port of CC BY 2.1). Kaguya launch photo and the H-IIA hero (backlog S9: these were recorded as CC-BY-4.0 until 2026-11-17).',
+    requires_attribution: true,
+    share_alike: false,
+  },
+  {
+    short: 'CC-BY-SA-2.0-DE',
+    display: 'Creative Commons Attribution-ShareAlike 2.0 Germany',
+    url: 'https://creativecommons.org/licenses/by-sa/2.0/de/',
+    rationale:
+      'Reuse with attribution; derivatives under the same licence (German port of CC BY-SA 2.0).',
+    requires_attribution: true,
+    share_alike: true,
+  },
+  {
+    short: 'CC-BY-SA-2.0-FR',
+    display: 'Creative Commons Attribution-ShareAlike 2.0 France',
+    url: 'https://creativecommons.org/licenses/by-sa/2.0/fr/',
+    rationale:
+      'Reuse with attribution; derivatives under the same licence (French port of CC BY-SA 2.0).',
+    requires_attribution: true,
+    share_alike: true,
+  },
+  {
     short: 'CC-BY-2.5',
     display: 'Creative Commons Attribution 2.5',
     url: 'https://creativecommons.org/licenses/by/2.5/',
@@ -391,12 +418,18 @@ export function normaliseLicenseShortName(raw: string): string {
       return 'CC0';
   }
   // Normalise CC variants regardless of casing/spacing/dashes.
-  const m = cleaned.match(/^(CC[\s-]*BY(?:[\s-]*SA)?)[\s-]*([0-9.]+)?(?:[\s-]*(IGO))?$/);
+  const m = cleaned.match(
+    /^(CC[\s-]*BY(?:[\s-]*SA)?)[\s-]*([0-9.]+)?(?:[\s-]*(IGO))?(?:[\s-]*([A-Z]{2}))?$/,
+  );
   if (m) {
     const base = m[1].replace(/\s+/g, '-');
     const ver = m[2] ?? '4.0';
     const igo = m[3] ? '-IGO' : '';
-    return `${base}-${ver}${igo}`.replace(/--/g, '-');
+    const plain = `${base}-${ver}${igo}`.replace(/--/g, '-');
+    // A jurisdiction port ("CC BY 2.1 jp") is kept when the allowlist has it; otherwise the
+    // unported licence of the same version, never the 4.0 fallback below (backlog S9).
+    if (m[4] && getAllowlistEntry(`${plain}-${m[4]}`)) return `${plain}-${m[4]}`;
+    return plain;
   }
   // Common Wikimedia template strings.
   if (cleaned.includes('CC BY-SA')) return 'CC-BY-SA-4.0';

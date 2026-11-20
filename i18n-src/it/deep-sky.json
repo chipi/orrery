@@ -1149,5 +1149,53 @@
     "subject": "Ammasso di galassie",
     "type": "Ammasso di galassie",
     "distance": "~330 milioni anni luce"
+  },
+  "m18": {
+    "title": "M18 · NGC 6613",
+    "subject": "Ammasso stellare",
+    "type": "Ammasso stellare",
+    "distance": "~4,900 anni luce"
+  },
+  "m36": {
+    "title": "M36 · NGC 1960",
+    "subject": "Ammasso stellare",
+    "type": "Ammasso stellare",
+    "distance": "~3,670 anni luce"
+  },
+  "m62": {
+    "title": "M62 · NGC 6266",
+    "subject": "Ammasso globulare",
+    "type": "Ammasso globulare",
+    "distance": "~20,000 anni luce"
+  },
+  "leo-ii": {
+    "title": "Galassia Leo II",
+    "subject": "Galassia",
+    "type": "Galassia sferoidale nana",
+    "distance": "~760.000 anni luce"
+  },
+  "horologium-reticulum": {
+    "title": "Abell 3266",
+    "subject": "Ammasso di galassie",
+    "type": "Ammasso di galassie",
+    "distance": ""
+  },
+  "virgo-ii-groups": {
+    "title": "NGC 4753",
+    "subject": "Galassia",
+    "type": "Galassia",
+    "distance": ""
+  },
+  "ophiuchus-supercluster": {
+    "title": "Ammasso di Ofiuco",
+    "subject": "Ammasso di galassie",
+    "type": "Ammasso di galassie",
+    "distance": ""
+  },
+  "fornax-eridanus": {
+    "title": "Ammasso della Fornace",
+    "subject": "Ammasso di galassie",
+    "type": "Ammasso di galassie",
+    "distance": ""
   }
 }

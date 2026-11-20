@@ -141,9 +141,9 @@ export function createMilkyWayScene(
   softSprite(
     track(
       radialTexture([
-        [0, 'rgba(70,150,165,0.06)'], // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
-        [0.5, 'rgba(52,120,140,0.03)'], // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
-        [1, 'rgba(40,95,120,0)'], // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
+        [0, 'rgba(136,159,231,0.06)'], // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
+        [0.5, 'rgba(136,159,231,0.03)'], // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
+        [1, 'rgba(136,159,231,0)'], // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
       ]),
     ),
     R * 2.6,
@@ -285,9 +285,9 @@ export function createMilkyWayScene(
   );
   const blueTex = track(
     radialTexture([
-      [0, 'rgba(170,235,225,0.7)'], // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
-      [0.45, 'rgba(110,205,195,0.24)'], // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
-      [1, 'rgba(90,190,180,0)'], // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
+      [0, 'rgba(136,159,231,0.7)'], // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
+      [0.45, 'rgba(136,159,231,0.24)'], // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
+      [1, 'rgba(136,159,231,0)'], // a3-keep: universe scene colour coding (star, galaxy, structure), palette review at the end
     ]),
   );
   for (let a = 0; a < MW_ARMS; a++) {

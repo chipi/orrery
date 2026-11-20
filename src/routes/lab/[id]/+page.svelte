@@ -63,7 +63,7 @@
     <section class="parameters">
       <h2 class="page-section-label">{m.lab_ui_aria_parameters()}</h2>
       <dl class="facts">
-        {#each data.parameters as row (row.label)}
+        {#each data.parameters as row, ki (ki + ':' + row.label)}
           <div>
             <dt>{row.label}</dt>
             <dd>{row.value}</dd>
@@ -77,7 +77,7 @@
     <section class="results">
       <h2 class="page-section-label">{m.lab_ui_aria_results()}</h2>
       <dl class="facts">
-        {#each data.results as row (row.label)}
+        {#each data.results as row, ki (ki + ':' + row.label)}
           <div>
             <dt>{row.label}</dt>
             <dd>{row.value}</dd>
@@ -89,7 +89,7 @@
     <section class="results">
       <h2 class="page-section-label">{m.lab_ui_aria_results()}</h2>
       <ul>
-        {#each data.outputs as label (label)}<li>{label}</li>{/each}
+        {#each data.outputs as label, ki (ki + ':' + label)}<li>{label}</li>{/each}
       </ul>
     </section>
   {/if}

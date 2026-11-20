@@ -46,7 +46,7 @@
   );
   const ariaLabel = $derived(ariaLabelKey ? t(ariaLabelKey) : `Entry steering · ${provenanceText}`);
 
-  const rgb = $derived(figure.captured ? '78,205,196' : '210,70,50');
+  const rgb = $derived(figure.captured ? '136,159,231' : '210,70,50');
 
   let canvas = $state<HTMLCanvasElement | null>(null);
   let hasAnimated = false;
@@ -57,15 +57,15 @@
     // ── Corridor comparison (top) — survivable entry-angle band, ballistic vs lifting ──
     const aToX = (a: number): number => px0 + ((a - A_LO) / (A_HI - A_LO)) * (px1 - px0);
     ctx.font = "7px 'Space Mono', monospace";
-    ctx.fillStyle = 'rgba(78,205,196,0.6)'; // a3-keep: Lab figure art, palette review at the end
+    ctx.fillStyle = 'rgba(136,159,231,0.6)'; // a3-keep: Lab figure art, palette review at the end
     ctx.textAlign = 'left';
     ctx.fillText('survivable entry angle', px0, barY - 14);
     // axis ticks
-    ctx.fillStyle = 'rgba(78,205,196,0.4)'; // a3-keep: Lab figure art, palette review at the end
+    ctx.fillStyle = 'rgba(136,159,231,0.4)'; // a3-keep: Lab figure art, palette review at the end
     ctx.textAlign = 'center';
     for (let a = A_LO; a <= A_HI; a += 1) {
       ctx.fillText(`${a}°`, aToX(a), barY + barH + 26);
-      ctx.strokeStyle = 'rgba(78,205,196,0.12)'; // a3-keep: Lab figure art, palette review at the end
+      ctx.strokeStyle = 'rgba(136,159,231,0.12)'; // a3-keep: Lab figure art, palette review at the end
       ctx.beginPath();
       ctx.moveTo(aToX(a), barY);
       ctx.lineTo(aToX(a), barY + barH + 15);
@@ -83,7 +83,7 @@
       ctx.fillText(label, px0 - 3, y + barH - 2);
     };
     drawBand(barY, figure.ballShallowDeg, figure.ballSteepDeg, '200,180,120', 'ballistic');
-    drawBand(barY + barH + 2, figure.liftShallowDeg, figure.liftSteepDeg, '78,205,196', 'lifting');
+    drawBand(barY + barH + 2, figure.liftShallowDeg, figure.liftSteepDeg, '136,159,231', 'lifting');
     // chosen entry angle marker
     const mx = aToX(figure.entryAngleDeg);
     ctx.strokeStyle = `rgb(${rgb})`;
@@ -101,13 +101,13 @@
       const xToPx = (s: number): number => px0 + (s / maxSpd) * (px1 - px0);
       const yToPx = (al: number): number => py1 - (al / maxAlt) * (py1 - py0);
       // ground + entry-interface refs
-      ctx.strokeStyle = 'rgba(120,235,225,0.35)'; // a3-keep: Lab figure art, palette review at the end
+      ctx.strokeStyle = 'rgba(136,159,231,0.35)'; // a3-keep: Lab figure art, palette review at the end
       ctx.lineWidth = 1;
       ctx.beginPath();
       ctx.moveTo(px0, py1);
       ctx.lineTo(px1, py1);
       ctx.stroke();
-      ctx.fillStyle = 'rgba(120,235,225,0.5)'; // a3-keep: Lab figure art, palette review at the end
+      ctx.fillStyle = 'rgba(136,159,231,0.5)'; // a3-keep: Lab figure art, palette review at the end
       ctx.textAlign = 'left';
       ctx.fillText('surface', px0 + 2, py1 - 3);
 
@@ -137,7 +137,7 @@
       const head = traj[Math.min(upto, traj.length) - 1];
       heroGlow(ctx, xToPx(head.speedKms), yToPx(head.altKm), 9, rgb, 0.6);
 
-      ctx.fillStyle = 'rgba(78,205,196,0.55)'; // a3-keep: Lab figure art, palette review at the end
+      ctx.fillStyle = 'rgba(136,159,231,0.55)'; // a3-keep: Lab figure art, palette review at the end
       ctx.textAlign = 'center';
       ctx.fillText(`speed → ${maxSpd.toFixed(0)} km/s`, (px0 + px1) / 2, py1 + 14);
       ctx.save();
@@ -150,14 +150,14 @@
     // Readouts.
     ctx.textAlign = 'left';
     ctx.font = "8px 'Space Mono', monospace";
-    ctx.fillStyle = 'rgba(120,235,225,0.85)'; // a3-keep: Lab figure art, palette review at the end
+    ctx.fillStyle = 'rgba(136,159,231,0.85)'; // a3-keep: Lab figure art, palette review at the end
     ctx.fillText(`L/D ${figure.liftToDrag.toFixed(2)}`, px0 + 4, py0 + 4);
     ctx.fillText(`peak ${figure.peakGeeAtEntry.toFixed(1)} g`, px0 + 4, py0 + 15);
 
     // Verdict — the corridor-widening headline.
     ctx.textAlign = 'center';
     ctx.font = "9px 'Space Mono', monospace";
-    ctx.fillStyle = 'rgb(78,205,196)'; // a3-keep: Lab figure art, palette review at the end
+    ctx.fillStyle = 'rgb(136,159,231)'; // a3-keep: Lab figure art, palette review at the end
     const factor =
       figure.ballWidthDeg > 0 ? (figure.liftWidthDeg / figure.ballWidthDeg).toFixed(1) : '∞';
     ctx.fillText(

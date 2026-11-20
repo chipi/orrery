@@ -100,10 +100,13 @@ const GENUINE_ORBIT = ALL_FLAGSHIPS;
 
 /** Flights whose core stage really ends on an eccentric coast orbit before the upper stage's
  *  departure burn, with the apogee band they must land in. */
-const ECCENTRIC_COAST: Record<string, { apoKm: [number, number] }> = {
+const ECCENTRIC_COAST: Record<string, { apoKm: [number, number]; maxSpeedKms?: number }> = {
   // V158 (Rosetta): the EPC left the EPS and Rosetta on a 200 × 4,000 km coast orbit
   // (spaceflightnow.com/ariane/v158/040224ascent.html); a light payload on Ariane 5G+.
   'ariane-5g': { apoKm: [2000, 10000] },
+  // LVM3-M4 (Chandrayaan-3): the C25 injects into 170 × 36,500 km (ISRO brochure), a transfer
+  // orbit whose perigee speed is about 10.2 km/s (the profile's injectionOrbit).
+  lvm3: { apoKm: [36000, 37000], maxSpeedKms: 10.5 },
 };
 
 describe.each(ALL_FLAGSHIPS)('flagship profile %s — data shape', (id) => {
@@ -154,12 +157,16 @@ describe.each(GENUINE_ORBIT)('flagship profile %s — genuine orbit', (id) => {
     expect(s.finalAltKm).toBeGreaterThan(90);
     expect(s.finalSpeedKms).toBeGreaterThan(7.0);
     // At perigee of an eccentric coast orbit the speed is above circular.
-    expect(s.finalSpeedKms).toBeLessThan(ECCENTRIC_COAST[id] ? 9.5 : 8.5);
+    expect(s.finalSpeedKms).toBeLessThan(
+      ECCENTRIC_COAST[id] ? (ECCENTRIC_COAST[id].maxSpeedKms ?? 9.5) : 8.5,
+    );
     const seco = s.events.find((e) => e.type === 'seco');
     expect(seco).toBeDefined();
     expect(seco!.t).toBeGreaterThan(120);
     // A single-RL10 Centaur / LE-5B insertion burn runs 12–15 min — widened from
-    // 900 s (#416); the 2000 s integrator cap still bounds a runaway.
-    expect(seco!.t).toBeLessThan(1500);
+    // 900 s (#416); the 2000 s integrator cap still bounds a runaway. A direct insertion ends
+    // with the circularising burn at apogee half an orbit after MECO (the Shuttle's OMS-2:
+    // STS-68 cutoff T+2208 s), under its own 4000 s cap.
+    expect(seco!.t).toBeLessThan(load(id).mecoTarget ? 2400 : 1500);
   });
 });

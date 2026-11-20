@@ -151,6 +151,14 @@
     "euclid-perseus.taken": "28f4340eba",
     "euclid-perseus.title": "1724380ba2",
     "euclid-perseus.type": "231e9c27b4",
+    "fornax-eridanus.distance": "da39a3ee5e",
+    "fornax-eridanus.subject": "231e9c27b4",
+    "fornax-eridanus.title": "2c70badf08",
+    "fornax-eridanus.type": "231e9c27b4",
+    "horologium-reticulum.distance": "da39a3ee5e",
+    "horologium-reticulum.subject": "231e9c27b4",
+    "horologium-reticulum.title": "54e12e4296",
+    "horologium-reticulum.type": "231e9c27b4",
     "hst-andromeda.caption": "cd417cee37",
     "hst-andromeda.distance": "8f4fb48c03",
     "hst-andromeda.subject": "f69ff6e8d8",
@@ -417,6 +425,10 @@
     "leo-i.subject": "f69ff6e8d8",
     "leo-i.title": "ecf653b02c",
     "leo-i.type": "0992b4087b",
+    "leo-ii.distance": "555f9dcbc8",
+    "leo-ii.subject": "f69ff6e8d8",
+    "leo-ii.title": "c51880b8b8",
+    "leo-ii.type": "0992b4087b",
     "m10.distance": "5eb9b67692",
     "m10.subject": "2bca159cda",
     "m10.title": "2f6e341fef",
@@ -477,6 +489,10 @@
     "m17.subject": "a796e9cb0c",
     "m17.title": "32dfd8159d",
     "m17.type": "a796e9cb0c",
+    "m18.distance": "8afb91864a",
+    "m18.subject": "044c6bfd67",
+    "m18.title": "8e4ca3edcc",
+    "m18.type": "044c6bfd67",
     "m19.distance": "b5520ac90f",
     "m19.subject": "2bca159cda",
     "m19.title": "68d1c3d7f4",
@@ -544,6 +560,10 @@
     "m35.subject": "044c6bfd67",
     "m35.title": "b4af3b49f9",
     "m35.type": "044c6bfd67",
+    "m36.distance": "41ed767b9f",
+    "m36.subject": "044c6bfd67",
+    "m36.title": "66cf235f2e",
+    "m36.type": "044c6bfd67",
     "m37.distance": "6c77691a8c",
     "m37.subject": "044c6bfd67",
     "m37.title": "28fa0bec52",
@@ -635,6 +655,10 @@
     "m61.subject": "f69ff6e8d8",
     "m61.title": "170e123a05",
     "m61.type": "f69ff6e8d8",
+    "m62.distance": "9b6dbd1cca",
+    "m62.subject": "2bca159cda",
+    "m62.title": "2482cb0c04",
+    "m62.type": "2bca159cda",
     "m63.distance": "50e23dbb7c",
     "m63.subject": "f69ff6e8d8",
     "m63.title": "624398b7f8",
@@ -822,6 +846,10 @@
     "ngc-6946-group.subject": "f69ff6e8d8",
     "ngc-6946-group.title": "0f5bc83d41",
     "ngc-6946-group.type": "f69ff6e8d8",
+    "ophiuchus-supercluster.distance": "da39a3ee5e",
+    "ophiuchus-supercluster.subject": "231e9c27b4",
+    "ophiuchus-supercluster.title": "bb223cbeeb",
+    "ophiuchus-supercluster.type": "231e9c27b4",
     "pale-blue-dot.caption": "8fd3caecc4",
     "pale-blue-dot.distance": "34f4124f1f",
     "pale-blue-dot.subject": "7feec596b8",
@@ -878,6 +906,10 @@
     "virgo-cluster.subject": "231e9c27b4",
     "virgo-cluster.title": "0c4131c6ec",
     "virgo-cluster.type": "231e9c27b4",
+    "virgo-ii-groups.distance": "da39a3ee5e",
+    "virgo-ii-groups.subject": "f69ff6e8d8",
+    "virgo-ii-groups.title": "a9917598c3",
+    "virgo-ii-groups.type": "f69ff6e8d8",
     "wlm.distance": "f78f855cb4",
     "wlm.subject": "f69ff6e8d8",
     "wlm.title": "f995cf3f2d",
@@ -2419,13 +2451,13 @@
   },
   "fleet/crewed-spacecraft/challenger.json": {
     "best_known_for": "5e5c20f45a",
-    "description": "f23011582b",
-    "dispatch": "249b89ed27",
+    "description": "ae54e5bb18",
+    "dispatch": "ee30c7740b",
     "tagline": "4a0c68cc27"
   },
   "fleet/crewed-spacecraft/columbia.json": {
     "best_known_for": "93315b005f",
-    "description": "04320e9668",
+    "description": "69a9a2d278",
     "dispatch": "3e5923306b",
     "tagline": "5056cf57fd"
   },
@@ -2555,7 +2587,7 @@
   },
   "fleet/crewed-spacecraft/x37b.json": {
     "best_known_for": "83bfec33cf",
-    "description": "b6646bcfee",
+    "description": "8130a071f3",
     "tagline": "318db79b6e"
   },
   "fleet/engine/ce-20.json": {
@@ -2737,7 +2769,7 @@
   },
   "fleet/lander/im-1-odysseus.json": {
     "best_known_for": "660d598023",
-    "description": "707d4a8047",
+    "description": "ddd64de442",
     "name": "8598409cc1",
     "tagline": "660d598023"
   },
@@ -2843,7 +2875,7 @@
   },
   "fleet/lander/viking2-lander.json": {
     "best_known_for": "dfb1f8cbae",
-    "description": "e8057075db",
+    "description": "240d665c57",
     "tagline": "dfb1f8cbae"
   },
   "fleet/lander/vikram-cy2.json": {
@@ -3138,7 +3170,7 @@
   },
   "fleet/launcher/atlas-agena-b.json": {
     "best_known_for": "f45f9f2135",
-    "description": "abc56e0353",
+    "description": "60ca80ce7f",
     "name": "85f24b5420",
     "tagline": "f45f9f2135"
   },
@@ -3535,7 +3567,7 @@
   },
   "fleet/orbiter/kaguya.json": {
     "best_known_for": "0607579df7",
-    "description": "4bbc5c18e3",
+    "description": "c4f316eb94",
     "tagline": "0607579df7"
   },
   "fleet/orbiter/lro.json": {
@@ -4369,7 +4401,7 @@
     "fact": "fc9b7a38b9",
     "mission_type": "bbff3adf98",
     "name": "219b4e2510",
-    "site_name": "a97332c248"
+    "site_name": "a7b8d476ed"
   },
   "mars-sites/mars3-orbiter.json": {
     "capability": "1c24b8a5b9",
@@ -5628,9 +5660,11 @@
     "fly_toggle_science_layers_title": "a457378dac",
     "fly_traj_type_cislunar": "55af4e4717",
     "fly_traj_type_cislunar_free_return": "5f6f6494e9",
+    "fly_traj_type_earth_orbit": "3533d3297f",
     "fly_traj_type_helio_flyby": "a6de3e315a",
     "fly_traj_type_helio_free_return": "ba718de76a",
     "fly_traj_type_helio_hohmann": "45abd67141",
+    "fly_traj_type_suborbital": "185782b3ff",
     "fly_view_drawer": "69bd4ef9fb",
     "fly_view_toggles_aria": "14c7f43bfd",
     "footer_about_aria": "6b21fb791a",
@@ -5698,6 +5732,7 @@
     "hud_coast": "1a7bd3edc4",
     "hud_cold": "dd5a187137",
     "hud_contact": "740fabb870",
+    "hud_data_ends": "61874aeace",
     "hud_decel": "8aa12d221e",
     "hud_deorbit_in": "01be9bb9f6",
     "hud_descent": "6019efe425",
@@ -8930,9 +8965,9 @@
     "events.2.label": "062b45fc77",
     "events.2.note": "8dea867842",
     "events.2.type": "586d612861",
-    "first": "262021699d",
-    "name": "a978bddbba",
-    "payload": "9fb5d18d3e",
+    "first": "6adc5de775",
+    "name": "aa97103d46",
+    "payload": "98c70ab7c4",
     "type": "80a1172dca",
     "vehicle": "d1b5b43a2f"
   },
@@ -8980,16 +9015,16 @@
   },
   "missions/earth/shenzhou-5.json": {
     "delta_v": "dba9cc13e9",
-    "description": "8eeac2f5a0",
+    "description": "cc99591e9a",
     "events.0.label": "25ef1d7636",
     "events.0.note": "dc6ce499e3",
     "events.0.type": "586d612861",
     "events.1.label": "062b45fc77",
-    "events.1.note": "b0f8ef36f2",
+    "events.1.note": "3be9866fc3",
     "events.1.type": "586d612861",
     "first": "6ae420d270",
     "name": "4c967a38a2",
-    "payload": "bd0070834d",
+    "payload": "d9224b1ade",
     "type": "8133bc47bb",
     "vehicle": "d4bdeac7aa"
   },
@@ -9827,9 +9862,9 @@
     "events.1.label": "43fb9e07ac",
     "events.1.note": "2011d83d6c",
     "events.1.type": "586d612861",
-    "first": "6b7bc087dc",
+    "first": "b460aa2b38",
     "name": "45da8da847",
-    "payload": "a8713d8efe",
+    "payload": "dfe9b324ed",
     "type": "9e4b4e6da1",
     "vehicle": "5a7ad615d3",
     "vehicle_stage": "5ea01f8577"
@@ -10115,7 +10150,7 @@
     "events.2.type": "586d612861",
     "first": "ea847b235a",
     "name": "a62bd402f0",
-    "payload": "7272b6a39a",
+    "payload": "97a7160283",
     "type": "0aba459e9c",
     "vehicle": "087352d935",
     "vehicle_stage": "5ea01f8577"
@@ -10717,7 +10752,7 @@
   },
   "missions/moon/chandrayaan2.json": {
     "delta_v": "4cc166d53f",
-    "description": "f925c6b1f4",
+    "description": "207575c2b3",
     "events.0.label": "89006102d3",
     "events.0.note": "4253b70667",
     "events.0.type": "586d612861",
@@ -10798,7 +10833,7 @@
   },
   "missions/moon/change2.json": {
     "delta_v": "ca8cf391ab",
-    "description": "ab266c349a",
+    "description": "322eb13563",
     "events.0.label": "89006102d3",
     "events.0.note": "cc01a38b81",
     "events.0.type": "586d612861",
@@ -10942,7 +10977,7 @@
   },
   "missions/moon/im-1.json": {
     "delta_v": "ca8cf391ab",
-    "description": "21cd0d27e7",
+    "description": "4302b0fd07",
     "events.0.label": "89006102d3",
     "events.0.note": "981169ab10",
     "events.0.type": "586d612861",
@@ -10961,7 +10996,7 @@
   },
   "missions/moon/kaguya.json": {
     "delta_v": "faf40213b1",
-    "description": "c299059214",
+    "description": "d9e8f9a7b8",
     "events.0.label": "89006102d3",
     "events.0.note": "d561688e2e",
     "events.0.type": "586d612861",
@@ -10975,7 +11010,7 @@
     "events.3.note": "6c71f1e2e3",
     "events.3.type": "59bd0a3ff4",
     "events.4.label": "558c9b561b",
-    "events.4.note": "c7a2ef59b5",
+    "events.4.note": "2d2263645e",
     "events.4.type": "586d612861",
     "events.5.label": "3546a249a4",
     "events.5.note": "5999108daa",
@@ -15184,7 +15219,7 @@
     "narrative.1.type": "ca70aa1fca",
     "narrative.2.md": "e10818c2b9",
     "narrative.2.type": "ca70aa1fca",
-    "outcome.0.md": "530a427fa5",
+    "outcome.0.md": "0b3fd5289f",
     "outcome.0.type": "ca70aa1fca",
     "outcome.1.align": "52e6d8ab88",
     "outcome.1.caption": "bb32e54b32",
@@ -17768,6 +17803,17 @@
     "intro_sentence": "5131ff14e5",
     "title": "2924d9f5c3"
   },
+  "science/observation/how-stars-end.json": {
+    "body_paragraphs.0": "7d08d5bfa4",
+    "body_paragraphs.1": "7b1605319b",
+    "body_paragraphs.2": "16dea1ad7c",
+    "body_paragraphs.3": "f6c2f82232",
+    "diagram_caption": "46640c37c8",
+    "intro_sentence": "3d8e5e2ce4",
+    "seo_description": "14be4851ef",
+    "seo_title": "8a98f667d6",
+    "title": "27e2e0852f"
+  },
   "science/observation/interferometry.json": {
     "body_paragraphs.0": "7234a74c84",
     "body_paragraphs.1": "b36b7667ed",
@@ -17795,6 +17841,17 @@
     "diagram_caption": "2cb46c9736",
     "intro_sentence": "b32ce1d17a",
     "title": "5242630744"
+  },
+  "science/observation/nebulae.json": {
+    "body_paragraphs.0": "2afa9abef5",
+    "body_paragraphs.1": "b4ebea6986",
+    "body_paragraphs.2": "57ecd05d5a",
+    "body_paragraphs.3": "d4113fe24f",
+    "diagram_caption": "4702be947a",
+    "intro_sentence": "37b0257048",
+    "seo_description": "d9fbe232d6",
+    "seo_title": "e3bc5669cc",
+    "title": "13260521be"
   },
   "science/observation/our-galaxy.json": {
     "body_paragraphs.0": "84ea9c1c89",

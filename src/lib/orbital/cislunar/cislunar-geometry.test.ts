@@ -347,3 +347,52 @@ describe('cislunarEventTimes in a translated locale', () => {
     expect(times?.arrival).toBe(3);
   });
 });
+
+// Backlog F11: a published (JPL Horizons) path is a real flight, not a parked swing-by. Its
+// two lunar passes (Artemis I: MET 5.26 and 19.42) must each ride the Moon of their own time,
+// not both be pinned to the Moon of transit_days by the hold heuristic.
+describe('cislunar-geometry — tier_2_published waypoints (F11)', () => {
+  const dep = 100;
+  const transit = 9;
+  // Data frame: the Moon at MET m sits at moonEciPos(m) (dep 0). A pass 3,000 km off the Moon.
+  const off = (m: number, dKm: number): [number, number, number, number] => {
+    const p = moonEciPos(m);
+    return [m, p.x + dKm, p.y, p.z];
+  };
+  const waypoints: Array<[number, number, number, number]> = [[0, 6569, 0, 0]];
+  for (let m = 0.5; m < 25; m += 0.25) {
+    const nearPass = Math.abs(m - 5.25) < 0.3 || Math.abs(m - 19.5) < 0.3;
+    if (nearPass) waypoints.push(off(m, 3000));
+    else {
+      const p = moonEciPos(m);
+      waypoints.push([m, p.x * 0.6, 0, p.z * 0.6]); // far from the Moon, between it and the Earth
+    }
+  }
+  const profile: CislunarProfile = { source_tier: 'tier_2_published', waypoints_km: waypoints };
+  const traj = buildCislunarTrajectory(profile, {
+    dep_day_sim: dep,
+    transit_days: transit,
+    is_return_trip: false,
+  });
+
+  it('draws each pass as its own lunar_flyby, with coasts around them', () => {
+    const types = traj.phases.map((p) => p.type);
+    expect(types.filter((t) => t === 'lunar_flyby')).toHaveLength(2);
+    expect(types[0]).toBe('tli_coast');
+    expect(types.at(-1)).toBe('tei_coast');
+  });
+
+  it('each pass, shifted as the renderer shifts it, stays 3,000 km off the Moon of its time', () => {
+    // sampleCislunarSpacecraftPos adds (live Moon − moonRef) to a lunar_flyby point.
+    const moonRef = moonEciPos(dep + transit);
+    for (const ph of traj.phases.filter((p) => p.type === 'lunar_flyby')) {
+      const mid = (ph.start_met_days + ph.end_met_days) / 2;
+      const live = moonEciPos(dep + mid);
+      const pt = ph.points[Math.floor(ph.points.length / 2)];
+      const shifted = { x: pt.x + live.x - moonRef.x, y: pt.y, z: pt.z + live.z - moonRef.z };
+      const d = Math.hypot(shifted.x - live.x, shifted.y - live.y, shifted.z - live.z);
+      expect(d).toBeGreaterThan(2_500);
+      expect(d).toBeLessThan(3_500);
+    }
+  });
+});

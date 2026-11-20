@@ -8,7 +8,7 @@ This is the **canonical** instruction file. `CLAUDE.md` and `.cursor/rules/orrer
 
 ## Where to start — read these before touching code
 
-**Single-page architecture map: [`docs/adr/TA.md`](docs/adr/TA.md).** v2.7 is current as of v0.8; it documents every route, subsystem, 3D scene, asset pipeline, contract, and constraint, each with the ADR that locked it. Read it first when a task touches anything outside one file.
+**Single-page architecture map: [`docs/adr/TA.md`](docs/adr/TA.md).** Its header names the release it is current as of (v4.0: v0.9.9); it documents every route, subsystem, 3D scene, asset pipeline, contract, and constraint, each with the ADR that locked it. Read it first when a task touches anything outside one file.
 
 Then drill into the matching doc by question type:
 
@@ -24,6 +24,7 @@ Then drill into the matching doc by question type:
 | How is a specific 3D scene built? | TA.md §rendering + `src/routes/<route>/+page.svelte` |
 | How does the build pipeline work? | TA.md §pipelines (10 pipelines documented) |
 | Deploying to prod, or need a **service / port / log / endpoint** on the VPS? | The prod VPS is **co-tenant** with `podcast_scraper` — **never guess or port-probe, it's all documented.** Live services + ports per box: the **homelab homepage `http://homelab:8888`**. Port allocations: podcast infra **ADR-114** (`~/Projects/podcast_scraper-infra/docs/adr/ADR-114*.md` — 8090 orrery web · 8091 mcp · 8092 podcast AS · 8093 orrery lab-api). Logs / metrics / errors + Grafana: `docs/guides/observability.md` (Grafana `http://homelab:3000`, VictoriaLogs). Deploy mechanics + prerequisites: `docs/ops/deploy-prod-vps.md`. |
+| Dev errors, logs or traces from **my branch**, before a PR? | Run the homelab skill **`o11y-dev`** in the worktree (read-only; it finds this branch's dev telemetry by its `worktree` tag). Dev telemetry goes only to the dev targets (GlitchTip `orrery-dev`, VictoriaLogs and VictoriaTraces with `environment=dev`) and carries `worktree` = the git branch: the browser through `vite.config.ts`, the lab-api / mcp dev servers through `scripts/workspace/with-env.mjs` (`ORRERY_WORKTREE`). Dev errors are never filed as GitHub issues, and dev agents never resolve GlitchTip issues. Production review is separate (the prod notes in the row above and in the deploy-verify skill). |
 | What lives in this folder / which of two look-alike functions do I touch? | the folder's own `README.md` (module map) — see below |
 
 **Consult this table BEFORE you act — especially before you probe.** The moment you're about to `curl` / `dig` / `ssh` / port-scan, or *guess* an infra fact — a port, a service, a URL, what runs on which box — STOP: the answer is in the row above, and the doc it points to is written **for you**. Reading it first is mandatory; probing or guessing before reading is a defect, not initiative. (2026-09-07: an agent port-scanned the homelab box for what holds `:8093` and burned a pile of tokens — the answer was one line in ADR-114's port map and on the homepage `http://homelab:8888`. Don't repeat it.)
@@ -194,8 +195,7 @@ Superseded (do not use): ADR-002 (vanilla JS), ADR-003 (Vite standalone), ADR-00
 │   │   ├── link-provenance.ts            ← LEARN-link locale fallback chain (ADR-051)
 │   │   ├── image-credits.ts              ← per-image TASL parsing for lightbox
 │   │   ├── credits-grouping.ts           ← /credits page section grouping
-│   │   ├── library-grouping.ts           ← /library page section grouping
-│   │   └── license-allowlist.ts          ← canonical license allowlist (ADR-047)
+│   │   └── library-grouping.ts           ← /library page section grouping
 │   ├── workers/
 │   │   └── lambert.worker.ts
 │   └── types/
@@ -918,7 +918,7 @@ The bot regenerates the four linux baselines (credits-head + science-tabs × des
 **Pre-tag dry run checklist:**
 
 1. `npm run preflight` — green (it now includes `npm run docs:build`, the VitePress site; a docs build error otherwise first shows up in Deploy docs after the merge)
-2. `npm run test:e2e -- --workers=1` — both projects green (or known-broken specs explicitly skipped with a comment)
+2. `npm run test:e2e -- --workers=1` — both projects green (or known-broken specs explicitly skipped with a comment); for the release push also in the CI image, `npm run docker:e2e -- --ci-image -- --project=<each project>` (four specs passed on the host and timed out on the CI runners in 0.9.9)
 3. `git push` — pre-push hook runs preflight again, must pass
 4. Push completes — wait for CI + e2e workflows on main, confirm both green
 5. Only then move the tag / cut the GitHub Release
@@ -1077,6 +1077,8 @@ Reading order for any non-trivial task:
 8. `docs/guides/observability.md` — GlitchTip (self-hosted, client-side JS errors) + shared node Alloy → VictoriaLogs (docker logs), both env-var-gated and silent by default, RFC-025 / ADR-067-068. For setting up the operator accounts, populating env vars, verifying silence in local dev, and importing the dashboards.
 
 When code and TA.md / ADRs disagree, one is wrong. Fix the wrong one. Do not tolerate divergence.
+
+**`llms.txt`** at the repo root is the agent index of all of this (llmstxt.org): one line per section of this file, the per-type indexes, and the docs per code area and per running service. It is generated (`npm run llms:build`, hand-kept part in `scripts/llms/llms-hand.mjs`) and `validate-data` fails when it is stale, so after adding or renaming a guide or a section here, rebuild it.
 
 ---
 

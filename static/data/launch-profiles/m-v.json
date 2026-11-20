@@ -19,25 +19,28 @@
       "ispSlS": 243,
       "ispVacS": 274,
       "engines": 1,
-      "chamberTempK": 3300
+      "chamberTempK": 3300,
+      "separationDelayS": 23.3
     },
     {
       "name": "M-25",
       "wetKg": 37000,
       "dryKg": 4000,
-      "thrustVacKN": 1520,
+      "thrustVacKN": 1250.4,
       "ispVacS": 292,
       "engines": 1,
-      "chamberTempK": 3300
+      "chamberTempK": 3300,
+      "separationDelayS": 49
     },
     {
       "name": "M-34b",
       "wetKg": 12000,
       "dryKg": 1000,
-      "thrustVacKN": 337,
+      "thrustVacKN": 298.2,
       "ispVacS": 301,
       "engines": 1,
-      "chamberTempK": 3300
+      "chamberTempK": 3300,
+      "separationDelayS": 61
     },
     {
       "name": "KM-V2",
@@ -66,5 +69,6 @@
       "l": "Dry masses derived from motor mass less propellant; fairing mass estimated (not published)",
       "u": "https://en.wikipedia.org/wiki/M-V"
     }
-  ]
+  ],
+  "fairingJettisonS": 186
 }

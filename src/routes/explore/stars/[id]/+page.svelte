@@ -102,7 +102,7 @@
   <section class="technical">
     <h2 class="page-section-label">{m.panel_tab_technical()}</h2>
     <dl class="facts">
-      {#each data.rows as row (row.label)}
+      {#each data.rows as row, ki (ki + ':' + row.label)}
         <div>
           <dt>{row.label}</dt>
           <dd>
@@ -118,6 +118,19 @@
     </dl>
   </section>
 
+  {#if star.con && star.skyXyz}
+    <section class="in-the-sky" data-testid="entity-in-the-sky">
+      <h2 class="page-section-label">{m.panel_tab_sky()}</h2>
+      <!-- Lazy: the finder stays out of the page's eager JS (route budget). -->
+      {#await import('$lib/components/StarInTheSky.svelte') then { default: InTheSky }}
+        <InTheSky
+          star={{ id: star.id, con: star.con, xyz: star.skyXyz }}
+          explorerHref={localHref(`/explore?goto=${star.id}`)}
+        />
+      {/await}
+    </section>
+  {/if}
+
   {#if star.planets.length}
     <section class="system" id="system">
       <h2 class="page-section-label">{m.star_tab_system()}</h2>
@@ -129,7 +142,7 @@
           {#if p.fact}<p class="dispatch">{p.fact}</p>{/if}
           {#if p.bio}<p>{p.bio}</p>{/if}
           <dl class="facts">
-            {#each data.planetRows[p.id] as row (row.label)}
+            {#each data.planetRows[p.id] as row, ki (ki + ':' + row.label)}
               <div>
                 <dt>{row.label}</dt>
                 <dd>{row.value}</dd>

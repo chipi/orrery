@@ -96,7 +96,8 @@ export interface FleetEntryBase {
   flights?: FleetFlight[];
   /** Optional route to dedicated explorer (e.g. /iss, /tiangong). */
   explorer_route?: string;
-  credit: string;
+  /** Internal provenance / editorial note, English only and never displayed (2026-11-19). */
+  credit?: string;
   links: FleetLink[];
   /** WGS84 latitude, required on launch-site entries (#285 Phase 1). */
   lat?: number;

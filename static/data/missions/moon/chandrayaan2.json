@@ -78,7 +78,9 @@
       "inclination_deg": 90,
       "orbit_insertion_dv_km_s": 0.85,
       "source": "Lunar orbit insertion 2019-08-20 03:32 UTC into an 18,072 x 114 km orbit (ISRO, as reported on Wikipedia); the v-infinity, the inclination and the insertion delta-v are schematic estimates, not published figures.",
-      "edl_system": "powered"
+      "edl_system": "powered",
+      "entry_velocity_km_s": 1.683,
+      "edl_duration_s": 692
     },
     "totals": {
       "total_dv_km_s": 3.5,
@@ -138,7 +140,7 @@
       "return": {
         "type": "none"
       },
-      "waypoints_source": "Chandrayaan-2 (ISRO), as reported on en.wikipedia.org/wiki/Chandrayaan-2: injection orbit 45,475 x 169 km (2019-07-22), final Earth orbit 142,975 x 276 km, trans-lunar injection 2019-08-13 20:51 UTC, lunar orbit insertion 2019-08-20 03:32 UTC into 18,072 x 114 km, Vikram separation 2019-09-02 07:45 UTC, powered descent 2019-09-06 about 20:08 UTC. Intermediate orbits of the apogee-raising burns were not found, so the transfer is drawn as a parametric direct arc, not the real apogee-raising loops. Ecliptic plane; orbit phase schematic.",
+      "waypoints_source": "Chandrayaan-2 (ISRO), as reported on en.wikipedia.org/wiki/Chandrayaan-2: injection orbit 45,475 x 169 km (2019-07-22), final Earth orbit 142,975 x 276 km, trans-lunar injection 2019-08-13 20:51 UTC, lunar orbit insertion 2019-08-20 03:32 UTC into 18,072 x 114 km, Vikram separation 2019-09-02 07:45 UTC, powered descent 2019-09-06 about 20:08 UTC. The apogee-raising burns (ISRO mission page; per-burn orbits as reported from ISRO bulletins, secondary): 2019-07-24 230 x 45,162 km, 07-26 251 x 54,829 km, 07-29 apogee 71,558 km, 08-02 apogee 90,229 km, 08-06 276 x 142,975 km. The transfer is drawn as a parametric direct arc, not the real apogee-raising loops. Ecliptic plane; orbit phase schematic.",
       "waypoints_km": [
         [
           0,

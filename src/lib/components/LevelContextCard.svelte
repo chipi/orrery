@@ -1,59 +1,42 @@
 <!--
   "What you are looking at" on /explore (E9, UXD-027): one card per scale level, hung under the
-  level picker's row. Header (the level's glyph and name, a fold button), then what the level is
-  (the home-grid text), the story the Science Lens used to carry, and up to five /science sections
+  level picker's row; the picker chip names the level and the fold chip beside it opens the card
+  (plan D15: one control, not a second header). What the level is (the home-grid text), the story the Science Lens used to carry, and up to five /science sections
   to read next (`SCALE_SHELLS[level].science`, titles from the science index). The TierContextCard
   pattern: open on a pointer device, folded on a touch one, the choice remembered. The Science Lens
   panel keeps its layer toggles; its story lives here.
 -->
 <script lang="ts">
   import { page } from '$app/state';
-  import * as m from '$lib/paraglide/messages';
   import { loadScienceTitles } from '$lib/explore/science-titles';
   import { SCALE_SHELLS } from '$lib/explore/scale-shells';
   import type { ShellId } from '$lib/explore/scale-shell-controller';
   import { pickScienceLinks, refsFromSlugs } from '$lib/science-links';
   import { localeFromPage, localHref } from '$lib/locale';
-  import ScaleGlyphIcon from './ScaleGlyphIcon.svelte';
+  import { levelCardBodyId } from '$lib/explore/level-card-state.svelte';
+  import type { LevelCardState } from '$lib/explore/level-card-state.svelte';
 
   let {
     shell,
+    card,
+    align = 'right',
+    covered = false,
     panelCoverPx = 0,
     width = $bindable(0),
   }: {
     shell: ShellId;
+    /** Open or folded; the fold chip is the navigator row's, beside the level picker (plan D15). */
+    card: LevelCardState;
+    /** The side the navigator row sits on: the card hangs under it. */
+    align?: 'left' | 'right';
+    /** An open INDEX panel lies over the card's place (the outer scales): the card steps aside
+     *  until it closes, its fold state kept. */
+    covered?: boolean;
     /** Width a docked side panel covers at the right edge; the card sits left of it. */
     panelCoverPx?: number;
-    /** The card's measured width, for the HUD row that must stop before it. */
+    /** The card's measured width, for the HUD row that must stop before it (0 while folded). */
     width?: number;
   } = $props();
-
-  const STORE_KEY = 'orrery.explore.levelCardExpanded';
-  function initialExpanded(): boolean {
-    try {
-      const saved = localStorage.getItem(STORE_KEY);
-      if (saved === '1') return true;
-      if (saved === '0') return false;
-    } catch {
-      /* storage blocked: fall through to the default */
-    }
-    // Folded where the HUD has no room for it: a touch screen, or a small window with a mouse.
-    const tight =
-      typeof window !== 'undefined' &&
-      !!window.matchMedia?.(
-        '(hover: none), (pointer: coarse), (max-width: 899px), (max-height: 559px)',
-      ).matches;
-    return !tight;
-  }
-  let expanded = $state(initialExpanded());
-  function toggle() {
-    expanded = !expanded;
-    try {
-      localStorage.setItem(STORE_KEY, expanded ? '1' : '0');
-    } catch {
-      /* storage blocked: the choice lives for this view only */
-    }
-  }
 
   const s = $derived(SCALE_SHELLS[shell]);
   const links = $derived(pickScienceLinks(refsFromSlugs(s.science)));
@@ -77,37 +60,19 @@
   });
   const titleOf = (tab: string, section: string) =>
     titles.get(`${tab}/${section}`) ?? section.replace(/-/g, ' ');
-
-  const uid = $props.id();
 </script>
 
 <section
+  id={levelCardBodyId}
   class="level-card"
+  class:left={align === 'left'}
   bind:clientWidth={width}
-  class:collapsed={!expanded}
-  style:right={`${panelCoverPx + 8}px`}
+  hidden={!card.expanded || covered}
+  style:right={align === 'right' ? `${panelCoverPx + 8}px` : undefined}
   aria-label={s.name()}
   data-testid="explore-level-card"
 >
-  <div class="head">
-    <ScaleGlyphIcon glyph={s.glyph} size={24} />
-    <span class="name" data-testid="explore-level-card-name">{s.name()}</span>
-    <button
-      type="button"
-      class="toggle"
-      aria-expanded={expanded}
-      aria-controls="{uid}-body"
-      aria-label={expanded
-        ? m.explore_level_card_collapse_aria()
-        : m.explore_level_card_expand_aria()}
-      data-testid="explore-level-card-toggle"
-      data-a4-keep="disclosure fold (aria-expanded), not a chip: the orbit ruler header's pattern"
-      onclick={toggle}
-    >
-      <span aria-hidden="true">{expanded ? '▾' : '▸'}</span>
-    </button>
-  </div>
-  <div id="{uid}-body" class="body" hidden={!expanded}>
+  <div class="body">
     <p class="lead" data-testid="explore-level-card-lead">{s.desc()}</p>
     <p class="story">{s.storyBody()}</p>
     {#if links.length && titlesLoaded}
@@ -145,48 +110,23 @@
     color: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(6px);
   }
+  /* Touch: the strip sits 112 px up in portrait and is ~110 px tall, so the card stops 300 px from
+     the bottom (58 top + 232) and its links never run under the KM / AU / LY / PC readout (D16). */
   @media (hover: none), (pointer: coarse) {
     .level-card {
       top: 58px;
+      max-block-size: max(120px, calc(100% - 300px));
     }
   }
-  .head {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  .name {
-    flex: 1;
-    min-inline-size: 0;
-    font-size: 13px;
-    letter-spacing: 0.5px;
-    color: #fff;
-  }
-  .toggle {
-    flex: none;
-    min-inline-size: 44px;
-    min-block-size: 44px;
-    margin: -10px -12px -10px 0;
-    padding: 0;
-    background: none;
-    border: 0;
-    border-radius: 6px;
-    color: rgba(255, 255, 255, 0.7);
-    font: inherit;
-    font-size: 14px;
-    cursor: pointer;
-  }
-  .toggle:hover,
-  .toggle:focus-visible {
-    color: #889fe7;
-    background: rgba(136, 159, 231, 0.1);
-  }
-  .toggle:focus-visible {
-    outline: 2px solid #889fe7;
-    outline-offset: -2px;
+  /* A narrow window with a mouse: the fold chip sits under the picker (ScaleNav), so the card at
+     the solar system hangs under that chip. */
+  @media (hover: hover) and (pointer: fine) and (max-width: 899px) {
+    .level-card:not(.left) {
+      top: 80px;
+    }
   }
   .lead {
-    margin: 8px 0 0;
+    margin: 0;
     color: rgba(255, 255, 255, 0.9);
   }
   .story {
@@ -220,16 +160,18 @@
   .links a:focus-visible {
     text-decoration: underline;
   }
-  /* Folded, the card is only its header: as wide as that, so it clears the chip rows beside it. */
-  .level-card.collapsed {
-    inline-size: max-content;
-    padding-block: 8px;
+  .level-card[hidden] {
+    display: none;
   }
-  /* A small window with a mouse is crowded at the top (chip rows, INDEX tab): folded, the card is
-     the glyph and the fold button; the picker chip above it already names the level. */
-  @media (hover: hover) and (pointer: fine) and ((max-width: 899px) or (max-height: 559px)) {
-    .level-card.collapsed .name {
-      display: none;
+  /* At the outer scales the navigator row is flush left, and the card hangs under it there, 8 px
+     past the INDEX tab at the left edge (30 px wide with a mouse, 44 px on touch) so the tab stays
+     reachable while the card is open. */
+  .level-card.left {
+    left: 38px;
+  }
+  @media (hover: none), (pointer: coarse) {
+    .level-card.left {
+      left: 52px;
     }
   }
 </style>

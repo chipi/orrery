@@ -61,7 +61,7 @@
 
   {#if data.facts.length}
     <dl class="facts">
-      {#each data.facts as row (row.label)}
+      {#each data.facts as row, ki (ki + ':' + row.label)}
         <div>
           <dt>{row.label}</dt>
           <dd>{row.value}</dd>

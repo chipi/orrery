@@ -565,7 +565,8 @@ test.describe('/explore INDEX — a round photo in the lead slot of the solar ro
       1,
     );
     await expect(nb.locator('button.si-row[data-index-id="m13"] img.entity-thumb')).toHaveCount(1);
-    await expect(nb.locator('button.si-row[data-index-id="m18"] .entity-thumb-dot')).toHaveCount(1);
+    // M18 has a photo since S6; M25 is the photo-less case (as in deep-sky-pages.spec).
+    await expect(nb.locator('button.si-row[data-index-id="m25"] .entity-thumb-dot')).toHaveCount(1);
     // Wait until the Local Sheet is the scale on screen (slower to settle on a phone) before the
     // toggle is clicked, as for the neighbourhood above.
     await openScale(page, SCALES[4]);

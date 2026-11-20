@@ -1149,5 +1149,53 @@
     "subject": "गैलेक्सी समूह",
     "type": "गैलेक्सी समूह",
     "distance": "~33 करोड़ प्रकाश-वर्ष"
+  },
+  "m18": {
+    "title": "M18 · NGC 6613",
+    "subject": "तारा समूह",
+    "type": "तारा समूह",
+    "distance": "~4,900 प्रकाश-वर्ष"
+  },
+  "m36": {
+    "title": "M36 · NGC 1960",
+    "subject": "तारा समूह",
+    "type": "तारा समूह",
+    "distance": "~3,670 प्रकाश-वर्ष"
+  },
+  "m62": {
+    "title": "M62 · NGC 6266",
+    "subject": "गोलाकार समूह",
+    "type": "गोलाकार समूह",
+    "distance": "~20,000 प्रकाश-वर्ष"
+  },
+  "leo-ii": {
+    "title": "सिंह II बौनी आकाशगंगा",
+    "subject": "गैलेक्सी",
+    "type": "बौनी गोलाभ गैलेक्सी",
+    "distance": "~7,60,000 प्रकाश-वर्ष"
+  },
+  "horologium-reticulum": {
+    "title": "Abell 3266",
+    "subject": "गैलेक्सी समूह",
+    "type": "गैलेक्सी समूह",
+    "distance": ""
+  },
+  "virgo-ii-groups": {
+    "title": "NGC 4753",
+    "subject": "गैलेक्सी",
+    "type": "गैलेक्सी",
+    "distance": ""
+  },
+  "ophiuchus-supercluster": {
+    "title": "सर्पधारी क्लस्टर",
+    "subject": "गैलेक्सी समूह",
+    "type": "गैलेक्सी समूह",
+    "distance": ""
+  },
+  "fornax-eridanus": {
+    "title": "फ़ोर्नैक्स आकाशगंगा क्लस्टर",
+    "subject": "गैलेक्सी समूह",
+    "type": "गैलेक्सी समूह",
+    "distance": ""
   }
 }

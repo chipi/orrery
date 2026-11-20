@@ -43,6 +43,11 @@ export function createPanelFramer(deps: PanelFramerDeps): PanelFramer {
   let measureUntil = now() + FRAMING_SETTLE_MS;
   let wasWanted = false;
   let lastCover = 0;
+  // A sample that changed the cover is followed by one more on the next frame, however late
+  // that frame comes: on a GPU-less runner frames can be further apart than the settle window,
+  // and its one sample caught a drawer mid-slide (docker-e2e 43965529959). Measuring stops
+  // only when two samples agree.
+  let unsettled = false;
   const markDirty = (): void => {
     measureUntil = now() + FRAMING_SETTLE_MS;
   };
@@ -51,10 +56,11 @@ export function createPanelFramer(deps: PanelFramerDeps): PanelFramer {
       wasWanted = wanted;
       markDirty();
     }
-    if (now() < measureUntil) {
+    if (now() < measureUntil || unsettled) {
       const cover = panelCoverPx(wanted ? deps.getRects() : [], deps.getViewportW());
       target = framingShiftPx(cover);
-      if (cover !== lastCover) {
+      unsettled = cover !== lastCover;
+      if (unsettled) {
         lastCover = cover;
         deps.onCover?.(cover);
       }
@@ -83,6 +89,12 @@ export function watchPanels(
   watch.observe(document.body, { childList: true, subtree: true });
   lifecycle.add(() => watch.disconnect());
   lifecycle.on(window, 'resize', framer.markDirty);
+  // A drawer's slide is a transform: no resize, no DOM change. Its end re-measures.
+  const onPanelMotionEnd = (e: Event): void => {
+    if (e.target instanceof Element && e.target.closest('aside.panel')) framer.markDirty();
+  };
+  lifecycle.on(document, 'transitionend', onPanelMotionEnd);
+  lifecycle.on(document, 'animationend', onPanelMotionEnd);
 }
 
 /** The measured rects of every open `aside.panel`. */

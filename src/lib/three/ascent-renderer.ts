@@ -10,6 +10,7 @@
  */
 
 import * as THREE from 'three';
+import { newWebGLRenderer } from '$lib/three/scene-renderer';
 import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
 import { FilmPass } from 'three/examples/jsm/postprocessing/FilmPass.js';
@@ -52,7 +53,7 @@ export function createAscentRenderer(
   const w = container.clientWidth;
   const h = container.clientHeight;
 
-  const renderer = new THREE.WebGLRenderer({ antialias: true });
+  const renderer = newWebGLRenderer({ antialias: true }, container);
   renderer.setPixelRatio(Math.min(2, window.devicePixelRatio));
   renderer.setSize(w, h);
   renderer.toneMapping = THREE.ACESFilmicToneMapping;

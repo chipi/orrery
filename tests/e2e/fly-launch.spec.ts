@@ -101,7 +101,7 @@ test('Shenzhou 5 after the climb: the Earth-orbit coast (14 orbits from its reco
   await expect(page.locator('[data-testid="coast-scene"]')).toBeVisible({ timeout: 30_000 });
   await expect(page.locator('[data-testid="launch-scene"]')).toHaveCount(0);
   if (testInfo.project.name === 'desktop-chromium') {
-    await expect(page.locator('body')).toContainText('332×336 km');
+    await expect(page.locator('body')).toContainText('343×343 km');
     await expect(page.locator('body')).toContainText('/ 14');
   }
 });
@@ -169,6 +169,36 @@ test.describe('launch ascent HUD (desktop)', () => {
     expect(labels.some((l) => l.includes('PARKING'))).toBe(false);
   });
 
+  test('the Shuttle coast plays compressed: the OMS-2 marker seeks to its T+35 min (STS-68: 2110 s)', async ({
+    page,
+  }) => {
+    await enterLaunch(page, 'sts-1');
+    // The bar lays the ascent out on the play clock; its OMS-2 marker must still seek (and
+    // label itself) in mission time — the 26-minute coast between MECO and OMS-2 is 15 s of play.
+    const oms = page.locator('.journey-tick-button', { hasText: 'OMS-2' }).first();
+    await expect(oms).toHaveAttribute('aria-label', /T\+35:\d\d/);
+    await oms.click();
+    await expect(page.locator('.launch .clock .met')).toHaveText(/T\+35:\d\d/, { timeout: 10_000 });
+    await expect(page.locator('.launch .status')).toHaveText(/OMS-2|COAST/);
+  });
+
+  test('an Atlas V Earth-orbit flight (OTV-1) separates 169 s after SECO, not at it', async ({
+    page,
+  }) => {
+    await enterLaunch(page, 'otv-1');
+    // The plan lists a window of seven beats around the current one; seek to SECO on the play
+    // bar so the separation after it is in the window.
+    await page.locator('.journey-tick-button', { hasText: 'SECO' }).first().click();
+    const next = page.locator('.launch .plan li.next .lbl');
+    await expect(next).toHaveText(/separation|spacecraft sep/i, { timeout: 10_000 });
+    const nextTime = (await page.locator('.launch .plan li.next .time').textContent())?.trim();
+    expect(nextTime).toBeTruthy();
+    const rows = (await page.locator('.launch .plan .lbl').allTextContents()).map((s) =>
+      s.trim().toUpperCase(),
+    );
+    expect(rows.some((l) => l.includes('PARKING'))).toBe(false);
+  });
+
   test('scrubbing the master clock drives the ascent (MET advances)', async ({ page }) => {
     await enterLaunch(page, 'curiosity');
     const met = page.locator('.launch .clock .met');
@@ -195,6 +225,25 @@ test('a mission record with no flight (STS-51-L) offers no launch, and ?launch=1
   await expect(page.locator('.opening-name')).toContainText(/51-L/i, { timeout: 30_000 });
   await expect(page.locator('[data-testid="fly-opening-launch"]')).toHaveCount(0);
   await expect(page.locator('[data-testid="launch-scene"]')).toHaveCount(0);
+});
+
+// Prod 0.9.9 (plan A9): LAUNCH was live while the page still held the default ORRERY-1 flight,
+// so a quick click flew its Falcon Heavy under the Apollo 11 title. The mission file is held
+// back here so that window is always open.
+test('LAUNCH clicked as soon as it shows flies the requested mission’s rocket', async ({
+  page,
+}) => {
+  await page.route('**/data/missions/moon/apollo11.json', async (route) => {
+    await new Promise((r) => setTimeout(r, 4_000));
+    await route.continue();
+  });
+  await page.goto('/fly?mission=apollo11');
+  const launch = page.locator('[data-testid="fly-opening-launch"]');
+  await launch.click({ timeout: 30_000 });
+  await expect(page.locator('[data-testid="launch-scene"] .header .sub')).toContainText(
+    'Saturn V',
+    { timeout: 20_000 },
+  );
 });
 
 test('STS-1 (reconstructed flight data) still offers its launch', async ({ page }) => {

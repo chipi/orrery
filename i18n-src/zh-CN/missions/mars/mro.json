@@ -1,10 +1,10 @@
 {
   "name": "Mars Reconnaissance Orbiter",
   "vehicle": "Atlas V 401",
-  "payload": "2180 kg（加注燃料）（运行状态1031 kg）",
+  "payload": "2180 kg（加注燃料）（干重1031 kg）",
   "delta_v": "~3.6 km/s（估算）",
   "type": "轨道器 · 运行中",
-  "first": "一艘火星轨道器，其HiRISE相机能够分辨小至一张餐桌的物体",
+  "first": "一艘火星轨道器，其HiRISE相机能够分辨小至一张厨房餐桌的物体",
   "description": "Mars Reconnaissance Orbiter于2005-08-12由Atlas V 401发射，2006-03-10抵达火星，当时一次持续1641秒的点火使其进入400 × 35,000 km的极地捕获轨道。约六个月的气动减速将其降至255 × 320 km的工作轨道，这是一条太阳同步的极地轨道。科学观测在太阳合之后于2006年十一月开始。它携带六台仪器，其中包括HiRISE相机、CRISM光谱仪、SHARAD雷达和Context Camera。NASA建造它是为了寻找水在地表长期存在的证据：它已发现在水中形成的矿物沉积、可能的古代海岸线和层状沉积物。它还为其他火星任务提供中继，目前仍在运行。",
   "events": [
     {

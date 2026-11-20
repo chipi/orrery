@@ -1149,5 +1149,53 @@
     "subject": "Galaxy cluster",
     "type": "Galaxy cluster",
     "distance": "~330 million ly"
+  },
+  "m18": {
+    "title": "M18 · NGC 6613",
+    "subject": "Star cluster",
+    "type": "Star cluster",
+    "distance": "~4,900 ly"
+  },
+  "m36": {
+    "title": "M36 · NGC 1960",
+    "subject": "Star cluster",
+    "type": "Star cluster",
+    "distance": "~3,670 ly"
+  },
+  "m62": {
+    "title": "M62 · NGC 6266",
+    "subject": "Globular cluster",
+    "type": "Globular cluster",
+    "distance": "~20,000 ly"
+  },
+  "leo-ii": {
+    "title": "Leo II",
+    "subject": "Galaxy",
+    "type": "Dwarf spheroidal galaxy",
+    "distance": "~760,000 ly"
+  },
+  "horologium-reticulum": {
+    "title": "Abell 3266",
+    "subject": "Galaxy cluster",
+    "type": "Galaxy cluster",
+    "distance": ""
+  },
+  "virgo-ii-groups": {
+    "title": "NGC 4753",
+    "subject": "Galaxy",
+    "type": "Galaxy",
+    "distance": ""
+  },
+  "ophiuchus-supercluster": {
+    "title": "Ophiuchus Cluster",
+    "subject": "Galaxy cluster",
+    "type": "Galaxy cluster",
+    "distance": ""
+  },
+  "fornax-eridanus": {
+    "title": "Fornax Cluster",
+    "subject": "Galaxy cluster",
+    "type": "Galaxy cluster",
+    "distance": ""
   }
 }

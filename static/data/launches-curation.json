@@ -2,6 +2,267 @@
   "version": 1,
   "featured": [],
   "demoted": [],
+  "mission_refs": [
+    {
+      "launch_id": "2010-05-20-h-iia-202-k-sat",
+      "orrery_mission_ref": "akatsuki",
+      "reason": "H-IIA F17 carried Akatsuki (Planet-C) with IKAROS and K-SAT; the source names the launch after K-SAT",
+      "added_by": "operator decision 2026-11-18 (F9 / L56: curation field)",
+      "added_at": "2026-11-18T00:00:00Z"
+    },
+    {
+      "launch_id": "2007-10-24-chang-zheng-chang-e-yihao-weixing",
+      "orrery_mission_ref": "change1",
+      "reason": "Chang'e 1 (chang'e yihao weixing)",
+      "added_by": "operator decision 2026-11-18 (F9 / L56: curation field)",
+      "added_at": "2026-11-18T00:00:00Z"
+    },
+    {
+      "launch_id": "2010-10-01-chang-zheng-chang-e-erhao-weixing",
+      "orrery_mission_ref": "change2",
+      "reason": "Chang'e 2 (chang'e erhao weixing)",
+      "added_by": "operator decision 2026-11-18 (F9 / L56: curation field)",
+      "added_at": "2026-11-18T00:00:00Z"
+    },
+    {
+      "launch_id": "2013-12-01-chang-zheng-ce-3",
+      "orrery_mission_ref": "change3",
+      "reason": "Chang'e 3 (CE-3)",
+      "added_by": "operator decision 2026-11-18 (F9 / L56: curation field)",
+      "added_at": "2026-11-18T00:00:00Z"
+    },
+    {
+      "launch_id": "1994-01-25-titan-ii-dspse",
+      "orrery_mission_ref": "clementine",
+      "reason": "Clementine is the Deep Space Program Science Experiment (DSPSE)",
+      "added_by": "operator decision 2026-11-18 (F9 / L56: curation field)",
+      "added_at": "2026-11-18T00:00:00Z"
+    },
+    {
+      "launch_id": "2003-05-09-m-v-muses-c",
+      "orrery_mission_ref": "hayabusa1",
+      "reason": "Hayabusa is MUSES-C",
+      "added_by": "operator decision 2026-11-18 (F9 / L56: curation field)",
+      "added_at": "2026-11-18T00:00:00Z"
+    },
+    {
+      "launch_id": "2024-02-15-falcon-9-im-1",
+      "orrery_mission_ref": "im-1",
+      "reason": "IM-1 (the name heuristic needs 4+ characters)",
+      "added_by": "operator decision 2026-11-18 (F9 / L56: curation field)",
+      "added_at": "2026-11-18T00:00:00Z"
+    },
+    {
+      "launch_id": "2007-09-14-h-iia-2022-selene",
+      "orrery_mission_ref": "kaguya",
+      "reason": "Kaguya is SELENE (plan L56)",
+      "added_by": "operator decision 2026-11-18 (F9 / L56: curation field)",
+      "added_at": "2026-11-18T00:00:00Z"
+    },
+    {
+      "launch_id": "1966-03-31-molniya-8k78m-e-6s-no-206-isl",
+      "orrery_mission_ref": "luna10",
+      "reason": "Luna 10 is E-6S No. 206",
+      "added_by": "operator decision 2026-11-18 (F9 / L56: curation field)",
+      "added_at": "2026-11-18T00:00:00Z"
+    },
+    {
+      "launch_id": "1970-09-12-proton-k-d-e-8-5-no-406",
+      "orrery_mission_ref": "luna16",
+      "reason": "Luna 16 is E-8-5 No. 406",
+      "added_by": "operator decision 2026-11-18 (F9 / L56: curation field)",
+      "added_at": "2026-11-18T00:00:00Z"
+    },
+    {
+      "launch_id": "1970-11-10-proton-k-d-e-8-no-203",
+      "orrery_mission_ref": "luna17",
+      "reason": "Luna 17 (Lunokhod 1) is E-8 No. 203",
+      "added_by": "operator decision 2026-11-18 (F9 / L56: curation field)",
+      "added_at": "2026-11-18T00:00:00Z"
+    },
+    {
+      "launch_id": "1973-01-08-proton-k-d-e-8-no-204",
+      "orrery_mission_ref": "luna21",
+      "reason": "Luna 21 (Lunokhod 2) is E-8 No. 204",
+      "added_by": "operator decision 2026-11-18 (F9 / L56: curation field)",
+      "added_at": "2026-11-18T00:00:00Z"
+    },
+    {
+      "launch_id": "1976-08-09-proton-k-d-1-e-8-5m-no-413",
+      "orrery_mission_ref": "luna24",
+      "reason": "Luna 24 is E-8-5M No. 413",
+      "added_by": "operator decision 2026-11-18 (F9 / L56: curation field)",
+      "added_at": "2026-11-18T00:00:00Z"
+    },
+    {
+      "launch_id": "1966-01-31-molniya-8k78m-e-6m-no-202-13",
+      "orrery_mission_ref": "luna9",
+      "reason": "Luna 9 is E-6M No. 202",
+      "added_by": "operator decision 2026-11-18 (F9 / L56: curation field)",
+      "added_at": "2026-11-18T00:00:00Z"
+    },
+    {
+      "launch_id": "1998-01-07-athena-2-lp",
+      "orrery_mission_ref": "lunar-prospector",
+      "reason": "Lunar Prospector (LP)",
+      "added_by": "operator decision 2026-11-18 (F9 / L56: curation field)",
+      "added_at": "2026-11-18T00:00:00Z"
+    },
+    {
+      "launch_id": "2013-11-05-pslv-xl-mars-orbiter-spacecraft",
+      "orrery_mission_ref": "mangalyaan",
+      "reason": "Mangalyaan is the Mars Orbiter Spacecraft",
+      "added_by": "operator decision 2026-11-18 (F9 / L56: curation field)",
+      "added_at": "2026-11-18T00:00:00Z"
+    },
+    {
+      "launch_id": "1973-11-03-atlas-slv-3d-mariner-73j",
+      "orrery_mission_ref": "mariner10",
+      "reason": "Mariner 10 is Mariner 73J",
+      "added_by": "operator decision 2026-11-18 (F9 / L56: curation field)",
+      "added_at": "2026-11-18T00:00:00Z"
+    },
+    {
+      "launch_id": "1962-08-27-atlas-agena-mariner-r-2",
+      "orrery_mission_ref": "mariner2",
+      "reason": "Mariner 2 is Mariner R-2",
+      "added_by": "operator decision 2026-11-18 (F9 / L56: curation field)",
+      "added_at": "2026-11-18T00:00:00Z"
+    },
+    {
+      "launch_id": "1964-11-28-atlas-agena-mariner-c-3",
+      "orrery_mission_ref": "mariner4",
+      "reason": "Mariner 4 is Mariner C-3",
+      "added_by": "operator decision 2026-11-18 (F9 / L56: curation field)",
+      "added_at": "2026-11-18T00:00:00Z"
+    },
+    {
+      "launch_id": "1971-05-30-atlas-slv-3c-mariner-71j",
+      "orrery_mission_ref": "mariner9",
+      "reason": "Mariner 9 is Mariner 71J",
+      "added_by": "operator decision 2026-11-18 (F9 / L56: curation field)",
+      "added_at": "2026-11-18T00:00:00Z"
+    },
+    {
+      "launch_id": "1996-12-04-delta-7925-mpf-lander",
+      "orrery_mission_ref": "mars-pathfinder",
+      "reason": "Mars Pathfinder (MPF)",
+      "added_by": "operator decision 2026-11-18 (F9 / L56: curation field)",
+      "added_at": "2026-11-18T00:00:00Z"
+    },
+    {
+      "launch_id": "1971-05-19-proton-k-d-4m-no-171",
+      "orrery_mission_ref": "mars2",
+      "reason": "Mars 2 is 4M No. 171",
+      "added_by": "operator decision 2026-11-18 (F9 / L56: curation field)",
+      "added_at": "2026-11-18T00:00:00Z"
+    },
+    {
+      "launch_id": "1971-05-28-proton-k-d-4m-no-172",
+      "orrery_mission_ref": "mars3",
+      "reason": "Mars 3 is 4M No. 172",
+      "added_by": "operator decision 2026-11-18 (F9 / L56: curation field)",
+      "added_at": "2026-11-18T00:00:00Z"
+    },
+    {
+      "launch_id": "1996-02-17-delta-7925-8-near",
+      "orrery_mission_ref": "near-shoemaker",
+      "reason": "NEAR Shoemaker (NEAR)",
+      "added_by": "operator decision 2026-11-18 (F9 / L56: curation field)",
+      "added_at": "2026-11-18T00:00:00Z"
+    },
+    {
+      "launch_id": "2003-07-08-delta-7925h-mars-exploration-rover-1",
+      "orrery_mission_ref": "opportunity",
+      "reason": "Opportunity is Mars Exploration Rover 1 (MER-B; 2003-07-07 local, 07-08 UTC)",
+      "added_by": "operator decision 2026-11-18 (F9 / L56: curation field)",
+      "added_at": "2026-11-18T00:00:00Z"
+    },
+    {
+      "launch_id": "2018-08-12-delta-4h-star-solar-probe-plus",
+      "orrery_mission_ref": "parker-solar-probe",
+      "reason": "Parker Solar Probe was Solar Probe Plus",
+      "added_by": "operator decision 2026-11-18 (F9 / L56: curation field)",
+      "added_at": "2026-11-18T00:00:00Z"
+    },
+    {
+      "launch_id": "1972-03-03-atlas-slv-3c-pioneer-f",
+      "orrery_mission_ref": "pioneer-10",
+      "reason": "Pioneer 10 is Pioneer F",
+      "added_by": "operator decision 2026-11-18 (F9 / L56: curation field)",
+      "added_at": "2026-11-18T00:00:00Z"
+    },
+    {
+      "launch_id": "1973-04-06-atlas-slv-3d-pioneer-g",
+      "orrery_mission_ref": "pioneer-11",
+      "reason": "Pioneer 11 is Pioneer G",
+      "added_by": "operator decision 2026-11-18 (F9 / L56: curation field)",
+      "added_at": "2026-11-18T00:00:00Z"
+    },
+    {
+      "launch_id": "2016-03-14-proton-m-briz-m-exomars-tgo-edm",
+      "orrery_mission_ref": "schiaparelli",
+      "reason": "Schiaparelli is the ExoMars EDM, launched with TGO",
+      "added_by": "operator decision 2026-11-18 (F9 / L56: curation field)",
+      "added_at": "2026-11-18T00:00:00Z"
+    },
+    {
+      "launch_id": "2023-09-06-h-iia-202-xrism-slim",
+      "orrery_mission_ref": "slim",
+      "reason": "SLIM launched with XRISM (2023-09-07 JST)",
+      "added_by": "operator decision 2026-11-18 (F9 / L56: curation field)",
+      "added_at": "2026-11-18T00:00:00Z"
+    },
+    {
+      "launch_id": "2003-09-27-ariane-5g-e-bird",
+      "orrery_mission_ref": "smart-1",
+      "reason": "Ariane V162 carried SMART-1 with Insat-3E and e-Bird; the source names it after e-Bird",
+      "added_by": "operator decision 2026-11-18 (F9 / L56: curation field)",
+      "added_at": "2026-11-18T00:00:00Z"
+    },
+    {
+      "launch_id": "2003-06-10-delta-7925-9-5-mars-exploration-rover-2",
+      "orrery_mission_ref": "spirit",
+      "reason": "Spirit is Mars Exploration Rover 2 (MER-A)",
+      "added_by": "operator decision 2026-11-18 (F9 / L56: curation field)",
+      "added_at": "2026-11-18T00:00:00Z"
+    },
+    {
+      "launch_id": "1984-12-15-proton-k-d-1-5vk-no-901",
+      "orrery_mission_ref": "vega-1",
+      "reason": "Vega 1 is 5VK No. 901",
+      "added_by": "operator decision 2026-11-18 (F9 / L56: curation field)",
+      "added_at": "2026-11-18T00:00:00Z"
+    },
+    {
+      "launch_id": "1984-12-21-proton-k-d-1-5vk-no-902",
+      "orrery_mission_ref": "vega-2",
+      "reason": "Vega 2 is 5VK No. 902",
+      "added_by": "operator decision 2026-11-18 (F9 / L56: curation field)",
+      "added_at": "2026-11-18T00:00:00Z"
+    },
+    {
+      "launch_id": "1981-10-30-proton-k-d-1-4v-1m-no-760",
+      "orrery_mission_ref": "venera-13",
+      "reason": "Venera 13 is 4V-1M No. 760",
+      "added_by": "operator decision 2026-11-18 (F9 / L56: curation field)",
+      "added_at": "2026-11-18T00:00:00Z"
+    },
+    {
+      "launch_id": "1975-08-20-titan-iiie-viking-orbiter-1",
+      "orrery_mission_ref": "viking1",
+      "reason": "Viking 1 (orbiter and lander)",
+      "added_by": "operator decision 2026-11-18 (F9 / L56: curation field)",
+      "added_at": "2026-11-18T00:00:00Z"
+    },
+    {
+      "launch_id": "1975-09-09-titan-iiie-viking-orbiter-2",
+      "orrery_mission_ref": "viking2",
+      "reason": "Viking 2 (orbiter and lander)",
+      "added_by": "operator decision 2026-11-18 (F9 / L56: curation field)",
+      "added_at": "2026-11-18T00:00:00Z"
+    }
+  ],
   "first_flight_configs": [
     {
       "rocket_config_id": "536",

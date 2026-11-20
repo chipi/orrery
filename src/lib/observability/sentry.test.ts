@@ -161,6 +161,39 @@ describe('sentry dev rung (vite dev, no deploy env)', () => {
       guard._resetPreloadGuardForTests();
     });
 
+    // Prod 0.9.9: ORRERY-PROD-4G (Googlebot smartphone) and 4H (bingbot) were "Unable to preload
+    // CSS" for a file nginx served with 200 on all 35 requests: crawler renderers, not visitors.
+    it('drops a crawler’s errors, keeps the same error from a visitor’s browser', () => {
+      const cssFail = {
+        type: 'Error',
+        value: 'Unable to preload CSS for /_app/immutable/assets/1.x.css',
+      };
+      const googlebot =
+        'Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.8010.52 Mobile Safari/537.36 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)';
+      vi.stubGlobal('navigator', { ...navigator, userAgent: googlebot, webdriver: false });
+      expect(run(cssFail)).toBeNull();
+      vi.unstubAllGlobals();
+      initMock.mockClear();
+      expect(run(cssFail)).not.toBeNull();
+    });
+
+    // Prod ORRERY-PROD-4K / 4P: an extension or reader script on the page failed on our JSON-LD.
+    it('drops a third-party script failing on the JSON-LD @context, keeps other TypeErrors', () => {
+      expect(
+        run({
+          type: 'TypeError',
+          value: 'undefined is not an object (evaluating \'r["@context"].toLowerCase\')',
+        }),
+      ).toBeNull();
+      initMock.mockClear();
+      expect(
+        run({
+          type: 'TypeError',
+          value: "undefined is not an object (evaluating 'r.toLowerCase')",
+        }),
+      ).not.toBeNull();
+    });
+
     it('keeps CSS preload failures (not skew: guard reloads, stable hash) and still drops chunk skew', () => {
       expect(
         run({

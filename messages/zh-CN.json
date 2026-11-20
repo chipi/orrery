@@ -1123,6 +1123,8 @@
   "fly_hud_trajectory": "轨迹",
   "fly_traj_type_cislunar": "地月转移",
   "fly_traj_type_cislunar_free_return": "地月自由返回",
+  "fly_traj_type_earth_orbit": "地球轨道",
+  "fly_traj_type_suborbital": "亚轨道飞行",
   "fly_traj_type_helio_hohmann": "日心霍曼转移",
   "fly_traj_type_helio_free_return": "日心自由返回",
   "fly_traj_type_helio_flyby": "日心飞掠",
@@ -3737,5 +3739,6 @@
   "programs_filter_kind": "类型",
   "programs_empty": "没有计划匹配当前筛选条件。",
   "launches_search_placeholder": "搜索发射…",
-  "launches_sort_soonest": "最近优先"
+  "launches_sort_soonest": "最近优先",
+  "hud_data_ends": "数据结束"
 }

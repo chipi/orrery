@@ -35,4 +35,6 @@ export const SURFACE_SOURCE_IDS = [
   'nasa-mmgis-rover-traverses',
   'pds-mer-traverses',
   'hirise-zhurong-traverse',
+  'wan2014-yutu-traverse',
+  'vadawale2024-pragyan-stops',
 ];

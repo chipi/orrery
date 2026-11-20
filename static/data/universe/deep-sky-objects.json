@@ -2,7 +2,7 @@
   "_generated": "scripts/build-universe-deep-sky.ts — do not edit by hand",
   "_source": "joins scripts/data-snapshots/messier-catalog.json (OpenNGC + Harris, Baumgardt & Vasiliev, Hunt & Reffert, Cosmicflows-4, McConnachie, SIMBAD) × static/data/deep-sky.json",
   "_count": 143,
-  "_withPhoto": 138,
+  "_withPhoto": 141,
   "objects": [
     {
       "id": "30-doradus",
@@ -1294,6 +1294,58 @@
       }
     },
     {
+      "id": "m18",
+      "designation": "M18",
+      "name": "NGC6613",
+      "category": "star-cluster",
+      "ra": 274.99371,
+      "dec": -17.10197,
+      "x": 0.083197,
+      "y": -0.294073,
+      "z": -0.952155,
+      "mag": 6.9,
+      "size_arcmin": 6,
+      "con": "Sgr",
+      "dist_ly": 4895,
+      "dist_label": "~4,900 light-years",
+      "photoKey": "m18",
+      "photoTitle": "M18 · NGC 6613",
+      "gatewaySystem": null,
+      "records": {
+        "simbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=M%2018"
+      },
+      "catalogue": {
+        "position": {
+          "value": [
+            274.99371,
+            -17.10197
+          ],
+          "source": "OpenNGC, coordinates from NED",
+          "bibcode": null,
+          "record_url": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=M%2018"
+        },
+        "size_arcmin": {
+          "value": 6,
+          "source": "OpenNGC, major axis (LEDA, SIMBAD, HEASARC)",
+          "bibcode": null,
+          "record_url": "https://github.com/mattiaverga/OpenNGC/blob/master/database_files/NGC.csv"
+        },
+        "mag": {
+          "value": 6.9,
+          "source": "OpenNGC, V-Mag (compiled from LEDA, SIMBAD and HEASARC)",
+          "bibcode": null,
+          "record_url": "https://github.com/mattiaverga/OpenNGC/blob/master/database_files/NGC.csv"
+        },
+        "dist_ly": {
+          "value": 4895,
+          "source": "Hunt & Reffert 2023, Improving the open cluster census II (Gaia DR3)",
+          "bibcode": "2023A&A...673A.114H",
+          "record_url": "https://vizier.cds.unistra.fr/viz-bin/VizieR-4?-source=J%2FA%2BA%2F673%2FA114%2Fclusters&Name=NGC_6613",
+          "note": "matched NGC_6613 by name; Cantat-Gaudin et al. 2020 (NGC_6613): 1477 pc"
+        }
+      }
+    },
+    {
       "id": "m19",
       "designation": "M19",
       "name": "NGC6273",
@@ -2112,6 +2164,58 @@
           "bibcode": "2023A&A...673A.114H",
           "record_url": "https://vizier.cds.unistra.fr/viz-bin/VizieR-4?-source=J%2FA%2BA%2F673%2FA114%2Fclusters&Name=NGC_2168",
           "note": "matched NGC_2168 by name; Cantat-Gaudin et al. 2020 (NGC_2168): 906 pc"
+        }
+      }
+    },
+    {
+      "id": "m36",
+      "designation": "M36",
+      "name": "NGC1960",
+      "category": "star-cluster",
+      "ra": 84.07392,
+      "dec": 34.14075,
+      "x": 0.085452,
+      "y": 0.561228,
+      "z": 0.823238,
+      "mag": 6,
+      "size_arcmin": 7.2,
+      "con": "Aur",
+      "dist_ly": 3669,
+      "dist_label": "~3,670 light-years",
+      "photoKey": "m36",
+      "photoTitle": "M36 · NGC 1960",
+      "gatewaySystem": null,
+      "records": {
+        "simbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=M%2036"
+      },
+      "catalogue": {
+        "position": {
+          "value": [
+            84.07392,
+            34.14075
+          ],
+          "source": "OpenNGC, coordinates from NED",
+          "bibcode": null,
+          "record_url": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=M%2036"
+        },
+        "size_arcmin": {
+          "value": 7.2,
+          "source": "OpenNGC, major axis (LEDA, SIMBAD, HEASARC)",
+          "bibcode": null,
+          "record_url": "https://github.com/mattiaverga/OpenNGC/blob/master/database_files/NGC.csv"
+        },
+        "mag": {
+          "value": 6,
+          "source": "OpenNGC, V-Mag (compiled from LEDA, SIMBAD and HEASARC)",
+          "bibcode": null,
+          "record_url": "https://github.com/mattiaverga/OpenNGC/blob/master/database_files/NGC.csv"
+        },
+        "dist_ly": {
+          "value": 3669,
+          "source": "Hunt & Reffert 2023, Improving the open cluster census II (Gaia DR3)",
+          "bibcode": "2023A&A...673A.114H",
+          "record_url": "https://vizier.cds.unistra.fr/viz-bin/VizieR-4?-source=J%2FA%2BA%2F673%2FA114%2Fclusters&Name=NGC_1960",
+          "note": "matched NGC_1960 by name; Cantat-Gaudin et al. 2020 (NGC_1960): 1162 pc"
         }
       }
     },
@@ -3307,6 +3411,58 @@
           "bibcode": null,
           "record_url": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=M%2061",
           "note": "7 measurements, 34572.58 kly to 78929.84 kly"
+        }
+      }
+    },
+    {
+      "id": "m62",
+      "designation": "M62",
+      "name": "NGC6266",
+      "category": "globular-cluster",
+      "ra": 255.3025,
+      "dec": -30.11236,
+      "x": -0.219475,
+      "y": -0.501697,
+      "z": -0.836738,
+      "mag": 6.45,
+      "size_arcmin": 7.8,
+      "con": "Oph",
+      "dist_ly": 19667,
+      "dist_label": "~20,000 light-years",
+      "photoKey": "m62",
+      "photoTitle": "M62 · NGC 6266",
+      "gatewaySystem": null,
+      "records": {
+        "simbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=M%2062"
+      },
+      "catalogue": {
+        "position": {
+          "value": [
+            255.3025,
+            -30.11236
+          ],
+          "source": "OpenNGC, coordinates from NED",
+          "bibcode": null,
+          "record_url": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=M%2062"
+        },
+        "size_arcmin": {
+          "value": 7.8,
+          "source": "OpenNGC, major axis (LEDA, SIMBAD, HEASARC)",
+          "bibcode": null,
+          "record_url": "https://github.com/mattiaverga/OpenNGC/blob/master/database_files/NGC.csv"
+        },
+        "mag": {
+          "value": 6.45,
+          "source": "Harris, Catalog of Parameters for Milky Way Globular Clusters (1996, 2010 edition), integrated V",
+          "bibcode": "1996AJ....112.1487H",
+          "record_url": "https://physics.mcmaster.ca/~harris/mwgc.dat"
+        },
+        "dist_ly": {
+          "value": 19667,
+          "source": "Baumgardt & Vasiliev 2021, Galactic globular cluster distances (Gaia EDR3, HST, N-body fits)",
+          "bibcode": "2021MNRAS.505.5957B",
+          "record_url": "https://people.smp.uq.edu.au/HolgerBaumgardt/globular/fits/ngc6266.html",
+          "note": "+/- 0.09 kpc; Harris 1996 (2010 edition): 6.8 kpc"
         }
       }
     },
@@ -6950,58 +7106,6 @@
       }
     },
     {
-      "id": "m18",
-      "designation": "M18",
-      "name": "NGC6613",
-      "category": "star-cluster",
-      "ra": 274.99371,
-      "dec": -17.10197,
-      "x": 0.083197,
-      "y": -0.294073,
-      "z": -0.952155,
-      "mag": 6.9,
-      "size_arcmin": 6,
-      "con": "Sgr",
-      "dist_ly": 4895,
-      "dist_label": "~4,900 light-years",
-      "photoKey": null,
-      "photoTitle": null,
-      "gatewaySystem": null,
-      "records": {
-        "simbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=M%2018"
-      },
-      "catalogue": {
-        "position": {
-          "value": [
-            274.99371,
-            -17.10197
-          ],
-          "source": "OpenNGC, coordinates from NED",
-          "bibcode": null,
-          "record_url": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=M%2018"
-        },
-        "size_arcmin": {
-          "value": 6,
-          "source": "OpenNGC, major axis (LEDA, SIMBAD, HEASARC)",
-          "bibcode": null,
-          "record_url": "https://github.com/mattiaverga/OpenNGC/blob/master/database_files/NGC.csv"
-        },
-        "mag": {
-          "value": 6.9,
-          "source": "OpenNGC, V-Mag (compiled from LEDA, SIMBAD and HEASARC)",
-          "bibcode": null,
-          "record_url": "https://github.com/mattiaverga/OpenNGC/blob/master/database_files/NGC.csv"
-        },
-        "dist_ly": {
-          "value": 4895,
-          "source": "Hunt & Reffert 2023, Improving the open cluster census II (Gaia DR3)",
-          "bibcode": "2023A&A...673A.114H",
-          "record_url": "https://vizier.cds.unistra.fr/viz-bin/VizieR-4?-source=J%2FA%2BA%2F673%2FA114%2Fclusters&Name=NGC_6613",
-          "note": "matched NGC_6613 by name; Cantat-Gaudin et al. 2020 (NGC_6613): 1477 pc"
-        }
-      }
-    },
-    {
       "id": "m25",
       "designation": "M25",
       "name": "IC4725",
@@ -7050,110 +7154,6 @@
           "bibcode": "2023A&A...673A.114H",
           "record_url": "https://vizier.cds.unistra.fr/viz-bin/VizieR-4?-source=J%2FA%2BA%2F673%2FA114%2Fclusters&Name=IC_4725",
           "note": "matched IC_4725 by name; Cantat-Gaudin et al. 2020 (IC_4725): 698 pc"
-        }
-      }
-    },
-    {
-      "id": "m36",
-      "designation": "M36",
-      "name": "NGC1960",
-      "category": "star-cluster",
-      "ra": 84.07392,
-      "dec": 34.14075,
-      "x": 0.085452,
-      "y": 0.561228,
-      "z": 0.823238,
-      "mag": 6,
-      "size_arcmin": 7.2,
-      "con": "Aur",
-      "dist_ly": 3669,
-      "dist_label": "~3,670 light-years",
-      "photoKey": null,
-      "photoTitle": null,
-      "gatewaySystem": null,
-      "records": {
-        "simbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=M%2036"
-      },
-      "catalogue": {
-        "position": {
-          "value": [
-            84.07392,
-            34.14075
-          ],
-          "source": "OpenNGC, coordinates from NED",
-          "bibcode": null,
-          "record_url": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=M%2036"
-        },
-        "size_arcmin": {
-          "value": 7.2,
-          "source": "OpenNGC, major axis (LEDA, SIMBAD, HEASARC)",
-          "bibcode": null,
-          "record_url": "https://github.com/mattiaverga/OpenNGC/blob/master/database_files/NGC.csv"
-        },
-        "mag": {
-          "value": 6,
-          "source": "OpenNGC, V-Mag (compiled from LEDA, SIMBAD and HEASARC)",
-          "bibcode": null,
-          "record_url": "https://github.com/mattiaverga/OpenNGC/blob/master/database_files/NGC.csv"
-        },
-        "dist_ly": {
-          "value": 3669,
-          "source": "Hunt & Reffert 2023, Improving the open cluster census II (Gaia DR3)",
-          "bibcode": "2023A&A...673A.114H",
-          "record_url": "https://vizier.cds.unistra.fr/viz-bin/VizieR-4?-source=J%2FA%2BA%2F673%2FA114%2Fclusters&Name=NGC_1960",
-          "note": "matched NGC_1960 by name; Cantat-Gaudin et al. 2020 (NGC_1960): 1162 pc"
-        }
-      }
-    },
-    {
-      "id": "m62",
-      "designation": "M62",
-      "name": "NGC6266",
-      "category": "globular-cluster",
-      "ra": 255.3025,
-      "dec": -30.11236,
-      "x": -0.219475,
-      "y": -0.501697,
-      "z": -0.836738,
-      "mag": 6.45,
-      "size_arcmin": 7.8,
-      "con": "Oph",
-      "dist_ly": 19667,
-      "dist_label": "~20,000 light-years",
-      "photoKey": null,
-      "photoTitle": null,
-      "gatewaySystem": null,
-      "records": {
-        "simbad": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=M%2062"
-      },
-      "catalogue": {
-        "position": {
-          "value": [
-            255.3025,
-            -30.11236
-          ],
-          "source": "OpenNGC, coordinates from NED",
-          "bibcode": null,
-          "record_url": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=M%2062"
-        },
-        "size_arcmin": {
-          "value": 7.8,
-          "source": "OpenNGC, major axis (LEDA, SIMBAD, HEASARC)",
-          "bibcode": null,
-          "record_url": "https://github.com/mattiaverga/OpenNGC/blob/master/database_files/NGC.csv"
-        },
-        "mag": {
-          "value": 6.45,
-          "source": "Harris, Catalog of Parameters for Milky Way Globular Clusters (1996, 2010 edition), integrated V",
-          "bibcode": "1996AJ....112.1487H",
-          "record_url": "https://physics.mcmaster.ca/~harris/mwgc.dat"
-        },
-        "dist_ly": {
-          "value": 19667,
-          "source": "Baumgardt & Vasiliev 2021, Galactic globular cluster distances (Gaia EDR3, HST, N-body fits)",
-          "bibcode": "2021MNRAS.505.5957B",
-          "record_url": "https://people.smp.uq.edu.au/HolgerBaumgardt/globular/fits/ngc6266.html",
-          "note": "+/- 0.09 kpc; Harris 1996 (2010 edition): 6.8 kpc"
         }
       }
     },

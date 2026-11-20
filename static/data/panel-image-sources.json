@@ -1280,19 +1280,6 @@
     }
   },
   "planets/neptune/02": {
-    "commons_file": "Neptune with rings (transparent background).png",
-    "commons_url": "https://commons.wikimedia.org/wiki/File:Neptune%20with%20rings%20(transparent%20background).png",
-    "credit": "Neptune Full.jpgRing texture: http://th06.deviantart.net/fs71/PRE/i/2010/331/0/d/guitar_ring_texture_by_mranimator93-d33q7w3.png",
-    "license": "public domain",
-    "fetched_at": "2026-06-20T22:01:07Z",
-    "bodies_iteration": 1,
-    "query": "Neptune Voyager 2",
-    "vision": {
-      "verdict": "related",
-      "confidence": 0.95
-    }
-  },
-  "planets/neptune/03": {
     "commons_file": "Neptune (False Color of Haze).jpg",
     "commons_url": "https://commons.wikimedia.org/wiki/File:Neptune%20(False%20Color%20of%20Haze).jpg",
     "credit": "http://www.nasa.gov/multimedia/imagegallery/image_feature_596.htmlhttps://photojournal.jpl.nasa.gov/catalog/PIA00057",
@@ -1305,7 +1292,7 @@
       "confidence": 0.95
     }
   },
-  "planets/neptune/04": {
+  "planets/neptune/03": {
     "commons_file": "Neptune enhanced colour.jpg",
     "commons_url": "https://commons.wikimedia.org/wiki/File:Neptune%20enhanced%20colour.jpg",
     "credit": "NASA JPL",
@@ -1318,7 +1305,7 @@
       "confidence": 0.95
     }
   },
-  "planets/neptune/05": {
+  "planets/neptune/04": {
     "commons_file": "Neptune clouds.jpg",
     "commons_url": "https://commons.wikimedia.org/wiki/File:Neptune%20clouds.jpg",
     "credit": "http://photojournal.jpl.nasa.gov/catalog/PIA00058",

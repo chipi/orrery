@@ -24,6 +24,7 @@ and for the day-to-day push discipline see [AGENTS.md §"Preflight before push"]
 | Screenshots | `npm run screenshots` | README / guide screenshots |
 | Colophon thumbs | `tsx scripts/capture-colophon-thumbs.ts` | /colophon WebP thumbnails |
 | Mockups | `node scripts/mockups/render-*.mjs` | Slice-0 visual previews (docs) |
+| Agent docs index | `npm run llms:build` (`llms:check`) | `llms.txt` + `docs/guides/index.md`; checked in validate-data |
 | Docker | `npm run docker:*` | Local compose stack + pipeline-runner |
 | Deploy prod | `gh workflow run "Deploy to prod VPS (orrery)"` | Manual VPS deploy |
 
@@ -78,8 +79,11 @@ under the default 2 workers. Preflight does NOT run e2e.
 
 **Command** — `npm run preflight` (= `with-lock preflight -- node scripts/preflight-smart.mjs`).
 `npm run ci` aliases it.
-**What** — Smart runner: `git fetch origin main`, diffs `origin/main...HEAD` + working tree,
-categorizes changed paths, and runs only the relevant check subset. Routing: docs-only →
+**What** — Smart runner: `git fetch origin main`, diffs `origin/main...HEAD` + working tree
+(or, with `PREFLIGHT_BASE=<sha>`, only `<sha>..HEAD`: the husky hook sets it to the remote tip
+when a push updates one existing non-main branch, so a push checks what it adds, not the whole
+arc; a base that is not an ancestor after a rebase falls back to main, `scripts/lib/preflight-range.mjs`;
+`PREFLIGHT_FULL=1 git push` runs the full mirror, for the release push), categorizes changed paths, and runs only the relevant check subset. Routing: docs-only →
 secret scan; data-only → validate-data + build; messages-only → i18n + typecheck + build;
 audio-only → audio cost + build; tests-only → vitest `--changed` + build; source-code →
 typecheck + lint + vitest `--changed` + validate-data + secrets + build; static-asset-only →
@@ -133,6 +137,23 @@ build emitted only the en-US tree, ~18 HTML files). Asserts every non-base local
 **Gotchas** — Floor is a coarse 200; does not check per-route × per-locale completeness
 (Playwright e2e covers content correctness).
 **State** — healthy.
+
+## `npm run llms:build` / `llms:check` → `scripts/build-llms-txt.mjs`
+
+**Command** — `npm run llms:build` writes; `npm run llms:check` (in `validate-data` as
+`check-llms-txt`, so CI and the pre-push hook run it) only checks.
+**What** — `llms.txt` at the repo root (the [llmstxt.org](https://llmstxt.org) agent index of the
+docs, GitHub #666) and the generated `docs/guides/index.md`. `llms.txt` holds one line per
+AGENTS.md section (linked by heading anchor), the per-type indexes, the docs everyone must know,
+the docs per code area and per running service, and an Optional list.
+**When** — After adding, renaming or retitling a guide, an AGENTS.md section or a doc named in
+the hand-kept part; the check fails until then.
+**I/O** — Reads `scripts/llms/llms-hand.mjs` (summary, notes, the area and service maps; paths
+or `ADR-NNN`-style ids only) and each linked doc's H1. Writes the two files.
+**Gotchas** — Notes come from the target's own title, so fix a bad note in the doc's H1, not
+here; an AGENTS.md section whose first sentence misleads gets a line in `AGENT_RULE_NOTES`.
+The check also fails on a dead link or anchor and when `llms.txt` passes 30 KB.
+**State** — new 2026-11-17.
 
 ## `scripts/check-route-budget.mjs`
 
@@ -296,7 +317,11 @@ with `web` running leaves it serving the deleted `build/` until recreated: use `
 
 ## `npm run docker:e2e` → `scripts/docker-e2e.mjs`
 
-**Command** — `npm run docker:e2e [-- [--skip-build] [--smoke-only] [-- <playwright args>]]`
+**Command** — `npm run docker:e2e [-- [--skip-build] [--smoke-only] [--ci-image] [-- <playwright args>]]`
+`--ci-image` runs Playwright in `mcr.microsoft.com/playwright:v<pinned>-noble` (the image CI
+uses) with the Linux node_modules from `.linux-node-modules/` (installed by
+`scripts/regenerate-visual-baselines-linux.sh`), on the host network against this checkout's
+`web`: the release gate (plan E5), since specs that pass on the host can time out in that image.
 **What** — Local mirror of `docker-e2e.yml` for this checkout: `npm run build` →
 `docker compose up -d --build --force-recreate --wait web` → the workflow's smoke checks plus
 served `/_app/version.json` == host `build/_app/version.json` → `npx playwright test`

@@ -122,7 +122,7 @@ test.describe('/explore — the IN THE SKY tab of a deep-sky panel', () => {
     const cell = await openSky(page, 'M31');
     await expect(cell(/constellation/i)).toContainText('Andromeda');
     await expect(cell(/nearest bright star/i)).toContainText('Alpheratz');
-    await expect(cell(/best months/i)).toContainText('Aug to Jan');
+    await expect(cell(/best months/i)).toContainText('Sep to Nov');
     await expect(cell(/best months/i).getByRole('link', { name: 'JPL Horizons' })).toHaveAttribute(
       'href',
       'https://ssd.jpl.nasa.gov/horizons/',

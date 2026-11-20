@@ -533,7 +533,12 @@ export function buildCislunarTrajectory(
   const { dep_day_sim, transit_days, is_return_trip } = opts;
 
   if (profile?.waypoints_km && profile.waypoints_km.length >= 2) {
-    return buildFromWaypoints(profile.waypoints_km, dep_day_sim, transit_days);
+    return buildFromWaypoints(
+      profile.waypoints_km,
+      dep_day_sim,
+      transit_days,
+      profile.source_tier === 'tier_2_published',
+    );
   }
 
   // Event times win over the fractions of transit_days, where the flight has them (and they
@@ -814,6 +819,7 @@ function buildFromWaypoints(
   waypoints: Array<[number, number, number, number]>,
   dep_day_sim: number,
   transit_days: number,
+  published = false,
 ): CislunarTrajectory {
   // The waypoints are generated with the departure at sim-day 0 (generate-hybrid-waypoints.ts)
   // and the Moon model is a circular orbit, so the flight on its real departure day is the same
@@ -853,6 +859,13 @@ function buildFromWaypoints(
     if (d < closest_approach_km) {
       closest_approach_km = d;
     }
+  }
+
+  if (published) {
+    const phases = publishedPhases(waypoints, points, dep_day_sim, transit_days);
+    const moon_track = waypoints.map(([metDays]) => moonEciPos(dep_day_sim + metDays));
+    for (const ph of phases) ph.points = smoothPhasePoints(ph.points);
+    return { phases, moon_track, closest_approach_km };
   }
 
   // Synthesize phases by detecting the data designer's "swing-by hold"
@@ -990,6 +1003,70 @@ function buildFromWaypoints(
 
   for (const ph of phases) ph.points = smoothPhasePoints(ph.points);
   return { phases, moon_track, closest_approach_km };
+}
+
+/** The Moon's sphere of influence (km): inside it a published path is drawn Moon-relative. */
+export const MOON_SOI_KM = 66_100;
+
+/**
+ * Phases of a published (tier_2_published) ephemeris path: a real flight is not parked at the
+ * Moon, so the "swing-by hold" heuristic does not apply (it would pin both Artemis I flybys to
+ * the Moon of `transit_days`). Each run inside the Moon's sphere of influence is a lunar_flyby
+ * phase stored Moon-relative: the point's offset from the Moon at its own MET, added to the
+ * reference Moon the renderer subtracts (moonEciPos(dep + transit_days)), so a pass rides the
+ * live Moon. Outside, the absolute points already sit on the drawn Moon's frame: tli_coast
+ * before the last pass, tei_coast after it.
+ */
+function publishedPhases(
+  waypoints: Array<[number, number, number, number]>,
+  points: Vec3Km[],
+  dep_day_sim: number,
+  transit_days: number,
+): CislunarPhase[] {
+  const moonRef = moonEciPos(dep_day_sim + transit_days);
+  const near = waypoints.map(([met], i) => {
+    const m = moonEciPos(dep_day_sim + met);
+    return Math.hypot(points[i].x - m.x, points[i].y - m.y, points[i].z - m.z) < MOON_SOI_KM;
+  });
+  const runs: Array<{ lo: number; hi: number; near: boolean }> = [];
+  for (let i = 0; i < near.length; i++) {
+    const last = runs[runs.length - 1];
+    if (last && last.near === near[i]) last.hi = i;
+    else runs.push({ lo: i, hi: i, near: near[i] });
+  }
+  const lastNear = runs.reduce((acc, r, idx) => (r.near ? idx : acc), -1);
+  const phases: CislunarPhase[] = [];
+  runs.forEach((r, idx) => {
+    // Coast runs share their end points with the neighbouring runs so the line is continuous.
+    const lo = r.near ? r.lo : Math.max(0, r.lo - 1);
+    const hi = r.near ? r.hi : Math.min(points.length - 1, r.hi + 1);
+    if (hi <= lo && !r.near) return;
+    if (r.near) {
+      const pts: Vec3Km[] = [];
+      for (let i = lo; i <= hi; i++) {
+        const m = moonEciPos(dep_day_sim + waypoints[i][0]);
+        pts.push({
+          x: moonRef.x + points[i].x - m.x,
+          y: moonRef.y + points[i].y - m.y,
+          z: moonRef.z + points[i].z - m.z,
+        });
+      }
+      phases.push({
+        type: 'lunar_flyby',
+        start_met_days: waypoints[lo][0],
+        end_met_days: waypoints[hi][0],
+        points: pts,
+      });
+    } else {
+      phases.push({
+        type: lastNear >= 0 && idx > lastNear ? 'tei_coast' : 'tli_coast',
+        start_met_days: waypoints[lo][0],
+        end_met_days: waypoints[hi][0],
+        points: points.slice(lo, hi + 1),
+      });
+    }
+  });
+  return phases;
 }
 
 /** Samples per authored segment when a waypoint phase is drawn. */

@@ -242,11 +242,21 @@
       width: 100%;
     }
     /* Discoverable close on the expanded panel (tap-away + Esc still work). */
+    /* Plan D14: a 30 px box in the body's top strip (no row under it); the ::before keeps the
+       44 px touch target. */
     :global(.mdg-close) {
       position: absolute;
-      top: 6px;
-      right: 6px;
+      top: 4px;
+      right: 4px;
       z-index: 2;
+      min-block-size: 30px;
+      min-inline-size: 30px;
+      padding: 0;
+    }
+    :global(.mdg-close)::before {
+      content: '';
+      position: absolute;
+      inset: -7px;
     }
 
     .mdg-body {
@@ -258,7 +268,7 @@
       max-height: 46vh;
       overflow-y: auto;
       overscroll-behavior: contain;
-      padding: 12px;
+      padding: 36px 12px 12px;
       box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.35);
       color: var(--color-text);
     }
@@ -396,7 +406,10 @@
   }
   :global(html[data-touch][data-orientation='landscape']) .mdg-body {
     max-height: min(46vh, 240px);
-    padding-block: 6px;
+    /* A landscape phone's card is 130 to 180 px: the close box sits in the top-right corner beside
+       the content (right padding), not on a strip of its own, so 2 to 3 rows show (UXD-026
+       decision 13; the D14 strip cost one row). */
+    padding: 8px 44px 6px 12px;
     /* The floating card sits over the level card and the scale chips: opaque enough that their
        text does not show through it. */
     background: rgba(8, 10, 22, 0.98);

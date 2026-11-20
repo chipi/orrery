@@ -8,8 +8,8 @@ Companion to the [image bill of materials](../static/data/image-provenance.json)
 
 | | |
 |---|---|
-| **Project** | `orrery@0.9.9` |
-| **Generated** | 2026-11-16 |
+| **Project** | `orrery@0.9.10` |
+| **Generated** | 2026-11-20 |
 | **Total packages** | 898 (187 runtime · 711 development) |
 | **Top-level runtime deps** | 28 |
 | **Top-level dev deps** | 35 |
@@ -167,7 +167,7 @@ _Build-time tools — not shipped to browsers._
 | [`@sentry/vite-plugin`](https://github.com/getsentry/sentry-javascript-bundler-plugins/tree/main/packages/vite-plugin) | 5.4.0 | `MIT` | runtime |
 | [`@standard-schema/spec`](https://standardschema.dev) | 1.1.0 | `MIT` | runtime |
 | [`@sveltejs/acorn-typescript`](https://github.com/sveltejs/acorn-typescript#readme) | 1.0.13 | `MIT` | runtime |
-| [`@sveltejs/kit`](https://svelte.dev) | 2.70.3 | `MIT` | runtime |
+| [`@sveltejs/kit`](https://svelte.dev) | 2.70.4 | `MIT` | runtime |
 | [`@sveltejs/vite-plugin-svelte`](https://github.com/sveltejs/vite-plugin-svelte#readme) | 7.2.0 | `MIT` | runtime |
 | [`@types/cookie`](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/cookie) | 0.6.0 | `MIT` | runtime |
 | [`@types/estree`](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/estree) | 1.0.9 | `MIT` | runtime |

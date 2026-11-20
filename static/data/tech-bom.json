@@ -3,7 +3,7 @@
   "specVersion": "1.5",
   "version": 1,
   "metadata": {
-    "timestamp": "2026-11-16T08:32:03.750Z",
+    "timestamp": "2026-11-20T08:07:42.260Z",
     "tools": [
       {
         "vendor": "Orrery",
@@ -14,7 +14,7 @@
     "component": {
       "type": "application",
       "name": "orrery",
-      "version": "0.9.9",
+      "version": "0.9.10",
       "licenses": [
         {
           "license": {
@@ -2424,7 +2424,7 @@
     {
       "type": "library",
       "name": "@sveltejs/kit",
-      "version": "2.70.3",
+      "version": "2.70.4",
       "description": "SvelteKit is the fastest way to build Svelte apps",
       "licenses": [
         {

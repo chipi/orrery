@@ -26,10 +26,13 @@ async function open2d(page: Page, url: string, isMobile: boolean): Promise<void>
     ? page.getByTestId('fly-view-toggle-mobile')
     : page.getByTestId('fly-view-toggle');
   const state = page.getByTestId('fly-render-state');
-  // A click before hydration is lost; click again only while the view is still 3D.
+  // A click before hydration is lost; click again only while the view is still 3D. On the
+  // docker-e2e runner (2 cores, no GPU) the 3D scene runs ~285 ms a frame and each Playwright
+  // call takes ~300 ms: the click needed ~1.7 s just to reach "done scrolling" and never finished
+  // inside 2 s (run 44717898104, and main's pluto failures on 2026-11-17 and 2026-11-19).
   await expect(async () => {
-    if ((await state.getAttribute('data-view')) !== '2d') await toggle.click({ timeout: 2_000 });
-    await expect(state).toHaveAttribute('data-view', '2d', { timeout: 1_500 });
+    if ((await state.getAttribute('data-view')) !== '2d') await toggle.click({ timeout: 8_000 });
+    await expect(state).toHaveAttribute('data-view', '2d', { timeout: 5_000 });
   }).toPass({ timeout: 30_000 });
 }
 

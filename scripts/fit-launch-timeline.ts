@@ -114,7 +114,7 @@ function stringify(v: unknown, indent = ''): string {
     .replace(/\[ /g, '[')
     .replace(/ \]/g, ']');
   if (typeof v !== 'object' || v === null || indent.length + flat.length <= 96) {
-    return flat.replace(/\{ /g, '{ ').replace(/ \}/g, ' }');
+    return flat;
   }
   const inner = indent + '  ';
   if (Array.isArray(v))

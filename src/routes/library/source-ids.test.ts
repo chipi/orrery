@@ -42,7 +42,7 @@ describe('/library header blocks name real data-sources.json entries', () => {
 // The route files credit their sources in a `credit` string; each one that names a published
 // source must be a block entry, so /credits and /library list what the routes cite.
 const CITED: [RegExp, string][] = [
-  [/lroc\.asu\.edu\/geojson/i, 'lroc-nac-traverses'],
+  [/https:\/\/www\.lroc\.asu\.edu\/geojson\//, 'lroc-nac-traverses'],
   [/Haase et al\. 2019/, 'usgs-apollo17-traverse'],
   [/HiRISE ESP_/, 'hirise-zhurong-traverse'],
   [/MMGIS/, 'nasa-mmgis-rover-traverses'],

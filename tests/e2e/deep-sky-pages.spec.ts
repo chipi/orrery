@@ -78,7 +78,7 @@ test.describe('deep-sky pages: static HTML', () => {
         const html = await res.text();
 
         const h1s = [...html.matchAll(/<h1[^>]*>([\s\S]*?)<\/h1>/g)].map((m) =>
-          m[1].replace(/<[^>]*>/g, '').trim(),
+          m[1].replace(/<[^>]*>|</g, '').trim(),
         );
         expect(h1s).toEqual([title]);
 

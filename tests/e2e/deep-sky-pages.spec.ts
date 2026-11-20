@@ -11,6 +11,17 @@ import { expect, test } from '@playwright/test';
 
 const ORIGIN = 'https://www.orrerylearn.com';
 
+/** Text of an HTML fragment: tags removed until none are left (one pass can leave a new one). */
+function stripTags(html: string): string {
+  let prev: string;
+  let s = html;
+  do {
+    prev = s;
+    s = s.replace(/<[^>]*>/g, '');
+  } while (s !== prev);
+  return s;
+}
+
 // `text`: the start of the overlay's `fact` in the page's locale (no character the HTML escapes).
 const CASES = [
   {
@@ -78,7 +89,7 @@ test.describe('deep-sky pages: static HTML', () => {
         const html = await res.text();
 
         const h1s = [...html.matchAll(/<h1[^>]*>([\s\S]*?)<\/h1>/g)].map((m) =>
-          m[1].replace(/<[^>]*>|</g, '').trim(),
+          stripTags(m[1]).trim(),
         );
         expect(h1s).toEqual([title]);
 

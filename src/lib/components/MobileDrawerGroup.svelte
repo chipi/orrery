@@ -406,7 +406,10 @@
   }
   :global(html[data-touch][data-orientation='landscape']) .mdg-body {
     max-height: min(46vh, 240px);
-    padding-block: 36px 6px;
+    /* A landscape phone's card is 130 to 180 px: the close box sits in the top-right corner beside
+       the content (right padding), not on a strip of its own, so 2 to 3 rows show (UXD-026
+       decision 13; the D14 strip cost one row). */
+    padding: 8px 44px 6px 12px;
     /* The floating card sits over the level card and the scale chips: opaque enough that their
        text does not show through it. */
     background: rgba(8, 10, 22, 0.98);

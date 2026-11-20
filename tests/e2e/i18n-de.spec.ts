@@ -3,7 +3,7 @@ import { clickNavLink, localeChip } from './_helpers/nav';
 
 test.describe('/de/ URL smoke', () => {
   test('locale chip and nav persistence work for German', async ({ page }) => {
-    await page.goto('/de/explore', { waitUntil: 'networkidle' });
+    await page.goto('/de/library', { waitUntil: 'networkidle' });
     await expect(localeChip(page).first()).toContainText('DE');
     await expect(page.locator('html')).toHaveAttribute('lang', 'de');
 

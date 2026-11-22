@@ -308,12 +308,35 @@ export async function resolveQuality(url?: URL): Promise<QualityConfig> {
 /** Synchronous resolver — for code paths that can't await. Reads
  *  the URL override + user choice + a previously cached detected
  *  tier (stored under `orrery.qualityDetected` in localStorage on
- *  the previous session). Falls back to `medium` for first-time
+ *  the previous session). Falls back to `medium` (`low` on a software
+ *  renderer, see `isSoftwareGl`) for first-time
  *  visitors so a desktop with a great GPU and a mobile with a weak
  *  one both get a workable scene before detection lands. The first
  *  visit kicks off background detection via `kickOffBackgroundDetect`
  *  whose result becomes the basis for the next session. */
 const DETECTED_KEY = 'orrery.qualityDetected';
+
+// A software rasteriser draws every pass on the CPU: on SwiftShader (the GPU-less CI runner) /fly
+// at medium took about 170 ms a frame against 67 ms at low, the bloom / grain / vignette passes
+// being the difference. A first visit there starts at low instead of medium (0.9.11 Q2).
+const SOFTWARE_RENDERER = /swiftshader|llvmpipe|softpipe|software rasterizer/i;
+let softwareGl: boolean | null = null;
+function isSoftwareGl(): boolean {
+  if (softwareGl !== null) return softwareGl;
+  softwareGl = false;
+  try {
+    if (typeof document === 'undefined') return softwareGl;
+    const gl = document.createElement('canvas').getContext('webgl') as WebGLRenderingContext | null;
+    const ext = gl?.getExtension('WEBGL_debug_renderer_info');
+    if (gl && ext)
+      softwareGl = SOFTWARE_RENDERER.test(String(gl.getParameter(ext.UNMASKED_RENDERER_WEBGL)));
+    gl?.getExtension('WEBGL_lose_context')?.loseContext();
+  } catch {
+    // No WebGL: the scene cannot draw either; the tier does not matter.
+  }
+  return softwareGl;
+}
+
 export function resolveQualitySync(url?: URL): QualityConfig {
   const urlOverride = url?.searchParams.get('quality');
   if (urlOverride && urlOverride in CONFIGS) {
@@ -325,12 +348,12 @@ export function resolveQualitySync(url?: URL): QualityConfig {
     const cached = localStorage.getItem(DETECTED_KEY);
     if (cached && cached in CONFIGS) return CONFIGS[cached as QualityTier];
   }
-  return CONFIGS.medium;
+  return isSoftwareGl() ? CONFIGS.low : CONFIGS.medium;
 }
 
 /** Returns which of the four precedence layers supplied the tier
  *  `resolveQualitySync(url)` would return — URL override, saved user
- *  choice, cached detect-gpu result, or the medium fallback. The
+ *  choice, cached detect-gpu result, or the medium (software GL: low) fallback. The
  *  DebugPanel "Rendering" tab (#334) surfaces this so the user can
  *  tell at a glance whether the active tier is theirs to control or
  *  a baked-in default. */
@@ -369,6 +392,7 @@ export function configFor(tier: QualityTier): QualityConfig {
  */
 export function __resetAutoTierCacheForTests(): void {
   cachedAutoTier = null;
+  softwareGl = null;
 }
 
 export const ALL_TIERS: QualityTier[] = ['minimal', 'low', 'medium', 'high', 'cinematic'];

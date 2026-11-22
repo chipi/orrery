@@ -5,7 +5,6 @@ import {
   localizedPath,
   canonicalUrl,
   hreflangAlternates,
-  isMirrorBuild,
   metaDescription,
   ogLocale,
   pageTitle,
@@ -160,13 +159,6 @@ describe('seoDescription', () => {
 
   it('still caps either source at the meta-description length', () => {
     expect(seoDescription('word '.repeat(80), fallback).length).toBeLessThanOrEqual(160);
-  });
-});
-
-describe('isMirrorBuild', () => {
-  it('is true only for a build under a base path (a mirror)', () => {
-    expect(isMirrorBuild('/orrery')).toBe(true);
-    expect(isMirrorBuild('')).toBe(false);
   });
 });
 

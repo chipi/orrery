@@ -38,7 +38,6 @@
     canonicalRoute,
     canonicalUrl,
     hreflangAlternates,
-    isMirrorBuild,
     ogLocale,
     ogLocaleAlternates,
   } from '$lib/seo';
@@ -118,9 +117,7 @@
   // SEO — canonical + hreflang for the current page. The route is reduced to
   // its un-localized form (base + locale prefix stripped, query dropped) and
   // every URL points at the production origin. Emitted in every locale's copy
-  // of the page → the hreflang set is reciprocal. The GH Pages mirror emits
-  // noindex instead (isMirrorBuild).
-  const mirrorBuild = isMirrorBuild(base);
+  // of the page → the hreflang set is reciprocal.
   let seoRoute = $derived(canonicalRoute(page.url.pathname, base));
   // Scene routes whose bottom-left HUD (dock, legend) crowds the full strip: it goes
   // compact (More button) below 1450 px.
@@ -533,15 +530,10 @@
        the page title in SSR on pages that bind a child component's prop
        (/explore, /fly): Svelte renders those on a renderer copy whose path holds
        -1, so the layout's title sorted later and won. -->
-  {#if mirrorBuild}
-    <!-- Card stubs and lab/callback carry their own noindex. -->
-    {#if !isNoindexStub}<meta name="robots" content="noindex" />{/if}
-  {:else}
-    <link rel="canonical" href={canonicalHref} />
-    {#each hreflangs as alt (alt.hreflang)}
-      <link rel="alternate" hreflang={alt.hreflang} href={alt.href} />
-    {/each}
-  {/if}
+  <link rel="canonical" href={canonicalHref} />
+  {#each hreflangs as alt (alt.hreflang)}
+    <link rel="alternate" hreflang={alt.hreflang} href={alt.href} />
+  {/each}
   <meta property="og:locale" content={ogLocaleValue} />
   {#each ogLocaleAlts as alt (alt)}
     <meta property="og:locale:alternate" content={alt} />

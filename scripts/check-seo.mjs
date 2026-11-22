@@ -28,9 +28,6 @@
  * show, re-measure with `CHECK_SEO_FLOORS=1 node scripts/check-seo.mjs` (prints the
  * thinnest page and the suggested floor per locale) and update THIN_MIN_CHARS.
  *
- * On the GitHub Pages mirror (VITE_BASE set) the rule flips: every page must be
- * noindex and carry no canonical (src/lib/seo.ts isMirrorBuild).
- *
  * Wired into `npm run build` after check-internal-links, so it runs in
  * preflight and every CI build. Exit 1 lists each failure (first 40 per rule).
  */
@@ -42,7 +39,6 @@ import { LOCALES as LOCALE_CODES, BASE_LOCALE } from './lib/locales.mjs';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 // CHECK_SEO_BUILD_DIR lets check-seo.test.ts point the gate at a fixture build.
 const BUILD_DIR = process.env.CHECK_SEO_BUILD_DIR ?? join(__dirname, '..', 'build');
-const BASE = (process.env.VITE_BASE ?? '').replace(/\/+$/, '');
 const ORIGIN = 'https://www.orrerylearn.com';
 const DEFAULT_LOCALE = BASE_LOCALE;
 // The reference-frames section titles are a "A · B · C" list with no clean cut
@@ -161,12 +157,6 @@ for (const file of files) {
   const noindex = /<meta name="robots" content="[^"]*noindex/.test(head);
   const canonical = head.match(/<link rel="canonical" href="([^"]*)"/)?.[1];
 
-  if (BASE) {
-    // 404.html is the SPA fallback shell (no server-rendered head); Pages serves it as a 404.
-    if (!noindex && route !== '/404') fail('mirror page without noindex', path);
-    if (canonical) fail('mirror page with a canonical', path);
-    continue;
-  }
   if (isNoindexByDesign(route)) continue;
   indexable.add(path);
   const where = path;
@@ -231,31 +221,29 @@ for (const file of files) {
 }
 
 // Sitemaps = indexable pages.
-if (!BASE) {
-  const index = join(BUILD_DIR, 'sitemap.xml');
-  if (!existsSync(index)) fail('sitemap', 'build/sitemap.xml missing');
-  else {
-    const listed = new Set();
-    const children = [...readFileSync(index, 'utf8').matchAll(/<loc>([^<]+)<\/loc>/g)].map(
-      (m) => m[1],
-    );
-    if (children.length !== LOCALE_CODES.length)
-      fail('sitemap', `index lists ${children.length} sitemaps, expected ${LOCALE_CODES.length}`);
-    for (const url of children) {
-      const file = join(BUILD_DIR, url.slice(ORIGIN.length));
-      if (!existsSync(file)) {
-        fail('sitemap', `listed sitemap not built: ${url}`);
-        continue;
-      }
-      for (const m of readFileSync(file, 'utf8').matchAll(/<loc>([^<]+)<\/loc>/g)) {
-        const p = m[1].slice(ORIGIN.length);
-        if (listed.has(p)) fail('sitemap lists a URL twice', p);
-        listed.add(p);
-      }
+const sitemapIndex = join(BUILD_DIR, 'sitemap.xml');
+if (!existsSync(sitemapIndex)) fail('sitemap', 'build/sitemap.xml missing');
+else {
+  const listed = new Set();
+  const children = [...readFileSync(sitemapIndex, 'utf8').matchAll(/<loc>([^<]+)<\/loc>/g)].map(
+    (m) => m[1],
+  );
+  if (children.length !== LOCALE_CODES.length)
+    fail('sitemap', `index lists ${children.length} sitemaps, expected ${LOCALE_CODES.length}`);
+  for (const url of children) {
+    const file = join(BUILD_DIR, url.slice(ORIGIN.length));
+    if (!existsSync(file)) {
+      fail('sitemap', `listed sitemap not built: ${url}`);
+      continue;
     }
-    for (const p of indexable) if (!listed.has(p)) fail('indexable page missing from sitemaps', p);
-    for (const p of listed) if (!indexable.has(p)) fail('sitemap URL is not an indexable page', p);
+    for (const m of readFileSync(file, 'utf8').matchAll(/<loc>([^<]+)<\/loc>/g)) {
+      const p = m[1].slice(ORIGIN.length);
+      if (listed.has(p)) fail('sitemap lists a URL twice', p);
+      listed.add(p);
+    }
   }
+  for (const p of indexable) if (!listed.has(p)) fail('indexable page missing from sitemaps', p);
+  for (const p of listed) if (!indexable.has(p)) fail('sitemap URL is not an indexable page', p);
 }
 
 if (process.env.CHECK_SEO_FLOORS) {
@@ -266,9 +254,8 @@ if (process.env.CHECK_SEO_FLOORS) {
     );
 }
 
-const mode = BASE ? `mirror (${BASE})` : 'prod';
 if (failures.size) {
-  console.error(`check-seo: FAIL (${mode}, ${files.length} pages, ${indexable.size} indexable)`);
+  console.error(`check-seo: FAIL (${files.length} pages, ${indexable.size} indexable)`);
   for (const [rule, list] of failures) {
     console.error(`  ✗ ${rule}: ${list.length}`);
     for (const w of list.slice(0, 40)) console.error(`      ${w}`);
@@ -276,7 +263,5 @@ if (failures.size) {
   // exitCode, not process.exit(): exit() can drop the end of a piped stderr report.
   process.exitCode = 1;
 } else {
-  console.log(
-    `check-seo: PASS (${mode}, ${files.length} pages${BASE ? '' : `, ${indexable.size} indexable`})`,
-  );
+  console.log(`check-seo: PASS (${files.length} pages, ${indexable.size} indexable)`);
 }

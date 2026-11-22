@@ -3,10 +3,9 @@
  *
  * Canonical + hreflang tags always point at the PRODUCTION origin, so prod
  * is the authoritative copy and the sitemap and the on-page tags agree
- * byte-for-byte. A base-path mirror build emits noindex instead (see
- * `isMirrorBuild`).
+ * byte-for-byte.
  *
- * URL shape mirrors scripts/gh-pages-compat.mjs#expandLocalizedRoots and
+ * URL shape mirrors scripts/localized-roots.mjs#expandLocalizedRoots and
  * the Paraglide URL-segment strategy: en-US at the bare path, every other
  * locale under `/<locale>`.
  */
@@ -16,21 +15,10 @@ import { SUPPORTED_LOCALES, DEFAULT_LOCALE, isSupportedLocale, type LocaleCode }
 export const SITE_ORIGIN = 'https://www.orrerylearn.com';
 
 /**
- * True for a build served under a base path — a mirror of the app
- * (`VITE_BASE=/orrery/`). Prod, Docker and the native apps build
- * with no base. Google indexed the mirror (it outranked prod) even though its
- * canonical pointed at prod — a canonical is only a hint — so the mirror says
- * noindex and leaves out canonical + hreflang, which would contradict it.
- */
-export function isMirrorBuild(base: string): boolean {
-  return base !== '';
-}
-
-/**
  * Reduce a live pathname to its un-localized canonical route.
  *
- * Strips the SvelteKit base prefix (`''` on prod, `/orrery` on GH Pages)
- * and any leading locale segment, so `/orrery/de/missions` → `/missions`
+ * Strips a SvelteKit base prefix (none in any build today) and any leading
+ * locale segment, so `/orrery/de/missions` → `/missions` under base `/orrery`
  * and `/de/` → `/`. Query strings are the caller's concern (pass
  * `url.pathname`, never `url.href`) — canonical URLs never carry them.
  */

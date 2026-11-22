@@ -30833,6 +30833,19 @@
       "rejected_by": null,
       "scored_at": "2026-11-19T14:46:22.975Z",
       "scoring_cost_usd": 0
+    },
+    "/images/missions/starship-flight-5/01.jpg": {
+      "score": 8,
+      "subject": "Super Heavy Booster 12 on its landing burn, descending toward the launch tower's arms at Starbase on Starship's fifth flight test, 13 October 2024.",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.55,
+        "y": 0.18
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-22T09:15:22.454Z",
+      "scoring_cost_usd": 0
     }
   }
 }

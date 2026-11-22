@@ -1,0 +1,41 @@
+{
+  "name": "Starship Flight 5",
+  "vehicle": "Starship: Super Heavy Booster 12 + Ship 30",
+  "payload": "Geen (testvlucht); Ship 30 zelf, op een suborbitaal traject",
+  "delta_v": "~7,7 km/s (suborbitaal: snelheid bij SECO, ongeveer -15 x 212 km)",
+  "type": "ONBEMANDE SUBORBITALE TEST · GEVLOGEN",
+  "first": "Eerste Super Heavy-booster opgevangen door de armen van de lanceertoren",
+  "description": "De vijfde testvlucht van Starship steeg op 2024-10-13 om 12:25 UTC op vanaf Starbase in Texas. Booster 12 scheidde zich af op ongeveer 70 km, keerde terug met een boostback-ontsteking en vloog naar de lanceertoren, waar hij afremde tot bijna zweven en 6 min 52 s na de lancering door de armen van de toren werd opgevangen, de eerste booster die op die manier is opgevangen. Ship 30 vervolgde de vlucht op een suborbitaal traject van ongeveer -15 x 212 km met een inclinatie van 26,2° (het laagste punt lag onder het oppervlak, zodat het niet in een baan kon blijven), begon boven de Indische Oceaan met de buik naar voren aan de terugkeer in de atmosfeer, kantelde rechtop, voerde de landingsontsteking uit en maakte 1 h 5 min 38 s na de lancering een waterlanding bij een vooraf geplaatste boei. Het was niet gebouwd om te worden teruggewonnen; ongeveer 16 seconden nadat het het water raakte, brak een grote vuurbal uit.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCERING",
+      "note": "Super Heavy B12 en Ship 30 stijgen op 2024-10-13 om 12:25 UTC op vanaf Starbase.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.0048,
+      "label": "TORENVANGST",
+      "note": "Booster 12 wordt 6 min 52 s na de lancering, na zijn landingsontsteking, opgevangen door de armen van de lanceertoren.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.0058,
+      "label": "SECO",
+      "note": "De motoren van Ship 30 slaan 8 min 25 s na de lancering af, op een suborbitaal traject van ongeveer -15 x 212 km.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.0333,
+      "label": "TERUGKEER IN DE ATMOSFEER",
+      "note": "Ship 30 komt 48 min na de lancering met de buik naar voren boven de Indische Oceaan de atmosfeer binnen.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.0456,
+      "label": "WATERLANDING",
+      "note": "Landingsflip en ontsteking, daarna een waterlanding bij een boei 1 h 5 min 38 s na de lancering; ongeveer 16 s later breekt een grote vuurbal uit.",
+      "type": "nominal"
+    }
+  ]
+}

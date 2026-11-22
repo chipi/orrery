@@ -564,6 +564,34 @@ function serviceTower(kit: Kit, spec: PadSpec): void {
   }
 }
 
+/**
+ * The Starbase launch tower and the orbital launch mount on their own, in metres (ground at y = 0,
+ * the mount at the origin, the tower 24 m off along -x), for the /fly booster-catch inset
+ * (0.9.11 F3). Same lattice and materials as the `starbase` pad variant; the catch arms are the
+ * inset's own (they close on the booster).
+ */
+export function buildStarbaseTowerM(): THREE.Group {
+  const mk = (color: number, rough = 0.8, metal = 0.2): THREE.MeshStandardMaterial =>
+    new THREE.MeshStandardMaterial({ color, roughness: rough, metalness: metal });
+  const mats: Mats = {
+    steel: mk(0x8a8e98),
+    dark: mk(0x1d1f24, 0.9, 0.1),
+    concrete: mk(0x9b9a93, 0.9, 0.05),
+    paint: mk(0xc9cbce, 0.7, 0.15),
+  };
+  const a = new Acc(mats);
+  a.lattice(-24, 0, 10, 10, 146, mats.steel);
+  a.box(-24, 147, 0, 12, 2, 12, mats.paint);
+  // Orbital launch mount: a ring table on six legs, about 20 m tall.
+  for (let i = 0; i < 6; i++) {
+    const ang = (i / 6) * Math.PI * 2;
+    a.box(Math.cos(ang) * 8, 9, Math.sin(ang) * 8, 2.4, 18, 2.4, mats.steel);
+  }
+  a.box(0, 19, 0, 20, 2.4, 20, mats.paint);
+  a.box(0, 0.4, 0, 46, 0.8, 46, mats.concrete);
+  return a.build('starbase-tower');
+}
+
 /** A pad with a plain white stand-in vehicle on it, for the /dev/models gallery and /colophon. */
 export function buildPadShowcase(spec: PadSpec, vehM: number): THREE.Group {
   const len = 1;

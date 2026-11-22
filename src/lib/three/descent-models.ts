@@ -757,7 +757,25 @@ function buildTitanParachuteStack(lander: THREE.Group, vehLen: number): DescentM
 type StackBuilder = (lander: THREE.Group, vehLen: number) => DescentModel;
 
 /** siteId → dedicated stack builder. Falls back per-body when absent. */
+/** Starship's return to Earth (Flight 5, 0.9.11 F3): the ship is its own heat shield, so no
+ *  aeroshell and no chute — the ship scaled to the vehicle length, the landing-burn plume at its
+ *  Raptors. The scene turns it belly-first for entry and upright at the landing flip. */
+function buildStarshipReturnStack(lander: THREE.Group, vehLen: number): DescentModel {
+  const m = scaffold(lander);
+  const box = new THREE.Box3().setFromObject(lander);
+  const h = Math.max(1e-6, box.max.y - box.min.y);
+  const k = (vehLen * 1.4) / h;
+  lander.scale.setScalar(k);
+  // Centred on the vehicle origin, so the belly-first attitude turns it about its middle.
+  lander.position.y = -((box.min.y + box.max.y) / 2) * k;
+  m.root.add(lander);
+  m.retroPlumeAnchor.position.y = -vehLen * 0.72;
+  m.root.add(m.retroPlumeAnchor);
+  return m;
+}
+
 const BUILDERS: Record<string, StackBuilder> = {
+  'starship-flight-5': buildStarshipReturnStack,
   // Apollo lunar landings — the LM descent with the CSM undock beat.
   apollo11: buildApolloLunarStack,
   apollo12: buildApolloLunarStack,

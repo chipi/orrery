@@ -49,7 +49,8 @@ export type ArchetypeName =
   | 'COMET_HARPOON'
   | 'TITAN_PARACHUTE'
   | 'JUPITER_PROBE'
-  | 'EARTH_CAPSULE_REENTRY';
+  | 'EARTH_CAPSULE_REENTRY'
+  | 'EARTH_STARSHIP_RETURN';
 
 /**
  * Per-mission knobs an archetype reads to build its phase sequence. Every field
@@ -411,6 +412,25 @@ const EARTH_CAPSULE_REENTRY: ArchetypeBuilder = (p) => [
   },
 ];
 
+/** Starship's return to Earth (Flight 5, 0.9.11 F3): a belly-first lifting entry bleeds speed to
+ *  a subsonic fall, then the landing flip — the ship swings from belly-down to tail-down as the
+ *  Raptors light — and the landing burn to the water. No parachute, no heat-shield jettison. */
+const EARTH_STARSHIP_RETURN: ArchetypeBuilder = (p) => [
+  {
+    kind: 'ballistic_entry',
+    endTrigger: { type: 'altitude_m', value: p.terminalHandoffAltM ?? 1000 },
+  },
+  {
+    kind: 'powered_retro',
+    endTrigger: { type: 'ground', value: 0 },
+    ispS: p.ispS ?? 330,
+    terminalVelocityMs: p.terminalVelocityMs ?? 3,
+    descentRateGain: p.descentRateGain ?? 0.12,
+    maxThrustN: p.brakingMaxThrustN,
+    events: ['landing_flip', 'retro_ignition'],
+  },
+];
+
 const ARCHETYPES: Record<ArchetypeName, ArchetypeBuilder> = {
   LUNAR_POWERED,
   LUNA_DIRECT_IMPACT,
@@ -425,6 +445,7 @@ const ARCHETYPES: Record<ArchetypeName, ArchetypeBuilder> = {
   TITAN_PARACHUTE,
   JUPITER_PROBE,
   EARTH_CAPSULE_REENTRY,
+  EARTH_STARSHIP_RETURN,
 };
 
 /** The default survivable-touchdown limit (m·s⁻¹) per archetype. */
@@ -441,6 +462,7 @@ const ARCHETYPE_SURVIVABLE: Record<ArchetypeName, number> = {
   COMET_HARPOON: 5, // Philae touched at ~1 m/s and survived the bounces
   TITAN_PARACHUTE: 8, // Huygens hit ~4.5 m/s
   JUPITER_PROBE: 60, // no touchdown — high limit so the crush isn't flagged a crash
+  EARTH_STARSHIP_RETURN: 5, // a controlled landing burn to the water (Flight 5)
   EARTH_CAPSULE_REENTRY: 12, // splash/ground at ~8–11 m/s (Aurora 7's sourced timeline: 10.4); a fouled main (Soyuz 1, ~40) busts this → crash
 };
 
@@ -490,6 +512,7 @@ export function expandDescentProfile(raw: RawDescentProfile): DescentProfile {
     missionId: raw.missionId,
     body: raw.body,
     landingSite: raw.landingSite,
+    ...(raw.estimatedFields?.includes('landingSite') ? { landingSiteEstimated: true } : {}),
     entryState: raw.entryState,
     entryMassKg: raw.entryMassKg,
     entryCdA: raw.entryCdA,
@@ -594,6 +617,7 @@ export const DESCENT_MISSION_IDS = new Set<string>([
   'soyuz-11',
   'inspiration4',
   'polaris-dawn',
+  'starship-flight-5', // Starship's belly-first return, landing flip and burn (0.9.11 F3)
   'shenzhou-1',
 ]);
 

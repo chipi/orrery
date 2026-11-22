@@ -46,7 +46,10 @@ describe('booster recovery per flight (0.9.11 F2)', () => {
         .map((f) => f.replace(/^.*\//, '').replace(/\.json$/, '')),
     );
     for (const p of profiles) {
-      for (const id of Object.keys(p.recoveryByMission ?? {}))
+      for (const id of [
+        ...Object.keys(p.recoveryByMission ?? {}),
+        ...Object.keys(p.byMission ?? {}),
+      ])
         expect(missionIds.has(id), `${p.id}: ${id}`).toBe(true);
       const all = [p.recovery ?? [], ...Object.values(p.recoveryByMission ?? {})].flat();
       for (const r of all) {

@@ -31,6 +31,8 @@ import {
 } from '$lib/orbital/coast-craft';
 
 const R_EARTH_KM = 6371;
+/** A long suborbital arc ends at about the entry interface (km). */
+const ARC_END_KM = 120;
 /** Rendered orbit loops are capped here; the REV counter still shows real N. */
 export const LOOP_CAP = 3;
 
@@ -74,6 +76,9 @@ export interface LeoCoastSceneOptions {
   totalRevs: number;
   /** Suborbital hop → render one ballistic arc, not a closed loop. */
   suborbital?: boolean;
+  /** A long suborbital arc's span over the Earth (deg), e.g. Starship Flight 5; absent = the short
+   *  lofted hop (Mercury-Redstone). */
+  arcDeg?: number;
   /** Builds the capsule mesh (family-specific, e.g. buildMercuryCapsule). */
   buildCapsule: () => THREE.Group;
   /** Earth day-map texture URL (e.g. `${base}/textures/2k_earth_daymap.jpg`). */
@@ -180,20 +185,30 @@ export function createLeoCoastScene(opts: LeoCoastSceneOptions): LeoCoastScene {
 
   // ── Orbit ring (one closed loop) or suborbital arc ────────────────────
   const RING_STEPS = 240;
-  const ringRaw = opts.suborbital
-    ? // A lofted ballistic arc: half an ellipse peaking at altitudeKm.
-      Array.from({ length: RING_STEPS + 1 }, (_, i) => {
-        const t = i / RING_STEPS;
-        const ang = Math.PI * (t - 0.5); // −90°..+90° arc over the limb
-        return {
-          x: rOrbit * Math.sin(ang) * 0.6,
-          y: 0,
-          z: R_EARTH_KM + opts.altitudeKm * Math.cos(ang) - 0, // peak at apogee
-        };
-      }).map((p) => ({ x: p.x, y: p.y, z: p.z }))
-    : eccentric
-      ? keplerRing(opts.perigeeKm as number, opts.apogeeKm as number, RING_STEPS)
-      : parkingOrbit(opts.altitudeKm, 0, 1, RING_STEPS);
+  const ringRaw =
+    opts.suborbital && opts.arcDeg
+      ? // A long suborbital arc (Starship Flight 5): it follows the Earth's curve over `arcDeg`,
+        // peaking at altitudeKm mid-way and down to ARC_END_KM at both ends (cutoff, entry).
+        Array.from({ length: RING_STEPS + 1 }, (_, i) => {
+          const th = ((i / RING_STEPS - 0.5) * opts.arcDeg! * Math.PI) / 180;
+          const h =
+            ARC_END_KM + (opts.altitudeKm - ARC_END_KM) * Math.cos((th * 180) / opts.arcDeg!);
+          return { x: (R_EARTH_KM + h) * Math.sin(th), y: 0, z: (R_EARTH_KM + h) * Math.cos(th) };
+        })
+      : opts.suborbital
+        ? // A lofted ballistic arc: half an ellipse peaking at altitudeKm.
+          Array.from({ length: RING_STEPS + 1 }, (_, i) => {
+            const t = i / RING_STEPS;
+            const ang = Math.PI * (t - 0.5); // −90°..+90° arc over the limb
+            return {
+              x: rOrbit * Math.sin(ang) * 0.6,
+              y: 0,
+              z: R_EARTH_KM + opts.altitudeKm * Math.cos(ang) - 0, // peak at apogee
+            };
+          }).map((p) => ({ x: p.x, y: p.y, z: p.z }))
+        : eccentric
+          ? keplerRing(opts.perigeeKm as number, opts.apogeeKm as number, RING_STEPS)
+          : parkingOrbit(opts.altitudeKm, 0, 1, RING_STEPS);
   const ringPts = ringRaw
     .map((p) => inclined(p, incRad))
     .map((p) => new THREE.Vector3(p.x, p.y, p.z));

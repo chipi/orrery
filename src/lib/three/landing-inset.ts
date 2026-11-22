@@ -10,6 +10,7 @@ import { LANDING_HOLD_S, type PartRecovery } from '$lib/physics/ascent/ascent-ph
 import type { LightId } from '$lib/orbital/ascent-director';
 import { buildLauncherModel } from './launcher-models';
 import { plumeCone } from './engine-plume';
+import { buildStarbaseTowerM } from './launch-pads';
 
 export type Landing = PartRecovery & { touchdownS: number; landingBurnS: number };
 
@@ -165,24 +166,50 @@ function landingZone(): THREE.Group {
 }
 
 /** Height of the catch line (booster base when caught) above the ground, in booster lengths. */
-const CATCH_BASE_Y = 0.2;
+/** Super Heavy's length (m): the catch scene is drawn in booster lengths. */
+const SUPER_HEAVY_M = 71;
+/** The caught booster's base sits just above the ~20 m orbital launch mount. */
+const CATCH_BASE_Y = 22 / SUPER_HEAVY_M;
 
-/** The launch tower and its two catch arms, hinged on the tower's face. */
+/** One chopstick: a 36 m horizontal truss (two chords, diagonals), spanning +x from its hinge. */
+function chopstick(m: THREE.Material): THREE.Group {
+  const g = new THREE.Group();
+  const L = 36 / SUPER_HEAVY_M;
+  const H = 3 / SUPER_HEAVY_M;
+  const t = 0.5 / SUPER_HEAVY_M;
+  for (const y of [-H / 2, H / 2]) {
+    const chord = new THREE.Mesh(new THREE.BoxGeometry(L, t * 1.6, t * 2.4), m);
+    chord.position.set(L / 2, y, 0);
+    g.add(chord);
+  }
+  const bays = 8;
+  for (let i = 0; i < bays; i++) {
+    const len = Math.hypot(L / bays, H);
+    const d = new THREE.Mesh(new THREE.BoxGeometry(len, t, t), m);
+    d.position.set((i + 0.5) * (L / bays), 0, 0);
+    d.rotation.z = Math.atan2(H, L / bays) * (i % 2 ? 1 : -1);
+    g.add(d);
+  }
+  return g;
+}
+
+/** The Starbase tower and launch mount (the pad model's own geometry, launch-pads.ts) and two
+ *  catch arms hinged on the tower face at the booster's catch points. */
 function catchTower(): { group: THREE.Group; arms: THREE.Group[] } {
   const g = new THREE.Group();
   const ground = new THREE.Mesh(new THREE.PlaneGeometry(60, 60), mat(0x4a463d, 0.95));
   ground.rotation.x = -Math.PI / 2;
-  const steel = mat(0x2f343b, 0.6);
-  const tower = new THREE.Mesh(new THREE.BoxGeometry(0.22, 1.9, 0.22), steel);
-  tower.position.set(-0.42, 0.95, 0);
+  ground.position.y = -0.002;
+  const tower = buildStarbaseTowerM();
+  tower.scale.setScalar(1 / SUPER_HEAVY_M);
   g.add(ground, tower);
-  const armY = CATCH_BASE_Y + 0.86;
+  const armMat = mat(0xb7bbc1, 0.55);
+  const faceX = -19 / SUPER_HEAVY_M; // the tower's face towards the mount
+  const armY = CATCH_BASE_Y + 0.83; // the catch points sit just under the grid fins
   const arms = [-1, 1].map((side) => {
     const hinge = new THREE.Group();
-    hinge.position.set(-0.31, armY, side * 0.09);
-    const arm = new THREE.Mesh(new THREE.BoxGeometry(0.5, 0.05, 0.04), steel);
-    arm.position.x = 0.25;
-    hinge.add(arm);
+    hinge.position.set(faceX, armY, side * (6.5 / SUPER_HEAVY_M));
+    hinge.add(chopstick(armMat));
     hinge.userData.side = side;
     g.add(hinge);
     return hinge;

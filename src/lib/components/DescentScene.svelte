@@ -344,8 +344,15 @@
           label={m.chip_label_blackout()}
         /></span
       >
-      <span class="lamp" class:on={drogueOut}>{m.hud_drogue()}</span>
-      <span class="lamp" class:on={mainOut}>{m.hud_main()}</span>
+      <!-- A capsule hangs under drogue then main canopies; Starship (Flight 5) has no chute,
+           it flips and lands on its engines. -->
+      {#if hasChute}
+        <span class="lamp" class:on={drogueOut}>{m.hud_drogue()}</span>
+        <span class="lamp" class:on={mainOut}>{m.hud_main()}</span>
+      {/if}
+      {#if hasRetro}
+        <span class="lamp" class:on={retroOn}>{m.hud_retro()}</span>
+      {/if}
     {:else}
       {#if hasChute}
         <span class="lamp" class:on={chuteOut}>{m.hud_chute()}</span>

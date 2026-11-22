@@ -1,0 +1,41 @@
+{
+  "name": "Starship Flight 5",
+  "vehicle": "Starship: Super Heavy Booster 12 + Ship 30",
+  "payload": "None (test flight); Ship 30 itself, on a suborbital trajectory",
+  "delta_v": "~7.7 km/s (suborbital: speed at SECO, about -15 x 212 km)",
+  "type": "UNCREWED SUBORBITAL TEST · FLOWN",
+  "first": "First Super Heavy booster caught by the launch tower's arms",
+  "description": "Starship's fifth flight test lifted off from Starbase, Texas, on 2024-10-13 at 12:25 UTC. Booster 12 separated at about 70 km, turned back with a boostback burn and flew to the launch tower, where it slowed to a near hover and was caught by the tower's arms 6 min 52 s after liftoff, the first booster caught that way. Ship 30 continued on a suborbital trajectory of about -15 x 212 km at 26.2° inclination (its low point below the surface, so it could not stay in orbit), re-entered over the Indian Ocean belly-first, flipped upright, fired its landing burn and splashed down near a pre-placed buoy 1 h 5 min 38 s after liftoff. It was not built to be recovered; a large fireball erupted about 16 seconds after it hit the water.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Super Heavy B12 and Ship 30 lift off from Starbase 2024-10-13 12:25 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.0048,
+      "label": "TOWER CATCH",
+      "note": "Booster 12 is caught by the launch tower's arms 6 min 52 s after liftoff, after its landing burn.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.0058,
+      "label": "SECO",
+      "note": "Ship 30's engines cut off 8 min 25 s after liftoff, on a suborbital trajectory of about -15 x 212 km.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.0333,
+      "label": "RE-ENTRY",
+      "note": "Ship 30 enters the atmosphere belly-first over the Indian Ocean 48 min after liftoff.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.0456,
+      "label": "SPLASHDOWN",
+      "note": "Landing flip and burn, then splashdown near a buoy 1 h 5 min 38 s after liftoff; a large fireball erupts about 16 s later.",
+      "type": "nominal"
+    }
+  ]
+}

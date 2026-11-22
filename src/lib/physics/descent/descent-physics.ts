@@ -88,6 +88,7 @@ export type EDLPhaseKind =
 export type DescentEventType =
   | 'entry'
   | 'entry_flip' // capsule rotates from tip-first to heat-shield-forward (Earth crewed)
+  | 'landing_flip' // Starship swings belly-down to tail-down as the landing burn lights
   | 'peak_heat'
   | 'peak_decel'
   | 'parachute_deploy'
@@ -166,6 +167,8 @@ export interface DescentProfile {
   body: DescentBody;
   /** Landing coordinates (deg) — from moon-sites.json / mars-sites.json. */
   landingSite: { lat: number; lon: number };
+  /** The landing point is a model estimate (no source gives it): the UI does not print it. */
+  landingSiteEstimated?: boolean;
   /** Entry-interface state: top of the simulation. */
   entryState: {
     altitudeM: number;

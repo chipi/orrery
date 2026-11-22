@@ -200,6 +200,15 @@ export interface LaunchProfile {
    * Overrides `payloadSeparationDelayS` for that mission.
    */
   payloadSeparationDelayByMissionS?: Record<string, number>;
+  /** A suborbital flight: the final stage cuts off when the perigee reaches `perigeeAltM`
+   *  (negative = below the surface), short of orbit (0.9.11 F3, Starship Flight 5). */
+  suborbitalCutoff?: { perigeeAltM: number };
+  /** One flight's own launch, merged over the vehicle's by `profileForMission` where /fly loads
+   *  the profile (its payload, target, a suborbital cutoff). */
+  byMission?: Record<
+    string,
+    Partial<Pick<LaunchProfile, 'payloadKg' | 'targetOrbitAltM' | 'suborbitalCutoff'>>
+  >;
   /** How the vehicle's reusable parts come home on its usual flight (0.9.11 F2); a part not
    *  listed is expended. Sources per flight: docs/wip/2026-11-22-booster-recovery-sourced.md. */
   recovery?: PartRecovery[];
@@ -1372,6 +1381,21 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
     // direct ascent and a low-TWR stage that circularises over a long burn). A
     // real vehicle cuts the final stage off ON TARGET here (SECO), keeping a
     // propellant margin rather than burning to depletion.
+    // A suborbital flight (Starship Flight 5: -15 x 212 km): the final stage cuts off when the
+    // trajectory's perigee reaches the target, below a stable orbit; there is no ORBIT beat.
+    const sub = profile.suborbitalCutoff;
+    if (
+      sub &&
+      secoT < 0 &&
+      stageIndex === profile.stages.length - 1 &&
+      alt >= KARMAN_LINE_M &&
+      perigeeAltM >= sub.perigeeAltM
+    ) {
+      pushEvent('seco', `${profile.stages[stageIndex].name} — suborbital`);
+      stageIndex = -1;
+      secoT = t;
+    }
+
     if (!orbitSeen && alt >= KARMAN_LINE_M && perigeeAltM >= PERIGEE_TARGET_M) {
       pushEvent('orbit');
       orbitSeen = true;
@@ -1640,6 +1664,16 @@ export function payloadSeparationDelayFor(
     (missionId ? profile.payloadSeparationDelayByMissionS?.[missionId] : undefined) ??
     profile.payloadSeparationDelayS
   );
+}
+
+/** The profile this mission flies: the vehicle's, with the mission's own launch merged over it
+ *  (`byMission`). Same object when the mission has none. */
+export function profileForMission(
+  profile: LaunchProfile,
+  missionId: string | undefined,
+): LaunchProfile {
+  const own = missionId ? profile.byMission?.[missionId] : undefined;
+  return own ? { ...profile, ...own } : profile;
 }
 
 /** Seconds of landing burn before touchdown where a flight's start is not published (0.9.11 F2:

@@ -118,6 +118,7 @@
       inclinationDeg: coast.inclinationDeg,
       totalRevs: coast.revolutions,
       suborbital: coast.suborbital,
+      arcDeg: coast.arcDeg,
       buildCapsule: () => {
         // The full showcase craft (CSM, Soyuz, Dragon) when /fly preloaded one; else the capsule.
         const craft = flyCraftInOrbit(coast.missionId);

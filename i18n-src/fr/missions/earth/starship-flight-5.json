@@ -1,0 +1,41 @@
+{
+  "name": "Starship Flight 5",
+  "vehicle": "Starship: Super Heavy Booster 12 + Ship 30",
+  "payload": "Aucune (vol d'essai) ; Ship 30 lui-même, sur une trajectoire suborbitale",
+  "delta_v": "~7,7 km/s (suborbital : vitesse au SECO, environ -15 x 212 km)",
+  "type": "ESSAI SUBORBITAL SANS ÉQUIPAGE · RÉALISÉ",
+  "first": "Premier propulseur d'appoint Super Heavy rattrapé par les bras de la tour de lancement",
+  "description": "Le cinquième vol d'essai de Starship a décollé de Starbase, au Texas, le 2024-10-13 à 12:25 UTC. Booster 12 s'est séparé à environ 70 km, a fait demi-tour avec un allumage de retour et a volé jusqu'à la tour de lancement, où il a ralenti jusqu'à un quasi-vol stationnaire et a été rattrapé par les bras de la tour 6 min 52 s après le décollage, le premier propulseur rattrapé de cette façon. Ship 30 a poursuivi sur une trajectoire suborbitale d'environ -15 x 212 km avec une inclinaison de 26,2° (son point bas sous la surface, il ne pouvait donc pas rester en orbite), est rentré au-dessus de l'océan Indien sur le ventre, s'est redressé, a allumé ses moteurs pour l'atterrissage et a amerri près d'une bouée placée à l'avance 1 h 5 min 38 s après le décollage. Il n'était pas conçu pour être récupéré ; une grande boule de feu a éclaté environ 16 secondes après qu'il a touché l'eau.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCEMENT",
+      "note": "Super Heavy B12 et Ship 30 décollent de Starbase le 2024-10-13 à 12:25 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.0048,
+      "label": "CAPTURE PAR LA TOUR",
+      "note": "Booster 12 est rattrapé par les bras de la tour de lancement 6 min 52 s après le décollage, après son allumage d'atterrissage.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.0058,
+      "label": "SECO",
+      "note": "Les moteurs de Ship 30 s'arrêtent 8 min 25 s après le décollage, sur une trajectoire suborbitale d'environ -15 x 212 km.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.0333,
+      "label": "RENTRÉE ATMOSPHÉRIQUE",
+      "note": "Ship 30 entre dans l'atmosphère sur le ventre au-dessus de l'océan Indien 48 min après le décollage.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.0456,
+      "label": "AMERRISSAGE",
+      "note": "Retournement d'atterrissage et allumage, puis amerrissage près d'une bouée 1 h 5 min 38 s après le décollage ; une grande boule de feu éclate environ 16 s plus tard.",
+      "type": "nominal"
+    }
+  ]
+}

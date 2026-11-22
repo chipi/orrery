@@ -29,6 +29,7 @@ export const EDL_PHASE_LABEL: Record<EDLPhaseKind, string> = {
 export const EDL_BEAT_LABEL: Record<DescentEventType, string> = {
   entry: 'ENTRY',
   entry_flip: 'FLIP',
+  landing_flip: 'FLIP',
   peak_heat: 'PEAK HEAT',
   peak_decel: 'MAX-G',
   parachute_deploy: 'CHUTE',
@@ -61,6 +62,7 @@ const TIMELINE_BEATS: DescentEventType[] = [
   'parachute_deploy',
   'heatshield_sep',
   'backshell_sep',
+  'landing_flip',
   'retro_ignition',
   'skycrane_lower',
   'airbag_deploy',

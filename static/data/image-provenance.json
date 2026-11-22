@@ -120885,6 +120885,46 @@
         "reencoded-webp"
       ],
       "fetched_at": "2026-11-19T15:00:00.000Z"
+    },
+    {
+      "id": "06e47c804278035d",
+      "path": "/images/missions/starship-flight-5/01.webp",
+      "source_type": "wikimedia-commons",
+      "title": "File:Starship Booster Return on Final Approach (54063904149).jpg",
+      "author": "Steve Jurvetson",
+      "agency": "Steve Jurvetson",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Starship_Booster_Return_on_Final_Approach_(54063904149).jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e9/Starship_Booster_Return_on_Final_Approach_%2854063904149%29.jpg",
+      "license_short": "CC-BY-2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "license_rationale": "Creative Commons Attribution 2.0",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 153891202,
+      "nasa_id": null,
+      "fetched_at": "2026-11-22T09:15:22.245Z"
+    },
+    {
+      "id": "0d10966b411cbb82",
+      "path": "/images/missions/starship-flight-5/01.1x1.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:Starship Booster Return on Final Approach (54063904149).jpg",
+      "author": "Steve Jurvetson",
+      "agency": "Steve Jurvetson",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Starship_Booster_Return_on_Final_Approach_(54063904149).jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e9/Starship_Booster_Return_on_Final_Approach_%2854063904149%29.jpg",
+      "license_short": "CC-BY-2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "license_rationale": "Creative Commons Attribution 2.0",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 153891202,
+      "nasa_id": null,
+      "fetched_at": "2026-11-22T09:15:22.246Z"
     }
   ]
 }

@@ -14,6 +14,7 @@
 
 import * as THREE from 'three';
 import { heroMetal, heroWhite, heroDark, heroGold } from './hero-materials';
+import { buildStarshipShip } from './starship-ship';
 
 // ── Shared capsule detail parts (bring the family to the lander polish bar) ──
 
@@ -554,6 +555,9 @@ const CAPSULE_BUILDERS: Record<string, () => THREE.Group> = {
   soyuz: buildSoyuzDescentModule,
   dragon: buildDragonCapsule,
   shenzhou: buildShenzhouReentry,
+  // Starship's upper stage is its own re-entry vehicle (Flight 5's suborbital coast and return):
+  // drawn to the Block 1 ship in photos (starship-ship.ts).
+  starship: buildStarshipShip,
 };
 
 /** Resolve a capsule family id to its builder; falls back to Mercury. */

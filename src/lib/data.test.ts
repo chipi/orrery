@@ -171,7 +171,7 @@ describe('getMissionIndex', () => {
     // 2026-11-15 — slice H adds kaguya + chandrayaan2 (126 → 128); content4 adds sts-1, sts-51-l,
     // sts-107 and artemis1 (128 → 132). 2026-11-15 — content7: viking2, mars2, mro (Mars), mariner2 (Venus),
     // change2, im-1 (Moon), shenzhou-5 (Earth) (132 → 139).
-    expect(missions).toHaveLength(139);
+    expect(missions).toHaveLength(140); // 0.9.11 F3: starship-flight-5 (Earth)
   });
 
   it('every entry has the required language-neutral fields', async () => {
@@ -450,7 +450,7 @@ describe('getSun', () => {
 describe('getMissionsForLibrary', () => {
   it('returns all 115 missions merged with their en-US overlays', async () => {
     const list = await getMissionsForLibrary();
-    expect(list).toHaveLength(139);
+    expect(list).toHaveLength(140);
     // Every mission should have its base fields…
     for (const m of list) {
       expect(m.id).toBeTruthy();
@@ -496,7 +496,7 @@ describe('getMissionsForLibrary', () => {
 
   it('falls back to en-US for missing locale', async () => {
     const list = await getMissionsForLibrary('xx-TEST');
-    expect(list).toHaveLength(139);
+    expect(list).toHaveLength(140);
   });
 
   it('count matches what filterMissions reports', async () => {

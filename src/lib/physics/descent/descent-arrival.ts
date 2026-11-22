@@ -30,6 +30,8 @@ export const EDL_SYSTEM: Record<ArchetypeName, EDLSystemKind> = {
   // Earth capsule re-entry is a parachute descent (some — Soyuz/Shenzhou — fire soft-landing
   // retro); 'parachute_retro' is the closest EDL bucket. Earth missions are not backfilled.
   EARTH_CAPSULE_REENTRY: 'parachute_retro',
+  // Starship lands on its engines after the landing flip (Flight 5, to the water).
+  EARTH_STARSHIP_RETURN: 'powered',
 };
 
 /** Bodies whose landers carry the derived arrival fields. */

@@ -1,0 +1,41 @@
+{
+  "name": "Starship Flight 5",
+  "vehicle": "Starship: Super Heavy Booster 12 + Ship 30",
+  "payload": "Ninguna (vuelo de prueba); la propia Ship 30, en una trayectoria suborbital",
+  "delta_v": "~7,7 km/s (suborbital: velocidad en el SECO, unos -15 x 212 km)",
+  "type": "PRUEBA SUBORBITAL SIN TRIPULACIÓN · REALIZADA",
+  "first": "Primer propulsor Super Heavy atrapado por los brazos de la torre de lanzamiento",
+  "description": "El quinto vuelo de prueba de Starship despegó de Starbase, Texas, el 2024-10-13 a las 12:25 UTC. Booster 12 se separó a unos 70 km, dio la vuelta con un encendido de retorno y voló hasta la torre de lanzamiento, donde frenó hasta casi quedar en vuelo estacionario y fue atrapado por los brazos de la torre 6 min 52 s después del despegue, el primer propulsor atrapado de esta manera. Ship 30 continuó en una trayectoria suborbital de unos -15 x 212 km con una inclinación de 26,2° (su punto bajo quedaba bajo la superficie, de modo que no podía permanecer en órbita), reentró sobre el océano Índico con el vientre por delante, se enderezó, realizó su encendido de aterrizaje y amerizó cerca de una boya colocada de antemano 1 h 5 min 38 s después del despegue. No estaba construida para ser recuperada; unos 16 segundos después de tocar el agua estalló una gran bola de fuego.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANZAMIENTO",
+      "note": "Super Heavy B12 y Ship 30 despegan de Starbase el 2024-10-13 a las 12:25 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.0048,
+      "label": "CAPTURA EN LA TORRE",
+      "note": "Booster 12 es atrapado por los brazos de la torre de lanzamiento 6 min 52 s después del despegue, tras su encendido de aterrizaje.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.0058,
+      "label": "SECO",
+      "note": "Los motores de Ship 30 se apagan 8 min 25 s después del despegue, en una trayectoria suborbital de unos -15 x 212 km.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.0333,
+      "label": "REENTRADA",
+      "note": "Ship 30 entra en la atmósfera con el vientre por delante sobre el océano Índico 48 min después del despegue.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.0456,
+      "label": "AMERIZAJE",
+      "note": "Giro de aterrizaje y encendido, luego amerizaje cerca de una boya 1 h 5 min 38 s después del despegue; unos 16 s después estalla una gran bola de fuego.",
+      "type": "nominal"
+    }
+  ]
+}

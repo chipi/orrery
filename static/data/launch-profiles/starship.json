@@ -12,6 +12,25 @@
       "timeClass": "approx"
     }
   ],
+  "recoveryByMission": {
+    "starship-flight-5": [
+      {
+        "part": "booster",
+        "outcome": "caught",
+        "site": "tower",
+        "landingBurnS": 388,
+        "touchdownS": 412,
+        "timeClass": "sourced"
+      }
+    ]
+  },
+  "byMission": {
+    "starship-flight-5": {
+      "payloadKg": 0,
+      "targetOrbitAltM": 212000,
+      "suborbitalCutoff": { "perigeeAltM": -15000 }
+    }
+  },
   "liftoffThrustKN": 74400,
   "fairingKg": 0,
   "refAreaM2": 63.6,
@@ -42,7 +61,11 @@
   ],
   "provenance": [
     {
-      "l": "Super Heavy returns to the launch tower and is caught by its arms; the three catches came roughly seven minutes after launch (0.9.11 F2)",
+      "l": "Starship Flight 5 (13 Oct 2024, Booster 12 / Ship 30): booster landing burn 6:28, catch 6:52, ship SECO 8:25 after liftoff (SpaceX's mission timeline as Wikipedia carries it, whose clock puts liftoff at T+0:02; spacex.com gave no text); ship trajectory about -15 x 212 km x 26.2 deg (McDowell, JSR 838). The flight flies no payload to that suborbital cutoff; the model's SECO comes about 21 s early (its stage masses are the vehicle's, not Ship 30's). docs/wip/2026-11-22-starship-flight-5-sourced.md",
+      "u": "https://planet4589.org/space/jsr/back/news.838.txt"
+    },
+    {
+      "l": "Super Heavy returns to the launch tower and is caught by its arms; Flight 5's catch came about seven minutes after launch (0.9.11 F2)",
       "u": "https://fortune.com/2024/10/13/spacex-starship-launch-super-heavy-booster-landing-launch-pad"
     },
     { "l": "SpaceX — Starship", "u": "https://www.spacex.com/vehicles/starship/" },

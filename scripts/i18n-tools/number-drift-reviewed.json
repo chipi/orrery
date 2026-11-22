@@ -1,4 +1,9 @@
 {
+  "ar|missions/earth/starship-flight-5.json|events.4.note": {
+    "why": "\"1 h 5 min\" is \"ساعة و5 دقائق\" (an hour and 5 minutes): the one is the word \"ساعة\"",
+    "en": "7ee63315ba",
+    "tr": "47cd8fc30e"
+  },
   "ar|science/life-in-space/eva-physiology.json|body_paragraphs.0": {
     "why": "\"100% O2\" is written \"كله أكسجين\" (all oxygen), right after \"pure oxygen\"; 100% adds nothing",
     "en": "ff4ed85d71",

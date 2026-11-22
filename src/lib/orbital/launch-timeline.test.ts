@@ -4,6 +4,7 @@ import { resolve } from 'node:path';
 import {
   integrateAscent,
   payloadSeparationDelayFor,
+  profileForMission,
   type LaunchProfile,
   type AscentEvent,
 } from '$lib/physics/ascent/ascent-physics';
@@ -380,6 +381,28 @@ describe('launcher staging timelines vs the real nominal flight', () => {
       const r = 6_371_000 + last.altKm * 1000;
       const c3 = (last.speedKms * 1000) ** 2 / 1e6 - (2 * 3.986004418e14) / r / 1e6;
       expect(c3).toBeGreaterThan(11.0);
+    });
+  });
+
+  // Starship Flight 5 (0.9.11 F3): the flight's own launch (`byMission`): no payload, a
+  // suborbital cutoff at about -15 x 212 km (JSR 838). SpaceX's timeline (its clock puts liftoff at
+  // T+0:02; these are from liftoff): MECO 2:33, hot staging
+  // 2:38, SECO 8:25. The model's SECO comes about 21 s early (the vehicle's stage masses).
+  describe('starship-flight-5 (suborbital, -15 x 212 km)', () => {
+    const p = profileForMission(load('starship'), 'starship-flight-5');
+    const sum = integrateAscent(p);
+    it('MECO at ~T+153 s (±10), SECO at ~T+505 s (±30), and no orbit', () => {
+      expect(Math.abs(first(sum.events, 'meco')! - 153)).toBeLessThanOrEqual(10);
+      expect(Math.abs(first(sum.events, 'seco')! - 505)).toBeLessThanOrEqual(30);
+      expect(first(sum.events, 'orbit')).toBeUndefined();
+    });
+    it('the ship cuts off near the 212 km apogee', () => {
+      const t = first(sum.events, 'seco')!;
+      const s = sum.states.reduce((b, q) => (Math.abs(q.t - t) < Math.abs(b.t - t) ? q : b));
+      expect(Math.abs(s.altKm - 212)).toBeLessThanOrEqual(10);
+    });
+    it('the vehicle profile itself still flies to orbit', () => {
+      expect(first(integrateAscent(load('starship')).events, 'orbit')).toBeDefined();
     });
   });
 

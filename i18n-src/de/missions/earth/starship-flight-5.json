@@ -1,0 +1,41 @@
+{
+  "name": "Starship Flight 5",
+  "vehicle": "Starship: Super Heavy Booster 12 + Ship 30",
+  "payload": "Keine (Testflug); Ship 30 selbst, auf einer suborbitalen Flugbahn",
+  "delta_v": "~7,7 km/s (suborbital: Geschwindigkeit bei SECO, etwa -15 x 212 km)",
+  "type": "UNBEMANNTER SUBORBITALTEST · GEFLOGEN",
+  "first": "Erster Super Heavy Booster, der von den Armen des Startturms gefangen wurde",
+  "description": "Der fünfte Starship-Testflug startete am 2024-10-13 um 12:25 UTC von Starbase in Texas. Booster 12 trennte sich in etwa 70 km Höhe, kehrte mit einer Rückflug-Zündung um und flog zum Startturm, wo er bis fast zum Schwebeflug abbremste und 6 min 52 s nach dem Start von den Armen des Turms gefangen wurde – als erster Booster, der so gefangen wurde. Ship 30 flog auf einer suborbitalen Flugbahn von etwa -15 x 212 km bei 26,2° Inklination weiter (ihr tiefster Punkt lag unter der Oberfläche, sie konnte also nicht in der Umlaufbahn bleiben), ging über dem Indischen Ozean mit dem Bauch voran in den Wiedereintritt, richtete sich auf, zündete für die Landung die Triebwerke und wasserte 1 h 5 min 38 s nach dem Start in der Nähe einer vorab ausgelegten Boje. Sie war nicht für eine Bergung ausgelegt; etwa 16 Sekunden nachdem sie auf das Wasser getroffen war, brach ein großer Feuerball aus.",
+  "events": [
+    {
+      "met": 0,
+      "label": "START",
+      "note": "Super Heavy B12 und Ship 30 heben am 2024-10-13 um 12:25 UTC von Starbase ab.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.0048,
+      "label": "TURMFANG",
+      "note": "Booster 12 wird 6 min 52 s nach dem Start, nach seiner Landezündung, von den Armen des Startturms gefangen.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.0058,
+      "label": "SECO",
+      "note": "Die Triebwerke von Ship 30 schalten 8 min 25 s nach dem Start ab, auf einer suborbitalen Flugbahn von etwa -15 x 212 km.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.0333,
+      "label": "WIEDEREINTRITT",
+      "note": "Ship 30 tritt 48 min nach dem Start mit dem Bauch voran über dem Indischen Ozean in die Atmosphäre ein.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.0456,
+      "label": "WASSERUNG",
+      "note": "Landeflip und Zündung, dann Wasserung in der Nähe einer Boje 1 h 5 min 38 s nach dem Start; etwa 16 s später bricht ein großer Feuerball aus.",
+      "type": "nominal"
+    }
+  ]
+}

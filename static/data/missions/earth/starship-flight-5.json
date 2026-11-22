@@ -1,0 +1,42 @@
+{
+  "id": "starship-flight-5",
+  "agency": "SpaceX",
+  "agency_full": "Space Exploration Technologies Corp.",
+  "sector": "private",
+  "dest": "EARTH",
+  "color": "#005288",
+  "year": 2024,
+  "status": "FLOWN",
+  "departure_date": "2024-10-13",
+  "arrival_date": "2024-10-13",
+  "transit_days": 0,
+  "round_trip": true,
+  "vehicle": "Starship: Super Heavy Booster 12 + Ship 30",
+  "payload": "None (test flight); Ship 30 itself, on a suborbital trajectory",
+  "delta_v": "~7.7 km/s (suborbital: speed at SECO, about -15 x 212 km)",
+  "data_quality": "good",
+  "credit": "© SpaceX — flight timeline from SpaceX's mission page as relayed by Wikipedia (spacex.com gave no text); trajectory from Jonathan's Space Report 838.",
+  "links": [
+    {
+      "l": "Starship's fifth flight test — SpaceX",
+      "u": "https://www.spacex.com/launches/mission/?missionId=starship-flight-5",
+      "t": "core"
+    },
+    {
+      "l": "Jonathan's Space Report No. 838 (McDowell)",
+      "u": "https://planet4589.org/space/jsr/back/news.838.txt",
+      "t": "core"
+    },
+    {
+      "l": "Starship flight test 5 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Starship_flight_test_5",
+      "t": "intro"
+    }
+  ],
+  "flight_data_quality": "reconstructed",
+  "fleet_refs": [
+    { "id": "starship", "role": "launcher" },
+    { "id": "starship", "role": "spacecraft" },
+    { "id": "starbase-orbital-a", "role": "launch-site" }
+  ]
+}

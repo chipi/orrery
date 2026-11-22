@@ -195,6 +195,7 @@
   import {
     integrateAscent,
     payloadSeparationDelayFor,
+    profileForMission,
     landingsEndS,
     landingsFor,
     type LaunchProfile,
@@ -421,7 +422,9 @@
         launchSiteName = ctx?.pad?.name;
         launchPadSpec = ctx?.padSpec ?? null;
         launchSepDelayS = payloadSeparationDelayFor(p, mission.id);
-        launchProfile = p;
+        // The flight's own launch (payload, a suborbital cutoff) merged once here, so the scene
+        // and the play bar integrate the same ascent.
+        launchProfile = profileForMission(p, mission.id);
         dispatchPhase({ type: 'startLaunch' });
       })
       .catch(dataLoadFailed);
@@ -589,7 +592,10 @@
           agency: mission.agency ?? mission.agency_full ?? '',
           body: descentProfile.body,
           siteId: descentProfile.siteId,
-          siteName: `${descentProfile.landingSite.lat.toFixed(2)}°, ${descentProfile.landingSite.lon.toFixed(2)}°`,
+          // An estimated landing point (no source gives it) is not printed as if it were known.
+          siteName: descentProfile.landingSiteEstimated
+            ? '—'
+            : `${descentProfile.landingSite.lat.toFixed(2)}°, ${descentProfile.landingSite.lon.toFixed(2)}°`,
           edlSystem: edlSystemLabel(descentProfile),
           // The descent profile is the source of truth for the entry state.
           entryVelocityKms: descentProfile.entryState.velocityMs / 1000,
@@ -614,11 +620,12 @@
   // Recovery card shown after an Earth re-entry touchdown (RFC-034 §13).
   // showRecovery is derived from flyAct (see the flight-act block above).
   // US capsules splash down at sea; Soviet/Chinese capsules land on the steppe.
-  const SPLASHDOWN_CAPSULES = new Set(['mercury', 'gemini', 'apollo-cm', 'dragon']);
+  const SPLASHDOWN_CAPSULES = new Set(['mercury', 'gemini', 'apollo-cm', 'dragon', 'starship']);
   // Honest-failure captions — the re-entry outcome is not always a success.
   const RECOVERY_CAPTIONS: Record<string, () => string> = {
     'soyuz-1': () => m.fly_recovery_caption_soyuz1(),
     'soyuz-11': () => m.fly_recovery_caption_soyuz11(),
+    'starship-flight-5': () => m.fly_recovery_caption_starship_flight5(),
   };
   let recoveryOutcome = $derived.by(() => {
     const ok = descentSummaryFly?.touchdownSuccess ?? true;
@@ -3386,14 +3393,17 @@
     <div class="recovery-inner" class:fail={recoveryOutcome.fail}>
       <div class="recovery-eyebrow">{recoveryOutcome.eyebrow}</div>
       <div class="recovery-name">{mission.name}</div>
-      <div class="recovery-line">
-        {descentProfile.landingSite.lat.toFixed(2)}° {descentProfile.landingSite.lat >= 0
-          ? 'N'
-          : 'S'},
-        {Math.abs(descentProfile.landingSite.lon).toFixed(2)}° {descentProfile.landingSite.lon >= 0
-          ? 'E'
-          : 'W'}
-      </div>
+      {#if !descentProfile.landingSiteEstimated}
+        <div class="recovery-line">
+          {descentProfile.landingSite.lat.toFixed(2)}° {descentProfile.landingSite.lat >= 0
+            ? 'N'
+            : 'S'},
+          {Math.abs(descentProfile.landingSite.lon).toFixed(2)}° {descentProfile.landingSite.lon >=
+          0
+            ? 'E'
+            : 'W'}
+        </div>
+      {/if}
       {#if mission.id && RECOVERY_CAPTIONS[mission.id]}
         <div class="recovery-caption">{RECOVERY_CAPTIONS[mission.id]()}</div>
       {/if}

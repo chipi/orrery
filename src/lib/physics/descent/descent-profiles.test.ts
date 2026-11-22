@@ -87,6 +87,13 @@ const PEAK_G_BAND: Record<string, [number, number]> = {
   jupiter: [150, 320],
 };
 
+/** A vehicle the body's band was not drawn for. Starship Flight 5 (0.9.11 F3) is not a capsule:
+ *  a belly-first, high-angle lifting entry from a suborbital trajectory. The model reads ~2.7 g;
+ *  no published Flight 5 peak-g was found, so this band is the model's, not a source's. */
+const PEAK_G_BY_MISSION: Record<string, [number, number]> = {
+  'starship-flight-5': [1.5, 4],
+};
+
 /** Missions whose descent has no solid-surface terminus (atmospheric probe). */
 const NO_SURFACE = new Set(['galileo']);
 
@@ -117,7 +124,7 @@ describe('every descent profile expands + flies to its honest outcome', () => {
         expect(s.touchdownSuccess).toBe(true);
       }
       // Peak deceleration in the body's plausible band.
-      const band = PEAK_G_BAND[profile.body];
+      const band = PEAK_G_BY_MISSION[id] ?? PEAK_G_BAND[profile.body];
       expectInRange(s.peakDecel.g, band[0], band[1], `${id} peak decel (g)`);
       // Beats open on entry; landers close on touchdown, probes on signal loss.
       expect(s.events[0].type).toBe('entry');
@@ -152,7 +159,10 @@ describe('lifting re-entries fly the calibrated lifting band (all capsules)', ()
     if (!existsSync(profilePath(id))) return false;
     const raw = loadRaw(id);
     return (
-      raw.body === 'earth' && (raw.liftToDragRatio ?? 0) > 0 && raw.entryState.velocityMs < 9000
+      raw.body === 'earth' &&
+      raw.archetype !== 'EARTH_STARSHIP_RETURN' &&
+      (raw.liftToDragRatio ?? 0) > 0 &&
+      raw.entryState.velocityMs < 9000
     );
   });
 
@@ -238,7 +248,8 @@ describe('model-authored entry fields are declared as estimates, sourced ones ar
   // estimates; Curiosity's is too since 2026-11-03 — it flies a bank-averaged effective L/D tuned to
   // the reconstructed timeline, not the cited 0.24 trim value. Apollo/Gemini/Soyuz/Dragon/Shenzhou
   // are directly sourced.
-  const ESTIMATED_LD = new Set(['curiosity', 'perseverance', 'tianwen1']);
+  // Starship Flight 5: L/D fitted to its sourced timeline (no published value).
+  const ESTIMATED_LD = new Set(['curiosity', 'perseverance', 'tianwen1', 'starship-flight-5']);
   // Cd·A sourced only for the Apollo CM family (BC 313.5, NASA); estimated/tuned for everyone else.
   const SOURCED_CDA = new Set([
     'apollo7',
@@ -297,5 +308,23 @@ describe('Chandrayaan-2 Vikram: the published rough braking, then the record end
   it('models no crash: no touchdown beat, and the run is not a success', () => {
     expect(s.events.some((e) => e.type === 'touchdown')).toBe(false);
     expect(s.touchdownSuccess).toBe(false);
+  });
+});
+
+// Starship Flight 5 (0.9.11 F3), SpaceX's timeline after re-entry (T+48:03): transonic 1:02:34,
+// landing flip 1:05:15, landing burn 1:05:20, splashdown 1:05:40. Lift-to-drag, Cd·A, the entry
+// angle and the flip altitude are fitted to these (docs/wip/2026-11-22-starship-flight-5-sourced.md).
+describe('starship-flight-5: belly-first return, landing flip and burn', () => {
+  const { s } = flight('starship-flight-5');
+  const at = (type: string) => s.events.find((e) => e.type === type)?.t;
+  it('flips and lights the landing burn at ~1032 s after re-entry (±5), splashes at ~1057 s (±5)', () => {
+    expect(Math.abs(at('landing_flip')! - 1032)).toBeLessThanOrEqual(5);
+    expect(Math.abs(at('retro_ignition')! - 1037)).toBeLessThanOrEqual(6);
+    expect(Math.abs(at('touchdown')! - 1057)).toBeLessThanOrEqual(5);
+  });
+  it('goes transonic at ~871 s (±20) and splashes down slowly', () => {
+    const trans = s.states.find((q) => q.velocityMs < 300)!.t;
+    expect(Math.abs(trans - 871)).toBeLessThanOrEqual(20);
+    expect(s.touchdownSuccess).toBe(true);
   });
 });

@@ -20,6 +20,7 @@
   import { onMount, onDestroy } from 'svelte';
   import * as THREE from 'three';
   import { buildInterplanetarySpacecraft } from '$lib/three/interplanetary-spacecraft-models';
+  import { buildStarshipShip } from '$lib/three/starship-ship';
   import { buildApolloLMHotspot } from '$lib/hotspot-models/apollo-lm';
   import { buildApolloLMExtendedHotspot } from '$lib/hotspot-models/apollo-lm-extended';
   import { buildLuna9Hotspot } from '$lib/hotspot-models/luna-9-spherical';
@@ -167,6 +168,12 @@
     })),
 
     // ── Earth-orbit re-entry capsules (Tier-1) ───────────────────────
+    {
+      id: 'starship-ship',
+      label: 'Starship Ship (Block 1, Flight 5)',
+      family: 'capsule',
+      build: () => buildStarshipShip(),
+    },
     {
       id: 'mercury-capsule',
       label: 'Mercury capsule',

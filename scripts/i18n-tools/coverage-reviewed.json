@@ -164,6 +164,11 @@
     "en": "f88fe58331",
     "tr": "f88fe58331"
   },
+  "ar|missions/earth/starship-flight-5.json|events.2.label": {
+    "why": "SECO (second-stage engine cutoff) is a flight-dynamics acronym the same in every locale, as hudLabel leaves it",
+    "en": "9764eaf305",
+    "tr": "9764eaf305"
+  },
   "ar|original-work.json|anatomy_art./images/anatomy/apollo-csm-block-i_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "110d3a6004",
@@ -728,6 +733,11 @@
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "f88fe58331",
     "tr": "f88fe58331"
+  },
+  "de|missions/earth/starship-flight-5.json|events.2.label": {
+    "why": "SECO (second-stage engine cutoff) is a flight-dynamics acronym the same in every locale, as hudLabel leaves it",
+    "en": "9764eaf305",
+    "tr": "9764eaf305"
   },
   "de|museums/nasm-washington.json|name": {
     "why": "museum name kept in English (German/French/Italian use the English name)",
@@ -1349,6 +1359,11 @@
     "en": "f88fe58331",
     "tr": "f88fe58331"
   },
+  "es|missions/earth/starship-flight-5.json|events.2.label": {
+    "why": "SECO (second-stage engine cutoff) is a flight-dynamics acronym the same in every locale, as hudLabel leaves it",
+    "en": "9764eaf305",
+    "tr": "9764eaf305"
+  },
   "es|observatories/alma.json|name": {
     "why": "instrument/vehicle name with its acronym kept in English in this Latin-script locale (NAME_POLICY)",
     "en": "33030577a3",
@@ -1923,6 +1938,11 @@
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "f88fe58331",
     "tr": "f88fe58331"
+  },
+  "fr|missions/earth/starship-flight-5.json|events.2.label": {
+    "why": "SECO (second-stage engine cutoff) is a flight-dynamics acronym the same in every locale, as hudLabel leaves it",
+    "en": "9764eaf305",
+    "tr": "9764eaf305"
   },
   "fr|museums/nasm-washington.json|name": {
     "why": "museum name kept in English (German/French/Italian use the English name)",
@@ -2499,6 +2519,11 @@
     "en": "f88fe58331",
     "tr": "f88fe58331"
   },
+  "hi|missions/earth/starship-flight-5.json|events.2.label": {
+    "why": "SECO (second-stage engine cutoff) is a flight-dynamics acronym the same in every locale, as hudLabel leaves it",
+    "en": "9764eaf305",
+    "tr": "9764eaf305"
+  },
   "hi|original-work.json|anatomy_art./images/anatomy/apollo-csm-block-i_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "110d3a6004",
@@ -3063,6 +3088,11 @@
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "f88fe58331",
     "tr": "f88fe58331"
+  },
+  "it|missions/earth/starship-flight-5.json|events.2.label": {
+    "why": "SECO (second-stage engine cutoff) is a flight-dynamics acronym the same in every locale, as hudLabel leaves it",
+    "en": "9764eaf305",
+    "tr": "9764eaf305"
   },
   "it|missions/mars/viking1.json|payload": {
     "why": "orbiter and lander are the Italian/Dutch words too",
@@ -3639,6 +3669,11 @@
     "en": "f88fe58331",
     "tr": "f88fe58331"
   },
+  "ja|missions/earth/starship-flight-5.json|events.2.label": {
+    "why": "SECO (second-stage engine cutoff) is a flight-dynamics acronym the same in every locale, as hudLabel leaves it",
+    "en": "9764eaf305",
+    "tr": "9764eaf305"
+  },
   "ja|original-work.json|anatomy_art./images/anatomy/apollo-csm-block-i_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "110d3a6004",
@@ -4143,6 +4178,11 @@
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "f88fe58331",
     "tr": "f88fe58331"
+  },
+  "ko|missions/earth/starship-flight-5.json|events.2.label": {
+    "why": "SECO (second-stage engine cutoff) is a flight-dynamics acronym the same in every locale, as hudLabel leaves it",
+    "en": "9764eaf305",
+    "tr": "9764eaf305"
   },
   "ko|original-work.json|anatomy_art./images/anatomy/apollo-csm-block-i_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -4683,6 +4723,11 @@
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "f88fe58331",
     "tr": "f88fe58331"
+  },
+  "nl|missions/earth/starship-flight-5.json|events.2.label": {
+    "why": "SECO (second-stage engine cutoff) is a flight-dynamics acronym the same in every locale, as hudLabel leaves it",
+    "en": "9764eaf305",
+    "tr": "9764eaf305"
   },
   "nl|missions/mars/viking1.json|payload": {
     "why": "orbiter and lander are the Italian/Dutch words too",
@@ -5484,6 +5529,11 @@
     "en": "f88fe58331",
     "tr": "f88fe58331"
   },
+  "pt-BR|missions/earth/starship-flight-5.json|events.2.label": {
+    "why": "SECO (second-stage engine cutoff) is a flight-dynamics acronym the same in every locale, as hudLabel leaves it",
+    "en": "9764eaf305",
+    "tr": "9764eaf305"
+  },
   "pt-BR|observatories/alma.json|name": {
     "why": "instrument/vehicle name with its acronym kept in English in this Latin-script locale (NAME_POLICY)",
     "en": "33030577a3",
@@ -6049,6 +6099,11 @@
     "en": "f88fe58331",
     "tr": "f88fe58331"
   },
+  "ru|missions/earth/starship-flight-5.json|events.2.label": {
+    "why": "SECO (second-stage engine cutoff) is a flight-dynamics acronym the same in every locale, as hudLabel leaves it",
+    "en": "9764eaf305",
+    "tr": "9764eaf305"
+  },
   "ru|original-work.json|anatomy_art./images/anatomy/apollo-csm-block-i_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "110d3a6004",
@@ -6513,6 +6568,11 @@
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "f88fe58331",
     "tr": "f88fe58331"
+  },
+  "sr-Cyrl|missions/earth/starship-flight-5.json|events.2.label": {
+    "why": "SECO (second-stage engine cutoff) is a flight-dynamics acronym the same in every locale, as hudLabel leaves it",
+    "en": "9764eaf305",
+    "tr": "9764eaf305"
   },
   "sr-Cyrl|original-work.json|anatomy_art./images/anatomy/apollo-csm-block-i_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -7048,6 +7108,11 @@
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "f88fe58331",
     "tr": "f88fe58331"
+  },
+  "zh-CN|missions/earth/starship-flight-5.json|events.2.label": {
+    "why": "SECO (second-stage engine cutoff) is a flight-dynamics acronym the same in every locale, as hudLabel leaves it",
+    "en": "9764eaf305",
+    "tr": "9764eaf305"
   },
   "zh-CN|original-work.json|anatomy_art./images/anatomy/apollo-csm-block-i_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",

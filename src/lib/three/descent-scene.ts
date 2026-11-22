@@ -172,6 +172,15 @@ export interface DescentScene extends FlightPhaseScene<DescentState> {
   readonly activePhaseKind: string;
 }
 
+/**
+ * Starship's pitch (vehicle rotation about z) on its return: belly-first (π/2, body level) until
+ * the landing flip, then upright, engines down (0), over `flipS` (smoothstep). Pure.
+ */
+export function starshipPitch(t: number, flipT: number, flipS: number): number {
+  const f = Math.min(1, Math.max(0, (t - flipT) / flipS));
+  return (Math.PI / 2) * (1 - f * f * (3 - 2 * f));
+}
+
 export function createDescentScene(opts: DescentSceneOptions): DescentScene {
   const vehLen = opts.vehicleLengthKm ?? DESCENT_VEHICLE_LENGTH_KM;
   const body = opts.body;
@@ -336,6 +345,12 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
     additive(0xff7a2c, 0),
   );
   plasmaTrail.position.y = vehLen * 1.25; // streams UP behind the descent
+  // Starship (Flight 5) re-enters belly-first: the shock glow stretches along the belly (world X,
+  // the plasma group is held level), and there is no capsule wake column.
+  if (opts.events?.some((e) => e.type === 'landing_flip')) {
+    plasmaCap.scale.set(3.2, 0.45, 0.9);
+    plasmaTrail.visible = false;
+  }
   plasma.add(plasmaCap, plasmaTrail);
   plasma.visible = false;
   vehicle.add(plasma);
@@ -344,7 +359,13 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
 
   // ── Touchdown dust — a disc kicked up on the surface as the vehicle nears the
   //    ground under retro / airbags, flaring at touchdown. Body-tinted.
-  const dustColor = body === 'mars' ? 0xc98a5a : body === 'venus' ? 0xd9a44a : 0xb8b3ad;
+  // Starship (Flight 5) lands its burn on the sea: white spray, not grey dust.
+  const overSea = opts.events?.some((e) => e.type === 'landing_flip') === true;
+  const dustColor =
+    body === 'mars' ? 0xc98a5a : body === 'venus' ? 0xd9a44a : overSea ? 0xe4edf3 : 0xb8b3ad;
+  // Starship's three Raptors light a far bigger flame than a lander's retro (the plume is sized
+  // off a capsule-scale body).
+  const plumeK = overSea ? 2.5 : 1;
   const dust = new THREE.Mesh(new THREE.CircleGeometry(vehLen * 1.5, 40), additive(dustColor, 0));
   dust.rotation.x = -Math.PI / 2; // flat on the surface
   dust.position.y = vehLen * 0.02;
@@ -414,6 +435,10 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
   const chuteT = metOf('parachute_deploy');
   const airbagT = metOf('airbag_deploy');
   const flipT = metOf('entry_flip');
+  // Starship (Flight 5): belly-first through entry, then the landing flip to tail-down as the
+  // landing burn lights, over LANDING_FLIP_S.
+  const landingFlipT = metOf('landing_flip');
+  const LANDING_FLIP_S = 4;
   const touchdownT = metOf('touchdown');
   // Slow the EDL separations (item 4) so heat-shield jettison + chute-cut linger
   // as a held beat rather than a snap.
@@ -586,7 +611,7 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
     plume.visible = braking;
     if (braking) {
       const flick = 1 + 0.1 * Math.sin(frame * 0.7) + 0.05 * Math.sin(frame * 1.9);
-      plume.scale.set(1, flick, 1);
+      plume.scale.set(plumeK, flick * plumeK, plumeK);
     }
 
     // Entry attitude flip (Earth crewed re-entry, RFC-034 §13): the capsule comes
@@ -606,6 +631,13 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
       entryFlip = fp * fp * (3 - 2 * fp); // smoothstep 0→1
     }
     vehicle.rotation.x = Math.PI * (1 - entryFlip); // π (tip down) → 0 (shield down)
+    if (landingFlipT != null) {
+      // Laid across the frame (about z), tiled belly (-X) down; the plasma stays world-aligned
+      // (shock below the belly, wake above).
+      vehicle.rotation.x = 0;
+      vehicle.rotation.z = starshipPitch(s.t, landingFlipT, LANDING_FLIP_S);
+      plasma.rotation.z = -vehicle.rotation.z;
+    }
 
     // Entry fireball: glow tracks the normalised aero-heating proxy — the
     // hypersonic bow that peaks at peak heating then dies as the vehicle slows.
@@ -627,8 +659,8 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
     if (kicking) {
       const prox = 1 - Math.min(1, s.altKm / (vehLen * 0.5)); // 0 far → 1 at ground
       const amt = Math.max(prox, s.altM <= 0 ? 1 : 0);
-      dustMat.opacity = 0.3 * amt;
-      dust.scale.setScalar(0.5 + 1.3 * amt);
+      dustMat.opacity = (overSea ? 0.12 : 0.3) * amt;
+      dust.scale.setScalar(overSea ? 0.4 + 0.5 * amt : 0.5 + 1.3 * amt);
     }
 
     // Camera: compose a per-phase target pose, ease the live camera toward it.

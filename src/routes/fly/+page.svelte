@@ -118,6 +118,7 @@
   import { type PlanetId as FlybyPlanetId } from '$lib/orbital/flyby-camera-plan';
   import { type ShotKind } from '$lib/orbital/flyby-shots';
   import { installFlyTestHooks } from '$lib/fly/fly-test-hooks';
+  import { trajectoryType, type TrajectoryType } from '$lib/fly/trajectory-type';
   import {
     applyMissionToPage,
     applyPlanSelectionMoonToPage,
@@ -752,40 +753,26 @@
   let currentDestMeshId: DestinationId = 'mars';
   let isMoonMission = $state(false);
 
-  /** Human-readable orbit/trajectory regime for the identity HUD. The
-   *  five buckets cover every mission /fly renders today:
-   *    - Cislunar free-return: Moon mission with retArc (Apollo 13 / ORRERY-1)
-   *    - Cislunar transfer:    Moon mission, one-way (most Apollo / Chang'e)
-   *    - Heliocentric flyby:   gas/ice giants + Pluto (direct Hohmann to a
-   *                            FLYBY-only destination per ADR-028)
-   *    - Heliocentric free-return: free-return loop around an inner-system body
-   *    - Heliocentric Hohmann: any other one-way interplanetary transfer
-   *  Kept derived here (not in the mission JSON) so legacy mission files
-   *  don't need a backfill; the derivation reads the already-classified
-   *  isMoonMission + isFreeReturn + activeDestination states. */
-  const HELIO_FLYBY_DESTINATIONS = new Set<DestinationId>([
-    'jupiter',
-    'saturn',
-    'uranus',
-    'neptune',
-    'pluto',
-  ]);
-  // Earth-orbit flights (Vostok, Shenzhou, the Shuttle) fly in the Earth-centred scene too, but
-  // never leave Earth orbit: they are not a cislunar transfer (plan A10).
+  /** Human-readable orbit/trajectory regime for the identity HUD (`trajectoryType`). */
+  const TRAJECTORY_TYPE_LABEL: Record<TrajectoryType, () => string> = {
+    suborbital: m.fly_traj_type_suborbital,
+    'earth-orbit': m.fly_traj_type_earth_orbit,
+    'cislunar-free-return': m.fly_traj_type_cislunar_free_return,
+    cislunar: m.fly_traj_type_cislunar,
+    'helio-flyby': m.fly_traj_type_helio_flyby,
+    'helio-free-return': m.fly_traj_type_helio_free_return,
+    'helio-hohmann': m.fly_traj_type_helio_hohmann,
+  };
   let trajectoryTypeLabel = $derived(
-    earthCoast
-      ? earthCoast.suborbital
-        ? m.fly_traj_type_suborbital()
-        : m.fly_traj_type_earth_orbit()
-      : isMoonMission
-        ? isFreeReturn
-          ? m.fly_traj_type_cislunar_free_return()
-          : m.fly_traj_type_cislunar()
-        : HELIO_FLYBY_DESTINATIONS.has(activeDestination)
-          ? m.fly_traj_type_helio_flyby()
-          : isFreeReturn
-            ? m.fly_traj_type_helio_free_return()
-            : m.fly_traj_type_helio_hohmann(),
+    TRAJECTORY_TYPE_LABEL[
+      trajectoryType({
+        earthCoast,
+        dest: mission.dest,
+        isMoonMission,
+        isFreeReturn,
+        activeDestination,
+      })
+    ](),
   );
   let outPts: Vec2[] = $state(INITIAL_ARCS.out);
   let retPts: Vec2[] = $state(INITIAL_ARCS.ret);

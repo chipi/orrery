@@ -5392,9 +5392,15 @@
           // near). The Zoom-to-detail button still lands past this to open
           // the flat-patch immediately (flyToDetail).
           const SPHERE_TO_FLAT_CAM_R = 30.1;
+          // Only while the camera orbits the body itself and is not mid-fly: framed on an orbiter,
+          // camR is the distance to that object (14), so picking a surface site next crossed the
+          // trigger on the fly's first frames, opened the flat patch uninvited and, on touch,
+          // closed the new site's panel (surface-panel-order:39, change2 -> beresheet).
           if (
             flatPatchPhase === 'hidden' &&
             !panoramaActive &&
+            !flyActive &&
+            focusOffset.lengthSq() < 1e-9 &&
             selected != null &&
             selected.region_bounds != null &&
             camR < SPHERE_TO_FLAT_CAM_R

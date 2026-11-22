@@ -1,5 +1,7 @@
+// @vitest-environment jsdom
 import { describe, expect, it, vi } from 'vitest';
-import { createPanelFramer } from './panel-framing-host';
+import { createPanelFramer, watchPanels } from './panel-framing-host';
+import { createRouteLifecycle } from './route-lifecycle';
 
 function setup(opts: { reduced?: boolean; rects?: { left: number; right: number }[] } = {}) {
   let t = 1000;
@@ -81,6 +83,27 @@ describe('createPanelFramer', () => {
     advance(450);
     framer.apply(0.016, true);
     expect(onCover).toHaveBeenLastCalledWith(400);
+  });
+
+  // docker-e2e 44728854768 (the same spec): the drawer sat at its start offset for two frames,
+  // those two samples agreed after the settle window had closed, and its fly-in (a Svelte `in:fly`,
+  // run by element.animate) ends with a non-bubbling `introend`, not an `animationend`.
+  it('the end of a panel’s fly-in re-measures, though its introend does not bubble', () => {
+    const lifecycle = createRouteLifecycle();
+    const framer = { markDirty: vi.fn() };
+    watchPanels(framer, lifecycle);
+    const panel = document.createElement('aside');
+    panel.className = 'panel';
+    const inner = document.createElement('div');
+    panel.append(inner);
+    document.body.append(panel);
+    framer.markDirty.mockClear();
+    panel.dispatchEvent(new CustomEvent('introend'));
+    expect(framer.markDirty).toHaveBeenCalledTimes(1);
+    inner.dispatchEvent(new CustomEvent('introend'));
+    expect(framer.markDirty).toHaveBeenCalledTimes(1);
+    lifecycle.cleanup();
+    panel.remove();
   });
 
   it('not wanted (2D, an immersive view) takes the shift off', () => {

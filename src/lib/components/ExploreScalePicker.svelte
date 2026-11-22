@@ -93,7 +93,13 @@
     railLeft = left - p.left;
   }
   $effect(() => {
-    if (!open) return;
+    // A closed ladder keeps no offset: the last one belongs to where the chip was then (flush
+    // right at the solar system), and a reopen after a jump drew the ladder there, 103 px past
+    // the left edge, before this placed it again (docker-e2e, explore-hud "at the Milky Way").
+    if (!open) {
+      railLeft = null;
+      return;
+    }
     placeRail();
     window.addEventListener('resize', placeRail);
     return () => window.removeEventListener('resize', placeRail);

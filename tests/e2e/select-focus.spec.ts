@@ -1,4 +1,5 @@
 import { expect, test, type Locator, type Page } from '@playwright/test';
+import { contextWalkDone } from './_helpers/explore-walk';
 import { openControlsDrawer, openDrawerTab } from './_helpers/hud-expand';
 import { waitForHydration } from './_helpers/hydration';
 
@@ -70,6 +71,13 @@ async function openExplore(page: Page, query = '') {
 async function settled(page: Page) {
   await page.waitForTimeout(800);
   await expect.poll(async () => (await cam(page)).flying, { timeout: 10_000 }).toBe(false);
+}
+
+/** The walk, then the last cross-out dolly (1.3 s): the entry pose is the level's own. */
+async function arrivedAt(page: Page) {
+  await contextWalkDone(page);
+  await expect.poll(async () => (await cam(page)).flying, { timeout: 45_000 }).toBe(false);
+  await page.waitForTimeout(2_500);
 }
 
 async function openIndex(page: Page, scale = 'solar-system') {
@@ -597,11 +605,7 @@ test.describe('/explore outer scales: a member takes the camera, Reset gives it 
     }) => {
       test.slow();
       await openExplore(page, `?context=${s.scale}`);
-      await expect(page.getByTestId('scale-index-toggle')).toHaveAttribute('aria-label', /index/i, {
-        timeout: 45_000,
-      });
-      await expect.poll(async () => (await cam(page)).flying, { timeout: 45_000 }).toBe(false);
-      await page.waitForTimeout(2_500); // the cross-out dolly
+      await arrivedAt(page);
       const entry = await cam(page);
       const panel = await openIndex(page, s.scale);
       await indexRow(panel, s.row).click();
@@ -631,11 +635,7 @@ test.describe('/explore outer scales: a member takes the camera, Reset gives it 
   }) => {
     test.slow();
     await openExplore(page, '?context=virgo');
-    await expect(page.getByTestId('scale-index-toggle')).toHaveAttribute('aria-label', /index/i, {
-      timeout: 45_000,
-    });
-    await expect.poll(async () => (await cam(page)).flying, { timeout: 45_000 }).toBe(false);
-    await page.waitForTimeout(2_500); // the cross-out dolly
+    await arrivedAt(page);
     const panel = await openIndex(page, 'virgo');
     await indexRow(panel, 'm87-star').click();
     // The Virgo Cluster panel stays mounted, covered, under it and its text now names M87 too.

@@ -1,5 +1,6 @@
 import { expect, test, type Page } from '@playwright/test';
 import { collectCanonicalRoutes } from '../../scripts/site-routes.mjs';
+import { contextWalkDone } from './_helpers/explore-walk';
 
 /**
  * UX slice A1 (Q2): no visible text on any screen renders below 11 px.
@@ -298,7 +299,10 @@ test.describe('3D sprite labels of the pin scenes keep the floor (UX C2, UXD-020
   for (const level of ['neighborhood', 'milky-way', 'local-group']) {
     test(`${level}: every shown sprite label is at least 11 px of text`, async ({ page }) => {
       await page.goto(`${LOC}/explore?context=${level}`);
-      await page.waitForFunction(() => window.__scenePins?.() != null, null, { timeout: 60_000 });
+      await contextWalkDone(page, 60_000);
+      await page.waitForFunction((lvl) => window.__scenePins?.()?.scale === lvl, level, {
+        timeout: 10_000,
+      });
       await page.waitForTimeout(2_000);
       const snap = await page.evaluate(() => window.__scenePins!());
       const shown = snap!.labels.filter((l) => l.shown);

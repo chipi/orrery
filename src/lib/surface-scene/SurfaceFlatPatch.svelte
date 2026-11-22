@@ -165,13 +165,8 @@
   let centroidLat = $state(0);
   let centroidLon = $state(0);
   let kmPerPx = $state(0.1); // 100 m/px default
-  /** kmPerPx the patch entered at; remembered so we can exit back to
-   *  the sphere automatically once the user wheels out past it. */
-  // initialKmPerPx kept as a state slot for the wheel handler /
-  // future "fit to view" reset gestures, even though no live consumer
-  // reads it after the 2026-06-08 wheel-out simplification.
+  /** kmPerPx the patch entered at: a pinch out past it returns to the sphere. */
   let initialKmPerPx = 0.1;
-  void initialKmPerPx;
   let autoExitFired = $state(false);
 
   // Layer toggles — default-on; expose chip row in template.
@@ -775,22 +770,74 @@
     lmx = downX = e.clientX;
     lmy = downY = e.clientY;
   }
-  function onMouseMove(e: MouseEvent) {
-    if (!dragging) return;
-    const dxPx = e.clientX - lmx;
-    const dyPx = e.clientY - lmy;
-    lmx = e.clientX;
-    lmy = e.clientY;
+  function panBy(dxPx: number, dyPx: number) {
     // Convert pixel delta → lat/lon delta (inverse of project).
     const kmPerDegLat = (Math.PI / 180) * config.radiusKm;
     const cosLat = Math.cos((centroidLat * Math.PI) / 180);
-    const dKmX = -dxPx * kmPerPx;
-    const dKmY = dyPx * kmPerPx;
-    centroidLat += dKmY / kmPerDegLat;
-    centroidLon += dKmX / (kmPerDegLat * cosLat);
+    centroidLat += (dyPx * kmPerPx) / kmPerDegLat;
+    centroidLon += (-dxPx * kmPerPx) / (kmPerDegLat * cosLat);
+  }
+  function onMouseMove(e: MouseEvent) {
+    if (!dragging) return;
+    panBy(e.clientX - lmx, e.clientY - lmy);
+    lmx = e.clientX;
+    lmy = e.clientY;
   }
   function onMouseUp() {
     dragging = false;
+  }
+
+  // Touch: one finger pans, two fingers pinch (zoom about the centre) and pan by their midpoint.
+  // A tap still reaches onCanvasUp through the browser's compatibility mouse events.
+  let pinchPrev = 0;
+  let midX = 0;
+  let midY = 0;
+  const touchMid = (t: TouchList) => [
+    (t[0].clientX + t[1].clientX) / 2,
+    (t[0].clientY + t[1].clientY) / 2,
+  ];
+  const touchDist = (t: TouchList) =>
+    Math.hypot(t[0].clientX - t[1].clientX, t[0].clientY - t[1].clientY);
+  function onTouchStart(e: TouchEvent) {
+    if (e.touches.length === 2) {
+      pinchPrev = touchDist(e.touches);
+      [midX, midY] = touchMid(e.touches);
+    } else if (e.touches.length === 1) {
+      pinchPrev = 0;
+      lmx = e.touches[0].clientX;
+      lmy = e.touches[0].clientY;
+    }
+  }
+  function onTouchMove(e: TouchEvent) {
+    if (e.touches.length === 2 && pinchPrev > 0) {
+      const d = touchDist(e.touches);
+      const next = kmPerPx * (pinchPrev / d);
+      // Pinching out past the entry zoom is the touch form of wheel-out: back to the sphere.
+      if (next > initialKmPerPx * 1.15) {
+        if (!autoExitFired) {
+          autoExitFired = true;
+          onClose(kmPerPx);
+        }
+        return;
+      }
+      const minKmPerPx = Math.max(nativeKmPerPx * 0.5, deepestZoomFloor() * 0.05);
+      kmPerPx = Math.max(minKmPerPx, next);
+      const [mx, my] = touchMid(e.touches);
+      panBy(mx - midX, my - midY);
+      pinchPrev = d;
+      midX = mx;
+      midY = my;
+    } else if (e.touches.length === 1 && pinchPrev === 0) {
+      panBy(e.touches[0].clientX - lmx, e.touches[0].clientY - lmy);
+      lmx = e.touches[0].clientX;
+      lmy = e.touches[0].clientY;
+    }
+  }
+  function onTouchEnd(e: TouchEvent) {
+    // Lifting one of two fingers must not turn the rest of the pinch into a jump-pan.
+    if (e.touches.length === 1) {
+      pinchPrev = -1;
+    } else if (e.touches.length === 0) pinchPrev = 0;
   }
   /** (x, y) in canvas px is on the site's own spot: the lander dot, disc or ring drawn there. */
   function nearSiteSpot(x: number, y: number): boolean {
@@ -948,6 +995,10 @@
     onmouseup={onCanvasUp}
     onmouseleave={onMouseUp}
     onwheel={onWheel}
+    ontouchstart={onTouchStart}
+    ontouchmove={onTouchMove}
+    ontouchend={onTouchEnd}
+    ontouchcancel={onTouchEnd}
   ></canvas>
 
   {#if placedRings.length > 0}

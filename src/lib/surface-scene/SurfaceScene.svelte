@@ -208,6 +208,7 @@
     mobileDrawerHidden,
     nationFilterAway,
     orbitsInViewNext,
+    pinchCamR,
     shouldFlyToDetail,
   } from '$lib/surface-scene/surface-view-state';
   import {
@@ -3549,7 +3550,7 @@
         const d = tDist(e.touches[0], e.touches[1]);
         // Floor lowered 30.2 → 30.08 to match the wheel floor so touch can
         // reach the manual 3D HiRISE zoom band before flat-patch (#309).
-        camRTarget = Math.max(zoomFloor(), Math.min(200, camRTarget * (pinchPrev / d)));
+        camRTarget = pinchCamR(camRTarget, pinchPrev, d, { floor: zoomFloor(), max: 200 });
         // Pan via midpoint delta — mirrors the desktop Shift+drag path.
         const midX = (e.touches[0].clientX + e.touches[1].clientX) / 2;
         const midY = (e.touches[0].clientY + e.touches[1].clientY) / 2;

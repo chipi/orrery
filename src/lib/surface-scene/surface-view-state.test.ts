@@ -5,8 +5,29 @@ import {
   nationFilterAway,
   ORBIT_RULER_HIDE_RADII,
   orbitsInViewNext,
+  pinchCamR,
   shouldFlyToDetail,
 } from './surface-view-state';
+
+describe('pinchCamR', () => {
+  const lim = { floor: DETAIL_FLY_TARGET_R, max: 200 };
+
+  it('scales the altitude above the surface by the finger ratio, not the distance to the centre', () => {
+    // 2026-11-23 mobile report: one 100 -> 120 px spread at camR 37 dropped to 30.83 (8x closer).
+    expect(pinchCamR(37, 100, 120, lim)).toBeCloseTo(30 + 7 / 1.2, 6);
+    expect(pinchCamR(31, 100, 200, lim)).toBeCloseTo(30.5, 6);
+  });
+
+  it('pinching out by the same ratio undoes a pinch in', () => {
+    const inR = pinchCamR(40, 100, 150, lim);
+    expect(pinchCamR(inR, 150, 100, lim)).toBeCloseTo(40, 6);
+  });
+
+  it('clamps to the floor and the far limit', () => {
+    expect(pinchCamR(30.2, 100, 1000, lim)).toBe(DETAIL_FLY_TARGET_R);
+    expect(pinchCamR(150, 100, 10, lim)).toBe(200);
+  });
+});
 
 const base = {
   view: '3d' as const,

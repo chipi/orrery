@@ -95,11 +95,17 @@ const KIND_HERO_DEPS = {
   ],
 };
 
-function inputHash(dataPaths, tpl, kind) {
+// A mission card draws its trajectory figure: without it in the hash a refreshed thumbnail left
+// the card on the old one (0.9.11: eleven OTV / Shuttle / Shenzhou cards).
+const missionFigure = (id) => `static/images/missions/thumbnails/card/${id}.webp`;
+
+function inputHash(dataPaths, tpl, kind, id) {
   const parts = [tpl];
   for (const p of [...dataPaths, ...(KIND_HERO_DEPS[kind] ?? []), PROVENANCE]) {
     if (existsSync(p)) parts.push(readFileSync(p, 'utf8'));
   }
+  if (kind === 'mission' && existsSync(missionFigure(id)))
+    parts.push(sha(readFileSync(missionFigure(id))));
   return sha(parts.join('\n'));
 }
 
@@ -143,7 +149,7 @@ async function main() {
     for (const t of all) {
       const key = `${t.kind}/${t.id}`;
       if (!existsSync(`${OUT_ROOT}/${key}.jpg`)) continue;
-      manifest.entries[key] = inputHash(t.dataPaths, templateHash(t.kind), t.kind);
+      manifest.entries[key] = inputHash(t.dataPaths, templateHash(t.kind), t.kind, t.id);
       n += 1;
     }
     manifest.entries = Object.fromEntries(
@@ -156,7 +162,7 @@ async function main() {
 
   const todo = targets.filter((t) => {
     const key = `${t.kind}/${t.id}`;
-    const hash = inputHash(t.dataPaths, templateHash(t.kind), t.kind);
+    const hash = inputHash(t.dataPaths, templateHash(t.kind), t.kind, t.id);
     const out = `${OUT_ROOT}/${key}.jpg`;
     return manifest.entries[key] !== hash || !existsSync(out);
   });
@@ -224,7 +230,7 @@ async function main() {
           .$eval('.foot-credit', (el) => el.textContent ?? '')
           .catch(() => '');
         if (/PHOTO:/.test(credit)) photoCredits += 1;
-        manifest.entries[key] = inputHash(t.dataPaths, templateHash(t.kind), t.kind);
+        manifest.entries[key] = inputHash(t.dataPaths, templateHash(t.kind), t.kind, t.id);
         ok += 1;
         process.stdout.write(`  ${key}`);
       } catch (e) {

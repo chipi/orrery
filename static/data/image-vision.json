@@ -30905,6 +30905,45 @@
       "rejected_by": null,
       "scored_at": "2026-11-22T13:47:53.068Z",
       "scoring_cost_usd": 0
+    },
+    "/images/stars/vega/02.jpg": {
+      "score": 8,
+      "subject": "Spitzer Space Telescope images of Vega at 24 and 70 microns showing the heat glow of its debris disc, NASA/JPL-Caltech/K. Su (University of Arizona), 2005.",
+      "category": "other",
+      "focal_point": {
+        "x": 0.75,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-22T15:04:26.764Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/stars/barnards-star/02.jpg": {
+      "score": 8,
+      "subject": "Hubble Space Telescope image of Barnard's Star, NASA/ESA/Hubble Heritage, processed by C. Violette.",
+      "category": "other",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-22T15:03:31.734Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/stars/rigil-kentaurus/02.jpg": {
+      "score": 8,
+      "subject": "Alpha Centauri and Beta Centauri at the centre of a wide-field image of Centaurus against the Milky Way, Zdeněk Bardon/ESO (centaurus-ch17-bardon-cc).",
+      "category": "other",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-22T15:03:31.738Z",
+      "scoring_cost_usd": 0
     }
   }
 }

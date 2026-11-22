@@ -69,8 +69,9 @@ test.describe('star panel (SN2, UXD-008)', () => {
     await expect(p.locator('.panel-hero img')).toHaveCount(0);
   });
 
-  test('a star with no second image has no Gallery tab (Vega)', async ({ page }) => {
-    await open(page, '/explore?goto=vega');
+  test('a star with no second image has no Gallery tab (Polaris)', async ({ page }) => {
+    // Vega was the case until L41 (2026-11-22) gave the last three photographed stars a second image.
+    await open(page, '/explore?goto=polaris');
     await expect(panel(page).locator('#star-tab-gallery')).toHaveCount(0);
   });
 });

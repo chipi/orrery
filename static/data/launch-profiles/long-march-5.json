@@ -6,11 +6,48 @@
   "loftBoost": true,
   "liftoffThrustKN": 10636,
   "fairingKg": 3000,
-  "fairingJettisonAltM": 115000,
+  "fairingJettisonAltM": 147000,
   "refAreaM2": 35,
   "cd": 0.3,
-  "launchSite": { "lat": 19.614, "lon": 110.951, "name": "LC-101 · Wenchang" },
-  "pitchProgram": [[0, 90], [12, 88], [50, 70], [120, 50], [200, 32], [320, 16], [440, 6], [520, 0]],
+  "launchSite": {
+    "lat": 19.614,
+    "lon": 110.951,
+    "name": "LC-101 · Wenchang"
+  },
+  "pitchProgram": [
+    [
+      0,
+      90
+    ],
+    [
+      12,
+      88
+    ],
+    [
+      50,
+      70
+    ],
+    [
+      120,
+      50
+    ],
+    [
+      200,
+      32
+    ],
+    [
+      320,
+      16
+    ],
+    [
+      440,
+      6
+    ],
+    [
+      520,
+      0
+    ]
+  ],
   "boosters": {
     "name": "K3 strap-on (2× YF-100)",
     "count": 4,
@@ -38,7 +75,7 @@
       "name": "Second stage (2× YF-75D)",
       "wetKg": 36000,
       "dryKg": 5100,
-      "thrustVacKN": 130,
+      "thrustVacKN": 176.7,
       "ispVacS": 442.6,
       "engines": 2,
       "chamberTempK": 3500
@@ -60,6 +97,10 @@
     {
       "l": "Chang'e 5 — Wikipedia (8,200 kg); fairing mass estimated (not published)",
       "u": "https://en.wikipedia.org/wiki/Chang%27e_5"
+    },
+    {
+      "l": "Spaceflight Now — Long March 5 Y1 (CCTV timing: boosters T+2:53, fairing T+4:45 above 147 km, core shutdown T+7:55)",
+      "u": "https://spaceflightnow.com/2016/11/03/china-launches-long-march-5-one-of-the-worlds-most-powerful-rockets/"
     }
   ],
   "fairingJettisonS": 285

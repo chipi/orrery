@@ -317,10 +317,8 @@ const TIMELINES: Record<string, Row[]> = {
     { event: 'booster separation (fitted)', type: 'staging', nth: 0, real: 173, tol: 10 },
     { event: 'fairing (scheduled input)', type: 'fairing_jettison', real: 285, tol: 10 },
     { event: 'core shutdown (fitted)', type: 'meco', real: 475, tol: 10 },
-    // Chang'e-5 (Y5) stage-2 first shutdown 752 s (secondary: everydayastronaut; no CASC table).
-    // CALIBRATED: second-stage thrust 130 kN against the published 2x YF-75D 176.7, with a lofted
-    // boost, to hold this one secondary time.
-    { event: 'stage-2 first shutdown (calibrated)', type: 'seco', real: 752, tol: 30 },
+    // The second stage flies the published 2x YF-75D 176.7 kN (operator 2026-11-22, option A; was a
+    // calibrated 130 kN): its 752 s first shutdown is the model limit below.
   ],
   'm-v': [
     // JAXA Special Publication (2008), M-V-5 (Hayabusa) sequence: 1/2 separation 75, stage 2
@@ -362,6 +360,12 @@ describe('launcher staging timelines vs the real nominal flight', () => {
       }
     });
   }
+
+  // Known gap (docs/wip/2026-11-21-0.9.11-plan.md F1): sourced, and the model cannot hold it with
+  // the published hardware.
+  it.todo(
+    "long-march-5: Chang'e-5 (Y5) stage-2 first shutdown 752 s (everydayastronaut) and Y1's fairing above 147 km at T+285 (Spaceflight Now). Kept as the model limit (operator 2026-11-22, option A): with the published 176.7 kN the model cuts off at ~681 s on a 141 x 339 km orbit and drops the fairing near 285 km; a pitch-table fit to both stretched the parking orbit to e = 0.15. The real Y5 parking orbit would settle it (not found)",
+  );
 
   // Atlas-Centaur AC-20 (NASA TM X-2278): it launched Mariner VI (412 kg) on 24 February 1969
   // straight onto an escape trajectory, C3 11.185 km²/s² (Table V-II), Centaur MECO T+725.5 s.

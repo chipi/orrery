@@ -515,6 +515,8 @@ All HUD panels: `background: rgba(4,4,12,0.82); border: 1px solid rgba(255,255,2
 
 **The launch scene.** Its camera is a seeded director with clouds, smoke and a Sun-lit sky ([UXD-046](../uxs/decisions/UXD-046-the-launch-runs-a-seeded-camera-director.md)) and it stands on the pad of its launch site and year ([UXD-047](../uxs/decisions/UXD-047-the-launch-draws-the-real-pad-of-its-site-and-era.md)); the rules are in [UXS-003](../uxs/UXS-003.md) and the records.
 
+**Booster landing inset ([UXD-050](../uxs/decisions/UXD-050-booster-landing-inset-on-fly.md)).** A framed view of the recovered booster's landing, drawn at the flight's real touchdown time. Frame: 7:5, at most 280 px wide (46 % of the width on narrow screens), right-aligned 22 px from the right edge, in the free band under the FLIGHT PLAN list and above the play bar (above the SPEED and ALTITUDE readouts on phones); it shrinks to fit and is not drawn when the band is under 90 px. Border `1px solid` `--color-state` at 45 %, radius 4 px. Caption: Space Mono, `--size-label`, white with a text shadow, the HUD label and the site names (`BOOSTER LANDING · LZ-1 · LZ-2`, `TOWER CATCH`). The sky inside follows the launch scene's light (night, dusk, golden, midday). It is scene content, so it stays when the HUD is hidden.
+
 **A long list is a native `select` with `<optgroup>`s**, not chips and not a custom popover (the phone's own picker, free accessibility): `/plan`'s destination (five groups, UXD-042) and `/lab`'s goal list.
 
 ### 5.13 INDEX panel (one on every /explore scale)

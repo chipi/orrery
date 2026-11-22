@@ -228,11 +228,14 @@ const TIMELINES: Record<string, Row[]> = {
     { event: 'stage 3 cutoff', type: 'staging', nth: 2, real: 571, tol: 10 },
     // ILS Proton Mission Planner's Guide Rev 7, Table 2.3.1-1: PLF jettison 348.2 (backlog F3).
     { event: 'fairing jettison', type: 'fairing_jettison', real: 348.2, tol: 10 },
-    // Same guide, Figure 2.3.1-1: Briz-M first burn from T+680 (the stage's ignitionS, after the
-    // coast from stage 3 separation) to T+1129. CALIBRATED: the burn length comes from Briz-M
-    // thrust x1.206 (23.7 kN against the published 19.62), because the guide's standard GTO flight
-    // (payload and trajectory unpublished) is not the ExoMars flight the stage times above pin.
-    { event: 'Briz-M first-burn cutoff (calibrated)', type: 'seco', real: 1129, tol: 30 },
+    // ExoMars (same spaceflight101 timeline): Briz-M first ignition T+0:11:16.0 (the stage's
+    // ignitionS), first shutdown T+0:16:xx, so 960-1019 s. Briz-M flies the published 19.62 kN;
+    // stages 1-3 fly a pitch table fitted to the guide's fairing altitude, max-Q and this cutoff
+    // (scripts/launch-fits/proton-m-briz-m.json). Not matched: the ~175 km parking orbit (the
+    // model's is 140 x 807 km; its stage 3 ends ~100-150 m/s too energetic, cause not found).
+    { event: 'Briz-M first-burn cutoff', type: 'seco', real: 990, tol: 30 },
+    // ILS guide Table 2.3.1-1: maximum dynamic pressure T+65.5 s.
+    { event: 'max-Q', type: 'max_q', real: 65.5, tol: 5 },
   ],
   'long-march-2f': [
     // Strap-ons jettisoned at T+126 s, first stage burn 166 s (secondary: spaceflight101).
@@ -378,6 +381,16 @@ describe('launcher staging timelines vs the real nominal flight', () => {
       const c3 = (last.speedKms * 1000) ** 2 / 1e6 - (2 * 3.986004418e14) / r / 1e6;
       expect(c3).toBeGreaterThan(11.0);
     });
+  });
+
+  // ILS Proton guide: "fairing jettison occurs at approximately 340 to 350 seconds into the flight
+  // at an altitude of 121 to 125 kilometers or more". The 0.9.10 profile dropped it at 254 km.
+  it('proton-m-briz-m: the fairing goes at 121-125 km or a little more (guide)', () => {
+    const sum = integrateAscent(load('proton-m-briz-m'));
+    const t = first(sum.events, 'fairing_jettison')!;
+    const s = sum.states.reduce((b, q) => (Math.abs(q.t - t) < Math.abs(b.t - t) ? q : b));
+    expect(s.altKm).toBeGreaterThanOrEqual(121);
+    expect(s.altKm).toBeLessThanOrEqual(135);
   });
 
   // H3 / MMX launch plan, Table 2 gives altitude and inertial speed per event. The 0.9.10 profile

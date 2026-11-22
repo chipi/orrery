@@ -1324,7 +1324,7 @@ hotfire (Wikipedia, citing Dave Limp), × 2 = 1,556 kN against the fitted 1,559.
 blueorigin.com's engine and news pages are script-rendered (no text, HTTP 429 to WebFetch); the
 provenance row now says so instead of the old 1,779 kN.
 
-**Proton-M / Briz-M: open, operator decision.** ExoMars' own timeline (archived spaceflight101):
+**Proton-M / Briz-M: fit A shipped (operator, 2026-11-22).** ExoMars' own timeline (archived spaceflight101):
 Briz-M first ignition T+0:11:16.0, burn ~5 min, shutdown T+0:16:xx into a ~175 km parking orbit;
 fairing T+5:45. The shipped profile puts the fairing at 254 km (guide: 121-125 km "or more"), because
 it never set `pitchTableStages`. With the published 19.62 kN, ignition 676 s and a state fit:
@@ -1332,20 +1332,25 @@ it never set `pitchTableStages`. With the published 19.62 kN, ignition 676 s and
 | | Briz-M | fairing alt | Briz-M cutoff | parking orbit |
 | --- | --- | --- | --- | --- |
 | shipped | 23.7 kN (x1.206) | 254 km | 1128 s (guide GTO) | 139 x 272 |
-| fit, `loftBoost` on | 19.62 | 130 km | 1004.6 s | 140 x 896 |
-| fit, `loftBoost` off | 19.62 | 129 km | 847.6 s | 140 x 460 |
+| **A: fit, `loftBoost` on (shipped)** | 19.62 | 130.4 km | 1004.6 s | 140 x 807 |
+| B: fit, `loftBoost` off | 19.62 | 129 km | 847.6 s | 140 x 460 |
 
 No pitch table gives the ~5 min burn and the 175 km circle together: the model's stage 3 ends about
 100-150 m/s more energetic than the flight implies (its 614 kN / 325 s burn of 46.6 t matches the
-guide's 241 s, so the cause is not found). Not changed.
+guide's 241 s, so the cause is not found). The operator chose A: published thrust, the guide's
+fairing altitude, max-Q 67.6 s (guide 65.5), ExoMars' first-burn end; the parking orbit's apogee
+(807 km against a ~175 km circle) is the recorded gap. Spec `scripts/launch-fits/proton-m-briz-m.json`;
+pinned in `launch-timeline.test.ts` (Briz-M cutoff 990 ±30, max-Q 65.5 ±5, fairing 121-135 km); the
+shipped profile fails the cutoff and fairing rows. (An earlier draft of this table put A at 140 x 896;
+that orbit came from a different fit run with a 175 km state target.)
 
 **Long March 5: open, needs a source.** A time-only fit holds 752 s with the published 176.7 kN
 but lofts to 482 km at MECO; with the profile's 115 km fairing altitude (unsourced) it holds 750 s at
 150 km. No published altitude or speed for any LM-5 event, so the calibrated 130 kN stays until one
 is found (Chang'e-5 parking orbit, a CASC sequence table).
 
-**Atlas-Centaur AC-20: open, operator decision.** There is no Mariner VI (or VII) mission in Orrery
-(missions: Mariner 2, 4, 9, 10); Mariner 69-3 / 69-2 are only catalogue rows with
-`orrery_mission_ref: null`. Giving /fly the flight's payload and injection needs the mission first.
+**Atlas-Centaur AC-20: dropped (operator, 2026-11-22).** There is no Mariner VI (or VII) mission in
+Orrery (missions: Mariner 2, 4, 9, 10); Mariner 69-3 / 69-2 are only catalogue rows with
+`orrery_mission_ref: null`. The test keeps flying AC-20 with the flight's payload and C3.
 
 Searches: 1 WebSearch, 3 WebFetch, 4 direct downloads.

@@ -1267,7 +1267,7 @@
       "lon_min": 22.74,
       "lon_max": 22.83
     },
-    "region_kind": "landing_ellipse",
+    "region_kind": "roi_quad",
     "crewed": false,
     "status": "CRASHED",
     "surface_status": "completed",

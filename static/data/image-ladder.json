@@ -1538,7 +1538,9 @@
   ],
   "/images/earth-objects/iss/05": [
     320,
-    1280
+    1280,
+    2048,
+    3072
   ],
   "/images/earth-objects/jwst/01": [
     320,
@@ -1728,7 +1730,7 @@
   ],
   "/images/earth-objects/tiangong/04": [
     320,
-    669
+    1000
   ],
   "/images/earth-objects/tiangong/05": [
     320,
@@ -1846,7 +1848,9 @@
   ],
   "/images/fleet-galleries/akatsuki/05": [
     320,
-    467
+    850,
+    1360,
+    1594
   ],
   "/images/fleet-galleries/antares/01": [
     320,
@@ -2415,7 +2419,9 @@
   ],
   "/images/fleet-galleries/cargo-dragon-2/04": [
     320,
-    1280
+    1280,
+    2048,
+    3072
   ],
   "/images/fleet-galleries/cargo-dragon-v1/01": [
     320,
@@ -2674,9 +2680,9 @@
   "/images/fleet-galleries/crew-dragon-iva/02": [
     320,
     640,
-    1280,
-    2048,
-    3072
+    853,
+    1365,
+    2048
   ],
   "/images/fleet-galleries/crew-dragon-iva/03": [
     320,
@@ -3953,9 +3959,9 @@
   ],
   "/images/fleet-galleries/lc-39b/01": [
     320,
-    1280,
-    2048,
-    2400
+    622,
+    996,
+    1493
   ],
   "/images/fleet-galleries/lc-39b/02": [
     320,
@@ -4156,7 +4162,9 @@
   ],
   "/images/fleet-galleries/lro/05": [
     320,
-    456
+    848,
+    1356,
+    1987
   ],
   "/images/fleet-galleries/lrv-apollo/01": [
     320,
@@ -5211,7 +5219,8 @@
   ],
   "/images/fleet-galleries/plesetsk-43/05": [
     320,
-    1200
+    960,
+    1536
   ],
   "/images/fleet-galleries/pragyan/01": [
     320,
@@ -5764,7 +5773,8 @@
     320,
     640,
     1280,
-    1500
+    2048,
+    2289
   ],
   "/images/fleet-galleries/sls-block-1/01": [
     320,
@@ -10902,7 +10912,8 @@
   ],
   "/images/planets/saturn/03": [
     320,
-    638
+    1280,
+    1933
   ],
   "/images/planets/saturn/04": [
     320,
@@ -11721,7 +11732,7 @@
   ],
   "/images/small-bodies/eris/02": [
     320,
-    600
+    603
   ],
   "/images/small-bodies/halley/01": [
     320,

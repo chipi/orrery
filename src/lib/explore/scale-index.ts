@@ -520,7 +520,14 @@ function milkyWayRows(src: ScaleIndexSource): ScaleIndexRow[] {
     });
   }
   for (const a of mw.arms)
-    rows.push({ id: a.id, name: a.name, kind: 'spiral-arm', section: 'arms', selectable: true });
+    rows.push({
+      id: a.id,
+      name: a.name,
+      kind: 'spiral-arm',
+      section: 'arms',
+      selectable: true,
+      ...thumbFields(outerThumb(src.thumbs, 'milky-way', a.id)),
+    });
   return rows;
 }
 

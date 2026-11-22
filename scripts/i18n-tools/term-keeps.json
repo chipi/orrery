@@ -1032,8 +1032,8 @@
     "tr": "b464dd88d8"
   },
   "burn|es|science/observation/hertzsprung-russell.json :: body_paragraphs.4": {
-    "why": "burn out = exhaust fuel, not engine",
-    "tr": "516d6a2883"
+    "why": "stars burn out (stellar fuel), not an engine firing; re-reviewed after the turn-off edit (0.9.11 C5)",
+    "tr": "05a31df13f"
   },
   "burn|es|science/orbits/disposal-end-of-life.json :: diagram_caption": {
     "why": "imperative verb phrase, no noun rendered",
@@ -1144,8 +1144,8 @@
     "tr": "4ad20e2ff4"
   },
   "burn|fr|science/observation/hertzsprung-russell.json :: body_paragraphs.4": {
-    "why": "burn out = exhaust fuel, not engine",
-    "tr": "b06eab8c38"
+    "why": "stars burn out (stellar fuel), not an engine firing; re-reviewed after the turn-off edit (0.9.11 C5)",
+    "tr": "70a1d83a64"
   },
   "burn|fr|science/propulsion/expander-cycle.json :: body_paragraphs.0": {
     "why": "combustion in main chamber",
@@ -1524,8 +1524,8 @@
     "tr": "59bf0e0591"
   },
   "burn|ja|science/observation/hertzsprung-russell.json :: body_paragraphs.4": {
-    "why": "\"burn out\" is stellar fusion exhaustion",
-    "tr": "d6b84bf789"
+    "why": "stars burn out (stellar fuel), not an engine firing; re-reviewed after the turn-off edit (0.9.11 C5)",
+    "tr": "391130cdcb"
   },
   "burn|ja|science/propulsion/specific-impulse.json :: narrative_101.1": {
     "why": "fuel-burned-per-second is combustion; 燃料消費量 correct",

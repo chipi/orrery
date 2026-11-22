@@ -173,5 +173,6 @@
   "core-collapsed cluster": "Aglomerado globular cujo centro se contraiu num nó de estrelas incomumente denso, depois que suas estrelas mais pesadas afundaram para dentro e o núcleo perdeu energia.",
   "galactic wind": "Fluxo de gás expulso de uma galáxia pela radiação e pelas explosões de supernova de suas estrelas jovens.",
   "OB association": "Grupo disperso de estrelas jovens e massivas de tipo espectral O e B que nasceram juntas, mas já não estão presas pela gravidade e se afastam devagar.",
-  "metallicity": "Fração da matéria de uma estrela ou galáxia formada por elementos mais pesados que o hélio, que os astrônomos chamam de metais; estrelas velhas costumam ter baixa metalicidade."
+  "metallicity": "Fração da matéria de uma estrela ou galáxia formada por elementos mais pesados que o hélio, que os astrônomos chamam de metais; estrelas velhas costumam ter baixa metalicidade.",
+  "main-sequence turn-off": "O ponto do diagrama cor-brilho de um aglomerado estelar em que a sequência principal se desvia em direção às gigantes; as estrelas ali estão esgotando o hidrogênio de seus núcleos, então seu tempo de vida dá a idade do aglomerado, e o ponto se desloca para estrelas mais fracas à medida que o aglomerado envelhece."
 }

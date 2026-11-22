@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-19T19:45:07.783Z",
+  "generated_at": "2026-11-22T12:21:54.501Z",
   "script_version": "build-link-provenance@1.0.0",
-  "commit_sha": "7b436d03b381ea4872e76acfb9f2e5c59953475d",
+  "commit_sha": "36236a26afab32325278a58ed48d8c3c9c67ce10",
   "entries": [
     {
       "id": "30-doradus__4f141b763a84",
@@ -21859,6 +21859,62 @@
       "last_verified": "2026-11-14"
     },
     {
+      "id": "observation/star-clusters__1e1d67377eed",
+      "entity_id": "observation/star-clusters",
+      "category": "science",
+      "route": "/science/observation/star-clusters",
+      "url": "https://science.nasa.gov/universe/stars/star-clusters-inside-the-universes-stellar-collections/",
+      "label": "NASA · Star clusters: inside the universe's stellar collections",
+      "tier": "intro",
+      "source_id": "nasa",
+      "language": "en",
+      "kind": "agency-official",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-22"
+    },
+    {
+      "id": "observation/star-clusters__be2b845d1050",
+      "entity_id": "observation/star-clusters",
+      "category": "science",
+      "route": "/science/observation/star-clusters",
+      "url": "https://esahubble.org/news/heic2409/",
+      "label": "ESA/Hubble · Hubble finds strong evidence for intermediate-mass black hole in Omega Centauri",
+      "tier": "core",
+      "source_id": "esa",
+      "language": "en",
+      "kind": "mission-microsite",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-22"
+    },
+    {
+      "id": "observation/star-clusters__e2cb2607d526",
+      "entity_id": "observation/star-clusters",
+      "category": "science",
+      "route": "/science/observation/star-clusters",
+      "url": "https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-67",
+      "label": "NASA · Hubble Messier 67",
+      "tier": "core",
+      "source_id": "nasa",
+      "language": "en",
+      "kind": "agency-official",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-22"
+    },
+    {
+      "id": "observation/star-clusters__cad143392248",
+      "entity_id": "observation/star-clusters",
+      "category": "science",
+      "route": "/science/observation/star-clusters",
+      "url": "https://people.smp.uq.edu.au/HolgerBaumgardt/globular/",
+      "label": "Baumgardt & Vasiliev · Galactic globular cluster database (University of Queensland)",
+      "tier": "deep",
+      "source_id": "baumgardt-uq",
+      "language": "en",
+      "kind": "educational",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-22"
+    },
+    {
       "id": "observation/wormholes__27173a834c6c",
       "entity_id": "observation/wormholes",
       "category": "science",
@@ -30481,6 +30537,48 @@
       "kind": "community",
       "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
       "last_verified": "2026-11-12"
+    },
+    {
+      "id": "starship-flight-5__e41585b0fdf4",
+      "entity_id": "starship-flight-5",
+      "category": "mission",
+      "route": "/missions",
+      "url": "https://en.wikipedia.org/wiki/Starship_flight_test_5",
+      "label": "Starship flight test 5 — Wikipedia",
+      "tier": "intro",
+      "source_id": "wikipedia",
+      "language": "en",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-22"
+    },
+    {
+      "id": "starship-flight-5__70b87b93a4c6",
+      "entity_id": "starship-flight-5",
+      "category": "mission",
+      "route": "/missions",
+      "url": "https://planet4589.org/space/jsr/back/news.838.txt",
+      "label": "Jonathan's Space Report No. 838 (McDowell)",
+      "tier": "core",
+      "source_id": "gcat-mcdowell",
+      "language": "en",
+      "kind": "encyclopedic",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-22"
+    },
+    {
+      "id": "starship-flight-5__2728e4755b7b",
+      "entity_id": "starship-flight-5",
+      "category": "mission",
+      "route": "/missions",
+      "url": "https://www.spacex.com/launches/mission/?missionId=starship-flight-5",
+      "label": "Starship's fifth flight test — SpaceX",
+      "tier": "core",
+      "source_id": "spacex",
+      "language": "en",
+      "kind": "vendor-official",
+      "fair_use_rationale": "External reference; no copyrighted material redistributed; rendered with rel=noopener noreferrer external",
+      "last_verified": "2026-11-22"
     },
     {
       "id": "starship-mars-crew__a80b46353bcc",

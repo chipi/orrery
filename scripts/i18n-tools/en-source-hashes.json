@@ -4121,6 +4121,7 @@
     "luminous red nova": "68a9d0a388",
     "magnetosphere": "643f280e4b",
     "main sequence": "4f8cb8cb90",
+    "main-sequence turn-off": "a2fa197dfb",
     "maser": "c6db0848b5",
     "mass-to-light ratio": "60f43dc893",
     "megaparsec": "917f0cca0e",
@@ -17911,6 +17912,17 @@
     "intro_sentence": "3fae75ce67",
     "seo_title": "84a5a81a96",
     "title": "04eced977b"
+  },
+  "science/observation/star-clusters.json": {
+    "body_paragraphs.0": "502487e06a",
+    "body_paragraphs.1": "992767ef04",
+    "body_paragraphs.2": "5433149c24",
+    "body_paragraphs.3": "aeb77e4bac",
+    "diagram_caption": "bee0ab673f",
+    "intro_sentence": "8df886ab1b",
+    "seo_description": "5305096986",
+    "seo_title": "baf3f49ebf",
+    "title": "11c63daeee"
   },
   "science/observation/wormholes.json": {
     "body_paragraphs.0": "40b79085fe",

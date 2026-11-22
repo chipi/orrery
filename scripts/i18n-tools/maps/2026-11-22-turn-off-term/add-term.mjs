@@ -1,7 +1,7 @@
 // 0.9.11 C5 (star clusters article): the glossary binding for "main-sequence turn-off", its
 // definition in 14 locales, and `_read_more` to observation/star-clusters for it and the three
 // cluster terms. Forms: a Sonnet research round (research-brief.md) and a second opinion on the
-// cells it could not source; sr-Cyrl chosen by the operator (2026-11-22, the H–R article's form).
+// cells it could not source; sr-Cyrl chosen and confirmed by the operator, a Serbian speaker (2026-11-22).
 // Sources per locale in `sources`; hi and ar found none and stay low.
 //   node scripts/i18n-tools/maps/2026-11-22-turn-off-term/add-term.mjs
 // Re-running rebuilds these entries (idempotent). Format with prettier afterwards.
@@ -23,7 +23,7 @@ const E = {
     'low',
   ],
   ar: ['نقطة الانفصال', ['نقط[ةت]\\s+(?:ال)?انفصال', 'نقط[ةت]\\s+(?:ال)?انحراف'], 'low'],
-  'sr-Cyrl': ['тачка скретања', ['тачк\\p{L}*\\s+скретањ\\p{L}*'], 'low'],
+  'sr-Cyrl': ['тачка скретања', ['тачк\\p{L}*\\s+скретањ\\p{L}*'], 'high'],
   de: ['Abknickpunkt', ['[Aa]bknickpunkt\\p{L}*', 'Turn-?off'], 'high'],
   fr: ['point de sortie', ['points?\\s+de\\s+sortie', 'turn-?off'], 'medium'],
   es: ['punto de separación', ['puntos?\\s+de\\s+separaci[oó]n', 'turn-?off'], 'medium'],
@@ -56,7 +56,7 @@ g.sources['main-sequence turn-off (2026-11-22, 0.9.11 C5)'] =
   'ru: ru.wikipedia "Точка поворота главной последовательности". ja: ja.wikipedia 主系列星 ("…主系列から離れる場所を転向点…と呼ぶ"). ' +
   'zh-CN: zh.wikipedia 主序轉折點. ko: ko.wikipedia 주계열성 ("이 점을 전환점이라고 한다"); 전향점 (the H–R article) accepted, not attested. ' +
   "hi: none found (CSTT not reachable); the H–R article's calque. ar: none found; the H–R article's form, نقطة الانحراف accepted (a search summary only). " +
-  'sr-Cyrl: none found; operator 2026-11-22 kept the H–R article\'s тачка скретања. de: Lehrerfortbildung BW and Uni Bonn / AIP course texts ("Abknickpunkt (turnoff point)"). ' +
+  'sr-Cyrl: no published source found; confirmed by the operator, a Serbian speaker (2026-11-22). de: Lehrerfortbildung BW and Uni Bonn / AIP course texts ("Abknickpunkt (turnoff point)"). ' +
   'fr: fr.wikipedia "Point de sortie de la séquence principale" (FranceTerme not checked). es: es.wikipedia "Punto de separación de la secuencia principal". ' +
   'it: it.wikipedia "Punto di turn-off". nl: ESO education PDF edu_0054 ("Opdracht 14: Afbuigpunt"). ' +
   'pt-BR: UFRGS / USP theses write "turn-off"; Observatório Nacional MC42 "ponto de saída da Sequência Principal (turn-off point)" (search summary only).';

@@ -56,6 +56,10 @@
     {
       "id": "giotto",
       "role": "spacecraft"
+    },
+    {
+      "id": "kourou-zlv",
+      "role": "launch-site"
     }
   ],
   "flight": {

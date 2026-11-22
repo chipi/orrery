@@ -28,6 +28,7 @@
     }
   ],
   "linked_missions": [
+    "mro",
     "new-horizons",
     "lro",
     "otv-1",
@@ -42,8 +43,7 @@
     "perseverance",
     "otv-6",
     "solar-orbiter",
-    "lucy",
-    "mro"
+    "lucy"
   ],
   "specs": {
     "height_m": 58.2,

@@ -31,12 +31,12 @@
     }
   ],
   "linked_missions": [
-    "near-shoemaker",
     "mars-pathfinder",
+    "near-shoemaker",
     "spirit",
     "opportunity",
     "messenger",
-    "phoenix",
-    "dawn"
+    "dawn",
+    "phoenix"
   ]
 }

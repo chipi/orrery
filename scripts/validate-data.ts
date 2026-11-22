@@ -1264,12 +1264,13 @@ try {
 
 // PRD-012 v0.2 / RFC-016 v0.2 OQ-2 — fleet ↔ missions BIDIRECTIONAL
 // cross-reference integrity (pure detector in `validate-data-helpers.ts`,
-// console templating below). Three checks:
+// console templating below). Four checks:
 //
 //   1. Every fleet_entry.linked_missions[*] resolves to a real mission.
 //   2. Every mission.fleet_refs[*].id resolves to a real fleet entry.
 //   3. SYMMETRY: if mission M references fleet F via fleet_refs, then
 //      F's linked_missions MUST include M.
+//   4. The converse: if F lists M, M's fleet_refs references F.
 const missionDrift = findBidirectionalFleetMissionDrift({
   missionIds,
   missionFleetRefs,
@@ -1310,6 +1311,14 @@ for (const err of missionDrift) {
     );
     console.error(
       `      fix: re-run \`npx tsx scripts/migrate-fleet-linked-missions.ts\` to derive linked_missions from fleet_refs`,
+    );
+    failed += 1;
+  } else if (err.kind === 'bidirectional-drift-fleet') {
+    console.error(
+      `\n  ✗ bidirectional drift: fleet/${err.fleet_category}/${err.fleet_id}.json lists mission ${err.mission_id}, but ${err.mission_id}.fleet_refs does not reference ${err.fleet_id}`,
+    );
+    console.error(
+      `      fix: add the ref to the mission's fleet_refs (linked_missions is derived from them)`,
     );
     failed += 1;
   }

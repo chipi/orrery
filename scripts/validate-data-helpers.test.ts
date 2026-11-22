@@ -164,6 +164,27 @@ describe('findBidirectionalFleetMissionDrift (ADR-052 / RFC-016 OQ-2)', () => {
     });
   });
 
+  // 0.9.11: four launch sites listed missions (Mars 3 at Baikonur 81, Giotto at Kourou) whose
+  // fleet_refs never named them, so the derivation script wanted to clear those lists.
+  it('Check 4: surfaces the converse — fleet lists a mission that does not reference it', () => {
+    const fleet = [
+      baseEntry({ id: 'baikonur-81', category: 'launch-site', linked_missions: ['mars3'] }),
+    ];
+    const errors = findBidirectionalFleetMissionDrift({
+      missionIds: new Set(['mars3']),
+      missionFleetRefs: new Map([['mars3', [{ id: 'proton-k', role: 'launcher' }]]]),
+      fleetEntries: [...fleet, baseEntry({ id: 'proton-k', linked_missions: ['mars3'] })],
+    });
+    expect(errors).toEqual([
+      {
+        kind: 'bidirectional-drift-fleet',
+        fleet_id: 'baikonur-81',
+        fleet_category: 'launch-site',
+        mission_id: 'mars3',
+      },
+    ]);
+  });
+
   it('Check 3: surfaces SYMMETRY drift — mission references fleet but fleet does not list mission', () => {
     // The critical ADR-052 invariant.
     const fleet = [baseEntry({ id: 'saturn-v', linked_missions: [] })]; // No reverse pointer

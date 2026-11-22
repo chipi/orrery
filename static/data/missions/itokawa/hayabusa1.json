@@ -38,6 +38,10 @@
     {
       "id": "hayabusa",
       "role": "spacecraft"
+    },
+    {
+      "id": "uchinoura",
+      "role": "launch-site"
     }
   ],
   "flight": {

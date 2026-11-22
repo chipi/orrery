@@ -378,6 +378,7 @@
     site: launchSiteName ?? launchProfile?.launchSite?.name ?? m.hud_launch_complex(),
     destination: mission.arr_label ?? '',
     spacecraftId: mission.id,
+    missionId: mission.id,
     launcherHeightM,
     injectionBurn: launchInjectionBurn,
   });

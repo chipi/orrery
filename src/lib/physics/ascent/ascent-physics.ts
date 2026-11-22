@@ -145,6 +145,22 @@ export interface ThrottleStep {
   level: number;
 }
 
+/** One reusable part's way home on a flight (0.9.11 F2). Falcon Heavy's centre core is the
+ *  `booster` part (the core stage), its side boosters `strapOns`. */
+export interface PartRecovery {
+  part: 'booster' | 'strapOns';
+  outcome: 'landed' | 'caught' | 'expended';
+  site?: 'droneship' | 'landing-zone' | 'tower';
+  /** The site's own name, as written (LZ-1 and LZ-2 for two side boosters, a drone ship's name). */
+  siteNames?: string[];
+  /** Touchdown (or the catch), mission seconds. */
+  touchdownS?: number;
+  /** Landing-burn start; absent = `LANDING_BURN_DEFAULT_S` before touchdown. */
+  landingBurnS?: number;
+  /** How the time is known: this flight's timeline, "about N minutes", or a sibling flight's. */
+  timeClass?: 'sourced' | 'approx' | 'typical';
+}
+
 /** A launch vehicle's ascent profile. See RFC-034 §6 for the shipped JSON schema. */
 export interface LaunchProfile {
   id: string;
@@ -184,6 +200,12 @@ export interface LaunchProfile {
    * Overrides `payloadSeparationDelayS` for that mission.
    */
   payloadSeparationDelayByMissionS?: Record<string, number>;
+  /** How the vehicle's reusable parts come home on its usual flight (0.9.11 F2); a part not
+   *  listed is expended. Sources per flight: docs/wip/2026-11-22-booster-recovery-sourced.md. */
+  recovery?: PartRecovery[];
+  /** Per-mission recovery, keyed by mission id; replaces `recovery` for that flight (Hera's
+   *  booster and all three Europa Clipper cores were expended). */
+  recoveryByMission?: Record<string, PartRecovery[]>;
   /**
    * The payload stays in the vehicle's bay for the whole launch (the Space Shuttle: it is
    * deployed hours later in orbit). No spacecraft-separation beat, no injection beat and no
@@ -1618,4 +1640,30 @@ export function payloadSeparationDelayFor(
     (missionId ? profile.payloadSeparationDelayByMissionS?.[missionId] : undefined) ??
     profile.payloadSeparationDelayS
   );
+}
+
+/** Seconds of landing burn before touchdown where a flight's start is not published (0.9.11 F2:
+ *  Psyche's side boosters burned 17 s, Inspiration4's booster 27 s). */
+export const LANDING_BURN_DEFAULT_S = 25;
+
+/** How a recovered part comes home on this flight, or that it is expended (0.9.11 F2). */
+export function recoveryFor(
+  profile: Pick<LaunchProfile, 'recovery' | 'recoveryByMission'>,
+  missionId: string | undefined,
+): PartRecovery[] {
+  return (missionId ? profile.recoveryByMission?.[missionId] : undefined) ?? profile.recovery ?? [];
+}
+
+/** The landed or caught parts of a flight, with the landing-burn start filled in. */
+export function landingsFor(
+  profile: Pick<LaunchProfile, 'recovery' | 'recoveryByMission'>,
+  missionId: string | undefined,
+): (PartRecovery & { touchdownS: number; landingBurnS: number })[] {
+  return recoveryFor(profile, missionId)
+    .filter((r) => r.outcome !== 'expended' && r.touchdownS != null)
+    .map((r) => ({
+      ...r,
+      touchdownS: r.touchdownS!,
+      landingBurnS: r.landingBurnS ?? r.touchdownS! - LANDING_BURN_DEFAULT_S,
+    }));
 }

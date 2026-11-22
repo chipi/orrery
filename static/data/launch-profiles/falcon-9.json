@@ -4,6 +4,71 @@
   "source_tier": "flagship",
   "payloadKg": 15000,
   "payloadSeparationDelayByMissionS": { "inspiration4": 198, "polaris-dawn": 197 },
+  "recovery": [{ "part": "booster", "outcome": "landed" }],
+  "recoveryByMission": {
+    "hera": [{ "part": "booster", "outcome": "expended" }],
+    "dart": [
+      {
+        "part": "booster",
+        "outcome": "landed",
+        "site": "droneship",
+        "siteNames": ["Of Course I Still Love You"],
+        "touchdownS": 532,
+        "timeClass": "sourced"
+      }
+    ],
+    "inspiration4": [
+      {
+        "part": "booster",
+        "outcome": "landed",
+        "site": "droneship",
+        "siteNames": ["Of Course I Still Love You"],
+        "landingBurnS": 544,
+        "touchdownS": 571,
+        "timeClass": "sourced"
+      }
+    ],
+    "polaris-dawn": [
+      {
+        "part": "booster",
+        "outcome": "landed",
+        "site": "droneship",
+        "siteNames": ["Just Read the Instructions"],
+        "touchdownS": 570,
+        "timeClass": "approx"
+      }
+    ],
+    "otv-5": [
+      {
+        "part": "booster",
+        "outcome": "landed",
+        "site": "landing-zone",
+        "siteNames": ["LZ-1"],
+        "touchdownS": 480,
+        "timeClass": "approx"
+      }
+    ],
+    "im-1": [
+      {
+        "part": "booster",
+        "outcome": "landed",
+        "site": "landing-zone",
+        "siteNames": ["LZ-1"],
+        "touchdownS": 480,
+        "timeClass": "typical"
+      }
+    ],
+    "beresheet": [
+      {
+        "part": "booster",
+        "outcome": "landed",
+        "site": "droneship",
+        "siteNames": ["Of Course I Still Love You"],
+        "touchdownS": 532,
+        "timeClass": "typical"
+      }
+    ]
+  },
   "fairingKg": 1900,
   "fairingJettisonAltM": 110000,
   "refAreaM2": 10.75,
@@ -33,6 +98,10 @@
     }
   ],
   "provenance": [
+    {
+      "l": "Booster recovery per flight (0.9.11 F2): DART stage 1 landing T+8:52 on the drone ship (SpaceX's sequence, Spaceflight Now); Inspiration4 landing burn 9:04, landing 9:31; Polaris Dawn ~9.5 min (JRTI); OTV-5 ~8 min (LZ-1); Hera's B1061 expended. IM-1 and Beresheet times are sibling flights' (no time found). Full table: docs/wip/2026-11-22-booster-recovery-sourced.md",
+      "u": "https://spaceflightnow.com/?p=54465"
+    },
     { "l": "SpaceX Falcon 9 Users Guide (2021)", "u": "https://www.spacex.com/vehicles/falcon-9/" },
     { "l": "Spaceflight101 — Falcon 9 FT", "u": "https://web.archive.org/web/20240726010028/https://spaceflight101.com/spacerockets/falcon-9-ft/" }
   ]

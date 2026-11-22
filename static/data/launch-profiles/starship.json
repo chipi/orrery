@@ -3,6 +3,15 @@
   "name": "Starship / Super Heavy",
   "source_tier": "flagship",
   "payloadKg": 100000,
+  "recovery": [
+    {
+      "part": "booster",
+      "outcome": "caught",
+      "site": "tower",
+      "touchdownS": 420,
+      "timeClass": "approx"
+    }
+  ],
   "liftoffThrustKN": 74400,
   "fairingKg": 0,
   "refAreaM2": 63.6,
@@ -32,6 +41,10 @@
     }
   ],
   "provenance": [
+    {
+      "l": "Super Heavy returns to the launch tower and is caught by its arms; the three catches came roughly seven minutes after launch (0.9.11 F2)",
+      "u": "https://fortune.com/2024/10/13/spacex-starship-launch-super-heavy-booster-landing-launch-pad"
+    },
     { "l": "SpaceX — Starship", "u": "https://www.spacex.com/vehicles/starship/" },
     { "l": "Wikipedia — SpaceX Starship", "u": "https://en.wikipedia.org/wiki/SpaceX_Starship" }
   ]

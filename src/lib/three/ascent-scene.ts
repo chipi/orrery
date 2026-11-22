@@ -22,6 +22,7 @@ import {
   gravity,
   type AscentEvent,
   type AscentState,
+  type PartRecovery,
 } from '$lib/physics/ascent/ascent-physics';
 import {
   activeShotAt,
@@ -73,6 +74,9 @@ export interface AscentSceneOptions {
   launcherHeightM?: number;
   /** Launcher id → the rocket's dedicated procedural model (else a generic body). */
   launcherId?: string;
+  /** This flight's booster recovery (`recoveryFor(profile, missionId)`): a landed or caught part
+   *  turns tail-down after separation, an expended one tumbles. */
+  recovery?: PartRecovery[];
   /** Strap-on booster count (Atlas V's variable AJ-60A count) — drawn on the
    *  generic body + jettisoned at strap-on burnout. 0 / omitted = none. */
   boosterCount?: number;
@@ -414,6 +418,17 @@ export function stageDropRotation(
   return recovered ? [0, 0, p * fromVertical] : [p * 2.4, 0, p * 1.2];
 }
 
+/** Which parts fly home on this flight (Falcon 9's first stage, Falcon Heavy's side boosters,
+ *  New Glenn's GS1, Super Heavy), from its recovery data: no entry or `expended` = spent. */
+export function recoveredParts(recovery: PartRecovery[] | undefined): {
+  booster: boolean;
+  strapOns: boolean;
+} {
+  const home = (part: PartRecovery['part']) =>
+    (recovery ?? []).some((r) => r.part === part && r.outcome !== 'expended');
+  return { booster: home('booster'), strapOns: home('strapOns') };
+}
+
 export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   const vehLen = opts.vehicleLengthKm ?? VEHICLE_LENGTH_KM;
   const scene = new THREE.Scene();
@@ -603,6 +618,7 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   const vehicle = new THREE.Group();
   const rBody = vehLen * 0.05; // plume scale reference
   const model = buildLauncherModel(opts.launcherId, vehLen, opts.boosterCount ?? 0);
+  const recovered = recoveredParts(opts.recovery);
   const strapOnGroup = model.strapOns;
   // The strap-on bodies that flame (before any flames are added to the group; a part marked
   // noFlame — the Atlas booster skirt — rides along unlit) and where they sit.
@@ -1117,7 +1133,7 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
     const [bp, bLen] = stageDrop(s.t, stagingT);
     booster.visible = bp < 1;
     booster.position.y = -bp * vehLen * bLen;
-    booster.rotation.set(...stageDropRotation(bp, fromVertical, model.recovered?.booster === true));
+    booster.rotation.set(...stageDropRotation(bp, fromVertical, recovered.booster));
     // Only a gentle shrink (item 4) — the drift-away already recedes it via
     // perspective; keep it big enough to read as a distinct spent stage.
     booster.scale.setScalar(1 - 0.18 * bp);
@@ -1151,7 +1167,7 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
         const b = strapOnBase[i];
         body.visible = sp < 1;
         body.position.set(b.x * (1 + sp * 0.8), b.y - sp * vehLen * 2.6, b.z * (1 + sp * 0.8));
-        body.rotation.z = model.recovered?.strapOns
+        body.rotation.z = recovered.strapOns
           ? sp * fromVertical
           : -Math.sign(b.x || 1) * sp * 1.2;
       });
@@ -1160,7 +1176,7 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
       strapOnGroup.visible = sp < 1;
       strapOnGroup.position.y = -sp * vehLen * 2.6;
       // Falcon Heavy's side boosters fly home and land upright, tail-down.
-      if (model.recovered?.strapOns) strapOnGroup.rotation.set(0, 0, sp * fromVertical);
+      if (recovered.strapOns) strapOnGroup.rotation.set(0, 0, sp * fromVertical);
       else strapOnGroup.rotation.set(sp * 1.6, 0, 0);
       strapOnGroup.scale.setScalar(1 - 0.18 * sp);
     }

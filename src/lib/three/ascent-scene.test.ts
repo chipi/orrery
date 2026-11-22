@@ -1,8 +1,15 @@
 // @vitest-environment jsdom
 import { describe, it, expect } from 'vitest';
 import * as THREE from 'three';
-import { stageDropRotation } from './ascent-scene';
-import { buildLauncherModel } from './launcher-models';
+import { readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
+import { recoveredParts, stageDropRotation } from './ascent-scene';
+import { recoveryFor, type LaunchProfile } from '$lib/physics/ascent/ascent-physics';
+
+const load = (id: string): LaunchProfile =>
+  JSON.parse(
+    readFileSync(resolve(__dirname, `../../../static/data/launch-profiles/${id}.json`), 'utf-8'),
+  );
 
 /** The world direction of a dropped stage's body axis (+Y, nose up) at drop progress `p`. */
 function bodyAxis(p: number, fromVertical: number, recovered: boolean): THREE.Vector3 {
@@ -29,11 +36,14 @@ describe('a booster that lands drops away upright, tail-down (operator 2026-11-1
     expect(bodyAxis(1, (55 * Math.PI) / 180, false).y).toBeLessThan(0.9);
   });
 
-  it('the reusable vehicles are the ones that land: Falcon 9, Falcon Heavy side boosters, New Glenn, Super Heavy', () => {
-    expect(buildLauncherModel('falcon-9', 1).recovered).toEqual({ booster: true });
-    expect(buildLauncherModel('falcon-heavy', 1).recovered).toEqual({ strapOns: true });
-    expect(buildLauncherModel('new-glenn', 1).recovered).toEqual({ booster: true });
-    expect(buildLauncherModel('starship', 1).recovered).toEqual({ booster: true });
-    expect(buildLauncherModel('atlas-v', 1).recovered).toBeUndefined();
+  it('what lands is per flight (0.9.11 F2): Hera and Europa Clipper expend theirs', () => {
+    const at = (id: string, mission?: string) => recoveredParts(recoveryFor(load(id), mission));
+    expect(at('falcon-9', 'dart')).toEqual({ booster: true, strapOns: false });
+    expect(at('falcon-9', 'hera')).toEqual({ booster: false, strapOns: false });
+    expect(at('falcon-heavy', 'psyche-mission')).toEqual({ booster: false, strapOns: true });
+    expect(at('falcon-heavy', 'europa-clipper')).toEqual({ booster: false, strapOns: false });
+    expect(at('new-glenn', 'blue-moon-mk1')).toEqual({ booster: true, strapOns: false });
+    expect(at('starship', 'starship-demo')).toEqual({ booster: true, strapOns: false });
+    expect(at('atlas-v')).toEqual({ booster: false, strapOns: false });
   });
 });

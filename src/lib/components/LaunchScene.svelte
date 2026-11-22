@@ -24,6 +24,8 @@
   import AscentLosses from '$lib/components/AscentLosses.svelte';
   import {
     integrateAscent,
+    payloadSeparationDelayFor,
+    recoveryFor,
     sampleAscentAt,
     type AscentSummary,
     type AscentState,
@@ -83,6 +85,8 @@
     destination: string;
     /** Mission id → the payload's dedicated spacecraft model (else a generic bus). */
     spacecraftId?: string;
+    /** The mission's id, for the profile's per-flight values (separation delay, recovery). */
+    missionId?: string;
     launcherHeightM?: number;
     /** The post-SECO injection burn (RFC-034 §3.1); null when the mission has no
      *  kick/upper injection stage — the beat is then absent. */
@@ -157,8 +161,9 @@
   /** The burn's end. */
   const injectionBurnEnd = $derived(injectionSepT(duration));
   const injectionEnd = $derived(duration + INJECTION_BEAT_S);
-  /** The vehicle's published SECO → separation delay (backlog F1); used without an injection beat. */
-  const separationDelayS = $derived(profile.payloadSeparationDelayS ?? 0);
+  /** The flight's published SECO → separation delay (backlog F1, L63 per mission); used without
+   *  an injection beat. The same value /fly's play-bar markers use. */
+  const separationDelayS = $derived(payloadSeparationDelayFor(profile, mission.missionId) ?? 0);
   /** End of the launch phase — SECO, or the end of the injection beat when present. */
   const ascentEnd = $derived(launchActEndS(duration, injection, separationDelayS));
   /** When the spacecraft separates, if not at SECO. */
@@ -326,6 +331,7 @@
       spacecraftId: mission.spacecraftId,
       launcherHeightM: mission.launcherHeightM,
       launcherId: dbg?.get('launcher') || profile.id,
+      recovery: recoveryFor(profile, mission.missionId),
       boosterCount: profile.boosters?.count ?? 0,
       boosterAirLitCount: profile.boosters?.airLitCount ?? 0,
       payloadSepT,

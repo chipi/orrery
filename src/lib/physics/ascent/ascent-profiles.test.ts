@@ -14,11 +14,14 @@ describe('FALCON9_SAMPLE stays in lockstep with the shipped falcon-9.json', () =
     readFileSync(join(process.cwd(), 'static/data/launch-profiles/falcon-9.json'), 'utf-8'),
   ) as Record<string, unknown>;
 
-  it('matches the shipped JSON field-for-field (ignoring JSON-only provenance)', () => {
-    // The JSON adds source_tier + provenance; the physics fields must be identical.
-    const { source_tier, provenance, ...physics } = json;
+  it('matches the shipped JSON field-for-field (ignoring JSON-only provenance and recovery)', () => {
+    // The JSON adds source_tier, provenance and the per-flight booster recovery (what the /fly
+    // landing inset shows, not physics); the physics fields must be identical.
+    const { source_tier, provenance, recovery, recoveryByMission, ...physics } = json;
     void source_tier;
     void provenance;
+    void recovery;
+    void recoveryByMission;
     expect(physics).toEqual(FALCON9_SAMPLE);
   });
 });

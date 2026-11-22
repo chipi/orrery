@@ -329,11 +329,13 @@ const TIMELINES: Record<string, Row[]> = {
   ],
   h3: [
     // JAXA H3 / MMX launch plan (H3-24L), Table 2: SRB-3 separation 116 / 118, fairing 197,
-    // MECO 292, stage separation 299 (boosters and stage 1 fitted, 7 s coast to separation).
+    // MECO 292, stage separation 299, SECO1 640 (boosters fitted; stage 1 flies the plan's
+    // 2,942 kN and burns its 711 kg/s to MECO, 7 s coast to separation).
     { event: 'SRB-3 separation (fitted)', type: 'staging', nth: 0, real: 117, tol: 10 },
     { event: 'fairing (scheduled input)', type: 'fairing_jettison', real: 197, tol: 10 },
-    { event: 'MECO (fitted)', type: 'meco', real: 292, tol: 10 },
+    { event: 'MECO', type: 'meco', real: 292, tol: 10 },
     { event: 'stage separation', type: 'staging', nth: 1, real: 299, tol: 10 },
+    { event: 'SECO1', type: 'seco', real: 640, tol: 30 },
   ],
   'sls-block-1': [
     // NASA SLS reference guide: boosters fire "approximately two minutes"; the core stage
@@ -378,12 +380,28 @@ describe('launcher staging timelines vs the real nominal flight', () => {
     });
   });
 
-  // Known gaps (docs/wip/2026-11-15-launcher-timeline-audit.md, closed out 2026-11-19 in
-  // docs/wip/2026-11-17-launcher-timelines-sourced.md): sourced, and the model cannot hold the time
-  // with a timing fit, because the cause is the trajectory, not a burn time.
-  it.todo(
-    'h3 (MMX plan, Table 2): MECO 208 km / 6.2 km/s, SECO1 640 s at 329 km / 7.7 km/s. Kept as the model limit (operator 2026-11-19): with the published LE-9 thrust and the stage masses, the model reaches MECO 0.4-0.6 km/s faster (6.7-6.8 km/s with stage 1 flown on its pitch table to 210-260 km) and SECO1 at 520-580 s; matching both states needs stage 1 cut to ~142 t of propellant at 2,013 kN, which would show visitors a wrong H3. Measured 2026-11-19 with scripts/ascent-events.ts and a grid fit (pitchTableStages, stage-1 propellant and thrust)',
-  );
+  // H3 / MMX launch plan, Table 2 gives altitude and inertial speed per event. The 0.9.10 profile
+  // reached MECO 0.7 km/s fast: it burned the 224.5 t maximum load by 292 s at a fitted 3,182 kN.
+  // With the plan's own 2,942 kN and the pitch table fitted to these states, the published
+  // hardware flies the published trajectory. SRB-3 separation is low (52 km against 59-61) at the
+  // right speed; the SRB-3 thrust curve is not published, the profile flies its burn average.
+  describe('h3 (MMX plan, Table 2): altitude and inertial speed', () => {
+    const sum = integrateAscent(load('h3'));
+    const stateAt = (t: number) =>
+      sum.states.reduce((b, s) => (Math.abs(s.t - t) < Math.abs(b.t - t) ? s : b));
+    const rows = [
+      { event: 'fairing', type: 'fairing_jettison', altKm: 131, kms: 3.3 },
+      { event: 'MECO', type: 'meco', altKm: 208, kms: 6.2 },
+      { event: 'SECO1', type: 'seco', altKm: 329, kms: 7.7 },
+    ] as const;
+    for (const r of rows) {
+      it(`${r.event} at ~${r.altKm} km (±10), ~${r.kms} km/s (±0.15)`, () => {
+        const s = stateAt(first(sum.events, r.type)!);
+        expect(Math.abs(s.altKm - r.altKm)).toBeLessThanOrEqual(10);
+        expect(Math.abs(s.speedKms - r.kms)).toBeLessThanOrEqual(0.15);
+      });
+    }
+  });
 });
 
 describe('Space Shuttle ascent: no SECO, the tank leaves 18 s after MECO', () => {

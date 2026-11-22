@@ -1,0 +1,16 @@
+{
+  "id": "h3",
+  "set": { "pitchTableStages": 1, "targetOrbitAltM": 329000 },
+  "fixed": [
+    [0, 90],
+    [10, 89]
+  ],
+  "knots": [30, 60, 100, 150, 200, 292],
+  "states": [
+    { "t": 117, "altKm": 60, "kms": 2.1 },
+    { "t": 197, "altKm": 131, "kms": 3.3 },
+    { "t": 292, "altKm": 208, "kms": 6.2 },
+    { "t": 640, "altKm": 329, "kms": 7.7 }
+  ],
+  "iterations": 600
+}

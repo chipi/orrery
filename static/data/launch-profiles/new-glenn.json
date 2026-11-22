@@ -35,8 +35,12 @@
   ],
   "provenance": [
     {
-      "l": "New Glenn — Wikipedia (98 m, 7 m; GS1 7× BE-4, 19,928 kN, 340 s, ~190 s burn; GS2 2× BE-3U, 1,779 kN, 445 s, ~644 s burn; Blue Moon MK1 21,715 kg)",
+      "l": "New Glenn — Wikipedia (98 m, 7 m; GS1 7× BE-4, 19,928 kN, 340 s, ~190 s burn; GS2 2× BE-3U, 445 s, ~644 s burn; Blue Moon MK1 21,715 kg)",
       "u": "https://en.wikipedia.org/wiki/New_Glenn"
+    },
+    {
+      "l": "BE-3U — Wikipedia: 712 kN, uprated to 765 kN (Jeff Bezos, Aug 2024), then 778 kN / 175,000 lbf after the April 2025 second-stage hotfire (Dave Limp). GS2 flies 1,559.5 kN, fitted to NG-2's SECO-1 at T+773 s, 0.2 % from 2 × 778 kN. blueorigin.com's engine page is script-rendered and gave no text (2026-11-22)",
+      "u": "https://en.wikipedia.org/wiki/BE-3"
     },
     {
       "l": "Blue Origin lists the BE-4 at 2,450 kN per engine: 7 × = 17,150 kN at liftoff; GS1 sea-level Isp derived from the SL/vacuum thrust ratio",

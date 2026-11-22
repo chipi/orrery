@@ -23,6 +23,7 @@ import {
   type AscentEvent,
   type LaunchProfile,
 } from '../src/lib/physics/ascent/ascent-physics';
+import { applySet, slot, stringifyProfile } from './lib/launch-profile-json';
 
 type EventRef = { type: AscentEvent['type']; nth?: number };
 interface Target extends EventRef {
@@ -46,13 +47,6 @@ const spec = JSON.parse(readFileSync(specPath, 'utf-8')) as Spec;
 const file = resolve('static/data/launch-profiles', `${spec.id}.json`);
 const original = JSON.parse(readFileSync(file, 'utf-8')) as LaunchProfile;
 
-/** `stages[1].separationDelayS` / `boosters` / `fairingJettisonS` → [container, key]. */
-function slot(p: Record<string, unknown>, path: string): [Record<string, unknown>, string] {
-  const parts = path.match(/[^.[\]]+/g)!;
-  let o: Record<string, unknown> = p;
-  for (const k of parts.slice(0, -1)) o = o[k] as Record<string, unknown>;
-  return [o, parts.at(-1)!];
-}
 const leverObj = (p: LaunchProfile, lever: string) => {
   const [o, k] = slot(p as unknown as Record<string, unknown>, lever);
   return o[k] as { thrustVacKN?: number; thrustSlKN?: number };
@@ -60,10 +54,7 @@ const leverObj = (p: LaunchProfile, lever: string) => {
 const at = (ev: AscentEvent[], r: EventRef) => ev.filter((e) => e.type === r.type)[r.nth ?? 0]?.t;
 
 const p = structuredClone(original);
-for (const [path, v] of Object.entries(spec.set ?? {})) {
-  const [o, k] = slot(p as unknown as Record<string, unknown>, path);
-  o[k] = v;
-}
+applySet(p, spec.set);
 
 const scale = new Map<string, number>();
 for (const t of spec.targets) scale.set(t.lever, 1);
@@ -107,25 +98,7 @@ for (const t of spec.targets) {
 console.log('  events after:', sum.events.map((e) => `${e.type} ${e.t.toFixed(1)}`).join(' · '));
 console.log(`  reaches orbit: ${sum.events.some((e) => e.type === 'orbit') ? 'yes' : 'NO'}`);
 
-/** The launch-profile JSON style: a value that fits the line stays on one line, else expands. */
-function stringify(v: unknown, indent = ''): string {
-  const flat = JSON.stringify(v, null, 1)
-    .replace(/\n\s*/g, ' ')
-    .replace(/\[ /g, '[')
-    .replace(/ \]/g, ']');
-  if (typeof v !== 'object' || v === null || indent.length + flat.length <= 96) {
-    return flat;
-  }
-  const inner = indent + '  ';
-  if (Array.isArray(v))
-    return `[\n${v.map((x) => inner + stringify(x, inner)).join(',\n')}\n${indent}]`;
-  const rows = Object.entries(v).map(
-    ([k, x]) => `${inner}${JSON.stringify(k)}: ${stringify(x, inner)}`,
-  );
-  return `{\n${rows.join(',\n')}\n${indent}}`;
-}
-
 if (flag === '--write') {
-  writeFileSync(file, stringify(p) + '\n');
+  writeFileSync(file, stringifyProfile(p) + '\n');
   console.log(`  wrote ${file} (run prettier on it)`);
 }

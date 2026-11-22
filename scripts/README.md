@@ -222,5 +222,12 @@ applied in `src/hooks.server.ts`), `src/lib/json-ld.ts` + `JsonLd.svelte`, and
   Isp kept, so delta-v is unchanged), sets fairing times and coasts, prints
   before / after and whether it still reaches orbit. Pin the result in
   `src/lib/orbital/launch-timeline.test.ts` (backlog F4 / S13, 2026-11-19).
+- `fit-launch-states.ts <spec.json> [--write]` — fits a profile's pitch table
+  (the one ascent input no source publishes) to a sourced trajectory: altitude
+  and inertial speed at given times, plus event times and max-Q. Thrust,
+  propellant and Isp stay the published values; use it when the model's
+  state at an event is wrong, not only its time. Specs live in
+  `scripts/launch-fits/<id>.json` so a fit can be re-run (0.9.11 F1, H3).
+  Shared JSON helpers for both fit scripts: `scripts/lib/launch-profile-json.ts`.
 - `__smoke__/resolver-diversity.mjs [--skip-network]` — image resolver
   diversity smoke (offline dedup unit + an optional live pass).

@@ -58,8 +58,11 @@ export function payloadSepTFor(
   ascentDurationS: number,
   injection: { kickStage?: boolean; stageFiresFirst?: boolean } | null | undefined,
   separationDelayS = 0,
+  /** SECO's own time (`secoTimeS`): the published delay counts from it, not from the end of the
+   *  integration 90 s later. */
+  secoT = ascentDurationS,
 ): number | undefined {
-  if (!injection) return separationDelayS > 0 ? ascentDurationS + separationDelayS : undefined;
+  if (!injection) return separationDelayS > 0 ? secoT + separationDelayS : undefined;
   const burnStart = ascentDurationS + INJECTION_COAST_S;
   if (injection.kickStage && injection.stageFiresFirst) return burnStart + INJECTION_BURN_S / 2;
   return injection.kickStage
@@ -68,25 +71,42 @@ export function payloadSepTFor(
 }
 
 /** Mission time (s) the launch act ends: the end of the injection beat, else spacecraft
- *  separation (SECO when the vehicle has no published delay). */
+ *  separation (SECO when the vehicle has no published delay); never before `holdUntilS`, the
+ *  end of the flight's last booster-landing inset (`landingsEndS`; DART's booster lands at
+ *  T+532, after its injection beat would end). */
 export function launchActEndS(
   ascentDurationS: number,
   injection: unknown,
   separationDelayS = 0,
+  holdUntilS = 0,
+  secoT = ascentDurationS,
 ): number {
-  return injection
+  const end = injection
     ? ascentDurationS + INJECTION_BEAT_S
-    : ascentDurationS + Math.max(0, separationDelayS);
+    : Math.max(ascentDurationS, secoT + Math.max(0, separationDelayS));
+  return Math.max(end, holdUntilS);
+}
+
+/**
+ * SECO's mission time: the last `seco` event. `totalDurationS` is the end of the integration,
+ * which runs an engine-dark coast past SECO (90 s), so a delay "after SECO" added to it lands
+ * 90 s late (0.9.10's L63 separations did). Falls back to the end when there is no SECO.
+ */
+export function secoTimeS(summary: {
+  events: ReadonlyArray<{ type: string; t: number }>;
+  totalDurationS: number;
+}): number {
+  return summary.events.filter((e) => e.type === 'seco').at(-1)?.t ?? summary.totalDurationS;
 }
 
 /** The status line between SECO and a delayed separation on a flight with no injection beat:
  *  null before SECO (the caller falls back to `ascentStatus`), COAST, then SPACECRAFT SEP. */
 export function separationCoastStatus(
   t: number,
-  ascentDurationS: number,
+  secoT: number,
   payloadSepT: number | undefined,
 ): string | null {
-  if (payloadSepT === undefined || t < ascentDurationS) return null;
+  if (payloadSepT === undefined || t < secoT) return null;
   return t < payloadSepT ? 'COAST' : 'SPACECRAFT SEP';
 }
 

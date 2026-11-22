@@ -6,6 +6,7 @@ import {
   INJECTION_BEAT_S,
   payloadSepTFor,
   launchActEndS,
+  secoTimeS,
   separationCoastStatus,
   buildAscentBeats,
   ascentStatus,
@@ -180,6 +181,27 @@ describe('separation after SECO on a flight with no injection beat (backlog F1)'
     expect(launchActEndS(d, null, 169)).toBe(1184);
     expect(launchActEndS(d, null)).toBe(d);
     expect(launchActEndS(d, null, -5)).toBe(d);
+  });
+  it('counts the published delay from SECO, not from the end of the coast after it', () => {
+    // The integration ends 90 s after SECO (its engine-dark coast); 0.9.10 added the delay there.
+    const seco = d - 90;
+    expect(payloadSepTFor(d, null, 169, seco)).toBe(seco + 169);
+    expect(launchActEndS(d, null, 169, 0, seco)).toBe(seco + 169);
+    expect(launchActEndS(d, null, 35, 0, seco)).toBe(d); // the coast still plays out
+    expect(
+      secoTimeS({
+        events: [
+          { type: 'seco', t: 400 },
+          { type: 'orbit', t: 400 },
+        ],
+        totalDurationS: 490,
+      }),
+    ).toBe(400);
+    expect(secoTimeS({ events: [], totalDurationS: 490 })).toBe(490);
+  });
+  it('holds the launch act until the last booster-landing inset closes (0.9.11 F2)', () => {
+    expect(launchActEndS(d, {}, 0, d + INJECTION_BEAT_S + 20)).toBe(d + INJECTION_BEAT_S + 20);
+    expect(launchActEndS(d, {}, 0, d - 100)).toBe(d + INJECTION_BEAT_S); // landed before the end
   });
   it('reads COAST between SECO and separation, then SPACECRAFT SEP', () => {
     const sep = payloadSepTFor(d, null, 169);

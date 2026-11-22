@@ -3740,5 +3740,7 @@
   "programs_empty": "Нет программ, подходящих под текущие фильтры.",
   "launches_search_placeholder": "Поиск запусков…",
   "launches_sort_soonest": "Сначала ближайшие",
-  "hud_data_ends": "КОНЕЦ ДАННЫХ"
+  "hud_data_ends": "КОНЕЦ ДАННЫХ",
+  "hud_booster_landing": "ПОСАДКА УСКОРИТЕЛЯ",
+  "hud_tower_catch": "ЗАХВАТ БАШНЕЙ"
 }

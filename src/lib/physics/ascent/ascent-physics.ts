@@ -1645,6 +1645,14 @@ export function payloadSeparationDelayFor(
 /** Seconds of landing burn before touchdown where a flight's start is not published (0.9.11 F2:
  *  Psyche's side boosters burned 17 s, Inspiration4's booster 27 s). */
 export const LANDING_BURN_DEFAULT_S = 25;
+/** The landing inset stays open this long after touchdown. */
+export const LANDING_HOLD_S = 4;
+
+/** When the flight's last landing inset closes (0 without landings): the launch act runs at
+ *  least this long, so a booster that lands after the injection beat is still seen. */
+export function landingsEndS(landings: { touchdownS: number }[]): number {
+  return landings.length ? Math.max(...landings.map((l) => l.touchdownS)) + LANDING_HOLD_S : 0;
+}
 
 /** How a recovered part comes home on this flight, or that it is expended (0.9.11 F2). */
 export function recoveryFor(

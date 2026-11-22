@@ -1550,6 +1550,7 @@ function buildFalcon9(vehLen: number): LauncherModel {
     const leg = new THREE.Mesh(new THREE.BoxGeometry(r * 0.12, vehLen * 0.18, r * 0.08), frame);
     leg.position.set(Math.cos(a) * r * 1.02, vehLen * 0.11, Math.sin(a) * r * 1.02);
     leg.rotation.y = -a;
+    leg.userData.landingLegAngle = a;
     booster.add(leg);
     const af = a + Math.PI / 4;
     const gf = new THREE.Mesh(new THREE.BoxGeometry(r * 0.4, vehLen * 0.015, r * 0.12), frame);
@@ -3753,6 +3754,7 @@ function buildFalconHeavy(vehLen: number): LauncherModel {
       const leg = new THREE.Mesh(new THREE.BoxGeometry(r * 0.12, vehLen * 0.13, r * 0.08), black);
       leg.position.set(Math.cos(a) * r * 1.02, vehLen * 0.095, Math.sin(a) * r * 1.02);
       leg.rotation.y = -a;
+      leg.userData.landingLegAngle = a;
       const fin = new THREE.Mesh(new THREE.BoxGeometry(r * 0.4, vehLen * 0.012, r * 0.12), frame);
       fin.position.set(
         Math.cos(a) * r * 1.12,
@@ -4058,6 +4060,7 @@ function buildNewGlenn(vehLen: number): LauncherModel {
     const leg = new THREE.Mesh(new THREE.BoxGeometry(r * 0.1, vehLen * 0.07, r * 0.07), dark);
     leg.position.set(Math.cos(a) * r * 1.02, base + vehLen * 0.035, Math.sin(a) * r * 1.02);
     leg.rotation.y = -a;
+    leg.userData.landingLegAngle = a;
     booster.add(leg);
   }
   for (let i = 0; i < 4; i++) {

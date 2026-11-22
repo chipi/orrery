@@ -16,7 +16,17 @@
   import { streamedUrl } from '$lib/asset-url';
   import ScienceChip from '$lib/components/ScienceChip.svelte';
   import { createAscentScene, VEHICLE_LENGTH_KM, type AscentScene } from '$lib/three/ascent-scene';
-  import { createAscentRenderer, type AscentRenderer } from '$lib/three/ascent-renderer';
+  import {
+    createAscentRenderer,
+    type AscentRenderer,
+    type InsetView,
+  } from '$lib/three/ascent-renderer';
+  import {
+    createLandingInset,
+    insetPlacement,
+    insetWindow,
+    type LandingInset,
+  } from '$lib/three/landing-inset';
   import { resolveQualitySync } from '$lib/quality/quality-tier';
   import { resolveLaunchGround } from '$lib/three/launch-ground';
   import LaunchTelemetry from '$lib/components/LaunchTelemetry.svelte';
@@ -24,6 +34,8 @@
   import AscentLosses from '$lib/components/AscentLosses.svelte';
   import {
     integrateAscent,
+    landingsEndS,
+    landingsFor,
     payloadSeparationDelayFor,
     recoveryFor,
     sampleAscentAt,
@@ -45,6 +57,7 @@
     countdownSeconds,
     injectionPhaseStatus,
     launchActEndS,
+    secoTimeS,
     separationCoastStatus,
     directInsertionCoastStatus,
     padState,
@@ -152,6 +165,8 @@
 
   const summary: AscentSummary = $derived(integrateAscent(profile));
   const duration = $derived(summary.totalDurationS);
+  /** SECO itself; `duration` runs an engine-dark coast past it. */
+  const secoT = $derived(secoTimeS(summary));
 
   // Post-SECO injection beat (RFC-034 §3.1): a parking-orbit coast, the kick stage
   // firing with the spacecraft still on it, then the spacecraft separating — appended
@@ -164,10 +179,15 @@
   /** The flight's published SECO → separation delay (backlog F1, L63 per mission); used without
    *  an injection beat. The same value /fly's play-bar markers use. */
   const separationDelayS = $derived(payloadSeparationDelayFor(profile, mission.missionId) ?? 0);
-  /** End of the launch phase — SECO, or the end of the injection beat when present. */
-  const ascentEnd = $derived(launchActEndS(duration, injection, separationDelayS));
+  /** This flight's booster landings (0.9.11 F2): a beat each, and the landing inset. */
+  const landings = $derived(landingsFor(profile, mission.missionId));
+  /** End of the launch phase — SECO, or the end of the injection beat when present, held
+   *  until the last landing inset closes. */
+  const ascentEnd = $derived(
+    launchActEndS(duration, injection, separationDelayS, landingsEndS(landings), secoT),
+  );
   /** When the spacecraft separates, if not at SECO. */
-  const payloadSepT = $derived(payloadSepTFor(duration, injection, separationDelayS));
+  const payloadSepT = $derived(payloadSepTFor(duration, injection, separationDelayS, secoT));
   const schedule = $derived(
     buildShotSchedule({
       events: summary.events,
@@ -225,7 +245,72 @@
   // The flight plan: liftoff, the ascent beats, then the parking orbit, injection burn and
   // spacecraft separation when the mission leaves orbit.
   // (One source with the markers on /fly's play bar: $lib/orbital/flight-plan-beats.)
-  const planBeats = $derived(buildPlanBeats(summary, injection, separationDelayS));
+  const planBeats = $derived(buildPlanBeats(summary, injection, separationDelayS, landings));
+  /** The inset shows the first landing (Falcon Heavy's two side boosters are one entry). */
+  const insetLanding = $derived(landings[0]);
+  const insetCaption = $derived(
+    insetLanding
+      ? [
+          hudLabel(insetLanding.outcome === 'caught' ? 'TOWER CATCH' : 'BOOSTER LANDING'),
+          ...(insetLanding.siteNames ?? []),
+        ].join(' · ')
+      : '',
+  );
+  let insetEl: HTMLDivElement | undefined = $state();
+  let insetOn = $state(false);
+  let inset: LandingInset | undefined;
+  let insetLauncherId = '';
+  let dossierEl: HTMLDivElement | undefined = $state();
+  let readoutsEl: HTMLDivElement | undefined = $state();
+  /** /fly's play bar covers the bottom of the frame (its top sits ~72 px up). */
+  const PLAY_BAR_PX = 84;
+  const INSET_RIGHT_PX = 22;
+  const INSET_MAX_W = 280;
+  /** The inset sits right-aligned in the free band under the flight plan and above the play
+   *  bar (and the readouts, where they cross its column, as on phones). */
+  function placeInset() {
+    const host = container.getBoundingClientRect();
+    const maxW = Math.min(INSET_MAX_W, host.width * 0.46);
+    const colLeft = host.right - INSET_RIGHT_PX - maxW;
+    const shown = (el: HTMLElement | undefined) => {
+      if (!el) return null;
+      const r = el.getBoundingClientRect();
+      const cs = getComputedStyle(el);
+      const visible = r.width > 0 && cs.display !== 'none' && Number(cs.opacity) > 0.05;
+      return visible && r.right > colLeft ? r : null;
+    };
+    const plan = shown(dossierEl);
+    const ro = shown(readoutsEl);
+    const ceiling = (plan ? plan.bottom - host.top : host.height * 0.4) + 10;
+    const floor = Math.min(host.height - PLAY_BAR_PX, ro ? ro.top - host.top - 8 : Infinity);
+    return insetPlacement(ceiling, floor, maxW);
+  }
+  /** The inset for this frame: posed at mission time, drawn into its frame's box. Built ~20 s
+   *  before it opens (a flight that never gets there never pays for it), in the launch's light. */
+  function insetView(): InsetView | null {
+    if (!inset && insetLanding && t >= insetWindow(insetLanding)[0] - 20)
+      inset = createLandingInset(
+        insetLauncherId,
+        profile.boosters?.count ?? 0,
+        insetLanding,
+        director?.plan.conditions.light,
+      );
+    const place = inset && insetEl && inset.update(t, 1) ? placeInset() : null;
+    const on = !!place;
+    if (on !== insetOn) insetOn = on;
+    if (!place) return null;
+    insetEl!.style.top = `${place.top}px`;
+    insetEl!.style.width = `${place.width}px`;
+    insetEl!.style.height = `${place.height}px`;
+    const box = insetEl!.getBoundingClientRect();
+    const host = container.getBoundingClientRect();
+    inset!.update(t, box.width / box.height);
+    return {
+      scene: inset!.scene,
+      camera: inset!.camera,
+      rect: { x: box.left - host.left, y: box.top - host.top, w: box.width, h: box.height },
+    };
+  }
 
   let container: HTMLDivElement;
 
@@ -288,7 +373,7 @@
       ? (injectionPhaseStatus(t, duration, injectionBurnLabel(injection.burnType)) ??
           ascentStatus(t, beats))
       : (directInsertionCoastStatus(t, summary.events) ??
-          separationCoastStatus(t, duration, payloadSepT) ??
+          separationCoastStatus(t, secoT, payloadSepT) ??
           ascentStatus(t, beats)),
   );
 
@@ -351,6 +436,7 @@
     ar = createAscentRenderer(container, sceneObj, {
       iblEnabled: quality.iblEnabled,
     });
+    insetLauncherId = dbg?.get('launcher') || profile.id;
 
     // The launch camera director (G3): shot plan, conditions, ground-relative path. One
     // implementation shared with /dev/launch-director. Skipped under ?cam=classic.
@@ -516,7 +602,7 @@
             onComplete?.();
           }
         }
-        ar!.render();
+        ar!.render(insetView());
       },
     });
     loop.start();
@@ -539,6 +625,7 @@
     director?.dispose();
     loop?.cleanup();
     sceneObj?.dispose();
+    inset?.dispose();
     ar?.dispose();
   });
 </script>
@@ -558,6 +645,21 @@
        daytime launch sky. A soft edge-vignette darkens the frame corners where
        the HUD sits and fades to nothing as the vehicle climbs into space. -->
   <div class="hud-scrim" style="opacity:{scrimOpacity}" aria-hidden="true"></div>
+
+  <!-- Booster-landing inset (0.9.11 F2): the WebGL renderer draws the landing into this box at
+       the flight's real landing time; the box is the frame and the caption. Scene content, so it
+       stays when the HUD is hidden. -->
+  {#if insetLanding}
+    <div
+      class="landing-inset"
+      class:on={insetOn}
+      bind:this={insetEl}
+      data-testid="landing-inset"
+      aria-hidden={!insetOn}
+    >
+      <span class="landing-cap">{insetCaption}</span>
+    </div>
+  {/if}
 
   <!-- Left telemetry console -->
   {#if !warping}
@@ -643,7 +745,7 @@
     {/key}
   {/if}
 
-  <div class="dossier" class:open={dossierOpen}>
+  <div class="dossier" class:open={dossierOpen} bind:this={dossierEl}>
     <div class="dossier-title">
       {m.fly_launch_dossier_title()}
       {#if profile.source_tier === 'generic'}<span class="rep"
@@ -682,7 +784,7 @@
     <div class="head" style="left:{progressPct}%"></div>
   </div>
 
-  <div class="readouts">
+  <div class="readouts" bind:this={readoutsEl}>
     <div class="ro">
       <span class="rl">{m.fly_speed_label()}</span><span class="rv"
         >{speedKmh.toLocaleString()}</span
@@ -1065,6 +1167,31 @@
     }
   }
   /* 2026 clean dossier — no panel; hangs off a hairline blue accent rail. */
+  /* top / width / height are set per frame (placeInset): the free band under the flight plan. */
+  .landing-inset {
+    position: absolute;
+    right: 22px;
+    border: 1px solid color-mix(in srgb, var(--color-state) 45%, transparent);
+    border-radius: 4px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+  .landing-inset.on {
+    opacity: 1;
+  }
+  .landing-cap {
+    position: absolute;
+    left: 8px;
+    top: 6px;
+    right: 8px;
+    font-family: var(--font-mono);
+    font-size: var(--size-label);
+    letter-spacing: 0.08em;
+    color: var(--color-text);
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.8);
+  }
+
   .dossier {
     position: absolute;
     top: 90px;

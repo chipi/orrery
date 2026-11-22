@@ -39,6 +39,7 @@ import { buildLanderCruiseCraft } from '$lib/three/lander-cruise-models';
 import { flyCraft } from '$lib/three/fly-craft';
 import { getEarthOrbitCoast } from '$lib/orbital/earth-orbit-registry';
 import { buildLauncherModel } from '$lib/three/launcher-models';
+import { plumeCone, plumeCore as plumeCoreMesh } from '$lib/three/engine-plume';
 import { clusterOffsets } from '$lib/three/launcher-detail';
 import { getLauncherEngines } from '$lib/physics/propulsion/launcher-engines';
 import {
@@ -750,38 +751,8 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   // Plume (R4): a LAYERED exhaust — hot blue-white throat, a yellow core, a
   // wide orange glow, a long diffuse trail, and Mach-diamond shock beads down
   // the axis. Built along +Y then rotated so it fires −Y; flickered per frame.
-  const plumeCone = (
-    r: number,
-    len: number,
-    color: number,
-    opacity: number,
-    blending: THREE.Blending = THREE.AdditiveBlending,
-  ): THREE.Mesh => {
-    const m = new THREE.Mesh(
-      new THREE.ConeGeometry(r, len, 24, 1, true),
-      new THREE.MeshBasicMaterial({
-        color,
-        transparent: true,
-        opacity,
-        blending,
-        depthWrite: false,
-      }),
-    );
-    // After the launch-ground patch (renderOrder 2): the flame writes no depth, so a patch
-    // drawn later painted over it wherever the ground sat behind it on screen.
-    m.renderOrder = 3;
-    return m;
-  };
-  // The white-hot core just under the bell, blended normally: the additive layers vanish
-  // against a sunlit desert or bright sky (Soyuz and Proton at Baikonur read flameless).
-  // Its wide end sits at the nozzle, where the outer cone's wide end is.
-  const PLUME_CORE_LEN = vehLen * 0.11;
-  const plumeCore = (r: number): THREE.Mesh => {
-    const m = plumeCone(r, PLUME_CORE_LEN, 0xfff1d0, 0.85, THREE.NormalBlending);
-    m.position.y = -(vehLen * 0.13 - PLUME_CORE_LEN / 2);
-    m.renderOrder = 4;
-    return m;
-  };
+  // The layers are `plumeCone` / `plumeCore` (engine-plume.ts, shared with the landing inset).
+  const plumeCore = (r: number): THREE.Mesh => plumeCoreMesh(r, vehLen);
   // One exhaust per REAL engine nozzle (Falcon 9's 9-Merlin octaweb, Saturn V's
   // 5-F-1 quincunx, …) so multi-engine boosters light ALL bells, not just the
   // axis. Layout mirrors engineCluster's nozzle grid; re-laid-out on stage change

@@ -3740,5 +3740,7 @@
   "programs_empty": "Aucun programme ne correspond aux filtres actuels.",
   "launches_search_placeholder": "Rechercher des lancements…",
   "launches_sort_soonest": "Plus proche d'abord",
-  "hud_data_ends": "FIN DES DONNÉES"
+  "hud_data_ends": "FIN DES DONNÉES",
+  "hud_booster_landing": "ATTERRISSAGE DU PROPULSEUR",
+  "hud_tower_catch": "CAPTURE PAR LA TOUR"
 }

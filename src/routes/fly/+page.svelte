@@ -195,6 +195,8 @@
   import {
     integrateAscent,
     payloadSeparationDelayFor,
+    landingsEndS,
+    landingsFor,
     type LaunchProfile,
   } from '$lib/physics/ascent/ascent-physics';
   import {
@@ -210,7 +212,7 @@
     DESCENT_SPEED_MULTIPLIERS,
     type JourneyTimeline,
   } from '$lib/orbital/ascent-clock';
-  import { T_MINUS_S, launchActEndS, payloadSepTFor } from '$lib/orbital/ascent-hud';
+  import { T_MINUS_S, launchActEndS, payloadSepTFor, secoTimeS } from '$lib/orbital/ascent-hud';
   import { launchCoastWarp, toMissionT, toSceneT } from '$lib/orbital/launch-coast-warp';
   import { resolveInjectionBurn } from '$lib/physics/transfer/injection-burn';
   import { resolveOrbitInsertion } from '$lib/physics/transfer/orbit-insertion';
@@ -1692,7 +1694,13 @@
   // spacecraft leaves the stage, not at SECO.
   let launchDurationS = $derived(
     launchSummaryFly
-      ? launchActEndS(launchSummaryFly.totalDurationS, launchInjectionBurn, launchSepDelayS)
+      ? launchActEndS(
+          launchSummaryFly.totalDurationS,
+          launchInjectionBurn,
+          launchSepDelayS,
+          launchProfile ? landingsEndS(landingsFor(launchProfile, mission.id)) : 0,
+          secoTimeS(launchSummaryFly),
+        )
       : 540,
   );
   // ─── Orbit-insertion beat (RFC-034 §12) — the arrival mirror of the launch
@@ -1742,7 +1750,12 @@
     launchSeparationTimes(
       launchSummaryFly,
       launchSummaryFly
-        ? payloadSepTFor(launchSummaryFly.totalDurationS, launchInjectionBurn, launchSepDelayS)
+        ? payloadSepTFor(
+            launchSummaryFly.totalDurationS,
+            launchInjectionBurn,
+            launchSepDelayS,
+            secoTimeS(launchSummaryFly),
+          )
         : undefined,
       launchProfile?.payloadInBay === true,
     ),
@@ -1812,7 +1825,12 @@
         timeline: hasLaunchAct ? masterTimeline : null,
         arcTotalDays,
         ascentBeats: launchSummaryFly
-          ? buildPlanBeats(launchSummaryFly, launchInjectionBurn, launchSepDelayS).map((b) => ({
+          ? buildPlanBeats(
+              launchSummaryFly,
+              launchInjectionBurn,
+              launchSepDelayS,
+              launchProfile ? landingsFor(launchProfile, mission.id) : [],
+            ).map((b) => ({
               label: hudLabel(b.label),
               t: toSceneT(launchCoastWarpFly, b.t),
             }))

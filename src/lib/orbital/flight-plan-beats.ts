@@ -1,7 +1,7 @@
-import type { AscentSummary } from '$lib/physics/ascent/ascent-physics';
+import type { AscentSummary, PartRecovery } from '$lib/physics/ascent/ascent-physics';
 import type { DescentSummary } from '$lib/physics/descent/descent-physics';
 import { injectionBurnLabel, type InjectionBurnParams } from '$lib/physics/transfer/injection-burn';
-import { INJECTION_COAST_S, buildAscentBeats, injectionSepT } from './ascent-hud';
+import { INJECTION_COAST_S, buildAscentBeats, injectionSepT, secoTimeS } from './ascent-hud';
 import { buildDescentBeats } from './descent-hud';
 import { terminalStartTime, unwarpDescentTime } from './descent-timewarp';
 
@@ -26,10 +26,13 @@ export function buildPlanBeats(
   summary: AscentSummary,
   injection: Pick<InjectionBurnParams, 'burnType'> | null,
   separationDelayS = 0,
+  /** The flight's booster landings (`landingsFor`): BOOSTER LANDING or TOWER CATCH at touchdown,
+   *  in time order with the rest (0.9.11 F2). */
+  landings: (Pick<PartRecovery, 'outcome'> & { touchdownS: number })[] = [],
 ): PlanBeat[] {
   const duration = summary.totalDurationS;
   const beats = buildAscentBeats(summary);
-  return [
+  const plan: PlanBeat[] = [
     { label: 'LIFTOFF', t: 0 },
     // ORBIT and SECO land on the same second: the cutoff is the beat.
     ...beats.filter(
@@ -47,9 +50,14 @@ export function buildPlanBeats(
           { label: 'SPACECRAFT SEP', t: injectionSepT(duration), untimed: true },
         ]
       : separationDelayS > 0
-        ? [{ label: 'SPACECRAFT SEP', t: duration + separationDelayS }]
+        ? [{ label: 'SPACECRAFT SEP', t: secoTimeS(summary) + separationDelayS }]
         : []),
   ];
+  const landingBeats = landings.map((l) => ({
+    label: l.outcome === 'caught' ? 'TOWER CATCH' : 'BOOSTER LANDING',
+    t: l.touchdownS,
+  }));
+  return [...plan, ...landingBeats].sort((a, b) => a.t - b.t);
 }
 
 /**

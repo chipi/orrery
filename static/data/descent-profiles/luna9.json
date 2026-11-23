@@ -22,8 +22,14 @@
     "descentRateGain": 0.035,
     "airbagReleaseAltM": 5
   },
-  "beats": [{ "type": "engine_cutoff", "altM": 5 }],
-  "afterTouchdown": { "beats": [{ "type": "petals_open", "afterS": 8, "realAfterS": 250 }] },
+  "beats": [
+    { "type": "airbag_deploy", "altM": 75000 },
+    { "type": "engine_cutoff", "altM": 5 }
+  ],
+  "afterTouchdown": {
+    "bounces": { "count": 3, "firstHeightM": 1.5, "rollM": 3, "restS": 12 },
+    "beats": [{ "type": "petals_open", "afterS": 6, "realAfterS": 250 }]
+  },
   "source_tier": "flagship",
   "provenance": [
     {
@@ -39,6 +45,8 @@
     "entryState.velocityMs",
     "flightPathAngleDeg",
     "retroPropellantKg",
-    "descentRateGain"
+    "descentRateGain",
+    "afterTouchdown.bounces",
+    "beats.engine_cutoff"
   ]
 }

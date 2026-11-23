@@ -760,7 +760,7 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
     const landerShown = !aeroshellBody || hp > 0.04 || terminalPhase;
     model.lander.visible = landerShown;
     model.descentStage.visible = landerShown;
-    model.retro.visible = landerShown;
+    model.retro.visible = landerShown && (cutoffT == null || s.t < cutoffT); // the dark nozzle cone goes with the engine
     // Surface-only deployables appear only once down (flag planted, rover driven
     // off, petals splayed) — never mid-flight.
     // An airbag lander's deployables wait for its petals.
@@ -879,7 +879,8 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
     // Touchdown dust: ramps up as the vehicle nears the ground under retro /
     // airbags, and flares at touchdown.
     const nearGround = s.altKm < vehLen * 0.5;
-    const kicking = nearGround && (braking || s.phaseKind === 'airbag_bounce' || s.altM <= 0);
+    const kicking =
+      nearGround && ((braking && engineOn) || s.phaseKind === 'airbag_bounce' || s.altM <= 0);
     dust.visible = kicking;
     if (kicking) {
       const prox = 1 - Math.min(1, s.altKm / (vehLen * 0.5)); // 0 far → 1 at ground

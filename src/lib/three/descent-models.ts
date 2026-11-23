@@ -864,6 +864,46 @@ function buildAirbagStack(lander: THREE.Group, vehLen: number): DescentModel {
   return m;
 }
 
+/** Luna 9's capsule: ejected at contact inside two inflated bags, it bounces, the bags are shed
+ *  and the petals open (lunar record). Reuses the airbag ball; no bridle, shell or rockets. The
+ *  ball's 2 m diameter is an estimate. */
+const LUNA9_BALL_M = 2;
+function buildLunaCapsuleStack(lander: THREE.Group, vehLen: number): DescentModel {
+  const m = buildLunarStack(lander, vehLen);
+  const k = (lander.userData.metresToScene as number | undefined) ?? vehLen * 0.1;
+  const lb = flyingBounds(lander);
+  const restY = (lb.max.y - lb.min.y) / 2;
+  const pivot = new THREE.Group();
+  pivot.name = 'airbagBall';
+  pivot.position.y = restY;
+  lander.position.y = -restY - lb.min.y;
+  pivot.add(lander);
+  const radius = (LUNA9_BALL_M / 2) * k;
+  const lobeR = radius * 0.5;
+  const bagMat = new THREE.MeshStandardMaterial({ color: 0xeee6d2, roughness: 0.82, metalness: 0 });
+  for (const sx of [-1, 1])
+    m.airbags.add(airbagCluster(new THREE.Vector3(sx, 0, 0), radius - lobeR, lobeR, bagMat));
+  m.airbags.visible = false;
+  pivot.add(m.airbags);
+  m.root.add(pivot);
+  const bridle = new THREE.Line(new THREE.BufferGeometry(), new THREE.LineBasicMaterial());
+  bridle.visible = false;
+  m.root.add(bridle);
+  m.airbagBall = {
+    pivot,
+    restY,
+    radius,
+    k,
+    bridleLength: 0,
+    bridle,
+    radPlumes: [],
+    petals: [],
+    petalClosedRad: 0,
+    inside: [],
+  };
+  return m;
+}
+
 /** Beagle 2's figures (the pass-2 record, docs/wip/2026-11-23-mars-landings-record.md): a 0.93 m
  *  aeroshell; a 1.9 m pilot chute, then a 10 m main; three gas bags, each segment 1.93 × 0.965 m. */
 const BEAGLE_AEROSHELL_M = 0.93;
@@ -1324,6 +1364,7 @@ const BUILDERS: Record<string, StackBuilder> = {
   spirit: buildAirbagStack,
   opportunity: buildAirbagStack,
   beagle2: buildBeagleStack,
+  luna9: buildLunaCapsuleStack,
   // Mars retro
   // Aeroshells: Viking 3.5 m, Phoenix and InSight 2.65 m; chutes 16 m (unverified), 11.8 m, 11.8 m.
   'viking1-lander': leggedStack({

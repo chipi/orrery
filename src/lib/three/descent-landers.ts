@@ -196,6 +196,24 @@ const FLAG_SITES = new Set([
   'apollo17',
 ]);
 
+/** The LM's contact probes: a 67 in (1.7 m) rod hanging under three of the four footpads (not the
+ *  ladder leg, +z). Their touch lights the contact light, the cue to stop the engine. The length
+ *  is an estimate (not in the record files); contact_light's altM is the same 1.7 m. In metres
+ *  at `k` scene units per metre, `padR` from the centre. */
+export const LM_PROBE_LENGTH_M = 1.7;
+function contactProbes(k: number, padR: number): THREE.Group {
+  const g = new THREE.Group();
+  const rod = new THREE.MeshStandardMaterial({ color: 0xc8c9cc, metalness: 0.7, roughness: 0.4 });
+  for (const a of [Math.PI / 2, Math.PI, -Math.PI / 2]) {
+    const p = new THREE.Mesh(new THREE.CylinderGeometry(0.025, 0.025, LM_PROBE_LENGTH_M, 6), rod);
+    p.position.set(Math.sin(a) * padR, -LM_PROBE_LENGTH_M / 2, Math.cos(a) * padR);
+    g.add(p);
+  }
+  g.scale.setScalar(k);
+  g.userData.flightOnly = true;
+  return g;
+}
+
 /** The flag the crew planted, in metres at `k` scene units per metre: a 2.4 m pole with the
  *  1.5 × 0.9 m flag on its horizontal rod, a few metres ahead and left of the ladder. */
 function plantedFlag(k: number): THREE.Group {
@@ -288,7 +306,12 @@ export function detailedDescentLander(siteId: string, tier0: THREE.Group): THREE
   craft.position.y = ref.min.y - own.min.y * k;
   const holder = new THREE.Group();
   holder.add(craft);
-  if (FLAG_SITES.has(siteId)) holder.add(plantedFlag(k));
+  if (FLAG_SITES.has(siteId)) {
+    holder.add(plantedFlag(k));
+    const probes = contactProbes(k, (own.max.x - own.min.x) / 2 - 0.47);
+    probes.position.y = craft.position.y;
+    holder.add(probes);
+  }
   holder.userData.metresToScene = k;
   for (const key of ['engineExitY', 'dockY'] as const) {
     const y = craft.userData[key] as number | undefined;

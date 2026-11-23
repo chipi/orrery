@@ -20,6 +20,17 @@
     "terminalVelocityMs": 1,
     "descentRateGain": 0.06
   },
+  "beats": [{ "type": "engine_cutoff", "altM": 1 }],
+  "estimatedFields": [
+    "entryState.altitudeM",
+    "entryState.velocityMs",
+    "entryState.flightPathAngleDeg",
+    "entryMassKg",
+    "retroPropellantKg",
+    "params.terminalVelocityMs",
+    "params.descentRateGain",
+    "beats.engine_cutoff"
+  ],
   "source_tier": "generic",
   "provenance": [
     {

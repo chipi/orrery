@@ -54,6 +54,9 @@ const BEAT_SHOT: Record<string, DescentShotKind> = {
   bridle_lower: 'under',
   bridle_cut: 'pullOut',
   landing_flip: 'orbit',
+  // Apollo's gates: the pitchover read from the side, the final descent pushed in on.
+  high_gate: 'orbit',
+  low_gate: 'pushIn',
 };
 const FILL: DescentShotKind[] = ['wide', 'orbit', 'under', 'over', 'pushIn', 'pullOut', 'close'];
 /** The lit side: azimuths near this keep the sun behind the camera. */

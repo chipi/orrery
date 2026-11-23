@@ -408,3 +408,60 @@ describe('Beagle 2 (pilot chute, then a 10 m main; bags; bounces)', () => {
     expect(s.events.filter((e) => e.type === 'bounce').length).toBeGreaterThanOrEqual(8);
   });
 });
+
+/**
+ * The six Apollo landings and the two Artemis stand-ins share one powered-descent flow (pass 2):
+ * the gates, the contact light and the engine cutoff, each once and in order, the cutoff above the
+ * ground. Apollo 11's high gate is the sourced 8:26 at 7,515 ft (Mission Report); the other
+ * missions' thrust and approach angle are fitted so all six reach their high gate at about the same
+ * altitude and fly their reported descent times.
+ */
+describe('Apollo landings fly the gates, the contact light and the engine cutoff', () => {
+  const APOLLO = ['apollo11', 'apollo12', 'apollo14', 'apollo15', 'apollo16', 'apollo17'];
+  const ORDER = [
+    'retro_ignition',
+    'high_gate',
+    'low_gate',
+    'contact_light',
+    'engine_cutoff',
+    'touchdown',
+  ];
+  for (const id of APOLLO) {
+    it(`${id}: each beat once, in order; contact light above the cutoff above the ground`, () => {
+      const s = flight(id).s;
+      const times = ORDER.map((type) => {
+        const all = s.events.filter((e) => e.type === type);
+        expect(all, type).toHaveLength(1);
+        return all[0].t;
+      });
+      for (let i = 1; i < times.length; i++)
+        expect(times[i], ORDER[i]).toBeGreaterThanOrEqual(times[i - 1]);
+      const alt = (type: string): number => s.events.find((e) => e.type === type)!.altKm * 1000;
+      expectInRange(alt('contact_light'), 1.2, 1.7, 'contact light (m)');
+      expectInRange(alt('engine_cutoff'), 0.5, 1, 'engine cutoff (m)');
+      expectInRange(alt('high_gate'), 2000, 2800, 'high gate (m)');
+      expectInRange(alt('low_gate'), 140, 152, 'low gate (m)');
+    });
+  }
+
+  it('Apollo 11: high gate at 8:26 into the burn, 150 m/s', () => {
+    const hg = flight('apollo11').s.events.find((e) => e.type === 'high_gate')!;
+    expectInRange(hg.t, 498, 514, 'Apollo 11 high gate (s after ignition)');
+    expectInRange(hg.velocityMs, 148, 152, 'high-gate speed (m/s)');
+  });
+
+  it("a lander that names no gates (Chang'e 3) emits none", () => {
+    const types = flight('change3').s.events.map((e) => e.type);
+    expect(types).not.toContain('high_gate');
+    expect(types).not.toContain('low_gate');
+  });
+
+  it('Artemis IV and V cut the engine above the ground, then touch down', () => {
+    for (const id of ['artemis4', 'artemis5']) {
+      const ev = flight(id).s.events;
+      const cut = ev.find((e) => e.type === 'engine_cutoff')!;
+      expect(cut.altKm * 1000, id).toBeLessThanOrEqual(1);
+      expect(cut.t, id).toBeLessThanOrEqual(ev.find((e) => e.type === 'touchdown')!.t);
+    }
+  });
+});

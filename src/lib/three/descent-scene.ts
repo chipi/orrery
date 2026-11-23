@@ -343,8 +343,10 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
     ? new THREE.Box3().setFromObject(model.mainChute.group).max.y / vehLen
     : 0;
   const surfaceOnly: THREE.Object3D[] = [];
+  const flightOnly: THREE.Object3D[] = []; // the reverse: Apollo's contact probes
   model.lander.traverse((o) => {
     if (o.userData?.surfaceOnly) surfaceOnly.push(o);
+    if (o.userData?.flightOnly) flightOnly.push(o);
   });
 
   // Separation-event bursts (flash + debris) at the heat-shield jettison and the
@@ -504,6 +506,16 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
   const landingFlipT = metOf('landing_flip');
   const LANDING_FLIP_S = 4;
   const touchdownT = metOf('touchdown');
+  // A lander with a contact beat (Apollo's probes, the engine cutoff): the last LOW_SCALE_ALT_M
+  // are drawn at the craft's own scale, as the airbag ball's are. The craft is drawn about 36 times
+  // its real size, so a 1.7 m probe reach or a 1 m drop would be lost in the km altitude.
+  const cutoffT = metOf('engine_cutoff');
+  const metresToScene = model.lander.userData.metresToScene as number | undefined;
+  const lowK =
+    !ball && metresToScene != null && (cutoffT != null || metOf('contact_light') != null)
+      ? metresToScene
+      : null;
+  const LOW_SCALE_ALT_M = 60;
   // Airbag landers: the bridle, the cut (the backshell's flyaway when there is no backshell_sep),
   // the bounces and roll after first contact, rest, and the petals.
   const bridleT = metOf('bridle_lower');
@@ -578,11 +590,15 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
     // craft's own scale: in km the 21 m fall and a 16 m bounce would be a hundredth of the drawn
     // ball. Above, the km altitude continues from there (a constant lift; continuous, monotone).
     const inTail = ball != null && touchdownT != null && s.t > touchdownT;
-    const craftY = !ball
-      ? s.altKm
-      : s.altM <= BALL_SCALE_ALT_M
-        ? s.altM * ball.k
-        : BALL_SCALE_ALT_M * ball.k + (s.altM - BALL_SCALE_ALT_M) / 1000;
+    const craftY = lowK
+      ? s.altM <= LOW_SCALE_ALT_M
+        ? s.altM * lowK
+        : LOW_SCALE_ALT_M * lowK + (s.altM - LOW_SCALE_ALT_M) / 1000
+      : !ball
+        ? s.altKm
+        : s.altM <= BALL_SCALE_ALT_M
+          ? s.altM * ball.k
+          : BALL_SCALE_ALT_M * ball.k + (s.altM - BALL_SCALE_ALT_M) / 1000;
     vehicle.position.set(0, craftY, 0);
     const vd = s.velDownMs;
     const vh = Math.sqrt(Math.max(0, s.velocityMs * s.velocityMs - vd * vd));
@@ -728,8 +744,10 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
     // An airbag lander's deployables wait for its petals.
     const landed = ball
       ? petalsT != null && s.t >= petalsT + PETAL_S * 0.6
-      : s.altM <= 2 || (touchdownT != null && s.t >= touchdownT);
+      : s.altM <= (lowK ? 0 : 2) || (touchdownT != null && s.t >= touchdownT);
     for (const o of surfaceOnly) o.visible = landed;
+    const touched = s.altM <= 0 || (touchdownT != null && s.t >= touchdownT);
+    for (const o of flightOnly) o.visible = !touched;
 
     // Skycrane rigging: shown only during the skycrane phase.
     model.skycraneRigging.visible = s.phaseKind === 'skycrane';
@@ -788,8 +806,9 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
 
     // Retro plume: only while braking (powered / skycrane / lunar powered).
     const braking = s.phaseKind === 'powered_retro' || s.phaseKind === 'skycrane';
-    plume.visible = braking;
-    if (braking) {
+    const engineOn = braking && (cutoffT == null || s.t < cutoffT);
+    plume.visible = engineOn;
+    if (engineOn) {
       const flick = 1 + 0.1 * Math.sin(frame * 0.7) + 0.05 * Math.sin(frame * 1.9);
       plume.scale.set(plumeK, flick * plumeK, plumeK);
     }
@@ -911,6 +930,7 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
     model.orbiter.position.set(0, 0, 0);
     model.orbiter.rotation.set(0, 0, 0);
     for (const o of surfaceOnly) o.visible = false; // planted only at touchdown
+    for (const o of flightOnly) o.visible = true;
     plume.visible = false;
     plasma.visible = false;
     dust.visible = false;

@@ -117,6 +117,9 @@ export interface ArchetypeParams {
    *  vehicle's and the engine brakes at its peak the whole phase — the real near-full-thrust
    *  braking burn; the normal gain on a shallow path would dawdle for many minutes. */
   brakingRateGain?: number;
+  /** Lunar powered descent: emit `high_gate` and `low_gate` where the approach and the final
+   *  descent start (Apollo's named gates). Off for landers whose record names none. */
+  gateBeats?: boolean;
 }
 
 type ArchetypeBuilder = (p: ArchetypeParams) => EDLPhase[];
@@ -150,12 +153,14 @@ const LUNAR_POWERED: ArchetypeBuilder = (p) => {
       flightPathAngleDeg: p.approachFpaDeg ?? 16,
       maxBrakeG: p.brakingMaxG ?? 0.3,
       maxThrustN: p.brakingMaxThrustN,
+      ...(p.gateBeats ? { events: ['high_gate' as const] } : {}),
     },
     {
       ...common,
       endTrigger: { type: 'ground', value: 0 },
       maxBrakeG: p.brakingMaxG ?? 0.3,
       maxThrustN: p.brakingMaxThrustN,
+      ...(p.gateBeats ? { events: ['low_gate' as const] } : {}),
     },
   ];
 };

@@ -53,6 +53,10 @@ export const EDL_BEAT_LABEL: Record<DescentEventType, string> = {
   bridle_cut: 'BRIDLE CUT',
   at_rest: 'AT REST',
   petals_open: 'PETALS OPEN',
+  high_gate: 'HIGH GATE',
+  low_gate: 'LOW GATE',
+  contact_light: 'CONTACT LIGHT',
+  engine_cutoff: 'ENGINE OFF',
   touchdown: 'TOUCHDOWN',
 };
 
@@ -75,7 +79,11 @@ const TIMELINE_BEATS: DescentEventType[] = [
   'airbag_deploy',
   'retro_ignition',
   'skycrane_lower',
+  'high_gate',
+  'low_gate',
   'bridle_cut',
+  'contact_light',
+  'engine_cutoff',
   'touchdown',
   'at_rest',
   'petals_open',

@@ -112,6 +112,10 @@ export type DescentEventType =
   | 'bridle_cut' // the bridle is cut: backshell and chute fly off, the airbag ball falls free
   | 'at_rest' // the airbag ball stops rolling
   | 'petals_open' // the lander's petals open (Pathfinder, MER, Beagle 2)
+  | 'high_gate' // the braking burn ends and the lander pitches over to see the site (Apollo)
+  | 'low_gate' // the approach ends and the final vertical descent starts (Apollo)
+  | 'contact_light' // a footpad probe touches the surface (Apollo's blue light)
+  | 'engine_cutoff' // the descent engine shuts down just above the surface
   | 'touchdown';
 
 /**

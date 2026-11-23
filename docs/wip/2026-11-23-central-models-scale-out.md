@@ -64,12 +64,35 @@ Pass 1 batches (5–6 models each, two implementer agents at a time):
    InSight, Perseverance, Zhurong, Schiaparelli, Beagle 2, Rosalind Franklin.
 3. Crew capsules: Vostok, Voskhod, Mercury, Gemini, Soyuz (7K-OK, T, TM, TMA, MS), Progress; plus a
    re-bar of the Apollo CM, Orion, Dragon and Shenzhou showcase models.
-4. Shuttle orbiters (one builder, six names).
+4. ~~Shuttle orbiters~~: already modelled (winged.ts). The first inventory's regex missed entries
+   written as `'id': builder(...)`; the corrected inventory also found soyuz-progress.ts, which
+   batch 3 replaced.
 5. Probes and landers on small bodies and Venus: Huygens, the Galileo probe, Hayabusa 1/2,
    OSIRIS-REx, NEAR, Rosetta with Philae, Venera 7/13, Vega, Mars 2/6, Mars Polar Lander.
 6. Observatories (12).
 7. Orbiters still without a model (41), in families.
 8. Re-bar the remaining pre-pilot showcase models (cargo and orbiters).
+
+## Progress (2026-11-23)
+
+| Batch | Commit | State |
+| --- | --- | --- |
+| 1 lunar landers and rovers | e3b7f16c52a | accepted; SLIM's shape and Blue Moon's frame parked for pass 2 |
+| 2 Mars landers | e77920605c8 | accepted |
+| 2b rovers (MER, Perseverance, Zhurong, Rosalind Franklin, LRV) | 78b55b43af9 | accepted |
+| 3 classic capsules (Vostok/Voskhod, Mercury, Gemini, Soyuz, Progress) | b04942bb785 | accepted |
+| 5 probes (Cassini/Huygens, Galileo, Rosetta, Hayabusa, OSIRIS-REx, Venera, Vega, Giotto) | — | building |
+| 6 observatories | — | building |
+
+Still to do in pass 1:
+
+- batch 7, the orbiters with no model;
+- batch 8, re-bar the pre-pilot models;
+- **wiring**: put each new model into /fly (fly-craft.ts FLY_CRAFT, descent-landers.ts DETAILED) and
+  into the fleet pages.
+
+Every new showcase file is now credited automatically (build-model-references globs the folder).
+A new reference host needs a publisher group there.
 
 ## Lessons from batch 1 (put them in every brief)
 

@@ -2,6 +2,14 @@ import * as THREE from 'three';
 import { buildApolloLunarModule } from './showcase/lunar-module';
 import { buildCuriosity } from './showcase/mars-rovers';
 import { SHOWCASE as FREIGHTERS } from './showcase/station-freighters';
+import {
+  SHOWCASE as LUNAR_EAST,
+  buildLunaE8LandingStage,
+  buildLunokhod,
+} from './showcase/lunar-landers-east';
+import { SHOWCASE as LUNAR_WEST } from './showcase/lunar-landers-west';
+import { SHOWCASE as MARS_LANDERS, buildPathfinderLander } from './showcase/mars-landers';
+import { SHOWCASE as ROVERS } from './showcase/rovers';
 
 /**
  * The central detailed models (src/lib/three/showcase/), flown in /fly's descent in place of
@@ -16,6 +24,72 @@ const DETAILED: Record<string, () => THREE.Group> = {
   apollo16: buildApolloLunarModule,
   apollo17: buildApolloLunarModule,
   curiosity: buildCuriosity,
+  // Scale-out (2026-11-23): the central models of every robotic Moon and Mars landing.
+  luna9: () => LUNAR_EAST['luna-9'].build(),
+  luna16: () => LUNAR_EAST['luna-16'].build(),
+  luna24: () => LUNAR_EAST['luna-16'].build(),
+  luna17: lunokhodOnStage,
+  luna21: lunokhodOnStage,
+  change3: () => LUNAR_EAST['change-3'].build(),
+  change4: () => LUNAR_EAST['change-3'].build(),
+  change5: () => LUNAR_EAST['change-5'].build(),
+  change6: () => LUNAR_EAST['change-5'].build(),
+  chandrayaan2: () => LUNAR_WEST['vikram-cy3'].build(),
+  chandrayaan3: () => LUNAR_WEST['vikram-cy3'].build(),
+  slim: () => LUNAR_WEST.slim.build(),
+  beresheet: () => LUNAR_WEST.beresheet.build(),
+  'blue-moon-mk1': () => LUNAR_WEST['blue-moon-mk1'].build(),
+  'viking1-lander': () => MARS_LANDERS['viking-1'].build(),
+  mars3: () => MARS_LANDERS['mars-3'].build(),
+  phoenix: () => MARS_LANDERS.phoenix.build(),
+  insight: () => MARS_LANDERS.insight.build(),
+  schiaparelli: () => MARS_LANDERS.schiaparelli.build(),
+  beagle2: () => MARS_LANDERS.beagle2.build(),
+  'mars-pathfinder': buildPathfinderLander,
+  spirit: () => ROVERS.spirit.build(),
+  opportunity: () => ROVERS.opportunity.build(),
+  perseverance: () => ROVERS.perseverance.build(),
+  zhurong: () => ROVERS.zhurong.build(),
+};
+
+/** Luna 17 and 21: Lunokhod riding the E-8 landing stage, on its deck between the ramps. */
+function lunokhodOnStage(): THREE.Group {
+  const stage = buildLunaE8LandingStage();
+  // The deck top, measured without the ramps (which slope above it).
+  const ramps = stage.getObjectByName('ramps');
+  const parent = ramps?.parent;
+  ramps?.removeFromParent();
+  const deckTop = new THREE.Box3().setFromObject(stage).max.y;
+  if (ramps && parent) parent.add(ramps);
+  const rover = buildLunokhod();
+  rover.name = 'rover';
+  rover.position.y = deckTop;
+  stage.add(rover);
+  return stage;
+}
+
+/**
+ * Parts stowed in flight and deployed only on the surface (hidden by the descent scene until
+ * touchdown): solar arrays, petals and ramps, the rovers' masts and arms, InSight's instruments.
+ * By site; a rover's 'rover' group rides on its lander and stays.
+ */
+const STOWED: Record<string, readonly string[]> = {
+  luna9: ['petals'],
+  luna17: ['ramps', 'lid'],
+  luna21: ['ramps', 'lid'],
+  change3: ['ramps'],
+  change4: ['ramps'],
+  chandrayaan2: ['ramp', 'ramps', 'rover'],
+  chandrayaan3: ['ramp', 'ramps', 'rover'],
+  mars3: ['petals', 'rover'],
+  phoenix: ['solar-arrays', 'arm'],
+  insight: ['solar-arrays', 'arm', 'seis', 'hp3'],
+  beagle2: ['petals', 'arm'],
+  'mars-pathfinder': ['petals'],
+  spirit: ['mast', 'arm', 'solar-arrays'],
+  opportunity: ['mast', 'arm', 'solar-arrays'],
+  perseverance: ['mast', 'arm'],
+  zhurong: ['mast', 'solar-arrays'],
 };
 
 const FLAG_SITES = new Set([
@@ -103,9 +177,15 @@ export function detailedDescentLander(siteId: string, tier0: THREE.Group): THREE
   const build = DETAILED[siteId];
   if (!build) return null;
   const craft = build();
-  // Curiosity's mast rode stowed through entry: raised only on the surface.
+  // Curiosity's mast rode stowed through entry: raised only on the surface; likewise every
+  // site's STOWED parts.
   const rsm = craft.getObjectByName('rsm');
   if (rsm) rsm.userData.surfaceOnly = true;
+  for (const name of STOWED[siteId] ?? []) {
+    craft.traverse((o) => {
+      if (o.name === name) o.userData.surfaceOnly = true;
+    });
+  }
   const ref = flyingBox(tier0);
   const own = flyingBox(craft);
   const span = (b: THREE.Box3) => Math.max(b.max.x - b.min.x, b.max.z - b.min.z);

@@ -347,6 +347,7 @@ export function buildLuna9(): THREE.Group {
   for (let i = 0; i < 4; i++) {
     const a = (i / 4) * Math.PI * 2 + Math.PI / 4;
     const hinge = new THREE.Group();
+    hinge.name = 'petals'; // opened after landing: a descent stows them
     hinge.position.set(Math.sin(a) * R, cy, Math.cos(a) * R);
     hinge.rotation.y = a;
     const open = new THREE.Group();

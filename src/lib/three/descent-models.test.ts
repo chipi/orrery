@@ -2,6 +2,7 @@
 import * as THREE from 'three';
 import { describe, it, expect } from 'vitest';
 import { buildDescentModel, KNOWN_DESCENT_STACK_IDS } from './descent-models';
+import { DETAILED_DESCENT_LANDER_IDS } from './descent-landers';
 
 describe('buildDescentModel', () => {
   it('skycrane stack (Curiosity) has rigging, descent stage, chute + a lander', () => {
@@ -33,6 +34,46 @@ describe('buildDescentModel', () => {
     expect(csm.min.y).toBeCloseTo(m.lander.userData.dockY, 2); // probe on the drogue
     // Real ratio: the CSM (11 m) is about 1.6 times the LM's height (7.04 m).
     expect((csm.max.y - csm.min.y) / (lm.max.y - lm.min.y)).toBeCloseTo(11 / 7.04, 1);
+  });
+
+  it('every robotic Moon and Mars landing flies its central model, deployables stowed', () => {
+    const profiles = import.meta.glob<{ siteId: string; body: string }>(
+      '../../../static/data/descent-profiles/*.json',
+      { eager: true, import: 'default' },
+    );
+    const body = new Map(Object.values(profiles).map((p) => [p.siteId, p.body]));
+    for (const id of DETAILED_DESCENT_LANDER_IDS) {
+      const b = body.get(id);
+      expect(b, `${id} has a descent profile`).toBeDefined();
+      const m = buildDescentModel(id, b as 'moon' | 'mars', 1);
+      let meshes = 0;
+      let stowed = 0;
+      m.lander.traverse((o) => {
+        if ((o as THREE.Mesh).isMesh) meshes++;
+        if (o.userData.surfaceOnly) stowed++;
+      });
+      expect(meshes, id).toBeGreaterThan(40); // the Tier 0 silhouettes had about 20
+      if (
+        ![
+          'luna16',
+          'luna24',
+          'change5',
+          'change6',
+          'slim',
+          'beresheet',
+          'blue-moon-mk1',
+          'viking1-lander',
+          'schiaparelli',
+          'apollo11',
+          'apollo12',
+          'apollo14',
+          'apollo15',
+          'apollo16',
+          'apollo17',
+        ].includes(id)
+      )
+        expect(stowed, `${id}: its deployables are stowed in flight`).toBeGreaterThan(0);
+    }
   });
 
   it('Curiosity rides the central rover, its mast stowed until touchdown', () => {

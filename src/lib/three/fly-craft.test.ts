@@ -25,8 +25,8 @@ describe('fly-craft', () => {
 describe('fly-craft: IM-1, MRO and Mariner 2 fly their own models', () => {
   it('maps each to its dedicated builder and loads a craft of the published size', async () => {
     expect(flyCraftSource('im-1')).toEqual(['landers', 'buildNovaC']);
-    expect(flyCraftSource('mro')).toEqual(['orbiters', 'buildMro']);
-    expect(flyCraftSource('mariner2')).toEqual(['orbiters', 'buildMariner2']);
+    expect(flyCraftSource('mro')).toEqual(['mars-orbiters', 'mro']);
+    expect(flyCraftSource('mariner2')).toEqual(['mars-orbiters', 'mariner-2']);
     for (const id of ['im-1', 'mro', 'mariner2']) expect(await preloadFlyCraft(id), id).toBe(true);
     const h = (id: string) =>
       new THREE.Box3().setFromObject(flyCraft(id)!).getSize(new THREE.Vector3());

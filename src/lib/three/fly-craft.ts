@@ -49,8 +49,9 @@ const FLY_CRAFT: Record<string, readonly [string, string]> = {
   // MMX: box bus with two wings, like Mars Express.
   mmx: ['orbiters', 'mars-express'],
   mariner4: ['orbiters', 'mariner-4'],
-  mariner2: ['orbiters', 'buildMariner2'],
-  mro: ['orbiters', 'buildMro'],
+  mariner2: ['mars-orbiters', 'mariner-2'],
+  mro: ['mars-orbiters', 'mro'],
+  bepicolombo: ['mars-orbiters', 'bepicolombo'],
   // IM-1 (Nova-C Odysseus), shown upright on its legs.
   'im-1': ['landers', 'buildNovaC'],
   change2: ['lunar-orbiters', 'change-2'],

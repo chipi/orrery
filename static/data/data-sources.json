@@ -498,7 +498,7 @@
     {
       "id": "models-ref-wikipedia",
       "name": "3D model references — Wikipedia",
-      "catalog": "165 pages — sizes and proportions for the 3D models",
+      "catalog": "173 pages — sizes and proportions for the 3D models",
       "category": "model-reference",
       "description": "Wikipedia articles (English, Russian and Chinese) that gave the lengths, diameters and proportions of the launcher and spacecraft models and the heights of the landmarks, statues and animals drawn beside them in the /fleet line-ups. The models and outlines are our own; only measurements were read.",
       "source_url": "https://www.wikipedia.org/",
@@ -946,6 +946,10 @@
           "u": "https://en.wikipedia.org/wiki/Blue_Moon_(spacecraft)"
         },
         {
+          "l": "Wikipedia — Cassini–Huygens: 6.8 m length, 4 m antenna, three RTGs, Huygens 2.7 m",
+          "u": "https://en.wikipedia.org/wiki/Cassini–Huygens"
+        },
+        {
           "l": "Wikipedia — Chandrayaan-2 / Vikram: 2.54 × 2 × 1.2 m, four 800 N throttleable engines (CY-2 has a fifth, central one), four legs, ramp",
           "u": "https://en.wikipedia.org/wiki/Chandrayaan-2"
         },
@@ -964,6 +968,22 @@
         {
           "l": "Wikipedia — Cygnus: 5.14 m length, 3.07 m diameter, Standard variant",
           "u": "https://en.wikipedia.org/wiki/Cygnus_(spacecraft)"
+        },
+        {
+          "l": "Wikipedia — Galileo (spacecraft): 5.3 m length, 4.8 m antenna, RTG booms, 10.9 m magnetometer boom, probe",
+          "u": "https://en.wikipedia.org/wiki/Galileo_(spacecraft)"
+        },
+        {
+          "l": "Wikipedia — Giotto (spacecraft): 1.86 m drum, 1.47 m despun antenna, dust shield",
+          "u": "https://en.wikipedia.org/wiki/Giotto_(spacecraft)"
+        },
+        {
+          "l": "Wikipedia — Hayabusa: 1 × 1.6 × 2 m body, 1.5 m antenna, 5.7 m across the panels",
+          "u": "https://en.wikipedia.org/wiki/Hayabusa"
+        },
+        {
+          "l": "Wikipedia — Hayabusa2: body 1 × 1.6 × 1.25 m, three-panel arrays, sampler horn, SCI, MINERVA-II, capsule",
+          "u": "https://en.wikipedia.org/wiki/Hayabusa2"
         },
         {
           "l": "Wikipedia — HTV-X: 8 m, 4.4 m, 18.2 m array span, 2.7 m service and 3.5 m pressurised module",
@@ -994,6 +1014,10 @@
           "u": "https://en.wikipedia.org/wiki/Mars_Pathfinder"
         },
         {
+          "l": "Wikipedia — OSIRIS-REx: bus 2.4 m, arrays 6.2 m across, 3.35 m TAGSAM arm, 0.81 m capsule",
+          "u": "https://en.wikipedia.org/wiki/OSIRIS-REx"
+        },
+        {
           "l": "Wikipedia — Perseverance (rover): 2.9 x 2.7 x 2.2 m, wheels, MMRTG, Ingenuity",
           "u": "https://en.wikipedia.org/wiki/Perseverance_(rover)"
         },
@@ -1010,6 +1034,10 @@
           "u": "https://en.wikipedia.org/wiki/Rosalind_Franklin_(rover)"
         },
         {
+          "l": "Wikipedia — Rosetta (spacecraft): body 2.8 × 2.1 × 2.0 m, 32 m across the arrays, 2.2 m antenna",
+          "u": "https://en.wikipedia.org/wiki/Rosetta_(spacecraft)"
+        },
+        {
           "l": "Wikipedia — Schiaparelli EDM: 1.65 m lander, 2.4 m with the front shield, crushable structure, DREAMS",
           "u": "https://en.wikipedia.org/wiki/Schiaparelli_EDM"
         },
@@ -1024,6 +1052,10 @@
         {
           "l": "Wikipedia — Tianzhou: 10.6 m, 3.35 m, 14.9 m array span",
           "u": "https://en.wikipedia.org/wiki/Tianzhou_(spacecraft)"
+        },
+        {
+          "l": "Wikipedia — Venera: the Venera 9-14 bus: two solar panels, parabolic dish, spherical descent apparatus",
+          "u": "https://en.wikipedia.org/wiki/Venera"
         },
         {
           "l": "Wikipedia — Viking program: hexagonal base with 1.09 / 0.56 m sides, 2.21 m footpad triangle, 18-nozzle engines, two RTGs, two cylinder cameras",
@@ -1854,7 +1886,7 @@
     {
       "id": "models-ref-commons",
       "name": "3D model references — Wikimedia Commons photographs",
-      "catalog": "18 pages — sizes and proportions for the 3D models",
+      "catalog": "28 pages — sizes and proportions for the 3D models",
       "category": "model-reference",
       "description": "Photographs of flight hardware, test articles and museum replicas on Wikimedia Commons, looked at to get the shapes and layouts of the lander, rover and capsule models right. No photograph is reproduced; the models are our own geometry.",
       "source_url": "https://commons.wikimedia.org/",
@@ -1914,6 +1946,10 @@
           "u": "https://commons.wikimedia.org/wiki/File:Viking_Mars_Lander_replica_on_display_in_the_Smithsonian's_Air_and_Space_museum_in_August_2015.jpg"
         },
         {
+          "l": "Wikimedia Commons — 20190605 hayabusa-diagram-tpr-01.png: JAXA instrument diagram: body, horn, capsule and arrays placement",
+          "u": "https://commons.wikimedia.org/wiki/File:20190605_hayabusa-diagram-tpr-01.png"
+        },
+        {
           "l": "Wikimedia Commons — Apollo 15 Lunar Roving Vehicle (museum article) and the LRV control console",
           "u": "https://commons.wikimedia.org/wiki/File:Apollo_15_Lunar_Roving_Vehicle.jpg"
         },
@@ -1922,16 +1958,52 @@
           "u": "https://commons.wikimedia.org/wiki/File:PIA23372-16-BuildingMars2020Rover-AttachingHelicopter-20190828.jpg"
         },
         {
+          "l": "Wikimedia Commons — Cassini spacecraft raw uncompressed.png: render: antenna, gold body, pallets, RTGs, Huygens on the side",
+          "u": "https://commons.wikimedia.org/wiki/File:Cassini_spacecraft_raw_uncompressed.png"
+        },
+        {
+          "l": "Wikimedia Commons — Detailed Drawing of the Galileo Spacecraft.png: NASA drawing: spun and despun sections, probe, booms",
+          "u": "https://commons.wikimedia.org/wiki/File:Detailed_Drawing_of_the_Galileo_Spacecraft.png"
+        },
+        {
           "l": "Wikimedia Commons — ExoMars prototype rover: chassis, wheel legs, PanCam bar on its mast",
           "u": "https://commons.wikimedia.org/wiki/File:ExoMars_prototype_rover.jpg"
+        },
+        {
+          "l": "Wikimedia Commons — Giotto Whipple shield ESA239195.jpg: ESA photo: deck, tilted dish, gantry with camera",
+          "u": "https://commons.wikimedia.org/wiki/File:Giotto_Whipple_shield_ESA239195.jpg"
+        },
+        {
+          "l": "Wikimedia Commons — Huygens probe schematic diagram.png: Huygens shield, after cone and back cover",
+          "u": "https://commons.wikimedia.org/wiki/File:Huygens_probe_schematic_diagram.png"
         },
         {
           "l": "Wikimedia Commons — MER-2 on its lander prelaunch (PIA04849): deck, WEB, Pancam mast, Mini-TES tube, HGA",
           "u": "https://commons.wikimedia.org/wiki/File:MER-2_On_Lander_Prelaunch_PIA04849.jpg"
         },
         {
+          "l": "Wikimedia Commons — OSIRIS-REx spacecraft model.png: render: bus, arrays, dish, TAGSAM arm, capsule",
+          "u": "https://commons.wikimedia.org/wiki/File:OSIRIS-REx_spacecraft_model.png"
+        },
+        {
           "l": "Wikimedia Commons — Perseverance test rover (PIA23965): straight-cleat wheels, chassis",
           "u": "https://commons.wikimedia.org/wiki/File:Perseverance_Test_Rover_Moves_to_Mars_Yard_(PIA23965_fig1).jpg"
+        },
+        {
+          "l": "Wikimedia Commons — Philae lander (transparent bg).png: Philae: hexagonal body, tripod gear, solar cells",
+          "u": "https://commons.wikimedia.org/wiki/File:Philae_lander_(transparent_bg).png"
+        },
+        {
+          "l": "Wikimedia Commons — Rosetta - Philae close-up.jpg: ESA render of Philae on the orbiter",
+          "u": "https://commons.wikimedia.org/wiki/File:Rosetta_-_Philae_close-up.jpg"
+        },
+        {
+          "l": "Wikimedia Commons — Schéma sonde-spatiale-Giotto.png: schematic: drum, shield, dish, arches",
+          "u": "https://commons.wikimedia.org/wiki/File:Schéma_sonde-spatiale-Giotto.png"
+        },
+        {
+          "l": "Wikimedia Commons — Vega Solar System Probe Bus and Landing Apparatus.jpg: photo of the Venera-derived bus with the sphere on top",
+          "u": "https://commons.wikimedia.org/wiki/File:Vega_Solar_System_Probe_Bus_and_Landing_Apparatus.jpg"
         },
         {
           "l": "Wikimedia Commons — Zhurong rover mockup at CSTM: deck, wings, mast, dishes, ribbed wheels",

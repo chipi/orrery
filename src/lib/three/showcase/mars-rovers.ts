@@ -172,8 +172,11 @@ function buildBody(g: THREE.Group, M: Record<string, Mat>): void {
   );
 }
 
-function buildMast(g: THREE.Group, M: Record<string, Mat>): void {
-  // Remote Sensing Mast, front right of the deck (the rover's right is -x).
+function buildMast(parent: THREE.Group, M: Record<string, Mat>): void {
+  // Remote Sensing Mast, front right of the deck (the rover's right is -x). One group named
+  // 'rsm': it rode stowed through entry and was raised on Mars, so a descent can hide it.
+  const g = add(parent, new THREE.Group());
+  g.name = 'rsm';
   const mx = -0.36;
   const mz = 0.5;
   const y0 = BODY.y1;

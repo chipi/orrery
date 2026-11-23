@@ -15,6 +15,7 @@
  */
 
 import * as THREE from 'three';
+import { buildDescentShots, descentPoseAt } from '../orbital/descent-director';
 import { BoldArrow } from './bold-arrow';
 import { SeparationBurst } from './separation-burst';
 import {
@@ -151,6 +152,8 @@ export const FORCE_COLORS = {
 
 export interface DescentSceneOptions {
   aspect: number;
+  /** Trajectory length (s): the camera director cuts its shots across it. */
+  durationS?: number;
   body: DescentBody;
   /** Surface texture URL (e.g. `${base}/textures/2k_mars.jpg`). */
   bodyTextureUrl?: string;
@@ -170,6 +173,9 @@ export interface DescentSceneOptions {
 export interface DescentScene extends FlightPhaseScene<DescentState> {
   /** The EDL phase active at the last setState() — for the HUD. */
   readonly activePhaseKind: string;
+  /** `prior`: the state a moment earlier on the trajectory, from which an airless lander's
+   *  braking attitude is read (scrub-exact). */
+  setState(s: DescentState, prior?: DescentState): void;
 }
 
 /**
@@ -277,10 +283,51 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
   const rBodyRef = vehLen * 0.05; // plume scale reference
   const model = buildDescentModel(opts.siteId, body, vehLen);
   vehicle.add(model.root);
+  // Rest bounds of each flying part (in its parent's frame), for the director to frame what is
+  // actually there: the aeroshell, the craft, a sky crane climbing off the rover on its bridles.
+  const restBox = (o: THREE.Object3D): THREE.Box3 | null => {
+    model.root.updateMatrixWorld(true);
+    const inv = o.parent ? o.parent.matrixWorld.clone().invert() : new THREE.Matrix4();
+    const b = new THREE.Box3();
+    o.traverse((c) => {
+      const mesh = c as THREE.Mesh;
+      if (!mesh.isMesh || mesh.name === 'mlePlume') return;
+      for (let p: THREE.Object3D | null = mesh; p && p !== o.parent; p = p.parent)
+        if (p.userData.surfaceOnly) return;
+      mesh.geometry.computeBoundingBox();
+      b.union(mesh.geometry.boundingBox!.clone().applyMatrix4(mesh.matrixWorld).applyMatrix4(inv));
+    });
+    if (b.isEmpty()) return null;
+    // Relative to the part's own position, so its live position can be added back.
+    return b.translate(o.position.clone().negate());
+  };
+  const parts: { o: THREE.Object3D; box: THREE.Box3 }[] = [];
+  for (const o of [model.lander, model.descentStage, model.backshell, model.heatshield]) {
+    const box = restBox(o);
+    if (box) parts.push({ o, box });
+  }
+  const liveCore = (): { cy: number; r: number } => {
+    const b = new THREE.Box3();
+    for (const p of parts) {
+      if (!p.o.visible) continue;
+      // The jettisoned heat shield falls away: not part of the subject once it goes.
+      if (p.o === model.heatshield && p.o.position.y < model.heatshieldBaseY - vehLen * 0.2)
+        continue;
+      b.union(p.box.clone().translate(p.o.position));
+    }
+    if (b.isEmpty()) return { cy: vehLen * 0.3, r: vehLen * 0.62 };
+    const c = b.getCenter(new THREE.Vector3());
+    const sz = b.getSize(new THREE.Vector3());
+    return { cy: c.y, r: Math.max(sz.y, Math.hypot(sz.x, sz.z) * 0.8) * 0.55 };
+  };
 
   // Surface-only deployables (planted flag, driven-off rover, splayed petals) are
   // baked into the reused LANDED model but must NOT show while the craft is still
   // flying. Collect them once; the scene reveals them only at touchdown.
+  // How far the deployed chute reaches above its attachment (vehicle lengths): MSL's 50 m
+  // system towers about nine aeroshell lengths over the capsule.
+  const chuteSpan =
+    new THREE.Box3().setFromObject(model.parachute).max.y / vehLen - model.parachuteBaseY / vehLen;
   const surfaceOnly: THREE.Object3D[] = [];
   model.lander.traverse((o) => {
     if (o.userData?.surfaceOnly) surfaceOnly.push(o);
@@ -440,6 +487,13 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
   const landingFlipT = metOf('landing_flip');
   const LANDING_FLIP_S = 4;
   const touchdownT = metOf('touchdown');
+  const lowerT = metOf('skycrane_lower');
+  const LOWER_S = 6;
+  const FLYAWAY_S = 10;
+  const smooth01 = (x: number): number => {
+    const c = Math.min(1, Math.max(0, x));
+    return c * c * (3 - 2 * c);
+  };
   // Slow the EDL separations (item 4) so heat-shield jettison + chute-cut linger
   // as a held beat rather than a snap.
   const HS_SEP_S = 4.5;
@@ -452,61 +506,49 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
   const UNDOCK_HOLD_S = 3;
   const UNDOCK_S = 16;
 
-  // Smooth-camera convergence (mirrors the ascent scene).
-  let camS: {
-    px: number;
-    py: number;
-    pz: number;
-    tx: number;
-    ty: number;
-    tz: number;
-    fov: number;
-  } | null = null;
-  const K_POS = 0.12;
-  const K_TGT = 0.45;
-  const K_FOV = 0.12;
+  // The camera director: cuts and moves keyed to trajectory time (descent-director.ts).
+  const shots = buildDescentShots(
+    opts.durationS ?? opts.events?.find((e) => e.type === 'touchdown')?.t ?? 600,
+    opts.events ?? [],
+    opts.siteId,
+  );
   let frame = 0;
   let activePhaseKind = 'ballistic_entry';
-
-  /** Per-phase camera framing (distance / height / fov) around the lander. */
-  const shotFor = (s: DescentState): { dist: number; height: number; fov: number } => {
-    switch (s.phaseKind) {
-      case 'ballistic_entry':
-        return { dist: 9, height: 2.4, fov: 54 };
-      case 'parachute':
-        // Frame the whole tall chute stack (capsule → long lines → canopy). The
-        // look-at is raised to the stack middle below (not the default look-below).
-        return { dist: 9, height: 1.7, fov: 52 };
-      case 'aeroshell_descent':
-        return { dist: 7, height: 1.2, fov: 50 };
-      case 'powered_retro':
-        return { dist: 4.6, height: 0.9, fov: 44 };
-      case 'skycrane':
-        return { dist: 4.2, height: 0.7, fov: 42 };
-      case 'airbag_bounce':
-        return { dist: 3.6, height: 0.4, fov: 42 };
-      default:
-        return { dist: 5, height: 1, fov: 46 };
-    }
-  };
 
   // Powered-descent attitude on an airless body: the lander points its engine along its
   // thrust, which tilts from vertical by the horizontal braking it must do against the
   // vertical support it needs (gravity less the orbital relief of its horizontal speed). An
   // Apollo LM brakes almost horizontally from 1.7 km/s and pitches upright only near the
-  // ground. Derived from successive states; held across scrubs (non-sequential time).
+  // ground. From the trajectory itself when the caller passes the state a moment earlier
+  // (`prior`), so a scrub shows the attitude of the moment shown; else from successive frames
+  // (held across a jump — the 20 s-before-touchdown frame kept the braking tilt, operator
+  // 2026-11-23).
   let tiltRad = 0;
   let prevT: number | null = null;
   let prevVh = 0;
   let prevVd = 0;
   const airless = body === 'moon' || body === 'eros';
-  const setState = (s: DescentState): void => {
+  const tiltFrom = (a: DescentState, b: DescentState, dt: number): number => {
+    const vhOf = (x: DescentState) =>
+      Math.sqrt(Math.max(0, x.velocityMs * x.velocityMs - x.velDownMs * x.velDownMs));
+    const g = bodyGravity(b.altM, body);
+    const vh = vhOf(b);
+    const aH = Math.max(0, (vhOf(a) - vh) / dt);
+    const aV = Math.max(
+      0.05,
+      g - (vh * vh) / (R_BODY_M[body] + b.altM) + (a.velDownMs - b.velDownMs) / dt,
+    );
+    return Math.atan2(aH, aV);
+  };
+  const setState = (s: DescentState, prior?: DescentState): void => {
     frame++;
     activePhaseKind = s.phaseKind;
     vehicle.position.set(0, s.altKm, 0);
     const vd = s.velDownMs;
     const vh = Math.sqrt(Math.max(0, s.velocityMs * s.velocityMs - vd * vd));
-    if (airless && s.phaseKind === 'powered_retro' && s.altM > 0) {
+    if (airless && s.phaseKind === 'powered_retro' && s.altM > 0 && prior && s.t - prior.t > 0.5) {
+      tiltRad = tiltFrom(prior, s, s.t - prior.t);
+    } else if (airless && s.phaseKind === 'powered_retro' && s.altM > 0) {
       const dt = prevT == null ? 0 : s.t - prevT;
       if (dt > 0 && dt < 5) {
         const g = bodyGravity(s.altM, body);
@@ -585,6 +627,38 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
 
     // Skycrane rigging: shown only during the skycrane phase.
     model.skycraneRigging.visible = s.phaseKind === 'skycrane';
+    // MSL sky crane: the stage climbs off the rover on its bridles over LOWER_S from
+    // skycrane_lower (the rover stays on the trajectory), holds the rover at bridle length to
+    // touchdown, then cuts the bridles and flies away (FLYAWAY_S).
+    const ds = model.descentStage.userData as {
+      restY?: number;
+      bridleLength?: number;
+      plumes?: THREE.Object3D[];
+    };
+    if (ds.restY != null && ds.bridleLength != null) {
+      const lp = smooth01(lowerT == null ? 0 : (s.t - lowerT) / LOWER_S);
+      const gap = ds.bridleLength * lp;
+      const fa = touchdownT == null ? 0 : Math.max(0, (s.t - touchdownT) / FLYAWAY_S);
+      model.descentStage.position.set(
+        fa * fa * vehLen * 6,
+        ds.restY + gap + fa * fa * vehLen * 4,
+        0,
+      );
+      model.descentStage.rotation.z = -Math.min(1, fa * 3) * 0.6;
+      model.descentStage.visible = landerShown && fa < 1;
+      model.skycraneRigging.scale.y = Math.max(
+        1e-4,
+        ds.restY - model.skycraneRigging.position.y + gap,
+      );
+      model.skycraneRigging.visible = lp > 0 && fa === 0;
+      const firing =
+        (s.phaseKind === 'powered_retro' || s.phaseKind === 'skycrane' || (fa > 0 && fa < 1)) &&
+        landerShown;
+      for (const p of ds.plumes ?? []) {
+        p.visible = firing;
+        p.scale.y = 1 + 0.1 * Math.sin(frame * 0.7 + p.id);
+      }
+    }
 
     // Apollo CSM undock beat: the mothership starts docked above the LM, then
     // separates — pulling up + drifting away — over the opening of the descent
@@ -663,45 +737,21 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
       dust.scale.setScalar(overSea ? 0.4 + 0.5 * amt : 0.5 + 1.3 * amt);
     }
 
-    // Camera: compose a per-phase target pose, ease the live camera toward it.
-    // The Earth entry FLIP gets its own tight beat so the tip-first → shield-first
-    // rotation is actually legible (otherwise it happens while the capsule is a
-    // distant speck at the entry interface).
-    let sh = shotFor(s);
-    if (body === 'earth' && s.phaseKind === 'ballistic_entry' && entryFlip < 0.985) {
-      sh = { dist: 3.4, height: 0.5, fov: 38 };
+    // The directed camera: the subject is the craft, plus the chute or the departing CSM when
+    // they are out.
+    const core = liveCore();
+    let whole = core;
+    if (model.parachute.visible) {
+      const top = model.parachute.position.y + chuteSpan * vehLen;
+      whole = { cy: top / 2, r: top / 2 + vehLen * 0.4 };
+    } else if (undocking) {
+      const o = model.orbiter.position;
+      whole = { cy: (o.y + vehLen) / 2, r: o.length() / 2 + vehLen * 1.2 };
     }
-    if (undocking) {
-      sh = { dist: 5.2, height: 1.6, fov: 42 }; // frame both craft through the undock
-    }
-    const angle = 0.6 + frame * 0.0006; // gentle cinematic drift
-    const dist = sh.dist * vehLen;
-    const px = Math.sin(angle) * dist;
-    const py = s.altKm + sh.height * vehLen;
-    const pz = Math.cos(angle) * dist;
-    // Look slightly below the lander so the surface stays in frame as it nears.
-    // Exception: under parachute the stack towers ~3·vehLen above the capsule, so
-    // look UP at its middle instead — otherwise the canopy is cut off at frame top.
-    const tx = 0;
-    const ty =
-      s.phaseKind === 'parachute'
-        ? s.altKm + 1.7 * vehLen
-        : s.altKm - Math.min(s.altKm, dist * 0.25);
-    const tz = 0;
-    if (!camS) {
-      camS = { px, py, pz, tx, ty, tz, fov: sh.fov };
-    } else {
-      camS.px += (px - camS.px) * K_POS;
-      camS.py += (py - camS.py) * K_POS;
-      camS.pz += (pz - camS.pz) * K_POS;
-      camS.tx += (tx - camS.tx) * K_TGT;
-      camS.ty += (ty - camS.ty) * K_TGT;
-      camS.tz += (tz - camS.tz) * K_TGT;
-      camS.fov += (sh.fov - camS.fov) * K_FOV;
-    }
-    camera.position.set(camS.px, camS.py, camS.pz);
-    camera.lookAt(camS.tx, camS.ty, camS.tz);
-    camera.fov = camS.fov;
+    const pose = descentPoseAt(shots, s.t, { core, whole }, s.altKm, camera.aspect);
+    camera.position.set(pose.pos[0], s.altKm + pose.pos[1], pose.pos[2]);
+    camera.lookAt(pose.target[0], s.altKm + pose.target[1], pose.target[2]);
+    camera.fov = pose.fov;
     camera.updateProjectionMatrix();
 
     lastState = s;
@@ -753,7 +803,6 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
     plume.visible = false;
     plasma.visible = false;
     dust.visible = false;
-    camS = null;
   };
   const dispose = (): void => {
     bodyTex?.dispose();
@@ -776,9 +825,8 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
     },
     setForcesVisible,
     setForceVisible,
-    snapCamera: () => {
-      camS = null;
-    },
+    // The directed camera has no easing to snap: every pose is a function of time.
+    snapCamera: () => {},
     reset,
     dispose,
   };

@@ -231,6 +231,7 @@
       vehicleLengthKm: DESCENT_VEHICLE_LENGTH_KM,
       siteId: mission.siteId,
       events: summary.events,
+      durationS: summary.states[summary.states.length - 1]?.t,
       peakHeatFlux: summary.peakHeat.flux,
     });
     // Hero IBL only on capable GPUs (high+); software-GL / weak renderers skip
@@ -245,8 +246,11 @@
     );
 
     const applyState = () => {
-      const s = sampleDescentAt(summary.states, warpDescentTime(t));
-      sceneObj!.setState(s);
+      const tt = warpDescentTime(t);
+      const s = sampleDescentAt(summary.states, tt);
+      // The state 2 s earlier: the lander's attitude comes from the trajectory, not the frame
+      // before (a scrub kept the old tilt).
+      sceneObj!.setState(s, tt > 2 ? sampleDescentAt(summary.states, tt - 2) : undefined);
       liveState = s;
     };
     applyState();
@@ -292,6 +296,10 @@
   data-testid="descent-scene"
 >
   <div class="stage" bind:this={container}></div>
+  <!-- HUD legibility scrim, as on the launch: the dim mono labels washed out against the bright
+       Mars sky and the sunlit ground (operator 2026-11-23). Here always on — a descent ends on a
+       bright surface on every body. -->
+  <div class="hud-scrim" aria-hidden="true"></div>
 
   {#if !flashing && !hudHidden}
     <!-- 2026 HUD frame — thin blue corner brackets, no panel. -->
@@ -508,6 +516,33 @@
   .timeline,
   .readouts {
     transition: opacity 0.3s ease;
+  }
+  /* Same bands as LaunchScene's scrim: behind the telemetry (left), the dossier (right) and the
+     title + clock (top), clear in the middle where the craft is. */
+  .hud-scrim {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background:
+      linear-gradient(
+        90deg,
+        rgba(3, 6, 14, 0.72) 0px,
+        rgba(3, 6, 14, 0.5) 290px,
+        transparent 440px
+      ),
+      linear-gradient(
+        270deg,
+        rgba(3, 6, 14, 0.72) 0px,
+        rgba(3, 6, 14, 0.5) 290px,
+        transparent 440px
+      ),
+      linear-gradient(180deg, rgba(3, 6, 14, 0.55) 0px, transparent 150px),
+      radial-gradient(ellipse 130% 90% at 50% 42%, transparent 46%, rgba(3, 6, 14, 0.62) 100%);
+    transition: opacity 0.4s linear;
+  }
+  .descent.hud-hidden .hud-scrim {
+    opacity: 0;
   }
   .descent.hud-hidden .header,
   .descent.hud-hidden .clock,

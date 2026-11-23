@@ -1,0 +1,205 @@
+/**
+ * The descent's camera director (operator 2026-11-23: "operate the camera more here as on
+ * launch … more angles … big frames, rotate around, over and under, zoom in/out").
+ *
+ * A shot list cut on the descent's own beats (entry flip, chute, heat-shield and backshell
+ * separation, sky crane, touchdown) and filled between them with varied shots, each a pure
+ * function of trajectory time so a scrub shows exactly what play shows. Poses are relative to
+ * the craft (at the origin, +y up, the surface at y = −altKm), sized from the subject's radius
+ * so a 7 m LM and a 50 m parachute both fill the frame as the shot intends.
+ */
+import { fnv1a32, mulberry32 } from './ascent-director';
+
+export type DescentShotKind =
+  | 'wide' // big frame: the craft small over the horizon
+  | 'orbit' // a fast arc around the craft
+  | 'under' // from below, looking up the plume or the lines
+  | 'over' // from above, the surface beneath
+  | 'pushIn' // zoom from wide to close
+  | 'pullOut' // zoom from close to wide
+  | 'close' // tight on the hardware
+  | 'ground'; // a tracking telephoto from the surface (the last seconds, touchdown)
+
+export interface DescentShot {
+  kind: DescentShotKind;
+  t0: number;
+  t1: number;
+  /** Azimuth the shot starts from (rad), and the direction it sweeps (±1). */
+  az: number;
+  dir: 1 | -1;
+}
+
+/** What to frame, relative to the craft's origin (scene units). `core`: the craft itself;
+ *  `whole`: everything worth keeping in a wide frame (a chute, a departing CSM). */
+export interface DescentSubject {
+  core: { cy: number; r: number };
+  whole: { cy: number; r: number };
+}
+
+export interface DescentPose {
+  pos: [number, number, number];
+  target: [number, number, number];
+  fov: number;
+}
+
+/** Beats that start their own shot, and the shot that suits each. */
+const BEAT_SHOT: Record<string, DescentShotKind> = {
+  entry_flip: 'close',
+  parachute_deploy: 'under',
+  heatshield_sep: 'orbit',
+  backshell_sep: 'pullOut',
+  retro_ignition: 'under',
+  skycrane_lower: 'close',
+  airbag_deploy: 'orbit',
+  landing_flip: 'orbit',
+};
+const FILL: DescentShotKind[] = ['wide', 'orbit', 'under', 'over', 'pushIn', 'pullOut', 'close'];
+/** The lit side: azimuths near this keep the sun behind the camera. */
+const LIT_AZ = 0.6;
+/** The last seconds before touchdown are filmed from the ground. */
+export const GROUND_SHOT_S = 18;
+
+/**
+ * The shot list for a descent `duration` s long with its beats at `events` (trajectory time).
+ * Gaps between beats are cut into shots of about `duration / 26` s (12–30 s).
+ */
+export function buildDescentShots(
+  duration: number,
+  events: { type: string; t: number }[],
+  seedKey: string,
+): DescentShot[] {
+  const r = mulberry32(fnv1a32(`descent:${seedKey}`));
+  const touchdown = events.find((e) => e.type === 'touchdown')?.t ?? duration;
+  const groundT = Math.max(0, touchdown - GROUND_SHOT_S);
+  const anchors = events
+    .filter((e) => BEAT_SHOT[e.type] && e.t > 0 && e.t < groundT - 4)
+    .sort((a, b) => a.t - b.t);
+  const len = Math.min(30, Math.max(12, duration / 26));
+  const shots: DescentShot[] = [];
+  let dir: 1 | -1 = r() < 0.5 ? 1 : -1;
+  const push = (kind: DescentShotKind, t0: number, t1: number): void => {
+    dir = (dir === 1 ? -1 : 1) as 1 | -1;
+    shots.push({ kind, t0, t1, az: LIT_AZ + (r() * 2 - 1) * 1.1, dir });
+  };
+  const fill = (a: number, b: number, first?: DescentShotKind): void => {
+    const n = Math.max(1, Math.round((b - a) / len));
+    for (let i = 0; i < n; i++) {
+      let kind = i === 0 && first ? first : FILL[Math.floor(r() * FILL.length)];
+      const prev = shots[shots.length - 1]?.kind;
+      if (kind === prev) kind = FILL[(FILL.indexOf(kind) + 1 + Math.floor(r() * 3)) % FILL.length];
+      push(kind, a + ((b - a) * i) / n, a + ((b - a) * (i + 1)) / n);
+    }
+  };
+  let t = 0;
+  let first: DescentShotKind | undefined = 'pushIn';
+  for (const e of anchors) {
+    if (e.t - t > 3) fill(t, e.t, first);
+    else if (shots.length) shots[shots.length - 1].t1 = e.t;
+    first = BEAT_SHOT[e.type];
+    t = e.t;
+  }
+  if (groundT - t > 3) fill(t, groundT, first);
+  else if (shots.length) shots[shots.length - 1].t1 = groundT;
+  push('ground', groundT, touchdown);
+  // After touchdown: a slow orbit of the landed craft.
+  push('orbit', touchdown, Infinity);
+  return shots;
+}
+
+export function shotAt(shots: DescentShot[], t: number): DescentShot {
+  for (let i = shots.length - 1; i >= 0; i--) if (t >= shots[i].t0) return shots[i];
+  return shots[0];
+}
+
+const smooth = (x: number): number => {
+  const c = Math.min(1, Math.max(0, x));
+  return c * c * (3 - 2 * c);
+};
+const lerp = (a: number, b: number, u: number): number => a + (b - a) * u;
+const DEG = Math.PI / 180;
+
+/**
+ * The camera at trajectory time `t`. `altKm`: the craft's height above the surface (scene
+ * units); `aspect`: width / height, so a phone's narrow frame still fits the subject.
+ */
+export function descentPoseAt(
+  shots: DescentShot[],
+  t: number,
+  subject: DescentSubject,
+  altKm: number,
+  aspect: number,
+): DescentPose {
+  const sh = shotAt(shots, t);
+  // The open-ended landed shot circles slowly at a fixed height.
+  const open = !Number.isFinite(sh.t1);
+  const p = open ? 0.5 : smooth((t - sh.t0) / (sh.t1 - sh.t0));
+  const drift = open ? (t - sh.t0) * 0.03 : 0;
+  const halfTan = (fov: number): number => Math.tan((fov * DEG) / 2) * Math.min(1, aspect);
+  /** Distance at which radius `r` fills `fill` of the frame's smaller dimension. */
+  const distFor = (r: number, fill: number, fov: number): number => r / (fill * halfTan(fov));
+  const floor = -altKm + subject.core.r * 0.15; // never below the ground
+
+  if (sh.kind === 'ground') {
+    // Fixed on the surface, a few craft-lengths off, tracking the craft with a long lens.
+    const d = subject.core.r * 9;
+    const x = Math.sin(sh.az) * d;
+    const z = Math.cos(sh.az) * d;
+    const pos: [number, number, number] = [x, floor + subject.core.r * 0.25, z];
+    const target: [number, number, number] = [0, subject.core.cy, 0];
+    const range = Math.hypot(x, target[1] - pos[1], z);
+    const fov = Math.min(55, Math.max(6, (2 * Math.atan(subject.core.r / (0.4 * range))) / DEG));
+    return { pos, target, fov: fov / Math.min(1, Math.max(0.5, aspect)) ** 0.5 };
+  }
+
+  type Frame = { fill: number; el: number; az: number; fov: number; who: 'core' | 'whole' };
+  const a0 = sh.az + sh.dir * drift;
+  const sw = sh.dir;
+  let f: Frame;
+  switch (sh.kind) {
+    case 'wide':
+      f = { fill: 0.16, el: lerp(6, 11, p), az: a0 + sw * 0.35 * p, fov: 40, who: 'whole' };
+      break;
+    case 'orbit':
+      f = { fill: 0.42, el: lerp(10, 22, p), az: a0 + sw * 2.0 * p, fov: 42, who: 'whole' };
+      break;
+    case 'under':
+      f = { fill: 0.4, el: lerp(-58, -38, p), az: a0 + sw * 0.7 * p, fov: 58, who: 'core' };
+      break;
+    case 'over':
+      f = { fill: 0.34, el: lerp(68, 48, p), az: a0 + sw * 0.6 * p, fov: 46, who: 'whole' };
+      break;
+    case 'pushIn':
+      f = {
+        fill: lerp(0.24, 0.6, p),
+        el: lerp(14, 6, p),
+        az: a0 + sw * 0.3 * p,
+        fov: 40,
+        who: 'whole',
+      };
+      break;
+    case 'pullOut':
+      f = {
+        fill: lerp(0.65, 0.13, p),
+        el: lerp(4, 16, p),
+        az: a0 + sw * 0.4 * p,
+        fov: 40,
+        who: 'whole',
+      };
+      break;
+    default: // close
+      f = { fill: 0.85, el: lerp(2, 9, p), az: a0 + sw * 0.5 * p, fov: 32, who: 'core' };
+  }
+  const subj = subject[f.who];
+  const d = distFor(subj.r, f.fill, f.fov);
+  // From below the craft looks up the lines toward the canopy: aim a little above the craft.
+  const ty = sh.kind === 'under' ? lerp(subject.core.cy, subject.whole.cy, 0.35) : subj.cy;
+  const el = f.el * DEG;
+  let y = ty + Math.sin(el) * d;
+  // Near the ground a shot from below becomes one from just above the surface.
+  y = Math.max(y, floor);
+  return {
+    pos: [Math.sin(f.az) * Math.cos(el) * d, y, Math.cos(f.az) * Math.cos(el) * d],
+    target: [0, ty, 0],
+    fov: f.fov,
+  };
+}

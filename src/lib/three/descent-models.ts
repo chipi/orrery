@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { buildMslDescentStage } from './showcase/msl-edl';
 import type { DescentBody } from '$lib/physics/descent/descent-physics';
 import { buildMoonLanderModel } from '../moon-lander-models';
 import { buildMarsLanderModel } from '../mars-lander-models';
@@ -6,6 +7,7 @@ import { buildCapsuleById } from './capsule-models';
 import { getEarthOrbitCoast } from '../orbital/earth-orbit-registry';
 import { buildLanderCruiseCraft } from './lander-cruise-models';
 import { buildInterplanetarySpacecraft } from './interplanetary-spacecraft-models';
+import { detailedDescentLander, dockedApolloCsm } from './descent-landers';
 
 /**
  * Per-mission procedural EDL-stack models for /fly's descent act (RFC-034 §9) —
@@ -190,6 +192,75 @@ function suspensionLines(
 
 /** A single centred parachute (canopy + fine lines to a knot at `mountY`) —
  *  used by the planetary aeroshell stacks (Mars / Venus / Titan / Jupiter). */
+/**
+ * A disk-gap-band parachute at its real size against the aeroshell (operator 2026-11-23: the
+ * chute was "too tiny, too close"). Origin at the riser attachment on the backshell; the disk,
+ * the open gap and the band rise above it on `lines` suspension lines. Sizes in metres, drawn
+ * at `k` scene units per metre. Gores alternate white and orange in fours, as on the MSL test
+ * canopies (NASA PIA11993).
+ */
+function dgbParachute(
+  k: number,
+  o: { diameterM: number; totalM: number; lines: number },
+): THREE.Group {
+  const g = new THREE.Group();
+  const R = o.diameterM / 2;
+  const bandH = o.diameterM * 0.121; // DGB band ≈ 12 % of the nominal diameter
+  const gapH = o.diameterM * 0.042;
+  const capRs = R * 1.12; // the inflated disk: a spherical cap
+  const capTheta = Math.asin(R / capRs);
+  const diskH = capRs * (1 - Math.cos(capTheta));
+  const bandBot = o.totalM - diskH - gapH - bandH;
+  const white = new THREE.Color(0xf2efe8);
+  const orange = new THREE.Color(0xd2642a);
+  const goreColour = (x: number, z: number): THREE.Color => {
+    const a = (Math.atan2(z, x) + Math.PI * 2) % (Math.PI * 2);
+    const gore = Math.floor((a / (Math.PI * 2)) * o.lines);
+    return Math.floor(gore / 4) % 2 === 0 ? white : orange;
+  };
+  const paint = (geo: THREE.BufferGeometry): THREE.BufferGeometry => {
+    const flat = geo.toNonIndexed();
+    const p = flat.attributes.position;
+    const c = new Float32Array(p.count * 3);
+    for (let i = 0; i < p.count; i += 3) {
+      const x = (p.getX(i) + p.getX(i + 1) + p.getX(i + 2)) / 3;
+      const z = (p.getZ(i) + p.getZ(i + 1) + p.getZ(i + 2)) / 3;
+      const col = goreColour(x, z);
+      for (let j = 0; j < 3; j++) col.toArray(c, (i + j) * 3);
+    }
+    flat.setAttribute('color', new THREE.BufferAttribute(c, 3));
+    flat.computeVertexNormals();
+    return flat;
+  };
+  const cloth = new THREE.MeshStandardMaterial({
+    vertexColors: true,
+    roughness: 0.85,
+    metalness: 0,
+    side: THREE.DoubleSide,
+  });
+  const disk = new THREE.Mesh(
+    paint(new THREE.SphereGeometry(capRs, o.lines, 10, 0, Math.PI * 2, 0, capTheta)),
+    cloth,
+  );
+  disk.position.y = o.totalM - capRs;
+  g.add(disk);
+  const band = new THREE.Mesh(
+    paint(new THREE.CylinderGeometry(R * 0.97, R * 0.9, bandH, o.lines, 2, true)),
+    cloth,
+  );
+  band.position.y = bandBot + bandH / 2;
+  g.add(band);
+  // Suspension lines from the band's skirt to the riser, then the riser to the backshell.
+  const riserTop = new THREE.Vector3(0, o.totalM * 0.06, 0);
+  g.add(suspensionLines(R * 0.9, new THREE.Vector3(0, bandBot, 0), riserTop, o.lines));
+  const riser = new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(), riserTop]);
+  g.add(new THREE.Line(riser, new THREE.LineBasicMaterial({ color: 0xd9dde2 })));
+  g.scale.setScalar(k);
+  const out = new THREE.Group();
+  out.add(g);
+  return out;
+}
+
 function parachuteCanopy(radius: number, p: Palette, mountY: number): THREE.Group {
   const g = new THREE.Group();
   g.add(canopyDome(radius, p));
@@ -357,7 +428,10 @@ const LUNAR_RETURN_CAPSULE: Record<string, string> = { apollo8: 'apollo-cm' };
 
 /** Resolve the terminal landed craft for a mission (the reused surface model). */
 function resolveLander(siteId: string, body: DescentBody): THREE.Group {
-  if (body === 'moon') return buildMoonLanderModel(siteId, 'lander', '#c9ccd2');
+  if (body === 'moon') {
+    const tier0 = buildMoonLanderModel(siteId, 'lander', '#c9ccd2');
+    return detailedDescentLander(siteId, tier0) ?? tier0;
+  }
   if (body === 'venus') return buildVenusDescentLander();
   if (body === 'itokawa' || body === 'ryugu' || body === 'bennu' || body === 'eros') {
     // The mission's own craft (Hayabusa, Hayabusa2, NEAR, OSIRIS-REx), at the generic sampler's size.
@@ -388,7 +462,8 @@ function resolveLander(siteId: string, body: DescentBody): THREE.Group {
     cap.userData.capsuleId = capsuleId; // read by buildEarthCapsuleStack for chute count
     return cap;
   }
-  return buildMarsLanderModel(siteId, 'lander', undefined, '#d0a884');
+  const tier0 = buildMarsLanderModel(siteId, 'lander', undefined, '#d0a884');
+  return detailedDescentLander(siteId, tier0) ?? tier0;
 }
 
 /** Common empty-parts scaffold so every builder returns a full DescentModel. */
@@ -433,11 +508,18 @@ function buildLunarStack(lander: THREE.Group, vehLen: number): DescentModel {
   lander.position.y = 0;
   m.root.add(lander);
 
-  // A downward retro bell + plume anchor beneath the descent stage.
-  m.retro = retroNozzles(1, 0, vehLen * 0.14, p.eng);
-  m.retro.position.y = -vehLen * 0.04;
+  // A downward retro bell + plume anchor beneath the descent stage — or, for a detailed lander
+  // with its own engine bell, the plume from that bell's exit.
+  const exitY = lander.userData.engineExitY as number | undefined;
+  if (exitY != null) {
+    m.retro = new THREE.Group();
+    m.retro.position.y = exitY;
+  } else {
+    m.retro = retroNozzles(1, 0, vehLen * 0.14, p.eng);
+    m.retro.position.y = -vehLen * 0.04;
+  }
   m.root.add(m.retro);
-  m.retroPlumeAnchor.position.y = -vehLen * 0.14;
+  m.retroPlumeAnchor.position.y = exitY ?? -vehLen * 0.14;
   m.root.add(m.retroPlumeAnchor);
   return m;
 }
@@ -479,6 +561,14 @@ function buildApolloCSM(vehLen: number): THREE.Group {
  *  at the start of the descent (the scene animates it pulling away). */
 function buildApolloLunarStack(lander: THREE.Group, vehLen: number): DescentModel {
   const m = buildLunarStack(lander, vehLen);
+  const dockY = lander.userData.dockY as number | undefined;
+  const k = lander.userData.metresToScene as number | undefined;
+  if (dockY != null && k != null) {
+    // The detailed CSM, at the LM's own scale, docked on its tunnel.
+    m.orbiter.add(dockedApolloCsm(dockY, k));
+    m.root.add(m.orbiter);
+    return m;
+  }
   const csm = buildApolloCSM(vehLen);
   // Docked above the LM ascent stage via a short docking tunnel (a clear gap so
   // the CSM reads as a separate craft, not part of the LM).
@@ -593,53 +683,83 @@ function buildAirbagStack(lander: THREE.Group, vehLen: number): DescentModel {
 }
 
 /** Mars skycrane (Curiosity / Perseverance) — descent stage lowers the rover on tethers. */
+/** MSL's bridles: the rover hung 7.5 m below the descent stage (NASA MSL landing press kit). */
+const MSL_BRIDLE_M = 7.5;
+
+/** Top of what flies (scene units, in the parent's frame): surface-only parts left out. */
+function flyingTop(o: THREE.Object3D): number {
+  o.updateMatrixWorld(true);
+  const inv = o.parent ? o.parent.matrixWorld.clone().invert() : new THREE.Matrix4();
+  let top = -Infinity;
+  o.traverse((c) => {
+    const mesh = c as THREE.Mesh;
+    if (!mesh.isMesh) return;
+    for (let p: THREE.Object3D | null = mesh; p; p = p.parent) if (p.userData.surfaceOnly) return;
+    mesh.geometry.computeBoundingBox();
+    const b = mesh.geometry.boundingBox!.clone().applyMatrix4(mesh.matrixWorld).applyMatrix4(inv);
+    top = Math.max(top, b.max.y);
+  });
+  return Number.isFinite(top) ? top : 0;
+}
+
+function collectNamed(root: THREE.Object3D, name: string): THREE.Object3D[] {
+  const out: THREE.Object3D[] = [];
+  root.traverse((o) => void (o.name === name && out.push(o)));
+  return out;
+}
+
 function buildSkycraneStack(lander: THREE.Group, vehLen: number): DescentModel {
   const p = palette();
   const m = scaffold(lander);
   addAeroshell(m, p, vehLen);
 
-  m.parachuteBaseY = vehLen * 0.95;
-  m.parachute = parachuteCanopy(vehLen * 0.62, p, -vehLen * 0.9);
+  // MSL's chute: one 21.35 m disk-gap-band, 80 lines, over 50 m long, on a 4.5 m aeroshell
+  // (NASA NTRS 20130012763; JPL PIA16813). Hung from the backshell's top.
+  const kChute = (vehLen * 0.84) / 4.5; // the aeroshell is drawn 0.84 vehLen across
+  m.parachuteBaseY = vehLen * 0.47;
+  m.parachute = dgbParachute(kChute, { diameterM: 21.35, totalM: 50, lines: 80 });
   m.parachute.position.y = m.parachuteBaseY;
   m.root.add(m.parachute);
 
-  // Skycrane descent stage: a platform with 8 throttleable nozzles.
-  m.descentStage = new THREE.Group();
-  const deck = new THREE.Mesh(
-    new THREE.BoxGeometry(vehLen * 0.34, vehLen * 0.09, vehLen * 0.34),
-    p.metal,
-  );
-  m.descentStage.add(deck);
-  m.retro = retroNozzles(8, vehLen * 0.15, vehLen * 0.08, p.eng);
-  m.retro.position.y = -vehLen * 0.05;
-  m.descentStage.add(m.retro);
-  m.descentStage.position.y = vehLen * 0.05;
-  m.root.add(m.descentStage);
-
-  // Rover slung below the deck on four tethers (extended by the scene at lower).
+  // The rover rides tucked under the MSL descent stage (showcase/msl-edl.ts), at the rover's
+  // own metre scale; at skycrane_lower the scene lowers it 7.5 m on three bridles, and after
+  // touchdown the stage flies away. The stage's eight canted engines carry their own plumes,
+  // so the central retro plume is not used (it fired through the rover).
   m.landerMountY = -vehLen * 0.28;
   lander.position.y = m.landerMountY;
   m.root.add(lander);
-  const tetherMat = new THREE.LineBasicMaterial({ color: 0xb7bcc4 });
+  const k = (lander.userData.metresToScene as number | undefined) ?? (vehLen * 0.34) / 3.2;
+  const roverTop = flyingTop(lander);
+  m.descentStage = new THREE.Group();
+  const stage = buildMslDescentStage();
+  stage.scale.setScalar(k);
+  m.descentStage.add(stage);
+  m.descentStage.position.y = roverTop + 0.04 * k;
+  m.descentStage.userData.restY = m.descentStage.position.y;
+  m.descentStage.userData.bridleLength = MSL_BRIDLE_M * k;
+  m.descentStage.userData.plumes = collectNamed(stage, 'mlePlume');
+  m.root.add(m.descentStage);
+  m.retro = new THREE.Group();
+
+  // Three bridles and the umbilical, from the rover's deck to the bridle-umbilical device; the
+  // scene stretches them (scale.y = the gap) as the rover is lowered.
   const tg = new THREE.BufferGeometry();
   const tp: number[] = [];
-  for (let i = 0; i < 4; i++) {
-    const a = (i / 4) * Math.PI * 2 + Math.PI / 4;
-    tp.push(
-      Math.cos(a) * vehLen * 0.12,
-      0,
-      Math.sin(a) * vehLen * 0.12,
-      Math.cos(a) * vehLen * 0.08,
-      m.landerMountY,
-      Math.sin(a) * vehLen * 0.08,
-    );
+  for (const [x, z] of [
+    [0.45, 0.55],
+    [-0.45, 0.55],
+    [0, -0.6],
+    [0.1, 0],
+  ]) {
+    tp.push(x * k, 0, z * k, 0, 1, 0);
   }
   tg.setAttribute('position', new THREE.Float32BufferAttribute(tp, 3));
-  m.skycraneRigging.add(new THREE.LineSegments(tg, tetherMat));
+  m.skycraneRigging.add(
+    new THREE.LineSegments(tg, new THREE.LineBasicMaterial({ color: 0xd4d6da })),
+  );
+  m.skycraneRigging.position.y = roverTop;
+  m.skycraneRigging.scale.y = 0.04 * k;
   m.root.add(m.skycraneRigging);
-
-  m.retroPlumeAnchor.position.y = -vehLen * 0.1;
-  m.descentStage.add(m.retroPlumeAnchor);
   return m;
 }
 

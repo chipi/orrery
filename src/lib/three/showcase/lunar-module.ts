@@ -449,6 +449,10 @@ export function buildApolloLunarModule(): THREE.Group {
   g.position.y = -box3.min.y * g.scale.y;
   const out = new THREE.Group();
   out.add(g);
+  // For a descent: the descent engine's exit plane (the plume starts there) and the top of the
+  // docking tunnel (the CSM docks there), in the model's metres.
+  out.userData.engineExitY = (DESC_BOT - 0.62) * g.scale.y + g.position.y;
+  out.userData.dockY = (ASC_BASE + 2.82) * g.scale.y + g.position.y;
   return out;
 }
 

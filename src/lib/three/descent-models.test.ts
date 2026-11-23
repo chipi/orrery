@@ -16,8 +16,29 @@ describe('buildDescentModel', () => {
   it('lunar stack (Apollo 11) has a retro + lander but no parachute', () => {
     const m = buildDescentModel('apollo11', 'moon', 1);
     expect(m.lander.children.length).toBeGreaterThan(0);
-    expect(m.retro.children.length).toBeGreaterThan(0);
+    // The detailed LM brings its own descent engine: the plume starts at its bell's exit, below
+    // the descent stage and above the footpads.
+    expect(m.lander.userData.engineExitY).toBeGreaterThan(0);
+    expect(m.retroPlumeAnchor.position.y).toBe(m.lander.userData.engineExitY);
     expect(m.parachute.children.length).toBe(0); // vacuum — no chute
+  });
+
+  it('Apollo flies the central models: the detailed LM, and the detailed CSM docked on it', () => {
+    const m = buildDescentModel('apollo11', 'moon', 1);
+    let meshes = 0;
+    m.lander.traverse((o) => void ((o as THREE.Mesh).isMesh && meshes++));
+    expect(meshes).toBeGreaterThan(150); // the Tier 0 silhouette had about 20
+    const lm = new THREE.Box3().setFromObject(m.lander.children[0]); // the LM, not its flag
+    const csm = new THREE.Box3().setFromObject(m.orbiter);
+    expect(csm.min.y).toBeCloseTo(m.lander.userData.dockY, 2); // probe on the drogue
+    // Real ratio: the CSM (11 m) is about 1.6 times the LM's height (7.04 m).
+    expect((csm.max.y - csm.min.y) / (lm.max.y - lm.min.y)).toBeCloseTo(11 / 7.04, 1);
+  });
+
+  it('Curiosity rides the central rover, its mast stowed until touchdown', () => {
+    const m = buildDescentModel('curiosity', 'mars', 1);
+    const rsm = m.lander.getObjectByName('rsm');
+    expect(rsm?.userData.surfaceOnly).toBe(true);
   });
 
   it('airbag stack (Pathfinder) carries a hidden airbag cluster', () => {

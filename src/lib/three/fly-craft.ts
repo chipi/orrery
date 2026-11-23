@@ -77,6 +77,15 @@ const FLY_CRAFT: Record<string, readonly [string, string]> = {
   'venera-13': ['probes', 'venera-13'],
   'vega-1': ['probes', 'vega-1'],
   'vega-2': ['probes', 'vega-2'],
+  // Scale-out batch 7: the outer-planet craft.
+  'voyager-1': ['outer-probes', 'voyager-1'],
+  'voyager-2': ['outer-probes', 'voyager-2'],
+  'pioneer-10': ['outer-probes', 'pioneer-10'],
+  'pioneer-11': ['outer-probes', 'pioneer-11'],
+  juno: ['outer-probes', 'juno'],
+  juice: ['outer-probes', 'juice'],
+  dawn: ['outer-probes', 'dawn'],
+  ulysses: ['outer-probes', 'ulysses'],
   // Scale-out batch 3: the classic crew capsules in Earth orbit.
   'freedom-7': ['capsules-classic', 'mercury-capsule'],
   'liberty-bell-7': ['capsules-classic', 'mercury-capsule'],

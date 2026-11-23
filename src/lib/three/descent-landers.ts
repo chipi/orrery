@@ -11,6 +11,7 @@ import { SHOWCASE as LUNAR_WEST } from './showcase/lunar-landers-west';
 import { SHOWCASE as MARS_LANDERS, buildPathfinderLander } from './showcase/mars-landers';
 import { SHOWCASE as ROVERS } from './showcase/rovers';
 import { SHOWCASE as CLASSIC } from './showcase/capsules-classic';
+import { SHOWCASE as COMMERCIAL } from './showcase/capsules-commercial';
 import {
   SHOWCASE as PROBES,
   buildGalileoProbe,
@@ -235,6 +236,7 @@ const CAPSULE_MODEL: Record<string, () => THREE.Group> = {
   soyuz: () => CLASSIC['soyuz-7k-ok'].build(),
   'apollo-cm': () => FREIGHTERS['apollo-csm-block-ii'].build(),
   shenzhou: () => FREIGHTERS.shenzhou.build(),
+  dragon: () => COMMERCIAL['crew-dragon'].build(),
 };
 
 /**

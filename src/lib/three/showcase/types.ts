@@ -9,7 +9,9 @@
  * - `build()` returns the craft in **metres**, upright as it stands on its launcher (nose /
  *   docking end up), base on y = 0, centred on x = 0, z = 0, front facing +z.
  * - the drawn overall height equals `heightM`, which must equal the fleet entry's
- *   `specs.length_m` (or `height_m`) — the line-up checks it.
+ *   `specs.length_m` (or `height_m`) — the line-up checks it. With no published height, the
+ *   fleet entry carries none (its specs are shown as facts) and `heightEstimate` says how
+ *   `heightM` was judged; the line-up then sizes the craft by `heightM`.
  * - `MeshStandardMaterial` only, no textures (procedural detail: panel lines, radiators,
  *   insulation colours, windows, thrusters, docking hardware, antennas, solar arrays).
  * - `refs`: the sources the shape and dimensions were taken from (URL + what it gave).
@@ -26,6 +28,9 @@ export interface ShowcaseModel {
   build: () => THREE.Group;
   /** Overall height of the drawn craft, metres (= fleet specs length/height). */
   heightM: number;
+  /** Set when no published height exists: how `heightM` was estimated (e.g. "scaled from
+   *  photos against the 2.0 m ascent stage"). */
+  heightEstimate?: string;
   /** Max diameter of the main body, metres (excluding wings and arrays). */
   diameterM: number;
   refs: ShowcaseRef[];

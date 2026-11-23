@@ -175,7 +175,9 @@ function sizeOf(kind: LineupKind, e: LineupEntry): number | null {
   const s = e.specs ?? {};
   const key = SHOWCASE[e.id] ? 'length_m' : (SPACECRAFT_MODELS[e.id]?.size ?? 'length_m');
   const v = kind === 'launchers' ? s.height_m : (s[key] ?? s.height_m);
-  return typeof v === 'number' && v > 0 ? v : null;
+  if (typeof v === 'number' && v > 0) return v;
+  // No published height: a showcase model's own estimate.
+  return SHOWCASE[e.id]?.heightEstimate ? SHOWCASE[e.id].heightM : null;
 }
 
 export interface LineupCatalog {

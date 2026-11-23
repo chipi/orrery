@@ -114,8 +114,11 @@ describe('showcase models', () => {
       const box = new THREE.Box3().setFromObject(g);
       // A rover stands at its height; every other craft upright at its length.
       const e = fleet.get(id);
-      const spec = e?.category === 'rover' ? e?.specs?.height_m : e?.specs?.length_m;
-      expect(typeof spec, id).toBe('number');
+      const sourced = e?.category === 'rover' ? e?.specs?.height_m : e?.specs?.length_m;
+      // No published height: the model says how it estimated its own.
+      if (sourced == null)
+        expect(m.heightEstimate, `${id}: no specs height and no heightEstimate`).toBeTruthy();
+      const spec = sourced ?? m.heightM;
       expect(
         Math.abs(box.max.y - box.min.y - (spec as number)) / (spec as number),
         id,

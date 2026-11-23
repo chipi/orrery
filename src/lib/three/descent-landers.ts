@@ -233,6 +233,8 @@ const CAPSULE_MODEL: Record<string, () => THREE.Group> = {
   mercury: () => CLASSIC['mercury-capsule'].build(),
   gemini: () => CLASSIC.gemini.build(),
   soyuz: () => CLASSIC['soyuz-7k-ok'].build(),
+  'apollo-cm': () => FREIGHTERS['apollo-csm-block-ii'].build(),
+  shenzhou: () => FREIGHTERS.shenzhou.build(),
 };
 
 /**

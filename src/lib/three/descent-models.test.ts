@@ -113,6 +113,8 @@ describe('buildDescentModel', () => {
       ['vostok-1', 'vostok'],
       ['voskhod-1', 'voskhod'],
       ['soyuz-11', 'soyuz'],
+      ['apollo7', 'apollo-cm'],
+      ['shenzhou-1', 'shenzhou'],
     ] as const) {
       expect(DETAILED_CAPSULE_IDS, family).toContain(family);
       const old = buildCapsuleById(family);

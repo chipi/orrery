@@ -133,4 +133,20 @@ rendering agents at once). Then:
 2. Apollo's way home: LM ascent, docking with the CSM, trans-Earth injection, re-entry and
    splashdown under three mains; then see whether Luna 16/24 or Chang'e 5/6 fit the same chain.
 
-Deferred by the operator: ISS and the other stations, the Worlds Tier 1 models.
+3. **ISS and Tiangong at the Dragon's level of detail** (operator 2026-11-23, after seeing the
+   rebuilt Crew Dragon: "can we actually make ISS and Tiangong way better to this dragon level").
+   Assess first, then build. The concern is rendering cost: a station is dozens of modules, and
+   each new model is hundreds of meshes. Measure before deciding:
+   - today's cost: draw calls, triangles and frame time of `/iss` and `/tiangong` on a phone-class
+     profile (the `?debug=1` Perf tab), and of one rebuilt craft (Crew Dragon) in the viewer;
+   - the levers: merge each module's static parts into one geometry per material
+     (`BufferGeometryUtils.mergeGeometries`, already in three), instance repeated parts (truss
+     segments, radiator panels, array cells, handrails), level of detail (the full model close
+     up, the current proxy far away), and keep picking on a separate low-poly proxy
+     (`userData.moduleId`, ADR-041 / ADR-049);
+   - the constraints the rebuild must keep: the assembly walkers (`iss-assembly-phases.ts`,
+     `tiangong-assembly-phases.ts`) animate modules in by id, the AR replay reuses them, and the
+     visiting-craft dock events use the docking ports.
+   Then a go or no-go per station with the measured budget, before any modelling.
+
+Deferred by the operator until then: the other stations, the Worlds Tier 1 models.

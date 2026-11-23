@@ -1,5 +1,7 @@
 # Central models: scale-out plan (0.9.11)
 
+> **Next session: start with [`2026-11-23-pass2-handoff.md`](2026-11-23-pass2-handoff.md).**
+
 Pilots approved by the operator on 2026-11-23: the Apollo LM (`showcase/lunar-module.ts`) and
 Curiosity (`showcase/mars-rovers.ts`), plus the MSL EDL hardware (`showcase/msl-edl.ts`,
 `dgbParachute`). The aim is one model per craft, used in every place (lineup, /fly launch, descent,

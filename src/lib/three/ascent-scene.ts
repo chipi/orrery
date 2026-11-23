@@ -725,7 +725,9 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
     const capBox = new THREE.Box3().setFromObject(payload);
     const capSize = new THREE.Vector3();
     capBox.getSize(capSize);
-    const capsuleR = Math.max(capSize.x, capSize.z) / 2;
+    // The box takes in solar wings (Shenzhou's span four stage widths): no wider than the stage
+    // under it, or the adapter is a dark disc the width of the wings (operator 2026-11-23).
+    const capsuleR = Math.min(Math.max(capSize.x, capSize.z) / 2, upperStageRadius * 1.2);
     const gapH = payloadBaseY - _usBox.max.y;
     if (gapH > vehLen * 0.005 && upperStageRadius > 0) {
       const adapter = new THREE.Mesh(
@@ -1041,6 +1043,8 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   // above made Artemis II's core vanish between two frames.
   const VACUUM_SEP_AFTER_S = 240;
   const VACUUM_SEP_S = 60;
+  /** Seconds after staging that the camera keeps the dropped stage in frame too. */
+  const SEP_BOTH_S = 2.5;
   /** Progress, and drift length in vehicle lengths, of a serial stage dropped at `sepT`. */
   const playT = opts.sceneTime ?? ((x: number) => x);
   const stageDrop = (t: number, sepT: number | null | undefined): [number, number] =>
@@ -1121,7 +1125,15 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
     //    the event METs, so scrubbing the timeline back and forth is exact.
     // Booster: drifts back down the body axis, tumbles, recedes away.
     const [bp, bLen] = stageDrop(s.t, stagingT);
-    lastSpan = bp > 0 ? [upperStageBaseY, vehLen] : [0, vehLen];
+    // The first seconds after staging frame both pieces, the separation itself (Flight 5's
+    // booster left the frame at once, Curiosity's Centaur sat cropped beside its Atlas); then
+    // the stage still flying.
+    lastSpan =
+      bp <= 0
+        ? [0, vehLen]
+        : stagingT != null && s.t - stagingT < SEP_BOTH_S
+          ? [-bp * vehLen * bLen, vehLen]
+          : [upperStageBaseY, vehLen];
     booster.visible = bp < 1;
     booster.position.y = -bp * vehLen * bLen;
     booster.rotation.set(...stageDropRotation(bp, fromVertical, recovered.booster));

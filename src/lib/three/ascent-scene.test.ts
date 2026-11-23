@@ -106,3 +106,43 @@ describe('Starship is its own spacecraft (operator 2026-11-23: Flight 5 after SE
     expect(sc.focus!.y - 200).toBeGreaterThan(vehLen);
   });
 });
+
+describe('the camera keeps both pieces in frame for the first seconds after staging (operator 2026-11-23)', () => {
+  it('then narrows to the stage still flying', () => {
+    const vehLen = 1.2;
+    const sc = createAscentScene({
+      aspect: 1,
+      vehicleLengthKm: vehLen,
+      launcherId: 'falcon-9',
+      events: [
+        { type: 'staging', t: 160, altKm: 70, speedKms: 2.4, massKg: 1e6 },
+        { type: 'seco', t: 480, altKm: 200, speedKms: 7.7, massKg: 1e5 },
+      ] as AscentEvent[],
+    });
+    const at = (t: number) => {
+      sc.setState({
+        t,
+        altKm: 80,
+        downrangeKm: 60,
+        speedKms: 2.5,
+        velUpKms: 1,
+        massKg: 1e5,
+        stageIndex: 1,
+        qPa: 0,
+        twr: 1,
+        thrustN: 1,
+        dragN: 0,
+        pitchRad: 1,
+        propRemainingKg: 1,
+        boosterPropRemainingKg: 0,
+      } as AscentState);
+      return sc.stackSpan;
+    };
+    expect(at(150)).toEqual([0, vehLen]);
+    const [lo1] = at(161);
+    expect(lo1).toBeLessThan(0); // reaches down to the falling booster
+    const [lo2, hi2] = at(170);
+    expect(lo2).toBeGreaterThan(0.3 * vehLen); // the upper stage only
+    expect(hi2).toBe(vehLen);
+  });
+});

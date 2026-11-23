@@ -19,7 +19,7 @@ for (const [sec, entries] of Object.entries(g)) {
   if (sec.startsWith('_') || sec === 'sources' || !entries || typeof entries !== 'object') continue;
   for (const [name, e] of Object.entries(entries)) {
     if (!e || typeof e !== 'object') continue;
-    let hit = false;
+    let hit;
     if (sec === 'term') {
       if (!e._en) continue;
       try {

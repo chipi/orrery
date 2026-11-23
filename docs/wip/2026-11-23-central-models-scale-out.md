@@ -81,8 +81,9 @@ Pass 1 batches (5–6 models each, two implementer agents at a time):
 | 2 Mars landers | e77920605c8 | accepted |
 | 2b rovers (MER, Perseverance, Zhurong, Rosalind Franklin, LRV) | 78b55b43af9 | accepted |
 | 3 classic capsules (Vostok/Voskhod, Mercury, Gemini, Soyuz, Progress) | b04942bb785 | accepted |
-| 5 probes (Cassini/Huygens, Galileo, Rosetta, Hayabusa, OSIRIS-REx, Venera, Vega, Giotto) | — | building |
-| 6 observatories | — | building |
+| 5 probes (Cassini/Huygens, Galileo, Rosetta, Hayabusa, OSIRIS-REx, Venera, Vega, Giotto) | de434b4d937 | accepted; URLs fixed in 1a6c5e03f3b |
+| 6 observatories | 27fca04db80 | accepted for pass 1; the agent's shortfalls (flat JWST segments, plain Euclid, thin Hitomi bench) are pass 2 |
+| wiring: Moon/Mars landings, crew capsules, probes | eabdb25eae3, b1cbd559433, ba9d7f9f969 | done; ringsail mains at sourced sizes |
 
 Still to do in pass 1:
 

@@ -270,7 +270,8 @@ const VENUS_AEROSHELL: ArchetypeBuilder = (p) => [
     endTrigger: { type: 'ground', value: 0 },
     cdA: p.terminalCdA ?? 3.2,
     jettisonKg: p.backshellKg ?? 200,
-    events: ['heatshield_sep'],
+    // The chute is cut here (Venera 13: at about 50 km); the lander falls on air braking alone.
+    events: ['parachute_jettison', 'heatshield_sep'],
   },
 ];
 

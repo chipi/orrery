@@ -480,6 +480,9 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
   const hsT = metOf('heatshield_sep');
   const bsT = metOf('backshell_sep');
   const chuteT = metOf('parachute_deploy');
+  // Two-stage chutes: parts marked chuteStage 1 (a drogue, Huygens' main, Venera's chute) are
+  // released at parachute_jettison; parts marked 2 (capsule mains, Huygens' stabiliser) open then.
+  const chuteJetT = metOf('parachute_jettison');
   const airbagT = metOf('airbag_deploy');
   const flipT = metOf('entry_flip');
   // Starship (Flight 5): belly-first through entry, then the landing flip to tail-down as the
@@ -589,8 +592,18 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
     const bp = sepProgress(s.t, bsT, BS_SEP_S);
     const chuteOut = chuteT != null && s.t >= chuteT;
     model.parachute.visible = chuteOut && bp < 1;
+    const secondStage = chuteJetT != null && s.t >= chuteJetT;
+    let anyStage = false;
+    model.parachute.traverse((o) => {
+      const stage = o.userData.chuteStage as number | undefined;
+      if (stage == null) return;
+      o.visible = stage === (secondStage ? 2 : 1);
+      if (o.visible) anyStage = true;
+    });
+    if (secondStage && !anyStage) model.parachute.visible = false; // released, nothing follows
     if (model.parachute.visible) {
-      const inflate = Math.min(1, Math.max(0, (s.t - (chuteT ?? 0)) / 2));
+      const openT = secondStage ? chuteJetT : (chuteT ?? 0);
+      const inflate = Math.min(1, Math.max(0, (s.t - openT) / 2));
       const sway = Math.sin(frame * 0.05) * 0.09 * (1 - bp);
       model.parachute.scale.set(0.35 + 0.65 * inflate, 0.5 + 0.5 * inflate, 0.35 + 0.65 * inflate);
       model.parachute.rotation.z = sway + bp * 0.9;

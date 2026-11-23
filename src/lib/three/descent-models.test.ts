@@ -77,6 +77,35 @@ describe('buildDescentModel', () => {
     }
   });
 
+  it('parachutes are drawn at their sourced size, and two-stage chutes swap at jettison', () => {
+    const stageWidth = (m: ReturnType<typeof buildDescentModel>, stage: number): number => {
+      m.root.updateMatrixWorld(true);
+      const box = new THREE.Box3();
+      m.parachute.traverse((o) => {
+        if (o.userData.chuteStage !== stage) return;
+        o.traverse((x) => void ((x as THREE.Mesh).isMesh && box.expandByObject(x)));
+      });
+      return box.isEmpty() ? 0 : box.getSize(new THREE.Vector3()).x;
+    };
+    const size = (o: THREE.Object3D) =>
+      new THREE.Box3().setFromObject(o).getSize(new THREE.Vector3());
+    // Soyuz: one ~1,000 m² main (35.7 m) over the 2.24 m tall descent module.
+    const soyuz = buildDescentModel('soyuz-11', 'earth', 1);
+    expect(stageWidth(soyuz, 2) / size(soyuz.lander).y).toBeCloseTo(35.7 / 2.24, 0);
+    expect(stageWidth(soyuz, 1)).toBeGreaterThan(0); // the drogues come first
+    // Shenzhou: one 1,200 m² main (39.1 m) over a 2.52 m wide re-entry module.
+    const sz = buildDescentModel('shenzhou-5', 'earth', 1);
+    const szW = Math.max(size(sz.lander).x, size(sz.lander).z);
+    expect(stageWidth(sz, 2) / szW).toBeCloseTo(39.1 / 2.52, 0);
+    // Huygens: the 8.30 m main, then the 3.03 m stabiliser.
+    const hu = buildDescentModel('huygens', 'titan', 1);
+    expect(stageWidth(hu, 1) / stageWidth(hu, 2)).toBeCloseTo(8.3 / 3.03, 1);
+    // Venera: one chute, cut at parachute_jettison, nothing after it.
+    const ve = buildDescentModel('venera-13', 'venus', 1);
+    expect(stageWidth(ve, 1)).toBeGreaterThan(0);
+    expect(stageWidth(ve, 2)).toBe(0);
+  });
+
   it('crewed returns come home in the central capsule models, at the old capsule size', () => {
     for (const [mission, family] of [
       ['friendship-7', 'mercury'],

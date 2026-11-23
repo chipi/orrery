@@ -170,12 +170,26 @@ real. Each landing gets the same treatment:
    Apollo is the one mission that did all of this; check whether any robotic sample return
    (Luna 16/24, Chang'e 5/6) fits the same chain afterwards.
 
+## Parachutes: done (2026-11-23)
+
+| Craft | Chutes drawn | Size source |
+| --- | --- | --- |
+| Mercury | drogue, then one 63 ft ringsail | NASM (main); drogue size estimated |
+| Gemini | drogue, then one 84.2 ft ringsail | NASA (main); drogue size estimated |
+| Apollo CM | two drogues, then three 83.6 ft ringsails | NASA NTRS (mains); drogue size estimated |
+| Soyuz | two drogues (16 m² together), then one ~1,000 m² main | Rostec |
+| Vostok | braking chute 18 m², then one 574 m² main | RussianSpaceWeb |
+| Voskhod | drogue, then one main | **size not found; estimated** |
+| Dragon | two drogues, then four 116 ft mains | NASA Commercial Crew blog (mains); drogue size estimated |
+| Shenzhou | drogue, then one 1,200 m² main | Spaceflight101 (main); drogue size estimated |
+| Huygens | 8.30 m main, then the 3.03 m stabiliser (~15 min in) | ESA |
+| Venera 13 | one chute, cut at ~47–50 km, then air braking only | Wikipedia; **chute size estimated** |
+| Galileo probe | one disk-gap-band main to signal loss | NSSDC (timeline); **size not found; estimated** |
+
+Line lengths are estimates throughout. A test locks Soyuz, Shenzhou and Huygens sizes and the
+Venera cut.
+
 ## Pass 2 notes from wiring (2026-11-23)
 
-- Huygens, Venera and the Galileo probe still descend under the old striped dome
-  (`canopyDome`): give them their real chutes (Huygens: an 8.3 m main, then a 3 m drogue
-  for most of the descent; Venera: chutes cut at about 50 km, then the aerobrake disc).
+- Galileo's descent renders washed out (Jupiter's cloud light); the probe can't be seen.
 - Rosetta: Philae reads as a dot in the wide frames; frame it in the director.
-- Crew-capsule mains are ringsails at the sourced sizes (Mercury 63 ft, Gemini 84.2 ft,
-  Apollo 3 × 83.6 ft, Soyuz ~1,000 m²). Vostok, Voskhod, Dragon and Shenzhou sizes are not
-  sourced yet; their line length (1.1 × the canopy diameter) is an estimate for all.

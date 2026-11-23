@@ -297,6 +297,6 @@ export function detailedProbe(body: string, siteId: string, old: THREE.Group): T
   craft.position.y = ref.min.y - own.min.y * k;
   const holder = new THREE.Group();
   holder.add(craft);
-  holder.userData = { ...old.userData };
+  holder.userData = { ...old.userData, metresToScene: k }; // the models are in metres
   return holder;
 }

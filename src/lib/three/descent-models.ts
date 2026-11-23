@@ -266,6 +266,17 @@ function dgbParachute(
   return out;
 }
 
+/** Marks a chute as the first (released at parachute_jettison) or second (opened then) stage. */
+function chuteStage(g: THREE.Group, stage: 1 | 2): THREE.Group {
+  g.userData.chuteStage = stage;
+  return g;
+}
+
+/** The top of the craft in its own frame: where a chute's riser attaches. */
+function craftTop(lander: THREE.Group): number {
+  return new THREE.Box3().setFromObject(lander).max.y;
+}
+
 function parachuteCanopy(radius: number, p: Palette, mountY: number): THREE.Group {
   const g = new THREE.Group();
   g.add(canopyDome(radius, p));
@@ -776,9 +787,13 @@ function buildVenusStack(lander: THREE.Group, vehLen: number): DescentModel {
   const m = scaffold(lander);
   addAeroshell(m, p, vehLen);
 
-  // Small drogue high-altitude chute (cut early on Venus).
-  m.parachuteBaseY = vehLen * 0.8;
-  m.parachute = parachuteCanopy(vehLen * 0.4, p, -vehLen * 0.76);
+  // Venera's chute opened at about 62 km and was cut at about 50 km (Venera 13, Wikipedia); the
+  // lander fell the rest of the way on air braking alone. Its size is not sourced: an estimate.
+  m.parachuteBaseY = craftTop(lander);
+  m.parachute = new THREE.Group();
+  m.parachute.add(
+    chuteStage(dgbParachute(1, { diameterM: vehLen * 0.8, totalM: vehLen * 1.8, lines: 32 }), 1),
+  );
   m.parachute.position.y = m.parachuteBaseY;
   m.root.add(m.parachute);
 
@@ -846,8 +861,10 @@ function buildJupiterProbeStack(lander: THREE.Group, vehLen: number): DescentMod
   const m = scaffold(lander);
   addAeroshell(m, p, vehLen);
 
-  m.parachuteBaseY = vehLen * 0.86;
-  m.parachute = parachuteCanopy(vehLen * 0.5, p, -vehLen * 0.86);
+  // The Galileo probe rode its main chute down to signal loss (NSSDC timeline: pilot 17:05:52,
+  // main 17:05:54). Its size is not sourced: an estimate, in the disk-gap-band form.
+  m.parachuteBaseY = craftTop(lander);
+  m.parachute = dgbParachute(1, { diameterM: vehLen, totalM: vehLen * 2.2, lines: 32 });
   m.parachute.position.y = m.parachuteBaseY;
   m.root.add(m.parachute);
 
@@ -865,9 +882,15 @@ function buildTitanParachuteStack(lander: THREE.Group, vehLen: number): DescentM
   const m = scaffold(lander);
   addAeroshell(m, p, vehLen);
 
-  // Titan's main chute is notably large.
-  m.parachuteBaseY = vehLen * 0.9;
-  m.parachute = parachuteCanopy(vehLen * 0.7, p, -vehLen * 0.9);
+  // Huygens (ESA, Huygens engineering): an 8.30 m disk-gap-band main through the supersonic
+  // phase, jettisoned after about 15 min for a 3.03 m stabiliser that carried the probe to the
+  // surface. Line lengths (2.3 × the diameter, as MSL's) are an estimate. Scale: the probe model
+  // in metres, or Huygens' 2.7 m shield across the old model.
+  const k = (lander.userData.metresToScene as number | undefined) ?? vehLen / 2.7;
+  m.parachuteBaseY = craftTop(lander);
+  m.parachute = new THREE.Group();
+  m.parachute.add(chuteStage(dgbParachute(k, { diameterM: 8.3, totalM: 19, lines: 48 }), 1));
+  m.parachute.add(chuteStage(dgbParachute(k, { diameterM: 3.03, totalM: 7, lines: 32 }), 2));
   m.parachute.position.y = m.parachuteBaseY;
   m.root.add(m.parachute);
 
@@ -940,20 +963,35 @@ const BUILDERS: Record<string, StackBuilder> = {
  * Mercury: one 63 ft ringsail (Smithsonian NASM A19720466000). Gemini: one 84.2 ft ringsail
  * (NASA, Gemini parachute landing system). Apollo: three 83.6 ft ringsails (NASA NTRS
  * 19700026594); CM 3.23 m tall. Soyuz: one main of about 1,000 m² (Rostec), about 35.7 m across.
- * Vostok, Voskhod, Dragon, Shenzhou: count only, size not yet sourced.
+ * Vostok: one of 574 m², 27.0 m (RussianSpaceWeb, vostok-3ka-2). Dragon: four of 116 ft
+ * (NASA Commercial Crew blog, 2019-09-17). Shenzhou: one of 1,200 m², 39.1 m (Spaceflight101).
+ * Voskhod: count only; its size is not sourced. Capsule scale for the older models: Dragon 4 m
+ * across, Shenzhou's re-entry module 2.52 m (Wikipedia infoboxes).
  */
 const CAPSULE_MAINS: Record<
   string,
-  { count: number; diameterM?: number; capsuleHeightM?: number }
+  { count: number; diameterM?: number; capsuleHeightM?: number; capsuleDiameterM?: number }
 > = {
   mercury: { count: 1, diameterM: 19.2 },
   gemini: { count: 1, diameterM: 25.7 },
   'apollo-cm': { count: 3, diameterM: 25.5, capsuleHeightM: 3.23 },
   soyuz: { count: 1, diameterM: 35.7 },
-  vostok: { count: 1 },
+  vostok: { count: 1, diameterM: 27.0 },
   voskhod: { count: 1 },
-  dragon: { count: 4 },
-  shenzhou: { count: 1 },
+  dragon: { count: 4, diameterM: 35.4, capsuleDiameterM: 4.0 },
+  shenzhou: { count: 1, diameterM: 39.1, capsuleDiameterM: 2.52 },
+};
+
+/**
+ * The drogues before the mains, where sourced: Soyuz two of 16 m² together (Rostec), Vostok one
+ * braking chute of 18 m² (RussianSpaceWeb). Apollo and Dragon carried two; the other sizes are
+ * not sourced, and an unsourced drogue is drawn at 0.18 × its main.
+ */
+const CAPSULE_DROGUES: Record<string, { count: number; diameterM?: number }> = {
+  soyuz: { count: 2, diameterM: 3.19 },
+  vostok: { count: 1, diameterM: 4.79 },
+  'apollo-cm': { count: 2 },
+  dragon: { count: 2 },
 };
 
 function buildEarthCapsuleStack(lander: THREE.Group, vehLen: number): DescentModel {
@@ -970,7 +1008,8 @@ function buildEarthCapsuleStack(lander: THREE.Group, vehLen: number): DescentMod
   const capTop = new THREE.Box3().setFromObject(lander).max.y;
   const k =
     (lander.userData.metresToScene as number | undefined) ??
-    (spec?.capsuleHeightM ? landerHeight(lander) / spec.capsuleHeightM : undefined);
+    (spec?.capsuleHeightM ? landerHeight(lander) / spec.capsuleHeightM : undefined) ??
+    (spec?.capsuleDiameterM ? landerWidth(lander) / spec.capsuleDiameterM : undefined);
   // Unsourced size: the old proportions (a canopy about three capsule heights across).
   const D = spec?.diameterM && k ? spec.diameterM * k : vehLen * (n >= 3 ? 2.0 : 2.8);
   const lineLen = D * 1.1;
@@ -978,6 +1017,27 @@ function buildEarthCapsuleStack(lander: THREE.Group, vehLen: number): DescentMod
   // A cluster's canopies sit side by side, their skirts just touching.
   const spread = n > 1 ? (D * 0.5) / Math.sin(Math.PI / n) : 0;
   const chutes = new THREE.Group();
+  const mains = chuteStage(new THREE.Group(), 2);
+  chutes.add(mains);
+  // The drogue that steadies the capsule before the mains (released as they open).
+  const dSpec = CAPSULE_DROGUES[capsuleId];
+  const dn = dSpec?.count ?? 1;
+  const dD = dSpec?.diameterM && k ? dSpec.diameterM * k : D * 0.18;
+  const drogue = chuteStage(new THREE.Group(), 1);
+  const dConf = new THREE.Vector3(0, capTop + dD * 0.5, 0);
+  const dSpread = dn > 1 ? dD * 0.7 : 0;
+  for (let c = 0; c < dn; c++) {
+    const ang = (c / dn) * Math.PI * 2;
+    const at = new THREE.Vector3(
+      Math.cos(ang) * dSpread,
+      dConf.y + dD * 3,
+      Math.sin(ang) * dSpread,
+    );
+    const canopy = ringsailCanopy(dD);
+    canopy.position.copy(at);
+    drogue.add(canopy, suspensionLines(dD * 0.47, at, dConf, 16));
+  }
+  chutes.add(drogue);
   const riser = new THREE.BufferGeometry().setFromPoints([
     new THREE.Vector3(0, capTop, 0),
     confluence,
@@ -993,8 +1053,8 @@ function buildEarthCapsuleStack(lander: THREE.Group, vehLen: number): DescentMod
       canopy.rotation.z = -Math.cos(ang) * 0.14; // the cluster fans outward
       canopy.rotation.x = Math.sin(ang) * 0.14;
     }
-    chutes.add(canopy);
-    chutes.add(suspensionLines(D * 0.47, new THREE.Vector3(off.x, skirtY, off.z), confluence, 32));
+    mains.add(canopy);
+    mains.add(suspensionLines(D * 0.47, new THREE.Vector3(off.x, skirtY, off.z), confluence, 32));
   }
   m.parachute = chutes;
   m.parachuteBaseY = 0; // canopies already placed inside the group
@@ -1003,6 +1063,11 @@ function buildEarthCapsuleStack(lander: THREE.Group, vehLen: number): DescentMod
   lander.position.y = -vehLen * 0.02;
   m.root.add(lander);
   return m;
+}
+
+function landerWidth(o: THREE.Object3D): number {
+  const v = new THREE.Box3().setFromObject(o).getSize(new THREE.Vector3());
+  return Math.max(v.x, v.z);
 }
 
 function landerHeight(o: THREE.Object3D): number {

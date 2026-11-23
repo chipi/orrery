@@ -13,7 +13,7 @@ for (const v of views.split(';')) {
   await page.waitForSelector('[data-ready="true"]', { timeout: 60000 });
   await page.waitForTimeout(500);
   const data = await page.evaluate(() => document.querySelector('canvas').toDataURL('image/png'));
-  fs.writeFileSync(`${OUT}${prefix}-${az}_${el}.png`, Buffer.from(data.split(',')[1], 'base64'));
+  fs.writeFileSync(`${OUT}${prefix}-${id}-${az}_${el}.png`, Buffer.from(data.split(',')[1], 'base64'));
   console.log(prefix, az, el);
 }
 await b.close();

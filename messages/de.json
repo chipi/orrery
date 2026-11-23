@@ -3746,5 +3746,9 @@
   "hud_data_ends": "DATEN ENDEN",
   "hud_booster_landing": "BOOSTER-LANDUNG",
   "hud_tower_catch": "FANG AM TURM",
-  "fly_recovery_caption_starship_flight5": "Ship 30 wasserte im Zielgebiet im Indischen Ozean, nahe einer Boje, die die Landung filmte. Sie war nicht für die Bergung gebaut: Etwa 16 Sekunden später brach ein großer Feuerball aus."
+  "fly_recovery_caption_starship_flight5": "Ship 30 wasserte im Zielgebiet im Indischen Ozean, nahe einer Boje, die die Landung filmte. Sie war nicht für die Bergung gebaut: Etwa 16 Sekunden später brach ein großer Feuerball aus.",
+  "craft_viewer_heading": "3D-Modell",
+  "craft_viewer_hint": "Zum Drehen ziehen",
+  "craft_viewer_how": "Wie die Modelle entstehen",
+  "craft_viewer_aria": "3D-Modell von {name} in echter Größe"
 }

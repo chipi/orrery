@@ -126,7 +126,10 @@ rendering agents at once). Then:
 
 ## After pass 2: the operator's wish list
 
-1. Falcon 9 booster landings: on a pad (return to launch site) and on a droneship at sea.
+1. Falcon 9 booster landings: on a pad (return to launch site) and on a droneship at sea. Part of
+   this exists: the launch scene already shows a recovered booster's landing in an inset, with the
+   drone ship, landing zones and the tower catch (`src/lib/three/landing-inset.ts`, UXD-050). The
+   wish is a full scene for it, as the Starship catch has; start from the inset.
 2. Apollo's way home: LM ascent, docking with the CSM, trans-Earth injection, re-entry and
    splashdown under three mains; then see whether Luna 16/24 or Chang'e 5/6 fit the same chain.
 

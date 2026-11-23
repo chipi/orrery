@@ -3746,5 +3746,9 @@
   "hud_data_ends": "FIN DES DONNÉES",
   "hud_booster_landing": "ATTERRISSAGE DU PROPULSEUR",
   "hud_tower_catch": "CAPTURE PAR LA TOUR",
-  "fly_recovery_caption_starship_flight5": "Ship 30 a amerri sur sa cible dans l'océan Indien, près d'une bouée qui l'a filmé. Il n'était pas conçu pour être récupéré : une grande boule de feu a jailli environ 16 secondes plus tard."
+  "fly_recovery_caption_starship_flight5": "Ship 30 a amerri sur sa cible dans l'océan Indien, près d'une bouée qui l'a filmé. Il n'était pas conçu pour être récupéré : une grande boule de feu a jailli environ 16 secondes plus tard.",
+  "craft_viewer_heading": "Modèle 3D",
+  "craft_viewer_hint": "Faites glisser pour tourner",
+  "craft_viewer_how": "Comment les modèles sont faits",
+  "craft_viewer_aria": "Modèle 3D de {name} à taille réelle"
 }

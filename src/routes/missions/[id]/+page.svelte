@@ -16,6 +16,7 @@
   import { article, breadcrumbList, absoluteUrl } from '$lib/json-ld';
   import Chip from '$lib/components/Chip.svelte';
   import JsonLd from '$lib/components/JsonLd.svelte';
+  import CraftViewer from '$lib/components/CraftViewer.svelte';
   import type { PageData } from './$types';
 
   let { data }: { data: PageData } = $props();
@@ -130,6 +131,8 @@
   </dl>
 
   {#if mission.description}<p class="description">{mission.description}</p>{/if}
+
+  {#if craftRef}<CraftViewer fleetId={craftRef} name={mission.payload ?? mission.name} />{/if}
 
   {#if mission.events?.length}
     <section class="events">

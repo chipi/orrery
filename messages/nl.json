@@ -3746,5 +3746,9 @@
   "hud_data_ends": "EINDE GEGEVENS",
   "hud_booster_landing": "BOOSTERLANDING",
   "hud_tower_catch": "VANGST IN DE TOREN",
-  "fly_recovery_caption_starship_flight5": "Ship 30 landde op het doel in de Indische Oceaan, bij een boei die de landing filmde. Het was niet gebouwd om geborgen te worden: ongeveer 16 seconden later barstte een grote vuurbal uit."
+  "fly_recovery_caption_starship_flight5": "Ship 30 landde op het doel in de Indische Oceaan, bij een boei die de landing filmde. Het was niet gebouwd om geborgen te worden: ongeveer 16 seconden later barstte een grote vuurbal uit.",
+  "craft_viewer_heading": "3D-model",
+  "craft_viewer_hint": "Sleep om te draaien",
+  "craft_viewer_how": "Hoe de modellen gemaakt zijn",
+  "craft_viewer_aria": "3D-model van {name} op ware grootte"
 }

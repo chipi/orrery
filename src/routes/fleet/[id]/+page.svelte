@@ -21,6 +21,7 @@
   import Chip from '$lib/components/Chip.svelte';
   import JsonLd from '$lib/components/JsonLd.svelte';
   import EntityThumb from '$lib/components/EntityThumb.svelte';
+  import CraftViewer from '$lib/components/CraftViewer.svelte';
   import type { PageData } from './$types';
 
   let { data }: { data: PageData } = $props();
@@ -136,6 +137,8 @@
       </div>
     {/each}
   </dl>
+
+  <CraftViewer fleetId={entry.id} name={entry.name} />
 
   {#if data.missions.length}
     <section class="missions">

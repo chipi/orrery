@@ -3746,5 +3746,9 @@
   "hud_data_ends": "数据结束",
   "hud_booster_landing": "助推器着陆",
   "hud_tower_catch": "发射塔捕获",
-  "fly_recovery_caption_starship_flight5": "Ship 30 在印度洋的目标区域溅落，旁边是一个拍下画面的浮标。它并非为回收而建造：约 16 秒后燃起一团巨大的火球。"
+  "fly_recovery_caption_starship_flight5": "Ship 30 在印度洋的目标区域溅落，旁边是一个拍下画面的浮标。它并非为回收而建造：约 16 秒后燃起一团巨大的火球。",
+  "craft_viewer_heading": "3D 模型",
+  "craft_viewer_hint": "拖动以旋转",
+  "craft_viewer_how": "模型是如何制作的",
+  "craft_viewer_aria": "{name} 的 3D 模型（真实比例）"
 }

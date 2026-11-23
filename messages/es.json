@@ -3746,5 +3746,9 @@
   "hud_data_ends": "FIN DE LOS DATOS",
   "hud_booster_landing": "ATERRIZAJE DEL ACELERADOR",
   "hud_tower_catch": "CAPTURA EN LA TORRE",
-  "fly_recovery_caption_starship_flight5": "Ship 30 amerizó en el objetivo, en el océano Índico, cerca de una boya que lo filmó. No estaba hecho para recuperarse: unos 16 segundos después estalló una gran bola de fuego."
+  "fly_recovery_caption_starship_flight5": "Ship 30 amerizó en el objetivo, en el océano Índico, cerca de una boya que lo filmó. No estaba hecho para recuperarse: unos 16 segundos después estalló una gran bola de fuego.",
+  "craft_viewer_heading": "Modelo 3D",
+  "craft_viewer_hint": "Arrastra para girar",
+  "craft_viewer_how": "Cómo se hacen los modelos",
+  "craft_viewer_aria": "Modelo 3D de {name} a escala real"
 }

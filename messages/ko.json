@@ -3746,5 +3746,9 @@
   "hud_data_ends": "데이터 종료",
   "hud_booster_landing": "부스터 착륙",
   "hud_tower_catch": "발사탑 포획",
-  "fly_recovery_caption_starship_flight5": "Ship 30은 인도양의 목표 지점, 이를 촬영한 부표 근처에 착수했다. 회수용으로 만들어지지 않았으며, 약 16초 뒤 큰 불덩이가 솟았다."
+  "fly_recovery_caption_starship_flight5": "Ship 30은 인도양의 목표 지점, 이를 촬영한 부표 근처에 착수했다. 회수용으로 만들어지지 않았으며, 약 16초 뒤 큰 불덩이가 솟았다.",
+  "craft_viewer_heading": "3D 모델",
+  "craft_viewer_hint": "드래그하여 회전",
+  "craft_viewer_how": "모델 제작 방법",
+  "craft_viewer_aria": "{name}의 3D 모델(실제 크기 비율)"
 }

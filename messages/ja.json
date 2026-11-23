@@ -3746,5 +3746,9 @@
   "hud_data_ends": "データ終了",
   "hud_booster_landing": "ブースター着陸",
   "hud_tower_catch": "タワー捕獲",
-  "fly_recovery_caption_starship_flight5": "Ship 30 はインド洋の目標地点、着水を撮影したブイの近くに着水した。回収を前提に造られておらず、約16秒後に大きな火球が上がった。"
+  "fly_recovery_caption_starship_flight5": "Ship 30 はインド洋の目標地点、着水を撮影したブイの近くに着水した。回収を前提に造られておらず、約16秒後に大きな火球が上がった。",
+  "craft_viewer_heading": "3Dモデル",
+  "craft_viewer_hint": "ドラッグで回転",
+  "craft_viewer_how": "モデルの作り方",
+  "craft_viewer_aria": "{name}の3Dモデル（実寸比）"
 }

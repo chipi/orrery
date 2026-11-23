@@ -7,7 +7,7 @@ import { buildCapsuleById } from './capsule-models';
 import { getEarthOrbitCoast } from '../orbital/earth-orbit-registry';
 import { buildLanderCruiseCraft } from './lander-cruise-models';
 import { buildInterplanetarySpacecraft } from './interplanetary-spacecraft-models';
-import { detailedDescentLander, dockedApolloCsm } from './descent-landers';
+import { detailedDescentLander, detailedReturnCapsule, dockedApolloCsm } from './descent-landers';
 
 /**
  * Per-mission procedural EDL-stack models for /fly's descent act (RFC-034 §9) —
@@ -460,7 +460,7 @@ function resolveLander(siteId: string, body: DescentBody): THREE.Group {
       getEarthOrbitCoast(siteId)?.capsuleId ?? LUNAR_RETURN_CAPSULE[siteId] ?? 'mercury';
     const cap = buildCapsuleById(capsuleId);
     cap.userData.capsuleId = capsuleId; // read by buildEarthCapsuleStack for chute count
-    return cap;
+    return detailedReturnCapsule(capsuleId, cap) ?? cap;
   }
   const tier0 = buildMarsLanderModel(siteId, 'lander', undefined, '#d0a884');
   return detailedDescentLander(siteId, tier0) ?? tier0;

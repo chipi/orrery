@@ -10,6 +10,7 @@ import {
 import { SHOWCASE as LUNAR_WEST } from './showcase/lunar-landers-west';
 import { SHOWCASE as MARS_LANDERS, buildPathfinderLander } from './showcase/mars-landers';
 import { SHOWCASE as ROVERS } from './showcase/rovers';
+import { SHOWCASE as CLASSIC } from './showcase/capsules-classic';
 
 /**
  * The central detailed models (src/lib/three/showcase/), flown in /fly's descent in place of
@@ -216,3 +217,42 @@ export function dockedApolloCsm(dockY: number, k: number): THREE.Group {
   g.position.y = dockY;
   return g;
 }
+
+/** Earth-return capsule families (earth-orbit-registry `capsuleId`) → the central model whose
+ *  'descent-module' is the part that comes home. */
+const CAPSULE_MODEL: Record<string, () => THREE.Group> = {
+  vostok: () => CLASSIC.vostok.build(),
+  voskhod: () => CLASSIC.voskhod.build(),
+  mercury: () => CLASSIC['mercury-capsule'].build(),
+  gemini: () => CLASSIC.gemini.build(),
+  soyuz: () => CLASSIC['soyuz-7k-ok'].build(),
+};
+
+/**
+ * The central model's descent module for an Earth-return capsule family, fitted to `old` (the
+ * capsule the re-entry stack was laid out around): same height, same base. Null when the family
+ * has no central model yet.
+ */
+export function detailedReturnCapsule(capsuleId: string, old: THREE.Group): THREE.Group | null {
+  const build = CAPSULE_MODEL[capsuleId];
+  if (!build) return null;
+  const whole = build();
+  whole.updateMatrixWorld(true);
+  const dm = whole.getObjectByName('descent-module');
+  if (!dm) return null;
+  const craft = new THREE.Group();
+  craft.add(dm.clone());
+  craft.children[0].applyMatrix4(dm.parent!.matrixWorld);
+  const ref = new THREE.Box3().setFromObject(old);
+  const own = new THREE.Box3().setFromObject(craft);
+  const k = (ref.max.y - ref.min.y) / (own.max.y - own.min.y);
+  craft.scale.setScalar(k);
+  craft.position.y = ref.min.y - own.min.y * k;
+  const holder = new THREE.Group();
+  holder.add(craft);
+  holder.userData = { ...old.userData };
+  return holder;
+}
+
+/** Capsule families that come home in a central model. */
+export const DETAILED_CAPSULE_IDS = Object.keys(CAPSULE_MODEL);

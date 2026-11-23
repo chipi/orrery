@@ -2,7 +2,8 @@
 import * as THREE from 'three';
 import { describe, it, expect } from 'vitest';
 import { buildDescentModel, KNOWN_DESCENT_STACK_IDS } from './descent-models';
-import { DETAILED_DESCENT_LANDER_IDS } from './descent-landers';
+import { DETAILED_CAPSULE_IDS, DETAILED_DESCENT_LANDER_IDS } from './descent-landers';
+import { buildCapsuleById } from './capsule-models';
 
 describe('buildDescentModel', () => {
   it('skycrane stack (Curiosity) has rigging, descent stage, chute + a lander', () => {
@@ -73,6 +74,26 @@ describe('buildDescentModel', () => {
         ].includes(id)
       )
         expect(stowed, `${id}: its deployables are stowed in flight`).toBeGreaterThan(0);
+    }
+  });
+
+  it('crewed returns come home in the central capsule models, at the old capsule size', () => {
+    for (const [mission, family] of [
+      ['friendship-7', 'mercury'],
+      ['gemini4', 'gemini'],
+      ['vostok-1', 'vostok'],
+      ['voskhod-1', 'voskhod'],
+      ['soyuz-11', 'soyuz'],
+    ] as const) {
+      expect(DETAILED_CAPSULE_IDS, family).toContain(family);
+      const old = buildCapsuleById(family);
+      const m = buildDescentModel(mission, 'earth', 1);
+      // The central model's descent module, not the old capsule.
+      expect(m.lander.getObjectByName('descent-module'), mission).toBeDefined();
+      expect(old.getObjectByName('descent-module'), mission).toBeUndefined();
+      const h = (o: THREE.Object3D) =>
+        new THREE.Box3().setFromObject(o).getSize(new THREE.Vector3()).y;
+      expect(h(m.lander) / h(old), mission).toBeCloseTo(1, 2);
     }
   });
 

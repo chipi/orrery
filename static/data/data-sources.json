@@ -498,7 +498,7 @@
     {
       "id": "models-ref-wikipedia",
       "name": "3D model references — Wikipedia",
-      "catalog": "173 pages — sizes and proportions for the 3D models",
+      "catalog": "185 pages — sizes and proportions for the 3D models",
       "category": "model-reference",
       "description": "Wikipedia articles (English, Russian and Chinese) that gave the lengths, diameters and proportions of the launcher and spacecraft models and the heights of the landmarks, statues and animals drawn beside them in the /fleet line-ups. The models and outlines are our own; only measurements were read.",
       "source_url": "https://www.wikipedia.org/",
@@ -947,7 +947,11 @@
         },
         {
           "l": "Wikipedia — Cassini–Huygens: 6.8 m length, 4 m antenna, three RTGs, Huygens 2.7 m",
-          "u": "https://en.wikipedia.org/wiki/Cassini–Huygens"
+          "u": "https://en.wikipedia.org/wiki/Cassini%E2%80%93Huygens"
+        },
+        {
+          "l": "Wikipedia — Chandra: layout, mirror assembly, solar arrays",
+          "u": "https://en.wikipedia.org/wiki/Chandra_X-ray_Observatory"
         },
         {
           "l": "Wikipedia — Chandrayaan-2 / Vikram: 2.54 × 2 × 1.2 m, four 800 N throttleable engines (CY-2 has a fifth, central one), four legs, ramp",
@@ -956,6 +960,10 @@
         {
           "l": "Wikipedia — Chandrayaan-3: Vikram box-shaped, four legs and four thrusters, carries Pragyan on a ramp",
           "u": "https://en.wikipedia.org/wiki/Chandrayaan-3"
+        },
+        {
+          "l": "Wikipedia — Compton: BATSE, OSSE, COMPTEL, EGRET",
+          "u": "https://en.wikipedia.org/wiki/Compton_Gamma_Ray_Observatory"
         },
         {
           "l": "Wikipedia — CSM: SM 4.52 m, 3.91 m diameter, SPS nozzle 3.88 m; Block I has no docking probe",
@@ -968,6 +976,14 @@
         {
           "l": "Wikipedia — Cygnus: 5.14 m length, 3.07 m diameter, Standard variant",
           "u": "https://en.wikipedia.org/wiki/Cygnus_(spacecraft)"
+        },
+        {
+          "l": "Wikipedia — Euclid: layout, telescope, solar array",
+          "u": "https://en.wikipedia.org/wiki/Euclid_(spacecraft)"
+        },
+        {
+          "l": "Wikipedia — Gaia: 10 m sunshield, payload and service module",
+          "u": "https://en.wikipedia.org/wiki/Gaia_(spacecraft)"
         },
         {
           "l": "Wikipedia — Galileo (spacecraft): 5.3 m length, 4.8 m antenna, RTG booms, 10.9 m magnetometer boom, probe",
@@ -986,6 +1002,10 @@
           "u": "https://en.wikipedia.org/wiki/Hayabusa2"
         },
         {
+          "l": "Wikipedia — Hitomi (ASTRO-H): extensible optical bench, instruments",
+          "u": "https://en.wikipedia.org/wiki/Hitomi_(satellite)"
+        },
+        {
           "l": "Wikipedia — HTV-X: 8 m, 4.4 m, 18.2 m array span, 2.7 m service and 3.5 m pressurised module",
           "u": "https://en.wikipedia.org/wiki/HTV-X"
         },
@@ -994,8 +1014,20 @@
           "u": "https://en.wikipedia.org/wiki/H-II_Transfer_Vehicle"
         },
         {
+          "l": "Wikipedia — Hubble Space Telescope: 13.2 x 4.2 m, layout, solar arrays",
+          "u": "https://en.wikipedia.org/wiki/Hubble_Space_Telescope"
+        },
+        {
           "l": "Wikipedia — InSight: 6.0 m wide with arrays, 1.56 m deck, 0.83-1.08 m deck height, 2.15 m arrays, 1.8 m arm",
           "u": "https://en.wikipedia.org/wiki/InSight"
+        },
+        {
+          "l": "Wikipedia — JWST: 18 hexagonal segments, 6.5 m mirror, sunshield 21.2 x 14.2 m",
+          "u": "https://en.wikipedia.org/wiki/James_Webb_Space_Telescope"
+        },
+        {
+          "l": "Wikipedia — Kepler: 4.7 x 2.7 m, photometer, solar array",
+          "u": "https://en.wikipedia.org/wiki/Kepler_space_telescope"
         },
         {
           "l": "Wikipedia — Lunar Roving Vehicle: 3.6 ft height, 7.5 ft wheelbase, wire-mesh wheels, TV camera on the front",
@@ -1050,6 +1082,18 @@
           "u": "https://en.wikipedia.org/wiki/Smart_Lander_for_Investigating_Moon"
         },
         {
+          "l": "Wikipedia — Spektr-RG: eROSITA, ART-XC, Navigator bus",
+          "u": "https://en.wikipedia.org/wiki/Spektr-RG"
+        },
+        {
+          "l": "Wikipedia — Spitzer: 0.85 m telescope, cryostat, solar panel",
+          "u": "https://en.wikipedia.org/wiki/Spitzer_Space_Telescope"
+        },
+        {
+          "l": "Wikipedia — TESS: dimensions, four cameras, solar arrays",
+          "u": "https://en.wikipedia.org/wiki/Transiting_Exoplanet_Survey_Satellite"
+        },
+        {
           "l": "Wikipedia — Tianzhou: 10.6 m, 3.35 m, 14.9 m array span",
           "u": "https://en.wikipedia.org/wiki/Tianzhou_(spacecraft)"
         },
@@ -1060,6 +1104,10 @@
         {
           "l": "Wikipedia — Viking program: hexagonal base with 1.09 / 0.56 m sides, 2.21 m footpad triangle, 18-nozzle engines, two RTGs, two cylinder cameras",
           "u": "https://en.wikipedia.org/wiki/Viking_program"
+        },
+        {
+          "l": "Wikipedia — XMM-Newton: length 10.8 m, span 16.16 m, three mirror modules",
+          "u": "https://en.wikipedia.org/wiki/XMM-Newton"
         },
         {
           "l": "Wikipedia — Zhurong (rover): 2.6 x 3 x 1.85 m, six wheels, four solar panels, mast",
@@ -1886,7 +1934,7 @@
     {
       "id": "models-ref-commons",
       "name": "3D model references — Wikimedia Commons photographs",
-      "catalog": "28 pages — sizes and proportions for the 3D models",
+      "catalog": "45 pages — sizes and proportions for the 3D models",
       "category": "model-reference",
       "description": "Photographs of flight hardware, test articles and museum replicas on Wikimedia Commons, looked at to get the shapes and layouts of the lander, rover and capsule models right. No photograph is reproduced; the models are our own geometry.",
       "source_url": "https://commons.wikimedia.org/",
@@ -1954,6 +2002,10 @@
           "u": "https://commons.wikimedia.org/wiki/File:Apollo_15_Lunar_Roving_Vehicle.jpg"
         },
         {
+          "l": "Wikimedia Commons — ASTRO-H before launch (stowed bench)",
+          "u": "https://commons.wikimedia.org/wiki/File:ASTRO-H_'HITOMI'.jpg"
+        },
+        {
           "l": "Wikimedia Commons — Attaching the helicopter (PIA23372) and Ingenuity leaving the belly: how it rides under the rover",
           "u": "https://commons.wikimedia.org/wiki/File:PIA23372-16-BuildingMars2020Rover-AttachingHelicopter-20190828.jpg"
         },
@@ -1962,20 +2014,64 @@
           "u": "https://commons.wikimedia.org/wiki/File:Cassini_spacecraft_raw_uncompressed.png"
         },
         {
+          "l": "Wikimedia Commons — Chandra artist illustration",
+          "u": "https://commons.wikimedia.org/wiki/File:Chandra_artist_illustration.jpg"
+        },
+        {
+          "l": "Wikimedia Commons — Chandra spacecraft model",
+          "u": "https://commons.wikimedia.org/wiki/File:Chandra_X-ray_Observatory_spacecraft_model.png"
+        },
+        {
+          "l": "Wikimedia Commons — Compton cutaway illustration",
+          "u": "https://commons.wikimedia.org/wiki/File:Compton_Gamma_Ray_Observatory_cutaway_(unlabelled).jpg"
+        },
+        {
+          "l": "Wikimedia Commons — Compton released from Atlantis (STS-37 photograph)",
+          "u": "https://commons.wikimedia.org/wiki/File:Compton_Gamma_Ray_Observatory_released_from_Atlantis_(S37-96-009).jpg"
+        },
+        {
           "l": "Wikimedia Commons — Detailed Drawing of the Galileo Spacecraft.png: NASA drawing: spun and despun sections, probe, booms",
           "u": "https://commons.wikimedia.org/wiki/File:Detailed_Drawing_of_the_Galileo_Spacecraft.png"
+        },
+        {
+          "l": "Wikimedia Commons — Euclid spacecraft model",
+          "u": "https://commons.wikimedia.org/wiki/File:Euclid_spacecraft_model.png"
+        },
+        {
+          "l": "Wikimedia Commons — Euclid, ESA render",
+          "u": "https://commons.wikimedia.org/wiki/File:Euclid_spacecraft_ESA24912474.jpg"
         },
         {
           "l": "Wikimedia Commons — ExoMars prototype rover: chassis, wheel legs, PanCam bar on its mast",
           "u": "https://commons.wikimedia.org/wiki/File:ExoMars_prototype_rover.jpg"
         },
         {
+          "l": "Wikimedia Commons — Gaia artist render",
+          "u": "https://commons.wikimedia.org/wiki/File:Gaia_spacecraft.jpeg"
+        },
+        {
           "l": "Wikimedia Commons — Giotto Whipple shield ESA239195.jpg: ESA photo: deck, tilted dish, gantry with camera",
           "u": "https://commons.wikimedia.org/wiki/File:Giotto_Whipple_shield_ESA239195.jpg"
         },
         {
+          "l": "Wikimedia Commons — Hitomi diagram",
+          "u": "https://commons.wikimedia.org/wiki/File:Hitomi.png"
+        },
+        {
+          "l": "Wikimedia Commons — Hubble after the final servicing mission (the photo the shape was taken from)",
+          "u": "https://commons.wikimedia.org/wiki/File:HST-SM4.jpeg"
+        },
+        {
           "l": "Wikimedia Commons — Huygens probe schematic diagram.png: Huygens shield, after cone and back cover",
           "u": "https://commons.wikimedia.org/wiki/File:Huygens_probe_schematic_diagram.png"
+        },
+        {
+          "l": "Wikimedia Commons — JWST spacecraft model (layout and sunshield shape)",
+          "u": "https://commons.wikimedia.org/wiki/File:JWST_spacecraft_model_3.png"
+        },
+        {
+          "l": "Wikimedia Commons — Kepler spacecraft artist render",
+          "u": "https://commons.wikimedia.org/wiki/File:Kepler_(spacecraft).jpg"
         },
         {
           "l": "Wikimedia Commons — MER-2 on its lander prelaunch (PIA04849): deck, WEB, Pancam mast, Mini-TES tube, HGA",
@@ -1999,11 +2095,31 @@
         },
         {
           "l": "Wikimedia Commons — Schéma sonde-spatiale-Giotto.png: schematic: drum, shield, dish, arches",
-          "u": "https://commons.wikimedia.org/wiki/File:Schéma_sonde-spatiale-Giotto.png"
+          "u": "https://commons.wikimedia.org/wiki/File:Sch%C3%A9ma_sonde-spatiale-Giotto.png"
+        },
+        {
+          "l": "Wikimedia Commons — Spektr-RG payloads render",
+          "u": "https://commons.wikimedia.org/wiki/File:Spektr-RG_payloads.png"
+        },
+        {
+          "l": "Wikimedia Commons — Spitzer spacecraft model",
+          "u": "https://commons.wikimedia.org/wiki/File:Spitzer_spacecraft_model.png"
+        },
+        {
+          "l": "Wikimedia Commons — TESS camera assembly (barrels and flared hoods)",
+          "u": "https://commons.wikimedia.org/wiki/File:TESS-cameras.png"
         },
         {
           "l": "Wikimedia Commons — Vega Solar System Probe Bus and Landing Apparatus.jpg: photo of the Venera-derived bus with the sphere on top",
           "u": "https://commons.wikimedia.org/wiki/File:Vega_Solar_System_Probe_Bus_and_Landing_Apparatus.jpg"
+        },
+        {
+          "l": "Wikimedia Commons — XMM-Newton spacecraft model",
+          "u": "https://commons.wikimedia.org/wiki/File:XMM-Newton_spacecraft_model.png"
+        },
+        {
+          "l": "Wikimedia Commons — XMM-Newton spacecraft model, rear view",
+          "u": "https://commons.wikimedia.org/wiki/File:XMM-Newton_spacecraft_model_2.png"
         },
         {
           "l": "Wikimedia Commons — Zhurong rover mockup at CSTM: deck, wings, mast, dishes, ribbed wheels",

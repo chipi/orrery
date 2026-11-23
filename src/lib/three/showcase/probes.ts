@@ -1519,11 +1519,14 @@ function buildGiottoCraft(): THREE.Group {
 
 const REF = (l: string, u: string): ShowcaseRef => ({ l, u });
 const WP = (page: string, what: string): ShowcaseRef =>
-  REF(`Wikipedia — ${page.replace(/_/g, ' ')}: ${what}`, `https://en.wikipedia.org/wiki/${page}`);
+  REF(
+    `Wikipedia — ${page.replace(/_/g, ' ')}: ${what}`,
+    `https://en.wikipedia.org/wiki/${encodeURI(page)}`,
+  );
 const WC = (file: string, what: string): ShowcaseRef =>
   REF(
     `Wikimedia Commons — ${file.replace(/_/g, ' ')}: ${what}`,
-    `https://commons.wikimedia.org/wiki/File:${file}`,
+    `https://commons.wikimedia.org/wiki/File:${encodeURI(file)}`,
   );
 
 function make(

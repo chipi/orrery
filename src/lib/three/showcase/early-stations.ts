@@ -4,25 +4,16 @@
  * Apollo Telescope Mount, the parasol and the face of every array) toward +z.
  */
 import * as THREE from 'three';
+import { mergeGeometries } from 'three/examples/jsm/utils/BufferGeometryUtils.js';
 import type { ShowcaseModel, ShowcaseRef } from './types';
+import { add, box, crinkle, foilSheet, lathe, mat, strut, type Mat } from './kit';
 
-type Mat = THREE.MeshStandardMaterial;
+const TAU = Math.PI * 2;
 
-function mat(color: number, metalness = 0.3, roughness = 0.6, double = false): Mat {
-  return new THREE.MeshStandardMaterial({
-    color,
-    metalness,
-    roughness,
-    side: double ? THREE.DoubleSide : THREE.FrontSide,
-  });
+function pol(r: number, a: number, y: number): THREE.Vector3 {
+  return new THREE.Vector3(r * Math.sin(a), y, r * Math.cos(a));
 }
 
-function add<T extends THREE.Object3D>(g: THREE.Object3D, o: T): T {
-  g.add(o);
-  return o;
-}
-
-/** Cylinder / frustum between two heights on the y axis. */
 function cyl(
   g: THREE.Object3D,
   m: Mat,
@@ -38,32 +29,6 @@ function cyl(
   return add(g, mesh);
 }
 
-function lathe(g: THREE.Object3D, m: Mat, pts: [number, number][], seg = 48): THREE.Mesh {
-  const mesh = new THREE.Mesh(
-    new THREE.LatheGeometry(
-      pts.map(([r, y]) => new THREE.Vector2(r, y)),
-      seg,
-    ),
-    m,
-  );
-  return add(g, mesh);
-}
-
-function box(
-  g: THREE.Object3D,
-  m: Mat,
-  w: number,
-  h: number,
-  d: number,
-  x: number,
-  y: number,
-  z: number,
-): THREE.Mesh {
-  const mesh = new THREE.Mesh(new THREE.BoxGeometry(w, h, d), m);
-  mesh.position.set(x, y, z);
-  return add(g, mesh);
-}
-
 function torus(g: THREE.Object3D, m: Mat, r: number, tube: number, y: number): THREE.Mesh {
   const mesh = new THREE.Mesh(new THREE.TorusGeometry(r, tube, 8, 64), m);
   mesh.rotation.x = Math.PI / 2;
@@ -71,13 +36,40 @@ function torus(g: THREE.Object3D, m: Mat, r: number, tube: number, y: number): T
   return add(g, mesh);
 }
 
+/** Tape-like vertical strap on a drum of radius r at azimuth a. */
+function strap(
+  g: THREE.Object3D,
+  m: Mat,
+  r: number,
+  a: number,
+  y0: number,
+  y1: number,
+  w: number,
+  d = 0.03,
+): void {
+  const b = box(g, m, w, y1 - y0, d, 0, 0, 0);
+  b.position.copy(pol(r + d / 2 - 0.004, a, (y0 + y1) / 2));
+  b.rotation.y = a;
+}
+
 /** Thin rod between two points. */
 function rod(g: THREE.Object3D, m: Mat, a: THREE.Vector3, b: THREE.Vector3, r: number): THREE.Mesh {
-  const len = a.distanceTo(b);
-  const mesh = new THREE.Mesh(new THREE.CylinderGeometry(r, r, len, 8), m);
-  mesh.position.copy(a).add(b).multiplyScalar(0.5);
-  mesh.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), b.clone().sub(a).normalize());
-  return add(g, mesh);
+  return strut(g, m, a, b, r, 8);
+}
+
+/** A small thruster cone at p pointing along dir. */
+function nozzle(
+  g: THREE.Object3D,
+  m: Mat,
+  p: THREE.Vector3,
+  dir: THREE.Vector3,
+  r: number,
+  len: number,
+): void {
+  const c = new THREE.Mesh(new THREE.CylinderGeometry(r * 0.35, r, len, 12, 1, true), m);
+  c.position.copy(p);
+  c.quaternion.setFromUnitVectors(new THREE.Vector3(0, -1, 0), dir.clone().normalize());
+  g.add(c);
 }
 
 // ---------------------------------------------------------------------------------------------
@@ -116,55 +108,51 @@ function solarBlade(
   const w = add(parent, new THREE.Group());
   const gap = 0.05;
   const seg = (len - (n - 1) * gap) / n;
+  const lines: THREE.BufferGeometry[] = [];
   for (let i = 0; i < n; i++) {
     const cx = x0 + i * (seg + gap) + seg / 2;
     box(w, am.frame, seg, width, 0.05, cx, 0, 0);
-    box(w, am.cell, seg - 0.12, width - 0.12, 0.06, cx, 0, 0);
+    box(w, am.cell, seg - 0.12, width - 0.12, 0.07, cx, 0, 0);
     const cols = Math.max(3, Math.round(seg / 0.35));
     for (let c = 1; c < cols; c++) {
-      box(
-        w,
-        am.line,
-        0.01,
-        width - 0.12,
-        0.066,
-        cx - seg / 2 + 0.06 + ((seg - 0.12) * c) / cols,
-        0,
-        0,
-      );
+      const b = new THREE.BoxGeometry(0.01, width - 0.12, 0.074);
+      b.translate(cx - seg / 2 + 0.06 + ((seg - 0.12) * c) / cols, 0, 0);
+      lines.push(b);
     }
-    const rows = Math.max(2, Math.round(width / 0.7));
+    const rows = Math.max(2, Math.round(width / 0.45));
     for (let r = 1; r < rows; r++) {
-      box(
-        w,
-        am.line,
-        seg - 0.12,
-        0.01,
-        0.066,
-        cx,
-        -width / 2 + 0.06 + ((width - 0.12) * r) / rows,
-        0,
-      );
+      const b = new THREE.BoxGeometry(seg - 0.12, 0.01, 0.074);
+      b.translate(cx, -width / 2 + 0.06 + ((width - 0.12) * r) / rows, 0);
+      lines.push(b);
     }
+    if (i > 0) box(w, am.frame, 0.06, width + 0.04, 0.08, cx - seg / 2 - gap / 2, 0, 0);
   }
+  add(w, new THREE.Mesh(mergeGeometries(lines, false), am.line));
   return w;
 }
 
+/**
+ * Skylab as it flew after the repair: the black-skirted workshop (bare tank wall, the stringers
+ * the micrometeoroid shield tore away, the single wing, the gold parasol), the instrument-unit
+ * ring, the airlock shroud with its truss, the docking adapter with the axial port, and the
+ * Apollo Telescope Mount swung out to the Sun with its four-blade windmill.
+ */
 function buildSkylab(): THREE.Group {
   const g = new THREE.Group();
   const white = mat(0xe3e3de, 0.2, 0.55);
-  const hull = mat(0xd2d3cf, 0.45, 0.5);
+  const hull = mat(0xd9dad6, 0.45, 0.5);
   const band = mat(0x2a2b2f, 0.3, 0.6);
   const truss = mat(0x9a9da3, 0.7, 0.45);
   const dark = mat(0x16171b, 0.4, 0.6);
   const glass = mat(0x0a0e16, 0.9, 0.12);
   const silver = mat(0xc4c7cc, 0.75, 0.4);
+  const nozMat = mat(0x3a3733, 0.6, 0.5, true);
 
   // Orbital Workshop: S-IVB tank wall, bare after the micrometeoroid shield tore away
-  cyl(g, white, SKY_R, SKY_R, 0, 1.7, 64, true).material = mat(0xe3e3de, 0.2, 0.55, true);
+  cyl(g, mat(0x26272b, 0.3, 0.6, true), SKY_R, SKY_R, 0, 1.7, 64, true);
   lathe(
     g,
-    mat(0xb9bbb7, 0.5, 0.5, true),
+    mat(0x3a3b3f, 0.4, 0.55, true),
     [
       [0.0, 0.7],
       [1.4, 0.95],
@@ -173,37 +161,51 @@ function buildSkylab(): THREE.Group {
     ],
     48,
   );
+  for (let i = 0; i < 24; i++) {
+    const a = (i / 24) * TAU;
+    strap(g, truss, SKY_R, a, 0.1, 1.65, 0.1, 0.05);
+  }
   cyl(g, hull, SKY_R, SKY_R, 1.7, OWS_TOP, 64);
-  torus(g, truss, SKY_R + 0.01, 0.045, 1.7);
-  torus(g, truss, SKY_R + 0.01, 0.045, OWS_TOP);
-  for (const y of [5.2, 9.0, 12.4]) torus(g, truss, SKY_R + 0.008, 0.03, y);
-  // shield attachment stringers left on the tank wall
+  torus(g, truss, SKY_R + 0.01, 0.05, 1.7);
+  torus(g, truss, SKY_R + 0.01, 0.05, OWS_TOP);
+  for (const y of [5.2, 9.0, 12.4]) torus(g, truss, SKY_R + 0.008, 0.035, y);
+  // tank-wall panel seams and the shield attachment stringers left on it
   for (let i = 0; i < 36; i++) {
-    const a = (i / 36) * Math.PI * 2;
-    const s = box(g, truss, 0.07, OWS_TOP - 2.3, 0.04, 0, (1.7 + OWS_TOP) / 2 + 0.1, 0);
-    s.position.x = Math.sin(a) * (SKY_R + 0.015);
-    s.position.z = Math.cos(a) * (SKY_R + 0.015);
-    s.rotation.y = a;
+    const a = (i / 36) * TAU;
+    strap(g, truss, SKY_R, a, 1.8, OWS_TOP - 0.1, 0.07, 0.04);
   }
   // aft cold-gas thruster quads
   for (let i = 0; i < 4; i++) {
-    const a = (i / 4) * Math.PI * 2 + Math.PI / 4;
+    const a = (i / 4) * TAU + Math.PI / 4;
     const q = add(g, new THREE.Group());
     q.rotation.y = a;
     box(q, silver, 0.55, 0.4, 0.3, 0, 1.1, SKY_R + 0.14);
     for (const sx of [-1, 1]) {
-      box(q, dark, 0.1, 0.1, 0.18, sx * 0.17, 0.96, SKY_R + 0.36);
-      box(q, dark, 0.18, 0.1, 0.1, sx * 0.3, 1.14, SKY_R + 0.26);
+      nozzle(
+        q,
+        nozMat,
+        new THREE.Vector3(sx * 0.17, 0.96, SKY_R + 0.38),
+        new THREE.Vector3(sx * 0.3, -0.5, 0.8),
+        0.07,
+        0.2,
+      );
+      nozzle(
+        q,
+        nozMat,
+        new THREE.Vector3(sx * 0.3, 1.2, SKY_R + 0.28),
+        new THREE.Vector3(sx, 0.4, 0.5),
+        0.07,
+        0.2,
+      );
     }
   }
 
   // instrument unit ring
   cyl(g, band, SKY_R, SKY_R, OWS_TOP, IU_TOP, 64);
   for (let i = 0; i < 24; i++) {
-    const a = (i / 24) * Math.PI * 2;
+    const a = (i / 24) * TAU;
     const p = box(g, white, 0.5, IU_TOP - OWS_TOP - 0.1, 0.02, 0, (OWS_TOP + IU_TOP) / 2, 0);
-    p.position.x = Math.sin(a) * (SKY_R + 0.005);
-    p.position.z = Math.cos(a) * (SKY_R + 0.005);
+    p.position.copy(pol(SKY_R + 0.005, a, (OWS_TOP + IU_TOP) / 2));
     p.rotation.y = a;
   }
 
@@ -212,16 +214,20 @@ function buildSkylab(): THREE.Group {
   torus(g, truss, SKY_R + 0.01, 0.05, IU_TOP);
   torus(g, truss, SKY_R + 0.01, 0.05, SHROUD_TOP);
   for (let i = 0; i < 16; i++) {
-    const a = (i / 16) * Math.PI * 2;
+    const a = (i / 16) * TAU;
     const p = box(g, truss, 0.14, SHROUD_TOP - IU_TOP, 0.07, 0, (IU_TOP + SHROUD_TOP) / 2, 0);
-    p.position.x = Math.sin(a) * (SKY_R + 0.02);
-    p.position.z = Math.cos(a) * (SKY_R + 0.02);
+    p.position.copy(pol(SKY_R + 0.02, a, (IU_TOP + SHROUD_TOP) / 2));
     p.rotation.y = a;
   }
   cyl(g, white, SKY_R, MDA_R, SHROUD_TOP, MDA_BOT, 64);
+  for (let i = 0; i < 12; i++) {
+    const a = (i / 12) * TAU;
+    rod(g, truss, pol(SKY_R + 0.02, a, SHROUD_TOP), pol(MDA_R + 0.03, a, MDA_BOT), 0.035);
+  }
   torus(g, truss, MDA_R + 0.02, 0.06, MDA_BOT);
   // EVA hatch on the antisolar side, its handrails and a window
   box(g, dark, 0.9, 0.9, 0.12, 0, 16.6, -SKY_R - 0.04);
+  box(g, silver, 0.7, 0.7, 0.04, 0, 16.6, -SKY_R - 0.1);
   box(g, silver, 1.1, 0.06, 0.16, 0, 17.2, -SKY_R - 0.06);
   box(g, silver, 1.1, 0.06, 0.16, 0, 16.0, -SKY_R - 0.06);
 
@@ -229,16 +235,20 @@ function buildSkylab(): THREE.Group {
   cyl(g, white, MDA_R, MDA_R, MDA_BOT, MDA_CONE, 48);
   for (const y of [21.4, 22.9]) torus(g, truss, MDA_R + 0.01, 0.04, y);
   for (let i = 0; i < 12; i++) {
-    const a = (i / 12) * Math.PI * 2;
+    const a = (i / 12) * TAU;
     const p = box(g, truss, 0.1, MDA_CONE - MDA_BOT - 0.2, 0.04, 0, (MDA_BOT + MDA_CONE) / 2, 0);
-    p.position.x = Math.sin(a) * (MDA_R + 0.015);
-    p.position.z = Math.cos(a) * (MDA_R + 0.015);
+    p.position.copy(pol(MDA_R + 0.015, a, (MDA_BOT + MDA_CONE) / 2));
     p.rotation.y = a;
   }
-  // EREP windows (antisolar side)
-  box(g, glass, 0.7, 0.5, 0.06, 0, 21.0, -MDA_R - 0.02);
-  box(g, glass, 0.7, 0.5, 0.06, 0.9, 21.0, -MDA_R + 0.03);
-  box(g, glass, 0.7, 0.5, 0.06, -0.9, 21.0, -MDA_R + 0.03);
+  // EREP windows (antisolar side), in frames
+  for (const [x, z] of [
+    [0, -MDA_R - 0.02],
+    [0.9, -MDA_R + 0.03],
+    [-0.9, -MDA_R + 0.03],
+  ]) {
+    box(g, truss, 0.82, 0.62, 0.05, x, 21.0, z - 0.01);
+    box(g, glass, 0.7, 0.5, 0.06, x, 21.0, z);
+  }
   // contingency radial port
   const side = add(g, new THREE.Group());
   side.position.set(-MDA_R, 22.3, 0);
@@ -251,7 +261,7 @@ function buildSkylab(): THREE.Group {
   cyl(g, dark, PORT_R - 0.18, PORT_R - 0.18, SKY_H - 0.06, SKY_H - 0.04, 32);
   torus(g, dark, PORT_R - 0.05, 0.03, SKY_H - 0.04);
   for (let i = 0; i < 12; i++) {
-    const a = (i / 12) * Math.PI * 2;
+    const a = (i / 12) * TAU;
     box(
       g,
       dark,
@@ -262,6 +272,10 @@ function buildSkylab(): THREE.Group {
       SKY_H - 0.05,
       Math.cos(a) * (PORT_R - 0.02),
     );
+  }
+  for (let i = 0; i < 3; i++) {
+    const a = (i / 3) * TAU;
+    box(g, silver, 0.14, 0.04, 0.3, 0, SKY_H - 0.045, 0).position.copy(pol(0.5, a, SKY_H - 0.045));
   }
 
   // OWS solar wing: the one array that deployed, out on +x, face toward the Sun
@@ -280,6 +294,7 @@ function buildSkylab(): THREE.Group {
     box(wing, truss, wingLen + 0.2, 0.12, 0.14, (wingLen + 0.2) / 2, dy, 0);
   }
   for (const dy of [-wingW / 2, wingW / 2]) box(wing, silver, 0.5, 0.35, 0.3, 0.2, dy, 0);
+  wing.userData.solarArray = true;
   // stump of the wing that was torn off at launch, on -x
   const stump = add(g, new THREE.Group());
   stump.position.set(-(SKY_R - 0.05), wingY, 0);
@@ -287,16 +302,23 @@ function buildSkylab(): THREE.Group {
   for (const dy of [-wingW / 2, wingW / 2]) {
     box(stump, silver, 0.5, 0.35, 0.3, 0.2, dy, 0);
     box(stump, truss, 1.3, 0.12, 0.14, 0.85, dy, 0);
+    box(stump, dark, 0.06, 0.2, 0.2, 1.5, dy, 0);
   }
 
-  // Skylab parasol (SL-2): 6.7 x 7.3 m canopy ~0.2 m over the sun-side tank wall, on its tubes
+  // Skylab parasol (SL-2): 6.7 x 7.3 m canopy ~0.2 m over the sun-side tank wall, crinkled
   const parasolY = 8.5;
-  const canopy = mat(0xcf9a35, 0.4, 0.5, true);
-  box(g, canopy, 6.7, 7.3, 0.015, 0, parasolY, SKY_R + 0.2);
+  const canopy = mat(0xcf9a35, 0.4, 0.55, true);
+  const sheet = foilSheet(canopy, 6.7, 7.3, 0.09);
+  sheet.position.set(0, parasolY, SKY_R + 0.2);
+  g.add(sheet);
+  for (const sx of [-1, 1]) {
+    box(g, truss, 0.08, 7.3, 0.06, sx * 3.35, parasolY, SKY_R + 0.2);
+  }
+  for (const sy of [-1, 1]) box(g, truss, 6.7, 0.08, 0.06, 0, parasolY + sy * 3.65, SKY_R + 0.2);
   const hub = new THREE.Vector3(0, parasolY, SKY_R + 0.2);
   for (const sx of [-1, 1]) {
     for (const sy of [-1, 1]) {
-      rod(g, truss, hub, new THREE.Vector3(sx * 3.3, parasolY + sy * 3.6, SKY_R + 0.21), 0.025);
+      rod(g, truss, hub, new THREE.Vector3(sx * 3.3, parasolY + sy * 3.6, SKY_R + 0.21), 0.04);
     }
   }
   const hubMesh = new THREE.Mesh(new THREE.CylinderGeometry(0.22, 0.22, 0.2, 16), silver);
@@ -311,11 +333,9 @@ function buildSkylab(): THREE.Group {
   const atm = add(g, new THREE.Group());
   atm.position.set(0, atmY, 0);
   const rackMat = mat(0x8c8f96, 0.7, 0.5);
-  const foil = mat(0xb48a3c, 0.75, 0.35);
-  const rack = new THREE.Mesh(
-    new THREE.CylinderGeometry(1.7, 1.7, rackZ1 - rackZ0, 8, 1, true),
-    foil,
-  );
+  const foil = mat(0xb48a3c, 0.75, 0.4, true);
+  const rackGeo = crinkle(new THREE.CylinderGeometry(1.7, 1.7, rackZ1 - rackZ0, 8, 4, true), 0.05);
+  const rack = new THREE.Mesh(rackGeo, foil);
   rack.rotation.x = Math.PI / 2;
   rack.rotation.z = Math.PI / 8;
   rack.position.z = (rackZ0 + rackZ1) / 2;
@@ -327,7 +347,7 @@ function buildSkylab(): THREE.Group {
     atm.add(ring);
   }
   for (let i = 0; i < 8; i++) {
-    const a = (i / 8) * Math.PI * 2 + Math.PI / 8;
+    const a = (i / 8) * TAU + Math.PI / 8;
     box(
       atm,
       rackMat,
@@ -356,7 +376,7 @@ function buildSkylab(): THREE.Group {
   }
   // control moment gyros on the rack
   for (let i = 0; i < 3; i++) {
-    const a = Math.PI / 2 + (i * Math.PI * 2) / 3;
+    const a = Math.PI / 2 + (i * TAU) / 3;
     box(atm, silver, 0.55, 0.55, 0.55, Math.cos(a) * 1.0, Math.sin(a) * 1.0, rackZ0 + 0.45);
   }
   // canister: 2.1 m x 3.0 m, sun end proud of the rack
@@ -366,16 +386,30 @@ function buildSkylab(): THREE.Group {
   can.rotation.x = Math.PI / 2;
   can.position.z = (canZ0 + canZ1) / 2;
   atm.add(can);
-  for (const z of [canZ0 + 0.15, canZ1 - 0.15]) {
+  for (const z of [canZ0 + 0.15, canZ1 - 0.15, (canZ0 + canZ1) / 2]) {
     const r = new THREE.Mesh(new THREE.TorusGeometry(1.06, 0.045, 6, 40), rackMat);
     r.position.z = z;
     atm.add(r);
+  }
+  for (let i = 0; i < 12; i++) {
+    const a = (i / 12) * TAU;
+    const s = box(
+      atm,
+      rackMat,
+      0.07,
+      0.04,
+      canZ1 - canZ0 - 0.3,
+      Math.cos(a) * 1.06,
+      Math.sin(a) * 1.06,
+      (canZ0 + canZ1) / 2,
+    );
+    s.rotation.z = a;
   }
   const cap = new THREE.Mesh(new THREE.CircleGeometry(1.0, 40), mat(0x4a4d54, 0.6, 0.45));
   cap.position.z = canZ1 + 0.005;
   atm.add(cap);
   for (let i = 0; i < 8; i++) {
-    const a = (i / 8) * Math.PI * 2;
+    const a = (i / 8) * TAU;
     const ap = new THREE.Mesh(new THREE.CircleGeometry(i % 2 ? 0.14 : 0.19, 20), glass);
     ap.position.set(Math.cos(a) * 0.62, Math.sin(a) * 0.62, canZ1 + 0.012);
     atm.add(ap);
@@ -392,11 +426,13 @@ function buildSkylab(): THREE.Group {
   };
   const windmill = add(atm, new THREE.Group());
   windmill.position.z = 6.1;
+  windmill.userData.solarArray = true;
   for (let k = 0; k < 4; k++) {
     const holder = add(windmill, new THREE.Group());
     holder.rotation.z = Math.PI / 4 + (k * Math.PI) / 2;
     solarBlade(holder, atmMats, 1.65, 8.3, 3.3, 3);
     box(holder, truss, 1.7, 0.14, 0.12, 0.85, 0, 0);
+    for (const dy of [-1.7, 1.7]) box(holder, truss, 8.4, 0.08, 0.1, 5.8, dy, 0);
   }
   return g;
 }
@@ -440,24 +476,49 @@ const SPUTNIK_SHORT = 2.4;
 /** Sphere top to the tip of the long antennas, nose up. */
 export const SPUTNIK1_HEIGHT_M = SPUTNIK_R + SPUTNIK_LONG * Math.cos(SPUTNIK_SWEEP);
 
+/**
+ * Sputnik 1: the polished 58 cm sphere of two welded hemispheres (the joint flange and its 36
+ * bolts, the two screw plugs), and the four whip antennas on spring hinge blocks at the joint,
+ * two long and two short, swept back.
+ */
 export function buildSputnik1(): THREE.Group {
   const g = new THREE.Group();
   const polished = mat(0xd9dbde, 1.0, 0.12);
   const seam = mat(0x7d8087, 0.9, 0.3);
   const whip = mat(0xbfc2c6, 0.9, 0.25);
+  const block = mat(0x23242a, 0.6, 0.4);
   const body = add(g, new THREE.Group());
   body.position.y = SPUTNIK1_HEIGHT_M - SPUTNIK_R;
 
   body.add(new THREE.Mesh(new THREE.SphereGeometry(SPUTNIK_R, 64, 48), polished));
-  // hemisphere joint: seam ring and the 36 bolts
-  const ring = new THREE.Mesh(new THREE.TorusGeometry(SPUTNIK_R, 0.004, 8, 96), seam);
+  // hemisphere joint: flange ring and the 36 bolts
+  const ring = new THREE.Mesh(new THREE.TorusGeometry(SPUTNIK_R, 0.006, 8, 96), seam);
   ring.rotation.x = Math.PI / 2;
   body.add(ring);
   for (let i = 0; i < 36; i++) {
-    const a = (i / 36) * Math.PI * 2;
-    const b = new THREE.Mesh(new THREE.SphereGeometry(0.004, 8, 6), seam);
-    b.position.set(Math.cos(a) * (SPUTNIK_R - 0.004), 0.016, Math.sin(a) * (SPUTNIK_R - 0.004));
+    const a = (i / 36) * TAU;
+    const b = new THREE.Mesh(new THREE.SphereGeometry(0.0045, 8, 6), seam);
+    b.position.set(Math.cos(a) * (SPUTNIK_R - 0.002), 0.014, Math.sin(a) * (SPUTNIK_R - 0.002));
     body.add(b);
+  }
+  // two screw plugs on the upper hemisphere
+  for (const [az, el] of [
+    [0.6, 0.6],
+    [3.2, 0.8],
+  ]) {
+    const n = new THREE.Vector3(
+      Math.cos(el) * Math.cos(az),
+      Math.sin(el),
+      Math.cos(el) * Math.sin(az),
+    );
+    const plug = new THREE.Mesh(new THREE.CylinderGeometry(0.014, 0.014, 0.01, 16), seam);
+    plug.position.copy(n).multiplyScalar(SPUTNIK_R);
+    plug.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), n);
+    body.add(plug);
+    const slot = new THREE.Mesh(new THREE.BoxGeometry(0.022, 0.004, 0.004), block);
+    slot.position.copy(n).multiplyScalar(SPUTNIK_R + 0.006);
+    slot.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), n);
+    body.add(slot);
   }
 
   // four whip antennas hinged at the joint, in two opposite pairs (2.4 m and 2.9 m), swept back
@@ -475,9 +536,17 @@ export function buildSputnik1(): THREE.Group {
     );
     const root = new THREE.Vector3(Math.cos(az) * SPUTNIK_R, 0, Math.sin(az) * SPUTNIK_R);
     const tip = root.clone().addScaledVector(dir, len);
-    rod(body, whip, root, tip, 0.0045);
-    const hinge = new THREE.Mesh(new THREE.SphereGeometry(0.011, 12, 8), seam);
-    hinge.position.copy(root);
+    const w = new THREE.Mesh(new THREE.CylinderGeometry(0.0025, 0.0055, len, 8), whip);
+    w.position.copy(root).add(tip).multiplyScalar(0.5);
+    w.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), dir.clone().negate());
+    body.add(w);
+    // spring hinge block on the joint flange
+    const hb = new THREE.Mesh(new THREE.BoxGeometry(0.05, 0.03, 0.03), block);
+    hb.position.copy(root).addScaledVector(new THREE.Vector3(Math.cos(az), 0, Math.sin(az)), 0.012);
+    hb.rotation.y = -az;
+    body.add(hb);
+    const hinge = new THREE.Mesh(new THREE.SphereGeometry(0.014, 12, 8), seam);
+    hinge.position.copy(root).addScaledVector(dir, 0.03);
     body.add(hinge);
   }
   return g;

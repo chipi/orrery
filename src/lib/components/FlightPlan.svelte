@@ -70,10 +70,14 @@
 {/if}
 
 <style>
+  /* Stacked, right-aligned under the clock (operator 2026-11-23): side by side the next beat
+     set the clock card's width and wrapped its label. */
   .compact {
     display: flex;
-    gap: 8px;
-    align-items: baseline;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1px;
+    text-align: end;
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 1px;

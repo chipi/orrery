@@ -118,14 +118,16 @@
     align-items: center;
     gap: 10px;
     max-inline-size: calc(100% - 32px);
-    padding: 5px 6px 5px 12px;
-    background: rgba(8, 10, 22, 0.86);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    border-radius: 6px;
+    /* A note, not a control: no outline and a pill, so it does not read as one of the chips
+       around it (operator 2026-11-23: "looks like a giant button"). */
+    padding: 3px 4px 3px 12px;
+    background: rgba(8, 10, 22, 0.62);
+    border: 0;
+    border-radius: 999px;
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     line-height: 1.4;
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(255, 255, 255, 0.78);
     backdrop-filter: blur(6px);
     opacity: 1;
     transition: opacity 300ms ease;
@@ -139,15 +141,15 @@
   }
   .close {
     flex: none;
-    inline-size: 24px;
-    block-size: 24px;
+    inline-size: 22px;
+    block-size: 22px;
     padding: 0;
     background: none;
     border: 0;
-    border-radius: 4px;
-    color: rgba(255, 255, 255, 0.7);
+    border-radius: 999px;
+    color: rgba(255, 255, 255, 0.55);
     font: inherit;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1;
     cursor: pointer;
     pointer-events: auto;

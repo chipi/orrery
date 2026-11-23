@@ -646,6 +646,12 @@ function paintPlot(ctx: CanvasRenderingContext2D, scene: Scene, geo: Geo) {
   }
 }
 
+/** The angle a suborbital arch spans over the limb: the coast's own `arcDeg` when the registry
+ *  gives one (Starship Flight 5 goes 165 degrees around), else the short drawn hop. */
+export function suborbitalSpanRad(c: { arcDeg?: number }): number {
+  return c.arcDeg ? (c.arcDeg * Math.PI) / 180 : 0.52 * Math.PI;
+}
+
 function paintLeo(ctx: CanvasRenderingContext2D, scene: Scene, geo: Geo) {
   const SW = geo.sw;
   const W = geo.W;
@@ -671,8 +677,9 @@ function paintLeo(ctx: CanvasRenderingContext2D, scene: Scene, geo: Geo) {
     };
   };
   // suborbital hop: a ballistic arch over the limb, surface -> apogee -> surface (upright, not tilted)
-  const s0 = 0.24 * Math.PI;
-  const s1 = 0.76 * Math.PI;
+  const span = suborbitalSpanRad(c);
+  const s0 = Math.PI / 2 - span / 2;
+  const s1 = Math.PI / 2 + span / 2;
   const arch = (t: number) => {
     const th = s1 + t * (s0 - s1);
     const rr = R * (1.012 + 0.55 * Math.sin(Math.PI * t));

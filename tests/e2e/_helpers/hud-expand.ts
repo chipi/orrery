@@ -47,6 +47,13 @@ export async function closeDrawer(page: Page): Promise<void> {
   if ((await close.count()) && (await close.isVisible().catch(() => false))) {
     await close.click({ timeout: 5_000 }).catch(() => {});
     await page.waitForTimeout(150);
+    return;
+  }
+  // The Worlds' drawers have no ×: the open tab closes its panel.
+  const open = page.locator('.mdg-tab[aria-expanded="true"]').first();
+  if ((await open.count()) && (await open.isVisible().catch(() => false))) {
+    await open.click({ timeout: 5_000 }).catch(() => {});
+    await page.waitForTimeout(150);
   }
 }
 

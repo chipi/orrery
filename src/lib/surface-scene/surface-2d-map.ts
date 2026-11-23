@@ -8,6 +8,7 @@
  * value. The projection math is exported as pure helpers
  * (`equirectLayout`, `equirectProject`, `lunarDiscProject`).
  */
+import { declutterLabels, type LabelItem } from './label-declutter';
 import { colorFor } from '$lib/surface-map/nation-palette';
 import * as m from '$lib/paraglide/messages';
 import { pickClosest2d } from '$lib/three/pick-closest-2d';
@@ -268,22 +269,42 @@ export function createSurface2dMap(ctx: Surface2dMapContext): Surface2dMap {
         ctx2.fillStyle = color;
         ctx2.fill();
 
-        // Site label
+        // Site label: placed after both discs (declutterLabels).
         ctx2.font = "11px 'Space Mono',monospace";
-        ctx2.fillStyle = color + 'cc';
-        ctx2.shadowColor = 'rgba(0,0,0,0.85)';
-        ctx2.shadowBlur = 4;
-        ctx2.textAlign = 'left';
-        ctx2.fillText(site.name ?? site.id, px + 6, py + 3);
-        ctx2.shadowBlur = 0;
+        const text = site.name ?? site.id;
+        discLabels.push({
+          text,
+          color,
+          sel: isSel,
+          x: px,
+          y: py,
+          w: ctx2.measureText(text).width,
+          h: 12,
+        });
 
         sitePos2d.set(site.id, { x: px, y: py });
       }
     };
 
     sitePos2d.clear();
+    const discLabels: Array<LabelItem & { text: string; color: string; sel: boolean }> = [];
     drawDisc(nearCx, yMid, m.surface_near_side(), 'rgba(220,220,200,0.85)', false);
     drawDisc(farCx, yMid, m.surface_far_side(), 'rgba(220,220,200,0.85)', true);
+    // The selected site's name first, then the rest in order; a name that would cover another
+    // or leave the canvas is dropped (its dot stays and takes the tap).
+    discLabels.sort((a, b) => Number(b.sel) - Number(a.sel));
+    const placed = declutterLabels(discLabels, W);
+    ctx2.font = "11px 'Space Mono',monospace";
+    ctx2.textAlign = 'left';
+    ctx2.shadowColor = 'rgba(0,0,0,0.85)';
+    ctx2.shadowBlur = 4;
+    discLabels.forEach((l, i) => {
+      const left = placed[i].left;
+      if (left == null) return;
+      ctx2.fillStyle = l.color + 'cc';
+      ctx2.fillText(l.text, left, l.y + 3);
+    });
+    ctx2.shadowBlur = 0;
 
     // Nation legend is now the shared interactive HTML overlay (#363) —
     // painted for both 2D and 3D outside the canvas. No canvas legend here.

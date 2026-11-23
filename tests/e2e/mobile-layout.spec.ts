@@ -1,5 +1,4 @@
 import { expect, test } from '@playwright/test';
-import { openControlsDrawer } from './_helpers/hud-expand';
 
 /**
  * Mobile-only layout assertions (ADR-018 mobile-first contract).
@@ -61,39 +60,8 @@ test.describe('mobile nav (≤500 px viewport)', () => {
   });
 });
 
-test.describe('mobile layer-filter chip horizontal flow (v0.6 fix)', () => {
-  // The four routes that shipped the mobile chip flow fix in commit
-  // 5f4cc05a — verify chips wrap horizontally instead of stacking
-  // vertically at ≤500 px.
-  for (const route of ['/explore', '/earth', '/moon', '/mars']) {
-    test(`${route} — first two chips share a row (chips flow rightward, not downward)`, async ({
-      page,
-      isMobile,
-    }) => {
-      test.skip(!isMobile, 'mobile-only');
-      await page.goto(route, { waitUntil: 'networkidle' });
-      // The hud-controls (chips, view toggles) now live in the
-      // MobileDrawerGroup Controls/Layers tab on touch devices. Open that
-      // tab so the chip flow is visible and measurable.
-      await openControlsDrawer(page);
-      // One flat row on every route (UXD-015): no group headers, no master chips.
-      await expect(page.locator('.mdg-body .chip-group')).toHaveCount(0);
-      const chips = page.locator('.mdg-body .ui-chip');
-      const count = await chips.count();
-      expect(count).toBeGreaterThanOrEqual(2);
-      const first = await chips.first().boundingBox();
-      const second = await chips.nth(1).boundingBox();
-      expect(first).not.toBeNull();
-      expect(second).not.toBeNull();
-      // For horizontal flow, the second chip's top should be roughly
-      // equal to the first chip's top (same row). Tolerance 8 px to
-      // absorb any baseline-alignment slop.
-      expect(Math.abs(first!.y - second!.y)).toBeLessThan(8);
-      // And the second chip should be to the RIGHT of the first.
-      expect(second!.x).toBeGreaterThan(first!.x);
-    });
-  }
-});
+// The v0.6 chip-flow check is gone: no phone drawer shows the layers as chips any more; they are
+// rows (UXD-015 amendment 2026-11-23), covered by chip-row.spec.
 
 test.describe('mobile footer / CTA clearance', () => {
   test('floating footer is hidden on touch; its links move into the nav drawer', async ({

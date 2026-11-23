@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test('porkchop refreshes when destination changes', async ({ page }) => {
+test('porkchop refreshes when destination changes', async ({ page, isMobile }) => {
   await page.goto('/plan');
   await page.waitForLoadState('networkidle');
   // Wait for the porkchop canvas to be in the DOM with non-zero
@@ -49,6 +49,9 @@ test('porkchop refreshes when destination changes', async ({ page }) => {
       canvasBox.x + canvasBox.width * 0.4,
       canvasBox.y + canvasBox.height * 0.7,
     );
+    // On a phone the panel is a bottom sheet (operator 2026-11-23): the photo is inside it, so
+    // open it from its handle first.
+    if (isMobile) await page.getByTestId('plan-sheet-handle').click();
     await page.locator('figure.rocket-photo').waitFor({ state: 'visible', timeout: 5_000 });
   }
 
@@ -59,7 +62,8 @@ test('porkchop refreshes when destination changes', async ({ page }) => {
     const fig = document.querySelector('figure.rocket-photo') as HTMLElement | null;
     return fig?.clientHeight ?? 0;
   });
-  expect(rocketFigHeight).toBeGreaterThan(100);
+  // Not squashed: 16:9 in the desktop column, the 72 px strip in the phone sheet.
+  expect(rocketFigHeight).toBeGreaterThan(isMobile ? 60 : 100);
 
   // Switch destination + wait for the porkchop hash to actually change
   // — replaces the older fixed waitForTimeout(2500) that was tuned to

@@ -14,13 +14,15 @@
     /** id of the folded region this button controls. */
     controls: string;
     onclick: () => void;
+    /** Drawn at the nested-panel size (chip.css `.ui-chip--sub`). */
+    sub?: boolean;
   }
-  let { open, count, controls, onclick }: Props = $props();
+  let { open, count, controls, onclick, sub = false }: Props = $props();
 </script>
 
 <Chip
   kind="action"
-  class="idx-filters-btn"
+  class={sub ? 'idx-filters-btn ui-chip--sub' : 'idx-filters-btn'}
   aria-expanded={open}
   aria-controls={controls}
   data-testid="index-filters-toggle"

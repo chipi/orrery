@@ -123,48 +123,57 @@
 </script>
 
 <div class="sidx" role="group" aria-label={m.surface_index_aria()}>
+  <!-- Two header rows (operator 2026-11-23): search with the count inside it beside the ×, all
+       30 px; then ALL / ORBIT / LAND with FILTERS at the row's end. -->
   <div class="sidx-top">
-    <input
-      type="search"
-      class="sidx-input"
-      placeholder={m.surface_index_search()}
-      aria-label={m.surface_index_search()}
-      data-testid="surface-index-search"
-      bind:value={query}
-    />
+    <div class="sidx-search">
+      <input
+        type="search"
+        class="sidx-input"
+        placeholder={m.surface_index_search()}
+        aria-label={m.surface_index_search()}
+        data-testid="surface-index-search"
+        bind:value={query}
+      />
+      <span class="sidx-count" aria-live="polite">{filtered.length} / {items.length}</span>
+    </div>
     {#if onClose}
       <Chip
         kind="action"
-        class="sidx-close ui-chip--close"
+        class="sidx-close ui-chip--close ui-chip--sub"
         aria-label={m.panel_close()}
         onclick={onClose}>×</Chip
       >
     {/if}
   </div>
 
+  <!-- Folded filters (C6-F): agency, era and status sit behind the FILTERS button; it keeps the
+       number of filters on while the fold is closed. -->
   <div class="sidx-filters">
     {#if hasBoth}
       <ChipGroup role="radiogroup" label={m.surface_index_filter_domain()}>
-        <Chip kind="choice" active={domainFilter === 'ALL'} onclick={() => (domainFilter = 'ALL')}
-          >{m.surface_index_all()}</Chip
+        <Chip
+          kind="choice"
+          class="ui-chip--sub"
+          active={domainFilter === 'ALL'}
+          onclick={() => (domainFilter = 'ALL')}>{m.surface_index_all()}</Chip
         >
         <Chip
           kind="choice"
+          class="ui-chip--sub"
           active={domainFilter === 'orbit'}
-          onclick={() => (domainFilter = 'orbit')}>{m.surface_index_orbit()}</Chip
+          onclick={() => (domainFilter = 'orbit')}>{m.surface_index_orbit_short()}</Chip
         >
-        <Chip kind="choice" active={domainFilter === 'land'} onclick={() => (domainFilter = 'land')}
-          >{m.surface_index_land()}</Chip
+        <Chip
+          kind="choice"
+          class="ui-chip--sub"
+          active={domainFilter === 'land'}
+          onclick={() => (domainFilter = 'land')}>{m.surface_index_land_short()}</Chip
         >
       </ChipGroup>
     {/if}
-  </div>
-
-  <!-- Folded filters (C6-F): agency, era and status sit behind the FILTERS button beside the
-       count; the button keeps the number of filters on while the fold is closed. -->
-  <div class="sidx-count-line">
-    <div class="sidx-count">{filtered.length} / {items.length}</div>
     <IndexFiltersToggle
+      sub
       open={foldOpen}
       count={foldedOn}
       controls={foldId}
@@ -176,11 +185,19 @@
     <div class="idx-fold-group">
       <span class="idx-fold-label">{m.fleet_filter_agency()}</span>
       <ChipGroup role="radiogroup" label={m.surface_index_filter_agency()}>
-        <Chip kind="choice" active={agencyFilter === 'ALL'} onclick={() => (agencyFilter = 'ALL')}
-          >{m.surface_index_all()}</Chip
+        <Chip
+          kind="choice"
+          class="ui-chip--sub"
+          active={agencyFilter === 'ALL'}
+          onclick={() => (agencyFilter = 'ALL')}>{m.surface_index_all()}</Chip
         >
         {#each agencies as a (a)}
-          <Chip kind="choice" active={agencyFilter === a} onclick={() => (agencyFilter = a)}>
+          <Chip
+            kind="choice"
+            class="ui-chip--sub"
+            active={agencyFilter === a}
+            onclick={() => (agencyFilter = a)}
+          >
             <AgencyBadge agency={a} /><span>{a}</span>
           </Chip>
         {/each}
@@ -190,12 +207,18 @@
     <div class="idx-fold-group">
       <span class="idx-fold-label">{m.card_stat_era()}</span>
       <ChipGroup role="radiogroup" label={m.surface_index_filter_era()}>
-        <Chip kind="choice" active={eraFilter === 'ALL'} onclick={() => (eraFilter = 'ALL')}
-          >{m.surface_index_all()}</Chip
+        <Chip
+          kind="choice"
+          class="ui-chip--sub"
+          active={eraFilter === 'ALL'}
+          onclick={() => (eraFilter = 'ALL')}>{m.surface_index_all()}</Chip
         >
         {#each ERAS as e (e.id)}
-          <Chip kind="choice" active={eraFilter === e.id} onclick={() => (eraFilter = e.id)}
-            >{e.label}</Chip
+          <Chip
+            kind="choice"
+            class="ui-chip--sub"
+            active={eraFilter === e.id}
+            onclick={() => (eraFilter = e.id)}>{e.label}</Chip
           >
         {/each}
       </ChipGroup>
@@ -204,12 +227,18 @@
     <div class="idx-fold-group">
       <span class="idx-fold-label">{m.fleet_filter_status()}</span>
       <ChipGroup role="radiogroup" label={m.surface_index_filter_status()}>
-        <Chip kind="choice" active={statusFilter === 'ALL'} onclick={() => (statusFilter = 'ALL')}
-          >{m.surface_index_all()}</Chip
+        <Chip
+          kind="choice"
+          class="ui-chip--sub"
+          active={statusFilter === 'ALL'}
+          onclick={() => (statusFilter = 'ALL')}>{m.surface_index_all()}</Chip
         >
         {#each statuses as s (s)}
-          <Chip kind="choice" active={statusFilter === s} onclick={() => (statusFilter = s)}
-            >{surfaceStatusLabel(s)}</Chip
+          <Chip
+            kind="choice"
+            class="ui-chip--sub"
+            active={statusFilter === s}
+            onclick={() => (statusFilter = s)}>{surfaceStatusLabel(s)}</Chip
           >
         {/each}
       </ChipGroup>
@@ -290,10 +319,16 @@
     gap: 6px;
     margin-bottom: 8px;
   }
-  .sidx-input {
+  .sidx-search {
+    position: relative;
     flex: 1;
     min-width: 0;
-    padding: 7px 10px;
+  }
+  .sidx-input {
+    box-sizing: border-box;
+    width: 100%;
+    height: 30px;
+    padding: 0 64px 0 10px;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.14);
     border-radius: 6px;
@@ -307,24 +342,22 @@
   }
   .sidx-filters {
     display: flex;
-    flex-direction: column;
-    gap: 5px;
+    align-items: center;
+    gap: 6px;
     margin-bottom: 8px;
   }
-  .sidx-filters:empty {
-    display: none;
+  .sidx-filters :global(.idx-filters-btn) {
+    margin-inline-start: auto;
   }
   .sidx-fold :global(.badge) {
     height: 13px;
   }
-  .sidx-count-line {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 8px;
-    margin-bottom: 4px;
-  }
   .sidx-count {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    pointer-events: none;
     font-size: var(--size-label);
     letter-spacing: 0.5px;
     color: var(--color-text-dim);

@@ -68,6 +68,14 @@ describe('mobileDrawerHidden', () => {
     ).toBe(true);
     expect(mobileDrawerHidden({ routeViewActive: false, flatPatchActive: false })).toBe(false);
   });
+
+  // 2026-11-23 operator review: zoomed into a site the tab row stayed, leaving the site card
+  // and scale bar a row above the bottom edge.
+  it('hides once zoomed into a site (its imagery card is up)', () => {
+    expect(
+      mobileDrawerHidden({ routeViewActive: false, flatPatchActive: false, siteDetail: true }),
+    ).toBe(true);
+  });
 });
 
 describe('shouldFlyToDetail', () => {

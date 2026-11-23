@@ -234,4 +234,34 @@
       display: block;
     }
   }
+  /* Touch: the ladder lists the levels as compact rows in the orbit ruler's look, as the Worlds'
+     Layers and Nations drawers do (UXD-015 amendment 2026-11-23), not as 44 px chips. */
+  @media (hover: none), (pointer: coarse) {
+    .rail {
+      gap: 2px;
+      padding: 6px;
+      border-radius: 6px;
+    }
+    .rail :global(.ui-chip.rung) {
+      min-block-size: 32px;
+      padding: 4px 10px 4px 8px;
+      gap: 8px;
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 4px;
+      color: rgba(255, 255, 255, 0.55);
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      box-shadow: none;
+    }
+    .rail :global(.ui-chip.rung[aria-current='true']) {
+      background: rgba(136, 159, 231, 0.14);
+      border-color: var(--color-state);
+      color: #fff;
+    }
+    .rail :global(.ui-chip.rung svg) {
+      inline-size: 16px;
+      block-size: 16px;
+    }
+  }
 </style>

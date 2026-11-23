@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { pillLeft } from './pill-place';
   /**
    * Flat ground-patch view for /moon and /mars (ADR-062, #283 Slice 4).
    *
@@ -684,7 +685,7 @@
       ctx.fill();
       const text = `${stop.label} · ${m.traverse_sol({ sol: stop.sol })}`;
       const w = ctx.measureText(text).width + 20;
-      const [x, y, h] = [p.x + 14, p.y - 20, 22];
+      const [x, y, h] = [pillLeft(p.x, w, W), p.y - 20, 22];
       ctx.beginPath();
       ctx.roundRect(x, y - h / 2, w, h, h / 2);
       ctx.fillStyle = 'rgba(11, 18, 32, 0.86)';
@@ -1226,6 +1227,27 @@
     }
   }
   @media (hover: none), (pointer: coarse) {
+    /* The layer chips match the floating EXIT beside them: the nested 30 px chip (chip.css
+       .ui-chip--sub), its tap area stretched to 44 px. */
+    .chip {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      box-sizing: border-box;
+      min-height: 30px;
+      padding: 0 12px;
+      border-radius: 4px;
+      letter-spacing: 1px;
+    }
+    .chip::before {
+      content: '';
+      position: absolute;
+      inset: -7px 0;
+    }
+    /* On the floating EXIT's line (SurfaceScene .surface-floating-exit: the nav height + 8 px). */
+    .hud-layers {
+      top: 8px;
+    }
     /* SurfaceScene already renders a prominent "Exit zoom" affordance on
        mobile, so the in-component back button is redundant here — drop it. */
     .hud-back {

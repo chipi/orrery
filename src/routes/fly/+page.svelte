@@ -4425,6 +4425,7 @@
   >
     <Chip
       kind="action"
+      class="ui-chip--sub"
       data-audio-stage="fly-play"
       onclick={masterTogglePlay}
       aria-label={isPlaying ? m.fly_pause() : m.fly_play()}
@@ -4544,6 +4545,7 @@
       <div class="speed-slot">
         <Chip
           kind="action"
+          class="ui-chip--sub"
           active={isPlaying}
           aria-expanded={speedPopoverOpen}
           aria-haspopup="true"
@@ -5508,11 +5510,13 @@
      820 → 1040 px). On wide viewports the typical 2-card case still
      reads as one row; many-asset missions wrap to a second row instead
      of revealing a horizontal scrollbar. */
+  /* Three cards a row where there is room (operator 2026-11-23: two a row read oversized), one
+     a row on a phone. */
   .opening-fleet-row {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     justify-content: center;
-    gap: 12px;
+    gap: 10px;
     width: 100%;
     padding-bottom: 4px;
   }
@@ -5521,7 +5525,7 @@
      from the first card (2026-06-15 user follow-up: "when there is
      only 1 fleet asset, center it"). */
   .opening-fleet-row:has(> .opening-fleet-card:only-child) {
-    justify-content: center;
+    grid-template-columns: minmax(240px, 360px);
   }
   .opening-fleet-card {
     flex-shrink: 0;
@@ -5737,12 +5741,12 @@
     display: flex;
     flex-direction: row;
     align-items: stretch;
-    gap: 14px;
-    padding: 10px 14px;
+    gap: 10px;
+    padding: 8px 10px;
     background: rgba(14, 18, 32, 0.55);
     border: 1px solid color-mix(in srgb, var(--color-state) 25%, transparent);
     border-radius: 6px;
-    max-width: 360px;
+    min-width: 0;
     text-decoration: none;
     color: inherit;
     transition:
@@ -5758,7 +5762,6 @@
     transform: translateY(-1px);
   }
   .opening-fleet-card.hero {
-    max-width: 460px;
     border-color: rgba(255, 200, 80, 0.5);
   }
   .opening-fleet-card.hero:hover,
@@ -5767,15 +5770,15 @@
   }
   .opening-fleet-hero {
     flex-shrink: 0;
-    width: 72px;
-    height: 72px;
+    width: 56px;
+    height: 56px;
     object-fit: cover;
     border-radius: 4px;
     border: 1px solid rgba(255, 255, 255, 0.1);
   }
   .opening-fleet-card.hero .opening-fleet-hero {
-    width: 110px;
-    height: 110px;
+    width: 64px;
+    height: 64px;
   }
   .opening-fleet-meta {
     display: flex;
@@ -5795,23 +5798,24 @@
   }
   .opening-fleet-name {
     font-family: var(--font-display);
-    font-size: 14px;
+    font-size: 13px;
     letter-spacing: 2px;
     color: rgba(255, 255, 255, 0.96);
     text-transform: uppercase;
   }
   .opening-fleet-card.hero .opening-fleet-name {
-    font-size: 17px;
-    letter-spacing: 3px;
+    font-size: 14px;
+    letter-spacing: 2px;
   }
+  /* The vehicle / payload line's size above the cards (.opening-stat-val, 12 px). */
   .opening-fleet-tagline {
-    font-size: var(--size-lead);
+    font-size: 12px;
     line-height: 1.4;
     color: rgba(255, 255, 255, 0.78);
   }
   .opening-fleet-bio {
-    font-size: var(--size-lead);
-    line-height: 1.5;
+    font-size: 12px;
+    line-height: 1.45;
     color: rgba(255, 255, 255, 0.82);
     /* Multi-line clamp for long bios — keep card compact */
     display: -webkit-box;
@@ -6103,6 +6107,33 @@
      unified master scrubber must out-stack it so pad→arrival is one control. */
   .scrubber.launch-active {
     z-index: 210;
+  }
+  /* Touch: /explore's time bar (TimeDock, operator 2026-11-23) — one thin bar across the screen,
+     play and speed sit flat in it at 30 px (44 px tap areas), the track fills the room between. */
+  :global(html[data-touch]) .scrubber {
+    bottom: max(8px, env(safe-area-inset-bottom, 0px));
+    left: max(8px, env(safe-area-inset-left, 0px));
+    right: max(8px, env(safe-area-inset-right, 0px));
+    gap: 2px;
+    padding: 3px 4px;
+    background: rgba(5, 5, 20, 0.88);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 6px;
+  }
+  /* Play and speed alike (operator 2026-11-23): a filled box, no border, in every state — the
+     speed chip's playing outline made the two ends of the bar read differently. */
+  :global(html[data-touch]) .scrubber > :global(.ui-chip),
+  :global(html[data-touch]) .scrubber .speed-slot > :global(.ui-chip) {
+    min-inline-size: 38px;
+    padding-inline: 8px;
+    background: rgba(255, 255, 255, 0.08);
+    border-color: transparent;
+    border-radius: 4px;
+    box-shadow: none;
+  }
+  :global(html[data-touch]) .scrubber .scrub-track-wrap {
+    height: 30px;
+    margin-inline: 6px;
   }
 
   /* The HUD-collapse toggle itself — mobile-only floating button at
@@ -6775,7 +6806,7 @@
     .fly-mtabs {
       display: flex;
       position: fixed;
-      bottom: calc(84px + env(safe-area-inset-bottom, 0px));
+      bottom: calc(54px + env(safe-area-inset-bottom, 0px));
       left: 8px;
       right: 8px;
       gap: 5px;
@@ -6832,7 +6863,7 @@
     .fly-bottom-strips.m-open {
       position: fixed;
       top: auto;
-      bottom: calc(132px + env(safe-area-inset-bottom, 0px));
+      bottom: calc(102px + env(safe-area-inset-bottom, 0px));
       left: 8px;
       right: 8px;
       width: auto;
@@ -6866,7 +6897,7 @@
     /* The performance toast rides above the tab bar (and over an open sheet), not
        over the tabs or the play bar. */
     .perf-toast {
-      bottom: calc(132px + env(safe-area-inset-bottom, 0px));
+      bottom: calc(102px + env(safe-area-inset-bottom, 0px));
       right: 8px;
       max-width: calc(100vw - 16px);
       z-index: 42;

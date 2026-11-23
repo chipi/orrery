@@ -59,6 +59,26 @@
   }
 }
 
+/* A chip inside a panel the HUD opened (the surface INDEX): drawn at the fine-pointer 30 px on
+   touch too, smaller than the HUD chips that opened it (operator 2026-11-23: nested controls read
+   oversized at 44). The ::before strip keeps the 44 px touch target. */
+@media (hover: none), (pointer: coarse) {
+  .ui-chip--sub {
+    position: relative;
+    min-block-size: 30px;
+    min-inline-size: 30px;
+  }
+  .ui-chip--sub::before {
+    content: '';
+    position: absolute;
+    inset: -7px 0;
+  }
+  .ui-chip--sub.ui-chip--close {
+    inline-size: 30px;
+    font-size: 18px;
+  }
+}
+
 /* Hover lifts a chip at rest only: an on chip keeps its data / world / accent edge. */
 .ui-chip:hover:not(:disabled):not(.is-on, [aria-pressed='true'], [aria-checked='true']) {
   border-color: var(--chip-tint, var(--color-state));

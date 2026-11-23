@@ -42,7 +42,8 @@ for (const w of WORLDS) {
     await expect(row).toBeVisible({ timeout: 60_000 });
     const back = row.locator('.ui-chip').first();
     await expect(back).toHaveAttribute('data-testid', /^surface-back-to-explore/);
-    await expect(back).toHaveText('Back to Explore');
+    // A phone shows only the ‹ arrow; the name stays.
+    await expect(back).toHaveAccessibleName('Back to Explore');
     await expect(back).toHaveAttribute('href', `/explore?id=${w.explore}`);
     await expect(back).toBeInViewport();
     await back.click();

@@ -956,10 +956,10 @@
       left: 12px;
       /* Header (left) and clock (right) share the top row: the clock keeps its width, the
          title wraps in what is left. */
-      max-width: calc(100% - 224px);
+      max-width: calc(100% - 172px);
     }
     .launch.hud-hidden .clock {
-      max-width: 190px;
+      max-width: 148px;
     }
     .launch.hud-hidden .mission {
       font-size: 20px;
@@ -992,6 +992,8 @@
        on a phone they are the only speed + altitude on screen, so bring them back. */
     .launch.external.hud-hidden .readouts {
       display: flex;
+      /* 8 px above /fly's time bar (8 px from the bottom, 38 px tall; operator 2026-11-23). */
+      bottom: calc(54px + env(safe-area-inset-bottom, 0px));
     }
     .launch.hud-hidden .rv {
       font-size: 26px;

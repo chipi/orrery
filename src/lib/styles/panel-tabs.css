@@ -53,6 +53,25 @@
     color 120ms,
     border-color 120ms;
 }
+/* Phone-wide panel: five tabs (the rover sites) ran 21 px past a 390 px screen in English and up
+   to 116 px in French and Portuguese; tighter tracking and padding win back ~15 px a tab. */
+@media (max-width: 600px) {
+  .tabs button {
+    padding: 10px 7px;
+    letter-spacing: 0.8px;
+  }
+  /* Where the row still runs past the panel (French, Portuguese; any 320 px phone), a soft
+     edge at the right says it scrolls. CSS only (scroll shadows): the panel-coloured cover
+     travels with the content (local) and hides the edge once the end is in view, or when the
+     row fits. */
+  .tabs {
+    background:
+      linear-gradient(var(--color-panel-bg), var(--color-panel-bg)) right center / 32px 100%
+        no-repeat local,
+      linear-gradient(to left, rgba(136, 159, 231, 0.35), transparent) right center / 28px 100%
+        no-repeat scroll;
+  }
+}
 .tabs button.active {
   color: var(--color-text, #fff);
   border-bottom-color: var(--color-accent);

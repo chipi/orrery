@@ -46,8 +46,22 @@ export function routePatchFlatTarget(
     const covers = Math.max(Math.abs(dN), Math.abs(dE)) < ground / 2;
     if (covers && rp.resolution_m_per_px >= ground / DETAIL_PX) return null;
   }
+  // Ring offsets are metres from the site point; the point moves to the tile's centre, so each
+  // offset is re-measured from there (a "Landing point" ring followed the tile otherwise).
+  let annotations = selected.hotspot_annotations;
+  if (annotations?.length && selected.lat != null && selected.lon != null) {
+    const mPerDeg = (Math.PI / 180) * radiusKm * 1000;
+    const dN = (selected.lat - rp.lat) * mPerDeg;
+    const dE = (selected.lon - rp.lon) * mPerDeg * Math.cos((selected.lat * Math.PI) / 180);
+    annotations = annotations.map((a) => ({
+      ...a,
+      lat_offset_m: a.lat_offset_m + dN,
+      lon_offset_m: a.lon_offset_m + dE,
+    }));
+  }
   return {
     ...selected,
+    hotspot_annotations: annotations,
     lat: rp.lat,
     lon: rp.lon,
     hotspot_tier2_source: rp.image,

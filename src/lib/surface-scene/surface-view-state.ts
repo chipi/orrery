@@ -62,8 +62,10 @@ export function mobileDrawerHidden(i: {
   flatPatchActive: boolean;
   /** Zoom-in fly in progress (altitude still high until the patch opens). */
   detailFlying?: boolean;
+  /** Zoomed into a site: its imagery card and scale bar take the bottom row. */
+  siteDetail?: boolean;
 }): boolean {
-  return i.routeViewActive || i.flatPatchActive || !!i.detailFlying;
+  return i.routeViewActive || i.flatPatchActive || !!i.detailFlying || !!i.siteDetail;
 }
 
 /**

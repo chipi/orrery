@@ -54,4 +54,12 @@
     white-space: normal;
     text-align: center;
   }
+  /* A phone-wide panel fits three chips a row: the chips share each row's width, so a fourth
+     (Share) that wraps fills its own row instead of hanging alone at the edge. */
+  @media (max-width: 600px) {
+    .panel-actions :global(.ui-chip) {
+      flex: 1 1 auto;
+      justify-content: center;
+    }
+  }
 </style>

@@ -26,28 +26,32 @@ const PROBES = {
     path: '/moon',
     expr: `(() => { const s = window.__surfaceSceneCamera?.(); return s ? [s.camR, s.camT, s.camP, ...s.focus] : null; })()`,
     zoomIdx: [0],
-    panIdx: [3, 4, 5],
+    // Two fingers turn the globe so the ground follows them (camT, camP).
+    panIdx: [1, 2],
     orbitIdx: [1, 2],
   },
   mars: {
     path: '/mars',
     expr: `(() => { const s = window.__surfaceSceneCamera?.(); return s ? [s.camR, s.camT, s.camP, ...s.focus] : null; })()`,
     zoomIdx: [0],
-    panIdx: [3, 4, 5],
+    // Two fingers turn the globe so the ground follows them (camT, camP).
+    panIdx: [1, 2],
     orbitIdx: [1, 2],
   },
   earth: {
     path: '/earth',
     expr: `(() => { const s = window.__surfaceSceneCamera?.(); return s ? [s.camR, s.camT, s.camP, ...s.focus] : null; })()`,
     zoomIdx: [0],
-    panIdx: [3, 4, 5],
+    // Two fingers turn the globe so the ground follows them (camT, camP).
+    panIdx: [1, 2],
     orbitIdx: [1, 2],
   },
   venus: {
     path: '/venus',
     expr: `(() => { const s = window.__surfaceSceneCamera?.(); return s ? [s.camR, s.camT, s.camP, ...s.focus] : null; })()`,
     zoomIdx: [0],
-    panIdx: [3, 4, 5],
+    // Two fingers turn the globe so the ground follows them (camT, camP).
+    panIdx: [1, 2],
     orbitIdx: [1, 2],
   },
   iss: {

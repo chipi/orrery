@@ -1,4 +1,5 @@
 import { test, expect, type Page } from '@playwright/test';
+import { openPlanSheet } from './_helpers/plan-sheet';
 
 /**
  * /plan → /fly handoff (slice G1, UXD-042): the rocket chosen on /plan reaches /fly as
@@ -16,6 +17,7 @@ async function pickMarsFlybyFalconHeavy(page: Page): Promise<void> {
   await expect(page.getByRole('status')).toBeHidden({ timeout: 20_000 });
   await page.getByRole('radio', { name: /FLYBY/i }).click();
   const panel = page.getByRole('complementary', { name: /Mission summary/i });
+  await openPlanSheet(page);
   await expect(panel.locator('select')).toBeVisible({ timeout: 20_000 });
   await panel.locator('select').selectOption('falcon-heavy');
 }
@@ -38,6 +40,7 @@ test.describe('/plan keeps and hands over the chosen rocket', () => {
     await expect(page.getByRole('status')).toBeHidden({ timeout: 20_000 });
     const panel = page.getByRole('complementary', { name: /Mission summary/i });
     await expect(panel.locator('select')).toHaveValue('h3', { timeout: 20_000 });
+    await openPlanSheet(page);
     await panel.locator('select').selectOption('pslv-xl');
     await expect(page).toHaveURL(/rocket=pslv-xl/);
     await page.reload();

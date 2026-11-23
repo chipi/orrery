@@ -42,7 +42,7 @@ test.describe('surface object index', () => {
     const all = await list.locator('.sidx-row').count();
 
     // Mars has both surface craft and orbiters → the orbit/land toggle shows.
-    const orbitChip = page.getByRole('radio', { name: /in orbit/i }).first();
+    const orbitChip = page.getByRole('radio', { name: /^orbit$/i }).first();
     await expect(orbitChip).toBeVisible();
     await orbitChip.click();
     const orbitOnly = await list.locator('.sidx-row').count();
@@ -165,7 +165,7 @@ test.describe('surface object index', () => {
 
     // Closed at the start: the domain chips are on one line, the three groups are not shown.
     await expect(btn).toHaveAttribute('aria-expanded', 'false');
-    await expect(panel.getByRole('radio', { name: /in orbit/i })).toBeVisible();
+    await expect(panel.getByRole('radio', { name: /^orbit$/i })).toBeVisible();
     await expect(panel.getByRole('radio', { name: /^NASA$/ })).toBeHidden();
     await expect(btn.locator('.idx-filters-n')).toHaveCount(0);
     const rows = await list.locator('.sidx-row').count();

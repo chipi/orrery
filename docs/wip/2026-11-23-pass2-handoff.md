@@ -54,6 +54,17 @@ All 148 showcase models are at the pilot bar and wired; nothing of pass 1 is lef
 | 46fd233ac84 | Credits regenerated |
 | e2fca28e4d4 | /colophon: 251 model entries (73 new, the superseded capsule, probe and craft entries removed), new thumbnails, all 13 locales; the empty "Capsules" section is hidden |
 
+| 80a17174365 | The descents' craft models load on demand: `preloadDescentModels()` in `descent-landers.ts`, awaited by `DescentScene.svelte` (until loaded, lookups answer null and the Tier 0 silhouette flies). A new descent model goes into a family listed in its `FAMILIES` glob |
+| 30e6f948c68 | Route budgets re-measured against 0.9.10 (`scripts/route-budget.json`); the commit lists what grew and why |
+| 5ce0d7f196d | The whole-catalogue model tests have a 30 s budget (they build every craft) |
+
+Final checks at the end of the session: `npm run check` 0 errors; `npm run validate-data` all
+checks passed; eslint and prettier clean on tracked files (the untracked `scripts/*.tmp.*` scratch
+files fail both — a clean checkout has none; move them out of `scripts/` before running `npm run preflight`, which
+checks the working tree); production build with `SENTRY_SOURCEMAPS=1` within every route budget,
+prerender, internal links and SEO passing; `npm run test:coverage` 569 files, 9640 tests passed,
+coverage thresholds met. Nothing is pushed.
+
 What the line-up and flight scenes still draw with older builders, on purpose: the lander
 cruise stages (`lander-cruise-models.ts`) for missions not in `FLY_CRAFT` (the Mars landers,
 Apollo, Artemis, Luna, Chang'e …), `craft-cassini` for the `huygens` mission, New Horizons, and

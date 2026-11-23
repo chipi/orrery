@@ -254,9 +254,10 @@ export function buildPayload(
   launcherHeightM?: number,
   stageTopRadius?: number,
 ): THREE.Group {
-  const probe = spacecraftId ? buildInterplanetarySpacecraft(spacecraftId) : null;
-  // The /fleet showcase craft (preloaded by /fly) — the full CSM, Soyuz, Dragon, X-37B or probe.
-  const craft = probe ? null : flyCraft(spacecraftId);
+  // The /fleet showcase craft (preloaded by /fly) — the full CSM, Soyuz, Dragon, X-37B or probe —
+  // first; the older interplanetary silhouette only for a probe without one.
+  const craft = flyCraft(spacecraftId);
+  const probe = !craft && spacecraftId ? buildInterplanetarySpacecraft(spacecraftId) : null;
   // A winged orbiter (the Shuttle) is the showcase craft in its bay, not a capsule on the stack.
   const coastOfCraft = !probe && spacecraftId ? getEarthOrbitCoast(spacecraftId) : null;
   const capsuleId = coastOfCraft && !coastOfCraft.winged ? coastOfCraft.capsuleId : undefined;
@@ -272,8 +273,8 @@ export function buildPayload(
       ? buildLanderCruiseCraft(spacecraftId)
       : null;
   const model =
-    probe ??
     craft ??
+    probe ??
     (capsuleId ? buildCapsuleById(capsuleId) : null) ??
     orion ??
     cruise ??

@@ -178,6 +178,10 @@
 
   {#if !data}
     <p class="loading">…</p>
+    <!-- The fleet and mission pages' 3D viewer links to #sec-models; the sections draw only once
+         the manifest arrives, so the prerendered page carries the anchor here (the hash scroll
+         above then finds the real heading). -->
+    <span id="sec-models" hidden></span>
   {:else}
     <!-- Jump-link TOC (2026-09-11 operator ask) — same affordance as the
          sources index at the top of /credits. One row per section drawn

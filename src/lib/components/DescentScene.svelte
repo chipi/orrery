@@ -22,6 +22,7 @@
     type DescentScene,
   } from '$lib/three/descent-scene';
   import { createAscentRenderer, type AscentRenderer } from '$lib/three/ascent-renderer';
+  import { preloadDescentModels } from '$lib/three/descent-landers';
   import { resolveQualitySync } from '$lib/quality/quality-tier';
   import { createAnimateLoop, type AnimateLoop } from '$lib/three/animate-loop';
   import {
@@ -219,7 +220,23 @@
     playing = false;
   };
 
+  // The descent's craft models load on demand (descent-landers.ts); the scene is built once they
+  // are in, or with the Tier 0 silhouettes if the load fails.
   onMount(() => {
+    let unmounted = false;
+    let stop: (() => void) | undefined;
+    void preloadDescentModels()
+      .catch(() => undefined)
+      .then(() => {
+        if (!unmounted) stop = start();
+      });
+    return () => {
+      unmounted = true;
+      stop?.();
+    };
+  });
+
+  function start(): () => void {
     const w = container.clientWidth;
     const h = container.clientHeight;
 
@@ -280,7 +297,7 @@
       window.removeEventListener('resize', onResize);
       forceLayerStops.forEach((stop) => stop?.());
     };
-  });
+  }
 
   onDestroy(() => {
     loop?.cleanup();

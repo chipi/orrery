@@ -1,9 +1,16 @@
 // @vitest-environment jsdom
 import * as THREE from 'three';
-import { describe, it, expect } from 'vitest';
+import { beforeAll, describe, it, expect } from 'vitest';
 import { buildDescentModel, KNOWN_DESCENT_STACK_IDS } from './descent-models';
-import { DETAILED_CAPSULE_IDS, DETAILED_DESCENT_LANDER_IDS } from './descent-landers';
+import {
+  DETAILED_CAPSULE_IDS,
+  DETAILED_DESCENT_LANDER_IDS,
+  preloadDescentModels,
+} from './descent-landers';
 import { buildCapsuleById } from './capsule-models';
+
+// The craft models load on demand (/fly awaits this before it builds a descent).
+beforeAll(() => preloadDescentModels());
 
 describe('buildDescentModel', () => {
   it('skycrane stack (Curiosity) has rigging, descent stage, chute + a lander', () => {

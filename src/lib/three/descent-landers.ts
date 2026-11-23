@@ -1,76 +1,109 @@
 import * as THREE from 'three';
-import { buildApolloLunarModule } from './showcase/lunar-module';
-import { buildCuriosity } from './showcase/mars-rovers';
-import { SHOWCASE as FREIGHTERS } from './showcase/station-freighters';
-import {
-  SHOWCASE as LUNAR_EAST,
-  buildLunaE8LandingStage,
-  buildLunokhod,
-} from './showcase/lunar-landers-east';
-import { SHOWCASE as LUNAR_WEST } from './showcase/lunar-landers-west';
-import { SHOWCASE as MARS_LANDERS, buildPathfinderLander } from './showcase/mars-landers';
-import { SHOWCASE as ROVERS } from './showcase/rovers';
-import { SHOWCASE as CLASSIC } from './showcase/capsules-classic';
-import { SHOWCASE as COMMERCIAL } from './showcase/capsules-commercial';
-import {
-  SHOWCASE as PROBES,
-  buildGalileoProbe,
-  buildHuygensProbe,
-  buildPhilae,
-  buildVeneraLander,
-} from './showcase/probes';
+import type { ShowcaseModel } from './showcase/types';
+
+/**
+ * The model families the descents fly, loaded on demand: /fly's first load stays free of them,
+ * and DescentScene awaits preloadDescentModels() before it builds the scene. Until they are in,
+ * every lookup below answers null and the descent keeps the Tier 0 silhouette.
+ */
+type Family = { SHOWCASE?: Record<string, ShowcaseModel> } & Record<string, unknown>;
+const FAMILIES = import.meta.glob<Family>([
+  './showcase/lunar-module.ts',
+  './showcase/mars-rovers.ts',
+  './showcase/station-freighters.ts',
+  './showcase/lunar-landers-east.ts',
+  './showcase/lunar-landers-west.ts',
+  './showcase/mars-landers.ts',
+  './showcase/rovers.ts',
+  './showcase/capsules-classic.ts',
+  './showcase/capsules-commercial.ts',
+  './showcase/probes.ts',
+]);
+const loaded: Record<string, Family> = {};
+let preloading: Promise<void> | null = null;
+
+/** Load every family the descents fly (once; later calls share the first load). */
+export function preloadDescentModels(): Promise<void> {
+  preloading ??= Promise.all(
+    Object.entries(FAMILIES).map(async ([path, load]) => {
+      loaded[path.replace('./showcase/', '').replace(/\.ts$/, '')] = await load();
+    }),
+  ).then(() => undefined);
+  return preloading;
+}
+
+/** A model builder that needs `family` loaded. */
+interface Source {
+  family: string;
+  build: (m: Family) => THREE.Group;
+}
+const model = (family: string, id: string): Source => ({
+  family,
+  build: (m) => m.SHOWCASE![id].build(),
+});
+const builder = (family: string, name: string): Source => ({
+  family,
+  build: (m) => (m[name] as () => THREE.Group)(),
+});
+/** Build from `src` when its family is loaded, else null. */
+const buildFrom = (src: Source | undefined): THREE.Group | null => {
+  const m = src && loaded[src.family];
+  return m ? src.build(m) : null;
+};
 
 /**
  * The central detailed models (src/lib/three/showcase/), flown in /fly's descent in place of
  * the Tier 0 surface silhouettes (operator 2026-11-23: one model per craft, used everywhere;
  * the landers "looked like two-year-old children toys"). Keyed by descent site id.
  */
-const DETAILED: Record<string, () => THREE.Group> = {
-  apollo11: buildApolloLunarModule,
-  apollo12: buildApolloLunarModule,
-  apollo14: buildApolloLunarModule,
-  apollo15: buildApolloLunarModule,
-  apollo16: buildApolloLunarModule,
-  apollo17: buildApolloLunarModule,
-  curiosity: buildCuriosity,
+const LM = builder('lunar-module', 'buildApolloLunarModule');
+const LUNOKHOD: Source = { family: 'lunar-landers-east', build: lunokhodOnStage };
+const DETAILED: Record<string, Source> = {
+  apollo11: LM,
+  apollo12: LM,
+  apollo14: LM,
+  apollo15: LM,
+  apollo16: LM,
+  apollo17: LM,
+  curiosity: builder('mars-rovers', 'buildCuriosity'),
   // Scale-out (2026-11-23): the central models of every robotic Moon and Mars landing.
-  luna9: () => LUNAR_EAST['luna-9'].build(),
-  luna16: () => LUNAR_EAST['luna-16'].build(),
-  luna24: () => LUNAR_EAST['luna-16'].build(),
-  luna17: lunokhodOnStage,
-  luna21: lunokhodOnStage,
-  change3: () => LUNAR_EAST['change-3'].build(),
-  change4: () => LUNAR_EAST['change-3'].build(),
-  change5: () => LUNAR_EAST['change-5'].build(),
-  change6: () => LUNAR_EAST['change-5'].build(),
-  chandrayaan2: () => LUNAR_WEST['vikram-cy3'].build(),
-  chandrayaan3: () => LUNAR_WEST['vikram-cy3'].build(),
-  slim: () => LUNAR_WEST.slim.build(),
-  beresheet: () => LUNAR_WEST.beresheet.build(),
-  'blue-moon-mk1': () => LUNAR_WEST['blue-moon-mk1'].build(),
-  'viking1-lander': () => MARS_LANDERS['viking-1'].build(),
-  mars3: () => MARS_LANDERS['mars-3'].build(),
-  phoenix: () => MARS_LANDERS.phoenix.build(),
-  insight: () => MARS_LANDERS.insight.build(),
-  schiaparelli: () => MARS_LANDERS.schiaparelli.build(),
-  beagle2: () => MARS_LANDERS.beagle2.build(),
-  'mars-pathfinder': buildPathfinderLander,
-  spirit: () => ROVERS.spirit.build(),
-  opportunity: () => ROVERS.opportunity.build(),
-  perseverance: () => ROVERS.perseverance.build(),
-  zhurong: () => ROVERS.zhurong.build(),
+  luna9: model('lunar-landers-east', 'luna-9'),
+  luna16: model('lunar-landers-east', 'luna-16'),
+  luna24: model('lunar-landers-east', 'luna-16'),
+  luna17: LUNOKHOD,
+  luna21: LUNOKHOD,
+  change3: model('lunar-landers-east', 'change-3'),
+  change4: model('lunar-landers-east', 'change-3'),
+  change5: model('lunar-landers-east', 'change-5'),
+  change6: model('lunar-landers-east', 'change-5'),
+  chandrayaan2: model('lunar-landers-west', 'vikram-cy3'),
+  chandrayaan3: model('lunar-landers-west', 'vikram-cy3'),
+  slim: model('lunar-landers-west', 'slim'),
+  beresheet: model('lunar-landers-west', 'beresheet'),
+  'blue-moon-mk1': model('lunar-landers-west', 'blue-moon-mk1'),
+  'viking1-lander': model('mars-landers', 'viking-1'),
+  mars3: model('mars-landers', 'mars-3'),
+  phoenix: model('mars-landers', 'phoenix'),
+  insight: model('mars-landers', 'insight'),
+  schiaparelli: model('mars-landers', 'schiaparelli'),
+  beagle2: model('mars-landers', 'beagle2'),
+  'mars-pathfinder': builder('mars-landers', 'buildPathfinderLander'),
+  spirit: model('rovers', 'spirit'),
+  opportunity: model('rovers', 'opportunity'),
+  perseverance: model('rovers', 'perseverance'),
+  zhurong: model('rovers', 'zhurong'),
 };
 
 /** Luna 17 and 21: Lunokhod riding the E-8 landing stage, on its deck between the ramps. */
-function lunokhodOnStage(): THREE.Group {
-  const stage = buildLunaE8LandingStage();
+function lunokhodOnStage(east: Family): THREE.Group {
+  const stage = (east.buildLunaE8LandingStage as () => THREE.Group)();
   // The deck top, measured without the ramps (which slope above it).
   const ramps = stage.getObjectByName('ramps');
   const parent = ramps?.parent;
   ramps?.removeFromParent();
   const deckTop = new THREE.Box3().setFromObject(stage).max.y;
   if (ramps && parent) parent.add(ramps);
-  const rover = buildLunokhod();
+  const rover = (east.buildLunokhod as () => THREE.Group)();
   rover.name = 'rover';
   rover.position.y = deckTop;
   stage.add(rover);
@@ -180,12 +213,11 @@ function flyingBox(root: THREE.Object3D): THREE.Box3 {
  * The detailed model for `siteId`, fitted to `tier0`'s footprint and base so the descent stack
  * around it keeps its layout; an Apollo LM gets its flag, planted at touchdown. The holder's userData gives
  * `metresToScene` and, where the model has them, `engineExitY` and `dockY` in scene units.
- * Null when the site has no detailed model.
+ * Null when the site has no detailed model, or before preloadDescentModels() has loaded it.
  */
 export function detailedDescentLander(siteId: string, tier0: THREE.Group): THREE.Group | null {
-  const build = DETAILED[siteId];
-  if (!build) return null;
-  const craft = build();
+  const craft = buildFrom(DETAILED[siteId]);
+  if (!craft) return null;
   // Curiosity's mast rode stowed through entry: raised only on the surface; likewise every
   // site's STOWED parts.
   const rsm = craft.getObjectByName('rsm');
@@ -213,9 +245,10 @@ export function detailedDescentLander(siteId: string, tier0: THREE.Group): THREE
 }
 
 /** The detailed Apollo CSM (Block II), docked nose-down on the LM at `dockY`, at `k` scene units
- *  per metre. */
-export function dockedApolloCsm(dockY: number, k: number): THREE.Group {
-  const csm = FREIGHTERS['apollo-csm-block-ii'].build();
+ *  per metre. Null until its family is loaded. */
+export function dockedApolloCsm(dockY: number, k: number): THREE.Group | null {
+  const csm = buildFrom(model('station-freighters', 'apollo-csm-block-ii'));
+  if (!csm) return null;
   const top = new THREE.Box3().setFromObject(csm).max.y;
   const g = new THREE.Group();
   csm.rotation.x = Math.PI; // CM apex (the probe) down, onto the LM's drogue
@@ -228,15 +261,15 @@ export function dockedApolloCsm(dockY: number, k: number): THREE.Group {
 
 /** Earth-return capsule families (earth-orbit-registry `capsuleId`) → the central model whose
  *  'descent-module' is the part that comes home. */
-const CAPSULE_MODEL: Record<string, () => THREE.Group> = {
-  vostok: () => CLASSIC.vostok.build(),
-  voskhod: () => CLASSIC.voskhod.build(),
-  mercury: () => CLASSIC['mercury-capsule'].build(),
-  gemini: () => CLASSIC.gemini.build(),
-  soyuz: () => CLASSIC['soyuz-7k-ok'].build(),
-  'apollo-cm': () => FREIGHTERS['apollo-csm-block-ii'].build(),
-  shenzhou: () => FREIGHTERS.shenzhou.build(),
-  dragon: () => COMMERCIAL['crew-dragon'].build(),
+const CAPSULE_MODEL: Record<string, Source> = {
+  vostok: model('capsules-classic', 'vostok'),
+  voskhod: model('capsules-classic', 'voskhod'),
+  mercury: model('capsules-classic', 'mercury-capsule'),
+  gemini: model('capsules-classic', 'gemini'),
+  soyuz: model('capsules-classic', 'soyuz-7k-ok'),
+  'apollo-cm': model('station-freighters', 'apollo-csm-block-ii'),
+  shenzhou: model('station-freighters', 'shenzhou'),
+  dragon: model('capsules-commercial', 'crew-dragon'),
 };
 
 /**
@@ -245,9 +278,8 @@ const CAPSULE_MODEL: Record<string, () => THREE.Group> = {
  * has no central model yet.
  */
 export function detailedReturnCapsule(capsuleId: string, old: THREE.Group): THREE.Group | null {
-  const build = CAPSULE_MODEL[capsuleId];
-  if (!build) return null;
-  const whole = build();
+  const whole = buildFrom(CAPSULE_MODEL[capsuleId]);
+  if (!whole) return null;
   whole.updateMatrixWorld(true);
   const dm = whole.getObjectByName('descent-module');
   if (!dm) return null;
@@ -269,16 +301,16 @@ export function detailedReturnCapsule(capsuleId: string, old: THREE.Group): THRE
 export const DETAILED_CAPSULE_IDS = Object.keys(CAPSULE_MODEL);
 
 /** Descents flown by a probe or a sample-return craft: by body, or by site for the asteroids. */
-const PROBE_BY_BODY: Record<string, () => THREE.Group> = {
-  venus: buildVeneraLander,
-  titan: buildHuygensProbe,
-  jupiter: buildGalileoProbe,
-  comet_67p: buildPhilae,
+const PROBE_BY_BODY: Record<string, Source> = {
+  venus: builder('probes', 'buildVeneraLander'),
+  titan: builder('probes', 'buildHuygensProbe'),
+  jupiter: builder('probes', 'buildGalileoProbe'),
+  comet_67p: builder('probes', 'buildPhilae'),
 };
-const PROBE_BY_SITE: Record<string, () => THREE.Group> = {
-  hayabusa1: () => PROBES.hayabusa.build(),
-  hayabusa2: () => PROBES['hayabusa-2'].build(),
-  'osiris-rex': () => PROBES['osiris-rex'].build(),
+const PROBE_BY_SITE: Record<string, Source> = {
+  hayabusa1: model('probes', 'hayabusa'),
+  hayabusa2: model('probes', 'hayabusa-2'),
+  'osiris-rex': model('probes', 'osiris-rex'),
 };
 
 /**
@@ -287,9 +319,8 @@ const PROBE_BY_SITE: Record<string, () => THREE.Group> = {
  * largest dimension, the same base. Null when there is none.
  */
 export function detailedProbe(body: string, siteId: string, old: THREE.Group): THREE.Group | null {
-  const build = PROBE_BY_SITE[siteId] ?? PROBE_BY_BODY[body];
-  if (!build) return null;
-  const craft = build();
+  const craft = buildFrom(PROBE_BY_SITE[siteId] ?? PROBE_BY_BODY[body]);
+  if (!craft) return null;
   const size = (b: THREE.Box3) => {
     const v = b.getSize(new THREE.Vector3());
     return Math.max(v.x, v.y, v.z) || 1;

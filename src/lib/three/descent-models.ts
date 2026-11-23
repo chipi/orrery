@@ -580,9 +580,10 @@ function buildApolloLunarStack(lander: THREE.Group, vehLen: number): DescentMode
   const m = buildLunarStack(lander, vehLen);
   const dockY = lander.userData.dockY as number | undefined;
   const k = lander.userData.metresToScene as number | undefined;
-  if (dockY != null && k != null) {
+  const docked = dockY != null && k != null ? dockedApolloCsm(dockY, k) : null;
+  if (docked) {
     // The detailed CSM, at the LM's own scale, docked on its tunnel.
-    m.orbiter.add(dockedApolloCsm(dockY, k));
+    m.orbiter.add(docked);
     m.root.add(m.orbiter);
     return m;
   }

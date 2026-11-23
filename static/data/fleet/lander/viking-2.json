@@ -10,6 +10,9 @@
   "era": "1969-1981",
   "epoch": "first-stations",
   "best_known_for": "Second Viking: an orbiter and a lander that worked in Utopia Planitia until 1980",
+  "specs": {
+    "length_m": 2
+  },
   "credit": "The second Viking spacecraft, an orbiter carrying a lander. Launched 1975-09-09 on a Titan IIIE-Centaur; orbit insertion 1976-08-07; lander touchdown 1976-09-03 in Utopia Planitia. Orbiter ended 1978-07-24 per the NASA mission page (NSSDCA gives 25 July), lander 1980-04-12 (science.nasa.gov/mission/viking-2/, NSSDCA 1975-083A). Manufacturers from Wikipedia.",
   "links": [
     {

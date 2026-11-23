@@ -10,6 +10,10 @@
   "era": "1981-2011",
   "epoch": "shuttle-and-mir",
   "best_known_for": "First Mars rover; Pathfinder mission",
+  "specs": {
+    "length_m": 0.65,
+    "height_m": 0.3
+  },
   "links": [
     {
       "l": "Sojourner (rover) — Wikipedia",

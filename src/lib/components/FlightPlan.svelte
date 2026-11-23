@@ -13,6 +13,8 @@
     /** The scene plays this beat on a compressed clock (the parking orbit and injection): show
      *  no time rather than a wrong one. */
     untimed?: boolean;
+    /** Shown sooner than it happened (an airbag lander's petals): the row gives the real time. */
+    realT?: number;
   }
   let {
     beats,
@@ -44,7 +46,7 @@
     <div class="compact">
       <span class="k">{m.fly_hud_next_event()}</span>
       <span class="lbl">{hudLabel(n.label)}</span>
-      {#if !n.untimed}<span class="time">{clock(n.t)}</span>{/if}
+      {#if !n.untimed}<span class="time">{clock(n.realT ?? n.t)}</span>{/if}
     </div>
   {/if}
 {:else if beats.length > 1}
@@ -62,7 +64,7 @@
             >{r.i < active ? '✓' : r.i === active ? '●' : '○'}</span
           >
           <span class="lbl">{hudLabel(r.label)}</span>
-          <span class="time">{r.untimed ? '' : clock(r.t)}</span>
+          <span class="time">{r.untimed ? '' : clock(r.realT ?? r.t)}</span>
         </li>
       {/each}
     </ol>

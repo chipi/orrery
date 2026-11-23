@@ -51,6 +51,8 @@ const BEAT_SHOT: Record<string, DescentShotKind> = {
   retro_ignition: 'under',
   skycrane_lower: 'close',
   airbag_deploy: 'orbit',
+  bridle_lower: 'under',
+  bridle_cut: 'pullOut',
   landing_flip: 'orbit',
 };
 const FILL: DescentShotKind[] = ['wide', 'orbit', 'under', 'over', 'pushIn', 'pullOut', 'close'];
@@ -100,9 +102,18 @@ export function buildDescentShots(
   }
   if (groundT - t > 3) fill(t, groundT, first);
   else if (shots.length) shots[shots.length - 1].t1 = groundT;
-  push('ground', groundT, touchdown);
+  // An airbag ball keeps the ground shot through its bounces and roll, to rest; then a close
+  // shot while its petals open.
+  const rest = events.find((e) => e.type === 'at_rest')?.t ?? touchdown;
+  push('ground', groundT, rest);
+  const petals = events.find((e) => e.type === 'petals_open')?.t;
+  let settled = rest;
+  if (petals != null && petals >= rest) {
+    push('close', rest, petals + 8);
+    settled = petals + 8;
+  }
   // After touchdown: a slow orbit of the landed craft.
-  push('orbit', touchdown, Infinity);
+  push('orbit', settled, Infinity);
   return shots;
 }
 

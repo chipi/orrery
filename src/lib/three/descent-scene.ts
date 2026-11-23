@@ -301,13 +301,21 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
     // Relative to the part's own position, so its live position can be added back.
     return b.translate(o.position.clone().negate());
   };
+  // An airbag lander rides in its ball's pivot: framed as a sphere of the ball's live size.
+  const ball = model.airbagBall;
+  let ballR = ball?.restY ?? 0;
   const parts: { o: THREE.Object3D; box: THREE.Box3 }[] = [];
   for (const o of [model.lander, model.descentStage, model.backshell, model.heatshield]) {
+    if (ball && o === model.lander) continue;
     const box = restBox(o);
     if (box) parts.push({ o, box });
   }
   const liveCore = (): { cy: number; r: number } => {
     const b = new THREE.Box3();
+    if (ball && model.lander.visible) {
+      const c = ball.pivot.position;
+      b.setFromCenterAndSize(c.clone(), new THREE.Vector3(2 * ballR, 2 * ballR, 2 * ballR));
+    }
     for (const p of parts) {
       if (!p.o.visible) continue;
       // The jettisoned heat shield falls away: not part of the subject once it goes.
@@ -452,7 +460,7 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
   const SPEED_REF_MS = 300;
   const _v = new THREE.Vector3();
   const updateForces = (s: DescentState): void => {
-    const origin = new THREE.Vector3(0, s.altKm, 0);
+    const origin = new THREE.Vector3(0, vehicle.position.y, 0);
     const setArrow = (arr: BoldArrow, key: ForceKey, dy: number, lenKm: number): void => {
       const on = forceVisible[key] && lenKm > vehLen * 0.05 && dy !== 0;
       arr.visible = on;
@@ -490,6 +498,19 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
   const landingFlipT = metOf('landing_flip');
   const LANDING_FLIP_S = 4;
   const touchdownT = metOf('touchdown');
+  // Airbag landers: the bridle, the cut (the backshell's flyaway when there is no backshell_sep),
+  // the bounces and roll after first contact, rest, and the petals.
+  const bridleT = metOf('bridle_lower');
+  const cutT = metOf('bridle_cut');
+  const restT = metOf('at_rest');
+  const petalsT = metOf('petals_open');
+  const shellSepT = bsT ?? cutT;
+  const tdDownrangeKm = opts.events?.find((e) => e.type === 'touchdown')?.downrangeKm ?? 0;
+  const BRIDLE_S = 6; // MER's bridle paid out in about 6 s (MER landing press kit)
+  const INFLATE_S = 1; // drawn over a second; Pathfinder's bags filled in about 0.3 s
+  const RETRACT_S = 6; // the real retraction took about an hour: at_rest/petals notes say so
+  const PETAL_S = 6;
+  const BALL_SCALE_ALT_M = 30;
   const lowerT = metOf('skycrane_lower');
   const LOWER_S = 6;
   const FLYAWAY_S = 10;
@@ -546,7 +567,16 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
   const setState = (s: DescentState, prior?: DescentState): void => {
     frame++;
     activePhaseKind = s.phaseKind;
-    vehicle.position.set(0, s.altKm, 0);
+    // An airbag ball's last BALL_SCALE_ALT_M (the bridle cut, the fall, the hops) are drawn at the
+    // craft's own scale: in km the 21 m fall and a 16 m bounce would be a hundredth of the drawn
+    // ball. Above, the km altitude continues from there (a constant lift; continuous, monotone).
+    const inTail = ball != null && touchdownT != null && s.t > touchdownT;
+    const craftY = !ball
+      ? s.altKm
+      : s.altM <= BALL_SCALE_ALT_M
+        ? s.altM * ball.k
+        : BALL_SCALE_ALT_M * ball.k + (s.altM - BALL_SCALE_ALT_M) / 1000;
+    vehicle.position.set(0, craftY, 0);
     const vd = s.velDownMs;
     const vh = Math.sqrt(Math.max(0, s.velocityMs * s.velocityMs - vd * vd));
     if (airless && s.phaseKind === 'powered_retro' && s.altM > 0 && prior && s.t - prior.t > 0.5) {
@@ -589,7 +619,7 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
 
     // Parachute: mortar-fires and INFLATES over ~2 s at deploy, sways under the
     // descent, then flies away UP with the backshell (chute-cut) at sep.
-    const bp = sepProgress(s.t, bsT, BS_SEP_S);
+    const bp = sepProgress(s.t, shellSepT, BS_SEP_S);
     const chuteOut = chuteT != null && s.t >= chuteT;
     model.parachute.visible = chuteOut && bp < 1;
     const secondStage = chuteJetT != null && s.t >= chuteJetT;
@@ -609,14 +639,51 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
       model.parachute.rotation.z = sway + bp * 0.9;
     }
     model.backshell.visible = bp < 1;
+    // Airbag lander: it slides down the bridle (the backshell and chute climb above it, the ball
+    // stays on the trajectory), the bags inflate (the ball's bottom rides the trajectory point),
+    // the RAD rockets fire, the bridle is cut; on the ground the ball rolls, comes to rest, the
+    // bags retract, it rights itself and the petals open.
+    let hang = 0;
+    if (ball) {
+      const lp = smooth01(bridleT == null ? 0 : (s.t - bridleT) / BRIDLE_S);
+      const inflate = airbagT == null ? 0 : smooth01((s.t - airbagT) / INFLATE_S);
+      const retract = restT == null ? 0 : smooth01((s.t - restT) / RETRACT_S);
+      const lift = (ball.radius - ball.restY) * inflate * (1 - retract);
+      ball.pivot.position.y = ball.restY + lift;
+      hang = ball.bridleLength * lp + lift;
+      model.airbags.visible = inflate > 0 && retract < 1;
+      const bagK = (0.15 + 0.85 * inflate) * (1 - 0.8 * retract);
+      model.airbags.scale.set(bagK, bagK * (1 - 0.5 * retract), bagK);
+      ballR = Math.max(ball.restY, ball.radius * bagK);
+      // Rolling without slipping: the angle is the ground covered over the ball's radius.
+      const rolledM = inTail ? (s.downrangeKm - tdDownrangeKm) * 1000 : 0;
+      const roll = (rolledM * ball.k) / ball.radius;
+      ball.pivot.rotation.set(roll * (1 - retract), 0, 0.35 * Math.sin(roll * 0.6) * (1 - retract));
+      ball.bridle.visible = lp > 0 && (shellSepT == null || s.t < shellSepT);
+      if (ball.bridle.visible) {
+        const from = ball.pivot.position.y;
+        ball.bridle.position.y = from;
+        ball.bridle.scale.y = Math.max(1e-4, model.backshellBaseY + hang - from);
+      }
+      const radOn = s.phaseKind === 'powered_retro' && (cutT == null || s.t < cutT);
+      for (const p of ball.radPlumes) {
+        p.visible = radOn;
+        p.scale.y = 1 + 0.12 * Math.sin(frame * 0.9 + p.id);
+      }
+      const open = petalsT == null ? 0 : smooth01((s.t - petalsT) / PETAL_S);
+      for (const pt of ball.petals) pt.rotation.x = -ball.petalClosedRad * (1 - open);
+      for (const o of ball.inside) o.visible = open > 0;
+    }
+
     const rise = bp * vehLen * 4;
-    model.parachute.position.set(bp * vehLen * 0.5, model.parachuteBaseY + rise, 0);
-    model.backshell.position.y = model.backshellBaseY + rise;
+    model.parachute.position.set(bp * vehLen * 0.5, model.parachuteBaseY + hang + rise, 0);
+    model.backshell.position.y = model.backshellBaseY + hang + rise;
     model.backshell.rotation.z = bp * 1.6;
 
     // Separation bursts — the pyro event at heat-shield jettison + chute-cut.
     heatshieldBurst.update(sepProgress(s.t, hsT, DESCENT_BURST_S));
-    backshellBurst.update(sepProgress(s.t, bsT, DESCENT_BURST_S));
+    backshellBurst.position.y = model.backshellBaseY + hang;
+    backshellBurst.update(sepProgress(s.t, shellSepT, DESCENT_BURST_S));
 
     // Aeroshell-body landers (Mars/Venus) ride STOWED inside the closed aeroshell
     // through entry + chute — only the heat-shield + backshell show. The rover +
@@ -635,7 +702,10 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
     model.retro.visible = landerShown;
     // Surface-only deployables appear only once down (flag planted, rover driven
     // off, petals splayed) — never mid-flight.
-    const landed = s.altM <= 2 || (touchdownT != null && s.t >= touchdownT);
+    // An airbag lander's deployables wait for its petals.
+    const landed = ball
+      ? petalsT != null && s.t >= petalsT + PETAL_S * 0.6
+      : s.altM <= 2 || (touchdownT != null && s.t >= touchdownT);
     for (const o of surfaceOnly) o.visible = landed;
 
     // Skycrane rigging: shown only during the skycrane phase.
@@ -687,7 +757,7 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
     }
 
     // Airbags: inflate at deploy, then hidden once past bounce (near ground).
-    if (airbagT != null) {
+    if (airbagT != null && !ball) {
       const inflate = Math.min(1, Math.max(0, (s.t - airbagT) / 1.5));
       model.airbags.visible = s.t >= airbagT;
       model.airbags.scale.setScalar(0.2 + 0.8 * inflate);
@@ -761,9 +831,9 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
       const o = model.orbiter.position;
       whole = { cy: (o.y + vehLen) / 2, r: o.length() / 2 + vehLen * 1.2 };
     }
-    const pose = descentPoseAt(shots, s.t, { core, whole }, s.altKm, camera.aspect);
-    camera.position.set(pose.pos[0], s.altKm + pose.pos[1], pose.pos[2]);
-    camera.lookAt(pose.target[0], s.altKm + pose.target[1], pose.target[2]);
+    const pose = descentPoseAt(shots, s.t, { core, whole }, craftY, camera.aspect);
+    camera.position.set(pose.pos[0], craftY + pose.pos[1], pose.pos[2]);
+    camera.lookAt(pose.target[0], craftY + pose.target[1], pose.target[2]);
     camera.fov = pose.fov;
     camera.updateProjectionMatrix();
 

@@ -1,7 +1,7 @@
 // @vitest-environment jsdom
 import * as THREE from 'three';
 import { beforeAll, describe, it, expect } from 'vitest';
-import { buildDescentModel, KNOWN_DESCENT_STACK_IDS } from './descent-models';
+import { buildDescentModel, flyingBounds, KNOWN_DESCENT_STACK_IDS } from './descent-models';
 import {
   DETAILED_CAPSULE_IDS,
   DETAILED_DESCENT_LANDER_IDS,
@@ -191,5 +191,42 @@ describe('buildDescentModel', () => {
   it('exposes the dedicated stack ids', () => {
     expect(KNOWN_DESCENT_STACK_IDS).toContain('curiosity');
     expect(KNOWN_DESCENT_STACK_IDS).toContain('viking1-lander');
+  });
+});
+
+describe('the airbag stack (Pathfinder, Spirit, Opportunity)', () => {
+  for (const id of ['mars-pathfinder', 'spirit', 'opportunity']) {
+    it(`${id}: ball, bridle and chute to the 2.65 m aeroshell's scale`, () => {
+      const m = buildDescentModel(id, 'mars', 1);
+      const b = m.airbagBall!;
+      expect(b).toBeDefined();
+      // The aeroshell is drawn 0.84 vehicle lengths across, for its real 2.65 m.
+      expect(b.k).toBeCloseTo(0.84 / 2.65, 6);
+      expect(b.radius / b.k).toBeCloseTo(2.6, 6); // the 5.2 m ball
+      expect(b.bridleLength / b.k).toBeCloseTo(20, 6); // the 20 m bridle
+      expect(b.radPlumes).toHaveLength(3);
+      // The lander rides in the ball, which holds the bags.
+      expect(b.pivot.children).toContain(m.lander);
+      expect(b.pivot.children).toContain(m.airbags);
+      // Built with the side petals folded closed (the scene opens them at petals_open).
+      expect(b.petals).toHaveLength(3);
+      for (const pt of b.petals) expect(pt.rotation.x).toBeCloseTo(-b.petalClosedRad, 6);
+      // Folded, the lander fits inside the aeroshell.
+      b.pivot.removeFromParent(); // measured in the pivot's own frame, unrotated
+      const lb = flyingBounds(m.lander);
+      expect(Math.max(lb.max.x - lb.min.x, lb.max.z - lb.min.z) / b.k).toBeLessThan(2.65);
+    });
+  }
+
+  it('MER folds into a regular tetrahedron, Pathfinder against its body', () => {
+    const mer = buildDescentModel('spirit', 'mars', 1).airbagBall!;
+    const pf = buildDescentModel('mars-pathfinder', 'mars', 1).airbagBall!;
+    expect(mer.petalClosedRad).toBeCloseTo(Math.PI - Math.acos(1 / 3), 6);
+    expect(pf.petalClosedRad).toBeCloseTo(Math.PI - Math.atan2(0.62, 0.17), 6);
+  });
+
+  it('no other stack has an airbag ball', () => {
+    expect(buildDescentModel('curiosity', 'mars', 1).airbagBall).toBeUndefined();
+    expect(buildDescentModel('apollo11', 'moon', 1).airbagBall).toBeUndefined();
   });
 });

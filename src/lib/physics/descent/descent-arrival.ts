@@ -68,7 +68,10 @@ export function deriveArrival(raw: RawDescentProfile): DerivedArrival {
   return {
     entry_velocity_km_s: Number((raw.entryState.velocityMs / 1000).toFixed(3)),
     edl_system: EDL_SYSTEM[raw.archetype],
-    edl_duration_s: Math.round(summary.totalDurationS),
+    // Entry to first contact: an airbag lander's bounces and petals come after the EDL.
+    edl_duration_s: Math.round(
+      summary.events.find((e) => e.type === 'touchdown')?.t ?? summary.totalDurationS,
+    ),
     touchdown_velocity_ms:
       raw.recordEndsAltM != null ? undefined : Number(summary.touchdownVelocityMs.toFixed(2)),
   };

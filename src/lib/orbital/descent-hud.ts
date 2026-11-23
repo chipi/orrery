@@ -48,12 +48,19 @@ export const EDL_BEAT_LABEL: Record<DescentEventType, string> = {
   record_ends: 'DATA ENDS',
   skip_out: 'SKIP OUT',
   second_entry: '2ND ENTRY',
+  radar_lock: 'RADAR LOCK',
+  bridle_lower: 'BRIDLE',
+  bridle_cut: 'BRIDLE CUT',
+  at_rest: 'AT REST',
+  petals_open: 'PETALS OPEN',
   touchdown: 'TOUCHDOWN',
 };
 
 export interface DescentBeat {
   label: string;
   t: number;
+  /** The real time of a beat the scene shows sooner (an airbag lander's petals). */
+  realT?: number;
 }
 
 /** The major EDL beats for the timeline strip, in chronological order. */
@@ -62,11 +69,16 @@ const TIMELINE_BEATS: DescentEventType[] = [
   'parachute_deploy',
   'heatshield_sep',
   'backshell_sep',
+  'bridle_lower',
+  'radar_lock',
   'landing_flip',
+  'airbag_deploy',
   'retro_ignition',
   'skycrane_lower',
-  'airbag_deploy',
+  'bridle_cut',
   'touchdown',
+  'at_rest',
+  'petals_open',
   'record_ends',
 ];
 
@@ -74,7 +86,11 @@ const TIMELINE_BEATS: DescentEventType[] = [
 export function buildDescentBeats(summary: DescentSummary): DescentBeat[] {
   return summary.events
     .filter((e) => TIMELINE_BEATS.includes(e.type))
-    .map((e) => ({ label: EDL_BEAT_LABEL[e.type], t: e.t }));
+    .map((e) => ({
+      label: EDL_BEAT_LABEL[e.type],
+      t: e.t,
+      ...(e.realT != null ? { realT: e.realT } : {}),
+    }));
 }
 
 /** The status line for the current descent instant. */
@@ -93,6 +109,10 @@ export function descentStatus(s: DescentState, summary: DescentSummary): string 
   if (summary.events.at(-1)?.type === 'record_ends' && end && s.t >= end.t - 0.5) {
     return 'DATA ENDS';
   }
+  // An airbag ball after its first contact (afterTouchdown): bouncing until it comes to rest.
+  const firstContact = summary.events.find((e) => e.type === 'touchdown');
+  const rest = summary.events.find((e) => e.type === 'at_rest');
+  if (firstContact && rest && s.t > firstContact.t && s.t < rest.t) return 'BOUNCE';
   if (s.altM <= 0) {
     // Touch-and-go asteroids (Hayabusa/OSIRIS-REx) sample and depart; a comet is
     // a low-g settle after the bounces; Eros (NEAR) actually soft-landed, so it —

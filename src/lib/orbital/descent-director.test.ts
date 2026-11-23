@@ -55,3 +55,33 @@ describe('descent director', () => {
     expect(d(9 / 19.5)).toBeGreaterThan(d(16 / 9) * 1.5);
   });
 });
+
+describe('descent director: an airbag landing', () => {
+  const BALL = [
+    { type: 'parachute_deploy', t: 195 },
+    { type: 'bridle_lower', t: 236 },
+    { type: 'bridle_cut', t: 327 },
+    { type: 'touchdown', t: 329 },
+    { type: 'at_rest', t: 382 },
+    { type: 'petals_open', t: 390 },
+  ];
+  const ball = buildDescentShots(396, BALL, 'mars-pathfinder');
+
+  it('cuts under the lander as it slides down the bridle', () => {
+    expect(ball.find((s) => s.t0 === 236)?.kind).toBe('under');
+  });
+
+  it('keeps the ground shot through the bounces and roll, to rest', () => {
+    const g = shotAt(ball, 350);
+    expect(g.kind).toBe('ground');
+    expect(g.t1).toBe(382);
+  });
+
+  it('holds close on the petals as they open, then circles the landed craft', () => {
+    const c = shotAt(ball, 391);
+    expect(c.kind).toBe('close');
+    expect(c.t0).toBe(382);
+    expect(c.t1).toBe(398);
+    expect(shotAt(ball, 400).kind).toBe('orbit');
+  });
+});

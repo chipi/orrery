@@ -107,7 +107,37 @@ export type DescentEventType =
   | 'record_ends' // the published record of the descent stops in the air (recordEndsAltM)
   | 'skip_out' // super-circular lifting entry lofts back above the atmosphere (Apollo-4 skip)
   | 'second_entry' // the lofted capsule falls back into the atmosphere for the second pulse
+  | 'radar_lock' // the radar altimeter acquires the ground
+  | 'bridle_lower' // the lander slides down its bridle below the backshell (Pathfinder, MER)
+  | 'bridle_cut' // the bridle is cut: backshell and chute fly off, the airbag ball falls free
+  | 'at_rest' // the airbag ball stops rolling
+  | 'petals_open' // the lander's petals open (Pathfinder, MER, Beagle 2)
   | 'touchdown';
+
+/**
+ * A beat placed inside the descent instead of at a phase start (pass 2): it fires as the craft
+ * descends through `altM`, or `afterS` seconds after the `after` beat. A profile beat of the same
+ * type as a phase-start beat replaces it (Pathfinder's heat shield goes 20 s after the chute, not
+ * with it).
+ */
+export interface DescentBeatSpec {
+  type: DescentEventType;
+  altM?: number;
+  after?: DescentEventType;
+  afterS?: number;
+}
+
+/**
+ * What happens after the first ground contact, scripted rather than integrated: an airbag ball's
+ * bounces and roll, then the beats on the ground, `afterS` after it comes to rest on screen.
+ * `realAfterS` is when the beat really happened, in seconds after first contact (Pathfinder's
+ * petals: 87 min); the event carries it as `realT` for the HUD's clock.
+ */
+export interface AfterTouchdown {
+  /** `rollM`: ground distance from first contact to rest; `restS`: the time that took. */
+  bounces?: { count: number; firstHeightM: number; rollM: number; restS: number };
+  beats?: { type: DescentEventType; afterS: number; realAfterS?: number }[];
+}
 
 /**
  * When a phase ends. `ground` fires at h ≤ 0 (touchdown). `pressure_pa` fires
@@ -217,6 +247,10 @@ export interface DescentProfile {
    *  hard-landed; contact was lost lower, at about 2.1 km). It closes on a `record_ends` beat
    *  (HUD DATA ENDS); nothing below is modelled. Absent = to the ground. */
   recordEndsAltM?: number;
+  /** Beats inside the descent, by altitude or delay (see DescentBeatSpec). */
+  beats?: DescentBeatSpec[];
+  /** The bounces, roll and ground beats after the first contact (airbag landers). */
+  afterTouchdown?: AfterTouchdown;
   source_tier: 'flagship' | 'generic';
   provenance?: { l: string; u: string }[];
 }
@@ -263,6 +297,10 @@ export interface DescentEvent {
   altKm: number;
   velocityMs: number;
   note?: string;
+  /** Ground distance from the entry interface (km) at the beat. */
+  downrangeKm?: number;
+  /** When the beat really happened (s from entry), where the scene shows it sooner (`t`). */
+  realT?: number;
 }
 
 /** The result of integrating a descent. */
@@ -522,10 +560,23 @@ export function integrateDescent(
   };
 
   const pushEvent = (type: DescentEventType, note?: string): void => {
-    events.push({ type, t, altKm: h / 1000, velocityMs: v, note });
+    events.push({ type, t, altKm: h / 1000, velocityMs: v, note, downrangeKm: downrange / 1000 });
   };
+  const placed = profile.beats ?? [];
+  const placedTypes = new Set(placed.map((b) => b.type));
   const emitPhaseStartEvents = (idx: number): void => {
-    for (const e of profile.phases[idx].events ?? []) pushEvent(e);
+    for (const e of profile.phases[idx].events ?? []) if (!placedTypes.has(e)) pushEvent(e);
+  };
+  const pending = [...placed];
+  const firePlacedBeats = (): void => {
+    for (let i = 0; i < pending.length;) {
+      const b = pending[i];
+      const ref = b.after != null ? events.find((e) => e.type === b.after) : undefined;
+      if ((b.altM != null && h <= b.altM) || (ref != null && t >= ref.t + (b.afterS ?? 0))) {
+        pushEvent(b.type);
+        pending.splice(i, 1);
+      } else i++;
+    }
   };
 
   pushEvent('entry');
@@ -657,6 +708,8 @@ export function integrateDescent(
     downrange += v * cosG * dt; // ground track advances with the horizontal velocity component
     t += dt;
 
+    if (pending.length) firePlacedBeats();
+
     // ── Loft/skip handling (ADR-089), lifting entries only ──────────────────────────────────
     // A super-circular lifting entry can climb back above the atmosphere (the Apollo-4 skip). The
     // capsule ENTERS above SKIP_ALT_M (interface ~122 km), so skip-detection only becomes meaningful
@@ -737,6 +790,10 @@ export function integrateDescent(
     pushEvent('touchdown', 'timeout');
   }
 
+  if (profile.afterTouchdown && events.some((e) => e.type === 'touchdown')) {
+    appendAfterTouchdown(profile.afterTouchdown, final, body, states, events);
+  }
+
   // Splice the peak beats in at their recorded instants, then re-sort.
   // No air, no heating: an airless body's descent (the Moon, Eros) has no peak-heat beat.
   if (peakHeat.flux > 0) {
@@ -750,7 +807,7 @@ export function integrateDescent(
     body,
     states,
     events,
-    totalDurationS: final.t,
+    totalDurationS: states[states.length - 1].t,
     peakDecel,
     peakHeat,
     touchdownVelocityMs,
@@ -804,6 +861,108 @@ function integrateGuidedDescent(profile: DescentProfile, opts: DescentOptions): 
   // monotonicity break misses by hundreds). 50 km is well above convergence + the ±30 km test band.
   const converged = Math.abs(res.landingDownrangeKm - clamped) <= 50;
   return { ...res, guidance: { entryBankCos: mid, targetReachable: reachable && converged } };
+}
+
+/** The last hop of a bounce series (m): below this the ball reads as rolling. */
+const LAST_HOP_M = 0.1;
+/** Tail sample step (s): fine enough that a 10 cm hop keeps its arc. */
+const TAIL_DT_S = 0.05;
+/** The slow roll after the hops is shown in at most this long; `at_rest` notes the real time. */
+const ROLL_SHOWN_MAX_S = 20;
+
+/**
+ * Append the scripted ground tail to a finished descent. The hops are honest ballistic arcs in
+ * the body's gravity, `count` of them, decaying geometrically from `firstHeightM` to LAST_HOP_M.
+ * The ball's ground speed falls evenly from first contact to rest `restS` later, covering `rollM`.
+ * The slow roll after the hops is shortened to ROLL_SHOWN_MAX_S on screen. Then `at_rest`, and
+ * the ground beats `afterS` after it.
+ */
+function appendAfterTouchdown(
+  tail: AfterTouchdown,
+  impact: DescentState,
+  body: DescentBody,
+  states: DescentState[],
+  events: DescentEvent[],
+): void {
+  const g = bodyGravity(0, body);
+  const ground: DescentState = {
+    ...impact,
+    altM: 0,
+    altKm: 0,
+    velocityMs: 0,
+    velDownMs: 0,
+    thrustN: 0,
+    dragN: 0,
+    decelG: 0,
+    machNumber: 0,
+    dynamicPressurePa: 0,
+    aeroHeatFlux: 0,
+    phaseKind: 'airbag_bounce',
+  };
+  const x0 = impact.downrangeKm * 1000;
+  let t = impact.t;
+  let x = x0;
+  const b = tail.bounces;
+  if (b && b.count > 0) {
+    const ratio = b.count > 1 ? (LAST_HOP_M / b.firstHeightM) ** (1 / (b.count - 1)) : 1;
+    const hops = Array.from({ length: b.count }, (_, k) => b.firstHeightM * ratio ** k);
+    const hopS = hops.map((H) => 2 * Math.sqrt((2 * H) / g));
+    const airS = hopS.reduce((a, c) => a + c, 0);
+    const restS = Math.max(b.restS, airS);
+    const v0 = (2 * b.rollM) / restS;
+    // Real time since first contact → ground speed and distance covered.
+    const speed = (tau: number): number => v0 * Math.max(0, 1 - tau / restS);
+    const dist = (tau: number): number => {
+      const u = Math.min(tau, restS);
+      return v0 * u - (v0 * u * u) / (2 * restS);
+    };
+    let tau0 = 0;
+    hops.forEach((H, k) => {
+      const vUp = Math.sqrt(2 * g * H);
+      if (k > 0) events.push({ type: 'bounce', t, altKm: 0, velocityMs: vUp, note: `${k + 1}` });
+      for (let a = TAIL_DT_S; a < hopS[k]; a += TAIL_DT_S) {
+        const h = Math.max(0, vUp * a - 0.5 * g * a * a);
+        const vz = vUp - g * a;
+        states.push({
+          ...ground,
+          t: t + a,
+          altM: h,
+          altKm: h / 1000,
+          velocityMs: Math.hypot(vz, speed(tau0 + a)),
+          velDownMs: -vz,
+          downrangeKm: (x0 + dist(tau0 + a)) / 1000,
+        });
+      }
+      t += hopS[k];
+      tau0 += hopS[k];
+      states.push({ ...ground, t, velocityMs: speed(tau0), downrangeKm: (x0 + dist(tau0)) / 1000 });
+    });
+    const rollS = restS - airS;
+    const shownS = Math.min(rollS, ROLL_SHOWN_MAX_S);
+    for (let a = 0.5; a < shownS; a += 0.5) {
+      const tau = airS + (a / shownS) * rollS;
+      states.push({
+        ...ground,
+        t: t + a,
+        velocityMs: speed(tau),
+        downrangeKm: (x0 + dist(tau)) / 1000,
+      });
+    }
+    t += shownS;
+    x = x0 + b.rollM;
+    const realT = shownS < rollS ? impact.t + restS : undefined;
+    events.push({ type: 'at_rest', t, altKm: 0, velocityMs: 0, realT });
+  }
+  const rest: DescentState = { ...ground, t, downrangeKm: x / 1000 };
+  states.push(rest);
+  let end = t;
+  for (const gb of tail.beats ?? []) {
+    const realT = gb.realAfterS != null ? impact.t + gb.realAfterS : undefined;
+    events.push({ type: gb.type, t: t + gb.afterS, altKm: 0, velocityMs: 0, realT });
+    end = Math.max(end, t + gb.afterS);
+  }
+  // Hold a few seconds past the last beat so what it starts (petals opening) plays out.
+  if (end > t) states.push({ ...rest, t: end + 6 });
 }
 
 /**

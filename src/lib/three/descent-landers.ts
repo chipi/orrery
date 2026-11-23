@@ -88,8 +88,8 @@ const DETAILED: Record<string, Source> = {
   schiaparelli: model('mars-landers', 'schiaparelli'),
   beagle2: model('mars-landers', 'beagle2'),
   'mars-pathfinder': builder('mars-landers', 'buildPathfinderLander'),
-  spirit: model('rovers', 'spirit'),
-  opportunity: model('rovers', 'opportunity'),
+  spirit: { family: 'rovers', build: (r) => merOnLander(r, 'spirit') },
+  opportunity: { family: 'rovers', build: (r) => merOnLander(r, 'opportunity') },
   perseverance: model('rovers', 'perseverance'),
   zhurong: model('rovers', 'zhurong'),
 };
@@ -110,6 +110,57 @@ function lunokhodOnStage(east: Family): THREE.Group {
   return stage;
 }
 
+/** MER's base petal side, an estimate: the folded lander has to fit the 2.65 m aeroshell. */
+const MER_BASE_SIDE_M = 2.4;
+
+/**
+ * A MER rover on its lander: the rover on the base petal, the three side petals hinged on the
+ * base triangle's edges, closed around it in flight (the descent scene folds them; they open at
+ * petals_open). No MER lander model exists yet: the side petals are Pathfinder's, stretched to
+ * MER_BASE_SIDE_M (MER landing press kit, 2004: "a tetrahedron-shaped lander", the rover on the
+ * base petal). The rover model is the deployed rover (its wheels and deck flew folded), so it
+ * would poke through the closed petals: it is hidden inside them until they open.
+ */
+function merOnLander(rovers: Family, id: string): THREE.Group {
+  const rover = rovers.SHOWCASE![id].build();
+  const pf = loaded['mars-landers']?.buildPathfinderLander as (() => THREE.Group) | undefined;
+  const petals = pf?.().getObjectByName('petals');
+  if (!petals) return rover;
+  rover.userData.insidePetals = true;
+  const side = MER_BASE_SIDE_M;
+  const rIn = side / (2 * Math.sqrt(3));
+  // Pathfinder's petal is 0.93 m wide at the hinge and 1.2 m long; MER's closes into a regular
+  // tetrahedron, whose faces reach the apex 3·rIn from the base edge, 109.5° up from flat.
+  const sx = side / 0.93;
+  const sz = (3 * rIn) / 1.2;
+  const g = new THREE.Group();
+  g.add(rover);
+  petals.removeFromParent();
+  petals.position.set(0, 0, 0);
+  petals.userData.closedRad = Math.PI - Math.acos(1 / 3);
+  petals.children.forEach((pt, k) => {
+    const a = (k * Math.PI * 2) / 3;
+    pt.position.set(Math.sin(a) * rIn, 0.01 * sx, Math.cos(a) * rIn);
+    pt.scale.set(sx, sx, sz);
+  });
+  g.add(petals);
+  // The base petal: a triangle of cells under the rover.
+  const cell = (petals.children[0]?.children[0] as THREE.Mesh | undefined)?.material;
+  const tri = new THREE.Shape(
+    [0, 1, 2].map((k) => {
+      const a = ((k + 0.5) * Math.PI * 2) / 3;
+      // Lying flat (rotation.x = −π/2 sends shape +y to −z): between the hinges at a = k·120°.
+      return new THREE.Vector2(Math.sin(a) * rIn * 2, -Math.cos(a) * rIn * 2);
+    }),
+  );
+  const base = new THREE.Mesh(new THREE.ShapeGeometry(tri), cell);
+  base.rotation.x = -Math.PI / 2;
+  base.position.y = 0.005;
+  base.name = 'basePetal';
+  g.add(base);
+  return g;
+}
+
 /**
  * Parts stowed in flight and deployed only on the surface (hidden by the descent scene until
  * touchdown): solar arrays, petals and ramps, the rovers' masts and arms, InSight's instruments.
@@ -127,7 +178,8 @@ const STOWED: Record<string, readonly string[]> = {
   phoenix: ['solar-arrays', 'arm'],
   insight: ['solar-arrays', 'arm', 'seis', 'hp3'],
   beagle2: ['petals', 'arm'],
-  'mars-pathfinder': ['petals'],
+  // Pathfinder's and MER's petals fly closed and open at petals_open (descent-scene folds them).
+  'mars-pathfinder': ['mast', 'ramp', 'bagHeap'],
   spirit: ['mast', 'arm', 'solar-arrays'],
   opportunity: ['mast', 'arm', 'solar-arrays'],
   perseverance: ['mast', 'arm'],

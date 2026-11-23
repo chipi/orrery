@@ -1135,8 +1135,17 @@ export function buildPathfinderLander(): THREE.Group {
     const b0 = V(sd * 1.45, 0.012, 1.15);
     const r = beam(g, M.gold, a0, b0, 0.42, 0.015);
     r.name = 'ramp';
-    beam(g, M.alu, a0.clone().add(V(sd * 0.0, 0, 0.21)), b0.clone().add(V(0, 0, 0.21)), 0.03, 0.03);
-    beam(g, M.alu, a0.clone().add(V(0, 0, -0.21)), b0.clone().add(V(0, 0, -0.21)), 0.03, 0.03);
+    for (const dz of [0.21, -0.21]) {
+      const rail = beam(
+        g,
+        M.alu,
+        a0.clone().add(V(0, 0, dz)),
+        b0.clone().add(V(0, 0, dz)),
+        0.03,
+        0.03,
+      );
+      rail.name = 'ramp';
+    }
   }
   // Deflated airbags: heaps of beige fabric bunched around the petals.
   const heaps: [number, number, number, number, number][] = [
@@ -1150,6 +1159,7 @@ export function buildPathfinderLander(): THREE.Group {
   ];
   for (const [x, z, r, h, amp] of heaps) {
     const m = new THREE.Mesh(crinkle(new THREE.SphereGeometry(1, 16, 10), amp * 0.5), bag);
+    m.name = 'bagHeap';
     m.scale.set(r, h, r * 0.8);
     m.position.set(x, h * 0.5, z);
     m.rotation.y = x * 3;

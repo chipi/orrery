@@ -126,9 +126,13 @@ describe('every descent profile expands + flies to its honest outcome', () => {
       // Peak deceleration in the body's plausible band.
       const band = PEAK_G_BY_MISSION[id] ?? PEAK_G_BAND[profile.body];
       expectInRange(s.peakDecel.g, band[0], band[1], `${id} peak decel (g)`);
-      // Beats open on entry; landers close on touchdown, probes on signal loss.
+      // Beats open on entry; landers close on touchdown (or, after it, their ground beats: an
+      // airbag lander's bounces, rest and petals), probes on signal loss.
       expect(s.events[0].type).toBe('entry');
-      expect(s.events.at(-1)!.type).toBe(
+      const flightEnd = raw.afterTouchdown
+        ? s.events.filter((e) => e.t <= s.events.find((x) => x.type === 'touchdown')!.t).at(-1)
+        : s.events.at(-1);
+      expect(flightEnd!.type).toBe(
         noSurface ? 'probe_signal_lost' : recordEnds ? 'record_ends' : 'touchdown',
       );
     });
@@ -326,5 +330,69 @@ describe('starship-flight-5: belly-first return, landing flip and burn', () => {
     const trans = s.states.find((q) => q.velocityMs < 300)!.t;
     expect(Math.abs(trans - 871)).toBeLessThanOrEqual(20);
     expect(s.touchdownSuccess).toBe(true);
+  });
+});
+
+/**
+ * The airbag landings (pass 2): every beat in the order the record gives, at the sourced heights
+ * and times (Pathfinder: Braun et al., AIAA 97-3663; MER: Desai & Knocke, AIAA 2004-5092, and the
+ * MER landing press kit). Each profile's provenance block cites them.
+ */
+describe('airbag landings fly the recorded sequence', () => {
+  const ORDER = [
+    'parachute_deploy',
+    'heatshield_sep',
+    'bridle_lower',
+    'radar_lock',
+    'airbag_deploy',
+    'retro_ignition',
+    'bridle_cut',
+    'touchdown',
+    'at_rest',
+    'petals_open',
+  ];
+  const run = (id: string) => integrateDescent(expandDescentProfile(loadRaw(id)));
+  const ev = (s: DescentSummary, type: string) => s.events.find((e) => e.type === type)!;
+
+  for (const id of ['mars-pathfinder', 'spirit', 'opportunity']) {
+    it(`${id}: each beat once, in the recorded order`, () => {
+      const s = run(id);
+      const times = ORDER.map((type) => {
+        const all = s.events.filter((e) => e.type === type);
+        expect(all, type).toHaveLength(1);
+        return all[0].t;
+      });
+      for (let i = 1; i < times.length; i++)
+        expect(times[i], ORDER[i]).toBeGreaterThan(times[i - 1]);
+    });
+  }
+
+  it('Pathfinder: heat shield 22 s and bridle 41 s after the chute; 135 s from chute to impact', () => {
+    const s = run('mars-pathfinder');
+    const chute = ev(s, 'parachute_deploy').t;
+    expectInRange(ev(s, 'heatshield_sep').t - chute, 22, 22.1, 'heat shield after chute (s)');
+    expectInRange(ev(s, 'bridle_lower').t - chute, 41, 41.1, 'bridle after chute (s)');
+    expectInRange(ev(s, 'touchdown').t - chute, 130, 140, 'chute to first impact (s)');
+    expectInRange(ev(s, 'bridle_cut').altKm * 1000, 19, 21, 'bridle cut (m)');
+    expectInRange(ev(s, 'airbag_deploy').altKm * 1000, 290, 300, 'airbag inflation (m)');
+  });
+
+  it('Pathfinder: more than a dozen bounces, petals stamped 87 minutes after first contact', () => {
+    const s = run('mars-pathfinder');
+    expect(s.events.filter((e) => e.type === 'bounce').length).toBeGreaterThanOrEqual(14);
+    expect(ev(s, 'petals_open').realT! - ev(s, 'touchdown').t).toBe(87 * 60);
+  });
+
+  it('Spirit: bridle cut at 8.5 m, first impact at the reconstructed ~14 m/s, 28 contacts', () => {
+    const s = run('spirit');
+    expectInRange(ev(s, 'bridle_cut').altKm * 1000, 7.5, 8.5, 'Spirit bridle cut (m)');
+    expectInRange(s.touchdownVelocityMs, 13, 15, 'Spirit first impact (m/s)');
+    expect(s.events.filter((e) => e.type === 'bounce')).toHaveLength(27);
+  });
+
+  it('Opportunity: bridle cut at 6.9 m, 26 contacts', () => {
+    const s = run('opportunity');
+    expectInRange(ev(s, 'bridle_cut').altKm * 1000, 5.9, 6.9, 'Opportunity bridle cut (m)');
+    expect(s.events.filter((e) => e.type === 'bounce')).toHaveLength(25);
   });
 });

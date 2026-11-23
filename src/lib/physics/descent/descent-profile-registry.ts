@@ -12,7 +12,13 @@
  * viking1 → viking1-lander, tianwen1 → zhurong).
  */
 
-import type { DescentBody, DescentProfile, EDLPhase } from './descent-physics';
+import type {
+  AfterTouchdown,
+  DescentBeatSpec,
+  DescentBody,
+  DescentProfile,
+  EDLPhase,
+} from './descent-physics';
 
 /** Runtime allowlist of destination bodies the engine accepts (validation). */
 const DESCENT_BODIES = [
@@ -498,6 +504,10 @@ export interface RawDescentProfile {
   survivableTouchdownMs?: number;
   /** The published record stops at this altitude (m): the descent ends there (see DescentProfile). */
   recordEndsAltM?: number;
+  /** Beats placed by altitude or delay (DescentBeatSpec); each replaces a phase-start beat of its type. */
+  beats?: DescentBeatSpec[];
+  /** Bounces, roll and ground beats after the first contact (AfterTouchdown). */
+  afterTouchdown?: AfterTouchdown;
   archetype: ArchetypeName;
   params?: ArchetypeParams;
   source_tier: 'flagship' | 'generic';
@@ -524,6 +534,8 @@ export function expandDescentProfile(raw: RawDescentProfile): DescentProfile {
     phases: build(raw.params ?? {}),
     survivableTouchdownMs: raw.survivableTouchdownMs ?? ARCHETYPE_SURVIVABLE[raw.archetype],
     ...(raw.recordEndsAltM != null ? { recordEndsAltM: raw.recordEndsAltM } : {}),
+    ...(raw.beats ? { beats: raw.beats } : {}),
+    ...(raw.afterTouchdown ? { afterTouchdown: raw.afterTouchdown } : {}),
     source_tier: raw.source_tier,
     provenance: raw.provenance,
   };

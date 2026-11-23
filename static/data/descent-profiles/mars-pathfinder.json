@@ -17,18 +17,43 @@
   "retroPropellantKg": 15,
   "archetype": "MARS_AIRBAG",
   "params": {
-    "chuteDeployAltM": 8600,
-    "terminalHandoffAltM": 90,
-    "parachuteCdA": 60,
+    "chuteDeployAltM": 9000,
+    "terminalHandoffAltM": 60,
+    "finalPhaseAltM": 21,
+    "parachuteCdA": 70,
     "heatshieldKg": 60,
     "ispS": 200,
     "airbagReleaseMs": 12
   },
+  "beats": [
+    { "type": "heatshield_sep", "after": "parachute_deploy", "afterS": 22 },
+    { "type": "bridle_lower", "after": "parachute_deploy", "afterS": 41 },
+    { "type": "radar_lock", "altM": 1500 },
+    { "type": "airbag_deploy", "altM": 300 },
+    { "type": "bridle_cut", "altM": 21 }
+  ],
+  "afterTouchdown": {
+    "bounces": { "count": 15, "firstHeightM": 16.7, "rollM": 1000, "restS": 150 },
+    "beats": [{ "type": "petals_open", "afterS": 8, "realAfterS": 5220 }]
+  },
+  "estimatedFields": ["params.terminalHandoffAltM", "params.parachuteCdA", "afterTouchdown.bounces.rollM"],
   "source_tier": "flagship",
   "provenance": [
     {
-      "l": "Mars Pathfinder EDL (AIAA 97-3663) — entry at 133 km, 7,479 m/s relative at −13.65°, 585.3 kg, β 62.4 kg/m²; chute 171 s at 8.6 km, RAD ignition 300 s at ~90 m, first impact 306 s",
+      "l": "Mars Pathfinder EDL (Braun et al., AIAA 97-3663) — entry at 133 km, 7,479 m/s relative at −13.65°, 585.3 kg, β 62.4 kg/m²; chute 171 s after entry at about 9 km (Fig. 7); heat shield 22 s and bridle 41 s after the chute; radar lock about 1.5 km; airbags at about 300 m (296 s); RAD ignition 300 s at 50–70 m (60 m drawn, an estimate); bridle cut 21 m above the surface; first impact 306 s; bounced more than 15 times. The chute drag area (70 m²) is fitted to the 135 s from chute to first impact",
       "u": "https://ntrs.nasa.gov/api/citations/19970026945/downloads/19970026945.pdf"
+    },
+    {
+      "l": "Pathfinder landing accelerations (JPL PIA00797) — first two impacts 6 s apart, which the caption converts to a 16.7 m bounce; 15 bounces shown, then about a minute more of bouncing and rolling",
+      "u": "https://www.jpl.nasa.gov/images/pia00797-pathfinder-landing-accelerations/"
+    },
+    {
+      "l": "MER landing press kit (2004), p. 32 — Pathfinder rolled to a stop about 1 km from first impact, about 2.5 minutes after it (a comparison remark; the roll distance is drawn as an estimate)",
+      "u": "https://www.jpl.nasa.gov/news/press_kits/merlandings.pdf"
+    },
+    {
+      "l": "Mars Pathfinder mission (PDS) — landing 16:56:55 UTC, petals fully deployed 18:24 UTC, about 87 minutes later",
+      "u": "https://pds.nasa.gov/data/mpfl-m-imp-2-edr-v1.0/mpim_0002/document/mission.htm"
     },
     {
       "l": "Mars Pathfinder EDL — Golombek et al. (1997)",

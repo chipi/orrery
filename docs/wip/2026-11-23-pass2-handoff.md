@@ -75,6 +75,97 @@ shows them up close): the Shuttle's wing tops read slightly blue-grey under the 
 still looks a little rocket-like from above; Mars Express's dish sits on the back to keep its
 1.8 m height; Hope's bus colour is assumed gold; DART had no Commons photo (NASA specs only).
 
+## Pass 2, slice 1: done, uncommitted (2026-11-23, second session)
+
+Plan agreed with the operator: slices in this order:
+
+1. engine beats plus the Mars airbag family (this slice);
+2. lunar hover and cutoff (Chang'e, Luna E-8, Chandrayaan-3; Apollo and Artemis checked);
+3. Mars legged and powered landers (Viking, Phoenix, InSight, Tianwen-1, Curiosity and Perseverance
+   timings);
+4. failures (Schiaparelli, SLIM, Beresheet, Chandrayaan-2, Mars 3, **Beagle 2, moved here from
+   slice 1**: it needs a two-stage chute model, and its petals are a failure state);
+5. Earth capsules;
+6. Venus, Titan, Jupiter and small bodies.
+
+### Engine (every descent can use it)
+
+- **Placed beats.** `DescentProfile.beats` (`DescentBeatSpec`) fire at an altitude (`altM`) or a
+  delay after another beat (`after` and `afterS`). A placed beat replaces the phase-start beat of
+  its type.
+- **Ground tail.** `afterTouchdown` adds hops, a roll and ground beats after the first contact:
+  - the hops are ballistic in the body's gravity, `count` of them, decaying from `firstHeightM`;
+  - the roll covers `rollM` and comes to rest at `restS`; the slow roll is shortened on screen to
+    at most 20 s;
+  - the ground beats can carry `realAfterS`.
+- Events carry:
+  - `downrangeKm`;
+  - `realT` for a beat shown sooner than it happened. FlightPlan prints `clock(realT)`: Pathfinder's
+    petals at E+92:28, at rest E+07:58.
+- New beat types, with HUD labels in all 14 locales: `radar_lock`, `bridle_lower`, `bridle_cut`,
+  `at_rest`, `petals_open`.
+  - The en-source manifest was rewritten (`stale-overlays.mjs --manifest=write`).
+- `edl_duration_s` (descent-arrival) now runs from entry to first contact, not to the end of the
+  tail.
+  - `backfill-descent-arrival.ts` re-run: Pathfinder, Spirit, Opportunity.
+
+### Scene and model: the airbag stack
+
+- `buildAirbagStack` is drawn to the 2.65 m aeroshell's scale: the 5.2 m ball of four 6-lobe bags,
+  the 20 m bridle, a 12.5 m DGB and three RAD motors. Its parts are exposed as `airbagBall` on the
+  DescentModel.
+- In the scene (`descent-scene.ts`), in order:
+  - the bridle descent, with the backshell and chute climbing;
+  - inflation, during which the ball's bottom rides the trajectory point;
+  - the RAD plumes;
+  - the bridle cut, with the backshell flying off;
+  - the last 30 m drawn at craft scale (`BALL_SCALE_ALT_M`);
+  - the roll as distance over radius;
+  - retraction and righting;
+  - the petals unfolding from closed.
+- MER's lander is `merOnLander` in `descent-landers.ts`:
+  - Pathfinder's petals, stretched to an estimated 2.4 m base;
+  - a closed regular tetrahedron;
+  - the deployed rover model hidden inside until the petals open.
+- Pathfinder's ramps, mast and deflated-bag heaps are now stowed in flight (they used to fly).
+- Director: the ground shot runs to `at_rest`, then a close shot on the petals.
+
+### Figures
+
+A science-reviewer pass checked them against Braun et al. (AIAA 97-3663), Desai & Knocke
+(AIAA 2004-5092) and the MER press kit. **The Mars record file was wrong** on:
+
+- Pathfinder's RAD altitude: 50–70 m, not 98 m;
+- Pathfinder's airbags: about 300 m, not 355 m;
+- Pathfinder's radar lock: about 1.5 km;
+- MER bridle cuts: they were swapped. Spirit 8.5 m, Opportunity 6.9 m.
+
+Each profile's provenance carries the sources. Estimates are listed in `estimatedFields`.
+
+### Checks
+
+- `npm run test`: 569 files, 9,663 tests passed.
+- `npm run check`: 0 errors.
+- `npm run validate-data`: all green.
+- eslint and prettier: clean on the touched files.
+- Mutation checks: 12 of 12 killed.
+- Picture sheets (gitignored): `test-results/shots/p2/sheet-{pathfinder,spirit}-{desktop,phone}.png`.
+- Tools added in `docs/wip/2026-11-23-pass2-tools/`: `desc-shot.mjs` takes `T<trajectory s>` with
+  `TB=<chute t>` and `SHOT_VIEWPORT`; `grid.mjs` builds a desktop grid ordered by time.
+- **Not run:** `npm run preflight:coverage`, and e2e.
+
+### Known gaps left
+
+- Pathfinder's entry runs 24 s long: chute at 195 s against 171 s. The edl_duration is 329 s against
+  306 s. This predates slice 1; the entry dynamics need fitting.
+- The roll shows as rotation only: the camera tracks the ball, so there is no ground motion.
+- Sizes not sourced, drawn and marked in code:
+  - MER's chute;
+  - the line lengths;
+  - the RAD motors;
+  - MER's 2.4 m petal base.
+- Opportunity's first-bounce height and time to rest are copied from Spirit (estimates).
+
 ## Pass 2: the method (operator 2026-11-23)
 
 The pilots went beyond the model; every landing gets the same care. For each descent:

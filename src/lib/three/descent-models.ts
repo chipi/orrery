@@ -59,6 +59,31 @@ export interface DescentModel {
   backshellBaseY: number;
   parachuteBaseY: number;
   landerMountY: number;
+  /** Airbag landers (Pathfinder, MER): the ball the scene lowers on the bridle, inflates,
+   *  bounces and rolls. Absent for every other stack. */
+  airbagBall?: AirbagBall;
+}
+
+export interface AirbagBall {
+  /** Holds the lander and the bags; rotates about the ball's centre as it rolls. */
+  pivot: THREE.Group;
+  /** The pivot's height with the bags stowed (the lander's centre, scene units). */
+  restY: number;
+  /** The inflated ball's radius (scene units). */
+  radius: number;
+  /** Scene units per metre. */
+  k: number;
+  /** The bridle's length (scene units). */
+  bridleLength: number;
+  /** The bridle line, from the lander's top up to the backshell; the scene stretches it. */
+  bridle: THREE.Object3D;
+  /** The RAD rockets' plumes on the backshell. */
+  radPlumes: THREE.Object3D[];
+  /** The side petals, built folded closed (rotation.x = −petalClosedRad, order YXZ). */
+  petals: THREE.Object3D[];
+  petalClosedRad: number;
+  /** Parts hidden inside the closed petals until they open (a MER rover). */
+  inside: THREE.Object3D[];
 }
 
 interface Palette {
@@ -667,36 +692,158 @@ function buildMarsRetroStack(lander: THREE.Group, vehLen: number, legs = 3): Des
   return m;
 }
 
-/** Mars airbag (Pathfinder / Spirit / Opportunity) — tetrahedral airbag cluster. */
+/** Pathfinder's and MER's aeroshell: 2.65 m across (Braun et al., AIAA 97-3663; MER press kit). */
+const AIRBAG_AEROSHELL_M = 2.65;
+/** Pathfinder's airbags: four bags inflating to a 5.2 m ball (NSSDC Mars entry page, the
+ *  pre-landing plan), six lobes each (JPL); MER's ball is drawn the same. */
+const AIRBAG_BALL_M = 5.2;
+/** The bridle the lander slid down below the backshell: 20 m (MER press kit, 2004; Pathfinder's
+ *  braided Kevlar tether the same, NSSDC). */
+const AIRBAG_BRIDLE_M = 20;
+/** Pathfinder's disk-gap-band: 12.5 m (NSSDC, pre-landing plan). MER's size was not found and is
+ *  drawn the same. The line length is an estimate in MSL's proportion (50 m for a 21.35 m DGB). */
+const AIRBAG_CHUTE_M = 12.5;
+
+/** A bag: six lobes in a ring around `normal`, its centre `dist` from the ball's centre. */
+function airbagCluster(
+  normal: THREE.Vector3,
+  dist: number,
+  lobeR: number,
+  mat: THREE.Material,
+): THREE.Group {
+  const g = new THREE.Group();
+  const geo = new THREE.SphereGeometry(lobeR, 18, 12);
+  const pos = geo.attributes.position;
+  // A little slack in the fabric: the lobes are not perfect spheres.
+  for (let i = 0; i < pos.count; i++) {
+    const n =
+      1 + 0.025 * Math.sin(pos.getX(i) * 31 + pos.getY(i) * 17) * Math.cos(pos.getZ(i) * 23);
+    pos.setXYZ(i, pos.getX(i) * n, pos.getY(i) * n, pos.getZ(i) * n);
+  }
+  geo.computeVertexNormals();
+  const ring = lobeR * 0.82;
+  for (let i = 0; i < 6; i++) {
+    const a = (i / 6) * Math.PI * 2;
+    const lobe = new THREE.Mesh(geo, mat);
+    lobe.position.set(Math.cos(a) * ring, 0, Math.sin(a) * ring);
+    g.add(lobe);
+  }
+  g.position.copy(normal).multiplyScalar(dist);
+  g.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), normal);
+  return g;
+}
+
+/**
+ * Mars airbag landing (Pathfinder, Spirit, Opportunity). The tetrahedral lander rides in the
+ * aeroshell; after the heat shield goes it slides 20 m down a bridle below the backshell, four
+ * lobed bags inflate around it into a 5.2 m ball, three RAD rockets on the backshell fire, the
+ * bridle is cut and the ball falls, bounces and rolls. Drawn to the aeroshell's real 2.65 m.
+ */
 function buildAirbagStack(lander: THREE.Group, vehLen: number): DescentModel {
   const p = palette();
   const m = scaffold(lander);
   addAeroshell(m, p, vehLen);
+  const k = (vehLen * 0.84) / AIRBAG_AEROSHELL_M; // the aeroshell is drawn 0.84 vehLen across
 
-  m.parachuteBaseY = vehLen * 0.9;
-  m.parachute = parachuteCanopy(vehLen * 0.55, p, -vehLen * 0.86);
+  m.parachuteBaseY = vehLen * 0.47;
+  m.parachute = dgbParachute(k, { diameterM: AIRBAG_CHUTE_M, totalM: 29, lines: 28 });
   m.parachute.position.y = m.parachuteBaseY;
   m.root.add(m.parachute);
 
-  lander.position.y = 0;
-  m.root.add(lander);
-
-  // A cluster of lobed airbag spheres bundled around the lander (hidden until deploy).
-  const bagGeo = new THREE.SphereGeometry(vehLen * 0.2, 14, 10);
-  for (let i = 0; i < 6; i++) {
-    const a = (i / 6) * Math.PI * 2;
-    const bag = new THREE.Mesh(bagGeo, p.bag);
-    bag.position.set(
-      Math.cos(a) * vehLen * 0.16,
-      -vehLen * 0.05 + (i % 2) * vehLen * 0.12,
-      Math.sin(a) * vehLen * 0.16,
-    );
-    m.airbags.add(bag);
+  // The lander at the real metre scale, centred in the aeroshell, its side petals folded closed
+  // (the scene opens them at petals_open). Each hinges on its edge of the base: yaw first, then the
+  // fold about the hinge. Pathfinder's lie against its body's sloping faces, 105° up from flat
+  // (the body is 0.62 m tall, its faces lean in by 0.17 m); MER's set their own angle.
+  const own = (lander.userData.metresToScene as number | undefined) ?? k;
+  lander.scale.multiplyScalar(k / own);
+  lander.userData.metresToScene = k;
+  const petals: THREE.Object3D[] = [];
+  const inside: THREE.Object3D[] = [];
+  let petalClosedRad = Math.PI - Math.atan2(0.62, 0.17);
+  lander.traverse((o) => {
+    if (o.userData.insidePetals) inside.push(o);
+    if (o.name !== 'petals' || o.userData.surfaceOnly) return;
+    petalClosedRad = (o.userData.closedRad as number | undefined) ?? petalClosedRad;
+    petals.push(...o.children);
+  });
+  for (const pt of petals) {
+    pt.rotation.order = 'YXZ';
+    pt.rotation.x = -petalClosedRad;
   }
+  const lb = flyingBounds(lander);
+  const restY = (lb.max.y - lb.min.y) / 2;
+  const pivot = new THREE.Group();
+  pivot.name = 'airbagBall';
+  pivot.position.y = restY;
+  lander.position.y = -restY - lb.min.y;
+  pivot.add(lander);
+
+  // Four bags on the faces of a tetrahedron (one under the lander, three around it).
+  const radius = (AIRBAG_BALL_M / 2) * k;
+  const lobeR = radius * 0.34;
+  const bagMat = new THREE.MeshStandardMaterial({ color: 0xeee6d2, roughness: 0.82, metalness: 0 });
+  const normals = [new THREE.Vector3(0, -1, 0)];
+  for (let i = 0; i < 3; i++) {
+    const a = (i / 3) * Math.PI * 2 + Math.PI / 3;
+    normals.push(new THREE.Vector3(Math.sin(a) * 0.943, 0.333, Math.cos(a) * 0.943));
+  }
+  for (const n of normals) m.airbags.add(airbagCluster(n, radius - lobeR, lobeR, bagMat));
   m.airbags.visible = false;
-  m.root.add(m.airbags);
-  m.retroPlumeAnchor.position.y = -vehLen * 0.1;
-  m.root.add(m.retroPlumeAnchor);
+  pivot.add(m.airbags);
+  m.root.add(pivot);
+
+  // The bridle: a line from the lander's top to the backshell, stretched by the scene.
+  const bridleGeo = new THREE.BufferGeometry().setFromPoints([
+    new THREE.Vector3(0, 0, 0),
+    new THREE.Vector3(0, 1, 0),
+  ]);
+  const bridle = new THREE.Line(bridleGeo, new THREE.LineBasicMaterial({ color: 0xd9d4c4 }));
+  bridle.visible = false;
+  m.root.add(bridle);
+
+  // Three RAD solid rockets on the backshell, canted outward so the exhaust clears the ball
+  // (sizes drawn, not sourced).
+  const radPlumes: THREE.Object3D[] = [];
+  const motorGeo = new THREE.CylinderGeometry(0.11 * k, 0.13 * k, 0.75 * k, 14);
+  const plumeMat = new THREE.MeshBasicMaterial({
+    color: 0xffc070,
+    transparent: true,
+    opacity: 0.55,
+    blending: THREE.AdditiveBlending,
+    depthWrite: false,
+  });
+  const plumeGeo = new THREE.ConeGeometry(0.35 * k, 3.2 * k, 16, 1, true);
+  plumeGeo.translate(0, -1.6 * k, 0);
+  for (let i = 0; i < 3; i++) {
+    const a = (i / 3) * Math.PI * 2;
+    const mount = new THREE.Group();
+    const r = vehLen * 0.3;
+    mount.position.set(Math.sin(a) * r, vehLen * 0.2, Math.cos(a) * r);
+    mount.rotation.set(0, a, 0);
+    const tilt = new THREE.Group();
+    tilt.rotation.x = -0.5; // the nozzle points down and out (+z is outward here)
+    mount.add(tilt);
+    tilt.add(new THREE.Mesh(motorGeo, p.eng));
+    const plume = new THREE.Mesh(plumeGeo, plumeMat);
+    plume.position.y = -0.38 * k;
+    plume.visible = false;
+    tilt.add(plume);
+    radPlumes.push(plume);
+    m.backshell.add(mount);
+  }
+
+  m.airbagBall = {
+    pivot,
+    restY,
+    radius,
+    k,
+    bridleLength: AIRBAG_BRIDLE_M * k,
+    bridle,
+    radPlumes,
+    petals,
+    petalClosedRad,
+    inside,
+  };
   return m;
 }
 
@@ -706,18 +853,25 @@ const MSL_BRIDLE_M = 7.5;
 
 /** Top of what flies (scene units, in the parent's frame): surface-only parts left out. */
 function flyingTop(o: THREE.Object3D): number {
+  const b = flyingBounds(o);
+  return b.isEmpty() ? 0 : b.max.y;
+}
+
+/** Bounds of what flies and shows (in the parent's frame): surface-only parts, and a rover hidden
+ *  inside its lander's closed petals, left out. */
+export function flyingBounds(o: THREE.Object3D): THREE.Box3 {
   o.updateMatrixWorld(true);
   const inv = o.parent ? o.parent.matrixWorld.clone().invert() : new THREE.Matrix4();
-  let top = -Infinity;
+  const box = new THREE.Box3();
   o.traverse((c) => {
     const mesh = c as THREE.Mesh;
     if (!mesh.isMesh) return;
-    for (let p: THREE.Object3D | null = mesh; p; p = p.parent) if (p.userData.surfaceOnly) return;
+    for (let p: THREE.Object3D | null = mesh; p; p = p.parent)
+      if (p.userData.surfaceOnly || p.userData.insidePetals) return;
     mesh.geometry.computeBoundingBox();
-    const b = mesh.geometry.boundingBox!.clone().applyMatrix4(mesh.matrixWorld).applyMatrix4(inv);
-    top = Math.max(top, b.max.y);
+    box.union(mesh.geometry.boundingBox!.clone().applyMatrix4(mesh.matrixWorld).applyMatrix4(inv));
   });
-  return Number.isFinite(top) ? top : 0;
+  return box;
 }
 
 function collectNamed(root: THREE.Object3D, name: string): THREE.Object3D[] {

@@ -102,7 +102,10 @@ const DESCENT_SEP_BEATS = new Set([
   'skycrane_flyaway',
   'retro_ignition',
   'airbag_deploy',
+  'bridle_lower',
+  'bridle_cut',
   'touchdown',
+  'petals_open',
 ]);
 
 /**

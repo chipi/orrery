@@ -106,6 +106,8 @@ const DESCENT_SEP_BEATS = new Set([
   'bridle_cut',
   'touchdown',
   'petals_open',
+  'leg_deploy',
+  'arrays_open',
 ]);
 
 /**

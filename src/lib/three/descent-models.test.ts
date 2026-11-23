@@ -244,6 +244,22 @@ describe('the airbag stack (Pathfinder, Spirit, Opportunity)', () => {
     expect(b.radius / b.k).toBeGreaterThan(1); // the bags' reach: about the 1 m the lander dropped
   });
 
+  it('legged landers: three engine exits, legs fold up until deployed, arrays closed', () => {
+    for (const id of ['viking1-lander', 'phoenix', 'insight']) {
+      const m = buildDescentModel(id, 'mars', 1);
+      expect(m.plumeSites, id).toHaveLength(3);
+      const legs = m.lander.getObjectByName('legs')!;
+      m.deploy!.legs!(0);
+      const folded = legs.scale.y;
+      m.deploy!.legs!(1);
+      expect(legs.scale.y, id).toBeGreaterThan(folded);
+      expect(legs.scale.y).toBe(1);
+      m.deploy!.arrays!(0);
+      const arrays = m.lander.getObjectByName('solar-arrays');
+      if (arrays) expect(arrays.visible, id).toBe(false);
+    }
+  });
+
   it('no other stack has an airbag ball', () => {
     expect(buildDescentModel('curiosity', 'mars', 1).airbagBall).toBeUndefined();
     expect(buildDescentModel('apollo11', 'moon', 1).airbagBall).toBeUndefined();

@@ -53,6 +53,7 @@ const BEAT_SHOT: Record<string, DescentShotKind> = {
   airbag_deploy: 'orbit',
   bridle_lower: 'under',
   bridle_cut: 'pullOut',
+  leg_deploy: 'orbit',
   landing_flip: 'orbit',
   // Apollo's gates: the pitchover read from the side, the final descent pushed in on.
   high_gate: 'orbit',
@@ -109,7 +110,7 @@ export function buildDescentShots(
   // shot while its petals open.
   const rest = events.find((e) => e.type === 'at_rest')?.t ?? touchdown;
   push('ground', groundT, rest);
-  const petals = events.find((e) => e.type === 'petals_open')?.t;
+  const petals = events.find((e) => e.type === 'petals_open' || e.type === 'arrays_open')?.t;
   let settled = rest;
   if (petals != null && petals >= rest) {
     push('close', rest, petals + 8);

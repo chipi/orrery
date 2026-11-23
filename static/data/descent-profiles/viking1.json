@@ -23,16 +23,41 @@
     "heatshieldKg": 130,
     "backshellKg": 60,
     "ispS": 220,
-    "terminalVelocityMs": 2.4
+    "terminalVelocityMs": 2.4,
+    "descentRateGain": 0.141
   },
   "source_tier": "flagship",
   "estimatedFields": [
-    "entryState.altitudeM"
+    "entryState.altitudeM",
+    "beats.heatshield_sep",
+    "beats.leg_deploy",
+    "beats.radar_lock",
+    "params.parachuteCdA"
   ],
   "provenance": [
     {
       "l": "NSSDCA Viking 1 Lander (Viking Lander EDL — Soffen & Snyder 1976) — entry 4.5 km/s at −17.6° (relative), 930 kg, β 63.7 kg/m²; chute at ~6 km, terminal engines from ~1.5 km, touchdown 2.4 m/s. Entry-interface altitude not found in the sources read",
       "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1975-075C"
+    },
+    {
+      "l": "Viking EDL as researched for pass 2 (docs/wip/2026-11-23-mars-landings-record.md): 3.5 m aeroshell; a single disk-gap-band chute (16 m, the record marks it unverified) at about 5.5–6 km; the aeroshell off 8–14 s later (10 s drawn); three throttled engines of 18 nozzles each lit at about 1.5 km with the chute and backshell released; a constant-velocity descent from 17 m at 2.4 m/s (the record also gives 1.5 m/s and about 2 m/s on three legs; 2.4 m/s is the figure the profile and the brief use). The leg deploy (5 s after the aeroshell) and the radar lock (1.7 km) are drawn, not sourced",
+      "u": "https://solarviews.com/history/SP-4212/ch8-2.html"
+    }
+  ],
+  "beats": [
+    {
+      "type": "heatshield_sep",
+      "after": "parachute_deploy",
+      "afterS": 10
+    },
+    {
+      "type": "leg_deploy",
+      "after": "heatshield_sep",
+      "afterS": 5
+    },
+    {
+      "type": "radar_lock",
+      "altM": 1700
     }
   ]
 }

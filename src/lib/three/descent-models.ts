@@ -66,6 +66,14 @@ export interface DescentModel {
    *  (Beagle 2): hung from `baseY` (scene units, above the lander), opened at parachute_jettison
    *  and released at first contact. The scene lifts it with the ball as the bags inflate. */
   mainChute?: { group: THREE.Group; baseY: number };
+  /** Legged landers: the legs fold up until leg_deploy and the arrays stay closed until
+   *  arrays_open; each takes the progress, 0 closed to 1 out. */
+  deploy?: { legs?: (f: number) => void; arrays?: (f: number) => void };
+  /** The terminal engines' exits (root frame): the scene burns a plume at each, and cuts them at
+   *  contact. Absent: one plume at `retroPlumeAnchor`. */
+  plumeSites?: THREE.Vector3[];
+  /** Where the camera frames the landed craft (root frame), legs and arrays out. */
+  landedFrame?: { cy: number; r: number };
 }
 
 export interface AirbagBall {
@@ -984,6 +992,90 @@ function buildBeagleStack(lander: THREE.Group, vehLen: number): DescentModel {
   return m;
 }
 
+interface LeggedSpec {
+  /** Aeroshell diameter (m) and the single disk-gap-band's nominal diameter (m). */
+  aeroM: number;
+  chuteM: number;
+  /** The terminal engines' exits, in the lander model's own units: azimuth (rad), radius, height. */
+  engines: [number, number, number][];
+}
+
+const DECK_ENGINES = (R: number, deckY: number): [number, number, number][] =>
+  [0, 2, 4].map((k) => [k * (Math.PI / 3), R * 0.8, deckY - 0.68]);
+
+/**
+ * Mars legged powered landers (Viking, Phoenix, InSight): the lander rides folded in the
+ * aeroshell at the aeroshell's real size under a disk-gap-band at its real size; its legs fold up
+ * until leg_deploy; the terminal engines burn at their own exits, not at one central plume, and
+ * cut at contact; arrays (Phoenix, InSight) stay closed until arrays_open. Aeroshell and chute
+ * sizes are the record's (Viking's 16 m unverified, InSight's Phoenix-class); line lengths (2.3 ×
+ * the diameter, as MSL's) and the folded legs' shape (a squash toward the body) are estimates.
+ */
+function leggedStack(spec: LeggedSpec): StackBuilder {
+  return (lander, vehLen) => {
+    const p = palette();
+    const m = scaffold(lander);
+    addAeroshell(m, p, vehLen);
+    const k = (vehLen * 0.84) / spec.aeroM;
+    m.parachuteBaseY = vehLen * 0.47;
+    m.parachute = dgbParachute(k, {
+      diameterM: spec.chuteM,
+      totalM: spec.chuteM * 2.3,
+      lines: 48,
+    });
+    m.parachute.position.y = m.parachuteBaseY;
+    m.root.add(m.parachute);
+
+    const own = (lander.userData.metresToScene as number | undefined) ?? k;
+    lander.scale.multiplyScalar(k / own);
+    lander.userData.metresToScene = k;
+    lander.position.y = 0; // the footpads at the ground once the legs are out
+    m.root.add(lander);
+    lander.updateMatrixWorld(true);
+
+    const legs = lander.getObjectByName('legs');
+    const arrays = lander.getObjectByName('solar-arrays');
+    const g = legs?.parent;
+    const legTop = legs ? flyingBounds(legs).max.y : 0;
+    m.deploy = {
+      legs: (f) => {
+        if (!legs) return;
+        const sy = 0.45 + 0.55 * f;
+        legs.scale.set(0.3 + 0.7 * f, sy, 0.3 + 0.7 * f);
+        legs.position.y = legTop * (1 - sy);
+      },
+      arrays: (f) => {
+        if (!arrays) return;
+        arrays.visible = f > 0;
+        arrays.scale.set(0.08 + 0.92 * f, 1, 1);
+      },
+    };
+    m.deploy.legs?.(0);
+    m.deploy.arrays?.(0);
+
+    // Engine exits in the root's frame, for the scene's plumes.
+    if (g) {
+      g.updateMatrixWorld(true);
+      m.root.updateMatrixWorld(true);
+      m.plumeSites = spec.engines.map(([a, r, y]) =>
+        m.root.worldToLocal(g.localToWorld(new THREE.Vector3(Math.sin(a) * r, y, Math.cos(a) * r))),
+      );
+    }
+    // The landed craft with legs and arrays out, for the camera.
+    m.deploy.legs?.(1);
+    m.deploy.arrays?.(1);
+    lander.updateMatrixWorld(true);
+    const full = new THREE.Box3().setFromObject(lander);
+    const sz = full.getSize(new THREE.Vector3());
+    m.landedFrame = { cy: (full.min.y + full.max.y) / 2, r: Math.max(sz.x, sz.z) * 0.55 };
+    m.deploy.legs?.(0);
+    m.deploy.arrays?.(0);
+    m.retroPlumeAnchor.position.y = -vehLen * 0.16;
+    m.root.add(m.retroPlumeAnchor);
+    return m;
+  };
+}
+
 /** Mars skycrane (Curiosity / Perseverance) — descent stage lowers the rover on tethers. */
 /** MSL's bridles: the rover hung 7.5 m below the descent stage (NASA MSL landing press kit). */
 const MSL_BRIDLE_M = 7.5;
@@ -1233,9 +1325,14 @@ const BUILDERS: Record<string, StackBuilder> = {
   opportunity: buildAirbagStack,
   beagle2: buildBeagleStack,
   // Mars retro
-  'viking1-lander': (l, v) => buildMarsRetroStack(l, v, 3),
-  phoenix: (l, v) => buildMarsRetroStack(l, v, 12),
-  insight: (l, v) => buildMarsRetroStack(l, v, 12),
+  // Aeroshells: Viking 3.5 m, Phoenix and InSight 2.65 m; chutes 16 m (unverified), 11.8 m, 11.8 m.
+  'viking1-lander': leggedStack({
+    aeroM: 3.5,
+    chuteM: 16,
+    engines: [0, 1, 2].map((k) => [k * ((2 * Math.PI) / 3), 0.82, 0.31]),
+  }),
+  phoenix: leggedStack({ aeroM: 2.65, chuteM: 11.8, engines: DECK_ENGINES(0.8, 0.95) }),
+  insight: leggedStack({ aeroM: 2.65, chuteM: 11.8, engines: DECK_ENGINES(0.9, 1.0) }),
   mars3: (l, v) => buildMarsRetroStack(l, v, 4),
   zhurong: (l, v) => buildMarsRetroStack(l, v, 4),
   schiaparelli: (l, v) => buildMarsRetroStack(l, v, 3),

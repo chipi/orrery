@@ -311,6 +311,8 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
     if (box) parts.push({ o, box });
   }
   const liveCore = (t: number): { cy: number; r: number } => {
+    // A legged lander on the ground: frame it whole, legs and arrays out.
+    if (model.landedFrame && touchdownT != null && t >= touchdownT) return model.landedFrame;
     // An opening lander (Beagle 2's lid and panels): frame its whole opened span.
     if (ball?.openSpan && petalsT != null && t >= petalsT)
       return { cy: ball.restY, r: ball.openSpan * 0.6 };
@@ -382,6 +384,15 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
   plume.rotation.z = Math.PI; // fire down (−Y)
   plume.visible = false;
   model.retroPlumeAnchor.add(plume);
+  // A lander with its engine exits known burns a plume at each (Viking's three pods, the deck
+  // landers' three), and cuts them at contact; others burn the one central plume.
+  const sitePlumes = (model.plumeSites ?? []).map((at) => {
+    const c = plume.clone();
+    c.position.copy(at);
+    c.visible = false;
+    model.root.add(c);
+    return c;
+  });
 
   // ── Entry fireball — a plasma cap at the heat-shield + a wake streaming up
   //    behind the descending vehicle, glowing with the (normalised) aero-heating
@@ -522,6 +533,10 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
   const cutT = metOf('bridle_cut');
   const restT = metOf('at_rest');
   const petalsT = metOf('petals_open');
+  const legsT = metOf('leg_deploy');
+  const arraysT = metOf('arrays_open');
+  const LEG_S = 4;
+  const ARRAY_S = 8;
   const shellSepT = bsT ?? cutT;
   const tdDownrangeKm = opts.events?.find((e) => e.type === 'touchdown')?.downrangeKm ?? 0;
   const BRIDLE_S = 6; // MER's bridle paid out in about 6 s (MER landing press kit)
@@ -699,6 +714,13 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
       ball.unfold?.(open);
     }
 
+    // Legged landers: legs out at leg_deploy (out from the start when the profile has no such
+    // beat), arrays open at arrays_open.
+    if (model.deploy) {
+      model.deploy.legs?.(legsT == null ? 1 : smooth01((s.t - legsT) / LEG_S));
+      model.deploy.arrays?.(arraysT == null ? 0 : smooth01((s.t - arraysT) / ARRAY_S));
+    }
+
     // A main chute that stays on the lander when the backshell and pilot leave (Beagle 2): opens
     // at parachute_jettison, rides the ball up as the bags inflate, is released at first contact.
     const main = model.mainChute;
@@ -806,11 +828,15 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
 
     // Retro plume: only while braking (powered / skycrane / lunar powered).
     const braking = s.phaseKind === 'powered_retro' || s.phaseKind === 'skycrane';
+    // Engine exits known (Viking, the deck landers): a plume at each, cut at contact.
+    const cutoff = sitePlumes.length > 0 && touchdownT != null && s.t >= touchdownT;
     const engineOn = braking && (cutoffT == null || s.t < cutoffT);
-    plume.visible = engineOn;
+    plume.visible = engineOn && sitePlumes.length === 0;
+    for (const c of sitePlumes) c.visible = engineOn && !cutoff;
     if (engineOn) {
       const flick = 1 + 0.1 * Math.sin(frame * 0.7) + 0.05 * Math.sin(frame * 1.9);
       plume.scale.set(plumeK, flick * plumeK, plumeK);
+      for (const c of sitePlumes) c.scale.set(plumeK * 0.55, flick * plumeK * 0.55, plumeK * 0.55);
     }
 
     // Entry attitude flip (Earth crewed re-entry, RFC-034 §13): the capsule comes
@@ -874,6 +900,8 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
     } else if (model.parachute.visible) {
       const top = model.parachute.position.y + chuteSpan * vehLen;
       whole = { cy: top / 2, r: top / 2 + vehLen * 0.4 };
+      // A legged lander under its big canopy: frame the chute with the craft, not the canopy's inside.
+      if (model.deploy) core = whole;
     } else if (undocking) {
       const o = model.orbiter.position;
       whole = { cy: (o.y + vehLen) / 2, r: o.length() / 2 + vehLen * 1.2 };

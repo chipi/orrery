@@ -116,6 +116,8 @@ export type DescentEventType =
   | 'low_gate' // the approach ends and the final vertical descent starts (Apollo)
   | 'contact_light' // a footpad probe touches the surface (Apollo's blue light)
   | 'engine_cutoff' // the descent engine shuts down just above the surface
+  | 'leg_deploy' // the landing legs unfold (Viking, Phoenix, InSight)
+  | 'arrays_open' // the solar arrays open after landing (Phoenix, InSight)
   | 'touchdown';
 
 /**

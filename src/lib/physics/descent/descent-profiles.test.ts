@@ -465,3 +465,20 @@ describe('Apollo landings fly the gates, the contact light and the engine cutoff
     }
   });
 });
+
+describe('Mars legged landers (Viking, Phoenix, InSight)', () => {
+  const at = (id: string, t: string) => flight(id).s.events.find((e) => e.type === t)!;
+  it('Viking: legs after the aeroshell, descent at 2.4 m/s from 17 m, touchdown at 2.4 m/s', () => {
+    const s = flight('viking1').s;
+    expect(at('viking1', 'leg_deploy').t).toBeGreaterThan(at('viking1', 'heatshield_sep').t);
+    const near17 = s.states.filter((x) => x.altM > 0 && x.altM < 16);
+    expect(near17.every((x) => Math.abs(x.velDownMs - 2.4) < 0.15)).toBe(true);
+    expectInRange(s.touchdownVelocityMs, 2.3, 2.5, 'Viking touchdown (m/s)');
+  });
+  it('InSight: heat shield 15 s and legs 25 s after the chute; arrays 16 min after landing', () => {
+    const chute = at('insight', 'parachute_deploy').t;
+    expectInRange(at('insight', 'heatshield_sep').t - chute, 14.9, 15.1, 'heat shield (s)');
+    expectInRange(at('insight', 'leg_deploy').t - chute, 24.9, 25.1, 'legs (s)');
+    expect(at('insight', 'arrays_open').realT! - at('insight', 'touchdown').t).toBe(960);
+  });
+});

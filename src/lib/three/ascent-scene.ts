@@ -121,6 +121,12 @@ const DEFAULT_SITE_YAW_DEG = 0;
 export interface AscentScene extends FlightPhaseScene<AscentState> {
   /** The camera shot active at the last setState() — for the HUD. */
   readonly activeShot: AscentShotName;
+  /** Where the camera should look after SECO, as of the last setState(): the spacecraft once it
+   *  has sprung free, the middle of stage + spacecraft before; null while the stack climbs. */
+  readonly focus: { x: number; y: number; z: number } | null;
+  /** The part of the body axis still flying, as of the last setState() (km from the stack's
+   *  base): the whole stack, then from the upper stage's base once the first stage has gone. */
+  readonly stackSpan: readonly [number, number];
   /** Re-light the plume on the upper stage for the post-SECO injection burn
    *  (RFC-034 §3.1). Driven by the clock (not the clamped physics state, which
    *  freezes at SECO). */
@@ -654,6 +660,8 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   // Its centre along the body axis — the camera frames the stage + spacecraft between them
   // while the two coast and burn together after SECO.
   const upperStageCenterY = _usBox.getCenter(new THREE.Vector3()).y;
+  const upperStageBaseY = Math.max(0, _usBox.min.y);
+  let lastSpan: readonly [number, number] = [0, vehLen];
   // The radius of the stage's topmost part (the S-IVB, not the flared interstage below it).
   let stageTopRadius = upperStageRadius;
   let stageTopY = -Infinity;
@@ -733,15 +741,21 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   // parented to the vehicle so they sit at the interface. Driven by sepProgress
   // in updateForces(), so they're scrub-exact like every other sep animation.
   const BURST_S = 2.6;
-  const boosterBurst = new SeparationBurst({ scale: vehLen * 0.55 });
-  boosterBurst.position.y = 0;
+  // The ring grows to ~10x the burst scale: at 0.55 and 0.42 it was five vehicle lengths across,
+  // and the close separation and fairing shots sat inside it — a dark disc with a bright rim on
+  // every launch (operator 2026-11-23). Sized like the spacecraft's burst below.
+  const boosterBurst = new SeparationBurst({ scale: vehLen * 0.07 });
+  // At the interstage, where the stages part: at the stack's base the close separation shot,
+  // whose camera sits low on the stack, saw it at twice the size.
+  boosterBurst.position.y = upperStageBaseY;
   vehicle.add(boosterBurst);
-  const fairingBurst = new SeparationBurst({ scale: vehLen * 0.42, particleColor: 0xeaf1ff });
+  const fairingBurst = new SeparationBurst({ scale: vehLen * 0.06, particleColor: 0xeaf1ff });
   fairingBurst.position.y = fairingBaseY;
   vehicle.add(fairingBurst);
   // Small: a spacecraft leaves its stage on springs and small pyros, and the camera is close
-  // on it — at 0.34 the flash filled the screen, and at 0.14 still most of it.
-  const payloadBurst = new SeparationBurst({ scale: vehLen * 0.1 });
+  // on it — at 0.34 the flash filled the screen, at 0.14 most of it, and at 0.1 a ring as long as
+  // the vehicle around Shenzhou (operator 2026-11-23).
+  const payloadBurst = new SeparationBurst({ scale: vehLen * 0.05 });
   if (bay) payloadBurst.position.set(...bay.center);
   else payloadBurst.position.y = payloadBaseY;
   vehicle.add(payloadBurst);
@@ -964,6 +978,7 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
     tz: number;
     fov: number;
   } | null = null;
+  let lastFocus: { x: number; y: number; z: number } | null = null;
   const K_POS = 0.13; // camera-position ease (smooth dolly / pan)
   const K_TGT = 0.45; // look-at ease — fast, so the subject stays framed
   const K_FOV = 0.13; // fov ease (smooth zoom)
@@ -1003,7 +1018,11 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   // A payload that stays in its bay (the Shuttle) never separates during the launch.
   const sepAfterSeco =
     !opts.payloadInBay && opts.payloadSepT != null && (secoT == null || opts.payloadSepT > secoT);
-  const payloadSepT = opts.payloadInBay ? undefined : sepAfterSeco ? opts.payloadSepT : secoT;
+  // Starship is its own spacecraft (Flight 5, the Mars flights): nothing leaves it, and after SECO
+  // the camera stays on the ship, not on a payload that was never drawn (operator 2026-11-23).
+  const shipIsCraft = opts.launcherId === 'starship';
+  const payloadSepT =
+    opts.payloadInBay || shipIsCraft ? undefined : sepAfterSeco ? opts.payloadSepT : secoT;
   // Riding the launcher's stage through its injection burn (not deployed before a kick stage).
   const ridesInjection = sepAfterSeco && !opts.kickStage;
   // Intermediate serial stage (e.g. Saturn V's S-II) drops at the SECOND core
@@ -1102,6 +1121,7 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
     //    the event METs, so scrubbing the timeline back and forth is exact.
     // Booster: drifts back down the body axis, tumbles, recedes away.
     const [bp, bLen] = stageDrop(s.t, stagingT);
+    lastSpan = bp > 0 ? [upperStageBaseY, vehLen] : [0, vehLen];
     booster.visible = bp < 1;
     booster.position.y = -bp * vehLen * bLen;
     booster.rotation.set(...stageDropRotation(bp, fromVertical, recovered.booster));
@@ -1138,9 +1158,7 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
         const b = strapOnBase[i];
         body.visible = sp < 1;
         body.position.set(b.x * (1 + sp * 0.8), b.y - sp * vehLen * 2.6, b.z * (1 + sp * 0.8));
-        body.rotation.z = recovered.strapOns
-          ? sp * fromVertical
-          : -Math.sign(b.x || 1) * sp * 1.2;
+        body.rotation.z = recovered.strapOns ? sp * fromVertical : -Math.sign(b.x || 1) * sp * 1.2;
       });
     } else if (strapOnGroup) {
       const sp = sepProgress(s.t, strapOnSepT, BOOSTER_SEP_S);
@@ -1245,6 +1263,10 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
     } else {
       upperStage.position.y = -pp * vehLen * 1.4;
     }
+    if (shipIsCraft) {
+      payload.visible = false;
+      stowedPayload.visible = false;
+    }
 
     // Separation bursts — the visible pyro/pusher event at each sep plane.
     boosterBurst.update(sepProgress(s.t, stagingT, BURST_S));
@@ -1333,7 +1355,9 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
     const focusAxisY = separated
       ? payload.position.y
       : stackInOrbit
-        ? (upperStageCenterY + payload.position.y) / 2
+        ? shipIsCraft
+          ? upperStageCenterY
+          : (upperStageCenterY + payload.position.y) / 2
         : null;
     const capsuleFocus =
       focusAxisY != null
@@ -1343,6 +1367,7 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
             z: separated ? payload.position.z : 0,
           }
         : null;
+    lastFocus = capsuleFocus;
     const p = composeShot(
       activeShot,
       s,
@@ -1468,6 +1493,12 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
     setAspect,
     get activeShot() {
       return activeShot;
+    },
+    get focus() {
+      return lastFocus;
+    },
+    get stackSpan() {
+      return lastSpan;
     },
     setForcesVisible,
     setForceVisible,

@@ -3,8 +3,13 @@ import { describe, it, expect } from 'vitest';
 import * as THREE from 'three';
 import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
-import { recoveredParts, stageDropRotation } from './ascent-scene';
-import { recoveryFor, type LaunchProfile } from '$lib/physics/ascent/ascent-physics';
+import { createAscentScene, recoveredParts, stageDropRotation } from './ascent-scene';
+import {
+  recoveryFor,
+  type AscentEvent,
+  type AscentState,
+  type LaunchProfile,
+} from '$lib/physics/ascent/ascent-physics';
 
 const load = (id: string): LaunchProfile =>
   JSON.parse(
@@ -45,5 +50,59 @@ describe('a booster that lands drops away upright, tail-down (operator 2026-11-1
     expect(at('new-glenn', 'blue-moon-mk1')).toEqual({ booster: true, strapOns: false });
     expect(at('starship', 'starship-demo')).toEqual({ booster: true, strapOns: false });
     expect(at('atlas-v')).toEqual({ booster: false, strapOns: false });
+  });
+});
+
+describe('Starship is its own spacecraft (operator 2026-11-23: Flight 5 after SECO framed empty space)', () => {
+  const state = (t: number) =>
+    ({
+      t,
+      altKm: 200,
+      downrangeKm: 1000,
+      speedKms: 7.7,
+      velUpKms: 0,
+      massKg: 1e5,
+      stageIndex: 1,
+      qPa: 0,
+      twr: 0,
+      thrustN: 0,
+      dragN: 0,
+      pitchRad: Math.PI / 2, // nose straight up: the body axis is the world's +y
+      propRemainingKg: 0,
+      boosterPropRemainingKg: 0,
+    }) as AscentState;
+  const events = [
+    { type: 'staging', t: 160, altKm: 70, speedKms: 2.4, massKg: 1e6 },
+    { type: 'seco', t: 480, altKm: 200, speedKms: 7.7, massKg: 1e5 },
+  ] as AscentEvent[];
+
+  it('after SECO the camera holds the ship, not a payload flying off its nose', () => {
+    const vehLen = 1.2;
+    const sc = createAscentScene({
+      aspect: 1,
+      vehicleLengthKm: vehLen,
+      launcherId: 'starship',
+      spacecraftId: 'starship-flight-5',
+      events,
+    });
+    for (const t of [481, 490, 540]) {
+      sc.setState(state(t));
+      const along = sc.focus!.y - 200;
+      // The ship spans about 0.58–0.90 of the stack (buildStarship).
+      expect(along).toBeGreaterThan(0.55 * vehLen);
+      expect(along).toBeLessThan(0.92 * vehLen);
+    }
+  });
+
+  it('a launcher with a real payload still follows the payload once it is free', () => {
+    const vehLen = 1.2;
+    const sc = createAscentScene({
+      aspect: 1,
+      vehicleLengthKm: vehLen,
+      launcherId: 'falcon-9',
+      events,
+    });
+    sc.setState(state(540));
+    expect(sc.focus!.y - 200).toBeGreaterThan(vehLen);
   });
 });

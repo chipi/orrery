@@ -660,12 +660,16 @@ export function farEnough(prev: View, next: View): boolean {
 }
 
 /** Shift a built shot's azimuth so it starts 60 degrees from where the previous one ended. */
-function repairAz(sh: DirectedShot, prev: View, r: Rng): void {
+function repairAz(sh: DirectedShot, prev: View, r: Rng, lockSide = false): void {
   if (!sh.ch) return;
   const side0 = sh.side;
   const orig = sh.ch.az.map(([p, v]) => [p, v] as [number, number]);
-  const flips: (1 | -1)[] =
-    r() < 0.5 ? [side0, side0 === 1 ? -1 : 1] : [side0 === 1 ? -1 : 1, side0];
+  const coin = r() < 0.5;
+  const flips: (1 | -1)[] = lockSide
+    ? [side0]
+    : coin
+      ? [side0, side0 === 1 ? -1 : 1]
+      : [side0 === 1 ? -1 : 1, side0];
   for (const sd of flips) {
     for (const delta of [0, 35, -35, 60, -60, 80]) {
       sh.side = sd;
@@ -675,6 +679,16 @@ function repairAz(sh: DirectedShot, prev: View, r: Rng): void {
       if (farEnough(prev, viewOf(sh))) return;
     }
   }
+  if (!lockSide) return;
+  // One side only (the Shuttle): the rear half spans 55 degrees, often too little to turn 30, so
+  // the cut changes the camera's height instead.
+  sh.ch.az = orig;
+  const el0 = sh.ch.el.map(([p, v]) => [p, v] as [number, number]);
+  for (const delta of [25, -25, 35, -35, 45]) {
+    sh.ch.el = el0.map(([p, v]) => [p, Math.min(70, Math.max(-8, v + delta))] as [number, number]);
+    if (farEnough(prev, viewOf(sh))) return;
+  }
+  sh.ch.el = el0;
 }
 
 // ─── Conditions ─────────────────────────────────────────────────────────────
@@ -772,7 +786,14 @@ export function buildDirectorPlan(inp: DirectorInputs): DirectorPlan {
 
   const shots: DirectedShot[] = [];
   const last = (): DirectedShot | undefined => shots[shots.length - 1];
-  const side = (): 1 | -1 => (r() < 0.5 ? -1 : 1);
+  // The Shuttle's orbiter rides on one face of the tank (+z, launcher-models buildSpaceShuttle):
+  // from the other side the shots showed a bare tank (operator 2026-11-23). The draw is kept so
+  // the rest of the plan stays the same sequence.
+  const fixedSide = inp.vehicleId === 'space-shuttle-stack' ? 1 : null;
+  const side = (): 1 | -1 => {
+    const s = r() < 0.5 ? -1 : 1;
+    return fixedSide ?? s;
+  };
 
   // A blend is a camera move the viewer watches: about 1.3 s of SCREEN time whatever the speed
   // (4 flight s at x5 is 0.8 s, and at x10 only 0.4 s, which read as a whip).
@@ -962,7 +983,7 @@ export function buildDirectorPlan(inp: DirectorInputs): DirectorPlan {
         maxS: effMax,
       };
       const pv = prevView();
-      if (pv && !farEnough(pv, viewOf(shot))) repairAz(shot, pv, r);
+      if (pv && !farEnough(pv, viewOf(shot))) repairAz(shot, pv, r, fixedSide != null);
       shot.blendInS = blendFor(cursor === a ? firstBlend : BLEND_S, shot.tEnd - shot.tStart);
       shots.push(shot);
       cursor += d;
@@ -992,7 +1013,7 @@ export function buildDirectorPlan(inp: DirectorInputs): DirectorPlan {
       ch: behind(build(r, s)),
     };
     const pv = prevView();
-    if (pv && !farEnough(pv, viewOf(shot))) repairAz(shot, pv, r);
+    if (pv && !farEnough(pv, viewOf(shot))) repairAz(shot, pv, r, fixedSide != null);
     shots.push(shot);
   }
 
@@ -1283,6 +1304,9 @@ export function directedPoseAt(
   vehLen: number,
   focus?: { x: number; y: number; z?: number } | null,
   safe?: SafeArea | null,
+  /** The part of the body axis still flying (km from the stack's base): after staging, the upper
+   *  stack only. Default: the whole stack, 0..vehLen. */
+  flying?: readonly [number, number] | null,
 ): DirectedPose {
   const reduced = plan.reducedMotion;
   const i = shotIndexAt(plan.shots, t);
@@ -1306,7 +1330,19 @@ export function directedPoseAt(
     y: s.altKm + Math.cos(fv) * vehLen * 0.5,
     z: 0,
   };
-  return { pose: applySafeArea(pose, safe, centre), index: i, progress, blend };
+  // What must stay on screen: the stack's two ends while it climbs, the spacecraft once the
+  // shots follow it.
+  const [lo, hi] = flying ?? [0, vehLen];
+  const along = (k: number): [number, number, number] => [
+    s.downrangeKm + Math.sin(fv) * k,
+    s.altKm + Math.cos(fv) * k,
+    0,
+  ];
+  const ends: [number, number, number][] = focus
+    ? [[focus.x, focus.y, focus.z ?? 0]]
+    : // The tail end reaches past the nozzles so the exhaust stays on screen too.
+      [along(lo - PLUME_ROOM * vehLen), along(hi)];
+  return { pose: applySafeArea(pose, safe, centre, ends), index: i, progress, blend };
 }
 
 /**
@@ -1317,6 +1353,100 @@ export function directedPoseAt(
 export interface SafeArea {
   top: number;
   bottom: number;
+  /** Fractions of the frame WIDTH covered at the sides (a desktop's telemetry and dossier). */
+  left?: number;
+  right?: number;
+  /** The canvas width / height. With it the whole stack is fitted into the free part of the
+   *  screen; the shots are composed for 16:9, and a portrait phone is a third as wide. */
+  aspect?: number;
+}
+
+/** Slack kept between the stack's ends and the free area's edge, in NDC. */
+const FIT_MARGIN = 0.06;
+/** How far off the free area's centre the stack's middle may sit, as a share of its half-size. */
+const FIT_CENTRE = 0.45;
+/** Room kept beyond the nozzles for the exhaust, in vehicle lengths. */
+const PLUME_ROOM = 0.12;
+
+/**
+ * Keep both ends of the stack inside the free part of the screen: a pose that already fits is left
+ * as composed; otherwise the stack is centred in the free area and the camera steps back along its
+ * line of sight just enough to hold it — the shot keeps its lens, so a close shot does not turn
+ * fisheye. Iterated, since stepping back and turning the camera move the projection together.
+ */
+function fitToScreen(
+  pose: CameraPose,
+  safe: SafeArea,
+  pts: [number, number, number][],
+): CameraPose {
+  const aspect = safe.aspect!;
+  const xl = -1 + 2 * (safe.left ?? 0) + FIT_MARGIN;
+  const xr = 1 - 2 * (safe.right ?? 0) - FIT_MARGIN;
+  const yb = -1 + 2 * safe.bottom + FIT_MARGIN;
+  const yt = 1 - 2 * safe.top - FIT_MARGIN;
+  let p = pose;
+  for (let k = 0; k < 6; k++) {
+    const ndc = pts.map(([x, y, z]) => ndcOf(p, x, y, z, aspect));
+    if (ndc.some((q) => q == null)) {
+      // An end behind the camera (a close shot at the separation plane): step back and look again.
+      p = {
+        ...p,
+        px: p.tx - (p.tx - p.px) * 2,
+        py: Math.max(p.ty - (p.ty - p.py) * 2, 0.015),
+        pz: p.tz - (p.tz - p.pz) * 2,
+      };
+      continue;
+    }
+    const xs = ndc.map((q) => q![0]);
+    const ys = ndc.map((q) => q![1]);
+    const minX = Math.min(...xs);
+    const maxX = Math.max(...xs);
+    const minY = Math.min(...ys);
+    const maxY = Math.max(...ys);
+    // Inside, and near the middle: the hot-staging shot kept Starship inside the frame but on
+    // its left edge, with the falling booster filling the middle (operator 2026-11-23).
+    const offX = Math.abs((minX + maxX) / 2 - (xl + xr) / 2) / ((xr - xl) / 2);
+    const offY = Math.abs((minY + maxY) / 2 - (yb + yt) / 2) / ((yt - yb) / 2);
+    const inside = minX >= xl && maxX <= xr && minY >= yb && maxY <= yt;
+    if (inside && offX <= FIT_CENTRE && offY <= FIT_CENTRE) return p;
+    let fx = p.tx - p.px;
+    let fy = p.ty - p.py;
+    let fz = p.tz - p.pz;
+    const d = Math.hypot(fx, fy, fz) || 1;
+    fx /= d;
+    fy /= d;
+    fz /= d;
+    const n = Math.hypot(fx, fz);
+    if (n < 1e-6) return p; // looking straight down: no horizon-relative frame
+    // Step back so the stack's extent fits the free box, then centre it there.
+    const grow = Math.min(4, Math.max(1, (maxX - minX) / (xr - xl), (maxY - minY) / (yt - yb)));
+    const tanH = Math.tan((p.fov * D2R) / 2);
+    const mx = (minX + maxX) / 2 / grow;
+    const my = (minY + maxY) / 2 / grow;
+    const cx = (xl + xr) / 2;
+    const cy = (yb + yt) / 2;
+    const rx = -fz / n;
+    const rz = fx / n;
+    const ux = (-fx * fy) / n;
+    const uy = n;
+    const uz = (-fz * fy) / n;
+    const back = d * grow;
+    const h = (mx - cx) * back * tanH * aspect;
+    const v = (cy - my) * back * tanH;
+    const tx = p.tx + rx * h - ux * v;
+    const ty = p.ty - uy * v;
+    const tz = p.tz + rz * h - uz * v;
+    p = {
+      ...p,
+      px: tx - fx * back,
+      py: Math.max(ty - fy * back, 0.015),
+      pz: tz - fz * back,
+      tx,
+      ty,
+      tz,
+    };
+  }
+  return p;
 }
 
 /**
@@ -1329,8 +1459,20 @@ export function applySafeArea(
   safe?: SafeArea | null,
   /** The point that must sit at the band's centre (the vehicle's middle); default: the look-at. */
   subject?: { x: number; y: number; z: number },
+  /** The stack's tail and nose: with `safe.aspect`, both are kept inside the free area. */
+  ends?: [number, number, number][],
 ): CameraPose {
-  if (!safe || (safe.top <= 0 && safe.bottom <= 0)) return pose;
+  if (!safe) return pose;
+  const banded = bandPose(pose, safe, subject);
+  return safe.aspect && ends?.length ? fitToScreen(banded, safe, ends) : banded;
+}
+
+function bandPose(
+  pose: CameraPose,
+  safe: SafeArea,
+  subject?: { x: number; y: number; z: number },
+): CameraPose {
+  if (safe.top <= 0 && safe.bottom <= 0) return pose;
   const v = Math.max(0.4, 1 - safe.top - safe.bottom);
   const c = safe.bottom - safe.top; // the visible band's centre, in NDC (-1..1)
   const tanH = Math.tan((pose.fov * D2R) / 2) / v;

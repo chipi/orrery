@@ -347,6 +347,7 @@
   let director: LaunchDirector | undefined;
   let directorDebugModel: PlotModel | null = null;
   let onSafeResize: (() => void) | undefined;
+  let safeTimer: ReturnType<typeof setInterval> | undefined;
   let loop: AnimateLoop | undefined;
 
   let hud = $state({ altKm: 0, velKms: 0, stage: 'S1', met: 'T-00:12' });
@@ -441,16 +442,49 @@
     // The launch camera director (G3): shot plan, conditions, ground-relative path. One
     // implementation shared with /dev/launch-director. Skipped under ?cam=classic.
     if (!classicCam) {
-      // The HUD strips cover the top and bottom of a phone's frame: frame the vehicle in what is left.
+      // Frame the vehicle in the part of the screen the HUD leaves free, measured from the HUD as
+      // laid out on this device (operator 2026-11-23): the title and clock at the top, the
+      // readouts and /fly's play bar at the bottom, the telemetry and dossier columns at the
+      // sides where they show. Re-measured as panels open and close.
       const safeNow = (): SafeArea | null => {
-        const narrow = window.innerWidth <= 700 || window.matchMedia('(pointer: coarse)').matches;
-        if (!narrow) return null;
-        return window.innerHeight >= window.innerWidth
-          ? { top: 0.13, bottom: 0.27 }
-          : { top: 0.16, bottom: 0.24 };
+        const host = container?.getBoundingClientRect();
+        if (!host || host.width < 1 || host.height < 1) return null;
+        const seen = (el: Element | null | undefined) => {
+          if (!el) return null;
+          const r = el.getBoundingClientRect();
+          const cs = getComputedStyle(el);
+          const on = r.width > 0 && cs.display !== 'none' && Number(cs.opacity) > 0.05;
+          return on ? r : null;
+        };
+        let top = 0;
+        for (const q of ['.header', '.clock']) {
+          const r = seen((container.parentElement ?? container).querySelector(q));
+          if (r) top = Math.max(top, r.bottom - host.top);
+        }
+        let bottom = 0;
+        for (const r of [seen(readoutsEl), seen(document.querySelector('.scrubber'))]) {
+          if (r && r.top > host.top + host.height / 2)
+            bottom = Math.max(bottom, host.bottom - r.top);
+        }
+        // A side column counts only beside the frame, not as a sheet across it.
+        const side = (el: Element | null | undefined, edge: 'left' | 'right') => {
+          const r = seen(el);
+          if (!r || r.width > host.width * 0.4 || r.height < host.height * 0.3) return 0;
+          return edge === 'left' ? r.right - host.left : host.right - r.left;
+        };
+        return {
+          top: Math.min(0.35, top / host.height),
+          bottom: Math.min(0.4, bottom / host.height),
+          left: Math.min(0.3, side(telBox, 'left') / host.width),
+          right: Math.min(0.3, side(dossierEl, 'right') / host.width),
+          aspect: host.width / host.height,
+        };
       };
       onSafeResize = () => director?.setSafeArea(safeNow());
+      if (import.meta.env.DEV && debugMode)
+        (window as unknown as Record<string, unknown>).__ascentSafe = safeNow;
       window.addEventListener('resize', onSafeResize);
+      safeTimer = setInterval(() => onSafeResize?.(), 500);
       director = createLaunchDirector({
         safe: safeNow(),
         asc: sceneObj,
@@ -622,6 +656,7 @@
 
   onDestroy(() => {
     if (onSafeResize) window.removeEventListener('resize', onSafeResize);
+    if (safeTimer) clearInterval(safeTimer);
     director?.dispose();
     loop?.cleanup();
     sceneObj?.dispose();

@@ -664,6 +664,69 @@ describe('HUD-safe area (phones)', () => {
   });
 });
 
+describe('screen fit (operator 2026-11-23: a portrait phone saw half the stack)', () => {
+  // iPhone 13 in portrait under the /fly HUD: the top card and the readout + time bar.
+  const PHONE = { top: 0.13, bottom: 0.27, left: 0, right: 0, aspect: 390 / 664 };
+  // A 1280x800 desktop with the telemetry (left) and dossier (right) columns.
+  const DESK = { top: 0.1, bottom: 0.12, left: 0.2, right: 0.18, aspect: 1280 / 800 };
+  const IDS = [
+    'starship',
+    'saturn-v',
+    'atlas-v',
+    'falcon-9',
+    'space-shuttle-stack',
+    'ariane-5g',
+    'long-march-2f',
+    'titan-ivb-centaur',
+    'h-iia',
+  ];
+  const ends = (s: ReturnType<typeof sampleAscentAt>) => {
+    const fv = bodyAngleFromVerticalRad(s);
+    return [
+      [s.downrangeKm, s.altKm],
+      [s.downrangeKm + Math.sin(fv) * 1.2, s.altKm + Math.cos(fv) * 1.2],
+    ] as [number, number][];
+  };
+  // Both ends of the stack inside the free part of the screen, with a sliver of slack.
+  const offscreen = (safe: typeof PHONE, withSafe: boolean): string[] => {
+    const bad: string[] = [];
+    const xl = -1 + 2 * safe.left - 0.03;
+    const xr = 1 - 2 * safe.right + 0.03;
+    const yb = -1 + 2 * safe.bottom - 0.03;
+    const yt = 1 - 2 * safe.top + 0.03;
+    for (const id of IDS) {
+      const p = byId(id);
+      const lat = p.profile.launchSite?.lat ?? 28.5;
+      for (const seed of [0, 3]) {
+        const plan = planFor(p, { seed });
+        const end = Math.min(p.summary.totalDurationS, 900);
+        for (let t = 0; t <= end; t += 3) {
+          const s = groundRelative(sampleAscentAt(p.summary.states, t), lat);
+          const pose = directedPoseAt(plan, t, s, 1.2, undefined, withSafe ? safe : null).pose;
+          for (const [x, y] of ends(s)) {
+            const n = ndcOf(pose, x, y, 0, safe.aspect);
+            if (!n || n[0] < xl || n[0] > xr || n[1] < yb || n[1] > yt)
+              bad.push(`${id}#${seed} t=${t} ${plan.shots[shotIndexAt(plan.shots, t)].id}`);
+          }
+        }
+      }
+    }
+    return [...new Set(bad)];
+  };
+
+  it('keeps the whole stack on a portrait phone, liftoff to SECO', () => {
+    expect(offscreen(PHONE, true)).toEqual([]);
+  });
+
+  it('keeps the whole stack clear of the desktop side columns', () => {
+    expect(offscreen(DESK, true)).toEqual([]);
+  });
+
+  it('without the fit, some shot crops the stack on a phone (the defect)', () => {
+    expect(offscreen(PHONE, false).length).toBeGreaterThan(0);
+  });
+});
+
 describe('Space Shuttle sequence', () => {
   it('has no fairing beat (fairingKg 0): no fairing_jettison event and no fairing shot', () => {
     const p = byId('space-shuttle-stack');
@@ -671,6 +734,17 @@ describe('Space Shuttle sequence', () => {
     expect(p.summary.events.some((e) => e.type === 'fairing_jettison')).toBe(false);
     for (let seed = 0; seed < 20; seed++)
       expect(planFor(p, { seed }).shots.some((s) => s.id === 'fairing')).toBe(false);
+  });
+
+  it('films from the orbiter side of the tank (operator 2026-11-23: MECO showed only the tank)', () => {
+    // The orbiter rides on the tank's +z face (launcher-models buildSpaceShuttle, oz > 0).
+    for (let seed = 0; seed < 20; seed++) {
+      const sides = planFor(byId('space-shuttle-stack'), { seed }).shots.map((sh) => sh.side);
+      expect(sides.every((x) => x === 1)).toBe(true);
+    }
+    // Other stacks still change sides.
+    const f9 = new Set(planFor(byId('falcon-9'), { seed: 1 }).shots.map((sh) => sh.side));
+    expect(f9.size).toBe(2);
   });
 
   it('SRB separation is the first staging, then MECO, then the tank drop within 30 s of MECO', () => {

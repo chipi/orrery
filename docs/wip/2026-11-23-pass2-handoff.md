@@ -46,7 +46,7 @@ Where things live:
   `showcase/lunar-orbiters.ts`, `mars-orbiters.ts`, `outer-probes.ts`. Check `git log` for a
   "batch 7" commit; if it is missing, the files may be on disk uncommitted. Review them against
   photos before committing.
-- **Wiring the /fly flight scenes** (`src/lib/three/fly-craft.ts` `FLY_CRAFT`): point each
+- **Wiring the /fly flight scenes** (`src/lib/three/fly-craft.ts` `FLY_CRAFT`): probes and classic capsules done (see git log); left: point each
   mission at its new model where one exists (probes, observatories, batch 7 orbiters; the
   older builders in `orbiters.ts` are superseded by batch 7).
 - **Batch 8**: rebuild the pre-pilot models (cargo ships, Apollo CSM, Orion, Dragon, Shenzhou).
@@ -93,7 +93,7 @@ research records):
 | --- | --- | --- |
 | Moon (22) | Apollo 11–17, Artemis 4/5, Luna 9/16/17/21/24, Chang'e 3–6, Chandrayaan-2/3, SLIM, Beresheet, Blue Moon MK1 | lunar record file; SLIM's model shape and Blue Moon's frame are open |
 | Mars (14) | Viking 1, Mars 3, Pathfinder, Spirit, Opportunity, Phoenix, InSight, Curiosity, Perseverance, Schiaparelli, Tianwen-1, Beagle 2, two Starship | Mars record file. `/fly?mission=mars-pathfinder&descent=1` opened the planning page in the shot tool: check why first |
-| Earth (33) | Mercury ×6, Gemini ×6, Vostok ×6, Voskhod ×2, Soyuz-1/11, Apollo 7/8/9, Apollo–Soyuz, Skylab 2–4, Shenzhou-1, Inspiration4, Polaris Dawn, Starship Flight 5 | chutes are done (table in the plan). Open: drogue sizes except Soyuz and Vostok; Voskhod main size; Vostok's cosmonaut ejected at 7 km and landed apart from the capsule; Voskhod's soft-landing rocket; Soyuz-1's tangled chute; Apollo, Dragon and Shenzhou still use the older capsule models (batch 8) |
+| Earth (33) | Mercury ×6 (check the launch escape tower shows on the Atlas stack), Gemini ×6, Vostok ×6, Voskhod ×2, Soyuz-1/11, Apollo 7/8/9, Apollo–Soyuz, Skylab 2–4, Shenzhou-1, Inspiration4, Polaris Dawn, Starship Flight 5 | chutes are done (table in the plan). Open: drogue sizes except Soyuz and Vostok; Voskhod main size; Vostok's cosmonaut ejected at 7 km and landed apart from the capsule; Voskhod's soft-landing rocket; Soyuz-1's tangled chute; Apollo, Dragon and Shenzhou still use the older capsule models (batch 8) |
 | Venus (3) | Venera 13, Vega 1/2 | Vega's balloon deployment; Venera chute size not sourced |
 | Titan, Jupiter | Huygens, Galileo probe | Galileo's descent renders washed out; probe not visible |
 | Small bodies (5) | Hayabusa 1/2, OSIRIS-REx, NEAR Shoemaker, Philae | Philae is a dot in wide frames; NEAR uses LUNAR_POWERED (check it is right) |

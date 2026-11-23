@@ -396,3 +396,15 @@ describe('airbag landings fly the recorded sequence', () => {
     expect(s.events.filter((e) => e.type === 'bounce')).toHaveLength(25);
   });
 });
+
+describe('Beagle 2 (pilot chute, then a 10 m main; bags; bounces)', () => {
+  it('main opens at 2.6 km with the back cover leaving; bags at 280 m; first impact near 17 m/s', () => {
+    const s = flight('mars-express').s;
+    const ev = (t: string) => s.events.find((e) => e.type === t)!;
+    expectInRange(ev('parachute_jettison').altKm * 1000, 2590, 2610, 'main chute (m)');
+    expect(ev('backshell_sep').t).toBe(ev('parachute_jettison').t);
+    expectInRange(ev('airbag_deploy').altKm * 1000, 270, 290, 'bags (m)');
+    expectInRange(s.touchdownVelocityMs, 14, 20, 'first impact (m/s)');
+    expect(s.events.filter((e) => e.type === 'bounce').length).toBeGreaterThanOrEqual(8);
+  });
+});

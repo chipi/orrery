@@ -177,7 +177,8 @@ const STOWED: Record<string, readonly string[]> = {
   mars3: ['petals', 'rover'],
   phoenix: ['solar-arrays', 'arm'],
   insight: ['solar-arrays', 'arm', 'seis', 'hp3'],
-  beagle2: ['petals', 'arm'],
+  // Beagle 2's lid and panels open at petals_open (descent-models buildBeagleStack); the arm never did.
+  beagle2: ['arm'],
   // Pathfinder's and MER's petals fly closed and open at petals_open (descent-scene folds them).
   'mars-pathfinder': ['mast', 'ramp', 'bagHeap'],
   spirit: ['mast', 'arm', 'solar-arrays'],

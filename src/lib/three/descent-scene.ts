@@ -310,7 +310,10 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
     const box = restBox(o);
     if (box) parts.push({ o, box });
   }
-  const liveCore = (): { cy: number; r: number } => {
+  const liveCore = (t: number): { cy: number; r: number } => {
+    // An opening lander (Beagle 2's lid and panels): frame its whole opened span.
+    if (ball?.openSpan && petalsT != null && t >= petalsT)
+      return { cy: ball.restY, r: ball.openSpan * 0.6 };
     const b = new THREE.Box3();
     if (ball && model.lander.visible) {
       const c = ball.pivot.position;
@@ -336,6 +339,9 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
   // system towers about nine aeroshell lengths over the capsule.
   const chuteSpan =
     new THREE.Box3().setFromObject(model.parachute).max.y / vehLen - model.parachuteBaseY / vehLen;
+  const mainSpan = model.mainChute
+    ? new THREE.Box3().setFromObject(model.mainChute.group).max.y / vehLen
+    : 0;
   const surfaceOnly: THREE.Object3D[] = [];
   model.lander.traverse((o) => {
     if (o.userData?.surfaceOnly) surfaceOnly.push(o);
@@ -510,6 +516,7 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
   const INFLATE_S = 1; // drawn over a second; Pathfinder's bags filled in about 0.3 s
   const RETRACT_S = 6; // the real retraction took about an hour: at_rest/petals notes say so
   const PETAL_S = 6;
+  const CHUTE_RELEASE_S = 4; // Beagle 2's main chute lets go at first impact and drifts off
   const BALL_SCALE_ALT_M = 30;
   const lowerT = metOf('skycrane_lower');
   const LOWER_S = 6;
@@ -673,6 +680,22 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
       const open = petalsT == null ? 0 : smooth01((s.t - petalsT) / PETAL_S);
       for (const pt of ball.petals) pt.rotation.x = -ball.petalClosedRad * (1 - open);
       for (const o of ball.inside) o.visible = open > 0;
+      ball.unfold?.(open);
+    }
+
+    // A main chute that stays on the lander when the backshell and pilot leave (Beagle 2): opens
+    // at parachute_jettison, rides the ball up as the bags inflate, is released at first contact.
+    const main = model.mainChute;
+    if (main) {
+      const gone = touchdownT == null ? 0 : smooth01((s.t - touchdownT) / CHUTE_RELEASE_S);
+      main.group.visible = secondStage && gone < 1;
+      if (main.group.visible) {
+        const inflate = Math.min(1, Math.max(0, (s.t - (chuteJetT ?? 0)) / 2));
+        const sway = Math.sin(frame * 0.05) * 0.09 * (1 - gone);
+        main.group.scale.set(0.35 + 0.65 * inflate, 0.5 + 0.5 * inflate, 0.35 + 0.65 * inflate);
+        main.group.rotation.z = sway + gone * 0.9;
+        main.group.position.set(gone * vehLen * 1.5, main.baseY + hang + gone * vehLen * 6, 0);
+      }
     }
 
     const rise = bp * vehLen * 4;
@@ -822,9 +845,14 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
 
     // The directed camera: the subject is the craft, plus the chute or the departing CSM when
     // they are out.
-    const core = liveCore();
+    let core = liveCore(s.t);
     let whole = core;
-    if (model.parachute.visible) {
+    if (model.mainChute?.group.visible) {
+      const top = model.mainChute.group.position.y + mainSpan * vehLen;
+      whole = { cy: top / 2, r: top / 2 + vehLen * 0.4 };
+      // A 10 m canopy over a 0.7 m lander: a close shot would sit inside the canopy.
+      if (airbagT == null || s.t < airbagT) core = whole;
+    } else if (model.parachute.visible) {
       const top = model.parachute.position.y + chuteSpan * vehLen;
       whole = { cy: top / 2, r: top / 2 + vehLen * 0.4 };
     } else if (undocking) {

@@ -74,6 +74,10 @@ export interface ArchetypeParams {
   parachuteCdA?: number;
   /** Terminal-descent drag area Cd·A (m²) for the Venus aeroshell coast. */
   terminalCdA?: number;
+  /** Beagle 2: altitude (m) the pilot chute goes and the main opens (absent: one chute). */
+  mainChuteAltM?: number;
+  /** Beagle 2: the pilot chute's drag area with the body it pulls (m²). */
+  pilotCdA?: number;
   /** Retro specific impulse (s). */
   ispS?: number;
   /** Heat-shield mass jettisoned at chute deploy (kg). */
@@ -211,25 +215,43 @@ const MARS_AIRBAG: ArchetypeBuilder = (p) => [
   { kind: 'airbag_bounce', endTrigger: { type: 'ground', value: 0 }, events: ['airbag_deploy'] },
 ];
 
-/** Beagle 2: no retro rockets. The main chute carries the probe down to the airbag
- *  inflation height and stays on through the bounces (the inquiry's rebound-into-the-
- *  canopy risk) — so the airbag phase keeps the chute's drag area. */
-const MARS_CHUTE_AIRBAG: ArchetypeBuilder = (p) => [
-  { kind: 'ballistic_entry', endTrigger: { type: 'altitude_m', value: p.chuteDeployAltM ?? 7000 } },
-  {
+/** Beagle 2: no retro rockets. With `mainChuteAltM` the pilot chute (a small drag area) flies
+ *  first and the main opens at that height (the inquiry's pilot-then-main sequence), the back
+ *  cover leaving with the pilot; the airbag phase keeps the main chute's drag area to first
+ *  impact, where the scene releases it. Without it, one chute from deployment. */
+const MARS_CHUTE_AIRBAG: ArchetypeBuilder = (p) => {
+  const mainCdA = p.parachuteCdA ?? 40;
+  const handoff = p.finalPhaseAltM ?? 200;
+  const twoStage = p.mainChuteAltM != null;
+  const first: EDLPhase = {
     kind: 'parachute',
-    endTrigger: { type: 'altitude_m', value: p.finalPhaseAltM ?? 200 },
-    cdA: p.parachuteCdA ?? 40,
+    endTrigger: { type: 'altitude_m', value: p.mainChuteAltM ?? handoff },
+    cdA: twoStage ? (p.pilotCdA ?? 2) : mainCdA,
     jettisonKg: p.heatshieldKg ?? 20,
     events: ['parachute_deploy', 'heatshield_sep'],
-  },
-  {
-    kind: 'airbag_bounce',
-    endTrigger: { type: 'ground', value: 0 },
-    cdA: p.parachuteCdA ?? 40,
-    events: ['airbag_deploy'],
-  },
-];
+  };
+  const main: EDLPhase = {
+    kind: 'parachute',
+    endTrigger: { type: 'altitude_m', value: handoff },
+    cdA: mainCdA,
+    jettisonKg: p.backshellKg ?? 0,
+    events: ['parachute_jettison', 'backshell_sep'],
+  };
+  return [
+    {
+      kind: 'ballistic_entry',
+      endTrigger: { type: 'altitude_m', value: p.chuteDeployAltM ?? 7000 },
+    },
+    first,
+    ...(twoStage ? [main] : []),
+    {
+      kind: 'airbag_bounce',
+      endTrigger: { type: 'ground', value: 0 },
+      cdA: mainCdA,
+      events: ['airbag_deploy'],
+    },
+  ];
+};
 
 const MARS_SKYCRANE: ArchetypeBuilder = (p) => [
   {

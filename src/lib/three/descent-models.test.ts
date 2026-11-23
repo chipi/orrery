@@ -72,6 +72,7 @@ describe('buildDescentModel', () => {
           'blue-moon-mk1',
           'viking1-lander',
           'schiaparelli',
+          'beagle2', // its panels fold in the stack and open at petals_open; the arm never deployed
           'apollo11',
           'apollo12',
           'apollo14',
@@ -223,6 +224,24 @@ describe('the airbag stack (Pathfinder, Spirit, Opportunity)', () => {
     const pf = buildDescentModel('mars-pathfinder', 'mars', 1).airbagBall!;
     expect(mer.petalClosedRad).toBeCloseTo(Math.PI - Math.acos(1 / 3), 6);
     expect(pf.petalClosedRad).toBeCloseTo(Math.PI - Math.atan2(0.62, 0.17), 6);
+  });
+
+  it('Beagle 2: the 0.93 m aeroshell, a 10 m main on the lander, three bags; panel 4 sticks', () => {
+    const m = buildDescentModel('beagle2', 'mars', 1);
+    const b = m.airbagBall!;
+    expect(b.k).toBeCloseTo(0.84 / 0.93, 6);
+    expect(b.bridleLength).toBe(0);
+    expect(m.airbags.children).toHaveLength(3);
+    const w = new THREE.Box3().setFromObject(m.mainChute!.group).getSize(new THREE.Vector3());
+    expect(w.x / b.k).toBeGreaterThan(9);
+    expect(w.x / b.k).toBeLessThan(11);
+    b.unfold!(1);
+    const panels = b.pivot.getObjectByName('petals')!.children.filter((o) => o.userData.solarArray);
+    const reach = panels.map((p) => Math.hypot(p.position.x, p.position.z));
+    expect(panels).toHaveLength(4);
+    expect(reach.slice(0, 3).every((r) => r > 0.5)).toBe(true);
+    expect(reach[3]).toBeLessThan(0.3);
+    expect(b.radius / b.k).toBeGreaterThan(1); // the bags' reach: about the 1 m the lander dropped
   });
 
   it('no other stack has an airbag ball', () => {

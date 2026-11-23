@@ -62,6 +62,10 @@ export interface DescentModel {
   /** Airbag landers (Pathfinder, MER): the ball the scene lowers on the bridle, inflates,
    *  bounces and rolls. Absent for every other stack. */
   airbagBall?: AirbagBall;
+  /** A main chute that stays on the lander when the backshell and the pilot chute leave
+   *  (Beagle 2): hung from `baseY` (scene units, above the lander), opened at parachute_jettison
+   *  and released at first contact. The scene lifts it with the ball as the bags inflate. */
+  mainChute?: { group: THREE.Group; baseY: number };
 }
 
 export interface AirbagBall {
@@ -84,6 +88,11 @@ export interface AirbagBall {
   petalClosedRad: number;
   /** Parts hidden inside the closed petals until they open (a MER rover). */
   inside: THREE.Object3D[];
+  /** A lander that opens by its own motion (Beagle 2's lid and panels) instead of folding
+   *  `petals`: the scene calls it with the opening progress, 0 closed to 1 open. */
+  unfold?: (open: number) => void;
+  /** The opened lander's span (scene units): the camera frames it once the lander opens. */
+  openSpan?: number;
 }
 
 interface Palette {
@@ -847,6 +856,134 @@ function buildAirbagStack(lander: THREE.Group, vehLen: number): DescentModel {
   return m;
 }
 
+/** Beagle 2's figures (the pass-2 record, docs/wip/2026-11-23-mars-landings-record.md): a 0.93 m
+ *  aeroshell; a 1.9 m pilot chute, then a 10 m main; three gas bags, each segment 1.93 × 0.965 m. */
+const BEAGLE_AEROSHELL_M = 0.93;
+const BEAGLE_PILOT_M = 1.9;
+const BEAGLE_MAIN_M = 10;
+const BEAGLE_BAG_LEN_M = 1.93;
+const BEAGLE_BAG_DIA_M = 0.965;
+/** HiRISE (2015) shows three panels deployed, possibly four; the fourth is drawn stuck. */
+const BEAGLE_PANELS_OPEN = 3;
+
+/**
+ * Beagle 2: a pilot chute on the back cover, a 10 m main on the lander (no bridle), three bags
+ * that inflate around it, bounces and a roll, the lander dropping about 1 m when the bags let go,
+ * then the lid opening and the panels deploying, the last one stuck. Drawn at the aeroshell's real
+ * 0.93 m. The bags' layout (three capsules crossing round the lander, one per axis), the line
+ * lengths (2.3 × the diameter, as MSL's) and the closed stack of the lid and panels are estimates;
+ * the sizes are the record's.
+ */
+function buildBeagleStack(lander: THREE.Group, vehLen: number): DescentModel {
+  const p = palette();
+  const m = scaffold(lander);
+  addAeroshell(m, p, vehLen);
+  const k = (vehLen * 0.84) / BEAGLE_AEROSHELL_M;
+
+  m.parachuteBaseY = vehLen * 0.47;
+  m.parachute = new THREE.Group();
+  m.parachute.add(
+    chuteStage(dgbParachute(k, { diameterM: BEAGLE_PILOT_M, totalM: 4.4, lines: 16 }), 1),
+  );
+  m.parachute.position.y = m.parachuteBaseY;
+  m.root.add(m.parachute);
+
+  const own = (lander.userData.metresToScene as number | undefined) ?? k;
+  lander.scale.multiplyScalar(k / own);
+  lander.userData.metresToScene = k;
+
+  // The opened lander's parts, closed: the base under a stack of panels, the lid flipped over
+  // them. The arm never deployed (the lander was found with its panels not open), so it is left out.
+  const part = (n: string): THREE.Object3D | undefined => lander.getObjectByName(n);
+  const lid = part('lid');
+  const base = part('base');
+  const panels = (part('petals')?.children ?? []).filter((o) => o.userData.solarArray);
+  // Each panel's hinge strut (the model lists them after the panels) travels with its panel.
+  const struts = (part('petals')?.children ?? []).filter((o) => !o.userData.solarArray);
+  struts.forEach((s, i) => panels[i]?.attach(s));
+  part('arm')?.removeFromParent();
+  const open = panels.map((o) => o.position.clone());
+  const baseOpen = base?.position.clone();
+  const ss = (a: number, b: number, x: number): number => {
+    const c = Math.min(1, Math.max(0, (x - a) / (b - a)));
+    return c * c * (3 - 2 * c);
+  };
+  const unfold = (t: number): void => {
+    // Panels slide out first, then the lid drops open and the base slides back; panel 4 sticks.
+    panels.forEach((o, i) => {
+      const stuck = i >= BEAGLE_PANELS_OPEN;
+      const e = (stuck ? 0.3 : 1) * ss(0.05 + 0.08 * i, 0.55 + 0.08 * i, t);
+      o.position.set(
+        open[i].x * e,
+        0.1 + 0.025 * i + (open[i].y - 0.1 - 0.025 * i) * e,
+        open[i].z * e,
+      );
+      o.rotation.set(stuck ? -0.45 * ss(0.1, 0.6, t) : 0, 0, stuck ? 0.45 * ss(0.1, 0.6, t) : 0);
+    });
+    if (lid) {
+      const e = ss(0.45, 0.9, t);
+      lid.rotation.x = Math.PI * (1 - e);
+      lid.position.y = 0.27 * (1 - e);
+    }
+    if (base && baseOpen) base.position.set(baseOpen.x, baseOpen.y, baseOpen.z * ss(0.5, 1, t));
+  };
+  unfold(0);
+  const lb = flyingBounds(lander);
+  const restY = (lb.max.y - lb.min.y) / 2;
+  const pivot = new THREE.Group();
+  pivot.name = 'airbagBall';
+  pivot.position.y = restY;
+  lander.position.y = -restY - lb.min.y;
+  pivot.add(lander);
+
+  // Three bags, one along each axis, set off the lander's centre so they cross without touching.
+  const off = 0.6;
+  const bagR = (BEAGLE_BAG_DIA_M / 2) * k;
+  const bagMat = new THREE.MeshStandardMaterial({ color: 0xeee6d2, roughness: 0.82, metalness: 0 });
+  const bagGeo = new THREE.CapsuleGeometry(bagR, (BEAGLE_BAG_LEN_M - BEAGLE_BAG_DIA_M) * k, 8, 20);
+  const bagAt = (axis: 'x' | 'y' | 'z', x: number, y: number, z: number): void => {
+    const bag = new THREE.Mesh(bagGeo, bagMat);
+    bag.position.set(x * k, y * k, z * k);
+    if (axis === 'x') bag.rotation.z = Math.PI / 2;
+    if (axis === 'z') bag.rotation.x = Math.PI / 2;
+    m.airbags.add(bag);
+  };
+  bagAt('x', 0, off, off);
+  bagAt('y', off, 0, -off);
+  bagAt('z', -off, -off, 0);
+  m.airbags.visible = false;
+  pivot.add(m.airbags);
+  m.root.add(pivot);
+  // The ball's reach: the lowest bag's underside, which is what the lander drops from.
+  const radius = (off + BEAGLE_BAG_DIA_M / 2) * k;
+
+  m.mainChute = {
+    group: dgbParachute(k, { diameterM: BEAGLE_MAIN_M, totalM: 23, lines: 36 }),
+    baseY: 2 * restY,
+  };
+  m.mainChute.group.visible = false;
+  m.root.add(m.mainChute.group);
+
+  const bridle = new THREE.Object3D();
+  bridle.visible = false;
+  m.root.add(bridle);
+  m.airbagBall = {
+    pivot,
+    restY,
+    radius,
+    k,
+    bridleLength: 0,
+    bridle,
+    radPlumes: [],
+    petals: [],
+    petalClosedRad: 0,
+    inside: [],
+    unfold,
+    openSpan: 1.9 * k, // Wikipedia: 1.9 m unfolded (the model's own span, per its refs)
+  };
+  return m;
+}
+
 /** Mars skycrane (Curiosity / Perseverance) — descent stage lowers the rover on tethers. */
 /** MSL's bridles: the rover hung 7.5 m below the descent stage (NASA MSL landing press kit). */
 const MSL_BRIDLE_M = 7.5;
@@ -1094,6 +1231,7 @@ const BUILDERS: Record<string, StackBuilder> = {
   'mars-pathfinder': buildAirbagStack,
   spirit: buildAirbagStack,
   opportunity: buildAirbagStack,
+  beagle2: buildBeagleStack,
   // Mars retro
   'viking1-lander': (l, v) => buildMarsRetroStack(l, v, 3),
   phoenix: (l, v) => buildMarsRetroStack(l, v, 12),

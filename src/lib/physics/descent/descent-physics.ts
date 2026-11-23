@@ -117,6 +117,8 @@ export type DescentEventType =
   | 'contact_light' // a footpad probe touches the surface (Apollo's blue light)
   | 'engine_cutoff' // the descent engine shuts down just above the surface
   | 'leg_deploy' // the landing legs unfold (Viking, Phoenix, InSight)
+  | 'terrain_nav' // terrain-relative navigation starts (Perseverance)
+  | 'hover' // the lander holds its altitude to pick a site (Tianwen-1)
   | 'arrays_open' // the solar arrays open after landing (Phoenix, InSight)
   | 'touchdown';
 

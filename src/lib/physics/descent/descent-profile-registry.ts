@@ -78,6 +78,9 @@ export interface ArchetypeParams {
   mainChuteAltM?: number;
   /** Beagle 2: the pilot chute's drag area with the body it pulls (m²). */
   pilotCdA?: number;
+  /** Mars powered landers: the descent stops at this altitude (m) and hovers `hoverS` s. */
+  hoverAltM?: number;
+  hoverS?: number;
   /** Retro specific impulse (s). */
   ispS?: number;
   /** Heat-shield mass jettisoned at chute deploy (kg). */
@@ -180,25 +183,50 @@ const LUNA_DIRECT_IMPACT: ArchetypeBuilder = (p) => [
   { kind: 'coast', endTrigger: { type: 'ground', value: 0 }, events: ['airbag_deploy'] },
 ];
 
-const MARS_PARACHUTE_RETRO: ArchetypeBuilder = (p) => [
-  { kind: 'ballistic_entry', endTrigger: { type: 'altitude_m', value: p.chuteDeployAltM ?? 8000 } },
-  {
-    kind: 'parachute',
-    endTrigger: { type: 'altitude_m', value: p.terminalHandoffAltM ?? 1500 },
-    cdA: p.parachuteCdA ?? 120,
-    jettisonKg: p.heatshieldKg ?? 100,
-    events: ['parachute_deploy', 'heatshield_sep'],
-  },
-  {
+const MARS_PARACHUTE_RETRO: ArchetypeBuilder = (p) => {
+  const burn: EDLPhase = {
     kind: 'powered_retro',
     endTrigger: { type: 'ground', value: 0 },
     ispS: p.ispS ?? 225,
-    jettisonKg: p.backshellKg ?? 200,
     terminalVelocityMs: p.terminalVelocityMs ?? 2.4,
     descentRateGain: p.descentRateGain ?? 0.08,
-    events: ['backshell_sep', 'retro_ignition'],
-  },
-];
+  };
+  // With `hoverAltM` the burn stops its descent there, holds for `hoverS` (hazard avoidance:
+  // Tianwen-1 at about 100 m), then descends to the ground.
+  const hover: EDLPhase[] =
+    p.hoverAltM == null
+      ? [{ ...burn, jettisonKg: p.backshellKg ?? 200, events: ['backshell_sep', 'retro_ignition'] }]
+      : [
+          {
+            ...burn,
+            endTrigger: { type: 'altitude_m', value: p.hoverAltM },
+            jettisonKg: p.backshellKg ?? 200,
+            events: ['backshell_sep', 'retro_ignition'],
+          },
+          {
+            ...burn,
+            endTrigger: { type: 'duration_s', value: p.hoverS ?? 10 },
+            terminalVelocityMs: 0,
+            descentRateGain: 0,
+            events: ['hover'],
+          },
+          burn,
+        ];
+  return [
+    {
+      kind: 'ballistic_entry',
+      endTrigger: { type: 'altitude_m', value: p.chuteDeployAltM ?? 8000 },
+    },
+    {
+      kind: 'parachute',
+      endTrigger: { type: 'altitude_m', value: p.terminalHandoffAltM ?? 1500 },
+      cdA: p.parachuteCdA ?? 120,
+      jettisonKg: p.heatshieldKg ?? 100,
+      events: ['parachute_deploy', 'heatshield_sep'],
+    },
+    ...hover,
+  ];
+};
 
 const MARS_AIRBAG: ArchetypeBuilder = (p) => [
   { kind: 'ballistic_entry', endTrigger: { type: 'altitude_m', value: p.chuteDeployAltM ?? 9000 } },

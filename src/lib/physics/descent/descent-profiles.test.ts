@@ -482,3 +482,25 @@ describe('Mars legged landers (Viking, Phoenix, InSight)', () => {
     expect(at('insight', 'arrays_open').realT! - at('insight', 'touchdown').t).toBe(960);
   });
 });
+
+describe('Mars sky crane and hover (Curiosity, Perseverance, Tianwen-1)', () => {
+  const at = (id: string, t: string) => flight(id).s.events.find((e) => e.type === t)!;
+  it('Curiosity: heat shield 19.7 s after the chute; Perseverance: 20 s, terrain nav at 4.2 km', () => {
+    expectInRange(
+      at('curiosity', 'heatshield_sep').t - at('curiosity', 'parachute_deploy').t,
+      19.6,
+      19.8,
+      'Curiosity heat shield (s)',
+    );
+    expectInRange(at('perseverance', 'terrain_nav').altKm * 1000, 4190, 4210, 'TRN start (m)');
+  });
+  it('Tianwen-1: stops at about 100 m, holds, then lands', () => {
+    const s = flight('tianwen1').s;
+    const hov = at('tianwen1', 'hover');
+    expectInRange(hov.altKm * 1000, 95, 105, 'hover altitude (m)');
+    const held = s.states.filter((x) => x.t > hov.t + 3 && x.t < hov.t + 9);
+    expect(held.length).toBeGreaterThan(0);
+    expect(held.every((x) => Math.abs(x.altM - hov.altKm * 1000) < 6)).toBe(true);
+    expectInRange(s.touchdownVelocityMs, 2, 3, 'touchdown (m/s)');
+  });
+});

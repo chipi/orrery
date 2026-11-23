@@ -16,7 +16,8 @@
   "liftToDragRatio": 0.18,
   "estimatedFields": [
     "liftToDragRatio",
-    "entryCdA"
+    "entryCdA",
+    "beats.terrain_nav"
   ],
   "retroPropellantKg": 450,
   "archetype": "MARS_SKYCRANE",
@@ -40,6 +41,21 @@
     {
       "l": "NASA Mars 2020 EDL press kit",
       "u": "https://mars.nasa.gov/mars2020/timeline/landing/entry-descent-landing/"
+    },
+    {
+      "l": "Perseverance as researched for pass 2 (docs/wip/2026-11-23-mars-landings-record.md): 21.5 m chute (Range Trigger), heat shield 20 s after it, terrain-relative navigation between 4.2 and 2.2 km (the window ends at the backshell separation, 2.22 km in this profile; the start is placed at 4.2 km). The record puts the chute at about 11 km against 12.6 km here: not changed",
+      "u": "https://www.jpl.nasa.gov/news/press_kits/mars_2020/landing/mission"
+    }
+  ],
+  "beats": [
+    {
+      "type": "heatshield_sep",
+      "after": "parachute_deploy",
+      "afterS": 20
+    },
+    {
+      "type": "terrain_nav",
+      "altM": 4200
     }
   ]
 }

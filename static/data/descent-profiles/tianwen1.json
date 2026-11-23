@@ -18,9 +18,12 @@
     "flightPathAngleDeg",
     "liftToDragRatio",
     "entryCdA",
-    "chuteDeployAltM"
+    "chuteDeployAltM",
+    "params.hoverS",
+    "retroPropellantKg",
+    "params.descentRateGain"
   ],
-  "retroPropellantKg": 200,
+  "retroPropellantKg": 320,
   "archetype": "MARS_PARACHUTE_RETRO",
   "params": {
     "chuteDeployAltM": 15000,
@@ -29,7 +32,10 @@
     "heatshieldKg": 100,
     "backshellKg": 200,
     "ispS": 225,
-    "terminalVelocityMs": 2.4
+    "terminalVelocityMs": 2.4,
+    "hoverAltM": 100,
+    "hoverS": 10,
+    "descentRateGain": 0.03
   },
   "source_tier": "flagship",
   "provenance": [
@@ -40,6 +46,10 @@
     {
       "l": "Tianwen-1 — Wikipedia",
       "u": "https://en.wikipedia.org/wiki/Tianwen-1"
+    },
+    {
+      "l": "Tianwen-1 as researched for pass 2 (docs/wip/2026-11-23-mars-landings-record.md, secondary sources): shell and chute off about 1.5 km; a variable-thrust engine; hover at about 100 m for hazard avoidance (10 s drawn, an estimate); four legs; Zhurong down the ramp 7–8 days later (not drawn)",
+      "u": "https://www.nasaspaceflight.com/2021/05/china-first-mars-landing-attempt-tianwen-1/"
     }
   ]
 }

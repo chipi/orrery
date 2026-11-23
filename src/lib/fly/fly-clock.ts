@@ -107,6 +107,8 @@ const DESCENT_SEP_BEATS = new Set([
   'touchdown',
   'petals_open',
   'leg_deploy',
+  'terrain_nav',
+  'hover',
   'arrays_open',
 ]);
 

@@ -8,6 +8,7 @@
   import * as THREE from 'three';
   import type { ShowcaseModel } from '$lib/three/showcase/types';
   import { buildScaleFigure } from '$lib/three/lineup/scale-figures';
+  import { installHeroEnvironment } from '$lib/three/hero-materials';
 
   const modules = import.meta.glob<{ SHOWCASE?: Record<string, ShowcaseModel> }>(
     '$lib/three/showcase/*.ts',
@@ -45,6 +46,42 @@
     const box = new THREE.Box3().setFromObject(craft);
     const size = box.getSize(new THREE.Vector3());
     info = `${id}: drawn ${size.x.toFixed(2)} × ${size.y.toFixed(2)} × ${size.z.toFixed(2)} m (w × h × d); heightM ${m.heightM}, diameterM ${m.diameterM}; base y ${box.min.y.toFixed(3)}`;
+
+    // ?hero=1&az=<deg>&el=<deg>: one large perspective view in hard sunlight, for judging detail
+    // (the four-view sheet draws a 7 m lander a few hundred pixels tall).
+    const q = new URLSearchParams(location.search);
+    if (q.get('hero') === '1') {
+      const az = (Number(q.get('az') ?? 35) * Math.PI) / 180;
+      const el = (Number(q.get('el') ?? 12) * Math.PI) / 180;
+      renderer.setScissorTest(false);
+      const scene = new THREE.Scene();
+      scene.background = new THREE.Color(0x07090e);
+      scene.add(new THREE.HemisphereLight(0xcfd8e8, 0x3a3a3a, 0.5));
+      const sun = new THREE.DirectionalLight(0xfff6ea, 3.2);
+      sun.position.set(-1, 0.9, 1.2);
+      scene.add(sun);
+      const ground = new THREE.Mesh(
+        new THREE.CircleGeometry(60, 64),
+        new THREE.MeshStandardMaterial({ color: 0x6b6862, roughness: 1 }),
+      );
+      ground.rotation.x = -Math.PI / 2;
+      scene.add(ground);
+      scene.add(craft);
+      // &ibl=0 shows it as a scene without the reflection environment does (the descent today).
+      if (q.get('ibl') !== '0') installHeroEnvironment(renderer, scene);
+      const cam = new THREE.PerspectiveCamera(35, W / H, 0.1, 1000);
+      const r = Math.max(size.y * 2.3, Math.max(size.x, size.z) * 1.1) * Number(q.get('zoom') ?? 1);
+      const target = new THREE.Vector3(0, size.y * 0.45, 0);
+      cam.position.set(
+        target.x + Math.sin(az) * Math.cos(el) * r,
+        target.y + Math.sin(el) * r,
+        target.z + Math.cos(az) * Math.cos(el) * r,
+      );
+      cam.lookAt(target);
+      renderer.render(scene, cam);
+      ready = true;
+      return () => renderer.dispose();
+    }
 
     const views: { pos: THREE.Vector3; label: string }[] = [
       { pos: new THREE.Vector3(0, 0, 1), label: 'front' },

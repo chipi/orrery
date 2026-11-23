@@ -1735,6 +1735,19 @@
   // bar stays the 2-segment ascent→cruise, unchanged for orbiters.
   let descentSummaryFly = $derived(descentProfile ? integrateDescent(descentProfile) : null);
   let descentDurationS = $derived(descentSummaryFly ? descentSummaryFly.totalDurationS : 0);
+  // ?debug=1 (dev): put the descent at an EDL time from a script, as LaunchScene's __ascentSetT
+  // does for the launch — the master scrubber's tail is too short to aim at a landing beat.
+  $effect(() => {
+    if (!import.meta.env.DEV || page.url.searchParams.get('debug') !== '1') return;
+    Object.assign(window as unknown as Record<string, unknown>, {
+      __descentSetT: (v: number) => {
+        isPlaying = false;
+        dispatchPhase({ type: 'scrubTo', phase: 'descent' });
+        descentT = Math.max(0, Math.min(descentDurationS, v));
+      },
+      __descentDuration: () => descentDurationS,
+    });
+  });
   // Separation-event times for the cinematic slow-mo beat (item 3) — the play-
   // clock eases into slow-motion as it passes each. Ascent times are already in
   // the launch clock's base; descent times are in *trajectory* time, so they're

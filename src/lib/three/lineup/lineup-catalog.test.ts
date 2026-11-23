@@ -112,7 +112,9 @@ describe('showcase models', () => {
     for (const [id, m] of Object.entries(all)) {
       const g = m.build();
       const box = new THREE.Box3().setFromObject(g);
-      const spec = fleet.get(id)?.specs?.length_m;
+      // A rover stands at its height; every other craft upright at its length.
+      const e = fleet.get(id);
+      const spec = e?.category === 'rover' ? e?.specs?.height_m : e?.specs?.length_m;
       expect(typeof spec, id).toBe('number');
       expect(
         Math.abs(box.max.y - box.min.y - (spec as number)) / (spec as number),

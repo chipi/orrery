@@ -10,6 +10,11 @@
   "era": "2011-now",
   "epoch": "commercial-era",
   "best_known_for": "Nuclear-powered Mars Science Laboratory rover",
+  "specs": {
+    "length_m": 2.9,
+    "height_m": 2.2,
+    "mass_kg": 899
+  },
   "links": [
     {
       "l": "Curiosity (rover) — Wikipedia",

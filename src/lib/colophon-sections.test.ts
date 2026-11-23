@@ -38,7 +38,6 @@ describe('colophonSections', () => {
       ['exploded', 1],
       ['posters', 1],
       ['diagrams', 1],
-      ['capsules', 0],
       ['models', 1],
       ['canvas', 0],
       ['ui', 14],

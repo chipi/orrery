@@ -129,11 +129,6 @@
     "en": "dfed835862",
     "tr": "ba1bd64bfe"
   },
-  "es|original-work.json|models3d./images/colophon/craft-pioneer-10_webp.what": {
-    "why": "read: a fuller rendering (grammar, glosses, spelled-out names or units); nothing is added to the meaning",
-    "en": "ec00015f7c",
-    "tr": "9bba6f05e9"
-  },
   "es|site-stories/mars3.json|chapters.0.subtitle": {
     "why": "read: a fuller rendering (grammar, glosses, spelled-out names or units); nothing is added to the meaning",
     "en": "6e4f0db471",
@@ -563,6 +558,11 @@
     "why": "read: a fuller rendering (grammar, glosses, spelled-out names or units); nothing is added to the meaning",
     "en": "51e2573c06",
     "tr": "22f01b978a"
+  },
+  "ru|original-work.json|models3d./images/colophon/model-showcase-parker-solar-probe_webp.what": {
+    "why": "read: complete and natural; Russian needs the case phrases (диаметром, длиной) the English packs into attributive numbers",
+    "en": "050d5ada54",
+    "tr": "a9ac4cbbca"
   },
   "ru|science/life-in-space/muscle-atrophy.json|diagram_caption": {
     "why": "read: a fuller rendering (grammar, glosses, spelled-out names or units); nothing is added to the meaning",

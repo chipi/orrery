@@ -1100,77 +1100,12 @@
     "/images/colophon/craft-cassini_webp": {
       "title": "Cassini–Huygens",
       "what": "高增益天线盘、放射性同位素温差发电机吊杆和Huygens探测器——土星轨道器。",
-      "where": "飞行 + 探索"
-    },
-    "/images/colophon/craft-voyager-1_webp": {
-      "title": "旅行者号",
-      "what": "3.7米天线、磁强计吊杆和放射性同位素温差电池桁架——大巡航车。",
-      "where": "飞行 + 探索"
-    },
-    "/images/colophon/craft-galileo_webp": {
-      "title": "Galileo",
-      "what": "双自旋舱体，配备折叠的高增益伞形天线。",
-      "where": "飞行 + 探索"
+      "where": "飞行 · 发射 + 巡航"
     },
     "/images/colophon/craft-new-horizons_webp": {
       "title": "New Horizons",
       "what": "紧凑的三角形舱体，配备单一的抛物面天线——冥王星掠过探测器。",
-      "where": "飞行 + 探索"
-    },
-    "/images/colophon/craft-pioneer-10_webp": {
-      "title": "先驱者号",
-      "what": "自旋稳定的抛物面天线、放射性同位素温差发电电源吊杆，以及刻有铭文的金属板。",
-      "where": "飞行 + 探索"
-    },
-    "/images/colophon/craft-juno_webp": {
-      "title": "Juno",
-      "what": "围绕六边形舱体的三个巨大太阳翼——木星极地轨道器。",
-      "where": "飞行 + 探索"
-    },
-    "/images/colophon/craft-bepicolombo_webp": {
-      "title": "BepiColombo",
-      "what": "堆叠的转移舱 + 水星轨道器，配备离子推进器。",
-      "where": "飞行 + 探索"
-    },
-    "/images/colophon/craft-dawn_webp": {
-      "title": "Dawn",
-      "what": "离子驱动舱体，配备宽大的太阳翼——灶神星 + 谷神星轨道器。",
-      "where": "飞行 + 探索"
-    },
-    "/images/colophon/craft-giotto_webp": {
-      "title": "Giotto",
-      "what": "鼓形自旋探测器，配备防尘屏——哈雷彗星掠过。",
-      "where": "飞行 + 探索"
-    },
-    "/images/colophon/craft-hayabusa2_webp": {
-      "title": "Hayabusa2",
-      "what": "方形舱体，配备太阳能电池板和采样器角——小行星龙宫。",
-      "where": "飞行 + 探索"
-    },
-    "/images/colophon/craft-juice_webp": {
-      "title": "JUICE",
-      "what": "十字形太阳能阵列安装在紧凑的舱体上——木星冰卫星轨道器。",
-      "where": "飞行 + 探索"
-    },
-    "/images/colophon/craft-rosetta_webp": {
-      "title": "Rosetta",
-      "what": "环绕彗星的14米太阳能翼母舰 + Philae着陆器。",
-      "where": "飞行 + 探索"
-    },
-    "/images/colophon/craft-ulysses_webp": {
-      "title": "Ulysses",
-      "what": "RTG动力太阳极地探测器，配有单一天线。",
-      "where": "飞行 + 探索"
-    },
-    "/images/colophon/craft-vega-1_webp": {
-      "title": "Vega",
-      "what": "苏联金星掠过飞行 + 配备可转向天线的气球母舰。",
-      "where": "飞行 + 探索"
-    },
-    "/images/colophon/craft-venera-13_webp": {
-      "title": "Venera 13",
-      "what": "苏联金星着陆器——环形气动制动器和着陆环。",
-      "where": "飞行 + 探索"
+      "where": "飞行 · 发射 + 巡航"
     },
     "/images/colophon/model-launcher-generic_webp": {
       "title": "通用火箭",
@@ -1547,16 +1482,6 @@
       "what": "Blue Origin的高大着陆器——四腿框架上的中心燃料箱。",
       "where": "飞行·巡航/接近"
     },
-    "/images/colophon/model-cruise-hayabusa1_webp": {
-      "title": "Hayabusa巡航",
-      "what": "JAXA样本返回卫星平台——太阳能翼、采样喇叭口和离子发动机。",
-      "where": "飞行·巡航/接近"
-    },
-    "/images/colophon/model-cruise-osiris-rex_webp": {
-      "title": "OSIRIS-REx巡航",
-      "what": "箱形卫星平台，配备V形太阳能翼和延伸的TAGSAM采样臂。",
-      "where": "飞行·巡航/接近"
-    },
     "/images/colophon/model-cruise-near-shoemaker_webp": {
       "title": "NEAR Shoemaker",
       "what": "配备十字形四块固定太阳能电池板和固定抛物面天线的轨道器卫星平台。",
@@ -1644,193 +1569,193 @@
     },
     "/images/colophon/model-launcher-long-march-3a_webp": {
       "title": "长征三号甲",
-      "what": "芯级与二级在开放式桁架上热分离，上方是低温第三级和 3.35 米整流罩，没有捆绑助推器（嫦娥一号）。",
-      "where": "飞行·发射/上升"
+      "what": "芯级与二级热分离，开放式桁架上方是低温三级和直径 3.35 米的整流罩，无捆绑助推器（嫦娥一号）。",
+      "where": "飞行 · 发射/上升"
     },
     "/images/colophon/model-launcher-long-march-7_webp": {
       "title": "长征七号",
-      "what": "中国运载火箭技术研究院的 3.35 米煤油火箭，用于发射天舟货运飞船——芯级、二级和四个 2.25 米捆绑助推器。",
-      "where": "飞行·发射/上升"
+      "what": "CALT 为天舟货运飞船研制的直径 3.35 米煤油火箭——一个芯级、一个二级和四个直径 2.25 米的捆绑助推器。",
+      "where": "飞行 · 发射/上升"
     },
     "/images/colophon/model-launcher-delta-ii_webp": {
       "title": "Delta II",
-      "what": "源自 Thor 的青绿色一级，周围环绕九枚白色固体助推器，上方是带船尾收缩的 2.9 米整流罩。",
-      "where": "飞行·发射/上升"
+      "what": "青绿色的雷神衍生一级被九枚白色固体助推器环绕，上方是船尾形的直径 2.9 米整流罩。",
+      "where": "飞行 · 发射/上升"
     },
     "/images/colophon/model-launcher-atlas-centaur_webp": {
       "title": "Atlas-Centaur",
-      "what": "钢制气球贮箱的阿特拉斯一级半火箭，上方是白色半人马座上面级和整流罩（水手 9 号和 10 号、先驱者 10 号和 11 号）。",
-      "where": "飞行·发射/上升"
+      "what": "钢制气球式宇宙神一级半之上是白色的半人马座上面级和头部整流罩（Mariner 9 和 10、Pioneer 10 和 11）。",
+      "where": "飞行 · 发射/上升"
     },
     "/images/colophon/model-launcher-atlas-agena_webp": {
       "title": "Atlas-Agena",
-      "what": "同一枚阿特拉斯，上方是纤细的阿金纳 D 上面级和小型整流罩（水手 4 号）。",
-      "where": "飞行·发射/上升"
+      "what": "同一枚宇宙神之上是细长的 Agena D 上面级和一个小型整流罩（Mariner 4）。",
+      "where": "飞行 · 发射/上升"
     },
     "/images/colophon/model-launcher-titan-ii-g_webp": {
       "title": "Titan II(23)G",
-      "what": "两级泰坦芯级，上方是有效载荷整流罩（克莱门汀号）。",
-      "where": "飞行·发射/上升"
+      "what": "两级泰坦芯级之上是有效载荷整流罩（Clementine）。",
+      "where": "飞行 · 发射/上升"
     },
     "/images/colophon/model-launcher-titan-iiie-centaur_webp": {
       "title": "Titan IIIE-Centaur",
-      "what": "泰坦芯级带两个五段式固体助推器、级间段，半人马座置于整流罩内（海盗号、旅行者号）。",
-      "where": "飞行·发射/上升"
+      "what": "泰坦芯级带两枚五段固体助推器、一个级间段，以及整流罩内的半人马座上面级（Viking、Voyager）。",
+      "where": "飞行 · 发射/上升"
     },
     "/images/colophon/model-launcher-titan-ivb-centaur_webp": {
       "title": "Titan IVB-Centaur",
-      "what": "泰坦芯级带两个长固体发动机，上方是包住半人马座的 20 米整流罩（卡西尼号）。",
-      "where": "飞行·发射/上升"
+      "what": "泰坦芯级带两枚长固体发动机，其上是包住半人马座上面级的 20 米整流罩（卡西尼号）。",
+      "where": "飞行 · 发射/上升"
     },
     "/images/colophon/model-launcher-falcon-heavy_webp": {
       "title": "Falcon Heavy",
-      "what": "三个猎鹰 9 号芯级并排——两侧助推器带锥形头罩、栅格舵和着陆腿，中央芯级载着上面级和整流罩。",
-      "where": "飞行·发射/上升"
+      "what": "三枚猎鹰 9 号芯级并排——侧助推器带有头锥、栅格翼和着陆腿，中央芯级携带上面级和整流罩。",
+      "where": "飞行 · 发射/上升"
     },
     "/images/colophon/model-launcher-athena-ii_webp": {
       "title": "Athena II",
-      "what": "全固体火箭堆栈——两级 Castor 120、第三级和渐缩整流罩（月球探勘者号）。",
-      "where": "飞行·发射/上升"
+      "what": "全固体火箭——两级 Castor 120、一个三级和一个渐缩的整流罩（Lunar Prospector）。",
+      "where": "飞行 · 发射/上升"
     },
     "/images/colophon/model-launcher-delta-iv-heavy_webp": {
       "title": "Delta IV Heavy",
-      "what": "三个通用助推芯级并排，中央一个载着低温上面级和 19 米整流罩（帕克太阳探测器）。",
-      "where": "飞行·发射/上升"
+      "what": "三个通用助推器芯级并排，中央芯级携带低温上面级和 19 米整流罩（Parker Solar Probe）。",
+      "where": "飞行 · 发射/上升"
     },
     "/images/colophon/model-launcher-new-glenn_webp": {
       "title": "New Glenn",
-      "what": "一根 7 米粗的单柱——装有七台发动机、着陆腿和尾翼的一级，上方是 7 米尖拱形整流罩（蓝月 MK1）。",
-      "where": "飞行·发射/上升"
+      "what": "一根直径 7 米的单柱——带七台发动机、着陆腿和栅格的一级，上方是直径 7 米的尖拱形整流罩（Blue Moon MK1）。",
+      "where": "飞行 · 发射/上升"
     },
     "/images/colophon/model-launcher-proton-m-briz-m_webp": {
       "title": "Proton-M / Briz-M",
-      "what": "中央芯级被六个外置燃料箱环绕，再加两级和一个 Briz-M 上面级，上方是 4.35 米整流罩。",
-      "where": "飞行·发射/上升"
+      "what": "中央芯级被六个外挂燃料箱环绕，再加两级和一个 Briz-M 上面级，罩在直径 4.35 米的整流罩下。",
+      "where": "飞行 · 发射/上升"
     },
     "/images/colophon/model-launcher-sls-block-1_webp": {
       "title": "SLS Block 1",
-      "what": "装有四台 RS-25 的橙色泡沫芯级、两个白色五段式助推器、级间适配器和上面级，上方是猎户座与逃逸塔（阿尔忒弥斯）。",
-      "where": "飞行·发射/上升"
+      "what": "四台 RS-25 的橙色泡沫芯级、两枚白色五段助推器、级间适配器和上面级，顶部是猎户座和逃逸塔（阿尔忒弥斯）。",
+      "where": "飞行 · 发射/上升"
     },
     "/images/colophon/model-launcher-molniya-m_webp": {
       "title": "Molniya-M",
-      "what": "四级 R-7——桁架上的 Blok I、Blok L 逃逸级和探测器，罩在圆柱加圆锥形整流罩内（月球 9 号、月球 10 号）。",
-      "where": "飞行·发射/上升"
+      "what": "四级 R-7——桁架上的 Blok I、Blok L 逃逸级，以及圆柱加圆锥整流罩内的探测器（Luna 9、Luna 10）。",
+      "where": "飞行 · 发射/上升"
     },
     "/images/colophon/model-launcher-soyuz-fg-fregat_webp": {
       "title": "Soyuz-FG / Fregat",
-      "what": "R-7 及其上面级，顶端是矮粗的弗雷加特和探测器，罩在更宽的整流罩内（火星快车）。",
-      "where": "飞行·发射/上升"
+      "what": "R-7 及其上面级之上是矮胖的 Fregat 和更宽整流罩内的探测器（Mars Express）。",
+      "where": "飞行 · 发射/上升"
     },
     "/images/colophon/model-launcher-sputnik-8k71ps_webp": {
       "title": "Sputnik 8K71PS",
-      "what": "发射人造卫星 1 号的两级 R-7——没有第三级，卫星位于芯级鼻锥之下。",
-      "where": "飞行·发射/上升"
+      "what": "发射 Sputnik 1 的两级 R-7——没有三级，卫星装在芯级头锥之下。",
+      "where": "飞行 · 发射/上升"
     },
     "/images/colophon/model-launcher-soyuz-2_webp": {
       "title": "Soyuz-2",
-      "what": "高 46.3 米的改进型 R-7——芯级周围四个助推器、开放桁架上的上面级和长整流罩。",
-      "where": "飞行·发射/上升"
+      "what": "现代化的 46.3 米 R-7——芯级周围四枚助推器、开放桁架上的上面级和长整流罩。",
+      "where": "飞行 · 发射/上升"
     },
     "/images/colophon/model-launcher-antares_webp": {
       "title": "Antares 230+",
-      "what": "诺斯罗普·格鲁曼的天鹅座运载火箭——3.9 米煤油一级配两台 RD-181，上方是固体二级和整流罩。",
-      "where": "飞行·发射/上升"
+      "what": "诺斯罗普·格鲁曼的天鹅座运载火箭——两台 RD-181 的直径 3.9 米煤油一级，上方是固体二级和整流罩。",
+      "where": "飞行 · 发射/上升"
     },
     "/images/colophon/model-launcher-ariane-6_webp": {
       "title": "Ariane 6",
-      "what": "欧洲 5.4 米低温芯级和芬奇上面级，上方是 20 米整流罩，配四个固体助推器（A64）。",
-      "where": "飞行·发射/上升"
+      "what": "欧洲直径 5.4 米的低温芯级和 Vinci 上面级，罩在 20 米整流罩下，带四枚固体助推器（A64）。",
+      "where": "飞行 · 发射/上升"
     },
     "/images/colophon/model-launcher-vulcan_webp": {
       "title": "Vulcan Centaur",
-      "what": "联合发射联盟的 5.4 米甲烷一级配两台 BE-4，半人马座 V 和 5.4 米整流罩，配 GEM 63XL 固体助推器。",
-      "where": "飞行·发射/上升"
+      "what": "ULA 的直径 5.4 米甲烷一级（两台 BE-4）、半人马座 V 和直径 5.4 米整流罩，带 GEM 63XL 固体助推器。",
+      "where": "飞行 · 发射/上升"
     },
     "/images/colophon/model-launcher-energia_webp": {
       "title": "Energia–Buran",
-      "what": "7.75 米氢燃料芯级，四个 RD-170 捆绑助推器，暴风雪号轨道器骑在芯级一侧。",
-      "where": "飞行·发射/上升"
+      "what": "直径 7.75 米的氢芯级带四台 RD-170 捆绑助推器，侧面载着Buran 轨道器。",
+      "where": "飞行 · 发射/上升"
     },
     "/images/colophon/model-launcher-n1_webp": {
       "title": "N1",
-      "what": "苏联登月火箭——五级呈锥形，一级装有三十台发动机，上方是 L3 整流罩和逃逸塔。",
-      "where": "飞行·发射/上升"
+      "what": "苏联的登月火箭——锥形排列的五级，一级有三十台发动机，上方是 L3 整流罩和逃逸塔。",
+      "where": "飞行 · 发射/上升"
     },
     "/images/colophon/model-showcase-soyuz-7k-ok_webp": {
       "title": "Soyuz 7K-OK",
-      "what": "第一代联盟号，长 7.95 米——轨道舱、返回舱和服务舱，9.8 米太阳能电池翼和 Igla 交会天线。",
-      "where": "航天器 · 实际尺寸对比"
+      "what": "长 7.95 米的第一代联盟号——轨道舱、返回舱和服务舱，9.8 米太阳能电池翼和 Igla 交会天线。",
+      "where": "航天器 · 实际尺寸对比 + 飞行"
     },
     "/images/colophon/model-showcase-soyuz-ms_webp": {
       "title": "Soyuz T / TM / TMA / MS（4 个型号）",
-      "what": "长 7.48 米的联盟号历经四代——T 型用 Igla 天线，TM 和 TMA 型用 Kurs，MS 型用 Kurs-NA 并加装微流星体防护罩。",
+      "what": "长 7.48 米的联盟号历经四代——T 型用 Igla 天线，TM 和 TMA 型用 Kurs，MS 型用 Kurs-NA 和微流星体防护罩。",
       "where": "航天器 · 实际尺寸对比"
     },
     "/images/colophon/model-showcase-crew-dragon_webp": {
       "title": "Crew Dragon",
-      "what": "长 8.1 米的返回舱加货舱组合，有舷窗、SuperDraco 发动机舱和装有太阳能电池的货舱。",
-      "where": "航天器 · 实际尺寸对比"
+      "what": "长 8.1 米的返回舱加后段组合——带梯形舱门、四个舷窗和 SuperDraco 舱位的白色圆润返回舱，位于深色 PICA-X 隔热罩之上，后段带包裹式电池片和两个散热片，罩在白色铰接式头锥之下。",
+      "where": "航天器 · 实际尺寸对比 + 飞行"
     },
     "/images/colophon/model-showcase-starliner_webp": {
       "title": "Starliner (CST-100)",
-      "what": "波音的 5.03 米返回舱加服务舱——蓝色环带和推进器舱。",
+      "what": "波音的 5.03 米返回舱与服务舱——白银色的宽矮锥体带蓝色条纹和 NASA 圆标，下方是带四个狗屋形推力器舱的圆筒。",
       "where": "航天器 · 实际尺寸对比"
     },
     "/images/colophon/model-showcase-gaganyaan_webp": {
       "title": "Gaganyaan",
-      "what": "印度空间研究组织长 5.58 米的乘员舱，连同服务舱和可展开的太阳能电池翼。",
+      "what": "ISRO 的 5.58 米乘员舱与服务舱——钝头白色锥体覆有铜褐色胶带，带梯形舱门和三个舷窗，下方是包着金色箔片、带两片太阳能电池翼的圆筒。",
       "where": "航天器 · 实际尺寸对比"
     },
     "/images/colophon/model-showcase-orion_webp": {
       "title": "Orion",
-      "what": "长 7.9 米的阿尔忒弥斯乘员舱，配欧洲服务舱及其太阳能电池阵。",
+      "what": "长 7.9 米的阿尔忒弥斯组合——白色瓷砖状乘员舱位于深色隔热罩之上，欧洲服务舱带四片 X 形太阳能电池阵，下方是飞船适配环。",
       "where": "航天器 · 实际尺寸对比"
     },
     "/images/colophon/model-showcase-new-shepard_webp": {
       "title": "New Shepard",
-      "what": "高 19.2 米的亚轨道飞行器——3.8 米助推器上方是带大舷窗的乘员舱。",
+      "what": "发射台上的 19.2 米亚轨道飞行器——白色助推器带黑色发动机裙、蓝色环带、环形翼、三片尾翼和四条着陆腿，上方是带六个大舷窗的乘员舱。",
       "where": "航天器 · 实际尺寸对比"
     },
     "/images/colophon/model-showcase-apollo-csm-block-ii_webp": {
       "title": "Apollo CSM Block I / II（2 个型号）",
-      "what": "长 10.6 米和 11 米的指令服务舱——圆锥形指令舱位于圆柱形服务舱之上，带发动机喷管。",
-      "where": "航天器 · 实际尺寸对比"
+      "what": "长 10.6 米和 11 米的指令服务舱——反光银色的锥体带五个舷窗（Block II 还有对接探头），下方是带白色散热器、RCS 四联装和发动机喷管的抛光铝服务舱。",
+      "where": "航天器 · 实际尺寸对比 + 飞行"
     },
     "/images/colophon/model-showcase-shenzhou_webp": {
       "title": "神舟",
-      "what": "中国长 9.25 米的三舱飞船，沿袭联盟号设计——轨道舱、返回舱和带太阳能电池翼的推进舱。",
-      "where": "航天器 · 实际尺寸对比"
+      "what": "中国的 9.25 米三舱飞船，沿袭联盟号——绗缝的银色轨道舱、深色烧蚀底面的钟形返回舱，以及带栗色裙、橙色推力器组和两片电池翼的白色服务舱。",
+      "where": "航天器 · 实际尺寸对比 + 飞行"
     },
     "/images/colophon/model-showcase-space-shuttle-orbiter_webp": {
       "title": "Space Shuttle轨道器",
-      "what": "一架 37.2 米的轨道器，为四姐妹——亚特兰蒂斯号、挑战者号、发现号和奋进号——只画一次，平躺在跑道上。",
-      "where": "航天器 · 实际尺寸对比"
+      "what": "一艘 37.2 米的轨道器，代表四艘姊妹机——亚特兰蒂斯号、挑战者号、发现号和奋进号——只画一次：带货舱门的白色机身上部、黑色瓷砖的腹部、带增强碳边缘的双三角翼、OMS 发动机舱和三台主发动机，躺在跑道上。",
+      "where": "航天器 · 实际尺寸对比 + 飞行"
     },
     "/images/colophon/model-showcase-columbia_webp": {
       "title": "Space Shuttle Columbia",
-      "what": "第一架轨道器——唯一带黑色边缘的一架，垂直尾翼上有仪器舱。",
-      "where": "航天器 · 实际尺寸对比"
+      "what": "第一艘轨道器——唯一在翼上表面带黑色边条的一艘，垂直尾翼上有仪器舱。",
+      "where": "航天器 · 实际尺寸对比 + 飞行"
     },
     "/images/colophon/model-showcase-enterprise_webp": {
       "title": "Space Shuttle Enterprise",
-      "what": "大气层试验轨道器——没有主发动机，没有轨道机动系统舱，隔热瓦为模拟件。",
+      "what": "大气层内试验轨道器——用炭灰色的泡沫和涂料模拟瓷砖，机翼边缘是素白色玻璃纤维，而非实际飞行用的瓷砖和碳。",
       "where": "航天器 · 实际尺寸对比"
     },
     "/images/colophon/model-showcase-buran_webp": {
       "title": "Buran",
-      "what": "苏联轨道器，长 36.4 米——24 米翼展的双三角翼，主发动机留在能源号芯级上。",
+      "what": "长 36.4 米的苏联轨道器——24 米双三角翼和尾部两个 OMS 喷管，主发动机留在Energia 芯级上。",
       "where": "航天器 · 实际尺寸对比"
     },
     "/images/colophon/model-showcase-buran-ok-gli_webp": {
       "title": "Buran OK-GLI",
-      "what": "外形和质量与暴风雪号相同的大气层试验机——尾部四台 AL-31 涡扇发动机。",
+      "what": "外形和质量与 Buran 相同的大气层内试验机——涂成白灰色、没有瓷砖，喷气发动机装在垂尾根部两侧的短舱内。",
       "where": "航天器 · 实际尺寸对比"
     },
     "/images/colophon/model-showcase-x37b_webp": {
       "title": "X-37B",
-      "what": "美国太空军长 8.92 米的无人太空飞机，翼展 4.55 米。",
-      "where": "航天器 · 实际尺寸对比"
+      "what": "美国太空军的 8.92 米无人空天飞机，翼展 4.55 米——黑色瓷砖的下表面和机头、倾斜的尾翼、关闭的货舱门。",
+      "where": "航天器 · 实际尺寸对比 + 飞行"
     },
     "/images/colophon/model-showcase-progress-ms_webp": {
       "title": "Progress 7K-TG / M / MS（3 个型号）",
@@ -1839,42 +1764,42 @@
     },
     "/images/colophon/model-showcase-cargo-dragon-2_webp": {
       "title": "Cargo Dragon 2",
-      "what": "无人、无舷窗的龙飞船 2 号，连同 8.1 米货舱——国际空间站的货运飞船。",
+      "what": "8.1 米后段上的无窗无人龙 2——载人版有舷窗和 SuperDraco 舱位的地方是盖板。",
       "where": "航天器 · 实际尺寸对比"
     },
     "/images/colophon/model-showcase-cargo-dragon-v1_webp": {
       "title": "Dragon 1",
-      "what": "最初的 6.1 米货运龙飞船——3.7 米的返回舱连同货舱和两块太阳能电池板。",
+      "what": "最初的 6.1 米货运龙飞船——宽 3.7 米的矮胖返回舱带四个 Draco 四联装和白色头锥，位于 2.3 米后段之上，带两片太阳能电池翼。",
       "where": "航天器 · 实际尺寸对比"
     },
     "/images/colophon/model-showcase-cygnus-enhanced_webp": {
       "title": "Cygnus Standard / Enhanced（2 个型号）",
-      "what": "诺斯罗普·格鲁曼的空间站货运飞船，长 5.14 米和 6.39 米——服务舱上方是增压货舱，配圆形太阳能电池板。",
+      "what": "诺斯罗普·格鲁曼的货运飞船，长 5.14 米和 6.39 米——带凹格板的裸铝货舱位于金银色服务舱之上，标准型用平直的矩形翼，增强型用圆形 UltraFlex 电池阵。",
       "where": "航天器 · 实际尺寸对比"
     },
     "/images/colophon/model-showcase-htv_webp": {
       "title": "HTV (Kounotori)",
-      "what": "日本长 9.8 米的空间站货运飞船——服务段上有增压舱和开放式货盘。",
+      "what": "日本的 9.8 米空间站货运飞船——白色推进舱、银色航电段、开放式托盘舱和带深色体装太阳能电池的白色增压货舱。",
       "where": "航天器 · 实际尺寸对比"
     },
     "/images/colophon/model-showcase-htv-x_webp": {
       "title": "HTV-X",
-      "what": "日本长 8 米的后继货运飞船——服务舱上方是增压货舱，配太阳能电池翼。",
+      "what": "日本的 8 米后继货运飞船——包金色隔热毯的增压舱、开放式货物支撑甲板、银色服务舱和两片细长的电池阵。",
       "where": "航天器 · 实际尺寸对比"
     },
     "/images/colophon/model-showcase-atv_webp": {
       "title": "ATV",
-      "what": "欧洲空间局长 10.3 米的自动转移飞行器——圆柱形货运飞船，带四片 X 形太阳能电池翼。",
+      "what": "ESA 的 10.3 米自动转移飞行器——带四台发动机的金色后锥位于绗缝白色货舱和对接环之下，四片铜色边缘的电池翼呈 X 形展开。",
       "where": "航天器 · 实际尺寸对比"
     },
     "/images/colophon/model-showcase-tianzhou_webp": {
       "title": "天舟",
-      "what": "中国长 10.6 米的货运飞船——推进舱之上的长货舱及其太阳能电池翼。",
+      "what": "中国的 10.6 米货运飞船——带橙色推力器组的白色推进圆筒、更大的灰白色货舱、中继天线和两片大电池翼。",
       "where": "航天器 · 实际尺寸对比"
     },
     "/images/colophon/model-lineup-launchers_webp": {
       "title": "运载火箭尺寸对比",
-      "what": "每一枚有模型的火箭，从星舰到水星-红石，按真实高度并排站在一位 1.75 米的人旁边。",
+      "what": "每一枚有模型的火箭，从 Starship 到水星-红石，按真实高度并排站在一位 1.75 米的人旁边。",
       "where": "航天器 · 实际尺寸对比"
     },
     "/images/colophon/model-lineup-spacecraft_webp": {
@@ -1894,117 +1819,102 @@
     },
     "/images/colophon/model-showcase-parker-solar-probe_webp": {
       "title": "Parker Solar Probe",
-      "what": "长 3 米的近日探测器——细长舱体上方是直径 2.3 米的碳复合材料热防护罩，另有两块小型冷却式太阳能电池翼。",
-      "where": "飞行 + 探索"
+      "what": "长 3 米的掠日探测器——直径 2.3 米的碳复合材料隔热罩由支杆撑在包金色隔热毯的舱体之上，带两片小型主动冷却太阳能电池阵和 0.6 米天线。",
+      "where": "航天器 · 航天器页面 + 飞行"
     },
     "/images/colophon/model-showcase-solar-orbiter_webp": {
       "title": "Solar Orbiter",
-      "what": "ESA 长 3.1 米的太阳观测器——向阳面是热防护罩，六块太阳能电池板翼展 18 米，另有 4.4 米长的仪器吊杆。",
-      "where": "飞行 + 探索"
+      "what": "ESA 的 3.1 米太阳观测器——带观测口舱门的分层黑色隔热罩位于银色隔热毯舱体前方，六块太阳能电池板展开 18 米，4.4 米仪器伸杆，背阴面有 1.5 米天线。",
+      "where": "航天器 · 航天器页面 + 飞行"
     },
     "/images/colophon/model-showcase-messenger_webp": {
       "title": "MESSENGER",
-      "what": "水星轨道器躲在 2.5 米高的陶瓷布遮阳罩后，带两块太阳能电池翼和 3.6 米长的磁强计吊杆。",
-      "where": "飞行 + 探索"
+      "what": "藏在 2.5 米陶瓷布遮阳罩后的水星轨道器——裸露推进剂贮箱的隔热毯箱形舱体、两片可转动的太阳能电池阵和 3.6 米磁强计伸杆。",
+      "where": "航天器 · 航天器页面 + 飞行"
     },
     "/images/colophon/model-showcase-magellan_webp": {
       "title": "Magellan",
-      "what": "长 6.4 米的金星雷达测绘器——十边形舱体、Star 48B 发动机和直径 3.7 米的高增益天线。",
-      "where": "飞行 + 探索"
+      "what": "长 6.4 米的金星雷达测绘器——十边形舱体下方是 Star 48B 发动机，另有包金色隔热毯的设备舱、3.7 米高增益天线和两块方形太阳能电池板。",
+      "where": "航天器 · 航天器页面 + 飞行"
     },
     "/images/colophon/model-showcase-akatsuki_webp": {
       "title": "Akatsuki",
-      "what": "JAXA 高 1.45 米的箱形金星轨道器，带两块太阳能电池翼和平板相控阵天线。",
-      "where": "飞行 + 探索"
+      "what": "JAXA 的 1.45 米包金色隔热毯的箱形金星轨道器——朝向金星的一面有相机甲板、平板相控阵天线、白色推力器杯，以及两组各由两块叠放板组成的电池阵。",
+      "where": "航天器 · 航天器页面 + 飞行"
     },
     "/images/colophon/model-showcase-dart_webp": {
       "title": "DART",
-      "what": "长 2.6 米的小行星撞击探测器——两块 8.5 米长的太阳能电池翼、NEXT-C 离子发动机和 DRACO 相机。",
-      "where": "飞行 + 探索"
+      "what": "2.6 米的小行星撞击飞船——两片 8.5 × 2.4 米的卷展式太阳能电池阵、NEXT-C 离子发动机、DRACO 相机、分配器中的 LICIACube 立方星和一副平板天线。",
+      "where": "航天器 · 航天器页面 + 飞行"
     },
     "/images/colophon/model-showcase-lucy_webp": {
       "title": "Lucy",
-      "what": "木星特洛伊小行星探测器，两端相距 16 米——两块直径约 7 米的圆形太阳能电池翼和直径 2 米的高增益天线。",
-      "where": "飞行 + 探索"
+      "what": "特洛伊小行星探测器，两端相距 16 米——两片直径约 7 米的圆形太阳能电池阵、一副 2 米高增益天线，以及带末端跟踪相机的仪器平台。",
+      "where": "航天器 · 航天器页面 + 飞行"
     },
     "/images/colophon/model-showcase-psyche-spacecraft_webp": {
       "title": "Psyche",
-      "what": "金属小行星轨道器——高 7.3 米，展开后太阳能电池翼共 25 米，另有 2 米长的仪器吊杆。",
-      "where": "飞行 + 探索"
+      "what": "金属小行星轨道器——长 7.3 米，带两片五板十字形太阳能电池阵（展开 25 米）、2 × 2 排列的四台霍尔推力器和 2 米仪器伸杆。",
+      "where": "航天器 · 航天器页面 + 飞行"
     },
     "/images/colophon/model-showcase-europa-clipper_webp": {
       "title": "Europa Clipper",
-      "what": "高 5 米的木卫轨道器，带 30.5 米的太阳能电池翼、直径 3.1 米的高增益天线和 8.5 米长的磁强计吊杆。",
-      "where": "飞行 + 探索"
+      "what": "5 米的木星卫星轨道器——3.1 米天线下方是推进舱和辐射防护舱，30.5 米太阳能电池阵带 REASON 雷达偶极天线，另有 8.5 米磁强计伸杆。",
+      "where": "航天器 · 航天器页面 + 飞行"
     },
     "/images/colophon/model-showcase-mars-express_webp": {
       "title": "Mars Express",
-      "what": "ESA 高 1.8 米的箱形舱体，两侧各一块 2.5 米长的太阳能电池翼（两端相距约 12 米），另有直径 1.6 米的高增益天线。",
-      "where": "飞行 + 探索"
+      "what": "ESA 的 1.8 米箱形舱体——边角包金色隔热毯，仪器在天底面，两组各四块窄板的电池翼和 1.6 米高增益天线。",
+      "where": "航天器 · 航天器页面 + 飞行"
     },
     "/images/colophon/model-showcase-maven_webp": {
       "title": "MAVEN",
-      "what": "NASA 高 3.47 米的火星大气轨道器——2.3 米的立方体舱体、两块翼尖带磁强计的海鸥翼式太阳能电池翼和直径 2 米的天线。",
-      "where": "飞行 + 探索"
+      "what": "NASA 的 3.47 米火星大气轨道器——2.3 米立方体舱体、伸杆上的载荷平台、翼尖带磁强计的海鸥翼式电池阵和 2 米天线。",
+      "where": "航天器 · 航天器页面 + 飞行"
     },
     "/images/colophon/model-showcase-mangalyaan_webp": {
       "title": "Mangalyaan",
-      "what": "ISRO 的火星轨道器任务——裹着金色包覆层的 1.5 米立方体，带三节式太阳能电池翼和直径 2.2 米的反射面。",
-      "where": "飞行 + 探索"
+      "what": "ISRO 的火星轨道器任务——包金箔的 1.5 米立方体，顶部是推进剂贮箱圆顶，伸杆上有三板电池阵，另一侧是 2.2 米反射面。",
+      "where": "航天器 · 航天器页面 + 飞行"
     },
     "/images/colophon/model-showcase-hope_webp": {
       "title": "Hope",
-      "what": "阿联酋 Emirates Mars Mission 轨道器——长 2.9 米的六边形舱体，带两块太阳能电池翼和直径 1.85 米的天线。",
-      "where": "飞行 + 探索"
+      "what": "阿联酋的 Emirates Mars Mission 轨道器——2.9 米舱体，前面是科学甲板，两组各三块板的电池翼，桁架支架上有 1.85 米天线。",
+      "where": "航天器 · 航天器页面 + 飞行"
     },
     "/images/colophon/model-showcase-mariner-9_webp": {
       "title": "Mariner 4、9 和 10（3 个型号）",
-      "what": "NASA 的八角形 Mariner 系列——Mariner 4 和 9 有四块带翼尖导流片的太阳能电池板；Mariner 10 有两块板、遮阳罩和 5.8 米长的磁强计吊杆。",
-      "where": "飞行 + 探索"
+      "what": "NASA 的八角形 Mariner 系列——Mariner 4 和 9 有四块带翼尖导流片的电池板（Mariner 9 带包箔的推进舱）；Mariner 10 有两块电池板、遮阳罩和 5.8 米磁强计伸杆。",
+      "where": "航天器 · 航天器页面 + 飞行"
     },
     "/images/colophon/model-showcase-lro_webp": {
       "title": "月球勘测轨道器",
-      "what": "NASA 高 3.9 米的月球测绘器——箱形舱体、一块 10.7 平方米的太阳能电池翼和可转向天线。",
-      "where": "飞行 + 探索"
+      "what": "NASA 的 3.9 米月球测绘器——金银色隔热毯的箱形舱体，天底面有两台 LROC 相机、LOLA、Diviner 和 Mini-RF，伸杆上有一片 10.7 平方米太阳能电池阵和一副可转向天线。",
+      "where": "航天器 · 航天器页面 + 飞行"
     },
     "/images/colophon/model-showcase-skylab_webp": {
       "title": "Skylab",
-      "what": "美国第一座空间站——轨道工作舱、气闸舱与对接适配器、带风车状电池板的太阳望远镜支架以及遮阳罩。",
-      "where": "飞行 + 探索"
-    },
-    "/images/colophon/model-probe-clementine_webp": {
-      "title": "Clementine、SMART-1、嫦娥一号和 Chandrayaan-1（4 个型号）",
-      "what": "同一套箱形舱体建模，做成四种尺寸——Clementine 1.9 米的舱体、SMART-1 的 1 米立方体、嫦娥一号和裹金色包覆层的 Chandrayaan-1——各有自己的太阳能电池翼和天线。",
-      "where": "飞行 + 探索"
-    },
-    "/images/colophon/model-probe-lunar-prospector_webp": {
-      "title": "Lunar Prospector",
-      "what": "覆满太阳能电池片的直径 1.36 米圆筒，带三根 2.5 米长的仪器吊杆。",
-      "where": "飞行 + 探索"
-    },
-    "/images/colophon/model-probe-luna-10_webp": {
-      "title": "Luna 10",
-      "what": "苏联长 1.5 米的加压圆筒，带四根鞭状天线和一根吊杆——第一个绕月飞行的探测器。",
-      "where": "飞行 + 探索"
+      "what": "修复后的美国首个空间站——黑色裙部的轨道工作舱，带单片电池翼和金色遮阳伞，气闸舱和对接适配器，以及展开成四叶风车状电池板的Apollo 望远镜装置。",
+      "where": "航天器 · 航天器页面 + 飞行"
     },
     "/images/colophon/model-probe-sputnik-1_webp": {
       "title": "Sputnik 1",
-      "what": "抛光的直径 58 厘米圆球，带半球接缝、36 颗螺栓和四根向后倾斜、长 2.4 米与 2.9 米的鞭状天线。",
-      "where": "飞行 + 探索"
+      "what": "抛光的 58 厘米球体，带半球接缝、36 颗螺栓和四根向后倾斜的 2.4 米与 2.9 米鞭状天线。",
+      "where": "飞行"
     },
     "/images/colophon/model-pad-apollo-lut_webp": {
-      "title": "发射台：阿波罗，LC-39",
+      "title": "发射台：Apollo，LC-39",
       "what": "土星五号发射台：高 380 英尺的脐带塔，摆臂在升空时脱落，另有火焰导流槽。尺寸取自维基百科转引的 NASA 数据。",
       "where": "飞行 · 发射台"
     },
     "/images/colophon/model-pad-shuttle_webp": {
-      "title": "发射台：航天飞机，LC-39",
+      "title": "发射台：Space Shuttle，LC-39",
       "what": "航天飞机发射台：固定勤务结构（含桅杆 350 英尺）、转到后方的回转勤务结构、高 290 英尺的水塔。主要高度取自维基百科，其余为大致数值。",
       "where": "飞行 · 发射台"
     },
     "/images/colophon/model-pad-sls_webp": {
       "title": "发射台：SLS，LC-39B",
-      "what": "阿尔忒弥斯发射台：火箭旁的移动发射器塔架和三座高大的避雷塔。尺寸为大致数值。",
+      "what": "阿尔忒弥斯发射台：火箭旁的移动发射器塔架（约 108 米；NASA 给出 345 至 355 英尺）和三座近 600 英尺的避雷塔。",
       "where": "飞行 · 发射台"
     },
     "/images/colophon/model-pad-soyuz_webp": {
@@ -2014,7 +1924,7 @@
     },
     "/images/colophon/model-pad-proton_webp": {
       "title": "发射台：质子号，拜科努尔",
-      "what": "带摆臂的固定勤务塔，摆臂在升空时收回，位于火焰导流槽旁。尺寸为大致数值。",
+      "what": "火焰坑上方只有火箭：60 米高的勤务塔在发射前后撤约 340 米（RussianSpaceWeb，质子号发射场）。避雷桅杆为大致数值。",
       "where": "飞行 · 发射台"
     },
     "/images/colophon/model-pad-f9-39a_webp": {
@@ -2024,7 +1934,7 @@
     },
     "/images/colophon/model-pad-f9-cat_webp": {
       "title": "发射台：猎鹰，SLC-40 与乘组塔",
-      "what": "2023 年建成乘组通道塔后的 SLC-40 的 SpaceX，运输起竖器在升空时倾倒离开。塔高为大致数值。",
+      "what": "2023 年建成乘组通道塔后的 SLC-40 的 SpaceX，运输起竖器在升空时倾倒离开。乘组塔约 300 英尺（91 米；FAA）。",
       "where": "飞行 · 发射台"
     },
     "/images/colophon/model-pad-f9-te_webp": {
@@ -2033,12 +1943,12 @@
       "where": "飞行 · 发射台"
     },
     "/images/colophon/model-pad-starbase_webp": {
-      "title": "发射台：星舰，星际基地",
+      "title": "发射台：Starship，星际基地",
       "what": "星际基地的发射塔，捕获臂张开。塔高为大致数值。",
       "where": "飞行 · 发射台"
     },
     "/images/colophon/model-pad-atlas-v_webp": {
-      "title": "发射台：宇宙神 V，SLC-41",
+      "title": "发射台：Atlas V，SLC-41",
       "what": "ULA 发射台：移动发射平台、脐带塔和四座避雷塔；垂直总装厂房在发射台之外，已省略。尺寸为大致数值。",
       "where": "飞行 · 发射台"
     },
@@ -2053,66 +1963,394 @@
       "where": "飞行 · 发射台"
     },
     "/images/colophon/model-pad-kourou-a6_webp": {
-      "title": "发射台：阿丽亚娜 6，库鲁",
+      "title": "发射台：Ariane 6，库鲁",
       "what": "ELA-4 发射台：脐带桅杆、两座避雷塔和退得很远的移动门架。尺寸为大致数值。",
       "where": "飞行 · 发射台"
     },
     "/images/colophon/model-pad-chinese-fst_webp": {
       "title": "发射台：中国的勤务塔",
-      "what": "酒泉、西昌、文昌和太原的固定勤务塔，工作平台在升空时折起。尺寸为大致数值。",
+      "what": "酒泉、西昌、文昌和太原的固定勤务塔，工作平台在升空时折起。酒泉的载人发射塔高 89.5 米外加 16 米避雷针（中国载人航天工程办公室），酒泉的每次发射都按此绘制；其余为大致数值。",
       "where": "飞行 · 发射台"
     },
     "/images/colophon/model-pad-tanegashima_webp": {
       "title": "发射台：种子岛",
-      "what": "吉信发射台：H-II 火箭的脐带塔和一座避雷塔。尺寸为大致数值。",
+      "what": "吉信发射台：65.5 米高的 H-II 移动发射台和一座 74.5 米的避雷塔（JAXA）。",
       "where": "飞行 · 发射台"
     },
     "/images/colophon/model-pad-sriharikota_webp": {
       "title": "发射台：斯里哈里科塔",
       "what": "ISRO 发射台：火箭旁的脐带塔和退得很远的移动勤务塔。尺寸为大致数值。",
       "where": "飞行 · 发射台"
-    }
-  },
-  "capsules": {
-    "/images/colophon/model-capsule-mercury-capsule_webp": {
-      "title": "水星舱",
-      "what": "钝形烧蚀隔热罩、瓦片状圆锥体和回收+天线舱段（Freedom 7…Faith 7）。",
-      "where": "地球轨道再入"
     },
-    "/images/colophon/model-capsule-gemini-capsule_webp": {
-      "title": "Gemini舱",
-      "what": "双座放大型水星舱，配备交会雷达鼻锥和适配器舱段。",
-      "where": "地球轨道再入"
+    "/images/colophon/model-showcase-vostok_webp": {
+      "title": "Vostok 和 Voskhod（2 个型号）",
+      "what": "仪器舱上直径 2.3 米的球体，高 4.55 米（Voskhod 5 米）——十六个橄榄色气瓶围成的环带配银色扎带，舱口和舷窗，顶部的天线环，Voskhod 还带制动火箭组件。",
+      "where": "航天器 · 实际尺寸对比 + 飞行"
     },
-    "/images/colophon/model-capsule-vostok-sphere_webp": {
-      "title": "Vostok",
-      "what": "球形Sharik下降舱——天线带和设备围圈；宇航员弹出并单独降落伞着陆。",
-      "where": "地球轨道再入"
+    "/images/colophon/model-showcase-mercury-capsule_webp": {
+      "title": "Mercury 返回舱",
+      "what": "装在制动火箭组件上的 3.3 米单座返回舱——锥面上的梯形舷窗和侧舱门，三枚用带子固定的制动火箭。",
+      "where": "航天器 · 实际尺寸对比 + 飞行"
     },
-    "/images/colophon/model-capsule-voskhod-sphere_webp": {
-      "title": "Voskhod",
-      "what": "同样的Sharik球形舱，现在通过桁架支架搭载固体推进剂软着陆减速包——机组人员乘坐它着陆到地面。",
-      "where": "地球轨道再入"
+    "/images/colophon/model-showcase-gemini_webp": {
+      "title": "Gemini",
+      "what": "长 5.74 米的双座飞船——带两个舱口和舷窗的鳞片状黑色再入锥体，下方是姿控、交会和回收各段以及制动适配器。",
+      "where": "航天器 · 实际尺寸对比 + 飞行"
     },
-    "/images/colophon/model-capsule-apollo-cm_webp": {
-      "title": "Apollo指挥舱",
-      "what": "经典的陡峭圆钝锥体，配备前向对接隧道（Apollo 7/9、Skylab、ASTP）。",
-      "where": "地球轨道再入"
+    "/images/colophon/model-showcase-mengzhou_webp": {
+      "title": "梦舟",
+      "what": "中国面向月球的 8.8 米载人飞船——带红色环带的灰银色锥形乘员舱，下方是带金色推力器框架的白色服务舱，两片长电池翼和四个发动机喷管。",
+      "where": "航天器 · 实际尺寸对比"
     },
-    "/images/colophon/model-capsule-soyuz-sa_webp": {
-      "title": "联盟号下降舱",
-      "what": "\"前灯\"钟形舱——球形基座隔热罩配锥形机组顶部。",
-      "where": "地球轨道再入"
+    "/images/colophon/model-showcase-apollo-lm_webp": {
+      "title": "Apollo 登月舱（实际尺寸）",
+      "what": "着陆后的登月舱——八角形下降级包着皱褶的金色和琥珀色箔片，立在四条包金箔的着陆腿上，上方是带两个三角形舷窗、RCS 四联装、交会雷达和 S 波段天线的多面体上升级。",
+      "where": "航天器 · 实际尺寸对比 + 飞行（下降）"
     },
-    "/images/colophon/model-capsule-dragon-capsule_webp": {
-      "title": "Crew Dragon",
-      "what": "流线型圆锥形船体，配备SuperDraco推进舱和PICA-X隔热罩（Inspiration4、Polaris Dawn）。",
-      "where": "地球轨道再入"
+    "/images/colophon/model-probe-nova-c_webp": {
+      "title": "Nova-C (IM-1 Odysseus)",
+      "what": "Intuitive Machines 的 4.3 米月球着陆器——1.57 米的六边形主体、六条着陆腿、下方的甲烷发动机和三块太阳能电池板。高度和宽度取自 Wikipedia；着陆腿张角和甲板为示意。",
+      "where": "飞行"
     },
-    "/images/colophon/model-capsule-shenzhou-reentry_webp": {
-      "title": "神舟再入舱",
-      "what": "一个宽大的联盟号血脉传承钟形舱——独特的浅银色舱体配灰色设备舱段（神舟一号及以后）。",
-      "where": "地球轨道再入"
+    "/images/colophon/model-showcase-chandrayaan1_webp": {
+      "title": "Chandrayaan-1",
+      "what": "ISRO 首个月球轨道器——带白色散热片和金圈仪器口的箱形舱体、金色伸杆上的 0.7 米天线，以及双杆轭上的一块太阳能电池板。",
+      "where": "航天器 · 航天器页面 + 飞行"
+    },
+    "/images/colophon/model-showcase-chandrayaan2_webp": {
+      "title": "Chandrayaan-2 轨道器",
+      "what": "搭载 Vikram 的轨道器——着陆器原位处有金色圆筒从顶甲板升起，散热器上覆有白色胶带贴片，还有一片双板太阳能电池翼。",
+      "where": "航天器 · 航天器页面 + 飞行"
+    },
+    "/images/colophon/model-showcase-change1_webp": {
+      "title": "嫦娥一号和二号（2 个型号）",
+      "what": "中国的月球轨道器——舱体下方的发动机喷管、银色嵌板、两副白色中继天线、臂上的 0.8 米可转向天线，以及金色轭上的两片三板电池翼。",
+      "where": "航天器 · 航天器页面 + 飞行"
+    },
+    "/images/colophon/model-showcase-clementine_webp": {
+      "title": "Clementine",
+      "what": "棱柱形月球测绘器——带相机和激光雷达口的传感器面、12 个姿控喷嘴、向下开口的 1.07 米天线，以及两组各两块板的电池翼。",
+      "where": "航天器 · 航天器页面 + 飞行"
+    },
+    "/images/colophon/model-showcase-kaguya_webp": {
+      "title": "Kaguya (SELENE)",
+      "what": "JAXA 的 4.8 米月球轨道器——前面是中继和 VLBI 子卫星，三脚架和桅杆上的高增益天线，以及金色桁架上由三块蓝色板组成的太阳能电池翼。",
+      "where": "航天器 · 航天器页面 + 飞行"
+    },
+    "/images/colophon/model-showcase-luna10_webp": {
+      "title": "Luna 10",
+      "what": "苏联的 1.5 米轨道器——白色格栅裙内的制动发动机舱、奶油色推进剂贮箱，以及带四根鞭状天线和两个蘑菇形传感器的抛光增压仪器圆筒。",
+      "where": "航天器 · 航天器页面 + 飞行"
+    },
+    "/images/colophon/model-showcase-lunar-prospector_webp": {
+      "title": "Lunar Prospector",
+      "what": "覆满太阳能电池的 1.36 米圆筒，顶着白色头锥，带三根 2.5 米仪器伸杆。",
+      "where": "航天器 · 航天器页面 + 飞行"
+    },
+    "/images/colophon/model-showcase-smart-1_webp": {
+      "title": "SMART-1",
+      "what": "ESA 的 1 米离子发动机轨道器——万向臂上的 PPS-1350 推力器、带相机和光谱仪的仪器环、0.3 米天线，以及两组各三块板的电池翼。",
+      "where": "航天器 · 航天器页面 + 飞行"
+    },
+    "/images/colophon/model-showcase-lunar-orbiter-1_webp": {
+      "title": "Lunar Orbiter 1–5（5 个型号）",
+      "what": "NASA 的五个相机轨道器——明亮的隔热外壳包着带 80 毫米和 610 毫米镜头的相机，桁架腿上的四个推进剂贮箱、四块太阳能电池板，以及伸杆上的 1 米天线。",
+      "where": "航天器 · 航天器页面"
+    },
+    "/images/colophon/model-showcase-luna-9_webp": {
+      "title": "Luna 9（实际尺寸）",
+      "what": "着陆后的 58 厘米返回舱——密封的仪器半球立在四片摊开的花瓣之间，顶部有电视相机头和四根杆状天线。",
+      "where": "航天器 · 航天器页面 + 飞行（下降）"
+    },
+    "/images/colophon/model-showcase-luna-16_webp": {
+      "title": "Luna 16 和 24（2 个型号）",
+      "what": "采样返回着陆器——包金箔的舱体夹在两个环形贮箱之间，带四个压力球和四条着陆腿、钻探装置，顶部是 2 米球形顶的上升级。",
+      "where": "航天器 · 航天器页面 + 飞行（下降）"
+    },
+    "/images/colophon/model-showcase-lunokhod-1_webp": {
+      "title": "Lunokhod 1 和 2（2 个型号）",
+      "what": "苏联的月球车——八个金属网轮上的圆形车体，顶着打开的穹顶盖，后部是带散热片的钋-210 热源、法国的角反射器和四根鞭状天线。",
+      "where": "航天器 · 航天器页面 + 飞行（下降）"
+    },
+    "/images/colophon/model-showcase-change-3_webp": {
+      "title": "嫦娥三号和四号（2 个型号）",
+      "what": "中国的着陆器——四条着陆腿上的方形金色舱体，带月球车坡道、倾斜的太阳能电池翼，以及载着可转向天线的相机桅杆。",
+      "where": "航天器 · 航天器页面 + 飞行（下降）"
+    },
+    "/images/colophon/model-showcase-change-5_webp": {
+      "title": "嫦娥五号和六号（2 个型号）",
+      "what": "采样返回组合体——着陆器上的金色八角形上升器，旁边是钻探塔、折叠的采样臂和样品容器。",
+      "where": "航天器 · 航天器页面 + 飞行（下降）"
+    },
+    "/images/colophon/model-showcase-vikram-cy3_webp": {
+      "title": "Vikram（Chandrayaan-2 和 -3，2 个型号）",
+      "what": "处于 Chandrayaan-3 构型的 ISRO 着陆器——三个侧面和顶部有四台发动机和太阳能电池板，坡道已放下，Pragyan 月球车走到一半。",
+      "where": "航天器 · 航天器页面 + 飞行（下降）"
+    },
+    "/images/colophon/model-showcase-slim_webp": {
+      "title": "SLIM（实际尺寸）",
+      "what": "JAXA 的“月球狙击手”——1.5 × 1.5 × 2 米的棱柱包着皱褶的金箔，发动机端有金色穹顶，一侧有一条太阳能电池带，支柱上有五个圆形压缩垫。",
+      "where": "航天器 · 航天器页面 + 飞行（下降）"
+    },
+    "/images/colophon/model-showcase-beresheet_webp": {
+      "title": "Beresheet（实际尺寸）",
+      "what": "SpaceIL 的着陆器，宽 2 米、高 1.5 米——金边黑色甲板位于带四个铜色贮箱的银色管架底座之上，有四条长着陆腿和倾斜的蓝色太阳能电池板。",
+      "where": "航天器 · 航天器页面 + 飞行（下降）"
+    },
+    "/images/colophon/model-showcase-blue-moon-mk1_webp": {
+      "title": "Blue Moon MK1（实际尺寸）",
+      "what": "Blue Origin 的 8.05 米着陆器——金色和琥珀色箔片的舱体位于浅色桁架底座上，载着 BE-7，另有梯形桁架腿、两条高大的太阳能电池带和顶部开放的八角形笼架。",
+      "where": "航天器 · 航天器页面 + 飞行（下降）"
+    },
+    "/images/colophon/model-showcase-pragyan_webp": {
+      "title": "Pragyan",
+      "what": "沿 Vikram 坡道驶下的 ISRO 六轮月球车。",
+      "where": "航天器 · 航天器页面 + 飞行（下降）"
+    },
+    "/images/colophon/model-showcase-yutu_webp": {
+      "title": "玉兔号和玉兔二号（2 个型号）",
+      "what": "中国的月球车——两侧各有摇臂-转向架，倾斜的太阳能电池板下是包金色隔热毯的保温箱，另有相机桅杆、折在机头下的机械臂和后部的可转向天线。",
+      "where": "航天器 · 航天器页面"
+    },
+    "/images/colophon/model-showcase-viking-1_webp": {
+      "title": "Viking 着陆器（3 个型号）",
+      "what": "三脚架腿的 NASA 着陆器——六边形甲板，边宽交替为 1.09 米和 0.56 米，带 18 个喷嘴的金色末段下降舱，长前侧有采样臂和相机。",
+      "where": "航天器 · 航天器页面 + 飞行（下降）"
+    },
+    "/images/colophon/model-showcase-mars-3_webp": {
+      "title": "Mars 2、3 和 6 着陆器（3 个型号）",
+      "what": "苏联的白色球体立在四片打开的花瓣上——由四根杆组成的天线冠、两只立体相机“耳朵”，以及旁边用绳索系着的带滑板的 PrOP-M 月球车。",
+      "where": "航天器 · 航天器页面 + 飞行（下降）"
+    },
+    "/images/colophon/model-showcase-phoenix_webp": {
+      "title": "Phoenix 和 Mars Polar Lander（2 个型号）",
+      "what": "甲板上的太阳能着陆器——TEGA 的两个烘箱、MECA 的湿化学单元、带铲斗的机械臂、桁架塔上的立体相机，以及带激光雷达的气象桅杆。",
+      "where": "航天器 · 航天器页面 + 飞行（下降）"
+    },
+    "/images/colophon/model-showcase-insight_webp": {
+      "title": "InSight（实际尺寸）",
+      "what": "地球物理着陆器——1.8 米机械臂伸向地面，SEIS 在银色防风隔热罩之下，旁边展开了 HP3 鼹鼠。",
+      "where": "航天器 · 航天器页面 + 飞行（下降）"
+    },
+    "/images/colophon/model-showcase-schiaparelli_webp": {
+      "title": "Schiaparelli（实际尺寸）",
+      "what": "地面上的 ESA 进入演示器——银金色环带围着的扁平深色蜂窝压缩盘、支柱上的三个推进剂贮箱，以及带金色 UHF 线圈的 DREAMS 平台。",
+      "where": "航天器 · 航天器页面 + 飞行（下降）"
+    },
+    "/images/colophon/model-showcase-beagle2_webp": {
+      "title": "Beagle 2（实际尺寸）",
+      "what": "打开的蛤壳式着陆器——四片深色太阳能花瓣围着金色盖形天线，金色碗形底座中机械臂抬起，还有装仪器的 PAW 圆筒。",
+      "where": "航天器 · 航天器页面 + 飞行（下降）"
+    },
+    "/images/colophon/model-showcase-curiosity_webp": {
+      "title": "Curiosity（实际尺寸）",
+      "what": "MSL 漫游车——摇臂-转向架上的六个轮子、带 ChemCam 头和 Mastcam 一对相机的桅杆、两个白色热交换器之间带散热片的 MMRTG，以及横在前部的收起的机械臂。",
+      "where": "航天器 · 航天器页面 + 飞行（下降）"
+    },
+    "/images/colophon/model-showcase-spirit_webp": {
+      "title": "Spirit 和 Opportunity（2 个型号）",
+      "what": "火星探测漫游车——扁平蓝黑色太阳能甲板下的金色保温箱、四片翼板、带相机杆的 Pancam 桅杆、杆上的圆形金色天线和六个小轮。",
+      "where": "航天器 · 航天器页面 + 飞行（下降）"
+    },
+    "/images/colophon/model-showcase-perseverance_webp": {
+      "title": "Perseverance",
+      "what": "沿用 Curiosity 布局，轮子换成直齿——Mastcam-Z 和 SuperCam 头、大型取芯转台、前部下方的封存舱和腹下的 Ingenuity。",
+      "where": "航天器 · 航天器页面 + 飞行（下降）"
+    },
+    "/images/colophon/model-showcase-zhurong_webp": {
+      "title": "祝融",
+      "what": "中国的漫游车——宽大的银色甲板带四片蝶形太阳能电池翼，高桅杆上有相机盒，两副小天线和高腿上的带肋车轮。",
+      "where": "航天器 · 航天器页面 + 飞行（下降）"
+    },
+    "/images/colophon/model-showcase-sojourner_webp": {
+      "title": "Sojourner",
+      "what": "第一辆火星漫游车——摇臂-转向架上的铝轮带不锈钢齿，深色太阳能电池板下是金褐色保温箱，另有立体相机一对和 APXS 圆筒。",
+      "where": "航天器 · 航天器页面"
+    },
+    "/images/colophon/model-showcase-exomars-rosalind-franklin_webp": {
+      "title": "ExoMars Rosalind Franklin",
+      "what": "ESA 的步行底盘漫游车——每条腿一个轮子、两片宽太阳能电池翼、桅杆上的金色 PanCam 杆和前部的钻探箱。",
+      "where": "航天器 · 航天器页面"
+    },
+    "/images/colophon/model-showcase-lrv-apollo_webp": {
+      "title": "Apollo 月球车",
+      "what": "开放的铝框架，金属网轮上带钛制人字齿，配黄褐色挡泥板——两个管状座椅、T 形手柄和控制台、伞形天线和后部的工具托盘。",
+      "where": "航天器 · 航天器页面"
+    },
+    "/images/colophon/model-showcase-mro_webp": {
+      "title": "Mars Reconnaissance Orbiter",
+      "what": "NASA 的火星测绘器——两片 5.35 × 2.53 米的太阳能电池阵、3 米高增益天线、1.6 米 HiRISE 镜筒和 10 米 SHARAD 偶极天线。天线、HiRISE 和 SHARAD 的尺寸取自 NASA，电池阵尺寸取自 Wikipedia；舱体为示意。",
+      "where": "航天器 · 航天器页面 + 飞行"
+    },
+    "/images/colophon/model-showcase-mariner-2_webp": {
+      "title": "Mariner 2",
+      "what": "NASA 的 3.66 米金星飞掠探测器——1.04 米六边形舱体、两块太阳能电池板（其中一块带太阳光压延伸部，宽 5.05 米）、臂上的天线和金字塔形桅杆顶部的全向天线。尺寸取自 NASA NSSDCA；天线和桅杆为示意。",
+      "where": "航天器 · 航天器页面 + 飞行"
+    },
+    "/images/colophon/model-showcase-bepicolombo_webp": {
+      "title": "BepiColombo（实际尺寸）",
+      "what": "长 6.4 米的叠装巡航构型——带四台离子推力器和两片四板黑蓝色电池翼的水星转移舱，在遮阳罩圆筒内携带水星轨道器和 Mio。",
+      "where": "航天器 · 航天器页面 + 飞行"
+    },
+    "/images/colophon/model-showcase-exomars-tgo_webp": {
+      "title": "ExoMars Trace Gas Orbiter",
+      "what": "ESA 与 Roscosmos 的轨道器——发动机喷管和天底面设备，背地面上的 NOMAD 和 ACS 光谱仪，两组各两块板的电池阵，以及伸杆上的 2.2 米天线。",
+      "where": "航天器 · 航天器页面"
+    },
+    "/images/colophon/model-showcase-mars-odyssey_webp": {
+      "title": "Mars Odyssey",
+      "what": "NASA 的轨道器——边角折叠的隔热毯翼片、前面的 THEMIS 和相机、载着伽马射线光谱仪的 6 米桁架伸杆、一组三板电池阵和 1.3 米天线。",
+      "where": "航天器 · 航天器页面"
+    },
+    "/images/colophon/model-showcase-mars2-orbiter_webp": {
+      "title": "Mars 2 和 3 轨道器（2 个型号）",
+      "what": "苏联的 M-71 舱体——带球体的条纹贮箱筒、托着黑色气动外壳锥体和顶部着陆器舱的环架、2.5 米浅碟天线和两块大矩形太阳能电池板。",
+      "where": "航天器 · 航天器页面"
+    },
+    "/images/colophon/model-showcase-phobos-2_webp": {
+      "title": "Phobos 2",
+      "what": "苏联的探测器——发动机周围四个白色推进剂球、环形仪器带、带设备箱的中央核心，以及伸杆上的两块水平太阳能电池板。",
+      "where": "航天器 · 航天器页面"
+    },
+    "/images/colophon/model-showcase-tianwen-1_webp": {
+      "title": "天问一号",
+      "what": "顶部带进入舱的中国火星轨道器——两组三板电池阵、约 2.5 米的中增益天线和细长的天线杆。",
+      "where": "航天器 · 航天器页面"
+    },
+    "/images/colophon/model-showcase-viking1-orbiter_webp": {
+      "title": "Viking 轨道器",
+      "what": "白色穹顶壳下装着着陆器舱的轨道器——八个舱位的八角形舱体环、轭上的四块太阳能电池板、1.5 米金色天线，以及带两台相机的扫描平台。",
+      "where": "航天器 · 航天器页面"
+    },
+    "/images/colophon/model-showcase-hubble_webp": {
+      "title": "Hubble（实际尺寸）",
+      "what": "天文台——皱褶的银色遮光罩带打开的孔径门，以及两片刚性太阳能电池翼。",
+      "where": "航天器 · 航天器页面"
+    },
+    "/images/colophon/model-showcase-jwst_webp": {
+      "title": "JWST（实际尺寸）",
+      "what": "三脚架上的十八块金色六边形镜面，位于五层遮阳罩之上。",
+      "where": "航天器 · 航天器页面"
+    },
+    "/images/colophon/model-showcase-chandra_webp": {
+      "title": "Chandra（实际尺寸）",
+      "what": "X 射线天文台——一根细长渐缩的镜筒和两片太阳能电池翼。",
+      "where": "航天器 · 航天器页面"
+    },
+    "/images/colophon/model-showcase-spitzer_webp": {
+      "title": "Spitzer",
+      "what": "红外望远镜——靠着低温恒温器筒的一块倾斜太阳能电池板。",
+      "where": "航天器 · 航天器页面"
+    },
+    "/images/colophon/model-showcase-kepler_webp": {
+      "title": "Kepler",
+      "what": "猎星者——包琥珀色箔片的镜筒和固定太阳能电池板。",
+      "where": "航天器 · 航天器页面"
+    },
+    "/images/colophon/model-showcase-tess_webp": {
+      "title": "TESS",
+      "what": "凌星巡天飞行器——紧凑舱体上的四台带遮光罩相机。",
+      "where": "航天器 · 航天器页面"
+    },
+    "/images/colophon/model-showcase-gaia_webp": {
+      "title": "Gaia（实际尺寸）",
+      "what": "ESA 的天体测量天文台——舱体周围直径 10 米的遮阳罩裙。",
+      "where": "航天器 · 航天器页面"
+    },
+    "/images/colophon/model-showcase-euclid_webp": {
+      "title": "Euclid",
+      "what": "ESA 的暗宇宙望远镜——太阳能电池阵遮罩后方的挡光板。",
+      "where": "航天器 · 航天器页面"
+    },
+    "/images/colophon/model-showcase-xmm-newton_webp": {
+      "title": "XMM-Newton（实际尺寸）",
+      "what": "ESA 的 X 射线望远镜——一根长筒，末端是镜组面。",
+      "where": "航天器 · 航天器页面"
+    },
+    "/images/colophon/model-showcase-compton-gro_webp": {
+      "title": "Compton Gamma Ray Observatory",
+      "what": "伽马射线天文台——带探测器的箱形仪器甲板。",
+      "where": "航天器 · 航天器页面"
+    },
+    "/images/colophon/model-showcase-hitomi_webp": {
+      "title": "Hitomi",
+      "what": "JAXA 的 X 射线卫星——载着望远镜的伸展式光学平台。",
+      "where": "航天器 · 航天器页面"
+    },
+    "/images/colophon/model-showcase-spektr-rg_webp": {
+      "title": "Spektr-RG",
+      "what": "俄德 X 射线天文台——ART-XC 镜筒旁边是七模块的 eROSITA。",
+      "where": "航天器 · 航天器页面"
+    },
+    "/images/colophon/model-showcase-voyager-1_webp": {
+      "title": "Voyager 1 和 2（2 个型号）",
+      "what": "Grand Tour 舱体——十边形舱体上的 3.7 米天线、三台发电机首尾相接的 RTG 伸杆、带扫描平台的科学伸杆和 13 米磁强计伸杆。",
+      "where": "航天器 · 航天器页面 + 飞行"
+    },
+    "/images/colophon/model-showcase-pioneer-10_webp": {
+      "title": "Pioneer 10 和 11（2 个型号）",
+      "what": "自旋稳定的一对探测器——设备舱上的 2.74 米天线、两根夹角 120 度的 3 米 RTG 伸杆和 6.6 米磁强计伸杆。",
+      "where": "航天器 · 航天器页面 + 飞行"
+    },
+    "/images/colophon/model-showcase-juno_webp": {
+      "title": "Juno（实际尺寸）",
+      "what": "木星极轨道器——舱体下方的钛制辐射防护舱、顶部的 2.5 米天线和三片夹角 120 度的太阳能电池翼。",
+      "where": "航天器 · 航天器页面 + 飞行"
+    },
+    "/images/colophon/model-showcase-juice_webp": {
+      "title": "JUICE（实际尺寸）",
+      "what": "ESA 的木星冰卫星轨道器——推力锥上的白色贮箱裙、固定的 2.5 米天线、两组各三块 3.9 × 2.2 米板的电池翼和 10.6 米磁强计伸杆。",
+      "where": "航天器 · 航天器页面 + 飞行"
+    },
+    "/images/colophon/model-showcase-dawn_webp": {
+      "title": "Dawn（实际尺寸）",
+      "what": "探访灶神星和谷神星的离子发动机轨道器——三台离子推力器、1.24 米天线和两组各五块板、展开 19.7 米的电池翼。",
+      "where": "航天器 · 航天器页面 + 飞行"
+    },
+    "/images/colophon/model-showcase-ulysses_webp": {
+      "title": "Ulysses（实际尺寸）",
+      "what": "太阳极轨探测器——顶部的 1.65 米天线、侧面支架上带散热片的 GPHS-RTG 和一根实验伸杆。",
+      "where": "航天器 · 航天器页面 + 飞行"
+    },
+    "/images/colophon/model-showcase-giotto_webp": {
+      "title": "Giotto（实际尺寸）",
+      "what": "飞掠哈雷彗星的探测器——由带金色环带的深色太阳能电池条组成的圆筒、顶部的惠普尔防尘罩，以及白色锥形支座上倾斜的 1.47 米消旋天线。",
+      "where": "航天器 · 航天器页面 + 飞行"
+    },
+    "/images/colophon/model-showcase-cassini_webp": {
+      "title": "Cassini–Huygens（实际尺寸）",
+      "what": "土星轨道器——带两台主发动机的金色十边形舱体、4 米高增益天线、伸杆上的三台 RTG，以及侧面桁架上的Huygens 探测器。",
+      "where": "航天器 · 航天器页面 + 飞行"
+    },
+    "/images/colophon/model-showcase-galileo_webp": {
+      "title": "Galileo（实际尺寸）",
+      "what": "双自旋木星轨道器——带扫描平台的消旋段、带百叶窗的自旋段圆筒、伞形高增益天线、两根 RTG 伸杆和 10.9 米磁强计伸杆。",
+      "where": "航天器 · 航天器页面 + 飞行"
+    },
+    "/images/colophon/model-showcase-rosetta_webp": {
+      "title": "Rosetta（实际尺寸）",
+      "what": "银灰色箔片包裹的箱形舱体，带黑色和金色贴片，2.2 米天线、两片 14 米的五板太阳能电池翼，后壁上是 Philae。",
+      "where": "航天器 · 航天器页面 + 飞行"
+    },
+    "/images/colophon/model-showcase-hayabusa_webp": {
+      "title": "Hayabusa 和 Hayabusa2（2 个型号）",
+      "what": "小行星采样返回飞行器——波纹管上的采样喇叭、四台离子发动机、返回舱和三板电池翼；Hayabusa2 增加了携带式撞击器和 MINERVA-II 跳跃探测器。",
+      "where": "航天器 · 航天器页面 + 飞行"
+    },
+    "/images/colophon/model-showcase-osiris-rex_webp": {
+      "title": "OSIRIS-REx（实际尺寸）",
+      "what": "贝努采样返回飞行器——1.2 米天线、两侧各一块 1.9 × 2.4 米太阳能电池板，以及伸向前方的 3.35 米 TAGSAM 机械臂。",
+      "where": "航天器 · 航天器页面 + 飞行"
+    },
+    "/images/colophon/model-showcase-venera-7_webp": {
+      "title": "Venera 7 和 13（2 个型号）",
+      "what": "苏联的金星舱体——带成排孔洞的白色发动机圆筒、露出球体的贮箱舱、六根撑着烧蚀外壳下降球的支柱、桅杆上的网状天线和两片太阳能电池翼。",
+      "where": "航天器 · 航天器页面 + 飞行"
+    },
+    "/images/colophon/model-showcase-vega-1_webp": {
+      "title": "Vega 1 和 2（2 个型号）",
+      "what": "金星与哈雷彗星探测舱体——金星号布局，下降球顶部装有气球罐。",
+      "where": "航天器 · 航天器页面 + 飞行"
     }
   },
   "canvas2d": {

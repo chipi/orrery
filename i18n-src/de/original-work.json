@@ -1100,77 +1100,12 @@
     "/images/colophon/craft-cassini_webp": {
       "title": "Cassini–Huygens",
       "what": "Hochgewinn-Parabolantenne, RTG-Auslegern und die Huygens-Sonde – Saturns Orbiter.",
-      "where": "Erkunden + Fliegen"
-    },
-    "/images/colophon/craft-voyager-1_webp": {
-      "title": "Voyager",
-      "what": "3,7-m-Antenne, Magnetometer-Ausleger und RTG-Fachwerk – das Raumschiff der Grand Tour.",
-      "where": "Erkunden + Fliegen"
-    },
-    "/images/colophon/craft-galileo_webp": {
-      "title": "Galileo",
-      "what": "Doppelwellen-Bus mit eingefasster Hochgewinn-Regenschirm-Antenne.",
-      "where": "Erkunden + Fliegen"
+      "where": "Fliegen · Start + Reiseflug"
     },
     "/images/colophon/craft-new-horizons_webp": {
       "title": "New Horizons",
       "what": "Kompakter dreieckiger Bus mit einer einzigen Schüssel — die Pluto-Vorbeiflug-Sonde.",
-      "where": "Erkunden + Fliegen"
-    },
-    "/images/colophon/craft-pioneer-10_webp": {
-      "title": "Pioneer",
-      "what": "Spinverstärkter Reflektor, RTG-Ausleger und die eingravierte Plakette.",
-      "where": "Erkunden + Fliegen"
-    },
-    "/images/colophon/craft-juno_webp": {
-      "title": "Juno",
-      "what": "Drei riesige Solarflügel um einen sechskantigen Bus — Jupiterpolar-Orbiter.",
-      "where": "Erkunden + Fliegen"
-    },
-    "/images/colophon/craft-bepicolombo_webp": {
-      "title": "BepiColombo",
-      "what": "Gestapeltes Transfermodul + Merkur-Orbiter mit Ionentriebwerken.",
-      "where": "Erkunden + Fliegen"
-    },
-    "/images/colophon/craft-dawn_webp": {
-      "title": "Dawn",
-      "what": "Ionenantrieb-Bus mit breiten Solarflügeln — Vesta- + Ceres-Orbiter.",
-      "where": "Erkunden + Fliegen"
-    },
-    "/images/colophon/craft-giotto_webp": {
-      "title": "Giotto",
-      "what": "Trommelförmige, spinstabilisierte Sonde mit Staubschild — Vorbeiflug am Halleyschen Kometen.",
-      "where": "Erkunden + Fliegen"
-    },
-    "/images/colophon/craft-hayabusa2_webp": {
-      "title": "Hayabusa2",
-      "what": "Kastenförmiger Bus mit Solarpanelen und Probennahmehorn — Asteroid Ryugu.",
-      "where": "Erkunden + Fliegen"
-    },
-    "/images/colophon/craft-juice_webp": {
-      "title": "JUICE",
-      "what": "Kreuzförmige Solarmodule auf einem kompakten Bus — Orbiter der Eismonde des Jupiter.",
-      "where": "Fliegen + Erkunden"
-    },
-    "/images/colophon/craft-rosetta_webp": {
-      "title": "Rosetta",
-      "what": "14-m-Sonnensegel um einen Kometenjäger-Bus + Philae-Lander.",
-      "where": "Fliegen + Erkunden"
-    },
-    "/images/colophon/craft-ulysses_webp": {
-      "title": "Ulysses",
-      "what": "RTG-angetriebener Sonnenpolarsonde mit einer einzelnen Antenne.",
-      "where": "Fliegen + Erkunden"
-    },
-    "/images/colophon/craft-vega-1_webp": {
-      "title": "Vega",
-      "what": "Sowjetischer Venus-Vorbeiflug + Ballonmutterschiff mit steuerbarer Antenne.",
-      "where": "Fliegen + Erkunden"
-    },
-    "/images/colophon/craft-venera-13_webp": {
-      "title": "Venera 13",
-      "what": "Sowjetischer Venus-Lander — toroidale Aerobremse und Landerring.",
-      "where": "Fliegen + Erkunden"
+      "where": "Fliegen · Start + Reiseflug"
     },
     "/images/colophon/model-launcher-generic_webp": {
       "title": "Generischer Träger",
@@ -1547,16 +1482,6 @@
       "what": "Blue Origins hoher Lander — zentraler Tank auf einem Vier-Bein-Gestell.",
       "where": "Fliegen · Kreuzfahrt/Annäherung"
     },
-    "/images/colophon/model-cruise-hayabusa1_webp": {
-      "title": "Hayabusa Kreuzfahrt",
-      "what": "JAXAs Probenrückgabe-Bus — Solarflügel, ein Samplerschacht und Ionenantriebe.",
-      "where": "Fliegen · Kreuzfahrt/Annäherung"
-    },
-    "/images/colophon/model-cruise-osiris-rex_webp": {
-      "title": "OSIRIS-REx Kreuzfahrt",
-      "what": "Kastenförmiger Bus mit V-förmig angewinkelten Solarflügeln und dem ausgefahrenen TAGSAM-Sammlersystem.",
-      "where": "Fliegen · Kreuzfahrt/Annäherung"
-    },
     "/images/colophon/model-cruise-near-shoemaker_webp": {
       "title": "NEAR Shoemaker",
       "what": "Orbiter-Bus mit vier feststehenden Solarpanelen in Kreuzform und einer feststehenden Antenne.",
@@ -1644,22 +1569,22 @@
     },
     "/images/colophon/model-launcher-long-march-3a_webp": {
       "title": "Long March 3A",
-      "what": "Kern- und Zweitstufe, über einem offenen Gitter heiß getrennt, unter einer kryogenen Oberstufe und einer 3,35-m-Verkleidung, ohne Booster (Chang’e 1).",
+      "what": "Kern und zweite Stufe per Heißstufentrennung über einem offenen Gitterrohr-Zwischenstück, darüber eine kryogene dritte Stufe und eine 3,35-m-Nutzlastverkleidung, ohne Strap-ons (Chang’e 1).",
       "where": "Fliegen · Start/Aufstieg"
     },
     "/images/colophon/model-launcher-long-march-7_webp": {
       "title": "Long March 7",
-      "what": "Die 3,35-m-Kerosinrakete der CALT für die Tianzhou-Frachter — Kernstufe, Zweitstufe und vier 2,25-m-Booster.",
+      "what": "Die 3,35-m-Kerosinrakete der CALT für die Tianzhou-Frachter – ein Kern, eine zweite Stufe und vier 2,25-m-Strap-on-Booster.",
       "where": "Fliegen · Start/Aufstieg"
     },
     "/images/colophon/model-launcher-delta-ii_webp": {
       "title": "Delta II",
-      "what": "Türkisfarbene, von Thor abgeleitete Erststufe, umringt von neun weißen Feststoffboostern, unter einer 2,9-m-Verkleidung mit Einschnürung.",
+      "what": "Türkisfarbene, von Thor abgeleitete erste Stufe, ringsum neun weiße Feststoffbooster, darüber eine Nutzlastverkleidung mit 2,9 m Durchmesser und Bootsheck.",
       "where": "Fliegen · Start/Aufstieg"
     },
     "/images/colophon/model-launcher-atlas-centaur_webp": {
       "title": "Atlas-Centaur",
-      "what": "Atlas mit Stahlballontank und Anderthalbstufen-Prinzip unter der weißen Centaur-Oberstufe und der Nutzlastverkleidung (Mariner 9 und 10, Pioneer 10 und 11).",
+      "what": "Die Stahlballon-Atlas-Stufe mit anderthalb Stufen unter der weißen Centaur-Oberstufe und der Nutzlastverkleidung (Mariner 9 und 10, Pioneer 10 und 11).",
       "where": "Fliegen · Start/Aufstieg"
     },
     "/images/colophon/model-launcher-atlas-agena_webp": {
@@ -1674,47 +1599,47 @@
     },
     "/images/colophon/model-launcher-titan-iiie-centaur_webp": {
       "title": "Titan IIIE-Centaur",
-      "what": "Titan-Kern mit zwei fünfsegmentigen Feststoffboostern, einem Zwischenstück und der Centaur in ihrer Verkleidung (Viking, Voyager).",
+      "what": "Titan-Kern mit zwei Feststoffboostern aus fünf Segmenten, einem Zwischenstück und der Centaur in ihrer Verkleidung (Viking, Voyager).",
       "where": "Fliegen · Start/Aufstieg"
     },
     "/images/colophon/model-launcher-titan-ivb-centaur_webp": {
       "title": "Titan IVB-Centaur",
-      "what": "Titan-Kern mit zwei langen Feststoffbrennkammern unter einer 20-m-Verkleidung, die die Centaur umschließt (Cassini).",
+      "what": "Titan-Kern mit zwei langen Feststofftriebwerken unter einer 20-m-Verkleidung, die die Centaur umschließt (Cassini).",
       "where": "Fliegen · Start/Aufstieg"
     },
     "/images/colophon/model-launcher-falcon-heavy_webp": {
       "title": "Falcon Heavy",
-      "what": "Drei Falcon-9-Kerne nebeneinander — Seitenbooster mit Nasenkegeln, Gitterrudern und Landebeinen und ein Mittelkern mit Oberstufe und Verkleidung.",
+      "what": "Drei Falcon-9-Kerne nebeneinander – Seitenbooster mit Nasenkegeln, Gitterflossen und Landebeinen sowie ein Mittelkern mit Oberstufe und Verkleidung.",
       "where": "Fliegen · Start/Aufstieg"
     },
     "/images/colophon/model-launcher-athena-ii_webp": {
       "title": "Athena II",
-      "what": "Reiner Feststoffstapel — zwei Castor-120-Stufen, eine dritte Stufe und eine sich verjüngende Verkleidung (Lunar Prospector).",
+      "what": "Reiner Feststoffstapel – zwei Castor-120-Stufen, eine dritte Stufe und eine sich verjüngende Verkleidung (Lunar Prospector).",
       "where": "Fliegen · Start/Aufstieg"
     },
     "/images/colophon/model-launcher-delta-iv-heavy_webp": {
       "title": "Delta IV Heavy",
-      "what": "Drei Common Booster Cores nebeneinander, der mittlere mit der kryogenen Oberstufe und einer 19-m-Verkleidung (Parker Solar Probe).",
+      "what": "Drei gleiche Boosterkerne nebeneinander, der mittlere mit der kryogenen Oberstufe und einer 19-m-Verkleidung (Parker Solar Probe).",
       "where": "Fliegen · Start/Aufstieg"
     },
     "/images/colophon/model-launcher-new-glenn_webp": {
       "title": "New Glenn",
-      "what": "Ein einziger 7-m-Stab — eine Erststufe mit sieben Triebwerken, Landebeinen und Strakes unter einer 7-m-Spitzbogenverkleidung (Blue Moon MK1).",
+      "what": "Ein einzelner 7-m-Stab – eine erste Stufe mit sieben Triebwerken, Landebeinen und Strakes unter einer 7-m-Ogivalverkleidung (Blue Moon MK1).",
       "where": "Fliegen · Start/Aufstieg"
     },
     "/images/colophon/model-launcher-proton-m-briz-m_webp": {
       "title": "Proton-M / Briz-M",
-      "what": "Zentraler Kern, umringt von sechs äußeren Treibstofftanks, zwei weitere Stufen und eine Briz-M-Oberstufe unter einer 4,35-m-Verkleidung.",
+      "what": "Zentralkern, umgeben von sechs äußeren Treibstofftanks, zwei weitere Stufen und eine Briz-M-Oberstufe unter einer 4,35-m-Verkleidung.",
       "where": "Fliegen · Start/Aufstieg"
     },
     "/images/colophon/model-launcher-sls-block-1_webp": {
       "title": "SLS Block 1",
-      "what": "Orangefarbene Schaumstoff-Kernstufe mit vier RS-25, zwei weiße fünfsegmentige Booster, Stufenadapter und Oberstufe unter Orion und dem Rettungsturm (Artemis).",
+      "what": "Orangefarbene Kernstufe mit Schaumisolierung auf vier RS-25, zwei weiße Booster mit fünf Segmenten, Stufenadapter und Oberstufe unter Orion und seinem Rettungsturm (Artemis).",
       "where": "Fliegen · Start/Aufstieg"
     },
     "/images/colophon/model-launcher-molniya-m_webp": {
       "title": "Molniya-M",
-      "what": "Vierstufige R-7 — die Blok I auf ihrem Gitter, die Fluchtstufe Blok L und die Sonde unter einer Verkleidung aus Zylinder und Kegel (Luna 9, Luna 10).",
+      "what": "Vierstufige R-7 – die Blok I auf ihrem Gitter, die Fluchtstufe Blok L und die Sonde unter einer Zylinder-Kegel-Verkleidung (Luna 9, Luna 10).",
       "where": "Fliegen · Start/Aufstieg"
     },
     "/images/colophon/model-launcher-soyuz-fg-fregat_webp": {
@@ -1724,395 +1649,708 @@
     },
     "/images/colophon/model-launcher-sputnik-8k71ps_webp": {
       "title": "Sputnik 8K71PS",
-      "what": "Die zweistufige R-7, die Sputnik 1 startete — keine dritte Stufe, der Satellit sitzt unter der Nasenspitze des Kerns.",
+      "what": "Die zweistufige R-7, die Sputnik 1 startete – ohne dritte Stufe, der Satellit unter dem Nasenkegel des Kerns.",
       "where": "Fliegen · Start/Aufstieg"
     },
     "/images/colophon/model-launcher-soyuz-2_webp": {
       "title": "Soyuz-2",
-      "what": "Die modernisierte, 46,3 m hohe R-7 — vier Booster um den Kern, eine Oberstufe auf offenem Gitter und eine lange Verkleidung.",
+      "what": "Die modernisierte, 46,3 m hohe R-7 – vier Booster um den Kern, eine Oberstufe auf einem offenen Gitterrohr und eine lange Verkleidung.",
       "where": "Fliegen · Start/Aufstieg"
     },
     "/images/colophon/model-launcher-antares_webp": {
       "title": "Antares 230+",
-      "what": "Northrop Grummans Cygnus-Träger — eine 3,9-m-Kerosin-Erststufe mit zwei RD-181 unter einer Feststoff-Zweitstufe und Verkleidung.",
+      "what": "Die Cygnus-Rakete von Northrop Grumman – eine 3,9-m-Kerosin-Erststufe mit zwei RD-181 unter einer Feststoff-Zweitstufe und einer Verkleidung.",
       "where": "Fliegen · Start/Aufstieg"
     },
     "/images/colophon/model-launcher-ariane-6_webp": {
       "title": "Ariane 6",
-      "what": "Europas kryogene 5,4-m-Kernstufe und Vinci-Oberstufe unter einer 20-m-Verkleidung, mit vier Feststoffboostern (A64).",
+      "what": "Europas 5,4-m-Kryokern und die Vinci-Oberstufe unter einer 20-m-Verkleidung, mit vier Feststoffboostern (A64).",
       "where": "Fliegen · Start/Aufstieg"
     },
     "/images/colophon/model-launcher-vulcan_webp": {
       "title": "Vulcan Centaur",
-      "what": "ULAs 5,4-m-Methan-Erststufe mit zwei BE-4, die Centaur V und eine 5,4-m-Verkleidung, mit GEM-63XL-Feststoffboostern.",
+      "what": "Die 5,4-m-Methan-Erststufe von ULA mit zwei BE-4, die Centaur V und eine 5,4-m-Verkleidung, mit GEM-63XL-Feststoffboostern.",
       "where": "Fliegen · Start/Aufstieg"
     },
     "/images/colophon/model-launcher-energia_webp": {
       "title": "Energia–Buran",
-      "what": "Der 7,75-m-Wasserstoffkern mit vier RD-170-Boostern und dem Orbiter Buran an seiner Flanke.",
+      "what": "Der 7,75-m-Wasserstoffkern mit vier RD-170-Strap-ons und dem Buran-Orbiter an seiner Flanke.",
       "where": "Fliegen · Start/Aufstieg"
     },
     "/images/colophon/model-launcher-n1_webp": {
       "title": "N1",
-      "what": "Die sowjetische Mondrakete — fünf Stufen im Kegel, dreißig Triebwerke in der ersten, unter der L3-Verkleidung und dem Rettungsturm.",
+      "what": "Die sowjetische Mondrakete – fünf Stufen in einem Kegel, dreißig Triebwerke auf der ersten, unter der L3-Verkleidung und dem Rettungsturm.",
       "where": "Fliegen · Start/Aufstieg"
     },
     "/images/colophon/model-showcase-soyuz-7k-ok_webp": {
       "title": "Soyuz 7K-OK",
-      "what": "Die Soyuz der ersten Generation mit 7,95 m — Orbital-, Lande- und Servicemodul, 9,8-m-Solarflügel und die Igla-Annäherungsantennen.",
-      "where": "Flotte · Größenvergleich"
+      "what": "Die Soyuz der ersten Generation mit 7,95 m – Orbital-, Lande- und Servicemodul, 9,8 m lange Solarflügel und die Igla-Rendezvous-Antennen.",
+      "where": "Flotte · Größenvergleich + Fliegen"
     },
     "/images/colophon/model-showcase-soyuz-ms_webp": {
       "title": "Soyuz T / TM / TMA / MS (4 Varianten)",
-      "what": "Die 7,48 m lange Soyuz über vier Generationen — Igla-Antennen bei der T, Kurs bei TM und TMA, Kurs-NA und ein Mikrometeoritenschutz bei der MS.",
+      "what": "Die 7,48 m lange Soyuz über vier Generationen – Igla-Antennen bei der T, Kurs bei der TM und TMA, Kurs-NA und ein Mikrometeoritenschutz bei der MS.",
       "where": "Flotte · Größenvergleich"
     },
     "/images/colophon/model-showcase-crew-dragon_webp": {
       "title": "Crew Dragon",
-      "what": "Der 8,1 m lange Stapel aus Kapsel und Trunk mit Fenstern, SuperDraco-Pods und Solarzellen-Trunk.",
-      "where": "Flotte · Größenvergleich"
+      "what": "Der 8,1 m hohe Stapel aus Kapsel und Trunk – die weiße Tropfenkapsel mit trapezförmiger Luke, vier Fenstern und SuperDraco-Schächten über dem dunklen PICA-X-Hitzeschild, auf einem Trunk mit umlaufendem Solarzellenfeld und zwei Radiatorflossen, unter dem weißen, aufklappbaren Nasenkegel.",
+      "where": "Flotte · Größenvergleich + Fliegen"
     },
     "/images/colophon/model-showcase-starliner_webp": {
       "title": "Starliner (CST-100)",
-      "what": "Boeings 5,03 m lange Kapsel mit Servicemodul — das blaue Band und die Triebwerkspods.",
+      "what": "Boeings 5,03 m lange Kapsel mit Servicemodul – ein breiter, flacher Kegel in Weißsilber mit blauen Streifen und dem NASA-Emblem über einer Trommel mit vier Triebwerksgondeln.",
       "where": "Flotte · Größenvergleich"
     },
     "/images/colophon/model-showcase-gaganyaan_webp": {
       "title": "Gaganyaan",
-      "what": "ISROs 5,58 m langes Besatzungsmodul auf seinem Servicemodul, mit ausfahrbaren Solarflügeln.",
+      "what": "ISROs 5,58 m langes Besatzungs- und Servicemodul – ein stumpfer weißer Kegel, mit kupferbraunem Band verkleidet, mit trapezförmiger Luke und drei Bullaugen, über einer Trommel in Goldfolie mit zwei Solarflügeln.",
       "where": "Flotte · Größenvergleich"
     },
     "/images/colophon/model-showcase-orion_webp": {
       "title": "Orion",
-      "what": "Das 7,9 m lange Artemis-Besatzungsmodul mit dem europäischen Servicemodul und seinen Solarmodulen.",
+      "what": "Der 7,9 m hohe Artemis-Stapel – das weiße, gekachelte Besatzungsmodul über seinem dunklen Hitzeschild, das europäische Servicemodul mit vier X-förmigen Solarmodulen und darunter der Raumfahrzeugadapterring.",
       "where": "Flotte · Größenvergleich"
     },
     "/images/colophon/model-showcase-new-shepard_webp": {
       "title": "New Shepard",
-      "what": "Das 19,2 m hohe suborbitale Fahrzeug — ein 3,8-m-Booster unter der Besatzungskapsel mit ihren großen Fenstern.",
+      "what": "Das 19,2 m hohe suborbitale Fahrzeug auf der Rampe – ein weißer Booster mit schwarzem Triebwerksrock, blauem Band, Ringflosse, drei Heckflossen und vier Landebeinen unter der Besatzungskapsel mit ihren sechs großen Fenstern.",
       "where": "Flotte · Größenvergleich"
     },
     "/images/colophon/model-showcase-apollo-csm-block-ii_webp": {
       "title": "Apollo CSM Block I / II (2 Varianten)",
-      "what": "Kommando- und Servicemodul mit 10,6 und 11 m — das kegelförmige Kommandomodul auf dem zylindrischen Servicemodul mit seiner Triebwerksdüse.",
-      "where": "Flotte · Größenvergleich"
+      "what": "Das Kommando- und Servicemodul mit 10,6 und 11 m – der Kegel in spiegelndem Silber mit fünf Fenstern und (Block II) der Kopplungssonde über dem Servicemodul aus poliertem Aluminium mit seinen weißen Radiatoren, RCS-Vierergruppen und der Triebwerksdüse.",
+      "where": "Flotte · Größenvergleich + Fliegen"
     },
     "/images/colophon/model-showcase-shenzhou_webp": {
       "title": "Shenzhou",
-      "what": "Chinas 9,25 m langes dreiteiliges Raumschiff in der Soyuz-Linie — Orbitalmodul, Rückkehrmodul und Servicemodul mit Solarflügeln.",
-      "where": "Flotte · Größenvergleich"
+      "what": "Chinas 9,25 m langes dreiteiliges Raumfahrzeug in der Soyuz-Tradition – ein gesteppt silbernes Orbitalmodul, das glockenförmige Wiedereintrittsmodul auf seiner dunklen Ablationsbasis und das weiße Servicemodul mit kastanienbraunem Rock, orangefarbenen Triebwerksblöcken und zwei Flügeln.",
+      "where": "Flotte · Größenvergleich + Fliegen"
     },
     "/images/colophon/model-showcase-space-shuttle-orbiter_webp": {
       "title": "Space-Shuttle-Orbiter",
-      "what": "Ein 37,2 m langer Orbiter, einmal für die vier Schwestern gezeichnet — Atlantis, Challenger, Discovery und Endeavour — auf der Landebahn liegend.",
-      "where": "Flotte · Größenvergleich"
+      "what": "Ein 37,2 m langer Orbiter, einmal für die vier Schwestern gezeichnet – Atlantis, Challenger, Discovery und Endeavour – weißer oberer Rumpf mit den Nutzlastbuchttüren, schwarz gekachelte Unterseite, Doppeldeltaflügel mit verstärkten Kohlenstoffkanten, OMS-Gondeln und drei Haupttriebwerken, auf der Landebahn liegend.",
+      "where": "Flotte · Größenvergleich + Fliegen"
     },
     "/images/colophon/model-showcase-columbia_webp": {
       "title": "Space Shuttle Columbia",
-      "what": "Der erste Orbiter — der einzige mit schwarzen Kanten und dem Instrumentenbehälter auf der Seitenflosse.",
-      "where": "Flotte · Größenvergleich"
+      "what": "Der erste Orbiter – der einzige mit schwarzen Kanten auf den Flügeloberseiten und der Instrumentengondel am Seitenleitwerk.",
+      "where": "Flotte · Größenvergleich + Fliegen"
     },
     "/images/colophon/model-showcase-enterprise_webp": {
       "title": "Space Shuttle Enterprise",
-      "what": "Der Orbiter für Atmosphärentests — ohne Haupttriebwerke, ohne OMS-Pods, mit simulierten Kacheln.",
+      "what": "Der atmosphärische Testorbiter – anthrazitfarbene simulierte Kacheln aus Schaum und Farbe und schlichte weiße Glasfaser-Flügelkanten anstelle der geflogenen Kacheln und des Kohlenstoffs.",
       "where": "Flotte · Größenvergleich"
     },
     "/images/colophon/model-showcase-buran_webp": {
       "title": "Buran",
-      "what": "Der sowjetische Orbiter mit 36,4 m — ein 24 m breiter Doppeldeltaflügel, die Haupttriebwerke blieben an der Energia-Kernstufe.",
+      "what": "Der sowjetische Orbiter mit 36,4 m – ein 24 m langer Doppeldeltaflügel und zwei OMS-Düsen im Heck, seine Haupttriebwerke blieben am Energia-Kern.",
       "where": "Flotte · Größenvergleich"
     },
     "/images/colophon/model-showcase-buran-ok-gli_webp": {
       "title": "Buran OK-GLI",
-      "what": "Das Atmosphärentestfahrzeug mit Buran-Form und -Masse — vier AL-31-Turbofans am Heck.",
+      "what": "Das atmosphärische Testfahrzeug mit Burans Form und Masse, weiß und grau lackiert ohne Kacheln – seine Strahltriebwerke in je einer Gondel beiderseits der Seitenleitwerkswurzel.",
       "where": "Flotte · Größenvergleich"
     },
     "/images/colophon/model-showcase-x37b_webp": {
       "title": "X-37B",
-      "what": "Das 8,92 m lange unbemannte Raumflugzeug der U.S. Space Force mit 4,55 m Spannweite.",
-      "where": "Flotte · Größenvergleich"
+      "what": "Das 8,92 m lange unbemannte Raumflugzeug der U.S. Space Force mit 4,55 m Spannweite – schwarz gekachelte Unterseite und Nase, schräg gestelltes Leitwerk, geschlossene Buchttüren.",
+      "where": "Flotte · Größenvergleich + Fliegen"
     },
     "/images/colophon/model-showcase-progress-ms_webp": {
       "title": "Progress 7K-TG / M / MS (3 Varianten)",
-      "what": "Das von der Soyuz abgeleitete Frachtschiff mit 7,23 bis 7,94 m — Servicemodul, Betankungsabschnitt und Frachtmodul, die 7K-TG ohne Solarflügel.",
+      "what": "Das von der Soyuz abgeleitete Frachtschiff mit 7,23 bis 7,94 m – Servicemodul, Betankungsabschnitt und Frachtmodul, die 7K-TG ohne Solarflügel.",
       "where": "Flotte · Größenvergleich"
     },
     "/images/colophon/model-showcase-cargo-dragon-2_webp": {
       "title": "Cargo Dragon 2",
-      "what": "Die fensterlose unbemannte Dragon 2 auf ihrem 8,1 m langen Trunk — das ISS-Frachtschiff.",
+      "what": "Die fensterlose unbemannte Dragon 2 auf ihrem 8,1 m langen Trunk – Abdeckplatten dort, wo die Besatzungsversion Fenster und SuperDraco-Schächte hat.",
       "where": "Flotte · Größenvergleich"
     },
     "/images/colophon/model-showcase-cargo-dragon-v1_webp": {
       "title": "Dragon 1",
-      "what": "Die ursprüngliche, 6,1 m lange Fracht-Dragon — eine 3,7-m-Kapsel auf ihrem Trunk mit zwei Solarmodulen.",
+      "what": "Die ursprüngliche, 6,1 m lange Fracht-Dragon – eine gedrungene Kapsel mit 3,7 m Durchmesser, vier Draco-Vierergruppen und einem weißen Nasenkegel, auf einem 2,3 m langen Trunk mit zwei Solarflügeln.",
       "where": "Flotte · Größenvergleich"
     },
     "/images/colophon/model-showcase-cygnus-enhanced_webp": {
       "title": "Cygnus Standard / Enhanced (2 Varianten)",
-      "what": "Northrop Grummans Stationsfrachter mit 5,14 und 6,39 m — ein Druckfrachtmodul über dem Servicemodul mit runden Solarmodulen.",
+      "what": "Der Frachter von Northrop Grumman mit 5,14 und 6,39 m – ein Frachtmodul aus blankem Aluminium mit eingetieften Paneelen über einem gold-silbernen Servicemodul, mit flachen rechteckigen Flügeln bei der Standard- und runden UltraFlex-Modulen bei der Enhanced-Version.",
       "where": "Flotte · Größenvergleich"
     },
     "/images/colophon/model-showcase-htv_webp": {
       "title": "HTV (Kounotori)",
-      "what": "Japans 9,8 m langer Stationsfrachter — ein Druckmodul und eine offene Palette am Servicemodul.",
+      "what": "Japans 9,8 m langer Stationsfrachter – ein weißes Antriebsmodul, ein silberner Avionikabschnitt, ein offener Palettenschacht und der weiße Druckfrachtträger mit dunklen, am Rumpf montierten Solarzellen.",
       "where": "Flotte · Größenvergleich"
     },
     "/images/colophon/model-showcase-htv-x_webp": {
       "title": "HTV-X",
-      "what": "Japans 8 m langer Nachfolger-Frachter — ein Druckfrachtmodul über dem Servicemodul mit seinen Solarflügeln.",
+      "what": "Japans 8 m langer Nachfolge-Frachter – ein goldumhülltes Druckmodul, ein offenes Frachtträgerdeck, ein silbernes Servicemodul und zwei lange, schmale Solarmodule.",
       "where": "Flotte · Größenvergleich"
     },
     "/images/colophon/model-showcase-atv_webp": {
       "title": "ATV",
-      "what": "Das 10,3 m lange Automated Transfer Vehicle der ESA — ein zylindrischer Frachtträger mit vier X-förmigen Solarflügeln.",
+      "what": "Das 10,3 m lange Automated Transfer Vehicle der ESA – ein goldener Heckkegel mit vier Triebwerken unter dem gesteppten weißen Frachtträger und seinem Kopplungsring, mit vier kupfergesäumten Flügeln in X-Form.",
       "where": "Flotte · Größenvergleich"
     },
     "/images/colophon/model-showcase-tianzhou_webp": {
       "title": "Tianzhou",
-      "what": "Chinas 10,6 m langes Frachtschiff — ein langes Frachtmodul über dem Servicemodul und seinen Solarflügeln.",
+      "what": "Chinas 10,6 m langes Frachtschiff – eine weiße Antriebstrommel mit orangefarbenen Triebwerksblöcken, ein größeres grauweißes Frachtmodul, die Relaisschüssel und zwei große Flügel.",
       "where": "Flotte · Größenvergleich"
     },
     "/images/colophon/model-lineup-launchers_webp": {
       "title": "Größenvergleich der Trägerraketen",
-      "what": "Jede Rakete mit Modell, von Starship bis Mercury-Redstone, in ihrer wahren Höhe nebeneinander neben einer 1,75 m großen Person.",
+      "what": "Jede Rakete mit Modell, von Starship bis Mercury-Redstone, in ihrer wahren Höhe nebeneinander aufgestellt, neben einer 1,75 m großen Person.",
       "where": "Flotte · Größenvergleich"
     },
     "/images/colophon/model-lineup-spacecraft_webp": {
       "title": "Größenvergleich der Kapseln und Raumfahrzeuge",
-      "what": "Kapseln, Frachter und Orbiter in wahrer Größe — die Orbiter auf der Landebahn liegend, die Kapseln stehend wie auf ihren Raketen.",
+      "what": "Kapseln, Frachter und Orbiter in wahrer Größe – die Orbiter auf der Landebahn liegend, die Kapseln stehend wie auf ihren Raketen.",
       "where": "Flotte · Größenvergleich"
     },
     "/images/colophon/model-lineup-landmarks_webp": {
       "title": "Wahrzeichen in wahrer Höhe",
-      "what": "Sechzehn Wahrzeichen und Ikonen, von Hand in ihren belegten Höhen gezeichnet — vom Eiffelturm und der Freiheitsstatue bis zu Michelangelos David, einem Londoner Routemaster und einem VW Käfer.",
+      "what": "Sechzehn Wahrzeichen und Ikonen, von Hand in ihren belegten Höhen gezeichnet – vom Eiffelturm und der Freiheitsstatue bis zu Michelangelos David, einem Londoner Routemaster und einem VW Käfer.",
       "where": "Flotte · Größenvergleich"
     },
     "/images/colophon/model-lineup-cast_webp": {
       "title": "Comic-Figuren",
-      "what": "Eine flächig kolorierte Besetzung in wahrer Größe — Mann, Frau, Kind, Hund, Katze, Terrakotta-Krieger, Riesenpanda, Braunbär, Giraffe und Elefant — zwischen den Fahrzeugen.",
+      "what": "Eine einfarbig-flächige Figurenschar in wahrer Größe – Mann, Frau, Kind, Hund, Katze, Terrakotta-Krieger, Großer Panda, Braunbär, Giraffe und Elefant – zwischen den Raumfahrzeugen.",
       "where": "Flotte · Größenvergleich"
     },
     "/images/colophon/model-showcase-parker-solar-probe_webp": {
       "title": "Parker Solar Probe",
-      "what": "Der 3 m lange Sonnenstreifer — ein 2,3 m großer Hitzeschild aus Kohlenstoff-Verbundwerkstoff über einem schlanken Bus, mit zwei kleinen gekühlten Solargeneratoren.",
-      "where": "Erkunden + Fliegen"
+      "what": "Der 3 m große Sonnenstreifer – ein 2,3 m großer Hitzeschild aus Kohlefaserverbund auf Streben über einem goldumhüllten Bus, mit zwei kleinen aktiv gekühlten Solarmodulen und einer 0,6-m-Schüssel.",
+      "where": "Flotte · Raumfahrzeugseite + Fliegen"
     },
     "/images/colophon/model-showcase-solar-orbiter_webp": {
       "title": "Solar Orbiter",
-      "what": "ESAs 3,1 m langer Sonnenbeobachter — ein Hitzeschild auf der Sonnenseite, sechs Solarpaneele mit 18 m Spannweite und ein 4,4 m langer Instrumentenausleger.",
-      "where": "Erkunden + Fliegen"
+      "what": "Die 3,1 m große Sonnenbeobachtungssonde der ESA – ein geschichteter schwarzer Hitzeschild mit Beobachtungsklappen vor einem silberumhüllten Körper, sechs Solarpaneele mit 18 m Spannweite, ein 4,4 m langer Instrumentenausleger und eine 1,5-m-Schüssel auf der schattigen Rückseite.",
+      "where": "Flotte · Raumfahrzeugseite + Fliegen"
     },
     "/images/colophon/model-showcase-messenger_webp": {
       "title": "MESSENGER",
-      "what": "Der Merkur-Orbiter hinter seinem 2,5 m hohen Sonnenschutz aus Keramikgewebe, mit zwei Solargeneratoren und einem 3,6 m langen Magnetometerausleger.",
-      "where": "Erkunden + Fliegen"
+      "what": "Der Merkur-Orbiter hinter seinem 2,5 m großen Sonnenschutz aus Keramikgewebe, auf einem umhüllten Kastenbus mit sichtbaren Treibstofftanks, zwei drehbaren Solarmodulen und einem 3,6 m langen Magnetometerausleger.",
+      "where": "Flotte · Raumfahrzeugseite + Fliegen"
     },
     "/images/colophon/model-showcase-magellan_webp": {
       "title": "Magellan",
-      "what": "Der Venus-Radarkartograf mit 6,4 m Länge — ein zehnseitiger Bus, das Triebwerk Star 48B und eine 3,7 m große Hochgewinnantenne.",
-      "where": "Erkunden + Fliegen"
+      "what": "Der Venus-Radarkartierer mit 6,4 m – der Star-48B-Antrieb unter einem zehnseitigen Bus, ein goldumhülltes Gerätemodul und eine 3,7-m-Hochgewinnschüssel, mit zwei quadratischen Solarpaneelen.",
+      "where": "Flotte · Raumfahrzeugseite + Fliegen"
     },
     "/images/colophon/model-showcase-akatsuki_webp": {
       "title": "Akatsuki",
-      "what": "JAXAs 1,45 m hoher, kastenförmiger Venus-Orbiter mit zwei Solargeneratoren und einer flachen Phased-Array-Antenne.",
-      "where": "Erkunden + Fliegen"
+      "what": "Der 1,45 m große, goldumhüllte kastenförmige Venus-Orbiter der JAXA mit einem Kameradeck auf der der Venus zugewandten Seite, einer flachen Phased-Array-Antenne, weißen Triebwerkskappen und zwei Solarmodulen aus je zwei übereinanderliegenden Paneelen.",
+      "where": "Flotte · Raumfahrzeugseite + Fliegen"
     },
     "/images/colophon/model-showcase-dart_webp": {
       "title": "DART",
-      "what": "Die 2,6 m lange Asteroideneinschlag-Sonde mit zwei 8,5 m langen Solargeneratoren, dem Ionentriebwerk NEXT-C und der Kamera DRACO.",
-      "where": "Erkunden + Fliegen"
+      "what": "Das 2,6 m große Asteroideneinschlag-Raumfahrzeug – zwei ausrollbare Solarmodule von 8,5 × 2,4 m, das Ionentriebwerk NEXT-C, die DRACO-Kamera, der LICIACube-Cubesat in seinem Auswurfmechanismus und eine Flachantenne.",
+      "where": "Flotte · Raumfahrzeugseite + Fliegen"
     },
     "/images/colophon/model-showcase-lucy_webp": {
       "title": "Lucy",
-      "what": "Der Erkunder der Trojaner-Asteroiden, 16 m von Spitze zu Spitze — zwei kreisrunde Solargeneratoren von etwa 7 m Durchmesser und eine 2 m große Hochgewinnantenne.",
-      "where": "Erkunden + Fliegen"
+      "what": "Der Trojaner-Asteroiden-Erkunder, 16 m von Spitze zu Spitze – zwei kreisrunde Solarmodule von etwa 7 m Durchmesser, eine 2-m-Hochgewinnschüssel und eine Instrumentenplattform mit den Terminal-Tracking-Kameras.",
+      "where": "Flotte · Raumfahrzeugseite + Fliegen"
     },
     "/images/colophon/model-showcase-psyche-spacecraft_webp": {
       "title": "Psyche",
-      "what": "Der Orbiter für den Metall-Asteroiden — ein 7,3 m hohes Raumfahrzeug mit 25 m ausgefahrenen Solargeneratoren und 2 m langen Instrumentenauslegern.",
-      "where": "Erkunden + Fliegen"
+      "what": "Der Orbiter für den Metallasteroiden – ein 7,3 m großes Raumfahrzeug mit zwei kreuzförmigen Solarmodulen aus je fünf Paneelen (ausgefahren 25 m), vier Hall-Triebwerken in einer 2 × 2-Gruppe und 2 m langen Instrumentenauslegern.",
+      "where": "Flotte · Raumfahrzeugseite + Fliegen"
     },
     "/images/colophon/model-showcase-europa-clipper_webp": {
       "title": "Europa Clipper",
-      "what": "Der 5 m hohe Orbiter für die Jupitermonde mit 30,5 m Solargeneratoren, einer 3,1 m großen Hochgewinnantenne und einem 8,5 m langen Magnetometerausleger.",
-      "where": "Erkunden + Fliegen"
+      "what": "Der 5 m große Orbiter für den Jupitermond – ein Antriebsmodul und ein Strahlungstresor unter einer 3,1-m-Schüssel, 30,5 m Solarmodule mit den REASON-Radardipolen und ein 8,5 m langer Magnetometerausleger.",
+      "where": "Flotte · Raumfahrzeugseite + Fliegen"
     },
     "/images/colophon/model-showcase-mars-express_webp": {
       "title": "Mars Express",
-      "what": "ESAs kastenförmiger Bus von 1,8 m mit zwei 2,5 m langen Solarflügeln (rund 12 m von Spitze zu Spitze) und einer 1,6 m großen Hochgewinnantenne.",
-      "where": "Erkunden + Fliegen"
+      "what": "Der 1,8 m große Kastenbus der ESA mit goldumhüllten Ecken und seinen Instrumenten auf der Nadirseite, zwei Flügel aus je vier schmalen Paneelen und eine 1,6-m-Hochgewinnschüssel.",
+      "where": "Flotte · Raumfahrzeugseite + Fliegen"
     },
     "/images/colophon/model-showcase-maven_webp": {
       "title": "MAVEN",
-      "what": "NASAs 3,47 m hoher Mars-Atmosphäre-Orbiter — ein würfelförmiger Bus von 2,3 m, zwei abgewinkelte Solargeneratoren mit Magnetometern an den Spitzen und eine 2-m-Antenne.",
-      "where": "Erkunden + Fliegen"
+      "what": "Der 3,47 m große Mars-Atmosphären-Orbiter der NASA – ein 2,3 m großer kubischer Bus, eine Nutzlastplattform auf ihrem Ausleger, zwei Möwenflügel-Solarmodule mit Magnetometern an den Spitzen und eine 2-m-Schüssel.",
+      "where": "Flotte · Raumfahrzeugseite + Fliegen"
     },
     "/images/colophon/model-showcase-mangalyaan_webp": {
       "title": "Mangalyaan",
-      "what": "ISROs Mars Orbiter Mission — ein 1,5 m großer, goldumhüllter Würfel mit dreiteiligem Solargenerator und einem 2,2-m-Reflektor.",
-      "where": "Erkunden + Fliegen"
+      "what": "ISROs Mars Orbiter Mission – ein 1,5 m großer, goldumwickelter Würfel mit der Kuppel des Treibstofftanks oben, einem dreiteiligen Solarmodul an einem Ausleger und einem 2,2-m-Reflektor auf der anderen Seite.",
+      "where": "Flotte · Raumfahrzeugseite + Fliegen"
     },
     "/images/colophon/model-showcase-hope_webp": {
       "title": "Hope",
-      "what": "Der Orbiter der Emirates Mars Mission der VAE — ein 2,9 m langer sechseckiger Bus mit zwei Solarflügeln und einer 1,85-m-Antenne.",
-      "where": "Erkunden + Fliegen"
+      "what": "Der Orbiter der Emirates Mars Mission der VAE – ein 2,9 m großer Bus mit seinem Wissenschaftsdeck an der Vorderseite, zwei Flügeln aus je drei Paneelen und einer 1,85-m-Schüssel an einer Gitterhalterung.",
+      "where": "Flotte · Raumfahrzeugseite + Fliegen"
     },
     "/images/colophon/model-showcase-mariner-9_webp": {
       "title": "Mariner 4, 9 und 10 (3 Varianten)",
-      "what": "NASAs achteckige Mariner-Familie — vier Solarpaneele mit Spitzenklappen bei Mariner 4 und 9; zwei Paneele, ein Sonnenschutz und ein 5,8 m langer Magnetometerausleger bei Mariner 10.",
-      "where": "Erkunden + Fliegen"
+      "what": "Die oktogonale Mariner-Familie der NASA – vier Paneele mit Spitzenflügeln bei Mariner 4 und 9 (Mariner 9 mit folienumwickeltem Antriebsmodul); zwei Paneele, ein Sonnenschutz und ein 5,8 m langer Magnetometerausleger bei Mariner 10.",
+      "where": "Flotte · Raumfahrzeugseite + Fliegen"
     },
     "/images/colophon/model-showcase-lro_webp": {
       "title": "Lunar Reconnaissance Orbiter",
-      "what": "NASAs 3,9 m hoher Mondkartograf — ein kastenförmiger Bus mit einem einzelnen Solargenerator von 10,7 m² und einer schwenkbaren Antenne.",
-      "where": "Erkunden + Fliegen"
+      "what": "Der 3,9 m große Mondkartierer der NASA – ein gold-silbern umhüllter Kastenbus mit zwei LROC-Kameras, LOLA, Diviner und Mini-RF auf der Nadirseite, einem einzelnen 10,7 m² großen Solarmodul an einem Ausleger und einer schwenkbaren Schüssel.",
+      "where": "Flotte · Raumfahrzeugseite + Fliegen"
     },
     "/images/colophon/model-showcase-skylab_webp": {
       "title": "Skylab",
-      "what": "Amerikas erste Raumstation — die Orbitalwerkstatt, Luftschleuse und Kopplungsadapter, die Sonnenteleskop-Halterung mit ihrem Windrad aus Paneelen und der Sonnenschutz.",
-      "where": "Erkunden + Fliegen"
-    },
-    "/images/colophon/model-probe-clementine_webp": {
-      "title": "Clementine, SMART-1, Chang’e 1 und Chandrayaan-1 (4 Varianten)",
-      "what": "Ein Kastenbus-Baukasten in vier Größen — Clementines 1,9-m-Bus, der 1-m-Würfel von SMART-1, Chang’e 1 und eine goldumhüllte Chandrayaan-1 — jeweils mit eigenen Solarflügeln und Antenne.",
-      "where": "Erkunden + Fliegen"
-    },
-    "/images/colophon/model-probe-lunar-prospector_webp": {
-      "title": "Lunar Prospector",
-      "what": "Die 1,36 m große, mit Solarzellen bedeckte Trommel mit drei 2,5 m langen Instrumentenauslegern.",
-      "where": "Erkunden + Fliegen"
-    },
-    "/images/colophon/model-probe-luna-10_webp": {
-      "title": "Luna 10",
-      "what": "Der sowjetische, 1,5 m lange Druckzylinder mit vier Antennenpeitschen und einem Ausleger — das erste Raumfahrzeug im Mondorbit.",
-      "where": "Erkunden + Fliegen"
+      "what": "Amerikas erste Raumstation in repariertem Zustand – die Orbitalwerkstatt mit schwarzem Rock, ihrem einzelnen Flügel und dem goldenen Sonnenschirm, die Luftschleuse und der Kopplungsadapter sowie das ausgeschwenkte Apollo Telescope Mount mit seiner vierblättrigen Windmühle aus Paneelen.",
+      "where": "Flotte · Raumfahrzeugseite + Fliegen"
     },
     "/images/colophon/model-probe-sputnik-1_webp": {
       "title": "Sputnik 1",
-      "what": "Die polierte Kugel von 58 cm mit der Naht zwischen den Halbschalen, 36 Bolzen und vier nach hinten gepfeilten Peitschenantennen von 2,4 und 2,9 m.",
-      "where": "Erkunden + Fliegen"
+      "what": "Die polierte 58-cm-Kugel mit ihrer Halbkugelnaht, 36 Schrauben und vier nach hinten gepfeilten Peitschenantennen von 2,4 und 2,9 m.",
+      "where": "Fliegen"
     },
     "/images/colophon/model-pad-apollo-lut_webp": {
       "title": "Startrampe: Apollo, LC-39",
-      "what": "Die Saturn-V-Rampe: der 380 ft hohe Nabelschnurturm mit Schwenkarmen, die beim Start wegfallen, und der Flammgraben. Maße nach NASA-Angaben auf Wikipedia.",
+      "what": "Die Saturn-V-Rampe: der 380 Fuß hohe Launch Umbilical Tower mit Schwenkarmen, die beim Abheben wegfallen, und der Flammengraben. Größen nach NASA-Angaben auf Wikipedia.",
       "where": "Fliegen · Startrampe"
     },
     "/images/colophon/model-pad-shuttle_webp": {
       "title": "Startrampe: Space Shuttle, LC-39",
-      "what": "Die Shuttle-Rampe: die feste Wartungsstruktur (350 ft mit Mast), die zurückgeschwenkte drehbare Wartungsstruktur, der 290 ft hohe Wasserturm. Haupthöhen von Wikipedia; der Rest ungefähr.",
+      "what": "Die Shuttle-Rampe: die Fixed Service Structure (350 Fuß mit ihrem Mast), die zurückgeschwenkte Rotating Service Structure, der 290 Fuß hohe Wasserturm. Hauptmaße von Wikipedia; der Rest ungefähr.",
       "where": "Fliegen · Startrampe"
     },
     "/images/colophon/model-pad-sls_webp": {
       "title": "Startrampe: SLS, LC-39B",
-      "what": "Die Artemis-Rampe: der Turm des Mobile Launchers neben der Rakete und drei hohe Blitzschutztürme. Größen ungefähr.",
+      "what": "Die Artemis-Rampe: der Turm des Mobile Launchers neben der Rakete (etwa 108 m; die NASA nennt 345 bis 355 Fuß) und drei Blitzschutztürme von fast 600 Fuß.",
       "where": "Fliegen · Startrampe"
     },
     "/images/colophon/model-pad-soyuz_webp": {
       "title": "Startrampe: Sojus, Baikonur und Plessezk",
-      "what": "Die Rampe der R-7-Familie: vier Stützarme, die beim Start nach außen wegkippen, zwei zurückgefahrene Wartungskabinen, Blitzschutzmasten, die Flammgrube. Größen ungefähr.",
+      "what": "Die Rampe der R-7-Familie: vier Haltearme, die beim Abheben nach außen fallen, zwei zurückgezogene Wartungskabinen, Blitzschutzmasten, der Flammenschacht. Größen ungefähr.",
       "where": "Fliegen · Startrampe"
     },
     "/images/colophon/model-pad-proton_webp": {
       "title": "Startrampe: Proton, Baikonur",
-      "what": "Ein fester Wartungsturm mit Schwenkarmen, die beim Start einfahren, neben dem Flammgraben. Größen ungefähr.",
+      "what": "Die Rakete allein über ihrem Flammenschacht: Der 60 m hohe Wartungsturm wird vor dem Start etwa 340 m zurückgerollt (RussianSpaceWeb, Proton-Startkomplex). Blitzschutzmasten ungefähr.",
       "where": "Fliegen · Startrampe"
     },
     "/images/colophon/model-pad-f9-39a_webp": {
       "title": "Startrampe: Falcon, LC-39A",
-      "what": "SpaceX an der 39A: der Transporter-Erektor, der sich vor dem Start um 1,5 Grad und beim Start um 45 zurücklehnt, der alte Turm über 350 ft erhöht. Angaben von Wikipedia.",
+      "what": "SpaceX auf 39A: der Transporter-Erector, der sich vor dem Abheben 1,5 Grad und beim Abheben 45 Grad zurücklehnt, der alte Turm, über 350 Fuß hinaus verlängert. Zahlen von Wikipedia.",
       "where": "Fliegen · Startrampe"
     },
     "/images/colophon/model-pad-f9-cat_webp": {
       "title": "Startrampe: Falcon, SLC-40 mit Besatzungsturm",
-      "what": "SpaceX an der SLC-40 seit dem Besatzungszugangsturm von 2023, mit dem Transporter-Erektor, der beim Start wegkippt. Turmhöhe ungefähr.",
+      "what": "SpaceX auf SLC-40 seit dem Besatzungszugangsturm von 2023, mit dem Transporter-Erector, der beim Abheben wegkippt. Der Besatzungsturm ist etwa 300 Fuß (91 m; FAA) hoch.",
       "where": "Fliegen · Startrampe"
     },
     "/images/colophon/model-pad-f9-te_webp": {
       "title": "Startrampe: Falcon, SLC-40 und SLC-4E",
-      "what": "Eine schlichte Falcon-Rampe: der Transporter-Erektor, der beim Start wegkippt, und Blitzschutzmasten. Größen ungefähr.",
+      "what": "Eine schlichte Falcon-Rampe: der Transporter-Erector, der beim Abheben wegkippt, und Blitzschutzmasten. Größen ungefähr.",
       "where": "Fliegen · Startrampe"
     },
     "/images/colophon/model-pad-starbase_webp": {
       "title": "Startrampe: Starship, Starbase",
-      "what": "Der Startturm von Starbase mit geöffneten Fangarmen. Turmhöhe ungefähr.",
+      "what": "Der Starbase-Startturm mit offen gehaltenen Fangarmen. Turmhöhe ungefähr.",
       "where": "Fliegen · Startrampe"
     },
     "/images/colophon/model-pad-atlas-v_webp": {
       "title": "Startrampe: Atlas V, SLC-41",
-      "what": "Die ULA-Rampe: Startplattform, Nabelschnurturm und vier Blitzschutztürme; die Montagehalle steht abseits der Rampe und fehlt. Größen ungefähr.",
+      "what": "Die ULA-Rampe: Mobile Launch Platform, Umbilical Tower und vier Blitzschutztürme; die Vertical Integration Facility steht abseits der Rampe und ist weggelassen. Größen ungefähr.",
       "where": "Fliegen · Startrampe"
     },
     "/images/colophon/model-pad-cape-classic_webp": {
       "title": "Startrampe: Wartungsturm-Rampe am Cape",
-      "what": "Die Atlas-, Delta-, Titan- und Saturn-IB-Rampen am Cape: ein Nabelschnurturm mit Schwenkarmen neben der Rakete. Größen ungefähr.",
+      "what": "Die Rampen für Atlas, Delta, Titan und Saturn IB am Cape: ein Umbilical Tower mit Schwenkarmen neben dem Fahrzeug. Größen ungefähr.",
       "where": "Fliegen · Startrampe"
     },
     "/images/colophon/model-pad-kourou-a5_webp": {
       "title": "Startrampe: Ariane 4 und 5, Kourou",
-      "what": "Die Rampen ELA-2 und ELA-3: ein Nabelschnurmast neben der Trägerrakete und vier hohe Blitzschutztürme. Größen ungefähr.",
+      "what": "Die Rampen ELA-2 und ELA-3: ein Versorgungsmast neben der Trägerrakete und vier hohe Blitzschutztürme. Größen ungefähr.",
       "where": "Fliegen · Startrampe"
     },
     "/images/colophon/model-pad-kourou-a6_webp": {
       "title": "Startrampe: Ariane 6, Kourou",
-      "what": "Die Rampe ELA-4: der Nabelschnurmast, zwei Blitzschutztürme und der weit zurückgefahrene bewegliche Montageturm. Größen ungefähr.",
+      "what": "Die Rampe ELA-4: der Versorgungsmast, zwei Blitzschutztürme und das weit zurückgerollte mobile Portal. Größen ungefähr.",
       "where": "Fliegen · Startrampe"
     },
     "/images/colophon/model-pad-chinese-fst_webp": {
       "title": "Startrampe: Chinesischer Wartungsturm",
-      "what": "Der feste Wartungsturm von Jiuquan, Xichang, Wenchang und Taiyuan, dessen Arbeitsbühnen beim Start wegklappen. Größen ungefähr.",
+      "what": "Der feste Wartungsturm von Jiuquan, Xichang, Wenchang und Taiyuan, dessen Arbeitsplattformen beim Abheben wegklappen. Jiuquans Turm für bemannte Starts ist 89,5 m hoch plus ein 16 m langer Blitzableiter (CMSE) und wird für jeden Jiuquan-Start gezeichnet; die anderen sind ungefähr.",
       "where": "Fliegen · Startrampe"
     },
     "/images/colophon/model-pad-tanegashima_webp": {
       "title": "Startrampe: Tanegashima",
-      "what": "Die Yoshinobu-Rampe: der Nabelschnurturm der H-II-Rakete und ein Blitzschutzturm. Größen ungefähr.",
+      "what": "Die Yoshinobu-Rampe: der mobile Starter der H-II, 65,5 m hoch, und ein 74,5 m hoher Blitzschutzturm (JAXA).",
       "where": "Fliegen · Startrampe"
     },
     "/images/colophon/model-pad-sriharikota_webp": {
       "title": "Startrampe: Sriharikota",
-      "what": "Die ISRO-Rampe: der Nabelschnurturm neben der Rakete und der weit zurückgefahrene bewegliche Wartungsturm. Größen ungefähr.",
+      "what": "Die ISRO-Rampe: der Versorgungsturm neben dem Fahrzeug und der weit zurückgerollte mobile Wartungsturm. Größen ungefähr.",
       "where": "Fliegen · Startrampe"
-    }
-  },
-  "capsules": {
-    "/images/colophon/model-capsule-mercury-capsule_webp": {
+    },
+    "/images/colophon/model-showcase-vostok_webp": {
+      "title": "Vostok und Voskhod (2 Varianten)",
+      "what": "Die 2,3-m-Kugel auf ihrem Gerätemodul, 4,55 m hoch (Voskhod 5 m) – ein Gürtel aus sechzehn olivgrünen Gasflaschen mit silbernen Bändern, Luken und Bullaugen, Antennenschleifen oben und bei der Voskhod das Bremstriebwerkspaket.",
+      "where": "Flotte · Größenvergleich + Fliegen"
+    },
+    "/images/colophon/model-showcase-mercury-capsule_webp": {
       "title": "Mercury-Kapsel",
-      "what": "Stumpfe Ablativschutzschild, geziegelte Kegel und der Bergung + Antennensektion (Freedom 7 … Faith 7).",
-      "where": "Erdorbital-Wiedereintritt"
+      "what": "Die 3,3 m lange einsitzige Kapsel auf ihrem Bremsraketenpaket – das trapezförmige Fenster und die Seitenluke am Kegel, drei von Bändern gehaltene Bremsraketen.",
+      "where": "Flotte · Größenvergleich + Fliegen"
     },
-    "/images/colophon/model-capsule-gemini-capsule_webp": {
-      "title": "Gemini-Kapsel",
-      "what": "Zwei-Sitzer vergrößerte Mercury mit Rendezvous-Radarrüssel und Adaptormodul.",
-      "where": "Wiedereintritt in die Erdumlaufbahn"
+    "/images/colophon/model-showcase-gemini_webp": {
+      "title": "Gemini",
+      "what": "Das 5,74 m lange Zweisitzer-Raumfahrzeug – der schindelartig verkleidete schwarze Wiedereintrittskegel mit seinen zwei Luken und Fenstern über den RCS-, Rendezvous- und Bergungsabschnitten und dem Bremsadapter.",
+      "where": "Flotte · Größenvergleich + Fliegen"
     },
-    "/images/colophon/model-capsule-vostok-sphere_webp": {
-      "title": "Vostok",
-      "what": "Das kugelförmige Abstiegsmodul Scharik – Antennenbänder und Ausrüstungskragen; der Kosmonaut sprang aus und schwebte separat ab.",
-      "where": "Wiedereintritt in die Erdumlaufbahn"
+    "/images/colophon/model-showcase-mengzhou_webp": {
+      "title": "Mengzhou",
+      "what": "Chinas 8,8 m langes bemanntes Raumfahrzeug für den Mond – ein grausilbernes, kegelförmiges Besatzungsmodul mit rotem Band über einem weißen Servicemodul mit goldenen Triebwerksrahmen, zwei langen Solarflügeln und vier Triebwerksdüsen.",
+      "where": "Flotte · Größenvergleich"
     },
-    "/images/colophon/model-capsule-voskhod-sphere_webp": {
-      "title": "Voskhod",
-      "what": "Dieselbe Scharik-Kugel, jetzt mit dem Feststoff-Bremspaket zur weichen Landung auf einem Fachwerk-Streben – die Besatzung fuhr damit zur Erde.",
-      "where": "Wiedereintritt in die Erdumlaufbahn"
+    "/images/colophon/model-showcase-apollo-lm_webp": {
+      "title": "Apollo-Mondlandefähre (maßstabsgetreu)",
+      "what": "Die gelandete Mondlandefähre – die achteckige Abstiegsstufe in zerknitterter Gold- und Bernsteinfolie auf vier goldumwickelten Beinen, die facettierte Aufstiegsstufe mit zwei dreieckigen Fenstern, RCS-Vierergruppen, Rendezvous-Radar und S-Band-Schüssel.",
+      "where": "Flotte · Größenvergleich + Fliegen · Abstieg"
     },
-    "/images/colophon/model-capsule-apollo-cm_webp": {
-      "title": "Apollo-Kommandokapsel",
-      "what": "Der klassische steile stumpfe Kegel mit dem vorderen Kopplungstunnel (Apollo 7/9, Skylab, ASTP).",
-      "where": "Wiedereintritt in die Erdumlaufbahn"
+    "/images/colophon/model-probe-nova-c_webp": {
+      "title": "Nova-C (IM-1 Odysseus)",
+      "what": "Das 4,3 m große Mondlandegerät von Intuitive Machines – ein sechseckiger Körper mit 1,57 m Durchmesser, sechs Beine, unten das Methantriebwerk und drei Solarpaneele. Höhe und Breite von Wikipedia; Beinspreizung und Deck sind schematisch.",
+      "where": "Fliegen"
     },
-    "/images/colophon/model-capsule-soyuz-sa_webp": {
-      "title": "Soyuz-Abstiegsmodul",
-      "what": "Die »Scheinwerfer«-Glocke – kugelförmiger Hitzeschild mit konischem Besatzungsteil oben.",
-      "where": "Wiedereintritt in die Erdumlaufbahn"
+    "/images/colophon/model-showcase-chandrayaan1_webp": {
+      "title": "Chandrayaan-1",
+      "what": "ISROs erster Mond-Orbiter – ein Kastenbus mit weißen Radiatorflächen und goldumrandeten Instrumentenöffnungen, eine 0,7-m-Schüssel an einem goldenen Ausleger und ein Solarpaneel an einem Zweistreben-Joch.",
+      "where": "Flotte · Raumfahrzeugseite + Fliegen"
     },
-    "/images/colophon/model-capsule-dragon-capsule_webp": {
-      "title": "Crew Dragon",
-      "what": "Schlanker konischer Rumpf mit den SuperDraco-Pods und dem PICA-X-Hitzeschild (Inspiration4, Polaris Dawn).",
-      "where": "Wiedereintritt in die Erdumlaufbahn"
+    "/images/colophon/model-showcase-chandrayaan2_webp": {
+      "title": "Chandrayaan-2-Orbiter",
+      "what": "Der Orbiter, der Vikram trug – ein Bus mit einer goldenen Trommel, die sich aus dem oberen Deck erhebt, wo der Lander saß, weißen verklebten Flächen über den Radiatoren und einem Solarflügel aus zwei Paneelen.",
+      "where": "Flotte · Raumfahrzeugseite + Fliegen"
     },
-    "/images/colophon/model-capsule-shenzhou-reentry_webp": {
-      "title": "Shenzhou-Rückkehrmodul",
-      "what": "Eine breite Glocke der Soyuz-Linie – eigene hellsilberne Hülle mit einem grauen Ausrüstungsband (Shenzhou-1 aufwärts).",
-      "where": "Wiedereintritt in die Erdumlaufbahn"
+    "/images/colophon/model-showcase-change1_webp": {
+      "title": "Chang’e 1 und 2 (2 Varianten)",
+      "what": "Chinas Mond-Orbiter – eine Triebwerksdüse unter dem Bus, silberne Einsatzpaneele, zwei weiße Relaisschüsseln, eine 0,8 m große schwenkbare Schüssel an einem Arm und zwei dreiteilige Flügel an goldenen Jochen.",
+      "where": "Flotte · Raumfahrzeugseite + Fliegen"
+    },
+    "/images/colophon/model-showcase-clementine_webp": {
+      "title": "Clementine",
+      "what": "Der prismenförmige Mondkartierer – eine Sensorfläche mit Kamera- und Lidaröffnungen, 12 Lagedüsen, eine nach unten öffnende 1,07-m-Schüssel und zwei Flügel aus je zwei Paneelen.",
+      "where": "Flotte · Raumfahrzeugseite + Fliegen"
+    },
+    "/images/colophon/model-showcase-kaguya_webp": {
+      "title": "Kaguya (SELENE)",
+      "what": "Der 4,8 m große Mond-Orbiter der JAXA – die Relais- und VLBI-Subsatelliten an der Vorderseite, eine Hochgewinnschüssel auf Dreibein und Mast und ein Solarpaddel aus drei blauen Paneelen an einem goldenen Gitterträger.",
+      "where": "Flotte · Raumfahrzeugseite + Fliegen"
+    },
+    "/images/colophon/model-showcase-luna10_webp": {
+      "title": "Luna 10",
+      "what": "Der sowjetische 1,5-m-Orbiter – das Bremstriebwerksmodul in einem weißen Gitterrock, cremefarbene Treibstofftanks und eine polierte Druckinstrumententrommel mit vier Peitschenantennen und zwei pilzförmigen Sensoren.",
+      "where": "Flotte · Raumfahrzeugseite + Fliegen"
+    },
+    "/images/colophon/model-showcase-lunar-prospector_webp": {
+      "title": "Lunar Prospector",
+      "what": "Die 1,36 m große, mit Solarzellen bedeckte Trommel unter einem weißen Nasenkegel, mit drei 2,5 m langen Instrumentenauslegern.",
+      "where": "Flotte · Raumfahrzeugseite + Fliegen"
+    },
+    "/images/colophon/model-showcase-smart-1_webp": {
+      "title": "SMART-1",
+      "what": "Der 1 m große Ionenantriebs-Orbiter der ESA – das PPS-1350-Triebwerk an einem kardanischen Arm, ein Instrumentenring mit Kamera und Spektrometern, eine 0,3-m-Schüssel und zwei Flügel aus je drei Paneelen.",
+      "where": "Flotte · Raumfahrzeugseite + Fliegen"
+    },
+    "/images/colophon/model-showcase-lunar-orbiter-1_webp": {
+      "title": "Lunar Orbiter 1–5 (5 Varianten)",
+      "what": "Die fünf Kamera-Orbiter der NASA – eine helle Thermalhülle um die Kamera mit ihren 80-mm- und 610-mm-Objektiven, vier Treibstofftanks auf Gitterbeinen, vier Solarpaneele und eine 1-m-Schüssel an ihrem Ausleger.",
+      "where": "Flotte · Raumfahrzeugseite"
+    },
+    "/images/colophon/model-showcase-luna-9_webp": {
+      "title": "Luna 9 (maßstabsgetreu)",
+      "what": "Die 58 cm große gelandete Kapsel – die versiegelte Instrumenten-Halbkugel, die zwischen vier aufgeklappten Blütenblättern stehen blieb, mit dem Fernsehkamerakopf und vier Stabantennen obenauf.",
+      "where": "Flotte · Raumfahrzeugseite + Fliegen · Abstieg"
+    },
+    "/images/colophon/model-showcase-luna-16_webp": {
+      "title": "Luna 16 und 24 (2 Varianten)",
+      "what": "Der Probenrückführungs-Lander – ein goldumhüllter Rumpf zwischen zwei Torus-Tanks mit vier Drucksphären auf vier Beinen, der Bohrmechanismus und die 2 m große, von einer Kugel gekrönte Aufstiegsstufe obenauf.",
+      "where": "Flotte · Raumfahrzeugseite + Fliegen · Abstieg"
+    },
+    "/images/colophon/model-showcase-lunokhod-1_webp": {
+      "title": "Lunokhod 1 und 2 (2 Varianten)",
+      "what": "Der sowjetische Rover – eine runde Wanne auf acht Drahtgeflechträdern unter einem offenen Kuppeldeckel, mit der berippten Polonium-210-Wärmequelle am Heck, dem französischen Eckreflektor und vier Peitschenantennen.",
+      "where": "Flotte · Raumfahrzeugseite + Fliegen · Abstieg"
+    },
+    "/images/colophon/model-showcase-change-3_webp": {
+      "title": "Chang’e 3 und 4 (2 Varianten)",
+      "what": "Der chinesische Lander – ein kastenförmiger goldener Körper auf vier Beinen mit den Rover-Rampen, geneigten Solarflügeln und einem Kameramast, der die schwenkbare Schüssel trägt.",
+      "where": "Flotte · Raumfahrzeugseite + Fliegen · Abstieg"
+    },
+    "/images/colophon/model-showcase-change-5_webp": {
+      "title": "Chang’e 5 und 6 (2 Varianten)",
+      "what": "Der Probenrückführungs-Stapel – eine goldene achteckige Aufstiegsstufe auf dem Lander, daneben der Bohrturm, der eingeklappte Probenarm und der Probenbehälter.",
+      "where": "Flotte · Raumfahrzeugseite + Fliegen · Abstieg"
+    },
+    "/images/colophon/model-showcase-vikram-cy3_webp": {
+      "title": "Vikram (Chandrayaan-2 und -3, 2 Varianten)",
+      "what": "ISROs Lander in seiner Chandrayaan-3-Konfiguration – vier Triebwerke und Solarpaneele auf drei Seiten und oben, mit abgesenkter Rampe und dem Rover Pragyan ein Stück darauf.",
+      "where": "Flotte · Raumfahrzeugseite + Fliegen · Abstieg"
+    },
+    "/images/colophon/model-showcase-slim_webp": {
+      "title": "SLIM (maßstabsgetreu)",
+      "what": "Der „Moon Sniper“ der JAXA – ein Prisma von 1,5 × 1,5 × 2 m in zerknitterter Goldfolie mit einer goldenen Kuppel am Triebwerksende, einem Streifen Solarzellen an einer Seite und fünf runden Knautschpolstern auf Streben.",
+      "where": "Flotte · Raumfahrzeugseite + Fliegen · Abstieg"
+    },
+    "/images/colophon/model-showcase-beresheet_webp": {
+      "title": "Beresheet (maßstabsgetreu)",
+      "what": "SpaceILs Lander, 2 m breit und 1,5 m hoch – ein schwarzes, goldumrandetes Deck über einer silbernen Rohrrahmenwanne mit vier kupferfarbenen Tanks, vier langen Beinen und geneigten blauen Solarplatten.",
+      "where": "Flotte · Raumfahrzeugseite + Fliegen · Abstieg"
+    },
+    "/images/colophon/model-showcase-blue-moon-mk1_webp": {
+      "title": "Blue Moon MK1 (maßstabsgetreu)",
+      "what": "Blue Origins 8,05 m großer Lander – ein Rumpf aus Gold- und Bernsteinfolie auf einer hellen Gitterbasis mit dem BE-7, Leiterfachwerk-Beinen, zwei hohen Solarzellenstreifen und einem offenen achteckigen Käfig obenauf.",
+      "where": "Flotte · Raumfahrzeugseite + Fliegen · Abstieg"
+    },
+    "/images/colophon/model-showcase-pragyan_webp": {
+      "title": "Pragyan",
+      "what": "Der sechsrädrige Rover der ISRO, der Vikrams Rampe hinunterrollt.",
+      "where": "Flotte · Raumfahrzeugseite + Fliegen · Abstieg"
+    },
+    "/images/colophon/model-showcase-yutu_webp": {
+      "title": "Yutu und Yutu-2 (2 Varianten)",
+      "what": "Der chinesische Rover – eine Rocker-Bogie-Aufhängung auf jeder Seite, eine goldumhüllte Warmbox unter einem geneigten Solarpaneel, ein Kameramast, der unter der Nase eingeklappte Arm und eine schwenkbare Schüssel am Heck.",
+      "where": "Flotte · Raumfahrzeugseite"
+    },
+    "/images/colophon/model-showcase-viking-1_webp": {
+      "title": "Viking-Lander (3 Varianten)",
+      "what": "Der dreibeinige Lander der NASA – ein sechseckiges Deck, abwechselnd 1,09 und 0,56 m breit, goldene Landetriebwerksgondeln mit 18 Düsen, der Probenarm und die Kameras an der langen Vorderseite.",
+      "where": "Flotte · Raumfahrzeugseite + Fliegen · Abstieg"
+    },
+    "/images/colophon/model-showcase-mars-3_webp": {
+      "title": "Mars-2-, Mars-3- und Mars-6-Lander (3 Varianten)",
+      "what": "Die sowjetische weiße Kugel auf vier geöffneten Blütenblättern – eine Antennenkrone aus vier Stäben, zwei Stereokamera-Ohren und der auf Skiern fahrende Rover PrOP-M, der daneben angebunden ist.",
+      "where": "Flotte · Raumfahrzeugseite + Fliegen · Abstieg"
+    },
+    "/images/colophon/model-showcase-phoenix_webp": {
+      "title": "Phoenix und Mars Polar Lander (2 Varianten)",
+      "what": "Der Solar-Lander auf seinem Deck – die zwei Öfen von TEGA, die Nasschemie-Zellen von MECA, der Roboterarm mit seiner Schaufel, die Stereokamera auf einem Gitterturm und der Wettermast mit seinem Lidar.",
+      "where": "Flotte · Raumfahrzeugseite + Fliegen · Abstieg"
+    },
+    "/images/colophon/model-showcase-insight_webp": {
+      "title": "InSight (maßstabsgetreu)",
+      "what": "Der Geophysik-Lander – der 1,8 m lange Arm über dem Boden, SEIS unter seinem silbernen Wind- und Hitzeschild und der daneben abgesetzte HP3-Maulwurf.",
+      "where": "Flotte · Raumfahrzeugseite + Fliegen · Abstieg"
+    },
+    "/images/colophon/model-showcase-schiaparelli_webp": {
+      "title": "Schiaparelli (maßstabsgetreu)",
+      "what": "Der Eintrittsdemonstrator der ESA am Boden – eine flache dunkle Wabenstruktur-Knautschscheibe, von einem silbergoldenen Band umringt, drei Treibstofftanks auf Streben und die DREAMS-Plattform mit ihrer goldenen UHF-Spule.",
+      "where": "Flotte · Raumfahrzeugseite + Fliegen · Abstieg"
+    },
+    "/images/colophon/model-showcase-beagle2_webp": {
+      "title": "Beagle 2 (maßstabsgetreu)",
+      "what": "Der aufgeklappte Muschel-Lander – eine goldene Deckelschüssel, von vier dunklen Solarblättern umringt, der goldene Schalenboden mit dem herausragenden Arm und die PAW-Trommel mit den Instrumenten.",
+      "where": "Flotte · Raumfahrzeugseite + Fliegen · Abstieg"
+    },
+    "/images/colophon/model-showcase-curiosity_webp": {
+      "title": "Curiosity (maßstabsgetreu)",
+      "what": "Der MSL-Rover – sechs Räder an einer Rocker-Bogie-Aufhängung, der Mast mit ChemCam-Kopf und Mastcam-Paar, der berippte MMRTG zwischen zwei weißen Wärmetauschern und der vorn quer eingeklappte Arm.",
+      "where": "Flotte · Raumfahrzeugseite + Fliegen · Abstieg"
+    },
+    "/images/colophon/model-showcase-spirit_webp": {
+      "title": "Spirit und Opportunity (2 Varianten)",
+      "what": "Der Mars Exploration Rover – eine goldene Warmbox unter einem flachen blauschwarzen Solardeck mit vier Flügelpaneelen, der Pancam-Mast mit seinem Kamerabalken, eine runde goldene Schüssel an einem Stiel und sechs kleine Räder.",
+      "where": "Flotte · Raumfahrzeugseite + Fliegen · Abstieg"
+    },
+    "/images/colophon/model-showcase-perseverance_webp": {
+      "title": "Perseverance",
+      "what": "Curiositys Aufbau mit Rädern mit geraden Stollen – der Kopf mit Mastcam-Z und SuperCam, der große Kernbohrer-Revolver, die Probenlagerbucht unter dem Vorderteil und Ingenuity unter dem Bauch.",
+      "where": "Flotte · Raumfahrzeugseite + Fliegen · Abstieg"
+    },
+    "/images/colophon/model-showcase-zhurong_webp": {
+      "title": "Zhurong",
+      "what": "Chinas Rover – ein breites silbernes Deck mit vier Schmetterlings-Solarflügeln, ein hoher Mast mit seinem Kamerakasten, zwei kleine Schüsseln und gerippte Räder auf hohen Beinen.",
+      "where": "Flotte · Raumfahrzeugseite + Fliegen · Abstieg"
+    },
+    "/images/colophon/model-showcase-sojourner_webp": {
+      "title": "Sojourner",
+      "what": "Der erste Mars-Rover – Aluminiumräder mit Edelstahlstollen an einer Rocker-Bogie-Aufhängung, eine goldbraune Warmbox unter einem dunklen Solarpaneel, das Stereokamerapaar und die APXS-Trommel.",
+      "where": "Flotte · Raumfahrzeugseite"
+    },
+    "/images/colophon/model-showcase-exomars-rosalind-franklin_webp": {
+      "title": "ExoMars Rosalind Franklin",
+      "what": "Der Rover der ESA mit Laufwerk – ein Rad an jedem Bein, zwei breite Solarflügel, der goldene PanCam-Balken an seinem Mast und der Bohrkasten vorn.",
+      "where": "Flotte · Raumfahrzeugseite"
+    },
+    "/images/colophon/model-showcase-lrv-apollo_webp": {
+      "title": "Apollo Lunar Roving Vehicle",
+      "what": "Der offene Aluminiumrahmen auf Drahtgeflechträdern mit Titan-Chevrons unter hellbraunen Kotflügeln – zwei Rohrsitze, der T-Griff und die Konsole, die Schirmschüssel und die Werkzeugpalette am Heck.",
+      "where": "Flotte · Raumfahrzeugseite"
+    },
+    "/images/colophon/model-showcase-mro_webp": {
+      "title": "Mars Reconnaissance Orbiter",
+      "what": "Der Marskartierer der NASA – zwei Solarmodule von 5,35 × 2,53 m, die 3-m-Hochgewinnschüssel, die 1,6 m große HiRISE-Tonne und der 10-m-SHARAD-Dipol. Größen von Schüssel, HiRISE und SHARAD von der NASA; Größe der Solarmodule von Wikipedia; der Bus ist schematisch.",
+      "where": "Flotte · Raumfahrzeugseite + Fliegen"
+    },
+    "/images/colophon/model-showcase-mariner-2_webp": {
+      "title": "Mariner 2",
+      "what": "Der 3,66 m große Venus-Vorbeiflieger der NASA – der 1,04 m große sechseckige Bus, zwei Solarpaneele (eines mit seiner Sonnendruck-Verlängerung, 5,05 m breit), die Schüssel an ihrem Arm und die Rundstrahlantenne auf dem Pyramidenmast. Größen aus dem NASA NSSDCA; Schüssel und Mast sind schematisch.",
+      "where": "Flotte · Raumfahrzeugseite + Fliegen"
+    },
+    "/images/colophon/model-showcase-bepicolombo_webp": {
+      "title": "BepiColombo (maßstabsgetreu)",
+      "what": "Die gestapelte Reisekonfiguration mit 6,4 m – das Mercury Transfer Module mit vier Ionentriebwerken und zwei schwarz-blauen Flügeln aus je vier Paneelen, das den Merkur-Orbiter und Mio in seinem Sonnenschutzzylinder trägt.",
+      "where": "Flotte · Raumfahrzeugseite + Fliegen"
+    },
+    "/images/colophon/model-showcase-exomars-tgo_webp": {
+      "title": "ExoMars Trace Gas Orbiter",
+      "what": "Orbiter von ESA und Roscosmos – die Triebwerksdüse und die Nadir-Hardware, die Spektrometer NOMAD und ACS auf der von der Erde abgewandten Seite, zwei Solarmodule aus je zwei Paneelen und eine 2,2-m-Schüssel an einem Ausleger.",
+      "where": "Flotte · Raumfahrzeugseite"
+    },
+    "/images/colophon/model-showcase-mars-odyssey_webp": {
+      "title": "Mars Odyssey",
+      "what": "Orbiter der NASA – gefaltete Deckenklappen an den Ecken, THEMIS und die Kameras vorn, ein 6 m langer Gitterausleger mit dem Gammastrahlen-Spektrometer, ein dreiteiliges Solarmodul und eine 1,3-m-Schüssel.",
+      "where": "Flotte · Raumfahrzeugseite"
+    },
+    "/images/colophon/model-showcase-mars2-orbiter_webp": {
+      "title": "Mars-2- und Mars-3-Orbiter (2 Varianten)",
+      "what": "Der sowjetische M-71-Bus – eine Tankwalze mit ihren Kugeln, ein Kragen mit dem schwarzen Aeroshell-Kegel und der Landekapsel obenauf, eine 2,5 m große flache Schüssel und zwei große rechteckige Solarpaneele.",
+      "where": "Flotte · Raumfahrzeugseite"
+    },
+    "/images/colophon/model-showcase-phobos-2_webp": {
+      "title": "Phobos 2",
+      "what": "Die sowjetische Sonde – vier weiße Treibstoffkugeln um das Triebwerk, ein ringförmiger Instrumentengürtel, ein Zentralkern mit Gerätekästen und zwei waagerechte Solarpaneele auf Auslegern.",
+      "where": "Flotte · Raumfahrzeugseite"
+    },
+    "/images/colophon/model-showcase-tianwen-1_webp": {
+      "title": "Tianwen-1",
+      "what": "Chinas Mars-Orbiter mit der Eintrittskapsel obenauf – zwei dreiteilige Solarmodule, eine Mittelgewinnschüssel von etwa 2,5 m und schlanke Antennenstäbe.",
+      "where": "Flotte · Raumfahrzeugseite"
+    },
+    "/images/colophon/model-showcase-viking1-orbiter_webp": {
+      "title": "Viking-Orbiter",
+      "what": "Der Orbiter mit der Landekapsel unter seiner weißen Kuppelhülle – ein achteckiger Busring aus acht Buchten, vier Solarpaneele auf Jochen, eine 1,5 m große goldene Schüssel und eine Scanplattform mit zwei Kameras.",
+      "where": "Flotte · Raumfahrzeugseite"
+    },
+    "/images/colophon/model-showcase-hubble_webp": {
+      "title": "Hubble-Weltraumteleskop (maßstabsgetreu)",
+      "what": "Das Observatorium – ein zerknitterter silberner Lichtschutz mit der offenen Blendentür und den zwei starren Solarflügeln.",
+      "where": "Flotte · Raumfahrzeugseite"
+    },
+    "/images/colophon/model-showcase-jwst_webp": {
+      "title": "James-Webb-Weltraumteleskop (maßstabsgetreu)",
+      "what": "Achtzehn goldene sechseckige Spiegelsegmente auf ihrem Dreibein über dem fünflagigen Sonnenschutz.",
+      "where": "Flotte · Raumfahrzeugseite"
+    },
+    "/images/colophon/model-showcase-chandra_webp": {
+      "title": "Chandra-Röntgenobservatorium (maßstabsgetreu)",
+      "what": "Das Röntgenobservatorium – ein langes, sich verjüngendes Rohr mit seinen zwei Solarflügeln.",
+      "where": "Flotte · Raumfahrzeugseite"
+    },
+    "/images/colophon/model-showcase-spitzer_webp": {
+      "title": "Spitzer-Weltraumteleskop",
+      "what": "Das Infrarotteleskop – ein einzelnes geneigtes Solarpaneel neben dem Kryostatrohr.",
+      "where": "Flotte · Raumfahrzeugseite"
+    },
+    "/images/colophon/model-showcase-kepler_webp": {
+      "title": "Kepler",
+      "what": "Der Planetenjäger – eine bernsteinfarben umhüllte Tonne mit ihrem festen Solarpaneel.",
+      "where": "Flotte · Raumfahrzeugseite"
+    },
+    "/images/colophon/model-showcase-tess_webp": {
+      "title": "TESS",
+      "what": "Das Transit-Durchmusterungs-Raumfahrzeug – vier Kameras mit Streulichtblenden auf einem kompakten Bus.",
+      "where": "Flotte · Raumfahrzeugseite"
+    },
+    "/images/colophon/model-showcase-gaia_webp": {
+      "title": "Gaia (maßstabsgetreu)",
+      "what": "Das Astrometrie-Observatorium der ESA – ein 10 m großer Sonnenschutzrock um den Bus.",
+      "where": "Flotte · Raumfahrzeugseite"
+    },
+    "/images/colophon/model-showcase-euclid_webp": {
+      "title": "Euclid",
+      "what": "Das Dunkles-Universum-Teleskop der ESA – die Blende hinter dem Solarmodul-Schild.",
+      "where": "Flotte · Raumfahrzeugseite"
+    },
+    "/images/colophon/model-showcase-xmm-newton_webp": {
+      "title": "XMM-Newton (maßstabsgetreu)",
+      "what": "Das Röntgenteleskop der ESA – ein langes Rohr, das in der Spiegelmodul-Fläche endet.",
+      "where": "Flotte · Raumfahrzeugseite"
+    },
+    "/images/colophon/model-showcase-compton-gro_webp": {
+      "title": "Compton Gamma Ray Observatory",
+      "what": "Das Gammastrahlen-Observatorium – ein kastenförmiges Instrumentendeck mit seinen Detektoren.",
+      "where": "Flotte · Raumfahrzeugseite"
+    },
+    "/images/colophon/model-showcase-hitomi_webp": {
+      "title": "Hitomi",
+      "what": "Der Röntgensatellit der JAXA – die ausgefahrene optische Bank, die die Teleskope trägt.",
+      "where": "Flotte · Raumfahrzeugseite"
+    },
+    "/images/colophon/model-showcase-spektr-rg_webp": {
+      "title": "Spektr-RG",
+      "what": "Das russisch-deutsche Röntgenobservatorium – das siebenmodulige eROSITA neben dem ART-XC-Rohr.",
+      "where": "Flotte · Raumfahrzeugseite"
+    },
+    "/images/colophon/model-showcase-voyager-1_webp": {
+      "title": "Voyager 1 und 2 (2 Varianten)",
+      "what": "Der Grand-Tour-Bus – eine 3,7-m-Schüssel auf einem zehnseitigen Körper, ein RTG-Ausleger aus drei hintereinander liegenden Generatoren, der Wissenschaftsausleger mit seiner Scanplattform und der 13 m lange Magnetometerausleger.",
+      "where": "Flotte · Raumfahrzeugseite + Fliegen"
+    },
+    "/images/colophon/model-showcase-pioneer-10_webp": {
+      "title": "Pioneer 10 und 11 (2 Varianten)",
+      "what": "Das spinstabilisierte Paar – eine 2,74-m-Schüssel über dem Gerätefach, zwei 3 m lange RTG-Ausleger im Winkel von 120 Grad und ein 6,6 m langer Magnetometerausleger.",
+      "where": "Flotte · Raumfahrzeugseite + Fliegen"
+    },
+    "/images/colophon/model-showcase-juno_webp": {
+      "title": "Juno (maßstabsgetreu)",
+      "what": "Jupiters polarer Orbiter – der Titan-Strahlungstresor unter dem Bus, eine 2,5-m-Schüssel obenauf und drei Solarflügel im Winkel von 120 Grad.",
+      "where": "Flotte · Raumfahrzeugseite + Fliegen"
+    },
+    "/images/colophon/model-showcase-juice_webp": {
+      "title": "JUICE (maßstabsgetreu)",
+      "what": "Der Orbiter der ESA für Jupiters Eismonde – ein weißer Tankrock auf dem Schubkegel, eine feste 2,5-m-Schüssel, zwei Flügel aus je drei Paneelen von 3,9 × 2,2 m und ein 10,6 m langer Magnetometerausleger.",
+      "where": "Flotte · Raumfahrzeugseite + Fliegen"
+    },
+    "/images/colophon/model-showcase-dawn_webp": {
+      "title": "Dawn (maßstabsgetreu)",
+      "what": "Der Ionenantriebs-Orbiter von Vesta und Ceres – drei Ionentriebwerke, eine 1,24-m-Schüssel und zwei Flügel aus je fünf Paneelen, 19,7 m breit.",
+      "where": "Flotte · Raumfahrzeugseite + Fliegen"
+    },
+    "/images/colophon/model-showcase-ulysses_webp": {
+      "title": "Ulysses (maßstabsgetreu)",
+      "what": "Die polare Sonnensonde – eine 1,65-m-Schüssel über der Oberseite, der berippte GPHS-RTG auf einem Ständer an der Seite und ein Experimentausleger.",
+      "where": "Flotte · Raumfahrzeugseite + Fliegen"
+    },
+    "/images/colophon/model-showcase-giotto_webp": {
+      "title": "Giotto (maßstabsgetreu)",
+      "what": "Der Halley-Vorbeiflieger – eine Trommel aus dunklen Solarzellenstreifen mit Goldbändern, der Whipple-Staubschild obenauf und die geneigte, entdrallte 1,47-m-Schüssel auf ihrer weißen Kegelhalterung.",
+      "where": "Flotte · Raumfahrzeugseite + Fliegen"
+    },
+    "/images/colophon/model-showcase-cassini_webp": {
+      "title": "Cassini–Huygens (maßstabsgetreu)",
+      "what": "Der Saturn-Orbiter – ein goldenes Zehneck mit seinen zwei Haupttriebwerken, die 4-m-Hochgewinnantenne, drei RTGs auf Auslegern und die Huygens-Sonde auf ihrem Gitterträger an der Seite.",
+      "where": "Flotte · Raumfahrzeugseite + Fliegen"
+    },
+    "/images/colophon/model-showcase-galileo_webp": {
+      "title": "Galileo (maßstabsgetreu)",
+      "what": "Der Dual-Spin-Jupiter-Orbiter – ein entdrallter Abschnitt mit der Scanplattform, die rotierende Trommel mit ihren Lamellen, die schirmförmige Hochgewinnantenne, zwei RTG-Ausleger und ein 10,9 m langer Magnetometerausleger.",
+      "where": "Flotte · Raumfahrzeugseite + Fliegen"
+    },
+    "/images/colophon/model-showcase-rosetta_webp": {
+      "title": "Rosetta (maßstabsgetreu)",
+      "what": "Ein Kastenbus unter silbergrauer Folie mit schwarzen und goldenen Flecken, eine 2,2-m-Schüssel, zwei fünfteilige Solarflügel von 14 m und Philae an der Rückwand.",
+      "where": "Flotte · Raumfahrzeugseite + Fliegen"
+    },
+    "/images/colophon/model-showcase-hayabusa_webp": {
+      "title": "Hayabusa und Hayabusa2 (2 Varianten)",
+      "what": "Das Probenrückführungs-Raumfahrzeug für Asteroiden – das Probenhorn auf seinem Balg, vier Ionentriebwerke, die Rückkehrkapsel und dreiteilige Flügel; Hayabusa2 ergänzt den mitgeführten Impaktor und die MINERVA-II-Hüpfer.",
+      "where": "Flotte · Raumfahrzeugseite + Fliegen"
+    },
+    "/images/colophon/model-showcase-osiris-rex_webp": {
+      "title": "OSIRIS-REx (maßstabsgetreu)",
+      "what": "Das Probenrückführungs-Raumfahrzeug für Bennu – eine 1,2-m-Schüssel, je ein 1,9 × 2,4 m großes Solarpaneel auf jeder Seite und der 3,35 m lange TAGSAM-Arm, der über die Front hinausragt.",
+      "where": "Flotte · Raumfahrzeugseite + Fliegen"
+    },
+    "/images/colophon/model-showcase-venera-7_webp": {
+      "title": "Venera 7 und 13 (2 Varianten)",
+      "what": "Der sowjetische Venus-Bus – eine weiße Triebwerkstrommel mit Lochreihen, ein Tankabteil mit sichtbaren Kugeln, sechs Streben, die die ablatorummantelte Abstiegskugel halten, eine Gitterschüssel auf einem Mast und zwei Solarflügel.",
+      "where": "Flotte · Raumfahrzeugseite + Fliegen"
+    },
+    "/images/colophon/model-showcase-vega-1_webp": {
+      "title": "Vega 1 und 2 (2 Varianten)",
+      "what": "Der Bus für Venus und Halley – das Venera-Layout mit dem Ballonbehälter auf der Krone der Abstiegskugel.",
+      "where": "Flotte · Raumfahrzeugseite + Fliegen"
     }
   },
   "canvas2d": {

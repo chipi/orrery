@@ -216,41 +216,46 @@ const siteIllustrations = JSON.parse(
 // its own route/where.
 const mk =
   (thumb, where, route) =>
-  ([id, title, what]) => ({
+  ([id, title, what, whereHere]) => ({
     title,
     what,
-    where,
+    where: whereHere ?? where,
     route,
     thumb: `/images/colophon/${thumb}-${id}.webp`,
   });
 
-// Interplanetary spacecraft — built by interplanetary-spacecraft-models.ts,
-// flown on /fly trajectories and shown on /explore.
+// A showcase model shown on its craft's own /fleet/<id> page (and, where `where` says so, on /fly).
+// The tuple's 4th element is the fleet id when it differs from the thumbnail id (twins share one).
+const WHERE_PAGE = 'Fleet · craft page';
+const WHERE_PAGE_FLY = 'Fleet · craft page + Fly';
+const WHERE_PAGE_DESCENT = 'Fleet · craft page + Fly descent';
+const WHERE_LINEUP_FLY = 'Fleet · line-up + Fly';
+const WHERE_LINEUP_DESCENT = 'Fleet · line-up + Fly descent';
+const craftPage =
+  (where) =>
+  ([id, title, what, fleetId]) => ({
+    title,
+    what,
+    where,
+    route: `/fleet/${fleetId ?? id}`,
+    thumb: `/images/colophon/model-showcase-${id}.webp`,
+  });
+
+// Interplanetary spacecraft — built by interplanetary-spacecraft-models.ts. /fly draws the central
+// model (fly-craft.ts) wherever it has one; this builder is now only reached by the missions with no
+// central model: Huygens (rides the Cassini bus) and New Horizons.
 const spacecraft = [
   [
     'cassini',
     'Cassini–Huygens',
     'High-gain dish, RTG booms, and the Huygens probe — Saturn orbiter.',
   ],
-  ['voyager-1', 'Voyager', '3.7 m dish, magnetometer boom, and RTG truss — the Grand Tour bus.'],
-  ['galileo', 'Galileo', 'Dual-spin bus with the furled high-gain umbrella antenna.'],
   [
     'new-horizons',
     'New Horizons',
     'Compact triangular bus with a single dish — the Pluto flyby probe.',
   ],
-  ['pioneer-10', 'Pioneer', 'Spin-stabilised dish, RTG booms, and the engraved plaque.'],
-  ['juno', 'Juno', 'Three vast solar wings around a hexagonal bus — Jupiter polar orbiter.'],
-  ['bepicolombo', 'BepiColombo', 'Stacked transfer module + Mercury orbiters with ion thrusters.'],
-  ['dawn', 'Dawn', 'Ion-drive bus with wide solar wings — Vesta + Ceres orbiter.'],
-  ['giotto', 'Giotto', 'Drum-shaped spinner with a dust shield — Halley’s Comet flyby.'],
-  ['hayabusa2', 'Hayabusa2', 'Boxy bus with solar panels and sampler horn — asteroid Ryugu.'],
-  ['juice', 'JUICE', 'Cross-shaped solar arrays on a compact bus — Jupiter icy-moons orbiter.'],
-  ['rosetta', 'Rosetta', '14 m solar wings around a comet-chasing bus + Philae lander.'],
-  ['ulysses', 'Ulysses', 'RTG-powered solar polar probe with a single dish.'],
-  ['vega-1', 'Vega', 'Soviet Venus flyby + balloon mother-craft with a steerable dish.'],
-  ['venera-13', 'Venera 13', 'Soviet Venus lander — toroidal aerobrake and landing ring.'],
-].map(mk('craft', 'Fly + Explore', '/fly'));
+].map(mk('craft', 'Fly · launch + cruise', '/fly'));
 
 // Moon landers + rovers — Tier-1 engineering meshes (src/lib/hotspot-models).
 const moonModels = [
@@ -641,17 +646,7 @@ const cruiseModels = [
     'Blue Moon MK1',
     'Blue Origin’s tall lander — central tank on a four-leg frame.',
   ],
-  // Small-body sample / rendezvous craft + Starship.
-  [
-    'hayabusa1',
-    'Hayabusa cruise',
-    'JAXA sample-return bus — solar wings, a sampler horn, and ion engines.',
-  ],
-  [
-    'osiris-rex',
-    'OSIRIS-REx cruise',
-    'Boxy bus with V-angled solar wings and the extended TAGSAM sampler arm.',
-  ],
+  // Small-body rendezvous craft + Starship.
   [
     'near-shoemaker',
     'NEAR Shoemaker',
@@ -716,60 +711,23 @@ const overlayModels = [
   },
 ];
 
-// Earth-orbit re-entry capsules — built by capsule-models.ts, flown on the /fly
-// Tier-1 orbit-coast + re-entry act (RFC-034 §13).
-const earthCapsules = [
-  [
-    'mercury-capsule',
-    'Mercury capsule',
-    'Blunt ablative heat shield, shingled cone, and the recovery + antenna section (Freedom 7 … Faith 7).',
-  ],
-  [
-    'gemini-capsule',
-    'Gemini capsule',
-    'Two-seat scaled-up Mercury with the rendezvous-radar nose and adapter module.',
-  ],
-  [
-    'vostok-sphere',
-    'Vostok',
-    'The spherical Sharik descent module — antenna straps and equipment collar; the cosmonaut ejected and parachuted down separately.',
-  ],
-  [
-    'voskhod-sphere',
-    'Voskhod',
-    'The same Sharik sphere, now carrying the solid-propellant soft-landing retro package on a strut truss — the crew rode it to the ground.',
-  ],
-  [
-    'apollo-cm',
-    'Apollo Command Module',
-    'The classic steep blunt cone with the forward docking tunnel (Apollo 7/9, Skylab, ASTP).',
-  ],
-  [
-    'soyuz-sa',
-    'Soyuz descent module',
-    'The "headlamp" bell — spherical base heat shield with a conical crew top.',
-  ],
-  [
-    'dragon-capsule',
-    'Crew Dragon',
-    'Sleek conical body with the SuperDraco pods and the PICA-X heat shield (Inspiration4, Polaris Dawn).',
-  ],
-  [
-    'shenzhou-reentry',
-    'Shenzhou reentry module',
-    'A broad Soyuz-lineage bell — its own lighter-silver hull with a grey equipment band (Shenzhou-1 onward).',
-  ],
-].map(mk('model-capsule', 'Earth-orbit re-entry', '/fly'));
+// Earth-orbit re-entry capsules — capsule-models.ts is superseded everywhere: /fly's ascent, orbit and
+// descent and the /fleet line-up draw the showcase models below (Crew Dragon included).
+const earthCapsules = [];
 
-// Showcase spacecraft — the true-size models of the /fleet line-ups (src/lib/three/showcase/*.ts,
-// 34 models; sister variants that look alike share one entry), the line-up scenes themselves and
-// the scale sets drawn between the craft (lineup/scale-figures.ts, lineup/cartoon-figures.ts).
-// Thumbnails: /dev/models cards `showcase-<id>` / `lineup-cast`, and live /fleet scenes.
+// Showcase spacecraft — the true-size models (src/lib/three/showcase/*.ts, 148 fleet ids; sister
+// variants that look alike share one entry), the line-up scenes themselves and the scale sets drawn
+// between the craft (lineup/scale-figures.ts, lineup/cartoon-figures.ts). Crewed and cargo craft
+// stand in the /fleet line-up; every other craft is shown in the viewer on its /fleet/<id> page.
+// Which of them /fly draws is set by src/lib/three/fly-craft.ts (launch payload, cruise and orbit)
+// and descent-landers.ts (descents). Thumbnails: /dev/models cards `showcase-<id>` / `lineup-cast`,
+// and live /fleet scenes.
 const showcaseCrewed = [
   [
     'soyuz-7k-ok',
     'Soyuz 7K-OK',
     'The first-generation Soyuz at 7.95 m — orbital, descent and service modules, 9.8 m solar wings and the Igla rendezvous antennas.',
+    WHERE_LINEUP_FLY,
   ],
   [
     'soyuz-ms',
@@ -777,66 +735,105 @@ const showcaseCrewed = [
     'The 7.48 m Soyuz across four generations — Igla antennas on the T, Kurs on the TM and TMA, Kurs-NA and a micrometeoroid shield on the MS.',
   ],
   [
+    'vostok',
+    'Vostok and Voskhod (2 variants)',
+    'The 2.3 m sphere on its instrument module, 4.55 m tall (Voskhod 5 m) — a belt of sixteen olive gas bottles with silver straps, hatches and portholes, antenna loops on top, and on the Voskhod the retro pack.',
+    WHERE_LINEUP_FLY,
+  ],
+  [
+    'mercury-capsule',
+    'Mercury capsule',
+    'The 3.3 m one-seat capsule on its retropack — the trapezoid window and side hatch on the cone, three retro rockets held by straps.',
+    WHERE_LINEUP_FLY,
+  ],
+  [
+    'gemini',
+    'Gemini',
+    'The 5.74 m two-seat craft — the shingled black re-entry cone with its two hatches and windows over the RCS, rendezvous and recovery sections and the retro adapter.',
+    WHERE_LINEUP_FLY,
+  ],
+  [
     'crew-dragon',
     'Crew Dragon',
-    'The 8.1 m capsule-and-trunk stack with its windows, SuperDraco pods and solar-cell trunk.',
+    'The 8.1 m capsule-and-trunk stack — the white gumdrop capsule with its trapezoid hatch, four windows and SuperDraco bays over the dark PICA-X heat shield, on a trunk with a wrapped cell patch and two radiator fins, under the white hinged nose cone.',
+    WHERE_LINEUP_FLY,
   ],
   [
     'starliner',
     'Starliner (CST-100)',
-    'Boeing’s 5.03 m capsule and service module — the blue band and the thruster pods.',
+    'Boeing’s 5.03 m capsule and service module — a broad low cone in white silver with blue stripes and the NASA roundel, over a drum with four doghouse thruster pods.',
   ],
   [
     'gaganyaan',
     'Gaganyaan',
-    'ISRO’s 5.58 m crew module on its service module, with deployable solar wings.',
+    'ISRO’s 5.58 m crew module and service module — a blunt white cone panelled in copper-brown tape with a trapezoid hatch and three portholes, over a drum in gold foil with two solar wings.',
+  ],
+  [
+    'mengzhou',
+    'Mengzhou',
+    'China’s 8.8 m crewed craft for the Moon — a grey-silver conical crew module with a red band over a white service module with gold thruster frames, two long cell wings and four engine bells.',
   ],
   [
     'orion',
     'Orion',
-    'The 7.9 m Artemis crew module and European service module with its solar arrays.',
+    'The 7.9 m Artemis stack — the white tiled crew module over its dark heat shield, the European service module with four X-wing solar arrays, and the spacecraft adapter ring below.',
   ],
   [
     'new-shepard',
     'New Shepard',
-    'The 19.2 m suborbital vehicle — a 3.8 m booster under the crew capsule with its large windows.',
+    'The 19.2 m suborbital vehicle on the pad — a white booster with a black engine skirt, blue band, ring fin, three tail fins and four legs, under the crew capsule with its six large windows.',
   ],
   [
     'apollo-csm-block-ii',
     'Apollo CSM Block I / II (2 variants)',
-    'The command and service module at 10.6 and 11 m — the conical command module on the cylindrical service module and its engine bell.',
+    'The command and service module at 10.6 and 11 m — the cone in reflective silver with five windows and (Block II) the docking probe, over the polished-aluminium service module with its white radiators, RCS quads and the engine bell.',
+    WHERE_LINEUP_FLY,
+  ],
+  [
+    'apollo-lm',
+    'Apollo LM (true size)',
+    'The Lunar Module landed — the octagonal descent stage in crinkled gold and amber foil on four gold-wrapped legs, the faceted ascent stage with two triangular windows, RCS quads, rendezvous radar and S-band dish.',
+    WHERE_LINEUP_DESCENT,
   ],
   [
     'shenzhou',
     'Shenzhou',
-    'China’s 9.25 m three-module craft in the Soyuz lineage — orbital module, re-entry module and service module with its solar wings.',
+    'China’s 9.25 m three-module craft in the Soyuz lineage — a quilted silver orbital module, the bell-shaped re-entry module on its dark ablative base and the white service module with maroon skirt, orange thruster blocks and two wings.',
+    WHERE_LINEUP_FLY,
   ],
   [
     'space-shuttle-orbiter',
     'Space Shuttle orbiter',
-    'One 37.2 m orbiter drawn once for the four sisters — Atlantis, Challenger, Discovery and Endeavour — lying on the runway.',
+    'One 37.2 m orbiter drawn once for the four sisters — Atlantis, Challenger, Discovery and Endeavour — white upper fuselage with its payload-bay doors, black-tile belly, double-delta wing with reinforced carbon edges, OMS pods and three main engines, lying on the runway.',
+    WHERE_LINEUP_FLY,
   ],
   [
     'columbia',
     'Space Shuttle Columbia',
-    'The first orbiter — the only one with black chines, and the instrument pod on its tail fin.',
+    'The first orbiter — the only one with black chines on the wing tops, and the instrument pod on its tail fin.',
+    WHERE_LINEUP_FLY,
   ],
   [
     'enterprise',
     'Space Shuttle Enterprise',
-    'The atmospheric test orbiter — no main engines, no OMS pods, simulated tiles.',
+    'The atmospheric test orbiter — charcoal simulated tiles of foam and paint and plain white fibreglass wing edges in place of the flown tiles and carbon.',
   ],
   [
     'buran',
     'Buran',
-    'The Soviet orbiter at 36.4 m — a 24 m double-delta wing, its main engines left on the Energia core.',
+    'The Soviet orbiter at 36.4 m — a 24 m double-delta wing and two OMS nozzles in the tail, its main engines left on the Energia core.',
   ],
   [
     'buran-ok-gli',
     'Buran OK-GLI',
-    'The atmospheric test vehicle with Buran’s shape and mass — four AL-31 turbofans at the tail.',
+    'The atmospheric test vehicle with Buran’s shape and mass, in painted white and grey with no tiles — its jet engines in a nacelle on each side of the fin base.',
   ],
-  ['x37b', 'X-37B', 'The U.S. Space Force’s 8.92 m uncrewed spaceplane with its 4.55 m wingspan.'],
+  [
+    'x37b',
+    'X-37B',
+    'The U.S. Space Force’s 8.92 m uncrewed spaceplane with its 4.55 m wingspan — black-tile underside and nose, canted tail, closed bay doors.',
+    WHERE_LINEUP_FLY,
+  ],
 ].map(mk('model-showcase', 'Fleet · line-up', '/fleet?category=crewed-spacecraft&view=lineup'));
 const showcaseCargo = [
   [
@@ -847,37 +844,37 @@ const showcaseCargo = [
   [
     'cargo-dragon-2',
     'Cargo Dragon 2',
-    'The windowless uncrewed Dragon 2 on its 8.1 m trunk — the ISS cargo ship.',
+    'The windowless uncrewed Dragon 2 on its 8.1 m trunk — cover plates where the crew version has windows and SuperDraco bays.',
   ],
   [
     'cargo-dragon-v1',
     'Dragon 1',
-    'The original 6.1 m cargo Dragon — a 3.7 m capsule on its trunk with two solar arrays.',
+    'The original 6.1 m cargo Dragon — a squat capsule 3.7 m across with four Draco quads and a white nose cone, on a 2.3 m trunk with two solar wings.',
   ],
   [
     'cygnus-enhanced',
     'Cygnus Standard / Enhanced (2 variants)',
-    'Northrop Grumman’s station freighter at 5.14 and 6.39 m — a pressurised cargo module over the service module with round solar arrays.',
+    'Northrop Grumman’s freighter at 5.14 and 6.39 m — a bare-aluminium cargo module in pocketed panels over a gold-and-silver service module, with flat rectangular wings on the Standard and round UltraFlex arrays on the Enhanced.',
   ],
   [
     'htv',
     'HTV (Kounotori)',
-    'Japan’s 9.8 m station freighter — a pressurised module and an open pallet on the service section.',
+    'Japan’s 9.8 m station freighter — a white propulsion module, a silver avionics section, an open pallet bay and the white pressurised carrier with dark body-mounted cells.',
   ],
   [
     'htv-x',
     'HTV-X',
-    'Japan’s 8 m successor freighter — a pressurised cargo module over the service module with its solar wings.',
+    'Japan’s 8 m successor freighter — a gold-blanketed pressurised module, an open cargo-support deck, a silver service module and two long narrow arrays.',
   ],
   [
     'atv',
     'ATV',
-    'ESA’s 10.3 m Automated Transfer Vehicle — a cylindrical cargo carrier with four X-shaped solar wings.',
+    'ESA’s 10.3 m Automated Transfer Vehicle — a gold aft cone with four engines under the quilted white cargo carrier and its docking ring, with four copper-edged wings in an X.',
   ],
   [
     'tianzhou',
     'Tianzhou',
-    'China’s 10.6 m cargo ship — a long cargo module over the service module and its solar wings.',
+    'China’s 10.6 m cargo ship — a white propulsion drum with orange thruster blocks, a larger grey-white cargo module, the relay dish and two big wings.',
   ],
 ].map(mk('model-showcase', 'Fleet · line-up', '/fleet?category=cargo-spacecraft&view=lineup'));
 const lineupLaunchers = [
@@ -905,111 +902,294 @@ const lineupSpacecraft = [
   ],
 ].map(mk('model-lineup', 'Fleet · line-up', '/fleet?category=crewed-spacecraft&view=lineup'));
 
-// Showcase spacecraft that fly on /fly: the inner-solar, small-body and Mars/Moon orbiters, Skylab,
-// and the plain builders (no fleet entry) of the early probes — src/lib/three/showcase/{inner-solar,
-// small-body,orbiters,early-stations}.ts. Thumbnails: /dev/models cards `showcase-<id>` / `probe-<id>`.
+// Showcase craft with a /fleet/<id> page viewer and a model on /fly (src/lib/three/fly-craft.ts):
+// the inner-solar and small-body probes, Mars and Moon orbiters and Skylab.
 const flyProbes = [
   [
     'parker-solar-probe',
     'Parker Solar Probe',
-    'The 3 m Sun-grazer — a 2.3 m carbon-composite heat shield over a slim bus, with two small cooled solar arrays.',
+    'The 3 m Sun-grazer — a 2.3 m carbon-composite heat shield on struts over a gold-blanketed bus, with two small actively cooled solar arrays and a 0.6 m dish.',
   ],
   [
     'solar-orbiter',
     'Solar Orbiter',
-    'ESA’s 3.1 m Sun-watcher — a heat shield on the Sun side, six solar panels spanning 18 m and a 4.4 m instrument boom.',
+    'ESA’s 3.1 m Sun-watcher — a layered black heat shield with observing-port doors in front of a silver-blanketed body, six solar panels spanning 18 m, a 4.4 m instrument boom and a 1.5 m dish on the shaded rear.',
   ],
   [
     'messenger',
     'MESSENGER',
-    'The Mercury orbiter behind its 2.5 m ceramic-cloth sunshade, with two solar arrays and a 3.6 m magnetometer boom.',
+    'The Mercury orbiter behind its 2.5 m ceramic-cloth sunshade, on a blanketed box bus with its propellant tanks showing, two rotatable solar arrays and a 3.6 m magnetometer boom.',
   ],
   [
     'magellan',
     'Magellan',
-    'The Venus radar mapper at 6.4 m — a ten-sided bus, the Star 48B motor and a 3.7 m high-gain dish.',
+    'The Venus radar mapper at 6.4 m — the Star 48B motor under a ten-sided bus, a gold-blanketed equipment module and a 3.7 m high-gain dish, with two square solar panels.',
   ],
   [
     'akatsuki',
     'Akatsuki',
-    'JAXA’s 1.45 m box-shaped Venus orbiter with two solar arrays and a flat phased-array antenna.',
+    'JAXA’s 1.45 m gold-blanketed box Venus orbiter with a camera deck on the Venus-facing side, a flat phased-array antenna, white thruster cups and two arrays of two stacked panels.',
   ],
   [
     'dart',
     'DART',
-    'The 2.6 m asteroid-impact spacecraft with two 8.5 m solar arrays, the NEXT-C ion engine and the DRACO camera.',
+    'The 2.6 m asteroid-impact spacecraft — two 8.5 × 2.4 m roll-out solar arrays, the NEXT-C ion engine, the DRACO camera, the LICIACube cubesat in its dispenser and a flat-plate antenna.',
   ],
   [
     'lucy',
     'Lucy',
-    'The Trojan-asteroid explorer, 16 m tip to tip — two circular solar arrays about 7 m across and a 2 m high-gain dish.',
+    'The Trojan-asteroid explorer, 16 m tip to tip — two circular solar arrays about 7 m across, a 2 m high-gain dish and an instrument platform with the terminal tracking cameras.',
   ],
   [
     'psyche-spacecraft',
     'Psyche',
-    'The metal-asteroid orbiter — a 7.3 m craft with 25 m of deployed solar arrays and 2 m instrument booms.',
+    'The metal-asteroid orbiter — a 7.3 m craft with two five-panel cruciform solar arrays (25 m deployed), four Hall thrusters in a 2 × 2 cluster and 2 m instrument booms.',
   ],
   [
     'europa-clipper',
     'Europa Clipper',
-    'The 5 m Jupiter-moon orbiter with 30.5 m solar arrays, a 3.1 m high-gain antenna and an 8.5 m magnetometer boom.',
+    'The 5 m Jupiter-moon orbiter — a propulsion module and radiation vault under a 3.1 m dish, 30.5 m of solar arrays carrying the REASON radar dipoles, and an 8.5 m magnetometer boom.',
   ],
   [
     'mars-express',
     'Mars Express',
-    'ESA’s 1.8 m box bus with two 2.5 m solar wings (about 12 m tip to tip) and a 1.6 m high-gain dish.',
+    'ESA’s 1.8 m box bus with gold-blanketed corners and its instruments on the nadir face, two wings of four narrow panels and a 1.6 m high-gain dish.',
   ],
   [
     'maven',
     'MAVEN',
-    'NASA’s 3.47 m Mars-atmosphere orbiter — a 2.3 m cubic bus, two gull-winged arrays with magnetometers at their tips and a 2 m dish.',
+    'NASA’s 3.47 m Mars-atmosphere orbiter — a 2.3 m cubic bus, a payload platform on its boom, two gull-winged arrays with magnetometers at their tips and a 2 m dish.',
   ],
   [
     'mangalyaan',
     'Mangalyaan',
-    'ISRO’s Mars Orbiter Mission — a 1.5 m gold-wrapped cube with a three-panel array and a 2.2 m reflector.',
+    'ISRO’s Mars Orbiter Mission — a 1.5 m gold-wrapped cube with its propellant-tank dome on top, a three-panel array on a boom and a 2.2 m reflector on the other side.',
   ],
   [
     'hope',
     'Hope',
-    'The UAE’s Emirates Mars Mission orbiter — a 2.9 m hexagonal bus with two solar wings and a 1.85 m dish.',
+    'The UAE’s Emirates Mars Mission orbiter — a 2.9 m bus with its science deck on the front face, two wings of three panels and a 1.85 m dish on a trussed bracket.',
   ],
   [
     'mariner-9',
     'Mariner 4, 9 and 10 (3 variants)',
-    'NASA’s octagonal Mariner family — four solar panels with tip vanes on Mariner 4 and 9; two panels, a sunshade and a 5.8 m magnetometer boom on Mariner 10.',
+    'NASA’s octagonal Mariner family — four panels with tip vanes on Mariner 4 and 9 (Mariner 9 under a foil-wrapped propulsion module); two panels, a sunshade and a 5.8 m magnetometer boom on Mariner 10.',
   ],
   [
     'lro',
     'Lunar Reconnaissance Orbiter',
-    'NASA’s 3.9 m Moon mapper — a box bus with a single 10.7 m² solar array and a steerable dish.',
+    'NASA’s 3.9 m Moon mapper — a gold-and-silver blanketed box bus with two LROC cameras, LOLA, Diviner and Mini-RF on the nadir face, a single 10.7 m² solar array on a boom and a steerable dish.',
   ],
   [
     'skylab',
     'Skylab',
-    'America’s first space station — the Orbital Workshop, airlock and docking adapter, the solar-telescope mount with its windmill of panels, and the sunshade.',
+    'America’s first space station as repaired — the black-skirted Orbital Workshop with its single wing and gold parasol, the airlock and docking adapter, and the Apollo Telescope Mount swung out with its four-blade windmill of panels.',
   ],
-].map(mk('model-showcase', 'Fly + Explore', '/fly'));
+].map(craftPage(WHERE_PAGE_FLY));
 const flyEarlyProbes = [
-  [
-    'clementine',
-    'Clementine, SMART-1, Chang’e 1 and Chandrayaan-1 (4 variants)',
-    'One box-bus builder in four sizes — Clementine’s 1.9 m bus, the 1 m SMART-1 cube, Chang’e 1 and a gold-wrapped Chandrayaan-1 — each with its own solar wings and dish.',
-  ],
-  [
-    'lunar-prospector',
-    'Lunar Prospector',
-    'The 1.36 m drum covered in solar cells, with three 2.5 m instrument booms.',
-  ],
-  [
-    'luna-10',
-    'Luna 10',
-    'The Soviet 1.5 m pressurised cylinder with four antenna whips and a boom — the first craft to orbit the Moon.',
-  ],
   [
     'sputnik-1',
     'Sputnik 1',
     'The polished 58 cm sphere with its hemisphere seam, 36 bolts and four swept-back whip antennas of 2.4 and 2.9 m.',
+  ],
+  [
+    'nova-c',
+    'Nova-C (IM-1 Odysseus)',
+    'Intuitive Machines’ 4.3 m lunar lander — a 1.57 m hexagonal body, six legs, the methane engine below and three solar panels. Height and width from Wikipedia; the leg splay and deck are schematic.',
+  ],
+].map(mk('model-probe', 'Fly', '/fly'));
+
+// Lunar orbiters (lunar-orbiters.ts, mars-orbiters.ts hold the older Mars ones below): foil-wrapped
+// bus, real array layout and dish. /fly draws them in cruise and orbit; the five Lunar Orbiters
+// have no /fly mission.
+const lunarOrbiters = [
+  [
+    'chandrayaan1',
+    'Chandrayaan-1',
+    'ISRO’s first Moon orbiter — a box bus with white radiator patches and gold-ringed instrument apertures, a 0.7 m dish on a gold boom and one solar panel on a two-bar yoke.',
+  ],
+  [
+    'chandrayaan2',
+    'Chandrayaan-2 orbiter',
+    'The orbiter that carried Vikram — a bus with a gold drum rising from the top deck where the lander sat, white taped patches over its radiators and one two-panel solar wing.',
+  ],
+  [
+    'change1',
+    'Chang’e 1 and 2 (2 variants)',
+    'China’s lunar orbiters — an engine bell under the bus, silver inset panels, two white relay dishes, a 0.8 m steerable dish on an arm and two three-panel wings on gold yokes.',
+  ],
+  [
+    'clementine',
+    'Clementine',
+    'The prism-shaped lunar mapper — a sensor face with camera and lidar apertures, 12 attitude jets, a 1.07 m dish opening downward and two wings of two panels.',
+  ],
+  [
+    'kaguya',
+    'Kaguya (SELENE)',
+    'JAXA’s 4.8 m lunar orbiter — the relay and VLBI sub-satellites on its front face, a high-gain dish on a tripod and mast and a solar paddle of three blue panels on a gold truss.',
+  ],
+  [
+    'luna10',
+    'Luna 10',
+    'The Soviet 1.5 m orbiter — the braking-engine module in a white lattice skirt, cream propellant tanks and a polished pressurised instrument drum with four whip antennas and two mushroom sensors.',
+  ],
+  [
+    'lunar-prospector',
+    'Lunar Prospector',
+    'The 1.36 m drum covered in solar cells under a white nose cone, with three 2.5 m instrument booms.',
+  ],
+  [
+    'smart-1',
+    'SMART-1',
+    'ESA’s 1 m ion-drive orbiter — the PPS-1350 thruster on a gimbal arm, an instrument ring with its camera and spectrometers, a 0.3 m dish and two wings of three panels.',
+  ],
+].map(craftPage(WHERE_PAGE_FLY));
+const lunarOrbiterOnly = [
+  [
+    'lunar-orbiter-1',
+    'Lunar Orbiter 1–5 (5 variants)',
+    'NASA’s five camera orbiters — a bright thermal shell round the camera with its 80 mm and 610 mm lenses, four propellant tanks on truss legs, four solar panels and a 1 m dish on its boom.',
+  ],
+].map(craftPage(WHERE_PAGE));
+
+// Lunar landers and rovers (lunar-landers-east/west.ts, lunar-module.ts). Those the /fly descent
+// draws (descent-landers.ts DETAILED) say so.
+const lunarLanders = [
+  [
+    'luna-9',
+    'Luna 9 (true size)',
+    'The 58 cm landed capsule — the sealed instrument hemisphere left standing among four flopped-open petals, with the TV camera head and four rod antennas on top.',
+  ],
+  [
+    'luna-16',
+    'Luna 16 and 24 (2 variants)',
+    'The sample-return lander — a gold-wrapped hull between two torus tanks with four pressure spheres on four legs, the drill rig, and the 2 m sphere-topped ascent stage on top.',
+  ],
+  [
+    'lunokhod-1',
+    'Lunokhod 1 and 2 (2 variants)',
+    'The Soviet rover — a round tub on eight wire-mesh wheels under an open dome lid, with the finned polonium-210 heat source at the back, the French corner reflector and four whip antennas.',
+  ],
+  [
+    'change-3',
+    'Chang’e 3 and 4 (2 variants)',
+    'The Chinese lander — a boxy gold body on four legs with the rover ramps, tilted solar wings and a camera mast carrying the steerable dish.',
+  ],
+  [
+    'change-5',
+    'Chang’e 5 and 6 (2 variants)',
+    'The sample-return stack — a gold octagonal ascender on the lander, with the drill tower, the folded sampling arm and the sample container beside it.',
+  ],
+  [
+    'vikram-cy3',
+    'Vikram (Chandrayaan-2 and -3, 2 variants)',
+    'ISRO’s lander in its Chandrayaan-3 configuration — four engines and solar panels on three sides and the top, with the ramp down and the Pragyan rover part-way along it.',
+  ],
+  [
+    'slim',
+    'SLIM (true size)',
+    'JAXA’s Moon Sniper — a 1.5 × 1.5 × 2 m prism in crumpled gold foil with a golden dome at the engine end, one strip of solar cells down a side and five round crush pads on struts.',
+  ],
+  [
+    'beresheet',
+    'Beresheet (true size)',
+    'SpaceIL’s lander, 2 m across and 1.5 m high — a black deck rimmed in gold over a silver tube-frame tub with four copper tanks, four long legs and tilted blue solar plates.',
+  ],
+  [
+    'blue-moon-mk1',
+    'Blue Moon MK1 (true size)',
+    'Blue Origin’s 8.05 m lander — a hull of gold and amber foil on a pale truss base carrying the BE-7, ladder-truss legs, two tall solar-cell strips and an open octagonal cage on top.',
+  ],
+].map(craftPage(WHERE_PAGE_DESCENT));
+const lunarRovers = [
+  ['pragyan', 'Pragyan', 'The six-wheeled ISRO rover that rolls down Vikram’s ramp.'],
+].map(craftPage(WHERE_PAGE_DESCENT));
+const lunarRoversOnly = [
+  [
+    'yutu',
+    'Yutu and Yutu-2 (2 variants)',
+    'The Chinese rover — a rocker-bogie on each side, a gold-wrapped warm box under a tilted solar panel, a camera mast, the arm folded under the nose and a steerable dish at the rear.',
+  ],
+].map(craftPage(WHERE_PAGE));
+
+// Mars landers and rovers (mars-landers.ts, mars-rovers.ts, rovers.ts), then the Mars and
+// inner-planet orbiters (mars-orbiters.ts).
+const marsLandersShowcase = [
+  [
+    'viking-1',
+    'Viking landers (3 variants)',
+    'The tripod-legged NASA lander — a six-sided deck alternately 1.09 and 0.56 m wide, gold terminal-descent pods of 18 nozzles, the sampler arm and cameras on the long forward side.',
+  ],
+  [
+    'mars-3',
+    'Mars 2, 3 and 6 landers (3 variants)',
+    'The Soviet white sphere on four opened petals — an antenna crown of four rods, two stereo-camera ears, and the PrOP-M rover on skis tethered beside it.',
+  ],
+  [
+    'phoenix',
+    'Phoenix and Mars Polar Lander (2 variants)',
+    'The solar lander on its deck — TEGA’s two ovens, MECA’s wet-chemistry cells, the robotic arm with its scoop, the stereo camera on a lattice tower and the weather mast with its lidar.',
+  ],
+  [
+    'insight',
+    'InSight (true size)',
+    'The geophysics lander — the 1.8 m arm out over the ground, SEIS under its silver wind and thermal shield, and the HP3 mole deployed beside it.',
+  ],
+  [
+    'schiaparelli',
+    'Schiaparelli (true size)',
+    'ESA’s entry demonstrator on the ground — a flat dark honeycomb crush disc ringed by a silver-gold band, three propellant tanks on struts and the DREAMS platform with its gold UHF coil.',
+  ],
+  [
+    'beagle2',
+    'Beagle 2 (true size)',
+    'The clamshell lander opened — a gold lid dish ringed by four dark solar petals, the gold bowl base with the arm lifting out and the PAW drum of instruments.',
+  ],
+].map(craftPage(WHERE_PAGE_DESCENT));
+const marsRoversShowcase = [
+  [
+    'curiosity',
+    'Curiosity (true size)',
+    'The MSL rover — six wheels on a rocker-bogie, the mast with the ChemCam head and Mastcam pair, the finned MMRTG between two white heat exchangers and the stowed arm across the front.',
+  ],
+  [
+    'spirit',
+    'Spirit and Opportunity (2 variants)',
+    'The Mars Exploration Rover — a gold warm box under a flat blue-black solar deck with four wing panels, the Pancam mast with its camera bar, a round gold dish on a stalk and six small wheels.',
+  ],
+  [
+    'perseverance',
+    'Perseverance',
+    'Curiosity’s layout with straight-cleat wheels — the Mastcam-Z and SuperCam head, the large coring turret, the caching bay under the front and Ingenuity under the belly.',
+  ],
+  [
+    'zhurong',
+    'Zhurong',
+    'China’s rover — a wide silver deck with four butterfly solar wings, a tall mast with its camera box, two small dishes and ribbed wheels on tall legs.',
+  ],
+].map(craftPage(WHERE_PAGE_DESCENT));
+const marsOther = [
+  [
+    'sojourner',
+    'Sojourner',
+    'The first Mars rover — aluminium wheels with stainless cleats on a rocker-bogie, a gold-brown warm box under a dark solar panel, the stereo camera pair and the APXS drum.',
+  ],
+  [
+    'exomars-rosalind-franklin',
+    'ExoMars Rosalind Franklin',
+    'ESA’s walking-chassis rover — a wheel on every leg, two wide solar wings, the gold PanCam bar on its mast and the drill box at the front.',
+  ],
+  [
+    'lrv-apollo',
+    'Apollo Lunar Roving Vehicle',
+    'The open aluminium frame on wire-mesh wheels with titanium chevrons under tan fenders — two tube seats, the T-handle and console, the umbrella dish and the tool pallet at the back.',
+  ],
+].map(craftPage(WHERE_PAGE));
+const marsOrbitersFly = [
+  [
+    'mro',
+    'Mars Reconnaissance Orbiter',
+    'NASA’s Mars mapper — two 5.35 × 2.53 m solar arrays, the 3 m high-gain dish, the 1.6 m HiRISE barrel and the 10 m SHARAD dipole. Dish, HiRISE and SHARAD sizes from NASA; the array size from Wikipedia; the bus is schematic.',
   ],
   [
     'mariner-2',
@@ -1017,16 +1197,172 @@ const flyEarlyProbes = [
     'NASA’s 3.66 m Venus flyby — the 1.04 m hexagonal bus, two solar panels (one with its solar-pressure extension, 5.05 m across), the dish on its arm and the omni antenna atop the pyramid mast. Sizes from NASA NSSDCA; the dish and mast are schematic.',
   ],
   [
-    'mro',
-    'Mars Reconnaissance Orbiter',
-    'NASA’s Mars mapper — two 5.35 × 2.53 m solar arrays, the 3 m high-gain dish, the 1.6 m HiRISE barrel and the 10 m SHARAD dipole. Dish, HiRISE and SHARAD sizes from NASA; the array size from Wikipedia; the bus is schematic.',
+    'bepicolombo',
+    'BepiColombo (true size)',
+    'The stacked cruise configuration at 6.4 m — the Mercury Transfer Module with four ion thrusters and two black-and-blue wings of four panels, carrying the Mercury orbiter and Mio inside its sunshield cylinder.',
+  ],
+].map(craftPage(WHERE_PAGE_FLY));
+const marsOrbiters = [
+  [
+    'exomars-tgo',
+    'ExoMars Trace Gas Orbiter',
+    'ESA–Roscosmos orbiter — the engine bell and nadir hardware, NOMAD and ACS spectrometers on the anti-Earth face, two two-panel arrays and a 2.2 m dish on a boom.',
   ],
   [
-    'nova-c',
-    'Nova-C (IM-1 Odysseus)',
-    'Intuitive Machines’ 4.3 m lunar lander — a 1.57 m hexagonal body, six legs, the methane engine below and three solar panels. Height and width from Wikipedia; the leg splay and deck are schematic.',
+    'mars-odyssey',
+    'Mars Odyssey',
+    'NASA’s orbiter — folded blanket flaps on the corners, THEMIS and the cameras on the front, a 6 m lattice boom carrying the gamma-ray spectrometer, one three-panel array and a 1.3 m dish.',
   ],
-].map(mk('model-probe', 'Fly + Explore', '/fly'));
+  [
+    'mars2-orbiter',
+    'Mars 2 and 3 orbiters (2 variants)',
+    'The Soviet M-71 bus — a banded tank barrel with its spheres, a collar carrying the black aeroshell cone and the lander capsule on top, a 2.5 m shallow dish and two big rectangular solar panels.',
+  ],
+  [
+    'phobos-2',
+    'Phobos 2',
+    'The Soviet probe — four white propellant spheres round the engine, a toroidal instrument belt, a central core with equipment boxes and two horizontal solar panels on outriggers.',
+  ],
+  [
+    'tianwen-1',
+    'Tianwen-1',
+    'China’s Mars orbiter with the entry capsule on top — two three-panel arrays, a medium-gain dish of about 2.5 m and slender antenna rods.',
+  ],
+  [
+    'viking1-orbiter',
+    'Viking orbiter',
+    'The orbiter with the lander capsule under its white domed shell — an octagonal bus ring of eight bays, four solar panels on yokes, a 1.5 m gold dish and a scan platform with two cameras.',
+  ],
+].map(craftPage(WHERE_PAGE));
+
+// Space observatories (observatories.ts): each standing with arrays and sunshields deployed.
+const observatories = [
+  [
+    'hubble',
+    'Hubble (true size)',
+    'The observatory — a crinkled silver light shield with the open aperture door and the two rigid solar wings.',
+  ],
+  [
+    'jwst',
+    'JWST (true size)',
+    'Eighteen gold hexagonal mirror segments on their tripod over the five-layer sunshield.',
+  ],
+  [
+    'chandra',
+    'Chandra (true size)',
+    'The X-ray observatory — a long tapered tube with its two solar wings.',
+  ],
+  [
+    'spitzer',
+    'Spitzer',
+    'The infrared telescope — a single tilted solar panel against the cryostat tube.',
+  ],
+  ['kepler', 'Kepler', 'The planet hunter — an amber-wrapped barrel with its fixed solar panel.'],
+  ['tess', 'TESS', 'The transit survey craft — four hooded cameras on a compact bus.'],
+  [
+    'gaia',
+    'Gaia (true size)',
+    'ESA’s astrometry observatory — a 10 m sunshield skirt round the bus.',
+  ],
+  ['euclid', 'Euclid', 'ESA’s dark-universe telescope — the baffle behind the solar-array shield.'],
+  [
+    'xmm-newton',
+    'XMM-Newton (true size)',
+    'ESA’s X-ray telescope — a long tube ending in the mirror-module face.',
+  ],
+  [
+    'compton-gro',
+    'Compton Gamma Ray Observatory',
+    'The gamma-ray observatory — a boxy instrument deck with its detectors.',
+  ],
+  [
+    'hitomi',
+    'Hitomi',
+    'JAXA’s X-ray satellite — the extended optical bench carrying the telescopes.',
+  ],
+  [
+    'spektr-rg',
+    'Spektr-RG',
+    'The Russian–German X-ray observatory — the seven-module eROSITA beside the ART-XC tube.',
+  ],
+].map(craftPage(WHERE_PAGE));
+
+// Outer-planet and deep-space craft (outer-probes.ts, probes.ts): /fly draws them in launch and
+// cruise (fly-craft.ts), and the probes, landers and samplers in the descents too.
+const outerProbes = [
+  [
+    'voyager-1',
+    'Voyager 1 and 2 (2 variants)',
+    'The Grand Tour bus — a 3.7 m dish on a ten-sided body, an RTG boom of three generators end to end, the science boom with its scan platform and the 13 m magnetometer boom.',
+  ],
+  [
+    'pioneer-10',
+    'Pioneer 10 and 11 (2 variants)',
+    'The spin-stabilised pair — a 2.74 m dish over the equipment compartment, two 3 m RTG booms at 120 degrees and a 6.6 m magnetometer boom.',
+  ],
+  [
+    'juno',
+    'Juno (true size)',
+    'Jupiter’s polar orbiter — the titanium radiation vault under the bus, a 2.5 m dish on top and three solar wings at 120 degrees.',
+  ],
+  [
+    'juice',
+    'JUICE (true size)',
+    'ESA’s Jupiter icy-moons orbiter — a white tank skirt on the thrust cone, a fixed 2.5 m dish, two wings of three 3.9 × 2.2 m panels and a 10.6 m magnetometer boom.',
+  ],
+  [
+    'dawn',
+    'Dawn (true size)',
+    'The ion-drive orbiter of Vesta and Ceres — three ion thrusters, a 1.24 m dish and two wings of five panels, 19.7 m across.',
+  ],
+  [
+    'ulysses',
+    'Ulysses (true size)',
+    'The solar polar probe — a 1.65 m dish over the top, the finned GPHS-RTG on a stand at the side and an experiment boom.',
+  ],
+  [
+    'giotto',
+    'Giotto (true size)',
+    'The Halley flyby — a drum of dark solar-cell strips with gold bands, the Whipple dust shield on top and the tilted 1.47 m despun dish on its white cone mount.',
+  ],
+].map(craftPage(WHERE_PAGE_FLY));
+const descentProbes = [
+  [
+    'cassini',
+    'Cassini–Huygens (true size)',
+    'The Saturn orbiter — a gold decagon with its two main engines, the 4 m high-gain antenna, three RTGs on outriggers and the Huygens probe on its truss at the side.',
+  ],
+  [
+    'galileo',
+    'Galileo (true size)',
+    'The dual-spin Jupiter orbiter — a despun section with the scan platform, the spun drum with its louvres, the umbrella high-gain antenna, two RTG booms and a 10.9 m magnetometer boom.',
+  ],
+  [
+    'rosetta',
+    'Rosetta (true size)',
+    'A box bus under silver-grey foil with black and gold patches, a 2.2 m dish, two five-panel solar wings of 14 m and Philae on the back wall.',
+  ],
+  [
+    'hayabusa',
+    'Hayabusa and Hayabusa2 (2 variants)',
+    'The asteroid sample-return craft — the sampler horn on its bellows, four ion engines, the return capsule and three-panel wings; Hayabusa2 adds the carry-on impactor and the MINERVA-II hoppers.',
+  ],
+  [
+    'osiris-rex',
+    'OSIRIS-REx (true size)',
+    'The Bennu sample-return craft — a 1.2 m dish, a 1.9 × 2.4 m solar panel each side and the 3.35 m TAGSAM arm reaching out over the front.',
+  ],
+  [
+    'venera-7',
+    'Venera 7 and 13 (2 variants)',
+    'The Soviet Venus bus — a white engine drum with rows of holes, a tank bay with its spheres showing, six struts holding the ablator-shelled descent sphere, a mesh dish on a mast and two solar wings.',
+  ],
+  [
+    'vega-1',
+    'Vega 1 and 2 (2 variants)',
+    'The Venus-and-Halley bus — the Venera layout with the balloon canister on the descent sphere’s crown.',
+  ],
+].map(craftPage(WHERE_PAGE_FLY));
 
 // Launch pads (G4) — src/lib/three/launch-pads.ts, drawn under the rocket in the /fly launch
 // scene; one entry per pad model, from the catalogue the /dev/models gallery also reads.
@@ -1043,6 +1379,19 @@ const models3d = [
   ...lineupSpacecraft,
   ...flyProbes,
   ...flyEarlyProbes,
+  ...lunarOrbiters,
+  ...lunarOrbiterOnly,
+  ...lunarLanders,
+  ...lunarRovers,
+  ...lunarRoversOnly,
+  ...marsLandersShowcase,
+  ...marsRoversShowcase,
+  ...marsOther,
+  ...marsOrbitersFly,
+  ...marsOrbiters,
+  ...observatories,
+  ...outerProbes,
+  ...descentProbes,
   ...launchPads,
   ...moonModels,
   ...marsModels,

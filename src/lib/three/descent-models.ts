@@ -7,7 +7,12 @@ import { buildCapsuleById } from './capsule-models';
 import { getEarthOrbitCoast } from '../orbital/earth-orbit-registry';
 import { buildLanderCruiseCraft } from './lander-cruise-models';
 import { buildInterplanetarySpacecraft } from './interplanetary-spacecraft-models';
-import { detailedDescentLander, detailedReturnCapsule, dockedApolloCsm } from './descent-landers';
+import {
+  detailedDescentLander,
+  detailedProbe,
+  detailedReturnCapsule,
+  dockedApolloCsm,
+} from './descent-landers';
 
 /**
  * Per-mission procedural EDL-stack models for /fly's descent act (RFC-034 §9) —
@@ -432,7 +437,8 @@ function resolveLander(siteId: string, body: DescentBody): THREE.Group {
     const tier0 = buildMoonLanderModel(siteId, 'lander', '#c9ccd2');
     return detailedDescentLander(siteId, tier0) ?? tier0;
   }
-  if (body === 'venus') return buildVenusDescentLander();
+  const probe = (old: THREE.Group): THREE.Group => detailedProbe(body, siteId, old) ?? old;
+  if (body === 'venus') return probe(buildVenusDescentLander());
   if (body === 'itokawa' || body === 'ryugu' || body === 'bennu' || body === 'eros') {
     // The mission's own craft (Hayabusa, Hayabusa2, NEAR, OSIRIS-REx), at the generic sampler's size.
     const generic = buildAsteroidSamplerBus();
@@ -448,11 +454,11 @@ function resolveLander(siteId: string, body: DescentBody): THREE.Group {
     own.position.y = -box.min.y * k; // base on the surface, like the sampler bus
     const holder = new THREE.Group();
     holder.add(own);
-    return holder;
+    return probe(holder);
   }
-  if (body === 'jupiter') return buildJupiterDescentModule();
-  if (body === 'titan') return buildHuygensProbe();
-  if (body === 'comet_67p') return buildPhilaeLander();
+  if (body === 'jupiter') return probe(buildJupiterDescentModule());
+  if (body === 'titan') return probe(buildHuygensProbe());
+  if (body === 'comet_67p') return probe(buildPhilaeLander());
   // Tier-1: the earth descent profile's siteId is the mission id — look up its
   // capsule family from the coast registry (falls back to Mercury).
   if (body === 'earth') {
@@ -928,9 +934,26 @@ const BUILDERS: Record<string, StackBuilder> = {
  *  ablative aeroshell entry, then drogue + main canopies to a splashdown/ground
  *  touchdown. No retro (aerodynamic; a Soyuz soft-landing burst can be added). */
 /** Main-chute count per capsule — real recovery configurations. */
-const CAPSULE_MAIN_CHUTES: Record<string, number> = {
-  'apollo-cm': 3,
-  dragon: 4,
+/**
+ * Earth-return main parachutes, by capsule family: count, and the nominal diameter where it is
+ * sourced (with the capsule height that sets the scale for the older capsule models).
+ * Mercury: one 63 ft ringsail (Smithsonian NASM A19720466000). Gemini: one 84.2 ft ringsail
+ * (NASA, Gemini parachute landing system). Apollo: three 83.6 ft ringsails (NASA NTRS
+ * 19700026594); CM 3.23 m tall. Soyuz: one main of about 1,000 m² (Rostec), about 35.7 m across.
+ * Vostok, Voskhod, Dragon, Shenzhou: count only, size not yet sourced.
+ */
+const CAPSULE_MAINS: Record<
+  string,
+  { count: number; diameterM?: number; capsuleHeightM?: number }
+> = {
+  mercury: { count: 1, diameterM: 19.2 },
+  gemini: { count: 1, diameterM: 25.7 },
+  'apollo-cm': { count: 3, diameterM: 25.5, capsuleHeightM: 3.23 },
+  soyuz: { count: 1, diameterM: 35.7 },
+  vostok: { count: 1 },
+  voskhod: { count: 1 },
+  dragon: { count: 4 },
+  shenzhou: { count: 1 },
 };
 
 function buildEarthCapsuleStack(lander: THREE.Group, vehLen: number): DescentModel {
@@ -938,38 +961,121 @@ function buildEarthCapsuleStack(lander: THREE.Group, vehLen: number): DescentMod
   const m = scaffold(lander);
   addAeroshell(m, p, vehLen);
 
-  // Recovery chutes, modelled off the Apollo-14-under-three-mains photo: a
-  // cluster of shallow canopies riding HIGH on long, fine suspension lines that
-  // converge to a knot just above the capsule. The capsule hangs small and far
-  // below — not a fat balloon sitting on a short stub. Canopy count follows the
-  // real capsule (Apollo 3, Dragon 4, everything else a single main).
+  // Recovery mains: ringsail canopies (concentric sails with open slots, orange and white gores),
+  // at their real size and count where it is sourced (operator 2026-11-23: the striped half-dome
+  // "looks like in a cartoon"). The capsule hangs far below on lines about a canopy-width long.
   const capsuleId = (lander.userData.capsuleId as string | undefined) ?? 'mercury';
-  const n = CAPSULE_MAIN_CHUTES[capsuleId] ?? 1;
-  const canopyR = vehLen * (n >= 3 ? 1.0 : 1.4);
-  const apexY = vehLen * 3.0; // canopies ride high → long elegant leash
-  const confluence = new THREE.Vector3(0, vehLen * 0.15, 0); // knot just above capsule
-  const spread = n > 1 ? canopyR * 0.82 : 0;
+  const spec = CAPSULE_MAINS[capsuleId];
+  const n = spec?.count ?? 1;
+  const capTop = new THREE.Box3().setFromObject(lander).max.y;
+  const k =
+    (lander.userData.metresToScene as number | undefined) ??
+    (spec?.capsuleHeightM ? landerHeight(lander) / spec.capsuleHeightM : undefined);
+  // Unsourced size: the old proportions (a canopy about three capsule heights across).
+  const D = spec?.diameterM && k ? spec.diameterM * k : vehLen * (n >= 3 ? 2.0 : 2.8);
+  const lineLen = D * 1.1;
+  const confluence = new THREE.Vector3(0, capTop + D * 0.12, 0);
+  // A cluster's canopies sit side by side, their skirts just touching.
+  const spread = n > 1 ? (D * 0.5) / Math.sin(Math.PI / n) : 0;
   const chutes = new THREE.Group();
-  for (let i = 0; i < n; i++) {
-    const ang = n > 1 ? (i / n) * Math.PI * 2 : 0;
-    const cx = Math.cos(ang) * spread;
-    const cz = Math.sin(ang) * spread;
-    const dome = canopyDome(canopyR, p);
-    dome.position.set(cx, apexY, cz);
+  const riser = new THREE.BufferGeometry().setFromPoints([
+    new THREE.Vector3(0, capTop, 0),
+    confluence,
+  ]);
+  chutes.add(new THREE.Line(riser, new THREE.LineBasicMaterial({ color: 0xd9dde2 })));
+  for (let c = 0; c < n; c++) {
+    const ang = n > 1 ? (c / n) * Math.PI * 2 : 0;
+    const off = new THREE.Vector3(Math.cos(ang) * spread, 0, Math.sin(ang) * spread);
+    const skirtY = confluence.y + Math.sqrt(Math.max(0, lineLen * lineLen - off.lengthSq()));
+    const canopy = ringsailCanopy(D);
+    canopy.position.set(off.x, skirtY, off.z);
     if (n > 1) {
-      dome.rotation.z = -Math.cos(ang) * 0.16; // fan the cluster outward a touch
-      dome.rotation.x = Math.sin(ang) * 0.16;
+      canopy.rotation.z = -Math.cos(ang) * 0.14; // the cluster fans outward
+      canopy.rotation.x = Math.sin(ang) * 0.14;
     }
-    chutes.add(dome);
-    chutes.add(suspensionLines(canopyR * 0.92, new THREE.Vector3(cx, apexY, cz), confluence, 24));
+    chutes.add(canopy);
+    chutes.add(suspensionLines(D * 0.47, new THREE.Vector3(off.x, skirtY, off.z), confluence, 32));
   }
   m.parachute = chutes;
-  m.parachuteBaseY = 0; // canopies already placed at apexY inside the group
+  m.parachuteBaseY = 0; // canopies already placed inside the group
   m.root.add(m.parachute);
 
   lander.position.y = -vehLen * 0.02;
   m.root.add(lander);
   return m;
+}
+
+function landerHeight(o: THREE.Object3D): number {
+  const b = new THREE.Box3().setFromObject(o);
+  return b.max.y - b.min.y;
+}
+
+/**
+ * A ringsail canopy `D` across (scene units), origin at the centre of its skirt: a shallow
+ * crown of concentric sails with open slots between them and a vent at the apex, its gores
+ * alternating orange and white.
+ */
+function ringsailCanopy(D: number): THREE.Group {
+  const g = new THREE.Group();
+  const R = D / 2;
+  const height = D * 0.32; // inflated crown height above the skirt
+  const gores = 24;
+  const rings = 7;
+  const orange = new THREE.Color(0xe0662a);
+  const white = new THREE.Color(0xf1eee6);
+  const mat = new THREE.MeshStandardMaterial({
+    vertexColors: true,
+    roughness: 0.85,
+    side: THREE.DoubleSide,
+  });
+  // The crown profile: radius r(t) and height y(t) for t from the vent (0) to the skirt (1).
+  const at = (t: number): [number, number] => {
+    const a = (0.12 + 0.88 * t) * (Math.PI / 2) * 0.92;
+    return [(R * Math.sin(a)) / Math.sin((Math.PI / 2) * 0.92), (height * Math.cos(a)) / 1];
+  };
+  for (let ring = 0; ring < rings; ring++) {
+    // Each sail covers most of its band; the rest is the open slot below it.
+    const t0 = ring / rings;
+    const t1 = t0 + (1 / rings) * 0.8;
+    const pos: number[] = [];
+    const col: number[] = [];
+    for (let k = 0; k < gores; k++) {
+      const a0 = (k / gores) * Math.PI * 2;
+      const a1 = ((k + 1) / gores) * Math.PI * 2;
+      const c = k % 2 === 0 ? orange : white;
+      const [r0, y0] = at(t0);
+      const [r1, y1] = at(t1);
+      // Gores billow: the mid-gore bulges a little outward.
+      const am = (a0 + a1) / 2;
+      const quad = [
+        [Math.cos(a0) * r0, y0, Math.sin(a0) * r0],
+        [Math.cos(a1) * r0, y0, Math.sin(a1) * r0],
+        [Math.cos(a1) * r1, y1, Math.sin(a1) * r1],
+        [Math.cos(a0) * r1, y1, Math.sin(a0) * r1],
+        [Math.cos(am) * r0 * 1.03, y0 + height * 0.01, Math.sin(am) * r0 * 1.03],
+        [Math.cos(am) * r1 * 1.03, y1 + height * 0.01, Math.sin(am) * r1 * 1.03],
+      ];
+      for (const [a, b, e] of [
+        [0, 4, 5],
+        [0, 5, 3],
+        [4, 1, 2],
+        [4, 2, 5],
+      ]) {
+        for (const v of [a, b, e]) {
+          pos.push(...quad[v]);
+          col.push(c.r, c.g, c.b);
+        }
+      }
+    }
+    const geo = new THREE.BufferGeometry();
+    geo.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+    geo.setAttribute('color', new THREE.Float32BufferAttribute(col, 3));
+    geo.computeVertexNormals();
+    g.add(new THREE.Mesh(geo, mat));
+  }
+  // The skirt sits at y = 0: shift the crown down so its lowest ring is the skirt.
+  g.children.forEach((c) => (c.position.y = -at(1)[1]));
+  return g;
 }
 
 /** Per-body generic stack for missions without a dedicated builder. */

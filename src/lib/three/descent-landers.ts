@@ -11,6 +11,13 @@ import { SHOWCASE as LUNAR_WEST } from './showcase/lunar-landers-west';
 import { SHOWCASE as MARS_LANDERS, buildPathfinderLander } from './showcase/mars-landers';
 import { SHOWCASE as ROVERS } from './showcase/rovers';
 import { SHOWCASE as CLASSIC } from './showcase/capsules-classic';
+import {
+  SHOWCASE as PROBES,
+  buildGalileoProbe,
+  buildHuygensProbe,
+  buildPhilae,
+  buildVeneraLander,
+} from './showcase/probes';
 
 /**
  * The central detailed models (src/lib/three/showcase/), flown in /fly's descent in place of
@@ -250,9 +257,46 @@ export function detailedReturnCapsule(capsuleId: string, old: THREE.Group): THRE
   craft.position.y = ref.min.y - own.min.y * k;
   const holder = new THREE.Group();
   holder.add(craft);
-  holder.userData = { ...old.userData };
+  holder.userData = { ...old.userData, metresToScene: k };
   return holder;
 }
 
 /** Capsule families that come home in a central model. */
 export const DETAILED_CAPSULE_IDS = Object.keys(CAPSULE_MODEL);
+
+/** Descents flown by a probe or a sample-return craft: by body, or by site for the asteroids. */
+const PROBE_BY_BODY: Record<string, () => THREE.Group> = {
+  venus: buildVeneraLander,
+  titan: buildHuygensProbe,
+  jupiter: buildGalileoProbe,
+  comet_67p: buildPhilae,
+};
+const PROBE_BY_SITE: Record<string, () => THREE.Group> = {
+  hayabusa1: () => PROBES.hayabusa.build(),
+  hayabusa2: () => PROBES['hayabusa-2'].build(),
+  'osiris-rex': () => PROBES['osiris-rex'].build(),
+};
+
+/**
+ * The central model for a probe descent (Venera, Huygens, the Galileo probe, Philae, the asteroid
+ * samplers), fitted to `old` — the model the descent stack was laid out around: the same
+ * largest dimension, the same base. Null when there is none.
+ */
+export function detailedProbe(body: string, siteId: string, old: THREE.Group): THREE.Group | null {
+  const build = PROBE_BY_SITE[siteId] ?? PROBE_BY_BODY[body];
+  if (!build) return null;
+  const craft = build();
+  const size = (b: THREE.Box3) => {
+    const v = b.getSize(new THREE.Vector3());
+    return Math.max(v.x, v.y, v.z) || 1;
+  };
+  const ref = new THREE.Box3().setFromObject(old);
+  const own = new THREE.Box3().setFromObject(craft);
+  const k = size(ref) / size(own);
+  craft.scale.setScalar(k);
+  craft.position.y = ref.min.y - own.min.y * k;
+  const holder = new THREE.Group();
+  holder.add(craft);
+  holder.userData = { ...old.userData };
+  return holder;
+}

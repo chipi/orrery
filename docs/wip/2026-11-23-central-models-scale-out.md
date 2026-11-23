@@ -155,3 +155,26 @@ real. Each landing gets the same treatment:
 - Textures or photogrammetry: the models stay procedural, as in the pilots.
 - IBL in the descent scene: metals there still render darker than in the lineup.
 - Per-mission EDL timing changes: the trajectories stay as they are.
+
+## After pass 2: wish list (operator 2026-11-23)
+
+1. **Booster landings.** As the Starship catch ("two hands"), pick Falcon 9 missions whose
+   first stage visibly comes back: a return-to-launch-site landing on a pad, and a droneship
+   landing at sea (a new scene element: the ship, the ocean). Boostback, entry and landing
+   burns, legs out, touchdown on the deck.
+2. **Apollo's way home.** Today an Apollo mission ends at the lunar touchdown. Add the next
+   legs: LM ascent stage lifts off from the descent stage, rendezvous and docking with the CSM
+   in lunar orbit, LM jettison, trans-Earth injection, the coast home, CM/SM separation, entry
+   and splashdown under the three mains. The trajectories are adjusted to chain the legs.
+   Apollo is the one mission that did all of this; check whether any robotic sample return
+   (Luna 16/24, Chang'e 5/6) fits the same chain afterwards.
+
+## Pass 2 notes from wiring (2026-11-23)
+
+- Huygens, Venera and the Galileo probe still descend under the old striped dome
+  (`canopyDome`): give them their real chutes (Huygens: an 8.3 m main, then a 3 m drogue
+  for most of the descent; Venera: chutes cut at about 50 km, then the aerobrake disc).
+- Rosetta: Philae reads as a dot in the wide frames; frame it in the director.
+- Crew-capsule mains are ringsails at the sourced sizes (Mercury 63 ft, Gemini 84.2 ft,
+  Apollo 3 × 83.6 ft, Soyuz ~1,000 m²). Vostok, Voskhod, Dragon and Shenzhou sizes are not
+  sourced yet; their line length (1.1 × the canopy diameter) is an estimate for all.

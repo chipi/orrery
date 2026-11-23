@@ -43,5 +43,7 @@ describe('/fly mission models', () => {
       if (!own) missing.push(m.id);
     }
     expect(missing).toEqual([]);
-  });
+    // Builds every mission's craft at full detail: ~1.5 s alone, past the 5 s default under
+    // coverage with the whole suite running.
+  }, 30_000);
 });

@@ -125,5 +125,7 @@ describe('showcase models', () => {
       ).toBeLessThan(0.01);
       expect(Math.abs(box.min.y), id).toBeLessThan(0.05);
     }
-  });
+    // Builds all showcase models at full detail: ~3 s alone under coverage, past the 5 s default
+    // with the whole suite running.
+  }, 30_000);
 });

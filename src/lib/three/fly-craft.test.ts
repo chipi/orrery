@@ -44,5 +44,7 @@ describe('fly-craft map', () => {
       const size = new THREE.Box3().setFromObject(g!).getSize(new THREE.Vector3());
       expect(Math.max(size.x, size.y, size.z), id).toBeGreaterThan(0.3);
     }
-  });
+    // Builds every mapped craft at full detail: ~1 s alone, past the 5 s default under coverage
+    // with the whole suite running.
+  }, 30_000);
 });

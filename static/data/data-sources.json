@@ -498,7 +498,7 @@
     {
       "id": "models-ref-wikipedia",
       "name": "3D model references — Wikipedia",
-      "catalog": "206 pages — sizes and proportions for the 3D models",
+      "catalog": "207 pages — sizes and proportions for the 3D models",
       "category": "model-reference",
       "description": "Wikipedia articles (English, Russian and Chinese) that gave the lengths, diameters and proportions of the launcher and spacecraft models and the heights of the landmarks, statues and animals drawn beside them in the /fleet line-ups. The models and outlines are our own; only measurements were read.",
       "source_url": "https://www.wikipedia.org/",
@@ -554,10 +554,6 @@
           "u": "https://en.wikipedia.org/wiki/Atlas_V"
         },
         {
-          "l": "Boeing Starliner — Wikipedia (5.03 m capsule + SM, 4.56 m; module split estimate)",
-          "u": "https://en.wikipedia.org/wiki/Boeing_Starliner"
-        },
-        {
           "l": "Boeing X-37 — Wikipedia (length 8.92 m, wingspan 4.55 m, height 2.90 m, bay 2.1 × 1.2 m)",
           "u": "https://en.wikipedia.org/wiki/Boeing_X-37"
         },
@@ -606,20 +602,12 @@
           "u": "https://en.wikipedia.org/wiki/Energia_(rocket)"
         },
         {
-          "l": "European Service Module — Wikipedia (4 m long, 4.1 m, 4 wings x 7.375 m, 19 m deployed; wing width estimate)",
-          "u": "https://en.wikipedia.org/wiki/European_Service_Module"
-        },
-        {
           "l": "Falcon 9 — Wikipedia",
           "u": "https://en.wikipedia.org/wiki/Falcon_9"
         },
         {
           "l": "Falcon Heavy — Wikipedia",
           "u": "https://en.wikipedia.org/wiki/Falcon_Heavy"
-        },
-        {
-          "l": "Gaganyaan — Wikipedia (crew module 3.5 m x 3.58 m; SM length and arrays estimate)",
-          "u": "https://en.wikipedia.org/wiki/Gaganyaan"
         },
         {
           "l": "Giant panda — Wikipedia",
@@ -678,10 +666,6 @@
           "u": "https://en.wikipedia.org/wiki/LVM3"
         },
         {
-          "l": "Mengzhou (spacecraft) — Wikipedia (8.8 m lunar configuration, crew module 4.5 m; module split and wings estimate)",
-          "u": "https://en.wikipedia.org/wiki/Mengzhou_(spacecraft)"
-        },
-        {
           "l": "Mercury-Redstone — Wikipedia",
           "u": "https://en.wikipedia.org/wiki/Mercury-Redstone_Launch_Vehicle"
         },
@@ -698,16 +682,8 @@
           "u": "https://en.wikipedia.org/wiki/New_Glenn"
         },
         {
-          "l": "New Shepard — Wikipedia (19.2 m, booster 3.8 m, 6 windows; booster/capsule split estimate)",
-          "u": "https://en.wikipedia.org/wiki/New_Shepard"
-        },
-        {
           "l": "OK-GLI — Wikipedia (four AL-31 turbofans at the rear)",
           "u": "https://en.wikipedia.org/wiki/OK-GLI"
-        },
-        {
-          "l": "Orion (spacecraft) — Wikipedia (crew module 5.02 m x 3.3 m)",
-          "u": "https://en.wikipedia.org/wiki/Orion_(spacecraft)"
         },
         {
           "l": "Osborne bull — Wikipedia",
@@ -822,7 +798,7 @@
           "u": "https://en.wikipedia.org/wiki/Space_Shuttle_Challenger"
         },
         {
-          "l": "Space Shuttle Columbia — Wikipedia (only orbiter with black chines; SILTS pod on the fin)",
+          "l": "Space Shuttle Columbia — Wikipedia (only orbiter with black chines on the wing tops; SILTS pod on the fin)",
           "u": "https://en.wikipedia.org/wiki/Space_Shuttle_Columbia"
         },
         {
@@ -834,24 +810,20 @@
           "u": "https://en.wikipedia.org/wiki/Space_Shuttle_Endeavour"
         },
         {
-          "l": "Space Shuttle Enterprise — Wikipedia (no engines, no OMS pods, simulated tiles, fibreglass leading edges)",
+          "l": "Space Shuttle Enterprise — Wikipedia (simulated tiles of foam and paint, fibreglass leading edges)",
           "u": "https://en.wikipedia.org/wiki/Space_Shuttle_Enterprise"
         },
         {
-          "l": "Space Shuttle orbiter — Wikipedia (length 37.237 m, wingspan 23.79 m, height 17.86 m, payload bay 18.3 × 4.6 m)",
+          "l": "Space Shuttle orbiter — Wikipedia (length 37.237 m, wingspan 23.79 m, payload bay 18.3 × 4.6 m)",
           "u": "https://en.wikipedia.org/wiki/Space_Shuttle_orbiter"
+        },
+        {
+          "l": "Space Shuttle thermal protection system — Wikipedia (RCC leading edge, black HRSI tiles, white LRSI and blankets)",
+          "u": "https://en.wikipedia.org/wiki/Space_Shuttle_thermal_protection_system"
         },
         {
           "l": "SpaceX Dragon — Wikipedia",
           "u": "https://en.wikipedia.org/wiki/SpaceX_Dragon"
-        },
-        {
-          "l": "SpaceX Dragon 1 — Wikipedia (6.1 m, 3.7 m, trunk 2.3 m; array span estimate)",
-          "u": "https://en.wikipedia.org/wiki/SpaceX_Dragon_1"
-        },
-        {
-          "l": "SpaceX Dragon 2 — Wikipedia (capsule 4.5 m, 4 m across, 8.1 m with trunk)",
-          "u": "https://en.wikipedia.org/wiki/SpaceX_Dragon_2"
         },
         {
           "l": "Starship — Wikipedia",
@@ -1222,20 +1194,16 @@
           "u": "https://en.wikipedia.org/wiki/MAVEN"
         },
         {
-          "l": "Wikipedia (fallback) — Akatsuki: 1.45 x 1.04 x 1.44 m box, two arrays of about 1.4 m^2 each (1.45 m used as height)",
-          "u": "https://en.wikipedia.org/wiki/Akatsuki_(spacecraft)"
-        },
-        {
           "l": "Wikipedia (fallback) — component table (EP-107 data): 82.4 ft (25.1 m) without CSM, MDA 17.3 ft x 10.5 ft, AM 17.6 ft, ATM 14.7 ft, 55.8 ft width with one wing, 36.3 ft height with ATM",
           "u": "https://en.wikipedia.org/wiki/Skylab"
         },
         {
-          "l": "Wikipedia (fallback) — Magellan: 10-sided bus, 6.4 m tall x 4.6 m diameter, 3.7 m high-gain antenna, Star 48B motor",
-          "u": "https://en.wikipedia.org/wiki/Magellan_(spacecraft)"
-        },
-        {
           "l": "Wikipedia (fallback): 3.1 m high-gain antenna, 8.5 m magnetometer boom",
           "u": "https://en.wikipedia.org/wiki/Europa_Clipper"
+        },
+        {
+          "l": "Wikipedia (fallback): Akatsuki: 1.45 x 1.04 x 1.44 m box, two arrays of about 1.4 m^2 each (1.45 m used as height)",
+          "u": "https://en.wikipedia.org/wiki/Akatsuki_(spacecraft)"
         },
         {
           "l": "Wikipedia (fallback): array diameter 7.3 m",
@@ -1246,12 +1214,20 @@
           "u": "https://en.wikipedia.org/wiki/Double_Asteroid_Redirection_Test"
         },
         {
+          "l": "Wikipedia (fallback): Magellan: 10-sided bus, 6.4 m tall, 3.7 m high-gain antenna, Star 48B motor",
+          "u": "https://en.wikipedia.org/wiki/Magellan_(spacecraft)"
+        },
+        {
           "l": "Wikipedia Dragon 2 infobox — dimensions",
           "u": "https://en.wikipedia.org/wiki/Dragon_2"
         },
         {
           "l": "Wikipedia Vostok-L infobox: 30.84 m; Astronautix vostok8k72 30.84 m x 2.99 m — dimensions",
           "u": "https://en.wikipedia.org/wiki/Vostok-L"
+        },
+        {
+          "l": "Wikipedia, Boeing Starliner: 5.03 m capsule + service module, 4.56 m across; module split estimate",
+          "u": "https://en.wikipedia.org/wiki/Boeing_Starliner"
         },
         {
           "l": "Wikipedia, Chandrayaan-1: cuboid of about 1.5 m, single solar panel, high-gain dish",
@@ -1264,6 +1240,14 @@
         {
           "l": "Wikipedia, Clementine (spacecraft): octagonal prism 1.88 m high and 1.14 m across, 42-inch dish at one end, 489 N thruster at the other, two wings, sensors on one face",
           "u": "https://en.wikipedia.org/wiki/Clementine_(spacecraft)"
+        },
+        {
+          "l": "Wikipedia, European Service Module: 4 m long, 4.1 m, 4 wings x 7.375 m, 19 m deployed; wing width and adapter size estimate",
+          "u": "https://en.wikipedia.org/wiki/European_Service_Module"
+        },
+        {
+          "l": "Wikipedia, Gaganyaan: crew module 3.5 m x 3.58 m; service module length, arrays and engines estimate",
+          "u": "https://en.wikipedia.org/wiki/Gaganyaan"
         },
         {
           "l": "Wikipedia, Gemini spacecraft: 5.736 m, 3.048 m adapter base, 2.3 m re-entry module; NASA cutaway and photographs (Commons \"Gemini spacecraft\", \"Gemini 9a spacecraft on display\", \"Gemini 7 in orbit\")",
@@ -1280,6 +1264,18 @@
         {
           "l": "Wikipedia, Lunar Prospector: graphite-epoxy drum 1.36 m across and 1.28 m high, three radial 2.5 m booms, 1.1 m magnetometer extension",
           "u": "https://en.wikipedia.org/wiki/Lunar_Prospector"
+        },
+        {
+          "l": "Wikipedia, Mengzhou (spacecraft): 8.8 m lunar configuration, crew module 4.5 m; module split, wings and engines estimate",
+          "u": "https://en.wikipedia.org/wiki/Mengzhou_(spacecraft)"
+        },
+        {
+          "l": "Wikipedia, New Shepard: 19.2 m whole vehicle, booster 3.8 m, 6 windows; booster/capsule split estimate",
+          "u": "https://en.wikipedia.org/wiki/New_Shepard"
+        },
+        {
+          "l": "Wikipedia, Orion (spacecraft): crew module 5.02 m x 3.3 m",
+          "u": "https://en.wikipedia.org/wiki/Orion_(spacecraft)"
         },
         {
           "l": "Wikipedia, Progress (spacecraft): cargo, refuelling and service modules, length 7.23 m (M), solar panels first on Progress M; ISS photographs (Commons \"ISS Progress cargo spacecraft\")",
@@ -1300,6 +1296,14 @@
         {
           "l": "Wikipedia, Soyuz (spacecraft): module lengths (orbital 2.98, descent 2.24, service 2.26), 2.72 m diameter; ISS photographs (Commons \"Soyuz TMA-7 spacecraft2edit1\", \"Soyuz TMA-16 approaching ISS\")",
           "u": "https://en.wikipedia.org/wiki/Soyuz_(spacecraft)"
+        },
+        {
+          "l": "Wikipedia, SpaceX Dragon 1: 6.1 m long, 3.7 m across, trunk 2.3 m; array span (two 3.2 m panels a side) estimate",
+          "u": "https://en.wikipedia.org/wiki/SpaceX_Dragon_1"
+        },
+        {
+          "l": "Wikipedia, SpaceX Dragon 2: capsule 4.5 m high, 4 m across, 8.1 m with the trunk",
+          "u": "https://en.wikipedia.org/wiki/SpaceX_Dragon_2"
         },
         {
           "l": "Wikipedia, Vostok (spacecraft) and Voskhod: 2.3 m sphere, 2.43 m module, 4.55 m / 5 m overall; museum photographs (Commons \"Vostok spacecraft\", \"Vostok spacecraft replica2\", Memorial Museum of Astronautics)",
@@ -1366,14 +1370,6 @@
           "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1970-095D"
         },
         {
-          "l": "NASA NSSDCA — MESSENGER: bus 1.27 x 1.42 x 1.85 m, sunshade about 2.5 m tall x 2 m wide (2.5 m used as height), arrays about 6 m tip to tip, 3.6 m magnetometer boom",
-          "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2004-030A"
-        },
-        {
-          "l": "NASA NSSDCA — Parker Solar Probe: 3 m bus, 1 m diameter, TPS end 2.3 m diameter, 11.43 cm thick; arrays 1.12 x 0.69 m; 0.6 m high-gain antenna",
-          "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2018-065A"
-        },
-        {
           "l": "NASA NSSDCA Gemini 3 spacecraft description — dimensions",
           "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1965-024A"
         },
@@ -1392,6 +1388,14 @@
         {
           "l": "NASA NSSDCA, MAVEN — cubic 2.3 x 2.3 m, 2 m high bus; 1.3 m central propellant tank",
           "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2013-063A"
+        },
+        {
+          "l": "NASA NSSDCA: MESSENGER: bus 1.27 x 1.42 x 1.85 m, sunshade about 2.5 m tall x 2 m wide (2.5 m used as height), arrays about 6 m tip to tip, 3.6 m magnetometer boom",
+          "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2004-030A"
+        },
+        {
+          "l": "NASA NSSDCA: Parker Solar Probe: 3 m bus, 1 m diameter, TPS end 2.3 m diameter, 11.43 cm thick; arrays 1.12 x 0.69 m; 0.6 m high-gain antenna",
+          "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2018-065A"
         },
         {
           "l": "NSSDCA — Apollo 11 CSM: 11.0 m long, CM 3.65 m high",
@@ -1710,12 +1714,12 @@
           "u": "https://www.esa.int/Enabling_Support/Space_Transportation/Ariane"
         },
         {
-          "l": "ESA — Solar Orbiter factsheet: body 2.5 x 3.1 x 2.7 m (3.1 m used as height), six 2.1 x 1.2 m panels, 18 m span, 4.4 m instrument boom",
-          "u": "https://www.esa.int/Science_Exploration/Space_Science/Solar_Orbiter/Solar_Orbiter_factsheet"
-        },
-        {
           "l": "ESA Ariane 5 media kit - ECA launch vehicle — dimensions",
           "u": "https://esamultimedia.esa.int/docs/space_transportation/ariane-5_media-kit.pdf"
+        },
+        {
+          "l": "ESA: Solar Orbiter factsheet: body 2.5 x 3.1 x 2.7 m (3.1 m used as height), six 2.1 x 1.2 m panels, 18 m span, 4.4 m instrument boom",
+          "u": "https://www.esa.int/Science_Exploration/Space_Science/Solar_Orbiter/Solar_Orbiter_factsheet"
         }
       ]
     },
@@ -2018,7 +2022,7 @@
     {
       "id": "models-ref-commons",
       "name": "3D model references — Wikimedia Commons photographs",
-      "catalog": "76 pages — sizes and proportions for the 3D models",
+      "catalog": "108 pages — sizes and proportions for the 3D models",
       "category": "model-reference",
       "description": "Photographs of flight hardware, test articles and museum replicas on Wikimedia Commons, looked at to get the shapes and layouts of the lander, rover and capsule models right. No photograph is reproduced; the models are our own geometry.",
       "source_url": "https://commons.wikimedia.org/",
@@ -2029,6 +2033,10 @@
         "fleet"
       ],
       "references": [
+        {
+          "l": "Atlantis on display at the Kennedy Space Center Visitor Complex (photo: black nose and forward RCS, white blanket, windows, hatch)",
+          "u": "https://commons.wikimedia.org/wiki/File:Space_Shuttle_Atlantis_on_display_at_the_Kennedy_Space_Center's_Visitor_Complex.jpg"
+        },
         {
           "l": "NASA — InSight final selfie",
           "u": "https://commons.wikimedia.org/wiki/File:PIA25287-InSights_Final_Selfie_main.png"
@@ -2076,6 +2084,14 @@
         {
           "l": "Photo — Viking lander replica, Smithsonian NASM (white boxy body, tall RTG windscreens, gold engine pod, dish, grey leg bays)",
           "u": "https://commons.wikimedia.org/wiki/File:Viking_Mars_Lander_replica_on_display_in_the_Smithsonian's_Air_and_Space_museum_in_August_2015.jpg"
+        },
+        {
+          "l": "STS-135 Hurley looks at Atlantis tiles (photo: the black tile mosaic of the underside)",
+          "u": "https://commons.wikimedia.org/wiki/File:STS-135_Hurley_looks_at_Atlantis_tiles.jpg"
+        },
+        {
+          "l": "VKK Buran (OK-GLI) at an air show (photo: the airframe, the four-jet tail, the black nose and chin)",
+          "u": "https://commons.wikimedia.org/wiki/File:VKK_Buran_AN0077204.jpg"
         },
         {
           "l": "Wikimedia Commons — 20190605 hayabusa-diagram-tpr-01.png: JAXA instrument diagram: body, horn, capsule and arrays placement",
@@ -2294,8 +2310,20 @@
           "u": "https://commons.wikimedia.org/wiki/File:%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%B0%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F_%D0%BC%D0%B5%D0%B6%D0%BF%D0%BB%D0%B0%D0%BD%D0%B5%D1%82%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D0%B0%D0%BD%D1%86%D0%B8%D1%8F_%D0%A4%D0%BE%D0%B1%D0%BE%D1%81_(14988562882).jpg"
         },
         {
+          "l": "Wikimedia Commons, Artemis 1 - Orion and ESM approach Moon.jpg: ESM thrusters, collar, wing mast",
+          "u": "https://commons.wikimedia.org/wiki/File:Artemis%201%20-%20Orion%20and%20ESM%20approach%20Moon.jpg"
+        },
+        {
           "l": "Wikimedia Commons, Artist's impression of the SMART-1 mission ESA199399.jpg: ESA artist impression: cube bus, gold top, three-panel wings",
           "u": "https://commons.wikimedia.org/wiki/File:Artist's_impression_of_the_SMART-1_mission_ESA199399.jpg"
+        },
+        {
+          "l": "Wikimedia Commons, Calypso Starliner capsule postflight.jpg: crew module shoulder, panels, roundel",
+          "u": "https://commons.wikimedia.org/wiki/File:Calypso%20Starliner%20capsule%20postflight.jpg"
+        },
+        {
+          "l": "Wikimedia Commons, CCP SpaceX Demo-2 Dragon (3).jpg: Crew Dragon: hatch, windows, bays, heat shield",
+          "u": "https://commons.wikimedia.org/wiki/File:CCP%20SpaceX%20Demo-2%20Dragon%20(3).jpg"
         },
         {
           "l": "Wikimedia Commons, Chandrayaan-1-01.jpg: ISRO clean-room photo: gold foil cube, white patches, dish, panel",
@@ -2310,8 +2338,28 @@
           "u": "https://commons.wikimedia.org/wiki/File:Chang'e-1_mockup_at_BASM.jpg"
         },
         {
+          "l": "Wikimedia Commons, Chinese next-generation crewed spacecraft mockup - NMC.jpg: module proportions, thruster frames, wing",
+          "u": "https://commons.wikimedia.org/wiki/File:Chinese%20next-generation%20crewed%20spacecraft%20mockup%20-%20NMC.jpg"
+        },
+        {
           "l": "Wikimedia Commons, Clementine spacecraft model.png: render: sensor face, two two-panel wings, nozzle, dish",
           "u": "https://commons.wikimedia.org/wiki/File:Clementine_spacecraft_model.png"
+        },
+        {
+          "l": "Wikimedia Commons, CRS-8 Dragon from ISS (ISS047E050943).jpg: two solar wings, trunk, nose",
+          "u": "https://commons.wikimedia.org/wiki/File:CRS-8%20Dragon%20from%20ISS%20(ISS047E050943).jpg"
+        },
+        {
+          "l": "Wikimedia Commons, Dummy Gaganyaan Crew Module for TV-D1 abort test 01.jpg: crew module shape and tape seams",
+          "u": "https://commons.wikimedia.org/wiki/File:Dummy%20Gaganyaan%20Crew%20Module%20for%20TV-D1%20abort%20test%2001.jpg"
+        },
+        {
+          "l": "Wikimedia Commons, Emirates Mars Mission mockup at IAC 2021 02.jpg — box bus with the dish on its bracket on top, science deck on one face (flight mockup photo)",
+          "u": "https://commons.wikimedia.org/wiki/File:Emirates_Mars_Mission_mockup_at_IAC_2021_02.jpg"
+        },
+        {
+          "l": "Wikimedia Commons, Gaganyaan module infographic (cropped).jpg: module layout, hatch and portholes",
+          "u": "https://commons.wikimedia.org/wiki/File:Gaganyaan%20module%20infographic%20(cropped).jpg"
         },
         {
           "l": "Wikimedia Commons, GSLV Mk III M1, Chandrayaan-2 - Orbiter at SDSC SHAR 01.jpg: ISRO photo: gold foil box, white taped patches, gold drum, cans and jets, orange ring",
@@ -2330,8 +2378,92 @@
           "u": "https://commons.wikimedia.org/wiki/File:Lunar_Prospector_orbiter.jpg"
         },
         {
+          "l": "Wikimedia Commons, Mariner 3 and 4.jpg — octagon, four-panel cross with tip vanes, top dish and mast (shape reference photo)",
+          "u": "https://commons.wikimedia.org/wiki/File:Mariner_3_and_4.jpg"
+        },
+        {
+          "l": "Wikimedia Commons, Mariner09.jpg — white propulsion module on the octagon, front dish with its tripod feed, panel arms (shape reference photo)",
+          "u": "https://commons.wikimedia.org/wiki/File:Mariner09.jpg"
+        },
+        {
+          "l": "Wikimedia Commons, Mars Express.jpg — bus, D-frame yokes and four-panel wings, dish on the back (shape reference photo)",
+          "u": "https://commons.wikimedia.org/wiki/File:Mars_Express.jpg"
+        },
+        {
+          "l": "Wikimedia Commons, Mars Orbiter Mission Spacecraft.jpg — cube bus, tank dome, single array, side-mounted reflector (labelled reference)",
+          "u": "https://commons.wikimedia.org/wiki/File:Mars_Orbiter_Mission_Spacecraft.jpg"
+        },
+        {
+          "l": "Wikimedia Commons, Maven spacecraft full.jpg — gold bus, tank dome, gull-wing arrays with tip magnetometers, boom and dish (shape reference)",
+          "u": "https://commons.wikimedia.org/wiki/File:Maven_spacecraft_full.jpg"
+        },
+        {
+          "l": "Wikimedia Commons, New Chinese Capsule 2.png: wing layout",
+          "u": "https://commons.wikimedia.org/wiki/File:New%20Chinese%20Capsule%202.png"
+        },
+        {
+          "l": "Wikimedia Commons, New Shepard capsule 01 (cropped).jpg: capsule dome, hatch, large windows",
+          "u": "https://commons.wikimedia.org/wiki/File:New%20Shepard%20capsule%2001%20(cropped).jpg"
+        },
+        {
+          "l": "Wikimedia Commons, New Shepard spacecraft.jpg: capsule outline",
+          "u": "https://commons.wikimedia.org/wiki/File:New%20Shepard%20spacecraft.jpg"
+        },
+        {
+          "l": "Wikimedia Commons, Orion Service Module elements 2015.jpg: crew module, adapter collar, ESM, spacecraft adapter",
+          "u": "https://commons.wikimedia.org/wiki/File:Orion%20Service%20Module%20elements%202015.jpg"
+        },
+        {
+          "l": "Wikimedia Commons, Schema-1 de la sonde Lunar Reconnaissance Orbiter.png — bus faces, payload face, boom dish and the sectioned array (labelled diagram)",
+          "u": "https://commons.wikimedia.org/wiki/File:Schema-1_de_la_sonde_Lunar_Reconnaissance_Orbiter.png"
+        },
+        {
+          "l": "Wikimedia Commons, SpaceX CRS-15 Dragon docked to the ISS (4).jpg: Dragon 1 nose, Draco pockets, trunk",
+          "u": "https://commons.wikimedia.org/wiki/File:SpaceX%20CRS-15%20Dragon%20docked%20to%20the%20ISS%20(4).jpg"
+        },
+        {
+          "l": "Wikimedia Commons, Starliner Departs the Space Station.png: crew module, service module, doghouses",
+          "u": "https://commons.wikimedia.org/wiki/File:Starliner%20Departs%20the%20Space%20Station.png"
+        },
+        {
           "l": "Wikimedia Commons, 月周回衛星「かぐや（SELENE)」の模型.JPG: 1/10 model: black bus, octagonal sub-satellites, mast dish, gold truss and three-panel paddle",
           "u": "https://commons.wikimedia.org/wiki/File:%E6%9C%88%E5%91%A8%E5%9B%9E%E8%A1%9B%E6%98%9F%E3%80%8C%E3%81%8B%E3%81%90%E3%82%84%EF%BC%88SELENE)%E3%80%8D%E3%81%AE%E6%A8%A1%E5%9E%8B.JPG"
+        },
+        {
+          "l": "Wikimedia Commons: Akatsuki CG01.png (gold box, white thruster cups, stacked array panels)",
+          "u": "https://commons.wikimedia.org/wiki/File:Akatsuki_CG01.png"
+        },
+        {
+          "l": "Wikimedia Commons: Europa Clipper spacecraft model.png (dish, vault, arrays, REASON ladders, boom)",
+          "u": "https://commons.wikimedia.org/wiki/File:Europa_Clipper_spacecraft_model.png"
+        },
+        {
+          "l": "Wikimedia Commons: Lucy spacecraft model.png (gored UltraFlex discs, bus, dish)",
+          "u": "https://commons.wikimedia.org/wiki/File:Lucy_spacecraft_model.png"
+        },
+        {
+          "l": "Wikimedia Commons: Magellan - artist depiction.png (dish, bus, two square arrays)",
+          "u": "https://commons.wikimedia.org/wiki/File:Magellan_-_artist_depiction.png"
+        },
+        {
+          "l": "Wikimedia Commons: MESSENGER spacecraft model.png (bus, tanks, arrays, sunshade)",
+          "u": "https://commons.wikimedia.org/wiki/File:MESSENGER_spacecraft_model.png"
+        },
+        {
+          "l": "Wikimedia Commons: Parker Solar Probe.jpg (artist view, shield, bus, arrays, boom)",
+          "u": "https://commons.wikimedia.org/wiki/File:Parker_Solar_Probe.jpg"
+        },
+        {
+          "l": "Wikimedia Commons: Psyche-spacecraft-diagram.png (bus, dish, boom mast, five-panel arrays)",
+          "u": "https://commons.wikimedia.org/wiki/File:Psyche-spacecraft-diagram.png"
+        },
+        {
+          "l": "Wikimedia Commons: Solar Orbiter STM (blanketed body, tape seams, black Kapton)",
+          "u": "https://commons.wikimedia.org/wiki/File:Solar_Orbiter_STM_(16924827482).jpg"
+        },
+        {
+          "l": "X-37B at the Kennedy Space Center Shuttle Landing Facility, 2019 (photo: black tile underside and nose, closed bay doors, canted tail)",
+          "u": "https://commons.wikimedia.org/wiki/File:X-37b_at_NASA_Kennedy_Space_Center_Shuttle_Landing_Facility_2019,_Oct._27.jpg"
         }
       ]
     }

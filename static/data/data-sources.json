@@ -396,9 +396,109 @@
       ]
     },
     {
+      "id": "nasa-mmgis-rover-traverses",
+      "name": "NASA MMGIS rover traverses",
+      "catalog": "MMGIS traverse layers — Curiosity (MSL) and Perseverance (M20), NASA/JPL-Caltech",
+      "category": "other",
+      "description": "The rover teams' localized drive paths for Curiosity and Perseverance, drawn on the Mars surface view with their sols and distances.",
+      "source_url": "https://mars.nasa.gov/mmgis-maps/M20/Layers/json/M20_traverse.json",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Published by NASA/JPL-Caltech; U.S. Government work (17 U.S.C. §105).",
+      "used_on": [
+        "mars"
+      ]
+    },
+    {
+      "id": "pds-mer-traverses",
+      "name": "PDS Geosciences Node — MER traverses",
+      "catalog": "MER Analyst's Notebook traverse tables — Spirit (MERA) and Opportunity (MERB), PDS Geosciences Node, Washington University in St. Louis",
+      "category": "other",
+      "description": "The science teams' localized drive paths for Spirit and Opportunity, drawn on the Mars surface view with their sols and distances.",
+      "source_url": "https://an.rsl.wustl.edu/mera/AN/meri/MER/traverse/MERB_traverse_5130.csv",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA Planetary Data System archive data from a NASA mission; U.S. Government work (17 U.S.C. §105).",
+      "used_on": [
+        "mars"
+      ]
+    },
+    {
+      "id": "lroc-nac-traverses",
+      "name": "LROC NAC rover and LRV traverses",
+      "catalog": "LROC traverse GeoJSON layers mapped from Narrow Angle Camera images — NASA/GSFC/Arizona State University",
+      "category": "other",
+      "description": "The tracks the LRO Camera team mapped from Narrow Angle Camera images: Apollo 15 and 16, Lunokhod 1 and 2, and Yutu-2. Orrery simplifies them and draws them on the Moon surface view.",
+      "acknowledgement": "NASA/GSFC/Arizona State University",
+      "source_url": "https://www.lroc.asu.edu/geojson/luna_lunokhod1_traverse.geojson",
+      "license_short": "LROC-EDU",
+      "license_url": "https://lroc.im-ldi.com/about/terms",
+      "license_rationale": "The route files credit NASA/GSFC/Arizona State University and state \"LROC data, educational use with credit\". The LROC terms (lroc.im-ldi.com/about/terms, verified 2026-11-09 for LROC images, see image-provenance.json) permit educational use by schools, museums and other organisations without prior permission when credited; this is not the public-domain PDS archive. Orrery is a non-commercial educational site. Not separately checked: whether the terms page names the GeoJSON traverse layers themselves.",
+      "used_on": [
+        "moon"
+      ]
+    },
+    {
+      "id": "usgs-apollo17-traverse",
+      "name": "USGS Astrogeology · Apollo 17 traverse (Haase et al. 2019)",
+      "catalog": "Apollo 17 LRV mapped traverse and stations, Haase et al. 2019 (doi:10.1029/2018EA000408), USGS Astrogeology",
+      "category": "other",
+      "description": "The USGS Astrogeology mapped traverse of the Apollo 17 Lunar Roving Vehicle (Haase et al. 2019), tied to the LROC orthomosaic of the Taurus–Littrow valley and drawn on the Moon surface view with its stations.",
+      "source_url": "https://doi.org/10.1029/2018EA000408",
+      "license_short": "PD-USGov",
+      "license_url": "https://www.usa.gov/government-works",
+      "license_rationale": "USGS Astrogeology products are U.S. Government work (scripts/IMAGE-PIPELINE.md lists USGS Astrogeology as PD-USGov). The Apollo 17 route file credits \"© NASA\" and Haase et al. 2019. Not verified: the licence of the published traverse data itself, which the repo does not state.",
+      "used_on": [
+        "moon"
+      ]
+    },
+    {
+      "id": "hirise-zhurong-traverse",
+      "name": "HiRISE · Zhurong wheel tracks",
+      "catalog": "HiRISE ESP_073225_2055 (11 March 2022) and ESP_077511_2055 (7 February 2023), NASA/JPL/University of Arizona",
+      "category": "other",
+      "description": "The wheel tracks of China's Zhurong rover seen by the HiRISE camera on Mars Reconnaissance Orbiter (NASA/JPL/University of Arizona). Orrery traced them into the route drawn on the Mars surface view, accurate to about 20 m.",
+      "acknowledgement": "NASA/JPL/University of Arizona",
+      "source_url": "https://www.uahirise.org/ESP_073225_2055",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "HiRISE imagery is produced by NASA/JPL/University of Arizona; not subject to U.S. copyright per 17 U.S.C. §105. Use is permitted; provide source attribution. The route drawn from it is Orrery's own tracing.",
+      "used_on": [
+        "mars"
+      ]
+    },
+    {
+      "id": "wan2014-yutu-traverse",
+      "name": "Yutu rover localisation (Wan et al. 2014, ISPRS Archives)",
+      "catalog": "Wan W. et al. 2014, \"A Cross-Site Visual Localization Method for Yutu Rover\", ISPRS Archives XL-4, 279 (doi:10.5194/isprsarchives-XL-4-279-2014), Figure 5",
+      "category": "other",
+      "description": "The Chang'e 3 mission team's localisation of the Yutu rover's 17 sites (N0101 to N0209) as of 16 January 2014; the lander and the sites were digitised from Figure 5 (metric grid, 10 m scale bar) and drawn on the Moon surface view.",
+      "source_url": "https://doi.org/10.5194/isprsarchives-XL-4-279-2014",
+      "license_short": "Facts-only",
+      "license_url": "https://creativecommons.org/licenses/by/3.0/",
+      "license_rationale": "Only site positions are read off the figure (digitised, then placed from the lander); the figure itself is not reproduced. The paper is published open access under CC BY 3.0 (isprs-archives.copernicus.org, checked 2026-11-18).",
+      "used_on": [
+        "moon"
+      ]
+    },
+    {
+      "id": "vadawale2024-pragyan-stops",
+      "name": "Pragyan APXS stops (Vadawale et al. 2024, Nature)",
+      "catalog": "Vadawale S. V. et al. 2024, \"Chandrayaan-3 APXS elemental abundance measurements at lunar high latitude\", Nature 633 (doi:10.1038/s41586-024-07870-7), Figure 1c",
+      "category": "other",
+      "description": "The Chandrayaan-3 team's map of the Pragyan rover's 23 APXS observation stops around the Vikram lander, with latitude and longitude axes; the stops were digitised from Figure 1c and drawn on the Moon surface view.",
+      "source_url": "https://doi.org/10.1038/s41586-024-07870-7",
+      "license_short": "Facts-only",
+      "license_url": "https://www.nature.com/articles/s41586-024-07870-7",
+      "license_rationale": "Only stop positions are read off the figure (digitised against its latitude and longitude axes); the figure itself is not reproduced. The article shows no Creative Commons licence (checked 2026-11-18).",
+      "used_on": [
+        "moon"
+      ]
+    },
+    {
       "id": "models-ref-wikipedia",
       "name": "3D model references — Wikipedia",
-      "catalog": "136 pages — sizes and proportions for the 3D models",
+      "catalog": "165 pages — sizes and proportions for the 3D models",
       "category": "model-reference",
       "description": "Wikipedia articles (English, Russian and Chinese) that gave the lengths, diameters and proportions of the launcher and spacecraft models and the heights of the landmarks, statues and animals drawn beside them in the /fleet line-ups. The models and outlines are our own; only measurements were read.",
       "source_url": "https://www.wikipedia.org/",
@@ -424,10 +524,6 @@
         {
           "l": "Apollo Command and Service Module — Wikipedia",
           "u": "https://en.wikipedia.org/wiki/Apollo_command_and_service_module#Block_I"
-        },
-        {
-          "l": "Apollo Lunar Module — Wikipedia",
-          "u": "https://en.wikipedia.org/wiki/Apollo_Lunar_Module"
         },
         {
           "l": "Approach and Landing Tests (ALT) — Wikipedia",
@@ -488,10 +584,6 @@
         {
           "l": "Centaur (rocket stage) — Wikipedia",
           "u": "https://en.wikipedia.org/wiki/Centaur_(rocket_stage)"
-        },
-        {
-          "l": "Chang'e 3 launch (Long March 3B/E) — Wikipedia",
-          "u": "https://en.wikipedia.org/wiki/Chang%27e_3"
         },
         {
           "l": "Columbus Monument, Barcelona — Wikipedia",
@@ -586,6 +678,10 @@
           "u": "https://en.wikipedia.org/wiki/LVM3"
         },
         {
+          "l": "Mengzhou (spacecraft) — Wikipedia (8.8 m lunar configuration, crew module 4.5 m; module split and wings estimate)",
+          "u": "https://en.wikipedia.org/wiki/Mengzhou_(spacecraft)"
+        },
+        {
           "l": "Mercury-Redstone — Wikipedia",
           "u": "https://en.wikipedia.org/wiki/Mercury-Redstone_Launch_Vehicle"
         },
@@ -622,12 +718,12 @@
           "u": "https://en.wikipedia.org/wiki/Progress-M"
         },
         {
-          "l": "Project Gemini — Wikipedia",
-          "u": "https://en.wikipedia.org/wiki/Project_Gemini"
+          "l": "Progress-MS — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Progress-MS"
         },
         {
-          "l": "Project Mercury — Wikipedia",
-          "u": "https://en.wikipedia.org/wiki/Project_Mercury"
+          "l": "Project Gemini — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Project_Gemini"
         },
         {
           "l": "Proton (rocket family) — Wikipedia",
@@ -830,12 +926,40 @@
           "u": "https://en.wikipedia.org/wiki/Vulcan_Centaur"
         },
         {
+          "l": "Wikipedia — Apollo Lunar Module: 7.04 m height, 4.22 m descent-stage width, 9.4 m across the landing gear",
+          "u": "https://en.wikipedia.org/wiki/Apollo_Lunar_Module"
+        },
+        {
           "l": "Wikipedia — ATV: 10.3 m, 4.5 m, 22.3 m array span",
           "u": "https://en.wikipedia.org/wiki/Automated_Transfer_Vehicle"
         },
         {
+          "l": "Wikipedia — Beagle 2: 1 m folded, 1.9 m unfolded, four disc solar arrays, 109 cm PAW arm",
+          "u": "https://en.wikipedia.org/wiki/Beagle_2"
+        },
+        {
+          "l": "Wikipedia — Beresheet: 2 m across, 1.5 m high, nine engines (LEROS 2b main)",
+          "u": "https://en.wikipedia.org/wiki/Beresheet"
+        },
+        {
+          "l": "Wikipedia — Blue Moon: Mark 1 is 8.05 m high and 3.08 m across, one BE-7",
+          "u": "https://en.wikipedia.org/wiki/Blue_Moon_(spacecraft)"
+        },
+        {
+          "l": "Wikipedia — Chandrayaan-2 / Vikram: 2.54 × 2 × 1.2 m, four 800 N throttleable engines (CY-2 has a fifth, central one), four legs, ramp",
+          "u": "https://en.wikipedia.org/wiki/Chandrayaan-2"
+        },
+        {
+          "l": "Wikipedia — Chandrayaan-3: Vikram box-shaped, four legs and four thrusters, carries Pragyan on a ramp",
+          "u": "https://en.wikipedia.org/wiki/Chandrayaan-3"
+        },
+        {
           "l": "Wikipedia — CSM: SM 4.52 m, 3.91 m diameter, SPS nozzle 3.88 m; Block I has no docking probe",
           "u": "https://en.wikipedia.org/wiki/Apollo_command_and_service_module"
+        },
+        {
+          "l": "Wikipedia — Curiosity (rover): 2.9 m long, 2.7 m wide, 2.2 m tall, 0.5 m wheels, rocker-bogie, MMRTG",
+          "u": "https://en.wikipedia.org/wiki/Curiosity_(rover)"
         },
         {
           "l": "Wikipedia — Cygnus: 5.14 m length, 3.07 m diameter, Standard variant",
@@ -850,12 +974,100 @@
           "u": "https://en.wikipedia.org/wiki/H-II_Transfer_Vehicle"
         },
         {
+          "l": "Wikipedia — InSight: 6.0 m wide with arrays, 1.56 m deck, 0.83-1.08 m deck height, 2.15 m arrays, 1.8 m arm",
+          "u": "https://en.wikipedia.org/wiki/InSight"
+        },
+        {
+          "l": "Wikipedia — Lunar Roving Vehicle: 3.6 ft height, 7.5 ft wheelbase, wire-mesh wheels, TV camera on the front",
+          "u": "https://en.wikipedia.org/wiki/Lunar_Roving_Vehicle"
+        },
+        {
+          "l": "Wikipedia — Mars 3: 1.2 m spherical landing capsule, four petals, four aerials, PrOP-M on skis on a 15 m umbilical",
+          "u": "https://en.wikipedia.org/wiki/Mars_3"
+        },
+        {
+          "l": "Wikipedia — Mars Exploration Rover: \"stand 1.5 m high, 2.3 m wide and 1.6 m long\", six wheels, rocker-bogie",
+          "u": "https://en.wikipedia.org/wiki/Mars_Exploration_Rover"
+        },
+        {
+          "l": "Wikipedia — Mars Pathfinder: Sojourner 65 cm long, 48 cm wide, 30 cm high",
+          "u": "https://en.wikipedia.org/wiki/Mars_Pathfinder"
+        },
+        {
+          "l": "Wikipedia — Perseverance (rover): 2.9 x 2.7 x 2.2 m, wheels, MMRTG, Ingenuity",
+          "u": "https://en.wikipedia.org/wiki/Perseverance_(rover)"
+        },
+        {
+          "l": "Wikipedia — Phoenix: 5.5 m with arrays deployed, 1.5 m deck, about 2.2 m tall, 2.35 m arm, 1 m MET mast",
+          "u": "https://en.wikipedia.org/wiki/Phoenix_(spacecraft)"
+        },
+        {
+          "l": "Wikipedia — Pragyan (rover)",
+          "u": "https://en.wikipedia.org/wiki/Pragyan_(rover)"
+        },
+        {
+          "l": "Wikipedia — Rosalind Franklin (rover): 25 cm wheels, drill to 2 m, six wheels",
+          "u": "https://en.wikipedia.org/wiki/Rosalind_Franklin_(rover)"
+        },
+        {
+          "l": "Wikipedia — Schiaparelli EDM: 1.65 m lander, 2.4 m with the front shield, crushable structure, DREAMS",
+          "u": "https://en.wikipedia.org/wiki/Schiaparelli_EDM"
+        },
+        {
           "l": "Wikipedia — Shenzhou: 9.25 m, orbital 2.8 m, re-entry 2.5 m, service 2.94 m, 17 m span",
           "u": "https://en.wikipedia.org/wiki/Shenzhou_(spacecraft)"
         },
         {
+          "l": "Wikipedia — SLIM: 1.5 × 1.5 × 2 m, solar panel, two-step landing on its side",
+          "u": "https://en.wikipedia.org/wiki/Smart_Lander_for_Investigating_Moon"
+        },
+        {
           "l": "Wikipedia — Tianzhou: 10.6 m, 3.35 m, 14.9 m array span",
           "u": "https://en.wikipedia.org/wiki/Tianzhou_(spacecraft)"
+        },
+        {
+          "l": "Wikipedia — Viking program: hexagonal base with 1.09 / 0.56 m sides, 2.21 m footpad triangle, 18-nozzle engines, two RTGs, two cylinder cameras",
+          "u": "https://en.wikipedia.org/wiki/Viking_program"
+        },
+        {
+          "l": "Wikipedia — Zhurong (rover): 2.6 x 3 x 1.85 m, six wheels, four solar panels, mast",
+          "u": "https://en.wikipedia.org/wiki/Zhurong_(rover)"
+        },
+        {
+          "l": "Wikipedia (EN) — Chang’e 3 and Yutu: rover 1.5 m long, 1.0 m wide, mast about 1.5 m, six wheels",
+          "u": "https://en.wikipedia.org/wiki/Chang%27e_3"
+        },
+        {
+          "l": "Wikipedia (EN) — Chang’e 4 and Yutu-2: 1.5 x 1.0 x 1.0 m, 140 kg",
+          "u": "https://en.wikipedia.org/wiki/Chang%27e_4"
+        },
+        {
+          "l": "Wikipedia (EN) — Chang’e 5 and 6: lander with ascender on top, drill and scoop sampling",
+          "u": "https://en.wikipedia.org/wiki/Chang%27e_5"
+        },
+        {
+          "l": "Wikipedia (EN) — Luna 9: 58 cm landing capsule, 99 kg, four petals opened after landing",
+          "u": "https://en.wikipedia.org/wiki/Luna_9"
+        },
+        {
+          "l": "Wikipedia (EN) — Luna 16: descent stage cylindrical body, four legs, fuel tanks, landing radar, drill arm",
+          "u": "https://en.wikipedia.org/wiki/Luna_16"
+        },
+        {
+          "l": "Wikipedia (EN) — Luna 17: Lunokhod 1 on the E-8 landing stage with its two descent ramps",
+          "u": "https://en.wikipedia.org/wiki/Luna_17"
+        },
+        {
+          "l": "Wikipedia (EN) — Luna 24: KT descent stage as the Lunokhod bus; ascent stage with spherical return capsule, about 2 m tall",
+          "u": "https://en.wikipedia.org/wiki/Luna_24"
+        },
+        {
+          "l": "Wikipedia (EN) — Lunokhod 1: tub on eight wheels, convex lid with solar cells inside, 135 cm closed, 170 x 160 cm",
+          "u": "https://en.wikipedia.org/wiki/Lunokhod_1"
+        },
+        {
+          "l": "Wikipedia (EN) — Lunokhod 2: third camera, magnetometer on a 2.5 m boom",
+          "u": "https://en.wikipedia.org/wiki/Lunokhod_2"
         },
         {
           "l": "Wikipedia (fallback source), Emirates Mars Mission — 2.37 m wide x 2.90 m long body (length_m = 2.90 m), 1.85 m high-gain dish (the article also says 1.5 m), two solar panels",
@@ -906,24 +1118,28 @@
           "u": "https://en.wikipedia.org/wiki/Dragon_2"
         },
         {
-          "l": "Wikipedia Vostok (spacecraft) — dimensions",
-          "u": "https://en.wikipedia.org/wiki/Vostok_(spacecraft)"
-        },
-        {
           "l": "Wikipedia Vostok-L infobox: 30.84 m; Astronautix vostok8k72 30.84 m x 2.99 m — dimensions",
           "u": "https://en.wikipedia.org/wiki/Vostok-L"
         },
         {
-          "l": "Wikipedia, Progress (spacecraft) — variant comparison: length, diameter, array span",
+          "l": "Wikipedia, Gemini spacecraft: 5.736 m, 3.048 m adapter base, 2.3 m re-entry module; NASA cutaway and photographs (Commons \"Gemini spacecraft\", \"Gemini 9a spacecraft on display\", \"Gemini 7 in orbit\")",
+          "u": "https://en.wikipedia.org/wiki/Gemini_(spacecraft)"
+        },
+        {
+          "l": "Wikipedia, Progress (spacecraft): cargo, refuelling and service modules, length 7.23 m (M), solar panels first on Progress M; ISS photographs (Commons \"ISS Progress cargo spacecraft\")",
           "u": "https://en.wikipedia.org/wiki/Progress_(spacecraft)"
         },
         {
-          "l": "Wikipedia, Progress-MS — 7.4 m x 2.7 m, 10.7 m array, Kurs-NA antennas, added MMOD shielding",
-          "u": "https://en.wikipedia.org/wiki/Progress-MS"
+          "l": "Wikipedia, Project Mercury / Mercury spacecraft: 3.3 m, 1.8 m base; NASA photographs (Commons \"Mercury capsule HD\", \"Boilerplate Mercury Capsule\")",
+          "u": "https://en.wikipedia.org/wiki/Project_Mercury"
         },
         {
-          "l": "Wikipedia, Soyuz (spacecraft) — variant comparison table: lengths, diameters, array spans, module L/D",
+          "l": "Wikipedia, Soyuz (spacecraft): module lengths (orbital 2.98, descent 2.24, service 2.26), 2.72 m diameter; ISS photographs (Commons \"Soyuz TMA-7 spacecraft2edit1\", \"Soyuz TMA-16 approaching ISS\")",
           "u": "https://en.wikipedia.org/wiki/Soyuz_(spacecraft)"
+        },
+        {
+          "l": "Wikipedia, Vostok (spacecraft) and Voskhod: 2.3 m sphere, 2.43 m module, 4.55 m / 5 m overall; museum photographs (Commons \"Vostok spacecraft\", \"Vostok spacecraft replica2\", Memorial Museum of Astronautics)",
+          "u": "https://en.wikipedia.org/wiki/Vostok_(spacecraft)"
         },
         {
           "l": "Буран (космический корабль) — русская Википедия",
@@ -958,7 +1174,7 @@
     {
       "id": "models-ref-nssdca",
       "name": "3D model references — NASA NSSDCA",
-      "catalog": "22 pages — sizes and proportions for the 3D models",
+      "catalog": "23 pages — sizes and proportions for the 3D models",
       "category": "model-reference",
       "description": "NASA Space Science Data Coordinated Archive (NSSDCA) spacecraft and launch-vehicle pages that gave the masses, lengths and diameters of the craft and rockets modelled for /fly and the /fleet line-ups.",
       "source_url": "https://nssdc.gsfc.nasa.gov/",
@@ -980,6 +1196,10 @@
         {
           "l": "Mercury-Atlas 6 — NASA NSSDCA",
           "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1962-003A"
+        },
+        {
+          "l": "NASA NSSDC — Lunokhod 1: tub with convex lid, helical and cone antennas, TV cameras, polonium-210 heater, French reflector",
+          "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1970-095D"
         },
         {
           "l": "NASA NSSDCA — MESSENGER: bus 1.27 x 1.42 x 1.85 m, sunshade about 2.5 m tall x 2 m wide (2.5 m used as height), arrays about 6 m tip to tip, 3.6 m magnetometer boom",
@@ -1062,7 +1282,7 @@
     {
       "id": "models-ref-nasa",
       "name": "3D model references — NASA",
-      "catalog": "43 pages — sizes and proportions for the 3D models",
+      "catalog": "47 pages — sizes and proportions for the 3D models",
       "category": "model-reference",
       "description": "NASA mission, vehicle and history pages (nasa.gov, history.nasa.gov, science.nasa.gov) that gave the dimensions of the crewed capsules, cargo craft, Shuttle orbiters and launchers modelled for /fly and the /fleet line-ups.",
       "source_url": "https://www.nasa.gov/",
@@ -1130,6 +1350,10 @@
           "u": "https://www.hq.nasa.gov/alsj/LM_News_Reference.pdf"
         },
         {
+          "l": "NASA — Apollo News Reference, Lunar Module: ascent and descent stage layout, RCS quads, antennas",
+          "u": "https://www.hq.nasa.gov/alsj/LM04_Lunar_Module_ppLV1-17.pdf"
+        },
+        {
           "l": "NASA — Columbia orbiter overview",
           "u": "https://www.nasa.gov/history/20-years-ago-remembering-columbia-and-her-crew/"
         },
@@ -1140,6 +1364,10 @@
         {
           "l": "NASA — Discovery orbiter overview",
           "u": "https://www.nasa.gov/centers/kennedy/shuttleoperations/orbiters/discovery-info.html"
+        },
+        {
+          "l": "NASA 'About the Russian Progress Spacecraft': Length 7.4 m, Diameter 2.7 m — dimensions",
+          "u": "https://www.nasa.gov/wp-json/wp/v2/migration/167910?_fields=content"
         },
         {
           "l": "NASA 'What Was the Saturn V?' - 111 meters (363 feet) tall — dimensions",
@@ -1162,6 +1390,10 @@
           "u": "https://science.nasa.gov/mission/europa-clipper/mission-overview/"
         },
         {
+          "l": "NASA JPL — MSL rover: mast, arm turret, HGA and UHF antennas, Hazcams",
+          "u": "https://mars.nasa.gov/msl/spacecraft/rover/summary/"
+        },
+        {
           "l": "NASA Lucy spacecraft: 16 m tip to tip with arrays deployed (the model stands on that axis), UltraFlex arrays ~7 m diameter each, 2 m high-gain antenna",
           "u": "https://science.nasa.gov/mission/lucy/spacecraft/"
         },
@@ -1178,6 +1410,10 @@
           "u": "https://science.nasa.gov/mission/psyche/spacecraft/"
         },
         {
+          "l": "NASA Science — Viking spacecraft: 2 m tall from footpads to the top of the S-band dish, 3 m at its widest",
+          "u": "https://science.nasa.gov/mission/viking/spacecraft-and-science"
+        },
+        {
           "l": "NASA Science, MAVEN key facts — length 11.4 m (array tip to tip), width 2.29 m, height 3.47 m (length_m here is the 3.47 m height, bus on its base, dish up)",
           "u": "https://science.nasa.gov/mission/maven/"
         },
@@ -1186,12 +1422,12 @@
           "u": "https://www.nasa.gov/reference/space-launch-system/"
         },
         {
-          "l": "NASA The Space Shuttle reference page: Shuttle Basics Length 184 feet — dimensions",
-          "u": "https://www.nasa.gov/reference/the-space-shuttle/"
+          "l": "NASA Solar System Exploration — Beresheet",
+          "u": "https://solarsystem.nasa.gov/missions/beresheet/in-depth/"
         },
         {
-          "l": "NASA, About the Russian Progress Spacecraft — length 7.4 m, diameter 2.7 m",
-          "u": "https://www.nasa.gov/wp-json/wp/v2/migration/167910?_fields=content"
+          "l": "NASA The Space Shuttle reference page: Shuttle Basics Length 184 feet — dimensions",
+          "u": "https://www.nasa.gov/reference/the-space-shuttle/"
         },
         {
           "l": "NASA, The Skylab Parasol (NTRS) — 6.7 x 7.3 m canopy, sun-facing side, 8 in above the OWS skin",
@@ -1322,7 +1558,7 @@
     {
       "id": "models-ref-jaxa",
       "name": "3D model references — JAXA",
-      "catalog": "8 pages — sizes and proportions for the 3D models",
+      "catalog": "9 pages — sizes and proportions for the 3D models",
       "category": "model-reference",
       "description": "JAXA pages on the H-IIA, H3, M-V and the HTV / HTV-X transfer vehicles that gave the dimensions of the Japanese launchers and cargo craft modelled for /fly and the /fleet line-ups.",
       "source_url": "https://global.jaxa.jp/",
@@ -1362,6 +1598,10 @@
           "u": "https://humans-in-space.jaxa.jp/en/htv-x/"
         },
         {
+          "l": "JAXA — SLIM",
+          "u": "https://global.jaxa.jp/projects/sas/slim/"
+        },
+        {
           "l": "こうのとり — JAXA",
           "u": "https://www.jaxa.jp/projects/rockets/htv/"
         }
@@ -1370,7 +1610,7 @@
     {
       "id": "models-ref-isro",
       "name": "3D model references — ISRO",
-      "catalog": "5 pages — sizes and proportions for the 3D models",
+      "catalog": "6 pages — sizes and proportions for the 3D models",
       "category": "model-reference",
       "description": "ISRO launcher and Gaganyaan pages (PSLV, GSLV Mk III / LVM3, the crew module) that gave the dimensions of the Indian vehicles modelled for /fly and the /fleet line-ups.",
       "source_url": "https://www.isro.gov.in/",
@@ -1388,6 +1628,10 @@
         {
           "l": "Human Space Flight — ISRO",
           "u": "https://www.isro.gov.in/Gaganyaan.html"
+        },
+        {
+          "l": "ISRO — Chandrayaan-3 lander",
+          "u": "https://www.isro.gov.in/Chandrayaan3.html"
         },
         {
           "l": "LVM3 — ISRO",
@@ -1522,7 +1766,7 @@
     {
       "id": "models-ref-independent",
       "name": "3D model references — reference sites and museums",
-      "catalog": "13 pages — sizes and proportions for the 3D models",
+      "catalog": "18 pages — sizes and proportions for the 3D models",
       "category": "model-reference",
       "description": "Independent spaceflight references and museum pages (Gunter’s Space Page, Encyclopedia Astronautica, RussianSpaceWeb, the Smithsonian National Air and Space Museum, the Technik Museum Speyer and others) that gave the sizes of the Soviet, Shuttle and Buran-era vehicles.",
       "source_url": "https://space.skyrocket.de/",
@@ -1538,8 +1782,24 @@
           "u": "https://www.kennedyspacecenter.com/explore-attractions/space-shuttle-atlantis/"
         },
         {
+          "l": "Bonhams — Lavochkin Luna 9 model: four stabilising petals, rotating mirror and camera head, antennae",
+          "u": "https://www.bonhams.com/auction/24898/lot/579/luna-9-soviet-lunar-lander-model/"
+        },
+        {
           "l": "buran-energia.com — OK-GLI (AL-31F, same aerodynamics and mass properties as Buran)",
           "u": "https://www.buran-energia.com/bourane-buran/bourane-modele-gli.php"
+        },
+        {
+          "l": "China conducts low-altitude flight test for Long March 10 rocket — CGTN (11 Feb 2026)",
+          "u": "https://news.cgtn.com/news/2026-02-11/China-conducts-low-altitude-flight-test-for-Long-March-10-rocket-1KFK9b0VBiU/p.html"
+        },
+        {
+          "l": "China Space Day: how far have we come toward a manned lunar landing — CGTN (Apr 2026)",
+          "u": "https://news.cgtn.com/news/2026-04-24/China-Space-Day-How-far-have-we-come-toward-a-manned-lunar-landing--1MBhqOD8nQs/p.html"
+        },
+        {
+          "l": "China unveils detailed plan for crewed Moon landing — Universe Today (Nov 2026)",
+          "u": "https://www.universetoday.com/articles/china-unveils-their-plan-for-a-crewed-moon-landing"
         },
         {
           "l": "Discovery at Udvar-Hazy — National Air and Space Museum",
@@ -1582,109 +1842,101 @@
           "u": "https://www.russianspaceweb.com/proton.html"
         },
         {
+          "l": "Scientific American — Skiing to Mars: the PrOP-M rovers",
+          "u": "https://www.scientificamerican.com/blog/life-unbounded/skiing-to-mars-the-original-rovers/"
+        },
+        {
           "l": "Spaceflight Now — Delta II final launch (ICESat-2, 2018-09-15)",
           "u": "https://spaceflightnow.com/2018/09/14/delta-2-icesat-2-mission-status-center/"
         }
       ]
     },
     {
-      "id": "nasa-mmgis-rover-traverses",
-      "name": "NASA MMGIS rover traverses",
-      "catalog": "MMGIS traverse layers — Curiosity (MSL) and Perseverance (M20), NASA/JPL-Caltech",
-      "category": "other",
-      "description": "The rover teams' localized drive paths for Curiosity and Perseverance, drawn on the Mars surface view with their sols and distances.",
-      "source_url": "https://mars.nasa.gov/mmgis-maps/M20/Layers/json/M20_traverse.json",
-      "license_short": "PD-NASA",
-      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "Published by NASA/JPL-Caltech; U.S. Government work (17 U.S.C. §105).",
-      "used_on": [
-        "mars"
-      ]
-    },
-    {
-      "id": "pds-mer-traverses",
-      "name": "PDS Geosciences Node — MER traverses",
-      "catalog": "MER Analyst's Notebook traverse tables — Spirit (MERA) and Opportunity (MERB), PDS Geosciences Node, Washington University in St. Louis",
-      "category": "other",
-      "description": "The science teams' localized drive paths for Spirit and Opportunity, drawn on the Mars surface view with their sols and distances.",
-      "source_url": "https://an.rsl.wustl.edu/mera/AN/meri/MER/traverse/MERB_traverse_5130.csv",
-      "license_short": "PD-NASA",
-      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA Planetary Data System archive data from a NASA mission; U.S. Government work (17 U.S.C. §105).",
-      "used_on": [
-        "mars"
-      ]
-    },
-    {
-      "id": "lroc-nac-traverses",
-      "name": "LROC NAC rover and LRV traverses",
-      "catalog": "LROC traverse GeoJSON layers mapped from Narrow Angle Camera images — NASA/GSFC/Arizona State University",
-      "category": "other",
-      "description": "The tracks the LRO Camera team mapped from Narrow Angle Camera images: Apollo 15 and 16, Lunokhod 1 and 2, and Yutu-2. Orrery simplifies them and draws them on the Moon surface view.",
-      "acknowledgement": "NASA/GSFC/Arizona State University",
-      "source_url": "https://www.lroc.asu.edu/geojson/luna_lunokhod1_traverse.geojson",
-      "license_short": "LROC-EDU",
-      "license_url": "https://lroc.im-ldi.com/about/terms",
-      "license_rationale": "The route files credit NASA/GSFC/Arizona State University and state \"LROC data, educational use with credit\". The LROC terms (lroc.im-ldi.com/about/terms, verified 2026-11-09 for LROC images, see image-provenance.json) permit educational use by schools, museums and other organisations without prior permission when credited; this is not the public-domain PDS archive. Orrery is a non-commercial educational site. Not separately checked: whether the terms page names the GeoJSON traverse layers themselves.",
-      "used_on": [
-        "moon"
-      ]
-    },
-    {
-      "id": "usgs-apollo17-traverse",
-      "name": "USGS Astrogeology · Apollo 17 traverse (Haase et al. 2019)",
-      "catalog": "Apollo 17 LRV mapped traverse and stations, Haase et al. 2019 (doi:10.1029/2018EA000408), USGS Astrogeology",
-      "category": "other",
-      "description": "The USGS Astrogeology mapped traverse of the Apollo 17 Lunar Roving Vehicle (Haase et al. 2019), tied to the LROC orthomosaic of the Taurus–Littrow valley and drawn on the Moon surface view with its stations.",
-      "source_url": "https://doi.org/10.1029/2018EA000408",
-      "license_short": "PD-USGov",
-      "license_url": "https://www.usa.gov/government-works",
-      "license_rationale": "USGS Astrogeology products are U.S. Government work (scripts/IMAGE-PIPELINE.md lists USGS Astrogeology as PD-USGov). The Apollo 17 route file credits \"© NASA\" and Haase et al. 2019. Not verified: the licence of the published traverse data itself, which the repo does not state.",
-      "used_on": [
-        "moon"
-      ]
-    },
-    {
-      "id": "hirise-zhurong-traverse",
-      "name": "HiRISE · Zhurong wheel tracks",
-      "catalog": "HiRISE ESP_073225_2055 (11 March 2022) and ESP_077511_2055 (7 February 2023), NASA/JPL/University of Arizona",
-      "category": "other",
-      "description": "The wheel tracks of China's Zhurong rover seen by the HiRISE camera on Mars Reconnaissance Orbiter (NASA/JPL/University of Arizona). Orrery traced them into the route drawn on the Mars surface view, accurate to about 20 m.",
-      "acknowledgement": "NASA/JPL/University of Arizona",
-      "source_url": "https://www.uahirise.org/ESP_073225_2055",
-      "license_short": "PD-NASA",
-      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "HiRISE imagery is produced by NASA/JPL/University of Arizona; not subject to U.S. copyright per 17 U.S.C. §105. Use is permitted; provide source attribution. The route drawn from it is Orrery's own tracing.",
-      "used_on": [
-        "mars"
-      ]
-    },
-    {
-      "id": "wan2014-yutu-traverse",
-      "name": "Yutu rover localisation (Wan et al. 2014, ISPRS Archives)",
-      "catalog": "Wan W. et al. 2014, \"A Cross-Site Visual Localization Method for Yutu Rover\", ISPRS Archives XL-4, 279 (doi:10.5194/isprsarchives-XL-4-279-2014), Figure 5",
-      "category": "other",
-      "description": "The Chang'e 3 mission team's localisation of the Yutu rover's 17 sites (N0101 to N0209) as of 16 January 2014; the lander and the sites were digitised from Figure 5 (metric grid, 10 m scale bar) and drawn on the Moon surface view.",
-      "source_url": "https://doi.org/10.5194/isprsarchives-XL-4-279-2014",
+      "id": "models-ref-commons",
+      "name": "3D model references — Wikimedia Commons photographs",
+      "catalog": "18 pages — sizes and proportions for the 3D models",
+      "category": "model-reference",
+      "description": "Photographs of flight hardware, test articles and museum replicas on Wikimedia Commons, looked at to get the shapes and layouts of the lander, rover and capsule models right. No photograph is reproduced; the models are our own geometry.",
+      "source_url": "https://commons.wikimedia.org/",
       "license_short": "Facts-only",
-      "license_url": "https://creativecommons.org/licenses/by/3.0/",
-      "license_rationale": "Only site positions are read off the figure (digitised, then placed from the lander); the figure itself is not reproduced. The paper is published open access under CC BY 3.0 (isprs-archives.copernicus.org, checked 2026-11-18).",
+      "license_url": "https://en.wikipedia.org/wiki/Idea%E2%80%93expression_distinction",
+      "license_rationale": "Only individual measurements (lengths, diameters, heights, stage and engine counts) were read from these pages; facts are not eligible for copyright, and no text, photograph or drawing was copied.",
       "used_on": [
-        "moon"
-      ]
-    },
-    {
-      "id": "vadawale2024-pragyan-stops",
-      "name": "Pragyan APXS stops (Vadawale et al. 2024, Nature)",
-      "catalog": "Vadawale S. V. et al. 2024, \"Chandrayaan-3 APXS elemental abundance measurements at lunar high latitude\", Nature 633 (doi:10.1038/s41586-024-07870-7), Figure 1c",
-      "category": "other",
-      "description": "The Chandrayaan-3 team's map of the Pragyan rover's 23 APXS observation stops around the Vikram lander, with latitude and longitude axes; the stops were digitised from Figure 1c and drawn on the Moon surface view.",
-      "source_url": "https://doi.org/10.1038/s41586-024-07870-7",
-      "license_short": "Facts-only",
-      "license_url": "https://www.nature.com/articles/s41586-024-07870-7",
-      "license_rationale": "Only stop positions are read off the figure (digitised against its latitude and longitude axes); the figure itself is not reproduced. The article shows no Creative Commons licence (checked 2026-11-18).",
-      "used_on": [
-        "moon"
+        "fleet"
+      ],
+      "references": [
+        {
+          "l": "NASA — InSight final selfie",
+          "u": "https://commons.wikimedia.org/wiki/File:PIA25287-InSights_Final_Selfie_main.png"
+        },
+        {
+          "l": "NASA render — InSight on the surface, SEIS dome and HP3",
+          "u": "https://commons.wikimedia.org/wiki/File:InSight_Lander.jpg"
+        },
+        {
+          "l": "NASA render — Phoenix spacecraft model",
+          "u": "https://commons.wikimedia.org/wiki/File:Phoenix_spacecraft_model.png"
+        },
+        {
+          "l": "Photo — Beagle 2 at the Science Museum",
+          "u": "https://commons.wikimedia.org/wiki/File:Beagle_2_at_the_Science_Museum.jpg"
+        },
+        {
+          "l": "Photo — Beagle 2 replica, opened (gold lid, four solar petals, base)",
+          "u": "https://commons.wikimedia.org/wiki/File:Beagle_2_replica.jpg"
+        },
+        {
+          "l": "Photo — EDM model at ESOC (foil, tanks, platform, thrusters)",
+          "u": "https://commons.wikimedia.org/wiki/File:Schiaparelli_Lander_Model_at_ESOC.JPG"
+        },
+        {
+          "l": "Photo — EDM model, Le Bourget 2013",
+          "u": "https://commons.wikimedia.org/wiki/File:Maquette_EDM_salon_du_Bourget_2013_DSC_0192.JPG"
+        },
+        {
+          "l": "Photo — Mars 3 lander on display (white shell, curved petals open)",
+          "u": "https://commons.wikimedia.org/wiki/File:Mars3_lander2_vsm.jpg"
+        },
+        {
+          "l": "Photo — Phoenix in assembly: octagonal deck, twelve-sided arrays",
+          "u": "https://commons.wikimedia.org/wiki/File:Phoenix_Mars_Lander_during_assembly_and_testing_(PIA09701).jpg"
+        },
+        {
+          "l": "Photo — Sojourner on Mars (dark panel, wheels, whip antenna)",
+          "u": "https://commons.wikimedia.org/wiki/File:Sojourner_on_Mars_PIA01122.jpg"
+        },
+        {
+          "l": "Photo — Sojourner rear, APXS and antenna",
+          "u": "https://commons.wikimedia.org/wiki/File:Back_of_Sojourner_and_its_Alpha_Proton_X-Ray_Spectrometer.png"
+        },
+        {
+          "l": "Photo — Viking lander replica, Smithsonian NASM (white boxy body, tall RTG windscreens, gold engine pod, dish, grey leg bays)",
+          "u": "https://commons.wikimedia.org/wiki/File:Viking_Mars_Lander_replica_on_display_in_the_Smithsonian's_Air_and_Space_museum_in_August_2015.jpg"
+        },
+        {
+          "l": "Wikimedia Commons — Apollo 15 Lunar Roving Vehicle (museum article) and the LRV control console",
+          "u": "https://commons.wikimedia.org/wiki/File:Apollo_15_Lunar_Roving_Vehicle.jpg"
+        },
+        {
+          "l": "Wikimedia Commons — Attaching the helicopter (PIA23372) and Ingenuity leaving the belly: how it rides under the rover",
+          "u": "https://commons.wikimedia.org/wiki/File:PIA23372-16-BuildingMars2020Rover-AttachingHelicopter-20190828.jpg"
+        },
+        {
+          "l": "Wikimedia Commons — ExoMars prototype rover: chassis, wheel legs, PanCam bar on its mast",
+          "u": "https://commons.wikimedia.org/wiki/File:ExoMars_prototype_rover.jpg"
+        },
+        {
+          "l": "Wikimedia Commons — MER-2 on its lander prelaunch (PIA04849): deck, WEB, Pancam mast, Mini-TES tube, HGA",
+          "u": "https://commons.wikimedia.org/wiki/File:MER-2_On_Lander_Prelaunch_PIA04849.jpg"
+        },
+        {
+          "l": "Wikimedia Commons — Perseverance test rover (PIA23965): straight-cleat wheels, chassis",
+          "u": "https://commons.wikimedia.org/wiki/File:Perseverance_Test_Rover_Moves_to_Mars_Yard_(PIA23965_fig1).jpg"
+        },
+        {
+          "l": "Wikimedia Commons — Zhurong rover mockup at CSTM: deck, wings, mast, dishes, ribbed wheels",
+          "u": "https://commons.wikimedia.org/wiki/File:Zhurong_rover_mockup_at_CSTM_01.jpg"
+        }
       ]
     }
   ]

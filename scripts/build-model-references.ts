@@ -17,12 +17,13 @@
  *   npx tsx scripts/build-model-references.ts
  */
 import { readFileSync, readdirSync, writeFileSync } from 'node:fs';
+import type { ShowcaseModel } from '../src/lib/three/showcase/types';
 import { SHOWCASE as CAPSULES } from '../src/lib/three/showcase/capsules-commercial';
 import { SHOWCASE as EARLY_STATIONS } from '../src/lib/three/showcase/early-stations';
 import { SHOWCASE as INNER_SOLAR } from '../src/lib/three/showcase/inner-solar';
 import { SHOWCASE as ORBITERS } from '../src/lib/three/showcase/orbiters';
 import { SHOWCASE as SMALL_BODY } from '../src/lib/three/showcase/small-body';
-import { SHOWCASE as SOYUZ } from '../src/lib/three/showcase/soyuz-progress';
+import { SHOWCASE as SOYUZ } from '../src/lib/three/showcase/capsules-classic';
 import { SHOWCASE as FREIGHTERS } from '../src/lib/three/showcase/station-freighters';
 import { SHOWCASE as WINGED } from '../src/lib/three/showcase/winged';
 
@@ -137,9 +138,19 @@ const PUBLISHERS: Publisher[] = [
     id: 'models-ref-independent',
     name: '3D model references — reference sites and museums',
     hosts:
-      /^(space\.skyrocket\.de|www\.astronautix\.com|www\.russianspaceweb\.com|www\.buran-energia\.com|spaceflightnow\.com|www\.kennedyspacecenter\.com|www\.technik-museum\.de|airandspace\.si\.edu|californiasciencecenter\.org|intrepidmuseum\.org)$/,
+      /^(space\.skyrocket\.de|www\.astronautix\.com|www\.russianspaceweb\.com|www\.buran-energia\.com|spaceflightnow\.com|www\.kennedyspacecenter\.com|www\.technik-museum\.de|airandspace\.si\.edu|californiasciencecenter\.org|intrepidmuseum\.org|www\.bonhams\.com|www\.scientificamerican\.com|news\.cgtn\.com|www\.universetoday\.com)$/,
     home: 'https://space.skyrocket.de/',
     what: 'Independent spaceflight references and museum pages (Gunter’s Space Page, Encyclopedia Astronautica, RussianSpaceWeb, the Smithsonian National Air and Space Museum, the Technik Museum Speyer and others) that gave the sizes of the Soviet, Shuttle and Buran-era vehicles.',
+    license_short: 'Facts-only',
+    license_url: 'https://en.wikipedia.org/wiki/Idea%E2%80%93expression_distinction',
+    license_rationale: FACTS_ONLY,
+  },
+  {
+    id: 'models-ref-commons',
+    name: '3D model references — Wikimedia Commons photographs',
+    hosts: /^commons\.wikimedia\.org$/,
+    home: 'https://commons.wikimedia.org/',
+    what: 'Photographs of flight hardware, test articles and museum replicas on Wikimedia Commons, looked at to get the shapes and layouts of the lander, rover and capsule models right. No photograph is reproduced; the models are our own geometry.',
     license_short: 'Facts-only',
     license_url: 'https://en.wikipedia.org/wiki/Idea%E2%80%93expression_distinction',
     license_rationale: FACTS_ONLY,
@@ -177,8 +188,9 @@ const add = (r: Ref): void => {
   if (!prev || (!prev.l && r.l)) refs.set(u, { l: r.l || labelFor(u), u });
 };
 
-// 1. Showcase models' own refs.
-for (const map of [
+// 1. Showcase models' own refs: every family file, so a new one is never left uncredited (the
+// Apollo LM, Curiosity and the 2026-11 scale-out families were missing from a hand list).
+const families = [
   CAPSULES,
   SOYUZ,
   FREIGHTERS,
@@ -187,7 +199,15 @@ for (const map of [
   SMALL_BODY,
   ORBITERS,
   EARLY_STATIONS,
-]) {
+];
+for (const file of readdirSync('src/lib/three/showcase')) {
+  if (!file.endsWith('.ts') || file.endsWith('.test.ts')) continue;
+  const mod = (await import(`../src/lib/three/showcase/${file}`)) as {
+    SHOWCASE?: Record<string, ShowcaseModel>;
+  };
+  if (mod.SHOWCASE) families.push(mod.SHOWCASE);
+}
+for (const map of families) {
   for (const m of Object.values(map)) m.refs.forEach(add);
 }
 

@@ -19,8 +19,8 @@ const FLY_CRAFT: Record<string, readonly [string, string]> = {
   'skylab-3': ['station-freighters', 'apollo-csm-block-ii'],
   'skylab-4': ['station-freighters', 'apollo-csm-block-ii'],
   'apollo-soyuz': ['station-freighters', 'apollo-csm-block-ii'],
-  'soyuz-1': ['soyuz-progress', 'soyuz-7k-ok'],
-  'soyuz-11': ['soyuz-progress', 'soyuz-7k-ok'],
+  'soyuz-1': ['capsules-classic', 'soyuz-7k-ok'],
+  'soyuz-11': ['capsules-classic', 'soyuz-7k-ok'],
   'shenzhou-1': ['station-freighters', 'shenzhou'],
   'shenzhou-5': ['station-freighters', 'shenzhou'],
   'sts-1': ['winged', 'columbia'],
@@ -76,7 +76,7 @@ const DOCKED: Record<string, { target: readonly [string, string]; dockingModuleM
   'skylab-3': { target: ['early-stations', 'skylab'] },
   'skylab-4': { target: ['early-stations', 'skylab'] },
   // Apollo–Soyuz: CSM + the 3.15 m Docking Module + Soyuz 19 (a 7K-TM, the 7K-OK outline).
-  'apollo-soyuz': { target: ['soyuz-progress', 'soyuz-7k-ok'], dockingModuleM: 3.15 },
+  'apollo-soyuz': { target: ['capsules-classic', 'soyuz-7k-ok'], dockingModuleM: 3.15 },
 };
 
 /** Every mission with a showcase craft (for the completeness test). */

@@ -40,19 +40,29 @@ Where things live:
   `static/data/descent-profiles/<mission>.json`.
 - Tests: `src/lib/three/descent-models.test.ts`, `src/lib/orbital/descent-director.test.ts`.
 
-## Still in pass 1 when this was written
+## Pass 1 finished (state at the end of the session, 2026-11-23)
 
-- **Batch 7, orbiters** (lunar, Mars/inner, outer): three agents were building
-  `showcase/lunar-orbiters.ts`, `mars-orbiters.ts`, `outer-probes.ts`. Check `git log` for a
-  "batch 7" commit; if it is missing, the files may be on disk uncommitted. Review them against
-  photos before committing.
-- **Wiring the /fly flight scenes** (`src/lib/three/fly-craft.ts` `FLY_CRAFT`): probes and classic capsules done (see git log); left: point each
-  mission at its new model where one exists (probes, observatories, batch 7 orbiters; the
-  older builders in `orbiters.ts` are superseded by batch 7).
-- **Batch 8**: rebuild the pre-pilot models (cargo ships, Apollo CSM, Orion, Dragon, Shenzhou).
-- **Fleet detail pages** have no 3D view, only photos (`src/routes/fleet/[id]/+page.svelte`).
-  The /fleet line-up already shows every new model. A 3D viewer on the detail page is a new
-  feature: ask the operator before building it.
+All 148 showcase models are at the pilot bar and wired; nothing of pass 1 is left.
+
+| Commit | What |
+| --- | --- |
+| 4c46ce95221, 852610a0735 | /fly launch, cruise and orbit fly the central model wherever `FLY_CRAFT` maps one (the second commit fixed the lookup order: the older silhouettes had kept winning for 18 probes) |
+| 20d87f76384, 04910e44432, 5369fedbd2b | Batch 7: lunar orbiters, outer-planet craft, Mars and inner-planet orbiters |
+| 17433562f00 | The 3D craft viewer on /fleet/[id] and /missions/[id] (`CraftViewer.svelte`, `craft-viewer.ts`, `showcase-index.ts`), 14 locales |
+| 18701aac116, e014a4a6409, 14541006221, d6531ea456f, 9f4e4772caa, 1b69c0125ae | Batch 8: every pre-pilot model rebuilt (stations, freighters, Apollo CSM, Shenzhou, Shuttles, Buran, X-37B, commercial capsules, inner-planet and small-body probes, Mars orbiters in `orbiters.ts`) |
+| 36818ec4a20, d6531ea456f | Apollo, Shenzhou and Dragon re-entries come home in the rebuilt capsules (`CAPSULE_MODEL` in `descent-landers.ts`) |
+| 46fd233ac84 | Credits regenerated |
+| e2fca28e4d4 | /colophon: 251 model entries (73 new, the superseded capsule, probe and craft entries removed), new thumbnails, all 13 locales; the empty "Capsules" section is hidden |
+
+What the line-up and flight scenes still draw with older builders, on purpose: the lander
+cruise stages (`lander-cruise-models.ts`) for missions not in `FLY_CRAFT` (the Mars landers,
+Apollo, Artemis, Luna, Chang'e …), `craft-cassini` for the `huygens` mission, New Horizons, and
+the /moon and /mars Tier 1 site models.
+
+Known limits of the batch 8 models, from the builders' own reports (pass-2 material if a scene
+shows them up close): the Shuttle's wing tops read slightly blue-grey under the studio light; X-37B
+still looks a little rocket-like from above; Mars Express's dish sits on the back to keep its
+1.8 m height; Hope's bus colour is assumed gold; DART had no Commons photo (NASA specs only).
 
 ## Pass 2: the method (operator 2026-11-23)
 
@@ -148,5 +158,14 @@ rendering agents at once). Then:
      `tiangong-assembly-phases.ts`) animate modules in by id, the AR replay reuses them, and the
      visiting-craft dock events use the docking ports.
    Then a go or no-go per station with the measured budget, before any modelling.
+
+4. **Untranslated /colophon entries outside the 3D models** (operator 2026-11-23: "hand over to
+   the next session"). Regenerating the English base (`node scripts/i18n-tools/build-en-overlays.mjs
+   original-work`) showed 252 entries that no locale has ever translated, from earlier arcs, not
+   the models: `mission_trajectories` 140, `landing_art` 39, `exploded_art` 36, `blueprint_art`
+   18, `site_illustrations` 16, `diagrams_science` 3. They show in English on /colophon in every
+   locale. Same method as the 3D-model round of this session: a per-locale todo (keys missing from
+   `i18n-src/<loc>/original-work.json`), the translation brief kept at
+   `docs/wip/2026-11-23-pass2-tools/colophon-translation-brief.md`, one agent per locale group.
 
 Deferred by the operator until then: the other stations, the Worlds Tier 1 models.

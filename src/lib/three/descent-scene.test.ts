@@ -81,3 +81,46 @@ describe('a powered lunar landing with a contact beat', () => {
     expect(Math.abs(ys[0] - ys[ys.length - 1])).toBeLessThan(15 * k);
   });
 });
+
+/** Apollo 15's splashdown: one of the three mains deflated to a fifth of its diameter at 6,000 ft. */
+describe('Apollo 15 lands on two mains', () => {
+  const run = (id: string) => {
+    const raw = JSON.parse(
+      readFileSync(`static/data/descent-profiles/${id}.json`, 'utf-8'),
+    ) as RawDescentProfile;
+    const sum = integrateDescent(expandDescentProfile(raw));
+    const scene = createDescentScene({
+      aspect: 1.6,
+      body: 'earth',
+      siteId: id,
+      durationS: sum.totalDurationS,
+      events: sum.events,
+    });
+    let pivot: THREE.Object3D | undefined;
+    scene.scene.traverse((o) => {
+      if (o.userData.deflatingMain) pivot = o.userData.deflatingMain as THREE.Object3D;
+    });
+    const scaleAt = (altM: number): number => {
+      const s = sum.states.find((x, i) => i > 0 && x.altM <= altM && x.t > 300)!;
+      scene.setState(s);
+      return pivot!.scale.x;
+    };
+    return { pivot: () => pivot, scaleAt };
+  };
+  beforeAll(async () => {
+    await preloadDescentModels();
+  });
+  it('shrinks one canopy to about a fifth of its width by the ground; the other two are untouched', () => {
+    const a15 = run('apollo15-splashdown');
+    expect(a15.pivot()).toBeDefined();
+    expect(a15.scaleAt(2500)).toBe(1);
+    expect(a15.scaleAt(1000)).toBeCloseTo(0.2, 2);
+    const mid = a15.scaleAt(1700);
+    expect(mid).toBeLessThan(1);
+    expect(mid).toBeGreaterThan(0.2);
+  });
+  it('leaves the other Apollo splashdowns on three full mains', () => {
+    const a16 = run('apollo16-splashdown');
+    expect(a16.scaleAt(1000)).toBe(1);
+  });
+});

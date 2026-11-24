@@ -1514,8 +1514,25 @@ function buildEarthCapsuleStack(lander: THREE.Group, vehLen: number): DescentMod
       canopy.rotation.z = -Math.cos(ang) * 0.14; // the cluster fans outward
       canopy.rotation.x = Math.sin(ang) * 0.14;
     }
-    mains.add(canopy);
-    mains.add(suspensionLines(D * 0.47, new THREE.Vector3(off.x, skirtY, off.z), confluence, 32));
+    const lines = suspensionLines(
+      D * 0.47,
+      new THREE.Vector3(off.x, skirtY, off.z),
+      confluence,
+      32,
+    );
+    if (c === 0 && capsuleId === 'apollo-cm') {
+      // The first canopy and its lines hang from a pivot at the confluence, so the scene can
+      // collapse it sideways (Apollo 15's main, deflated to a fifth of its diameter at 6,000 ft).
+      const pivot = new THREE.Group();
+      pivot.position.copy(confluence);
+      canopy.position.sub(confluence);
+      lines.position.sub(confluence);
+      pivot.add(canopy, lines);
+      mains.add(pivot);
+      chutes.userData.deflatingMain = pivot;
+    } else {
+      mains.add(canopy, lines);
+    }
   }
   m.parachute = chutes;
   m.parachuteBaseY = 0; // canopies already placed inside the group

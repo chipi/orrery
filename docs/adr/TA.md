@@ -68,7 +68,7 @@ The production app ships a set of user-facing routes (the core experience below;
 | Fleet entries | **299** |
 | Science sections | **178** |
 | Programs | **42** |
-| Descent profiles | **82** |
+| Descent profiles | **85** |
 | Launch profiles | **40** |
 | AJV schemas | **87** |
 | Essays | **13** |
@@ -160,7 +160,7 @@ _Top-level routes: catalog · colophon · credits · earth · essays · explore 
 - **WebGL builders** (coverage-excluded) — `descent-models.ts` (`buildDescentModel`: aeroshell + parachute + skycrane/retro/airbag stack wrapped around the reused landed model as the terminal part) + `descent-scene.ts` (body growing below, per-body sky, scrub-safe EDL separations, retro plume, per-phase camera; implements `FlightPhaseScene`).
 - **Clock + UI** — `ascent-clock` `Phase` widened to `+'descent'` (`descentDurationS`/`descentScrubberFraction`, default 0 ⇒ orbiters unchanged); the descent owns the scrubber tail; `E+MM:SS` readout; `DESCENT_SPEED_MULTIPLIERS`. `DescentScene.svelte` (EDL HUD). In `/fly`, `showDescent`/`descentT` mirror `showLaunch`/`launchT`; at arrival a lander enters the descent act; `?descent=1` deep-links to it; at touchdown it hands off to `/${body}?site=${siteId}` (SurfaceScene reads `?site=` and faces the site — the circle closes ON the site). Force lens via `descent-force-layers.ts` (reuses the 4 generic layers).
 
-**The way home — a Moon landing's second half (2026-11-24; Apollo 11, 12 and 14 ship).** A mission with `static/data/return-profiles/<id>.json` (sourced GETs, `$lib/fly/return-profile.ts`; the id set is the directory listing) rests on the landed frame at touchdown and offers "Continue: the way home" beside the `/moon` hand-off. The scene (`fly-return-scene.ts`, `ReturnScene.svelte`) plays inside the descent act (`wayHome` flag in `+page.svelte`; no new `FlyAct`: every full-frame `showDescent` gate already applies), ends with the `returnComplete` event and resumes the cruise at `dep_day + TEI`; `landingConsumed` stops the landing from firing again. Earth splashdown after the return arc is a later step: at `arr_day` the cruise stops on the ARRIVED state as for any arrival.
+**The way home — a Moon landing's second half (2026-11-24; Apollo 11, 12, 14, 15, 16 and 17 ship).** A mission with `static/data/return-profiles/<id>.json` (sourced GETs, `$lib/fly/return-profile.ts`; the id set is the directory listing) rests on the landed frame at touchdown and offers "Continue: the way home" beside the `/moon` hand-off. The scene (`fly-return-scene.ts`, `ReturnScene.svelte`) plays inside the descent act (`wayHome` flag in `+page.svelte`; no new `FlyAct`: every full-frame `showDescent` gate already applies), ends with the `returnComplete` event and resumes the cruise at `dep_day + TEI`; `landingConsumed` stops the landing from firing again. Earth splashdown after the return arc is a later step: at `arr_day` the cruise stops on the ARRIVED state as for any arrival. The J missions (a profile's `jMission` block) fly the extended LM with its rover bay empty and the rover parked east with its TV camera as the liftoff shot (held on 15, followed then lost on 16, followed on 17), the CSM with the open SIM bay turned to the LM on the approach, and a `subsat` beat for Apollo 15 and 16 (the subsatellite spring-ejected before TEI); Apollo 16's jettisoned stage tumbles; Apollo 17's CSM trim and plane change are recorded in the profile but not played. Apollo 15's splashdown draws one of its three mains collapsing to a fifth of its width at 6,000 ft (`descent-scene.ts`).
 
 ### 3D model builders
 

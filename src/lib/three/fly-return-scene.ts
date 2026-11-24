@@ -393,7 +393,7 @@ function rangeAt(t: number): number {
 const BAY_DOCKED_AZ: Record<15 | 16 | 17, number> = { 15: 0.5, 16: -0.45, 17: 0.9 };
 
 /** ESTIMATE: the tumble of Apollo 16's ascent stage after jettison (rad/s about x, y, z). */
-const TUMBLE_RATE: [number, number, number] = [0.9, 0.35, 0.7];
+const TUMBLE_RATE: [number, number, number] = [1.4, 0.6, 1.1];
 
 /** The rendezvous burns' windows in scene time: each starts 0.1 s into its beat, 1/16 the real length. */
 export function burnWindow(id: RendezvousBurn['id'], p: ReturnProfile): [number, number] {
@@ -811,10 +811,12 @@ export function returnCamera(
       const look = tvLook(kind, t, pose, rig);
       // A phone's narrow frame widens the lens so the LM still fits across it.
       const fov = Math.max(
-        32,
+        28,
         (2 * (Math.atan(Math.tan((11 * Math.PI) / 180) / aspect) * 180)) / Math.PI,
       );
-      return { pos, look, fov };
+      // The operator zoomed in as the stage climbed (Apollo 16, 17); the held shot stays wide.
+      const zoom = kind === 'fixed' ? 0 : smooth((t - RT.ignition) / 5);
+      return { pos, look, fov: lerp(fov, aspect < 1 ? 26 : 16, zoom) };
     }
     case 'chase_side': {
       // Level and from the side, a little ahead: the stage climbs across a black sky, the Moon below.
@@ -843,10 +845,10 @@ export function returnCamera(
       const side = new THREE.Vector3().crossVectors(n, V(0, 1, 0)).normalize();
       const pos = c
         .clone()
-        .addScaledVector(n, 28 * k)
-        .addScaledVector(side, 6 * k)
-        .add(V(0, 4, 0));
-      return { pos, look: c.clone().addScaledVector(n, 4), fov: 42 };
+        .addScaledVector(n, 10 * k)
+        .addScaledVector(side, 14 * k)
+        .add(V(0, 3, 0));
+      return { pos, look: c.clone().addScaledVector(n, aspect < 1 ? 2 : 4.5), fov: 46 };
     }
     case 'tei_high': {
       // From above and behind: the Moon below the CSM as it pulls away.
@@ -1120,12 +1122,12 @@ export function createFlyReturn(
       return;
     }
     if (sub.parent !== scene) scene.add(sub);
-    // ESTIMATES: ejection speed 2.2 m/s and spin 4 rad/s as drawn (compressed scene time).
+    // ESTIMATES: ejection speed 3 m/s and spin 4 rad/s as drawn (compressed scene time).
     sub.position
       .copy(subRel.pos)
       .add(csmHolder.position)
       .sub(subRel.holder)
-      .addScaledVector(subRel.n, 2.2 * age);
+      .addScaledVector(subRel.n, 3 * age);
     sub.quaternion.copy(subRel.quat).multiply(qTmp.setFromAxisAngle(V(0, 1, 0), 4 * age));
     sub.scale.copy(subRel.scale);
     sub.userData.setDeploy?.(smooth((age - 0.6) / 1.0));

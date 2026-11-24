@@ -1045,6 +1045,13 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
         model.parachute.rotation.z = 0.3 + 0.12 * Math.sin(frame * 0.2);
       }
     }
+    // Apollo 15: one of the three mains deflated to about a fifth of its diameter at about 6,000 ft
+    // (1,830 m; MR15 14.1.9) and the capsule landed on the other two. The drawn collapse takes 300 m.
+    const deflating = model.parachute.userData.deflatingMain as THREE.Object3D | undefined;
+    if (deflating) {
+      const k = opts.siteId === 'apollo15-splashdown' ? smooth01((1830 - s.altKm * 1000) / 300) : 0;
+      deflating.scale.set(1 - 0.8 * k, 1 - 0.3 * k, 1 - 0.8 * k);
+    }
     model.backshell.visible = bp < 1;
     // Airbag lander: it slides down the bridle (the backshell and chute climb above it, the ball
     // stays on the trajectory), the bags inflate (the ball's bottom rides the trajectory point),

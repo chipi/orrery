@@ -156,7 +156,7 @@ describe('the J missions (Apollo 15, 16, 17)', () => {
     expect(beatsFor(a17).map((b) => b.id)).not.toContain('subsat');
     expect(beatsFor(load('apollo14')).map((b) => b.id)).not.toContain('subsat');
   });
-  it('shows the SIM bay toward the LM on the approach, and the camera of the release looks into the bay', () => {
+  it('shows the SIM bay toward the LM on the approach, and the camera of the release sees the bay from outside', () => {
     for (const p of [a15, a16, a17]) {
       const t = RT.tpi + 1;
       const pose = returnPose(t, p);
@@ -169,7 +169,7 @@ describe('the J missions (Apollo 15, 16, 17)', () => {
       const pose = returnPose(RT.subsat + 1, p);
       const cam = returnCamera(RT.subsat + 1, 1.6, pose);
       const c = csmCentreFromAnchor(pose, DEFAULT_RIG);
-      expect(cam.pos.clone().sub(c).normalize().dot(bayNormal(pose))).toBeGreaterThan(0.9);
+      expect(cam.pos.clone().sub(c).normalize().dot(bayNormal(pose))).toBeGreaterThan(0.5);
     }
   });
   it('the ascent stage tumbles after Apollo 16 jettisons it, and only then', () => {

@@ -32,6 +32,7 @@
     "beats.heatshield_sep",
     "beats.leg_deploy",
     "beats.radar_lock",
+    "beats.constant_descent",
     "params.parachuteCdA"
   ],
   "provenance": [
@@ -58,6 +59,10 @@
     {
       "type": "radar_lock",
       "altM": 1700
+    },
+    {
+      "type": "constant_descent",
+      "altM": 17
     }
   ]
 }

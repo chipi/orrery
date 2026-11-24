@@ -63,6 +63,7 @@ const BEAT_SHOT: Record<string, DescentShotKind> = {
   bridle_lower: 'under',
   bridle_cut: 'pullOut',
   leg_deploy: 'orbit',
+  constant_descent: 'close',
   landing_flip: 'orbit',
   // Apollo's gates: the pitchover read from the side, the final descent pushed in on.
   high_gate: 'orbit',

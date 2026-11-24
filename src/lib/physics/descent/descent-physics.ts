@@ -119,6 +119,7 @@ export type DescentEventType =
   | 'leg_deploy' // the landing legs unfold (Viking, Phoenix, InSight)
   | 'terrain_nav' // terrain-relative navigation starts (Perseverance)
   | 'hover' // the lander holds its altitude to pick a site (Tianwen-1)
+  | 'constant_descent' // the engines hold a constant descent rate to touchdown (Viking, from 17 m)
   | 'arrays_open' // the solar arrays open after landing (Phoenix, InSight)
   | 'eject' // the hatch blows and the cosmonaut ejects in the seat (Vostok)
   | 'seat_sep' // the seat falls away; the cosmonaut descends on a personal parachute (Vostok)

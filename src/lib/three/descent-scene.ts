@@ -735,6 +735,7 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
   // the bank steers), and under the main it is hauled from a vertical hang into the two-point
   // suspension, nose up 35 deg above horizontal, for the splashdown.
   const isGemini = opts.siteId.startsWith('gemini');
+  const isViking = opts.siteId.startsWith('viking');
   const GEMINI_TRIM_RAD = 0.33; // drawn: an offset-CG trim of about 19 deg, not a sourced figure
   const REPO_DELAY_S = 6;
   const REPO_S = 8;
@@ -1139,7 +1140,9 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
     if (engineOn) {
       const flick = 1 + 0.1 * Math.sin(frame * 0.7) + 0.05 * Math.sin(frame * 1.9);
       plume.scale.set(plumeK, flick * plumeK * (small ? 0.4 : 1), plumeK);
-      for (const c of sitePlumes) c.scale.set(plumeK * 0.8, flick * plumeK * 0.8, plumeK * 0.8);
+      const lowK = isViking && s.altKm * 1000 < 40 ? 1.6 : 1;
+      for (const c of sitePlumes)
+        c.scale.set(plumeK * 0.8 * lowK, flick * plumeK * 0.8 * lowK, plumeK * 0.8 * lowK);
     }
 
     // Entry attitude flip (Earth crewed re-entry, RFC-034 §13): the capsule comes
@@ -1204,7 +1207,9 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
         const off = new THREE.Vector3(0, landerHome.y - pivotY, 0).applyQuaternion(q);
         model.lander.position.set(off.x, pivotY + off.y, off.z);
         // The heat shield stays on the capsule's base: no separation beat for Gemini.
-        if (hp === 0) {
+        {
+          model.heatshield.visible = model.heatshield.geometry != null;
+          model.heatshield.scale.setScalar(1);
           const hOff = new THREE.Vector3(0, model.heatshieldBaseY - pivotY, 0).applyQuaternion(q);
           model.heatshield.position.set(hOff.x, pivotY + hOff.y, hOff.z);
           model.heatshield.quaternion.copy(

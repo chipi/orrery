@@ -197,7 +197,9 @@
   </div>
 
   <div class="clock">
-    <span class="get-label">GET</span><span class="met" data-testid="return-get">{getText}</span>
+    <span class="get-label">{m.fly_return_get()}</span><span class="met" data-testid="return-get"
+      >{getText}</span
+    >
     <span class="compressed">{m.fly_return_compressed()}</span>
   </div>
 

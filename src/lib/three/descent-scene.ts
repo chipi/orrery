@@ -1289,7 +1289,9 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
       const top = model.parachute.position.y + chuteSpan * vehLen;
       whole = { cy: top / 2, r: top / 2 + vehLen * 0.4 };
       // A legged lander under its big canopy: frame the chute with the craft, not the canopy's inside.
-      if (model.deploy) core = whole;
+      // ...except while the legs swing out: the close leg shot must win.
+      const legsOut = legsT != null && s.t >= legsT && s.t < legsT + LEG_S + 6;
+      if (model.deploy && !legsOut) core = whole;
     } else if (undocking) {
       const o = model.orbiter.position;
       whole = { cy: (o.y + vehLen) / 2, r: o.length() / 2 + vehLen * 1.2 };

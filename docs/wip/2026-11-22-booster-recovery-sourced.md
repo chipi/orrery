@@ -14,7 +14,7 @@ value is a sourced sibling flight's (same vehicle, same landing site type) and i
 | otv-7 | Falcon Heavy | centre core | expended | - | - | sourced | same |
 | hera | Falcon 9 | booster | expended | - | - | sourced | Spaceflight Now / NSF, 7 Oct 2024: B1061's 23rd and last flight, expended for Hera's performance |
 | dart | Falcon 9 | booster | landed | drone ship (OCISLY) | - / 8:52 | sourced | Spaceflight Now "Falcon 9 launch timeline with DART" (SpaceX's sequence): entry burn 6:40, stage 1 landing 8:52 |
-| inspiration4 | Falcon 9 | booster | landed | drone ship (OCISLY, B1062) | 9:04 / 9:31 | sourced | SpaceX's timeline as printed by Space Explored, 15 Sep 2021 (entry burn 7:30) |
+| inspiration4 | Falcon 9 | booster | landed | drone ship (JRTI, B1062-3; was OCISLY here, corrected 11-24 from Wikipedia "List of Falcon 9 and Falcon Heavy launches (2020–2022)": "Success (JRTI)"; 543 km downrange, Everyday Astronaut) | 9:04 / 9:31 | sourced | SpaceX's timeline as printed by Space Explored, 15 Sep 2021 (entry burn 7:30) |
 | polaris-dawn | Falcon 9 | booster | landed | drone ship (JRTI, B1083) | - / ~9:30 | approx | Space.com / Spaceflight Now, 10 Sep 2024: "about 9.5 minutes after liftoff" |
 | otv-5 | Falcon 9 | booster | landed | LZ-1 | - / ~8:00 | approx | Space.com / Live Science, 7 Sep 2017: "approximately eight minutes after launch" |
 | im-1 | Falcon 9 | booster | landed | LZ-1 (B1060) | - / ~8:00 | typical (OTV-5) | NSF / Everyday Astronaut, 15 Feb 2024: RTLS to LZ-1; no time found |

@@ -22,7 +22,7 @@
         "part": "booster",
         "outcome": "landed",
         "site": "droneship",
-        "siteNames": ["Of Course I Still Love You"],
+        "siteNames": ["Just Read the Instructions"],
         "landingBurnS": 544,
         "touchdownS": 571,
         "timeClass": "sourced"
@@ -99,7 +99,7 @@
   ],
   "provenance": [
     {
-      "l": "Booster recovery per flight (0.9.11 F2): DART stage 1 landing T+8:52 on the drone ship (SpaceX's sequence, Spaceflight Now); Inspiration4 landing burn 9:04, landing 9:31; Polaris Dawn ~9.5 min (JRTI); OTV-5 ~8 min (LZ-1); Hera's B1061 expended. IM-1 and Beresheet times are sibling flights' (no time found). Full table: docs/wip/2026-11-22-booster-recovery-sourced.md",
+      "l": "Booster recovery per flight (0.9.11 F2): DART stage 1 landing T+8:52 on the drone ship (SpaceX's sequence, Spaceflight Now); Inspiration4 entry burn 7:30, landing burn 9:04, landing 9:31 on JRTI, 543 km downrange (Everyday Astronaut; Wikipedia launch list: Success (JRTI)); Polaris Dawn ~9.5 min (JRTI); OTV-5 ~8 min (LZ-1); Hera's B1061 expended. IM-1 and Beresheet times are sibling flights' (no time found). Full table: docs/wip/2026-11-22-booster-recovery-sourced.md",
       "u": "https://spaceflightnow.com/?p=54465"
     },
     { "l": "SpaceX Falcon 9 Users Guide (2021)", "u": "https://www.spacex.com/vehicles/falcon-9/" },

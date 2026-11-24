@@ -14,7 +14,11 @@
  * fluxgate magnetometer on one boom and tip masses on the other two, a short spin-up cylinder on
  * the opposite platform, an S-band antenna on the panel opposite the booms, solar cells on the
  * side panels. The cylinder's and antenna's sizes, the hinge blocks and the cell grid are
- * estimates from the artist's drawings (the NASA subsatellite sketches).
+ * estimates from the artist's drawings (the NASA subsatellite sketches). Apollo 15 Mission Report
+ * (https://ntrs.nasa.gov/citations/19720021182, A.4.2): "hexagonal in shape, 30 inches in length,
+ * and weighs approximately 85 pounds ... three equally-spaced booms ... deployed ... to a length of
+ * 5 feet"; the Press Kit says 31 in, a 14-in hexagon and 78.5 lb: the sources disagree on the mass
+ * and by an inch on the length, NSSDCA's figures stand.
  */
 import * as THREE from 'three';
 import { add, box, mat, strut } from './kit';
@@ -109,7 +113,13 @@ export function buildPfsSubsatellite(opts: PfsOptions = {}): THREE.Group {
     booms.push(arm);
   }
   const setDeploy = (u: number): void => {
-    for (const arm of booms) arm.rotation.z = -(Math.PI / 2) * (1 - THREE.MathUtils.clamp(u, 0, 1));
+    const k = THREE.MathUtils.clamp(u, 0, 1);
+    for (const arm of booms) {
+      arm.rotation.z = -(Math.PI / 2) * (1 - k);
+      // stowed, the 1.5 m booms are half length so they lie within the 78 cm body (estimate:
+      // the real ones folded; no source gives how)
+      arm.scale.x = 0.5 + 0.5 * k;
+    }
   };
   g.userData.setDeploy = setDeploy;
   g.userData.massKg = PFS_MASS_KG;

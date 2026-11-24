@@ -221,15 +221,15 @@ describe('Apollo J-mission CSM: the open SIM bay', () => {
     }
   });
 
-  it('slides the spectrometer booms out to 7.5 m and lets the subsatellite go', () => {
+  it('slides the spectrometer booms out to 25 ft and 24 ft and lets the subsatellite go', () => {
     const g = j();
     const bay = g.getObjectByName('sim-bay')!;
     (bay.userData.setBoomExtension as (a: number, b: number) => void)(1, 0.5);
     g.updateMatrixWorld(true);
     const gr = world(bay.getObjectByName('gamma-ray-spectrometer')!);
-    expect(gr.distanceTo(world(bay.getObjectByName('gamma-ray-boom')!))).toBeGreaterThan(7.5);
+    expect(gr.distanceTo(world(bay.getObjectByName('gamma-ray-boom')!))).toBeCloseTo(7.87, 1); // 25 ft boom + the 0.25 m instrument offset
     const ms = world(bay.getObjectByName('mass-spectrometer')!);
-    expect(ms.distanceTo(world(bay.getObjectByName('mass-spec-boom')!))).toBeCloseTo(4.05, 1);
+    expect(ms.distanceTo(world(bay.getObjectByName('mass-spec-boom')!))).toBeCloseTo(3.96, 1);
     const before = world(bay.getObjectByName('pfs-subsatellite')!);
     const sat = (bay.userData.releaseSubsatellite as () => THREE.Object3D)();
     expect(sat.parent).toBeNull();

@@ -37,7 +37,7 @@ The operator's order (2026-11-24): finish every batch first, then redo these.
 | Apollo 7/8/9, ASTP, Skylab | At f0.7 (mains opening) the camera sits at the riser point inside the lines; apex cover not seen on screen; no pilot chutes |
 | Shenzhou-1 | -6 s camera inside the canopy (the Soyuz path); f0.7 capsule shows no chute, the line hangs to the side |
 | Starship Flight 5 | Upright with the plume already at f0.5–f0.7; the belly-flop should hold until the flip just before splashdown |
-| Inspiration4, Polaris Dawn | Viewed 11-24 T600–T700: camera holds the capsule, no canopy ever in frame, so the drogue-then-mains order cannot be seen; HUD has no mains beat (same camera path as the parked canopy item) |
+| Inspiration4, Polaris Dawn | 11-24: the capsule flag keeps the canopy out of frame by design; the opening shot lasts 3 s per stage. An 8 s opening was tried but not verified: the shot tool's T and -N specs both landed after the chutes (-236 gave E+11:51, not 09:58), reverted. Next: map shot time to physics t, then re-try |
 | Starship (all three) | Entry plasma is a flat orange ellipse beside the ship (f0.1); Mars: after the flip the camera pulls far back (f0.66, f0.7) instead of the close orbit; flight 5 f0.7 grey disc on the sea |
 | Blue Moon Mk 2 | Done 11-24 (ae6ad1ae8d2): faceted silver shroud, roundel, RCS puffs coded. Not seen: the puffs at shot distance; skirt narrower than the photo |
 | Small bodies: shapes and surfaces | All five are spheres with one grey crater texture: Itokawa a peanut rubble pile with a smooth "sea", Ryugu and Bennu dark spinning-top diamonds with boulders, Eros an elongated potato, 67P the near-black two-lobed duck with cliffs. Procedural shapes first; the published shape models (JAXA, NASA PDS, ESA) need a licence and size check, which ties to the Eyes on the Solar System backlog item |
@@ -46,7 +46,7 @@ The operator's order (2026-11-24): finish every batch first, then redo these.
 | Mars ground | f0.2 (higher up) shows a visible checkerboard tiling of the new detail texture; Curiosity's entry shows a lit disc under the aeroshell |
 | Philae | At touchdown ("0") only the contact shadow shows, the lander is not visible; at -6 a speck |
 | Soyuz-11, Shenzhou-1, Voskhod-1, Apollo 8 | Fixed 11-24: the cause was the ground shot (camera on the surface looking up into the canopy); it now rides level with the capsule. Seen at -20/-6 s; Apollo 8 f0.7 no longer at the riser point |
-| Gemini heat shield (parked) | Two rounds failed: the white cone stays upright under the tilted capsule; it is probably not `model.heatshield` (forcing that part's pose changed nothing; that edit is reverted). Next step: identify the mesh by name at runtime. Ask the operator before a third round |
+| Gemini heat shield | Fixed 11-24: the cone was the generic backshell, not the shield; removed for Earth capsules. Seen at -6 s and 0 on Gemini 4 |
 | Chandrayaan-2 | Loses contact at 2.1 km and hits at 175 m/s, but the last frame shows Vikram landed intact, firing; a crash needs an impact state (tumble/debris), like SLIM's tip |
 | Mars body map | Tried 11-24: 4k map shows the same dark patches, stronger; they are true albedo features at ~5 km/px from 100 km. Kept 2k (no 2.5 MB cost). Closed unless a sharper regional map is wanted |
 | Beagle 2 | Swing done 11-24: scrub-pure, lander and canopy swing; at true scale the 1 m lander is a dot under the canopy. Folded-panel struts not checked |

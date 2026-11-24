@@ -1447,6 +1447,10 @@ function buildEarthCapsuleStack(lander: THREE.Group, vehLen: number): DescentMod
   const p = palette();
   const m = scaffold(lander);
   addAeroshell(m, p, vehLen);
+  // A capsule is its own backshell: the generic cone stayed upright inside it and showed once the
+  // capsule tilted on its riser (Gemini's reposition).
+  m.root.remove(m.backshell);
+  m.backshell = new THREE.Group();
 
   // Recovery mains: ringsail canopies (concentric sails with open slots, orange and white gores),
   // at their real size and count where it is sourced (operator 2026-11-23: the striped half-dome

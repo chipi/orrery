@@ -23,12 +23,16 @@
   "source_tier": "generic",
   "provenance": [
     {
-      "l": "Blue Moon Mk1 has not flown (manifested late 2026). The record gives only: cargo lander, BE-7, Shackleton connecting ridge. The entry state, mass, propellant, descent rate and the site (-84, 20; not the ridge) are drawn estimates, not sourced figures",
+      "l": "Blue Moon Mk1 has not flown (NET Q1 2027). The record gives only: cargo lander, BE-7, Shackleton connecting ridge. The entry state, mass, propellant, descent rate and the site (-84, 20; not the ridge) are drawn estimates, not sourced figures",
       "u": "https://www.nasa.gov/event/clps-flight-blue-origins-blue-moon-mark-1/"
     },
     {
       "l": "Blue Moon Mk1 lunar lander overview — Blue Origin",
       "u": "https://www.blueorigin.com/blue-moon"
+    },
+    {
+      "l": "Blue Moon Pathfinder Mission 1 — still unflown as of Nov 2026, launch NET Q1 2027; target Shackleton Connecting Ridge near the south pole, landing within 100 m, one BE-7 (Wikipedia). No descent timeline, touchdown speed or hover is published",
+      "u": "https://en.wikipedia.org/wiki/Blue_Moon_Pathfinder_Mission_1"
     }
   ],
   "estimatedFields": [

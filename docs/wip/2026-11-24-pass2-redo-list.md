@@ -20,10 +20,10 @@ The operator's order (2026-11-24): finish every batch first, then redo these.
 | Tianwen-1 | Ramps and egress beats added 11-24 (merged from p2-tw1). Measured 11-24: the rover path matches the ramp (along z, 40° slope from a 3.38 m deck); the odd T643 frame is the 40° ramp from the estimated 1.7× platform scale. A real deck height would fix it; not sourced. Egress real time 616900 s is from memory, unsourced |
 | Curiosity, Perseverance | Phone: the chute is cropped at the top while the capsule hangs below |
 | Chandrayaan-3 | Not done: the hovers at 800 m and 150 m need the rate controller to resume a descent (the untested `hovers` code above low gate is in the registry) |
-| Blue Moon MK1 | Not reached |
+| Blue Moon MK1 | 11-24: unflown, NET Q1 2027 (Wikipedia, in provenance); no descent timeline, touchdown speed or hover published, so the profile stays a labelled estimate. Redo when it flies |
 | Chang'e 3/4 | Descent 781 s against the record's ~720 s after the hover was added |
 | Chandrayaan-2 | Not done: the loss at ~2.1 km (a test pins the published end at 7.4 km) |
-| Beresheet | The real engine cut at 10 km and the late restart are not drawn (the profile starts at 2.5 km) |
+| Beresheet | 11-24 sourced: fault from 14 km (Spaceflight Now), 5–6 restart attempts, restarted too late (Times of Israel), last telemetry 150 m at 500 km/h. Restart altitude NOT found. Drawing it needs a coast phase and a second powered phase LUNAR_POWERED lacks, plus an estimated restart altitude: ask first |
 | SLIM | The f0.5 phone frame is black; the engine loss shows only as the plume going out |
 | Galileo probe | 11-24: cloud-deck detail at 500 km–0.5 km periods (Jupiter-only scale): faint streaks on the deck at f0.005–f0.02. Subtle. True bands are wider than the horizon from 450 km, so none are drawn |
 | Vega 1/2 | The balloon deployment is not drawn; no sourced figures in the records |

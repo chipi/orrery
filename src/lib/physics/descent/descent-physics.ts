@@ -40,6 +40,8 @@ import { ATM_PROFILE, interpAtm } from './descent-atmosphere-tables';
 import { poweredDescentThrottle } from '../systems/powered-descent';
 
 const DEG2RAD = Math.PI / 180;
+/** Above this entry speed (m/s) an Earth entry is a lunar return (~11 km/s), not a LEO one (~7.8). */
+const LUNAR_RETURN_ENTRY_MS = 9_000;
 
 // ─── Types ──────────────────────────────────────────────────────────
 
@@ -412,6 +414,10 @@ export interface DescentOptions {
    *  γ integration. Internal — set by the range-control solve when a profile carries a
    *  `targetDownrangeKm`. Default 1 (full lift-up, the unguided behaviour). */
   entryBankCos?: number;
+  /** Guided entry only: fly full lift-up until the first deceleration pulse is past, then the
+   *  commanded bank (Apollo's lunar-return entry guidance). Set by the range-control solve for a
+   *  lunar-return entry; an orbital-speed entry banks from the entry interface on. */
+  holdLiftUpThroughPulse?: boolean;
 }
 
 /** Default flight-path angle (deg below horizontal) for a phase. */
@@ -492,6 +498,7 @@ export function integrateDescent(
     return integrateGuidedDescent(profile, opts);
   }
   const entryBankCos = opts.entryBankCos ?? 1; // full lift-up unless the range solve set a bank
+  const holdLiftUp = opts.holdLiftUpThroughPulse === true;
   const dt = opts.dtS ?? 0.02;
   const sampleDt = opts.sampleDtS ?? 0.5;
   const maxT = opts.maxTS ?? 12000;
@@ -711,7 +718,11 @@ export function integrateDescent(
         // the chute γ still integrates as a ballistic falling body, just with no lift term.
         const isLiftingBody =
           phase.kind === 'ballistic_entry' || phase.kind === 'aeroshell_descent';
-        const lift = isLiftingBody ? liftBonus * drag * entryBankCos : 0; // L = (L/D)·D, bank-scaled
+        // A lunar-return entry holds lift up until its first deceleration pulse is past, then flies
+        // the commanded bank (Apollo's entry guidance); an orbital-speed entry banks from the start.
+        const pulsePast = peakDecel.g > 2 && curDecelG < peakDecel.g * 0.9;
+        const bankCos = holdLiftUp && !pulsePast ? 1 : entryBankCos;
+        const lift = isLiftingBody ? liftBonus * drag * bankCos : 0; // L = (L/D)·D, bank-scaled
         const dGammaDt =
           (g * cosG - lift / Math.max(1, mass) - (v * v * cosG) / (bodyRadiusM + h)) /
           Math.max(v, 1);
@@ -851,8 +862,9 @@ export function integrateDescent(
  */
 function integrateGuidedDescent(profile: DescentProfile, opts: DescentOptions): DescentSummary {
   const target = profile.targetDownrangeKm ?? 0;
+  const holdLiftUpThroughPulse = profile.entryState.velocityMs > LUNAR_RETURN_ENTRY_MS;
   const run = (u: number): DescentSummary =>
-    integrateDescent(profile, { ...opts, entryBankCos: u });
+    integrateDescent(profile, { ...opts, entryBankCos: u, holdLiftUpThroughPulse });
   const rMinus = run(-1).landingDownrangeKm;
   const rPlus = run(1).landingDownrangeKm;
   const footLo = Math.min(rMinus, rPlus);

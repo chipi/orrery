@@ -422,6 +422,27 @@ describe('range-control entry guidance', () => {
     expect(s.touchdownSuccess).toBe(true); // still a real, survivable entry
   });
 
+  it('a lunar-return guided entry flies lift-up through its first pulse, so the bank does not raise its peak g', () => {
+    // Apollo's entry guidance held the lift vector up until the first deceleration pulse was past,
+    // then steered the bank for range (Apollo 11: 6.56 g peak, MSC-00171 Table 7-VII).
+    const lunar = expandDescentProfile({
+      ...RAW_CAPSULE,
+      entryState: { altitudeM: 122_000, velocityMs: 11_032, flightPathAngleDeg: 6.48 },
+      entryCdA: 17.7,
+    });
+    const hold = { holdLiftUpThroughPulse: true };
+    const liftUp = integrateDescent(lunar, { entryBankCos: 1, ...hold }).peakDecel.g;
+    const liftDown = integrateDescent(lunar, { entryBankCos: -1, ...hold }).peakDecel.g;
+    expectCloseTo(liftDown, liftUp, 0.05, 'peak g does not depend on the post-pulse bank');
+    // The guided solve sets the hold for a lunar return only; a LEO entry banks from the start.
+    expect(integrateDescent({ ...lunar, targetDownrangeKm: 2300 }).peakDecel.g).toBeLessThan(
+      liftUp + 0.05,
+    );
+    const leoDown = integrateDescent(capsule, { entryBankCos: -1 }).peakDecel.g;
+    const leoUp = integrateDescent(capsule, { entryBankCos: 1 }).peakDecel.g;
+    expect(leoDown).toBeGreaterThan(leoUp + 0.2);
+  });
+
   it('M4 guard: a target with no lift (no steering authority) is flagged, not faked', () => {
     // A profile carrying a target but zero L/D has a zero-width footprint — bank does nothing.
     const noLift = expandDescentProfile({ ...RAW_CAPSULE, liftToDragRatio: 0 });

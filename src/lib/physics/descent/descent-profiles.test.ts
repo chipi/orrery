@@ -208,6 +208,24 @@ describe('apollo8 lunar-return skip flight (shipped profile)', () => {
     expectInRange(s.peakDecel.g, 6, 9, 'apollo8 lunar-return peak-g'); // real ~6.8 g
   });
 
+  // Apollo 11's guided entry against its postflight analysis (MSC, Feb 1970): first maximum
+  // 6.73 g, minimum 0.48 g, second maximum 6.00 g, splashdown 929 s after entry interface. Every
+  // input is sourced (L/D 0.282, range 2,772 km); the model reads the first pulse at ~8.0 g, a
+  // recorded model limit (the flat atmosphere and 2-DOF lift), so the band admits it.
+  it('Apollo 11 flies lift-up through the first pulse, dips, pulses again and splashes on time', () => {
+    const { s } = flight('apollo11-splashdown');
+    const g = s.states.map((st) => st.decelG);
+    const i1 = g.indexOf(Math.max(...g));
+    const dip = Math.min(...g.slice(i1, i1 + 400));
+    const iDip = g.indexOf(dip, i1);
+    expectInRange(g[i1], 6.5, 8.5, 'first pulse (6.73 g flown)');
+    expectInRange(dip, 0.2, 1, 'between the pulses (0.48 g flown)');
+    expectInRange(Math.max(...g.slice(iDip)), 4.5, 6.5, 'second pulse (6.00 g flown)');
+    const touch = s.events.find((e) => e.type === 'touchdown')!.t;
+    expectInRange(touch, 929 * 0.95, 929 * 1.05, 'splashdown (929 s flown)');
+    expect(s.guidance?.targetReachable).toBe(true);
+  });
+
   it('the LEO Apollo 7 return does NOT skip (same capsule, sub-circular speed)', () => {
     const { s } = flight('apollo7');
     expect(s.events.some((e) => e.type === 'skip_out')).toBe(false);

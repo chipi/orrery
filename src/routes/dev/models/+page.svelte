@@ -80,6 +80,10 @@
   } from '$lib/three/showcase/orbiters';
   import { buildNovaC } from '$lib/three/showcase/landers';
   import { buildFalcon9Booster, setFalcon9BoosterPose } from '$lib/three/showcase/falcon9-booster';
+  import {
+    buildNewGlennBooster,
+    setNewGlennBoosterPose,
+  } from '$lib/three/showcase/new-glenn-booster';
   import { buildSputnik1 } from '$lib/three/showcase/early-stations';
   import { buildDroneShip, buildSeaPlane } from '$lib/three/showcase/drone-ship';
 
@@ -109,6 +113,14 @@
   function buildF9Landing(): THREE.Group {
     const b = buildFalcon9Booster();
     setFalcon9BoosterPose(b, { fins: 1, legs: 1 });
+    return b;
+  }
+  function buildNGStowed(): THREE.Group {
+    return buildNewGlennBooster();
+  }
+  function buildNGLanding(): THREE.Group {
+    const b = buildNewGlennBooster();
+    setNewGlennBoosterPose(b, { fins: 1, legs: 1 });
     return b;
   }
   /** The drone ship with its sea and waterline foam, as the booster landing frames it. */
@@ -777,6 +789,8 @@
         ['nova-c', 'Nova-C (IM-1 Odysseus)', buildNovaC],
         ['falcon9-booster-stowed', 'Falcon 9 booster (stowed)', buildF9Stowed],
         ['falcon9-booster-landing', 'Falcon 9 booster (landing)', buildF9Landing],
+        ['new-glenn-booster-stowed', 'New Glenn booster (stowed)', buildNGStowed],
+        ['new-glenn-booster-landing', 'New Glenn booster (landing)', buildNGLanding],
         ['drone-ship', 'Drone ship JRTI', buildDroneShipScene],
       ] as [string, string, () => THREE.Group][]
     ).map(([id, label, build]) => ({ id, label, family: 'probe', build })),

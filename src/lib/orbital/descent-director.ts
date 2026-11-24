@@ -34,6 +34,8 @@ export interface DescentShot {
 export interface DescentSubject {
   core: { cy: number; r: number };
   whole: { cy: number; r: number };
+  /** A capsule under its main chute: the shot stays on the capsule, off the canopy. */
+  capsule?: boolean;
 }
 
 export interface DescentPose {
@@ -181,7 +183,9 @@ export function descentPoseAt(
       f = { fill: 0.42, el: lerp(10, 22, p), az: a0 + sw * 2.0 * p, fov: 42, who: 'whole' };
       break;
     case 'under':
-      f = { fill: 0.4, el: lerp(-58, -38, p), az: a0 + sw * 0.7 * p, fov: 58, who: 'core' };
+      f = subject.capsule
+        ? { fill: 0.62, el: lerp(-24, -10, p), az: a0 + sw * 0.7 * p, fov: 46, who: 'core' }
+        : { fill: 0.4, el: lerp(-58, -38, p), az: a0 + sw * 0.7 * p, fov: 58, who: 'core' };
       break;
     case 'over':
       f = { fill: 0.34, el: lerp(68, 48, p), az: a0 + sw * 0.6 * p, fov: 46, who: 'whole' };
@@ -210,7 +214,10 @@ export function descentPoseAt(
   const subj = subject[f.who];
   const d = distFor(subj.r, f.fill, f.fov);
   // From below the craft looks up the lines toward the canopy: aim a little above the craft.
-  const ty = sh.kind === 'under' ? lerp(subject.core.cy, subject.whole.cy, 0.35) : subj.cy;
+  const ty =
+    sh.kind === 'under' && !subject.capsule
+      ? lerp(subject.core.cy, subject.whole.cy, 0.35)
+      : subj.cy;
   const el = f.el * DEG;
   let y = ty + Math.sin(el) * d;
   // Near the ground a shot from below becomes one from just above the surface.

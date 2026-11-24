@@ -1012,7 +1012,11 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
     }
     // Gemini at splashdown: the capsule is the subject, the canopy beside it stays in the sky.
     if (isGemini && touched) whole = core;
-    const pose = descentPoseAt(shots, s.t, { core, whole }, craftY, camera.aspect);
+    // An Earth capsule under its chute: keep the capsule (shield and skirt) whole in frame, never the canopy.
+    const capsule =
+      body === 'earth' && !model.mainChute && !model.deploy && chuteT != null && s.t >= chuteT;
+    if (capsule) whole = core;
+    const pose = descentPoseAt(shots, s.t, { core, whole, capsule }, craftY, camera.aspect);
     camera.position.set(pose.pos[0], craftY + pose.pos[1], pose.pos[2]);
     camera.lookAt(pose.target[0], craftY + pose.target[1], pose.target[2]);
     camera.fov = pose.fov;

@@ -936,9 +936,21 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
       const lift = (ball.radius - ball.restY) * inflate * (1 - retract);
       ball.pivot.position.y = ball.restY + lift;
       hang = ball.bridleLength * lp + lift;
-      model.airbags.visible = inflate > 0 && retract < 1;
-      const bagK = (0.15 + 0.85 * inflate) * (1 - 0.8 * retract);
-      model.airbags.scale.set(bagK, bagK * (1 - 0.5 * retract), bagK);
+      const halves = model.airbags.userData.halves as THREE.Object3D[] | undefined;
+      model.airbags.visible = inflate > 0 && (halves ? true : retract < 1);
+      // Luna 9's two halves split and drop to the ground beside the station; the rest deflate.
+      const bagK = halves ? 0.15 + 0.85 * inflate : (0.15 + 0.85 * inflate) * (1 - 0.8 * retract);
+      model.airbags.scale.set(bagK, halves ? bagK : bagK * (1 - 0.5 * retract), bagK);
+      if (halves)
+        for (const h of halves) {
+          const side = h.userData.side as number;
+          const dist = ball.radius - ball.radius * 0.5;
+          h.position.set(
+            side * (dist + ball.radius * 1.4 * retract),
+            -(ball.restY - ball.radius * 0.5) * retract * retract,
+            0,
+          );
+        }
       ballR = Math.max(ball.restY, ball.radius * bagK);
       // Rolling without slipping: the angle is the ground covered over the ball's radius.
       const rolledM = inTail ? (s.downrangeKm - tdDownrangeKm) * 1000 : 0;

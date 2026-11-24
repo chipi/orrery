@@ -891,8 +891,14 @@ function buildLunaCapsuleStack(lander: THREE.Group, vehLen: number): DescentMode
   const radius = (LUNA9_BALL_M / 2) * k;
   const lobeR = radius * 0.5;
   const bagMat = new THREE.MeshStandardMaterial({ color: 0xeee6d2, roughness: 0.82, metalness: 0 });
-  for (const sx of [-1, 1])
-    m.airbags.add(airbagCluster(new THREE.Vector3(sx, 0, 0), radius - lobeR, lobeR, bagMat));
+  const halves = [-1, 1].map((sx) => {
+    const half = airbagCluster(new THREE.Vector3(sx, 0, 0), radius - lobeR, lobeR, bagMat);
+    half.userData.side = sx;
+    m.airbags.add(half);
+    return half;
+  });
+  // The two bag halves split and fall away after the bounces (the scene reads this).
+  m.airbags.userData.halves = halves;
   m.airbags.visible = false;
   pivot.add(m.airbags);
   m.root.add(pivot);

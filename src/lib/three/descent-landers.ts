@@ -95,8 +95,29 @@ const DETAILED: Record<string, Source> = {
   spirit: { family: 'rovers', build: (r) => merOnLander(r, 'spirit') },
   opportunity: { family: 'rovers', build: (r) => merOnLander(r, 'opportunity') },
   perseverance: model('rovers', 'perseverance'),
-  zhurong: model('rovers', 'zhurong'),
+  zhurong: { family: 'lunar-landers-east', build: zhurongOnPlatform },
 };
+
+/** The Tianwen-1 platform is drawn larger than the Chang'e 3 stage it borrows its legs, engine and
+ *  ramps from, so Zhurong (2.6 x 3 m) fits on its deck; an estimate, no platform size was found. */
+const TIANWEN_PLATFORM_SCALE = 1.7;
+
+/** Tianwen-1: the landing platform comes down with Zhurong riding on its deck. */
+function zhurongOnPlatform(east: Family): THREE.Group {
+  const stage = (east.SHOWCASE!['change-3'].build as () => THREE.Group)();
+  stage.scale.setScalar(TIANWEN_PLATFORM_SCALE);
+  const ramps = stage.getObjectByName('ramps');
+  const parent = ramps?.parent;
+  ramps?.removeFromParent();
+  const deckTop = new THREE.Box3().setFromObject(stage).max.y;
+  if (ramps && parent) parent.add(ramps);
+  const rover = loaded['rovers']!.SHOWCASE!['zhurong'].build();
+  rover.name = 'rover';
+  rover.position.y = deckTop;
+  const g = new THREE.Group();
+  g.add(stage, rover);
+  return g;
+}
 
 /** Luna 17 and 21: Lunokhod riding the E-8 landing stage, on its deck between the ramps. */
 function lunokhodOnStage(east: Family): THREE.Group {
@@ -188,7 +209,7 @@ const STOWED: Record<string, readonly string[]> = {
   spirit: ['mast', 'arm', 'solar-arrays'],
   opportunity: ['mast', 'arm', 'solar-arrays'],
   perseverance: ['mast', 'arm'],
-  zhurong: ['mast', 'solar-arrays'],
+  zhurong: ['ramps', 'mast', 'solar-arrays'],
 };
 
 const FLAG_SITES = new Set([

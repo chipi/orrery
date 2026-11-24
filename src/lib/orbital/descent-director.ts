@@ -19,6 +19,7 @@ export type DescentShotKind =
   | 'pullOut' // zoom from close to wide
   | 'belly' // Starship's belly-flop, side-on and close so the flaps and RCS puffs read
   | 'flipOrbit' // a close orbit through Starship's landing flip
+  | 'legs' // from below and the side, up into an open backshell where the legs swing out
   | 'close' // tight on the hardware
   | 'ground'; // a tracking telephoto from the surface (the last seconds, touchdown)
 
@@ -62,7 +63,7 @@ const BEAT_SHOT: Record<string, DescentShotKind> = {
   airbag_deploy: 'orbit',
   bridle_lower: 'under',
   bridle_cut: 'pullOut',
-  leg_deploy: 'orbit',
+  leg_deploy: 'legs',
   constant_descent: 'close',
   landing_flip: 'orbit',
   // Apollo's gates: the pitchover read from the side, the final descent pushed in on.
@@ -142,7 +143,12 @@ function starshipShots(shots: DescentShot[], flipT: number): DescentShot[] {
   const FLIP_S = 9;
   const rest = shots
     .filter((s) => s.t1 > flipT + FLIP_S)
-    .map((s) => ({ ...s, t0: Math.max(s.t0, flipT + FLIP_S) }));
+    .map((s) => ({
+      ...s,
+      t0: Math.max(s.t0, flipT + FLIP_S),
+      // The landing burn stays close: a wide pull-back shrinks the ship to a speck.
+      kind: s.kind === 'ground' || !Number.isFinite(s.t1) ? s.kind : ('close' as DescentShotKind),
+    }));
   return [
     { kind: 'belly', t0: 0, t1: flipT, az: 0.95, dir: 1 },
     { kind: 'flipOrbit', t0: flipT, t1: flipT + FLIP_S, az: 0.2, dir: 1 },
@@ -273,6 +279,9 @@ function shotPoseAt(
         fov: 40,
         who: 'whole',
       };
+      break;
+    case 'legs':
+      f = { fill: 0.7, el: lerp(-24, -12, p), az: a0 + sw * 0.9 * p, fov: 44, who: 'core' };
       break;
     case 'belly':
       // The ship lies along X: seen from +Z, a touch above, it spans the frame.

@@ -59,6 +59,7 @@ const HUD_LABEL: Record<string, () => string> = {
   'ARRAYS OPEN': m.hud_arrays_open,
   'RAMPS OUT': m.hud_ramp_deploy,
   'ROVER EGRESS': m.hud_rover_egress,
+  'HATCH BLOWS': m.hud_hatch_blow,
   EJECT: m.hud_eject,
   'SEAT SEP': m.hud_seat_sep,
   'APEX COVER': m.hud_apex_cover,

@@ -620,6 +620,7 @@ function buildMercury(): THREE.Group {
   );
   gl.position.z = 0.002;
   const hat = onProfile(dm, coneR, 1.38, 0.0, -0.012);
+  hat.name = 'side-hatch';
   box(hat, M.shingle, 0.42, 0.035, 0.56, 0, 0.012, 0);
   box(hat, M.silver, 0.46, 0.02, 0.04, 0, 0.03, 0.29);
   box(hat, M.silver, 0.46, 0.02, 0.04, 0, 0.03, -0.29);

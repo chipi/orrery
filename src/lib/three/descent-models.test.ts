@@ -135,6 +135,8 @@ describe('buildDescentModel', () => {
       expect(old.getObjectByName('descent-module'), mission).toBeUndefined();
       const h = (o: THREE.Object3D) =>
         new THREE.Box3().setFromObject(o).getSize(new THREE.Vector3()).y;
+      // Mercury's retropack hangs below the shield and is dropped early: not part of the size.
+      m.lander.getObjectByName('retropack')?.removeFromParent();
       expect(h(m.lander) / h(old), mission).toBeCloseTo(1, 2);
     }
   });

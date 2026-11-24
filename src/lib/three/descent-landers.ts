@@ -466,6 +466,14 @@ export function detailedReturnCapsule(capsuleId: string, old: THREE.Group): THRE
   const own = new THREE.Box3().setFromObject(craft);
   if (seat && seatParent) seatParent.add(seat);
   const k = (ref.max.y - ref.min.y) / (own.max.y - own.min.y);
+  // Mercury's retropack (three rockets strapped over the shield) is a sibling of the descent
+  // module; added after the fit so it does not skew the size, and dropped by the scene.
+  const rp = whole.getObjectByName('retropack');
+  if (rp) {
+    const pack = rp.clone();
+    pack.applyMatrix4(rp.parent!.matrixWorld);
+    craft.add(pack);
+  }
   craft.scale.setScalar(k);
   craft.position.y = ref.min.y - own.min.y * k;
   const holder = new THREE.Group();

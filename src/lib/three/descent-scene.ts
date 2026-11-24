@@ -801,6 +801,21 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
   const ejHatchHome = ejHatch?.position.clone();
   const ejHatchQ = ejHatch?.quaternion.clone();
   const ejSeatHome = ejSeatG?.position.clone();
+  // Mercury: the retropack drops away early in the descent. Liberty Bell 7: the side hatch blows
+  // after splashdown and the flooding capsule settles lower and tilts.
+  const retroPack = model.lander.getObjectByName('retropack');
+  const packHome = retroPack?.position.clone();
+  const packQ = retroPack?.quaternion.clone();
+  const PACK_DROP_AT_S = 1;
+  const hatchT = metOf('hatch_blow');
+  const sideHatch = model.lander.getObjectByName('side-hatch');
+  const sideHatchHome = sideHatch?.position.clone();
+  const sideHatchQ = sideHatch?.quaternion.clone();
+  const HATCH_FLY_S = 3;
+  const SETTLE_S = 40;
+  const SETTLE_TILT_RAD = 0.6;
+  const landerH = new THREE.Box3().setFromObject(model.lander).getSize(new THREE.Vector3()).y;
+  const landerHomeQ = model.lander.quaternion.clone();
   const EJECT_OUT_M = 9; // drawn, in capsule metres: the seat clears the sphere
   const EJECT_S = 2.5;
   const SEAT_FALL = 1.2; // drawn: the seat drops away (m/s^2 in the capsule frame)
@@ -1298,6 +1313,37 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
           );
         }
       }
+    }
+    if (retroPack && packHome && packQ) {
+      const e = Math.max(0, s.t - PACK_DROP_AT_S);
+      retroPack.visible = e < 8;
+      retroPack.position.copy(packHome);
+      retroPack.position.y -= 0.5 * 0.9 * e * e;
+      retroPack.position.x += 0.5 * e;
+      retroPack.quaternion
+        .copy(packQ)
+        .multiply(new THREE.Quaternion().setFromEuler(new THREE.Euler(e * 0.7, 0, e * 0.4)));
+    }
+    if (sideHatch && sideHatchHome && sideHatchQ && hatchT != null) {
+      const e = Math.max(0, s.t - hatchT);
+      const out = new THREE.Vector3(sideHatchHome.x, 0, sideHatchHome.z).normalize();
+      sideHatch.visible = e < HATCH_FLY_S * 4;
+      sideHatch.position.copy(sideHatchHome).addScaledVector(out, Math.min(e, HATCH_FLY_S) * 0.5);
+      sideHatch.position.y += 0.4 * Math.sin(Math.min(e, HATCH_FLY_S)) - 0.15 * e * e;
+      sideHatch.quaternion
+        .copy(sideHatchQ)
+        .multiply(new THREE.Quaternion().setFromEuler(new THREE.Euler(Math.min(e, 6) * 1.5, 0, 0)));
+      // Flooding: it settles lower and leans over, a pure function of the time since the blow.
+      const sink = smooth01(e / SETTLE_S);
+      model.lander.position.y = landerHome.y - sink * landerH * 0.3;
+      model.lander.quaternion
+        .copy(landerHomeQ)
+        .multiply(
+          new THREE.Quaternion().setFromAxisAngle(
+            new THREE.Vector3(0, 0, 1),
+            sink * SETTLE_TILT_RAD,
+          ),
+        );
     }
     if (ejHatch && ejSeatG && ejSeat && ejMan && ejChute && ejHatchHome && ejHatchQ && ejSeatHome) {
       const dir = ejSeatG.userData.dir as THREE.Vector3;

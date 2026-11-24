@@ -123,6 +123,7 @@ export type DescentEventType =
   | 'constant_descent' // the engines hold a constant descent rate to touchdown (Viking, from 17 m)
   | 'arrays_open' // the solar arrays open after landing (Phoenix, InSight)
   | 'ramp_deploy' // the landing platform's ramps unfold (Tianwen-1)
+  | 'hatch_blow' // the side hatch blows after splashdown and the capsule floods (Liberty Bell 7)
   | 'rover_egress' // the rover drives down the ramp onto the surface (Tianwen-1)
   | 'eject' // the hatch blows and the cosmonaut ejects in the seat (Vostok)
   | 'seat_sep' // the seat falls away; the cosmonaut descends on a personal parachute (Vostok)

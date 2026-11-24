@@ -29,6 +29,10 @@
       "u": "https://en.wikipedia.org/wiki/Vega_2"
     },
     {
+      "l": "Sagdeev et al. 1986 (NASA TM-88516): drogue chute at 64 km, balloon probe detaches at 61 km (t=70 s), balloon parachute at 55 km (t=200 s), balloon fills at 54 km (t=300 s), ballast dropped at 50 km, then it floats at 53-54 km; 3.4 m shell, 21 kg total; drifted 46 h, 11,000 km at ~66 m/s. The lander's own descent is unchanged. The balloon's altitudes are the balloon's own; the scene keys them to the lander's altitude as the nearest drawn instant, and its drift and rise away from the lander are drawn, not sourced",
+      "u": "https://ntrs.nasa.gov/api/citations/19870009888/downloads/19870009888.pdf"
+    },
+    {
       "l": "Dutta et al. 2012, Mission sizing and trade studies for low ballistic coefficient entry systems to Venus, Table 1 — entry angle, speed and peak g of Venera and Vega (simulated from engineering estimates)",
       "u": "https://ntrs.nasa.gov/api/citations/20120006657/downloads/20120006657.pdf"
     },
@@ -46,6 +50,23 @@
     "backshellKg",
     "terminalHandoffAltM",
     "terminalCdA",
-    "entryState.velocityMs"
+    "entryState.velocityMs",
+    "beats.balloon_detach",
+    "beats.balloon_inflate",
+    "beats.ballast_drop"
+  ],
+  "beats": [
+    {
+      "type": "balloon_detach",
+      "altM": 61000
+    },
+    {
+      "type": "balloon_inflate",
+      "altM": 54000
+    },
+    {
+      "type": "ballast_drop",
+      "altM": 50000
+    }
   ]
 }

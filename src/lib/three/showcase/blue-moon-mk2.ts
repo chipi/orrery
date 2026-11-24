@@ -32,6 +32,20 @@ function onHull(a: number, y: number, out = 0): THREE.Vector3 {
   return new THREE.Vector3(Math.sin(a) * (R + out), y, Math.cos(a) * (R + out));
 }
 
+/** The RCS quads puff in turn through the powered descent; pure in t, so a scrub is exact. */
+export function blueMoonRcs(
+  lander: THREE.Object3D,
+  t: number,
+  firing: boolean,
+  frame: number,
+): void {
+  const quads = lander.userData.rcsQuads as THREE.Object3D[] | undefined;
+  (quads ?? []).forEach((q, i) => {
+    q.visible = firing && Math.sin(t * 1.3 + i * 1.7) > 0.35;
+    if (q.visible) q.scale.setScalar(1 + 0.25 * Math.sin(frame * 1.3 + i));
+  });
+}
+
 export function buildBlueMoonMk2(): THREE.Group {
   const g = new THREE.Group();
   const M: Record<string, Mat> = {
@@ -146,27 +160,37 @@ export function buildBlueMoonMk2(): THREE.Group {
     strut(g, M.steel, onHull(a1, DECK_TOP, 0), onHull(a0, CABIN_BASE, 0), 0.05, 6);
   }
 
-  // Ascent cabin: white drum with a blue band, a foil panel with the roundel and two dishes.
-  lathe(g, M.white, [
-    [R * 0.98, CABIN_BASE],
-    [R * 1.0, CABIN_BASE + 0.1],
-    [R * 1.0, TANK_TOP + 2.8],
-    [R * 0.85, TANK_TOP + 3.9],
-    [R * 0.55, BLUE_MOON_MK2_HEIGHT_M - 0.05],
-    [0.05, BLUE_MOON_MK2_HEIGHT_M],
-  ]);
+  // Ascent cabin: a faceted, flared silver shroud, wider at the bottom, with the NASA roundel on
+  // its front face and a blue line near the top (estimate, read off the render).
+  const shroudMat = mat(0xb9bcc0, 0.55, 0.45);
+  shroudMat.flatShading = true;
+  const shroud = new THREE.Mesh(
+    new THREE.LatheGeometry(
+      [
+        [R * 1.16, CABIN_BASE - 0.3],
+        [R * 1.12, CABIN_BASE + 0.5],
+        [R * 0.8, TANK_TOP + 3.1],
+        [R * 0.76, TANK_TOP + 3.7],
+        [R * 0.5, BLUE_MOON_MK2_HEIGHT_M - 0.4],
+        [0.05, BLUE_MOON_MK2_HEIGHT_M],
+      ].map(([x, y]) => new THREE.Vector2(x, y)),
+      10,
+    ),
+    shroudMat,
+  );
+  shroud.rotation.y = Math.PI / 10; // a flat facet, not an edge, faces the front
+  g.add(shroud);
   lathe(g, M.blue, [
-    [R * 1.012, TANK_TOP + 3.0],
-    [R * 1.012, TANK_TOP + 3.18],
+    [R * 0.83, TANK_TOP + 3.2],
+    [R * 0.83, TANK_TOP + 3.38],
   ]);
-  box(g, M.white, 2.2, 3.3, 0.12, 0, TANK_TOP + 1.1, R * 1.0 + 0.04);
-  const roundel = new THREE.Mesh(new THREE.CylinderGeometry(0.6, 0.6, 0.1, 24), M.blue);
-  roundel.rotation.x = Math.PI / 2;
-  roundel.position.set(0, TANK_TOP + 1.9, R + 0.12);
+  const roundel = new THREE.Mesh(new THREE.CylinderGeometry(0.75, 0.75, 0.08, 24), M.blue);
+  roundel.rotation.x = Math.PI / 2 - 0.33; // its normal follows the flare
+  roundel.position.set(0, 13.0, R * 0.93 + 0.04);
   g.add(roundel);
   for (const s of [-1, 1]) {
     const d = dish(M.white, M.black, 0.45);
-    d.position.set(s * 2.6, BLUE_MOON_MK2_HEIGHT_M - 1.0, 0.6);
+    d.position.set(s * 2.2, BLUE_MOON_MK2_HEIGHT_M - 0.8, 0.6);
     d.rotation.set(0.7, s * 0.7, 0);
     g.add(d);
   }
@@ -186,13 +210,25 @@ export function buildBlueMoonMk2(): THREE.Group {
   }
 
   // RCS thruster quads: four pods high on the cabin, four small nozzles each (estimate).
+  const quads: THREE.Object3D[] = [];
+  const plumeMat = new THREE.MeshBasicMaterial({
+    color: 0xdfe8ff,
+    transparent: true,
+    opacity: 0.8,
+    blending: THREE.AdditiveBlending,
+    depthWrite: false,
+  });
   for (let i = 0; i < 4; i++) {
     const a = (i / 4) * Math.PI * 2 + Math.PI / 4;
-    const p = onHull(a, CABIN_BASE + 2.2, 0.08);
+    const p = onHull(a, CABIN_BASE + 2.2, R * 0.1 + 0.08);
     const pod = box(g, M.black, 0.5, 0.5, 0.25, p.x, p.y, p.z);
     pod.rotation.y = a;
     const t = new THREE.Vector3(Math.cos(a), 0, -Math.sin(a));
     const out = new THREE.Vector3(Math.sin(a), 0, Math.cos(a));
+    const puff = new THREE.Group();
+    puff.visible = false;
+    g.add(puff);
+    quads.push(puff);
     for (const [dx, dy] of [
       [-0.14, 0.14],
       [0.14, 0.14],
@@ -205,9 +241,16 @@ export function buildBlueMoonMk2(): THREE.Group {
       n.rotation.order = 'YXZ';
       n.rotation.set(Math.PI / 2, a, 0);
       g.add(n);
+      const geo = new THREE.ConeGeometry(0.07, 0.7, 8, 1, true);
+      geo.translate(0, 0.35, 0);
+      const plume = new THREE.Mesh(geo, plumeMat);
+      plume.position.copy(n.position).addScaledVector(out, 0.08);
+      plume.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), out);
+      puff.add(plume);
     }
   }
 
+  g.userData.rcsQuads = quads;
   g.userData.thrusterSites = sites;
   return g;
 }

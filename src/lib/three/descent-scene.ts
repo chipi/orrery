@@ -35,6 +35,7 @@ import { sepProgress } from '$lib/orbital/ascent-cameras';
 import { buildDescentModel } from '$lib/three/descent-models';
 import { buildSmallBody, type SmallBodyId } from '$lib/three/small-body-shapes';
 import type { FlightPhaseScene, ForceKey } from '$lib/three/flight-phase-scene';
+import { blueMoonRcs } from './showcase/blue-moon-mk2';
 
 /** Body mean radius (km, scene units). */
 const SMALL_BODIES = new Set<DescentBody>(['comet_67p', 'itokawa', 'ryugu', 'bennu', 'eros']);
@@ -1321,6 +1322,9 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
       vehicle.position.y += vehLen * 0.7 * Math.cos(vehicle.rotation.z);
       starshipControls(model.lander, s.t, landingFlipT, LANDING_FLIP_S, frame);
     }
+
+    if (model.lander.userData.rcsQuads)
+      blueMoonRcs(model.lander, s.t, s.phaseKind === 'powered_retro' && s.altM > 0, frame);
 
     // Entry fireball: glow tracks the normalised aero-heating proxy — the
     // hypersonic bow that peaks at peak heating then dies as the vehicle slows.

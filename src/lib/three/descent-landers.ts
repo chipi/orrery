@@ -18,6 +18,7 @@ const FAMILIES = import.meta.glob<Family>([
   './showcase/capsules-classic.ts',
   './showcase/capsules-commercial.ts',
   './showcase/probes.ts',
+  './showcase/starship-hls.ts',
 ]);
 const loaded: Record<string, Family> = {};
 let preloading: Promise<void> | null = null;
@@ -64,6 +65,7 @@ const DETAILED: Record<string, Source> = {
   apollo14: LM,
   apollo15: LM,
   apollo16: LM,
+  artemis4: builder('starship-hls', 'buildStarshipHls'),
   apollo17: LM,
   curiosity: builder('mars-rovers', 'buildCuriosity'),
   // Scale-out (2026-11-23): the central models of every robotic Moon and Mars landing.
@@ -313,6 +315,15 @@ export function detailedDescentLander(siteId: string, tier0: THREE.Group): THREE
     holder.add(probes);
   }
   holder.userData.metresToScene = k;
+  const thrusters = craft.userData.thrusterSites as THREE.Vector3[] | undefined;
+  if (thrusters) {
+    holder.userData.plumeSites = thrusters.map((t) =>
+      t
+        .clone()
+        .multiplyScalar(k)
+        .add(new THREE.Vector3(0, craft.position.y, 0)),
+    );
+  }
   for (const key of ['engineExitY', 'dockY'] as const) {
     const y = craft.userData[key] as number | undefined;
     if (y != null) holder.userData[key] = craft.position.y + y * k;

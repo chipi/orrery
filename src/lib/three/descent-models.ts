@@ -570,7 +570,12 @@ function buildLunarStack(lander: THREE.Group, vehLen: number): DescentModel {
   // A downward retro bell + plume anchor beneath the descent stage — or, for a detailed lander
   // with its own engine bell, the plume from that bell's exit.
   const exitY = lander.userData.engineExitY as number | undefined;
-  if (exitY != null) {
+  const thrusters = lander.userData.plumeSites as THREE.Vector3[] | undefined;
+  if (thrusters) {
+    // Starship HLS: the descent burn comes from its high landing thrusters, not the Raptors.
+    m.retro = new THREE.Group();
+    m.plumeSites = thrusters;
+  } else if (exitY != null) {
     m.retro = new THREE.Group();
     m.retro.position.y = exitY;
   } else {

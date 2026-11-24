@@ -14,6 +14,12 @@
  * shared ascent-renderer composer drives it unchanged.
  */
 
+import {
+  applyGroundDetail,
+  hasGroundDetail,
+  makeGroundRocks,
+  makeGroundTexture,
+} from './descent-ground';
 import * as THREE from 'three';
 import { buildDescentShots, descentPoseAt } from '../orbital/descent-director';
 import { BoldArrow } from './bold-arrow';
@@ -276,6 +282,10 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
   const shape = small ? buildSmallBody(body as SmallBodyId) : null;
   const bodyMesh =
     shape?.mesh ?? new THREE.Mesh(new THREE.SphereGeometry(rBody, 128, 128), bodyMat);
+  if (!shape && hasGroundDetail(body)) {
+    const gt = makeGroundTexture(body);
+    if (gt) applyGroundDetail(bodyMat, body, gt);
+  }
   bodyMesh.position.set(0, -(shape?.landR ?? rBody), 0);
   const siteC = opts.landingSite ?? { lat: 0, lon: 0 };
   const latR = (siteC.lat * Math.PI) / 180;
@@ -287,6 +297,8 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
   );
   bodyMesh.quaternion.setFromUnitVectors(shape?.landDir ?? siteNormal, new THREE.Vector3(0, 1, 0));
   scene.add(bodyMesh);
+  const groundRocks = hasGroundDetail(body) ? makeGroundRocks(body) : null;
+  if (groundRocks) scene.add(groundRocks);
 
   // A soft contact shadow on the ground under a small-body lander: it fades as the craft lifts, so
   // a bounce (Philae) reads. A spherical cap hugging the local surface.

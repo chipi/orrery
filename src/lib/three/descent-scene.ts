@@ -405,6 +405,10 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
     const m = body === 'comet_67p' ? PHILAE_M : SMALL_CRAFT_M;
     craftK = m / 1000 / (Math.max(ext.x, ext.y, ext.z) || 1);
   }
+  // A small-body lander rests on its feet: lift it so its lowest point, not its centre, is at y = 0.
+  const smallLift = small
+    ? (-new THREE.Box3().setFromObject(model.lander).min.y + 0.1) * craftK
+    : 0;
   // Seen from far the craft is a speck: a screen-sized marker keeps it findable.
   const marker = new THREE.Points(
     new THREE.BufferGeometry().setAttribute(
@@ -662,6 +666,27 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
   const dustMat = dust.material as THREE.MeshBasicMaterial;
   scene.add(dust);
 
+  // Crash debris: a few dark pieces thrown out of the impact, shown from touchdown.
+  const debris = new THREE.Group();
+  debris.visible = false;
+  const debrisMat = new THREE.MeshStandardMaterial({ color: 0x55524e, roughness: 0.8 });
+  for (let i = 0; i < 7; i++) {
+    const piece = new THREE.Mesh(
+      new THREE.BoxGeometry(vehLen * 0.12, vehLen * 0.05, vehLen * 0.08),
+      debrisMat,
+    );
+    const a = i * 2.4;
+    piece.position.set(
+      Math.cos(a) * vehLen * (0.7 + 0.25 * i),
+      vehLen * 0.02,
+      Math.sin(a) * vehLen * (0.5 + 0.15 * i),
+    );
+    piece.rotation.set(i, a, i * 0.7);
+    piece.scale.setScalar(1 - i * 0.08);
+    debris.add(piece);
+  }
+  scene.add(debris);
+
   // ── Science-Lens force vectors (thrust up / weight down / drag up / velocity down).
   const forces = new THREE.Group();
   forces.visible = false;
@@ -792,6 +817,14 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
   const ARRAY_S = 8;
   /** Landers that ended tipped over, by site (rad about the base): SLIM ended nose-down (JAXA). */
   const END_TIP_RAD: Record<string, number> = { slim: -1.4 };
+  // A hard impact (touchdown faster than a lander can survive): the engine is off from the contact
+  // loss / cutoff, the craft tumbles over the last seconds and ends broken on its side.
+  const tdEvent = opts.events?.find((e) => e.type === 'touchdown');
+  const crashed = !ball && !small && tdEvent != null && tdEvent.velocityMs > 20;
+  const crashCutT = crashed ? (cutoffT ?? metOf('probe_signal_lost')) : undefined;
+  const CRASH_TUMBLE_S = 8;
+  const CRASH_END_TIP_RAD = 1.35;
+  const CRASH_DUST_S = 6;
   const shellSepT = bsT ?? cutT;
   const tdDownrangeKm = opts.events?.find((e) => e.type === 'touchdown')?.downrangeKm ?? 0;
   const BRIDLE_S = 6; // MER's bridle paid out in about 6 s (MER landing press kit)
@@ -875,7 +908,7 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
         : s.altM <= BALL_SCALE_ALT_M
           ? s.altM * ball.k
           : BALL_SCALE_ALT_M * ball.k + (s.altM - BALL_SCALE_ALT_M) / 1000;
-    vehicle.position.set(0, craftY, 0);
+    vehicle.position.set(0, craftY + smallLift, 0);
     if (contactShadow) {
       contactMat.opacity = 0.6 * Math.exp((-Math.max(0, s.altM) / craftM) * 0.7);
       contactShadow.visible = contactMat.opacity > 0.01;
@@ -904,6 +937,14 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
     // A lander that ended tipped over (SLIM, nose-down): it tips about its base over 3 s after contact.
     const tip = END_TIP_RAD[opts.siteId];
     if (tip && touchdownT != null) vehicle.rotation.z += tip * smooth01((s.t - touchdownT) / 3);
+    if (crashed && touchdownT != null) {
+      const tum = Math.max(0, s.t - (touchdownT - CRASH_TUMBLE_S));
+      const pre = smooth01(tum / CRASH_TUMBLE_S);
+      const post = smooth01((s.t - touchdownT) / 0.6);
+      vehicle.rotation.z += s.t < touchdownT ? 2.4 * pre : 2.4 + (CRASH_END_TIP_RAD - 2.4) * post;
+      vehicle.rotation.x = 0.5 * Math.sin(tum * 0.9) * (1 - post);
+      vehicle.position.x = vehLen * 0.35 * post;
+    }
 
     // Sky: space-black high → the body's near-surface atmosphere colour low.
     const skyT = Math.min(1, Math.max(0, 1 - s.altKm / sky.fadeKm));
@@ -1134,7 +1175,10 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
     const cutoff = sitePlumes.length > 0 && touchdownT != null && s.t >= touchdownT;
     const softBurn =
       body === 'earth' && s.phaseKind === 'parachute' && retroT != null && s.t >= retroT;
-    const engineOn = (braking || softBurn) && (cutoffT == null || s.t < cutoffT);
+    const engineOn =
+      (braking || softBurn) &&
+      (cutoffT == null || s.t < cutoffT) &&
+      (crashCutT == null || s.t < crashCutT);
     plume.visible = engineOn && sitePlumes.length === 0;
     for (const c of sitePlumes) c.visible = engineOn && !cutoff;
     if (engineOn) {
@@ -1269,8 +1313,16 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
     // Exhaust dust: only while an engine fires within a few craft-lengths of the ground; none for
     // chute/airbag landings without a retro burn, none on small bodies.
     const kicking = body !== 'jupiter' && !small && engineOn && s.altKm < vehLen * 4;
-    dust.visible = kicking;
-    if (kicking) {
+    debris.visible = crashed && touchdownT != null && s.t >= touchdownT;
+    const burst = crashed && touchdownT != null && s.t >= touchdownT;
+    dust.visible = kicking || burst;
+    if (burst) {
+      const e = Math.min(1, (s.t - touchdownT!) / CRASH_DUST_S);
+      dustMat.opacity = 0.55 * (1 - e) * (1 - e);
+      dust.scale.setScalar(1 + 5 * Math.sqrt(e));
+      dust.position.y = vehLen * (0.02 + 0.4 * Math.sqrt(e));
+    } else if (kicking) {
+      dust.position.y = vehLen * 0.02;
       const prox = 1 - Math.min(1, s.altKm / (vehLen * 4)); // 0 far → 1 at ground
       dustMat.opacity = (overSea ? 0.07 : 0.12) * prox;
       dust.scale.setScalar((0.4 + 0.6 * prox) * plumeK * (overSea ? 0.6 : 1));
@@ -1386,6 +1438,7 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
     plume.visible = false;
     plasma.visible = false;
     dust.visible = false;
+    debris.visible = false;
   };
   const dispose = (): void => {
     bodyTex?.dispose();

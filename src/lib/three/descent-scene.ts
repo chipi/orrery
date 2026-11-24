@@ -30,6 +30,12 @@ import { buildDescentModel } from '$lib/three/descent-models';
 import type { FlightPhaseScene, ForceKey } from '$lib/three/flight-phase-scene';
 
 /** Body mean radius (km, scene units). */
+const SMALL_BODIES = new Set<DescentBody>(['comet_67p', 'itokawa', 'ryugu', 'bennu', 'eros']);
+
+/** Drawn craft size on a small body (m): the real spacecraft, not the exaggerated planetary stack. */
+const SMALL_CRAFT_M = 6;
+const PHILAE_M = 1;
+
 const R_BODY_KM: Record<DescentBody, number> = {
   moon: 1737.4,
   mars: 3389.5,
@@ -230,7 +236,15 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
 
   const scene = new THREE.Scene();
   scene.background = sky.high.clone();
-  const camera = new THREE.PerspectiveCamera(46, opts.aspect, 0.01, 120_000);
+  // A small body (asteroid, comet) is drawn at true scale against a craft of a few metres: the clip
+  // planes close in to match (the 120 000 km far plane only serves the planets' star sphere).
+  const small = SMALL_BODIES.has(body);
+  const camera = new THREE.PerspectiveCamera(
+    46,
+    opts.aspect,
+    small ? 0.0002 : 0.01,
+    small ? 400 : 120_000,
+  );
 
   // ── Lighting: a warm sun toward the camera hemisphere + a cool fill so the
   //    shadowed limb never crushes to black (×π for r155+ physical lights, #203).
@@ -311,6 +325,10 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
     }),
   );
   stars.visible = sky.stars;
+  if (small) {
+    stars.scale.setScalar(300 / 60_000);
+    (stars.material as THREE.PointsMaterial).size = 80 * (300 / 60_000);
+  }
   scene.add(stars);
 
   // ── Vehicle: the EDL descent stack. The scene animates its STANDARD parts
@@ -320,6 +338,31 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
   const rBodyRef = vehLen * 0.05; // plume scale reference
   const model = buildDescentModel(opts.siteId, body, vehLen);
   vehicle.add(model.root);
+  // Small body: scale the whole stack so the lander is its real size (the stack is built at the
+  // planetary exaggeration, ~1 km); the body keeps its true radius.
+  let craftK = 1;
+  if (small) {
+    const ext = new THREE.Box3().setFromObject(model.lander).getSize(new THREE.Vector3());
+    const m = body === 'comet_67p' ? PHILAE_M : SMALL_CRAFT_M;
+    craftK = m / 1000 / (Math.max(ext.x, ext.y, ext.z) || 1);
+  }
+  // Seen from far the craft is a speck: a screen-sized marker keeps it findable.
+  const marker = new THREE.Points(
+    new THREE.BufferGeometry().setAttribute(
+      'position',
+      new THREE.Float32BufferAttribute([0, 0.5, 0], 3),
+    ),
+    new THREE.PointsMaterial({
+      color: 0xffd23c,
+      size: 9,
+      sizeAttenuation: false,
+      depthTest: false,
+      transparent: true,
+    }),
+  );
+  marker.visible = false;
+  marker.renderOrder = 10;
+  if (small) vehicle.add(marker);
   // Rest bounds of each flying part (in its parent's frame), for the director to frame what is
   // actually there: the aeroshell, the craft, a sky crane climbing off the rover on its bridles.
   const restBox = (o: THREE.Object3D): THREE.Box3 | null => {
@@ -493,7 +536,8 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
     body === 'mars' ? 0xc98a5a : body === 'venus' ? 0xd9a44a : overSea ? 0xe4edf3 : 0xb8b3ad;
   // Starship's three Raptors light a far bigger flame than a lander's retro (the plume is sized
   // off a capsule-scale body).
-  const plumeK = opts.events?.some((e) => e.type === 'landing_flip') ? 2.5 : 1;
+  // A touch-and-go gas jet is tiny against a 6 m craft: drawn larger so the back-away reads.
+  const plumeK = opts.events?.some((e) => e.type === 'landing_flip') ? 2.5 : small ? 4 : 1;
   const dust = new THREE.Mesh(new THREE.CircleGeometry(vehLen * 1.5, 40), additive(dustColor, 0));
   dust.rotation.x = -Math.PI / 2; // flat on the surface
   dust.position.y = vehLen * 0.02;
@@ -708,6 +752,7 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
           ? s.altM * ball.k
           : BALL_SCALE_ALT_M * ball.k + (s.altM - BALL_SCALE_ALT_M) / 1000;
     vehicle.position.set(0, craftY, 0);
+    vehicle.scale.setScalar(craftK);
     const vd = s.velDownMs;
     const vh = Math.sqrt(Math.max(0, s.velocityMs * s.velocityMs - vd * vd));
     if (airless && s.phaseKind === 'powered_retro' && s.altM > 0 && prior && s.t - prior.t > 0.5) {
@@ -1081,7 +1126,7 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
 
     // Touchdown dust: ramps up as the vehicle nears the ground under retro /
     // airbags, and flares at touchdown.
-    const nearGround = body !== 'jupiter' && s.altKm < vehLen * 0.5;
+    const nearGround = body !== 'jupiter' && !small && s.altKm < vehLen * 0.5;
     const kicking =
       nearGround && ((braking && engineOn) || s.phaseKind === 'airbag_bounce' || s.altM <= 0);
     dust.visible = kicking;
@@ -1118,6 +1163,16 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
     if (capsule) whole = core;
     // A gas giant has no ground: below the 1-bar datum the floor is the craft, not the cloud top.
     const camY = vehicle.position.y;
+    if (small) {
+      // The subject is in the stack's units: bring it to the drawn size. Far from the surface the
+      // wide shots frame the whole body with the craft a marked speck; near it they hug the craft.
+      core = { cy: core.cy * craftK, r: core.r * craftK };
+      whole =
+        s.altM < 40
+          ? { cy: core.cy, r: core.r * 2.5 }
+          : { cy: -rBody * 0.3 - vehicle.position.y, r: rBody * 0.3 };
+      marker.visible = camera.position.distanceTo(vehicle.position) > 30 * (SMALL_CRAFT_M / 1000);
+    }
     const floorAlt = body === 'jupiter' ? Math.max(0, camY) : camY;
     const pose = descentPoseAt(shots, s.t, { core, whole, capsule }, floorAlt, camera.aspect);
     camera.position.set(pose.pos[0], camY + pose.pos[1], pose.pos[2]);

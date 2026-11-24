@@ -1,6 +1,6 @@
 import { expect, test, type Locator, type Page } from '@playwright/test';
 import { contextWalkDone } from './_helpers/explore-walk';
-import { openControlsDrawer, openDrawerTab } from './_helpers/hud-expand';
+import { closeDrawer, openControlsDrawer, openDrawerTab } from './_helpers/hud-expand';
 import { waitForHydration } from './_helpers/hydration';
 
 /**
@@ -82,7 +82,11 @@ async function arrivedAt(page: Page) {
 
 async function openIndex(page: Page, scale = 'solar-system') {
   const panel = page.locator(`aside.scale-index[data-scale="${scale}"]`);
-  if (!(await panel.isVisible())) await page.getByTestId('scale-index-toggle').click();
+  if (!(await panel.isVisible())) {
+    // A phone's compact drawer (no close button since the 0.9.11 mobile round) hides the toggle.
+    await closeDrawer(page);
+    await page.getByTestId('scale-index-toggle').click();
+  }
   await expect(panel).toBeVisible();
   return panel;
 }

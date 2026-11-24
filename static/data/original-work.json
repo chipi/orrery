@@ -998,7 +998,7 @@
       "kind": "spacecraft"
     },
     {
-      "title": "Starship Hls",
+      "title": "Starship HLS",
       "file": "/images/anatomy/starship-hls.webp",
       "cover": false,
       "kind": "spacecraft"
@@ -2139,6 +2139,12 @@
       "title": "Dawn",
       "file": "/images/missions/thumbnails/dawn.webp",
       "route": "/missions?id=dawn",
+      "cover": false
+    },
+    {
+      "title": "ESCAPADE",
+      "file": "/images/missions/thumbnails/escapade.webp",
+      "route": "/missions?id=escapade",
       "cover": false
     },
     {
@@ -5612,7 +5618,7 @@
     "exploded_art": 76,
     "landing_art": 39,
     "blueprint_art": 18,
-    "mission_trajectories": 140,
+    "mission_trajectories": 141,
     "site_illustrations": 16,
     "lab_illustrations": 25,
     "diagrams_science": 117,

@@ -238,7 +238,7 @@
       "title": "Lucy"
     },
     "/images/anatomy/luna-16_webp": {
-      "title": "Luna 16-class"
+      "title": "Luna 16"
     },
     "/images/anatomy/luna-9_webp": {
       "title": "Luna 9"
@@ -498,6 +498,9 @@
     "/images/anatomy/starliner_webp": {
       "title": "Starliner (CST-100)"
     },
+    "/images/anatomy/starship-hls_webp": {
+      "title": "Starship HLS"
+    },
     "/images/anatomy/starship_webp": {
       "title": "Starship"
     },
@@ -596,6 +599,9 @@
     "/images/anatomy-exploded/antares_webp": {
       "title": "Antares"
     },
+    "/images/anatomy-exploded/apollo-lm_webp": {
+      "title": "Apollo Lunar Module"
+    },
     "/images/anatomy-exploded/ariane-1_webp": {
       "title": "Ariane 1"
     },
@@ -614,11 +620,35 @@
     "/images/anatomy-exploded/atlas-v_webp": {
       "title": "Atlas V"
     },
+    "/images/anatomy-exploded/beagle2_webp": {
+      "title": "Beagle 2"
+    },
+    "/images/anatomy-exploded/beresheet_webp": {
+      "title": "Beresheet"
+    },
+    "/images/anatomy-exploded/change-3_webp": {
+      "title": "Chang'e 3"
+    },
+    "/images/anatomy-exploded/change-4_webp": {
+      "title": "Chang'e 4"
+    },
+    "/images/anatomy-exploded/change-5_webp": {
+      "title": "Chang'e 5"
+    },
+    "/images/anatomy-exploded/change6_webp": {
+      "title": "Chang'e 6"
+    },
+    "/images/anatomy-exploded/curiosity_webp": {
+      "title": "Curiosity (MSL)"
+    },
     "/images/anatomy-exploded/delta-ii_webp": {
       "title": "Delta II"
     },
     "/images/anatomy-exploded/energia_webp": {
       "title": "Energia"
+    },
+    "/images/anatomy-exploded/exomars-rosalind-franklin_webp": {
+      "title": "Rosalind Franklin (ExoMars rover)"
     },
     "/images/anatomy-exploded/falcon-9_webp": {
       "title": "Falcon 9 Block 5"
@@ -632,6 +662,9 @@
     "/images/anatomy-exploded/h3_webp": {
       "title": "H3"
     },
+    "/images/anatomy-exploded/insight_webp": {
+      "title": "InSight"
+    },
     "/images/anatomy-exploded/long-march-2f_webp": {
       "title": "Long March 2F"
     },
@@ -644,11 +677,38 @@
     "/images/anatomy-exploded/long-march-7_webp": {
       "title": "Long March 7"
     },
+    "/images/anatomy-exploded/lrv-apollo_webp": {
+      "title": "Lunar Roving Vehicle"
+    },
+    "/images/anatomy-exploded/luna-16_webp": {
+      "title": "Luna 16"
+    },
+    "/images/anatomy-exploded/luna-9_webp": {
+      "title": "Luna 9"
+    },
+    "/images/anatomy-exploded/luna24_webp": {
+      "title": "Luna 24"
+    },
+    "/images/anatomy-exploded/lunokhod-1_webp": {
+      "title": "Lunokhod 1"
+    },
+    "/images/anatomy-exploded/lunokhod-2_webp": {
+      "title": "Lunokhod 2"
+    },
     "/images/anatomy-exploded/lvm3_webp": {
       "title": "LVM3 (GSLV Mk III)"
     },
     "/images/anatomy-exploded/m-v_webp": {
       "title": "M V"
+    },
+    "/images/anatomy-exploded/mars-2_webp": {
+      "title": "Mars 2"
+    },
+    "/images/anatomy-exploded/mars-3_webp": {
+      "title": "Mars 3"
+    },
+    "/images/anatomy-exploded/mars6_webp": {
+      "title": "Mars 6"
     },
     "/images/anatomy-exploded/mercury-redstone_webp": {
       "title": "Mercury-Redstone"
@@ -658,6 +718,18 @@
     },
     "/images/anatomy-exploded/new-glenn_webp": {
       "title": "New Glenn"
+    },
+    "/images/anatomy-exploded/opportunity_webp": {
+      "title": "Opportunity (MER-B)"
+    },
+    "/images/anatomy-exploded/perseverance_webp": {
+      "title": "Perseverance (Mars 2020)"
+    },
+    "/images/anatomy-exploded/phoenix_webp": {
+      "title": "Phoenix"
+    },
+    "/images/anatomy-exploded/pragyan_webp": {
+      "title": "Pragyan"
     },
     "/images/anatomy-exploded/proton-k_webp": {
       "title": "Proton-K"
@@ -680,8 +752,17 @@
     "/images/anatomy-exploded/saturn-v_webp": {
       "title": "Saturn V"
     },
+    "/images/anatomy-exploded/schiaparelli_webp": {
+      "title": "Schiaparelli"
+    },
+    "/images/anatomy-exploded/slim_webp": {
+      "title": "SLIM"
+    },
     "/images/anatomy-exploded/sls-block-1_webp": {
       "title": "SLS Block 1"
+    },
+    "/images/anatomy-exploded/sojourner_webp": {
+      "title": "Sojourner"
     },
     "/images/anatomy-exploded/soyuz_webp": {
       "title": "Soyuz (11A511)"
@@ -698,11 +779,32 @@
     "/images/anatomy-exploded/space-shuttle-stack_webp": {
       "title": "Space Shuttle stack"
     },
+    "/images/anatomy-exploded/spirit_webp": {
+      "title": "Spirit (MER-A)"
+    },
     "/images/anatomy-exploded/starship_webp": {
       "title": "Starship"
     },
     "/images/anatomy-exploded/titan-ii-glv_webp": {
       "title": "Titan II GLV"
+    },
+    "/images/anatomy-exploded/vega-1_webp": {
+      "title": "Vega 1"
+    },
+    "/images/anatomy-exploded/vega-2_webp": {
+      "title": "Vega 2"
+    },
+    "/images/anatomy-exploded/venera-13_webp": {
+      "title": "Venera 13"
+    },
+    "/images/anatomy-exploded/viking-1_webp": {
+      "title": "Viking 1"
+    },
+    "/images/anatomy-exploded/viking2-lander_webp": {
+      "title": "Viking 2 Lander"
+    },
+    "/images/anatomy-exploded/vikram-cy3_webp": {
+      "title": "Vikram (Chandrayaan-3)"
     },
     "/images/anatomy-exploded/voskhod-11a57_webp": {
       "title": "Voskhod (11A57)"
@@ -712,6 +814,665 @@
     },
     "/images/anatomy-exploded/vulcan_webp": {
       "title": "Vulcan Centaur"
+    },
+    "/images/anatomy-exploded/yutu_webp": {
+      "title": "Yutu"
+    },
+    "/images/anatomy-exploded/yutu-2_webp": {
+      "title": "Yutu-2"
+    },
+    "/images/anatomy-exploded/zhurong_webp": {
+      "title": "Zhurong"
+    }
+  },
+  "landing_art": {
+    "/images/landing-sequences/apollo11_webp": {
+      "title": "Apollo 11"
+    },
+    "/images/landing-sequences/apollo12_webp": {
+      "title": "Apollo 12"
+    },
+    "/images/landing-sequences/apollo14_webp": {
+      "title": "Apollo 14"
+    },
+    "/images/landing-sequences/apollo15_webp": {
+      "title": "Apollo 15"
+    },
+    "/images/landing-sequences/apollo16_webp": {
+      "title": "Apollo 16"
+    },
+    "/images/landing-sequences/apollo17_webp": {
+      "title": "Apollo 17"
+    },
+    "/images/landing-sequences/artemis4_webp": {
+      "title": "Artemis IV"
+    },
+    "/images/landing-sequences/beagle2_webp": {
+      "title": "Beagle 2"
+    },
+    "/images/landing-sequences/beresheet_webp": {
+      "title": "Beresheet"
+    },
+    "/images/landing-sequences/chandrayaan3_webp": {
+      "title": "Chandrayaan-3"
+    },
+    "/images/landing-sequences/change3_webp": {
+      "title": "Chang'e 3 / Yutu"
+    },
+    "/images/landing-sequences/change4_webp": {
+      "title": "Chang'e 4 / Yutu-2"
+    },
+    "/images/landing-sequences/change5_webp": {
+      "title": "Chang'e 5"
+    },
+    "/images/landing-sequences/change6_webp": {
+      "title": "Chang'e 6"
+    },
+    "/images/landing-sequences/change7_webp": {
+      "title": "Chang'e 7"
+    },
+    "/images/landing-sequences/curiosity_webp": {
+      "title": "Curiosity"
+    },
+    "/images/landing-sequences/exomars-rosalind-franklin_webp": {
+      "title": "Rosalind Franklin rover"
+    },
+    "/images/landing-sequences/insight_webp": {
+      "title": "InSight"
+    },
+    "/images/landing-sequences/luna16_webp": {
+      "title": "Luna 16"
+    },
+    "/images/landing-sequences/luna17_webp": {
+      "title": "Luna 17 / Lunokhod 1"
+    },
+    "/images/landing-sequences/luna21_webp": {
+      "title": "Luna 21 / Lunokhod 2"
+    },
+    "/images/landing-sequences/luna24_webp": {
+      "title": "Luna 24"
+    },
+    "/images/landing-sequences/luna9_webp": {
+      "title": "Luna 9"
+    },
+    "/images/landing-sequences/mars-pathfinder_webp": {
+      "title": "Mars Pathfinder + Sojourner"
+    },
+    "/images/landing-sequences/mars2_webp": {
+      "title": "Mars 2 lander"
+    },
+    "/images/landing-sequences/mars3_webp": {
+      "title": "Mars 3 lander"
+    },
+    "/images/landing-sequences/mars6_webp": {
+      "title": "Mars 6"
+    },
+    "/images/landing-sequences/opportunity_webp": {
+      "title": "Opportunity"
+    },
+    "/images/landing-sequences/perseverance_webp": {
+      "title": "Perseverance + Ingenuity"
+    },
+    "/images/landing-sequences/phoenix_webp": {
+      "title": "Phoenix lander"
+    },
+    "/images/landing-sequences/schiaparelli_webp": {
+      "title": "Schiaparelli EDM"
+    },
+    "/images/landing-sequences/slim_webp": {
+      "title": "SLIM"
+    },
+    "/images/landing-sequences/spirit_webp": {
+      "title": "Spirit"
+    },
+    "/images/landing-sequences/vega-1_webp": {
+      "title": "Vega 1"
+    },
+    "/images/landing-sequences/vega-2_webp": {
+      "title": "Vega 2"
+    },
+    "/images/landing-sequences/venera-13_webp": {
+      "title": "Venera 13"
+    },
+    "/images/landing-sequences/viking1-lander_webp": {
+      "title": "Viking 1 lander"
+    },
+    "/images/landing-sequences/viking2-lander_webp": {
+      "title": "Viking 2 lander"
+    },
+    "/images/landing-sequences/zhurong_webp": {
+      "title": "Zhurong (with Tianwen-1 lander)"
+    }
+  },
+  "blueprint_art": {
+    "/images/blueprints/apollo-soyuz_webp": {
+      "title": "Apollo-Soyuz Test Project (ASTP)"
+    },
+    "/images/blueprints/apollo11_webp": {
+      "title": "Apollo 11"
+    },
+    "/images/blueprints/bepicolombo_webp": {
+      "title": "BepiColombo"
+    },
+    "/images/blueprints/cassini_webp": {
+      "title": "Cassini-Huygens"
+    },
+    "/images/blueprints/dawn_webp": {
+      "title": "Dawn"
+    },
+    "/images/blueprints/galileo_webp": {
+      "title": "Galileo"
+    },
+    "/images/blueprints/giotto_webp": {
+      "title": "Giotto"
+    },
+    "/images/blueprints/hayabusa2_webp": {
+      "title": "Hayabusa2"
+    },
+    "/images/blueprints/juice_webp": {
+      "title": "JUICE"
+    },
+    "/images/blueprints/juno_webp": {
+      "title": "Juno"
+    },
+    "/images/blueprints/new-horizons_webp": {
+      "title": "New Horizons"
+    },
+    "/images/blueprints/pioneer-10_webp": {
+      "title": "Pioneer 10"
+    },
+    "/images/blueprints/rosetta_webp": {
+      "title": "Rosetta"
+    },
+    "/images/blueprints/sputnik1_webp": {
+      "title": "Sputnik 1"
+    },
+    "/images/blueprints/ulysses_webp": {
+      "title": "Ulysses"
+    },
+    "/images/blueprints/venera-13_webp": {
+      "title": "Venera 13"
+    },
+    "/images/blueprints/vostok-1_webp": {
+      "title": "Vostok 1"
+    },
+    "/images/blueprints/voyager-2_webp": {
+      "title": "Voyager 2"
+    }
+  },
+  "mission_trajectories": {
+    "/images/missions/thumbnails/akatsuki_webp": {
+      "title": "Akatsuki"
+    },
+    "/images/missions/thumbnails/apollo-1_webp": {
+      "title": "Apollo 1 (AS-204)"
+    },
+    "/images/missions/thumbnails/apollo-soyuz_webp": {
+      "title": "Apollo-Soyuz Test Project (ASTP)"
+    },
+    "/images/missions/thumbnails/apollo10_webp": {
+      "title": "Apollo 10"
+    },
+    "/images/missions/thumbnails/apollo11_webp": {
+      "title": "Apollo 11"
+    },
+    "/images/missions/thumbnails/apollo12_webp": {
+      "title": "Apollo 12"
+    },
+    "/images/missions/thumbnails/apollo13_webp": {
+      "title": "Apollo 13"
+    },
+    "/images/missions/thumbnails/apollo14_webp": {
+      "title": "Apollo 14"
+    },
+    "/images/missions/thumbnails/apollo15_webp": {
+      "title": "Apollo 15"
+    },
+    "/images/missions/thumbnails/apollo16_webp": {
+      "title": "Apollo 16"
+    },
+    "/images/missions/thumbnails/apollo17_webp": {
+      "title": "Apollo 17"
+    },
+    "/images/missions/thumbnails/apollo7_webp": {
+      "title": "Apollo 7"
+    },
+    "/images/missions/thumbnails/apollo8_webp": {
+      "title": "Apollo 8"
+    },
+    "/images/missions/thumbnails/apollo9_webp": {
+      "title": "Apollo 9"
+    },
+    "/images/missions/thumbnails/artemis1_webp": {
+      "title": "Artemis I"
+    },
+    "/images/missions/thumbnails/artemis2_webp": {
+      "title": "Artemis II"
+    },
+    "/images/missions/thumbnails/artemis3_webp": {
+      "title": "Artemis III"
+    },
+    "/images/missions/thumbnails/artemis4_webp": {
+      "title": "Artemis IV"
+    },
+    "/images/missions/thumbnails/artemis5_webp": {
+      "title": "Artemis V"
+    },
+    "/images/missions/thumbnails/aurora-7_webp": {
+      "title": "Aurora 7 / MA-7"
+    },
+    "/images/missions/thumbnails/bepicolombo_webp": {
+      "title": "BepiColombo"
+    },
+    "/images/missions/thumbnails/beresheet_webp": {
+      "title": "Beresheet"
+    },
+    "/images/missions/thumbnails/blue-moon-mk1_webp": {
+      "title": "Blue Moon MK1"
+    },
+    "/images/missions/thumbnails/cassini_webp": {
+      "title": "Cassini-Huygens"
+    },
+    "/images/missions/thumbnails/chandrayaan1_webp": {
+      "title": "Chandrayaan-1"
+    },
+    "/images/missions/thumbnails/chandrayaan2_webp": {
+      "title": "Chandrayaan-2"
+    },
+    "/images/missions/thumbnails/chandrayaan3_webp": {
+      "title": "Chandrayaan-3"
+    },
+    "/images/missions/thumbnails/change1_webp": {
+      "title": "Chang'e 1"
+    },
+    "/images/missions/thumbnails/change2_webp": {
+      "title": "Chang'e 2"
+    },
+    "/images/missions/thumbnails/change3_webp": {
+      "title": "Chang'e 3"
+    },
+    "/images/missions/thumbnails/change4_webp": {
+      "title": "Chang'e 4 / Yutu-2"
+    },
+    "/images/missions/thumbnails/change5_webp": {
+      "title": "Chang'e 5"
+    },
+    "/images/missions/thumbnails/change6_webp": {
+      "title": "Chang'e 6"
+    },
+    "/images/missions/thumbnails/clementine_webp": {
+      "title": "Clementine"
+    },
+    "/images/missions/thumbnails/curiosity_webp": {
+      "title": "Curiosity"
+    },
+    "/images/missions/thumbnails/dart_webp": {
+      "title": "DART"
+    },
+    "/images/missions/thumbnails/dawn_webp": {
+      "title": "Dawn"
+    },
+    "/images/missions/thumbnails/escapade_webp": {
+      "title": "ESCAPADE"
+    },
+    "/images/missions/thumbnails/europa-clipper_webp": {
+      "title": "Europa Clipper"
+    },
+    "/images/missions/thumbnails/faith-7_webp": {
+      "title": "Faith 7 / MA-9"
+    },
+    "/images/missions/thumbnails/freedom-7_webp": {
+      "title": "Freedom 7 / MR-3"
+    },
+    "/images/missions/thumbnails/friendship-7_webp": {
+      "title": "Friendship 7 / MA-6"
+    },
+    "/images/missions/thumbnails/galileo_webp": {
+      "title": "Galileo"
+    },
+    "/images/missions/thumbnails/gemini12_webp": {
+      "title": "Gemini 12 / GT-12"
+    },
+    "/images/missions/thumbnails/gemini3_webp": {
+      "title": "Gemini 3 / GT-3"
+    },
+    "/images/missions/thumbnails/gemini4_webp": {
+      "title": "Gemini 4 / GT-4"
+    },
+    "/images/missions/thumbnails/gemini6a_webp": {
+      "title": "Gemini 6A / GT-6A"
+    },
+    "/images/missions/thumbnails/gemini7_webp": {
+      "title": "Gemini 7 / GT-7"
+    },
+    "/images/missions/thumbnails/gemini8_webp": {
+      "title": "Gemini 8 / GT-8"
+    },
+    "/images/missions/thumbnails/giotto_webp": {
+      "title": "Giotto"
+    },
+    "/images/missions/thumbnails/hayabusa1_webp": {
+      "title": "Hayabusa"
+    },
+    "/images/missions/thumbnails/hayabusa2_webp": {
+      "title": "Hayabusa2"
+    },
+    "/images/missions/thumbnails/hera_webp": {
+      "title": "Hera"
+    },
+    "/images/missions/thumbnails/hope-probe_webp": {
+      "title": "Hope Probe"
+    },
+    "/images/missions/thumbnails/huygens_webp": {
+      "title": "Huygens"
+    },
+    "/images/missions/thumbnails/im-1_webp": {
+      "title": "IM-1"
+    },
+    "/images/missions/thumbnails/insight_webp": {
+      "title": "InSight"
+    },
+    "/images/missions/thumbnails/inspiration4_webp": {
+      "title": "Inspiration4"
+    },
+    "/images/missions/thumbnails/juice_webp": {
+      "title": "JUICE"
+    },
+    "/images/missions/thumbnails/juno_webp": {
+      "title": "Juno"
+    },
+    "/images/missions/thumbnails/kaguya_webp": {
+      "title": "Kaguya (SELENE)"
+    },
+    "/images/missions/thumbnails/liberty-bell-7_webp": {
+      "title": "Liberty Bell 7 / MR-4"
+    },
+    "/images/missions/thumbnails/lro_webp": {
+      "title": "Lunar Reconnaissance Orbiter"
+    },
+    "/images/missions/thumbnails/lucy_webp": {
+      "title": "Lucy"
+    },
+    "/images/missions/thumbnails/luna10_webp": {
+      "title": "Luna 10"
+    },
+    "/images/missions/thumbnails/luna16_webp": {
+      "title": "Luna 16"
+    },
+    "/images/missions/thumbnails/luna17_webp": {
+      "title": "Luna 17 / Lunokhod 1"
+    },
+    "/images/missions/thumbnails/luna21_webp": {
+      "title": "Luna 21 / Lunokhod 2"
+    },
+    "/images/missions/thumbnails/luna24_webp": {
+      "title": "Luna 24"
+    },
+    "/images/missions/thumbnails/luna9_webp": {
+      "title": "Luna 9"
+    },
+    "/images/missions/thumbnails/lunar-prospector_webp": {
+      "title": "Lunar Prospector"
+    },
+    "/images/missions/thumbnails/magellan_webp": {
+      "title": "Magellan"
+    },
+    "/images/missions/thumbnails/mangalyaan_webp": {
+      "title": "Mangalyaan"
+    },
+    "/images/missions/thumbnails/mariner10_webp": {
+      "title": "Mariner 10"
+    },
+    "/images/missions/thumbnails/mariner2_webp": {
+      "title": "Mariner 2"
+    },
+    "/images/missions/thumbnails/mariner4_webp": {
+      "title": "Mariner 4"
+    },
+    "/images/missions/thumbnails/mariner9_webp": {
+      "title": "Mariner 9"
+    },
+    "/images/missions/thumbnails/mars-express_webp": {
+      "title": "Mars Express"
+    },
+    "/images/missions/thumbnails/mars-pathfinder_webp": {
+      "title": "Mars Pathfinder"
+    },
+    "/images/missions/thumbnails/mars2_webp": {
+      "title": "Mars 2"
+    },
+    "/images/missions/thumbnails/mars3_webp": {
+      "title": "Mars 3"
+    },
+    "/images/missions/thumbnails/maven_webp": {
+      "title": "MAVEN"
+    },
+    "/images/missions/thumbnails/messenger_webp": {
+      "title": "MESSENGER"
+    },
+    "/images/missions/thumbnails/mmx_webp": {
+      "title": "MMX"
+    },
+    "/images/missions/thumbnails/mro_webp": {
+      "title": "Mars Reconnaissance Orbiter"
+    },
+    "/images/missions/thumbnails/near-shoemaker_webp": {
+      "title": "NEAR Shoemaker"
+    },
+    "/images/missions/thumbnails/new-horizons_webp": {
+      "title": "New Horizons"
+    },
+    "/images/missions/thumbnails/opportunity_webp": {
+      "title": "Opportunity"
+    },
+    "/images/missions/thumbnails/osiris-rex_webp": {
+      "title": "OSIRIS-REx"
+    },
+    "/images/missions/thumbnails/otv-1_webp": {
+      "title": "X-37B OTV-1 (USA-212)"
+    },
+    "/images/missions/thumbnails/otv-2_webp": {
+      "title": "X-37B OTV-2 (USA-226)"
+    },
+    "/images/missions/thumbnails/otv-3_webp": {
+      "title": "X-37B OTV-3 (USA-240)"
+    },
+    "/images/missions/thumbnails/otv-4_webp": {
+      "title": "X-37B OTV-4 (USA-261, AFSPC-5)"
+    },
+    "/images/missions/thumbnails/otv-5_webp": {
+      "title": "X-37B OTV-5 (USA-277)"
+    },
+    "/images/missions/thumbnails/otv-6_webp": {
+      "title": "X-37B OTV-6 (USA-299, USSF-7)"
+    },
+    "/images/missions/thumbnails/otv-7_webp": {
+      "title": "X-37B OTV-7 (USA-349, USSF-52)"
+    },
+    "/images/missions/thumbnails/parker-solar-probe_webp": {
+      "title": "Parker Solar Probe"
+    },
+    "/images/missions/thumbnails/perseverance_webp": {
+      "title": "Perseverance"
+    },
+    "/images/missions/thumbnails/phoenix_webp": {
+      "title": "Phoenix"
+    },
+    "/images/missions/thumbnails/pioneer-10_webp": {
+      "title": "Pioneer 10"
+    },
+    "/images/missions/thumbnails/pioneer-11_webp": {
+      "title": "Pioneer 11"
+    },
+    "/images/missions/thumbnails/polaris-dawn_webp": {
+      "title": "Polaris Dawn"
+    },
+    "/images/missions/thumbnails/psyche-mission_webp": {
+      "title": "Psyche"
+    },
+    "/images/missions/thumbnails/rosetta_webp": {
+      "title": "Rosetta"
+    },
+    "/images/missions/thumbnails/schiaparelli_webp": {
+      "title": "Schiaparelli EDM"
+    },
+    "/images/missions/thumbnails/shenzhou-1_webp": {
+      "title": "Shenzhou 1"
+    },
+    "/images/missions/thumbnails/shenzhou-5_webp": {
+      "title": "Shenzhou 5"
+    },
+    "/images/missions/thumbnails/sigma-7_webp": {
+      "title": "Sigma 7 / MA-8"
+    },
+    "/images/missions/thumbnails/skylab-2_webp": {
+      "title": "Skylab 2"
+    },
+    "/images/missions/thumbnails/skylab-3_webp": {
+      "title": "Skylab 3"
+    },
+    "/images/missions/thumbnails/skylab-4_webp": {
+      "title": "Skylab 4"
+    },
+    "/images/missions/thumbnails/slim_webp": {
+      "title": "SLIM"
+    },
+    "/images/missions/thumbnails/smart-1_webp": {
+      "title": "SMART-1"
+    },
+    "/images/missions/thumbnails/solar-orbiter_webp": {
+      "title": "Solar Orbiter"
+    },
+    "/images/missions/thumbnails/soyuz-1_webp": {
+      "title": "Soyuz 1"
+    },
+    "/images/missions/thumbnails/soyuz-11_webp": {
+      "title": "Soyuz 11"
+    },
+    "/images/missions/thumbnails/spirit_webp": {
+      "title": "Spirit"
+    },
+    "/images/missions/thumbnails/sputnik1_webp": {
+      "title": "Sputnik 1"
+    },
+    "/images/missions/thumbnails/starship-demo_webp": {
+      "title": "Starship Demo"
+    },
+    "/images/missions/thumbnails/starship-flight-5_webp": {
+      "title": "Starship Flight 5"
+    },
+    "/images/missions/thumbnails/starship-mars-crew_webp": {
+      "title": "Starship Mars Crew"
+    },
+    "/images/missions/thumbnails/sts-1_webp": {
+      "title": "STS-1"
+    },
+    "/images/missions/thumbnails/sts-107_webp": {
+      "title": "STS-107"
+    },
+    "/images/missions/thumbnails/sts-51-l_webp": {
+      "title": "STS-51-L"
+    },
+    "/images/missions/thumbnails/tianwen1_webp": {
+      "title": "Tianwen-1"
+    },
+    "/images/missions/thumbnails/ulysses_webp": {
+      "title": "Ulysses"
+    },
+    "/images/missions/thumbnails/vega-1_webp": {
+      "title": "Vega 1"
+    },
+    "/images/missions/thumbnails/vega-2_webp": {
+      "title": "Vega 2"
+    },
+    "/images/missions/thumbnails/venera-13_webp": {
+      "title": "Venera 13"
+    },
+    "/images/missions/thumbnails/viking1_webp": {
+      "title": "Viking 1"
+    },
+    "/images/missions/thumbnails/viking2_webp": {
+      "title": "Viking 2"
+    },
+    "/images/missions/thumbnails/voskhod-1_webp": {
+      "title": "Voskhod 1"
+    },
+    "/images/missions/thumbnails/voskhod-2_webp": {
+      "title": "Voskhod 2"
+    },
+    "/images/missions/thumbnails/vostok-1_webp": {
+      "title": "Vostok 1"
+    },
+    "/images/missions/thumbnails/vostok-2_webp": {
+      "title": "Vostok 2"
+    },
+    "/images/missions/thumbnails/vostok-3_webp": {
+      "title": "Vostok 3"
+    },
+    "/images/missions/thumbnails/vostok-4_webp": {
+      "title": "Vostok 4"
+    },
+    "/images/missions/thumbnails/vostok-5_webp": {
+      "title": "Vostok 5"
+    },
+    "/images/missions/thumbnails/vostok-6_webp": {
+      "title": "Vostok 6"
+    },
+    "/images/missions/thumbnails/voyager-1_webp": {
+      "title": "Voyager 1"
+    },
+    "/images/missions/thumbnails/voyager-2_webp": {
+      "title": "Voyager 2"
+    }
+  },
+  "site_illustrations": {
+    "/images/illustrations/sites/apollo11_webp": {
+      "title": "Apollo 11"
+    },
+    "/images/illustrations/sites/apollo12_webp": {
+      "title": "Apollo 12"
+    },
+    "/images/illustrations/sites/apollo14_webp": {
+      "title": "Apollo 14"
+    },
+    "/images/illustrations/sites/apollo15_webp": {
+      "title": "Apollo 15"
+    },
+    "/images/illustrations/sites/apollo16_webp": {
+      "title": "Apollo 16"
+    },
+    "/images/illustrations/sites/apollo17_webp": {
+      "title": "Apollo 17"
+    },
+    "/images/illustrations/sites/luna17_webp": {
+      "title": "Luna 17"
+    },
+    "/images/illustrations/sites/luna21_webp": {
+      "title": "Luna 21"
+    },
+    "/images/illustrations/sites/change3_webp": {
+      "title": "Chang’e 3"
+    },
+    "/images/illustrations/sites/change4_webp": {
+      "title": "Chang’e 4"
+    },
+    "/images/illustrations/sites/chandrayaan3_webp": {
+      "title": "Chandrayaan-3"
+    },
+    "/images/illustrations/sites/spirit_webp": {
+      "title": "Spirit"
+    },
+    "/images/illustrations/sites/opportunity_webp": {
+      "title": "Opportunity"
+    },
+    "/images/illustrations/sites/curiosity_webp": {
+      "title": "Curiosity"
+    },
+    "/images/illustrations/sites/perseverance_webp": {
+      "title": "Perseverance"
+    },
+    "/images/illustrations/sites/zhurong_webp": {
+      "title": "Zhurong"
     }
   },
   "lab_illustrations": {
@@ -882,6 +1643,9 @@
     "/diagrams/science/dv-heatmap_webp": {
       "title": "DV Heatmap"
     },
+    "/diagrams/science/earth-surface-imagery_webp": {
+      "title": "Earth Surface Imagery"
+    },
     "/diagrams/science/eccentricity_webp": {
       "title": "Eccentricity"
     },
@@ -1026,6 +1790,9 @@
     "/diagrams/science/lunar-suits_webp": {
       "title": "Lunar Suits"
     },
+    "/diagrams/science/mars-surface-imagery_webp": {
+      "title": "Mars Surface Imagery"
+    },
     "/diagrams/science/met_webp": {
       "title": "MET"
     },
@@ -1034,6 +1801,9 @@
     },
     "/diagrams/science/mission-types_webp": {
       "title": "Mission Types"
+    },
+    "/diagrams/science/moon-surface-imagery_webp": {
+      "title": "Moon Surface Imagery"
     },
     "/diagrams/science/node-module_webp": {
       "title": "Node Module"

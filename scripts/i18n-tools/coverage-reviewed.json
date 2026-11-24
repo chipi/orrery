@@ -379,6 +379,11 @@
     "en": "2e46c38af8",
     "tr": "2e46c38af8"
   },
+  "ar|original-work.json|exploded_art./images/anatomy-exploded/perseverance_webp.title": {
+    "why": "proper names (Perseverance, Mars 2020) kept as on the fleet page in this locale",
+    "en": "2f671bfcba",
+    "tr": "2f671bfcba"
+  },
   "ar|original-work.json|exploded_art./images/anatomy-exploded/proton-k_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "8527f639fd",
@@ -398,6 +403,36 @@
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "445aab85db",
     "tr": "445aab85db"
+  },
+  "ar|original-work.json|landing_art./images/landing-sequences/perseverance_webp.title": {
+    "why": "proper names (Perseverance, Ingenuity) kept as on their mission and fleet pages in this locale",
+    "en": "f1d04e438b",
+    "tr": "f1d04e438b"
+  },
+  "ar|original-work.json|mission_trajectories./images/missions/thumbnails/kaguya_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "f2ac0904eb",
+    "tr": "f2ac0904eb"
+  },
+  "ar|original-work.json|mission_trajectories./images/missions/thumbnails/lro_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "909dd83413",
+    "tr": "909dd83413"
+  },
+  "ar|original-work.json|mission_trajectories./images/missions/thumbnails/mro_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "45da8da847",
+    "tr": "45da8da847"
+  },
+  "ar|original-work.json|mission_trajectories./images/missions/thumbnails/parker-solar-probe_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "28d31dc968",
+    "tr": "28d31dc968"
+  },
+  "ar|original-work.json|mission_trajectories./images/missions/thumbnails/solar-orbiter_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "3ee5fd8d67",
+    "tr": "3ee5fd8d67"
   },
   "ar|original-work.json|models3d./images/colophon/craft-cassini_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -613,6 +648,16 @@
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "bdbbad925e",
     "tr": "bdbbad925e"
+  },
+  "ar|original-work.json|site_illustrations./images/illustrations/sites/change3_webp.title": {
+    "why": "proper name (Chang'e 3) kept in Latin script as on its mission page in this locale",
+    "en": "141e8598bd",
+    "tr": "141e8598bd"
+  },
+  "ar|original-work.json|site_illustrations./images/illustrations/sites/change4_webp.title": {
+    "why": "proper name (Chang'e 4) kept in Latin script as on its mission page in this locale",
+    "en": "ce15bf3643",
+    "tr": "ce15bf3643"
   },
   "ar|site-stories/apollo12.json|chapters.hardware.subtitle": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -1104,6 +1149,11 @@
     "en": "549de9e819",
     "tr": "549de9e819"
   },
+  "de|original-work.json|exploded_art./images/anatomy-exploded/lrv-apollo_webp.title": {
+    "why": "the name /fleet uses in this locale (fleet/rover/lrv-apollo.json), kept as in English, same as anatomy_art",
+    "en": "05067dae1d",
+    "tr": "05067dae1d"
+  },
   "de|original-work.json|exploded_art./images/anatomy-exploded/lvm3_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "1130d629c9",
@@ -1113,6 +1163,11 @@
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "2e46c38af8",
     "tr": "2e46c38af8"
+  },
+  "de|original-work.json|exploded_art./images/anatomy-exploded/perseverance_webp.title": {
+    "why": "proper names (Perseverance, Mars 2020) kept as on the fleet page in this locale",
+    "en": "2f671bfcba",
+    "tr": "2f671bfcba"
   },
   "de|original-work.json|exploded_art./images/anatomy-exploded/proton-k_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -1133,6 +1188,36 @@
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "445aab85db",
     "tr": "445aab85db"
+  },
+  "de|original-work.json|landing_art./images/landing-sequences/perseverance_webp.title": {
+    "why": "proper names (Perseverance, Ingenuity) kept as on their mission and fleet pages in this locale",
+    "en": "f1d04e438b",
+    "tr": "f1d04e438b"
+  },
+  "de|original-work.json|mission_trajectories./images/missions/thumbnails/kaguya_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "f2ac0904eb",
+    "tr": "f2ac0904eb"
+  },
+  "de|original-work.json|mission_trajectories./images/missions/thumbnails/lro_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "909dd83413",
+    "tr": "909dd83413"
+  },
+  "de|original-work.json|mission_trajectories./images/missions/thumbnails/mro_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "45da8da847",
+    "tr": "45da8da847"
+  },
+  "de|original-work.json|mission_trajectories./images/missions/thumbnails/parker-solar-probe_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "28d31dc968",
+    "tr": "28d31dc968"
+  },
+  "de|original-work.json|mission_trajectories./images/missions/thumbnails/solar-orbiter_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "3ee5fd8d67",
+    "tr": "3ee5fd8d67"
   },
   "de|original-work.json|models3d./images/colophon/craft-cassini_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -1368,6 +1453,16 @@
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "bdbbad925e",
     "tr": "bdbbad925e"
+  },
+  "de|original-work.json|site_illustrations./images/illustrations/sites/change3_webp.title": {
+    "why": "proper name (Chang'e 3) kept in Latin script as on its mission page in this locale",
+    "en": "141e8598bd",
+    "tr": "141e8598bd"
+  },
+  "de|original-work.json|site_illustrations./images/illustrations/sites/change4_webp.title": {
+    "why": "proper name (Chang'e 4) kept in Latin script as on its mission page in this locale",
+    "en": "ce15bf3643",
+    "tr": "ce15bf3643"
   },
   "de|site-stories/apollo12.json|chapters.hardware.subtitle": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -1819,6 +1914,11 @@
     "en": "2e46c38af8",
     "tr": "2e46c38af8"
   },
+  "es|original-work.json|exploded_art./images/anatomy-exploded/perseverance_webp.title": {
+    "why": "proper names (Perseverance, Mars 2020) kept as on the fleet page in this locale",
+    "en": "2f671bfcba",
+    "tr": "2f671bfcba"
+  },
   "es|original-work.json|exploded_art./images/anatomy-exploded/proton-k_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "8527f639fd",
@@ -1838,6 +1938,36 @@
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "445aab85db",
     "tr": "445aab85db"
+  },
+  "es|original-work.json|landing_art./images/landing-sequences/perseverance_webp.title": {
+    "why": "proper names (Perseverance, Ingenuity) kept as on their mission and fleet pages in this locale",
+    "en": "f1d04e438b",
+    "tr": "f1d04e438b"
+  },
+  "es|original-work.json|mission_trajectories./images/missions/thumbnails/kaguya_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "f2ac0904eb",
+    "tr": "f2ac0904eb"
+  },
+  "es|original-work.json|mission_trajectories./images/missions/thumbnails/lro_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "909dd83413",
+    "tr": "909dd83413"
+  },
+  "es|original-work.json|mission_trajectories./images/missions/thumbnails/mro_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "45da8da847",
+    "tr": "45da8da847"
+  },
+  "es|original-work.json|mission_trajectories./images/missions/thumbnails/parker-solar-probe_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "28d31dc968",
+    "tr": "28d31dc968"
+  },
+  "es|original-work.json|mission_trajectories./images/missions/thumbnails/solar-orbiter_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "3ee5fd8d67",
+    "tr": "3ee5fd8d67"
   },
   "es|original-work.json|models3d./images/colophon/craft-cassini_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -2053,6 +2183,16 @@
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "bdbbad925e",
     "tr": "bdbbad925e"
+  },
+  "es|original-work.json|site_illustrations./images/illustrations/sites/change3_webp.title": {
+    "why": "proper name (Chang'e 3) kept in Latin script as on its mission page in this locale",
+    "en": "141e8598bd",
+    "tr": "141e8598bd"
+  },
+  "es|original-work.json|site_illustrations./images/illustrations/sites/change4_webp.title": {
+    "why": "proper name (Chang'e 4) kept in Latin script as on its mission page in this locale",
+    "en": "ce15bf3643",
+    "tr": "ce15bf3643"
   },
   "es|site-stories/apollo12.json|chapters.hardware.subtitle": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -2529,6 +2669,11 @@
     "en": "2e46c38af8",
     "tr": "2e46c38af8"
   },
+  "fr|original-work.json|exploded_art./images/anatomy-exploded/perseverance_webp.title": {
+    "why": "proper names (Perseverance, Mars 2020) kept as on the fleet page in this locale",
+    "en": "2f671bfcba",
+    "tr": "2f671bfcba"
+  },
   "fr|original-work.json|exploded_art./images/anatomy-exploded/proton-k_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "8527f639fd",
@@ -2548,6 +2693,36 @@
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "445aab85db",
     "tr": "445aab85db"
+  },
+  "fr|original-work.json|landing_art./images/landing-sequences/perseverance_webp.title": {
+    "why": "proper names (Perseverance, Ingenuity) kept as on their mission and fleet pages in this locale",
+    "en": "f1d04e438b",
+    "tr": "f1d04e438b"
+  },
+  "fr|original-work.json|mission_trajectories./images/missions/thumbnails/kaguya_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "f2ac0904eb",
+    "tr": "f2ac0904eb"
+  },
+  "fr|original-work.json|mission_trajectories./images/missions/thumbnails/lro_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "909dd83413",
+    "tr": "909dd83413"
+  },
+  "fr|original-work.json|mission_trajectories./images/missions/thumbnails/mro_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "45da8da847",
+    "tr": "45da8da847"
+  },
+  "fr|original-work.json|mission_trajectories./images/missions/thumbnails/parker-solar-probe_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "28d31dc968",
+    "tr": "28d31dc968"
+  },
+  "fr|original-work.json|mission_trajectories./images/missions/thumbnails/solar-orbiter_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "3ee5fd8d67",
+    "tr": "3ee5fd8d67"
   },
   "fr|original-work.json|models3d./images/colophon/craft-cassini_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -2768,6 +2943,16 @@
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "bdbbad925e",
     "tr": "bdbbad925e"
+  },
+  "fr|original-work.json|site_illustrations./images/illustrations/sites/change3_webp.title": {
+    "why": "proper name (Chang'e 3) kept in Latin script as on its mission page in this locale",
+    "en": "141e8598bd",
+    "tr": "141e8598bd"
+  },
+  "fr|original-work.json|site_illustrations./images/illustrations/sites/change4_webp.title": {
+    "why": "proper name (Chang'e 4) kept in Latin script as on its mission page in this locale",
+    "en": "ce15bf3643",
+    "tr": "ce15bf3643"
   },
   "fr|site-stories/apollo12.json|chapters.hardware.subtitle": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -3184,6 +3369,11 @@
     "en": "2e46c38af8",
     "tr": "2e46c38af8"
   },
+  "hi|original-work.json|exploded_art./images/anatomy-exploded/perseverance_webp.title": {
+    "why": "proper names (Perseverance, Mars 2020) kept as on the fleet page in this locale",
+    "en": "2f671bfcba",
+    "tr": "2f671bfcba"
+  },
   "hi|original-work.json|exploded_art./images/anatomy-exploded/proton-k_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "8527f639fd",
@@ -3203,6 +3393,36 @@
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "445aab85db",
     "tr": "445aab85db"
+  },
+  "hi|original-work.json|landing_art./images/landing-sequences/perseverance_webp.title": {
+    "why": "proper names (Perseverance, Ingenuity) kept as on their mission and fleet pages in this locale",
+    "en": "f1d04e438b",
+    "tr": "f1d04e438b"
+  },
+  "hi|original-work.json|mission_trajectories./images/missions/thumbnails/kaguya_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "f2ac0904eb",
+    "tr": "f2ac0904eb"
+  },
+  "hi|original-work.json|mission_trajectories./images/missions/thumbnails/lro_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "909dd83413",
+    "tr": "909dd83413"
+  },
+  "hi|original-work.json|mission_trajectories./images/missions/thumbnails/mro_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "45da8da847",
+    "tr": "45da8da847"
+  },
+  "hi|original-work.json|mission_trajectories./images/missions/thumbnails/parker-solar-probe_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "28d31dc968",
+    "tr": "28d31dc968"
+  },
+  "hi|original-work.json|mission_trajectories./images/missions/thumbnails/solar-orbiter_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "3ee5fd8d67",
+    "tr": "3ee5fd8d67"
   },
   "hi|original-work.json|models3d./images/colophon/craft-cassini_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -3423,6 +3643,16 @@
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "bdbbad925e",
     "tr": "bdbbad925e"
+  },
+  "hi|original-work.json|site_illustrations./images/illustrations/sites/change3_webp.title": {
+    "why": "proper name (Chang'e 3) kept in Latin script as on its mission page in this locale",
+    "en": "141e8598bd",
+    "tr": "141e8598bd"
+  },
+  "hi|original-work.json|site_illustrations./images/illustrations/sites/change4_webp.title": {
+    "why": "proper name (Chang'e 4) kept in Latin script as on its mission page in this locale",
+    "en": "ce15bf3643",
+    "tr": "ce15bf3643"
   },
   "hi|site-stories/apollo16.json|chapters.hardware.subtitle": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -3899,6 +4129,11 @@
     "en": "2e46c38af8",
     "tr": "2e46c38af8"
   },
+  "it|original-work.json|exploded_art./images/anatomy-exploded/perseverance_webp.title": {
+    "why": "proper names (Perseverance, Mars 2020) kept as on the fleet page in this locale",
+    "en": "2f671bfcba",
+    "tr": "2f671bfcba"
+  },
   "it|original-work.json|exploded_art./images/anatomy-exploded/proton-k_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "8527f639fd",
@@ -3918,6 +4153,36 @@
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "445aab85db",
     "tr": "445aab85db"
+  },
+  "it|original-work.json|landing_art./images/landing-sequences/perseverance_webp.title": {
+    "why": "proper names (Perseverance, Ingenuity) kept as on their mission and fleet pages in this locale",
+    "en": "f1d04e438b",
+    "tr": "f1d04e438b"
+  },
+  "it|original-work.json|mission_trajectories./images/missions/thumbnails/kaguya_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "f2ac0904eb",
+    "tr": "f2ac0904eb"
+  },
+  "it|original-work.json|mission_trajectories./images/missions/thumbnails/lro_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "909dd83413",
+    "tr": "909dd83413"
+  },
+  "it|original-work.json|mission_trajectories./images/missions/thumbnails/mro_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "45da8da847",
+    "tr": "45da8da847"
+  },
+  "it|original-work.json|mission_trajectories./images/missions/thumbnails/parker-solar-probe_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "28d31dc968",
+    "tr": "28d31dc968"
+  },
+  "it|original-work.json|mission_trajectories./images/missions/thumbnails/solar-orbiter_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "3ee5fd8d67",
+    "tr": "3ee5fd8d67"
   },
   "it|original-work.json|models3d./images/colophon/craft-cassini_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -4143,6 +4408,16 @@
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "bdbbad925e",
     "tr": "bdbbad925e"
+  },
+  "it|original-work.json|site_illustrations./images/illustrations/sites/change3_webp.title": {
+    "why": "proper name (Chang'e 3) kept in Latin script as on its mission page in this locale",
+    "en": "141e8598bd",
+    "tr": "141e8598bd"
+  },
+  "it|original-work.json|site_illustrations./images/illustrations/sites/change4_webp.title": {
+    "why": "proper name (Chang'e 4) kept in Latin script as on its mission page in this locale",
+    "en": "ce15bf3643",
+    "tr": "ce15bf3643"
   },
   "it|site-stories/apollo12.json|chapters.hardware.subtitle": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -4544,6 +4819,11 @@
     "en": "2e46c38af8",
     "tr": "2e46c38af8"
   },
+  "ja|original-work.json|exploded_art./images/anatomy-exploded/perseverance_webp.title": {
+    "why": "proper names (Perseverance, Mars 2020) kept as on the fleet page in this locale",
+    "en": "2f671bfcba",
+    "tr": "2f671bfcba"
+  },
   "ja|original-work.json|exploded_art./images/anatomy-exploded/proton-k_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "8527f639fd",
@@ -4563,6 +4843,31 @@
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "445aab85db",
     "tr": "445aab85db"
+  },
+  "ja|original-work.json|landing_art./images/landing-sequences/perseverance_webp.title": {
+    "why": "proper names (Perseverance, Ingenuity) kept as on their mission and fleet pages in this locale",
+    "en": "f1d04e438b",
+    "tr": "f1d04e438b"
+  },
+  "ja|original-work.json|mission_trajectories./images/missions/thumbnails/lro_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "909dd83413",
+    "tr": "909dd83413"
+  },
+  "ja|original-work.json|mission_trajectories./images/missions/thumbnails/mro_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "45da8da847",
+    "tr": "45da8da847"
+  },
+  "ja|original-work.json|mission_trajectories./images/missions/thumbnails/parker-solar-probe_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "28d31dc968",
+    "tr": "28d31dc968"
+  },
+  "ja|original-work.json|mission_trajectories./images/missions/thumbnails/solar-orbiter_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "3ee5fd8d67",
+    "tr": "3ee5fd8d67"
   },
   "ja|original-work.json|models3d./images/colophon/craft-cassini_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -4773,6 +5078,16 @@
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "65803b67b5",
     "tr": "65803b67b5"
+  },
+  "ja|original-work.json|site_illustrations./images/illustrations/sites/change3_webp.title": {
+    "why": "proper name (Chang'e 3) kept in Latin script as on its mission page in this locale",
+    "en": "141e8598bd",
+    "tr": "141e8598bd"
+  },
+  "ja|original-work.json|site_illustrations./images/illustrations/sites/change4_webp.title": {
+    "why": "proper name (Chang'e 4) kept in Latin script as on its mission page in this locale",
+    "en": "ce15bf3643",
+    "tr": "ce15bf3643"
   },
   "ja|site-stories/apollo12.json|chapters.hardware.subtitle": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -5164,6 +5479,11 @@
     "en": "2e46c38af8",
     "tr": "2e46c38af8"
   },
+  "ko|original-work.json|exploded_art./images/anatomy-exploded/perseverance_webp.title": {
+    "why": "proper names (Perseverance, Mars 2020) kept as on the fleet page in this locale",
+    "en": "2f671bfcba",
+    "tr": "2f671bfcba"
+  },
   "ko|original-work.json|exploded_art./images/anatomy-exploded/proton-k_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "8527f639fd",
@@ -5183,6 +5503,36 @@
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "445aab85db",
     "tr": "445aab85db"
+  },
+  "ko|original-work.json|landing_art./images/landing-sequences/perseverance_webp.title": {
+    "why": "proper names (Perseverance, Ingenuity) kept as on their mission and fleet pages in this locale",
+    "en": "f1d04e438b",
+    "tr": "f1d04e438b"
+  },
+  "ko|original-work.json|mission_trajectories./images/missions/thumbnails/kaguya_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "f2ac0904eb",
+    "tr": "f2ac0904eb"
+  },
+  "ko|original-work.json|mission_trajectories./images/missions/thumbnails/lro_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "909dd83413",
+    "tr": "909dd83413"
+  },
+  "ko|original-work.json|mission_trajectories./images/missions/thumbnails/mro_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "45da8da847",
+    "tr": "45da8da847"
+  },
+  "ko|original-work.json|mission_trajectories./images/missions/thumbnails/parker-solar-probe_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "28d31dc968",
+    "tr": "28d31dc968"
+  },
+  "ko|original-work.json|mission_trajectories./images/missions/thumbnails/solar-orbiter_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "3ee5fd8d67",
+    "tr": "3ee5fd8d67"
   },
   "ko|original-work.json|models3d./images/colophon/craft-cassini_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -5388,6 +5738,16 @@
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "65803b67b5",
     "tr": "65803b67b5"
+  },
+  "ko|original-work.json|site_illustrations./images/illustrations/sites/change3_webp.title": {
+    "why": "proper name (Chang'e 3) kept in Latin script as on its mission page in this locale",
+    "en": "141e8598bd",
+    "tr": "141e8598bd"
+  },
+  "ko|original-work.json|site_illustrations./images/illustrations/sites/change4_webp.title": {
+    "why": "proper name (Chang'e 4) kept in Latin script as on its mission page in this locale",
+    "en": "ce15bf3643",
+    "tr": "ce15bf3643"
   },
   "ko|site-stories/apollo12.json|chapters.hardware.subtitle": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -5884,6 +6244,11 @@
     "en": "2e46c38af8",
     "tr": "2e46c38af8"
   },
+  "nl|original-work.json|exploded_art./images/anatomy-exploded/perseverance_webp.title": {
+    "why": "proper names (Perseverance, Mars 2020) kept as on the fleet page in this locale",
+    "en": "2f671bfcba",
+    "tr": "2f671bfcba"
+  },
   "nl|original-work.json|exploded_art./images/anatomy-exploded/proton-k_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "8527f639fd",
@@ -5903,6 +6268,36 @@
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "445aab85db",
     "tr": "445aab85db"
+  },
+  "nl|original-work.json|landing_art./images/landing-sequences/perseverance_webp.title": {
+    "why": "proper names (Perseverance, Ingenuity) kept as on their mission and fleet pages in this locale",
+    "en": "f1d04e438b",
+    "tr": "f1d04e438b"
+  },
+  "nl|original-work.json|mission_trajectories./images/missions/thumbnails/kaguya_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "f2ac0904eb",
+    "tr": "f2ac0904eb"
+  },
+  "nl|original-work.json|mission_trajectories./images/missions/thumbnails/lro_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "909dd83413",
+    "tr": "909dd83413"
+  },
+  "nl|original-work.json|mission_trajectories./images/missions/thumbnails/mro_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "45da8da847",
+    "tr": "45da8da847"
+  },
+  "nl|original-work.json|mission_trajectories./images/missions/thumbnails/parker-solar-probe_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "28d31dc968",
+    "tr": "28d31dc968"
+  },
+  "nl|original-work.json|mission_trajectories./images/missions/thumbnails/solar-orbiter_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "3ee5fd8d67",
+    "tr": "3ee5fd8d67"
   },
   "nl|original-work.json|models3d./images/colophon/craft-cassini_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -6133,6 +6528,16 @@
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "bdbbad925e",
     "tr": "bdbbad925e"
+  },
+  "nl|original-work.json|site_illustrations./images/illustrations/sites/change3_webp.title": {
+    "why": "proper name (Chang'e 3) kept in Latin script as on its mission page in this locale",
+    "en": "141e8598bd",
+    "tr": "141e8598bd"
+  },
+  "nl|original-work.json|site_illustrations./images/illustrations/sites/change4_webp.title": {
+    "why": "proper name (Chang'e 4) kept in Latin script as on its mission page in this locale",
+    "en": "ce15bf3643",
+    "tr": "ce15bf3643"
   },
   "nl|site-stories/apollo11.json|chapters.hardware.title": {
     "why": "Hardware is the Dutch word too",
@@ -6789,6 +7194,11 @@
     "en": "2e46c38af8",
     "tr": "2e46c38af8"
   },
+  "pt-BR|original-work.json|exploded_art./images/anatomy-exploded/perseverance_webp.title": {
+    "why": "proper names (Perseverance, Mars 2020) kept as on the fleet page in this locale",
+    "en": "2f671bfcba",
+    "tr": "2f671bfcba"
+  },
   "pt-BR|original-work.json|exploded_art./images/anatomy-exploded/proton-k_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "8527f639fd",
@@ -6808,6 +7218,36 @@
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "445aab85db",
     "tr": "445aab85db"
+  },
+  "pt-BR|original-work.json|landing_art./images/landing-sequences/perseverance_webp.title": {
+    "why": "proper names (Perseverance, Ingenuity) kept as on their mission and fleet pages in this locale",
+    "en": "f1d04e438b",
+    "tr": "f1d04e438b"
+  },
+  "pt-BR|original-work.json|mission_trajectories./images/missions/thumbnails/kaguya_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "f2ac0904eb",
+    "tr": "f2ac0904eb"
+  },
+  "pt-BR|original-work.json|mission_trajectories./images/missions/thumbnails/lro_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "909dd83413",
+    "tr": "909dd83413"
+  },
+  "pt-BR|original-work.json|mission_trajectories./images/missions/thumbnails/mro_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "45da8da847",
+    "tr": "45da8da847"
+  },
+  "pt-BR|original-work.json|mission_trajectories./images/missions/thumbnails/parker-solar-probe_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "28d31dc968",
+    "tr": "28d31dc968"
+  },
+  "pt-BR|original-work.json|mission_trajectories./images/missions/thumbnails/solar-orbiter_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "3ee5fd8d67",
+    "tr": "3ee5fd8d67"
   },
   "pt-BR|original-work.json|models3d./images/colophon/craft-cassini_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -7033,6 +7473,16 @@
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "bdbbad925e",
     "tr": "bdbbad925e"
+  },
+  "pt-BR|original-work.json|site_illustrations./images/illustrations/sites/change3_webp.title": {
+    "why": "proper name (Chang'e 3) kept in Latin script as on its mission page in this locale",
+    "en": "141e8598bd",
+    "tr": "141e8598bd"
+  },
+  "pt-BR|original-work.json|site_illustrations./images/illustrations/sites/change4_webp.title": {
+    "why": "proper name (Chang'e 4) kept in Latin script as on its mission page in this locale",
+    "en": "ce15bf3643",
+    "tr": "ce15bf3643"
   },
   "pt-BR|site-stories/apollo12.json|chapters.hardware.subtitle": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -7404,6 +7854,11 @@
     "en": "2e46c38af8",
     "tr": "2e46c38af8"
   },
+  "ru|original-work.json|exploded_art./images/anatomy-exploded/perseverance_webp.title": {
+    "why": "proper names (Perseverance, Mars 2020) kept as on the fleet page in this locale",
+    "en": "2f671bfcba",
+    "tr": "2f671bfcba"
+  },
   "ru|original-work.json|exploded_art./images/anatomy-exploded/pslv_webp.title": {
     "why": "the launcher name PSLV kept in Latin as in the English source (Pslv)",
     "en": "8c2772d096",
@@ -7413,6 +7868,36 @@
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "cea186e2a2",
     "tr": "cea186e2a2"
+  },
+  "ru|original-work.json|landing_art./images/landing-sequences/perseverance_webp.title": {
+    "why": "proper names (Perseverance, Ingenuity) kept as on their mission and fleet pages in this locale",
+    "en": "f1d04e438b",
+    "tr": "f1d04e438b"
+  },
+  "ru|original-work.json|mission_trajectories./images/missions/thumbnails/kaguya_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "f2ac0904eb",
+    "tr": "f2ac0904eb"
+  },
+  "ru|original-work.json|mission_trajectories./images/missions/thumbnails/lro_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "909dd83413",
+    "tr": "909dd83413"
+  },
+  "ru|original-work.json|mission_trajectories./images/missions/thumbnails/mro_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "45da8da847",
+    "tr": "45da8da847"
+  },
+  "ru|original-work.json|mission_trajectories./images/missions/thumbnails/parker-solar-probe_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "28d31dc968",
+    "tr": "28d31dc968"
+  },
+  "ru|original-work.json|mission_trajectories./images/missions/thumbnails/solar-orbiter_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "3ee5fd8d67",
+    "tr": "3ee5fd8d67"
   },
   "ru|original-work.json|models3d./images/colophon/craft-cassini_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -7598,6 +8083,16 @@
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "bdbbad925e",
     "tr": "bdbbad925e"
+  },
+  "ru|original-work.json|site_illustrations./images/illustrations/sites/change3_webp.title": {
+    "why": "proper name (Chang'e 3) kept in Latin script as on its mission page in this locale",
+    "en": "141e8598bd",
+    "tr": "141e8598bd"
+  },
+  "ru|original-work.json|site_illustrations./images/illustrations/sites/change4_webp.title": {
+    "why": "proper name (Chang'e 4) kept in Latin script as on its mission page in this locale",
+    "en": "ce15bf3643",
+    "tr": "ce15bf3643"
   },
   "ru|site-stories/apollo12.json|chapters.hardware.subtitle": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -8014,6 +8509,11 @@
     "en": "2e46c38af8",
     "tr": "2e46c38af8"
   },
+  "sr-Cyrl|original-work.json|exploded_art./images/anatomy-exploded/perseverance_webp.title": {
+    "why": "proper names (Perseverance, Mars 2020) kept as on the fleet page in this locale",
+    "en": "2f671bfcba",
+    "tr": "2f671bfcba"
+  },
   "sr-Cyrl|original-work.json|exploded_art./images/anatomy-exploded/proton-k_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "8527f639fd",
@@ -8033,6 +8533,36 @@
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "445aab85db",
     "tr": "445aab85db"
+  },
+  "sr-Cyrl|original-work.json|landing_art./images/landing-sequences/perseverance_webp.title": {
+    "why": "proper names (Perseverance, Ingenuity) kept as on their mission and fleet pages in this locale",
+    "en": "f1d04e438b",
+    "tr": "f1d04e438b"
+  },
+  "sr-Cyrl|original-work.json|mission_trajectories./images/missions/thumbnails/kaguya_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "f2ac0904eb",
+    "tr": "f2ac0904eb"
+  },
+  "sr-Cyrl|original-work.json|mission_trajectories./images/missions/thumbnails/lro_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "909dd83413",
+    "tr": "909dd83413"
+  },
+  "sr-Cyrl|original-work.json|mission_trajectories./images/missions/thumbnails/mro_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "45da8da847",
+    "tr": "45da8da847"
+  },
+  "sr-Cyrl|original-work.json|mission_trajectories./images/missions/thumbnails/parker-solar-probe_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "28d31dc968",
+    "tr": "28d31dc968"
+  },
+  "sr-Cyrl|original-work.json|mission_trajectories./images/missions/thumbnails/solar-orbiter_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "3ee5fd8d67",
+    "tr": "3ee5fd8d67"
   },
   "sr-Cyrl|original-work.json|models3d./images/colophon/craft-cassini_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -8263,6 +8793,16 @@
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "bdbbad925e",
     "tr": "bdbbad925e"
+  },
+  "sr-Cyrl|original-work.json|site_illustrations./images/illustrations/sites/change3_webp.title": {
+    "why": "proper name (Chang'e 3) kept in Latin script as on its mission page in this locale",
+    "en": "141e8598bd",
+    "tr": "141e8598bd"
+  },
+  "sr-Cyrl|original-work.json|site_illustrations./images/illustrations/sites/change4_webp.title": {
+    "why": "proper name (Chang'e 4) kept in Latin script as on its mission page in this locale",
+    "en": "ce15bf3643",
+    "tr": "ce15bf3643"
   },
   "sr-Cyrl|site-stories/apollo12.json|chapters.hardware.subtitle": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -8648,6 +9188,36 @@
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "445aab85db",
     "tr": "445aab85db"
+  },
+  "zh-CN|original-work.json|landing_art./images/landing-sequences/perseverance_webp.title": {
+    "why": "proper names (Perseverance, Ingenuity) kept as on their mission and fleet pages in this locale",
+    "en": "f1d04e438b",
+    "tr": "f1d04e438b"
+  },
+  "zh-CN|original-work.json|mission_trajectories./images/missions/thumbnails/kaguya_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "f2ac0904eb",
+    "tr": "f2ac0904eb"
+  },
+  "zh-CN|original-work.json|mission_trajectories./images/missions/thumbnails/lro_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "909dd83413",
+    "tr": "909dd83413"
+  },
+  "zh-CN|original-work.json|mission_trajectories./images/missions/thumbnails/mro_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "45da8da847",
+    "tr": "45da8da847"
+  },
+  "zh-CN|original-work.json|mission_trajectories./images/missions/thumbnails/parker-solar-probe_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "28d31dc968",
+    "tr": "28d31dc968"
+  },
+  "zh-CN|original-work.json|mission_trajectories./images/missions/thumbnails/solar-orbiter_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "3ee5fd8d67",
+    "tr": "3ee5fd8d67"
   },
   "zh-CN|original-work.json|models3d./images/colophon/craft-cassini_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",

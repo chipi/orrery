@@ -34,6 +34,7 @@ const ACRONYMS = new Set([
   'ii',
   'iii',
   'iv',
+  'hls',
 ]);
 
 function humanize(slug) {

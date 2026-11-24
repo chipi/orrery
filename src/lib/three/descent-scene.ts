@@ -552,6 +552,20 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
     return c;
   });
 
+  // The Luna E-8 stage: the main engine cuts at main_cutoff and two small verniers burn on until
+  // engine_cutoff (drawn: their size and spacing).
+  const mainCutT = (opts.events ?? []).find((e) => e.type === 'main_cutoff')?.t;
+  const vernierPlumes =
+    mainCutT == null
+      ? []
+      : [-1, 1].map((sx) => {
+          const v = plume.clone();
+          v.position.set(sx * rBodyRef * 2.2, 0, 0);
+          v.visible = false;
+          model.retroPlumeAnchor.add(v);
+          return v;
+        });
+
   // ── Entry fireball — a plasma cap at the heat-shield + a wake streaming up
   //    behind the descending vehicle, glowing with the (normalised) aero-heating
   //    proxy so it peaks at peak heating then fades. The iconic hypersonic bow.
@@ -1179,11 +1193,14 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
       (braking || softBurn) &&
       (cutoffT == null || s.t < cutoffT) &&
       (crashCutT == null || s.t < crashCutT);
-    plume.visible = engineOn && sitePlumes.length === 0;
+    const mainOn = mainCutT == null || s.t < mainCutT;
+    plume.visible = engineOn && sitePlumes.length === 0 && mainOn;
+    for (const v of vernierPlumes) v.visible = engineOn && !mainOn;
     for (const c of sitePlumes) c.visible = engineOn && !cutoff;
     if (engineOn) {
       const flick = 1 + 0.1 * Math.sin(frame * 0.7) + 0.05 * Math.sin(frame * 1.9);
       plume.scale.set(plumeK, flick * plumeK * (small ? 0.4 : 1), plumeK);
+      for (const v of vernierPlumes) v.scale.set(0.3 * plumeK, 0.3 * flick * plumeK, 0.3 * plumeK);
       const lowK = isViking && s.altKm * 1000 < 40 ? 1.6 : 1;
       for (const c of sitePlumes)
         c.scale.set(plumeK * 0.8 * lowK, flick * plumeK * 0.8 * lowK, plumeK * 0.8 * lowK);

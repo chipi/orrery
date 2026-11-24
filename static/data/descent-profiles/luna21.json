@@ -26,10 +26,14 @@
     "lowGateAltM": 150,
     "brakingRateGain": 0.01
   },
-  "beats": [{ "type": "engine_cutoff", "altM": 1.5 }],
+  "beats": [
+    { "type": "main_cutoff", "altM": 20 },
+    { "type": "engine_cutoff", "altM": 1.5 }
+  ],
   "source_tier": "flagship",
   "estimatedFields": [
     "beats.engine_cutoff",
+    "beats.main_cutoff",
     "entryState.velocityMs",
     "entryMassKg",
     "retroPropellantKg",

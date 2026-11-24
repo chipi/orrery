@@ -115,6 +115,7 @@ export type DescentEventType =
   | 'high_gate' // the braking burn ends and the lander pitches over to see the site (Apollo)
   | 'low_gate' // the approach ends and the final vertical descent starts (Apollo)
   | 'contact_light' // a footpad probe touches the surface (Apollo's blue light)
+  | 'main_cutoff' // the main descent engine cuts and the verniers burn on (Luna E-8, ~20 m)
   | 'engine_cutoff' // the descent engine shuts down just above the surface
   | 'leg_deploy' // the landing legs unfold (Viking, Phoenix, InSight)
   | 'terrain_nav' // terrain-relative navigation starts (Perseverance)

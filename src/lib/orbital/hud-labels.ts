@@ -50,6 +50,7 @@ const HUD_LABEL: Record<string, () => string> = {
   'HIGH GATE': m.hud_high_gate,
   'LOW GATE': m.hud_low_gate,
   'CONTACT LIGHT': m.hud_contact_light,
+  'MAIN OFF': m.hud_main_off,
   'ENGINE OFF': m.hud_engine_off,
   'LEGS OUT': m.hud_leg_deploy,
   'TERRAIN NAV': m.hud_terrain_nav,

@@ -4,6 +4,7 @@ import type { DescentBody } from '$lib/physics/descent/descent-physics';
 import { buildMoonLanderModel } from '../moon-lander-models';
 import { buildMarsLanderModel } from '../mars-lander-models';
 import { buildCapsuleById } from './capsule-models';
+import { buildStarshipShip } from './starship-ship';
 import { getEarthOrbitCoast } from '../orbital/earth-orbit-registry';
 import { buildLanderCruiseCraft } from './lander-cruise-models';
 import { buildInterplanetarySpacecraft } from './interplanetary-spacecraft-models';
@@ -481,11 +482,15 @@ function buildVenusDescentLander(): THREE.Group {
   return g;
 }
 
+/** Starship flights whose lander is the Ship itself (belly-flop, flip, Raptor landing burn). */
+const STARSHIP_SHIP_SITES = new Set(['starship-demo', 'starship-mars-crew']);
+
 // Earth re-entries with no LEO coast entry (lunar returns) name their capsule here.
 const LUNAR_RETURN_CAPSULE: Record<string, string> = { apollo8: 'apollo-cm' };
 
 /** Resolve the terminal landed craft for a mission (the reused surface model). */
 function resolveLander(siteId: string, body: DescentBody): THREE.Group {
+  if (STARSHIP_SHIP_SITES.has(siteId)) return buildStarshipShip();
   if (body === 'moon') {
     const tier0 = buildMoonLanderModel(siteId, 'lander', '#c9ccd2');
     return detailedDescentLander(siteId, tier0) ?? tier0;
@@ -1354,6 +1359,8 @@ function buildStarshipReturnStack(lander: THREE.Group, vehLen: number): DescentM
 
 const BUILDERS: Record<string, StackBuilder> = {
   'starship-flight-5': buildStarshipReturnStack,
+  'starship-demo': buildStarshipReturnStack,
+  'starship-mars-crew': buildStarshipReturnStack,
   // Apollo lunar landings — the LM descent with the CSM undock beat.
   apollo11: buildApolloLunarStack,
   apollo12: buildApolloLunarStack,

@@ -130,22 +130,58 @@ export function buildStarshipShip(): THREE.Group {
   g.add(new THREE.Mesh(new THREE.LatheGeometry(nosePoints(1.004), 48, -Math.PI, Math.PI), tile));
 
   // Flaps on the tile edge (±Z): forward flaps high on the nose, aft flaps over the bottom fifth.
-  // Each is built spanning +X, then turned about y so its span points along ±Z.
+  // Each is built spanning +X, then turned about y so its span points along ±Z. A flap hinges on
+  // its root edge (along y), so it sits in a pivot group the scene swings about y
+  // (userData.flaps), to steer through the belly-first fall.
+  const flaps: { pivot: THREE.Group; base: number; side: number; fwd: boolean }[] = [];
   for (const side of [-1, 1]) {
     const fwdY0 = NOSE_BASE + 0.05;
     const fwdRootR = noseRadius(0.05 / (1 - NOSE_BASE) + 0.1);
-    const fwd = new THREE.Mesh(
-      flap(fwdY0, fwdY0 + 0.1, 0.055, fwdY0 + 0.035, fwdY0 + 0.085),
-      flapMat,
-    );
-    fwd.rotation.y = -side * (Math.PI / 2);
-    fwd.position.set(0.003 * side, 0, side * fwdRootR * 0.92);
-    g.add(fwd);
-    const aft = new THREE.Mesh(flap(0.05, 0.25, 0.075, 0.07, 0.2), flapMat);
-    aft.rotation.y = -side * (Math.PI / 2);
-    aft.position.set(0.003 * side, 0, side * SHIP_R * 0.98);
-    g.add(aft);
+    for (const fwd of [true, false]) {
+      const geo = fwd
+        ? flap(fwdY0, fwdY0 + 0.1, 0.055, fwdY0 + 0.035, fwdY0 + 0.085)
+        : flap(0.05, 0.25, 0.075, 0.07, 0.2);
+      const pivot = new THREE.Group();
+      pivot.name = fwd ? 'flapFwd' : 'flapAft';
+      const base = -side * (Math.PI / 2);
+      pivot.rotation.y = base;
+      pivot.position.set(0.003 * side, 0, side * (fwd ? fwdRootR * 0.92 : SHIP_R * 0.98));
+      pivot.add(new THREE.Mesh(geo, flapMat));
+      g.add(pivot);
+      flaps.push({ pivot, base, side, fwd });
+    }
   }
+  g.userData.flaps = flaps;
+
+  // Hot-gas RCS pods: two groups of two on the sides, near the nose and near the aft, each a
+  // small dark housing with a plume cone the scene lights (userData.rcs), firing radially out.
+  const rcs: THREE.Object3D[] = [];
+  const rcsMat = new THREE.MeshBasicMaterial({
+    color: 0xffe2b0,
+    transparent: true,
+    opacity: 0.85,
+    blending: THREE.AdditiveBlending,
+    depthWrite: false,
+  });
+  for (const y of [0.9, 0.33])
+    for (const th of [Math.PI / 3, -Math.PI / 3]) {
+      const dir = new THREE.Vector3(Math.cos(th), 0, Math.sin(th));
+      const pod = new THREE.Mesh(new THREE.BoxGeometry(0.014, 0.022, 0.014), dark);
+      const r = y > NOSE_BASE ? noseRadius((y - NOSE_BASE) / (1 - NOSE_BASE)) : SHIP_R;
+      pod.position.copy(dir).multiplyScalar(r).setY(y);
+      pod.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), dir);
+      g.add(pod);
+      const len = 0.09;
+      const geo = new THREE.ConeGeometry(0.014, len, 12, 1, true);
+      geo.translate(0, len / 2, 0);
+      const plume = new THREE.Mesh(geo, rcsMat);
+      plume.position.copy(pod.position).addScaledVector(dir, 0.008);
+      plume.quaternion.copy(pod.quaternion);
+      plume.visible = false;
+      g.add(plume);
+      rcs.push(plume);
+    }
+  g.userData.rcs = rcs;
 
   // Aft skirt and the six Raptors under it.
   const skirt = new THREE.Mesh(new THREE.CylinderGeometry(SHIP_R, SHIP_R * 0.97, SKIRT, 48), dark);

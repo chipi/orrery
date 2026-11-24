@@ -188,6 +188,40 @@ export function starshipPitch(t: number, flipT: number, flipS: number): number {
   return (Math.PI / 2) * (1 - f * f * (3 - 2 * f));
 }
 
+/**
+ * The Ship's flaps and hot-gas RCS (starship-ship.ts userData), pure in t so a scrub is exact:
+ * through the belly-first fall the flaps steer a few degrees and the RCS pods puff in turn; across
+ * the landing flip every pod fires hard, then they go quiet for the Raptor burn.
+ */
+export function starshipControls(
+  ship: THREE.Object3D,
+  t: number,
+  flipT: number,
+  flipS: number,
+  frame: number,
+): void {
+  const flaps = ship.userData.flaps as
+    { pivot: THREE.Object3D; base: number; side: number; fwd: boolean }[] | undefined;
+  const rcs = ship.userData.rcs as THREE.Object3D[] | undefined;
+  const belly = t < flipT;
+  for (const fl of flaps ?? []) {
+    // Fore and aft work against each other (pitch trim); left and right split (roll).
+    const trim = Math.sin(t * 0.45 + (fl.fwd ? 0 : Math.PI));
+    const roll = Math.sin(t * 0.8) * fl.side * 0.4;
+    const swing = belly ? (trim + roll) * 0.3 : 0;
+    fl.pivot.rotation.y = fl.base + swing * fl.side * (fl.fwd ? 1 : -1);
+  }
+  const hard = t >= flipT - 1 && t < flipT + flipS + 1;
+  (rcs ?? []).forEach((p, i) => {
+    const puff = belly && !hard && Math.sin(t * 1.9 + i * 2.1) > 0.45;
+    p.visible = hard || puff;
+    if (p.visible) {
+      const k = hard ? 1.4 + 0.2 * Math.sin(frame * 1.3 + i) : 0.6;
+      p.scale.set(k, k, k);
+    }
+  });
+}
+
 export function createDescentScene(opts: DescentSceneOptions): DescentScene {
   const vehLen = opts.vehicleLengthKm ?? DESCENT_VEHICLE_LENGTH_KM;
   const body = opts.body;
@@ -384,6 +418,9 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
     plumeCone(rBodyRef * 0.7, vehLen * 0.3, 0xff8a3c, 0.16),
     plumeCone(rBodyRef * 0.45, vehLen * 0.22, 0xffcf80, 0.4),
   );
+  // Raptors burn white-hot at the core: orange alone vanishes against Mars's orange ground.
+  if (opts.events?.some((e) => e.type === 'landing_flip'))
+    plume.add(plumeCone(rBodyRef * 0.3, vehLen * 0.28, 0xffffff, 0.75));
   plume.rotation.z = Math.PI; // fire down (−Y)
   plume.visible = false;
   model.retroPlumeAnchor.add(plume);
@@ -391,6 +428,18 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
   // landers' three), and cuts them at contact; others burn the one central plume.
   const sitePlumes = (model.plumeSites ?? []).map((at) => {
     const c = plume.clone();
+    // Each exit burns from its nozzle, base on the exit and tip downstream (the cones are drawn
+    // centred, which buried half of every small plume in the hull), and brighter than the one
+    // central retro so a ring of small thrusters reads against a lit surface.
+    for (const m of c.children as THREE.Mesh[]) {
+      const g = m.geometry as THREE.ConeGeometry;
+      m.position.y = g.parameters.height / 2;
+      m.material = (m.material as THREE.MeshBasicMaterial).clone();
+      (m.material as THREE.MeshBasicMaterial).opacity = Math.min(
+        0.9,
+        (m.material as THREE.MeshBasicMaterial).opacity * 2.5,
+      );
+    }
     c.position.copy(at);
     c.visible = false;
     model.root.add(c);
@@ -903,7 +952,7 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
     if (engineOn) {
       const flick = 1 + 0.1 * Math.sin(frame * 0.7) + 0.05 * Math.sin(frame * 1.9);
       plume.scale.set(plumeK, flick * plumeK, plumeK);
-      for (const c of sitePlumes) c.scale.set(plumeK * 0.55, flick * plumeK * 0.55, plumeK * 0.55);
+      for (const c of sitePlumes) c.scale.set(plumeK * 0.8, flick * plumeK * 0.8, plumeK * 0.8);
     }
 
     // Entry attitude flip (Earth crewed re-entry, RFC-034 §13): the capsule comes
@@ -1009,6 +1058,7 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
       vehicle.rotation.x = 0;
       vehicle.rotation.z = starshipPitch(s.t, landingFlipT, LANDING_FLIP_S);
       plasma.rotation.z = -vehicle.rotation.z;
+      starshipControls(model.lander, s.t, landingFlipT, LANDING_FLIP_S, frame);
     }
 
     // Entry fireball: glow tracks the normalised aero-heating proxy — the

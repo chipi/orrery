@@ -53,6 +53,7 @@ interface SkyConfig {
   fadeKm: number; // altitude over which sky transitions high → low
   rim?: { color: number; opacity: number };
 }
+const JUPITER_DEEP = new THREE.Color('#2a1608');
 const SKY: Record<DescentBody, SkyConfig> = {
   moon: {
     high: new THREE.Color('#03040a'),
@@ -235,6 +236,7 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
   scene.add(bodyMesh);
 
   // Thin atmospheric limb (Mars/Venus only) — one back-side rim glow.
+  let rimMesh: THREE.Mesh | null = null;
   if (sky.rim) {
     const rim = new THREE.Mesh(
       new THREE.SphereGeometry(rBody + rBody * 0.012, 96, 96),
@@ -248,6 +250,7 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
       }),
     );
     rim.position.copy(bodyMesh.position);
+    rimMesh = rim;
     scene.add(rim);
   }
 
@@ -682,6 +685,14 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
     const skyT = Math.min(1, Math.max(0, 1 - s.altKm / sky.fadeKm));
     (scene.background as THREE.Color).copy(sky.high).lerp(sky.low, skyT);
     if (sky.stars) (stars.material as THREE.PointsMaterial).opacity = 1 - skyT * 0.85;
+    // Below the 1-bar datum the probe is inside the cloud deck: no body to look down at, and the
+    // murk darkens with depth (the real probe went dark and hot under 100 km of haze).
+    if (body === 'jupiter') {
+      const inside = s.altKm < 0;
+      bodyMesh.visible = !inside;
+      if (rimMesh) rimMesh.visible = !inside;
+      if (inside) (scene.background as THREE.Color).lerp(JUPITER_DEEP, Math.min(1, -s.altKm / 150));
+    }
 
     // ── EDL separations — pure functions of the mission time vs event METs, so
     //    scrubbing the timeline is exact.
@@ -1014,7 +1025,7 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
 
     // Touchdown dust: ramps up as the vehicle nears the ground under retro /
     // airbags, and flares at touchdown.
-    const nearGround = s.altKm < vehLen * 0.5;
+    const nearGround = body !== 'jupiter' && s.altKm < vehLen * 0.5;
     const kicking =
       nearGround && ((braking && engineOn) || s.phaseKind === 'airbag_bounce' || s.altM <= 0);
     dust.visible = kicking;
@@ -1049,7 +1060,9 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
     const capsule =
       body === 'earth' && !model.mainChute && !model.deploy && chuteT != null && s.t >= chuteT;
     if (capsule) whole = core;
-    const pose = descentPoseAt(shots, s.t, { core, whole, capsule }, craftY, camera.aspect);
+    // A gas giant has no ground: below the 1-bar datum the floor is the craft, not the cloud top.
+    const floorAlt = body === 'jupiter' ? Math.max(0, craftY) : craftY;
+    const pose = descentPoseAt(shots, s.t, { core, whole, capsule }, floorAlt, camera.aspect);
     camera.position.set(pose.pos[0], craftY + pose.pos[1], pose.pos[2]);
     camera.lookAt(pose.target[0], craftY + pose.target[1], pose.target[2]);
     camera.fov = pose.fov;

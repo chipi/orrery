@@ -81,6 +81,7 @@
   import { buildNovaC } from '$lib/three/showcase/landers';
   import { buildFalcon9Booster, setFalcon9BoosterPose } from '$lib/three/showcase/falcon9-booster';
   import { buildSputnik1 } from '$lib/three/showcase/early-stations';
+  import { buildDroneShip, buildSeaPlane } from '$lib/three/showcase/drone-ship';
 
   type Entry = {
     /** Stable id → capture filename `model-<family>-<id>` / `craft-<id>`. */
@@ -109,6 +110,12 @@
     const b = buildFalcon9Booster();
     setFalcon9BoosterPose(b, { fins: 1, legs: 1 });
     return b;
+  }
+  /** The drone ship with its sea and waterline foam, as the booster landing frames it. */
+  function buildDroneShipScene(): THREE.Group {
+    const g = new THREE.Group();
+    g.add(buildDroneShip(), buildSeaPlane(140));
+    return g;
   }
 
   /** The line-up's cartoon cast in one row at true scale, tight enough to read in a card. */
@@ -770,6 +777,7 @@
         ['nova-c', 'Nova-C (IM-1 Odysseus)', buildNovaC],
         ['falcon9-booster-stowed', 'Falcon 9 booster (stowed)', buildF9Stowed],
         ['falcon9-booster-landing', 'Falcon 9 booster (landing)', buildF9Landing],
+        ['drone-ship', 'Drone ship JRTI', buildDroneShipScene],
       ] as [string, string, () => THREE.Group][]
     ).map(([id, label, build]) => ({ id, label, family: 'probe', build })),
     // Launch pads (launch-pads.ts, G4): each model with a plain stand-in vehicle of its real height

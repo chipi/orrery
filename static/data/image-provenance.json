@@ -121034,6 +121034,46 @@
       "pageid": 153891202,
       "nasa_id": null,
       "fetched_at": "2026-11-22T09:15:22.246Z"
+    },
+    {
+      "id": "d58d18a1a3a23b2f",
+      "path": "/images/missions/escapade/01.webp",
+      "source_type": "wikimedia-commons",
+      "title": "File:Blue Origin New Glenn flight 2.jpg",
+      "author": "U.S. Space Force photo by Senior Airman Samuel Becker",
+      "agency": "U.S. Space Force",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Blue_Origin_New_Glenn_flight_2.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/63/Blue_Origin_New_Glenn_flight_2.jpg",
+      "license_short": "PD-USGov",
+      "license_url": "https://www.usa.gov/government-works",
+      "license_rationale": "Created by U.S. federal government employees as part of their official duties — not subject to U.S. copyright.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 178924605,
+      "nasa_id": null,
+      "fetched_at": "2026-11-24T10:33:18.414Z"
+    },
+    {
+      "id": "4080c823ede70b72",
+      "path": "/images/missions/escapade/01.1x1.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:Blue Origin New Glenn flight 2.jpg",
+      "author": "U.S. Space Force photo by Senior Airman Samuel Becker",
+      "agency": "U.S. Space Force",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Blue_Origin_New_Glenn_flight_2.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/63/Blue_Origin_New_Glenn_flight_2.jpg",
+      "license_short": "PD-USGov",
+      "license_url": "https://www.usa.gov/government-works",
+      "license_rationale": "Created by U.S. federal government employees as part of their official duties — not subject to U.S. copyright.",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 178924605,
+      "nasa_id": null,
+      "fetched_at": "2026-11-24T10:33:18.415Z"
     }
   ]
 }

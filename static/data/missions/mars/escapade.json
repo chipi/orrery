@@ -1,0 +1,106 @@
+{
+  "id": "escapade",
+  "agency": "NASA",
+  "agency_full": "National Aeronautics and Space Administration, with UC Berkeley Space Sciences Laboratory, Rocket Lab and Blue Origin",
+  "sector": "gov",
+  "dest": "MARS",
+  "color": "#0B3D91",
+  "year": 2025,
+  "status": "ACTIVE",
+  "departure_date": "2025-11-13",
+  "arrival_date": "2027-09-07",
+  "transit_days": 663,
+  "vehicle": "New Glenn (NG-2)",
+  "payload": "Two spacecraft, Blue and Gold: 209 kg dry, 535 kg fuelled each",
+  "delta_v": "~3.6 km/s (generic Mars-transfer estimate, not a published ESCAPADE figure)",
+  "data_quality": "partial",
+  "credit": "© NASA. Twin spacecraft Blue and Gold from Rocket Lab; principal investigator Robert Lillis, UC Berkeley Space Sciences Laboratory; launched by Blue Origin on New Glenn NG-2, 13 November 2025. Figures from NASA's press kit, launch blog and Earth-flyby release.",
+  "links": [
+    {
+      "l": "ESCAPADE — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/ESCAPADE",
+      "t": "intro"
+    },
+    {
+      "l": "ESCAPADE press kit (NASA)",
+      "u": "https://assets.science.nasa.gov/content/dam/science/missions/escapade/ESCAPADE%20Press%20Kit.pdf",
+      "t": "core"
+    },
+    {
+      "l": "Liftoff: NASA's ESCAPADE begins journey to Mars (NASA blog)",
+      "u": "https://science.nasa.gov/blogs/escapade/2025/11/13/liftoff-nasas-escapade-begins-journey-to-mars",
+      "t": "core"
+    },
+    {
+      "l": "NASA's ESCAPADE completes powered Earth flybys, now en route to Mars (NASA)",
+      "u": "https://science.nasa.gov/science-research/heliophysics/nasas-escapade-completes-powered-earth-flybys-now-en-route-to-mars/",
+      "t": "core"
+    }
+  ],
+  "flight_data_quality": "sparse",
+  "fleet_refs": [
+    {
+      "id": "new-glenn",
+      "role": "launcher"
+    }
+  ],
+  "flight": {
+    "launch": {
+      "vehicle_stage": "New Glenn second stage (GS2)",
+      "mass_at_tli_kg": 1070,
+      "source": "NASA ESCAPADE press kit: 535 kg fuelled per spacecraft, two spacecraft. No C3 is published in the sources used"
+    },
+    "cruise": {
+      "source": "NASA ESCAPADE press kit and Earth-flyby release: about one year looping around Sun-Earth L2, then powered Earth flybys. The mapped arc is a schematic Earth-to-Mars transfer ellipse, not the loiter-and-flyby path"
+    },
+    "arrival": {
+      "periapsis_km": 450,
+      "source": "NASA ESCAPADE Earth-flyby release and press kit: orbit-insertion burns of about 11 minutes at 450 km into a 60-hour capture orbit"
+    },
+    "events": [
+      {
+        "met_days": 0,
+        "type": "launch",
+        "label": "Launch — New Glenn NG-2",
+        "description": "Launch Complex 36, Cape Canaveral Space Force Station, 13 November 2025 at 3:55 pm EST (20:55 UTC). The booster, GS1 \"Never Tell Me the Odds\", landed on the drone ship Jacklyn about nine minutes after liftoff."
+      },
+      {
+        "met_days": 0.0233,
+        "type": "separation",
+        "label": "Spacecraft separation",
+        "description": "Blue and Gold separate from the New Glenn upper stage about 33.5 minutes after liftoff."
+      },
+      {
+        "met_days": 359,
+        "type": "flyby",
+        "label": "Earth flyby — Blue",
+        "description": "Blue's powered Earth flyby on 7 November 2026, after about a year of loitering around Sun-Earth L2."
+      },
+      {
+        "met_days": 361,
+        "type": "flyby",
+        "label": "Earth flyby — Gold",
+        "description": "Gold's powered Earth flyby on 9 November 2026."
+      },
+      {
+        "met_days": 663,
+        "type": "arrival",
+        "label": "Mars approach",
+        "description": "Blue arrives on 7 September 2027; Gold follows on 9 September."
+      },
+      {
+        "met_days": 663.01,
+        "type": "edl_or_oi",
+        "label": "Mars orbit insertion",
+        "description": "Orbit-insertion burns of about 11 minutes at 450 km on 7 September (Blue) and 9 September 2027 put the twins into a 60-hour capture orbit; science begins in June 2028."
+      }
+    ],
+    "interplanetary_profile": {
+      "source_tier": "tier_1_analytic",
+      "reference_frame": "heliocentric_ecliptic_J2000",
+      "departure_body": "earth",
+      "arrival_body": "mars",
+      "transfer_type": "type1_lambert"
+    }
+  }
+}

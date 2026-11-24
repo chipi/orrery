@@ -148,7 +148,7 @@ function buildMissionArcs(m: MissionFile): {
 }
 
 describe('Trajectory soundness — every mission renders a valid arc', () => {
-  it(`fixture loads expected counts (23 Mars + 37 Moon + 46 Earth + 12 outer + 9 inner)`, () => {
+  it(`fixture loads expected counts (24 Mars + 37 Moon + 46 Earth + 12 outer + 9 inner)`, () => {
     const mars = MISSIONS.filter((m) => m.destDir === 'mars');
     const moon = MISSIONS.filter((m) => m.destDir === 'moon');
     const earth = MISSIONS.filter((m) => m.destDir === 'earth');
@@ -168,14 +168,14 @@ describe('Trajectory soundness — every mission renders a valid arc', () => {
     // 2026-11-15 — content4 added Artemis I (Moon) and STS-1, STS-51-L, STS-107 (Earth). 34 → 35 Moon, 41 → 44 Earth.
     // 2026-11-15 — content7 added Viking 2, Mars 2, MRO (Mars), Chang'e 2, IM-1 (Moon), Shenzhou 5 (Earth), Mariner 2 (Venus).
     if (
-      mars.length !== 23 ||
+      mars.length !== 24 ||
       moon.length !== 37 ||
       earth.length !== 46 ||
       outer.length !== 12 ||
       inner.length !== 9
     ) {
       throw new Error(
-        `Expected 23 Mars + 37 Moon + 46 Earth + 12 outer + 9 inner; got ${mars.length} + ${moon.length} + ${earth.length} + ${outer.length} + ${inner.length}`,
+        `Expected 24 Mars + 37 Moon + 46 Earth + 12 outer + 9 inner; got ${mars.length} + ${moon.length} + ${earth.length} + ${outer.length} + ${inner.length}`,
       );
     }
   });

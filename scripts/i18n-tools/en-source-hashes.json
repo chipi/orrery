@@ -9642,6 +9642,28 @@
     "vehicle": "194d8fee96",
     "vehicle_stage": "e759ece158"
   },
+  "missions/mars/escapade.json": {
+    "delta_v": "8e3404c439",
+    "description": "e097ad7556",
+    "events.0.label": "89006102d3",
+    "events.0.note": "d1fb89f213",
+    "events.0.type": "586d612861",
+    "events.1.label": "87e6522c3b",
+    "events.1.note": "bbdd51c731",
+    "events.1.type": "586d612861",
+    "events.2.label": "c80aa2a0d5",
+    "events.2.note": "ea2348da64",
+    "events.2.type": "586d612861",
+    "events.3.label": "43fb9e07ac",
+    "events.3.note": "6dcb4b0750",
+    "events.3.type": "586d612861",
+    "first": "219fe56278",
+    "name": "e5be8d2898",
+    "payload": "f4ea4c7eae",
+    "type": "271a7d7c5a",
+    "vehicle": "2efd22ae92",
+    "vehicle_stage": "ca2d34dad3"
+  },
   "missions/mars/hope-probe.json": {
     "delta_v": "07bc01930b",
     "description": "3c1b545641",

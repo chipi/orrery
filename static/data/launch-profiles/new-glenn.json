@@ -13,6 +13,18 @@
       "timeClass": "approx"
     }
   ],
+  "recoveryByMission": {
+    "escapade": [
+      {
+        "part": "booster",
+        "outcome": "landed",
+        "site": "droneship",
+        "siteNames": ["Jacklyn"],
+        "touchdownS": 540,
+        "timeClass": "approx"
+      }
+    ]
+  },
   "loftBoost": true,
   "liftoffThrustKN": 17150,
   "fairingKg": 5000,
@@ -45,7 +57,7 @@
   ],
   "provenance": [
     {
-      "l": "NG-2 (13 Nov 2025): the first-stage booster landed on the drone ship Jacklyn about 10 minutes after liftoff, the vehicle's recovery here (0.9.11 F2)",
+      "l": "NG-2 (13 Nov 2025): the first-stage booster landed on the drone ship Jacklyn about nine minutes after liftoff for ESCAPADE (Space.com; TechCrunch says about ten minutes, which the profile's default of 600 s follows); the landing-burn start is not published, so the default applies. docs/wip/2026-11-24-escapade-sourced.md (0.9.11 F2)",
       "u": "https://www.space.com/space-exploration/launches-spacecraft/blue-origin-lands-huge-new-glenn-rocket-booster-for-1st-time-after-acing-mars-escapade-launch-for-nasa"
     },
     {

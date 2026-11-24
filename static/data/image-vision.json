@@ -30944,6 +30944,19 @@
       "rejected_by": null,
       "scored_at": "2026-11-22T15:03:31.738Z",
       "scoring_cost_usd": 0
+    },
+    "/images/missions/escapade/01.jpg": {
+      "score": 8,
+      "subject": "New Glenn NG-2 lifting off from Space Launch Complex 36 at Cape Canaveral Space Force Station with NASA's ESCAPADE spacecraft, 13 November 2025.",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.51,
+        "y": 0.45
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-24T10:33:18.649Z",
+      "scoring_cost_usd": 0
     }
   }
 }

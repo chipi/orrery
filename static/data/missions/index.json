@@ -474,6 +474,16 @@
     "crewed": false
   },
   {
+    "id": "escapade",
+    "agency": "NASA",
+    "dest": "MARS",
+    "status": "ACTIVE",
+    "year": 2025,
+    "sector": "gov",
+    "color": "#0B3D91",
+    "crewed": false
+  },
+  {
     "id": "starship-demo",
     "agency": "SpaceX",
     "dest": "MARS",

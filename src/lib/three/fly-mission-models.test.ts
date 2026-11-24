@@ -28,6 +28,8 @@ const missions = readdirSync(ROOT, { withFileTypes: true })
 /** Shared stand-ins, by decision — each with the model it rides. */
 const GENERIC: Record<string, string> = {
   'apollo-1': 'never flew (pad fire)',
+  escapade:
+    'two small Mars orbiters with no dedicated model yet; rides the generic spacecraft glyph',
 };
 
 describe('/fly mission models', () => {

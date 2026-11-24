@@ -9643,8 +9643,8 @@
     "vehicle_stage": "e759ece158"
   },
   "missions/mars/escapade.json": {
-    "delta_v": "8e3404c439",
-    "description": "e097ad7556",
+    "delta_v": "abfddc58b5",
+    "description": "061c8546bb",
     "events.0.label": "89006102d3",
     "events.0.note": "d1fb89f213",
     "events.0.type": "586d612861",
@@ -9657,7 +9657,7 @@
     "events.3.label": "43fb9e07ac",
     "events.3.note": "6dcb4b0750",
     "events.3.type": "586d612861",
-    "first": "219fe56278",
+    "first": "c6ca6dd351",
     "name": "e5be8d2898",
     "payload": "f4ea4c7eae",
     "type": "271a7d7c5a",

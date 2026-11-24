@@ -2,10 +2,10 @@
   "name": "ESCAPADE",
   "vehicle": "New Glenn (NG-2)",
   "payload": "탐사선 2기, Blue와 Gold: 각각 건조 209 kg, 연료 포함 535 kg",
-  "delta_v": "~3.6 km/s (일반적인 화성 전이 추정치이며 ESCAPADE의 공표 수치가 아님)",
+  "delta_v": "미공개. 자체 연소는 엔진을 쓰는 지구 플라이바이(화성 전이 궤도 진입) 중의 약 9분 연소와 화성 궤도 진입의 약 11분 연소",
   "type": "화성 쌍둥이 궤도선 · 운용 중",
-  "first": "New Glenn의 두 번째 비행으로 발사된 쌍둥이 궤도선, 부스터는 드론 선박 Jacklyn에 착륙",
-  "description": "ESCAPADE는 NASA의 화성 탐사선 한 쌍인 Blue와 Gold로, Rocket Lab이 8,000만 달러 미만으로 제작했다. 연구책임자는 UC Berkeley Space Sciences Laboratory의 Robert Lillis이며, 이 임무는 Heliophysics Division의 2019년 NASA SIMPLEx 임무다. 각 탐사선의 질량은 건조 209 kg, 연료 포함 535 kg이다. 두 탐사선은 New Glenn의 두 번째 비행인 NG-2로 2025년 11월 13일 15:55 EST(20:55 UTC)에 Cape Canaveral Space Force Station의 Launch Complex 36에서 발사되었다. 부스터 GS1 \"Never Tell Me the Odds\"는 발사 약 9분 뒤 드론 선박 Jacklyn에 착륙했다. Blue와 Gold는 화성으로 곧장 가지 않고 약 1년 동안 태양-지구 L2 지점 둘레를 돈 뒤 엔진을 쓰는 지구 플라이바이를 했다. Blue는 2026년 11월 7일, Gold는 11월 9일이다. 화성 궤도 진입 연소는 2027년 9월 7일과 9일에 450 km에서 약 11분간 이루어져 60시간짜리 포획 궤도에 들어가며, 과학 임무는 2028년 6월에 시작될 예정이다.",
+  "first": "New Glenn의 두 번째 비행으로 발사된 쌍둥이 궤도선, 이 비행에서 New Glenn 부스터가 처음으로 착륙에 성공했다",
+  "description": "ESCAPADE는 NASA의 화성 탐사선 한 쌍인 Blue와 Gold로, Rocket Lab이 제작했으며, 임무 전체 비용은 8,000만 달러 미만이다. 연구책임자는 UC Berkeley Space Sciences Laboratory의 Robert Lillis이며, 이 임무는 Heliophysics Division의 2019년 NASA SIMPLEx 임무다. 각 탐사선의 질량은 건조 209 kg, 연료 포함 535 kg이다. 두 탐사선은 New Glenn의 두 번째 비행인 NG-2로 2025년 11월 13일 15:55 EST(20:55 UTC)에 Cape Canaveral Space Force Station의 Launch Complex 36에서 발사되었다. 부스터 GS1 \"Never Tell Me the Odds\"는 발사 약 9분 뒤 착륙 플랫폼 선박 Jacklyn에 착륙했다. Blue와 Gold는 화성으로 곧장 가지 않고 약 1년 동안 태양-지구 L2 지점 둘레를 돈 뒤 엔진을 쓰는 지구 플라이바이를 했다. Blue는 2026년 11월 7일, Gold는 11월 9일이다. 화성 궤도 진입 연소는 2027년 9월 7일과 9일에 450 km에서 약 11분간 이루어져 60시간짜리 포획 궤도에 들어가며, 과학 임무는 2028년 6월에 시작될 예정이다.",
   "events": [
     {
       "met": 0,

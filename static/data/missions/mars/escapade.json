@@ -12,9 +12,9 @@
   "transit_days": 663,
   "vehicle": "New Glenn (NG-2)",
   "payload": "Two spacecraft, Blue and Gold: 209 kg dry, 535 kg fuelled each",
-  "delta_v": "~3.6 km/s (generic Mars-transfer estimate, not a published ESCAPADE figure)",
+  "delta_v": "Not published; its own burns were a ~9-minute powered Earth-flyby (trans-Mars injection) burn and a ~11-minute Mars orbit insertion",
   "data_quality": "partial",
-  "credit": "© NASA. Twin spacecraft Blue and Gold from Rocket Lab; principal investigator Robert Lillis, UC Berkeley Space Sciences Laboratory; launched by Blue Origin on New Glenn NG-2, 13 November 2025. Figures from NASA's press kit, launch blog and Earth-flyby release.",
+  "credit": "Source: NASA. Twin spacecraft Blue and Gold from Rocket Lab; principal investigator Robert Lillis, UC Berkeley Space Sciences Laboratory; launched by Blue Origin on New Glenn NG-2, 13 November 2025. Figures from NASA's press kit, launch blog and Earth-flyby release.",
   "links": [
     {
       "l": "ESCAPADE — Wikipedia",
@@ -62,7 +62,7 @@
         "met_days": 0,
         "type": "launch",
         "label": "Launch — New Glenn NG-2",
-        "description": "Launch Complex 36, Cape Canaveral Space Force Station, 13 November 2025 at 3:55 pm EST (20:55 UTC). The booster, GS1 \"Never Tell Me the Odds\", landed on the drone ship Jacklyn about nine minutes after liftoff."
+        "description": "Launch Complex 36, Cape Canaveral Space Force Station, 13 November 2025 at 3:55 pm EST (20:55 UTC). The booster, GS1 \"Never Tell Me the Odds\", landed on the landing platform vessel Jacklyn about nine minutes after liftoff."
       },
       {
         "met_days": 0.0233,

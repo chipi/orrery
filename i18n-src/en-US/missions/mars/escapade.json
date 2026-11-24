@@ -2,10 +2,10 @@
   "name": "ESCAPADE",
   "vehicle": "New Glenn (NG-2)",
   "payload": "Two spacecraft, Blue and Gold: 209 kg dry, 535 kg fuelled each",
-  "delta_v": "~3.6 km/s (generic Mars-transfer estimate, not a published ESCAPADE figure)",
+  "delta_v": "Not published; its own burns were a ~9-minute powered Earth-flyby (trans-Mars injection) burn and a ~11-minute Mars orbit insertion",
   "type": "TWIN MARS ORBITERS · ACTIVE",
-  "first": "Twin orbiters launched on New Glenn's second flight, whose booster landed on the drone ship Jacklyn",
-  "description": "ESCAPADE is NASA's pair of Mars spacecraft, Blue and Gold, built by Rocket Lab for under $80 million. The principal investigator is Robert Lillis of UC Berkeley's Space Sciences Laboratory, and the mission is a NASA SIMPLEx mission from 2019 in the Heliophysics Division. Each spacecraft weighs 209 kg dry and 535 kg fuelled. They launched on New Glenn's second flight, NG-2, from Launch Complex 36 at Cape Canaveral Space Force Station on 13 November 2025 at 3:55 pm EST (20:55 UTC). The booster, GS1 \"Never Tell Me the Odds\", landed on the drone ship Jacklyn about nine minutes after liftoff. Blue and Gold did not head straight for Mars: they looped around the Sun-Earth L2 point for about a year, then made powered Earth flybys, Blue on 7 November 2026 and Gold on 9 November. Their orbit-insertion burns at Mars come on 7 and 9 September 2027, about 11 minutes at 450 km, into a 60-hour capture orbit, with science due to start in June 2028.",
+  "first": "Twin orbiters launched on New Glenn's second flight, which made the first successful landing of a New Glenn booster",
+  "description": "ESCAPADE is NASA's pair of Mars spacecraft, Blue and Gold, built by Rocket Lab in a mission costing under $80 million. The principal investigator is Robert Lillis of UC Berkeley's Space Sciences Laboratory, and the mission is a NASA SIMPLEx mission from 2019 in the Heliophysics Division. Each spacecraft weighs 209 kg dry and 535 kg fuelled. They launched on New Glenn's second flight, NG-2, from Launch Complex 36 at Cape Canaveral Space Force Station on 13 November 2025 at 3:55 pm EST (20:55 UTC). The booster, GS1 \"Never Tell Me the Odds\", landed on the landing platform vessel Jacklyn about nine minutes after liftoff. Blue and Gold did not head straight for Mars: they looped around the Sun-Earth L2 point for about a year, then made powered Earth flybys, Blue on 7 November 2026 and Gold on 9 November. Their orbit-insertion burns at Mars come on 7 and 9 September 2027, about 11 minutes at 450 km, into a 60-hour capture orbit, with science due to start in June 2028.",
   "events": [
     {
       "met": 0,

@@ -33,6 +33,19 @@ SC = Space.com NG-2 landing; TC = TechCrunch 2025-11-13; SPO = SpacePolicyOnline
 
 ## Images
 
-Every candidate found is credited to Blue Origin (NASA-hosted launch photos), UC Berkeley or
-Advanced Space, with no licence stated. NASA's media guidelines exempt third-party material
-credited to its owner. No image is cleared yet.
+The NASA-hosted launch photos are credited to Blue Origin, UC Berkeley or Advanced Space with no
+licence stated, so they are not used. Cleared and shipped (2026-11-24): Wikimedia Commons
+"Blue Origin New Glenn flight 2.jpg", NG-2 liftoff from SLC-36, 13 Nov 2025, U.S. Space Force photo
+by Staff Sgt. Samuel Becker, public domain (PD-USGov).
+
+## Corrections (science review, 2026-11-24)
+
+- ESCAPADE's delta-v is not published. NASA's flyby release gives its own burns: a roughly
+  9-minute trans-Mars injection burn (the powered Earth flyby) and about 11 minutes to slow down and
+  enter Mars orbit (NF).
+- Jacklyn is a landing platform vessel (Wikipedia, Jacklyn (LPV1): a barge for use as a landing
+  platform ship, towed), not a drone ship.
+- NG-2 made the first successful landing of a New Glenn booster; NG-1's booster was lost (Space.com,
+  Wikipedia New Glenn).
+- "Under $80 million" is the cost of the whole mission, not of the build (Space.com: "The mission
+  costs less than $80 million").

@@ -2,10 +2,10 @@
   "name": "ESCAPADE",
   "vehicle": "New Glenn (NG-2)",
   "payload": "探査機2機（BlueとGold）：各209 kg（乾燥）、535 kg（燃料充填時）",
-  "delta_v": "~3.6 km/s (一般的な火星遷移の概算で、ESCAPADEの公表値ではない)",
+  "delta_v": "未公表。自らの燃焼は、エンジンを使った地球フライバイ（火星への軌道投入）での約9分間の燃焼と、火星周回軌道投入での約11分間の燃焼",
   "type": "火星ツイン周回機 · 運用中",
-  "first": "New Glennの2回目の飛行で打ち上げられた双子の周回機。ブースターは洋上船Jacklynに着陸した",
-  "description": "ESCAPADEはNASAの火星探査機2機、BlueとGoldで、Rocket Labが8000万ドル未満で製造した。主任研究者はカリフォルニア大学バークレー校Space Sciences LaboratoryのRobert Lillisで、ミッションはHeliophysics Divisionにおける2019年のNASA SIMPLExミッションである。各機の質量は乾燥時209 kg、燃料充填時535 kg。2機はNew Glennの2回目の飛行NG-2で、2025年11月13日15:55 EST（20:55 UTC）にCape Canaveral Space Force StationのLaunch Complex 36から打ち上げられた。ブースターGS1「Never Tell Me the Odds」は、打ち上げの約9分後にドローン船Jacklynに着陸した。BlueとGoldは火星へ直行せず、約1年間太陽―地球のL2点の周りを回り、その後エンジンを使った地球フライバイを行った。Blueは2026年11月7日、Goldは11月9日である。火星での軌道投入燃焼は2027年9月7日と9日に、450 kmで約11分間行われ、60時間の捕獲軌道に入る。科学観測は2028年6月に始まる予定。",
+  "first": "New Glennの2回目の飛行で打ち上げられた双子の周回機。この飛行でNew Glennのブースターが初めて着陸に成功した",
+  "description": "ESCAPADEはNASAの火星探査機2機、BlueとGoldで、Rocket Labが製造し、ミッション全体の費用は8000万ドル未満である。主任研究者はカリフォルニア大学バークレー校Space Sciences LaboratoryのRobert Lillisで、ミッションはHeliophysics Divisionにおける2019年のNASA SIMPLExミッションである。各機の質量は乾燥時209 kg、燃料充填時535 kg。2機はNew Glennの2回目の飛行NG-2で、2025年11月13日15:55 EST（20:55 UTC）にCape Canaveral Space Force StationのLaunch Complex 36から打ち上げられた。ブースターGS1「Never Tell Me the Odds」は、打ち上げの約9分後に着陸プラットフォーム船Jacklynに着陸した。BlueとGoldは火星へ直行せず、約1年間太陽―地球のL2点の周りを回り、その後エンジンを使った地球フライバイを行った。Blueは2026年11月7日、Goldは11月9日である。火星での軌道投入燃焼は2027年9月7日と9日に、450 kmで約11分間行われ、60時間の捕獲軌道に入る。科学観測は2028年6月に始まる予定。",
   "events": [
     {
       "met": 0,

@@ -3,8 +3,8 @@
   "siteId": "blue-moon-mk1",
   "body": "moon",
   "landingSite": {
-    "lat": -84.0,
-    "lon": 20.0
+    "lat": -84,
+    "lon": 20
   },
   "entryState": {
     "altitudeM": 2500,
@@ -23,8 +23,19 @@
   "source_tier": "generic",
   "provenance": [
     {
-      "l": "Blue Moon Mk1 lunar lander overview \u2014 Blue Origin",
+      "l": "Blue Moon Mk1 has not flown (manifested late 2026). The record gives only: cargo lander, BE-7, Shackleton connecting ridge. The entry state, mass, propellant, descent rate and the site (-84, 20; not the ridge) are drawn estimates, not sourced figures",
+      "u": "https://www.nasa.gov/event/clps-flight-blue-origins-blue-moon-mark-1/"
+    },
+    {
+      "l": "Blue Moon Mk1 lunar lander overview — Blue Origin",
       "u": "https://www.blueorigin.com/blue-moon"
     }
+  ],
+  "estimatedFields": [
+    "entryState",
+    "entryMassKg",
+    "retroPropellantKg",
+    "landingSite",
+    "params"
   ]
 }

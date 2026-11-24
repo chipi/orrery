@@ -524,3 +524,16 @@ describe('Mars sky crane and hover (Curiosity, Perseverance, Tianwen-1)', () => 
     expectInRange(s.touchdownVelocityMs, 2, 3, 'touchdown (m/s)');
   });
 });
+
+describe('Chandrayaan-3 hovers at 800 m and 150 m, then lands soft', () => {
+  it('two hovers at the right altitudes, touchdown under 2 m/s, about the record 19 min', () => {
+    const s = flight('chandrayaan3').s;
+    const hv = s.events.filter((e) => e.type === 'hover');
+    expect(hv).toHaveLength(2);
+    expectInRange(hv[0].altKm * 1000, 780, 801, 'first hover (m)');
+    expectInRange(hv[1].altKm * 1000, 140, 151, 'second hover (m)');
+    expect(s.touchdownVelocityMs).toBeLessThan(2);
+    const last = s.states[s.states.length - 1].t;
+    expectInRange(last, 1140 * 0.8, 1140 * 1.2, 'descent time (s, ~19 min estimate)');
+  });
+});

@@ -124,8 +124,9 @@ export interface ArchetypeParams {
    *  descent start (Apollo's named gates). Off for landers whose record names none. */
   gateBeats?: boolean;
   /** Lunar powered descent: hovers (Chang'e at 100 m, Chandrayaan-3 at 800 m and 150 m): hold the
-   *  altitude `durS` seconds on the way down. */
-  hovers?: { altM: number; durS: number }[];
+   *  altitude `durS` seconds on the way down. `resumeS` frees the lander to fall that long after the
+   *  hover so it picks up its descent rate (the rate law only slows, never speeds up). */
+  hovers?: { altM: number; durS: number; resumeS?: number }[];
 }
 
 type ArchetypeBuilder = (p: ArchetypeParams) => EDLPhase[];
@@ -155,6 +156,16 @@ const LUNAR_POWERED: ArchetypeBuilder = (p) => {
     terminalVelocityMs: 0,
     events: ['hover'],
   });
+  const resume = (h: { resumeS?: number }): EDLPhase[] =>
+    h.resumeS
+      ? [
+          {
+            kind: 'coast',
+            endTrigger: { type: 'duration_s', value: h.resumeS },
+            flightPathAngleDeg: 90,
+          },
+        ]
+      : [];
   const phases: EDLPhase[] = [
     {
       ...common,
@@ -179,11 +190,11 @@ const LUNAR_POWERED: ArchetypeBuilder = (p) => {
       approach(h.altM + 700, first),
       { ...approach(h.altM, false), descentRateGain: 8 / h.altM },
       hover(h),
+      ...resume(h),
     );
     first = false;
   }
-  // The descent-rate law never speeds up: after a high hover the next leg needs a floor to get going again.
-  const afterHover = first ? {} : { terminalVelocityMs: 8 };
+  const afterHover = first ? {} : { flightPathAngleDeg: 90 };
   phases.push({ ...approach(lowGate, first), ...afterHover });
   const fin = (end: number, gate: boolean): EDLPhase => ({
     ...common,
@@ -193,7 +204,7 @@ const LUNAR_POWERED: ArchetypeBuilder = (p) => {
   });
   let gate = true;
   for (const h of hovers.filter((x) => x.altM <= lowGate)) {
-    phases.push(fin(h.altM, gate), hover(h));
+    phases.push(fin(h.altM, gate), hover(h), ...resume(h));
     gate = false;
   }
   phases.push(fin(0, gate));

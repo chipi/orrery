@@ -24,7 +24,11 @@
     "highGateSpeedMs": 146,
     "approachFpaDeg": 12,
     "lowGateAltM": 150,
-    "brakingRateGain": 0.01
+    "brakingRateGain": 0.01,
+    "hovers": [
+      { "altM": 800, "durS": 10, "resumeS": 5 },
+      { "altM": 150, "durS": 10, "resumeS": 4 }
+    ]
   },
   "source_tier": "flagship",
   "estimatedFields": [
@@ -32,11 +36,12 @@
     "retroPropellantKg",
     "brakingFpaDeg",
     "approachFpaDeg",
-    "brakingMaxThrustN"
+    "brakingMaxThrustN",
+    "params.hovers durations"
   ],
   "provenance": [
     {
-      "l": "Chandrayaan-3 — rough braking from 30 km at 1,683 m/s to 146 m/s, fine braking, hover at 150 m; four 800 N engines; ~19 min total (search summary); lander mass from memory, propellant estimated",
+      "l": "Chandrayaan-3 — rough braking from 30 km at 1,683 m/s to 146 m/s, fine braking, hover at about 800 m, then 150 m; four 800 N engines; ~19 min total (search summary); lander mass from memory, propellant estimated",
       "u": "https://en.wikipedia.org/wiki/Chandrayaan-3"
     },
     {

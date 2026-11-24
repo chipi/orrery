@@ -21,7 +21,8 @@
     "chuteDeployAltM",
     "params.hoverS",
     "retroPropellantKg",
-    "params.descentRateGain"
+    "params.descentRateGain",
+    "afterTouchdown.beats.ramp_deploy"
   ],
   "retroPropellantKg": 320,
   "archetype": "MARS_PARACHUTE_RETRO",
@@ -37,6 +38,13 @@
     "hoverS": 10,
     "descentRateGain": 0.03
   },
+  "afterTouchdown": {
+    "holdS": 28,
+    "beats": [
+      { "type": "ramp_deploy", "afterS": 6, "realAfterS": 600000 },
+      { "type": "rover_egress", "afterS": 18, "realAfterS": 616900 }
+    ]
+  },
   "source_tier": "flagship",
   "provenance": [
     {
@@ -44,11 +52,15 @@
       "u": "https://spaceflightnow.com/2021/05/15/china-lands-its-first-probe-on-mars/"
     },
     {
+      "l": "Zhurong (rover) — landed 14 May 2021; drove down the ramp onto the surface on 22 May 2021, about 7 days later (Wikipedia). The ramp-deploy time is not sourced.",
+      "u": "https://en.wikipedia.org/wiki/Zhurong_(rover)"
+    },
+    {
       "l": "Tianwen-1 — Wikipedia",
       "u": "https://en.wikipedia.org/wiki/Tianwen-1"
     },
     {
-      "l": "Tianwen-1 as researched for pass 2 (docs/wip/2026-11-23-mars-landings-record.md, secondary sources): shell and chute off about 1.5 km; a variable-thrust engine; hover at about 100 m for hazard avoidance (10 s drawn, an estimate); four legs; Zhurong down the ramp 7–8 days later (not drawn)",
+      "l": "Tianwen-1 as researched for pass 2 (docs/wip/2026-11-23-mars-landings-record.md, secondary sources): shell and chute off about 1.5 km; a variable-thrust engine; hover at about 100 m for hazard avoidance (10 s drawn, an estimate); four legs; Zhurong down the ramp 7–8 days later (drawn as the ramp_deploy and rover_egress beats; the ramp-deploy moment is an estimate)",
       "u": "https://www.nasaspaceflight.com/2021/05/china-first-mars-landing-attempt-tianwen-1/"
     }
   ]

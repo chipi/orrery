@@ -828,6 +828,14 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
   const petalsT = metOf('petals_open');
   const legsT = metOf('leg_deploy');
   const arraysT = metOf('arrays_open');
+  const rampT = metOf('ramp_deploy');
+  const egressT = metOf('rover_egress');
+  const RAMP_S = 6;
+  const EGRESS_S = 22;
+  let groundDeploy: { ramps: (f: number) => void; egress: (f: number) => void } | undefined;
+  model.lander.traverse((o) => {
+    if (o.userData.groundDeploy) groundDeploy = o.userData.groundDeploy;
+  });
   const LEG_S = 4;
   const ARRAY_S = 8;
   /** Landers that ended tipped over, by site (rad about the base): SLIM ended nose-down (JAXA). */
@@ -1075,6 +1083,12 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
     if (model.deploy) {
       model.deploy.legs?.(legsT == null ? 1 : smooth01((s.t - legsT) / LEG_S));
       model.deploy.arrays?.(arraysT == null ? 0 : smooth01((s.t - arraysT) / ARRAY_S));
+    }
+
+    // A rover on a ramped platform (Tianwen-1): the ramps swing down, then the rover drives off.
+    if (groundDeploy) {
+      groundDeploy.ramps(rampT == null ? 0 : smooth01((s.t - rampT) / RAMP_S));
+      groundDeploy.egress(egressT == null ? 0 : (s.t - egressT) / EGRESS_S);
     }
 
     // A main chute that stays on the lander when the backshell and pilot leave (Beagle 2): opens

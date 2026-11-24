@@ -122,6 +122,8 @@ export type DescentEventType =
   | 'hover' // the lander holds its altitude to pick a site (Tianwen-1)
   | 'constant_descent' // the engines hold a constant descent rate to touchdown (Viking, from 17 m)
   | 'arrays_open' // the solar arrays open after landing (Phoenix, InSight)
+  | 'ramp_deploy' // the landing platform's ramps unfold (Tianwen-1)
+  | 'rover_egress' // the rover drives down the ramp onto the surface (Tianwen-1)
   | 'eject' // the hatch blows and the cosmonaut ejects in the seat (Vostok)
   | 'seat_sep' // the seat falls away; the cosmonaut descends on a personal parachute (Vostok)
   | 'apex_cover_jettison' // the forward heat shield (apex cover) is jettisoned (Apollo CM)
@@ -150,6 +152,8 @@ export interface AfterTouchdown {
   /** `rollM`: ground distance from first contact to rest; `restS`: the time that took. */
   bounces?: { count: number; firstHeightM: number; rollM: number; restS: number };
   beats?: { type: DescentEventType; afterS: number; realAfterS?: number }[];
+  /** Seconds the clip runs on past the last beat so what it starts plays out. Default 6. */
+  holdS?: number;
   /**
    * Touch-and-go: the craft holds on the surface `afterS`, then backs away on its thrusters,
    * reaching `rateMs` within a second and climbing at it for `durationS`.
@@ -1009,7 +1013,7 @@ function appendAfterTouchdown(
     end = Math.max(end, t + gb.afterS);
   }
   // Hold a few seconds past the last beat so what it starts (petals opening) plays out.
-  if (end > t) states.push({ ...rest, t: end + 6 });
+  if (end > t) states.push({ ...rest, t: end + (tail.holdS ?? 6) });
 }
 
 /**

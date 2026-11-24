@@ -131,6 +131,12 @@ export function buildDescentShots(
     push('close', rest, petals + 8);
     settled = petals + 8;
   }
+  // A rover that drives off its platform (Tianwen-1): close on the ramps unfolding and the egress.
+  const egress = events.find((e) => e.type === 'rover_egress')?.t;
+  if (egress != null && egress >= settled) {
+    push('close', settled, egress + 24);
+    settled = egress + 24;
+  }
   // After touchdown: a slow orbit of the landed craft.
   push('orbit', settled, Infinity);
   const flipT = events.find((e) => e.type === 'landing_flip')?.t;

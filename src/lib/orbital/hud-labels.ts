@@ -57,6 +57,8 @@ const HUD_LABEL: Record<string, () => string> = {
   HOVER: m.hud_hover,
   'CONSTANT DESCENT': m.hud_constant_descent,
   'ARRAYS OPEN': m.hud_arrays_open,
+  'RAMPS OUT': m.hud_ramp_deploy,
+  'ROVER EGRESS': m.hud_rover_egress,
   EJECT: m.hud_eject,
   'SEAT SEP': m.hud_seat_sep,
   'APEX COVER': m.hud_apex_cover,

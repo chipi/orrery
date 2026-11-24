@@ -17,7 +17,7 @@ The operator's order (2026-11-24): finish every batch first, then redo these.
 | Phoenix, InSight | The leg deploy is not readable: the lander sits inside the backshell under the chute |
 | Viking 1 | Plumes faint in the last seconds; the 2.4 m/s constant-velocity phase has no beat |
 | Starship demo, Starship Mars crew | Not done: no flip or landing burn (B3 ran out of its box) |
-| Tianwen-1 | No ramp or rover-egress beat after landing |
+| Tianwen-1 | Ramps and egress beats added 11-24 (merged from p2-tw1). Open: on the ramp (T643) the rover is pitched across the ramp, not along it; the path assumes the ramp runs along z (`platformEgress`), the picture suggests x. Egress real time 616900 s is from memory, unsourced |
 | Curiosity, Perseverance | Phone: the chute is cropped at the top while the capsule hangs below |
 | Chandrayaan-3 | Not done: the hovers at 800 m and 150 m need the rate controller to resume a descent (the untested `hovers` code above low gate is in the registry) |
 | Blue Moon MK1 | Not reached |

@@ -116,7 +116,69 @@ function zhurongOnPlatform(east: Family): THREE.Group {
   rover.position.y = deckTop;
   const g = new THREE.Group();
   g.add(stage, rover);
+  g.userData.groundDeploy = platformEgress(g, stage, rover, ramps, deckTop);
   return g;
+}
+
+/**
+ * The surface choreography of a rover on a ramped platform, each a pure function of its progress
+ * (0 to 1): the ramps swing down about their hinge at the deck's front edge from folded upright,
+ * then the rover rolls along the deck, down the ramp, and a few metres onto the ground.
+ */
+function platformEgress(
+  g: THREE.Group,
+  stage: THREE.Object3D,
+  rover: THREE.Object3D,
+  ramps: THREE.Object3D | undefined,
+  deckTop: number,
+): { ramps: (f: number) => void; egress: (f: number) => void } | undefined {
+  if (!ramps) return undefined;
+  g.updateMatrixWorld(true);
+  const box = new THREE.Box3().setFromObject(ramps);
+  const s = stage.scale.x;
+  const hinge = new THREE.Vector3(0, box.max.y / s, box.min.z / s);
+  const slope = Math.atan2(box.max.y - box.min.y, box.max.z - box.min.z);
+  const pivot = new THREE.Group();
+  pivot.position.copy(hinge);
+  ramps.position.sub(hinge);
+  pivot.add(ramps);
+  stage.add(pivot);
+  const top = new THREE.Vector2(box.min.z, box.max.y);
+  const foot = new THREE.Vector2(box.max.z, box.min.y);
+  // The rover rides on the platform deck, which the ramps' hinge edge marks (not the mast above).
+  deckTop = box.max.y - 0.1 * s;
+  const RUN_OUT_M = 3;
+  const pathLen = [top.x, foot.clone().sub(top).length(), RUN_OUT_M];
+  // z of the deck centre the rover starts from.
+  const z0 = 0;
+  const deckLen = top.x - z0;
+  const total = deckLen + pathLen[1] + RUN_OUT_M;
+  const u = (x: number): number => x * x * (3 - 2 * x);
+  return {
+    ramps: (f) => {
+      pivot.rotation.x = -(Math.PI / 2 + slope) * (1 - u(Math.min(1, Math.max(0, f))));
+    },
+    egress: (f) => {
+      const d = u(Math.min(1, Math.max(0, f))) * total;
+      let z: number;
+      let y: number;
+      let pitch = 0;
+      if (d <= deckLen) {
+        z = z0 + d;
+        y = deckTop;
+      } else if (d <= deckLen + pathLen[1]) {
+        const a = (d - deckLen) / pathLen[1];
+        z = top.x + (foot.x - top.x) * a;
+        y = top.y + (foot.y - top.y) * a;
+        pitch = slope;
+      } else {
+        z = foot.x + (d - deckLen - pathLen[1]);
+        y = foot.y;
+      }
+      rover.position.set(0, y, z);
+      rover.rotation.x = pitch;
+    },
+  };
 }
 
 /** Luna 17 and 21: Lunokhod riding the E-8 landing stage, on its deck between the ramps. */

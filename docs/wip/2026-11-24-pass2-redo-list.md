@@ -25,7 +25,7 @@ The operator's order (2026-11-24): finish every batch first, then redo these.
 | Chandrayaan-2 | Not done: the loss at ~2.1 km (a test pins the published end at 7.4 km) |
 | Beresheet | The real engine cut at 10 km and the late restart are not drawn (the profile starts at 2.5 km) |
 | SLIM | The f0.5 phone frame is black; the engine loss shows only as the plume going out |
-| Galileo probe | Every phone frame is solid white; Jupiter body and limb sphere ruled out, the dust disc, plasma group and vehicle group not yet |
+| Galileo probe | Visible (fixed earlier). Cloud bands: the deck is flat tan at f0.005–f0.02 and murk below; the 5 km ground-detail layer was tried 11-24 and is sub-pixel from 450 km (reverted). Needs a large-scale band layer: a new build, ask first |
 | Vega 1/2 | The balloon deployment is not drawn; no sourced figures in the records |
 | Venera 13, Huygens | Viewed only, no change made |
 | Gemini ×6 | The heat-shield cone stays upright under the tilted capsule at -6 s and splashdown (reads as detached); no pilot chute or R&R section |

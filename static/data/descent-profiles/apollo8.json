@@ -34,6 +34,13 @@
   ],
   "estimatedFields": [
     "parachuteCdA",
-    "terminalCdA"
+    "terminalCdA",
+    "beats.apex_cover_jettison"
+  ],
+  "beats": [
+    {
+      "type": "apex_cover_jettison",
+      "altM": 7500
+    }
   ]
 }

@@ -63,6 +63,7 @@ export const EDL_BEAT_LABEL: Record<DescentEventType, string> = {
   arrays_open: 'ARRAYS OPEN',
   eject: 'EJECT',
   seat_sep: 'SEAT SEP',
+  apex_cover_jettison: 'APEX COVER',
   touchdown: 'TOUCHDOWN',
 };
 
@@ -99,6 +100,7 @@ const TIMELINE_BEATS: DescentEventType[] = [
   'arrays_open',
   'eject',
   'seat_sep',
+  'apex_cover_jettison',
   'record_ends',
 ];
 

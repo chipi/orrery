@@ -525,6 +525,14 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
   const REPO_S = 8;
   const REPO_RAD = Math.PI / 2 - (35 * Math.PI) / 180; // from vertical to 35 deg off horizontal
   const landerHome = model.lander.position.clone();
+  // Apollo command module (apollo7 .. skylab-4): lifting entry at an offset trim, rolled to steer;
+  // the apex cover goes before the drogues.
+  const isApollo = model.lander.userData.capsuleId === 'apollo-cm';
+  const APOLLO_TRIM_RAD = 0.42; // drawn: the trim angle is not in the profile (L/D 0.3 is)
+  const APOLLO_ROLL_RAD = 1.1; // drawn: the bank is flown to the guidance, not sourced
+  const APOLLO_ROLL_PERIOD_S = 22;
+  const apexT = metOf('apex_cover_jettison');
+  const apexHomeY = model.root.getObjectByName('apex-cover')?.position.y ?? 0;
   // Vostok: the entry hatch blows off and the cosmonaut leaves in the seat; later the seat drops
   // away and the cosmonaut hangs from a personal parachute while the empty capsule goes on.
   const ejectT = metOf('eject');
@@ -903,7 +911,32 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
       const fp = Math.min(1, Math.max(0, (s.t - (flipT + FLIP_HOLD_S)) / FLIP_S));
       entryFlip = fp * fp * (3 - 2 * fp); // smoothstep 0→1
     }
+    // The service module is gone before the profile starts: the command module enters
+    // shield-forward at once, flying its trim and rolling to steer.
+    if (isApollo) entryFlip = 1;
     vehicle.rotation.x = Math.PI * (1 - entryFlip); // π (tip down) → 0 (shield down)
+    if (isApollo) {
+      const entering =
+        s.phaseKind === 'ballistic_entry' ? 1 : 1 - smooth01((s.t - (chuteT ?? 0)) / 3);
+      // Lifting entry: offset-CG trim, rolled about the flight line (lift up, then reversed).
+      const roll = APOLLO_ROLL_RAD * Math.sin(s.t / APOLLO_ROLL_PERIOD_S) * entering;
+      vehicle.quaternion
+        .setFromAxisAngle(new THREE.Vector3(0, 1, 0), roll)
+        .multiply(
+          new THREE.Quaternion().setFromEuler(
+            new THREE.Euler(vehicle.rotation.x, 0, APOLLO_TRIM_RAD * entering),
+          ),
+        );
+      plasma.rotation.z = -APOLLO_TRIM_RAD * entering;
+      // The apex cover leaves up and back, tumbling, and is gone after a few seconds.
+      const apex = model.root.getObjectByName('apex-cover');
+      if (apex) {
+        const e = apexT == null ? 0 : Math.max(0, s.t - apexT);
+        apex.visible = e < 6;
+        apex.position.set(e * 3.2, apexHomeY + e * e * 0.6 * vehLen * 0.06 + e * vehLen * 0.12, 0);
+        apex.rotation.set(0, 0, e * 1.6);
+      }
+    }
     if (isGemini) {
       const entering =
         s.phaseKind === 'ballistic_entry' ? 1 : 1 - smooth01((s.t - (chuteT ?? 0)) / 3);

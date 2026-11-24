@@ -122,6 +122,7 @@ export type DescentEventType =
   | 'arrays_open' // the solar arrays open after landing (Phoenix, InSight)
   | 'eject' // the hatch blows and the cosmonaut ejects in the seat (Vostok)
   | 'seat_sep' // the seat falls away; the cosmonaut descends on a personal parachute (Vostok)
+  | 'apex_cover_jettison' // the forward heat shield (apex cover) is jettisoned (Apollo CM)
   | 'touchdown';
 
 /**

@@ -63,6 +63,7 @@ const BEAT_SHOT: Record<string, DescentShotKind> = {
   // Vostok: the hatch blows, the seat goes out, then the cosmonaut parts from it.
   eject: 'orbit',
   seat_sep: 'close',
+  apex_cover_jettison: 'close',
 };
 const FILL: DescentShotKind[] = ['wide', 'orbit', 'under', 'over', 'pushIn', 'pullOut', 'close'];
 /** The lit side: azimuths near this keep the sun behind the camera. */

@@ -1517,6 +1517,19 @@ function buildEarthCapsuleStack(lander: THREE.Group, vehLen: number): DescentMod
     m.root.add(m.airbags);
   }
 
+  // Apollo's apex cover: the forward heat shield over the docking tunnel and the chute
+  // compartment, jettisoned before the drogues (about 0.9 m high on the 3.23 m command module).
+  if (capsuleId === 'apollo-cm') {
+    const H = landerHeight(lander);
+    const cover = new THREE.Mesh(
+      new THREE.ConeGeometry(H * 0.15, H * 0.28, 28),
+      new THREE.MeshStandardMaterial({ color: 0x5b5753, roughness: 0.8, metalness: 0.2 }),
+    );
+    cover.name = 'apex-cover';
+    cover.position.y = capTop - H * 0.1 - vehLen * 0.02;
+    m.root.add(cover);
+  }
+
   lander.position.y = -vehLen * 0.02;
   const botY = new THREE.Box3().setFromObject(lander).min.y;
   // Soyuz drops its heat shield under the main (the profile's heatshield_sep): a shield disc

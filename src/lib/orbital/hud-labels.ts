@@ -57,6 +57,7 @@ const HUD_LABEL: Record<string, () => string> = {
   'ARRAYS OPEN': m.hud_arrays_open,
   EJECT: m.hud_eject,
   'SEAT SEP': m.hud_seat_sep,
+  'APEX COVER': m.hud_apex_cover,
   SAMPLE: m.hud_sample,
   'CHUTE SEP': m.hud_chute_sep,
   'SIGNAL LOST': m.hud_signal_lost,

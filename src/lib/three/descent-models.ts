@@ -1491,12 +1491,54 @@ function buildEarthCapsuleStack(lander: THREE.Group, vehLen: number): DescentMod
   m.parachuteBaseY = 0; // canopies already placed inside the group
   m.root.add(m.parachute);
 
+  // Mercury's landing bag: a pleated skirt between the capsule and its heat shield, which drops
+  // about 1.2 m on it after the main opens. The skirt hangs from the joint; the scene stretches
+  // it to the drop as the shield falls.
+  if (capsuleId === 'mercury' && k) {
+    const rimR = vehLen * 0.42;
+    const folds = 10;
+    const prof: THREE.Vector2[] = [];
+    for (let i = 0; i <= folds * 2; i++) {
+      prof.push(new THREE.Vector2(rimR * (i % 2 ? 0.93 : 1), -(i / (folds * 2))));
+    }
+    const skirt = new THREE.Mesh(
+      new THREE.LatheGeometry(prof, 36),
+      new THREE.MeshStandardMaterial({
+        color: 0xc9c2b2,
+        roughness: 0.85,
+        metalness: 0.05,
+        side: THREE.DoubleSide,
+      }),
+    );
+    m.airbags.add(skirt);
+    m.airbags.position.y = m.heatshieldBaseY;
+    m.airbags.userData.dropScene = MERCURY_SHIELD_DROP_M * k;
+    m.airbags.visible = false;
+    m.root.add(m.airbags);
+  }
+
   lander.position.y = -vehLen * 0.02;
+  const botY = new THREE.Box3().setFromObject(lander).min.y;
+  // Soyuz drops its heat shield under the main (the profile's heatshield_sep): a shield disc
+  // drawn to the descent module's width, for the jettison to show.
+  if (capsuleId === 'soyuz') {
+    m.heatshield = sphereConeHeatshield(landerWidth(lander) * 0.46, p.shield, p.metal);
+    m.heatshieldBaseY = botY;
+    m.heatshield.position.y = botY;
+    m.heatshield.rotation.x = Math.PI;
+    m.root.add(m.heatshield);
+  }
+  // The soft-landing rockets (Voskhod, Soyuz) fire from the base, a metre above the ground.
+  m.retroPlumeAnchor.position.y = botY;
+  m.root.add(m.retroPlumeAnchor);
   // Where the risers meet the nose: the point a capsule that changes its hang pivots about.
   lander.userData.hangPivotY = capTop + lander.position.y;
   m.root.add(lander);
   return m;
 }
+
+/** How far Mercury's heat shield drops on its landing bag (m). */
+const MERCURY_SHIELD_DROP_M = 1.2;
 
 function landerWidth(o: THREE.Object3D): number {
   const v = new THREE.Box3().setFromObject(o).getSize(new THREE.Vector3());

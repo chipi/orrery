@@ -511,6 +511,10 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
   // released at parachute_jettison; parts marked 2 (capsule mains, Huygens' stabiliser) open then.
   const chuteJetT = metOf('parachute_jettison');
   const airbagT = metOf('airbag_deploy');
+  const retroT = metOf('retro_ignition');
+  // Soyuz 1: the main never came out and the reserve fouled the drogue, so both stream up
+  // from the capsule as a thin, unopened rope of canopy.
+  const failedMain = opts.siteId === 'soyuz-1';
   const flipT = metOf('entry_flip');
   // Gemini: the offset centre of gravity trims the capsule off the flight line in entry (the lift
   // the bank steers), and under the main it is hauled from a vertical hang into the two-point
@@ -695,7 +699,7 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
     model.parachute.traverse((o) => {
       const stage = o.userData.chuteStage as number | undefined;
       if (stage == null) return;
-      o.visible = stage === (secondStage ? 2 : 1);
+      o.visible = failedMain && secondStage ? true : stage === (secondStage ? 2 : 1);
       if (o.visible) anyStage = true;
     });
     if (secondStage && !anyStage) model.parachute.visible = false; // released, nothing follows
@@ -705,6 +709,10 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
       const sway = Math.sin(frame * 0.05) * 0.09 * (1 - bp);
       model.parachute.scale.set(0.35 + 0.65 * inflate, 0.5 + 0.5 * inflate, 0.35 + 0.65 * inflate);
       model.parachute.rotation.z = sway + bp * 0.9;
+      if (failedMain && secondStage) {
+        model.parachute.scale.set(0.1, 0.8, 0.1);
+        model.parachute.rotation.z = 0.3 + 0.12 * Math.sin(frame * 0.2);
+      }
     }
     model.backshell.visible = bp < 1;
     // Airbag lander: it slides down the bridle (the backshell and chute climb above it, the ball
@@ -853,14 +861,24 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
     if (airbagT != null && !ball) {
       const inflate = Math.min(1, Math.max(0, (s.t - airbagT) / 1.5));
       model.airbags.visible = s.t >= airbagT;
-      model.airbags.scale.setScalar(0.2 + 0.8 * inflate);
+      const dropScene = model.airbags.userData.dropScene as number | undefined;
+      if (dropScene) {
+        // Mercury's landing bag: the shield drops on a pleated skirt as long as the drop.
+        const e = smooth01(inflate);
+        model.airbags.scale.set(1, Math.max(0.001, e * dropScene), 1);
+        model.heatshield.position.y -= dropScene * e;
+      } else {
+        model.airbags.scale.setScalar(0.2 + 0.8 * inflate);
+      }
     }
 
     // Retro plume: only while braking (powered / skycrane / lunar powered).
     const braking = s.phaseKind === 'powered_retro' || s.phaseKind === 'skycrane';
     // Engine exits known (Viking, the deck landers): a plume at each, cut at contact.
     const cutoff = sitePlumes.length > 0 && touchdownT != null && s.t >= touchdownT;
-    const engineOn = braking && (cutoffT == null || s.t < cutoffT);
+    const softBurn =
+      body === 'earth' && s.phaseKind === 'parachute' && retroT != null && s.t >= retroT;
+    const engineOn = (braking || softBurn) && (cutoffT == null || s.t < cutoffT);
     plume.visible = engineOn && sitePlumes.length === 0;
     for (const c of sitePlumes) c.visible = engineOn && !cutoff;
     if (engineOn) {

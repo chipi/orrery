@@ -18,7 +18,8 @@
     "entryCdA",
     "parachuteCdA",
     "terminalCdA",
-    "terminalHandoffAltM"
+    "terminalHandoffAltM",
+    "beats.airbag_deploy"
   ],
   "archetype": "EARTH_CAPSULE_REENTRY",
   "params": {
@@ -27,10 +28,17 @@
     "parachuteCdA": 24.7,
     "terminalCdA": 225
   },
+  "beats": [
+    {
+      "type": "airbag_deploy",
+      "after": "parachute_jettison",
+      "afterS": 6
+    }
+  ],
   "source_tier": "flagship",
   "provenance": [
     {
-      "l": "liberty-bell-7 — NASA/NSSDCA",
+      "l": "liberty-bell-7 \u2014 NASA/NSSDCA",
       "u": "https://nssdc.gsfc.nasa.gov/nmc/"
     },
     {

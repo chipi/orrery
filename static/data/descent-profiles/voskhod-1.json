@@ -13,7 +13,13 @@
   },
   "entryMassKg": 2460,
   "entryCdA": 5,
-  "estimatedFields": ["flightPathAngleDeg", "entryCdA"],  "archetype": "EARTH_CAPSULE_REENTRY",
+  "estimatedFields": [
+    "flightPathAngleDeg",
+    "entryCdA",
+    "beats.retro_ignition",
+    "beats.engine_cutoff"
+  ],
+  "archetype": "EARTH_CAPSULE_REENTRY",
   "params": {
     "chuteDeployAltM": 7000,
     "terminalHandoffAltM": 3000,
@@ -23,8 +29,18 @@
   "source_tier": "flagship",
   "provenance": [
     {
-      "l": "voskhod-1 — NASA/NSSDCA",
+      "l": "voskhod-1 \u2014 NASA/NSSDCA",
       "u": "https://nssdc.gsfc.nasa.gov/nmc/"
+    }
+  ],
+  "beats": [
+    {
+      "type": "retro_ignition",
+      "altM": 1.5
+    },
+    {
+      "type": "engine_cutoff",
+      "altM": 0.2
     }
   ]
 }

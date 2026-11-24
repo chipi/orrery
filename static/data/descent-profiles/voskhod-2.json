@@ -15,7 +15,9 @@
   "entryCdA": 5,
   "estimatedFields": [
     "flightPathAngleDeg",
-    "entryCdA"
+    "entryCdA",
+    "beats.retro_ignition",
+    "beats.engine_cutoff"
   ],
   "archetype": "EARTH_CAPSULE_REENTRY",
   "params": {
@@ -27,12 +29,22 @@
   "source_tier": "flagship",
   "provenance": [
     {
-      "l": "voskhod-2 — NASA/NSSDCA",
+      "l": "voskhod-2 \u2014 NASA/NSSDCA",
       "u": "https://nssdc.gsfc.nasa.gov/nmc/"
     },
     {
       "l": "Siddiqi, Challenge to Apollo (SP-2000-4408): Voskhod 2's re-entry load reached ten g (service module failed to separate)",
       "u": "https://history.nasa.gov/SP-4408pt1.pdf"
+    }
+  ],
+  "beats": [
+    {
+      "type": "retro_ignition",
+      "altM": 1.5
+    },
+    {
+      "type": "engine_cutoff",
+      "altM": 0.2
     }
   ]
 }

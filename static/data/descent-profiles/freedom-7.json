@@ -17,7 +17,8 @@
     "flightPathAngleDeg",
     "entryCdA",
     "parachuteCdA",
-    "terminalCdA"
+    "terminalCdA",
+    "beats.airbag_deploy"
   ],
   "archetype": "EARTH_CAPSULE_REENTRY",
   "params": {
@@ -26,10 +27,17 @@
     "parachuteCdA": 5.3,
     "terminalCdA": 280
   },
+  "beats": [
+    {
+      "type": "airbag_deploy",
+      "after": "parachute_jettison",
+      "afterS": 6
+    }
+  ],
   "source_tier": "flagship",
   "provenance": [
     {
-      "l": "freedom-7 — NASA/NSSDCA",
+      "l": "freedom-7 \u2014 NASA/NSSDCA",
       "u": "https://nssdc.gsfc.nasa.gov/nmc/"
     },
     {

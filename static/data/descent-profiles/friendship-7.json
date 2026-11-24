@@ -17,7 +17,8 @@
     "flightPathAngleDeg",
     "entryCdA",
     "parachuteCdA",
-    "terminalCdA"
+    "terminalCdA",
+    "beats.airbag_deploy"
   ],
   "archetype": "EARTH_CAPSULE_REENTRY",
   "params": {
@@ -26,6 +27,13 @@
     "parachuteCdA": 3.9,
     "terminalCdA": 294
   },
+  "beats": [
+    {
+      "type": "airbag_deploy",
+      "after": "parachute_jettison",
+      "afterS": 6
+    }
+  ],
   "source_tier": "flagship",
   "provenance": [
     {
@@ -33,7 +41,7 @@
       "u": "https://ntrs.nasa.gov/citations/19620007576"
     },
     {
-      "l": "Mercury-Atlas 6 (Friendship 7) — NASA",
+      "l": "Mercury-Atlas 6 (Friendship 7) \u2014 NASA",
       "u": "https://www.nasa.gov/mission/mercury-atlas-6-friendship-7/"
     },
     {

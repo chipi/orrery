@@ -178,3 +178,42 @@ describe('returnCamera', () => {
     expect(tall).toBeGreaterThan(wide);
   });
 });
+
+describe('no empty frames: the craft of every beat are in the frustum', () => {
+  const project = (aspect: number, t: number) => {
+    const pose = returnPose(t, profile);
+    const cam = returnCamera(t, aspect, pose);
+    const c = new THREE.PerspectiveCamera(cam.fov, aspect, 0.05, 1e7);
+    c.position.copy(cam.pos);
+    c.lookAt(cam.look);
+    c.updateMatrixWorld(true);
+    c.updateProjectionMatrix();
+    const inside = (p: THREE.Vector3) => {
+      const n = p.clone().project(c);
+      return Math.abs(n.x) <= 1 && Math.abs(n.y) <= 1 && n.z > -1 && n.z < 1;
+    };
+    return { pose, inside };
+  };
+  const samples = BEATS.flatMap((b, i) => {
+    const end = i + 1 < BEATS.length ? BEATS[i + 1].t : RT.end;
+    return [b.t + 0.05, (b.t + end) / 2];
+  });
+  for (const aspect of [1.6, 390 / 844]) {
+    it(`aspect ${aspect.toFixed(2)}`, () => {
+      const bad: string[] = [];
+      for (const t of samples) {
+        const { pose, inside } = project(aspect, t);
+        const close = pose.shot === 'dock_close' || pose.shot === 'dock_pull';
+        // the close-ups frame the docking anchors, not the whole craft
+        const lm = close ? DEFAULT_RIG.drogue : new THREE.Vector3(0, 0, 0);
+        const tei = pose.beat === 'tei_coast' || pose.beat === 'tei_burn' || pose.beat === 'fade';
+        if (!tei && !inside(lm)) bad.push(`${t} LM ${pose.beat}`);
+        const pullStart = pose.shot === 'dock_pull' && t < RT.pullBack + 0.5;
+        if (pose.csmVisible && pose.shot !== 'dock_close' && !pullStart) {
+          if (!inside(csmCentreFromAnchor(pose, DEFAULT_RIG))) bad.push(`${t} CSM ${pose.beat}`);
+        }
+      }
+      expect(bad).toEqual([]);
+    });
+  }
+});

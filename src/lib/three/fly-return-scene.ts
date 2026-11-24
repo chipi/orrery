@@ -239,16 +239,16 @@ function rcsFlags(t: number, n: number, density: number, seed: number): boolean[
 
 /** ESTIMATE: ranges of the rendezvous beats (m, not to scale), log-interpolated. */
 const RANGE_KNOTS: [number, number][] = [
-  [RT.csi, 230],
-  [RT.cdh, 165],
-  [RT.tpi, 120],
-  [RT.terminal, 85],
-  [RT.dockWide, 50],
-  [RT.approach, 50],
+  [RT.csi, 90],
+  [RT.cdh, 70],
+  [RT.tpi, 55],
+  [RT.terminal, 42],
+  [RT.dockWide, 30],
+  [RT.approach, 24],
   [RT.closeUp, 6],
 ];
 /** ESTIMATE: the direction to the CSM at the start of the rendezvous (unit, from the LM). */
-const DIR0 = new THREE.Vector3(-0.62, 0.7, 0.35).normalize();
+const DIR0 = new THREE.Vector3(0.93, 0.1, 0.35).normalize();
 
 function rangeAt(t: number): number {
   if (t <= RANGE_KNOTS[0][0]) return RANGE_KNOTS[0][1];
@@ -321,7 +321,8 @@ export function returnPose(t: number, p: ReturnProfile): ReturnPose {
   if (csmVisible) {
     if (t < RT.closeUp) {
       const r = rangeAt(t);
-      const k = smooth((t - RT.csi) / (RT.closeUp - RT.csi)) ** 1.4;
+      // Mostly along-track until the dock-wide shot, then it swings onto the radial line.
+      const k = smooth((t - RT.dockWide) / (RT.closeUp - RT.dockWide));
       const dir = DIR0.clone()
         .lerp(new THREE.Vector3(0, 1, 0), k)
         .normalize();
@@ -419,6 +420,11 @@ export interface ReturnCamera {
 }
 
 const V = (x: number, y: number, z: number) => new THREE.Vector3(x, y, z);
+/** Half angles (rad) of the horizontal and vertical field of view. */
+export function halfFov(fovDeg: number, aspect: number): { h: number; v: number } {
+  const v = (fovDeg * Math.PI) / 360;
+  return { v, h: Math.atan(Math.tan(v) * aspect) };
+}
 /** A phone's tall frame backs the camera off to keep the craft in shot. */
 const aspectK = (aspect: number) => (aspect < 1 ? 1 + 0.7 * (1 / aspect - 1) : 1);
 
@@ -434,13 +440,14 @@ export function returnCamera(
   const drogue = rig.drogue.clone();
   switch (pose.shot) {
     case 'ground': {
-      // From the surface, fixed to the ground, rising and backing off with the stage so the
-      // descent stage left standing and the climbing stage share the frame.
+      // From the surface, following the stage up so it stays large; the look point leaves the
+      // descent stage over the first seconds, which stays in frame while it is near.
       const dr = descentRel(pose);
       const up = pose.altM - rig.stageY0;
-      const cam = dr.clone().add(V((14 + 0.5 * up) * k, 2.4 + 0.45 * up, (24 + 1.25 * up) * k));
-      const look = V(0, 0, 0).lerp(dr.clone().add(V(0, 1.5, 0)), 0.5);
-      return { pos: cam, look, fov: 38 };
+      const w = 0.5 * (1 - smooth((t - RT.ignition) / 8));
+      const look = V(0, 0, 0).lerp(dr.clone().add(V(0, 1.5, 0)), w);
+      const D = (30 + 0.3 * up) * k;
+      return { pos: look.clone().add(V(0.42 * D, 0.1 * D, 0.9 * D)), look, fov: 38 };
     }
     case 'chase': {
       const s = smooth((t - RT.pitchOver) / (RT.insertion - RT.pitchOver));
@@ -453,26 +460,31 @@ export function returnCamera(
     case 'orbit_wide':
       return { pos: V(-55 * k, 22, 100 * k), look: V(0, -6, 0), fov: 44 };
     case 'rendezvous': {
-      const mid = V(...pose.csmRel)
-        .add(drogue)
-        .multiplyScalar(0.5);
-      const r = Math.hypot(...pose.csmRel);
-      // Wide enough for both craft, a little above them so the Moon's limb sits in the lower frame.
-      const d = (2.6 * r + 30) * k;
-      return { pos: mid.clone().add(V(0.35 * d, 0.09 * d, 0.93 * d)), look: mid, fov: 24 };
+      // From behind the LM toward the CSM: the LM large in the foreground, the CSM beyond it
+      // growing as it closes; aimed a little down so the Moon's limb sits in the lower frame.
+      const csm = V(...pose.csmRel);
+      const u = csm.clone().normalize();
+      const { h, v } = halfFov(24 + 12, aspect);
+      const c = 15 * k;
+      const side = new THREE.Vector3().crossVectors(u, V(0, 1, 0)).normalize();
+      const pos = u
+        .clone()
+        .multiplyScalar(-c)
+        .addScaledVector(side, c * Math.tan(h * 0.45))
+        .add(V(0, c * Math.tan(v * 0.25), 0));
+      const aim = u.clone().applyAxisAngle(side, -0.14).normalize();
+      return { pos, look: pos.clone().addScaledVector(aim, 100), fov: 36 };
     }
-    case 'dock_wide': {
-      const mid = tip.clone().add(drogue).multiplyScalar(0.5);
-      const s = smooth((t - RT.dockWide) / (RT.approach - RT.dockWide));
-      const d = lerp(95, 62, s) * k;
-      return { pos: mid.clone().add(V(0.5 * d, 0.08 * d, 0.86 * d)), look: mid, fov: 26 };
-    }
+    case 'dock_wide':
     case 'dock_approach': {
-      const gap = tip.y - drogue.y;
-      const g = Math.min(gap, 30);
-      const mid = drogue.clone().add(V(0, g * 0.5, 0));
-      const d = (2.4 * g + 9) * k;
-      return { pos: mid.clone().add(V(0.5 * d, 0.1 * d, 0.86 * d)), look: mid, fov: 26 };
+      // A side two-shot framed by angle on both craft, a little above so the limb is below.
+      const a0 = drogue;
+      const b0 = V(0, Math.max(tip.y, drogue.y), 0).add(V(tip.x, 0, tip.z));
+      const mid = a0.clone().add(b0).multiplyScalar(0.5);
+      const sep = a0.distanceTo(b0);
+      const { h, v } = halfFov(40, aspect);
+      const D = ((sep / 2 + 7) / Math.tan(Math.min(h, v)) + sep / 2) * 1.05;
+      return { pos: mid.clone().add(V(0.45 * D, 0.1 * D, 0.89 * D)), look: mid, fov: 40 };
     }
     case 'dock_close': {
       // The probe tip against the drogue: from the side and above, so the LM roof is the backdrop;
@@ -535,20 +547,38 @@ export interface FlyReturn {
   dispose: () => void;
 }
 
-/** A flame: an additive cone with a hotter core, apex at the origin, opening along +y. */
-function exhaust(r: number, len: number, hot = 0xfff0c8, cool = 0xff9a4a): THREE.Group {
+/** A flame: additive cones with a hotter core, apex at the origin, opening along +y.
+ *  `opacity` scales both; the materials are kept in userData for the per-frame flash. */
+function exhaust(
+  r: number,
+  len: number,
+  hot = 0xfff0c8,
+  cool = 0xff9a4a,
+  opacity = 1,
+): THREE.Group {
   const g = new THREE.Group();
+  const mats: [THREE.MeshBasicMaterial, number][] = [];
   for (const [rr, ll, c, o] of [
-    [r, len, cool, 0.5],
-    [r * 0.45, len * 0.55, hot, 0.85],
+    [r, len, cool, 0.5 * opacity],
+    [r * 0.45, len * 0.55, hot, 0.85 * opacity],
   ] as const) {
     const cone = plumeCone(rr, ll, c, o);
     cone.rotation.x = Math.PI; // apex to the nozzle
     cone.position.y = ll / 2;
     g.add(cone);
+    mats.push([cone.material as THREE.MeshBasicMaterial, o]);
   }
+  g.userData.mats = mats;
   g.visible = false;
   return g;
+}
+
+/** A hypergolic engine in vacuum: a short, faint, pale glow (Aerozine 50 / N2O4 has almost no
+ *  visible plume), brighter for the first moments after ignition. */
+function setGlow(g: THREE.Group, flash: number): void {
+  for (const [m, base] of g.userData.mats as [THREE.MeshBasicMaterial, number][]) {
+    m.opacity = Math.min(1, base * (1 + 5 * flash));
+  }
 }
 
 export function createFlyReturn(
@@ -618,7 +648,12 @@ export function createFlyReturn(
   capGeo.translate(0, -MOON_R_M, 0);
   const cap = new THREE.Mesh(capGeo, capMat);
   cap.position.y = MOON_R_M;
-  moon.add(cap);
+  // Above 3 km the same cap with 8x coarser detail tiles, so craters still read from orbit.
+  const capFarMat = capMat.clone();
+  if (opts.groundTexture && opts.applyGround) opts.applyGround(capFarMat, opts.groundTexture, 8000);
+  const capFar = new THREE.Mesh(capGeo, capFarMat);
+  capFar.position.y = MOON_R_M;
+  moon.add(cap, capFar);
   scene.add(moon);
 
   // The LM: the descent stage stays where it landed; the ascent stage becomes the anchor.
@@ -656,9 +691,9 @@ export function createFlyReturn(
   rig.probeLen = tipY - probeBaseY;
 
   // Flames: the ascent engine and the SPS on their exit anchors (+y along the exhaust).
-  const ascentFlame = exhaust(0.42, 9);
+  const ascentFlame = exhaust(0.35, 2.6, 0xffffff, 0xc8d4ff, 0.22);
   asc.getObjectByName('ascent-engine-exit')!.add(ascentFlame);
-  const spsFlame = exhaust(1.25, 17);
+  const spsFlame = exhaust(1.1, 5.5, 0xffffff, 0xc8d4ff, 0.22);
   csm.getObjectByName('engine-exit')!.add(spsFlame);
   // RCS puffs: cold white, at the CSM's named nozzles and the LM's four quads.
   const puff = (r: number, len: number) => {
@@ -695,7 +730,8 @@ export function createFlyReturn(
       const alt = pose.altM;
       moon.position.set(0, -(MOON_R_M + alt), 0);
       moon.rotation.z = pose.theta;
-      cap.visible = alt < CAP_ALT_M;
+      cap.visible = alt < 3000;
+      capFar.visible = alt >= 3000 && alt < CAP_ALT_M;
       sphere.visible = alt >= CAP_ALT_M;
       lmRoot.position.copy(descentRel(pose));
       lmRoot.visible = alt < 8000;
@@ -706,7 +742,8 @@ export function createFlyReturn(
       // The ascent engine fires over the descent stage: the flame is only as long as the clear
       // height at first, then the full length.
       const clear = Math.min(1, (alt - rig.stageY0 + 1.2) / 9);
-      ascentFlame.scale.set(1, flick * Math.max(0.12, clear), 1);
+      ascentFlame.scale.set(1, flick * Math.max(0.3, clear), 1);
+      setGlow(ascentFlame, Math.max(0, 1 - (t - RT.ignition) / 0.6));
       lmPuffs.forEach((p, i) => {
         p.visible = pose.lmRcs > 0 && ((Math.floor(t / 0.2) + i) & 1) === 0;
         if (p.visible) lmQuads[i].getWorldPosition(p.position);
@@ -725,6 +762,7 @@ export function createFlyReturn(
       csmPuffs.forEach((p, i) => (p.visible = pose.csmRcs[i]));
       spsFlame.visible = pose.spsBurn;
       spsFlame.scale.set(1, flick, 1);
+      setGlow(spsFlame, Math.max(0, 1 - (t - RT.teiBurn) / 0.6));
 
       const cam = returnCamera(t, aspect, pose, rig);
       camera.position.copy(cam.pos);

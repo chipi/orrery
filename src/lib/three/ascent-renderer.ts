@@ -37,6 +37,8 @@ export interface InsetView {
   scene: THREE.Scene;
   camera: THREE.Camera;
   rect: { x: number; y: number; w: number; h: number };
+  /** The view fills the frame: the composed main scene is not drawn under it. */
+  full?: boolean;
 }
 
 /**
@@ -94,7 +96,7 @@ export function createAscentRenderer(
       composer.setSize(cw, ch);
     },
     render: (inset) => {
-      composer.render();
+      if (!inset?.full) composer.render();
       if (!inset || inset.rect.w < 2 || inset.rect.h < 2) return;
       // Stainless boosters are full metal: without an environment they render black. The inset
       // is a small viewport, so it gets the hero IBL whatever the main scene's tier.

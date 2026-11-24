@@ -113,7 +113,7 @@ function hingeLegs(part: THREE.Object3D): { pivot: THREE.Group; axis: THREE.Vect
 }
 
 /** A landing-burn flame for a body of radius `r` and length `len` (model units). */
-function landingPlume(r: number, len: number): THREE.Group {
+export function landingPlume(r: number, len: number): THREE.Group {
   const g = new THREE.Group();
   const outer = plumeCone(r * 2.6, len * 0.5, 0xff8a3d, 0.5);
   const inner = plumeCone(r * 1.3, len * 0.3, 0xffd27a, 0.8);
@@ -243,7 +243,7 @@ function boosterPart(launcherId: string, boosterCount: number, part: Landing['pa
 
 /** Sky colour and light strength per the launch scene's light (landing is minutes later, at or
  *  near the same site, so the inset takes the launch's light). */
-const SKY: Record<LightId, { sky: number; hemi: number; sun: number }> = {
+export const SKY: Record<LightId, { sky: number; hemi: number; sun: number }> = {
   night: { sky: 0x0b1220, hemi: 0.9, sun: 0.5 },
   dusk: { sky: 0x3a3f5c, hemi: 1.2, sun: 0.9 },
   golden: { sky: 0x8fa3c2, hemi: 1.5, sun: 1.4 },

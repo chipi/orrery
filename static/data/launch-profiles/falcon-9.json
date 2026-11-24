@@ -23,6 +23,7 @@
         "outcome": "landed",
         "site": "droneship",
         "siteNames": ["Just Read the Instructions"],
+        "entryBurnS": 450,
         "landingBurnS": 544,
         "touchdownS": 571,
         "timeClass": "sourced"

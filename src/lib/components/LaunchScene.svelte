@@ -27,6 +27,12 @@
     insetWindow,
     type LandingInset,
   } from '$lib/three/landing-inset';
+  import {
+    createBoosterReturn,
+    returnWindow,
+    type BoosterReturn,
+    type BoosterReturnLanding,
+  } from '$lib/three/booster-return-scene';
   import { resolveQualitySync } from '$lib/quality/quality-tier';
   import { resolveLaunchGround } from '$lib/three/launch-ground';
   import LaunchTelemetry from '$lib/components/LaunchTelemetry.svelte';
@@ -256,6 +262,17 @@
         ].join(' · ')
       : '',
   );
+  /** A drone-ship landing with a sourced entry burn plays full frame (the booster return scene)
+   *  instead of the inset. */
+  const returnLanding = $derived<BoosterReturnLanding | null>(
+    insetLanding?.site === 'droneship' &&
+      insetLanding.timeClass === 'sourced' &&
+      insetLanding.entryBurnS != null
+      ? { ...insetLanding, entryBurnS: insetLanding.entryBurnS }
+      : null,
+  );
+  let returnScene: BoosterReturn | undefined;
+  let returnOn = $state(false);
   let insetEl: HTMLDivElement | undefined = $state();
   let insetOn = $state(false);
   let inset: LandingInset | undefined;
@@ -288,6 +305,21 @@
   /** The inset for this frame: posed at mission time, drawn into its frame's box. Built ~20 s
    *  before it opens (a flight that never gets there never pays for it), in the launch's light. */
   function insetView(): InsetView | null {
+    if (returnLanding) {
+      if (!returnScene && t >= returnWindow(returnLanding)[0] - 20)
+        returnScene = createBoosterReturn(returnLanding, director?.plan.conditions.light);
+      const w = container.clientWidth;
+      const h = container.clientHeight;
+      const on = !!returnScene && returnScene.update(t, w / h);
+      if (on !== returnOn) returnOn = on;
+      if (!on) return null;
+      return {
+        scene: returnScene!.scene,
+        camera: returnScene!.camera,
+        rect: { x: 0, y: 0, w, h },
+        full: true,
+      };
+    }
     if (!inset && insetLanding && t >= insetWindow(insetLanding)[0] - 20)
       inset = createLandingInset(
         insetLauncherId,
@@ -661,6 +693,7 @@
     loop?.cleanup();
     sceneObj?.dispose();
     inset?.dispose();
+    returnScene?.dispose();
     ar?.dispose();
   });
 </script>
@@ -684,7 +717,16 @@
   <!-- Booster-landing inset (0.9.11 F2): the WebGL renderer draws the landing into this box at
        the flight's real landing time; the box is the frame and the caption. Scene content, so it
        stays when the HUD is hidden. -->
-  {#if insetLanding}
+  {#if returnLanding}
+    <div
+      class="return-cap"
+      class:on={returnOn}
+      data-testid="booster-return-cap"
+      aria-hidden={!returnOn}
+    >
+      {insetCaption}
+    </div>
+  {:else if insetLanding}
     <div
       class="landing-inset"
       class:on={insetOn}
@@ -1213,6 +1255,24 @@
     pointer-events: none;
     opacity: 0;
     transition: opacity 0.4s ease;
+  }
+  .return-cap {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: calc(96px + env(safe-area-inset-bottom, 0px));
+    text-align: center;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    font-family: var(--font-mono);
+    font-size: var(--size-label);
+    letter-spacing: 0.12em;
+    color: var(--color-text);
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.8);
+  }
+  .return-cap.on {
+    opacity: 1;
   }
   .landing-inset.on {
     opacity: 1;

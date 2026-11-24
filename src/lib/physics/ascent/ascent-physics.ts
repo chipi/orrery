@@ -155,6 +155,8 @@ export interface PartRecovery {
   siteNames?: string[];
   /** Touchdown (or the catch), mission seconds. */
   touchdownS?: number;
+  /** Entry-burn start (the first re-entry burn), mission seconds; absent = not known. */
+  entryBurnS?: number;
   /** Landing-burn start; absent = `LANDING_BURN_DEFAULT_S` before touchdown. */
   landingBurnS?: number;
   /** How the time is known: this flight's timeline, "about N minutes", or a sibling flight's. */

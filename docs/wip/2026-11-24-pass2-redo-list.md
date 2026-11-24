@@ -17,7 +17,7 @@ The operator's order (2026-11-24): finish every batch first, then redo these.
 | Phoenix, InSight | The leg deploy is not readable: the lander sits inside the backshell under the chute |
 | Viking 1 | Plumes faint in the last seconds; the 2.4 m/s constant-velocity phase has no beat |
 | Starship demo, Starship Mars crew | Not done: no flip or landing burn (B3 ran out of its box) |
-| Tianwen-1 | Ramps and egress beats added 11-24 (merged from p2-tw1). Open: on the ramp (T643) the rover is pitched across the ramp, not along it; the path assumes the ramp runs along z (`platformEgress`), the picture suggests x. Egress real time 616900 s is from memory, unsourced |
+| Tianwen-1 | Ramps and egress beats added 11-24 (merged from p2-tw1). Measured 11-24: the rover path matches the ramp (along z, 40° slope from a 3.38 m deck); the odd T643 frame is the 40° ramp from the estimated 1.7× platform scale. A real deck height would fix it; not sourced. Egress real time 616900 s is from memory, unsourced |
 | Curiosity, Perseverance | Phone: the chute is cropped at the top while the capsule hangs below |
 | Chandrayaan-3 | Not done: the hovers at 800 m and 150 m need the rate controller to resume a descent (the untested `hovers` code above low gate is in the registry) |
 | Blue Moon MK1 | Not reached |
@@ -25,7 +25,7 @@ The operator's order (2026-11-24): finish every batch first, then redo these.
 | Chandrayaan-2 | Not done: the loss at ~2.1 km (a test pins the published end at 7.4 km) |
 | Beresheet | The real engine cut at 10 km and the late restart are not drawn (the profile starts at 2.5 km) |
 | SLIM | The f0.5 phone frame is black; the engine loss shows only as the plume going out |
-| Galileo probe | Visible (fixed earlier). Cloud bands: the deck is flat tan at f0.005–f0.02 and murk below; the 5 km ground-detail layer was tried 11-24 and is sub-pixel from 450 km (reverted). Needs a large-scale band layer: a new build, ask first |
+| Galileo probe | 11-24: cloud-deck detail at 500 km–0.5 km periods (Jupiter-only scale): faint streaks on the deck at f0.005–f0.02. Subtle. True bands are wider than the horizon from 450 km, so none are drawn |
 | Vega 1/2 | The balloon deployment is not drawn; no sourced figures in the records |
 | Venera 13, Huygens | Viewed only, no change made |
 | Gemini ×6 | The heat-shield cone stays upright under the tilted capsule at -6 s and splashdown (reads as detached); no pilot chute or R&R section |
@@ -48,5 +48,5 @@ The operator's order (2026-11-24): finish every batch first, then redo these.
 | Soyuz-11, Shenzhou-1, Voskhod-1, Apollo 8 (parked) | Two fix rounds did not change the -20/-6 s canopy frames or Apollo 8's riser-point frame; cause unknown (not the capsule/opening flag path). Next step: log the active shot kind and flags at those times. Parked to avoid a rabbit hole; ask the operator before a third round |
 | Gemini heat shield (parked) | Two rounds failed: the white cone stays upright under the tilted capsule; it is probably not `model.heatshield` (forcing that part's pose changed nothing; that edit is reverted). Next step: identify the mesh by name at runtime. Ask the operator before a third round |
 | Chandrayaan-2 | Loses contact at 2.1 km and hits at 175 m/s, but the last frame shows Vikram landed intact, firing; a crash needs an impact state (tumble/debris), like SLIM's tip |
-| Mars body map | Large blurry dark blotches from altitude come from the 2k body map, not the detail layer |
+| Mars body map | Tried 11-24: 4k map shows the same dark patches, stronger; they are true albedo features at ~5 km/px from 100 km. Kept 2k (no 2.5 MB cost). Closed unless a sharper regional map is wanted |
 | Beagle 2 | Swing done 11-24: scrub-pure, lander and canopy swing; at true scale the 1 m lander is a dot under the canopy. Folded-panel struts not checked |

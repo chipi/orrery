@@ -8,7 +8,7 @@ import * as THREE from 'three';
  * single instanced scatter of rocks round the touchdown point. Scene units are km.
  */
 
-export type GroundBody = 'moon' | 'mars' | 'venus' | 'titan' | 'earth';
+export type GroundBody = 'moon' | 'mars' | 'venus' | 'titan' | 'earth' | 'jupiter';
 
 interface GroundLook {
   craters: number;
@@ -21,6 +21,8 @@ interface GroundLook {
   rockColor: number;
   /** Earth: oceans carry no detail; mask by how blue the map is. */
   waterMask: boolean;
+  /** Multiplies the layer periods: Jupiter's cloud deck is read from hundreds of km up. */
+  periodScale?: number;
 }
 
 const LOOK: Record<GroundBody, GroundLook> = {
@@ -68,6 +70,17 @@ const LOOK: Record<GroundBody, GroundLook> = {
     rocks: 0,
     rockColor: 0x6a5a48,
     waterMask: true,
+  },
+  // The cloud deck: no relief to speak of, streaks drawn out along the zonal wind.
+  jupiter: {
+    craters: 0,
+    relief: 0.3,
+    patch: [-0.4, -0.35, -0.2],
+    ripples: 1,
+    rocks: 0,
+    rockColor: 0,
+    waterMask: false,
+    periodScale: 100,
   },
 };
 
@@ -220,7 +233,7 @@ uniform vec3 uPatch;
 uniform float uRelief;
 uniform float uRipples;
 uniform float uWater;
-const float PER[4] = float[4](${PERIODS.map((p) => p.toFixed(4)).join(', ')});`,
+const float PER[4] = float[4](${PERIODS.map((p) => (p * (look.periodScale ?? 1)).toFixed(4)).join(', ')});`,
       )
       .replace(
         '#include <map_fragment>',

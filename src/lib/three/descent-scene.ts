@@ -816,48 +816,6 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
   const SETTLE_TILT_RAD = 0.6;
   const landerH = new THREE.Box3().setFromObject(model.lander).getSize(new THREE.Vector3()).y;
   const landerHomeQ = model.lander.quaternion.clone();
-  // Vega: the balloon probe leaves the lander, hangs under a small parachute, then unfolds into a
-  // 3.4 m shell (lander 2.4 m) with the gondola on a tether, drops ballast and drifts off.
-  const balDetachT = metOf('balloon_detach');
-  const balInflateT = metOf('balloon_inflate');
-  const ballastT = metOf('ballast_drop');
-  const balloon = new THREE.Group();
-  const balShell = new THREE.Mesh(
-    new THREE.SphereGeometry(1, 32, 20),
-    new THREE.MeshStandardMaterial({ color: 0xf2f2ee, roughness: 0.55, metalness: 0.05 }),
-  );
-  const balPack = new THREE.Mesh(
-    new THREE.BoxGeometry(1, 0.7, 1),
-    new THREE.MeshStandardMaterial({ color: 0xb8b8b0, roughness: 0.6, metalness: 0.3 }),
-  );
-  const balGondola = new THREE.Mesh(
-    new THREE.SphereGeometry(1, 16, 12),
-    new THREE.MeshStandardMaterial({ color: 0xc9a227, roughness: 0.5, metalness: 0.4 }),
-  );
-  const balTether = new THREE.Mesh(
-    new THREE.CylinderGeometry(1, 1, 1, 6),
-    new THREE.MeshBasicMaterial({ color: 0xdddddd }),
-  );
-  const balChute = new THREE.Mesh(
-    new THREE.ConeGeometry(1, 0.5, 20, 1, true),
-    new THREE.MeshStandardMaterial({
-      color: 0xffffff,
-      roughness: 0.8,
-      side: THREE.DoubleSide,
-    }),
-  );
-  const balBallast = new THREE.Mesh(
-    new THREE.SphereGeometry(1, 10, 8),
-    new THREE.MeshStandardMaterial({ color: 0x555555, roughness: 0.8 }),
-  );
-  balloon.add(balShell, balPack, balGondola, balTether, balChute, balBallast);
-  balloon.visible = false;
-  if (balDetachT != null) model.root.add(balloon);
-  const balU = Math.max(
-    ...new THREE.Box3().setFromObject(model.lander).getSize(new THREE.Vector3()).toArray(),
-  );
-  const BAL_R = (balU * 3.4) / 2.4 / 2;
-  const BAL_FILL_S = 3;
   const EJECT_OUT_M = 9; // drawn, in capsule metres: the seat clears the sphere
   const EJECT_S = 2.5;
   const SEAT_FALL = 1.2; // drawn: the seat drops away (m/s^2 in the capsule frame)
@@ -1365,43 +1323,6 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
       retroPack.quaternion
         .copy(packQ)
         .multiply(new THREE.Quaternion().setFromEuler(new THREE.Euler(e * 0.7, 0, e * 0.4)));
-    }
-    if (balDetachT != null) {
-      const e = s.t - balDetachT;
-      balloon.visible = e >= 0;
-      if (e >= 0) {
-        const U = balU;
-        const fill = balInflateT == null ? 0 : smooth01((s.t - balInflateT) / BAL_FILL_S);
-        const eB = ballastT == null ? -1 : s.t - ballastT;
-        // Relative to the falling lander: it peels off to the side, hangs on its small chute
-        // (rising relative to the lander), and after the ballast goes it climbs and drifts away.
-        const bx = U * (1.4 * smooth01(e / 6) + (eB > 0 ? 0.45 * eB : 0));
-        const by = U * (0.4 + 3 * (1 - Math.exp(-e / 14)) + (eB > 0 ? 0.9 * eB : 0));
-        const bz = U * 0.5 * smooth01(e / 6);
-        balloon.position.set(landerHome.x + bx, landerHome.y + by, landerHome.z + bz);
-        const tether = 0.9 * U;
-        const gR = 0.1 * U;
-        const open = fill > 0;
-        balPack.visible = !open;
-        balPack.scale.set(0.3 * U, 0.3 * U, 0.3 * U);
-        balChute.visible = !open || fill < 1;
-        balChute.scale.set(0.5 * U * (1 - fill), 0.5 * U * (1 - fill), 0.5 * U * (1 - fill));
-        balChute.position.set(0, 0.55 * U, 0);
-        balShell.visible = open;
-        const r = BAL_R * Math.max(fill, 0.001);
-        balShell.scale.setScalar(r);
-        balShell.position.set(0, tether * fill + r, 0);
-        balGondola.visible = open;
-        balGondola.scale.setScalar(gR);
-        balGondola.position.set(0, 0, 0);
-        balTether.visible = open;
-        balTether.scale.set(0.012 * U, tether * fill, 0.012 * U);
-        balTether.position.set(0, (tether * fill) / 2, 0);
-        // The ballast falls away from the gondola and out of sight.
-        balBallast.visible = eB >= 0 && eB < 6;
-        balBallast.scale.setScalar(0.07 * U);
-        balBallast.position.set(0, -U * 0.5 * Math.max(0, eB) ** 2 - 0.1 * U, 0);
-      }
     }
     if (sideHatch && sideHatchHome && sideHatchQ && hatchT != null) {
       const e = Math.max(0, s.t - hatchT);

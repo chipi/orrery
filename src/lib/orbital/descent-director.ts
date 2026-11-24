@@ -17,6 +17,8 @@ export type DescentShotKind =
   | 'over' // from above, the surface beneath
   | 'pushIn' // zoom from wide to close
   | 'pullOut' // zoom from close to wide
+  | 'belly' // Starship's belly-flop, side-on and close so the flaps and RCS puffs read
+  | 'flipOrbit' // a close orbit through Starship's landing flip
   | 'close' // tight on the hardware
   | 'ground'; // a tracking telephoto from the surface (the last seconds, touchdown)
 
@@ -124,7 +126,22 @@ export function buildDescentShots(
   }
   // After touchdown: a slow orbit of the landed craft.
   push('orbit', settled, Infinity);
-  return shots;
+  const flipT = events.find((e) => e.type === 'landing_flip')?.t;
+  return flipT != null && flipT > 4 ? starshipShots(shots, flipT) : shots;
+}
+
+/** Starship: one close side-on shot for the belly-flop, a close orbit through the flip, then the
+ *  rest of the list. */
+function starshipShots(shots: DescentShot[], flipT: number): DescentShot[] {
+  const FLIP_S = 9;
+  const rest = shots
+    .filter((s) => s.t1 > flipT + FLIP_S)
+    .map((s) => ({ ...s, t0: Math.max(s.t0, flipT + FLIP_S) }));
+  return [
+    { kind: 'belly', t0: 0, t1: flipT, az: 0.35, dir: 1 },
+    { kind: 'flipOrbit', t0: flipT, t1: flipT + FLIP_S, az: 0.2, dir: 1 },
+    ...rest,
+  ];
 }
 
 export function shotAt(shots: DescentShot[], t: number): DescentShot {
@@ -208,6 +225,13 @@ export function descentPoseAt(
         fov: 40,
         who: 'whole',
       };
+      break;
+    case 'belly':
+      // The ship lies along X: seen from +Z, a touch above, it spans the frame.
+      f = { fill: 0.95, el: lerp(8, 14, p), az: a0 + sw * 0.25 * p, fov: 36, who: 'core' };
+      break;
+    case 'flipOrbit':
+      f = { fill: 0.6, el: lerp(8, 20, p), az: a0 + sw * 1.6 * p, fov: 36, who: 'core' };
       break;
     default: // close
       f = { fill: 0.85, el: lerp(2, 9, p), az: a0 + sw * 0.5 * p, fov: 32, who: 'core' };

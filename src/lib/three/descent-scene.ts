@@ -1058,6 +1058,9 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
       vehicle.rotation.x = 0;
       vehicle.rotation.z = starshipPitch(s.t, landingFlipT, LANDING_FLIP_S);
       plasma.rotation.z = -vehicle.rotation.z;
+      // The ship is centred on the vehicle origin so it pitches about its middle; upright, its
+      // base (0.7 vehicle lengths below) must meet the ground, not the middle.
+      vehicle.position.y += vehLen * 0.7 * Math.cos(vehicle.rotation.z);
       starshipControls(model.lander, s.t, landingFlipT, LANDING_FLIP_S, frame);
     }
 
@@ -1111,10 +1114,11 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
       body === 'earth' && !model.mainChute && !model.deploy && chuteT != null && s.t >= chuteT;
     if (capsule) whole = core;
     // A gas giant has no ground: below the 1-bar datum the floor is the craft, not the cloud top.
-    const floorAlt = body === 'jupiter' ? Math.max(0, craftY) : craftY;
+    const camY = vehicle.position.y;
+    const floorAlt = body === 'jupiter' ? Math.max(0, camY) : camY;
     const pose = descentPoseAt(shots, s.t, { core, whole, capsule }, floorAlt, camera.aspect);
-    camera.position.set(pose.pos[0], craftY + pose.pos[1], pose.pos[2]);
-    camera.lookAt(pose.target[0], craftY + pose.target[1], pose.target[2]);
+    camera.position.set(pose.pos[0], camY + pose.pos[1], pose.pos[2]);
+    camera.lookAt(pose.target[0], camY + pose.target[1], pose.target[2]);
     camera.fov = pose.fov;
     camera.updateProjectionMatrix();
 

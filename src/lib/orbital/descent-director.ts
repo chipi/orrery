@@ -38,6 +38,9 @@ export interface DescentSubject {
   whole: { cy: number; r: number };
   /** A capsule under its main chute: the shot stays on the capsule, off the canopy. */
   capsule?: boolean;
+  /** An establishing opening for a big-body descent: the first `s` s are a wide shot of the craft
+   *  small over its landing region, easing into the cut shots. */
+  openingS?: number;
 }
 
 export interface DescentPose {
@@ -161,6 +164,46 @@ const DEG = Math.PI / 180;
  * units); `aspect`: width / height, so a phone's narrow frame still fits the subject.
  */
 export function descentPoseAt(
+  shots: DescentShot[],
+  t: number,
+  subject: DescentSubject,
+  altKm: number,
+  aspect: number,
+): DescentPose {
+  const base = shotPoseAt(shots, t, subject, altKm, aspect);
+  const openS = subject.openingS ?? 0;
+  if (openS <= 0 || t >= openS || shots[0]?.kind === 'belly') return base;
+  // The landing region below the craft fills the frame; the craft is a speck at its top. The
+  // eased blend into the cut shot is a pure function of t, so a scrub is exact.
+  const R = altKm * 0.55 + subject.whole.r * 3;
+  const ty = lerp(subject.core.cy, -altKm, 0.5);
+  const el = 14 * DEG;
+  const az = LIT_AZ + 0.5;
+  const fov = 40;
+  const d = R / (0.5 * Math.tan((fov * DEG) / 2) * Math.min(1, aspect));
+  const wide: DescentPose = {
+    pos: [
+      Math.sin(az) * Math.cos(el) * d,
+      Math.max(ty + Math.sin(el) * d, -altKm + subject.core.r * 0.15),
+      Math.cos(az) * Math.cos(el) * d,
+    ],
+    target: [0, ty, 0],
+    fov,
+  };
+  const u = smooth(t / openS);
+  const mix = (a: number[], b: number[]): [number, number, number] => [
+    lerp(a[0], b[0], u),
+    lerp(a[1], b[1], u),
+    lerp(a[2], b[2], u),
+  ];
+  return {
+    pos: mix(wide.pos, base.pos),
+    target: mix(wide.target, base.target),
+    fov: lerp(wide.fov, base.fov, u),
+  };
+}
+
+function shotPoseAt(
   shots: DescentShot[],
   t: number,
   subject: DescentSubject,

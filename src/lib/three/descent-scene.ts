@@ -791,6 +791,12 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
     opts.events ?? [],
     opts.siteId,
   );
+  // Big airless/atmosphere bodies open on an establishing wide of the landing region (small bodies
+  // already open wide on the whole body; Earth capsules keep their own framing).
+  const openAfterS =
+    small || body === 'earth' || body === 'jupiter'
+      ? 0
+      : 0.3 * (opts.durationS ?? opts.events?.find((e) => e.type === 'touchdown')?.t ?? 600);
   let frame = 0;
   let activePhaseKind = 'ballistic_entry';
 
@@ -1259,7 +1265,13 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
       marker.visible = camera.position.distanceTo(vehicle.position) > 30 * (SMALL_CRAFT_M / 1000);
     }
     const floorAlt = body === 'jupiter' ? Math.max(0, camY) : camY;
-    const pose = descentPoseAt(shots, s.t, { core, whole, capsule }, floorAlt, camera.aspect);
+    const pose = descentPoseAt(
+      shots,
+      s.t,
+      { core, whole, capsule, openingS: openAfterS },
+      floorAlt,
+      camera.aspect,
+    );
     // Small body: a craft hanging above the surface is filmed from above it, with the ground behind
     // it, never from below against the black sky (Philae's drift-down and bounces).
     if (small && s.altM > 3 && pose.pos[1] < 0) pose.pos[1] = -pose.pos[1];

@@ -192,7 +192,10 @@ export type ReturnShot =
   | 'chase_side'
   | 'orbit_limb'
   | 'jettison_low'
-  | 'subsat_side';
+  | 'subsat_side'
+  | 'dock_bay'
+  | 'dock_close_low'
+  | 'dock_orbit';
 
 const SHOT_IDS: ReadonlySet<string> = new Set<ReturnShot>([
   'ground',
@@ -223,6 +226,9 @@ const SHOT_IDS: ReadonlySet<string> = new Set<ReturnShot>([
   'orbit_limb',
   'jettison_low',
   'subsat_side',
+  'dock_bay',
+  'dock_close_low',
+  'dock_orbit',
 ]);
 
 /** True when the name is a shot the scene can play (a profile's camera.shots is checked with it). */
@@ -568,7 +574,7 @@ export function bayNormal(pose: ReturnPose): THREE.Vector3 {
  *  pad, 16 followed the stage until it was lost at 6 s, 17 followed it all the way). */
 function tvLook(kind: 'fixed' | 'lost' | 'track', t: number, pose: ReturnPose, rig: ReturnRig) {
   const dr = descentRel(pose);
-  const hold = dr.clone().add(V(0, 8, 0));
+  const hold = dr.clone().add(V(0, 7, 0));
   const follow = (alt: number) => dr.clone().add(V(0, alt - rig.stageY0 + 4, 0));
   if (kind === 'fixed') return hold;
   const t0 = t - RT.ignition;
@@ -809,14 +815,58 @@ export function returnCamera(
       const kind = pose.shot.slice('rover_tv_'.length) as 'fixed' | 'lost' | 'track';
       const pos = descentRel(pose).add(rig.tvLocal);
       const look = tvLook(kind, t, pose, rig);
-      // A phone's narrow frame widens the lens so the LM still fits across it.
-      const fov = Math.max(
-        28,
-        (2 * (Math.atan(Math.tan((11 * Math.PI) / 180) / aspect) * 180)) / Math.PI,
-      );
-      // The operator zoomed in as the stage climbed (Apollo 16, 17); the held shot stays wide.
-      const zoom = kind === 'fixed' ? 0 : smooth((t - RT.ignition) / 5);
-      return { pos, look, fov: lerp(fov, aspect < 1 ? 26 : 16, zoom) };
+      // Zoomed on the LM from 90 m (about 11 degrees: the stage fills ~40% of the frame height),
+      // then widening as the stage climbs (ESTIMATES). A phone's narrow frame needs a wider lens
+      // to keep the LM's width in shot.
+      const phone = aspect < 1;
+      const wide = (2 * Math.atan(Math.tan((6 * Math.PI) / 180) / aspect) * 180) / Math.PI;
+      const fov0 = phone ? Math.max(11, wide) : 11;
+      const fov1 = Math.max(phone ? 28 : 0, { fixed: 30, lost: 14, track: 12 }[kind]);
+      return { pos, look, fov: lerp(fov0, fov1, smooth((t - RT.ignition) / 6)) };
+    }
+    case 'dock_bay': {
+      // Level with the LM, on the sunlit side the SIM bay faces: the CSM across the gap, its bay toward us.
+      const b0 = V(0, Math.max(tip.y, drogue.y), 0).add(V(tip.x, 0, tip.z));
+      const mid = drogue.clone().add(b0).multiplyScalar(0.5);
+      const sep = drogue.distanceTo(b0);
+      const n = bayNormal(pose);
+      const nh = V(n.x, 0, n.z);
+      if (nh.lengthSq() < 1e-6) nh.set(0, 0, 1);
+      nh.normalize();
+      const { h, v } = halfFov(42, aspect);
+      const D = ((sep / 2 + 6) / Math.tan(Math.min(h, v)) + sep / 2) * 1.05;
+      const dir = nh
+        .multiplyScalar(0.6)
+        .add(V(0, 0.08, 0.8))
+        .normalize();
+      return { pos: mid.clone().addScaledVector(dir, D), look: mid, fov: 38 };
+    }
+    case 'dock_close_low': {
+      // The probe tip against the drogue from the far side, level with the roof, looking along it.
+      const gap = Math.max(0, tip.y - drogue.y);
+      const g = Math.min(gap, 6);
+      const look = drogue.clone().add(V(0, g * 0.5 + 0.15, 0));
+      const d = (2.4 + 2.4 * g) * (0.8 + 0.2 * k);
+      return { pos: look.clone().add(V(-0.62 * d, 0.0 * d - 0.2, 0.78 * d)), look, fov: 34 };
+    }
+    case 'dock_orbit': {
+      // A slow walk round the pair: wide framing until the close-up, the drogue window after it,
+      // the camera's azimuth turning the whole time.
+      const ang = 0.5 + (1.5 * (t - RT.dockWide)) / (RT.hardDock - RT.dockWide);
+      const dir = V(Math.sin(ang), 0.14, Math.cos(ang)).normalize();
+      if (t < RT.closeUp) {
+        const b0 = V(0, Math.max(tip.y, drogue.y), 0).add(V(tip.x, 0, tip.z));
+        const mid = drogue.clone().add(b0).multiplyScalar(0.5);
+        const sep = drogue.distanceTo(b0);
+        const { h, v } = halfFov(36, aspect);
+        const D = ((sep / 2 + 3.5) / Math.tan(Math.min(h, v)) + sep / 2) * 1.05;
+        return { pos: mid.clone().addScaledVector(dir, D), look: mid, fov: 36 };
+      }
+      const gap = Math.max(0, tip.y - drogue.y);
+      const g = Math.min(gap, 6);
+      const look = drogue.clone().add(V(0, g * 0.5 + 0.15, 0));
+      const d = (2.2 + 2.4 * g) * (0.8 + 0.2 * k);
+      return { pos: look.clone().addScaledVector(dir, d), look, fov: 30 };
     }
     case 'chase_side': {
       // Level and from the side, a little ahead: the stage climbs across a black sky, the Moon below.
@@ -934,7 +984,10 @@ export function createFlyReturn(
   const scene = new THREE.Scene();
   scene.background = new THREE.Color(0x000000);
   const sun = new THREE.DirectionalLight(0xfff6ea, 3.6);
-  sun.position.set(-60, 75, 95);
+  // The J missions' rover TV camera stands east of the LM: the sun comes over its shoulder so the
+  // rising stage is lit toward the lens.
+  if (profile.jMission) sun.position.set(80, 50, 70);
+  else sun.position.set(-60, 75, 95);
   scene.add(sun, new THREE.HemisphereLight(0x9fa9c4, 0x2a2724, 0.4));
 
   // Stars: one draw call, kept centred on the camera.

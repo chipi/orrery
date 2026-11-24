@@ -74,7 +74,12 @@
       "jettison": "jettison_high",
       "tei_coast": "tei_side",
       "tei_burn": "tei_side",
-      "fade": "tei_side"
+      "fade": "tei_side",
+      "dock_wide": "dock_orbit",
+      "dock_approach": "dock_orbit",
+      "dock_closeup": "dock_orbit",
+      "soft_capture": "dock_orbit",
+      "hard_dock": "dock_orbit"
     }
   },
   "jMission": {

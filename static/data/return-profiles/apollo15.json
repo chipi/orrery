@@ -52,7 +52,12 @@
       "subsat": "subsat_side",
       "tei_coast": "tei_high",
       "tei_burn": "tei_high",
-      "fade": "tei_high"
+      "fade": "tei_high",
+      "dock_wide": "dock_bay",
+      "dock_approach": "dock_bay",
+      "dock_closeup": "dock_close_low",
+      "soft_capture": "dock_close_low",
+      "hard_dock": "dock_close_low"
     }
   },
   "jMission": {

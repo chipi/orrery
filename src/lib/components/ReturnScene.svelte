@@ -231,15 +231,15 @@
     inset: 0;
   }
   .stage.tv {
-    filter: saturate(0.75) contrast(1.08);
+    filter: saturate(0.6) contrast(1.15) brightness(1.08);
   }
   .tv-overlay {
     position: absolute;
     inset: 0;
     pointer-events: none;
     background:
-      radial-gradient(ellipse at center, transparent 55%, rgba(0, 0, 0, 0.55) 100%),
-      repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.12) 0 1px, transparent 1px 3px);
+      radial-gradient(ellipse at center, transparent 45%, rgba(0, 0, 0, 0.75) 100%),
+      repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.22) 0 1px, transparent 1px 3px);
   }
   .scrim {
     position: absolute;

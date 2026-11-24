@@ -387,7 +387,11 @@ for (const id of ALL) {
         for (const t of samples) {
           const { pose, inside } = project(aspect, t);
           const close =
-            pose.shot === 'dock_close' || pose.shot === 'dock_pull' || pose.shot === 'dock_csm';
+            pose.shot === 'dock_close' ||
+            pose.shot === 'dock_pull' ||
+            pose.shot === 'dock_csm' ||
+            pose.shot === 'dock_close_low' ||
+            pose.shot === 'dock_orbit';
           // the close-ups frame the docking anchors, not the whole craft
           const lm = close ? DEFAULT_RIG.drogue : new THREE.Vector3(0, 0, 0);
           const tei = pose.beat === 'tei_coast' || pose.beat === 'tei_burn' || pose.beat === 'fade';
@@ -398,6 +402,8 @@ for (const id of ALL) {
             pose.csmVisible &&
             pose.shot !== 'dock_close' &&
             pose.shot !== 'dock_csm' &&
+            pose.shot !== 'dock_close_low' &&
+            pose.shot !== 'dock_orbit' &&
             !pullStart
           ) {
             if (!inside(csmCentreFromAnchor(pose, DEFAULT_RIG))) bad.push(`${t} CSM ${pose.beat}`);

@@ -1418,13 +1418,14 @@
       !(viewport.isCoarsePointer && annotationUi.openId),
   );
   // The phone tab row (Ruler · Layers · Nations · Scan) and INDEX; gone in the close-up modes,
-  // where the imagery card and scale bar drop to the bottom edge in their place.
+  // where the imagery card and scale bar drop to the bottom edge in their place. A landscape
+  // phone keeps them beside an open site's side drawer (operator 2026-11-24; 0.9.9 behaviour).
   const drawerHidden = $derived(
     mobileDrawerHidden({
       routeViewActive,
       flatPatchActive,
       detailFlying,
-      siteDetail: tierCardShown,
+      siteDetail: tierCardShown && !viewport.isLandscape,
     }),
   );
   // Mobile: true while any accordion tab is open — hides the altitude pill so
@@ -3791,6 +3792,10 @@
         e.touches.length === 0
       ) {
         const t = e.changedTouches[0];
+        // The tap is handled here: cancel the emulated click that follows it, which landed on
+        // whatever the tap had just opened under the finger (a landscape side drawer's science
+        // chip navigated away; a portrait sheet's hero opened its preview).
+        if (e.cancelable) e.preventDefault();
         pickAt(t.clientX, t.clientY);
       }
     };

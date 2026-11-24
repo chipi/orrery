@@ -268,7 +268,8 @@
   const returnLauncher = $derived(returnLauncherFor(profile.id));
   const returnLanding = $derived<BoosterReturnLanding | null>(
     returnLauncher &&
-      insetLanding?.site === 'droneship' &&
+      (insetLanding?.site === 'droneship' ||
+        (insetLanding?.site === 'landing-zone' && returnLauncher === 'falcon-9')) &&
       (insetLanding.timeClass === 'sourced' || insetLanding.timeClass === 'approx') &&
       insetLanding.entryBurnS != null
       ? { ...insetLanding, entryBurnS: insetLanding.entryBurnS }

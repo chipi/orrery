@@ -1,4 +1,5 @@
 import { describe, it, expect } from 'vitest';
+import * as THREE from 'three';
 import {
   ENTRY_BURN_LEN_S,
   FOOT_DROP_M,
@@ -6,6 +7,7 @@ import {
   RETURN_HOLD_S,
   RETURN_LEAD_S,
   boosterReturnPose,
+  createBoosterReturn,
   returnAltitude,
   returnCamera,
   returnWindow,
@@ -130,5 +132,61 @@ describe('booster return pose (New Glenn, ESCAPADE)', () => {
     const f9 = returnCamera(500, ng, 300, 1.6);
     const big = returnCamera(500, ng, 300, 1.6, spec);
     expect(big.pos.distanceTo(big.look)).toBeGreaterThan(f9.pos.distanceTo(f9.look));
+  });
+});
+
+describe('booster return (IM-1, return to launch site)', () => {
+  const im1: BoosterReturnLanding = {
+    part: 'booster',
+    outcome: 'landed',
+    site: 'landing-zone',
+    entryBurnS: 371,
+    entryBurnEndS: 382,
+    landingBurnS: 437,
+    touchdownS: 454,
+    timeClass: 'sourced',
+  };
+
+  it('lights the entry plumes only inside the sourced 11 s burn', () => {
+    expect(boosterReturnPose(370.9, im1).entryPlumes).toBe(0);
+    expect(boosterReturnPose(371, im1).entryPlumes).toBe(3);
+    expect(boosterReturnPose(381.9, im1).entryPlumes).toBe(3);
+    expect(boosterReturnPose(382, im1).entryPlumes).toBe(0);
+    expect(boosterReturnPose(440, im1).landingPlumes).toBe(1);
+  });
+
+  it('falls monotonically, continuous at the seams, and rests at touchdown', () => {
+    let prev = Infinity;
+    for (let t = 363; t <= 458; t += 0.25) {
+      const h = returnAltitude(t, im1);
+      expect(h).toBeLessThanOrEqual(prev + 1e-9);
+      prev = h;
+    }
+    for (const seam of [371, 382, 437, 454]) {
+      expect(
+        Math.abs(returnAltitude(seam - 1e-4, im1) - returnAltitude(seam + 1e-4, im1)),
+      ).toBeLessThan(0.5);
+    }
+    expect(boosterReturnPose(454, im1).altM).toBe(FOOT_DROP_M);
+  });
+
+  it('builds the land pad, not the drone ship, and stands the feet on it at touchdown', () => {
+    const r = createBoosterReturn(im1);
+    expect(r.scene.getObjectByName('landing-zone-1')).toBeTruthy();
+    expect(r.scene.getObjectByName('drone-ship')).toBeUndefined();
+    expect(r.update(456, 1.6)).toBe(true);
+    r.scene.updateMatrixWorld(true);
+    const feet = new THREE.Box3();
+    r.scene.traverse((o) => {
+      if (o.name.startsWith('leg') || o.name.startsWith('foot')) feet.expandByObject(o);
+    });
+    expect(feet.isEmpty()).toBe(false);
+    expect(Math.abs(feet.min.y)).toBeLessThan(0.5);
+  });
+
+  it('keeps the drone ship for a droneship landing', () => {
+    const r = createBoosterReturn(i4);
+    expect(r.scene.getObjectByName('drone-ship')).toBeTruthy();
+    expect(r.scene.getObjectByName('landing-zone-1')).toBeUndefined();
   });
 });

@@ -12,6 +12,12 @@
  * three of the seven BE-4 (Space.com), "about seven minutes into flight", and touchdown on Jacklyn
  * "about nine minutes". The landing-burn engine count, the entry-burn length, the altitudes and
  * the camera work are ESTIMATES.
+ *
+ * Return to launch site (IM-1, docs/wip/2026-11-24-im1-rtls-sourced.md): sourced is the whole
+ * timeline (entry burn 6:11-6:22, landing burn 7:17, touchdown 7:34; an aggregator citing The
+ * Space Devs) and LZ-1 as an 86 m pad. The landing-burn engine count is an ESTIMATE (one centre
+ * Merlin, as on the drone ship). The coast 2.5 km east, the scrub ground and the entry-burn altitudes
+ * on the short 11 s burn are ESTIMATES.
  */
 import * as THREE from 'three';
 import { LANDING_HOLD_S } from '$lib/physics/ascent/ascent-physics';
@@ -20,6 +26,7 @@ import { LEG_DEPLOY_S, SKY, landingPlume, type Landing } from './landing-inset';
 import { plumeCone } from './engine-plume';
 import { buildFalcon9Booster, setFalcon9BoosterPose } from './showcase/falcon9-booster';
 import { buildDroneShip, buildSeaPlane, FREEBOARD_M } from './showcase/drone-ship';
+import { buildLandGround, buildLandingZone1 } from './showcase/landing-zone-1';
 import {
   NEW_GLENN_BOOSTER_HEIGHT_M,
   buildNewGlennBooster,
@@ -107,6 +114,27 @@ const CUT_S = 4;
 /** Sea: a detailed 4 km plane and a plain ring out to the horizon. */
 const SEA_M = 4000;
 const HORIZON_M = 350_000;
+/** ESTIMATE: the Atlantic coast lies this far east of LZ-1 (m); the pad is really about this close. */
+const COAST_M = 2500;
+/** Sea level on the land scene, under the ground plane (m). */
+const LAND_SEA_Y = -3;
+/** ESTIMATE: mean descent speed through the entry burn (m/s), the drone-ship figures' mean. */
+const ENTRY_MEAN_SPEED = (ENTRY_START_SPEED + ENTRY_END_SPEED) / 2;
+
+/** Entry-burn cutoff (s): the sourced one when the flight has it, else the spec's estimated length. */
+export function entryBurnEnd(
+  l: BoosterReturnLanding,
+  spec: ReturnSpec = RETURN_SPECS['falcon-9'],
+): number {
+  return l.entryBurnEndS ?? l.entryBurnS + spec.entryBurnLenS;
+}
+
+/** Altitude at cutoff: a sourced short burn sheds only what its length allows (ESTIMATE). */
+function entryEndAlt(l: BoosterReturnLanding): number {
+  return l.entryBurnEndS == null
+    ? ENTRY_END_ALT_M
+    : ENTRY_START_ALT_M - ENTRY_MEAN_SPEED * (l.entryBurnEndS - l.entryBurnS);
+}
 
 const clamp01 = (x: number) => Math.min(1, Math.max(0, x));
 const smooth = (x: number) => {
@@ -124,8 +152,9 @@ export function returnAltitude(
   l: BoosterReturnLanding,
   spec: ReturnSpec = RETURN_SPECS['falcon-9'],
 ): number {
-  const entryLen = spec.entryBurnLenS;
-  const entryEnd = l.entryBurnS + entryLen;
+  const entryEnd = entryBurnEnd(l, spec);
+  const entryLen = entryEnd - l.entryBurnS;
+  const endAlt = entryEndAlt(l);
   const burn = Math.max(1, l.touchdownS - l.landingBurnS);
   if (t >= l.touchdownS) return 0;
   if (t >= l.landingBurnS) return LANDING_BURN_ALT_M * ((l.touchdownS - t) / burn) ** 2;
@@ -137,7 +166,7 @@ export function returnAltitude(
     const s2 = s * s;
     const s3 = s2 * s;
     return (
-      (2 * s3 - 3 * s2 + 1) * ENTRY_END_ALT_M +
+      (2 * s3 - 3 * s2 + 1) * endAlt +
       (s3 - 2 * s2 + s) * dt * -ENTRY_END_SPEED +
       (-2 * s3 + 3 * s2) * LANDING_BURN_ALT_M +
       (s3 - s2) * dt * v1
@@ -145,7 +174,7 @@ export function returnAltitude(
   }
   if (t >= l.entryBurnS) {
     const s = (t - l.entryBurnS) / entryLen;
-    return ENTRY_START_ALT_M + s * (ENTRY_END_ALT_M - ENTRY_START_ALT_M);
+    return ENTRY_START_ALT_M + s * (endAlt - ENTRY_START_ALT_M);
   }
   return ENTRY_START_ALT_M + (l.entryBurnS - t) * ENTRY_START_SPEED;
 }
@@ -181,7 +210,7 @@ export function boosterReturnPose(
   spec: ReturnSpec = RETURN_SPECS['falcon-9'],
 ): BoosterReturnPose {
   const [a, b] = returnWindow(l);
-  const entryEnd = l.entryBurnS + spec.entryBurnLenS;
+  const entryEnd = entryBurnEnd(l, spec);
   const entryBurning = t >= l.entryBurnS && t < entryEnd;
   const landingBurning = t >= l.landingBurnS && t < l.touchdownS;
   const rcsWindow =
@@ -285,15 +314,31 @@ export function createBoosterReturn(
   sun.position.set(-300, 500, 800);
   scene.add(sun);
 
-  const ship = launcher === 'new-glenn' ? buildJacklyn() : buildDroneShip();
-  const sea = buildSeaPlane(SEA_M);
-  const farSea = new THREE.Mesh(
-    new THREE.RingGeometry(SEA_M / 2, HORIZON_M, 48, 1),
-    new THREE.MeshStandardMaterial({ color: 0x0c2a45, roughness: 0.4, metalness: 0.1 }),
-  );
-  farSea.rotation.x = -Math.PI / 2;
-  farSea.position.y = -FREEBOARD_M - 1.5; // under the detailed plane's corners: no z-fight
-  scene.add(ship, sea, farSea);
+  if (landing.site === 'landing-zone') {
+    // Return to launch site: LZ-1 on the Cape, the Atlantic beyond a coast east of it.
+    const lz = buildLandingZone1();
+    lz.position.x = PAD_X;
+    const ground = buildLandGround(2 * HORIZON_M);
+    ground.position.x = COAST_M - HORIZON_M;
+    // East of the coast only: overlapping planes would z-fight at range.
+    const ocean = new THREE.Mesh(
+      new THREE.PlaneGeometry(HORIZON_M, 2 * HORIZON_M),
+      new THREE.MeshStandardMaterial({ color: 0x0c2a45, roughness: 0.4, metalness: 0.1 }),
+    );
+    ocean.rotation.x = -Math.PI / 2;
+    ocean.position.set(COAST_M + HORIZON_M / 2, LAND_SEA_Y, 0);
+    scene.add(lz, ground, ocean);
+  } else {
+    const ship = launcher === 'new-glenn' ? buildJacklyn() : buildDroneShip();
+    const sea = buildSeaPlane(SEA_M);
+    const farSea = new THREE.Mesh(
+      new THREE.RingGeometry(SEA_M / 2, HORIZON_M, 48, 1),
+      new THREE.MeshStandardMaterial({ color: 0x0c2a45, roughness: 0.4, metalness: 0.1 }),
+    );
+    farSea.rotation.x = -Math.PI / 2;
+    farSea.position.y = -FREEBOARD_M - 1.5; // under the detailed plane's corners: no z-fight
+    scene.add(ship, sea, farSea);
+  }
 
   // Sky dome following the camera: horizon band to zenith, blacker with altitude.
   const domeGeo = new THREE.SphereGeometry(HORIZON_M * 1.1, DOME_W, DOME_H);

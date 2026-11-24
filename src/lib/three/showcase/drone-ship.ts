@@ -40,7 +40,7 @@ function box(
 }
 
 /** Stylised "X": two crossed bars of different weight, laid flat in the x-z plane. */
-function xMark(radius: number, m: THREE.Material): THREE.Group {
+export function xMark(radius: number, m: THREE.Material): THREE.Group {
   const g = new THREE.Group();
   const len = radius * 1.55;
   const a = box(len, 0.06, radius * 0.16, m, 0, 0, 0);

@@ -537,7 +537,7 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
   // Starship's three Raptors light a far bigger flame than a lander's retro (the plume is sized
   // off a capsule-scale body).
   // A touch-and-go gas jet is tiny against a 6 m craft: drawn larger so the back-away reads.
-  const plumeK = opts.events?.some((e) => e.type === 'landing_flip') ? 2.5 : small ? 4 : 1;
+  const plumeK = opts.events?.some((e) => e.type === 'landing_flip') ? 2.5 : small ? 1.3 : 1;
   const dust = new THREE.Mesh(new THREE.CircleGeometry(vehLen * 1.5, 40), additive(dustColor, 0));
   dust.rotation.x = -Math.PI / 2; // flat on the surface
   dust.position.y = vehLen * 0.02;
@@ -1175,6 +1175,9 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
     }
     const floorAlt = body === 'jupiter' ? Math.max(0, camY) : camY;
     const pose = descentPoseAt(shots, s.t, { core, whole, capsule }, floorAlt, camera.aspect);
+    // Small body: a craft hanging above the surface is filmed from above it, with the ground behind
+    // it, never from below against the black sky (Philae's drift-down and bounces).
+    if (small && s.altM > 3 && pose.pos[1] < 0) pose.pos[1] = -pose.pos[1];
     camera.position.set(pose.pos[0], camY + pose.pos[1], pose.pos[2]);
     camera.lookAt(pose.target[0], camY + pose.target[1], pose.target[2]);
     camera.fov = pose.fov;

@@ -182,7 +182,7 @@ const SPECS: Record<SmallBodyId, Spec> = {
     freq: 7,
     craters: 18,
     craterAng: [0.05, 0.2],
-    craterDepth: 0.1,
+    craterDepth: 0.02,
     albedo: 0.06,
     tint: [1, 0.98, 0.96],
     boulders: 900,
@@ -220,6 +220,8 @@ export interface SmallBody {
   boulders: THREE.InstancedMesh;
   /** Unit direction from the geometry origin to the touchdown point. */
   landDir: THREE.Vector3;
+  /** Local surface normal at the touchdown point: the scene stands this up as +Y. */
+  up: THREE.Vector3;
   /** Distance from the geometry origin to the touchdown point (km). */
   landR: number;
 }
@@ -271,6 +273,21 @@ export function buildSmallBody(id: SmallBodyId): SmallBody {
   // Vertices are about the ray origin so the mesh pivots there; the scene sinks it by landR.
   geo.computeVertexNormals();
   const nrm = geo.attributes.normal as THREE.BufferAttribute;
+  // The sphere's seam and poles are duplicated vertices that each see half their faces: average
+  // their normals, or the seam meridian shades as a long bright/dark line across the ground.
+  const sum = new Map<string, THREE.Vector3>();
+  const keyOf = (i: number) =>
+    `${Math.round(dirs[i].x * 1e4)},${Math.round(dirs[i].y * 1e4)},${Math.round(dirs[i].z * 1e4)}`;
+  for (let i = 0; i < pos.count; i++) {
+    const k = keyOf(i);
+    const v = sum.get(k) ?? new THREE.Vector3();
+    v.add(new THREE.Vector3(nrm.getX(i), nrm.getY(i), nrm.getZ(i)));
+    sum.set(k, v);
+  }
+  for (let i = 0; i < pos.count; i++) {
+    const v = sum.get(keyOf(i))!.clone().normalize();
+    nrm.setXYZ(i, v.x, v.y, v.z);
+  }
   const col = new Float32Array(pos.count * 3);
   const n = new THREE.Vector3();
   const pt = new THREE.Vector3();
@@ -296,15 +313,24 @@ export function buildSmallBody(id: SmallBodyId): SmallBody {
   );
 
   // Boulders: 60% near the landing point (where the camera is), the rest across the body.
-  const landR = surfaceR(landDir);
+  // The drawn mesh (a coarse grid) is what the craft rests on: take its height along the ray.
+  mesh.updateMatrixWorld(true);
+  const hit = new THREE.Raycaster(new THREE.Vector3(), landDir, 0, 50).intersectObject(mesh)[0];
+  const landR = hit ? hit.distance : surfaceR(landDir);
   const landPt = landDir.clone().multiplyScalar(landR);
+  // A rounded, lumpy rock: a subdivided icosphere (smooth normals) with its vertices nudged.
+  const rock = new THREE.IcosahedronGeometry(1, 2);
+  const rp = rock.attributes.position;
+  for (let i = 0; i < rp.count; i++) {
+    const k = 1 + 0.18 * fbm(rp.getX(i) * 2.1, rp.getY(i) * 2.1, rp.getZ(i) * 2.1);
+    rp.setXYZ(i, rp.getX(i) * k, rp.getY(i) * k, rp.getZ(i) * k);
+  }
   const inst = new THREE.InstancedMesh(
-    new THREE.IcosahedronGeometry(1, 0),
+    rock,
     new THREE.MeshStandardMaterial({
       color: new THREE.Color().setScalar(Math.min(1, s.albedo * 0.9)),
       roughness: 1,
       metalness: 0,
-      flatShading: true,
     }),
     s.boulders,
   );
@@ -316,7 +342,7 @@ export function buildSmallBody(id: SmallBodyId): SmallBody {
   const bd = new THREE.Vector3();
   let placed = 0;
   for (let tries = 0; placed < s.boulders && tries < s.boulders * 6; tries++) {
-    const local = rand() < 0.6;
+    const local = rand() < 0.45;
     if (local) {
       bd.set(rand() - 0.5, rand() - 0.5, rand() - 0.5)
         .multiplyScalar(2 * (s.localKm / Math.max(landR, 1e-3)))
@@ -330,9 +356,17 @@ export function buildSmallBody(id: SmallBodyId): SmallBody {
     }
     const r = surfaceR(bd);
     bp.copy(bd).multiplyScalar(r);
-    if (bp.distanceTo(landPt) < 0.03) continue; // keep the craft's footprint clear
+    const dl = bp.distanceTo(landPt);
+    if (dl < 0.02) continue; // keep the craft's footprint clear
+    if (dl < 0.06 && rand() < 0.6) continue; // thin the camera's near field
     if (s.smooth && s.smooth(bp.clone().add(o)) > 0.2) continue;
-    const size = (s.boulderM[0] + (s.boulderM[1] - s.boulderM[0]) * rand() ** 3) / 1000;
+    // Diameter in m: near the site mostly 0.5-5 m (a rare 10 m); the big ones lie further out.
+    const diaM = local
+      ? rand() < 0.03
+        ? 5 + rand() * 5
+        : 0.5 + 4.5 * rand() ** 3
+      : s.boulderM[0] + (s.boulderM[1] * 2 - s.boulderM[0]) * rand() ** 2;
+    const size = diaM / 2000;
     sc.set(size * (0.7 + rand() * 0.6), size * (0.5 + rand() * 0.4), size * (0.7 + rand() * 0.6));
     e.set(rand() * 6.28, rand() * 6.28, rand() * 6.28);
     q.setFromEuler(e);
@@ -344,5 +378,14 @@ export function buildSmallBody(id: SmallBodyId): SmallBody {
   inst.count = placed;
   inst.instanceMatrix.needsUpdate = true;
   mesh.add(inst);
-  return { mesh, boulders: inst, landDir, landR };
+  // The ground under the craft faces its own normal, not the ray: average the nearby vertex normals.
+  const up = new THREE.Vector3();
+  for (let i = 0; i < pos.count; i++) {
+    if (dirs[i].dot(landDir) > Math.cos(0.02)) {
+      up.add(new THREE.Vector3(nrm.getX(i), nrm.getY(i), nrm.getZ(i)));
+    }
+  }
+  up.normalize();
+  if (up.lengthSq() < 0.5 || up.dot(landDir) < 0.5) up.copy(landDir);
+  return { mesh, boulders: inst, landDir, up, landR };
 }

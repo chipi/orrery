@@ -256,10 +256,15 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
   // ── Lighting: a warm sun toward the camera hemisphere + a cool fill so the
   //    shadowed limb never crushes to black (×π for r155+ physical lights, #203).
   const sunDir = new THREE.Vector3(0.35, 0.55, 0.75).normalize();
-  const sun = new THREE.DirectionalLight(0xfff4d0, 1.0 * Math.PI);
+  // A small body gets a low, hard sun from one side, so relief casts light and shade.
+  if (SMALL_BODIES.has(opts.body)) sunDir.set(0.85, 0.32, 0.4).normalize();
+  const sun = new THREE.DirectionalLight(
+    0xfff4d0,
+    (SMALL_BODIES.has(opts.body) ? 2.2 : 1.0) * Math.PI,
+  );
   sun.position.copy(sunDir).multiplyScalar(1000);
   scene.add(sun);
-  scene.add(new THREE.AmbientLight(0xeeeeff, 0.3 * Math.PI));
+  scene.add(new THREE.AmbientLight(0xeeeeff, (SMALL_BODIES.has(opts.body) ? 0.12 : 0.3) * Math.PI));
 
   // ── Destination body: a big textured sphere a full radius below the landing
   //    site (surface at y=0), oriented so the site's geography sits under the
@@ -286,7 +291,7 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
     const gt = makeGroundTexture(body);
     if (gt) applyGroundDetail(bodyMat, body, gt);
   }
-  bodyMesh.position.set(0, -(shape?.landR ?? rBody), 0);
+  bodyMesh.position.set(0, -rBody, 0);
   const siteC = opts.landingSite ?? { lat: 0, lon: 0 };
   const latR = (siteC.lat * Math.PI) / 180;
   const lonR = (siteC.lon * Math.PI) / 180;
@@ -295,7 +300,14 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
     Math.sin(latR),
     -Math.cos(latR) * Math.sin(lonR),
   );
-  bodyMesh.quaternion.setFromUnitVectors(shape?.landDir ?? siteNormal, new THREE.Vector3(0, 1, 0));
+  bodyMesh.quaternion.setFromUnitVectors(shape?.up ?? siteNormal, new THREE.Vector3(0, 1, 0));
+  if (shape) {
+    // Pivot the shape so its touchdown point (not its centre) sits at the origin.
+    bodyMesh.position
+      .copy(shape.landDir)
+      .multiplyScalar(-shape.landR)
+      .applyQuaternion(bodyMesh.quaternion);
+  }
   scene.add(bodyMesh);
   const groundRocks = hasGroundDetail(body) ? makeGroundRocks(body) : null;
   if (groundRocks) scene.add(groundRocks);
@@ -1075,7 +1087,7 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
     for (const c of sitePlumes) c.visible = engineOn && !cutoff;
     if (engineOn) {
       const flick = 1 + 0.1 * Math.sin(frame * 0.7) + 0.05 * Math.sin(frame * 1.9);
-      plume.scale.set(plumeK, flick * plumeK, plumeK);
+      plume.scale.set(plumeK, flick * plumeK * (small ? 0.4 : 1), plumeK);
       for (const c of sitePlumes) c.scale.set(plumeK * 0.8, flick * plumeK * 0.8, plumeK * 0.8);
     }
 

@@ -1409,8 +1409,8 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
       // wide shots frame the whole body with the craft a marked speck; near it they hug the craft.
       core = { cy: core.cy * craftK, r: core.r * craftK };
       whole =
-        s.altM < 40
-          ? { cy: core.cy, r: core.r * 2.5 }
+        s.altM < 600
+          ? { cy: core.cy, r: core.r * (s.altM < 40 ? 1.6 : 1.8) }
           : { cy: -rBody * 0.3 - vehicle.position.y, r: rBody * 0.3 };
       marker.visible = camera.position.distanceTo(vehicle.position) > 30 * (SMALL_CRAFT_M / 1000);
     }

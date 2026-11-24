@@ -171,9 +171,11 @@ test.describe(`mobile invariants — ${VIEWPORT_HINT}`, () => {
   }
 
   // ─── Phase 36 — /plan touch-hint visible on mobile ──────────────
+  // Since the 0.9.11 mobile round (a4144d9fcee) the closed bottom sheet carries the pick-a-cell
+  // hint on phones and the floating .touch-hint is hidden there.
   test('/plan touch-hint is visible on touch devices', async ({ page }) => {
     await page.goto('/plan', { waitUntil: 'networkidle' });
-    const hint = page.locator('.touch-hint');
+    const hint = page.locator('.sheet-empty-hint');
     await expect(hint).toBeVisible({ timeout: 10_000 });
   });
 

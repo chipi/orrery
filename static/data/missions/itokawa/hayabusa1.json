@@ -99,6 +99,12 @@
         "description": "Two touchdowns 2005-11-20 + 2005-11-25. On the first descent the sampling sequence aborted; Hayabusa came down softly, bounced and rested on the surface for about 30 minutes. The second touchdown was planned but the sample-collection projectile failed to fire on command. Both surface contacts kicked up regolith into the collection horn anyway. The team would not know whether material had been captured until the capsule's recovery 5 years later."
       },
       {
+        "met_days": 925.69,
+        "type": "descent_start",
+        "label": "Itokawa touchdown",
+        "description": "2005-11-19 21:10 UTC (06:10 JST, 20 Nov). Hayabusa free-falls the last metres after the target marker release at 54 m and touches Itokawa at ~10 cm/s, bouncing twice and resting on the surface for about 30 minutes; the sampler projectile did not fire."
+      },
+      {
         "met_days": 944,
         "type": "anomaly",
         "label": "Series of failures",

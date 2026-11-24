@@ -80,6 +80,12 @@
         "description": "Arrived at asteroid Ryugu on 2018-06-27. Held station at 20 km for 18 months of mapping. Deployed three rovers (MASCOT and two MINERVA-II hoppers) that landed on the surface and operated in Ryugu's gravity of about 1/80,000 g — the first rovers to hop across an asteroid. Two touchdown sampling operations followed, including one inside an artificial crater made by a copper impactor."
       },
       {
+        "met_days": 1541.75,
+        "type": "descent_start",
+        "label": "Ryugu first touchdown",
+        "description": "2019-02-21 22:29 UTC. After descent from 20 km, the final sequence from the 45 m checkpoint took 22 minutes; the tantalum projectile fired and the sampler touched Ryugu about 1 m from the centre of the 6 m target site."
+      },
+      {
         "met_days": 2194,
         "type": "earth_return",
         "label": "Earth re-entry — sample return capsule",

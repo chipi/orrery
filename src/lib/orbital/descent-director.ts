@@ -41,6 +41,8 @@ export interface DescentSubject {
   /** An establishing opening for a big-body descent: the first `s` s are a wide shot of the craft
    *  small over its landing region, easing into the cut shots. */
   openingS?: number;
+  /** An Earth capsule's chute still opening: side-on, the whole chute and capsule in frame. */
+  opening?: boolean;
 }
 
 export interface DescentPose {
@@ -244,9 +246,11 @@ function shotPoseAt(
       f = { fill: 0.42, el: lerp(10, 22, p), az: a0 + sw * 2.0 * p, fov: 42, who: 'whole' };
       break;
     case 'under':
-      f = subject.capsule
-        ? { fill: 0.62, el: lerp(-24, -10, p), az: a0 + sw * 0.7 * p, fov: 46, who: 'core' }
-        : { fill: 0.4, el: lerp(-58, -38, p), az: a0 + sw * 0.7 * p, fov: 58, who: 'core' };
+      f = subject.opening
+        ? { fill: 0.34, el: lerp(6, 14, p), az: a0 + sw * 0.7 * p, fov: 46, who: 'core' }
+        : subject.capsule
+          ? { fill: 0.62, el: lerp(4, 12, p), az: a0 + sw * 0.7 * p, fov: 46, who: 'core' }
+          : { fill: 0.32, el: lerp(-58, -38, p), az: a0 + sw * 0.7 * p, fov: 58, who: 'core' };
       break;
     case 'over':
       f = { fill: 0.34, el: lerp(68, 48, p), az: a0 + sw * 0.6 * p, fov: 46, who: 'whole' };
@@ -283,8 +287,8 @@ function shotPoseAt(
   const d = distFor(subj.r, f.fill, f.fov);
   // From below the craft looks up the lines toward the canopy: aim a little above the craft.
   const ty =
-    sh.kind === 'under' && !subject.capsule
-      ? lerp(subject.core.cy, subject.whole.cy, 0.35)
+    sh.kind === 'under' && !subject.capsule && !subject.opening
+      ? lerp(subject.core.cy, subject.whole.cy, 0.5)
       : subj.cy;
   const el = f.el * DEG;
   let y = ty + Math.sin(el) * d;

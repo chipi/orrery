@@ -1249,9 +1249,15 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
     // Gemini at splashdown: the capsule is the subject, the canopy beside it stays in the sky.
     if (isGemini && touched) whole = core;
     // An Earth capsule under its chute: keep the capsule (shield and skirt) whole in frame, never the canopy.
-    const capsule =
+    // While a chute is still opening, the whole chute and capsule stay in frame instead.
+    const earthChute =
       body === 'earth' && !model.mainChute && !model.deploy && chuteT != null && s.t >= chuteT;
+    const chuteOpenAt = chuteJetT != null && s.t >= chuteJetT ? chuteJetT : (chuteT ?? 0);
+    let opening = earthChute && model.parachute.visible && s.t < chuteOpenAt + 3;
+    const capsule = earthChute && !opening;
+    opening = opening && !!model.parachute.visible;
     if (capsule) whole = core;
+    else if (opening) core = whole;
     // A gas giant has no ground: below the 1-bar datum the floor is the craft, not the cloud top.
     const camY = vehicle.position.y;
     if (small) {
@@ -1268,7 +1274,7 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
     const pose = descentPoseAt(
       shots,
       s.t,
-      { core, whole, capsule, openingS: openAfterS },
+      { core, whole, capsule, opening, openingS: openAfterS },
       floorAlt,
       camera.aspect,
     );

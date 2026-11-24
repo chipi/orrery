@@ -50,8 +50,6 @@ export interface ReturnSpec {
   entryPlumeLen: number;
   landingPlumeLen: number;
   rcsN: number;
-  /** Deck view: the camera looks this fraction of the way up the booster's top. */
-  lookFrac: number;
 }
 
 export const RETURN_SPECS: Record<ReturnLauncher, ReturnSpec> = {
@@ -65,7 +63,6 @@ export const RETURN_SPECS: Record<ReturnLauncher, ReturnSpec> = {
     entryPlumeLen: 56,
     landingPlumeLen: 44,
     rcsN: 6,
-    lookFrac: 0.4,
   },
   'new-glenn': {
     boosterH: NEW_GLENN_BOOSTER_HEIGHT_M,
@@ -80,7 +77,6 @@ export const RETURN_SPECS: Record<ReturnLauncher, ReturnSpec> = {
     entryPlumeLen: 80,
     landingPlumeLen: 62,
     rcsN: 4,
-    lookFrac: 0.44, // keeps the taller nose in frame
   },
 };
 
@@ -261,19 +257,21 @@ export function returnCamera(
   // Deck: from the +z side, a little aft, low; distance grows with the height to frame both.
   const h = Math.max(0, base - spec.footDropM);
   const dd = Math.max(90 * sc, 2 * (h + 60 * sc)) * (k / sc);
+  const camY = 5 + 0.04 * dd + 0.12 * Math.max(0, dd - 90);
+  // Aim between the pad and the booster's top by angle, a little toward the pad so it clears the
+  // HUD along the bottom; both stay in frame from 2 km up to touchdown.
+  const reach = Math.hypot(0.42 * dd, 0.9 * dd);
+  const aimAngle =
+    0.45 * Math.atan2(h + spec.boosterH - camY, reach) + 0.55 * Math.atan2(-camY, reach);
+  const lookY = Math.max(18 * sc, camY + reach * Math.tan(aimAngle));
   const deck: ReturnCamera = {
-    pos: new THREE.Vector3(
-      PAD_X - 0.42 * dd,
-      5 + 0.04 * dd + 0.12 * Math.max(0, dd - 90),
-      0.9 * dd,
-    ),
-    look: new THREE.Vector3(
-      PAD_X,
-      Math.max(18 * sc, spec.lookFrac * (h + spec.boosterH) + 6 * sc),
-      0,
-    ),
+    pos: new THREE.Vector3(PAD_X - 0.42 * dd, camY, 0.9 * dd),
+    look: new THREE.Vector3(PAD_X, lookY, 0),
   };
-  const s = smooth((t - (l.touchdownS - SHIP_IN_S - CUT_S)) / CUT_S);
+  // A short landing burn starts lower, so the cut waits until the booster is as low as on a 27 s burn.
+  const burn = Math.max(1, l.touchdownS - l.landingBurnS);
+  const shipIn = Math.min(SHIP_IN_S, (burn * (SHIP_IN_S + CUT_S)) / 27 - CUT_S);
+  const s = smooth((t - (l.touchdownS - shipIn - CUT_S)) / CUT_S);
   return { pos: chase.pos.lerp(deck.pos, s), look: chase.look.lerp(deck.look, s) };
 }
 

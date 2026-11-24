@@ -18,7 +18,7 @@
   "archetype": "MARS_PARACHUTE_RETRO",
   "params": {
     "chuteDeployAltM": 12000,
-    "terminalHandoffAltM": 3900,
+    "terminalHandoffAltM": 3700,
     "parachuteCdA": 62,
     "heatshieldKg": 80,
     "backshellKg": 120,
@@ -29,7 +29,6 @@
   "estimatedFields": [
     "flightPathAngleDeg",
     "entryCdA",
-    "terminalHandoffAltM",
     "retroPropellantKg"
   ],
   "provenance": [
@@ -40,6 +39,17 @@
     {
       "l": "Schiaparelli EDM crash reconstruction — ESA ExoMars 2016",
       "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2016-017B"
+    },
+    {
+      "l": "Schiaparelli failure (docs/wip/2026-11-23-mars-landings-record.md, ESA investigation): an IMU saturation released the chute and backshell early, at about 3.7 km; the thrusters fired 3 s instead of 30 s; about 40 s of free fall; impact at about 150 m/s",
+      "u": "https://www.esa.int/Newsroom/Schiaparelli_landing_investigation_completed"
+    }
+  ],
+  "beats": [
+    {
+      "type": "engine_cutoff",
+      "after": "retro_ignition",
+      "afterS": 3
     }
   ]
 }

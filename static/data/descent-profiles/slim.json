@@ -39,6 +39,10 @@
     {
       "l": "Smart Lander for Investigating Moon — Wikipedia",
       "u": "https://en.wikipedia.org/wiki/Smart_Lander_for_Investigating_Moon"
+    },
+    {
+      "l": "SLIM (docs/wip/2026-11-23-lunar-landings-record.md): one of two main engines lost at about 50 m; touchdown under 1.4 m/s but sideways; the planned two-step landing ended nose-down. The simulation keeps the soft touchdown and shows the plume going out at 50 m, then the lander tipping nose-down",
+      "u": "https://global.jaxa.jp/press/2024/01/20240125-1_e.html"
     }
   ],
   "estimatedFields": [
@@ -48,6 +52,21 @@
     "retroPropellantKg",
     "ispS",
     "brakingFpaDeg",
-    "approachFpaDeg"
-  ]
+    "approachFpaDeg",
+    "beats.engine_cutoff (one main lost: drawn as the plume going out)"
+  ],
+  "beats": [
+    {
+      "type": "engine_cutoff",
+      "altM": 50
+    }
+  ],
+  "afterTouchdown": {
+    "beats": [
+      {
+        "type": "at_rest",
+        "afterS": 4
+      }
+    ]
+  }
 }

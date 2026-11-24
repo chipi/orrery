@@ -33,12 +33,23 @@
     {
       "l": "Beresheet (SpaceIL) — NSSDC spacecraft record",
       "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2019-009B"
+    },
+    {
+      "l": "Beresheet (docs/wip/2026-11-23-lunar-landings-record.md): an IMU fault from about 14 km; the main engine cut at about 10 km and restarted too late; impact at about 139 m/s, contact lost about 150 m up. This profile starts at 2.5 km, so the cut and the late restart are not drawn: the plume is shown going out at 2.4 km (an estimate) and the fall is the recorded impact",
+      "u": "https://www.space.com/beresheet-moon-crash-engine-glitch.html"
     }
   ],
   "estimatedFields": [
     "entryState.altitudeM",
     "entryState.velocityMs",
     "flightPathAngleDeg",
-    "retroPropellantKg"
+    "retroPropellantKg",
+    "beats.engine_cutoff"
+  ],
+  "beats": [
+    {
+      "type": "engine_cutoff",
+      "altM": 2400
+    }
   ]
 }

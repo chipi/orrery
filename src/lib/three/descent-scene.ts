@@ -537,6 +537,8 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
   const arraysT = metOf('arrays_open');
   const LEG_S = 4;
   const ARRAY_S = 8;
+  /** Landers that ended tipped over, by site (rad about the base): SLIM ended nose-down (JAXA). */
+  const END_TIP_RAD: Record<string, number> = { slim: -1.4 };
   const shellSepT = bsT ?? cutT;
   const tdDownrangeKm = opts.events?.find((e) => e.type === 'touchdown')?.downrangeKm ?? 0;
   const BRIDLE_S = 6; // MER's bridle paid out in about 6 s (MER landing press kit)
@@ -635,6 +637,9 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
     prevVh = vh;
     prevVd = vd;
     vehicle.rotation.z = airless ? tiltRad : 0;
+    // A lander that ended tipped over (SLIM, nose-down): it tips about its base over 3 s after contact.
+    const tip = END_TIP_RAD[opts.siteId];
+    if (tip && touchdownT != null) vehicle.rotation.z += tip * smooth01((s.t - touchdownT) / 3);
 
     // Sky: space-black high → the body's near-surface atmosphere colour low.
     const skyT = Math.min(1, Math.max(0, 1 - s.altKm / sky.fadeKm));

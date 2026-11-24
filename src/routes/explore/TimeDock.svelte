@@ -324,6 +324,12 @@
     inline-size: 18px;
     block-size: 18px;
   }
+  /* A landscape phone puts the drawer's tab row on this bar's line, right-aligned
+     (MobileDrawerGroup bottom-inline): the bar stays left-anchored to its content so it ends
+     before the tabs instead of covering them. */
+  :global(html[data-touch][data-orientation='landscape']) .time-controls {
+    right: auto;
+  }
   /* The desktop offset (left 209 px, beside the REFERENCES card) does not apply on touch, where
      that card is hidden: in landscape it pushed the dock over the drawer's tab row. */
   @media (min-width: 601px) {

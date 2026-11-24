@@ -226,6 +226,23 @@ describe('apollo8 lunar-return skip flight (shipped profile)', () => {
     expect(s.guidance?.targetReachable).toBe(true);
   });
 
+  // Apollo 12 and 14: SP-4029 compilation inputs only (no postflight analysis found): L/D 0.309 and
+  // 0.280, range 1,250 and 1,234 n.mi. Flown: peak 6.57 g and 6.76 g, splashdown 846 s and 853 s after
+  // entry. The model reads the first pulse 10-16% high (the same recorded limit as Apollo 11).
+  for (const [id, peak, splash] of [
+    ['apollo12-splashdown', 6.57, 846],
+    ['apollo14-splashdown', 6.76, 853],
+  ] as const) {
+    it(`${id} lands on target inside the corridor and near its flown time`, () => {
+      const { s } = flight(id);
+      expectInRange(s.peakDecel.g, peak * 0.9, peak * 1.25, `${id} first pulse (${peak} g flown)`);
+      const touch = s.events.find((e) => e.type === 'touchdown')!.t;
+      expectInRange(touch, splash * 0.95, splash * 1.05, `${id} splashdown (${splash} s flown)`);
+      expect(s.touchdownSuccess).toBe(true);
+      expect(s.guidance?.targetReachable).toBe(true);
+    });
+  }
+
   it('the LEO Apollo 7 return does NOT skip (same capsule, sub-circular speed)', () => {
     const { s } = flight('apollo7');
     expect(s.events.some((e) => e.type === 'skip_out')).toBe(false);

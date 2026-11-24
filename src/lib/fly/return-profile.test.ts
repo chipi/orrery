@@ -60,6 +60,44 @@ describe('Apollo 11 figures (Mission Report MSC-00171)', () => {
   });
 });
 
+describe('Apollo 12 and 14 figures (mission reports, SP-4029)', () => {
+  const a12 = expandReturnProfile(load('apollo12.json'));
+  const a14 = expandReturnProfile(load('apollo14.json'));
+  it('Apollo 12 flew the Apollo 11 sequence: CSI, CDH, TPI, TPF', () => {
+    expect(a12.rendezvous.map((r) => r.id)).toEqual(['csi', 'cdh', 'tpi', 'tpf']);
+    expect(a12.liftoffS).toBe(142 * 3600 + 3 * 60 + 48);
+    expect(a12.dockingS).toBe(145 * 3600 + 36 * 60 + 20);
+    expect(a12.tei.dvFts).toBe(3042.0);
+    expect(a12.teiMetDays).toBeCloseTo(7.186, 2); // the mission file's tei event
+  });
+  it('Apollo 14 flew a direct rendezvous (vernier, TPI by APS, TPF), on the Mission Report clock', () => {
+    expect(a14.rendezvous.map((r) => r.id)).toEqual(['vernier', 'tpi', 'tpf']);
+    expect(a14.rendezvous.find((r) => r.id === 'tpi')?.engine).toBe('aps');
+    expect(a14.liftoffS).toBe(141 * 3600 + 45 * 60 + 40);
+    expect(a14.dockingS).toBeCloseTo(143 * 3600 + 32 * 60 + 50.5, 3);
+    expect(a14.tei.burnS).toBe(149.2);
+    expect(a14.teiMetDays).toBeCloseTo(6.192, 2); // the mission file's tei event, not the Journal clock (+40:03)
+  });
+  it('names a splashdown profile that exists, is Earth and carries the SP-4029 L/D and range', () => {
+    const read = (id: string) =>
+      JSON.parse(
+        readFileSync(resolve(process.cwd(), `static/data/descent-profiles/${id}.json`), 'utf-8'),
+      );
+    for (const [p, ld, nmi, fpa] of [
+      [a12, 0.309, 1250, 6.48],
+      [a14, 0.28, 1234, 6.37],
+    ] as const) {
+      const sp = read(p.splashdownProfile!);
+      expect(sp.body).toBe('earth');
+      expect(sp.siteId).toBe(p.splashdownProfile);
+      expect(sp.missionId).toBe(p.missionId);
+      expect(sp.liftToDragRatio).toBe(ld);
+      expect(sp.targetDownrangeKm).toBeCloseTo(nmi * 1.852, 0);
+      expect(sp.entryState.flightPathAngleDeg).toBe(fpa);
+    }
+  });
+});
+
 describe('isValidReturnProfile fails closed', () => {
   const good = load('apollo11.json');
   it('rejects non-objects and missing fields', () => {
@@ -73,6 +111,13 @@ describe('isValidReturnProfile fails closed', () => {
   it('rejects a malformed GET and a wrong rendezvous list', () => {
     expect(isValidReturnProfile({ ...good, liftoff: 'noon' })).toBe(false);
     expect(isValidReturnProfile({ ...good, rendezvous: good.rendezvous.slice(1) })).toBe(false);
+  });
+  it('rejects a malformed camera style', () => {
+    expect(isValidReturnProfile({ ...good, camera: { shots: { liftoff: 3 } } })).toBe(false);
+    expect(isValidReturnProfile({ ...good, camera: 'wide' })).toBe(false);
+    expect(isValidReturnProfile({ ...good, camera: { shots: { liftoff: 'ground_low' } } })).toBe(
+      true,
+    );
   });
 });
 

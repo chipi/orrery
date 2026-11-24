@@ -1,0 +1,57 @@
+{
+  "missionId": "apollo12",
+  "siteId": "apollo12-splashdown",
+  "body": "earth",
+  "landingSite": {
+    "lat": -15.78,
+    "lon": -165.15
+  },
+  "entryState": {
+    "altitudeM": 122000,
+    "velocityMs": 11008,
+    "flightPathAngleDeg": 6.48
+  },
+  "entryMassKg": 5568,
+  "entryCdA": 17.7,
+  "liftToDragRatio": 0.309,
+  "archetype": "EARTH_CAPSULE_REENTRY",
+  "params": {
+    "chuteDeployAltM": 7300,
+    "terminalHandoffAltM": 3000,
+    "parachuteCdA": 24.2,
+    "terminalCdA": 1154
+  },
+  "source_tier": "flagship",
+  "provenance": [
+    {
+      "l": "Apollo 12 Mission Report MSC-01855 (Mar 1970): Table 5-IX, entry interface 244:22:19.1 at 400,000 ft, 36,116 ft/s (11,009 m/s), flight-path angle -6.48 deg; Table A-II, command module weight at entry 12,275.5 lb (5,568 kg; the OCR of this row is doubtful); section 11.3.1, landing 244:36:25 GET (20:58:25 GMT 24 November 1969) at 15 deg 46.6 min S, 165 deg 9.0 min W, USS Hornet. Quote: \"The command module landed at 244:36:25 (2058 G.m.t.) at a point calculated by recovery forces to be 15 degrees 46.6 minutes south latitude and 165 degrees 9.0 minutes west longitude.\"",
+      "u": "https://apollojournals.org/alsj/a12/A12_MissionReport.pdf"
+    },
+    {
+      "l": "NASA SP-4029 Apollo chronology, \"Entry, Splashdown, and Recovery\" compilation (Apollo 7-17): entry interface velocity, flight-path angle, lift-to-drag ratio, range to target, maximum g, entry-to-splashdown duration, splashdown position and CM weight. Apollo 12 column: \"Lift To Drag Ratio 0.309\", \"Range (n mi) 1,250\" (1,250 n.mi = 2,315 km), \"Maximum g 6.57\", \"Duration (sec) 845.9\", \"Velocity (ft/sec) 36,116.618\", \"Flight Path Angle -6.48\". No Apollo 12 entry postflight analysis was found, so L/D and range are the compilation values (secondary), not a reconstruction; there is no published first/second load-factor split. Model limit: with these inputs the model peaks at 7.6 g at 68 s (6.57 g flown), dips to 1.1 g, second pulse 5.9 g; drogues 486 s (504 s flown, 8 min 24 s), splashdown 840 s (846 s flown)",
+      "u": "https://www.nasa.gov/wp-content/uploads/static/history/SP-4029/Apollo_18-40_Entry_Splashdown_and_Recovery.htm"
+    },
+    {
+      "l": "Apollo 12 impact: \"the landing impact was extremely hard ... an impact acceleration of about 15g\" (Mission Report section 9.15); the model has no water-impact load, so this is a description, not a fitted value",
+      "u": "https://apollojournals.org/alsj/a12/A12_MissionReport.pdf"
+    },
+    {
+      "l": "Apollo CM entry aero (L/D 0.3), drogue and main areas: the Apollo 8 profile (MSC-PA-R-69-1), same Block II command module",
+      "u": "https://ntrs.nasa.gov/api/citations/19700033031/downloads/19700033031.pdf"
+    }
+  ],
+  "estimatedFields": [
+    "entryCdA",
+    "params.chuteDeployAltM",
+    "params.parachuteCdA",
+    "params.terminalCdA",
+    "beats.apex_cover_jettison"
+  ],
+  "beats": [
+    {
+      "type": "apex_cover_jettison",
+      "altM": 7500
+    }
+  ],
+  "targetDownrangeKm": 2315
+}

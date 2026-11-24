@@ -1,4 +1,4 @@
-import { readFileSync } from 'node:fs';
+import { readFileSync, readdirSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { describe, it, expect } from 'vitest';
 import * as THREE from 'three';
@@ -9,7 +9,10 @@ import {
   DEFAULT_RIG,
   RT,
   beatAt,
+  beatsFor,
   burnWindow,
+  isReturnShot,
+  shotFor,
   csmCentreFromAnchor,
   descentRel,
   getAt,
@@ -18,11 +21,13 @@ import {
   tipFromAnchor,
 } from './fly-return-scene';
 
-const profile: ReturnProfile = expandReturnProfile(
-  JSON.parse(
-    readFileSync(resolve(process.cwd(), 'static/data/return-profiles/apollo11.json'), 'utf-8'),
-  ),
-);
+const DIR = resolve(process.cwd(), 'static/data/return-profiles');
+const load = (id: string): ReturnProfile =>
+  expandReturnProfile(JSON.parse(readFileSync(resolve(DIR, `${id}.json`), 'utf-8')));
+const profile: ReturnProfile = load('apollo11');
+const ALL = readdirSync(DIR)
+  .filter((f) => f.endsWith('.json'))
+  .map((f) => f.slice(0, -5));
 const times = Array.from({ length: 821 }, (_, i) => i / 10);
 
 describe('the beat and shot tables', () => {
@@ -36,6 +41,77 @@ describe('the beat and shot tables', () => {
     expect(BEAT_SHOT[beatAt(RT.contact + 0.1)]).toBe('dock_close');
     expect(BEAT_SHOT[beatAt(RT.hardDock + 0.1)]).toBe('dock_close');
     expect(BEAT_SHOT[beatAt(RT.pullBack + 0.1)]).toBe('dock_pull');
+  });
+});
+
+describe('the rendezvous beats come from the profile', () => {
+  it('Apollo 11 keeps its beats exactly', () => {
+    expect(beatsFor(profile).map((b) => [b.id, b.t])).toEqual(BEATS.map((b) => [b.id, b.t]));
+    expect(
+      beatsFor(profile)
+        .slice(4, 8)
+        .map((b) => b.id),
+    ).toEqual(['csi', 'cdh', 'tpi', 'terminal']);
+    expect(BEATS.slice(4, 8).map((b) => b.t)).toEqual([RT.csi, RT.cdh, RT.tpi, RT.terminal]);
+  });
+  it('Apollo 12 flies the same four; Apollo 14 flies vernier, TPI, terminal between the same bounds', () => {
+    expect(beatsFor(load('apollo12')).map((b) => b.id)).toEqual(BEATS.map((b) => b.id));
+    const b14 = beatsFor(load('apollo14'));
+    expect(b14.map((b) => b.id)).toEqual([
+      'surface',
+      'liftoff',
+      'ascent',
+      'insertion',
+      'vernier',
+      'tpi',
+      'terminal',
+      'dock_wide',
+      'dock_approach',
+      'dock_closeup',
+      'soft_capture',
+      'hard_dock',
+      'dock_pullback',
+      'jettison',
+      'tei_coast',
+      'tei_burn',
+      'fade',
+    ]);
+    expect(b14.find((b) => b.id === 'vernier')!.t).toBe(RT.csi);
+    expect(b14.find((b) => b.id === 'terminal')!.t).toBe(RT.terminal);
+    expect(beatAt(RT.csi + 0.1, load('apollo14'))).toBe('vernier');
+  });
+  it('a direct rendezvous shows its three sourced GETs and the APS TPI as an engine burn', () => {
+    const p = load('apollo14');
+    expect(formatGet(getAt(RT.csi, p))).toBe('141:56:49.4');
+    expect(formatGet(getAt(beatsFor(p)[5].t, p))).toBe('142:30:51.0');
+    expect(formatGet(getAt(RT.terminal, p))).toBe('143:13:29.1');
+    const [a, b] = burnWindow('tpi', p);
+    const mid = returnPose((a + b) / 2, p);
+    expect(mid.lmEngine).toBe(true);
+    expect(mid.lmRcs).toBe(0);
+  });
+});
+
+describe('the camera style of each mission', () => {
+  it('every shot a profile names is a shot the scene plays, on a real beat', () => {
+    for (const id of ALL) {
+      const shots =
+        JSON.parse(readFileSync(resolve(DIR, `${id}.json`), 'utf-8')).camera?.shots ?? {};
+      const beats = new Set(BEATS.map((b) => b.id as string).concat('vernier'));
+      for (const [beat, shot] of Object.entries(shots)) {
+        expect(beats.has(beat), `${id}: ${beat}`).toBe(true);
+        expect(isReturnShot(shot as string), `${id}: ${shot}`).toBe(true);
+      }
+    }
+  });
+  it('Apollo 11 has no override: its approved shots are the default table', () => {
+    for (const b of BEATS) expect(shotFor(b.id, profile)).toBe(BEAT_SHOT[b.id]);
+  });
+  it('the three missions use three different openings and docking views', () => {
+    const open = ALL.map((id) => shotFor('liftoff', load(id)));
+    const dock = ALL.map((id) => shotFor('soft_capture', load(id)));
+    expect(new Set(open).size).toBe(ALL.length);
+    expect(new Set(dock).size).toBeGreaterThan(1);
   });
 });
 
@@ -179,41 +255,51 @@ describe('returnCamera', () => {
   });
 });
 
-describe('no empty frames: the craft of every beat are in the frustum', () => {
-  const project = (aspect: number, t: number) => {
-    const pose = returnPose(t, profile);
-    const cam = returnCamera(t, aspect, pose);
-    const c = new THREE.PerspectiveCamera(cam.fov, aspect, 0.05, 1e7);
-    c.position.copy(cam.pos);
-    c.lookAt(cam.look);
-    c.updateMatrixWorld(true);
-    c.updateProjectionMatrix();
-    const inside = (p: THREE.Vector3) => {
-      const n = p.clone().project(c);
-      return Math.abs(n.x) <= 1 && Math.abs(n.y) <= 1 && n.z > -1 && n.z < 1;
+for (const id of ALL) {
+  const prof = load(id);
+  describe(`no empty frames: the craft of every beat are in the frustum (${id})`, () => {
+    const project = (aspect: number, t: number) => {
+      const pose = returnPose(t, prof);
+      const cam = returnCamera(t, aspect, pose);
+      const c = new THREE.PerspectiveCamera(cam.fov, aspect, 0.05, 1e7);
+      c.position.copy(cam.pos);
+      c.lookAt(cam.look);
+      c.updateMatrixWorld(true);
+      c.updateProjectionMatrix();
+      const inside = (p: THREE.Vector3) => {
+        const n = p.clone().project(c);
+        return Math.abs(n.x) <= 1 && Math.abs(n.y) <= 1 && n.z > -1 && n.z < 1;
+      };
+      return { pose, inside };
     };
-    return { pose, inside };
-  };
-  const samples = BEATS.flatMap((b, i) => {
-    const end = i + 1 < BEATS.length ? BEATS[i + 1].t : RT.end;
-    return [b.t + 0.05, (b.t + end) / 2];
-  });
-  for (const aspect of [1.6, 390 / 844]) {
-    it(`aspect ${aspect.toFixed(2)}`, () => {
-      const bad: string[] = [];
-      for (const t of samples) {
-        const { pose, inside } = project(aspect, t);
-        const close = pose.shot === 'dock_close' || pose.shot === 'dock_pull';
-        // the close-ups frame the docking anchors, not the whole craft
-        const lm = close ? DEFAULT_RIG.drogue : new THREE.Vector3(0, 0, 0);
-        const tei = pose.beat === 'tei_coast' || pose.beat === 'tei_burn' || pose.beat === 'fade';
-        if (!tei && !inside(lm)) bad.push(`${t} LM ${pose.beat}`);
-        const pullStart = pose.shot === 'dock_pull' && t < RT.pullBack + 0.5;
-        if (pose.csmVisible && pose.shot !== 'dock_close' && !pullStart) {
-          if (!inside(csmCentreFromAnchor(pose, DEFAULT_RIG))) bad.push(`${t} CSM ${pose.beat}`);
-        }
-      }
-      expect(bad).toEqual([]);
+    const beats = beatsFor(prof);
+    const samples = beats.flatMap((b, i) => {
+      const end = i + 1 < beats.length ? beats[i + 1].t : RT.end;
+      return [b.t + 0.05, (b.t + end) / 2];
     });
-  }
-});
+    for (const aspect of [1.6, 390 / 844]) {
+      it(`aspect ${aspect.toFixed(2)}`, () => {
+        const bad: string[] = [];
+        for (const t of samples) {
+          const { pose, inside } = project(aspect, t);
+          const close =
+            pose.shot === 'dock_close' || pose.shot === 'dock_pull' || pose.shot === 'dock_csm';
+          // the close-ups frame the docking anchors, not the whole craft
+          const lm = close ? DEFAULT_RIG.drogue : new THREE.Vector3(0, 0, 0);
+          const tei = pose.beat === 'tei_coast' || pose.beat === 'tei_burn' || pose.beat === 'fade';
+          if (!tei && !inside(lm)) bad.push(`${t} LM ${pose.beat}`);
+          const pullStart = pose.shot === 'dock_pull' && t < RT.pullBack + 0.5;
+          if (
+            pose.csmVisible &&
+            pose.shot !== 'dock_close' &&
+            pose.shot !== 'dock_csm' &&
+            !pullStart
+          ) {
+            if (!inside(csmCentreFromAnchor(pose, DEFAULT_RIG))) bad.push(`${t} CSM ${pose.beat}`);
+          }
+        }
+        expect(bad).toEqual([]);
+      });
+    }
+  });
+}

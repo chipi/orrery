@@ -489,6 +489,8 @@ const STARSHIP_SHIP_SITES = new Set(['starship-demo', 'starship-mars-crew']);
 const LUNAR_RETURN_CAPSULE: Record<string, string> = {
   apollo8: 'apollo-cm',
   'apollo11-splashdown': 'apollo-cm', // Apollo 11's Earth return (its lunar landing is siteId apollo11)
+  'apollo12-splashdown': 'apollo-cm',
+  'apollo14-splashdown': 'apollo-cm',
 };
 
 /** Resolve the terminal landed craft for a mission (the reused surface model). */

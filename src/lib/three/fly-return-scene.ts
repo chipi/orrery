@@ -18,7 +18,7 @@
  * (millimetre precision at the docking close-up whatever the altitude).
  */
 import * as THREE from 'three';
-import type { ReturnProfile } from '$lib/fly/return-profile';
+import type { RendezvousBurn, ReturnProfile } from '$lib/fly/return-profile';
 import { plumeCone } from './engine-plume';
 
 export const MOON_R_M = 1_737_400;
@@ -56,6 +56,7 @@ export type ReturnBeat =
   | 'liftoff'
   | 'ascent'
   | 'insertion'
+  | 'vernier'
   | 'csi'
   | 'cdh'
   | 'tpi'
@@ -93,9 +94,42 @@ export const BEATS: readonly { id: ReturnBeat; t: number }[] = [
   { id: 'fade', t: RT.teiEnd },
 ];
 
-export function beatAt(t: number): ReturnBeat {
-  let id = BEATS[0].id;
-  for (const b of BEATS) if (t >= b.t) id = b.id;
+/** The beat a rendezvous burn plays under (the last burn is the terminal-phase finalisation). */
+const BURN_BEAT: Record<RendezvousBurn['id'], ReturnBeat> = {
+  vernier: 'vernier',
+  csi: 'csi',
+  cdh: 'cdh',
+  tpi: 'tpi',
+  tpf: 'terminal',
+};
+
+/** Scene time of each rendezvous burn's beat: the first at RT.csi, the last at RT.terminal, the
+ *  rest evenly between (four burns land on csi, cdh, tpi, terminal exactly). */
+export function burnSlots(
+  p: Pick<ReturnProfile, 'rendezvous'>,
+): { id: RendezvousBurn['id']; t: number }[] {
+  const n = p.rendezvous.length;
+  return p.rendezvous.map((b, i) => ({
+    id: b.id,
+    t: n === 1 ? RT.csi : RT.csi + ((RT.terminal - RT.csi) * i) / (n - 1),
+  }));
+}
+
+/** The beats of one mission, in order: the rendezvous beats come from its profile's burn list. */
+export function beatsFor(
+  p?: Pick<ReturnProfile, 'rendezvous'>,
+): readonly { id: ReturnBeat; t: number }[] {
+  if (!p) return BEATS;
+  const rend = burnSlots(p).map((b) => ({ id: BURN_BEAT[b.id], t: b.t }));
+  const i0 = BEATS.findIndex((b) => b.id === 'csi');
+  const i1 = BEATS.findIndex((b) => b.id === 'terminal');
+  return [...BEATS.slice(0, i0), ...rend, ...BEATS.slice(i1 + 1)];
+}
+
+export function beatAt(t: number, p?: Pick<ReturnProfile, 'rendezvous'>): ReturnBeat {
+  const beats = beatsFor(p);
+  let id = beats[0].id;
+  for (const b of beats) if (t >= b.t) id = b.id;
   return id;
 }
 
@@ -109,7 +143,52 @@ export type ReturnShot =
   | 'dock_close'
   | 'dock_pull'
   | 'jettison_track'
-  | 'tei_side';
+  | 'tei_side'
+  // Per-mission styles (the profile's camera.shots picks them):
+  | 'ground_low'
+  | 'ground_tele'
+  | 'chase_high'
+  | 'chase_long'
+  | 'orbit_nadir'
+  | 'rendezvous_over'
+  | 'rendezvous_side'
+  | 'dock_csm'
+  | 'jettison_high'
+  | 'tei_front'
+  | 'tei_high';
+
+const SHOT_IDS: ReadonlySet<string> = new Set<ReturnShot>([
+  'ground',
+  'chase',
+  'orbit_wide',
+  'rendezvous',
+  'dock_wide',
+  'dock_approach',
+  'dock_close',
+  'dock_pull',
+  'jettison_track',
+  'tei_side',
+  'ground_low',
+  'ground_tele',
+  'chase_high',
+  'chase_long',
+  'orbit_nadir',
+  'rendezvous_over',
+  'rendezvous_side',
+  'dock_csm',
+  'jettison_high',
+  'tei_front',
+  'tei_high',
+]);
+
+/** True when the name is a shot the scene can play (a profile's camera.shots is checked with it). */
+export const isReturnShot = (v: string): v is ReturnShot => SHOT_IDS.has(v);
+
+/** The shot of a beat for one mission: the profile's camera style over the default table. */
+export function shotFor(beat: ReturnBeat, p?: Pick<ReturnProfile, 'camera'>): ReturnShot {
+  const v = p?.camera?.shots?.[beat];
+  return v !== undefined && isReturnShot(v) ? v : BEAT_SHOT[beat];
+}
 
 /** The shot the camera cuts to on each beat (the descent-director BEAT_SHOT pattern). */
 export const BEAT_SHOT: Record<ReturnBeat, ReturnShot> = {
@@ -117,6 +196,7 @@ export const BEAT_SHOT: Record<ReturnBeat, ReturnShot> = {
   liftoff: 'ground',
   ascent: 'chase',
   insertion: 'orbit_wide',
+  vernier: 'rendezvous',
   csi: 'rendezvous',
   cdh: 'rendezvous',
   tpi: 'rendezvous',
@@ -142,16 +222,12 @@ const lerp = (a: number, b: number, k: number) => a + (b - a) * k;
 
 /** The real GET (s) shown on the HUD: piecewise linear through the sourced event times. */
 export function getAt(t: number, p: ReturnProfile): number {
-  const r = p.rendezvousS;
   const knots: [number, number][] = [
     [0, p.liftoffS - RT.ignition],
     [RT.ignition, p.liftoffS],
     [RT.pitchOver, p.liftoffS + p.verticalRiseS],
     [RT.insertion, p.insertionS],
-    [RT.csi, r.csi],
-    [RT.cdh, r.cdh],
-    [RT.tpi, r.tpi],
-    [RT.terminal, r.tpf],
+    ...burnSlots(p).map((b): [number, number] => [b.t, p.rendezvousS[b.id]!]),
     [RT.contact, p.dockingS],
     [RT.separate, p.jettisonS],
     [RT.teiBurn, p.teiS],
@@ -263,15 +339,16 @@ function rangeAt(t: number): number {
 }
 
 /** The rendezvous burns' windows in scene time: each starts 0.1 s into its beat, 1/16 the real length. */
-export function burnWindow(id: 'csi' | 'cdh' | 'tpi' | 'tpf', p: ReturnProfile): [number, number] {
-  const start = { csi: RT.csi, cdh: RT.cdh, tpi: RT.tpi, tpf: RT.terminal }[id] + 0.1;
+export function burnWindow(id: RendezvousBurn['id'], p: ReturnProfile): [number, number] {
+  const start = burnSlots(p).find((b) => b.id === id)!.t + 0.1;
   const b = p.rendezvous.find((r) => r.id === id)!;
-  return [start, start + b.burnS * BURN_SCALE];
+  // A short APS burn (Apollo 14's 3.6 s TPI) is held long enough to read.
+  return [start, start + Math.max(b.burnS * BURN_SCALE, b.engine === 'aps' ? 0.7 : 0)];
 }
 
 /** Distance of the CSM's axis point from the LM: closing along the radial line for the last metres. */
 export function returnPose(t: number, p: ReturnProfile): ReturnPose {
-  const beat = beatAt(t);
+  const beat = beatAt(t, p);
   const ground = t < RT.insertion;
   // Altitude and ground angle: the 10 s vertical rise (real time), then the compressed ascent.
   const alt0 = DEFAULT_RIG.stageY0;
@@ -306,9 +383,13 @@ export function returnPose(t: number, p: ReturnProfile): ReturnPose {
 
   // LM RCS during the rendezvous burns.
   let lmRcs = 0;
-  for (const id of ['csi', 'cdh', 'tpi', 'tpf'] as const) {
-    const [a, b] = burnWindow(id, p);
-    if (t >= a && t < b) lmRcs = 1;
+  let apsBurn = false;
+  for (const burn of p.rendezvous) {
+    const [a, b] = burnWindow(burn.id, p);
+    if (t >= a && t < b) {
+      if (burn.engine === 'aps') apsBurn = true;
+      else lmRcs = 1;
+    }
   }
 
   // The CSM: a path to the radial line, then the sourced-pace-free docking approach.
@@ -371,12 +452,12 @@ export function returnPose(t: number, p: ReturnProfile): ReturnPose {
 
   return {
     beat,
-    shot: BEAT_SHOT[beat],
+    shot: shotFor(beat, p),
     get: getAt(t, p),
     altM,
     theta,
     lmTilt,
-    lmEngine: ground && t >= RT.ignition,
+    lmEngine: (ground && t >= RT.ignition) || apsBurn,
     lmRcs,
     csmVisible,
     csmRel: rel,
@@ -513,6 +594,107 @@ export function returnCamera(
       const s = smooth((t - RT.teiCoast) / (RT.end - RT.teiCoast));
       const off = V(lerp(-12, -24, s) * k, lerp(2.5, 3.5, s), lerp(26, 38, s) * k);
       return { pos: c.clone().add(off), look: c, fov: 34 };
+    }
+    // ─ Per-mission styles (profile camera.shots). Every number below is an editorial ESTIMATE. ─
+    case 'ground_low': {
+      // Low across the regolith (a lens at about 1.5 m, the Surveyor 3 crater site's flat floor),
+      // tilting up to follow the stage; the descent stage is in the foreground at first.
+      const dr = descentRel(pose);
+      const up = pose.altM - rig.stageY0;
+      const w = 0.6 * (1 - smooth((t - RT.ignition) / 6));
+      const look = V(0, 0, 0).lerp(dr.clone().add(V(0, 2.2, 0)), w);
+      const D = (36 + 0.3 * up) * k;
+      return { pos: V(-0.5 * D, dr.y + 1.5 + 0.02 * up, 0.86 * D), look, fov: 46 };
+    }
+    case 'ground_tele': {
+      // A long lens from the far side and well back: the stage rises out of the hills.
+      const dr = descentRel(pose);
+      const up = pose.altM - rig.stageY0;
+      const w = 0.5 * (1 - smooth((t - RT.ignition) / 8));
+      const look = V(0, 0, 0).lerp(dr.clone().add(V(0, 1.5, 0)), w);
+      const D = (70 + 0.55 * up) * k;
+      return { pos: look.clone().add(V(-0.7 * D, 0.14 * D, -0.7 * D)), look, fov: 26 };
+    }
+    case 'chase_high': {
+      // From behind and above: the Moon fills the lower frame and the stage runs away from us.
+      const s = smooth((t - RT.pitchOver) / (RT.insertion - RT.pitchOver));
+      return {
+        pos: V(lerp(16, 38, s) * k, lerp(16, 34, s), lerp(34, 60, s) * k),
+        look: V(lerp(-3, -8, s), 0, 0),
+        fov: 40,
+      };
+    }
+    case 'chase_long': {
+      // One slow move from the end of the vertical rise through insertion: no cut to a wide shot.
+      const s = smooth((t - RT.pitchOver) / (RT.csi - RT.pitchOver));
+      return {
+        pos: V(lerp(-14, -48, s) * k, lerp(-4, 14, s), lerp(30, 66, s) * k),
+        look: V(lerp(0, 4, s), 0, 0),
+        fov: 38,
+      };
+    }
+    case 'orbit_nadir':
+      // Straight down on the stage with the Moon filling the frame behind it.
+      return { pos: V(-18 * k, 70, 44 * k), look: V(0, -22, 0), fov: 44 };
+    case 'rendezvous_over': {
+      // From the CSM's side of the gap, behind and above it, looking back across to the rising LM
+      // with the Moon below: the CSM large in the foreground, the LM beyond.
+      const c = csmCentreFromAnchor(pose, rig);
+      const u = c.clone().normalize();
+      const side = new THREE.Vector3().crossVectors(u, V(0, 1, 0)).normalize();
+      const pos = c
+        .clone()
+        .addScaledVector(u, 38 * k)
+        .addScaledVector(side, 14 * k)
+        .add(V(0, 12 + 4 * k, 0));
+      const look = c.clone().multiplyScalar(0.45);
+      return { pos, look, fov: 40 };
+    }
+    case 'rendezvous_side': {
+      // Close from the LM's side, level with it, the CSM ahead across the gap.
+      const c = csmCentreFromAnchor(pose, rig);
+      const u = c.clone().normalize();
+      const side = new THREE.Vector3().crossVectors(u, V(0, 1, 0)).normalize();
+      const { h, v } = halfFov(46, aspect);
+      const sep = c.length();
+      const d = ((sep / 2 + 9) / Math.tan(Math.min(h, v))) * 0.9;
+      const mid = c.clone().multiplyScalar(0.5);
+      return {
+        pos: mid
+          .clone()
+          .addScaledVector(side, -d * 0.85)
+          .add(V(0, 0.2 * d, 0)),
+        look: mid,
+        fov: 46,
+      };
+    }
+    case 'dock_csm': {
+      // Roosa's view: from the CSM's side window, just behind the probe, down at the drogue.
+      const gap = Math.max(0, tip.y - drogue.y);
+      const look = drogue.clone().add(V(0, Math.min(gap, 4) * 0.2, 0));
+      const pos = tip.clone().add(V(1.5 * (0.8 + 0.2 * k), 2.6 + 0.2 * Math.min(gap, 24), 1.0));
+      return { pos, look, fov: 50 };
+    }
+    case 'jettison_high': {
+      // From the other side and above: the ascent stage drops away below the CSM.
+      const c = csmCentreFromAnchor(pose, rig);
+      const mid = c.clone().multiplyScalar(0.5);
+      const d = (28 + 1.4 * Math.hypot(c.x, c.y)) * k;
+      return { pos: mid.clone().add(V(-0.62 * d, 0.5 * d, 0.6 * d)), look: mid, fov: 34 };
+    }
+    case 'tei_front': {
+      // Ahead of the burn and a little below, the nose coming at the lens.
+      const c = csmCentreFromAnchor(pose, rig);
+      const s = smooth((t - RT.teiCoast) / (RT.end - RT.teiCoast));
+      const off = V(lerp(36, 30, s) * k, lerp(-2, -5, s), lerp(18, 26, s) * k);
+      return { pos: c.clone().add(off), look: c, fov: 36 };
+    }
+    case 'tei_high': {
+      // From above and behind: the Moon below the CSM as it pulls away.
+      const c = csmCentreFromAnchor(pose, rig);
+      const s = smooth((t - RT.teiCoast) / (RT.end - RT.teiCoast));
+      const off = V(lerp(-10, -20, s) * k, lerp(16, 22, s), lerp(24, 34, s) * k);
+      return { pos: c.clone().add(off), look: c, fov: 36 };
     }
   }
 }

@@ -1,0 +1,73 @@
+{
+  "missionId": "apollo12",
+  "siteId": "apollo12",
+  "launchZeroUtc": "1969-11-14T16:22:00Z",
+  "liftoff": "142:03:48",
+  "verticalRiseS": 10,
+  "ascentBurnS": 434,
+  "ascentDvFts": 6057.0,
+  "insertion": {
+    "get": "142:10:59.9",
+    "orbitNmi": [51.93, 9.21],
+    "altitudeFt": 60000,
+    "radialFts": 32,
+    "downrangeFts": 5540.0
+  },
+  "rendezvous": [
+    { "id": "csi", "get": "143:01:51", "burnS": 41.1, "dvFts": 45.0 },
+    { "id": "cdh", "get": "144:00:02.6", "burnS": 13.0, "dvFts": 13.8 },
+    { "id": "tpi", "get": "144:36:26", "burnS": 26.0, "dvFts": 29.0 },
+    { "id": "tpf", "get": "145:19:29.3", "burnS": 38.0, "dvFts": 40.0 }
+  ],
+  "csmOrbitNmi": [62.6, 57],
+  "splashdownProfile": "apollo12-splashdown",
+  "docking": "145:36:20",
+  "jettison": "147:59:32",
+  "jettisonAltitudeNmi": 59.8,
+  "tei": { "get": "172:27:16.8", "burnS": 130.3, "dvFts": 3042.0 },
+  "camera": {
+    "shots": {
+      "surface": "ground_low",
+      "liftoff": "ground_low",
+      "ascent": "chase_high",
+      "insertion": "orbit_nadir",
+      "csi": "rendezvous_over",
+      "cdh": "rendezvous_over",
+      "tpi": "rendezvous_side",
+      "terminal": "rendezvous_side",
+      "tei_coast": "tei_front",
+      "tei_burn": "tei_front",
+      "fade": "tei_front"
+    }
+  },
+  "source_tier": "flagship",
+  "estimatedFields": [
+    "insertion.altitudeFt",
+    "insertion.radialFts",
+    "insertion.downrangeFts",
+    "verticalRiseS",
+    "jettisonAltitudeNmi",
+    "scene.verticalRiseKinematics",
+    "scene.ascentTrajectoryShape",
+    "scene.pitchOver",
+    "scene.rendezvousRanges",
+    "scene.dockingClosingSpeed",
+    "scene.jettisonDrift",
+    "scene.attitudeAfterInsertion",
+    "scene.camera"
+  ],
+  "provenance": [
+    {
+      "l": "Apollo 12 Mission Report MSC-01855 (Mar 1970): Table 5-I (liftoff 142:03:48, docking 145:36:20, ascent stage jettison 147:59:32), Table 5-VI (ascent propulsion 6,057.0 ft/s), Table 5-VIII (TEI 172:27:16.8, 130.3 s, 3,042.0 ft/s), range zero 16:22:00 GMT 14 November 1969. Quote: \"Transearth injection Service propulsion 172:27:16.8 130.3 3042.0\"",
+      "u": "https://apollojournals.org/alsj/a12/A12_MissionReport.pdf"
+    },
+    {
+      "l": "NASA SP-4029 Apollo 12 summary: \"The 434-second burn was 1.2 seconds longer than planned\"; \"placed the spacecraft into an orbit of 51.93 by 9.21 n mi at 142:10:59.9\"; CSI 143:01:51.0 (41.1 s), CDH 144:00:02.6 (13.0 s), TPI 144:36:26 (26.0 s), TPF 145:19:29.3 (38.0 s). The Mission Report's Table 5-VI lists a 423.2 s burn and a 46.3 x 8.8 n.mi orbit (likely pre-trim); the SP-4029 figures are used. Apollo 12 flew the same CSI/CDH/TPI/TPF sequence as Apollo 11",
+      "u": "https://www.nasa.gov/wp-content/uploads/static/history/SP-4029/Apollo_12a_Summary.htm"
+    },
+    {
+      "l": "Apollo Flight Journal, Apollo 12: LM jettison and the CSM orbit (\"an apolune of 62.6 nautical miles, perilune of 57 nautical miles\"); Apollo 12 entry and splashdown",
+      "u": "https://apollojournals.org/afj/ap12fj/18day6_lmjett_rev33_35.html"
+    }
+  ]
+}

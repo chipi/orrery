@@ -85,6 +85,13 @@ describe('loadDescentProfileFile: a second descent that is not a mission landing
     expect(s.touchdownSuccess).toBe(true);
     expect(s.events.some((e) => e.type === 'parachute_deploy')).toBe(true);
   });
+  it.each(['apollo12-splashdown', 'apollo14-splashdown'])('loads %s by file id', async (id) => {
+    const p = await loadDescentProfileFile(id, serve(id));
+    expect(p?.body).toBe('earth');
+    expect(p?.siteId).toBe(id);
+    expect(hasDescentProfile(id)).toBe(false);
+    expect(integrateDescent(p!).touchdownSuccess).toBe(true);
+  });
   it('fails closed on a bad id, a missing file', async () => {
     expect(await loadDescentProfileFile('../secret', serve('x'))).toBeNull();
     expect(await loadDescentProfileFile(null)).toBeNull();

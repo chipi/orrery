@@ -15,7 +15,7 @@
   import { resolveQualitySync } from '$lib/quality/quality-tier';
   import { applyGroundDetail, makeGroundTexture } from '$lib/three/descent-ground';
   import {
-    BEATS,
+    beatsFor,
     RT,
     createFlyReturn,
     type FlyReturn,
@@ -47,6 +47,7 @@
     liftoff: m.fly_return_beat_liftoff,
     ascent: m.fly_return_beat_ascent,
     insertion: m.fly_return_beat_insertion,
+    vernier: () => `${m.fly_return_beat_rendezvous()} · VERNIER`,
     csi: () => `${m.fly_return_beat_rendezvous()} · CSI`,
     cdh: () => `${m.fly_return_beat_rendezvous()} · CDH`,
     tpi: () => `${m.fly_return_beat_rendezvous()} · TPI`,
@@ -189,7 +190,7 @@
 
   <div class="timeline" aria-hidden="true">
     <div class="track"><div class="fill" style="width:{progressPct}%"></div></div>
-    {#each BEATS as b (b.id)}
+    {#each beatsFor(profile) as b (b.id)}
       <span class="tick" style="left:{(b.t / RT.end) * 100}%"></span>
     {/each}
   </div>

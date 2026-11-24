@@ -181,7 +181,6 @@
   import ScienceChip from '$lib/components/ScienceChip.svelte';
   import LaunchScene from '$lib/components/LaunchScene.svelte';
   import DescentScene from '$lib/components/DescentScene.svelte';
-  import ReturnScene from '$lib/components/ReturnScene.svelte';
   import {
     descentDue,
     hasReturnProfile,
@@ -3528,13 +3527,16 @@
 {/snippet}
 
 {#if showDescent && wayHome && returnProfile}
-  <ReturnScene
-    profile={returnProfile}
-    missionName={mission.name}
-    site={missionDescentProfile?.landingSite}
-    {hudHidden}
-    onComplete={endWayHome}
-  />
+  <!-- Only the Apollo landings play the way home: its scene loads on demand (route budget). -->
+  {#await import('$lib/components/ReturnScene.svelte') then { default: ReturnScene }}
+    <ReturnScene
+      profile={returnProfile}
+      missionName={mission.name}
+      site={missionDescentProfile?.landingSite}
+      {hudHidden}
+      onComplete={endWayHome}
+    />
+  {/await}
 {:else if showDescent && descentProfile && descentDossier}
   <DescentScene
     landedActions={returnProfile && !splashdownActive ? landedActions : undefined}

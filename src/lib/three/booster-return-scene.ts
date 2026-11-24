@@ -20,9 +20,16 @@
  * on the short 11 s burn are ESTIMATES.
  */
 import * as THREE from 'three';
-import { LANDING_HOLD_S } from '$lib/physics/ascent/ascent-physics';
+import {
+  RETURN_HOLD_S,
+  RETURN_LEAD_S,
+  returnLauncherFor,
+  returnWindow,
+  type BoosterReturnLanding,
+  type ReturnLauncher,
+} from './booster-return-timing';
 import type { LightId } from '$lib/orbital/ascent-director';
-import { LEG_DEPLOY_S, SKY, landingPlume, type Landing } from './landing-inset';
+import { LEG_DEPLOY_S, SKY, landingPlume } from './landing-inset';
 import { plumeCone } from './engine-plume';
 import { buildFalcon9Booster, setFalcon9BoosterPose } from './showcase/falcon9-booster';
 import { buildDroneShip, buildSeaPlane, FREEBOARD_M } from './showcase/drone-ship';
@@ -34,7 +41,8 @@ import {
 } from './showcase/new-glenn-booster';
 import { buildJacklyn } from './showcase/jacklyn';
 
-export type ReturnLauncher = 'falcon-9' | 'new-glenn';
+export { RETURN_HOLD_S, RETURN_LEAD_S, returnLauncherFor, returnWindow };
+export type { BoosterReturnLanding, ReturnLauncher };
 
 /** What differs between the booster return scenes; the altitude profile is shared. */
 export interface ReturnSpec {
@@ -80,16 +88,6 @@ export const RETURN_SPECS: Record<ReturnLauncher, ReturnSpec> = {
   },
 };
 
-/** The return scene for a launch profile, or null when it has none (the inset plays instead). */
-export function returnLauncherFor(profileId: string): ReturnLauncher | null {
-  return profileId === 'falcon-9' || profileId === 'new-glenn' ? profileId : null;
-}
-
-export type BoosterReturnLanding = Landing & { entryBurnS: number };
-
-/** Seconds the scene opens before the entry burn. */
-export const RETURN_LEAD_S = 8;
-export const RETURN_HOLD_S = LANDING_HOLD_S;
 /** ESTIMATE: the entry burn runs this long (DART's sourced burn was 30 s, Starlink 6-108's 26 s). */
 export const ENTRY_BURN_LEN_S = RETURN_SPECS['falcon-9'].entryBurnLenS;
 /** ESTIMATE: altitude at entry-burn start and end (m). */
@@ -137,10 +135,6 @@ const smooth = (x: number) => {
   const c = clamp01(x);
   return c * c * (3 - 2 * c);
 };
-
-export function returnWindow(l: BoosterReturnLanding): [number, number] {
-  return [l.entryBurnS - RETURN_LEAD_S, l.touchdownS + RETURN_HOLD_S];
-}
 
 /** Booster base above the deck's footpad line (m): piecewise, continuous, ends at 0. */
 export function returnAltitude(

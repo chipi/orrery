@@ -27,13 +27,12 @@
     insetWindow,
     type LandingInset,
   } from '$lib/three/landing-inset';
+  import type { BoosterReturn } from '$lib/three/booster-return-scene';
   import {
-    createBoosterReturn,
     returnLauncherFor,
     returnWindow,
-    type BoosterReturn,
     type BoosterReturnLanding,
-  } from '$lib/three/booster-return-scene';
+  } from '$lib/three/booster-return-timing';
   import { resolveQualitySync } from '$lib/quality/quality-tier';
   import { resolveLaunchGround } from '$lib/three/launch-ground';
   import LaunchTelemetry from '$lib/components/LaunchTelemetry.svelte';
@@ -276,6 +275,9 @@
       : null,
   );
   let returnScene: BoosterReturn | undefined;
+  /** The scene module is imported on demand (route budget); set once the import is under way. */
+  let returnLoading = false;
+  let returnDisposed = false;
   let returnOn = $state(false);
   let insetEl: HTMLDivElement | undefined = $state();
   let insetOn = $state(false);
@@ -310,12 +312,15 @@
    *  before it opens (a flight that never gets there never pays for it), in the launch's light. */
   function insetView(): InsetView | null {
     if (returnLanding) {
-      if (!returnScene && t >= returnWindow(returnLanding)[0] - 20)
-        returnScene = createBoosterReturn(
-          returnLanding,
-          director?.plan.conditions.light,
-          returnLauncher ?? 'falcon-9',
-        );
+      if (!returnLoading && t >= returnWindow(returnLanding)[0] - 20) {
+        returnLoading = true;
+        const landing = returnLanding;
+        const light = director?.plan.conditions.light;
+        const launcher = returnLauncher ?? 'falcon-9';
+        void import('$lib/three/booster-return-scene').then(({ createBoosterReturn }) => {
+          if (!returnDisposed) returnScene = createBoosterReturn(landing, light, launcher);
+        });
+      }
       const w = container.clientWidth;
       const h = container.clientHeight;
       const on = !!returnScene && returnScene.update(t, w / h);
@@ -701,6 +706,7 @@
     loop?.cleanup();
     sceneObj?.dispose();
     inset?.dispose();
+    returnDisposed = true;
     returnScene?.dispose();
     ar?.dispose();
   });

@@ -491,6 +491,9 @@ const LUNAR_RETURN_CAPSULE: Record<string, string> = {
   'apollo11-splashdown': 'apollo-cm', // Apollo 11's Earth return (its lunar landing is siteId apollo11)
   'apollo12-splashdown': 'apollo-cm',
   'apollo14-splashdown': 'apollo-cm',
+  'apollo15-splashdown': 'apollo-cm',
+  'apollo16-splashdown': 'apollo-cm',
+  'apollo17-splashdown': 'apollo-cm',
 };
 
 /** Resolve the terminal landed craft for a mission (the reused surface model). */

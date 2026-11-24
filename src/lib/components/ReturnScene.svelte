@@ -47,6 +47,7 @@
     liftoff: m.fly_return_beat_liftoff,
     ascent: m.fly_return_beat_ascent,
     insertion: m.fly_return_beat_insertion,
+    subsat: () => `PFS-${profile.jMission ? profile.jMission.mission - 14 : 1}`,
     vernier: () => `${m.fly_return_beat_rendezvous()} · VERNIER`,
     csi: () => `${m.fly_return_beat_rendezvous()} · CSI`,
     cdh: () => `${m.fly_return_beat_rendezvous()} · CDH`,
@@ -66,6 +67,8 @@
   const getText = $derived(pose ? formatGet(pose.get) : formatGet(profile.liftoffS));
   const progressPct = $derived(Math.min(100, (t / RT.end) * 100));
   const fade = $derived(pose?.fade ?? 0);
+  // The rover's TV camera: a faint vignette and scan lines over the frame, the colour pulled back.
+  const tv = $derived(pose?.shot.startsWith('rover_tv') ?? false);
 
   function finish() {
     if (finished) return;
@@ -77,15 +80,25 @@
     let unmounted = false;
     let stop: (() => void) | undefined;
     // The two craft load on demand: /fly's first load stays free of the showcase families.
+    const jm = profile.jMission;
     void Promise.all([
       import('$lib/three/showcase/lunar-module'),
       import('$lib/three/showcase/station-freighters'),
-    ]).then(([lmMod, csmMod]) => {
+      jm ? import('$lib/three/showcase/rovers') : Promise.resolve(null),
+    ]).then(([lmMod, csmMod, roverMod]) => {
       if (unmounted) return;
-      stop = start(
-        lmMod.SHOWCASE['apollo-lm'].build(),
-        csmMod.SHOWCASE['apollo-csm-block-ii'].build(),
-      );
+      // The J missions: the extended LM with its rover bay empty, the CSM with the open SIM bay.
+      const lm = jm
+        ? lmMod.buildApolloLunarModule({ extended: true, lrvStowed: false })
+        : lmMod.SHOWCASE['apollo-lm'].build();
+      const csm = jm
+        ? csmMod.buildApolloCsm(true, {
+            simBay: true,
+            mission: jm.mission,
+            subsatellite: jm.subsatellite !== undefined,
+          })
+        : csmMod.SHOWCASE['apollo-csm-block-ii'].build();
+      stop = start(lm, csm, roverMod?.SHOWCASE['lrv-apollo'].build());
     });
     return () => {
       unmounted = true;
@@ -93,10 +106,14 @@
     };
   });
 
-  function start(lm: import('three').Group, csm: import('three').Group): () => void {
+  function start(
+    lm: import('three').Group,
+    csm: import('three').Group,
+    lrv?: import('three').Group,
+  ): () => void {
     scene = createFlyReturn(
       profile,
-      { lm, csm },
+      { lm, csm, lrv },
       {
         moonTextureUrl: `${base}/textures/2k_moon.jpg`,
         site,
@@ -168,7 +185,8 @@
   role="region"
   aria-label={m.fly_return_title()}
 >
-  <div class="stage" bind:this={container}></div>
+  <div class="stage" class:tv bind:this={container}></div>
+  {#if tv}<div class="tv-overlay" aria-hidden="true"></div>{/if}
   <div class="scrim" aria-hidden="true"></div>
   <div class="blackout" style="opacity:{fade}" aria-hidden="true"></div>
 
@@ -210,6 +228,17 @@
   .stage {
     position: absolute;
     inset: 0;
+  }
+  .stage.tv {
+    filter: saturate(0.75) contrast(1.08);
+  }
+  .tv-overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse at center, transparent 55%, rgba(0, 0, 0, 0.55) 100%),
+      repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.12) 0 1px, transparent 1px 3px);
   }
   .scrim {
     position: absolute;

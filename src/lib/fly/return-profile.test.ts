@@ -98,6 +98,115 @@ describe('Apollo 12 and 14 figures (mission reports, SP-4029)', () => {
   });
 });
 
+describe('Apollo 15, 16 and 17 figures (mission reports, SP-4029)', () => {
+  const read = (path: string) =>
+    JSON.parse(readFileSync(resolve(process.cwd(), `static/data/${path}.json`), 'utf-8'));
+  const missionEvents = (id: string) => read(`missions/moon/${id}`).flight.events;
+  const a15 = expandReturnProfile(load('apollo15.json'));
+  const a16 = expandReturnProfile(load('apollo16.json'));
+  const a17 = expandReturnProfile(load('apollo17.json'));
+  it('record the burns each flew: a bare direct rendezvous, one with a vernier, one preceded by two CSM burns', () => {
+    expect(a15.rendezvous.map((r) => r.id)).toEqual(['tpi', 'tpf']);
+    expect(a16.rendezvous.map((r) => r.id)).toEqual(['vernier', 'tpi', 'tpf']);
+    expect(a17.rendezvous.map((r) => r.id)).toEqual(['trim', 'plane', 'vernier', 'tpi', 'tpf']);
+    expect(a15.rendezvous[0]).toMatchObject({ burnS: 2.6, dvFts: 72.7 });
+    expect(a16.rendezvous[1]).toMatchObject({ burnS: 2.5, dvFts: 78 });
+    expect(a17.rendezvous[0]).toMatchObject({ burnS: 37, dvFts: 9.2 });
+    expect(a17.rendezvousS.trim!).toBeLessThan(a17.liftoffS);
+    expect(a17.rendezvousS.plane!).toBeLessThan(a17.liftoffS);
+  });
+  it('carry the sourced liftoff, docking, jettison, subsatellite and TEI times', () => {
+    expect(a15.liftoffS).toBeCloseTo(171 * 3600 + 37 * 60 + 23.2, 3);
+    expect(a15.dockingS).toBeCloseTo(173 * 3600 + 36 * 60 + 25.5, 3);
+    expect(a15.jettisonS).toBeCloseTo(179 * 3600 + 30 * 60 + 1.4, 3);
+    expect(a15.subsatS).toBeCloseTo(222 * 3600 + 39 * 60 + 29.1, 3);
+    expect(a15.tei).toEqual({ get: '223:48:45.84', burnS: 140.9, dvFts: 3046.8 });
+    expect(a16.liftoffS).toBeCloseTo(175 * 3600 + 31 * 60 + 47.9, 3);
+    expect(a16.subsatS).toBe(196 * 3600 + 2 * 60 + 9);
+    expect(a16.tei).toEqual({ get: '200:21:33.07', burnS: 162.29, dvFts: 3370.9 });
+    expect(a16.jMission?.jettisonTumble).toBe(true);
+    expect(a17.liftoffS).toBe(185 * 3600 + 21 * 60 + 37);
+    expect(a17.jettisonS).toBe(191 * 3600 + 18 * 60 + 31);
+    expect(a17.tei).toEqual({ get: '234:02:09.18', burnS: 143.69, dvFts: 3046.3 });
+    expect(a17.subsatS).toBeUndefined();
+  });
+  it('agree with the mission files: ascent, TEI and Earth return events', () => {
+    for (const p of [a15, a16, a17, expandReturnProfile(load('apollo14.json'))]) {
+      const ev = missionEvents(p.missionId) as {
+        type: string;
+        met_days: number;
+      }[];
+      const day = (type: string) => ev.find((e) => e.type === type)!.met_days;
+      expect(day('ascent')).toBeCloseTo(p.liftoffS / 86400, 2);
+      expect(day('tei')).toBeCloseTo(p.teiMetDays, 2);
+    }
+  });
+  it('name a splashdown profile with the SP-4029 L/D and range', () => {
+    for (const [p, ld, nmi, fpa] of [
+      [a15, 0.29, 1184, 6.51],
+      [a16, 0.286, 1190, 6.55],
+      [a17, 0.29, 1190, 6.49],
+    ] as const) {
+      const sp = read(`descent-profiles/${p.splashdownProfile}`);
+      expect(sp.body).toBe('earth');
+      expect(sp.siteId).toBe(p.splashdownProfile);
+      expect(sp.missionId).toBe(p.missionId);
+      expect(sp.liftToDragRatio).toBe(ld);
+      expect(sp.targetDownrangeKm).toBeCloseTo(nmi * 1.852, 0);
+      expect(sp.entryState.flightPathAngleDeg).toBe(fpa);
+    }
+  });
+  it('the Earth return events land at the SP-4029 splashdown GET', () => {
+    for (const [id, get] of [
+      ['apollo15', 295 * 3600 + 11 * 60 + 53],
+      ['apollo16', 265 * 3600 + 51 * 60 + 5],
+      ['apollo17', 301 * 3600 + 51 * 60 + 59],
+    ] as const) {
+      const ev = missionEvents(id) as { type: string; met_days: number }[];
+      expect(ev.find((e) => e.type === 'earth_return')!.met_days).toBeCloseTo(get / 86400, 2);
+    }
+  });
+});
+
+describe('the allowed rendezvous burn sequences', () => {
+  const good = load('apollo17.json');
+  it('accepts the CSM prefix only before a known LM sequence, in order', () => {
+    expect(isValidReturnProfile(good)).toBe(true);
+    const drop = (ids: string[]) =>
+      good.rendezvous.filter((r) => ids.includes(r.id)) as typeof good.rendezvous;
+    expect(isValidReturnProfile({ ...good, rendezvous: drop(['vernier', 'tpi', 'tpf']) })).toBe(
+      true,
+    );
+    expect(
+      isValidReturnProfile({ ...good, rendezvous: drop(['plane', 'vernier', 'tpi', 'tpf']) }),
+    ).toBe(true);
+    expect(isValidReturnProfile({ ...good, rendezvous: drop(['trim', 'vernier', 'tpi']) })).toBe(
+      false,
+    );
+    expect(isValidReturnProfile({ ...good, rendezvous: [...good.rendezvous].reverse() })).toBe(
+      false,
+    );
+    expect(isValidReturnProfile({ ...good, rendezvous: drop(['tpf']) })).toBe(false);
+  });
+  it('wants a CSM burn before liftoff and an LM burn after insertion', () => {
+    const r = good.rendezvous.map((b) => (b.id === 'trim' ? { ...b, get: '186:00:00' } : b));
+    expect(isValidReturnProfile({ ...good, rendezvous: r })).toBe(false);
+  });
+  it('keeps the subsatellite between the jettison and the TEI, and rejects a bad J block', () => {
+    const a15 = load('apollo15.json');
+    expect(isValidReturnProfile(a15)).toBe(true);
+    const jm = a15.jMission!;
+    expect(isValidReturnProfile({ ...a15, jMission: { ...jm, subsatellite: '230:00:00' } })).toBe(
+      false,
+    );
+    expect(isValidReturnProfile({ ...a15, jMission: { ...jm, subsatellite: '170:00:00' } })).toBe(
+      false,
+    );
+    expect(isValidReturnProfile({ ...a15, jMission: { ...jm, tv: 'zoom' } })).toBe(false);
+    expect(isValidReturnProfile({ ...a15, jMission: { ...jm, mission: 14 } })).toBe(false);
+  });
+});
+
 describe('isValidReturnProfile fails closed', () => {
   const good = load('apollo11.json');
   it('rejects non-objects and missing fields', () => {

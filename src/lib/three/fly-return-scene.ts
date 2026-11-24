@@ -13,6 +13,13 @@
  * the rendezvous ranges and approach directions (not to scale), the docking closing speed, the
  * jettison drift, the attitude after insertion, the RCS puff pattern and every camera move.
  *
+ * The J missions (Apollo 15-17, `profile.jMission`) add what they carried and did: the extended LM
+ * with its rover bay empty and the rover parked east of it, its TV camera the liftoff shot (held on
+ * 15, tracked then lost on 16, tracked on 17), the CSM with the open SIM bay turned toward the LM on
+ * the approach, the subsatellite spring-ejected from the bay before TEI (15, 16) and the ascent stage
+ * tumbling after Apollo 16's jettison. Rover distance, bay azimuth, ejection speed and spin, and
+ * tumble rates are ESTIMATES (named in each profile's `estimatedFields`).
+ *
  * Frame: the anchor is the LM ascent stage's centre, local up is radial. The Moon sits below it
  * (`moonRel`), the descent stage on its surface (`descentRel`), so every number stays small
  * (millimetre precision at the docking close-up whatever the altitude).
@@ -42,6 +49,7 @@ export const RT = {
   pullBack: 60.8,
   jettison: 64,
   separate: 66,
+  subsat: 68.5,
   teiCoast: 72,
   teiBurn: 75.5,
   teiEnd: 80.5,
@@ -68,6 +76,7 @@ export type ReturnBeat =
   | 'hard_dock'
   | 'dock_pullback'
   | 'jettison'
+  | 'subsat'
   | 'tei_coast'
   | 'tei_burn'
   | 'fade';
@@ -94,8 +103,15 @@ export const BEATS: readonly { id: ReturnBeat; t: number }[] = [
   { id: 'fade', t: RT.teiEnd },
 ];
 
+/** The CSM's own burns before the LM left the Moon (Apollo 17): in the data, not in the scene. */
+const isPriorBurn = (id: RendezvousBurn['id']) => id === 'trim' || id === 'plane';
+
+/** The rendezvous burns the scene plays: the LM-side ones, in flight order. */
+export const sceneBurns = (p: Pick<ReturnProfile, 'rendezvous'>): RendezvousBurn[] =>
+  p.rendezvous.filter((b) => !isPriorBurn(b.id));
+
 /** The beat a rendezvous burn plays under (the last burn is the terminal-phase finalisation). */
-const BURN_BEAT: Record<RendezvousBurn['id'], ReturnBeat> = {
+const BURN_BEAT: Record<Exclude<RendezvousBurn['id'], 'trim' | 'plane'>, ReturnBeat> = {
   vernier: 'vernier',
   csi: 'csi',
   cdh: 'cdh',
@@ -108,8 +124,9 @@ const BURN_BEAT: Record<RendezvousBurn['id'], ReturnBeat> = {
 export function burnSlots(
   p: Pick<ReturnProfile, 'rendezvous'>,
 ): { id: RendezvousBurn['id']; t: number }[] {
-  const n = p.rendezvous.length;
-  return p.rendezvous.map((b, i) => ({
+  const burns = sceneBurns(p);
+  const n = burns.length;
+  return burns.map((b, i) => ({
     id: b.id,
     t: n === 1 ? RT.csi : RT.csi + ((RT.terminal - RT.csi) * i) / (n - 1),
   }));
@@ -117,16 +134,28 @@ export function burnSlots(
 
 /** The beats of one mission, in order: the rendezvous beats come from its profile's burn list. */
 export function beatsFor(
-  p?: Pick<ReturnProfile, 'rendezvous'>,
+  p?: Pick<ReturnProfile, 'rendezvous'> & { subsatS?: number },
 ): readonly { id: ReturnBeat; t: number }[] {
   if (!p) return BEATS;
-  const rend = burnSlots(p).map((b) => ({ id: BURN_BEAT[b.id], t: b.t }));
+  const rend = burnSlots(p).map((b) => ({
+    id: BURN_BEAT[b.id as keyof typeof BURN_BEAT],
+    t: b.t,
+  }));
   const i0 = BEATS.findIndex((b) => b.id === 'csi');
   const i1 = BEATS.findIndex((b) => b.id === 'terminal');
-  return [...BEATS.slice(0, i0), ...rend, ...BEATS.slice(i1 + 1)];
+  const tail = BEATS.slice(i1 + 1);
+  // The subsatellite is released between the LM jettison and the TEI coast (Apollo 15, 16).
+  if (p.subsatS !== undefined) {
+    const j = tail.findIndex((b) => b.id === 'tei_coast');
+    tail.splice(j, 0, { id: 'subsat', t: RT.subsat });
+  }
+  return [...BEATS.slice(0, i0), ...rend, ...tail];
 }
 
-export function beatAt(t: number, p?: Pick<ReturnProfile, 'rendezvous'>): ReturnBeat {
+export function beatAt(
+  t: number,
+  p?: Pick<ReturnProfile, 'rendezvous'> & { subsatS?: number },
+): ReturnBeat {
   const beats = beatsFor(p);
   let id = beats[0].id;
   for (const b of beats) if (t >= b.t) id = b.id;
@@ -155,7 +184,15 @@ export type ReturnShot =
   | 'dock_csm'
   | 'jettison_high'
   | 'tei_front'
-  | 'tei_high';
+  | 'tei_high'
+  // The J missions (profile.camera.shots): the rover's TV camera, three liftoff behaviours,
+  | 'rover_tv_fixed'
+  | 'rover_tv_lost'
+  | 'rover_tv_track'
+  | 'chase_side'
+  | 'orbit_limb'
+  | 'jettison_low'
+  | 'subsat_side';
 
 const SHOT_IDS: ReadonlySet<string> = new Set<ReturnShot>([
   'ground',
@@ -179,6 +216,13 @@ const SHOT_IDS: ReadonlySet<string> = new Set<ReturnShot>([
   'jettison_high',
   'tei_front',
   'tei_high',
+  'rover_tv_fixed',
+  'rover_tv_lost',
+  'rover_tv_track',
+  'chase_side',
+  'orbit_limb',
+  'jettison_low',
+  'subsat_side',
 ]);
 
 /** True when the name is a shot the scene can play (a profile's camera.shots is checked with it). */
@@ -208,6 +252,7 @@ export const BEAT_SHOT: Record<ReturnBeat, ReturnShot> = {
   hard_dock: 'dock_close',
   dock_pullback: 'dock_pull',
   jettison: 'jettison_track',
+  subsat: 'subsat_side',
   tei_coast: 'tei_side',
   tei_burn: 'tei_side',
   fade: 'tei_side',
@@ -230,6 +275,7 @@ export function getAt(t: number, p: ReturnProfile): number {
     ...burnSlots(p).map((b): [number, number] => [b.t, p.rendezvousS[b.id]!]),
     [RT.contact, p.dockingS],
     [RT.separate, p.jettisonS],
+    ...(p.subsatS !== undefined ? ([[RT.subsat, p.subsatS]] as [number, number][]) : []),
     [RT.teiBurn, p.teiS],
     [RT.teiEnd, p.teiS + p.tei.burnS],
     [RT.end, p.teiS + p.tei.burnS + 20],
@@ -255,6 +301,8 @@ export interface ReturnRig {
   tipToCentre: number;
   /** How far the probe tip goes below the drogue plane at hard dock (m). */
   probeLen: number;
+  /** The rover's TV camera pivot relative to the descent stage's footpad origin (m; J missions). */
+  tvLocal: THREE.Vector3;
 }
 
 export const DEFAULT_RIG: ReturnRig = {
@@ -262,6 +310,7 @@ export const DEFAULT_RIG: ReturnRig = {
   drogue: new THREE.Vector3(0, 2.7, 0.2),
   tipToCentre: 5.6,
   probeLen: 0.9,
+  tvLocal: new THREE.Vector3(88.6, 1.15, -0.22),
 };
 
 /** ESTIMATE: vertical rise acceleration (m/s^2): ascent-engine thrust over a ~4.7 t stage less lunar g. */
@@ -302,6 +351,8 @@ export interface ReturnPose {
   docked: boolean;
   /** 0..1 black fade over the end. */
   fade: number;
+  /** The jettisoned ascent stage's tumble about x, y, z (rad), Apollo 16 only. */
+  lmTumble: [number, number, number];
 }
 
 /** Cold-gas puffs: 0.25 s slots, `density` of a fixed pseudo-random set lit. */
@@ -337,6 +388,12 @@ function rangeAt(t: number): number {
   }
   return RANGE_KNOTS[RANGE_KNOTS.length - 1][1];
 }
+
+/** ESTIMATE: azimuth (rad about y, from +z toward +x) the SIM bay faces once docked, per mission. */
+const BAY_DOCKED_AZ: Record<15 | 16 | 17, number> = { 15: 0.5, 16: -0.45, 17: 0.9 };
+
+/** ESTIMATE: the tumble of Apollo 16's ascent stage after jettison (rad/s about x, y, z). */
+const TUMBLE_RATE: [number, number, number] = [0.9, 0.35, 0.7];
 
 /** The rendezvous burns' windows in scene time: each starts 0.1 s into its beat, 1/16 the real length. */
 export function burnWindow(id: RendezvousBurn['id'], p: ReturnProfile): [number, number] {
@@ -384,7 +441,7 @@ export function returnPose(t: number, p: ReturnProfile): ReturnPose {
   // LM RCS during the rendezvous burns.
   let lmRcs = 0;
   let apsBurn = false;
-  for (const burn of p.rendezvous) {
+  for (const burn of sceneBurns(p)) {
     const [a, b] = burnWindow(burn.id, p);
     if (t >= a && t < b) {
       if (burn.engine === 'aps') apsBurn = true;
@@ -441,6 +498,21 @@ export function returnPose(t: number, p: ReturnProfile): ReturnPose {
     }
   }
 
+  // J missions: the SIM bay turns toward the LM on the approach (the Endeavour, Casper and America
+  // photographs were taken from the LM), then settles at its docked azimuth.
+  const jm = p.jMission;
+  if (jm && csmVisible) {
+    const k = smooth((t - RT.dockWide) / (RT.closeUp - RT.dockWide));
+    const toLm = Math.atan2(-DIR0.x, -DIR0.z);
+    roll += Math.PI + lerp(toLm, BAY_DOCKED_AZ[jm.mission], k);
+  }
+  let tumble: [number, number, number] = [0, 0, 0];
+  if (jm?.jettisonTumble && t > RT.separate) {
+    const tau = t - RT.separate;
+    const a = tau * smooth(tau / 1.5);
+    tumble = [TUMBLE_RATE[0] * a, TUMBLE_RATE[1] * a, TUMBLE_RATE[2] * a];
+  }
+
   const teiBurning = t >= RT.teiBurn && t < RT.teiEnd;
   let rcs = new Array<boolean>(16).fill(false);
   if (csmVisible) {
@@ -469,7 +541,42 @@ export function returnPose(t: number, p: ReturnProfile): ReturnPose {
     spsBurn: teiBurning,
     docked: t >= RT.contact && t < RT.separate,
     fade: smooth((t - RT.teiEnd) / (RT.end - RT.teiEnd)),
+    lmTumble: tumble,
   };
+}
+
+const Z_AXIS = new THREE.Vector3(0, 0, 1);
+const Y180_Q = new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(1, 0, 0), Math.PI);
+const eulTmp = new THREE.Euler();
+const qTmp2 = new THREE.Quaternion();
+
+/** The CSM's orientation: nose down on the LM (a half turn about x), turned about z for TEI, with
+ *  the small misalignment and roll of the approach. */
+export function csmQuat(pose: ReturnPose, out = new THREE.Quaternion()): THREE.Quaternion {
+  eulTmp.set(pose.csmTilt[0], pose.csmRoll, pose.csmTilt[1]);
+  out.setFromAxisAngle(Z_AXIS, pose.csmNose + pose.lmTilt);
+  out.multiply(qTmp2.setFromEuler(eulTmp));
+  return out.multiply(Y180_Q);
+}
+
+/** The direction the SIM bay faces (unit, scene frame): the CSM model's +z, sector 1's centre. */
+export function bayNormal(pose: ReturnPose): THREE.Vector3 {
+  return new THREE.Vector3(0, 0, 1).applyQuaternion(csmQuat(pose));
+}
+
+/** The TV camera's look-at point (local frame) for the three liftoff behaviours (Apollo 15 held the
+ *  pad, 16 followed the stage until it was lost at 6 s, 17 followed it all the way). */
+function tvLook(kind: 'fixed' | 'lost' | 'track', t: number, pose: ReturnPose, rig: ReturnRig) {
+  const dr = descentRel(pose);
+  const hold = dr.clone().add(V(0, 8, 0));
+  const follow = (alt: number) => dr.clone().add(V(0, alt - rig.stageY0 + 4, 0));
+  if (kind === 'fixed') return hold;
+  const t0 = t - RT.ignition;
+  if (kind === 'track') return hold.lerp(V(0, 0, 0), smooth(t0 / 1.5));
+  // lost: follows to 6 s, then the pointing stays where it was
+  const tl = Math.min(Math.max(t0, 0), 6);
+  const altL = rig.stageY0 + 0.5 * RISE_ACCEL * tl * tl;
+  return hold.lerp(follow(altL), smooth(tl / 1.5));
 }
 
 /** Probe tip relative to the anchor (local frame), with the probe's insertion into the drogue. */
@@ -500,7 +607,9 @@ export interface ReturnCamera {
   fov: number;
 }
 
-const V = (x: number, y: number, z: number) => new THREE.Vector3(x, y, z);
+function V(x: number, y: number, z: number): THREE.Vector3 {
+  return new THREE.Vector3(x, y, z);
+}
 /** Half angles (rad) of the horizontal and vertical field of view. */
 export function halfFov(fovDeg: number, aspect: number): { h: number; v: number } {
   const v = (fovDeg * Math.PI) / 360;
@@ -693,6 +802,52 @@ export function returnCamera(
       const off = V(lerp(36, 30, s) * k, lerp(-2, -5, s), lerp(18, 26, s) * k);
       return { pos: c.clone().add(off), look: c, fov: 36 };
     }
+    case 'rover_tv_fixed':
+    case 'rover_tv_lost':
+    case 'rover_tv_track': {
+      // The rover's TV camera on its pivot, 90 m east of the LM, a long lens: the pad, the stage rising.
+      const kind = pose.shot.slice('rover_tv_'.length) as 'fixed' | 'lost' | 'track';
+      const pos = descentRel(pose).add(rig.tvLocal);
+      const look = tvLook(kind, t, pose, rig);
+      // A phone's narrow frame widens the lens so the LM still fits across it.
+      const fov = Math.max(
+        32,
+        (2 * (Math.atan(Math.tan((11 * Math.PI) / 180) / aspect) * 180)) / Math.PI,
+      );
+      return { pos, look, fov };
+    }
+    case 'chase_side': {
+      // Level and from the side, a little ahead: the stage climbs across a black sky, the Moon below.
+      const s = smooth((t - RT.pitchOver) / (RT.insertion - RT.pitchOver));
+      return {
+        pos: V(lerp(-24, -60, s) * k, lerp(1, 6, s), lerp(22, 44, s) * k),
+        look: V(lerp(2, 8, s), 0, 0),
+        fov: 36,
+      };
+    }
+    case 'orbit_limb':
+      // Low and level with the stage: the limb of the Moon a thin line below, the stage tiny and sharp.
+      return { pos: V(-48 * k, 3, 62 * k), look: V(2, -1, 0), fov: 34 };
+    case 'jettison_low': {
+      // Close and level beside the pair: the tumbling stage turns over in the frame, the CSM beyond.
+      const c = csmCentreFromAnchor(pose, rig);
+      const mid = c.clone().multiplyScalar(0.5);
+      const d = (24 + 1.2 * Math.hypot(c.x, c.y)) * k;
+      return { pos: mid.clone().add(V(-0.3 * d, 0.04 * d, 0.95 * d)), look: mid, fov: 34 };
+    }
+    case 'subsat_side': {
+      // From outside the SIM bay, along its normal and a little above: the subsatellite leaves the
+      // bay toward the lens and the CSM fills the frame behind it.
+      const c = csmCentreFromAnchor(pose, rig);
+      const n = bayNormal(pose);
+      const side = new THREE.Vector3().crossVectors(n, V(0, 1, 0)).normalize();
+      const pos = c
+        .clone()
+        .addScaledVector(n, 28 * k)
+        .addScaledVector(side, 6 * k)
+        .add(V(0, 4, 0));
+      return { pos, look: c.clone().addScaledVector(n, 4), fov: 42 };
+    }
     case 'tei_high': {
       // From above and behind: the Moon below the CSM as it pulls away.
       const c = csmCentreFromAnchor(pose, rig);
@@ -710,6 +865,8 @@ export interface FlyReturnModels {
   lm: THREE.Group;
   /** apollo-csm-block-ii: engine exit at y = 0, the probe tip the highest point on the axis. */
   csm: THREE.Group;
+  /** The rover (lrv-apollo, metres, forward +z, 'tv-camera' pivot) of a J mission. */
+  lrv?: THREE.Group;
 }
 
 export interface FlyReturnOptions {
@@ -861,6 +1018,16 @@ export function createFlyReturn(
     stageY0: c.y,
     drogue: drogueAnchor.getWorldPosition(new THREE.Vector3()).sub(ascent.position),
   };
+  // The rover parked east (+x) of the LM, facing it: its TV camera's lens looks along the rover's +z.
+  if (models.lrv && profile.jMission) {
+    const rover = models.lrv;
+    rover.position.set(profile.jMission.lrvEastM, 0, 0);
+    rover.rotation.y = -Math.PI / 2;
+    lmRoot.add(rover);
+    lmRoot.updateMatrixWorld(true);
+    const pivot = rover.getObjectByName('tv-camera');
+    if (pivot) rig.tvLocal = pivot.getWorldPosition(new THREE.Vector3()).sub(lmRoot.position);
+  }
 
   // The CSM, pivoting about its middle.
   const csmHolder = new THREE.Group();
@@ -902,9 +1069,68 @@ export function createFlyReturn(
   });
 
   const camera = new THREE.PerspectiveCamera(36, 1.6, 0.05, 6_000_000);
+  const qHold = new THREE.Quaternion();
+
+  // The subsatellite (Apollo 15, 16): it sits in the SIM bay's launcher until its beat, then leaves
+  // along the bay's normal (spring ejection), spinning, its booms folding out. It rides the CSM's
+  // frame (the position at release plus the CSM's own drift), so a scrub is exact.
+  const sub = profile.subsatS !== undefined ? csm.getObjectByName('pfs-subsatellite') : undefined;
+  const subHome = sub
+    ? {
+        parent: sub.parent!,
+        p: sub.position.clone(),
+        q: sub.quaternion.clone(),
+        s: sub.scale.clone(),
+      }
+    : null;
+  const subRel = {
+    ready: false,
+    pos: new THREE.Vector3(),
+    quat: new THREE.Quaternion(),
+    scale: new THREE.Vector3(1, 1, 1),
+    holder: new THREE.Vector3(),
+    n: new THREE.Vector3(0, 0, 1),
+  };
+  const poseHolder = (pose: ReturnPose) => {
+    csmQuat(pose, qHold);
+    csmHolder.quaternion.copy(qHold);
+    csmHolder.position.copy(csmCentreFromAnchor(pose, rig));
+    csmHolder.updateMatrixWorld(true);
+  };
+  const placeSub = (t: number, pose: ReturnPose) => {
+    if (!sub || !subHome) return;
+    if (!subRel.ready) {
+      const rp = returnPose(RT.subsat, profile);
+      poseHolder(rp);
+      sub.matrixWorld.decompose(subRel.pos, subRel.quat, subRel.scale);
+      subRel.holder.copy(csmHolder.position);
+      subRel.n.copy(bayNormal(rp));
+      subRel.ready = true;
+      poseHolder(pose);
+    }
+    const age = t - RT.subsat;
+    if (age <= 0) {
+      if (sub.parent !== subHome.parent) {
+        subHome.parent.add(sub);
+        sub.position.copy(subHome.p);
+        sub.quaternion.copy(subHome.q);
+        sub.scale.copy(subHome.s);
+      }
+      sub.userData.setDeploy?.(0);
+      return;
+    }
+    if (sub.parent !== scene) scene.add(sub);
+    // ESTIMATES: ejection speed 2.2 m/s and spin 4 rad/s as drawn (compressed scene time).
+    sub.position
+      .copy(subRel.pos)
+      .add(csmHolder.position)
+      .sub(subRel.holder)
+      .addScaledVector(subRel.n, 2.2 * age);
+    sub.quaternion.copy(subRel.quat).multiply(qTmp.setFromAxisAngle(V(0, 1, 0), 4 * age));
+    sub.scale.copy(subRel.scale);
+    sub.userData.setDeploy?.(smooth((age - 0.6) / 1.0));
+  };
   const qTmp = new THREE.Quaternion();
-  const eul = new THREE.Euler();
-  const Y180 = new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(1, 0, 0), Math.PI);
 
   return {
     scene,
@@ -922,7 +1148,7 @@ export function createFlyReturn(
       lmRoot.position.copy(descentRel(pose));
       lmRoot.visible = alt < 8000;
       ascent.position.set(0, 0, 0);
-      ascent.rotation.set(0, 0, pose.lmTilt);
+      ascent.rotation.set(pose.lmTumble[0], pose.lmTumble[1], pose.lmTilt + pose.lmTumble[2]);
       ascentFlame.visible = pose.lmEngine;
       const flick = 0.82 + 0.18 * Math.sin(t * 53);
       // The ascent engine fires over the descent stage: the flame is only as long as the clear
@@ -939,11 +1165,12 @@ export function createFlyReturn(
       if (pose.csmVisible) {
         // Nose down on the LM (a half turn about x), turned about z for TEI, with the small
         // misalignment and roll of the approach.
-        eul.set(pose.csmTilt[0], pose.csmRoll, pose.csmTilt[1]);
-        qTmp.setFromAxisAngle(new THREE.Vector3(0, 0, 1), pose.csmNose + pose.lmTilt);
-        csmHolder.quaternion.copy(qTmp).multiply(new THREE.Quaternion().setFromEuler(eul));
-        csmHolder.quaternion.multiply(Y180);
+        csmQuat(pose, csmHolder.quaternion);
         csmHolder.position.copy(csmCentreFromAnchor(pose, rig));
+      }
+      if (sub) {
+        csmHolder.updateMatrixWorld(true);
+        placeSub(t, pose);
       }
       csmPuffs.forEach((p, i) => (p.visible = pose.csmRcs[i]));
       spsFlame.visible = pose.spsBurn;

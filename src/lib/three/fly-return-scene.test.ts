@@ -13,7 +13,9 @@ import {
   burnWindow,
   isReturnShot,
   shotFor,
+  bayNormal,
   csmCentreFromAnchor,
+  csmQuat,
   descentRel,
   getAt,
   returnCamera,
@@ -97,7 +99,7 @@ describe('the camera style of each mission', () => {
     for (const id of ALL) {
       const shots =
         JSON.parse(readFileSync(resolve(DIR, `${id}.json`), 'utf-8')).camera?.shots ?? {};
-      const beats = new Set(BEATS.map((b) => b.id as string).concat('vernier'));
+      const beats = new Set(BEATS.map((b) => b.id as string).concat('vernier', 'subsat'));
       for (const [beat, shot] of Object.entries(shots)) {
         expect(beats.has(beat), `${id}: ${beat}`).toBe(true);
         expect(isReturnShot(shot as string), `${id}: ${shot}`).toBe(true);
@@ -112,6 +114,102 @@ describe('the camera style of each mission', () => {
     const dock = ALL.map((id) => shotFor('soft_capture', load(id)));
     expect(new Set(open).size).toBe(ALL.length);
     expect(new Set(dock).size).toBeGreaterThan(1);
+  });
+});
+
+describe('the J missions (Apollo 15, 16, 17)', () => {
+  const a15 = load('apollo15');
+  const a16 = load('apollo16');
+  const a17 = load('apollo17');
+  it('play the burns each flew: 15 TPI and TPF, 16 vernier too, 17 trim and plane change are recorded, not played', () => {
+    expect(a15.rendezvous.map((r) => r.id)).toEqual(['tpi', 'tpf']);
+    expect(beatsFor(a15).map((b) => b.id)).toContain('tpi');
+    expect(beatsFor(a15).find((b) => b.id === 'tpi')!.t).toBe(RT.csi);
+    expect(beatsFor(a16).map((b) => b.id)).toEqual(
+      expect.arrayContaining(['vernier', 'tpi', 'terminal']),
+    );
+    expect(a17.rendezvous.map((r) => r.id)).toEqual(['trim', 'plane', 'vernier', 'tpi', 'tpf']);
+    const b17 = beatsFor(a17).map((b) => b.id);
+    expect(b17.slice(3, 7)).toEqual(['insertion', 'vernier', 'tpi', 'terminal']);
+    expect(b17).not.toContain('csi');
+    // the HUD clock never runs backwards through the CSM's hours-earlier burns
+    let prev = -Infinity;
+    for (const t of times) {
+      const g = getAt(t, a17);
+      expect(g).toBeGreaterThanOrEqual(prev);
+      prev = g;
+    }
+    expect(formatGet(getAt(RT.csi, a17))).toBe('185:32:12.0');
+  });
+  it('Apollo 15 and 16 release the subsatellite between the LM jettison and the TEI coast; 17 has no such beat', () => {
+    for (const [p, get] of [
+      [a15, '222:39:29.1'],
+      [a16, '196:02:09.0'],
+    ] as const) {
+      const ids = beatsFor(p).map((b) => b.id);
+      expect(ids.indexOf('subsat')).toBe(ids.indexOf('jettison') + 1);
+      expect(ids.indexOf('tei_coast')).toBe(ids.indexOf('subsat') + 1);
+      expect(beatAt(RT.subsat + 0.1, p)).toBe('subsat');
+      expect(formatGet(getAt(RT.subsat, p))).toBe(get);
+      expect(shotFor('subsat', p)).toBe('subsat_side');
+    }
+    expect(beatsFor(a17).map((b) => b.id)).not.toContain('subsat');
+    expect(beatsFor(load('apollo14')).map((b) => b.id)).not.toContain('subsat');
+  });
+  it('shows the SIM bay toward the LM on the approach, and the camera of the release looks into the bay', () => {
+    for (const p of [a15, a16, a17]) {
+      const t = RT.tpi + 1;
+      const pose = returnPose(t, p);
+      const toLm = new THREE.Vector3(...pose.csmRel).multiplyScalar(-1).setY(0).normalize();
+      expect(bayNormal(pose).dot(toLm)).toBeGreaterThan(0.9);
+      const q = csmQuat(returnPose(RT.subsat + 0.5, p));
+      expect(q.length()).toBeCloseTo(1, 6);
+    }
+    for (const p of [a15, a16]) {
+      const pose = returnPose(RT.subsat + 1, p);
+      const cam = returnCamera(RT.subsat + 1, 1.6, pose);
+      const c = csmCentreFromAnchor(pose, DEFAULT_RIG);
+      expect(cam.pos.clone().sub(c).normalize().dot(bayNormal(pose))).toBeGreaterThan(0.9);
+    }
+  });
+  it('the ascent stage tumbles after Apollo 16 jettisons it, and only then', () => {
+    expect(returnPose(RT.separate - 1, a16).lmTumble).toEqual([0, 0, 0]);
+    const a = returnPose(RT.separate + 3, a16).lmTumble;
+    const b = returnPose(RT.separate + 6, a16).lmTumble;
+    expect(Math.abs(a[0])).toBeGreaterThan(0.5);
+    expect(b[0]).toBeGreaterThan(a[0]);
+    expect(returnPose(RT.separate + 6, a15).lmTumble).toEqual([0, 0, 0]);
+    expect(returnPose(RT.separate + 6, a17).lmTumble).toEqual([0, 0, 0]);
+  });
+  it("opens on the rover's TV camera, which holds (15), follows then loses (16) and follows (17) the stage", () => {
+    const at = (p: ReturnProfile, t: number) => {
+      const pose = returnPose(t, p);
+      expect(pose.shot).toMatch(/^rover_tv_/);
+      const cam = returnCamera(t, 1.6, pose);
+      return cam.look.clone().sub(cam.pos).normalize();
+    };
+    const pitch = (v: THREE.Vector3) => Math.atan2(v.y, Math.hypot(v.x, v.z));
+    // fixed: the pointing never changes
+    expect(pitch(at(a15, 3))).toBeCloseTo(pitch(at(a15, 11)), 6);
+    // tracked: pitches up as the stage climbs, and keeps the stage at the centre
+    expect(pitch(at(a17, 11))).toBeGreaterThan(pitch(at(a17, 4)) + 0.15);
+    const pose17 = returnPose(11, a17);
+    const cam17 = returnCamera(11, 1.6, pose17);
+    expect(cam17.look.length()).toBeLessThan(1e-6);
+    // lost: follows to 6 s after ignition, then stays
+    expect(pitch(at(a16, 5))).toBeGreaterThan(pitch(at(a16, 2.6)));
+    expect(pitch(at(a16, 9))).toBeCloseTo(pitch(at(a16, 11)), 6);
+    // the lens looks along the rover's -x toward the LM, from 90 m east
+    const pose = returnPose(1, a15);
+    const cam = returnCamera(1, 1.6, pose);
+    expect(cam.pos.x - descentRel(pose).x).toBeGreaterThan(80);
+    expect(cam.look.x).toBeCloseTo(0, 6);
+  });
+  it('the three open differently, hold different TEI views, and none reuses Apollo 11, 12 or 14', () => {
+    const style = (id: string) => JSON.stringify(load(id).camera?.shots ?? {});
+    expect(new Set(ALL.map(style)).size).toBe(ALL.length);
+    const openers = ['apollo15', 'apollo16', 'apollo17'].map((id) => shotFor('liftoff', load(id)));
+    expect(new Set(openers).size).toBe(3);
   });
 });
 
@@ -287,7 +385,8 @@ for (const id of ALL) {
           // the close-ups frame the docking anchors, not the whole craft
           const lm = close ? DEFAULT_RIG.drogue : new THREE.Vector3(0, 0, 0);
           const tei = pose.beat === 'tei_coast' || pose.beat === 'tei_burn' || pose.beat === 'fade';
-          if (!tei && !inside(lm)) bad.push(`${t} LM ${pose.beat}`);
+          const subsat = pose.beat === 'subsat'; // the camera looks into the CSM's bay
+          if (!tei && !subsat && !inside(lm)) bad.push(`${t} LM ${pose.beat}`);
           const pullStart = pose.shot === 'dock_pull' && t < RT.pullBack + 0.5;
           if (
             pose.csmVisible &&

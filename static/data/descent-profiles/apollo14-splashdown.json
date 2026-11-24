@@ -1,0 +1,57 @@
+{
+  "missionId": "apollo14",
+  "siteId": "apollo14-splashdown",
+  "body": "earth",
+  "landingSite": {
+    "lat": -27.02,
+    "lon": -172.67
+  },
+  "entryState": {
+    "altitudeM": 122000,
+    "velocityMs": 11025,
+    "flightPathAngleDeg": 6.37
+  },
+  "entryMassKg": 5762,
+  "entryCdA": 17.7,
+  "liftToDragRatio": 0.28,
+  "archetype": "EARTH_CAPSULE_REENTRY",
+  "params": {
+    "chuteDeployAltM": 7300,
+    "terminalHandoffAltM": 3000,
+    "parachuteCdA": 24.2,
+    "terminalCdA": 1154
+  },
+  "source_tier": "flagship",
+  "provenance": [
+    {
+      "l": "Apollo 14 Mission Report MSC-04112 (May 1971): Table 6-I, entry interface 215:47:45.3 at 400,000 ft, 36,170.2 ft/s (11,025 m/s); trajectory postflight evaluation MSC 04330 Table VII, flight-path angle -6.37 deg; Table A-II, command module weight at entry 12,703.5 lb (5,762 kg); section 11.3.1, landing 216:01:58 GET (21:05:00 GMT 9 February 1971), 0.62 n.mi from the target, USS New Orleans. Times are the Mission Report clock, not the Flight Journal clock (which runs 40 min 2.9 s ahead). Quote: \"The command module landed February 9, 1971, at 2105 G.m.t. and remained in the stable I flotation attitude.\"",
+      "u": "https://apollojournals.org/afj/ap14fj/pdf/a14_mission-report.pdf"
+    },
+    {
+      "l": "NASA SP-4029 Apollo chronology, \"Entry, Splashdown, and Recovery\" compilation (Apollo 7-17): entry interface velocity, flight-path angle, lift-to-drag ratio, range to target, maximum g, entry-to-splashdown duration, splashdown position and CM weight. Apollo 14 column: \"Lift To Drag Ratio 0.280\", \"Range (n mi) 1,234\" (1,234 n.mi = 2,285 km), \"Maximum g 6.76\", \"Duration (sec) 852.8\", \"Velocity (ft/sec) 36,170.2\", \"Flight Path Angle -6.370\", splashdown 27.02 S 172.67 W. No Apollo 14 entry postflight analysis was found online (MSC IN 71-FM-102 is cited in MSC 04330 but not on NTRS), so L/D and range are the compilation values (secondary); no first/second load-factor split is published. Model limit: with these inputs the model peaks at 7.5 g at 70 s (6.76 g flown), dips to 1.2 g, second pulse 5.9 g; drogues 479 s (503 s flown, 8 min 23 s), splashdown 825 s (853 s flown)",
+      "u": "https://www.nasa.gov/wp-content/uploads/static/history/SP-4029/Apollo_18-40_Entry_Splashdown_and_Recovery.htm"
+    },
+    {
+      "l": "Apollo Flight Journal, Apollo 14 day 9 (clock 40:02.9 ahead of the Mission Report): \"Shepard (onboard): 6.75\" on the first pulse, drogues \"216:36:12\" (215:56:08 on the Mission Report clock), one main chute stayed fouled on the command module after splashdown",
+      "u": "https://apollojournals.org/afj/ap14fj/34_day9_reentry_splashdown.html"
+    },
+    {
+      "l": "Apollo CM entry aero (L/D 0.3), drogue and main areas: the Apollo 8 profile (MSC-PA-R-69-1), same Block II command module",
+      "u": "https://ntrs.nasa.gov/api/citations/19700033031/downloads/19700033031.pdf"
+    }
+  ],
+  "estimatedFields": [
+    "entryCdA",
+    "params.chuteDeployAltM",
+    "params.parachuteCdA",
+    "params.terminalCdA",
+    "beats.apex_cover_jettison"
+  ],
+  "beats": [
+    {
+      "type": "apex_cover_jettison",
+      "altM": 7500
+    }
+  ],
+  "targetDownrangeKm": 2285
+}

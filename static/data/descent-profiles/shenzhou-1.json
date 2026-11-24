@@ -15,7 +15,9 @@
   "entryCdA": 7.33,
   "liftToDragRatio": 0.2,
   "targetDownrangeKm": 3000,
-  "estimatedFields": ["targetDownrangeKm", "flightPathAngleDeg", "entryCdA"],  "archetype": "EARTH_CAPSULE_REENTRY",
+  "estimatedFields": ["targetDownrangeKm", "flightPathAngleDeg", "entryCdA", "beats.heatshield_sep", "beats.retro_ignition", "beats.engine_cutoff"],
+  "beats": [{ "type": "heatshield_sep", "altM": 2000 }, { "type": "retro_ignition", "altM": 1.5 }, { "type": "engine_cutoff", "altM": 0.2 }],
+  "archetype": "EARTH_CAPSULE_REENTRY",
   "params": {
     "chuteDeployAltM": 7000,
     "terminalHandoffAltM": 3000,

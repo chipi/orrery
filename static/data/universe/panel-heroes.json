@@ -50,6 +50,9 @@
     "cosmic-web/horologium-reticulum": { "photoKey": "horologium-reticulum", "pictured": true },
     "virgo/virgo-ii-groups": { "photoKey": "virgo-ii-groups", "pictured": true },
     "laniakea/ophiuchus-supercluster": { "photoKey": "ophiuchus-supercluster", "pictured": true },
-    "laniakea/fornax-eridanus": { "photoKey": "fornax-eridanus", "pictured": true }
+    "laniakea/fornax-eridanus": { "photoKey": "fornax-eridanus", "pictured": true },
+    "milky-way/orion-spur": { "photoKey": "jwst-orion", "pictured": true },
+    "milky-way/sagittarius": { "photoKey": "hst-lagoon", "pictured": true },
+    "cosmic-web/laniakea": { "photoKey": "centaurus-cluster", "pictured": true }
   }
 }

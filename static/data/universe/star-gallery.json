@@ -42,6 +42,24 @@
         "src": "/images/stars/proxima-centauri/02.webp",
         "kind": "real"
       }
+    ],
+    "barnards-star": [
+      {
+        "src": "/images/stars/barnards-star/02.webp",
+        "kind": "real"
+      }
+    ],
+    "rigil-kentaurus": [
+      {
+        "src": "/images/stars/rigil-kentaurus/02.webp",
+        "kind": "real"
+      }
+    ],
+    "vega": [
+      {
+        "src": "/images/stars/vega/02.webp",
+        "kind": "real"
+      }
     ]
   }
 }

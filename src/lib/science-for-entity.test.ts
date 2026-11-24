@@ -13,9 +13,12 @@ const key = (r: { tab: string; section: string }) => `${r.tab}/${r.section}`;
 describe('science articles per deep-level page (plan C5a)', () => {
   it('maps each kind to an article that covers it, and the kinds without one to none', () => {
     expect(scienceForDeepSky('galaxy').map(key)).toEqual(['observation/galaxy-types']);
-    expect(scienceForDeepSky('globular-cluster').map(key)).toEqual([
-      'observation/hertzsprung-russell',
-    ]);
+    for (const c of ['globular-cluster', 'star-cluster'])
+      expect(scienceForDeepSky(c).map(key), c).toEqual([
+        'observation/star-clusters',
+        'observation/hertzsprung-russell',
+      ]);
+    expect(scienceForDeepSky('star').map(key)).toEqual(['observation/hertzsprung-russell']);
     expect(scienceForDeepSky('galaxy-cluster').map(key)).toEqual([
       'cosmology/large-scale-structure',
     ]);

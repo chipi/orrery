@@ -25,6 +25,13 @@ function makeRecorder() {
           return gradient;
         };
       }
+      // The disc labels are placed by width (declutterLabels): 7 px a character, as Space Mono 11 px.
+      if (prop === 'measureText') {
+        return (text: string) => {
+          log.push({ op: prop, args: [text] });
+          return { width: text.length * 7 };
+        };
+      }
       return (...args: unknown[]) => {
         log.push({ op: prop, args });
       };

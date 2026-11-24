@@ -16,6 +16,23 @@ export function shouldFlyToDetail(camR: number): boolean {
   return camR > DETAIL_FLY_TARGET_R + 0.05;
 }
 
+/** Scene radius of the globe surface; camR is measured from the centre. */
+export const SURFACE_R = 30;
+
+/**
+ * A pinch scales the altitude, so the fingers' ratio is the zoom at every height. Scaling
+ * camR itself made a 20 % spread at altitude 7 land 8x closer and skip the imagery bands.
+ */
+export function pinchCamR(
+  camR: number,
+  prevDist: number,
+  dist: number,
+  lim: { floor: number; max: number },
+): number {
+  const r = SURFACE_R + (camR - SURFACE_R) * (prevDist / dist);
+  return Math.max(lim.floor, Math.min(lim.max, r));
+}
+
 export interface NationFilterVisibilityInput {
   view: '2d' | '3d';
   tagStageOn: boolean;
@@ -45,8 +62,10 @@ export function mobileDrawerHidden(i: {
   flatPatchActive: boolean;
   /** Zoom-in fly in progress (altitude still high until the patch opens). */
   detailFlying?: boolean;
+  /** Zoomed into a site: its imagery card and scale bar take the bottom row. */
+  siteDetail?: boolean;
 }): boolean {
-  return i.routeViewActive || i.flatPatchActive || !!i.detailFlying;
+  return i.routeViewActive || i.flatPatchActive || !!i.detailFlying || !!i.siteDetail;
 }
 
 /**

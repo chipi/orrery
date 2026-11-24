@@ -185,6 +185,20 @@
     if (readout) explainerOpen = false;
   });
 
+  // Phone: the panel is a bottom sheet over the porkchop (operator 2026-11-23, option A). Closed,
+  // it shows the picked window, the margin or deficit bar and FLY MISSION; its handle opens the
+  // rest. The chart keeps the screen above the closed sheet (--plan-sheet-peek).
+  let sheetOpen = $state(false);
+  let sheetPeek = $state(0);
+  let sheetEl: HTMLElement | undefined = $state();
+  $effect(() => {
+    const el = sheetEl;
+    if (!el || sheetOpen) return;
+    const ro = new ResizeObserver(() => (sheetPeek = el.offsetHeight));
+    ro.observe(el);
+    return () => ro.disconnect();
+  });
+
   /**
    * Pick the most-fitting rocket for a given ∆v requirement: the
    * cheapest viable one (smallest capability that still covers the
@@ -526,7 +540,8 @@
     ctx.font = "11px 'Space Mono', monospace";
     ctx.textAlign = 'center';
     ctx.textBaseline = 'top';
-    const xTicks = 5;
+    // Six dates need about 50 px each: a phone-width plot (308 px) takes five.
+    const xTicks = PW < 360 ? 4 : 5;
     for (let i = 0; i <= xTicks; i++) {
       const t = i / xTicks;
       const x = ML + t * PW;
@@ -536,8 +551,11 @@
       ctx.lineTo(x, MT + PH + 4);
       ctx.strokeStyle = 'rgba(255,255,255,0.3)';
       ctx.stroke();
-      ctx.fillText(dayToShortDate(d), x, MT + PH + 8);
+      // The last date ends at the plot's edge: centred, half of it ran past the 18 px right margin.
+      ctx.textAlign = i === xTicks ? 'right' : 'center';
+      ctx.fillText(dayToShortDate(d), i === xTicks ? x + 4 : x, MT + PH + 8);
     }
+    ctx.textAlign = 'center';
     ctx.font = "11px 'Space Mono', monospace";
     ctx.fillStyle = 'rgba(255,255,255,0.35)';
     ctx.fillText(m.plan_axis_departure_window(), ML + PW / 2, MT + PH + 26);
@@ -927,7 +945,7 @@
 </svelte:head>
 <VisuallyHiddenH1 title={m.plan_page_title()} />
 
-<div class="plan">
+<div class="plan" class:sheet-open={sheetOpen} style:--plan-sheet-peek="{sheetPeek}px">
   <div class="plot-area">
     <!-- Destination + mission-type selectors (v0.1.6 / ADR-026 §URL contract).
          Sits between the nav bar and the porkchop canvas. Mobile collapses
@@ -1017,7 +1035,36 @@
     {/if}
   </div>
 
-  <aside class="right-panel" aria-label={m.plan_panel_label()}>
+  <aside
+    class="right-panel"
+    class:collapsed={!sheetOpen}
+    bind:this={sheetEl}
+    aria-label={m.plan_panel_label()}
+  >
+    <!-- Phone only: the sheet's handle; the picked window when there is one. -->
+    <button
+      type="button"
+      class="sheet-handle"
+      aria-expanded={sheetOpen}
+      aria-label={m.plan_panel_label()}
+      data-testid="plan-sheet-handle"
+      onclick={() => (sheetOpen = !sheetOpen)}
+    >
+      <span class="sheet-grip" aria-hidden="true"></span>
+      {#if readout}
+        <span class="sheet-summary">
+          <span>{readout.dep} → {readout.arr}</span>
+          <span>{m.plan_transit_days({ count: readout.tof.toFixed(0) })}</span>
+          <span class="sheet-dv">{m.mp_flight_unit_kms({ value: readout.dv.toFixed(2) })}</span>
+        </span>
+      {:else}
+        <span class="sheet-summary">
+          <span class="sheet-empty-title">{m.plan_empty_title()}</span>
+          <span class="sheet-empty-hint">{m.plan_empty_hint_mobile()}</span>
+        </span>
+      {/if}
+      <span class="sheet-caret" aria-hidden="true">{sheetOpen ? '▾' : '▴'}</span>
+    </button>
     <!-- Educational primer. Collapsible <details> so the porkchop is
          interpretable on first paint (open by default) but auto-folds
          on cell-selection to free vertical space for rocket + mission
@@ -1581,11 +1628,106 @@
     color: var(--color-text-label);
     letter-spacing: 1px;
   }
+  .sheet-handle {
+    display: none;
+  }
+  /* Phone: the panel is a bottom sheet over the porkchop (operator 2026-11-23, option A). The chart
+     fills the screen above the closed sheet; open, the sheet rises over the chart and scrolls. */
   @media (max-width: 767px) {
+    .plan {
+      grid-template-rows: 1fr;
+    }
+    .plot-area {
+      padding-bottom: var(--plan-sheet-peek, 0px);
+    }
     .right-panel {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 6;
+      max-height: 78%;
       border-left: none;
       border-top: 1px solid var(--color-border);
-      max-height: 50vh;
+      border-radius: 10px 10px 0 0;
+      padding: 0 14px calc(12px + env(safe-area-inset-bottom, 0px));
+      gap: 8px;
+      box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.5);
+    }
+    /* A scrolling column must not squash its rows (the budget bar went to a 1 px line). */
+    .right-panel > :global(*) {
+      flex-shrink: 0;
+    }
+    .right-panel.collapsed {
+      overflow: hidden;
+    }
+    .right-panel.collapsed > :not(.sheet-handle):not(.budget):not(:global(.plan-fly)) {
+      display: none;
+    }
+    .sheet-handle {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      grid-template-rows: auto auto;
+      align-items: center;
+      gap: 2px 8px;
+      width: 100%;
+      min-height: 44px;
+      padding: 6px 0 4px;
+      background: none;
+      border: none;
+      color: inherit;
+      font: inherit;
+      text-align: start;
+      cursor: pointer;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+      background: rgba(8, 10, 22, 0.98);
+    }
+    .sheet-grip {
+      grid-column: 1 / -1;
+      justify-self: center;
+      width: 36px;
+      height: 4px;
+      border-radius: 2px;
+      background: rgba(255, 255, 255, 0.25);
+    }
+    .sheet-summary {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2px 10px;
+      min-width: 0;
+      font-family: var(--font-mono, 'Space Mono', monospace);
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.9);
+    }
+    .sheet-dv {
+      color: var(--color-state);
+      font-weight: 700;
+    }
+    .sheet-empty-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 15px;
+      letter-spacing: 2px;
+    }
+    .sheet-empty-hint {
+      color: var(--color-text-label);
+    }
+    .sheet-caret {
+      color: var(--color-text-label);
+      font-size: 12px;
+    }
+    .right-panel.collapsed :global(.plan-fly) {
+      margin-top: 4px;
+    }
+    /* The vehicle photo is a strip in the sheet, not a card. */
+    .rocket-photo {
+      aspect-ratio: auto;
+      height: 72px;
+    }
+    /* The closed sheet already says how to pick a cell. */
+    .touch-hint {
+      display: none !important;
     }
   }
 

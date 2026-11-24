@@ -8,7 +8,7 @@ import type { ShowcaseModel } from './showcase/types';
 
 type Family = Record<string, unknown> & { SHOWCASE?: Record<string, ShowcaseModel> };
 
-const FAMILIES = import.meta.glob<Family>('./showcase/*.ts');
+const FAMILIES = import.meta.glob<Family>(['./showcase/*.ts', '!./showcase/*.test.ts']);
 
 /** Mission id → [family file, showcase fleet id or exported builder name]. */
 const FLY_CRAFT: Record<string, readonly [string, string]> = {
@@ -19,8 +19,8 @@ const FLY_CRAFT: Record<string, readonly [string, string]> = {
   'skylab-3': ['station-freighters', 'apollo-csm-block-ii'],
   'skylab-4': ['station-freighters', 'apollo-csm-block-ii'],
   'apollo-soyuz': ['station-freighters', 'apollo-csm-block-ii'],
-  'soyuz-1': ['soyuz-progress', 'soyuz-7k-ok'],
-  'soyuz-11': ['soyuz-progress', 'soyuz-7k-ok'],
+  'soyuz-1': ['capsules-classic', 'soyuz-7k-ok'],
+  'soyuz-11': ['capsules-classic', 'soyuz-7k-ok'],
   'shenzhou-1': ['station-freighters', 'shenzhou'],
   'shenzhou-5': ['station-freighters', 'shenzhou'],
   'sts-1': ['winged', 'columbia'],
@@ -49,25 +49,65 @@ const FLY_CRAFT: Record<string, readonly [string, string]> = {
   // MMX: box bus with two wings, like Mars Express.
   mmx: ['orbiters', 'mars-express'],
   mariner4: ['orbiters', 'mariner-4'],
-  mariner2: ['orbiters', 'buildMariner2'],
-  mro: ['orbiters', 'buildMro'],
+  mariner2: ['mars-orbiters', 'mariner-2'],
+  mro: ['mars-orbiters', 'mro'],
+  bepicolombo: ['mars-orbiters', 'bepicolombo'],
   // IM-1 (Nova-C Odysseus), shown upright on its legs.
   'im-1': ['landers', 'buildNovaC'],
-  // Chang'e 2 was built on the same DFH-3 bus as Chang'e 1.
-  change2: ['orbiters', 'buildChange1'],
+  change2: ['lunar-orbiters', 'change-2'],
   mariner9: ['orbiters', 'mariner-9'],
   mariner10: ['orbiters', 'buildMariner10'],
   lro: ['orbiters', 'lro'],
-  clementine: ['orbiters', 'buildClementine'],
-  'smart-1': ['orbiters', 'buildSmart1'],
-  change1: ['orbiters', 'buildChange1'],
-  chandrayaan1: ['orbiters', 'buildChandrayaan1'],
-  // The Chandrayaan-2 orbiter: another ISRO gold box with one wing; the Chandrayaan-1 shape is close enough.
-  chandrayaan2: ['orbiters', 'buildChandrayaan1'],
-  kaguya: ['orbiters', 'buildKaguya'],
-  'lunar-prospector': ['orbiters', 'buildLunarProspector'],
-  luna10: ['orbiters', 'buildLuna10'],
+  clementine: ['lunar-orbiters', 'clementine'],
+  'smart-1': ['lunar-orbiters', 'smart-1'],
+  change1: ['lunar-orbiters', 'change1'],
+  chandrayaan1: ['lunar-orbiters', 'chandrayaan1'],
+  chandrayaan2: ['lunar-orbiters', 'chandrayaan2'],
+  kaguya: ['lunar-orbiters', 'kaguya'],
+  'lunar-prospector': ['lunar-orbiters', 'lunar-prospector'],
+  luna10: ['lunar-orbiters', 'luna10'],
   sputnik1: ['early-stations', 'buildSputnik1'],
+  // Scale-out batch 5: the probes in cruise.
+  cassini: ['probes', 'cassini'],
+  galileo: ['probes', 'galileo'],
+  rosetta: ['probes', 'rosetta'],
+  giotto: ['probes', 'giotto'],
+  hayabusa1: ['probes', 'hayabusa'],
+  hayabusa2: ['probes', 'hayabusa-2'],
+  'osiris-rex': ['probes', 'osiris-rex'],
+  'venera-13': ['probes', 'venera-13'],
+  'vega-1': ['probes', 'vega-1'],
+  'vega-2': ['probes', 'vega-2'],
+  // Scale-out batch 7: the outer-planet craft.
+  'voyager-1': ['outer-probes', 'voyager-1'],
+  'voyager-2': ['outer-probes', 'voyager-2'],
+  'pioneer-10': ['outer-probes', 'pioneer-10'],
+  'pioneer-11': ['outer-probes', 'pioneer-11'],
+  juno: ['outer-probes', 'juno'],
+  juice: ['outer-probes', 'juice'],
+  dawn: ['outer-probes', 'dawn'],
+  ulysses: ['outer-probes', 'ulysses'],
+  // Scale-out batch 3: the classic crew capsules in Earth orbit.
+  'freedom-7': ['capsules-classic', 'mercury-capsule'],
+  'liberty-bell-7': ['capsules-classic', 'mercury-capsule'],
+  'friendship-7': ['capsules-classic', 'mercury-capsule'],
+  'aurora-7': ['capsules-classic', 'mercury-capsule'],
+  'sigma-7': ['capsules-classic', 'mercury-capsule'],
+  'faith-7': ['capsules-classic', 'mercury-capsule'],
+  gemini3: ['capsules-classic', 'gemini'],
+  gemini4: ['capsules-classic', 'gemini'],
+  gemini6a: ['capsules-classic', 'gemini'],
+  gemini7: ['capsules-classic', 'gemini'],
+  gemini8: ['capsules-classic', 'gemini'],
+  gemini12: ['capsules-classic', 'gemini'],
+  'vostok-1': ['capsules-classic', 'vostok'],
+  'vostok-2': ['capsules-classic', 'vostok'],
+  'vostok-3': ['capsules-classic', 'vostok'],
+  'vostok-4': ['capsules-classic', 'vostok'],
+  'vostok-5': ['capsules-classic', 'vostok'],
+  'vostok-6': ['capsules-classic', 'vostok'],
+  'voskhod-1': ['capsules-classic', 'voskhod'],
+  'voskhod-2': ['capsules-classic', 'voskhod'],
 };
 
 /** Missions whose orbit is spent docked: the craft flies nose-down on the target's port. */
@@ -76,7 +116,7 @@ const DOCKED: Record<string, { target: readonly [string, string]; dockingModuleM
   'skylab-3': { target: ['early-stations', 'skylab'] },
   'skylab-4': { target: ['early-stations', 'skylab'] },
   // Apollo–Soyuz: CSM + the 3.15 m Docking Module + Soyuz 19 (a 7K-TM, the 7K-OK outline).
-  'apollo-soyuz': { target: ['soyuz-progress', 'soyuz-7k-ok'], dockingModuleM: 3.15 },
+  'apollo-soyuz': { target: ['capsules-classic', 'soyuz-7k-ok'], dockingModuleM: 3.15 },
 };
 
 /** Every mission with a showcase craft (for the completeness test). */

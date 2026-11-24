@@ -69,7 +69,7 @@
       "source": "Apollo 17 Mission Report (NASA JSC-07904, 1973)",
       "entry_velocity_km_s": 1.695,
       "edl_system": "powered",
-      "edl_duration_s": 730,
+      "edl_duration_s": 731,
       "touchdown_velocity_ms": 0.9
     },
     "totals": {
@@ -116,7 +116,7 @@
         "description": "1972-12-11. Cernan + Schmitt landed at Taurus-Littrow (20.16°N, 30.77°E). Logged 22 hours of EVA over 3 moonwalks — the most of any Apollo mission. Drove the Lunar Roving Vehicle 35.7 km total."
       },
       {
-        "met_days": 7.8,
+        "met_days": 7.723,
         "type": "ascent",
         "label": "LM Challenger ascent — last humans on the Moon",
         "description": "1972-12-14. Cernan was the last person to step off the Moon — his footprint at the LM ladder remains the most recent human surface activity on another world. The ascent stage rendezvoused with America in orbit."
@@ -129,7 +129,7 @@
         "dv_km_s": 1.05
       },
       {
-        "met_days": 12.6,
+        "met_days": 12.578,
         "type": "earth_return",
         "label": "Splashdown — Pacific Ocean",
         "description": "1972-12-19 19:25 UTC. Apollo 17 splashed down 6.4 km from USS Ticonderoga, ending the Apollo program. The 110-kg sample haul (still the largest single Moon-rock collection) became the cornerstone of subsequent decades of lunar science."

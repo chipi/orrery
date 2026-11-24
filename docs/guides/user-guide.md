@@ -127,7 +127,7 @@ The mission visualisation. Earth, the destination, and the spacecraft animate li
 - **▶ / ⏸ + speed pills** — autoplay at 1× / 7× / 30× / 90× (Mars-class missions) or 0.1× / 0.5× / 1× / 3× (lunar).
 - **`2D` toggle** — switch between the 3D scene and a top-down 2D view.
 - **CAPCOM panel** (right) — live mission events (TLI, TCM, EDL, etc.) tick by as you scrub.
-- **Pre-built missions**: try `/fly?mission=<id>` for any of the 139 missions in the catalog.
+- **Pre-built missions**: try `/fly?mission=<id>` for any of the 141 missions in the catalog.
 - **The briefing card**: every flight opens on a card with the mission's photo, story, vehicle, payload, ∆v and transit, the fleet craft it flew, and three buttons — **START WITH LAUNCH** (the ascent from the pad), **SKIP TO LANDING** (the descent, where the mission has one) and **PROCEED TO SIMULATION** (the cruise).
 - **Play bar and markers**: one marker row carries the whole journey — ascent beats (liftoff, MAX-Q, stage separation, fairing, SECO, parking orbit, injection burn), cruise milestones (gold dots), Flight Director stages (gold diamonds) and descent beats where a profile exists. Click a marker to seek there.
 - **Phase markers** appear on every mission with timeline events — click any marker dot to jump the sim to that event's MET (LOI, TCM, descent, arrival, EDL). Each marker carries a science-chip linking to the matching `/science` encyclopedia section. Keyboard-focusable + screen-reader-readable. Reduced-motion: snap, no animation.
@@ -160,7 +160,7 @@ Each phase title is a deep link into the matching `/science` chapter. The lens a
 
 ## Mission Catalog · `/missions`
 
-All 139 missions in the dataset, 1957 to 2031: Earth orbit (45), Moon (37), Mars (23), Venus (6), Jupiter (5), Saturn (4), Mercury (3), the Sun (3), and comets, asteroids, Neptune and Pluto, from Sputnik 1 to Starship Mars Crew (concept). The page was previously called "Mission Library"; it was renamed to **Mission Catalog** under [ADR-051](../adr/ADR-051.md) to free the word _Library_ for the outbound-link inventory at `/library`.
+All 141 missions in the dataset, 1957 to 2031: Earth orbit (46), Moon (37), Mars (24), Venus (6), Jupiter (5), Saturn (4), Mercury (3), the Sun (3), and comets, asteroids, Neptune and Pluto, from Sputnik 1 to Starship Mars Crew (concept). The page was previously called "Mission Library"; it was renamed to **Mission Catalog** under [ADR-051](../adr/ADR-051.md) to free the word _Library_ for the outbound-link inventory at `/library`.
 
 [![Catalog](../screenshots/04-missions.png)](screenshots/04-missions.png)
 

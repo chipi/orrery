@@ -422,6 +422,27 @@ describe('range-control entry guidance', () => {
     expect(s.touchdownSuccess).toBe(true); // still a real, survivable entry
   });
 
+  it('a lunar-return guided entry flies lift-up through its first pulse, so the bank does not raise its peak g', () => {
+    // Apollo's entry guidance held the lift vector up until the first deceleration pulse was past,
+    // then steered the bank for range (Apollo 11: 6.56 g peak, MSC-00171 Table 7-VII).
+    const lunar = expandDescentProfile({
+      ...RAW_CAPSULE,
+      entryState: { altitudeM: 122_000, velocityMs: 11_032, flightPathAngleDeg: 6.48 },
+      entryCdA: 17.7,
+    });
+    const hold = { holdLiftUpThroughPulse: true };
+    const liftUp = integrateDescent(lunar, { entryBankCos: 1, ...hold }).peakDecel.g;
+    const liftDown = integrateDescent(lunar, { entryBankCos: -1, ...hold }).peakDecel.g;
+    expectCloseTo(liftDown, liftUp, 0.05, 'peak g does not depend on the post-pulse bank');
+    // The guided solve sets the hold for a lunar return only; a LEO entry banks from the start.
+    expect(integrateDescent({ ...lunar, targetDownrangeKm: 2300 }).peakDecel.g).toBeLessThan(
+      liftUp + 0.05,
+    );
+    const leoDown = integrateDescent(capsule, { entryBankCos: -1 }).peakDecel.g;
+    const leoUp = integrateDescent(capsule, { entryBankCos: 1 }).peakDecel.g;
+    expect(leoDown).toBeGreaterThan(leoUp + 0.2);
+  });
+
   it('M4 guard: a target with no lift (no steering authority) is flagged, not faked', () => {
     // A profile carrying a target but zero L/D has a zero-width footprint — bank does nothing.
     const noLift = expandDescentProfile({ ...RAW_CAPSULE, liftToDragRatio: 0 });
@@ -510,5 +531,111 @@ describe('lunar-return skip entry (11 km/s lifting)', () => {
     // mission failure (the corridor is a knife-edge). NOT a hyperbolic escape.
     expect(Math.max(...s.states.map((st) => st.altKm))).toBeGreaterThan(1000);
     expect(s.touchdownSuccess).toBe(false);
+  });
+});
+
+describe('placed beats and the ground tail (pass 2)', () => {
+  const at = (s: ReturnType<typeof integrateDescent>, type: string) =>
+    s.events.filter((e) => e.type === type);
+
+  it('fires a beat as the craft descends through its altitude', () => {
+    const s = integrateDescent({ ...MARS_AIRBAG, beats: [{ type: 'radar_lock', altM: 1500 }] });
+    const [radar] = at(s, 'radar_lock');
+    expectInRange(radar.altKm * 1000, 1490, 1500, 'radar lock altitude (m)');
+  });
+
+  it('fires a beat a set time after another, and replaces the phase-start beat of its type', () => {
+    const s = integrateDescent({
+      ...MARS_AIRBAG,
+      beats: [{ type: 'heatshield_sep', after: 'parachute_deploy', afterS: 22 }],
+    });
+    const chute = at(s, 'parachute_deploy')[0];
+    const hs = at(s, 'heatshield_sep');
+    expect(hs).toHaveLength(1);
+    expectInRange(hs[0].t - chute.t, 22, 22.05, 'heat shield after chute (s)');
+  });
+
+  const TAIL = { count: 15, firstHeightM: 16.7, rollM: 1000, restS: 150 };
+  const tailed = integrateDescent({
+    ...MARS_AIRBAG,
+    afterTouchdown: {
+      bounces: TAIL,
+      beats: [{ type: 'petals_open', afterS: 8, realAfterS: 5220 }],
+    },
+  });
+  const td = at(tailed, 'touchdown')[0];
+  const rest = at(tailed, 'at_rest')[0];
+
+  it('keeps the first contact as touchdown, with its speed', () => {
+    expect(td.altKm).toBe(0);
+    expect(tailed.touchdownVelocityMs).toBeGreaterThan(5);
+  });
+
+  it('bounces `count` times: count − 1 rebounds after the first contact, the first to its height', () => {
+    expect(at(tailed, 'bounce')).toHaveLength(TAIL.count - 1);
+    const firstHop = tailed.states.filter((s) => s.t > td.t && s.t < at(tailed, 'bounce')[0].t);
+    expectInRange(
+      Math.max(...firstHop.map((s) => s.altM)),
+      TAIL.firstHeightM - 0.05,
+      TAIL.firstHeightM,
+      'first hop apex (m)',
+    );
+  });
+
+  it("hops in the body's gravity: the first hop lasts 2·√(2h/g)", () => {
+    const g = bodyGravity(0, 'mars');
+    const firstBounce = at(tailed, 'bounce')[0];
+    expectInRange(
+      firstBounce.t - td.t,
+      2 * Math.sqrt((2 * TAIL.firstHeightM) / g) - 0.01,
+      2 * Math.sqrt((2 * TAIL.firstHeightM) / g) + 0.01,
+      'first hop duration (s)',
+    );
+  });
+
+  it('rolls `rollM` from first contact to rest, and shortens the slow roll on screen', () => {
+    const last = tailed.states[tailed.states.length - 1];
+    expectInRange(
+      (last.downrangeKm - td.downrangeKm!) * 1000,
+      TAIL.rollM - 1,
+      TAIL.rollM + 1,
+      'roll distance (m)',
+    );
+    // The real rest is restS after first contact; on screen it comes sooner, stamped with the real time.
+    expect(rest.realT).toBeCloseTo(td.t + TAIL.restS, 6);
+    expect(rest.t).toBeLessThan(td.t + TAIL.restS);
+  });
+
+  it('puts the ground beats after rest, with their real time, and runs past them', () => {
+    const [petals] = at(tailed, 'petals_open');
+    expect(petals.t).toBeCloseTo(rest.t + 8, 6);
+    expect(petals.realT).toBeCloseTo(td.t + 5220, 6);
+    expect(tailed.totalDurationS).toBeGreaterThan(petals.t);
+  });
+
+  it('samples the tail in time order', () => {
+    for (let i = 1; i < tailed.states.length; i++)
+      expect(tailed.states[i].t).toBeGreaterThan(tailed.states[i - 1].t);
+  });
+});
+
+describe('touch-and-go back-away (pass 2)', () => {
+  const s = integrateDescent({
+    ...MARS_AIRBAG,
+    afterTouchdown: { ascent: { afterS: 6, rateMs: 0.4, durationS: 10 } },
+  });
+  const td = s.events.find((e) => e.type === 'touchdown')!;
+
+  it('holds on the surface, then climbs away on thrust', () => {
+    const held = s.states.filter((x) => x.t > td.t && x.t < td.t + 6);
+    expect(held.every((x) => x.altM === 0 && x.thrustN === 0)).toBe(true);
+    const climbing = s.states.filter((x) => x.t > td.t + 6 && x.t <= td.t + 16);
+    expect(climbing.every((x) => x.thrustN > 0)).toBe(true);
+    expectInRange(
+      Math.max(...s.states.filter((x) => x.t > td.t).map((x) => x.altM)),
+      3.5,
+      4.2,
+      'back-away height (m)',
+    );
   });
 });

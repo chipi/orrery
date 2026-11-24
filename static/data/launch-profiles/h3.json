@@ -9,7 +9,9 @@
   "refAreaM2": 30,
   "cd": 0.3,
   "launchSite": { "lat": 30.4022, "lon": 130.975, "name": "LP2 · Tanegashima" },
-  "pitchProgram": [[0, 90], [10, 89], [40, 76], [100, 54], [180, 34], [280, 16], [400, 4], [480, 0]],
+  "pitchProgram": [[0, 90], [10, 89], [30, 71.4], [60, 62.1], [100, 38.8], [150, 20], [200, 14.2], [292, 6.7]],
+  "pitchTableStages": 1,
+  "targetOrbitAltM": 329000,
   "boosters": {
     "name": "SRB-3",
     "count": 4,
@@ -25,9 +27,9 @@
     {
       "name": "First stage (2× LE-9)",
       "wetKg": 240000,
-      "dryKg": 15500,
-      "thrustSlKN": 2790.3,
-      "thrustVacKN": 3181.8,
+      "dryKg": 32410,
+      "thrustSlKN": 2580,
+      "thrustVacKN": 2942,
       "ispSlS": 370,
       "ispVacS": 422,
       "engines": 2,
@@ -46,7 +48,7 @@
   ],
   "provenance": [
     {
-      "l": "JAXA — H3/MMX launch plan, Aug 2026 (H3-24L: first stage 240 t / 224.5 t propellant, second stage 28 t / 24.6 t, SRB-3 76.2 t each, L fairing 16.4 m 2.7 t; event table SRB-3 sep 116/118 s, fairing 197 s at 131 km, MECO 292 s; MMX 4,480 kg)",
+      "l": "JAXA — H3/MMX launch plan, Aug 2026 (H3-24L: first stage 240 t / 224.5 t propellant (maximum) / 2,942 kN, second stage 28 t / 24.6 t, SRB-3 76.2 t each, L fairing 16.4 m 2.7 t; event table with altitude and inertial speed: SRB-3 sep 116/118 s, fairing 197 s at 131 km, MECO 292 s at 208 km / 6.2 km/s, SECO1 640 s at 329 km / 7.7 km/s; MMX 4,480 kg)",
       "u": "https://www.jaxa.jp/press/2026/08/files/jaxa20260820-1_01.pdf"
     },
     {
@@ -58,7 +60,7 @@
       "u": "https://www.esa.int/ESA_Multimedia/Images/2026/10/MMX_lifts_off_to_Mars_s_moon_Phobos"
     },
     {
-      "l": "SRB-3 thrust is the burn average matching the ~110 s burn; LE-9 sea-level thrust/Isp estimated from the vacuum figures (not published)",
+      "l": "Stage 1 flies the plan's 2,942 kN vacuum (Table 3). The 224.5 t is the maximum load: 711 kg/s burns 207.6 t by MECO at 292 s, the rest rides in dryKg (15.5 t structure + 16.9 t unburned). The pitch table is fitted to Table 2's altitude and inertial speed (MECO 208 km / 6.2 km/s, SECO1 640 s at 329 km / 7.7 km/s), the parking orbit is SECO1's 329 km. SRB-3 thrust is the burn average over the ~110 s burn; LE-9 sea-level thrust and Isp are estimated from the vacuum figures (not published)",
       "u": "https://en.wikipedia.org/wiki/H3_(rocket)"
     }
   ],

@@ -13,6 +13,10 @@
     /** The scene plays this beat on a compressed clock (the parking orbit and injection): show
      *  no time rather than a wrong one. */
     untimed?: boolean;
+    /** Shown sooner than it happened (an airbag lander's petals): the row gives the real time. */
+    realT?: number;
+    /** The time is approximate (a landing "about N minutes in"): print it with a "~". */
+    approx?: boolean;
   }
   let {
     beats,
@@ -29,6 +33,8 @@
     compact?: boolean;
   } = $props();
 
+  const stamp = (b: Beat) => (b.approx ? '~' : '') + clock(b.realT ?? b.t);
+
   const BEFORE = 2;
   const AFTER = 4;
   let active = $derived(beats.findLastIndex((b) => b.t <= t));
@@ -44,7 +50,7 @@
     <div class="compact">
       <span class="k">{m.fly_hud_next_event()}</span>
       <span class="lbl">{hudLabel(n.label)}</span>
-      {#if !n.untimed}<span class="time">{clock(n.t)}</span>{/if}
+      {#if !n.untimed}<span class="time">{stamp(n)}</span>{/if}
     </div>
   {/if}
 {:else if beats.length > 1}
@@ -62,7 +68,7 @@
             >{r.i < active ? '✓' : r.i === active ? '●' : '○'}</span
           >
           <span class="lbl">{hudLabel(r.label)}</span>
-          <span class="time">{r.untimed ? '' : clock(r.t)}</span>
+          <span class="time">{r.untimed ? '' : stamp(r)}</span>
         </li>
       {/each}
     </ol>
@@ -70,10 +76,14 @@
 {/if}
 
 <style>
+  /* Stacked, right-aligned under the clock (operator 2026-11-23): side by side the next beat
+     set the clock card's width and wrapped its label. */
   .compact {
     display: flex;
-    gap: 8px;
-    align-items: baseline;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1px;
+    text-align: end;
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 11px;
     letter-spacing: 1px;

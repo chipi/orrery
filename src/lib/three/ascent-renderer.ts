@@ -25,10 +25,20 @@ export interface AscentRenderer {
   composer: EffectComposer;
   /** Re-fit renderer + composer to the container's current size + scene aspect. */
   resize: () => void;
-  /** Render one composed frame. */
-  render: () => void;
+  /** Render one composed frame, then an inset view over it when given (the booster-landing
+   *  inset, 0.9.11 F2): its scene drawn straight into `rect` (CSS px from the canvas's top-left). */
+  render: (inset?: InsetView | null) => void;
   /** Tear down the GL context + passes (call from onDestroy). */
   dispose: () => void;
+}
+
+/** A second scene drawn into a rectangle of the canvas, after the composed frame. */
+export interface InsetView {
+  scene: THREE.Scene;
+  camera: THREE.Camera;
+  rect: { x: number; y: number; w: number; h: number };
+  /** The view fills the frame: the composed main scene is not drawn under it. */
+  full?: boolean;
 }
 
 /**
@@ -85,7 +95,21 @@ export function createAscentRenderer(
       renderer.setSize(cw, ch);
       composer.setSize(cw, ch);
     },
-    render: () => composer.render(),
+    render: (inset) => {
+      if (!inset?.full) composer.render();
+      if (!inset || inset.rect.w < 2 || inset.rect.h < 2) return;
+      // Stainless boosters are full metal: without an environment they render black. The inset
+      // is a small viewport, so it gets the hero IBL whatever the main scene's tier.
+      if (!inset.scene.environment) inset.scene.environment = heroEnvironment(renderer);
+      const { x, y, w: iw, h: ih } = inset.rect;
+      const bottom = container.clientHeight - (y + ih);
+      renderer.setViewport(x, bottom, iw, ih);
+      renderer.setScissor(x, bottom, iw, ih);
+      renderer.setScissorTest(true);
+      renderer.render(inset.scene, inset.camera);
+      renderer.setScissorTest(false);
+      renderer.setViewport(0, 0, container.clientWidth, container.clientHeight);
+    },
     dispose: () => {
       composer.dispose();
       renderer.dispose();

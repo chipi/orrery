@@ -1,0 +1,61 @@
+{
+  "missionId": "apollo11",
+  "siteId": "apollo11-splashdown",
+  "body": "earth",
+  "landingSite": {
+    "lat": 13.3,
+    "lon": -169.15
+  },
+  "entryState": {
+    "altitudeM": 122000,
+    "velocityMs": 11032,
+    "flightPathAngleDeg": 6.48
+  },
+  "entryMassKg": 5486,
+  "entryCdA": 17.7,
+  "liftToDragRatio": 0.282,
+  "archetype": "EARTH_CAPSULE_REENTRY",
+  "params": {
+    "chuteDeployAltM": 7300,
+    "terminalHandoffAltM": 3000,
+    "parachuteCdA": 24.2,
+    "terminalCdA": 1154
+  },
+  "source_tier": "flagship",
+  "provenance": [
+    {
+      "l": "Apollo 11 Mission Report MSC-00171 (Nov 1969): Table 7-VII, entry interface 195:03:05.7 at 400,000 ft, 36,194.4 ft/s (11,032 m/s), -6.48 deg, peak 6.56 g; Table A-I, command module weight at entry 12,095.5 lb (5,486 kg)",
+      "u": "https://www.nasa.gov/wp-content/uploads/static/apollo50th/pdf/A11_MissionReport.pdf"
+    },
+    {
+      "l": "Apollo 11 Entry Postflight Analysis (MSC Mission Planning and Analysis Division, Feb 1970): hypersonic CM L/D 0.282 (reconstructed); relative range 1,497 n.mi (2,772 km) from entry to the target; lift-up held until the drag passed 1.426 g at 52 s, bank -180 deg after the first pulse; first maximum load factor 6.73 g at 82 s, minimum 0.48 g, second maximum 6.00 g. Model limit: with these inputs the model peaks at 8.0 g at 68 s (first pulse), 0.42 g, 5.4 g; drogues 578 s (541 s flown), splashdown 935 s (929 s flown)",
+      "u": "https://apollojournals.org/afj/ap11fj/pdf/19740072963_as11-entry-analysis-19700220.pdf"
+    },
+    {
+      "l": "Apollo 11 Mission Report: drogues deployed at 195:12:06.9 (no altitude published); splashdown 195:18:35 GET (16:50:35 GMT 24 July 1969) at 13.30 N, 169.15 W, USS Hornet (Table 3-I, section 7.5; NASA SP-4029)",
+      "u": "https://www.nasa.gov/wp-content/uploads/static/history/SP-4029/Apollo_11a_Summary.htm"
+    },
+    {
+      "l": "Apollo Flight Journal, Apollo 11 day 9: entry and splashdown (mains at about 3 km, barometric switch)",
+      "u": "https://apollojournals.org/afj/ap11fj/27day9-entry.html"
+    },
+    {
+      "l": "Apollo CM entry aero (L/D 0.3), drogue and main areas: the Apollo 8 profile (MSC-PA-R-69-1), same Block II command module",
+      "u": "https://ntrs.nasa.gov/api/citations/19700033031/downloads/19700033031.pdf"
+    }
+  ],
+  "estimatedFields": [
+    "entryCdA",
+    "params.chuteDeployAltM",
+    "params.parachuteCdA",
+    "params.terminalCdA",
+    "beats.apex_cover_jettison"
+  ],
+  "beats": [
+    {
+      "type": "apex_cover_jettison",
+      "altM": 7500
+    }
+  ],
+  "targetDownrangeKm": 2772
+}

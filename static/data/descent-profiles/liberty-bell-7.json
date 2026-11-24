@@ -18,7 +18,9 @@
     "entryCdA",
     "parachuteCdA",
     "terminalCdA",
-    "terminalHandoffAltM"
+    "terminalHandoffAltM",
+    "beats.airbag_deploy",
+    "afterTouchdown.beats.hatch_blow"
   ],
   "archetype": "EARTH_CAPSULE_REENTRY",
   "params": {
@@ -27,15 +29,30 @@
     "parachuteCdA": 24.7,
     "terminalCdA": 225
   },
+  "beats": [
+    {
+      "type": "airbag_deploy",
+      "after": "parachute_jettison",
+      "afterS": 6
+    }
+  ],
+  "afterTouchdown": {
+    "holdS": 50,
+    "beats": [{ "type": "hatch_blow", "afterS": 8, "realAfterS": 300 }]
+  },
   "source_tier": "flagship",
   "provenance": [
     {
-      "l": "liberty-bell-7 — NASA/NSSDCA",
+      "l": "liberty-bell-7 \u2014 NASA/NSSDCA",
       "u": "https://nssdc.gsfc.nasa.gov/nmc/"
     },
     {
       "l": "MR-4 report: 11.1 g, drogue T+9:41, main T+10:13, splashdown T+15:37 at 30-32 ft/s",
       "u": "https://ntrs.nasa.gov/api/citations/19640056774/downloads/19640056774.pdf"
+    },
+    {
+      "l": "Liberty Bell 7: the side hatch blew about five minutes after splashdown (drawn as 300 s, an estimate; the figure was not checked against NASA's MR-4 report); Grissom swam out and the capsule flooded and sank (Wikipedia)",
+      "u": "https://en.wikipedia.org/wiki/Mercury-Redstone_4"
     }
   ]
 }

@@ -32,6 +32,8 @@
     action?: () => void;
     /** Drives active styling + aria-pressed for action tabs. */
     active?: boolean;
+    /** Portrait: the panel is as wide as its rows (at least 60 %), not the full width. */
+    compact?: boolean;
   };
 
   type Props = {
@@ -44,9 +46,12 @@
         scrubber). Opt-in — routes without a bottom strip (surface, iss,
         tiangong) keep the full-width single row. */
     bottomInline?: boolean;
+    /** No × on the panel (operator 2026-11-23, the Worlds): the open tab closes it, as do Esc,
+        a tap on the dimmed scene and a swipe down. The panel's content starts at its top edge. */
+    tabCloses?: boolean;
   };
 
-  let { tabs, onOpen, bottomInline = false }: Props = $props();
+  let { tabs, onOpen, bottomInline = false, tabCloses = false }: Props = $props();
 
   let openId = $state<string | null>(null);
 
@@ -168,15 +173,22 @@
   {#if openTab && openTab.content}
     <!-- --panel-left (landscape only) centres this above the open tab; portrait
          leaves it unset and the panel stays a full-width flex child. -->
-    <div class="mdg-panel" style:--panel-left={panelLeft != null ? `${panelLeft}px` : null}>
-      <Chip
-        kind="action"
-        class="mdg-close ui-chip--close"
-        aria-label={m.panel_close()}
-        onclick={() => (openId = null)}
-      >
-        ×
-      </Chip>
+    <div
+      class="mdg-panel"
+      class:compact={openTab.compact}
+      class:tab-closes={tabCloses}
+      style:--panel-left={panelLeft != null ? `${panelLeft}px` : null}
+    >
+      {#if !tabCloses}
+        <Chip
+          kind="action"
+          class="mdg-close ui-chip--close"
+          aria-label={m.panel_close()}
+          onclick={() => (openId = null)}
+        >
+          ×
+        </Chip>
+      {/if}
       <!-- swipe-down-to-close is a supplementary gesture; Esc + tap-dim are the
            accessible closes, so the body needs no interactive role. -->
       <!-- svelte-ignore a11y_no_static_element_interactions -->
@@ -271,6 +283,14 @@
       padding: 36px 12px 12px;
       box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.35);
       color: var(--color-text);
+    }
+    .mdg-panel.compact {
+      width: max-content;
+      min-width: 60%;
+      max-width: 100%;
+    }
+    .mdg-panel.tab-closes .mdg-body {
+      padding: 8px 10px;
     }
     .mdg-body::-webkit-scrollbar {
       width: 4px;
@@ -413,5 +433,8 @@
     /* The floating card sits over the level card and the scale chips: opaque enough that their
        text does not show through it. */
     background: rgba(8, 10, 22, 0.98);
+  }
+  :global(html[data-touch][data-orientation='landscape']) .mdg-panel.tab-closes .mdg-body {
+    padding-right: 12px;
   }
 </style>

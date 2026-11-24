@@ -1,0 +1,36 @@
+{
+  "name": "ESCAPADE",
+  "vehicle": "New Glenn (NG-2)",
+  "payload": "Deux engins, Blue et Gold : 209 kg à sec et 535 kg avec ergols chacun",
+  "delta_v": "Non publié",
+  "type": "ORBITEURS JUMEAUX DE MARS · ACTIVE",
+  "first": "Orbiteurs jumeaux lancés au deuxième vol de New Glenn, qui a réussi le premier atterrissage d'un booster New Glenn",
+  "description": "ESCAPADE est la paire d'engins de la NASA vers Mars, Blue et Gold, construits par Rocket Lab, dans une mission qui coûte moins de 80 millions de dollars. L'investigateur principal est Robert Lillis, du Space Sciences Laboratory de l'UC Berkeley, et la mission est une mission SIMPLEx de la NASA de 2019 au sein de la Heliophysics Division. Chaque engin pèse 209 kg à sec et 535 kg avec ses ergols. Ils ont décollé au deuxième vol de New Glenn, NG-2, du Launch Complex 36 de la Cape Canaveral Space Force Station, le 13 novembre 2025 à 15 h 55 EST (20 h 55 UTC). Le booster GS1 « Never Tell Me the Odds » s'est posé sur le navire plateforme d'atterrissage Jacklyn environ neuf minutes après le décollage. Blue et Gold ne sont pas parties droit vers Mars : elles ont tourné autour du point L2 Soleil-Terre pendant environ un an, puis ont fait des survols propulsés de la Terre, Blue le 7 novembre 2026 et Gold le 9 novembre. Leurs poussées d'insertion en orbite autour de Mars suivent les 7 et 9 septembre 2027, d'environ 11 minutes à 450 km, vers une orbite de capture de 60 heures, et la science doit commencer en juin 2028.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCEMENT",
+      "note": "New Glenn NG-2 depuis le Launch Complex 36, 13 novembre 2025, 15 h 55 EST (20 h 55 UTC).",
+      "type": "nominal"
+    },
+    {
+      "met": 0.0233,
+      "label": "SÉPARATION",
+      "note": "Blue et Gold se séparent de l'étage supérieur environ 33,5 minutes après le décollage.",
+      "type": "nominal"
+    },
+    {
+      "met": 359,
+      "label": "SURVOL DE LA TERRE",
+      "note": "Survol propulsé de Blue le 7 novembre 2026, après environ un an autour du L2 Soleil-Terre ; Gold suit le 9 novembre.",
+      "type": "nominal"
+    },
+    {
+      "met": 663,
+      "label": "INSERTION EN ORBITE DE MARS",
+      "note": "Des poussées d'environ 11 minutes à 450 km les 7 et 9 septembre 2027 placent les jumelles sur une orbite de capture de 60 heures.",
+      "type": "nominal"
+    }
+  ],
+  "vehicle_stage": "deuxième étage de New Glenn (GS2)"
+}

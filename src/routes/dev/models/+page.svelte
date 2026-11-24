@@ -20,6 +20,7 @@
   import { onMount, onDestroy } from 'svelte';
   import * as THREE from 'three';
   import { buildInterplanetarySpacecraft } from '$lib/three/interplanetary-spacecraft-models';
+  import { buildStarshipShip } from '$lib/three/starship-ship';
   import { buildApolloLMHotspot } from '$lib/hotspot-models/apollo-lm';
   import { buildApolloLMExtendedHotspot } from '$lib/hotspot-models/apollo-lm-extended';
   import { buildLuna9Hotspot } from '$lib/hotspot-models/luna-9-spherical';
@@ -78,7 +79,14 @@
     buildMro,
   } from '$lib/three/showcase/orbiters';
   import { buildNovaC } from '$lib/three/showcase/landers';
+  import { buildFalcon9Booster, setFalcon9BoosterPose } from '$lib/three/showcase/falcon9-booster';
+  import {
+    buildNewGlennBooster,
+    setNewGlennBoosterPose,
+  } from '$lib/three/showcase/new-glenn-booster';
   import { buildSputnik1 } from '$lib/three/showcase/early-stations';
+  import { buildDroneShip, buildSeaPlane } from '$lib/three/showcase/drone-ship';
+  import { buildJacklynScene } from '$lib/three/showcase/jacklyn';
 
   type Entry = {
     /** Stable id → capture filename `model-<family>-<id>` / `craft-<id>`. */
@@ -94,11 +102,34 @@
 
   // Showcase spacecraft (src/lib/three/showcase/*): every family file's SHOWCASE map, merged.
   const SHOWCASE_MODULES = import.meta.glob<{ SHOWCASE?: Record<string, ShowcaseModel> }>(
-    '$lib/three/showcase/*.ts',
+    ['$lib/three/showcase/*.ts', '!$lib/three/showcase/*.test.ts'],
     { eager: true },
   );
   const SHOWCASE: Record<string, ShowcaseModel> = {};
   for (const mod of Object.values(SHOWCASE_MODULES)) Object.assign(SHOWCASE, mod.SHOWCASE ?? {});
+
+  function buildF9Stowed(): THREE.Group {
+    return buildFalcon9Booster();
+  }
+  function buildF9Landing(): THREE.Group {
+    const b = buildFalcon9Booster();
+    setFalcon9BoosterPose(b, { fins: 1, legs: 1 });
+    return b;
+  }
+  function buildNGStowed(): THREE.Group {
+    return buildNewGlennBooster();
+  }
+  function buildNGLanding(): THREE.Group {
+    const b = buildNewGlennBooster();
+    setNewGlennBoosterPose(b, { fins: 1, legs: 1 });
+    return b;
+  }
+  /** The drone ship with its sea and waterline foam, as the booster landing frames it. */
+  function buildDroneShipScene(): THREE.Group {
+    const g = new THREE.Group();
+    g.add(buildDroneShip(), buildSeaPlane(140));
+    return g;
+  }
 
   /** The line-up's cartoon cast in one row at true scale, tight enough to read in a card. */
   function buildCastRow(): THREE.Group {
@@ -167,6 +198,12 @@
     })),
 
     // ── Earth-orbit re-entry capsules (Tier-1) ───────────────────────
+    {
+      id: 'starship-ship',
+      label: 'Starship Ship (Block 1, Flight 5)',
+      family: 'capsule',
+      build: () => buildStarshipShip(),
+    },
     {
       id: 'mercury-capsule',
       label: 'Mercury capsule',
@@ -751,6 +788,12 @@
         ['mariner-2', 'Mariner 2', buildMariner2],
         ['mro', 'Mars Reconnaissance Orbiter', buildMro],
         ['nova-c', 'Nova-C (IM-1 Odysseus)', buildNovaC],
+        ['falcon9-booster-stowed', 'Falcon 9 booster (stowed)', buildF9Stowed],
+        ['falcon9-booster-landing', 'Falcon 9 booster (landing)', buildF9Landing],
+        ['new-glenn-booster-stowed', 'New Glenn booster (stowed)', buildNGStowed],
+        ['new-glenn-booster-landing', 'New Glenn booster (landing)', buildNGLanding],
+        ['drone-ship', 'Drone ship JRTI', buildDroneShipScene],
+        ['jacklyn', 'Jacklyn (LPV1)', () => buildJacklynScene()],
       ] as [string, string, () => THREE.Group][]
     ).map(([id, label, build]) => ({ id, label, family: 'probe', build })),
     // Launch pads (launch-pads.ts, G4): each model with a plain stand-in vehicle of its real height

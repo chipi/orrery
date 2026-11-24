@@ -80,6 +80,7 @@ async function readChips(page: Page) {
           // The panel header's × and ← are drawn at the badges' 24 px (UXD-018 amendment); on
           // touch an invisible ::before (inset -10px) keeps the tap area at 44 px.
           headerLine: !!el.closest('.panel-actions-line'),
+          sub: el.classList.contains('ui-chip--sub'),
           beforeInset: getComputedStyle(el, '::before').top,
         };
       }),
@@ -97,6 +98,13 @@ for (const route of ROUTES) {
       if (chip.headerLine) {
         expect(chip.minBlock, `${chip.name} min size`).toBe('24px');
         if (!fine) expect(chip.beforeInset, `${chip.name} tap extension`).toBe('-10px');
+        continue;
+      }
+      // A nested chip (chip.css .ui-chip--sub: the surface INDEX, the Explore time bar, the flat
+      // view's EXIT) is drawn at 30 px on touch too; a ::before strip keeps the 44 px tap area.
+      if (chip.sub && !fine) {
+        expect(chip.minBlock, `${chip.name} min size`).toBe('30px');
+        expect(chip.beforeInset, `${chip.name} tap extension`).toBe('-7px');
         continue;
       }
       expect(chip.minBlock, `${chip.name} min size`).toBe(fine ? '30px' : '44px');
@@ -135,14 +143,16 @@ test.describe('active look', () => {
         .trim(),
     );
     expect(marsTint).not.toBe('');
-    // On a phone the layer chips live in the bottom drawer's LAYERS tab.
-    if (!(await isFinePointer(page))) {
+    if (await isFinePointer(page)) {
+      const marsOn = (await readChips(page)).filter((c) => c.on);
+      expect(marsOn.length).toBeGreaterThan(0);
+      for (const chip of marsOn) expect(chip.border, `${chip.name} edge`).not.toBe(ACCENT);
+    } else {
+      // On a phone the layers are the LAYERS drawer's rows in the orbit ruler's look, lit in the
+      // highlight blue like the ruler's (UXD-015 amendment 2026-11-23), not chips.
       await page.locator('.mdg-tab', { hasText: /layers/i }).click();
-      await expect(page.locator('.mdg-body')).toBeVisible();
+      await expect(page.locator('.mdg-body .dtr-row.on').first()).toBeVisible();
     }
-    const marsOn = (await readChips(page)).filter((c) => c.on);
-    expect(marsOn.length).toBeGreaterThan(0);
-    for (const chip of marsOn) expect(chip.border, `${chip.name} edge`).not.toBe(ACCENT);
 
     await settle(page, { path: '/earth' });
     const earthTint = await page.evaluate(() =>
@@ -327,6 +337,8 @@ const SWEEP_ALLOW_SELF = [
   '.panel-backdrop',
   '.mdg-dim',
   '.mcd-handle',
+  // /plan's phone bottom sheet: the handle carries the picked window's summary (operator 2026-11-23)
+  '.sheet-handle',
   '.mcd-dim',
   '.sizes-backdrop',
   // REFERENCES legend: a planet's cell (swatch, name, diameter) is the whole target, like a list row

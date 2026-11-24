@@ -1,4 +1,64 @@
 {
+  "ar|missions/earth/starship-flight-5.json|events.4.note": {
+    "why": "\"1 h 5 min\" is \"ساعة و5 دقائق\" (an hour and 5 minutes): the one is the word \"ساعة\"",
+    "en": "7ee63315ba",
+    "tr": "47cd8fc30e"
+  },
+  "ar|missions/mars/escapade.json|description": {
+    "why": "Launch time 3:55 pm EST is written 15:55 EST in a 24-hour locale (3 + pm = 15); same instant, 20:55 UTC unchanged. Where listed, an extra date token is the same '7 and 9 September 2027' written as a date (ja/ko/zh-CN 9月7日と9日).",
+    "en": "061c8546bb",
+    "tr": "c0b50704f2"
+  },
+  "ar|missions/mars/escapade.json|events.0.note": {
+    "why": "Launch time 3:55 pm EST is written 15:55 EST in a 24-hour locale (3 + pm = 15); same instant, 20:55 UTC unchanged. Where listed, an extra date token is the same '7 and 9 September 2027' written as a date (ja/ko/zh-CN 9月7日と9日).",
+    "en": "d1fb89f213",
+    "tr": "7e38a3db58"
+  },
+  "ar|original-work.json|models3d./images/colophon/model-showcase-change-3_webp.title": {
+    "why": "the Arabic dual (طرازان, two models) carries the count 2; a numeral beside it would read wrong",
+    "en": "f0e9d6f2ac",
+    "tr": "ca74f8cccc"
+  },
+  "ar|original-work.json|models3d./images/colophon/model-showcase-change-5_webp.title": {
+    "why": "the Arabic dual (طرازان, two models) carries the count 2; a numeral beside it would read wrong",
+    "en": "ebceae253b",
+    "tr": "729619b39f"
+  },
+  "ar|original-work.json|models3d./images/colophon/model-showcase-cygnus-enhanced_webp.title": {
+    "why": "the Arabic dual (طرازان, two models) carries the count 2; a numeral beside it would read wrong",
+    "en": "3bde8d052d",
+    "tr": "eb7c76b0f7"
+  },
+  "ar|original-work.json|models3d./images/colophon/model-showcase-luna-16_webp.title": {
+    "why": "the Arabic dual (طرازان, two models) carries the count 2; a numeral beside it would read wrong",
+    "en": "243e92156b",
+    "tr": "6c8e1038de"
+  },
+  "ar|original-work.json|models3d./images/colophon/model-showcase-phoenix_webp.title": {
+    "why": "the Arabic dual (طرازان, two models) carries the count 2; a numeral beside it would read wrong",
+    "en": "4312f8e31b",
+    "tr": "e06d13a572"
+  },
+  "ar|original-work.json|models3d./images/colophon/model-showcase-pioneer-10_webp.title": {
+    "why": "the Arabic dual (طرازان, two models) carries the count 2; a numeral beside it would read wrong",
+    "en": "8360bf6e6b",
+    "tr": "9dd7779942"
+  },
+  "ar|original-work.json|models3d./images/colophon/model-showcase-spirit_webp.title": {
+    "why": "the Arabic dual (طرازان, two models) carries the count 2; a numeral beside it would read wrong",
+    "en": "7314b169c5",
+    "tr": "84bf60ebef"
+  },
+  "ar|original-work.json|models3d./images/colophon/model-showcase-venera-7_webp.title": {
+    "why": "the Arabic dual (طرازان, two models) carries the count 2; a numeral beside it would read wrong",
+    "en": "cc93f14b9a",
+    "tr": "47a62f7c50"
+  },
+  "ar|original-work.json|models3d./images/colophon/model-showcase-vostok_webp.title": {
+    "why": "the Arabic dual (طرازان, two models) carries the count 2; a numeral beside it would read wrong",
+    "en": "04e9ace733",
+    "tr": "98d53e500e"
+  },
   "ar|science/life-in-space/eva-physiology.json|body_paragraphs.0": {
     "why": "\"100% O2\" is written \"كله أكسجين\" (all oxygen), right after \"pure oxygen\"; 100% adds nothing",
     "en": "ff4ed85d71",
@@ -24,6 +84,16 @@
     "en": "15282e3d0f",
     "tr": "48b129496a"
   },
+  "de|missions/mars/escapade.json|description": {
+    "why": "Launch time 3:55 pm EST is written 15:55 EST in a 24-hour locale (3 + pm = 15); same instant, 20:55 UTC unchanged. Where listed, an extra date token is the same '7 and 9 September 2027' written as a date (ja/ko/zh-CN 9月7日と9日).",
+    "en": "061c8546bb",
+    "tr": "0634054bb2"
+  },
+  "de|missions/mars/escapade.json|events.0.note": {
+    "why": "Launch time 3:55 pm EST is written 15:55 EST in a 24-hour locale (3 + pm = 15); same instant, 20:55 UTC unchanged. Where listed, an extra date token is the same '7 and 9 September 2027' written as a date (ja/ko/zh-CN 9月7日と9日).",
+    "en": "d1fb89f213",
+    "tr": "438776f779"
+  },
   "de|missions/moon/blue-moon-mk1.json|vehicle": {
     "why": "\"2nd stage expendable\" is \"Einweg-Oberstufe\" (the upper stage); the first stage is \"erste Stufe\"",
     "en": "472062b96c",
@@ -33,6 +103,16 @@
     "why": "the DOI \"10.1029/2024EA003555\" is kept verbatim in the translation; the tool reads its \"10.1029\" prefix as 1029",
     "en": "15282e3d0f",
     "tr": "12d137799a"
+  },
+  "es|missions/mars/escapade.json|description": {
+    "why": "Launch time 3:55 pm EST is written 15:55 EST in a 24-hour locale (3 + pm = 15); same instant, 20:55 UTC unchanged. Where listed, an extra date token is the same '7 and 9 September 2027' written as a date (ja/ko/zh-CN 9月7日と9日).",
+    "en": "061c8546bb",
+    "tr": "828539fb1a"
+  },
+  "es|missions/mars/escapade.json|events.0.note": {
+    "why": "Launch time 3:55 pm EST is written 15:55 EST in a 24-hour locale (3 + pm = 15); same instant, 20:55 UTC unchanged. Where listed, an extra date token is the same '7 and 9 September 2027' written as a date (ja/ko/zh-CN 9月7日と9日).",
+    "en": "d1fb89f213",
+    "tr": "b792f8b88c"
   },
   "es|source-logos.json|nasa-ctx": {
     "why": "the DOI \"10.1029/2024EA003555\" is kept verbatim in the translation; the tool reads its \"10.1029\" prefix as 1029",
@@ -54,6 +134,16 @@
     "en": "905db83811",
     "tr": "c16d87ad7d"
   },
+  "fr|missions/mars/escapade.json|description": {
+    "why": "Launch time 3:55 pm EST is written 15:55 EST in a 24-hour locale (3 + pm = 15); same instant, 20:55 UTC unchanged. Where listed, an extra date token is the same '7 and 9 September 2027' written as a date (ja/ko/zh-CN 9月7日と9日).",
+    "en": "061c8546bb",
+    "tr": "66d00d038a"
+  },
+  "fr|missions/mars/escapade.json|events.0.note": {
+    "why": "Launch time 3:55 pm EST is written 15:55 EST in a 24-hour locale (3 + pm = 15); same instant, 20:55 UTC unchanged. Where listed, an extra date token is the same '7 and 9 September 2027' written as a date (ja/ko/zh-CN 9月7日と9日).",
+    "en": "d1fb89f213",
+    "tr": "9af4061987"
+  },
   "fr|science/life-in-space/crew-selection.json|intro_sentence": {
     "why": "\"~10 selectees\" is \"une dizaine de sélectionnés\" (about ten)",
     "en": "1c860fdc4b",
@@ -64,10 +154,30 @@
     "en": "15282e3d0f",
     "tr": "35137cacb6"
   },
+  "hi|missions/mars/escapade.json|description": {
+    "why": "Launch time 3:55 pm EST is written 15:55 EST in a 24-hour locale (3 + pm = 15); same instant, 20:55 UTC unchanged. Where listed, an extra date token is the same '7 and 9 September 2027' written as a date (ja/ko/zh-CN 9月7日と9日).",
+    "en": "061c8546bb",
+    "tr": "e2ac647ac5"
+  },
+  "hi|missions/mars/escapade.json|events.0.note": {
+    "why": "Launch time 3:55 pm EST is written 15:55 EST in a 24-hour locale (3 + pm = 15); same instant, 20:55 UTC unchanged. Where listed, an extra date token is the same '7 and 9 September 2027' written as a date (ja/ko/zh-CN 9月7日と9日).",
+    "en": "d1fb89f213",
+    "tr": "c70507494b"
+  },
   "hi|source-logos.json|nasa-ctx": {
     "why": "the DOI \"10.1029/2024EA003555\" is kept verbatim in the translation; the tool reads its \"10.1029\" prefix as 1029",
     "en": "15282e3d0f",
     "tr": "5838cd3ac4"
+  },
+  "it|missions/mars/escapade.json|description": {
+    "why": "Launch time 3:55 pm EST is written 15:55 EST in a 24-hour locale (3 + pm = 15); same instant, 20:55 UTC unchanged. Where listed, an extra date token is the same '7 and 9 September 2027' written as a date (ja/ko/zh-CN 9月7日と9日).",
+    "en": "061c8546bb",
+    "tr": "55e8c7a18b"
+  },
+  "it|missions/mars/escapade.json|events.0.note": {
+    "why": "Launch time 3:55 pm EST is written 15:55 EST in a 24-hour locale (3 + pm = 15); same instant, 20:55 UTC unchanged. Where listed, an extra date token is the same '7 and 9 September 2027' written as a date (ja/ko/zh-CN 9月7日と9日).",
+    "en": "d1fb89f213",
+    "tr": "cec966390c"
   },
   "it|science/life-in-space/eva-operations.json|body_paragraphs.1": {
     "why": "\"the riskiest 15 minutes\" is \"il quarto d'ora più rischioso\" (the riskiest quarter of an hour)",
@@ -83,6 +193,16 @@
     "why": "\"Ingenuity Flight 1\" is \"Ingenuity 初飛行\" (first flight)",
     "en": "466a7466c1",
     "tr": "7aceb8d0ea"
+  },
+  "ja|missions/mars/escapade.json|description": {
+    "why": "Launch time 3:55 pm EST is written 15:55 EST in a 24-hour locale (3 + pm = 15); same instant, 20:55 UTC unchanged. Where listed, an extra date token is the same '7 and 9 September 2027' written as a date (ja/ko/zh-CN 9月7日と9日).",
+    "en": "061c8546bb",
+    "tr": "6b40869b50"
+  },
+  "ja|missions/mars/escapade.json|events.0.note": {
+    "why": "Launch time 3:55 pm EST is written 15:55 EST in a 24-hour locale (3 + pm = 15); same instant, 20:55 UTC unchanged. Where listed, an extra date token is the same '7 and 9 September 2027' written as a date (ja/ko/zh-CN 9月7日と9日).",
+    "en": "d1fb89f213",
+    "tr": "e3f27c6fca"
   },
   "ja|missions/mars/mmx.json|description": {
     "why": "Japan-time date: 19 October 2026 UTC is 20 October JST; the Japanese text says 20 October (日本時間)",
@@ -124,6 +244,16 @@
     "en": "f9d84140ed",
     "tr": "d2dc59ce72"
   },
+  "ko|missions/mars/escapade.json|description": {
+    "why": "Launch time 3:55 pm EST is written 15:55 EST in a 24-hour locale (3 + pm = 15); same instant, 20:55 UTC unchanged. Where listed, an extra date token is the same '7 and 9 September 2027' written as a date (ja/ko/zh-CN 9月7日と9日).",
+    "en": "061c8546bb",
+    "tr": "7319a0e48b"
+  },
+  "ko|missions/mars/escapade.json|events.0.note": {
+    "why": "Launch time 3:55 pm EST is written 15:55 EST in a 24-hour locale (3 + pm = 15); same instant, 20:55 UTC unchanged. Where listed, an extra date token is the same '7 and 9 September 2027' written as a date (ja/ko/zh-CN 9月7日と9日).",
+    "en": "d1fb89f213",
+    "tr": "3a86763604"
+  },
   "ko|science/mission-phases/dead-reckoning.json|body_paragraphs.1": {
     "why": "\"over 1 day\" is \"하루 만에\" (the native word for one day)",
     "en": "73d1d74980",
@@ -154,6 +284,16 @@
     "en": "45a320259b",
     "tr": "ba24505e0f"
   },
+  "nl|missions/mars/escapade.json|description": {
+    "why": "Launch time 3:55 pm EST is written 15:55 EST in a 24-hour locale (3 + pm = 15); same instant, 20:55 UTC unchanged. Where listed, an extra date token is the same '7 and 9 September 2027' written as a date (ja/ko/zh-CN 9月7日と9日).",
+    "en": "061c8546bb",
+    "tr": "2e9c7aa43d"
+  },
+  "nl|missions/mars/escapade.json|events.0.note": {
+    "why": "Launch time 3:55 pm EST is written 15:55 EST in a 24-hour locale (3 + pm = 15); same instant, 20:55 UTC unchanged. Where listed, an extra date token is the same '7 and 9 September 2027' written as a date (ja/ko/zh-CN 9月7日と9日).",
+    "en": "d1fb89f213",
+    "tr": "0e7853afe5"
+  },
   "nl|science/life-in-space/sleep-nutrition-circadian.json|body_paragraphs.0": {
     "why": "\"per 24-hour day\" is \"per etmaal\", the Dutch word for a 24-hour day",
     "en": "00196c8be4",
@@ -163,6 +303,16 @@
     "why": "the DOI \"10.1029/2024EA003555\" is kept verbatim in the translation; the tool reads its \"10.1029\" prefix as 1029",
     "en": "15282e3d0f",
     "tr": "605b924dbd"
+  },
+  "pt-BR|missions/mars/escapade.json|description": {
+    "why": "Launch time 3:55 pm EST is written 15:55 EST in a 24-hour locale (3 + pm = 15); same instant, 20:55 UTC unchanged. Where listed, an extra date token is the same '7 and 9 September 2027' written as a date (ja/ko/zh-CN 9月7日と9日).",
+    "en": "061c8546bb",
+    "tr": "e167c7e6c8"
+  },
+  "pt-BR|missions/mars/escapade.json|events.0.note": {
+    "why": "Launch time 3:55 pm EST is written 15:55 EST in a 24-hour locale (3 + pm = 15); same instant, 20:55 UTC unchanged. Where listed, an extra date token is the same '7 and 9 September 2027' written as a date (ja/ko/zh-CN 9月7日と9日).",
+    "en": "d1fb89f213",
+    "tr": "8035ac222d"
   },
   "pt-BR|science/life-in-space/lunar-surface-ops.json|body_paragraphs.1": {
     "why": "\"at #1\" is \"no topo da lista\" (at the top of the list)",
@@ -174,6 +324,16 @@
     "en": "15282e3d0f",
     "tr": "b5a9a74121"
   },
+  "ru|missions/mars/escapade.json|description": {
+    "why": "Launch time 3:55 pm EST is written 15:55 EST in a 24-hour locale (3 + pm = 15); same instant, 20:55 UTC unchanged. Where listed, an extra date token is the same '7 and 9 September 2027' written as a date (ja/ko/zh-CN 9月7日と9日).",
+    "en": "061c8546bb",
+    "tr": "d3f18d844e"
+  },
+  "ru|missions/mars/escapade.json|events.0.note": {
+    "why": "Launch time 3:55 pm EST is written 15:55 EST in a 24-hour locale (3 + pm = 15); same instant, 20:55 UTC unchanged. Where listed, an extra date token is the same '7 and 9 September 2027' written as a date (ja/ko/zh-CN 9月7日と9日).",
+    "en": "d1fb89f213",
+    "tr": "f8230ec521"
+  },
   "ru|source-logos.json|nasa-ctx": {
     "why": "the DOI \"10.1029/2024EA003555\" is kept verbatim in the translation; the tool reads its \"10.1029\" prefix as 1029",
     "en": "15282e3d0f",
@@ -184,6 +344,16 @@
     "en": "889e695fb0",
     "tr": "21bcacfb8f"
   },
+  "sr-Cyrl|missions/mars/escapade.json|description": {
+    "why": "Launch time 3:55 pm EST is written 15:55 EST in a 24-hour locale (3 + pm = 15); same instant, 20:55 UTC unchanged. Where listed, an extra date token is the same '7 and 9 September 2027' written as a date (ja/ko/zh-CN 9月7日と9日).",
+    "en": "061c8546bb",
+    "tr": "fc88201b99"
+  },
+  "sr-Cyrl|missions/mars/escapade.json|events.0.note": {
+    "why": "Launch time 3:55 pm EST is written 15:55 EST in a 24-hour locale (3 + pm = 15); same instant, 20:55 UTC unchanged. Where listed, an extra date token is the same '7 and 9 September 2027' written as a date (ja/ko/zh-CN 9月7日と9日).",
+    "en": "d1fb89f213",
+    "tr": "6fe4fc52c6"
+  },
   "sr-Cyrl|source-logos.json|nasa-ctx": {
     "why": "the DOI \"10.1029/2024EA003555\" is kept verbatim in the translation; the tool reads its \"10.1029\" prefix as 1029",
     "en": "15282e3d0f",
@@ -193,6 +363,16 @@
     "why": "\"Ingenuity Flight 1\" is \"Ingenuity 首飞\" (first flight)",
     "en": "466a7466c1",
     "tr": "591d6e1d0a"
+  },
+  "zh-CN|missions/mars/escapade.json|description": {
+    "why": "Launch time 3:55 pm EST is written 15:55 EST in a 24-hour locale (3 + pm = 15); same instant, 20:55 UTC unchanged. Where listed, an extra date token is the same '7 and 9 September 2027' written as a date (ja/ko/zh-CN 9月7日と9日).",
+    "en": "061c8546bb",
+    "tr": "fa2f5268db"
+  },
+  "zh-CN|missions/mars/escapade.json|events.0.note": {
+    "why": "Launch time 3:55 pm EST is written 15:55 EST in a 24-hour locale (3 + pm = 15); same instant, 20:55 UTC unchanged. Where listed, an extra date token is the same '7 and 9 September 2027' written as a date (ja/ko/zh-CN 9月7日と9日).",
+    "en": "d1fb89f213",
+    "tr": "b49c77cd2e"
   },
   "zh-CN|science/mission-phases/eva.json|narrative_101.1": {
     "why": "\"100% oxygen\" is \"纯氧\" (pure oxygen)",

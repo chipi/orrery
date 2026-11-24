@@ -19,6 +19,17 @@ describe('buildPlanBeats — the flight plan shared by the HUD list and the play
     expect(ts).toEqual([...ts].sort((a, b) => a - b));
   });
 
+  it('marks a landing whose time is approximate or typical, not a sourced one', () => {
+    const at = (timeClass?: 'sourced' | 'approx' | 'typical') =>
+      buildPlanBeats(summary, null, 0, [{ outcome: 'landed', touchdownS: 540, timeClass }]).find(
+        (b) => b.label === 'BOOSTER LANDING',
+      )!;
+    expect(at('approx').approx).toBe(true);
+    expect(at('typical').approx).toBe(true);
+    expect(at('sourced').approx).toBeUndefined();
+    expect(at(undefined).approx).toBeUndefined();
+  });
+
   it('drops ORBIT when it lands on the same second as SECO (the cutoff is the beat)', () => {
     const labels = buildPlanBeats(summary, null).map((b) => b.label);
     const seco = labels.includes('SECO');
@@ -42,9 +53,26 @@ describe('buildPlanBeats — the flight plan shared by the HUD list and the play
   it('adds a timed separation the vehicle delay after SECO when there is no injection beat', () => {
     const beats = buildPlanBeats(summary, null, 169);
     const last = beats[beats.length - 1];
-    expect(last).toEqual({ label: 'SPACECRAFT SEP', t: summary.totalDurationS + 169 });
+    // From SECO itself: the integration runs an engine-dark coast past it, and 0.9.10 counted
+    // the published delay from that coast's end (90 s late).
+    const seco = summary.events.filter((e) => e.type === 'seco').at(-1)!.t;
+    expect(seco).toBeLessThan(summary.totalDurationS);
+    expect(last).toEqual({ label: 'SPACECRAFT SEP', t: seco + 169 });
     expect(buildPlanBeats(summary, { burnType: 'TMI' } as never, 169).at(-1)?.untimed).toBe(true);
     expect(buildPlanBeats(summary, null).map((b) => b.label)).not.toContain('SPACECRAFT SEP');
+  });
+
+  it('adds BOOSTER LANDING / TOWER CATCH at touchdown, in time order (0.9.11 F2)', () => {
+    const seco = summary.totalDurationS;
+    const beats = buildPlanBeats(summary, null, 0, [
+      { outcome: 'landed', touchdownS: seco + 20 },
+      { outcome: 'caught', touchdownS: 100 },
+    ]);
+    const ts = beats.map((b) => b.t);
+    expect(ts).toEqual([...ts].sort((a, b) => a - b));
+    expect(beats.find((b) => b.label === 'BOOSTER LANDING')?.t).toBe(seco + 20);
+    expect(beats.find((b) => b.label === 'TOWER CATCH')?.t).toBe(100);
+    expect(buildPlanBeats(summary, null).map((b) => b.label)).not.toContain('BOOSTER LANDING');
   });
 });
 

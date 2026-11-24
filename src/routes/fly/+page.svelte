@@ -46,6 +46,7 @@
     type PlanFlightExtras,
     type TrajectoryOverride,
     flyDestinationOf,
+    landingDay,
   } from '$lib/fly-mission-apply';
   import { resolveRocketHandoff } from '$lib/plan/rocket-handoff';
   import {
@@ -118,6 +119,7 @@
   import { type PlanetId as FlybyPlanetId } from '$lib/orbital/flyby-camera-plan';
   import { type ShotKind } from '$lib/orbital/flyby-shots';
   import { installFlyTestHooks } from '$lib/fly/fly-test-hooks';
+  import { trajectoryType, type TrajectoryType } from '$lib/fly/trajectory-type';
   import {
     applyMissionToPage,
     applyPlanSelectionMoonToPage,
@@ -179,6 +181,12 @@
   import ScienceChip from '$lib/components/ScienceChip.svelte';
   import LaunchScene from '$lib/components/LaunchScene.svelte';
   import DescentScene from '$lib/components/DescentScene.svelte';
+  import {
+    descentDue,
+    hasReturnProfile,
+    loadReturnProfile,
+    type ReturnProfile,
+  } from '$lib/fly/return-profile';
   import CoastScene from '$lib/components/CoastScene.svelte';
   import { getEarthOrbitCoast } from '$lib/orbital/earth-orbit-registry';
   import { preloadFlyCraft } from '$lib/three/fly-craft';
@@ -190,11 +198,15 @@
   } from '$lib/physics/ascent/launch-profile-registry';
   import {
     loadDescentProfile,
+    loadDescentProfileFile,
     hasDescentProfile,
   } from '$lib/physics/descent/descent-profile-registry';
   import {
     integrateAscent,
     payloadSeparationDelayFor,
+    profileForMission,
+    landingsEndS,
+    landingsFor,
     type LaunchProfile,
   } from '$lib/physics/ascent/ascent-physics';
   import {
@@ -210,7 +222,7 @@
     DESCENT_SPEED_MULTIPLIERS,
     type JourneyTimeline,
   } from '$lib/orbital/ascent-clock';
-  import { T_MINUS_S, launchActEndS, payloadSepTFor } from '$lib/orbital/ascent-hud';
+  import { T_MINUS_S, launchActEndS, payloadSepTFor, secoTimeS } from '$lib/orbital/ascent-hud';
   import { launchCoastWarp, toMissionT, toSceneT } from '$lib/orbital/launch-coast-warp';
   import { resolveInjectionBurn } from '$lib/physics/transfer/injection-burn';
   import { resolveOrbitInsertion } from '$lib/physics/transfer/orbit-insertion';
@@ -378,6 +390,7 @@
     site: launchSiteName ?? launchProfile?.launchSite?.name ?? m.hud_launch_complex(),
     destination: mission.arr_label ?? '',
     spacecraftId: mission.id,
+    missionId: mission.id,
     launcherHeightM,
     injectionBurn: launchInjectionBurn,
   });
@@ -418,7 +431,9 @@
         launchSiteName = ctx?.pad?.name;
         launchPadSpec = ctx?.padSpec ?? null;
         launchSepDelayS = payloadSeparationDelayFor(p, mission.id);
-        launchProfile = p;
+        // The flight's own launch (payload, a suborbital cutoff) merged once here, so the scene
+        // and the play bar integrate the same ascent.
+        launchProfile = profileForMission(p, mission.id);
         dispatchPhase({ type: 'startLaunch' });
       })
       .catch(dataLoadFailed);
@@ -547,19 +562,94 @@
   let coastFrac = $derived(
     coastDurationDays > 0 ? Math.min(1, Math.max(0, coastMetDays / coastDurationDays)) : 0,
   );
-  // Load the mission's descent profile whenever the mission changes.
+  // Load the mission's descent profile whenever the mission changes. `missionDescentProfile` is the
+  // mission's own landing; `descentProfile` is what the act flies, which at the Earth return of a
+  // way home is the splashdown profile instead.
+  let missionDescentProfile = $state<DescentProfile | null>(null);
+  let splashdownProfile = $state<DescentProfile | null>(null);
+  let splashdownActive = $state(false);
   $effect(() => {
     const id = mission.id;
+    splashdownActive = false;
     if (!hasDescentProfile(id)) {
+      missionDescentProfile = null;
       descentProfile = null;
       return;
     }
     void loadDescentProfile(id, fetch, base)
       .then((p) => {
-        if (mission.id === id) descentProfile = p;
+        if (mission.id === id) {
+          missionDescentProfile = p;
+          descentProfile = p;
+        }
       })
       .catch(dataLoadFailed);
   });
+  // The way home (Apollo 11 first): a Moon landing's second half. A mission with a return profile
+  // offers "Continue: the way home" at touchdown; the scene plays inside the descent act (no new
+  // act: every full-frame gate on showDescent already applies), then the cruise resumes at TEI.
+  let returnProfile = $state<ReturnProfile | null>(null);
+  let wayHome = $state(false);
+  /** The way home has resumed the cruise past the landing: the landing must not trigger again. */
+  let wayHomeDone = $state(false);
+  $effect(() => {
+    const id = mission.id;
+    if (!hasReturnProfile(id) || missionDescentProfile?.body !== 'moon') {
+      returnProfile = null;
+      return;
+    }
+    void loadReturnProfile(id, fetch, base)
+      .then((p) => {
+        if (mission.id === id) returnProfile = p;
+      })
+      .catch(dataLoadFailed);
+  });
+  // The Earth return of a way home: its entry and splashdown profile, fetched with the return
+  // profile and swapped in as the descent profile when the cruise reaches Earth (enterSplashdown).
+  $effect(() => {
+    const file = returnProfile?.splashdownProfile;
+    splashdownProfile = null;
+    if (!file) return;
+    void loadDescentProfileFile(file, fetch, base)
+      .then((p) => {
+        if (returnProfile?.splashdownProfile === file) splashdownProfile = p;
+      })
+      .catch(dataLoadFailed);
+  });
+  function enterSplashdown() {
+    if (!splashdownProfile) return;
+    descentProfile = splashdownProfile;
+    splashdownActive = true;
+  }
+  // Scrubbed back from the Earth return: the lunar landing is the descent again, and re-arms.
+  $effect(() => {
+    if (splashdownActive && flyAct === 'cruise' && simDay < arcTimeline.arr_day - 1e-3) {
+      descentProfile = missionDescentProfile;
+      splashdownActive = false;
+    }
+  });
+  $effect(() => {
+    if (flyAct !== 'descent') wayHome = false;
+  });
+  $effect(() => {
+    // A mission swap forgets the previous mission's way home.
+    void mission.id;
+    wayHomeDone = false;
+  });
+  function startWayHome() {
+    if (!returnProfile) return;
+    wayHome = true;
+  }
+  function endWayHome() {
+    if (!returnProfile) return;
+    wayHome = false;
+    wayHomeDone = true;
+    // Resume the cruise at TEI: the return arc plays on to Earth, and the landing is behind us.
+    simDay = arcTimeline.dep_day + returnProfile.teiMetDays;
+    camSnapUntil = performance.now() + 300;
+    dispatchPhase({ type: 'returnComplete' });
+    isPlaying = true;
+  }
   function edlSystemLabel(p: DescentProfile): string {
     const kinds = new Set<EDLPhaseKind>(p.phases.map((x) => x.kind));
     if (kinds.has('touch_and_go_contact')) return m.edl_touch_and_go();
@@ -586,7 +676,10 @@
           agency: mission.agency ?? mission.agency_full ?? '',
           body: descentProfile.body,
           siteId: descentProfile.siteId,
-          siteName: `${descentProfile.landingSite.lat.toFixed(2)}°, ${descentProfile.landingSite.lon.toFixed(2)}°`,
+          // An estimated landing point (no source gives it) is not printed as if it were known.
+          siteName: descentProfile.landingSiteEstimated
+            ? '—'
+            : `${descentProfile.landingSite.lat.toFixed(2)}°, ${descentProfile.landingSite.lon.toFixed(2)}°`,
           edlSystem: edlSystemLabel(descentProfile),
           // The descent profile is the source of truth for the entry state.
           entryVelocityKms: descentProfile.entryState.velocityMs / 1000,
@@ -611,11 +704,12 @@
   // Recovery card shown after an Earth re-entry touchdown (RFC-034 §13).
   // showRecovery is derived from flyAct (see the flight-act block above).
   // US capsules splash down at sea; Soviet/Chinese capsules land on the steppe.
-  const SPLASHDOWN_CAPSULES = new Set(['mercury', 'gemini', 'apollo-cm', 'dragon']);
+  const SPLASHDOWN_CAPSULES = new Set(['mercury', 'gemini', 'apollo-cm', 'dragon', 'starship']);
   // Honest-failure captions — the re-entry outcome is not always a success.
   const RECOVERY_CAPTIONS: Record<string, () => string> = {
     'soyuz-1': () => m.fly_recovery_caption_soyuz1(),
     'soyuz-11': () => m.fly_recovery_caption_soyuz11(),
+    'starship-flight-5': () => m.fly_recovery_caption_starship_flight5(),
   };
   let recoveryOutcome = $derived.by(() => {
     const ok = descentSummaryFly?.touchdownSuccess ?? true;
@@ -634,6 +728,12 @@
   // (mirrors ?launch=1). Deterministic entry for browser/e2e checks + a direct
   // "watch the landing" link.
   const wantDescentDeep = launchDeepParams?.get('descent') === '1';
+  const wantWayHomeDeep = launchDeepParams?.get('wayhome') === '1';
+  $effect(() => {
+    if (wantWayHomeDeep && returnProfile != null && showDescent && !wayHome && !wayHomeDone) {
+      wayHome = true;
+    }
+  });
   let descentAutoStarted = false;
   $effect(() => {
     if (
@@ -742,40 +842,26 @@
   let currentDestMeshId: DestinationId = 'mars';
   let isMoonMission = $state(false);
 
-  /** Human-readable orbit/trajectory regime for the identity HUD. The
-   *  five buckets cover every mission /fly renders today:
-   *    - Cislunar free-return: Moon mission with retArc (Apollo 13 / ORRERY-1)
-   *    - Cislunar transfer:    Moon mission, one-way (most Apollo / Chang'e)
-   *    - Heliocentric flyby:   gas/ice giants + Pluto (direct Hohmann to a
-   *                            FLYBY-only destination per ADR-028)
-   *    - Heliocentric free-return: free-return loop around an inner-system body
-   *    - Heliocentric Hohmann: any other one-way interplanetary transfer
-   *  Kept derived here (not in the mission JSON) so legacy mission files
-   *  don't need a backfill; the derivation reads the already-classified
-   *  isMoonMission + isFreeReturn + activeDestination states. */
-  const HELIO_FLYBY_DESTINATIONS = new Set<DestinationId>([
-    'jupiter',
-    'saturn',
-    'uranus',
-    'neptune',
-    'pluto',
-  ]);
-  // Earth-orbit flights (Vostok, Shenzhou, the Shuttle) fly in the Earth-centred scene too, but
-  // never leave Earth orbit: they are not a cislunar transfer (plan A10).
+  /** Human-readable orbit/trajectory regime for the identity HUD (`trajectoryType`). */
+  const TRAJECTORY_TYPE_LABEL: Record<TrajectoryType, () => string> = {
+    suborbital: m.fly_traj_type_suborbital,
+    'earth-orbit': m.fly_traj_type_earth_orbit,
+    'cislunar-free-return': m.fly_traj_type_cislunar_free_return,
+    cislunar: m.fly_traj_type_cislunar,
+    'helio-flyby': m.fly_traj_type_helio_flyby,
+    'helio-free-return': m.fly_traj_type_helio_free_return,
+    'helio-hohmann': m.fly_traj_type_helio_hohmann,
+  };
   let trajectoryTypeLabel = $derived(
-    earthCoast
-      ? earthCoast.suborbital
-        ? m.fly_traj_type_suborbital()
-        : m.fly_traj_type_earth_orbit()
-      : isMoonMission
-        ? isFreeReturn
-          ? m.fly_traj_type_cislunar_free_return()
-          : m.fly_traj_type_cislunar()
-        : HELIO_FLYBY_DESTINATIONS.has(activeDestination)
-          ? m.fly_traj_type_helio_flyby()
-          : isFreeReturn
-            ? m.fly_traj_type_helio_free_return()
-            : m.fly_traj_type_helio_hohmann(),
+    TRAJECTORY_TYPE_LABEL[
+      trajectoryType({
+        earthCoast,
+        dest: mission.dest,
+        isMoonMission,
+        isFreeReturn,
+        activeDestination,
+      })
+    ](),
   );
   let outPts: Vec2[] = $state(INITIAL_ARCS.out);
   let retPts: Vec2[] = $state(INITIAL_ARCS.ret);
@@ -1691,7 +1777,13 @@
   // spacecraft leaves the stage, not at SECO.
   let launchDurationS = $derived(
     launchSummaryFly
-      ? launchActEndS(launchSummaryFly.totalDurationS, launchInjectionBurn, launchSepDelayS)
+      ? launchActEndS(
+          launchSummaryFly.totalDurationS,
+          launchInjectionBurn,
+          launchSepDelayS,
+          launchProfile ? landingsEndS(landingsFor(launchProfile, mission.id)) : 0,
+          secoTimeS(launchSummaryFly),
+        )
       : 540,
   );
   // ─── Orbit-insertion beat (RFC-034 §12) — the arrival mirror of the launch
@@ -1732,6 +1824,19 @@
   // bar stays the 2-segment ascent→cruise, unchanged for orbiters.
   let descentSummaryFly = $derived(descentProfile ? integrateDescent(descentProfile) : null);
   let descentDurationS = $derived(descentSummaryFly ? descentSummaryFly.totalDurationS : 0);
+  // ?debug=1 (dev): put the descent at an EDL time from a script, as LaunchScene's __ascentSetT
+  // does for the launch — the master scrubber's tail is too short to aim at a landing beat.
+  $effect(() => {
+    if (!import.meta.env.DEV || page.url.searchParams.get('debug') !== '1') return;
+    Object.assign(window as unknown as Record<string, unknown>, {
+      __descentSetT: (v: number) => {
+        isPlaying = false;
+        dispatchPhase({ type: 'scrubTo', phase: 'descent' });
+        descentT = Math.max(0, Math.min(descentDurationS, v));
+      },
+      __descentDuration: () => descentDurationS,
+    });
+  });
   // Separation-event times for the cinematic slow-mo beat (item 3) — the play-
   // clock eases into slow-motion as it passes each. Ascent times are already in
   // the launch clock's base; descent times are in *trajectory* time, so they're
@@ -1741,7 +1846,12 @@
     launchSeparationTimes(
       launchSummaryFly,
       launchSummaryFly
-        ? payloadSepTFor(launchSummaryFly.totalDurationS, launchInjectionBurn, launchSepDelayS)
+        ? payloadSepTFor(
+            launchSummaryFly.totalDurationS,
+            launchInjectionBurn,
+            launchSepDelayS,
+            secoTimeS(launchSummaryFly),
+          )
         : undefined,
       launchProfile?.payloadInBay === true,
     ),
@@ -1811,7 +1921,12 @@
         timeline: hasLaunchAct ? masterTimeline : null,
         arcTotalDays,
         ascentBeats: launchSummaryFly
-          ? buildPlanBeats(launchSummaryFly, launchInjectionBurn, launchSepDelayS).map((b) => ({
+          ? buildPlanBeats(
+              launchSummaryFly,
+              launchInjectionBurn,
+              launchSepDelayS,
+              launchProfile ? landingsFor(launchProfile, mission.id) : [],
+            ).map((b) => ({
               label: hudLabel(b.label),
               t: toSceneT(launchCoastWarpFly, b.t),
             }))
@@ -2958,6 +3073,20 @@
       set descentProfile(v) {
         descentProfile = v;
       },
+      get landingDay() {
+        return landingDay(mission, arcTimeline, missionDescentProfile?.body);
+      },
+      get descentDue() {
+        return descentDue({
+          simDay,
+          landingDay: landingDay(mission, arcTimeline, missionDescentProfile?.body),
+          arrDay: arcTimeline.arr_day,
+          wayHomeDone,
+          hasSplashdown: splashdownProfile != null && !splashdownActive,
+        });
+      },
+      enterSplashdown,
+
       get descentSpeed() {
         return descentSpeed;
       },
@@ -3367,14 +3496,17 @@
     <div class="recovery-inner" class:fail={recoveryOutcome.fail}>
       <div class="recovery-eyebrow">{recoveryOutcome.eyebrow}</div>
       <div class="recovery-name">{mission.name}</div>
-      <div class="recovery-line">
-        {descentProfile.landingSite.lat.toFixed(2)}° {descentProfile.landingSite.lat >= 0
-          ? 'N'
-          : 'S'},
-        {Math.abs(descentProfile.landingSite.lon).toFixed(2)}° {descentProfile.landingSite.lon >= 0
-          ? 'E'
-          : 'W'}
-      </div>
+      {#if !descentProfile.landingSiteEstimated}
+        <div class="recovery-line">
+          {descentProfile.landingSite.lat.toFixed(2)}° {descentProfile.landingSite.lat >= 0
+            ? 'N'
+            : 'S'},
+          {Math.abs(descentProfile.landingSite.lon).toFixed(2)}° {descentProfile.landingSite.lon >=
+          0
+            ? 'E'
+            : 'W'}
+        </div>
+      {/if}
       {#if mission.id && RECOVERY_CAPTIONS[mission.id]}
         <div class="recovery-caption">{RECOVERY_CAPTIONS[mission.id]()}</div>
       {/if}
@@ -3385,8 +3517,29 @@
   </div>
 {/if}
 
-{#if showDescent && descentProfile && descentDossier}
+{#snippet landedActions()}
+  <button class="landed-btn primary" data-testid="way-home-continue" onclick={startWayHome}
+    >{m.fly_return_continue()} →</button
+  >
+  <button class="landed-btn" data-testid="way-home-surface" onclick={handleTouchdown}
+    >{m.fly_return_surface()}</button
+  >
+{/snippet}
+
+{#if showDescent && wayHome && returnProfile}
+  <!-- Only the Apollo landings play the way home: its scene loads on demand (route budget). -->
+  {#await import('$lib/components/ReturnScene.svelte') then { default: ReturnScene }}
+    <ReturnScene
+      profile={returnProfile}
+      missionName={mission.name}
+      site={missionDescentProfile?.landingSite}
+      {hudHidden}
+      onComplete={endWayHome}
+    />
+  {/await}
+{:else if showDescent && descentProfile && descentDossier}
   <DescentScene
+    landedActions={returnProfile && !splashdownActive ? landedActions : undefined}
     profile={descentProfile}
     mission={descentDossier}
     precomputedSummary={descentSummaryFly ?? undefined}
@@ -4404,11 +4557,13 @@
   <div
     class="scrubber"
     class:cinematic-hidden={inCinematicHeldBeat}
+    class:way-home-hidden={wayHome}
     class:launch-active={showLaunch || showCoast || showDescent}
     aria-label={m.fly_scrub_label()}
   >
     <Chip
       kind="action"
+      class="ui-chip--sub"
       data-audio-stage="fly-play"
       onclick={masterTogglePlay}
       aria-label={isPlaying ? m.fly_pause() : m.fly_play()}
@@ -4528,6 +4683,7 @@
       <div class="speed-slot">
         <Chip
           kind="action"
+          class="ui-chip--sub"
           active={isPlaying}
           aria-expanded={speedPopoverOpen}
           aria-haspopup="true"
@@ -5492,11 +5648,13 @@
      820 → 1040 px). On wide viewports the typical 2-card case still
      reads as one row; many-asset missions wrap to a second row instead
      of revealing a horizontal scrollbar. */
+  /* Three cards a row where there is room (operator 2026-11-23: two a row read oversized), one
+     a row on a phone. */
   .opening-fleet-row {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     justify-content: center;
-    gap: 12px;
+    gap: 10px;
     width: 100%;
     padding-bottom: 4px;
   }
@@ -5505,7 +5663,7 @@
      from the first card (2026-06-15 user follow-up: "when there is
      only 1 fleet asset, center it"). */
   .opening-fleet-row:has(> .opening-fleet-card:only-child) {
-    justify-content: center;
+    grid-template-columns: minmax(240px, 360px);
   }
   .opening-fleet-card {
     flex-shrink: 0;
@@ -5641,6 +5799,28 @@
     color: #8ba2ba;
     font-size: 0.9rem;
   }
+  .scrubber.way-home-hidden {
+    display: none;
+  }
+  .landed-btn {
+    font-family: var(--font-mono, 'Space Mono', monospace);
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: #f0d8bf;
+    background: rgba(10, 20, 34, 0.88);
+    border: 1px solid rgba(216, 168, 130, 0.5);
+    border-radius: 5px;
+    padding: 11px 16px;
+    cursor: pointer;
+  }
+  .landed-btn.primary {
+    color: #fff;
+    background: rgba(40, 80, 130, 0.9);
+    border-color: rgba(140, 200, 255, 0.8);
+  }
+  .landed-btn:hover {
+    background: rgba(216, 168, 130, 0.3);
+  }
   .recovery-close {
     margin-top: 0.8rem;
     justify-self: center;
@@ -5721,12 +5901,12 @@
     display: flex;
     flex-direction: row;
     align-items: stretch;
-    gap: 14px;
-    padding: 10px 14px;
+    gap: 10px;
+    padding: 8px 10px;
     background: rgba(14, 18, 32, 0.55);
     border: 1px solid color-mix(in srgb, var(--color-state) 25%, transparent);
     border-radius: 6px;
-    max-width: 360px;
+    min-width: 0;
     text-decoration: none;
     color: inherit;
     transition:
@@ -5742,7 +5922,6 @@
     transform: translateY(-1px);
   }
   .opening-fleet-card.hero {
-    max-width: 460px;
     border-color: rgba(255, 200, 80, 0.5);
   }
   .opening-fleet-card.hero:hover,
@@ -5751,15 +5930,15 @@
   }
   .opening-fleet-hero {
     flex-shrink: 0;
-    width: 72px;
-    height: 72px;
+    width: 56px;
+    height: 56px;
     object-fit: cover;
     border-radius: 4px;
     border: 1px solid rgba(255, 255, 255, 0.1);
   }
   .opening-fleet-card.hero .opening-fleet-hero {
-    width: 110px;
-    height: 110px;
+    width: 64px;
+    height: 64px;
   }
   .opening-fleet-meta {
     display: flex;
@@ -5779,23 +5958,24 @@
   }
   .opening-fleet-name {
     font-family: var(--font-display);
-    font-size: 14px;
+    font-size: 13px;
     letter-spacing: 2px;
     color: rgba(255, 255, 255, 0.96);
     text-transform: uppercase;
   }
   .opening-fleet-card.hero .opening-fleet-name {
-    font-size: 17px;
-    letter-spacing: 3px;
+    font-size: 14px;
+    letter-spacing: 2px;
   }
+  /* The vehicle / payload line's size above the cards (.opening-stat-val, 12 px). */
   .opening-fleet-tagline {
-    font-size: var(--size-lead);
+    font-size: 12px;
     line-height: 1.4;
     color: rgba(255, 255, 255, 0.78);
   }
   .opening-fleet-bio {
-    font-size: var(--size-lead);
-    line-height: 1.5;
+    font-size: 12px;
+    line-height: 1.45;
     color: rgba(255, 255, 255, 0.82);
     /* Multi-line clamp for long bios — keep card compact */
     display: -webkit-box;
@@ -6087,6 +6267,33 @@
      unified master scrubber must out-stack it so pad→arrival is one control. */
   .scrubber.launch-active {
     z-index: 210;
+  }
+  /* Touch: /explore's time bar (TimeDock, operator 2026-11-23) — one thin bar across the screen,
+     play and speed sit flat in it at 30 px (44 px tap areas), the track fills the room between. */
+  :global(html[data-touch]) .scrubber {
+    bottom: max(8px, env(safe-area-inset-bottom, 0px));
+    left: max(8px, env(safe-area-inset-left, 0px));
+    right: max(8px, env(safe-area-inset-right, 0px));
+    gap: 2px;
+    padding: 3px 4px;
+    background: rgba(5, 5, 20, 0.88);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 6px;
+  }
+  /* Play and speed alike (operator 2026-11-23): a filled box, no border, in every state — the
+     speed chip's playing outline made the two ends of the bar read differently. */
+  :global(html[data-touch]) .scrubber > :global(.ui-chip),
+  :global(html[data-touch]) .scrubber .speed-slot > :global(.ui-chip) {
+    min-inline-size: 38px;
+    padding-inline: 8px;
+    background: rgba(255, 255, 255, 0.08);
+    border-color: transparent;
+    border-radius: 4px;
+    box-shadow: none;
+  }
+  :global(html[data-touch]) .scrubber .scrub-track-wrap {
+    height: 30px;
+    margin-inline: 6px;
   }
 
   /* The HUD-collapse toggle itself — mobile-only floating button at
@@ -6759,7 +6966,7 @@
     .fly-mtabs {
       display: flex;
       position: fixed;
-      bottom: calc(84px + env(safe-area-inset-bottom, 0px));
+      bottom: calc(54px + env(safe-area-inset-bottom, 0px));
       left: 8px;
       right: 8px;
       gap: 5px;
@@ -6816,7 +7023,7 @@
     .fly-bottom-strips.m-open {
       position: fixed;
       top: auto;
-      bottom: calc(132px + env(safe-area-inset-bottom, 0px));
+      bottom: calc(102px + env(safe-area-inset-bottom, 0px));
       left: 8px;
       right: 8px;
       width: auto;
@@ -6850,7 +7057,7 @@
     /* The performance toast rides above the tab bar (and over an open sheet), not
        over the tabs or the play bar. */
     .perf-toast {
-      bottom: calc(132px + env(safe-area-inset-bottom, 0px));
+      bottom: calc(102px + env(safe-area-inset-bottom, 0px));
       right: 8px;
       max-width: calc(100vw - 16px);
       z-index: 42;

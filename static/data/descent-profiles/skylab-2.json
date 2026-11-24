@@ -15,7 +15,12 @@
   "entryCdA": 17.7,
   "liftToDragRatio": 0.3,
   "targetDownrangeKm": 3000,
-  "estimatedFields": ["targetDownrangeKm", "flightPathAngleDeg"],  "archetype": "EARTH_CAPSULE_REENTRY",
+  "estimatedFields": [
+    "targetDownrangeKm",
+    "flightPathAngleDeg",
+    "beats.apex_cover_jettison"
+  ],
+  "archetype": "EARTH_CAPSULE_REENTRY",
   "params": {
     "chuteDeployAltM": 7000,
     "terminalHandoffAltM": 3000,
@@ -27,6 +32,12 @@
     {
       "l": "skylab-2 — NASA/NSSDCA",
       "u": "https://nssdc.gsfc.nasa.gov/nmc/"
+    }
+  ],
+  "beats": [
+    {
+      "type": "apex_cover_jettison",
+      "altM": 7200
     }
   ]
 }

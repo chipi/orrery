@@ -4,6 +4,75 @@
   "source_tier": "flagship",
   "payloadKg": 15000,
   "payloadSeparationDelayByMissionS": { "inspiration4": 198, "polaris-dawn": 197 },
+  "recovery": [{ "part": "booster", "outcome": "landed" }],
+  "recoveryByMission": {
+    "hera": [{ "part": "booster", "outcome": "expended" }],
+    "dart": [
+      {
+        "part": "booster",
+        "outcome": "landed",
+        "site": "droneship",
+        "siteNames": ["Of Course I Still Love You"],
+        "touchdownS": 532,
+        "timeClass": "sourced"
+      }
+    ],
+    "inspiration4": [
+      {
+        "part": "booster",
+        "outcome": "landed",
+        "site": "droneship",
+        "siteNames": ["Just Read the Instructions"],
+        "entryBurnS": 450,
+        "landingBurnS": 544,
+        "touchdownS": 571,
+        "timeClass": "sourced"
+      }
+    ],
+    "polaris-dawn": [
+      {
+        "part": "booster",
+        "outcome": "landed",
+        "site": "droneship",
+        "siteNames": ["Just Read the Instructions"],
+        "touchdownS": 570,
+        "timeClass": "approx"
+      }
+    ],
+    "otv-5": [
+      {
+        "part": "booster",
+        "outcome": "landed",
+        "site": "landing-zone",
+        "siteNames": ["LZ-1"],
+        "touchdownS": 480,
+        "timeClass": "approx"
+      }
+    ],
+    "im-1": [
+      {
+        "part": "booster",
+        "outcome": "landed",
+        "site": "landing-zone",
+        "siteNames": ["LZ-1"],
+        "entryBurnS": 371,
+        "entryBurnEndS": 382,
+        "landingBurnS": 437,
+        "touchdownS": 454,
+        "timeClass": "sourced"
+      }
+    ],
+    "beresheet": [
+      {
+        "part": "booster",
+        "outcome": "landed",
+        "site": "droneship",
+        "siteNames": ["Of Course I Still Love You"],
+        "touchdownS": 532,
+        "timeClass": "typical"
+      }
+    ]
+  },
   "fairingKg": 1900,
   "fairingJettisonAltM": 110000,
   "refAreaM2": 10.75,
@@ -33,6 +102,18 @@
     }
   ],
   "provenance": [
+    {
+      "l": "Booster recovery per flight (0.9.11 F2): DART stage 1 landing T+8:52 on the drone ship (SpaceX's sequence, Spaceflight Now); Inspiration4 entry burn 7:30, landing burn 9:04, landing 9:31 on JRTI, 543 km downrange (Everyday Astronaut; Wikipedia launch list: Success (JRTI)); Polaris Dawn ~9.5 min (JRTI); OTV-5 ~8 min (LZ-1); Hera's B1061 expended. Beresheet's time is a sibling flight's (no time found); IM-1 has its own timeline, below. Full table: docs/wip/2026-11-22-booster-recovery-sourced.md",
+      "u": "https://spaceflightnow.com/?p=54465"
+    },
+    {
+      "l": "IM-1 (B1060-18) RTLS timeline: entry burn T+06:11-06:22, landing burn T+07:17, touchdown T+07:34 at LZ-1; an aggregator (The Space Devs), not SpaceX's own timeline",
+      "u": "https://spacelaunchschedule.com/launch/falcon-9-block-5-nova-c-im-1/"
+    },
+    {
+      "l": "Landing Zone 1: 86 m (282 ft) circular concrete pad marked with an X, former Launch Complex 13, Cape Canaveral SFS",
+      "u": "https://en.wikipedia.org/wiki/Landing_Zone_1"
+    },
     { "l": "SpaceX Falcon 9 Users Guide (2021)", "u": "https://www.spacex.com/vehicles/falcon-9/" },
     { "l": "Spaceflight101 — Falcon 9 FT", "u": "https://web.archive.org/web/20240726010028/https://spaceflight101.com/spacerockets/falcon-9-ft/" }
   ]

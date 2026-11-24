@@ -28,7 +28,7 @@ const write = (rel: string, html: string) => {
 
 function gate(): string {
   const r = spawnSync(process.execPath, ['scripts/check-seo.mjs'], {
-    env: { ...process.env, CHECK_SEO_BUILD_DIR: dir, VITE_BASE: '' },
+    env: { ...process.env, CHECK_SEO_BUILD_DIR: dir },
     encoding: 'utf8',
   });
   // Only the thin-page blocks: the bare fixture heads fail every other rule.

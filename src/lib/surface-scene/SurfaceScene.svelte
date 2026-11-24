@@ -121,6 +121,8 @@
   import Chip from '$lib/components/Chip.svelte';
   import PanelActions from '$lib/components/PanelActions.svelte';
   import ResetViewButton from '$lib/components/ResetViewButton.svelte';
+  import DrawerToggleRows from '$lib/components/DrawerToggleRows.svelte';
+  import { anchorTurn, radPerPx } from './touch-camera';
   import LayerChipRow from '$lib/components/LayerChipRow.svelte';
   import { canonicalId } from '$lib/data/retired-ids';
   import PanelLightbox from '$lib/components/PanelLightbox.svelte';
@@ -208,6 +210,7 @@
     mobileDrawerHidden,
     nationFilterAway,
     orbitsInViewNext,
+    pinchCamR,
     shouldFlyToDetail,
   } from '$lib/surface-scene/surface-view-state';
   import {
@@ -1061,6 +1064,105 @@
   const surfaceChipLabel = (): string =>
     `${m.earth_orbit_ruler_surface()} · ${surfaceOff ? m.hotspots_mode_off() : HOTSPOT_MODE_LABEL[hotspotsParam.value]()}`;
 
+  // The layer toggles: chips on desktop (layerChips), rows in the phone drawer.
+  const layerChipList = () => [
+    {
+      testid: 'layer-surface',
+      // Cycling label reflects the SURFACE+HOTSPOTS unified
+      // state: SURFACE · AUTO / HIGH / LOW / OFF.
+      label: surfaceChipLabel,
+      title: m.moon_layer_tip_surface(),
+      active: () => !surfaceOff,
+      toggle: cycleSurfaceMode,
+    },
+    // LAUNCHPADS — /earth only (the route passes the launch-site config).
+    ...(config.earthOrbitalLayers?.satellites != null
+      ? [
+          {
+            testid: 'layer-launchpads',
+            label: m.launchpad_layer_chip(),
+            title: m.launchpad_layer_tip(),
+            active: () => layerLaunchpads,
+            toggle: () => {
+              layerLaunchpads = !layerLaunchpads;
+              dropHiddenPadSelection();
+            },
+          },
+        ]
+      : []),
+    // MUSEUMS (PRD-027) — /earth only, when the route passes loadMuseums.
+    ...(loadMuseums != null
+      ? [
+          {
+            testid: 'layer-museums',
+            label: m.museum_layer_chip(),
+            title: m.museum_layer_tip(),
+            active: () => layerMuseums,
+            toggle: () => {
+              layerMuseums = !layerMuseums;
+              if (!layerMuseums) selectedMuseum = null;
+            },
+          },
+        ]
+      : []),
+    // OBSERVATORIES (PRD-028) — telescopes on the ground. The testid
+    // keeps its old name (layer-telescopes) so the specs do not move.
+    ...(loadObservatories != null
+      ? [
+          {
+            testid: 'layer-telescopes',
+            label: m.earth_layer_chip_observatories(),
+            title: m.observatory_layer_tip(),
+            active: () => layerTelescopes,
+            toggle: () => {
+              layerTelescopes = !layerTelescopes;
+              if (!layerTelescopes) selectedObservatory = null;
+            },
+          },
+        ]
+      : []),
+    {
+      testid: 'layer-orbiters',
+      label: m.ui_layer_orbiters(),
+      title:
+        config.earthOrbitalLayers?.satellites != null
+          ? m.earth_layer_tip_orbiters()
+          : m.moon_layer_tip_orbiters(),
+      active: () => layerOrbiters,
+      toggle: () => {
+        layerOrbiters = !layerOrbiters;
+        dropHiddenOrbiterSelection();
+      },
+    },
+    {
+      testid: 'layer-orbits',
+      label: m.ui_layer_orbits(),
+      title: m.moon_layer_tip_orbit_rings(),
+      active: () => layerOrbits,
+      toggle: () => (layerOrbits = !layerOrbits),
+      // ORBITS toggles the per-orbiter inclined rings on /moon + /mars.
+      // /earth had no such rings under this chip — it only drove the
+      // regime bands, now removed (#363) — so the chip is hidden there.
+      visible: config.earthOrbitalLayers == null,
+    },
+    // TRAVERSES chip shows only when this body has vendored
+    // rover paths (Mars today; Moon EVA / Lunokhod future).
+    ...(loadTraverses != null
+      ? [
+          {
+            testid: 'layer-traverses',
+            label: m.ui_layer_traverses(),
+            title: m.mars_layer_tip_traverses(),
+            active: () => layerTraverses,
+            toggle: () => {
+              layerTraverses = !layerTraverses;
+              dropHiddenTraverseSelection();
+            },
+          },
+        ]
+      : []),
+  ];
+
   // Capture the DebugPanel context at init — getContext MUST NOT run in
   // the deferred setup / lifecycle teardown below (#466). On unmount the
   // teardown runs with no component context, which throws
@@ -1110,8 +1212,17 @@
   // Nation legend height: the imagery card and the right-edge readouts stack
   // above the strip (--legend-top) instead of overlapping its wrapped rows.
   let legendH = $state(0);
+  // Phone bottom bar width: the imagery card ends left of it on the same row.
+  let bottomBarW = $state(0);
+  // Touch top row height: the welcome hint hangs just under it.
+  let hudTopMobileH = $state(0);
   // The welcome hint is shown once per visit: it stays gone through a panorama or 2D toggle.
   let hintDone = $state(false);
+  // Route view, the flat view and the panorama are reached by a button, not the canvas: the
+  // zoom hint goes too (it covered the route's labels).
+  $effect(() => {
+    if (routeViewActive || flatPatchActive || panoramaActive) hintDone = true;
+  });
   // Site icons have started to show at this zoom (#641 legend gate).
   let tagStageOn = $state(false);
   $effect(() => onFlatViewChange?.(flatPatchActive));
@@ -1305,6 +1416,17 @@
       !panoramaActive &&
       selected?.kind !== 'orbiter' &&
       !(viewport.isCoarsePointer && annotationUi.openId),
+  );
+  // The phone tab row (Ruler · Layers · Nations · Scan) and INDEX; gone in the close-up modes,
+  // where the imagery card and scale bar drop to the bottom edge in their place. A landscape
+  // phone keeps them beside an open site's side drawer (operator 2026-11-24; 0.9.9 behaviour).
+  const drawerHidden = $derived(
+    mobileDrawerHidden({
+      routeViewActive,
+      flatPatchActive,
+      detailFlying,
+      siteDetail: tierCardShown && !viewport.isLandscape,
+    }),
   );
   // Mobile: true while any accordion tab is open — hides the altitude pill so
   // the open drawer has room (2026-07 user direction).
@@ -3110,6 +3232,12 @@
     // at/above this frame — where it would read as a small square in a wide view
     // (Opportunity's 45 km drive) — and ramps in only as you zoom into the
     // traverse. Returns null for regional-only rovers (no detail tiles).
+    // Half of the narrower field of view: on a portrait phone the horizontal one, so a route
+    // framed on the vertical alone ran off the screen's sides.
+    const fitHalfFov = () => {
+      const halfV = (camera.fov * Math.PI) / 180 / 2;
+      return Math.min(halfV, Math.atan(Math.tan(halfV) * camera.aspect));
+    };
     const frameCamRForRoute = (roverId: string): number | null => {
       const cached = routeFrameCamR.get(roverId);
       if (cached != null) return cached;
@@ -3124,7 +3252,7 @@
       }
       if (!has || box.isEmpty()) return null;
       const sphere = box.getBoundingSphere(new THREE.Sphere());
-      const halfFov = (camera.fov * Math.PI) / 180 / 2;
+      const halfFov = fitHalfFov();
       const r = Math.max(
         31,
         Math.min(70, sphere.center.length() + sphere.radius / Math.tan(0.75 * halfFov)),
@@ -3161,9 +3289,16 @@
         faceCameraAtSite?.(site, 34);
         return;
       }
+      // Framed on the drive itself where its points are known: the tiles' box reaches past the
+      // line (Perseverance's spread west), which left the route off-centre on a phone.
+      const path = traverseLines.find((t) => t.roverId === site.id)?.pathWorld;
+      if (path && path.length > 1) {
+        box.makeEmpty();
+        for (const p of path) box.expandByPoint(planetMesh.localToWorld(p.clone()));
+      }
       const sphere = box.getBoundingSphere(new THREE.Sphere());
       const dir = sphere.center.clone().normalize();
-      const halfFov = (camera.fov * Math.PI) / 180 / 2;
+      const halfFov = fitHalfFov();
       // camR is measured from the body origin; the route centre sits ~|Cw| along
       // the view axis (camera looks at origin), so camera→route ≈ camR - |Cw|.
       // Fit the route radius into 75% of the half-FOV, then add |Cw| back.
@@ -3315,7 +3450,9 @@
     // A photo pin opens its photo (#641); the selected site's landing ring, once its
     // icon has handed over to it, reopens the panel; anything else picks as before.
     const pickAt = (clientX: number, clientY: number) => {
-      const stop = pickStopAt(clientX, clientY);
+      // A site's icon is drawn over the route's pins, so it takes the tap it covers: with the
+      // pins shown from the route's framing height, a photo pin beside the rover icon caught it.
+      const stop = tagPointer(clientX, clientY) ? null : pickStopAt(clientX, clientY);
       if (stop?.image) {
         panelLightbox = stop.image;
         return;
@@ -3505,6 +3642,7 @@
       const wheelK = 0.05 * Math.min(1, Math.pow(camR / 100, 1.8));
       camRTarget = Math.max(zoomFloor(), Math.min(200, camRTarget + e.deltaY * wheelK));
       flyActive = false; // wheel cancels any in-flight fly-in
+      pinchAnchor = null;
     };
 
     // Touch — single-finger orbit + two-finger pinch + two-finger pan
@@ -3521,6 +3659,19 @@
     // does on desktop.
     let panMidPrevX = 0;
     let panMidPrevY = 0;
+    // Screen offset (px from the view centre) of the last pinch: the eased zoom keeps the ground
+    // there under it. Cleared when the zoom settles or another input takes over.
+    let pinchAnchor: { dx: number; dy: number } | null = null;
+    const turnTowardPinch = (r0: number, r1: number) => {
+      if (!pinchAnchor) return;
+      const rho = Math.hypot(pinchAnchor.dx, pinchAnchor.dy);
+      if (rho < 1) return;
+      const vh = renderer.domElement.clientHeight || window.innerHeight;
+      const t = anchorTurn(rho, vh / 2, (camera.fov * Math.PI) / 360, r0, r1);
+      if (!t) return;
+      camT += ((pinchAnchor.dx / rho) * t) / Math.max(0.15, Math.sin(camP));
+      camP = Math.max(0.15, Math.min(Math.PI - 0.15, camP + (pinchAnchor.dy / rho) * t));
+    };
     const tDist = (a: Touch, b: Touch) => Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY);
     const onTouchStart = (e: TouchEvent) => {
       if (e.touches.length === 1) {
@@ -3531,6 +3682,7 @@
         touchDownX = lmx;
         touchDownY = lmy;
         flyActive = false;
+        pinchAnchor = null;
         camTVelocity = 0;
         camPVelocity = 0;
       } else if (e.touches.length === 2) {
@@ -3549,19 +3701,31 @@
         const d = tDist(e.touches[0], e.touches[1]);
         // Floor lowered 30.2 → 30.08 to match the wheel floor so touch can
         // reach the manual 3D HiRISE zoom band before flat-patch (#309).
-        camRTarget = Math.max(zoomFloor(), Math.min(200, camRTarget * (pinchPrev / d)));
-        // Pan via midpoint delta — mirrors the desktop Shift+drag path.
+        camRTarget = pinchCamR(camRTarget, pinchPrev, d, { floor: zoomFloor(), max: 200 });
         const midX = (e.touches[0].clientX + e.touches[1].clientX) / 2;
         const midY = (e.touches[0].clientY + e.touches[1].clientY) / 2;
         const dxMid = midX - panMidPrevX;
         const dyMid = midY - panMidPrevY;
-        if (dxMid !== 0 || dyMid !== 0) {
-          const vh = renderer.domElement.clientHeight || window.innerHeight;
-          const scale = (camR * 2 * Math.tan((camera.fov * Math.PI) / 360)) / vh;
-          camera.matrixWorld.extractBasis(panRight, panUp, panForward);
-          focusOffset.addScaledVector(panRight, -dxMid * scale);
-          focusOffset.addScaledVector(panUp, dyMid * scale);
-          updateCam();
+        // The ground follows the fingers (operator 2026-11-23): the zoom turns toward the point
+        // between them (turnTowardPinch, per frame of the eased zoom) and a drag turns the globe
+        // by the angle a pixel of ground spans. The pan used to slide the look-at point at a rate
+        // from camR, ~6x too fast at a site, and a slid view could not reach the flat view.
+        if (!panoramaActive) {
+          const rect = renderer.domElement.getBoundingClientRect();
+          pinchAnchor = {
+            dx: midX - (rect.left + rect.width / 2),
+            dy: midY - (rect.top + rect.height / 2),
+          };
+          if (dxMid !== 0 || dyMid !== 0) {
+            const k = radPerPx(
+              camR,
+              (rect.height || window.innerHeight) / 2,
+              (camera.fov * Math.PI) / 360,
+            );
+            camT -= (dxMid * k) / Math.max(0.15, Math.sin(camP));
+            camP = Math.max(0.15, Math.min(Math.PI - 0.15, camP - dyMid * k));
+            updateCam();
+          }
         }
         flyActive = false;
         pinchPrev = d;
@@ -3577,9 +3741,23 @@
         touchMoved = true;
       // Mirror the mouse drag's zoom-relative curve so touch users
       // get the same close-zoom calm-down.
+      // Off the panorama the ground follows the finger, as under two fingers (operator
+      // 2026-11-23): the zoom-relative curve turned the globe against a vertical drag, at ~3.6x
+      // the finger's speed at a site.
       const touchDragK = 0.005 * Math.min(1, Math.pow(camR / 100, 1.8));
-      let dT = -(e.touches[0].clientX - lmx) * touchDragK;
-      const dP = (e.touches[0].clientY - lmy) * touchDragK;
+      const groundK = panoramaActive
+        ? 0
+        : radPerPx(
+            camR,
+            (renderer.domElement.getBoundingClientRect().height || window.innerHeight) / 2,
+            (camera.fov * Math.PI) / 360,
+          );
+      let dT = panoramaActive
+        ? -(e.touches[0].clientX - lmx) * touchDragK
+        : -((e.touches[0].clientX - lmx) * groundK) / Math.max(0.15, Math.sin(camP));
+      const dP = panoramaActive
+        ? (e.touches[0].clientY - lmy) * touchDragK
+        : -(e.touches[0].clientY - lmy) * groundK;
       // Panorama looks toward the skybox centre — a horizontal drag pans the
       // view opposite to orbit mode; invert so the swipe matches the view
       // direction (2026-07 user report, matches the mouse path above).
@@ -3614,6 +3792,10 @@
         e.touches.length === 0
       ) {
         const t = e.changedTouches[0];
+        // The tap is handled here: cancel the emulated click that follows it, which landed on
+        // whatever the tap had just opened under the finger (a landscape side drawer's science
+        // chip navigated away; a portrait sheet's hero opened its preview).
+        if (e.cancelable) e.preventDefault();
         pickAt(t.clientX, t.clientY);
       }
     };
@@ -3885,8 +4067,12 @@
         } else {
           // (b) Smooth zoom: lerp camR toward camRTarget at 15%/frame.
           if (Math.abs(camR - camRTarget) > 0.001) {
+            const r0 = camR;
             camR += (camRTarget - camR) * 0.15;
+            turnTowardPinch(r0, camR);
             cameraChanged = true;
+          } else {
+            pinchAnchor = null;
           }
           // (c) Drag inertia: after release, decay velocity ~92%/frame
           // and apply to camT/camP until below threshold. Skips while
@@ -4507,7 +4693,15 @@
           // past the flat-patch trigger, drop the override so the normal flat-patch
           // path takes over cleanly.
           if (routeViewActive && camR < 30.4) routeViewActive = false;
-          const routeDetailOpacity = routeViewActive ? 1 : detailOpacity;
+          // The drive's pictures, line and stop labels are full once the whole route fits the
+          // screen (its framing camR), the same as ROUTE shows it; zooming by hand left them
+          // faint until camR 30.3, well inside the route (operator 2026-11-23).
+          const routeFrameR = selected?.id ? frameCamRForRoute(selected.id) : null;
+          const routeDetailOpacity = routeViewActive
+            ? 1
+            : routeFrameR != null
+              ? Math.max(detailOpacity, Math.min(1, Math.max(0, (routeFrameR + 2 - camR) / 2)))
+              : detailOpacity;
           // Midpoint regional-context fade, reverse-engineered from THIS route's
           // framing (#380). All traverse rovers carry the same fixed-size regional
           // CTX; on a long route it reads as a jarring square once you're zoomed
@@ -4521,9 +4715,10 @@
           if (routeViewActive) {
             routeRegionalOpacity = 0;
           } else {
-            const frameR = selected?.id ? frameCamRForRoute(selected.id) : null;
             routeRegionalOpacity =
-              frameR != null ? Math.max(0, Math.min(1, (frameR - camR) / 5)) : regionalOpacity;
+              routeFrameR != null
+                ? Math.max(0, Math.min(1, (routeFrameR - camR) / 5))
+                : regionalOpacity;
           }
           for (const h of hotspots) {
             if (!h.tier2Group) continue;
@@ -4819,6 +5014,21 @@
               // regardless of zoom level. World-fixed offsets either
               // overlapped the dot at wide zoom or floated 1000 px
               // away at close zoom.
+              // A route caption near the screen edge is nudged sideways by its overhang, so
+              // "LANDED 2021-02-18" or "45.2 KM · DAY 2,104" is never cut on a phone.
+              const keepCaptionOnScreen = (cap: THREE.Object3D) => {
+                const w = renderer.domElement.clientWidth || window.innerWidth;
+                const q = cap.getWorldPosition(tlScratch).project(camera);
+                const x = (q.x * 0.5 + 0.5) * w;
+                const hw = captionWidthPx / 2;
+                const over = Math.max(0, 8 + hw - x) - Math.max(0, x + hw - (w - 8));
+                if (over === 0) return;
+                const right = tlScratch
+                  .set(1, 0, 0)
+                  .applyQuaternion(camera.quaternion)
+                  .applyQuaternion(planetMesh.getWorldQuaternion(tlScratchQ).invert());
+                cap.position.addScaledVector(right, over * worldPerPx);
+              };
               if (tl.startLabel) {
                 tl.startLabel.scale.setScalar(captionScale);
                 const startTangent = tl.tangent.clone().negate();
@@ -4828,6 +5038,26 @@
                   .normalize()
                   .multiplyScalar(tl.surfaceRadius + radialOffsetWorld);
                 tl.startLabel.position.copy(startCaptionPos);
+                if (tl.startLabel.visible) {
+                  // Beside the lander it would leave the screen: sit it above the lander marker
+                  // instead (slid sideways it went under the marker), then keep it on screen.
+                  const w = renderer.domElement.clientWidth || window.innerWidth;
+                  const q = tl.startLabel.getWorldPosition(tlScratch).project(camera);
+                  const x = (q.x * 0.5 + 0.5) * w;
+                  if (x - captionWidthPx / 2 < 8 || x + captionWidthPx / 2 > w - 8) {
+                    const up = tlScratch
+                      .set(0, 1, 0)
+                      .applyQuaternion(camera.quaternion)
+                      .applyQuaternion(planetMesh.getWorldQuaternion(tlScratchQ).invert())
+                      .clone();
+                    tl.startLabel.position
+                      .copy(tl.startAnchor)
+                      .normalize()
+                      .multiplyScalar(tl.surfaceRadius + radialOffsetWorld)
+                      .addScaledVector(up, 34 * worldPerPx);
+                  }
+                  keepCaptionOnScreen(tl.startLabel);
+                }
                 tl.startLabel.traverse((o) => {
                   if (o instanceof THREE.Sprite) {
                     const m2 = o.material as THREE.SpriteMaterial;
@@ -4874,6 +5104,7 @@
                       cy - 14 < r.bottom,
                   );
                   if (under) place(-1);
+                  keepCaptionOnScreen(tl.endLabel);
                   // A drive that ends back at the lander (Apollo LRV loops) puts
                   // the end caption on the start caption: drop it one line below.
                   if (tl.startLabel?.visible) {
@@ -4969,6 +5200,12 @@
               // Start / end captions claim their space first: a pill that
               // would sit under one hides (the ring stays).
               const pillRects: Array<[number, number, number, number]> = [];
+              // The selected site's marker (the lander icon) claims its box first too: a
+              // stop pill ran under it at Perseverance's landing.
+              if (siteCrosshairScreen?.onScreen && tl.roverId === selected?.id) {
+                const { x, y } = siteCrosshairScreen;
+                pillRects.push([x - 22, y - 22, x + 22, y + 22]);
+              }
               for (const cap of [tl.startLabel, tl.endLabel]) {
                 if (!cap?.visible) continue;
                 cap.getWorldPosition(scr).project(camera);
@@ -5008,15 +5245,30 @@
               for (const lb of tl.stopLabels ?? []) {
                 const wPx = 22 * (lb.userData.aspect ?? 4);
                 let pillShow = stopPinsVisible;
-                let flip = false;
+                // Sprite anchor: beside the ring (near edge 16 px from its centre) by default.
+                let anchorX = -16 / wPx;
+                let anchorY = 0.5;
                 if (pillShow) {
                   lb.getWorldPosition(scr).project(camera);
                   const px = (scr.x * 0.5 + 0.5) * vw;
                   const py = (-scr.y * 0.5 + 0.5) * vh;
-                  flip = px + 16 + wPx > rightEdge - 8;
-                  const r: [number, number, number, number] = flip
-                    ? [px - 16 - wPx, py - 12, px - 16, py + 12]
-                    : [px + 16, py - 12, px + 16 + wPx, py + 12];
+                  // Right of the ring if it fits, else left; a pill wider than either side (a
+                  // 194 px "John Klein drill · Sol 182" beside 170 px on a phone) hangs under the
+                  // ring instead, slid sideways to stay on the screen, so it never runs off an edge.
+                  const roomRight = rightEdge - 8 - (px + 16);
+                  const roomLeft = px - 16 - 8;
+                  let r: [number, number, number, number];
+                  if (wPx <= roomRight) {
+                    r = [px + 16, py - 12, px + 16 + wPx, py + 12];
+                  } else if (wPx <= roomLeft) {
+                    anchorX = 1 + 16 / wPx;
+                    r = [px - 16 - wPx, py - 12, px - 16, py + 12];
+                  } else {
+                    const left = Math.max(8, Math.min(rightEdge - 8 - wPx, px - wPx / 2));
+                    anchorX = (px - left) / wPx;
+                    anchorY = 1 + 16 / 22;
+                    r = [left, py + 16, left + wPx, py + 38];
+                  }
                   if (
                     pillRects.some((q) => r[0] < q[2] && r[2] > q[0] && r[1] < q[3] && r[3] > q[1])
                   )
@@ -5025,8 +5277,7 @@
                 }
                 lb.visible = pillShow;
                 lb.userData.rectPx = pillShow ? pillRects[pillRects.length - 1] : null;
-                // Near edge 16 px from the ring centre, whatever the width.
-                lb.center.x = flip ? 1 + 16 / wPx : -16 / wPx;
+                lb.center.set(anchorX, anchorY);
                 lb.scale.set(stopLabelH * (lb.userData.aspect ?? 4), stopLabelH, 1);
                 (lb.material as THREE.SpriteMaterial).opacity = routeDetailOpacity;
               }
@@ -5392,9 +5643,15 @@
           // near). The Zoom-to-detail button still lands past this to open
           // the flat-patch immediately (flyToDetail).
           const SPHERE_TO_FLAT_CAM_R = 30.1;
+          // Only while the camera orbits the body itself and is not mid-fly: framed on an orbiter,
+          // camR is the distance to that object (14), so picking a surface site next crossed the
+          // trigger on the fly's first frames, opened the flat patch uninvited and, on touch,
+          // closed the new site's panel (surface-panel-order:39, change2 -> beresheet).
           if (
             flatPatchPhase === 'hidden' &&
             !panoramaActive &&
+            !flyActive &&
+            focusOffset.lengthSq() < 1e-9 &&
             selected != null &&
             selected.region_bounds != null &&
             camR < SPHERE_TO_FLAT_CAM_R
@@ -5590,6 +5847,9 @@
     ? `${48 + legendH + 8 + locateReservePx}px`
     : undefined}
   style:--hint-bottom={legendH && !legendAway ? `${48 + legendH + 8}px` : undefined}
+  style:--bar-w={bottomBarW ? `${bottomBarW}px` : undefined}
+  style:--row-bottom={drawerHidden ? '8px' : '56px'}
+  style:--hint-top-touch={hudTopMobileH ? `${hudTopMobileH + 16}px` : undefined}
 >
   <div
     class="layer"
@@ -5642,105 +5902,7 @@
          The ORBITERS chip switches every orbiter at once; on /earth that is
          stations, space telescopes, constellations, comsats and Moon orbiters. -->
     <div class="ctrl-row chips" role="group" aria-label={m.ui_visibility_layers()}>
-      <LayerChipRow
-        chips={[
-          {
-            testid: 'layer-surface',
-            // Cycling label reflects the SURFACE+HOTSPOTS unified
-            // state: SURFACE · AUTO / HIGH / LOW / OFF.
-            label: surfaceChipLabel,
-            title: m.moon_layer_tip_surface(),
-            active: () => !surfaceOff,
-            toggle: cycleSurfaceMode,
-          },
-          // LAUNCHPADS — /earth only (the route passes the launch-site config).
-          ...(config.earthOrbitalLayers?.satellites != null
-            ? [
-                {
-                  testid: 'layer-launchpads',
-                  label: m.launchpad_layer_chip(),
-                  title: m.launchpad_layer_tip(),
-                  active: () => layerLaunchpads,
-                  toggle: () => {
-                    layerLaunchpads = !layerLaunchpads;
-                    dropHiddenPadSelection();
-                  },
-                },
-              ]
-            : []),
-          // MUSEUMS (PRD-027) — /earth only, when the route passes loadMuseums.
-          ...(loadMuseums != null
-            ? [
-                {
-                  testid: 'layer-museums',
-                  label: m.museum_layer_chip(),
-                  title: m.museum_layer_tip(),
-                  active: () => layerMuseums,
-                  toggle: () => {
-                    layerMuseums = !layerMuseums;
-                    if (!layerMuseums) selectedMuseum = null;
-                  },
-                },
-              ]
-            : []),
-          // OBSERVATORIES (PRD-028) — telescopes on the ground. The testid
-          // keeps its old name (layer-telescopes) so the specs do not move.
-          ...(loadObservatories != null
-            ? [
-                {
-                  testid: 'layer-telescopes',
-                  label: m.earth_layer_chip_observatories(),
-                  title: m.observatory_layer_tip(),
-                  active: () => layerTelescopes,
-                  toggle: () => {
-                    layerTelescopes = !layerTelescopes;
-                    if (!layerTelescopes) selectedObservatory = null;
-                  },
-                },
-              ]
-            : []),
-          {
-            testid: 'layer-orbiters',
-            label: m.ui_layer_orbiters(),
-            title:
-              config.earthOrbitalLayers?.satellites != null
-                ? m.earth_layer_tip_orbiters()
-                : m.moon_layer_tip_orbiters(),
-            active: () => layerOrbiters,
-            toggle: () => {
-              layerOrbiters = !layerOrbiters;
-              dropHiddenOrbiterSelection();
-            },
-          },
-          {
-            testid: 'layer-orbits',
-            label: m.ui_layer_orbits(),
-            title: m.moon_layer_tip_orbit_rings(),
-            active: () => layerOrbits,
-            toggle: () => (layerOrbits = !layerOrbits),
-            // ORBITS toggles the per-orbiter inclined rings on /moon + /mars.
-            // /earth had no such rings under this chip — it only drove the
-            // regime bands, now removed (#363) — so the chip is hidden there.
-            visible: config.earthOrbitalLayers == null,
-          },
-          // TRAVERSES chip shows only when this body has vendored
-          // rover paths (Mars today; Moon EVA / Lunokhod future).
-          ...(loadTraverses != null
-            ? [
-                {
-                  testid: 'layer-traverses',
-                  label: m.ui_layer_traverses(),
-                  title: m.mars_layer_tip_traverses(),
-                  active: () => layerTraverses,
-                  toggle: () => {
-                    layerTraverses = !layerTraverses;
-                    dropHiddenTraverseSelection();
-                  },
-                },
-              ]
-            : []),
-        ]}
-      />
+      <LayerChipRow chips={layerChipList()} />
       <!-- HOTSPOTS LOD chip merged into SURFACE — see surfaceChipLabel
            / cycleSurfaceMode above. Component import preserved in case
            future routes want the standalone variant; can be deleted
@@ -5749,8 +5911,20 @@
   {/snippet}
 
   <!-- The way back to the same body on /explore (UXD-028): the first control of the view row. -->
-  {#snippet backToExplore(testid: string)}
-    {#if explorePath}
+  <!-- On touch only the ‹ shows, as on /explore's own back chip: the full label pushed SKY onto
+       a second row on a phone. -->
+  {#snippet backToExplore(testid: string, compact = false)}
+    {#if explorePath && compact}
+      <Chip
+        kind="link"
+        href={localHref(explorePath)}
+        data-testid={testid}
+        aria-label={m.world_back_to_explore()}
+        title={m.world_back_to_explore()}
+      >
+        {#snippet icon()}‹{/snippet}
+      </Chip>
+    {:else if explorePath}
       <Chip kind="link" href={localHref(explorePath)} data-testid={testid}
         >{m.world_back_to_explore()}</Chip
       >
@@ -5808,7 +5982,7 @@
   {/snippet}
 
   {#snippet mobileLayersContent(_close: () => void)}
-    {@render layerChips()}
+    <DrawerToggleRows rows={layerChipList()} label={m.ui_visibility_layers()} />
   {/snippet}
 
   <!-- Mobile "Scan" tab (#386 follow-up) — the surface HUD folded into the
@@ -5831,23 +6005,19 @@
   {/snippet}
 
   {#snippet mobileNationsContent(close: () => void)}
-    <div class="nations-drawer" role="group" aria-label={m.moon_legend_nation_aria()}>
-      {#each Object.entries(legendPalette) as [nation, color] (nation)}
-        <Chip
-          kind="toggle"
-          dot
-          tone={color}
-          active={nationEnabled(nation)}
-          data-testid="legend-nation-{nation}"
-          onclick={() => {
-            toggleNation(nation);
-            close();
-          }}
-        >
-          {countryLabel(nation)}
-        </Chip>
-      {/each}
-    </div>
+    <DrawerToggleRows
+      label={m.moon_legend_nation_aria()}
+      rows={Object.entries(legendPalette).map(([nation, color]) => ({
+        testid: `legend-nation-${nation}`,
+        label: countryLabel(nation),
+        color,
+        active: () => nationEnabled(nation),
+        toggle: () => {
+          toggleNation(nation);
+          close();
+        },
+      }))}
+    />
   {/snippet}
 
   {#if !panoramaActive}
@@ -5866,11 +6036,12 @@
          so they're always accessible without opening the drawer. -->
     <div
       class="hud-top-mobile"
-      class:flat-hidden={flatPatchActive}
+      bind:clientHeight={hudTopMobileH}
+      class:flat-hidden={flatPatchActive || routeViewActive}
       role="group"
       aria-label={m.ui_view_controls()}
     >
-      {@render backToExplore('surface-back-to-explore-mobile')}
+      {@render backToExplore('surface-back-to-explore-mobile', true)}
       {#if !config.disable2D}
         <ViewToggleButton
           is2d={view === '2d'}
@@ -5898,27 +6069,43 @@
         <EnterSkyButton onEnter={() => void launchSkyScene()} />
       {/if}
     </div>
-    {#if !mobileDrawerHidden({ routeViewActive, flatPatchActive, detailFlying })}
+    {#if !drawerHidden}
       <!-- Hide the orbital controls in flat-patch detail (same as panorama);
            they otherwise overlap the true-scale provenance card. -->
       <MobileDrawerGroup
         tabs={[
           // B3: fixed semantic slot order [Measure][Overlays][Highlight][Scene].
-          { id: 'ruler', label: m.drawer_tab_ruler(), icon: '◎', content: mobileRulerContent },
-          { id: 'layers', label: m.drawer_tab_layers(), icon: '▤', content: mobileLayersContent },
+          {
+            id: 'ruler',
+            label: m.drawer_tab_ruler(),
+            icon: '◎',
+            content: mobileRulerContent,
+            compact: true,
+          },
+          {
+            id: 'layers',
+            label: m.drawer_tab_layers(),
+            icon: '▤',
+            content: mobileLayersContent,
+            compact: true,
+          },
           {
             id: 'nations',
             label: m.drawer_tab_nations(),
             icon: '⚑',
             content: mobileNationsContent,
+            compact: true,
           },
           { id: 'scan', label: m.drawer_tab_scan(), icon: '◈', content: mobileScanContent },
         ]}
         onOpen={(id) => (mobileDrawerOpen = id !== null)}
+        tabCloses
       />
       <!-- Object index: an edge-handle toggles a left side panel on every viewport.
            Selecting keeps the list open (master → detail on the right). -->
-      <div class="surface-index-handle">
+      <!-- Phone: hidden under an open drawer (it stood on the Scan title) and behind the open
+           INDEX, which closes with its own ×. -->
+      <div class="surface-index-handle" class:under-drawer={mobileDrawerOpen || indexOpen}>
         <Chip
           kind="toggle"
           active={indexOpen}
@@ -6003,6 +6190,7 @@ sample      ${debugInfo.projectedPxSample}`}
        `display: contents`, so each child keeps its own corner. -->
   <div
     class="surface-bottom-bar"
+    bind:clientWidth={bottomBarW}
     class:drawer-open={mobileDrawerOpen}
     class:flat={flatPatchActive}
     class:beside-panel={panelOpen}
@@ -6245,12 +6433,14 @@ sample      ${debugInfo.projectedPxSample}`}
     <div class="surface-floating-exit">
       <Chip
         kind="action"
+        class="ui-chip--sub"
         onclick={() => exitPanorama()}
         data-testid="panorama-floating-exit"
+        aria-label={m.surface_exit_panorama()}
         title={m.surface_exit_panorama_title()}
       >
         {#snippet icon()}✕{/snippet}
-        {m.surface_exit_panorama()}
+        {m.surface_exit()}
       </Chip>
     </div>
   {/if}
@@ -6258,12 +6448,14 @@ sample      ${debugInfo.projectedPxSample}`}
     <div class="surface-floating-exit">
       <Chip
         kind="action"
+        class="ui-chip--sub"
         onclick={() => closeFlatPatch()}
         data-testid="zoom-floating-exit"
+        aria-label={m.surface_exit_zoom()}
         title={m.surface_exit_zoom_title()}
       >
         {#snippet icon()}✕{/snippet}
-        {m.surface_exit_zoom()}
+        {m.surface_exit()}
       </Chip>
     </div>
   {/if}
@@ -6274,12 +6466,14 @@ sample      ${debugInfo.projectedPxSample}`}
     <div class="surface-floating-exit">
       <Chip
         kind="action"
+        class="ui-chip--sub"
         onclick={() => exitRouteView()}
         data-testid="route-floating-exit"
+        aria-label={m.surface_exit_route()}
         title={m.surface_exit_route_title()}
       >
         {#snippet icon()}✕{/snippet}
-        {m.surface_exit_route()}
+        {m.surface_exit()}
       </Chip>
     </div>
   {/if}
@@ -6662,36 +6856,44 @@ sample      ${debugInfo.projectedPxSample}`}
                     : '—'}
                 </div>
               </div>
-              <div class="cell">
-                <div class="cell-label">
-                  {m.moon_panel_eva()}<WhyPopover
-                    title={m.why_eva_time_title()}
-                    body={m.why_eva_time_body()}
-                  />
+              <!-- A cell shows only where it applies: EVA and crew on crewed landings, samples
+                   where some came back (an uncrewed lander read "EVA —", "0 kg", "Crew —"). -->
+              {#if selected.crewed}
+                <div class="cell">
+                  <div class="cell-label">
+                    {m.moon_panel_eva()}<WhyPopover
+                      title={m.why_eva_time_title()}
+                      body={m.why_eva_time_body()}
+                    />
+                  </div>
+                  <div class="cell-value">
+                    {selected.eva_duration_hours
+                      ? m.moon_hours({ value: selected.eva_duration_hours.toString() })
+                      : '—'}
+                  </div>
                 </div>
-                <div class="cell-value">
-                  {selected.eva_duration_hours
-                    ? m.moon_hours({ value: selected.eva_duration_hours.toString() })
-                    : '—'}
+              {/if}
+              {#if selected.crewed || (selected.samples_kg ?? 0) > 0}
+                <div class="cell">
+                  <div class="cell-label">
+                    {m.moon_panel_samples()}<WhyPopover
+                      title={m.why_samples_title()}
+                      body={m.why_samples_body()}
+                    />
+                  </div>
+                  <div class="cell-value">
+                    {m.moon_kg({ value: (selected.samples_kg ?? 0).toString() })}
+                  </div>
                 </div>
-              </div>
-              <div class="cell">
-                <div class="cell-label">
-                  {m.moon_panel_samples()}<WhyPopover
-                    title={m.why_samples_title()}
-                    body={m.why_samples_body()}
-                  />
+              {/if}
+              {#if selected.crewed}
+                <div class="cell">
+                  <div class="cell-label">{m.moon_panel_crew()}</div>
+                  <div class="cell-value short">
+                    {selected.crew && selected.crew.length > 0 ? selected.crew.join(', ') : '—'}
+                  </div>
                 </div>
-                <div class="cell-value">
-                  {m.moon_kg({ value: (selected.samples_kg ?? 0).toString() })}
-                </div>
-              </div>
-              <div class="cell">
-                <div class="cell-label">{m.moon_panel_crew()}</div>
-                <div class="cell-value short">
-                  {selected.crew && selected.crew.length > 0 ? selected.crew.join(', ') : '—'}
-                </div>
-              </div>
+              {/if}
             {/if}
           {/if}
         </div>
@@ -7222,6 +7424,16 @@ sample      ${debugInfo.projectedPxSample}`}
   .surface-index-desktop[hidden] {
     display: none;
   }
+  @media (hover: none), (pointer: coarse) {
+    .surface-index-handle.under-drawer {
+      display: none;
+    }
+    /* A phone's INDEX ends above the bottom row (tab row 40 px at 52, the bar 46 px at 56):
+       reaching the screen's foot it ran over both, their ends showing beside it. */
+    .surface-index-desktop {
+      bottom: calc(110px + env(safe-area-inset-bottom, 0px));
+    }
+  }
   /* Landscape phones are very short: the tall top offset leaves too little
      height and the search + wrapped filter chips squeeze the flex:1 list to 0.
      Tighten the top/bottom on short viewports so the list keeps its scroll area. */
@@ -7613,6 +7825,9 @@ sample      ${debugInfo.projectedPxSample}`}
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: var(--size-label);
     letter-spacing: 1px;
+    /* One case for every cell: the rover cells' strings ("Distance driven") were mixed case
+       beside YEAR / LANDING. */
+    text-transform: uppercase;
     color: var(--color-text-label);
     margin-bottom: 3px;
   }
@@ -7779,12 +7994,15 @@ sample      ${debugInfo.projectedPxSample}`}
       align-items: center;
       gap: 10px;
       position: fixed;
-      left: 8px;
+      /* As wide as its contents, at the right: the imagery card takes the row's left side. */
       right: 8px;
-      bottom: calc(56px + env(safe-area-inset-bottom, 0px));
+      max-width: calc(100vw - 16px);
+      bottom: calc(var(--row-bottom, 56px) + env(safe-area-inset-bottom, 0px));
       /* Under the detail panel (z 30), like the rest of the scene HUD. */
       z-index: 28;
-      min-height: 40px;
+      /* A 44 px chip inside plus the border; the imagery card beside it matches. */
+      min-height: 46px;
+      box-sizing: border-box;
       padding: 0 10px;
       background: rgba(8, 10, 22, 0.88);
       border: 1px solid rgba(255, 255, 255, 0.18);
@@ -7812,6 +8030,16 @@ sample      ${debugInfo.projectedPxSample}`}
     .surface-bottom-bar .altitude-indicator {
       margin-inline-start: auto;
       white-space: nowrap;
+    }
+    /* The route's button (Moon / Earth locate) is a segment of the bar, not a chip on it: a
+       bordered chip stuck out of the bar. It keeps the chip contract (44 px, 4 px corners;
+       chip.spec) and the bar is built around it. */
+    .surface-bottom-bar :global(.ui-chip) {
+      margin-inline-start: -10px;
+      padding: 0 10px;
+      border: 0;
+      border-inline-end: 1px solid rgba(255, 255, 255, 0.18);
+      background: none;
     }
     /* The scale says how far in you are; with it shown the altitude would not fit. */
     .surface-bottom-bar .distance-scale ~ .altitude-indicator {
@@ -7894,13 +8122,6 @@ sample      ${debugInfo.projectedPxSample}`}
     top: calc(var(--nav-height) + 18px);
     right: 24px;
     z-index: 60;
-  }
-
-  /* Mobile accordion: nations tab content layout. */
-  .nations-drawer {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px 12px;
   }
 
   @media (hover: none), (pointer: coarse) {

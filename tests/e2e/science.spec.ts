@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test';
 import { waitForHydration } from './_helpers/hydration';
+import { openPlanSheet } from './_helpers/plan-sheet';
 
 /**
  * /science — encyclopedia smoke (PRD-008 / ADR-034).
@@ -134,6 +135,8 @@ test.describe('/science Phase 2 chips', () => {
     page,
   }) => {
     await page.goto('/plan');
+    // On a phone the primer is inside the bottom sheet; a no-op on desktop.
+    await openPlanSheet(page);
     const chips = page.locator('a[data-science-chip]');
     expect(await chips.count()).toBeGreaterThanOrEqual(4);
     const departureChip = page

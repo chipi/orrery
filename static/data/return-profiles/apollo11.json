@@ -1,0 +1,52 @@
+{
+  "missionId": "apollo11",
+  "siteId": "apollo11",
+  "launchZeroUtc": "1969-07-16T13:32:00Z",
+  "liftoff": "124:22:00.8",
+  "verticalRiseS": 10,
+  "ascentBurnS": 434.9,
+  "ascentDvFts": 6070.1,
+  "insertion": {
+    "get": "124:29:15.7",
+    "orbitNmi": [48.0, 9.4],
+    "altitudeFt": 60300,
+    "radialFts": 32,
+    "downrangeFts": 5537.0
+  },
+  "rendezvous": [
+    { "id": "csi", "get": "125:19:35.5", "burnS": 47.0, "dvFts": 51.5 },
+    { "id": "cdh", "get": "126:17:49.6", "burnS": 17.8, "dvFts": 19.9 },
+    { "id": "tpi", "get": "127:03:51.8", "burnS": 22.7, "dvFts": 25.3 },
+    { "id": "tpf", "get": "127:46:09.8", "burnS": 28.4, "dvFts": 31.4 }
+  ],
+  "csmOrbitNmi": [62, 56],
+  "splashdownProfile": "apollo11-splashdown",
+  "docking": "128:03:00",
+  "jettison": "130:09:31.2",
+  "jettisonAltitudeNmi": 61.6,
+  "tei": { "get": "135:23:42.3", "burnS": 151.4, "dvFts": 3279.0 },
+  "source_tier": "flagship",
+  "estimatedFields": [
+    "scene.verticalRiseKinematics",
+    "scene.ascentTrajectoryShape",
+    "scene.pitchOver",
+    "scene.rendezvousRanges",
+    "scene.dockingClosingSpeed",
+    "scene.jettisonDrift",
+    "scene.attitudeAfterInsertion"
+  ],
+  "provenance": [
+    {
+      "l": "Apollo 11 Mission Report MSC-00171 (Nov 1969): Table 3-I (liftoff 124:22:00.8, docking 128:03:00, ascent stage jettison 130:09:31.2), Table 7-V (ascent, CSI, CDH, TPI, TPF burns), Table 7-VI (TEI 135:23:42.3, 151.4 s, 3,279.0 ft/s), range zero 13:32:00 GMT 16 July 1969",
+      "u": "https://www.nasa.gov/wp-content/uploads/static/apollo50th/pdf/A11_MissionReport.pdf"
+    },
+    {
+      "l": "NASA SP-4029 Apollo chronology: Apollo 11 summary and the transearth phase",
+      "u": "https://www.nasa.gov/wp-content/uploads/static/history/SP-4029/Apollo_11a_Summary.htm"
+    },
+    {
+      "l": "Apollo Flight Journal, Apollo 11 day 6: rendezvous and docking, reboarding and LM jettison, TEI",
+      "u": "https://apollojournals.org/afj/ap11fj/19day6-rendezvs-dock.html"
+    }
+  ]
+}

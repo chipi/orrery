@@ -26,10 +26,18 @@ export const ENTRY_TIMELINE_FRAC = 0.45;
 export function terminalStartTime(
   states: { t: number; phaseKind: string }[],
   duration: number,
+  events?: readonly { type: string; t: number }[],
 ): number {
   const s = states.find((st) => st.phaseKind !== 'ballistic_entry');
+  // Starship: the terminal share starts STARSHIP_FLIP_LEAD_S before the landing flip, so the
+  // belly-first fall fills the scrubber's middle and the flip + burn land in its last seconds.
+  const flip = events?.find((e) => e.type === 'landing_flip');
+  if (flip && s) return Math.max(0, Math.min(s.t, flip.t - STARSHIP_FLIP_LEAD_S));
   return s ? s.t : duration * 0.9;
 }
+
+/** Seconds of belly-first fall kept in the terminal share before a Starship's landing flip. */
+export const STARSHIP_FLIP_LEAD_S = 15;
 
 /**
  * The warp only compresses a long entry. With no ballistic entry (a powered lunar descent)

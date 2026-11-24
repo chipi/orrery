@@ -445,20 +445,21 @@
       "subject_match": true
     },
     "/images/earth-objects/iss/05.jpg": {
-      "score": 3,
-      "subject": "Two NASA astronauts in blue flight suits examining a spacecraft hatch or access panel during training or inspection.",
+      "score": 8,
+      "subject": "Expedition 32 flight engineers Sunita Williams, Joe Acaba and Aki Hoshide in the ISS Cupola, 27 July 2012.",
       "category": "people",
       "focal_point": {
         "x": 0.5,
-        "y": 0.45
+        "y": 0.5
       },
       "variants": {
         "1x1": "/images/earth-objects/iss/05.1x1.jpg"
       },
-      "rejected_by": "category-people",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-24T00:26:24.062Z",
-      "scoring_cost_usd": 0.007119
+      "scored_at": "2026-11-22T13:47:52.855Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/earth-objects/jwst/01.jpg": {
       "score": 9,
@@ -1336,19 +1337,20 @@
     },
     "/images/fleet-galleries/cargo-dragon-2/04.jpg": {
       "score": 8,
-      "subject": "SpaceX Falcon 9 rocket on the launch pad at Kennedy Space Center with steam venting during pre-launch operations, wetlands and Atlantic Ocean visible in the background.",
-      "category": "launch",
+      "subject": "A SpaceX cargo Dragon with its nosecone open approaching the ISS for docking to Harmony's space-facing port, 22 April 2025.",
+      "category": "orbital",
       "focal_point": {
-        "x": 0.52,
-        "y": 0.47
+        "x": 0.55,
+        "y": 0.5
       },
       "variants": {
         "1x1": "/images/fleet-galleries/cargo-dragon-2/04.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-22T08:45:02.523Z",
-      "scoring_cost_usd": 0.007344
+      "scored_at": "2026-11-22T13:47:52.902Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/cassini/01.jpg": {
       "score": 9,
@@ -4961,20 +4963,21 @@
       "scoring_cost_usd": 0.007851
     },
     "/images/fleet-galleries/slim/01.jpg": {
-      "score": 7,
-      "subject": "Artist's render of JAXA SLIM lunar lander descending toward the Moon's cratered surface with thrusters firing.",
-      "category": "render",
+      "score": 8,
+      "subject": "A full-scale model of JAXA's SLIM lunar lander with the LEV-2 (Sora-Q) rover, displayed at Expo 2025 Osaka (photo Artem.G).",
+      "category": "hardware",
       "focal_point": {
         "x": 0.5,
-        "y": 0.45
+        "y": 0.5
       },
       "variants": {
         "1x1": "/images/fleet-galleries/slim/01.1x1.jpg"
       },
-      "rejected_by": "score-below-threshold",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-22T09:05:43.125Z",
-      "scoring_cost_usd": 0.006918
+      "scored_at": "2026-11-22T13:47:53.079Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/sls-block-1/01.jpg": {
       "score": 9,
@@ -8914,20 +8917,21 @@
       "scoring_cost_usd": 0.004533000000000001
     },
     "/images/planets/saturn/03.jpg": {
-      "score": 9,
-      "subject": "Close-up Cassini view of Saturn's rings showing fine ring structure, a small embedded moonlet, and a diagonal shadow or ring division crossing the frame against deep black space.",
+      "score": 8,
+      "subject": "Cassini view of Saturn's rings, \"Translucent Arcs\", NASA/JPL-Caltech/Space Science Institute.",
       "category": "orbital",
       "focal_point": {
         "x": 0.5,
-        "y": 0.45
+        "y": 0.5
       },
       "variants": {
         "1x1": "/images/planets/saturn/03.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-06-08T11:14:02.161Z",
-      "scoring_cost_usd": 0.004653
+      "scored_at": "2026-11-22T13:47:53.093Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/planets/saturn/04.jpg": {
       "score": 9,
@@ -10740,20 +10744,21 @@
       "scoring_cost_usd": 0.00468
     },
     "/images/small-bodies/eris/02.jpg": {
-      "score": 7,
-      "subject": "JWST NIRCam image of the Didymos-Dimorphos binary asteroid system showing the primary body and separated moonlet following the DART impact.",
-      "category": "orbital",
+      "score": 8,
+      "subject": "Time-lapse discovery images of Eris (then 2003 UB313) from the Samuel Oschin Telescope at Palomar Observatory, NASA/JPL/Caltech, 2005.",
+      "category": "other",
       "focal_point": {
-        "x": 0.52,
-        "y": 0.45
+        "x": 0.5,
+        "y": 0.5
       },
       "variants": {
         "1x1": "/images/small-bodies/eris/02.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-06-08T11:21:45.759Z",
-      "scoring_cost_usd": 0.004374
+      "scored_at": "2026-11-22T13:47:53.099Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/small-bodies/halley/01.jpg": {
       "score": 8,
@@ -11842,20 +11847,21 @@
       "scoring_cost_usd": 0.006129
     },
     "/images/fleet-galleries/crew-dragon-iva/02.jpg": {
-      "score": 9,
-      "subject": "SpaceX Crew Dragon spacecraft with open docking port and deployed solar arrays photographed against the black void of space during ISS approach.",
-      "category": "spacecraft",
+      "score": 8,
+      "subject": "Crew-6 commander Stephen Bowen in his SpaceX suit in the crew suit-up room at Kennedy during the dress rehearsal, 23 February 2023 (NASA/Kim Shiflett).",
+      "category": "people",
       "focal_point": {
-        "x": 0.55,
-        "y": 0.5
+        "x": 0.5,
+        "y": 0.3
       },
       "variants": {
         "1x1": "/images/fleet-galleries/crew-dragon-iva/02.1x1.jpg"
       },
       "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-05-24T02:37:00.514Z",
-      "scoring_cost_usd": 0.007224
+      "scored_at": "2026-11-22T13:47:52.919Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/hotspots/mars/opportunity/tier3-pan.jpg": {
       "score": 3,
@@ -18116,7 +18122,7 @@
       "scored_at": "2026-06-08T11:24:08.651Z",
       "scoring_cost_usd": 0.0039629999999999995
     },
-    "/images/fleet-galleries/apollo-csm-block-i/01.jpg": {
+    "/images/fleet-galleries/apollo-csm-block-ii/05.jpg": {
       "score": 4,
       "subject": "Two technicians in blue coveralls and hard hats review documents in front of a large multi-story blue test scaffolding structure labeled S/C 012 in a NASA facility.",
       "category": "people",
@@ -18132,7 +18138,7 @@
       "scored_at": "2026-06-12T20:53:51.537Z",
       "scoring_cost_usd": 0.007194
     },
-    "/images/fleet-galleries/apollo-csm-block-i/02.jpg": {
+    "/images/fleet-galleries/apollo-csm-block-i/01.jpg": {
       "score": 8,
       "subject": "The Apollo One command module being transported on a flatbed trailer at North American Aviation on August 24, 1966, with technicians and engineers in attendance.",
       "category": "hardware",
@@ -18148,7 +18154,7 @@
       "scored_at": "2026-06-12T20:53:54.700Z",
       "scoring_cost_usd": 0.007416
     },
-    "/images/fleet-galleries/apollo-csm-block-i/03.jpg": {
+    "/images/fleet-galleries/apollo-csm-block-i/02.jpg": {
       "score": 8,
       "subject": "Aerial view of a Saturn V rocket stage or spacecraft module being hoisted by crane at a Kennedy Space Center ground facility, surrounded by technicians and support vehicles.",
       "category": "hardware",
@@ -18164,7 +18170,7 @@
       "scored_at": "2026-06-12T20:53:58.402Z",
       "scoring_cost_usd": 0.007626
     },
-    "/images/fleet-galleries/apollo-csm-block-i/04.jpg": {
+    "/images/fleet-galleries/apollo-csm-block-i/03.jpg": {
       "score": 9,
       "subject": "Saturn V rocket illuminated at night on the launch pad at Kennedy Space Center, with 'United States' and 'USA' markings clearly visible against the dark sky.",
       "category": "launch",
@@ -18180,7 +18186,7 @@
       "scored_at": "2026-06-12T20:54:01.678Z",
       "scoring_cost_usd": 0.007671
     },
-    "/images/fleet-galleries/apollo-csm-block-i/05.jpg": {
+    "/images/fleet-galleries/apollo-csm-block-i/04.jpg": {
       "score": 9,
       "subject": "A Saturn I or Saturn IB rocket bearing 'United States' and 'USA' markings stands upright on its launch pad alongside the red service structure at Kennedy Space Center.",
       "category": "launch",
@@ -19802,20 +19808,21 @@
       "scoring_cost_usd": 0.007449000000000001
     },
     "/images/fleet-galleries/lro/05.jpg": {
-      "score": 2,
-      "subject": "Annotated orbital photograph of Apollo lunar landing site showing LM, LRRR, PSEP, camera, and discarded cover on the lunar surface with labels and scale bar.",
-      "category": "diagram",
+      "score": 8,
+      "subject": "The Lunar Reconnaissance Orbiter in the high bay at Astrotech, Titusville, ready for final checkout before launch, 13 February 2009.",
+      "category": "hardware",
       "focal_point": {
         "x": 0.5,
-        "y": 0.45
+        "y": 0.5
       },
       "variants": {
         "1x1": ""
       },
-      "rejected_by": "category-diagram",
+      "rejected_by": null,
       "fallback": false,
-      "scored_at": "2026-06-12T21:02:10.538Z",
-      "scoring_cost_usd": 0.004494
+      "scored_at": "2026-11-22T13:47:53.060Z",
+      "scoring_cost_usd": 0,
+      "subject_match": true
     },
     "/images/fleet-galleries/luna10/01.jpg": {
       "score": 8,
@@ -30832,6 +30839,123 @@
       "subject_match": true,
       "rejected_by": null,
       "scored_at": "2026-11-19T14:46:22.975Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/starship-flight-5/01.jpg": {
+      "score": 8,
+      "subject": "Super Heavy Booster 12 on its landing burn, descending toward the launch tower's arms at Starbase on Starship's fifth flight test, 13 October 2024.",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.55,
+        "y": 0.18
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-22T09:15:22.454Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/earth-objects/tiangong/04.jpg": {
+      "score": 8,
+      "subject": "Interior of the Wentian lab module of the Tiangong space station, with two crew at work and one on the exercise bike, China Manned Space Engineering Office, 2023.",
+      "category": "people",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-22T13:49:03.384Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/akatsuki/05.jpg": {
+      "score": 8,
+      "subject": "H-IIA Flight 17 lifting off from Tanegashima with the Venus Climate Orbiter Akatsuki, 21 May 2010 (photo Naritama).",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.4
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-22T13:47:52.882Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/lc-39b/01.jpg": {
+      "score": 8,
+      "subject": "The Artemis I SLS and Orion on the mobile launcher at Launch Pad 39B, with a lightning protection tower, 15 September 2022.",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.55
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-22T13:47:53.037Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/plesetsk-43/05.jpg": {
+      "score": 8,
+      "subject": "The Soyuz-2 launch complex at Plesetsk Site 43/4, its blue service tower standing empty, 27 April 2006 (photo ArieW).",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.45
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-22T13:47:53.068Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/stars/vega/02.jpg": {
+      "score": 8,
+      "subject": "Spitzer Space Telescope images of Vega at 24 and 70 microns showing the heat glow of its debris disc, NASA/JPL-Caltech/K. Su (University of Arizona), 2005.",
+      "category": "other",
+      "focal_point": {
+        "x": 0.75,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-22T15:04:26.764Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/stars/barnards-star/02.jpg": {
+      "score": 8,
+      "subject": "Hubble Space Telescope image of Barnard's Star, NASA/ESA/Hubble Heritage, processed by C. Violette.",
+      "category": "other",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-22T15:03:31.734Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/stars/rigil-kentaurus/02.jpg": {
+      "score": 8,
+      "subject": "Alpha Centauri and Beta Centauri at the centre of a wide-field image of Centaurus against the Milky Way, Zdeněk Bardon/ESO (centaurus-ch17-bardon-cc).",
+      "category": "other",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-22T15:03:31.738Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/escapade/01.jpg": {
+      "score": 8,
+      "subject": "New Glenn NG-2 lifting off from Space Launch Complex 36 at Cape Canaveral Space Force Station with NASA's ESCAPADE spacecraft, 13 November 2025.",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.51,
+        "y": 0.45
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-24T10:33:18.649Z",
       "scoring_cost_usd": 0
     }
   }

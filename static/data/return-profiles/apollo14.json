@@ -1,0 +1,73 @@
+{
+  "missionId": "apollo14",
+  "siteId": "apollo14",
+  "launchZeroUtc": "1971-01-31T21:03:02Z",
+  "liftoff": "141:45:40",
+  "verticalRiseS": 10,
+  "ascentBurnS": 432.1,
+  "ascentDvFts": 6066.1,
+  "insertion": {
+    "get": "141:52:52",
+    "orbitNmi": [51.7, 8.5],
+    "altitudeFt": 60000,
+    "radialFts": 32,
+    "downrangeFts": 5540.0
+  },
+  "rendezvous": [
+    { "id": "vernier", "get": "141:56:49.4", "burnS": 12.1, "dvFts": 10.3 },
+    { "id": "tpi", "get": "142:30:51", "burnS": 3.6, "dvFts": 88.5, "engine": "aps" },
+    { "id": "tpf", "get": "143:13:29.1", "burnS": 26.7, "dvFts": 32.0 }
+  ],
+  "csmOrbitNmi": [61.5, 58.2],
+  "splashdownProfile": "apollo14-splashdown",
+  "docking": "143:32:50.5",
+  "jettison": "145:44:58",
+  "jettisonAltitudeNmi": 60.1,
+  "tei": { "get": "148:36:02.3", "burnS": 149.2, "dvFts": 3460.6 },
+  "camera": {
+    "shots": {
+      "surface": "ground_tele",
+      "liftoff": "ground_tele",
+      "ascent": "chase_long",
+      "insertion": "chase_long",
+      "dock_closeup": "dock_csm",
+      "soft_capture": "dock_csm",
+      "hard_dock": "dock_csm",
+      "jettison": "jettison_high",
+      "tei_coast": "tei_high",
+      "tei_burn": "tei_high",
+      "fade": "tei_high"
+    }
+  },
+  "source_tier": "flagship",
+  "estimatedFields": [
+    "insertion.get",
+    "insertion.altitudeFt",
+    "insertion.radialFts",
+    "insertion.downrangeFts",
+    "verticalRiseS",
+    "jettisonAltitudeNmi",
+    "scene.verticalRiseKinematics",
+    "scene.ascentTrajectoryShape",
+    "scene.pitchOver",
+    "scene.rendezvousRanges",
+    "scene.dockingClosingSpeed",
+    "scene.jettisonDrift",
+    "scene.attitudeAfterInsertion",
+    "scene.camera"
+  ],
+  "provenance": [
+    {
+      "l": "Apollo 14 Mission Report MSC-04112 (May 1971): Table 6-I (docking 143:32:51, LM jettison 145:44:58), Table 6-V (ascent 432.1 s, 6,066.1 ft/s; vernier, TPI, TPF burns; TEI 148:36:02.3, 149.2 s, 3,460.6 ft/s), range zero 21:03:02 GMT 31 January 1971. All times are the Mission Report clock, not the Flight Journal clock (which runs 40 min 2.9 s ahead after 054:53:36). Quote: \"A direct rendezvous was performed using the ascent propulsion system to perform the terminal phase initiation maneuver.\"",
+      "u": "https://apollojournals.org/afj/ap14fj/pdf/a14_mission-report.pdf"
+    },
+    {
+      "l": "NASA SP-4029 Apollo 14 summary: \"Ignition of the ascent stage engine for lunar liftoff occurred at ... 141:45:40\"; \"The 432.1-second firing of the ascent engine placed the vehicle directly into a 51.7 by 8.5 n mi orbit\" (the insertion GET 141:52:52 is liftoff plus that burn); vernier adjustment 10.3 ft/s at 141:56:49.4, TPI 142:30:51 (APS, 3.6 s, 88.5 ft/s), TPF 143:13:29.1 (RCS, 26.7 s, 32 ft/s): the first direct (one-revolution) rendezvous, no CSI or CDH",
+      "u": "https://www.nasa.gov/wp-content/uploads/static/history/SP-4029/Apollo_14a_Summary.htm"
+    },
+    {
+      "l": "Postflight Evaluation of the Apollo 14 Spacecraft Trajectories (MSC 04330, 26 May 1971): docking 143:32:50.5, TEI 148:36:02, CSM orbit 61.5 x 58.2 n.mi at docking, 63.4 x 56.8 after the separation burn",
+      "u": "https://apollojournals.org/alsj/a14/A14PostFlightTrajAnal_HSI-43756.pdf"
+    }
+  ]
+}

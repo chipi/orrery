@@ -1,0 +1,105 @@
+{
+  "missionId": "apollo15",
+  "siteId": "apollo15",
+  "launchZeroUtc": "1971-07-26T13:34:00Z",
+  "liftoff": "171:37:23.2",
+  "verticalRiseS": 10,
+  "ascentBurnS": 431,
+  "ascentDvFts": 6059,
+  "insertion": {
+    "get": "171:44:34.2",
+    "orbitNmi": [
+      42.5,
+      9
+    ],
+    "altitudeFt": 60000,
+    "radialFts": 32,
+    "downrangeFts": 5540
+  },
+  "rendezvous": [
+    {
+      "id": "tpi",
+      "get": "172:29:40.0",
+      "burnS": 2.6,
+      "dvFts": 72.7,
+      "engine": "aps"
+    },
+    {
+      "id": "tpf",
+      "get": "173:11:07",
+      "burnS": 25
+    }
+  ],
+  "csmOrbitNmi": [
+    64.5,
+    53.6
+  ],
+  "splashdownProfile": "apollo15-splashdown",
+  "docking": "173:36:25.5",
+  "jettison": "179:30:01.4",
+  "jettisonAltitudeNmi": 59,
+  "tei": {
+    "get": "223:48:45.84",
+    "burnS": 140.9,
+    "dvFts": 3046.8
+  },
+  "camera": {
+    "shots": {
+      "surface": "rover_tv_fixed",
+      "liftoff": "rover_tv_fixed",
+      "ascent": "chase_side",
+      "insertion": "orbit_limb",
+      "subsat": "subsat_side",
+      "tei_coast": "tei_high",
+      "tei_burn": "tei_high",
+      "fade": "tei_high",
+      "dock_wide": "dock_bay",
+      "dock_approach": "dock_bay",
+      "dock_closeup": "dock_close_low",
+      "soft_capture": "dock_close_low",
+      "hard_dock": "dock_close_low"
+    }
+  },
+  "jMission": {
+    "mission": 15,
+    "lrvEastM": 90,
+    "tv": "fixed",
+    "subsatellite": "222:39:29.1"
+  },
+  "source_tier": "flagship",
+  "estimatedFields": [
+    "insertion.altitudeFt",
+    "insertion.radialFts",
+    "insertion.downrangeFts",
+    "verticalRiseS",
+    "jettisonAltitudeNmi",
+    "jMission.lrvEastM",
+    "scene.verticalRiseKinematics",
+    "scene.ascentTrajectoryShape",
+    "scene.pitchOver",
+    "scene.rendezvousRanges",
+    "scene.dockingClosingSpeed",
+    "scene.jettisonDrift",
+    "scene.attitudeAfterInsertion",
+    "scene.camera",
+    "scene.simBayAzimuth",
+    "scene.roverTvFraming",
+    "scene.sceneHardware",
+    "rendezvous.tpf.burnS",
+    "rendezvous.tpf.dvFts"
+  ],
+  "provenance": [
+    {
+      "l": "Apollo 15 Mission Report (Tables 3-I and 3-V, sections 3.2 to 3.4): range zero 13:34:00 GMT 1971-07-26. The direct rendezvous: ascent, TPI 172:29:40.0 (2.6 s, 72.7 ft/s, by the LM ascent propulsion: Table 3-V, read from the page image; the text layer prints \"12.7\", an OCR slip), midcourse corrections, TPF/braking 173:11:07 (no duration or delta-V in the sources read: 25 s is an estimate). Quote: \"The direct rendezvous technique, first used on Apollo 14, was executed nominally\". Ascent 431 s and 6,059 ft/s, orbit 42.5 x 9.0 n.mi (Table 3-V, page image), no vernier adjustment; CSM 64.5 x 53.6 n.mi after the 165:11:33 plane change; docking 173:36:25.5; ascent stage jettison 179:30:01.4 (impact 181:29:37.0); subsatellite release 222:39:29.1 (orbit shaping 221:20:48.0, 66.4 ft/s into 76.0 x 54.3 n.mi: the text layer prints 16.0); TEI 223:48:45.84, 140.90 s, 3,046.8 ft/s. All times are the mission report / SP-4029 clock; entry compilation figures are in the splashdown profile",
+      "u": "https://ntrs.nasa.gov/api/citations/19720021182/downloads/19720021182.pdf"
+    },
+    {
+      "l": "NASA SP-4029 Apollo 15 timeline: GET and GMT of liftoff, docking, jettison, the SIM bay door and the subsatellite events. Apollo 15 SIM bay: door jettisoned 074:06:47.1 (MR15 Table 3-I), the bay stays on the service module to entry; the subsatellite launched from it at 222:39:29.1 into a 76.3 x 55.1 mi orbit (MR15 3.2.5)",
+      "u": "https://www.nasa.gov/wp-content/uploads/static/history/SP-4029/Apollo_15i_Timeline.htm"
+    },
+    {
+      "l": "NASA SP-4029 Apollo 15 trans-Earth phase: TEI burn duration, delta-V and flight-path angle at cutoff",
+      "u": "https://www.nasa.gov/wp-content/uploads/static/history/SP-4029/Apollo_15h_Transearth_Phase.htm"
+    }
+  ]
+}

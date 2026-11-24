@@ -110,6 +110,12 @@
         "description": "Sequence of approach burns place OSIRIS-REx into a 1.4-km circumnavigation — the closest-ever spacecraft orbit around a celestial body. Surveyed Bennu for about two and a half years, mapping the boulder-strewn surface in unprecedented detail. Discovered active particle ejections from the asteroid — a previously unknown class of behaviour."
       },
       {
+        "met_days": 1502.96,
+        "type": "descent_start",
+        "label": "Bennu TAG touchdown",
+        "description": "2020-10-20 22:08 UTC (18:08 EDT). After leaving the ~770 m orbit at 17:50 UTC and the Checkpoint and Matchpoint burns, the sampling head touches Nightingale for about 6 seconds and fires its nitrogen burst, then backs away."
+      },
+      {
         "met_days": 1503,
         "type": "edl_or_oi",
         "label": "TAG — Touch-and-Go sample collection",

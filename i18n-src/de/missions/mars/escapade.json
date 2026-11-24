@@ -1,0 +1,36 @@
+{
+  "name": "ESCAPADE",
+  "vehicle": "New Glenn (NG-2)",
+  "payload": "Zwei Raumfahrzeuge, Blue und Gold: je 209 kg trocken, 535 kg betankt",
+  "delta_v": "Nicht veröffentlicht",
+  "type": "ZWILLINGS-MARSORBITER · AKTIV",
+  "first": "Zwillingsorbiter, gestartet beim zweiten Flug der New Glenn, bei dem erstmals ein New-Glenn-Booster erfolgreich landete",
+  "description": "ESCAPADE ist das Raumfahrzeugpaar Blue und Gold, das die NASA zum Mars schickt, von Rocket Lab gebaut, in einer Mission, die unter 80 Millionen Dollar kostet. Principal Investigator ist Robert Lillis vom Space Sciences Laboratory der UC Berkeley; die Mission ist eine NASA-SIMPLEx-Mission von 2019 in der Heliophysics Division. Jedes Raumfahrzeug wiegt 209 kg trocken und 535 kg betankt. Sie starteten beim zweiten Flug der New Glenn, NG-2, vom Launch Complex 36 der Cape Canaveral Space Force Station am 13. November 2025 um 15:55 Uhr EST (20:55 UTC). Der Booster, GS1 „Never Tell Me the Odds“, landete etwa neun Minuten nach dem Start auf dem Landeplattform-Schiff Jacklyn. Blue und Gold flogen nicht direkt zum Mars: Sie kreisten etwa ein Jahr lang um den Sonne-Erde-Punkt L2 und führten dann Vorbeiflüge an der Erde mit Antrieb aus, Blue am 7. November 2026 und Gold am 9. November. Die Bahneinschwenkmanöver am Mars folgen am 7. und 9. September 2027, etwa 11 Minuten bei 450 km, in eine 60-Stunden-Einfangbahn; die Wissenschaft soll im Juni 2028 beginnen.",
+  "events": [
+    {
+      "met": 0,
+      "label": "START",
+      "note": "New Glenn NG-2 vom Launch Complex 36, 13. November 2025, 15:55 Uhr EST (20:55 UTC).",
+      "type": "nominal"
+    },
+    {
+      "met": 0.0233,
+      "label": "TRENNUNG",
+      "note": "Blue und Gold trennen sich etwa 33,5 Minuten nach dem Start von der Oberstufe.",
+      "type": "nominal"
+    },
+    {
+      "met": 359,
+      "label": "ERDVORBEIFLUG",
+      "note": "Blues Vorbeiflug mit Antrieb am 7. November 2026, nach etwa einem Jahr um Sonne-Erde-L2; Gold folgt am 9. November.",
+      "type": "nominal"
+    },
+    {
+      "met": 663,
+      "label": "EINSCHWENKEN IN DIE MARSUMLAUFBAHN",
+      "note": "Zündungen von etwa 11 Minuten bei 450 km am 7. und 9. September 2027 bringen die Zwillinge in eine 60-Stunden-Einfangbahn.",
+      "type": "nominal"
+    }
+  ],
+  "vehicle_stage": "zweite Stufe der New Glenn (GS2)"
+}

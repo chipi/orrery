@@ -85,6 +85,7 @@
   <div class="scale-compact">
     <Chip
       kind="action"
+      class="ui-chip--sub"
       onclick={onToggleSizes}
       aria-label={m.explore_sizes_toggle()}
       title={m.explore_sizes_toggle()}
@@ -110,6 +111,7 @@
   </div>
   <Chip
     kind="toggle"
+    class="ui-chip--sub"
     active={simPaused}
     onclick={() => (simPaused = !simPaused)}
     aria-label={simPaused ? m.fly_play() : m.fly_pause()}
@@ -123,6 +125,7 @@
   <div class="speed-slot">
     <Chip
       kind="action"
+      class="ui-chip--sub"
       active={!simPaused}
       aria-expanded={speedPopoverOpen}
       aria-haspopup="true"
@@ -192,6 +195,7 @@
   >
   <Chip
     kind="action"
+    class="ui-chip--sub"
     onclick={onResetToday}
     title={m.explore_time_today()}
     aria-label={m.explore_time_today()}
@@ -282,6 +286,49 @@
      footer used to fill. Desktop keeps the 50px stack. */
   :global(html[data-touch]) .time-controls {
     bottom: max(8px, env(safe-area-inset-bottom, 0px));
+  }
+  /* Touch: one bar across the screen in the flat view's bottom-bar look (SurfaceFlatPatch
+     .hud-bottom; operator 2026-11-23): the controls sit flat in it at 30 px, the date fills the
+     room between them, and each control keeps a 44 px tap area. */
+  :global(html[data-touch]) .time-controls {
+    right: max(8px, env(safe-area-inset-right, 0px));
+    gap: 2px;
+    padding: 6px 10px;
+    background: rgba(5, 5, 20, 0.88);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 6px;
+    white-space: nowrap;
+  }
+  :global(html[data-touch]) .time-controls :global(.ui-chip) {
+    padding-inline: 8px;
+    background: transparent;
+    border-color: transparent;
+    border-radius: 4px;
+    box-shadow: none;
+  }
+  :global(html[data-touch]) .time-controls :global(.ui-chip[aria-pressed='true']),
+  :global(html[data-touch]) .time-controls .speed-slot > :global(.ui-chip.is-on) {
+    background: rgba(136, 159, 231, 0.14);
+    border-color: var(--color-state);
+  }
+  :global(html[data-touch]) .time-controls .time-date {
+    flex: 1 1 auto;
+    justify-content: center;
+    min-width: 0;
+    min-height: 30px;
+    padding: 0 6px;
+    border: none;
+    background: none;
+  }
+  :global(html[data-touch]) .time-controls .earth-img {
+    inline-size: 18px;
+    block-size: 18px;
+  }
+  /* A landscape phone puts the drawer's tab row on this bar's line, right-aligned
+     (MobileDrawerGroup bottom-inline): the bar stays left-anchored to its content so it ends
+     before the tabs instead of covering them. */
+  :global(html[data-touch][data-orientation='landscape']) .time-controls {
+    right: auto;
   }
   /* The desktop offset (left 209 px, beside the REFERENCES card) does not apply on touch, where
      that card is hidden: in landscape it pushed the dock over the drawer's tab row. */

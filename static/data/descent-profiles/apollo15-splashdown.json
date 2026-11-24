@@ -1,0 +1,53 @@
+{
+  "missionId": "apollo15",
+  "siteId": "apollo15-splashdown",
+  "body": "earth",
+  "landingSite": {
+    "lat": 26.13,
+    "lon": -158.13
+  },
+  "entryState": {
+    "altitudeM": 122000,
+    "velocityMs": 11002,
+    "flightPathAngleDeg": 6.51
+  },
+  "entryMassKg": 5875,
+  "entryCdA": 17.7,
+  "liftToDragRatio": 0.29,
+  "archetype": "EARTH_CAPSULE_REENTRY",
+  "params": {
+    "chuteDeployAltM": 7300,
+    "terminalHandoffAltM": 3200,
+    "parachuteCdA": 24.2,
+    "terminalCdA": 1154
+  },
+  "source_tier": "flagship",
+  "provenance": [
+    {
+      "l": "Apollo 15 Mission Report MSC-05161 (Dec 1971): Table 3-III, entry interface 294:58:54.7 at 400,000 ft, 36,096.4 ft/s (11,002 m/s), flight-path angle -6.51 deg, 14.23 N 175.02 E; Table A-III, command module weight at entry 12,953 lb (5,875 kg; OCR of the table, the CM after separation reads 12,965); section 6.1, main parachute deployment \"beginning at approximately 10 500 feet\" (9.13 pilot report: 10 000 feet); Table 3-I drogues 295:06:46, mains 295:07:34, landing \"a safe landing was made at 295:11:53\" (20:45:53 GMT 7 August 1971) at 26 deg 7.8 min N, 158 deg 8.4 min W (computer), about 1 n.mi from the target, USS Okinawa. Quote: \"One of the three main parachutes was deflated to approximately one-fifth of its full diameter at about 6000 feet altitude. The command module descended in this configuration to landing.\" (section 14.1.9): the landing came about 32 seconds earlier than on three mains; the physics here flies three mains (one fixed terminal CdA), the deflated canopy is drawn only",
+      "u": "https://ntrs.nasa.gov/api/citations/19720021182/downloads/19720021182.pdf"
+    },
+    {
+      "l": "NASA SP-4029 Apollo chronology, \"Entry, Splashdown, and Recovery\" compilation (Apollo 7-17): Apollo 15 column: \"Lift To Drag Ratio 0.290\", \"Range (n mi) 1,184\" (1,184 n.mi = 2,193 km), \"Maximum g 6.23\", \"Duration (sec) 778.3\", velocity 36,096.4 ft/s, flight-path angle -6.51, splashdown 26.13 N 158.13 W, landing weight 11,731 lb. No Entry Postflight Analysis exists for Apollo 15 (the mission report's supplement list has none), so L/D and range are the compilation values (secondary), not a reconstruction; no first/second load-factor split is published. Model limit: with these inputs the model peaks at 7.9 g at 69 s (6.23 g flown), dips to 1.2 g, second pulse 5.6 g; drogues 470 s (471 s flown, 295:06:46), splashdown 829 s (778 s flown; the flown figure is with one main deflated, which landed it about 32 s earlier than three mains, so about 810 s on three: the model reads 2% long on that basis)",
+      "u": "https://www.nasa.gov/wp-content/uploads/static/history/SP-4029/Apollo_18-40_Entry_Splashdown_and_Recovery.htm"
+    },
+    {
+      "l": "Apollo CM entry aero (L/D 0.3), drogue and main areas: the Apollo 8 profile (MSC-PA-R-69-1), same Block II command module",
+      "u": "https://ntrs.nasa.gov/api/citations/19700033031/downloads/19700033031.pdf"
+    }
+  ],
+  "estimatedFields": [
+    "entryCdA",
+    "params.chuteDeployAltM",
+    "params.parachuteCdA",
+    "params.terminalCdA",
+    "beats.apex_cover_jettison"
+  ],
+  "beats": [
+    {
+      "type": "apex_cover_jettison",
+      "altM": 7500
+    }
+  ],
+  "targetDownrangeKm": 2193
+}

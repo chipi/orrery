@@ -1,0 +1,41 @@
+{
+  "name": "Starship Flight 5",
+  "vehicle": "Starship: Super Heavy Booster 12 + Ship 30",
+  "payload": "Nenhuma (voo de teste); a própria Ship 30, em uma trajetória suborbital",
+  "delta_v": "~7,7 km/s (suborbital: velocidade no SECO, cerca de -15 x 212 km)",
+  "type": "TESTE SUBORBITAL NÃO TRIPULADO · REALIZADO",
+  "first": "Primeiro propulsor Super Heavy capturado pelos braços da torre de lançamento",
+  "description": "O quinto voo de teste da Starship decolou de Starbase, no Texas, em 2024-10-13 às 12:25 UTC. O Booster 12 se separou a cerca de 70 km, deu meia-volta com uma queima de retorno e voou até a torre de lançamento, onde desacelerou até quase pairar e foi capturado pelos braços da torre 6 min 52 s após a decolagem, o primeiro propulsor capturado dessa forma. A Ship 30 seguiu em uma trajetória suborbital de cerca de -15 x 212 km com inclinação de 26,2° (seu ponto baixo ficava abaixo da superfície, por isso não podia permanecer em órbita), reentrou sobre o Oceano Índico de barriga para a frente, virou-se para a posição vertical, acionou a queima de pouso e amerissou perto de uma boia posicionada previamente 1 h 5 min 38 s após a decolagem. Não foi construída para ser recuperada; uma grande bola de fogo irrompeu cerca de 16 segundos depois de ela tocar a água.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANÇAMENTO",
+      "note": "Super Heavy B12 e Ship 30 decolam de Starbase em 2024-10-13 às 12:25 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.0048,
+      "label": "CAPTURA NA TORRE",
+      "note": "O Booster 12 é capturado pelos braços da torre de lançamento 6 min 52 s após a decolagem, depois de sua queima de pouso.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.0058,
+      "label": "SECO",
+      "note": "Os motores da Ship 30 desligam 8 min 25 s após a decolagem, em uma trajetória suborbital de cerca de -15 x 212 km.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.0333,
+      "label": "REENTRADA",
+      "note": "A Ship 30 entra na atmosfera de barriga para a frente sobre o Oceano Índico 48 min após a decolagem.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.0456,
+      "label": "AMERISSAGEM",
+      "note": "Giro de pouso e queima, depois amerissagem perto de uma boia 1 h 5 min 38 s após a decolagem; uma grande bola de fogo irrompe cerca de 16 s depois.",
+      "type": "nominal"
+    }
+  ]
+}

@@ -590,6 +590,9 @@
     },
     "/images/anatomy/voskhod_webp": {
       "title": "Voskhod"
+    },
+    "/images/anatomy/starship-hls_webp": {
+      "title": "Starship HLS"
     }
   },
   "lab_illustrations": {
@@ -1011,6 +1014,15 @@
     },
     "/diagrams/science/vis-viva_webp": {
       "title": "Vis Viva"
+    },
+    "/diagrams/science/earth-surface-imagery_webp": {
+      "title": "Beelden van het aardoppervlak"
+    },
+    "/diagrams/science/mars-surface-imagery_webp": {
+      "title": "Beelden van het marsoppervlak"
+    },
+    "/diagrams/science/moon-surface-imagery_webp": {
+      "title": "Beelden van het maanoppervlak"
     }
   },
   "posters": {
@@ -1100,77 +1112,12 @@
     "/images/colophon/craft-cassini_webp": {
       "title": "Cassini–Huygens",
       "what": "Antenneschotel met hoge winst, RTG-booms en de Huygens-sonde — Saturnus-orbiter.",
-      "where": "Vliegen + Verkennen"
-    },
-    "/images/colophon/craft-voyager-1_webp": {
-      "title": "Voyager",
-      "what": "Schotel van 3,7 m, magnetometerboem en RTG-truss — de Grand Tour-bus.",
-      "where": "Vliegen + Verkennen"
-    },
-    "/images/colophon/craft-galileo_webp": {
-      "title": "Galileo",
-      "what": "Tweespin-bus met de opgerichte hogevinst-paraplumantenne.",
-      "where": "Vliegen + Verkennen"
+      "where": "Vliegen · lancering + cruise"
     },
     "/images/colophon/craft-new-horizons_webp": {
       "title": "New Horizons",
       "what": "Compacte driehoekige bus met één schotel — de Pluto voorbijvlieg sonde.",
-      "where": "Vliegen + Verkennen"
-    },
-    "/images/colophon/craft-pioneer-10_webp": {
-      "title": "Pioneer",
-      "what": "Spin-gestabiliseerde schotel, RTG-booms en de gegraveerde plaquette.",
-      "where": "Vliegen + Verkennen"
-    },
-    "/images/colophon/craft-juno_webp": {
-      "title": "Juno",
-      "what": "Drie enorme zonnepanelen rond een zeshoekige bus — Jupiter polaire omloopbaan.",
-      "where": "Vliegen + Verkennen"
-    },
-    "/images/colophon/craft-bepicolombo_webp": {
-      "title": "BepiColombo",
-      "what": "Gestapelde overdrachtsmodule + Mercurius omloopbanen met ionenthrustors.",
-      "where": "Vliegen + Verkennen"
-    },
-    "/images/colophon/craft-dawn_webp": {
-      "title": "Dawn",
-      "what": "Ionenaandrijving-bus met brede zonnepanelen — Vesta + Ceres omloopbaan.",
-      "where": "Vliegen + Verkennen"
-    },
-    "/images/colophon/craft-giotto_webp": {
-      "title": "Giotto",
-      "what": "Trommelvormige spinner met een stofschild — Komeet Halley voorbijvlieg.",
-      "where": "Vliegen + Verkennen"
-    },
-    "/images/colophon/craft-hayabusa2_webp": {
-      "title": "Hayabusa2",
-      "what": "Blokachtige bus met zonnepanelen en monsterhoorn — asteroïde Ryugu.",
-      "where": "Vliegen + Verkennen"
-    },
-    "/images/colophon/craft-juice_webp": {
-      "title": "JUICE",
-      "what": "Kruis-vormige zonnepanelen op een compacte bus — Jupiter ijsmaanomloopbaan.",
-      "where": "Vliegen + Verkennen"
-    },
-    "/images/colophon/craft-rosetta_webp": {
-      "title": "Rosetta",
-      "what": "14 m zonnewingen rond een kometenjager-bus + Philae-lander.",
-      "where": "Vliegen + Verkennen"
-    },
-    "/images/colophon/craft-ulysses_webp": {
-      "title": "Ulysses",
-      "what": "RTG-aangedreven zonnepoolsonde met een enkele schotel.",
-      "where": "Vliegen + Verkennen"
-    },
-    "/images/colophon/craft-vega-1_webp": {
-      "title": "Vega",
-      "what": "Sovjetse Venus-flyby + ballonmoederschip met een stuurbare schotel.",
-      "where": "Vliegen + Verkennen"
-    },
-    "/images/colophon/craft-venera-13_webp": {
-      "title": "Venera 13",
-      "what": "Sovjetse Venus-lander — toroïdale aeromisvorming en landingsring.",
-      "where": "Vliegen + Verkennen"
+      "where": "Vliegen · lancering + cruise"
     },
     "/images/colophon/model-launcher-generic_webp": {
       "title": "Generieke lanceerder",
@@ -1547,16 +1494,6 @@
       "what": "Blue Origin's hoge lander — centrale tank op een vierpotelig frame.",
       "where": "Vliegen · cruise/benadering"
     },
-    "/images/colophon/model-cruise-hayabusa1_webp": {
-      "title": "Hayabusa-kruisfase",
-      "what": "JAXA's monsterverzamelaarvaartuig — zonnewingen, een samplerhoorn en ionaandrijvingen.",
-      "where": "Vliegen · cruise/benadering"
-    },
-    "/images/colophon/model-cruise-osiris-rex_webp": {
-      "title": "OSIRIS-REx-kruisfase",
-      "what": "Blokachtig vaartuig met V-hoekige zonnewingen en de uitgestrekte TAGSAM-samplerarm.",
-      "where": "Vliegen · cruise/benadering"
-    },
     "/images/colophon/model-cruise-near-shoemaker_webp": {
       "title": "NEAR Shoemaker",
       "what": "Orbitervaartuig met vier vaste zonnepanelen in een kruis en een vaste schotel.",
@@ -1644,123 +1581,123 @@
     },
     "/images/colophon/model-launcher-long-march-3a_webp": {
       "title": "Long March 3A",
-      "what": "Eerste en tweede trap met hete scheiding boven een open vakwerk, onder een cryogene derde trap en een 3,35 m lange neuskap, zonder zij-boosters (Chang’e 1).",
+      "what": "Kern en tweede trap met hete trapscheiding boven een open vakwerk, onder een cryogene derde trap en een kuip van 3,35 m, zonder zijbooster (Chang’e 1).",
       "where": "Vliegen · lancering/opstijging"
     },
     "/images/colophon/model-launcher-long-march-7_webp": {
       "title": "Long March 7",
-      "what": "De kerosineraket van 3,35 m van CALT voor de Tianzhou-vrachtschepen — een kern, een tweede trap en vier zij-boosters van 2,25 m.",
+      "what": "CALT’s kerosineraket van 3,35 m voor de Tianzhou-vrachtschepen — een kern, een tweede trap en vier zijboosters van 2,25 m.",
       "where": "Vliegen · lancering/opstijging"
     },
     "/images/colophon/model-launcher-delta-ii_webp": {
       "title": "Delta II",
-      "what": "Turkooizen, van Thor afgeleide eerste trap, omringd door negen witte vastebrandstofboosters, onder een 2,9 m lange neuskap met insnoering.",
+      "what": "Turkooizen eerste trap, afgeleid van de Thor, omringd door negen witte vastebrandstofboosters, onder een kuip van 2,9 m met een bootstaart.",
       "where": "Vliegen · lancering/opstijging"
     },
     "/images/colophon/model-launcher-atlas-centaur_webp": {
       "title": "Atlas-Centaur",
-      "what": "Atlas met stalen ballontank en anderhalve trap onder de witte Centaur-boventrap en neuskap (Mariner 9 en 10, Pioneer 10 en 11).",
+      "what": "De stalen-ballon-Atlas-trap van anderhalf trap onder de witte Centaur-bovenste trap en neuskuip (Mariner 9 en 10, Pioneer 10 en 11).",
       "where": "Vliegen · lancering/opstijging"
     },
     "/images/colophon/model-launcher-atlas-agena_webp": {
       "title": "Atlas-Agena",
-      "what": "Dezelfde Atlas onder een slanke Agena D-boventrap en een kleine kap (Mariner 4).",
+      "what": "Dezelfde Atlas onder een slanke Agena D-bovenste trap en een kleine kuip (Mariner 4).",
       "where": "Vliegen · lancering/opstijging"
     },
     "/images/colophon/model-launcher-titan-ii-g_webp": {
       "title": "Titan II(23)G",
-      "what": "Twee Titan-kerntrappen onder een lading-neuskap (Clementine).",
+      "what": "Twee Titan-kerntrappen onder een ladingkuip (Clementine).",
       "where": "Vliegen · lancering/opstijging"
     },
     "/images/colophon/model-launcher-titan-iiie-centaur_webp": {
       "title": "Titan IIIE-Centaur",
-      "what": "Titan-kern met twee vijfsegments vastebrandstofboosters, een tussentrap en de Centaur in zijn kap (Viking, Voyager).",
+      "what": "Titan-kern met twee vastebrandstofboosters van vijf segmenten, een tussentrap en de Centaur in haar kuip (Viking, Voyager).",
       "where": "Vliegen · lancering/opstijging"
     },
     "/images/colophon/model-launcher-titan-ivb-centaur_webp": {
       "title": "Titan IVB-Centaur",
-      "what": "Titan-kern met twee lange vastebrandstofmotoren onder een kap van 20 m die de Centaur omsluit (Cassini).",
+      "what": "Titan-kern met twee lange vastebrandstofmotoren onder een kuip van 20 m die de Centaur omsluit (Cassini).",
       "where": "Vliegen · lancering/opstijging"
     },
     "/images/colophon/model-launcher-falcon-heavy_webp": {
       "title": "Falcon Heavy",
-      "what": "Drie Falcon 9-kernen naast elkaar — zij-boosters met neuskegels, roostervinnen en poten, en een middenkern met de boventrap en de neuskap.",
+      "what": "Drie Falcon 9-kernen naast elkaar — zijboosters met neuskegels, gridvinnen en landingspoten, en een middenkern met de bovenste trap en kuip.",
       "where": "Vliegen · lancering/opstijging"
     },
     "/images/colophon/model-launcher-athena-ii_webp": {
       "title": "Athena II",
-      "what": "Volledig vaste-brandstofstapel — twee Castor 120-trappen, een derde trap en een taps toelopende neuskap (Lunar Prospector).",
+      "what": "Volledig vaste stapel — twee Castor 120-trappen, een derde trap en een taps toelopende kuip (Lunar Prospector).",
       "where": "Vliegen · lancering/opstijging"
     },
     "/images/colophon/model-launcher-delta-iv-heavy_webp": {
       "title": "Delta IV Heavy",
-      "what": "Drie gewone boosterkernen naast elkaar, de middelste met de cryogene boventrap en een neuskap van 19 m (Parker Solar Probe).",
+      "what": "Drie identieke boosterkernen naast elkaar, de middelste met de cryogene bovenste trap en een kuip van 19 m (Parker Solar Probe).",
       "where": "Vliegen · lancering/opstijging"
     },
     "/images/colophon/model-launcher-new-glenn_webp": {
       "title": "New Glenn",
-      "what": "Eén enkele stok van 7 m — een eerste trap met zeven motoren, poten en vinnen onder een ogiefvormige neuskap van 7 m (Blue Moon MK1).",
+      "what": "Een enkele stok van 7 m — een eerste trap met zeven motoren, landingspoten en strakes onder een ogiefkuip van 7 m (Blue Moon MK1).",
       "where": "Vliegen · lancering/opstijging"
     },
     "/images/colophon/model-launcher-proton-m-briz-m_webp": {
       "title": "Proton-M / Briz-M",
-      "what": "Centrale kern omringd door zes externe brandstoftanks, nog twee trappen en een Briz-M-boventrap onder een neuskap van 4,35 m.",
+      "what": "Centrale kern omringd door zes externe brandstoftanks, twee extra trappen en een Briz-M-bovenste trap onder een kuip van 4,35 m.",
       "where": "Vliegen · lancering/opstijging"
     },
     "/images/colophon/model-launcher-sls-block-1_webp": {
       "title": "SLS Block 1",
-      "what": "Oranje schuimkerntrap met vier RS-25’s, twee witte vijfsegmentsboosters, de trapadapter en boventrap onder Orion en de afbreektoren (Artemis).",
+      "what": "Oranje schuimkern op vier RS-25’s, twee witte boosters van vijf segmenten, de trapadapter en de bovenste trap onder Orion en zijn vluchtnoodtoren (Artemis).",
       "where": "Vliegen · lancering/opstijging"
     },
     "/images/colophon/model-launcher-molniya-m_webp": {
       "title": "Molniya-M",
-      "what": "Viertraps R-7 — de Blok I op zijn vakwerk, de ontsnappingstrap Blok L en de sonde onder een kap van cilinder en kegel (Luna 9, Luna 10).",
+      "what": "Viertraps R-7 — de Blok I op zijn vakwerk, de ontsnappingstrap Blok L en de sonde onder een kuip van cilinder en kegel (Luna 9, Luna 10).",
       "where": "Vliegen · lancering/opstijging"
     },
     "/images/colophon/model-launcher-soyuz-fg-fregat_webp": {
       "title": "Soyuz-FG / Fregat",
-      "what": "De R-7 en zijn boventrap, bekroond door de gedrongen Fregat en de sonde onder een bredere kap (Mars Express).",
+      "what": "De R-7 en zijn bovenste trap, bekroond door de gedrongen Fregat en de sonde onder een bredere kuip (Mars Express).",
       "where": "Vliegen · lancering/opstijging"
     },
     "/images/colophon/model-launcher-sputnik-8k71ps_webp": {
       "title": "Sputnik 8K71PS",
-      "what": "De tweetraps R-7 die Sputnik 1 lanceerde — geen derde trap, de satelliet onder de neuspunt van de kern.",
+      "what": "De tweetraps R-7 die Sputnik 1 lanceerde — geen derde trap, de satelliet onder de neuskegel van de kern.",
       "where": "Vliegen · lancering/opstijging"
     },
     "/images/colophon/model-launcher-soyuz-2_webp": {
       "title": "Soyuz-2",
-      "what": "De gemoderniseerde R-7 van 46,3 m — vier boosters rond de kern, een boventrap op een open vakwerk en een lange kap.",
+      "what": "De gemoderniseerde R-7 van 46,3 m — vier boosters rond de kern, een bovenste trap op een open vakwerk en een lange kuip.",
       "where": "Vliegen · lancering/opstijging"
     },
     "/images/colophon/model-launcher-antares_webp": {
       "title": "Antares 230+",
-      "what": "Northrop Grummans Cygnus-lanceerder — een kerosine-eerste trap van 3,9 m op twee RD-181’s onder een vaste tweede trap en kap.",
+      "what": "Northrop Grummans Cygnus-lanceerder — een kerosine-eerste trap van 3,9 m met twee RD-181’s onder een vaste tweede trap en kuip.",
       "where": "Vliegen · lancering/opstijging"
     },
     "/images/colophon/model-launcher-ariane-6_webp": {
       "title": "Ariane 6",
-      "what": "Europa’s cryogene kern van 5,4 m en Vinci-boventrap onder een kap van 20 m, met vier vastebrandstofboosters (A64).",
+      "what": "Europa’s cryogene kern van 5,4 m en de Vinci-bovenste trap onder een kuip van 20 m, met vier vastebrandstofboosters (A64).",
       "where": "Vliegen · lancering/opstijging"
     },
     "/images/colophon/model-launcher-vulcan_webp": {
       "title": "Vulcan Centaur",
-      "what": "ULA’s methaan-eerste trap van 5,4 m op twee BE-4’s, de Centaur V en een kap van 5,4 m, met GEM 63XL-vastebrandstofboosters.",
+      "what": "ULA’s methaan-eerste trap van 5,4 m met twee BE-4’s, de Centaur V en een kuip van 5,4 m, met GEM 63XL-vastebrandstofboosters.",
       "where": "Vliegen · lancering/opstijging"
     },
     "/images/colophon/model-launcher-energia_webp": {
       "title": "Energia–Buran",
-      "what": "De waterstofkern van 7,75 m met vier RD-170-boosters en de Buran-orbiter op zijn flank.",
+      "what": "De waterstofkern van 7,75 m met vier RD-170-zijboosters en de Buran-orbiter op zijn flank.",
       "where": "Vliegen · lancering/opstijging"
     },
     "/images/colophon/model-launcher-n1_webp": {
       "title": "N1",
-      "what": "De Sovjet-maanraket — vijf trappen in een kegel, dertig motoren in de eerste, onder de L3-kap en de afbreektoren.",
+      "what": "De Sovjet-maanraket — vijf trappen in een kegel, dertig motoren op de eerste, onder de L3-kuip en de vluchtnoodtoren.",
       "where": "Vliegen · lancering/opstijging"
     },
     "/images/colophon/model-showcase-soyuz-7k-ok_webp": {
       "title": "Soyuz 7K-OK",
-      "what": "De Soyuz van de eerste generatie van 7,95 m — baan-, afdaal- en servicemodule, zonnevleugels van 9,8 m en de Igla-koppelingsantennes.",
-      "where": "Vloot · schaalvergelijking"
+      "what": "De eerstegeneratie-Soyuz van 7,95 m — baan-, daal- en servicemodule, zonnevleugels van 9,8 m en de Igla-rendez-vousantennes.",
+      "where": "Vloot · schaalvergelijking + Vliegen"
     },
     "/images/colophon/model-showcase-soyuz-ms_webp": {
       "title": "Soyuz T / TM / TMA / MS (4 varianten)",
@@ -1769,350 +1706,663 @@
     },
     "/images/colophon/model-showcase-crew-dragon_webp": {
       "title": "Crew Dragon",
-      "what": "De stapel van capsule en trunk van 8,1 m met zijn ramen, SuperDraco-pods en trunk met zonnecellen.",
-      "where": "Vloot · schaalvergelijking"
+      "what": "De stapel van capsule en trunk van 8,1 m — de witte druppelvormige capsule met zijn trapeziumvormige luik, vier ramen en SuperDraco-schachten boven het donkere PICA-X-hitteschild, op een trunk met een omwikkeld zonnecelveld en twee radiatorvinnen, onder de witte, scharnierende neuskegel.",
+      "where": "Vloot · schaalvergelijking + Vliegen"
     },
     "/images/colophon/model-showcase-starliner_webp": {
       "title": "Starliner (CST-100)",
-      "what": "Boeings capsule en servicemodule van 5,03 m — de blauwe band en de motorpods.",
+      "what": "Boeings capsule en servicemodule van 5,03 m — een brede lage kegel in wit zilver met blauwe strepen en het NASA-embleem, boven een trommel met vier ‘doghouse’-stuwraketgondels.",
       "where": "Vloot · schaalvergelijking"
     },
     "/images/colophon/model-showcase-gaganyaan_webp": {
       "title": "Gaganyaan",
-      "what": "ISRO’s bemanningsmodule van 5,58 m op zijn servicemodule, met uitklapbare zonnevleugels.",
+      "what": "ISRO’s bemanningsmodule en servicemodule van 5,58 m — een stompe witte kegel bekleed met koperbruine tape, met een trapeziumvormig luik en drie patrijspoorten, boven een trommel in goudfolie met twee zonnevleugels.",
       "where": "Vloot · schaalvergelijking"
     },
     "/images/colophon/model-showcase-orion_webp": {
       "title": "Orion",
-      "what": "De Artemis-bemanningsmodule van 7,9 m met de Europese servicemodule en zijn zonnepanelen.",
+      "what": "De Artemis-stapel van 7,9 m — de witte, betegelde bemanningsmodule boven zijn donkere hitteschild, de Europese servicemodule met vier X-vormige zonnepanelen en de adapterring van het ruimtevaartuig eronder.",
       "where": "Vloot · schaalvergelijking"
     },
     "/images/colophon/model-showcase-new-shepard_webp": {
       "title": "New Shepard",
-      "what": "Het suborbitale voertuig van 19,2 m — een booster van 3,8 m onder de bemanningscapsule met zijn grote ramen.",
+      "what": "Het suborbitale voertuig van 19,2 m op het lanceerplatform — een witte booster met een zwarte motorrok, blauwe band, ringvin, drie staartvinnen en vier poten, onder de bemanningscapsule met zijn zes grote ramen.",
       "where": "Vloot · schaalvergelijking"
     },
     "/images/colophon/model-showcase-apollo-csm-block-ii_webp": {
       "title": "Apollo CSM Block I / II (2 varianten)",
-      "what": "De commando- en servicemodule van 10,6 en 11 m — de kegelvormige commandomodule op de cilindrische servicemodule met zijn straalpijp.",
-      "where": "Vloot · schaalvergelijking"
+      "what": "De commando- en servicemodule van 10,6 en 11 m — de kegel in spiegelend zilver met vijf ramen en (Block II) de koppelingssonde, boven de servicemodule van gepolijst aluminium met zijn witte radiatoren, RCS-vierlingen en de motorbel.",
+      "where": "Vloot · schaalvergelijking + Vliegen"
     },
     "/images/colophon/model-showcase-shenzhou_webp": {
       "title": "Shenzhou",
-      "what": "Chinas driedelige ruimteschip van 9,25 m in de Soyuz-lijn — baanmodule, terugkeermodule en servicemodule met zonnevleugels.",
-      "where": "Vloot · schaalvergelijking"
+      "what": "Chinas driemodulig ruimtevaartuig van 9,25 m in de Soyuz-lijn — een gewatteerde zilveren baanmodule, de klokvormige terugkeermodule op zijn donkere ablatieve basis en de witte servicemodule met kastanjebruine rok, oranje stuwraketblokken en twee vleugels.",
+      "where": "Vloot · schaalvergelijking + Vliegen"
     },
     "/images/colophon/model-showcase-space-shuttle-orbiter_webp": {
       "title": "Space Shuttle-orbiter",
-      "what": "Eén orbiter van 37,2 m, één keer getekend voor de vier zusters — Atlantis, Challenger, Discovery en Endeavour — liggend op de startbaan.",
-      "where": "Vloot · schaalvergelijking"
+      "what": "Eén orbiter van 37,2 m, eenmaal getekend voor de vier zusters — Atlantis, Challenger, Discovery en Endeavour — wit bovenste romp met zijn ladingruimdeuren, zwart betegelde buik, dubbeldeltavleugel met versterkte koolstofranden, OMS-gondels en drie hoofdmotoren, liggend op de landingsbaan.",
+      "where": "Vloot · schaalvergelijking + Vliegen"
     },
     "/images/colophon/model-showcase-columbia_webp": {
       "title": "Space Shuttle Columbia",
-      "what": "De eerste orbiter — de enige met zwarte randen en de instrumentenpod op de staartvin.",
-      "where": "Vloot · schaalvergelijking"
+      "what": "De eerste orbiter — de enige met zwarte lijsten op de vleugelbovenkanten en de instrumentgondel op zijn staartvin.",
+      "where": "Vloot · schaalvergelijking + Vliegen"
     },
     "/images/colophon/model-showcase-enterprise_webp": {
       "title": "Space Shuttle Enterprise",
-      "what": "De orbiter voor atmosferische tests — zonder hoofdmotoren, zonder OMS-pods, met gesimuleerde tegels.",
+      "what": "De atmosferische testorbiter — houtskoolkleurige gesimuleerde tegels van schuim en verf en gewone witte glasvezelvleugelranden in plaats van de gevlogen tegels en koolstof.",
       "where": "Vloot · schaalvergelijking"
     },
     "/images/colophon/model-showcase-buran_webp": {
       "title": "Buran",
-      "what": "De Sovjet-orbiter van 36,4 m — een dubbele deltavleugel van 24 m, de hoofdmotoren bleven op de Energia-kern.",
+      "what": "De Sovjet-orbiter van 36,4 m — een dubbeldeltavleugel van 24 m en twee OMS-mondstukken in de staart, zijn hoofdmotoren achtergelaten op de Energia-kern.",
       "where": "Vloot · schaalvergelijking"
     },
     "/images/colophon/model-showcase-buran-ok-gli_webp": {
       "title": "Buran OK-GLI",
-      "what": "Het testvoertuig voor atmosferische vluchten met de vorm en massa van Buran — vier AL-31-turbofans aan de staart.",
+      "what": "Het atmosferische testvoertuig met Burans vorm en massa, wit en grijs geverfd zonder tegels — zijn straalmotoren in een gondel aan weerszijden van de voet van het kielvlak.",
       "where": "Vloot · schaalvergelijking"
     },
     "/images/colophon/model-showcase-x37b_webp": {
       "title": "X-37B",
-      "what": "Het onbemande ruimtevliegtuig van 8,92 m van de U.S. Space Force met een spanwijdte van 4,55 m.",
-      "where": "Vloot · schaalvergelijking"
+      "what": "Het onbemande ruimtevliegtuig van de Amerikaanse Space Force van 8,92 m met zijn spanwijdte van 4,55 m — zwart betegelde onderkant en neus, schuine staart, gesloten ruimdeuren.",
+      "where": "Vloot · schaalvergelijking + Vliegen"
     },
     "/images/colophon/model-showcase-progress-ms_webp": {
       "title": "Progress 7K-TG / M / MS (3 varianten)",
-      "what": "Het van de Soyuz afgeleide vrachtschip van 7,23 tot 7,94 m — servicemodule, bijtanksectie en vrachtmodule, de 7K-TG zonder zonnevleugels.",
+      "what": "Het van de Soyuz afgeleide vrachtschip van 7,23 tot 7,94 m — servicemodule, tanksectie en vrachtmodule, de 7K-TG zonder zonnevleugels.",
       "where": "Vloot · schaalvergelijking"
     },
     "/images/colophon/model-showcase-cargo-dragon-2_webp": {
       "title": "Cargo Dragon 2",
-      "what": "De onbemande Dragon 2 zonder ramen op zijn trunk van 8,1 m — het ISS-vrachtschip.",
+      "what": "De raamloze onbemande Dragon 2 op zijn trunk van 8,1 m — afdekplaten waar de bemande versie ramen en SuperDraco-schachten heeft.",
       "where": "Vloot · schaalvergelijking"
     },
     "/images/colophon/model-showcase-cargo-dragon-v1_webp": {
       "title": "Dragon 1",
-      "what": "De oorspronkelijke vracht-Dragon van 6,1 m — een capsule van 3,7 m op zijn trunk met twee zonnepanelen.",
+      "what": "De oorspronkelijke vracht-Dragon van 6,1 m — een gedrongen capsule van 3,7 m breed met vier Draco-vierlingen en een witte neuskegel, op een trunk van 2,3 m met twee zonnevleugels.",
       "where": "Vloot · schaalvergelijking"
     },
     "/images/colophon/model-showcase-cygnus-enhanced_webp": {
       "title": "Cygnus Standard / Enhanced (2 varianten)",
-      "what": "Northrop Grummans stationsvrachtschip van 5,14 en 6,39 m — een onder druk staande vrachtmodule boven de servicemodule met ronde zonnepanelen.",
+      "what": "Northrop Grummans vrachtschip van 5,14 en 6,39 m — een kale aluminium vrachtmodule in gestanste panelen boven een goud-zilveren servicemodule, met platte rechthoekige vleugels op de Standard en ronde UltraFlex-panelen op de Enhanced.",
       "where": "Vloot · schaalvergelijking"
     },
     "/images/colophon/model-showcase-htv_webp": {
       "title": "HTV (Kounotori)",
-      "what": "Japans stationsvrachtschip van 9,8 m — een onder druk staande module en een open pallet op de servicesectie.",
+      "what": "Japans stationsvrachtschip van 9,8 m — een witte aandrijfmodule, een zilveren avionicasectie, een open palletruim en de witte onder druk staande vrachtdrager met donkere, op de romp gemonteerde cellen.",
       "where": "Vloot · schaalvergelijking"
     },
     "/images/colophon/model-showcase-htv-x_webp": {
       "title": "HTV-X",
-      "what": "Japans opvolgend vrachtschip van 8 m — een onder druk staande vrachtmodule boven de servicemodule met zijn zonnevleugels.",
+      "what": "Japans opvolgend vrachtschip van 8 m — een met goud omwikkelde drukmodule, een open vrachtsteundek, een zilveren servicemodule en twee lange smalle zonnepanelen.",
       "where": "Vloot · schaalvergelijking"
     },
     "/images/colophon/model-showcase-atv_webp": {
       "title": "ATV",
-      "what": "ESA’s Automated Transfer Vehicle van 10,3 m — een cilindrisch vrachtschip met vier X-vormige zonnevleugels.",
+      "what": "ESA’s Automated Transfer Vehicle van 10,3 m — een gouden achterkegel met vier motoren onder de gewatteerde witte vrachtdrager en zijn koppelingsring, met vier koperomrande vleugels in een X.",
       "where": "Vloot · schaalvergelijking"
     },
     "/images/colophon/model-showcase-tianzhou_webp": {
       "title": "Tianzhou",
-      "what": "Chinas vrachtschip van 10,6 m — een lange vrachtmodule boven de servicemodule en zijn zonnevleugels.",
+      "what": "Chinas vrachtschip van 10,6 m — een witte aandrijftrommel met oranje stuwraketblokken, een grotere grijswitte vrachtmodule, de relaisschotel en twee grote vleugels.",
       "where": "Vloot · schaalvergelijking"
     },
     "/images/colophon/model-lineup-launchers_webp": {
       "title": "Schaalvergelijking van draagraketten",
-      "what": "Elke raket met een model, van Starship tot Mercury-Redstone, naast elkaar op ware hoogte naast een persoon van 1,75 m.",
+      "what": "Elke raket met een model, van Starship tot Mercury-Redstone, naast elkaar op zijn werkelijke hoogte naast een persoon van 1,75 m.",
       "where": "Vloot · schaalvergelijking"
     },
     "/images/colophon/model-lineup-spacecraft_webp": {
       "title": "Schaalvergelijking van capsules en ruimtevaartuigen",
-      "what": "Capsules, vrachtschepen en orbiters op ware grootte — de orbiters liggend op de startbaan, de capsules staand zoals op hun raketten.",
+      "what": "Capsules, vrachtschepen en orbiters op ware grootte — de orbiters liggend op de landingsbaan, de capsules staand zoals op hun raketten.",
       "where": "Vloot · schaalvergelijking"
     },
     "/images/colophon/model-lineup-landmarks_webp": {
       "title": "Bezienswaardigheden op ware hoogte",
-      "what": "Zestien bezienswaardigheden en iconen, met de hand getekend op hun gedocumenteerde hoogte — van de Eiffeltoren en het Vrijheidsbeeld tot de David van Michelangelo, een Londense Routemaster en een Volkswagen Kever.",
+      "what": "Zestien bezienswaardigheden en iconen met de hand getekend op hun gedocumenteerde hoogte — van de Eiffeltoren en het Vrijheidsbeeld tot Michelangelo’s David, een Londense Routemaster en een VW Kever.",
       "where": "Vloot · schaalvergelijking"
     },
     "/images/colophon/model-lineup-cast_webp": {
       "title": "Tekenfilmfiguren",
-      "what": "Een gekleurde cast in vlakken op ware grootte — man, vrouw, kind, hond, kat, terracottakrijger, reuzenpanda, bruine beer, giraf en olifant — tussen de vaartuigen.",
+      "what": "Een egaal gekleurde cast op ware grootte — man, vrouw, kind, hond, kat, terracottakrijger, reuzenpanda, bruine beer, giraffe en olifant — staand tussen de ruimtevaartuigen.",
       "where": "Vloot · schaalvergelijking"
     },
     "/images/colophon/model-showcase-parker-solar-probe_webp": {
       "title": "Parker Solar Probe",
-      "what": "De zonneschamper van 3 m — een hitteschild van koolstofcomposiet van 2,3 m boven een slanke bus, met twee kleine gekoelde zonnepanelen.",
-      "where": "Vliegen + Verkennen"
+      "what": "De Zon-scheerder van 3 m — een hitteschild van 2,3 m van koolstofcomposiet op stutten boven een met goud omwikkelde bus, met twee kleine actief gekoelde zonnepanelen en een schotel van 0,6 m.",
+      "where": "Vloot · ruimtevaartuigpagina + Vliegen"
     },
     "/images/colophon/model-showcase-solar-orbiter_webp": {
       "title": "Solar Orbiter",
-      "what": "ESA’s zonneobservator van 3,1 m — een hitteschild aan de zonzijde, zes zonnepanelen met 18 m spanwijdte en een instrumentenarm van 4,4 m.",
-      "where": "Vliegen + Verkennen"
+      "what": "ESA’s Zonnewaarnemer van 3,1 m — een gelaagd zwart hitteschild met waarnemingsluiken voor een zilver omwikkeld lichaam, zes zonnepanelen met een overspanning van 18 m, een instrumentenarm van 4,4 m en een schotel van 1,5 m aan de beschaduwde achterkant.",
+      "where": "Vloot · ruimtevaartuigpagina + Vliegen"
     },
     "/images/colophon/model-showcase-messenger_webp": {
       "title": "MESSENGER",
-      "what": "De Mercuriusorbiter achter zijn zonnescherm van keramisch doek van 2,5 m, met twee zonnepanelen en een magnetometerarm van 3,6 m.",
-      "where": "Vliegen + Verkennen"
+      "what": "De Mercurius-orbiter achter zijn zonnescherm van 2,5 m van keramisch doek, op een omwikkelde kastbus met zichtbare drijfgastanks, twee draaibare zonnepanelen en een magnetometerarm van 3,6 m.",
+      "where": "Vloot · ruimtevaartuigpagina + Vliegen"
     },
     "/images/colophon/model-showcase-magellan_webp": {
       "title": "Magellan",
-      "what": "De radarkarteerder van Venus van 6,4 m — een tienzijdige bus, de Star 48B-motor en een hoge-gainantenne van 3,7 m.",
-      "where": "Vliegen + Verkennen"
+      "what": "De Venus-radarkarteerder van 6,4 m — de Star 48B-motor onder een tienzijdige bus, een met goud omwikkelde apparatuurmodule en een hoge-winstschotel van 3,7 m, met twee vierkante zonnepanelen.",
+      "where": "Vloot · ruimtevaartuigpagina + Vliegen"
     },
     "/images/colophon/model-showcase-akatsuki_webp": {
       "title": "Akatsuki",
-      "what": "JAXA’s kistvormige Venusorbiter van 1,45 m met twee zonnepanelen en een platte phased-arrayantenne.",
-      "where": "Vliegen + Verkennen"
+      "what": "JAXA’s met goud omwikkelde kastvormige Venus-orbiter van 1,45 m met een cameradek aan de naar Venus gerichte kant, een platte phased-array-antenne, witte stuwraketkelken en twee zonnepanelen van elk twee gestapelde panelen.",
+      "where": "Vloot · ruimtevaartuigpagina + Vliegen"
     },
     "/images/colophon/model-showcase-dart_webp": {
       "title": "DART",
-      "what": "Het inslagruimtevaartuig voor asteroïden van 2,6 m, met twee zonnepanelen van 8,5 m, de NEXT-C-ionenmotor en de DRACO-camera.",
-      "where": "Vliegen + Verkennen"
+      "what": "Het ruimtevaartuig van 2,6 m voor de planetoïde-inslag — twee uitrolbare zonnepanelen van 8,5 × 2,4 m, de NEXT-C-ionenmotor, de DRACO-camera, de LICIACube-cubesat in zijn uitwerper en een vlakke-plaatantenne.",
+      "where": "Vloot · ruimtevaartuigpagina + Vliegen"
     },
     "/images/colophon/model-showcase-lucy_webp": {
       "title": "Lucy",
-      "what": "De verkenner van de Trojaanse asteroïden, 16 m van punt tot punt — twee ronde zonnepanelen van ongeveer 7 m doorsnede en een hoge-gainantenne van 2 m.",
-      "where": "Vliegen + Verkennen"
+      "what": "De verkenner van de Trojaanse planetoïden, 16 m van punt tot punt — twee ronde zonnepanelen van ongeveer 7 m doorsnede, een hoge-winstschotel van 2 m en een instrumentplatform met de eindtrackingcamera’s.",
+      "where": "Vloot · ruimtevaartuigpagina + Vliegen"
     },
     "/images/colophon/model-showcase-psyche-spacecraft_webp": {
       "title": "Psyche",
-      "what": "De orbiter bij de metalen asteroïde — een vaartuig van 7,3 m met 25 m uitgeklapte zonnepanelen en instrumentenarmen van 2 m.",
-      "where": "Vliegen + Verkennen"
+      "what": "De orbiter voor de metalen planetoïde — een ruimtevaartuig van 7,3 m met twee kruisvormige zonnepanelen van vijf panelen (25 m uitgevouwen), vier Hall-motoren in een 2 × 2-cluster en instrumentarmen van 2 m.",
+      "where": "Vloot · ruimtevaartuigpagina + Vliegen"
     },
     "/images/colophon/model-showcase-europa-clipper_webp": {
       "title": "Europa Clipper",
-      "what": "De orbiter van 5 m voor de manen van Jupiter, met zonnepanelen van 30,5 m, een hoge-gainantenne van 3,1 m en een magnetometerarm van 8,5 m.",
-      "where": "Vliegen + Verkennen"
+      "what": "De Jupitermaan-orbiter van 5 m — een aandrijfmodule en stralingskluis onder een schotel van 3,1 m, 30,5 m aan zonnepanelen met de REASON-radardipolen en een magnetometerarm van 8,5 m.",
+      "where": "Vloot · ruimtevaartuigpagina + Vliegen"
     },
     "/images/colophon/model-showcase-mars-express_webp": {
       "title": "Mars Express",
-      "what": "ESA’s kistvormige bus van 1,8 m met twee zonnevleugels van 2,5 m (ongeveer 12 m van punt tot punt) en een hoge-gainschotel van 1,6 m.",
-      "where": "Vliegen + Verkennen"
+      "what": "ESA’s kastbus van 1,8 m met met goud omwikkelde hoeken en zijn instrumenten op het nadirvlak, twee vleugels van vier smalle panelen en een hoge-winstschotel van 1,6 m.",
+      "where": "Vloot · ruimtevaartuigpagina + Vliegen"
     },
     "/images/colophon/model-showcase-maven_webp": {
       "title": "MAVEN",
-      "what": "NASA’s Marsatmosfeerorbiter van 3,47 m — een kubusvormige bus van 2,3 m, twee meeuwvleugelvormige zonnepanelen met magnetometers aan de uiteinden en een schotel van 2 m.",
-      "where": "Vliegen + Verkennen"
+      "what": "NASA’s Mars-atmosfeer-orbiter van 3,47 m — een kubusvormige bus van 2,3 m, een ladingplatform op zijn arm, twee meeuwvleugelvormige zonnepanelen met magnetometers aan de uiteinden en een schotel van 2 m.",
+      "where": "Vloot · ruimtevaartuigpagina + Vliegen"
     },
     "/images/colophon/model-showcase-mangalyaan_webp": {
       "title": "Mangalyaan",
-      "what": "ISRO’s Mars Orbiter Mission — een kubus van 1,5 m in goudfolie met een zonnepaneel van drie delen en een reflector van 2,2 m.",
-      "where": "Vliegen + Verkennen"
+      "what": "ISRO’s Mars Orbiter Mission — een met goud omwikkelde kubus van 1,5 m met de koepel van de drijfgastank bovenop, een driedelig zonnepaneel op een arm en een reflector van 2,2 m aan de andere kant.",
+      "where": "Vloot · ruimtevaartuigpagina + Vliegen"
     },
     "/images/colophon/model-showcase-hope_webp": {
       "title": "Hope",
-      "what": "De orbiter van de Emirates Mars Mission van de VAE — een zeshoekige bus van 2,9 m met twee zonnevleugels en een schotel van 1,85 m.",
-      "where": "Vliegen + Verkennen"
+      "what": "De orbiter van de Emirates Mars Mission van de VAE — een bus van 2,9 m met zijn wetenschapsdek op het voorvlak, twee vleugels van drie panelen en een schotel van 1,85 m op een vakwerkbeugel.",
+      "where": "Vloot · ruimtevaartuigpagina + Vliegen"
     },
     "/images/colophon/model-showcase-mariner-9_webp": {
       "title": "Mariner 4, 9 en 10 (3 varianten)",
-      "what": "NASA’s achthoekige Mariner-familie — vier zonnepanelen met kleppen aan de uiteinden bij Mariner 4 en 9; twee panelen, een zonnescherm en een magnetometerarm van 5,8 m bij Mariner 10.",
-      "where": "Vliegen + Verkennen"
+      "what": "NASA’s achthoekige Mariner-familie — vier panelen met uiteindevleugels op Mariner 4 en 9 (Mariner 9 met een in folie gewikkelde aandrijfmodule); twee panelen, een zonnescherm en een magnetometerarm van 5,8 m op Mariner 10.",
+      "where": "Vloot · ruimtevaartuigpagina + Vliegen"
     },
     "/images/colophon/model-showcase-lro_webp": {
       "title": "Lunar Reconnaissance Orbiter",
-      "what": "NASA’s maankarteerder van 3,9 m — een kistvormige bus met één zonnepaneel van 10,7 m² en een richtbare schotel.",
-      "where": "Vliegen + Verkennen"
+      "what": "NASA’s Maankarteerder van 3,9 m — een goud-zilver omwikkelde kastbus met twee LROC-camera’s, LOLA, Diviner en Mini-RF op het nadirvlak, een enkel zonnepaneel van 10,7 m² op een arm en een richtbare schotel.",
+      "where": "Vloot · ruimtevaartuigpagina + Vliegen"
     },
     "/images/colophon/model-showcase-skylab_webp": {
       "title": "Skylab",
-      "what": "Het eerste Amerikaanse ruimtestation — de Orbital Workshop, de sluis en de koppeladapter, de steun van de zonnetelescoop met zijn windmolen van panelen, en het zonnescherm.",
-      "where": "Vliegen + Verkennen"
-    },
-    "/images/colophon/model-probe-clementine_webp": {
-      "title": "Clementine, SMART-1, Chang’e 1 en Chandrayaan-1 (4 varianten)",
-      "what": "Eén kistvormige bus in vier maten — Clementine’s bus van 1,9 m, de kubus van 1 m van SMART-1, Chang’e 1 en een in goud gehulde Chandrayaan-1 — elk met eigen zonnevleugels en schotel.",
-      "where": "Vliegen + Verkennen"
-    },
-    "/images/colophon/model-probe-lunar-prospector_webp": {
-      "title": "Lunar Prospector",
-      "what": "De trommel van 1,36 m met zonnecellen, met drie instrumentenarmen van 2,5 m.",
-      "where": "Vliegen + Verkennen"
-    },
-    "/images/colophon/model-probe-luna-10_webp": {
-      "title": "Luna 10",
-      "what": "De Sovjet-drukcilinder van 1,5 m met vier zweepantennes en een arm — het eerste ruimtevaartuig in een baan om de Maan.",
-      "where": "Vliegen + Verkennen"
+      "what": "Amerika’s eerste ruimtestation zoals gerepareerd — de Orbital Workshop met zwarte rok, zijn enkele vleugel en gouden parasol, de sluis en koppelingsadapter, en de Apollo Telescope Mount uitgezwaaid met zijn vierbladige windmolen van panelen.",
+      "where": "Vloot · ruimtevaartuigpagina + Vliegen"
     },
     "/images/colophon/model-probe-sputnik-1_webp": {
       "title": "Sputnik 1",
-      "what": "De gepolijste bol van 58 cm met de naad tussen de halve bollen, 36 bouten en vier naar achteren gezwaaide zweepantennes van 2,4 en 2,9 m.",
-      "where": "Vliegen + Verkennen"
+      "what": "De gepolijste bol van 58 cm met zijn halfrondse naad, 36 bouten en vier naar achteren gezwaaide zweepantennes van 2,4 en 2,9 m.",
+      "where": "Vliegen"
     },
     "/images/colophon/model-pad-apollo-lut_webp": {
       "title": "Lanceerplatform: Apollo, LC-39",
-      "what": "Het Saturnus V-platform: de 380 ft hoge navelstrengtoren met zwenkarmen die bij de lancering wegvallen, en de vlammengoot. Maten uit NASA-cijfers op Wikipedia.",
+      "what": "Het Saturn V-platform: de 380 ft hoge Launch Umbilical Tower met zwenkarmen die bij het opstijgen wegvallen, en de vlammenkoker. Maten volgens NASA-cijfers op Wikipedia.",
       "where": "Vliegen · lanceerplatform"
     },
     "/images/colophon/model-pad-shuttle_webp": {
-      "title": "Lanceerplatform: Spaceshuttle, LC-39",
-      "what": "Het shuttleplatform: de vaste servicestructuur (350 ft met mast), de teruggedraaide draaibare servicestructuur, de 290 ft hoge watertoren. Hoofdhoogten van Wikipedia; de rest bij benadering.",
+      "title": "Lanceerplatform: Space Shuttle, LC-39",
+      "what": "Het Shuttle-platform: de Fixed Service Structure (350 ft met zijn mast), de teruggezwaaide Rotating Service Structure, de watertoren van 290 ft. Hoofdhoogtes van Wikipedia; de rest bij benadering.",
       "where": "Vliegen · lanceerplatform"
     },
     "/images/colophon/model-pad-sls_webp": {
       "title": "Lanceerplatform: SLS, LC-39B",
-      "what": "Het Artemis-platform: de toren van de Mobile Launcher naast de raket en drie hoge bliksemtorens. Afmetingen bij benadering.",
+      "what": "Het Artemis-platform: de toren van de Mobile Launcher naast de raket (ongeveer 108 m; NASA geeft 345 tot 355 ft) en drie bliksemtorens van bijna 600 ft.",
       "where": "Vliegen · lanceerplatform"
     },
     "/images/colophon/model-pad-soyuz_webp": {
       "title": "Lanceerplatform: Sojoez, Bajkonoer en Plesetsk",
-      "what": "Het platform van de R-7-familie: vier steunarmen die bij de lancering naar buiten vallen, twee teruggetrokken servicecabines, bliksemmasten, de vlammenput. Afmetingen bij benadering.",
+      "what": "Het platform van de R-7-familie: vier steunarmen die bij het opstijgen naar buiten vallen, twee teruggetrokken servicecabines, bliksemmasten, de vlammenput. Maten bij benadering.",
       "where": "Vliegen · lanceerplatform"
     },
     "/images/colophon/model-pad-proton_webp": {
       "title": "Lanceerplatform: Proton, Bajkonoer",
-      "what": "Een vaste servicetoren met zwenkarmen die bij de lancering intrekken, naast de vlammengoot. Afmetingen bij benadering.",
+      "what": "De raket alleen boven zijn vlammenput: de servicetoren van 60 m wordt vóór de lancering ongeveer 340 m teruggerold (RussianSpaceWeb, Proton-lanceercomplex). Bliksemmasten bij benadering.",
       "where": "Vliegen · lanceerplatform"
     },
     "/images/colophon/model-pad-f9-39a_webp": {
       "title": "Lanceerplatform: Falcon, LC-39A",
-      "what": "SpaceX bij 39A: de transporter-erector die 1,5 graad achterover leunt vóór de lancering en 45 bij de lancering, de oude toren verhoogd tot boven 350 ft. Cijfers van Wikipedia.",
+      "what": "SpaceX op 39A: de transporter-erector die 1,5 graad achteroverleunt vóór het opstijgen en 45 graden bij het opstijgen, de oude toren verlengd tot boven 350 ft. Cijfers van Wikipedia.",
       "where": "Vliegen · lanceerplatform"
     },
     "/images/colophon/model-pad-f9-cat_webp": {
       "title": "Lanceerplatform: Falcon, SLC-40 met bemanningstoren",
-      "what": "SpaceX bij SLC-40 sinds de bemanningstoegangstoren van 2023, met de transporter-erector die bij de lancering wegkantelt. Hoogte van de toren bij benadering.",
+      "what": "SpaceX op SLC-40 sinds de bemanningstoegangstoren van 2023, met de transporter-erector die bij het opstijgen wegkantelt. De bemanningstoren is ongeveer 300 ft (91 m; FAA) hoog.",
       "where": "Vliegen · lanceerplatform"
     },
     "/images/colophon/model-pad-f9-te_webp": {
       "title": "Lanceerplatform: Falcon, SLC-40 en SLC-4E",
-      "what": "Een kaal Falcon-platform: de transporter-erector die bij de lancering wegkantelt, en bliksemmasten. Afmetingen bij benadering.",
+      "what": "Een kaal Falcon-platform: de transporter-erector die bij het opstijgen wegkantelt, en bliksemmasten. Maten bij benadering.",
       "where": "Vliegen · lanceerplatform"
     },
     "/images/colophon/model-pad-starbase_webp": {
       "title": "Lanceerplatform: Starship, Starbase",
-      "what": "De lanceertoren van Starbase met geopende vangarmen. Hoogte van de toren bij benadering.",
+      "what": "De Starbase-lanceertoren met zijn vangarmen open gehouden. Torenhoogte bij benadering.",
       "where": "Vliegen · lanceerplatform"
     },
     "/images/colophon/model-pad-atlas-v_webp": {
       "title": "Lanceerplatform: Atlas V, SLC-41",
-      "what": "Het ULA-platform: mobiel lanceerplatform, navelstrengtoren en vier bliksemtorens; het Vertical Integration Facility staat los van het platform en ontbreekt. Afmetingen bij benadering.",
+      "what": "Het ULA-platform: mobiel lanceerplatform, naveltorens en vier bliksemtorens; de Vertical Integration Facility staat los van het platform en is weggelaten. Maten bij benadering.",
       "where": "Vliegen · lanceerplatform"
     },
     "/images/colophon/model-pad-cape-classic_webp": {
       "title": "Lanceerplatform: Lanceerplatform met servicetoren op Cape Canaveral",
-      "what": "De Atlas-, Delta-, Titan- en Saturnus IB-platforms op Cape Canaveral: een navelstrengtoren met zwenkarmen naast het voertuig. Afmetingen bij benadering.",
+      "what": "De platforms voor Atlas, Delta, Titan en Saturn IB op Cape Canaveral: een navelstrengtoren met zwenkarmen naast het voertuig. Maten bij benadering.",
       "where": "Vliegen · lanceerplatform"
     },
     "/images/colophon/model-pad-kourou-a5_webp": {
       "title": "Lanceerplatform: Ariane 4 en 5, Kourou",
-      "what": "De platforms ELA-2 en ELA-3: een navelstrengmast naast de draagraket en vier hoge bliksemtorens. Afmetingen bij benadering.",
+      "what": "De platforms ELA-2 en ELA-3: een navelstrengmast naast de lanceerder en vier hoge bliksemtorens. Maten bij benadering.",
       "where": "Vliegen · lanceerplatform"
     },
     "/images/colophon/model-pad-kourou-a6_webp": {
       "title": "Lanceerplatform: Ariane 6, Kourou",
-      "what": "Het platform ELA-4: de navelstrengmast, twee bliksemtorens en het mobiele portaal ver teruggereden. Afmetingen bij benadering.",
+      "what": "Het ELA-4-platform: de navelstrengmast, twee bliksemtorens en de mobiele portaalkraan ver teruggerold. Maten bij benadering.",
       "where": "Vliegen · lanceerplatform"
     },
     "/images/colophon/model-pad-chinese-fst_webp": {
       "title": "Lanceerplatform: Chinese servicetoren",
-      "what": "De vaste servicetoren van Jiuquan, Xichang, Wenchang en Taiyuan, waarvan de werkplatforms bij de lancering wegklappen. Afmetingen bij benadering.",
+      "what": "De vaste servicetoren van Jiuquan, Xichang, Wenchang en Taiyuan, waarvan de werkplatforms bij het opstijgen wegklappen. De toren voor bemande lanceringen van Jiuquan is 89,5 m plus een bliksemafleider van 16 m (CMSE) en wordt getekend voor elke Jiuquan-lancering; de andere zijn bij benadering.",
       "where": "Vliegen · lanceerplatform"
     },
     "/images/colophon/model-pad-tanegashima_webp": {
       "title": "Lanceerplatform: Tanegashima",
-      "what": "Het Yoshinobu-platform: de navelstrengtoren van de H-II-raket en een bliksemtoren. Afmetingen bij benadering.",
+      "what": "Het Yoshinobu-platform: de mobiele lanceerder van de H-II, 65,5 m hoog, en een bliksemtoren van 74,5 m (JAXA).",
       "where": "Vliegen · lanceerplatform"
     },
     "/images/colophon/model-pad-sriharikota_webp": {
       "title": "Lanceerplatform: Sriharikota",
-      "what": "Het ISRO-platform: de navelstrengtoren naast het voertuig en de mobiele servicetoren ver teruggereden. Afmetingen bij benadering.",
+      "what": "Het ISRO-platform: de navelstrengtoren naast het voertuig en de mobiele servicetoren ver teruggerold. Maten bij benadering.",
       "where": "Vliegen · lanceerplatform"
-    }
-  },
-  "capsules": {
-    "/images/colophon/model-capsule-mercury-capsule_webp": {
+    },
+    "/images/colophon/model-showcase-vostok_webp": {
+      "title": "Vostok en Voskhod (2 varianten)",
+      "what": "De bol van 2,3 m op zijn instrumentmodule, 4,55 m hoog (Voskhod 5 m) — een gordel van zestien olijfgroene gasflessen met zilveren banden, luiken en patrijspoorten, antennelussen bovenop en bij de Voskhod het remraketpakket.",
+      "where": "Vloot · schaalvergelijking + Vliegen"
+    },
+    "/images/colophon/model-showcase-mercury-capsule_webp": {
       "title": "Mercury-capsule",
-      "what": "Stomp ablatief hittesch ild, geschaalde kegel en de bergings- en antennasectie (Freedom 7 … Faith 7).",
-      "where": "Aardse hertoetredingsfase"
+      "what": "De eenzitscapsule van 3,3 m op zijn remraketpakket — het trapeziumvormige raam en het zijluik op de kegel, drie remraketten vastgehouden door banden.",
+      "where": "Vloot · schaalvergelijking + Vliegen"
     },
-    "/images/colophon/model-capsule-gemini-capsule_webp": {
-      "title": "Gemini-capsule",
-      "what": "Twee-persoonscapsule op schaal van Mercury met de rendezvous-radar-neus en adaptermodule.",
-      "where": "Herkerintreding in aardbaan"
+    "/images/colophon/model-showcase-gemini_webp": {
+      "title": "Gemini",
+      "what": "Het tweezitsruimtevaartuig van 5,74 m — de zwarte, geschubde terugkeerkegel met zijn twee luiken en ramen boven de RCS-, rendez-vous- en herstelsecties en de remadapter.",
+      "where": "Vloot · schaalvergelijking + Vliegen"
     },
-    "/images/colophon/model-capsule-vostok-sphere_webp": {
-      "title": "Vostok",
-      "what": "De bolvormige Sharik-afdaalmodule — antennebanden en uitrustingshalsband; de kosmonaut catapulteerde en daalde apart per parachute af.",
-      "where": "Herkerintreding in aardbaan"
+    "/images/colophon/model-showcase-mengzhou_webp": {
+      "title": "Mengzhou",
+      "what": "Chinas bemande ruimtevaartuig van 8,8 m voor de Maan — een grijszilveren kegelvormige bemanningsmodule met een rode band boven een witte servicemodule met gouden stuwraketframes, twee lange celvleugels en vier motorbellen.",
+      "where": "Vloot · schaalvergelijking"
     },
-    "/images/colophon/model-capsule-voskhod-sphere_webp": {
-      "title": "Voskhod",
-      "what": "De zelfde Sharik-bol, nu met het gasesvormige retroremspaket voor zachte landing op een strut-vakwerk — de bemanning reed ermee naar de grond.",
-      "where": "Herkerintreding in aardbaan"
+    "/images/colophon/model-showcase-apollo-lm_webp": {
+      "title": "Apollo-maanlander (ware grootte)",
+      "what": "De Lunar Module geland — de achthoekige daaltrap in gekreukelde goud- en amberfolie op vier met goud omwikkelde poten, de gefacetteerde stijgtrap met twee driehoekige ramen, RCS-vierlingen, rendez-vousradar en S-bandschotel.",
+      "where": "Vloot · schaalvergelijking + Vliegen · daling"
     },
-    "/images/colophon/model-capsule-apollo-cm_webp": {
-      "title": "Apollo-commandomodule",
-      "what": "De klassieke steil afgestompte kegel met de voorwaartse docking-tunnel (Apollo 7/9, Skylab, ASTP).",
-      "where": "Herkerintreding in aardbaan"
+    "/images/colophon/model-probe-nova-c_webp": {
+      "title": "Nova-C (IM-1 Odysseus)",
+      "what": "Intuitive Machines’ maanlander van 4,3 m — een zeshoekig lichaam van 1,57 m, zes poten, de methaanmotor eronder en drie zonnepanelen. Hoogte en breedte van Wikipedia; de pootspreiding en het dek zijn schematisch.",
+      "where": "Vliegen"
     },
-    "/images/colophon/model-capsule-soyuz-sa_webp": {
-      "title": "Soyuz-afdaalmodule",
-      "what": "De \"koplampenklok\" — bolvormige hitteschild aan de basis met een conische bemande bovenkant.",
-      "where": "Herkerintreding in aardbaan"
+    "/images/colophon/model-showcase-chandrayaan1_webp": {
+      "title": "Chandrayaan-1",
+      "what": "ISRO’s eerste Maan-orbiter — een kastbus met witte radiatorvlakken en met goud omrande instrumentopeningen, een schotel van 0,7 m op een gouden arm en één zonnepaneel op een juk met twee stangen.",
+      "where": "Vloot · ruimtevaartuigpagina + Vliegen"
     },
-    "/images/colophon/model-capsule-dragon-capsule_webp": {
-      "title": "Crew Dragon",
-      "what": "Slanke conische romp met de SuperDraco-podiums en de PICA-X-hitteschild (Inspiration4, Polaris Dawn).",
-      "where": "Herkerintreding in aardbaan"
+    "/images/colophon/model-showcase-chandrayaan2_webp": {
+      "title": "Chandrayaan-2-orbiter",
+      "what": "De orbiter die Vikram droeg — een bus met een gouden trommel die oprijst uit het bovendek waar de lander zat, witte beplakte vlakken over de radiatoren en één zonnevleugel van twee panelen.",
+      "where": "Vloot · ruimtevaartuigpagina + Vliegen"
     },
-    "/images/colophon/model-capsule-shenzhou-reentry_webp": {
-      "title": "Shenzhou-herkeintredingsmodule",
-      "what": "Een brede klok naar Soyuz-lijn — eigen lichter-zilveren romp met een grijze uitrustingsbanden (Shenzhou-1 en daarna).",
-      "where": "Herkerintreding in aardbaan"
+    "/images/colophon/model-showcase-change1_webp": {
+      "title": "Chang’e 1 en 2 (2 varianten)",
+      "what": "Chinas maan-orbiters — een motorbel onder de bus, zilveren inzetpanelen, twee witte relaisschotels, een richtbare schotel van 0,8 m op een arm en twee driedelige vleugels op gouden jukken.",
+      "where": "Vloot · ruimtevaartuigpagina + Vliegen"
+    },
+    "/images/colophon/model-showcase-clementine_webp": {
+      "title": "Clementine",
+      "what": "De prismavormige maankarteerder — een sensorvlak met camera- en lidaropeningen, 12 standregelaars, een schotel van 1,07 m die omlaag opent en twee vleugels van twee panelen.",
+      "where": "Vloot · ruimtevaartuigpagina + Vliegen"
+    },
+    "/images/colophon/model-showcase-kaguya_webp": {
+      "title": "Kaguya (SELENE)",
+      "what": "JAXA’s maan-orbiter van 4,8 m — de relais- en VLBI-subsatellieten op het voorvlak, een hoge-winstschotel op een driepoot en mast en een zonnepaddle van drie blauwe panelen op een gouden vakwerk.",
+      "where": "Vloot · ruimtevaartuigpagina + Vliegen"
+    },
+    "/images/colophon/model-showcase-luna10_webp": {
+      "title": "Luna 10",
+      "what": "De Sovjet-orbiter van 1,5 m — de remmotormodule in een witte vakwerkrok, crèmekleurige drijfgastanks en een gepolijste instrumententrommel onder druk met vier zweepantennes en twee paddenstoelsensoren.",
+      "where": "Vloot · ruimtevaartuigpagina + Vliegen"
+    },
+    "/images/colophon/model-showcase-lunar-prospector_webp": {
+      "title": "Lunar Prospector",
+      "what": "De trommel van 1,36 m bedekt met zonnecellen onder een witte neuskegel, met drie instrumentarmen van 2,5 m.",
+      "where": "Vloot · ruimtevaartuigpagina + Vliegen"
+    },
+    "/images/colophon/model-showcase-smart-1_webp": {
+      "title": "SMART-1",
+      "what": "ESA’s ionenaandrijvingsorbiter van 1 m — de PPS-1350-motor op een cardanarm, een instrumentring met zijn camera en spectrometers, een schotel van 0,3 m en twee vleugels van drie panelen.",
+      "where": "Vloot · ruimtevaartuigpagina + Vliegen"
+    },
+    "/images/colophon/model-showcase-lunar-orbiter-1_webp": {
+      "title": "Lunar Orbiter 1–5 (5 varianten)",
+      "what": "NASA’s vijf cameraorbiters — een heldere thermische mantel rond de camera met zijn lenzen van 80 mm en 610 mm, vier drijfgastanks op vakwerkpoten, vier zonnepanelen en een schotel van 1 m op zijn arm.",
+      "where": "Vloot · ruimtevaartuigpagina"
+    },
+    "/images/colophon/model-showcase-luna-9_webp": {
+      "title": "Luna 9 (ware grootte)",
+      "what": "De gelande capsule van 58 cm — de verzegelde instrumentenhalfbol die overeind bleef tussen vier opengeklapte bloemblaadjes, met de tv-camerakop en vier staafantennes bovenop.",
+      "where": "Vloot · ruimtevaartuigpagina + Vliegen · daling"
+    },
+    "/images/colophon/model-showcase-luna-16_webp": {
+      "title": "Luna 16 en 24 (2 varianten)",
+      "what": "De monsterterugkeerlander — een met goud omwikkelde romp tussen twee torustanks met vier drukbollen op vier poten, de boorinstallatie en de stijgtrap van 2 m met een bol bovenop.",
+      "where": "Vloot · ruimtevaartuigpagina + Vliegen · daling"
+    },
+    "/images/colophon/model-showcase-lunokhod-1_webp": {
+      "title": "Lunokhod 1 en 2 (2 varianten)",
+      "what": "De Sovjet-rover — een ronde kuip op acht draadgaaswielen onder een open koepeldeksel, met de geribde polonium-210-warmtebron aan de achterkant, de Franse hoekreflector en vier zweepantennes.",
+      "where": "Vloot · ruimtevaartuigpagina + Vliegen · daling"
+    },
+    "/images/colophon/model-showcase-change-3_webp": {
+      "title": "Chang’e 3 en 4 (2 varianten)",
+      "what": "De Chinese lander — een kastvormig gouden lichaam op vier poten met de roverhellingen, gekantelde zonnevleugels en een cameramast met de richtbare schotel.",
+      "where": "Vloot · ruimtevaartuigpagina + Vliegen · daling"
+    },
+    "/images/colophon/model-showcase-change-5_webp": {
+      "title": "Chang’e 5 en 6 (2 varianten)",
+      "what": "De monsterterugkeerstapel — een gouden achthoekige stijgtrap op de lander, met de boortoren, de ingeklapte monsternamearm en de monsterhouder ernaast.",
+      "where": "Vloot · ruimtevaartuigpagina + Vliegen · daling"
+    },
+    "/images/colophon/model-showcase-vikram-cy3_webp": {
+      "title": "Vikram (Chandrayaan-2 en -3, 2 varianten)",
+      "what": "ISRO’s lander in zijn Chandrayaan-3-configuratie — vier motoren en zonnepanelen aan drie zijden en bovenop, met de helling omlaag en de Pragyan-rover halverwege.",
+      "where": "Vloot · ruimtevaartuigpagina + Vliegen · daling"
+    },
+    "/images/colophon/model-showcase-slim_webp": {
+      "title": "SLIM (ware grootte)",
+      "what": "JAXA’s Moon Sniper — een prisma van 1,5 × 1,5 × 2 m in verfrommelde goudfolie met een gouden koepel aan het motoreinde, één strook zonnecellen langs een zijde en vijf ronde kreukelkussens op stutten.",
+      "where": "Vloot · ruimtevaartuigpagina + Vliegen · daling"
+    },
+    "/images/colophon/model-showcase-beresheet_webp": {
+      "title": "Beresheet (ware grootte)",
+      "what": "SpaceIL’s lander, 2 m breed en 1,5 m hoog — een zwart dek met gouden rand boven een zilveren buisframekuip met vier koperen tanks, vier lange poten en gekantelde blauwe zonneplaten.",
+      "where": "Vloot · ruimtevaartuigpagina + Vliegen · daling"
+    },
+    "/images/colophon/model-showcase-blue-moon-mk1_webp": {
+      "title": "Blue Moon MK1 (ware grootte)",
+      "what": "Blue Origins lander van 8,05 m — een romp van goud- en amberfolie op een lichte vakwerkbasis met de BE-7, laddervakwerkpoten, twee hoge zonnecelstroken en een open achthoekige kooi bovenop.",
+      "where": "Vloot · ruimtevaartuigpagina + Vliegen · daling"
+    },
+    "/images/colophon/model-showcase-pragyan_webp": {
+      "title": "Pragyan",
+      "what": "De zeswielige ISRO-rover die de helling van Vikram afrolt.",
+      "where": "Vloot · ruimtevaartuigpagina + Vliegen · daling"
+    },
+    "/images/colophon/model-showcase-yutu_webp": {
+      "title": "Yutu en Yutu-2 (2 varianten)",
+      "what": "De Chinese rover — aan elke kant een rocker-bogie, een met goud omwikkelde warmtebox onder een gekanteld zonnepaneel, een cameramast, de onder de neus opgevouwen arm en een richtbare schotel aan de achterkant.",
+      "where": "Vloot · ruimtevaartuigpagina"
+    },
+    "/images/colophon/model-showcase-viking-1_webp": {
+      "title": "Viking-landers (3 varianten)",
+      "what": "De driepotige NASA-lander — een zeszijdig dek, afwisselend 1,09 en 0,56 m breed, gouden eindafdalingsgondels met 18 mondstukken, de monsternamearm en camera’s aan de lange voorzijde.",
+      "where": "Vloot · ruimtevaartuigpagina + Vliegen · daling"
+    },
+    "/images/colophon/model-showcase-mars-3_webp": {
+      "title": "Mars 2-, 3- en 6-landers (3 varianten)",
+      "what": "De witte Sovjet-bol op vier opengeklapte bloemblaadjes — een antennekroon van vier staven, twee stereocameraoren en de PrOP-M-rover op ski’s die ernaast is vastgemaakt.",
+      "where": "Vloot · ruimtevaartuigpagina + Vliegen · daling"
+    },
+    "/images/colophon/model-showcase-phoenix_webp": {
+      "title": "Phoenix en Mars Polar Lander (2 varianten)",
+      "what": "De zonnelander op zijn dek — TEGA’s twee ovens, MECA’s natchemiecellen, de robotarm met zijn schep, de stereocamera op een vakwerktoren en de weermast met zijn lidar.",
+      "where": "Vloot · ruimtevaartuigpagina + Vliegen · daling"
+    },
+    "/images/colophon/model-showcase-insight_webp": {
+      "title": "InSight (ware grootte)",
+      "what": "De geofysica-lander — de arm van 1,8 m uitgestrekt boven de grond, SEIS onder zijn zilveren wind- en hitteschild en de HP3-mol die ernaast is uitgezet.",
+      "where": "Vloot · ruimtevaartuigpagina + Vliegen · daling"
+    },
+    "/images/colophon/model-showcase-schiaparelli_webp": {
+      "title": "Schiaparelli (ware grootte)",
+      "what": "ESA’s intredetestmodel op de grond — een platte donkere honingraatkreukelschijf omringd door een zilvergouden band, drie drijfgastanks op stutten en het DREAMS-platform met zijn gouden UHF-spoel.",
+      "where": "Vloot · ruimtevaartuigpagina + Vliegen · daling"
+    },
+    "/images/colophon/model-showcase-beagle2_webp": {
+      "title": "Beagle 2 (ware grootte)",
+      "what": "De opengeklapte schelplander — een gouden dekselschotel omringd door vier donkere zonneblaadjes, de gouden komvoet met de arm die eruit omhoog komt en de PAW-trommel met instrumenten.",
+      "where": "Vloot · ruimtevaartuigpagina + Vliegen · daling"
+    },
+    "/images/colophon/model-showcase-curiosity_webp": {
+      "title": "Curiosity (ware grootte)",
+      "what": "De MSL-rover — zes wielen op een rocker-bogie, de mast met de ChemCam-kop en het Mastcam-paar, de geribde MMRTG tussen twee witte warmtewisselaars en de opgeborgen arm over de voorkant.",
+      "where": "Vloot · ruimtevaartuigpagina + Vliegen · daling"
+    },
+    "/images/colophon/model-showcase-spirit_webp": {
+      "title": "Spirit en Opportunity (2 varianten)",
+      "what": "De Mars Exploration Rover — een gouden warmtebox onder een plat blauwzwart zonnedek met vier vleugelpanelen, de Pancam-mast met zijn camerabalk, een ronde gouden schotel op een steel en zes kleine wielen.",
+      "where": "Vloot · ruimtevaartuigpagina + Vliegen · daling"
+    },
+    "/images/colophon/model-showcase-perseverance_webp": {
+      "title": "Perseverance",
+      "what": "Curiosity’s indeling met wielen met rechte noppen — de Mastcam-Z- en SuperCam-kop, de grote kernboorrevolver, het opslagruim onder de voorkant en Ingenuity onder de buik.",
+      "where": "Vloot · ruimtevaartuigpagina + Vliegen · daling"
+    },
+    "/images/colophon/model-showcase-zhurong_webp": {
+      "title": "Zhurong",
+      "what": "Chinas rover — een breed zilveren dek met vier vlindervormige zonnevleugels, een hoge mast met zijn camerabox, twee kleine schotels en geribde wielen op hoge poten.",
+      "where": "Vloot · ruimtevaartuigpagina + Vliegen · daling"
+    },
+    "/images/colophon/model-showcase-sojourner_webp": {
+      "title": "Sojourner",
+      "what": "De eerste Mars-rover — aluminium wielen met roestvrijstalen noppen op een rocker-bogie, een goudbruine warmtebox onder een donker zonnepaneel, het stereocamerapaar en de APXS-trommel.",
+      "where": "Vloot · ruimtevaartuigpagina"
+    },
+    "/images/colophon/model-showcase-exomars-rosalind-franklin_webp": {
+      "title": "ExoMars Rosalind Franklin",
+      "what": "ESA’s rover met loopchassis — een wiel op elke poot, twee brede zonnevleugels, de gouden PanCam-balk op zijn mast en de boorbox aan de voorkant.",
+      "where": "Vloot · ruimtevaartuigpagina"
+    },
+    "/images/colophon/model-showcase-lrv-apollo_webp": {
+      "title": "Apollo-maanwagen",
+      "what": "Het open aluminium frame op draadgaaswielen met titanium chevrons onder lichtbruine spatborden — twee buiszitjes, de T-handgreep en console, de parasolschotel en het gereedschapspallet aan de achterkant.",
+      "where": "Vloot · ruimtevaartuigpagina"
+    },
+    "/images/colophon/model-showcase-mro_webp": {
+      "title": "Mars Reconnaissance Orbiter",
+      "what": "NASA’s Mars-karteerder — twee zonnepanelen van 5,35 × 2,53 m, de hoge-winstschotel van 3 m, de HiRISE-cilinder van 1,6 m en de SHARAD-dipool van 10 m. Maten van schotel, HiRISE en SHARAD van NASA; de maat van de panelen van Wikipedia; de bus is schematisch.",
+      "where": "Vloot · ruimtevaartuigpagina + Vliegen"
+    },
+    "/images/colophon/model-showcase-mariner-2_webp": {
+      "title": "Mariner 2",
+      "what": "NASA’s Venus-flyby van 3,66 m — de zeshoekige bus van 1,04 m, twee zonnepanelen (één met zijn zonnedrukverlenging, 5,05 m breed), de schotel op zijn arm en de rondstraler op de piramidemast. Maten van NASA NSSDCA; de schotel en mast zijn schematisch.",
+      "where": "Vloot · ruimtevaartuigpagina + Vliegen"
+    },
+    "/images/colophon/model-showcase-bepicolombo_webp": {
+      "title": "BepiColombo (ware grootte)",
+      "what": "De gestapelde cruiseconfiguratie van 6,4 m — de Mercury Transfer Module met vier ionenmotoren en twee zwart-blauwe vleugels van vier panelen, met de Mercurius-orbiter en Mio in zijn zonneschermcilinder.",
+      "where": "Vloot · ruimtevaartuigpagina + Vliegen"
+    },
+    "/images/colophon/model-showcase-exomars-tgo_webp": {
+      "title": "ExoMars Trace Gas Orbiter",
+      "what": "ESA–Roscosmos-orbiter — de motorbel en nadirhardware, NOMAD- en ACS-spectrometers op het van de Aarde afgekeerde vlak, twee zonnepanelen van twee panelen en een schotel van 2,2 m op een arm.",
+      "where": "Vloot · ruimtevaartuigpagina"
+    },
+    "/images/colophon/model-showcase-mars-odyssey_webp": {
+      "title": "Mars Odyssey",
+      "what": "NASA’s orbiter — opgevouwen dekenkleppen op de hoeken, THEMIS en de camera’s aan de voorkant, een vakwerkarm van 6 m met de gammastralenspectrometer, één driedelig zonnepaneel en een schotel van 1,3 m.",
+      "where": "Vloot · ruimtevaartuigpagina"
+    },
+    "/images/colophon/model-showcase-mars2-orbiter_webp": {
+      "title": "Mars 2- en 3-orbiters (2 varianten)",
+      "what": "De Sovjet-M-71-bus — een gebande tankcilinder met zijn bollen, een kraag met de zwarte aeroshellkegel en de landercapsule bovenop, een ondiepe schotel van 2,5 m en twee grote rechthoekige zonnepanelen.",
+      "where": "Vloot · ruimtevaartuigpagina"
+    },
+    "/images/colophon/model-showcase-phobos-2_webp": {
+      "title": "Phobos 2",
+      "what": "De Sovjet-sonde — vier witte drijfgasbollen rond de motor, een torusvormige instrumentengordel, een centrale kern met apparatuurboxen en twee horizontale zonnepanelen op uithouders.",
+      "where": "Vloot · ruimtevaartuigpagina"
+    },
+    "/images/colophon/model-showcase-tianwen-1_webp": {
+      "title": "Tianwen-1",
+      "what": "Chinas Mars-orbiter met de intredecapsule bovenop — twee driedelige zonnepanelen, een medium-winstschotel van ongeveer 2,5 m en slanke antennestaven.",
+      "where": "Vloot · ruimtevaartuigpagina"
+    },
+    "/images/colophon/model-showcase-viking1-orbiter_webp": {
+      "title": "Viking-orbiter",
+      "what": "De orbiter met de landercapsule onder zijn witte koepelschaal — een achthoekige busring van acht ruimtes, vier zonnepanelen op jukken, een gouden schotel van 1,5 m en een scanplatform met twee camera’s.",
+      "where": "Vloot · ruimtevaartuigpagina"
+    },
+    "/images/colophon/model-showcase-hubble_webp": {
+      "title": "Hubble-ruimtetelescoop (ware grootte)",
+      "what": "De sterrenwacht — een gekreukelde zilveren lichtkap met de open diafragmadeur en de twee stijve zonnevleugels.",
+      "where": "Vloot · ruimtevaartuigpagina"
+    },
+    "/images/colophon/model-showcase-jwst_webp": {
+      "title": "James Webb-ruimtetelescoop (ware grootte)",
+      "what": "Achttien gouden zeshoekige spiegelsegmenten op hun driepoot boven het vijflaagse zonnescherm.",
+      "where": "Vloot · ruimtevaartuigpagina"
+    },
+    "/images/colophon/model-showcase-chandra_webp": {
+      "title": "Chandra-röntgenobservatorium (ware grootte)",
+      "what": "De röntgensterrenwacht — een lange taps toelopende buis met zijn twee zonnevleugels.",
+      "where": "Vloot · ruimtevaartuigpagina"
+    },
+    "/images/colophon/model-showcase-spitzer_webp": {
+      "title": "Spitzer-ruimtetelescoop",
+      "what": "De infraroodtelescoop — één gekanteld zonnepaneel tegen de cryostaatbuis.",
+      "where": "Vloot · ruimtevaartuigpagina"
+    },
+    "/images/colophon/model-showcase-kepler_webp": {
+      "title": "Kepler",
+      "what": "De planetenjager — een amberkleurig omwikkelde cilinder met zijn vaste zonnepaneel.",
+      "where": "Vloot · ruimtevaartuigpagina"
+    },
+    "/images/colophon/model-showcase-tess_webp": {
+      "title": "TESS",
+      "what": "Het transitonderzoeksvaartuig — vier camera’s met kappen op een compacte bus.",
+      "where": "Vloot · ruimtevaartuigpagina"
+    },
+    "/images/colophon/model-showcase-gaia_webp": {
+      "title": "Gaia (ware grootte)",
+      "what": "ESA’s astrometrie-sterrenwacht — een zonneschermrok van 10 m rond de bus.",
+      "where": "Vloot · ruimtevaartuigpagina"
+    },
+    "/images/colophon/model-showcase-euclid_webp": {
+      "title": "Euclid",
+      "what": "ESA’s telescoop voor het donkere heelal — het scherm achter het zonnepaneelschild.",
+      "where": "Vloot · ruimtevaartuigpagina"
+    },
+    "/images/colophon/model-showcase-xmm-newton_webp": {
+      "title": "XMM-Newton (ware grootte)",
+      "what": "ESA’s röntgentelescoop — een lange buis die eindigt in het spiegelmodulevlak.",
+      "where": "Vloot · ruimtevaartuigpagina"
+    },
+    "/images/colophon/model-showcase-compton-gro_webp": {
+      "title": "Compton Gamma Ray Observatory",
+      "what": "De gammastralensterrenwacht — een kastvormig instrumentdek met zijn detectoren.",
+      "where": "Vloot · ruimtevaartuigpagina"
+    },
+    "/images/colophon/model-showcase-hitomi_webp": {
+      "title": "Hitomi",
+      "what": "JAXA’s röntgensatelliet — de uitgeschoven optische bank met de telescopen.",
+      "where": "Vloot · ruimtevaartuigpagina"
+    },
+    "/images/colophon/model-showcase-spektr-rg_webp": {
+      "title": "Spektr-RG",
+      "what": "De Russisch-Duitse röntgensterrenwacht — de zevenmodulige eROSITA naast de ART-XC-buis.",
+      "where": "Vloot · ruimtevaartuigpagina"
+    },
+    "/images/colophon/model-showcase-voyager-1_webp": {
+      "title": "Voyager 1 en 2 (2 varianten)",
+      "what": "De Grand Tour-bus — een schotel van 3,7 m op een tienzijdig lichaam, een RTG-arm van drie generatoren achter elkaar, de wetenschapsarm met zijn scanplatform en de magnetometerarm van 13 m.",
+      "where": "Vloot · ruimtevaartuigpagina + Vliegen"
+    },
+    "/images/colophon/model-showcase-pioneer-10_webp": {
+      "title": "Pioneer 10 en 11 (2 varianten)",
+      "what": "Het spinstabiele paar — een schotel van 2,74 m boven het apparatuurcompartiment, twee RTG-armen van 3 m onder 120 graden en een magnetometerarm van 6,6 m.",
+      "where": "Vloot · ruimtevaartuigpagina + Vliegen"
+    },
+    "/images/colophon/model-showcase-juno_webp": {
+      "title": "Juno (ware grootte)",
+      "what": "Jupiters polaire orbiter — de titanium stralingskluis onder de bus, een schotel van 2,5 m bovenop en drie zonnevleugels onder 120 graden.",
+      "where": "Vloot · ruimtevaartuigpagina + Vliegen"
+    },
+    "/images/colophon/model-showcase-juice_webp": {
+      "title": "JUICE (ware grootte)",
+      "what": "ESA’s Jupiter-ijsmanen-orbiter — een witte tankrok op de stuwkegel, een vaste schotel van 2,5 m, twee vleugels van drie panelen van 3,9 × 2,2 m en een magnetometerarm van 10,6 m.",
+      "where": "Vloot · ruimtevaartuigpagina + Vliegen"
+    },
+    "/images/colophon/model-showcase-dawn_webp": {
+      "title": "Dawn (ware grootte)",
+      "what": "De ionenaandrijvingsorbiter van Vesta en Ceres — drie ionenmotoren, een schotel van 1,24 m en twee vleugels van vijf panelen, 19,7 m breed.",
+      "where": "Vloot · ruimtevaartuigpagina + Vliegen"
+    },
+    "/images/colophon/model-showcase-ulysses_webp": {
+      "title": "Ulysses (ware grootte)",
+      "what": "De polaire zondesonde — een schotel van 1,65 m over de bovenkant, de geribde GPHS-RTG op een standaard aan de zijkant en een experimentenarm.",
+      "where": "Vloot · ruimtevaartuigpagina + Vliegen"
+    },
+    "/images/colophon/model-showcase-giotto_webp": {
+      "title": "Giotto (ware grootte)",
+      "what": "De Halley-flyby — een trommel van donkere zonnecelstroken met gouden banden, het Whipple-stofschild bovenop en de gekantelde, ontdraaide schotel van 1,47 m op zijn witte kegelsteun.",
+      "where": "Vloot · ruimtevaartuigpagina + Vliegen"
+    },
+    "/images/colophon/model-showcase-cassini_webp": {
+      "title": "Cassini–Huygens (ware grootte)",
+      "what": "De Saturnus-orbiter — een gouden tienhoek met zijn twee hoofdmotoren, de hoge-winstantenne van 4 m, drie RTG’s op uithouders en de Huygens-sonde op zijn vakwerk aan de zijkant.",
+      "where": "Vloot · ruimtevaartuigpagina + Vliegen"
+    },
+    "/images/colophon/model-showcase-galileo_webp": {
+      "title": "Galileo (ware grootte)",
+      "what": "De dual-spin-Jupiter-orbiter — een ontdraaid gedeelte met het scanplatform, de draaiende trommel met zijn lamellen, de paraplu-hoge-winstantenne, twee RTG-armen en een magnetometerarm van 10,9 m.",
+      "where": "Vloot · ruimtevaartuigpagina + Vliegen"
+    },
+    "/images/colophon/model-showcase-rosetta_webp": {
+      "title": "Rosetta (ware grootte)",
+      "what": "Een kastbus onder zilvergrijze folie met zwarte en gouden vlekken, een schotel van 2,2 m, twee vijfdelige zonnevleugels van 14 m en Philae op de achterwand.",
+      "where": "Vloot · ruimtevaartuigpagina + Vliegen"
+    },
+    "/images/colophon/model-showcase-hayabusa_webp": {
+      "title": "Hayabusa en Hayabusa2 (2 varianten)",
+      "what": "Het planetoïde-monsterterugkeervaartuig — de monsterhoorn op zijn balg, vier ionenmotoren, de terugkeercapsule en driedelige vleugels; Hayabusa2 voegt de meegevoerde impactor en de MINERVA-II-hoppers toe.",
+      "where": "Vloot · ruimtevaartuigpagina + Vliegen"
+    },
+    "/images/colophon/model-showcase-osiris-rex_webp": {
+      "title": "OSIRIS-REx (ware grootte)",
+      "what": "Het Bennu-monsterterugkeervaartuig — een schotel van 1,2 m, een zonnepaneel van 1,9 × 2,4 m aan elke kant en de TAGSAM-arm van 3,35 m die over de voorkant uitsteekt.",
+      "where": "Vloot · ruimtevaartuigpagina + Vliegen"
+    },
+    "/images/colophon/model-showcase-venera-7_webp": {
+      "title": "Venera 7 en 13 (2 varianten)",
+      "what": "De Sovjet-Venusbus — een witte motortrommel met rijen gaten, een tankruimte met zichtbare bollen, zes stutten die de met ablatief materiaal beklede afdalingsbol vasthouden, een gaasschotel op een mast en twee zonnevleugels.",
+      "where": "Vloot · ruimtevaartuigpagina + Vliegen"
+    },
+    "/images/colophon/model-showcase-vega-1_webp": {
+      "title": "Vega 1 en 2 (2 varianten)",
+      "what": "De Venus-en-Halley-bus — de Venera-indeling met de ballonhouder op de kruin van de afdalingsbol.",
+      "where": "Vloot · ruimtevaartuigpagina + Vliegen"
     }
   },
   "canvas2d": {
@@ -2346,6 +2596,114 @@
     },
     "/images/anatomy-exploded/vulcan_webp": {
       "title": "Vulcan Centaur"
+    },
+    "/images/anatomy-exploded/apollo-lm_webp": {
+      "title": "Apollo-maanlander"
+    },
+    "/images/anatomy-exploded/beresheet_webp": {
+      "title": "Beresheet"
+    },
+    "/images/anatomy-exploded/change-3_webp": {
+      "title": "Chang'e 3"
+    },
+    "/images/anatomy-exploded/change-4_webp": {
+      "title": "Chang'e 4"
+    },
+    "/images/anatomy-exploded/change-5_webp": {
+      "title": "Chang'e 5"
+    },
+    "/images/anatomy-exploded/change6_webp": {
+      "title": "Chang'e 6"
+    },
+    "/images/anatomy-exploded/insight_webp": {
+      "title": "InSight"
+    },
+    "/images/anatomy-exploded/lrv-apollo_webp": {
+      "title": "Maanwagen"
+    },
+    "/images/anatomy-exploded/luna-16_webp": {
+      "title": "Luna 16"
+    },
+    "/images/anatomy-exploded/luna-9_webp": {
+      "title": "Luna 9"
+    },
+    "/images/anatomy-exploded/luna24_webp": {
+      "title": "Luna 24"
+    },
+    "/images/anatomy-exploded/lunokhod-1_webp": {
+      "title": "Lunokhod 1"
+    },
+    "/images/anatomy-exploded/lunokhod-2_webp": {
+      "title": "Lunokhod 2"
+    },
+    "/images/anatomy-exploded/mars-2_webp": {
+      "title": "Mars 2"
+    },
+    "/images/anatomy-exploded/mars-3_webp": {
+      "title": "Mars 3"
+    },
+    "/images/anatomy-exploded/phoenix_webp": {
+      "title": "Phoenix"
+    },
+    "/images/anatomy-exploded/pragyan_webp": {
+      "title": "Pragyan"
+    },
+    "/images/anatomy-exploded/slim_webp": {
+      "title": "SLIM"
+    },
+    "/images/anatomy-exploded/sojourner_webp": {
+      "title": "Sojourner"
+    },
+    "/images/anatomy-exploded/vega-1_webp": {
+      "title": "Vega 1"
+    },
+    "/images/anatomy-exploded/vega-2_webp": {
+      "title": "Vega 2"
+    },
+    "/images/anatomy-exploded/venera-13_webp": {
+      "title": "Venera 13"
+    },
+    "/images/anatomy-exploded/viking-1_webp": {
+      "title": "Viking 1"
+    },
+    "/images/anatomy-exploded/vikram-cy3_webp": {
+      "title": "Vikram (Chandrayaan-3)"
+    },
+    "/images/anatomy-exploded/yutu_webp": {
+      "title": "Yutu"
+    },
+    "/images/anatomy-exploded/yutu-2_webp": {
+      "title": "Yutu-2"
+    },
+    "/images/anatomy-exploded/zhurong_webp": {
+      "title": "Zhurong"
+    },
+    "/images/anatomy-exploded/beagle2_webp": {
+      "title": "Beagle 2"
+    },
+    "/images/anatomy-exploded/curiosity_webp": {
+      "title": "Curiosity (MSL)"
+    },
+    "/images/anatomy-exploded/exomars-rosalind-franklin_webp": {
+      "title": "Rosalind Franklin (ExoMars-rover)"
+    },
+    "/images/anatomy-exploded/mars6_webp": {
+      "title": "Mars 6"
+    },
+    "/images/anatomy-exploded/opportunity_webp": {
+      "title": "Opportunity (MER-B)"
+    },
+    "/images/anatomy-exploded/perseverance_webp": {
+      "title": "Perseverance (Mars 2020)"
+    },
+    "/images/anatomy-exploded/schiaparelli_webp": {
+      "title": "Schiaparelli"
+    },
+    "/images/anatomy-exploded/spirit_webp": {
+      "title": "Spirit (MER-A)"
+    },
+    "/images/anatomy-exploded/viking2-lander_webp": {
+      "title": "Viking 2-lander"
     }
   },
   "icons": {
@@ -2446,6 +2804,656 @@
         "Laniakea": "Laniakea",
         "Cosmic Web": "Kosmisch web"
       }
+    }
+  },
+  "landing_art": {
+    "/images/landing-sequences/apollo11_webp": {
+      "title": "Apollo 11"
+    },
+    "/images/landing-sequences/apollo12_webp": {
+      "title": "Apollo 12"
+    },
+    "/images/landing-sequences/apollo14_webp": {
+      "title": "Apollo 14"
+    },
+    "/images/landing-sequences/apollo15_webp": {
+      "title": "Apollo 15"
+    },
+    "/images/landing-sequences/apollo16_webp": {
+      "title": "Apollo 16"
+    },
+    "/images/landing-sequences/apollo17_webp": {
+      "title": "Apollo 17"
+    },
+    "/images/landing-sequences/artemis4_webp": {
+      "title": "Artemis IV"
+    },
+    "/images/landing-sequences/beresheet_webp": {
+      "title": "Beresheet"
+    },
+    "/images/landing-sequences/chandrayaan3_webp": {
+      "title": "Chandrayaan-3"
+    },
+    "/images/landing-sequences/change5_webp": {
+      "title": "Chang'e 5"
+    },
+    "/images/landing-sequences/change6_webp": {
+      "title": "Chang'e 6"
+    },
+    "/images/landing-sequences/curiosity_webp": {
+      "title": "Curiosity"
+    },
+    "/images/landing-sequences/insight_webp": {
+      "title": "InSight"
+    },
+    "/images/landing-sequences/luna16_webp": {
+      "title": "Luna 16"
+    },
+    "/images/landing-sequences/luna17_webp": {
+      "title": "Luna 17 / Lunokhod 1"
+    },
+    "/images/landing-sequences/luna21_webp": {
+      "title": "Luna 21 / Lunokhod 2"
+    },
+    "/images/landing-sequences/luna24_webp": {
+      "title": "Luna 24"
+    },
+    "/images/landing-sequences/luna9_webp": {
+      "title": "Luna 9"
+    },
+    "/images/landing-sequences/opportunity_webp": {
+      "title": "Opportunity"
+    },
+    "/images/landing-sequences/schiaparelli_webp": {
+      "title": "Schiaparelli EDM"
+    },
+    "/images/landing-sequences/slim_webp": {
+      "title": "SLIM"
+    },
+    "/images/landing-sequences/spirit_webp": {
+      "title": "Spirit"
+    },
+    "/images/landing-sequences/vega-1_webp": {
+      "title": "Vega 1"
+    },
+    "/images/landing-sequences/vega-2_webp": {
+      "title": "Vega 2"
+    },
+    "/images/landing-sequences/venera-13_webp": {
+      "title": "Venera 13"
+    },
+    "/images/landing-sequences/beagle2_webp": {
+      "title": "Beagle 2"
+    },
+    "/images/landing-sequences/change3_webp": {
+      "title": "Chang'e 3 / Yutu"
+    },
+    "/images/landing-sequences/change4_webp": {
+      "title": "Chang'e 4 / Yutu-2"
+    },
+    "/images/landing-sequences/change7_webp": {
+      "title": "Chang'e 7"
+    },
+    "/images/landing-sequences/exomars-rosalind-franklin_webp": {
+      "title": "Rosalind Franklin-rover"
+    },
+    "/images/landing-sequences/mars-pathfinder_webp": {
+      "title": "Mars Pathfinder + Sojourner"
+    },
+    "/images/landing-sequences/mars2_webp": {
+      "title": "Mars 2-lander"
+    },
+    "/images/landing-sequences/mars3_webp": {
+      "title": "Mars 3-lander"
+    },
+    "/images/landing-sequences/mars6_webp": {
+      "title": "Mars 6"
+    },
+    "/images/landing-sequences/perseverance_webp": {
+      "title": "Perseverance + Ingenuity"
+    },
+    "/images/landing-sequences/phoenix_webp": {
+      "title": "Phoenix-lander"
+    },
+    "/images/landing-sequences/viking1-lander_webp": {
+      "title": "Viking 1-lander"
+    },
+    "/images/landing-sequences/viking2-lander_webp": {
+      "title": "Viking 2-lander"
+    },
+    "/images/landing-sequences/zhurong_webp": {
+      "title": "Zhurong (met de Tianwen-1-lander)"
+    }
+  },
+  "blueprint_art": {
+    "/images/blueprints/apollo-soyuz_webp": {
+      "title": "Apollo-Soyuz-testproject (ASTP)"
+    },
+    "/images/blueprints/apollo11_webp": {
+      "title": "Apollo 11"
+    },
+    "/images/blueprints/bepicolombo_webp": {
+      "title": "BepiColombo"
+    },
+    "/images/blueprints/cassini_webp": {
+      "title": "Cassini-Huygens"
+    },
+    "/images/blueprints/dawn_webp": {
+      "title": "Dawn"
+    },
+    "/images/blueprints/galileo_webp": {
+      "title": "Galileo"
+    },
+    "/images/blueprints/giotto_webp": {
+      "title": "Giotto"
+    },
+    "/images/blueprints/hayabusa2_webp": {
+      "title": "Hayabusa2"
+    },
+    "/images/blueprints/juice_webp": {
+      "title": "JUICE"
+    },
+    "/images/blueprints/juno_webp": {
+      "title": "Juno"
+    },
+    "/images/blueprints/new-horizons_webp": {
+      "title": "New Horizons"
+    },
+    "/images/blueprints/pioneer-10_webp": {
+      "title": "Pioneer 10"
+    },
+    "/images/blueprints/rosetta_webp": {
+      "title": "Rosetta"
+    },
+    "/images/blueprints/sputnik1_webp": {
+      "title": "Sputnik 1"
+    },
+    "/images/blueprints/ulysses_webp": {
+      "title": "Ulysses"
+    },
+    "/images/blueprints/venera-13_webp": {
+      "title": "Venera 13"
+    },
+    "/images/blueprints/vostok-1_webp": {
+      "title": "Vostok 1"
+    },
+    "/images/blueprints/voyager-2_webp": {
+      "title": "Voyager 2"
+    }
+  },
+  "mission_trajectories": {
+    "/images/missions/thumbnails/akatsuki_webp": {
+      "title": "Akatsuki"
+    },
+    "/images/missions/thumbnails/apollo-1_webp": {
+      "title": "Apollo 1 (AS-204)"
+    },
+    "/images/missions/thumbnails/apollo-soyuz_webp": {
+      "title": "Apollo-Soyuz-testproject (ASTP)"
+    },
+    "/images/missions/thumbnails/apollo10_webp": {
+      "title": "Apollo 10"
+    },
+    "/images/missions/thumbnails/apollo11_webp": {
+      "title": "Apollo 11"
+    },
+    "/images/missions/thumbnails/apollo12_webp": {
+      "title": "Apollo 12"
+    },
+    "/images/missions/thumbnails/apollo13_webp": {
+      "title": "Apollo 13"
+    },
+    "/images/missions/thumbnails/apollo14_webp": {
+      "title": "Apollo 14"
+    },
+    "/images/missions/thumbnails/apollo15_webp": {
+      "title": "Apollo 15"
+    },
+    "/images/missions/thumbnails/apollo16_webp": {
+      "title": "Apollo 16"
+    },
+    "/images/missions/thumbnails/apollo17_webp": {
+      "title": "Apollo 17"
+    },
+    "/images/missions/thumbnails/apollo7_webp": {
+      "title": "Apollo 7"
+    },
+    "/images/missions/thumbnails/apollo8_webp": {
+      "title": "Apollo 8"
+    },
+    "/images/missions/thumbnails/apollo9_webp": {
+      "title": "Apollo 9"
+    },
+    "/images/missions/thumbnails/artemis1_webp": {
+      "title": "Artemis I"
+    },
+    "/images/missions/thumbnails/artemis2_webp": {
+      "title": "Artemis II"
+    },
+    "/images/missions/thumbnails/artemis3_webp": {
+      "title": "Artemis III"
+    },
+    "/images/missions/thumbnails/artemis4_webp": {
+      "title": "Artemis IV"
+    },
+    "/images/missions/thumbnails/artemis5_webp": {
+      "title": "Artemis V"
+    },
+    "/images/missions/thumbnails/aurora-7_webp": {
+      "title": "Aurora 7 / MA-7"
+    },
+    "/images/missions/thumbnails/bepicolombo_webp": {
+      "title": "BepiColombo"
+    },
+    "/images/missions/thumbnails/beresheet_webp": {
+      "title": "Beresheet"
+    },
+    "/images/missions/thumbnails/blue-moon-mk1_webp": {
+      "title": "Blue Moon MK1"
+    },
+    "/images/missions/thumbnails/cassini_webp": {
+      "title": "Cassini-Huygens"
+    },
+    "/images/missions/thumbnails/chandrayaan1_webp": {
+      "title": "Chandrayaan-1"
+    },
+    "/images/missions/thumbnails/chandrayaan2_webp": {
+      "title": "Chandrayaan-2"
+    },
+    "/images/missions/thumbnails/chandrayaan3_webp": {
+      "title": "Chandrayaan-3"
+    },
+    "/images/missions/thumbnails/change1_webp": {
+      "title": "Chang'e 1"
+    },
+    "/images/missions/thumbnails/change2_webp": {
+      "title": "Chang'e 2"
+    },
+    "/images/missions/thumbnails/change3_webp": {
+      "title": "Chang'e 3"
+    },
+    "/images/missions/thumbnails/change5_webp": {
+      "title": "Chang'e 5"
+    },
+    "/images/missions/thumbnails/change6_webp": {
+      "title": "Chang'e 6"
+    },
+    "/images/missions/thumbnails/clementine_webp": {
+      "title": "Clementine"
+    },
+    "/images/missions/thumbnails/curiosity_webp": {
+      "title": "Curiosity"
+    },
+    "/images/missions/thumbnails/dart_webp": {
+      "title": "DART"
+    },
+    "/images/missions/thumbnails/dawn_webp": {
+      "title": "Dawn"
+    },
+    "/images/missions/thumbnails/europa-clipper_webp": {
+      "title": "Europa Clipper"
+    },
+    "/images/missions/thumbnails/faith-7_webp": {
+      "title": "Faith 7 / MA-9"
+    },
+    "/images/missions/thumbnails/freedom-7_webp": {
+      "title": "Freedom 7 / MR-3"
+    },
+    "/images/missions/thumbnails/friendship-7_webp": {
+      "title": "Friendship 7 / MA-6"
+    },
+    "/images/missions/thumbnails/galileo_webp": {
+      "title": "Galileo"
+    },
+    "/images/missions/thumbnails/gemini12_webp": {
+      "title": "Gemini 12 / GT-12"
+    },
+    "/images/missions/thumbnails/gemini3_webp": {
+      "title": "Gemini 3 / GT-3"
+    },
+    "/images/missions/thumbnails/gemini4_webp": {
+      "title": "Gemini 4 / GT-4"
+    },
+    "/images/missions/thumbnails/gemini6a_webp": {
+      "title": "Gemini 6A / GT-6A"
+    },
+    "/images/missions/thumbnails/gemini7_webp": {
+      "title": "Gemini 7 / GT-7"
+    },
+    "/images/missions/thumbnails/gemini8_webp": {
+      "title": "Gemini 8 / GT-8"
+    },
+    "/images/missions/thumbnails/giotto_webp": {
+      "title": "Giotto"
+    },
+    "/images/missions/thumbnails/hayabusa1_webp": {
+      "title": "Hayabusa"
+    },
+    "/images/missions/thumbnails/hayabusa2_webp": {
+      "title": "Hayabusa2"
+    },
+    "/images/missions/thumbnails/hera_webp": {
+      "title": "Hera"
+    },
+    "/images/missions/thumbnails/hope-probe_webp": {
+      "title": "Hope-sonde"
+    },
+    "/images/missions/thumbnails/huygens_webp": {
+      "title": "Huygens"
+    },
+    "/images/missions/thumbnails/im-1_webp": {
+      "title": "IM-1"
+    },
+    "/images/missions/thumbnails/insight_webp": {
+      "title": "InSight"
+    },
+    "/images/missions/thumbnails/inspiration4_webp": {
+      "title": "Inspiration4"
+    },
+    "/images/missions/thumbnails/juice_webp": {
+      "title": "JUICE"
+    },
+    "/images/missions/thumbnails/juno_webp": {
+      "title": "Juno"
+    },
+    "/images/missions/thumbnails/kaguya_webp": {
+      "title": "Kaguya (SELENE)"
+    },
+    "/images/missions/thumbnails/liberty-bell-7_webp": {
+      "title": "Liberty Bell 7 / MR-4"
+    },
+    "/images/missions/thumbnails/lro_webp": {
+      "title": "Lunar Reconnaissance Orbiter"
+    },
+    "/images/missions/thumbnails/lucy_webp": {
+      "title": "Lucy"
+    },
+    "/images/missions/thumbnails/luna10_webp": {
+      "title": "Luna 10"
+    },
+    "/images/missions/thumbnails/luna16_webp": {
+      "title": "Luna 16"
+    },
+    "/images/missions/thumbnails/luna17_webp": {
+      "title": "Luna 17 / Lunokhod 1"
+    },
+    "/images/missions/thumbnails/luna21_webp": {
+      "title": "Luna 21 / Lunokhod 2"
+    },
+    "/images/missions/thumbnails/luna24_webp": {
+      "title": "Luna 24"
+    },
+    "/images/missions/thumbnails/luna9_webp": {
+      "title": "Luna 9"
+    },
+    "/images/missions/thumbnails/lunar-prospector_webp": {
+      "title": "Lunar Prospector"
+    },
+    "/images/missions/thumbnails/magellan_webp": {
+      "title": "Magellan"
+    },
+    "/images/missions/thumbnails/mangalyaan_webp": {
+      "title": "Mangalyaan"
+    },
+    "/images/missions/thumbnails/mariner10_webp": {
+      "title": "Mariner 10"
+    },
+    "/images/missions/thumbnails/mariner2_webp": {
+      "title": "Mariner 2"
+    },
+    "/images/missions/thumbnails/mariner4_webp": {
+      "title": "Mariner 4"
+    },
+    "/images/missions/thumbnails/mariner9_webp": {
+      "title": "Mariner 9"
+    },
+    "/images/missions/thumbnails/mars-express_webp": {
+      "title": "Mars Express"
+    },
+    "/images/missions/thumbnails/mars-pathfinder_webp": {
+      "title": "Mars Pathfinder"
+    },
+    "/images/missions/thumbnails/mars2_webp": {
+      "title": "Mars 2"
+    },
+    "/images/missions/thumbnails/mars3_webp": {
+      "title": "Mars 3"
+    },
+    "/images/missions/thumbnails/maven_webp": {
+      "title": "MAVEN"
+    },
+    "/images/missions/thumbnails/messenger_webp": {
+      "title": "MESSENGER"
+    },
+    "/images/missions/thumbnails/mmx_webp": {
+      "title": "MMX"
+    },
+    "/images/missions/thumbnails/mro_webp": {
+      "title": "Mars Reconnaissance Orbiter"
+    },
+    "/images/missions/thumbnails/near-shoemaker_webp": {
+      "title": "NEAR Shoemaker"
+    },
+    "/images/missions/thumbnails/new-horizons_webp": {
+      "title": "New Horizons"
+    },
+    "/images/missions/thumbnails/opportunity_webp": {
+      "title": "Opportunity"
+    },
+    "/images/missions/thumbnails/osiris-rex_webp": {
+      "title": "OSIRIS-REx"
+    },
+    "/images/missions/thumbnails/otv-1_webp": {
+      "title": "X-37B OTV-1 (USA-212)"
+    },
+    "/images/missions/thumbnails/otv-2_webp": {
+      "title": "X-37B OTV-2 (USA-226)"
+    },
+    "/images/missions/thumbnails/otv-3_webp": {
+      "title": "X-37B OTV-3 (USA-240)"
+    },
+    "/images/missions/thumbnails/otv-4_webp": {
+      "title": "X-37B OTV-4 (USA-261, AFSPC-5)"
+    },
+    "/images/missions/thumbnails/otv-5_webp": {
+      "title": "X-37B OTV-5 (USA-277)"
+    },
+    "/images/missions/thumbnails/otv-6_webp": {
+      "title": "X-37B OTV-6 (USA-299, USSF-7)"
+    },
+    "/images/missions/thumbnails/otv-7_webp": {
+      "title": "X-37B OTV-7 (USA-349, USSF-52)"
+    },
+    "/images/missions/thumbnails/parker-solar-probe_webp": {
+      "title": "Parker Solar Probe"
+    },
+    "/images/missions/thumbnails/perseverance_webp": {
+      "title": "Perseverance"
+    },
+    "/images/missions/thumbnails/phoenix_webp": {
+      "title": "Phoenix"
+    },
+    "/images/missions/thumbnails/pioneer-10_webp": {
+      "title": "Pioneer 10"
+    },
+    "/images/missions/thumbnails/pioneer-11_webp": {
+      "title": "Pioneer 11"
+    },
+    "/images/missions/thumbnails/polaris-dawn_webp": {
+      "title": "Polaris Dawn"
+    },
+    "/images/missions/thumbnails/psyche-mission_webp": {
+      "title": "Psyche"
+    },
+    "/images/missions/thumbnails/rosetta_webp": {
+      "title": "Rosetta"
+    },
+    "/images/missions/thumbnails/schiaparelli_webp": {
+      "title": "Schiaparelli EDM"
+    },
+    "/images/missions/thumbnails/shenzhou-1_webp": {
+      "title": "Shenzhou 1"
+    },
+    "/images/missions/thumbnails/shenzhou-5_webp": {
+      "title": "Shenzhou 5"
+    },
+    "/images/missions/thumbnails/sigma-7_webp": {
+      "title": "Sigma 7 / MA-8"
+    },
+    "/images/missions/thumbnails/skylab-2_webp": {
+      "title": "Skylab 2"
+    },
+    "/images/missions/thumbnails/skylab-3_webp": {
+      "title": "Skylab 3"
+    },
+    "/images/missions/thumbnails/skylab-4_webp": {
+      "title": "Skylab 4"
+    },
+    "/images/missions/thumbnails/slim_webp": {
+      "title": "SLIM"
+    },
+    "/images/missions/thumbnails/smart-1_webp": {
+      "title": "SMART-1"
+    },
+    "/images/missions/thumbnails/solar-orbiter_webp": {
+      "title": "Solar Orbiter"
+    },
+    "/images/missions/thumbnails/soyuz-1_webp": {
+      "title": "Soyuz 1"
+    },
+    "/images/missions/thumbnails/soyuz-11_webp": {
+      "title": "Soyuz 11"
+    },
+    "/images/missions/thumbnails/spirit_webp": {
+      "title": "Spirit"
+    },
+    "/images/missions/thumbnails/sputnik1_webp": {
+      "title": "Sputnik 1"
+    },
+    "/images/missions/thumbnails/starship-demo_webp": {
+      "title": "Starship Demo"
+    },
+    "/images/missions/thumbnails/starship-flight-5_webp": {
+      "title": "Starship Flight 5"
+    },
+    "/images/missions/thumbnails/starship-mars-crew_webp": {
+      "title": "Starship Mars-bemanning"
+    },
+    "/images/missions/thumbnails/sts-1_webp": {
+      "title": "STS-1"
+    },
+    "/images/missions/thumbnails/sts-107_webp": {
+      "title": "STS-107"
+    },
+    "/images/missions/thumbnails/sts-51-l_webp": {
+      "title": "STS-51-L"
+    },
+    "/images/missions/thumbnails/tianwen1_webp": {
+      "title": "Tianwen-1"
+    },
+    "/images/missions/thumbnails/ulysses_webp": {
+      "title": "Ulysses"
+    },
+    "/images/missions/thumbnails/vega-1_webp": {
+      "title": "Vega 1"
+    },
+    "/images/missions/thumbnails/vega-2_webp": {
+      "title": "Vega 2"
+    },
+    "/images/missions/thumbnails/venera-13_webp": {
+      "title": "Venera 13"
+    },
+    "/images/missions/thumbnails/viking1_webp": {
+      "title": "Viking 1"
+    },
+    "/images/missions/thumbnails/viking2_webp": {
+      "title": "Viking 2"
+    },
+    "/images/missions/thumbnails/voskhod-1_webp": {
+      "title": "Voskhod 1"
+    },
+    "/images/missions/thumbnails/voskhod-2_webp": {
+      "title": "Voskhod 2"
+    },
+    "/images/missions/thumbnails/vostok-1_webp": {
+      "title": "Vostok 1"
+    },
+    "/images/missions/thumbnails/vostok-2_webp": {
+      "title": "Vostok 2"
+    },
+    "/images/missions/thumbnails/vostok-3_webp": {
+      "title": "Vostok 3"
+    },
+    "/images/missions/thumbnails/vostok-4_webp": {
+      "title": "Vostok 4"
+    },
+    "/images/missions/thumbnails/vostok-5_webp": {
+      "title": "Vostok 5"
+    },
+    "/images/missions/thumbnails/vostok-6_webp": {
+      "title": "Vostok 6"
+    },
+    "/images/missions/thumbnails/voyager-1_webp": {
+      "title": "Voyager 1"
+    },
+    "/images/missions/thumbnails/voyager-2_webp": {
+      "title": "Voyager 2"
+    },
+    "/images/missions/thumbnails/escapade_webp": {
+      "title": "ESCAPADE"
+    },
+    "/images/missions/thumbnails/change4_webp": {
+      "title": "Chang'e 4 / Yutu-2"
+    }
+  },
+  "site_illustrations": {
+    "/images/illustrations/sites/apollo11_webp": {
+      "title": "Apollo 11"
+    },
+    "/images/illustrations/sites/apollo12_webp": {
+      "title": "Apollo 12"
+    },
+    "/images/illustrations/sites/apollo14_webp": {
+      "title": "Apollo 14"
+    },
+    "/images/illustrations/sites/apollo15_webp": {
+      "title": "Apollo 15"
+    },
+    "/images/illustrations/sites/apollo16_webp": {
+      "title": "Apollo 16"
+    },
+    "/images/illustrations/sites/apollo17_webp": {
+      "title": "Apollo 17"
+    },
+    "/images/illustrations/sites/chandrayaan3_webp": {
+      "title": "Chandrayaan-3"
+    },
+    "/images/illustrations/sites/spirit_webp": {
+      "title": "Spirit"
+    },
+    "/images/illustrations/sites/opportunity_webp": {
+      "title": "Opportunity"
+    },
+    "/images/illustrations/sites/curiosity_webp": {
+      "title": "Curiosity"
+    },
+    "/images/illustrations/sites/perseverance_webp": {
+      "title": "Perseverance"
+    },
+    "/images/illustrations/sites/zhurong_webp": {
+      "title": "Zhurong"
+    },
+    "/images/illustrations/sites/luna17_webp": {
+      "title": "Luna 17"
+    },
+    "/images/illustrations/sites/luna21_webp": {
+      "title": "Luna 21"
+    },
+    "/images/illustrations/sites/change3_webp": {
+      "title": "Chang’e 3"
+    },
+    "/images/illustrations/sites/change4_webp": {
+      "title": "Chang’e 4"
     }
   }
 }

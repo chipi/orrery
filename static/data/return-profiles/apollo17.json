@@ -1,0 +1,127 @@
+{
+  "missionId": "apollo17",
+  "siteId": "apollo17",
+  "launchZeroUtc": "1972-12-07T05:33:00Z",
+  "liftoff": "185:21:37",
+  "verticalRiseS": 10,
+  "ascentBurnS": 441,
+  "ascentDvFts": 6075.7,
+  "insertion": {
+    "get": "185:28:56",
+    "orbitNmi": [
+      48.5,
+      9.1
+    ],
+    "altitudeFt": 60000,
+    "radialFts": 32,
+    "downrangeFts": 5540
+  },
+  "rendezvous": [
+    {
+      "id": "trim",
+      "get": "178:54:05",
+      "burnS": 37,
+      "dvFts": 9.2
+    },
+    {
+      "id": "plane",
+      "get": "179:53:54",
+      "burnS": 20.05,
+      "dvFts": 366,
+      "engine": "sps"
+    },
+    {
+      "id": "vernier",
+      "get": "185:32:12",
+      "burnS": 10,
+      "dvFts": 10
+    },
+    {
+      "id": "tpi",
+      "get": "186:15:58",
+      "burnS": 3.2,
+      "dvFts": 53.8,
+      "engine": "aps"
+    },
+    {
+      "id": "tpf",
+      "get": "186:58:00",
+      "burnS": 25
+    }
+  ],
+  "csmOrbitNmi": [
+    62.8,
+    62.5
+  ],
+  "splashdownProfile": "apollo17-splashdown",
+  "docking": "187:37:15",
+  "jettison": "191:18:31",
+  "jettisonAltitudeNmi": 65,
+  "tei": {
+    "get": "234:02:09.18",
+    "burnS": 143.69,
+    "dvFts": 3046.3
+  },
+  "camera": {
+    "shots": {
+      "surface": "rover_tv_track",
+      "liftoff": "rover_tv_track",
+      "ascent": "chase_high",
+      "insertion": "orbit_limb",
+      "vernier": "rendezvous_over",
+      "tpi": "rendezvous_side",
+      "terminal": "rendezvous_side",
+      "jettison": "jettison_high",
+      "tei_coast": "tei_side",
+      "tei_burn": "tei_side",
+      "fade": "tei_side",
+      "dock_wide": "dock_orbit",
+      "dock_approach": "dock_orbit",
+      "dock_closeup": "dock_orbit",
+      "soft_capture": "dock_orbit",
+      "hard_dock": "dock_orbit"
+    }
+  },
+  "jMission": {
+    "mission": 17,
+    "lrvEastM": 90,
+    "tv": "tracked"
+  },
+  "source_tier": "flagship",
+  "estimatedFields": [
+    "insertion.altitudeFt",
+    "insertion.radialFts",
+    "insertion.downrangeFts",
+    "verticalRiseS",
+    "jettisonAltitudeNmi",
+    "jMission.lrvEastM",
+    "scene.verticalRiseKinematics",
+    "scene.ascentTrajectoryShape",
+    "scene.pitchOver",
+    "scene.rendezvousRanges",
+    "scene.dockingClosingSpeed",
+    "scene.jettisonDrift",
+    "scene.attitudeAfterInsertion",
+    "scene.camera",
+    "scene.simBayAzimuth",
+    "scene.roverTvFraming",
+    "scene.sceneHardware",
+    "rendezvous.tpf.get",
+    "rendezvous.tpf.burnS",
+    "rendezvous.tpf.dvFts"
+  ],
+  "provenance": [
+    {
+      "l": "Apollo 17 Mission Report (Tables 3-I and 3-V, sections 3.2 to 3.4): range zero 05:33:00 GMT 1972-12-07. A direct rendezvous with two CSM burns before the LM left the Moon: orbital trim 178:54:05 (RCS, 37 s from SP-4029 as the page image smudges the digit, 9.2 ft/s) to 67.3 x 62.5 n.mi because \"the planned decay of the CSM altitude ... was not realized. This was similar to the experience of Apollo 15\", plane change 179:53:54 (MR17 Table 3-V, page image: service propulsion, about 20 s, 366 ft/s, leaving 62.8 x 62.5 n.mi; SP-4029 gives 20.05 s and calls it RCS, which cannot deliver 366 ft/s, so the engine is the SPS; the text layer prints 23.1 s), then the LM vernier 10 ft/s for 10 s at 185:32:12 (RCS), TPI 186:15:58 (ascent propulsion, 3.2 s, 53.8 ft/s: the page image; SP-4029 prints 3.1 s) and TPF (no GET, duration or delta-V in the sources read: 186:58:00, 42 min after TPI as on Apollos 14-16, and 25 s are estimates). Ascent 441 s and 6,075.7 ft/s, orbit 48.5 x 9.1 n.mi (page image), insertion 185:28:56 (SP-4029 prints the burn to 185:28:58); docking 187:37:15; ascent stage jettison 191:18:31, deorbit 192:58:14, impact 193:17:20.8 at 19 deg 57 min 58 s N, 30 deg 29 min 23 s E (not shown); TEI 234:02:09.18, 143.69 s, 3,046.3 ft/s; no subsatellite on Apollo 17. All times are the mission report / SP-4029 clock; entry compilation figures are in the splashdown profile",
+      "u": "https://ntrs.nasa.gov/api/citations/19730015117/downloads/19730015117.pdf"
+    },
+    {
+      "l": "NASA SP-4029 Apollo 17 timeline: GET and GMT of liftoff, docking, jettison, the SIM bay door and the subsatellite events. Apollo 17 SIM bay: door jettisoned 081:32:40 (MR17 Table 3-I); the bay carries the lunar sounder, infrared radiometer and UV spectrometer, not a subsatellite or spectrometer booms",
+      "u": "https://www.nasa.gov/wp-content/uploads/static/history/SP-4029/Apollo_17i_Timeline.htm"
+    },
+    {
+      "l": "NASA SP-4029 Apollo 17 trans-Earth phase: TEI burn duration, delta-V and flight-path angle at cutoff",
+      "u": "https://www.nasa.gov/wp-content/uploads/static/history/SP-4029/Apollo_17h_Transearth_Phase.htm"
+    }
+  ]
+}

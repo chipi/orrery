@@ -38,6 +38,35 @@
     {
       "l": "InSight EDL — NASA JPL mission overview",
       "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2018-042A"
+    },
+    {
+      "l": "InSight EDL timeline as researched for pass 2 (docs/wip/2026-11-23-mars-landings-record.md): chute at T−2:57, heat shield T−2:42 (15 s later), legs T−2:32 (25 s after the chute), radar T−1:00 (about 2.4 km), backshell T−0:44 then 12 engines to 2.4 m/s; arrays open 16–32 min after landing (16 min stamped). The record puts the chute at about 11.1 km; the reconstruction above puts it 8.1 km over the site, which the profile keeps. The chute (11.8 m) and the 2.65 m aeroshell are Phoenix-class",
+      "u": "https://spaceflightnow.com/2018/11/26/insights-entry-descent-and-landing-timeline/"
     }
-  ]
+  ],
+  "beats": [
+    {
+      "type": "heatshield_sep",
+      "after": "parachute_deploy",
+      "afterS": 15
+    },
+    {
+      "type": "leg_deploy",
+      "after": "parachute_deploy",
+      "afterS": 25
+    },
+    {
+      "type": "radar_lock",
+      "altM": 2400
+    }
+  ],
+  "afterTouchdown": {
+    "beats": [
+      {
+        "type": "arrays_open",
+        "afterS": 8,
+        "realAfterS": 960
+      }
+    ]
+  }
 }

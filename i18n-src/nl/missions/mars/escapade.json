@@ -1,0 +1,36 @@
+{
+  "name": "ESCAPADE",
+  "vehicle": "New Glenn (NG-2)",
+  "payload": "Twee ruimtevaartuigen, Blue en Gold: elk 209 kg leeg en 535 kg getankt",
+  "delta_v": "Niet gepubliceerd",
+  "type": "TWEELING-MARSORBITERS · ACTIEF",
+  "first": "Tweeling-orbiters gelanceerd bij de tweede vlucht van New Glenn, die de eerste geslaagde landing van een New Glenn-booster maakte",
+  "description": "ESCAPADE is het paar ruimtevaartuigen van NASA naar Mars, Blue en Gold, gebouwd door Rocket Lab, in een missie die minder dan 80 miljoen dollar kost. De principal investigator is Robert Lillis van het Space Sciences Laboratory van UC Berkeley, en de missie is een NASA-SIMPLEx-missie uit 2019 binnen de Heliophysics Division. Elk ruimtevaartuig weegt 209 kg leeg en 535 kg getankt. Ze werden gelanceerd bij de tweede vlucht van New Glenn, NG-2, vanaf Launch Complex 36 van Cape Canaveral Space Force Station op 13 november 2025 om 15:55 EST (20:55 UTC). De booster, GS1 “Never Tell Me the Odds”, landde ongeveer negen minuten na de lancering op het landingsplatformschip Jacklyn. Blue en Gold vlogen niet rechtstreeks naar Mars: ze cirkelden ongeveer een jaar rond het zon-aarde-punt L2 en maakten daarna aangedreven flybys langs de aarde, Blue op 7 november 2026 en Gold op 9 november. Hun ontstekingen voor de baaninsertie bij Mars volgen op 7 en 9 september 2027, ongeveer 11 minuten op 450 km, naar een omloopbaan van 60 uur (de invangbaan), en de wetenschap moet in juni 2028 beginnen.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCERING",
+      "note": "New Glenn NG-2 vanaf Launch Complex 36, 13 november 2025, 15:55 EST (20:55 UTC).",
+      "type": "nominal"
+    },
+    {
+      "met": 0.0233,
+      "label": "SCHEIDING",
+      "note": "Blue en Gold scheiden ongeveer 33,5 minuten na de lancering van de bovenste trap.",
+      "type": "nominal"
+    },
+    {
+      "met": 359,
+      "label": "AARDE-FLYBY",
+      "note": "Aangedreven flyby van Blue op 7 november 2026, na ongeveer een jaar rond zon-aarde-L2; Gold volgt op 9 november.",
+      "type": "nominal"
+    },
+    {
+      "met": 663,
+      "label": "MARSBAANINSERTIE",
+      "note": "Ontstekingen van ongeveer 11 minuten op 450 km op 7 en 9 september 2027 brengen de tweeling in een omloopbaan van 60 uur (de invangbaan).",
+      "type": "nominal"
+    }
+  ],
+  "vehicle_stage": "tweede trap van de New Glenn (GS2)"
+}

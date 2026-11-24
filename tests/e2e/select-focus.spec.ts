@@ -1,5 +1,6 @@
 import { expect, test, type Locator, type Page } from '@playwright/test';
-import { openControlsDrawer, openDrawerTab } from './_helpers/hud-expand';
+import { contextWalkDone } from './_helpers/explore-walk';
+import { closeDrawer, openControlsDrawer, openDrawerTab } from './_helpers/hud-expand';
 import { waitForHydration } from './_helpers/hydration';
 
 /**
@@ -72,9 +73,20 @@ async function settled(page: Page) {
   await expect.poll(async () => (await cam(page)).flying, { timeout: 10_000 }).toBe(false);
 }
 
+/** The walk, then the last cross-out dolly (1.3 s): the entry pose is the level's own. */
+async function arrivedAt(page: Page) {
+  await contextWalkDone(page);
+  await expect.poll(async () => (await cam(page)).flying, { timeout: 45_000 }).toBe(false);
+  await page.waitForTimeout(2_500);
+}
+
 async function openIndex(page: Page, scale = 'solar-system') {
   const panel = page.locator(`aside.scale-index[data-scale="${scale}"]`);
-  if (!(await panel.isVisible())) await page.getByTestId('scale-index-toggle').click();
+  if (!(await panel.isVisible())) {
+    // A phone's compact drawer (no close button since the 0.9.11 mobile round) hides the toggle.
+    await closeDrawer(page);
+    await page.getByTestId('scale-index-toggle').click();
+  }
   await expect(panel).toBeVisible();
   return panel;
 }
@@ -306,9 +318,14 @@ test.describe('/explore select = focus', () => {
       timeout: 20_000,
     });
     await settled(page);
+    expect((await cam(page)).ringVisible).toBe(true);
+    if (isMobile)
+      test.skip(
+        await controlsTabCovered(page),
+        "Ceres's full-height sheet covers the Controls drawer",
+      );
     const again = await chip(page, isMobile, 'dwarfs');
     await expect(again).toHaveAttribute('aria-pressed', 'true');
-    expect((await cam(page)).ringVisible).toBe(true);
   });
 
   test('PATHS off closes a mission that was opened from a path', async ({ page, isMobile }) => {
@@ -597,11 +614,7 @@ test.describe('/explore outer scales: a member takes the camera, Reset gives it 
     }) => {
       test.slow();
       await openExplore(page, `?context=${s.scale}`);
-      await expect(page.getByTestId('scale-index-toggle')).toHaveAttribute('aria-label', /index/i, {
-        timeout: 45_000,
-      });
-      await expect.poll(async () => (await cam(page)).flying, { timeout: 45_000 }).toBe(false);
-      await page.waitForTimeout(2_500); // the cross-out dolly
+      await arrivedAt(page);
       const entry = await cam(page);
       const panel = await openIndex(page, s.scale);
       await indexRow(panel, s.row).click();
@@ -631,11 +644,7 @@ test.describe('/explore outer scales: a member takes the camera, Reset gives it 
   }) => {
     test.slow();
     await openExplore(page, '?context=virgo');
-    await expect(page.getByTestId('scale-index-toggle')).toHaveAttribute('aria-label', /index/i, {
-      timeout: 45_000,
-    });
-    await expect.poll(async () => (await cam(page)).flying, { timeout: 45_000 }).toBe(false);
-    await page.waitForTimeout(2_500); // the cross-out dolly
+    await arrivedAt(page);
     const panel = await openIndex(page, 'virgo');
     await indexRow(panel, 'm87-star').click();
     // The Virgo Cluster panel stays mounted, covered, under it and its text now names M87 too.

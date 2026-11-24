@@ -12,7 +12,13 @@
  * viking1 → viking1-lander, tianwen1 → zhurong).
  */
 
-import type { DescentBody, DescentProfile, EDLPhase } from './descent-physics';
+import type {
+  AfterTouchdown,
+  DescentBeatSpec,
+  DescentBody,
+  DescentProfile,
+  EDLPhase,
+} from './descent-physics';
 
 /** Runtime allowlist of destination bodies the engine accepts (validation). */
 const DESCENT_BODIES = [
@@ -49,7 +55,8 @@ export type ArchetypeName =
   | 'COMET_HARPOON'
   | 'TITAN_PARACHUTE'
   | 'JUPITER_PROBE'
-  | 'EARTH_CAPSULE_REENTRY';
+  | 'EARTH_CAPSULE_REENTRY'
+  | 'EARTH_STARSHIP_RETURN';
 
 /**
  * Per-mission knobs an archetype reads to build its phase sequence. Every field
@@ -67,6 +74,13 @@ export interface ArchetypeParams {
   parachuteCdA?: number;
   /** Terminal-descent drag area Cd·A (m²) for the Venus aeroshell coast. */
   terminalCdA?: number;
+  /** Beagle 2: altitude (m) the pilot chute goes and the main opens (absent: one chute). */
+  mainChuteAltM?: number;
+  /** Beagle 2: the pilot chute's drag area with the body it pulls (m²). */
+  pilotCdA?: number;
+  /** Mars powered landers: the descent stops at this altitude (m) and hovers `hoverS` s. */
+  hoverAltM?: number;
+  hoverS?: number;
   /** Retro specific impulse (s). */
   ispS?: number;
   /** Heat-shield mass jettisoned at chute deploy (kg). */
@@ -106,6 +120,13 @@ export interface ArchetypeParams {
    *  vehicle's and the engine brakes at its peak the whole phase — the real near-full-thrust
    *  braking burn; the normal gain on a shallow path would dawdle for many minutes. */
   brakingRateGain?: number;
+  /** Lunar powered descent: emit `high_gate` and `low_gate` where the approach and the final
+   *  descent start (Apollo's named gates). Off for landers whose record names none. */
+  gateBeats?: boolean;
+  /** Lunar powered descent: hovers (Chang'e at 100 m, Chandrayaan-3 at 800 m and 150 m): hold the
+   *  altitude `durS` seconds on the way down. `resumeS` frees the lander to fall that long after the
+   *  hover so it picks up its descent rate (the rate law only slows, never speeds up). */
+  hovers?: { altM: number; durS: number; resumeS?: number }[];
 }
 
 type ArchetypeBuilder = (p: ArchetypeParams) => EDLPhase[];
@@ -123,7 +144,29 @@ const LUNAR_POWERED: ArchetypeBuilder = (p) => {
   if (p.brakingFpaDeg == null) {
     return [{ ...common, endTrigger: { type: 'ground', value: 0 }, events: ['retro_ignition'] }];
   }
-  return [
+  const lowGate = p.lowGateAltM ?? 150;
+  const guide = { maxBrakeG: p.brakingMaxG ?? 0.3, maxThrustN: p.brakingMaxThrustN };
+  const hovers = [...(p.hovers ?? [])].sort((x, y) => y.altM - x.altM);
+  // A hover holds the altitude (the descent-rate floor is ~0) for `durS`, then the descent goes on.
+  const hover = (h: { durS: number }): EDLPhase => ({
+    ...common,
+    ...guide,
+    endTrigger: { type: 'duration_s', value: h.durS },
+    descentRateGain: 0,
+    terminalVelocityMs: 0,
+    events: ['hover'],
+  });
+  const resume = (h: { resumeS?: number }): EDLPhase[] =>
+    h.resumeS
+      ? [
+          {
+            kind: 'coast',
+            endTrigger: { type: 'duration_s', value: h.resumeS },
+            flightPathAngleDeg: 90,
+          },
+        ]
+      : [];
+  const phases: EDLPhase[] = [
     {
       ...common,
       endTrigger: { type: 'velocity_ms', value: p.highGateSpeedMs ?? 150 },
@@ -133,20 +176,39 @@ const LUNAR_POWERED: ArchetypeBuilder = (p) => {
       descentRateGain: p.brakingRateGain ?? 0.01,
       events: ['retro_ignition'],
     },
-    {
-      ...common,
-      endTrigger: { type: 'altitude_m', value: p.lowGateAltM ?? 150 },
-      flightPathAngleDeg: p.approachFpaDeg ?? 16,
-      maxBrakeG: p.brakingMaxG ?? 0.3,
-      maxThrustN: p.brakingMaxThrustN,
-    },
-    {
-      ...common,
-      endTrigger: { type: 'ground', value: 0 },
-      maxBrakeG: p.brakingMaxG ?? 0.3,
-      maxThrustN: p.brakingMaxThrustN,
-    },
   ];
+  const approach = (end: number, first: boolean): EDLPhase => ({
+    ...common,
+    ...guide,
+    endTrigger: { type: 'altitude_m', value: end },
+    flightPathAngleDeg: p.approachFpaDeg ?? 16,
+    ...(first && p.gateBeats ? { events: ['high_gate' as const] } : {}),
+  });
+  let first = true;
+  for (const h of hovers.filter((x) => x.altM > lowGate)) {
+    phases.push(
+      approach(h.altM + 700, first),
+      { ...approach(h.altM, false), descentRateGain: 8 / h.altM },
+      hover(h),
+      ...resume(h),
+    );
+    first = false;
+  }
+  const afterHover = first ? {} : { flightPathAngleDeg: 90 };
+  phases.push({ ...approach(lowGate, first), ...afterHover });
+  const fin = (end: number, gate: boolean): EDLPhase => ({
+    ...common,
+    ...guide,
+    endTrigger: end > 0 ? { type: 'altitude_m', value: end } : { type: 'ground', value: 0 },
+    ...(gate && p.gateBeats ? { events: ['low_gate' as const] } : {}),
+  });
+  let gate = true;
+  for (const h of hovers.filter((x) => x.altM <= lowGate)) {
+    phases.push(fin(h.altM, gate), hover(h), ...resume(h));
+    gate = false;
+  }
+  phases.push(fin(0, gate));
+  return phases;
 };
 
 const LUNA_DIRECT_IMPACT: ArchetypeBuilder = (p) => [
@@ -164,25 +226,50 @@ const LUNA_DIRECT_IMPACT: ArchetypeBuilder = (p) => [
   { kind: 'coast', endTrigger: { type: 'ground', value: 0 }, events: ['airbag_deploy'] },
 ];
 
-const MARS_PARACHUTE_RETRO: ArchetypeBuilder = (p) => [
-  { kind: 'ballistic_entry', endTrigger: { type: 'altitude_m', value: p.chuteDeployAltM ?? 8000 } },
-  {
-    kind: 'parachute',
-    endTrigger: { type: 'altitude_m', value: p.terminalHandoffAltM ?? 1500 },
-    cdA: p.parachuteCdA ?? 120,
-    jettisonKg: p.heatshieldKg ?? 100,
-    events: ['parachute_deploy', 'heatshield_sep'],
-  },
-  {
+const MARS_PARACHUTE_RETRO: ArchetypeBuilder = (p) => {
+  const burn: EDLPhase = {
     kind: 'powered_retro',
     endTrigger: { type: 'ground', value: 0 },
     ispS: p.ispS ?? 225,
-    jettisonKg: p.backshellKg ?? 200,
     terminalVelocityMs: p.terminalVelocityMs ?? 2.4,
     descentRateGain: p.descentRateGain ?? 0.08,
-    events: ['backshell_sep', 'retro_ignition'],
-  },
-];
+  };
+  // With `hoverAltM` the burn stops its descent there, holds for `hoverS` (hazard avoidance:
+  // Tianwen-1 at about 100 m), then descends to the ground.
+  const hover: EDLPhase[] =
+    p.hoverAltM == null
+      ? [{ ...burn, jettisonKg: p.backshellKg ?? 200, events: ['backshell_sep', 'retro_ignition'] }]
+      : [
+          {
+            ...burn,
+            endTrigger: { type: 'altitude_m', value: p.hoverAltM },
+            jettisonKg: p.backshellKg ?? 200,
+            events: ['backshell_sep', 'retro_ignition'],
+          },
+          {
+            ...burn,
+            endTrigger: { type: 'duration_s', value: p.hoverS ?? 10 },
+            terminalVelocityMs: 0,
+            descentRateGain: 0,
+            events: ['hover'],
+          },
+          burn,
+        ];
+  return [
+    {
+      kind: 'ballistic_entry',
+      endTrigger: { type: 'altitude_m', value: p.chuteDeployAltM ?? 8000 },
+    },
+    {
+      kind: 'parachute',
+      endTrigger: { type: 'altitude_m', value: p.terminalHandoffAltM ?? 1500 },
+      cdA: p.parachuteCdA ?? 120,
+      jettisonKg: p.heatshieldKg ?? 100,
+      events: ['parachute_deploy', 'heatshield_sep'],
+    },
+    ...hover,
+  ];
+};
 
 const MARS_AIRBAG: ArchetypeBuilder = (p) => [
   { kind: 'ballistic_entry', endTrigger: { type: 'altitude_m', value: p.chuteDeployAltM ?? 9000 } },
@@ -204,25 +291,43 @@ const MARS_AIRBAG: ArchetypeBuilder = (p) => [
   { kind: 'airbag_bounce', endTrigger: { type: 'ground', value: 0 }, events: ['airbag_deploy'] },
 ];
 
-/** Beagle 2: no retro rockets. The main chute carries the probe down to the airbag
- *  inflation height and stays on through the bounces (the inquiry's rebound-into-the-
- *  canopy risk) — so the airbag phase keeps the chute's drag area. */
-const MARS_CHUTE_AIRBAG: ArchetypeBuilder = (p) => [
-  { kind: 'ballistic_entry', endTrigger: { type: 'altitude_m', value: p.chuteDeployAltM ?? 7000 } },
-  {
+/** Beagle 2: no retro rockets. With `mainChuteAltM` the pilot chute (a small drag area) flies
+ *  first and the main opens at that height (the inquiry's pilot-then-main sequence), the back
+ *  cover leaving with the pilot; the airbag phase keeps the main chute's drag area to first
+ *  impact, where the scene releases it. Without it, one chute from deployment. */
+const MARS_CHUTE_AIRBAG: ArchetypeBuilder = (p) => {
+  const mainCdA = p.parachuteCdA ?? 40;
+  const handoff = p.finalPhaseAltM ?? 200;
+  const twoStage = p.mainChuteAltM != null;
+  const first: EDLPhase = {
     kind: 'parachute',
-    endTrigger: { type: 'altitude_m', value: p.finalPhaseAltM ?? 200 },
-    cdA: p.parachuteCdA ?? 40,
+    endTrigger: { type: 'altitude_m', value: p.mainChuteAltM ?? handoff },
+    cdA: twoStage ? (p.pilotCdA ?? 2) : mainCdA,
     jettisonKg: p.heatshieldKg ?? 20,
     events: ['parachute_deploy', 'heatshield_sep'],
-  },
-  {
-    kind: 'airbag_bounce',
-    endTrigger: { type: 'ground', value: 0 },
-    cdA: p.parachuteCdA ?? 40,
-    events: ['airbag_deploy'],
-  },
-];
+  };
+  const main: EDLPhase = {
+    kind: 'parachute',
+    endTrigger: { type: 'altitude_m', value: handoff },
+    cdA: mainCdA,
+    jettisonKg: p.backshellKg ?? 0,
+    events: ['parachute_jettison', 'backshell_sep'],
+  };
+  return [
+    {
+      kind: 'ballistic_entry',
+      endTrigger: { type: 'altitude_m', value: p.chuteDeployAltM ?? 7000 },
+    },
+    first,
+    ...(twoStage ? [main] : []),
+    {
+      kind: 'airbag_bounce',
+      endTrigger: { type: 'ground', value: 0 },
+      cdA: mainCdA,
+      events: ['airbag_deploy'],
+    },
+  ];
+};
 
 const MARS_SKYCRANE: ArchetypeBuilder = (p) => [
   {
@@ -269,7 +374,8 @@ const VENUS_AEROSHELL: ArchetypeBuilder = (p) => [
     endTrigger: { type: 'ground', value: 0 },
     cdA: p.terminalCdA ?? 3.2,
     jettisonKg: p.backshellKg ?? 200,
-    events: ['heatshield_sep'],
+    // The chute is cut here (Venera 13: at about 50 km); the lander falls on air braking alone.
+    events: ['parachute_jettison', 'heatshield_sep'],
   },
 ];
 
@@ -287,7 +393,7 @@ const MARS_PROPULSIVE: ArchetypeBuilder = (p) => [
     ispS: p.ispS ?? 350,
     terminalVelocityMs: p.terminalVelocityMs ?? 2,
     descentRateGain: p.descentRateGain ?? 0.06,
-    events: ['retro_ignition'],
+    events: ['landing_flip', 'retro_ignition'],
   },
 ];
 
@@ -411,6 +517,25 @@ const EARTH_CAPSULE_REENTRY: ArchetypeBuilder = (p) => [
   },
 ];
 
+/** Starship's return to Earth (Flight 5, 0.9.11 F3): a belly-first lifting entry bleeds speed to
+ *  a subsonic fall, then the landing flip — the ship swings from belly-down to tail-down as the
+ *  Raptors light — and the landing burn to the water. No parachute, no heat-shield jettison. */
+const EARTH_STARSHIP_RETURN: ArchetypeBuilder = (p) => [
+  {
+    kind: 'ballistic_entry',
+    endTrigger: { type: 'altitude_m', value: p.terminalHandoffAltM ?? 1000 },
+  },
+  {
+    kind: 'powered_retro',
+    endTrigger: { type: 'ground', value: 0 },
+    ispS: p.ispS ?? 330,
+    terminalVelocityMs: p.terminalVelocityMs ?? 3,
+    descentRateGain: p.descentRateGain ?? 0.12,
+    maxThrustN: p.brakingMaxThrustN,
+    events: ['landing_flip', 'retro_ignition'],
+  },
+];
+
 const ARCHETYPES: Record<ArchetypeName, ArchetypeBuilder> = {
   LUNAR_POWERED,
   LUNA_DIRECT_IMPACT,
@@ -425,6 +550,7 @@ const ARCHETYPES: Record<ArchetypeName, ArchetypeBuilder> = {
   TITAN_PARACHUTE,
   JUPITER_PROBE,
   EARTH_CAPSULE_REENTRY,
+  EARTH_STARSHIP_RETURN,
 };
 
 /** The default survivable-touchdown limit (m·s⁻¹) per archetype. */
@@ -441,6 +567,7 @@ const ARCHETYPE_SURVIVABLE: Record<ArchetypeName, number> = {
   COMET_HARPOON: 5, // Philae touched at ~1 m/s and survived the bounces
   TITAN_PARACHUTE: 8, // Huygens hit ~4.5 m/s
   JUPITER_PROBE: 60, // no touchdown — high limit so the crush isn't flagged a crash
+  EARTH_STARSHIP_RETURN: 5, // a controlled landing burn to the water (Flight 5)
   EARTH_CAPSULE_REENTRY: 12, // splash/ground at ~8–11 m/s (Aurora 7's sourced timeline: 10.4); a fouled main (Soyuz 1, ~40) busts this → crash
 };
 
@@ -475,6 +602,10 @@ export interface RawDescentProfile {
   survivableTouchdownMs?: number;
   /** The published record stops at this altitude (m): the descent ends there (see DescentProfile). */
   recordEndsAltM?: number;
+  /** Beats placed by altitude or delay (DescentBeatSpec); each replaces a phase-start beat of its type. */
+  beats?: DescentBeatSpec[];
+  /** Bounces, roll and ground beats after the first contact (AfterTouchdown). */
+  afterTouchdown?: AfterTouchdown;
   archetype: ArchetypeName;
   params?: ArchetypeParams;
   source_tier: 'flagship' | 'generic';
@@ -490,6 +621,7 @@ export function expandDescentProfile(raw: RawDescentProfile): DescentProfile {
     missionId: raw.missionId,
     body: raw.body,
     landingSite: raw.landingSite,
+    ...(raw.estimatedFields?.includes('landingSite') ? { landingSiteEstimated: true } : {}),
     entryState: raw.entryState,
     entryMassKg: raw.entryMassKg,
     entryCdA: raw.entryCdA,
@@ -500,6 +632,8 @@ export function expandDescentProfile(raw: RawDescentProfile): DescentProfile {
     phases: build(raw.params ?? {}),
     survivableTouchdownMs: raw.survivableTouchdownMs ?? ARCHETYPE_SURVIVABLE[raw.archetype],
     ...(raw.recordEndsAltM != null ? { recordEndsAltM: raw.recordEndsAltM } : {}),
+    ...(raw.beats ? { beats: raw.beats } : {}),
+    ...(raw.afterTouchdown ? { afterTouchdown: raw.afterTouchdown } : {}),
     source_tier: raw.source_tier,
     provenance: raw.provenance,
   };
@@ -594,6 +728,7 @@ export const DESCENT_MISSION_IDS = new Set<string>([
   'soyuz-11',
   'inspiration4',
   'polaris-dawn',
+  'starship-flight-5', // Starship's belly-first return, landing flip and burn (0.9.11 F3)
   'shenzhou-1',
 ]);
 
@@ -632,8 +767,22 @@ export async function loadDescentProfile(
   baseUrl = '',
 ): Promise<DescentProfile | null> {
   if (!hasDescentProfile(missionId)) return null;
+  return loadDescentProfileFile(missionId, fetchFn, baseUrl);
+}
+
+/**
+ * Fetch + expand one descent-profile file by its file id: a mission's second descent that is not
+ * the mission's own landing (Apollo 11's Earth splashdown, `apollo11-splashdown`, named by its
+ * return profile). Same fail-closed rules as `loadDescentProfile`, minus the mission gate.
+ */
+export async function loadDescentProfileFile(
+  fileId: string | undefined | null,
+  fetchFn: typeof fetch = fetch,
+  baseUrl = '',
+): Promise<DescentProfile | null> {
+  if (fileId == null || !/^[a-z0-9][a-z0-9-]*$/.test(fileId)) return null;
   try {
-    const res = await fetchFn(`${baseUrl}/data/descent-profiles/${missionId}.json`);
+    const res = await fetchFn(`${baseUrl}/data/descent-profiles/${fileId}.json`);
     if (!res.ok) return null;
     const data: unknown = await res.json();
     if (!isValidRaw(data)) return null;

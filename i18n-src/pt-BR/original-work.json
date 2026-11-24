@@ -590,6 +590,9 @@
     },
     "/images/anatomy/voskhod_webp": {
       "title": "Voskhod"
+    },
+    "/images/anatomy/starship-hls_webp": {
+      "title": "Starship HLS"
     }
   },
   "lab_illustrations": {
@@ -1011,6 +1014,15 @@
     },
     "/diagrams/science/vis-viva_webp": {
       "title": "Vis Viva"
+    },
+    "/diagrams/science/earth-surface-imagery_webp": {
+      "title": "Imagens da superfície da Terra"
+    },
+    "/diagrams/science/mars-surface-imagery_webp": {
+      "title": "Imagens da superfície de Marte"
+    },
+    "/diagrams/science/moon-surface-imagery_webp": {
+      "title": "Imagens da superfície da Lua"
     }
   },
   "posters": {
@@ -1100,77 +1112,12 @@
     "/images/colophon/craft-cassini_webp": {
       "title": "Cassini–Huygens",
       "what": "Disco de alto ganho, braços RTG e a sonda Huygens — orbitador de Saturno.",
-      "where": "Voar + Explorar"
-    },
-    "/images/colophon/craft-voyager-1_webp": {
-      "title": "Voyager",
-      "what": "Disco de 3,7 m, boom magnetômetro e treliça RTG — o ônibus do Grande Tour.",
-      "where": "Voar + Explorar"
-    },
-    "/images/colophon/craft-galileo_webp": {
-      "title": "Galileo",
-      "what": "Barramento de dupla rotação com a antena guarda-chuva de alto ganho retraída.",
-      "where": "Voar + Explorar"
+      "where": "Voo · lançamento + cruzeiro"
     },
     "/images/colophon/craft-new-horizons_webp": {
       "title": "New Horizons",
       "what": "Barramento triangular compacto com uma única antena parabólica — sonda do sobrevoo de Plutão.",
-      "where": "Voar + Explorar"
-    },
-    "/images/colophon/craft-pioneer-10_webp": {
-      "title": "Pioneer",
-      "what": "Antena parabólica com estabilização por rotação, mastros com RTG e a placa gravada.",
-      "where": "Voar + Explorar"
-    },
-    "/images/colophon/craft-juno_webp": {
-      "title": "Juno",
-      "what": "Três asas solares vastas ao redor de um barramento hexagonal — orbitador polar de Júpiter.",
-      "where": "Voar + Explorar"
-    },
-    "/images/colophon/craft-bepicolombo_webp": {
-      "title": "BepiColombo",
-      "what": "Módulo de transferência empilhado + orbitadores de Mercúrio com propulsores iônicos.",
-      "where": "Voar + Explorar"
-    },
-    "/images/colophon/craft-dawn_webp": {
-      "title": "Dawn",
-      "what": "Barramento com propulsão iônica e asas solares amplas — orbitador de Vesta + Ceres.",
-      "where": "Voar + Explorar"
-    },
-    "/images/colophon/craft-giotto_webp": {
-      "title": "Giotto",
-      "what": "Spinner em forma de tambor com um escudo contra poeira — sobrevoo do Cometa Halley.",
-      "where": "Voar + Explorar"
-    },
-    "/images/colophon/craft-hayabusa2_webp": {
-      "title": "Hayabusa2",
-      "what": "Barramento prismático com painéis solares e chifre coletor — asteroide Ryugu.",
-      "where": "Voar + Explorar"
-    },
-    "/images/colophon/craft-juice_webp": {
-      "title": "JUICE",
-      "what": "Painéis solares em forma de cruz em um barramento compacto — orbitador de luas geladas de Júpiter.",
-      "where": "Voar + Explorar"
-    },
-    "/images/colophon/craft-rosetta_webp": {
-      "title": "Rosetta",
-      "what": "14 m de asas solares ao redor de um ônibus caçador de cometas + lander Philae.",
-      "where": "Voar + Explorar"
-    },
-    "/images/colophon/craft-ulysses_webp": {
-      "title": "Ulysses",
-      "what": "Sonda polar solar alimentada por RTG com uma única antena parabólica.",
-      "where": "Voar + Explorar"
-    },
-    "/images/colophon/craft-vega-1_webp": {
-      "title": "Vega",
-      "what": "Sobrevoo de Vênus soviético + nave-mãe de balão com antena parabólica orientável.",
-      "where": "Voar + Explorar"
-    },
-    "/images/colophon/craft-venera-13_webp": {
-      "title": "Venera 13",
-      "what": "Lander soviético de Vênus — freio aerodinâmico toroidal e anel de pouso.",
-      "where": "Voar + Explorar"
+      "where": "Voo · lançamento + cruzeiro"
     },
     "/images/colophon/model-launcher-generic_webp": {
       "title": "Lançador genérico",
@@ -1547,16 +1494,6 @@
       "what": "Lander alto da Blue Origin — tanque central em uma estrutura de quatro pernas.",
       "where": "Voo · cruzeiro/aproximação"
     },
-    "/images/colophon/model-cruise-hayabusa1_webp": {
-      "title": "Cruzeiro Hayabusa",
-      "what": "Ônibus de retorno de amostras da JAXA — asas solares, um cone amostrador e motores iônicos.",
-      "where": "Voo · cruzeiro/aproximação"
-    },
-    "/images/colophon/model-cruise-osiris-rex_webp": {
-      "title": "Cruzeiro OSIRIS-REx",
-      "what": "Ônibus boxy com asas solares em ângulo V e o braço amostrador TAGSAM estendido.",
-      "where": "Voo · cruzeiro/aproximação"
-    },
     "/images/colophon/model-cruise-near-shoemaker_webp": {
       "title": "NEAR Shoemaker",
       "what": "Ônibus orbitador com quatro painéis solares fixos em cruz e uma antena parabólica fixa.",
@@ -1659,22 +1596,22 @@
     },
     "/images/colophon/model-launcher-atlas-centaur_webp": {
       "title": "Atlas-Centaur",
-      "what": "Atlas de tanque de aço autoportante e estágio e meio sob o estágio superior Centaur branco e sua coifa (Mariner 9 e 10, Pioneer 10 e 11).",
+      "what": "O estágio e meio Atlas de balão de aço sob o estágio superior Centaur branco e sua coifa (Mariner 9 e 10, Pioneer 10 e 11).",
       "where": "Voo · lançamento/ascensão"
     },
     "/images/colophon/model-launcher-atlas-agena_webp": {
       "title": "Atlas-Agena",
-      "what": "O mesmo Atlas sob um esbelto estágio superior Agena D e uma pequena coifa (Mariner 4).",
+      "what": "O mesmo Atlas sob um esguio estágio superior Agena D e uma pequena coifa (Mariner 4).",
       "where": "Voo · lançamento/ascensão"
     },
     "/images/colophon/model-launcher-titan-ii-g_webp": {
       "title": "Titan II(23)G",
-      "what": "Dois estágios do núcleo Titan sob uma coifa de carga útil (Clementine).",
+      "what": "Dois estágios-núcleo Titan sob uma coifa de carga útil (Clementine).",
       "where": "Voo · lançamento/ascensão"
     },
     "/images/colophon/model-launcher-titan-iiie-centaur_webp": {
       "title": "Titan IIIE-Centaur",
-      "what": "Núcleo Titan com dois propulsores sólidos de cinco segmentos, um interestágio e o Centaur dentro da sua coifa (Viking, Voyager).",
+      "what": "Núcleo Titan com dois propulsores sólidos de cinco segmentos, um interestágio e o Centaur dentro de sua coifa (Viking, Voyager).",
       "where": "Voo · lançamento/ascensão"
     },
     "/images/colophon/model-launcher-titan-ivb-centaur_webp": {
@@ -1684,12 +1621,12 @@
     },
     "/images/colophon/model-launcher-falcon-heavy_webp": {
       "title": "Falcon Heavy",
-      "what": "Três núcleos Falcon 9 lado a lado: propulsores laterais com ogivas, aletas de grade e pernas, e um núcleo central com o estágio superior e a coifa.",
+      "what": "Três núcleos do Falcon 9 lado a lado: propulsores laterais com cones de ogiva, aletas de grade e pernas, e um núcleo central com o estágio superior e a coifa.",
       "where": "Voo · lançamento/ascensão"
     },
     "/images/colophon/model-launcher-athena-ii_webp": {
       "title": "Athena II",
-      "what": "Pilha toda de combustível sólido: dois estágios Castor 120, um terceiro estágio e uma coifa afunilada (Lunar Prospector).",
+      "what": "Pilha totalmente sólida: dois estágios Castor 120, um terceiro estágio e uma coifa afunilada (Lunar Prospector).",
       "where": "Voo · lançamento/ascensão"
     },
     "/images/colophon/model-launcher-delta-iv-heavy_webp": {
@@ -1699,27 +1636,27 @@
     },
     "/images/colophon/model-launcher-new-glenn_webp": {
       "title": "New Glenn",
-      "what": "Uma única coluna de 7 m: primeiro estágio de sete motores com pernas e aletas, sob uma coifa ogival de 7 m (Blue Moon MK1).",
+      "what": "Um único fuste de 7 m: um primeiro estágio de sete motores com pernas e strakes sob uma coifa ogival de 7 m (Blue Moon MK1).",
       "where": "Voo · lançamento/ascensão"
     },
     "/images/colophon/model-launcher-proton-m-briz-m_webp": {
       "title": "Proton-M / Briz-M",
-      "what": "Núcleo central cercado por seis tanques externos de combustível, mais dois estágios e um estágio superior Briz-M sob uma coifa de 4,35 m.",
+      "what": "Núcleo central cercado por seis tanques de combustível externos, mais dois estágios e um estágio superior Briz-M sob uma coifa de 4,35 m.",
       "where": "Voo · lançamento/ascensão"
     },
     "/images/colophon/model-launcher-sls-block-1_webp": {
       "title": "SLS Block 1",
-      "what": "Estágio central laranja de espuma com quatro RS-25, dois propulsores brancos de cinco segmentos, o adaptador e o estágio superior sob a Orion e sua torre de fuga (Artemis).",
+      "what": "Estágio central laranja com espuma sobre quatro RS-25, dois propulsores brancos de cinco segmentos, o adaptador de estágio e o estágio superior sob a Orion e sua torre de aborto (Artemis).",
       "where": "Voo · lançamento/ascensão"
     },
     "/images/colophon/model-launcher-molniya-m_webp": {
       "title": "Molniya-M",
-      "what": "R-7 de quatro estágios: o Blok I na sua treliça, o estágio de escape Blok L e a sonda sob uma coifa cilíndrica e cônica (Luna 9, Luna 10).",
+      "what": "R-7 de quatro estágios: o Blok I sobre sua treliça, o estágio de escape Blok L e a sonda sob uma coifa de cilindro e cone (Luna 9, Luna 10).",
       "where": "Voo · lançamento/ascensão"
     },
     "/images/colophon/model-launcher-soyuz-fg-fregat_webp": {
       "title": "Soyuz-FG / Fregat",
-      "what": "O R-7 e seu estágio superior coroados pelo atarracado Fregat e pela sonda sob uma coifa mais larga (Mars Express).",
+      "what": "O R-7 e seu estágio superior encimados pelo atarracado Fregat e pela sonda sob uma coifa mais larga (Mars Express).",
       "where": "Voo · lançamento/ascensão"
     },
     "/images/colophon/model-launcher-sputnik-8k71ps_webp": {
@@ -1734,7 +1671,7 @@
     },
     "/images/colophon/model-launcher-antares_webp": {
       "title": "Antares 230+",
-      "what": "O lançador da Cygnus da Northrop Grumman: primeiro estágio a querosene de 3,9 m com dois RD-181 sob um segundo estágio sólido e a coifa.",
+      "what": "O lançador do Cygnus da Northrop Grumman: um primeiro estágio a querosene de 3,9 m com dois RD-181 sob um segundo estágio sólido e uma coifa.",
       "where": "Voo · lançamento/ascensão"
     },
     "/images/colophon/model-launcher-ariane-6_webp": {
@@ -1744,93 +1681,93 @@
     },
     "/images/colophon/model-launcher-vulcan_webp": {
       "title": "Vulcan Centaur",
-      "what": "Primeiro estágio a metano de 5,4 m da ULA com dois BE-4, o Centaur V e uma coifa de 5,4 m, com propulsores sólidos GEM 63XL.",
+      "what": "O primeiro estágio a metano de 5,4 m da ULA com dois BE-4, o Centaur V e uma coifa de 5,4 m, com propulsores sólidos GEM 63XL.",
       "where": "Voo · lançamento/ascensão"
     },
     "/images/colophon/model-launcher-energia_webp": {
       "title": "Energia–Buran",
-      "what": "O núcleo a hidrogênio de 7,75 m com quatro propulsores RD-170 e o orbitador Buran no seu flanco.",
+      "what": "O núcleo a hidrogênio de 7,75 m com quatro propulsores laterais RD-170 e o orbitador Buran em seu flanco.",
       "where": "Voo · lançamento/ascensão"
     },
     "/images/colophon/model-launcher-n1_webp": {
       "title": "N1",
-      "what": "O foguete lunar soviético: cinco estágios em cone, trinta motores no primeiro, sob a coifa L3 e a torre de escape.",
+      "what": "O foguete lunar soviético: cinco estágios em um cone, trinta motores no primeiro, sob a coifa L3 e a torre de escape.",
       "where": "Voo · lançamento/ascensão"
     },
     "/images/colophon/model-showcase-soyuz-7k-ok_webp": {
       "title": "Soyuz 7K-OK",
       "what": "A Soyuz de primeira geração, de 7,95 m: módulos orbital, de descida e de serviço, asas solares de 9,8 m e as antenas de encontro Igla.",
-      "where": "Frota · comparação em escala"
+      "where": "Frota · comparação em escala + Voo"
     },
     "/images/colophon/model-showcase-soyuz-ms_webp": {
       "title": "Soyuz T / TM / TMA / MS (4 variantes)",
-      "what": "A Soyuz de 7,48 m em quatro gerações: antenas Igla na T, Kurs na TM e na TMA, Kurs-NA e um escudo antimicrometeoritos na MS.",
+      "what": "A Soyuz de 7,48 m ao longo de quatro gerações: antenas Igla na T, Kurs na TM e na TMA, Kurs-NA e um escudo antimicrometeoroides na MS.",
       "where": "Frota · comparação em escala"
     },
     "/images/colophon/model-showcase-crew-dragon_webp": {
       "title": "Crew Dragon",
-      "what": "O conjunto de cápsula e trunk de 8,1 m com as janelas, os pods SuperDraco e o trunk de células solares.",
-      "where": "Frota · comparação em escala"
+      "what": "O conjunto cápsula e tronco de 8,1 m: a cápsula branca em forma de gota com sua escotilha trapezoidal, quatro janelas e compartimentos SuperDraco sobre o escuro escudo térmico PICA-X, em um tronco com um remendo de células envolvente e duas aletas de radiador, sob a ogiva branca articulada.",
+      "where": "Frota · comparação em escala + Voo"
     },
     "/images/colophon/model-showcase-starliner_webp": {
       "title": "Starliner (CST-100)",
-      "what": "A cápsula e o módulo de serviço da Boeing, de 5,03 m: a faixa azul e os pods de propulsores.",
+      "what": "A cápsula e o módulo de serviço de 5,03 m da Boeing: um cone largo e baixo em branco prateado com listras azuis e o emblema redondo da NASA, sobre um tambor com quatro casulos de propulsores em forma de casinha.",
       "where": "Frota · comparação em escala"
     },
     "/images/colophon/model-showcase-gaganyaan_webp": {
       "title": "Gaganyaan",
-      "what": "O módulo de tripulação de 5,58 m da ISRO sobre o módulo de serviço, com asas solares desdobráveis.",
+      "what": "O módulo de tripulação e o módulo de serviço de 5,58 m da ISRO: um cone rombudo branco revestido de fita marrom acobreada com uma escotilha trapezoidal e três vigias, sobre um tambor em folha dourada com duas asas solares.",
       "where": "Frota · comparação em escala"
     },
     "/images/colophon/model-showcase-orion_webp": {
       "title": "Orion",
-      "what": "O módulo de tripulação da Artemis, de 7,9 m, com o módulo de serviço europeu e seus painéis solares.",
+      "what": "O conjunto Artemis de 7,9 m: o módulo de tripulação branco de ladrilhos sobre seu escuro escudo térmico, o módulo de serviço europeu com quatro painéis solares em X e o anel adaptador da espaçonave abaixo.",
       "where": "Frota · comparação em escala"
     },
     "/images/colophon/model-showcase-new-shepard_webp": {
       "title": "New Shepard",
-      "what": "O veículo suborbital de 19,2 m: um propulsor de 3,8 m sob a cápsula de tripulação com suas grandes janelas.",
+      "what": "O veículo suborbital de 19,2 m na plataforma: um propulsor branco com saia de motor preta, faixa azul, aleta anelar, três aletas de cauda e quatro pernas, sob a cápsula de tripulação com suas seis grandes janelas.",
       "where": "Frota · comparação em escala"
     },
     "/images/colophon/model-showcase-apollo-csm-block-ii_webp": {
       "title": "Apollo CSM Block I / II (2 variantes)",
-      "what": "O módulo de comando e serviço de 10,6 e 11 m: o módulo de comando cônico sobre o módulo de serviço cilíndrico e seu bocal.",
-      "where": "Frota · comparação em escala"
+      "what": "O módulo de comando e serviço de 10,6 e 11 m: o cone em prata refletiva com cinco janelas e (Block II) a sonda de acoplamento, sobre o módulo de serviço de alumínio polido com seus radiadores brancos, quads RCS e o bocal do motor.",
+      "where": "Frota · comparação em escala + Voo"
     },
     "/images/colophon/model-showcase-shenzhou_webp": {
       "title": "Shenzhou",
-      "what": "A nave chinesa de três módulos e 9,25 m, de linhagem Soyuz: módulo orbital, módulo de reentrada e módulo de serviço com suas asas solares.",
-      "where": "Frota · comparação em escala"
+      "what": "A nave chinesa de três módulos de 9,25 m, da linhagem Soyuz: um módulo orbital prateado acolchoado, o módulo de reentrada em forma de sino sobre sua escura base ablativa e o módulo de serviço branco com saia bordô, blocos de propulsores laranja e duas asas.",
+      "where": "Frota · comparação em escala + Voo"
     },
     "/images/colophon/model-showcase-space-shuttle-orbiter_webp": {
       "title": "Orbitador do Space Shuttle",
-      "what": "Um orbitador de 37,2 m desenhado uma única vez para as quatro irmãs — Atlantis, Challenger, Discovery e Endeavour — deitado na pista.",
-      "where": "Frota · comparação em escala"
+      "what": "Um único orbitador de 37,2 m desenhado uma vez para as quatro irmãs (Atlantis, Challenger, Discovery e Endeavour): fuselagem superior branca com as portas do compartimento de carga, ventre de ladrilhos pretos, asa de duplo delta com bordas de carbono reforçado, cápsulas OMS e três motores principais, deitado na pista.",
+      "where": "Frota · comparação em escala + Voo"
     },
     "/images/colophon/model-showcase-columbia_webp": {
       "title": "Space Shuttle Columbia",
-      "what": "O primeiro orbitador: o único com arestas pretas e o módulo de instrumentos na deriva.",
-      "where": "Frota · comparação em escala"
+      "what": "O primeiro orbitador: o único com arestas pretas no topo das asas e o casulo de instrumentos na sua deriva.",
+      "where": "Frota · comparação em escala + Voo"
     },
     "/images/colophon/model-showcase-enterprise_webp": {
       "title": "Space Shuttle Enterprise",
-      "what": "O orbitador de testes atmosféricos: sem motores principais, sem pods OMS, com placas simuladas.",
+      "what": "O orbitador de testes atmosféricos: ladrilhos simulados cor de carvão de espuma e tinta e bordas de asa de fibra de vidro branca lisa no lugar dos ladrilhos e do carbono de voo.",
       "where": "Frota · comparação em escala"
     },
     "/images/colophon/model-showcase-buran_webp": {
       "title": "Buran",
-      "what": "O orbitador soviético de 36,4 m: uma asa em delta duplo de 24 m, com os motores principais deixados no núcleo da Energia.",
+      "what": "O orbitador soviético de 36,4 m: uma asa de duplo delta de 24 m e dois bocais OMS na cauda, com seus motores principais deixados no núcleo Energia.",
       "where": "Frota · comparação em escala"
     },
     "/images/colophon/model-showcase-buran-ok-gli_webp": {
       "title": "Buran OK-GLI",
-      "what": "O veículo de testes atmosféricos com a forma e a massa do Buran: quatro turbofans AL-31 na cauda.",
+      "what": "O veículo de testes atmosféricos com a forma e a massa do Buran, pintado de branco e cinza e sem ladrilhos: seus motores a jato em uma nacele de cada lado da base da deriva.",
       "where": "Frota · comparação em escala"
     },
     "/images/colophon/model-showcase-x37b_webp": {
       "title": "X-37B",
-      "what": "O avião espacial não tripulado de 8,92 m da Força Espacial dos EUA, com 4,55 m de envergadura.",
-      "where": "Frota · comparação em escala"
+      "what": "O avião espacial não tripulado de 8,92 m da Força Espacial dos EUA, com 4,55 m de envergadura: parte inferior e nariz de ladrilhos pretos, cauda inclinada, portas do compartimento fechadas.",
+      "where": "Frota · comparação em escala + Voo"
     },
     "/images/colophon/model-showcase-progress-ms_webp": {
       "title": "Progress 7K-TG / M / MS (3 variantes)",
@@ -1839,280 +1776,593 @@
     },
     "/images/colophon/model-showcase-cargo-dragon-2_webp": {
       "title": "Cargo Dragon 2",
-      "what": "A Dragon 2 sem tripulação e sem janelas sobre o trunk de 8,1 m: a nave de carga da ISS.",
+      "what": "A Dragon 2 não tripulada e sem janelas sobre seu tronco de 8,1 m: placas de cobertura onde a versão tripulada tem janelas e compartimentos SuperDraco.",
       "where": "Frota · comparação em escala"
     },
     "/images/colophon/model-showcase-cargo-dragon-v1_webp": {
       "title": "Dragon 1",
-      "what": "A Dragon de carga original, de 6,1 m: uma cápsula de 3,7 m sobre o trunk com dois painéis solares.",
+      "what": "A Dragon de carga original de 6,1 m: uma cápsula atarracada de 3,7 m de largura com quatro quads Draco e uma ogiva branca, sobre um tronco de 2,3 m com duas asas solares.",
       "where": "Frota · comparação em escala"
     },
     "/images/colophon/model-showcase-cygnus-enhanced_webp": {
       "title": "Cygnus Standard / Enhanced (2 variantes)",
-      "what": "A cargueira de estação da Northrop Grumman, de 5,14 e 6,39 m: um módulo de carga pressurizado sobre o módulo de serviço com painéis solares circulares.",
+      "what": "A cargueira da Northrop Grumman de 5,14 e 6,39 m: um módulo de carga de alumínio nu com painéis alveolados sobre um módulo de serviço dourado e prateado, com asas retangulares planas na Standard e painéis UltraFlex redondos na Enhanced.",
       "where": "Frota · comparação em escala"
     },
     "/images/colophon/model-showcase-htv_webp": {
       "title": "HTV (Kounotori)",
-      "what": "A cargueira de estação japonesa de 9,8 m: um módulo pressurizado e um palete aberto sobre a seção de serviço.",
+      "what": "A cargueira de estação japonesa de 9,8 m: um módulo de propulsão branco, uma seção de aviônica prateada, um compartimento de paletes aberto e o carregador pressurizado branco com células escuras no corpo.",
       "where": "Frota · comparação em escala"
     },
     "/images/colophon/model-showcase-htv-x_webp": {
       "title": "HTV-X",
-      "what": "A cargueira sucessora japonesa de 8 m: um módulo de carga pressurizado sobre o módulo de serviço com suas asas solares.",
+      "what": "A cargueira sucessora japonesa de 8 m: um módulo pressurizado coberto de mantas douradas, um convés aberto de apoio à carga, um módulo de serviço prateado e dois longos painéis estreitos.",
       "where": "Frota · comparação em escala"
     },
     "/images/colophon/model-showcase-atv_webp": {
       "title": "ATV",
-      "what": "O Automated Transfer Vehicle da ESA, de 10,3 m: uma cargueira cilíndrica com quatro asas solares em X.",
+      "what": "O Automated Transfer Vehicle da ESA, de 10,3 m: um cone de popa dourado com quatro motores sob o carregador de carga branco acolchoado e seu anel de acoplamento, com quatro asas de borda acobreada em X.",
       "where": "Frota · comparação em escala"
     },
     "/images/colophon/model-showcase-tianzhou_webp": {
       "title": "Tianzhou",
-      "what": "A nave de carga chinesa de 10,6 m: um longo módulo de carga sobre o módulo de serviço e suas asas solares.",
+      "what": "A nave de carga chinesa de 10,6 m: um tambor de propulsão branco com blocos de propulsores laranja, um módulo de carga maior cinza-esbranquiçado, a antena parabólica de retransmissão e duas grandes asas.",
       "where": "Frota · comparação em escala"
     },
     "/images/colophon/model-lineup-launchers_webp": {
-      "title": "Comparação de lançadores",
-      "what": "Todos os foguetes com modelo, do Starship ao Mercury-Redstone, lado a lado na altura real ao lado de uma pessoa de 1,75 m.",
+      "title": "Alinhamento de lançadores",
+      "what": "Todos os foguetes com modelo, da Starship ao Mercury-Redstone, postos lado a lado na sua altura real ao lado de uma pessoa de 1,75 m.",
       "where": "Frota · comparação em escala"
     },
     "/images/colophon/model-lineup-spacecraft_webp": {
-      "title": "Comparação de cápsulas e naves",
-      "what": "Cápsulas, cargueiras e orbitadores em tamanho real: os orbitadores deitados na pista, as cápsulas em pé como sobre seus foguetes.",
+      "title": "Alinhamento de cápsulas e naves",
+      "what": "Cápsulas, cargueiras e orbitadores em tamanho real: os orbitadores deitados na pista, as cápsulas de pé como sobre seus foguetes.",
       "where": "Frota · comparação em escala"
     },
     "/images/colophon/model-lineup-landmarks_webp": {
       "title": "Monumentos na altura real",
-      "what": "Dezesseis monumentos e ícones desenhados à mão nas alturas documentadas, da Torre Eiffel e da Estátua da Liberdade ao Davi de Michelangelo, um Routemaster londrino e um Fusca da Volkswagen.",
+      "what": "Dezesseis monumentos e ícones desenhados à mão nas alturas documentadas: da Torre Eiffel e da Estátua da Liberdade ao Davi de Michelangelo, um Routemaster londrino e um Fusca.",
       "where": "Frota · comparação em escala"
     },
     "/images/colophon/model-lineup-cast_webp": {
-      "title": "Elenco de desenho animado",
-      "what": "Um elenco de cores chapadas em tamanho real — homem, mulher, criança, cachorro, gato, guerreiro de terracota, panda-gigante, urso-pardo, girafa e elefante — entre as naves.",
+      "title": "Elenco de desenhos animados",
+      "what": "Um elenco de cores chapadas em tamanho real (homem, mulher, criança, cão, gato, guerreiro de terracota, panda-gigante, urso-pardo, girafa e elefante) de pé entre as naves.",
       "where": "Frota · comparação em escala"
     },
     "/images/colophon/model-showcase-parker-solar-probe_webp": {
       "title": "Parker Solar Probe",
-      "what": "O raspador do Sol de 3 m: um escudo térmico de compósito de carbono de 2,3 m sobre um barramento esguio, com dois pequenos painéis solares refrigerados.",
-      "where": "Voar + Explorar"
+      "what": "A sonda de 3 m que roça o Sol: um escudo térmico de compósito de carbono de 2,3 m sobre escoras, sobre um barramento coberto de mantas douradas, com dois pequenos painéis solares de resfriamento ativo e uma antena de 0,6 m.",
+      "where": "Frota · página da nave + Voo"
     },
     "/images/colophon/model-showcase-solar-orbiter_webp": {
       "title": "Solar Orbiter",
-      "what": "O observador solar de 3,1 m da ESA: um escudo térmico no lado do Sol, seis painéis solares com 18 m de envergadura e uma haste de instrumentos de 4,4 m.",
-      "where": "Voar + Explorar"
+      "what": "O observador do Sol de 3,1 m da ESA: um escudo térmico preto em camadas com portas de observação diante de um corpo coberto de mantas prateadas, seis painéis solares com 18 m de envergadura, uma haste de instrumentos de 4,4 m e uma antena de 1,5 m na parte traseira à sombra.",
+      "where": "Frota · página da nave + Voo"
     },
     "/images/colophon/model-showcase-messenger_webp": {
       "title": "MESSENGER",
-      "what": "O orbitador de Mercúrio atrás de seu para-sol de tecido cerâmico de 2,5 m, com dois painéis solares e uma haste do magnetômetro de 3,6 m.",
-      "where": "Voar + Explorar"
+      "what": "O orbitador de Mercúrio atrás de seu para-sol de tecido cerâmico de 2,5 m, em um barramento em forma de caixa coberto de mantas com seus tanques de propelente à mostra, dois painéis solares giratórios e uma haste de magnetômetro de 3,6 m.",
+      "where": "Frota · página da nave + Voo"
     },
     "/images/colophon/model-showcase-magellan_webp": {
       "title": "Magellan",
-      "what": "O mapeador por radar de Vênus, de 6,4 m: um barramento de dez lados, o motor Star 48B e uma antena de alto ganho de 3,7 m.",
-      "where": "Voar + Explorar"
+      "what": "O mapeador de radar de Vênus, de 6,4 m: o motor Star 48B sob um barramento de dez lados, um módulo de equipamentos coberto de mantas douradas e uma antena de alto ganho de 3,7 m, com dois painéis solares quadrados.",
+      "where": "Frota · página da nave + Voo"
     },
     "/images/colophon/model-showcase-akatsuki_webp": {
       "title": "Akatsuki",
-      "what": "O orbitador de Vênus da JAXA, uma caixa de 1,45 m com dois painéis solares e uma antena plana de varredura eletrônica.",
-      "where": "Voar + Explorar"
+      "what": "O orbitador de Vênus da JAXA, uma caixa de 1,45 m coberta de mantas douradas com um convés de câmeras na face voltada para Vênus, uma antena plana de arranjo em fase, copos de propulsores brancos e dois conjuntos de dois painéis empilhados.",
+      "where": "Frota · página da nave + Voo"
     },
     "/images/colophon/model-showcase-dart_webp": {
       "title": "DART",
-      "what": "A sonda de impacto em asteroide, de 2,6 m, com dois painéis solares de 8,5 m, o motor iônico NEXT-C e a câmera DRACO.",
-      "where": "Voar + Explorar"
+      "what": "A espaçonave de impacto em asteroide de 2,6 m: dois painéis solares enroláveis de 8,5 × 2,4 m, o motor iônico NEXT-C, a câmera DRACO, o cubesat LICIACube em seu dispensador e uma antena de placa plana.",
+      "where": "Frota · página da nave + Voo"
     },
     "/images/colophon/model-showcase-lucy_webp": {
       "title": "Lucy",
-      "what": "A exploradora dos asteroides troianos, com 16 m de ponta a ponta: dois painéis solares circulares de cerca de 7 m de diâmetro e uma antena de alto ganho de 2 m.",
-      "where": "Voar + Explorar"
+      "what": "O explorador de asteroides troianos, com 16 m de ponta a ponta: dois painéis solares circulares de cerca de 7 m de diâmetro, uma antena de alto ganho de 2 m e uma plataforma de instrumentos com as câmeras de rastreamento terminal.",
+      "where": "Frota · página da nave + Voo"
     },
     "/images/colophon/model-showcase-psyche-spacecraft_webp": {
       "title": "Psyche",
-      "what": "O orbitador do asteroide metálico: uma espaçonave de 7,3 m com 25 m de painéis solares abertos e hastes de instrumentos de 2 m.",
-      "where": "Voar + Explorar"
+      "what": "O orbitador de asteroide metálico: uma nave de 7,3 m com dois painéis solares cruciformes de cinco painéis (25 m abertos), quatro propulsores Hall em um agrupamento de 2 × 2 e hastes de instrumentos de 2 m.",
+      "where": "Frota · página da nave + Voo"
     },
     "/images/colophon/model-showcase-europa-clipper_webp": {
       "title": "Europa Clipper",
-      "what": "O orbitador de 5 m das luas de Júpiter, com painéis solares de 30,5 m, uma antena de alto ganho de 3,1 m e uma haste do magnetômetro de 8,5 m.",
-      "where": "Voar + Explorar"
+      "what": "O orbitador de 5 m de uma lua de Júpiter: um módulo de propulsão e um cofre contra radiação sob uma antena de 3,1 m, 30,5 m de painéis solares com os dipolos do radar REASON e uma haste de magnetômetro de 8,5 m.",
+      "where": "Frota · página da nave + Voo"
     },
     "/images/colophon/model-showcase-mars-express_webp": {
       "title": "Mars Express",
-      "what": "O barramento em forma de caixa de 1,8 m da ESA, com duas asas solares de 2,5 m (cerca de 12 m de ponta a ponta) e uma antena de alto ganho de 1,6 m.",
-      "where": "Voar + Explorar"
+      "what": "O barramento em caixa de 1,8 m da ESA, com cantos cobertos de mantas douradas e seus instrumentos na face nadir, duas asas de quatro painéis estreitos e uma antena de alto ganho de 1,6 m.",
+      "where": "Frota · página da nave + Voo"
     },
     "/images/colophon/model-showcase-maven_webp": {
       "title": "MAVEN",
-      "what": "O orbitador da atmosfera marciana da NASA, de 3,47 m: um barramento cúbico de 2,3 m, dois painéis solares em asa de gaivota com magnetômetros nas pontas e uma antena de 2 m.",
-      "where": "Voar + Explorar"
+      "what": "O orbitador da atmosfera de Marte da NASA, de 3,47 m: um barramento cúbico de 2,3 m, uma plataforma de carga útil em sua haste, dois painéis em asa de gaivota com magnetômetros nas pontas e uma antena de 2 m.",
+      "where": "Frota · página da nave + Voo"
     },
     "/images/colophon/model-showcase-mangalyaan_webp": {
       "title": "Mangalyaan",
-      "what": "A Mars Orbiter Mission da ISRO: um cubo de 1,5 m envolto em ouro, com um painel solar de três seções e um refletor de 2,2 m.",
-      "where": "Voar + Explorar"
+      "what": "A Mars Orbiter Mission da ISRO: um cubo de 1,5 m envolto em ouro com a cúpula do tanque de propelente no topo, um painel de três módulos em uma haste e um refletor de 2,2 m do outro lado.",
+      "where": "Frota · página da nave + Voo"
     },
     "/images/colophon/model-showcase-hope_webp": {
       "title": "Hope",
-      "what": "O orbitador da missão Emirates Mars dos Emirados Árabes Unidos: um barramento hexagonal de 2,9 m com duas asas solares e uma antena de 1,85 m.",
-      "where": "Voar + Explorar"
+      "what": "O orbitador da Emirates Mars Mission dos EAU: um barramento de 2,9 m com seu convés científico na face frontal, duas asas de três painéis e uma antena de 1,85 m em um suporte treliçado.",
+      "where": "Frota · página da nave + Voo"
     },
     "/images/colophon/model-showcase-mariner-9_webp": {
       "title": "Mariner 4, 9 e 10 (3 variantes)",
-      "what": "A família octogonal Mariner da NASA: quatro painéis solares com aletas nas pontas na Mariner 4 e na 9; dois painéis, um para-sol e uma haste do magnetômetro de 5,8 m na Mariner 10.",
-      "where": "Voar + Explorar"
+      "what": "A família octogonal Mariner da NASA: quatro painéis com aletas nas pontas na Mariner 4 e na 9 (a Mariner 9 sob um módulo de propulsão envolto em folha); dois painéis, um para-sol e uma haste de magnetômetro de 5,8 m na Mariner 10.",
+      "where": "Frota · página da nave + Voo"
     },
     "/images/colophon/model-showcase-lro_webp": {
       "title": "Lunar Reconnaissance Orbiter",
-      "what": "O mapeador lunar da NASA, de 3,9 m: um barramento em caixa com um único painel solar de 10,7 m² e uma antena direcionável.",
-      "where": "Voar + Explorar"
+      "what": "O mapeador lunar da NASA de 3,9 m: um barramento em caixa coberto de mantas douradas e prateadas com duas câmeras LROC, LOLA, Diviner e Mini-RF na face nadir, um único painel solar de 10,7 m² em uma haste e uma antena direcionável.",
+      "where": "Frota · página da nave + Voo"
     },
     "/images/colophon/model-showcase-skylab_webp": {
       "title": "Skylab",
-      "what": "A primeira estação espacial americana: a oficina orbital, a câmara de ar e o adaptador de acoplamento, o suporte do telescópio solar com seu cata-vento de painéis e o para-sol.",
-      "where": "Voar + Explorar"
-    },
-    "/images/colophon/model-probe-clementine_webp": {
-      "title": "Clementine, SMART-1, Chang’e 1 e Chandrayaan-1 (4 variantes)",
-      "what": "Um único modelo de barramento em caixa em quatro tamanhos: o barramento de 1,9 m da Clementine, o cubo de 1 m da SMART-1, a Chang’e 1 e a Chandrayaan-1 envolta em ouro, cada uma com suas asas solares e sua antena.",
-      "where": "Voar + Explorar"
-    },
-    "/images/colophon/model-probe-lunar-prospector_webp": {
-      "title": "Lunar Prospector",
-      "what": "O tambor de 1,36 m coberto de células solares, com três hastes de instrumentos de 2,5 m.",
-      "where": "Voar + Explorar"
-    },
-    "/images/colophon/model-probe-luna-10_webp": {
-      "title": "Luna 10",
-      "what": "O cilindro pressurizado soviético de 1,5 m com quatro antenas de chicote e uma haste: a primeira espaçonave a orbitar a Lua.",
-      "where": "Voar + Explorar"
+      "what": "A primeira estação espacial dos EUA após o reparo: a Oficina Orbital de saia preta com sua única asa e seu guarda-sol dourado, a câmara de ar e o adaptador de acoplamento, e o Apollo Telescope Mount aberto com seu moinho de quatro pás de painéis.",
+      "where": "Frota · página da nave + Voo"
     },
     "/images/colophon/model-probe-sputnik-1_webp": {
       "title": "Sputnik 1",
-      "what": "A esfera polida de 58 cm, com a junção entre os dois hemisférios, 36 parafusos e quatro antenas de chicote inclinadas para trás de 2,4 e 2,9 m.",
-      "where": "Voar + Explorar"
+      "what": "A esfera polida de 58 cm com a junção de seus hemisférios, 36 parafusos e quatro antenas de chicote inclinadas para trás de 2,4 e 2,9 m.",
+      "where": "Voo"
     },
     "/images/colophon/model-pad-apollo-lut_webp": {
       "title": "Plataforma de lançamento: Apollo, LC-39",
-      "what": "A plataforma do Saturn V: a torre umbilical de 380 ft com braços giratórios que se soltam na decolagem e a vala de chamas. Medidas de números da NASA na Wikipédia.",
+      "what": "A plataforma do Saturn V: a Launch Umbilical Tower de 380 ft com braços oscilantes que caem na decolagem e o duto de chamas. Tamanhos de números da NASA na Wikipédia.",
       "where": "Voar · plataforma de lançamento"
     },
     "/images/colophon/model-pad-shuttle_webp": {
-      "title": "Plataforma de lançamento: Ônibus espacial, LC-39",
-      "what": "A plataforma do ônibus espacial: a estrutura de serviço fixa (350 ft com seu mastro), a estrutura de serviço giratória recolhida, a torre de água de 290 ft. Alturas principais da Wikipédia; o resto, aproximado.",
+      "title": "Plataforma de lançamento: Space Shuttle, LC-39",
+      "what": "A plataforma do Ônibus Espacial: a Fixed Service Structure (350 ft com seu mastro), a Rotating Service Structure recuada, a torre de água de 290 ft. Alturas principais da Wikipédia; o resto, aproximado.",
       "where": "Voar · plataforma de lançamento"
     },
     "/images/colophon/model-pad-sls_webp": {
       "title": "Plataforma de lançamento: SLS, LC-39B",
-      "what": "A plataforma da Artemis: a torre do lançador móvel ao lado do foguete e três altas torres para-raios. Tamanhos aproximados.",
+      "what": "A plataforma da Artemis: a torre do Mobile Launcher ao lado do foguete (cerca de 108 m; a NASA indica de 345 a 355 ft) e três torres de para-raios de quase 600 ft.",
       "where": "Voar · plataforma de lançamento"
     },
     "/images/colophon/model-pad-soyuz_webp": {
       "title": "Plataforma de lançamento: Soyuz, Baikonur e Plesetsk",
-      "what": "A plataforma da família R-7: quatro braços de apoio que caem para fora na decolagem, duas cabines de serviço recolhidas, mastros para-raios, o fosso de chamas. Tamanhos aproximados.",
+      "what": "A plataforma da família R-7: quatro braços de apoio que caem para fora na decolagem, duas cabines de serviço recolhidas, mastros para-raios, o poço de chamas. Tamanhos aproximados.",
       "where": "Voar · plataforma de lançamento"
     },
     "/images/colophon/model-pad-proton_webp": {
       "title": "Plataforma de lançamento: Proton, Baikonur",
-      "what": "Uma torre de serviço fixa com braços giratórios que recuam na decolagem, ao lado da vala de chamas. Tamanhos aproximados.",
+      "what": "O foguete sozinho sobre seu poço de chamas: a torre de serviço de 60 m é recuada cerca de 340 m antes do lançamento (RussianSpaceWeb, complexo de lançamento do Proton). Mastros para-raios aproximados.",
       "where": "Voar · plataforma de lançamento"
     },
     "/images/colophon/model-pad-f9-39a_webp": {
       "title": "Plataforma de lançamento: Falcon, LC-39A",
-      "what": "A SpaceX na 39A: o transportador-eretor que se inclina 1,5 grau antes da decolagem e 45 nela, a antiga torre elevada acima de 350 ft. Números da Wikipédia.",
+      "what": "A SpaceX no 39A: o transportador-eretor que se inclina para trás 1,5 grau antes da decolagem e 45 na decolagem, a antiga torre estendida acima de 350 ft. Números da Wikipédia.",
       "where": "Voar · plataforma de lançamento"
     },
     "/images/colophon/model-pad-f9-cat_webp": {
       "title": "Plataforma de lançamento: Falcon, SLC-40 com torre da tripulação",
-      "what": "A SpaceX na SLC-40 desde a torre de acesso da tripulação de 2023, com o transportador-eretor que se inclina na decolagem. Altura da torre aproximada.",
+      "what": "A SpaceX no SLC-40 desde a torre de acesso da tripulação de 2023, com o transportador-eretor inclinando-se para longe na decolagem. A torre da tripulação tem cerca de 300 ft (91 m; FAA).",
       "where": "Voar · plataforma de lançamento"
     },
     "/images/colophon/model-pad-f9-te_webp": {
       "title": "Plataforma de lançamento: Falcon, SLC-40 e SLC-4E",
-      "what": "Uma plataforma Falcon simples: o transportador-eretor que se inclina na decolagem e mastros para-raios. Tamanhos aproximados.",
+      "what": "Uma plataforma Falcon nua: o transportador-eretor inclinando-se para longe na decolagem e mastros para-raios. Tamanhos aproximados.",
       "where": "Voar · plataforma de lançamento"
     },
     "/images/colophon/model-pad-starbase_webp": {
       "title": "Plataforma de lançamento: Starship, Starbase",
-      "what": "A torre de lançamento de Starbase com os braços de captura abertos. Altura da torre aproximada.",
+      "what": "A torre de lançamento da Starbase com seus braços de captura mantidos abertos. Altura da torre aproximada.",
       "where": "Voar · plataforma de lançamento"
     },
     "/images/colophon/model-pad-atlas-v_webp": {
       "title": "Plataforma de lançamento: Atlas V, SLC-41",
-      "what": "A plataforma da ULA: plataforma de lançamento móvel, torre umbilical e quatro torres para-raios; o edifício de integração vertical fica fora da plataforma e foi omitido. Tamanhos aproximados.",
+      "what": "A plataforma da ULA: plataforma de lançamento móvel, torre umbilical e quatro torres de para-raios; a Vertical Integration Facility fica afastada da plataforma e foi omitida. Tamanhos aproximados.",
       "where": "Voar · plataforma de lançamento"
     },
     "/images/colophon/model-pad-cape-classic_webp": {
       "title": "Plataforma de lançamento: Plataforma com torre de serviço do Cabo",
-      "what": "As plataformas Atlas, Delta, Titan e Saturn IB do Cabo: uma torre umbilical com braços giratórios ao lado do veículo. Tamanhos aproximados.",
+      "what": "As plataformas do Cabo para Atlas, Delta, Titan e Saturn IB: uma torre umbilical com braços oscilantes ao lado do veículo. Tamanhos aproximados.",
       "where": "Voar · plataforma de lançamento"
     },
     "/images/colophon/model-pad-kourou-a5_webp": {
       "title": "Plataforma de lançamento: Ariane 4 e 5, Kourou",
-      "what": "As plataformas ELA-2 e ELA-3: um mastro umbilical ao lado do lançador e quatro altas torres para-raios. Tamanhos aproximados.",
+      "what": "As plataformas ELA-2 e ELA-3: um mastro umbilical ao lado do lançador e quatro altas torres de para-raios. Tamanhos aproximados.",
       "where": "Voar · plataforma de lançamento"
     },
     "/images/colophon/model-pad-kourou-a6_webp": {
       "title": "Plataforma de lançamento: Ariane 6, Kourou",
-      "what": "A plataforma ELA-4: o mastro umbilical, duas torres para-raios e o pórtico móvel recuado bem longe. Tamanhos aproximados.",
+      "what": "A plataforma ELA-4: o mastro umbilical, duas torres de para-raios e o pórtico móvel recuado bem para trás. Tamanhos aproximados.",
       "where": "Voar · plataforma de lançamento"
     },
     "/images/colophon/model-pad-chinese-fst_webp": {
       "title": "Plataforma de lançamento: Torre de serviço chinesa",
-      "what": "A torre de serviço fixa de Jiuquan, Xichang, Wenchang e Taiyuan, cujas plataformas de trabalho se dobram na decolagem. Tamanhos aproximados.",
+      "what": "A torre de serviço fixa de Jiuquan, Xichang, Wenchang e Taiyuan, com suas plataformas de trabalho se dobrando na decolagem. A torre de lançamentos tripulados de Jiuquan tem 89,5 m mais um para-raios de 16 m (CMSE) e é desenhada para todos os lançamentos de Jiuquan; as demais são aproximadas.",
       "where": "Voar · plataforma de lançamento"
     },
     "/images/colophon/model-pad-tanegashima_webp": {
       "title": "Plataforma de lançamento: Tanegashima",
-      "what": "A plataforma de Yoshinobu: a torre umbilical do lançador H-II e uma torre para-raios. Tamanhos aproximados.",
+      "what": "A plataforma de Yoshinobu: o lançador móvel H-II, com 65,5 m de altura, e uma torre de para-raios de 74,5 m (JAXA).",
       "where": "Voar · plataforma de lançamento"
     },
     "/images/colophon/model-pad-sriharikota_webp": {
       "title": "Plataforma de lançamento: Sriharikota",
-      "what": "A plataforma da ISRO: a torre umbilical ao lado do veículo e a torre de serviço móvel recuada bem longe. Tamanhos aproximados.",
+      "what": "A plataforma da ISRO: a torre umbilical ao lado do veículo e a torre de serviço móvel recuada bem para trás. Tamanhos aproximados.",
       "where": "Voar · plataforma de lançamento"
-    }
-  },
-  "capsules": {
-    "/images/colophon/model-capsule-mercury-capsule_webp": {
+    },
+    "/images/colophon/model-showcase-vostok_webp": {
+      "title": "Vostok e Voskhod (2 variantes)",
+      "what": "A esfera de 2,3 m sobre seu módulo de instrumentos, com 4,55 m de altura (5 m na Voskhod): um cinturão de dezesseis cilindros de gás verde-oliva com cintas prateadas, escotilhas e vigias, laços de antena no topo e, na Voskhod, o pacote de retrofoguetes.",
+      "where": "Frota · comparação em escala + Voo"
+    },
+    "/images/colophon/model-showcase-mercury-capsule_webp": {
       "title": "Cápsula Mercury",
-      "what": "Escudo térmico ablativo bom, cone com telhas e a seção de recuperação + antena (Freedom 7 … Faith 7).",
-      "where": "Reentrada em órbita terrestre"
+      "what": "A cápsula de um assento de 3,3 m sobre seu pacote de retrofoguetes: a janela trapezoidal e a escotilha lateral no cone, três retrofoguetes presos por cintas.",
+      "where": "Frota · comparação em escala + Voo"
     },
-    "/images/colophon/model-capsule-gemini-capsule_webp": {
-      "title": "Cápsula Gemini",
-      "what": "Mercury ampliada de dois assentos com o nariz de radar de rendezvous e módulo adaptador.",
-      "where": "Reentrada em órbita terrestre"
+    "/images/colophon/model-showcase-gemini_webp": {
+      "title": "Gemini",
+      "what": "A nave de dois assentos de 5,74 m: o cone de reentrada preto de ladrilhos sobrepostos com suas duas escotilhas e janelas sobre as seções RCS, de encontro e de recuperação e o adaptador de retrofoguetes.",
+      "where": "Frota · comparação em escala + Voo"
     },
-    "/images/colophon/model-capsule-vostok-sphere_webp": {
-      "title": "Vostok",
-      "what": "O módulo de descida esférico Sharik — tiras de antena e colar de equipamento; o cosmonauta se ejetou e desceu de paraquedas separadamente.",
-      "where": "Reentrada em órbita terrestre"
+    "/images/colophon/model-showcase-mengzhou_webp": {
+      "title": "Mengzhou",
+      "what": "A nave tripulada chinesa de 8,8 m para a Lua: um módulo de tripulação cônico cinza-prateado com uma faixa vermelha sobre um módulo de serviço branco com molduras de propulsores dourados, duas longas asas de células e quatro bocais de motor.",
+      "where": "Frota · comparação em escala"
     },
-    "/images/colophon/model-capsule-voskhod-sphere_webp": {
-      "title": "Voskhod",
-      "what": "A mesma esfera Sharik, agora carregando o pacote de retrofoguete de pouso suave com propelente sólido em uma treliça de estrutos — a tripulação desceu com ele até o solo.",
-      "where": "Reentrada em órbita terrestre"
+    "/images/colophon/model-showcase-apollo-lm_webp": {
+      "title": "Apollo LM (tamanho real)",
+      "what": "O Módulo Lunar pousado: o estágio de descida octogonal em folha dourada e âmbar amassada sobre quatro pernas envoltas em ouro, o estágio de ascensão facetado com duas janelas triangulares, quads RCS, radar de encontro e antena parabólica em banda S.",
+      "where": "Frota · comparação em escala + Voo · descida"
     },
-    "/images/colophon/model-capsule-apollo-cm_webp": {
-      "title": "Módulo de Comando Apollo",
-      "what": "O clássico cone embotado de inclinação acentuada com o túnel de acoplamento frontal (Apollo 7/9, Skylab, ASTP).",
-      "where": "Reentrada em órbita terrestre"
+    "/images/colophon/model-probe-nova-c_webp": {
+      "title": "Nova-C (IM-1 Odysseus)",
+      "what": "O módulo de pouso lunar de 4,3 m da Intuitive Machines: um corpo hexagonal de 1,57 m, seis pernas, o motor a metano embaixo e três painéis solares. Altura e largura da Wikipédia; a abertura das pernas e o convés são esquemáticos.",
+      "where": "Voo"
     },
-    "/images/colophon/model-capsule-soyuz-sa_webp": {
-      "title": "Módulo de descida Soyuz",
-      "what": "O sino \"farol\" — escudo térmico de base esférica com topo de tripulação cônico.",
-      "where": "Reentrada em órbita terrestre"
+    "/images/colophon/model-showcase-chandrayaan1_webp": {
+      "title": "Chandrayaan-1",
+      "what": "O primeiro orbitador lunar da ISRO: um barramento em caixa com manchas radiadoras brancas e aberturas de instrumentos com anéis dourados, uma antena de 0,7 m em uma haste dourada e um painel solar em um jugo de duas barras.",
+      "where": "Frota · página da nave + Voo"
     },
-    "/images/colophon/model-capsule-dragon-capsule_webp": {
-      "title": "Crew Dragon",
-      "what": "Corpo cônico elegante com os pods SuperDraco e o escudo térmico PICA-X (Inspiration4, Polaris Dawn).",
-      "where": "Reentrada em órbita terrestre"
+    "/images/colophon/model-showcase-chandrayaan2_webp": {
+      "title": "Orbitador da Chandrayaan-2",
+      "what": "O orbitador que levou a Vikram: um barramento com um tambor dourado que se ergue do convés superior onde ficava o módulo de pouso, manchas brancas fitadas sobre seus radiadores e uma asa solar de dois painéis.",
+      "where": "Frota · página da nave + Voo"
     },
-    "/images/colophon/model-capsule-shenzhou-reentry_webp": {
-      "title": "Módulo de reentrada Shenzhou",
-      "what": "Um sino de linhagem Soyuz amplo — seu próprio casco prateado mais leve com uma faixa de equipamento cinza (Shenzhou-1 em diante).",
-      "where": "Reentrada em órbita terrestre"
+    "/images/colophon/model-showcase-change1_webp": {
+      "title": "Chang’e 1 e 2 (2 variantes)",
+      "what": "Os orbitadores lunares da China: um bocal de motor sob o barramento, painéis prateados embutidos, duas antenas de retransmissão brancas, uma antena direcionável de 0,8 m em um braço e duas asas de três painéis em jugos dourados.",
+      "where": "Frota · página da nave + Voo"
+    },
+    "/images/colophon/model-showcase-clementine_webp": {
+      "title": "Clementine",
+      "what": "O mapeador lunar em forma de prisma: uma face de sensores com aberturas de câmera e lidar, 12 jatos de atitude, uma antena de 1,07 m que abre para baixo e duas asas de dois painéis.",
+      "where": "Frota · página da nave + Voo"
+    },
+    "/images/colophon/model-showcase-kaguya_webp": {
+      "title": "Kaguya (SELENE)",
+      "what": "O orbitador lunar de 4,8 m da JAXA: os subsatélites de retransmissão e VLBI em sua face frontal, uma antena de alto ganho sobre um tripé e um mastro e uma pá solar de três painéis azuis sobre uma treliça dourada.",
+      "where": "Frota · página da nave + Voo"
+    },
+    "/images/colophon/model-showcase-luna10_webp": {
+      "title": "Luna 10",
+      "what": "O orbitador soviético de 1,5 m: o módulo do motor de frenagem em uma saia de treliça branca, tanques de propelente creme e um tambor de instrumentos pressurizado polido com quatro antenas de chicote e dois sensores em forma de cogumelo.",
+      "where": "Frota · página da nave + Voo"
+    },
+    "/images/colophon/model-showcase-lunar-prospector_webp": {
+      "title": "Lunar Prospector",
+      "what": "O tambor de 1,36 m coberto de células solares sob uma ogiva branca, com três hastes de instrumentos de 2,5 m.",
+      "where": "Frota · página da nave + Voo"
+    },
+    "/images/colophon/model-showcase-smart-1_webp": {
+      "title": "SMART-1",
+      "what": "O orbitador de 1 m com motor iônico da ESA: o propulsor PPS-1350 em um braço cardânico, um anel de instrumentos com sua câmera e espectrômetros, uma antena de 0,3 m e duas asas de três painéis.",
+      "where": "Frota · página da nave + Voo"
+    },
+    "/images/colophon/model-showcase-lunar-orbiter-1_webp": {
+      "title": "Lunar Orbiter 1–5 (5 variantes)",
+      "what": "Os cinco orbitadores com câmera da NASA: uma casca térmica brilhante ao redor da câmera com suas lentes de 80 mm e 610 mm, quatro tanques de propelente sobre pernas de treliça, quatro painéis solares e uma antena de 1 m em sua haste.",
+      "where": "Frota · página da nave"
+    },
+    "/images/colophon/model-showcase-luna-9_webp": {
+      "title": "Luna 9 (tamanho real)",
+      "what": "A cápsula pousada de 58 cm: o hemisfério de instrumentos selado que ficou de pé entre quatro pétalas abertas e tombadas, com a cabeça da câmera de TV e quatro antenas de haste no topo.",
+      "where": "Frota · página da nave + Voo · descida"
+    },
+    "/images/colophon/model-showcase-luna-16_webp": {
+      "title": "Luna 16 e 24 (2 variantes)",
+      "what": "O módulo de pouso de retorno de amostras: um casco envolto em ouro entre dois tanques toroidais com quatro esferas de pressão sobre quatro pernas, o equipamento de perfuração e o estágio de ascensão de 2 m coroado por uma esfera.",
+      "where": "Frota · página da nave + Voo · descida"
+    },
+    "/images/colophon/model-showcase-lunokhod-1_webp": {
+      "title": "Lunokhod 1 e 2 (2 variantes)",
+      "what": "O rover soviético: uma tina redonda sobre oito rodas de malha de arame sob uma tampa em cúpula aberta, com a fonte de calor de polônio-210 com aletas atrás, o refletor de canto francês e quatro antenas de chicote.",
+      "where": "Frota · página da nave + Voo · descida"
+    },
+    "/images/colophon/model-showcase-change-3_webp": {
+      "title": "Chang’e 3 e 4 (2 variantes)",
+      "what": "O módulo de pouso chinês: um corpo dourado em forma de caixa sobre quatro pernas com as rampas do rover, asas solares inclinadas e um mastro de câmeras que leva a antena direcionável.",
+      "where": "Frota · página da nave + Voo · descida"
+    },
+    "/images/colophon/model-showcase-change-5_webp": {
+      "title": "Chang’e 5 e 6 (2 variantes)",
+      "what": "O conjunto de retorno de amostras: um módulo de ascensão octogonal dourado sobre o módulo de pouso, com a torre de perfuração, o braço de amostragem dobrado e o recipiente de amostras ao lado.",
+      "where": "Frota · página da nave + Voo · descida"
+    },
+    "/images/colophon/model-showcase-vikram-cy3_webp": {
+      "title": "Vikram (Chandrayaan-2 e -3, 2 variants)",
+      "what": "O módulo de pouso da ISRO na configuração da Chandrayaan-3: quatro motores e painéis solares em três lados e no topo, com a rampa abaixada e o rover Pragyan a meio caminho dela.",
+      "where": "Frota · página da nave + Voo · descida"
+    },
+    "/images/colophon/model-showcase-slim_webp": {
+      "title": "SLIM (tamanho real)",
+      "what": "O Moon Sniper da JAXA: um prisma de 1,5 × 1,5 × 2 m em folha dourada amassada com uma cúpula dourada na ponta do motor, uma faixa de células solares ao longo de um lado e cinco coxins de esmagamento redondos sobre escoras.",
+      "where": "Frota · página da nave + Voo · descida"
+    },
+    "/images/colophon/model-showcase-beresheet_webp": {
+      "title": "Beresheet (tamanho real)",
+      "what": "O módulo de pouso da SpaceIL, com 2 m de largura e 1,5 m de altura: um convés preto com borda dourada sobre uma tina de estrutura tubular prateada com quatro tanques acobreados, quatro pernas longas e placas solares azuis inclinadas.",
+      "where": "Frota · página da nave + Voo · descida"
+    },
+    "/images/colophon/model-showcase-blue-moon-mk1_webp": {
+      "title": "Blue Moon MK1 (tamanho real)",
+      "what": "O módulo de pouso de 8,05 m da Blue Origin: um casco de folha dourada e âmbar sobre uma base de treliça clara que leva o BE-7, pernas de treliça em escada, duas altas faixas de células solares e uma gaiola octogonal aberta no topo.",
+      "where": "Frota · página da nave + Voo · descida"
+    },
+    "/images/colophon/model-showcase-pragyan_webp": {
+      "title": "Pragyan",
+      "what": "O rover de seis rodas da ISRO que desce rolando pela rampa da Vikram.",
+      "where": "Frota · página da nave + Voo · descida"
+    },
+    "/images/colophon/model-showcase-yutu_webp": {
+      "title": "Yutu e Yutu-2 (2 variantes)",
+      "what": "O rover chinês: um rocker-bogie de cada lado, uma caixa aquecida envolta em ouro sob um painel solar inclinado, um mastro de câmeras, o braço dobrado sob o nariz e uma antena direcionável atrás.",
+      "where": "Frota · página da nave"
+    },
+    "/images/colophon/model-showcase-viking-1_webp": {
+      "title": "Módulos de pouso Viking (3 variantes)",
+      "what": "O módulo de pouso da NASA com pernas de tripé: um convés de seis lados com largura alternada de 1,09 e 0,56 m, cápsulas douradas de descida terminal com 18 bocais, o braço amostrador e as câmeras no lado frontal longo.",
+      "where": "Frota · página da nave + Voo · descida"
+    },
+    "/images/colophon/model-showcase-mars-3_webp": {
+      "title": "Módulos de pouso Mars 2, 3 e 6 (3 variantes)",
+      "what": "A esfera branca soviética sobre quatro pétalas abertas: uma coroa de antenas de quatro hastes, duas orelhas de câmeras estéreo e o rover PrOP-M sobre esquis preso ao lado.",
+      "where": "Frota · página da nave + Voo · descida"
+    },
+    "/images/colophon/model-showcase-phoenix_webp": {
+      "title": "Phoenix e Mars Polar Lander (2 variantes)",
+      "what": "O módulo de pouso solar sobre seu convés: os dois fornos do TEGA, as células de química úmida do MECA, o braço robótico com sua pá, a câmera estéreo sobre uma torre treliçada e o mastro meteorológico com seu lidar.",
+      "where": "Frota · página da nave + Voo · descida"
+    },
+    "/images/colophon/model-showcase-insight_webp": {
+      "title": "InSight (tamanho real)",
+      "what": "O módulo de pouso geofísico: o braço de 1,8 m estendido sobre o solo, o SEIS sob seu escudo prateado contra vento e calor e a toupeira HP3 implantada ao lado.",
+      "where": "Frota · página da nave + Voo · descida"
+    },
+    "/images/colophon/model-showcase-schiaparelli_webp": {
+      "title": "Schiaparelli (tamanho real)",
+      "what": "O demonstrador de entrada da ESA no solo: um disco de esmagamento plano em favo de mel escuro cercado por uma faixa prateada e dourada, três tanques de propelente sobre escoras e a plataforma DREAMS com sua bobina UHF dourada.",
+      "where": "Frota · página da nave + Voo · descida"
+    },
+    "/images/colophon/model-showcase-beagle2_webp": {
+      "title": "Beagle 2 (tamanho real)",
+      "what": "O módulo de pouso em concha aberto: um prato de tampa dourado cercado por quatro pétalas solares escuras, a base em tigela dourada com o braço se erguendo e o tambor de instrumentos PAW.",
+      "where": "Frota · página da nave + Voo · descida"
+    },
+    "/images/colophon/model-showcase-curiosity_webp": {
+      "title": "Curiosity (tamanho real)",
+      "what": "O rover MSL: seis rodas sobre um rocker-bogie, o mastro com a cabeça da ChemCam e o par de Mastcam, o MMRTG com aletas entre dois trocadores de calor brancos e o braço recolhido atravessado na frente.",
+      "where": "Frota · página da nave + Voo · descida"
+    },
+    "/images/colophon/model-showcase-spirit_webp": {
+      "title": "Spirit e Opportunity (2 variantes)",
+      "what": "O Mars Exploration Rover: uma caixa aquecida dourada sob um convés solar plano azul-escuro com quatro painéis em asa, o mastro Pancam com sua barra de câmeras, uma antena redonda dourada sobre uma haste e seis pequenas rodas.",
+      "where": "Frota · página da nave + Voo · descida"
+    },
+    "/images/colophon/model-showcase-perseverance_webp": {
+      "title": "Perseverance",
+      "what": "O layout da Curiosity com rodas de garras retas: a cabeça Mastcam-Z e SuperCam, a grande torre de testemunhagem, o compartimento de armazenamento sob a frente e a Ingenuity sob a barriga.",
+      "where": "Frota · página da nave + Voo · descida"
+    },
+    "/images/colophon/model-showcase-zhurong_webp": {
+      "title": "Zhurong",
+      "what": "O rover chinês: um amplo convés prateado com quatro asas solares em borboleta, um alto mastro com sua caixa de câmeras, duas pequenas antenas e rodas nervuradas sobre pernas altas.",
+      "where": "Frota · página da nave + Voo · descida"
+    },
+    "/images/colophon/model-showcase-sojourner_webp": {
+      "title": "Sojourner",
+      "what": "O primeiro rover de Marte: rodas de alumínio com garras de aço inoxidável sobre um rocker-bogie, uma caixa aquecida marrom-dourada sob um painel solar escuro, o par de câmeras estéreo e o tambor APXS.",
+      "where": "Frota · página da nave"
+    },
+    "/images/colophon/model-showcase-exomars-rosalind-franklin_webp": {
+      "title": "ExoMars Rosalind Franklin",
+      "what": "O rover da ESA de chassi caminhante: uma roda em cada perna, duas amplas asas solares, a barra dourada da PanCam em seu mastro e a caixa da broca na frente.",
+      "where": "Frota · página da nave"
+    },
+    "/images/colophon/model-showcase-lrv-apollo_webp": {
+      "title": "Veículo lunar Apollo",
+      "what": "A estrutura aberta de alumínio sobre rodas de malha de arame com chevrons de titânio sob para-lamas bege: dois bancos tubulares, a alavanca em T e o console, a antena em guarda-chuva e a palete de ferramentas atrás.",
+      "where": "Frota · página da nave"
+    },
+    "/images/colophon/model-showcase-mro_webp": {
+      "title": "Mars Reconnaissance Orbiter",
+      "what": "O mapeador de Marte da NASA: dois painéis solares de 5,35 × 2,53 m, a antena de alto ganho de 3 m, o cilindro HiRISE de 1,6 m e o dipolo SHARAD de 10 m. Tamanhos da antena, do HiRISE e do SHARAD da NASA; tamanho dos painéis da Wikipédia; o barramento é esquemático.",
+      "where": "Frota · página da nave + Voo"
+    },
+    "/images/colophon/model-showcase-mariner-2_webp": {
+      "title": "Mariner 2",
+      "what": "O sobrevoo de Vênus da NASA, de 3,66 m: o barramento hexagonal de 1,04 m, dois painéis solares (um com sua extensão de pressão solar, com 5,05 m de largura), a antena em seu braço e a antena omnidirecional no alto do mastro piramidal. Tamanhos da NASA NSSDCA; a antena e o mastro são esquemáticos.",
+      "where": "Frota · página da nave + Voo"
+    },
+    "/images/colophon/model-showcase-bepicolombo_webp": {
+      "title": "BepiColombo (tamanho real)",
+      "what": "A configuração de cruzeiro empilhada de 6,4 m: o módulo de transferência para Mercúrio com quatro propulsores iônicos e duas asas pretas e azuis de quatro painéis, levando o orbitador de Mercúrio e o Mio dentro de seu cilindro de para-sol.",
+      "where": "Frota · página da nave + Voo"
+    },
+    "/images/colophon/model-showcase-exomars-tgo_webp": {
+      "title": "ExoMars Trace Gas Orbiter",
+      "what": "Orbitador ESA–Roscosmos: o bocal do motor e o equipamento nadir, os espectrômetros NOMAD e ACS na face oposta à Terra, dois conjuntos de dois painéis e uma antena de 2,2 m em uma haste.",
+      "where": "Frota · página da nave"
+    },
+    "/images/colophon/model-showcase-mars-odyssey_webp": {
+      "title": "Mars Odyssey",
+      "what": "O orbitador da NASA: abas de manta dobradas nos cantos, THEMIS e as câmeras na frente, uma haste de treliça de 6 m que leva o espectrômetro de raios gama, um conjunto de três painéis e uma antena de 1,3 m.",
+      "where": "Frota · página da nave"
+    },
+    "/images/colophon/model-showcase-mars2-orbiter_webp": {
+      "title": "Orbitadores Mars 2 e 3 (2 variantes)",
+      "what": "O barramento soviético M-71: um barril de tanque com faixas e suas esferas, um colar que leva o cone preto do aeroescudo e a cápsula do módulo de pouso no topo, uma antena rasa de 2,5 m e dois grandes painéis solares retangulares.",
+      "where": "Frota · página da nave"
+    },
+    "/images/colophon/model-showcase-phobos-2_webp": {
+      "title": "Phobos 2",
+      "what": "A sonda soviética: quatro esferas brancas de propelente ao redor do motor, um cinturão de instrumentos toroidal, um núcleo central com caixas de equipamentos e dois painéis solares horizontais sobre hastes.",
+      "where": "Frota · página da nave"
+    },
+    "/images/colophon/model-showcase-tianwen-1_webp": {
+      "title": "Tianwen-1",
+      "what": "O orbitador marciano chinês com a cápsula de entrada no topo: dois conjuntos de três painéis, uma antena de ganho médio de cerca de 2,5 m e finas hastes de antena.",
+      "where": "Frota · página da nave"
+    },
+    "/images/colophon/model-showcase-viking1-orbiter_webp": {
+      "title": "Orbitador Viking",
+      "what": "O orbitador com a cápsula do módulo de pouso sob sua casca branca abobadada: um anel de barramento octogonal de oito compartimentos, quatro painéis solares em jugos, uma antena dourada de 1,5 m e uma plataforma de varredura com duas câmeras.",
+      "where": "Frota · página da nave"
+    },
+    "/images/colophon/model-showcase-hubble_webp": {
+      "title": "Hubble (tamanho real)",
+      "what": "O observatório: um para-luz prateado amassado com a porta de abertura aberta e as duas asas solares rígidas.",
+      "where": "Frota · página da nave"
+    },
+    "/images/colophon/model-showcase-jwst_webp": {
+      "title": "JWST (tamanho real)",
+      "what": "Dezoito segmentos de espelho hexagonais dourados sobre seu tripé, sobre o para-sol de cinco camadas.",
+      "where": "Frota · página da nave"
+    },
+    "/images/colophon/model-showcase-chandra_webp": {
+      "title": "Chandra (tamanho real)",
+      "what": "O observatório de raios X: um longo tubo afunilado com suas duas asas solares.",
+      "where": "Frota · página da nave"
+    },
+    "/images/colophon/model-showcase-spitzer_webp": {
+      "title": "Spitzer",
+      "what": "O telescópio infravermelho: um único painel solar inclinado junto ao tubo do criostato.",
+      "where": "Frota · página da nave"
+    },
+    "/images/colophon/model-showcase-kepler_webp": {
+      "title": "Kepler",
+      "what": "O caçador de planetas: um cilindro envolto em âmbar com seu painel solar fixo.",
+      "where": "Frota · página da nave"
+    },
+    "/images/colophon/model-showcase-tess_webp": {
+      "title": "TESS",
+      "what": "A nave de levantamento de trânsitos: quatro câmeras com capuz em um barramento compacto.",
+      "where": "Frota · página da nave"
+    },
+    "/images/colophon/model-showcase-gaia_webp": {
+      "title": "Gaia (tamanho real)",
+      "what": "O observatório de astrometria da ESA: uma saia de para-sol de 10 m ao redor do barramento.",
+      "where": "Frota · página da nave"
+    },
+    "/images/colophon/model-showcase-euclid_webp": {
+      "title": "Euclid",
+      "what": "O telescópio do universo escuro da ESA: o defletor atrás do escudo dos painéis solares.",
+      "where": "Frota · página da nave"
+    },
+    "/images/colophon/model-showcase-xmm-newton_webp": {
+      "title": "XMM-Newton (tamanho real)",
+      "what": "O telescópio de raios X da ESA: um longo tubo que termina na face do módulo de espelhos.",
+      "where": "Frota · página da nave"
+    },
+    "/images/colophon/model-showcase-compton-gro_webp": {
+      "title": "Compton Gamma Ray Observatory",
+      "what": "O observatório de raios gama: um convés de instrumentos em caixa com seus detectores.",
+      "where": "Frota · página da nave"
+    },
+    "/images/colophon/model-showcase-hitomi_webp": {
+      "title": "Hitomi",
+      "what": "O satélite de raios X da JAXA: a bancada óptica estendida que leva os telescópios.",
+      "where": "Frota · página da nave"
+    },
+    "/images/colophon/model-showcase-spektr-rg_webp": {
+      "title": "Spektr-RG",
+      "what": "O observatório de raios X russo-alemão: o eROSITA de sete módulos ao lado do tubo ART-XC.",
+      "where": "Frota · página da nave"
+    },
+    "/images/colophon/model-showcase-voyager-1_webp": {
+      "title": "Voyager 1 e 2 (2 variantes)",
+      "what": "O barramento do Grand Tour: uma antena de 3,7 m sobre um corpo de dez lados, uma haste de RTGs com três geradores em fila, a haste científica com sua plataforma de varredura e a haste de magnetômetro de 13 m.",
+      "where": "Frota · página da nave + Voo"
+    },
+    "/images/colophon/model-showcase-pioneer-10_webp": {
+      "title": "Pioneer 10 e 11 (2 variantes)",
+      "what": "O par estabilizado por rotação: uma antena de 2,74 m sobre o compartimento de equipamentos, duas hastes de RTG de 3 m a 120 graus e uma haste de magnetômetro de 6,6 m.",
+      "where": "Frota · página da nave + Voo"
+    },
+    "/images/colophon/model-showcase-juno_webp": {
+      "title": "Juno (tamanho real)",
+      "what": "O orbitador polar de Júpiter: o cofre de titânio contra radiação sob o barramento, uma antena de 2,5 m no topo e três asas solares a 120 graus.",
+      "where": "Frota · página da nave + Voo"
+    },
+    "/images/colophon/model-showcase-juice_webp": {
+      "title": "JUICE (tamanho real)",
+      "what": "O orbitador das luas geladas de Júpiter da ESA: uma saia branca de tanques sobre o cone de empuxo, uma antena fixa de 2,5 m, duas asas de três painéis de 3,9 × 2,2 m e uma haste de magnetômetro de 10,6 m.",
+      "where": "Frota · página da nave + Voo"
+    },
+    "/images/colophon/model-showcase-dawn_webp": {
+      "title": "Dawn (tamanho real)",
+      "what": "O orbitador com motor iônico de Vesta e Ceres: três propulsores iônicos, uma antena de 1,24 m e duas asas de cinco painéis, com 19,7 m de envergadura.",
+      "where": "Frota · página da nave + Voo"
+    },
+    "/images/colophon/model-showcase-ulysses_webp": {
+      "title": "Ulysses (tamanho real)",
+      "what": "A sonda solar polar: uma antena de 1,65 m sobre o topo, o GPHS-RTG com aletas sobre um suporte ao lado e uma haste de experimentos.",
+      "where": "Frota · página da nave + Voo"
+    },
+    "/images/colophon/model-showcase-giotto_webp": {
+      "title": "Giotto (tamanho real)",
+      "what": "O sobrevoo do Halley: um tambor de faixas de células solares escuras com bandas douradas, o escudo contra poeira Whipple no topo e a antena despun de 1,47 m inclinada sobre seu suporte de cone branco.",
+      "where": "Frota · página da nave + Voo"
+    },
+    "/images/colophon/model-showcase-cassini_webp": {
+      "title": "Cassini–Huygens (tamanho real)",
+      "what": "O orbitador de Saturno: um decágono dourado com seus dois motores principais, a antena de alto ganho de 4 m, três RTGs em hastes e a sonda Huygens em sua treliça ao lado.",
+      "where": "Frota · página da nave + Voo"
+    },
+    "/images/colophon/model-showcase-galileo_webp": {
+      "title": "Galileo (tamanho real)",
+      "what": "O orbitador de Júpiter de rotação dupla: uma seção despun com a plataforma de varredura, o tambor giratório com suas venezianas, a antena de alto ganho em guarda-chuva, duas hastes de RTG e uma haste de magnetômetro de 10,9 m.",
+      "where": "Frota · página da nave + Voo"
+    },
+    "/images/colophon/model-showcase-rosetta_webp": {
+      "title": "Rosetta (tamanho real)",
+      "what": "Um barramento em caixa sob folha cinza-prateada com manchas pretas e douradas, uma antena de 2,2 m, duas asas solares de cinco painéis de 14 m e o Philae na parede traseira.",
+      "where": "Frota · página da nave + Voo"
+    },
+    "/images/colophon/model-showcase-hayabusa_webp": {
+      "title": "Hayabusa e Hayabusa2 (2 variantes)",
+      "what": "A nave de retorno de amostras de asteroide: o funil amostrador sobre seu fole, quatro motores iônicos, a cápsula de retorno e asas de três painéis; a Hayabusa2 acrescenta o impactor embarcado e os saltadores MINERVA-II.",
+      "where": "Frota · página da nave + Voo"
+    },
+    "/images/colophon/model-showcase-osiris-rex_webp": {
+      "title": "OSIRIS-REx (tamanho real)",
+      "what": "A nave de retorno de amostras de Bennu: uma antena de 1,2 m, um painel solar de 1,9 × 2,4 m de cada lado e o braço TAGSAM de 3,35 m que se estende sobre a frente.",
+      "where": "Frota · página da nave + Voo"
+    },
+    "/images/colophon/model-showcase-venera-7_webp": {
+      "title": "Venera 7 e 13 (2 variantes)",
+      "what": "O barramento soviético de Vênus: um tambor de motor branco com fileiras de furos, um compartimento de tanques com suas esferas à mostra, seis escoras que seguram a esfera de descida revestida de ablativo, uma antena de malha sobre um mastro e duas asas solares.",
+      "where": "Frota · página da nave + Voo"
+    },
+    "/images/colophon/model-showcase-vega-1_webp": {
+      "title": "Vega 1 e 2 (2 variantes)",
+      "what": "O barramento de Vênus e do Halley: o layout da Venera com o recipiente do balão sobre o topo da esfera de descida.",
+      "where": "Frota · página da nave + Voo"
     }
   },
   "canvas2d": {
@@ -2346,6 +2596,114 @@
     },
     "/images/anatomy-exploded/vulcan_webp": {
       "title": "Vulcan Centaur"
+    },
+    "/images/anatomy-exploded/apollo-lm_webp": {
+      "title": "Módulo Lunar Apollo"
+    },
+    "/images/anatomy-exploded/beresheet_webp": {
+      "title": "Beresheet"
+    },
+    "/images/anatomy-exploded/change-3_webp": {
+      "title": "Chang'e 3"
+    },
+    "/images/anatomy-exploded/change-4_webp": {
+      "title": "Chang'e 4"
+    },
+    "/images/anatomy-exploded/change-5_webp": {
+      "title": "Chang'e 5"
+    },
+    "/images/anatomy-exploded/change6_webp": {
+      "title": "Chang'e 6"
+    },
+    "/images/anatomy-exploded/insight_webp": {
+      "title": "InSight"
+    },
+    "/images/anatomy-exploded/lrv-apollo_webp": {
+      "title": "Veículo lunar"
+    },
+    "/images/anatomy-exploded/luna-16_webp": {
+      "title": "Luna 16"
+    },
+    "/images/anatomy-exploded/luna-9_webp": {
+      "title": "Luna 9"
+    },
+    "/images/anatomy-exploded/luna24_webp": {
+      "title": "Luna 24"
+    },
+    "/images/anatomy-exploded/lunokhod-1_webp": {
+      "title": "Lunokhod 1"
+    },
+    "/images/anatomy-exploded/lunokhod-2_webp": {
+      "title": "Lunokhod 2"
+    },
+    "/images/anatomy-exploded/mars-2_webp": {
+      "title": "Mars 2"
+    },
+    "/images/anatomy-exploded/mars-3_webp": {
+      "title": "Mars 3"
+    },
+    "/images/anatomy-exploded/phoenix_webp": {
+      "title": "Phoenix"
+    },
+    "/images/anatomy-exploded/pragyan_webp": {
+      "title": "Pragyan"
+    },
+    "/images/anatomy-exploded/slim_webp": {
+      "title": "SLIM"
+    },
+    "/images/anatomy-exploded/sojourner_webp": {
+      "title": "Sojourner"
+    },
+    "/images/anatomy-exploded/vega-1_webp": {
+      "title": "Vega 1"
+    },
+    "/images/anatomy-exploded/vega-2_webp": {
+      "title": "Vega 2"
+    },
+    "/images/anatomy-exploded/venera-13_webp": {
+      "title": "Venera 13"
+    },
+    "/images/anatomy-exploded/viking-1_webp": {
+      "title": "Viking 1"
+    },
+    "/images/anatomy-exploded/vikram-cy3_webp": {
+      "title": "Vikram (Chandrayaan-3)"
+    },
+    "/images/anatomy-exploded/yutu_webp": {
+      "title": "Yutu"
+    },
+    "/images/anatomy-exploded/yutu-2_webp": {
+      "title": "Yutu-2"
+    },
+    "/images/anatomy-exploded/zhurong_webp": {
+      "title": "Zhurong"
+    },
+    "/images/anatomy-exploded/beagle2_webp": {
+      "title": "Beagle 2"
+    },
+    "/images/anatomy-exploded/curiosity_webp": {
+      "title": "Curiosity (MSL)"
+    },
+    "/images/anatomy-exploded/exomars-rosalind-franklin_webp": {
+      "title": "Rosalind Franklin (rover ExoMars)"
+    },
+    "/images/anatomy-exploded/mars6_webp": {
+      "title": "Mars 6"
+    },
+    "/images/anatomy-exploded/opportunity_webp": {
+      "title": "Opportunity (MER-B)"
+    },
+    "/images/anatomy-exploded/perseverance_webp": {
+      "title": "Perseverance (Mars 2020)"
+    },
+    "/images/anatomy-exploded/schiaparelli_webp": {
+      "title": "Schiaparelli"
+    },
+    "/images/anatomy-exploded/spirit_webp": {
+      "title": "Spirit (MER-A)"
+    },
+    "/images/anatomy-exploded/viking2-lander_webp": {
+      "title": "Módulo de pouso Viking 2"
     }
   },
   "icons": {
@@ -2446,6 +2804,656 @@
         "Laniakea": "Laniakea",
         "Cosmic Web": "Teia cósmica"
       }
+    }
+  },
+  "landing_art": {
+    "/images/landing-sequences/apollo11_webp": {
+      "title": "Apollo 11"
+    },
+    "/images/landing-sequences/apollo12_webp": {
+      "title": "Apollo 12"
+    },
+    "/images/landing-sequences/apollo14_webp": {
+      "title": "Apollo 14"
+    },
+    "/images/landing-sequences/apollo15_webp": {
+      "title": "Apollo 15"
+    },
+    "/images/landing-sequences/apollo16_webp": {
+      "title": "Apollo 16"
+    },
+    "/images/landing-sequences/apollo17_webp": {
+      "title": "Apollo 17"
+    },
+    "/images/landing-sequences/artemis4_webp": {
+      "title": "Artemis IV"
+    },
+    "/images/landing-sequences/beresheet_webp": {
+      "title": "Beresheet"
+    },
+    "/images/landing-sequences/chandrayaan3_webp": {
+      "title": "Chandrayaan-3"
+    },
+    "/images/landing-sequences/change5_webp": {
+      "title": "Chang'e 5"
+    },
+    "/images/landing-sequences/change6_webp": {
+      "title": "Chang'e 6"
+    },
+    "/images/landing-sequences/curiosity_webp": {
+      "title": "Curiosity"
+    },
+    "/images/landing-sequences/insight_webp": {
+      "title": "InSight"
+    },
+    "/images/landing-sequences/luna16_webp": {
+      "title": "Luna 16"
+    },
+    "/images/landing-sequences/luna17_webp": {
+      "title": "Luna 17 / Lunokhod 1"
+    },
+    "/images/landing-sequences/luna21_webp": {
+      "title": "Luna 21 / Lunokhod 2"
+    },
+    "/images/landing-sequences/luna24_webp": {
+      "title": "Luna 24"
+    },
+    "/images/landing-sequences/luna9_webp": {
+      "title": "Luna 9"
+    },
+    "/images/landing-sequences/opportunity_webp": {
+      "title": "Opportunity"
+    },
+    "/images/landing-sequences/schiaparelli_webp": {
+      "title": "Schiaparelli EDM"
+    },
+    "/images/landing-sequences/slim_webp": {
+      "title": "SLIM"
+    },
+    "/images/landing-sequences/spirit_webp": {
+      "title": "Spirit"
+    },
+    "/images/landing-sequences/vega-1_webp": {
+      "title": "Vega 1"
+    },
+    "/images/landing-sequences/vega-2_webp": {
+      "title": "Vega 2"
+    },
+    "/images/landing-sequences/venera-13_webp": {
+      "title": "Venera 13"
+    },
+    "/images/landing-sequences/beagle2_webp": {
+      "title": "Beagle 2"
+    },
+    "/images/landing-sequences/change3_webp": {
+      "title": "Chang'e 3 / Yutu"
+    },
+    "/images/landing-sequences/change4_webp": {
+      "title": "Chang'e 4 / Yutu-2"
+    },
+    "/images/landing-sequences/change7_webp": {
+      "title": "Chang'e 7"
+    },
+    "/images/landing-sequences/exomars-rosalind-franklin_webp": {
+      "title": "Rover Rosalind Franklin"
+    },
+    "/images/landing-sequences/mars-pathfinder_webp": {
+      "title": "Mars Pathfinder + Sojourner"
+    },
+    "/images/landing-sequences/mars2_webp": {
+      "title": "Módulo de pouso Mars 2"
+    },
+    "/images/landing-sequences/mars3_webp": {
+      "title": "Módulo de pouso Mars 3"
+    },
+    "/images/landing-sequences/mars6_webp": {
+      "title": "Mars 6"
+    },
+    "/images/landing-sequences/perseverance_webp": {
+      "title": "Perseverance + Ingenuity"
+    },
+    "/images/landing-sequences/phoenix_webp": {
+      "title": "Módulo de pouso Phoenix"
+    },
+    "/images/landing-sequences/viking1-lander_webp": {
+      "title": "Módulo de pouso Viking 1"
+    },
+    "/images/landing-sequences/viking2-lander_webp": {
+      "title": "Módulo de pouso Viking 2"
+    },
+    "/images/landing-sequences/zhurong_webp": {
+      "title": "Zhurong (com o módulo de pouso Tianwen-1)"
+    }
+  },
+  "blueprint_art": {
+    "/images/blueprints/apollo-soyuz_webp": {
+      "title": "Projeto de Teste Apollo-Soyuz (ASTP)"
+    },
+    "/images/blueprints/apollo11_webp": {
+      "title": "Apollo 11"
+    },
+    "/images/blueprints/bepicolombo_webp": {
+      "title": "BepiColombo"
+    },
+    "/images/blueprints/cassini_webp": {
+      "title": "Cassini-Huygens"
+    },
+    "/images/blueprints/dawn_webp": {
+      "title": "Dawn"
+    },
+    "/images/blueprints/galileo_webp": {
+      "title": "Galileo"
+    },
+    "/images/blueprints/giotto_webp": {
+      "title": "Giotto"
+    },
+    "/images/blueprints/hayabusa2_webp": {
+      "title": "Hayabusa2"
+    },
+    "/images/blueprints/juice_webp": {
+      "title": "JUICE"
+    },
+    "/images/blueprints/juno_webp": {
+      "title": "Juno"
+    },
+    "/images/blueprints/new-horizons_webp": {
+      "title": "New Horizons"
+    },
+    "/images/blueprints/pioneer-10_webp": {
+      "title": "Pioneer 10"
+    },
+    "/images/blueprints/rosetta_webp": {
+      "title": "Rosetta"
+    },
+    "/images/blueprints/sputnik1_webp": {
+      "title": "Sputnik 1"
+    },
+    "/images/blueprints/ulysses_webp": {
+      "title": "Ulysses"
+    },
+    "/images/blueprints/venera-13_webp": {
+      "title": "Venera 13"
+    },
+    "/images/blueprints/vostok-1_webp": {
+      "title": "Vostok 1"
+    },
+    "/images/blueprints/voyager-2_webp": {
+      "title": "Voyager 2"
+    }
+  },
+  "mission_trajectories": {
+    "/images/missions/thumbnails/akatsuki_webp": {
+      "title": "Akatsuki"
+    },
+    "/images/missions/thumbnails/apollo-1_webp": {
+      "title": "Apollo 1 (AS-204)"
+    },
+    "/images/missions/thumbnails/apollo-soyuz_webp": {
+      "title": "Projeto de Teste Apollo-Soyuz (ASTP)"
+    },
+    "/images/missions/thumbnails/apollo10_webp": {
+      "title": "Apollo 10"
+    },
+    "/images/missions/thumbnails/apollo11_webp": {
+      "title": "Apollo 11"
+    },
+    "/images/missions/thumbnails/apollo12_webp": {
+      "title": "Apollo 12"
+    },
+    "/images/missions/thumbnails/apollo13_webp": {
+      "title": "Apollo 13"
+    },
+    "/images/missions/thumbnails/apollo14_webp": {
+      "title": "Apollo 14"
+    },
+    "/images/missions/thumbnails/apollo15_webp": {
+      "title": "Apollo 15"
+    },
+    "/images/missions/thumbnails/apollo16_webp": {
+      "title": "Apollo 16"
+    },
+    "/images/missions/thumbnails/apollo17_webp": {
+      "title": "Apollo 17"
+    },
+    "/images/missions/thumbnails/apollo7_webp": {
+      "title": "Apollo 7"
+    },
+    "/images/missions/thumbnails/apollo8_webp": {
+      "title": "Apollo 8"
+    },
+    "/images/missions/thumbnails/apollo9_webp": {
+      "title": "Apollo 9"
+    },
+    "/images/missions/thumbnails/artemis1_webp": {
+      "title": "Artemis I"
+    },
+    "/images/missions/thumbnails/artemis2_webp": {
+      "title": "Artemis II"
+    },
+    "/images/missions/thumbnails/artemis3_webp": {
+      "title": "Artemis III"
+    },
+    "/images/missions/thumbnails/artemis4_webp": {
+      "title": "Artemis IV"
+    },
+    "/images/missions/thumbnails/artemis5_webp": {
+      "title": "Artemis V"
+    },
+    "/images/missions/thumbnails/aurora-7_webp": {
+      "title": "Aurora 7 / MA-7"
+    },
+    "/images/missions/thumbnails/bepicolombo_webp": {
+      "title": "BepiColombo"
+    },
+    "/images/missions/thumbnails/beresheet_webp": {
+      "title": "Beresheet"
+    },
+    "/images/missions/thumbnails/blue-moon-mk1_webp": {
+      "title": "Blue Moon MK1"
+    },
+    "/images/missions/thumbnails/cassini_webp": {
+      "title": "Cassini-Huygens"
+    },
+    "/images/missions/thumbnails/chandrayaan1_webp": {
+      "title": "Chandrayaan-1"
+    },
+    "/images/missions/thumbnails/chandrayaan2_webp": {
+      "title": "Chandrayaan-2"
+    },
+    "/images/missions/thumbnails/chandrayaan3_webp": {
+      "title": "Chandrayaan-3"
+    },
+    "/images/missions/thumbnails/change1_webp": {
+      "title": "Chang'e 1"
+    },
+    "/images/missions/thumbnails/change2_webp": {
+      "title": "Chang'e 2"
+    },
+    "/images/missions/thumbnails/change3_webp": {
+      "title": "Chang'e 3"
+    },
+    "/images/missions/thumbnails/change5_webp": {
+      "title": "Chang'e 5"
+    },
+    "/images/missions/thumbnails/change6_webp": {
+      "title": "Chang'e 6"
+    },
+    "/images/missions/thumbnails/clementine_webp": {
+      "title": "Clementine"
+    },
+    "/images/missions/thumbnails/curiosity_webp": {
+      "title": "Curiosity"
+    },
+    "/images/missions/thumbnails/dart_webp": {
+      "title": "DART"
+    },
+    "/images/missions/thumbnails/dawn_webp": {
+      "title": "Dawn"
+    },
+    "/images/missions/thumbnails/europa-clipper_webp": {
+      "title": "Europa Clipper"
+    },
+    "/images/missions/thumbnails/faith-7_webp": {
+      "title": "Faith 7 / MA-9"
+    },
+    "/images/missions/thumbnails/freedom-7_webp": {
+      "title": "Freedom 7 / MR-3"
+    },
+    "/images/missions/thumbnails/friendship-7_webp": {
+      "title": "Friendship 7 / MA-6"
+    },
+    "/images/missions/thumbnails/galileo_webp": {
+      "title": "Galileo"
+    },
+    "/images/missions/thumbnails/gemini12_webp": {
+      "title": "Gemini 12 / GT-12"
+    },
+    "/images/missions/thumbnails/gemini3_webp": {
+      "title": "Gemini 3 / GT-3"
+    },
+    "/images/missions/thumbnails/gemini4_webp": {
+      "title": "Gemini 4 / GT-4"
+    },
+    "/images/missions/thumbnails/gemini6a_webp": {
+      "title": "Gemini 6A / GT-6A"
+    },
+    "/images/missions/thumbnails/gemini7_webp": {
+      "title": "Gemini 7 / GT-7"
+    },
+    "/images/missions/thumbnails/gemini8_webp": {
+      "title": "Gemini 8 / GT-8"
+    },
+    "/images/missions/thumbnails/giotto_webp": {
+      "title": "Giotto"
+    },
+    "/images/missions/thumbnails/hayabusa1_webp": {
+      "title": "Hayabusa"
+    },
+    "/images/missions/thumbnails/hayabusa2_webp": {
+      "title": "Hayabusa2"
+    },
+    "/images/missions/thumbnails/hera_webp": {
+      "title": "Hera"
+    },
+    "/images/missions/thumbnails/hope-probe_webp": {
+      "title": "Sonda Hope"
+    },
+    "/images/missions/thumbnails/huygens_webp": {
+      "title": "Huygens"
+    },
+    "/images/missions/thumbnails/im-1_webp": {
+      "title": "IM-1"
+    },
+    "/images/missions/thumbnails/insight_webp": {
+      "title": "InSight"
+    },
+    "/images/missions/thumbnails/inspiration4_webp": {
+      "title": "Inspiration4"
+    },
+    "/images/missions/thumbnails/juice_webp": {
+      "title": "JUICE"
+    },
+    "/images/missions/thumbnails/juno_webp": {
+      "title": "Juno"
+    },
+    "/images/missions/thumbnails/kaguya_webp": {
+      "title": "Kaguya (SELENE)"
+    },
+    "/images/missions/thumbnails/liberty-bell-7_webp": {
+      "title": "Liberty Bell 7 / MR-4"
+    },
+    "/images/missions/thumbnails/lro_webp": {
+      "title": "Lunar Reconnaissance Orbiter"
+    },
+    "/images/missions/thumbnails/lucy_webp": {
+      "title": "Lucy"
+    },
+    "/images/missions/thumbnails/luna10_webp": {
+      "title": "Luna 10"
+    },
+    "/images/missions/thumbnails/luna16_webp": {
+      "title": "Luna 16"
+    },
+    "/images/missions/thumbnails/luna17_webp": {
+      "title": "Luna 17 / Lunokhod 1"
+    },
+    "/images/missions/thumbnails/luna21_webp": {
+      "title": "Luna 21 / Lunokhod 2"
+    },
+    "/images/missions/thumbnails/luna24_webp": {
+      "title": "Luna 24"
+    },
+    "/images/missions/thumbnails/luna9_webp": {
+      "title": "Luna 9"
+    },
+    "/images/missions/thumbnails/lunar-prospector_webp": {
+      "title": "Lunar Prospector"
+    },
+    "/images/missions/thumbnails/magellan_webp": {
+      "title": "Magellan"
+    },
+    "/images/missions/thumbnails/mangalyaan_webp": {
+      "title": "Mangalyaan"
+    },
+    "/images/missions/thumbnails/mariner10_webp": {
+      "title": "Mariner 10"
+    },
+    "/images/missions/thumbnails/mariner2_webp": {
+      "title": "Mariner 2"
+    },
+    "/images/missions/thumbnails/mariner4_webp": {
+      "title": "Mariner 4"
+    },
+    "/images/missions/thumbnails/mariner9_webp": {
+      "title": "Mariner 9"
+    },
+    "/images/missions/thumbnails/mars-express_webp": {
+      "title": "Mars Express"
+    },
+    "/images/missions/thumbnails/mars-pathfinder_webp": {
+      "title": "Mars Pathfinder"
+    },
+    "/images/missions/thumbnails/mars2_webp": {
+      "title": "Mars 2"
+    },
+    "/images/missions/thumbnails/mars3_webp": {
+      "title": "Mars 3"
+    },
+    "/images/missions/thumbnails/maven_webp": {
+      "title": "MAVEN"
+    },
+    "/images/missions/thumbnails/messenger_webp": {
+      "title": "MESSENGER"
+    },
+    "/images/missions/thumbnails/mmx_webp": {
+      "title": "MMX"
+    },
+    "/images/missions/thumbnails/mro_webp": {
+      "title": "Mars Reconnaissance Orbiter"
+    },
+    "/images/missions/thumbnails/near-shoemaker_webp": {
+      "title": "NEAR Shoemaker"
+    },
+    "/images/missions/thumbnails/new-horizons_webp": {
+      "title": "New Horizons"
+    },
+    "/images/missions/thumbnails/opportunity_webp": {
+      "title": "Opportunity"
+    },
+    "/images/missions/thumbnails/osiris-rex_webp": {
+      "title": "OSIRIS-REx"
+    },
+    "/images/missions/thumbnails/otv-1_webp": {
+      "title": "X-37B OTV-1 (USA-212)"
+    },
+    "/images/missions/thumbnails/otv-2_webp": {
+      "title": "X-37B OTV-2 (USA-226)"
+    },
+    "/images/missions/thumbnails/otv-3_webp": {
+      "title": "X-37B OTV-3 (USA-240)"
+    },
+    "/images/missions/thumbnails/otv-4_webp": {
+      "title": "X-37B OTV-4 (USA-261, AFSPC-5)"
+    },
+    "/images/missions/thumbnails/otv-5_webp": {
+      "title": "X-37B OTV-5 (USA-277)"
+    },
+    "/images/missions/thumbnails/otv-6_webp": {
+      "title": "X-37B OTV-6 (USA-299, USSF-7)"
+    },
+    "/images/missions/thumbnails/otv-7_webp": {
+      "title": "X-37B OTV-7 (USA-349, USSF-52)"
+    },
+    "/images/missions/thumbnails/parker-solar-probe_webp": {
+      "title": "Parker Solar Probe"
+    },
+    "/images/missions/thumbnails/perseverance_webp": {
+      "title": "Perseverance"
+    },
+    "/images/missions/thumbnails/phoenix_webp": {
+      "title": "Phoenix"
+    },
+    "/images/missions/thumbnails/pioneer-10_webp": {
+      "title": "Pioneer 10"
+    },
+    "/images/missions/thumbnails/pioneer-11_webp": {
+      "title": "Pioneer 11"
+    },
+    "/images/missions/thumbnails/polaris-dawn_webp": {
+      "title": "Polaris Dawn"
+    },
+    "/images/missions/thumbnails/psyche-mission_webp": {
+      "title": "Psyche"
+    },
+    "/images/missions/thumbnails/rosetta_webp": {
+      "title": "Rosetta"
+    },
+    "/images/missions/thumbnails/schiaparelli_webp": {
+      "title": "Schiaparelli EDM"
+    },
+    "/images/missions/thumbnails/shenzhou-1_webp": {
+      "title": "Shenzhou 1"
+    },
+    "/images/missions/thumbnails/shenzhou-5_webp": {
+      "title": "Shenzhou 5"
+    },
+    "/images/missions/thumbnails/sigma-7_webp": {
+      "title": "Sigma 7 / MA-8"
+    },
+    "/images/missions/thumbnails/skylab-2_webp": {
+      "title": "Skylab 2"
+    },
+    "/images/missions/thumbnails/skylab-3_webp": {
+      "title": "Skylab 3"
+    },
+    "/images/missions/thumbnails/skylab-4_webp": {
+      "title": "Skylab 4"
+    },
+    "/images/missions/thumbnails/slim_webp": {
+      "title": "SLIM"
+    },
+    "/images/missions/thumbnails/smart-1_webp": {
+      "title": "SMART-1"
+    },
+    "/images/missions/thumbnails/solar-orbiter_webp": {
+      "title": "Solar Orbiter"
+    },
+    "/images/missions/thumbnails/soyuz-1_webp": {
+      "title": "Soyuz 1"
+    },
+    "/images/missions/thumbnails/soyuz-11_webp": {
+      "title": "Soyuz 11"
+    },
+    "/images/missions/thumbnails/spirit_webp": {
+      "title": "Spirit"
+    },
+    "/images/missions/thumbnails/sputnik1_webp": {
+      "title": "Sputnik 1"
+    },
+    "/images/missions/thumbnails/starship-demo_webp": {
+      "title": "Starship Demo"
+    },
+    "/images/missions/thumbnails/starship-flight-5_webp": {
+      "title": "Starship Flight 5"
+    },
+    "/images/missions/thumbnails/starship-mars-crew_webp": {
+      "title": "Starship tripulação para Marte"
+    },
+    "/images/missions/thumbnails/sts-1_webp": {
+      "title": "STS-1"
+    },
+    "/images/missions/thumbnails/sts-107_webp": {
+      "title": "STS-107"
+    },
+    "/images/missions/thumbnails/sts-51-l_webp": {
+      "title": "STS-51-L"
+    },
+    "/images/missions/thumbnails/tianwen1_webp": {
+      "title": "Tianwen-1"
+    },
+    "/images/missions/thumbnails/ulysses_webp": {
+      "title": "Ulysses"
+    },
+    "/images/missions/thumbnails/vega-1_webp": {
+      "title": "Vega 1"
+    },
+    "/images/missions/thumbnails/vega-2_webp": {
+      "title": "Vega 2"
+    },
+    "/images/missions/thumbnails/venera-13_webp": {
+      "title": "Venera 13"
+    },
+    "/images/missions/thumbnails/viking1_webp": {
+      "title": "Viking 1"
+    },
+    "/images/missions/thumbnails/viking2_webp": {
+      "title": "Viking 2"
+    },
+    "/images/missions/thumbnails/voskhod-1_webp": {
+      "title": "Voskhod 1"
+    },
+    "/images/missions/thumbnails/voskhod-2_webp": {
+      "title": "Voskhod 2"
+    },
+    "/images/missions/thumbnails/vostok-1_webp": {
+      "title": "Vostok 1"
+    },
+    "/images/missions/thumbnails/vostok-2_webp": {
+      "title": "Vostok 2"
+    },
+    "/images/missions/thumbnails/vostok-3_webp": {
+      "title": "Vostok 3"
+    },
+    "/images/missions/thumbnails/vostok-4_webp": {
+      "title": "Vostok 4"
+    },
+    "/images/missions/thumbnails/vostok-5_webp": {
+      "title": "Vostok 5"
+    },
+    "/images/missions/thumbnails/vostok-6_webp": {
+      "title": "Vostok 6"
+    },
+    "/images/missions/thumbnails/voyager-1_webp": {
+      "title": "Voyager 1"
+    },
+    "/images/missions/thumbnails/voyager-2_webp": {
+      "title": "Voyager 2"
+    },
+    "/images/missions/thumbnails/escapade_webp": {
+      "title": "ESCAPADE"
+    },
+    "/images/missions/thumbnails/change4_webp": {
+      "title": "Chang'e 4 / Yutu-2"
+    }
+  },
+  "site_illustrations": {
+    "/images/illustrations/sites/apollo11_webp": {
+      "title": "Apollo 11"
+    },
+    "/images/illustrations/sites/apollo12_webp": {
+      "title": "Apollo 12"
+    },
+    "/images/illustrations/sites/apollo14_webp": {
+      "title": "Apollo 14"
+    },
+    "/images/illustrations/sites/apollo15_webp": {
+      "title": "Apollo 15"
+    },
+    "/images/illustrations/sites/apollo16_webp": {
+      "title": "Apollo 16"
+    },
+    "/images/illustrations/sites/apollo17_webp": {
+      "title": "Apollo 17"
+    },
+    "/images/illustrations/sites/chandrayaan3_webp": {
+      "title": "Chandrayaan-3"
+    },
+    "/images/illustrations/sites/spirit_webp": {
+      "title": "Spirit"
+    },
+    "/images/illustrations/sites/opportunity_webp": {
+      "title": "Opportunity"
+    },
+    "/images/illustrations/sites/curiosity_webp": {
+      "title": "Curiosity"
+    },
+    "/images/illustrations/sites/perseverance_webp": {
+      "title": "Perseverance"
+    },
+    "/images/illustrations/sites/zhurong_webp": {
+      "title": "Zhurong"
+    },
+    "/images/illustrations/sites/luna17_webp": {
+      "title": "Luna 17"
+    },
+    "/images/illustrations/sites/luna21_webp": {
+      "title": "Luna 21"
+    },
+    "/images/illustrations/sites/change3_webp": {
+      "title": "Chang’e 3"
+    },
+    "/images/illustrations/sites/change4_webp": {
+      "title": "Chang’e 4"
     }
   }
 }

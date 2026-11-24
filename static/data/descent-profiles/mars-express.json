@@ -12,15 +12,18 @@
     "flightPathAngleDeg": 16.5
   },
   "entryMassKg": 69,
-  "entryCdA": 1.0,
+  "entryCdA": 1,
   "dynamicGamma": true,
   "retroPropellantKg": 0,
   "archetype": "MARS_CHUTE_AIRBAG",
   "params": {
     "chuteDeployAltM": 7000,
-    "finalPhaseAltM": 200,
+    "mainChuteAltM": 2600,
+    "finalPhaseAltM": 280,
+    "pilotCdA": 2.8,
     "parachuteCdA": 43,
-    "heatshieldKg": 24
+    "heatshieldKg": 24,
+    "backshellKg": 11.8
   },
   "source_tier": "flagship",
   "estimatedFields": [
@@ -29,7 +32,12 @@
     "entryCdA",
     "chuteDeployAltM",
     "parachuteCdA",
-    "heatshieldKg"
+    "params.pilotCdA",
+    "params.heatshieldKg",
+    "params.backshellKg",
+    "afterTouchdown.bounces.count",
+    "afterTouchdown.bounces.rollM",
+    "afterTouchdown.bounces.restS"
   ],
   "provenance": [
     {
@@ -39,6 +47,34 @@
     {
       "l": "NASA — Beagle 2 in depth: 69 kg at launch, 33.2 kg lander at touchdown; landed 25 Dec 2003, found partly deployed by MRO in 2015",
       "u": "https://web.archive.org/web/20190508192843/https://solarsystem.nasa.gov/missions/beagle-2/in-depth/"
+    },
+    {
+      "l": "Beagle 2 EDL as researched for pass 2 (2026-11-23, docs/wip/2026-11-23-mars-landings-record.md): aeroshell 0.93 m, lander 0.66 m; pilot chute 1.9 m, then a 10 m main at about 2.6 km (the Cd·A of 43 m² is a 0.55 disc-gap-band over the 10 m disc, an estimate); three gas bags inflated at about 280 m (the inquiry report above says 200 m), each segment 1.93 x 0.965 m; the main chute is released at first impact, with no bridle cut; the lander dropped about 1 m when the bags were released; four 0.57 m pentagonal panels, of which HiRISE shows 3, possibly 4, deployed (the mission failed: drawn as 3 open and the last one not). Back cover 11.8 kg is 69 − 33.2 − 24 (the shield split is an estimate); the bounce count, roll and time to rest are drawn, not sourced; the first rebound is the inquiry report’s 28 m",
+      "u": "https://en.wikipedia.org/wiki/Beagle_2"
+    },
+    {
+      "l": "ESA — Beagle 2 lander found on Mars (HiRISE, 2015): partly deployed, one panel blocking the antenna",
+      "u": "https://www.esa.int/About_Us/ESOC/Beagle-2_lander_found_on_Mars"
     }
-  ]
+  ],
+  "beats": [
+    {
+      "type": "airbag_deploy",
+      "altM": 280
+    }
+  ],
+  "afterTouchdown": {
+    "bounces": {
+      "count": 10,
+      "firstHeightM": 28,
+      "rollM": 120,
+      "restS": 60
+    },
+    "beats": [
+      {
+        "type": "petals_open",
+        "afterS": 8
+      }
+    ]
+  }
 }

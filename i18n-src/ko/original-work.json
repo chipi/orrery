@@ -590,6 +590,9 @@
     },
     "/images/anatomy/voskhod_webp": {
       "title": "Voskhod"
+    },
+    "/images/anatomy/starship-hls_webp": {
+      "title": "Starship HLS"
     }
   },
   "lab_illustrations": {
@@ -1011,6 +1014,15 @@
     },
     "/diagrams/science/vis-viva_webp": {
       "title": "비스 비바"
+    },
+    "/diagrams/science/earth-surface-imagery_webp": {
+      "title": "지구 표면 영상"
+    },
+    "/diagrams/science/mars-surface-imagery_webp": {
+      "title": "화성 표면 영상"
+    },
+    "/diagrams/science/moon-surface-imagery_webp": {
+      "title": "달 표면 영상"
     }
   },
   "posters": {
@@ -1100,77 +1112,12 @@
     "/images/colophon/craft-cassini_webp": {
       "title": "Cassini–Huygens",
       "what": "고이득 안테나, RTG 붐, 그리고 Huygens 탐사선 — 토성 궤도선.",
-      "where": "비행 + 탐험"
-    },
-    "/images/colophon/craft-voyager-1_webp": {
-      "title": "보이저",
-      "what": "3.7 m 접시 안테나, 자기장계 붐, RTG 구조재 — 그랜드 투어 탐사선.",
-      "where": "비행 + 탐험"
-    },
-    "/images/colophon/craft-galileo_webp": {
-      "title": "Galileo",
-      "what": "이중 회전 모듈과 펼쳐진 고이득 우산형 안테나.",
-      "where": "비행 + 탐험"
+      "where": "비행 · 발사 + 순항"
     },
     "/images/colophon/craft-new-horizons_webp": {
       "title": "New Horizons",
       "what": "냉각 삼각형 모듈과 단일 접시 — 명왕성 근처 비행 탐사선.",
-      "where": "비행 + 탐험"
-    },
-    "/images/colophon/craft-pioneer-10_webp": {
-      "title": "Pioneer",
-      "what": "회전 안정화 접시, RTG 붐, 그리고 새겨진 명판.",
-      "where": "비행 + 탐험"
-    },
-    "/images/colophon/craft-juno_webp": {
-      "title": "Juno",
-      "what": "육각형 모듈 주위에 세 개의 거대한 태양 전지판 — 목성 극궤도 궤도선.",
-      "where": "비행 + 탐험"
-    },
-    "/images/colophon/craft-bepicolombo_webp": {
-      "title": "BepiColombo",
-      "what": "적층된 이동 모듈 + 이온 추진기가 장착된 수성 궤도선.",
-      "where": "비행 + 탐험"
-    },
-    "/images/colophon/craft-dawn_webp": {
-      "title": "Dawn",
-      "what": "이온 추진기가 장착된 모듈과 넓은 태양 전지판 — 베스타 + 세레스 궤도선.",
-      "where": "비행 + 탐험"
-    },
-    "/images/colophon/craft-giotto_webp": {
-      "title": "Giotto",
-      "what": "먼지 방패를 가진 드럼 모양 회전체 — 할리 혜성 근처 비행.",
-      "where": "비행 + 탐험"
-    },
-    "/images/colophon/craft-hayabusa2_webp": {
-      "title": "Hayabusa2",
-      "what": "태양 전지판과 샘플러 혼이 있는 상자형 모듈 — 소행성 류우구.",
-      "where": "비행 + 탐험"
-    },
-    "/images/colophon/craft-juice_webp": {
-      "title": "JUICE",
-      "what": "컴팩트 모듈 위의 십자형 태양 전지판 배열 — 목성 얼음 위성 궤도선.",
-      "where": "날다 + 탐사"
-    },
-    "/images/colophon/craft-rosetta_webp": {
-      "title": "Rosetta",
-      "what": "혜성 추적 버스 주변의 14 m 태양광 날개 + Philae 착륙선",
-      "where": "날다 + 탐사"
-    },
-    "/images/colophon/craft-ulysses_webp": {
-      "title": "Ulysses",
-      "what": "RTG 구동 태양 극궤도 탐사선 및 단일 접시 안테나",
-      "where": "날다 + 탐사"
-    },
-    "/images/colophon/craft-vega-1_webp": {
-      "title": "베가",
-      "what": "소비에트 금성 스윙바이 + 조향식 접시를 갖춘 풍선 모선",
-      "where": "날다 + 탐사"
-    },
-    "/images/colophon/craft-venera-13_webp": {
-      "title": "Venera 13",
-      "what": "소비에트 금성 착륙선 — 토로이드 공기제동 장치 및 착륙 링",
-      "where": "날다 + 탐사"
+      "where": "비행 · 발사 + 순항"
     },
     "/images/colophon/model-launcher-generic_webp": {
       "title": "범용 발사체",
@@ -1547,16 +1494,6 @@
       "what": "Blue Origin의 높은 착륙선 — 네 다리 프레임 위의 중앙 탱크.",
       "where": "비행 · 순항/접근"
     },
-    "/images/colophon/model-cruise-hayabusa1_webp": {
-      "title": "Hayabusa 순항",
-      "what": "JAXA 샘플 반환 버스 — 태양 전지판, 샘플러 혼(horn), 이온 엔진.",
-      "where": "비행 · 순항/접근"
-    },
-    "/images/colophon/model-cruise-osiris-rex_webp": {
-      "title": "OSIRIS-REx 순항",
-      "what": "V자 각도의 태양 전지판과 확장된 TAGSAM 샘플러 팔을 가진 상자형 버스.",
-      "where": "비행 · 순항/접근"
-    },
     "/images/colophon/model-cruise-near-shoemaker_webp": {
       "title": "NEAR Shoemaker",
       "what": "십자형의 네 개 고정 태양 전지판과 고정 접시 안테나를 가진 궤도선 버스.",
@@ -1644,237 +1581,237 @@
     },
     "/images/colophon/model-launcher-long-march-3a_webp": {
       "title": "Long March 3A",
-      "what": "열린 트러스 위에서 핫 스테이징하는 코어와 2단, 그 위에 극저온 3단과 3.35 m 페어링. 스트랩온 없음 (Chang’e 1).",
+      "what": "코어와 2단이 핫 스테이징으로 개방형 트러스 위에 이어지고, 그 위에 극저온 3단과 직경 3.35 m 페어링이 얹힌다. 스트랩온 없음 (Chang'e 1).",
       "where": "비행 · 발사/상승"
     },
     "/images/colophon/model-launcher-long-march-7_webp": {
       "title": "Long March 7",
-      "what": "CALT의 3.35 m 등유 로켓으로 Tianzhou 화물선을 발사 — 코어, 2단, 2.25 m 스트랩온 부스터 4기.",
+      "what": "Tianzhou 화물선용 CALT의 직경 3.35 m 케로신 로켓 — 코어, 2단, 직경 2.25 m 스트랩온 부스터 4기로 이루어진다.",
       "where": "비행 · 발사/상승"
     },
     "/images/colophon/model-launcher-delta-ii_webp": {
       "title": "Delta II",
-      "what": "Thor에서 유래한 청록색 1단을 흰색 고체 부스터 9기가 둘러싸고, 잘록한 2.9 m 페어링을 얹은 모습.",
+      "what": "토르 계열의 청록색 1단을 흰색 고체 부스터 9기가 둘러싸고, 보트테일형 직경 2.9 m 페어링이 위에 얹힌다.",
       "where": "비행 · 발사/상승"
     },
     "/images/colophon/model-launcher-atlas-centaur_webp": {
       "title": "Atlas-Centaur",
-      "what": "강철 풍선 탱크의 1.5단 Atlas 위에 흰색 Centaur 상단과 페어링 (Mariner 9·10, Pioneer 10·11).",
+      "what": "스틸 풍선형 Atlas 1.5단 위에 흰색 Centaur 상단과 노즈 페어링이 올라간다 (Mariner 9·10, Pioneer 10·11).",
       "where": "비행 · 발사/상승"
     },
     "/images/colophon/model-launcher-atlas-agena_webp": {
       "title": "Atlas-Agena",
-      "what": "같은 Atlas 위에 날씬한 Agena D 상단과 작은 슈라우드 (Mariner 4).",
+      "what": "같은 Atlas 위에 가느다란 Agena D 상단과 작은 슈라우드가 올라간다 (Mariner 4).",
       "where": "비행 · 발사/상승"
     },
     "/images/colophon/model-launcher-titan-ii-g_webp": {
       "title": "Titan II(23)G",
-      "what": "Titan 코어 2단 위에 탑재체 페어링 (Clementine).",
+      "what": "Titan 코어 2단 위에 페이로드 페어링이 올라간다 (Clementine).",
       "where": "비행 · 발사/상승"
     },
     "/images/colophon/model-launcher-titan-iiie-centaur_webp": {
       "title": "Titan IIIE-Centaur",
-      "what": "5분할 고체 부스터 2기를 단 Titan 코어, 단간 어댑터, 페어링 안의 Centaur (Viking, Voyager).",
+      "what": "Titan 코어에 5분절 고체 부스터 2기를 달고, 단간부와 슈라우드 안의 Centaur를 얹었다 (Viking, Voyager).",
       "where": "비행 · 발사/상승"
     },
     "/images/colophon/model-launcher-titan-ivb-centaur_webp": {
       "title": "Titan IVB-Centaur",
-      "what": "긴 고체 모터 2기를 단 Titan 코어 위에 Centaur를 감싸는 20 m 페어링 (Cassini).",
+      "what": "Titan 코어에 긴 고체 모터 2기를 달고, Centaur를 감싸는 길이 20 m 페어링을 얹었다 (Cassini).",
       "where": "비행 · 발사/상승"
     },
     "/images/colophon/model-launcher-falcon-heavy_webp": {
       "title": "Falcon Heavy",
-      "what": "Falcon 9 코어 3개를 나란히 — 측면 부스터에는 노즈콘, 그리드 핀, 다리가 있고 중앙 코어가 상단과 페어링을 실음.",
+      "what": "Falcon 9 코어 3기를 나란히 세웠다 — 측면 부스터에는 노즈콘, 그리드 핀, 다리가 있고, 중앙 코어가 상단과 페어링을 지닌다.",
       "where": "비행 · 발사/상승"
     },
     "/images/colophon/model-launcher-athena-ii_webp": {
       "title": "Athena II",
-      "what": "전 단 고체 구성 — Castor 120 2단, 3단, 끝이 가늘어지는 페어링 (Lunar Prospector).",
+      "what": "전 단 고체 스택 — Castor 120 2단, 3단, 끝이 가늘어지는 페어링 (Lunar Prospector).",
       "where": "비행 · 발사/상승"
     },
     "/images/colophon/model-launcher-delta-iv-heavy_webp": {
       "title": "Delta IV Heavy",
-      "what": "공통 부스터 코어 3개를 나란히, 가운데 코어가 극저온 상단과 19 m 페어링을 실음 (Parker Solar Probe).",
+      "what": "공통 부스터 코어 3기를 나란히 놓고, 중앙 코어가 극저온 상단과 길이 19 m 페어링을 지닌다 (Parker Solar Probe).",
       "where": "비행 · 발사/상승"
     },
     "/images/colophon/model-launcher-new-glenn_webp": {
       "title": "New Glenn",
-      "what": "지름 7 m의 단일 기둥 — 엔진 7기와 다리, 꼬리날개를 가진 1단 위에 7 m 오자이브 페어링 (Blue Moon MK1).",
+      "what": "직경 7 m의 외줄기 — 엔진 7기의 1단(다리와 스트레이크 포함) 위에 직경 7 m 오자이브 페어링 (Blue Moon MK1).",
       "where": "비행 · 발사/상승"
     },
     "/images/colophon/model-launcher-proton-m-briz-m_webp": {
       "title": "Proton-M / Briz-M",
-      "what": "중앙 코어를 외부 연료 탱크 6개가 둘러싸고, 2개 단과 Briz-M 상단, 4.35 m 페어링.",
+      "what": "중앙 코어를 바깥쪽 연료 탱크 6개가 둘러싸고, 단 2개와 Briz-M 상단이 더해져 직경 4.35 m 페어링 아래에 놓인다.",
       "where": "비행 · 발사/상승"
     },
     "/images/colophon/model-launcher-sls-block-1_webp": {
       "title": "SLS Block 1",
-      "what": "RS-25 4기를 단 주황색 폼 코어 스테이지, 흰색 5분할 부스터 2기, 단 어댑터와 상단, 그 위에 Orion과 비상 탈출탑 (Artemis).",
+      "what": "RS-25 4기를 단 주황색 단열 폼 코어단, 흰색 5분절 부스터 2기, 단 어댑터와 상단, 그 위에 Orion과 비상 탈출 타워 (Artemis).",
       "where": "비행 · 발사/상승"
     },
     "/images/colophon/model-launcher-molniya-m_webp": {
       "title": "Molniya-M",
-      "what": "4단 R-7 — 트러스 위의 Blok I, 탈출 단 Blok L, 원통과 원뿔 슈라우드 안의 탐사선 (Luna 9, Luna 10).",
+      "what": "4단 R-7 — 격자 위의 Blok I, Blok L 탈출단, 원통-원뿔 슈라우드 안의 탐사선 (Luna 9, Luna 10).",
       "where": "비행 · 발사/상승"
     },
     "/images/colophon/model-launcher-soyuz-fg-fregat_webp": {
       "title": "Soyuz-FG / Fregat",
-      "what": "R-7과 그 상단 위에 뭉툭한 Fregat과 탐사선을 얹고 더 넓은 슈라우드로 덮음 (Mars Express).",
+      "what": "R-7과 그 상단 위에 뭉툭한 Fregat과 더 넓은 슈라우드 속의 탐사선이 올라간다 (Mars Express).",
       "where": "비행 · 발사/상승"
     },
     "/images/colophon/model-launcher-sputnik-8k71ps_webp": {
       "title": "Sputnik 8K71PS",
-      "what": "Sputnik 1을 발사한 2단 R-7 — 3단이 없고 위성은 코어의 노즈콘 아래에 실림.",
+      "what": "Sputnik 1을 쏘아 올린 2단 R-7 — 3단 없이 위성이 코어의 노즈콘 아래에 실린다.",
       "where": "비행 · 발사/상승"
     },
     "/images/colophon/model-launcher-soyuz-2_webp": {
       "title": "Soyuz-2",
-      "what": "높이 46.3 m의 개량형 R-7 — 코어 둘레의 부스터 4기, 열린 트러스 위의 상단, 긴 페어링.",
+      "what": "현대화된 길이 46.3 m의 R-7 — 코어 둘레의 부스터 4기, 개방형 트러스 위의 상단, 긴 페어링.",
       "where": "비행 · 발사/상승"
     },
     "/images/colophon/model-launcher-antares_webp": {
       "title": "Antares 230+",
-      "what": "Northrop Grumman의 Cygnus 발사체 — RD-181 2기를 단 3.9 m 등유 1단 위에 고체 2단과 페어링.",
+      "what": "Northrop Grumman의 Cygnus 발사체 — RD-181 2기를 단 직경 3.9 m 케로신 1단 위에 고체 2단과 페어링.",
       "where": "비행 · 발사/상승"
     },
     "/images/colophon/model-launcher-ariane-6_webp": {
       "title": "Ariane 6",
-      "what": "유럽의 5.4 m 극저온 코어와 Vinci 상단 위에 20 m 페어링, 고체 부스터 4기 (A64).",
+      "what": "유럽의 직경 5.4 m 극저온 코어와 Vinci 상단 위에 길이 20 m 페어링을 얹고, 고체 부스터 4기를 달았다 (A64).",
       "where": "비행 · 발사/상승"
     },
     "/images/colophon/model-launcher-vulcan_webp": {
       "title": "Vulcan Centaur",
-      "what": "ULA의 BE-4 2기를 단 5.4 m 메탄 1단, Centaur V, 5.4 m 페어링, GEM 63XL 고체 부스터.",
+      "what": "ULA의 직경 5.4 m 메탄 1단(BE-4 2기)에 Centaur V와 직경 5.4 m 페어링, GEM 63XL 고체 부스터가 붙는다.",
       "where": "비행 · 발사/상승"
     },
     "/images/colophon/model-launcher-energia_webp": {
       "title": "Energia–Buran",
-      "what": "지름 7.75 m 수소 코어에 RD-170 스트랩온 4기, 옆구리에 Buran 궤도선을 업은 모습.",
+      "what": "직경 7.75 m 수소 코어에 RD-170 스트랩온 4기를 달고, 옆구리에 Buran 궤도선을 실었다.",
       "where": "비행 · 발사/상승"
     },
     "/images/colophon/model-launcher-n1_webp": {
       "title": "N1",
-      "what": "소련의 달 로켓 — 원뿔형으로 쌓은 5단, 1단에 엔진 30기, 그 위에 L3 슈라우드와 탈출탑.",
+      "what": "소련의 달 로켓 — 원뿔형으로 쌓은 5단, 1단에 엔진 30기, 그 위에 L3 슈라우드와 탈출 타워.",
       "where": "비행 · 발사/상승"
     },
     "/images/colophon/model-showcase-soyuz-7k-ok_webp": {
       "title": "Soyuz 7K-OK",
-      "what": "1세대 Soyuz, 길이 7.95 m — 궤도·귀환·서비스 모듈, 9.8 m 태양 전지판, Igla 랑데부 안테나.",
-      "where": "함대 · 실제 크기 비교"
+      "what": "길이 7.95 m의 1세대 Soyuz — 궤도 모듈, 하강 모듈, 서비스 모듈, 폭 9.8 m의 태양전지 날개와 Igla 랑데부 안테나.",
+      "where": "함대 · 실제 크기 비교 + 비행"
     },
     "/images/colophon/model-showcase-soyuz-ms_webp": {
       "title": "Soyuz T / TM / TMA / MS (4개 형식)",
-      "what": "길이 7.48 m의 Soyuz를 4세대에 걸쳐 — T형은 Igla 안테나, TM과 TMA는 Kurs, MS는 Kurs-NA와 미소 운석 방호막.",
+      "what": "길이 7.48 m의 Soyuz를 4세대에 걸쳐 — T형은 Igla 안테나, TM과 TMA는 Kurs, MS형은 Kurs-NA와 미소운석 방어막.",
       "where": "함대 · 실제 크기 비교"
     },
     "/images/colophon/model-showcase-crew-dragon_webp": {
       "title": "Crew Dragon",
-      "what": "길이 8.1 m의 캡슐과 트렁크 조합 — 창문, SuperDraco 포드, 태양 전지가 붙은 트렁크.",
-      "where": "함대 · 실제 크기 비교"
+      "what": "길이 8.1 m의 캡슐과 트렁크 스택 — 사다리꼴 해치, 창 4개, SuperDraco 베이가 있는 흰색 검드롭형 캡슐이 어두운 PICA-X 열차폐막 위에 있고, 감싼 전지 패치와 라디에이터 핀 2개가 달린 트렁크 위, 경첩식 흰색 노즈콘 아래에 놓인다.",
+      "where": "함대 · 실제 크기 비교 + 비행"
     },
     "/images/colophon/model-showcase-starliner_webp": {
       "title": "Starliner (CST-100)",
-      "what": "Boeing의 5.03 m 캡슐과 서비스 모듈 — 파란 띠와 추력기 포드.",
+      "what": "Boeing의 길이 5.03 m 캡슐과 서비스 모듈 — 파란 줄무늬와 NASA 로고가 있는 흰 은색의 넓고 낮은 원뿔이 도그하우스형 추력기 포드 4개가 달린 드럼 위에 놓인다.",
       "where": "함대 · 실제 크기 비교"
     },
     "/images/colophon/model-showcase-gaganyaan_webp": {
       "title": "Gaganyaan",
-      "what": "ISRO의 길이 5.58 m 승무원 모듈과 서비스 모듈, 펼쳐지는 태양 전지판.",
+      "what": "ISRO의 길이 5.58 m 승무원 모듈과 서비스 모듈 — 구리빛 갈색 테이프로 덮고 사다리꼴 해치와 둥근 창 3개가 있는 뭉툭한 흰 원뿔이 금빛 포일로 감싸고 태양전지 날개 2개를 단 드럼 위에 놓인다.",
       "where": "함대 · 실제 크기 비교"
     },
     "/images/colophon/model-showcase-orion_webp": {
       "title": "Orion",
-      "what": "길이 7.9 m의 Artemis 승무원 모듈과 유럽 서비스 모듈, 태양 전지판.",
+      "what": "길이 7.9 m의 Artemis 스택 — 흰색 타일의 승무원 모듈이 어두운 열차폐막 위에 놓이고, X자 태양전지판 4개를 단 유럽 서비스 모듈, 그 아래 우주선 어댑터 링.",
       "where": "함대 · 실제 크기 비교"
     },
     "/images/colophon/model-showcase-new-shepard_webp": {
       "title": "New Shepard",
-      "what": "높이 19.2 m의 준궤도 비행체 — 3.8 m 부스터 위에 큰 창이 달린 승무원 캡슐.",
+      "what": "발사대 위의 길이 19.2 m 준궤도 비행체 — 검은 엔진 스커트, 파란 띠, 링 핀, 꼬리날개 3개, 다리 4개를 가진 흰 부스터 위에 큰 창 6개가 있는 승무원 캡슐.",
       "where": "함대 · 실제 크기 비교"
     },
     "/images/colophon/model-showcase-apollo-csm-block-ii_webp": {
       "title": "Apollo CSM Block I / II (2개 형식)",
-      "what": "길이 10.6 m와 11 m의 사령·기계선 — 원통형 기계선 위에 원뿔형 사령선, 엔진 노즐 포함.",
-      "where": "함대 · 실제 크기 비교"
+      "what": "길이 10.6 m와 11 m의 사령·기계선 — 반사하는 은색에 창 5개를 가진 원뿔(Block II에는 도킹 프로브)이 흰 라디에이터, RCS 쿼드, 엔진 벨을 지닌 광택 알루미늄 기계선 위에 놓인다.",
+      "where": "함대 · 실제 크기 비교 + 비행"
     },
     "/images/colophon/model-showcase-shenzhou_webp": {
       "title": "Shenzhou",
-      "what": "Soyuz 계보를 잇는 중국의 길이 9.25 m 3모듈 우주선 — 궤도·귀환·추진 모듈과 태양 전지판.",
-      "where": "함대 · 실제 크기 비교"
+      "what": "Soyuz 계통의 중국 길이 9.25 m 3모듈 우주선 — 누빈 은색 궤도 모듈, 어두운 삭마 바닥 위의 종 모양 재진입 모듈, 적갈색 스커트와 주황색 추력기 블록, 날개 2개를 가진 흰 서비스 모듈.",
+      "where": "함대 · 실제 크기 비교 + 비행"
     },
     "/images/colophon/model-showcase-space-shuttle-orbiter_webp": {
       "title": "Space Shuttle 궤도선",
-      "what": "37.2 m 궤도선을 네 자매 — Atlantis, Challenger, Discovery, Endeavour — 를 대표해 한 번만 그리고, 활주로에 눕힌 모습.",
-      "where": "함대 · 실제 크기 비교"
+      "what": "자매기 4대 — Atlantis, Challenger, Discovery, Endeavour — 를 대표해 한 번만 그린 길이 37.2 m 궤도선. 페이로드 베이 도어가 있는 흰 상부 동체, 검은 타일 배면, 강화 탄소 가장자리의 이중 델타 날개, OMS 포드, 메인 엔진 3기가 활주로에 누워 있다.",
+      "where": "함대 · 실제 크기 비교 + 비행"
     },
     "/images/colophon/model-showcase-columbia_webp": {
       "title": "Space Shuttle Columbia",
-      "what": "최초의 궤도선 — 검은 모서리를 가진 유일한 기체로, 수직 꼬리날개에 계측 포드가 붙어 있음.",
-      "where": "함대 · 실제 크기 비교"
+      "what": "첫 번째 궤도선 — 날개 윗면에 검은 챠인이 있는 유일한 기체이며, 수직 꼬리날개에 계기 포드가 있다.",
+      "where": "함대 · 실제 크기 비교 + 비행"
     },
     "/images/colophon/model-showcase-enterprise_webp": {
       "title": "Space Shuttle Enterprise",
-      "what": "대기권 시험용 궤도선 — 주 엔진도 OMS 포드도 없고 타일은 모조품.",
+      "what": "대기권 시험용 궤도선 — 실제 비행용 타일과 탄소 대신 발포재와 페인트로 만든 숯빛 모의 타일과 도장 없는 흰 유리섬유 날개 가장자리.",
       "where": "함대 · 실제 크기 비교"
     },
     "/images/colophon/model-showcase-buran_webp": {
       "title": "Buran",
-      "what": "소련의 궤도선, 길이 36.4 m — 날개폭 24 m의 이중 델타 날개, 주 엔진은 Energia 코어에 남겨 둠.",
+      "what": "길이 36.4 m의 소련 궤도선 — 24 m 이중 델타 날개와 꼬리의 OMS 노즐 2개. 메인 엔진은 Energia 코어에 남는다.",
       "where": "함대 · 실제 크기 비교"
     },
     "/images/colophon/model-showcase-buran-ok-gli_webp": {
       "title": "Buran OK-GLI",
-      "what": "Buran과 같은 형상과 질량의 대기권 시험기 — 꼬리에 AL-31 터보팬 4기.",
+      "what": "Buran과 같은 형상과 질량의 대기권 시험기 — 타일 없이 흰색과 회색으로 칠했고, 수직 꼬리날개 밑동 양쪽의 나셀에 제트 엔진이 있다.",
       "where": "함대 · 실제 크기 비교"
     },
     "/images/colophon/model-showcase-x37b_webp": {
       "title": "X-37B",
-      "what": "미 우주군의 길이 8.92 m 무인 우주 비행기, 날개폭 4.55 m.",
-      "where": "함대 · 실제 크기 비교"
+      "what": "미 우주군의 길이 8.92 m, 날개폭 4.55 m 무인 우주비행기 — 검은 타일의 하면과 기수, 기울어진 꼬리날개, 닫힌 베이 도어.",
+      "where": "함대 · 실제 크기 비교 + 비행"
     },
     "/images/colophon/model-showcase-progress-ms_webp": {
       "title": "Progress 7K-TG / M / MS (3개 형식)",
-      "what": "Soyuz에서 파생된 화물선, 길이 7.23~7.94 m — 서비스 모듈, 연료 보급 구역, 화물 모듈. 7K-TG는 태양 전지판 없음.",
+      "what": "Soyuz에서 파생된 화물선, 길이 7.23~7.94 m — 서비스 모듈, 연료 보급 구역, 화물 모듈. 7K-TG에는 태양전지 날개가 없다.",
       "where": "함대 · 실제 크기 비교"
     },
     "/images/colophon/model-showcase-cargo-dragon-2_webp": {
       "title": "Cargo Dragon 2",
-      "what": "창문 없는 무인 Dragon 2와 8.1 m 트렁크 — ISS 화물선.",
+      "what": "길이 8.1 m 트렁크 위의 창 없는 무인 Dragon 2 — 유인형에서 창과 SuperDraco 베이가 있는 자리에 덮개판이 있다.",
       "where": "함대 · 실제 크기 비교"
     },
     "/images/colophon/model-showcase-cargo-dragon-v1_webp": {
       "title": "Dragon 1",
-      "what": "최초의 길이 6.1 m 화물 Dragon — 3.7 m 캡슐과 트렁크, 태양 전지판 2장.",
+      "what": "최초의 길이 6.1 m 화물 Dragon — 폭 3.7 m의 땅딸막한 캡슐에 Draco 쿼드 4개와 흰 노즈콘, 길이 2.3 m 트렁크에 태양전지 날개 2개.",
       "where": "함대 · 실제 크기 비교"
     },
     "/images/colophon/model-showcase-cygnus-enhanced_webp": {
       "title": "Cygnus Standard / Enhanced (2개 형식)",
-      "what": "Northrop Grumman의 우주 정거장 화물선, 길이 5.14 m와 6.39 m — 서비스 모듈 위의 여압 화물 모듈과 원형 태양 전지판.",
+      "what": "Northrop Grumman의 화물선, 길이 5.14 m와 6.39 m — 주머니형 패널의 맨 알루미늄 화물 모듈이 금색과 은색 서비스 모듈 위에 놓이고, Standard는 평평한 직사각형 날개, Enhanced는 둥근 UltraFlex 전지판을 단다.",
       "where": "함대 · 실제 크기 비교"
     },
     "/images/colophon/model-showcase-htv_webp": {
       "title": "HTV (Kounotori)",
-      "what": "일본의 길이 9.8 m 정거장 화물선 — 서비스부 위의 여압 모듈과 개방형 팔레트.",
+      "what": "일본의 길이 9.8 m 우주정거장 화물선 — 흰색 추진 모듈, 은색 전자장비 구역, 개방형 팔레트 베이, 어두운 동체 부착 태양전지가 있는 흰 여압 캐리어.",
       "where": "함대 · 실제 크기 비교"
     },
     "/images/colophon/model-showcase-htv-x_webp": {
       "title": "HTV-X",
-      "what": "일본의 길이 8 m 후속 화물선 — 서비스 모듈 위의 여압 화물 모듈과 태양 전지판.",
+      "what": "일본의 길이 8 m 후속 화물선 — 금색 블랭킷으로 덮은 여압 모듈, 개방형 화물 지지 데크, 은색 서비스 모듈, 길고 좁은 전지판 2개.",
       "where": "함대 · 실제 크기 비교"
     },
     "/images/colophon/model-showcase-atv_webp": {
       "title": "ATV",
-      "what": "ESA의 길이 10.3 m 자동 화물 수송선 — 원통형 화물선에 X자형 태양 전지판 4장.",
+      "what": "ESA의 길이 10.3 m 자동 화물 수송선 ATV — 엔진 4기가 달린 금색 후방 원뿔이 누빈 흰 화물 캐리어와 도킹 링 아래에 있고, 구리색 테두리의 날개 4개가 X자로 펼쳐진다.",
       "where": "함대 · 실제 크기 비교"
     },
     "/images/colophon/model-showcase-tianzhou_webp": {
       "title": "Tianzhou",
-      "what": "중국의 길이 10.6 m 화물선 — 서비스 모듈 위의 긴 화물 모듈과 태양 전지판.",
+      "what": "중국의 길이 10.6 m 화물선 — 주황색 추력기 블록이 있는 흰 추진 드럼, 더 큰 회백색 화물 모듈, 중계 안테나, 큰 날개 2개.",
       "where": "함대 · 실제 크기 비교"
     },
     "/images/colophon/model-lineup-launchers_webp": {
       "title": "발사체 크기 비교",
-      "what": "모델이 있는 모든 로켓을 Starship부터 Mercury-Redstone까지 실제 높이로 나란히 세우고 1.75 m 사람과 비교.",
+      "what": "모델이 있는 모든 로켓을 Starship부터 Mercury-Redstone까지 실제 높이로 나란히 세우고, 1.75 m 사람 옆에 놓았다.",
       "where": "함대 · 실제 크기 비교"
     },
     "/images/colophon/model-lineup-spacecraft_webp": {
@@ -1884,127 +1821,112 @@
     },
     "/images/colophon/model-lineup-landmarks_webp": {
       "title": "명소의 실제 높이",
-      "what": "16개의 명소와 상징물을 근거 있는 높이로 손으로 그림 — 에펠탑과 자유의 여신상부터 미켈란젤로의 다비드, 런던 루트마스터, 폭스바겐 비틀까지.",
+      "what": "16개의 명소와 상징물을 근거 있는 높이로 손으로 그림 — 에펠탑과 자유의 여신상부터 미켈란젤로의 다비드, 런던 루트마스터와 폭스바겐 비틀까지.",
       "where": "함대 · 실제 크기 비교"
     },
     "/images/colophon/model-lineup-cast_webp": {
       "title": "만화 등장인물",
-      "what": "실제 크기로 그린 단색 인물들 — 남자, 여자, 어린이, 개, 고양이, 병마용, 자이언트 판다, 불곰, 기린, 코끼리 — 를 기체 사이에 배치.",
+      "what": "실제 크기로 그린 단색 인물들 — 남자, 여자, 어린이, 개, 고양이, 병마용, 자이언트 판다, 불곰, 기린, 코끼리 — 을 기체들 사이에 세웠다.",
       "where": "함대 · 실제 크기 비교"
     },
     "/images/colophon/model-showcase-parker-solar-probe_webp": {
       "title": "Parker Solar Probe",
-      "what": "길이 3 m의 태양 근접 탐사선 — 가느다란 본체 위에 지름 2.3 m의 탄소 복합재 열 차폐막, 냉각식 소형 태양 전지판 2장.",
-      "where": "비행 + 탐험"
+      "what": "길이 3 m의 태양 근접 탐사선 — 금색 블랭킷으로 덮은 본체 위에 지지대로 받친 직경 2.3 m 탄소 복합재 열차폐막, 능동 냉각되는 소형 태양전지판 2개, 직경 0.6 m 안테나.",
+      "where": "함대 · 우주선 페이지 + 비행"
     },
     "/images/colophon/model-showcase-solar-orbiter_webp": {
       "title": "Solar Orbiter",
-      "what": "ESA의 길이 3.1 m 태양 관측선 — 태양 쪽의 열 차폐막, 폭 18 m의 태양 전지판 6장, 길이 4.4 m의 관측 장비 붐.",
-      "where": "비행 + 탐험"
+      "what": "ESA의 길이 3.1 m 태양 관측선 — 관측창 문이 있는 층층의 검은 열차폐막이 은색 블랭킷 본체 앞에 있고, 폭 18 m에 걸친 태양전지판 6장, 길이 4.4 m 관측 장비 붐, 그늘진 뒷면의 직경 1.5 m 안테나.",
+      "where": "함대 · 우주선 페이지 + 비행"
     },
     "/images/colophon/model-showcase-messenger_webp": {
       "title": "MESSENGER",
-      "what": "높이 2.5 m의 세라믹 천 햇빛가리개 뒤에 숨은 수성 궤도선. 태양 전지판 2장과 길이 3.6 m의 자력계 붐.",
-      "where": "비행 + 탐험"
+      "what": "직경 2.5 m 세라믹 천 차양 뒤의 수성 궤도선 — 추진제 탱크가 보이는 블랭킷 상자형 본체, 회전하는 태양전지판 2개, 길이 3.6 m 자력계 붐.",
+      "where": "함대 · 우주선 페이지 + 비행"
     },
     "/images/colophon/model-showcase-magellan_webp": {
       "title": "Magellan",
-      "what": "길이 6.4 m의 금성 레이더 지도 제작선 — 10각형 본체, Star 48B 모터, 지름 3.7 m의 고이득 안테나.",
-      "where": "비행 + 탐험"
+      "what": "길이 6.4 m의 금성 레이더 지도 제작기 — 십각형 본체 아래의 Star 48B 모터, 금색 블랭킷으로 덮은 장비 모듈, 직경 3.7 m 고이득 안테나, 정사각형 태양전지판 2장.",
+      "where": "함대 · 우주선 페이지 + 비행"
     },
     "/images/colophon/model-showcase-akatsuki_webp": {
       "title": "Akatsuki",
-      "what": "JAXA의 높이 1.45 m 상자형 금성 궤도선. 태양 전지판 2장과 평판형 위상배열 안테나.",
-      "where": "비행 + 탐험"
+      "what": "JAXA의 길이 1.45 m 금색 블랭킷 상자형 금성 궤도선 — 금성 쪽 면에 카메라 데크, 평평한 위상배열 안테나, 흰 추력기 컵, 패널 2장씩 겹친 전지판 2개.",
+      "where": "함대 · 우주선 페이지 + 비행"
     },
     "/images/colophon/model-showcase-dart_webp": {
       "title": "DART",
-      "what": "길이 2.6 m의 소행성 충돌선 — 8.5 m 태양 전지판 2장, NEXT-C 이온 엔진, DRACO 카메라.",
-      "where": "비행 + 탐험"
+      "what": "길이 2.6 m의 소행성 충돌 탐사선 — 8.5 × 2.4 m 롤아웃 태양전지판 2개, NEXT-C 이온 엔진, DRACO 카메라, 디스펜서 속의 LICIACube 큐브샛, 평판 안테나.",
+      "where": "함대 · 우주선 페이지 + 비행"
     },
     "/images/colophon/model-showcase-lucy_webp": {
       "title": "Lucy",
-      "what": "트로이 소행성 탐사선, 끝에서 끝까지 16 m — 지름 약 7 m의 원형 태양 전지판 2장과 지름 2 m의 고이득 안테나.",
-      "where": "비행 + 탐험"
+      "what": "트로이 소행성 탐사선으로 끝에서 끝까지 16 m — 직경 약 7 m의 원형 태양전지판 2개, 직경 2 m 고이득 안테나, 종단 추적 카메라가 있는 관측 장비 플랫폼.",
+      "where": "함대 · 우주선 페이지 + 비행"
     },
     "/images/colophon/model-showcase-psyche-spacecraft_webp": {
       "title": "Psyche",
-      "what": "금속 소행성 궤도선 — 높이 7.3 m, 펼친 태양 전지판 25 m, 길이 2 m의 관측 장비 붐.",
-      "where": "비행 + 탐험"
+      "what": "금속 소행성 궤도선 — 길이 7.3 m로, 패널 5장짜리 십자형 태양전지판 2개(펼치면 25 m), 2 × 2로 배열한 홀 추력기 4기, 길이 2 m 관측 장비 붐.",
+      "where": "함대 · 우주선 페이지 + 비행"
     },
     "/images/colophon/model-showcase-europa-clipper_webp": {
       "title": "Europa Clipper",
-      "what": "높이 5 m의 목성 위성 궤도선. 30.5 m 태양 전지판, 지름 3.1 m의 고이득 안테나, 길이 8.5 m의 자력계 붐.",
-      "where": "비행 + 탐험"
+      "what": "길이 5 m의 목성 위성 궤도선 — 직경 3.1 m 안테나 아래의 추진 모듈과 방사선 보호 금고, REASON 레이더 다이폴을 단 30.5 m의 태양전지판, 길이 8.5 m 자력계 붐.",
+      "where": "함대 · 우주선 페이지 + 비행"
     },
     "/images/colophon/model-showcase-mars-express_webp": {
       "title": "Mars Express",
-      "what": "ESA의 높이 1.8 m 상자형 본체. 길이 2.5 m의 태양 전지 날개 2장(끝에서 끝까지 약 12 m)과 지름 1.6 m의 고이득 안테나.",
-      "where": "비행 + 탐험"
+      "what": "ESA의 길이 1.8 m 상자형 본체 — 모서리에 금색 블랭킷, 천저면에 관측 장비, 좁은 패널 4장짜리 날개 2개, 직경 1.6 m 고이득 안테나.",
+      "where": "함대 · 우주선 페이지 + 비행"
     },
     "/images/colophon/model-showcase-maven_webp": {
       "title": "MAVEN",
-      "what": "NASA의 높이 3.47 m 화성 대기 궤도선 — 2.3 m 정육면체 본체, 끝에 자력계를 단 갈매기 날개형 태양 전지판 2장, 지름 2 m의 안테나.",
-      "where": "비행 + 탐험"
+      "what": "NASA의 길이 3.47 m 화성 대기 궤도선 — 한 변 2.3 m의 정육면체 본체, 붐 위의 탑재 장비 플랫폼, 끝에 자력계가 달린 갈매기 날개형 전지판 2개, 직경 2 m 안테나.",
+      "where": "함대 · 우주선 페이지 + 비행"
     },
     "/images/colophon/model-showcase-mangalyaan_webp": {
       "title": "Mangalyaan",
-      "what": "ISRO의 화성 궤도선 임무(Mars Orbiter Mission) — 금색으로 감싼 1.5 m 정육면체, 3단 태양 전지판, 지름 2.2 m의 반사경.",
-      "where": "비행 + 탐험"
+      "what": "ISRO의 화성 궤도선 임무 — 금빛 포일로 감싼 한 변 1.5 m의 정육면체로, 위에 추진제 탱크 돔, 붐 위의 패널 3장짜리 전지판, 반대편에 직경 2.2 m 반사경.",
+      "where": "함대 · 우주선 페이지 + 비행"
     },
     "/images/colophon/model-showcase-hope_webp": {
       "title": "Hope",
-      "what": "UAE의 Emirates Mars Mission 궤도선 — 길이 2.9 m의 육각형 본체, 태양 전지 날개 2장, 지름 1.85 m의 안테나.",
-      "where": "비행 + 탐험"
+      "what": "UAE의 Emirates Mars Mission 궤도선 — 길이 2.9 m의 본체로, 앞면에 과학 데크, 패널 3장짜리 날개 2개, 트러스 브래킷 위의 직경 1.85 m 안테나.",
+      "where": "함대 · 우주선 페이지 + 비행"
     },
     "/images/colophon/model-showcase-mariner-9_webp": {
       "title": "Mariner 4·9·10 (3개 형식)",
-      "what": "NASA의 팔각형 Mariner 계열 — Mariner 4와 9는 끝에 날개편이 달린 태양 전지판 4장, Mariner 10은 전지판 2장과 햇빛가리개, 길이 5.8 m의 자력계 붐.",
-      "where": "비행 + 탐험"
+      "what": "NASA의 팔각형 Mariner 계열 — Mariner 4와 9는 끝에 날개편이 달린 패널 4장(Mariner 9는 포일로 감싼 추진 모듈 포함). Mariner 10은 패널 2장, 차양, 길이 5.8 m 자력계 붐.",
+      "where": "함대 · 우주선 페이지 + 비행"
     },
     "/images/colophon/model-showcase-lro_webp": {
       "title": "Lunar Reconnaissance Orbiter",
-      "what": "NASA의 높이 3.9 m 달 지도 제작선 — 상자형 본체, 10.7 m²의 태양 전지판 1장, 방향 조절 안테나.",
-      "where": "비행 + 탐험"
+      "what": "NASA의 길이 3.9 m 달 지도 제작기 — 금색과 은색 블랭킷 상자형 본체의 천저면에 LROC 카메라 2대, LOLA, Diviner, Mini-RF, 붐 위의 10.7 m² 태양전지판 1개, 조향 가능한 안테나.",
+      "where": "함대 · 우주선 페이지 + 비행"
     },
     "/images/colophon/model-showcase-skylab_webp": {
       "title": "Skylab",
-      "what": "미국 최초의 우주 정거장 — 궤도 작업실, 에어록과 도킹 어댑터, 전지판 풍차를 단 태양 망원경 거치대, 햇빛가리개.",
-      "where": "비행 + 탐험"
-    },
-    "/images/colophon/model-probe-clementine_webp": {
-      "title": "Clementine, SMART-1, Chang’e 1, Chandrayaan-1 (4개 형식)",
-      "what": "상자형 본체 하나를 네 가지 크기로 — Clementine의 1.9 m 본체, SMART-1의 1 m 정육면체, Chang’e 1, 금색으로 감싼 Chandrayaan-1 — 각각 고유의 태양 전지 날개와 안테나.",
-      "where": "비행 + 탐험"
-    },
-    "/images/colophon/model-probe-lunar-prospector_webp": {
-      "title": "Lunar Prospector",
-      "what": "태양 전지 셀로 덮인 지름 1.36 m의 드럼과 길이 2.5 m의 관측 장비 붐 3개.",
-      "where": "비행 + 탐험"
-    },
-    "/images/colophon/model-probe-luna-10_webp": {
-      "title": "Luna 10",
-      "what": "소련의 길이 1.5 m 가압 원통 — 안테나 채찍 4개와 붐 1개. 달 궤도를 돈 최초의 우주선.",
-      "where": "비행 + 탐험"
+      "what": "수리된 상태의 미국 최초 우주정거장 — 검은 스커트의 궤도 워크숍에 날개 1개와 금색 파라솔, 에어록과 도킹 어댑터, 패널 4장짜리 풍차 모양으로 펼친 Apollo 망원경 마운트.",
+      "where": "함대 · 우주선 페이지 + 비행"
     },
     "/images/colophon/model-probe-sputnik-1_webp": {
       "title": "Sputnik 1",
-      "what": "반구 이음매와 볼트 36개, 뒤로 젖혀진 길이 2.4 m와 2.9 m의 채찍 안테나 4개를 갖춘 지름 58 cm의 매끈한 구.",
-      "where": "비행 + 탐험"
+      "what": "반구 이음매, 볼트 36개, 뒤로 젖힌 길이 2.4 m와 2.9 m의 채찍 안테나 4개를 가진 광택 나는 직경 58 cm 구체.",
+      "where": "비행"
     },
     "/images/colophon/model-pad-apollo-lut_webp": {
-      "title": "발사대: 아폴로, LC-39",
+      "title": "발사대: Apollo, LC-39",
       "what": "새턴 V 발사대: 이륙 때 떨어져 나가는 스윙 암을 갖춘 높이 380피트의 엄빌리컬 타워와 화염 도랑. 치수는 위키백과에 실린 NASA 수치에 따랐습니다.",
       "where": "비행 · 발사대"
     },
     "/images/colophon/model-pad-shuttle_webp": {
-      "title": "발사대: 우주왕복선, LC-39",
+      "title": "발사대: Space Shuttle, LC-39",
       "what": "우주왕복선 발사대: 고정 서비스 구조물(마스트 포함 350피트), 뒤로 젖힌 회전 서비스 구조물, 높이 290피트의 급수탑. 주요 높이는 위키백과에 따랐고 나머지는 대략적입니다.",
       "where": "비행 · 발사대"
     },
     "/images/colophon/model-pad-sls_webp": {
       "title": "발사대: SLS, LC-39B",
-      "what": "아르테미스 발사대: 로켓 옆의 모바일 런처 타워와 높은 피뢰탑 세 개. 크기는 대략적입니다.",
+      "what": "아르테미스 발사대: 로켓 옆의 모바일 런처 타워(약 108 m, NASA 수치는 345~355피트)와 600피트에 가까운 피뢰탑 세 개.",
       "where": "비행 · 발사대"
     },
     "/images/colophon/model-pad-soyuz_webp": {
@@ -2014,17 +1936,17 @@
     },
     "/images/colophon/model-pad-proton_webp": {
       "title": "발사대: 프로톤, 바이코누르",
-      "what": "이륙 때 들어가는 스윙 암이 달린 고정 서비스 타워. 화염 도랑 옆. 크기는 대략적입니다.",
+      "what": "화염 구덩이 위에 로켓만 서 있는 발사대: 높이 60 m 서비스 타워는 발사 전 약 340 m 뒤로 물러난다 (RussianSpaceWeb, Proton 발사 단지). 피뢰 마스트는 대략적입니다.",
       "where": "비행 · 발사대"
     },
     "/images/colophon/model-pad-f9-39a_webp": {
       "title": "발사대: 팰컨, LC-39A",
-      "what": "39A의 스페이스X: 이륙 전 1.5도, 이륙 때 45도 뒤로 젖혀지는 트랜스포터 이렉터와 350피트 위로 높인 옛 타워. 수치는 위키백과에 따랐습니다.",
+      "what": "39A의 SpaceX: 이륙 전 1.5도, 이륙 때 45도 뒤로 젖혀지는 트랜스포터 이렉터와 350피트 위로 높인 옛 타워. 수치는 위키백과에 따랐습니다.",
       "where": "비행 · 발사대"
     },
     "/images/colophon/model-pad-f9-cat_webp": {
       "title": "발사대: 팰컨, SLC-40과 승무원 타워",
-      "what": "2023년 승무원 접근 타워 이후의 SLC-40 스페이스X. 이륙 때 멀어지는 트랜스포터 이렉터가 있습니다. 타워 높이는 대략적입니다.",
+      "what": "2023년 승무원 접근 타워 이후의 SLC-40 SpaceX. 이륙 때 멀어지는 트랜스포터 이렉터가 있습니다. 승무원 타워는 약 300피트(91 m, FAA)입니다.",
       "where": "비행 · 발사대"
     },
     "/images/colophon/model-pad-f9-te_webp": {
@@ -2033,18 +1955,18 @@
       "where": "비행 · 발사대"
     },
     "/images/colophon/model-pad-starbase_webp": {
-      "title": "발사대: 스타십, 스타베이스",
+      "title": "발사대: Starship, 스타베이스",
       "what": "포획 암을 벌린 스타베이스 발사 타워. 타워 높이는 대략적입니다.",
       "where": "비행 · 발사대"
     },
     "/images/colophon/model-pad-atlas-v_webp": {
-      "title": "발사대: 아틀라스 V, SLC-41",
+      "title": "발사대: Atlas V, SLC-41",
       "what": "ULA 발사대: 이동식 발사 플랫폼, 엄빌리컬 타워, 피뢰탑 네 개. 수직 통합 건물은 발사대와 떨어져 있어 생략했습니다. 크기는 대략적입니다.",
       "where": "비행 · 발사대"
     },
     "/images/colophon/model-pad-cape-classic_webp": {
       "title": "발사대: 케이프의 서비스 타워 발사대",
-      "what": "케이프의 아틀라스, 델타, 타이탄, 새턴 IB 발사대: 기체 옆에 스윙 암이 달린 엄빌리컬 타워. 크기는 대략적입니다.",
+      "what": "케이프의 아틀라스, 델타, 타이탄, Saturn IB 발사대: 기체 옆에 스윙 암이 달린 엄빌리컬 타워. 크기는 대략적입니다.",
       "where": "비행 · 발사대"
     },
     "/images/colophon/model-pad-kourou-a5_webp": {
@@ -2053,66 +1975,394 @@
       "where": "비행 · 발사대"
     },
     "/images/colophon/model-pad-kourou-a6_webp": {
-      "title": "발사대: 아리안 6, 쿠루",
+      "title": "발사대: Ariane 6, 쿠루",
       "what": "ELA-4 발사대: 엄빌리컬 마스트, 피뢰탑 두 개, 멀리 물러난 이동식 갠트리. 크기는 대략적입니다.",
       "where": "비행 · 발사대"
     },
     "/images/colophon/model-pad-chinese-fst_webp": {
       "title": "발사대: 중국의 서비스 타워",
-      "what": "주취안, 시창, 원창, 타이위안의 고정 서비스 타워. 작업 플랫폼이 이륙 때 접힙니다. 크기는 대략적입니다.",
+      "what": "주취안, 시창, 원창, 타이위안의 고정 서비스 타워로, 작업 플랫폼이 이륙 때 접힙니다. 주취안의 유인 발사 타워는 89.5 m에 16 m 피뢰침을 더한 높이(CMSE)로 주취안의 모든 발사에 그려 두었고, 나머지는 대략적입니다.",
       "where": "비행 · 발사대"
     },
     "/images/colophon/model-pad-tanegashima_webp": {
       "title": "발사대: 다네가시마",
-      "what": "요시노부 발사대: H-II 로켓의 엄빌리컬 타워와 피뢰탑. 크기는 대략적입니다.",
+      "what": "요시노부 발사대: 높이 65.5 m의 H-II 이동식 발사대와 74.5 m 피뢰탑 (JAXA).",
       "where": "비행 · 발사대"
     },
     "/images/colophon/model-pad-sriharikota_webp": {
       "title": "발사대: 스리하리코타",
       "what": "ISRO 발사대: 기체 옆의 엄빌리컬 타워와 멀리 물러난 이동식 서비스 타워. 크기는 대략적입니다.",
       "where": "비행 · 발사대"
-    }
-  },
-  "capsules": {
-    "/images/colophon/model-capsule-mercury-capsule_webp": {
-      "title": "머큐리 캡슐",
-      "what": "무딘 제거식 단열 방패, 비늘 모양의 원뿔, 회수 + 안테나 섹션 (Freedom 7 … Faith 7).",
-      "where": "지구 궤도 재진입"
     },
-    "/images/colophon/model-capsule-gemini-capsule_webp": {
-      "title": "Gemini 캡슐",
-      "what": "2인 승무원 확대형 머큐리로서 근접 레이더 노즈와 어댑터 모듈 포함.",
-      "where": "지구 궤도 재진입"
+    "/images/colophon/model-showcase-vostok_webp": {
+      "title": "Vostok 및 Voskhod (2개 형식)",
+      "what": "계기 모듈 위의 직경 2.3 m 구체로 높이 4.55 m(Voskhod는 5 m) — 은색 띠로 묶은 올리브색 가스 용기 16개의 띠, 해치와 둥근 창, 상단의 안테나 고리, Voskhod에는 역추진 팩.",
+      "where": "함대 · 실제 크기 비교 + 비행"
     },
-    "/images/colophon/model-capsule-vostok-sphere_webp": {
-      "title": "Vostok",
-      "what": "구형의 샤릭 하강 모듈 — 안테나 스트랩과 장비 칼라; 우주비행사는 따로 분출되어 낙하산으로 착지했다.",
-      "where": "지구 궤도 재진입"
+    "/images/colophon/model-showcase-mercury-capsule_webp": {
+      "title": "Mercury 캡슐",
+      "what": "역추진 팩 위의 길이 3.3 m 1인승 캡슐 — 원뿔부의 사다리꼴 창과 측면 해치, 띠로 고정한 역추진 로켓 3개.",
+      "where": "함대 · 실제 크기 비교 + 비행"
     },
-    "/images/colophon/model-capsule-voskhod-sphere_webp": {
-      "title": "Voskhod",
-      "what": "같은 샤릭 구형이지만, 이제 지주 트러스에 고체 추진제 연착 레트로 패키지를 장착했다 — 승무원이 지면까지 탔다.",
-      "where": "지구 궤도 재진입"
+    "/images/colophon/model-showcase-gemini_webp": {
+      "title": "Gemini",
+      "what": "길이 5.74 m의 2인승 우주선 — 해치 2개와 창이 있는 기와 모양의 검은 재진입 원뿔이 RCS, 랑데부, 회수 구역과 역추진 어댑터 위에 놓인다.",
+      "where": "함대 · 실제 크기 비교 + 비행"
     },
-    "/images/colophon/model-capsule-apollo-cm_webp": {
-      "title": "Apollo 사령선",
-      "what": "전형적인 가파른 뭉툭한 원뿔형, 전방 도킹 터널 포함(Apollo 7/9, Skylab, ASTP).",
-      "where": "지구 궤도 재진입"
+    "/images/colophon/model-showcase-mengzhou_webp": {
+      "title": "Mengzhou",
+      "what": "달을 향한 중국의 길이 8.8 m 유인 우주선 — 붉은 띠가 있는 회은색 원뿔형 승무원 모듈이 금색 추력기 프레임을 가진 흰 서비스 모듈 위에 놓이며, 긴 태양전지 날개 2개와 엔진 벨 4개가 있다.",
+      "where": "함대 · 실제 크기 비교"
     },
-    "/images/colophon/model-capsule-soyuz-sa_webp": {
-      "title": "Soyuz 하강 모듈",
-      "what": "\"헤드램프\" 벨 모양 — 구형 기저 방열막에 원뿔형 승무원 상부.",
-      "where": "지구 궤도 재진입"
+    "/images/colophon/model-showcase-apollo-lm_webp": {
+      "title": "Apollo 달 착륙선 (실제 크기)",
+      "what": "착륙한 달 착륙선 — 주름진 금색과 호박색 포일로 덮은 팔각형 하강단이 금박을 감은 다리 4개 위에 서고, 그 위에 삼각형 창 2개, RCS 쿼드, 랑데부 레이더, S밴드 안테나가 있는 각진 상승단.",
+      "where": "함대 · 실제 크기 비교 + 비행 (하강)"
     },
-    "/images/colophon/model-capsule-dragon-capsule_webp": {
-      "title": "Crew Dragon",
-      "what": "SuperDraco 포드와 PICA-X 방열막이 있는 매끈한 원뿔형 동체(Inspiration4, Polaris Dawn).",
-      "where": "지구 궤도 재진입"
+    "/images/colophon/model-probe-nova-c_webp": {
+      "title": "Nova-C (IM-1 Odysseus)",
+      "what": "Intuitive Machines의 높이 4.3 m 달 착륙선 — 직경 1.57 m의 육각형 본체, 다리 6개, 아래쪽의 메탄 엔진, 태양전지판 3장. 높이와 폭은 Wikipedia에 따랐고, 다리 벌어짐과 데크는 도식적이다.",
+      "where": "비행"
     },
-    "/images/colophon/model-capsule-shenzhou-reentry_webp": {
-      "title": "Shenzhou 재진입 모듈",
-      "what": "넓은 Soyuz 계열 벨 모양 — 자체 밝은 은색 선체와 회색 장비 밴드(Shenzhou-1 이후).",
-      "where": "지구 궤도 재진입"
+    "/images/colophon/model-showcase-chandrayaan1_webp": {
+      "title": "Chandrayaan-1",
+      "what": "ISRO의 첫 달 궤도선 — 흰 라디에이터 패치와 금테 관측 장비 개구부가 있는 상자형 본체, 금색 붐 위의 직경 0.7 m 안테나, 2개 바 요크에 달린 태양전지판 1장.",
+      "where": "함대 · 우주선 페이지 + 비행"
+    },
+    "/images/colophon/model-showcase-chandrayaan2_webp": {
+      "title": "Chandrayaan-2 궤도선",
+      "what": "Vikram을 싣고 간 궤도선 — 착륙선이 있던 윗면 데크에서 금색 드럼이 솟은 본체, 라디에이터를 덮은 흰 테이프 패치, 패널 2장짜리 태양전지 날개 1개.",
+      "where": "함대 · 우주선 페이지 + 비행"
+    },
+    "/images/colophon/model-showcase-change1_webp": {
+      "title": "Chang'e 1·2 (2개 형식)",
+      "what": "중국의 달 궤도선 — 본체 아래의 엔진 벨, 은색 삽입 패널, 흰 중계 안테나 2개, 팔 위의 직경 0.8 m 조향 안테나, 금색 요크에 달린 패널 3장짜리 날개 2개.",
+      "where": "함대 · 우주선 페이지 + 비행"
+    },
+    "/images/colophon/model-showcase-clementine_webp": {
+      "title": "Clementine",
+      "what": "각기둥 모양의 달 지도 제작기 — 카메라와 라이다 개구부가 있는 센서면, 자세 제어 제트 12개, 아래를 향해 열린 직경 1.07 m 안테나, 패널 2장짜리 날개 2개.",
+      "where": "함대 · 우주선 페이지 + 비행"
+    },
+    "/images/colophon/model-showcase-kaguya_webp": {
+      "title": "Kaguya (SELENE)",
+      "what": "JAXA의 길이 4.8 m 달 궤도선 — 앞면의 중계·VLBI 소형 위성, 삼각대와 마스트 위의 고이득 안테나, 금색 트러스에 달린 파란 패널 3장짜리 태양전지 패들.",
+      "where": "함대 · 우주선 페이지 + 비행"
+    },
+    "/images/colophon/model-showcase-luna10_webp": {
+      "title": "Luna 10",
+      "what": "소련의 길이 1.5 m 궤도선 — 흰 격자 스커트 속의 제동 엔진 모듈, 크림색 추진제 탱크, 채찍 안테나 4개와 버섯 모양 센서 2개가 달린 광택 나는 여압 관측 장비 드럼.",
+      "where": "함대 · 우주선 페이지 + 비행"
+    },
+    "/images/colophon/model-showcase-lunar-prospector_webp": {
+      "title": "Lunar Prospector",
+      "what": "태양전지로 덮인 직경 1.36 m 드럼에 흰 노즈콘을 얹고, 길이 2.5 m 관측 장비 붐 3개를 달았다.",
+      "where": "함대 · 우주선 페이지 + 비행"
+    },
+    "/images/colophon/model-showcase-smart-1_webp": {
+      "title": "SMART-1",
+      "what": "ESA의 길이 1 m 이온 추진 궤도선 — 짐벌 암에 달린 PPS-1350 추력기, 카메라와 분광기가 있는 관측 장비 링, 직경 0.3 m 안테나, 패널 3장짜리 날개 2개.",
+      "where": "함대 · 우주선 페이지 + 비행"
+    },
+    "/images/colophon/model-showcase-lunar-orbiter-1_webp": {
+      "title": "Lunar Orbiter 1–5 (5개 형식)",
+      "what": "NASA의 카메라 궤도선 5기 — 80 mm와 610 mm 렌즈의 카메라를 감싼 밝은 단열 셸, 트러스 다리 위의 추진제 탱크 4개, 태양전지판 4장, 붐 위의 직경 1 m 안테나.",
+      "where": "함대 · 우주선 페이지"
+    },
+    "/images/colophon/model-showcase-luna-9_webp": {
+      "title": "Luna 9 (실제 크기)",
+      "what": "착륙한 직경 58 cm 캡슐 — 밀폐된 관측 장비 반구가 활짝 열린 꽃잎 4장 사이에 서 있고, 윗면에 TV 카메라 헤드와 막대 안테나 4개.",
+      "where": "함대 · 우주선 페이지 + 비행 (하강)"
+    },
+    "/images/colophon/model-showcase-luna-16_webp": {
+      "title": "Luna 16·24 (2개 형식)",
+      "what": "샘플 귀환 착륙선 — 토러스 탱크 2개 사이의 금박 선체에 압력 구체 4개, 다리 4개, 시추 장비, 위에는 직경 2 m 구체형 꼭대기를 가진 상승단.",
+      "where": "함대 · 우주선 페이지 + 비행 (하강)"
+    },
+    "/images/colophon/model-showcase-lunokhod-1_webp": {
+      "title": "Lunokhod 1·2 (2개 형식)",
+      "what": "소련의 로버 — 철망 바퀴 8개 위의 둥근 통에 열린 돔형 뚜껑, 뒤쪽에 핀이 달린 폴로늄-210 열원, 프랑스제 코너 반사경, 채찍 안테나 4개.",
+      "where": "함대 · 우주선 페이지 + 비행 (하강)"
+    },
+    "/images/colophon/model-showcase-change-3_webp": {
+      "title": "Chang'e 3·4 (2개 형식)",
+      "what": "중국의 착륙선 — 다리 4개 위의 상자형 금색 본체에 로버용 경사로, 기울어진 태양전지 날개, 조향 안테나를 단 카메라 마스트.",
+      "where": "함대 · 우주선 페이지 + 비행 (하강)"
+    },
+    "/images/colophon/model-showcase-change-5_webp": {
+      "title": "Chang'e 5·6 (2개 형식)",
+      "what": "샘플 귀환 스택 — 착륙선 위의 금색 팔각형 상승기와 그 옆의 시추 타워, 접은 샘플링 팔, 샘플 용기.",
+      "where": "함대 · 우주선 페이지 + 비행 (하강)"
+    },
+    "/images/colophon/model-showcase-vikram-cy3_webp": {
+      "title": "Vikram (Chandrayaan-2·3, 2개 형식)",
+      "what": "Chandrayaan-3 구성의 ISRO 착륙선 — 세 면과 윗면에 엔진 4개와 태양전지판, 경사로를 내렸고 Pragyan 로버가 그 위를 반쯤 내려왔다.",
+      "where": "함대 · 우주선 페이지 + 비행 (하강)"
+    },
+    "/images/colophon/model-showcase-slim_webp": {
+      "title": "SLIM (실제 크기)",
+      "what": "JAXA의 「Moon Sniper」 — 1.5 × 1.5 × 2 m 각기둥을 구겨진 금박으로 덮고, 엔진 쪽에 금색 돔, 한쪽 면에 태양전지 띠 1개, 지지대 위에 둥근 충격 흡수 패드 5개.",
+      "where": "함대 · 우주선 페이지 + 비행 (하강)"
+    },
+    "/images/colophon/model-showcase-beresheet_webp": {
+      "title": "Beresheet (실제 크기)",
+      "what": "SpaceIL의 착륙선, 폭 2 m 높이 1.5 m — 금테를 두른 검은 데크가 구리색 탱크 4개를 가진 은색 관형 프레임 통 위에 놓이고, 긴 다리 4개와 기울어진 파란 태양전지판.",
+      "where": "함대 · 우주선 페이지 + 비행 (하강)"
+    },
+    "/images/colophon/model-showcase-blue-moon-mk1_webp": {
+      "title": "Blue Moon MK1 (실제 크기)",
+      "what": "Blue Origin의 길이 8.05 m 착륙선 — BE-7을 실은 옅은 트러스 기단 위에 금색과 호박색 포일 선체, 사다리형 트러스 다리, 키 큰 태양전지 띠 2개, 맨 위에 열린 팔각형 케이지.",
+      "where": "함대 · 우주선 페이지 + 비행 (하강)"
+    },
+    "/images/colophon/model-showcase-pragyan_webp": {
+      "title": "Pragyan",
+      "what": "Vikram의 경사로를 따라 내려오는 ISRO의 6륜 로버.",
+      "where": "함대 · 우주선 페이지 + 비행 (하강)"
+    },
+    "/images/colophon/model-showcase-yutu_webp": {
+      "title": "Yutu·Yutu-2 (2개 형식)",
+      "what": "중국의 로버 — 양쪽에 로커-보기, 기울어진 태양전지판 아래의 금색 블랭킷 보온 상자, 카메라 마스트, 기수 아래에 접은 팔, 뒤쪽의 조향 안테나.",
+      "where": "함대 · 우주선 페이지"
+    },
+    "/images/colophon/model-showcase-viking-1_webp": {
+      "title": "Viking 착륙선 (3개 형식)",
+      "what": "3각 다리의 NASA 착륙선 — 폭이 번갈아 1.09 m와 0.56 m인 육각형 데크, 노즐 18개의 금색 종단 하강 포드, 긴 앞쪽 면에 샘플러 팔과 카메라.",
+      "where": "함대 · 우주선 페이지 + 비행 (하강)"
+    },
+    "/images/colophon/model-showcase-mars-3_webp": {
+      "title": "Mars 2·3·6 착륙선 (3개 형식)",
+      "what": "네 장의 열린 꽃잎 위에 놓인 소련의 흰 구체 — 막대 4개로 이루어진 안테나 왕관, 스테레오 카메라 귀 2개, 곁에 줄로 이어진 스키 달린 PrOP-M 로버.",
+      "where": "함대 · 우주선 페이지 + 비행 (하강)"
+    },
+    "/images/colophon/model-showcase-phoenix_webp": {
+      "title": "Phoenix·Mars Polar Lander (2개 형식)",
+      "what": "데크 위의 태양전지 착륙선 — TEGA의 오븐 2개, MECA의 습식 화학 셀, 삽이 달린 로봇 팔, 격자 타워 위의 스테레오 카메라, 라이다가 달린 기상 마스트.",
+      "where": "함대 · 우주선 페이지 + 비행 (하강)"
+    },
+    "/images/colophon/model-showcase-insight_webp": {
+      "title": "InSight (실제 크기)",
+      "what": "지구물리 착륙선 — 지면 위로 뻗은 길이 1.8 m 팔, 은색 방풍·단열 보호막 아래의 SEIS, 곁에 설치한 HP3 두더지.",
+      "where": "함대 · 우주선 페이지 + 비행 (하강)"
+    },
+    "/images/colophon/model-showcase-schiaparelli_webp": {
+      "title": "Schiaparelli (실제 크기)",
+      "what": "지상의 ESA 진입 실증기 — 은금색 띠로 둘러싼 평평한 어두운 벌집형 충격 흡수판, 지지대 위의 추진제 탱크 3개, 금색 UHF 코일이 달린 DREAMS 플랫폼.",
+      "where": "함대 · 우주선 페이지 + 비행 (하강)"
+    },
+    "/images/colophon/model-showcase-beagle2_webp": {
+      "title": "Beagle 2 (실제 크기)",
+      "what": "열린 조개껍데기형 착륙선 — 어두운 태양전지 꽃잎 4장으로 둘러싸인 금색 뚜껑 안테나, 팔이 들려 나오는 금색 그릇형 기단, 장비를 담은 PAW 드럼.",
+      "where": "함대 · 우주선 페이지 + 비행 (하강)"
+    },
+    "/images/colophon/model-showcase-curiosity_webp": {
+      "title": "Curiosity (실제 크기)",
+      "what": "MSL 로버 — 로커-보기 위의 바퀴 6개, ChemCam 헤드와 Mastcam 한 쌍이 달린 마스트, 흰 열교환기 2개 사이의 핀이 달린 MMRTG, 앞쪽을 가로지르는 접힌 팔.",
+      "where": "함대 · 우주선 페이지 + 비행 (하강)"
+    },
+    "/images/colophon/model-showcase-spirit_webp": {
+      "title": "Spirit·Opportunity (2개 형식)",
+      "what": "Mars Exploration Rover — 평평한 청흑색 태양전지 데크 아래의 금색 보온 상자, 날개 패널 4장, 카메라 바가 있는 Pancam 마스트, 줄기 위의 둥근 금색 안테나, 작은 바퀴 6개.",
+      "where": "함대 · 우주선 페이지 + 비행 (하강)"
+    },
+    "/images/colophon/model-showcase-perseverance_webp": {
+      "title": "Perseverance",
+      "what": "곧은 클리트 바퀴를 단 Curiosity의 배치 — Mastcam-Z와 SuperCam 헤드, 큰 코어링 터릿, 앞쪽 아래의 캐싱 베이, 배 아래의 Ingenuity.",
+      "where": "함대 · 우주선 페이지 + 비행 (하강)"
+    },
+    "/images/colophon/model-showcase-zhurong_webp": {
+      "title": "Zhurong",
+      "what": "중국의 로버 — 나비형 태양전지 날개 4개를 가진 넓은 은색 데크, 카메라 박스가 달린 높은 마스트, 작은 안테나 2개, 높은 다리 위의 홈 있는 바퀴.",
+      "where": "함대 · 우주선 페이지 + 비행 (하강)"
+    },
+    "/images/colophon/model-showcase-sojourner_webp": {
+      "title": "Sojourner",
+      "what": "최초의 화성 로버 — 로커-보기 위의 스테인리스 클리트를 단 알루미늄 바퀴, 어두운 태양전지판 아래의 금갈색 보온 상자, 스테레오 카메라 한 쌍, APXS 드럼.",
+      "where": "함대 · 우주선 페이지"
+    },
+    "/images/colophon/model-showcase-exomars-rosalind-franklin_webp": {
+      "title": "ExoMars Rosalind Franklin",
+      "what": "ESA의 보행 섀시 로버 — 모든 다리에 바퀴, 넓은 태양전지 날개 2개, 마스트 위의 금색 PanCam 바, 앞쪽의 시추 상자.",
+      "where": "함대 · 우주선 페이지"
+    },
+    "/images/colophon/model-showcase-lrv-apollo_webp": {
+      "title": "Apollo 월면차",
+      "what": "철망 바퀴에 티타늄 셰브론, 황갈색 펜더를 단 개방형 알루미늄 프레임 — 관형 좌석 2개, T 핸들과 콘솔, 우산형 안테나, 뒤쪽의 공구 팔레트.",
+      "where": "함대 · 우주선 페이지"
+    },
+    "/images/colophon/model-showcase-mro_webp": {
+      "title": "Mars Reconnaissance Orbiter",
+      "what": "NASA의 화성 지도 제작기 — 5.35 × 2.53 m 태양전지판 2개, 직경 3 m 고이득 안테나, 직경 1.6 m HiRISE 경통, 길이 10 m SHARAD 다이폴. 안테나, HiRISE, SHARAD 크기는 NASA, 전지판 크기는 Wikipedia에 따랐다. 본체는 도식적이다.",
+      "where": "함대 · 우주선 페이지 + 비행"
+    },
+    "/images/colophon/model-showcase-mariner-2_webp": {
+      "title": "Mariner 2",
+      "what": "NASA의 길이 3.66 m 금성 플라이바이 탐사선 — 한 변 1.04 m의 육각형 본체, 태양전지판 2장(한 장은 태양 복사압 연장부를 포함해 폭 5.05 m), 팔 위의 안테나, 피라미드형 마스트 꼭대기의 무지향성 안테나. 크기는 NASA NSSDCA에 따랐다. 안테나와 마스트는 도식적이다.",
+      "where": "함대 · 우주선 페이지 + 비행"
+    },
+    "/images/colophon/model-showcase-bepicolombo_webp": {
+      "title": "BepiColombo (실제 크기)",
+      "what": "길이 6.4 m의 쌓아 올린 순항 구성 — 이온 추력기 4기와 패널 4장짜리 검은색-파란색 날개 2개를 가진 Mercury Transfer Module이 차폐막 원통 안의 수성 궤도선과 Mio를 싣고 있다.",
+      "where": "함대 · 우주선 페이지 + 비행"
+    },
+    "/images/colophon/model-showcase-exomars-tgo_webp": {
+      "title": "ExoMars Trace Gas Orbiter",
+      "what": "ESA-Roscosmos 궤도선 — 엔진 벨과 천저면 장비, 반지구면의 NOMAD와 ACS 분광기, 패널 2장짜리 전지판 2개, 붐 위의 직경 2.2 m 안테나.",
+      "where": "함대 · 우주선 페이지"
+    },
+    "/images/colophon/model-showcase-mars-odyssey_webp": {
+      "title": "Mars Odyssey",
+      "what": "NASA의 궤도선 — 모서리에 접은 블랭킷 플랩, 앞면에 THEMIS와 카메라, 감마선 분광기를 실은 길이 6 m의 격자 붐, 패널 3장짜리 전지판 1개, 직경 1.3 m 안테나.",
+      "where": "함대 · 우주선 페이지"
+    },
+    "/images/colophon/model-showcase-mars2-orbiter_webp": {
+      "title": "Mars 2·3 궤도선 (2개 형식)",
+      "what": "소련의 M-71 본체 — 구체가 있는 띠 모양 탱크 경통, 검은 에어로셸 원뿔과 위쪽 착륙선 캡슐을 얹은 칼라, 직경 2.5 m의 얕은 안테나, 큰 직사각형 태양전지판 2장.",
+      "where": "함대 · 우주선 페이지"
+    },
+    "/images/colophon/model-showcase-phobos-2_webp": {
+      "title": "Phobos 2",
+      "what": "소련의 탐사선 — 엔진 둘레의 흰 추진제 구체 4개, 토러스형 관측 장비 띠, 장비 상자를 가진 중앙 코어, 돌출 지지대에 단 수평 태양전지판 2장.",
+      "where": "함대 · 우주선 페이지"
+    },
+    "/images/colophon/model-showcase-tianwen-1_webp": {
+      "title": "Tianwen-1",
+      "what": "위에 진입 캡슐을 얹은 중국의 화성 궤도선 — 패널 3장짜리 전지판 2개, 약 2.5 m의 중이득 안테나, 가느다란 안테나 막대.",
+      "where": "함대 · 우주선 페이지"
+    },
+    "/images/colophon/model-showcase-viking1-orbiter_webp": {
+      "title": "Viking 궤도선",
+      "what": "흰 돔형 셸 아래에 착륙선 캡슐을 실은 궤도선 — 8개 베이의 팔각형 본체 링, 요크에 달린 태양전지판 4장, 직경 1.5 m 금색 안테나, 카메라 2대가 있는 스캔 플랫폼.",
+      "where": "함대 · 우주선 페이지"
+    },
+    "/images/colophon/model-showcase-hubble_webp": {
+      "title": "Hubble (실제 크기)",
+      "what": "관측 장비 — 주름진 은색 차광통에 열린 개구부 문과 두 개의 단단한 태양전지 날개.",
+      "where": "함대 · 우주선 페이지"
+    },
+    "/images/colophon/model-showcase-jwst_webp": {
+      "title": "JWST (실제 크기)",
+      "what": "삼각대 위의 금색 육각형 거울 18개가 5겹 차양막 위에 놓여 있다.",
+      "where": "함대 · 우주선 페이지"
+    },
+    "/images/colophon/model-showcase-chandra_webp": {
+      "title": "Chandra (실제 크기)",
+      "what": "X선 관측소 — 길고 끝이 가늘어지는 통과 태양전지 날개 2개.",
+      "where": "함대 · 우주선 페이지"
+    },
+    "/images/colophon/model-showcase-spitzer_webp": {
+      "title": "Spitzer",
+      "what": "적외선 망원경 — 극저온 용기 통에 맞댄 기울어진 태양전지판 1장.",
+      "where": "함대 · 우주선 페이지"
+    },
+    "/images/colophon/model-showcase-kepler_webp": {
+      "title": "Kepler",
+      "what": "행성 사냥꾼 — 호박색 포일로 감싼 경통과 고정식 태양전지판.",
+      "where": "함대 · 우주선 페이지"
+    },
+    "/images/colophon/model-showcase-tess_webp": {
+      "title": "TESS",
+      "what": "트랜짓 탐사선 — 작은 본체에 후드가 달린 카메라 4대.",
+      "where": "함대 · 우주선 페이지"
+    },
+    "/images/colophon/model-showcase-gaia_webp": {
+      "title": "Gaia (실제 크기)",
+      "what": "ESA의 위치천문 관측선 — 본체를 둘러싼 직경 10 m 차양막 스커트.",
+      "where": "함대 · 우주선 페이지"
+    },
+    "/images/colophon/model-showcase-euclid_webp": {
+      "title": "Euclid",
+      "what": "ESA의 암흑 우주 망원경 — 태양전지판 차폐막 뒤의 배플.",
+      "where": "함대 · 우주선 페이지"
+    },
+    "/images/colophon/model-showcase-xmm-newton_webp": {
+      "title": "XMM-Newton (실제 크기)",
+      "what": "ESA의 X선 망원경 — 거울 모듈 면에서 끝나는 긴 통.",
+      "where": "함대 · 우주선 페이지"
+    },
+    "/images/colophon/model-showcase-compton-gro_webp": {
+      "title": "Compton Gamma Ray Observatory",
+      "what": "감마선 관측선 — 검출기를 갖춘 상자형 관측 장비 데크.",
+      "where": "함대 · 우주선 페이지"
+    },
+    "/images/colophon/model-showcase-hitomi_webp": {
+      "title": "Hitomi",
+      "what": "JAXA의 X선 위성 — 망원경을 실은 연장식 광학 벤치.",
+      "where": "함대 · 우주선 페이지"
+    },
+    "/images/colophon/model-showcase-spektr-rg_webp": {
+      "title": "Spektr-RG",
+      "what": "러시아-독일 X선 관측선 — ART-XC 통 옆의 7모듈 eROSITA.",
+      "where": "함대 · 우주선 페이지"
+    },
+    "/images/colophon/model-showcase-voyager-1_webp": {
+      "title": "Voyager 1·2 (2개 형식)",
+      "what": "Grand Tour 본체 — 십각형 몸체에 직경 3.7 m 안테나, 발전기 3개를 끝에서 끝으로 이은 RTG 붐, 스캔 플랫폼이 있는 과학 붐, 길이 13 m 자력계 붐.",
+      "where": "함대 · 우주선 페이지 + 비행"
+    },
+    "/images/colophon/model-showcase-pioneer-10_webp": {
+      "title": "Pioneer 10·11 (2개 형식)",
+      "what": "스핀 안정화 쌍둥이 — 장비실 위의 직경 2.74 m 안테나, 120도 간격의 길이 3 m RTG 붐 2개, 길이 6.6 m 자력계 붐.",
+      "where": "함대 · 우주선 페이지 + 비행"
+    },
+    "/images/colophon/model-showcase-juno_webp": {
+      "title": "Juno (실제 크기)",
+      "what": "목성 극궤도선 — 본체 아래의 티타늄 방사선 보호 금고, 위의 직경 2.5 m 안테나, 120도 간격의 태양전지 날개 3개.",
+      "where": "함대 · 우주선 페이지 + 비행"
+    },
+    "/images/colophon/model-showcase-juice_webp": {
+      "title": "JUICE (실제 크기)",
+      "what": "ESA의 목성 얼음 위성 궤도선 — 추력 원뿔 위의 흰 탱크 스커트, 고정식 직경 2.5 m 안테나, 3.9 × 2.2 m 패널 3장짜리 날개 2개, 길이 10.6 m 자력계 붐.",
+      "where": "함대 · 우주선 페이지 + 비행"
+    },
+    "/images/colophon/model-showcase-dawn_webp": {
+      "title": "Dawn (실제 크기)",
+      "what": "Vesta와 Ceres의 이온 추진 궤도선 — 이온 추력기 3기, 직경 1.24 m 안테나, 패널 5장짜리 날개 2개(전체 폭 19.7 m).",
+      "where": "함대 · 우주선 페이지 + 비행"
+    },
+    "/images/colophon/model-showcase-ulysses_webp": {
+      "title": "Ulysses (실제 크기)",
+      "what": "태양 극궤도 탐사선 — 위에 직경 1.65 m 안테나, 옆의 받침대 위에 핀이 달린 GPHS-RTG, 관측 장비 붐.",
+      "where": "함대 · 우주선 페이지 + 비행"
+    },
+    "/images/colophon/model-showcase-giotto_webp": {
+      "title": "Giotto (실제 크기)",
+      "what": "Halley 플라이바이 탐사선 — 금색 띠가 있는 어두운 태양전지 띠로 덮은 드럼, 위의 Whipple 먼지 방어막, 흰 원뿔 마운트 위의 기울어진 직경 1.47 m 디스핀 안테나.",
+      "where": "함대 · 우주선 페이지 + 비행"
+    },
+    "/images/colophon/model-showcase-cassini_webp": {
+      "title": "Cassini–Huygens (실제 크기)",
+      "what": "토성 궤도선 — 메인 엔진 2기를 가진 금색 십각형, 직경 4 m 고이득 안테나, 돌출 지지대에 단 RTG 3기, 옆의 트러스에 실린 Huygens 탐사선.",
+      "where": "함대 · 우주선 페이지 + 비행"
+    },
+    "/images/colophon/model-showcase-galileo_webp": {
+      "title": "Galileo (실제 크기)",
+      "what": "듀얼 스핀 목성 궤도선 — 스캔 플랫폼이 있는 디스핀부, 루버가 달린 스핀부 드럼, 우산형 고이득 안테나, RTG 붐 2개, 길이 10.9 m 자력계 붐.",
+      "where": "함대 · 우주선 페이지 + 비행"
+    },
+    "/images/colophon/model-showcase-rosetta_webp": {
+      "title": "Rosetta (실제 크기)",
+      "what": "은회색 포일로 덮고 검은색과 금색 패치를 붙인 상자형 본체, 직경 2.2 m 안테나, 길이 14 m의 패널 5장짜리 태양전지 날개 2개, 뒷면 벽에 Philae.",
+      "where": "함대 · 우주선 페이지 + 비행"
+    },
+    "/images/colophon/model-showcase-hayabusa_webp": {
+      "title": "Hayabusa·Hayabusa2 (2개 형식)",
+      "what": "소행성 샘플 귀환선 — 벨로즈 위의 샘플러 혼, 이온 엔진 4기, 귀환 캡슐, 패널 3장짜리 날개. Hayabusa2는 탑재형 충돌체와 MINERVA-II 호퍼가 추가된다.",
+      "where": "함대 · 우주선 페이지 + 비행"
+    },
+    "/images/colophon/model-showcase-osiris-rex_webp": {
+      "title": "OSIRIS-REx (실제 크기)",
+      "what": "Bennu 샘플 귀환선 — 직경 1.2 m 안테나, 양쪽에 1.9 × 2.4 m 태양전지판, 앞쪽으로 뻗은 길이 3.35 m TAGSAM 팔.",
+      "where": "함대 · 우주선 페이지 + 비행"
+    },
+    "/images/colophon/model-showcase-venera-7_webp": {
+      "title": "Venera 7·13 (2개 형식)",
+      "what": "소련의 금성 본체 — 구멍이 줄지어 난 흰 엔진 드럼, 구체가 보이는 탱크 베이, 삭마 외피 하강 구체를 붙든 지지대 6개, 마스트 위의 메시 안테나, 태양전지 날개 2개.",
+      "where": "함대 · 우주선 페이지 + 비행"
+    },
+    "/images/colophon/model-showcase-vega-1_webp": {
+      "title": "Vega 1·2 (2개 형식)",
+      "what": "금성과 Halley용 본체 — Venera 배치에 하강 구체 꼭대기에 기구 캐니스터를 얹었다.",
+      "where": "함대 · 우주선 페이지 + 비행"
     }
   },
   "canvas2d": {
@@ -2346,6 +2596,114 @@
     },
     "/images/anatomy-exploded/vulcan_webp": {
       "title": "Vulcan Centaur"
+    },
+    "/images/anatomy-exploded/apollo-lm_webp": {
+      "title": "Apollo 달 착륙선"
+    },
+    "/images/anatomy-exploded/beresheet_webp": {
+      "title": "Beresheet"
+    },
+    "/images/anatomy-exploded/change-3_webp": {
+      "title": "Chang'e 3"
+    },
+    "/images/anatomy-exploded/change-4_webp": {
+      "title": "Chang'e 4"
+    },
+    "/images/anatomy-exploded/change-5_webp": {
+      "title": "Chang'e 5"
+    },
+    "/images/anatomy-exploded/change6_webp": {
+      "title": "Chang'e 6"
+    },
+    "/images/anatomy-exploded/insight_webp": {
+      "title": "InSight"
+    },
+    "/images/anatomy-exploded/lrv-apollo_webp": {
+      "title": "월면차"
+    },
+    "/images/anatomy-exploded/luna-16_webp": {
+      "title": "Luna 16"
+    },
+    "/images/anatomy-exploded/luna-9_webp": {
+      "title": "Luna 9"
+    },
+    "/images/anatomy-exploded/luna24_webp": {
+      "title": "Luna 24"
+    },
+    "/images/anatomy-exploded/lunokhod-1_webp": {
+      "title": "Lunokhod 1"
+    },
+    "/images/anatomy-exploded/lunokhod-2_webp": {
+      "title": "Lunokhod 2"
+    },
+    "/images/anatomy-exploded/mars-2_webp": {
+      "title": "Mars 2"
+    },
+    "/images/anatomy-exploded/mars-3_webp": {
+      "title": "Mars 3"
+    },
+    "/images/anatomy-exploded/phoenix_webp": {
+      "title": "Phoenix"
+    },
+    "/images/anatomy-exploded/pragyan_webp": {
+      "title": "Pragyan"
+    },
+    "/images/anatomy-exploded/slim_webp": {
+      "title": "SLIM"
+    },
+    "/images/anatomy-exploded/sojourner_webp": {
+      "title": "Sojourner"
+    },
+    "/images/anatomy-exploded/vega-1_webp": {
+      "title": "Vega 1"
+    },
+    "/images/anatomy-exploded/vega-2_webp": {
+      "title": "Vega 2"
+    },
+    "/images/anatomy-exploded/venera-13_webp": {
+      "title": "Venera 13"
+    },
+    "/images/anatomy-exploded/viking-1_webp": {
+      "title": "Viking 1"
+    },
+    "/images/anatomy-exploded/vikram-cy3_webp": {
+      "title": "Vikram (Chandrayaan-3)"
+    },
+    "/images/anatomy-exploded/yutu_webp": {
+      "title": "Yutu"
+    },
+    "/images/anatomy-exploded/yutu-2_webp": {
+      "title": "Yutu-2"
+    },
+    "/images/anatomy-exploded/zhurong_webp": {
+      "title": "Zhurong"
+    },
+    "/images/anatomy-exploded/beagle2_webp": {
+      "title": "Beagle 2"
+    },
+    "/images/anatomy-exploded/curiosity_webp": {
+      "title": "Curiosity (MSL)"
+    },
+    "/images/anatomy-exploded/exomars-rosalind-franklin_webp": {
+      "title": "Rosalind Franklin (ExoMars 로버)"
+    },
+    "/images/anatomy-exploded/mars6_webp": {
+      "title": "Mars 6"
+    },
+    "/images/anatomy-exploded/opportunity_webp": {
+      "title": "Opportunity (MER-B)"
+    },
+    "/images/anatomy-exploded/perseverance_webp": {
+      "title": "Perseverance (Mars 2020)"
+    },
+    "/images/anatomy-exploded/schiaparelli_webp": {
+      "title": "Schiaparelli"
+    },
+    "/images/anatomy-exploded/spirit_webp": {
+      "title": "Spirit (MER-A)"
+    },
+    "/images/anatomy-exploded/viking2-lander_webp": {
+      "title": "Viking 2 착륙선"
     }
   },
   "icons": {
@@ -2446,6 +2804,656 @@
         "Laniakea": "라니아케아",
         "Cosmic Web": "우주 웹"
       }
+    }
+  },
+  "landing_art": {
+    "/images/landing-sequences/apollo11_webp": {
+      "title": "Apollo 11"
+    },
+    "/images/landing-sequences/apollo12_webp": {
+      "title": "Apollo 12"
+    },
+    "/images/landing-sequences/apollo14_webp": {
+      "title": "Apollo 14"
+    },
+    "/images/landing-sequences/apollo15_webp": {
+      "title": "Apollo 15"
+    },
+    "/images/landing-sequences/apollo16_webp": {
+      "title": "Apollo 16"
+    },
+    "/images/landing-sequences/apollo17_webp": {
+      "title": "Apollo 17"
+    },
+    "/images/landing-sequences/artemis4_webp": {
+      "title": "Artemis IV"
+    },
+    "/images/landing-sequences/beresheet_webp": {
+      "title": "Beresheet"
+    },
+    "/images/landing-sequences/chandrayaan3_webp": {
+      "title": "Chandrayaan-3"
+    },
+    "/images/landing-sequences/change5_webp": {
+      "title": "Chang'e 5"
+    },
+    "/images/landing-sequences/change6_webp": {
+      "title": "Chang'e 6"
+    },
+    "/images/landing-sequences/curiosity_webp": {
+      "title": "Curiosity"
+    },
+    "/images/landing-sequences/insight_webp": {
+      "title": "InSight"
+    },
+    "/images/landing-sequences/luna16_webp": {
+      "title": "Luna 16"
+    },
+    "/images/landing-sequences/luna17_webp": {
+      "title": "Luna 17 / Lunokhod 1"
+    },
+    "/images/landing-sequences/luna21_webp": {
+      "title": "Luna 21 / Lunokhod 2"
+    },
+    "/images/landing-sequences/luna24_webp": {
+      "title": "Luna 24"
+    },
+    "/images/landing-sequences/luna9_webp": {
+      "title": "Luna 9"
+    },
+    "/images/landing-sequences/opportunity_webp": {
+      "title": "Opportunity"
+    },
+    "/images/landing-sequences/schiaparelli_webp": {
+      "title": "Schiaparelli EDM"
+    },
+    "/images/landing-sequences/slim_webp": {
+      "title": "SLIM"
+    },
+    "/images/landing-sequences/spirit_webp": {
+      "title": "Spirit"
+    },
+    "/images/landing-sequences/vega-1_webp": {
+      "title": "Vega 1"
+    },
+    "/images/landing-sequences/vega-2_webp": {
+      "title": "Vega 2"
+    },
+    "/images/landing-sequences/venera-13_webp": {
+      "title": "Venera 13"
+    },
+    "/images/landing-sequences/beagle2_webp": {
+      "title": "Beagle 2"
+    },
+    "/images/landing-sequences/change3_webp": {
+      "title": "Chang'e 3 / Yutu"
+    },
+    "/images/landing-sequences/change4_webp": {
+      "title": "Chang'e 4 / Yutu-2"
+    },
+    "/images/landing-sequences/change7_webp": {
+      "title": "Chang'e 7"
+    },
+    "/images/landing-sequences/exomars-rosalind-franklin_webp": {
+      "title": "Rosalind Franklin 로버"
+    },
+    "/images/landing-sequences/mars-pathfinder_webp": {
+      "title": "Mars Pathfinder + Sojourner"
+    },
+    "/images/landing-sequences/mars2_webp": {
+      "title": "Mars 2 착륙선"
+    },
+    "/images/landing-sequences/mars3_webp": {
+      "title": "Mars 3 착륙선"
+    },
+    "/images/landing-sequences/mars6_webp": {
+      "title": "Mars 6"
+    },
+    "/images/landing-sequences/perseverance_webp": {
+      "title": "Perseverance + Ingenuity"
+    },
+    "/images/landing-sequences/phoenix_webp": {
+      "title": "Phoenix 착륙선"
+    },
+    "/images/landing-sequences/viking1-lander_webp": {
+      "title": "Viking 1 착륙선"
+    },
+    "/images/landing-sequences/viking2-lander_webp": {
+      "title": "Viking 2 착륙선"
+    },
+    "/images/landing-sequences/zhurong_webp": {
+      "title": "Zhurong (Tianwen-1 착륙선 포함)"
+    }
+  },
+  "blueprint_art": {
+    "/images/blueprints/apollo-soyuz_webp": {
+      "title": "Apollo-Soyuz 시험 계획 (ASTP)"
+    },
+    "/images/blueprints/apollo11_webp": {
+      "title": "Apollo 11"
+    },
+    "/images/blueprints/bepicolombo_webp": {
+      "title": "BepiColombo"
+    },
+    "/images/blueprints/cassini_webp": {
+      "title": "Cassini-Huygens"
+    },
+    "/images/blueprints/dawn_webp": {
+      "title": "Dawn"
+    },
+    "/images/blueprints/galileo_webp": {
+      "title": "Galileo"
+    },
+    "/images/blueprints/giotto_webp": {
+      "title": "Giotto"
+    },
+    "/images/blueprints/hayabusa2_webp": {
+      "title": "Hayabusa2"
+    },
+    "/images/blueprints/juice_webp": {
+      "title": "JUICE"
+    },
+    "/images/blueprints/juno_webp": {
+      "title": "Juno"
+    },
+    "/images/blueprints/new-horizons_webp": {
+      "title": "New Horizons"
+    },
+    "/images/blueprints/pioneer-10_webp": {
+      "title": "Pioneer 10"
+    },
+    "/images/blueprints/rosetta_webp": {
+      "title": "Rosetta"
+    },
+    "/images/blueprints/sputnik1_webp": {
+      "title": "Sputnik 1"
+    },
+    "/images/blueprints/ulysses_webp": {
+      "title": "Ulysses"
+    },
+    "/images/blueprints/venera-13_webp": {
+      "title": "Venera 13"
+    },
+    "/images/blueprints/vostok-1_webp": {
+      "title": "Vostok 1"
+    },
+    "/images/blueprints/voyager-2_webp": {
+      "title": "Voyager 2"
+    }
+  },
+  "mission_trajectories": {
+    "/images/missions/thumbnails/akatsuki_webp": {
+      "title": "Akatsuki"
+    },
+    "/images/missions/thumbnails/apollo-1_webp": {
+      "title": "Apollo 1 (AS-204)"
+    },
+    "/images/missions/thumbnails/apollo-soyuz_webp": {
+      "title": "Apollo-Soyuz 시험 계획 (ASTP)"
+    },
+    "/images/missions/thumbnails/apollo10_webp": {
+      "title": "Apollo 10"
+    },
+    "/images/missions/thumbnails/apollo11_webp": {
+      "title": "Apollo 11"
+    },
+    "/images/missions/thumbnails/apollo12_webp": {
+      "title": "Apollo 12"
+    },
+    "/images/missions/thumbnails/apollo13_webp": {
+      "title": "Apollo 13"
+    },
+    "/images/missions/thumbnails/apollo14_webp": {
+      "title": "Apollo 14"
+    },
+    "/images/missions/thumbnails/apollo15_webp": {
+      "title": "Apollo 15"
+    },
+    "/images/missions/thumbnails/apollo16_webp": {
+      "title": "Apollo 16"
+    },
+    "/images/missions/thumbnails/apollo17_webp": {
+      "title": "Apollo 17"
+    },
+    "/images/missions/thumbnails/apollo7_webp": {
+      "title": "Apollo 7"
+    },
+    "/images/missions/thumbnails/apollo8_webp": {
+      "title": "Apollo 8호"
+    },
+    "/images/missions/thumbnails/apollo9_webp": {
+      "title": "Apollo 9"
+    },
+    "/images/missions/thumbnails/artemis1_webp": {
+      "title": "Artemis I"
+    },
+    "/images/missions/thumbnails/artemis2_webp": {
+      "title": "Artemis II"
+    },
+    "/images/missions/thumbnails/artemis3_webp": {
+      "title": "Artemis III"
+    },
+    "/images/missions/thumbnails/artemis4_webp": {
+      "title": "Artemis IV"
+    },
+    "/images/missions/thumbnails/artemis5_webp": {
+      "title": "Artemis V"
+    },
+    "/images/missions/thumbnails/aurora-7_webp": {
+      "title": "Aurora 7 / MA-7"
+    },
+    "/images/missions/thumbnails/bepicolombo_webp": {
+      "title": "BepiColombo"
+    },
+    "/images/missions/thumbnails/beresheet_webp": {
+      "title": "Beresheet"
+    },
+    "/images/missions/thumbnails/blue-moon-mk1_webp": {
+      "title": "Blue Moon MK1"
+    },
+    "/images/missions/thumbnails/cassini_webp": {
+      "title": "Cassini-Huygens"
+    },
+    "/images/missions/thumbnails/chandrayaan1_webp": {
+      "title": "Chandrayaan-1"
+    },
+    "/images/missions/thumbnails/chandrayaan2_webp": {
+      "title": "Chandrayaan-2"
+    },
+    "/images/missions/thumbnails/chandrayaan3_webp": {
+      "title": "Chandrayaan-3"
+    },
+    "/images/missions/thumbnails/change1_webp": {
+      "title": "Chang'e 1"
+    },
+    "/images/missions/thumbnails/change2_webp": {
+      "title": "Chang'e 2"
+    },
+    "/images/missions/thumbnails/change3_webp": {
+      "title": "Chang'e 3"
+    },
+    "/images/missions/thumbnails/change5_webp": {
+      "title": "Chang'e 5"
+    },
+    "/images/missions/thumbnails/change6_webp": {
+      "title": "Chang'e 6"
+    },
+    "/images/missions/thumbnails/clementine_webp": {
+      "title": "Clementine"
+    },
+    "/images/missions/thumbnails/curiosity_webp": {
+      "title": "Curiosity"
+    },
+    "/images/missions/thumbnails/dart_webp": {
+      "title": "DART"
+    },
+    "/images/missions/thumbnails/dawn_webp": {
+      "title": "Dawn"
+    },
+    "/images/missions/thumbnails/europa-clipper_webp": {
+      "title": "Europa Clipper"
+    },
+    "/images/missions/thumbnails/faith-7_webp": {
+      "title": "Faith 7 / MA-9"
+    },
+    "/images/missions/thumbnails/freedom-7_webp": {
+      "title": "Freedom 7 / MR-3"
+    },
+    "/images/missions/thumbnails/friendship-7_webp": {
+      "title": "Friendship 7 / MA-6"
+    },
+    "/images/missions/thumbnails/galileo_webp": {
+      "title": "Galileo"
+    },
+    "/images/missions/thumbnails/gemini12_webp": {
+      "title": "Gemini 12 / GT-12"
+    },
+    "/images/missions/thumbnails/gemini3_webp": {
+      "title": "Gemini 3 / GT-3"
+    },
+    "/images/missions/thumbnails/gemini4_webp": {
+      "title": "Gemini 4 / GT-4"
+    },
+    "/images/missions/thumbnails/gemini6a_webp": {
+      "title": "Gemini 6A / GT-6A"
+    },
+    "/images/missions/thumbnails/gemini7_webp": {
+      "title": "Gemini 7 / GT-7"
+    },
+    "/images/missions/thumbnails/gemini8_webp": {
+      "title": "Gemini 8 / GT-8"
+    },
+    "/images/missions/thumbnails/giotto_webp": {
+      "title": "Giotto"
+    },
+    "/images/missions/thumbnails/hayabusa1_webp": {
+      "title": "Hayabusa"
+    },
+    "/images/missions/thumbnails/hayabusa2_webp": {
+      "title": "Hayabusa2"
+    },
+    "/images/missions/thumbnails/hera_webp": {
+      "title": "Hera"
+    },
+    "/images/missions/thumbnails/hope-probe_webp": {
+      "title": "Hope 탐사선"
+    },
+    "/images/missions/thumbnails/huygens_webp": {
+      "title": "Huygens"
+    },
+    "/images/missions/thumbnails/im-1_webp": {
+      "title": "IM-1"
+    },
+    "/images/missions/thumbnails/insight_webp": {
+      "title": "InSight"
+    },
+    "/images/missions/thumbnails/inspiration4_webp": {
+      "title": "Inspiration4"
+    },
+    "/images/missions/thumbnails/juice_webp": {
+      "title": "JUICE"
+    },
+    "/images/missions/thumbnails/juno_webp": {
+      "title": "Juno"
+    },
+    "/images/missions/thumbnails/kaguya_webp": {
+      "title": "Kaguya (SELENE)"
+    },
+    "/images/missions/thumbnails/liberty-bell-7_webp": {
+      "title": "Liberty Bell 7 / MR-4"
+    },
+    "/images/missions/thumbnails/lro_webp": {
+      "title": "Lunar Reconnaissance Orbiter"
+    },
+    "/images/missions/thumbnails/lucy_webp": {
+      "title": "Lucy"
+    },
+    "/images/missions/thumbnails/luna10_webp": {
+      "title": "Luna 10"
+    },
+    "/images/missions/thumbnails/luna16_webp": {
+      "title": "Luna 16"
+    },
+    "/images/missions/thumbnails/luna17_webp": {
+      "title": "Luna 17 / Lunokhod 1"
+    },
+    "/images/missions/thumbnails/luna21_webp": {
+      "title": "Luna 21 / Lunokhod 2"
+    },
+    "/images/missions/thumbnails/luna24_webp": {
+      "title": "Luna 24"
+    },
+    "/images/missions/thumbnails/luna9_webp": {
+      "title": "Luna 9"
+    },
+    "/images/missions/thumbnails/lunar-prospector_webp": {
+      "title": "Lunar Prospector"
+    },
+    "/images/missions/thumbnails/magellan_webp": {
+      "title": "Magellan"
+    },
+    "/images/missions/thumbnails/mangalyaan_webp": {
+      "title": "Mangalyaan"
+    },
+    "/images/missions/thumbnails/mariner10_webp": {
+      "title": "Mariner 10"
+    },
+    "/images/missions/thumbnails/mariner2_webp": {
+      "title": "Mariner 2"
+    },
+    "/images/missions/thumbnails/mariner4_webp": {
+      "title": "Mariner 4"
+    },
+    "/images/missions/thumbnails/mariner9_webp": {
+      "title": "Mariner 9"
+    },
+    "/images/missions/thumbnails/mars-express_webp": {
+      "title": "Mars Express"
+    },
+    "/images/missions/thumbnails/mars-pathfinder_webp": {
+      "title": "Mars Pathfinder"
+    },
+    "/images/missions/thumbnails/mars2_webp": {
+      "title": "Mars 2"
+    },
+    "/images/missions/thumbnails/mars3_webp": {
+      "title": "Mars 3"
+    },
+    "/images/missions/thumbnails/maven_webp": {
+      "title": "MAVEN"
+    },
+    "/images/missions/thumbnails/messenger_webp": {
+      "title": "MESSENGER"
+    },
+    "/images/missions/thumbnails/mmx_webp": {
+      "title": "MMX"
+    },
+    "/images/missions/thumbnails/mro_webp": {
+      "title": "Mars Reconnaissance Orbiter"
+    },
+    "/images/missions/thumbnails/near-shoemaker_webp": {
+      "title": "NEAR Shoemaker"
+    },
+    "/images/missions/thumbnails/new-horizons_webp": {
+      "title": "New Horizons"
+    },
+    "/images/missions/thumbnails/opportunity_webp": {
+      "title": "Opportunity"
+    },
+    "/images/missions/thumbnails/osiris-rex_webp": {
+      "title": "OSIRIS-REx"
+    },
+    "/images/missions/thumbnails/otv-1_webp": {
+      "title": "X-37B OTV-1 (USA-212)"
+    },
+    "/images/missions/thumbnails/otv-2_webp": {
+      "title": "X-37B OTV-2 (USA-226)"
+    },
+    "/images/missions/thumbnails/otv-3_webp": {
+      "title": "X-37B OTV-3 (USA-240)"
+    },
+    "/images/missions/thumbnails/otv-4_webp": {
+      "title": "X-37B OTV-4 (USA-261, AFSPC-5)"
+    },
+    "/images/missions/thumbnails/otv-5_webp": {
+      "title": "X-37B OTV-5 (USA-277)"
+    },
+    "/images/missions/thumbnails/otv-6_webp": {
+      "title": "X-37B OTV-6 (USA-299, USSF-7)"
+    },
+    "/images/missions/thumbnails/otv-7_webp": {
+      "title": "X-37B OTV-7 (USA-349, USSF-52)"
+    },
+    "/images/missions/thumbnails/parker-solar-probe_webp": {
+      "title": "Parker Solar Probe"
+    },
+    "/images/missions/thumbnails/perseverance_webp": {
+      "title": "Perseverance"
+    },
+    "/images/missions/thumbnails/phoenix_webp": {
+      "title": "Phoenix"
+    },
+    "/images/missions/thumbnails/pioneer-10_webp": {
+      "title": "Pioneer 10"
+    },
+    "/images/missions/thumbnails/pioneer-11_webp": {
+      "title": "Pioneer 11"
+    },
+    "/images/missions/thumbnails/polaris-dawn_webp": {
+      "title": "Polaris Dawn"
+    },
+    "/images/missions/thumbnails/psyche-mission_webp": {
+      "title": "Psyche"
+    },
+    "/images/missions/thumbnails/rosetta_webp": {
+      "title": "Rosetta"
+    },
+    "/images/missions/thumbnails/schiaparelli_webp": {
+      "title": "Schiaparelli EDM"
+    },
+    "/images/missions/thumbnails/shenzhou-1_webp": {
+      "title": "Shenzhou 1"
+    },
+    "/images/missions/thumbnails/shenzhou-5_webp": {
+      "title": "Shenzhou 5"
+    },
+    "/images/missions/thumbnails/sigma-7_webp": {
+      "title": "Sigma 7 / MA-8"
+    },
+    "/images/missions/thumbnails/skylab-2_webp": {
+      "title": "Skylab 2"
+    },
+    "/images/missions/thumbnails/skylab-3_webp": {
+      "title": "Skylab 3"
+    },
+    "/images/missions/thumbnails/skylab-4_webp": {
+      "title": "Skylab 4"
+    },
+    "/images/missions/thumbnails/slim_webp": {
+      "title": "SLIM"
+    },
+    "/images/missions/thumbnails/smart-1_webp": {
+      "title": "SMART-1"
+    },
+    "/images/missions/thumbnails/solar-orbiter_webp": {
+      "title": "Solar Orbiter"
+    },
+    "/images/missions/thumbnails/soyuz-1_webp": {
+      "title": "Soyuz 1"
+    },
+    "/images/missions/thumbnails/soyuz-11_webp": {
+      "title": "Soyuz 11"
+    },
+    "/images/missions/thumbnails/spirit_webp": {
+      "title": "Spirit"
+    },
+    "/images/missions/thumbnails/sputnik1_webp": {
+      "title": "Sputnik 1"
+    },
+    "/images/missions/thumbnails/starship-demo_webp": {
+      "title": "Starship Demo"
+    },
+    "/images/missions/thumbnails/starship-flight-5_webp": {
+      "title": "Starship Flight 5"
+    },
+    "/images/missions/thumbnails/starship-mars-crew_webp": {
+      "title": "Starship 화성 유인 비행"
+    },
+    "/images/missions/thumbnails/sts-1_webp": {
+      "title": "STS-1"
+    },
+    "/images/missions/thumbnails/sts-107_webp": {
+      "title": "STS-107"
+    },
+    "/images/missions/thumbnails/sts-51-l_webp": {
+      "title": "STS-51-L"
+    },
+    "/images/missions/thumbnails/tianwen1_webp": {
+      "title": "Tianwen-1"
+    },
+    "/images/missions/thumbnails/ulysses_webp": {
+      "title": "Ulysses"
+    },
+    "/images/missions/thumbnails/vega-1_webp": {
+      "title": "Vega 1"
+    },
+    "/images/missions/thumbnails/vega-2_webp": {
+      "title": "Vega 2"
+    },
+    "/images/missions/thumbnails/venera-13_webp": {
+      "title": "Venera 13"
+    },
+    "/images/missions/thumbnails/viking1_webp": {
+      "title": "Viking 1"
+    },
+    "/images/missions/thumbnails/viking2_webp": {
+      "title": "Viking 2"
+    },
+    "/images/missions/thumbnails/voskhod-1_webp": {
+      "title": "Voskhod 1"
+    },
+    "/images/missions/thumbnails/voskhod-2_webp": {
+      "title": "Voskhod 2"
+    },
+    "/images/missions/thumbnails/vostok-1_webp": {
+      "title": "Vostok 1"
+    },
+    "/images/missions/thumbnails/vostok-2_webp": {
+      "title": "Vostok 2"
+    },
+    "/images/missions/thumbnails/vostok-3_webp": {
+      "title": "Vostok 3"
+    },
+    "/images/missions/thumbnails/vostok-4_webp": {
+      "title": "Vostok 4"
+    },
+    "/images/missions/thumbnails/vostok-5_webp": {
+      "title": "Vostok 5"
+    },
+    "/images/missions/thumbnails/vostok-6_webp": {
+      "title": "Vostok 6"
+    },
+    "/images/missions/thumbnails/voyager-1_webp": {
+      "title": "Voyager 1"
+    },
+    "/images/missions/thumbnails/voyager-2_webp": {
+      "title": "Voyager 2"
+    },
+    "/images/missions/thumbnails/escapade_webp": {
+      "title": "ESCAPADE"
+    },
+    "/images/missions/thumbnails/change4_webp": {
+      "title": "Chang'e 4 / Yutu-2"
+    }
+  },
+  "site_illustrations": {
+    "/images/illustrations/sites/apollo11_webp": {
+      "title": "Apollo 11"
+    },
+    "/images/illustrations/sites/apollo12_webp": {
+      "title": "Apollo 12"
+    },
+    "/images/illustrations/sites/apollo14_webp": {
+      "title": "Apollo 14"
+    },
+    "/images/illustrations/sites/apollo15_webp": {
+      "title": "Apollo 15"
+    },
+    "/images/illustrations/sites/apollo16_webp": {
+      "title": "Apollo 16"
+    },
+    "/images/illustrations/sites/apollo17_webp": {
+      "title": "Apollo 17"
+    },
+    "/images/illustrations/sites/chandrayaan3_webp": {
+      "title": "Chandrayaan-3"
+    },
+    "/images/illustrations/sites/spirit_webp": {
+      "title": "Spirit"
+    },
+    "/images/illustrations/sites/opportunity_webp": {
+      "title": "Opportunity"
+    },
+    "/images/illustrations/sites/curiosity_webp": {
+      "title": "Curiosity"
+    },
+    "/images/illustrations/sites/perseverance_webp": {
+      "title": "Perseverance"
+    },
+    "/images/illustrations/sites/zhurong_webp": {
+      "title": "Zhurong"
+    },
+    "/images/illustrations/sites/luna17_webp": {
+      "title": "Luna 17"
+    },
+    "/images/illustrations/sites/luna21_webp": {
+      "title": "Luna 21"
+    },
+    "/images/illustrations/sites/change3_webp": {
+      "title": "Chang’e 3"
+    },
+    "/images/illustrations/sites/change4_webp": {
+      "title": "Chang’e 4"
     }
   }
 }

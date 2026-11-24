@@ -590,6 +590,9 @@
     },
     "/images/anatomy/voskhod_webp": {
       "title": "Voskhod"
+    },
+    "/images/anatomy/starship-hls_webp": {
+      "title": "Starship HLS"
     }
   },
   "lab_illustrations": {
@@ -1011,6 +1014,15 @@
     },
     "/diagrams/science/vis-viva_webp": {
       "title": "ビスビバ"
+    },
+    "/diagrams/science/earth-surface-imagery_webp": {
+      "title": "地球表面の画像"
+    },
+    "/diagrams/science/mars-surface-imagery_webp": {
+      "title": "火星表面の画像"
+    },
+    "/diagrams/science/moon-surface-imagery_webp": {
+      "title": "月面の画像"
     }
   },
   "posters": {
@@ -1100,77 +1112,12 @@
     "/images/colophon/craft-cassini_webp": {
       "title": "Cassini–Huygens",
       "what": "高利得アンテナ、RTGブーム、およびHuygens探査機 — 土星周回衛星。",
-      "where": "飛行・探査"
-    },
-    "/images/colophon/craft-voyager-1_webp": {
-      "title": "ボイジャー",
-      "what": "3.7 m パラボラアンテナ、磁力計ブーム、および RTG トラス―グランド・ツアー・バス。",
-      "where": "飛行・探査"
-    },
-    "/images/colophon/craft-galileo_webp": {
-      "title": "Galileo",
-      "what": "折り畳まれた大口径パラボラアンテナを備えたデュアルスピン・バス。",
-      "where": "飛行 + 探査"
+      "where": "飛行 · 打上げ + 巡航"
     },
     "/images/colophon/craft-new-horizons_webp": {
       "title": "New Horizons",
       "what": "コンパクトな三角形のバスと単一の皿で構成される冥王星フライバイ探査機。",
-      "where": "飛行 + 探査"
-    },
-    "/images/colophon/craft-pioneer-10_webp": {
-      "title": "Pioneer",
-      "what": "スピン安定化ディッシュ、RTGブーム、および刻印されたプレート。",
-      "where": "飛行 + 探査"
-    },
-    "/images/colophon/craft-juno_webp": {
-      "title": "Juno",
-      "what": "六角形のバスの周りに3つの広大な太陽電池パネルを持つ木星極軌道衛星。",
-      "where": "飛行 + 探査"
-    },
-    "/images/colophon/craft-bepicolombo_webp": {
-      "title": "BepiColombo",
-      "what": "積み重ねられた転送モジュールと水星軌道衛星（イオンスラスタ搭載）。",
-      "where": "飛行 + 探査"
-    },
-    "/images/colophon/craft-dawn_webp": {
-      "title": "Dawn",
-      "what": "イオン駆動バスと広大な太陽電池パネルを備えた、ベスタとケレスの軌道衛星。",
-      "where": "飛行 + 探査"
-    },
-    "/images/colophon/craft-giotto_webp": {
-      "title": "Giotto",
-      "what": "ダストシールドを備えた円筒形スピナー — ハレー彗星フライバイ。",
-      "where": "飛行 + 探査"
-    },
-    "/images/colophon/craft-hayabusa2_webp": {
-      "title": "はやぶさ2",
-      "what": "太陽電池パネルとサンプラーホーンを備えた箱形バス — 小惑星リュウグウ。",
-      "where": "飛行 + 探査"
-    },
-    "/images/colophon/craft-juice_webp": {
-      "title": "JUICE",
-      "what": "コンパクトなバスの上に十字形の太陽電池アレイを配置した、木星の氷月軌道衛星。",
-      "where": "飛行 + 探査"
-    },
-    "/images/colophon/craft-rosetta_webp": {
-      "title": "Rosetta",
-      "what": "彗星追跡バス周辺の 14 m 太陽電池パネルと Philae ランダー。",
-      "where": "飛行 + 探査"
-    },
-    "/images/colophon/craft-ulysses_webp": {
-      "title": "Ulysses",
-      "what": "RTG 駆動型太陽極地プローブ（シングルディッシュ付き）。",
-      "where": "飛行 + 探査"
-    },
-    "/images/colophon/craft-vega-1_webp": {
-      "title": "ベガ",
-      "what": "ソビエト金星フライバイ + バルーンマザークラフト（操舵可能なディッシュ付き）。",
-      "where": "飛行 + 探査"
-    },
-    "/images/colophon/craft-venera-13_webp": {
-      "title": "Venera 13",
-      "what": "ソビエト金星ランダー — トロイダル・エアロブレーキとランディングリング。",
-      "where": "飛行 + 探査"
+      "where": "飛行 · 打上げ + 巡航"
     },
     "/images/colophon/model-launcher-generic_webp": {
       "title": "汎用ランチャー",
@@ -1547,16 +1494,6 @@
       "what": "Blue Originの背の高いランダー—中央タンクを4脚フレームで支持。",
       "where": "飛行・往路/接近"
     },
-    "/images/colophon/model-cruise-hayabusa1_webp": {
-      "title": "はやぶさ往路",
-      "what": "JAXA試料回収バス—太陽電池翼、サンプラー・ホルン、イオンエンジン。",
-      "where": "飛行・往路/接近"
-    },
-    "/images/colophon/model-cruise-osiris-rex_webp": {
-      "title": "OSIRIS-REx往路",
-      "what": "箱形バスにV字型太陽電池翼と、拡張したTAGSAMサンプラー・アーム。",
-      "where": "飛行・往路/接近"
-    },
     "/images/colophon/model-cruise-near-shoemaker_webp": {
       "title": "NEAR Shoemaker",
       "what": "オービタ・バスで十字配置の4枚の固定太陽電池パネルと固定アンテナ。",
@@ -1644,193 +1581,193 @@
     },
     "/images/colophon/model-launcher-long-march-3a_webp": {
       "title": "Long March 3A",
-      "what": "開放トラスの上でホットステージングするコアと2段目、その上に低温第3段と直径3.35 mのフェアリング。ストラップオンなし（Chang’e 1）。",
+      "what": "コアと第2段をホットステージングで結合し、開放トラスの上に極低温の第3段と直径3.35 mのフェアリングを載せた構成。ストラップオンなし（Chang'e 1）。",
       "where": "飛行 · 打上げ/上昇"
     },
     "/images/colophon/model-launcher-long-march-7_webp": {
       "title": "Long March 7",
-      "what": "CALTの直径3.35 mの灯油ロケット。Tianzhou貨物船を打ち上げる — コア、2段目、2.25 mのストラップオン・ブースター4基。",
+      "what": "CALTの直径3.35 mの灯油ロケットで、Tianzhou補給船用 — コア、第2段、直径2.25 mのストラップオンブースター4基からなる。",
       "where": "飛行 · 打上げ/上昇"
     },
     "/images/colophon/model-launcher-delta-ii_webp": {
       "title": "Delta II",
-      "what": "Thor由来のターコイズの1段目を白い固体ブースター9基が囲み、くびれのある2.9 mのフェアリングを載せる。",
+      "what": "トール由来の青緑色の第1段を9基の白い固体ブースターが囲み、ボートテール形の直径2.9 mフェアリングを載せている。",
       "where": "飛行 · 打上げ/上昇"
     },
     "/images/colophon/model-launcher-atlas-centaur_webp": {
       "title": "Atlas-Centaur",
-      "what": "鋼製バルーンタンクの1.5段式Atlasに、白いCentaur上段とフェアリング（Mariner 9・10、Pioneer 10・11）。",
+      "what": "スチールバルーン式のAtlas段半（ステージ・アンド・ハーフ）の上に、白いCentaur上段とノーズフェアリングを載せた構成（Mariner 9・10、Pioneer 10・11）。",
       "where": "飛行 · 打上げ/上昇"
     },
     "/images/colophon/model-launcher-atlas-agena_webp": {
       "title": "Atlas-Agena",
-      "what": "同じAtlasに、細身のAgena D上段と小さなシュラウド（Mariner 4）。",
+      "what": "同じAtlasの上に、細身のAgena D上段と小さなシュラウドを載せた構成（Mariner 4）。",
       "where": "飛行 · 打上げ/上昇"
     },
     "/images/colophon/model-launcher-titan-ii-g_webp": {
       "title": "Titan II(23)G",
-      "what": "Titanのコア2段に、ペイロード・フェアリング（Clementine）。",
+      "what": "Titanのコア段2段にペイロードフェアリングを載せた構成（Clementine）。",
       "where": "飛行 · 打上げ/上昇"
     },
     "/images/colophon/model-launcher-titan-iiie-centaur_webp": {
       "title": "Titan IIIE-Centaur",
-      "what": "5分割の固体ブースター2基を付けたTitanコアに、段間部とフェアリング内のCentaur（Viking、Voyager）。",
+      "what": "Titanのコアに5セグメントの固体ブースター2基を付け、インターステージとシュラウド内のCentaurを載せた構成（Viking、Voyager）。",
       "where": "飛行 · 打上げ/上昇"
     },
     "/images/colophon/model-launcher-titan-ivb-centaur_webp": {
       "title": "Titan IVB-Centaur",
-      "what": "長い固体モーター2基を付けたTitanコアに、Centaurを包む20 mのフェアリング（Cassini）。",
+      "what": "Titanのコアに長い固体モーター2基を付け、Centaurを覆う全長20 mのフェアリングを載せた構成（Cassini）。",
       "where": "飛行 · 打上げ/上昇"
     },
     "/images/colophon/model-launcher-falcon-heavy_webp": {
       "title": "Falcon Heavy",
-      "what": "Falcon 9のコア3本を並べた構成 — 側面ブースターはノーズコーン、グリッドフィン、着陸脚付き、中央コアに上段とフェアリング。",
+      "what": "Falcon 9のコア3基を並べた構成 — 側面のブースターにはノーズコーン、グリッドフィン、脚があり、中央のコアが上段とフェアリングを担う。",
       "where": "飛行 · 打上げ/上昇"
     },
     "/images/colophon/model-launcher-athena-ii_webp": {
       "title": "Athena II",
-      "what": "全段固体のスタック — Castor 120が2段、第3段、先細りのフェアリング（Lunar Prospector）。",
+      "what": "全段固体のスタック — Castor 120を2段、第3段、先細りのフェアリング（Lunar Prospector）。",
       "where": "飛行 · 打上げ/上昇"
     },
     "/images/colophon/model-launcher-delta-iv-heavy_webp": {
       "title": "Delta IV Heavy",
-      "what": "共通ブースター・コア3本が横並びで、中央に低温上段と19 mのフェアリングを載せる（Parker Solar Probe）。",
+      "what": "共通ブースターコア3基を横に並べ、中央のコアが極低温の上段と全長19 mのフェアリングを担う（Parker Solar Probe）。",
       "where": "飛行 · 打上げ/上昇"
     },
     "/images/colophon/model-launcher-new-glenn_webp": {
       "title": "New Glenn",
-      "what": "直径7 mの1本柱 — エンジン7基と着陸脚・尾翼を持つ1段目に、7 mのオジャイブ型フェアリング（Blue Moon MK1）。",
+      "what": "直径7 mの1本の棒のような機体 — 7基のエンジンを持つ第1段（脚とストレーキ付き）の上に、直径7 mのオジーブ形フェアリング（Blue Moon MK1）。",
       "where": "飛行 · 打上げ/上昇"
     },
     "/images/colophon/model-launcher-proton-m-briz-m_webp": {
       "title": "Proton-M / Briz-M",
-      "what": "中央コアを6本の外付け燃料タンクが囲み、さらに2段とBriz-M上段、4.35 mのフェアリング。",
+      "what": "中央のコアを6本の外側燃料タンクが囲み、さらに2段とBriz-M上段を重ねて、直径4.35 mのフェアリングで覆った構成。",
       "where": "飛行 · 打上げ/上昇"
     },
     "/images/colophon/model-launcher-sls-block-1_webp": {
       "title": "SLS Block 1",
-      "what": "RS-25を4基備えたオレンジ色のフォーム製コア段、白い5分割ブースター2基、段間アダプターと上段、その上にOrionと脱出塔（Artemis）。",
+      "what": "RS-25を4基備えたオレンジ色の発泡断熱コア段、白い5セグメント固体ブースター2基、段間アダプターと上段、その上にOrionと脱出タワー（Artemis）。",
       "where": "飛行 · 打上げ/上昇"
     },
     "/images/colophon/model-launcher-molniya-m_webp": {
       "title": "Molniya-M",
-      "what": "4段式R-7 — トラス上のBlok I、脱出段Blok L、円筒と円錐のシュラウド内の探査機（Luna 9、Luna 10）。",
+      "what": "4段構成のR-7 — 格子構造に載ったBlok I、Blok L脱出段、円筒と円錐のシュラウドに収めた探査機（Luna 9、Luna 10）。",
       "where": "飛行 · 打上げ/上昇"
     },
     "/images/colophon/model-launcher-soyuz-fg-fregat_webp": {
       "title": "Soyuz-FG / Fregat",
-      "what": "R-7とその上段の上に、ずんぐりしたFregatと探査機を載せ、より太いシュラウドで覆う（Mars Express）。",
+      "what": "R-7とその上段の上に、背の低いFregatと、より幅広のシュラウドに収めた探査機を載せた構成（Mars Express）。",
       "where": "飛行 · 打上げ/上昇"
     },
     "/images/colophon/model-launcher-sputnik-8k71ps_webp": {
       "title": "Sputnik 8K71PS",
-      "what": "Sputnik 1を打ち上げた2段式R-7 — 第3段はなく、衛星はコアのノーズコーンの下に収まる。",
+      "what": "Sputnik 1を打ち上げた2段式R-7 — 第3段はなく、衛星はコアのノーズコーンの下に収められている。",
       "where": "飛行 · 打上げ/上昇"
     },
     "/images/colophon/model-launcher-soyuz-2_webp": {
       "title": "Soyuz-2",
-      "what": "全長46.3 mの改良型R-7 — コアの周りに4基のブースター、開放トラス上の上段、長いフェアリング。",
+      "what": "近代化された全長46.3 mのR-7 — コアの周りに4基のブースター、開放トラス上の上段、長いフェアリング。",
       "where": "飛行 · 打上げ/上昇"
     },
     "/images/colophon/model-launcher-antares_webp": {
       "title": "Antares 230+",
-      "what": "Northrop GrummanのCygnus用ロケット — RD-181を2基備えた直径3.9 mの灯油1段目に、固体2段目とフェアリング。",
+      "what": "Northrop GrummanのCygnus用ロケット — RD-181を2基備えた直径3.9 mの灯油第1段の上に、固体の第2段とフェアリング。",
       "where": "飛行 · 打上げ/上昇"
     },
     "/images/colophon/model-launcher-ariane-6_webp": {
       "title": "Ariane 6",
-      "what": "欧州の直径5.4 m極低温コアとVinci上段に20 mのフェアリング、固体ブースター4基（A64）。",
+      "what": "欧州の直径5.4 mの極低温コアとVinci上段に、全長20 mのフェアリングと4基の固体ブースター（A64）。",
       "where": "飛行 · 打上げ/上昇"
     },
     "/images/colophon/model-launcher-vulcan_webp": {
       "title": "Vulcan Centaur",
-      "what": "ULAのBE-4を2基備えた直径5.4 mのメタン1段目、Centaur V、5.4 mのフェアリング、GEM 63XL固体ブースター。",
+      "what": "ULAの直径5.4 mのメタン第1段（BE-4を2基）に、Centaur Vと直径5.4 mのフェアリング、GEM 63XL固体ブースターを備える。",
       "where": "飛行 · 打上げ/上昇"
     },
     "/images/colophon/model-launcher-energia_webp": {
       "title": "Energia–Buran",
-      "what": "直径7.75 mの水素コアにRD-170ストラップオン4基、側面にBuranオービターを背負う。",
+      "what": "直径7.75 mの水素コアに4基のRD-170ストラップオンを付け、側面にBuran軌道船を載せた構成。",
       "where": "飛行 · 打上げ/上昇"
     },
     "/images/colophon/model-launcher-n1_webp": {
       "title": "N1",
-      "what": "ソ連の月ロケット — 円錐状に積んだ5段、1段目にエンジン30基、その上にL3シュラウドと脱出塔。",
+      "what": "ソ連の月ロケット — 円錐状に重ねた5段、第1段に30基のエンジン、その上にL3シュラウドと脱出タワー。",
       "where": "飛行 · 打上げ/上昇"
     },
     "/images/colophon/model-showcase-soyuz-7k-ok_webp": {
       "title": "Soyuz 7K-OK",
-      "what": "第1世代のSoyuz、全長7.95 m — 軌道・帰還・機械の各モジュール、9.8 mの太陽電池翼、Igla会合アンテナ。",
-      "where": "フリート · 実寸比較"
+      "what": "全長7.95 mの第1世代Soyuz — 軌道モジュール、降下モジュール、サービスモジュール、全幅9.8 mの太陽電池翼、Igla ランデブー用アンテナ。",
+      "where": "フリート · 実寸比較 + 飛行"
     },
     "/images/colophon/model-showcase-soyuz-ms_webp": {
       "title": "Soyuz T / TM / TMA / MS（4型）",
-      "what": "全長7.48 mのSoyuzを4世代にわたって — T型はIglaアンテナ、TMとTMAはKurs、MS型はKurs-NAと微小隕石防護シールド。",
+      "what": "全長7.48 mのSoyuzを4世代にわたって — T型はIglaアンテナ、TMとTMAはKurs、MS型はKurs-NAとマイクロメテオロイド防護シールド。",
       "where": "フリート · 実寸比較"
     },
     "/images/colophon/model-showcase-crew-dragon_webp": {
       "title": "Crew Dragon",
-      "what": "全長8.1 mのカプセルとトランクの組み合わせ。窓、SuperDracoポッド、太陽電池付きのトランク。",
-      "where": "フリート · 実寸比較"
+      "what": "全長8.1 mのカプセルとトランクの組み合わせ — 台形のハッチ、4つの窓、SuperDracoのベイを備えた白いガムドロップ形のカプセルが暗色のPICA-X熱シールドの上に載り、巻き付けた電池パッチと2枚のラジエーターフィンを持つトランクの上、ヒンジ式の白いノーズコーンの下に収まる。",
+      "where": "フリート · 実寸比較 + 飛行"
     },
     "/images/colophon/model-showcase-starliner_webp": {
       "title": "Starliner (CST-100)",
-      "what": "Boeingの5.03 mのカプセルとサービスモジュール — 青い帯とスラスターポッド。",
+      "what": "Boeingの全長5.03 mのカプセルとサービスモジュール — 青いストライプとNASAロゴを付けた白銀色の幅広く低い円錐が、4基のドッグハウス形スラスターポッドを備えたドラムの上に載る。",
       "where": "フリート · 実寸比較"
     },
     "/images/colophon/model-showcase-gaganyaan_webp": {
       "title": "Gaganyaan",
-      "what": "ISROの全長5.58 mの有人モジュールとサービスモジュール、展開式の太陽電池翼付き。",
+      "what": "ISROの全長5.58 mの乗員モジュールとサービスモジュール — 銅褐色のテープで覆った鈍い白色の円錐に台形のハッチと3つの舷窓があり、金色の箔で覆い2枚の太陽電池翼を持つドラムの上に載る。",
       "where": "フリート · 実寸比較"
     },
     "/images/colophon/model-showcase-orion_webp": {
       "title": "Orion",
-      "what": "全長7.9 mのArtemis有人モジュールと欧州サービスモジュール、太陽電池パドル付き。",
+      "what": "全長7.9 mのArtemisのスタック — 白いタイル張りの乗員モジュールが暗色の熱シールドの上に載り、4枚のX字翼の太陽電池パドルを持つ欧州サービスモジュール、その下に宇宙船アダプターリング。",
       "where": "フリート · 実寸比較"
     },
     "/images/colophon/model-showcase-new-shepard_webp": {
       "title": "New Shepard",
-      "what": "全長19.2 mの弾道飛行機 — 直径3.8 mのブースターの上に、大きな窓を持つ乗員カプセル。",
+      "what": "発射台上の全長19.2 mの弾道飛行機体 — 黒いエンジンスカート、青い帯、リングフィン、3枚の尾翼、4本の脚を持つ白いブースターの上に、6つの大きな窓を持つ乗員カプセル。",
       "where": "フリート · 実寸比較"
     },
     "/images/colophon/model-showcase-apollo-csm-block-ii_webp": {
       "title": "Apollo CSM Block I / II（2型）",
-      "what": "全長10.6 mと11 mの司令・機械船 — 円筒形の機械船の上に円錐形の司令船、エンジンノズル付き。",
-      "where": "フリート · 実寸比較"
+      "what": "全長10.6 mと11 mの司令・機械船 — 反射する銀色で5つの窓を持つ円錐（Block IIにはドッキングプローブ付き）が、白いラジエーター、RCSクアッド、エンジンベルを備えた磨かれたアルミ地の機械船の上に載る。",
+      "where": "フリート · 実寸比較 + 飛行"
     },
     "/images/colophon/model-showcase-shenzhou_webp": {
       "title": "Shenzhou",
-      "what": "全長9.25 m、Soyuzの系譜をひく中国の3モジュール宇宙船 — 軌道・帰還・推進の各モジュールと太陽電池翼。",
-      "where": "フリート · 実寸比較"
+      "what": "Soyuzの系譜を引く中国の全長9.25 mの3モジュール宇宙船 — キルティング状の銀色の軌道モジュール、暗色のアブレーション底面を持つ釣り鐘形の帰還モジュール、栗色のスカート、オレンジ色のスラスターブロック、2枚の翼を持つ白いサービスモジュール。",
+      "where": "フリート · 実寸比較 + 飛行"
     },
     "/images/colophon/model-showcase-space-shuttle-orbiter_webp": {
       "title": "Space Shuttleオービター",
-      "what": "全長37.2 mのオービターを、4機の姉妹 — Atlantis、Challenger、Discovery、Endeavour — に共通の1つとして描き、滑走路に横たえる。",
-      "where": "フリート · 実寸比較"
+      "what": "姉妹機4機 — Atlantis、Challenger、Discovery、Endeavour — を代表して1機だけ描いた全長37.2 mのオービター。ペイロードベイドアのある白い機体上面、黒いタイルの腹面、強化炭素の縁を持つ二重デルタ翼、OMSポッド、3基のメインエンジンを備え、滑走路に横たわる。",
+      "where": "フリート · 実寸比較 + 飛行"
     },
     "/images/colophon/model-showcase-columbia_webp": {
       "title": "Space Shuttle Columbia",
-      "what": "最初のオービター — 黒い縁を持つ唯一の機体で、垂直尾翼に計測ポッドを載せる。",
-      "where": "フリート · 実寸比較"
+      "what": "最初のオービター — 翼上面に黒いシャインを持つ唯一の機体で、尾翼に計器ポッドがある。",
+      "where": "フリート · 実寸比較 + 飛行"
     },
     "/images/colophon/model-showcase-enterprise_webp": {
       "title": "Space Shuttle Enterprise",
-      "what": "大気圏試験用オービター — 主エンジンもOMSポッドもなく、タイルは模擬品。",
+      "what": "大気圏内試験用オービター — 実際に飛行したタイルと炭素の代わりに、発泡材と塗料の炭色の模擬タイルと、無塗装の白いグラスファイバー製の翼縁。",
       "where": "フリート · 実寸比較"
     },
     "/images/colophon/model-showcase-buran_webp": {
       "title": "Buran",
-      "what": "ソ連のオービター、全長36.4 m — 翼幅24 mのダブルデルタ翼で、主エンジンはEnergiaのコアに残した。",
+      "what": "全長36.4 mのソ連のオービター — 24 mの二重デルタ翼と、尾部の2基のOMSノズル。メインエンジンはEnergiaのコアに残される。",
       "where": "フリート · 実寸比較"
     },
     "/images/colophon/model-showcase-buran-ok-gli_webp": {
       "title": "Buran OK-GLI",
-      "what": "Buranの形状と質量を持つ大気圏試験機 — 後部にAL-31ターボファン4基。",
+      "what": "Buranと同じ形状と質量の大気圏内試験機 — タイルなしで白と灰色に塗装され、ジェットエンジンを垂直尾翼の付け根の両側にあるナセルに収める。",
       "where": "フリート · 実寸比較"
     },
     "/images/colophon/model-showcase-x37b_webp": {
       "title": "X-37B",
-      "what": "米宇宙軍の全長8.92 mの無人スペースプレーン、翼幅4.55 m。",
-      "where": "フリート · 実寸比較"
+      "what": "米宇宙軍の全長8.92 m、翼幅4.55 mの無人スペースプレーン — 黒いタイル張りの下面と機首、傾斜した尾翼、閉じたベイドア。",
+      "where": "フリート · 実寸比較 + 飛行"
     },
     "/images/colophon/model-showcase-progress-ms_webp": {
       "title": "Progress 7K-TG / M / MS（3型）",
@@ -1839,42 +1776,42 @@
     },
     "/images/colophon/model-showcase-cargo-dragon-2_webp": {
       "title": "Cargo Dragon 2",
-      "what": "窓のない無人のDragon 2と全長8.1 mのトランク — ISSの貨物船。",
+      "what": "全長8.1 mのトランクに載った窓のない無人のDragon 2 — 有人型の窓とSuperDracoのベイがある位置にカバープレートが付く。",
       "where": "フリート · 実寸比較"
     },
     "/images/colophon/model-showcase-cargo-dragon-v1_webp": {
       "title": "Dragon 1",
-      "what": "最初の全長6.1 mの貨物版Dragon — 直径3.7 mのカプセルとトランク、2枚の太陽電池パネル。",
+      "what": "初代の全長6.1 mの貨物Dragon — 直径3.7 mの背の低いカプセルに4基のDracoクアッドと白いノーズコーンを備え、全長2.3 mのトランクに2枚の太陽電池翼。",
       "where": "フリート · 実寸比較"
     },
     "/images/colophon/model-showcase-cygnus-enhanced_webp": {
       "title": "Cygnus Standard / Enhanced（2型）",
-      "what": "Northrop Grummanの補給船、全長5.14 mと6.39 m — サービスモジュールの上に与圧貨物モジュール、円形の太陽電池パネル。",
+      "what": "Northrop Grummanの補給船、全長5.14 mと6.39 m — ポケット状パネルの素のアルミ貨物モジュールが、金と銀のサービスモジュールの上に載り、Standardは平らな長方形の翼、Enhancedは円形のUltraFlexパドル。",
       "where": "フリート · 実寸比較"
     },
     "/images/colophon/model-showcase-htv_webp": {
       "title": "HTV (Kounotori)",
-      "what": "日本の全長9.8 mの補給船 — サービス部の上に与圧モジュールと曝露パレット。",
+      "what": "日本の全長9.8 mの宇宙ステーション補給機 — 白い推進モジュール、銀色の電子機器区画、開放型パレットベイ、暗色の機体搭載太陽電池を持つ白い与圧キャリア。",
       "where": "フリート · 実寸比較"
     },
     "/images/colophon/model-showcase-htv-x_webp": {
       "title": "HTV-X",
-      "what": "日本の後継補給船、全長8 m — サービスモジュールの上に与圧貨物モジュール、太陽電池翼付き。",
+      "what": "日本の後継の全長8 mの補給機 — 金色のブランケットで覆った与圧モジュール、開放型の貨物支持デッキ、銀色のサービスモジュール、細長いパドル2枚。",
       "where": "フリート · 実寸比較"
     },
     "/images/colophon/model-showcase-atv_webp": {
       "title": "ATV",
-      "what": "ESAの全長10.3 mの欧州補給機 — 円筒形の貨物船で、X字形の太陽電池翼4枚。",
+      "what": "ESAの全長10.3 mの欧州補給機ATV — 4基のエンジンを持つ金色の後部円錐が、キルティング状の白い貨物キャリアとドッキングリングの下にあり、銅色の縁取りの4枚の翼がX字に広がる。",
       "where": "フリート · 実寸比較"
     },
     "/images/colophon/model-showcase-tianzhou_webp": {
       "title": "Tianzhou",
-      "what": "中国の全長10.6 mの貨物船 — サービスモジュールの上の長い貨物モジュールと太陽電池翼。",
+      "what": "中国の全長10.6 mの貨物船 — オレンジ色のスラスターブロックを持つ白い推進ドラム、より大きな灰白色の貨物モジュール、中継アンテナ、2枚の大きな翼。",
       "where": "フリート · 実寸比較"
     },
     "/images/colophon/model-lineup-launchers_webp": {
       "title": "ロケットの実寸比較",
-      "what": "モデルを持つすべてのロケットを、StarshipからMercury-Redstoneまで、実際の高さで横に並べ、1.75 mの人物と比較。",
+      "what": "モデルを持つすべてのロケットを、StarshipからMercury-Redstoneまで、実際の高さで横に並べ、1.75 mの人物の隣に立たせた。",
       "where": "フリート · 実寸比較"
     },
     "/images/colophon/model-lineup-spacecraft_webp": {
@@ -1884,235 +1821,548 @@
     },
     "/images/colophon/model-lineup-landmarks_webp": {
       "title": "名所の実寸比較",
-      "what": "16の名所とアイコンを、裏付けのある高さで手描き — エッフェル塔と自由の女神からミケランジェロのダビデ像、ロンドンのルートマスター、フォルクスワーゲン・ビートルまで。",
+      "what": "16の名所とアイコンを、裏付けのある高さで手描き — エッフェル塔と自由の女神からミケランジェロのダビデ像、ロンドンのルートマスターとVWビートルまで。",
       "where": "フリート · 実寸比較"
     },
     "/images/colophon/model-lineup-cast_webp": {
       "title": "カートゥーンの登場人物",
-      "what": "実寸で描いたベタ塗りの登場人物 — 男性、女性、子ども、犬、猫、兵馬俑、ジャイアントパンダ、ヒグマ、キリン、ゾウ — を機体の間に配置。",
+      "what": "実寸で描いたベタ塗りの登場人物 — 男性、女性、子ども、犬、猫、兵馬俑、ジャイアントパンダ、ヒグマ、キリン、ゾウ — を、機体の間に並べた。",
       "where": "フリート · 実寸比較"
     },
     "/images/colophon/model-showcase-parker-solar-probe_webp": {
       "title": "Parker Solar Probe",
-      "what": "全長3 mの太陽接近探査機 — 細身のバスの上に直径2.3 mの炭素複合材の熱シールド、冷却式の小型太陽電池パドル2枚。",
-      "where": "飛行・探査"
+      "what": "全長3 mの太陽すれすれの探査機 — 金色のブランケットで覆った本体の上に、支柱に載った直径2.3 mの炭素複合材の熱シールド、小型の能動冷却式太陽電池パドル2枚、直径0.6 mのアンテナ。",
+      "where": "フリート · 機体ページ + 飛行"
     },
     "/images/colophon/model-showcase-solar-orbiter_webp": {
       "title": "Solar Orbiter",
-      "what": "ESAの全長3.1 mの太陽観測機 — 太陽側の熱シールド、全幅18 mの太陽電池パネル6枚、長さ4.4 mの観測機器ブーム。",
-      "where": "飛行・探査"
+      "what": "ESAの全長3.1 mの太陽観測機 — 観測窓の扉を持つ層状の黒い熱シールドが、銀色のブランケットで覆った本体の前にあり、全幅18 mの太陽電池パネル6枚、全長4.4 mの観測機器ブーム、日陰側の直径1.5 mのアンテナ。",
+      "where": "フリート · 機体ページ + 飛行"
     },
     "/images/colophon/model-showcase-messenger_webp": {
       "title": "MESSENGER",
-      "what": "高さ2.5 mのセラミック布製サンシェードの陰に入る水星周回機。太陽電池パドル2枚と長さ3.6 mの磁力計ブーム付き。",
-      "where": "飛行・探査"
+      "what": "直径2.5 mのセラミック布製サンシェードの背後の水星周回機 — 推進剤タンクが見えるブランケット張りの箱形バス、回転可能な太陽電池パドル2枚、全長3.6 mの磁力計ブーム。",
+      "where": "フリート · 機体ページ + 飛行"
     },
     "/images/colophon/model-showcase-magellan_webp": {
       "title": "Magellan",
-      "what": "全長6.4 mの金星レーダー地図作成機 — 10角形のバス、Star 48Bモーター、直径3.7 mの高利得アンテナ。",
-      "where": "飛行・探査"
+      "what": "全長6.4 mの金星レーダー地図作成機 — 十角形のバスの下にStar 48Bモーター、金色のブランケットで覆った機器モジュール、直径3.7 mの高利得アンテナ、正方形の太陽電池パネル2枚。",
+      "where": "フリート · 機体ページ + 飛行"
     },
     "/images/colophon/model-showcase-akatsuki_webp": {
       "title": "あかつき",
-      "what": "JAXAの高さ1.45 mの箱形金星周回機。太陽電池パドル2枚と平面型フェーズドアレイアンテナ付き。",
-      "where": "飛行・探査"
+      "what": "JAXAの全長1.45 mの金色ブランケットで覆った箱形の金星周回機 — 金星側にカメラデッキ、平らなフェーズドアレイアンテナ、白いスラスターカップ、各2枚重ねのパネルを持つパドル2組。",
+      "where": "フリート · 機体ページ + 飛行"
     },
     "/images/colophon/model-showcase-dart_webp": {
       "title": "DART",
-      "what": "全長2.6 mの小惑星衝突機 — 8.5 mの太陽電池パドル2枚、NEXT-Cイオンエンジン、DRACOカメラ。",
-      "where": "飛行・探査"
+      "what": "全長2.6 mの小惑星衝突探査機 — 8.5 × 2.4 mの巻き出し式太陽電池パドル2枚、NEXT-Cイオンエンジン、DRACOカメラ、ディスペンサー内のLICIACubeキューブサット、平板アンテナ。",
+      "where": "フリート · 機体ページ + 飛行"
     },
     "/images/colophon/model-showcase-lucy_webp": {
       "title": "Lucy",
-      "what": "トロヤ群小惑星探査機。両端で16 m — 直径約7 mの円形太陽電池パドル2枚と直径2 mの高利得アンテナ。",
-      "where": "飛行・探査"
+      "what": "トロヤ群小惑星探査機で、翼端間16 m — 直径約7 mの円形太陽電池パドル2枚、直径2 mの高利得アンテナ、終端追尾カメラを持つ観測機器プラットフォーム。",
+      "where": "フリート · 機体ページ + 飛行"
     },
     "/images/colophon/model-showcase-psyche-spacecraft_webp": {
       "title": "Psyche",
-      "what": "金属小惑星の周回機 — 全高7.3 m、展開時25 mの太陽電池パドルと長さ2 mの観測機器ブーム。",
-      "where": "飛行・探査"
+      "what": "金属小惑星の周回機 — 全長7.3 mで、5枚パネルの十字形太陽電池パドル2組（展開時25 m）、2 × 2に並べた4基のホールスラスター、全長2 mの観測機器ブーム。",
+      "where": "フリート · 機体ページ + 飛行"
     },
     "/images/colophon/model-showcase-europa-clipper_webp": {
       "title": "Europa Clipper",
-      "what": "木星の衛星を巡る全高5 mの周回機。30.5 mの太陽電池パドル、直径3.1 mの高利得アンテナ、長さ8.5 mの磁力計ブーム付き。",
-      "where": "飛行・探査"
+      "what": "全長5 mの木星衛星周回機 — 直径3.1 mのアンテナの下に推進モジュールと放射線シールド室、REASONレーダーのダイポールを載せた全長30.5 mの太陽電池パドル、全長8.5 mの磁力計ブーム。",
+      "where": "フリート · 機体ページ + 飛行"
     },
     "/images/colophon/model-showcase-mars-express_webp": {
       "title": "Mars Express",
-      "what": "ESAの高さ1.8 mの箱形バス。長さ2.5 mの太陽電池翼2枚（両端で約12 m）と直径1.6 mの高利得アンテナ付き。",
-      "where": "飛行・探査"
+      "what": "ESAの全長1.8 mの箱形バス — 角に金色のブランケット、天底面に観測機器、細いパネル4枚の翼2組、直径1.6 mの高利得アンテナ。",
+      "where": "フリート · 機体ページ + 飛行"
     },
     "/images/colophon/model-showcase-maven_webp": {
       "title": "MAVEN",
-      "what": "NASAの全高3.47 mの火星大気周回機 — 2.3 mの立方体バス、先端に磁力計を備えたガルウィング形の太陽電池パドル2枚、直径2 mのアンテナ。",
-      "where": "飛行・探査"
+      "what": "NASAの全長3.47 mの火星大気周回機 — 一辺2.3 mの立方体バス、ブーム上の観測機器プラットフォーム、先端に磁力計を持つガルウィング形の太陽電池パドル2枚、直径2 mのアンテナ。",
+      "where": "フリート · 機体ページ + 飛行"
     },
     "/images/colophon/model-showcase-mangalyaan_webp": {
       "title": "Mangalyaan",
-      "what": "ISROのMars Orbiter Mission（火星周回機）— 金色に包まれた1.5 mの立方体、3枚構成の太陽電池パドルと直径2.2 mの反射鏡。",
-      "where": "飛行・探査"
+      "what": "ISROの火星周回機ミッション — 金色の箔を巻いた一辺1.5 mの立方体で、上部に推進剤タンクのドーム、ブーム上の3枚パネルのパドル、反対側に直径2.2 mの反射鏡。",
+      "where": "フリート · 機体ページ + 飛行"
     },
     "/images/colophon/model-showcase-hope_webp": {
       "title": "Hope",
-      "what": "UAEのEmirates Mars Mission周回機 — 全長2.9 mの六角形バス、太陽電池翼2枚と直径1.85 mのアンテナ。",
-      "where": "飛行・探査"
+      "what": "UAEのEmirates Mars Mission周回機 — 全長2.9 mのバスで、前面に科学デッキ、3枚パネルの翼2組、トラス状ブラケット上の直径1.85 mのアンテナ。",
+      "where": "フリート · 機体ページ + 飛行"
     },
     "/images/colophon/model-showcase-mariner-9_webp": {
       "title": "Mariner 4・9・10（3型）",
-      "what": "NASAの八角形Marinerシリーズ — Mariner 4と9は先端に羽根を持つ太陽電池パネル4枚、Mariner 10はパネル2枚とサンシェード、長さ5.8 mの磁力計ブーム。",
-      "where": "飛行・探査"
+      "what": "NASAの八角形のMarinerシリーズ — Mariner 4と9は先端に羽根を持つパネル4枚（Mariner 9は箔で覆った推進モジュール付き）。Mariner 10はパネル2枚、サンシェード、全長5.8 mの磁力計ブーム。",
+      "where": "フリート · 機体ページ + 飛行"
     },
     "/images/colophon/model-showcase-lro_webp": {
       "title": "Lunar Reconnaissance Orbiter",
-      "what": "NASAの全高3.9 mの月地図作成機 — 箱形バスと10.7 m²の太陽電池パドル1枚、可動式アンテナ。",
-      "where": "飛行・探査"
+      "what": "NASAの全長3.9 mの月地図作成機 — 金と銀のブランケットで覆った箱形バスで、天底面にLROCカメラ2台、LOLA、Diviner、Mini-RF、ブーム上に10.7 m²の太陽電池パドル1枚、可動式アンテナ。",
+      "where": "フリート · 機体ページ + 飛行"
     },
     "/images/colophon/model-showcase-skylab_webp": {
       "title": "Skylab",
-      "what": "アメリカ初の宇宙ステーション — 軌道ワークショップ、エアロックとドッキングアダプター、パネルの風車を備えた太陽望遠鏡マウント、サンシェード。",
-      "where": "飛行・探査"
-    },
-    "/images/colophon/model-probe-clementine_webp": {
-      "title": "Clementine・SMART-1・Chang’e 1・Chandrayaan-1（4型）",
-      "what": "箱形バスのひとつの作り方を4つの大きさで — Clementineの1.9 mバス、SMART-1の1 m立方体、Chang’e 1、金色に包まれたChandrayaan-1。それぞれ固有の太陽電池翼とアンテナ付き。",
-      "where": "飛行・探査"
-    },
-    "/images/colophon/model-probe-lunar-prospector_webp": {
-      "title": "Lunar Prospector",
-      "what": "太陽電池セルで覆われた直径1.36 mのドラムと、長さ2.5 mの観測機器ブーム3本。",
-      "where": "飛行・探査"
-    },
-    "/images/colophon/model-probe-luna-10_webp": {
-      "title": "Luna 10",
-      "what": "ソ連の全長1.5 mの与圧円筒 — アンテナ4本とブーム1本付き。月を周回した最初の探査機。",
-      "where": "飛行・探査"
+      "what": "修理後の米国初の宇宙ステーション — 黒いスカートの軌道ワークショップに1枚の翼と金色のパラソル、エアロックとドッキングアダプター、4枚羽根の風車状パネルを広げたApollo望遠鏡マウント。",
+      "where": "フリート · 機体ページ + 飛行"
     },
     "/images/colophon/model-probe-sputnik-1_webp": {
       "title": "Sputnik 1",
-      "what": "磨き上げた直径58 cmの球体。半球の継ぎ目、36本のボルト、後方へ傾いた長さ2.4 mと2.9 mのホイップアンテナ4本。",
-      "where": "飛行・探査"
+      "what": "磨き上げた直径58 cmの球体 — 半球の継ぎ目、36本のボルト、後方へ傾いた長さ2.4 mと2.9 mのホイップアンテナ4本。",
+      "where": "飛行"
     },
     "/images/colophon/model-pad-apollo-lut_webp": {
-      "title": "発射台：アポロ、LC-39",
-      "what": "サターン V の発射台：離昇時に外れるスイングアームを備えた高さ 380 フィートのアンビリカルタワーと、フレームトレンチ。寸法はウィキペディア掲載の NASA の数値による。",
+      "title": "発射台：Apollo、LC-39",
+      "what": "サターン Vの発射台：離昇時に外れるスイングアームを備えた高さ380フィートのアンビリカルタワーと、フレームトレンチ。寸法はウィキペディア掲載のNASAの数値による。",
       "where": "飛行 · 発射台"
     },
     "/images/colophon/model-pad-shuttle_webp": {
-      "title": "発射台：スペースシャトル、LC-39",
-      "what": "シャトルの発射台：固定式サービス構造物（マスト込みで 350 フィート）、後ろへ回した回転式サービス構造物、高さ 290 フィートの給水塔。主な高さはウィキペディアによる。その他は概算。",
+      "title": "発射台：Space Shuttle、LC-39",
+      "what": "シャトルの発射台：固定式サービス構造物（マスト込みで350フィート）、後ろへ回した回転式サービス構造物、高さ290フィートの給水塔。主な高さはウィキペディアによる。その他は概算。",
       "where": "飛行 · 発射台"
     },
     "/images/colophon/model-pad-sls_webp": {
       "title": "発射台：SLS、LC-39B",
-      "what": "アルテミスの発射台：ロケットの脇のモバイルランチャーのタワーと、3 本の高い避雷塔。大きさは概算です。",
+      "what": "アルテミスの発射台：ロケットの脇のモバイルランチャーのタワー（約108 m、NASAの数値は345〜355フィート）と、600フィート近い3本の避雷塔。",
       "where": "飛行 · 発射台"
     },
     "/images/colophon/model-pad-soyuz_webp": {
       "title": "発射台：ソユーズ、バイコヌールとプレセツク",
-      "what": "R-7 系の発射台：離昇時に外側へ倒れる 4 本の支持アーム、後退した 2 基のサービスキャビン、避雷マスト、フレームピット。大きさは概算です。",
+      "what": "R-7系の発射台：離昇時に外側へ倒れる4本の支持アーム、後退した2基のサービスキャビン、避雷マスト、フレームピット。大きさは概算。",
       "where": "飛行 · 発射台"
     },
     "/images/colophon/model-pad-proton_webp": {
       "title": "発射台：プロトン、バイコヌール",
-      "what": "離昇時に引き込まれるスイングアームを備えた固定式サービスタワー。フレームトレンチの脇。大きさは概算です。",
+      "what": "フレームピットの上にロケットだけが立つ発射台：高さ60 mのサービスタワーは打ち上げ前に約340 m後退する（RussianSpaceWeb、プロトン打ち上げ施設）。避雷マストは概算。",
       "where": "飛行 · 発射台"
     },
     "/images/colophon/model-pad-f9-39a_webp": {
       "title": "発射台：ファルコン、LC-39A",
-      "what": "39A のスペース X：離昇前に 1.5 度、離昇時に 45 度後ろへ倒れるトランスポーターエレクター、350 フィートを超えて延長された旧タワー。数値はウィキペディアによる。",
+      "what": "39AのSpaceX：離昇前に1.5度、離昇時に45度後ろへ倒れるトランスポーターエレクターと、350フィートを超えて延長された旧タワー。数値はウィキペディアによる。",
       "where": "飛行 · 発射台"
     },
     "/images/colophon/model-pad-f9-cat_webp": {
       "title": "発射台：ファルコン、SLC-40 と乗員タワー",
-      "what": "2023 年の乗員用アクセスタワー以降の SLC-40 のスペース X。離昇時に倒れて離れるトランスポーターエレクター付き。タワーの高さは概算です。",
+      "what": "2023年の乗員用アクセスタワー以降のSLC-40のSpaceX。離昇時に倒れて離れるトランスポーターエレクター付き。乗員タワーの高さは約300フィート（91 m、FAA）。",
       "where": "飛行 · 発射台"
     },
     "/images/colophon/model-pad-f9-te_webp": {
       "title": "発射台：ファルコン、SLC-40 と SLC-4E",
-      "what": "簡素なファルコンの発射台：離昇時に倒れて離れるトランスポーターエレクターと避雷マスト。大きさは概算です。",
+      "what": "簡素なファルコンの発射台：離昇時に倒れて離れるトランスポーターエレクターと避雷マスト。大きさは概算。",
       "where": "飛行 · 発射台"
     },
     "/images/colophon/model-pad-starbase_webp": {
-      "title": "発射台：スターシップ、スターベース",
-      "what": "キャッチアームを開いたスターベースの発射タワー。タワーの高さは概算です。",
+      "title": "発射台：Starship、スターベース",
+      "what": "キャッチアームを開いたスターベースの発射タワー。タワーの高さは概算。",
       "where": "飛行 · 発射台"
     },
     "/images/colophon/model-pad-atlas-v_webp": {
-      "title": "発射台：アトラス V、SLC-41",
-      "what": "ULA の発射台：移動式発射台、アンビリカルタワー、4 本の避雷塔。垂直統合棟は発射台から離れており省略。大きさは概算です。",
+      "title": "発射台：Atlas V、SLC-41",
+      "what": "ULAの発射台：移動式発射台、アンビリカルタワー、4本の避雷塔。垂直統合棟は発射台から離れており省略。大きさは概算。",
       "where": "飛行 · 発射台"
     },
     "/images/colophon/model-pad-cape-classic_webp": {
       "title": "発射台：ケープのサービスタワー式発射台",
-      "what": "ケープのアトラス、デルタ、タイタン、サターン IB の発射台：機体の脇にスイングアーム付きのアンビリカルタワー。大きさは概算です。",
+      "what": "ケープのアトラス、デルタ、タイタン、Saturn IBの発射台：機体の脇にスイングアーム付きのアンビリカルタワー。大きさは概算。",
       "where": "飛行 · 発射台"
     },
     "/images/colophon/model-pad-kourou-a5_webp": {
       "title": "発射台：アリアン 4 と 5、クールー",
-      "what": "ELA-2 と ELA-3 の発射台：ロケットの脇のアンビリカルマストと 4 本の高い避雷塔。大きさは概算です。",
+      "what": "ELA-2とELA-3の発射台：ロケットの脇のアンビリカルマストと4本の高い避雷塔。大きさは概算。",
       "where": "飛行 · 発射台"
     },
     "/images/colophon/model-pad-kourou-a6_webp": {
-      "title": "発射台：アリアン 6、クールー",
-      "what": "ELA-4 の発射台：アンビリカルマスト、2 本の避雷塔、遠く後退した移動式ガントリー。大きさは概算です。",
+      "title": "発射台：Ariane 6、クールー",
+      "what": "ELA-4の発射台：アンビリカルマスト、2本の避雷塔、遠く後退した移動式ガントリー。大きさは概算。",
       "where": "飛行 · 発射台"
     },
     "/images/colophon/model-pad-chinese-fst_webp": {
       "title": "発射台：中国のサービスタワー",
-      "what": "酒泉、西昌、文昌、太原の固定式サービスタワー。作業台は離昇時に折りたたまれる。大きさは概算です。",
+      "what": "酒泉、西昌、文昌、太原の固定式サービスタワーで、作業台は離昇時に折りたたまれる。酒泉の有人打ち上げ用タワーは89.5 mに16 mの避雷針を加えたもの（CMSE）で、酒泉のすべての打ち上げに描いている。他は概算。",
       "where": "飛行 · 発射台"
     },
     "/images/colophon/model-pad-tanegashima_webp": {
       "title": "発射台：種子島",
-      "what": "吉信の発射台：H-II ロケットのアンビリカルタワーと避雷塔。大きさは概算です。",
+      "what": "吉信の発射台：高さ65.5 mのH-II移動式ランチャーと、74.5 mの避雷塔（JAXA）。",
       "where": "飛行 · 発射台"
     },
     "/images/colophon/model-pad-sriharikota_webp": {
       "title": "発射台：シュリハリコタ",
-      "what": "ISRO の発射台：機体の脇のアンビリカルタワーと、遠く後退した移動式サービスタワー。大きさは概算です。",
+      "what": "ISROの発射台：機体の脇のアンビリカルタワーと、遠く後退した移動式サービスタワー。大きさは概算。",
       "where": "飛行 · 発射台"
-    }
-  },
-  "capsules": {
-    "/images/colophon/model-capsule-mercury-capsule_webp": {
-      "title": "マーキュリーカプセル",
-      "what": "先端的なアブレーティブ熱シールド、シングル式コーン、および回収 + アンテナセクション（Freedom 7 … Faith 7）。",
-      "where": "地球周回軌道からの帰還"
     },
-    "/images/colophon/model-capsule-gemini-capsule_webp": {
-      "title": "Geminiカプセル",
-      "what": "2座席にスケールアップされたマーキュリー、ランデブー・レーダーノーズとアダプターモジュール。",
-      "where": "地球周回再突入"
+    "/images/colophon/model-showcase-vostok_webp": {
+      "title": "Vostok・Voskhod（2型）",
+      "what": "計器モジュール上の直径2.3 mの球体で全高4.55 m（Voskhodは5 m） — 16本のオリーブ色のガスボンベを銀色のバンドで束ねた帯、ハッチと舷窓、上部のアンテナループ、Voskhodには制動ロケットパック。",
+      "where": "フリート · 実寸比較 + 飛行"
     },
-    "/images/colophon/model-capsule-vostok-sphere_webp": {
-      "title": "Vostok",
-      "what": "球形のシャリク降下モジュール—アンテナストラップと機器カラー。宇宙飛行士は別途脱出して、パラシュートで降下した。",
-      "where": "地球周回再突入"
+    "/images/colophon/model-showcase-mercury-capsule_webp": {
+      "title": "Mercury カプセル",
+      "what": "制動ロケットパックに載った全長3.3 mの1人乗りカプセル — 円錐部の台形の窓と側面ハッチ、ストラップで固定した3基の制動ロケット。",
+      "where": "フリート · 実寸比較 + 飛行"
     },
-    "/images/colophon/model-capsule-voskhod-sphere_webp": {
-      "title": "Voskhod",
-      "what": "同じシャリク球体だが、今度はストラット桁支持の固体推進軟着陸逆噴射パッケージを搭載—乗組員はそれに乗って地上に到達した。",
-      "where": "地球周回再突入"
+    "/images/colophon/model-showcase-gemini_webp": {
+      "title": "Gemini",
+      "what": "全長5.74 mの2人乗り宇宙船 — 瓦状に重なる黒い再突入円錐に2つのハッチと窓があり、その下にRCS、ランデブー、回収の各セクションと制動アダプターが続く。",
+      "where": "フリート · 実寸比較 + 飛行"
     },
-    "/images/colophon/model-capsule-apollo-cm_webp": {
-      "title": "Apollo コマンド・モジュール",
-      "what": "先端ドッキングトンネル付きの古典的急勾配先端円錐体（Apollo 7/9、Skylab、ASTP）。",
-      "where": "地球周回再突入"
+    "/images/colophon/model-showcase-mengzhou_webp": {
+      "title": "Mengzhou",
+      "what": "月をめざす中国の全長8.8 mの有人宇宙船 — 赤い帯のある灰銀色の円錐形乗員モジュールが、金色のスラスターフレームを持つ白いサービスモジュールの上に載り、長い太陽電池翼2枚とエンジンベル4基を備える。",
+      "where": "フリート · 実寸比較"
     },
-    "/images/colophon/model-capsule-soyuz-sa_webp": {
-      "title": "ソユーズ帰還モジュール",
-      "what": "「前照灯」ベル形—球形基部熱シールドと円錐形乗組員トップ。",
-      "where": "地球周回再突入"
+    "/images/colophon/model-showcase-apollo-lm_webp": {
+      "title": "Apollo月着陸船（実寸）",
+      "what": "着陸した月着陸船 — 皺のある金色と琥珀色の箔で覆った八角形の降下段が、金箔を巻いた4本の脚に載り、その上に2つの三角窓、RCSクアッド、ランデブーレーダー、Sバンドアンテナを備えた多面体の上昇段。",
+      "where": "フリート · 実寸比較 + 飛行（降下）"
     },
-    "/images/colophon/model-capsule-dragon-capsule_webp": {
-      "title": "Crew Dragon",
-      "what": "SuperDracoポッドとPICA-X熱シールド付きの洗練された円錐形船体（Inspiration4、Polaris Dawn）。",
-      "where": "地球周回再突入"
+    "/images/colophon/model-probe-nova-c_webp": {
+      "title": "Nova-C (IM-1 Odysseus)",
+      "what": "Intuitive Machinesの全高4.3 mの月着陸機 — 直径1.57 mの六角形の本体、6本の脚、下部にメタンエンジン、太陽電池パネル3枚。高さと幅はWikipediaによる。脚の開きとデッキは模式的。",
+      "where": "飛行"
     },
-    "/images/colophon/model-capsule-shenzhou-reentry_webp": {
-      "title": "Shenzhou帰還モジュール",
-      "what": "ソユーズ系統の広いベル形—独自のより軽い銀色船体とグレーの機器バンド付き（Shenzhou-1以降）。",
-      "where": "地球周回再突入"
+    "/images/colophon/model-showcase-chandrayaan1_webp": {
+      "title": "Chandrayaan-1",
+      "what": "ISROの最初の月周回機 — 白いラジエーターパッチと金縁の観測機器開口部を持つ箱形バス、金色のブームに載った直径0.7 mのアンテナ、2本バーのヨークに付いた太陽電池パネル1枚。",
+      "where": "フリート · 機体ページ + 飛行"
+    },
+    "/images/colophon/model-showcase-chandrayaan2_webp": {
+      "title": "Chandrayaan-2周回機",
+      "what": "Vikramを運んだ周回機 — 着陸機が載っていた上部デッキから金色のドラムが立ち上がるバス、ラジエーターを覆う白いテープパッチ、2枚パネルの太陽電池翼1枚。",
+      "where": "フリート · 機体ページ + 飛行"
+    },
+    "/images/colophon/model-showcase-change1_webp": {
+      "title": "Chang'e 1・2（2型）",
+      "what": "中国の月周回機 — バスの下にエンジンベル、銀色の埋め込みパネル、白い中継アンテナ2基、アーム上の直径0.8 mの可動アンテナ、金色のヨークに付いた3枚パネルの翼2枚。",
+      "where": "フリート · 機体ページ + 飛行"
+    },
+    "/images/colophon/model-showcase-clementine_webp": {
+      "title": "Clementine",
+      "what": "角柱形の月地図作成機 — カメラとライダー開口部を持つセンサー面、12基の姿勢制御ジェット、下向きに開く直径1.07 mのアンテナ、2枚パネルの翼2組。",
+      "where": "フリート · 機体ページ + 飛行"
+    },
+    "/images/colophon/model-showcase-kaguya_webp": {
+      "title": "Kaguya (SELENE)",
+      "what": "JAXAの全長4.8 mの月周回機 — 前面に中継・VLBI子衛星、三脚とマストに載った高利得アンテナ、金色のトラスに付いた青い3枚パネルのソーラーパドル。",
+      "where": "フリート · 機体ページ + 飛行"
+    },
+    "/images/colophon/model-showcase-luna10_webp": {
+      "title": "Luna 10",
+      "what": "ソ連の全長1.5 mの周回機 — 白い格子状スカートに収めた制動エンジンモジュール、クリーム色の推進剤タンク、4本のホイップアンテナと2つのキノコ形センサーを持つ磨き上げた与圧観測機器ドラム。",
+      "where": "フリート · 機体ページ + 飛行"
+    },
+    "/images/colophon/model-showcase-lunar-prospector_webp": {
+      "title": "Lunar Prospector",
+      "what": "太陽電池セルで覆った直径1.36 mのドラムに白いノーズコーンを載せ、全長2.5 mの観測機器ブーム3本を備える。",
+      "where": "フリート · 機体ページ + 飛行"
+    },
+    "/images/colophon/model-showcase-smart-1_webp": {
+      "title": "SMART-1",
+      "what": "ESAの全長1 mのイオンエンジン周回機 — ジンバルアーム上のPPS-1350スラスター、カメラと分光計を持つ観測機器リング、直径0.3 mのアンテナ、3枚パネルの翼2組。",
+      "where": "フリート · 機体ページ + 飛行"
+    },
+    "/images/colophon/model-showcase-lunar-orbiter-1_webp": {
+      "title": "Lunar Orbiter 1–5（5型）",
+      "what": "NASAの5機のカメラ周回機 — 80 mmと610 mmのレンズを持つカメラを包む明るい断熱シェル、トラス脚に載った推進剤タンク4基、太陽電池パネル4枚、ブーム上の直径1 mのアンテナ。",
+      "where": "フリート · 機体ページ"
+    },
+    "/images/colophon/model-showcase-luna-9_webp": {
+      "title": "Luna 9（実寸）",
+      "what": "着陸した直径58 cmのカプセル — 密閉された観測機器の半球が、4枚の開いた花弁の間に立ち、上部にTVカメラヘッドと4本のロッドアンテナ。",
+      "where": "フリート · 機体ページ + 飛行（降下）"
+    },
+    "/images/colophon/model-showcase-luna-16_webp": {
+      "title": "Luna 16・24（2型）",
+      "what": "サンプルリターン着陸機 — 2つのトーラスタンクの間の金箔を巻いた船体に4つの加圧球、4本の脚、掘削装置、その上に直径2 mの球形上部を持つ上昇段。",
+      "where": "フリート · 機体ページ + 飛行（降下）"
+    },
+    "/images/colophon/model-showcase-lunokhod-1_webp": {
+      "title": "Lunokhod 1・2（2型）",
+      "what": "ソ連のローバー — 8つの金網製の車輪に載った丸いタブに開いたドーム状の蓋、後部にフィン付きのポロニウム210熱源、フランス製のコーナーリフレクター、4本のホイップアンテナ。",
+      "where": "フリート · 機体ページ + 飛行（降下）"
+    },
+    "/images/colophon/model-showcase-change-3_webp": {
+      "title": "Chang'e 3・4（2型）",
+      "what": "中国の着陸機 — 4本の脚に載った箱形の金色の本体に、ローバー用ランプ、傾斜した太陽電池翼、可動アンテナを載せたカメラマスト。",
+      "where": "フリート · 機体ページ + 飛行（降下）"
+    },
+    "/images/colophon/model-showcase-change-5_webp": {
+      "title": "Chang'e 5・6（2型）",
+      "what": "サンプルリターンのスタック — 着陸機の上の金色の八角形の上昇機と、その脇の掘削タワー、折りたたんだサンプリングアーム、サンプルコンテナ。",
+      "where": "フリート · 機体ページ + 飛行（降下）"
+    },
+    "/images/colophon/model-showcase-vikram-cy3_webp": {
+      "title": "Vikram（Chandrayaan-2・3、2型）",
+      "what": "Chandrayaan-3構成のISROの着陸機 — 3側面と上面に4基のエンジンと太陽電池パネル、ランプを下ろし、途中までPragyanローバーが降りている。",
+      "where": "フリート · 機体ページ + 飛行（降下）"
+    },
+    "/images/colophon/model-showcase-slim_webp": {
+      "title": "SLIM（実寸）",
+      "what": "JAXAの「Moon Sniper」 — 1.5 × 1.5 × 2 mの角柱を皺の寄った金箔で覆い、エンジン側に金色のドーム、側面に太陽電池ストリップ1本、支柱に5つの丸いクラッシュパッド。",
+      "where": "フリート · 機体ページ + 飛行（降下）"
+    },
+    "/images/colophon/model-showcase-beresheet_webp": {
+      "title": "Beresheet（実寸）",
+      "what": "SpaceILの着陸機、直径2 m、高さ1.5 m — 金縁の黒いデッキが、4つの銅色のタンクを持つ銀色のチューブフレームのタブの上に載り、4本の長い脚と傾斜した青い太陽電池板。",
+      "where": "フリート · 機体ページ + 飛行（降下）"
+    },
+    "/images/colophon/model-showcase-blue-moon-mk1_webp": {
+      "title": "Blue Moon MK1（実寸）",
+      "what": "Blue Originの全長8.05 mの着陸機 — BE-7を載せた淡色のトラス基部の上に金色と琥珀色の箔の船体、はしご状トラスの脚、背の高い太陽電池ストリップ2本、上部に開放型の八角形ケージ。",
+      "where": "フリート · 機体ページ + 飛行（降下）"
+    },
+    "/images/colophon/model-showcase-pragyan_webp": {
+      "title": "Pragyan",
+      "what": "Vikramのランプを下って走るISROの6輪ローバー。",
+      "where": "フリート · 機体ページ + 飛行（降下）"
+    },
+    "/images/colophon/model-showcase-yutu_webp": {
+      "title": "Yutu・Yutu-2（2型）",
+      "what": "中国のローバー — 両側にロッカーボギー、傾斜した太陽電池パネルの下に金色のブランケットで覆った保温ボックス、カメラマスト、機首の下に折りたたんだアーム、後部に可動アンテナ。",
+      "where": "フリート · 機体ページ"
+    },
+    "/images/colophon/model-showcase-viking-1_webp": {
+      "title": "Viking着陸機（3型）",
+      "what": "三脚式のNASA着陸機 — 幅が交互に1.09 mと0.56 mの六角形のデッキ、18のノズルを持つ金色の終端降下ポッド、長い前側面にサンプラーアームとカメラ。",
+      "where": "フリート · 機体ページ + 飛行（降下）"
+    },
+    "/images/colophon/model-showcase-mars-3_webp": {
+      "title": "Mars 2・3・6着陸機（3型）",
+      "what": "4枚の開いた花弁に載ったソ連の白い球体 — 4本のロッドからなるアンテナの冠、2つのステレオカメラの耳、傍らにテザーでつながれたスキー付きのPrOP-Mローバー。",
+      "where": "フリート · 機体ページ + 飛行（降下）"
+    },
+    "/images/colophon/model-showcase-phoenix_webp": {
+      "title": "Phoenix・Mars Polar Lander（2型）",
+      "what": "デッキ上の太陽電池駆動の着陸機 — TEGAの2基のオーブン、MECAの湿式化学セル、スコップ付きロボットアーム、格子状タワー上のステレオカメラ、ライダー付きの気象マスト。",
+      "where": "フリート · 機体ページ + 飛行（降下）"
+    },
+    "/images/colophon/model-showcase-insight_webp": {
+      "title": "InSight（実寸）",
+      "what": "地球物理学着陸機 — 地面に伸ばした全長1.8 mのアーム、銀色の防風・断熱シールドの下のSEIS、傍らに展開したHP3モール。",
+      "where": "フリート · 機体ページ + 飛行（降下）"
+    },
+    "/images/colophon/model-showcase-schiaparelli_webp": {
+      "title": "Schiaparelli（実寸）",
+      "what": "地上のESAの突入実証機 — 銀金色の帯で囲まれた平らな暗色のハニカム潰れ板、支柱上の推進剤タンク3基、金色のUHFコイルを持つDREAMSプラットフォーム。",
+      "where": "フリート · 機体ページ + 飛行（降下）"
+    },
+    "/images/colophon/model-showcase-beagle2_webp": {
+      "title": "Beagle 2（実寸）",
+      "what": "開いた二枚貝形の着陸機 — 4枚の暗色の太陽電池花弁に囲まれた金色の蓋のアンテナ、アームが持ち上がる金色のボウル状の基部、観測機器を収めたPAWドラム。",
+      "where": "フリート · 機体ページ + 飛行（降下）"
+    },
+    "/images/colophon/model-showcase-curiosity_webp": {
+      "title": "Curiosity（実寸）",
+      "what": "MSLローバー — ロッカーボギーに載った6輪、ChemCamヘッドとMastcam 2台を載せたマスト、2枚の白い熱交換器の間のフィン付きMMRTG、前面を横切る収納したアーム。",
+      "where": "フリート · 機体ページ + 飛行（降下）"
+    },
+    "/images/colophon/model-showcase-spirit_webp": {
+      "title": "Spirit・Opportunity（2型）",
+      "what": "Mars Exploration Rover — 平らな青黒の太陽電池デッキの下に金色の保温ボックス、4枚の翼パネル、カメラバーを持つPancamマスト、支柱上の丸い金色のアンテナ、6つの小さな車輪。",
+      "where": "フリート · 機体ページ + 飛行（降下）"
+    },
+    "/images/colophon/model-showcase-perseverance_webp": {
+      "title": "Perseverance",
+      "what": "Curiosityの配置にまっすぐなクリート付き車輪 — Mastcam-ZとSuperCamヘッド、大型のコアリングターレット、前部下のキャッシングベイ、腹の下のIngenuity。",
+      "where": "フリート · 機体ページ + 飛行（降下）"
+    },
+    "/images/colophon/model-showcase-zhurong_webp": {
+      "title": "Zhurong",
+      "what": "中国のローバー — 4枚の蝶形太陽電池翼を持つ幅広の銀色のデッキ、カメラボックスを載せた背の高いマスト、2基の小型アンテナ、高い脚に載った溝付きの車輪。",
+      "where": "フリート · 機体ページ + 飛行（降下）"
+    },
+    "/images/colophon/model-showcase-sojourner_webp": {
+      "title": "Sojourner",
+      "what": "最初の火星ローバー — ロッカーボギーにステンレスのクリートを付けたアルミ車輪、暗色の太陽電池パネルの下に金褐色の保温ボックス、ステレオカメラ2台、APXSドラム。",
+      "where": "フリート · 機体ページ"
+    },
+    "/images/colophon/model-showcase-exomars-rosalind-franklin_webp": {
+      "title": "ExoMars Rosalind Franklin",
+      "what": "ESAの歩行シャーシのローバー — 各脚に車輪、幅広の太陽電池翼2枚、マスト上の金色のPanCamバー、前部の掘削ボックス。",
+      "where": "フリート · 機体ページ"
+    },
+    "/images/colophon/model-showcase-lrv-apollo_webp": {
+      "title": "Apollo月面車",
+      "what": "金網製の車輪にチタンのシェブロン、黄褐色のフェンダーを付けた開放型アルミフレーム — 管状のシート2つ、Tハンドルとコンソール、傘形アンテナ、後部の工具パレット。",
+      "where": "フリート · 機体ページ"
+    },
+    "/images/colophon/model-showcase-mro_webp": {
+      "title": "Mars Reconnaissance Orbiter",
+      "what": "NASAの火星地図作成機 — 5.35 × 2.53 mの太陽電池パドル2枚、直径3 mの高利得アンテナ、直径1.6 mのHiRISE鏡筒、全長10 mのSHARADダイポール。アンテナ、HiRISE、SHARADの寸法はNASA、パドルの寸法はWikipediaによる。バスは模式的。",
+      "where": "フリート · 機体ページ + 飛行"
+    },
+    "/images/colophon/model-showcase-mariner-2_webp": {
+      "title": "Mariner 2",
+      "what": "NASAの全長3.66 mの金星フライバイ機 — 一辺1.04 mの六角形バス、太陽電池パネル2枚（1枚は太陽光圧延長部付きで幅5.05 m）、アーム上のアンテナ、ピラミッド型マスト先端の無指向性アンテナ。寸法はNASA NSSDCAによる。アンテナとマストは模式的。",
+      "where": "フリート · 機体ページ + 飛行"
+    },
+    "/images/colophon/model-showcase-bepicolombo_webp": {
+      "title": "BepiColombo（実寸）",
+      "what": "全長6.4 mの積み重ねた巡航構成 — 4基のイオンスラスターと4枚パネルの黒青の翼2枚を持つMercury Transfer Moduleが、サンシールド円筒内の水星周回機とMioを運ぶ。",
+      "where": "フリート · 機体ページ + 飛行"
+    },
+    "/images/colophon/model-showcase-exomars-tgo_webp": {
+      "title": "ExoMars Trace Gas Orbiter",
+      "what": "ESAとRoscosmosの周回機 — エンジンベルと天底側の機器、反地球面のNOMADとACS分光計、2枚パネルのパドル2枚、ブーム上の直径2.2 mのアンテナ。",
+      "where": "フリート · 機体ページ"
+    },
+    "/images/colophon/model-showcase-mars-odyssey_webp": {
+      "title": "Mars Odyssey",
+      "what": "NASAの周回機 — 角に折りたたんだブランケットのフラップ、前面にTHEMISとカメラ、ガンマ線分光計を載せた全長6 mの格子状ブーム、3枚パネルのパドル1枚、直径1.3 mのアンテナ。",
+      "where": "フリート · 機体ページ"
+    },
+    "/images/colophon/model-showcase-mars2-orbiter_webp": {
+      "title": "Mars 2・3周回機（2型）",
+      "what": "ソ連のM-71バス — 球を備えた帯状のタンク鏡筒、黒いエアロシェル円錐と上部の着陸カプセルを載せたカラー、直径2.5 mの浅いアンテナ、大きな長方形の太陽電池パネル2枚。",
+      "where": "フリート · 機体ページ"
+    },
+    "/images/colophon/model-showcase-phobos-2_webp": {
+      "title": "Phobos 2",
+      "what": "ソ連の探査機 — エンジンの周りに4つの白い推進剤球、トロイダル形の観測機器ベルト、機器ボックスを持つ中央コア、張り出しに付いた水平の太陽電池パネル2枚。",
+      "where": "フリート · 機体ページ"
+    },
+    "/images/colophon/model-showcase-tianwen-1_webp": {
+      "title": "Tianwen-1",
+      "what": "上部に突入カプセルを載せた中国の火星周回機 — 3枚パネルのパドル2枚、約2.5 mの中利得アンテナ、細いアンテナロッド。",
+      "where": "フリート · 機体ページ"
+    },
+    "/images/colophon/model-showcase-viking1-orbiter_webp": {
+      "title": "Viking周回機",
+      "what": "白いドーム形シェルの下に着陸機カプセルを収めた周回機 — 8つのベイを持つ八角形のバスリング、ヨークに付いた太陽電池パネル4枚、直径1.5 mの金色のアンテナ、カメラ2台のスキャンプラットフォーム。",
+      "where": "フリート · 機体ページ"
+    },
+    "/images/colophon/model-showcase-hubble_webp": {
+      "title": "Hubble（実寸）",
+      "what": "観測所 — 皺のある銀色の遮光筒に開いた開口扉と、2枚の硬い太陽電池翼。",
+      "where": "フリート · 機体ページ"
+    },
+    "/images/colophon/model-showcase-jwst_webp": {
+      "title": "JWST（実寸）",
+      "what": "三脚に載った18枚の金色の六角形鏡セグメントが、5層のサンシールドの上にある。",
+      "where": "フリート · 機体ページ"
+    },
+    "/images/colophon/model-showcase-chandra_webp": {
+      "title": "Chandra（実寸）",
+      "what": "X線天文台 — 長い先細りの筒と2枚の太陽電池翼。",
+      "where": "フリート · 機体ページ"
+    },
+    "/images/colophon/model-showcase-spitzer_webp": {
+      "title": "Spitzer",
+      "what": "赤外線望遠鏡 — 極低温容器の筒に添えた傾斜した太陽電池パネル1枚。",
+      "where": "フリート · 機体ページ"
+    },
+    "/images/colophon/model-showcase-kepler_webp": {
+      "title": "Kepler",
+      "what": "惑星探索機 — 琥珀色の箔で覆った鏡筒と固定式の太陽電池パネル。",
+      "where": "フリート · 機体ページ"
+    },
+    "/images/colophon/model-showcase-tess_webp": {
+      "title": "TESS",
+      "what": "トランジット探索機 — コンパクトなバスにフード付きカメラ4台。",
+      "where": "フリート · 機体ページ"
+    },
+    "/images/colophon/model-showcase-gaia_webp": {
+      "title": "Gaia（実寸）",
+      "what": "ESAの位置天文観測所 — バスの周りに直径10 mのサンシールドのスカート。",
+      "where": "フリート · 機体ページ"
+    },
+    "/images/colophon/model-showcase-euclid_webp": {
+      "title": "Euclid",
+      "what": "ESAの暗黒宇宙望遠鏡 — 太陽電池パドルのシールドの背後にバッフル。",
+      "where": "フリート · 機体ページ"
+    },
+    "/images/colophon/model-showcase-xmm-newton_webp": {
+      "title": "XMM-Newton（実寸）",
+      "what": "ESAのX線望遠鏡 — 鏡モジュール面で終わる長い筒。",
+      "where": "フリート · 機体ページ"
+    },
+    "/images/colophon/model-showcase-compton-gro_webp": {
+      "title": "Compton Gamma Ray Observatory",
+      "what": "ガンマ線観測所 — 検出器を備えた箱形の観測機器デッキ。",
+      "where": "フリート · 機体ページ"
+    },
+    "/images/colophon/model-showcase-hitomi_webp": {
+      "title": "ひとみ",
+      "what": "JAXAのX線衛星 — 望遠鏡を載せた伸展式光学ベンチ。",
+      "where": "フリート · 機体ページ"
+    },
+    "/images/colophon/model-showcase-spektr-rg_webp": {
+      "title": "Spektr-RG",
+      "what": "ロシアとドイツのX線観測所 — ART-XCの筒の傍らに7モジュールのeROSITA。",
+      "where": "フリート · 機体ページ"
+    },
+    "/images/colophon/model-showcase-voyager-1_webp": {
+      "title": "Voyager 1・2（2型）",
+      "what": "Grand Tourのバス — 十角形の本体に直径3.7 mのアンテナ、3基の発電機を端から端までつないだRTGブーム、スキャンプラットフォームを持つ科学ブーム、全長13 mの磁力計ブーム。",
+      "where": "フリート · 機体ページ + 飛行"
+    },
+    "/images/colophon/model-showcase-pioneer-10_webp": {
+      "title": "Pioneer 10・11（2型）",
+      "what": "スピン安定化の2機 — 機器区画の上に直径2.74 mのアンテナ、120度の角度で伸びる全長3 mのRTGブーム2本、全長6.6 mの磁力計ブーム。",
+      "where": "フリート · 機体ページ + 飛行"
+    },
+    "/images/colophon/model-showcase-juno_webp": {
+      "title": "Juno（実寸）",
+      "what": "木星の極周回機 — バスの下にチタン製の放射線シールド室、上部に直径2.5 mのアンテナ、120度間隔の3枚の太陽電池翼。",
+      "where": "フリート · 機体ページ + 飛行"
+    },
+    "/images/colophon/model-showcase-juice_webp": {
+      "title": "JUICE（実寸）",
+      "what": "ESAの木星氷衛星周回機 — 推力コーンに白いタンクスカート、固定式の直径2.5 mのアンテナ、3.9 × 2.2 mのパネル3枚の翼2組、全長10.6 mの磁力計ブーム。",
+      "where": "フリート · 機体ページ + 飛行"
+    },
+    "/images/colophon/model-showcase-dawn_webp": {
+      "title": "Dawn（実寸）",
+      "what": "VestaとCeresのイオンエンジン周回機 — 3基のイオンスラスター、直径1.24 mのアンテナ、5枚パネルの翼2組（全幅19.7 m）。",
+      "where": "フリート · 機体ページ + 飛行"
+    },
+    "/images/colophon/model-showcase-ulysses_webp": {
+      "title": "Ulysses（実寸）",
+      "what": "太陽極軌道探査機 — 上部に直径1.65 mのアンテナ、側面の台に載ったフィン付きGPHS-RTG、観測機器ブーム。",
+      "where": "フリート · 機体ページ + 飛行"
+    },
+    "/images/colophon/model-showcase-giotto_webp": {
+      "title": "Giotto（実寸）",
+      "what": "Halleyのフライバイ機 — 金色の帯を持つ暗色の太陽電池ストリップのドラム、上部のWhipple防塵シールド、白い円錐マウントに載った傾斜した直径1.47 mのデスピンアンテナ。",
+      "where": "フリート · 機体ページ + 飛行"
+    },
+    "/images/colophon/model-showcase-cassini_webp": {
+      "title": "Cassini–Huygens（実寸）",
+      "what": "土星周回機 — 2基のメインエンジンを持つ金色の十角形、直径4 mの高利得アンテナ、張り出しに載った3基のRTG、側面のトラスに載ったHuygensプローブ。",
+      "where": "フリート · 機体ページ + 飛行"
+    },
+    "/images/colophon/model-showcase-galileo_webp": {
+      "title": "Galileo（実寸）",
+      "what": "デュアルスピンの木星周回機 — スキャンプラットフォームを持つデスピン部、ルーバー付きのスピン部ドラム、傘形の高利得アンテナ、2本のRTGブーム、全長10.9 mの磁力計ブーム。",
+      "where": "フリート · 機体ページ + 飛行"
+    },
+    "/images/colophon/model-showcase-rosetta_webp": {
+      "title": "Rosetta（実寸）",
+      "what": "銀灰色の箔で覆い黒と金のパッチを付けた箱形のバス、直径2.2 mのアンテナ、全長14 mの5枚パネルの太陽電池翼2枚、背面壁にPhilae。",
+      "where": "フリート · 機体ページ + 飛行"
+    },
+    "/images/colophon/model-showcase-hayabusa_webp": {
+      "title": "はやぶさ・はやぶさ2（2型）",
+      "what": "小惑星サンプルリターン機 — ベローズ付きのサンプラーホーン、4基のイオンエンジン、帰還カプセル、3枚パネルの翼。Hayabusa2は搭載型インパクターとMINERVA-IIホッパーを追加。",
+      "where": "フリート · 機体ページ + 飛行"
+    },
+    "/images/colophon/model-showcase-osiris-rex_webp": {
+      "title": "OSIRIS-REx（実寸）",
+      "what": "Bennuサンプルリターン機 — 直径1.2 mのアンテナ、片側1.9 × 2.4 mの太陽電池パネル、前面に伸びる全長3.35 mのTAGSAMアーム。",
+      "where": "フリート · 機体ページ + 飛行"
+    },
+    "/images/colophon/model-showcase-venera-7_webp": {
+      "title": "Venera 7・13（2型）",
+      "what": "ソ連の金星バス — 穴の列を持つ白いエンジンドラム、球が見えるタンクベイ、アブレーター外殻の降下球を支える6本の支柱、マスト上のメッシュアンテナ、2枚の太陽電池翼。",
+      "where": "フリート · 機体ページ + 飛行"
+    },
+    "/images/colophon/model-showcase-vega-1_webp": {
+      "title": "Vega 1・2（2型）",
+      "what": "金星とHalleyのバス — Veneraの配置で、降下球の頂部にバルーンキャニスターを載せる。",
+      "where": "フリート · 機体ページ + 飛行"
     }
   },
   "canvas2d": {
@@ -2346,6 +2596,114 @@
     },
     "/images/anatomy-exploded/vulcan_webp": {
       "title": "Vulcan Centaur"
+    },
+    "/images/anatomy-exploded/apollo-lm_webp": {
+      "title": "Apollo月着陸船"
+    },
+    "/images/anatomy-exploded/beresheet_webp": {
+      "title": "Beresheet"
+    },
+    "/images/anatomy-exploded/change-3_webp": {
+      "title": "Chang'e 3"
+    },
+    "/images/anatomy-exploded/change-4_webp": {
+      "title": "Chang'e 4"
+    },
+    "/images/anatomy-exploded/change-5_webp": {
+      "title": "Chang'e 5"
+    },
+    "/images/anatomy-exploded/change6_webp": {
+      "title": "Chang'e 6"
+    },
+    "/images/anatomy-exploded/insight_webp": {
+      "title": "InSight"
+    },
+    "/images/anatomy-exploded/lrv-apollo_webp": {
+      "title": "月面車"
+    },
+    "/images/anatomy-exploded/luna-16_webp": {
+      "title": "Luna 16"
+    },
+    "/images/anatomy-exploded/luna-9_webp": {
+      "title": "Luna 9"
+    },
+    "/images/anatomy-exploded/luna24_webp": {
+      "title": "Luna 24"
+    },
+    "/images/anatomy-exploded/lunokhod-1_webp": {
+      "title": "Lunokhod 1"
+    },
+    "/images/anatomy-exploded/lunokhod-2_webp": {
+      "title": "Lunokhod 2"
+    },
+    "/images/anatomy-exploded/mars-2_webp": {
+      "title": "Mars 2"
+    },
+    "/images/anatomy-exploded/mars-3_webp": {
+      "title": "Mars 3"
+    },
+    "/images/anatomy-exploded/phoenix_webp": {
+      "title": "Phoenix"
+    },
+    "/images/anatomy-exploded/pragyan_webp": {
+      "title": "Pragyan"
+    },
+    "/images/anatomy-exploded/slim_webp": {
+      "title": "SLIM"
+    },
+    "/images/anatomy-exploded/sojourner_webp": {
+      "title": "Sojourner"
+    },
+    "/images/anatomy-exploded/vega-1_webp": {
+      "title": "Vega 1"
+    },
+    "/images/anatomy-exploded/vega-2_webp": {
+      "title": "Vega 2"
+    },
+    "/images/anatomy-exploded/venera-13_webp": {
+      "title": "Venera 13"
+    },
+    "/images/anatomy-exploded/viking-1_webp": {
+      "title": "Viking 1"
+    },
+    "/images/anatomy-exploded/vikram-cy3_webp": {
+      "title": "Vikram (Chandrayaan-3)"
+    },
+    "/images/anatomy-exploded/yutu_webp": {
+      "title": "Yutu"
+    },
+    "/images/anatomy-exploded/yutu-2_webp": {
+      "title": "Yutu-2"
+    },
+    "/images/anatomy-exploded/zhurong_webp": {
+      "title": "Zhurong"
+    },
+    "/images/anatomy-exploded/beagle2_webp": {
+      "title": "Beagle 2"
+    },
+    "/images/anatomy-exploded/curiosity_webp": {
+      "title": "Curiosity (MSL)"
+    },
+    "/images/anatomy-exploded/exomars-rosalind-franklin_webp": {
+      "title": "Rosalind Franklin（ExoMars ローバー）"
+    },
+    "/images/anatomy-exploded/mars6_webp": {
+      "title": "Mars 6"
+    },
+    "/images/anatomy-exploded/opportunity_webp": {
+      "title": "Opportunity (MER-B)"
+    },
+    "/images/anatomy-exploded/perseverance_webp": {
+      "title": "Perseverance (Mars 2020)"
+    },
+    "/images/anatomy-exploded/schiaparelli_webp": {
+      "title": "Schiaparelli"
+    },
+    "/images/anatomy-exploded/spirit_webp": {
+      "title": "Spirit (MER-A)"
+    },
+    "/images/anatomy-exploded/viking2-lander_webp": {
+      "title": "Viking 2 着陸機"
     }
   },
   "icons": {
@@ -2446,6 +2804,656 @@
         "Laniakea": "ラニアケア",
         "Cosmic Web": "コズミック・ウェブ"
       }
+    }
+  },
+  "landing_art": {
+    "/images/landing-sequences/apollo11_webp": {
+      "title": "Apollo 11"
+    },
+    "/images/landing-sequences/apollo12_webp": {
+      "title": "Apollo 12"
+    },
+    "/images/landing-sequences/apollo14_webp": {
+      "title": "Apollo 14"
+    },
+    "/images/landing-sequences/apollo15_webp": {
+      "title": "Apollo 15"
+    },
+    "/images/landing-sequences/apollo16_webp": {
+      "title": "Apollo 16"
+    },
+    "/images/landing-sequences/apollo17_webp": {
+      "title": "Apollo 17"
+    },
+    "/images/landing-sequences/artemis4_webp": {
+      "title": "Artemis IV"
+    },
+    "/images/landing-sequences/beresheet_webp": {
+      "title": "Beresheet"
+    },
+    "/images/landing-sequences/chandrayaan3_webp": {
+      "title": "Chandrayaan-3"
+    },
+    "/images/landing-sequences/change5_webp": {
+      "title": "Chang'e 5"
+    },
+    "/images/landing-sequences/change6_webp": {
+      "title": "Chang'e 6"
+    },
+    "/images/landing-sequences/curiosity_webp": {
+      "title": "Curiosity"
+    },
+    "/images/landing-sequences/insight_webp": {
+      "title": "InSight"
+    },
+    "/images/landing-sequences/luna16_webp": {
+      "title": "Luna 16"
+    },
+    "/images/landing-sequences/luna17_webp": {
+      "title": "Luna 17 / Lunokhod 1"
+    },
+    "/images/landing-sequences/luna21_webp": {
+      "title": "Luna 21 / Lunokhod 2"
+    },
+    "/images/landing-sequences/luna24_webp": {
+      "title": "Luna 24"
+    },
+    "/images/landing-sequences/luna9_webp": {
+      "title": "Luna 9"
+    },
+    "/images/landing-sequences/opportunity_webp": {
+      "title": "Opportunity"
+    },
+    "/images/landing-sequences/schiaparelli_webp": {
+      "title": "Schiaparelli EDM"
+    },
+    "/images/landing-sequences/slim_webp": {
+      "title": "SLIM"
+    },
+    "/images/landing-sequences/spirit_webp": {
+      "title": "Spirit"
+    },
+    "/images/landing-sequences/vega-1_webp": {
+      "title": "Vega 1"
+    },
+    "/images/landing-sequences/vega-2_webp": {
+      "title": "Vega 2"
+    },
+    "/images/landing-sequences/venera-13_webp": {
+      "title": "Venera 13"
+    },
+    "/images/landing-sequences/beagle2_webp": {
+      "title": "Beagle 2"
+    },
+    "/images/landing-sequences/change3_webp": {
+      "title": "Chang'e 3 / Yutu"
+    },
+    "/images/landing-sequences/change4_webp": {
+      "title": "Chang'e 4 / Yutu-2"
+    },
+    "/images/landing-sequences/change7_webp": {
+      "title": "Chang'e 7"
+    },
+    "/images/landing-sequences/exomars-rosalind-franklin_webp": {
+      "title": "Rosalind Franklin ローバー"
+    },
+    "/images/landing-sequences/mars-pathfinder_webp": {
+      "title": "Mars Pathfinder + Sojourner"
+    },
+    "/images/landing-sequences/mars2_webp": {
+      "title": "Mars 2 着陸機"
+    },
+    "/images/landing-sequences/mars3_webp": {
+      "title": "Mars 3 着陸機"
+    },
+    "/images/landing-sequences/mars6_webp": {
+      "title": "Mars 6"
+    },
+    "/images/landing-sequences/perseverance_webp": {
+      "title": "Perseverance + Ingenuity"
+    },
+    "/images/landing-sequences/phoenix_webp": {
+      "title": "Phoenix 着陸機"
+    },
+    "/images/landing-sequences/viking1-lander_webp": {
+      "title": "Viking 1 着陸機"
+    },
+    "/images/landing-sequences/viking2-lander_webp": {
+      "title": "Viking 2 着陸機"
+    },
+    "/images/landing-sequences/zhurong_webp": {
+      "title": "Zhurong（Tianwen-1 着陸機とともに）"
+    }
+  },
+  "blueprint_art": {
+    "/images/blueprints/apollo-soyuz_webp": {
+      "title": "Apollo・Soyuzテスト計画（ASTP）"
+    },
+    "/images/blueprints/apollo11_webp": {
+      "title": "Apollo 11"
+    },
+    "/images/blueprints/bepicolombo_webp": {
+      "title": "BepiColombo"
+    },
+    "/images/blueprints/cassini_webp": {
+      "title": "Cassini-Huygens"
+    },
+    "/images/blueprints/dawn_webp": {
+      "title": "Dawn"
+    },
+    "/images/blueprints/galileo_webp": {
+      "title": "Galileo"
+    },
+    "/images/blueprints/giotto_webp": {
+      "title": "Giotto"
+    },
+    "/images/blueprints/hayabusa2_webp": {
+      "title": "はやぶさ2"
+    },
+    "/images/blueprints/juice_webp": {
+      "title": "JUICE"
+    },
+    "/images/blueprints/juno_webp": {
+      "title": "Juno"
+    },
+    "/images/blueprints/new-horizons_webp": {
+      "title": "New Horizons"
+    },
+    "/images/blueprints/pioneer-10_webp": {
+      "title": "Pioneer 10"
+    },
+    "/images/blueprints/rosetta_webp": {
+      "title": "Rosetta"
+    },
+    "/images/blueprints/sputnik1_webp": {
+      "title": "Sputnik 1"
+    },
+    "/images/blueprints/ulysses_webp": {
+      "title": "Ulysses"
+    },
+    "/images/blueprints/venera-13_webp": {
+      "title": "Venera 13"
+    },
+    "/images/blueprints/vostok-1_webp": {
+      "title": "Vostok 1"
+    },
+    "/images/blueprints/voyager-2_webp": {
+      "title": "Voyager 2"
+    }
+  },
+  "mission_trajectories": {
+    "/images/missions/thumbnails/akatsuki_webp": {
+      "title": "あかつき"
+    },
+    "/images/missions/thumbnails/apollo-1_webp": {
+      "title": "Apollo 1 (AS-204)"
+    },
+    "/images/missions/thumbnails/apollo-soyuz_webp": {
+      "title": "Apollo・Soyuzテスト計画（ASTP）"
+    },
+    "/images/missions/thumbnails/apollo10_webp": {
+      "title": "Apollo 10"
+    },
+    "/images/missions/thumbnails/apollo11_webp": {
+      "title": "Apollo 11"
+    },
+    "/images/missions/thumbnails/apollo12_webp": {
+      "title": "Apollo 12"
+    },
+    "/images/missions/thumbnails/apollo13_webp": {
+      "title": "Apollo 13"
+    },
+    "/images/missions/thumbnails/apollo14_webp": {
+      "title": "Apollo 14"
+    },
+    "/images/missions/thumbnails/apollo15_webp": {
+      "title": "Apollo 15"
+    },
+    "/images/missions/thumbnails/apollo16_webp": {
+      "title": "Apollo 16"
+    },
+    "/images/missions/thumbnails/apollo17_webp": {
+      "title": "Apollo 17"
+    },
+    "/images/missions/thumbnails/apollo7_webp": {
+      "title": "Apollo 7"
+    },
+    "/images/missions/thumbnails/apollo8_webp": {
+      "title": "Apollo 8"
+    },
+    "/images/missions/thumbnails/apollo9_webp": {
+      "title": "Apollo 9"
+    },
+    "/images/missions/thumbnails/artemis1_webp": {
+      "title": "Artemis I"
+    },
+    "/images/missions/thumbnails/artemis2_webp": {
+      "title": "Artemis II"
+    },
+    "/images/missions/thumbnails/artemis3_webp": {
+      "title": "Artemis III"
+    },
+    "/images/missions/thumbnails/artemis4_webp": {
+      "title": "Artemis IV"
+    },
+    "/images/missions/thumbnails/artemis5_webp": {
+      "title": "Artemis V"
+    },
+    "/images/missions/thumbnails/aurora-7_webp": {
+      "title": "Aurora 7 / MA-7"
+    },
+    "/images/missions/thumbnails/bepicolombo_webp": {
+      "title": "BepiColombo"
+    },
+    "/images/missions/thumbnails/beresheet_webp": {
+      "title": "Beresheet"
+    },
+    "/images/missions/thumbnails/blue-moon-mk1_webp": {
+      "title": "Blue Moon MK1"
+    },
+    "/images/missions/thumbnails/cassini_webp": {
+      "title": "Cassini-Huygens"
+    },
+    "/images/missions/thumbnails/chandrayaan1_webp": {
+      "title": "Chandrayaan-1"
+    },
+    "/images/missions/thumbnails/chandrayaan2_webp": {
+      "title": "Chandrayaan-2"
+    },
+    "/images/missions/thumbnails/chandrayaan3_webp": {
+      "title": "Chandrayaan-3"
+    },
+    "/images/missions/thumbnails/change1_webp": {
+      "title": "Chang'e 1"
+    },
+    "/images/missions/thumbnails/change2_webp": {
+      "title": "Chang'e 2"
+    },
+    "/images/missions/thumbnails/change3_webp": {
+      "title": "Chang'e 3"
+    },
+    "/images/missions/thumbnails/change5_webp": {
+      "title": "Chang'e 5"
+    },
+    "/images/missions/thumbnails/change6_webp": {
+      "title": "Chang'e 6"
+    },
+    "/images/missions/thumbnails/clementine_webp": {
+      "title": "Clementine"
+    },
+    "/images/missions/thumbnails/curiosity_webp": {
+      "title": "Curiosity"
+    },
+    "/images/missions/thumbnails/dart_webp": {
+      "title": "DART"
+    },
+    "/images/missions/thumbnails/dawn_webp": {
+      "title": "Dawn"
+    },
+    "/images/missions/thumbnails/europa-clipper_webp": {
+      "title": "Europa Clipper"
+    },
+    "/images/missions/thumbnails/faith-7_webp": {
+      "title": "Faith 7 / MA-9"
+    },
+    "/images/missions/thumbnails/freedom-7_webp": {
+      "title": "Freedom 7 / MR-3"
+    },
+    "/images/missions/thumbnails/friendship-7_webp": {
+      "title": "Friendship 7 / MA-6"
+    },
+    "/images/missions/thumbnails/galileo_webp": {
+      "title": "Galileo"
+    },
+    "/images/missions/thumbnails/gemini12_webp": {
+      "title": "Gemini 12 / GT-12"
+    },
+    "/images/missions/thumbnails/gemini3_webp": {
+      "title": "Gemini 3 / GT-3"
+    },
+    "/images/missions/thumbnails/gemini4_webp": {
+      "title": "Gemini 4 / GT-4"
+    },
+    "/images/missions/thumbnails/gemini6a_webp": {
+      "title": "Gemini 6A / GT-6A"
+    },
+    "/images/missions/thumbnails/gemini7_webp": {
+      "title": "Gemini 7 / GT-7"
+    },
+    "/images/missions/thumbnails/gemini8_webp": {
+      "title": "Gemini 8 / GT-8"
+    },
+    "/images/missions/thumbnails/giotto_webp": {
+      "title": "Giotto"
+    },
+    "/images/missions/thumbnails/hayabusa1_webp": {
+      "title": "はやぶさ"
+    },
+    "/images/missions/thumbnails/hayabusa2_webp": {
+      "title": "はやぶさ2"
+    },
+    "/images/missions/thumbnails/hera_webp": {
+      "title": "Hera"
+    },
+    "/images/missions/thumbnails/hope-probe_webp": {
+      "title": "Hope探査機"
+    },
+    "/images/missions/thumbnails/huygens_webp": {
+      "title": "Huygens"
+    },
+    "/images/missions/thumbnails/im-1_webp": {
+      "title": "IM-1"
+    },
+    "/images/missions/thumbnails/insight_webp": {
+      "title": "InSight"
+    },
+    "/images/missions/thumbnails/inspiration4_webp": {
+      "title": "Inspiration4"
+    },
+    "/images/missions/thumbnails/juice_webp": {
+      "title": "JUICE"
+    },
+    "/images/missions/thumbnails/juno_webp": {
+      "title": "Juno"
+    },
+    "/images/missions/thumbnails/kaguya_webp": {
+      "title": "かぐや（SELENE）"
+    },
+    "/images/missions/thumbnails/liberty-bell-7_webp": {
+      "title": "Liberty Bell 7 / MR-4"
+    },
+    "/images/missions/thumbnails/lro_webp": {
+      "title": "Lunar Reconnaissance Orbiter"
+    },
+    "/images/missions/thumbnails/lucy_webp": {
+      "title": "Lucy"
+    },
+    "/images/missions/thumbnails/luna10_webp": {
+      "title": "Luna 10"
+    },
+    "/images/missions/thumbnails/luna16_webp": {
+      "title": "Luna 16"
+    },
+    "/images/missions/thumbnails/luna17_webp": {
+      "title": "Luna 17 / Lunokhod 1"
+    },
+    "/images/missions/thumbnails/luna21_webp": {
+      "title": "Luna 21 / Lunokhod 2"
+    },
+    "/images/missions/thumbnails/luna24_webp": {
+      "title": "Luna 24"
+    },
+    "/images/missions/thumbnails/luna9_webp": {
+      "title": "Luna 9"
+    },
+    "/images/missions/thumbnails/lunar-prospector_webp": {
+      "title": "Lunar Prospector"
+    },
+    "/images/missions/thumbnails/magellan_webp": {
+      "title": "Magellan"
+    },
+    "/images/missions/thumbnails/mangalyaan_webp": {
+      "title": "Mangalyaan"
+    },
+    "/images/missions/thumbnails/mariner10_webp": {
+      "title": "Mariner 10"
+    },
+    "/images/missions/thumbnails/mariner2_webp": {
+      "title": "Mariner 2"
+    },
+    "/images/missions/thumbnails/mariner4_webp": {
+      "title": "Mariner 4"
+    },
+    "/images/missions/thumbnails/mariner9_webp": {
+      "title": "Mariner 9"
+    },
+    "/images/missions/thumbnails/mars-express_webp": {
+      "title": "Mars Express"
+    },
+    "/images/missions/thumbnails/mars-pathfinder_webp": {
+      "title": "Mars Pathfinder"
+    },
+    "/images/missions/thumbnails/mars2_webp": {
+      "title": "Mars 2"
+    },
+    "/images/missions/thumbnails/mars3_webp": {
+      "title": "Mars 3"
+    },
+    "/images/missions/thumbnails/maven_webp": {
+      "title": "MAVEN"
+    },
+    "/images/missions/thumbnails/messenger_webp": {
+      "title": "MESSENGER"
+    },
+    "/images/missions/thumbnails/mmx_webp": {
+      "title": "MMX"
+    },
+    "/images/missions/thumbnails/mro_webp": {
+      "title": "Mars Reconnaissance Orbiter"
+    },
+    "/images/missions/thumbnails/near-shoemaker_webp": {
+      "title": "NEAR Shoemaker"
+    },
+    "/images/missions/thumbnails/new-horizons_webp": {
+      "title": "New Horizons"
+    },
+    "/images/missions/thumbnails/opportunity_webp": {
+      "title": "Opportunity"
+    },
+    "/images/missions/thumbnails/osiris-rex_webp": {
+      "title": "OSIRIS-REx"
+    },
+    "/images/missions/thumbnails/otv-1_webp": {
+      "title": "X-37B OTV-1 (USA-212)"
+    },
+    "/images/missions/thumbnails/otv-2_webp": {
+      "title": "X-37B OTV-2 (USA-226)"
+    },
+    "/images/missions/thumbnails/otv-3_webp": {
+      "title": "X-37B OTV-3 (USA-240)"
+    },
+    "/images/missions/thumbnails/otv-4_webp": {
+      "title": "X-37B OTV-4号 (USA-261, AFSPC-5)"
+    },
+    "/images/missions/thumbnails/otv-5_webp": {
+      "title": "X-37B OTV-5号 (USA-277)"
+    },
+    "/images/missions/thumbnails/otv-6_webp": {
+      "title": "X-37B OTV-6 (USA-299, USSF-7)"
+    },
+    "/images/missions/thumbnails/otv-7_webp": {
+      "title": "X-37B OTV-7 (USA-349, USSF-52)"
+    },
+    "/images/missions/thumbnails/parker-solar-probe_webp": {
+      "title": "Parker Solar Probe"
+    },
+    "/images/missions/thumbnails/perseverance_webp": {
+      "title": "Perseverance"
+    },
+    "/images/missions/thumbnails/phoenix_webp": {
+      "title": "Phoenix"
+    },
+    "/images/missions/thumbnails/pioneer-10_webp": {
+      "title": "Pioneer 10"
+    },
+    "/images/missions/thumbnails/pioneer-11_webp": {
+      "title": "Pioneer 11"
+    },
+    "/images/missions/thumbnails/polaris-dawn_webp": {
+      "title": "Polaris Dawn"
+    },
+    "/images/missions/thumbnails/psyche-mission_webp": {
+      "title": "Psyche"
+    },
+    "/images/missions/thumbnails/rosetta_webp": {
+      "title": "Rosetta"
+    },
+    "/images/missions/thumbnails/schiaparelli_webp": {
+      "title": "Schiaparelli EDM"
+    },
+    "/images/missions/thumbnails/shenzhou-1_webp": {
+      "title": "Shenzhou 1"
+    },
+    "/images/missions/thumbnails/shenzhou-5_webp": {
+      "title": "Shenzhou 5"
+    },
+    "/images/missions/thumbnails/sigma-7_webp": {
+      "title": "Sigma 7 / MA-8"
+    },
+    "/images/missions/thumbnails/skylab-2_webp": {
+      "title": "Skylab 2"
+    },
+    "/images/missions/thumbnails/skylab-3_webp": {
+      "title": "Skylab 3"
+    },
+    "/images/missions/thumbnails/skylab-4_webp": {
+      "title": "Skylab 4"
+    },
+    "/images/missions/thumbnails/slim_webp": {
+      "title": "SLIM"
+    },
+    "/images/missions/thumbnails/smart-1_webp": {
+      "title": "SMART-1"
+    },
+    "/images/missions/thumbnails/solar-orbiter_webp": {
+      "title": "Solar Orbiter"
+    },
+    "/images/missions/thumbnails/soyuz-1_webp": {
+      "title": "Soyuz 1"
+    },
+    "/images/missions/thumbnails/soyuz-11_webp": {
+      "title": "Soyuz 11"
+    },
+    "/images/missions/thumbnails/spirit_webp": {
+      "title": "Spirit"
+    },
+    "/images/missions/thumbnails/sputnik1_webp": {
+      "title": "Sputnik 1"
+    },
+    "/images/missions/thumbnails/starship-demo_webp": {
+      "title": "Starship Demo"
+    },
+    "/images/missions/thumbnails/starship-flight-5_webp": {
+      "title": "Starship Flight 5"
+    },
+    "/images/missions/thumbnails/starship-mars-crew_webp": {
+      "title": "Starship有人火星飛行"
+    },
+    "/images/missions/thumbnails/sts-1_webp": {
+      "title": "STS-1"
+    },
+    "/images/missions/thumbnails/sts-107_webp": {
+      "title": "STS-107"
+    },
+    "/images/missions/thumbnails/sts-51-l_webp": {
+      "title": "STS-51-L"
+    },
+    "/images/missions/thumbnails/tianwen1_webp": {
+      "title": "Tianwen-1"
+    },
+    "/images/missions/thumbnails/ulysses_webp": {
+      "title": "Ulysses"
+    },
+    "/images/missions/thumbnails/vega-1_webp": {
+      "title": "Vega 1"
+    },
+    "/images/missions/thumbnails/vega-2_webp": {
+      "title": "Vega 2"
+    },
+    "/images/missions/thumbnails/venera-13_webp": {
+      "title": "Venera 13"
+    },
+    "/images/missions/thumbnails/viking1_webp": {
+      "title": "Viking 1"
+    },
+    "/images/missions/thumbnails/viking2_webp": {
+      "title": "Viking 2"
+    },
+    "/images/missions/thumbnails/voskhod-1_webp": {
+      "title": "Voskhod 1"
+    },
+    "/images/missions/thumbnails/voskhod-2_webp": {
+      "title": "Voskhod 2"
+    },
+    "/images/missions/thumbnails/vostok-1_webp": {
+      "title": "Vostok 1"
+    },
+    "/images/missions/thumbnails/vostok-2_webp": {
+      "title": "Vostok 2"
+    },
+    "/images/missions/thumbnails/vostok-3_webp": {
+      "title": "Vostok 3"
+    },
+    "/images/missions/thumbnails/vostok-4_webp": {
+      "title": "Vostok 4"
+    },
+    "/images/missions/thumbnails/vostok-5_webp": {
+      "title": "Vostok 5"
+    },
+    "/images/missions/thumbnails/vostok-6_webp": {
+      "title": "Vostok 6"
+    },
+    "/images/missions/thumbnails/voyager-1_webp": {
+      "title": "Voyager 1"
+    },
+    "/images/missions/thumbnails/voyager-2_webp": {
+      "title": "Voyager 2"
+    },
+    "/images/missions/thumbnails/escapade_webp": {
+      "title": "ESCAPADE"
+    },
+    "/images/missions/thumbnails/change4_webp": {
+      "title": "Chang'e 4 / Yutu-2"
+    }
+  },
+  "site_illustrations": {
+    "/images/illustrations/sites/apollo11_webp": {
+      "title": "Apollo 11"
+    },
+    "/images/illustrations/sites/apollo12_webp": {
+      "title": "Apollo 12"
+    },
+    "/images/illustrations/sites/apollo14_webp": {
+      "title": "Apollo 14"
+    },
+    "/images/illustrations/sites/apollo15_webp": {
+      "title": "Apollo 15"
+    },
+    "/images/illustrations/sites/apollo16_webp": {
+      "title": "Apollo 16"
+    },
+    "/images/illustrations/sites/apollo17_webp": {
+      "title": "Apollo 17"
+    },
+    "/images/illustrations/sites/chandrayaan3_webp": {
+      "title": "Chandrayaan-3"
+    },
+    "/images/illustrations/sites/spirit_webp": {
+      "title": "Spirit"
+    },
+    "/images/illustrations/sites/opportunity_webp": {
+      "title": "Opportunity"
+    },
+    "/images/illustrations/sites/curiosity_webp": {
+      "title": "Curiosity"
+    },
+    "/images/illustrations/sites/perseverance_webp": {
+      "title": "Perseverance"
+    },
+    "/images/illustrations/sites/zhurong_webp": {
+      "title": "Zhurong"
+    },
+    "/images/illustrations/sites/luna17_webp": {
+      "title": "Luna 17"
+    },
+    "/images/illustrations/sites/luna21_webp": {
+      "title": "Luna 21"
+    },
+    "/images/illustrations/sites/change3_webp": {
+      "title": "Chang’e 3"
+    },
+    "/images/illustrations/sites/change4_webp": {
+      "title": "Chang’e 4"
     }
   }
 }

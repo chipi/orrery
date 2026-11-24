@@ -1,7 +1,7 @@
-import type { AscentSummary } from '$lib/physics/ascent/ascent-physics';
+import type { AscentSummary, PartRecovery } from '$lib/physics/ascent/ascent-physics';
 import type { DescentSummary } from '$lib/physics/descent/descent-physics';
 import { injectionBurnLabel, type InjectionBurnParams } from '$lib/physics/transfer/injection-burn';
-import { INJECTION_COAST_S, buildAscentBeats, injectionSepT } from './ascent-hud';
+import { INJECTION_COAST_S, buildAscentBeats, injectionSepT, secoTimeS } from './ascent-hud';
 import { buildDescentBeats } from './descent-hud';
 import { terminalStartTime, unwarpDescentTime } from './descent-timewarp';
 
@@ -15,6 +15,9 @@ export interface PlanBeat {
   t: number;
   /** A cinematic-clock beat after SECO: it has a position, not a real mission time. */
   untimed?: boolean;
+  /** The time is "about N minutes" or borrowed from a sibling flight (a landing whose
+   *  `timeClass` is not 'sourced'): the row prints it with a leading "~". */
+  approx?: boolean;
 }
 
 /**
@@ -26,10 +29,13 @@ export function buildPlanBeats(
   summary: AscentSummary,
   injection: Pick<InjectionBurnParams, 'burnType'> | null,
   separationDelayS = 0,
+  /** The flight's booster landings (`landingsFor`): BOOSTER LANDING or TOWER CATCH at touchdown,
+   *  in time order with the rest (0.9.11 F2). */
+  landings: (Pick<PartRecovery, 'outcome' | 'timeClass'> & { touchdownS: number })[] = [],
 ): PlanBeat[] {
   const duration = summary.totalDurationS;
   const beats = buildAscentBeats(summary);
-  return [
+  const plan: PlanBeat[] = [
     { label: 'LIFTOFF', t: 0 },
     // ORBIT and SECO land on the same second: the cutoff is the beat.
     ...beats.filter(
@@ -47,9 +53,15 @@ export function buildPlanBeats(
           { label: 'SPACECRAFT SEP', t: injectionSepT(duration), untimed: true },
         ]
       : separationDelayS > 0
-        ? [{ label: 'SPACECRAFT SEP', t: duration + separationDelayS }]
+        ? [{ label: 'SPACECRAFT SEP', t: secoTimeS(summary) + separationDelayS }]
         : []),
   ];
+  const landingBeats = landings.map((l) => ({
+    label: l.outcome === 'caught' ? 'TOWER CATCH' : 'BOOSTER LANDING',
+    t: l.touchdownS,
+    ...(l.timeClass === 'approx' || l.timeClass === 'typical' ? { approx: true } : {}),
+  }));
+  return [...plan, ...landingBeats].sort((a, b) => a.t - b.t);
 }
 
 /**
@@ -59,7 +71,7 @@ export function buildPlanBeats(
  */
 export function descentPlanBeats(summary: DescentSummary): Array<{ label: string; t: number }> {
   const dur = summary.totalDurationS;
-  const tB = terminalStartTime(summary.states, dur);
+  const tB = terminalStartTime(summary.states, dur, summary.events);
   return buildDescentBeats(summary).map((b) => ({
     label: b.label,
     t: unwarpDescentTime(b.t, dur, tB),

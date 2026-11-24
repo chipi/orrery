@@ -3,6 +3,40 @@
   "name": "Falcon Heavy",
   "source_tier": "flagship",
   "payloadKg": 6065,
+  "recovery": [
+    { "part": "strapOns", "outcome": "landed" },
+    { "part": "booster", "outcome": "expended" }
+  ],
+  "recoveryByMission": {
+    "psyche-mission": [
+      {
+        "part": "strapOns",
+        "outcome": "landed",
+        "site": "landing-zone",
+        "siteNames": ["LZ-1", "LZ-2"],
+        "landingBurnS": 480,
+        "touchdownS": 497,
+        "timeClass": "sourced"
+      },
+      { "part": "booster", "outcome": "expended" }
+    ],
+    "otv-7": [
+      {
+        "part": "strapOns",
+        "outcome": "landed",
+        "site": "landing-zone",
+        "siteNames": ["LZ-1", "LZ-2"],
+        "landingBurnS": 480,
+        "touchdownS": 497,
+        "timeClass": "typical"
+      },
+      { "part": "booster", "outcome": "expended" }
+    ],
+    "europa-clipper": [
+      { "part": "strapOns", "outcome": "expended" },
+      { "part": "booster", "outcome": "expended" }
+    ]
+  },
   "liftoffThrustKN": 22819,
   "fairingKg": 1700,
   "fairingJettisonAltM": 115000,
@@ -48,6 +82,10 @@
     }
   ],
   "provenance": [
+    {
+      "l": "Booster recovery per flight (0.9.11 F2): Psyche's side boosters landing burn T+8:00, landing 8:17 on LZ-1 and LZ-2, centre core expended (NASA); OTV-7 same landing zones, centre core expended, times are Psyche's (none found); Europa Clipper expended all three cores. docs/wip/2026-11-22-booster-recovery-sourced.md",
+      "u": "https://science.nasa.gov/blogs/psyche/2023/10/13/key-milestones-for-todays-psyche-launch"
+    },
     {
       "l": "Falcon Heavy — Wikipedia (22,819 kN at liftoff; side boosters and centre core as Falcon 9 Block 5 first stages; 5.2 m fairing)",
       "u": "https://en.wikipedia.org/wiki/Falcon_Heavy"

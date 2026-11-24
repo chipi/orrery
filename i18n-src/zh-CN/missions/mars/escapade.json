@@ -1,0 +1,36 @@
+{
+  "name": "ESCAPADE",
+  "vehicle": "New Glenn（NG-2）",
+  "payload": "两个航天器 Blue 和 Gold：各干重 209 kg，加注后 535 kg",
+  "delta_v": "未公布",
+  "type": "火星双子轨道器 · 运行中",
+  "first": "由 New Glenn 第二次飞行发射的双子轨道器，该次飞行中 New Glenn 助推器首次成功着陆",
+  "description": "ESCAPADE 是 NASA 的一对火星航天器 Blue 和 Gold，由 Rocket Lab 制造，整个任务耗资不到 8000 万美元。首席研究员是加州大学伯克利分校空间科学实验室的 Robert Lillis，该任务是 NASA 日球物理部 2019 年的 SIMPLEx 任务。每个航天器干重 209 kg，加注后 535 kg。它们搭乘 New Glenn 第二次飞行 NG-2，于 2025 年 11 月 13 日 15:55 EST（20:55 UTC）从 Cape Canaveral Space Force Station 的 Launch Complex 36 发射。助推器 GS1“Never Tell Me the Odds”在升空约九分钟后降落在着陆平台船 Jacklyn 上。Blue 和 Gold 没有直奔火星：它们绕日地 L2 点运行约一年，然后进行了有动力的地球飞掠，Blue 在 2026 年 11 月 7 日，Gold 在 11 月 9 日。火星入轨点火将在 2027 年 9 月 7 日和 9 日进行，在 450 km 处约 11 分钟，进入 60 小时的捕获轨道，科学观测定于 2028 年 6 月开始。",
+  "events": [
+    {
+      "met": 0,
+      "label": "发射",
+      "note": "New Glenn NG-2 从 Launch Complex 36 发射，2025 年 11 月 13 日 15:55 EST（20:55 UTC）。",
+      "type": "nominal"
+    },
+    {
+      "met": 0.0233,
+      "label": "分离",
+      "note": "Blue 和 Gold 在升空约 33.5 分钟后与上面级分离。",
+      "type": "nominal"
+    },
+    {
+      "met": 359,
+      "label": "地球飞掠",
+      "note": "绕日地 L2 点运行约一年后，Blue 于 2026 年 11 月 7 日进行有动力飞掠；Gold 于 11 月 9 日进行。",
+      "type": "nominal"
+    },
+    {
+      "met": 663,
+      "label": "进入火星轨道",
+      "note": "2027 年 9 月 7 日和 9 日在 450 km 处约 11 分钟的点火，使这对双子航天器进入 60 小时的捕获轨道。",
+      "type": "nominal"
+    }
+  ],
+  "vehicle_stage": "New Glenn 第二级（GS2）"
+}

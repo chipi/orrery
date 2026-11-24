@@ -70,8 +70,8 @@
       "source": "ESA mission archive; entry at 121 km altitude, 5.83 km/s",
       "entry_velocity_km_s": 5.83,
       "edl_system": "parachute_retro",
-      "edl_duration_s": 319,
-      "touchdown_velocity_ms": 130.51
+      "edl_duration_s": 321,
+      "touchdown_velocity_ms": 128.98
     },
     "totals": {
       "total_dv_km_s": 5.5,

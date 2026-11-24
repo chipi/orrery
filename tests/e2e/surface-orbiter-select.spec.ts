@@ -14,11 +14,13 @@ import { waitForHydration } from './_helpers/hydration';
  * Runs on desktop-chromium, mobile-chromium and mobile-landscape-chromium.
  */
 
+// quality=medium: the outline pass exists from medium up, and a software renderer (every e2e run)
+// now starts at low (013568873ce, 0.9.11 Q2), where the scene renders without post-processing.
 const CASES = [
-  { route: '/moon?site=lro', id: 'lro' },
-  { route: '/moon?site=lunar-prospector', id: 'lunar-prospector' },
-  { route: '/mars?site=mro', id: 'mro' },
-  { route: '/earth?object=iss', id: 'iss' },
+  { route: '/moon?site=lro&quality=medium', id: 'lro' },
+  { route: '/moon?site=lunar-prospector&quality=medium', id: 'lunar-prospector' },
+  { route: '/mars?site=mro&quality=medium', id: 'mro' },
+  { route: '/earth?object=iss&quality=medium', id: 'iss' },
 ] as const;
 
 type State = {

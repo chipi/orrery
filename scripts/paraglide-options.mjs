@@ -8,9 +8,6 @@
  * plugin's options win wherever Vite runs at all — but `svelte-check` consumes
  * whatever the CLI step left behind, and keeping two hand-edited copies of
  * these values is precisely the drift this indirection removes.
- *
- * `urlPatterns` is deliberately NOT here: it depends on VITE_BASE (GH Pages
- * compat) and only matters for the bundled build, so it stays in vite.config.ts.
  */
 
 /** @type {import('@inlang/paraglide-js').CompilerOptions} */

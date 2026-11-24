@@ -1,5 +1,6 @@
 import { test, expect, type ConsoleMessage } from '@playwright/test';
 import { isExpectedNoise } from './_helpers/console-errors';
+import { openPlanSheet, setPlanSheet } from './_helpers/plan-sheet';
 
 /**
  * /plan — Mission Configurator.
@@ -61,15 +62,18 @@ test.describe('/plan — porkchop computes and renders', () => {
     await canvas.click({ position: { x: box.width / 2 - 60, y: box.height / 2 - 30 } });
     const panel = page.getByRole('complementary', { name: /Mission summary/i });
     const sandbox = panel.locator('[data-testid="plan-sandbox"]');
+    await openPlanSheet(page);
     await expect(sandbox).toBeVisible();
 
     // Pin it.
     await sandbox.locator('[data-testid="plan-sandbox-pin"]').click();
     await expect(sandbox).toContainText(/PINNED/);
 
-    // Click cell B (different position).
+    // Click cell B (different position); on a phone the open sheet covers the chart.
+    await setPlanSheet(page, false);
     await canvas.click({ position: { x: box.width / 2 + 60, y: box.height / 2 + 30 } });
     const compare = panel.locator('[data-testid="plan-sandbox-compare"]');
+    await openPlanSheet(page);
     await expect(compare).toBeVisible();
     await expect(compare).toContainText(/Δ DEP/);
     await expect(compare).toContainText(/Δ TOF/);
@@ -91,6 +95,7 @@ test.describe('/plan — porkchop computes and renders', () => {
     await expect(panel).toBeVisible();
 
     const selector = panel.locator('select');
+    await openPlanSheet(page);
     await expect(selector).toBeVisible();
 
     // Get the option list — there are 6 rockets per static/data/rockets.json.
@@ -120,6 +125,7 @@ test.describe('/plan — porkchop computes and renders', () => {
     await expect(flyButton).toBeVisible();
 
     // Force a deficit by picking the lowest-capability rocket.
+    await openPlanSheet(page);
     await panel.locator('select').selectOption('atlas-v-541');
     // Atlas V's ∆v capability is 9.4 km/s; even cheap porkchop cells
     // need ~5-6 km/s, so it might still be viable. Verify the button

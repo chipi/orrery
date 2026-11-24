@@ -10,6 +10,9 @@
   "era": "2011-now",
   "epoch": "commercial-era",
   "best_known_for": "First private lunar landing attempt",
+  "specs": {
+    "length_m": 1.5
+  },
   "links": [
     {
       "l": "Beresheet — Wikipedia",

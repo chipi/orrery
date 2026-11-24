@@ -1,0 +1,115 @@
+{
+  "missionId": "apollo16",
+  "siteId": "apollo16",
+  "launchZeroUtc": "1972-04-16T17:54:00Z",
+  "liftoff": "175:31:47.9",
+  "verticalRiseS": 10,
+  "ascentBurnS": 427.8,
+  "ascentDvFts": 6054.2,
+  "insertion": {
+    "get": "175:38:56",
+    "orbitNmi": [
+      40.2,
+      7.9
+    ],
+    "altitudeFt": 60000,
+    "radialFts": 32,
+    "downrangeFts": 5540
+  },
+  "rendezvous": [
+    {
+      "id": "vernier",
+      "get": "175:42:18",
+      "burnS": 8,
+      "dvFts": 10
+    },
+    {
+      "id": "tpi",
+      "get": "176:26:05",
+      "burnS": 2.5,
+      "dvFts": 78,
+      "engine": "aps"
+    },
+    {
+      "id": "tpf",
+      "get": "177:08:42",
+      "burnS": 25
+    }
+  ],
+  "csmOrbitNmi": [
+    64.6,
+    55
+  ],
+  "splashdownProfile": "apollo16-splashdown",
+  "docking": "177:41:18",
+  "jettison": "195:00:12",
+  "jettisonAltitudeNmi": 60,
+  "tei": {
+    "get": "200:21:33.07",
+    "burnS": 162.29,
+    "dvFts": 3370.9
+  },
+  "camera": {
+    "shots": {
+      "surface": "rover_tv_lost",
+      "liftoff": "rover_tv_lost",
+      "ascent": "chase_long",
+      "insertion": "orbit_nadir",
+      "vernier": "rendezvous_over",
+      "tpi": "rendezvous_side",
+      "terminal": "rendezvous_side",
+      "dock_closeup": "dock_csm",
+      "soft_capture": "dock_csm",
+      "hard_dock": "dock_csm",
+      "jettison": "jettison_low",
+      "subsat": "subsat_side",
+      "tei_coast": "tei_front",
+      "tei_burn": "tei_front",
+      "fade": "tei_front"
+    }
+  },
+  "jMission": {
+    "mission": 16,
+    "lrvEastM": 90,
+    "tv": "lost",
+    "subsatellite": "196:02:09",
+    "jettisonTumble": true
+  },
+  "source_tier": "flagship",
+  "estimatedFields": [
+    "insertion.altitudeFt",
+    "insertion.radialFts",
+    "insertion.downrangeFts",
+    "verticalRiseS",
+    "jettisonAltitudeNmi",
+    "jMission.lrvEastM",
+    "scene.verticalRiseKinematics",
+    "scene.ascentTrajectoryShape",
+    "scene.pitchOver",
+    "scene.rendezvousRanges",
+    "scene.dockingClosingSpeed",
+    "scene.jettisonDrift",
+    "scene.attitudeAfterInsertion",
+    "scene.camera",
+    "scene.simBayAzimuth",
+    "scene.roverTvFraming",
+    "scene.sceneHardware",
+    "rendezvous.vernier.burnS",
+    "rendezvous.tpf.burnS",
+    "rendezvous.tpf.dvFts"
+  ],
+  "provenance": [
+    {
+      "l": "Apollo 16 Mission Report (Tables 3-I and 3-V, sections 3.2 to 3.4): range zero 17:54:00 GMT 1972-04-16. A direct rendezvous (no CSI or CDH): vernier 10 ft/s at 175:42:18 (no duration in the sources read: 8 s is an estimate), TPI 176:26:05 (2.5 s, 78.0 ft/s, by the ascent propulsion: Table 3-V, page image; 78.5 on the CM computer), TPF 177:08:42 (no duration or delta-V read: 25 s is an estimate). Quote: \"inserted into a 40-mile by 8-mile lunar orbit about 7 minutes later ... a vernier adjustment maneuver of 10 ft/sec was necessary\". Orbit 40.2 x 7.9 n.mi, ascent 6,054.2 ft/s and 427.7 s (Table 3-V, page image; SP-4029 prints 427.8, used here); CSM 64.6 x 55.0 n.mi after the 169:05:52 plane change (SPS, 7.1 s, 124.0 ft/s, page image); docking 177:41:18; ascent stage jettison 195:00:12, attitude control lost, no deorbit: \"Attitude control of the lunar module was lost at jettison; consequently, a deorbit maneuver was not possible.\"; subsatellite release 196:02:09 (without the planned orbit-shaping burn); TEI 200:21:33.07, 162.29 s, 3,370.9 ft/s. All times are the mission report / SP-4029 clock; entry compilation figures are in the splashdown profile",
+      "u": "https://ntrs.nasa.gov/api/citations/19720026127/downloads/19720026127.pdf"
+    },
+    {
+      "l": "NASA SP-4029 Apollo 16 timeline: GET and GMT of liftoff, docking, jettison, the SIM bay door and the subsatellite events. Apollo 16 SIM bay: door jettisoned 069:59:01 (MR16 Table 3-I); the mass-spectrometer boom was jettisoned at 195:23:12 (not drawn); the subsatellite was launched at 196:02:09 into a short-life orbit, tracking lost on revolution 425 (29 May 1972)",
+      "u": "https://www.nasa.gov/wp-content/uploads/static/history/SP-4029/Apollo_16i_Timeline.htm"
+    },
+    {
+      "l": "NASA SP-4029 Apollo 16 trans-Earth phase: TEI burn duration, delta-V and flight-path angle at cutoff",
+      "u": "https://www.nasa.gov/wp-content/uploads/static/history/SP-4029/Apollo_16h_Transearth_Phase.htm"
+    }
+  ]
+}

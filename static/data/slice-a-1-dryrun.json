@@ -220,22 +220,6 @@
     {
       "surface": "fleet-galleries",
       "missionId": "apollo-csm-block-i",
-      "slot": "01",
-      "agency": "NASA",
-      "currentSource": "wikimedia-commons",
-      "path": "/images/fleet-galleries/apollo-csm-block-i/01.jpg",
-      "query": "apollo csm block i",
-      "proposed": {
-        "tier": 2,
-        "source_type": "smithsonian-openaccess",
-        "image_url": "https://ids.si.edu/ids/download?id=NASM-A19740798000-NASM2018-10165.jpg",
-        "credit": "Smithsonian National Air and Space Museum",
-        "license": "cc0"
-      }
-    },
-    {
-      "surface": "fleet-galleries",
-      "missionId": "apollo-csm-block-i",
       "slot": "02",
       "agency": "NASA",
       "currentSource": "wikimedia-commons",
@@ -360,6 +344,23 @@
         "credit": "NASA / JSC",
         "license": "pd-nasa"
       }
+    },
+    {
+      "surface": "fleet-galleries",
+      "missionId": "apollo-csm-block-i",
+      "slot": "01",
+      "agency": "NASA",
+      "currentSource": "wikimedia-commons",
+      "path": "/images/fleet-galleries/apollo-csm-block-ii/05.jpg",
+      "query": "apollo csm block i",
+      "proposed": {
+        "tier": 2,
+        "source_type": "smithsonian-openaccess",
+        "image_url": "https://ids.si.edu/ids/download?id=NASM-A19740798000-NASM2018-10165.jpg",
+        "credit": "Smithsonian National Air and Space Museum",
+        "license": "cc0"
+      },
+      "id": "a4ba9de41a0df2f8"
     },
     {
       "surface": "fleet-galleries",

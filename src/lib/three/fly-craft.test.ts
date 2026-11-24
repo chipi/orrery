@@ -25,8 +25,8 @@ describe('fly-craft', () => {
 describe('fly-craft: IM-1, MRO and Mariner 2 fly their own models', () => {
   it('maps each to its dedicated builder and loads a craft of the published size', async () => {
     expect(flyCraftSource('im-1')).toEqual(['landers', 'buildNovaC']);
-    expect(flyCraftSource('mro')).toEqual(['orbiters', 'buildMro']);
-    expect(flyCraftSource('mariner2')).toEqual(['orbiters', 'buildMariner2']);
+    expect(flyCraftSource('mro')).toEqual(['mars-orbiters', 'mro']);
+    expect(flyCraftSource('mariner2')).toEqual(['mars-orbiters', 'mariner-2']);
     for (const id of ['im-1', 'mro', 'mariner2']) expect(await preloadFlyCraft(id), id).toBe(true);
     const h = (id: string) =>
       new THREE.Box3().setFromObject(flyCraft(id)!).getSize(new THREE.Vector3());
@@ -44,5 +44,7 @@ describe('fly-craft map', () => {
       const size = new THREE.Box3().setFromObject(g!).getSize(new THREE.Vector3());
       expect(Math.max(size.x, size.y, size.z), id).toBeGreaterThan(0.3);
     }
-  });
+    // Builds every mapped craft at full detail: ~1 s alone, past the 5 s default under coverage
+    // with the whole suite running.
+  }, 30_000);
 });

@@ -71,3 +71,25 @@ Cluster. Each needs a check that the member belongs to the structure.
 - Files in the staging folder that must not be used: `s5/sloan-great-wall-sdss.jpg`,
   `s5/bootes-void-gal.jpg`, `s6/m25-a.jpg` (no establishable source), and the four `arms/` files
   (artist's concepts).
+
+## 2026-11-22 (0.9.11 P1): "pictured: member" for three rows
+
+Operator: only this option; every other row keeps its dot. Membership checked by a Sonnet agent
+(~8–11 searches), primary sources only:
+
+| Row | Pictured | Source |
+|---|---|---|
+| orion-spur | Orion Nebula (`jwst-orion`) | Reid et al. 2019 (arXiv 1910.03357) Table 1: Orion, arm "Loc" (Local arm) |
+| sagittarius | Lagoon Nebula (`hst-lagoon`) | Tothill et al. 2008 (arXiv 0809.3380) abstract: "an HII region in the Sagittarius Arm" |
+| laniakea | Centaurus Cluster (`centaurus-cluster`) | Tully et al. 2014, Nature 513, 71 (arXiv 1409.0880): flows converge on "the Norma and Centaurus clusters"; "the Centaurus components of Laniakea" |
+
+Kept the dot: **perseus** (M52, M103, the Crab placed there only by Wikipedia; Reid 2019's Perseus
+tracers are not photographed members; Castro-Ginard 2021, A&A 652, A162, not opened),
+**scutum-centaurus** (every candidate is Sagittarius-arm or unplaced; Reid's Scutum tracers are
+anonymous masers), **norma** (only masers), **canes-venatici-spur** (M94 is a CVn I cloud member at
+~4.5 Mpc, M106 a CVn II member; no source names either in the spur, and Tully 2008 does not use the
+name).
+
+Seen on mobile (iPhone 13 viewport, dev server): the Orion Spur and Sagittarius Arm panels and the
+Laniakea page show the photo with "Pictured: …". The arm INDEX rows still show no thumb (the
+`mw.arms` loop in `scale-index.ts` reads no hero; noted in the plan for later).

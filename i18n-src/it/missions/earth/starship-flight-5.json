@@ -1,0 +1,41 @@
+{
+  "name": "Starship Flight 5",
+  "vehicle": "Starship: Super Heavy Booster 12 + Ship 30",
+  "payload": "Nessuno (volo di prova); la stessa Ship 30, su una traiettoria suborbitale",
+  "delta_v": "~7,7 km/s (suborbitale: velocità al SECO, circa -15 x 212 km)",
+  "type": "TEST SUBORBITALE SENZA EQUIPAGGIO · COMPLETATO",
+  "first": "Primo booster Super Heavy catturato dalle braccia della torre di lancio",
+  "description": "Il quinto volo di prova di Starship è decollato da Starbase, in Texas, il 2024-10-13 alle 12:25 UTC. Booster 12 si è separato a circa 70 km, è tornato indietro con un'accensione di ritorno e ha volato fino alla torre di lancio, dove ha rallentato fino a un volo quasi stazionario ed è stato catturato dalle braccia della torre 6 min 52 s dopo il decollo, il primo booster catturato in questo modo. Ship 30 ha proseguito su una traiettoria suborbitale di circa -15 x 212 km con inclinazione di 26,2° (il punto più basso sotto la superficie, quindi non poteva restare in orbita), è rientrata sopra l'Oceano Indiano a pancia in avanti, si è raddrizzata, ha eseguito l'accensione di atterraggio ed è ammarata vicino a una boa posizionata in precedenza 1 h 5 min 38 s dopo il decollo. Non era stata costruita per essere recuperata; circa 16 secondi dopo aver toccato l'acqua è divampata una grande palla di fuoco.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCIO",
+      "note": "Super Heavy B12 e Ship 30 decollano da Starbase il 2024-10-13 alle 12:25 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.0048,
+      "label": "CATTURA DALLA TORRE",
+      "note": "Booster 12 viene catturato dalle braccia della torre di lancio 6 min 52 s dopo il decollo, dopo la sua accensione di atterraggio.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.0058,
+      "label": "SECO",
+      "note": "I motori di Ship 30 si spengono 8 min 25 s dopo il decollo, su una traiettoria suborbitale di circa -15 x 212 km.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.0333,
+      "label": "RIENTRO",
+      "note": "Ship 30 entra nell'atmosfera a pancia in avanti sopra l'Oceano Indiano 48 min dopo il decollo.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.0456,
+      "label": "AMMARAGGIO",
+      "note": "Capovolgimento e accensione di atterraggio, poi ammaraggio vicino a una boa 1 h 5 min 38 s dopo il decollo; circa 16 s dopo divampa una grande palla di fuoco.",
+      "type": "nominal"
+    }
+  ]
+}

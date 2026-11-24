@@ -14,7 +14,7 @@
   "entryMassKg": 840,
   "entryCdA": 9.35,
   "dynamicGamma": true,
-  "retroPropellantKg": 25,
+  "retroPropellantKg": 30,
   "archetype": "MARS_AIRBAG",
   "params": {
     "chuteDeployAltM": 7540,
@@ -22,13 +22,65 @@
     "parachuteCdA": 60,
     "heatshieldKg": 90,
     "ispS": 200,
-    "airbagReleaseMs": 12
+    "airbagReleaseMs": 11.5,
+    "finalPhaseAltM": 8.5
   },
+  "beats": [
+    {
+      "type": "heatshield_sep",
+      "after": "parachute_deploy",
+      "afterS": 20
+    },
+    {
+      "type": "bridle_lower",
+      "after": "parachute_deploy",
+      "afterS": 30
+    },
+    {
+      "type": "radar_lock",
+      "altM": 2400
+    },
+    {
+      "type": "airbag_deploy",
+      "altM": 284
+    },
+    {
+      "type": "bridle_cut",
+      "altM": 8.5
+    }
+  ],
+  "afterTouchdown": {
+    "bounces": {
+      "count": 28,
+      "firstHeightM": 8.4,
+      "rollM": 275,
+      "restS": 57
+    },
+    "beats": [
+      {
+        "type": "petals_open",
+        "afterS": 8,
+        "realAfterS": 5760
+      }
+    ]
+  },
+  "estimatedFields": [
+    "retroPropellantKg",
+    "afterTouchdown.bounces.firstHeightM"
+  ],
   "source_tier": "flagship",
   "provenance": [
     {
-      "l": "MER EDL reconstruction (NASA) — Spirit entry 5,630 m/s inertial at −11.5°, 840 kg design mass, β 89.8 kg/m²; chute 251 s at 7.54 km, RAD firing 339.4 s at 99 m, ~14 m/s airbag impact (pre-entry Monte Carlo landing 352 s)",
+      "l": "MER EDL reconstruction (NASA) — Spirit entry 5,630 m/s inertial at −11.5°, 840 kg design mass, β 89.8 kg/m²; chute 251 s at 7.54 km, RAD firing 339.4 s at 99 m, ~14 m/s airbag impact (pre-entry Monte Carlo landing 352 s); bridle cut 8.5 m (reconstructed, preliminary)",
       "u": "https://ntrs.nasa.gov/api/citations/20040095912/downloads/20040095912.pdf"
+    },
+    {
+      "l": "Spirit's landing reconstruction (Spaceflight Now, from the JPL briefing, 13 Jan 2004) — bridle cut 28 ft (8.5 m) above the surface; 28 bounces across nearly 1,000 ft, at rest 57 s later; 250–300 m from first impact (Spaceflight Now, 4 Jan 2004). The first bounce height (8.4 m) is from an unopened JPL snippet: drawn as an estimate",
+      "u": "https://spaceflightnow.com/mars/mera/040113reconstruction.html"
+    },
+    {
+      "l": "MER landing press kit (Jan 2004) — heat shield 20 s after the chute; 20 m bridle spooled out 10 s after it; radar lock about 2.4 km; airbags at 284 m, 8 s before impact (Spirit plan); airbag retraction from 12 min after landing for about an hour, petals open from L+96 min (plan figure, Spirit)",
+      "u": "https://www.jpl.nasa.gov/news/press_kits/merlandings.pdf"
     },
     {
       "l": "MER-A Spirit EDL — JPL Mars Exploration Rover mission overview",

@@ -3,6 +3,29 @@
   "name": "New Glenn",
   "source_tier": "flagship",
   "payloadKg": 21715,
+  "recovery": [
+    {
+      "part": "booster",
+      "outcome": "landed",
+      "site": "droneship",
+      "siteNames": ["Jacklyn"],
+      "touchdownS": 600,
+      "timeClass": "approx"
+    }
+  ],
+  "recoveryByMission": {
+    "escapade": [
+      {
+        "part": "booster",
+        "outcome": "landed",
+        "site": "droneship",
+        "siteNames": ["Jacklyn"],
+        "entryBurnS": 420,
+        "touchdownS": 540,
+        "timeClass": "approx"
+      }
+    ]
+  },
   "loftBoost": true,
   "liftoffThrustKN": 17150,
   "fairingKg": 5000,
@@ -35,8 +58,16 @@
   ],
   "provenance": [
     {
-      "l": "New Glenn — Wikipedia (98 m, 7 m; GS1 7× BE-4, 19,928 kN, 340 s, ~190 s burn; GS2 2× BE-3U, 1,779 kN, 445 s, ~644 s burn; Blue Moon MK1 21,715 kg)",
+      "l": "NG-2 (13 Nov 2025): the first-stage booster landed on the landing platform vessel Jacklyn about nine minutes after liftoff for ESCAPADE (Space.com; TechCrunch says about ten minutes, which the profile's default of 600 s follows); the landing-burn start is not published, so the default applies. docs/wip/2026-11-24-escapade-sourced.md (0.9.11 F2)",
+      "u": "https://www.space.com/space-exploration/launches-spacecraft/blue-origin-lands-huge-new-glenn-rocket-booster-for-1st-time-after-acing-mars-escapade-launch-for-nasa"
+    },
+    {
+      "l": "New Glenn — Wikipedia (98 m, 7 m; GS1 7× BE-4, 19,928 kN, 340 s, ~190 s burn; GS2 2× BE-3U, 445 s, ~644 s burn; Blue Moon MK1 21,715 kg)",
       "u": "https://en.wikipedia.org/wiki/New_Glenn"
+    },
+    {
+      "l": "BE-3U — Wikipedia: 712 kN, uprated to 765 kN (Jeff Bezos, Aug 2024), then 778 kN / 175,000 lbf after the April 2025 second-stage hotfire (Dave Limp). GS2 flies 1,559.5 kN, fitted to NG-2's SECO-1 at T+773 s, 0.2 % from 2 × 778 kN. blueorigin.com's engine page is script-rendered and gave no text (2026-11-22)",
+      "u": "https://en.wikipedia.org/wiki/BE-3"
     },
     {
       "l": "Blue Origin lists the BE-4 at 2,450 kN per engine: 7 × = 17,150 kN at liftoff; GS1 sea-level Isp derived from the SL/vacuum thrust ratio",

@@ -258,6 +258,24 @@ describe('entity-page links (C11)', () => {
 });
 
 describe('row fields', () => {
+  it('spiral arms show their panel hero and name what it pictures (P1, 2026-11-22)', () => {
+    const { heroes } = read<{ heroes: NonNullable<ScaleIndexSource['thumbs']>['heroes'] }>(
+      'universe/panel-heroes.json',
+    );
+    const withThumbs = buildScaleIndexRows({
+      ...source(),
+      thumbs: { star: {}, heroes, titles: { 'jwst-orion': 'Orion Nebula' }, photoKeyOf: {} },
+    });
+    expect(withThumbs['milky-way'].find((r) => r.id === 'orion-spur')).toMatchObject({
+      section: 'arms',
+      thumb: '/credit-thumbs/images/deep-sky/jwst-orion.webp',
+      thumbPictured: 'Orion Nebula',
+    });
+    expect(withThumbs['milky-way'].find((r) => r.id === 'sagittarius')?.thumb).toBe(
+      '/credit-thumbs/images/deep-sky/hst-lagoon.webp',
+    );
+  });
+
   it('stars carry the constellation, the planetary-system and culture badges', () => {
     const sirius = rows.neighborhood.find((r) => r.id === 'sirius');
     expect(sirius?.meta).toBe('Canis Major');

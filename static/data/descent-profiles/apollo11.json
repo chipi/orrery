@@ -24,13 +24,20 @@
     "highGateSpeedMs": 150,
     "approachFpaDeg": 12,
     "lowGateAltM": 150,
-    "brakingRateGain": 0.01
+    "brakingRateGain": 0.01,
+    "gateBeats": true
   },
+  "beats": [
+    { "type": "contact_light", "altM": 1.7 },
+    { "type": "engine_cutoff", "altM": 1 }
+  ],
   "source_tier": "flagship",
   "estimatedFields": [
     "brakingMaxThrustN",
     "brakingFpaDeg",
-    "approachFpaDeg"
+    "approachFpaDeg",
+    "beats.contact_light",
+    "beats.engine_cutoff"
   ],
   "provenance": [
     {

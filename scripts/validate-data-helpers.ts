@@ -237,11 +237,17 @@ export type FleetMissionDriftError =
       mission_id: string;
       fleet_id: string;
       role: FleetRole;
+    }
+  | {
+      kind: 'bidirectional-drift-fleet';
+      fleet_id: string;
+      fleet_category: string;
+      mission_id: string;
     };
 
 /**
  * Pure drift detector for the fleet ↔ missions bidirectional contract
- * (ADR-052; RFC-016 OQ-2). Three checks, in order:
+ * (ADR-052; RFC-016 OQ-2). Four checks, in order:
  *
  *   1. Every `fleet_entry.linked_missions[*]` resolves to a real mission.
  *      → `fleet-linked-mission-unresolved`
@@ -250,6 +256,8 @@ export type FleetMissionDriftError =
  *   3. SYMMETRY — if mission M references fleet F via `fleet_refs`, then
  *      F's `linked_missions` MUST include M.
  *      → `bidirectional-drift-mission`
+ *   4. The converse — if F lists M, then M's `fleet_refs` references F.
+ *      → `bidirectional-drift-fleet`
  *
  * Returns an empty array when the contract holds. The order of returned
  * errors matches the order `validate-data.ts` emits them today so
@@ -304,6 +312,21 @@ export function findBidirectionalFleetMissionDrift(args: {
           role: ref.role,
         });
       }
+    }
+  }
+
+  // Check 4: the converse. linked_missions is derived from fleet_refs, so a mission listed by a
+  // fleet entry it does not reference is a hand edit the derivation would undo.
+  for (const entry of fleetEntries) {
+    for (const mid of entry.linked_missions ?? []) {
+      if (!missionIds.has(mid)) continue;
+      if ((missionFleetRefs.get(mid) ?? []).some((r) => r.id === entry.id)) continue;
+      errors.push({
+        kind: 'bidirectional-drift-fleet',
+        fleet_id: entry.id,
+        fleet_category: entry.category,
+        mission_id: mid,
+      });
     }
   }
 

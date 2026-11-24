@@ -79,8 +79,7 @@ Opportunities worth a future slice (none blocking):
    `audit-heroes.ts` — retirement / merge candidate. Audit tools should default
    to read-only with an explicit `--repair`.
 4. **Small consolidations.** `check` and `typecheck` are byte-identical npm
-   scripts; `gh-pages-compat.mjs` hand-mirrors the locale list from
-   `project.inlang/settings.json` (drift hazard — derive it).
+   scripts.
 5. **Stub commands exit 2.** `npm run audio:translate` and `audio:build` are
    not-implemented stubs (deferred to v0.8 / #152). Fine, but document/track so
    nobody wires them into a pipeline expecting output.

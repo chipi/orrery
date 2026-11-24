@@ -120,8 +120,8 @@
     },
     "delta_v": {
       "type": "string",
-      "pattern": "^~?\\d+(\\.\\d+)?\\s*km/s(\\s*\\([^)]+\\))?$",
-      "description": "Total mission \u2206v in km/s. Tilde prefix marks an estimate; an optional annotation in parens (e.g., \"(round trip)\", \"(TLI only)\") is allowed. Schema enforces the format so /fly's parseDeltaV() helper has no malformed input to guard against."
+      "pattern": "^(~?\\d+(\\.\\d+)?\\s*km/s(\\s*\\([^)]+\\))?|Not published(;.*)?)$",
+      "description": "Total mission \u2206v in km/s. Tilde prefix marks an estimate; an optional annotation in parens (e.g., \"(round trip)\", \"(TLI only)\") is allowed. \"Not published\" (optionally followed by \"; <what is published>\") marks a mission with no published figure. Schema enforces the format so /fly's parseDeltaV() helper has no malformed input to guard against."
     },
     "data_quality": {
       "enum": [

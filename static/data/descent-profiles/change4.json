@@ -13,7 +13,7 @@
   },
   "entryMassKg": 2400,
   "entryCdA": 0,
-  "retroPropellantKg": 1250,
+  "retroPropellantKg": 1330,
   "archetype": "LUNAR_POWERED",
   "params": {
     "ispS": 311,
@@ -22,9 +22,15 @@
     "brakingFpaDeg": 1,
     "brakingMaxThrustN": 7000,
     "highGateSpeedMs": 150,
-    "approachFpaDeg": 18,
+    "approachFpaDeg": 25,
     "lowGateAltM": 150,
-    "brakingRateGain": 0.01
+    "brakingRateGain": 0.01,
+    "hovers": [
+      {
+        "altM": 100,
+        "durS": 10
+      }
+    ]
   },
   "source_tier": "flagship",
   "estimatedFields": [
@@ -33,7 +39,9 @@
     "retroPropellantKg",
     "brakingFpaDeg",
     "brakingMaxThrustN",
-    "approachFpaDeg"
+    "approachFpaDeg",
+    "params.hovers durations",
+    "beats.engine_cutoff"
   ],
   "provenance": [
     {
@@ -43,6 +51,12 @@
     {
       "l": "Chang'e-4 Mission — CNSA / NSSDC record",
       "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2018-103A"
+    }
+  ],
+  "beats": [
+    {
+      "type": "engine_cutoff",
+      "altM": 4
     }
   ]
 }

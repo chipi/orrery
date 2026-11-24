@@ -135,7 +135,17 @@ export function createLaunchDirector(o: LaunchDirectorOptions): LaunchDirector {
       asc.setState(state);
       // Shots and the handheld wobble run on the play clock; the scene keeps mission time.
       const sceneT = scene(state.t);
-      const dp = directedPoseAt(plan, sceneT, { ...state, t: sceneT }, vehLen, undefined, safe);
+      // After SECO the shots frame the spacecraft where the scene put it (it springs free of the
+      // stage); without it the separation shot held the empty spot between the two.
+      const dp = directedPoseAt(
+        plan,
+        sceneT,
+        { ...state, t: sceneT },
+        vehLen,
+        asc.focus,
+        safe,
+        asc.stackSpan,
+      );
       if (opts?.camera !== false) {
         const p = dp.pose;
         asc.camera.position.set(p.px, p.py, p.pz);

@@ -20,12 +20,13 @@
     "flightPathAngleDeg",
     "entryCdA",
     "parachuteCdA",
-    "terminalCdA"
+    "terminalCdA",
+    "terminalHandoffAltM"
   ],
   "archetype": "EARTH_CAPSULE_REENTRY",
   "params": {
     "chuteDeployAltM": 12190,
-    "terminalHandoffAltM": 3000,
+    "terminalHandoffAltM": 3231,
     "parachuteCdA": 6,
     "terminalCdA": 268
   },

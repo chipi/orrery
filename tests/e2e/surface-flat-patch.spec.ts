@@ -1,4 +1,4 @@
-import { test, expect, type Locator, type Page } from '@playwright/test';
+import { test, expect, type CDPSession, type Locator, type Page } from '@playwright/test';
 import { clickViaEvaluate } from './_helpers/click-via-evaluate';
 import { isExpectedNoise } from './_helpers/console-errors';
 import { explainedAnnotationCount } from './_helpers/source-counts';
@@ -220,6 +220,103 @@ test.describe('SurfaceFlatPatch — sphere → flat-patch transition (desktop)',
     await page.waitForTimeout(2500);
     await expect(pop).toContainText(/Falcon/);
     await expect(page.getByTestId('annotation-rings')).toHaveCount(1);
+  });
+});
+
+// Real two-point touch events through CDP (the method of touch-gestures.spec.ts).
+async function pinch(
+  cdp: CDPSession,
+  page: Page,
+  c: [number, number],
+  from: number,
+  to: number,
+): Promise<void> {
+  const pts = (d: number) => [
+    { x: c[0] - d / 2, y: c[1], id: 0 },
+    { x: c[0] + d / 2, y: c[1], id: 1 },
+  ];
+  await cdp.send('Input.dispatchTouchEvent', { type: 'touchStart', touchPoints: pts(from) });
+  for (let s = 1; s <= 10; s++) {
+    await cdp.send('Input.dispatchTouchEvent', {
+      type: 'touchMove',
+      touchPoints: pts(from + ((to - from) * s) / 10),
+    });
+    await page.waitForTimeout(16);
+  }
+  await cdp.send('Input.dispatchTouchEvent', { type: 'touchEnd', touchPoints: [] });
+  await page.waitForTimeout(900);
+}
+
+test.describe('SurfaceFlatPatch — touch (mobile)', () => {
+  test.describe.configure({ timeout: 240_000 });
+  test.beforeEach(({ hasTouch }, info) => {
+    test.skip(!hasTouch || info.project.name !== 'mobile-chromium', 'mobile-chromium only');
+  });
+
+  // 2026-11-23 mobile report: pinch near a site was too fast to stop between the imagery bands,
+  // and the flat view took no touch input at all (no pan, no pinch, no pinch-out exit).
+  test('mars / curiosity — pinch steps down by altitude, then pinch and pan the flat view', async ({
+    page,
+  }) => {
+    await page.goto('/mars?site=curiosity');
+    await page
+      .locator('aside.panel')
+      .getByRole('button', { name: /close panel/i })
+      .first()
+      .click({ timeout: 60_000 });
+    const vp = page.viewportSize()!;
+    const c: [number, number] = [Math.round(vp.width / 2), Math.round(vp.height / 2)];
+    await expect
+      .poll(() => page.evaluate(([x, y]) => document.elementFromPoint(x, y)?.tagName, c), {
+        timeout: 60_000,
+      })
+      .toBe('CANVAS');
+    const camR = () => page.evaluate(() => window.__surfaceSceneCamera!().camR);
+    await expect.poll(camR, { timeout: 30_000 }).toBeLessThan(60);
+    const cdp = await page.context().newCDPSession(page);
+
+    // One 20 % spread takes the altitude down by about 1/1.2, never most of the way to the ground.
+    const alt0 = (await camR()) - 30;
+    await pinch(cdp, page, c, 100, 120);
+    const alt1 = (await camR()) - 30;
+    expect(alt1 / alt0, `altitude ${alt0} -> ${alt1}`).toBeGreaterThan(0.75);
+    expect(alt1 / alt0, `altitude ${alt0} -> ${alt1}`).toBeLessThan(0.92);
+
+    const flat = page.locator('.flat-patch');
+    await expect
+      .poll(
+        async () => {
+          await pinch(cdp, page, c, 60, 300);
+          return flat.isVisible();
+        },
+        { timeout: 60_000 },
+      )
+      .toBe(true);
+    await page.waitForTimeout(1000);
+
+    const scale = flat.locator('.hud-scale');
+    const latlon = flat.locator('.hud-latlon');
+    const scale0 = await scale.textContent();
+    await pinch(cdp, page, c, 80, 200);
+    await expect(scale, 'flat view: pinch zooms').not.toHaveText(scale0!);
+
+    const ll0 = await latlon.textContent();
+    await cdp.send('Input.dispatchTouchEvent', {
+      type: 'touchStart',
+      touchPoints: [{ x: c[0], y: c[1], id: 0 }],
+    });
+    for (let s = 1; s <= 8; s++)
+      await cdp.send('Input.dispatchTouchEvent', {
+        type: 'touchMove',
+        touchPoints: [{ x: c[0] + s * 10, y: c[1] + s * 8, id: 0 }],
+      });
+    await cdp.send('Input.dispatchTouchEvent', { type: 'touchEnd', touchPoints: [] });
+    await expect(latlon, 'flat view: one finger pans').not.toHaveText(ll0!);
+
+    // Pinch out past the entry zoom: back to the globe.
+    await pinch(cdp, page, c, 300, 60);
+    await pinch(cdp, page, c, 300, 60);
+    await expect(flat, 'flat view: pinch out returns to the globe').toBeHidden({ timeout: 8000 });
   });
 });
 

@@ -26,6 +26,14 @@
   }
 }
 
+/* Touch: the handle hides while a bottom drawer or the INDEX itself is open (it peeked over both);
+   the drawer closes from its tab, the INDEX from its ×. As on the Worlds (SurfaceScene). */
+@media (hover: none), (pointer: coarse) {
+  .scale-index-handle.under-drawer {
+    display: none;
+  }
+}
+
 /* Starts under the HUD chip row, which wraps on narrow windows: ScaleIndex publishes the
    measured bottom as --index-top; nothing on touch, where the HUD is hidden. */
 .scale-index {

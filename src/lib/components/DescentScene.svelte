@@ -11,7 +11,7 @@
   container, mounts, plays, and disposes, exactly like LaunchScene.
 -->
 <script lang="ts">
-  import { onMount, onDestroy, untrack } from 'svelte';
+  import { onMount, onDestroy, untrack, type Snippet } from 'svelte';
   import * as m from '$lib/paraglide/messages';
   import Chip from '$lib/components/Chip.svelte';
   import { hudLabel } from '$lib/orbital/hud-labels';
@@ -22,6 +22,7 @@
     type DescentScene,
   } from '$lib/three/descent-scene';
   import { createAscentRenderer, type AscentRenderer } from '$lib/three/ascent-renderer';
+  import { preloadDescentModels } from '$lib/three/descent-landers';
   import { resolveQualitySync } from '$lib/quality/quality-tier';
   import { createAnimateLoop, type AnimateLoop } from '$lib/three/animate-loop';
   import {
@@ -80,6 +81,10 @@
      *  clock/scrubber; passing it in avoids re-running the (guided ~100 ms) integration a second
      *  time here. Omitted → DescentScene integrates its own, staying standalone-usable. */
     precomputedSummary?: DescentSummary;
+    /** When given, touchdown rests on the landed frame and these actions are offered over it
+     *  (a Moon landing's "Continue: the way home" next to the surface hand-off); `onComplete`
+     *  is then the page's business, not fired here. */
+    landedActions?: Snippet;
   }
   let {
     profile,
@@ -92,6 +97,7 @@
     speed = $bindable(3),
     externalClock = false,
     precomputedSummary,
+    landedActions,
   }: Props = $props();
 
   const summary: DescentSummary = $derived(precomputedSummary ?? integrateDescent(profile));
@@ -201,7 +207,9 @@
   // markers derive from the same warp so everything stays in sync.
   // Entry/terminal warp lives in a shared pure module so the /fly play-clock can
   // find where a sep event lands in raw scrubber time (descent-timewarp.ts).
-  const terminalStartT = $derived.by(() => terminalStartTime(summary.states, duration));
+  const terminalStartT = $derived.by(() =>
+    terminalStartTime(summary.states, duration, summary.events),
+  );
   const warpDescentTime = (rawT: number): number =>
     warpTime(rawT, duration, terminalStartT, ENTRY_TIMELINE_FRAC);
   const unwarpDescentTime = (trajT: number): number =>
@@ -213,13 +221,35 @@
   const clockT = $derived(warpDescentTime(t));
 
   // Begin the touchdown flash. The real handoff (onComplete) fires when it ends.
+  let landed = $state(false);
   const complete = () => {
-    if (done || flashing) return;
+    if (done || flashing || landed) return;
+    if (landedActions) {
+      landed = true;
+      playing = false;
+      return;
+    }
     flashing = true;
     playing = false;
   };
 
+  // The descent's craft models load on demand (descent-landers.ts); the scene is built once they
+  // are in, or with the Tier 0 silhouettes if the load fails.
   onMount(() => {
+    let unmounted = false;
+    let stop: (() => void) | undefined;
+    void preloadDescentModels()
+      .catch(() => undefined)
+      .then(() => {
+        if (!unmounted) stop = start();
+      });
+    return () => {
+      unmounted = true;
+      stop?.();
+    };
+  });
+
+  function start(): () => void {
     const w = container.clientWidth;
     const h = container.clientHeight;
 
@@ -231,6 +261,7 @@
       vehicleLengthKm: DESCENT_VEHICLE_LENGTH_KM,
       siteId: mission.siteId,
       events: summary.events,
+      durationS: summary.states[summary.states.length - 1]?.t,
       peakHeatFlux: summary.peakHeat.flux,
     });
     // Hero IBL only on capable GPUs (high+); software-GL / weak renderers skip
@@ -245,8 +276,11 @@
     );
 
     const applyState = () => {
-      const s = sampleDescentAt(summary.states, warpDescentTime(t));
-      sceneObj!.setState(s);
+      const tt = warpDescentTime(t);
+      const s = sampleDescentAt(summary.states, tt);
+      // The state 2 s earlier: the lander's attitude comes from the trajectory, not the frame
+      // before (a scrub kept the old tilt).
+      sceneObj!.setState(s, tt > 2 ? sampleDescentAt(summary.states, tt - 2) : undefined);
       liveState = s;
     };
     applyState();
@@ -276,7 +310,7 @@
       window.removeEventListener('resize', onResize);
       forceLayerStops.forEach((stop) => stop?.());
     };
-  });
+  }
 
   onDestroy(() => {
     loop?.cleanup();
@@ -292,6 +326,10 @@
   data-testid="descent-scene"
 >
   <div class="stage" bind:this={container}></div>
+  <!-- HUD legibility scrim, as on the launch: the dim mono labels washed out against the bright
+       Mars sky and the sunlit ground (operator 2026-11-23). Here always on — a descent ends on a
+       bright surface on every body. -->
+  <div class="hud-scrim" aria-hidden="true"></div>
 
   {#if !flashing && !hudHidden}
     <!-- 2026 HUD frame — thin blue corner brackets, no panel. -->
@@ -344,8 +382,15 @@
           label={m.chip_label_blackout()}
         /></span
       >
-      <span class="lamp" class:on={drogueOut}>{m.hud_drogue()}</span>
-      <span class="lamp" class:on={mainOut}>{m.hud_main()}</span>
+      <!-- A capsule hangs under drogue then main canopies; Starship (Flight 5) has no chute,
+           it flips and lands on its engines. -->
+      {#if hasChute}
+        <span class="lamp" class:on={drogueOut}>{m.hud_drogue()}</span>
+        <span class="lamp" class:on={mainOut}>{m.hud_main()}</span>
+      {/if}
+      {#if hasRetro}
+        <span class="lamp" class:on={retroOn}>{m.hud_retro()}</span>
+      {/if}
     {:else}
       {#if hasChute}
         <span class="lamp" class:on={chuteOut}>{m.hud_chute()}</span>
@@ -457,6 +502,12 @@
     {/if}
   </div>
 
+  {#if landed && landedActions}
+    <div class="landed-actions" data-testid="descent-landed-actions">
+      {@render landedActions()}
+    </div>
+  {/if}
+
   {#if !flashing}
     <button class="continue" onclick={complete}>{m.fly_skip_to_surface()} →</button>
   {/if}
@@ -501,6 +552,33 @@
   .timeline,
   .readouts {
     transition: opacity 0.3s ease;
+  }
+  /* Same bands as LaunchScene's scrim: behind the telemetry (left), the dossier (right) and the
+     title + clock (top), clear in the middle where the craft is. */
+  .hud-scrim {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background:
+      linear-gradient(
+        90deg,
+        rgba(3, 6, 14, 0.72) 0px,
+        rgba(3, 6, 14, 0.5) 290px,
+        transparent 440px
+      ),
+      linear-gradient(
+        270deg,
+        rgba(3, 6, 14, 0.72) 0px,
+        rgba(3, 6, 14, 0.5) 290px,
+        transparent 440px
+      ),
+      linear-gradient(180deg, rgba(3, 6, 14, 0.55) 0px, transparent 150px),
+      radial-gradient(ellipse 130% 90% at 50% 42%, transparent 46%, rgba(3, 6, 14, 0.62) 100%);
+    transition: opacity 0.4s linear;
+  }
+  .descent.hud-hidden .hud-scrim {
+    opacity: 0;
   }
   .descent.hud-hidden .header,
   .descent.hud-hidden .clock,
@@ -804,6 +882,18 @@
     left: 22px;
     bottom: 26px;
     z-index: 6;
+  }
+  .landed-actions {
+    position: absolute;
+    left: 50%;
+    bottom: 76px;
+    transform: translateX(-50%);
+    z-index: 25;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    width: min(92vw, 560px);
   }
   .continue {
     position: absolute;

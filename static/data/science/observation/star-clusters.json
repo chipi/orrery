@@ -1,0 +1,37 @@
+{
+  "id": "star-clusters",
+  "tab": "observation",
+  "order": 17,
+  "photo": {
+    "src": "/images/deep-sky/hst-omega-centauri.jpg",
+    "credit": "NASA · ESA · Hubble Heritage Team (STScI/AURA) · Omega Centauri (NGC 5139), the largest and brightest globular cluster in the sky, seen by the Hubble Space Telescope."
+  },
+  "see_in_app": [
+    {
+      "route": "/explore",
+      "context_key": "The deep-sky level shows the Beehive, M67, Omega Centauri, 47 Tucanae, M13 and the rest of its 60 star clusters; each page links back here"
+    }
+  ],
+  "links": [
+    {
+      "l": "NASA · Star clusters: inside the universe's stellar collections",
+      "u": "https://science.nasa.gov/universe/stars/star-clusters-inside-the-universes-stellar-collections/",
+      "t": "intro"
+    },
+    {
+      "l": "ESA/Hubble · Hubble finds strong evidence for intermediate-mass black hole in Omega Centauri",
+      "u": "https://esahubble.org/news/heic2409/",
+      "t": "core"
+    },
+    {
+      "l": "NASA · Hubble Messier 67",
+      "u": "https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-67",
+      "t": "core"
+    },
+    {
+      "l": "Baumgardt & Vasiliev · Galactic globular cluster database (University of Queensland)",
+      "u": "https://people.smp.uq.edu.au/HolgerBaumgardt/globular/",
+      "t": "deep"
+    }
+  ]
+}

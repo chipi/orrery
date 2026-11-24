@@ -178,13 +178,13 @@ Runbook: the `orrery-link-health` skill. The two outbound checkers share
 
 | Question | Run | Where it runs |
 | --- | --- | --- |
-| does every indexable page have one title (not the bare brand, ≤90 chars), one description (≤160), a self-referencing canonical, the full hreflang set with built targets, og:title / og:url / og:image and a Twitter card, JSON-LD that parses and one H1, with no noindex leak, and (entity pages) at least the locale's character floor (`THIN_MIN_CHARS`, ADR-096 decision 12; the `/explore/stars/<id>` and `/explore/black-holes/<id>` pages included) of text in `<main>` — and do the sitemaps list exactly those pages; on the GH Pages mirror (`VITE_BASE`), is every page noindex with no canonical | `check-seo.mjs` | every `npm run build` |
+| does every indexable page have one title (not the bare brand, ≤90 chars), one description (≤160), a self-referencing canonical, the full hreflang set with built targets, og:title / og:url / og:image and a Twitter card, JSON-LD that parses and one H1, with no noindex leak, and (entity pages) at least the locale's character floor (`THIN_MIN_CHARS`, ADR-096 decision 12; the `/explore/stars/<id>` and `/explore/black-holes/<id>` pages included) of text in `<main>` — and do the sitemaps list exactly those pages | `check-seo.mjs` | every `npm run build` |
 | what date did each sitemap URL's content last change (the `<lastmod>`): per route and locale, the newest git commit date among the files the page is built from; writes `src/lib/generated/route-lastmod.json`; refuses a shallow clone | `build-route-lastmod.mjs` (`npm run route-lastmod`) | by hand in the release PR, last, on a full-history checkout; `src/lib/route-lastmod.test.ts` gates coverage in CI |
 | every control look on the site (button, tab, toggle, select, link-button) at desktop 1440x900 and phone 390x844, on every top-level page, two of each list and nine selected-panel states, plus what each disclosure (FILTERS, drawers, nav dropdowns, hamburger, popovers, index panels) shows when opened; grouped into looks with labels, routes and states (the A4 inventory, plan D4) | `ui-inventory-crawl.mjs --base=<preview url> [--out=docs/wip/<date>-ui-inventory.json] [--only=/a,/b]` | by hand before a UX review (D9) or a control redesign |
 | tell Bing, Yandex and the other IndexNow engines which URLs exist: reads the live `/sitemap.xml` index and every locale sitemap, dedupes, and POSTs in batches of ≤ 10,000 after checking `static/<key>.txt` is live (`--dry-run` sends nothing; `--since YYYY-MM-DD`; `--base`; `--key`) | `indexnow-submit.mjs` (`npm run indexnow`; runbook `docs/ops/indexnow.md`) | by hand, once after each verified prod deploy; the real submission needs the operator's go |
 
 The SEO code it checks: `src/lib/seo.ts` (canonical, hreflang, `metaDescription`,
-`pageTitle`, `isMirrorBuild`), `src/lib/social-meta.ts` (Open Graph + Twitter,
+`pageTitle`), `src/lib/social-meta.ts` (Open Graph + Twitter,
 applied in `src/hooks.server.ts`), `src/lib/json-ld.ts` + `JsonLd.svelte`, and
 `src/lib/sitemap.ts` (the `/sitemap.xml` index and `/sitemaps/<locale>.xml`).
 
@@ -222,5 +222,12 @@ applied in `src/hooks.server.ts`), `src/lib/json-ld.ts` + `JsonLd.svelte`, and
   Isp kept, so delta-v is unchanged), sets fairing times and coasts, prints
   before / after and whether it still reaches orbit. Pin the result in
   `src/lib/orbital/launch-timeline.test.ts` (backlog F4 / S13, 2026-11-19).
+- `fit-launch-states.ts <spec.json> [--write]` — fits a profile's pitch table
+  (the one ascent input no source publishes) to a sourced trajectory: altitude
+  and inertial speed at given times, plus event times and max-Q. Thrust,
+  propellant and Isp stay the published values; use it when the model's
+  state at an event is wrong, not only its time. Specs live in
+  `scripts/launch-fits/<id>.json` so a fit can be re-run (0.9.11 F1, H3).
+  Shared JSON helpers for both fit scripts: `scripts/lib/launch-profile-json.ts`.
 - `__smoke__/resolver-diversity.mjs [--skip-network]` — image resolver
   diversity smoke (offline dedup unit + an optional live pass).

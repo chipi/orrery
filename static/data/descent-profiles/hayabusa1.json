@@ -22,11 +22,21 @@
   "source_tier": "flagship",
   "provenance": [
     {
-      "l": "Hayabusa — descent from 1 km from 21:00 JST 19 Nov 2005 at 12 cm/s; target marker released at 54 m at 3 cm/s; free fall from 17 m; touchdown at ~10 cm/s, two soft bounces, ~30 min on the surface; the sampler projectile did not fire (ISAS). The model flies the last 54 m",
+      "l": "Hayabusa — descent from 1 km from 21:00 JST 19 Nov 2005 at 12 cm/s; target marker released at 54 m at 3 cm/s; free fall from 17 m; touchdown at ~10 cm/s, two soft bounces, ~30 min on the surface; the sampler projectile did not fire (ISAS). The model flies the last 54 m; the back-away climb rate and length are drawn, and one of the two touchdowns is shown",
       "u": "https://www.isas.jaxa.jp/e/snews/2005/1124_hayabusa.shtml"
     }
   ],
   "estimatedFields": [
-    "entryMassKg"
-  ]
+    "entryMassKg",
+    "afterTouchdown.ascent.rateMs",
+    "afterTouchdown.ascent.durationS",
+    "afterTouchdown.ascent.afterS"
+  ],
+  "afterTouchdown": {
+    "ascent": {
+      "afterS": 2,
+      "rateMs": 0.3,
+      "durationS": 12
+    }
+  }
 }

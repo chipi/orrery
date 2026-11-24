@@ -1,43 +1,33 @@
 /**
  * Showcase models: small-body explorers (DART, Lucy, Psyche, Europa Clipper). Each stands with
  * the axis its sourced length is measured along vertical (base y = 0), front facing +z, arrays
- * deployed at their real size.
+ * deployed at their real size. Blanketed bodies are crinkled foil with tape seams, arrays are
+ * seamed cell strips (or UltraFlex petals), and dishes, thrusters, radiators and booms are
+ * drawn as hardware.
  */
 import * as THREE from 'three';
 import type { ShowcaseModel, ShowcaseRef } from './types';
+import { add, box, crinkle, lathe, mat, strut, type Mat } from './kit';
 
-type Mat = THREE.MeshStandardMaterial;
+const V = (x: number, y: number, z: number): THREE.Vector3 => new THREE.Vector3(x, y, z);
+const TAU = Math.PI * 2;
 
-function mat(color: number, metalness = 0.3, roughness = 0.6, double = false): Mat {
-  return new THREE.MeshStandardMaterial({
-    color,
-    metalness,
-    roughness,
-    side: double ? THREE.DoubleSide : THREE.FrontSide,
-  });
+function pal(cell = 0x16254f): Record<string, Mat> {
+  return {
+    gold: mat(0xc99a3c, 0.55, 0.4, true),
+    foil: mat(0xb9bcc2, 0.6, 0.35, true),
+    tape: mat(0xd9b24a, 0.3, 0.5),
+    white: mat(0xe8e5dc, 0.15, 0.65),
+    dark: mat(0x1b1c20, 0.4, 0.6),
+    metal: mat(0xb4b8be, 0.7, 0.4),
+    titan: mat(0x8d9096, 0.75, 0.35),
+    cell: mat(cell, 0.6, 0.3),
+    seam: mat(0xc9a64a, 0.7, 0.35),
+    kapton: mat(0x9a5a22, 0.45, 0.5, true),
+    dbl: Object.assign(mat(0xe6e4de, 0.15, 0.55), { side: THREE.DoubleSide }),
+  };
 }
 
-function add<T extends THREE.Object3D>(g: THREE.Object3D, o: T): T {
-  g.add(o);
-  return o;
-}
-
-function box(
-  g: THREE.Object3D,
-  m: Mat,
-  w: number,
-  h: number,
-  d: number,
-  x: number,
-  y: number,
-  z: number,
-): THREE.Mesh {
-  const mesh = new THREE.Mesh(new THREE.BoxGeometry(w, h, d), m);
-  mesh.position.set(x, y, z);
-  return add(g, mesh);
-}
-
-/** Cylinder along y between two heights, at (x, z). */
 function cyl(
   g: THREE.Object3D,
   m: Mat,
@@ -47,14 +37,14 @@ function cyl(
   y1: number,
   x = 0,
   z = 0,
-  seg = 32,
+  seg = 28,
 ): THREE.Mesh {
   const mesh = new THREE.Mesh(new THREE.CylinderGeometry(rTop, rBot, y1 - y0, seg), m);
   mesh.position.set(x, (y0 + y1) / 2, z);
   return add(g, mesh);
 }
 
-/** Cylinder along the z axis between two z values, at (x, y); r0 at z0, r1 at z1. */
+/** A cylinder along z between two z values, at (x, y); r0 at z0, r1 at z1. */
 function cylZ(
   g: THREE.Object3D,
   m: Mat,
@@ -64,231 +54,441 @@ function cylZ(
   z1: number,
   x: number,
   y: number,
-  open = false,
+  seg = 24,
 ): THREE.Mesh {
-  const mesh = new THREE.Mesh(new THREE.CylinderGeometry(r1, r0, z1 - z0, 32, 1, open), m);
+  const mesh = new THREE.Mesh(new THREE.CylinderGeometry(r1, r0, z1 - z0, seg), m);
   mesh.rotation.x = Math.PI / 2;
   mesh.position.set(x, y, (z0 + z1) / 2);
   return add(g, mesh);
 }
 
-/** Shallow parabolic dish facing +z, rim at z = 0 plus `depth` behind it. */
-function dish(
+/** A cylinder along x between two x values, at (y, z). */
+function cylX(
   g: THREE.Object3D,
   m: Mat,
   r: number,
-  depth: number,
-  x: number,
+  x0: number,
+  x1: number,
   y: number,
   z: number,
-) {
-  const pts: THREE.Vector2[] = [];
-  for (let i = 0; i <= 12; i++) {
-    const t = i / 12;
-    pts.push(new THREE.Vector2(t * r, depth * (1 - t * t)));
-  }
-  const mesh = new THREE.Mesh(new THREE.LatheGeometry(pts, 40), m);
-  // lathe axis is y, dish opens toward +y; turn it to face +z
-  mesh.rotation.x = Math.PI / 2;
-  mesh.position.set(x, y, z - depth);
+  seg = 12,
+): THREE.Mesh {
+  const mesh = new THREE.Mesh(new THREE.CylinderGeometry(r, r, Math.abs(x1 - x0), seg), m);
+  mesh.rotation.z = Math.PI / 2;
+  mesh.position.set((x0 + x1) / 2, y, z);
   return add(g, mesh);
 }
 
-interface Mats {
-  cell: Mat;
-  frame: Mat;
-  line: Mat;
-  gold: Mat;
-  white: Mat;
-  dark: Mat;
-  metal: Mat;
-}
-
-function mats(cell = 0x16254f): Mats {
-  return {
-    cell: mat(cell, 0.6, 0.3),
-    frame: mat(0xb9bcc2, 0.5, 0.45),
-    line: mat(0xc9a64a, 0.7, 0.35),
-    gold: mat(0xb08f45, 0.65, 0.4),
-    white: mat(0xe6e6e2, 0.2, 0.6),
-    dark: mat(0x1b1c20, 0.4, 0.6),
-    metal: mat(0xaeb2b8, 0.7, 0.4),
-  };
-}
-
-/** Rectangular solar panel in the x-y plane, facing +z, with cell grid lines. */
-function panel(
+/** A crinkled blanketed box w x h x d centred at (x, y, z), with tape bands on its faces. */
+function foilBlock(
   g: THREE.Object3D,
-  m: Mats,
+  m: Mat,
+  tape: Mat,
   w: number,
   h: number,
+  d: number,
   x: number,
   y: number,
-  cols: number,
-  rows: number,
-): void {
-  const pg = new THREE.Group();
-  // Solar array: the launch scene keeps it stowed until the craft separates (types.ts).
-  pg.userData.solarArray = true;
-  g.add(pg);
-  box(pg, m.frame, w, h, 0.04, x, y, 0);
-  box(pg, m.cell, w - 0.1, h - 0.1, 0.05, x, y, 0.005);
-  for (let c = 1; c < cols; c++)
-    box(pg, m.line, 0.012, h - 0.1, 0.056, x - w / 2 + 0.05 + ((w - 0.1) * c) / cols, y, 0.005);
-  for (let r = 1; r < rows; r++)
-    box(pg, m.line, w - 0.1, 0.012, 0.056, x, y - h / 2 + 0.05 + ((h - 0.1) * r) / rows, 0.005);
+  z: number,
+  amp = 0.012,
+): THREE.Group {
+  const grp = new THREE.Group();
+  grp.position.set(x, y, z);
+  const geo = crinkle(
+    new THREE.BoxGeometry(
+      w,
+      h,
+      d,
+      Math.max(2, Math.round(w / 0.24)),
+      Math.max(2, Math.round(h / 0.24)),
+      Math.max(2, Math.round(d / 0.24)),
+    ),
+    amp,
+  );
+  grp.add(new THREE.Mesh(geo, m));
+  const t = 0.014;
+  for (const f of [1 / 3, 2 / 3]) {
+    box(grp, tape, w + 0.012, t, d + 0.012, 0, -h / 2 + h * f, 0);
+    box(grp, tape, t, h + 0.012, d + 0.012, -w / 2 + w * f, 0, 0);
+    box(grp, tape, w + 0.012, h + 0.012, t, 0, 0, -d / 2 + d * f);
+  }
+  return add(g, grp);
 }
 
-/** Circular UltraFlex array facing +z with a wedge cut out toward the bus (at angle `notch`). */
-function ultraflex(g: THREE.Object3D, m: Mats, R: number, x: number, y: number, notch: number) {
-  const gap = 0.4;
+/** A paraboloid dish, vertex at `pos`, axis along `dir`; rim, ribs and a feed on a tripod. */
+function dishAt(
+  g: THREE.Object3D,
+  m: Mat,
+  rimM: Mat,
+  R: number,
+  depth: number,
+  pos: THREE.Vector3,
+  dir: THREE.Vector3,
+  feedLen: number,
+  ribs = 12,
+): THREE.Group {
   const wrap = add(g, new THREE.Group());
-  wrap.position.set(x, y, 0);
-  const start = notch + gap / 2;
-  const theta = Math.PI * 2 - gap;
-  wrap.add(
-    new THREE.Mesh(new THREE.CircleGeometry(R, 64, start, theta), mat(0x16254f, 0.6, 0.3, true)),
-  );
-  for (let i = 0; i <= 18; i++) {
-    const a = start + (theta * i) / 18;
-    const rib = new THREE.Mesh(new THREE.BoxGeometry(R, 0.03, 0.012), m.line);
-    rib.position.set(Math.cos(a) * R * 0.5, Math.sin(a) * R * 0.5, 0.01);
-    rib.rotation.z = a;
-    wrap.add(rib);
+  wrap.position.copy(pos);
+  wrap.quaternion.setFromUnitVectors(V(0, 1, 0), dir.clone().normalize());
+  const pts: [number, number][] = [];
+  for (let i = 0; i <= 14; i++) {
+    const r = Math.max(0.01, (R * i) / 14);
+    pts.push([r, depth * (r / R) ** 2]);
   }
-  for (const rr of [0.35, 0.65]) {
-    const ring = new THREE.Mesh(new THREE.TorusGeometry(R * rr, 0.012, 4, 80), m.line);
-    ring.position.z = 0.01;
-    wrap.add(ring);
+  lathe(wrap, m, pts, 40);
+  const rim = new THREE.Mesh(new THREE.TorusGeometry(R, Math.max(0.01, R * 0.014), 6, 48), rimM);
+  rim.rotation.x = Math.PI / 2;
+  rim.position.y = depth;
+  wrap.add(rim);
+  for (let k = 0; k < ribs; k++) {
+    const a = (k / ribs) * TAU;
+    strut(wrap, rimM, V(0, 0.01, 0), V(Math.cos(a) * R, depth, Math.sin(a) * R), 0.006, 4);
   }
-  const hub = new THREE.Mesh(new THREE.CylinderGeometry(0.18, 0.18, 0.12, 16), m.frame);
-  hub.rotation.x = Math.PI / 2;
-  wrap.add(hub);
+  for (let k = 0; k < 3; k++) {
+    const a = (k / 3) * TAU + Math.PI / 6;
+    strut(
+      wrap,
+      rimM,
+      V(Math.cos(a) * R * 0.92, depth * 0.85, Math.sin(a) * R * 0.92),
+      V(0, feedLen, 0),
+      Math.max(0.006, R * 0.012),
+      5,
+    );
+  }
+  const feed = new THREE.Mesh(new THREE.CylinderGeometry(R * 0.07, R * 0.1, R * 0.12, 14), rimM);
+  feed.position.y = feedLen;
+  wrap.add(feed);
+  return wrap;
+}
+
+/**
+ * A solar panel in the x-y plane facing +z, centred on the origin: frame, cell slab, a seam per
+ * cell column and row, edge bars.
+ */
+function cellPanel(
+  g: THREE.Object3D,
+  M: Record<string, Mat>,
+  w: number,
+  h: number,
+  cols: number,
+  rows: number,
+  t = 0.04,
+): THREE.Group {
+  const p = new THREE.Group();
+  box(p, M.metal, w, h, t, 0, 0, 0);
+  box(p, M.cell, w - 0.07, h - 0.07, t, 0, 0, 0.006);
+  for (let i = 1; i < cols; i++) {
+    box(p, M.seam, 0.008, h - 0.07, t + 0.012, -w / 2 + 0.035 + ((w - 0.07) * i) / cols, 0, 0.006);
+  }
+  for (let j = 1; j < rows; j++) {
+    box(p, M.seam, w - 0.07, 0.008, t + 0.012, 0, -h / 2 + 0.035 + ((h - 0.07) * j) / rows, 0.006);
+  }
+  box(p, M.titan, w + 0.02, 0.03, t + 0.03, 0, h / 2, 0);
+  box(p, M.titan, w + 0.02, 0.03, t + 0.03, 0, -h / 2, 0);
+  // Solar array: the launch scene keeps it stowed until the craft separates (types.ts).
+  p.userData.solarArray = true;
+  return add(g, p);
+}
+
+/** A louvred radiator plate facing +z of its group, w x h, with `n` louvre slats. */
+function radiator(
+  g: THREE.Object3D,
+  M: Record<string, Mat>,
+  w: number,
+  h: number,
+  n: number,
+): THREE.Group {
+  const r = new THREE.Group();
+  box(r, M.white, w, h, 0.03, 0, 0, 0);
+  for (let j = 0; j < n; j++) {
+    box(r, M.dark, w - 0.04, 0.012, 0.036, 0, -h / 2 + ((j + 0.5) * h) / n, 0);
+  }
+  return add(g, r);
+}
+
+/** A small attitude thruster pod: a bracket and a nozzle pointing along +z of its group. */
+function pod(g: THREE.Object3D, M: Record<string, Mat>, size: number): THREE.Group {
+  const p = new THREE.Group();
+  box(p, M.metal, size * 1.6, size * 1.6, size * 0.8, 0, 0, 0);
+  cylZ(p, M.dark, size * 0.35, size * 0.65, 0, size * 1.4, 0, 0, 10);
+  return add(g, p);
 }
 
 // ---------------------------------------------------------------------------------------------
-// DART
+// DART: bus 1.8 x 1.9 x 2.6 m, two ROSA roll-out arrays of 8.5 x 2.4 m
 // ---------------------------------------------------------------------------------------------
 
 function buildDart(): THREE.Group {
   const g = new THREE.Group();
-  const m = mats(0x1a2c5c);
+  const M = pal(0x1a2c5c);
   const H = 2.6; // bus 1.8 x 1.9 x 2.6 m, the 2.6 m axis vertical
   const W = 1.8;
   const D = 1.9;
-  const foil = mat(0xc4a24a, 0.55, 0.45);
-  box(g, foil, W, H, D, 0, H / 2, 0);
-  // panel strips on the bus
-  for (const y of [0.55, H - 0.55]) box(g, m.white, W + 0.02, 0.5, D + 0.02, 0, y, 0);
-  box(g, m.dark, W + 0.03, 0.04, D + 0.03, 0, H / 2, 0);
 
-  // DRACO camera: baffle and aperture on the +z face
-  cylZ(g, m.dark, 0.2, 0.2, D / 2, D / 2 + 0.45, 0.3, 1.5, true);
-  cylZ(g, m.metal, 0.22, 0.22, D / 2, D / 2 + 0.06, 0.3, 1.5);
-  cylZ(g, m.dark, 0.17, 0.17, D / 2 + 0.06, D / 2 + 0.07, 0.3, 1.5);
-  // star trackers and the SMART Nav sun sensor beside it
-  for (const x of [-0.45, -0.7]) cylZ(g, m.dark, 0.06, 0.07, D / 2, D / 2 + 0.16, x, 2.2);
+  // bus: gold blanket with tape seams, a deck plate at the base
+  foilBlock(g, M.gold, M.tape, W, H - 0.1, D, 0, 0.1 + (H - 0.1) / 2, 0, 0.012);
+  box(g, M.dark, W + 0.04, 0.1, D + 0.04, 0, 0.05, 0);
+  // white radiator plates and a dark band between the foil blocks
+  const rl = radiator(g, M, 0.7, 0.55, 5);
+  rl.position.set(-0.45, 0.5, D / 2 + 0.02);
+  const rr = radiator(g, M, 0.5, 0.9, 7);
+  rr.position.set(W / 2 + 0.02, 1.1, -0.3);
+  rr.rotation.y = Math.PI / 2;
+  // corner thruster pods on the +z face (the 22 N hydrazine cluster)
+  for (const [x, y] of [
+    [-0.75, 0.3],
+    [0.75, 0.3],
+    [-0.75, 2.3],
+    [0.75, 2.3],
+  ] as [number, number][]) {
+    const p = pod(g, M, 0.06);
+    p.position.set(x, y, D / 2 + 0.04);
+  }
 
-  // NEXT-C ion engine: gridded thruster on the -z face with its dark grid disc
+  // DRACO camera: baffle with a ring and the dark aperture on the +z face
+  cylZ(g, M.dark, 0.2, 0.2, D / 2, D / 2 + 0.45, 0.3, 1.5);
+  cylZ(g, M.metal, 0.23, 0.23, D / 2, D / 2 + 0.07, 0.3, 1.5);
+  cylZ(g, M.metal, 0.23, 0.23, D / 2 + 0.43, D / 2 + 0.47, 0.3, 1.5);
+  // star trackers and the SMART Nav sun sensor
+  for (const x of [-0.45, -0.7]) {
+    cylZ(g, M.dark, 0.06, 0.07, D / 2, D / 2 + 0.16, x, 2.2);
+    cylZ(g, M.metal, 0.08, 0.08, D / 2, D / 2 + 0.03, x, 2.2);
+  }
+  // LICIACube: the 6U cubesat in its dispenser on the +z face
+  box(g, M.white, 0.26, 0.4, 0.2, 0.1, 2.25, D / 2 + 0.1);
+  box(g, M.dark, 0.2, 0.06, 0.02, 0.1, 2.38, D / 2 + 0.21);
+
+  // NEXT-C ion engine on the -z face: gimbal frame, body and the dark grid disc
   const nz = -D / 2;
-  cylZ(g, m.metal, 0.19, 0.19, nz - 0.3, nz, 0, 1.0);
-  cylZ(g, m.dark, 0.185, 0.185, nz - 0.34, nz - 0.3, 0, 1.0);
-  box(g, m.metal, 0.5, 0.5, 0.06, 0, 1.0, nz - 0.02);
+  box(g, M.metal, 0.5, 0.5, 0.06, 0, 1.0, nz - 0.02);
+  cylZ(g, M.titan, 0.2, 0.2, nz - 0.3, nz, 0, 1.0);
+  cylZ(g, M.dark, 0.185, 0.185, nz - 0.35, nz - 0.3, 0, 1.0);
+  for (const dx of [-0.28, 0.28]) cylZ(g, M.titan, 0.025, 0.025, nz - 0.2, nz, dx, 1.0, 8);
 
   // flat-plate high-gain antenna
-  box(g, m.white, 0.55, 0.55, 0.05, -0.45, 1.0, D / 2 + 0.03);
+  box(g, M.white, 0.55, 0.55, 0.05, -0.45, 1.2, D / 2 + 0.03);
+  box(g, M.dark, 0.47, 0.47, 0.02, -0.45, 1.2, D / 2 + 0.06);
+  // low-gain horn
+  cylZ(g, M.tape, 0.04, 0.12, D / 2, D / 2 + 0.22, 0.45, 0.65, 14);
 
-  // two ROSA roll-out arrays: 8.5 x 2.4 m each, from the bus sides on short masts
+  // two ROSA roll-out arrays, 8.5 x 2.4 m, each from a stowage tube on a short mast: two rolled
+  // booms along the long edges, the cell blanket between them and a tip bar
   for (const s of [1, -1]) {
-    box(g, m.frame, 0.4, 0.1, 0.1, s * (W / 2 + 0.2), H / 2, 0);
-    const armLen = 8.5;
     const x0 = W / 2 + 0.4;
-    // two booms along the long edges
-    for (const dy of [-1.2, 1.2])
-      box(g, m.frame, armLen, 0.06, 0.06, s * (x0 + armLen / 2), H / 2 + dy, 0);
-    const cols = 17;
-    for (let i = 0; i < cols; i++) {
-      const w = armLen / cols;
-      panel(g, m, w - 0.02, 2.4, s * (x0 + w * (i + 0.5)), H / 2, 1, 6);
-    }
+    const armLen = 8.5;
+    box(g, M.metal, 0.4, 0.1, 0.1, s * (W / 2 + 0.2), H / 2, 0).name = 'array-arm';
+    cyl(g, M.titan, 0.14, 0.14, H / 2 - 1.25, H / 2 + 1.25, s * (x0 - 0.05), 0, 16);
+    for (const dy of [-1.2, 1.2]) cylX(g, M.titan, 0.035, s * x0, s * (x0 + armLen), H / 2 + dy, 0);
+    const p = cellPanel(g, M, armLen, 2.3, 34, 6, 0.012);
+    p.position.set(s * (x0 + armLen / 2), H / 2, 0);
+    box(g, M.titan, 0.08, 2.5, 0.06, s * (x0 + armLen), H / 2, 0);
   }
   return g;
 }
 
 // ---------------------------------------------------------------------------------------------
-// Lucy
+// Lucy: two 7.3 m UltraFlex discs and a 1.7 x 1.4 x 1.5 m bus, 16 m tip to tip
 // ---------------------------------------------------------------------------------------------
+
+/** A circular UltraFlex array facing +z with a wedge cut out toward the bus (at angle `notch`). */
+function ultraflex(
+  g: THREE.Object3D,
+  M: Record<string, Mat>,
+  R: number,
+  x: number,
+  y: number,
+  notch: number,
+): void {
+  const gap = 0.4;
+  const wrap = add(g, new THREE.Group());
+  wrap.position.set(x, y, 0);
+  const start = notch + gap / 2;
+  const theta = TAU - gap;
+  const petals = 10;
+  const dt = theta / petals;
+  // the orange Kapton backing of the whole disc, then each gore's cells as a darker petal
+  wrap.add(new THREE.Mesh(new THREE.CircleGeometry(R, 64, start, theta), M.kapton));
+  const cellFace = Object.assign(mat(0x16254f, 0.55, 0.3), { side: THREE.DoubleSide });
+  for (let i = 0; i < petals; i++) {
+    const p = new THREE.Mesh(
+      new THREE.CircleGeometry(R * 0.97, 12, start + i * dt + 0.025, dt - 0.05),
+      cellFace,
+    );
+    p.position.z = 0.006;
+    wrap.add(p);
+    // the cell rows of each gore: arcs at set radii
+    for (const rr of [0.3, 0.45, 0.6, 0.75, 0.9]) {
+      const arc = new THREE.Mesh(
+        new THREE.RingGeometry(
+          R * rr - 0.01,
+          R * rr + 0.01,
+          8,
+          1,
+          start + i * dt + 0.025,
+          dt - 0.05,
+        ),
+        M.seam,
+      );
+      arc.position.z = 0.009;
+      wrap.add(arc);
+    }
+  }
+  // radial spars between the gores
+  for (let i = 0; i <= petals; i++) {
+    const a = start + i * dt;
+    const rib = new THREE.Mesh(new THREE.BoxGeometry(R, 0.04, 0.025), M.metal);
+    rib.position.set(Math.cos(a) * R * 0.5, Math.sin(a) * R * 0.5, 0.014);
+    rib.rotation.z = a;
+    wrap.add(rib);
+  }
+  // rim cable and the central hub with the deployment canister
+  const rimGeo = new THREE.TorusGeometry(R, 0.02, 6, 96, theta).rotateZ(start);
+  const rim = new THREE.Mesh(rimGeo, M.metal);
+  rim.position.z = 0.012;
+  wrap.add(rim);
+  const hub = new THREE.Mesh(new THREE.CylinderGeometry(0.2, 0.2, 0.16, 20), M.metal);
+  hub.rotation.x = Math.PI / 2;
+  hub.position.z = 0.04;
+  wrap.add(hub);
+  // Solar array: the launch scene keeps it stowed until the craft separates (types.ts).
+  wrap.userData.solarArray = true;
+}
 
 function buildLucy(): THREE.Group {
   const g = new THREE.Group();
-  const m = mats(0x16264f);
+  const M = pal(0x16264f);
   const R = 3.65; // 7.3 m UltraFlex discs
   const busH = 1.4; // between the discs: 2 x 7.3 + 1.4 = 16 m tip to tip
   const mid = R * 2 + busH / 2; // bus centre height
-  const foil = mat(0xb48f3e, 0.6, 0.45);
   const busX = 1.7;
   const busZ = 1.5;
 
-  // bus (long axis across the page, between the two arrays)
-  box(g, foil, busX, busH, busZ, 0, mid, 0);
-  box(g, m.dark, busX + 0.02, 0.05, busZ + 0.02, 0, mid, 0);
-  // discs, each notched toward the bus, joined by short yokes
-  ultraflex(g, m, R, 0, mid + busH / 2 + R, -Math.PI / 2);
-  ultraflex(g, m, R, 0, mid - busH / 2 - R, Math.PI / 2);
-  for (const s of [1, -1]) box(g, m.frame, 0.16, 0.5, 0.16, 0, mid + s * (busH / 2 + 0.02), -0.1);
+  // bus (long axis across the page, between the two arrays): gold blanket, tape, radiators
+  foilBlock(g, M.gold, M.tape, busX, busH, busZ, 0, mid, 0, 0.014);
+  box(g, M.dark, busX + 0.02, 0.05, busZ + 0.02, 0, mid, 0);
+  const rad = radiator(g, M, 0.8, 0.5, 5);
+  rad.position.set(0.3, mid - 0.3, -busZ / 2 - 0.02);
+  rad.rotation.y = Math.PI;
+  // discs, each notched toward the bus, on yoke struts
+  ultraflex(g, M, R, 0, mid + busH / 2 + R, -Math.PI / 2);
+  ultraflex(g, M, R, 0, mid - busH / 2 - R, Math.PI / 2);
+  for (const s of [1, -1]) {
+    box(g, M.metal, 0.16, 0.5, 0.16, 0, mid + s * (busH / 2 + 0.02), -0.1).name = 'array-arm';
+    strut(
+      g,
+      M.titan,
+      V(0.45, mid + s * busH * 0.4, -0.2),
+      V(0.05, mid + s * (busH / 2 + 0.6), -0.1),
+      0.025,
+      6,
+    );
+    strut(
+      g,
+      M.titan,
+      V(-0.45, mid + s * busH * 0.4, -0.2),
+      V(-0.05, mid + s * (busH / 2 + 0.6), -0.1),
+      0.025,
+      6,
+    );
+  }
 
-  // 2 m high-gain dish on the +z face
-  cyl(g, m.frame, 0.06, 0.06, mid - 0.1, mid + 0.1, 0, busZ / 2 + 0.2);
-  box(g, m.frame, 0.1, 0.1, 0.4, 0, mid, busZ / 2 + 0.2);
-  dish(g, m.white, 1.0, 0.3, 0, mid, busZ / 2 + 0.75);
-  cylZ(g, m.dark, 0.04, 0.04, busZ / 2 + 0.75, busZ / 2 + 1.25, 0, mid);
+  // 2 m high-gain dish on a gimbal on the +z face
+  cyl(g, M.metal, 0.07, 0.07, mid - 0.1, mid + 0.1, 0, busZ / 2 + 0.2, 16);
+  box(g, M.metal, 0.1, 0.1, 0.4, 0, mid, busZ / 2 + 0.2);
+  dishAt(g, M.dbl, M.metal, 1.0, 0.3, V(0, mid, busZ / 2 + 0.55), V(0, 0.15, 1), 0.55, 14);
 
   // instrument platform on the -x side: deck with the remote-sensing instruments pointing +z
   const px = -busX / 2 - 0.65;
-  box(g, m.white, 1.3, 0.8, 0.12, px - 0.1, mid, busZ / 2 - 0.1);
-  cylZ(g, m.dark, 0.2, 0.2, busZ / 2 - 0.04, busZ / 2 + 0.6, px - 0.35, mid + 0.15); // L'LORRI
-  cylZ(g, m.dark, 0.13, 0.13, busZ / 2 - 0.04, busZ / 2 + 0.45, px + 0.15, mid + 0.18);
-  box(g, m.metal, 0.4, 0.3, 0.4, px - 0.1, mid - 0.22, busZ / 2 + 0.16); // L'Ralph / L'TES
+  box(g, M.white, 1.3, 0.8, 0.12, px - 0.1, mid, busZ / 2 - 0.1);
+  cylZ(g, M.dark, 0.2, 0.2, busZ / 2 - 0.04, busZ / 2 + 0.6, px - 0.35, mid + 0.15); // L'LORRI
+  cylZ(g, M.metal, 0.22, 0.22, busZ / 2 + 0.55, busZ / 2 + 0.62, px - 0.35, mid + 0.15);
+  cylZ(g, M.dark, 0.13, 0.13, busZ / 2 - 0.04, busZ / 2 + 0.45, px + 0.15, mid + 0.18);
+  box(g, M.metal, 0.4, 0.3, 0.4, px - 0.1, mid - 0.22, busZ / 2 + 0.16); // L'Ralph / L'TES
+  strut(
+    g,
+    M.titan,
+    V(-busX / 2, mid - 0.3, busZ / 2 - 0.1),
+    V(px + 0.3, mid - 0.3, busZ / 2 - 0.1),
+    0.03,
+    6,
+  );
   // terminal tracking cameras on the +x side
-  box(g, m.metal, 0.5, 0.5, 0.15, busX / 2 + 0.3, mid, busZ / 2 - 0.1);
-  cylZ(g, m.dark, 0.1, 0.1, busZ / 2 - 0.04, busZ / 2 + 0.3, busX / 2 + 0.3, mid);
-  // thruster cluster on the back
-  for (const dy of [-0.4, 0.4]) cylZ(g, m.dark, 0.05, 0.1, -busZ / 2 - 0.3, -busZ / 2, 0, mid + dy);
+  box(g, M.metal, 0.5, 0.5, 0.15, busX / 2 + 0.3, mid, busZ / 2 - 0.1);
+  cylZ(g, M.dark, 0.1, 0.1, busZ / 2 - 0.04, busZ / 2 + 0.3, busX / 2 + 0.3, mid);
+  cylZ(g, M.dark, 0.1, 0.1, busZ / 2 - 0.04, busZ / 2 + 0.25, busX / 2 + 0.3, mid - 0.22);
+  // thruster cluster and the main engine on the back
+  for (const dy of [-0.4, 0.4]) cylZ(g, M.dark, 0.05, 0.1, -busZ / 2 - 0.3, -busZ / 2, 0, mid + dy);
+  for (const [x, y] of [
+    [-0.8, mid - 0.6],
+    [0.8, mid - 0.6],
+    [-0.8, mid + 0.6],
+    [0.8, mid + 0.6],
+  ] as [number, number][]) {
+    const p = pod(g, M, 0.06);
+    p.position.set(x, y, busZ / 2 + 0.04);
+  }
   return g;
 }
 
 // ---------------------------------------------------------------------------------------------
-// Psyche
+// Psyche: bus 2.2 x 2.4 m, five-panel cross wings 7.3 m tall and 24.8 m across
 // ---------------------------------------------------------------------------------------------
 
 function buildPsyche(): THREE.Group {
   const g = new THREE.Group();
-  const m = mats(0x15244e);
+  const M = pal(0x15244e);
   const total = 7.3; // cruciform arrays 7.3 m tall; bus 4.9 m tall incl. 2 m booms
   const busW = 2.2;
   const busD = 2.4;
   const busBot = total - 4.9; // bus 4.9 m including the booms, ends at the top
   const bodyTop = total - 2; // 2 m instrument booms above it
   const bodyH = bodyTop - busBot;
-  const foil = mat(0xb48f3e, 0.6, 0.45);
 
-  box(g, foil, busW, bodyH, busD, 0, busBot + bodyH / 2, 0);
-  box(g, m.white, busW + 0.02, 0.4, busD + 0.02, 0, busBot + 0.5, 0);
-  box(g, m.dark, busW + 0.03, 0.04, busD + 0.03, 0, busBot + bodyH / 2, 0);
-  // Hall thrusters on the back (-z)
-  for (const dx of [-0.5, 0.5])
-    cylZ(g, m.dark, 0.2, 0.2, -busD / 2 - 0.2, -busD / 2, dx, busBot + 1.0);
-  // booms with imager / gamma-ray and neutron spectrometer and magnetometers
-  cyl(g, m.metal, 0.05, 0.05, bodyTop, total, -0.5, 0);
-  cyl(g, m.metal, 0.05, 0.05, bodyTop, total, 0.5, 0);
-  box(g, m.white, 0.3, 0.35, 0.3, -0.5, total - 0.2, 0);
-  box(g, m.metal, 0.3, 0.3, 0.3, 0.5, total - 0.15, 0);
-  // high-gain dish on the +z face
-  box(g, m.frame, 0.1, 0.1, 0.5, 0, busBot + 2.6, busD / 2 + 0.25);
-  dish(g, m.white, 1.0, 0.3, 0, busBot + 2.6, busD / 2 + 0.8);
-  // multispectral imager pair
-  for (const dx of [-0.6, 0.6])
-    cylZ(g, m.dark, 0.14, 0.14, busD / 2, busD / 2 + 0.4, dx, busBot + 0.9);
+  // bus: blanketed box with tape seams and the radiator plates
+  foilBlock(g, M.gold, M.tape, busW, bodyH, busD, 0, busBot + bodyH / 2, 0, 0.014);
+  box(g, M.dark, busW + 0.03, 0.05, busD + 0.03, 0, busBot + 0.02, 0);
+  box(g, M.dark, busW + 0.03, 0.05, busD + 0.03, 0, bodyTop - 0.02, 0);
+  const radA = radiator(g, M, 0.9, 1.1, 8);
+  radA.position.set(busW / 2 + 0.02, busBot + 1.3, 0.2);
+  radA.rotation.y = Math.PI / 2;
+  const radB = radiator(g, M, 0.9, 1.1, 8);
+  radB.position.set(-busW / 2 - 0.02, busBot + 1.3, 0.2);
+  radB.rotation.y = -Math.PI / 2;
+  // propellant-tank bulge on the +x face and the thruster pods at the corners
+  for (const [x, y, z] of [
+    [-1, 0.3, 1],
+    [1, 0.3, 1],
+    [-1, 2.4, 1],
+    [1, 2.4, 1],
+  ] as [number, number, number][]) {
+    const p = pod(g, M, 0.06);
+    p.position.set(x * busW * 0.45, busBot + y, z * (busD / 2 + 0.04));
+  }
+  // four SPT-140 Hall thrusters in a 2 x 2 cluster on the back (-z)
+  for (const dx of [-0.5, 0.5]) {
+    for (const dy of [0.7, 1.4]) {
+      cylZ(g, M.metal, 0.2, 0.2, -busD / 2 - 0.1, -busD / 2, dx, busBot + dy);
+      cylZ(g, M.dark, 0.17, 0.17, -busD / 2 - 0.2, -busD / 2 - 0.1, dx, busBot + dy);
+    }
+  }
+  // 2 m instrument booms: magnetometer boom and the gamma-ray / neutron spectrometer boom
+  cyl(g, M.metal, 0.05, 0.05, bodyTop, total, -0.5, 0, 12);
+  cyl(g, M.metal, 0.05, 0.05, bodyTop, total, 0.5, 0, 12);
+  strut(g, M.titan, V(-0.5, bodyTop + 0.1, 0), V(0.5, bodyTop + 0.1, 0), 0.025, 6);
+  strut(g, M.titan, V(-0.5, bodyTop + 1.2, 0), V(0.5, bodyTop + 1.2, 0), 0.02, 6);
+  box(g, M.white, 0.3, 0.35, 0.3, -0.5, total - 0.2, 0);
+  box(g, M.metal, 0.3, 0.3, 0.3, 0.5, total - 0.15, 0);
+  cyl(g, M.dark, 0.06, 0.06, total - 0.1, total + 0.0, -0.5, 0.17, 10);
+  // high-gain dish on a pylon on the +z face
+  strut(g, M.metal, V(0, busBot + 2.3, busD / 2), V(0, busBot + 2.6, busD / 2 + 0.55), 0.04, 8);
+  dishAt(g, M.dbl, M.metal, 1.0, 0.3, V(0, busBot + 2.6, busD / 2 + 0.6), V(0, 0.1, 1), 0.65, 12);
+  // multispectral imager pair and the star trackers
+  for (const dx of [-0.6, 0.6]) {
+    cylZ(g, M.dark, 0.14, 0.14, busD / 2, busD / 2 + 0.4, dx, busBot + 0.9);
+    cylZ(g, M.metal, 0.16, 0.16, busD / 2 + 0.38, busD / 2 + 0.42, dx, busBot + 0.9);
+  }
+  for (const dx of [-0.15, 0.15])
+    cylZ(g, M.dark, 0.06, 0.07, busD / 2, busD / 2 + 0.2, dx, busBot + 0.4);
 
   // two five-panel cruciform arrays: 3 panels across, 2 extra above / below the middle one
   const cy = total / 2;
@@ -296,81 +496,113 @@ function buildPsyche(): THREE.Group {
   const pw = armTotal / 3;
   const ph = total / 3;
   for (const s of [1, -1]) {
-    box(g, m.frame, armTotal, 0.1, 0.08, s * (busW / 2 + armTotal / 2), cy, -0.05);
-    for (let i = 0; i < 3; i++)
-      panel(g, m, pw - 0.04, ph - 0.04, s * (busW / 2 + pw * (i + 0.5)), cy, 4, 3);
+    box(g, M.metal, armTotal, 0.1, 0.08, s * (busW / 2 + armTotal / 2), cy, -0.05).name =
+      'array-arm';
+    for (let i = 0; i < 3; i++) {
+      const p = cellPanel(g, M, pw - 0.04, ph - 0.04, 8, 5);
+      p.position.set(s * (busW / 2 + pw * (i + 0.5)), cy, 0);
+    }
     const xm = s * (busW / 2 + pw * 1.5);
-    panel(g, m, pw - 0.04, ph - 0.04, xm, cy + ph, 4, 3);
-    panel(g, m, pw - 0.04, ph - 0.04, xm, cy - ph, 4, 3);
+    for (const dy of [ph, -ph]) {
+      const p = cellPanel(g, M, pw - 0.04, ph - 0.04, 8, 5);
+      p.position.set(xm, cy + dy, 0);
+    }
   }
   return g;
 }
 
 // ---------------------------------------------------------------------------------------------
-// Europa Clipper
+// Europa Clipper: 3.1 m dish on top, 30.5 m of arrays, 8.5 m magnetometer boom
 // ---------------------------------------------------------------------------------------------
 
 function buildClipper(): THREE.Group {
   const g = new THREE.Group();
-  const m = mats(0x16264f);
+  const M = pal(0x16264f);
   const H = 5;
-  const foil = mat(0xb48f3e, 0.6, 0.45);
   const alu = mat(0xc9ccd0, 0.7, 0.42);
 
-  // propulsion module (tank stack) at the base, radiation vault above
-  cyl(g, alu, 0.95, 0.95, 0, 1.2, 0, 0, 24);
-  box(g, foil, 1.7, 0.1, 1.7, 0, 1.25, 0);
-  box(g, m.gold, 1.7, 1.5, 1.7, 0, 2.05, 0);
-  box(g, m.dark, 1.72, 0.04, 1.72, 0, 1.6, 0);
-  box(g, m.dark, 1.72, 0.04, 1.72, 0, 2.5, 0);
+  // propulsion module (tank stack) at the base: a cylinder with foil bands and tank bumps
+  cyl(g, alu, 0.95, 0.95, 0, 1.2, 0, 0, 36);
+  for (const y of [0.35, 0.8]) cyl(g, M.tape, 0.955, 0.955, y, y + 0.02, 0, 0, 36);
+  for (let k = 0; k < 4; k++) {
+    const a = (k / 4) * TAU + Math.PI / 4;
+    const t = new THREE.Mesh(new THREE.SphereGeometry(0.2, 16, 10), M.titan);
+    t.position.set(Math.sin(a) * 0.92, 0.9, Math.cos(a) * 0.92);
+    g.add(t);
+  }
+  // main engine skirt at the bottom, with its nozzle and four thruster pods on the shoulder
+  cyl(g, M.dark, 0.38, 0.2, 0, 0.45, 0, 0, 24);
+  cyl(g, M.metal, 0.4, 0.4, 0.43, 0.48, 0, 0, 24);
+  for (let k = 0; k < 4; k++) {
+    const a = (k / 4) * TAU;
+    const p = pod(g, M, 0.06);
+    p.position.set(Math.sin(a) * 0.96, 1.15, Math.cos(a) * 0.96);
+    p.rotation.y = a;
+  }
+  // radiation vault on top of the propulsion module: aluminium plates, blanketed corners
+  box(g, M.foil, 1.7, 0.1, 1.7, 0, 1.25, 0);
+  foilBlock(g, M.foil, M.tape, 1.7, 1.5, 1.7, 0, 2.05, 0, 0.014);
+  box(g, M.dark, 1.72, 0.04, 1.72, 0, 1.6, 0);
+  box(g, M.dark, 1.72, 0.04, 1.72, 0, 2.5, 0);
   box(g, alu, 1.8, 0.12, 1.8, 0, 2.86, 0);
-  // main engine skirt at the bottom
-  cyl(g, m.dark, 0.35, 0.18, 0, 0.45, 0, 0);
+  // radiator plates on the side faces
+  const rrad = radiator(g, M, 0.9, 1.0, 8);
+  rrad.position.set(0.86, 2.05, 0.2);
+  rrad.rotation.y = Math.PI / 2;
+  const lrad = radiator(g, M, 0.9, 1.0, 8);
+  lrad.position.set(-0.86, 2.05, 0.2);
+  lrad.rotation.y = -Math.PI / 2;
 
   // 3 m high-gain antenna on top, dish facing up (+y), feed on a tripod
   const rimY = 3.55;
   const depth = 0.55;
   const rimR = 1.55; // 3.1 m
-  cyl(g, m.metal, 0.3, 0.3, 2.9, rimY - depth, 0, 0);
-  const pts: THREE.Vector2[] = [];
-  for (let i = 0; i <= 12; i++) {
-    const t = i / 12;
-    pts.push(new THREE.Vector2(t * rimR, rimY - depth + depth * t * t));
-  }
-  g.add(new THREE.Mesh(new THREE.LatheGeometry(pts, 48), mat(0xe6e6e2, 0.2, 0.6, true)));
-  for (const a of [0.8, 2.4, 4.0, 5.5]) {
-    const s = new THREE.Mesh(new THREE.CylinderGeometry(0.02, 0.02, 1.25, 6), m.metal);
-    s.position.set(Math.cos(a) * 0.35, rimY + 0.25, Math.sin(a) * 0.35);
-    s.rotation.set(Math.sin(a) * 0.25, 0, -Math.cos(a) * 0.25);
-    g.add(s);
-  }
-  cyl(g, m.dark, 0.12, 0.12, H - 0.25, H);
+  cyl(g, M.metal, 0.3, 0.3, 2.92, rimY - depth, 0, 0, 20);
+  dishAt(g, M.dbl, M.metal, rimR, depth, V(0, rimY - depth, 0), V(0, 1, 0), 1.9, 16);
+  cyl(g, M.dark, 0.05, 0.09, 4.9, H, 0, 0, 12);
 
   // arrays: two wings of five panels either side at the vault level, 30.5 m tip to tip
   const wingLen = (30.5 - 1.8) / 2;
   const pw = wingLen / 5;
   const ph = 3.6;
-  const ay = 2.2;
+  const ay = 2.4;
   for (const s of [1, -1]) {
-    box(g, m.frame, wingLen, 0.08, 0.08, s * (0.9 + wingLen / 2), ay, -0.1);
-    for (let i = 0; i < 5; i++) panel(g, m, pw - 0.05, ph, s * (0.9 + pw * (i + 0.5)), ay, 4, 4);
-    // REASON ice-penetrating radar dipoles: long thin panels along the wing trailing edge
-    box(g, m.white, 8.8, 0.18, 0.04, s * (0.9 + wingLen - 4.4), ay - ph / 2 - 0.2, -0.12);
-    box(g, m.frame, 0.06, 0.1, 0.06, s * 1.4, ay - ph / 2 - 0.1, -0.12);
+    box(g, M.metal, wingLen, 0.08, 0.08, s * (0.9 + wingLen / 2), ay, -0.1).name = 'array-arm';
+    box(g, M.titan, 0.5, 0.3, 0.2, s * 1.0, ay, -0.08);
+    for (let i = 0; i < 5; i++) {
+      const p = cellPanel(g, M, pw - 0.05, ph, 8, 8);
+      p.position.set(s * (0.9 + pw * (i + 0.5)), ay, 0);
+    }
+    // REASON ice-penetrating radar: two ladder-frame dipole antennas under each wing
+    for (const f of [0.3, 0.75]) {
+      const cx = s * (0.9 + wingLen * f);
+      const ly = ay - ph / 2 - 0.3;
+      box(g, M.white, 2.8, 0.05, 0.04, cx, ly + 0.2, -0.12);
+      box(g, M.white, 2.8, 0.05, 0.04, cx, ly - 0.2, -0.12);
+      for (let r = 0; r <= 6; r++)
+        box(g, M.white, 0.04, 0.45, 0.04, cx - 1.4 + (2.8 * r) / 6, ly, -0.12);
+      box(g, M.metal, 0.1, 0.35, 0.06, cx, ay - ph / 2 - 0.08, -0.12);
+    }
   }
 
-  // magnetometer boom: 8.5 m, out the back (-z) with three fluxgate sensors
-  const boom = new THREE.Mesh(new THREE.CylinderGeometry(0.04, 0.04, 8.5, 8), m.metal);
+  // magnetometer boom: 8.5 m, out the back (-z), a stout tube with three fluxgate sensors
+  const boom = new THREE.Mesh(new THREE.CylinderGeometry(0.06, 0.06, 8.5, 12), M.titan);
   boom.rotation.x = Math.PI / 2;
   boom.position.set(0, 2.9, -0.9 - 4.25);
   g.add(boom);
-  for (const z of [-0.9 - 3.0, -0.9 - 5.9, -0.9 - 8.5])
-    box(g, m.white, 0.18, 0.18, 0.18, 0, 2.9, z);
+  box(g, M.metal, 0.3, 0.3, 0.3, 0, 2.9, -1.0);
+  for (const z of [-0.9 - 3.0, -0.9 - 5.9, -0.9 - 8.5]) {
+    box(g, M.white, 0.18, 0.18, 0.18, 0, 2.9, z);
+    box(g, M.dark, 0.1, 0.1, 0.26, 0, 2.9, z);
+  }
 
   // sensor deck: cameras on the +z face
-  box(g, m.metal, 0.7, 0.5, 0.35, -0.3, 1.5, 1.0);
-  cylZ(g, m.dark, 0.15, 0.15, 0.85, 1.35, -0.3, 1.5);
-  cylZ(g, m.dark, 0.1, 0.1, 0.85, 1.2, 0.35, 1.7);
+  box(g, M.metal, 0.7, 0.5, 0.35, -0.3, 1.5, 1.0);
+  cylZ(g, M.dark, 0.15, 0.15, 0.85, 1.35, -0.3, 1.5);
+  cylZ(g, M.metal, 0.17, 0.17, 1.3, 1.37, -0.3, 1.5);
+  cylZ(g, M.dark, 0.1, 0.1, 0.85, 1.2, 0.35, 1.7);
+  box(g, M.metal, 0.4, 0.3, 0.25, 0.4, 2.35, 0.95);
+  cylZ(g, M.dark, 0.08, 0.08, 0.9, 1.15, 0.4, 2.35);
   return g;
 }
 
@@ -402,6 +634,10 @@ export const SHOWCASE: Record<string, ShowcaseModel> = {
         'https://en.wikipedia.org/wiki/Lucy_(spacecraft)',
         'Wikipedia (fallback): array diameter 7.3 m',
       ),
+      NASA(
+        encodeURI('https://commons.wikimedia.org/wiki/File:Lucy_spacecraft_model.png'),
+        'Wikimedia Commons: Lucy spacecraft model.png (gored UltraFlex discs, bus, dish)',
+      ),
     ],
   },
   'psyche-spacecraft': {
@@ -412,6 +648,10 @@ export const SHOWCASE: Record<string, ShowcaseModel> = {
       NASA(
         'https://science.nasa.gov/mission/psyche/spacecraft/',
         'NASA Psyche spacecraft: 25 x 7.3 m with arrays deployed (7.3 m is the height used), bus 4.9 m tall incl. 2 m booms, 2.2 x 2.4 m',
+      ),
+      NASA(
+        encodeURI('https://commons.wikimedia.org/wiki/File:Psyche-spacecraft-diagram.png'),
+        'Wikimedia Commons: Psyche-spacecraft-diagram.png (bus, dish, boom mast, five-panel arrays)',
       ),
     ],
   },
@@ -427,6 +667,10 @@ export const SHOWCASE: Record<string, ShowcaseModel> = {
       NASA(
         'https://en.wikipedia.org/wiki/Europa_Clipper',
         'Wikipedia (fallback): 3.1 m high-gain antenna, 8.5 m magnetometer boom',
+      ),
+      NASA(
+        encodeURI('https://commons.wikimedia.org/wiki/File:Europa_Clipper_spacecraft_model.png'),
+        'Wikimedia Commons: Europa Clipper spacecraft model.png (dish, vault, arrays, REASON ladders, boom)',
       ),
     ],
   },

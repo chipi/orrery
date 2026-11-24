@@ -10,6 +10,7 @@
   import LayerChipRow from '$lib/components/LayerChipRow.svelte';
   import ResetViewButton from '$lib/components/ResetViewButton.svelte';
   import MobileDrawerGroup from '$lib/components/MobileDrawerGroup.svelte';
+  import DrawerToggleRows from '$lib/components/DrawerToggleRows.svelte';
   import OrbitRuler from '$lib/components/OrbitRuler.svelte';
   import TacticalScan from '$lib/components/TacticalScan.svelte';
   import WhyPopover from '$lib/components/WhyPopover.svelte';
@@ -39,6 +40,7 @@
     layers,
     onToggleLayer,
     onShowPaths,
+    onDrawer,
     pathsLegendEl = $bindable(),
     legendRowEls,
     iconic,
@@ -74,6 +76,8 @@
     layers: ExploreLayers;
     onToggleLayer: (key: keyof ExploreLayers) => void;
     onShowPaths: () => void;
+    /** A phone drawer opened (true) or closed (false): the INDEX handle hides under it. */
+    onDrawer?: (open: boolean) => void;
     pathsLegendEl: HTMLDivElement | undefined;
     /** The page's array; the desktop legend rows fill it (keyboard nav). */
     legendRowEls: HTMLButtonElement[];
@@ -132,6 +136,13 @@
       })),
     ];
   }
+
+  // The drawers unmount (closed) while the HUD is hidden or gone: report them closed, or the
+  // INDEX handle would stay hidden at the outer scales.
+  $effect(() => {
+    if (hidden) onDrawer?.(false);
+    return () => onDrawer?.(false);
+  });
 
   // The hovered craft's tagline is a card beside the legend, level with its row, so the list
   // never shifts (C7 IM1, UXD-026). Only the hovered row: a selection opens its panel.
@@ -323,10 +334,10 @@
     />
   {/if}
 {/snippet}
-{#snippet mobileControlsContent(close: () => void)}
-  <div class="ctrl-row chips" role="group" aria-label={m.ui_visibility_layers()}>
-    <LayerChipRow chips={layerChips(close, false)} />
-  </div>
+<!-- The layer toggles as the Orbit Ruler's rows, as on the Worlds (UXD-015 amendment
+     2026-11-23); the drawer stays open across toggles and closes from its tab. -->
+{#snippet mobileControlsContent(_close: () => void)}
+  <DrawerToggleRows rows={layerChips(undefined, false)} label={m.ui_visibility_layers()} />
 {/snippet}
 {#snippet mobileIconicContent(close: () => void)}
   <!-- Compact trajectory on/off — a much smaller stand-in for the desktop
@@ -336,6 +347,7 @@
     <div class="iconic-row">
       <Chip
         kind="toggle"
+        class="ui-chip--sub"
         dot
         active={layers.paths}
         onclick={() => onToggleLayer('paths')}
@@ -415,13 +427,20 @@
       tabs={[
         // B3: fixed semantic slot order [Measure][Overlays][Highlight][Scene];
         // empty slots (no Overlays in solar-system) are simply omitted.
-        { id: 'ruler', label: m.drawer_tab_ruler(), icon: '◎', content: mobileRulerContent },
+        {
+          id: 'ruler',
+          label: m.drawer_tab_ruler(),
+          icon: '◎',
+          content: mobileRulerContent,
+          compact: true,
+        },
         { id: 'missions', label: m.drawer_tab_missions(), icon: '➤', content: mobileIconicContent },
         {
           id: 'controls',
           label: m.drawer_tab_controls(),
           icon: '▤',
           content: mobileControlsContent,
+          compact: true,
         },
         // Scan appears only when a focused planet has a tactical readout (#49).
         ...(focusedOnPlanet && focusedStats
@@ -430,9 +449,11 @@
       ]}
       onOpen={(id) => {
         if (id === 'missions') onShowPaths();
+        onDrawer?.(id !== null);
       }}
       bottomInline
-      --mcd-bottom="calc(max(8px, env(safe-area-inset-bottom, 0px)) + 60px)"
+      tabCloses
+      --mcd-bottom="calc(max(8px, env(safe-area-inset-bottom, 0px)) + 50px)"
     />
   </div>
 {/if}

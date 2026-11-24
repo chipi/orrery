@@ -80,7 +80,8 @@
       "source": "Lunar orbit insertion 2019-08-20 03:32 UTC into an 18,072 x 114 km orbit (ISRO, as reported on Wikipedia); the v-infinity, the inclination and the insertion delta-v are schematic estimates, not published figures.",
       "edl_system": "powered",
       "entry_velocity_km_s": 1.683,
-      "edl_duration_s": 692
+      "edl_duration_s": 924,
+      "touchdown_velocity_ms": 174.51
     },
     "totals": {
       "total_dv_km_s": 3.5,

@@ -30,6 +30,8 @@ export const EDL_SYSTEM: Record<ArchetypeName, EDLSystemKind> = {
   // Earth capsule re-entry is a parachute descent (some — Soyuz/Shenzhou — fire soft-landing
   // retro); 'parachute_retro' is the closest EDL bucket. Earth missions are not backfilled.
   EARTH_CAPSULE_REENTRY: 'parachute_retro',
+  // Starship lands on its engines after the landing flip (Flight 5, to the water).
+  EARTH_STARSHIP_RETURN: 'powered',
 };
 
 /** Bodies whose landers carry the derived arrival fields. */
@@ -66,7 +68,10 @@ export function deriveArrival(raw: RawDescentProfile): DerivedArrival {
   return {
     entry_velocity_km_s: Number((raw.entryState.velocityMs / 1000).toFixed(3)),
     edl_system: EDL_SYSTEM[raw.archetype],
-    edl_duration_s: Math.round(summary.totalDurationS),
+    // Entry to first contact: an airbag lander's bounces and petals come after the EDL.
+    edl_duration_s: Math.round(
+      summary.events.find((e) => e.type === 'touchdown')?.t ?? summary.totalDurationS,
+    ),
     touchdown_velocity_ms:
       raw.recordEndsAltM != null ? undefined : Number(summary.touchdownVelocityMs.toFixed(2)),
   };

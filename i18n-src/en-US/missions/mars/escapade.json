@@ -1,0 +1,36 @@
+{
+  "name": "ESCAPADE",
+  "vehicle": "New Glenn (NG-2)",
+  "payload": "Two spacecraft, Blue and Gold: 209 kg dry, 535 kg fuelled each",
+  "delta_v": "Not published",
+  "type": "TWIN MARS ORBITERS · ACTIVE",
+  "first": "Twin orbiters launched on New Glenn's second flight, which made the first successful landing of a New Glenn booster",
+  "description": "ESCAPADE is NASA's pair of Mars spacecraft, Blue and Gold, built by Rocket Lab in a mission costing under $80 million. The principal investigator is Robert Lillis of UC Berkeley's Space Sciences Laboratory, and the mission is a NASA SIMPLEx mission from 2019 in the Heliophysics Division. Each spacecraft weighs 209 kg dry and 535 kg fuelled. They launched on New Glenn's second flight, NG-2, from Launch Complex 36 at Cape Canaveral Space Force Station on 13 November 2025 at 3:55 pm EST (20:55 UTC). The booster, GS1 \"Never Tell Me the Odds\", landed on the landing platform vessel Jacklyn about nine minutes after liftoff. Blue and Gold did not head straight for Mars: they looped around the Sun-Earth L2 point for about a year, then made powered Earth flybys, Blue on 7 November 2026 and Gold on 9 November. Their orbit-insertion burns at Mars come on 7 and 9 September 2027, about 11 minutes at 450 km, into a 60-hour capture orbit, with science due to start in June 2028.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "New Glenn NG-2 from Launch Complex 36, 13 November 2025, 3:55 pm EST (20:55 UTC).",
+      "type": "nominal"
+    },
+    {
+      "met": 0.0233,
+      "label": "SEPARATION",
+      "note": "Blue and Gold separate from the upper stage about 33.5 minutes after liftoff.",
+      "type": "nominal"
+    },
+    {
+      "met": 359,
+      "label": "EARTH FLYBY",
+      "note": "Blue's powered flyby on 7 November 2026, after about a year around Sun-Earth L2; Gold follows on 9 November.",
+      "type": "nominal"
+    },
+    {
+      "met": 663,
+      "label": "MARS ORBIT INSERTION",
+      "note": "Burns of about 11 minutes at 450 km on 7 and 9 September 2027 put the twins into a 60-hour capture orbit.",
+      "type": "nominal"
+    }
+  ],
+  "vehicle_stage": "New Glenn second stage (GS2)"
+}

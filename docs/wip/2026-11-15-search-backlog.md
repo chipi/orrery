@@ -5,6 +5,8 @@ flight. Each item below was done with direct page fetches or Commons only, so it
 either held at a safe fallback or rests on secondary sources. Next session with a fresh
 search budget: work this list top to bottom, then strike each row here.
 
+> **2026-11-22 (0.9.11 R1):** the "Still open" tails below were researched again; outcomes in `2026-11-22-r1-findings.md`.
+
 ## Fly — launches not fixed yet (operator 2026-11-15: "keep all those things not fixed with launches at the top of that pending list")
 
 Work these first. Each row points to the full detail (the S rows below, the audit doc

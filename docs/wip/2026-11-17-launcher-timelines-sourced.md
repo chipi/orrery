@@ -1291,3 +1291,66 @@ Fairing 197 s (MMX long fairing) versus 175 s (F7 wide fairing): fairing time de
 ### Search count
 
 WebSearch calls: 25 of 30. (Queries: Proton x3, Vostok x3, LM-2F x2, LM-5/LM-3B Chinese x2, LM-5 English + Chinese paper x2, Soyuz-FG x1, Mars Express x1, Voskhod x2 [1 EN + 1 RU], Sputnik x1, Soyuz 11A511 x1, M-V x1, H3 x1, LM-2F Chinese paper x1, Molniya x1, Chang'e-3 x1, LM-3A manual x1, LM-5 manual x1; some single calls returned several internal result sets.) WebFetch calls: about 16. Direct curl / pdftotext downloads: not counted.
+
+## 0.9.11 F1 close-out (2026-11-22)
+
+**H3: fixed, cause found.** The JAXA MMX plan (`jaxa20260820-1_01.pdf`, re-read 2026-11-22) gives the
+first-stage propellant as `224.5 (最大値)`, the **maximum** load, and the stage-1 thrust as
+`約 2942 (2基分)` vacuum with a burn of about 300 s; Table 2's speeds are `慣性速度` (inertial,
+liftoff 0.4 km/s, the model's frame). The 0.9.10 profile burned the whole 224.5 t by MECO at 292 s
+on a fitted 3,181.8 kN (+8 %), which is where the 0.7 km/s came from. Now stage 1 flies 2,942 kN;
+711 kg/s burns 207.6 t by 292 s and the unburned 16.9 t rides in `dryKg` (structure + residuals,
+as the field is documented); the pitch table (unpublished) is fitted with the new
+`scripts/fit-launch-states.ts` (spec `scripts/launch-fits/h3.json`) and `pitchTableStages: 1`; the
+parking orbit is SECO1's 329 km. Model against Table 2:
+
+| Event | JAXA | model |
+| --- | --- | --- |
+| SRB-3 sep 117 s | 59-61 km, 2.1 km/s | 52.3 km, 2.15 |
+| fairing 197 s | 131 km, 3.3 | 129.6 km, 3.31 |
+| MECO 292 s | 208 km, 6.2 | 205.8 km, 6.10 |
+| SECO1 640 s | 329 km, 7.7 | 327.9 km, 7.66 (T+640) |
+
+Pinned in `launch-timeline.test.ts` (the `it.todo` is gone); putting the old 3,181.8 kN back fails
+all four new rows. Not closed: SRB-3 separation 8 km low at the right speed. The profile flies the
+SRB-3 burn average; the thrust curve is not published.
+
+**Space Shuttle max-Q / ET separation: already closed in 0.9.10.** Pinned against STS-68 (max-Q
+51 s ±10, model 59.4; ET separation 534 s ±10, model 533.9). The audit's "~60 s" and "just over 10 s"
+were secondary.
+
+**New Glenn BE-3U: confirmed (secondary).** 778 kN / 175,000 lbf per engine after the April 2025
+hotfire (Wikipedia, citing Dave Limp), × 2 = 1,556 kN against the fitted 1,559.5 kN (0.2 %).
+blueorigin.com's engine and news pages are script-rendered (no text, HTTP 429 to WebFetch); the
+provenance row now says so instead of the old 1,779 kN.
+
+**Proton-M / Briz-M: fit A shipped (operator, 2026-11-22).** ExoMars' own timeline (archived spaceflight101):
+Briz-M first ignition T+0:11:16.0, burn ~5 min, shutdown T+0:16:xx into a ~175 km parking orbit;
+fairing T+5:45. The shipped profile puts the fairing at 254 km (guide: 121-125 km "or more"), because
+it never set `pitchTableStages`. With the published 19.62 kN, ignition 676 s and a state fit:
+
+| | Briz-M | fairing alt | Briz-M cutoff | parking orbit |
+| --- | --- | --- | --- | --- |
+| shipped | 23.7 kN (x1.206) | 254 km | 1128 s (guide GTO) | 139 x 272 |
+| **A: fit, `loftBoost` on (shipped)** | 19.62 | 130.4 km | 1004.6 s | 140 x 807 |
+| B: fit, `loftBoost` off | 19.62 | 129 km | 847.6 s | 140 x 460 |
+
+No pitch table gives the ~5 min burn and the 175 km circle together: the model's stage 3 ends about
+100-150 m/s more energetic than the flight implies (its 614 kN / 325 s burn of 46.6 t matches the
+guide's 241 s, so the cause is not found). The operator chose A: published thrust, the guide's
+fairing altitude, max-Q 67.6 s (guide 65.5), ExoMars' first-burn end; the parking orbit's apogee
+(807 km against a ~175 km circle) is the recorded gap. Spec `scripts/launch-fits/proton-m-briz-m.json`;
+pinned in `launch-timeline.test.ts` (Briz-M cutoff 990 ±30, max-Q 65.5 ±5, fairing 121-135 km); the
+shipped profile fails the cutoff and fairing rows. (An earlier draft of this table put A at 140 x 896;
+that orbit came from a different fit run with a 175 km state target.)
+
+**Long March 5: open, needs a source.** A time-only fit holds 752 s with the published 176.7 kN
+but lofts to 482 km at MECO; with the profile's 115 km fairing altitude (unsourced) it holds 750 s at
+150 km. No published altitude or speed for any LM-5 event, so the calibrated 130 kN stays until one
+is found (Chang'e-5 parking orbit, a CASC sequence table).
+
+**Atlas-Centaur AC-20: dropped (operator, 2026-11-22).** There is no Mariner VI (or VII) mission in
+Orrery (missions: Mariner 2, 4, 9, 10); Mariner 69-3 / 69-2 are only catalogue rows with
+`orrery_mission_ref: null`. The test keeps flying AC-20 with the flight's payload and C3.
+
+Searches: 1 WebSearch, 3 WebFetch, 4 direct downloads.

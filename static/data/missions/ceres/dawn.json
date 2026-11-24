@@ -66,6 +66,10 @@
     {
       "id": "dawn",
       "role": "spacecraft"
+    },
+    {
+      "id": "cape-canaveral-lc-17",
+      "role": "launch-site"
     }
   ],
   "flight": {

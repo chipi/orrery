@@ -259,9 +259,31 @@ function cislunarScene(m: MissionRec): Scene {
       encounter = P(end);
     }
   }
+  // A published ephemeris (Artemis I) stores each pass as its offset from the Moon at its own MET,
+  // re-based on moonRef; its coasts are absolute. Frozen at one encounter, a second pass weeks
+  // later (the return flyby after the DRO) detaches from the coasts around it, so each pass goes
+  // back onto the Moon of its own time: the real Earth-centred track, continuous.
+  const published =
+    (m.flight as { cislunar_profile?: { source_tier?: string } } | undefined)?.cislunar_profile
+      ?.source_tier === 'tier_2_published';
+  const passMoons: Pt[] = [];
   for (const ph of ct.phases) {
     if (ph.points.length < 2) continue;
-    if (LUNAR_LOCAL_PHASE_TYPES.has(ph.type)) {
+    if (published && LUNAR_LOCAL_PHASE_TYPES.has(ph.type)) {
+      const n = ph.points.length - 1;
+      const moonAtMet = (i: number) =>
+        moonEciPos(
+          r.timeline.dep_day + ph.start_met_days + ((ph.end_met_days - ph.start_met_days) * i) / n,
+        );
+      const pts = ph.points.map((p, i) => {
+        const mm = moonAtMet(i);
+        return P({ x: p.x - moonRef.x + mm.x, z: p.z - moonRef.z + mm.z });
+      });
+      scene.paths.push({ pts, hot: true });
+      scene.fit.push(...pts);
+      passMoons.push(P(moonAtMet(n / 2)));
+      moonAt = moonAt ?? passMoons[0];
+    } else if (LUNAR_LOCAL_PHASE_TYPES.has(ph.type)) {
       const e = encounter ?? P(moonRef);
       const pts = ph.points.map((p) => {
         const q = P({ x: p.x - moonRef.x, z: p.z - moonRef.z });
@@ -303,6 +325,10 @@ function cislunarScene(m: MissionRec): Scene {
   if (moonAt) {
     scene.discs.push({ p: moonAt, r: R_MOON_KM * k * 7, color: BODY.moon });
     scene.fit.push(moonAt);
+  }
+  for (const q of passMoons.slice(1)) {
+    scene.discs.push({ p: q, r: R_MOON_KM * k * 7, color: BODY.moon });
+    scene.fit.push(q);
   }
   const first = scene.paths[0]?.pts[0];
   const lastP = scene.paths[scene.paths.length - 1]?.pts.slice(-1)[0];
@@ -595,7 +621,9 @@ function paintPlot(ctx: CanvasRenderingContext2D, scene: Scene, geo: Geo) {
       const y = q.y + c.y;
       const inside = x >= 6 && x + w <= W - 6 && y - h / 2 >= 6 && y + h / 2 <= H - 18 * SW;
       const clash =
-        placed.some((p) => x < p.x + p.w + 4 && x + w + 4 > p.x && Math.abs(y - p.y) < h) ||
+        placed.some(
+          (p) => x < p.x + p.w + 10 * SW && x + w + 10 * SW > p.x && Math.abs(y - p.y) < h,
+        ) ||
         pts.some(
           (o, j) => j !== i && o.x > x - 4 && o.x < x + w + 4 && Math.abs(o.y - y) < h / 2 + 3,
         );
@@ -616,6 +644,12 @@ function paintPlot(ctx: CanvasRenderingContext2D, scene: Scene, geo: Geo) {
     ctx.fillStyle = PAPER;
     ctx.fillText(text, x, y);
   }
+}
+
+/** The angle a suborbital arch spans over the limb: the coast's own `arcDeg` when the registry
+ *  gives one (Starship Flight 5 goes 165 degrees around), else the short drawn hop. */
+export function suborbitalSpanRad(c: { arcDeg?: number }): number {
+  return c.arcDeg ? (c.arcDeg * Math.PI) / 180 : 0.52 * Math.PI;
 }
 
 function paintLeo(ctx: CanvasRenderingContext2D, scene: Scene, geo: Geo) {
@@ -643,8 +677,9 @@ function paintLeo(ctx: CanvasRenderingContext2D, scene: Scene, geo: Geo) {
     };
   };
   // suborbital hop: a ballistic arch over the limb, surface -> apogee -> surface (upright, not tilted)
-  const s0 = 0.24 * Math.PI;
-  const s1 = 0.76 * Math.PI;
+  const span = suborbitalSpanRad(c);
+  const s0 = Math.PI / 2 - span / 2;
+  const s1 = Math.PI / 2 + span / 2;
   const arch = (t: number) => {
     const th = s1 + t * (s0 - s1);
     const rr = R * (1.012 + 0.55 * Math.sin(Math.PI * t));

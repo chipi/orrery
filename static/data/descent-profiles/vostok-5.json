@@ -13,7 +13,24 @@
   },
   "entryMassKg": 2460,
   "entryCdA": 5,
-  "estimatedFields": ["flightPathAngleDeg", "entryCdA"],  "archetype": "EARTH_CAPSULE_REENTRY",
+  "beats": [
+    {
+      "type": "eject",
+      "altM": 7000
+    },
+    {
+      "type": "seat_sep",
+      "after": "eject",
+      "afterS": 4
+    }
+  ],
+  "estimatedFields": [
+    "flightPathAngleDeg",
+    "entryCdA",
+    "beats.eject.altM",
+    "beats.seat_sep.afterS"
+  ],
+  "archetype": "EARTH_CAPSULE_REENTRY",
   "params": {
     "chuteDeployAltM": 7000,
     "terminalHandoffAltM": 3000,

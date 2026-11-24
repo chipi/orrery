@@ -39,11 +39,12 @@ const PANEL_STATES: [string, string][] = [
   ['/mars site', '/mars?site=perseverance'],
 ];
 
-/** Where the layer chips are: the HUD on a fine pointer, the Layers / Controls drawer on touch. */
+/** Where the layer toggles are: the HUD on a fine pointer, the Layers / Controls drawer on touch.
+ *  The phone drawers list them as rows (UXD-015 amendment 2026-11-23), same ids and order. */
 async function chipRow(page: Page, isMobile: boolean) {
   if (isMobile) {
     await openControlsDrawer(page);
-    return page.locator('.mdg-body .ctrl-row.chips');
+    return page.locator('.mdg-body .dtr');
   }
   return page.locator('.hud-controls .ctrl-row.chips');
 }
@@ -85,8 +86,9 @@ for (const [route, ids] of Object.entries(ROWS)) {
       await waitForHydration(page);
       const row = await chipRow(page, isMobile);
       await expect(row).toBeVisible();
-      expect(await row.evaluate((el) => getComputedStyle(el).flexDirection)).toBe('row');
+      // The phone drawers are a list of rows by decision (UXD-015 amendment 2026-11-23).
       if (isMobile) return;
+      expect(await row.evaluate((el) => getComputedStyle(el).flexDirection)).toBe('row');
       // One HUD row (operator 2026-11-12): the view actions first, a 12 px gap, then the layers.
       const hud = page.locator('.hud-controls');
       const boxes = await hud.locator('.ctrl-row .ui-chip').evaluateAll((els) =>
@@ -175,9 +177,11 @@ for (const [route, url] of PANEL_STATES) {
   });
 }
 
-test.describe('touch: the Layers drawer shows the row without bands', () => {
-  for (const route of ['/earth', '/moon', '/mars', '/venus']) {
-    test(`${route}: a wrapped run of 44 px chips, no horizontal scroll`, async ({
+// UXD-015 amendment 2026-11-23: on a phone the Layers (Worlds) and Controls (/explore) drawers list
+// the toggles as rows in the orbit ruler's look, in a panel as wide as its rows, with no ×.
+test.describe('touch: the Layers / Controls drawer lists the toggles as rows', () => {
+  for (const route of ['/explore', '/earth', '/moon', '/mars', '/venus']) {
+    test(`${route}: rows, no group, no horizontal scroll, a panel narrower than the screen`, async ({
       page,
       isMobile,
     }) => {
@@ -185,15 +189,19 @@ test.describe('touch: the Layers drawer shows the row without bands', () => {
       test.slow();
       await page.goto(route, { waitUntil: 'networkidle' });
       await waitForHydration(page);
-      const row = await chipRow(page, true);
-      await expect(row).toBeVisible();
-      expect(await row.locator('.chip-group').count()).toBe(0);
-      const heights = await row
-        .locator('.ui-chip')
+      const list = await chipRow(page, true);
+      await expect(list).toBeVisible();
+      expect(await list.locator('.chip-group').count()).toBe(0);
+      const heights = await list
+        .locator('.dtr-row')
         .evaluateAll((els) => els.map((e) => e.getBoundingClientRect().height));
-      for (const h of heights) expect(h).toBeGreaterThanOrEqual(44);
+      expect(heights.length).toBeGreaterThan(0);
+      for (const h of heights) expect(h).toBeGreaterThanOrEqual(32);
       const body = page.locator('.mdg-body').first();
       expect(await body.evaluate((el) => el.scrollWidth <= el.clientWidth + 1)).toBe(true);
+      const vw = page.viewportSize()!.width;
+      expect((await page.locator('.mdg-panel').first().boundingBox())!.width).toBeLessThan(vw - 16);
+      await expect(page.locator('.mdg-close')).toHaveCount(0);
     });
   }
 });

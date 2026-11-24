@@ -93,11 +93,13 @@ function chip(value: string, max = 26): string {
 
 /** Leading quantity of a spec string: '46782 kg launched (CSM…)' → '46,782 KG'. */
 function leadQuantity(value: string): string | null {
-  const m = /^~?([\d][\d,.]*)\s*(kg|t|lb|km\/s|m\/s)/i.exec(value.trim());
+  // A short lead-in without digits ("~", "about", "etwa", "Orbiter (~") reads as approximate, in
+  // any language; the chip cut "about 4060 kg launch mass (…)" to "about 4060…".
+  const m = /^([^\d]{0,12}?)([\d][\d,.]*)\s*(kg|t|lb|km\/s|m\/s)/i.exec(value.trim());
   if (!m) return null;
-  const num = Number(m[1].replace(/,/g, ''));
-  const formatted = Number.isFinite(num) ? num.toLocaleString('en-US') : m[1];
-  return `${value.trim().startsWith('~') ? '~' : ''}${formatted} ${m[2].toUpperCase()}`;
+  const num = Number(m[2].replace(/,/g, ''));
+  const formatted = Number.isFinite(num) ? num.toLocaleString('en-US') : m[2];
+  return `${m[1].trim() ? '~' : ''}${formatted} ${m[3].toUpperCase()}`;
 }
 
 /** ISO date → the card's mono register: '1969-07-16' → 'JUL 16 1969'. */

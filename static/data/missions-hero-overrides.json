@@ -48,6 +48,12 @@
    "reason": "subject names a different entity than chandrayaan3",
    "approved_at": "2026-06-12"
   },
+  "starship-flight-5": {
+   "slot": "01.jpg",
+   "reason": "portrait photo: Booster 12 sits in the top quarter, a centred landscape crop cuts it off (position only, 0.9.11 F3)",
+   "approved_at": "2026-11-22",
+   "position": "55% 14%"
+  },
   "starship-demo": {
    "slot": "03.jpg",
    "reason": "subject names a different entity than starship-demo",

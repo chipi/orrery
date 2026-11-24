@@ -1,0 +1,74 @@
+{
+  "stars/vega/02": {
+    "source": "nasa",
+    "id": "PIA07218",
+    "agency": "NASA",
+    "focal": [0.75, 0.5],
+    "category": "other",
+    "subject": "Spitzer Space Telescope images of Vega at 24 and 70 microns showing the heat glow of its debris disc, NASA/JPL-Caltech/K. Su (University of Arizona), 2005.",
+    "alt": {
+      "en-US": "Two Spitzer infrared views of Vega side by side: a blue point at 24 microns and a wider red-orange glow of warm dust at 70 microns",
+      "ar": "منظران بالأشعة تحت الحمراء من سبيتزر لنجم النسر الواقع جنبًا إلى جنب: نقطة زرقاء عند 24 ميكرونًا وتوهج أحمر برتقالي أوسع لغبار دافئ عند 70 ميكرونًا",
+      "de": "Zwei Spitzer-Infrarotansichten von Wega nebeneinander: ein blauer Punkt bei 24 Mikrometern und ein breiteres rotorangefarbenes Leuchten warmen Staubs bei 70 Mikrometern",
+      "es": "Dos vistas infrarrojas de Vega tomadas por Spitzer, una junto a otra: un punto azul a 24 micras y un brillo rojo anaranjado más amplio de polvo templado a 70 micras",
+      "fr": "Deux vues infrarouges de Véga par Spitzer côte à côte : un point bleu à 24 microns et une lueur rouge orangé plus large de poussière tiède à 70 microns",
+      "hi": "Spitzer से अभिजित के दो अवरक्त दृश्य अगल-बगल: 24 माइक्रॉन पर एक नीला बिंदु और 70 माइक्रॉन पर गर्म धूल की अधिक फैली लाल-नारंगी चमक",
+      "it": "Due viste infrarosse di Vega di Spitzer affiancate: un punto blu a 24 micron e un bagliore rosso-arancio più ampio di polvere tiepida a 70 micron",
+      "ja": "スピッツァーが赤外線で捉えたベガの2つの画像。24マイクロメートルでは青い点、70マイクロメートルでは暖かい塵が赤橙色に広く光る",
+      "ko": "스피처가 적외선으로 찍은 베가의 두 모습. 24마이크로미터에서는 파란 점, 70마이크로미터에서는 따뜻한 먼지가 더 넓게 붉은 주황빛으로 빛난다",
+      "nl": "Twee infraroodbeelden van Wega door Spitzer naast elkaar: een blauwe stip bij 24 micron en een bredere roodoranje gloed van warm stof bij 70 micron",
+      "pt-BR": "Duas vistas infravermelhas de Vega pelo Spitzer lado a lado: um ponto azul em 24 mícrons e um brilho vermelho-alaranjado mais amplo de poeira morna em 70 mícrons",
+      "ru": "Два инфракрасных снимка Веги со «Спитцера» рядом: синяя точка на 24 мкм и более широкое красно-оранжевое свечение тёплой пыли на 70 мкм",
+      "sr-Cyrl": "Два инфрацрвена снимка Веге са Спицера један поред другог: плава тачка на 24 микрона и шири црвенонаранџасти сјај топле прашине на 70 микрона",
+      "zh-CN": "斯皮策望远镜拍摄的织女星两幅红外图像并排：24微米下是一个蓝点，70微米下温暖尘埃发出范围更大的红橙色辉光"
+    }
+  },
+  "stars/barnards-star/02": {
+    "source": "commons",
+    "id": "Hubble image of Barnard Star.png",
+    "agency": "NASA / ESA",
+    "focal": [0.5, 0.5],
+    "category": "other",
+    "subject": "Hubble Space Telescope image of Barnard's Star, NASA/ESA/Hubble Heritage, processed by C. Violette.",
+    "alt": {
+      "en-US": "Barnard's Star in a Hubble image: a single small orange-white point of light on a black background",
+      "ar": "نجم برنارد في صورة من هابل: نقطة ضوء صغيرة واحدة برتقالية بيضاء على خلفية سوداء",
+      "de": "Barnards Pfeilstern in einer Hubble-Aufnahme: ein einzelner kleiner orange-weißer Lichtpunkt vor schwarzem Hintergrund",
+      "es": "La estrella de Barnard en una imagen del Hubble: un único punto de luz pequeño, blanco anaranjado, sobre fondo negro",
+      "fr": "L'étoile de Barnard dans une image de Hubble : un seul petit point de lumière blanc orangé sur fond noir",
+      "hi": "Hubble की छवि में Barnard का तारा: काली पृष्ठभूमि पर प्रकाश का एक छोटा नारंगी-सफ़ेद बिंदु",
+      "it": "La stella di Barnard in un'immagine di Hubble: un unico piccolo punto di luce bianco-arancio su fondo nero",
+      "ja": "ハッブルが撮影したバーナード星。黒い背景に小さなオレンジがかった白い光点がひとつだけ浮かぶ",
+      "ko": "허블이 찍은 바너드별. 검은 배경 위에 작은 주황빛 흰 광점 하나가 떠 있다",
+      "nl": "De ster van Barnard in een Hubble-opname: één klein oranjewit lichtpuntje op een zwarte achtergrond",
+      "pt-BR": "A estrela de Barnard em uma imagem do Hubble: um único pequeno ponto de luz branco-alaranjado sobre fundo preto",
+      "ru": "Звезда Барнарда на снимке «Хаббла»: одна маленькая оранжево-белая светящаяся точка на чёрном фоне",
+      "sr-Cyrl": "Барнардова звезда на снимку Хабла: једна мала наранџастобела светла тачка на црној позадини",
+      "zh-CN": "哈勃望远镜拍摄的巴纳德星：黑色背景上一个橙白色的小光点"
+    }
+  },
+  "stars/rigil-kentaurus/02": {
+    "source": "commons",
+    "id": "Alpha Centauri and Beta Centauri (centaurus-ch17-bardon-cc).jpg",
+    "agency": "ESO",
+    "focal": [0.5, 0.5],
+    "category": "other",
+    "subject": "Alpha Centauri and Beta Centauri at the centre of a wide-field image of Centaurus against the Milky Way, Zdeněk Bardon/ESO (centaurus-ch17-bardon-cc).",
+    "alt": {
+      "en-US": "Alpha Centauri and Beta Centauri shining as two bright stars among dark dust lanes of the southern Milky Way",
+      "ar": "ألفا قنطورس وبيتا قنطورس تلمعان كنجمين ساطعين بين ممرات الغبار الداكنة في درب التبانة الجنوبي",
+      "de": "Alpha Centauri und Beta Centauri leuchten als zwei helle Sterne zwischen dunklen Staubbändern der südlichen Milchstraße",
+      "es": "Alfa Centauri y Beta Centauri brillan como dos estrellas luminosas entre las oscuras franjas de polvo de la Vía Láctea austral",
+      "fr": "Alpha du Centaure et Bêta du Centaure brillent comme deux étoiles éclatantes parmi les bandes de poussière sombres de la Voie lactée australe",
+      "hi": "दक्षिणी आकाशगंगा की गहरी धूल-पट्टियों के बीच दो चमकीले तारों के रूप में चमकते Alpha Centauri और Beta Centauri",
+      "it": "Alfa Centauri e Beta Centauri brillano come due stelle luminose tra le scure bande di polvere della Via Lattea australe",
+      "ja": "南天の天の川の暗い塵の帯の間で、2つの明るい星として輝くケンタウルス座アルファ星とベータ星",
+      "ko": "남쪽 은하수의 어두운 먼지 띠 사이에서 밝은 두 별로 빛나는 센타우루스자리 알파별과 베타별",
+      "nl": "Alfa Centauri en Bèta Centauri stralen als twee heldere sterren tussen de donkere stofbanden van de zuidelijke Melkweg",
+      "pt-BR": "Alfa Centauri e Beta Centauri brilham como duas estrelas luminosas entre as faixas escuras de poeira da Via Láctea austral",
+      "ru": "Альфа Центавра и Бета Центавра сияют двумя яркими звёздами среди тёмных пылевых полос южного Млечного Пути",
+      "sr-Cyrl": "Алфа Кентаура и Бета Кентаура сијају као две сјајне звезде међу тамним праменовима прашине јужног Млечног пута",
+      "zh-CN": "南门二和马腹一在南天银河的暗尘带之间闪耀，如同两颗明亮的星"
+    }
+  }
+}

@@ -164,6 +164,8 @@
   // selectable object without the pointer-only canvas. One open state for all eight scales; it
   // stays open across a scale jump on a fine pointer and closes on a coarse one.
   let indexOpen = $state(false);
+  /** A phone drawer of the solar-system HUD is open: the INDEX handle hides under it. */
+  let exploreDrawerOpen = $state(false);
   // The Sun and each planet carry their own colour as the dot of their row (the scene's catalogue);
   // every other solar-system row keeps the default grey dot.
   const SOLAR_DOT: Record<string, string> = {
@@ -2317,6 +2319,7 @@
   />
 
   <HudControls
+    onDrawer={(open) => (exploreDrawerOpen = open)}
     hidden={contextId !== 'solar-system' || !!activeBlackHole}
     drawerUnderPanel={panelCoverPx > 0}
     {view}
@@ -2539,7 +2542,7 @@
      scale, hidden unless it is the scale on screen, so the prerendered page links every entity
      page. The accessible counterpart to canvas picking. -->
 {#if indexAvailable}
-  <div class="scale-index-handle">
+  <div class="scale-index-handle" class:under-drawer={exploreDrawerOpen || indexOpen}>
     <Chip
       kind="toggle"
       active={indexOpen}

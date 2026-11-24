@@ -164,6 +164,11 @@
     "en": "f88fe58331",
     "tr": "f88fe58331"
   },
+  "ar|missions/earth/starship-flight-5.json|events.2.label": {
+    "why": "SECO (second-stage engine cutoff) is a flight-dynamics acronym the same in every locale, as hudLabel leaves it",
+    "en": "9764eaf305",
+    "tr": "9764eaf305"
+  },
   "ar|original-work.json|anatomy_art./images/anatomy/apollo-csm-block-i_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "110d3a6004",
@@ -374,6 +379,11 @@
     "en": "2e46c38af8",
     "tr": "2e46c38af8"
   },
+  "ar|original-work.json|exploded_art./images/anatomy-exploded/perseverance_webp.title": {
+    "why": "proper names (Perseverance, Mars 2020) kept as on the fleet page in this locale",
+    "en": "2f671bfcba",
+    "tr": "2f671bfcba"
+  },
   "ar|original-work.json|exploded_art./images/anatomy-exploded/proton-k_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "8527f639fd",
@@ -394,25 +404,40 @@
     "en": "445aab85db",
     "tr": "445aab85db"
   },
+  "ar|original-work.json|landing_art./images/landing-sequences/perseverance_webp.title": {
+    "why": "proper names (Perseverance, Ingenuity) kept as on their mission and fleet pages in this locale",
+    "en": "f1d04e438b",
+    "tr": "f1d04e438b"
+  },
+  "ar|original-work.json|mission_trajectories./images/missions/thumbnails/kaguya_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "f2ac0904eb",
+    "tr": "f2ac0904eb"
+  },
+  "ar|original-work.json|mission_trajectories./images/missions/thumbnails/lro_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "909dd83413",
+    "tr": "909dd83413"
+  },
+  "ar|original-work.json|mission_trajectories./images/missions/thumbnails/mro_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "45da8da847",
+    "tr": "45da8da847"
+  },
+  "ar|original-work.json|mission_trajectories./images/missions/thumbnails/parker-solar-probe_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "28d31dc968",
+    "tr": "28d31dc968"
+  },
+  "ar|original-work.json|mission_trajectories./images/missions/thumbnails/solar-orbiter_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "3ee5fd8d67",
+    "tr": "3ee5fd8d67"
+  },
   "ar|original-work.json|models3d./images/colophon/craft-cassini_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "25ccc94b47",
     "tr": "25ccc94b47"
-  },
-  "ar|original-work.json|models3d./images/colophon/craft-pioneer-10_webp.title": {
-    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
-    "en": "4ae7e2a262",
-    "tr": "4ae7e2a262"
-  },
-  "ar|original-work.json|models3d./images/colophon/craft-vega-1_webp.title": {
-    "why": "name of the Vega probes (not the star), kept as in English",
-    "en": "ceb84bb1f9",
-    "tr": "ceb84bb1f9"
-  },
-  "ar|original-work.json|models3d./images/colophon/craft-voyager-1_webp.title": {
-    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
-    "en": "bdbbad925e",
-    "tr": "bdbbad925e"
   },
   "ar|original-work.json|models3d./images/colophon/model-cruise-artemis3_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -424,10 +449,40 @@
     "en": "5bfcb70a75",
     "tr": "5bfcb70a75"
   },
+  "ar|original-work.json|models3d./images/colophon/model-launcher-athena-ii_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "fdab0419bf",
+    "tr": "fdab0419bf"
+  },
+  "ar|original-work.json|models3d./images/colophon/model-launcher-atlas-agena_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "33fa80855b",
+    "tr": "33fa80855b"
+  },
+  "ar|original-work.json|models3d./images/colophon/model-launcher-atlas-centaur_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "b97079b0f4",
+    "tr": "b97079b0f4"
+  },
+  "ar|original-work.json|models3d./images/colophon/model-launcher-delta-ii_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "549de9e819",
+    "tr": "549de9e819"
+  },
+  "ar|original-work.json|models3d./images/colophon/model-launcher-delta-iv-heavy_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "fda8058eea",
+    "tr": "fda8058eea"
+  },
   "ar|original-work.json|models3d./images/colophon/model-launcher-falcon-9_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "85fb7a41e8",
     "tr": "85fb7a41e8"
+  },
+  "ar|original-work.json|models3d./images/colophon/model-launcher-long-march-3a_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "8b124f7c92",
+    "tr": "8b124f7c92"
   },
   "ar|original-work.json|models3d./images/colophon/model-launcher-lvm3_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -444,6 +499,11 @@
     "en": "8527f639fd",
     "tr": "8527f639fd"
   },
+  "ar|original-work.json|models3d./images/colophon/model-launcher-proton-m-briz-m_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "23c9b90188",
+    "tr": "23c9b90188"
+  },
   "ar|original-work.json|models3d./images/colophon/model-launcher-pslv_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "f504e1e27d",
@@ -454,10 +514,35 @@
     "en": "cea186e2a2",
     "tr": "cea186e2a2"
   },
+  "ar|original-work.json|models3d./images/colophon/model-launcher-soyuz-fg-fregat_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "eab7413937",
+    "tr": "eab7413937"
+  },
+  "ar|original-work.json|models3d./images/colophon/model-launcher-sputnik-8k71ps_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "f6cf1f24ee",
+    "tr": "f6cf1f24ee"
+  },
   "ar|original-work.json|models3d./images/colophon/model-launcher-starship_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "bff6300bf2",
     "tr": "bff6300bf2"
+  },
+  "ar|original-work.json|models3d./images/colophon/model-launcher-titan-ii-g_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "c711caa032",
+    "tr": "c711caa032"
+  },
+  "ar|original-work.json|models3d./images/colophon/model-launcher-titan-iiie-centaur_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "087352d935",
+    "tr": "087352d935"
+  },
+  "ar|original-work.json|models3d./images/colophon/model-launcher-titan-ivb-centaur_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "0366c595cb",
+    "tr": "0366c595cb"
   },
   "ar|original-work.json|models3d./images/colophon/model-launcher-vostok-k_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -474,10 +559,70 @@
     "en": "f1d04e438b",
     "tr": "f1d04e438b"
   },
+  "ar|original-work.json|models3d./images/colophon/model-probe-nova-c_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "9e953c8ac6",
+    "tr": "9e953c8ac6"
+  },
   "ar|original-work.json|models3d./images/colophon/model-sat-jwst_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "6e960758e9",
     "tr": "6e960758e9"
+  },
+  "ar|original-work.json|models3d./images/colophon/model-showcase-cargo-dragon-v1_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "17f3a9850a",
+    "tr": "17f3a9850a"
+  },
+  "ar|original-work.json|models3d./images/colophon/model-showcase-columbia_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "82b386a5aa",
+    "tr": "82b386a5aa"
+  },
+  "ar|original-work.json|models3d./images/colophon/model-showcase-compton-gro_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "b00c37acd8",
+    "tr": "b00c37acd8"
+  },
+  "ar|original-work.json|models3d./images/colophon/model-showcase-enterprise_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "e86346563d",
+    "tr": "e86346563d"
+  },
+  "ar|original-work.json|models3d./images/colophon/model-showcase-exomars-tgo_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "d4bdcf4be1",
+    "tr": "d4bdcf4be1"
+  },
+  "ar|original-work.json|models3d./images/colophon/model-showcase-htv_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "9cda516ca4",
+    "tr": "9cda516ca4"
+  },
+  "ar|original-work.json|models3d./images/colophon/model-showcase-kaguya_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "f2ac0904eb",
+    "tr": "f2ac0904eb"
+  },
+  "ar|original-work.json|models3d./images/colophon/model-showcase-lro_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "909dd83413",
+    "tr": "909dd83413"
+  },
+  "ar|original-work.json|models3d./images/colophon/model-showcase-mro_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "45da8da847",
+    "tr": "45da8da847"
+  },
+  "ar|original-work.json|models3d./images/colophon/model-showcase-parker-solar-probe_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "28d31dc968",
+    "tr": "28d31dc968"
+  },
+  "ar|original-work.json|models3d./images/colophon/model-showcase-solar-orbiter_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "3ee5fd8d67",
+    "tr": "3ee5fd8d67"
   },
   "ar|original-work.json|posters./images/posters/cassini_jpg.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -503,6 +648,16 @@
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "bdbbad925e",
     "tr": "bdbbad925e"
+  },
+  "ar|original-work.json|site_illustrations./images/illustrations/sites/change3_webp.title": {
+    "why": "proper name (Chang'e 3) kept in Latin script as on its mission page in this locale",
+    "en": "141e8598bd",
+    "tr": "141e8598bd"
+  },
+  "ar|original-work.json|site_illustrations./images/illustrations/sites/change4_webp.title": {
+    "why": "proper name (Chang'e 4) kept in Latin script as on its mission page in this locale",
+    "en": "ce15bf3643",
+    "tr": "ce15bf3643"
   },
   "ar|site-stories/apollo12.json|chapters.hardware.subtitle": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -728,6 +883,11 @@
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "f88fe58331",
     "tr": "f88fe58331"
+  },
+  "de|missions/earth/starship-flight-5.json|events.2.label": {
+    "why": "SECO (second-stage engine cutoff) is a flight-dynamics acronym the same in every locale, as hudLabel leaves it",
+    "en": "9764eaf305",
+    "tr": "9764eaf305"
   },
   "de|museums/nasm-washington.json|name": {
     "why": "museum name kept in English (German/French/Italian use the English name)",
@@ -989,6 +1149,11 @@
     "en": "549de9e819",
     "tr": "549de9e819"
   },
+  "de|original-work.json|exploded_art./images/anatomy-exploded/lrv-apollo_webp.title": {
+    "why": "the name /fleet uses in this locale (fleet/rover/lrv-apollo.json), kept as in English, same as anatomy_art",
+    "en": "05067dae1d",
+    "tr": "05067dae1d"
+  },
   "de|original-work.json|exploded_art./images/anatomy-exploded/lvm3_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "1130d629c9",
@@ -998,6 +1163,11 @@
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "2e46c38af8",
     "tr": "2e46c38af8"
+  },
+  "de|original-work.json|exploded_art./images/anatomy-exploded/perseverance_webp.title": {
+    "why": "proper names (Perseverance, Mars 2020) kept as on the fleet page in this locale",
+    "en": "2f671bfcba",
+    "tr": "2f671bfcba"
   },
   "de|original-work.json|exploded_art./images/anatomy-exploded/proton-k_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -1019,25 +1189,40 @@
     "en": "445aab85db",
     "tr": "445aab85db"
   },
+  "de|original-work.json|landing_art./images/landing-sequences/perseverance_webp.title": {
+    "why": "proper names (Perseverance, Ingenuity) kept as on their mission and fleet pages in this locale",
+    "en": "f1d04e438b",
+    "tr": "f1d04e438b"
+  },
+  "de|original-work.json|mission_trajectories./images/missions/thumbnails/kaguya_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "f2ac0904eb",
+    "tr": "f2ac0904eb"
+  },
+  "de|original-work.json|mission_trajectories./images/missions/thumbnails/lro_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "909dd83413",
+    "tr": "909dd83413"
+  },
+  "de|original-work.json|mission_trajectories./images/missions/thumbnails/mro_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "45da8da847",
+    "tr": "45da8da847"
+  },
+  "de|original-work.json|mission_trajectories./images/missions/thumbnails/parker-solar-probe_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "28d31dc968",
+    "tr": "28d31dc968"
+  },
+  "de|original-work.json|mission_trajectories./images/missions/thumbnails/solar-orbiter_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "3ee5fd8d67",
+    "tr": "3ee5fd8d67"
+  },
   "de|original-work.json|models3d./images/colophon/craft-cassini_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "25ccc94b47",
     "tr": "25ccc94b47"
-  },
-  "de|original-work.json|models3d./images/colophon/craft-pioneer-10_webp.title": {
-    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
-    "en": "4ae7e2a262",
-    "tr": "4ae7e2a262"
-  },
-  "de|original-work.json|models3d./images/colophon/craft-vega-1_webp.title": {
-    "why": "name of the Vega probes (not the star), kept as in English",
-    "en": "ceb84bb1f9",
-    "tr": "ceb84bb1f9"
-  },
-  "de|original-work.json|models3d./images/colophon/craft-voyager-1_webp.title": {
-    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
-    "en": "bdbbad925e",
-    "tr": "bdbbad925e"
   },
   "de|original-work.json|models3d./images/colophon/model-cruise-artemis3_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -1049,10 +1234,40 @@
     "en": "5bfcb70a75",
     "tr": "5bfcb70a75"
   },
+  "de|original-work.json|models3d./images/colophon/model-launcher-athena-ii_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "fdab0419bf",
+    "tr": "fdab0419bf"
+  },
+  "de|original-work.json|models3d./images/colophon/model-launcher-atlas-agena_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "33fa80855b",
+    "tr": "33fa80855b"
+  },
+  "de|original-work.json|models3d./images/colophon/model-launcher-atlas-centaur_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "b97079b0f4",
+    "tr": "b97079b0f4"
+  },
+  "de|original-work.json|models3d./images/colophon/model-launcher-delta-ii_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "549de9e819",
+    "tr": "549de9e819"
+  },
+  "de|original-work.json|models3d./images/colophon/model-launcher-delta-iv-heavy_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "fda8058eea",
+    "tr": "fda8058eea"
+  },
   "de|original-work.json|models3d./images/colophon/model-launcher-falcon-9_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "85fb7a41e8",
     "tr": "85fb7a41e8"
+  },
+  "de|original-work.json|models3d./images/colophon/model-launcher-long-march-3a_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "8b124f7c92",
+    "tr": "8b124f7c92"
   },
   "de|original-work.json|models3d./images/colophon/model-launcher-lvm3_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -1069,6 +1284,11 @@
     "en": "8527f639fd",
     "tr": "8527f639fd"
   },
+  "de|original-work.json|models3d./images/colophon/model-launcher-proton-m-briz-m_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "23c9b90188",
+    "tr": "23c9b90188"
+  },
   "de|original-work.json|models3d./images/colophon/model-launcher-pslv_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "f504e1e27d",
@@ -1079,10 +1299,35 @@
     "en": "cea186e2a2",
     "tr": "cea186e2a2"
   },
+  "de|original-work.json|models3d./images/colophon/model-launcher-soyuz-fg-fregat_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "eab7413937",
+    "tr": "eab7413937"
+  },
+  "de|original-work.json|models3d./images/colophon/model-launcher-sputnik-8k71ps_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "f6cf1f24ee",
+    "tr": "f6cf1f24ee"
+  },
   "de|original-work.json|models3d./images/colophon/model-launcher-starship_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "bff6300bf2",
     "tr": "bff6300bf2"
+  },
+  "de|original-work.json|models3d./images/colophon/model-launcher-titan-ii-g_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "c711caa032",
+    "tr": "c711caa032"
+  },
+  "de|original-work.json|models3d./images/colophon/model-launcher-titan-iiie-centaur_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "087352d935",
+    "tr": "087352d935"
+  },
+  "de|original-work.json|models3d./images/colophon/model-launcher-titan-ivb-centaur_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "0366c595cb",
+    "tr": "0366c595cb"
   },
   "de|original-work.json|models3d./images/colophon/model-launcher-vostok-k_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -1099,10 +1344,80 @@
     "en": "f1d04e438b",
     "tr": "f1d04e438b"
   },
+  "de|original-work.json|models3d./images/colophon/model-probe-nova-c_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "9e953c8ac6",
+    "tr": "9e953c8ac6"
+  },
   "de|original-work.json|models3d./images/colophon/model-sat-jwst_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "6e960758e9",
     "tr": "6e960758e9"
+  },
+  "de|original-work.json|models3d./images/colophon/model-showcase-cargo-dragon-v1_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "17f3a9850a",
+    "tr": "17f3a9850a"
+  },
+  "de|original-work.json|models3d./images/colophon/model-showcase-columbia_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "82b386a5aa",
+    "tr": "82b386a5aa"
+  },
+  "de|original-work.json|models3d./images/colophon/model-showcase-compton-gro_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "b00c37acd8",
+    "tr": "b00c37acd8"
+  },
+  "de|original-work.json|models3d./images/colophon/model-showcase-enterprise_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "e86346563d",
+    "tr": "e86346563d"
+  },
+  "de|original-work.json|models3d./images/colophon/model-showcase-exomars-tgo_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "d4bdcf4be1",
+    "tr": "d4bdcf4be1"
+  },
+  "de|original-work.json|models3d./images/colophon/model-showcase-hope_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "183e3fcd89",
+    "tr": "183e3fcd89"
+  },
+  "de|original-work.json|models3d./images/colophon/model-showcase-htv_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "9cda516ca4",
+    "tr": "9cda516ca4"
+  },
+  "de|original-work.json|models3d./images/colophon/model-showcase-kaguya_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "f2ac0904eb",
+    "tr": "f2ac0904eb"
+  },
+  "de|original-work.json|models3d./images/colophon/model-showcase-lro_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "909dd83413",
+    "tr": "909dd83413"
+  },
+  "de|original-work.json|models3d./images/colophon/model-showcase-lrv-apollo_webp.title": {
+    "why": "the name /fleet uses in this locale (fleet/rover/lrv-apollo.json), kept as in English",
+    "en": "e87c170174",
+    "tr": "e87c170174"
+  },
+  "de|original-work.json|models3d./images/colophon/model-showcase-mro_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "45da8da847",
+    "tr": "45da8da847"
+  },
+  "de|original-work.json|models3d./images/colophon/model-showcase-parker-solar-probe_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "28d31dc968",
+    "tr": "28d31dc968"
+  },
+  "de|original-work.json|models3d./images/colophon/model-showcase-solar-orbiter_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "3ee5fd8d67",
+    "tr": "3ee5fd8d67"
   },
   "de|original-work.json|posters./images/posters/cassini_jpg.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -1138,6 +1453,16 @@
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "bdbbad925e",
     "tr": "bdbbad925e"
+  },
+  "de|original-work.json|site_illustrations./images/illustrations/sites/change3_webp.title": {
+    "why": "proper name (Chang'e 3) kept in Latin script as on its mission page in this locale",
+    "en": "141e8598bd",
+    "tr": "141e8598bd"
+  },
+  "de|original-work.json|site_illustrations./images/illustrations/sites/change4_webp.title": {
+    "why": "proper name (Chang'e 4) kept in Latin script as on its mission page in this locale",
+    "en": "ce15bf3643",
+    "tr": "ce15bf3643"
   },
   "de|site-stories/apollo12.json|chapters.hardware.subtitle": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -1348,6 +1673,11 @@
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "f88fe58331",
     "tr": "f88fe58331"
+  },
+  "es|missions/earth/starship-flight-5.json|events.2.label": {
+    "why": "SECO (second-stage engine cutoff) is a flight-dynamics acronym the same in every locale, as hudLabel leaves it",
+    "en": "9764eaf305",
+    "tr": "9764eaf305"
   },
   "es|observatories/alma.json|name": {
     "why": "instrument/vehicle name with its acronym kept in English in this Latin-script locale (NAME_POLICY)",
@@ -1584,6 +1914,11 @@
     "en": "2e46c38af8",
     "tr": "2e46c38af8"
   },
+  "es|original-work.json|exploded_art./images/anatomy-exploded/perseverance_webp.title": {
+    "why": "proper names (Perseverance, Mars 2020) kept as on the fleet page in this locale",
+    "en": "2f671bfcba",
+    "tr": "2f671bfcba"
+  },
   "es|original-work.json|exploded_art./images/anatomy-exploded/proton-k_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "8527f639fd",
@@ -1604,25 +1939,40 @@
     "en": "445aab85db",
     "tr": "445aab85db"
   },
+  "es|original-work.json|landing_art./images/landing-sequences/perseverance_webp.title": {
+    "why": "proper names (Perseverance, Ingenuity) kept as on their mission and fleet pages in this locale",
+    "en": "f1d04e438b",
+    "tr": "f1d04e438b"
+  },
+  "es|original-work.json|mission_trajectories./images/missions/thumbnails/kaguya_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "f2ac0904eb",
+    "tr": "f2ac0904eb"
+  },
+  "es|original-work.json|mission_trajectories./images/missions/thumbnails/lro_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "909dd83413",
+    "tr": "909dd83413"
+  },
+  "es|original-work.json|mission_trajectories./images/missions/thumbnails/mro_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "45da8da847",
+    "tr": "45da8da847"
+  },
+  "es|original-work.json|mission_trajectories./images/missions/thumbnails/parker-solar-probe_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "28d31dc968",
+    "tr": "28d31dc968"
+  },
+  "es|original-work.json|mission_trajectories./images/missions/thumbnails/solar-orbiter_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "3ee5fd8d67",
+    "tr": "3ee5fd8d67"
+  },
   "es|original-work.json|models3d./images/colophon/craft-cassini_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "25ccc94b47",
     "tr": "25ccc94b47"
-  },
-  "es|original-work.json|models3d./images/colophon/craft-pioneer-10_webp.title": {
-    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
-    "en": "4ae7e2a262",
-    "tr": "4ae7e2a262"
-  },
-  "es|original-work.json|models3d./images/colophon/craft-vega-1_webp.title": {
-    "why": "name of the Vega probes (not the star), kept as in English",
-    "en": "ceb84bb1f9",
-    "tr": "ceb84bb1f9"
-  },
-  "es|original-work.json|models3d./images/colophon/craft-voyager-1_webp.title": {
-    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
-    "en": "bdbbad925e",
-    "tr": "bdbbad925e"
   },
   "es|original-work.json|models3d./images/colophon/model-cruise-artemis3_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -1634,10 +1984,40 @@
     "en": "5bfcb70a75",
     "tr": "5bfcb70a75"
   },
+  "es|original-work.json|models3d./images/colophon/model-launcher-athena-ii_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "fdab0419bf",
+    "tr": "fdab0419bf"
+  },
+  "es|original-work.json|models3d./images/colophon/model-launcher-atlas-agena_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "33fa80855b",
+    "tr": "33fa80855b"
+  },
+  "es|original-work.json|models3d./images/colophon/model-launcher-atlas-centaur_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "b97079b0f4",
+    "tr": "b97079b0f4"
+  },
+  "es|original-work.json|models3d./images/colophon/model-launcher-delta-ii_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "549de9e819",
+    "tr": "549de9e819"
+  },
+  "es|original-work.json|models3d./images/colophon/model-launcher-delta-iv-heavy_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "fda8058eea",
+    "tr": "fda8058eea"
+  },
   "es|original-work.json|models3d./images/colophon/model-launcher-falcon-9_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "85fb7a41e8",
     "tr": "85fb7a41e8"
+  },
+  "es|original-work.json|models3d./images/colophon/model-launcher-long-march-3a_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "8b124f7c92",
+    "tr": "8b124f7c92"
   },
   "es|original-work.json|models3d./images/colophon/model-launcher-lvm3_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -1649,6 +2029,11 @@
     "en": "2e46c38af8",
     "tr": "2e46c38af8"
   },
+  "es|original-work.json|models3d./images/colophon/model-launcher-proton-m-briz-m_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "23c9b90188",
+    "tr": "23c9b90188"
+  },
   "es|original-work.json|models3d./images/colophon/model-launcher-pslv_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "f504e1e27d",
@@ -1659,10 +2044,35 @@
     "en": "cea186e2a2",
     "tr": "cea186e2a2"
   },
+  "es|original-work.json|models3d./images/colophon/model-launcher-soyuz-fg-fregat_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "eab7413937",
+    "tr": "eab7413937"
+  },
+  "es|original-work.json|models3d./images/colophon/model-launcher-sputnik-8k71ps_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "f6cf1f24ee",
+    "tr": "f6cf1f24ee"
+  },
   "es|original-work.json|models3d./images/colophon/model-launcher-starship_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "bff6300bf2",
     "tr": "bff6300bf2"
+  },
+  "es|original-work.json|models3d./images/colophon/model-launcher-titan-ii-g_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "c711caa032",
+    "tr": "c711caa032"
+  },
+  "es|original-work.json|models3d./images/colophon/model-launcher-titan-iiie-centaur_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "087352d935",
+    "tr": "087352d935"
+  },
+  "es|original-work.json|models3d./images/colophon/model-launcher-titan-ivb-centaur_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "0366c595cb",
+    "tr": "0366c595cb"
   },
   "es|original-work.json|models3d./images/colophon/model-launcher-vostok-k_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -1679,10 +2089,70 @@
     "en": "f1d04e438b",
     "tr": "f1d04e438b"
   },
+  "es|original-work.json|models3d./images/colophon/model-probe-nova-c_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "9e953c8ac6",
+    "tr": "9e953c8ac6"
+  },
   "es|original-work.json|models3d./images/colophon/model-sat-jwst_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "6e960758e9",
     "tr": "6e960758e9"
+  },
+  "es|original-work.json|models3d./images/colophon/model-showcase-cargo-dragon-v1_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "17f3a9850a",
+    "tr": "17f3a9850a"
+  },
+  "es|original-work.json|models3d./images/colophon/model-showcase-columbia_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "82b386a5aa",
+    "tr": "82b386a5aa"
+  },
+  "es|original-work.json|models3d./images/colophon/model-showcase-enterprise_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "e86346563d",
+    "tr": "e86346563d"
+  },
+  "es|original-work.json|models3d./images/colophon/model-showcase-exomars-tgo_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "d4bdcf4be1",
+    "tr": "d4bdcf4be1"
+  },
+  "es|original-work.json|models3d./images/colophon/model-showcase-hope_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "183e3fcd89",
+    "tr": "183e3fcd89"
+  },
+  "es|original-work.json|models3d./images/colophon/model-showcase-htv_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "9cda516ca4",
+    "tr": "9cda516ca4"
+  },
+  "es|original-work.json|models3d./images/colophon/model-showcase-kaguya_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "f2ac0904eb",
+    "tr": "f2ac0904eb"
+  },
+  "es|original-work.json|models3d./images/colophon/model-showcase-lro_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "909dd83413",
+    "tr": "909dd83413"
+  },
+  "es|original-work.json|models3d./images/colophon/model-showcase-mro_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "45da8da847",
+    "tr": "45da8da847"
+  },
+  "es|original-work.json|models3d./images/colophon/model-showcase-parker-solar-probe_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "28d31dc968",
+    "tr": "28d31dc968"
+  },
+  "es|original-work.json|models3d./images/colophon/model-showcase-solar-orbiter_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "3ee5fd8d67",
+    "tr": "3ee5fd8d67"
   },
   "es|original-work.json|posters./images/posters/cassini_jpg.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -1713,6 +2183,16 @@
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "bdbbad925e",
     "tr": "bdbbad925e"
+  },
+  "es|original-work.json|site_illustrations./images/illustrations/sites/change3_webp.title": {
+    "why": "proper name (Chang'e 3) kept in Latin script as on its mission page in this locale",
+    "en": "141e8598bd",
+    "tr": "141e8598bd"
+  },
+  "es|original-work.json|site_illustrations./images/illustrations/sites/change4_webp.title": {
+    "why": "proper name (Chang'e 4) kept in Latin script as on its mission page in this locale",
+    "en": "ce15bf3643",
+    "tr": "ce15bf3643"
   },
   "es|site-stories/apollo12.json|chapters.hardware.subtitle": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -1923,6 +2403,11 @@
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "f88fe58331",
     "tr": "f88fe58331"
+  },
+  "fr|missions/earth/starship-flight-5.json|events.2.label": {
+    "why": "SECO (second-stage engine cutoff) is a flight-dynamics acronym the same in every locale, as hudLabel leaves it",
+    "en": "9764eaf305",
+    "tr": "9764eaf305"
   },
   "fr|museums/nasm-washington.json|name": {
     "why": "museum name kept in English (German/French/Italian use the English name)",
@@ -2184,6 +2669,11 @@
     "en": "2e46c38af8",
     "tr": "2e46c38af8"
   },
+  "fr|original-work.json|exploded_art./images/anatomy-exploded/perseverance_webp.title": {
+    "why": "proper names (Perseverance, Mars 2020) kept as on the fleet page in this locale",
+    "en": "2f671bfcba",
+    "tr": "2f671bfcba"
+  },
   "fr|original-work.json|exploded_art./images/anatomy-exploded/proton-k_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "8527f639fd",
@@ -2204,20 +2694,40 @@
     "en": "445aab85db",
     "tr": "445aab85db"
   },
+  "fr|original-work.json|landing_art./images/landing-sequences/perseverance_webp.title": {
+    "why": "proper names (Perseverance, Ingenuity) kept as on their mission and fleet pages in this locale",
+    "en": "f1d04e438b",
+    "tr": "f1d04e438b"
+  },
+  "fr|original-work.json|mission_trajectories./images/missions/thumbnails/kaguya_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "f2ac0904eb",
+    "tr": "f2ac0904eb"
+  },
+  "fr|original-work.json|mission_trajectories./images/missions/thumbnails/lro_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "909dd83413",
+    "tr": "909dd83413"
+  },
+  "fr|original-work.json|mission_trajectories./images/missions/thumbnails/mro_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "45da8da847",
+    "tr": "45da8da847"
+  },
+  "fr|original-work.json|mission_trajectories./images/missions/thumbnails/parker-solar-probe_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "28d31dc968",
+    "tr": "28d31dc968"
+  },
+  "fr|original-work.json|mission_trajectories./images/missions/thumbnails/solar-orbiter_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "3ee5fd8d67",
+    "tr": "3ee5fd8d67"
+  },
   "fr|original-work.json|models3d./images/colophon/craft-cassini_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "25ccc94b47",
     "tr": "25ccc94b47"
-  },
-  "fr|original-work.json|models3d./images/colophon/craft-pioneer-10_webp.title": {
-    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
-    "en": "4ae7e2a262",
-    "tr": "4ae7e2a262"
-  },
-  "fr|original-work.json|models3d./images/colophon/craft-voyager-1_webp.title": {
-    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
-    "en": "bdbbad925e",
-    "tr": "bdbbad925e"
   },
   "fr|original-work.json|models3d./images/colophon/model-cruise-artemis3_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -2229,10 +2739,40 @@
     "en": "5bfcb70a75",
     "tr": "5bfcb70a75"
   },
+  "fr|original-work.json|models3d./images/colophon/model-launcher-athena-ii_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "fdab0419bf",
+    "tr": "fdab0419bf"
+  },
+  "fr|original-work.json|models3d./images/colophon/model-launcher-atlas-agena_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "33fa80855b",
+    "tr": "33fa80855b"
+  },
+  "fr|original-work.json|models3d./images/colophon/model-launcher-atlas-centaur_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "b97079b0f4",
+    "tr": "b97079b0f4"
+  },
+  "fr|original-work.json|models3d./images/colophon/model-launcher-delta-ii_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "549de9e819",
+    "tr": "549de9e819"
+  },
+  "fr|original-work.json|models3d./images/colophon/model-launcher-delta-iv-heavy_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "fda8058eea",
+    "tr": "fda8058eea"
+  },
   "fr|original-work.json|models3d./images/colophon/model-launcher-falcon-9_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "85fb7a41e8",
     "tr": "85fb7a41e8"
+  },
+  "fr|original-work.json|models3d./images/colophon/model-launcher-long-march-3a_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "8b124f7c92",
+    "tr": "8b124f7c92"
   },
   "fr|original-work.json|models3d./images/colophon/model-launcher-lvm3_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -2249,6 +2789,11 @@
     "en": "8527f639fd",
     "tr": "8527f639fd"
   },
+  "fr|original-work.json|models3d./images/colophon/model-launcher-proton-m-briz-m_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "23c9b90188",
+    "tr": "23c9b90188"
+  },
   "fr|original-work.json|models3d./images/colophon/model-launcher-pslv_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "f504e1e27d",
@@ -2259,10 +2804,35 @@
     "en": "cea186e2a2",
     "tr": "cea186e2a2"
   },
+  "fr|original-work.json|models3d./images/colophon/model-launcher-soyuz-fg-fregat_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "eab7413937",
+    "tr": "eab7413937"
+  },
+  "fr|original-work.json|models3d./images/colophon/model-launcher-sputnik-8k71ps_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "f6cf1f24ee",
+    "tr": "f6cf1f24ee"
+  },
   "fr|original-work.json|models3d./images/colophon/model-launcher-starship_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "bff6300bf2",
     "tr": "bff6300bf2"
+  },
+  "fr|original-work.json|models3d./images/colophon/model-launcher-titan-ii-g_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "c711caa032",
+    "tr": "c711caa032"
+  },
+  "fr|original-work.json|models3d./images/colophon/model-launcher-titan-iiie-centaur_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "087352d935",
+    "tr": "087352d935"
+  },
+  "fr|original-work.json|models3d./images/colophon/model-launcher-titan-ivb-centaur_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "0366c595cb",
+    "tr": "0366c595cb"
   },
   "fr|original-work.json|models3d./images/colophon/model-launcher-vostok-k_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -2279,10 +2849,70 @@
     "en": "f1d04e438b",
     "tr": "f1d04e438b"
   },
+  "fr|original-work.json|models3d./images/colophon/model-probe-nova-c_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "9e953c8ac6",
+    "tr": "9e953c8ac6"
+  },
   "fr|original-work.json|models3d./images/colophon/model-sat-jwst_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "6e960758e9",
     "tr": "6e960758e9"
+  },
+  "fr|original-work.json|models3d./images/colophon/model-showcase-cargo-dragon-v1_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "17f3a9850a",
+    "tr": "17f3a9850a"
+  },
+  "fr|original-work.json|models3d./images/colophon/model-showcase-columbia_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "82b386a5aa",
+    "tr": "82b386a5aa"
+  },
+  "fr|original-work.json|models3d./images/colophon/model-showcase-enterprise_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "e86346563d",
+    "tr": "e86346563d"
+  },
+  "fr|original-work.json|models3d./images/colophon/model-showcase-exomars-tgo_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "d4bdcf4be1",
+    "tr": "d4bdcf4be1"
+  },
+  "fr|original-work.json|models3d./images/colophon/model-showcase-hope_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "183e3fcd89",
+    "tr": "183e3fcd89"
+  },
+  "fr|original-work.json|models3d./images/colophon/model-showcase-htv_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "9cda516ca4",
+    "tr": "9cda516ca4"
+  },
+  "fr|original-work.json|models3d./images/colophon/model-showcase-kaguya_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "f2ac0904eb",
+    "tr": "f2ac0904eb"
+  },
+  "fr|original-work.json|models3d./images/colophon/model-showcase-lro_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "909dd83413",
+    "tr": "909dd83413"
+  },
+  "fr|original-work.json|models3d./images/colophon/model-showcase-mro_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "45da8da847",
+    "tr": "45da8da847"
+  },
+  "fr|original-work.json|models3d./images/colophon/model-showcase-parker-solar-probe_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "28d31dc968",
+    "tr": "28d31dc968"
+  },
+  "fr|original-work.json|models3d./images/colophon/model-showcase-solar-orbiter_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "3ee5fd8d67",
+    "tr": "3ee5fd8d67"
   },
   "fr|original-work.json|posters./images/posters/cassini_jpg.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -2313,6 +2943,16 @@
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "bdbbad925e",
     "tr": "bdbbad925e"
+  },
+  "fr|original-work.json|site_illustrations./images/illustrations/sites/change3_webp.title": {
+    "why": "proper name (Chang'e 3) kept in Latin script as on its mission page in this locale",
+    "en": "141e8598bd",
+    "tr": "141e8598bd"
+  },
+  "fr|original-work.json|site_illustrations./images/illustrations/sites/change4_webp.title": {
+    "why": "proper name (Chang'e 4) kept in Latin script as on its mission page in this locale",
+    "en": "ce15bf3643",
+    "tr": "ce15bf3643"
   },
   "fr|site-stories/apollo12.json|chapters.hardware.subtitle": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -2498,6 +3138,11 @@
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "f88fe58331",
     "tr": "f88fe58331"
+  },
+  "hi|missions/earth/starship-flight-5.json|events.2.label": {
+    "why": "SECO (second-stage engine cutoff) is a flight-dynamics acronym the same in every locale, as hudLabel leaves it",
+    "en": "9764eaf305",
+    "tr": "9764eaf305"
   },
   "hi|original-work.json|anatomy_art./images/anatomy/apollo-csm-block-i_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -2724,6 +3369,11 @@
     "en": "2e46c38af8",
     "tr": "2e46c38af8"
   },
+  "hi|original-work.json|exploded_art./images/anatomy-exploded/perseverance_webp.title": {
+    "why": "proper names (Perseverance, Mars 2020) kept as on the fleet page in this locale",
+    "en": "2f671bfcba",
+    "tr": "2f671bfcba"
+  },
   "hi|original-work.json|exploded_art./images/anatomy-exploded/proton-k_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "8527f639fd",
@@ -2744,25 +3394,40 @@
     "en": "445aab85db",
     "tr": "445aab85db"
   },
+  "hi|original-work.json|landing_art./images/landing-sequences/perseverance_webp.title": {
+    "why": "proper names (Perseverance, Ingenuity) kept as on their mission and fleet pages in this locale",
+    "en": "f1d04e438b",
+    "tr": "f1d04e438b"
+  },
+  "hi|original-work.json|mission_trajectories./images/missions/thumbnails/kaguya_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "f2ac0904eb",
+    "tr": "f2ac0904eb"
+  },
+  "hi|original-work.json|mission_trajectories./images/missions/thumbnails/lro_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "909dd83413",
+    "tr": "909dd83413"
+  },
+  "hi|original-work.json|mission_trajectories./images/missions/thumbnails/mro_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "45da8da847",
+    "tr": "45da8da847"
+  },
+  "hi|original-work.json|mission_trajectories./images/missions/thumbnails/parker-solar-probe_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "28d31dc968",
+    "tr": "28d31dc968"
+  },
+  "hi|original-work.json|mission_trajectories./images/missions/thumbnails/solar-orbiter_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "3ee5fd8d67",
+    "tr": "3ee5fd8d67"
+  },
   "hi|original-work.json|models3d./images/colophon/craft-cassini_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "25ccc94b47",
     "tr": "25ccc94b47"
-  },
-  "hi|original-work.json|models3d./images/colophon/craft-pioneer-10_webp.title": {
-    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
-    "en": "4ae7e2a262",
-    "tr": "4ae7e2a262"
-  },
-  "hi|original-work.json|models3d./images/colophon/craft-vega-1_webp.title": {
-    "why": "name of the Vega probes (not the star), kept as in English",
-    "en": "ceb84bb1f9",
-    "tr": "ceb84bb1f9"
-  },
-  "hi|original-work.json|models3d./images/colophon/craft-voyager-1_webp.title": {
-    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
-    "en": "bdbbad925e",
-    "tr": "bdbbad925e"
   },
   "hi|original-work.json|models3d./images/colophon/model-cruise-artemis3_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -2774,10 +3439,40 @@
     "en": "5bfcb70a75",
     "tr": "5bfcb70a75"
   },
+  "hi|original-work.json|models3d./images/colophon/model-launcher-athena-ii_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "fdab0419bf",
+    "tr": "fdab0419bf"
+  },
+  "hi|original-work.json|models3d./images/colophon/model-launcher-atlas-agena_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "33fa80855b",
+    "tr": "33fa80855b"
+  },
+  "hi|original-work.json|models3d./images/colophon/model-launcher-atlas-centaur_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "b97079b0f4",
+    "tr": "b97079b0f4"
+  },
+  "hi|original-work.json|models3d./images/colophon/model-launcher-delta-ii_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "549de9e819",
+    "tr": "549de9e819"
+  },
+  "hi|original-work.json|models3d./images/colophon/model-launcher-delta-iv-heavy_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "fda8058eea",
+    "tr": "fda8058eea"
+  },
   "hi|original-work.json|models3d./images/colophon/model-launcher-falcon-9_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "85fb7a41e8",
     "tr": "85fb7a41e8"
+  },
+  "hi|original-work.json|models3d./images/colophon/model-launcher-long-march-3a_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "8b124f7c92",
+    "tr": "8b124f7c92"
   },
   "hi|original-work.json|models3d./images/colophon/model-launcher-lvm3_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -2794,6 +3489,11 @@
     "en": "8527f639fd",
     "tr": "8527f639fd"
   },
+  "hi|original-work.json|models3d./images/colophon/model-launcher-proton-m-briz-m_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "23c9b90188",
+    "tr": "23c9b90188"
+  },
   "hi|original-work.json|models3d./images/colophon/model-launcher-pslv_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "f504e1e27d",
@@ -2804,10 +3504,35 @@
     "en": "cea186e2a2",
     "tr": "cea186e2a2"
   },
+  "hi|original-work.json|models3d./images/colophon/model-launcher-soyuz-fg-fregat_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "eab7413937",
+    "tr": "eab7413937"
+  },
+  "hi|original-work.json|models3d./images/colophon/model-launcher-sputnik-8k71ps_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "f6cf1f24ee",
+    "tr": "f6cf1f24ee"
+  },
   "hi|original-work.json|models3d./images/colophon/model-launcher-starship_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "bff6300bf2",
     "tr": "bff6300bf2"
+  },
+  "hi|original-work.json|models3d./images/colophon/model-launcher-titan-ii-g_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "c711caa032",
+    "tr": "c711caa032"
+  },
+  "hi|original-work.json|models3d./images/colophon/model-launcher-titan-iiie-centaur_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "087352d935",
+    "tr": "087352d935"
+  },
+  "hi|original-work.json|models3d./images/colophon/model-launcher-titan-ivb-centaur_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "0366c595cb",
+    "tr": "0366c595cb"
   },
   "hi|original-work.json|models3d./images/colophon/model-launcher-vostok-k_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -2824,10 +3549,75 @@
     "en": "f1d04e438b",
     "tr": "f1d04e438b"
   },
+  "hi|original-work.json|models3d./images/colophon/model-probe-nova-c_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "9e953c8ac6",
+    "tr": "9e953c8ac6"
+  },
   "hi|original-work.json|models3d./images/colophon/model-sat-jwst_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "6e960758e9",
     "tr": "6e960758e9"
+  },
+  "hi|original-work.json|models3d./images/colophon/model-showcase-cargo-dragon-v1_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "17f3a9850a",
+    "tr": "17f3a9850a"
+  },
+  "hi|original-work.json|models3d./images/colophon/model-showcase-columbia_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "82b386a5aa",
+    "tr": "82b386a5aa"
+  },
+  "hi|original-work.json|models3d./images/colophon/model-showcase-compton-gro_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "b00c37acd8",
+    "tr": "b00c37acd8"
+  },
+  "hi|original-work.json|models3d./images/colophon/model-showcase-enterprise_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "e86346563d",
+    "tr": "e86346563d"
+  },
+  "hi|original-work.json|models3d./images/colophon/model-showcase-exomars-tgo_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "d4bdcf4be1",
+    "tr": "d4bdcf4be1"
+  },
+  "hi|original-work.json|models3d./images/colophon/model-showcase-hope_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "183e3fcd89",
+    "tr": "183e3fcd89"
+  },
+  "hi|original-work.json|models3d./images/colophon/model-showcase-htv_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "9cda516ca4",
+    "tr": "9cda516ca4"
+  },
+  "hi|original-work.json|models3d./images/colophon/model-showcase-kaguya_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "f2ac0904eb",
+    "tr": "f2ac0904eb"
+  },
+  "hi|original-work.json|models3d./images/colophon/model-showcase-lro_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "909dd83413",
+    "tr": "909dd83413"
+  },
+  "hi|original-work.json|models3d./images/colophon/model-showcase-mro_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "45da8da847",
+    "tr": "45da8da847"
+  },
+  "hi|original-work.json|models3d./images/colophon/model-showcase-parker-solar-probe_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "28d31dc968",
+    "tr": "28d31dc968"
+  },
+  "hi|original-work.json|models3d./images/colophon/model-showcase-solar-orbiter_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "3ee5fd8d67",
+    "tr": "3ee5fd8d67"
   },
   "hi|original-work.json|posters./images/posters/cassini_jpg.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -2853,6 +3643,16 @@
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "bdbbad925e",
     "tr": "bdbbad925e"
+  },
+  "hi|original-work.json|site_illustrations./images/illustrations/sites/change3_webp.title": {
+    "why": "proper name (Chang'e 3) kept in Latin script as on its mission page in this locale",
+    "en": "141e8598bd",
+    "tr": "141e8598bd"
+  },
+  "hi|original-work.json|site_illustrations./images/illustrations/sites/change4_webp.title": {
+    "why": "proper name (Chang'e 4) kept in Latin script as on its mission page in this locale",
+    "en": "ce15bf3643",
+    "tr": "ce15bf3643"
   },
   "hi|site-stories/apollo16.json|chapters.hardware.subtitle": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -3063,6 +3863,11 @@
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "f88fe58331",
     "tr": "f88fe58331"
+  },
+  "it|missions/earth/starship-flight-5.json|events.2.label": {
+    "why": "SECO (second-stage engine cutoff) is a flight-dynamics acronym the same in every locale, as hudLabel leaves it",
+    "en": "9764eaf305",
+    "tr": "9764eaf305"
   },
   "it|missions/mars/viking1.json|payload": {
     "why": "orbiter and lander are the Italian/Dutch words too",
@@ -3324,6 +4129,11 @@
     "en": "2e46c38af8",
     "tr": "2e46c38af8"
   },
+  "it|original-work.json|exploded_art./images/anatomy-exploded/perseverance_webp.title": {
+    "why": "proper names (Perseverance, Mars 2020) kept as on the fleet page in this locale",
+    "en": "2f671bfcba",
+    "tr": "2f671bfcba"
+  },
   "it|original-work.json|exploded_art./images/anatomy-exploded/proton-k_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "8527f639fd",
@@ -3344,25 +4154,40 @@
     "en": "445aab85db",
     "tr": "445aab85db"
   },
+  "it|original-work.json|landing_art./images/landing-sequences/perseverance_webp.title": {
+    "why": "proper names (Perseverance, Ingenuity) kept as on their mission and fleet pages in this locale",
+    "en": "f1d04e438b",
+    "tr": "f1d04e438b"
+  },
+  "it|original-work.json|mission_trajectories./images/missions/thumbnails/kaguya_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "f2ac0904eb",
+    "tr": "f2ac0904eb"
+  },
+  "it|original-work.json|mission_trajectories./images/missions/thumbnails/lro_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "909dd83413",
+    "tr": "909dd83413"
+  },
+  "it|original-work.json|mission_trajectories./images/missions/thumbnails/mro_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "45da8da847",
+    "tr": "45da8da847"
+  },
+  "it|original-work.json|mission_trajectories./images/missions/thumbnails/parker-solar-probe_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "28d31dc968",
+    "tr": "28d31dc968"
+  },
+  "it|original-work.json|mission_trajectories./images/missions/thumbnails/solar-orbiter_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "3ee5fd8d67",
+    "tr": "3ee5fd8d67"
+  },
   "it|original-work.json|models3d./images/colophon/craft-cassini_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "25ccc94b47",
     "tr": "25ccc94b47"
-  },
-  "it|original-work.json|models3d./images/colophon/craft-pioneer-10_webp.title": {
-    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
-    "en": "4ae7e2a262",
-    "tr": "4ae7e2a262"
-  },
-  "it|original-work.json|models3d./images/colophon/craft-vega-1_webp.title": {
-    "why": "name of the Vega probes (not the star), kept as in English",
-    "en": "ceb84bb1f9",
-    "tr": "ceb84bb1f9"
-  },
-  "it|original-work.json|models3d./images/colophon/craft-voyager-1_webp.title": {
-    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
-    "en": "bdbbad925e",
-    "tr": "bdbbad925e"
   },
   "it|original-work.json|models3d./images/colophon/model-cruise-artemis3_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -3374,10 +4199,40 @@
     "en": "5bfcb70a75",
     "tr": "5bfcb70a75"
   },
+  "it|original-work.json|models3d./images/colophon/model-launcher-athena-ii_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "fdab0419bf",
+    "tr": "fdab0419bf"
+  },
+  "it|original-work.json|models3d./images/colophon/model-launcher-atlas-agena_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "33fa80855b",
+    "tr": "33fa80855b"
+  },
+  "it|original-work.json|models3d./images/colophon/model-launcher-atlas-centaur_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "b97079b0f4",
+    "tr": "b97079b0f4"
+  },
+  "it|original-work.json|models3d./images/colophon/model-launcher-delta-ii_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "549de9e819",
+    "tr": "549de9e819"
+  },
+  "it|original-work.json|models3d./images/colophon/model-launcher-delta-iv-heavy_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "fda8058eea",
+    "tr": "fda8058eea"
+  },
   "it|original-work.json|models3d./images/colophon/model-launcher-falcon-9_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "85fb7a41e8",
     "tr": "85fb7a41e8"
+  },
+  "it|original-work.json|models3d./images/colophon/model-launcher-long-march-3a_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "8b124f7c92",
+    "tr": "8b124f7c92"
   },
   "it|original-work.json|models3d./images/colophon/model-launcher-lvm3_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -3394,6 +4249,11 @@
     "en": "8527f639fd",
     "tr": "8527f639fd"
   },
+  "it|original-work.json|models3d./images/colophon/model-launcher-proton-m-briz-m_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "23c9b90188",
+    "tr": "23c9b90188"
+  },
   "it|original-work.json|models3d./images/colophon/model-launcher-pslv_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "f504e1e27d",
@@ -3404,10 +4264,35 @@
     "en": "cea186e2a2",
     "tr": "cea186e2a2"
   },
+  "it|original-work.json|models3d./images/colophon/model-launcher-soyuz-fg-fregat_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "eab7413937",
+    "tr": "eab7413937"
+  },
+  "it|original-work.json|models3d./images/colophon/model-launcher-sputnik-8k71ps_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "f6cf1f24ee",
+    "tr": "f6cf1f24ee"
+  },
   "it|original-work.json|models3d./images/colophon/model-launcher-starship_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "bff6300bf2",
     "tr": "bff6300bf2"
+  },
+  "it|original-work.json|models3d./images/colophon/model-launcher-titan-ii-g_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "c711caa032",
+    "tr": "c711caa032"
+  },
+  "it|original-work.json|models3d./images/colophon/model-launcher-titan-iiie-centaur_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "087352d935",
+    "tr": "087352d935"
+  },
+  "it|original-work.json|models3d./images/colophon/model-launcher-titan-ivb-centaur_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "0366c595cb",
+    "tr": "0366c595cb"
   },
   "it|original-work.json|models3d./images/colophon/model-launcher-vostok-k_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -3424,10 +4309,75 @@
     "en": "f1d04e438b",
     "tr": "f1d04e438b"
   },
+  "it|original-work.json|models3d./images/colophon/model-probe-nova-c_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "9e953c8ac6",
+    "tr": "9e953c8ac6"
+  },
   "it|original-work.json|models3d./images/colophon/model-sat-jwst_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "6e960758e9",
     "tr": "6e960758e9"
+  },
+  "it|original-work.json|models3d./images/colophon/model-showcase-cargo-dragon-v1_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "17f3a9850a",
+    "tr": "17f3a9850a"
+  },
+  "it|original-work.json|models3d./images/colophon/model-showcase-columbia_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "82b386a5aa",
+    "tr": "82b386a5aa"
+  },
+  "it|original-work.json|models3d./images/colophon/model-showcase-compton-gro_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "b00c37acd8",
+    "tr": "b00c37acd8"
+  },
+  "it|original-work.json|models3d./images/colophon/model-showcase-enterprise_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "e86346563d",
+    "tr": "e86346563d"
+  },
+  "it|original-work.json|models3d./images/colophon/model-showcase-exomars-tgo_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "d4bdcf4be1",
+    "tr": "d4bdcf4be1"
+  },
+  "it|original-work.json|models3d./images/colophon/model-showcase-hope_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "183e3fcd89",
+    "tr": "183e3fcd89"
+  },
+  "it|original-work.json|models3d./images/colophon/model-showcase-htv_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "9cda516ca4",
+    "tr": "9cda516ca4"
+  },
+  "it|original-work.json|models3d./images/colophon/model-showcase-kaguya_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "f2ac0904eb",
+    "tr": "f2ac0904eb"
+  },
+  "it|original-work.json|models3d./images/colophon/model-showcase-lro_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "909dd83413",
+    "tr": "909dd83413"
+  },
+  "it|original-work.json|models3d./images/colophon/model-showcase-mro_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "45da8da847",
+    "tr": "45da8da847"
+  },
+  "it|original-work.json|models3d./images/colophon/model-showcase-parker-solar-probe_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "28d31dc968",
+    "tr": "28d31dc968"
+  },
+  "it|original-work.json|models3d./images/colophon/model-showcase-solar-orbiter_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "3ee5fd8d67",
+    "tr": "3ee5fd8d67"
   },
   "it|original-work.json|posters./images/posters/cassini_jpg.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -3458,6 +4408,16 @@
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "bdbbad925e",
     "tr": "bdbbad925e"
+  },
+  "it|original-work.json|site_illustrations./images/illustrations/sites/change3_webp.title": {
+    "why": "proper name (Chang'e 3) kept in Latin script as on its mission page in this locale",
+    "en": "141e8598bd",
+    "tr": "141e8598bd"
+  },
+  "it|original-work.json|site_illustrations./images/illustrations/sites/change4_webp.title": {
+    "why": "proper name (Chang'e 4) kept in Latin script as on its mission page in this locale",
+    "en": "ce15bf3643",
+    "tr": "ce15bf3643"
   },
   "it|site-stories/apollo12.json|chapters.hardware.subtitle": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -3638,6 +4598,11 @@
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "f88fe58331",
     "tr": "f88fe58331"
+  },
+  "ja|missions/earth/starship-flight-5.json|events.2.label": {
+    "why": "SECO (second-stage engine cutoff) is a flight-dynamics acronym the same in every locale, as hudLabel leaves it",
+    "en": "9764eaf305",
+    "tr": "9764eaf305"
   },
   "ja|original-work.json|anatomy_art./images/anatomy/apollo-csm-block-i_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -3854,6 +4819,11 @@
     "en": "2e46c38af8",
     "tr": "2e46c38af8"
   },
+  "ja|original-work.json|exploded_art./images/anatomy-exploded/perseverance_webp.title": {
+    "why": "proper names (Perseverance, Mars 2020) kept as on the fleet page in this locale",
+    "en": "2f671bfcba",
+    "tr": "2f671bfcba"
+  },
   "ja|original-work.json|exploded_art./images/anatomy-exploded/proton-k_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "8527f639fd",
@@ -3874,15 +4844,35 @@
     "en": "445aab85db",
     "tr": "445aab85db"
   },
+  "ja|original-work.json|landing_art./images/landing-sequences/perseverance_webp.title": {
+    "why": "proper names (Perseverance, Ingenuity) kept as on their mission and fleet pages in this locale",
+    "en": "f1d04e438b",
+    "tr": "f1d04e438b"
+  },
+  "ja|original-work.json|mission_trajectories./images/missions/thumbnails/lro_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "909dd83413",
+    "tr": "909dd83413"
+  },
+  "ja|original-work.json|mission_trajectories./images/missions/thumbnails/mro_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "45da8da847",
+    "tr": "45da8da847"
+  },
+  "ja|original-work.json|mission_trajectories./images/missions/thumbnails/parker-solar-probe_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "28d31dc968",
+    "tr": "28d31dc968"
+  },
+  "ja|original-work.json|mission_trajectories./images/missions/thumbnails/solar-orbiter_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "3ee5fd8d67",
+    "tr": "3ee5fd8d67"
+  },
   "ja|original-work.json|models3d./images/colophon/craft-cassini_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "25ccc94b47",
     "tr": "25ccc94b47"
-  },
-  "ja|original-work.json|models3d./images/colophon/craft-pioneer-10_webp.title": {
-    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
-    "en": "4ae7e2a262",
-    "tr": "4ae7e2a262"
   },
   "ja|original-work.json|models3d./images/colophon/model-cruise-artemis3_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -3894,10 +4884,40 @@
     "en": "5bfcb70a75",
     "tr": "5bfcb70a75"
   },
+  "ja|original-work.json|models3d./images/colophon/model-launcher-athena-ii_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "fdab0419bf",
+    "tr": "fdab0419bf"
+  },
+  "ja|original-work.json|models3d./images/colophon/model-launcher-atlas-agena_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "33fa80855b",
+    "tr": "33fa80855b"
+  },
+  "ja|original-work.json|models3d./images/colophon/model-launcher-atlas-centaur_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "b97079b0f4",
+    "tr": "b97079b0f4"
+  },
+  "ja|original-work.json|models3d./images/colophon/model-launcher-delta-ii_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "549de9e819",
+    "tr": "549de9e819"
+  },
+  "ja|original-work.json|models3d./images/colophon/model-launcher-delta-iv-heavy_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "fda8058eea",
+    "tr": "fda8058eea"
+  },
   "ja|original-work.json|models3d./images/colophon/model-launcher-falcon-9_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "85fb7a41e8",
     "tr": "85fb7a41e8"
+  },
+  "ja|original-work.json|models3d./images/colophon/model-launcher-long-march-3a_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "8b124f7c92",
+    "tr": "8b124f7c92"
   },
   "ja|original-work.json|models3d./images/colophon/model-launcher-lvm3_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -3914,6 +4934,11 @@
     "en": "8527f639fd",
     "tr": "8527f639fd"
   },
+  "ja|original-work.json|models3d./images/colophon/model-launcher-proton-m-briz-m_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "23c9b90188",
+    "tr": "23c9b90188"
+  },
   "ja|original-work.json|models3d./images/colophon/model-launcher-pslv_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "f504e1e27d",
@@ -3924,10 +4949,35 @@
     "en": "cea186e2a2",
     "tr": "cea186e2a2"
   },
+  "ja|original-work.json|models3d./images/colophon/model-launcher-soyuz-fg-fregat_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "eab7413937",
+    "tr": "eab7413937"
+  },
+  "ja|original-work.json|models3d./images/colophon/model-launcher-sputnik-8k71ps_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "f6cf1f24ee",
+    "tr": "f6cf1f24ee"
+  },
   "ja|original-work.json|models3d./images/colophon/model-launcher-starship_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "bff6300bf2",
     "tr": "bff6300bf2"
+  },
+  "ja|original-work.json|models3d./images/colophon/model-launcher-titan-ii-g_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "c711caa032",
+    "tr": "c711caa032"
+  },
+  "ja|original-work.json|models3d./images/colophon/model-launcher-titan-iiie-centaur_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "087352d935",
+    "tr": "087352d935"
+  },
+  "ja|original-work.json|models3d./images/colophon/model-launcher-titan-ivb-centaur_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "0366c595cb",
+    "tr": "0366c595cb"
   },
   "ja|original-work.json|models3d./images/colophon/model-launcher-vostok-k_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -3944,10 +4994,75 @@
     "en": "f1d04e438b",
     "tr": "f1d04e438b"
   },
+  "ja|original-work.json|models3d./images/colophon/model-probe-nova-c_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "9e953c8ac6",
+    "tr": "9e953c8ac6"
+  },
   "ja|original-work.json|models3d./images/colophon/model-sat-jwst_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "6e960758e9",
     "tr": "6e960758e9"
+  },
+  "ja|original-work.json|models3d./images/colophon/model-showcase-cargo-dragon-v1_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "17f3a9850a",
+    "tr": "17f3a9850a"
+  },
+  "ja|original-work.json|models3d./images/colophon/model-showcase-columbia_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "82b386a5aa",
+    "tr": "82b386a5aa"
+  },
+  "ja|original-work.json|models3d./images/colophon/model-showcase-compton-gro_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "b00c37acd8",
+    "tr": "b00c37acd8"
+  },
+  "ja|original-work.json|models3d./images/colophon/model-showcase-enterprise_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "e86346563d",
+    "tr": "e86346563d"
+  },
+  "ja|original-work.json|models3d./images/colophon/model-showcase-exomars-tgo_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "d4bdcf4be1",
+    "tr": "d4bdcf4be1"
+  },
+  "ja|original-work.json|models3d./images/colophon/model-showcase-hope_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "183e3fcd89",
+    "tr": "183e3fcd89"
+  },
+  "ja|original-work.json|models3d./images/colophon/model-showcase-htv_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "9cda516ca4",
+    "tr": "9cda516ca4"
+  },
+  "ja|original-work.json|models3d./images/colophon/model-showcase-kaguya_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "f2ac0904eb",
+    "tr": "f2ac0904eb"
+  },
+  "ja|original-work.json|models3d./images/colophon/model-showcase-lro_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "909dd83413",
+    "tr": "909dd83413"
+  },
+  "ja|original-work.json|models3d./images/colophon/model-showcase-mro_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "45da8da847",
+    "tr": "45da8da847"
+  },
+  "ja|original-work.json|models3d./images/colophon/model-showcase-parker-solar-probe_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "28d31dc968",
+    "tr": "28d31dc968"
+  },
+  "ja|original-work.json|models3d./images/colophon/model-showcase-solar-orbiter_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "3ee5fd8d67",
+    "tr": "3ee5fd8d67"
   },
   "ja|original-work.json|posters./images/posters/saturn-v_jpg.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -3963,6 +5078,16 @@
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "65803b67b5",
     "tr": "65803b67b5"
+  },
+  "ja|original-work.json|site_illustrations./images/illustrations/sites/change3_webp.title": {
+    "why": "proper name (Chang'e 3) kept in Latin script as on its mission page in this locale",
+    "en": "141e8598bd",
+    "tr": "141e8598bd"
+  },
+  "ja|original-work.json|site_illustrations./images/illustrations/sites/change4_webp.title": {
+    "why": "proper name (Chang'e 4) kept in Latin script as on its mission page in this locale",
+    "en": "ce15bf3643",
+    "tr": "ce15bf3643"
   },
   "ja|site-stories/apollo12.json|chapters.hardware.subtitle": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -4143,6 +5268,11 @@
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "f88fe58331",
     "tr": "f88fe58331"
+  },
+  "ko|missions/earth/starship-flight-5.json|events.2.label": {
+    "why": "SECO (second-stage engine cutoff) is a flight-dynamics acronym the same in every locale, as hudLabel leaves it",
+    "en": "9764eaf305",
+    "tr": "9764eaf305"
   },
   "ko|original-work.json|anatomy_art./images/anatomy/apollo-csm-block-i_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -4349,6 +5479,11 @@
     "en": "2e46c38af8",
     "tr": "2e46c38af8"
   },
+  "ko|original-work.json|exploded_art./images/anatomy-exploded/perseverance_webp.title": {
+    "why": "proper names (Perseverance, Mars 2020) kept as on the fleet page in this locale",
+    "en": "2f671bfcba",
+    "tr": "2f671bfcba"
+  },
   "ko|original-work.json|exploded_art./images/anatomy-exploded/proton-k_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "8527f639fd",
@@ -4369,25 +5504,80 @@
     "en": "445aab85db",
     "tr": "445aab85db"
   },
+  "ko|original-work.json|landing_art./images/landing-sequences/perseverance_webp.title": {
+    "why": "proper names (Perseverance, Ingenuity) kept as on their mission and fleet pages in this locale",
+    "en": "f1d04e438b",
+    "tr": "f1d04e438b"
+  },
+  "ko|original-work.json|mission_trajectories./images/missions/thumbnails/kaguya_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "f2ac0904eb",
+    "tr": "f2ac0904eb"
+  },
+  "ko|original-work.json|mission_trajectories./images/missions/thumbnails/lro_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "909dd83413",
+    "tr": "909dd83413"
+  },
+  "ko|original-work.json|mission_trajectories./images/missions/thumbnails/mro_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "45da8da847",
+    "tr": "45da8da847"
+  },
+  "ko|original-work.json|mission_trajectories./images/missions/thumbnails/parker-solar-probe_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "28d31dc968",
+    "tr": "28d31dc968"
+  },
+  "ko|original-work.json|mission_trajectories./images/missions/thumbnails/solar-orbiter_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "3ee5fd8d67",
+    "tr": "3ee5fd8d67"
+  },
   "ko|original-work.json|models3d./images/colophon/craft-cassini_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "25ccc94b47",
     "tr": "25ccc94b47"
-  },
-  "ko|original-work.json|models3d./images/colophon/craft-pioneer-10_webp.title": {
-    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
-    "en": "4ae7e2a262",
-    "tr": "4ae7e2a262"
   },
   "ko|original-work.json|models3d./images/colophon/model-cruise-artemis3_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "e097ccf250",
     "tr": "e097ccf250"
   },
+  "ko|original-work.json|models3d./images/colophon/model-launcher-athena-ii_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "fdab0419bf",
+    "tr": "fdab0419bf"
+  },
+  "ko|original-work.json|models3d./images/colophon/model-launcher-atlas-agena_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "33fa80855b",
+    "tr": "33fa80855b"
+  },
+  "ko|original-work.json|models3d./images/colophon/model-launcher-atlas-centaur_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "b97079b0f4",
+    "tr": "b97079b0f4"
+  },
+  "ko|original-work.json|models3d./images/colophon/model-launcher-delta-ii_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "549de9e819",
+    "tr": "549de9e819"
+  },
+  "ko|original-work.json|models3d./images/colophon/model-launcher-delta-iv-heavy_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "fda8058eea",
+    "tr": "fda8058eea"
+  },
   "ko|original-work.json|models3d./images/colophon/model-launcher-falcon-9_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "85fb7a41e8",
     "tr": "85fb7a41e8"
+  },
+  "ko|original-work.json|models3d./images/colophon/model-launcher-long-march-3a_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "8b124f7c92",
+    "tr": "8b124f7c92"
   },
   "ko|original-work.json|models3d./images/colophon/model-launcher-lvm3_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -4404,6 +5594,11 @@
     "en": "8527f639fd",
     "tr": "8527f639fd"
   },
+  "ko|original-work.json|models3d./images/colophon/model-launcher-proton-m-briz-m_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "23c9b90188",
+    "tr": "23c9b90188"
+  },
   "ko|original-work.json|models3d./images/colophon/model-launcher-pslv_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "f504e1e27d",
@@ -4414,10 +5609,35 @@
     "en": "cea186e2a2",
     "tr": "cea186e2a2"
   },
+  "ko|original-work.json|models3d./images/colophon/model-launcher-soyuz-fg-fregat_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "eab7413937",
+    "tr": "eab7413937"
+  },
+  "ko|original-work.json|models3d./images/colophon/model-launcher-sputnik-8k71ps_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "f6cf1f24ee",
+    "tr": "f6cf1f24ee"
+  },
   "ko|original-work.json|models3d./images/colophon/model-launcher-starship_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "bff6300bf2",
     "tr": "bff6300bf2"
+  },
+  "ko|original-work.json|models3d./images/colophon/model-launcher-titan-ii-g_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "c711caa032",
+    "tr": "c711caa032"
+  },
+  "ko|original-work.json|models3d./images/colophon/model-launcher-titan-iiie-centaur_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "087352d935",
+    "tr": "087352d935"
+  },
+  "ko|original-work.json|models3d./images/colophon/model-launcher-titan-ivb-centaur_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "0366c595cb",
+    "tr": "0366c595cb"
   },
   "ko|original-work.json|models3d./images/colophon/model-launcher-vostok-k_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -4434,10 +5654,75 @@
     "en": "f1d04e438b",
     "tr": "f1d04e438b"
   },
+  "ko|original-work.json|models3d./images/colophon/model-probe-nova-c_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "9e953c8ac6",
+    "tr": "9e953c8ac6"
+  },
   "ko|original-work.json|models3d./images/colophon/model-sat-jwst_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "6e960758e9",
     "tr": "6e960758e9"
+  },
+  "ko|original-work.json|models3d./images/colophon/model-showcase-cargo-dragon-v1_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "17f3a9850a",
+    "tr": "17f3a9850a"
+  },
+  "ko|original-work.json|models3d./images/colophon/model-showcase-columbia_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "82b386a5aa",
+    "tr": "82b386a5aa"
+  },
+  "ko|original-work.json|models3d./images/colophon/model-showcase-compton-gro_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "b00c37acd8",
+    "tr": "b00c37acd8"
+  },
+  "ko|original-work.json|models3d./images/colophon/model-showcase-enterprise_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "e86346563d",
+    "tr": "e86346563d"
+  },
+  "ko|original-work.json|models3d./images/colophon/model-showcase-exomars-tgo_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "d4bdcf4be1",
+    "tr": "d4bdcf4be1"
+  },
+  "ko|original-work.json|models3d./images/colophon/model-showcase-hope_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "183e3fcd89",
+    "tr": "183e3fcd89"
+  },
+  "ko|original-work.json|models3d./images/colophon/model-showcase-htv_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "9cda516ca4",
+    "tr": "9cda516ca4"
+  },
+  "ko|original-work.json|models3d./images/colophon/model-showcase-kaguya_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "f2ac0904eb",
+    "tr": "f2ac0904eb"
+  },
+  "ko|original-work.json|models3d./images/colophon/model-showcase-lro_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "909dd83413",
+    "tr": "909dd83413"
+  },
+  "ko|original-work.json|models3d./images/colophon/model-showcase-mro_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "45da8da847",
+    "tr": "45da8da847"
+  },
+  "ko|original-work.json|models3d./images/colophon/model-showcase-parker-solar-probe_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "28d31dc968",
+    "tr": "28d31dc968"
+  },
+  "ko|original-work.json|models3d./images/colophon/model-showcase-solar-orbiter_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "3ee5fd8d67",
+    "tr": "3ee5fd8d67"
   },
   "ko|original-work.json|posters./images/posters/saturn-v_jpg.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -4453,6 +5738,16 @@
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "65803b67b5",
     "tr": "65803b67b5"
+  },
+  "ko|original-work.json|site_illustrations./images/illustrations/sites/change3_webp.title": {
+    "why": "proper name (Chang'e 3) kept in Latin script as on its mission page in this locale",
+    "en": "141e8598bd",
+    "tr": "141e8598bd"
+  },
+  "ko|original-work.json|site_illustrations./images/illustrations/sites/change4_webp.title": {
+    "why": "proper name (Chang'e 4) kept in Latin script as on its mission page in this locale",
+    "en": "ce15bf3643",
+    "tr": "ce15bf3643"
   },
   "ko|site-stories/apollo12.json|chapters.hardware.subtitle": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -4683,6 +5978,11 @@
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "f88fe58331",
     "tr": "f88fe58331"
+  },
+  "nl|missions/earth/starship-flight-5.json|events.2.label": {
+    "why": "SECO (second-stage engine cutoff) is a flight-dynamics acronym the same in every locale, as hudLabel leaves it",
+    "en": "9764eaf305",
+    "tr": "9764eaf305"
   },
   "nl|missions/mars/viking1.json|payload": {
     "why": "orbiter and lander are the Italian/Dutch words too",
@@ -4944,6 +6244,11 @@
     "en": "2e46c38af8",
     "tr": "2e46c38af8"
   },
+  "nl|original-work.json|exploded_art./images/anatomy-exploded/perseverance_webp.title": {
+    "why": "proper names (Perseverance, Mars 2020) kept as on the fleet page in this locale",
+    "en": "2f671bfcba",
+    "tr": "2f671bfcba"
+  },
   "nl|original-work.json|exploded_art./images/anatomy-exploded/proton-k_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "8527f639fd",
@@ -4964,25 +6269,40 @@
     "en": "445aab85db",
     "tr": "445aab85db"
   },
+  "nl|original-work.json|landing_art./images/landing-sequences/perseverance_webp.title": {
+    "why": "proper names (Perseverance, Ingenuity) kept as on their mission and fleet pages in this locale",
+    "en": "f1d04e438b",
+    "tr": "f1d04e438b"
+  },
+  "nl|original-work.json|mission_trajectories./images/missions/thumbnails/kaguya_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "f2ac0904eb",
+    "tr": "f2ac0904eb"
+  },
+  "nl|original-work.json|mission_trajectories./images/missions/thumbnails/lro_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "909dd83413",
+    "tr": "909dd83413"
+  },
+  "nl|original-work.json|mission_trajectories./images/missions/thumbnails/mro_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "45da8da847",
+    "tr": "45da8da847"
+  },
+  "nl|original-work.json|mission_trajectories./images/missions/thumbnails/parker-solar-probe_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "28d31dc968",
+    "tr": "28d31dc968"
+  },
+  "nl|original-work.json|mission_trajectories./images/missions/thumbnails/solar-orbiter_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "3ee5fd8d67",
+    "tr": "3ee5fd8d67"
+  },
   "nl|original-work.json|models3d./images/colophon/craft-cassini_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "25ccc94b47",
     "tr": "25ccc94b47"
-  },
-  "nl|original-work.json|models3d./images/colophon/craft-pioneer-10_webp.title": {
-    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
-    "en": "4ae7e2a262",
-    "tr": "4ae7e2a262"
-  },
-  "nl|original-work.json|models3d./images/colophon/craft-vega-1_webp.title": {
-    "why": "name of the Vega probes (not the star), kept as in English",
-    "en": "ceb84bb1f9",
-    "tr": "ceb84bb1f9"
-  },
-  "nl|original-work.json|models3d./images/colophon/craft-voyager-1_webp.title": {
-    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
-    "en": "bdbbad925e",
-    "tr": "bdbbad925e"
   },
   "nl|original-work.json|models3d./images/colophon/model-cruise-artemis3_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -4994,10 +6314,40 @@
     "en": "5bfcb70a75",
     "tr": "5bfcb70a75"
   },
+  "nl|original-work.json|models3d./images/colophon/model-launcher-athena-ii_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "fdab0419bf",
+    "tr": "fdab0419bf"
+  },
+  "nl|original-work.json|models3d./images/colophon/model-launcher-atlas-agena_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "33fa80855b",
+    "tr": "33fa80855b"
+  },
+  "nl|original-work.json|models3d./images/colophon/model-launcher-atlas-centaur_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "b97079b0f4",
+    "tr": "b97079b0f4"
+  },
+  "nl|original-work.json|models3d./images/colophon/model-launcher-delta-ii_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "549de9e819",
+    "tr": "549de9e819"
+  },
+  "nl|original-work.json|models3d./images/colophon/model-launcher-delta-iv-heavy_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "fda8058eea",
+    "tr": "fda8058eea"
+  },
   "nl|original-work.json|models3d./images/colophon/model-launcher-falcon-9_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "85fb7a41e8",
     "tr": "85fb7a41e8"
+  },
+  "nl|original-work.json|models3d./images/colophon/model-launcher-long-march-3a_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "8b124f7c92",
+    "tr": "8b124f7c92"
   },
   "nl|original-work.json|models3d./images/colophon/model-launcher-lvm3_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -5014,6 +6364,11 @@
     "en": "8527f639fd",
     "tr": "8527f639fd"
   },
+  "nl|original-work.json|models3d./images/colophon/model-launcher-proton-m-briz-m_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "23c9b90188",
+    "tr": "23c9b90188"
+  },
   "nl|original-work.json|models3d./images/colophon/model-launcher-pslv_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "f504e1e27d",
@@ -5024,10 +6379,35 @@
     "en": "cea186e2a2",
     "tr": "cea186e2a2"
   },
+  "nl|original-work.json|models3d./images/colophon/model-launcher-soyuz-fg-fregat_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "eab7413937",
+    "tr": "eab7413937"
+  },
+  "nl|original-work.json|models3d./images/colophon/model-launcher-sputnik-8k71ps_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "f6cf1f24ee",
+    "tr": "f6cf1f24ee"
+  },
   "nl|original-work.json|models3d./images/colophon/model-launcher-starship_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "bff6300bf2",
     "tr": "bff6300bf2"
+  },
+  "nl|original-work.json|models3d./images/colophon/model-launcher-titan-ii-g_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "c711caa032",
+    "tr": "c711caa032"
+  },
+  "nl|original-work.json|models3d./images/colophon/model-launcher-titan-iiie-centaur_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "087352d935",
+    "tr": "087352d935"
+  },
+  "nl|original-work.json|models3d./images/colophon/model-launcher-titan-ivb-centaur_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "0366c595cb",
+    "tr": "0366c595cb"
   },
   "nl|original-work.json|models3d./images/colophon/model-launcher-vostok-k_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -5044,10 +6424,75 @@
     "en": "f1d04e438b",
     "tr": "f1d04e438b"
   },
+  "nl|original-work.json|models3d./images/colophon/model-probe-nova-c_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "9e953c8ac6",
+    "tr": "9e953c8ac6"
+  },
   "nl|original-work.json|models3d./images/colophon/model-sat-jwst_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "6e960758e9",
     "tr": "6e960758e9"
+  },
+  "nl|original-work.json|models3d./images/colophon/model-showcase-cargo-dragon-v1_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "17f3a9850a",
+    "tr": "17f3a9850a"
+  },
+  "nl|original-work.json|models3d./images/colophon/model-showcase-columbia_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "82b386a5aa",
+    "tr": "82b386a5aa"
+  },
+  "nl|original-work.json|models3d./images/colophon/model-showcase-compton-gro_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "b00c37acd8",
+    "tr": "b00c37acd8"
+  },
+  "nl|original-work.json|models3d./images/colophon/model-showcase-enterprise_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "e86346563d",
+    "tr": "e86346563d"
+  },
+  "nl|original-work.json|models3d./images/colophon/model-showcase-exomars-tgo_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "d4bdcf4be1",
+    "tr": "d4bdcf4be1"
+  },
+  "nl|original-work.json|models3d./images/colophon/model-showcase-hope_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "183e3fcd89",
+    "tr": "183e3fcd89"
+  },
+  "nl|original-work.json|models3d./images/colophon/model-showcase-htv_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "9cda516ca4",
+    "tr": "9cda516ca4"
+  },
+  "nl|original-work.json|models3d./images/colophon/model-showcase-kaguya_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "f2ac0904eb",
+    "tr": "f2ac0904eb"
+  },
+  "nl|original-work.json|models3d./images/colophon/model-showcase-lro_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "909dd83413",
+    "tr": "909dd83413"
+  },
+  "nl|original-work.json|models3d./images/colophon/model-showcase-mro_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "45da8da847",
+    "tr": "45da8da847"
+  },
+  "nl|original-work.json|models3d./images/colophon/model-showcase-parker-solar-probe_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "28d31dc968",
+    "tr": "28d31dc968"
+  },
+  "nl|original-work.json|models3d./images/colophon/model-showcase-solar-orbiter_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "3ee5fd8d67",
+    "tr": "3ee5fd8d67"
   },
   "nl|original-work.json|posters./images/posters/cassini_jpg.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -5083,6 +6528,16 @@
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "bdbbad925e",
     "tr": "bdbbad925e"
+  },
+  "nl|original-work.json|site_illustrations./images/illustrations/sites/change3_webp.title": {
+    "why": "proper name (Chang'e 3) kept in Latin script as on its mission page in this locale",
+    "en": "141e8598bd",
+    "tr": "141e8598bd"
+  },
+  "nl|original-work.json|site_illustrations./images/illustrations/sites/change4_webp.title": {
+    "why": "proper name (Chang'e 4) kept in Latin script as on its mission page in this locale",
+    "en": "ce15bf3643",
+    "tr": "ce15bf3643"
   },
   "nl|site-stories/apollo11.json|chapters.hardware.title": {
     "why": "Hardware is the Dutch word too",
@@ -5484,6 +6939,11 @@
     "en": "f88fe58331",
     "tr": "f88fe58331"
   },
+  "pt-BR|missions/earth/starship-flight-5.json|events.2.label": {
+    "why": "SECO (second-stage engine cutoff) is a flight-dynamics acronym the same in every locale, as hudLabel leaves it",
+    "en": "9764eaf305",
+    "tr": "9764eaf305"
+  },
   "pt-BR|observatories/alma.json|name": {
     "why": "instrument/vehicle name with its acronym kept in English in this Latin-script locale (NAME_POLICY)",
     "en": "33030577a3",
@@ -5734,6 +7194,11 @@
     "en": "2e46c38af8",
     "tr": "2e46c38af8"
   },
+  "pt-BR|original-work.json|exploded_art./images/anatomy-exploded/perseverance_webp.title": {
+    "why": "proper names (Perseverance, Mars 2020) kept as on the fleet page in this locale",
+    "en": "2f671bfcba",
+    "tr": "2f671bfcba"
+  },
   "pt-BR|original-work.json|exploded_art./images/anatomy-exploded/proton-k_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "8527f639fd",
@@ -5754,25 +7219,40 @@
     "en": "445aab85db",
     "tr": "445aab85db"
   },
+  "pt-BR|original-work.json|landing_art./images/landing-sequences/perseverance_webp.title": {
+    "why": "proper names (Perseverance, Ingenuity) kept as on their mission and fleet pages in this locale",
+    "en": "f1d04e438b",
+    "tr": "f1d04e438b"
+  },
+  "pt-BR|original-work.json|mission_trajectories./images/missions/thumbnails/kaguya_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "f2ac0904eb",
+    "tr": "f2ac0904eb"
+  },
+  "pt-BR|original-work.json|mission_trajectories./images/missions/thumbnails/lro_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "909dd83413",
+    "tr": "909dd83413"
+  },
+  "pt-BR|original-work.json|mission_trajectories./images/missions/thumbnails/mro_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "45da8da847",
+    "tr": "45da8da847"
+  },
+  "pt-BR|original-work.json|mission_trajectories./images/missions/thumbnails/parker-solar-probe_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "28d31dc968",
+    "tr": "28d31dc968"
+  },
+  "pt-BR|original-work.json|mission_trajectories./images/missions/thumbnails/solar-orbiter_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "3ee5fd8d67",
+    "tr": "3ee5fd8d67"
+  },
   "pt-BR|original-work.json|models3d./images/colophon/craft-cassini_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "25ccc94b47",
     "tr": "25ccc94b47"
-  },
-  "pt-BR|original-work.json|models3d./images/colophon/craft-pioneer-10_webp.title": {
-    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
-    "en": "4ae7e2a262",
-    "tr": "4ae7e2a262"
-  },
-  "pt-BR|original-work.json|models3d./images/colophon/craft-vega-1_webp.title": {
-    "why": "name of the Vega probes (not the star), kept as in English",
-    "en": "ceb84bb1f9",
-    "tr": "ceb84bb1f9"
-  },
-  "pt-BR|original-work.json|models3d./images/colophon/craft-voyager-1_webp.title": {
-    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
-    "en": "bdbbad925e",
-    "tr": "bdbbad925e"
   },
   "pt-BR|original-work.json|models3d./images/colophon/model-cruise-artemis3_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -5784,10 +7264,40 @@
     "en": "5bfcb70a75",
     "tr": "5bfcb70a75"
   },
+  "pt-BR|original-work.json|models3d./images/colophon/model-launcher-athena-ii_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "fdab0419bf",
+    "tr": "fdab0419bf"
+  },
+  "pt-BR|original-work.json|models3d./images/colophon/model-launcher-atlas-agena_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "33fa80855b",
+    "tr": "33fa80855b"
+  },
+  "pt-BR|original-work.json|models3d./images/colophon/model-launcher-atlas-centaur_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "b97079b0f4",
+    "tr": "b97079b0f4"
+  },
+  "pt-BR|original-work.json|models3d./images/colophon/model-launcher-delta-ii_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "549de9e819",
+    "tr": "549de9e819"
+  },
+  "pt-BR|original-work.json|models3d./images/colophon/model-launcher-delta-iv-heavy_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "fda8058eea",
+    "tr": "fda8058eea"
+  },
   "pt-BR|original-work.json|models3d./images/colophon/model-launcher-falcon-9_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "85fb7a41e8",
     "tr": "85fb7a41e8"
+  },
+  "pt-BR|original-work.json|models3d./images/colophon/model-launcher-long-march-3a_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "8b124f7c92",
+    "tr": "8b124f7c92"
   },
   "pt-BR|original-work.json|models3d./images/colophon/model-launcher-lvm3_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -5804,6 +7314,11 @@
     "en": "8527f639fd",
     "tr": "8527f639fd"
   },
+  "pt-BR|original-work.json|models3d./images/colophon/model-launcher-proton-m-briz-m_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "23c9b90188",
+    "tr": "23c9b90188"
+  },
   "pt-BR|original-work.json|models3d./images/colophon/model-launcher-pslv_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "f504e1e27d",
@@ -5814,10 +7329,35 @@
     "en": "cea186e2a2",
     "tr": "cea186e2a2"
   },
+  "pt-BR|original-work.json|models3d./images/colophon/model-launcher-soyuz-fg-fregat_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "eab7413937",
+    "tr": "eab7413937"
+  },
+  "pt-BR|original-work.json|models3d./images/colophon/model-launcher-sputnik-8k71ps_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "f6cf1f24ee",
+    "tr": "f6cf1f24ee"
+  },
   "pt-BR|original-work.json|models3d./images/colophon/model-launcher-starship_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "bff6300bf2",
     "tr": "bff6300bf2"
+  },
+  "pt-BR|original-work.json|models3d./images/colophon/model-launcher-titan-ii-g_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "c711caa032",
+    "tr": "c711caa032"
+  },
+  "pt-BR|original-work.json|models3d./images/colophon/model-launcher-titan-iiie-centaur_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "087352d935",
+    "tr": "087352d935"
+  },
+  "pt-BR|original-work.json|models3d./images/colophon/model-launcher-titan-ivb-centaur_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "0366c595cb",
+    "tr": "0366c595cb"
   },
   "pt-BR|original-work.json|models3d./images/colophon/model-launcher-vostok-k_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -5834,10 +7374,75 @@
     "en": "f1d04e438b",
     "tr": "f1d04e438b"
   },
+  "pt-BR|original-work.json|models3d./images/colophon/model-probe-nova-c_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "9e953c8ac6",
+    "tr": "9e953c8ac6"
+  },
   "pt-BR|original-work.json|models3d./images/colophon/model-sat-jwst_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "6e960758e9",
     "tr": "6e960758e9"
+  },
+  "pt-BR|original-work.json|models3d./images/colophon/model-showcase-cargo-dragon-v1_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "17f3a9850a",
+    "tr": "17f3a9850a"
+  },
+  "pt-BR|original-work.json|models3d./images/colophon/model-showcase-columbia_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "82b386a5aa",
+    "tr": "82b386a5aa"
+  },
+  "pt-BR|original-work.json|models3d./images/colophon/model-showcase-compton-gro_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "b00c37acd8",
+    "tr": "b00c37acd8"
+  },
+  "pt-BR|original-work.json|models3d./images/colophon/model-showcase-enterprise_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "e86346563d",
+    "tr": "e86346563d"
+  },
+  "pt-BR|original-work.json|models3d./images/colophon/model-showcase-exomars-tgo_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "d4bdcf4be1",
+    "tr": "d4bdcf4be1"
+  },
+  "pt-BR|original-work.json|models3d./images/colophon/model-showcase-hope_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "183e3fcd89",
+    "tr": "183e3fcd89"
+  },
+  "pt-BR|original-work.json|models3d./images/colophon/model-showcase-htv_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "9cda516ca4",
+    "tr": "9cda516ca4"
+  },
+  "pt-BR|original-work.json|models3d./images/colophon/model-showcase-kaguya_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "f2ac0904eb",
+    "tr": "f2ac0904eb"
+  },
+  "pt-BR|original-work.json|models3d./images/colophon/model-showcase-lro_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "909dd83413",
+    "tr": "909dd83413"
+  },
+  "pt-BR|original-work.json|models3d./images/colophon/model-showcase-mro_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "45da8da847",
+    "tr": "45da8da847"
+  },
+  "pt-BR|original-work.json|models3d./images/colophon/model-showcase-parker-solar-probe_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "28d31dc968",
+    "tr": "28d31dc968"
+  },
+  "pt-BR|original-work.json|models3d./images/colophon/model-showcase-solar-orbiter_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "3ee5fd8d67",
+    "tr": "3ee5fd8d67"
   },
   "pt-BR|original-work.json|posters./images/posters/cassini_jpg.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -5868,6 +7473,16 @@
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "bdbbad925e",
     "tr": "bdbbad925e"
+  },
+  "pt-BR|original-work.json|site_illustrations./images/illustrations/sites/change3_webp.title": {
+    "why": "proper name (Chang'e 3) kept in Latin script as on its mission page in this locale",
+    "en": "141e8598bd",
+    "tr": "141e8598bd"
+  },
+  "pt-BR|original-work.json|site_illustrations./images/illustrations/sites/change4_webp.title": {
+    "why": "proper name (Chang'e 4) kept in Latin script as on its mission page in this locale",
+    "en": "ce15bf3643",
+    "tr": "ce15bf3643"
   },
   "pt-BR|site-stories/apollo12.json|chapters.hardware.subtitle": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -6048,6 +7663,11 @@
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "f88fe58331",
     "tr": "f88fe58331"
+  },
+  "ru|missions/earth/starship-flight-5.json|events.2.label": {
+    "why": "SECO (second-stage engine cutoff) is a flight-dynamics acronym the same in every locale, as hudLabel leaves it",
+    "en": "9764eaf305",
+    "tr": "9764eaf305"
   },
   "ru|original-work.json|anatomy_art./images/anatomy/apollo-csm-block-i_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -6234,6 +7854,11 @@
     "en": "2e46c38af8",
     "tr": "2e46c38af8"
   },
+  "ru|original-work.json|exploded_art./images/anatomy-exploded/perseverance_webp.title": {
+    "why": "proper names (Perseverance, Mars 2020) kept as on the fleet page in this locale",
+    "en": "2f671bfcba",
+    "tr": "2f671bfcba"
+  },
   "ru|original-work.json|exploded_art./images/anatomy-exploded/pslv_webp.title": {
     "why": "the launcher name PSLV kept in Latin as in the English source (Pslv)",
     "en": "8c2772d096",
@@ -6244,20 +7869,40 @@
     "en": "cea186e2a2",
     "tr": "cea186e2a2"
   },
+  "ru|original-work.json|landing_art./images/landing-sequences/perseverance_webp.title": {
+    "why": "proper names (Perseverance, Ingenuity) kept as on their mission and fleet pages in this locale",
+    "en": "f1d04e438b",
+    "tr": "f1d04e438b"
+  },
+  "ru|original-work.json|mission_trajectories./images/missions/thumbnails/kaguya_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "f2ac0904eb",
+    "tr": "f2ac0904eb"
+  },
+  "ru|original-work.json|mission_trajectories./images/missions/thumbnails/lro_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "909dd83413",
+    "tr": "909dd83413"
+  },
+  "ru|original-work.json|mission_trajectories./images/missions/thumbnails/mro_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "45da8da847",
+    "tr": "45da8da847"
+  },
+  "ru|original-work.json|mission_trajectories./images/missions/thumbnails/parker-solar-probe_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "28d31dc968",
+    "tr": "28d31dc968"
+  },
+  "ru|original-work.json|mission_trajectories./images/missions/thumbnails/solar-orbiter_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "3ee5fd8d67",
+    "tr": "3ee5fd8d67"
+  },
   "ru|original-work.json|models3d./images/colophon/craft-cassini_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "25ccc94b47",
     "tr": "25ccc94b47"
-  },
-  "ru|original-work.json|models3d./images/colophon/craft-pioneer-10_webp.title": {
-    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
-    "en": "4ae7e2a262",
-    "tr": "4ae7e2a262"
-  },
-  "ru|original-work.json|models3d./images/colophon/craft-voyager-1_webp.title": {
-    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
-    "en": "bdbbad925e",
-    "tr": "bdbbad925e"
   },
   "ru|original-work.json|models3d./images/colophon/model-cruise-artemis3_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -6269,10 +7914,40 @@
     "en": "5bfcb70a75",
     "tr": "5bfcb70a75"
   },
+  "ru|original-work.json|models3d./images/colophon/model-launcher-athena-ii_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "fdab0419bf",
+    "tr": "fdab0419bf"
+  },
+  "ru|original-work.json|models3d./images/colophon/model-launcher-atlas-agena_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "33fa80855b",
+    "tr": "33fa80855b"
+  },
+  "ru|original-work.json|models3d./images/colophon/model-launcher-atlas-centaur_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "b97079b0f4",
+    "tr": "b97079b0f4"
+  },
+  "ru|original-work.json|models3d./images/colophon/model-launcher-delta-ii_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "549de9e819",
+    "tr": "549de9e819"
+  },
+  "ru|original-work.json|models3d./images/colophon/model-launcher-delta-iv-heavy_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "fda8058eea",
+    "tr": "fda8058eea"
+  },
   "ru|original-work.json|models3d./images/colophon/model-launcher-falcon-9_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "85fb7a41e8",
     "tr": "85fb7a41e8"
+  },
+  "ru|original-work.json|models3d./images/colophon/model-launcher-long-march-3a_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "8b124f7c92",
+    "tr": "8b124f7c92"
   },
   "ru|original-work.json|models3d./images/colophon/model-launcher-lvm3_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -6299,6 +7974,21 @@
     "en": "bff6300bf2",
     "tr": "bff6300bf2"
   },
+  "ru|original-work.json|models3d./images/colophon/model-launcher-titan-ii-g_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "c711caa032",
+    "tr": "c711caa032"
+  },
+  "ru|original-work.json|models3d./images/colophon/model-launcher-titan-iiie-centaur_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "087352d935",
+    "tr": "087352d935"
+  },
+  "ru|original-work.json|models3d./images/colophon/model-launcher-titan-ivb-centaur_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "0366c595cb",
+    "tr": "0366c595cb"
+  },
   "ru|original-work.json|models3d./images/colophon/model-mars-pathfinder-sojourner_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "aa06ceee63",
@@ -6309,10 +7999,75 @@
     "en": "f1d04e438b",
     "tr": "f1d04e438b"
   },
+  "ru|original-work.json|models3d./images/colophon/model-probe-nova-c_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "9e953c8ac6",
+    "tr": "9e953c8ac6"
+  },
   "ru|original-work.json|models3d./images/colophon/model-sat-jwst_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "6e960758e9",
     "tr": "6e960758e9"
+  },
+  "ru|original-work.json|models3d./images/colophon/model-showcase-cargo-dragon-v1_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "17f3a9850a",
+    "tr": "17f3a9850a"
+  },
+  "ru|original-work.json|models3d./images/colophon/model-showcase-columbia_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "82b386a5aa",
+    "tr": "82b386a5aa"
+  },
+  "ru|original-work.json|models3d./images/colophon/model-showcase-compton-gro_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "b00c37acd8",
+    "tr": "b00c37acd8"
+  },
+  "ru|original-work.json|models3d./images/colophon/model-showcase-enterprise_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "e86346563d",
+    "tr": "e86346563d"
+  },
+  "ru|original-work.json|models3d./images/colophon/model-showcase-exomars-tgo_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "d4bdcf4be1",
+    "tr": "d4bdcf4be1"
+  },
+  "ru|original-work.json|models3d./images/colophon/model-showcase-hope_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "183e3fcd89",
+    "tr": "183e3fcd89"
+  },
+  "ru|original-work.json|models3d./images/colophon/model-showcase-htv_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "9cda516ca4",
+    "tr": "9cda516ca4"
+  },
+  "ru|original-work.json|models3d./images/colophon/model-showcase-kaguya_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "f2ac0904eb",
+    "tr": "f2ac0904eb"
+  },
+  "ru|original-work.json|models3d./images/colophon/model-showcase-lro_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "909dd83413",
+    "tr": "909dd83413"
+  },
+  "ru|original-work.json|models3d./images/colophon/model-showcase-mro_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "45da8da847",
+    "tr": "45da8da847"
+  },
+  "ru|original-work.json|models3d./images/colophon/model-showcase-parker-solar-probe_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "28d31dc968",
+    "tr": "28d31dc968"
+  },
+  "ru|original-work.json|models3d./images/colophon/model-showcase-solar-orbiter_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "3ee5fd8d67",
+    "tr": "3ee5fd8d67"
   },
   "ru|original-work.json|posters./images/posters/cassini_jpg.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -6328,6 +8083,16 @@
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "bdbbad925e",
     "tr": "bdbbad925e"
+  },
+  "ru|original-work.json|site_illustrations./images/illustrations/sites/change3_webp.title": {
+    "why": "proper name (Chang'e 3) kept in Latin script as on its mission page in this locale",
+    "en": "141e8598bd",
+    "tr": "141e8598bd"
+  },
+  "ru|original-work.json|site_illustrations./images/illustrations/sites/change4_webp.title": {
+    "why": "proper name (Chang'e 4) kept in Latin script as on its mission page in this locale",
+    "en": "ce15bf3643",
+    "tr": "ce15bf3643"
   },
   "ru|site-stories/apollo12.json|chapters.hardware.subtitle": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -6513,6 +8278,11 @@
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "f88fe58331",
     "tr": "f88fe58331"
+  },
+  "sr-Cyrl|missions/earth/starship-flight-5.json|events.2.label": {
+    "why": "SECO (second-stage engine cutoff) is a flight-dynamics acronym the same in every locale, as hudLabel leaves it",
+    "en": "9764eaf305",
+    "tr": "9764eaf305"
   },
   "sr-Cyrl|original-work.json|anatomy_art./images/anatomy/apollo-csm-block-i_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -6739,6 +8509,11 @@
     "en": "2e46c38af8",
     "tr": "2e46c38af8"
   },
+  "sr-Cyrl|original-work.json|exploded_art./images/anatomy-exploded/perseverance_webp.title": {
+    "why": "proper names (Perseverance, Mars 2020) kept as on the fleet page in this locale",
+    "en": "2f671bfcba",
+    "tr": "2f671bfcba"
+  },
   "sr-Cyrl|original-work.json|exploded_art./images/anatomy-exploded/proton-k_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "8527f639fd",
@@ -6759,20 +8534,40 @@
     "en": "445aab85db",
     "tr": "445aab85db"
   },
+  "sr-Cyrl|original-work.json|landing_art./images/landing-sequences/perseverance_webp.title": {
+    "why": "proper names (Perseverance, Ingenuity) kept as on their mission and fleet pages in this locale",
+    "en": "f1d04e438b",
+    "tr": "f1d04e438b"
+  },
+  "sr-Cyrl|original-work.json|mission_trajectories./images/missions/thumbnails/kaguya_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "f2ac0904eb",
+    "tr": "f2ac0904eb"
+  },
+  "sr-Cyrl|original-work.json|mission_trajectories./images/missions/thumbnails/lro_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "909dd83413",
+    "tr": "909dd83413"
+  },
+  "sr-Cyrl|original-work.json|mission_trajectories./images/missions/thumbnails/mro_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "45da8da847",
+    "tr": "45da8da847"
+  },
+  "sr-Cyrl|original-work.json|mission_trajectories./images/missions/thumbnails/parker-solar-probe_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "28d31dc968",
+    "tr": "28d31dc968"
+  },
+  "sr-Cyrl|original-work.json|mission_trajectories./images/missions/thumbnails/solar-orbiter_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "3ee5fd8d67",
+    "tr": "3ee5fd8d67"
+  },
   "sr-Cyrl|original-work.json|models3d./images/colophon/craft-cassini_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "25ccc94b47",
     "tr": "25ccc94b47"
-  },
-  "sr-Cyrl|original-work.json|models3d./images/colophon/craft-pioneer-10_webp.title": {
-    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
-    "en": "4ae7e2a262",
-    "tr": "4ae7e2a262"
-  },
-  "sr-Cyrl|original-work.json|models3d./images/colophon/craft-voyager-1_webp.title": {
-    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
-    "en": "bdbbad925e",
-    "tr": "bdbbad925e"
   },
   "sr-Cyrl|original-work.json|models3d./images/colophon/model-cruise-artemis3_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -6794,10 +8589,40 @@
     "en": "5bfcb70a75",
     "tr": "5bfcb70a75"
   },
+  "sr-Cyrl|original-work.json|models3d./images/colophon/model-launcher-athena-ii_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "fdab0419bf",
+    "tr": "fdab0419bf"
+  },
+  "sr-Cyrl|original-work.json|models3d./images/colophon/model-launcher-atlas-agena_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "33fa80855b",
+    "tr": "33fa80855b"
+  },
+  "sr-Cyrl|original-work.json|models3d./images/colophon/model-launcher-atlas-centaur_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "b97079b0f4",
+    "tr": "b97079b0f4"
+  },
+  "sr-Cyrl|original-work.json|models3d./images/colophon/model-launcher-delta-ii_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "549de9e819",
+    "tr": "549de9e819"
+  },
+  "sr-Cyrl|original-work.json|models3d./images/colophon/model-launcher-delta-iv-heavy_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "fda8058eea",
+    "tr": "fda8058eea"
+  },
   "sr-Cyrl|original-work.json|models3d./images/colophon/model-launcher-falcon-9_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "85fb7a41e8",
     "tr": "85fb7a41e8"
+  },
+  "sr-Cyrl|original-work.json|models3d./images/colophon/model-launcher-long-march-3a_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "8b124f7c92",
+    "tr": "8b124f7c92"
   },
   "sr-Cyrl|original-work.json|models3d./images/colophon/model-launcher-lvm3_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -6814,6 +8639,11 @@
     "en": "8527f639fd",
     "tr": "8527f639fd"
   },
+  "sr-Cyrl|original-work.json|models3d./images/colophon/model-launcher-proton-m-briz-m_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "23c9b90188",
+    "tr": "23c9b90188"
+  },
   "sr-Cyrl|original-work.json|models3d./images/colophon/model-launcher-pslv_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "f504e1e27d",
@@ -6824,10 +8654,35 @@
     "en": "cea186e2a2",
     "tr": "cea186e2a2"
   },
+  "sr-Cyrl|original-work.json|models3d./images/colophon/model-launcher-soyuz-fg-fregat_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "eab7413937",
+    "tr": "eab7413937"
+  },
+  "sr-Cyrl|original-work.json|models3d./images/colophon/model-launcher-sputnik-8k71ps_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "f6cf1f24ee",
+    "tr": "f6cf1f24ee"
+  },
   "sr-Cyrl|original-work.json|models3d./images/colophon/model-launcher-starship_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "bff6300bf2",
     "tr": "bff6300bf2"
+  },
+  "sr-Cyrl|original-work.json|models3d./images/colophon/model-launcher-titan-ii-g_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "c711caa032",
+    "tr": "c711caa032"
+  },
+  "sr-Cyrl|original-work.json|models3d./images/colophon/model-launcher-titan-iiie-centaur_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "087352d935",
+    "tr": "087352d935"
+  },
+  "sr-Cyrl|original-work.json|models3d./images/colophon/model-launcher-titan-ivb-centaur_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "0366c595cb",
+    "tr": "0366c595cb"
   },
   "sr-Cyrl|original-work.json|models3d./images/colophon/model-launcher-vostok-k_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -6844,10 +8699,75 @@
     "en": "f1d04e438b",
     "tr": "f1d04e438b"
   },
+  "sr-Cyrl|original-work.json|models3d./images/colophon/model-probe-nova-c_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "9e953c8ac6",
+    "tr": "9e953c8ac6"
+  },
   "sr-Cyrl|original-work.json|models3d./images/colophon/model-sat-jwst_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "6e960758e9",
     "tr": "6e960758e9"
+  },
+  "sr-Cyrl|original-work.json|models3d./images/colophon/model-showcase-cargo-dragon-v1_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "17f3a9850a",
+    "tr": "17f3a9850a"
+  },
+  "sr-Cyrl|original-work.json|models3d./images/colophon/model-showcase-columbia_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "82b386a5aa",
+    "tr": "82b386a5aa"
+  },
+  "sr-Cyrl|original-work.json|models3d./images/colophon/model-showcase-compton-gro_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "b00c37acd8",
+    "tr": "b00c37acd8"
+  },
+  "sr-Cyrl|original-work.json|models3d./images/colophon/model-showcase-enterprise_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "e86346563d",
+    "tr": "e86346563d"
+  },
+  "sr-Cyrl|original-work.json|models3d./images/colophon/model-showcase-exomars-tgo_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "d4bdcf4be1",
+    "tr": "d4bdcf4be1"
+  },
+  "sr-Cyrl|original-work.json|models3d./images/colophon/model-showcase-hope_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "183e3fcd89",
+    "tr": "183e3fcd89"
+  },
+  "sr-Cyrl|original-work.json|models3d./images/colophon/model-showcase-htv_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "9cda516ca4",
+    "tr": "9cda516ca4"
+  },
+  "sr-Cyrl|original-work.json|models3d./images/colophon/model-showcase-kaguya_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "f2ac0904eb",
+    "tr": "f2ac0904eb"
+  },
+  "sr-Cyrl|original-work.json|models3d./images/colophon/model-showcase-lro_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "909dd83413",
+    "tr": "909dd83413"
+  },
+  "sr-Cyrl|original-work.json|models3d./images/colophon/model-showcase-mro_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "45da8da847",
+    "tr": "45da8da847"
+  },
+  "sr-Cyrl|original-work.json|models3d./images/colophon/model-showcase-parker-solar-probe_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "28d31dc968",
+    "tr": "28d31dc968"
+  },
+  "sr-Cyrl|original-work.json|models3d./images/colophon/model-showcase-solar-orbiter_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "3ee5fd8d67",
+    "tr": "3ee5fd8d67"
   },
   "sr-Cyrl|original-work.json|posters./images/posters/cassini_jpg.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -6873,6 +8793,16 @@
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "bdbbad925e",
     "tr": "bdbbad925e"
+  },
+  "sr-Cyrl|original-work.json|site_illustrations./images/illustrations/sites/change3_webp.title": {
+    "why": "proper name (Chang'e 3) kept in Latin script as on its mission page in this locale",
+    "en": "141e8598bd",
+    "tr": "141e8598bd"
+  },
+  "sr-Cyrl|original-work.json|site_illustrations./images/illustrations/sites/change4_webp.title": {
+    "why": "proper name (Chang'e 4) kept in Latin script as on its mission page in this locale",
+    "en": "ce15bf3643",
+    "tr": "ce15bf3643"
   },
   "sr-Cyrl|site-stories/apollo12.json|chapters.hardware.subtitle": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -7048,6 +8978,11 @@
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "f88fe58331",
     "tr": "f88fe58331"
+  },
+  "zh-CN|missions/earth/starship-flight-5.json|events.2.label": {
+    "why": "SECO (second-stage engine cutoff) is a flight-dynamics acronym the same in every locale, as hudLabel leaves it",
+    "en": "9764eaf305",
+    "tr": "9764eaf305"
   },
   "zh-CN|original-work.json|anatomy_art./images/anatomy/apollo-csm-block-i_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -7254,20 +9189,70 @@
     "en": "445aab85db",
     "tr": "445aab85db"
   },
+  "zh-CN|original-work.json|landing_art./images/landing-sequences/perseverance_webp.title": {
+    "why": "proper names (Perseverance, Ingenuity) kept as on their mission and fleet pages in this locale",
+    "en": "f1d04e438b",
+    "tr": "f1d04e438b"
+  },
+  "zh-CN|original-work.json|mission_trajectories./images/missions/thumbnails/kaguya_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "f2ac0904eb",
+    "tr": "f2ac0904eb"
+  },
+  "zh-CN|original-work.json|mission_trajectories./images/missions/thumbnails/lro_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "909dd83413",
+    "tr": "909dd83413"
+  },
+  "zh-CN|original-work.json|mission_trajectories./images/missions/thumbnails/mro_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "45da8da847",
+    "tr": "45da8da847"
+  },
+  "zh-CN|original-work.json|mission_trajectories./images/missions/thumbnails/parker-solar-probe_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "28d31dc968",
+    "tr": "28d31dc968"
+  },
+  "zh-CN|original-work.json|mission_trajectories./images/missions/thumbnails/solar-orbiter_webp.title": {
+    "why": "the mission's official name, kept in English as on its mission page in this locale (missions overlay name)",
+    "en": "3ee5fd8d67",
+    "tr": "3ee5fd8d67"
+  },
   "zh-CN|original-work.json|models3d./images/colophon/craft-cassini_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "25ccc94b47",
     "tr": "25ccc94b47"
   },
-  "zh-CN|original-work.json|models3d./images/colophon/craft-vega-1_webp.title": {
-    "why": "name of the Vega probes (not the star), kept as in English",
-    "en": "ceb84bb1f9",
-    "tr": "ceb84bb1f9"
-  },
   "zh-CN|original-work.json|models3d./images/colophon/model-launcher-ariane-1_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "5bfcb70a75",
     "tr": "5bfcb70a75"
+  },
+  "zh-CN|original-work.json|models3d./images/colophon/model-launcher-athena-ii_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "fdab0419bf",
+    "tr": "fdab0419bf"
+  },
+  "zh-CN|original-work.json|models3d./images/colophon/model-launcher-atlas-agena_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "33fa80855b",
+    "tr": "33fa80855b"
+  },
+  "zh-CN|original-work.json|models3d./images/colophon/model-launcher-atlas-centaur_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "b97079b0f4",
+    "tr": "b97079b0f4"
+  },
+  "zh-CN|original-work.json|models3d./images/colophon/model-launcher-delta-ii_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "549de9e819",
+    "tr": "549de9e819"
+  },
+  "zh-CN|original-work.json|models3d./images/colophon/model-launcher-delta-iv-heavy_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "fda8058eea",
+    "tr": "fda8058eea"
   },
   "zh-CN|original-work.json|models3d./images/colophon/model-launcher-falcon-9_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -7284,6 +9269,11 @@
     "en": "8527f639fd",
     "tr": "8527f639fd"
   },
+  "zh-CN|original-work.json|models3d./images/colophon/model-launcher-proton-m-briz-m_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "23c9b90188",
+    "tr": "23c9b90188"
+  },
   "zh-CN|original-work.json|models3d./images/colophon/model-launcher-pslv_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "f504e1e27d",
@@ -7294,10 +9284,35 @@
     "en": "cea186e2a2",
     "tr": "cea186e2a2"
   },
+  "zh-CN|original-work.json|models3d./images/colophon/model-launcher-soyuz-fg-fregat_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "eab7413937",
+    "tr": "eab7413937"
+  },
+  "zh-CN|original-work.json|models3d./images/colophon/model-launcher-sputnik-8k71ps_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "f6cf1f24ee",
+    "tr": "f6cf1f24ee"
+  },
   "zh-CN|original-work.json|models3d./images/colophon/model-launcher-starship_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "bff6300bf2",
     "tr": "bff6300bf2"
+  },
+  "zh-CN|original-work.json|models3d./images/colophon/model-launcher-titan-ii-g_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "c711caa032",
+    "tr": "c711caa032"
+  },
+  "zh-CN|original-work.json|models3d./images/colophon/model-launcher-titan-iiie-centaur_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "087352d935",
+    "tr": "087352d935"
+  },
+  "zh-CN|original-work.json|models3d./images/colophon/model-launcher-titan-ivb-centaur_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "0366c595cb",
+    "tr": "0366c595cb"
   },
   "zh-CN|original-work.json|models3d./images/colophon/model-launcher-vostok-k_webp.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
@@ -7313,6 +9328,66 @@
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
     "en": "f1d04e438b",
     "tr": "f1d04e438b"
+  },
+  "zh-CN|original-work.json|models3d./images/colophon/model-probe-nova-c_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "9e953c8ac6",
+    "tr": "9e953c8ac6"
+  },
+  "zh-CN|original-work.json|models3d./images/colophon/model-showcase-cargo-dragon-v1_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "17f3a9850a",
+    "tr": "17f3a9850a"
+  },
+  "zh-CN|original-work.json|models3d./images/colophon/model-showcase-columbia_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "82b386a5aa",
+    "tr": "82b386a5aa"
+  },
+  "zh-CN|original-work.json|models3d./images/colophon/model-showcase-compton-gro_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "b00c37acd8",
+    "tr": "b00c37acd8"
+  },
+  "zh-CN|original-work.json|models3d./images/colophon/model-showcase-enterprise_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "e86346563d",
+    "tr": "e86346563d"
+  },
+  "zh-CN|original-work.json|models3d./images/colophon/model-showcase-exomars-tgo_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "d4bdcf4be1",
+    "tr": "d4bdcf4be1"
+  },
+  "zh-CN|original-work.json|models3d./images/colophon/model-showcase-hope_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "183e3fcd89",
+    "tr": "183e3fcd89"
+  },
+  "zh-CN|original-work.json|models3d./images/colophon/model-showcase-htv_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "9cda516ca4",
+    "tr": "9cda516ca4"
+  },
+  "zh-CN|original-work.json|models3d./images/colophon/model-showcase-kaguya_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "f2ac0904eb",
+    "tr": "f2ac0904eb"
+  },
+  "zh-CN|original-work.json|models3d./images/colophon/model-showcase-mro_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "45da8da847",
+    "tr": "45da8da847"
+  },
+  "zh-CN|original-work.json|models3d./images/colophon/model-showcase-parker-solar-probe_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "28d31dc968",
+    "tr": "28d31dc968"
+  },
+  "zh-CN|original-work.json|models3d./images/colophon/model-showcase-solar-orbiter_webp.title": {
+    "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",
+    "en": "3ee5fd8d67",
+    "tr": "3ee5fd8d67"
   },
   "zh-CN|original-work.json|posters./images/posters/saturn-v_jpg.title": {
     "why": "a proper name (vehicle, mission, spacecraft, instrument, museum, person) kept as in English (NAME_POLICY)",

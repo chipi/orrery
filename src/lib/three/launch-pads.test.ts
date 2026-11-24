@@ -102,6 +102,20 @@ describe('pad builders (G4)', () => {
     b.dispose();
   });
 
+  it('the Proton service tower is 60 m and stands rolled back about 340 m at liftoff (RussianSpaceWeb, Proton launch complex)', () => {
+    const vehM = VEH_M.proton;
+    const b = buildPad(spec('proton'), vehM, VEH_LEN);
+    b.group.updateMatrixWorld(true);
+    const box = new THREE.Box3().setFromObject(b.group.getObjectByName('pad-tower')!);
+    const m = vehM / VEH_LEN;
+    expect(box.max.y * m).toBeGreaterThan(57);
+    expect(box.max.y * m).toBeLessThan(63);
+    const centre = box.getCenter(new THREE.Vector3());
+    expect(Math.hypot(centre.x, centre.z) * m).toBeGreaterThan(320);
+    expect(Math.hypot(centre.x, centre.z) * m).toBeLessThan(360);
+    b.dispose();
+  });
+
   it('the Falcon strongback leans 1.5 degrees before liftoff and 45 degrees after', () => {
     const b = buildPad(spec('f9-te'), 70, VEH_LEN);
     const sb = b.group.getObjectByName('pad-tower') as THREE.Object3D;

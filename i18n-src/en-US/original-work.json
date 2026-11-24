@@ -238,7 +238,7 @@
       "title": "Lucy"
     },
     "/images/anatomy/luna-16_webp": {
-      "title": "Luna 16-class"
+      "title": "Luna 16"
     },
     "/images/anatomy/luna-9_webp": {
       "title": "Luna 9"
@@ -498,6 +498,9 @@
     "/images/anatomy/starliner_webp": {
       "title": "Starliner (CST-100)"
     },
+    "/images/anatomy/starship-hls_webp": {
+      "title": "Starship HLS"
+    },
     "/images/anatomy/starship_webp": {
       "title": "Starship"
     },
@@ -596,6 +599,9 @@
     "/images/anatomy-exploded/antares_webp": {
       "title": "Antares"
     },
+    "/images/anatomy-exploded/apollo-lm_webp": {
+      "title": "Apollo Lunar Module"
+    },
     "/images/anatomy-exploded/ariane-1_webp": {
       "title": "Ariane 1"
     },
@@ -614,11 +620,35 @@
     "/images/anatomy-exploded/atlas-v_webp": {
       "title": "Atlas V"
     },
+    "/images/anatomy-exploded/beagle2_webp": {
+      "title": "Beagle 2"
+    },
+    "/images/anatomy-exploded/beresheet_webp": {
+      "title": "Beresheet"
+    },
+    "/images/anatomy-exploded/change-3_webp": {
+      "title": "Chang'e 3"
+    },
+    "/images/anatomy-exploded/change-4_webp": {
+      "title": "Chang'e 4"
+    },
+    "/images/anatomy-exploded/change-5_webp": {
+      "title": "Chang'e 5"
+    },
+    "/images/anatomy-exploded/change6_webp": {
+      "title": "Chang'e 6"
+    },
+    "/images/anatomy-exploded/curiosity_webp": {
+      "title": "Curiosity (MSL)"
+    },
     "/images/anatomy-exploded/delta-ii_webp": {
       "title": "Delta II"
     },
     "/images/anatomy-exploded/energia_webp": {
       "title": "Energia"
+    },
+    "/images/anatomy-exploded/exomars-rosalind-franklin_webp": {
+      "title": "Rosalind Franklin (ExoMars rover)"
     },
     "/images/anatomy-exploded/falcon-9_webp": {
       "title": "Falcon 9 Block 5"
@@ -632,6 +662,9 @@
     "/images/anatomy-exploded/h3_webp": {
       "title": "H3"
     },
+    "/images/anatomy-exploded/insight_webp": {
+      "title": "InSight"
+    },
     "/images/anatomy-exploded/long-march-2f_webp": {
       "title": "Long March 2F"
     },
@@ -644,11 +677,38 @@
     "/images/anatomy-exploded/long-march-7_webp": {
       "title": "Long March 7"
     },
+    "/images/anatomy-exploded/lrv-apollo_webp": {
+      "title": "Lunar Roving Vehicle"
+    },
+    "/images/anatomy-exploded/luna-16_webp": {
+      "title": "Luna 16"
+    },
+    "/images/anatomy-exploded/luna-9_webp": {
+      "title": "Luna 9"
+    },
+    "/images/anatomy-exploded/luna24_webp": {
+      "title": "Luna 24"
+    },
+    "/images/anatomy-exploded/lunokhod-1_webp": {
+      "title": "Lunokhod 1"
+    },
+    "/images/anatomy-exploded/lunokhod-2_webp": {
+      "title": "Lunokhod 2"
+    },
     "/images/anatomy-exploded/lvm3_webp": {
       "title": "LVM3 (GSLV Mk III)"
     },
     "/images/anatomy-exploded/m-v_webp": {
       "title": "M V"
+    },
+    "/images/anatomy-exploded/mars-2_webp": {
+      "title": "Mars 2"
+    },
+    "/images/anatomy-exploded/mars-3_webp": {
+      "title": "Mars 3"
+    },
+    "/images/anatomy-exploded/mars6_webp": {
+      "title": "Mars 6"
     },
     "/images/anatomy-exploded/mercury-redstone_webp": {
       "title": "Mercury-Redstone"
@@ -658,6 +718,18 @@
     },
     "/images/anatomy-exploded/new-glenn_webp": {
       "title": "New Glenn"
+    },
+    "/images/anatomy-exploded/opportunity_webp": {
+      "title": "Opportunity (MER-B)"
+    },
+    "/images/anatomy-exploded/perseverance_webp": {
+      "title": "Perseverance (Mars 2020)"
+    },
+    "/images/anatomy-exploded/phoenix_webp": {
+      "title": "Phoenix"
+    },
+    "/images/anatomy-exploded/pragyan_webp": {
+      "title": "Pragyan"
     },
     "/images/anatomy-exploded/proton-k_webp": {
       "title": "Proton-K"
@@ -680,8 +752,17 @@
     "/images/anatomy-exploded/saturn-v_webp": {
       "title": "Saturn V"
     },
+    "/images/anatomy-exploded/schiaparelli_webp": {
+      "title": "Schiaparelli"
+    },
+    "/images/anatomy-exploded/slim_webp": {
+      "title": "SLIM"
+    },
     "/images/anatomy-exploded/sls-block-1_webp": {
       "title": "SLS Block 1"
+    },
+    "/images/anatomy-exploded/sojourner_webp": {
+      "title": "Sojourner"
     },
     "/images/anatomy-exploded/soyuz_webp": {
       "title": "Soyuz (11A511)"
@@ -698,11 +779,32 @@
     "/images/anatomy-exploded/space-shuttle-stack_webp": {
       "title": "Space Shuttle stack"
     },
+    "/images/anatomy-exploded/spirit_webp": {
+      "title": "Spirit (MER-A)"
+    },
     "/images/anatomy-exploded/starship_webp": {
       "title": "Starship"
     },
     "/images/anatomy-exploded/titan-ii-glv_webp": {
       "title": "Titan II GLV"
+    },
+    "/images/anatomy-exploded/vega-1_webp": {
+      "title": "Vega 1"
+    },
+    "/images/anatomy-exploded/vega-2_webp": {
+      "title": "Vega 2"
+    },
+    "/images/anatomy-exploded/venera-13_webp": {
+      "title": "Venera 13"
+    },
+    "/images/anatomy-exploded/viking-1_webp": {
+      "title": "Viking 1"
+    },
+    "/images/anatomy-exploded/viking2-lander_webp": {
+      "title": "Viking 2 Lander"
+    },
+    "/images/anatomy-exploded/vikram-cy3_webp": {
+      "title": "Vikram (Chandrayaan-3)"
     },
     "/images/anatomy-exploded/voskhod-11a57_webp": {
       "title": "Voskhod (11A57)"
@@ -712,6 +814,665 @@
     },
     "/images/anatomy-exploded/vulcan_webp": {
       "title": "Vulcan Centaur"
+    },
+    "/images/anatomy-exploded/yutu_webp": {
+      "title": "Yutu"
+    },
+    "/images/anatomy-exploded/yutu-2_webp": {
+      "title": "Yutu-2"
+    },
+    "/images/anatomy-exploded/zhurong_webp": {
+      "title": "Zhurong"
+    }
+  },
+  "landing_art": {
+    "/images/landing-sequences/apollo11_webp": {
+      "title": "Apollo 11"
+    },
+    "/images/landing-sequences/apollo12_webp": {
+      "title": "Apollo 12"
+    },
+    "/images/landing-sequences/apollo14_webp": {
+      "title": "Apollo 14"
+    },
+    "/images/landing-sequences/apollo15_webp": {
+      "title": "Apollo 15"
+    },
+    "/images/landing-sequences/apollo16_webp": {
+      "title": "Apollo 16"
+    },
+    "/images/landing-sequences/apollo17_webp": {
+      "title": "Apollo 17"
+    },
+    "/images/landing-sequences/artemis4_webp": {
+      "title": "Artemis IV"
+    },
+    "/images/landing-sequences/beagle2_webp": {
+      "title": "Beagle 2"
+    },
+    "/images/landing-sequences/beresheet_webp": {
+      "title": "Beresheet"
+    },
+    "/images/landing-sequences/chandrayaan3_webp": {
+      "title": "Chandrayaan-3"
+    },
+    "/images/landing-sequences/change3_webp": {
+      "title": "Chang'e 3 / Yutu"
+    },
+    "/images/landing-sequences/change4_webp": {
+      "title": "Chang'e 4 / Yutu-2"
+    },
+    "/images/landing-sequences/change5_webp": {
+      "title": "Chang'e 5"
+    },
+    "/images/landing-sequences/change6_webp": {
+      "title": "Chang'e 6"
+    },
+    "/images/landing-sequences/change7_webp": {
+      "title": "Chang'e 7"
+    },
+    "/images/landing-sequences/curiosity_webp": {
+      "title": "Curiosity"
+    },
+    "/images/landing-sequences/exomars-rosalind-franklin_webp": {
+      "title": "Rosalind Franklin rover"
+    },
+    "/images/landing-sequences/insight_webp": {
+      "title": "InSight"
+    },
+    "/images/landing-sequences/luna16_webp": {
+      "title": "Luna 16"
+    },
+    "/images/landing-sequences/luna17_webp": {
+      "title": "Luna 17 / Lunokhod 1"
+    },
+    "/images/landing-sequences/luna21_webp": {
+      "title": "Luna 21 / Lunokhod 2"
+    },
+    "/images/landing-sequences/luna24_webp": {
+      "title": "Luna 24"
+    },
+    "/images/landing-sequences/luna9_webp": {
+      "title": "Luna 9"
+    },
+    "/images/landing-sequences/mars-pathfinder_webp": {
+      "title": "Mars Pathfinder + Sojourner"
+    },
+    "/images/landing-sequences/mars2_webp": {
+      "title": "Mars 2 lander"
+    },
+    "/images/landing-sequences/mars3_webp": {
+      "title": "Mars 3 lander"
+    },
+    "/images/landing-sequences/mars6_webp": {
+      "title": "Mars 6"
+    },
+    "/images/landing-sequences/opportunity_webp": {
+      "title": "Opportunity"
+    },
+    "/images/landing-sequences/perseverance_webp": {
+      "title": "Perseverance + Ingenuity"
+    },
+    "/images/landing-sequences/phoenix_webp": {
+      "title": "Phoenix lander"
+    },
+    "/images/landing-sequences/schiaparelli_webp": {
+      "title": "Schiaparelli EDM"
+    },
+    "/images/landing-sequences/slim_webp": {
+      "title": "SLIM"
+    },
+    "/images/landing-sequences/spirit_webp": {
+      "title": "Spirit"
+    },
+    "/images/landing-sequences/vega-1_webp": {
+      "title": "Vega 1"
+    },
+    "/images/landing-sequences/vega-2_webp": {
+      "title": "Vega 2"
+    },
+    "/images/landing-sequences/venera-13_webp": {
+      "title": "Venera 13"
+    },
+    "/images/landing-sequences/viking1-lander_webp": {
+      "title": "Viking 1 lander"
+    },
+    "/images/landing-sequences/viking2-lander_webp": {
+      "title": "Viking 2 lander"
+    },
+    "/images/landing-sequences/zhurong_webp": {
+      "title": "Zhurong (with Tianwen-1 lander)"
+    }
+  },
+  "blueprint_art": {
+    "/images/blueprints/apollo-soyuz_webp": {
+      "title": "Apollo-Soyuz Test Project (ASTP)"
+    },
+    "/images/blueprints/apollo11_webp": {
+      "title": "Apollo 11"
+    },
+    "/images/blueprints/bepicolombo_webp": {
+      "title": "BepiColombo"
+    },
+    "/images/blueprints/cassini_webp": {
+      "title": "Cassini-Huygens"
+    },
+    "/images/blueprints/dawn_webp": {
+      "title": "Dawn"
+    },
+    "/images/blueprints/galileo_webp": {
+      "title": "Galileo"
+    },
+    "/images/blueprints/giotto_webp": {
+      "title": "Giotto"
+    },
+    "/images/blueprints/hayabusa2_webp": {
+      "title": "Hayabusa2"
+    },
+    "/images/blueprints/juice_webp": {
+      "title": "JUICE"
+    },
+    "/images/blueprints/juno_webp": {
+      "title": "Juno"
+    },
+    "/images/blueprints/new-horizons_webp": {
+      "title": "New Horizons"
+    },
+    "/images/blueprints/pioneer-10_webp": {
+      "title": "Pioneer 10"
+    },
+    "/images/blueprints/rosetta_webp": {
+      "title": "Rosetta"
+    },
+    "/images/blueprints/sputnik1_webp": {
+      "title": "Sputnik 1"
+    },
+    "/images/blueprints/ulysses_webp": {
+      "title": "Ulysses"
+    },
+    "/images/blueprints/venera-13_webp": {
+      "title": "Venera 13"
+    },
+    "/images/blueprints/vostok-1_webp": {
+      "title": "Vostok 1"
+    },
+    "/images/blueprints/voyager-2_webp": {
+      "title": "Voyager 2"
+    }
+  },
+  "mission_trajectories": {
+    "/images/missions/thumbnails/akatsuki_webp": {
+      "title": "Akatsuki"
+    },
+    "/images/missions/thumbnails/apollo-1_webp": {
+      "title": "Apollo 1 (AS-204)"
+    },
+    "/images/missions/thumbnails/apollo-soyuz_webp": {
+      "title": "Apollo-Soyuz Test Project (ASTP)"
+    },
+    "/images/missions/thumbnails/apollo10_webp": {
+      "title": "Apollo 10"
+    },
+    "/images/missions/thumbnails/apollo11_webp": {
+      "title": "Apollo 11"
+    },
+    "/images/missions/thumbnails/apollo12_webp": {
+      "title": "Apollo 12"
+    },
+    "/images/missions/thumbnails/apollo13_webp": {
+      "title": "Apollo 13"
+    },
+    "/images/missions/thumbnails/apollo14_webp": {
+      "title": "Apollo 14"
+    },
+    "/images/missions/thumbnails/apollo15_webp": {
+      "title": "Apollo 15"
+    },
+    "/images/missions/thumbnails/apollo16_webp": {
+      "title": "Apollo 16"
+    },
+    "/images/missions/thumbnails/apollo17_webp": {
+      "title": "Apollo 17"
+    },
+    "/images/missions/thumbnails/apollo7_webp": {
+      "title": "Apollo 7"
+    },
+    "/images/missions/thumbnails/apollo8_webp": {
+      "title": "Apollo 8"
+    },
+    "/images/missions/thumbnails/apollo9_webp": {
+      "title": "Apollo 9"
+    },
+    "/images/missions/thumbnails/artemis1_webp": {
+      "title": "Artemis I"
+    },
+    "/images/missions/thumbnails/artemis2_webp": {
+      "title": "Artemis II"
+    },
+    "/images/missions/thumbnails/artemis3_webp": {
+      "title": "Artemis III"
+    },
+    "/images/missions/thumbnails/artemis4_webp": {
+      "title": "Artemis IV"
+    },
+    "/images/missions/thumbnails/artemis5_webp": {
+      "title": "Artemis V"
+    },
+    "/images/missions/thumbnails/aurora-7_webp": {
+      "title": "Aurora 7 / MA-7"
+    },
+    "/images/missions/thumbnails/bepicolombo_webp": {
+      "title": "BepiColombo"
+    },
+    "/images/missions/thumbnails/beresheet_webp": {
+      "title": "Beresheet"
+    },
+    "/images/missions/thumbnails/blue-moon-mk1_webp": {
+      "title": "Blue Moon MK1"
+    },
+    "/images/missions/thumbnails/cassini_webp": {
+      "title": "Cassini-Huygens"
+    },
+    "/images/missions/thumbnails/chandrayaan1_webp": {
+      "title": "Chandrayaan-1"
+    },
+    "/images/missions/thumbnails/chandrayaan2_webp": {
+      "title": "Chandrayaan-2"
+    },
+    "/images/missions/thumbnails/chandrayaan3_webp": {
+      "title": "Chandrayaan-3"
+    },
+    "/images/missions/thumbnails/change1_webp": {
+      "title": "Chang'e 1"
+    },
+    "/images/missions/thumbnails/change2_webp": {
+      "title": "Chang'e 2"
+    },
+    "/images/missions/thumbnails/change3_webp": {
+      "title": "Chang'e 3"
+    },
+    "/images/missions/thumbnails/change4_webp": {
+      "title": "Chang'e 4 / Yutu-2"
+    },
+    "/images/missions/thumbnails/change5_webp": {
+      "title": "Chang'e 5"
+    },
+    "/images/missions/thumbnails/change6_webp": {
+      "title": "Chang'e 6"
+    },
+    "/images/missions/thumbnails/clementine_webp": {
+      "title": "Clementine"
+    },
+    "/images/missions/thumbnails/curiosity_webp": {
+      "title": "Curiosity"
+    },
+    "/images/missions/thumbnails/dart_webp": {
+      "title": "DART"
+    },
+    "/images/missions/thumbnails/dawn_webp": {
+      "title": "Dawn"
+    },
+    "/images/missions/thumbnails/escapade_webp": {
+      "title": "ESCAPADE"
+    },
+    "/images/missions/thumbnails/europa-clipper_webp": {
+      "title": "Europa Clipper"
+    },
+    "/images/missions/thumbnails/faith-7_webp": {
+      "title": "Faith 7 / MA-9"
+    },
+    "/images/missions/thumbnails/freedom-7_webp": {
+      "title": "Freedom 7 / MR-3"
+    },
+    "/images/missions/thumbnails/friendship-7_webp": {
+      "title": "Friendship 7 / MA-6"
+    },
+    "/images/missions/thumbnails/galileo_webp": {
+      "title": "Galileo"
+    },
+    "/images/missions/thumbnails/gemini12_webp": {
+      "title": "Gemini 12 / GT-12"
+    },
+    "/images/missions/thumbnails/gemini3_webp": {
+      "title": "Gemini 3 / GT-3"
+    },
+    "/images/missions/thumbnails/gemini4_webp": {
+      "title": "Gemini 4 / GT-4"
+    },
+    "/images/missions/thumbnails/gemini6a_webp": {
+      "title": "Gemini 6A / GT-6A"
+    },
+    "/images/missions/thumbnails/gemini7_webp": {
+      "title": "Gemini 7 / GT-7"
+    },
+    "/images/missions/thumbnails/gemini8_webp": {
+      "title": "Gemini 8 / GT-8"
+    },
+    "/images/missions/thumbnails/giotto_webp": {
+      "title": "Giotto"
+    },
+    "/images/missions/thumbnails/hayabusa1_webp": {
+      "title": "Hayabusa"
+    },
+    "/images/missions/thumbnails/hayabusa2_webp": {
+      "title": "Hayabusa2"
+    },
+    "/images/missions/thumbnails/hera_webp": {
+      "title": "Hera"
+    },
+    "/images/missions/thumbnails/hope-probe_webp": {
+      "title": "Hope Probe"
+    },
+    "/images/missions/thumbnails/huygens_webp": {
+      "title": "Huygens"
+    },
+    "/images/missions/thumbnails/im-1_webp": {
+      "title": "IM-1"
+    },
+    "/images/missions/thumbnails/insight_webp": {
+      "title": "InSight"
+    },
+    "/images/missions/thumbnails/inspiration4_webp": {
+      "title": "Inspiration4"
+    },
+    "/images/missions/thumbnails/juice_webp": {
+      "title": "JUICE"
+    },
+    "/images/missions/thumbnails/juno_webp": {
+      "title": "Juno"
+    },
+    "/images/missions/thumbnails/kaguya_webp": {
+      "title": "Kaguya (SELENE)"
+    },
+    "/images/missions/thumbnails/liberty-bell-7_webp": {
+      "title": "Liberty Bell 7 / MR-4"
+    },
+    "/images/missions/thumbnails/lro_webp": {
+      "title": "Lunar Reconnaissance Orbiter"
+    },
+    "/images/missions/thumbnails/lucy_webp": {
+      "title": "Lucy"
+    },
+    "/images/missions/thumbnails/luna10_webp": {
+      "title": "Luna 10"
+    },
+    "/images/missions/thumbnails/luna16_webp": {
+      "title": "Luna 16"
+    },
+    "/images/missions/thumbnails/luna17_webp": {
+      "title": "Luna 17 / Lunokhod 1"
+    },
+    "/images/missions/thumbnails/luna21_webp": {
+      "title": "Luna 21 / Lunokhod 2"
+    },
+    "/images/missions/thumbnails/luna24_webp": {
+      "title": "Luna 24"
+    },
+    "/images/missions/thumbnails/luna9_webp": {
+      "title": "Luna 9"
+    },
+    "/images/missions/thumbnails/lunar-prospector_webp": {
+      "title": "Lunar Prospector"
+    },
+    "/images/missions/thumbnails/magellan_webp": {
+      "title": "Magellan"
+    },
+    "/images/missions/thumbnails/mangalyaan_webp": {
+      "title": "Mangalyaan"
+    },
+    "/images/missions/thumbnails/mariner10_webp": {
+      "title": "Mariner 10"
+    },
+    "/images/missions/thumbnails/mariner2_webp": {
+      "title": "Mariner 2"
+    },
+    "/images/missions/thumbnails/mariner4_webp": {
+      "title": "Mariner 4"
+    },
+    "/images/missions/thumbnails/mariner9_webp": {
+      "title": "Mariner 9"
+    },
+    "/images/missions/thumbnails/mars-express_webp": {
+      "title": "Mars Express"
+    },
+    "/images/missions/thumbnails/mars-pathfinder_webp": {
+      "title": "Mars Pathfinder"
+    },
+    "/images/missions/thumbnails/mars2_webp": {
+      "title": "Mars 2"
+    },
+    "/images/missions/thumbnails/mars3_webp": {
+      "title": "Mars 3"
+    },
+    "/images/missions/thumbnails/maven_webp": {
+      "title": "MAVEN"
+    },
+    "/images/missions/thumbnails/messenger_webp": {
+      "title": "MESSENGER"
+    },
+    "/images/missions/thumbnails/mmx_webp": {
+      "title": "MMX"
+    },
+    "/images/missions/thumbnails/mro_webp": {
+      "title": "Mars Reconnaissance Orbiter"
+    },
+    "/images/missions/thumbnails/near-shoemaker_webp": {
+      "title": "NEAR Shoemaker"
+    },
+    "/images/missions/thumbnails/new-horizons_webp": {
+      "title": "New Horizons"
+    },
+    "/images/missions/thumbnails/opportunity_webp": {
+      "title": "Opportunity"
+    },
+    "/images/missions/thumbnails/osiris-rex_webp": {
+      "title": "OSIRIS-REx"
+    },
+    "/images/missions/thumbnails/otv-1_webp": {
+      "title": "X-37B OTV-1 (USA-212)"
+    },
+    "/images/missions/thumbnails/otv-2_webp": {
+      "title": "X-37B OTV-2 (USA-226)"
+    },
+    "/images/missions/thumbnails/otv-3_webp": {
+      "title": "X-37B OTV-3 (USA-240)"
+    },
+    "/images/missions/thumbnails/otv-4_webp": {
+      "title": "X-37B OTV-4 (USA-261, AFSPC-5)"
+    },
+    "/images/missions/thumbnails/otv-5_webp": {
+      "title": "X-37B OTV-5 (USA-277)"
+    },
+    "/images/missions/thumbnails/otv-6_webp": {
+      "title": "X-37B OTV-6 (USA-299, USSF-7)"
+    },
+    "/images/missions/thumbnails/otv-7_webp": {
+      "title": "X-37B OTV-7 (USA-349, USSF-52)"
+    },
+    "/images/missions/thumbnails/parker-solar-probe_webp": {
+      "title": "Parker Solar Probe"
+    },
+    "/images/missions/thumbnails/perseverance_webp": {
+      "title": "Perseverance"
+    },
+    "/images/missions/thumbnails/phoenix_webp": {
+      "title": "Phoenix"
+    },
+    "/images/missions/thumbnails/pioneer-10_webp": {
+      "title": "Pioneer 10"
+    },
+    "/images/missions/thumbnails/pioneer-11_webp": {
+      "title": "Pioneer 11"
+    },
+    "/images/missions/thumbnails/polaris-dawn_webp": {
+      "title": "Polaris Dawn"
+    },
+    "/images/missions/thumbnails/psyche-mission_webp": {
+      "title": "Psyche"
+    },
+    "/images/missions/thumbnails/rosetta_webp": {
+      "title": "Rosetta"
+    },
+    "/images/missions/thumbnails/schiaparelli_webp": {
+      "title": "Schiaparelli EDM"
+    },
+    "/images/missions/thumbnails/shenzhou-1_webp": {
+      "title": "Shenzhou 1"
+    },
+    "/images/missions/thumbnails/shenzhou-5_webp": {
+      "title": "Shenzhou 5"
+    },
+    "/images/missions/thumbnails/sigma-7_webp": {
+      "title": "Sigma 7 / MA-8"
+    },
+    "/images/missions/thumbnails/skylab-2_webp": {
+      "title": "Skylab 2"
+    },
+    "/images/missions/thumbnails/skylab-3_webp": {
+      "title": "Skylab 3"
+    },
+    "/images/missions/thumbnails/skylab-4_webp": {
+      "title": "Skylab 4"
+    },
+    "/images/missions/thumbnails/slim_webp": {
+      "title": "SLIM"
+    },
+    "/images/missions/thumbnails/smart-1_webp": {
+      "title": "SMART-1"
+    },
+    "/images/missions/thumbnails/solar-orbiter_webp": {
+      "title": "Solar Orbiter"
+    },
+    "/images/missions/thumbnails/soyuz-1_webp": {
+      "title": "Soyuz 1"
+    },
+    "/images/missions/thumbnails/soyuz-11_webp": {
+      "title": "Soyuz 11"
+    },
+    "/images/missions/thumbnails/spirit_webp": {
+      "title": "Spirit"
+    },
+    "/images/missions/thumbnails/sputnik1_webp": {
+      "title": "Sputnik 1"
+    },
+    "/images/missions/thumbnails/starship-demo_webp": {
+      "title": "Starship Demo"
+    },
+    "/images/missions/thumbnails/starship-flight-5_webp": {
+      "title": "Starship Flight 5"
+    },
+    "/images/missions/thumbnails/starship-mars-crew_webp": {
+      "title": "Starship Mars Crew"
+    },
+    "/images/missions/thumbnails/sts-1_webp": {
+      "title": "STS-1"
+    },
+    "/images/missions/thumbnails/sts-107_webp": {
+      "title": "STS-107"
+    },
+    "/images/missions/thumbnails/sts-51-l_webp": {
+      "title": "STS-51-L"
+    },
+    "/images/missions/thumbnails/tianwen1_webp": {
+      "title": "Tianwen-1"
+    },
+    "/images/missions/thumbnails/ulysses_webp": {
+      "title": "Ulysses"
+    },
+    "/images/missions/thumbnails/vega-1_webp": {
+      "title": "Vega 1"
+    },
+    "/images/missions/thumbnails/vega-2_webp": {
+      "title": "Vega 2"
+    },
+    "/images/missions/thumbnails/venera-13_webp": {
+      "title": "Venera 13"
+    },
+    "/images/missions/thumbnails/viking1_webp": {
+      "title": "Viking 1"
+    },
+    "/images/missions/thumbnails/viking2_webp": {
+      "title": "Viking 2"
+    },
+    "/images/missions/thumbnails/voskhod-1_webp": {
+      "title": "Voskhod 1"
+    },
+    "/images/missions/thumbnails/voskhod-2_webp": {
+      "title": "Voskhod 2"
+    },
+    "/images/missions/thumbnails/vostok-1_webp": {
+      "title": "Vostok 1"
+    },
+    "/images/missions/thumbnails/vostok-2_webp": {
+      "title": "Vostok 2"
+    },
+    "/images/missions/thumbnails/vostok-3_webp": {
+      "title": "Vostok 3"
+    },
+    "/images/missions/thumbnails/vostok-4_webp": {
+      "title": "Vostok 4"
+    },
+    "/images/missions/thumbnails/vostok-5_webp": {
+      "title": "Vostok 5"
+    },
+    "/images/missions/thumbnails/vostok-6_webp": {
+      "title": "Vostok 6"
+    },
+    "/images/missions/thumbnails/voyager-1_webp": {
+      "title": "Voyager 1"
+    },
+    "/images/missions/thumbnails/voyager-2_webp": {
+      "title": "Voyager 2"
+    }
+  },
+  "site_illustrations": {
+    "/images/illustrations/sites/apollo11_webp": {
+      "title": "Apollo 11"
+    },
+    "/images/illustrations/sites/apollo12_webp": {
+      "title": "Apollo 12"
+    },
+    "/images/illustrations/sites/apollo14_webp": {
+      "title": "Apollo 14"
+    },
+    "/images/illustrations/sites/apollo15_webp": {
+      "title": "Apollo 15"
+    },
+    "/images/illustrations/sites/apollo16_webp": {
+      "title": "Apollo 16"
+    },
+    "/images/illustrations/sites/apollo17_webp": {
+      "title": "Apollo 17"
+    },
+    "/images/illustrations/sites/luna17_webp": {
+      "title": "Luna 17"
+    },
+    "/images/illustrations/sites/luna21_webp": {
+      "title": "Luna 21"
+    },
+    "/images/illustrations/sites/change3_webp": {
+      "title": "Chang’e 3"
+    },
+    "/images/illustrations/sites/change4_webp": {
+      "title": "Chang’e 4"
+    },
+    "/images/illustrations/sites/chandrayaan3_webp": {
+      "title": "Chandrayaan-3"
+    },
+    "/images/illustrations/sites/spirit_webp": {
+      "title": "Spirit"
+    },
+    "/images/illustrations/sites/opportunity_webp": {
+      "title": "Opportunity"
+    },
+    "/images/illustrations/sites/curiosity_webp": {
+      "title": "Curiosity"
+    },
+    "/images/illustrations/sites/perseverance_webp": {
+      "title": "Perseverance"
+    },
+    "/images/illustrations/sites/zhurong_webp": {
+      "title": "Zhurong"
     }
   },
   "lab_illustrations": {
@@ -882,6 +1643,9 @@
     "/diagrams/science/dv-heatmap_webp": {
       "title": "DV Heatmap"
     },
+    "/diagrams/science/earth-surface-imagery_webp": {
+      "title": "Earth Surface Imagery"
+    },
     "/diagrams/science/eccentricity_webp": {
       "title": "Eccentricity"
     },
@@ -1026,6 +1790,9 @@
     "/diagrams/science/lunar-suits_webp": {
       "title": "Lunar Suits"
     },
+    "/diagrams/science/mars-surface-imagery_webp": {
+      "title": "Mars Surface Imagery"
+    },
     "/diagrams/science/met_webp": {
       "title": "MET"
     },
@@ -1034,6 +1801,9 @@
     },
     "/diagrams/science/mission-types_webp": {
       "title": "Mission Types"
+    },
+    "/diagrams/science/moon-surface-imagery_webp": {
+      "title": "Moon Surface Imagery"
     },
     "/diagrams/science/node-module_webp": {
       "title": "Node Module"
@@ -1222,77 +1992,12 @@
     "/images/colophon/craft-cassini_webp": {
       "title": "Cassini–Huygens",
       "what": "High-gain dish, RTG booms, and the Huygens probe — Saturn orbiter.",
-      "where": "Fly + Explore"
-    },
-    "/images/colophon/craft-voyager-1_webp": {
-      "title": "Voyager",
-      "what": "3.7 m dish, magnetometer boom, and RTG truss — the Grand Tour bus.",
-      "where": "Fly + Explore"
-    },
-    "/images/colophon/craft-galileo_webp": {
-      "title": "Galileo",
-      "what": "Dual-spin bus with the furled high-gain umbrella antenna.",
-      "where": "Fly + Explore"
+      "where": "Fly · launch + cruise"
     },
     "/images/colophon/craft-new-horizons_webp": {
       "title": "New Horizons",
       "what": "Compact triangular bus with a single dish — the Pluto flyby probe.",
-      "where": "Fly + Explore"
-    },
-    "/images/colophon/craft-pioneer-10_webp": {
-      "title": "Pioneer",
-      "what": "Spin-stabilised dish, RTG booms, and the engraved plaque.",
-      "where": "Fly + Explore"
-    },
-    "/images/colophon/craft-juno_webp": {
-      "title": "Juno",
-      "what": "Three vast solar wings around a hexagonal bus — Jupiter polar orbiter.",
-      "where": "Fly + Explore"
-    },
-    "/images/colophon/craft-bepicolombo_webp": {
-      "title": "BepiColombo",
-      "what": "Stacked transfer module + Mercury orbiters with ion thrusters.",
-      "where": "Fly + Explore"
-    },
-    "/images/colophon/craft-dawn_webp": {
-      "title": "Dawn",
-      "what": "Ion-drive bus with wide solar wings — Vesta + Ceres orbiter.",
-      "where": "Fly + Explore"
-    },
-    "/images/colophon/craft-giotto_webp": {
-      "title": "Giotto",
-      "what": "Drum-shaped spinner with a dust shield — Halley’s Comet flyby.",
-      "where": "Fly + Explore"
-    },
-    "/images/colophon/craft-hayabusa2_webp": {
-      "title": "Hayabusa2",
-      "what": "Boxy bus with solar panels and sampler horn — asteroid Ryugu.",
-      "where": "Fly + Explore"
-    },
-    "/images/colophon/craft-juice_webp": {
-      "title": "JUICE",
-      "what": "Cross-shaped solar arrays on a compact bus — Jupiter icy-moons orbiter.",
-      "where": "Fly + Explore"
-    },
-    "/images/colophon/craft-rosetta_webp": {
-      "title": "Rosetta",
-      "what": "14 m solar wings around a comet-chasing bus + Philae lander.",
-      "where": "Fly + Explore"
-    },
-    "/images/colophon/craft-ulysses_webp": {
-      "title": "Ulysses",
-      "what": "RTG-powered solar polar probe with a single dish.",
-      "where": "Fly + Explore"
-    },
-    "/images/colophon/craft-vega-1_webp": {
-      "title": "Vega",
-      "what": "Soviet Venus flyby + balloon mother-craft with a steerable dish.",
-      "where": "Fly + Explore"
-    },
-    "/images/colophon/craft-venera-13_webp": {
-      "title": "Venera 13",
-      "what": "Soviet Venus lander — toroidal aerobrake and landing ring.",
-      "where": "Fly + Explore"
+      "where": "Fly · launch + cruise"
     },
     "/images/colophon/model-launcher-generic_webp": {
       "title": "Generic launcher",
@@ -1403,6 +2108,791 @@
       "title": "Ariane 1",
       "what": "Europe’s first launcher — a slender three-stage 1979 design (Giotto).",
       "where": "Fly · launch/ascent"
+    },
+    "/images/colophon/model-launcher-long-march-3a_webp": {
+      "title": "Long March 3A",
+      "what": "Core and second stage hot-staged over an open truss under a cryogenic third stage and a 3.35 m fairing, no strap-ons (Chang’e 1).",
+      "where": "Fly · launch/ascent"
+    },
+    "/images/colophon/model-launcher-long-march-7_webp": {
+      "title": "Long March 7",
+      "what": "CALT’s 3.35 m kerosene rocket for the Tianzhou freighters — a core, a second stage and four 2.25 m strap-on boosters.",
+      "where": "Fly · launch/ascent"
+    },
+    "/images/colophon/model-launcher-delta-ii_webp": {
+      "title": "Delta II",
+      "what": "Turquoise Thor-derived first stage ringed by nine white solid boosters, under a boat-tailed 2.9 m fairing.",
+      "where": "Fly · launch/ascent"
+    },
+    "/images/colophon/model-launcher-atlas-centaur_webp": {
+      "title": "Atlas-Centaur",
+      "what": "Steel-balloon Atlas stage-and-a-half under the white Centaur upper stage and nose fairing (Mariner 9 and 10, Pioneer 10 and 11).",
+      "where": "Fly · launch/ascent"
+    },
+    "/images/colophon/model-launcher-atlas-agena_webp": {
+      "title": "Atlas-Agena",
+      "what": "The same Atlas under a slim Agena D upper stage and a small shroud (Mariner 4).",
+      "where": "Fly · launch/ascent"
+    },
+    "/images/colophon/model-launcher-titan-ii-g_webp": {
+      "title": "Titan II(23)G",
+      "what": "Two Titan core stages under a payload fairing (Clementine).",
+      "where": "Fly · launch/ascent"
+    },
+    "/images/colophon/model-launcher-titan-iiie-centaur_webp": {
+      "title": "Titan IIIE-Centaur",
+      "what": "Titan core with two five-segment solid boosters, an interstage and the Centaur inside its shroud (Viking, Voyager).",
+      "where": "Fly · launch/ascent"
+    },
+    "/images/colophon/model-launcher-titan-ivb-centaur_webp": {
+      "title": "Titan IVB-Centaur",
+      "what": "Titan core with two long solid motors under a 20 m fairing that encloses the Centaur (Cassini).",
+      "where": "Fly · launch/ascent"
+    },
+    "/images/colophon/model-launcher-falcon-heavy_webp": {
+      "title": "Falcon Heavy",
+      "what": "Three Falcon 9 cores side by side — side boosters with nose cones, grid fins and legs, and a centre core carrying the upper stage and fairing.",
+      "where": "Fly · launch/ascent"
+    },
+    "/images/colophon/model-launcher-athena-ii_webp": {
+      "title": "Athena II",
+      "what": "All-solid stack — two Castor 120 stages, a third stage and a tapered fairing (Lunar Prospector).",
+      "where": "Fly · launch/ascent"
+    },
+    "/images/colophon/model-launcher-delta-iv-heavy_webp": {
+      "title": "Delta IV Heavy",
+      "what": "Three common booster cores abreast, the centre one carrying the cryogenic upper stage and a 19 m fairing (Parker Solar Probe).",
+      "where": "Fly · launch/ascent"
+    },
+    "/images/colophon/model-launcher-new-glenn_webp": {
+      "title": "New Glenn",
+      "what": "A single 7 m stick — a seven-engine first stage with legs and strakes under a 7 m ogive fairing (Blue Moon MK1).",
+      "where": "Fly · launch/ascent"
+    },
+    "/images/colophon/model-launcher-proton-m-briz-m_webp": {
+      "title": "Proton-M / Briz-M",
+      "what": "Central core ringed by six outboard fuel tanks, two more stages and a Briz-M upper stage under a 4.35 m fairing.",
+      "where": "Fly · launch/ascent"
+    },
+    "/images/colophon/model-launcher-sls-block-1_webp": {
+      "title": "SLS Block 1",
+      "what": "Orange foam core stage on four RS-25s, two white five-segment boosters, the stage adapter and upper stage under Orion and its abort tower (Artemis).",
+      "where": "Fly · launch/ascent"
+    },
+    "/images/colophon/model-launcher-molniya-m_webp": {
+      "title": "Molniya-M",
+      "what": "Four-stage R-7 — the Blok I on its lattice, the Blok L escape stage and the probe under a cylinder-and-cone shroud (Luna 9, Luna 10).",
+      "where": "Fly · launch/ascent"
+    },
+    "/images/colophon/model-launcher-soyuz-fg-fregat_webp": {
+      "title": "Soyuz-FG / Fregat",
+      "what": "The R-7 and its upper stage topped by the squat Fregat and the probe under a wider shroud (Mars Express).",
+      "where": "Fly · launch/ascent"
+    },
+    "/images/colophon/model-launcher-sputnik-8k71ps_webp": {
+      "title": "Sputnik 8K71PS",
+      "what": "The two-stage R-7 that launched Sputnik 1 — no third stage, the satellite riding under the core’s nose cone.",
+      "where": "Fly · launch/ascent"
+    },
+    "/images/colophon/model-launcher-soyuz-2_webp": {
+      "title": "Soyuz-2",
+      "what": "The modernised 46.3 m R-7 — four boosters round the core, an upper stage on an open truss and a long fairing.",
+      "where": "Fly · launch/ascent"
+    },
+    "/images/colophon/model-launcher-antares_webp": {
+      "title": "Antares 230+",
+      "what": "Northrop Grumman’s Cygnus launcher — a 3.9 m kerosene first stage on two RD-181s under a solid second stage and fairing.",
+      "where": "Fly · launch/ascent"
+    },
+    "/images/colophon/model-launcher-ariane-6_webp": {
+      "title": "Ariane 6",
+      "what": "Europe’s 5.4 m cryogenic core and Vinci upper stage under a 20 m fairing, with four solid boosters (A64).",
+      "where": "Fly · launch/ascent"
+    },
+    "/images/colophon/model-launcher-vulcan_webp": {
+      "title": "Vulcan Centaur",
+      "what": "ULA’s 5.4 m methane first stage on two BE-4s, the Centaur V and a 5.4 m fairing, with GEM 63XL solid boosters.",
+      "where": "Fly · launch/ascent"
+    },
+    "/images/colophon/model-launcher-energia_webp": {
+      "title": "Energia–Buran",
+      "what": "The 7.75 m hydrogen core with four RD-170 strap-ons and the Buran orbiter riding on its flank.",
+      "where": "Fly · launch/ascent"
+    },
+    "/images/colophon/model-launcher-n1_webp": {
+      "title": "N1",
+      "what": "The Soviet Moon rocket — five stages in a cone, thirty engines on the first, under the L3 shroud and escape tower.",
+      "where": "Fly · launch/ascent"
+    },
+    "/images/colophon/model-showcase-soyuz-7k-ok_webp": {
+      "title": "Soyuz 7K-OK",
+      "what": "The first-generation Soyuz at 7.95 m — orbital, descent and service modules, 9.8 m solar wings and the Igla rendezvous antennas.",
+      "where": "Fleet · line-up + Fly"
+    },
+    "/images/colophon/model-showcase-soyuz-ms_webp": {
+      "title": "Soyuz T / TM / TMA / MS (4 variants)",
+      "what": "The 7.48 m Soyuz across four generations — Igla antennas on the T, Kurs on the TM and TMA, Kurs-NA and a micrometeoroid shield on the MS.",
+      "where": "Fleet · line-up"
+    },
+    "/images/colophon/model-showcase-vostok_webp": {
+      "title": "Vostok and Voskhod (2 variants)",
+      "what": "The 2.3 m sphere on its instrument module, 4.55 m tall (Voskhod 5 m) — a belt of sixteen olive gas bottles with silver straps, hatches and portholes, antenna loops on top, and on the Voskhod the retro pack.",
+      "where": "Fleet · line-up + Fly"
+    },
+    "/images/colophon/model-showcase-mercury-capsule_webp": {
+      "title": "Mercury capsule",
+      "what": "The 3.3 m one-seat capsule on its retropack — the trapezoid window and side hatch on the cone, three retro rockets held by straps.",
+      "where": "Fleet · line-up + Fly"
+    },
+    "/images/colophon/model-showcase-gemini_webp": {
+      "title": "Gemini",
+      "what": "The 5.74 m two-seat craft — the shingled black re-entry cone with its two hatches and windows over the RCS, rendezvous and recovery sections and the retro adapter.",
+      "where": "Fleet · line-up + Fly"
+    },
+    "/images/colophon/model-showcase-crew-dragon_webp": {
+      "title": "Crew Dragon",
+      "what": "The 8.1 m capsule-and-trunk stack — the white gumdrop capsule with its trapezoid hatch, four windows and SuperDraco bays over the dark PICA-X heat shield, on a trunk with a wrapped cell patch and two radiator fins, under the white hinged nose cone.",
+      "where": "Fleet · line-up + Fly"
+    },
+    "/images/colophon/model-showcase-starliner_webp": {
+      "title": "Starliner (CST-100)",
+      "what": "Boeing’s 5.03 m capsule and service module — a broad low cone in white silver with blue stripes and the NASA roundel, over a drum with four doghouse thruster pods.",
+      "where": "Fleet · line-up"
+    },
+    "/images/colophon/model-showcase-gaganyaan_webp": {
+      "title": "Gaganyaan",
+      "what": "ISRO’s 5.58 m crew module and service module — a blunt white cone panelled in copper-brown tape with a trapezoid hatch and three portholes, over a drum in gold foil with two solar wings.",
+      "where": "Fleet · line-up"
+    },
+    "/images/colophon/model-showcase-mengzhou_webp": {
+      "title": "Mengzhou",
+      "what": "China’s 8.8 m crewed craft for the Moon — a grey-silver conical crew module with a red band over a white service module with gold thruster frames, two long cell wings and four engine bells.",
+      "where": "Fleet · line-up"
+    },
+    "/images/colophon/model-showcase-orion_webp": {
+      "title": "Orion",
+      "what": "The 7.9 m Artemis stack — the white tiled crew module over its dark heat shield, the European service module with four X-wing solar arrays, and the spacecraft adapter ring below.",
+      "where": "Fleet · line-up"
+    },
+    "/images/colophon/model-showcase-new-shepard_webp": {
+      "title": "New Shepard",
+      "what": "The 19.2 m suborbital vehicle on the pad — a white booster with a black engine skirt, blue band, ring fin, three tail fins and four legs, under the crew capsule with its six large windows.",
+      "where": "Fleet · line-up"
+    },
+    "/images/colophon/model-showcase-apollo-csm-block-ii_webp": {
+      "title": "Apollo CSM Block I / II (2 variants)",
+      "what": "The command and service module at 10.6 and 11 m — the cone in reflective silver with five windows and (Block II) the docking probe, over the polished-aluminium service module with its white radiators, RCS quads and the engine bell.",
+      "where": "Fleet · line-up + Fly"
+    },
+    "/images/colophon/model-showcase-apollo-lm_webp": {
+      "title": "Apollo LM (true size)",
+      "what": "The Lunar Module landed — the octagonal descent stage in crinkled gold and amber foil on four gold-wrapped legs, the faceted ascent stage with two triangular windows, RCS quads, rendezvous radar and S-band dish.",
+      "where": "Fleet · line-up + Fly descent"
+    },
+    "/images/colophon/model-showcase-shenzhou_webp": {
+      "title": "Shenzhou",
+      "what": "China’s 9.25 m three-module craft in the Soyuz lineage — a quilted silver orbital module, the bell-shaped re-entry module on its dark ablative base and the white service module with maroon skirt, orange thruster blocks and two wings.",
+      "where": "Fleet · line-up + Fly"
+    },
+    "/images/colophon/model-showcase-space-shuttle-orbiter_webp": {
+      "title": "Space Shuttle orbiter",
+      "what": "One 37.2 m orbiter drawn once for the four sisters — Atlantis, Challenger, Discovery and Endeavour — white upper fuselage with its payload-bay doors, black-tile belly, double-delta wing with reinforced carbon edges, OMS pods and three main engines, lying on the runway.",
+      "where": "Fleet · line-up + Fly"
+    },
+    "/images/colophon/model-showcase-columbia_webp": {
+      "title": "Space Shuttle Columbia",
+      "what": "The first orbiter — the only one with black chines on the wing tops, and the instrument pod on its tail fin.",
+      "where": "Fleet · line-up + Fly"
+    },
+    "/images/colophon/model-showcase-enterprise_webp": {
+      "title": "Space Shuttle Enterprise",
+      "what": "The atmospheric test orbiter — charcoal simulated tiles of foam and paint and plain white fibreglass wing edges in place of the flown tiles and carbon.",
+      "where": "Fleet · line-up"
+    },
+    "/images/colophon/model-showcase-buran_webp": {
+      "title": "Buran",
+      "what": "The Soviet orbiter at 36.4 m — a 24 m double-delta wing and two OMS nozzles in the tail, its main engines left on the Energia core.",
+      "where": "Fleet · line-up"
+    },
+    "/images/colophon/model-showcase-buran-ok-gli_webp": {
+      "title": "Buran OK-GLI",
+      "what": "The atmospheric test vehicle with Buran’s shape and mass, in painted white and grey with no tiles — its jet engines in a nacelle on each side of the fin base.",
+      "where": "Fleet · line-up"
+    },
+    "/images/colophon/model-showcase-x37b_webp": {
+      "title": "X-37B",
+      "what": "The U.S. Space Force’s 8.92 m uncrewed spaceplane with its 4.55 m wingspan — black-tile underside and nose, canted tail, closed bay doors.",
+      "where": "Fleet · line-up + Fly"
+    },
+    "/images/colophon/model-showcase-progress-ms_webp": {
+      "title": "Progress 7K-TG / M / MS (3 variants)",
+      "what": "The Soyuz-derived cargo ship from 7.23 to 7.94 m — service module, refuelling section and cargo module, the 7K-TG without solar wings.",
+      "where": "Fleet · line-up"
+    },
+    "/images/colophon/model-showcase-cargo-dragon-2_webp": {
+      "title": "Cargo Dragon 2",
+      "what": "The windowless uncrewed Dragon 2 on its 8.1 m trunk — cover plates where the crew version has windows and SuperDraco bays.",
+      "where": "Fleet · line-up"
+    },
+    "/images/colophon/model-showcase-cargo-dragon-v1_webp": {
+      "title": "Dragon 1",
+      "what": "The original 6.1 m cargo Dragon — a squat capsule 3.7 m across with four Draco quads and a white nose cone, on a 2.3 m trunk with two solar wings.",
+      "where": "Fleet · line-up"
+    },
+    "/images/colophon/model-showcase-cygnus-enhanced_webp": {
+      "title": "Cygnus Standard / Enhanced (2 variants)",
+      "what": "Northrop Grumman’s freighter at 5.14 and 6.39 m — a bare-aluminium cargo module in pocketed panels over a gold-and-silver service module, with flat rectangular wings on the Standard and round UltraFlex arrays on the Enhanced.",
+      "where": "Fleet · line-up"
+    },
+    "/images/colophon/model-showcase-htv_webp": {
+      "title": "HTV (Kounotori)",
+      "what": "Japan’s 9.8 m station freighter — a white propulsion module, a silver avionics section, an open pallet bay and the white pressurised carrier with dark body-mounted cells.",
+      "where": "Fleet · line-up"
+    },
+    "/images/colophon/model-showcase-htv-x_webp": {
+      "title": "HTV-X",
+      "what": "Japan’s 8 m successor freighter — a gold-blanketed pressurised module, an open cargo-support deck, a silver service module and two long narrow arrays.",
+      "where": "Fleet · line-up"
+    },
+    "/images/colophon/model-showcase-atv_webp": {
+      "title": "ATV",
+      "what": "ESA’s 10.3 m Automated Transfer Vehicle — a gold aft cone with four engines under the quilted white cargo carrier and its docking ring, with four copper-edged wings in an X.",
+      "where": "Fleet · line-up"
+    },
+    "/images/colophon/model-showcase-tianzhou_webp": {
+      "title": "Tianzhou",
+      "what": "China’s 10.6 m cargo ship — a white propulsion drum with orange thruster blocks, a larger grey-white cargo module, the relay dish and two big wings.",
+      "where": "Fleet · line-up"
+    },
+    "/images/colophon/model-lineup-launchers_webp": {
+      "title": "Launcher line-up",
+      "what": "Every rocket with a model, from Starship to Mercury-Redstone, stood side by side at its real height beside a 1.75 m person.",
+      "where": "Fleet · line-up"
+    },
+    "/images/colophon/model-lineup-landmarks_webp": {
+      "title": "Landmarks at true height",
+      "what": "Sixteen landmarks and icons hand-drawn at their sourced heights — from the Eiffel Tower and the Statue of Liberty to Michelangelo’s David, a London Routemaster and a VW Beetle.",
+      "where": "Fleet · line-up"
+    },
+    "/images/colophon/model-lineup-spacecraft_webp": {
+      "title": "Capsule and spacecraft line-up",
+      "what": "Capsules, freighters and orbiters at true size — the orbiters lying on the runway, the capsules standing as on their rockets.",
+      "where": "Fleet · line-up"
+    },
+    "/images/colophon/model-lineup-cast_webp": {
+      "title": "Cartoon cast",
+      "what": "A flat-coloured cast at true size — man, woman, child, dog, cat, Terracotta warrior, giant panda, brown bear, giraffe and elephant — standing between the craft.",
+      "where": "Fleet · line-up"
+    },
+    "/images/colophon/model-showcase-parker-solar-probe_webp": {
+      "title": "Parker Solar Probe",
+      "what": "The 3 m Sun-grazer — a 2.3 m carbon-composite heat shield on struts over a gold-blanketed bus, with two small actively cooled solar arrays and a 0.6 m dish.",
+      "where": "Fleet · craft page + Fly"
+    },
+    "/images/colophon/model-showcase-solar-orbiter_webp": {
+      "title": "Solar Orbiter",
+      "what": "ESA’s 3.1 m Sun-watcher — a layered black heat shield with observing-port doors in front of a silver-blanketed body, six solar panels spanning 18 m, a 4.4 m instrument boom and a 1.5 m dish on the shaded rear.",
+      "where": "Fleet · craft page + Fly"
+    },
+    "/images/colophon/model-showcase-messenger_webp": {
+      "title": "MESSENGER",
+      "what": "The Mercury orbiter behind its 2.5 m ceramic-cloth sunshade, on a blanketed box bus with its propellant tanks showing, two rotatable solar arrays and a 3.6 m magnetometer boom.",
+      "where": "Fleet · craft page + Fly"
+    },
+    "/images/colophon/model-showcase-magellan_webp": {
+      "title": "Magellan",
+      "what": "The Venus radar mapper at 6.4 m — the Star 48B motor under a ten-sided bus, a gold-blanketed equipment module and a 3.7 m high-gain dish, with two square solar panels.",
+      "where": "Fleet · craft page + Fly"
+    },
+    "/images/colophon/model-showcase-akatsuki_webp": {
+      "title": "Akatsuki",
+      "what": "JAXA’s 1.45 m gold-blanketed box Venus orbiter with a camera deck on the Venus-facing side, a flat phased-array antenna, white thruster cups and two arrays of two stacked panels.",
+      "where": "Fleet · craft page + Fly"
+    },
+    "/images/colophon/model-showcase-dart_webp": {
+      "title": "DART",
+      "what": "The 2.6 m asteroid-impact spacecraft — two 8.5 × 2.4 m roll-out solar arrays, the NEXT-C ion engine, the DRACO camera, the LICIACube cubesat in its dispenser and a flat-plate antenna.",
+      "where": "Fleet · craft page + Fly"
+    },
+    "/images/colophon/model-showcase-lucy_webp": {
+      "title": "Lucy",
+      "what": "The Trojan-asteroid explorer, 16 m tip to tip — two circular solar arrays about 7 m across, a 2 m high-gain dish and an instrument platform with the terminal tracking cameras.",
+      "where": "Fleet · craft page + Fly"
+    },
+    "/images/colophon/model-showcase-psyche-spacecraft_webp": {
+      "title": "Psyche",
+      "what": "The metal-asteroid orbiter — a 7.3 m craft with two five-panel cruciform solar arrays (25 m deployed), four Hall thrusters in a 2 × 2 cluster and 2 m instrument booms.",
+      "where": "Fleet · craft page + Fly"
+    },
+    "/images/colophon/model-showcase-europa-clipper_webp": {
+      "title": "Europa Clipper",
+      "what": "The 5 m Jupiter-moon orbiter — a propulsion module and radiation vault under a 3.1 m dish, 30.5 m of solar arrays carrying the REASON radar dipoles, and an 8.5 m magnetometer boom.",
+      "where": "Fleet · craft page + Fly"
+    },
+    "/images/colophon/model-showcase-mars-express_webp": {
+      "title": "Mars Express",
+      "what": "ESA’s 1.8 m box bus with gold-blanketed corners and its instruments on the nadir face, two wings of four narrow panels and a 1.6 m high-gain dish.",
+      "where": "Fleet · craft page + Fly"
+    },
+    "/images/colophon/model-showcase-maven_webp": {
+      "title": "MAVEN",
+      "what": "NASA’s 3.47 m Mars-atmosphere orbiter — a 2.3 m cubic bus, a payload platform on its boom, two gull-winged arrays with magnetometers at their tips and a 2 m dish.",
+      "where": "Fleet · craft page + Fly"
+    },
+    "/images/colophon/model-showcase-mangalyaan_webp": {
+      "title": "Mangalyaan",
+      "what": "ISRO’s Mars Orbiter Mission — a 1.5 m gold-wrapped cube with its propellant-tank dome on top, a three-panel array on a boom and a 2.2 m reflector on the other side.",
+      "where": "Fleet · craft page + Fly"
+    },
+    "/images/colophon/model-showcase-hope_webp": {
+      "title": "Hope",
+      "what": "The UAE’s Emirates Mars Mission orbiter — a 2.9 m bus with its science deck on the front face, two wings of three panels and a 1.85 m dish on a trussed bracket.",
+      "where": "Fleet · craft page + Fly"
+    },
+    "/images/colophon/model-showcase-mariner-9_webp": {
+      "title": "Mariner 4, 9 and 10 (3 variants)",
+      "what": "NASA’s octagonal Mariner family — four panels with tip vanes on Mariner 4 and 9 (Mariner 9 under a foil-wrapped propulsion module); two panels, a sunshade and a 5.8 m magnetometer boom on Mariner 10.",
+      "where": "Fleet · craft page + Fly"
+    },
+    "/images/colophon/model-showcase-lro_webp": {
+      "title": "Lunar Reconnaissance Orbiter",
+      "what": "NASA’s 3.9 m Moon mapper — a gold-and-silver blanketed box bus with two LROC cameras, LOLA, Diviner and Mini-RF on the nadir face, a single 10.7 m² solar array on a boom and a steerable dish.",
+      "where": "Fleet · craft page + Fly"
+    },
+    "/images/colophon/model-showcase-skylab_webp": {
+      "title": "Skylab",
+      "what": "America’s first space station as repaired — the black-skirted Orbital Workshop with its single wing and gold parasol, the airlock and docking adapter, and the Apollo Telescope Mount swung out with its four-blade windmill of panels.",
+      "where": "Fleet · craft page + Fly"
+    },
+    "/images/colophon/model-probe-sputnik-1_webp": {
+      "title": "Sputnik 1",
+      "what": "The polished 58 cm sphere with its hemisphere seam, 36 bolts and four swept-back whip antennas of 2.4 and 2.9 m.",
+      "where": "Fly"
+    },
+    "/images/colophon/model-probe-nova-c_webp": {
+      "title": "Nova-C (IM-1 Odysseus)",
+      "what": "Intuitive Machines’ 4.3 m lunar lander — a 1.57 m hexagonal body, six legs, the methane engine below and three solar panels. Height and width from Wikipedia; the leg splay and deck are schematic.",
+      "where": "Fly"
+    },
+    "/images/colophon/model-showcase-chandrayaan1_webp": {
+      "title": "Chandrayaan-1",
+      "what": "ISRO’s first Moon orbiter — a box bus with white radiator patches and gold-ringed instrument apertures, a 0.7 m dish on a gold boom and one solar panel on a two-bar yoke.",
+      "where": "Fleet · craft page + Fly"
+    },
+    "/images/colophon/model-showcase-chandrayaan2_webp": {
+      "title": "Chandrayaan-2 orbiter",
+      "what": "The orbiter that carried Vikram — a bus with a gold drum rising from the top deck where the lander sat, white taped patches over its radiators and one two-panel solar wing.",
+      "where": "Fleet · craft page + Fly"
+    },
+    "/images/colophon/model-showcase-change1_webp": {
+      "title": "Chang’e 1 and 2 (2 variants)",
+      "what": "China’s lunar orbiters — an engine bell under the bus, silver inset panels, two white relay dishes, a 0.8 m steerable dish on an arm and two three-panel wings on gold yokes.",
+      "where": "Fleet · craft page + Fly"
+    },
+    "/images/colophon/model-showcase-clementine_webp": {
+      "title": "Clementine",
+      "what": "The prism-shaped lunar mapper — a sensor face with camera and lidar apertures, 12 attitude jets, a 1.07 m dish opening downward and two wings of two panels.",
+      "where": "Fleet · craft page + Fly"
+    },
+    "/images/colophon/model-showcase-kaguya_webp": {
+      "title": "Kaguya (SELENE)",
+      "what": "JAXA’s 4.8 m lunar orbiter — the relay and VLBI sub-satellites on its front face, a high-gain dish on a tripod and mast and a solar paddle of three blue panels on a gold truss.",
+      "where": "Fleet · craft page + Fly"
+    },
+    "/images/colophon/model-showcase-luna10_webp": {
+      "title": "Luna 10",
+      "what": "The Soviet 1.5 m orbiter — the braking-engine module in a white lattice skirt, cream propellant tanks and a polished pressurised instrument drum with four whip antennas and two mushroom sensors.",
+      "where": "Fleet · craft page + Fly"
+    },
+    "/images/colophon/model-showcase-lunar-prospector_webp": {
+      "title": "Lunar Prospector",
+      "what": "The 1.36 m drum covered in solar cells under a white nose cone, with three 2.5 m instrument booms.",
+      "where": "Fleet · craft page + Fly"
+    },
+    "/images/colophon/model-showcase-smart-1_webp": {
+      "title": "SMART-1",
+      "what": "ESA’s 1 m ion-drive orbiter — the PPS-1350 thruster on a gimbal arm, an instrument ring with its camera and spectrometers, a 0.3 m dish and two wings of three panels.",
+      "where": "Fleet · craft page + Fly"
+    },
+    "/images/colophon/model-showcase-lunar-orbiter-1_webp": {
+      "title": "Lunar Orbiter 1–5 (5 variants)",
+      "what": "NASA’s five camera orbiters — a bright thermal shell round the camera with its 80 mm and 610 mm lenses, four propellant tanks on truss legs, four solar panels and a 1 m dish on its boom.",
+      "where": "Fleet · craft page"
+    },
+    "/images/colophon/model-showcase-luna-9_webp": {
+      "title": "Luna 9 (true size)",
+      "what": "The 58 cm landed capsule — the sealed instrument hemisphere left standing among four flopped-open petals, with the TV camera head and four rod antennas on top.",
+      "where": "Fleet · craft page + Fly descent"
+    },
+    "/images/colophon/model-showcase-luna-16_webp": {
+      "title": "Luna 16 and 24 (2 variants)",
+      "what": "The sample-return lander — a gold-wrapped hull between two torus tanks with four pressure spheres on four legs, the drill rig, and the 2 m sphere-topped ascent stage on top.",
+      "where": "Fleet · craft page + Fly descent"
+    },
+    "/images/colophon/model-showcase-lunokhod-1_webp": {
+      "title": "Lunokhod 1 and 2 (2 variants)",
+      "what": "The Soviet rover — a round tub on eight wire-mesh wheels under an open dome lid, with the finned polonium-210 heat source at the back, the French corner reflector and four whip antennas.",
+      "where": "Fleet · craft page + Fly descent"
+    },
+    "/images/colophon/model-showcase-change-3_webp": {
+      "title": "Chang’e 3 and 4 (2 variants)",
+      "what": "The Chinese lander — a boxy gold body on four legs with the rover ramps, tilted solar wings and a camera mast carrying the steerable dish.",
+      "where": "Fleet · craft page + Fly descent"
+    },
+    "/images/colophon/model-showcase-change-5_webp": {
+      "title": "Chang’e 5 and 6 (2 variants)",
+      "what": "The sample-return stack — a gold octagonal ascender on the lander, with the drill tower, the folded sampling arm and the sample container beside it.",
+      "where": "Fleet · craft page + Fly descent"
+    },
+    "/images/colophon/model-showcase-vikram-cy3_webp": {
+      "title": "Vikram (Chandrayaan-2 and -3, 2 variants)",
+      "what": "ISRO’s lander in its Chandrayaan-3 configuration — four engines and solar panels on three sides and the top, with the ramp down and the Pragyan rover part-way along it.",
+      "where": "Fleet · craft page + Fly descent"
+    },
+    "/images/colophon/model-showcase-slim_webp": {
+      "title": "SLIM (true size)",
+      "what": "JAXA’s Moon Sniper — a 1.5 × 1.5 × 2 m prism in crumpled gold foil with a golden dome at the engine end, one strip of solar cells down a side and five round crush pads on struts.",
+      "where": "Fleet · craft page + Fly descent"
+    },
+    "/images/colophon/model-showcase-beresheet_webp": {
+      "title": "Beresheet (true size)",
+      "what": "SpaceIL’s lander, 2 m across and 1.5 m high — a black deck rimmed in gold over a silver tube-frame tub with four copper tanks, four long legs and tilted blue solar plates.",
+      "where": "Fleet · craft page + Fly descent"
+    },
+    "/images/colophon/model-showcase-blue-moon-mk1_webp": {
+      "title": "Blue Moon MK1 (true size)",
+      "what": "Blue Origin’s 8.05 m lander — a hull of gold and amber foil on a pale truss base carrying the BE-7, ladder-truss legs, two tall solar-cell strips and an open octagonal cage on top.",
+      "where": "Fleet · craft page + Fly descent"
+    },
+    "/images/colophon/model-showcase-pragyan_webp": {
+      "title": "Pragyan",
+      "what": "The six-wheeled ISRO rover that rolls down Vikram’s ramp.",
+      "where": "Fleet · craft page + Fly descent"
+    },
+    "/images/colophon/model-showcase-yutu_webp": {
+      "title": "Yutu and Yutu-2 (2 variants)",
+      "what": "The Chinese rover — a rocker-bogie on each side, a gold-wrapped warm box under a tilted solar panel, a camera mast, the arm folded under the nose and a steerable dish at the rear.",
+      "where": "Fleet · craft page"
+    },
+    "/images/colophon/model-showcase-viking-1_webp": {
+      "title": "Viking landers (3 variants)",
+      "what": "The tripod-legged NASA lander — a six-sided deck alternately 1.09 and 0.56 m wide, gold terminal-descent pods of 18 nozzles, the sampler arm and cameras on the long forward side.",
+      "where": "Fleet · craft page + Fly descent"
+    },
+    "/images/colophon/model-showcase-mars-3_webp": {
+      "title": "Mars 2, 3 and 6 landers (3 variants)",
+      "what": "The Soviet white sphere on four opened petals — an antenna crown of four rods, two stereo-camera ears, and the PrOP-M rover on skis tethered beside it.",
+      "where": "Fleet · craft page + Fly descent"
+    },
+    "/images/colophon/model-showcase-phoenix_webp": {
+      "title": "Phoenix and Mars Polar Lander (2 variants)",
+      "what": "The solar lander on its deck — TEGA’s two ovens, MECA’s wet-chemistry cells, the robotic arm with its scoop, the stereo camera on a lattice tower and the weather mast with its lidar.",
+      "where": "Fleet · craft page + Fly descent"
+    },
+    "/images/colophon/model-showcase-insight_webp": {
+      "title": "InSight (true size)",
+      "what": "The geophysics lander — the 1.8 m arm out over the ground, SEIS under its silver wind and thermal shield, and the HP3 mole deployed beside it.",
+      "where": "Fleet · craft page + Fly descent"
+    },
+    "/images/colophon/model-showcase-schiaparelli_webp": {
+      "title": "Schiaparelli (true size)",
+      "what": "ESA’s entry demonstrator on the ground — a flat dark honeycomb crush disc ringed by a silver-gold band, three propellant tanks on struts and the DREAMS platform with its gold UHF coil.",
+      "where": "Fleet · craft page + Fly descent"
+    },
+    "/images/colophon/model-showcase-beagle2_webp": {
+      "title": "Beagle 2 (true size)",
+      "what": "The clamshell lander opened — a gold lid dish ringed by four dark solar petals, the gold bowl base with the arm lifting out and the PAW drum of instruments.",
+      "where": "Fleet · craft page + Fly descent"
+    },
+    "/images/colophon/model-showcase-curiosity_webp": {
+      "title": "Curiosity (true size)",
+      "what": "The MSL rover — six wheels on a rocker-bogie, the mast with the ChemCam head and Mastcam pair, the finned MMRTG between two white heat exchangers and the stowed arm across the front.",
+      "where": "Fleet · craft page + Fly descent"
+    },
+    "/images/colophon/model-showcase-spirit_webp": {
+      "title": "Spirit and Opportunity (2 variants)",
+      "what": "The Mars Exploration Rover — a gold warm box under a flat blue-black solar deck with four wing panels, the Pancam mast with its camera bar, a round gold dish on a stalk and six small wheels.",
+      "where": "Fleet · craft page + Fly descent"
+    },
+    "/images/colophon/model-showcase-perseverance_webp": {
+      "title": "Perseverance",
+      "what": "Curiosity’s layout with straight-cleat wheels — the Mastcam-Z and SuperCam head, the large coring turret, the caching bay under the front and Ingenuity under the belly.",
+      "where": "Fleet · craft page + Fly descent"
+    },
+    "/images/colophon/model-showcase-zhurong_webp": {
+      "title": "Zhurong",
+      "what": "China’s rover — a wide silver deck with four butterfly solar wings, a tall mast with its camera box, two small dishes and ribbed wheels on tall legs.",
+      "where": "Fleet · craft page + Fly descent"
+    },
+    "/images/colophon/model-showcase-sojourner_webp": {
+      "title": "Sojourner",
+      "what": "The first Mars rover — aluminium wheels with stainless cleats on a rocker-bogie, a gold-brown warm box under a dark solar panel, the stereo camera pair and the APXS drum.",
+      "where": "Fleet · craft page"
+    },
+    "/images/colophon/model-showcase-exomars-rosalind-franklin_webp": {
+      "title": "ExoMars Rosalind Franklin",
+      "what": "ESA’s walking-chassis rover — a wheel on every leg, two wide solar wings, the gold PanCam bar on its mast and the drill box at the front.",
+      "where": "Fleet · craft page"
+    },
+    "/images/colophon/model-showcase-lrv-apollo_webp": {
+      "title": "Apollo Lunar Roving Vehicle",
+      "what": "The open aluminium frame on wire-mesh wheels with titanium chevrons under tan fenders — two tube seats, the T-handle and console, the umbrella dish and the tool pallet at the back.",
+      "where": "Fleet · craft page"
+    },
+    "/images/colophon/model-showcase-mro_webp": {
+      "title": "Mars Reconnaissance Orbiter",
+      "what": "NASA’s Mars mapper — two 5.35 × 2.53 m solar arrays, the 3 m high-gain dish, the 1.6 m HiRISE barrel and the 10 m SHARAD dipole. Dish, HiRISE and SHARAD sizes from NASA; the array size from Wikipedia; the bus is schematic.",
+      "where": "Fleet · craft page + Fly"
+    },
+    "/images/colophon/model-showcase-mariner-2_webp": {
+      "title": "Mariner 2",
+      "what": "NASA’s 3.66 m Venus flyby — the 1.04 m hexagonal bus, two solar panels (one with its solar-pressure extension, 5.05 m across), the dish on its arm and the omni antenna atop the pyramid mast. Sizes from NASA NSSDCA; the dish and mast are schematic.",
+      "where": "Fleet · craft page + Fly"
+    },
+    "/images/colophon/model-showcase-bepicolombo_webp": {
+      "title": "BepiColombo (true size)",
+      "what": "The stacked cruise configuration at 6.4 m — the Mercury Transfer Module with four ion thrusters and two black-and-blue wings of four panels, carrying the Mercury orbiter and Mio inside its sunshield cylinder.",
+      "where": "Fleet · craft page + Fly"
+    },
+    "/images/colophon/model-showcase-exomars-tgo_webp": {
+      "title": "ExoMars Trace Gas Orbiter",
+      "what": "ESA–Roscosmos orbiter — the engine bell and nadir hardware, NOMAD and ACS spectrometers on the anti-Earth face, two two-panel arrays and a 2.2 m dish on a boom.",
+      "where": "Fleet · craft page"
+    },
+    "/images/colophon/model-showcase-mars-odyssey_webp": {
+      "title": "Mars Odyssey",
+      "what": "NASA’s orbiter — folded blanket flaps on the corners, THEMIS and the cameras on the front, a 6 m lattice boom carrying the gamma-ray spectrometer, one three-panel array and a 1.3 m dish.",
+      "where": "Fleet · craft page"
+    },
+    "/images/colophon/model-showcase-mars2-orbiter_webp": {
+      "title": "Mars 2 and 3 orbiters (2 variants)",
+      "what": "The Soviet M-71 bus — a banded tank barrel with its spheres, a collar carrying the black aeroshell cone and the lander capsule on top, a 2.5 m shallow dish and two big rectangular solar panels.",
+      "where": "Fleet · craft page"
+    },
+    "/images/colophon/model-showcase-phobos-2_webp": {
+      "title": "Phobos 2",
+      "what": "The Soviet probe — four white propellant spheres round the engine, a toroidal instrument belt, a central core with equipment boxes and two horizontal solar panels on outriggers.",
+      "where": "Fleet · craft page"
+    },
+    "/images/colophon/model-showcase-tianwen-1_webp": {
+      "title": "Tianwen-1",
+      "what": "China’s Mars orbiter with the entry capsule on top — two three-panel arrays, a medium-gain dish of about 2.5 m and slender antenna rods.",
+      "where": "Fleet · craft page"
+    },
+    "/images/colophon/model-showcase-viking1-orbiter_webp": {
+      "title": "Viking orbiter",
+      "what": "The orbiter with the lander capsule under its white domed shell — an octagonal bus ring of eight bays, four solar panels on yokes, a 1.5 m gold dish and a scan platform with two cameras.",
+      "where": "Fleet · craft page"
+    },
+    "/images/colophon/model-showcase-hubble_webp": {
+      "title": "Hubble (true size)",
+      "what": "The observatory — a crinkled silver light shield with the open aperture door and the two rigid solar wings.",
+      "where": "Fleet · craft page"
+    },
+    "/images/colophon/model-showcase-jwst_webp": {
+      "title": "JWST (true size)",
+      "what": "Eighteen gold hexagonal mirror segments on their tripod over the five-layer sunshield.",
+      "where": "Fleet · craft page"
+    },
+    "/images/colophon/model-showcase-chandra_webp": {
+      "title": "Chandra (true size)",
+      "what": "The X-ray observatory — a long tapered tube with its two solar wings.",
+      "where": "Fleet · craft page"
+    },
+    "/images/colophon/model-showcase-spitzer_webp": {
+      "title": "Spitzer",
+      "what": "The infrared telescope — a single tilted solar panel against the cryostat tube.",
+      "where": "Fleet · craft page"
+    },
+    "/images/colophon/model-showcase-kepler_webp": {
+      "title": "Kepler",
+      "what": "The planet hunter — an amber-wrapped barrel with its fixed solar panel.",
+      "where": "Fleet · craft page"
+    },
+    "/images/colophon/model-showcase-tess_webp": {
+      "title": "TESS",
+      "what": "The transit survey craft — four hooded cameras on a compact bus.",
+      "where": "Fleet · craft page"
+    },
+    "/images/colophon/model-showcase-gaia_webp": {
+      "title": "Gaia (true size)",
+      "what": "ESA’s astrometry observatory — a 10 m sunshield skirt round the bus.",
+      "where": "Fleet · craft page"
+    },
+    "/images/colophon/model-showcase-euclid_webp": {
+      "title": "Euclid",
+      "what": "ESA’s dark-universe telescope — the baffle behind the solar-array shield.",
+      "where": "Fleet · craft page"
+    },
+    "/images/colophon/model-showcase-xmm-newton_webp": {
+      "title": "XMM-Newton (true size)",
+      "what": "ESA’s X-ray telescope — a long tube ending in the mirror-module face.",
+      "where": "Fleet · craft page"
+    },
+    "/images/colophon/model-showcase-compton-gro_webp": {
+      "title": "Compton Gamma Ray Observatory",
+      "what": "The gamma-ray observatory — a boxy instrument deck with its detectors.",
+      "where": "Fleet · craft page"
+    },
+    "/images/colophon/model-showcase-hitomi_webp": {
+      "title": "Hitomi",
+      "what": "JAXA’s X-ray satellite — the extended optical bench carrying the telescopes.",
+      "where": "Fleet · craft page"
+    },
+    "/images/colophon/model-showcase-spektr-rg_webp": {
+      "title": "Spektr-RG",
+      "what": "The Russian–German X-ray observatory — the seven-module eROSITA beside the ART-XC tube.",
+      "where": "Fleet · craft page"
+    },
+    "/images/colophon/model-showcase-voyager-1_webp": {
+      "title": "Voyager 1 and 2 (2 variants)",
+      "what": "The Grand Tour bus — a 3.7 m dish on a ten-sided body, an RTG boom of three generators end to end, the science boom with its scan platform and the 13 m magnetometer boom.",
+      "where": "Fleet · craft page + Fly"
+    },
+    "/images/colophon/model-showcase-pioneer-10_webp": {
+      "title": "Pioneer 10 and 11 (2 variants)",
+      "what": "The spin-stabilised pair — a 2.74 m dish over the equipment compartment, two 3 m RTG booms at 120 degrees and a 6.6 m magnetometer boom.",
+      "where": "Fleet · craft page + Fly"
+    },
+    "/images/colophon/model-showcase-juno_webp": {
+      "title": "Juno (true size)",
+      "what": "Jupiter’s polar orbiter — the titanium radiation vault under the bus, a 2.5 m dish on top and three solar wings at 120 degrees.",
+      "where": "Fleet · craft page + Fly"
+    },
+    "/images/colophon/model-showcase-juice_webp": {
+      "title": "JUICE (true size)",
+      "what": "ESA’s Jupiter icy-moons orbiter — a white tank skirt on the thrust cone, a fixed 2.5 m dish, two wings of three 3.9 × 2.2 m panels and a 10.6 m magnetometer boom.",
+      "where": "Fleet · craft page + Fly"
+    },
+    "/images/colophon/model-showcase-dawn_webp": {
+      "title": "Dawn (true size)",
+      "what": "The ion-drive orbiter of Vesta and Ceres — three ion thrusters, a 1.24 m dish and two wings of five panels, 19.7 m across.",
+      "where": "Fleet · craft page + Fly"
+    },
+    "/images/colophon/model-showcase-ulysses_webp": {
+      "title": "Ulysses (true size)",
+      "what": "The solar polar probe — a 1.65 m dish over the top, the finned GPHS-RTG on a stand at the side and an experiment boom.",
+      "where": "Fleet · craft page + Fly"
+    },
+    "/images/colophon/model-showcase-giotto_webp": {
+      "title": "Giotto (true size)",
+      "what": "The Halley flyby — a drum of dark solar-cell strips with gold bands, the Whipple dust shield on top and the tilted 1.47 m despun dish on its white cone mount.",
+      "where": "Fleet · craft page + Fly"
+    },
+    "/images/colophon/model-showcase-cassini_webp": {
+      "title": "Cassini–Huygens (true size)",
+      "what": "The Saturn orbiter — a gold decagon with its two main engines, the 4 m high-gain antenna, three RTGs on outriggers and the Huygens probe on its truss at the side.",
+      "where": "Fleet · craft page + Fly"
+    },
+    "/images/colophon/model-showcase-galileo_webp": {
+      "title": "Galileo (true size)",
+      "what": "The dual-spin Jupiter orbiter — a despun section with the scan platform, the spun drum with its louvres, the umbrella high-gain antenna, two RTG booms and a 10.9 m magnetometer boom.",
+      "where": "Fleet · craft page + Fly"
+    },
+    "/images/colophon/model-showcase-rosetta_webp": {
+      "title": "Rosetta (true size)",
+      "what": "A box bus under silver-grey foil with black and gold patches, a 2.2 m dish, two five-panel solar wings of 14 m and Philae on the back wall.",
+      "where": "Fleet · craft page + Fly"
+    },
+    "/images/colophon/model-showcase-hayabusa_webp": {
+      "title": "Hayabusa and Hayabusa2 (2 variants)",
+      "what": "The asteroid sample-return craft — the sampler horn on its bellows, four ion engines, the return capsule and three-panel wings; Hayabusa2 adds the carry-on impactor and the MINERVA-II hoppers.",
+      "where": "Fleet · craft page + Fly"
+    },
+    "/images/colophon/model-showcase-osiris-rex_webp": {
+      "title": "OSIRIS-REx (true size)",
+      "what": "The Bennu sample-return craft — a 1.2 m dish, a 1.9 × 2.4 m solar panel each side and the 3.35 m TAGSAM arm reaching out over the front.",
+      "where": "Fleet · craft page + Fly"
+    },
+    "/images/colophon/model-showcase-venera-7_webp": {
+      "title": "Venera 7 and 13 (2 variants)",
+      "what": "The Soviet Venus bus — a white engine drum with rows of holes, a tank bay with its spheres showing, six struts holding the ablator-shelled descent sphere, a mesh dish on a mast and two solar wings.",
+      "where": "Fleet · craft page + Fly"
+    },
+    "/images/colophon/model-showcase-vega-1_webp": {
+      "title": "Vega 1 and 2 (2 variants)",
+      "what": "The Venus-and-Halley bus — the Venera layout with the balloon canister on the descent sphere’s crown.",
+      "where": "Fleet · craft page + Fly"
+    },
+    "/images/colophon/model-pad-apollo-lut_webp": {
+      "title": "Launch pad: Apollo, LC-39",
+      "what": "The Saturn V pad: the 380 ft Launch Umbilical Tower with swing arms that fall away at liftoff, and the flame trench. Sizes from NASA figures on Wikipedia.",
+      "where": "Fly · launch pad"
+    },
+    "/images/colophon/model-pad-shuttle_webp": {
+      "title": "Launch pad: Space Shuttle, LC-39",
+      "what": "The Shuttle pad: the Fixed Service Structure (350 ft with its mast), the Rotating Service Structure swung back, the 290 ft water tower. Main heights from Wikipedia; the rest approximate.",
+      "where": "Fly · launch pad"
+    },
+    "/images/colophon/model-pad-sls_webp": {
+      "title": "Launch pad: SLS, LC-39B",
+      "what": "The Artemis pad: the Mobile Launcher tower beside the rocket (about 108 m; NASA gives 345 to 355 ft) and three lightning towers of nearly 600 ft.",
+      "where": "Fly · launch pad"
+    },
+    "/images/colophon/model-pad-soyuz_webp": {
+      "title": "Launch pad: Soyuz, Baikonur and Plesetsk",
+      "what": "The R-7 family pad: four support arms that fall outward at liftoff, two retracted service cabins, lightning masts, the flame pit. Sizes approximate.",
+      "where": "Fly · launch pad"
+    },
+    "/images/colophon/model-pad-proton_webp": {
+      "title": "Launch pad: Proton, Baikonur",
+      "what": "The rocket alone over its flame pit: the 60 m service tower is rolled back about 340 m before launch (RussianSpaceWeb, Proton launch complex). Lightning masts approximate.",
+      "where": "Fly · launch pad"
+    },
+    "/images/colophon/model-pad-f9-39a_webp": {
+      "title": "Launch pad: Falcon, LC-39A",
+      "what": "SpaceX at 39A: the transporter-erector that leans back 1.5 degrees before liftoff and 45 at it, the old tower extended above 350 ft. Figures from Wikipedia.",
+      "where": "Fly · launch pad"
+    },
+    "/images/colophon/model-pad-f9-cat_webp": {
+      "title": "Launch pad: Falcon, SLC-40 with crew tower",
+      "what": "SpaceX at SLC-40 since the crew access tower of 2023, with the transporter-erector tilting away at liftoff. The crew tower is about 300 ft (91 m; FAA).",
+      "where": "Fly · launch pad"
+    },
+    "/images/colophon/model-pad-f9-te_webp": {
+      "title": "Launch pad: Falcon, SLC-40 and SLC-4E",
+      "what": "A bare Falcon pad: the transporter-erector tilting away at liftoff, and lightning masts. Sizes approximate.",
+      "where": "Fly · launch pad"
+    },
+    "/images/colophon/model-pad-starbase_webp": {
+      "title": "Launch pad: Starship, Starbase",
+      "what": "The Starbase launch tower with its catching arms held open. Tower height approximate.",
+      "where": "Fly · launch pad"
+    },
+    "/images/colophon/model-pad-atlas-v_webp": {
+      "title": "Launch pad: Atlas V, SLC-41",
+      "what": "The ULA pad: mobile launch platform, umbilical tower and four lightning towers; the Vertical Integration Facility stands off the pad and is left out. Sizes approximate.",
+      "where": "Fly · launch pad"
+    },
+    "/images/colophon/model-pad-cape-classic_webp": {
+      "title": "Launch pad: Cape service-tower pad",
+      "what": "The Cape's Atlas, Delta, Titan and Saturn IB pads: an umbilical tower with swing arms beside the vehicle. Sizes approximate.",
+      "where": "Fly · launch pad"
+    },
+    "/images/colophon/model-pad-kourou-a5_webp": {
+      "title": "Launch pad: Ariane 4 and 5, Kourou",
+      "what": "The ELA-2 and ELA-3 pads: an umbilical mast beside the launcher and four tall lightning towers. Sizes approximate.",
+      "where": "Fly · launch pad"
+    },
+    "/images/colophon/model-pad-kourou-a6_webp": {
+      "title": "Launch pad: Ariane 6, Kourou",
+      "what": "The ELA-4 pad: the umbilical mast, two lightning towers and the mobile gantry rolled well back. Sizes approximate.",
+      "where": "Fly · launch pad"
+    },
+    "/images/colophon/model-pad-chinese-fst_webp": {
+      "title": "Launch pad: Chinese service tower",
+      "what": "The fixed service tower of Jiuquan, Xichang, Wenchang and Taiyuan, its working platforms folding away at liftoff. Jiuquan's crewed-launch tower is 89.5 m plus a 16 m lightning rod (CMSE) and is drawn for every Jiuquan launch; the others are approximate.",
+      "where": "Fly · launch pad"
+    },
+    "/images/colophon/model-pad-tanegashima_webp": {
+      "title": "Launch pad: Tanegashima",
+      "what": "The Yoshinobu pad: the H-II mobile launcher, 65.5 m high, and a 74.5 m lightning tower (JAXA).",
+      "where": "Fly · launch pad"
+    },
+    "/images/colophon/model-pad-sriharikota_webp": {
+      "title": "Launch pad: Sriharikota",
+      "what": "The ISRO pad: the umbilical tower beside the vehicle and the mobile service tower rolled well back. Sizes approximate.",
+      "where": "Fly · launch pad"
     },
     "/images/colophon/model-moon-apollo-lm_webp": {
       "title": "Apollo Lunar Module",
@@ -1669,16 +3159,6 @@
       "what": "Blue Origin’s tall lander — central tank on a four-leg frame.",
       "where": "Fly · cruise/approach"
     },
-    "/images/colophon/model-cruise-hayabusa1_webp": {
-      "title": "Hayabusa cruise",
-      "what": "JAXA sample-return bus — solar wings, a sampler horn, and ion engines.",
-      "where": "Fly · cruise/approach"
-    },
-    "/images/colophon/model-cruise-osiris-rex_webp": {
-      "title": "OSIRIS-REx cruise",
-      "what": "Boxy bus with V-angled solar wings and the extended TAGSAM sampler arm.",
-      "where": "Fly · cruise/approach"
-    },
     "/images/colophon/model-cruise-near-shoemaker_webp": {
       "title": "NEAR Shoemaker",
       "what": "Orbiter bus with four fixed solar panels in a cross and a fixed dish.",
@@ -1763,48 +3243,6 @@
       "title": "Iconic mission trajectories",
       "what": "Voyager, Pioneer, New Horizons, Cassini, Juno, Dawn flight paths.",
       "where": "Explore"
-    }
-  },
-  "capsules": {
-    "/images/colophon/model-capsule-mercury-capsule_webp": {
-      "title": "Mercury capsule",
-      "what": "Blunt ablative heat shield, shingled cone, and the recovery + antenna section (Freedom 7 … Faith 7).",
-      "where": "Earth-orbit re-entry"
-    },
-    "/images/colophon/model-capsule-gemini-capsule_webp": {
-      "title": "Gemini capsule",
-      "what": "Two-seat scaled-up Mercury with the rendezvous-radar nose and adapter module.",
-      "where": "Earth-orbit re-entry"
-    },
-    "/images/colophon/model-capsule-vostok-sphere_webp": {
-      "title": "Vostok",
-      "what": "The spherical Sharik descent module — antenna straps and equipment collar; the cosmonaut ejected and parachuted down separately.",
-      "where": "Earth-orbit re-entry"
-    },
-    "/images/colophon/model-capsule-voskhod-sphere_webp": {
-      "title": "Voskhod",
-      "what": "The same Sharik sphere, now carrying the solid-propellant soft-landing retro package on a strut truss — the crew rode it to the ground.",
-      "where": "Earth-orbit re-entry"
-    },
-    "/images/colophon/model-capsule-apollo-cm_webp": {
-      "title": "Apollo Command Module",
-      "what": "The classic steep blunt cone with the forward docking tunnel (Apollo 7/9, Skylab, ASTP).",
-      "where": "Earth-orbit re-entry"
-    },
-    "/images/colophon/model-capsule-soyuz-sa_webp": {
-      "title": "Soyuz descent module",
-      "what": "The \"headlamp\" bell — spherical base heat shield with a conical crew top.",
-      "where": "Earth-orbit re-entry"
-    },
-    "/images/colophon/model-capsule-dragon-capsule_webp": {
-      "title": "Crew Dragon",
-      "what": "Sleek conical body with the SuperDraco pods and the PICA-X heat shield (Inspiration4, Polaris Dawn).",
-      "where": "Earth-orbit re-entry"
-    },
-    "/images/colophon/model-capsule-shenzhou-reentry_webp": {
-      "title": "Shenzhou reentry module",
-      "what": "A broad Soyuz-lineage bell — its own lighter-silver hull with a grey equipment band (Shenzhou-1 onward).",
-      "where": "Earth-orbit re-entry"
     }
   },
   "canvas2d": {

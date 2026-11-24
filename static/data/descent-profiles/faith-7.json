@@ -18,7 +18,8 @@
     "entryCdA",
     "parachuteCdA",
     "terminalCdA",
-    "terminalHandoffAltM"
+    "terminalHandoffAltM",
+    "beats.airbag_deploy"
   ],
   "archetype": "EARTH_CAPSULE_REENTRY",
   "params": {
@@ -27,10 +28,17 @@
     "parachuteCdA": 4.4,
     "terminalCdA": 262
   },
+  "beats": [
+    {
+      "type": "airbag_deploy",
+      "after": "parachute_jettison",
+      "afterS": 6
+    }
+  ],
   "source_tier": "flagship",
   "provenance": [
     {
-      "l": "faith-7 — NASA/NSSDCA",
+      "l": "faith-7 \u2014 NASA/NSSDCA",
       "u": "https://nssdc.gsfc.nasa.gov/nmc/"
     },
     {

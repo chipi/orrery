@@ -39,8 +39,8 @@ Emits `build/` (the deploy unit).
 **When** — Inside preflight, before e2e, in every deploy workflow, before screenshots.
 **I/O** — Writes `build/`; reads `static/data/`, `messages/`, `project.inlang/`.
 **Gotchas** — Two post-build guards run *after* `vite build` and can fail a build that
-otherwise compiled clean (see prune + prerender sections). `VITE_BASE=/orrery/` switches on
-the GH Pages subdirectory mount (see `gh-pages-compat.mjs`).
+otherwise compiled clean (see prune + prerender sections). Every build mounts at the root; the
+GH Pages subdirectory-mount support (`VITE_BASE`) was removed in 0.9.11 (L17).
 **State** — healthy.
 
 ## `npm run preview` / `check` / `typecheck`
@@ -172,18 +172,15 @@ about 6 KB to `/fleet`. Preflight (`scripts/preflight-smart.mjs`) and the `ci` j
 `.github/workflows/ci.yml` set it; a bare local `npm run build` does not.
 **State** — healthy.
 
-## `scripts/gh-pages-compat.mjs`
+## `scripts/localized-roots.mjs`
 
-**Command** — imported by `vite.config.ts` + `svelte.config.js` (not run directly)
-**What** — GH Pages subdirectory-mount helpers, active only under `VITE_BASE=/orrery/`.
-`ghPagesUrlPatterns(base)` injects Paraglide `urlPatterns` so the locale matcher looks
-*after* the base prefix; `expandLocalizedRoots(routes)` inlines per-locale prerender entries
-(stable across svelte.config re-evaluation). Both return inert values when base is empty, so
-the VPS root-mount build is unaffected.
-**When** — Build time on the GH Pages path.
-**Gotchas** — `LOCALES` is a hand-maintained mirror of `project.inlang/settings.json`; the two
-must stay in sync. Delete this file + call sites when GH Pages is retired (`git grep gh-pages-compat`).
-**State** — current. Opportunity: locale list duplication is a known drift hazard.
+**Command** — imported by `svelte.config.js` (not run directly)
+**What** — `expandLocalizedRoots(routes)` inlines the per-locale prerender entries (stable across
+svelte.config re-evaluation, which Paraglide's `generateStaticLocalizedUrls` is not). Was
+`gh-pages-compat.mjs` until 0.9.11 L17 removed its base-path half (`ghPagesUrlPatterns`).
+**When** — Build time.
+**Gotchas** — reads `LOCALES` from `scripts/lib/locales.mjs`.
+**State** — current.
 
 ## `npm run release:rehearsal` → `scripts/release-rehearsal.ts`
 

@@ -145,6 +145,26 @@ export interface ThrottleStep {
   level: number;
 }
 
+/** One reusable part's way home on a flight (0.9.11 F2). Falcon Heavy's centre core is the
+ *  `booster` part (the core stage), its side boosters `strapOns`. */
+export interface PartRecovery {
+  part: 'booster' | 'strapOns';
+  outcome: 'landed' | 'caught' | 'expended';
+  site?: 'droneship' | 'landing-zone' | 'tower';
+  /** The site's own name, as written (LZ-1 and LZ-2 for two side boosters, a drone ship's name). */
+  siteNames?: string[];
+  /** Touchdown (or the catch), mission seconds. */
+  touchdownS?: number;
+  /** Entry-burn start (the first re-entry burn), mission seconds; absent = not known. */
+  entryBurnS?: number;
+  /** Entry-burn cutoff, mission seconds; absent = the scene's estimated burn length. */
+  entryBurnEndS?: number;
+  /** Landing-burn start; absent = `LANDING_BURN_DEFAULT_S` before touchdown. */
+  landingBurnS?: number;
+  /** How the time is known: this flight's timeline, "about N minutes", or a sibling flight's. */
+  timeClass?: 'sourced' | 'approx' | 'typical';
+}
+
 /** A launch vehicle's ascent profile. See RFC-034 §6 for the shipped JSON schema. */
 export interface LaunchProfile {
   id: string;
@@ -184,6 +204,21 @@ export interface LaunchProfile {
    * Overrides `payloadSeparationDelayS` for that mission.
    */
   payloadSeparationDelayByMissionS?: Record<string, number>;
+  /** A suborbital flight: the final stage cuts off when the perigee reaches `perigeeAltM`
+   *  (negative = below the surface), short of orbit (0.9.11 F3, Starship Flight 5). */
+  suborbitalCutoff?: { perigeeAltM: number };
+  /** One flight's own launch, merged over the vehicle's by `profileForMission` where /fly loads
+   *  the profile (its payload, target, a suborbital cutoff). */
+  byMission?: Record<
+    string,
+    Partial<Pick<LaunchProfile, 'payloadKg' | 'targetOrbitAltM' | 'suborbitalCutoff'>>
+  >;
+  /** How the vehicle's reusable parts come home on its usual flight (0.9.11 F2); a part not
+   *  listed is expended. Sources per flight: docs/wip/2026-11-22-booster-recovery-sourced.md. */
+  recovery?: PartRecovery[];
+  /** Per-mission recovery, keyed by mission id; replaces `recovery` for that flight (Hera's
+   *  booster and all three Europa Clipper cores were expended). */
+  recoveryByMission?: Record<string, PartRecovery[]>;
   /**
    * The payload stays in the vehicle's bay for the whole launch (the Space Shuttle: it is
    * deployed hours later in orbit). No spacecraft-separation beat, no injection beat and no
@@ -1350,6 +1385,21 @@ export function integrateAscent(profile: LaunchProfile, opts: AscentOptions = {}
     // direct ascent and a low-TWR stage that circularises over a long burn). A
     // real vehicle cuts the final stage off ON TARGET here (SECO), keeping a
     // propellant margin rather than burning to depletion.
+    // A suborbital flight (Starship Flight 5: -15 x 212 km): the final stage cuts off when the
+    // trajectory's perigee reaches the target, below a stable orbit; there is no ORBIT beat.
+    const sub = profile.suborbitalCutoff;
+    if (
+      sub &&
+      secoT < 0 &&
+      stageIndex === profile.stages.length - 1 &&
+      alt >= KARMAN_LINE_M &&
+      perigeeAltM >= sub.perigeeAltM
+    ) {
+      pushEvent('seco', `${profile.stages[stageIndex].name} — suborbital`);
+      stageIndex = -1;
+      secoT = t;
+    }
+
     if (!orbitSeen && alt >= KARMAN_LINE_M && perigeeAltM >= PERIGEE_TARGET_M) {
       pushEvent('orbit');
       orbitSeen = true;
@@ -1618,4 +1668,48 @@ export function payloadSeparationDelayFor(
     (missionId ? profile.payloadSeparationDelayByMissionS?.[missionId] : undefined) ??
     profile.payloadSeparationDelayS
   );
+}
+
+/** The profile this mission flies: the vehicle's, with the mission's own launch merged over it
+ *  (`byMission`). Same object when the mission has none. */
+export function profileForMission(
+  profile: LaunchProfile,
+  missionId: string | undefined,
+): LaunchProfile {
+  const own = missionId ? profile.byMission?.[missionId] : undefined;
+  return own ? { ...profile, ...own } : profile;
+}
+
+/** Seconds of landing burn before touchdown where a flight's start is not published (0.9.11 F2:
+ *  Psyche's side boosters burned 17 s, Inspiration4's booster 27 s). */
+export const LANDING_BURN_DEFAULT_S = 25;
+/** The landing inset stays open this long after touchdown. */
+export const LANDING_HOLD_S = 4;
+
+/** When the flight's last landing inset closes (0 without landings): the launch act runs at
+ *  least this long, so a booster that lands after the injection beat is still seen. */
+export function landingsEndS(landings: { touchdownS: number }[]): number {
+  return landings.length ? Math.max(...landings.map((l) => l.touchdownS)) + LANDING_HOLD_S : 0;
+}
+
+/** How a recovered part comes home on this flight, or that it is expended (0.9.11 F2). */
+export function recoveryFor(
+  profile: Pick<LaunchProfile, 'recovery' | 'recoveryByMission'>,
+  missionId: string | undefined,
+): PartRecovery[] {
+  return (missionId ? profile.recoveryByMission?.[missionId] : undefined) ?? profile.recovery ?? [];
+}
+
+/** The landed or caught parts of a flight, with the landing-burn start filled in. */
+export function landingsFor(
+  profile: Pick<LaunchProfile, 'recovery' | 'recoveryByMission'>,
+  missionId: string | undefined,
+): (PartRecovery & { touchdownS: number; landingBurnS: number })[] {
+  return recoveryFor(profile, missionId)
+    .filter((r) => r.outcome !== 'expended' && r.touchdownS != null)
+    .map((r) => ({
+      ...r,
+      touchdownS: r.touchdownS!,
+      landingBurnS: r.landingBurnS ?? r.touchdownS! - LANDING_BURN_DEFAULT_S,
+    }));
 }

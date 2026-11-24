@@ -145,12 +145,13 @@ export function buildCislunarReactiveOverlays(
       (craftModel.userData.dispose as (() => void) | undefined)?.();
       craftModel = null;
     }
+    // The mission's central model (fly-craft.ts) when it has one, else the older builders.
     const shown = flyCraft(missionId);
     const built =
+      (shown ? fitCraft(shown, 2) : null) ??
       buildLanderCruiseCraft(missionId) ??
-      buildInterplanetarySpacecraft(missionId) ??
-      (shown ? fitCraft(shown, 2) : null);
-    if (!built && flyCraftSource(missionId)) {
+      buildInterplanetarySpacecraft(missionId);
+    if (!shown && flyCraftSource(missionId)) {
       void preloadFlyCraft(missionId).then((ok) => {
         if (ok && craftMissionId === missionId) setCislunarSpacecraftModel(missionId);
       });

@@ -148,11 +148,13 @@ export class SeparationBurst extends THREE.Object3D {
     this.flash.scale.set(flashScale, flashScale, 1);
     (this.flash.material as THREE.SpriteMaterial).opacity = (1 - fp) ** 0.6;
 
-    // Shockwave ring: expands past the flash, decelerating, fading by ~55%.
+    // Shockwave ring: expands past the flash, decelerating, fading by ~55%. Growing to 3.8x the
+    // spread at 0.9 opacity, it was as large as the stage in the close separation shots, a hoop
+    // around the rocket (operator 2026-11-23): now 2.2x, and fainter.
     const rp = Math.min(1, progress / 0.55);
-    const ringScale = this.spread * (0.6 + Math.sqrt(rp) * 3.2);
+    const ringScale = this.spread * (0.6 + Math.sqrt(rp) * 1.6);
     this.ring.scale.set(ringScale, ringScale, 1);
-    (this.ring.material as THREE.SpriteMaterial).opacity = (1 - rp) ** 0.8 * 0.9;
+    (this.ring.material as THREE.SpriteMaterial).opacity = (1 - rp) ** 0.8 * 0.5;
 
     // Particles: expand radially, decelerating (sqrt), lingering as smoke — a
     // slower fade than the flash so a wisp hangs at the sep plane.

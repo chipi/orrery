@@ -887,7 +887,8 @@
     "L39 glossary round (2026-11-13)": "Caption, text and glossary agree per language. es Orion Nebula Nebulosa de Orión (grammar). ja Omega Centauri ω星団 (ja Wikipedia title, lowercase omega; the old Bayer-style ケンタウルス座オメガ星 named a star). ja Southern Crab 南のかに星雲 (the ja Wikipedia article Hen2-104 uses it; Hen2-104 is the designation and stays beside it in the text; hiragana かに as in かに星雲). ar Hidden Galaxy المجرة المخفية: the glossary holds the name the gallery and the text show, the designation IC 342 stays on the entity page. Cartwheel: it Galassia Ruota di Carro (it Wikipedia lead), nl Karrenwielstelsel (nl Wikipedia title), pt-BR Galáxia Cartwheel (pt Wikipedia title), fr Galaxie de la Roue de chariot, es Galaxia Rueda de Carro (es Wikipedia lead says galaxia Rueda de Carro, without de la), ru Галактика Колесо телеги (noun in front like Галактика Водоворот; running text may use the short Колесо телеги after the first mention). ru Horsehead Туманность Конская Голова (the texts write it so). Whirlpool it Galassia Vortice. Cassiopeia A: hi कैसियोपिया A, sr-Cyrl Касиопеја A (Latin letter A, as the catalogue designation), es Casiopea A, it Cassiopea A (the constellation forms of each language; de, nl, pt-BR, fr keep Cassiopeia A as the English-equal blank). Rho Ophiuchi Cloud: de, fr, es, it Wikipedia titles; ar سحابة رو أوفيتشي (ar Wikipedia label); ko, nl the captions' forms (no ko or nl Wikipedia article); hi, sr-Cyrl, pt-BR set from the language's own constellation word, not attested on a native page. hi nebula is नीहारिका (126 uses against 3 निहारिका, which are fixed; the Helix is हेलिक्स नीहारिका as the hi Wikipedia writes it); hi galaxy: an individual galaxy takes गैलेक्सी as a name part (आकाशगंगा alone is the Milky Way), the class words (बौनी आकाशगंगा, आकाशगंगा क्लस्टर) keep आकाशगंगा. zh-CN Andromeda 仙女座星系 in the UI too. Helix Nebula: captions follow the glossary in ru, ja, ko, hi, ar, sr-Cyrl, de, es, it, pt-BR. Pillars of Creation (new): the forms the captions and the lede already used, language Wikipedia titles (fr lower-case création; nl der Schepping from the lede, the nl Wikipedia writes Pilaren der Creatie).",
     "L39 round 2 (2026-11-13)": "ko Ophiuchus 뱀주인자리 (한국천문학회 천문학용어집 p. 254, quoted in the ko Wikipedia article, whose own title is the alternative 땅꾼자리); the other ko texts already wrote 뱀주인자리. hi nebula: नीहारिका everywhere, also in the named nebulae (Orion, Lagoon, Cone, Eskimo, Veil, Monkey Head): the hi Wikipedia article on nebulae is titled नीहारिका and calls the Orion Nebula ओरायन नीहारिका; नेबुला stays only in the wrong-form detectors. fr Cassiopeia A is Cassiopée A (fr Wikipedia title); de, nl, pt-BR keep Cassiopeia A as their Wikipedia titles do. Latin-script constellation names left in English in the star and deep-sky pages follow the constellation forms of this glossary (es Casiopea, pt-BR Ursa Maior, Touro, Cocheiro…, fr Persée, Cocher…, it Perseo, nl de Stier, de Fuhrmann…). Not changed, on purpose: compounds that the language's own Wikipedia writes with the Latin name (de Virgo-Galaxienhaufen, Sagittarius-Zwerggalaxie, Leo-Triplett), Bayer designations of stars in Latin-script locales (Alpha Ophiuchi, Alpha Centauri: designations stay as in English, name-drift-scan), vehicle homonyms (LM Aquarius, Titan, Amazon Leo, Antares).",
     "S5 photos (2026-11-19)": "Ophiuchus Cluster: each language's own 'Centaurus Cluster' form with the glossary's Ophiuchus form, as its Ophiuchus Supercluster entry writes it (de Ophiuchus-, fr d'Ophiuchus, es/it Ofiuco, nl Slangendrager-, pt-BR Serpentário, ru Змееносца, sr Змијоноше, ja へびつかい座, ko 뱀주인자리, zh 蛇夫座, hi सर्पधारी, ar الحواء).",
-    "deep-sky gaps (2026-11-13, L38 / L39)": "Terms bound to the forms the deep-sky texts already used where they are a native term, else the language Wikipedia title (wikidata-labels.mjs, 2026-11-13): millisecond pulsar (ru Миллисекундный пульсар, ja ミリ秒パルサー, zh 毫秒脉冲星, ko 밀리초 펄서 as in the pulsar binding, fr Pulsar milliseconde, it Pulsar millisecondo, pt Pulsar de milissegundo, nl Millisecondepulsar), anemic spiral (ru Анемичная галактика, ja 貧血銀河, ko 빈혈 은하, fr/es/it/pt Galaxie anémique and its equivalents), flocculent spiral (ru Флоккулентная спиральная галактика, ja 羊毛状渦巻銀河, zh 絮結螺旋星系, ko 양털 나선 은하, ar مجرة حلزونية صوفية, fr Galaxie spirale cotonneuse, es Galaxia espiral floculenta, it Galassia a spirale flocculenta, pt Galáxia espiral floculante/floculenta), metallicity (ru Металличность, ja 金属量, zh 金屬量, ko 금속함량, hi धातुता, sr Металичност, de Metallizität, fr Métallicité, es Metalicidad, it Metallicità, pt Metalicidade; ar الفلزية follows the root of the site's metal-poor form, the Arabic Wikipedia title is معدنية; nl metalliciteit is the usual Dutch astronomy spelling, nl Wikipedia has no article), OB association (zh OB星协, fr, es, it Wikipedia titles; ru OB-ассоциация, ja, ko 성협, hi, ar, sr, de, nl, pt written as the Latin letters OB plus the language's word for association, not attested on a native page). Not in Wikipedia and set by the translators from the neighbouring terms: core-collapsed cluster (all 13), galactic wind (all 13; the site's galaxy-wind texts), hi/ar/sr forms of the others. Names: caption forms (Hidden Galaxy, Mystic Mountain, euclid-ic342 and hst-mystic-mountain in deep-sky.json) and the forms the translators used in the deep-sky texts (Cooling Tower, Little Beehive, Hourglass region, Great Rift, Small Sagittarius Star Cloud, Witch's Broom, Pickering's Triangle, Biela's Comet) except Great Rift ru Большой Провал, zh 银河大裂缝, fr Grand Rift, nl Grote Rift (Wikipedia titles). ar Hidden Galaxy is the nickname المجرة المخفية (gallery caption and text; the Arabic Wikipedia label is the bare designation IC 342, which the entity page already shows as its designation), see the L39 glossary round. es Scutum is Escudo (as pt-BR). L39: ru Галактики Антенны is the ru Wikipedia title (the glossary had the Latin Antennae); pt-BR Nebulosa Olho de Gato is the pt Wikipedia title."
+    "deep-sky gaps (2026-11-13, L38 / L39)": "Terms bound to the forms the deep-sky texts already used where they are a native term, else the language Wikipedia title (wikidata-labels.mjs, 2026-11-13): millisecond pulsar (ru Миллисекундный пульсар, ja ミリ秒パルサー, zh 毫秒脉冲星, ko 밀리초 펄서 as in the pulsar binding, fr Pulsar milliseconde, it Pulsar millisecondo, pt Pulsar de milissegundo, nl Millisecondepulsar), anemic spiral (ru Анемичная галактика, ja 貧血銀河, ko 빈혈 은하, fr/es/it/pt Galaxie anémique and its equivalents), flocculent spiral (ru Флоккулентная спиральная галактика, ja 羊毛状渦巻銀河, zh 絮結螺旋星系, ko 양털 나선 은하, ar مجرة حلزونية صوفية, fr Galaxie spirale cotonneuse, es Galaxia espiral floculenta, it Galassia a spirale flocculenta, pt Galáxia espiral floculante/floculenta), metallicity (ru Металличность, ja 金属量, zh 金屬量, ko 금속함량, hi धातुता, sr Металичност, de Metallizität, fr Métallicité, es Metalicidad, it Metallicità, pt Metalicidade; ar الفلزية follows the root of the site's metal-poor form, the Arabic Wikipedia title is معدنية; nl metalliciteit is the usual Dutch astronomy spelling, nl Wikipedia has no article), OB association (zh OB星协, fr, es, it Wikipedia titles; ru OB-ассоциация, ja, ko 성협, hi, ar, sr, de, nl, pt written as the Latin letters OB plus the language's word for association, not attested on a native page). Not in Wikipedia and set by the translators from the neighbouring terms: core-collapsed cluster (all 13), galactic wind (all 13; the site's galaxy-wind texts), hi/ar/sr forms of the others. Names: caption forms (Hidden Galaxy, Mystic Mountain, euclid-ic342 and hst-mystic-mountain in deep-sky.json) and the forms the translators used in the deep-sky texts (Cooling Tower, Little Beehive, Hourglass region, Great Rift, Small Sagittarius Star Cloud, Witch's Broom, Pickering's Triangle, Biela's Comet) except Great Rift ru Большой Провал, zh 银河大裂缝, fr Grand Rift, nl Grote Rift (Wikipedia titles). ar Hidden Galaxy is the nickname المجرة المخفية (gallery caption and text; the Arabic Wikipedia label is the bare designation IC 342, which the entity page already shows as its designation), see the L39 glossary round. es Scutum is Escudo (as pt-BR). L39: ru Галактики Антенны is the ru Wikipedia title (the glossary had the Latin Antennae); pt-BR Nebulosa Olho de Gato is the pt Wikipedia title.",
+    "main-sequence turn-off (2026-11-22, 0.9.11 C5)": "ru: ru.wikipedia \"Точка поворота главной последовательности\". ja: ja.wikipedia 主系列星 (\"…主系列から離れる場所を転向点…と呼ぶ\"). zh-CN: zh.wikipedia 主序轉折點. ko: ko.wikipedia 주계열성 (\"이 점을 전환점이라고 한다\"); 전향점 (the H–R article) accepted, not attested. hi: none found (CSTT not reachable); the H–R article's calque. Rechecked 2026-11-23 (0.9.11 C5b, closed): the Department of Space / CSTT Space Science Glossary (PRL, isro.gov.in \"Space Science Glossary.pdf\", 372 pp.) lists \"main sequence\" (मुख्य अनुक्रम) but no turn-off; hi.wikipedia has no article and its main-sequence and cluster articles only say the star \"मुख्य अनुक्रम को छोड़ देता है\". No standard Hindi term exists to source; मोड़-बिंदु stays. ar: none found; the H–R article's form, نقطة الانحراف accepted (a search summary only). Rechecked 2026-11-23 (0.9.11 C5b, closed): ar.wikipedia has no article and its open-cluster, globular-cluster, H–R, main-sequence and stellar-evolution articles never name it; the only hit, LibreTexts' Arabic OpenStax 22.3 (\"دوران التسلسل الرئيسي\"), is a machine translation, not a source. نقطة الانفصال stays. sr-Cyrl: no published source found; confirmed by the operator, a Serbian speaker (2026-11-22). de: Lehrerfortbildung BW and Uni Bonn / AIP course texts (\"Abknickpunkt (turnoff point)\"). fr: fr.wikipedia \"Point de sortie de la séquence principale\" (FranceTerme not checked). es: es.wikipedia \"Punto de separación de la secuencia principal\". it: it.wikipedia \"Punto di turn-off\". nl: ESO education PDF edu_0054 (\"Opdracht 14: Afbuigpunt\"). pt-BR: UFRGS / USP theses write \"turn-off\"; Observatório Nacional MC42 \"ponto de saída da Sequência Principal (turn-off point)\" (search summary only)."
   },
   "body": {
     "Earth": {
@@ -4295,7 +4296,7 @@
       "ru": "Фрэнсис Скоби",
       "ja": "ディック・スコビー",
       "zh-CN": "迪克·斯科比",
-      "ko": "딕 스코비",
+      "ko": "프랜시스 스코비",
       "hi": "फ्रांसिस स्कोबी",
       "ar": "فرانسيس سكوبي",
       "sr-Cyrl": "Френсис Скоби",
@@ -18794,7 +18795,8 @@
       "es": "cúmulo globular",
       "it": "ammasso globulare",
       "nl": "bolvormige sterrenhoop",
-      "pt-BR": "aglomerado globular"
+      "pt-BR": "aglomerado globular",
+      "_read_more": "observation/star-clusters"
     },
     "open cluster": {
       "_sense": "a loose group of young stars born together, bound only weakly",
@@ -18807,8 +18809,17 @@
         "ja": ["散開星団"],
         "zh-CN": ["疏散星团"],
         "ko": ["산개 ?성단"],
-        "hi": ["खुला[ -]?तारागुच्छ", "खुल\\p{L}* ?(?:तारा[- ]?)?(?:गुच्छ|समूह|क्लस्टर)", "विवृत"],
-        "ar": ["عنقود (?:ال)?مفتوح", "عناقيد مفتوحة"],
+        "hi": [
+          "खुला[ -]?तारागुच्छ",
+          "खुल[\\p{L}\\p{M}]* ?(?:तारा[- ]?)?(?:गुच्छ|समूह|क्लस्टर)",
+          "विवृत"
+        ],
+        "ar": [
+          "عنقود (?:ال)?مفتوح",
+          "عناقيد مفتوحة",
+          "(?:ال)?عنقود (?:ال)?مفتوح",
+          "عناقيد (?:ال)?مفتوح\\p{L}*"
+        ],
         "sr-Cyrl": ["расеја\\p{L}* јато", "расејан\\p{L}* (?:звездан\\p{L}* )?јат\\p{L}*"],
         "de": ["offen\\p{L}* Sternhauf\\p{L}*", "offen\\p{L}* Sternhaufen", "offen\\p{L}* Haufen"],
         "fr": ["amas ouve\\p{L}*"],
@@ -18844,7 +18855,8 @@
       "es": "cúmulo abierto",
       "it": "ammasso aperto",
       "nl": "open sterrenhoop",
-      "pt-BR": "aglomerado aberto"
+      "pt-BR": "aglomerado aberto",
+      "_read_more": "observation/star-clusters"
     },
     "planetary nebula": {
       "_sense": "the glowing shell of gas shed by a dying Sun-like star",
@@ -21995,7 +22007,8 @@
       "es": "cúmulo estelar",
       "it": "ammasso stellare",
       "nl": "sterrenhoop",
-      "pt-BR": "aglomerado estelar"
+      "pt-BR": "aglomerado estelar",
+      "_read_more": "observation/star-clusters"
     },
     "grand-design spiral": {
       "_sense": "a spiral galaxy with two long, well-defined arms running all the way round (a pattern, not a size)",
@@ -25753,7 +25766,7 @@
     },
     "main sequence": {
       "_sense": "the long stage when a star fuses hydrogen into helium in its core, a band on a brightness-colour diagram",
-      "_en": "\\bmain[- ]sequence\\b",
+      "_en": "\\bmain[- ]sequence\\b(?![- ]turn-?off)",
       "_match": {
         "ru": ["главн\\p{L}* последовательност\\p{L}*"],
         "ja": ["主系列", "メインシーケンス"],
@@ -26187,6 +26200,57 @@
       "it": "metallicità",
       "nl": "metalliciteit",
       "pt-BR": "metalicidade"
+    },
+    "main-sequence turn-off": {
+      "_sense": "the point on a star cluster's colour-brightness diagram where its main sequence bends away towards the giants; it gives the cluster's age",
+      "_en": "\\b(?:main[- ]sequence )?turn-?offs?\\b",
+      "_read_more": "observation/star-clusters",
+      "_match": {
+        "ru": ["точк\\p{L}*\\s+поворот\\p{L}*"],
+        "ja": ["転向点", "ターンオフ"],
+        "zh-CN": ["转折点", "转向点", "拐点"],
+        "ko": ["전환\\s?점", "전향\\s?점"],
+        "hi": [
+          "मो[ड\\u095C]\\u093C?[\\s\\-\\u2010]*बि(?:ं|न्)दु[\\p{L}\\p{M}]*",
+          "टर्न-?ऑ[फफ़]\\u093C?"
+        ],
+        "ar": ["نقط[ةت]\\s+(?:ال)?انفصال", "نقط[ةت]\\s+(?:ال)?انحراف"],
+        "sr-Cyrl": ["тачк\\p{L}*\\s+скретањ\\p{L}*"],
+        "de": ["[Aa]bknickpunkt\\p{L}*", "Turn-?off"],
+        "fr": ["points?\\s+de\\s+sortie", "turn-?off"],
+        "es": ["puntos?\\s+de\\s+separaci[oó]n", "turn-?off"],
+        "it": ["turn-?off"],
+        "nl": ["afbuigpunt\\p{L}*", "turn-?off"],
+        "pt-BR": ["turn-?off", "pontos?\\s+de\\s+sa[ií]da"]
+      },
+      "_confidence": {
+        "ru": "high",
+        "ja": "medium",
+        "zh-CN": "medium",
+        "ko": "medium",
+        "hi": "low",
+        "ar": "low",
+        "sr-Cyrl": "high",
+        "de": "high",
+        "fr": "medium",
+        "es": "medium",
+        "it": "high",
+        "nl": "medium",
+        "pt-BR": "low"
+      },
+      "ru": "точка поворота",
+      "ja": "転向点",
+      "zh-CN": "转折点",
+      "ko": "전환점",
+      "hi": "मोड़-बिंदु",
+      "ar": "نقطة الانفصال",
+      "sr-Cyrl": "тачка скретања",
+      "de": "Abknickpunkt",
+      "fr": "point de sortie",
+      "es": "punto de separación",
+      "it": "punto di turn-off",
+      "nl": "afbuigpunt",
+      "pt-BR": "turn-off"
     }
   }
 }

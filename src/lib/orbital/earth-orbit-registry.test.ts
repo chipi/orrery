@@ -41,6 +41,13 @@ describe('earth-orbit-registry pure functions', () => {
     };
     expect(coastAltitudeKm(c)).toBe(250);
   });
+
+  it('a suborbital arc peaks at its apogee (Flight 5: -15 x 212 km)', () => {
+    const f5 = getEarthOrbitCoast('starship-flight-5')!;
+    expect(f5.suborbital).toBe(true);
+    expect(coastAltitudeKm(f5)).toBe(212);
+    expect(coastAltitudeKm(getEarthOrbitCoast('freedom-7')!)).toBe(187);
+  });
 });
 
 // Every mission the coast registry knows, resolved for the join checks below.

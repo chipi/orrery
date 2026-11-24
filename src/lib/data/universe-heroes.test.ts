@@ -116,12 +116,23 @@ describe('getPageHero (entity pages)', () => {
 });
 
 describe('getNamedStarGallery', () => {
-  it('seven photographed stars have a second real image (C2, 2026-11-19); the others none', async () => {
-    for (const id of ['altair', 'antares', 'betelgeuse', 'fomalhaut', 'rigel', 'sirius', 'proxima-centauri'])
+  it('the ten photographed stars have a second real image (C2 2026-11-19, L41 2026-11-22); the others none', async () => {
+    for (const id of [
+      'altair',
+      'antares',
+      'barnards-star',
+      'betelgeuse',
+      'fomalhaut',
+      'proxima-centauri',
+      'rigel',
+      'rigil-kentaurus',
+      'sirius',
+      'vega',
+    ])
       expect(await getNamedStarGallery(id)).toEqual([
         { src: `/images/stars/${id}/02.webp`, kind: 'real' },
       ]);
-    expect(await getNamedStarGallery('vega')).toEqual([]);
+    expect(await getNamedStarGallery('polaris')).toEqual([]);
     expect(await getNamedStarGallery('no-such-star')).toEqual([]);
   });
 });

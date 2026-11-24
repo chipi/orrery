@@ -76,9 +76,10 @@ test.describe('i18n body-text translations actually render (desktop-only)', () =
       // the headline isn't repeated in the nav, so we don't have to
       // worry about the nav-link false-positive that bit the v0.6.0
       // specs.
-      await expect(page.getByText(expected, { exact: false }).first()).toBeVisible({
-        timeout: 10_000,
-      });
+      // The phone bottom sheet carries the same title (hidden on desktop) earlier in the DOM.
+      await expect(
+        page.getByText(expected, { exact: false }).filter({ visible: true }).first(),
+      ).toBeVisible({ timeout: 10_000 });
     });
   }
 });

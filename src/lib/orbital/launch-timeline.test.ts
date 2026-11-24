@@ -4,6 +4,7 @@ import { resolve } from 'node:path';
 import {
   integrateAscent,
   payloadSeparationDelayFor,
+  profileForMission,
   type LaunchProfile,
   type AscentEvent,
 } from '$lib/physics/ascent/ascent-physics';
@@ -228,11 +229,14 @@ const TIMELINES: Record<string, Row[]> = {
     { event: 'stage 3 cutoff', type: 'staging', nth: 2, real: 571, tol: 10 },
     // ILS Proton Mission Planner's Guide Rev 7, Table 2.3.1-1: PLF jettison 348.2 (backlog F3).
     { event: 'fairing jettison', type: 'fairing_jettison', real: 348.2, tol: 10 },
-    // Same guide, Figure 2.3.1-1: Briz-M first burn from T+680 (the stage's ignitionS, after the
-    // coast from stage 3 separation) to T+1129. CALIBRATED: the burn length comes from Briz-M
-    // thrust x1.206 (23.7 kN against the published 19.62), because the guide's standard GTO flight
-    // (payload and trajectory unpublished) is not the ExoMars flight the stage times above pin.
-    { event: 'Briz-M first-burn cutoff (calibrated)', type: 'seco', real: 1129, tol: 30 },
+    // ExoMars (same spaceflight101 timeline): Briz-M first ignition T+0:11:16.0 (the stage's
+    // ignitionS), first shutdown T+0:16:xx, so 960-1019 s. Briz-M flies the published 19.62 kN;
+    // stages 1-3 fly a pitch table fitted to the guide's fairing altitude, max-Q and this cutoff
+    // (scripts/launch-fits/proton-m-briz-m.json). Not matched: the ~175 km parking orbit (the
+    // model's is 140 x 807 km; its stage 3 ends ~100-150 m/s too energetic, cause not found).
+    { event: 'Briz-M first-burn cutoff', type: 'seco', real: 990, tol: 30 },
+    // ILS guide Table 2.3.1-1: maximum dynamic pressure T+65.5 s.
+    { event: 'max-Q', type: 'max_q', real: 65.5, tol: 5 },
   ],
   'long-march-2f': [
     // Strap-ons jettisoned at T+126 s, first stage burn 166 s (secondary: spaceflight101).
@@ -313,10 +317,8 @@ const TIMELINES: Record<string, Row[]> = {
     { event: 'booster separation (fitted)', type: 'staging', nth: 0, real: 173, tol: 10 },
     { event: 'fairing (scheduled input)', type: 'fairing_jettison', real: 285, tol: 10 },
     { event: 'core shutdown (fitted)', type: 'meco', real: 475, tol: 10 },
-    // Chang'e-5 (Y5) stage-2 first shutdown 752 s (secondary: everydayastronaut; no CASC table).
-    // CALIBRATED: second-stage thrust 130 kN against the published 2x YF-75D 176.7, with a lofted
-    // boost, to hold this one secondary time.
-    { event: 'stage-2 first shutdown (calibrated)', type: 'seco', real: 752, tol: 30 },
+    // The second stage flies the published 2x YF-75D 176.7 kN (operator 2026-11-22, option A; was a
+    // calibrated 130 kN): its 752 s first shutdown is the model limit below.
   ],
   'm-v': [
     // JAXA Special Publication (2008), M-V-5 (Hayabusa) sequence: 1/2 separation 75, stage 2
@@ -329,11 +331,13 @@ const TIMELINES: Record<string, Row[]> = {
   ],
   h3: [
     // JAXA H3 / MMX launch plan (H3-24L), Table 2: SRB-3 separation 116 / 118, fairing 197,
-    // MECO 292, stage separation 299 (boosters and stage 1 fitted, 7 s coast to separation).
+    // MECO 292, stage separation 299, SECO1 640 (boosters fitted; stage 1 flies the plan's
+    // 2,942 kN and burns its 711 kg/s to MECO, 7 s coast to separation).
     { event: 'SRB-3 separation (fitted)', type: 'staging', nth: 0, real: 117, tol: 10 },
     { event: 'fairing (scheduled input)', type: 'fairing_jettison', real: 197, tol: 10 },
-    { event: 'MECO (fitted)', type: 'meco', real: 292, tol: 10 },
+    { event: 'MECO', type: 'meco', real: 292, tol: 10 },
     { event: 'stage separation', type: 'staging', nth: 1, real: 299, tol: 10 },
+    { event: 'SECO1', type: 'seco', real: 640, tol: 30 },
   ],
   'sls-block-1': [
     // NASA SLS reference guide: boosters fire "approximately two minutes"; the core stage
@@ -357,6 +361,12 @@ describe('launcher staging timelines vs the real nominal flight', () => {
     });
   }
 
+  // Known gap (docs/wip/2026-11-21-0.9.11-plan.md F1): sourced, and the model cannot hold it with
+  // the published hardware.
+  it.todo(
+    "long-march-5: Chang'e-5 (Y5) stage-2 first shutdown 752 s (everydayastronaut) and Y1's fairing above 147 km at T+285 (Spaceflight Now). Kept as the model limit (operator 2026-11-22, option A): with the published 176.7 kN the model cuts off at ~681 s on a 141 x 339 km orbit and drops the fairing near 285 km; a pitch-table fit to both stretched the parking orbit to e = 0.15. The real Y5 parking orbit would settle it (not found)",
+  );
+
   // Atlas-Centaur AC-20 (NASA TM X-2278): it launched Mariner VI (412 kg) on 24 February 1969
   // straight onto an escape trajectory, C3 11.185 km²/s² (Table V-II), Centaur MECO T+725.5 s.
   // The shipped profile carries Mariner 9's 998 kg to a parking orbit for the /fly scene, so this
@@ -378,12 +388,60 @@ describe('launcher staging timelines vs the real nominal flight', () => {
     });
   });
 
-  // Known gaps (docs/wip/2026-11-15-launcher-timeline-audit.md, closed out 2026-11-19 in
-  // docs/wip/2026-11-17-launcher-timelines-sourced.md): sourced, and the model cannot hold the time
-  // with a timing fit, because the cause is the trajectory, not a burn time.
-  it.todo(
-    'h3 (MMX plan, Table 2): MECO 208 km / 6.2 km/s, SECO1 640 s at 329 km / 7.7 km/s. Kept as the model limit (operator 2026-11-19): with the published LE-9 thrust and the stage masses, the model reaches MECO 0.4-0.6 km/s faster (6.7-6.8 km/s with stage 1 flown on its pitch table to 210-260 km) and SECO1 at 520-580 s; matching both states needs stage 1 cut to ~142 t of propellant at 2,013 kN, which would show visitors a wrong H3. Measured 2026-11-19 with scripts/ascent-events.ts and a grid fit (pitchTableStages, stage-1 propellant and thrust)',
-  );
+  // Starship Flight 5 (0.9.11 F3): the flight's own launch (`byMission`): no payload, a
+  // suborbital cutoff at about -15 x 212 km (JSR 838). SpaceX's timeline (its clock puts liftoff at
+  // T+0:02; these are from liftoff): MECO 2:33, hot staging
+  // 2:38, SECO 8:25. The model's SECO comes about 21 s early (the vehicle's stage masses).
+  describe('starship-flight-5 (suborbital, -15 x 212 km)', () => {
+    const p = profileForMission(load('starship'), 'starship-flight-5');
+    const sum = integrateAscent(p);
+    it('MECO at ~T+153 s (±10), SECO at ~T+505 s (±30), and no orbit', () => {
+      expect(Math.abs(first(sum.events, 'meco')! - 153)).toBeLessThanOrEqual(10);
+      expect(Math.abs(first(sum.events, 'seco')! - 505)).toBeLessThanOrEqual(30);
+      expect(first(sum.events, 'orbit')).toBeUndefined();
+    });
+    it('the ship cuts off near the 212 km apogee', () => {
+      const t = first(sum.events, 'seco')!;
+      const s = sum.states.reduce((b, q) => (Math.abs(q.t - t) < Math.abs(b.t - t) ? q : b));
+      expect(Math.abs(s.altKm - 212)).toBeLessThanOrEqual(10);
+    });
+    it('the vehicle profile itself still flies to orbit', () => {
+      expect(first(integrateAscent(load('starship')).events, 'orbit')).toBeDefined();
+    });
+  });
+
+  // ILS Proton guide: "fairing jettison occurs at approximately 340 to 350 seconds into the flight
+  // at an altitude of 121 to 125 kilometers or more". The 0.9.10 profile dropped it at 254 km.
+  it('proton-m-briz-m: the fairing goes at 121-125 km or a little more (guide)', () => {
+    const sum = integrateAscent(load('proton-m-briz-m'));
+    const t = first(sum.events, 'fairing_jettison')!;
+    const s = sum.states.reduce((b, q) => (Math.abs(q.t - t) < Math.abs(b.t - t) ? q : b));
+    expect(s.altKm).toBeGreaterThanOrEqual(121);
+    expect(s.altKm).toBeLessThanOrEqual(135);
+  });
+
+  // H3 / MMX launch plan, Table 2 gives altitude and inertial speed per event. The 0.9.10 profile
+  // reached MECO 0.7 km/s fast: it burned the 224.5 t maximum load by 292 s at a fitted 3,182 kN.
+  // With the plan's own 2,942 kN and the pitch table fitted to these states, the published
+  // hardware flies the published trajectory. SRB-3 separation is low (52 km against 59-61) at the
+  // right speed; the SRB-3 thrust curve is not published, the profile flies its burn average.
+  describe('h3 (MMX plan, Table 2): altitude and inertial speed', () => {
+    const sum = integrateAscent(load('h3'));
+    const stateAt = (t: number) =>
+      sum.states.reduce((b, s) => (Math.abs(s.t - t) < Math.abs(b.t - t) ? s : b));
+    const rows = [
+      { event: 'fairing', type: 'fairing_jettison', altKm: 131, kms: 3.3 },
+      { event: 'MECO', type: 'meco', altKm: 208, kms: 6.2 },
+      { event: 'SECO1', type: 'seco', altKm: 329, kms: 7.7 },
+    ] as const;
+    for (const r of rows) {
+      it(`${r.event} at ~${r.altKm} km (±10), ~${r.kms} km/s (±0.15)`, () => {
+        const s = stateAt(first(sum.events, r.type)!);
+        expect(Math.abs(s.altKm - r.altKm)).toBeLessThanOrEqual(10);
+        expect(Math.abs(s.speedKms - r.kms)).toBeLessThanOrEqual(0.15);
+      });
+    }
+  });
 });
 
 describe('Space Shuttle ascent: no SECO, the tank leaves 18 s after MECO', () => {

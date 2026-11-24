@@ -48,6 +48,12 @@ const CHINESE_FIXED_M: Record<string, number> = {
   'jiuquan-slc-43': 89.5,
 };
 
+/** Proton's service tower: 60 m, rolled back about 340 m from the rocket 5-6 hours before launch
+ *  (RussianSpaceWeb, "Proton launch complex", the service tower). At liftoff the rocket stands
+ *  alone; its umbilicals part at the base in the first second, so no arms are drawn. */
+const PROTON_TOWER_M = 60;
+const PROTON_TOWER_ROLLBACK_M = 340;
+
 /** Main-tower height above the vehicle's base, metres, for a pad and a vehicle of vehM metres.
  *  Fixed figures: LUT 380 ft (Wikipedia, Launch Complex 39), 39A FSS + mast 350 ft, the SLS
  *  Mobile Launcher tower 108 m (NASA gives both 345 and 355 ft), SLC-40's crew tower about
@@ -64,7 +70,7 @@ export function padTowerHeightM(spec: PadSpec, vehM: number): number {
     case 'soyuz':
       return 1.6 * vehM;
     case 'proton':
-      return 1.9 * vehM;
+      return PROTON_TOWER_M;
     case 'f9-39a':
       return 350 * FT;
     case 'f9-cat':
@@ -371,22 +377,15 @@ function soviet(kit: Kit, variant: 'soyuz' | 'proton'): void {
     );
   } else {
     ground(kit, 60, 60, 14, 80);
-    const h = 1.9 * vehM;
+    const h = PROTON_TOWER_M - 2.5;
+    const x = PROTON_TOWER_ROLLBACK_M;
     addStatic(
       kit,
       (a) => {
-        a.lattice(26, 0, 14, 14, h, mats.steel);
-        a.box(26, h, 0, 16, 2.5, 16, mats.paint);
+        a.lattice(x, 0, 14, 14, h, mats.steel);
+        a.box(x, h + 1.25, 0, 16, 2.5, 16, mats.paint);
       },
       'pad-tower',
-    );
-    swingArms(
-      kit,
-      19,
-      -5,
-      [0.3, 0.5, 0.68, 0.85].map((f) => f * vehM),
-      12,
-      2.6,
     );
     addStatic(kit, (a) => {
       a.mast(-40, 40, 1.4 * vehM, mats.steel);
@@ -562,6 +561,34 @@ function serviceTower(kit: Kit, spec: PadSpec): void {
       a.mast(-50, -50, 1.6 * vehM, mats.steel);
     });
   }
+}
+
+/**
+ * The Starbase launch tower and the orbital launch mount on their own, in metres (ground at y = 0,
+ * the mount at the origin, the tower 24 m off along -x), for the /fly booster-catch inset
+ * (0.9.11 F3). Same lattice and materials as the `starbase` pad variant; the catch arms are the
+ * inset's own (they close on the booster).
+ */
+export function buildStarbaseTowerM(): THREE.Group {
+  const mk = (color: number, rough = 0.8, metal = 0.2): THREE.MeshStandardMaterial =>
+    new THREE.MeshStandardMaterial({ color, roughness: rough, metalness: metal });
+  const mats: Mats = {
+    steel: mk(0x8a8e98),
+    dark: mk(0x1d1f24, 0.9, 0.1),
+    concrete: mk(0x9b9a93, 0.9, 0.05),
+    paint: mk(0xc9cbce, 0.7, 0.15),
+  };
+  const a = new Acc(mats);
+  a.lattice(-24, 0, 10, 10, 146, mats.steel);
+  a.box(-24, 147, 0, 12, 2, 12, mats.paint);
+  // Orbital launch mount: a ring table on six legs, about 20 m tall.
+  for (let i = 0; i < 6; i++) {
+    const ang = (i / 6) * Math.PI * 2;
+    a.box(Math.cos(ang) * 8, 9, Math.sin(ang) * 8, 2.4, 18, 2.4, mats.steel);
+  }
+  a.box(0, 19, 0, 20, 2.4, 20, mats.paint);
+  a.box(0, 0.4, 0, 46, 0.8, 46, mats.concrete);
+  return a.build('starbase-tower');
 }
 
 /** A pad with a plain white stand-in vehicle on it, for the /dev/models gallery and /colophon. */

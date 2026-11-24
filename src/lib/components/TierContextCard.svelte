@@ -187,6 +187,8 @@
     font-size: var(--size-label);
     letter-spacing: 1px;
     text-transform: uppercase;
+    /* "USA · NASA" stays one line; the site name wraps instead. */
+    white-space: nowrap;
   }
   .tcc-mission {
     color: rgba(255, 255, 255, 0.6);
@@ -266,11 +268,49 @@
       transform: translateY(0);
     }
   }
-  /* Phone: the bottom bar (above the tab row) sits under the card; in the flat
-     ground view the bar is lower and has no tab row. */
+  /* Phone: the card and the scene's bottom bar share the row above the tab row, the card on
+     the left and ending before the bar (--bar-w); in the flat ground view the bar is lower and
+     has no tab row. */
   @media (hover: none), (pointer: coarse) {
+    /* Half a row is too narrow for name, agency and toggle side by side: the agency goes under
+       the name ("Apollo 11" broke over two lines beside it). */
+    .tcc-head {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      column-gap: 8px;
+      row-gap: 0;
+      align-items: center;
+    }
+    .tcc-head > .tcc-chip {
+      grid-row: 2;
+      grid-column: 1;
+      margin-left: 0;
+      line-height: 1.3;
+    }
+    /* Two rows, about the bar's height: the name stays on one line (a long one ends in "…"; the
+       panel has it in full). "Perseverance + Ingenuity" made the card three rows tall. */
+    .tcc-site {
+      font-size: 12px;
+      line-height: 1.35;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .tcc-toggle {
+      grid-row: 1 / 3;
+      grid-column: 2;
+    }
     .tier-context-card {
-      bottom: var(--card-bottom, calc(104px + env(safe-area-inset-bottom, 0px)));
+      left: 8px;
+      /* The height of the scene's bottom bar beside it (46 px). */
+      box-sizing: border-box;
+      min-height: 46px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 5px 10px 5px 12px;
+      bottom: var(--card-bottom, calc(var(--row-bottom, 56px) + env(safe-area-inset-bottom, 0px)));
+      max-width: calc(100vw - 24px - var(--bar-w, 0px));
     }
     :global(html[data-surface-flat]) .tier-context-card {
       bottom: calc(54px + env(safe-area-inset-bottom, 0px));

@@ -178,6 +178,10 @@
 
   {#if !data}
     <p class="loading">…</p>
+    <!-- The fleet and mission pages' 3D viewer links to #sec-models; the sections draw only once
+         the manifest arrives, so the prerendered page carries the anchor here (the hash scroll
+         above then finds the real heading). -->
+    <span id="sec-models" hidden></span>
   {:else}
     <!-- Jump-link TOC (2026-09-11 operator ask) — same affordance as the
          sources index at the top of /credits. One row per section drawn
@@ -541,9 +545,9 @@
       />
     </section>
 
-    <!-- Human-spaceflight capsules + live-rendered geometry/canvas. Each item
-         links to the route where its 3D model actually flies. -->
-    {#each [{ id: 'capsules', label: m.colophon_section_capsules(), items: data.capsules }, { id: 'models', label: m.colophon_section_models(), items: data.models3d }, { id: 'canvas', label: m.colophon_section_canvas(), items: data.canvas2d }] as sec (sec.id)}
+    <!-- Human-spaceflight capsules (only while any remain outside the central models) +
+         live-rendered geometry/canvas. Each item links to the route where its 3D model flies. -->
+    {#each [{ id: 'capsules', label: m.colophon_section_capsules(), items: data.capsules ?? [] }, { id: 'models', label: m.colophon_section_models(), items: data.models3d }, { id: 'canvas', label: m.colophon_section_canvas(), items: data.canvas2d }].filter((sec) => sec.id !== 'capsules' || sec.items.length) as sec (sec.id)}
       <section class="block" aria-labelledby="sec-{sec.id}">
         <h2 id="sec-{sec.id}">{sec.label}<span class="count">{sec.items.length}</span></h2>
         <ul class="item-list">

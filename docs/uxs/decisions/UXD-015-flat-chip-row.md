@@ -61,6 +61,15 @@ when there is nothing to reset or the view is 2D, never unmounted, so no chip sh
 changes. AR and SKY mount once their availability resolves on mount and are absent where the device
 cannot run them (every fine pointer), so they never appear or vanish after first paint.
 
+**Amendment 2026-11-23 (operator, mobile audit).** On touch the Worlds' LAYERS and NATIONS drawers
+list their toggles as rows in the orbit ruler's look (`DrawerToggleRows`: dot, name, lit band when
+on; same ids and order as the HUD chips), in a panel as wide as its rows rather than the full width,
+and the Worlds' drawers carry no ×: the open tab closes its panel (Esc, a tap on the dimmed scene and
+a swipe down still do). The 44 px chips read oversized in a panel the HUD opened. The same day /explore took the
+same pattern: its CONTROLS drawer lists the layers as rows, the RULER and CONTROLS panels are as wide
+as their rows, and no drawer carries a ×; the scale ladder is compact rows too. The fine-pointer HUD
+row is unchanged.
+
 ## Consequences
 
 The layer block drops from about 420 px of column to 30–66 px of row; the chip-driven ruler shift and

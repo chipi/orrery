@@ -1,0 +1,20 @@
+{
+  "id": "proton-m-briz-m",
+  "set": {
+    "pitchTableStages": 3,
+    "targetOrbitAltM": 175000,
+    "stages[3].thrustVacKN": 19.62,
+    "stages[3].ignitionS": 676
+  },
+  "fixed": [
+    [0, 90],
+    [12, 88]
+  ],
+  "knots": [30, 60, 120, 220, 340, 480, 571],
+  "states": [{ "t": 348.2, "altKm": 123 }],
+  "events": [
+    { "type": "max_q", "real": 65.5, "tol": 3 },
+    { "type": "seco", "nth": 0, "real": 990, "tol": 30 }
+  ],
+  "iterations": 800
+}

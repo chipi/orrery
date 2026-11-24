@@ -42,7 +42,7 @@ test.describe('surface object index', () => {
     const all = await list.locator('.sidx-row').count();
 
     // Mars has both surface craft and orbiters → the orbit/land toggle shows.
-    const orbitChip = page.getByRole('radio', { name: /in orbit/i }).first();
+    const orbitChip = page.getByRole('radio', { name: /^orbit$/i }).first();
     await expect(orbitChip).toBeVisible();
     await orbitChip.click();
     const orbitOnly = await list.locator('.sidx-row').count();
@@ -165,7 +165,7 @@ test.describe('surface object index', () => {
 
     // Closed at the start: the domain chips are on one line, the three groups are not shown.
     await expect(btn).toHaveAttribute('aria-expanded', 'false');
-    await expect(panel.getByRole('radio', { name: /in orbit/i })).toBeVisible();
+    await expect(panel.getByRole('radio', { name: /^orbit$/i })).toBeVisible();
     await expect(panel.getByRole('radio', { name: /^NASA$/ })).toBeHidden();
     await expect(btn.locator('.idx-filters-n')).toHaveCount(0);
     const rows = await list.locator('.sidx-row').count();
@@ -212,14 +212,20 @@ test.describe('surface object index', () => {
     await page.waitForSelector('html[data-hydrated]', { state: 'attached', timeout: 45_000 });
     const panel = page.locator('aside.panel');
     await expect(panel).toBeVisible({ timeout: 45_000 });
-    const handle = page.locator('.surface-index-handle');
-    await expect(handle).toHaveCount(1);
-    const covered = await handle.evaluate((el) => {
-      const r = el.getBoundingClientRect();
-      const hit = document.elementFromPoint(r.left + r.width / 2, r.top + r.height / 2);
-      return !!hit && !el.contains(hit) && !!hit.closest('aside.panel');
-    });
-    expect(covered, 'the panel text is on top, the handle does not cover it').toBe(true);
+    // Since the 0.9.11 mobile round the handle is removed in the close-up modes (drawerHidden:
+    // a site's detail card is one), so once the camera has flown in it may be gone; while it is
+    // there, the panel must be on top of it.
+    const handleOnTop = () =>
+      page.evaluate(() => {
+        const el = document.querySelector('.surface-index-handle');
+        if (!el) return false;
+        const r = el.getBoundingClientRect();
+        const hit = document.elementFromPoint(r.left + r.width / 2, r.top + r.height / 2);
+        return !(!!hit && !el.contains(hit) && !!hit.closest('aside.panel'));
+      });
+    expect(await handleOnTop(), 'the panel text is on top, the handle does not cover it').toBe(
+      false,
+    );
   });
 
   test('landscape phone: the Index pullout tab shows the list', async ({ page }, testInfo) => {

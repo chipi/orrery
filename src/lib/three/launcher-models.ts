@@ -68,21 +68,7 @@ export interface LauncherModel {
   lastCoreStage?: THREE.Group;
   /** The fourth stage's own mesh (Briz-M): its orbit-completing and departure burns fire here. */
   injectionPlumeAnchor?: THREE.Object3D;
-  /** Parts that fly home and land on their engines (Falcon 9's first stage, Falcon Heavy's
-   *  side boosters, New Glenn's GS1, Super Heavy): after separation they turn tail-down and
-   *  drop away upright instead of tumbling like spent stages. */
-  recovered?: { booster?: boolean; strapOns?: boolean };
 }
-
-/** The reusable vehicles whose boosters land (the usual flight; an expended flight still shows
- *  them landing). Falcon Heavy's centre core is expended on most flights, so only its side
- *  boosters land. */
-const RECOVERED: Record<string, LauncherModel['recovered']> = {
-  'falcon-9': { booster: true },
-  'falcon-heavy': { strapOns: true },
-  'new-glenn': { booster: true },
-  starship: { booster: true },
-};
 
 interface Palette {
   body: THREE.MeshStandardMaterial;
@@ -1564,6 +1550,7 @@ function buildFalcon9(vehLen: number): LauncherModel {
     const leg = new THREE.Mesh(new THREE.BoxGeometry(r * 0.12, vehLen * 0.18, r * 0.08), frame);
     leg.position.set(Math.cos(a) * r * 1.02, vehLen * 0.11, Math.sin(a) * r * 1.02);
     leg.rotation.y = -a;
+    leg.userData.landingLegAngle = a;
     booster.add(leg);
     const af = a + Math.PI / 4;
     const gf = new THREE.Mesh(new THREE.BoxGeometry(r * 0.4, vehLen * 0.015, r * 0.12), frame);
@@ -3767,6 +3754,7 @@ function buildFalconHeavy(vehLen: number): LauncherModel {
       const leg = new THREE.Mesh(new THREE.BoxGeometry(r * 0.12, vehLen * 0.13, r * 0.08), black);
       leg.position.set(Math.cos(a) * r * 1.02, vehLen * 0.095, Math.sin(a) * r * 1.02);
       leg.rotation.y = -a;
+      leg.userData.landingLegAngle = a;
       const fin = new THREE.Mesh(new THREE.BoxGeometry(r * 0.4, vehLen * 0.012, r * 0.12), frame);
       fin.position.set(
         Math.cos(a) * r * 1.12,
@@ -4072,6 +4060,7 @@ function buildNewGlenn(vehLen: number): LauncherModel {
     const leg = new THREE.Mesh(new THREE.BoxGeometry(r * 0.1, vehLen * 0.07, r * 0.07), dark);
     leg.position.set(Math.cos(a) * r * 1.02, base + vehLen * 0.035, Math.sin(a) * r * 1.02);
     leg.rotation.y = -a;
+    leg.userData.landingLegAngle = a;
     booster.add(leg);
   }
   for (let i = 0; i < 4; i++) {
@@ -5162,6 +5151,5 @@ export function buildLauncherModel(
   // model a fixed cluster (e.g. Soyuz's 4).
   const model = build ? build(vehLen, boosterCount) : buildGeneric(vehLen, boosterCount);
   closeAxisGaps(model, vehLen, launcherId);
-  if (launcherId && RECOVERED[launcherId]) model.recovered = RECOVERED[launcherId];
   return model;
 }

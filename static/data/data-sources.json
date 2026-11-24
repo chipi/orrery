@@ -396,9 +396,109 @@
       ]
     },
     {
+      "id": "nasa-mmgis-rover-traverses",
+      "name": "NASA MMGIS rover traverses",
+      "catalog": "MMGIS traverse layers — Curiosity (MSL) and Perseverance (M20), NASA/JPL-Caltech",
+      "category": "other",
+      "description": "The rover teams' localized drive paths for Curiosity and Perseverance, drawn on the Mars surface view with their sols and distances.",
+      "source_url": "https://mars.nasa.gov/mmgis-maps/M20/Layers/json/M20_traverse.json",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Published by NASA/JPL-Caltech; U.S. Government work (17 U.S.C. §105).",
+      "used_on": [
+        "mars"
+      ]
+    },
+    {
+      "id": "pds-mer-traverses",
+      "name": "PDS Geosciences Node — MER traverses",
+      "catalog": "MER Analyst's Notebook traverse tables — Spirit (MERA) and Opportunity (MERB), PDS Geosciences Node, Washington University in St. Louis",
+      "category": "other",
+      "description": "The science teams' localized drive paths for Spirit and Opportunity, drawn on the Mars surface view with their sols and distances.",
+      "source_url": "https://an.rsl.wustl.edu/mera/AN/meri/MER/traverse/MERB_traverse_5130.csv",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA Planetary Data System archive data from a NASA mission; U.S. Government work (17 U.S.C. §105).",
+      "used_on": [
+        "mars"
+      ]
+    },
+    {
+      "id": "lroc-nac-traverses",
+      "name": "LROC NAC rover and LRV traverses",
+      "catalog": "LROC traverse GeoJSON layers mapped from Narrow Angle Camera images — NASA/GSFC/Arizona State University",
+      "category": "other",
+      "description": "The tracks the LRO Camera team mapped from Narrow Angle Camera images: Apollo 15 and 16, Lunokhod 1 and 2, and Yutu-2. Orrery simplifies them and draws them on the Moon surface view.",
+      "acknowledgement": "NASA/GSFC/Arizona State University",
+      "source_url": "https://www.lroc.asu.edu/geojson/luna_lunokhod1_traverse.geojson",
+      "license_short": "LROC-EDU",
+      "license_url": "https://lroc.im-ldi.com/about/terms",
+      "license_rationale": "The route files credit NASA/GSFC/Arizona State University and state \"LROC data, educational use with credit\". The LROC terms (lroc.im-ldi.com/about/terms, verified 2026-11-09 for LROC images, see image-provenance.json) permit educational use by schools, museums and other organisations without prior permission when credited; this is not the public-domain PDS archive. Orrery is a non-commercial educational site. Not separately checked: whether the terms page names the GeoJSON traverse layers themselves.",
+      "used_on": [
+        "moon"
+      ]
+    },
+    {
+      "id": "usgs-apollo17-traverse",
+      "name": "USGS Astrogeology · Apollo 17 traverse (Haase et al. 2019)",
+      "catalog": "Apollo 17 LRV mapped traverse and stations, Haase et al. 2019 (doi:10.1029/2018EA000408), USGS Astrogeology",
+      "category": "other",
+      "description": "The USGS Astrogeology mapped traverse of the Apollo 17 Lunar Roving Vehicle (Haase et al. 2019), tied to the LROC orthomosaic of the Taurus–Littrow valley and drawn on the Moon surface view with its stations.",
+      "source_url": "https://doi.org/10.1029/2018EA000408",
+      "license_short": "PD-USGov",
+      "license_url": "https://www.usa.gov/government-works",
+      "license_rationale": "USGS Astrogeology products are U.S. Government work (scripts/IMAGE-PIPELINE.md lists USGS Astrogeology as PD-USGov). The Apollo 17 route file credits \"© NASA\" and Haase et al. 2019. Not verified: the licence of the published traverse data itself, which the repo does not state.",
+      "used_on": [
+        "moon"
+      ]
+    },
+    {
+      "id": "hirise-zhurong-traverse",
+      "name": "HiRISE · Zhurong wheel tracks",
+      "catalog": "HiRISE ESP_073225_2055 (11 March 2022) and ESP_077511_2055 (7 February 2023), NASA/JPL/University of Arizona",
+      "category": "other",
+      "description": "The wheel tracks of China's Zhurong rover seen by the HiRISE camera on Mars Reconnaissance Orbiter (NASA/JPL/University of Arizona). Orrery traced them into the route drawn on the Mars surface view, accurate to about 20 m.",
+      "acknowledgement": "NASA/JPL/University of Arizona",
+      "source_url": "https://www.uahirise.org/ESP_073225_2055",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "HiRISE imagery is produced by NASA/JPL/University of Arizona; not subject to U.S. copyright per 17 U.S.C. §105. Use is permitted; provide source attribution. The route drawn from it is Orrery's own tracing.",
+      "used_on": [
+        "mars"
+      ]
+    },
+    {
+      "id": "wan2014-yutu-traverse",
+      "name": "Yutu rover localisation (Wan et al. 2014, ISPRS Archives)",
+      "catalog": "Wan W. et al. 2014, \"A Cross-Site Visual Localization Method for Yutu Rover\", ISPRS Archives XL-4, 279 (doi:10.5194/isprsarchives-XL-4-279-2014), Figure 5",
+      "category": "other",
+      "description": "The Chang'e 3 mission team's localisation of the Yutu rover's 17 sites (N0101 to N0209) as of 16 January 2014; the lander and the sites were digitised from Figure 5 (metric grid, 10 m scale bar) and drawn on the Moon surface view.",
+      "source_url": "https://doi.org/10.5194/isprsarchives-XL-4-279-2014",
+      "license_short": "Facts-only",
+      "license_url": "https://creativecommons.org/licenses/by/3.0/",
+      "license_rationale": "Only site positions are read off the figure (digitised, then placed from the lander); the figure itself is not reproduced. The paper is published open access under CC BY 3.0 (isprs-archives.copernicus.org, checked 2026-11-18).",
+      "used_on": [
+        "moon"
+      ]
+    },
+    {
+      "id": "vadawale2024-pragyan-stops",
+      "name": "Pragyan APXS stops (Vadawale et al. 2024, Nature)",
+      "catalog": "Vadawale S. V. et al. 2024, \"Chandrayaan-3 APXS elemental abundance measurements at lunar high latitude\", Nature 633 (doi:10.1038/s41586-024-07870-7), Figure 1c",
+      "category": "other",
+      "description": "The Chandrayaan-3 team's map of the Pragyan rover's 23 APXS observation stops around the Vikram lander, with latitude and longitude axes; the stops were digitised from Figure 1c and drawn on the Moon surface view.",
+      "source_url": "https://doi.org/10.1038/s41586-024-07870-7",
+      "license_short": "Facts-only",
+      "license_url": "https://www.nature.com/articles/s41586-024-07870-7",
+      "license_rationale": "Only stop positions are read off the figure (digitised against its latitude and longitude axes); the figure itself is not reproduced. The article shows no Creative Commons licence (checked 2026-11-18).",
+      "used_on": [
+        "moon"
+      ]
+    },
+    {
       "id": "models-ref-wikipedia",
       "name": "3D model references — Wikipedia",
-      "catalog": "136 pages — sizes and proportions for the 3D models",
+      "catalog": "207 pages — sizes and proportions for the 3D models",
       "category": "model-reference",
       "description": "Wikipedia articles (English, Russian and Chinese) that gave the lengths, diameters and proportions of the launcher and spacecraft models and the heights of the landmarks, statues and animals drawn beside them in the /fleet line-ups. The models and outlines are our own; only measurements were read.",
       "source_url": "https://www.wikipedia.org/",
@@ -424,10 +524,6 @@
         {
           "l": "Apollo Command and Service Module — Wikipedia",
           "u": "https://en.wikipedia.org/wiki/Apollo_command_and_service_module#Block_I"
-        },
-        {
-          "l": "Apollo Lunar Module — Wikipedia",
-          "u": "https://en.wikipedia.org/wiki/Apollo_Lunar_Module"
         },
         {
           "l": "Approach and Landing Tests (ALT) — Wikipedia",
@@ -458,10 +554,6 @@
           "u": "https://en.wikipedia.org/wiki/Atlas_V"
         },
         {
-          "l": "Boeing Starliner — Wikipedia (5.03 m capsule + SM, 4.56 m; module split estimate)",
-          "u": "https://en.wikipedia.org/wiki/Boeing_Starliner"
-        },
-        {
           "l": "Boeing X-37 — Wikipedia (length 8.92 m, wingspan 4.55 m, height 2.90 m, bay 2.1 × 1.2 m)",
           "u": "https://en.wikipedia.org/wiki/Boeing_X-37"
         },
@@ -490,10 +582,6 @@
           "u": "https://en.wikipedia.org/wiki/Centaur_(rocket_stage)"
         },
         {
-          "l": "Chang'e 3 launch (Long March 3B/E) — Wikipedia",
-          "u": "https://en.wikipedia.org/wiki/Chang%27e_3"
-        },
-        {
           "l": "Columbus Monument, Barcelona — Wikipedia",
           "u": "https://en.wikipedia.org/wiki/Columbus_Monument,_Barcelona"
         },
@@ -514,20 +602,12 @@
           "u": "https://en.wikipedia.org/wiki/Energia_(rocket)"
         },
         {
-          "l": "European Service Module — Wikipedia (4 m long, 4.1 m, 4 wings x 7.375 m, 19 m deployed; wing width estimate)",
-          "u": "https://en.wikipedia.org/wiki/European_Service_Module"
-        },
-        {
           "l": "Falcon 9 — Wikipedia",
           "u": "https://en.wikipedia.org/wiki/Falcon_9"
         },
         {
           "l": "Falcon Heavy — Wikipedia",
           "u": "https://en.wikipedia.org/wiki/Falcon_Heavy"
-        },
-        {
-          "l": "Gaganyaan — Wikipedia (crew module 3.5 m x 3.58 m; SM length and arrays estimate)",
-          "u": "https://en.wikipedia.org/wiki/Gaganyaan"
         },
         {
           "l": "Giant panda — Wikipedia",
@@ -602,16 +682,8 @@
           "u": "https://en.wikipedia.org/wiki/New_Glenn"
         },
         {
-          "l": "New Shepard — Wikipedia (19.2 m, booster 3.8 m, 6 windows; booster/capsule split estimate)",
-          "u": "https://en.wikipedia.org/wiki/New_Shepard"
-        },
-        {
           "l": "OK-GLI — Wikipedia (four AL-31 turbofans at the rear)",
           "u": "https://en.wikipedia.org/wiki/OK-GLI"
-        },
-        {
-          "l": "Orion (spacecraft) — Wikipedia (crew module 5.02 m x 3.3 m)",
-          "u": "https://en.wikipedia.org/wiki/Orion_(spacecraft)"
         },
         {
           "l": "Osborne bull — Wikipedia",
@@ -622,12 +694,12 @@
           "u": "https://en.wikipedia.org/wiki/Progress-M"
         },
         {
-          "l": "Project Gemini — Wikipedia",
-          "u": "https://en.wikipedia.org/wiki/Project_Gemini"
+          "l": "Progress-MS — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Progress-MS"
         },
         {
-          "l": "Project Mercury — Wikipedia",
-          "u": "https://en.wikipedia.org/wiki/Project_Mercury"
+          "l": "Project Gemini — Wikipedia",
+          "u": "https://en.wikipedia.org/wiki/Project_Gemini"
         },
         {
           "l": "Proton (rocket family) — Wikipedia",
@@ -726,7 +798,7 @@
           "u": "https://en.wikipedia.org/wiki/Space_Shuttle_Challenger"
         },
         {
-          "l": "Space Shuttle Columbia — Wikipedia (only orbiter with black chines; SILTS pod on the fin)",
+          "l": "Space Shuttle Columbia — Wikipedia (only orbiter with black chines on the wing tops; SILTS pod on the fin)",
           "u": "https://en.wikipedia.org/wiki/Space_Shuttle_Columbia"
         },
         {
@@ -738,24 +810,20 @@
           "u": "https://en.wikipedia.org/wiki/Space_Shuttle_Endeavour"
         },
         {
-          "l": "Space Shuttle Enterprise — Wikipedia (no engines, no OMS pods, simulated tiles, fibreglass leading edges)",
+          "l": "Space Shuttle Enterprise — Wikipedia (simulated tiles of foam and paint, fibreglass leading edges)",
           "u": "https://en.wikipedia.org/wiki/Space_Shuttle_Enterprise"
         },
         {
-          "l": "Space Shuttle orbiter — Wikipedia (length 37.237 m, wingspan 23.79 m, height 17.86 m, payload bay 18.3 × 4.6 m)",
+          "l": "Space Shuttle orbiter — Wikipedia (length 37.237 m, wingspan 23.79 m, payload bay 18.3 × 4.6 m)",
           "u": "https://en.wikipedia.org/wiki/Space_Shuttle_orbiter"
+        },
+        {
+          "l": "Space Shuttle thermal protection system — Wikipedia (RCC leading edge, black HRSI tiles, white LRSI and blankets)",
+          "u": "https://en.wikipedia.org/wiki/Space_Shuttle_thermal_protection_system"
         },
         {
           "l": "SpaceX Dragon — Wikipedia",
           "u": "https://en.wikipedia.org/wiki/SpaceX_Dragon"
-        },
-        {
-          "l": "SpaceX Dragon 1 — Wikipedia (6.1 m, 3.7 m, trunk 2.3 m; array span estimate)",
-          "u": "https://en.wikipedia.org/wiki/SpaceX_Dragon_1"
-        },
-        {
-          "l": "SpaceX Dragon 2 — Wikipedia (capsule 4.5 m, 4 m across, 8.1 m with trunk)",
-          "u": "https://en.wikipedia.org/wiki/SpaceX_Dragon_2"
         },
         {
           "l": "Starship — Wikipedia",
@@ -830,16 +898,100 @@
           "u": "https://en.wikipedia.org/wiki/Vulcan_Centaur"
         },
         {
+          "l": "Wikipedia — 2001 Mars Odyssey: bus, three-panel array, 1.3 m dish, gamma-ray spectrometer boom",
+          "u": "https://en.wikipedia.org/wiki/2001_Mars_Odyssey"
+        },
+        {
+          "l": "Wikipedia — Apollo Lunar Module: 7.04 m height, 4.22 m descent-stage width, 9.4 m across the landing gear",
+          "u": "https://en.wikipedia.org/wiki/Apollo_Lunar_Module"
+        },
+        {
           "l": "Wikipedia — ATV: 10.3 m, 4.5 m, 22.3 m array span",
           "u": "https://en.wikipedia.org/wiki/Automated_Transfer_Vehicle"
+        },
+        {
+          "l": "Wikipedia — Beagle 2: 1 m folded, 1.9 m unfolded, four disc solar arrays, 109 cm PAW arm",
+          "u": "https://en.wikipedia.org/wiki/Beagle_2"
+        },
+        {
+          "l": "Wikipedia — BepiColombo: MPO 2.4 x 2.2 x 1.7 m, Mio 1.8 x 1.1 m, MTM and MOSIF stacked for cruise",
+          "u": "https://en.wikipedia.org/wiki/BepiColombo"
+        },
+        {
+          "l": "Wikipedia — Beresheet: 2 m across, 1.5 m high, nine engines (LEROS 2b main)",
+          "u": "https://en.wikipedia.org/wiki/Beresheet"
+        },
+        {
+          "l": "Wikipedia — Blue Moon: Mark 1 is 8.05 m high and 3.08 m across, one BE-7",
+          "u": "https://en.wikipedia.org/wiki/Blue_Moon_(spacecraft)"
+        },
+        {
+          "l": "Wikipedia — Cassini–Huygens: 6.8 m length, 4 m antenna, three RTGs, Huygens 2.7 m",
+          "u": "https://en.wikipedia.org/wiki/Cassini%E2%80%93Huygens"
+        },
+        {
+          "l": "Wikipedia — Chandra: layout, mirror assembly, solar arrays",
+          "u": "https://en.wikipedia.org/wiki/Chandra_X-ray_Observatory"
+        },
+        {
+          "l": "Wikipedia — Chandrayaan-2 / Vikram: 2.54 × 2 × 1.2 m, four 800 N throttleable engines (CY-2 has a fifth, central one), four legs, ramp",
+          "u": "https://en.wikipedia.org/wiki/Chandrayaan-2"
+        },
+        {
+          "l": "Wikipedia — Chandrayaan-3: Vikram box-shaped, four legs and four thrusters, carries Pragyan on a ramp",
+          "u": "https://en.wikipedia.org/wiki/Chandrayaan-3"
+        },
+        {
+          "l": "Wikipedia — Compton: BATSE, OSSE, COMPTEL, EGRET",
+          "u": "https://en.wikipedia.org/wiki/Compton_Gamma_Ray_Observatory"
         },
         {
           "l": "Wikipedia — CSM: SM 4.52 m, 3.91 m diameter, SPS nozzle 3.88 m; Block I has no docking probe",
           "u": "https://en.wikipedia.org/wiki/Apollo_command_and_service_module"
         },
         {
+          "l": "Wikipedia — Curiosity (rover): 2.9 m long, 2.7 m wide, 2.2 m tall, 0.5 m wheels, rocker-bogie, MMRTG",
+          "u": "https://en.wikipedia.org/wiki/Curiosity_(rover)"
+        },
+        {
           "l": "Wikipedia — Cygnus: 5.14 m length, 3.07 m diameter, Standard variant",
           "u": "https://en.wikipedia.org/wiki/Cygnus_(spacecraft)"
+        },
+        {
+          "l": "Wikipedia — Dawn (spacecraft): 1.64 x 19.7 x 1.77 m, 19.7 m across the arrays, 1.24 m dish, three xenon ion thrusters",
+          "u": "https://en.wikipedia.org/wiki/Dawn_(spacecraft)"
+        },
+        {
+          "l": "Wikipedia — Euclid: layout, telescope, solar array",
+          "u": "https://en.wikipedia.org/wiki/Euclid_(spacecraft)"
+        },
+        {
+          "l": "Wikipedia — ExoMars Trace Gas Orbiter: bus, two two-panel arrays, 2.2 m high-gain dish, NOMAD/ACS/CaSSIS",
+          "u": "https://en.wikipedia.org/wiki/ExoMars_Trace_Gas_Orbiter"
+        },
+        {
+          "l": "Wikipedia — Gaia: 10 m sunshield, payload and service module",
+          "u": "https://en.wikipedia.org/wiki/Gaia_(spacecraft)"
+        },
+        {
+          "l": "Wikipedia — Galileo (spacecraft): 5.3 m length, 4.8 m antenna, RTG booms, 10.9 m magnetometer boom, probe",
+          "u": "https://en.wikipedia.org/wiki/Galileo_(spacecraft)"
+        },
+        {
+          "l": "Wikipedia — Giotto (spacecraft): 1.86 m drum, 1.47 m despun antenna, dust shield",
+          "u": "https://en.wikipedia.org/wiki/Giotto_(spacecraft)"
+        },
+        {
+          "l": "Wikipedia — Hayabusa: 1 × 1.6 × 2 m body, 1.5 m antenna, 5.7 m across the panels",
+          "u": "https://en.wikipedia.org/wiki/Hayabusa"
+        },
+        {
+          "l": "Wikipedia — Hayabusa2: body 1 × 1.6 × 1.25 m, three-panel arrays, sampler horn, SCI, MINERVA-II, capsule",
+          "u": "https://en.wikipedia.org/wiki/Hayabusa2"
+        },
+        {
+          "l": "Wikipedia — Hitomi (ASTRO-H): extensible optical bench, instruments",
+          "u": "https://en.wikipedia.org/wiki/Hitomi_(satellite)"
         },
         {
           "l": "Wikipedia — HTV-X: 8 m, 4.4 m, 18.2 m array span, 2.7 m service and 3.5 m pressurised module",
@@ -850,12 +1002,176 @@
           "u": "https://en.wikipedia.org/wiki/H-II_Transfer_Vehicle"
         },
         {
+          "l": "Wikipedia — Hubble Space Telescope: 13.2 x 4.2 m, layout, solar arrays",
+          "u": "https://en.wikipedia.org/wiki/Hubble_Space_Telescope"
+        },
+        {
+          "l": "Wikipedia — InSight: 6.0 m wide with arrays, 1.56 m deck, 0.83-1.08 m deck height, 2.15 m arrays, 1.8 m arm",
+          "u": "https://en.wikipedia.org/wiki/InSight"
+        },
+        {
+          "l": "Wikipedia — Juno (spacecraft): 20.1 m span, panels 2.7 x 8.9 m, two of four segments and one of three plus the magnetometer",
+          "u": "https://en.wikipedia.org/wiki/Juno_(spacecraft)"
+        },
+        {
+          "l": "Wikipedia — Jupiter Icy Moons Explorer: 2.5 m dish, 16 m RIME antenna, 10.6 m magnetometer boom, 16.8 x 27.1 x 13.7 m",
+          "u": "https://en.wikipedia.org/wiki/Jupiter_Icy_Moons_Explorer"
+        },
+        {
+          "l": "Wikipedia — JWST: 18 hexagonal segments, 6.5 m mirror, sunshield 21.2 x 14.2 m",
+          "u": "https://en.wikipedia.org/wiki/James_Webb_Space_Telescope"
+        },
+        {
+          "l": "Wikipedia — Kepler: 4.7 x 2.7 m, photometer, solar array",
+          "u": "https://en.wikipedia.org/wiki/Kepler_space_telescope"
+        },
+        {
+          "l": "Wikipedia — Lunar Roving Vehicle: 3.6 ft height, 7.5 ft wheelbase, wire-mesh wheels, TV camera on the front",
+          "u": "https://en.wikipedia.org/wiki/Lunar_Roving_Vehicle"
+        },
+        {
+          "l": "Wikipedia — Mariner 2: 100 cm hexagonal bus carrying panels, booms and antennas",
+          "u": "https://en.wikipedia.org/wiki/Mariner_2"
+        },
+        {
+          "l": "Wikipedia — Mars 3: 1.2 m spherical landing capsule, four petals, four aerials, PrOP-M on skis on a 15 m umbilical",
+          "u": "https://en.wikipedia.org/wiki/Mars_3"
+        },
+        {
+          "l": "Wikipedia — Mars Exploration Rover: \"stand 1.5 m high, 2.3 m wide and 1.6 m long\", six wheels, rocker-bogie",
+          "u": "https://en.wikipedia.org/wiki/Mars_Exploration_Rover"
+        },
+        {
+          "l": "Wikipedia — Mars Pathfinder: Sojourner 65 cm long, 48 cm wide, 30 cm high",
+          "u": "https://en.wikipedia.org/wiki/Mars_Pathfinder"
+        },
+        {
+          "l": "Wikipedia — Mars Reconnaissance Orbiter: solar panels 5.35 x 2.53 m each, HiRISE, CTX, SHARAD, 3 m high-gain dish",
+          "u": "https://en.wikipedia.org/wiki/Mars_Reconnaissance_Orbiter"
+        },
+        {
+          "l": "Wikipedia — OSIRIS-REx: bus 2.4 m, arrays 6.2 m across, 3.35 m TAGSAM arm, 0.81 m capsule",
+          "u": "https://en.wikipedia.org/wiki/OSIRIS-REx"
+        },
+        {
+          "l": "Wikipedia — Perseverance (rover): 2.9 x 2.7 x 2.2 m, wheels, MMRTG, Ingenuity",
+          "u": "https://en.wikipedia.org/wiki/Perseverance_(rover)"
+        },
+        {
+          "l": "Wikipedia — Phobos 2: the Soviet Phobos 2 spacecraft (no dimensions on the page)",
+          "u": "https://en.wikipedia.org/wiki/Phobos_2"
+        },
+        {
+          "l": "Wikipedia — Phoenix: 5.5 m with arrays deployed, 1.5 m deck, about 2.2 m tall, 2.35 m arm, 1 m MET mast",
+          "u": "https://en.wikipedia.org/wiki/Phoenix_(spacecraft)"
+        },
+        {
+          "l": "Wikipedia — Pioneer 10: 2.74 m dish, hexagonal bus 36 cm deep with 76 cm sides, two 3 m RTG booms 120 deg apart, 6.6 m magnetometer boom",
+          "u": "https://en.wikipedia.org/wiki/Pioneer_10"
+        },
+        {
+          "l": "Wikipedia — Pragyan (rover)",
+          "u": "https://en.wikipedia.org/wiki/Pragyan_(rover)"
+        },
+        {
+          "l": "Wikipedia — Rosalind Franklin (rover): 25 cm wheels, drill to 2 m, six wheels",
+          "u": "https://en.wikipedia.org/wiki/Rosalind_Franklin_(rover)"
+        },
+        {
+          "l": "Wikipedia — Rosetta (spacecraft): body 2.8 × 2.1 × 2.0 m, 32 m across the arrays, 2.2 m antenna",
+          "u": "https://en.wikipedia.org/wiki/Rosetta_(spacecraft)"
+        },
+        {
+          "l": "Wikipedia — Schiaparelli EDM: 1.65 m lander, 2.4 m with the front shield, crushable structure, DREAMS",
+          "u": "https://en.wikipedia.org/wiki/Schiaparelli_EDM"
+        },
+        {
           "l": "Wikipedia — Shenzhou: 9.25 m, orbital 2.8 m, re-entry 2.5 m, service 2.94 m, 17 m span",
           "u": "https://en.wikipedia.org/wiki/Shenzhou_(spacecraft)"
         },
         {
+          "l": "Wikipedia — SLIM: 1.5 × 1.5 × 2 m, solar panel, two-step landing on its side",
+          "u": "https://en.wikipedia.org/wiki/Smart_Lander_for_Investigating_Moon"
+        },
+        {
+          "l": "Wikipedia — Spektr-RG: eROSITA, ART-XC, Navigator bus",
+          "u": "https://en.wikipedia.org/wiki/Spektr-RG"
+        },
+        {
+          "l": "Wikipedia — Spitzer: 0.85 m telescope, cryostat, solar panel",
+          "u": "https://en.wikipedia.org/wiki/Spitzer_Space_Telescope"
+        },
+        {
+          "l": "Wikipedia — TESS: dimensions, four cameras, solar arrays",
+          "u": "https://en.wikipedia.org/wiki/Transiting_Exoplanet_Survey_Satellite"
+        },
+        {
+          "l": "Wikipedia — Tianwen-1: orbiter below, the capsule housing the lander and Zhurong rover on top",
+          "u": "https://en.wikipedia.org/wiki/Tianwen-1"
+        },
+        {
           "l": "Wikipedia — Tianzhou: 10.6 m, 3.35 m, 14.9 m array span",
           "u": "https://en.wikipedia.org/wiki/Tianzhou_(spacecraft)"
+        },
+        {
+          "l": "Wikipedia — Ulysses (spacecraft): 1.65 m dish, 72 m wire dipole, 7.5 m axial monopole, GPHS-RTG on the side",
+          "u": "https://en.wikipedia.org/wiki/Ulysses_(spacecraft)"
+        },
+        {
+          "l": "Wikipedia — Venera: the Venera 9-14 bus: two solar panels, parabolic dish, spherical descent apparatus",
+          "u": "https://en.wikipedia.org/wiki/Venera"
+        },
+        {
+          "l": "Wikipedia — Viking program: hexagonal base with 1.09 / 0.56 m sides, 2.21 m footpad triangle, 18-nozzle engines, two RTGs, two cylinder cameras",
+          "u": "https://en.wikipedia.org/wiki/Viking_program"
+        },
+        {
+          "l": "Wikipedia — Voyager program: 3.7 m dish, 13 m magnetometer boom, two 10 m plasma-wave antennas, 30 cm Golden Record",
+          "u": "https://en.wikipedia.org/wiki/Voyager_program"
+        },
+        {
+          "l": "Wikipedia — XMM-Newton: length 10.8 m, span 16.16 m, three mirror modules",
+          "u": "https://en.wikipedia.org/wiki/XMM-Newton"
+        },
+        {
+          "l": "Wikipedia — Zhurong (rover): 2.6 x 3 x 1.85 m, six wheels, four solar panels, mast",
+          "u": "https://en.wikipedia.org/wiki/Zhurong_(rover)"
+        },
+        {
+          "l": "Wikipedia (EN) — Chang’e 3 and Yutu: rover 1.5 m long, 1.0 m wide, mast about 1.5 m, six wheels",
+          "u": "https://en.wikipedia.org/wiki/Chang%27e_3"
+        },
+        {
+          "l": "Wikipedia (EN) — Chang’e 4 and Yutu-2: 1.5 x 1.0 x 1.0 m, 140 kg",
+          "u": "https://en.wikipedia.org/wiki/Chang%27e_4"
+        },
+        {
+          "l": "Wikipedia (EN) — Chang’e 5 and 6: lander with ascender on top, drill and scoop sampling",
+          "u": "https://en.wikipedia.org/wiki/Chang%27e_5"
+        },
+        {
+          "l": "Wikipedia (EN) — Luna 9: 58 cm landing capsule, 99 kg, four petals opened after landing",
+          "u": "https://en.wikipedia.org/wiki/Luna_9"
+        },
+        {
+          "l": "Wikipedia (EN) — Luna 16: descent stage cylindrical body, four legs, fuel tanks, landing radar, drill arm",
+          "u": "https://en.wikipedia.org/wiki/Luna_16"
+        },
+        {
+          "l": "Wikipedia (EN) — Luna 17: Lunokhod 1 on the E-8 landing stage with its two descent ramps",
+          "u": "https://en.wikipedia.org/wiki/Luna_17"
+        },
+        {
+          "l": "Wikipedia (EN) — Luna 24: KT descent stage as the Lunokhod bus; ascent stage with spherical return capsule, about 2 m tall",
+          "u": "https://en.wikipedia.org/wiki/Luna_24"
+        },
+        {
+          "l": "Wikipedia (EN) — Lunokhod 1: tub on eight wheels, convex lid with solar cells inside, 135 cm closed, 170 x 160 cm",
+          "u": "https://en.wikipedia.org/wiki/Lunokhod_1"
+        },
+        {
+          "l": "Wikipedia (EN) — Lunokhod 2: third camera, magnetometer on a 2.5 m boom",
+          "u": "https://en.wikipedia.org/wiki/Lunokhod_2"
         },
         {
           "l": "Wikipedia (fallback source), Emirates Mars Mission — 2.37 m wide x 2.90 m long body (length_m = 2.90 m), 1.85 m high-gain dish (the article also says 1.5 m), two solar panels",
@@ -878,20 +1194,16 @@
           "u": "https://en.wikipedia.org/wiki/MAVEN"
         },
         {
-          "l": "Wikipedia (fallback) — Akatsuki: 1.45 x 1.04 x 1.44 m box, two arrays of about 1.4 m^2 each (1.45 m used as height)",
-          "u": "https://en.wikipedia.org/wiki/Akatsuki_(spacecraft)"
-        },
-        {
           "l": "Wikipedia (fallback) — component table (EP-107 data): 82.4 ft (25.1 m) without CSM, MDA 17.3 ft x 10.5 ft, AM 17.6 ft, ATM 14.7 ft, 55.8 ft width with one wing, 36.3 ft height with ATM",
           "u": "https://en.wikipedia.org/wiki/Skylab"
         },
         {
-          "l": "Wikipedia (fallback) — Magellan: 10-sided bus, 6.4 m tall x 4.6 m diameter, 3.7 m high-gain antenna, Star 48B motor",
-          "u": "https://en.wikipedia.org/wiki/Magellan_(spacecraft)"
-        },
-        {
           "l": "Wikipedia (fallback): 3.1 m high-gain antenna, 8.5 m magnetometer boom",
           "u": "https://en.wikipedia.org/wiki/Europa_Clipper"
+        },
+        {
+          "l": "Wikipedia (fallback): Akatsuki: 1.45 x 1.04 x 1.44 m box, two arrays of about 1.4 m^2 each (1.45 m used as height)",
+          "u": "https://en.wikipedia.org/wiki/Akatsuki_(spacecraft)"
         },
         {
           "l": "Wikipedia (fallback): array diameter 7.3 m",
@@ -902,28 +1214,100 @@
           "u": "https://en.wikipedia.org/wiki/Double_Asteroid_Redirection_Test"
         },
         {
-          "l": "Wikipedia Dragon 2 infobox — dimensions",
-          "u": "https://en.wikipedia.org/wiki/Dragon_2"
+          "l": "Wikipedia (fallback): Magellan: 10-sided bus, 6.4 m tall, 3.7 m high-gain antenna, Star 48B motor",
+          "u": "https://en.wikipedia.org/wiki/Magellan_(spacecraft)"
         },
         {
-          "l": "Wikipedia Vostok (spacecraft) — dimensions",
-          "u": "https://en.wikipedia.org/wiki/Vostok_(spacecraft)"
+          "l": "Wikipedia Dragon 2 infobox — dimensions",
+          "u": "https://en.wikipedia.org/wiki/Dragon_2"
         },
         {
           "l": "Wikipedia Vostok-L infobox: 30.84 m; Astronautix vostok8k72 30.84 m x 2.99 m — dimensions",
           "u": "https://en.wikipedia.org/wiki/Vostok-L"
         },
         {
-          "l": "Wikipedia, Progress (spacecraft) — variant comparison: length, diameter, array span",
+          "l": "Wikipedia, Boeing Starliner: 5.03 m capsule + service module, 4.56 m across; module split estimate",
+          "u": "https://en.wikipedia.org/wiki/Boeing_Starliner"
+        },
+        {
+          "l": "Wikipedia, Chandrayaan-1: cuboid of about 1.5 m, single solar panel, high-gain dish",
+          "u": "https://en.wikipedia.org/wiki/Chandrayaan-1"
+        },
+        {
+          "l": "Wikipedia, Chang'e 1: DFH-3A bus, two three-panel wings, steerable dish (shape; no dimensions published there)",
+          "u": "https://en.wikipedia.org/wiki/Chang'e_1"
+        },
+        {
+          "l": "Wikipedia, Clementine (spacecraft): octagonal prism 1.88 m high and 1.14 m across, 42-inch dish at one end, 489 N thruster at the other, two wings, sensors on one face",
+          "u": "https://en.wikipedia.org/wiki/Clementine_(spacecraft)"
+        },
+        {
+          "l": "Wikipedia, European Service Module: 4 m long, 4.1 m, 4 wings x 7.375 m, 19 m deployed; wing width and adapter size estimate",
+          "u": "https://en.wikipedia.org/wiki/European_Service_Module"
+        },
+        {
+          "l": "Wikipedia, Gaganyaan: crew module 3.5 m x 3.58 m; service module length, arrays and engines estimate",
+          "u": "https://en.wikipedia.org/wiki/Gaganyaan"
+        },
+        {
+          "l": "Wikipedia, Gemini spacecraft: 5.736 m, 3.048 m adapter base, 2.3 m re-entry module; NASA cutaway and photographs (Commons \"Gemini spacecraft\", \"Gemini 9a spacecraft on display\", \"Gemini 7 in orbit\")",
+          "u": "https://en.wikipedia.org/wiki/Gemini_(spacecraft)"
+        },
+        {
+          "l": "Wikipedia, Luna 10: first lunar orbiter; instrument capsule with magnetometer, gamma-ray spectrometer and counters",
+          "u": "https://en.wikipedia.org/wiki/Luna_10"
+        },
+        {
+          "l": "Wikipedia, Lunar Orbiter program: truncated-cone bus 1.65 m tall and 1.5 m across the base; four panels 3.72 m across; 1 m high-gain dish on a 1.32 m boom, low-gain antenna on a 2.08 m boom",
+          "u": "https://en.wikipedia.org/wiki/Lunar_Orbiter_program"
+        },
+        {
+          "l": "Wikipedia, Lunar Prospector: graphite-epoxy drum 1.36 m across and 1.28 m high, three radial 2.5 m booms, 1.1 m magnetometer extension",
+          "u": "https://en.wikipedia.org/wiki/Lunar_Prospector"
+        },
+        {
+          "l": "Wikipedia, Mengzhou (spacecraft): 8.8 m lunar configuration, crew module 4.5 m; module split, wings and engines estimate",
+          "u": "https://en.wikipedia.org/wiki/Mengzhou_(spacecraft)"
+        },
+        {
+          "l": "Wikipedia, New Shepard: 19.2 m whole vehicle, booster 3.8 m, 6 windows; booster/capsule split estimate",
+          "u": "https://en.wikipedia.org/wiki/New_Shepard"
+        },
+        {
+          "l": "Wikipedia, Orion (spacecraft): crew module 5.02 m x 3.3 m",
+          "u": "https://en.wikipedia.org/wiki/Orion_(spacecraft)"
+        },
+        {
+          "l": "Wikipedia, Progress (spacecraft): cargo, refuelling and service modules, length 7.23 m (M), solar panels first on Progress M; ISS photographs (Commons \"ISS Progress cargo spacecraft\")",
           "u": "https://en.wikipedia.org/wiki/Progress_(spacecraft)"
         },
         {
-          "l": "Wikipedia, Progress-MS — 7.4 m x 2.7 m, 10.7 m array, Kurs-NA antennas, added MMOD shielding",
-          "u": "https://en.wikipedia.org/wiki/Progress-MS"
+          "l": "Wikipedia, Project Mercury / Mercury spacecraft: 3.3 m, 1.8 m base; NASA photographs (Commons \"Mercury capsule HD\", \"Boilerplate Mercury Capsule\")",
+          "u": "https://en.wikipedia.org/wiki/Project_Mercury"
         },
         {
-          "l": "Wikipedia, Soyuz (spacecraft) — variant comparison table: lengths, diameters, array spans, module L/D",
+          "l": "Wikipedia, SELENE: main orbiter with two sub-satellites (Okina, Ouna) on its side, one solar paddle",
+          "u": "https://en.wikipedia.org/wiki/SELENE"
+        },
+        {
+          "l": "Wikipedia, SMART-1: about 1 m across, 367 kg, solar-electric ion drive, two solar wings",
+          "u": "https://en.wikipedia.org/wiki/SMART-1"
+        },
+        {
+          "l": "Wikipedia, Soyuz (spacecraft): module lengths (orbital 2.98, descent 2.24, service 2.26), 2.72 m diameter; ISS photographs (Commons \"Soyuz TMA-7 spacecraft2edit1\", \"Soyuz TMA-16 approaching ISS\")",
           "u": "https://en.wikipedia.org/wiki/Soyuz_(spacecraft)"
+        },
+        {
+          "l": "Wikipedia, SpaceX Dragon 1: 6.1 m long, 3.7 m across, trunk 2.3 m; array span (two 3.2 m panels a side) estimate",
+          "u": "https://en.wikipedia.org/wiki/SpaceX_Dragon_1"
+        },
+        {
+          "l": "Wikipedia, SpaceX Dragon 2: capsule 4.5 m high, 4 m across, 8.1 m with the trunk",
+          "u": "https://en.wikipedia.org/wiki/SpaceX_Dragon_2"
+        },
+        {
+          "l": "Wikipedia, Vostok (spacecraft) and Voskhod: 2.3 m sphere, 2.43 m module, 4.55 m / 5 m overall; museum photographs (Commons \"Vostok spacecraft\", \"Vostok spacecraft replica2\", Memorial Museum of Astronautics)",
+          "u": "https://en.wikipedia.org/wiki/Vostok_(spacecraft)"
         },
         {
           "l": "Буран (космический корабль) — русская Википедия",
@@ -958,7 +1342,7 @@
     {
       "id": "models-ref-nssdca",
       "name": "3D model references — NASA NSSDCA",
-      "catalog": "22 pages — sizes and proportions for the 3D models",
+      "catalog": "23 pages — sizes and proportions for the 3D models",
       "category": "model-reference",
       "description": "NASA Space Science Data Coordinated Archive (NSSDCA) spacecraft and launch-vehicle pages that gave the masses, lengths and diameters of the craft and rockets modelled for /fly and the /fleet line-ups.",
       "source_url": "https://nssdc.gsfc.nasa.gov/",
@@ -982,12 +1366,8 @@
           "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1962-003A"
         },
         {
-          "l": "NASA NSSDCA — MESSENGER: bus 1.27 x 1.42 x 1.85 m, sunshade about 2.5 m tall x 2 m wide (2.5 m used as height), arrays about 6 m tip to tip, 3.6 m magnetometer boom",
-          "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2004-030A"
-        },
-        {
-          "l": "NASA NSSDCA — Parker Solar Probe: 3 m bus, 1 m diameter, TPS end 2.3 m diameter, 11.43 cm thick; arrays 1.12 x 0.69 m; 0.6 m high-gain antenna",
-          "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2018-065A"
+          "l": "NASA NSSDC — Lunokhod 1: tub with convex lid, helical and cone antennas, TV cameras, polonium-210 heater, French reflector",
+          "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1970-095D"
         },
         {
           "l": "NASA NSSDCA Gemini 3 spacecraft description — dimensions",
@@ -1008,6 +1388,14 @@
         {
           "l": "NASA NSSDCA, MAVEN — cubic 2.3 x 2.3 m, 2 m high bus; 1.3 m central propellant tank",
           "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2013-063A"
+        },
+        {
+          "l": "NASA NSSDCA: MESSENGER: bus 1.27 x 1.42 x 1.85 m, sunshade about 2.5 m tall x 2 m wide (2.5 m used as height), arrays about 6 m tip to tip, 3.6 m magnetometer boom",
+          "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2004-030A"
+        },
+        {
+          "l": "NASA NSSDCA: Parker Solar Probe: 3 m bus, 1 m diameter, TPS end 2.3 m diameter, 11.43 cm thick; arrays 1.12 x 0.69 m; 0.6 m high-gain antenna",
+          "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2018-065A"
         },
         {
           "l": "NSSDCA — Apollo 11 CSM: 11.0 m long, CM 3.65 m high",
@@ -1062,7 +1450,7 @@
     {
       "id": "models-ref-nasa",
       "name": "3D model references — NASA",
-      "catalog": "43 pages — sizes and proportions for the 3D models",
+      "catalog": "47 pages — sizes and proportions for the 3D models",
       "category": "model-reference",
       "description": "NASA mission, vehicle and history pages (nasa.gov, history.nasa.gov, science.nasa.gov) that gave the dimensions of the crewed capsules, cargo craft, Shuttle orbiters and launchers modelled for /fly and the /fleet line-ups.",
       "source_url": "https://www.nasa.gov/",
@@ -1130,6 +1518,10 @@
           "u": "https://www.hq.nasa.gov/alsj/LM_News_Reference.pdf"
         },
         {
+          "l": "NASA — Apollo News Reference, Lunar Module: ascent and descent stage layout, RCS quads, antennas",
+          "u": "https://www.hq.nasa.gov/alsj/LM04_Lunar_Module_ppLV1-17.pdf"
+        },
+        {
           "l": "NASA — Columbia orbiter overview",
           "u": "https://www.nasa.gov/history/20-years-ago-remembering-columbia-and-her-crew/"
         },
@@ -1140,6 +1532,10 @@
         {
           "l": "NASA — Discovery orbiter overview",
           "u": "https://www.nasa.gov/centers/kennedy/shuttleoperations/orbiters/discovery-info.html"
+        },
+        {
+          "l": "NASA 'About the Russian Progress Spacecraft': Length 7.4 m, Diameter 2.7 m — dimensions",
+          "u": "https://www.nasa.gov/wp-json/wp/v2/migration/167910?_fields=content"
         },
         {
           "l": "NASA 'What Was the Saturn V?' - 111 meters (363 feet) tall — dimensions",
@@ -1162,6 +1558,10 @@
           "u": "https://science.nasa.gov/mission/europa-clipper/mission-overview/"
         },
         {
+          "l": "NASA JPL — MSL rover: mast, arm turret, HGA and UHF antennas, Hazcams",
+          "u": "https://mars.nasa.gov/msl/spacecraft/rover/summary/"
+        },
+        {
           "l": "NASA Lucy spacecraft: 16 m tip to tip with arrays deployed (the model stands on that axis), UltraFlex arrays ~7 m diameter each, 2 m high-gain antenna",
           "u": "https://science.nasa.gov/mission/lucy/spacecraft/"
         },
@@ -1178,6 +1578,10 @@
           "u": "https://science.nasa.gov/mission/psyche/spacecraft/"
         },
         {
+          "l": "NASA Science — Viking spacecraft: 2 m tall from footpads to the top of the S-band dish, 3 m at its widest",
+          "u": "https://science.nasa.gov/mission/viking/spacecraft-and-science"
+        },
+        {
           "l": "NASA Science, MAVEN key facts — length 11.4 m (array tip to tip), width 2.29 m, height 3.47 m (length_m here is the 3.47 m height, bus on its base, dish up)",
           "u": "https://science.nasa.gov/mission/maven/"
         },
@@ -1186,12 +1590,12 @@
           "u": "https://www.nasa.gov/reference/space-launch-system/"
         },
         {
-          "l": "NASA The Space Shuttle reference page: Shuttle Basics Length 184 feet — dimensions",
-          "u": "https://www.nasa.gov/reference/the-space-shuttle/"
+          "l": "NASA Solar System Exploration — Beresheet",
+          "u": "https://solarsystem.nasa.gov/missions/beresheet/in-depth/"
         },
         {
-          "l": "NASA, About the Russian Progress Spacecraft — length 7.4 m, diameter 2.7 m",
-          "u": "https://www.nasa.gov/wp-json/wp/v2/migration/167910?_fields=content"
+          "l": "NASA The Space Shuttle reference page: Shuttle Basics Length 184 feet — dimensions",
+          "u": "https://www.nasa.gov/reference/the-space-shuttle/"
         },
         {
           "l": "NASA, The Skylab Parasol (NTRS) — 6.7 x 7.3 m canopy, sun-facing side, 8 in above the OWS skin",
@@ -1310,19 +1714,19 @@
           "u": "https://www.esa.int/Enabling_Support/Space_Transportation/Ariane"
         },
         {
-          "l": "ESA — Solar Orbiter factsheet: body 2.5 x 3.1 x 2.7 m (3.1 m used as height), six 2.1 x 1.2 m panels, 18 m span, 4.4 m instrument boom",
-          "u": "https://www.esa.int/Science_Exploration/Space_Science/Solar_Orbiter/Solar_Orbiter_factsheet"
-        },
-        {
           "l": "ESA Ariane 5 media kit - ECA launch vehicle — dimensions",
           "u": "https://esamultimedia.esa.int/docs/space_transportation/ariane-5_media-kit.pdf"
+        },
+        {
+          "l": "ESA: Solar Orbiter factsheet: body 2.5 x 3.1 x 2.7 m (3.1 m used as height), six 2.1 x 1.2 m panels, 18 m span, 4.4 m instrument boom",
+          "u": "https://www.esa.int/Science_Exploration/Space_Science/Solar_Orbiter/Solar_Orbiter_factsheet"
         }
       ]
     },
     {
       "id": "models-ref-jaxa",
       "name": "3D model references — JAXA",
-      "catalog": "8 pages — sizes and proportions for the 3D models",
+      "catalog": "9 pages — sizes and proportions for the 3D models",
       "category": "model-reference",
       "description": "JAXA pages on the H-IIA, H3, M-V and the HTV / HTV-X transfer vehicles that gave the dimensions of the Japanese launchers and cargo craft modelled for /fly and the /fleet line-ups.",
       "source_url": "https://global.jaxa.jp/",
@@ -1362,6 +1766,10 @@
           "u": "https://humans-in-space.jaxa.jp/en/htv-x/"
         },
         {
+          "l": "JAXA — SLIM",
+          "u": "https://global.jaxa.jp/projects/sas/slim/"
+        },
+        {
           "l": "こうのとり — JAXA",
           "u": "https://www.jaxa.jp/projects/rockets/htv/"
         }
@@ -1370,7 +1778,7 @@
     {
       "id": "models-ref-isro",
       "name": "3D model references — ISRO",
-      "catalog": "5 pages — sizes and proportions for the 3D models",
+      "catalog": "6 pages — sizes and proportions for the 3D models",
       "category": "model-reference",
       "description": "ISRO launcher and Gaganyaan pages (PSLV, GSLV Mk III / LVM3, the crew module) that gave the dimensions of the Indian vehicles modelled for /fly and the /fleet line-ups.",
       "source_url": "https://www.isro.gov.in/",
@@ -1388,6 +1796,10 @@
         {
           "l": "Human Space Flight — ISRO",
           "u": "https://www.isro.gov.in/Gaganyaan.html"
+        },
+        {
+          "l": "ISRO — Chandrayaan-3 lander",
+          "u": "https://www.isro.gov.in/Chandrayaan3.html"
         },
         {
           "l": "LVM3 — ISRO",
@@ -1522,7 +1934,7 @@
     {
       "id": "models-ref-independent",
       "name": "3D model references — reference sites and museums",
-      "catalog": "13 pages — sizes and proportions for the 3D models",
+      "catalog": "18 pages — sizes and proportions for the 3D models",
       "category": "model-reference",
       "description": "Independent spaceflight references and museum pages (Gunter’s Space Page, Encyclopedia Astronautica, RussianSpaceWeb, the Smithsonian National Air and Space Museum, the Technik Museum Speyer and others) that gave the sizes of the Soviet, Shuttle and Buran-era vehicles.",
       "source_url": "https://space.skyrocket.de/",
@@ -1538,8 +1950,24 @@
           "u": "https://www.kennedyspacecenter.com/explore-attractions/space-shuttle-atlantis/"
         },
         {
+          "l": "Bonhams — Lavochkin Luna 9 model: four stabilising petals, rotating mirror and camera head, antennae",
+          "u": "https://www.bonhams.com/auction/24898/lot/579/luna-9-soviet-lunar-lander-model/"
+        },
+        {
           "l": "buran-energia.com — OK-GLI (AL-31F, same aerodynamics and mass properties as Buran)",
           "u": "https://www.buran-energia.com/bourane-buran/bourane-modele-gli.php"
+        },
+        {
+          "l": "China conducts low-altitude flight test for Long March 10 rocket — CGTN (11 Feb 2026)",
+          "u": "https://news.cgtn.com/news/2026-02-11/China-conducts-low-altitude-flight-test-for-Long-March-10-rocket-1KFK9b0VBiU/p.html"
+        },
+        {
+          "l": "China Space Day: how far have we come toward a manned lunar landing — CGTN (Apr 2026)",
+          "u": "https://news.cgtn.com/news/2026-04-24/China-Space-Day-How-far-have-we-come-toward-a-manned-lunar-landing--1MBhqOD8nQs/p.html"
+        },
+        {
+          "l": "China unveils detailed plan for crewed Moon landing — Universe Today (Nov 2026)",
+          "u": "https://www.universetoday.com/articles/china-unveils-their-plan-for-a-crewed-moon-landing"
         },
         {
           "l": "Discovery at Udvar-Hazy — National Air and Space Museum",
@@ -1582,109 +2010,461 @@
           "u": "https://www.russianspaceweb.com/proton.html"
         },
         {
+          "l": "Scientific American — Skiing to Mars: the PrOP-M rovers",
+          "u": "https://www.scientificamerican.com/blog/life-unbounded/skiing-to-mars-the-original-rovers/"
+        },
+        {
           "l": "Spaceflight Now — Delta II final launch (ICESat-2, 2018-09-15)",
           "u": "https://spaceflightnow.com/2018/09/14/delta-2-icesat-2-mission-status-center/"
         }
       ]
     },
     {
-      "id": "nasa-mmgis-rover-traverses",
-      "name": "NASA MMGIS rover traverses",
-      "catalog": "MMGIS traverse layers — Curiosity (MSL) and Perseverance (M20), NASA/JPL-Caltech",
-      "category": "other",
-      "description": "The rover teams' localized drive paths for Curiosity and Perseverance, drawn on the Mars surface view with their sols and distances.",
-      "source_url": "https://mars.nasa.gov/mmgis-maps/M20/Layers/json/M20_traverse.json",
-      "license_short": "PD-NASA",
-      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "Published by NASA/JPL-Caltech; U.S. Government work (17 U.S.C. §105).",
-      "used_on": [
-        "mars"
-      ]
-    },
-    {
-      "id": "pds-mer-traverses",
-      "name": "PDS Geosciences Node — MER traverses",
-      "catalog": "MER Analyst's Notebook traverse tables — Spirit (MERA) and Opportunity (MERB), PDS Geosciences Node, Washington University in St. Louis",
-      "category": "other",
-      "description": "The science teams' localized drive paths for Spirit and Opportunity, drawn on the Mars surface view with their sols and distances.",
-      "source_url": "https://an.rsl.wustl.edu/mera/AN/meri/MER/traverse/MERB_traverse_5130.csv",
-      "license_short": "PD-NASA",
-      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "NASA Planetary Data System archive data from a NASA mission; U.S. Government work (17 U.S.C. §105).",
-      "used_on": [
-        "mars"
-      ]
-    },
-    {
-      "id": "lroc-nac-traverses",
-      "name": "LROC NAC rover and LRV traverses",
-      "catalog": "LROC traverse GeoJSON layers mapped from Narrow Angle Camera images — NASA/GSFC/Arizona State University",
-      "category": "other",
-      "description": "The tracks the LRO Camera team mapped from Narrow Angle Camera images: Apollo 15 and 16, Lunokhod 1 and 2, and Yutu-2. Orrery simplifies them and draws them on the Moon surface view.",
-      "acknowledgement": "NASA/GSFC/Arizona State University",
-      "source_url": "https://www.lroc.asu.edu/geojson/luna_lunokhod1_traverse.geojson",
-      "license_short": "LROC-EDU",
-      "license_url": "https://lroc.im-ldi.com/about/terms",
-      "license_rationale": "The route files credit NASA/GSFC/Arizona State University and state \"LROC data, educational use with credit\". The LROC terms (lroc.im-ldi.com/about/terms, verified 2026-11-09 for LROC images, see image-provenance.json) permit educational use by schools, museums and other organisations without prior permission when credited; this is not the public-domain PDS archive. Orrery is a non-commercial educational site. Not separately checked: whether the terms page names the GeoJSON traverse layers themselves.",
-      "used_on": [
-        "moon"
-      ]
-    },
-    {
-      "id": "usgs-apollo17-traverse",
-      "name": "USGS Astrogeology · Apollo 17 traverse (Haase et al. 2019)",
-      "catalog": "Apollo 17 LRV mapped traverse and stations, Haase et al. 2019 (doi:10.1029/2018EA000408), USGS Astrogeology",
-      "category": "other",
-      "description": "The USGS Astrogeology mapped traverse of the Apollo 17 Lunar Roving Vehicle (Haase et al. 2019), tied to the LROC orthomosaic of the Taurus–Littrow valley and drawn on the Moon surface view with its stations.",
-      "source_url": "https://doi.org/10.1029/2018EA000408",
-      "license_short": "PD-USGov",
-      "license_url": "https://www.usa.gov/government-works",
-      "license_rationale": "USGS Astrogeology products are U.S. Government work (scripts/IMAGE-PIPELINE.md lists USGS Astrogeology as PD-USGov). The Apollo 17 route file credits \"© NASA\" and Haase et al. 2019. Not verified: the licence of the published traverse data itself, which the repo does not state.",
-      "used_on": [
-        "moon"
-      ]
-    },
-    {
-      "id": "hirise-zhurong-traverse",
-      "name": "HiRISE · Zhurong wheel tracks",
-      "catalog": "HiRISE ESP_073225_2055 (11 March 2022) and ESP_077511_2055 (7 February 2023), NASA/JPL/University of Arizona",
-      "category": "other",
-      "description": "The wheel tracks of China's Zhurong rover seen by the HiRISE camera on Mars Reconnaissance Orbiter (NASA/JPL/University of Arizona). Orrery traced them into the route drawn on the Mars surface view, accurate to about 20 m.",
-      "acknowledgement": "NASA/JPL/University of Arizona",
-      "source_url": "https://www.uahirise.org/ESP_073225_2055",
-      "license_short": "PD-NASA",
-      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
-      "license_rationale": "HiRISE imagery is produced by NASA/JPL/University of Arizona; not subject to U.S. copyright per 17 U.S.C. §105. Use is permitted; provide source attribution. The route drawn from it is Orrery's own tracing.",
-      "used_on": [
-        "mars"
-      ]
-    },
-    {
-      "id": "wan2014-yutu-traverse",
-      "name": "Yutu rover localisation (Wan et al. 2014, ISPRS Archives)",
-      "catalog": "Wan W. et al. 2014, \"A Cross-Site Visual Localization Method for Yutu Rover\", ISPRS Archives XL-4, 279 (doi:10.5194/isprsarchives-XL-4-279-2014), Figure 5",
-      "category": "other",
-      "description": "The Chang'e 3 mission team's localisation of the Yutu rover's 17 sites (N0101 to N0209) as of 16 January 2014; the lander and the sites were digitised from Figure 5 (metric grid, 10 m scale bar) and drawn on the Moon surface view.",
-      "source_url": "https://doi.org/10.5194/isprsarchives-XL-4-279-2014",
+      "id": "models-ref-commons",
+      "name": "3D model references — Wikimedia Commons photographs",
+      "catalog": "108 pages — sizes and proportions for the 3D models",
+      "category": "model-reference",
+      "description": "Photographs of flight hardware, test articles and museum replicas on Wikimedia Commons, looked at to get the shapes and layouts of the lander, rover and capsule models right. No photograph is reproduced; the models are our own geometry.",
+      "source_url": "https://commons.wikimedia.org/",
       "license_short": "Facts-only",
-      "license_url": "https://creativecommons.org/licenses/by/3.0/",
-      "license_rationale": "Only site positions are read off the figure (digitised, then placed from the lander); the figure itself is not reproduced. The paper is published open access under CC BY 3.0 (isprs-archives.copernicus.org, checked 2026-11-18).",
+      "license_url": "https://en.wikipedia.org/wiki/Idea%E2%80%93expression_distinction",
+      "license_rationale": "Only individual measurements (lengths, diameters, heights, stage and engine counts) were read from these pages; facts are not eligible for copyright, and no text, photograph or drawing was copied.",
       "used_on": [
-        "moon"
-      ]
-    },
-    {
-      "id": "vadawale2024-pragyan-stops",
-      "name": "Pragyan APXS stops (Vadawale et al. 2024, Nature)",
-      "catalog": "Vadawale S. V. et al. 2024, \"Chandrayaan-3 APXS elemental abundance measurements at lunar high latitude\", Nature 633 (doi:10.1038/s41586-024-07870-7), Figure 1c",
-      "category": "other",
-      "description": "The Chandrayaan-3 team's map of the Pragyan rover's 23 APXS observation stops around the Vikram lander, with latitude and longitude axes; the stops were digitised from Figure 1c and drawn on the Moon surface view.",
-      "source_url": "https://doi.org/10.1038/s41586-024-07870-7",
-      "license_short": "Facts-only",
-      "license_url": "https://www.nature.com/articles/s41586-024-07870-7",
-      "license_rationale": "Only stop positions are read off the figure (digitised against its latitude and longitude axes); the figure itself is not reproduced. The article shows no Creative Commons licence (checked 2026-11-18).",
-      "used_on": [
-        "moon"
+        "fleet"
+      ],
+      "references": [
+        {
+          "l": "Atlantis on display at the Kennedy Space Center Visitor Complex (photo: black nose and forward RCS, white blanket, windows, hatch)",
+          "u": "https://commons.wikimedia.org/wiki/File:Space_Shuttle_Atlantis_on_display_at_the_Kennedy_Space_Center's_Visitor_Complex.jpg"
+        },
+        {
+          "l": "NASA — InSight final selfie",
+          "u": "https://commons.wikimedia.org/wiki/File:PIA25287-InSights_Final_Selfie_main.png"
+        },
+        {
+          "l": "NASA render — InSight on the surface, SEIS dome and HP3",
+          "u": "https://commons.wikimedia.org/wiki/File:InSight_Lander.jpg"
+        },
+        {
+          "l": "NASA render — Phoenix spacecraft model",
+          "u": "https://commons.wikimedia.org/wiki/File:Phoenix_spacecraft_model.png"
+        },
+        {
+          "l": "Photo — Beagle 2 at the Science Museum",
+          "u": "https://commons.wikimedia.org/wiki/File:Beagle_2_at_the_Science_Museum.jpg"
+        },
+        {
+          "l": "Photo — Beagle 2 replica, opened (gold lid, four solar petals, base)",
+          "u": "https://commons.wikimedia.org/wiki/File:Beagle_2_replica.jpg"
+        },
+        {
+          "l": "Photo — EDM model at ESOC (foil, tanks, platform, thrusters)",
+          "u": "https://commons.wikimedia.org/wiki/File:Schiaparelli_Lander_Model_at_ESOC.JPG"
+        },
+        {
+          "l": "Photo — EDM model, Le Bourget 2013",
+          "u": "https://commons.wikimedia.org/wiki/File:Maquette_EDM_salon_du_Bourget_2013_DSC_0192.JPG"
+        },
+        {
+          "l": "Photo — Mars 3 lander on display (white shell, curved petals open)",
+          "u": "https://commons.wikimedia.org/wiki/File:Mars3_lander2_vsm.jpg"
+        },
+        {
+          "l": "Photo — Phoenix in assembly: octagonal deck, twelve-sided arrays",
+          "u": "https://commons.wikimedia.org/wiki/File:Phoenix_Mars_Lander_during_assembly_and_testing_(PIA09701).jpg"
+        },
+        {
+          "l": "Photo — Sojourner on Mars (dark panel, wheels, whip antenna)",
+          "u": "https://commons.wikimedia.org/wiki/File:Sojourner_on_Mars_PIA01122.jpg"
+        },
+        {
+          "l": "Photo — Sojourner rear, APXS and antenna",
+          "u": "https://commons.wikimedia.org/wiki/File:Back_of_Sojourner_and_its_Alpha_Proton_X-Ray_Spectrometer.png"
+        },
+        {
+          "l": "Photo — Viking lander replica, Smithsonian NASM (white boxy body, tall RTG windscreens, gold engine pod, dish, grey leg bays)",
+          "u": "https://commons.wikimedia.org/wiki/File:Viking_Mars_Lander_replica_on_display_in_the_Smithsonian's_Air_and_Space_museum_in_August_2015.jpg"
+        },
+        {
+          "l": "STS-135 Hurley looks at Atlantis tiles (photo: the black tile mosaic of the underside)",
+          "u": "https://commons.wikimedia.org/wiki/File:STS-135_Hurley_looks_at_Atlantis_tiles.jpg"
+        },
+        {
+          "l": "VKK Buran (OK-GLI) at an air show (photo: the airframe, the four-jet tail, the black nose and chin)",
+          "u": "https://commons.wikimedia.org/wiki/File:VKK_Buran_AN0077204.jpg"
+        },
+        {
+          "l": "Wikimedia Commons — 20190605 hayabusa-diagram-tpr-01.png: JAXA instrument diagram: body, horn, capsule and arrays placement",
+          "u": "https://commons.wikimedia.org/wiki/File:20190605_hayabusa-diagram-tpr-01.png"
+        },
+        {
+          "l": "Wikimedia Commons — Apollo 15 Lunar Roving Vehicle (museum article) and the LRV control console",
+          "u": "https://commons.wikimedia.org/wiki/File:Apollo_15_Lunar_Roving_Vehicle.jpg"
+        },
+        {
+          "l": "Wikimedia Commons — ASTRO-H before launch (stowed bench)",
+          "u": "https://commons.wikimedia.org/wiki/File:ASTRO-H_'HITOMI'.jpg"
+        },
+        {
+          "l": "Wikimedia Commons — Attaching the helicopter (PIA23372) and Ingenuity leaving the belly: how it rides under the rover",
+          "u": "https://commons.wikimedia.org/wiki/File:PIA23372-16-BuildingMars2020Rover-AttachingHelicopter-20190828.jpg"
+        },
+        {
+          "l": "Wikimedia Commons — BepiColombo spacecraft model.png: ESA render of the cruise stack: MTM, MPO, sunshield, Mio",
+          "u": "https://commons.wikimedia.org/wiki/File:BepiColombo_spacecraft_model.png"
+        },
+        {
+          "l": "Wikimedia Commons — BepiColombo stack.jpg: ESA photo: blanketed stack, antenna horn and dish",
+          "u": "https://commons.wikimedia.org/wiki/File:BepiColombo_stack.jpg"
+        },
+        {
+          "l": "Wikimedia Commons — Cassini spacecraft raw uncompressed.png: render: antenna, gold body, pallets, RTGs, Huygens on the side",
+          "u": "https://commons.wikimedia.org/wiki/File:Cassini_spacecraft_raw_uncompressed.png"
+        },
+        {
+          "l": "Wikimedia Commons — Chandra artist illustration",
+          "u": "https://commons.wikimedia.org/wiki/File:Chandra_artist_illustration.jpg"
+        },
+        {
+          "l": "Wikimedia Commons — Chandra spacecraft model",
+          "u": "https://commons.wikimedia.org/wiki/File:Chandra_X-ray_Observatory_spacecraft_model.png"
+        },
+        {
+          "l": "Wikimedia Commons — Compton cutaway illustration",
+          "u": "https://commons.wikimedia.org/wiki/File:Compton_Gamma_Ray_Observatory_cutaway_(unlabelled).jpg"
+        },
+        {
+          "l": "Wikimedia Commons — Compton released from Atlantis (STS-37 photograph)",
+          "u": "https://commons.wikimedia.org/wiki/File:Compton_Gamma_Ray_Observatory_released_from_Atlantis_(S37-96-009).jpg"
+        },
+        {
+          "l": "Wikimedia Commons — Dawn spacecraft model.png: render: boxy bus, two five-panel wings, tilted dish, thrusters",
+          "u": "https://commons.wikimedia.org/wiki/File:Dawn_spacecraft_model.png"
+        },
+        {
+          "l": "Wikimedia Commons — Detailed Drawing of the Galileo Spacecraft.png: NASA drawing: spun and despun sections, probe, booms",
+          "u": "https://commons.wikimedia.org/wiki/File:Detailed_Drawing_of_the_Galileo_Spacecraft.png"
+        },
+        {
+          "l": "Wikimedia Commons — Euclid spacecraft model",
+          "u": "https://commons.wikimedia.org/wiki/File:Euclid_spacecraft_model.png"
+        },
+        {
+          "l": "Wikimedia Commons — Euclid, ESA render",
+          "u": "https://commons.wikimedia.org/wiki/File:Euclid_spacecraft_ESA24912474.jpg"
+        },
+        {
+          "l": "Wikimedia Commons — ExoMars prototype rover: chassis, wheel legs, PanCam bar on its mast",
+          "u": "https://commons.wikimedia.org/wiki/File:ExoMars_prototype_rover.jpg"
+        },
+        {
+          "l": "Wikimedia Commons — ExoMars Trace Gas Orbiter Model at ESOC.JPG: model photo: gold bus, adapter ring, array layout, nadir antennas",
+          "u": "https://commons.wikimedia.org/wiki/File:ExoMars_Trace_Gas_Orbiter_Model_at_ESOC.JPG"
+        },
+        {
+          "l": "Wikimedia Commons — Gaia artist render",
+          "u": "https://commons.wikimedia.org/wiki/File:Gaia_spacecraft.jpeg"
+        },
+        {
+          "l": "Wikimedia Commons — Giotto Whipple shield ESA239195.jpg: ESA photo: deck, tilted dish, gantry with camera",
+          "u": "https://commons.wikimedia.org/wiki/File:Giotto_Whipple_shield_ESA239195.jpg"
+        },
+        {
+          "l": "Wikimedia Commons — Hitomi diagram",
+          "u": "https://commons.wikimedia.org/wiki/File:Hitomi.png"
+        },
+        {
+          "l": "Wikimedia Commons — Hubble after the final servicing mission (the photo the shape was taken from)",
+          "u": "https://commons.wikimedia.org/wiki/File:HST-SM4.jpeg"
+        },
+        {
+          "l": "Wikimedia Commons — Huygens probe schematic diagram.png: Huygens shield, after cone and back cover",
+          "u": "https://commons.wikimedia.org/wiki/File:Huygens_probe_schematic_diagram.png"
+        },
+        {
+          "l": "Wikimedia Commons — Juice flyby of Callisto artists impression.jpg: ESA render: boxy bus, dish on the front, two cross-shaped wings, RIME and MAG booms",
+          "u": "https://commons.wikimedia.org/wiki/File:Juice_flyby_of_Callisto_artists_impression.jpg"
+        },
+        {
+          "l": "Wikimedia Commons — Juno spacecraft model 1.png: render: dish, black bus, three wings, MAG boom frame on the third",
+          "u": "https://commons.wikimedia.org/wiki/File:Juno_spacecraft_model_1.png"
+        },
+        {
+          "l": "Wikimedia Commons — JWST spacecraft model (layout and sunshield shape)",
+          "u": "https://commons.wikimedia.org/wiki/File:JWST_spacecraft_model_3.png"
+        },
+        {
+          "l": "Wikimedia Commons — Kepler spacecraft artist render",
+          "u": "https://commons.wikimedia.org/wiki/File:Kepler_(spacecraft).jpg"
+        },
+        {
+          "l": "Wikimedia Commons — Mariner 2.jpg: NASA illustration: hex frame, panels, grid dish, tower",
+          "u": "https://commons.wikimedia.org/wiki/File:Mariner_2.jpg"
+        },
+        {
+          "l": "Wikimedia Commons — Mars 3 Space Probe 1.jpg: museum exhibit, front: flat dish, panels, aeroshell on top",
+          "u": "https://commons.wikimedia.org/wiki/File:Mars_3_Space_Probe_1.jpg"
+        },
+        {
+          "l": "Wikimedia Commons — Mars 3 Space Probe 3.jpg: museum exhibit: truss ring, tank barrel, spheres, collar, banded shield",
+          "u": "https://commons.wikimedia.org/wiki/File:Mars_3_Space_Probe_3.jpg"
+        },
+        {
+          "l": "Wikimedia Commons — Mars Odyssey spacecraft model.png: NASA render: bus, array, dish on mast, GRS boom with its head",
+          "u": "https://commons.wikimedia.org/wiki/File:Mars_Odyssey_spacecraft_model.png"
+        },
+        {
+          "l": "Wikimedia Commons — Mars Reconnaissance Orbiter spacecraft model.png: NASA render: gold bus, dish, two-segment arrays, nadir instruments",
+          "u": "https://commons.wikimedia.org/wiki/File:Mars_Reconnaissance_Orbiter_spacecraft_model.png"
+        },
+        {
+          "l": "Wikimedia Commons — MER-2 on its lander prelaunch (PIA04849): deck, WEB, Pancam mast, Mini-TES tube, HGA",
+          "u": "https://commons.wikimedia.org/wiki/File:MER-2_On_Lander_Prelaunch_PIA04849.jpg"
+        },
+        {
+          "l": "Wikimedia Commons — Model of Mariner 2 spacecraft (GRC-1964-C-70182).jpg: NASA model: tapered truss tower, six bays, dishes, panels",
+          "u": "https://commons.wikimedia.org/wiki/File:Model_of_Mariner_2_spacecraft_(GRC-1964-C-70182).jpg"
+        },
+        {
+          "l": "Wikimedia Commons — OSIRIS-REx spacecraft model.png: render: bus, arrays, dish, TAGSAM arm, capsule",
+          "u": "https://commons.wikimedia.org/wiki/File:OSIRIS-REx_spacecraft_model.png"
+        },
+        {
+          "l": "Wikimedia Commons — Perseverance test rover (PIA23965): straight-cleat wheels, chassis",
+          "u": "https://commons.wikimedia.org/wiki/File:Perseverance_Test_Rover_Moves_to_Mars_Yard_(PIA23965_fig1).jpg"
+        },
+        {
+          "l": "Wikimedia Commons — Philae lander (transparent bg).png: Philae: hexagonal body, tripod gear, solar cells",
+          "u": "https://commons.wikimedia.org/wiki/File:Philae_lander_(transparent_bg).png"
+        },
+        {
+          "l": "Wikimedia Commons — Phobos (model).jpg: museum model, full view with both panels and outriggers",
+          "u": "https://commons.wikimedia.org/wiki/File:Phobos_(model).jpg"
+        },
+        {
+          "l": "Wikimedia Commons — Pioneer 10 Diagram (No labels).svg: line drawing: bus, booms, dish, instrument compartment",
+          "u": "https://commons.wikimedia.org/wiki/File:Pioneer_10_Diagram_(No_labels).svg"
+        },
+        {
+          "l": "Wikimedia Commons — Pioneer 10-11 spacecraft.jpg: NASA painting: dish, hexagonal bus, both RTG booms, magnetometer boom",
+          "u": "https://commons.wikimedia.org/wiki/File:Pioneer_10-11_spacecraft.jpg"
+        },
+        {
+          "l": "Wikimedia Commons — Rosetta - Philae close-up.jpg: ESA render of Philae on the orbiter",
+          "u": "https://commons.wikimedia.org/wiki/File:Rosetta_-_Philae_close-up.jpg"
+        },
+        {
+          "l": "Wikimedia Commons — Schéma sonde-spatiale-Giotto.png: schematic: drum, shield, dish, arches",
+          "u": "https://commons.wikimedia.org/wiki/File:Sch%C3%A9ma_sonde-spatiale-Giotto.png"
+        },
+        {
+          "l": "Wikimedia Commons — Spektr-RG payloads render",
+          "u": "https://commons.wikimedia.org/wiki/File:Spektr-RG_payloads.png"
+        },
+        {
+          "l": "Wikimedia Commons — Spitzer spacecraft model",
+          "u": "https://commons.wikimedia.org/wiki/File:Spitzer_spacecraft_model.png"
+        },
+        {
+          "l": "Wikimedia Commons — TESS camera assembly (barrels and flared hoods)",
+          "u": "https://commons.wikimedia.org/wiki/File:TESS-cameras.png"
+        },
+        {
+          "l": "Wikimedia Commons — Tianwen-1 in Mars orbit.jpg: CNSA photo: gold hexagonal bus, array wings, thin antenna rods",
+          "u": "https://commons.wikimedia.org/wiki/File:Tianwen-1_in_Mars_orbit.jpg"
+        },
+        {
+          "l": "Wikimedia Commons — Ulysses spacecraft model.png: render: gold box, dish, RTG, experiment boom, radial wires",
+          "u": "https://commons.wikimedia.org/wiki/File:Ulysses_spacecraft_model.png"
+        },
+        {
+          "l": "Wikimedia Commons — Vega Solar System Probe Bus and Landing Apparatus.jpg: photo of the Venera-derived bus with the sphere on top",
+          "u": "https://commons.wikimedia.org/wiki/File:Vega_Solar_System_Probe_Bus_and_Landing_Apparatus.jpg"
+        },
+        {
+          "l": "Wikimedia Commons — Viking spacecraft.jpg: NASA photo: engine cone, octagon, four-panel wings, gold dish, capsule dome on top",
+          "u": "https://commons.wikimedia.org/wiki/File:Viking_spacecraft.jpg"
+        },
+        {
+          "l": "Wikimedia Commons — Voyager Instruments.jpg: NASA labelled diagram: bus, RTGs, scan platform, booms",
+          "u": "https://commons.wikimedia.org/wiki/File:Voyager_Instruments.jpg"
+        },
+        {
+          "l": "Wikimedia Commons — Voyager spacecraft model.png: render: dish, decagon bus, science boom, RTG boom, long magnetometer boom",
+          "u": "https://commons.wikimedia.org/wiki/File:Voyager_spacecraft_model.png"
+        },
+        {
+          "l": "Wikimedia Commons — XMM-Newton spacecraft model",
+          "u": "https://commons.wikimedia.org/wiki/File:XMM-Newton_spacecraft_model.png"
+        },
+        {
+          "l": "Wikimedia Commons — XMM-Newton spacecraft model, rear view",
+          "u": "https://commons.wikimedia.org/wiki/File:XMM-Newton_spacecraft_model_2.png"
+        },
+        {
+          "l": "Wikimedia Commons — Zhurong rover mockup at CSTM: deck, wings, mast, dishes, ribbed wheels",
+          "u": "https://commons.wikimedia.org/wiki/File:Zhurong_rover_mockup_at_CSTM_01.jpg"
+        },
+        {
+          "l": "Wikimedia Commons — Автоматическая межпланетная станция Фобос (14988562882).jpg: museum model: four tank spheres, toroidal belt, core with boxes, mast dish, flat panels",
+          "u": "https://commons.wikimedia.org/wiki/File:%D0%90%D0%B2%D1%82%D0%BE%D0%BC%D0%B0%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F_%D0%BC%D0%B5%D0%B6%D0%BF%D0%BB%D0%B0%D0%BD%D0%B5%D1%82%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D0%B0%D0%BD%D1%86%D0%B8%D1%8F_%D0%A4%D0%BE%D0%B1%D0%BE%D1%81_(14988562882).jpg"
+        },
+        {
+          "l": "Wikimedia Commons, Artemis 1 - Orion and ESM approach Moon.jpg: ESM thrusters, collar, wing mast",
+          "u": "https://commons.wikimedia.org/wiki/File:Artemis%201%20-%20Orion%20and%20ESM%20approach%20Moon.jpg"
+        },
+        {
+          "l": "Wikimedia Commons, Artist's impression of the SMART-1 mission ESA199399.jpg: ESA artist impression: cube bus, gold top, three-panel wings",
+          "u": "https://commons.wikimedia.org/wiki/File:Artist's_impression_of_the_SMART-1_mission_ESA199399.jpg"
+        },
+        {
+          "l": "Wikimedia Commons, Calypso Starliner capsule postflight.jpg: crew module shoulder, panels, roundel",
+          "u": "https://commons.wikimedia.org/wiki/File:Calypso%20Starliner%20capsule%20postflight.jpg"
+        },
+        {
+          "l": "Wikimedia Commons, CCP SpaceX Demo-2 Dragon (3).jpg: Crew Dragon: hatch, windows, bays, heat shield",
+          "u": "https://commons.wikimedia.org/wiki/File:CCP%20SpaceX%20Demo-2%20Dragon%20(3).jpg"
+        },
+        {
+          "l": "Wikimedia Commons, Chandrayaan-1-01.jpg: ISRO clean-room photo: gold foil cube, white patches, dish, panel",
+          "u": "https://commons.wikimedia.org/wiki/File:Chandrayaan-1-01.jpg"
+        },
+        {
+          "l": "Wikimedia Commons, Chang e 1.jpg: CAD view: dome and mast on top, thrusters on a side, engine bell below",
+          "u": "https://commons.wikimedia.org/wiki/File:Chang_e_1.jpg"
+        },
+        {
+          "l": "Wikimedia Commons, Chang'e-1 mockup at BASM.jpg: museum mock-up: gold cube, two three-panel wings, dishes on the faces",
+          "u": "https://commons.wikimedia.org/wiki/File:Chang'e-1_mockup_at_BASM.jpg"
+        },
+        {
+          "l": "Wikimedia Commons, Chinese next-generation crewed spacecraft mockup - NMC.jpg: module proportions, thruster frames, wing",
+          "u": "https://commons.wikimedia.org/wiki/File:Chinese%20next-generation%20crewed%20spacecraft%20mockup%20-%20NMC.jpg"
+        },
+        {
+          "l": "Wikimedia Commons, Clementine spacecraft model.png: render: sensor face, two two-panel wings, nozzle, dish",
+          "u": "https://commons.wikimedia.org/wiki/File:Clementine_spacecraft_model.png"
+        },
+        {
+          "l": "Wikimedia Commons, CRS-8 Dragon from ISS (ISS047E050943).jpg: two solar wings, trunk, nose",
+          "u": "https://commons.wikimedia.org/wiki/File:CRS-8%20Dragon%20from%20ISS%20(ISS047E050943).jpg"
+        },
+        {
+          "l": "Wikimedia Commons, Dummy Gaganyaan Crew Module for TV-D1 abort test 01.jpg: crew module shape and tape seams",
+          "u": "https://commons.wikimedia.org/wiki/File:Dummy%20Gaganyaan%20Crew%20Module%20for%20TV-D1%20abort%20test%2001.jpg"
+        },
+        {
+          "l": "Wikimedia Commons, Emirates Mars Mission mockup at IAC 2021 02.jpg — box bus with the dish on its bracket on top, science deck on one face (flight mockup photo)",
+          "u": "https://commons.wikimedia.org/wiki/File:Emirates_Mars_Mission_mockup_at_IAC_2021_02.jpg"
+        },
+        {
+          "l": "Wikimedia Commons, Gaganyaan module infographic (cropped).jpg: module layout, hatch and portholes",
+          "u": "https://commons.wikimedia.org/wiki/File:Gaganyaan%20module%20infographic%20(cropped).jpg"
+        },
+        {
+          "l": "Wikimedia Commons, GSLV Mk III M1, Chandrayaan-2 - Orbiter at SDSC SHAR 01.jpg: ISRO photo: gold foil box, white taped patches, gold drum, cans and jets, orange ring",
+          "u": "https://commons.wikimedia.org/wiki/File:GSLV_Mk_III_M1,_Chandrayaan-2_-_Orbiter_at_SDSC_SHAR_01.jpg"
+        },
+        {
+          "l": "Wikimedia Commons, Luna 10 Musee du Bourget P1010504.JPG: museum model: lattice skirt, cream tanks, polished capsule, whips, mushroom sensors",
+          "u": "https://commons.wikimedia.org/wiki/File:Luna_10_Musee_du_Bourget_P1010504.JPG"
+        },
+        {
+          "l": "Wikimedia Commons, Lunar Orbiter Spacecraft.jpg: engineering mock-up: shell, tank cluster, four panels, both booms",
+          "u": "https://commons.wikimedia.org/wiki/File:Lunar_Orbiter_Spacecraft.jpg"
+        },
+        {
+          "l": "Wikimedia Commons, Lunar Prospector orbiter.jpg: NASA illustration: cell-covered drum, lattice booms, instruments, nose cone",
+          "u": "https://commons.wikimedia.org/wiki/File:Lunar_Prospector_orbiter.jpg"
+        },
+        {
+          "l": "Wikimedia Commons, Mariner 3 and 4.jpg — octagon, four-panel cross with tip vanes, top dish and mast (shape reference photo)",
+          "u": "https://commons.wikimedia.org/wiki/File:Mariner_3_and_4.jpg"
+        },
+        {
+          "l": "Wikimedia Commons, Mariner09.jpg — white propulsion module on the octagon, front dish with its tripod feed, panel arms (shape reference photo)",
+          "u": "https://commons.wikimedia.org/wiki/File:Mariner09.jpg"
+        },
+        {
+          "l": "Wikimedia Commons, Mars Express.jpg — bus, D-frame yokes and four-panel wings, dish on the back (shape reference photo)",
+          "u": "https://commons.wikimedia.org/wiki/File:Mars_Express.jpg"
+        },
+        {
+          "l": "Wikimedia Commons, Mars Orbiter Mission Spacecraft.jpg — cube bus, tank dome, single array, side-mounted reflector (labelled reference)",
+          "u": "https://commons.wikimedia.org/wiki/File:Mars_Orbiter_Mission_Spacecraft.jpg"
+        },
+        {
+          "l": "Wikimedia Commons, Maven spacecraft full.jpg — gold bus, tank dome, gull-wing arrays with tip magnetometers, boom and dish (shape reference)",
+          "u": "https://commons.wikimedia.org/wiki/File:Maven_spacecraft_full.jpg"
+        },
+        {
+          "l": "Wikimedia Commons, New Chinese Capsule 2.png: wing layout",
+          "u": "https://commons.wikimedia.org/wiki/File:New%20Chinese%20Capsule%202.png"
+        },
+        {
+          "l": "Wikimedia Commons, New Shepard capsule 01 (cropped).jpg: capsule dome, hatch, large windows",
+          "u": "https://commons.wikimedia.org/wiki/File:New%20Shepard%20capsule%2001%20(cropped).jpg"
+        },
+        {
+          "l": "Wikimedia Commons, New Shepard spacecraft.jpg: capsule outline",
+          "u": "https://commons.wikimedia.org/wiki/File:New%20Shepard%20spacecraft.jpg"
+        },
+        {
+          "l": "Wikimedia Commons, Orion Service Module elements 2015.jpg: crew module, adapter collar, ESM, spacecraft adapter",
+          "u": "https://commons.wikimedia.org/wiki/File:Orion%20Service%20Module%20elements%202015.jpg"
+        },
+        {
+          "l": "Wikimedia Commons, Schema-1 de la sonde Lunar Reconnaissance Orbiter.png — bus faces, payload face, boom dish and the sectioned array (labelled diagram)",
+          "u": "https://commons.wikimedia.org/wiki/File:Schema-1_de_la_sonde_Lunar_Reconnaissance_Orbiter.png"
+        },
+        {
+          "l": "Wikimedia Commons, SpaceX CRS-15 Dragon docked to the ISS (4).jpg: Dragon 1 nose, Draco pockets, trunk",
+          "u": "https://commons.wikimedia.org/wiki/File:SpaceX%20CRS-15%20Dragon%20docked%20to%20the%20ISS%20(4).jpg"
+        },
+        {
+          "l": "Wikimedia Commons, Starliner Departs the Space Station.png: crew module, service module, doghouses",
+          "u": "https://commons.wikimedia.org/wiki/File:Starliner%20Departs%20the%20Space%20Station.png"
+        },
+        {
+          "l": "Wikimedia Commons, 月周回衛星「かぐや（SELENE)」の模型.JPG: 1/10 model: black bus, octagonal sub-satellites, mast dish, gold truss and three-panel paddle",
+          "u": "https://commons.wikimedia.org/wiki/File:%E6%9C%88%E5%91%A8%E5%9B%9E%E8%A1%9B%E6%98%9F%E3%80%8C%E3%81%8B%E3%81%90%E3%82%84%EF%BC%88SELENE)%E3%80%8D%E3%81%AE%E6%A8%A1%E5%9E%8B.JPG"
+        },
+        {
+          "l": "Wikimedia Commons: Akatsuki CG01.png (gold box, white thruster cups, stacked array panels)",
+          "u": "https://commons.wikimedia.org/wiki/File:Akatsuki_CG01.png"
+        },
+        {
+          "l": "Wikimedia Commons: Europa Clipper spacecraft model.png (dish, vault, arrays, REASON ladders, boom)",
+          "u": "https://commons.wikimedia.org/wiki/File:Europa_Clipper_spacecraft_model.png"
+        },
+        {
+          "l": "Wikimedia Commons: Lucy spacecraft model.png (gored UltraFlex discs, bus, dish)",
+          "u": "https://commons.wikimedia.org/wiki/File:Lucy_spacecraft_model.png"
+        },
+        {
+          "l": "Wikimedia Commons: Magellan - artist depiction.png (dish, bus, two square arrays)",
+          "u": "https://commons.wikimedia.org/wiki/File:Magellan_-_artist_depiction.png"
+        },
+        {
+          "l": "Wikimedia Commons: MESSENGER spacecraft model.png (bus, tanks, arrays, sunshade)",
+          "u": "https://commons.wikimedia.org/wiki/File:MESSENGER_spacecraft_model.png"
+        },
+        {
+          "l": "Wikimedia Commons: Parker Solar Probe.jpg (artist view, shield, bus, arrays, boom)",
+          "u": "https://commons.wikimedia.org/wiki/File:Parker_Solar_Probe.jpg"
+        },
+        {
+          "l": "Wikimedia Commons: Psyche-spacecraft-diagram.png (bus, dish, boom mast, five-panel arrays)",
+          "u": "https://commons.wikimedia.org/wiki/File:Psyche-spacecraft-diagram.png"
+        },
+        {
+          "l": "Wikimedia Commons: Solar Orbiter STM (blanketed body, tape seams, black Kapton)",
+          "u": "https://commons.wikimedia.org/wiki/File:Solar_Orbiter_STM_(16924827482).jpg"
+        },
+        {
+          "l": "X-37B at the Kennedy Space Center Shuttle Landing Facility, 2019 (photo: black tile underside and nose, closed bay doors, canted tail)",
+          "u": "https://commons.wikimedia.org/wiki/File:X-37b_at_NASA_Kennedy_Space_Center_Shuttle_Landing_Facility_2019,_Oct._27.jpg"
+        }
       ]
     }
   ]

@@ -127,6 +127,30 @@ describe('resolveQualitySync', () => {
   it('falls back to medium for a first-time visitor', () => {
     expect(resolveQualitySync().tier).toBe('medium');
   });
+
+  // 0.9.11 Q2: every e2e test is a first visit, so the GPU-less runner drew /fly at medium; its
+  // bloom / grain / vignette passes cost SwiftShader about 170 ms a frame against 67 ms at low.
+  const withRenderer = (renderer: string) => {
+    const gl = {
+      getExtension: (n: string) =>
+        n === 'WEBGL_debug_renderer_info' ? { UNMASKED_RENDERER_WEBGL: 0x9246 } : null,
+      getParameter: () => renderer,
+    };
+    vi.stubGlobal('document', { createElement: () => ({ getContext: () => gl }) });
+  };
+
+  it('a first visit on a software renderer (SwiftShader, llvmpipe) falls back to low', () => {
+    withRenderer('ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero)), SwiftShader driver)');
+    expect(resolveQualitySync().tier).toBe('low');
+    __resetAutoTierCacheForTests();
+    withRenderer('llvmpipe (LLVM 17.0.6, 256 bits)');
+    expect(resolveQualitySync().tier).toBe('low');
+  });
+
+  it('a first visit on a hardware renderer still falls back to medium', () => {
+    withRenderer('ANGLE (Intel, Mesa Intel(R) Xe Graphics, OpenGL 4.6)');
+    expect(resolveQualitySync().tier).toBe('medium');
+  });
 });
 
 describe('resolveQualitySource', () => {

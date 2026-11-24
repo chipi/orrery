@@ -19,7 +19,8 @@
     "targetDownrangeKm",
     "flightPathAngleDeg",
     "parachuteCdA",
-    "terminalCdA"
+    "terminalCdA",
+    "beats.apex_cover_jettison"
   ],
   "archetype": "EARTH_CAPSULE_REENTRY",
   "params": {
@@ -37,6 +38,12 @@
     {
       "l": "ASTP Mission Evaluation Report (JSC-10607): entry 224:39:00 at 122 km; drogue 224:54:37 at 5,655 m (manual), main 224:55:17 at 2,180 m, landing 224:58:24",
       "u": "https://ntrs.nasa.gov/api/citations/19760023154/downloads/19760023154.pdf"
+    }
+  ],
+  "beats": [
+    {
+      "type": "apex_cover_jettison",
+      "altM": 5855
     }
   ]
 }

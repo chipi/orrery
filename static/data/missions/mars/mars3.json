@@ -46,6 +46,10 @@
     {
       "id": "mars-3",
       "role": "spacecraft"
+    },
+    {
+      "id": "baikonur-81",
+      "role": "launch-site"
     }
   ],
   "flight": {

@@ -1,11 +1,19 @@
 import * as THREE from 'three';
+import { buildMslDescentStage } from './showcase/msl-edl';
 import type { DescentBody } from '$lib/physics/descent/descent-physics';
 import { buildMoonLanderModel } from '../moon-lander-models';
 import { buildMarsLanderModel } from '../mars-lander-models';
 import { buildCapsuleById } from './capsule-models';
+import { buildStarshipShip } from './starship-ship';
 import { getEarthOrbitCoast } from '../orbital/earth-orbit-registry';
 import { buildLanderCruiseCraft } from './lander-cruise-models';
 import { buildInterplanetarySpacecraft } from './interplanetary-spacecraft-models';
+import {
+  detailedDescentLander,
+  detailedProbe,
+  detailedReturnCapsule,
+  dockedApolloCsm,
+} from './descent-landers';
 
 /**
  * Per-mission procedural EDL-stack models for /fly's descent act (RFC-034 §9) —
@@ -52,6 +60,48 @@ export interface DescentModel {
   backshellBaseY: number;
   parachuteBaseY: number;
   landerMountY: number;
+  /** Airbag landers (Pathfinder, MER): the ball the scene lowers on the bridle, inflates,
+   *  bounces and rolls. Absent for every other stack. */
+  airbagBall?: AirbagBall;
+  /** A main chute that stays on the lander when the backshell and the pilot chute leave
+   *  (Beagle 2): hung from `baseY` (scene units, above the lander), opened at parachute_jettison
+   *  and released at first contact. The scene lifts it with the ball as the bags inflate. */
+  mainChute?: { group: THREE.Group; baseY: number };
+  /** Legged landers: the legs fold up until leg_deploy and the arrays stay closed until
+   *  arrays_open; each takes the progress, 0 closed to 1 out. */
+  deploy?: { legs?: (f: number) => void; arrays?: (f: number) => void };
+  /** The terminal engines' exits (root frame): the scene burns a plume at each, and cuts them at
+   *  contact. Absent: one plume at `retroPlumeAnchor`. */
+  plumeSites?: THREE.Vector3[];
+  /** Where the camera frames the landed craft (root frame), legs and arrays out. */
+  landedFrame?: { cy: number; r: number };
+}
+
+export interface AirbagBall {
+  /** Holds the lander and the bags; rotates about the ball's centre as it rolls. */
+  pivot: THREE.Group;
+  /** The pivot's height with the bags stowed (the lander's centre, scene units). */
+  restY: number;
+  /** The inflated ball's radius (scene units). */
+  radius: number;
+  /** Scene units per metre. */
+  k: number;
+  /** The bridle's length (scene units). */
+  bridleLength: number;
+  /** The bridle line, from the lander's top up to the backshell; the scene stretches it. */
+  bridle: THREE.Object3D;
+  /** The RAD rockets' plumes on the backshell. */
+  radPlumes: THREE.Object3D[];
+  /** The side petals, built folded closed (rotation.x = −petalClosedRad, order YXZ). */
+  petals: THREE.Object3D[];
+  petalClosedRad: number;
+  /** Parts hidden inside the closed petals until they open (a MER rover). */
+  inside: THREE.Object3D[];
+  /** A lander that opens by its own motion (Beagle 2's lid and panels) instead of folding
+   *  `petals`: the scene calls it with the opening progress, 0 closed to 1 open. */
+  unfold?: (open: number) => void;
+  /** The opened lander's span (scene units): the camera frames it once the lander opens. */
+  openSpan?: number;
 }
 
 interface Palette {
@@ -190,6 +240,86 @@ function suspensionLines(
 
 /** A single centred parachute (canopy + fine lines to a knot at `mountY`) —
  *  used by the planetary aeroshell stacks (Mars / Venus / Titan / Jupiter). */
+/**
+ * A disk-gap-band parachute at its real size against the aeroshell (operator 2026-11-23: the
+ * chute was "too tiny, too close"). Origin at the riser attachment on the backshell; the disk,
+ * the open gap and the band rise above it on `lines` suspension lines. Sizes in metres, drawn
+ * at `k` scene units per metre. Gores alternate white and orange in fours, as on the MSL test
+ * canopies (NASA PIA11993).
+ */
+function dgbParachute(
+  k: number,
+  o: { diameterM: number; totalM: number; lines: number },
+): THREE.Group {
+  const g = new THREE.Group();
+  const R = o.diameterM / 2;
+  const bandH = o.diameterM * 0.121; // DGB band ≈ 12 % of the nominal diameter
+  const gapH = o.diameterM * 0.042;
+  const capRs = R * 1.12; // the inflated disk: a spherical cap
+  const capTheta = Math.asin(R / capRs);
+  const diskH = capRs * (1 - Math.cos(capTheta));
+  const bandBot = o.totalM - diskH - gapH - bandH;
+  const white = new THREE.Color(0xf2efe8);
+  const orange = new THREE.Color(0xd2642a);
+  const goreColour = (x: number, z: number): THREE.Color => {
+    const a = (Math.atan2(z, x) + Math.PI * 2) % (Math.PI * 2);
+    const gore = Math.floor((a / (Math.PI * 2)) * o.lines);
+    return Math.floor(gore / 4) % 2 === 0 ? white : orange;
+  };
+  const paint = (geo: THREE.BufferGeometry): THREE.BufferGeometry => {
+    const flat = geo.toNonIndexed();
+    const p = flat.attributes.position;
+    const c = new Float32Array(p.count * 3);
+    for (let i = 0; i < p.count; i += 3) {
+      const x = (p.getX(i) + p.getX(i + 1) + p.getX(i + 2)) / 3;
+      const z = (p.getZ(i) + p.getZ(i + 1) + p.getZ(i + 2)) / 3;
+      const col = goreColour(x, z);
+      for (let j = 0; j < 3; j++) col.toArray(c, (i + j) * 3);
+    }
+    flat.setAttribute('color', new THREE.BufferAttribute(c, 3));
+    flat.computeVertexNormals();
+    return flat;
+  };
+  const cloth = new THREE.MeshStandardMaterial({
+    vertexColors: true,
+    roughness: 0.85,
+    metalness: 0,
+    side: THREE.DoubleSide,
+  });
+  const disk = new THREE.Mesh(
+    paint(new THREE.SphereGeometry(capRs, o.lines, 10, 0, Math.PI * 2, 0, capTheta)),
+    cloth,
+  );
+  disk.position.y = o.totalM - capRs;
+  g.add(disk);
+  const band = new THREE.Mesh(
+    paint(new THREE.CylinderGeometry(R * 0.97, R * 0.9, bandH, o.lines, 2, true)),
+    cloth,
+  );
+  band.position.y = bandBot + bandH / 2;
+  g.add(band);
+  // Suspension lines from the band's skirt to the riser, then the riser to the backshell.
+  const riserTop = new THREE.Vector3(0, o.totalM * 0.06, 0);
+  g.add(suspensionLines(R * 0.9, new THREE.Vector3(0, bandBot, 0), riserTop, o.lines));
+  const riser = new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(), riserTop]);
+  g.add(new THREE.Line(riser, new THREE.LineBasicMaterial({ color: 0xd9dde2 })));
+  g.scale.setScalar(k);
+  const out = new THREE.Group();
+  out.add(g);
+  return out;
+}
+
+/** Marks a chute as the first (released at parachute_jettison) or second (opened then) stage. */
+function chuteStage(g: THREE.Group, stage: 1 | 2): THREE.Group {
+  g.userData.chuteStage = stage;
+  return g;
+}
+
+/** The top of the craft in its own frame: where a chute's riser attaches. */
+function craftTop(lander: THREE.Group): number {
+  return new THREE.Box3().setFromObject(lander).max.y;
+}
+
 function parachuteCanopy(radius: number, p: Palette, mountY: number): THREE.Group {
   const g = new THREE.Group();
   g.add(canopyDome(radius, p));
@@ -352,13 +482,29 @@ function buildVenusDescentLander(): THREE.Group {
   return g;
 }
 
+/** Starship flights whose lander is the Ship itself (belly-flop, flip, Raptor landing burn). */
+const STARSHIP_SHIP_SITES = new Set(['starship-demo', 'starship-mars-crew']);
+
 // Earth re-entries with no LEO coast entry (lunar returns) name their capsule here.
-const LUNAR_RETURN_CAPSULE: Record<string, string> = { apollo8: 'apollo-cm' };
+const LUNAR_RETURN_CAPSULE: Record<string, string> = {
+  apollo8: 'apollo-cm',
+  'apollo11-splashdown': 'apollo-cm', // Apollo 11's Earth return (its lunar landing is siteId apollo11)
+  'apollo12-splashdown': 'apollo-cm',
+  'apollo14-splashdown': 'apollo-cm',
+  'apollo15-splashdown': 'apollo-cm',
+  'apollo16-splashdown': 'apollo-cm',
+  'apollo17-splashdown': 'apollo-cm',
+};
 
 /** Resolve the terminal landed craft for a mission (the reused surface model). */
 function resolveLander(siteId: string, body: DescentBody): THREE.Group {
-  if (body === 'moon') return buildMoonLanderModel(siteId, 'lander', '#c9ccd2');
-  if (body === 'venus') return buildVenusDescentLander();
+  if (STARSHIP_SHIP_SITES.has(siteId)) return buildStarshipShip();
+  if (body === 'moon') {
+    const tier0 = buildMoonLanderModel(siteId, 'lander', '#c9ccd2');
+    return detailedDescentLander(siteId, tier0) ?? tier0;
+  }
+  const probe = (old: THREE.Group): THREE.Group => detailedProbe(body, siteId, old) ?? old;
+  if (body === 'venus') return probe(buildVenusDescentLander());
   if (body === 'itokawa' || body === 'ryugu' || body === 'bennu' || body === 'eros') {
     // The mission's own craft (Hayabusa, Hayabusa2, NEAR, OSIRIS-REx), at the generic sampler's size.
     const generic = buildAsteroidSamplerBus();
@@ -374,11 +520,11 @@ function resolveLander(siteId: string, body: DescentBody): THREE.Group {
     own.position.y = -box.min.y * k; // base on the surface, like the sampler bus
     const holder = new THREE.Group();
     holder.add(own);
-    return holder;
+    return probe(holder);
   }
-  if (body === 'jupiter') return buildJupiterDescentModule();
-  if (body === 'titan') return buildHuygensProbe();
-  if (body === 'comet_67p') return buildPhilaeLander();
+  if (body === 'jupiter') return probe(buildJupiterDescentModule());
+  if (body === 'titan') return probe(buildHuygensProbe());
+  if (body === 'comet_67p') return probe(buildPhilaeLander());
   // Tier-1: the earth descent profile's siteId is the mission id — look up its
   // capsule family from the coast registry (falls back to Mercury).
   if (body === 'earth') {
@@ -386,9 +532,10 @@ function resolveLander(siteId: string, body: DescentBody): THREE.Group {
       getEarthOrbitCoast(siteId)?.capsuleId ?? LUNAR_RETURN_CAPSULE[siteId] ?? 'mercury';
     const cap = buildCapsuleById(capsuleId);
     cap.userData.capsuleId = capsuleId; // read by buildEarthCapsuleStack for chute count
-    return cap;
+    return detailedReturnCapsule(capsuleId, cap) ?? cap;
   }
-  return buildMarsLanderModel(siteId, 'lander', undefined, '#d0a884');
+  const tier0 = buildMarsLanderModel(siteId, 'lander', undefined, '#d0a884');
+  return detailedDescentLander(siteId, tier0) ?? tier0;
 }
 
 /** Common empty-parts scaffold so every builder returns a full DescentModel. */
@@ -433,11 +580,23 @@ function buildLunarStack(lander: THREE.Group, vehLen: number): DescentModel {
   lander.position.y = 0;
   m.root.add(lander);
 
-  // A downward retro bell + plume anchor beneath the descent stage.
-  m.retro = retroNozzles(1, 0, vehLen * 0.14, p.eng);
-  m.retro.position.y = -vehLen * 0.04;
+  // A downward retro bell + plume anchor beneath the descent stage — or, for a detailed lander
+  // with its own engine bell, the plume from that bell's exit.
+  const exitY = lander.userData.engineExitY as number | undefined;
+  const thrusters = lander.userData.plumeSites as THREE.Vector3[] | undefined;
+  if (thrusters) {
+    // Starship HLS: the descent burn comes from its high landing thrusters, not the Raptors.
+    m.retro = new THREE.Group();
+    m.plumeSites = thrusters;
+  } else if (exitY != null) {
+    m.retro = new THREE.Group();
+    m.retro.position.y = exitY;
+  } else {
+    m.retro = retroNozzles(1, 0, vehLen * 0.14, p.eng);
+    m.retro.position.y = -vehLen * 0.04;
+  }
   m.root.add(m.retro);
-  m.retroPlumeAnchor.position.y = -vehLen * 0.14;
+  m.retroPlumeAnchor.position.y = exitY ?? -vehLen * 0.14;
   m.root.add(m.retroPlumeAnchor);
   return m;
 }
@@ -479,6 +638,15 @@ function buildApolloCSM(vehLen: number): THREE.Group {
  *  at the start of the descent (the scene animates it pulling away). */
 function buildApolloLunarStack(lander: THREE.Group, vehLen: number): DescentModel {
   const m = buildLunarStack(lander, vehLen);
+  const dockY = lander.userData.dockY as number | undefined;
+  const k = lander.userData.metresToScene as number | undefined;
+  const docked = dockY != null && k != null ? dockedApolloCsm(dockY, k) : null;
+  if (docked) {
+    // The detailed CSM, at the LM's own scale, docked on its tunnel.
+    m.orbiter.add(docked);
+    m.root.add(m.orbiter);
+    return m;
+  }
   const csm = buildApolloCSM(vehLen);
   // Docked above the LM ascent stage via a short docking tunnel (a clear gap so
   // the CSM reads as a separate craft, not part of the LM).
@@ -559,87 +727,504 @@ function buildMarsRetroStack(lander: THREE.Group, vehLen: number, legs = 3): Des
   return m;
 }
 
-/** Mars airbag (Pathfinder / Spirit / Opportunity) — tetrahedral airbag cluster. */
+/** Pathfinder's and MER's aeroshell: 2.65 m across (Braun et al., AIAA 97-3663; MER press kit). */
+const AIRBAG_AEROSHELL_M = 2.65;
+/** Pathfinder's airbags: four bags inflating to a 5.2 m ball (NSSDC Mars entry page, the
+ *  pre-landing plan), six lobes each (JPL); MER's ball is drawn the same. */
+const AIRBAG_BALL_M = 5.2;
+/** The bridle the lander slid down below the backshell: 20 m (MER press kit, 2004; Pathfinder's
+ *  braided Kevlar tether the same, NSSDC). */
+const AIRBAG_BRIDLE_M = 20;
+/** Pathfinder's disk-gap-band: 12.5 m (NSSDC, pre-landing plan). MER's size was not found and is
+ *  drawn the same. The line length is an estimate in MSL's proportion (50 m for a 21.35 m DGB). */
+const AIRBAG_CHUTE_M = 12.5;
+
+/** A bag: six lobes in a ring around `normal`, its centre `dist` from the ball's centre. */
+function airbagCluster(
+  normal: THREE.Vector3,
+  dist: number,
+  lobeR: number,
+  mat: THREE.Material,
+): THREE.Group {
+  const g = new THREE.Group();
+  const geo = new THREE.SphereGeometry(lobeR, 18, 12);
+  const pos = geo.attributes.position;
+  // A little slack in the fabric: the lobes are not perfect spheres.
+  for (let i = 0; i < pos.count; i++) {
+    const n =
+      1 + 0.025 * Math.sin(pos.getX(i) * 31 + pos.getY(i) * 17) * Math.cos(pos.getZ(i) * 23);
+    pos.setXYZ(i, pos.getX(i) * n, pos.getY(i) * n, pos.getZ(i) * n);
+  }
+  geo.computeVertexNormals();
+  const ring = lobeR * 0.82;
+  for (let i = 0; i < 6; i++) {
+    const a = (i / 6) * Math.PI * 2;
+    const lobe = new THREE.Mesh(geo, mat);
+    lobe.position.set(Math.cos(a) * ring, 0, Math.sin(a) * ring);
+    g.add(lobe);
+  }
+  g.position.copy(normal).multiplyScalar(dist);
+  g.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), normal);
+  return g;
+}
+
+/**
+ * Mars airbag landing (Pathfinder, Spirit, Opportunity). The tetrahedral lander rides in the
+ * aeroshell; after the heat shield goes it slides 20 m down a bridle below the backshell, four
+ * lobed bags inflate around it into a 5.2 m ball, three RAD rockets on the backshell fire, the
+ * bridle is cut and the ball falls, bounces and rolls. Drawn to the aeroshell's real 2.65 m.
+ */
 function buildAirbagStack(lander: THREE.Group, vehLen: number): DescentModel {
   const p = palette();
   const m = scaffold(lander);
   addAeroshell(m, p, vehLen);
+  const k = (vehLen * 0.84) / AIRBAG_AEROSHELL_M; // the aeroshell is drawn 0.84 vehLen across
 
-  m.parachuteBaseY = vehLen * 0.9;
-  m.parachute = parachuteCanopy(vehLen * 0.55, p, -vehLen * 0.86);
+  m.parachuteBaseY = vehLen * 0.47;
+  m.parachute = dgbParachute(k, { diameterM: AIRBAG_CHUTE_M, totalM: 29, lines: 28 });
   m.parachute.position.y = m.parachuteBaseY;
   m.root.add(m.parachute);
 
-  lander.position.y = 0;
-  m.root.add(lander);
-
-  // A cluster of lobed airbag spheres bundled around the lander (hidden until deploy).
-  const bagGeo = new THREE.SphereGeometry(vehLen * 0.2, 14, 10);
-  for (let i = 0; i < 6; i++) {
-    const a = (i / 6) * Math.PI * 2;
-    const bag = new THREE.Mesh(bagGeo, p.bag);
-    bag.position.set(
-      Math.cos(a) * vehLen * 0.16,
-      -vehLen * 0.05 + (i % 2) * vehLen * 0.12,
-      Math.sin(a) * vehLen * 0.16,
-    );
-    m.airbags.add(bag);
+  // The lander at the real metre scale, centred in the aeroshell, its side petals folded closed
+  // (the scene opens them at petals_open). Each hinges on its edge of the base: yaw first, then the
+  // fold about the hinge. Pathfinder's lie against its body's sloping faces, 105° up from flat
+  // (the body is 0.62 m tall, its faces lean in by 0.17 m); MER's set their own angle.
+  const own = (lander.userData.metresToScene as number | undefined) ?? k;
+  lander.scale.multiplyScalar(k / own);
+  lander.userData.metresToScene = k;
+  const petals: THREE.Object3D[] = [];
+  const inside: THREE.Object3D[] = [];
+  let petalClosedRad = Math.PI - Math.atan2(0.62, 0.17);
+  lander.traverse((o) => {
+    if (o.userData.insidePetals) inside.push(o);
+    if (o.name !== 'petals' || o.userData.surfaceOnly) return;
+    petalClosedRad = (o.userData.closedRad as number | undefined) ?? petalClosedRad;
+    petals.push(...o.children);
+  });
+  for (const pt of petals) {
+    pt.rotation.order = 'YXZ';
+    pt.rotation.x = -petalClosedRad;
   }
+  const lb = flyingBounds(lander);
+  const restY = (lb.max.y - lb.min.y) / 2;
+  const pivot = new THREE.Group();
+  pivot.name = 'airbagBall';
+  pivot.position.y = restY;
+  lander.position.y = -restY - lb.min.y;
+  pivot.add(lander);
+
+  // Four bags on the faces of a tetrahedron (one under the lander, three around it).
+  const radius = (AIRBAG_BALL_M / 2) * k;
+  const lobeR = radius * 0.34;
+  const bagMat = new THREE.MeshStandardMaterial({ color: 0xeee6d2, roughness: 0.82, metalness: 0 });
+  const normals = [new THREE.Vector3(0, -1, 0)];
+  for (let i = 0; i < 3; i++) {
+    const a = (i / 3) * Math.PI * 2 + Math.PI / 3;
+    normals.push(new THREE.Vector3(Math.sin(a) * 0.943, 0.333, Math.cos(a) * 0.943));
+  }
+  for (const n of normals) m.airbags.add(airbagCluster(n, radius - lobeR, lobeR, bagMat));
   m.airbags.visible = false;
-  m.root.add(m.airbags);
-  m.retroPlumeAnchor.position.y = -vehLen * 0.1;
-  m.root.add(m.retroPlumeAnchor);
+  pivot.add(m.airbags);
+  m.root.add(pivot);
+
+  // The bridle: a line from the lander's top to the backshell, stretched by the scene.
+  const bridleGeo = new THREE.BufferGeometry().setFromPoints([
+    new THREE.Vector3(0, 0, 0),
+    new THREE.Vector3(0, 1, 0),
+  ]);
+  const bridle = new THREE.Line(bridleGeo, new THREE.LineBasicMaterial({ color: 0xd9d4c4 }));
+  bridle.visible = false;
+  m.root.add(bridle);
+
+  // Three RAD solid rockets on the backshell, canted outward so the exhaust clears the ball
+  // (sizes drawn, not sourced).
+  const radPlumes: THREE.Object3D[] = [];
+  const motorGeo = new THREE.CylinderGeometry(0.11 * k, 0.13 * k, 0.75 * k, 14);
+  const plumeMat = new THREE.MeshBasicMaterial({
+    color: 0xffc070,
+    transparent: true,
+    opacity: 0.55,
+    blending: THREE.AdditiveBlending,
+    depthWrite: false,
+  });
+  const plumeGeo = new THREE.ConeGeometry(0.35 * k, 3.2 * k, 16, 1, true);
+  plumeGeo.translate(0, -1.6 * k, 0);
+  for (let i = 0; i < 3; i++) {
+    const a = (i / 3) * Math.PI * 2;
+    const mount = new THREE.Group();
+    const r = vehLen * 0.3;
+    mount.position.set(Math.sin(a) * r, vehLen * 0.2, Math.cos(a) * r);
+    mount.rotation.set(0, a, 0);
+    const tilt = new THREE.Group();
+    tilt.rotation.x = -0.5; // the nozzle points down and out (+z is outward here)
+    mount.add(tilt);
+    tilt.add(new THREE.Mesh(motorGeo, p.eng));
+    const plume = new THREE.Mesh(plumeGeo, plumeMat);
+    plume.position.y = -0.38 * k;
+    plume.visible = false;
+    tilt.add(plume);
+    radPlumes.push(plume);
+    m.backshell.add(mount);
+  }
+
+  m.airbagBall = {
+    pivot,
+    restY,
+    radius,
+    k,
+    bridleLength: AIRBAG_BRIDLE_M * k,
+    bridle,
+    radPlumes,
+    petals,
+    petalClosedRad,
+    inside,
+  };
   return m;
 }
 
+/** Luna 9's capsule: ejected at contact inside two inflated bags, it bounces, the bags are shed
+ *  and the petals open (lunar record). Reuses the airbag ball; no bridle, shell or rockets. The
+ *  ball's 2 m diameter is an estimate. */
+const LUNA9_BALL_M = 2;
+function buildLunaCapsuleStack(lander: THREE.Group, vehLen: number): DescentModel {
+  const m = buildLunarStack(lander, vehLen);
+  const k = (lander.userData.metresToScene as number | undefined) ?? vehLen * 0.1;
+  const lb = flyingBounds(lander);
+  const restY = (lb.max.y - lb.min.y) / 2;
+  const pivot = new THREE.Group();
+  pivot.name = 'airbagBall';
+  pivot.position.y = restY;
+  lander.position.y = -restY - lb.min.y;
+  pivot.add(lander);
+  const radius = (LUNA9_BALL_M / 2) * k;
+  const lobeR = radius * 0.5;
+  const bagMat = new THREE.MeshStandardMaterial({ color: 0xeee6d2, roughness: 0.82, metalness: 0 });
+  const halves = [-1, 1].map((sx) => {
+    const half = airbagCluster(new THREE.Vector3(sx, 0, 0), radius - lobeR, lobeR, bagMat);
+    half.userData.side = sx;
+    m.airbags.add(half);
+    return half;
+  });
+  // The two bag halves split and fall away after the bounces (the scene reads this).
+  m.airbags.userData.halves = halves;
+  m.airbags.visible = false;
+  pivot.add(m.airbags);
+  m.root.add(pivot);
+  const bridle = new THREE.Line(new THREE.BufferGeometry(), new THREE.LineBasicMaterial());
+  bridle.visible = false;
+  m.root.add(bridle);
+  m.airbagBall = {
+    pivot,
+    restY,
+    radius,
+    k,
+    bridleLength: 0,
+    bridle,
+    radPlumes: [],
+    petals: [],
+    petalClosedRad: 0,
+    inside: [],
+  };
+  return m;
+}
+
+/** Beagle 2's figures (the pass-2 record, docs/wip/2026-11-23-mars-landings-record.md): a 0.93 m
+ *  aeroshell; a 1.9 m pilot chute, then a 10 m main; three gas bags, each segment 1.93 × 0.965 m. */
+const BEAGLE_AEROSHELL_M = 0.93;
+const BEAGLE_PILOT_M = 1.9;
+const BEAGLE_MAIN_M = 10;
+const BEAGLE_BAG_LEN_M = 1.93;
+const BEAGLE_BAG_DIA_M = 0.965;
+/** HiRISE (2015) shows three panels deployed, possibly four; the fourth is drawn stuck. */
+const BEAGLE_PANELS_OPEN = 3;
+
+/**
+ * Beagle 2: a pilot chute on the back cover, a 10 m main on the lander (no bridle), three bags
+ * that inflate around it, bounces and a roll, the lander dropping about 1 m when the bags let go,
+ * then the lid opening and the panels deploying, the last one stuck. Drawn at the aeroshell's real
+ * 0.93 m. The bags' layout (three capsules crossing round the lander, one per axis), the line
+ * lengths (2.3 × the diameter, as MSL's) and the closed stack of the lid and panels are estimates;
+ * the sizes are the record's.
+ */
+function buildBeagleStack(lander: THREE.Group, vehLen: number): DescentModel {
+  const p = palette();
+  const m = scaffold(lander);
+  addAeroshell(m, p, vehLen);
+  const k = (vehLen * 0.84) / BEAGLE_AEROSHELL_M;
+
+  m.parachuteBaseY = vehLen * 0.47;
+  m.parachute = new THREE.Group();
+  m.parachute.add(
+    chuteStage(dgbParachute(k, { diameterM: BEAGLE_PILOT_M, totalM: 4.4, lines: 16 }), 1),
+  );
+  m.parachute.position.y = m.parachuteBaseY;
+  m.root.add(m.parachute);
+
+  const own = (lander.userData.metresToScene as number | undefined) ?? k;
+  lander.scale.multiplyScalar(k / own);
+  lander.userData.metresToScene = k;
+
+  // The opened lander's parts, closed: the base under a stack of panels, the lid flipped over
+  // them. The arm never deployed (the lander was found with its panels not open), so it is left out.
+  const part = (n: string): THREE.Object3D | undefined => lander.getObjectByName(n);
+  const lid = part('lid');
+  const base = part('base');
+  const panels = (part('petals')?.children ?? []).filter((o) => o.userData.solarArray);
+  // Each panel's hinge strut (the model lists them after the panels) travels with its panel.
+  const struts = (part('petals')?.children ?? []).filter((o) => !o.userData.solarArray);
+  struts.forEach((s, i) => panels[i]?.attach(s));
+  part('arm')?.removeFromParent();
+  const open = panels.map((o) => o.position.clone());
+  const baseOpen = base?.position.clone();
+  const ss = (a: number, b: number, x: number): number => {
+    const c = Math.min(1, Math.max(0, (x - a) / (b - a)));
+    return c * c * (3 - 2 * c);
+  };
+  const unfold = (t: number): void => {
+    // Panels slide out first, then the lid drops open and the base slides back; panel 4 sticks.
+    panels.forEach((o, i) => {
+      const stuck = i >= BEAGLE_PANELS_OPEN;
+      const e = (stuck ? 0.3 : 1) * ss(0.05 + 0.08 * i, 0.55 + 0.08 * i, t);
+      o.position.set(
+        open[i].x * e,
+        0.1 + 0.025 * i + (open[i].y - 0.1 - 0.025 * i) * e,
+        open[i].z * e,
+      );
+      o.rotation.set(stuck ? -0.45 * ss(0.1, 0.6, t) : 0, 0, stuck ? 0.45 * ss(0.1, 0.6, t) : 0);
+    });
+    if (lid) {
+      const e = ss(0.45, 0.9, t);
+      lid.rotation.x = Math.PI * (1 - e);
+      lid.position.y = 0.27 * (1 - e);
+    }
+    if (base && baseOpen) base.position.set(baseOpen.x, baseOpen.y, baseOpen.z * ss(0.5, 1, t));
+  };
+  unfold(0);
+  const lb = flyingBounds(lander);
+  const restY = (lb.max.y - lb.min.y) / 2;
+  const pivot = new THREE.Group();
+  pivot.name = 'airbagBall';
+  pivot.position.y = restY;
+  lander.position.y = -restY - lb.min.y;
+  pivot.add(lander);
+
+  // Three bags, one along each axis, set off the lander's centre so they cross without touching.
+  const off = 0.6;
+  const bagR = (BEAGLE_BAG_DIA_M / 2) * k;
+  const bagMat = new THREE.MeshStandardMaterial({ color: 0xeee6d2, roughness: 0.82, metalness: 0 });
+  const bagGeo = new THREE.CapsuleGeometry(bagR, (BEAGLE_BAG_LEN_M - BEAGLE_BAG_DIA_M) * k, 8, 20);
+  const bagAt = (axis: 'x' | 'y' | 'z', x: number, y: number, z: number): void => {
+    const bag = new THREE.Mesh(bagGeo, bagMat);
+    bag.position.set(x * k, y * k, z * k);
+    if (axis === 'x') bag.rotation.z = Math.PI / 2;
+    if (axis === 'z') bag.rotation.x = Math.PI / 2;
+    m.airbags.add(bag);
+  };
+  bagAt('x', 0, off, off);
+  bagAt('y', off, 0, -off);
+  bagAt('z', -off, -off, 0);
+  m.airbags.visible = false;
+  pivot.add(m.airbags);
+  m.root.add(pivot);
+  // The ball's reach: the lowest bag's underside, which is what the lander drops from.
+  const radius = (off + BEAGLE_BAG_DIA_M / 2) * k;
+
+  m.mainChute = {
+    group: dgbParachute(k, { diameterM: BEAGLE_MAIN_M, totalM: 23, lines: 36 }),
+    baseY: 2 * restY,
+  };
+  m.mainChute.group.visible = false;
+  m.root.add(m.mainChute.group);
+
+  const bridle = new THREE.Object3D();
+  bridle.visible = false;
+  m.root.add(bridle);
+  m.airbagBall = {
+    pivot,
+    restY,
+    radius,
+    k,
+    bridleLength: 0,
+    bridle,
+    radPlumes: [],
+    petals: [],
+    petalClosedRad: 0,
+    inside: [],
+    unfold,
+    openSpan: 1.9 * k, // Wikipedia: 1.9 m unfolded (the model's own span, per its refs)
+  };
+  return m;
+}
+
+interface LeggedSpec {
+  /** Aeroshell diameter (m) and the single disk-gap-band's nominal diameter (m). */
+  aeroM: number;
+  chuteM: number;
+  /** The terminal engines' exits, in the lander model's own units: azimuth (rad), radius, height. */
+  engines: [number, number, number][];
+}
+
+const DECK_ENGINES = (R: number, deckY: number): [number, number, number][] =>
+  [0, 2, 4].map((k) => [k * (Math.PI / 3), R * 0.8, deckY - 0.68]);
+
+/**
+ * Mars legged powered landers (Viking, Phoenix, InSight): the lander rides folded in the
+ * aeroshell at the aeroshell's real size under a disk-gap-band at its real size; its legs fold up
+ * until leg_deploy; the terminal engines burn at their own exits, not at one central plume, and
+ * cut at contact; arrays (Phoenix, InSight) stay closed until arrays_open. Aeroshell and chute
+ * sizes are the record's (Viking's 16 m unverified, InSight's Phoenix-class); line lengths (2.3 ×
+ * the diameter, as MSL's) and the folded legs' shape (a squash toward the body) are estimates.
+ */
+function leggedStack(spec: LeggedSpec): StackBuilder {
+  return (lander, vehLen) => {
+    const p = palette();
+    const m = scaffold(lander);
+    addAeroshell(m, p, vehLen);
+    const k = (vehLen * 0.84) / spec.aeroM;
+    m.parachuteBaseY = vehLen * 0.47;
+    m.parachute = dgbParachute(k, {
+      diameterM: spec.chuteM,
+      totalM: spec.chuteM * 2.3,
+      lines: 48,
+    });
+    m.parachute.position.y = m.parachuteBaseY;
+    m.root.add(m.parachute);
+
+    const own = (lander.userData.metresToScene as number | undefined) ?? k;
+    lander.scale.multiplyScalar(k / own);
+    lander.userData.metresToScene = k;
+    lander.position.y = 0; // the footpads at the ground once the legs are out
+    m.root.add(lander);
+    lander.updateMatrixWorld(true);
+
+    const legs = lander.getObjectByName('legs');
+    const arrays = lander.getObjectByName('solar-arrays');
+    const g = legs?.parent;
+    const legTop = legs ? flyingBounds(legs).max.y : 0;
+    m.deploy = {
+      legs: (f) => {
+        if (!legs) return;
+        const sy = 0.45 + 0.55 * f;
+        legs.scale.set(0.3 + 0.7 * f, sy, 0.3 + 0.7 * f);
+        legs.position.y = legTop * (1 - sy);
+      },
+      arrays: (f) => {
+        if (!arrays) return;
+        arrays.visible = f > 0;
+        arrays.scale.set(0.08 + 0.92 * f, 1, 1);
+      },
+    };
+    m.deploy.legs?.(0);
+    m.deploy.arrays?.(0);
+
+    // Engine exits in the root's frame, for the scene's plumes.
+    if (g) {
+      g.updateMatrixWorld(true);
+      m.root.updateMatrixWorld(true);
+      m.plumeSites = spec.engines.map(([a, r, y]) =>
+        m.root.worldToLocal(g.localToWorld(new THREE.Vector3(Math.sin(a) * r, y, Math.cos(a) * r))),
+      );
+    }
+    // The landed craft with legs and arrays out, for the camera.
+    m.deploy.legs?.(1);
+    m.deploy.arrays?.(1);
+    lander.updateMatrixWorld(true);
+    const full = new THREE.Box3().setFromObject(lander);
+    const sz = full.getSize(new THREE.Vector3());
+    m.landedFrame = { cy: (full.min.y + full.max.y) / 2, r: Math.max(sz.x, sz.z) * 0.55 };
+    m.deploy.legs?.(0);
+    m.deploy.arrays?.(0);
+    m.retroPlumeAnchor.position.y = -vehLen * 0.16;
+    m.root.add(m.retroPlumeAnchor);
+    return m;
+  };
+}
+
 /** Mars skycrane (Curiosity / Perseverance) — descent stage lowers the rover on tethers. */
+/** MSL's bridles: the rover hung 7.5 m below the descent stage (NASA MSL landing press kit). */
+const MSL_BRIDLE_M = 7.5;
+
+/** Top of what flies (scene units, in the parent's frame): surface-only parts left out. */
+function flyingTop(o: THREE.Object3D): number {
+  const b = flyingBounds(o);
+  return b.isEmpty() ? 0 : b.max.y;
+}
+
+/** Bounds of what flies and shows (in the parent's frame): surface-only parts, and a rover hidden
+ *  inside its lander's closed petals, left out. */
+export function flyingBounds(o: THREE.Object3D): THREE.Box3 {
+  o.updateMatrixWorld(true);
+  const inv = o.parent ? o.parent.matrixWorld.clone().invert() : new THREE.Matrix4();
+  const box = new THREE.Box3();
+  o.traverse((c) => {
+    const mesh = c as THREE.Mesh;
+    if (!mesh.isMesh) return;
+    for (let p: THREE.Object3D | null = mesh; p; p = p.parent)
+      if (p.userData.surfaceOnly || p.userData.insidePetals) return;
+    mesh.geometry.computeBoundingBox();
+    box.union(mesh.geometry.boundingBox!.clone().applyMatrix4(mesh.matrixWorld).applyMatrix4(inv));
+  });
+  return box;
+}
+
+function collectNamed(root: THREE.Object3D, name: string): THREE.Object3D[] {
+  const out: THREE.Object3D[] = [];
+  root.traverse((o) => void (o.name === name && out.push(o)));
+  return out;
+}
+
 function buildSkycraneStack(lander: THREE.Group, vehLen: number): DescentModel {
   const p = palette();
   const m = scaffold(lander);
   addAeroshell(m, p, vehLen);
 
-  m.parachuteBaseY = vehLen * 0.95;
-  m.parachute = parachuteCanopy(vehLen * 0.62, p, -vehLen * 0.9);
+  // MSL's chute: one 21.35 m disk-gap-band, 80 lines, over 50 m long, on a 4.5 m aeroshell
+  // (NASA NTRS 20130012763; JPL PIA16813). Hung from the backshell's top.
+  const kChute = (vehLen * 0.84) / 4.5; // the aeroshell is drawn 0.84 vehLen across
+  m.parachuteBaseY = vehLen * 0.47;
+  m.parachute = dgbParachute(kChute, { diameterM: 21.35, totalM: 50, lines: 80 });
   m.parachute.position.y = m.parachuteBaseY;
   m.root.add(m.parachute);
 
-  // Skycrane descent stage: a platform with 8 throttleable nozzles.
-  m.descentStage = new THREE.Group();
-  const deck = new THREE.Mesh(
-    new THREE.BoxGeometry(vehLen * 0.34, vehLen * 0.09, vehLen * 0.34),
-    p.metal,
-  );
-  m.descentStage.add(deck);
-  m.retro = retroNozzles(8, vehLen * 0.15, vehLen * 0.08, p.eng);
-  m.retro.position.y = -vehLen * 0.05;
-  m.descentStage.add(m.retro);
-  m.descentStage.position.y = vehLen * 0.05;
-  m.root.add(m.descentStage);
-
-  // Rover slung below the deck on four tethers (extended by the scene at lower).
+  // The rover rides tucked under the MSL descent stage (showcase/msl-edl.ts), at the rover's
+  // own metre scale; at skycrane_lower the scene lowers it 7.5 m on three bridles, and after
+  // touchdown the stage flies away. The stage's eight canted engines carry their own plumes,
+  // so the central retro plume is not used (it fired through the rover).
   m.landerMountY = -vehLen * 0.28;
   lander.position.y = m.landerMountY;
   m.root.add(lander);
-  const tetherMat = new THREE.LineBasicMaterial({ color: 0xb7bcc4 });
+  const k = (lander.userData.metresToScene as number | undefined) ?? (vehLen * 0.34) / 3.2;
+  const roverTop = flyingTop(lander);
+  m.descentStage = new THREE.Group();
+  const stage = buildMslDescentStage();
+  stage.scale.setScalar(k);
+  m.descentStage.add(stage);
+  m.descentStage.position.y = roverTop + 0.04 * k;
+  m.descentStage.userData.restY = m.descentStage.position.y;
+  m.descentStage.userData.bridleLength = MSL_BRIDLE_M * k;
+  m.descentStage.userData.plumes = collectNamed(stage, 'mlePlume');
+  m.root.add(m.descentStage);
+  m.retro = new THREE.Group();
+
+  // Three bridles and the umbilical, from the rover's deck to the bridle-umbilical device; the
+  // scene stretches them (scale.y = the gap) as the rover is lowered.
   const tg = new THREE.BufferGeometry();
   const tp: number[] = [];
-  for (let i = 0; i < 4; i++) {
-    const a = (i / 4) * Math.PI * 2 + Math.PI / 4;
-    tp.push(
-      Math.cos(a) * vehLen * 0.12,
-      0,
-      Math.sin(a) * vehLen * 0.12,
-      Math.cos(a) * vehLen * 0.08,
-      m.landerMountY,
-      Math.sin(a) * vehLen * 0.08,
-    );
+  for (const [x, z] of [
+    [0.45, 0.55],
+    [-0.45, 0.55],
+    [0, -0.6],
+    [0.1, 0],
+  ]) {
+    tp.push(x * k, 0, z * k, 0, 1, 0);
   }
   tg.setAttribute('position', new THREE.Float32BufferAttribute(tp, 3));
-  m.skycraneRigging.add(new THREE.LineSegments(tg, tetherMat));
+  m.skycraneRigging.add(
+    new THREE.LineSegments(tg, new THREE.LineBasicMaterial({ color: 0xd4d6da })),
+  );
+  m.skycraneRigging.position.y = roverTop;
+  m.skycraneRigging.scale.y = 0.04 * k;
   m.root.add(m.skycraneRigging);
-
-  m.retroPlumeAnchor.position.y = -vehLen * 0.1;
-  m.descentStage.add(m.retroPlumeAnchor);
   return m;
 }
 
@@ -650,9 +1235,13 @@ function buildVenusStack(lander: THREE.Group, vehLen: number): DescentModel {
   const m = scaffold(lander);
   addAeroshell(m, p, vehLen);
 
-  // Small drogue high-altitude chute (cut early on Venus).
-  m.parachuteBaseY = vehLen * 0.8;
-  m.parachute = parachuteCanopy(vehLen * 0.4, p, -vehLen * 0.76);
+  // Venera's chute opened at about 62 km and was cut at about 50 km (Venera 13, Wikipedia); the
+  // lander fell the rest of the way on air braking alone. Its size is not sourced: an estimate.
+  m.parachuteBaseY = craftTop(lander);
+  m.parachute = new THREE.Group();
+  m.parachute.add(
+    chuteStage(dgbParachute(1, { diameterM: vehLen * 0.8, totalM: vehLen * 1.8, lines: 32 }), 1),
+  );
   m.parachute.position.y = m.parachuteBaseY;
   m.root.add(m.parachute);
 
@@ -720,8 +1309,10 @@ function buildJupiterProbeStack(lander: THREE.Group, vehLen: number): DescentMod
   const m = scaffold(lander);
   addAeroshell(m, p, vehLen);
 
-  m.parachuteBaseY = vehLen * 0.86;
-  m.parachute = parachuteCanopy(vehLen * 0.5, p, -vehLen * 0.86);
+  // The Galileo probe rode its main chute down to signal loss (NSSDC timeline: pilot 17:05:52,
+  // main 17:05:54). Its size is not sourced: an estimate, in the disk-gap-band form.
+  m.parachuteBaseY = craftTop(lander);
+  m.parachute = dgbParachute(1, { diameterM: vehLen, totalM: vehLen * 2.2, lines: 32 });
   m.parachute.position.y = m.parachuteBaseY;
   m.root.add(m.parachute);
 
@@ -739,9 +1330,15 @@ function buildTitanParachuteStack(lander: THREE.Group, vehLen: number): DescentM
   const m = scaffold(lander);
   addAeroshell(m, p, vehLen);
 
-  // Titan's main chute is notably large.
-  m.parachuteBaseY = vehLen * 0.9;
-  m.parachute = parachuteCanopy(vehLen * 0.7, p, -vehLen * 0.9);
+  // Huygens (ESA, Huygens engineering): an 8.30 m disk-gap-band main through the supersonic
+  // phase, jettisoned after about 15 min for a 3.03 m stabiliser that carried the probe to the
+  // surface. Line lengths (2.3 × the diameter, as MSL's) are an estimate. Scale: the probe model
+  // in metres, or Huygens' 2.7 m shield across the old model.
+  const k = (lander.userData.metresToScene as number | undefined) ?? vehLen / 2.7;
+  m.parachuteBaseY = craftTop(lander);
+  m.parachute = new THREE.Group();
+  m.parachute.add(chuteStage(dgbParachute(k, { diameterM: 8.3, totalM: 19, lines: 48 }), 1));
+  m.parachute.add(chuteStage(dgbParachute(k, { diameterM: 3.03, totalM: 7, lines: 32 }), 2));
   m.parachute.position.y = m.parachuteBaseY;
   m.root.add(m.parachute);
 
@@ -757,7 +1354,27 @@ function buildTitanParachuteStack(lander: THREE.Group, vehLen: number): DescentM
 type StackBuilder = (lander: THREE.Group, vehLen: number) => DescentModel;
 
 /** siteId → dedicated stack builder. Falls back per-body when absent. */
+/** Starship's return to Earth (Flight 5, 0.9.11 F3): the ship is its own heat shield, so no
+ *  aeroshell and no chute — the ship scaled to the vehicle length, the landing-burn plume at its
+ *  Raptors. The scene turns it belly-first for entry and upright at the landing flip. */
+function buildStarshipReturnStack(lander: THREE.Group, vehLen: number): DescentModel {
+  const m = scaffold(lander);
+  const box = new THREE.Box3().setFromObject(lander);
+  const h = Math.max(1e-6, box.max.y - box.min.y);
+  const k = (vehLen * 1.4) / h;
+  lander.scale.setScalar(k);
+  // Centred on the vehicle origin, so the belly-first attitude turns it about its middle.
+  lander.position.y = -((box.min.y + box.max.y) / 2) * k;
+  m.root.add(lander);
+  m.retroPlumeAnchor.position.y = -vehLen * 0.72;
+  m.root.add(m.retroPlumeAnchor);
+  return m;
+}
+
 const BUILDERS: Record<string, StackBuilder> = {
+  'starship-flight-5': buildStarshipReturnStack,
+  'starship-demo': buildStarshipReturnStack,
+  'starship-mars-crew': buildStarshipReturnStack,
   // Apollo lunar landings — the LM descent with the CSM undock beat.
   apollo11: buildApolloLunarStack,
   apollo12: buildApolloLunarStack,
@@ -772,10 +1389,17 @@ const BUILDERS: Record<string, StackBuilder> = {
   'mars-pathfinder': buildAirbagStack,
   spirit: buildAirbagStack,
   opportunity: buildAirbagStack,
+  beagle2: buildBeagleStack,
+  luna9: buildLunaCapsuleStack,
   // Mars retro
-  'viking1-lander': (l, v) => buildMarsRetroStack(l, v, 3),
-  phoenix: (l, v) => buildMarsRetroStack(l, v, 12),
-  insight: (l, v) => buildMarsRetroStack(l, v, 12),
+  // Aeroshells: Viking 3.5 m, Phoenix and InSight 2.65 m; chutes 16 m (unverified), 11.8 m, 11.8 m.
+  'viking1-lander': leggedStack({
+    aeroM: 3.5,
+    chuteM: 16,
+    engines: [0, 1, 2].map((k) => [k * ((2 * Math.PI) / 3), 0.82, 0.31]),
+  }),
+  phoenix: leggedStack({ aeroM: 2.65, chuteM: 11.8, engines: DECK_ENGINES(0.8, 0.95) }),
+  insight: leggedStack({ aeroM: 2.65, chuteM: 11.8, engines: DECK_ENGINES(0.9, 1.0) }),
   mars3: (l, v) => buildMarsRetroStack(l, v, 4),
   zhurong: (l, v) => buildMarsRetroStack(l, v, 4),
   schiaparelli: (l, v) => buildMarsRetroStack(l, v, 3),
@@ -790,48 +1414,268 @@ const BUILDERS: Record<string, StackBuilder> = {
  *  ablative aeroshell entry, then drogue + main canopies to a splashdown/ground
  *  touchdown. No retro (aerodynamic; a Soyuz soft-landing burst can be added). */
 /** Main-chute count per capsule — real recovery configurations. */
-const CAPSULE_MAIN_CHUTES: Record<string, number> = {
-  'apollo-cm': 3,
-  dragon: 4,
+/**
+ * Earth-return main parachutes, by capsule family: count, and the nominal diameter where it is
+ * sourced (with the capsule height that sets the scale for the older capsule models).
+ * Mercury: one 63 ft ringsail (Smithsonian NASM A19720466000). Gemini: one 84.2 ft ringsail
+ * (NASA, Gemini parachute landing system). Apollo: three 83.6 ft ringsails (NASA NTRS
+ * 19700026594); CM 3.23 m tall. Soyuz: one main of about 1,000 m² (Rostec), about 35.7 m across.
+ * Vostok: one of 574 m², 27.0 m (RussianSpaceWeb, vostok-3ka-2). Dragon: four of 116 ft
+ * (NASA Commercial Crew blog, 2019-09-17). Shenzhou: one of 1,200 m², 39.1 m (Spaceflight101).
+ * Voskhod: count only; its size is not sourced. Capsule scale for the older models: Dragon 4 m
+ * across, Shenzhou's re-entry module 2.52 m (Wikipedia infoboxes).
+ */
+const CAPSULE_MAINS: Record<
+  string,
+  { count: number; diameterM?: number; capsuleHeightM?: number; capsuleDiameterM?: number }
+> = {
+  mercury: { count: 1, diameterM: 19.2 },
+  gemini: { count: 1, diameterM: 25.7 },
+  'apollo-cm': { count: 3, diameterM: 25.5, capsuleHeightM: 3.23 },
+  soyuz: { count: 1, diameterM: 35.7 },
+  vostok: { count: 1, diameterM: 27.0 },
+  voskhod: { count: 1 },
+  dragon: { count: 4, diameterM: 35.4, capsuleDiameterM: 4.0 },
+  shenzhou: { count: 1, diameterM: 39.1, capsuleDiameterM: 2.52 },
+};
+
+/**
+ * The drogues before the mains, where sourced: Soyuz two of 16 m² together (Rostec), Vostok one
+ * braking chute of 18 m² (RussianSpaceWeb). Apollo and Dragon carried two; the other sizes are
+ * not sourced, and an unsourced drogue is drawn at 0.18 × its main.
+ */
+const CAPSULE_DROGUES: Record<string, { count: number; diameterM?: number }> = {
+  soyuz: { count: 2, diameterM: 3.19 },
+  vostok: { count: 1, diameterM: 4.79 },
+  'apollo-cm': { count: 2 },
+  dragon: { count: 2 },
 };
 
 function buildEarthCapsuleStack(lander: THREE.Group, vehLen: number): DescentModel {
   const p = palette();
   const m = scaffold(lander);
   addAeroshell(m, p, vehLen);
+  // A capsule is its own backshell: the generic cone stayed upright inside it and showed once the
+  // capsule tilted on its riser (Gemini's reposition).
+  m.root.remove(m.backshell);
+  m.backshell = new THREE.Group();
 
-  // Recovery chutes, modelled off the Apollo-14-under-three-mains photo: a
-  // cluster of shallow canopies riding HIGH on long, fine suspension lines that
-  // converge to a knot just above the capsule. The capsule hangs small and far
-  // below — not a fat balloon sitting on a short stub. Canopy count follows the
-  // real capsule (Apollo 3, Dragon 4, everything else a single main).
+  // Recovery mains: ringsail canopies (concentric sails with open slots, orange and white gores),
+  // at their real size and count where it is sourced (operator 2026-11-23: the striped half-dome
+  // "looks like in a cartoon"). The capsule hangs far below on lines about a canopy-width long.
   const capsuleId = (lander.userData.capsuleId as string | undefined) ?? 'mercury';
-  const n = CAPSULE_MAIN_CHUTES[capsuleId] ?? 1;
-  const canopyR = vehLen * (n >= 3 ? 1.0 : 1.4);
-  const apexY = vehLen * 3.0; // canopies ride high → long elegant leash
-  const confluence = new THREE.Vector3(0, vehLen * 0.15, 0); // knot just above capsule
-  const spread = n > 1 ? canopyR * 0.82 : 0;
+  const spec = CAPSULE_MAINS[capsuleId];
+  const n = spec?.count ?? 1;
+  const capTop = new THREE.Box3().setFromObject(lander).max.y;
+  const k =
+    (lander.userData.metresToScene as number | undefined) ??
+    (spec?.capsuleHeightM ? landerHeight(lander) / spec.capsuleHeightM : undefined) ??
+    (spec?.capsuleDiameterM ? landerWidth(lander) / spec.capsuleDiameterM : undefined);
+  // Unsourced size: the old proportions (a canopy about three capsule heights across).
+  const D = spec?.diameterM && k ? spec.diameterM * k : vehLen * (n >= 3 ? 2.0 : 2.8);
+  const lineLen = D * 1.1;
+  const confluence = new THREE.Vector3(0, capTop + D * 0.12, 0);
+  // A cluster's canopies sit side by side, their skirts just touching.
+  const spread = n > 1 ? (D * 0.5) / Math.sin(Math.PI / n) : 0;
   const chutes = new THREE.Group();
-  for (let i = 0; i < n; i++) {
-    const ang = n > 1 ? (i / n) * Math.PI * 2 : 0;
-    const cx = Math.cos(ang) * spread;
-    const cz = Math.sin(ang) * spread;
-    const dome = canopyDome(canopyR, p);
-    dome.position.set(cx, apexY, cz);
+  const mains = chuteStage(new THREE.Group(), 2);
+  chutes.add(mains);
+  // The drogue that steadies the capsule before the mains (released as they open).
+  const dSpec = CAPSULE_DROGUES[capsuleId];
+  const dn = dSpec?.count ?? 1;
+  const dD = dSpec?.diameterM && k ? dSpec.diameterM * k : D * 0.18;
+  const drogue = chuteStage(new THREE.Group(), 1);
+  const dConf = new THREE.Vector3(0, capTop + dD * 0.5, 0);
+  const dSpread = dn > 1 ? dD * 0.7 : 0;
+  for (let c = 0; c < dn; c++) {
+    const ang = (c / dn) * Math.PI * 2;
+    const at = new THREE.Vector3(
+      Math.cos(ang) * dSpread,
+      dConf.y + dD * 3,
+      Math.sin(ang) * dSpread,
+    );
+    const canopy = ringsailCanopy(dD);
+    canopy.position.copy(at);
+    drogue.add(canopy, suspensionLines(dD * 0.47, at, dConf, 16));
+  }
+  chutes.add(drogue);
+  const riser = new THREE.BufferGeometry().setFromPoints([
+    new THREE.Vector3(0, capTop, 0),
+    confluence,
+  ]);
+  chutes.add(new THREE.Line(riser, new THREE.LineBasicMaterial({ color: 0xd9dde2 })));
+  for (let c = 0; c < n; c++) {
+    const ang = n > 1 ? (c / n) * Math.PI * 2 : 0;
+    const off = new THREE.Vector3(Math.cos(ang) * spread, 0, Math.sin(ang) * spread);
+    const skirtY = confluence.y + Math.sqrt(Math.max(0, lineLen * lineLen - off.lengthSq()));
+    const canopy = ringsailCanopy(D);
+    canopy.position.set(off.x, skirtY, off.z);
     if (n > 1) {
-      dome.rotation.z = -Math.cos(ang) * 0.16; // fan the cluster outward a touch
-      dome.rotation.x = Math.sin(ang) * 0.16;
+      canopy.rotation.z = -Math.cos(ang) * 0.14; // the cluster fans outward
+      canopy.rotation.x = Math.sin(ang) * 0.14;
     }
-    chutes.add(dome);
-    chutes.add(suspensionLines(canopyR * 0.92, new THREE.Vector3(cx, apexY, cz), confluence, 24));
+    const lines = suspensionLines(
+      D * 0.47,
+      new THREE.Vector3(off.x, skirtY, off.z),
+      confluence,
+      32,
+    );
+    if (c === 0 && capsuleId === 'apollo-cm') {
+      // The first canopy and its lines hang from a pivot at the confluence, so the scene can
+      // collapse it sideways (Apollo 15's main, deflated to a fifth of its diameter at 6,000 ft).
+      const pivot = new THREE.Group();
+      pivot.position.copy(confluence);
+      canopy.position.sub(confluence);
+      lines.position.sub(confluence);
+      pivot.add(canopy, lines);
+      mains.add(pivot);
+      chutes.userData.deflatingMain = pivot;
+    } else {
+      mains.add(canopy, lines);
+    }
   }
   m.parachute = chutes;
-  m.parachuteBaseY = 0; // canopies already placed at apexY inside the group
+  m.parachuteBaseY = 0; // canopies already placed inside the group
   m.root.add(m.parachute);
 
+  // Mercury's landing bag: a pleated skirt between the capsule and its heat shield, which drops
+  // about 1.2 m on it after the main opens. The skirt hangs from the joint; the scene stretches
+  // it to the drop as the shield falls.
+  if (capsuleId === 'mercury' && k) {
+    const rimR = vehLen * 0.42;
+    const folds = 10;
+    const prof: THREE.Vector2[] = [];
+    for (let i = 0; i <= folds * 2; i++) {
+      prof.push(new THREE.Vector2(rimR * (i % 2 ? 0.93 : 1), -(i / (folds * 2))));
+    }
+    const skirt = new THREE.Mesh(
+      new THREE.LatheGeometry(prof, 36),
+      new THREE.MeshStandardMaterial({
+        color: 0xc9c2b2,
+        roughness: 0.85,
+        metalness: 0.05,
+        side: THREE.DoubleSide,
+      }),
+    );
+    m.airbags.add(skirt);
+    m.airbags.position.y = m.heatshieldBaseY;
+    m.airbags.userData.dropScene = MERCURY_SHIELD_DROP_M * k;
+    m.airbags.visible = false;
+    m.root.add(m.airbags);
+  }
+
+  // Apollo's apex cover: the forward heat shield over the docking tunnel and the chute
+  // compartment, jettisoned before the drogues (about 0.9 m high on the 3.23 m command module).
+  if (capsuleId === 'apollo-cm') {
+    const H = landerHeight(lander);
+    const cover = new THREE.Mesh(
+      new THREE.ConeGeometry(H * 0.15, H * 0.28, 28),
+      new THREE.MeshStandardMaterial({ color: 0x5b5753, roughness: 0.8, metalness: 0.2 }),
+    );
+    cover.name = 'apex-cover';
+    cover.position.y = capTop - H * 0.1 - vehLen * 0.02;
+    m.root.add(cover);
+  }
+
   lander.position.y = -vehLen * 0.02;
+  const botY = new THREE.Box3().setFromObject(lander).min.y;
+  // Soyuz drops its heat shield under the main (the profile's heatshield_sep): a shield disc
+  // drawn to the descent module's width, for the jettison to show.
+  if (capsuleId === 'soyuz' || capsuleId === 'shenzhou') {
+    m.heatshield = sphereConeHeatshield(landerWidth(lander) * 0.46, p.shield, p.metal);
+    m.heatshieldBaseY = botY;
+    m.heatshield.position.y = botY;
+    m.heatshield.rotation.x = Math.PI;
+    m.root.add(m.heatshield);
+  }
+  // The soft-landing rockets (Voskhod, Soyuz) fire from the base, a metre above the ground.
+  m.retroPlumeAnchor.position.y = botY;
+  m.root.add(m.retroPlumeAnchor);
+  // Where the risers meet the nose: the point a capsule that changes its hang pivots about.
+  lander.userData.hangPivotY = capTop + lander.position.y;
   m.root.add(lander);
   return m;
+}
+
+/** How far Mercury's heat shield drops on its landing bag (m). */
+const MERCURY_SHIELD_DROP_M = 1.2;
+
+function landerWidth(o: THREE.Object3D): number {
+  const v = new THREE.Box3().setFromObject(o).getSize(new THREE.Vector3());
+  return Math.max(v.x, v.z);
+}
+
+function landerHeight(o: THREE.Object3D): number {
+  const b = new THREE.Box3().setFromObject(o);
+  return b.max.y - b.min.y;
+}
+
+/**
+ * A ringsail canopy `D` across (scene units), origin at the centre of its skirt: a shallow
+ * crown of concentric sails with open slots between them and a vent at the apex, its gores
+ * alternating orange and white.
+ */
+function ringsailCanopy(D: number): THREE.Group {
+  const g = new THREE.Group();
+  const R = D / 2;
+  const height = D * 0.32; // inflated crown height above the skirt
+  const gores = 24;
+  const rings = 7;
+  const orange = new THREE.Color(0xe0662a);
+  const white = new THREE.Color(0xf1eee6);
+  const mat = new THREE.MeshStandardMaterial({
+    vertexColors: true,
+    roughness: 0.85,
+    side: THREE.DoubleSide,
+  });
+  // The crown profile: radius r(t) and height y(t) for t from the vent (0) to the skirt (1).
+  const at = (t: number): [number, number] => {
+    const a = (0.12 + 0.88 * t) * (Math.PI / 2) * 0.92;
+    return [(R * Math.sin(a)) / Math.sin((Math.PI / 2) * 0.92), (height * Math.cos(a)) / 1];
+  };
+  for (let ring = 0; ring < rings; ring++) {
+    // Each sail covers most of its band; the rest is the open slot below it.
+    const t0 = ring / rings;
+    const t1 = t0 + (1 / rings) * 0.8;
+    const pos: number[] = [];
+    const col: number[] = [];
+    for (let k = 0; k < gores; k++) {
+      const a0 = (k / gores) * Math.PI * 2;
+      const a1 = ((k + 1) / gores) * Math.PI * 2;
+      const c = k % 2 === 0 ? orange : white;
+      const [r0, y0] = at(t0);
+      const [r1, y1] = at(t1);
+      // Gores billow: the mid-gore bulges a little outward.
+      const am = (a0 + a1) / 2;
+      const quad = [
+        [Math.cos(a0) * r0, y0, Math.sin(a0) * r0],
+        [Math.cos(a1) * r0, y0, Math.sin(a1) * r0],
+        [Math.cos(a1) * r1, y1, Math.sin(a1) * r1],
+        [Math.cos(a0) * r1, y1, Math.sin(a0) * r1],
+        [Math.cos(am) * r0 * 1.03, y0 + height * 0.01, Math.sin(am) * r0 * 1.03],
+        [Math.cos(am) * r1 * 1.03, y1 + height * 0.01, Math.sin(am) * r1 * 1.03],
+      ];
+      for (const [a, b, e] of [
+        [0, 4, 5],
+        [0, 5, 3],
+        [4, 1, 2],
+        [4, 2, 5],
+      ]) {
+        for (const v of [a, b, e]) {
+          pos.push(...quad[v]);
+          col.push(c.r, c.g, c.b);
+        }
+      }
+    }
+    const geo = new THREE.BufferGeometry();
+    geo.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+    geo.setAttribute('color', new THREE.Float32BufferAttribute(col, 3));
+    geo.computeVertexNormals();
+    g.add(new THREE.Mesh(geo, mat));
+  }
+  // The skirt sits at y = 0: shift the crown down so its lowest ring is the skirt.
+  g.children.forEach((c) => (c.position.y = -at(1)[1]));
+  return g;
 }
 
 /** Per-body generic stack for missions without a dedicated builder. */

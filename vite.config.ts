@@ -8,10 +8,6 @@ import { loadEnv } from 'vite';
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { execSync } from 'node:child_process';
-// GH Pages compat — see scripts/gh-pages-compat.mjs header. Returns
-// `undefined` when VITE_BASE is empty, so the canonical no-base build
-// (VPS) is byte-identical to what it was before this file existed.
-import { ghPagesUrlPatterns } from './scripts/gh-pages-compat.mjs';
 import { paraglideOptions } from './scripts/paraglide-options.mjs';
 // Per-checkout runtime defaults written by .config/workspace/setup (parallel
 // worktrees). `{}` when absent, so CI and fresh clones are unaffected.
@@ -148,12 +144,6 @@ export default defineConfig(({ mode, command }) => {
         // Shared with scripts/i18n-compile.mjs so the two compile paths cannot
         // drift — includes `cookieName: 'orrery_locale'` (ADR-057).
         ...paraglideOptions,
-        // GH Pages compat: when VITE_BASE is set, Paraglide's default
-        // URL pattern matcher can't extract the locale (`/orrery/de/`
-        // looks like `orrery` is the locale candidate). The helper
-        // returns `undefined` when base is empty so the VPS build is
-        // unaffected. Full rationale in scripts/gh-pages-compat.mjs.
-        urlPatterns: ghPagesUrlPatterns((process.env.VITE_BASE ?? '').replace(/\/$/, '')),
         // experimentalMiddlewareLocaleSplitting was tried first — it tree-
         // shakes message functions from the client bundle and injects them
         // via paraglideMiddleware → globalThis.__paraglide.ssr.<key>. Per
@@ -470,9 +460,8 @@ export default defineConfig(({ mode, command }) => {
           // meant every locale switch / hard-reload rendered HOME (canvas-less
           // home content at e.g. /de/explore) instead of the target route.
           // 404.html is SvelteKit's adapter-static fallback (svelte.config.js
-          // fallback:'404.html') — an empty client-render shell. Base-aware so
-          // it matches the precache key on GH Pages (/orrery/) and root builds.
-          navigateFallback: `${(process.env.VITE_BASE ?? '').replace(/\/$/, '')}/404.html`,
+          // fallback:'404.html') — an empty client-render shell.
+          navigateFallback: '/404.html',
         },
         devOptions: {
           // Don't run the SW in `vite dev` — only in `vite preview` /

@@ -29,6 +29,7 @@ export const EDL_PHASE_LABEL: Record<EDLPhaseKind, string> = {
 export const EDL_BEAT_LABEL: Record<DescentEventType, string> = {
   entry: 'ENTRY',
   entry_flip: 'FLIP',
+  landing_flip: 'FLIP',
   peak_heat: 'PEAK HEAT',
   peak_decel: 'MAX-G',
   parachute_deploy: 'CHUTE',
@@ -47,12 +48,35 @@ export const EDL_BEAT_LABEL: Record<DescentEventType, string> = {
   record_ends: 'DATA ENDS',
   skip_out: 'SKIP OUT',
   second_entry: '2ND ENTRY',
+  radar_lock: 'RADAR LOCK',
+  bridle_lower: 'BRIDLE',
+  bridle_cut: 'BRIDLE CUT',
+  at_rest: 'AT REST',
+  petals_open: 'PETALS OPEN',
+  high_gate: 'HIGH GATE',
+  low_gate: 'LOW GATE',
+  contact_light: 'CONTACT LIGHT',
+  main_cutoff: 'MAIN OFF',
+  engine_cutoff: 'ENGINE OFF',
+  leg_deploy: 'LEGS OUT',
+  terrain_nav: 'TERRAIN NAV',
+  hover: 'HOVER',
+  constant_descent: 'CONSTANT DESCENT',
+  arrays_open: 'ARRAYS OPEN',
+  ramp_deploy: 'RAMPS OUT',
+  rover_egress: 'ROVER EGRESS',
+  hatch_blow: 'HATCH BLOWS',
+  eject: 'EJECT',
+  seat_sep: 'SEAT SEP',
+  apex_cover_jettison: 'APEX COVER',
   touchdown: 'TOUCHDOWN',
 };
 
 export interface DescentBeat {
   label: string;
   t: number;
+  /** The real time of a beat the scene shows sooner (an airbag lander's petals). */
+  realT?: number;
 }
 
 /** The major EDL beats for the timeline strip, in chronological order. */
@@ -61,10 +85,32 @@ const TIMELINE_BEATS: DescentEventType[] = [
   'parachute_deploy',
   'heatshield_sep',
   'backshell_sep',
+  'bridle_lower',
+  'radar_lock',
+  'leg_deploy',
+  'terrain_nav',
+  'hover',
+  'constant_descent',
+  'landing_flip',
+  'airbag_deploy',
   'retro_ignition',
   'skycrane_lower',
-  'airbag_deploy',
+  'high_gate',
+  'low_gate',
+  'bridle_cut',
+  'contact_light',
+  'main_cutoff',
+  'engine_cutoff',
   'touchdown',
+  'at_rest',
+  'petals_open',
+  'arrays_open',
+  'ramp_deploy',
+  'rover_egress',
+  'hatch_blow',
+  'eject',
+  'seat_sep',
+  'apex_cover_jettison',
   'record_ends',
 ];
 
@@ -72,7 +118,11 @@ const TIMELINE_BEATS: DescentEventType[] = [
 export function buildDescentBeats(summary: DescentSummary): DescentBeat[] {
   return summary.events
     .filter((e) => TIMELINE_BEATS.includes(e.type))
-    .map((e) => ({ label: EDL_BEAT_LABEL[e.type], t: e.t }));
+    .map((e) => ({
+      label: EDL_BEAT_LABEL[e.type],
+      t: e.t,
+      ...(e.realT != null ? { realT: e.realT } : {}),
+    }));
 }
 
 /** The status line for the current descent instant. */
@@ -91,6 +141,10 @@ export function descentStatus(s: DescentState, summary: DescentSummary): string 
   if (summary.events.at(-1)?.type === 'record_ends' && end && s.t >= end.t - 0.5) {
     return 'DATA ENDS';
   }
+  // An airbag ball after its first contact (afterTouchdown): bouncing until it comes to rest.
+  const firstContact = summary.events.find((e) => e.type === 'touchdown');
+  const rest = summary.events.find((e) => e.type === 'at_rest');
+  if (firstContact && rest && s.t > firstContact.t && s.t < rest.t) return 'BOUNCE';
   if (s.altM <= 0) {
     // Touch-and-go asteroids (Hayabusa/OSIRIS-REx) sample and depart; a comet is
     // a low-g settle after the bounces; Eros (NEAR) actually soft-landed, so it —

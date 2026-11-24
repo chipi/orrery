@@ -79,6 +79,10 @@
     "why": "read 2026-11-06 (second race): the Long March 10-series test vehicle that flew on 11 Feb 2026 is a core first stage, not a side booster; \"first stage\" / \"test stage\" is the accurate word",
     "tr": "c214c81df7"
   },
+  "booster|ar|missions/earth/starship-flight-5.json :: vehicle": {
+    "why": "proper name: the vehicle Booster 12 keeps its English form in every locale (origin-language rule); the locale booster word does not belong in the name",
+    "tr": "c0de9ff732"
+  },
   "booster|ar|missions/moon/luna16.json :: description": {
     "why": "variant: صاروخ Proton-K (launch vehicle, not a strap-on); re-read 2026-11-06 after the fact-check fixes",
     "tr": "1d2424200a"
@@ -343,6 +347,10 @@
     "why": "read 2026-11-06 (second race): the Long March 10-series test vehicle that flew on 11 Feb 2026 is a core first stage, not a side booster; \"first stage\" / \"test stage\" is the accurate word",
     "tr": "5f3e8ebae8"
   },
+  "booster|hi|missions/earth/starship-flight-5.json :: vehicle": {
+    "why": "proper name: the vehicle Booster 12 keeps its English form in every locale (origin-language rule); the locale booster word does not belong in the name",
+    "tr": "c0de9ff732"
+  },
   "booster|it|essays/going-to-the-moon.json :: body.24.md": {
     "why": "read 2026-11-06 (second race): the Long March 10-series test vehicle that flew on 11 Feb 2026 is a core first stage, not a side booster; \"first stage\" / \"test stage\" is the accurate word",
     "tr": "def693fec6"
@@ -379,6 +387,10 @@
     "why": "read 2026-11-06 (second race): the Long March 10-series test vehicle that flew on 11 Feb 2026 is a core first stage, not a side booster; \"first stage\" / \"test stage\" is the accurate word",
     "tr": "d2af94c78a"
   },
+  "booster|ja|missions/earth/starship-flight-5.json :: vehicle": {
+    "why": "proper name: the vehicle Booster 12 keeps its English form in every locale (origin-language rule); the locale booster word does not belong in the name",
+    "tr": "c0de9ff732"
+  },
   "booster|ja|science/propulsion/thrust-and-twr.json :: body_paragraphs.3": {
     "why": "Super Heavy is the booster by name; word omitted naturally",
     "tr": "973ca8693f"
@@ -390,6 +402,10 @@
   "booster|ko|fleet/launcher/long-march-10.json :: description": {
     "why": "read 2026-11-06 (second race): the Long March 10-series test vehicle that flew on 11 Feb 2026 is a core first stage, not a side booster; \"first stage\" / \"test stage\" is the accurate word",
     "tr": "6ea649f1dc"
+  },
+  "booster|ko|missions/earth/starship-flight-5.json :: vehicle": {
+    "why": "proper name: the vehicle Booster 12 keeps its English form in every locale (origin-language rule); the locale booster word does not belong in the name",
+    "tr": "c0de9ff732"
   },
   "booster|nl|essays/going-to-the-moon.json :: body.24.md": {
     "why": "read 2026-11-06 (second race): the Long March 10-series test vehicle that flew on 11 Feb 2026 is a core first stage, not a side booster; \"first stage\" / \"test stage\" is the accurate word",
@@ -495,6 +511,10 @@
     "why": "variant: first stage (Falcon 9 first-stage booster, первая ступень)",
     "tr": "6cf86da617"
   },
+  "booster|ru|missions/earth/starship-flight-5.json :: vehicle": {
+    "why": "proper name: the vehicle Booster 12 keeps its English form in every locale (origin-language rule); the locale booster word does not belong in the name",
+    "tr": "c0de9ff732"
+  },
   "booster|ru|missions/moon/luna16.json :: description": {
     "why": "variant: launcher (Proton-K booster = ракета-носитель); re-read 2026-11-06 after the fact-check fixes",
     "tr": "b1fe3b5422"
@@ -579,6 +599,10 @@
     "why": "variant: први степен (Falcon 9 first stage)",
     "tr": "2a9fe9cb8b"
   },
+  "booster|sr-Cyrl|missions/earth/starship-flight-5.json :: vehicle": {
+    "why": "proper name: the vehicle Booster 12 keeps its English form in every locale (origin-language rule); the locale booster word does not belong in the name",
+    "tr": "c0de9ff732"
+  },
   "booster|sr-Cyrl|missions/moon/luna16.json :: description": {
     "why": "variant: ракета (whole launcher Proton-K); re-read 2026-11-06 after the fact-check fixes",
     "tr": "43db19c60d"
@@ -650,6 +674,10 @@
   "booster|zh-CN|fleet/launcher/long-march-10.json :: description": {
     "why": "read 2026-11-06 (second race): the Long March 10-series test vehicle that flew on 11 Feb 2026 is a core first stage, not a side booster; \"first stage\" / \"test stage\" is the accurate word",
     "tr": "31e8160dcd"
+  },
+  "booster|zh-CN|missions/earth/starship-flight-5.json :: vehicle": {
+    "why": "proper name: the vehicle Booster 12 keeps its English form in every locale (origin-language rule); the locale booster word does not belong in the name",
+    "tr": "c0de9ff732"
   },
   "booster|zh-CN|missions/moon/luna16.json :: description": {
     "why": "variant: 运载火箭 (Proton-K is the whole launcher); re-read 2026-11-06 after the fact-check fixes",
@@ -1004,8 +1032,8 @@
     "tr": "b464dd88d8"
   },
   "burn|es|science/observation/hertzsprung-russell.json :: body_paragraphs.4": {
-    "why": "burn out = exhaust fuel, not engine",
-    "tr": "516d6a2883"
+    "why": "stars burn out (stellar fuel), not an engine firing; re-reviewed after the turn-off edit (0.9.11 C5)",
+    "tr": "05a31df13f"
   },
   "burn|es|science/orbits/disposal-end-of-life.json :: diagram_caption": {
     "why": "imperative verb phrase, no noun rendered",
@@ -1116,8 +1144,8 @@
     "tr": "4ad20e2ff4"
   },
   "burn|fr|science/observation/hertzsprung-russell.json :: body_paragraphs.4": {
-    "why": "burn out = exhaust fuel, not engine",
-    "tr": "b06eab8c38"
+    "why": "stars burn out (stellar fuel), not an engine firing; re-reviewed after the turn-off edit (0.9.11 C5)",
+    "tr": "70a1d83a64"
   },
   "burn|fr|science/propulsion/expander-cycle.json :: body_paragraphs.0": {
     "why": "combustion in main chamber",
@@ -1496,8 +1524,8 @@
     "tr": "59bf0e0591"
   },
   "burn|ja|science/observation/hertzsprung-russell.json :: body_paragraphs.4": {
-    "why": "\"burn out\" is stellar fusion exhaustion",
-    "tr": "d6b84bf789"
+    "why": "stars burn out (stellar fuel), not an engine firing; re-reviewed after the turn-off edit (0.9.11 C5)",
+    "tr": "391130cdcb"
   },
   "burn|ja|science/propulsion/specific-impulse.json :: narrative_101.1": {
     "why": "fuel-burned-per-second is combustion; 燃料消費量 correct",

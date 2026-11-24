@@ -102,7 +102,14 @@ const DESCENT_SEP_BEATS = new Set([
   'skycrane_flyaway',
   'retro_ignition',
   'airbag_deploy',
+  'bridle_lower',
+  'bridle_cut',
   'touchdown',
+  'petals_open',
+  'leg_deploy',
+  'terrain_nav',
+  'hover',
+  'arrays_open',
 ]);
 
 /**
@@ -113,7 +120,7 @@ const DESCENT_SEP_BEATS = new Set([
 export function descentSeparationTimes(summary: DescentSummary | null): number[] {
   if (!summary) return [];
   const dur = summary.totalDurationS;
-  const tB = terminalStartTime(summary.states, dur);
+  const tB = terminalStartTime(summary.states, dur, summary.events);
   return summary.events
     .filter((e) => DESCENT_SEP_BEATS.has(e.type))
     .map((e) => unwarpDescentTime(e.t, dur, tB));

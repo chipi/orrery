@@ -39,6 +39,17 @@
     {
       "l": "JPL MSL EDL — Way et al. (2013)",
       "u": "https://mars.nasa.gov/msl/timeline/surface-operations/entry-descent-landing/"
+    },
+    {
+      "l": "Curiosity confirmed times (docs/wip/2026-11-23-mars-landings-record.md, JPL timeline, PDT): chute 22:15:04.9, heat shield 22:15:24.6 (19.7 s later), rover separation 22:17:38.6, touchdown 22:17:57.3",
+      "u": "https://www.jpl.nasa.gov/news/timeline-of-major-mission-events-during-curiositys-landing/"
+    }
+  ],
+  "beats": [
+    {
+      "type": "heatshield_sep",
+      "after": "parachute_deploy",
+      "afterS": 19.7
     }
   ]
 }

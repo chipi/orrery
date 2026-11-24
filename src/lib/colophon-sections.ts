@@ -54,9 +54,10 @@ export function splitCutaways<T extends CutawayEntry>(
 }
 
 /**
- * The sections in page order. Always drawn: cutaways, launcher sketches, exploded, posters,
- * diagrams, capsules, models, canvas, interface graphics, writing. Drawn only when they have
- * entries: launcher sketches, landing, blueprints, mission trajectories, site illustrations, lab, tour episodes.
+ * The sections in page order. Always drawn: cutaways, exploded, posters, diagrams, models,
+ * canvas, interface graphics, writing. Drawn only when they have entries: launcher sketches,
+ * landing, blueprints, mission trajectories, site illustrations, lab, capsules (superseded by
+ * the central models), tour episodes.
  */
 export function colophonSections(
   m: SectionSource,
@@ -79,7 +80,7 @@ export function colophonSections(
     ...optional('site-illustrations', n(m.site_illustrations)),
     ...optional('lab-illustrations', n(m.lab_illustrations)),
     always('diagrams', n(m.diagrams_science)),
-    always('capsules', n(m.capsules)),
+    ...optional('capsules', n(m.capsules)),
     always('models', n(m.models3d)),
     always('canvas', n(m.canvas2d)),
     always('ui', uiCount),

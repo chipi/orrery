@@ -19,20 +19,27 @@
     "ispS": 311,
     "terminalVelocityMs": 0.6,
     "descentRateGain": 0.065,
-    "brakingFpaDeg": 1.55,
-    "brakingMaxThrustN": 36000,
+    "brakingFpaDeg": 1.45,
+    "brakingMaxThrustN": 36345,
     "highGateSpeedMs": 150,
-    "approachFpaDeg": 12,
+    "approachFpaDeg": 16,
     "lowGateAltM": 150,
-    "brakingRateGain": 0.01
+    "brakingRateGain": 0.01,
+    "gateBeats": true
   },
+  "beats": [
+    { "type": "contact_light", "altM": 1.7 },
+    { "type": "engine_cutoff", "altM": 1 }
+  ],
   "source_tier": "flagship",
   "estimatedFields": [
     "entryState.altitudeM",
     "retroPropellantKg",
     "brakingMaxThrustN",
     "brakingFpaDeg",
-    "approachFpaDeg"
+    "approachFpaDeg",
+    "beats.contact_light",
+    "beats.engine_cutoff"
   ],
   "provenance": [
     {

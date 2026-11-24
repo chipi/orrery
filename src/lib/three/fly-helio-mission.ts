@@ -96,13 +96,14 @@ export function buildHelioMissionOverlays(deps: HelioMissionDeps): HelioMissionO
       (scModel.userData.dispose as (() => void) | undefined)?.();
       scModel = null;
     }
+    // The mission's central model (fly-craft.ts) when it has one, else the older builders.
     const craft = flyCraft(missionId);
     scModel =
+      (craft ? fitCraft(craft, 2) : null) ??
       buildInterplanetarySpacecraft(missionId) ??
-      buildLanderCruiseCraft(missionId) ??
-      (craft ? fitCraft(craft, 2) : null);
-    // A showcase craft loads lazily: draw it once its family chunk is in.
-    if (!scModel && flyCraftSource(missionId)) {
+      buildLanderCruiseCraft(missionId);
+    // A showcase craft loads lazily: swap it in once its family chunk is in.
+    if (!craft && flyCraftSource(missionId)) {
       void preloadFlyCraft(missionId).then((ok) => {
         if (ok && currentModelId === missionId) applyMissionSpacecraftModel(missionId);
       });

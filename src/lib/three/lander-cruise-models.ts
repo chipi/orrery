@@ -710,22 +710,58 @@ function buildOsirisRexCruise(): THREE.Group {
 }
 
 function buildNearShoemakerCruise(): THREE.Group {
-  // NEAR: octagonal bus with FOUR fixed solar panels in a cross + a fixed dish.
+  // NEAR Shoemaker, in metres: octagonal prism bus (1.7 m across flats, 1.7 m tall), a fixed
+  // 1.5 m high-gain dish on top, four 1.8 x 1.2 m panels flat in a "windmill" cross round the
+  // top of the bus, instruments and the 450 N thruster on the bottom deck.
   const g = new THREE.Group();
-  const body = new THREE.Mesh(new THREE.CylinderGeometry(0.45, 0.45, 0.7, 8), heroGold());
+  const H = 1.7;
+  const R = 0.85 / Math.cos(Math.PI / 8);
+  const body = new THREE.Mesh(new THREE.CylinderGeometry(R, R, H, 8), heroGold());
+  body.rotation.y = Math.PI / 8; // a flat faces each panel arm
+  body.position.y = H / 2;
   g.add(body);
-  const w1 = solarWing(1.1, 0.5, -0.85);
-  const w2 = solarWing(1.1, 0.5, 0.85);
-  const w3 = solarWing(1.1, 0.5, 0);
-  w3.rotation.y = Math.PI / 2;
-  w3.position.z = -0.85;
-  const w4 = solarWing(1.1, 0.5, 0);
-  w4.rotation.y = Math.PI / 2;
-  w4.position.z = 0.85;
-  const hgd = dish(0.4);
-  hgd.position.y = 0.5;
-  hgd.rotation.x = 0;
-  g.add(w1, w2, w3, w4, hgd);
+  const panelMat = heroSolar();
+  for (let i = 0; i < 4; i++) {
+    const arm = new THREE.Group();
+    const panel = new THREE.Mesh(new THREE.BoxGeometry(1.8, 0.04, 1.2), panelMat);
+    panel.position.set(0.85 + 0.9, 0, 0.3); // offset off the arm axis: the windmill
+    const strut = new THREE.Mesh(new THREE.BoxGeometry(0.3, 0.05, 0.06), heroMetal(0x9aa0a8));
+    strut.position.set(1.0, 0, 0);
+    arm.add(panel, strut);
+    arm.rotation.y = (i * Math.PI) / 2;
+    arm.position.y = H * 0.9;
+    g.add(arm);
+  }
+  const standTop = H + 0.3;
+  const stand = new THREE.Mesh(
+    new THREE.CylinderGeometry(0.08, 0.14, 0.3, 12),
+    heroMetal(0x9aa0a8),
+  );
+  stand.position.y = H + 0.15;
+  const dishMat = heroWhite(0xe4e6e8);
+  dishMat.side = THREE.DoubleSide;
+  const sr = 1.6; // sphere radius of the concave cap; rim radius 0.75 m
+  const hgd = new THREE.Mesh(
+    new THREE.SphereGeometry(sr, 28, 8, 0, Math.PI * 2, 0, Math.asin(0.75 / sr)),
+    dishMat,
+  );
+  hgd.rotation.x = Math.PI; // vertex down, concave face up
+  hgd.position.y = standTop + sr;
+  g.add(stand, hgd);
+  const instr = heroDark();
+  for (let i = 0; i < 3; i++) {
+    const a = (i / 3) * Math.PI * 2 + 0.4;
+    const box = new THREE.Mesh(new THREE.BoxGeometry(0.4, 0.22, 0.3), instr);
+    box.position.set(Math.cos(a) * 0.55, -0.1, Math.sin(a) * 0.55);
+    box.rotation.y = -a;
+    g.add(box);
+  }
+  const nozMat = heroDark();
+  nozMat.side = THREE.DoubleSide;
+  const nozzle = new THREE.Mesh(new THREE.ConeGeometry(0.17, 0.3, 16, 1, true), nozMat);
+  nozzle.rotation.x = Math.PI;
+  nozzle.position.y = -0.15;
+  g.add(nozzle);
   return g;
 }
 

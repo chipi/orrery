@@ -26,6 +26,9 @@ export interface EarthOrbitCoast {
   coastDurationS: number;
   /** Suborbital ballistic hop — a single arc, no orbital loop. */
   suborbital?: boolean;
+  /** A long suborbital arc's span over the Earth (deg): the coast draws it along the curve. Starship
+   *  Flight 5 coasted 2376 s at ~7.7 km/s, about 18,000 km, so ~165°. Absent = the short hop. */
+  arcDeg?: number;
   /**
    * A winged orbiter (the Space Shuttle): the craft is the /fleet showcase model
    * (`flyCraftInOrbit`), not a capsule builder, the payload stays in the bay on the way up and the
@@ -88,6 +91,20 @@ const COASTS: Record<string, EarthOrbitCoast> = {
     inclinationDeg: 32.5,
     revolutions: 22,
     coastDurationS: 122400,
+  },
+  // Starship Flight 5 (0.9.11 F3): Ship 30 on a suborbital trajectory, about -15 x 212 km x
+  // 26.2 deg (McDowell, JSR 838), from SECO to re-entry (8:25 and 48:01 after liftoff, SpaceX's
+  // timeline).
+  'starship-flight-5': {
+    missionId: 'starship-flight-5',
+    capsuleId: 'starship',
+    apogeeKm: 212,
+    perigeeKm: -15,
+    inclinationDeg: 26.2,
+    revolutions: 0,
+    coastDurationS: 2376,
+    arcDeg: 165,
+    suborbital: true,
   },
   'freedom-7': {
     missionId: 'freedom-7',
@@ -427,9 +444,10 @@ const COASTS: Record<string, EarthOrbitCoast> = {
   },
 };
 
-/** The mean orbit altitude used to draw the ring. */
+/** The mean orbit altitude used to draw the ring; a suborbital arc peaks at its apogee (Flight 5's
+ *  perigee is below the surface, so the mean would draw it at half its 212 km). */
 export function coastAltitudeKm(c: EarthOrbitCoast): number {
-  return (c.apogeeKm + c.perigeeKm) / 2;
+  return c.suborbital ? c.apogeeKm : (c.apogeeKm + c.perigeeKm) / 2;
 }
 
 export function hasEarthOrbitCoast(missionId: string | undefined | null): boolean {

@@ -10,7 +10,11 @@
   "era": "2011-now",
   "epoch": "commercial-era",
   "best_known_for": "First planetary defense impactor (Dimorphos)",
-  "specs": { "length_m": 2.6, "diameter_m": 1.9, "width_m": 1.8 },
+  "specs": {
+    "length_m": 2.6,
+    "diameter_m": 1.9,
+    "width_m": 1.8
+  },
   "links": [
     {
       "l": "DART — Wikipedia",

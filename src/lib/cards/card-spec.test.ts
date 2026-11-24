@@ -406,6 +406,20 @@ describe('value formatters (via resolver edges)', () => {
     expect(noUnit.stats.find((s) => s.label === 'PAYLOAD')?.value).toBe('science instruments');
   });
 
+  // A word before the quantity (any language) reads as approximate; the chip cut
+  // "about 4060 kg launch mass (…)" to "about 4060…" on the share card (operator 2026-11-23).
+  it('leadQuantity reads a short leading word as approximate, in any language', () => {
+    const value = (payload: string) =>
+      cardForMission({ ...APOLLO, payload } as Mission, INDEX).stats.find(
+        (s) => s.label === 'PAYLOAD',
+      )?.value;
+    expect(value('about 4060 kg launch mass (1025 kg rover)')).toBe('~4,060 KG');
+    expect(value('etwa 4060 kg Startmasse')).toBe('~4,060 KG');
+    expect(value('Orbiter (~1230 kg)')).toBe('~1,230 KG');
+    // Not a lead quantity when a number comes first without a unit: the chip as before.
+    expect(value('Crew of 3 and 46 kg of samples')).toBe('Crew of 3 and 46 kg of…');
+  });
+
   it('cardDate passes invalid ISO strings through untouched', () => {
     const spec = cardForMission({ ...APOLLO, departure_date: 'N/A' } as Mission, INDEX);
     expect(spec.stats.find((s) => s.label === 'LAUNCH')?.value).toBe('N/A');

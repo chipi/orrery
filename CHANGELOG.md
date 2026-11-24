@@ -10,6 +10,94 @@ For deep-dive engineering rationale, see [`IMPLEMENTATION.md`](IMPLEMENTATION.md
 
 ## [Unreleased]
 
+## [0.9.11] — 2026-11-24
+
+A release about the ends of flights: every descent flies its own craft's model under a directed
+camera, boosters come back in the whole frame, and the Apollo landings continue all the way home
+to the splashdown. Starship Flight 5 and NASA's ESCAPADE join the missions (141), the models
+behind them are rebuilt, and phones get a round of touch fixes.
+
+### Added
+
+- **Apollo's way home** on /fly: after the Apollo 11, 12, 14, 15, 16 and 17 landings a **Continue**
+  button (beside the /moon hand-off) plays the LM ascent, the rendezvous burns, docking
+  close-ups, the LM jettison and, for Apollo 15 and 16, the subsatellite release, then the
+  trans-Earth burn, the cruise home and the splashdown, with the real mission clock on the HUD.
+  Each mission has its own camera; the J missions show the rover's TV camera at liftoff and the
+  open SIM bay. Strings in 14 languages.
+- **Boosters come back full frame**: Inspiration4's Falcon 9 on the drone ship *Just Read the
+  Instructions*, IM-1's Falcon 9 back to Landing Zone 1 and ESCAPADE's New Glenn on *Jacklyn*
+  play in the whole frame (entry burn, grid fins, landing burn, legs out) at the real size of
+  ship and pad. Landing times that are approximate print a leading ~.
+- **Booster landing inset** on the other launches: at the flight's real landing time a small
+  inset shows the recovered booster coming down on a drone ship, a landing zone or into the
+  tower's catch arms; Hera and Europa Clipper's expended cores tumble instead.
+- **Starship Flight 5** (13 October 2024): launch with the booster's tower catch, the ship's
+  suborbital coast, belly-first re-entry, the landing flip and the splashdown, with a new
+  Starship model.
+- **ESCAPADE**, NASA's twin Mars orbiters launched on New Glenn NG-2: the 141st mission, in 14
+  languages.
+- **Descents, pass 1 and 2**: every lander, rover, capsule and probe flies its own model (the
+  Apollo LM, Curiosity and the rest) under a directed camera, with parachutes at their published
+  sizes and drogue-then-main stages kept in frame. Per-mission beats include Vostok's hatch and
+  ejection seat, Gemini's two-point suspension, Apollo's roll and apex-cover jettison, Liberty
+  Bell 7's hatch, Viking's constant descent, Chang'e's hover and cutoff, Luna's landing bags and
+  verniers, Philae's two bounces, Hayabusa and OSIRIS-REx's touch-and-go, Tianwen-1's ramps and
+  Zhurong driving off, Starship's belly-flop and flip; crash landings tumble. Small bodies are
+  at true scale, big bodies open with an establishing shot, and the ground gains procedural
+  detail.
+- **New and rebuilt 3D models** to a single detailed standard: Falcon 9 first stage, the drone
+  ship, New Glenn's booster, *Jacklyn*, Landing Zone 1, the Apollo CSM (with the open SIM bay)
+  and LM, the PFS subsatellite, and the lunar, Mars, inner-planet, outer-planet and observatory
+  craft, the capsules, the Shuttle orbiters, Buran and X-37B, Skylab and Sputnik 1. Launch, cruise
+  and orbit fly them too, and **/fleet and mission pages** show a true-size turntable model.
+- **/colophon**: the central models in the 3D catalogue with new thumbnails; 253 model titles
+  translated in 13 languages.
+- **Star clusters**, a new science article in 14 languages, with a glossary entry for the
+  main-sequence turn-off.
+- **Photos**: Orion Spur, Sagittarius Arm and Laniakea pictured by a sourced member object;
+  second images for Vega, Barnard's Star and Rigil Kentaurus.
+
+### Changed
+
+- **Round trips land on their descent day**: Apollo and the other Moon round trips used to land
+  at the Earth return; they now land at their recorded descent time. Hayabusa, Hayabusa2 and
+  OSIRIS-REx land on their recorded touchdown day.
+- **Lunar-return entries** hold lift up through the first deceleration pulse, as Apollo's
+  guidance did; Apollo 11 flies its published range and lift-to-drag.
+- **Launchers**: H3 flies its published stage thrust and a pitch table fitted to JAXA's altitudes
+  and speeds; Proton-M/Briz-M and Long March 5 fly their published thrust. The spacecraft
+  separation now counts from the end of the burn, so it is no longer drawn 90 s late
+  (Inspiration4: T+11:36).
+- **The launch camera** frames the flying stack on every screen, and both pieces stay in frame
+  at staging.
+- **Phone round**: /plan's panel is a bottom sheet whose handle shows the picked window, budget
+  and FLY MISSION; /fly's time bar takes /explore's look on touch, with a stacked launch HUD;
+  /explore and the Worlds keep the ground under the finger on drag and pinch, with a compact
+  scale ladder and drawers; the flat landing view takes one-finger pan and two-finger pinch.
+- **Quality**: a first visit on a software renderer starts at low instead of medium.
+- **/fly loads on demand**: the descent models, the way-home scene and the booster-return scene
+  load when they are needed, not with the page.
+- **Image credits**: the last 15 placeholder credits are sourced or replaced.
+- **Trajectory thumbnails** refreshed; Artemis I's draws one continuous track; spiral-arm rows
+  on /explore show their panel picture.
+- Launch-site links added on 14 missions.
+
+### Fixed
+
+- Earth-orbit flights with no coast entry (Sputnik 1, STS-107, STS-51-L) read "Earth orbit"
+  instead of "Cislunar transfer".
+- Inspiration4's booster landed on *Just Read the Instructions*, not OCISLY; Falcon 9's legs
+  deploy to their real angle.
+- A surface site picked after an orbiter no longer opens the flat patch uninvited and closes its
+  own panel; a pinch now zooms by altitude and no longer skips the imagery bands.
+- /dev/models and the /fleet line-up threw an error on load because the model tests were bundled
+  into the browser; they no longer are.
+- The Apollo service module is bare polished aluminium, not white paint.
+- The plan sheet's hint on phones meets the small-text contrast floor.
+- Research corrections in 14 languages: the Columbia claim reworded to a dated sequence, the
+  Vikram box relabelled, Russian and Simplified Chinese crater forms, Kaguya's model author.
+
 ## [0.9.10] — 2026-11-20
 
 A follow-through release: launches fly their published timelines (the Shuttle's direct insertion,

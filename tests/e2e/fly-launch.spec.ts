@@ -250,3 +250,20 @@ test('STS-1 (reconstructed flight data) still offers its launch', async ({ page 
   await page.goto('/fly?mission=sts-1');
   await expect(page.locator('[data-testid="fly-opening-launch"]')).toBeVisible({ timeout: 30_000 });
 });
+
+// 0.9.11 F2: what lands is per flight. Psyche's side boosters landed on LZ-1 and LZ-2 (the inset
+// opens at T+7:52 and its frame waits closed until then); Europa Clipper expended all three cores,
+// so it has no inset. The inset's pose over time and the landing beat are unit-tested
+// (landing-inset.test.ts, flight-plan-beats.test.ts); the dev-only seek hook is absent from the
+// production build.
+test('booster landing is per flight: Psyche lands its side boosters, Europa Clipper does not', async ({
+  page,
+}) => {
+  await enterLaunch(page, 'psyche-mission');
+  const inset = page.getByTestId('landing-inset');
+  await expect(inset).toBeAttached();
+  await expect(inset).toHaveText('BOOSTER LANDING · LZ-1 · LZ-2');
+  await expect(inset).not.toHaveClass(/\bon\b/);
+  await enterLaunch(page, 'europa-clipper');
+  await expect(page.getByTestId('landing-inset')).toHaveCount(0);
+});

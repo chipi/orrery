@@ -1,16 +1,11 @@
 import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
-// GH Pages compat — see scripts/gh-pages-compat.mjs header. Used here
-// for the manual locale × route expansion that replaces Paraglide's
-// flaky-at-build-time `generateStaticLocalizedUrls`. Same shape with
-// or without VITE_BASE; SvelteKit prepends the base internally at
-// render time.
-import { expandLocalizedRoots } from './scripts/gh-pages-compat.mjs';
+// The manual locale × route expansion that replaces Paraglide's
+// flaky-at-build-time `generateStaticLocalizedUrls` (see the file's header).
+import { expandLocalizedRoots } from './scripts/localized-roots.mjs';
 // The un-localized route list — shared with src/routes/sitemap.xml so the
 // sitemap can't drift from what actually prerenders. See site-routes.mjs.
 import { collectCanonicalRoutes } from './scripts/site-routes.mjs';
-
-const base = (process.env.VITE_BASE ?? '').replace(/\/$/, '');
 
 // Seed every prerender pass with one entry per locale × canonical route.
 // For en-US (baseLocale) that's `/`, `/missions`, etc.; other locales get
@@ -57,7 +52,6 @@ const config = {
       strict: true,
     }),
     paths: {
-      base,
       // Default `relative: true` emits `./_app/...` in every prerendered
       // page. At a URL like `/de/`, the browser resolves `./_app/env.js`
       // against the URL (not the file location) → `/de/_app/env.js`,
@@ -65,8 +59,7 @@ const config = {
       // The bug surfaces only on the localized landing routes (trailing
       // slash); deeper routes like `/de/missions` happen to land on
       // `/de.html` (one level up) and resolve correctly. Setting
-      // `relative: false` emits absolute paths rooted at `base` (`/`
-      // locally and Docker, `/orrery` on GH Pages preview), which works
+      // `relative: false` emits absolute paths rooted at `/`, which works
       // for every URL depth. Caught by the i18n-all-routes e2e on the
       // localized `/${locale}/` landings (#326).
       relative: false,

@@ -72,6 +72,7 @@ export type FlightPhaseEvent =
   | { type: 'startDescent' } // deep-link / lander arrival / coastComplete
   | { type: 'touchdown' } // DescentScene onComplete (earth → recovery)
   | { type: 'closeRecovery' } // user dismisses the recovery card
+  | { type: 'returnComplete' } // the way-home scene (a lunar landing's second half) ends → cruise
   | { type: 'skipOpening' } // user skips the opening overlay
   | { type: 'scrubTo'; phase: ScrubPhase }; // master scrubber drag
 
@@ -123,6 +124,10 @@ export function reduceFlyAct(
       // The timed opening fades to the transfer scene (byte-identical to the
       // legacy auto-end, which only cleared openingActive → cruise fallback).
       return 'cruise';
+    case 'returnComplete':
+      // The way home is not an act of its own: it plays inside the descent act (every surface that
+      // gates on the full-frame descent already applies), then the cruise resumes from TEI.
+      return act === 'descent' ? 'cruise' : act;
     case 'closeRecovery':
       // Dismissing the recovery card reveals the scene behind it (cruise).
       return 'cruise';

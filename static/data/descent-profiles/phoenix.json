@@ -35,6 +35,40 @@
     {
       "l": "Phoenix Mars Lander EDL — NASA/JPL",
       "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2007-034A"
+    },
+    {
+      "l": "Phoenix EDL as researched for pass 2 (docs/wip/2026-11-23-mars-landings-record.md): 11.8 m disk-gap-band at about 12.6 km (13.4 km above the site in the reconstruction above); heat shield 15–25 s later (20 s drawn) with the legs out; separation from the backshell at about 980 m (960 m in the reconstruction); 12 pulsed thrusters to 2.4 m/s. The leg-deploy delay, the radar lock (2.4 km, InSight's figure) and the time the arrays opened are drawn, not sourced",
+      "u": "https://spaceflightnow.com/mars/phoenix/080521edl.html"
     }
+  ],
+  "beats": [
+    {
+      "type": "heatshield_sep",
+      "after": "parachute_deploy",
+      "afterS": 20
+    },
+    {
+      "type": "leg_deploy",
+      "after": "heatshield_sep",
+      "afterS": 5
+    },
+    {
+      "type": "radar_lock",
+      "altM": 2400
+    }
+  ],
+  "afterTouchdown": {
+    "beats": [
+      {
+        "type": "arrays_open",
+        "afterS": 8
+      }
+    ]
+  },
+  "estimatedFields": [
+    "beats.heatshield_sep",
+    "beats.leg_deploy",
+    "beats.radar_lock",
+    "afterTouchdown.beats.arrays_open"
   ]
 }

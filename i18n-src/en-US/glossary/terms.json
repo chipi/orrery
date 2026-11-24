@@ -173,5 +173,6 @@
   "core-collapsed cluster": "A globular cluster whose centre has contracted into an unusually dense knot of stars, after its heavier stars sank inward and the core lost energy.",
   "galactic wind": "A flow of gas blown out of a galaxy by the radiation and supernova explosions of its young stars.",
   "OB association": "A loose group of young, massive stars of spectral types O and B that formed together but are no longer held by gravity and slowly drift apart.",
-  "metallicity": "The share of a star's or galaxy's matter made of elements heavier than helium, which astronomers call metals; old stars usually have low metallicity."
+  "metallicity": "The share of a star's or galaxy's matter made of elements heavier than helium, which astronomers call metals; old stars usually have low metallicity.",
+  "main-sequence turn-off": "The point on a star cluster's brightness-colour diagram where its main sequence bends away towards the giants; the stars there are just running out of hydrogen in their cores, so their lifetime gives the cluster's age, and the point moves to fainter stars as the cluster grows older."
 }

@@ -41,6 +41,10 @@
     {
       "id": "opportunity",
       "role": "spacecraft"
+    },
+    {
+      "id": "cape-canaveral-lc-17",
+      "role": "launch-site"
     }
   ],
   "flight": {
@@ -64,7 +68,7 @@
       "source": "JPL MER-B EDL Reconstruction (2004); direct atmospheric entry",
       "edl_system": "airbag",
       "edl_duration_s": 330,
-      "touchdown_velocity_ms": 21.01
+      "touchdown_velocity_ms": 13.58
     },
     "totals": {
       "total_dv_km_s": 5.5,

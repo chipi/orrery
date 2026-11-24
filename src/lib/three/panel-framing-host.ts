@@ -95,6 +95,17 @@ export function watchPanels(
   };
   lifecycle.on(document, 'transitionend', onPanelMotionEnd);
   lifecycle.on(document, 'animationend', onPanelMotionEnd);
+  // A Svelte `in:fly` runs on element.animate (no animationend) and ends with an `introend` that
+  // does not bubble, so it is heard in the capture phase. Without it two samples taken before the
+  // slide moved agreed, and the cover stayed 14 px short (docker-e2e 44728854768).
+  lifecycle.on(
+    document,
+    'introend',
+    (e) => {
+      if (e.target instanceof Element && e.target.matches('aside.panel')) framer.markDirty();
+    },
+    { capture: true },
+  );
 }
 
 /** The measured rects of every open `aside.panel`. */

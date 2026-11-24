@@ -1,0 +1,36 @@
+{
+  "name": "ESCAPADE",
+  "vehicle": "New Glenn (NG-2)",
+  "payload": "Dos naves, Blue y Gold: 209 kg en seco y 535 kg con combustible cada una",
+  "delta_v": "No publicado",
+  "type": "ORBITADORES GEMELOS DE MARTE · ACTIVA",
+  "first": "Orbitadores gemelos lanzados en el segundo vuelo del New Glenn, que logró el primer aterrizaje con éxito de un propulsor New Glenn",
+  "description": "ESCAPADE es el par de naves de la NASA hacia Marte, Blue y Gold, construidas por Rocket Lab, en una misión que cuesta menos de 80 millones de dólares. El investigador principal es Robert Lillis, del Space Sciences Laboratory de UC Berkeley, y la misión es una misión SIMPLEx de la NASA de 2019 en la División de Heliofísica. Cada nave pesa 209 kg en seco y 535 kg con combustible. Despegaron en el segundo vuelo del New Glenn, NG-2, desde el Launch Complex 36 de la Estación de la Fuerza Espacial de Cabo Cañaveral el 13 de noviembre de 2025 a las 15:55 EST (20:55 UTC). El propulsor, GS1 «Never Tell Me the Odds», aterrizó en el buque plataforma de aterrizaje Jacklyn unos nueve minutos después del despegue. Blue y Gold no fueron directas a Marte: rodearon el punto L2 Sol-Tierra durante cerca de un año y después hicieron sobrevuelos propulsados de la Tierra, Blue el 7 de noviembre de 2026 y Gold el 9 de noviembre. Sus encendidos de inserción orbital en Marte llegan el 7 y el 9 de septiembre de 2027, de unos 11 minutos a 450 km, hacia una órbita de captura de 60 horas, y la ciencia debe empezar en junio de 2028.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANZAMIENTO",
+      "note": "New Glenn NG-2 desde el Launch Complex 36, 13 de noviembre de 2025, 15:55 EST (20:55 UTC).",
+      "type": "nominal"
+    },
+    {
+      "met": 0.0233,
+      "label": "SEPARACIÓN",
+      "note": "Blue y Gold se separan de la etapa superior unos 33,5 minutos después del despegue.",
+      "type": "nominal"
+    },
+    {
+      "met": 359,
+      "label": "SOBREVUELO DE LA TIERRA",
+      "note": "Sobrevuelo propulsado de Blue el 7 de noviembre de 2026, tras cerca de un año alrededor del L2 Sol-Tierra; Gold lo hace el 9 de noviembre.",
+      "type": "nominal"
+    },
+    {
+      "met": 663,
+      "label": "INSERCIÓN ORBITAL EN MARTE",
+      "note": "Encendidos de unos 11 minutos a 450 km el 7 y el 9 de septiembre de 2027 sitúan a las gemelas en una órbita de captura de 60 horas.",
+      "type": "nominal"
+    }
+  ],
+  "vehicle_stage": "segunda etapa del New Glenn (GS2)"
+}

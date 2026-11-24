@@ -1,0 +1,53 @@
+{
+  "missionId": "apollo16",
+  "siteId": "apollo16-splashdown",
+  "body": "earth",
+  "landingSite": {
+    "lat": -0.7,
+    "lon": -156.22
+  },
+  "entryState": {
+    "altitudeM": 122000,
+    "velocityMs": 11033,
+    "flightPathAngleDeg": 6.55
+  },
+  "entryMassKg": 5904,
+  "entryCdA": 17.7,
+  "liftToDragRatio": 0.286,
+  "archetype": "EARTH_CAPSULE_REENTRY",
+  "params": {
+    "chuteDeployAltM": 7300,
+    "terminalHandoffAltM": 3000,
+    "parachuteCdA": 24.2,
+    "terminalCdA": 1154
+  },
+  "source_tier": "flagship",
+  "provenance": [
+    {
+      "l": "Apollo 16 Mission Report MSC-07230 (Aug 1972): Table 3-III, entry interface 265:37:31 at 400,000 ft, 36,196.1 ft/s (11,033 m/s), flight-path angle -6.55 deg (OCR of the scan); Table A-IV, command module weight at entry 13,015 lb (5,904 kg; OCR, the CM after separation reads 13,026); Table 3-I drogues 265:45:26 (the pilot noted large oscillations on the drogues), mains 265:46:16, all three mains good; landing at 265:51:05 GET (19:45:05 GMT 27 April 1972) at 0 deg 42.0 min S, 156 deg 12.8 min W (computer), 3 n.mi from the target, USS Ticonderoga. Quote: \"Landing occurred at 1945 G.m.t.\" The command module landed flat and hard (Stable I, then Stable II, uprighted in about 4.5 min); the model has no water-impact load",
+      "u": "https://ntrs.nasa.gov/api/citations/19720026127/downloads/19720026127.pdf"
+    },
+    {
+      "l": "NASA SP-4029 Apollo chronology, \"Entry, Splashdown, and Recovery\" compilation (Apollo 7-17): Apollo 16 column: \"Lift To Drag Ratio 0.286\", \"Range (n mi) 1,190\" (1,190 n.mi = 2,204 km), \"Maximum g 7.19\" (the Flight Journal PAD predicted 6.87), \"Duration (sec) 814.0\", velocity 36,196.1 ft/s, flight-path angle -6.55, splashdown 0.70 S 156.22 W, landing weight 11,995 lb. No Entry Postflight Analysis exists for Apollo 16 (the mission report's supplement list has none), so L/D and range are the compilation values (secondary), not a reconstruction; no first/second load-factor split is published. Model limit: with these inputs the model peaks at 8.2 g at 68 s (7.19 g flown), dips to 1.2 g, second pulse 5.6 g; drogues 474 s (475 s flown, 265:45:26), splashdown 817 s (814 s flown)",
+      "u": "https://www.nasa.gov/wp-content/uploads/static/history/SP-4029/Apollo_18-40_Entry_Splashdown_and_Recovery.htm"
+    },
+    {
+      "l": "Apollo CM entry aero (L/D 0.3), drogue and main areas: the Apollo 8 profile (MSC-PA-R-69-1), same Block II command module",
+      "u": "https://ntrs.nasa.gov/api/citations/19700033031/downloads/19700033031.pdf"
+    }
+  ],
+  "estimatedFields": [
+    "entryCdA",
+    "params.chuteDeployAltM",
+    "params.parachuteCdA",
+    "params.terminalCdA",
+    "beats.apex_cover_jettison"
+  ],
+  "beats": [
+    {
+      "type": "apex_cover_jettison",
+      "altM": 7500
+    }
+  ],
+  "targetDownrangeKm": 2204
+}

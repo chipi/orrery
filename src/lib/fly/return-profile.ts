@@ -39,6 +39,9 @@ export interface ReturnProfileRaw {
   jettison: string;
   jettisonAltitudeNmi: number;
   tei: { get: string; burnS: number; dvFts: number };
+  /** File id under static/data/descent-profiles/ of the Earth entry and splashdown the cruise
+   *  plays at the Earth return; absent: the way home ends at arrival, as before. */
+  splashdownProfile?: string;
   source_tier: string;
   estimatedFields: string[];
   provenance: { l: string; u: string }[];
@@ -109,6 +112,7 @@ export function isValidReturnProfile(d: unknown): d is ReturnProfileRaw {
   ];
   if (order.some((x) => x == null)) return false;
   for (let i = 1; i < order.length; i++) if (order[i]! <= order[i - 1]!) return false;
+  if (p.splashdownProfile !== undefined && typeof p.splashdownProfile !== 'string') return false;
   return Array.isArray(p.estimatedFields) && Array.isArray(p.provenance);
 }
 
@@ -157,4 +161,25 @@ export async function loadReturnProfile(
   } catch {
     return null;
   }
+}
+
+export type DescentDue = 'landing' | 'splashdown' | null;
+
+/**
+ * Which descent act the cruise has reached the gate of. A lunar landing fires at its landing day
+ * (and re-arms when the sim day is scrubbed back to it after the way home); once the way home is
+ * done, the Earth return fires the splashdown at the arrival day, if the mission has one.
+ */
+export function descentDue(a: {
+  simDay: number;
+  landingDay: number;
+  arrDay: number;
+  wayHomeDone: boolean;
+  hasSplashdown: boolean;
+}): DescentDue {
+  if (a.simDay >= a.landingDay && (!a.wayHomeDone || a.simDay <= a.landingDay + 1e-6)) {
+    return 'landing';
+  }
+  if (a.wayHomeDone && a.hasSplashdown && a.simDay >= a.arrDay) return 'splashdown';
+  return null;
 }

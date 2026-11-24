@@ -486,7 +486,10 @@ function buildVenusDescentLander(): THREE.Group {
 const STARSHIP_SHIP_SITES = new Set(['starship-demo', 'starship-mars-crew']);
 
 // Earth re-entries with no LEO coast entry (lunar returns) name their capsule here.
-const LUNAR_RETURN_CAPSULE: Record<string, string> = { apollo8: 'apollo-cm' };
+const LUNAR_RETURN_CAPSULE: Record<string, string> = {
+  apollo8: 'apollo-cm',
+  'apollo11-splashdown': 'apollo-cm', // Apollo 11's Earth return (its lunar landing is siteId apollo11)
+};
 
 /** Resolve the terminal landed craft for a mission (the reused surface model). */
 function resolveLander(siteId: string, body: DescentBody): THREE.Group {

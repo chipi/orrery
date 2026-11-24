@@ -83,6 +83,7 @@ import type { FdStage, FdPhaseMarkerRender, MilestoneRender } from '$lib/fly/fly
 import type { DescentProfile } from '$lib/physics/descent/descent-physics';
 import type { ShotKind } from '$lib/orbital/flyby-shots';
 import type { FlightPhaseEvent } from '$lib/fly/flight-phase-controller';
+import type { DescentDue } from '$lib/fly/return-profile';
 import type { LoadedMission } from '$lib/fly-mission-apply';
 import type { createCinematicBeatState } from '$lib/fly-cinematic-beats';
 import type { resolveQualitySync } from '$lib/quality/quality-tier';
@@ -121,11 +122,13 @@ export interface FlyFrameBridge {
   debugCamWorld: { x: number; y: number; z: number } | null;
   debugMontageShot: ShotKind | null;
   descentProfile: DescentProfile | null;
+  /** The descent act the cruise has reached the gate of (descentDue in fly/return-profile): the
+   *  lunar landing, the Earth splashdown after the way home, or none. */
+  readonly descentDue: DescentDue;
   /** Sim day the landing act starts (see landingDay in fly-mission-apply). */
   readonly landingDay: number;
-  /** The landing was played and the way home resumed the cruise past it: do not land again until
-   *  the sim day is scrubbed or looped back before the landing. */
-  readonly landingConsumed: boolean;
+  /** Swap the Earth splashdown profile in as the descent profile, before startDescent. */
+  enterSplashdown(): void;
   descentSpeed: number;
   descentT: number;
   epilogueActive: boolean;
@@ -1116,8 +1119,14 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
       bridge.simDay += dt * effectiveSpeed;
       // At arrival, a landing mission enters the descent act instead of
       // looping the cruise — closing the flight circle (RFC-034 §9).
-      if (bridge.descentProfile && !bridge.landingConsumed && bridge.simDay >= bridge.landingDay) {
-        bridge.simDay = bridge.landingDay;
+      const due = bridge.descentProfile ? bridge.descentDue : null;
+      if (due) {
+        if (due === 'splashdown') {
+          bridge.simDay = bridge.arcTimeline.arr_day;
+          bridge.enterSplashdown();
+        } else {
+          bridge.simDay = bridge.landingDay;
+        }
         dispatchPhase({ type: 'startDescent' });
         bridge.descentT = 0;
       } else if (bridge.simDay > bridge.arcTimeline.arr_day + 30) {

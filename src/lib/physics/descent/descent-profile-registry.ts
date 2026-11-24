@@ -767,8 +767,22 @@ export async function loadDescentProfile(
   baseUrl = '',
 ): Promise<DescentProfile | null> {
   if (!hasDescentProfile(missionId)) return null;
+  return loadDescentProfileFile(missionId, fetchFn, baseUrl);
+}
+
+/**
+ * Fetch + expand one descent-profile file by its file id: a mission's second descent that is not
+ * the mission's own landing (Apollo 11's Earth splashdown, `apollo11-splashdown`, named by its
+ * return profile). Same fail-closed rules as `loadDescentProfile`, minus the mission gate.
+ */
+export async function loadDescentProfileFile(
+  fileId: string | undefined | null,
+  fetchFn: typeof fetch = fetch,
+  baseUrl = '',
+): Promise<DescentProfile | null> {
+  if (fileId == null || !/^[a-z0-9][a-z0-9-]*$/.test(fileId)) return null;
   try {
-    const res = await fetchFn(`${baseUrl}/data/descent-profiles/${missionId}.json`);
+    const res = await fetchFn(`${baseUrl}/data/descent-profiles/${fileId}.json`);
     if (!res.ok) return null;
     const data: unknown = await res.json();
     if (!isValidRaw(data)) return null;

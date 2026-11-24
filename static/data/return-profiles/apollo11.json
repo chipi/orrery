@@ -20,6 +20,7 @@
     { "id": "tpf", "get": "127:46:09.8", "burnS": 28.4, "dvFts": 31.4 }
   ],
   "csmOrbitNmi": [62, 56],
+  "splashdownProfile": "apollo11-splashdown",
   "docking": "128:03:00",
   "jettison": "130:09:31.2",
   "jettisonAltitudeNmi": 61.6,

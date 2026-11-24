@@ -182,7 +182,12 @@
   import LaunchScene from '$lib/components/LaunchScene.svelte';
   import DescentScene from '$lib/components/DescentScene.svelte';
   import ReturnScene from '$lib/components/ReturnScene.svelte';
-  import { hasReturnProfile, loadReturnProfile, type ReturnProfile } from '$lib/fly/return-profile';
+  import {
+    descentDue,
+    hasReturnProfile,
+    loadReturnProfile,
+    type ReturnProfile,
+  } from '$lib/fly/return-profile';
   import CoastScene from '$lib/components/CoastScene.svelte';
   import { getEarthOrbitCoast } from '$lib/orbital/earth-orbit-registry';
   import { preloadFlyCraft } from '$lib/three/fly-craft';
@@ -194,6 +199,7 @@
   } from '$lib/physics/ascent/launch-profile-registry';
   import {
     loadDescentProfile,
+    loadDescentProfileFile,
     hasDescentProfile,
   } from '$lib/physics/descent/descent-profile-registry';
   import {
@@ -557,16 +563,26 @@
   let coastFrac = $derived(
     coastDurationDays > 0 ? Math.min(1, Math.max(0, coastMetDays / coastDurationDays)) : 0,
   );
-  // Load the mission's descent profile whenever the mission changes.
+  // Load the mission's descent profile whenever the mission changes. `missionDescentProfile` is the
+  // mission's own landing; `descentProfile` is what the act flies, which at the Earth return of a
+  // way home is the splashdown profile instead.
+  let missionDescentProfile = $state<DescentProfile | null>(null);
+  let splashdownProfile = $state<DescentProfile | null>(null);
+  let splashdownActive = $state(false);
   $effect(() => {
     const id = mission.id;
+    splashdownActive = false;
     if (!hasDescentProfile(id)) {
+      missionDescentProfile = null;
       descentProfile = null;
       return;
     }
     void loadDescentProfile(id, fetch, base)
       .then((p) => {
-        if (mission.id === id) descentProfile = p;
+        if (mission.id === id) {
+          missionDescentProfile = p;
+          descentProfile = p;
+        }
       })
       .catch(dataLoadFailed);
   });
@@ -579,7 +595,7 @@
   let wayHomeDone = $state(false);
   $effect(() => {
     const id = mission.id;
-    if (!hasReturnProfile(id) || descentProfile?.body !== 'moon') {
+    if (!hasReturnProfile(id) || missionDescentProfile?.body !== 'moon') {
       returnProfile = null;
       return;
     }
@@ -588,6 +604,30 @@
         if (mission.id === id) returnProfile = p;
       })
       .catch(dataLoadFailed);
+  });
+  // The Earth return of a way home: its entry and splashdown profile, fetched with the return
+  // profile and swapped in as the descent profile when the cruise reaches Earth (enterSplashdown).
+  $effect(() => {
+    const file = returnProfile?.splashdownProfile;
+    splashdownProfile = null;
+    if (!file) return;
+    void loadDescentProfileFile(file, fetch, base)
+      .then((p) => {
+        if (returnProfile?.splashdownProfile === file) splashdownProfile = p;
+      })
+      .catch(dataLoadFailed);
+  });
+  function enterSplashdown() {
+    if (!splashdownProfile) return;
+    descentProfile = splashdownProfile;
+    splashdownActive = true;
+  }
+  // Scrubbed back from the Earth return: the lunar landing is the descent again, and re-arms.
+  $effect(() => {
+    if (splashdownActive && flyAct === 'cruise' && simDay < arcTimeline.arr_day - 1e-3) {
+      descentProfile = missionDescentProfile;
+      splashdownActive = false;
+    }
   });
   $effect(() => {
     if (flyAct !== 'descent') wayHome = false;
@@ -3035,13 +3075,19 @@
         descentProfile = v;
       },
       get landingDay() {
-        return landingDay(mission, arcTimeline, descentProfile?.body);
+        return landingDay(mission, arcTimeline, missionDescentProfile?.body);
       },
-      get landingConsumed() {
-        return (
-          wayHomeDone && simDay > landingDay(mission, arcTimeline, descentProfile?.body) + 1e-6
-        );
+      get descentDue() {
+        return descentDue({
+          simDay,
+          landingDay: landingDay(mission, arcTimeline, missionDescentProfile?.body),
+          arrDay: arcTimeline.arr_day,
+          wayHomeDone,
+          hasSplashdown: splashdownProfile != null && !splashdownActive,
+        });
       },
+      enterSplashdown,
+
       get descentSpeed() {
         return descentSpeed;
       },
@@ -3485,13 +3531,13 @@
   <ReturnScene
     profile={returnProfile}
     missionName={mission.name}
-    site={descentProfile?.landingSite}
+    site={missionDescentProfile?.landingSite}
     {hudHidden}
     onComplete={endWayHome}
   />
 {:else if showDescent && descentProfile && descentDossier}
   <DescentScene
-    landedActions={returnProfile ? landedActions : undefined}
+    landedActions={returnProfile && !splashdownActive ? landedActions : undefined}
     profile={descentProfile}
     mission={descentDossier}
     precomputedSummary={descentSummaryFly ?? undefined}

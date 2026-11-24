@@ -2,6 +2,7 @@ import { readFileSync, readdirSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { describe, it, expect } from 'vitest';
 import {
+  descentDue,
   expandReturnProfile,
   formatGet,
   hasReturnProfile,
@@ -72,5 +73,60 @@ describe('isValidReturnProfile fails closed', () => {
   it('rejects a malformed GET and a wrong rendezvous list', () => {
     expect(isValidReturnProfile({ ...good, liftoff: 'noon' })).toBe(false);
     expect(isValidReturnProfile({ ...good, rendezvous: good.rendezvous.slice(1) })).toBe(false);
+  });
+});
+
+describe('descentDue: which descent act the cruise is at the gate of', () => {
+  const base = { landingDay: 5.2, arrDay: 8.13, wayHomeDone: false, hasSplashdown: true };
+  it('a mission without a way home lands at its landing day, exactly as before', () => {
+    expect(descentDue({ ...base, simDay: 5.19, hasSplashdown: false })).toBeNull();
+    expect(descentDue({ ...base, simDay: 5.2, hasSplashdown: false })).toBe('landing');
+    expect(descentDue({ ...base, simDay: 6, hasSplashdown: false })).toBe('landing');
+  });
+  it('before the way home is done only the lunar landing is due, never the splashdown', () => {
+    expect(descentDue({ ...base, simDay: 8.2 })).toBe('landing');
+  });
+  it('after the way home the cruise runs on to the Earth return, then splashes down', () => {
+    expect(descentDue({ ...base, simDay: 5.64, wayHomeDone: true })).toBeNull();
+    expect(descentDue({ ...base, simDay: 8.12, wayHomeDone: true })).toBeNull();
+    expect(descentDue({ ...base, simDay: 8.13, wayHomeDone: true })).toBe('splashdown');
+    expect(descentDue({ ...base, simDay: 9, wayHomeDone: true })).toBe('splashdown');
+  });
+  it('a way home with no splashdown profile ends at arrival, as it did', () => {
+    expect(
+      descentDue({ ...base, simDay: 8.13, wayHomeDone: true, hasSplashdown: false }),
+    ).toBeNull();
+  });
+  it('scrubbing back to the landing re-arms it, even after the way home was done', () => {
+    expect(descentDue({ ...base, simDay: 5.2, wayHomeDone: true })).toBe('landing');
+    expect(descentDue({ ...base, simDay: 5.1, wayHomeDone: true })).toBeNull();
+  });
+  it('an Earth-return capsule (landing day == arrival) lands, never splashes down twice', () => {
+    expect(
+      descentDue({ simDay: 3, landingDay: 3, arrDay: 3, wayHomeDone: false, hasSplashdown: false }),
+    ).toBe('landing');
+  });
+});
+
+describe('the Apollo 11 splashdown link', () => {
+  const raw = load('apollo11.json');
+  const sp = JSON.parse(
+    readFileSync(
+      resolve(process.cwd(), 'static/data/descent-profiles/apollo11-splashdown.json'),
+      'utf-8',
+    ),
+  );
+  it('names a splashdown profile that exists, is Earth, and is not its own mission landing', () => {
+    expect(raw.splashdownProfile).toBe('apollo11-splashdown');
+    expect(sp.body).toBe('earth');
+    expect(sp.missionId).toBe('apollo11');
+    expect(sp.siteId).toBe('apollo11-splashdown'); // apollo11 stays the lunar landing's site id
+  });
+  it('carries the Mission Report entry state', () => {
+    expect(sp.entryState.altitudeM).toBe(122000);
+    expect(sp.entryState.velocityMs).toBeCloseTo(36194.4 * 0.3048, 0);
+    expect(sp.entryState.flightPathAngleDeg).toBe(6.48);
+    expect(sp.entryMassKg).toBeCloseTo(12095.5 * 0.45359237, -1);
+    expect(sp.landingSite).toEqual({ lat: 13.3, lon: -169.15 });
   });
 });

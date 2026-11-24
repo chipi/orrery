@@ -5,6 +5,7 @@ import { describe, it, expect } from 'vitest';
 import {
   expandDescentProfile,
   hasDescentProfile,
+  loadDescentProfileFile,
   DESCENT_MISSION_IDS,
   type RawDescentProfile,
 } from './descent-profile-registry';
@@ -63,5 +64,30 @@ describe('MVP descent profiles expand + fly to a soft touchdown', () => {
 
   it('rejects an unknown archetype', () => {
     expect(() => expandDescentProfile({ ...apollo11, archetype: 'NOPE' as never })).toThrow();
+  });
+});
+
+describe('loadDescentProfileFile: a second descent that is not a mission landing', () => {
+  const serve = (id: string) =>
+    (async (url: string) => {
+      const file = url.split('/').pop()!.replace('.json', '');
+      return file === id
+        ? { ok: true, json: async () => loadRaw(id) }
+        : { ok: false, json: async () => ({}) };
+    }) as unknown as typeof fetch;
+
+  it('loads Apollo 11 splashdown by file id, without it being a mission with a descent act', async () => {
+    const p = await loadDescentProfileFile('apollo11-splashdown', serve('apollo11-splashdown'));
+    expect(p?.body).toBe('earth');
+    expect(p?.siteId).toBe('apollo11-splashdown');
+    expect(hasDescentProfile('apollo11-splashdown')).toBe(false);
+    const s = integrateDescent(p!);
+    expect(s.touchdownSuccess).toBe(true);
+    expect(s.events.some((e) => e.type === 'parachute_deploy')).toBe(true);
+  });
+  it('fails closed on a bad id, a missing file', async () => {
+    expect(await loadDescentProfileFile('../secret', serve('x'))).toBeNull();
+    expect(await loadDescentProfileFile(null)).toBeNull();
+    expect(await loadDescentProfileFile('nope', serve('x'))).toBeNull();
   });
 });

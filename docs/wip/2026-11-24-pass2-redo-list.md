@@ -37,7 +37,7 @@ The operator's order (2026-11-24): finish every batch first, then redo these.
 | Apollo 7/8/9, ASTP, Skylab | At f0.7 (mains opening) the camera sits at the riser point inside the lines; apex cover not seen on screen; no pilot chutes |
 | Shenzhou-1 | -6 s camera inside the canopy (the Soyuz path); f0.7 capsule shows no chute, the line hangs to the side |
 | Starship Flight 5 | Upright with the plume already at f0.5–f0.7; the belly-flop should hold until the flip just before splashdown |
-| Inspiration4, Polaris Dawn | Drogue-then-mains order not checked (canopies above the frame); no altitude beats |
+| Inspiration4, Polaris Dawn | Viewed 11-24 T600–T700: camera holds the capsule, no canopy ever in frame, so the drogue-then-mains order cannot be seen; HUD has no mains beat (same camera path as the parked canopy item) |
 | Starship (all three) | Entry plasma is a flat orange ellipse beside the ship (f0.1); Mars: after the flip the camera pulls far back (f0.66, f0.7) instead of the close orbit; flight 5 f0.7 grey disc on the sea |
 | Blue Moon Mk 2 | Top is a white capsule, the real one has a flared silver shroud; RCS quads modelled but do not fire |
 | Small bodies: shapes and surfaces | All five are spheres with one grey crater texture: Itokawa a peanut rubble pile with a smooth "sea", Ryugu and Bennu dark spinning-top diamonds with boulders, Eros an elongated potato, 67P the near-black two-lobed duck with cliffs. Procedural shapes first; the published shape models (JAXA, NASA PDS, ESA) need a licence and size check, which ties to the Eyes on the Solar System backlog item |

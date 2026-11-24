@@ -831,6 +831,7 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
   const ARRAY_S = 8;
   /** Landers that ended tipped over, by site (rad about the base): SLIM ended nose-down (JAXA). */
   const END_TIP_RAD: Record<string, number> = { slim: -1.4 };
+  const SWINGS_UNDER_CHUTE = new Set(['beagle2']);
   // A hard impact (touchdown faster than a lander can survive): the engine is off from the contact
   // loss / cutoff, the craft tumbles over the last seconds and ends broken on its side.
   const tdEvent = opts.events?.find((e) => e.type === 'touchdown');
@@ -1004,9 +1005,15 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
     if (model.parachute.visible) {
       const openT = secondStage ? chuteJetT : (chuteT ?? 0);
       const inflate = Math.min(1, Math.max(0, (s.t - openT) / 2));
-      const sway = Math.sin(frame * 0.05) * 0.09 * (1 - bp);
+      const sway = Math.sin(s.t * 1.5) * 0.09 * (1 - bp);
       model.parachute.scale.set(0.35 + 0.65 * inflate, 0.5 + 0.5 * inflate, 0.35 + 0.65 * inflate);
       model.parachute.rotation.z = sway + bp * 0.9;
+      if (SWINGS_UNDER_CHUTE.has(opts.siteId)) {
+        // The lander swings under the canopy, not the canopy over the lander.
+        const swing = 0.14 * Math.sin(s.t * 1.1) * inflate * (1 - bp);
+        vehicle.rotation.z += swing;
+        model.parachute.rotation.z -= 2 * swing;
+      }
       if (failedMain && secondStage) {
         model.parachute.scale.set(0.1, 0.8, 0.1);
         model.parachute.rotation.z = 0.3 + 0.12 * Math.sin(frame * 0.2);

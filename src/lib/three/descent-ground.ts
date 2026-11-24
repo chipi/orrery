@@ -230,10 +230,17 @@ const float PER[4] = float[4](${PERIODS.map((p) => p.toFixed(4)).join(', ')});`,
   float hh = 0.0; float pp = 0.0; float rr = 0.0; float wsum = 0.0;
   for (int i = 0; i < 4; i++) {
     float P = PER[i];
-    float w = 1.0 - smoothstep(18.0 * P, 70.0 * P, dist);
+    // fade out within a few tile widths so no tile period is read from afar; the far field is the plain map
+    float w = 1.0 - smoothstep(2.5 * P, 11.0 * P, dist);
     if (w <= 0.001) continue;
-    float a = 0.7 * float(i) + 0.3;
-    vec2 q = mat2(cos(a), -sin(a), sin(a), cos(a)) * vGW.xz / P + vec2(0.37 * float(i), 0.61);
+    float a = 1.618 * float(i) + 0.5;
+    mat2 R = mat2(cos(a), -sin(a), sin(a), cos(a));
+    vec2 q = R * vGW.xz / P + vec2(0.3719 * float(i) + 0.1131, 0.6173 - 0.2347 * float(i));
+    // a slow, differently-rotated noise lifts or drops this scale from place to place, so no
+    // single period dominates and the tiling never lines up into a grid
+    float a2 = 2.399 * float(i) + 1.1;
+    vec2 qm = mat2(cos(a2), -sin(a2), sin(a2), cos(a2)) * vGW.xz / (P * (5.37 + 1.71 * float(i)));
+    w *= mix(0.15, 1.0, smoothstep(0.3, 0.7, texture2D(uDetail, qm).g));
     vec3 t = texture2D(uDetail, q).rgb;
     // one extra tap toward the sun gives a bump-style slope term, brighter on sun-facing walls
     float t2 = texture2D(uDetail, q + vec2(0.0012, 0.0026)).r;

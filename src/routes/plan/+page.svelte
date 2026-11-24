@@ -1711,7 +1711,7 @@
       letter-spacing: 2px;
     }
     .sheet-empty-hint {
-      color: rgba(255, 255, 255, 0.55);
+      color: var(--color-text-label);
     }
     .sheet-caret {
       color: var(--color-text-label);

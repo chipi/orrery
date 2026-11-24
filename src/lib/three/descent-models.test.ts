@@ -80,6 +80,7 @@ describe('buildDescentModel', () => {
           'apollo16',
           'apollo17',
           'artemis4', // a rigid tank: nothing folds
+          'artemis5', // a rigid lander: nothing folds
         ].includes(id)
       )
         expect(stowed, `${id}: its deployables are stowed in flight`).toBeGreaterThan(0);

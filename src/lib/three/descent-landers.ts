@@ -19,6 +19,7 @@ const FAMILIES = import.meta.glob<Family>([
   './showcase/capsules-commercial.ts',
   './showcase/probes.ts',
   './showcase/starship-hls.ts',
+  './showcase/blue-moon-mk2.ts',
 ]);
 const loaded: Record<string, Family> = {};
 let preloading: Promise<void> | null = null;
@@ -66,6 +67,7 @@ const DETAILED: Record<string, Source> = {
   apollo15: LM,
   apollo16: LM,
   artemis4: builder('starship-hls', 'buildStarshipHls'),
+  artemis5: builder('blue-moon-mk2', 'buildBlueMoonMk2'),
   apollo17: LM,
   curiosity: builder('mars-rovers', 'buildCuriosity'),
   // Scale-out (2026-11-23): the central models of every robotic Moon and Mars landing.

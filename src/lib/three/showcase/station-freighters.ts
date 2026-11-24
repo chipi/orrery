@@ -1227,7 +1227,8 @@ export function buildApolloCsm(block2: boolean, opts: ApolloCsmOptions = {}): TH
   const shield = mat(0x6e4220, 0.3, 0.8);
   const cmWhite = mat(0xe2e2de, 0.25, 0.45);
   const cmSkin = mat(0xd2d4d8, 0.4, 0.34);
-  const sw = mat(0xe8e8e4, 0.2, 0.5);
+  // The SM skin was bare polished aluminium (Apollo 15 SIM-bay and Apollo 11 lunar-orbit photos).
+  const sw = mat(0xcfd2d6, 0.7, 0.35);
   const radMat = mat(0xf2f2f0, 0.2, 0.45);
   const dishMat = mat(0xd8dade, 0.4, 0.4, true);
   const ablator = mat(0x8c7c64, 0.35, 0.65, true);

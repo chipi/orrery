@@ -1492,6 +1492,8 @@ function buildEarthCapsuleStack(lander: THREE.Group, vehLen: number): DescentMod
   m.root.add(m.parachute);
 
   lander.position.y = -vehLen * 0.02;
+  // Where the risers meet the nose: the point a capsule that changes its hang pivots about.
+  lander.userData.hangPivotY = capTop + lander.position.y;
   m.root.add(lander);
   return m;
 }

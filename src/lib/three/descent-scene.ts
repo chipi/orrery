@@ -512,6 +512,15 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
   const chuteJetT = metOf('parachute_jettison');
   const airbagT = metOf('airbag_deploy');
   const flipT = metOf('entry_flip');
+  // Gemini: the offset centre of gravity trims the capsule off the flight line in entry (the lift
+  // the bank steers), and under the main it is hauled from a vertical hang into the two-point
+  // suspension, nose up 35 deg above horizontal, for the splashdown.
+  const isGemini = opts.siteId.startsWith('gemini');
+  const GEMINI_TRIM_RAD = 0.33; // drawn: an offset-CG trim of about 19 deg, not a sourced figure
+  const REPO_DELAY_S = 6;
+  const REPO_S = 8;
+  const REPO_RAD = Math.PI / 2 - (35 * Math.PI) / 180; // from vertical to 35 deg off horizontal
+  const landerHome = model.lander.position.clone();
   // Starship (Flight 5): belly-first through entry, then the landing flip to tail-down as the
   // landing burn lights, over LANDING_FLIP_S.
   const landingFlipT = metOf('landing_flip');
@@ -861,6 +870,35 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
       entryFlip = fp * fp * (3 - 2 * fp); // smoothstep 0→1
     }
     vehicle.rotation.x = Math.PI * (1 - entryFlip); // π (tip down) → 0 (shield down)
+    if (isGemini) {
+      const entering =
+        s.phaseKind === 'ballistic_entry' ? 1 : 1 - smooth01((s.t - (chuteT ?? 0)) / 3);
+      vehicle.rotation.z = GEMINI_TRIM_RAD * entryFlip * entering;
+      plasma.rotation.z = -vehicle.rotation.z; // the flow stays world-aligned
+      // The reposition: the capsule swings about the riser point from a vertical hang to 35 deg
+      // above horizontal.
+      const pivotY = model.lander.userData.hangPivotY as number | undefined;
+      const rp = chuteJetT == null ? 0 : smooth01((s.t - chuteJetT - REPO_DELAY_S) / REPO_S);
+      const ang = -REPO_RAD * rp;
+      // It leans across the camera's view (the last pose), so the 35 deg reads from every shot.
+      const psi = Math.atan2(-camera.position.x, -camera.position.z);
+      const q = new THREE.Quaternion()
+        .setFromAxisAngle(new THREE.Vector3(0, 1, 0), psi)
+        .multiply(new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(0, 0, 1), ang));
+      model.lander.quaternion.copy(q);
+      if (pivotY != null) {
+        const off = new THREE.Vector3(0, landerHome.y - pivotY, 0).applyQuaternion(q);
+        model.lander.position.set(off.x, pivotY + off.y, off.z);
+        // The heat shield stays on the capsule's base: no separation beat for Gemini.
+        if (hp === 0) {
+          const hOff = new THREE.Vector3(0, model.heatshieldBaseY - pivotY, 0).applyQuaternion(q);
+          model.heatshield.position.set(hOff.x, pivotY + hOff.y, hOff.z);
+          model.heatshield.quaternion.copy(
+            q.clone().multiply(new THREE.Quaternion().setFromEuler(new THREE.Euler(Math.PI, 0, 0))),
+          );
+        }
+      }
+    }
     if (landingFlipT != null) {
       // Laid across the frame (about z), tiled belly (-X) down; the plasma stays world-aligned
       // (shock below the belly, wake above).
@@ -912,6 +950,8 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
       const o = model.orbiter.position;
       whole = { cy: (o.y + vehLen) / 2, r: o.length() / 2 + vehLen * 1.2 };
     }
+    // Gemini at splashdown: the capsule is the subject, the canopy beside it stays in the sky.
+    if (isGemini && touched) whole = core;
     const pose = descentPoseAt(shots, s.t, { core, whole }, craftY, camera.aspect);
     camera.position.set(pose.pos[0], craftY + pose.pos[1], pose.pos[2]);
     camera.lookAt(pose.target[0], craftY + pose.target[1], pose.target[2]);

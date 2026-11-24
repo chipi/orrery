@@ -30,7 +30,6 @@
       "liftoff": "ground_tele",
       "ascent": "chase_long",
       "insertion": "chase_long",
-      "dock_approach": "dock_csm",
       "dock_closeup": "dock_csm",
       "soft_capture": "dock_csm",
       "hard_dock": "dock_csm",

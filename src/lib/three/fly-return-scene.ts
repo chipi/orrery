@@ -597,14 +597,17 @@ export function returnCamera(
     }
     // ─ Per-mission styles (profile camera.shots). Every number below is an editorial ESTIMATE. ─
     case 'ground_low': {
-      // Low across the regolith (a lens at about 1.5 m, the Surveyor 3 crater site's flat floor),
-      // tilting up to follow the stage; the descent stage is in the foreground at first.
+      // Low across the regolith (a lens at about 1.5 m, the Surveyor 3 crater site's flat floor):
+      // it pulls back as the stage climbs, aimed 45% of the way up so the horizon stays in frame.
       const dr = descentRel(pose);
       const up = pose.altM - rig.stageY0;
-      const w = 0.6 * (1 - smooth((t - RT.ignition) / 6));
-      const look = V(0, 0, 0).lerp(dr.clone().add(V(0, 2.2, 0)), w);
-      const D = (36 + 0.3 * up) * k;
-      return { pos: V(-0.5 * D, dr.y + 1.5 + 0.02 * up, 0.86 * D), look, fov: 46 };
+      const D = (36 + 0.6 * up) * k;
+      const eye = dr.y + 1.5;
+      return {
+        pos: V(-0.5 * D, eye, 0.86 * D),
+        look: V(0, eye * 0.55, 0),
+        fov: 46 + 6 * smooth(up / 90),
+      };
     }
     case 'ground_tele': {
       // A long lens from the far side and well back: the stage rises out of the hills.
@@ -628,8 +631,8 @@ export function returnCamera(
       // One slow move from the end of the vertical rise through insertion: no cut to a wide shot.
       const s = smooth((t - RT.pitchOver) / (RT.csi - RT.pitchOver));
       return {
-        pos: V(lerp(-14, -48, s) * k, lerp(-4, 14, s), lerp(30, 66, s) * k),
-        look: V(lerp(0, 4, s), 0, 0),
+        pos: V(lerp(-14, -34, s) * k, lerp(-4, 9, s), lerp(30, 46, s) * k),
+        look: V(lerp(0, 3, s), 0, 0),
         fov: 38,
       };
     }
@@ -655,24 +658,25 @@ export function returnCamera(
       const c = csmCentreFromAnchor(pose, rig);
       const u = c.clone().normalize();
       const side = new THREE.Vector3().crossVectors(u, V(0, 1, 0)).normalize();
-      const { h, v } = halfFov(46, aspect);
+      const { h, v } = halfFov(50, aspect);
       const sep = c.length();
-      const d = ((sep / 2 + 9) / Math.tan(Math.min(h, v))) * 0.9;
+      const d = ((sep / 2 + 8) / Math.tan(Math.min(h, v))) * 0.95;
       const mid = c.clone().multiplyScalar(0.5);
       return {
         pos: mid
           .clone()
-          .addScaledVector(side, -d * 0.85)
+          .addScaledVector(side, d * 0.85)
           .add(V(0, 0.2 * d, 0)),
         look: mid,
-        fov: 46,
+        fov: 50,
       };
     }
     case 'dock_csm': {
-      // Roosa's view: from the CSM's side window, just behind the probe, down at the drogue.
+      // Roosa's view: from the CSM's side window, just behind the probe, down at the drogue (used
+      // from the close-up on, once the CSM sits on the radial line above the LM).
       const gap = Math.max(0, tip.y - drogue.y);
       const look = drogue.clone().add(V(0, Math.min(gap, 4) * 0.2, 0));
-      const pos = tip.clone().add(V(1.5 * (0.8 + 0.2 * k), 2.6 + 0.2 * Math.min(gap, 24), 1.0));
+      const pos = tip.clone().add(V(2.3 * (0.8 + 0.2 * k), 1.9 + 0.04 * Math.min(gap, 24), 0.9));
       return { pos, look, fov: 50 };
     }
     case 'jettison_high': {

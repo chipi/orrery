@@ -32,6 +32,17 @@
   "estimatedFields": [
     "entryState.altitudeM",
     "entryState.velocityMs",
-    "entryMassKg"
-  ]
+    "entryMassKg",
+    "afterTouchdown.bounces.firstHeightM",
+    "afterTouchdown.bounces.rollM",
+    "afterTouchdown.bounces.restS"
+  ],
+  "afterTouchdown": {
+    "bounces": {
+      "count": 2,
+      "firstHeightM": 100,
+      "rollM": 400,
+      "restS": 120
+    }
+  }
 }

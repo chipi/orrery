@@ -856,6 +856,8 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
   /** Landers that ended tipped over, by site (rad about the base): SLIM ended nose-down (JAXA). */
   const END_TIP_RAD: Record<string, number> = { slim: -1.4 };
   const SWINGS_UNDER_CHUTE = new Set(['beagle2']);
+  /** How long the whole chute stays framed after each stage opens: long enough to read drogues, then mains. */
+  const CHUTE_OPENING_SHOT_S = 8;
   // A hard impact (touchdown faster than a lander can survive): the engine is off from the contact
   // loss / cutoff, the craft tumbles over the last seconds and ends broken on its side.
   const tdEvent = opts.events?.find((e) => e.type === 'touchdown');
@@ -1443,7 +1445,7 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
     const earthChute =
       body === 'earth' && !model.mainChute && !model.deploy && chuteT != null && s.t >= chuteT;
     const chuteOpenAt = chuteJetT != null && s.t >= chuteJetT ? chuteJetT : (chuteT ?? 0);
-    let opening = earthChute && model.parachute.visible && s.t < chuteOpenAt + 3;
+    let opening = earthChute && model.parachute.visible && s.t < chuteOpenAt + CHUTE_OPENING_SHOT_S;
     const capsule = earthChute && !opening;
     opening = opening && !!model.parachute.visible;
     if (capsule) whole = core;

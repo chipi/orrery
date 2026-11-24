@@ -27,6 +27,7 @@ import {
 import { R_BODY_M } from '$lib/physics/descent/descent-physics-constants';
 import { sepProgress } from '$lib/orbital/ascent-cameras';
 import { buildDescentModel } from '$lib/three/descent-models';
+import { buildSmallBody, type SmallBodyId } from '$lib/three/small-body-shapes';
 import type { FlightPhaseScene, ForceKey } from '$lib/three/flight-phase-scene';
 
 /** Body mean radius (km, scene units). */
@@ -270,8 +271,12 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
     roughness: 0.92,
     metalness: 0.02,
   });
-  const bodyMesh = new THREE.Mesh(new THREE.SphereGeometry(rBody, 128, 128), bodyMat);
-  bodyMesh.position.set(0, -rBody, 0);
+  // A small body is its own procedural shape (not the Moon-like textured sphere), sunk so that the
+  // touchdown point on it is the scene's y = 0.
+  const shape = small ? buildSmallBody(body as SmallBodyId) : null;
+  const bodyMesh =
+    shape?.mesh ?? new THREE.Mesh(new THREE.SphereGeometry(rBody, 128, 128), bodyMat);
+  bodyMesh.position.set(0, -(shape?.landR ?? rBody), 0);
   const siteC = opts.landingSite ?? { lat: 0, lon: 0 };
   const latR = (siteC.lat * Math.PI) / 180;
   const lonR = (siteC.lon * Math.PI) / 180;
@@ -280,8 +285,38 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
     Math.sin(latR),
     -Math.cos(latR) * Math.sin(lonR),
   );
-  bodyMesh.quaternion.setFromUnitVectors(siteNormal, new THREE.Vector3(0, 1, 0));
+  bodyMesh.quaternion.setFromUnitVectors(shape?.landDir ?? siteNormal, new THREE.Vector3(0, 1, 0));
   scene.add(bodyMesh);
+
+  // A soft contact shadow on the ground under a small-body lander: it fades as the craft lifts, so
+  // a bounce (Philae) reads. A spherical cap hugging the local surface.
+  const craftM = body === 'comet_67p' ? PHILAE_M : SMALL_CRAFT_M;
+  let contactShadow: THREE.Mesh | null = null;
+  const contactMat = new THREE.MeshBasicMaterial({
+    vertexColors: true,
+    transparent: true,
+    opacity: 0,
+    depthWrite: false,
+    polygonOffset: true,
+    polygonOffsetFactor: -2,
+    polygonOffsetUnits: -2,
+  });
+  if (shape) {
+    const rc = shape.landR + 0.00012;
+    const reach = (craftM * 1.1) / 1000 / rc;
+    const cap = new THREE.SphereGeometry(rc, 32, 8, 0, Math.PI * 2, 0, reach);
+    const cp = cap.attributes.position;
+    const cc = new Float32Array(cp.count * 4);
+    for (let i = 0; i < cp.count; i++) {
+      const ang = Math.acos(Math.min(1, cp.getY(i) / rc));
+      cc.set([0, 0, 0, Math.max(0, 1 - ang / reach) ** 1.5], i * 4);
+    }
+    cap.setAttribute('color', new THREE.BufferAttribute(cc, 4));
+    contactShadow = new THREE.Mesh(cap, contactMat);
+    contactShadow.position.set(0, -shape.landR, 0);
+    contactShadow.visible = false;
+    scene.add(contactShadow);
+  }
 
   // Thin atmospheric limb (Mars/Venus only) — one back-side rim glow.
   let rimMesh: THREE.Mesh | null = null;
@@ -777,6 +812,10 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
           ? s.altM * ball.k
           : BALL_SCALE_ALT_M * ball.k + (s.altM - BALL_SCALE_ALT_M) / 1000;
     vehicle.position.set(0, craftY, 0);
+    if (contactShadow) {
+      contactMat.opacity = 0.6 * Math.exp((-Math.max(0, s.altM) / craftM) * 0.7);
+      contactShadow.visible = contactMat.opacity > 0.01;
+    }
     vehicle.scale.setScalar(craftK);
     const vd = s.velDownMs;
     const vh = Math.sqrt(Math.max(0, s.velocityMs * s.velocityMs - vd * vd));

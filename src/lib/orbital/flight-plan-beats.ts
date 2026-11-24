@@ -67,7 +67,7 @@ export function buildPlanBeats(
  */
 export function descentPlanBeats(summary: DescentSummary): Array<{ label: string; t: number }> {
   const dur = summary.totalDurationS;
-  const tB = terminalStartTime(summary.states, dur);
+  const tB = terminalStartTime(summary.states, dur, summary.events);
   return buildDescentBeats(summary).map((b) => ({
     label: b.label,
     t: unwarpDescentTime(b.t, dur, tB),

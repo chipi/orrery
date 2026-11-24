@@ -202,7 +202,9 @@
   // markers derive from the same warp so everything stays in sync.
   // Entry/terminal warp lives in a shared pure module so the /fly play-clock can
   // find where a sep event lands in raw scrubber time (descent-timewarp.ts).
-  const terminalStartT = $derived.by(() => terminalStartTime(summary.states, duration));
+  const terminalStartT = $derived.by(() =>
+    terminalStartTime(summary.states, duration, summary.events),
+  );
   const warpDescentTime = (rawT: number): number =>
     warpTime(rawT, duration, terminalStartT, ENTRY_TIMELINE_FRAC);
   const unwarpDescentTime = (trajT: number): number =>

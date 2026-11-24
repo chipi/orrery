@@ -382,7 +382,7 @@ const MARS_PROPULSIVE: ArchetypeBuilder = (p) => [
     ispS: p.ispS ?? 350,
     terminalVelocityMs: p.terminalVelocityMs ?? 2,
     descentRateGain: p.descentRateGain ?? 0.06,
-    events: ['retro_ignition'],
+    events: ['landing_flip', 'retro_ignition'],
   },
 ];
 

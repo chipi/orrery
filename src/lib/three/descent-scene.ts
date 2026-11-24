@@ -437,12 +437,12 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
   // ── Touchdown dust — a disc kicked up on the surface as the vehicle nears the
   //    ground under retro / airbags, flaring at touchdown. Body-tinted.
   // Starship (Flight 5) lands its burn on the sea: white spray, not grey dust.
-  const overSea = opts.events?.some((e) => e.type === 'landing_flip') === true;
+  const overSea = body === 'earth' && opts.events?.some((e) => e.type === 'landing_flip') === true;
   const dustColor =
     body === 'mars' ? 0xc98a5a : body === 'venus' ? 0xd9a44a : overSea ? 0xe4edf3 : 0xb8b3ad;
   // Starship's three Raptors light a far bigger flame than a lander's retro (the plume is sized
   // off a capsule-scale body).
-  const plumeK = overSea ? 2.5 : 1;
+  const plumeK = opts.events?.some((e) => e.type === 'landing_flip') ? 2.5 : 1;
   const dust = new THREE.Mesh(new THREE.CircleGeometry(vehLen * 1.5, 40), additive(dustColor, 0));
   dust.rotation.x = -Math.PI / 2; // flat on the surface
   dust.position.y = vehLen * 0.02;

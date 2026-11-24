@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test';
+import { openPlanSheet } from './_helpers/plan-sheet';
 
 test('porkchop refreshes when destination changes', async ({ page, isMobile }) => {
   await page.goto('/plan');
@@ -49,9 +50,9 @@ test('porkchop refreshes when destination changes', async ({ page, isMobile }) =
       canvasBox.x + canvasBox.width * 0.4,
       canvasBox.y + canvasBox.height * 0.7,
     );
-    // On a phone the panel is a bottom sheet (operator 2026-11-23): the photo is inside it, so
-    // open it from its handle first.
-    if (isMobile) await page.getByTestId('plan-sheet-handle').click();
+    // On a portrait phone the panel is a bottom sheet (operator 2026-11-23): the photo is inside
+    // it, so open it from its handle first. A landscape phone keeps the side panel (no handle).
+    await openPlanSheet(page);
     await page.locator('figure.rocket-photo').waitFor({ state: 'visible', timeout: 5_000 });
   }
 

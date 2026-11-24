@@ -11,7 +11,7 @@
   import { installHeroEnvironment } from '$lib/three/hero-materials';
 
   const modules = import.meta.glob<{ SHOWCASE?: Record<string, ShowcaseModel> }>(
-    '$lib/three/showcase/*.ts',
+    ['$lib/three/showcase/*.ts', '!$lib/three/showcase/*.test.ts'],
     { eager: true },
   );
   const all: Record<string, ShowcaseModel> = {};

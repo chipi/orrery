@@ -102,7 +102,7 @@
 
   // Showcase spacecraft (src/lib/three/showcase/*): every family file's SHOWCASE map, merged.
   const SHOWCASE_MODULES = import.meta.glob<{ SHOWCASE?: Record<string, ShowcaseModel> }>(
-    '$lib/three/showcase/*.ts',
+    ['$lib/three/showcase/*.ts', '!$lib/three/showcase/*.test.ts'],
     { eager: true },
   );
   const SHOWCASE: Record<string, ShowcaseModel> = {};

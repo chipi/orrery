@@ -9,7 +9,10 @@ import type { ShowcaseModel } from './showcase/types';
 import { SHOWCASE_FAMILY } from './showcase-index';
 import { installHeroEnvironment } from './hero-materials';
 
-const FAMILIES = import.meta.glob<{ SHOWCASE?: Record<string, ShowcaseModel> }>('./showcase/*.ts');
+const FAMILIES = import.meta.glob<{ SHOWCASE?: Record<string, ShowcaseModel> }>([
+  './showcase/*.ts',
+  '!./showcase/*.test.ts',
+]);
 
 export interface CraftViewer {
   /** Pause the loop while the viewer is off screen. */

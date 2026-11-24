@@ -39,9 +39,12 @@ export function runwayBuild(model: ShowcaseModel, top: '+z' | '-z'): () => THREE
 const SHOWCASE: Record<string, ShowcaseModel> = Object.assign(
   {},
   ...Object.values(
-    import.meta.glob<{ SHOWCASE?: Record<string, ShowcaseModel> }>('../showcase/*.ts', {
-      eager: true,
-    }),
+    import.meta.glob<{ SHOWCASE?: Record<string, ShowcaseModel> }>(
+      ['../showcase/*.ts', '!../showcase/*.test.ts'],
+      {
+        eager: true,
+      },
+    ),
   ).map((mod) => mod.SHOWCASE ?? {}),
 );
 

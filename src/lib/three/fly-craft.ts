@@ -8,7 +8,7 @@ import type { ShowcaseModel } from './showcase/types';
 
 type Family = Record<string, unknown> & { SHOWCASE?: Record<string, ShowcaseModel> };
 
-const FAMILIES = import.meta.glob<Family>('./showcase/*.ts');
+const FAMILIES = import.meta.glob<Family>(['./showcase/*.ts', '!./showcase/*.test.ts']);
 
 /** Mission id → [family file, showcase fleet id or exported builder name]. */
 const FLY_CRAFT: Record<string, readonly [string, string]> = {

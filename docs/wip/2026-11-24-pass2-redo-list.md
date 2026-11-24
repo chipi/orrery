@@ -13,7 +13,7 @@ The operator's order (2026-11-24): finish every batch first, then redo these.
 | Artemis 4 | Flies the generic white-tube silhouette; needs a Starship HLS model (from `buildStarshipShip`) |
 | Artemis 5 | Same silhouette; needs a Blue Moon Mk 2 model |
 | Luna 9 | Bags retract instead of being dropped as separate pieces; the bounces don't show in the last frames |
-| Luna 16/24, 17/21 | The main-engine cutoff at ~20 m (before the verniers) is not shown |
+| Luna 16/24, 17/21 | Done 11-24 (3e464744d06): main cuts at 20 m, two vernier plumes burn on; seen at T350/T358 |
 | Phoenix, InSight | The leg deploy is not readable: the lander sits inside the backshell under the chute |
 | Viking 1 | Plumes faint in the last seconds; the 2.4 m/s constant-velocity phase has no beat |
 | Starship demo, Starship Mars crew | Not done: no flip or landing burn (B3 ran out of its box) |
@@ -39,7 +39,7 @@ The operator's order (2026-11-24): finish every batch first, then redo these.
 | Starship Flight 5 | Upright with the plume already at f0.5–f0.7; the belly-flop should hold until the flip just before splashdown |
 | Inspiration4, Polaris Dawn | Viewed 11-24 T600–T700: camera holds the capsule, no canopy ever in frame, so the drogue-then-mains order cannot be seen; HUD has no mains beat (same camera path as the parked canopy item) |
 | Starship (all three) | Entry plasma is a flat orange ellipse beside the ship (f0.1); Mars: after the flip the camera pulls far back (f0.66, f0.7) instead of the close orbit; flight 5 f0.7 grey disc on the sea |
-| Blue Moon Mk 2 | Top is a white capsule, the real one has a flared silver shroud; RCS quads modelled but do not fire |
+| Blue Moon Mk 2 | Done 11-24 (ae6ad1ae8d2): faceted silver shroud, roundel, RCS puffs coded. Not seen: the puffs at shot distance; skirt narrower than the photo |
 | Small bodies: shapes and surfaces | All five are spheres with one grey crater texture: Itokawa a peanut rubble pile with a smooth "sea", Ryugu and Bennu dark spinning-top diamonds with boulders, Eros an elongated potato, 67P the near-black two-lobed duck with cliffs. Procedural shapes first; the published shape models (JAXA, NASA PDS, ESA) need a licence and size check, which ties to the Eyes on the Solar System backlog item |
 | Opening shot, Moon and Mars (operator) | Like Hayabusa's first frames: the craft small against the whole body/landing region, then the camera moves alongside and slowly closes in; no jump straight to the landing close-up |
 | Tianwen-1 | At -3 s the rover with its wheels descends on its own; the landing platform with Zhurong on top should come down |
@@ -49,4 +49,4 @@ The operator's order (2026-11-24): finish every batch first, then redo these.
 | Gemini heat shield (parked) | Two rounds failed: the white cone stays upright under the tilted capsule; it is probably not `model.heatshield` (forcing that part's pose changed nothing; that edit is reverted). Next step: identify the mesh by name at runtime. Ask the operator before a third round |
 | Chandrayaan-2 | Loses contact at 2.1 km and hits at 175 m/s, but the last frame shows Vikram landed intact, firing; a crash needs an impact state (tumble/debris), like SLIM's tip |
 | Mars body map | Large blurry dark blotches from altitude come from the 2k body map, not the detail layer |
-| Beagle 2 | The lander does not swing under the chute (not scrub-pure); folded-panel struts not checked by eye |
+| Beagle 2 | Swing done 11-24: scrub-pure, lander and canopy swing; at true scale the 1 m lander is a dot under the canopy. Folded-panel struts not checked |

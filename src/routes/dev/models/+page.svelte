@@ -79,6 +79,7 @@
     buildMro,
   } from '$lib/three/showcase/orbiters';
   import { buildNovaC } from '$lib/three/showcase/landers';
+  import { buildFalcon9Booster, setFalcon9BoosterPose } from '$lib/three/showcase/falcon9-booster';
   import { buildSputnik1 } from '$lib/three/showcase/early-stations';
 
   type Entry = {
@@ -100,6 +101,15 @@
   );
   const SHOWCASE: Record<string, ShowcaseModel> = {};
   for (const mod of Object.values(SHOWCASE_MODULES)) Object.assign(SHOWCASE, mod.SHOWCASE ?? {});
+
+  function buildF9Stowed(): THREE.Group {
+    return buildFalcon9Booster();
+  }
+  function buildF9Landing(): THREE.Group {
+    const b = buildFalcon9Booster();
+    setFalcon9BoosterPose(b, { fins: 1, legs: 1 });
+    return b;
+  }
 
   /** The line-up's cartoon cast in one row at true scale, tight enough to read in a card. */
   function buildCastRow(): THREE.Group {
@@ -758,6 +768,8 @@
         ['mariner-2', 'Mariner 2', buildMariner2],
         ['mro', 'Mars Reconnaissance Orbiter', buildMro],
         ['nova-c', 'Nova-C (IM-1 Odysseus)', buildNovaC],
+        ['falcon9-booster-stowed', 'Falcon 9 booster (stowed)', buildF9Stowed],
+        ['falcon9-booster-landing', 'Falcon 9 booster (landing)', buildF9Landing],
       ] as [string, string, () => THREE.Group][]
     ).map(([id, label, build]) => ({ id, label, family: 'probe', build })),
     // Launch pads (launch-pads.ts, G4): each model with a plain stand-in vehicle of its real height

@@ -562,29 +562,62 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
       side: THREE.DoubleSide,
     });
   const plasma = new THREE.Group();
-  const plasmaCap = new THREE.Mesh(
-    new THREE.SphereGeometry(vehLen * 0.5, 20, 16),
-    additive(0xffe2b0, 0),
+  // Soft radial falloff, no edge: a camera-facing sprite hugging the shield, not a lit sphere.
+  const glowTex = (() => {
+    const c = document.createElement('canvas');
+    c.width = c.height = 128;
+    const g = c.getContext('2d');
+    if (g) {
+      const grad = g.createRadialGradient(64, 64, 0, 64, 64, 64);
+      grad.addColorStop(0, 'rgba(255,255,255,1)');
+      grad.addColorStop(0.35, 'rgba(255,255,255,0.35)');
+      grad.addColorStop(1, 'rgba(255,255,255,0)');
+      g.fillStyle = grad;
+      g.fillRect(0, 0, 128, 128);
+    }
+    const t = new THREE.CanvasTexture(c);
+    t.colorSpace = THREE.SRGBColorSpace;
+    return t;
+  })();
+  const plasmaCap = new THREE.Sprite(
+    new THREE.SpriteMaterial({
+      map: glowTex,
+      color: 0xffe2b0,
+      transparent: true,
+      opacity: 0,
+      blending: THREE.AdditiveBlending,
+      depthWrite: false,
+    }),
   );
-  plasmaCap.position.y = -vehLen * 0.26; // bow shock at the heat-shield (below)
-  plasmaCap.scale.y = 0.7;
-  const plasmaTrail = new THREE.Mesh(
-    new THREE.ConeGeometry(vehLen * 0.44, vehLen * 2.6, 20, 1, true),
-    additive(0xff7a2c, 0),
-  );
+  plasmaCap.scale.set(vehLen * 1.5, vehLen * 1.5, 1);
+  plasmaCap.position.y = -vehLen * 0.3; // just below the heat-shield
+  // The wake fades to nothing at both ends (vertex colours) so no rim reads as a shape.
+  const trailGeo = new THREE.ConeGeometry(vehLen * 0.4, vehLen * 2.6, 20, 6, true);
+  {
+    const pos = trailGeo.attributes.position;
+    const col = new Float32Array(pos.count * 3);
+    for (let i = 0; i < pos.count; i++) {
+      const t = pos.getY(i) / (vehLen * 2.6) + 0.5; // 0 at the vehicle, 1 at the apex
+      const k = Math.pow(1 - t, 1.5) * Math.min(1, t * 6);
+      col[i * 3] = col[i * 3 + 1] = col[i * 3 + 2] = k;
+    }
+    trailGeo.setAttribute('color', new THREE.BufferAttribute(col, 3));
+  }
+  const plasmaTrail = new THREE.Mesh(trailGeo, additive(0xff7a2c, 0));
+  (plasmaTrail.material as THREE.MeshBasicMaterial).vertexColors = true;
   plasmaTrail.position.y = vehLen * 1.25; // streams UP behind the descent
-  // Starship (Flight 5) re-enters belly-first: the shock glow stretches along the belly (world X,
-  // the plasma group is held level), and there is no capsule wake column.
+  // Starship (Flight 5) re-enters belly-first: the shock glow sits under the belly (the plasma
+  // group is held level), and there is no capsule wake column.
   if (opts.events?.some((e) => e.type === 'landing_flip')) {
-    plasmaCap.scale.set(1.5, 0.45, 0.45);
-    plasmaCap.position.y = -vehLen * 0.14;
-    (plasmaCap.material as THREE.MeshBasicMaterial).color.set(0xff8a3c);
+    plasmaCap.scale.set(vehLen * 1.3, vehLen * 0.8, 1);
+    plasmaCap.position.y = -vehLen * 0.1;
+    (plasmaCap.material as THREE.SpriteMaterial).color.set(0xff8a3c);
     plasmaTrail.visible = false;
   }
   plasma.add(plasmaCap, plasmaTrail);
   plasma.visible = false;
   vehicle.add(plasma);
-  const plasmaCapMat = plasmaCap.material as THREE.MeshBasicMaterial;
+  const plasmaCapMat = plasmaCap.material as THREE.SpriteMaterial;
   const plasmaTrailMat = plasmaTrail.material as THREE.MeshBasicMaterial;
 
   // ── Touchdown dust — a disc kicked up on the surface as the vehicle nears the
@@ -1225,8 +1258,8 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
     plasma.visible = inEntry && heat > 0.04 && entryFlip > 0.6;
     if (plasma.visible) {
       const flick = 0.85 + 0.15 * Math.sin(frame * 1.3);
-      plasmaCapMat.opacity = 0.7 * heat * flick;
-      plasmaTrailMat.opacity = 0.45 * heat * flick;
+      plasmaCapMat.opacity = 0.55 * heat * flick;
+      plasmaTrailMat.opacity = 0.3 * heat * flick;
       plasma.scale.set(1, 0.7 + 0.7 * heat, 1);
     }
 

@@ -13,7 +13,7 @@
   },
   "entryMassKg": 1471,
   "entryCdA": 0,
-  "retroPropellantKg": 845,
+  "retroPropellantKg": 700,
   "archetype": "LUNAR_POWERED",
   "params": {
     "ispS": 311,
@@ -26,17 +26,23 @@
     "lowGateAltM": 150,
     "brakingRateGain": 0.01
   },
-  "recordEndsAltM": 7400,
+  "beats": [
+    {
+      "type": "probe_signal_lost",
+      "altM": 2100
+    }
+  ],
   "source_tier": "flagship",
   "estimatedFields": [
     "retroPropellantKg",
     "brakingFpaDeg",
     "approachFpaDeg",
-    "brakingMaxThrustN"
+    "brakingMaxThrustN",
+    "the fall below 7.4 km (drawn; only contact lost at 2.1 km and the hard landing are recorded)"
   ],
   "provenance": [
     {
-      "l": "Government of India, PIB (Department of Space, written reply in the Lok Sabha, 20 Nov 2019): \"The first phase of descent was performed nominally from an altitude of 30 km to 7.4 km above the moon surface. The velocity was reduced from 1683 m/s to 146 m/s. During the second phase of descent, the reduction in velocity was more than the designed value. Due to this deviation, the initial conditions at the start of the fine braking phase were beyond the designed parameters. As a result, Vikram hard landed within 500 m of the designated landing site.\" The descent is flown to 7.4 km and ends there on DATA ENDS (operator 2026-11-18): nothing below 7.4 km is published, so no crash is modelled; contact was lost lower, at about 2.1 km (the site text)",
+      "l": "Government of India, PIB (Department of Space, written reply in the Lok Sabha, 20 Nov 2019): \"The first phase of descent was performed nominally from an altitude of 30 km to 7.4 km above the moon surface. The velocity was reduced from 1683 m/s to 146 m/s. During the second phase of descent, the reduction in velocity was more than the designed value. Due to this deviation, the initial conditions at the start of the fine braking phase were beyond the designed parameters. As a result, Vikram hard landed within 500 m of the designated landing site.\" Below 7.4 km only the loss of contact at about 2.1 km and the hard landing are recorded (docs/wip/2026-11-23-lunar-landings-record.md, chandrayaan2): the fall is drawn, contact is lost at 2.1 km and the impact follows",
       "u": "https://pib.gov.in/PressReleasePage.aspx?PRID=1592495"
     },
     {

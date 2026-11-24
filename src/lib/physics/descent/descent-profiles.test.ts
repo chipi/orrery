@@ -293,7 +293,7 @@ describe('model-authored entry fields are declared as estimates, sourced ones ar
   }
 });
 
-describe('Chandrayaan-2 Vikram: the published rough braking, then the record ends', () => {
+describe('Chandrayaan-2 Vikram: the published rough braking, contact lost at 2.1 km, then the impact', () => {
   const raw = JSON.parse(
     readFileSync(
       resolve(__dirname, '../../../../static/data/descent-profiles/chandrayaan2.json'),
@@ -301,16 +301,16 @@ describe('Chandrayaan-2 Vikram: the published rough braking, then the record end
     ),
   ) as RawDescentProfile;
   const s = integrateDescent(expandDescentProfile(raw));
-  it('flies from 30 km / 1,683 m/s and ends at 7.4 km near 146 m/s (PIB, 20 Nov 2019)', () => {
+  it('flies from 30 km / 1,683 m/s and reaches 7.4 km near 146 m/s (PIB, 20 Nov 2019)', () => {
     expect(s.states[0].altKm).toBeCloseTo(30, 1);
     expect(s.states[0].velocityMs).toBeCloseTo(1683, 0);
-    const end = s.events.at(-1)!;
-    expect(end.type).toBe('record_ends');
-    expect(Math.abs(end.altKm - 7.4)).toBeLessThan(0.05);
-    expect(Math.abs(end.velocityMs - 146)).toBeLessThan(2);
+    const at74 = s.states.find((x) => x.altM <= 7400)!;
+    expect(Math.abs(at74.velocityMs - 146)).toBeLessThan(5);
   });
-  it('models no crash: no touchdown beat, and the run is not a success', () => {
-    expect(s.events.some((e) => e.type === 'touchdown')).toBe(false);
+  it('loses contact at 2.1 km (lunar record), then hits the ground hard', () => {
+    const lost = s.events.find((e) => e.type === 'probe_signal_lost')!;
+    expect(Math.abs(lost.altKm - 2.1)).toBeLessThan(0.05);
+    expect(s.events.some((e) => e.type === 'touchdown')).toBe(true);
     expect(s.touchdownSuccess).toBe(false);
   });
 });

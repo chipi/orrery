@@ -22,7 +22,7 @@
     "brakingFpaDeg": 1,
     "brakingMaxThrustN": 7000,
     "highGateSpeedMs": 150,
-    "approachFpaDeg": 18,
+    "approachFpaDeg": 25,
     "lowGateAltM": 150,
     "brakingRateGain": 0.01,
     "hovers": [

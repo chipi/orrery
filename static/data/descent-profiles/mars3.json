@@ -27,16 +27,12 @@
   "source_tier": "flagship",
   "provenance": [
     {
-      "l": "Mars 3 — descent module 1,210 kg with a 2.9 m conical shield, 358 kg lander, entry at 5.7 km/s, landed 13:52 UTC 2 Dec 1971, signal lost ~110 s later (Wikipedia). No EDL timeline or touchdown speed found: altitudes, angle and retro propellant are estimates that make it land",
+      "l": "Mars 3 — descent module 1,210 kg with a 2.9 m conical shield, 358 kg lander, entry at 5.7 km/s, landed 13:52 UTC 2 Dec 1971, signal lost ~110 s later (Wikipedia). No EDL timeline or touchdown speed found: altitudes, angle and retro propellant are estimates that make it land. The signal began about 90 s after landing and lasted 14.5–20 s, then silence; the loss is stamped 105 s after touchdown (90 s plus 14.5 s)",
       "u": "https://en.wikipedia.org/wiki/Mars_3"
     },
     {
       "l": "Mars 3 lander — NSSDC spacecraft record",
       "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1971-049D"
-    },
-    {
-      "l": "Mars 3 (docs/wip/2026-11-23-mars-landings-record.md): the signal began about 90 s after landing and lasted 14.5–20 s, then silence; the loss is stamped 105 s after touchdown (90 s plus 14.5 s)",
-      "u": "https://en.wikipedia.org/wiki/Mars_3"
     }
   ],
   "estimatedFields": [

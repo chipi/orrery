@@ -1,5 +1,11 @@
 # Pass 2: descents below the standard, redone at the end
 
+After the redo list (operator 2026-11-24): booster landing scenes for Falcon 9 and New Glenn, with
+the side thrusters, grid fins and legs modelled and working on the descent. The Falcon 9 sea
+landing comes down on a 3D model of the drone ship (the floating platform), never on open water;
+the launch inset's drone ship (`src/lib/three/landing-inset.ts`) is the starting point, brought up
+to the scene's model standard.
+
 The operator's order (2026-11-24): finish every batch first, then redo these.
 
 | Descent | What is below the standard |
@@ -32,4 +38,9 @@ The operator's order (2026-11-24): finish every batch first, then redo these.
 | Shenzhou-1 | -6 s camera inside the canopy (the Soyuz path); f0.7 capsule shows no chute, the line hangs to the side |
 | Starship Flight 5 | Upright with the plume already at f0.5–f0.7; the belly-flop should hold until the flip just before splashdown |
 | Inspiration4, Polaris Dawn | Drogue-then-mains order not checked (canopies above the frame); no altitude beats |
+| Starship (all three) | Entry plasma is a flat orange ellipse beside the ship (f0.1); Mars: after the flip the camera pulls far back (f0.66, f0.7) instead of the close orbit; flight 5 f0.7 grey disc on the sea |
+| Blue Moon Mk 2 | Top is a white capsule, the real one has a flared silver shroud; RCS quads modelled but do not fire |
+| Small bodies: shapes and surfaces | All five are spheres with one grey crater texture: Itokawa a peanut rubble pile with a smooth "sea", Ryugu and Bennu dark spinning-top diamonds with boulders, Eros an elongated potato, 67P the near-black two-lobed duck with cliffs. Procedural shapes first; the published shape models (JAXA, NASA PDS, ESA) need a licence and size check, which ties to the Eyes on the Solar System backlog item |
+| Opening shot, Moon and Mars (operator) | Like Hayabusa's first frames: the craft small against the whole body/landing region, then the camera moves alongside and slowly closes in; no jump straight to the landing close-up |
+| Tianwen-1 | At -3 s the rover with its wheels descends on its own; the landing platform with Zhurong on top should come down |
 | Beagle 2 | The lander does not swing under the chute (not scrub-pure); folded-panel struts not checked by eye |

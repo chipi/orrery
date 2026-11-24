@@ -245,6 +245,11 @@ rendering agents at once). Then:
 2. Apollo's way home: LM ascent, docking with the CSM, trans-Earth injection, re-entry and
    splashdown under three mains; then see whether Luna 16/24 or Chang'e 5/6 fit the same chain.
 
+4. **Assess NASA's Eyes on the Solar System** (operator 2026-11-24: "a huge, precise dataset made
+   approachable for anyone"). Assess first: what it exposes (ephemerides, spacecraft trajectories,
+   models, events), under what licence, and what Orrery could use or learn from. RFC-013 already
+   notes its models are "not directly redistributable": check that before planning any reuse.
+
 3. **ISS and Tiangong at the Dragon's level of detail** (operator 2026-11-23, after seeing the
    rebuilt Crew Dragon: "can we actually make ISS and Tiangong way better to this dragon level").
    Assess first, then build. The concern is rendering cost: a station is dozens of modules, and

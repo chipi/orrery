@@ -188,6 +188,23 @@ function computeTimeline(
   };
 }
 
+/** The sim day the landing act (descent) starts. A round trip's `arr_day` is its Earth return, so a
+ *  surface descent (Moon, Mars, asteroid; any `descentBody` but Earth) on one starts at the
+ *  recorded `descent_start`, else at the arrival (`flyby_day`); an Earth-return capsule, and a
+ *  one-way lander (flyby_day == arr_day), land at `arr_day`. The return arc stays intact. */
+export function landingDay(
+  m: Pick<Mission, 'flight'>,
+  timeline: MissionTimeline,
+  descentBody: string | null | undefined,
+): number {
+  if (descentBody == null || descentBody === 'earth' || timeline.arr_day <= timeline.flyby_day) {
+    return timeline.arr_day;
+  }
+  const met = m.flight?.events?.find((e) => e.type === 'descent_start')?.met_days;
+  const day = met != null && met > 0 ? timeline.dep_day + met : timeline.flyby_day;
+  return Math.min(day, timeline.arr_day);
+}
+
 /** Cislunar outbound + (round-trip) return arcs in heliocentric AU.
  *  Renders the trip as Earth+Moon riding Earth's orbital motion so
  *  the heliocentric scale matches Mars missions. */

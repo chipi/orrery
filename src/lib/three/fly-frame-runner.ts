@@ -121,6 +121,8 @@ export interface FlyFrameBridge {
   debugCamWorld: { x: number; y: number; z: number } | null;
   debugMontageShot: ShotKind | null;
   descentProfile: DescentProfile | null;
+  /** Sim day the landing act starts (see landingDay in fly-mission-apply). */
+  readonly landingDay: number;
   descentSpeed: number;
   descentT: number;
   epilogueActive: boolean;
@@ -1111,8 +1113,8 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
       bridge.simDay += dt * effectiveSpeed;
       // At arrival, a landing mission enters the descent act instead of
       // looping the cruise — closing the flight circle (RFC-034 §9).
-      if (bridge.descentProfile && bridge.simDay >= bridge.arcTimeline.arr_day) {
-        bridge.simDay = bridge.arcTimeline.arr_day;
+      if (bridge.descentProfile && bridge.simDay >= bridge.landingDay) {
+        bridge.simDay = bridge.landingDay;
         dispatchPhase({ type: 'startDescent' });
         bridge.descentT = 0;
       } else if (bridge.simDay > bridge.arcTimeline.arr_day + 30) {

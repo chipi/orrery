@@ -6,6 +6,7 @@ import {
   computePlanApplyMoon,
   FLYBY_OFFSET_FRACTION,
   flyDestinationOf,
+  landingDay,
   type MissionApplyDefaults,
   type TrajectoryOverride,
 } from './fly-mission-apply';
@@ -674,5 +675,54 @@ describe('flyDestinationOf', () => {
     expect(flyDestinationOf({ id: 'parker-solar-probe', dest: 'SUN' })).toBeNull();
     expect(flyDestinationOf({ id: 'hayabusa2', dest: 'ASTEROID' })).toBe('ryugu');
     expect(flyDestinationOf({ id: 'near-shoemaker', dest: 'ASTEROID' })).toBe('eros');
+  });
+});
+
+describe('landingDay', () => {
+  const apollo11 = (extra: Partial<Mission> = {}) =>
+    makeMission({
+      round_trip: true,
+      dest: 'MOON',
+      transit_days: 4,
+      flight: {
+        events: [
+          { met_days: 0, type: 'launch', label: 'Launch' },
+          { met_days: 4.25, type: 'descent_start', label: 'Powered descent' },
+          { met_days: 8.13, type: 'earth_return', label: 'Splashdown' },
+        ],
+      },
+      ...extra,
+    } as Partial<Mission>);
+
+  it('a lunar round trip lands at its recorded descent_start, not at the Earth return', () => {
+    const t = computeMissionApply(apollo11(), DEFAULTS).timeline;
+    expect(t.arr_day - t.dep_day).toBeCloseTo(8.13, 6);
+    expect(landingDay(apollo11(), t, 'moon') - t.dep_day).toBeCloseTo(4.25, 6);
+  });
+
+  it('an Earth-return capsule lands at arr_day', () => {
+    const t = computeMissionApply(apollo11(), DEFAULTS).timeline;
+    expect(landingDay(apollo11(), t, 'earth')).toBe(t.arr_day);
+  });
+
+  it('a one-way lander lands at arr_day (== flyby_day)', () => {
+    const oneWay = makeMission({ dest: 'MOON', transit_days: 4 });
+    const t = computeMissionApply(oneWay, DEFAULTS).timeline;
+    expect(landingDay(oneWay, t, 'moon')).toBe(t.arr_day);
+  });
+
+  it('a round-trip surface descent with no descent_start lands at the arrival, not the return', () => {
+    const bare = makeMission({ round_trip: true, dest: 'MARS', transit_days: 213 });
+    const t = computeMissionApply(bare, DEFAULTS).timeline;
+    expect(landingDay(bare, t, 'mars')).toBe(t.flyby_day);
+    expect(landingDay(bare, t, 'ryugu')).toBe(t.flyby_day);
+  });
+
+  it('a descent_start at or past the Earth return is clamped to arr_day', () => {
+    const late = apollo11({
+      flight: { events: [{ met_days: 9, type: 'descent_start', label: 'x' }] },
+    } as Partial<Mission>);
+    const t = computeMissionApply(late, DEFAULTS).timeline;
+    expect(landingDay(late, t, 'moon')).toBe(t.arr_day);
   });
 });

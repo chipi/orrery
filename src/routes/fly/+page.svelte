@@ -46,6 +46,7 @@
     type PlanFlightExtras,
     type TrajectoryOverride,
     flyDestinationOf,
+    landingDay,
   } from '$lib/fly-mission-apply';
   import { resolveRocketHandoff } from '$lib/plan/rocket-handoff';
   import {
@@ -2983,6 +2984,9 @@
       },
       set descentProfile(v) {
         descentProfile = v;
+      },
+      get landingDay() {
+        return landingDay(mission, arcTimeline, descentProfile?.body);
       },
       get descentSpeed() {
         return descentSpeed;

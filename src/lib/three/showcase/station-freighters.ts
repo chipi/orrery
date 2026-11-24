@@ -6,8 +6,9 @@
  * facing +z, solar arrays deployed at their real span in the x-y plane.
  *
  * Crewed craft carry named groups for the descent scenes: Shenzhou 'orbital-module',
- * 'descent-module' (the re-entry module), 'service-module'; the Apollo CSM 'descent-module' (the
- * command module) and 'service-module'. The CSM apex (the docking probe) stays the highest point
+ * 'descent-module' (the re-entry module), 'service-module'; the Apollo CSM 'descent-module' (holding
+ * the 'command-module'), 'service-module', 'sps-engine' and the named anchors listed on
+ * `buildApolloCsm`. The CSM apex (the docking probe) stays the highest point
  * and on the axis: `dockedApolloCsm` flips it nose-down onto the LM's drogue.
  */
 import * as THREE from 'three';
@@ -1124,232 +1125,432 @@ function buildShenzhou(): THREE.Group {
 // Apollo CSM
 // ---------------------------------------------------------------------------------------------
 
+/** An open arc of a cylinder, a0..a1 (0 = +z), as geometry for a merged mesh. */
+function arcGeo(r: number, y0: number, y1: number, a0: number, a1: number): THREE.BufferGeometry {
+  const geo = new THREE.CylinderGeometry(r, r, y1 - y0, 10, 1, true, a0, a1 - a0);
+  geo.translate(0, (y0 + y1) / 2, 0);
+  return geo;
+}
+
+/** A box w x h x d at `p`, turned `yaw` about y, as geometry for a merged mesh. */
+function boxGeo(w: number, h: number, d: number, p: THREE.Vector3, yaw = 0): THREE.BufferGeometry {
+  const geo = new THREE.BoxGeometry(w, h, d);
+  geo.rotateY(yaw);
+  geo.translate(p.x, p.y, p.z);
+  return geo;
+}
+
+function mergedMesh(g: THREE.Object3D, m: Mat, geos: THREE.BufferGeometry[]): THREE.Mesh {
+  return add(g, new THREE.Mesh(mergeGeometries(geos, false), m));
+}
+
 /**
- * Apollo CSM: the service module in white with its bright lower band, the sector beams and
- * panel rings, the four RCS quads, the umbilical fairing and (Block II) the stowed high-gain
- * antenna, over the big SPS engine bell; the command module on top, a cone on its brown
- * ablative base with the five windows, the side hatch, the thruster pairs and the forward
- * compartment, ending in the docking ring and probe (Block II) or the smooth cover (Block I).
- * The apex is the highest point of the model, on the axis.
+ * A small thruster: a bell with its throat at `pos` opening along `dir`, in a group named `name`
+ * placed at the exit plane with local +y = the way the exhaust leaves (a scene hangs a puff on it).
+ */
+function thruster(
+  parent: THREE.Object3D,
+  m: Mat,
+  name: string,
+  pos: THREE.Vector3,
+  dir: THREE.Vector3,
+  r: number,
+  len: number,
+): THREE.Group {
+  const d = dir.clone().normalize();
+  const t = new THREE.Group();
+  t.name = name;
+  t.position.copy(pos).addScaledVector(d, len);
+  t.quaternion.setFromUnitVectors(Y_AXIS, d);
+  parent.add(t);
+  const body = new THREE.Group();
+  body.position.y = -len;
+  t.add(body);
+  lathe(
+    body,
+    m,
+    [
+      [r * 0.3, 0],
+      [r * 0.4, len * 0.2],
+      [r * 0.62, len * 0.6],
+      [r * 0.85, len * 0.9],
+      [r, len],
+    ],
+    14,
+  );
+  return t;
+}
+
+// Sourced figures (see the entry's `refs`): 3.91 m diameter; CSM 11.0 m; CM 3.48 m with probe;
+// SM 4.52 m body, about 7.5 m with the nozzle; SPS nozzle 3.882 m long, 2.501 m across the exit;
+// CM forward compartment 0.58 m; side hatch 0.86 x 0.74 m; windows 0.23 m (side), 0.20 x 0.23 m
+// (rendezvous), 0.23 m hatch window; RCS thrusters 0.30 m x 0.15 m; HGA four 0.79 m dishes round
+// a 0.28 m one; two 2.8 m2 radiators over sectors 2+3 and 5+6; six sectors of 50/70/60/50/70/60 deg.
+export const CSM_R = 1.955;
+export const CSM_SM_TOP = 7.52;
+const CSM_SM_BOT = CSM_SM_TOP - 4.52;
+const CSM_SECTORS = [50, 70, 60, 50, 70, 60].map((d) => (d * Math.PI) / 180);
+export const CSM_HEIGHT = 11.0;
+
+/**
+ * Apollo CSM: the service module in white with six sectors between their radial beams, the two
+ * radiators, the four RCS quads (four thrusters each), the umbilical fairing, the VHF scimitars
+ * and (Block II) the stowed high-gain antenna of four dishes, over the SPS bell; the command
+ * module on top, a cone on its brown ablative base with the five windows, the side hatch, the
+ * thruster pairs and the forward compartment, ending in the docking ring and probe (Block II) or
+ * the smooth cover (Block I). The probe head is the highest point, on the axis.
+ *
+ * Named parts: 'descent-module' (the part that comes home) holding 'command-module' (with
+ * 'docking-probe' > 'docking-probe-head', 'capture-latch-0..2', the 'probe-tip' anchor; windows
+ * 'window-*', 'side-hatch', 'cm-rcs-0..11'); 'service-module' ('sm-sector-1..6', 'radiator-0/1',
+ * 'rcs-quad-0..3' each with nozzles 'rcs-<q>-0..3', 'umbilical-fairing', 'scimitar-0/1',
+ * 'high-gain-antenna' with 'hga-dish-0..3'); 'sps-engine' with the 'engine-exit' anchor at the exit
+ * plane. Nozzle and 'engine-exit' groups have local +y along the exhaust.
  */
 function buildApolloCsm(block2: boolean): THREE.Group {
   const g = new THREE.Group();
   const M = mats();
-  const R = 1.955;
-  const smBot = 2.83;
-  const smTop = 7.35;
-  const bellMat = mat(0x6f7378, 0.7, 0.5, true);
+  const R = CSM_R;
+  const smBot = CSM_SM_BOT;
+  const smTop = CSM_SM_TOP;
   const shield = mat(0x6e4220, 0.3, 0.8);
-  const cmWhite = mat(0xd0d3d9, 0.8, 0.25);
-  const sw = mat(0xdcdfe4, 0.75, 0.28);
+  const cmWhite = mat(0xe2e2de, 0.25, 0.45);
+  const sw = mat(0xe8e8e4, 0.2, 0.5);
+  const radMat = mat(0xf2f2f0, 0.2, 0.45);
+  const dishMat = mat(0xd8dade, 0.4, 0.4, true);
+  const ablator = mat(0x8c7c64, 0.35, 0.65, true);
+  const extension = mat(0x4a4e54, 0.7, 0.5, true);
 
-  // service module
+  const dm = grp(g, 'descent-module');
   const sm = grp(g, 'service-module');
+
+  // --- SPS engine: the bell from the throat inside the module (3.882 m up) to the exit at y = 0
+  const sps = grp(g, 'sps-engine');
+  const SPS_LEN = 3.882;
+  const SPS_EXIT = 1.2505;
+  const SPS_THROAT = SPS_EXIT / Math.sqrt(62.5);
+  const bellAt = (y: number): number =>
+    SPS_THROAT + (SPS_EXIT - SPS_THROAT) * Math.pow((SPS_LEN - y) / SPS_LEN, 0.62);
+  const lower: [number, number][] = [];
+  const upper: [number, number][] = [[bellAt(1.5), 1.5]];
+  for (let i = 0; i <= 16; i++) {
+    const y = (SPS_LEN * i) / 16;
+    if (y < 1.5) lower.push([bellAt(y), y]);
+    else if (y > 1.5) upper.push([bellAt(y), y]);
+  }
+  lower.push([bellAt(1.5), 1.5]);
+  lathe(sps, extension, lower, 56);
+  lathe(sps, ablator, upper, 56);
+  for (const y of [0.04, 0.5, 1.0, 1.5, 2.2, 2.9]) {
+    torus(sps, M.rib, bellAt(y) + 0.004, 0.015, y, 56);
+  }
+  const exit = new THREE.Object3D();
+  exit.name = 'engine-exit';
+  exit.quaternion.setFromUnitVectors(Y_AXIS, new THREE.Vector3(0, -1, 0));
+  sps.add(exit);
+
+  // --- service module: aft bulkhead deck round the engine, and a short skirt
   lathe(
     sm,
-    bellMat,
+    M.aluDark,
     [
-      [1.25, 0.0],
-      [1.2, 0.18],
-      [1.06, 0.55],
-      [0.86, 0.95],
-      [0.64, 1.5],
-      [0.45, 2.05],
-      [0.33, 2.55],
-      [0.3, smBot + 0.05],
+      [bellAt(smBot), smBot],
+      [R, smBot],
     ],
-    48,
+    60,
   );
-  for (const y of [0.4, 0.95, 1.55]) torus(sm, M.aluDark, 1.2 - y * 0.42, 0.03, y, 40);
-  torus(sm, M.rib, 1.25, 0.03, 0.03, 48);
-  // aft bulkhead skirt
-  cyl(sm, sw, R, R, smBot - 0.03, smBot + 0.1, 60);
-  cyl(sm, M.aluDark, R * 0.35, R, smBot - 0.1, smBot - 0.03, 60);
-  // skin: lower aluminium band, white above, radiator panels high on the module
-  cyl(sm, sw, R, R, smBot + 0.1, smBot + 1.4, 60);
-  cyl(sm, sw, R, R, smBot + 1.4, smTop, 60);
-  const skinTop = smTop - 0.02;
+  cyl(sm, sw, R, R, smBot, smBot + 0.12, 60, true);
+  torus(sm, M.rib, R + 0.004, 0.035, smBot + 0.06, 60);
+
+  // six sectors between their radial beams, sector 1 centred on +z
+  const edges: number[] = [-CSM_SECTORS[0] / 2];
+  for (const w of CSM_SECTORS) edges.push(edges[edges.length - 1] + w);
+  const panelGeos: THREE.BufferGeometry[] = [];
+  const seamGeos: THREE.BufferGeometry[] = [];
+  const beamGeos: THREE.BufferGeometry[] = [];
+  const skinLo = smBot + 0.12;
   for (let i = 0; i < 6; i++) {
-    const a0 = (i / 6) * TAU;
-    const a1 = ((i + 1) / 6) * TAU;
-    sector(sm, sw, R + 0.008, R + 0.008, smBot + 1.45, skinTop, a0 + 0.04, a1 - 0.04, 6);
-    sector(sm, sw, R + 0.008, R + 0.008, smBot + 0.12, smBot + 1.37, a0 + 0.04, a1 - 0.04, 6);
+    const a0 = edges[i];
+    const a1 = edges[i + 1];
+    const sec = grp(sm, `sm-sector-${i + 1}`);
+    sec.userData.arc = [a0, a1];
+    sector(sec, sw, R, R, skinLo, smTop, a0 + 0.02, a1 - 0.02, 8);
+    const mid = (a0 + a1) / 2;
+    const w = ((a1 - a0) / 2) * 0.7;
+    for (const y of [smBot + 1.4, smBot + 3.0]) {
+      seamGeos.push(arcGeo(R + 0.006, y - 0.012, y + 0.012, a0 + 0.04, a1 - 0.04));
+    }
+    for (const [y0, y1] of [
+      [smBot + 0.3, smBot + 1.25],
+      [smBot + 1.55, smBot + 2.85],
+      [smBot + 3.15, smTop - 0.4],
+    ]) {
+      panelGeos.push(arcGeo(R + 0.008, y0, y0 + 0.012, mid - w, mid + w));
+      panelGeos.push(arcGeo(R + 0.008, y1 - 0.012, y1, mid - w, mid + w));
+      for (const s of [-1, 1]) {
+        const a = mid + s * w;
+        panelGeos.push(boxGeo(0.012, y1 - y0, 0.014, pol(R + 0.006, a, (y0 + y1) / 2), a));
+      }
+    }
+    beamGeos.push(boxGeo(0.11, smTop - skinLo, 0.05, pol(R + 0.02, a0, (smTop + skinLo) / 2), a0));
   }
-  for (let i = 0; i < 12; i++) {
-    const a = (i / 12) * TAU;
-    const b = box(
-      sm,
-      i % 2 ? M.rib : M.aluDark,
-      i % 2 ? 0.05 : 0.09,
-      smTop - smBot - 0.05,
-      0.04,
-      0,
-      0,
-      0,
-    );
-    b.position.copy(pol(R + 0.015, a, (smTop + smBot) / 2));
-    b.rotation.y = a;
-  }
-  for (const y of [smBot + 1.4, smBot + 3.0]) torus(sm, M.aluDark, R + 0.012, 0.03, y, 60);
-  torus(sm, M.dark, R, 0.04, smTop - 0.02, 60);
-  // radiator panels
-  for (const a of [Math.PI / 6, Math.PI / 6 + Math.PI / 2, Math.PI + Math.PI / 6, Math.PI * 1.67]) {
-    const f = onProfile(sm, () => R, smTop - 0.95, a, 0.02);
-    box(f, M.white, 1.1, 0.02, 1.7, 0, 0.01, 0);
-    for (let k = -2; k <= 2; k++) box(f, M.aluDark, 0.012, 0.025, 1.7, k * 0.22, 0.012, 0);
-  }
-  // umbilical fairing along one side
-  const fa = add(sm, new THREE.Group());
-  fa.rotation.y = Math.PI / 2;
+  mergedMesh(sm, M.aluDark, seamGeos).name = 'sm-seams';
+  mergedMesh(sm, M.rib, panelGeos).name = 'sm-panel-lines';
+  mergedMesh(sm, M.aluDark, beamGeos).name = 'sm-radial-beams';
+  torus(sm, M.dark, R + 0.004, 0.03, smTop - 0.015, 60);
+
+  // the two radiators: 2.8 m2 each, over sectors 2+3 and 5+6, low on the module
+  const radH = 0.63;
+  const radY = smBot + 0.55;
+  [
+    [1, 2],
+    [4, 5],
+  ].forEach(([s0, s1], k) => {
+    const rad = grp(sm, `radiator-${k}`);
+    const a0 = edges[s0] + 0.06;
+    const a1 = edges[s1 + 1] - 0.06;
+    sector(rad, radMat, R + 0.016, R + 0.016, radY, radY + radH, a0, a1, 14);
+    const tubes: THREE.BufferGeometry[] = [];
+    for (let i = 0; i <= 26; i++) {
+      const a = a0 + ((a1 - a0) * i) / 26;
+      tubes.push(boxGeo(0.014, radH, 0.012, pol(R + 0.022, a, radY + radH / 2), a));
+    }
+    for (const y of [radY, radY + radH]) tubes.push(arcGeo(R + 0.02, y - 0.015, y + 0.015, a0, a1));
+    mergedMesh(rad, M.aluDark, tubes);
+  });
+
+  // umbilical fairing under the CM, down the +z side
+  const fa = grp(sm, 'umbilical-fairing');
   box(fa, sw, 0.7, 2.4, 0.22, 0, smTop - 1.3, R + 0.08);
   box(fa, M.aluDark, 0.5, 0.05, 0.12, 0, smTop - 0.08, R + 0.19);
+  box(fa, M.rib, 0.5, 0.03, 0.02, 0, smTop - 1.0, R + 0.2);
   const taper = new THREE.Mesh(new THREE.ConeGeometry(0.33, 0.5, 4), sw);
   taper.rotation.y = Math.PI / 4;
   taper.scale.set(1, 1, 0.45);
   taper.position.set(0, smTop - 2.75, R + 0.1);
   taper.rotation.x = Math.PI;
   fa.add(taper);
-  // RCS quads
-  for (let i = 0; i < 4; i++) {
-    const a = (i / 4) * TAU + Math.PI / 4;
-    const f = add(sm, new THREE.Group());
-    f.rotation.y = a;
-    box(f, M.alu, 0.5, 1.0, 0.26, 0, smTop - 1.0, R + 0.11);
-    box(f, M.dark, 0.42, 0.9, 0.04, 0, smTop - 1.0, R + 0.25);
-    for (const sx of [-1, 1]) {
-      for (const sy of [-1, 1]) {
-        bell(
-          f,
-          M.nozzle,
-          new THREE.Vector3(sx * 0.14, smTop - 1.0 + sy * 0.3, R + 0.26),
-          new THREE.Vector3(sx * 0.9, sy * 0.3, 0.5),
-          0.07,
-          0.14,
-        );
-      }
-    }
+
+  // RCS quads, 90 deg apart, four thrusters each: up, down, and the two tangential
+  for (let q = 0; q < 4; q++) {
+    const quad = grp(sm, `rcs-quad-${q}`);
+    quad.rotation.y = (q / 4) * TAU + Math.PI / 4;
+    const qy = smTop - 1.0;
+    box(quad, M.alu, 0.5, 0.9, 0.22, 0, qy, R + 0.1);
+    box(quad, M.aluDark, 0.42, 0.8, 0.04, 0, qy, R + 0.22);
     const wedge = new THREE.Mesh(new THREE.ConeGeometry(0.28, 0.4, 4), M.alu);
     wedge.scale.z = 0.4;
     wedge.rotation.y = Math.PI / 4;
-    wedge.position.set(0, smTop - 0.2, R + 0.1);
-    f.add(wedge);
+    wedge.position.set(0, qy + 0.62, R + 0.1);
+    quad.add(wedge);
+    const specs: [THREE.Vector3, THREE.Vector3][] = [
+      [new THREE.Vector3(0, qy + 0.44, R + 0.2), new THREE.Vector3(0, 1, 0.35)],
+      [new THREE.Vector3(0, qy - 0.44, R + 0.2), new THREE.Vector3(0, -1, 0.35)],
+      [new THREE.Vector3(-0.24, qy, R + 0.22), new THREE.Vector3(-1, 0, 0.35)],
+      [new THREE.Vector3(0.24, qy, R + 0.22), new THREE.Vector3(1, 0, 0.35)],
+    ];
+    specs.forEach(([p, d], n) => thruster(quad, M.nozzle, `rcs-${q}-${n}`, p, d, 0.075, 0.3));
   }
+
+  // VHF scimitars: curved blades rising from the forward rim, on the +x and -x sides
+  const sc = new THREE.Shape();
+  sc.moveTo(-0.1, 0);
+  sc.quadraticCurveTo(-0.02, 0.5, 0.2, 0.95);
+  sc.lineTo(0.24, 0.95);
+  sc.quadraticCurveTo(0.02, 0.55, 0.0, 0);
+  sc.closePath();
+  for (let k = 0; k < 2; k++) {
+    const mount = grp(sm, `scimitar-mount-${k}`);
+    mount.rotation.y = k * Math.PI + Math.PI / 2;
+    const blade = new THREE.Mesh(
+      new THREE.ExtrudeGeometry(sc, { depth: 0.03, bevelEnabled: false }),
+      M.silver,
+    );
+    blade.name = `scimitar-${k}`;
+    blade.rotation.y = Math.PI / 2;
+    blade.position.set(-0.015, smTop + 0.02, R + 0.02);
+    mount.add(blade);
+  }
+
   if (block2) {
-    // stowed high-gain antenna on the aft SM wall
-    const h = add(sm, new THREE.Group());
-    h.rotation.y = Math.PI;
-    box(h, M.rib, 1.0, 0.7, 0.12, 0, smBot + 0.9, R + 0.08);
-    for (const [dx, dy] of [
-      [-0.24, -0.16],
-      [0.24, -0.16],
-      [-0.24, 0.16],
-      [0.24, 0.16],
-    ]) {
-      const d = new THREE.Mesh(new THREE.CylinderGeometry(0.2, 0.2, 0.06, 20), M.silver);
+    // stowed high-gain antenna on the back wall (sector 4): four 0.79 m dishes round a 0.28 m
+    // one on a frame, the boom hinged at the bulkhead
+    const hga = grp(sm, 'high-gain-antenna');
+    hga.rotation.y = Math.PI;
+    const hy = smBot + 1.45;
+    const stand = R + 0.3;
+    strut(
+      hga,
+      M.rib,
+      new THREE.Vector3(0, smBot + 0.2, R + 0.03),
+      new THREE.Vector3(0, hy, stand),
+      0.04,
+      8,
+    );
+    box(hga, M.rib, 1.0, 0.08, 0.08, 0, hy, stand - 0.1);
+    box(hga, M.rib, 0.08, 1.0, 0.08, 0, hy, stand - 0.1);
+    box(hga, M.silver, 0.28, 0.28, 0.05, 0, hy, stand + 0.02);
+    [
+      [-0.43, 0.43],
+      [0.43, 0.43],
+      [-0.43, -0.43],
+      [0.43, -0.43],
+    ].forEach(([dx, dy], n) => {
+      const d = dish(dishMat, M.dark, 0.395);
+      d.name = `hga-dish-${n}`;
       d.rotation.x = Math.PI / 2;
-      d.position.set(dx, smBot + 0.9 + dy, R + 0.17);
-      h.add(d);
-    }
-    box(h, M.silver, 0.2, 0.2, 0.05, 0, smBot + 0.9, R + 0.2);
+      d.position.set(dx, hy + dy, stand);
+      hga.add(d);
+    });
   }
 
-  // forward bulkhead rim the command module's heat shield sits in
-  cyl(sm, sw, R, R, smTop, smTop + 0.5, 60);
-  torus(sm, M.aluDark, R + 0.004, 0.025, smTop + 0.25, 60);
-  for (let i = 0; i < 3; i++) {
-    const f = onProfile(sm, () => R, smTop + 0.25, (i / 3) * TAU + 0.5, 0.0);
-    box(f, M.dark, 0.2, 0.03, 0.14, 0, 0.012, 0);
-  }
-
-  // command module
-  const cm = grp(g, 'descent-module');
+  // --- command module ------------------------------------------------------------------------
+  const cm = grp(dm, 'command-module');
   cm.position.y = smTop;
   lathe(
     cm,
     shield,
     [
       [0.0, 0.0],
-      [0.9, 0.04],
-      [1.55, 0.16],
-      [1.85, 0.3],
-      [R, 0.5],
+      [0.9, 0.03],
+      [1.55, 0.1],
+      [1.85, 0.18],
+      [R, 0.32],
     ],
     60,
   );
-  // the crew compartment cone, wearing its panel seams
-  const cmR = (y: number): number => (y <= 0.5 ? R : R - ((y - 0.5) * (R - 0.62)) / 2.2);
-  blanket(
-    cm,
-    cmWhite,
-    [
-      [R, 0.5],
-      [0.62, 2.7],
-    ],
-    0.014,
-    60,
-    0.16,
-  );
-  torus(cm, shield, R - 0.02, 0.05, 0.5, 60);
+  const cmCone: [number, number][] = [
+    [R, 0.32],
+    [0.7, 2.45],
+  ];
+  const cmR = profileFn(cmCone);
+  blanket(cm, cmWhite, cmCone, 0.012, 60, 0.16);
+  torus(cm, shield, R - 0.02, 0.05, 0.32, 60);
+  const cmSeams: THREE.BufferGeometry[] = [];
   for (let i = 0; i < 12; i++) {
     const a = (i / 12) * TAU;
-    strut(cm, M.aluDark, pol(R - 0.02, a, 0.52), pol(0.64, a, 2.68), 0.01, 4);
+    const p0 = pol(R - 0.02, a, 0.36);
+    const p1 = pol(0.72, a, 2.43);
+    const geo = new THREE.CylinderGeometry(0.008, 0.008, p0.distanceTo(p1), 4);
+    geo.applyQuaternion(
+      new THREE.Quaternion().setFromUnitVectors(Y_AXIS, p1.clone().sub(p0).normalize()),
+    );
+    const mid = p0.clone().add(p1).multiplyScalar(0.5);
+    geo.translate(mid.x, mid.y, mid.z);
+    cmSeams.push(geo);
   }
+  mergedMesh(cm, M.aluDark, cmSeams).name = 'cm-seams';
   for (const y of [1.0, 1.9]) torus(cm, M.aluDark, cmR(y) + 0.006, 0.012, y, 60);
-  // forward compartment + apex
-  cyl(cm, cmWhite, 0.62, 0.58, 2.7, 3.25, 40);
-  torus(cm, M.silver, 0.6, 0.04, 2.7);
-  // windows on the conic skin: rendezvous pair, side pair
-  for (const [a, y, w, h] of [
-    [0.45, 2.15, 0.2, 0.3],
-    [-0.45, 2.15, 0.2, 0.3],
-    [Math.PI / 2, 1.55, 0.3, 0.3],
-    [-Math.PI / 2, 1.55, 0.3, 0.3],
-  ] as [number, number, number, number][]) {
-    const f = onProfile(cm, cmR, y, a, 0.006);
-    box(f, M.rib, w + 0.07, 0.02, h + 0.07, 0, 0.004, 0);
-    box(f, M.glass, w, 0.03, h, 0, 0.012, 0);
-  }
-  // side hatch with its window, on the back
-  const hf = onProfile(cm, cmR, 1.2, Math.PI, 0.006);
-  box(hf, M.silver, 0.95, 0.02, 0.95, 0, 0.004, 0);
-  box(hf, M.aluDark, 0.8, 0.02, 0.8, 0, 0.014, 0);
-  box(hf, M.glass, 0.28, 0.03, 0.28, 0, 0.026, 0.12);
+  // forward compartment, 0.58 m tall
+  cyl(cm, cmWhite, 0.7, 0.54, 2.45, 3.03, 40);
+  torus(cm, M.silver, 0.7, 0.035, 2.45);
+
+  // windows: two triangular rendezvous (0.20 x 0.23 m) behind the hatch, two 0.23 m side windows
+  // flanking it; the hatch is on +z; frames are dark metal
+  const tri = (f: THREE.Object3D, m: Mat, w: number, h: number, lift: number): void => {
+    const s = new THREE.Shape([
+      new THREE.Vector2(-w / 2, -h / 2),
+      new THREE.Vector2(w / 2, -h / 2),
+      new THREE.Vector2(0, h / 2),
+    ]);
+    const mesh = new THREE.Mesh(new THREE.ShapeGeometry(s), m);
+    mesh.rotation.x = -Math.PI / 2;
+    mesh.position.y = lift;
+    f.add(mesh);
+  };
+  [0.5, -0.5].forEach((a, k) => {
+    const f = onProfile(cm, cmR, 2.05, a + Math.PI, 0.006);
+    f.name = `window-rendezvous-${k}`;
+    tri(f, M.rib, 0.3, 0.33, 0.004);
+    tri(f, M.glass, 0.2, 0.23, 0.012);
+  });
+  [1.0, -1.0].forEach((a, k) => {
+    const f = onProfile(cm, cmR, 1.5, a, 0.006);
+    f.name = `window-side-${k}`;
+    box(f, M.rib, 0.3, 0.02, 0.3, 0, 0.004, 0);
+    box(f, M.glass, 0.23, 0.03, 0.23, 0, 0.012, 0);
+  });
+  // side hatch, 0.86 m wide, 0.74 m high, with its 0.23 m window
+  const hf = onProfile(cm, cmR, 1.2, 0, 0.006);
+  hf.name = 'side-hatch';
+  box(hf, M.silver, 0.96, 0.02, 0.84, 0, 0.004, 0);
+  box(hf, M.aluDark, 0.86, 0.02, 0.74, 0, 0.014, 0);
+  const hw = new THREE.Mesh(new THREE.CylinderGeometry(0.115, 0.115, 0.03, 24), M.glass);
+  hw.name = 'window-hatch';
+  hw.position.set(0, 0.026, 0.1);
+  hf.add(hw);
   for (const sx of [-1, 1]) box(hf, M.rib, 0.04, 0.04, 0.2, sx * 0.3, 0.03, -0.2);
-  // thruster pairs round the shoulder, and the umbilical on the front
+  // twelve CM RCS thrusters, in pairs round the shoulder
+  let ti = 0;
   for (let i = 0; i < 6; i++) {
-    const a = (i / 6) * TAU + 0.3;
-    const f = onProfile(cm, cmR, 0.95, a, 0.01);
-    box(f, M.dark, 0.15, 0.03, 0.12, 0, 0.012, 0);
-    for (const dx of [-0.04, 0.04]) {
+    const f = onProfile(cm, cmR, 0.95, (i / 6) * TAU + 0.52, 0.01);
+    box(f, M.dark, 0.17, 0.03, 0.14, 0, 0.012, 0);
+    for (const dx of [-0.045, 0.045]) {
       const c = new THREE.Mesh(new THREE.ConeGeometry(0.03, 0.07, 8), M.nozzle);
+      c.name = `cm-rcs-${ti++}`;
       c.position.set(dx, 0.04, 0);
       f.add(c);
     }
   }
 
   if (block2) {
-    // forward docking ring and probe: the highest point, on the axis
-    cyl(cm, M.silver, 0.7, 0.62, 3.2, 3.25, 40);
-    torus(cm, M.silver, 0.62, 0.05, 3.25);
+    // docking ring (0.76 m hatch), twelve latches, and the probe: the highest point, on the axis
+    cyl(cm, M.silver, 0.54, 0.5, 3.0, 3.04, 40);
+    torus(cm, M.silver, 0.5, 0.04, 3.04);
+    cyl(cm, M.aluDark, 0.38, 0.38, 3.04, 3.05, 32);
+    torus(cm, M.rib, 0.38, 0.015, 3.05, 32);
+    const latches: THREE.BufferGeometry[] = [];
     for (let i = 0; i < 12; i++) {
       const a = (i / 12) * TAU;
-      const b = box(cm, M.dark, 0.07, 0.07, 0.07, 0, 3.27, 0);
-      b.position.copy(pol(0.6, a, 3.28));
+      latches.push(boxGeo(0.05, 0.05, 0.05, pol(0.47, a, 3.075), a));
     }
+    mergedMesh(cm, M.dark, latches).name = 'docking-latches';
+    const probe = grp(cm, 'docking-probe');
+    probe.position.y = 3.05;
+    const shaftTop = CSM_HEIGHT - smTop - 3.05 - 0.1;
     for (let i = 0; i < 3; i++) {
       const a = (i / 3) * TAU + 0.5;
-      strut(cm, M.silver, pol(0.55, a, 3.27), pol(0.06, a, 3.5), 0.022, 5);
+      strut(probe, M.silver, pol(0.44, a, 0), pol(0.05, a, shaftTop * 0.6), 0.02, 5);
     }
-    cyl(cm, M.rib, 0.05, 0.05, 3.25, 3.5, 12);
-    const head = new THREE.Mesh(new THREE.ConeGeometry(0.13, 0.16, 20), M.silver);
-    head.position.y = 3.57;
-    cm.add(head);
+    cyl(probe, M.rib, 0.05, 0.04, 0, shaftTop, 12);
+    const head = grp(probe, 'docking-probe-head');
+    head.position.y = shaftTop;
+    lathe(
+      head,
+      M.silver,
+      [
+        [0.03, 0],
+        [0.13, 0.015],
+        [0.14, 0.05],
+        [0.09, 0.085],
+        [0.0, 0.1],
+      ],
+      24,
+    );
+    for (let i = 0; i < 3; i++) {
+      const a = (i / 3) * TAU;
+      const l = box(head, M.dark, 0.05, 0.05, 0.04, 0, 0.04, 0);
+      l.name = `capture-latch-${i}`;
+      l.position.copy(pol(0.125, a, 0.04));
+      l.rotation.y = a;
+    }
+    const tip = new THREE.Object3D();
+    tip.name = 'probe-tip';
+    tip.position.y = 0.1;
+    head.add(tip);
   } else {
-    // Block I: smooth forward hatch cover
-    cyl(cm, cmWhite, 0.58, 0.45, 3.0, 3.25, 32);
-    const cap = new THREE.Mesh(new THREE.SphereGeometry(0.45, 20, 8, 0, TAU, 0, 0.4), cmWhite);
-    cap.position.y = 3.25 - 0.45;
-    cm.add(cap);
+    // Block I: smooth forward hatch cover, 0.4 m lower
+    lathe(
+      cm,
+      cmWhite,
+      [
+        [0.54, 3.03],
+        [0.46, 3.055],
+        [0.3, 3.073],
+        [0.0, 3.08],
+      ],
+      32,
+    );
   }
   return g;
 }
@@ -1421,7 +1622,7 @@ export const SHOWCASE: Record<string, ShowcaseModel> = {
     refs: [
       WIKI(
         'Apollo_command_and_service_module',
-        'CSM: SM 4.52 m, 3.91 m diameter, SPS nozzle 3.88 m; Block I has no docking probe',
+        'CSM: SM 4.52 m body, 3.91 m diameter, SPS nozzle 3.88 m; Block I has no docking probe (smooth hatch cover)',
       ),
     ],
   },
@@ -1432,10 +1633,18 @@ export const SHOWCASE: Record<string, ShowcaseModel> = {
     refs: [
       WIKI(
         'Apollo_command_and_service_module',
-        'CSM total about 11.0 m, SM 4.52 m, 3.91 m diameter',
+        'CSM 11.0 m (36.2 ft), SM body 14 ft 10 in (4.52 m), 3.91 m diameter, four RCS quads of four thrusters, SPS nozzle 3.882 m long and 2.501 m across the exit',
+      ),
+      WIKI(
+        'Apollo_command_module',
+        'CM 3.48 m with probe and heat shield, 3.91 m across the base, forward compartment 0.58 m, five windows (side 0.23 m square, rendezvous 0.20 x 0.23 m, hatch window 0.23 m), side hatch 0.74 x 0.86 m, 12 RCS thrusters',
+      ),
+      WIKI(
+        'Apollo_service_module',
+        'SM six sectors of 50/70/60/50/70/60 degrees (sector 1 ballast, 4 fuel cells), two 2.8 m2 radiators over sectors 2+3 and 5+6, RCS thruster 0.30 x 0.15 m, high-gain antenna of four 0.79 m dishes round a 0.28 m one',
       ),
       {
-        l: 'NSSDCA — Apollo 11 CSM: 11.0 m long, CM 3.65 m high',
+        l: 'NSSDCA — Apollo 11 CSM: 11.0 m long, CM 3.65 m high, SM 7.6 m long incl. nozzle, 3.9 m diameter',
         u: 'https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1969-059A',
       },
     ],

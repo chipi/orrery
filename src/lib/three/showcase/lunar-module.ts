@@ -227,6 +227,7 @@ function cabinBlock(
 
 function buildAscentStage(g: THREE.Group, M: Record<string, Mat>): void {
   const a = new THREE.Group();
+  a.name = 'ascent-stage';
   a.position.y = ASC_BASE;
   add(g, a);
 
@@ -301,6 +302,11 @@ function buildAscentStage(g: THREE.Group, M: Record<string, Mat>): void {
   ring.rotation.x = Math.PI / 2;
   ring.position.set(0, 2.8, 0.2);
   add(a, ring);
+  // The drogue sits inside the tunnel: this anchor is the ring plane the CSM's probe tip seats at.
+  const drogue = new THREE.Object3D();
+  drogue.name = 'docking-drogue';
+  drogue.position.set(0, 2.82, 0.2);
+  add(a, drogue);
   box(a, M.glass, 0.3, 0.03, 0.3, -0.5, 2.31, 0.85);
   // Docking target on its post, forward left of the tunnel.
   strut(
@@ -339,13 +345,14 @@ function buildAscentStage(g: THREE.Group, M: Record<string, Mat>): void {
   }
 
   // RCS quads on outriggers at the four corners, each four nozzles.
-  for (const [qx, qz] of [
+  [
     [1.0, 1.0],
     [-1.0, 1.0],
     [1.0, -1.0],
     [-1.0, -1.0],
-  ]) {
+  ].forEach(([qx, qz], qi) => {
     const q = new THREE.Group();
+    q.name = `lm-rcs-quad-${qi}`;
     const n = new THREE.Vector3(qx, 0, qz).normalize();
     q.position.set(n.x * 1.95, 1.55, n.z * 1.95 + (qz > 0 ? 0.15 : -0.55));
     add(a, q);
@@ -370,7 +377,7 @@ function buildAscentStage(g: THREE.Group, M: Record<string, Mat>): void {
       c.quaternion.setFromUnitVectors(new THREE.Vector3(0, -1, 0), d);
       add(q, c);
     }
-  }
+  });
 
   // Rendezvous radar: dish on a yoke, forward right of the tunnel.
   const rr = new THREE.Group();
@@ -419,6 +426,12 @@ function buildAscentStage(g: THREE.Group, M: Record<string, Mat>): void {
   const cover = new THREE.Mesh(new THREE.CylinderGeometry(0.45, 0.55, 0.3, 20), M.bell);
   cover.position.y = 0.05;
   add(a, cover);
+  // Ascent engine exit plane, local +y along the exhaust (down).
+  const engineExit = new THREE.Object3D();
+  engineExit.name = 'ascent-engine-exit';
+  engineExit.position.set(0, -0.1, 0);
+  engineExit.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), new THREE.Vector3(0, -1, 0));
+  add(a, engineExit);
 }
 
 /** The landed Apollo LM in metres: footpads on y = 0, ladder (and the front) toward +z. */
@@ -441,7 +454,10 @@ export function buildApolloLunarModule(): THREE.Group {
     white: mat(0xe4e2dc, 0.2, 0.55),
   };
   const g = new THREE.Group();
-  buildDescentStage(g, M);
+  const ds = new THREE.Group();
+  ds.name = 'descent-stage';
+  g.add(ds);
+  buildDescentStage(ds, M);
   buildAscentStage(g, M);
   // Stand at the sourced 7.04 m overall height.
   const box3 = new THREE.Box3().setFromObject(g);

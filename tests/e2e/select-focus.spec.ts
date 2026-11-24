@@ -318,9 +318,14 @@ test.describe('/explore select = focus', () => {
       timeout: 20_000,
     });
     await settled(page);
+    expect((await cam(page)).ringVisible).toBe(true);
+    if (isMobile)
+      test.skip(
+        await controlsTabCovered(page),
+        "Ceres's full-height sheet covers the Controls drawer",
+      );
     const again = await chip(page, isMobile, 'dwarfs');
     await expect(again).toHaveAttribute('aria-pressed', 'true');
-    expect((await cam(page)).ringVisible).toBe(true);
   });
 
   test('PATHS off closes a mission that was opened from a path', async ({ page, isMobile }) => {

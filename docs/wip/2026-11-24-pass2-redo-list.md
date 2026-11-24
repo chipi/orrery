@@ -31,7 +31,7 @@ The operator's order (2026-11-24): finish every batch first, then redo these.
 | Gemini ×6 | The heat-shield cone stays upright under the tilted capsule at -6 s and splashdown (reads as detached); no pilot chute or R&R section |
 | Mercury ×6 | Uncommitted in its worktree (git refused there); landing-bag skirt not seen on screen; no retropack; no Liberty Bell 7 hatch blow |
 | Hayabusa 1/2, OSIRIS-REx | Touch-and-go has no back-away: the craft lands and stays (needs an ascent in physics and scene) |
-| NEAR Shoemaker | Done 11-24: octagonal bus, dish, panel cross; framed below 600 m (all small bodies). Open: OSIRIS-REx f0.9 frame came out dimmed incl. HUD after this change, cause not checked; NEAR cruise scene scale with the new real-metre model not checked |
+| NEAR Shoemaker | Done 11-24: octagonal bus, dish, panel cross; framed below 600 m (all small bodies). OSIRIS-REx f0.9 dim frame did not reproduce on a re-shoot (f0.85–f0.95 normal); NEAR cruise scene scale with the new real-metre model not checked |
 | Philae | Two bounces added (estimates) but unverified on screen; still a dot at f0.5 and 0; camera inside the comet at -30 and -6 |
 | Soyuz-11, Voskhod-1 | Camera at -20/-6 s: Soyuz from below with the canopy filling the frame; Voskhod's canopy beside the capsule (another camera path than the capsule fix) |
 | Apollo 7/8/9, ASTP, Skylab | At f0.7 (mains opening) the camera sits at the riser point inside the lines; apex cover not seen on screen; no pilot chutes |

@@ -533,12 +533,37 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
   // Starship (Flight 5) lands its burn on the sea: white spray, not grey dust.
   const overSea = body === 'earth' && opts.events?.some((e) => e.type === 'landing_flip') === true;
   const dustColor =
-    body === 'mars' ? 0xc98a5a : body === 'venus' ? 0xd9a44a : overSea ? 0xe4edf3 : 0xb8b3ad;
+    body === 'mars' ? 0xa8603f : body === 'venus' ? 0xb08a50 : overSea ? 0xcfdbe4 : 0x8f8b86;
   // Starship's three Raptors light a far bigger flame than a lander's retro (the plume is sized
   // off a capsule-scale body).
   // A touch-and-go gas jet is tiny against a 6 m craft: drawn larger so the back-away reads.
   const plumeK = opts.events?.some((e) => e.type === 'landing_flip') ? 2.5 : small ? 1.3 : 1;
-  const dust = new THREE.Mesh(new THREE.CircleGeometry(vehLen * 1.5, 40), additive(dustColor, 0));
+  const dustTex = (() => {
+    const c = document.createElement('canvas');
+    c.width = c.height = 128;
+    const g = c.getContext('2d');
+    if (g) {
+      const grad = g.createRadialGradient(64, 64, 0, 64, 64, 64);
+      grad.addColorStop(0, 'rgba(255,255,255,1)');
+      grad.addColorStop(0.5, 'rgba(255,255,255,0.45)');
+      grad.addColorStop(1, 'rgba(255,255,255,0)');
+      g.fillStyle = grad;
+      g.fillRect(0, 0, 128, 128);
+    }
+    const t = new THREE.CanvasTexture(c);
+    t.colorSpace = THREE.SRGBColorSpace;
+    return t;
+  })();
+  const dust = new THREE.Mesh(
+    new THREE.PlaneGeometry(vehLen * 3, vehLen * 3),
+    new THREE.MeshBasicMaterial({
+      color: dustColor,
+      map: dustTex,
+      transparent: true,
+      opacity: 0,
+      depthWrite: false,
+    }),
+  );
   dust.rotation.x = -Math.PI / 2; // flat on the surface
   dust.position.y = vehLen * 0.02;
   dust.visible = false;
@@ -1124,17 +1149,14 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
       plasma.scale.set(1, 0.7 + 0.7 * heat, 1);
     }
 
-    // Touchdown dust: ramps up as the vehicle nears the ground under retro /
-    // airbags, and flares at touchdown.
-    const nearGround = body !== 'jupiter' && !small && s.altKm < vehLen * 0.5;
-    const kicking =
-      nearGround && ((braking && engineOn) || s.phaseKind === 'airbag_bounce' || s.altM <= 0);
+    // Exhaust dust: only while an engine fires within a few craft-lengths of the ground; none for
+    // chute/airbag landings without a retro burn, none on small bodies.
+    const kicking = body !== 'jupiter' && !small && engineOn && s.altKm < vehLen * 4;
     dust.visible = kicking;
     if (kicking) {
-      const prox = 1 - Math.min(1, s.altKm / (vehLen * 0.5)); // 0 far → 1 at ground
-      const amt = Math.max(prox, s.altM <= 0 ? 1 : 0);
-      dustMat.opacity = (overSea ? 0.12 : 0.3) * amt;
-      dust.scale.setScalar(overSea ? 0.4 + 0.5 * amt : 0.5 + 1.3 * amt);
+      const prox = 1 - Math.min(1, s.altKm / (vehLen * 4)); // 0 far → 1 at ground
+      dustMat.opacity = (overSea ? 0.07 : 0.12) * prox;
+      dust.scale.setScalar((0.4 + 0.6 * prox) * plumeK * (overSea ? 0.6 : 1));
     }
 
     // The directed camera: the subject is the craft, plus the chute or the departing CSM when

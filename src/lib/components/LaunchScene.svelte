@@ -738,8 +738,9 @@
     </div>
   {/if}
 
-  <!-- Left telemetry console -->
-  {#if !warping}
+  <!-- Left telemetry console: it reads the upper stage, so it steps aside while the booster's
+       return plays full frame. -->
+  {#if !warping && !returnOn}
     <div class="telemetry" bind:this={telBox} class:tel-scroll={telScale <= TEL_MIN_SCALE}>
       <div class="tel-fit" bind:this={telInner} style:transform="scale({telScale})">
         <LaunchTelemetry {profile} {summary} {t} state={liveState} />

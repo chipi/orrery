@@ -16,8 +16,7 @@ ship rather than open water. A full-size view needs an entry-burn start time as 
 time, and the sources give that for only some flights.
 
 The sourced figures are in `docs/wip/2026-11-24-booster-landings-sourced.md` and
-`2026-11-24-escapade-sourced.md`; IM-1's note, `docs/wip/2026-11-24-im1-rtls-sourced.md`, is cited by
-the scene's header comment but is not in the repo (see Not done). Inspiration4's entry burn at
+`2026-11-24-escapade-sourced.md`; IM-1's in `docs/wip/2026-11-24-im1-rtls-sourced.md`. Inspiration4's entry burn at
 T+450 s, landing burn at T+544 s and touchdown at T+571 s are sourced. IM-1's whole timeline (entry
 burn T+6:11 to 6:22, landing burn T+7:17, touchdown
 T+7:34) comes from an aggregator that cites The Space Devs. ESCAPADE's New Glenn: entry burn on
@@ -95,6 +94,5 @@ Dev-server screenshots read at 1280 and 375 px for the three flights.
   snippet, not a read page; JRTI's and IM-1's times are from third-party mirrors of SpaceX's own
   figures.
 - Starship's tower catch has no full-frame return; Falcon Heavy side boosters keep the inset.
-- `docs/wip/2026-11-24-im1-rtls-sourced.md`, the note the scene's header comment cites for IM-1's
-  timeline, is not in the repository; the IM-1 figures above are as the comment states them and
-  need their source note written or the comment corrected.
+- IM-1's aggregator times (`2026-11-24-im1-rtls-sourced.md`) are not cross-checked against SpaceX's
+  own webcast timeline.

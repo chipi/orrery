@@ -1,6 +1,6 @@
 # UXD-050 — Booster landing inset on /fly
 
-- **Status**: accepted (built; unit and e2e tests, see Verification; not checked on a real GPU, see Not done)
+- **Status**: accepted (built; unit and e2e tests, see Verification; not checked on a real GPU, see Not done); partly superseded by [UXD-052](UXD-052-booster-returns-play-full-frame-when-the-entry-burn-is-sourced.md): a drone-ship or Falcon 9 landing-zone landing with a sourced or approximate entry burn plays full frame, no longer as an inset. The inset stays for tower catches, Falcon Heavy side boosters and landings without an entry-burn time
 - **Date**: 2026-11-22 (proposed) · 2026-11-22 (decided)
 - **Decider**: the operator, 2026-11-22 — chose "inset at real time" from the three options below (plan row F2 of `docs/wip/2026-11-21-0.9.11-plan.md`)
 - **Answers**: 0.9.11 plan row F2 ("Booster landings, more")

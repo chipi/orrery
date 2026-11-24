@@ -27,7 +27,8 @@
       "id": "tpi",
       "get": "176:26:05",
       "burnS": 2.5,
-      "dvFts": 78
+      "dvFts": 78,
+      "engine": "aps"
     },
     {
       "id": "tpf",
@@ -95,12 +96,11 @@
     "scene.sceneHardware",
     "rendezvous.vernier.burnS",
     "rendezvous.tpf.burnS",
-    "rendezvous.tpf.dvFts",
-    "rendezvous.tpi.engine"
+    "rendezvous.tpf.dvFts"
   ],
   "provenance": [
     {
-      "l": "Apollo 16 Mission Report (Tables 3-I and 3-V, sections 3.2 to 3.4): range zero 17:54:00 GMT 1972-04-16. A direct rendezvous (no CSI or CDH): vernier 10 ft/s at 175:42:18 (no duration in the sources read: 8 s is an estimate), TPI 176:26:05 (2.5 s, 78.0 ft/s on the LM computer, OCR of Table 3-V; 78.5 on the CM computer), TPF 177:08:42 (no duration or delta-V read: 25 s is an estimate). Quote: \"inserted into a 40-mile by 8-mile lunar orbit about 7 minutes later ... a vernier adjustment maneuver of 10 ft/sec was necessary\". Orbit 40.2 x 7.9 n.mi (OCR of Table 3-V; the text says 40 by 8); ascent 427.8 s (SP-4029; the MR table prints 427.7) and 6,054.2 ft/s (OCR); CSM 64.6 x 55.0 n.mi after the 169:05:52 plane change (OCR); docking 177:41:18; ascent stage jettison 195:00:12, attitude control lost, no deorbit: \"Attitude control of the lunar module was lost at jettison; consequently, a deorbit maneuver was not possible.\"; subsatellite release 196:02:09 (without the planned orbit-shaping burn); TEI 200:21:33.07, 162.29 s, 3,370.9 ft/s. All times are the mission report / SP-4029 clock; entry compilation figures are in the splashdown profile",
+      "l": "Apollo 16 Mission Report (Tables 3-I and 3-V, sections 3.2 to 3.4): range zero 17:54:00 GMT 1972-04-16. A direct rendezvous (no CSI or CDH): vernier 10 ft/s at 175:42:18 (no duration in the sources read: 8 s is an estimate), TPI 176:26:05 (2.5 s, 78.0 ft/s, by the ascent propulsion: Table 3-V, page image; 78.5 on the CM computer), TPF 177:08:42 (no duration or delta-V read: 25 s is an estimate). Quote: \"inserted into a 40-mile by 8-mile lunar orbit about 7 minutes later ... a vernier adjustment maneuver of 10 ft/sec was necessary\". Orbit 40.2 x 7.9 n.mi, ascent 6,054.2 ft/s and 427.7 s (Table 3-V, page image; SP-4029 prints 427.8, used here); CSM 64.6 x 55.0 n.mi after the 169:05:52 plane change (SPS, 7.1 s, 124.0 ft/s, page image); docking 177:41:18; ascent stage jettison 195:00:12, attitude control lost, no deorbit: \"Attitude control of the lunar module was lost at jettison; consequently, a deorbit maneuver was not possible.\"; subsatellite release 196:02:09 (without the planned orbit-shaping burn); TEI 200:21:33.07, 162.29 s, 3,370.9 ft/s. All times are the mission report / SP-4029 clock; entry compilation figures are in the splashdown profile",
       "u": "https://ntrs.nasa.gov/api/citations/19720026127/downloads/19720026127.pdf"
     },
     {

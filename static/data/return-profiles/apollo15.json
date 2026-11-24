@@ -21,7 +21,8 @@
       "id": "tpi",
       "get": "172:29:40.0",
       "burnS": 2.6,
-      "dvFts": 72.7
+      "dvFts": 72.7,
+      "engine": "aps"
     },
     {
       "id": "tpf",
@@ -80,12 +81,11 @@
     "scene.roverTvFraming",
     "scene.sceneHardware",
     "rendezvous.tpf.burnS",
-    "rendezvous.tpf.dvFts",
-    "rendezvous.tpi.engine"
+    "rendezvous.tpf.dvFts"
   ],
   "provenance": [
     {
-      "l": "Apollo 15 Mission Report (Tables 3-I and 3-V, sections 3.2 to 3.4): range zero 13:34:00 GMT 1971-07-26. The direct rendezvous: ascent, TPI 172:29:40.0 (2.6 s, 72.7 ft/s on the LM guidance computer; Table 3-V prints \"12.7\", an OCR slip), midcourse corrections, TPF/braking 173:11:07 (no duration or delta-V in the sources read: 25 s is an estimate). Quote: \"The direct rendezvous technique, first used on Apollo 14, was executed nominally\". Ascent 431 s and 6,059 ft/s (OCR of Table 3-V); orbit 42.5 x 9.0 n.mi, no vernier adjustment; CSM 64.5 x 53.6 n.mi after the 165:11:33 plane change; docking 173:36:25.5; ascent stage jettison 179:30:01.4 (impact 181:29:37.0); subsatellite release 222:39:29.1 (orbit shaping 221:20:48.0, 66.4 ft/s); TEI 223:48:45.84, 140.90 s, 3,046.8 ft/s. All times are the mission report / SP-4029 clock; entry compilation figures are in the splashdown profile",
+      "l": "Apollo 15 Mission Report (Tables 3-I and 3-V, sections 3.2 to 3.4): range zero 13:34:00 GMT 1971-07-26. The direct rendezvous: ascent, TPI 172:29:40.0 (2.6 s, 72.7 ft/s, by the LM ascent propulsion: Table 3-V, read from the page image; the text layer prints \"12.7\", an OCR slip), midcourse corrections, TPF/braking 173:11:07 (no duration or delta-V in the sources read: 25 s is an estimate). Quote: \"The direct rendezvous technique, first used on Apollo 14, was executed nominally\". Ascent 431 s and 6,059 ft/s, orbit 42.5 x 9.0 n.mi (Table 3-V, page image), no vernier adjustment; CSM 64.5 x 53.6 n.mi after the 165:11:33 plane change; docking 173:36:25.5; ascent stage jettison 179:30:01.4 (impact 181:29:37.0); subsatellite release 222:39:29.1 (orbit shaping 221:20:48.0, 66.4 ft/s into 76.0 x 54.3 n.mi: the text layer prints 16.0); TEI 223:48:45.84, 140.90 s, 3,046.8 ft/s. All times are the mission report / SP-4029 clock; entry compilation figures are in the splashdown profile",
       "u": "https://ntrs.nasa.gov/api/citations/19720021182/downloads/19720021182.pdf"
     },
     {

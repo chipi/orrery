@@ -109,9 +109,13 @@ describe('Apollo 15, 16 and 17 figures (mission reports, SP-4029)', () => {
     expect(a15.rendezvous.map((r) => r.id)).toEqual(['tpi', 'tpf']);
     expect(a16.rendezvous.map((r) => r.id)).toEqual(['vernier', 'tpi', 'tpf']);
     expect(a17.rendezvous.map((r) => r.id)).toEqual(['trim', 'plane', 'vernier', 'tpi', 'tpf']);
-    expect(a15.rendezvous[0]).toMatchObject({ burnS: 2.6, dvFts: 72.7 });
-    expect(a16.rendezvous[1]).toMatchObject({ burnS: 2.5, dvFts: 78 });
+    expect(a15.rendezvous[0]).toMatchObject({ burnS: 2.6, dvFts: 72.7, engine: 'aps' });
+    expect(a16.rendezvous[1]).toMatchObject({ burnS: 2.5, dvFts: 78, engine: 'aps' });
     expect(a17.rendezvous[0]).toMatchObject({ burnS: 37, dvFts: 9.2 });
+    expect(a17.rendezvous[1]).toMatchObject({ dvFts: 366, engine: 'sps' }); // SPS, not RCS
+    expect(a17.rendezvous[2]).toMatchObject({ burnS: 10, dvFts: 10 });
+    expect(a17.rendezvous[3]).toMatchObject({ burnS: 3.2, dvFts: 53.8, engine: 'aps' });
+    expect(a17.csmOrbitNmi).toEqual([62.8, 62.5]);
     expect(a17.rendezvousS.trim!).toBeLessThan(a17.liftoffS);
     expect(a17.rendezvousS.plane!).toBeLessThan(a17.liftoffS);
   });

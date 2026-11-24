@@ -21,8 +21,8 @@ export interface RendezvousBurn {
   burnS: number;
   /** Absent where the sources print no figure (Apollo 17's plane change). */
   dvFts?: number;
-  /** The LM burns the ascent engine (Apollo 14's TPI) rather than its RCS. */
-  engine?: 'aps';
+  /** The burn's engine where it is not the RCS: the LM's ascent engine (TPI on Apollo 14-17) or the SPS. */
+  engine?: 'aps' | 'sps';
 }
 
 /** Per-mission camera style: the shot each beat cuts to, over the scene's default table
@@ -147,7 +147,8 @@ export function isValidReturnProfile(d: unknown): d is ReturnProfileRaw {
   if (!isRendezvousSequence(rend.map((r) => r.id))) return false;
   if (!rend.every((r) => parseGet(r.get) != null && isNum(r.burnS))) return false;
   if (!rend.every((r) => r.dvFts === undefined || isNum(r.dvFts))) return false;
-  if (!rend.every((r) => r.engine === undefined || r.engine === 'aps')) return false;
+  if (!rend.every((r) => r.engine === undefined || r.engine === 'aps' || r.engine === 'sps'))
+    return false;
   const cam = p.camera as Record<string, unknown> | undefined;
   if (cam !== undefined) {
     const shots = cam?.shots as Record<string, unknown> | undefined;

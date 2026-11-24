@@ -26,19 +26,22 @@
     {
       "id": "plane",
       "get": "179:53:54",
-      "burnS": 20.05
+      "burnS": 20.05,
+      "dvFts": 366,
+      "engine": "sps"
     },
     {
       "id": "vernier",
       "get": "185:32:12",
-      "burnS": 8,
+      "burnS": 10,
       "dvFts": 10
     },
     {
       "id": "tpi",
       "get": "186:15:58",
-      "burnS": 3.1,
-      "dvFts": 54
+      "burnS": 3.2,
+      "dvFts": 53.8,
+      "engine": "aps"
     },
     {
       "id": "tpf",
@@ -47,7 +50,7 @@
     }
   ],
   "csmOrbitNmi": [
-    67.3,
+    62.8,
     62.5
   ],
   "splashdownProfile": "apollo17-splashdown",
@@ -98,16 +101,13 @@
     "scene.simBayAzimuth",
     "scene.roverTvFraming",
     "scene.sceneHardware",
-    "rendezvous.vernier.burnS",
     "rendezvous.tpf.get",
     "rendezvous.tpf.burnS",
-    "rendezvous.tpf.dvFts",
-    "rendezvous.tpi.engine",
-    "rendezvous.plane.dvFts"
+    "rendezvous.tpf.dvFts"
   ],
   "provenance": [
     {
-      "l": "Apollo 17 Mission Report (Tables 3-I and 3-V, sections 3.2 to 3.4): range zero 05:33:00 GMT 1972-12-07. A direct rendezvous with two CSM burns before the LM left the Moon: orbital trim 178:54:05 (RCS, 37 s, 9.2 ft/s) to 67.3 x 62.5 n.mi because \"the planned decay of the CSM altitude ... was not realized. This was similar to the experience of Apollo 15\", plane change 179:53:54 (20.05 s from SP-4029, RCS; the MR OCR reads 23.1 s service propulsion: a disagreement; no delta-V read), then the LM vernier 10 ft/s at 185:32:12 (no duration read: 8 s is an estimate), TPI 186:15:58 (3.1 s, about 54 ft/s) and TPF (no GET, duration or delta-V in the sources read: 186:58:00, 42 min after TPI as on Apollos 14-16, and 25 s are estimates). Ascent 441 s and 6,075.7 ft/s (OCR), orbit 48.5 x 9.1 n.mi (OCR), insertion 185:28:56 (SP-4029 prints the burn to 185:28:58); docking 187:37:15; ascent stage jettison 191:18:31, deorbit 192:58:14, impact 193:17:20.8 at 19 deg 57 min 58 s N, 30 deg 29 min 23 s E (not shown); TEI 234:02:09.18, 143.69 s, 3,046.3 ft/s; no subsatellite on Apollo 17. All times are the mission report / SP-4029 clock; entry compilation figures are in the splashdown profile",
+      "l": "Apollo 17 Mission Report (Tables 3-I and 3-V, sections 3.2 to 3.4): range zero 05:33:00 GMT 1972-12-07. A direct rendezvous with two CSM burns before the LM left the Moon: orbital trim 178:54:05 (RCS, 37 s from SP-4029 as the page image smudges the digit, 9.2 ft/s) to 67.3 x 62.5 n.mi because \"the planned decay of the CSM altitude ... was not realized. This was similar to the experience of Apollo 15\", plane change 179:53:54 (MR17 Table 3-V, page image: service propulsion, about 20 s, 366 ft/s, leaving 62.8 x 62.5 n.mi; SP-4029 gives 20.05 s and calls it RCS, which cannot deliver 366 ft/s, so the engine is the SPS; the text layer prints 23.1 s), then the LM vernier 10 ft/s for 10 s at 185:32:12 (RCS), TPI 186:15:58 (ascent propulsion, 3.2 s, 53.8 ft/s: the page image; SP-4029 prints 3.1 s) and TPF (no GET, duration or delta-V in the sources read: 186:58:00, 42 min after TPI as on Apollos 14-16, and 25 s are estimates). Ascent 441 s and 6,075.7 ft/s, orbit 48.5 x 9.1 n.mi (page image), insertion 185:28:56 (SP-4029 prints the burn to 185:28:58); docking 187:37:15; ascent stage jettison 191:18:31, deorbit 192:58:14, impact 193:17:20.8 at 19 deg 57 min 58 s N, 30 deg 29 min 23 s E (not shown); TEI 234:02:09.18, 143.69 s, 3,046.3 ft/s; no subsatellite on Apollo 17. All times are the mission report / SP-4029 clock; entry compilation figures are in the splashdown profile",
       "u": "https://ntrs.nasa.gov/api/citations/19730015117/downloads/19730015117.pdf"
     },
     {

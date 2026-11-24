@@ -141,6 +141,12 @@ describe('the J missions (Apollo 15, 16, 17)', () => {
     }
     expect(formatGet(getAt(RT.csi, a17))).toBe('185:32:12.0');
   });
+  it('fire the ascent engine for TPI, as the mission reports list it', () => {
+    for (const p of [a15, a16, a17]) {
+      const [a, b] = burnWindow('tpi', p);
+      expect(returnPose((a + b) / 2, p).lmEngine).toBe(true);
+    }
+  });
   it('Apollo 15 and 16 release the subsatellite between the LM jettison and the TEI coast; 17 has no such beat', () => {
     for (const [p, get] of [
       [a15, '222:39:29.1'],

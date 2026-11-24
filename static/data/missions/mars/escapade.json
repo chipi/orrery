@@ -12,7 +12,7 @@
   "transit_days": 663,
   "vehicle": "New Glenn (NG-2)",
   "payload": "Two spacecraft, Blue and Gold: 209 kg dry, 535 kg fuelled each",
-  "delta_v": "Not published; its own burns were a ~9-minute powered Earth-flyby (trans-Mars injection) burn and a ~11-minute Mars orbit insertion",
+  "delta_v": "Not published",
   "data_quality": "partial",
   "credit": "Source: NASA. Twin spacecraft Blue and Gold from Rocket Lab; principal investigator Robert Lillis, UC Berkeley Space Sciences Laboratory; launched by Blue Origin on New Glenn NG-2, 13 November 2025. Figures from NASA's press kit, launch blog and Earth-flyby release.",
   "links": [

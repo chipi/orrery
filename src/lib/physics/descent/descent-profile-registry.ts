@@ -123,6 +123,9 @@ export interface ArchetypeParams {
   /** Lunar powered descent: emit `high_gate` and `low_gate` where the approach and the final
    *  descent start (Apollo's named gates). Off for landers whose record names none. */
   gateBeats?: boolean;
+  /** Lunar powered descent: hovers (Chang'e at 100 m, Chandrayaan-3 at 800 m and 150 m): hold the
+   *  altitude `durS` seconds on the way down. */
+  hovers?: { altM: number; durS: number }[];
 }
 
 type ArchetypeBuilder = (p: ArchetypeParams) => EDLPhase[];
@@ -140,7 +143,19 @@ const LUNAR_POWERED: ArchetypeBuilder = (p) => {
   if (p.brakingFpaDeg == null) {
     return [{ ...common, endTrigger: { type: 'ground', value: 0 }, events: ['retro_ignition'] }];
   }
-  return [
+  const lowGate = p.lowGateAltM ?? 150;
+  const guide = { maxBrakeG: p.brakingMaxG ?? 0.3, maxThrustN: p.brakingMaxThrustN };
+  const hovers = [...(p.hovers ?? [])].sort((x, y) => y.altM - x.altM);
+  // A hover holds the altitude (the descent-rate floor is ~0) for `durS`, then the descent goes on.
+  const hover = (h: { durS: number }): EDLPhase => ({
+    ...common,
+    ...guide,
+    endTrigger: { type: 'duration_s', value: h.durS },
+    descentRateGain: 0,
+    terminalVelocityMs: 0,
+    events: ['hover'],
+  });
+  const phases: EDLPhase[] = [
     {
       ...common,
       endTrigger: { type: 'velocity_ms', value: p.highGateSpeedMs ?? 150 },
@@ -150,22 +165,39 @@ const LUNAR_POWERED: ArchetypeBuilder = (p) => {
       descentRateGain: p.brakingRateGain ?? 0.01,
       events: ['retro_ignition'],
     },
-    {
-      ...common,
-      endTrigger: { type: 'altitude_m', value: p.lowGateAltM ?? 150 },
-      flightPathAngleDeg: p.approachFpaDeg ?? 16,
-      maxBrakeG: p.brakingMaxG ?? 0.3,
-      maxThrustN: p.brakingMaxThrustN,
-      ...(p.gateBeats ? { events: ['high_gate' as const] } : {}),
-    },
-    {
-      ...common,
-      endTrigger: { type: 'ground', value: 0 },
-      maxBrakeG: p.brakingMaxG ?? 0.3,
-      maxThrustN: p.brakingMaxThrustN,
-      ...(p.gateBeats ? { events: ['low_gate' as const] } : {}),
-    },
   ];
+  const approach = (end: number, first: boolean): EDLPhase => ({
+    ...common,
+    ...guide,
+    endTrigger: { type: 'altitude_m', value: end },
+    flightPathAngleDeg: p.approachFpaDeg ?? 16,
+    ...(first && p.gateBeats ? { events: ['high_gate' as const] } : {}),
+  });
+  let first = true;
+  for (const h of hovers.filter((x) => x.altM > lowGate)) {
+    phases.push(
+      approach(h.altM + 700, first),
+      { ...approach(h.altM, false), descentRateGain: 8 / h.altM },
+      hover(h),
+    );
+    first = false;
+  }
+  // The descent-rate law never speeds up: after a high hover the next leg needs a floor to get going again.
+  const afterHover = first ? {} : { terminalVelocityMs: 8 };
+  phases.push({ ...approach(lowGate, first), ...afterHover });
+  const fin = (end: number, gate: boolean): EDLPhase => ({
+    ...common,
+    ...guide,
+    endTrigger: end > 0 ? { type: 'altitude_m', value: end } : { type: 'ground', value: 0 },
+    ...(gate && p.gateBeats ? { events: ['low_gate' as const] } : {}),
+  });
+  let gate = true;
+  for (const h of hovers.filter((x) => x.altM <= lowGate)) {
+    phases.push(fin(h.altM, gate), hover(h));
+    gate = false;
+  }
+  phases.push(fin(0, gate));
+  return phases;
 };
 
 const LUNA_DIRECT_IMPACT: ArchetypeBuilder = (p) => [

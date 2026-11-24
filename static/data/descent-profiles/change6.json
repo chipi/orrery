@@ -13,7 +13,7 @@
   },
   "entryMassKg": 3735.4,
   "entryCdA": 0,
-  "retroPropellantKg": 1898,
+  "retroPropellantKg": 1978,
   "archetype": "LUNAR_POWERED",
   "params": {
     "ispS": 311,
@@ -24,7 +24,13 @@
     "highGateSpeedMs": 150,
     "approachFpaDeg": 12,
     "lowGateAltM": 150,
-    "brakingRateGain": 0.01
+    "brakingRateGain": 0.01,
+    "hovers": [
+      {
+        "altM": 100,
+        "durS": 10
+      }
+    ]
   },
   "source_tier": "flagship",
   "estimatedFields": [
@@ -34,7 +40,9 @@
     "retroPropellantKg",
     "brakingFpaDeg",
     "brakingMaxThrustN",
-    "approachFpaDeg"
+    "approachFpaDeg",
+    "params.hovers durations",
+    "beats.engine_cutoff"
   ],
   "provenance": [
     {
@@ -44,6 +52,12 @@
     {
       "l": "Chang'e-6 Mission — CNSA / NSSDC record",
       "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2024-089A"
+    }
+  ],
+  "beats": [
+    {
+      "type": "engine_cutoff",
+      "altM": 4
     }
   ]
 }

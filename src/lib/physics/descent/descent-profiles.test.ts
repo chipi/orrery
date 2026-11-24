@@ -416,6 +416,26 @@ describe('Beagle 2 (pilot chute, then a 10 m main; bags; bounces)', () => {
  * missions' thrust and approach angle are fitted so all six reach their high gate at about the same
  * altitude and fly their reported descent times.
  */
+describe("Chang'e landings hover at 100 m, cut the engine at 4 m (lunar record)", () => {
+  for (const id of ['change3', 'change4', 'change5', 'change6']) {
+    it(`${id}: holds 100 m for the hover, cutoff at 4 m, soft touchdown`, () => {
+      const s = flight(id).s;
+      const hv = s.events.find((e) => e.type === 'hover')!;
+      expectInRange(hv.altKm * 1000, 90, 101, 'hover start (m)');
+      const during = s.states.filter((x) => x.t > hv.t + 3 && x.t < hv.t + 9);
+      const alts = during.map((x) => x.altM);
+      expect(Math.max(...alts) - Math.min(...alts), 'altitude spread (m)').toBeLessThan(2);
+      expectInRange(
+        s.events.find((e) => e.type === 'engine_cutoff')!.altKm * 1000,
+        3,
+        4,
+        'cutoff (m)',
+      );
+      expect(s.touchdownSuccess).toBe(true);
+    });
+  }
+});
+
 describe('Apollo landings fly the gates, the contact light and the engine cutoff', () => {
   const APOLLO = ['apollo11', 'apollo12', 'apollo14', 'apollo15', 'apollo16', 'apollo17'];
   const ORDER = [

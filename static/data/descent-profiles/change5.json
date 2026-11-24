@@ -13,7 +13,7 @@
   },
   "entryMassKg": 3735.4,
   "entryCdA": 0,
-  "retroPropellantKg": 1898,
+  "retroPropellantKg": 1978,
   "archetype": "LUNAR_POWERED",
   "params": {
     "ispS": 311,
@@ -24,13 +24,21 @@
     "highGateSpeedMs": 150,
     "approachFpaDeg": 18,
     "lowGateAltM": 150,
-    "brakingRateGain": 0.01
+    "brakingRateGain": 0.01,
+    "hovers": [
+      {
+        "altM": 100,
+        "durS": 10
+      }
+    ]
   },
   "source_tier": "flagship",
   "estimatedFields": [
     "brakingFpaDeg",
     "approachFpaDeg",
-    "brakingMaxThrustN"
+    "brakingMaxThrustN",
+    "params.hovers durations",
+    "beats.engine_cutoff"
   ],
   "provenance": [
     {
@@ -40,6 +48,12 @@
     {
       "l": "Chang'e-5 Mission — CNSA / NSSDC record",
       "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2020-087A"
+    }
+  ],
+  "beats": [
+    {
+      "type": "engine_cutoff",
+      "altM": 4
     }
   ]
 }

@@ -240,7 +240,12 @@ function shotPoseAt(
     const d = subject.core.r * 9;
     const x = Math.sin(sh.az) * d;
     const z = Math.cos(sh.az) * d;
-    const pos: [number, number, number] = [x, floor + subject.core.r * 0.25, z];
+    // A capsule hangs tens of metres up under a canopy far wider than itself: from the ground the
+    // canopy fills the frame, so the camera rides level with the capsule until it nears the ground.
+    const camY = subject.capsule
+      ? Math.max(floor + subject.core.r * 0.25, subject.core.cy - subject.core.r * 0.5)
+      : floor + subject.core.r * 0.25;
+    const pos: [number, number, number] = [x, camY, z];
     const target: [number, number, number] = [0, subject.core.cy, 0];
     const range = Math.hypot(x, target[1] - pos[1], z);
     const fov = Math.min(55, Math.max(6, (2 * Math.atan(subject.core.r / (0.4 * range))) / DEG));

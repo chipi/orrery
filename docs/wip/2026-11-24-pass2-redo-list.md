@@ -45,7 +45,7 @@ The operator's order (2026-11-24): finish every batch first, then redo these.
 | Tianwen-1 | At -3 s the rover with its wheels descends on its own; the landing platform with Zhurong on top should come down |
 | Mars ground | f0.2 (higher up) shows a visible checkerboard tiling of the new detail texture; Curiosity's entry shows a lit disc under the aeroshell |
 | Philae | At touchdown ("0") only the contact shadow shows, the lander is not visible; at -6 a speck |
-| Soyuz-11, Shenzhou-1, Voskhod-1, Apollo 8 (parked) | Two fix rounds did not change the -20/-6 s canopy frames or Apollo 8's riser-point frame; cause unknown (not the capsule/opening flag path). Next step: log the active shot kind and flags at those times. Parked to avoid a rabbit hole; ask the operator before a third round |
+| Soyuz-11, Shenzhou-1, Voskhod-1, Apollo 8 | Fixed 11-24: the cause was the ground shot (camera on the surface looking up into the canopy); it now rides level with the capsule. Seen at -20/-6 s; Apollo 8 f0.7 no longer at the riser point |
 | Gemini heat shield (parked) | Two rounds failed: the white cone stays upright under the tilted capsule; it is probably not `model.heatshield` (forcing that part's pose changed nothing; that edit is reverted). Next step: identify the mesh by name at runtime. Ask the operator before a third round |
 | Chandrayaan-2 | Loses contact at 2.1 km and hits at 175 m/s, but the last frame shows Vikram landed intact, firing; a crash needs an impact state (tumble/debris), like SLIM's tip |
 | Mars body map | Tried 11-24: 4k map shows the same dark patches, stronger; they are true albedo features at ~5 km/px from 100 km. Kept 2k (no 2.5 MB cost). Closed unless a sharper regional map is wanted |

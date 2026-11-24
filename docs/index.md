@@ -26,8 +26,8 @@ features:
     title: Eight scales · real physics
     details: 'Solar System Explorer (eight nested scales, solar system to cosmic web) · Mission Configurator · Mission Arc with a launch camera director · Programs, Missions, Launches and Fleet on one catalogue pattern · Earth / Moon / Mars / Venus worlds · ISS + Tiangong explorers · Science encyclopedia · Essays · Physics Lab. Keplerian orbits, Lambert porkchops, vis-viva, Tsiolkovsky — the math behind real mission planning, presented so a curious person can understand by doing.'
   - icon: 🛰️
-    title: 139 missions · 299 fleet entries
-    details: '139 missions from Sputnik 1 to the flights planned for 2031, replayable with real flight parameters, plus 42 programs. Cross-referenced bidirectionally to a curated inventory of every machine used in spaceflight — launchers, capsules, stations, rovers, landers, orbiters, observatories, suits.'
+    title: 141 missions · 299 fleet entries
+    details: '141 missions from Sputnik 1 to the flights planned for 2031, replayable with real flight parameters, plus 42 programs. Cross-referenced bidirectionally to a curated inventory of every machine used in spaceflight — launchers, capsules, stations, rovers, landers, orbiters, observatories, suits.'
   - icon: 🌍
     title: 14 locales · 100% UI parity
     details: 'English, Español, Français, Deutsch, Português (BR), Italiano, Nederlands, 中文, 日本語, 한국어, हिन्दी, العربية (RTL), Русский, Српски (Cyrillic). Browser locale auto-detected on first visit. No backend, no database, no personal data — a static PWA that works offline after first load.'

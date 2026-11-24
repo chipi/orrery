@@ -1207,9 +1207,7 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
         const off = new THREE.Vector3(0, landerHome.y - pivotY, 0).applyQuaternion(q);
         model.lander.position.set(off.x, pivotY + off.y, off.z);
         // The heat shield stays on the capsule's base: no separation beat for Gemini.
-        {
-          model.heatshield.visible = model.heatshield.geometry != null;
-          model.heatshield.scale.setScalar(1);
+        if (hp === 0) {
           const hOff = new THREE.Vector3(0, model.heatshieldBaseY - pivotY, 0).applyQuaternion(q);
           model.heatshield.position.set(hOff.x, pivotY + hOff.y, hOff.z);
           model.heatshield.quaternion.copy(

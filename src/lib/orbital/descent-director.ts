@@ -138,7 +138,7 @@ function starshipShots(shots: DescentShot[], flipT: number): DescentShot[] {
     .filter((s) => s.t1 > flipT + FLIP_S)
     .map((s) => ({ ...s, t0: Math.max(s.t0, flipT + FLIP_S) }));
   return [
-    { kind: 'belly', t0: 0, t1: flipT, az: 0.35, dir: 1 },
+    { kind: 'belly', t0: 0, t1: flipT, az: 0.95, dir: 1 },
     { kind: 'flipOrbit', t0: flipT, t1: flipT + FLIP_S, az: 0.2, dir: 1 },
     ...rest,
   ];
@@ -228,7 +228,7 @@ export function descentPoseAt(
       break;
     case 'belly':
       // The ship lies along X: seen from +Z, a touch above, it spans the frame.
-      f = { fill: 0.95, el: lerp(8, 14, p), az: a0 + sw * 0.25 * p, fov: 36, who: 'core' };
+      f = { fill: 0.95, el: lerp(20, 28, p), az: a0 + sw * 0.15 * p, fov: 36, who: 'core' };
       break;
     case 'flipOrbit':
       f = { fill: 0.6, el: lerp(8, 20, p), az: a0 + sw * 1.6 * p, fov: 36, who: 'core' };

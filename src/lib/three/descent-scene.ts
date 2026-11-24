@@ -474,7 +474,9 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
   // Starship (Flight 5) re-enters belly-first: the shock glow stretches along the belly (world X,
   // the plasma group is held level), and there is no capsule wake column.
   if (opts.events?.some((e) => e.type === 'landing_flip')) {
-    plasmaCap.scale.set(3.2, 0.45, 0.9);
+    plasmaCap.scale.set(1.5, 0.45, 0.45);
+    plasmaCap.position.y = -vehLen * 0.14;
+    (plasmaCap.material as THREE.MeshBasicMaterial).color.set(0xff8a3c);
     plasmaTrail.visible = false;
   }
   plasma.add(plasmaCap, plasmaTrail);
@@ -857,7 +859,8 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
     // its powered descent stage / retro are revealed once the heat-shield drops
     // away (exposing the terminal-descent hardware), never before. Earth capsules
     // and Moon/airless landers ARE the vehicle, so they stay visible throughout.
-    const aeroshellBody = body === 'mars' || body === 'venus';
+    // Starship is its own vehicle (no aeroshell), even on Mars.
+    const aeroshellBody = (body === 'mars' || body === 'venus') && landingFlipT == null;
     const terminalPhase =
       s.phaseKind === 'skycrane' ||
       s.phaseKind === 'powered_retro' ||

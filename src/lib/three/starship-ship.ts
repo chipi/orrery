@@ -95,9 +95,9 @@ export function buildStarshipShip(): THREE.Group {
   });
   if (!tile.map) tile.color.set(0x16181c);
   const flapMat = new THREE.MeshStandardMaterial({
-    color: 0x16181c,
-    metalness: 0.05,
-    roughness: 0.85,
+    color: 0x3a3f48,
+    metalness: 0.1,
+    roughness: 0.7,
   });
   const dark = heroDark(0x2a2d33);
 
@@ -133,14 +133,17 @@ export function buildStarshipShip(): THREE.Group {
   // Each is built spanning +X, then turned about y so its span points along ±Z. A flap hinges on
   // its root edge (along y), so it sits in a pivot group the scene swings about y
   // (userData.flaps), to steer through the belly-first fall.
+  // Spans (estimate, from photos of the Block 1 ship): forward ~4.5 m (0.09 of 50.3 m), aft ~6.5 m
+  // (0.13); the real flaps are roughly this size, aft larger. Slightly lighter than the black
+  // tile so they read against the sea and the sky.
   const flaps: { pivot: THREE.Group; base: number; side: number; fwd: boolean }[] = [];
   for (const side of [-1, 1]) {
     const fwdY0 = NOSE_BASE + 0.05;
     const fwdRootR = noseRadius(0.05 / (1 - NOSE_BASE) + 0.1);
     for (const fwd of [true, false]) {
       const geo = fwd
-        ? flap(fwdY0, fwdY0 + 0.1, 0.055, fwdY0 + 0.035, fwdY0 + 0.085)
-        : flap(0.05, 0.25, 0.075, 0.07, 0.2);
+        ? flap(fwdY0, fwdY0 + 0.1, 0.09, fwdY0 + 0.035, fwdY0 + 0.085)
+        : flap(0.05, 0.25, 0.13, 0.07, 0.2);
       const pivot = new THREE.Group();
       pivot.name = fwd ? 'flapFwd' : 'flapAft';
       const base = -side * (Math.PI / 2);

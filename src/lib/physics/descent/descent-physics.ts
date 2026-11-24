@@ -148,6 +148,11 @@ export interface AfterTouchdown {
   /** `rollM`: ground distance from first contact to rest; `restS`: the time that took. */
   bounces?: { count: number; firstHeightM: number; rollM: number; restS: number };
   beats?: { type: DescentEventType; afterS: number; realAfterS?: number }[];
+  /**
+   * Touch-and-go: the craft holds on the surface `afterS`, then backs away on its thrusters,
+   * reaching `rateMs` within a second and climbing at it for `durationS`.
+   */
+  ascent?: { afterS: number; rateMs: number; durationS: number };
 }
 
 /**
@@ -880,6 +885,8 @@ const LAST_HOP_M = 0.1;
 const TAIL_DT_S = 0.05;
 /** The slow roll after the hops is shown in at most this long; `at_rest` notes the real time. */
 const ROLL_SHOWN_MAX_S = 20;
+/** A touch-and-go back-away burn builds to its climb rate over this long (s). */
+const ASCENT_RAMP_S = 1;
 
 /**
  * Append the scripted ground tail to a finished descent. The hops are honest ballistic arcs in
@@ -964,8 +971,35 @@ function appendAfterTouchdown(
     const realT = shownS < rollS ? impact.t + restS : undefined;
     events.push({ type: 'at_rest', t, altKm: 0, velocityMs: 0, realT });
   }
+  const asc = tail.ascent;
+  if (asc) {
+    const hold: DescentState = { ...ground, phaseKind: 'touch_and_go_contact' };
+    states.push({ ...hold, t });
+    const t0 = t + asc.afterS;
+    states.push({ ...hold, t: t0 });
+    const frac = (tau: number): number => Math.min(1, tau / ASCENT_RAMP_S);
+    const climb = (tau: number): number =>
+      asc.rateMs *
+      (tau < ASCENT_RAMP_S ? (tau * tau) / (2 * ASCENT_RAMP_S) : tau - ASCENT_RAMP_S / 2);
+    for (let a = 0.25; a <= asc.durationS + 1e-9; a += 0.25) {
+      const h = climb(a);
+      states.push({
+        ...hold,
+        t: t0 + a,
+        altM: h,
+        altKm: h / 1000,
+        velocityMs: asc.rateMs * frac(a),
+        velDownMs: -asc.rateMs * frac(a),
+        thrustN: 1,
+        phaseKind: 'powered_retro',
+      });
+    }
+    const top = climb(asc.durationS);
+    t = t0 + asc.durationS + 3;
+    states.push({ ...hold, t, altM: top, altKm: top / 1000, phaseKind: 'coast' });
+  }
   const rest: DescentState = { ...ground, t, downrangeKm: x / 1000 };
-  states.push(rest);
+  if (!asc) states.push(rest);
   let end = t;
   for (const gb of tail.beats ?? []) {
     const realT = gb.realAfterS != null ? impact.t + gb.realAfterS : undefined;

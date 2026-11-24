@@ -22,13 +22,22 @@
   "source_tier": "flagship",
   "provenance": [
     {
-      "l": "OSIRIS-REx TAG — left the ~770 m orbit at 17:50 UTC 20 Oct 2020, Checkpoint burn at 125 m, Matchpoint at 54 m (177 ft), contact at 21:53 UTC for ~6 s with the nitrogen burst, then back-away (collectSPACE). The model flies from Matchpoint; contact speed is an estimate",
+      "l": "OSIRIS-REx TAG — left the ~770 m orbit at 17:50 UTC 20 Oct 2020, Checkpoint burn at 125 m, Matchpoint at 54 m (177 ft), contact at 21:53 UTC for ~6 s with the nitrogen burst, then back-away (collectSPACE). The model flies from Matchpoint; contact speed is an estimate; the back-away climb rate and length are drawn",
       "u": "https://www.collectspace.com/news/news-102020a-osiris-rex-tag-asteroid-bennu.html"
     }
   ],
   "estimatedFields": [
     "entryMassKg",
     "entryState.velocityMs",
-    "terminalVelocityMs"
-  ]
+    "terminalVelocityMs",
+    "afterTouchdown.ascent.rateMs",
+    "afterTouchdown.ascent.durationS"
+  ],
+  "afterTouchdown": {
+    "ascent": {
+      "afterS": 6,
+      "rateMs": 0.4,
+      "durationS": 14
+    }
+  }
 }

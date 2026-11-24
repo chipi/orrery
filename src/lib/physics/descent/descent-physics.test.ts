@@ -597,3 +597,24 @@ describe('placed beats and the ground tail (pass 2)', () => {
       expect(tailed.states[i].t).toBeGreaterThan(tailed.states[i - 1].t);
   });
 });
+
+describe('touch-and-go back-away (pass 2)', () => {
+  const s = integrateDescent({
+    ...MARS_AIRBAG,
+    afterTouchdown: { ascent: { afterS: 6, rateMs: 0.4, durationS: 10 } },
+  });
+  const td = s.events.find((e) => e.type === 'touchdown')!;
+
+  it('holds on the surface, then climbs away on thrust', () => {
+    const held = s.states.filter((x) => x.t > td.t && x.t < td.t + 6);
+    expect(held.every((x) => x.altM === 0 && x.thrustN === 0)).toBe(true);
+    const climbing = s.states.filter((x) => x.t > td.t + 6 && x.t <= td.t + 16);
+    expect(climbing.every((x) => x.thrustN > 0)).toBe(true);
+    expectInRange(
+      Math.max(...s.states.filter((x) => x.t > td.t).map((x) => x.altM)),
+      3.5,
+      4.2,
+      'back-away height (m)',
+    );
+  });
+});

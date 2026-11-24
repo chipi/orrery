@@ -31,7 +31,7 @@ The operator's order (2026-11-24): finish every batch first, then redo these.
 | Gemini ×6 | The heat-shield cone stays upright under the tilted capsule at -6 s and splashdown (reads as detached); no pilot chute or R&R section |
 | Mercury ×6 | Uncommitted in its worktree (git refused there); landing-bag skirt not seen on screen; no retropack; no Liberty Bell 7 hatch blow |
 | Hayabusa 1/2, OSIRIS-REx | Touch-and-go has no back-away: the craft lands and stays (needs an ascent in physics and scene) |
-| NEAR Shoemaker | Not viewed; LUNAR_POWERED with one powered_retro phase, no braking parameters |
+| NEAR Shoemaker | Viewed 11-24: f0.9 the craft is a speck on a blank Eros wall; model is a gold cylinder with a white dome (real: octagonal box, 1.5 m dish, four panels in a cross); small in frame at touchdown |
 | Philae | Two bounces added (estimates) but unverified on screen; still a dot at f0.5 and 0; camera inside the comet at -30 and -6 |
 | Soyuz-11, Voskhod-1 | Camera at -20/-6 s: Soyuz from below with the canopy filling the frame; Voskhod's canopy beside the capsule (another camera path than the capsule fix) |
 | Apollo 7/8/9, ASTP, Skylab | At f0.7 (mains opening) the camera sits at the riser point inside the lines; apex cover not seen on screen; no pilot chutes |
@@ -47,5 +47,6 @@ The operator's order (2026-11-24): finish every batch first, then redo these.
 | Philae | At touchdown ("0") only the contact shadow shows, the lander is not visible; at -6 a speck |
 | Soyuz-11, Shenzhou-1, Voskhod-1, Apollo 8 (parked) | Two fix rounds did not change the -20/-6 s canopy frames or Apollo 8's riser-point frame; cause unknown (not the capsule/opening flag path). Next step: log the active shot kind and flags at those times. Parked to avoid a rabbit hole; ask the operator before a third round |
 | Gemini heat shield (parked) | Two rounds failed: the white cone stays upright under the tilted capsule; it is probably not `model.heatshield` (forcing that part's pose changed nothing; that edit is reverted). Next step: identify the mesh by name at runtime. Ask the operator before a third round |
+| Chandrayaan-2 | Loses contact at 2.1 km and hits at 175 m/s, but the last frame shows Vikram landed intact, firing; a crash needs an impact state (tumble/debris), like SLIM's tip |
 | Mars body map | Large blurry dark blotches from altitude come from the 2k body map, not the detail layer |
 | Beagle 2 | The lander does not swing under the chute (not scrub-pure); folded-panel struts not checked by eye |

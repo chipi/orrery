@@ -161,14 +161,14 @@ function footpad(g: THREE.Object3D, M: Record<string, Mat>, at: THREE.Vector3, r
 }
 
 /** A thin cable along a path, lying on the ground. */
-function cable(g: THREE.Object3D, m: Mat, pts: THREE.Vector3[], r: number): void {
+function cable(g: THREE.Object3D, m: Mat, pts: THREE.Vector3[], r: number, name = ''): void {
   add(
     g,
     new THREE.Mesh(
       new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts), pts.length * 8, r, 6),
       m,
     ),
-  );
+  ).name = name;
 }
 
 // ---------------------------------------------------------------------------------------------
@@ -806,6 +806,7 @@ export function buildInSight(): THREE.Group {
       V(-0.5, DY + 0.05, 0.6),
     ],
     0.018,
+    'seis-tether',
   );
 
   // HP3 deployed: the support structure on the ground, the mole and its science tether.
@@ -826,6 +827,7 @@ export function buildInSight(): THREE.Group {
     M.black,
     [V(1.4, 0.02, 1.3), V(1.1, 0.02, 1.1), V(0.9, 0.3, 0.85), V(0.55, DY + 0.1, 0.5)],
     0.018,
+    'hp3-tether',
   );
   return finish(g, INSIGHT_H);
 }

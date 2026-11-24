@@ -4509,6 +4509,7 @@
   <div
     class="scrubber"
     class:cinematic-hidden={inCinematicHeldBeat}
+    class:way-home-hidden={wayHome}
     class:launch-active={showLaunch || showCoast || showDescent}
     aria-label={m.fly_scrub_label()}
   >
@@ -5749,6 +5750,9 @@
   .recovery-line {
     color: #8ba2ba;
     font-size: 0.9rem;
+  }
+  .scrubber.way-home-hidden {
+    display: none;
   }
   .landed-btn {
     font-family: var(--font-mono, 'Space Mono', monospace);

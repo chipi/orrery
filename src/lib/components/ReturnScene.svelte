@@ -225,7 +225,6 @@
     pointer-events: none;
   }
   .return.hud-hidden .header,
-  .return.hud-hidden .clock,
   .return.hud-hidden .timeline {
     opacity: 0;
   }

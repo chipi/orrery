@@ -280,7 +280,14 @@ export function returnPose(t: number, p: ReturnProfile): ReturnPose {
   const u = clamp01((t - RT.pitchOver) / (RT.insertion - RT.pitchOver));
   const insAlt = p.insertion.altitudeFt * FT;
   const burnAlt = lerp(lift + alt0, insAlt, u ** 1.8);
-  const altM = t < RT.pitchOver ? alt0 + lift : t < RT.insertion ? burnAlt : insAlt;
+  // After insertion the LM's burns lift it toward the CSM's orbit (sourced mean of 62 x 56 n.mi).
+  const csmAlt = ((p.csmOrbitNmi[0] + p.csmOrbitNmi[1]) / 2) * 1852;
+  const altM =
+    t < RT.pitchOver
+      ? alt0 + lift
+      : t < RT.insertion
+        ? burnAlt
+        : lerp(insAlt, csmAlt, smooth((t - RT.insertion) / (RT.terminal - RT.insertion)));
   // Downrange: half the sourced end speed over the sourced burn (a linear speed ramp).
   const downrange = 0.5 * p.insertion.downrangeFts * FT * p.ascentBurnS;
   const thetaIns = downrange / MOON_R_M;
@@ -427,15 +434,18 @@ export function returnCamera(
   const drogue = rig.drogue.clone();
   switch (pose.shot) {
     case 'ground': {
-      // From the surface, fixed to the ground; follows the stage up.
+      // From the surface, fixed to the ground, rising and backing off with the stage so the
+      // descent stage left standing and the climbing stage share the frame.
       const dr = descentRel(pose);
-      const cam = dr.clone().add(V(16 * k, 2.4, 30 * k));
-      return { pos: cam, look: V(0, -0.8, 0), fov: 38 };
+      const up = pose.altM - rig.stageY0;
+      const cam = dr.clone().add(V((14 + 0.5 * up) * k, 2.4 + 0.45 * up, (24 + 1.25 * up) * k));
+      const look = V(0, 0, 0).lerp(dr.clone().add(V(0, 1.5, 0)), 0.5);
+      return { pos: cam, look, fov: 38 };
     }
     case 'chase': {
       const s = smooth((t - RT.pitchOver) / (RT.insertion - RT.pitchOver));
       return {
-        pos: V(lerp(-22, -70, s) * k, lerp(-8, 14, s), lerp(48, 120, s) * k),
+        pos: V(lerp(-14, -34, s) * k, lerp(-4, 8, s), lerp(30, 58, s) * k),
         look: V(0, 0, 0),
         fov: 38,
       };
@@ -447,26 +457,31 @@ export function returnCamera(
         .add(drogue)
         .multiplyScalar(0.5);
       const r = Math.hypot(...pose.csmRel);
-      const d = (1.5 * r + 24) * k;
-      return { pos: mid.clone().add(V(0.35 * d, -0.1 * d, 0.92 * d)), look: mid, fov: 24 };
+      // Wide enough for both craft, a little above them so the Moon's limb sits in the lower frame.
+      const d = (2.6 * r + 30) * k;
+      return { pos: mid.clone().add(V(0.35 * d, 0.09 * d, 0.93 * d)), look: mid, fov: 24 };
     }
     case 'dock_wide': {
       const mid = tip.clone().add(drogue).multiplyScalar(0.5);
       const s = smooth((t - RT.dockWide) / (RT.approach - RT.dockWide));
       const d = lerp(95, 62, s) * k;
-      return { pos: mid.clone().add(V(0.5 * d, -0.12 * d, 0.86 * d)), look: mid, fov: 26 };
+      return { pos: mid.clone().add(V(0.5 * d, 0.08 * d, 0.86 * d)), look: mid, fov: 26 };
     }
     case 'dock_approach': {
       const gap = tip.y - drogue.y;
-      const mid = drogue.clone().add(V(0, Math.min(gap, 14) * 0.5, 0));
-      const d = Math.max(8, 1.7 * Math.min(gap, 40) + 7) * k;
-      return { pos: mid.clone().add(V(0.55 * d, 0.12 * d, 0.83 * d)), look: mid, fov: 26 };
+      const g = Math.min(gap, 30);
+      const mid = drogue.clone().add(V(0, g * 0.5, 0));
+      const d = (2.4 * g + 9) * k;
+      return { pos: mid.clone().add(V(0.5 * d, 0.1 * d, 0.86 * d)), look: mid, fov: 26 };
     }
     case 'dock_close': {
+      // The probe tip against the drogue: from the side and above, so the LM roof is the backdrop;
+      // it starts wide enough for the tip's last 6 m and closes to a ~1.5 m window.
       const gap = Math.max(0, tip.y - drogue.y);
-      const look = drogue.clone().add(V(0, Math.min(gap, 4) * 0.5 + 0.08, 0));
-      const d = (1.75 + 0.5 * Math.min(gap, 6)) * (0.8 + 0.2 * k);
-      return { pos: look.clone().add(V(0.55 * d, 0.2 * d, 0.81 * d)), look, fov: 24 };
+      const g = Math.min(gap, 6);
+      const look = drogue.clone().add(V(0, g * 0.5 + 0.15, 0));
+      const d = (2.2 + 2.4 * g) * (0.8 + 0.2 * k);
+      return { pos: look.clone().add(V(0.5 * d, 0.24 * d, 0.84 * d)), look, fov: 30 };
     }
     case 'dock_pull': {
       const s = smooth((t - RT.pullBack) / (RT.jettison - RT.pullBack));
@@ -571,12 +586,13 @@ export function createFlyReturn(
   const moonMat = new THREE.MeshStandardMaterial({ color: 0x8e8c88, roughness: 1, metalness: 0 });
   let moonTex: THREE.Texture | null = null;
   if (opts.moonTextureUrl) {
-    moonTex = new THREE.TextureLoader().load(opts.moonTextureUrl, (t) => {
-      t.colorSpace = THREE.SRGBColorSpace;
-      moonMat.map = t;
+    const tex = new THREE.TextureLoader().load(opts.moonTextureUrl, () => {
       moonMat.color.set(0xffffff);
       moonMat.needsUpdate = true;
     });
+    tex.colorSpace = THREE.SRGBColorSpace;
+    moonMat.map = tex;
+    moonTex = tex;
   }
   const sphere = new THREE.Mesh(new THREE.SphereGeometry(MOON_R_M, 192, 96), moonMat);
   if (opts.site) {
@@ -592,10 +608,13 @@ export function createFlyReturn(
     sphere.quaternion.setFromUnitVectors(dir, new THREE.Vector3(0, 1, 0));
   }
   moon.add(sphere);
-  const CAP_REACH = 60_000 / MOON_R_M;
+  /** The local cap (ground detail) is used below this altitude, the whole sphere above it. */
+  const CAP_ALT_M = 26_000;
+  // 0.4 rad (700 km) reaches past the insertion point (367 km downrange) and its horizon.
+  const CAP_REACH = 0.4;
   const capMat = new THREE.MeshStandardMaterial({ color: 0x9a9792, roughness: 1, metalness: 0 });
   if (opts.groundTexture && opts.applyGround) opts.applyGround(capMat, opts.groundTexture, 1000);
-  const capGeo = new THREE.SphereGeometry(MOON_R_M, 96, 40, 0, Math.PI * 2, 0, CAP_REACH);
+  const capGeo = new THREE.SphereGeometry(MOON_R_M, 128, 72, 0, Math.PI * 2, 0, CAP_REACH);
   capGeo.translate(0, -MOON_R_M, 0);
   const cap = new THREE.Mesh(capGeo, capMat);
   cap.position.y = MOON_R_M;
@@ -676,15 +695,18 @@ export function createFlyReturn(
       const alt = pose.altM;
       moon.position.set(0, -(MOON_R_M + alt), 0);
       moon.rotation.z = pose.theta;
-      cap.visible = alt < 2500;
-      sphere.visible = alt >= 2500;
+      cap.visible = alt < CAP_ALT_M;
+      sphere.visible = alt >= CAP_ALT_M;
       lmRoot.position.copy(descentRel(pose));
       lmRoot.visible = alt < 8000;
       ascent.position.set(0, 0, 0);
       ascent.rotation.set(0, 0, pose.lmTilt);
       ascentFlame.visible = pose.lmEngine;
       const flick = 0.82 + 0.18 * Math.sin(t * 53);
-      ascentFlame.scale.set(1, flick, 1);
+      // The ascent engine fires over the descent stage: the flame is only as long as the clear
+      // height at first, then the full length.
+      const clear = Math.min(1, (alt - rig.stageY0 + 1.2) / 9);
+      ascentFlame.scale.set(1, flick * Math.max(0.12, clear), 1);
       lmPuffs.forEach((p, i) => {
         p.visible = pose.lmRcs > 0 && ((Math.floor(t / 0.2) + i) & 1) === 0;
         if (p.visible) lmQuads[i].getWorldPosition(p.position);

@@ -1216,7 +1216,7 @@ function buildApolloCsm(block2: boolean): THREE.Group {
   const smTop = CSM_SM_TOP;
   const shield = mat(0x6e4220, 0.3, 0.8);
   const cmWhite = mat(0xe2e2de, 0.25, 0.45);
-  const cmSkin = mat(0xc9ccd0, 0.8, 0.3);
+  const cmSkin = mat(0xd2d4d8, 0.4, 0.34);
   const sw = mat(0xe8e8e4, 0.2, 0.5);
   const radMat = mat(0xf2f2f0, 0.2, 0.45);
   const dishMat = mat(0xd8dade, 0.4, 0.4, true);

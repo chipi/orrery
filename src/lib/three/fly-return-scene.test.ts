@@ -166,8 +166,8 @@ describe('returnCamera', () => {
       const pose = returnPose(t, profile);
       const cam = returnCamera(t, 1.6, pose);
       expect(pose.shot).toBe('dock_close');
-      expect(cam.pos.distanceTo(DEFAULT_RIG.drogue)).toBeLessThan(8);
-      expect(cam.fov).toBeLessThanOrEqual(26);
+      expect(cam.pos.distanceTo(DEFAULT_RIG.drogue)).toBeLessThan(t >= RT.contact ? 5 : 12);
+      expect(cam.fov).toBeLessThanOrEqual(30);
     }
   });
   it('backs off on a phone-shaped frame', () => {

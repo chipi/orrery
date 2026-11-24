@@ -212,14 +212,20 @@ test.describe('surface object index', () => {
     await page.waitForSelector('html[data-hydrated]', { state: 'attached', timeout: 45_000 });
     const panel = page.locator('aside.panel');
     await expect(panel).toBeVisible({ timeout: 45_000 });
-    const handle = page.locator('.surface-index-handle');
-    await expect(handle).toHaveCount(1);
-    const covered = await handle.evaluate((el) => {
-      const r = el.getBoundingClientRect();
-      const hit = document.elementFromPoint(r.left + r.width / 2, r.top + r.height / 2);
-      return !!hit && !el.contains(hit) && !!hit.closest('aside.panel');
-    });
-    expect(covered, 'the panel text is on top, the handle does not cover it').toBe(true);
+    // Since the 0.9.11 mobile round the handle is removed in the close-up modes (drawerHidden:
+    // a site's detail card is one), so once the camera has flown in it may be gone; while it is
+    // there, the panel must be on top of it.
+    const handleOnTop = () =>
+      page.evaluate(() => {
+        const el = document.querySelector('.surface-index-handle');
+        if (!el) return false;
+        const r = el.getBoundingClientRect();
+        const hit = document.elementFromPoint(r.left + r.width / 2, r.top + r.height / 2);
+        return !(!!hit && !el.contains(hit) && !!hit.closest('aside.panel'));
+      });
+    expect(await handleOnTop(), 'the panel text is on top, the handle does not cover it').toBe(
+      false,
+    );
   });
 
   test('landscape phone: the Index pullout tab shows the list', async ({ page }, testInfo) => {

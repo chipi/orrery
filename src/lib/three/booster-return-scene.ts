@@ -265,7 +265,7 @@ const SKY_DAY = {
 const SKY_VOID = new THREE.Color(0x01030a);
 
 const DOME_W = 24;
-const DOME_H = 12;
+const DOME_H = 64;
 
 export function createBoosterReturn(
   landing: BoosterReturnLanding,
@@ -346,10 +346,12 @@ export function createBoosterReturn(
       .copy(SKY_DAY.zenith)
       .lerp(SKY_VOID, smooth(k * 1.4))
       .multiplyScalar(bright);
+    // High up the blue thins to a band on the horizon (the limb) with black above it.
+    const band = 1.6 + 40 * k * k;
     const pos = domeGeo.attributes.position;
     for (let i = 0; i < pos.count; i++) {
       const y = pos.getY(i) / (HORIZON_M * 1.1);
-      c.copy(skyH).lerp(skyAlt, clamp01(y * 1.6));
+      c.copy(skyH).lerp(skyAlt, clamp01(y * band));
       colors.set([c.r, c.g, c.b], i * 3);
     }
     domeGeo.attributes.color.needsUpdate = true;

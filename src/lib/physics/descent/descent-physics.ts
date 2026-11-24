@@ -120,6 +120,8 @@ export type DescentEventType =
   | 'terrain_nav' // terrain-relative navigation starts (Perseverance)
   | 'hover' // the lander holds its altitude to pick a site (Tianwen-1)
   | 'arrays_open' // the solar arrays open after landing (Phoenix, InSight)
+  | 'eject' // the hatch blows and the cosmonaut ejects in the seat (Vostok)
+  | 'seat_sep' // the seat falls away; the cosmonaut descends on a personal parachute (Vostok)
   | 'touchdown';
 
 /**

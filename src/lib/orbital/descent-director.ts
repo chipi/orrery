@@ -58,6 +58,9 @@ const BEAT_SHOT: Record<string, DescentShotKind> = {
   // Apollo's gates: the pitchover read from the side, the final descent pushed in on.
   high_gate: 'orbit',
   low_gate: 'pushIn',
+  // Vostok: the hatch blows, the seat goes out, then the cosmonaut parts from it.
+  eject: 'orbit',
+  seat_sep: 'close',
 };
 const FILL: DescentShotKind[] = ['wide', 'orbit', 'under', 'over', 'pushIn', 'pullOut', 'close'];
 /** The lit side: azimuths near this keep the sun behind the camera. */

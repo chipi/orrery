@@ -61,6 +61,8 @@ export const EDL_BEAT_LABEL: Record<DescentEventType, string> = {
   terrain_nav: 'TERRAIN NAV',
   hover: 'HOVER',
   arrays_open: 'ARRAYS OPEN',
+  eject: 'EJECT',
+  seat_sep: 'SEAT SEP',
   touchdown: 'TOUCHDOWN',
 };
 
@@ -95,6 +97,8 @@ const TIMELINE_BEATS: DescentEventType[] = [
   'at_rest',
   'petals_open',
   'arrays_open',
+  'eject',
+  'seat_sep',
   'record_ends',
 ];
 

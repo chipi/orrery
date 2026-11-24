@@ -521,6 +521,22 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
   const REPO_S = 8;
   const REPO_RAD = Math.PI / 2 - (35 * Math.PI) / 180; // from vertical to 35 deg off horizontal
   const landerHome = model.lander.position.clone();
+  // Vostok: the entry hatch blows off and the cosmonaut leaves in the seat; later the seat drops
+  // away and the cosmonaut hangs from a personal parachute while the empty capsule goes on.
+  const ejectT = metOf('eject');
+  const seatSepT = metOf('seat_sep');
+  const ejHatch = model.lander.getObjectByName('entry-hatch');
+  const ejSeatG = model.lander.getObjectByName('cosmonaut-seat');
+  const ejSeat = ejSeatG?.getObjectByName('seat');
+  const ejMan = ejSeatG?.getObjectByName('cosmonaut');
+  const ejChute = ejSeatG?.getObjectByName('personal-chute');
+  const ejHatchHome = ejHatch?.position.clone();
+  const ejHatchQ = ejHatch?.quaternion.clone();
+  const ejSeatHome = ejSeatG?.position.clone();
+  const EJECT_OUT_M = 9; // drawn, in capsule metres: the seat clears the sphere
+  const EJECT_S = 2.5;
+  const SEAT_FALL = 1.2; // drawn: the seat drops away (m/s^2 in the capsule frame)
+  const CHUTE_OPEN_S = 2;
   // Starship (Flight 5): belly-first through entry, then the landing flip to tail-down as the
   // landing burn lights, over LANDING_FLIP_S.
   const landingFlipT = metOf('landing_flip');
@@ -898,6 +914,32 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
           );
         }
       }
+    }
+    if (ejHatch && ejSeatG && ejSeat && ejMan && ejChute && ejHatchHome && ejHatchQ && ejSeatHome) {
+      const dir = ejSeatG.userData.dir as THREE.Vector3;
+      const e = ejectT == null ? 0 : s.t - ejectT;
+      const out = smooth01(e / EJECT_S);
+      // The hatch goes first, tumbling off along its axis and falling behind.
+      ejHatch.visible = e < EJECT_S * 4;
+      ejHatch.position.copy(ejHatchHome).addScaledVector(dir, out * EJECT_OUT_M * 0.6);
+      ejHatch.position.y -= Math.max(0, e) * Math.max(0, e) * 0.25;
+      ejHatch.quaternion
+        .copy(ejHatchQ)
+        .multiply(new THREE.Quaternion().setFromEuler(new THREE.Euler(out * 5, 0, out * 3)));
+      ejSeatG.visible = e > 0;
+      ejSeatG.position.copy(ejSeatHome).addScaledVector(dir, out * EJECT_OUT_M);
+      const sp = seatSepT == null ? 0 : s.t - seatSepT;
+      ejSeat.visible = sp < 6;
+      ejSeat.position.set(0, sp > 0 ? -sp * sp * SEAT_FALL * 0.5 : 0, sp > 0 ? 0 : 0);
+      ejMan.position.set(
+        sp > 0 ? Math.min(sp, 6) * 0.35 : 0,
+        sp > 0 ? Math.min(sp, 6) * 0.25 : 0,
+        0,
+      );
+      const open = sp > 0 ? smooth01(sp / CHUTE_OPEN_S) : 0;
+      ejChute.visible = open > 0;
+      ejChute.scale.setScalar(0.2 + 0.8 * open);
+      ejChute.rotation.z = Math.sin(frame * 0.05) * 0.1;
     }
     if (landingFlipT != null) {
       // Laid across the frame (about z), tiled belly (-X) down; the plasma stays world-aligned

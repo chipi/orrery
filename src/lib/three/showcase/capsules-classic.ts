@@ -393,11 +393,67 @@ function buildVostok(voskhod: boolean): THREE.Group {
     add(sg, s);
   }
   // Entry hatch (large), technological hatch, the two portholes.
-  const hatch = onSphere(sg, R + 0.03, 1.72, 0.1);
+  const HATCH_THETA = 1.72;
+  const HATCH_YAW = 0.1;
+  const hatch = onSphere(sg, R + 0.03, HATCH_THETA, HATCH_YAW);
+  hatch.name = 'entry-hatch';
+  const hatchDir = new THREE.Vector3(
+    Math.sin(HATCH_THETA) * Math.sin(HATCH_YAW),
+    Math.cos(HATCH_THETA),
+    Math.sin(HATCH_THETA) * Math.cos(HATCH_YAW),
+  );
+  hatch.userData.dir = hatchDir;
   hatchCap(hatch, M.polish, 0.4, 0.05);
   const hr = new THREE.Mesh(new THREE.TorusGeometry(0.42, 0.035, 8, 40), M.silver);
   hr.rotation.x = Math.PI / 2;
   add(hatch, hr);
+
+  // The ejection seat with the cosmonaut (drawn: the figures are not sourced): inside the sphere
+  // until the hatch blows, then out along the hatch's axis. 'cosmonaut' (suit, helmet and the
+  // personal parachute, closed until the cosmonaut leaves the seat) parts from 'seat'.
+  const seatG = grp(dm, 'cosmonaut-seat');
+  seatG.position.set(0, C, 0).addScaledVector(hatchDir, 0.35);
+  seatG.userData.dir = hatchDir;
+  const seat = grp(seatG, 'seat');
+  box(seat, M.dark, 0.5, 0.05, 0.5, 0, -0.05, 0);
+  box(seat, M.dark, 0.5, 0.65, 0.05, 0, 0.28, -0.27);
+  box(seat, M.silver, 0.06, 0.06, 0.5, 0.2, 0.0, 0);
+  const man = grp(seatG, 'cosmonaut');
+  const suit = mat(0xe8590c, 0.55, 0.6);
+  const helmet = mat(0xf2f2f0, 0.4, 0.3);
+  const torso = new THREE.Mesh(new THREE.CapsuleGeometry(0.17, 0.34, 6, 12), suit);
+  torso.position.set(0, 0.35, 0);
+  add(man, torso);
+  const legs = new THREE.Mesh(new THREE.CapsuleGeometry(0.1, 0.34, 6, 10), suit);
+  legs.rotation.x = Math.PI / 2;
+  legs.position.set(0, 0.1, 0.25);
+  add(man, legs);
+  add(man, new THREE.Mesh(new THREE.SphereGeometry(0.14, 16, 12), helmet)).position.set(0, 0.82, 0);
+  const pc = grp(man, 'personal-chute');
+  pc.position.y = 0.55;
+  const canopyR = 1.1; // drawn
+  const canopy = new THREE.Mesh(
+    new THREE.SphereGeometry(canopyR, 28, 12, 0, TAU, 0, Math.PI / 2),
+    new THREE.MeshStandardMaterial({
+      color: 0xf0ece0,
+      roughness: 0.8,
+      side: THREE.DoubleSide,
+    }),
+  );
+  canopy.position.y = 2.2;
+  add(pc, canopy);
+  const lineMat = new THREE.LineBasicMaterial({ color: 0xcccccc });
+  for (let i = 0; i < 10; i++) {
+    const a = (i / 10) * TAU;
+    const geo = new THREE.BufferGeometry().setFromPoints([
+      new THREE.Vector3(0, 0, 0),
+      new THREE.Vector3(canopyR * Math.sin(a), 2.2, canopyR * Math.cos(a)),
+    ]);
+    add(pc, new THREE.Line(geo, lineMat));
+  }
+  pc.visible = false;
+  pc.scale.setScalar(0.01); // folded: inside the sphere's bounds until the scene opens it
+  seatG.visible = false;
   const th = onSphere(sg, R + 0.03, 2.05, 3.3);
   hatchCap(th, M.polish, 0.2, 0.04);
   port(onSphere(sg, R + 0.03, 1.45, -1.25), M, 0.13);

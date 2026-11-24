@@ -363,7 +363,12 @@ export function detailedReturnCapsule(capsuleId: string, old: THREE.Group): THRE
   craft.add(dm.clone());
   craft.children[0].applyMatrix4(dm.parent!.matrixWorld);
   const ref = new THREE.Box3().setFromObject(old);
+  // Vostok's ejection seat and its personal chute stand outside the sphere's size: not fitted.
+  const seat = craft.getObjectByName('cosmonaut-seat');
+  const seatParent = seat?.parent;
+  seat?.removeFromParent();
   const own = new THREE.Box3().setFromObject(craft);
+  if (seat && seatParent) seatParent.add(seat);
   const k = (ref.max.y - ref.min.y) / (own.max.y - own.min.y);
   craft.scale.setScalar(k);
   craft.position.y = ref.min.y - own.min.y * k;

@@ -55,6 +55,8 @@ const HUD_LABEL: Record<string, () => string> = {
   'TERRAIN NAV': m.hud_terrain_nav,
   HOVER: m.hud_hover,
   'ARRAYS OPEN': m.hud_arrays_open,
+  EJECT: m.hud_eject,
+  'SEAT SEP': m.hud_seat_sep,
   SAMPLE: m.hud_sample,
   'CHUTE SEP': m.hud_chute_sep,
   'SIGNAL LOST': m.hud_signal_lost,

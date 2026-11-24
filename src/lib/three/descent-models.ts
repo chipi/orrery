@@ -1534,7 +1534,7 @@ function buildEarthCapsuleStack(lander: THREE.Group, vehLen: number): DescentMod
   const botY = new THREE.Box3().setFromObject(lander).min.y;
   // Soyuz drops its heat shield under the main (the profile's heatshield_sep): a shield disc
   // drawn to the descent module's width, for the jettison to show.
-  if (capsuleId === 'soyuz') {
+  if (capsuleId === 'soyuz' || capsuleId === 'shenzhou') {
     m.heatshield = sphereConeHeatshield(landerWidth(lander) * 0.46, p.shield, p.metal);
     m.heatshieldBaseY = botY;
     m.heatshield.position.y = botY;

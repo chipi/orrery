@@ -19,7 +19,7 @@
  *   the gold PanCam bar on its mast, the drill box on the front.
  * - LRV: the open aluminium frame, wire-mesh wheels with titanium chevrons under tan fenders, two
  *   tube seats, the T-handle in front of the black console, the umbrella dish, the camera and the
- *   whip on the front, the tool pallet at the back.
+ *   whip on the front, the tool pallet at the back; the TV camera is the named anchor 'tv-camera'.
  */
 import * as THREE from 'three';
 import type { ShowcaseModel, ShowcaseRef } from './types';
@@ -1234,6 +1234,9 @@ function buildLrv(): THREE.Group {
   // LCRU's own small antenna on its lid.
   strut(g, M.alu, V(0.15, railY + 0.24, 1.2), V(0.15, railY + 0.5, 1.2), 0.005, 6);
   const cam = new THREE.Group();
+  // The TV camera of the ground-commanded television assembly (GCTA) that filmed the Apollo 15-17
+  // liftoffs: the group origin is its pan/tilt pivot, the lens looks along +z.
+  cam.name = 'tv-camera';
   cam.position.set(-0.22, railY + 0.5, 1.4);
   add(g, cam);
   strut(g, M.alu, V(-0.22, railY, 1.4), V(-0.22, railY + 0.44, 1.4), T, 8);

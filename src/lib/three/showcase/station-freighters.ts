@@ -15,6 +15,7 @@ import * as THREE from 'three';
 import { mergeGeometries } from 'three/examples/jsm/utils/BufferGeometryUtils.js';
 import type { ShowcaseModel, ShowcaseRef } from './types';
 import { add, box, crinkle, dish, lathe, mat, strut, type Mat } from './kit';
+import { buildSimBay, type SimBayOptions } from './apollo-sim-bay';
 
 type Mats = Record<string, Mat>;
 const TAU = Math.PI * 2;
@@ -1193,6 +1194,10 @@ const CSM_SM_BOT = CSM_SM_TOP - 4.52;
 const CSM_SECTORS = [50, 70, 60, 50, 70, 60].map((d) => (d * Math.PI) / 180);
 export const CSM_HEIGHT = 11.0;
 
+export interface ApolloCsmOptions extends SimBayOptions {
+  simBay?: boolean;
+}
+
 /**
  * Apollo CSM: the service module in white with six sectors between their radial beams, the two
  * radiators, the four RCS quads (four thrusters each), the umbilical fairing, the VHF scimitars
@@ -1207,8 +1212,13 @@ export const CSM_HEIGHT = 11.0;
  * 'rcs-quad-0..3' each with nozzles 'rcs-<q>-0..3', 'umbilical-fairing', 'scimitar-0/1',
  * 'high-gain-antenna' with 'hga-dish-0..3'); 'sps-engine' with the 'engine-exit' anchor at the exit
  * plane. Nozzle and 'engine-exit' groups have local +y along the exhaust.
+ *
+ * `{ simBay: true }` (the J-mission service module of Apollo 15-17) opens sector 1 as the SIM bay:
+ * 'sm-sector-1' holds the 'sim-bay' group (apollo-sim-bay.ts) instead of a skin panel, and the
+ * umbilical fairing moves round to sector 2 (an estimate: it must clear the bay).
  */
-function buildApolloCsm(block2: boolean): THREE.Group {
+export function buildApolloCsm(block2: boolean, opts: ApolloCsmOptions = {}): THREE.Group {
+  const simBay = !!opts.simBay;
   const g = new THREE.Group();
   const M = mats();
   const R = CSM_R;
@@ -1276,6 +1286,18 @@ function buildApolloCsm(block2: boolean): THREE.Group {
     const a1 = edges[i + 1];
     const sec = grp(sm, `sm-sector-${i + 1}`);
     sec.userData.arc = [a0, a1];
+    if (simBay && i === 0) {
+      beamGeos.push(
+        boxGeo(0.11, smTop - skinLo, 0.05, pol(R + 0.02, a0, (smTop + skinLo) / 2), a0),
+      );
+      sec.add(
+        buildSimBay(
+          { R, yLo: skinLo, yHi: smTop - 0.05, halfArc: (a1 - a0) / 2 - 0.02 },
+          { mission: opts.mission, subsatellite: opts.subsatellite },
+        ),
+      );
+      continue;
+    }
     sector(sec, sw, R, R, skinLo, smTop, a0 + 0.02, a1 - 0.02, 8);
     const mid = (a0 + a1) / 2;
     const w = ((a1 - a0) / 2) * 0.7;
@@ -1323,6 +1345,9 @@ function buildApolloCsm(block2: boolean): THREE.Group {
 
   // umbilical fairing under the CM, down the +z side
   const fa = grp(sm, 'umbilical-fairing');
+  // the J-mission bay takes sector 1 down to the CM: the fairing moves to sector 2, clear of the
+  // RCS quad at 45 deg (estimate)
+  if (simBay) fa.rotation.y = (66 * Math.PI) / 180;
   box(fa, sw, 0.7, 2.4, 0.22, 0, smTop - 1.3, R + 0.08);
   box(fa, M.aluDark, 0.5, 0.05, 0.12, 0, smTop - 0.08, R + 0.19);
   box(fa, M.rib, 0.5, 0.03, 0.02, 0, smTop - 1.0, R + 0.2);

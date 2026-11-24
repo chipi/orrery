@@ -21,7 +21,71 @@ const DESC_TOP = 3.15;
 const PAD_R = 4.52; // footpad centre: 9.4 m across the diagonal pads, less the pad radius
 const ASC_BASE = 3.3;
 
-function buildDescentStage(g: THREE.Group, M: Record<string, Mat>): void {
+export interface ApolloLmOptions {
+  /**
+   * The J-mission LM (Apollo 15-17, LM-10 to LM-12): the descent engine bell 10 in (0.25 m)
+   * longer, and quadrant 1 an open bay for the folded Lunar Roving Vehicle. Enlarged descent
+   * tanks and the waste tank are inside the stage and not drawn.
+   */
+  extended?: boolean;
+  /** The LRV still folded in its bay (default true); false: the bay empty, the rover driven off. */
+  lrvStowed?: boolean;
+}
+
+const BELL_EXTENSION = 0.25; // Wikipedia "Apollo Lunar Module": a 10 in (250 mm) extension to the engine bell
+
+/**
+ * Quadrant 1 on the J-mission LM: the diagonal bay at the front right (+x, +z), its foil panel
+ * gone, the thermal door hanging open and (stowed) the folded rover in the bay. Which diagonal is
+ * quadrant 1 on the drawn LM is an estimate (MESA is on the opposite, front-left one).
+ */
+function buildLrvBay(g: THREE.Group, M: Record<string, Mat>, stowed: boolean): void {
+  const bay = new THREE.Group();
+  bay.name = 'lrv-bay';
+  const a = Math.PI / 4;
+  const rad = DESC_HALF * 0.5 * Math.SQRT2 + DESC_CHAMFER * 0.5 * Math.SQRT2; // face centre radius
+  bay.position.set(Math.sin(a) * rad, 0, Math.cos(a) * rad);
+  bay.rotation.y = a;
+  const w = Math.hypot(DESC_HALF - DESC_CHAMFER, DESC_HALF - DESC_CHAMFER) * 1.0; // face width
+  const y0 = DESC_BOT + 0.2;
+  const h = DESC_TOP - y0;
+  const yc = y0 + h / 2;
+  box(bay, M.black, w * 0.97, h, 0.03, 0, yc, 0.01);
+  for (const s of [-1, 1]) box(bay, M.anod, 0.05, h, 0.06, s * w * 0.49, yc, 0.03);
+  box(bay, M.anod, w, 0.05, 0.06, 0, y0, 0.03);
+  box(bay, M.anod, w, 0.05, 0.06, 0, DESC_TOP, 0.03);
+  // the thermal door, hinged at the bottom of the bay and hanging open
+  const door = foilSheet(M.gold, w * 0.97, h, 0.03);
+  const hinge = new THREE.Group();
+  hinge.position.set(0, y0, 0.04);
+  hinge.rotation.x = 1.25;
+  door.position.y = h / 2;
+  door.rotation.y = Math.PI;
+  hinge.add(door);
+  bay.add(hinge);
+  if (stowed) {
+    const rover = new THREE.Group();
+    rover.name = 'lrv-folded';
+    box(rover, M.anod, w * 0.85, h * 0.9, 0.06, 0, yc, 0.12);
+    for (const s of [-1, 1])
+      for (const t of [-1, 1]) {
+        const wheel = new THREE.Mesh(
+          new THREE.CylinderGeometry(0.4, 0.4, 0.1, 24, 1, false),
+          M.pad,
+        );
+        wheel.rotation.x = Math.PI / 2;
+        wheel.position.set(s * 0.3, yc + t * 0.36, t > 0 ? 0.24 : 0.3);
+        rover.add(wheel);
+      }
+    box(rover, M.gold, w * 0.5, 0.18, 0.16, 0, yc - 0.1, 0.2);
+    for (let k = -2; k <= 2; k++) box(rover, M.silver, 0.03, h * 0.8, 0.03, k * 0.2, yc, 0.17);
+    bay.add(rover);
+  }
+  g.add(bay);
+}
+
+function buildDescentStage(g: THREE.Group, M: Record<string, Mat>, opts: ApolloLmOptions): void {
+  const ext = opts.extended ? BELL_EXTENSION : 0;
   const oct: [number, number][] = [
     [DESC_CHAMFER, DESC_HALF],
     [DESC_HALF, DESC_CHAMFER],
@@ -53,10 +117,12 @@ function buildDescentStage(g: THREE.Group, M: Record<string, Mat>): void {
     const axisFace = i % 2 === 0 ? false : true;
     // Axis faces (where the legs are) in gold, the chamfered bays in the deeper amber, as the
     // flown stages were: two foils, crinkled, a black band of the base heat shield under them.
-    const sheet = foilSheet(axisFace ? M.amber : M.gold, w, h - 0.2, 0.035);
-    sheet.position.set(mx * 1.004, DESC_BOT + 0.2 + (h - 0.2) / 2, mz * 1.004);
-    sheet.rotation.y = yaw;
-    add(g, sheet);
+    if (!(opts.extended && i === 0)) {
+      const sheet = foilSheet(axisFace ? M.amber : M.gold, w, h - 0.2, 0.035);
+      sheet.position.set(mx * 1.004, DESC_BOT + 0.2 + (h - 0.2) / 2, mz * 1.004);
+      sheet.rotation.y = yaw;
+      add(g, sheet);
+    }
     const band = foilSheet(M.black, w, 0.2, 0.01);
     band.position.set(mx * 1.004, DESC_BOT + 0.1, mz * 1.004);
     band.rotation.y = yaw;
@@ -74,6 +140,7 @@ function buildDescentStage(g: THREE.Group, M: Record<string, Mat>): void {
 
   // Descent engine: the bell hangs below the stage, its skirt wrapped in foil.
   lathe(g, M.bell, [
+    ...(ext ? ([[0.8, DESC_BOT - 0.62 - ext]] as [number, number][]) : []),
     [0.76, DESC_BOT - 0.62],
     [0.7, DESC_BOT - 0.35],
     [0.55, DESC_BOT - 0.05],
@@ -84,7 +151,9 @@ function buildDescentStage(g: THREE.Group, M: Record<string, Mat>): void {
     [0.53, DESC_BOT - 0.05],
     [0.68, DESC_BOT - 0.35],
     [0.74, DESC_BOT - 0.62],
+    ...(ext ? ([[0.78, DESC_BOT - 0.62 - ext]] as [number, number][]) : []),
   ]);
+  if (opts.extended) buildLrvBay(g, M, opts.lrvStowed !== false);
   add(
     g,
     new THREE.Mesh(
@@ -434,8 +503,12 @@ function buildAscentStage(g: THREE.Group, M: Record<string, Mat>): void {
   add(a, engineExit);
 }
 
-/** The landed Apollo LM in metres: footpads on y = 0, ladder (and the front) toward +z. */
-export function buildApolloLunarModule(): THREE.Group {
+/**
+ * The landed Apollo LM in metres: footpads on y = 0, ladder (and the front) toward +z. Named:
+ * 'descent-stage', 'ascent-stage', 'docking-drogue', 'ascent-engine-exit', 'lm-rcs-quad-0..3'; the J-mission
+ * variant (`{ extended: true }`) keeps them all and adds 'lrv-bay' (with 'lrv-folded' while stowed).
+ */
+export function buildApolloLunarModule(opts: ApolloLmOptions = {}): THREE.Group {
   const M: Record<string, Mat> = {
     gold: mat(0xd6a53c, 0.55, 0.38, true),
     amber: mat(0xb0702a, 0.5, 0.45, true),
@@ -457,7 +530,7 @@ export function buildApolloLunarModule(): THREE.Group {
   const ds = new THREE.Group();
   ds.name = 'descent-stage';
   g.add(ds);
-  buildDescentStage(ds, M);
+  buildDescentStage(ds, M, opts);
   buildAscentStage(g, M);
   // Stand at the sourced 7.04 m overall height.
   const box3 = new THREE.Box3().setFromObject(g);
@@ -467,7 +540,8 @@ export function buildApolloLunarModule(): THREE.Group {
   out.add(g);
   // For a descent: the descent engine's exit plane (the plume starts there) and the top of the
   // docking tunnel (the CSM docks there), in the model's metres.
-  out.userData.engineExitY = (DESC_BOT - 0.62) * g.scale.y + g.position.y;
+  out.userData.engineExitY =
+    (DESC_BOT - 0.62 - (opts.extended ? BELL_EXTENSION : 0)) * g.scale.y + g.position.y;
   out.userData.dockY = (ASC_BASE + 2.82) * g.scale.y + g.position.y;
   return out;
 }

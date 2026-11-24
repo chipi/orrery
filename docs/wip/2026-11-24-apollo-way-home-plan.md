@@ -22,6 +22,13 @@ that survey and unverified. Nothing built yet.
 - Mission JSON has `ascent`, `tei`, `earth_return` events (MET days); no docking event; splashdown only
   in text.
 
+## Flow agreed with the operator (2026-11-24)
+Landing at `descent_start` (bug fix) → "Continue" button → the animated LM ascent and docking scene
+(with close-ups of the probe entering the drogue) → back to the normal /fly cruise view from TEI,
+flying the return arc all the way to Earth → at the Earth return a second descent: re-entry and
+splashdown under three mains, as Apollo 8 already does. Apollo 11 first, fine-tuned; then 12, 14–17.
+The CSM is rebuilt to Crew Dragon's level of detail for the close-ups; the LM stages get names.
+
 ## Design: one new act, `return` ("Way home"), four phases
 1. **R1 LM ascent:** scripted (not integrated) rise, pitch-over, orbit insertion; the descent stage
    stays on the surface.

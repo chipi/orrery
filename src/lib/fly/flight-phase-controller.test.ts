@@ -129,6 +129,13 @@ describe('reduceFlyAct — transition table', () => {
     ).toBe('cruise');
   });
 
+  it('returnComplete ends the way home: descent → cruise, and nothing else moves', () => {
+    const i = inputs({ descentBody: 'moon', descentAvailable: true });
+    expect(reduceFlyAct('descent', i, { type: 'returnComplete' })).toBe('cruise');
+    expect(reduceFlyAct('cruise', i, { type: 'returnComplete' })).toBe('cruise');
+    expect(reduceFlyAct('ascent', i, { type: 'returnComplete' })).toBe('ascent');
+  });
+
   it('is pure — same (act, inputs, event) always yields the same act', () => {
     const a = reduceFlyAct('ascent', inputs({ earthCoast: true }), { type: 'launchComplete' });
     const b = reduceFlyAct('ascent', inputs({ earthCoast: true }), { type: 'launchComplete' });

@@ -209,6 +209,7 @@ export function applyGroundDetail(
   mat: THREE.MeshStandardMaterial,
   body: GroundBody,
   tex: THREE.Texture,
+  unitsPerKm = 1,
 ): void {
   const look = LOOK[body];
   mat.onBeforeCompile = (sh) => {
@@ -233,7 +234,7 @@ uniform vec3 uPatch;
 uniform float uRelief;
 uniform float uRipples;
 uniform float uWater;
-const float PER[4] = float[4](${PERIODS.map((p) => (p * (look.periodScale ?? 1)).toFixed(4)).join(', ')});`,
+const float PER[4] = float[4](${PERIODS.map((p) => (p * (look.periodScale ?? 1) * unitsPerKm).toFixed(4)).join(', ')});`,
       )
       .replace(
         '#include <map_fragment>',
@@ -270,7 +271,7 @@ const float PER[4] = float[4](${PERIODS.map((p) => (p * (look.periodScale ?? 1))
 }`,
       );
   };
-  mat.customProgramCacheKey = () => `ground-${body}`;
+  mat.customProgramCacheKey = () => `ground-${body}-${unitsPerKm}`;
 }
 
 /** Rocks scattered round the touchdown point: one instanced draw call. */

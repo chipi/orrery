@@ -181,6 +181,8 @@
   import ScienceChip from '$lib/components/ScienceChip.svelte';
   import LaunchScene from '$lib/components/LaunchScene.svelte';
   import DescentScene from '$lib/components/DescentScene.svelte';
+  import ReturnScene from '$lib/components/ReturnScene.svelte';
+  import { hasReturnProfile, loadReturnProfile, type ReturnProfile } from '$lib/fly/return-profile';
   import CoastScene from '$lib/components/CoastScene.svelte';
   import { getEarthOrbitCoast } from '$lib/orbital/earth-orbit-registry';
   import { preloadFlyCraft } from '$lib/three/fly-craft';
@@ -568,6 +570,47 @@
       })
       .catch(dataLoadFailed);
   });
+  // The way home (Apollo 11 first): a Moon landing's second half. A mission with a return profile
+  // offers "Continue: the way home" at touchdown; the scene plays inside the descent act (no new
+  // act: every full-frame gate on showDescent already applies), then the cruise resumes at TEI.
+  let returnProfile = $state<ReturnProfile | null>(null);
+  let wayHome = $state(false);
+  /** The way home has resumed the cruise past the landing: the landing must not trigger again. */
+  let wayHomeDone = $state(false);
+  $effect(() => {
+    const id = mission.id;
+    if (!hasReturnProfile(id) || descentProfile?.body !== 'moon') {
+      returnProfile = null;
+      return;
+    }
+    void loadReturnProfile(id, fetch, base)
+      .then((p) => {
+        if (mission.id === id) returnProfile = p;
+      })
+      .catch(dataLoadFailed);
+  });
+  $effect(() => {
+    if (flyAct !== 'descent') wayHome = false;
+  });
+  $effect(() => {
+    // A mission swap forgets the previous mission's way home.
+    void mission.id;
+    wayHomeDone = false;
+  });
+  function startWayHome() {
+    if (!returnProfile) return;
+    wayHome = true;
+  }
+  function endWayHome() {
+    if (!returnProfile) return;
+    wayHome = false;
+    wayHomeDone = true;
+    // Resume the cruise at TEI: the return arc plays on to Earth, and the landing is behind us.
+    simDay = arcTimeline.dep_day + returnProfile.teiMetDays;
+    camSnapUntil = performance.now() + 300;
+    dispatchPhase({ type: 'returnComplete' });
+    isPlaying = true;
+  }
   function edlSystemLabel(p: DescentProfile): string {
     const kinds = new Set<EDLPhaseKind>(p.phases.map((x) => x.kind));
     if (kinds.has('touch_and_go_contact')) return m.edl_touch_and_go();
@@ -646,6 +689,12 @@
   // (mirrors ?launch=1). Deterministic entry for browser/e2e checks + a direct
   // "watch the landing" link.
   const wantDescentDeep = launchDeepParams?.get('descent') === '1';
+  const wantWayHomeDeep = launchDeepParams?.get('wayhome') === '1';
+  $effect(() => {
+    if (wantWayHomeDeep && returnProfile != null && showDescent && !wayHome && !wayHomeDone) {
+      wayHome = true;
+    }
+  });
   let descentAutoStarted = false;
   $effect(() => {
     if (
@@ -2988,6 +3037,11 @@
       get landingDay() {
         return landingDay(mission, arcTimeline, descentProfile?.body);
       },
+      get landingConsumed() {
+        return (
+          wayHomeDone && simDay > landingDay(mission, arcTimeline, descentProfile?.body) + 1e-6
+        );
+      },
       get descentSpeed() {
         return descentSpeed;
       },
@@ -3418,8 +3472,26 @@
   </div>
 {/if}
 
-{#if showDescent && descentProfile && descentDossier}
+{#snippet landedActions()}
+  <button class="landed-btn primary" data-testid="way-home-continue" onclick={startWayHome}
+    >{m.fly_return_continue()} →</button
+  >
+  <button class="landed-btn" data-testid="way-home-surface" onclick={handleTouchdown}
+    >{m.fly_return_surface()}</button
+  >
+{/snippet}
+
+{#if showDescent && wayHome && returnProfile}
+  <ReturnScene
+    profile={returnProfile}
+    missionName={mission.name}
+    site={descentProfile?.landingSite}
+    {hudHidden}
+    onComplete={endWayHome}
+  />
+{:else if showDescent && descentProfile && descentDossier}
   <DescentScene
+    landedActions={returnProfile ? landedActions : undefined}
     profile={descentProfile}
     mission={descentDossier}
     precomputedSummary={descentSummaryFly ?? undefined}
@@ -5677,6 +5749,25 @@
   .recovery-line {
     color: #8ba2ba;
     font-size: 0.9rem;
+  }
+  .landed-btn {
+    font-family: var(--font-mono, 'Space Mono', monospace);
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: #f0d8bf;
+    background: rgba(10, 20, 34, 0.88);
+    border: 1px solid rgba(216, 168, 130, 0.5);
+    border-radius: 5px;
+    padding: 11px 16px;
+    cursor: pointer;
+  }
+  .landed-btn.primary {
+    color: #fff;
+    background: rgba(40, 80, 130, 0.9);
+    border-color: rgba(140, 200, 255, 0.8);
+  }
+  .landed-btn:hover {
+    background: rgba(216, 168, 130, 0.3);
   }
   .recovery-close {
     margin-top: 0.8rem;

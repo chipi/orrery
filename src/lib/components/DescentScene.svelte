@@ -11,7 +11,7 @@
   container, mounts, plays, and disposes, exactly like LaunchScene.
 -->
 <script lang="ts">
-  import { onMount, onDestroy, untrack } from 'svelte';
+  import { onMount, onDestroy, untrack, type Snippet } from 'svelte';
   import * as m from '$lib/paraglide/messages';
   import Chip from '$lib/components/Chip.svelte';
   import { hudLabel } from '$lib/orbital/hud-labels';
@@ -81,6 +81,10 @@
      *  clock/scrubber; passing it in avoids re-running the (guided ~100 ms) integration a second
      *  time here. Omitted → DescentScene integrates its own, staying standalone-usable. */
     precomputedSummary?: DescentSummary;
+    /** When given, touchdown rests on the landed frame and these actions are offered over it
+     *  (a Moon landing's "Continue: the way home" next to the surface hand-off); `onComplete`
+     *  is then the page's business, not fired here. */
+    landedActions?: Snippet;
   }
   let {
     profile,
@@ -93,6 +97,7 @@
     speed = $bindable(3),
     externalClock = false,
     precomputedSummary,
+    landedActions,
   }: Props = $props();
 
   const summary: DescentSummary = $derived(precomputedSummary ?? integrateDescent(profile));
@@ -216,8 +221,14 @@
   const clockT = $derived(warpDescentTime(t));
 
   // Begin the touchdown flash. The real handoff (onComplete) fires when it ends.
+  let landed = $state(false);
   const complete = () => {
-    if (done || flashing) return;
+    if (done || flashing || landed) return;
+    if (landedActions) {
+      landed = true;
+      playing = false;
+      return;
+    }
     flashing = true;
     playing = false;
   };
@@ -490,6 +501,12 @@
       </div>
     {/if}
   </div>
+
+  {#if landed && landedActions}
+    <div class="landed-actions" data-testid="descent-landed-actions">
+      {@render landedActions()}
+    </div>
+  {/if}
 
   {#if !flashing}
     <button class="continue" onclick={complete}>{m.fly_skip_to_surface()} →</button>
@@ -865,6 +882,18 @@
     left: 22px;
     bottom: 26px;
     z-index: 6;
+  }
+  .landed-actions {
+    position: absolute;
+    left: 50%;
+    bottom: 76px;
+    transform: translateX(-50%);
+    z-index: 25;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    width: min(92vw, 560px);
   }
   .continue {
     position: absolute;

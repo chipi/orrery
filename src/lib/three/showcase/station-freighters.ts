@@ -276,6 +276,7 @@ function mats(): Mats {
     foilGold: mat(0xc39b3f, 0.6, 0.45, true),
     dark: mat(0x1c1d22, 0.4, 0.6),
     nozzle: mat(0x3b3834, 0.6, 0.5, true),
+    nozzleSmooth: mat(0x3b3834, 0.6, 0.5),
     glass: mat(0x0a0e16, 0.9, 0.12),
     cell: mat(0x182a58, 0.6, 0.3),
     cellBrown: mat(0x2e2220, 0.6, 0.35),
@@ -1170,13 +1171,13 @@ function thruster(
     body,
     m,
     [
-      [r * 0.3, 0],
-      [r * 0.4, len * 0.2],
-      [r * 0.62, len * 0.6],
-      [r * 0.85, len * 0.9],
+      [r * 0.36, 0],
+      [r * 0.3, len * 0.18],
+      [r * 0.42, len * 0.5],
+      [r * 0.72, len * 0.82],
       [r, len],
     ],
-    14,
+    20,
   );
   return t;
 }
@@ -1215,6 +1216,7 @@ function buildApolloCsm(block2: boolean): THREE.Group {
   const smTop = CSM_SM_TOP;
   const shield = mat(0x6e4220, 0.3, 0.8);
   const cmWhite = mat(0xe2e2de, 0.25, 0.45);
+  const cmSkin = mat(0xc9ccd0, 0.8, 0.3);
   const sw = mat(0xe8e8e4, 0.2, 0.5);
   const radMat = mat(0xf2f2f0, 0.2, 0.45);
   const dishMat = mat(0xd8dade, 0.4, 0.4, true);
@@ -1349,7 +1351,9 @@ function buildApolloCsm(block2: boolean): THREE.Group {
       [new THREE.Vector3(-0.24, qy, R + 0.22), new THREE.Vector3(-1, 0, 0.35)],
       [new THREE.Vector3(0.24, qy, R + 0.22), new THREE.Vector3(1, 0, 0.35)],
     ];
-    specs.forEach(([p, d], n) => thruster(quad, M.nozzle, `rcs-${q}-${n}`, p, d, 0.075, 0.3));
+    specs.forEach(([p, d], n) =>
+      thruster(quad, M.nozzleSmooth, `rcs-${q}-${n}`, p, d, 0.085, 0.17),
+    );
   }
 
   // VHF scimitars: curved blades rising from the forward rim, on the +x and -x sides
@@ -1424,7 +1428,9 @@ function buildApolloCsm(block2: boolean): THREE.Group {
     [0.7, 2.45],
   ];
   const cmR = profileFn(cmCone);
-  blanket(cm, cmWhite, cmCone, 0.012, 60, 0.16);
+  // Smooth silver skin: a densely segmented lathe with smooth normals (the crinkled blanket read
+  // as a faceted, dented cone in the docking close-ups).
+  lathe(cm, cmSkin, cmCone, 96);
   torus(cm, shield, R - 0.02, 0.05, 0.32, 60);
   const cmSeams: THREE.BufferGeometry[] = [];
   for (let i = 0; i < 12; i++) {
@@ -1515,23 +1521,24 @@ function buildApolloCsm(block2: boolean): THREE.Group {
     cyl(probe, M.rib, 0.05, 0.04, 0, shaftTop, 12);
     const head = grp(probe, 'docking-probe-head');
     head.position.y = shaftTop;
+    // the probe's narrow barrel and a short nose, with three small capture latches round it
     lathe(
       head,
       M.silver,
       [
-        [0.03, 0],
-        [0.13, 0.015],
-        [0.14, 0.05],
-        [0.09, 0.085],
+        [0.04, 0],
+        [0.045, 0.01],
+        [0.045, 0.07],
+        [0.03, 0.09],
         [0.0, 0.1],
       ],
       24,
     );
     for (let i = 0; i < 3; i++) {
       const a = (i / 3) * TAU;
-      const l = box(head, M.dark, 0.05, 0.05, 0.04, 0, 0.04, 0);
+      const l = box(head, M.dark, 0.022, 0.05, 0.03, 0, 0.045, 0);
       l.name = `capture-latch-${i}`;
-      l.position.copy(pol(0.125, a, 0.04));
+      l.position.copy(pol(0.056, a, 0.045));
       l.rotation.y = a;
     }
     const tip = new THREE.Object3D();

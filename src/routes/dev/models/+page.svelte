@@ -86,6 +86,7 @@
   } from '$lib/three/showcase/new-glenn-booster';
   import { buildSputnik1 } from '$lib/three/showcase/early-stations';
   import { buildDroneShip, buildSeaPlane } from '$lib/three/showcase/drone-ship';
+  import { buildJacklynScene } from '$lib/three/showcase/jacklyn';
 
   type Entry = {
     /** Stable id → capture filename `model-<family>-<id>` / `craft-<id>`. */
@@ -792,6 +793,7 @@
         ['new-glenn-booster-stowed', 'New Glenn booster (stowed)', buildNGStowed],
         ['new-glenn-booster-landing', 'New Glenn booster (landing)', buildNGLanding],
         ['drone-ship', 'Drone ship JRTI', buildDroneShipScene],
+        ['jacklyn', 'Jacklyn (LPV1)', () => buildJacklynScene()],
       ] as [string, string, () => THREE.Group][]
     ).map(([id, label, build]) => ({ id, label, family: 'probe', build })),
     // Launch pads (launch-pads.ts, G4): each model with a plain stand-in vehicle of its real height

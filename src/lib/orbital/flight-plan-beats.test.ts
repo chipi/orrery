@@ -19,6 +19,17 @@ describe('buildPlanBeats — the flight plan shared by the HUD list and the play
     expect(ts).toEqual([...ts].sort((a, b) => a - b));
   });
 
+  it('marks a landing whose time is approximate or typical, not a sourced one', () => {
+    const at = (timeClass?: 'sourced' | 'approx' | 'typical') =>
+      buildPlanBeats(summary, null, 0, [{ outcome: 'landed', touchdownS: 540, timeClass }]).find(
+        (b) => b.label === 'BOOSTER LANDING',
+      )!;
+    expect(at('approx').approx).toBe(true);
+    expect(at('typical').approx).toBe(true);
+    expect(at('sourced').approx).toBeUndefined();
+    expect(at(undefined).approx).toBeUndefined();
+  });
+
   it('drops ORBIT when it lands on the same second as SECO (the cutoff is the beat)', () => {
     const labels = buildPlanBeats(summary, null).map((b) => b.label);
     const seco = labels.includes('SECO');

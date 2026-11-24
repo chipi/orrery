@@ -1,12 +1,17 @@
 /**
- * The /fly full-frame booster return: a Falcon 9 first stage coming home to a drone ship, in real
- * metres — entry burn on three engines, grid-fin steering with cold-gas RCS puffs, the landing burn
+ * The /fly full-frame booster return: a Falcon 9 first stage coming home to a drone ship (or New
+ * Glenn's booster to Jacklyn), in real metres — entry burn on three engines, grid-fin steering with cold-gas RCS puffs, the landing burn
  * on the centre engine, legs out, standing on the X. The pose and the camera are pure functions of
  * mission time, so scrubbing is exact.
  *
  * Sourced (Inspiration4, docs/wip/2026-11-22-booster-recovery-sourced.md): entry burn start,
  * landing burn start, touchdown. ESTIMATED, not sourced: the entry-burn length, every altitude and
  * speed below, the RCS pattern, the attitude wobble and the camera work.
+ *
+ * New Glenn (ESCAPADE, docs/wip/2026-11-24-escapade-sourced.md): sourced is the entry burn on
+ * three of the seven BE-4 (Space.com), "about seven minutes into flight", and touchdown on Jacklyn
+ * "about nine minutes". The landing-burn engine count, the entry-burn length, the altitudes and
+ * the camera work are ESTIMATES.
  */
 import * as THREE from 'three';
 import { LANDING_HOLD_S } from '$lib/physics/ascent/ascent-physics';
@@ -15,6 +20,67 @@ import { LEG_DEPLOY_S, SKY, landingPlume, type Landing } from './landing-inset';
 import { plumeCone } from './engine-plume';
 import { buildFalcon9Booster, setFalcon9BoosterPose } from './showcase/falcon9-booster';
 import { buildDroneShip, buildSeaPlane, FREEBOARD_M } from './showcase/drone-ship';
+import {
+  NEW_GLENN_BOOSTER_HEIGHT_M,
+  buildNewGlennBooster,
+  setNewGlennBoosterPose,
+} from './showcase/new-glenn-booster';
+import { buildJacklyn } from './showcase/jacklyn';
+
+export type ReturnLauncher = 'falcon-9' | 'new-glenn';
+
+/** What differs between the booster return scenes; the altitude profile is shared. */
+export interface ReturnSpec {
+  boosterH: number;
+  /** Footpads sit this far under the bell exits when the legs are out. */
+  footDropM: number;
+  entryBurnLenS: number;
+  /** engine-<i> anchors lit in the entry burn. */
+  entryEngines: number[];
+  /** engine-<i> anchor lit in the landing burn. */
+  landingEngine: number;
+  plumeR: number;
+  entryPlumeLen: number;
+  landingPlumeLen: number;
+  rcsN: number;
+  /** Deck view: the camera looks this fraction of the way up the booster's top. */
+  lookFrac: number;
+}
+
+export const RETURN_SPECS: Record<ReturnLauncher, ReturnSpec> = {
+  'falcon-9': {
+    boosterH: 41.2,
+    footDropM: 1.5,
+    entryBurnLenS: 27,
+    entryEngines: [0, 1, 5],
+    landingEngine: 0,
+    plumeR: 0.23,
+    entryPlumeLen: 56,
+    landingPlumeLen: 44,
+    rcsN: 6,
+    lookFrac: 0.4,
+  },
+  'new-glenn': {
+    boosterH: NEW_GLENN_BOOSTER_HEIGHT_M,
+    footDropM: 2, // new-glenn-booster.ts: feet ~2 m below the bells
+    // ESTIMATE: ~30 s, like DART's sourced Falcon burn.
+    entryBurnLenS: 30,
+    // SOURCED (Space.com): three of the seven BE-4 relit; which three is not (centre + two opposite).
+    entryEngines: [0, 1, 4],
+    // UNVERIFIED ESTIMATE: one centre BE-4 (a search snippet said "Single Engine Booster Landing Burn").
+    landingEngine: 0,
+    plumeR: 0.5,
+    entryPlumeLen: 80,
+    landingPlumeLen: 62,
+    rcsN: 4,
+    lookFrac: 0.44, // keeps the taller nose in frame
+  },
+};
+
+/** The return scene for a launch profile, or null when it has none (the inset plays instead). */
+export function returnLauncherFor(profileId: string): ReturnLauncher | null {
+  return profileId === 'falcon-9' || profileId === 'new-glenn' ? profileId : null;
+}
 
 export type BoosterReturnLanding = Landing & { entryBurnS: number };
 
@@ -22,7 +88,7 @@ export type BoosterReturnLanding = Landing & { entryBurnS: number };
 export const RETURN_LEAD_S = 8;
 export const RETURN_HOLD_S = LANDING_HOLD_S;
 /** ESTIMATE: the entry burn runs this long (DART's sourced burn was 30 s, Starlink 6-108's 26 s). */
-export const ENTRY_BURN_LEN_S = 27;
+export const ENTRY_BURN_LEN_S = RETURN_SPECS['falcon-9'].entryBurnLenS;
 /** ESTIMATE: altitude at entry-burn start and end (m). */
 export const ENTRY_START_ALT_M = 65_000;
 export const ENTRY_END_ALT_M = 38_000;
@@ -32,10 +98,9 @@ const ENTRY_END_SPEED = 1000;
 /** ESTIMATE: altitude where the landing burn lights (m); it then decelerates evenly to rest. */
 export const LANDING_BURN_ALT_M = 3_400;
 /** Footpads sit this far under the bell exits when the legs are out (falcon9-booster.ts LEG_*). */
-export const FOOT_DROP_M = 1.5;
+export const FOOT_DROP_M = RETURN_SPECS['falcon-9'].footDropM;
 /** The pad centre on the deck (drone-ship.ts padX). */
 const PAD_X = 8;
-const BOOSTER_H = 41.2;
 /** ESTIMATE: the camera frames the deck with the booster over the last this-many seconds. */
 const SHIP_IN_S = 15;
 const CUT_S = 4;
@@ -54,8 +119,13 @@ export function returnWindow(l: BoosterReturnLanding): [number, number] {
 }
 
 /** Booster base above the deck's footpad line (m): piecewise, continuous, ends at 0. */
-export function returnAltitude(t: number, l: BoosterReturnLanding): number {
-  const entryEnd = l.entryBurnS + ENTRY_BURN_LEN_S;
+export function returnAltitude(
+  t: number,
+  l: BoosterReturnLanding,
+  spec: ReturnSpec = RETURN_SPECS['falcon-9'],
+): number {
+  const entryLen = spec.entryBurnLenS;
+  const entryEnd = l.entryBurnS + entryLen;
   const burn = Math.max(1, l.touchdownS - l.landingBurnS);
   if (t >= l.touchdownS) return 0;
   if (t >= l.landingBurnS) return LANDING_BURN_ALT_M * ((l.touchdownS - t) / burn) ** 2;
@@ -74,13 +144,13 @@ export function returnAltitude(t: number, l: BoosterReturnLanding): number {
     );
   }
   if (t >= l.entryBurnS) {
-    const s = (t - l.entryBurnS) / ENTRY_BURN_LEN_S;
+    const s = (t - l.entryBurnS) / entryLen;
     return ENTRY_START_ALT_M + s * (ENTRY_END_ALT_M - ENTRY_START_ALT_M);
   }
   return ENTRY_START_ALT_M + (l.entryBurnS - t) * ENTRY_START_SPEED;
 }
 
-export const RCS_COUNT = 6;
+export const RCS_COUNT = RETURN_SPECS['falcon-9'].rcsN;
 /** Cold-gas puffs: short 0.3 s slots, a fixed pseudo-random ~25% of them lit. */
 function rcsSlot(t: number, i: number): boolean {
   const slot = Math.floor(t / 0.3);
@@ -105,9 +175,13 @@ export interface BoosterReturnPose {
   tiltZ: number;
 }
 
-export function boosterReturnPose(t: number, l: BoosterReturnLanding): BoosterReturnPose {
+export function boosterReturnPose(
+  t: number,
+  l: BoosterReturnLanding,
+  spec: ReturnSpec = RETURN_SPECS['falcon-9'],
+): BoosterReturnPose {
   const [a, b] = returnWindow(l);
-  const entryEnd = l.entryBurnS + ENTRY_BURN_LEN_S;
+  const entryEnd = l.entryBurnS + spec.entryBurnLenS;
   const entryBurning = t >= l.entryBurnS && t < entryEnd;
   const landingBurning = t >= l.landingBurnS && t < l.touchdownS;
   const rcsWindow =
@@ -115,12 +189,12 @@ export function boosterReturnPose(t: number, l: BoosterReturnLanding): BoosterRe
   const calm = clamp01((l.touchdownS - 3 - t) / 8);
   return {
     visible: t >= a && t <= b,
-    altM: returnAltitude(t, l) + FOOT_DROP_M,
-    entryPlumes: entryBurning ? 3 : 0,
+    altM: returnAltitude(t, l, spec) + spec.footDropM,
+    entryPlumes: entryBurning ? spec.entryEngines.length : 0,
     landingPlumes: landingBurning ? 1 : 0,
     fins: 1,
     legs: clamp01((t - (l.touchdownS - 1 - LEG_DEPLOY_S)) / LEG_DEPLOY_S),
-    rcs: Array.from({ length: RCS_COUNT }, (_, i) => rcsWindow && rcsSlot(t, i)),
+    rcs: Array.from({ length: spec.rcsN }, (_, i) => rcsWindow && rcsSlot(t, i)),
     tiltX: 0.09 * calm * Math.sin(t * 1.3),
     tiltZ: 0.07 * calm * Math.sin(t * 0.9 + 1.1),
   };
@@ -141,27 +215,34 @@ export function returnCamera(
   l: BoosterReturnLanding,
   base: number,
   aspect: number,
+  spec: ReturnSpec = RETURN_SPECS['falcon-9'],
 ): ReturnCamera {
-  const k = aspect < 1 ? 1 + 0.7 * (1 / aspect - 1) : 1;
+  // Distances are tuned on the 41.2 m Falcon booster; a taller one backs the camera off in step.
+  const sc = spec.boosterH / RETURN_SPECS['falcon-9'].boosterH;
+  const k = (aspect < 1 ? 1 + 0.7 * (1 / aspect - 1) : 1) * sc;
   const [t0] = returnWindow(l);
   // Chase: 3/4 view, slowly orbiting, a little above the booster's middle.
   const phi = 0.6 + (t - t0) * 0.014;
   const dc = 150 * k;
-  const aim = base + 6; // body above, flame below
+  const aim = base + 6 * sc; // body above, flame below
   const chase: ReturnCamera = {
-    pos: new THREE.Vector3(PAD_X + Math.sin(phi) * dc, aim + 12, Math.cos(phi) * dc),
+    pos: new THREE.Vector3(PAD_X + Math.sin(phi) * dc, aim + 12 * sc, Math.cos(phi) * dc),
     look: new THREE.Vector3(PAD_X, aim, 0),
   };
   // Deck: from the +z side, a little aft, low; distance grows with the height to frame both.
-  const h = Math.max(0, base - FOOT_DROP_M);
-  const dd = Math.max(90, 2 * (h + 60)) * k;
+  const h = Math.max(0, base - spec.footDropM);
+  const dd = Math.max(90 * sc, 2 * (h + 60 * sc)) * (k / sc);
   const deck: ReturnCamera = {
     pos: new THREE.Vector3(
       PAD_X - 0.42 * dd,
       5 + 0.04 * dd + 0.12 * Math.max(0, dd - 90),
       0.9 * dd,
     ),
-    look: new THREE.Vector3(PAD_X, Math.max(18, 0.4 * (h + BOOSTER_H) + 6), 0),
+    look: new THREE.Vector3(
+      PAD_X,
+      Math.max(18 * sc, spec.lookFrac * (h + spec.boosterH) + 6 * sc),
+      0,
+    ),
   };
   const s = smooth((t - (l.touchdownS - SHIP_IN_S - CUT_S)) / CUT_S);
   return { pos: chase.pos.lerp(deck.pos, s), look: chase.look.lerp(deck.look, s) };
@@ -189,7 +270,10 @@ const DOME_H = 12;
 export function createBoosterReturn(
   landing: BoosterReturnLanding,
   light: LightId = 'midday',
+  launcher: ReturnLauncher = 'falcon-9',
 ): BoosterReturn {
+  const spec = RETURN_SPECS[launcher];
+  const BOOSTER_H = spec.boosterH;
   const look = SKY[light];
   // Day colours dimmed for dusk and night.
   const bright = { night: 0.12, dusk: 0.5, golden: 0.85, midday: 1 }[light];
@@ -201,7 +285,7 @@ export function createBoosterReturn(
   sun.position.set(-300, 500, 800);
   scene.add(sun);
 
-  const ship = buildDroneShip();
+  const ship = launcher === 'new-glenn' ? buildJacklyn() : buildDroneShip();
   const sea = buildSeaPlane(SEA_M);
   const farSea = new THREE.Mesh(
     new THREE.RingGeometry(SEA_M / 2, HORIZON_M, 48, 1),
@@ -227,23 +311,23 @@ export function createBoosterReturn(
   dome.renderOrder = -1;
   scene.add(dome);
 
-  const booster = buildFalcon9Booster();
+  const booster = launcher === 'new-glenn' ? buildNewGlennBooster() : buildFalcon9Booster();
   booster.position.y = -BOOSTER_H / 2;
   const gimbal = new THREE.Group();
   gimbal.add(booster);
   scene.add(gimbal);
 
   const anchor = (n: string) => booster.getObjectByName(n)!;
-  const entryPlumes = [0, 1, 5].map((i) => {
-    const p = landingPlume(0.23, 56);
+  const entryPlumes = spec.entryEngines.map((i) => {
+    const p = landingPlume(spec.plumeR, spec.entryPlumeLen);
     anchor(`engine-${i}`).add(p);
     return p;
   });
-  const landingP = landingPlume(0.23, 44);
-  anchor('engine-0').add(landingP);
+  const landingP = landingPlume(spec.plumeR, spec.landingPlumeLen);
+  anchor(`engine-${spec.landingEngine}`).add(landingP);
 
   // Cold gas: a white translucent cone from the nozzle along its +z.
-  const rcs = Array.from({ length: RCS_COUNT }, (_, i) => {
+  const rcs = Array.from({ length: spec.rcsN }, (_, i) => {
     const puff = plumeCone(0.32, 2.4, 0xffffff, 0.45, THREE.NormalBlending);
     puff.rotation.x = -Math.PI / 2; // tip at the nozzle, opening along +z
     puff.position.z = 1.2;
@@ -278,9 +362,12 @@ export function createBoosterReturn(
     camera,
     landing,
     update: (t, aspect) => {
-      const pose = boosterReturnPose(t, landing);
+      const pose = boosterReturnPose(t, landing, spec);
       if (!pose.visible) return false;
-      setFalcon9BoosterPose(booster, { fins: pose.fins, legs: pose.legs });
+      (launcher === 'new-glenn' ? setNewGlennBoosterPose : setFalcon9BoosterPose)(booster, {
+        fins: pose.fins,
+        legs: pose.legs,
+      });
       gimbal.position.set(PAD_X, pose.altM + BOOSTER_H / 2, 0);
       gimbal.rotation.set(pose.tiltX, 0, pose.tiltZ);
       const flick = 0.85 + 0.15 * Math.sin(t * 47);
@@ -291,7 +378,7 @@ export function createBoosterReturn(
       landingP.visible = pose.landingPlumes > 0;
       landingP.scale.set(1, flick, 1);
       rcs.forEach((p, i) => (p.visible = pose.rcs[i]));
-      const cam = returnCamera(t, landing, pose.altM, aspect);
+      const cam = returnCamera(t, landing, pose.altM, aspect, spec);
       camera.position.copy(cam.pos);
       camera.lookAt(cam.look);
       camera.aspect = aspect;

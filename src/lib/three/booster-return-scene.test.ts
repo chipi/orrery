@@ -9,6 +9,7 @@ import {
   returnAltitude,
   returnCamera,
   returnWindow,
+  RETURN_SPECS,
   type BoosterReturnLanding,
 } from './booster-return-scene';
 
@@ -93,5 +94,41 @@ describe('booster return pose (Inspiration4)', () => {
     }
     const end = returnCamera(570, i4, FOOT_DROP_M, 1.6);
     expect(Math.hypot(end.pos.x - 8, end.pos.z)).toBeLessThan(150);
+  });
+});
+
+describe('booster return pose (New Glenn, ESCAPADE)', () => {
+  const ng: BoosterReturnLanding = {
+    part: 'booster',
+    outcome: 'landed',
+    site: 'droneship',
+    entryBurnS: 420,
+    landingBurnS: 515,
+    touchdownS: 540,
+    timeClass: 'approx',
+  };
+  const spec = RETURN_SPECS['new-glenn'];
+
+  it('relights three BE-4 in the entry burn, one in the landing burn', () => {
+    expect(boosterReturnPose(430, ng, spec).entryPlumes).toBe(3);
+    expect(boosterReturnPose(430, ng, spec).landingPlumes).toBe(0);
+    expect(boosterReturnPose(530, ng, spec).landingPlumes).toBe(1);
+    expect(spec.entryEngines).toHaveLength(3);
+  });
+
+  it('falls monotonically to the deck, feet a spec footDrop under the bells', () => {
+    let prev = Infinity;
+    for (let t = 412; t <= 545; t += 0.25) {
+      const h = returnAltitude(t, ng, spec);
+      expect(h).toBeLessThanOrEqual(prev + 1e-9);
+      prev = h;
+    }
+    expect(boosterReturnPose(540, ng, spec).altM).toBe(spec.footDropM);
+  });
+
+  it('backs the camera off for the taller booster', () => {
+    const f9 = returnCamera(500, ng, 300, 1.6);
+    const big = returnCamera(500, ng, 300, 1.6, spec);
+    expect(big.pos.distanceTo(big.look)).toBeGreaterThan(f9.pos.distanceTo(f9.look));
   });
 });

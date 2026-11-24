@@ -15,6 +15,9 @@ export interface PlanBeat {
   t: number;
   /** A cinematic-clock beat after SECO: it has a position, not a real mission time. */
   untimed?: boolean;
+  /** The time is "about N minutes" or borrowed from a sibling flight (a landing whose
+   *  `timeClass` is not 'sourced'): the row prints it with a leading "~". */
+  approx?: boolean;
 }
 
 /**
@@ -28,7 +31,7 @@ export function buildPlanBeats(
   separationDelayS = 0,
   /** The flight's booster landings (`landingsFor`): BOOSTER LANDING or TOWER CATCH at touchdown,
    *  in time order with the rest (0.9.11 F2). */
-  landings: (Pick<PartRecovery, 'outcome'> & { touchdownS: number })[] = [],
+  landings: (Pick<PartRecovery, 'outcome' | 'timeClass'> & { touchdownS: number })[] = [],
 ): PlanBeat[] {
   const duration = summary.totalDurationS;
   const beats = buildAscentBeats(summary);
@@ -56,6 +59,7 @@ export function buildPlanBeats(
   const landingBeats = landings.map((l) => ({
     label: l.outcome === 'caught' ? 'TOWER CATCH' : 'BOOSTER LANDING',
     t: l.touchdownS,
+    ...(l.timeClass === 'approx' || l.timeClass === 'typical' ? { approx: true } : {}),
   }));
   return [...plan, ...landingBeats].sort((a, b) => a.t - b.t);
 }

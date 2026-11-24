@@ -29,6 +29,7 @@
   } from '$lib/three/landing-inset';
   import {
     createBoosterReturn,
+    returnLauncherFor,
     returnWindow,
     type BoosterReturn,
     type BoosterReturnLanding,
@@ -262,11 +263,13 @@
         ].join(' · ')
       : '',
   );
-  /** A drone-ship landing with a sourced entry burn plays full frame (the booster return scene)
-   *  instead of the inset. */
+  /** A drone-ship landing with a sourced or approximate ("about N minutes") entry burn plays full
+   *  frame (the booster return scene) instead of the inset; a 'typical' time stays an inset. */
+  const returnLauncher = $derived(returnLauncherFor(profile.id));
   const returnLanding = $derived<BoosterReturnLanding | null>(
-    insetLanding?.site === 'droneship' &&
-      insetLanding.timeClass === 'sourced' &&
+    returnLauncher &&
+      insetLanding?.site === 'droneship' &&
+      (insetLanding.timeClass === 'sourced' || insetLanding.timeClass === 'approx') &&
       insetLanding.entryBurnS != null
       ? { ...insetLanding, entryBurnS: insetLanding.entryBurnS }
       : null,
@@ -307,7 +310,11 @@
   function insetView(): InsetView | null {
     if (returnLanding) {
       if (!returnScene && t >= returnWindow(returnLanding)[0] - 20)
-        returnScene = createBoosterReturn(returnLanding, director?.plan.conditions.light);
+        returnScene = createBoosterReturn(
+          returnLanding,
+          director?.plan.conditions.light,
+          returnLauncher ?? 'falcon-9',
+        );
       const w = container.clientWidth;
       const h = container.clientHeight;
       const on = !!returnScene && returnScene.update(t, w / h);

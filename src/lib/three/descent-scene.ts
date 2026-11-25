@@ -447,6 +447,9 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
   };
   // An airbag lander rides in its ball's pivot: framed as a sphere of the ball's live size.
   const ball = model.airbagBall;
+  // What the camera must keep in frame (the framing audit test reads it).
+  model.lander.userData.frameSubject = true;
+  if (ball) ball.pivot.userData.frameSubject = true;
   let ballR = ball?.restY ?? 0;
   const parts: { o: THREE.Object3D; box: THREE.Box3 }[] = [];
   for (const o of [model.lander, model.descentStage, model.backshell, model.heatshield]) {
@@ -1517,9 +1520,98 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
     camera.lookAt(pose.target[0], camY + pose.target[1], pose.target[2]);
     camera.fov = pose.fov;
     camera.updateProjectionMatrix();
+    // Vostok after the ejection follows the cosmonaut, not the capsule.
+    if (ejectT == null || s.t < ejectT)
+      keepCraftInFrame(
+        s.t,
+        camY,
+        new THREE.Vector3(pose.target[0], camY + pose.target[1], pose.target[2]),
+        small || body === 'jupiter' ? -Infinity : 0,
+      );
 
     lastState = s;
     if (showForces) updateForces(s);
+  };
+
+  // The director sizes a shot to a rough radius of the craft: the tilt, the perspective of a close
+  // shot and the play bar are not in it. A phone's narrow frame backs every shot off and hid the
+  // error; a wide frame cut landers at the bottom and sides (operator 2026-11-25). So after the
+  // director places the camera, the craft's live bounds are projected and the camera pulls back
+  // along its line of sight until they sit inside the usable frame. It never pushes in: a wide
+  // shot stays wide. A function of the pose, so a scrub is exact.
+  const FRAME_X = 0.94;
+  const FRAME_TOP = 0.86;
+  const FRAME_BOTTOM = -0.74; // above the play bar
+  const corner = new THREE.Vector3();
+  const craftCorners: THREE.Vector3[] = [];
+  const keepCraftInFrame = (t: number, camY: number, aim: THREE.Vector3, groundY: number): void => {
+    craftCorners.length = 0;
+    model.root.updateMatrixWorld(true);
+    const add = (box: THREE.Box3, o: THREE.Object3D, rotate: boolean) => {
+      const m = o.parent!.matrixWorld;
+      for (const x of [box.min.x, box.max.x])
+        for (const y of [box.min.y, box.max.y])
+          for (const z of [box.min.z, box.max.z]) {
+            corner.set(x, y, z);
+            if (rotate) corner.applyQuaternion(o.quaternion);
+            craftCorners.push(corner.add(o.position).applyMatrix4(m).clone());
+          }
+    };
+    // Landed and opened out (legs and arrays, petals): the span liveCore frames, about the craft.
+    const opened =
+      model.landedFrame && touchdownT != null && t >= touchdownT
+        ? model.landedFrame
+        : ball?.openSpan && petalsT != null && t >= petalsT
+          ? { cy: ball.restY, r: ball.openSpan * 0.6 }
+          : undefined;
+    if (opened) {
+      const h = new THREE.Vector3().setScalar(opened.r);
+      const c = new THREE.Vector3(0, camY + opened.cy, 0);
+      for (const sx of [-1, 1])
+        for (const sy of [-1, 1])
+          for (const sz of [-1, 1])
+            craftCorners.push(c.clone().add(new THREE.Vector3(sx * h.x, sy * h.y, sz * h.z)));
+    } else if (ball && model.lander.visible) {
+      const r = new THREE.Vector3().setScalar(ballR);
+      add(new THREE.Box3(r.clone().negate(), r), ball.pivot, false);
+    }
+    // The craft only: a jettisoned backshell or heat shield, or a sky crane flying off after the
+    // cut, leaves the frame as it should; fitting them pulled the camera far back.
+    for (const p of parts) {
+      if (opened || !p.o.visible || !p.o.parent) continue;
+      if (
+        p.o !== model.lander &&
+        !(p.o === model.descentStage && (touchdownT == null || t < touchdownT))
+      )
+        continue;
+      add(p.box, p.o, true);
+    }
+    if (!craftCorners.length) return;
+    const fits = (): boolean => {
+      camera.updateMatrixWorld(true);
+      for (const w of craftCorners) {
+        corner.copy(w).applyMatrix4(camera.matrixWorldInverse);
+        if (corner.z > -camera.near) return false;
+        corner.copy(w).project(camera);
+        if (Math.abs(corner.x) > FRAME_X || corner.y > FRAME_TOP || corner.y < FRAME_BOTTOM)
+          return false;
+      }
+      return true;
+    };
+    if (fits()) return;
+    // Pull back about the centre of the craft, keeping the director's angle and lens.
+    const centre = new THREE.Box3().setFromPoints(craftCorners).getCenter(new THREE.Vector3());
+    const away = camera.position.clone().sub(centre);
+    let d = away.length();
+    away.normalize();
+    for (let i = 0; i < 16; i++) {
+      d *= 1.15;
+      camera.position.copy(centre).addScaledVector(away, d);
+      // Never below the ground (a shot from below near touchdown).
+      camera.position.y = Math.max(camera.position.y, groundY + camera.near);
+      camera.lookAt(aim);
+      if (fits()) return;
+    }
   };
 
   const setForcesVisible = (on: boolean): void => {

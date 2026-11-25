@@ -2005,6 +2005,12 @@
     left: 50%;
     transform: translateX(-50%);
   }
+  /* With a mouse the site's footer strip runs along the bottom edge from about the middle, over
+     this handle (F2, 2026-11-25): it sits 46 px up, as /explore's scale strip does. Touch has no
+     footer. */
+  :global(html:not([data-touch])) .handle-bottom {
+    bottom: 46px;
+  }
   .hint {
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: var(--size-label);

@@ -2501,7 +2501,18 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
         // the Earth-Moon system framing is sized for diagrammatic
         // clarity, not cinematic bloom, and the close-Earth-orbit
         // sprites would smear under bloom. Direct render is correct.
+        // On the craft-led coast shot's long lens the trajectory tube is a wall through the
+        // craft, at any radius the tube allows: leave it out of that shot.
+        const hideLines = flyCam.craftShotActive;
+        const hidden: THREE.Object3D[] = [];
+        if (hideLines)
+          for (const line of cislunarPhaseLines.values())
+            if (line.visible) {
+              line.visible = false;
+              hidden.push(line);
+            }
         renderer.render(cislunarScene, cislunarCamera);
+        for (const line of hidden) line.visible = true;
       } else if (quality.postEnabled) {
         // Bokeh DoF focus tracking — wave 2/3 punch #6. When the
         // cinematic-tier composer included a BokehPass, point the

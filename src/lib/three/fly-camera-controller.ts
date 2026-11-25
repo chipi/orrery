@@ -49,6 +49,9 @@ import {
 import { buildFlyDebugSnapshot } from '$lib/orbital/fly-debug-snapshot';
 import { predictShipPosAtMet } from '$lib/physics/transfer/predict-ship-pos';
 import { sampleCislunarSpacecraftPos } from '$lib/orbital/sample-cislunar-spacecraft';
+import { craftLedCoastShot, inCraftShot, type CraftShot } from '$lib/orbital/cislunar-craft-shot';
+import { portraitFov } from './phone-framing';
+import { CISLUNAR_FOV } from './fly-cislunar-scene';
 
 /**
  * `/fly` camera + cinematic-camera controller (RFC-036 WS-B — scene-host teardown).
@@ -817,7 +820,10 @@ export function createFlyCameraController(deps: FlyCameraDeps) {
   let autoZoomTargetCamP: number | null = null;
   let autoZoomTargetCamT: number | null = null;
 
+  /** The craft-led coast shot for this frame, or null (cislunar-craft-shot.ts). */
+  let craftShot: CraftShot | null = null;
   function updateAutoZoomTargets(): void {
+    craftShot = null;
     const cislunarTrajectory = deps.getCislunarTrajectory();
     if (!cislunarTrajectory || cislunarTrajectory.phases.length === 0) {
       if (lastAutoZoomPhase !== null) {
@@ -953,6 +959,24 @@ export function createFlyCameraController(deps: FlyCameraDeps) {
     // default coords govern again.
     autoZoomTargetCamP = null;
     autoZoomTargetCamT = null;
+    const coast = activePhase.type === 'tli_coast' || activePhase.type === 'tei_coast';
+    if (coast && !isNearMoon && inCraftShot(phaseProgress)) {
+      const toMoon = activePhase.type === 'tli_coast';
+      const moonScene = {
+        x: moonPos.x * SCALE_CISLUNAR,
+        y: moonPos.y * SCALE_CISLUNAR,
+        z: moonPos.z * SCALE_CISLUNAR,
+      };
+      const earthScene = { x: 0, y: 0, z: 0 };
+      const rMoon = R_MOON_KM * SCALE_CISLUNAR;
+      const rEarth = R_EARTH_KM * SCALE_CISLUNAR;
+      craftShot = craftLedCoastShot(
+        { x: scX * SCALE_CISLUNAR, y: scY * SCALE_CISLUNAR, z: scZ * SCALE_CISLUNAR },
+        toMoon ? moonScene : earthScene,
+        toMoon ? rMoon : rEarth,
+        toMoon ? { at: earthScene, r: rEarth } : { at: moonScene, r: rMoon },
+      );
+    }
 
     // Camera target dispatch lives in $lib/orbital/cislunar-camera-target.
     // Sub-phase string carries the '_near_moon' suffix so the phase-
@@ -1011,6 +1035,17 @@ export function createFlyCameraController(deps: FlyCameraDeps) {
       cislunarCamTarget.z + cislunarCamR * Math.sin(cislunarCamP) * Math.cos(cislunarCamT),
     );
     cislunarCamera.lookAt(cislunarCamTarget);
+    // The craft-led coast shot replaces the frame without touching the orbit state above, so the
+    // diagram frame is back the moment it ends.
+    const fov = portraitFov(craftShot ? craftShot.fovDeg : CISLUNAR_FOV, cislunarCamera.aspect);
+    if (craftShot) {
+      cislunarCamera.position.set(craftShot.pos.x, craftShot.pos.y, craftShot.pos.z);
+      cislunarCamera.lookAt(craftShot.look.x, craftShot.look.y, craftShot.look.z);
+    }
+    if (Math.abs(cislunarCamera.fov - fov) > 0.01) {
+      cislunarCamera.fov = fov;
+      cislunarCamera.updateProjectionMatrix();
+    }
     // ADR-073 Layer B — distance to each body in km, fed to the
     // cislunar scene's lazy 4K swap. Earth sits at scene origin;
     // Moon position is in scene units, scale back to km via the
@@ -1147,6 +1182,10 @@ export function createFlyCameraController(deps: FlyCameraDeps) {
     },
     get montageShotKind() {
       return montageShotKind;
+    },
+    /** The craft-led coast shot is on (cislunar-craft-shot.ts). */
+    get craftShotActive() {
+      return craftShot !== null;
     },
     get cislunarCamTarget() {
       return cislunarCamTarget;

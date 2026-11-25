@@ -36,7 +36,8 @@
     hasSelection,
     onResetView,
     clearRightPx = 16,
-    mobileClearRightPx = clearRightPx,
+    clearLeftPx = 0,
+    legendClearLeftPx = 0,
     layers,
     onToggleLayer,
     onShowPaths,
@@ -67,12 +68,14 @@
     toggleView: () => void;
     hasSelection: boolean;
     onResetView: () => void;
-    /** Pixels kept free at the right edge: a docked panel plus the scale navigator (flush right
-     *  at the solar system, beside the panel). The row wraps before it, the worlds' "stop before
-     *  the panel" rule (hud-beside-panel). */
+    /** Pixels kept free at the right edge for a docked panel. The row wraps before it, the
+     *  worlds' "stop before the panel" rule (hud-beside-panel). */
     clearRightPx?: number;
-    /** The same for the phone's top rows, which also clear the level card under the navigator. */
-    mobileClearRightPx?: number;
+    /** Pixels the rows start right of their left edge: the scale navigator, top-left at every
+     *  scale (operator 2026-11-25, F1). */
+    clearLeftPx?: number;
+    /** The viewport x the paths legend must start at or past: the open level card's right edge. */
+    legendClearLeftPx?: number;
     layers: ExploreLayers;
     onToggleLayer: (key: keyof ExploreLayers) => void;
     onShowPaths: () => void;
@@ -285,6 +288,8 @@
   class="hud-controls"
   class:context-hidden={hidden}
   style:--hud-clear-right="{clearRightPx}px"
+  style:--hud-clear-left="{clearLeftPx}px"
+  style:--legend-clear-left="{legendClearLeftPx}px"
   data-audio-stage="explore-hud"
   role="group"
   aria-label={m.ui_view_controls()}
@@ -297,7 +302,9 @@
   class="hud-top-mobile"
   bind:clientHeight={mobileRowsHeight}
   class:context-hidden={hidden}
-  style:--hud-clear-right="{mobileClearRightPx}px"
+  style:--hud-clear-right="{clearRightPx}px"
+  style:--hud-clear-left="{clearLeftPx}px"
+  style:--hud-nav-inset={clearLeftPx > 0 ? '32px' : '0px'}
   role="group"
   aria-label={m.ui_view_controls()}
 >
@@ -489,7 +496,7 @@
     /* Mobile: tucked at left:8 / top:nav+8 / gap:6 to fit a 375 px
        viewport. Relaxed at @min-width: 501. */
     top: calc(var(--nav-height) + 8px);
-    left: 8px;
+    left: calc(8px + var(--hud-clear-left, 0px));
     /* Above .time-controls (z-index 40) so the iconic-mission legend that
        hangs off this cluster sits over the time scrubber, not under it.
        Stays below the sizes modal / backdrop (60/61). */
@@ -772,8 +779,8 @@
   /* ─── ≥ 501 px — relax phone-tight cluster spacing ─────────────── */
   @media (min-width: 501px) {
     .hud-controls {
-      left: 16px;
-      top: calc(var(--nav-height) + 12px);
+      left: calc(8px + var(--hud-clear-left, 0px));
+      top: calc(var(--nav-height) + 8px);
       gap: 8px;
     }
   }
@@ -788,7 +795,8 @@
          below the in-flow children (view row + chip row). */
       position: absolute;
       top: 100%;
-      left: 0;
+      /* Past the open level card under the navigator (the row itself starts at 8 + clear-left). */
+      left: max(0px, calc(var(--legend-clear-left, 0px) - 8px - var(--hud-clear-left, 0px)));
       right: auto;
       bottom: auto;
       margin-top: 8px;
@@ -815,7 +823,7 @@
       align-items: center;
       gap: 6px 12px;
       /* left 16 (above) to the navigator's left edge minus its gutter. */
-      max-width: calc(100vw - 16px - var(--hud-clear-right, 16px));
+      max-width: calc(100vw - 8px - var(--hud-clear-left, 0px) - var(--hud-clear-right, 16px));
     }
     .ctrl-row.chips {
       max-width: 100%;
@@ -842,13 +850,19 @@
       display: flex;
       position: fixed;
       top: calc(var(--nav-height) + 8px);
-      left: 8px;
+      left: calc(8px + var(--hud-clear-left, 0px));
       gap: 6px;
       z-index: 45;
-      /* Stops before the navigator, as the desktop row does; a long Reset label (fr at 360 px)
-         wraps onto a second line instead of running under the picker. */
+      /* Starts right of the navigator; a long Reset label (fr at 360 px) wraps onto a second
+         line instead of running off the edge. */
       flex-wrap: wrap;
-      max-width: calc(100vw - 8px - var(--hud-clear-right, 16px));
+      max-width: calc(100vw - 8px - var(--hud-clear-left, 0px) - var(--hud-clear-right, 16px));
+    }
+  }
+  /* Landscape phone: the navigator starts 32 px further in, past the pull tabs (ScaleNav). */
+  @media ((hover: none) or (pointer: coarse)) and (max-height: 520px) {
+    .hud-top-mobile {
+      left: calc(8px + var(--hud-clear-left, 0px) + var(--hud-nav-inset, 0px));
     }
   }
 </style>

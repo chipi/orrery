@@ -110,6 +110,20 @@ The touch top-left cluster (`hud-top-mobile`) takes the same clearance and wraps
 the clearance includes the drawer cover, but no test runs it there); the orbit ruler (C4); the REFERENCES chip in the time
 dock (A4); the breadcrumb and picker redesign (C8); the encounter labels of the iconic paths (done in C7, [UXD-026](UXD-026-iconic-missions-legend-and-milestone-boxes.md)).
 
+## Amendment 2026-11-25 (operator, F1): the navigator is top-left at every scale
+
+The operator, testing 0.9.11: "breadcrumb is on the right side [at the solar system], while on all other lenses it's
+on the left side. We need breadcrumb to always be in a fixed place somewhere on the left." Decision 3's flush-right
+navigator at the solar system is withdrawn. At every scale the row (back, picker, fold chip; RESET at the outer seven)
+sits at the top left, and the level card hangs under it on the left, past the INDEX tab. At the solar system the HUD
+row (2D, RESET VIEW, the layer chips) starts right of the navigator: `HudControls` takes `clearLeftPx`, the
+navigator's measured width plus 12 px (0 in 2D, where the navigator is not drawn), applied a frame later like the
+other measured clearances; on a landscape phone it adds the navigator's 32 px inset past the pull tabs. The HUD row
+still stops before a docked panel (`clearRightPx`, the panel cover plus 16 px). The iconic-missions legend under the
+HUD row starts past the open level card (x 326) so the two never overlap. The ladder opens from the chip's left edge
+everywhere (`align` stays in `ExploreScalePicker`, the clamp to the viewport is unchanged). Checked in the browser at
+1600 x 900, 900 x 700, Pixel 5 portrait and landscape, with the card open and folded and with ICONIC MISSIONS on.
+
 ## Verification
 
 Unit: `src/lib/universe/scale-bar.test.ts` (same width at five distances, three significant digits in `en-US`, `de`

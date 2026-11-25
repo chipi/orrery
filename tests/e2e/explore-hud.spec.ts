@@ -4,8 +4,8 @@ import { waitForHydration } from './_helpers/hydration';
 /**
  * UXD-021, slice C3 (HUD fixes). One scale-bar rule: a bar of constant pixel width (120 px, 64 px
  * under 600 px wide) with the value beside it following the zoom, on Explore and on both Worlds
- * views; the strip box does not resize. The scale picker's ladder opens leftward at the right
- * edge and stays in the viewport, and the row clears a docked side panel. Reset is always in its
+ * views; the strip box does not resize. The scale picker's ladder stays in the viewport, and the
+ * row clears a docked side panel (top-left at every scale since F1, 2026-11-25). Reset is always in its
  * slot at all eight scales. The direction pills show only for their owner. The REFERENCES overlay
  * lists the eight planets in an aligned grid in the reader's language.
  *
@@ -440,7 +440,7 @@ for (const locale of ['ru', 'fr', 'ar']) {
 }
 
 for (const locale of ['fr', 'de', 'ru']) {
-  test(`at 360 px (${locale}) the top-left chips stop before the navigator (a long Reset wraps)`, async ({
+  test(`at 360 px (${locale}) the top-left chips never meet the navigator (a long Reset wraps)`, async ({
     page,
   }) => {
     test.slow();

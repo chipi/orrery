@@ -24,13 +24,14 @@ for (const prefix of ['', '/de', '/ru']) {
     await page.waitForSelector('.time-controls', { state: 'visible', timeout: 45_000 });
     await page.waitForSelector('[data-testid="explore-hint"]', { timeout: 20_000 });
     await page.waitForSelector('[data-testid="explore-level-card-toggle"]', { timeout: 20_000 });
-    // The HUD rows clear the navigator and the level card by their measured widths: wait until the
-    // page has measured them (the clearance leaves its 16 px default), then let the rows re-wrap.
+    // The HUD rows start right of the navigator by its measured width (top-left at every scale,
+    // F1): wait until the page has measured it (the clearance leaves its 0 default), then let the
+    // rows re-wrap.
     await page.waitForFunction(
       () =>
         parseFloat(
           (document.querySelector('.hud-top-mobile') as HTMLElement | null)?.style.getPropertyValue(
-            '--hud-clear-right',
+            '--hud-clear-left',
           ) ?? '0',
         ) > 100,
       null,

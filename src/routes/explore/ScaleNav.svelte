@@ -17,7 +17,6 @@
     resetEnabled,
     onReset,
     levelCard,
-    panelCoverPx = 0,
     width = $bindable(0),
   }: {
     atSolar: boolean;
@@ -32,20 +31,12 @@
     onReset: () => void;
     /** The level card under the row: its fold chip sits beside the picker (plan D15). */
     levelCard?: LevelCardState;
-    /** Width a docked side panel covers at the right edge; the flush-right row sits left of it. */
-    panelCoverPx?: number;
-    /** The row's measured width, for the HUD row that must stop before it (solar system). */
+    /** The row's measured width: at the solar system the HUD row starts right of it. */
     width?: number;
   } = $props();
 </script>
 
-<nav
-  class="scale-nav"
-  class:at-solar={atSolar}
-  bind:clientWidth={width}
-  style:right={atSolar && panelCoverPx > 0 ? `${panelCoverPx + 8}px` : undefined}
-  aria-label={m.explore_location_aria()}
->
+<nav class="scale-nav" bind:clientWidth={width} aria-label={m.explore_location_aria()}>
   {#if back}
     <Chip
       kind="action"
@@ -65,7 +56,6 @@
     <ExploreScalePicker
       {activeShell}
       disabled={pickerDisabled}
-      align={atSolar ? 'right' : 'left'}
       onJump={(shell) => {
         cue('select');
         onJump(shell);
@@ -106,12 +96,10 @@
   /* #45 top scale-navigator — one row under the nav: back · scale chip · reset (always
      drawn at the seven outer scales, disabled while there is nothing to reset, so the row never
      shifts; the solar system's Reset is the HUD row's, UXD-021).
-     Flush LEFT by default (neighborhood+ hide the solar-system control cluster, so
-     the top-left is free and the row sits exactly where the old breadcrumb did).
+     Flush LEFT at every scale (operator 2026-11-25, F1: one fixed place). At the solar system
+     the HUD row (2D / RESET VIEW + layer chips) starts right of it (HudControls clearLeftPx).
      `top: 8px` lines it up with the mobile control row (.hud-top-mobile, top nav+8)
-     so they share a baseline. At the SOLAR SYSTEM scale the top-left is taken by
-     that cluster (2D / AR / SKY + layer chips), so the nav flips to flush RIGHT
-     (.at-solar) to clear it — no overlap with the SKY button. */
+     so they share a baseline. */
   .scale-nav {
     position: absolute;
     top: 8px;
@@ -140,24 +128,10 @@
     font-weight: 700;
     line-height: 1;
   }
-  .scale-nav.at-solar {
-    left: auto;
-    right: 8px;
-  }
-  /* A narrow window with a mouse: the HUD row stops before this row, and the fold chip beside the
-     picker wrapped the layer chips onto a line that reached the INDEX tab (667 x 375, footer-dock
-     spec). The chip sits under the picker instead, so the row is as wide as before (plan D15). */
-  @media (hover: hover) and (pointer: fine) and (max-width: 899px) {
-    .scale-nav.at-solar :global([data-testid='explore-level-card-toggle']) {
-      position: absolute;
-      top: calc(100% + 6px);
-      right: 0;
-    }
-  }
   /* Landscape phone: the left-edge pull tabs sit near the back button;
      the row starts past them. */
   @media ((hover: none) or (pointer: coarse)) and (max-height: 520px) {
-    .scale-nav:not(.at-solar) {
+    .scale-nav {
       left: 40px;
     }
   }

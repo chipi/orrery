@@ -19,23 +19,14 @@
   let {
     shell,
     card,
-    align = 'right',
     covered = false,
-    panelCoverPx = 0,
-    width = $bindable(0),
   }: {
     shell: ShellId;
     /** Open or folded; the fold chip is the navigator row's, beside the level picker (plan D15). */
     card: LevelCardState;
-    /** The side the navigator row sits on: the card hangs under it. */
-    align?: 'left' | 'right';
-    /** An open INDEX panel lies over the card's place (the outer scales): the card steps aside
-     *  until it closes, its fold state kept. */
+    /** An open INDEX panel lies over the card's place: the card steps aside until it closes,
+     *  its fold state kept. */
     covered?: boolean;
-    /** Width a docked side panel covers at the right edge; the card sits left of it. */
-    panelCoverPx?: number;
-    /** The card's measured width, for the HUD row that must stop before it (0 while folded). */
-    width?: number;
   } = $props();
 
   const s = $derived(SCALE_SHELLS[shell]);
@@ -65,10 +56,7 @@
 <section
   id={levelCardBodyId}
   class="level-card"
-  class:left={align === 'left'}
-  bind:clientWidth={width}
   hidden={!card.expanded || covered}
-  style:right={align === 'right' ? `${panelCoverPx + 8}px` : undefined}
   aria-label={s.name()}
   data-testid="explore-level-card"
 >
@@ -88,8 +76,8 @@
 </section>
 
 <style>
-  /* Under the picker row (top 8 + its chip height + 6), at the right edge, left of a docked panel.
-     Under the row's open ladder (z 46) and under the panels (z 30). */
+  /* Under the picker row (top 8 + its chip height + 6), at the left edge with the row (every
+     scale, operator 2026-11-25 F1). Under the row's open ladder (z 46) and under the panels (z 30). */
   .level-card {
     position: absolute;
     top: 44px;
@@ -116,13 +104,6 @@
     .level-card {
       top: 58px;
       max-block-size: max(120px, calc(100% - 300px));
-    }
-  }
-  /* A narrow window with a mouse: the fold chip sits under the picker (ScaleNav), so the card at
-     the solar system hangs under that chip. */
-  @media (hover: hover) and (pointer: fine) and (max-width: 899px) {
-    .level-card:not(.left) {
-      top: 80px;
     }
   }
   .lead {
@@ -163,14 +144,13 @@
   .level-card[hidden] {
     display: none;
   }
-  /* At the outer scales the navigator row is flush left, and the card hangs under it there, 8 px
-     past the INDEX tab at the left edge (30 px wide with a mouse, 44 px on touch) so the tab stays
-     reachable while the card is open. */
-  .level-card.left {
+  /* 8 px past the INDEX tab at the left edge (30 px wide with a mouse, 44 px on touch) so the tab
+     stays reachable while the card is open. */
+  .level-card {
     left: 38px;
   }
   @media (hover: none), (pointer: coarse) {
-    .level-card.left {
+    .level-card {
       left: 52px;
     }
   }

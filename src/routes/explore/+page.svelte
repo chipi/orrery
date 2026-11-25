@@ -607,7 +607,6 @@
   // The level card hangs under that row at the same right edge and can be wider than the picker
   // (de at 390 px: the HUD row's second line ran under it), so the HUD row clears the wider.
   let scaleNavWidth = $state(0);
-  let levelCardWidth = $state(0);
   const levelCard = createLevelCardState();
   let hudMobileRowsHeight = $state(0);
   let contextId = $state<ExploreContextId>('solar-system');
@@ -870,29 +869,22 @@
   // The level picker and the card under it show in a scale level; not in a takeover (black hole,
   // deep-sky, body scene), where the lens panel keeps the story.
   let showLevelPicker = $derived(!activeBlackHole && !activeDeepSky && contextId !== 'body-scene');
-  let hudClearRightPx = $derived(
-    view === '3d' && scaleNavWidth > 0 ? panelCoverPx + 8 + scaleNavWidth + 12 : panelCoverPx + 16,
+  // The HUD row stops before a docked panel; in 3D it starts right of the scale navigator, which is
+  // top-left at every scale (operator 2026-11-25, F1).
+  let hudClearRightPx = $derived(panelCoverPx + 16);
+  let hudClearLeftPx = $derived(view === '3d' && scaleNavWidth > 0 ? scaleNavWidth + 12 : 0);
+  // The open level card hangs under the navigator at x 38–318 (LevelContextCard); the paths legend
+  // under the HUD row starts past it, at 326.
+  let legendClearLeftPx = $derived(
+    view === '3d' && showLevelPicker && levelCard.expanded && !indexOpen ? 326 : 0,
   );
-  // The phone's top rows wrap to a second and third line under the card, so they clear the card
-  // too while it is open at the right edge (the solar system); folded, or hung on the left at the
-  // outer scales, it takes no room there. The desktop row keeps the navigator's width only.
-  let cardRightPx = $derived(
-    showLevelPicker && levelCard.expanded && contextId === 'solar-system' && !activeBlackHole
-      ? levelCardWidth
-      : 0,
-  );
-  let hudMobileClearRightPx = $derived(
-    view === '3d' && scaleNavWidth > 0
-      ? panelCoverPx + 8 + Math.max(scaleNavWidth, cardRightPx) + 12
-      : panelCoverPx + 16,
-  );
-  // Applied a frame later: the widths come from resize observers, and re-wrapping the observed HUD
+  // Applied a frame later: the width comes from a resize observer, and re-wrapping the observed HUD
   // rows inside the same callback raised "ResizeObserver loop completed with undelivered
   // notifications" on phones (an error event every /explore load).
-  let hudMobileClearAppliedPx = $state(16);
+  let hudClearLeftAppliedPx = $state(0);
   $effect(() => {
-    const px = hudMobileClearRightPx;
-    const id = requestAnimationFrame(() => (hudMobileClearAppliedPx = px));
+    const px = hudClearLeftPx;
+    const id = requestAnimationFrame(() => (hudClearLeftAppliedPx = px));
     return () => cancelAnimationFrame(id);
   });
   // The welcome hint is shown once per visit: closed, timed out or acted on, it stays gone through
@@ -2141,20 +2133,12 @@
       pickerDisabled={!contextDeepLinkFn}
       onJump={(shell) => void contextDeepLinkFn?.(shell)}
       resetEnabled={scaleResetEnabled}
-      {panelCoverPx}
       bind:width={scaleNavWidth}
       onReset={resetCurrentScale}
       levelCard={showLevelPicker ? levelCard : undefined}
     />
     {#if showLevelPicker}
-      <LevelContextCard
-        shell={contextId as ShellId}
-        card={levelCard}
-        align={contextId === 'solar-system' && !activeBlackHole ? 'right' : 'left'}
-        covered={indexOpen && !(contextId === 'solar-system' && !activeBlackHole)}
-        {panelCoverPx}
-        bind:width={levelCardWidth}
-      />
+      <LevelContextCard shell={contextId as ShellId} card={levelCard} covered={indexOpen} />
     {/if}
     {#if !hintDone && panelCoverPx === 0}
       <ExploreHint
@@ -2298,7 +2282,8 @@
     hasSelection={solarHasSelection}
     onResetView={resetSolarView}
     clearRightPx={hudClearRightPx}
-    mobileClearRightPx={hudMobileClearAppliedPx}
+    clearLeftPx={hudClearLeftAppliedPx}
+    {legendClearLeftPx}
     bind:mobileRowsHeight={hudMobileRowsHeight}
     {layers}
     onToggleLayer={(key) => {

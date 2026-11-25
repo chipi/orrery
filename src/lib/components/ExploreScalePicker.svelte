@@ -31,18 +31,12 @@
     activeShell,
     onJump,
     disabled = false,
-    align = 'left',
   }: {
     activeShell: ShellId;
     /** Jump to a shell; a no-op walk (same shell) is handled upstream. */
     onJump: (shell: ShellId) => void;
     /** True until the host has wired `contextDeepLinkFn` (scene not ready). */
     disabled?: boolean;
-    /** The screen edge the ladder lines up with: `right` opens it leftward from a chip that
-     *  sits flush right (the solar system), so it cannot pass the edge. Physical, not
-     *  logical: the navigator's flush-right is `right: 8px` in every direction, so in RTL a
-     *  logical `end` would put the ladder past the right edge instead of away from it. */
-    align?: 'left' | 'right';
   } = $props();
 
   // Top-to-bottom the rail reads outermost → innermost, so "zoom out" is "up".
@@ -76,7 +70,7 @@
   let toggleButton = $state<HTMLElement | undefined>();
 
   // The ladder's position is clamped to [8, viewport - 8], not only its width: its natural edge
-  // (the chip's left, or its right with `align="right"`) can lie within a long label's width of
+  // (the chip's left) can lie within a long label's width of
   // the screen edge in any language or direction. Offsets are relative to the picker, so the
   // clamp holds wherever the navigator sits.
   const EDGE_GAP = 8;
@@ -88,7 +82,7 @@
     const p = pickerEl.getBoundingClientRect();
     const w = railEl.getBoundingClientRect().width;
     const vw = document.documentElement.clientWidth;
-    const want = align === 'right' ? p.right - w : p.left;
+    const want = p.left;
     const left = Math.min(Math.max(want, EDGE_GAP), Math.max(EDGE_GAP, vw - EDGE_GAP - w));
     railLeft = left - p.left;
   }
@@ -106,13 +100,7 @@
   });
 </script>
 
-<div
-  bind:this={pickerEl}
-  class="scale-picker"
-  class:open
-  data-align={align}
-  data-testid="explore-scale-picker"
->
+<div bind:this={pickerEl} class="scale-picker" class:open data-testid="explore-scale-picker">
   <!-- The trigger: the current level's glyph + name + a caret; opens the ladder. -->
   <Chip
     bind:ref={toggleButton}
@@ -194,10 +182,6 @@
     border-radius: 10px;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.55);
     z-index: 2;
-  }
-  .scale-picker[data-align='right'] .rail {
-    left: auto;
-    right: 0;
   }
   .scale-picker.open .rail {
     display: flex;

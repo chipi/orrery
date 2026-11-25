@@ -9,7 +9,7 @@
   "entryState": {
     "altitudeM": 122000,
     "velocityMs": 7820,
-    "flightPathAngleDeg": 1.5
+    "flightPathAngleDeg": 1.809
   },
   "entryMassKg": 2000,
   "entryCdA": 6.0,
@@ -36,6 +36,10 @@
     {
       "l": "gemini3 — NASA/NSSDCA",
       "u": "https://nssdc.gsfc.nasa.gov/nmc/"
+    },
+    {
+      "l": "Estimated entry angle retuned 1.5° → 1.809° for the US Standard Atmosphere 1976 table (2026-11-25), to the 4.35 g peak it flew before the switch",
+      "u": "https://www.pdas.com/bigtables.html"
     }
   ]
 }

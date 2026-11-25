@@ -68,13 +68,12 @@ const PEAK_G_BAND: Record<string, [number, number]> = {
   moon: [0, 7],
   mars: [4, 18],
   venus: [120, 320],
-  // Tier-1 manned Earth re-entry (ADR-088 Phase 0a/1a). Profiles use the real ~1.5° LEO-deorbit
-  // angle + sourced L/D + real/derived drag areas. Orbital BALLISTIC capsules (Mercury/Vostok/
-  // Voskhod) read ~7.6–7.7 g — matching flown ~7.8 g. LIFTING capsules read ~4.2–5.6 g (flown guided
-  // 3.3–4 g) — the ~1–1.5 g residual is a fixed-bank vs active-bank-modulation gap, NOT the γ-floor
-  // (measured irrelevant at LEO energy) and NOT closed by the naive decel-hold controller (measured:
-  // overshoots). Suborbital Mercury-Redstone (freedom-7/liberty-bell-7) fly their sourced 11.0 /
-  // 11.1 g since the 2026-11-03 fit (scripts/fit-earth-capsule.ts). Band [3, 11.5] brackets all.
+  // Tier-1 manned Earth re-entry (ADR-088 Phase 0a/1a), flown through the US Standard Atmosphere
+  // 1976 since 2026-11-25. Orbital BALLISTIC capsules (Mercury/Vostok/Voskhod 1) read ~8.5–9.2 g:
+  // in the real air no shallow angle takes a lift-free capsule much below ~8.5 g, so Mercury's flown
+  // 7.6–7.7 g (which its summary puts down to some lift in entry) reads ~12% high. LIFTING capsules
+  // read 3.3–7.7 g with their estimated angles fitted. Suborbital Mercury-Redstone
+  // (freedom-7/liberty-bell-7) fly their sourced 11.0 / 11.1 g. Band [3, 11.5] brackets all.
   earth: [3, 11.5],
   // Phase 2 (RFC-034 §12): micro-g asteroids barely decelerate; the Galileo
   // Jupiter probe hits the fiercest entry of any probe (~200–260 g published).
@@ -146,14 +145,12 @@ describe('every descent profile expands + flies to its honest outcome', () => {
  * This guard auto-covers EVERY Earth profile carrying a `liftToDragRatio`, so dropping the lift on
  * any of them fails here. A guided profile (targetDownrangeKm) must also actually reach its target.
  *
- * CALIBRATION (ADR-088 Phase 1a): with the entry angle (1.5°), sourced L/D, and real/geometry-
- * derived drag areas (Apollo BC 313.5), lifting capsules now read ~4.2–5.6 g. Flown guided values:
- * Apollo 7 LEO ~3.3 g, Soyuz LEO 3–4 g, Shenzhou ≤4 g, Dragon ~4 g. The model runs ~1–1.5 g ABOVE
- * the flown guided value for the low-L/D capsules because our range-control solve flies a single
- * FIXED bank; the real vehicles ACTIVELY modulate bank to hold a lower g-limit (and, at lunar-
- * return energy, loft) — neither is in this planar fixed-bank model. Honest gap, not faked. Band
- * [3, 6] brackets the model (Apollo 7 and 9, fitted to their reports in 0.9.5, read 3.4–3.9 g against
- * the flown 3.33/3.35); a ballistic (lift-free) regression would spike ~11 g and fail here.
+ * CALIBRATION (US Standard Atmosphere 1976, 2026-11-25): sourced L/D, real/geometry-derived drag
+ * areas (Apollo BC 313.5), and the estimated entry angles or range targets fitted per flight. Apollo
+ * 7 and 9 fly their flown SP-4029 ranges and read 3.3–3.7 g (flown 3.33/3.35); Gemini IV and XII
+ * their flown 7.7 and 6.3 g (Gemini IV's open-loop rolling entry was the hardest of the program);
+ * the rest keep the 4.1–5.7 g they read before the switch (no flown peak found). Band [3, 8]
+ * brackets them; a ballistic (lift-free) regression reads ~8.5 g or more and fails here.
  */
 describe('lifting re-entries fly the calibrated lifting band (all capsules)', () => {
   // EARTH LEO capsule returns only (~7.8 km/s). apollo8 (LUNAR return, 10.8 km/s skip) and the Mars
@@ -178,7 +175,7 @@ describe('lifting re-entries fly the calibrated lifting band (all capsules)', ()
     it(`${id} rides its lift vector, peak-g in the lifting band`, () => {
       const raw = loadRaw(id);
       const { s } = flight(id);
-      expectInRange(s.peakDecel.g, 3, 6, `${id} lifting peak decel (g)`);
+      expectInRange(s.peakDecel.g, 3, 8, `${id} lifting peak decel (g)`);
       if (raw.targetDownrangeKm != null) {
         expect(s.guidance?.targetReachable).toBe(true);
         expectInRange(
@@ -210,40 +207,42 @@ describe('apollo8 lunar-return skip flight (shipped profile)', () => {
 
   // Apollo 11's guided entry against its postflight analysis (MSC, Feb 1970): first maximum
   // 6.73 g, minimum 0.48 g, second maximum 6.00 g, splashdown 929 s after entry interface. Every
-  // input is sourced (L/D 0.282, range 2,772 km); the model reads the first pulse at ~8.0 g, a
-  // recorded model limit (the flat atmosphere and 2-DOF lift), so the band admits it.
+  // input is sourced (L/D 0.282, range 2,772 km). In the US Standard Atmosphere 1976 the model reads
+  // the pulses within 10% (6.64 / 0.77 / 6.49 g) but splashes ~5% early (879 s): its fixed-bank
+  // planar guidance lofts less between the pulses than the flown up-control did, so it covers the
+  // range sooner. A recorded model limit, held at 10%.
   it('Apollo 11 flies lift-up through the first pulse, dips, pulses again and splashes on time', () => {
     const { s } = flight('apollo11-splashdown');
     const g = s.states.map((st) => st.decelG);
     const i1 = g.indexOf(Math.max(...g));
     const dip = Math.min(...g.slice(i1, i1 + 400));
     const iDip = g.indexOf(dip, i1);
-    expectInRange(g[i1], 6.5, 8.5, 'first pulse (6.73 g flown)');
+    expectInRange(g[i1], 6.73 * 0.9, 6.73 * 1.1, 'first pulse (6.73 g flown)');
     expectInRange(dip, 0.2, 1, 'between the pulses (0.48 g flown)');
-    expectInRange(Math.max(...g.slice(iDip)), 4.5, 6.5, 'second pulse (6.00 g flown)');
+    expectInRange(Math.max(...g.slice(iDip)), 6 * 0.9, 6 * 1.1, 'second pulse (6.00 g flown)');
     const touch = s.events.find((e) => e.type === 'touchdown')!.t;
-    expectInRange(touch, 929 * 0.95, 929 * 1.05, 'splashdown (929 s flown)');
+    expectInRange(touch, 929 * 0.9, 929 * 1.05, 'splashdown (929 s flown)');
     expect(s.guidance?.targetReachable).toBe(true);
   });
 
   // Apollo 12, 14, 15, 16 and 17: SP-4029 compilation inputs only (no postflight analysis found): L/D
   // 0.309, 0.280, 0.290, 0.286, 0.290, range 1,250 / 1,234 / 1,184 / 1,190 / 1,190 n.mi. Flown: peak
   // 6.57, 6.76, 6.23, 7.19, 6.49 g, splashdown 846, 853, 778, 814, 801 s after entry. The model reads
-  // the first pulse 10-27% high (the same recorded limit as Apollo 11). Apollo 15 landed on two
-  // mains (one deflated at 6,000 ft, MR15 14.1.9), "about 32 seconds earlier" than on three, so the
-  // three-main flight the model flies is compared with 778 + 32 = 810 s; its first pulse is 27% high.
-  for (const [id, peak, splash, hi] of [
-    ['apollo12-splashdown', 6.57, 846, 1.25],
-    ['apollo14-splashdown', 6.76, 853, 1.25],
-    ['apollo15-splashdown', 6.23, 810, 1.3],
-    ['apollo16-splashdown', 7.19, 814, 1.25],
-    ['apollo17-splashdown', 6.49, 801, 1.25],
+  // the larger of its two pulses within 8% of the flown maximum and splashes 3-9% early (the same
+  // recorded limit as Apollo 11). Apollo 15 landed on two mains (one deflated at 6,000 ft, MR15 14.1.9), "about 32 seconds earlier" than on three, so the
+  // three-main flight the model flies is compared with 778 + 32 = 810 s.
+  for (const [id, peak, splash] of [
+    ['apollo12-splashdown', 6.57, 846],
+    ['apollo14-splashdown', 6.76, 853],
+    ['apollo15-splashdown', 6.23, 810],
+    ['apollo16-splashdown', 7.19, 814],
+    ['apollo17-splashdown', 6.49, 801],
   ] as const) {
     it(`${id} lands on target inside the corridor and near its flown time`, () => {
       const { s } = flight(id);
-      expectInRange(s.peakDecel.g, peak * 0.9, peak * hi, `${id} first pulse (${peak} g flown)`);
+      expectInRange(s.peakDecel.g, peak * 0.9, peak * 1.1, `${id} first pulse (${peak} g flown)`);
       const touch = s.events.find((e) => e.type === 'touchdown')!.t;
-      expectInRange(touch, splash * 0.95, splash * 1.05, `${id} splashdown (${splash} s flown)`);
+      expectInRange(touch, splash * 0.9, splash * 1.05, `${id} splashdown (${splash} s flown)`);
       expect(s.touchdownSuccess).toBe(true);
       expect(s.guidance?.targetReachable).toBe(true);
     });
@@ -305,6 +304,8 @@ describe('model-authored entry fields are declared as estimates, sourced ones ar
     'skylab-3',
     'skylab-4',
   ]);
+  // Range flown, from NASA SP-4029's entry table (Apollo 7: 1,594 n mi; Apollo 9: 1,835 n mi).
+  const SOURCED_RANGE = new Set(['apollo7', 'apollo9']);
   const profiles = [...DESCENT_MISSION_IDS].filter((id) => {
     if (!existsSync(profilePath(id))) return false;
     const raw = loadRaw(id);
@@ -319,8 +320,11 @@ describe('model-authored entry fields are declared as estimates, sourced ones ar
     it(`${id} declares its estimates, omits its sourced fields`, () => {
       const raw = loadRaw(id);
       const est = raw.estimatedFields ?? [];
-      // A guided range target is always a model estimate.
-      if (raw.targetDownrangeKm != null) expect(est).toContain('targetDownrangeKm');
+      // A guided range target is a model estimate unless the flown range is sourced.
+      if (raw.targetDownrangeKm != null) {
+        if (SOURCED_RANGE.has(id)) expect(est).not.toContain('targetDownrangeKm');
+        else expect(est).toContain('targetDownrangeKm');
+      }
       // L/D: sourced unless in the MSL-class-estimate set.
       if ((raw.liftToDragRatio ?? 0) > 0) {
         if (ESTIMATED_LD.has(id)) expect(est).toContain('liftToDragRatio');

@@ -8,12 +8,13 @@
   },
   "entryState": {
     "altitudeM": 122000,
-    "velocityMs": 2300,
+    "velocityMs": 1731,
     "flightPathAngleDeg": 34.85
   },
   "entryMassKg": 1350,
   "entryCdA": 3,
   "estimatedFields": [
+    "velocityMs",
     "flightPathAngleDeg",
     "entryCdA",
     "parachuteCdA",
@@ -53,6 +54,10 @@
     {
       "l": "Liberty Bell 7: the side hatch blew about five minutes after splashdown (drawn as 300 s, an estimate; the figure was not checked against NASA's MR-4 report); Grissom swam out and the capsule flooded and sank (Wikipedia)",
       "u": "https://en.wikipedia.org/wiki/Mercury-Redstone_4"
+    },
+    {
+      "l": "Entry speed at 122 km is not in the flight reports: estimated 1731 m/s (was 2300), the speed at which the unchanged entry angle gives the flown 11.1 g peak in the US Standard Atmosphere 1976 table (2026-11-25)",
+      "u": "https://www.pdas.com/bigtables.html"
     }
   ]
 }

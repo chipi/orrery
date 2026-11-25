@@ -81,7 +81,7 @@ export const ATM_SCALE_HEIGHT_M: Record<DescentBody, number> = {
   mars: 11_000,
   venus: 15_900, // unused: Venus, Titan and Jupiter fly the measured profiles (descent-atmosphere-tables.ts)
   titan: 40_000, // unused (measured profile)
-  earth: 8_500, // ISA troposphere single-exponential fit
+  earth: 8_500, // unused: Earth flies the US Standard Atmosphere 1976 (descent-atmosphere-tables.ts)
   jupiter: 27_000, // unused (measured profile)
   mercury: 1, // airless (density 0)
   comet_67p: 1, // airless (density 0)

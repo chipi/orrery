@@ -28,7 +28,7 @@
       "u": "https://www.nasa.gov/wp-content/uploads/static/apollo50th/pdf/A11_MissionReport.pdf"
     },
     {
-      "l": "Apollo 11 Entry Postflight Analysis (MSC Mission Planning and Analysis Division, Feb 1970): hypersonic CM L/D 0.282 (reconstructed); relative range 1,497 n.mi (2,772 km) from entry to the target; lift-up held until the drag passed 1.426 g at 52 s, bank -180 deg after the first pulse; first maximum load factor 6.73 g at 82 s, minimum 0.48 g, second maximum 6.00 g. Model limit: with these inputs the model peaks at 8.0 g at 68 s (first pulse), 0.42 g, 5.4 g; drogues 578 s (541 s flown), splashdown 935 s (929 s flown)",
+      "l": "Apollo 11 Entry Postflight Analysis (MSC Mission Planning and Analysis Division, Feb 1970): hypersonic CM L/D 0.282 (reconstructed); relative range 1,497 n.mi (2,772 km) from entry to the target; lift-up held until the drag passed 1.426 g at 52 s, bank -180 deg after the first pulse; first maximum load factor 6.73 g at 82 s, minimum 0.48 g, second maximum 6.00 g. Model limit (US Standard Atmosphere 1976, 2026-11-25): with these inputs the model's first pulse is 6.6 g at 81 s (6.73 g flown), it dips to 0.8 g, second pulse 6.5 g; drogues 517 s (541 s flown), splashdown 879 s (929 s flown). The pulses are within 10% of flown; the entry runs short of the flown time, a limit of the fixed-bank planar guidance (on Apollo 11, the one flight with a published minimum, it lofts to 0.8 g between the pulses against the flown 0.48 g)",
       "u": "https://apollojournals.org/afj/ap11fj/pdf/19740072963_as11-entry-analysis-19700220.pdf"
     },
     {

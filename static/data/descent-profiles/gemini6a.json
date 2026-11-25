@@ -14,7 +14,7 @@
   "entryMassKg": 2000,
   "entryCdA": 6,
   "liftToDragRatio": 0.19,
-  "targetDownrangeKm": 2225,
+  "targetDownrangeKm": 2368,
   "estimatedFields": [
     "targetDownrangeKm",
     "entryCdA",
@@ -37,6 +37,10 @@
     {
       "l": "Gemini 6/7 re-entry reconstruction (IBM): 400,000 ft at ~7,430 m/s, -1.42°; drogue 50,000 ft, main 10,600 ft",
       "u": "https://www.ibiblio.org/apollo/Documents/Gemini-6-7-PostFlightReports.pdf"
+    },
+    {
+      "l": "Estimated target range retuned 2225 → 2368 km for the US Standard Atmosphere 1976 table (2026-11-25), to the 4.38 g peak it flew before the switch",
+      "u": "https://www.pdas.com/bigtables.html"
     }
   ]
 }

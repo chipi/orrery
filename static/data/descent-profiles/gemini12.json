@@ -9,7 +9,7 @@
   "entryState": {
     "altitudeM": 122000,
     "velocityMs": 7820,
-    "flightPathAngleDeg": 1.5
+    "flightPathAngleDeg": 1.575
   },
   "entryMassKg": 2000,
   "entryCdA": 6,
@@ -38,6 +38,10 @@
     {
       "l": "Gemini XII Mission Report (MSC-G-R-67-1): 6.4 g; 400K ft ~94:20:12; drogue 94:29:10 at ~55,000 ft, main 94:30:35 at 10,600 ft, landing 94:34:30",
       "u": "https://www.ibiblio.org/apollo/Documents/Gemini12MissionReport.pdf"
+    },
+    {
+      "l": "Estimated entry angle retuned 1.5° → 1.575° for the US Standard Atmosphere 1976 table (2026-11-25), to the flown 6.2-6.4 g (Gemini XII Mission Report)",
+      "u": "https://www.pdas.com/bigtables.html"
     }
   ]
 }

@@ -14,7 +14,7 @@
   "entryMassKg": 2000,
   "entryCdA": 6,
   "liftToDragRatio": 0.19,
-  "targetDownrangeKm": 2225,
+  "targetDownrangeKm": 2385,
   "estimatedFields": [
     "targetDownrangeKm",
     "entryCdA",
@@ -37,6 +37,10 @@
     {
       "l": "Gemini VII Mission Report (MSC-G-R-66-1): 4.5 g; drogue 330:29:30 at 50,000 ft, main 330:31:03 at 10,600 ft, landing 330:35:01; entry ~7,433 m/s, -1.40° (IBM reconstruction)",
       "u": "https://www.ibiblio.org/apollo/Documents/Gemini7MissionReport.pdf"
+    },
+    {
+      "l": "Estimated target range retuned 2225 → 2385 km for the US Standard Atmosphere 1976 table (2026-11-25), to the 4.35 g peak it flew before the switch",
+      "u": "https://www.pdas.com/bigtables.html"
     }
   ]
 }

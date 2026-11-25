@@ -2,7 +2,7 @@
  * Measured atmosphere profiles for the bodies whose probes measured them on the way down.
  *
  * A single isothermal exponential (`ATM_SCALE_HEIGHT_M`) is far too dense high up on Venus,
- * Titan and Jupiter — the probes decelerated ~100 km too early — and on Jupiter it reaches
+ * Titan, Jupiter and Earth — the probes decelerated ~100 km too early — and on Jupiter it reaches
  * 23 bar at −82 km instead of ~−130 km. These tables replace it for those three bodies.
  * Rows are [altitude m, density kg·m⁻³, pressure Pa], altitude ascending; interpolation is
  * log-linear in altitude, and beyond either end the last segment's slope is extended.
@@ -102,8 +102,48 @@ const JUPITER: readonly AtmRow[] = [
   [1_028_100, 2.59e-11, 9.697e-5],
 ];
 
+/** Earth: the US Standard Atmosphere 1976 (NOAA-S/T 76-1562), 0–150 km in 5 km steps, as tabulated
+ *  by Public Domain Aeronautical Software, https://www.pdas.com/bigtables.html (Table 1, geometric
+ *  altitude). The single 8.5 km exponential it replaces was ~3.5× too dense at 60 km and ~16× at
+ *  100 km, so every entry decelerated too high and the lunar-return first pulse read 1–1.7 g over
+ *  the flown peak (docs/wip/2026-11-25-earth-atmosphere-finding.md). */
+const EARTH: readonly AtmRow[] = [
+  [0, 1.225, 1.0132e5],
+  [5_000, 7.3643e-1, 5.4048e4],
+  [10_000, 4.1351e-1, 2.65e4],
+  [15_000, 1.9476e-1, 1.2112e4],
+  [20_000, 8.891e-2, 5.5293e3],
+  [25_000, 4.0084e-2, 2.5492e3],
+  [30_000, 1.841e-2, 1.197e3],
+  [35_000, 8.4634e-3, 5.7459e2],
+  [40_000, 3.9957e-3, 2.8714e2],
+  [45_000, 1.9663e-3, 1.491e2],
+  [50_000, 1.0269e-3, 7.9779e1],
+  [55_000, 5.681e-4, 4.2525e1],
+  [60_000, 3.0968e-4, 2.1959e1],
+  [65_000, 1.6321e-4, 1.093e1],
+  [70_000, 8.2829e-5, 5.2209],
+  [75_000, 3.9921e-5, 2.3881],
+  [80_000, 1.8458e-5, 1.0525],
+  [85_000, 8.2195e-6, 4.4568e-1],
+  [90_000, 3.44e-6, 1.8435e-1],
+  [95_000, 1.3873e-6, 7.5775e-2],
+  [100_000, 5.6044e-7, 3.2012e-2],
+  [105_000, 2.3325e-7, 1.4423e-2],
+  [110_000, 9.6734e-8, 7.1493e-3],
+  [115_000, 4.2794e-8, 4.0037e-3],
+  [120_000, 2.2199e-8, 2.5366e-3],
+  [125_000, 1.2918e-8, 1.736e-3],
+  [130_000, 8.1494e-9, 1.2503e-3],
+  [135_000, 5.4647e-9, 9.3569e-4],
+  [140_000, 3.8313e-9, 7.2029e-4],
+  [145_000, 2.7805e-9, 5.669e-4],
+  [150_000, 2.0752e-9, 4.5422e-4],
+];
+
 export const ATM_PROFILE: Partial<Record<DescentBody, readonly AtmRow[]>> = {
   venus: VENUS,
+  earth: EARTH,
   titan: TITAN,
   jupiter: JUPITER,
 };

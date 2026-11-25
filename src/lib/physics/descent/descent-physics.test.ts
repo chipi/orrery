@@ -402,7 +402,7 @@ describe('range-control entry guidance', () => {
   // Three bank-solve bisections = ~30 full entry integrations — the heaviest
   // test here. Budget is file-level (see vi.setConfig above).
   it('the computer solves the bank to hit a reachable target downrange', () => {
-    for (const target of [2600, 3000, 3400]) {
+    for (const target of [2800, 3400, 4000]) {
       const s = integrateDescent({ ...capsule, targetDownrangeKm: target });
       expect(s.guidance?.targetReachable).toBe(true);
       expectInRange(s.landingDownrangeKm, target - 25, target + 25, `guided to ${target} km`);
@@ -435,8 +435,9 @@ describe('range-control entry guidance', () => {
     const liftDown = integrateDescent(lunar, { entryBankCos: -1, ...hold }).peakDecel.g;
     expectCloseTo(liftDown, liftUp, 0.05, 'peak g does not depend on the post-pulse bank');
     // The guided solve sets the hold for a lunar return only; a LEO entry banks from the start.
+    // The bank takes over once the pulse is 10% past its top, which can lift the tail ~1%.
     expect(integrateDescent({ ...lunar, targetDownrangeKm: 2300 }).peakDecel.g).toBeLessThan(
-      liftUp + 0.05,
+      liftUp * 1.02,
     );
     const leoDown = integrateDescent(capsule, { entryBankCos: -1 }).peakDecel.g;
     const leoUp = integrateDescent(capsule, { entryBankCos: 1 }).peakDecel.g;

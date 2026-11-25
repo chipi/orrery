@@ -45,3 +45,34 @@ The other 33 Earth descents all move, because their inputs were tuned against th
 3. Tighten the test bands (the Apollo first-pulse band was widened for the model limit; it can come
    back to ±10%) and rewrite the "model limit" provenance notes in the six splashdown profiles.
 4. Apollo 8's skip is its own check: it must still skip, with the flown range.
+
+## Result (2026-11-25, committed)
+
+Earth flies the 1976 table (`ATM_PROFILE.earth`). Per flight, only inputs marked estimated moved
+(tuner `zz-tune.tmp.test.ts`, session scratchpad: bisection on one knob to one target):
+
+| Flights | Knob | Target | Result |
+|---|---|---|---|
+| Gemini IV, XII | entry angle 1.5° → 1.585°, 1.575° | flown 7.7, 6.2–6.4 g | 7.71, 6.30 g |
+| Gemini 3, 8; Skylab 2–4; Shenzhou 1; Soyuz 11; Inspiration4; Polaris Dawn | entry angle 1.5° → 1.59–1.81° | the peak before the switch (no flown peak found) | unchanged to 0.02 g |
+| Gemini 6A, 7 | target range 2,225 → 2,368, 2,385 km | the peak before | 4.38, 4.35 g |
+| Apollo 7, 9 | target range → the flown 2,952, 3,398 km (SP-4029, now sourced) | — | 3.33, 3.66 g (flown 3.33, 3.35); splash 980, 1,035 s (flown 937, 1,004) |
+| MR-3, MR-4 | entry speed 2,300 → 1,725, 1,731 m/s (now marked estimated) | flown 11.0, 11.1 g | exact; splash 488, 512 s |
+| Voskhod 2 | entry angle 3.33° → 2.48° | the 10 g before | 10.0 g |
+| Starship Flight 5 | Cd·A 280 → 300 m² | sourced flip T+1:05:15, splash T+1:05:40 | flip 1,034 s, splash 1,057 s |
+
+Left as they were, with what they now read:
+
+- **Apollo 11–17 splashdowns:** every input sourced except the Cd·A, which the Apollo CM ballistic
+  coefficient (313.5) fixes. The first pulse reads 6.0–6.8 g and the larger of the two pulses is
+  within 8% of the flown maximum (was 10–27% high), but drogues come 25–80 s early and splashdown is
+  3–9% early (879 vs 929 s on Apollo 11). Test bands: maxima ±10%, splashdown −10%/+5%.
+- **Mercury orbital, Vostok, Voskhod 1, Soyuz 1 (ballistic):** in the real air no shallow angle
+  takes a lift-free capsule below ~8.5 g (the tuner bracketed 0.3–2× the angle), so they read
+  8.5–9.2 g; Mercury flew 7.6–7.7 g, which its summary puts down to lift in entry. Ranges grow
+  15–20%.
+- **Apollo 8 (open, to the operator):** the fixed-lift-up skip of ADR-089 balloons: 26 min / 7,523 km
+  → 72 min / 28,097 km. Flown (SP-4029): range 1,292 n mi (2,393 km), 6.84 g, splash 869 s after
+  entry. Given that range as its target, the model flies 6.5 g, 811 s and does not skip. That
+  would retire Apollo 8 as the skip demonstrator ADR-089 names, so it is the operator's call.
+- **Apollo-Soyuz:** 4.13 → 4.05 g, left.

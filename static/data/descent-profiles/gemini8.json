@@ -9,7 +9,7 @@
   "entryState": {
     "altitudeM": 122000,
     "velocityMs": 7820,
-    "flightPathAngleDeg": 1.5
+    "flightPathAngleDeg": 1.813
   },
   "entryMassKg": 2000,
   "entryCdA": 6,
@@ -38,6 +38,10 @@
     {
       "l": "Gemini VIII Technical Debriefing: ~6 g (pilot estimate), drogue ~50,000 ft, main 10,000 ft",
       "u": "https://web.archive.org/web/2023id_/https://www.hq.nasa.gov/alsj/57115999-Gemini-VIII-Technical-Debriefing.pdf"
+    },
+    {
+      "l": "Estimated entry angle retuned 1.5° → 1.813° for the US Standard Atmosphere 1976 table (2026-11-25), to the 4.32 g peak it flew before the switch",
+      "u": "https://www.pdas.com/bigtables.html"
     }
   ]
 }

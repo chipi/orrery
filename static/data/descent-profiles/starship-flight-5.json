@@ -5,7 +5,7 @@
   "landingSite": { "lat": -11.5, "lon": 88.5 },
   "entryState": { "altitudeM": 120000, "velocityMs": 7400, "flightPathAngleDeg": 0.7 },
   "entryMassKg": 130000,
-  "entryCdA": 280,
+  "entryCdA": 300,
   "liftToDragRatio": 0.5,
   "retroPropellantKg": 15000,
   "estimatedFields": [
@@ -24,6 +24,10 @@
     {
       "l": "Starship Flight 5 (SpaceX's clock, liftoff at T+0:02): re-entry T+48:03, transonic 1:02:34, subsonic 1:03:43, landing flip 1:05:15, landing burn 1:05:20, splashdown 1:05:40 (SpaceX's timeline as Wikipedia carries it); trajectory -15 x 212 km x 26.2 deg, splash in the Indian Ocean (McDowell, JSR 838). docs/wip/2026-11-22-starship-flight-5-sourced.md. Lift-to-drag, Cd·A, the entry angle and the flip altitude are fitted to transonic 871 s, flip 1032 s and splashdown 1057 s after re-entry (model: 869, 1031, 1054); the landing burn is capped at three sea-level Raptors (~6.6 MN). The entry speed and the splash point are estimates: no source gives the coordinates, only the Indian Ocean.",
       "u": "https://planet4589.org/space/jsr/back/news.838.txt"
+    },
+    {
+      "l": "Estimated Cd·A retuned 280 → 300 m² for the US Standard Atmosphere 1976 table (2026-11-25), so the subsonic fall again meets SpaceX's landing flip (T+1:05:15) and splashdown (T+1:05:40)",
+      "u": "https://www.pdas.com/bigtables.html"
     }
   ]
 }

@@ -9,7 +9,7 @@
   "entryState": {
     "altitudeM": 122000,
     "velocityMs": 7820,
-    "flightPathAngleDeg": 1.5
+    "flightPathAngleDeg": 1.585
   },
   "entryMassKg": 2000,
   "entryCdA": 6,
@@ -39,6 +39,10 @@
     {
       "l": "Gemini IV Mission Report (MSC-G-R-65-3): 7.7 g; drogue 97:50:53 at 40,000 ft, main 97:52:11, landing 97:56:12",
       "u": "https://ntrs.nasa.gov/api/citations/19670095754/downloads/19670095754.pdf"
+    },
+    {
+      "l": "Estimated entry angle retuned 1.5° → 1.585° for the US Standard Atmosphere 1976 table (2026-11-25), to the flown 7.7 g (Gemini IV Mission Report)",
+      "u": "https://www.pdas.com/bigtables.html"
     }
   ]
 }

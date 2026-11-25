@@ -14,9 +14,8 @@
   "entryMassKg": 5560,
   "entryCdA": 17.7,
   "liftToDragRatio": 0.3,
-  "targetDownrangeKm": 2532,
+  "targetDownrangeKm": 2952,
   "estimatedFields": [
-    "targetDownrangeKm",
     "parachuteCdA",
     "terminalCdA",
     "beats.apex_cover_jettison",
@@ -40,7 +39,7 @@
       "u": "https://archive.org/details/apollo-7-mission-report"
     },
     {
-      "l": "NASA SP-4029, \"Entry, Splashdown, and Recovery\" table, Apollo 7 column: flotation attitude \"Inverted\" (stable II), uprighting time \"12.0\" minutes (realAfterS 720 s). When the capsule turned over is not given: drawn 3 s after splashdown",
+      "l": "NASA SP-4029, \"Entry, Splashdown, and Recovery\" table, Apollo 7 column: flotation attitude \"Inverted\" (stable II), uprighting time \"12.0\" minutes (realAfterS 720 s). When the capsule turned over is not given: drawn 3 s after splashdown. Entry range 1,594 n mi (2,952 km), the target range flown",
       "u": "https://www.nasa.gov/wp-content/uploads/static/history/SP-4029/Apollo_18-40_Entry_Splashdown_and_Recovery.htm"
     }
   ],

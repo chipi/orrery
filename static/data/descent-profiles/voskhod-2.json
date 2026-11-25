@@ -9,7 +9,7 @@
   "entryState": {
     "altitudeM": 122000,
     "velocityMs": 7820,
-    "flightPathAngleDeg": 3.33
+    "flightPathAngleDeg": 2.48
   },
   "entryMassKg": 2680,
   "entryCdA": 5,
@@ -35,6 +35,10 @@
     {
       "l": "Siddiqi, Challenge to Apollo (SP-2000-4408): Voskhod 2's re-entry load reached ten g (service module failed to separate)",
       "u": "https://history.nasa.gov/SP-4408pt1.pdf"
+    },
+    {
+      "l": "Estimated entry angle retuned 3.33° → 2.48° for the US Standard Atmosphere 1976 table (2026-11-25), to the 10 g peak it flew before the switch (no flown peak g found)",
+      "u": "https://www.pdas.com/bigtables.html"
     }
   ],
   "beats": [

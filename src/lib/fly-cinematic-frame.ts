@@ -16,8 +16,7 @@
  *   1. Cruise-hold arming (W3.7) — sets `cruiseHoldUntil` if crossing trigger
  *   2. Cut overlay update (W3.6) — current opacity + clears `cutStartedAt` when done
  *   3. Peak-hold arm step (W3.1 + arms W3.2 afterglow window)
- *   4. Finale opacities (W3.4) — caption + black + settled flag
- *   5. Cinematic freeze flag — caller gates `simDay` advance on this
+ *   4. Cinematic freeze flag — caller gates `simDay` advance on this
  *
  * Side effects on `cine`:
  *   - peakHoldUntil, peakHoldArmedForFlybyMet, afterglowUntil
@@ -30,8 +29,6 @@
  *   - Camera math (cruise oscillations, parallax orbit, lerps)
  *   - Phase / sub-phase transitions
  *   - Arrival snap + epilogue handoff
- *   - Arming `cine.finaleStartedAt` (currently dormant in /fly per the
- *     comment at +page.svelte §"Finale lock … was removed per Marko")
  */
 import {
   CINEMATIC_TIMINGS,
@@ -66,18 +63,11 @@ export interface RunCinematicFrameInputs {
 }
 
 export interface RunCinematicFrameOutputs {
-  /** True when ANY beat (peak hold / afterglow / cruise hold / finale)
+  /** True when ANY beat (peak hold / afterglow / cruise hold)
    *  is freezing sim time. Caller gates `simDay += dt * simSpeed` on this. */
   isCinematicFreeze: boolean;
   /** Current W3.6 cut-overlay opacity [0, 1]. */
   cutBlackOpacity: number;
-  /** Current W3.4 finale-caption opacity [0, 1]. */
-  finaleCaptionOpacity: number;
-  /** Current W3.4 finale black-fade opacity [0, 1]. */
-  finaleBlackOpacity: number;
-  /** True the frame after the finale has fully run (12 s + 1 s settle).
-   *  Caller transitions to the epilogue tableau. */
-  finaleSettled: boolean;
   /** True if a peak-hold arm fired this frame (informational, useful in tests). */
   peakHoldArmedThisFrame: boolean;
   /** True if a cruise-hold arm fired this frame (informational). */
@@ -142,35 +132,7 @@ export function runCinematicFrame(
     cine.afterglowStartCamR = 0;
   }
 
-  // 4. Finale opacities (W3.4). `cine.finaleStartedAt > 0` is the
-  //    arm sentinel; while the path is currently dormant in /fly
-  //    (epilogue tableau covers the end-of-mission beat), the state
-  //    machine stays correct so a future re-activation Just Works.
-  let finaleCaptionOpacity = 0;
-  let finaleBlackOpacity = 0;
-  let finaleSettled = false;
-  if (cine.finaleStartedAt > 0 && now >= cine.finaleStartedAt) {
-    const elapsed = now - cine.finaleStartedAt;
-    if (elapsed >= CINEMATIC_TIMINGS.FINALE_CAPTION_FADE_IN_AT_MS) {
-      finaleCaptionOpacity = Math.min(
-        1,
-        (elapsed - CINEMATIC_TIMINGS.FINALE_CAPTION_FADE_IN_AT_MS) /
-          CINEMATIC_TIMINGS.FINALE_FADE_RAMP_MS,
-      );
-    }
-    if (elapsed >= CINEMATIC_TIMINGS.FINALE_BLACK_FADE_IN_AT_MS) {
-      finaleBlackOpacity = Math.min(
-        1,
-        (elapsed - CINEMATIC_TIMINGS.FINALE_BLACK_FADE_IN_AT_MS) /
-          CINEMATIC_TIMINGS.FINALE_FADE_RAMP_MS,
-      );
-    }
-    if (elapsed >= CINEMATIC_TIMINGS.FINALE_DURATION_MS + 1000) {
-      finaleSettled = true;
-    }
-  }
-
-  // 5. Cinematic freeze flag — caller gates simDay advance + chrome
+  // 4. Cinematic freeze flag — caller gates simDay advance + chrome
   //    suppression UI on this. Single predicate to avoid drift between
   //    the gate site and the chrome site.
   const isCinematicFreeze = isAnyCinematicFreeze(cine, now);
@@ -178,9 +140,6 @@ export function runCinematicFrame(
   return {
     isCinematicFreeze,
     cutBlackOpacity,
-    finaleCaptionOpacity,
-    finaleBlackOpacity,
-    finaleSettled,
     peakHoldArmedThisFrame: armStep.armed,
     cruiseHoldArmedThisFrame,
   };

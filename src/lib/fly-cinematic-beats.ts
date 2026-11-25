@@ -6,8 +6,7 @@
  *   W3.1 peak hold        — 2.5 s sim-time freeze at ±0.5 day from flyby
  *   W3.2 afterglow        — 6 s ease-in-out-cubic dolly pull-out
  *   W3.3 prelaunch dwell  — 4 s static Earth closeup on mission load
- *   W3.4 finale           — 12 s lock + caption + fade-to-black for OI endings
- *   W3.5 chrome suppress  — HUD/scrubber fade during W3.1/W3.2/W3.4 beats
+ *   W3.5 chrome suppress  — HUD/scrubber fade during W3.1/W3.2 beats
  *   W3.6 scrub-cut        — 200 ms fade-to-black on > 365 day jumps
  *   W3.7 cruise hold      — 10 s lock at midpoint of the longest cruise gap
  *
@@ -16,8 +15,8 @@
  *   - One source of truth for every duration / threshold (single import)
  *   - Reset funnel that handles mission-swap + jumpToMet(0) +
  *     onScrub-out-of-bounds cleanly (the audit flagged that the
- *     `applyMissionAsLoaded` reset path missed peak hold + afterglow +
- *     finale flags, leaving stale `peakHoldUntil > now` from the previous
+ *     `applyMissionAsLoaded` reset path missed peak hold + afterglow
+ *     flags, leaving stale `peakHoldUntil > now` from the previous
  *     mission's hold leaking into the new one).
  *   - Typed predicates so the animate loop reads as English instead of
  *     `now < someUntil && now >= someStartedAt && something != null`.
@@ -52,22 +51,6 @@ export const CINEMATIC_TIMINGS = {
    *  to 4000 ms so the audience reads it as a deliberate ritual beat,
    *  not a transitional pause. */
   LAUNCH_DWELL_DURATION_MS: 4000,
-  /** W3.4 end-of-mission finale total duration. 12 s = 8 s silent hold
-   *  + caption fade-in over 1 s + 2 s of caption held + 1 s of fade to
-   *  black. Matches the Cassini Grand Finale animation's terminal beat. */
-  FINALE_DURATION_MS: 12000,
-  /** When in the finale window the MISSION END caption begins to fade
-   *  in. Caption then holds visible until the black fade-in. */
-  FINALE_CAPTION_FADE_IN_AT_MS: 8000,
-  /** When in the finale window the screen begins to fade to black. */
-  FINALE_BLACK_FADE_IN_AT_MS: 11000,
-  /** Length of each opacity fade ramp inside the finale (caption-in,
-   *  black-in). 1 s each. */
-  FINALE_FADE_RAMP_MS: 1000,
-  /** Delay after entering `arrived` phase before the 12 s finale lock
-   *  engages. Lets the arrival-snap (1.5 s of fast-LERP convergence to
-   *  the parked-in-orbit composition) settle BEFORE we lock. */
-  FINALE_ARRIVAL_SETTLE_DELAY_MS: 1500,
   /** W3.6 scrubber-jump fade-to-black ramp length (each half — total
    *  cut duration is 2× this). */
   CUT_FADE_RAMP_MS: 100,
@@ -110,7 +93,7 @@ export const CINEMATIC_TIMINGS = {
  * Fields are PLAIN — not Svelte `$state` — because reads happen inside the
  * requestAnimationFrame loop and don't need fine-grained reactivity. The
  * component does keep a few derived booleans as `$state` for UI binding
- * (chrome suppression, finale overlay opacities) — those are surfaced
+ * (chrome suppression, cut overlay opacity) — those are surfaced
  * via the matching helper getters in the animate frame.
  */
 export interface CinematicBeatState {
@@ -131,9 +114,6 @@ export interface CinematicBeatState {
   afterglowCenterX: number;
   afterglowCenterZ: number;
   afterglowP: number;
-  /** W3.4: wall-clock ms when the end-of-mission lock began. 0 = no
-   *  active finale. */
-  finaleStartedAt: number;
   /** W3.6: wall-clock ms when the current cut overlay began fading. */
   cutStartedAt: number;
   /** W3.7: wall-clock ms past which the cruise hold ends. */
@@ -163,7 +143,6 @@ export function createCinematicBeatState(): CinematicBeatState {
     afterglowCenterX: 0,
     afterglowCenterZ: 0,
     afterglowP: 0,
-    finaleStartedAt: 0,
     cutStartedAt: 0,
     cruiseHoldUntil: 0,
     cruiseHoldFired: false,
@@ -195,7 +174,6 @@ export function resetCinematicBeatState(state: CinematicBeatState): void {
   state.afterglowCenterX = 0;
   state.afterglowCenterZ = 0;
   state.afterglowP = 0;
-  state.finaleStartedAt = 0;
   state.cutStartedAt = 0;
   state.cruiseHoldUntil = 0;
   state.cruiseHoldFired = false;
@@ -223,25 +201,11 @@ export function isCruiseHolding(state: CinematicBeatState, now: number): boolean
   return now < state.cruiseHoldUntil;
 }
 
-/** True while the W3.4 end-of-mission lock is engaged. */
-export function isFinaleLocked(state: CinematicBeatState, now: number): boolean {
-  return (
-    state.finaleStartedAt > 0 &&
-    now >= state.finaleStartedAt &&
-    now < state.finaleStartedAt + CINEMATIC_TIMINGS.FINALE_DURATION_MS
-  );
-}
-
 /** True while any beat is freezing sim time. Drives the simDay-advance
  *  gate at the top of animate() and the chrome-suppression class on
  *  the HUD / scrubber / FD banner. */
 export function isAnyCinematicFreeze(state: CinematicBeatState, now: number): boolean {
-  return (
-    isPeakHolding(state, now) ||
-    isAfterglowing(state, now) ||
-    isCruiseHolding(state, now) ||
-    isFinaleLocked(state, now)
-  );
+  return isPeakHolding(state, now) || isAfterglowing(state, now) || isCruiseHolding(state, now);
 }
 
 /* ───────────────────────── tween helpers ──────────────────────────── */

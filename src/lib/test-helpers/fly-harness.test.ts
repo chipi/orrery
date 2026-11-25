@@ -18,7 +18,6 @@ describe('createFlyHarness — construction smoke', () => {
     expect(h.cine.peakHoldUntil).toBe(0);
     expect(h.cine.cruiseHoldUntil).toBe(0);
     expect(h.cine.cutStartedAt).toBe(0);
-    expect(h.cine.finaleStartedAt).toBe(0);
   });
 
   it('reports a cruise-hold trigger sim-day for Cassini (Jupiter→Saturn gap)', () => {

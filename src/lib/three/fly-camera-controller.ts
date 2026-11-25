@@ -23,7 +23,6 @@ import {
   isPeakHolding,
   isAfterglowing,
   isCruiseHolding,
-  isFinaleLocked,
 } from '$lib/fly-cinematic-beats';
 import { computeIconicFrame } from '$lib/orbital/iconic-frame';
 import { computeHelioNonFlybyFrame } from '$lib/orbital/helio-non-flyby-frame';
@@ -673,10 +672,10 @@ export function createFlyCameraController(deps: FlyCameraDeps) {
       // at the converged values so the motion is a pure dolly,
       // not a track.
       const _nowForCine = performance.now();
-      // W3.4 finale lock + W3.7 cruise hold — no camera update,
+      // W3.7 cruise hold — no camera update,
       // pure locked frame. W3.2 afterglow — eased dolly recede
       // computed by $lib/fly-cinematic-beats.computeAfterglowCameraFrame.
-      if (isFinaleLocked(cine, _nowForCine) || isCruiseHolding(cine, _nowForCine)) {
+      if (isCruiseHolding(cine, _nowForCine)) {
         // No camera update — pure locked frame.
       } else if (!isPeakHolding(cine, _nowForCine) && isAfterglowing(cine, _nowForCine)) {
         if (cine.afterglowStartCamR === 0) {

@@ -133,12 +133,10 @@ export interface FlyFrameBridge {
   descentSpeed: number;
   descentT: number;
   epilogueActive: boolean;
+  epilogueBlackOpacity: number;
   epilogueCaptionOpacity: number;
   fdPhaseMarkerScreens: FdPhaseMarkerRender[];
-  finaleBlackOpacity: number;
-  finaleCaptionOpacity: number;
   inCinematicHeldBeat: boolean;
-  inMissionFinale: boolean;
   isMoonMission: boolean;
   isPlaying: boolean;
   launchSpeed: number;
@@ -1005,8 +1003,7 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
     // Polish-wave-3 cinematic-beat dispatch — single pure call into
     // $lib/fly-cinematic-frame.runCinematicFrame. Handles cruise-hold
     // arming (W3.7), cut overlay (W3.6), peak-hold arm + afterglow
-    // window (W3.1 + W3.2), finale opacities (W3.4), and returns
-    // the freeze predicate that gates simDay advance + drives the
+    // window (W3.1 + W3.2), and returns the freeze predicate that gates simDay advance + drives the
     // chrome-suppression class (W3.5). Same dispatcher is driven by
     // the test harness in #325 — prod + tests can't drift on call order.
     const currentFrameFlybyMet = parseFlybyMetFromSubPhase(flyCam.lastHelioSubPhase);
@@ -1036,15 +1033,13 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
     );
     bridge.cutBlackOpacity = cineOut.cutBlackOpacity;
     bridge.inCinematicHeldBeat = cineOut.isCinematicFreeze;
-    bridge.finaleCaptionOpacity = cineOut.finaleCaptionOpacity;
-    bridge.finaleBlackOpacity = cineOut.finaleBlackOpacity;
     const isCinematicFreeze = cineOut.isCinematicFreeze;
 
     // No freeze-frames in a flyby (#371): the peak hold and the afterglow
     // still arm, but the montage's slow-mo swing + cuts + moving catapult
     // carry the beat, so a freeze-frame just broke the flow (Marko 2026-06).
     // Drop BOTH flyby freezes — sim keeps moving (slow-mo) through the
-    // whole encounter. (Finale / cruise-hold / launch-dwell are not
+    // whole encounter. (Cruise-hold / launch-dwell are not
     // active during a flyby window, so this only affects the flyby.)
     let cinematicFreeze = isCinematicFreeze;
     if (currentFrameFlybyMet != null) {
@@ -1754,20 +1749,9 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
     if (phaseNow === 'arrived' && !cine.arrivalSnapped) {
       bridge.camSnapUntil = performance.now() + 1500;
       cine.arrivalSnapped = true;
-      // W3.4 — kick off the end-of-mission locked-off finale on
-      // one-way helio missions (round-trip endings at Earth and
-      // moon-missions are handled differently and stay out of the
-      // finale path). Starts AFTER the 1.5 s arrival snap so the
-      // parked-in-orbit composition is in frame before the lock.
-      // Finale lock (MISSION END caption + 12 s Saturn closeup hold +
-      // black fade) was removed per Marko — the epilogue tableau
-      // already carries an end-of-mission caption ("MISSION FLIGHT
-      // PATH · <mission>") and stacking two title beats reads as
-      // redundant. We now go straight from arrival → epilogue: the
-      // arrived-branch's epilogueActive trigger below is the only
-      // end-of-mission camera mode. inMissionFinale stays false so
-      // none of the finale-caption / finale-black / Saturn-closeup-
-      // hold UI ever fires.
+      // One-way helio endings go straight from arrival to the epilogue
+      // tableau, which carries the end-of-mission caption; round-trip and
+      // moon-mission endings stay out of it.
       const isOneWayHelioEnd = !bridge.isMoonMission && bridge.retPts.length < 2;
       if (isOneWayHelioEnd && bridge.epilogueStartedAt === 0) {
         bridge.epilogueStartedAt = performance.now();
@@ -1778,33 +1762,15 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
     // subsequent re-entry into arrived triggers the snap again.
     if (phaseNow !== 'arrived' && cine.lastSeenPhase === 'arrived') {
       cine.arrivalSnapped = false;
-      // Re-arm the finale too. User scrubbed back into the mission;
-      // next re-entry into arrived should fire a fresh finale.
-      cine.finaleStartedAt = 0;
-      bridge.inMissionFinale = false;
-      bridge.finaleCaptionOpacity = 0;
-      bridge.finaleBlackOpacity = 0;
       // #82 — clear the epilogue tableau so re-entering arrived
-      // gets a fresh finale + epilogue sequence.
+      // gets a fresh epilogue sequence.
+      bridge.epilogueBlackOpacity = 0;
       bridge.epilogueStartedAt = 0;
       bridge.epilogueActive = false;
       bridge.epilogueCaptionOpacity = 0;
     }
     cine.lastSeenPhase = phaseNow;
-    // W3.4 — finale opacities (caption + black) are computed by
-    // runCinematicFrame at the top of the frame and already written
-    // to finaleCaptionOpacity / finaleBlackOpacity. Here we only
-    // handle the post-settle transition into the #82 epilogue
-    // tableau — wide top-down system view + slow rotation + the
-    // full mission trajectory visible.
-    if (cineOut.finaleSettled) {
-      bridge.inMissionFinale = false;
-      if (bridge.epilogueStartedAt === 0) {
-        bridge.epilogueStartedAt = performance.now();
-        bridge.epilogueActive = true;
-      }
-    }
-    // #82 — epilogue tableau. Once active, fade the finale-black
+    // #82 — epilogue tableau. Once active, fade the black
     // overlay BACK OUT to 0 over 1.5 s, lerp the camera to a wide
     // Sun-centred top-down composition, slowly rotate the system
     // around flyCam.camT, and surface a "MISSION FLIGHT PATH · <name>"
@@ -1816,9 +1782,9 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
       const elapsedE = performance.now() - bridge.epilogueStartedAt;
       // Black fade-out 1 → 0 across the first 1.5 s
       if (elapsedE < 1500) {
-        bridge.finaleBlackOpacity = Math.max(0, 1 - elapsedE / 1500);
+        bridge.epilogueBlackOpacity = Math.max(0, 1 - elapsedE / 1500);
       } else {
-        bridge.finaleBlackOpacity = 0;
+        bridge.epilogueBlackOpacity = 0;
       }
       // Caption fade-in 0 → 1 across t=1500 → 2500
       if (elapsedE >= 1500) {
@@ -2583,10 +2549,7 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
           cruiseHoldTriggerSimDay: bridge.cruiseHoldTriggerSimDay,
           cutStartedAt: cine.cutStartedAt,
           cutBlackOpacity: bridge.cutBlackOpacity,
-          finaleStartedAt: cine.finaleStartedAt,
-          inMissionFinale: bridge.inMissionFinale,
-          finaleCaptionOpacity: bridge.finaleCaptionOpacity,
-          finaleBlackOpacity: bridge.finaleBlackOpacity,
+          epilogueBlackOpacity: bridge.epilogueBlackOpacity,
           camR: flyCam.camR,
           camTarget: { x: flyCam.camTarget.x, z: flyCam.camTarget.z },
           now: performance.now(),

@@ -20,7 +20,6 @@ import {
   isPeakHolding,
   isAfterglowing,
   isCruiseHolding,
-  isFinaleLocked,
   isAnyCinematicFreeze,
   easeInOutCubic,
   computeCruiseHoldTriggerSimDay,
@@ -38,7 +37,6 @@ describe('CinematicBeatState — factory + reset', () => {
     expect(s.peakHoldArmedForFlybyMet).toBe(null);
     expect(s.afterglowUntil).toBe(0);
     expect(s.afterglowStartCamR).toBe(0);
-    expect(s.finaleStartedAt).toBe(0);
     expect(s.cutStartedAt).toBe(0);
     expect(s.cruiseHoldUntil).toBe(0);
     expect(s.cruiseHoldFired).toBe(false);
@@ -59,7 +57,6 @@ describe('CinematicBeatState — factory + reset', () => {
     s.afterglowCenterX = 12;
     s.afterglowCenterZ = -45;
     s.afterglowP = 0.85;
-    s.finaleStartedAt = 5000;
     s.cutStartedAt = 100;
     s.cruiseHoldUntil = 88888;
     s.cruiseHoldFired = true;
@@ -107,20 +104,7 @@ describe('beat predicates', () => {
     expect(isCruiseHolding(s, now + 2000)).toBe(false);
   });
 
-  it('isFinaleLocked: only when finaleStartedAt > 0 and within FINALE_DURATION_MS', () => {
-    const s = createCinematicBeatState();
-    // finaleStartedAt === 0 is the inactive sentinel — must not fire even
-    // if `now` happens to land within FINALE_DURATION_MS of zero.
-    expect(isFinaleLocked(s, 100)).toBe(false);
-
-    s.finaleStartedAt = now;
-    expect(isFinaleLocked(s, now - 1)).toBe(false); // before start
-    expect(isFinaleLocked(s, now)).toBe(true);
-    expect(isFinaleLocked(s, now + CINEMATIC_TIMINGS.FINALE_DURATION_MS - 1)).toBe(true);
-    expect(isFinaleLocked(s, now + CINEMATIC_TIMINGS.FINALE_DURATION_MS)).toBe(false);
-  });
-
-  it('isAnyCinematicFreeze: OR of all four beats', () => {
+  it('isAnyCinematicFreeze: OR of all three beats', () => {
     const s = createCinematicBeatState();
     expect(isAnyCinematicFreeze(s, now)).toBe(false);
 
@@ -137,8 +121,7 @@ describe('beat predicates', () => {
     expect(isAnyCinematicFreeze(s, now)).toBe(true);
     s.cruiseHoldUntil = 0;
 
-    s.finaleStartedAt = now;
-    expect(isAnyCinematicFreeze(s, now)).toBe(true);
+    expect(isAnyCinematicFreeze(s, now)).toBe(false);
   });
 });
 

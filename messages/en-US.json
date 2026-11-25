@@ -709,7 +709,6 @@
   "fly_load_failed": "Failed to load mission. Showing default ORRERY-1 free-return.",
   "fly_mission_arc_title": "Mission arc · Keplerian transfer ellipse",
   "fly_mission_arc_body": "Every interplanetary trajectory is a slice of an ellipse with the Sun at one focus. Two endpoints (Earth at launch, the target at arrival) plus a time of flight pin a unique Lambert solution; the porkchop plot is the surface of all such solutions.",
-  "fly_mission_end": "MISSION END",
   "fly_mission_flight_path": "MISSION FLIGHT PATH",
   "fly_not_now": "Not now",
   "fly_opening_fleet_assets": "FLEET ASSETS",

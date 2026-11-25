@@ -66,28 +66,6 @@ describe('runCinematicFrame harness — W3.2 afterglow tween', () => {
   });
 });
 
-describe('runCinematicFrame harness — W3.4 finale opacity timing', () => {
-  it('caption + black ramp on schedule once cine.finaleStartedAt is armed', () => {
-    const h = createFlyHarness({ mission: 'cassini', dest: 'saturn' });
-    // /fly does NOT auto-arm the finale today (epilogue tableau covers
-    // the end-of-mission beat) but the state machine + dispatcher are
-    // preserved so a future re-activation works. Spec arms manually
-    // to exercise the W3.4 path.
-    h.cine.finaleStartedAt = h.now;
-
-    // t = 8.5 s — caption mid-ramp, black still 0.
-    h.advanceFrames(60 * 9 - 30);
-    expect(h.lastOut.finaleCaptionOpacity).toBeGreaterThan(0);
-    expect(h.lastOut.finaleCaptionOpacity).toBeLessThan(1);
-    expect(h.lastOut.finaleBlackOpacity).toBe(0);
-
-    // t ≈ 12.5 s — both at full opacity, finale ready to settle.
-    h.advanceFrames(60 * 4);
-    expect(h.lastOut.finaleCaptionOpacity).toBe(1);
-    expect(h.lastOut.finaleBlackOpacity).toBe(1);
-  });
-});
-
 describe('runCinematicFrame harness — W3.6 cut overlay threshold', () => {
   it('Launch → Saturn jump > CUT_THRESHOLD_DAYS arms the cut and the ramp clears itself', () => {
     const h = createFlyHarness({ mission: 'cassini', dest: 'saturn' });

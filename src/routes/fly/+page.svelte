@@ -2090,9 +2090,7 @@
    */
   function resetCinematicForMissionSwap() {
     resetCinematicBeatState(cine);
-    inMissionFinale = false;
-    finaleCaptionOpacity = 0;
-    finaleBlackOpacity = 0;
+    epilogueBlackOpacity = 0;
     inCinematicHeldBeat = false;
     cutBlackOpacity = 0;
     // #82 epilogue state
@@ -2307,22 +2305,18 @@
   // template re-renders, so $state would be wasted overhead.
   const cine = createCinematicBeatState();
 
-  // W3.4 finale overlay opacities + flag — UI reactivity required.
-  let inMissionFinale = $state(false);
-  let finaleCaptionOpacity = $state(0);
-  let finaleBlackOpacity = $state(0);
   // W3.5 chrome-suppression flag — drives `.cinematic-hidden` class on
   // HUD stack, scrubber, FD banner, CAPCOM panel.
   let inCinematicHeldBeat = $state(false);
   // W3.6 cut overlay opacity — driven by animate() each frame.
   let cutBlackOpacity = $state(0);
-  // #82 end-of-mission epilogue — after the W3.4 finale fades to
-  // black, instead of staying black we fade BACK IN to a wide top-
+  // #82 end-of-mission epilogue — fades in from black to a wide top-
   // down system view that shows the entire mission flight path as
   // a static tableau while the planetary system slowly rotates.
   // The "where Cassini went" beat.
   let epilogueStartedAt = 0;
   let epilogueActive = $state(false);
+  let epilogueBlackOpacity = $state(0);
   let epilogueCaptionOpacity = $state(0);
   // #86 cinematic opening — mirrors the epilogue tableau but at the
   // START of the mission. Wide top-down system view + mission title +
@@ -3138,35 +3132,23 @@
       set epilogueCaptionOpacity(v) {
         epilogueCaptionOpacity = v;
       },
+      get epilogueBlackOpacity() {
+        return epilogueBlackOpacity;
+      },
+      set epilogueBlackOpacity(v) {
+        epilogueBlackOpacity = v;
+      },
       get fdPhaseMarkerScreens() {
         return fdPhaseMarkerScreens;
       },
       set fdPhaseMarkerScreens(v) {
         fdPhaseMarkerScreens = v;
       },
-      get finaleBlackOpacity() {
-        return finaleBlackOpacity;
-      },
-      set finaleBlackOpacity(v) {
-        finaleBlackOpacity = v;
-      },
-      get finaleCaptionOpacity() {
-        return finaleCaptionOpacity;
-      },
-      set finaleCaptionOpacity(v) {
-        finaleCaptionOpacity = v;
-      },
       get inCinematicHeldBeat() {
         return inCinematicHeldBeat;
       },
       set inCinematicHeldBeat(v) {
         inCinematicHeldBeat = v;
-      },
-      get inMissionFinale() {
-        return inMissionFinale;
-      },
-      set inMissionFinale(v) {
-        inMissionFinale = v;
       },
       get isMoonMission() {
         return isMoonMission;
@@ -4088,29 +4070,12 @@
     <div class="load-banner" role="alert">{m.fly_load_failed()}</div>
   {/if}
 
-  <!-- W3.4 end-of-mission finale overlay. Two layers:
-         1. The MISSION END caption fades in at t=8 s into the finale
-            (4 s after the camera lock began). Centered, restrained
-            uppercase serif over the locked composition.
-         2. The fade-to-black overlay reaches full black at t=12 s and
-            stays opaque until the user scrubs out of the arrived
-            state (which resets the finale state). -->
-  {#if inMissionFinale && finaleCaptionOpacity > 0}
+  <!-- Black layer the #82 epilogue fades in from. -->
+  {#if epilogueBlackOpacity > 0}
     <div
-      class="finale-caption"
-      style="opacity: {finaleCaptionOpacity};"
-      data-testid="fly-finale-caption"
-      aria-live="polite"
-    >
-      <div class="finale-caption-label">{m.fly_mission_end()}</div>
-      <div class="finale-caption-name">{mission.name}</div>
-    </div>
-  {/if}
-  {#if finaleBlackOpacity > 0}
-    <div
-      class="finale-black"
-      style="opacity: {finaleBlackOpacity};"
-      data-testid="fly-finale-black"
+      class="epilogue-black"
+      style="opacity: {epilogueBlackOpacity};"
+      data-testid="fly-epilogue-black"
       aria-hidden="true"
     ></div>
   {/if}
@@ -5381,42 +5346,9 @@
     border-radius: 4px;
   }
 
-  /* W3.4 finale overlays. The caption hangs centered, lower-third
-     positioned so it doesn't fight the locked composition's body
-     in upper frame. The black overlay covers everything (z above
-     all the HUD chrome) so the fade reads as final. */
-  .finale-caption {
-    position: fixed;
-    bottom: 18%;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 200;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    pointer-events: none;
-    text-align: center;
-    transition: opacity 200ms linear;
-  }
-  .finale-caption-label {
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 11px;
-    letter-spacing: 4px;
-    color: rgba(255, 200, 80, 0.85);
-    text-transform: uppercase;
-  }
-  .finale-caption-name {
-    font-family: var(--font-display);
-    font-size: 22px;
-    letter-spacing: 6px;
-    color: rgba(255, 255, 255, 0.95);
-    text-transform: uppercase;
-    text-shadow:
-      0 0 12px rgba(0, 0, 0, 0.9),
-      0 0 4px rgba(0, 0, 0, 1);
-  }
-  .finale-black {
+  /* Covers everything (z above all the HUD chrome) so the epilogue's
+     fade-in from black reads as a cut, not a dim. */
+  .epilogue-black {
     position: fixed;
     inset: 0;
     z-index: 300;
@@ -5425,8 +5357,7 @@
     transition: opacity 200ms linear;
   }
 
-  /* #82 epilogue caption — top-anchored, larger than the finale
-     caption so it reads as a different beat. */
+  /* #82 epilogue caption — top-anchored. */
   .epilogue-caption {
     position: fixed;
     top: 12%;
@@ -6018,7 +5949,7 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
-  /* W3.6 scrubber-jump cut overlay. Same z as the finale-black but
+  /* W3.6 scrubber-jump cut overlay. Same z as the epilogue-black but
      no transition — the JS drives the opacity each frame directly,
      and we want the fade timing to be exactly the JS-controlled
      (2 * CINEMATIC_TIMINGS.CUT_FADE_RAMP_MS), not lerped by CSS. */
@@ -6032,7 +5963,7 @@
 
   /* W3.5 — cinematic chrome suppression. Fades the HUD stack,
      scrubber, FD banner row, CAPCOM panel to invisible during the
-     peak hold, afterglow, and finale beats. 600 ms ease-out so the
+     peak hold and afterglow beats. 600 ms ease-out so the
      fade is gentle (matches the held composition pacing) — the
      chrome dissolving INTO the shot, not snapping out. Restored at
      beat-end with the same 600 ms ease-in. Pointer-events also

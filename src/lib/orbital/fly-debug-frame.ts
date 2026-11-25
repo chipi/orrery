@@ -1,7 +1,7 @@
 /**
  * Build the `window.__flyDebugFrame` per-frame snapshot. Symmetric to
  * `buildFlyDebugSnapshot` but with the FULL cinematic-frame state —
- * sim time + camera + every active beat (peak hold, finale, cut,
+ * sim time + camera + every active beat (peak hold, cut,
  * cruise hold). This is the snapshot the chrome-devtools-mcp + e2e
  * verification harnesses inspect to assert that a beat actually
  * engaged at the expected frame.
@@ -26,11 +26,8 @@ export interface FlyDebugFrameInputs {
   /** Cut-overlay state. */
   cutStartedAt: number;
   cutBlackOpacity: number;
-  /** Finale state. */
-  finaleStartedAt: number;
-  inMissionFinale: boolean;
-  finaleCaptionOpacity: number;
-  finaleBlackOpacity: number;
+  /** Epilogue fade-in-from-black state. */
+  epilogueBlackOpacity: number;
   /** Camera state. */
   camR: number;
   camTarget: { x: number; z: number };
@@ -47,11 +44,7 @@ export interface FlyDebugFrameSnapshot {
   camR: number;
   camTx: number;
   camTz: number;
-  inMissionFinale: boolean;
-  finaleCaptionOpacity: number;
-  finaleBlackOpacity: number;
-  finaleStartedAt: number;
-  finaleElapsedMs: number;
+  epilogueBlackOpacity: number;
   cutBlackOpacity: number;
   cutStartedAt: number;
   cruiseHoldUntil: number;
@@ -69,13 +62,7 @@ export function buildFlyDebugFrameSnapshot(inputs: FlyDebugFrameInputs): FlyDebu
     camR: inputs.camR,
     camTx: inputs.camTarget.x,
     camTz: inputs.camTarget.z,
-    inMissionFinale: inputs.inMissionFinale,
-    finaleCaptionOpacity: inputs.finaleCaptionOpacity,
-    finaleBlackOpacity: inputs.finaleBlackOpacity,
-    finaleStartedAt: inputs.finaleStartedAt,
-    // finaleElapsedMs is 0 when the finale hasn't started (sentinel
-    // finaleStartedAt = 0). Otherwise it's the running stopwatch.
-    finaleElapsedMs: inputs.finaleStartedAt > 0 ? inputs.now - inputs.finaleStartedAt : 0,
+    epilogueBlackOpacity: inputs.epilogueBlackOpacity,
     cutBlackOpacity: inputs.cutBlackOpacity,
     cutStartedAt: inputs.cutStartedAt,
     cruiseHoldUntil: inputs.cruiseHoldUntil,

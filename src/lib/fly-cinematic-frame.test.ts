@@ -5,17 +5,13 @@
  * future refactors can't silently re-order or drop a step. The five
  * scenes below mirror the dispatch responsibilities documented in
  * the helper header (cruise-hold arming, cut overlay, peak-hold arm,
- * finale opacities, freeze flag).
+ * freeze flag).
  *
  * `src/routes/fly/+page.svelte` is the prod consumer; the harness
  * (#325) is the test consumer. Both call this same helper.
  */
 import { describe, expect, it } from 'vitest';
-import {
-  CINEMATIC_TIMINGS,
-  createCinematicBeatState,
-  type CinematicBeatState,
-} from './fly-cinematic-beats';
+import { CINEMATIC_TIMINGS, createCinematicBeatState } from './fly-cinematic-beats';
 import { runCinematicFrame, type RunCinematicFrameInputs } from './fly-cinematic-frame';
 
 const BASE_INPUTS: RunCinematicFrameInputs = {
@@ -141,46 +137,6 @@ describe('runCinematicFrame — peak-hold arm step (W3.1 + W3.2 window)', () => 
     );
     expect(out.peakHoldArmedThisFrame).toBe(true);
     expect(cine.peakHoldUntil).toBeGreaterThan(0);
-  });
-});
-
-describe('runCinematicFrame — finale opacities (W3.4)', () => {
-  // 0 is the not-armed sentinel; pick any positive timestamp + offset
-  // `now` from there so `now - finaleStartedAt` matches the t=0…13 s window.
-  const ARM_AT = 10_000;
-  function armedCine(): CinematicBeatState {
-    const cine = createCinematicBeatState();
-    cine.finaleStartedAt = ARM_AT;
-    return cine;
-  }
-
-  it('reports caption=0, black=0 in the silent hold (t < 8 s)', () => {
-    const out = runCinematicFrame(armedCine(), BASE_INPUTS, ARM_AT + 5_000);
-    expect(out.finaleCaptionOpacity).toBe(0);
-    expect(out.finaleBlackOpacity).toBe(0);
-    expect(out.finaleSettled).toBe(false);
-  });
-
-  it('reports caption ramping 0→1 between t=8s and t=9s', () => {
-    const halfway = ARM_AT + CINEMATIC_TIMINGS.FINALE_CAPTION_FADE_IN_AT_MS + 500;
-    const out = runCinematicFrame(armedCine(), BASE_INPUTS, halfway);
-    expect(out.finaleCaptionOpacity).toBeCloseTo(0.5, 5);
-    expect(out.finaleBlackOpacity).toBe(0);
-  });
-
-  it('reports both opacities at 1 by t=12s', () => {
-    const out = runCinematicFrame(armedCine(), BASE_INPUTS, ARM_AT + 12_000);
-    expect(out.finaleCaptionOpacity).toBe(1);
-    expect(out.finaleBlackOpacity).toBe(1);
-  });
-
-  it('flips finaleSettled true once 12s + 1s settle has elapsed', () => {
-    const out = runCinematicFrame(
-      armedCine(),
-      BASE_INPUTS,
-      ARM_AT + CINEMATIC_TIMINGS.FINALE_DURATION_MS + 1_000,
-    );
-    expect(out.finaleSettled).toBe(true);
   });
 });
 

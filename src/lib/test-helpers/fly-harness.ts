@@ -9,7 +9,7 @@
  * and runs the dispatcher exactly once per frame.
  *
  * Why this exists: the polish-wave-3 beats (W3.1 peak hold, W3.2
- * afterglow, W3.4 finale, W3.6 cut, W3.7 cruise hold) all have timing-
+ * afterglow, W3.6 cut, W3.7 cruise hold) all have timing-
  * curve behaviours whose orchestration was previously only verified
  * with chrome-devtools-mcp browser instrumentation. The harness gives
  * vitest deterministic frame-by-frame visibility into the same
@@ -65,7 +65,7 @@ export interface CreateFlyHarnessOptions {
 export interface FlyHarness {
   readonly mission: Mission;
   /** Mutable cinematic state — inspect `peakHoldUntil`, `cruiseHoldUntil`,
-   *  `cutStartedAt`, `finaleStartedAt`, … directly to assert arming. */
+   *  `cutStartedAt`, … directly to assert arming. */
   readonly cine: CinematicBeatState;
   /** Current sim-day (advances when not frozen). */
   readonly simDay: number;
@@ -114,7 +114,7 @@ export function createFlyHarness(opts: CreateFlyHarnessOptions): FlyHarness {
   const cine = createCinematicBeatState();
   let simDay = depDay;
   // Start `now` away from 0 so the not-armed-yet sentinel in
-  // `cine.finaleStartedAt === 0` etc. never collides with a real
+  // `cine.cutStartedAt === 0` etc. never collides with a real
   // wall-clock value during a spec.
   let now = 1_000;
   let reducedMotion = false;

@@ -11,10 +11,7 @@ const BASE_INPUTS = (overrides?: Partial<FlyDebugFrameInputs>): FlyDebugFrameInp
   cruiseHoldTriggerSimDay: null,
   cutStartedAt: 0,
   cutBlackOpacity: 0,
-  finaleStartedAt: 0,
-  inMissionFinale: false,
-  finaleCaptionOpacity: 0,
-  finaleBlackOpacity: 0,
+  epilogueBlackOpacity: 0,
   camR: 60,
   camTarget: { x: 1.2, z: -0.7 },
   now: 5000,
@@ -30,7 +27,7 @@ describe('buildFlyDebugFrameSnapshot', () => {
     expect(out.camR).toBe(60);
     expect(out.camTx).toBe(1.2);
     expect(out.camTz).toBe(-0.7);
-    expect(out.inMissionFinale).toBe(false);
+    expect(out.epilogueBlackOpacity).toBe(0);
   });
 
   it('peakHoldRemainingMs counts down from peakHoldUntil', () => {
@@ -52,16 +49,6 @@ describe('buildFlyDebugFrameSnapshot', () => {
       buildFlyDebugFrameSnapshot(BASE_INPUTS({ cruiseHoldUntil: 5000, now: 8500 }))
         .cruiseHoldRemainingMs,
     ).toBe(0);
-  });
-
-  it('finaleElapsedMs is 0 when finaleStartedAt is the inactive sentinel', () => {
-    const out = buildFlyDebugFrameSnapshot(BASE_INPUTS({ finaleStartedAt: 0, now: 9999 }));
-    expect(out.finaleElapsedMs).toBe(0);
-  });
-
-  it('finaleElapsedMs is the running stopwatch when finale is active', () => {
-    const out = buildFlyDebugFrameSnapshot(BASE_INPUTS({ finaleStartedAt: 1000, now: 4500 }));
-    expect(out.finaleElapsedMs).toBe(3500);
   });
 
   it('does not leak the input camTarget reference (defensive copy of fields)', () => {

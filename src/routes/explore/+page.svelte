@@ -867,8 +867,9 @@
   // Slice 6 — the black hole currently rendered full-screen (geodesic lensing).
   let activeBlackHole = $state<BlackHole | null>(null);
   // The level picker and the card under it show in a scale level; not in a takeover (black hole,
-  // deep-sky, body scene), where the lens panel keeps the story.
-  let showLevelPicker = $derived(!activeBlackHole && !activeDeepSky && contextId !== 'body-scene');
+  // body scene), where the lens panel keeps the story. A selected deep-sky object is a selection
+  // like a star, not a takeover (F3 2026-11-25).
+  let showLevelPicker = $derived(!activeBlackHole && contextId !== 'body-scene');
   // The HUD row stops before a docked panel; in 3D it starts right of the scale navigator, which is
   // top-left at every scale (operator 2026-11-25, F1).
   let hudClearRightPx = $derived(panelCoverPx + 16);
@@ -969,7 +970,7 @@
   let indexSelectStarFn: ((id: string) => void) | null = null;
 
   // #45 — the top scale-navigator's back affordance. Walks OUT one shell level,
-  // or exits the current full-screen takeover (black-hole / body-scene / deep-sky).
+  // or exits the current full-screen takeover (black-hole / body-scene).
   // Returns null at the solar system (innermost shell — nowhere further in). The
   // returned closure reads the exit-fn pointer at click-time, so the plain `let`
   // pointers above don't need to be reactive; only contextId + the takeover flags
@@ -977,7 +978,6 @@
   const SCALE_EXITS: Record<ScaleNavExit, () => (() => void) | null> = {
     'black-hole': () => exitBlackHoleFn,
     'body-scene': () => exitBodySceneFn,
-    'deep-sky': () => exitDeepSkyFn,
     neighborhood: () => exitNeighborhoodFn,
     'milky-way': () => exitMilkyWayFn,
     'local-group': () => exitLocalGroupFn,
@@ -987,7 +987,7 @@
     'cosmic-web': () => exitCosmicWebFn,
   };
   let scaleNavBack: { run: () => void; label: string } | null = $derived.by(() => {
-    const target = scaleNavBackTarget(contextId, !!activeBlackHole, !!activeDeepSky);
+    const target = scaleNavBackTarget(contextId, !!activeBlackHole);
     return target && { run: () => SCALE_EXITS[target.exit]()?.(), label: target.label };
   });
 
@@ -1171,11 +1171,10 @@
     trackItemClick('belt', id, '/explore');
   }
 
-  // The INDEX rail: shown at every scale but while a takeover owns the screen (black hole, a
-  // selected deep-sky object, an exoplanet's BodyScene), and, outside the solar system, only in the 3D view.
+  // The INDEX rail: shown at every scale but while a takeover owns the screen (black hole, an
+  // exoplanet's BodyScene), and, outside the solar system, only in the 3D view.
   const indexAvailable = $derived(
     !activeBlackHole &&
-      !activeDeepSky &&
       contextId !== 'body-scene' &&
       (view === '3d' || !INDEX_NEEDS_3D[contextId as ShellId]),
   );

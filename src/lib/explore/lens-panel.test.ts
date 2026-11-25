@@ -60,19 +60,16 @@ describe('computeLensPanel', () => {
 
 describe('scaleNavBackTarget', () => {
   it('walks out one shell at a time and stops at the solar system', () => {
-    const chain = SHELLS.slice(1).map((c) => scaleNavBackTarget(c, false, false)?.exit);
+    const chain = SHELLS.slice(1).map((c) => scaleNavBackTarget(c, false)?.exit);
     expect(chain).toEqual(SHELLS.slice(1));
-    expect(scaleNavBackTarget('solar-system', false, false)).toBeNull();
-    expect(scaleNavBackTarget('neighborhood', false, false)?.label).toBe(
-      m.explore_ctx_solar_system(),
-    );
-    expect(scaleNavBackTarget('cosmic-web', false, false)?.label).toBe(m.explore_ctx_laniakea());
+    expect(scaleNavBackTarget('solar-system', false)).toBeNull();
+    expect(scaleNavBackTarget('neighborhood', false)?.label).toBe(m.explore_ctx_solar_system());
+    expect(scaleNavBackTarget('cosmic-web', false)?.label).toBe(m.explore_ctx_laniakea());
   });
 
-  it('takeovers exit first: black hole, then body scene, then deep sky', () => {
-    expect(scaleNavBackTarget('body-scene', true, true)?.exit).toBe('black-hole');
-    expect(scaleNavBackTarget('body-scene', false, true)?.exit).toBe('body-scene');
-    expect(scaleNavBackTarget('neighborhood', false, true)?.exit).toBe('deep-sky');
-    expect(scaleNavBackTarget('solar-system', true, false)?.label).toBe(m.explore_ctx_back());
+  it('takeovers exit first: black hole, then body scene', () => {
+    expect(scaleNavBackTarget('body-scene', true)?.exit).toBe('black-hole');
+    expect(scaleNavBackTarget('body-scene', false)?.exit).toBe('body-scene');
+    expect(scaleNavBackTarget('solar-system', true)?.label).toBe(m.explore_ctx_back());
   });
 });

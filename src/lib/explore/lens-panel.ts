@@ -113,7 +113,6 @@ export function computeLensPanel({
 export type ScaleNavExit =
   | 'black-hole'
   | 'body-scene'
-  | 'deep-sky'
   | 'neighborhood'
   | 'milky-way'
   | 'local-group'
@@ -123,19 +122,17 @@ export type ScaleNavExit =
   | 'cosmic-web';
 
 // #45 — the top scale-navigator's back affordance. Walks OUT one shell level,
-// or exits the current full-screen takeover (black-hole / body-scene / deep-sky).
+// or exits the current full-screen takeover (black-hole / body-scene).
 // Returns null at the solar system (innermost shell — nowhere further in). The
 // page maps `exit` to its exit-fn pointer at click time, so those pointers
 // don't need to be reactive.
 export function scaleNavBackTarget(
   contextId: ExploreContextId,
   blackHoleActive: boolean,
-  deepSkyActive: boolean,
 ): { exit: ScaleNavExit; label: string } | null {
   if (blackHoleActive) return { exit: 'black-hole', label: m.explore_ctx_back() };
   if (contextId === 'body-scene')
     return { exit: 'body-scene', label: SCALE_SHELLS.neighborhood.name() };
-  if (deepSkyActive) return { exit: 'deep-sky', label: SCALE_SHELLS.neighborhood.name() };
   switch (contextId) {
     case 'neighborhood':
       return { exit: 'neighborhood', label: SCALE_SHELLS['solar-system'].name() };

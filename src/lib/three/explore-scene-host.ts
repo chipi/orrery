@@ -603,6 +603,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
           .catch(dataLoadFailed);
       }
       closeStarPanel();
+      exitDeepSky();
       bridge.anonStar = null;
       cue('select');
       trackItemClick('marker', id, '/explore');
@@ -647,6 +648,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
         .catch(dataLoadFailed);
     }
     closeStarPanel();
+    exitDeepSky();
     bridge.anonStar = null;
     cue('select');
     trackItemClick('marker', id, '/explore');
@@ -1109,6 +1111,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     updateCam();
     // Leaving the neighborhood clears any star selection.
     closeStarPanel();
+    exitDeepSky();
     bridge.anonStar = null;
   }
   exitNeighborhoodFn = crossInToSolarSystem;
@@ -1145,6 +1148,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     camT = NB_DEFAULT_CAM_T;
     camR = Math.max(camRMin, Math.min(camRMax, NB_FRAMED_CAM_R));
     closeStarPanel();
+    exitDeepSky();
     bridge.anonStar = null;
     updateCam();
   }
@@ -1282,6 +1286,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
         label: m.explore_deep_sgra(),
         afterPitch: () => {
           closeStarPanel();
+          exitDeepSky();
           bridge.anonStar = null;
         },
       },
@@ -1506,6 +1511,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     camera.near = 0.05;
     camera.updateProjectionMatrix();
     closeStarPanel();
+    exitDeepSky();
     bridge.anonStar = null;
     cue('select');
     if (deps.getReducedMotion()) {
@@ -1600,6 +1606,8 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
   // ── Named-star selection (Slice 1) ──────────────────────────────────────
   async function selectStar(id: string): Promise<void> {
     closeBlackHolePanel();
+    // One selection at a time: a star replaces a selected deep-sky object (F3 2026-11-25).
+    exitDeepSky();
     const base = bridge.namedStarById.get(id);
     if (!base) return;
     cue('select');
@@ -2748,9 +2756,6 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
   // nearest background star (a lightweight anonymous readout).
   function pickNeighborhood(e: { clientX: number; clientY: number }): void {
     if (!nbScene) return;
-    // While a deep-sky object is selected, a canvas click does not pick behind its panel.
-    // Exit is via panel / crumb.
-    if (bridge.activeDeepSky) return;
     const rect = el3d.getBoundingClientRect();
     const ndcX = ((e.clientX - rect.left) / rect.width) * 2 - 1;
     const ndcY = -((e.clientY - rect.top) / rect.height) * 2 + 1;
@@ -2762,6 +2767,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
         // Our Solar System — open the Sun panel but STAY in the neighborhood
         // (unlike selectSun(), which crosses back out).
         cue('select');
+        exitDeepSky();
         bridge.panelState.sun = true;
         bridge.panelState.star = false;
         bridge.panelState.planet = false;

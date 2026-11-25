@@ -68,7 +68,7 @@
   const getText = $derived(pose ? formatGet(pose.get) : formatGet(profile.liftoffS));
   const progressPct = $derived(Math.min(100, (t / RT.end) * 100));
   const fade = $derived(pose?.fade ?? 0);
-  // The rover's TV camera: a faint vignette and scan lines over the frame, the colour pulled back.
+  // The rover's TV camera (GCTA): field-sequential colour fringes, a soft lens, grain and lines.
   const tv = $derived(pose?.shot.startsWith('rover_tv') ?? false);
 
   function finish() {
@@ -187,7 +187,45 @@
   aria-label={m.fly_return_title()}
 >
   <div class="stage" class:tv bind:this={container}></div>
-  {#if tv}<div class="tv-overlay" aria-hidden="true"></div>{/if}
+  {#if tv}
+    <!-- The GCTA's colour came from a field-sequential camera: red and blue fields a little apart,
+         so moving edges fringe. A soft lens and coarse lines; the 4:3 frame on a landscape screen. -->
+    <svg class="tv-defs" aria-hidden="true" focusable="false">
+      <filter
+        id="return-tv-fsc"
+        x="0"
+        y="0"
+        width="100%"
+        height="100%"
+        color-interpolation-filters="sRGB"
+      >
+        <feColorMatrix
+          in="SourceGraphic"
+          type="matrix"
+          values="1 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0"
+          result="r"
+        />
+        <feOffset in="r" dx="1.6" dy="0" result="r2" />
+        <feColorMatrix
+          in="SourceGraphic"
+          type="matrix"
+          values="0 0 0 0 0  0 1 0 0 0  0 0 0 0 0  0 0 0 1 0"
+          result="g"
+        />
+        <feColorMatrix
+          in="SourceGraphic"
+          type="matrix"
+          values="0 0 0 0 0  0 0 0 0 0  0 0 1 0 0  0 0 0 1 0"
+          result="b"
+        />
+        <feOffset in="b" dx="-1.6" dy="0.5" result="b2" />
+        <feBlend in="r2" in2="g" mode="screen" result="rg" />
+        <feBlend in="rg" in2="b2" mode="screen" result="rgb" />
+        <feGaussianBlur in="rgb" stdDeviation="0.7" />
+      </filter>
+    </svg>
+    <div class="tv-overlay" aria-hidden="true"><div class="tv-frame"></div></div>
+  {/if}
   <div class="scrim" aria-hidden="true"></div>
   <div class="blackout" style="opacity:{fade}" aria-hidden="true"></div>
 
@@ -233,15 +271,71 @@
     inset: 0;
   }
   .stage.tv {
-    filter: saturate(0.6) contrast(1.15) brightness(1.08);
+    /* the 1970s colour: muted, warm in the highlights, a magenta cast */
+    filter: url(#return-tv-fsc) saturate(0.5) contrast(1.22) brightness(1.06) sepia(0.18)
+      hue-rotate(-10deg);
+  }
+  .tv-defs {
+    position: absolute;
+    width: 0;
+    height: 0;
   }
   .tv-overlay {
     position: absolute;
     inset: 0;
     pointer-events: none;
+    overflow: hidden;
     background:
       radial-gradient(ellipse at center, transparent 45%, rgba(0, 0, 0, 0.75) 100%),
-      repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.22) 0 1px, transparent 1px 3px);
+      repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.28) 0 1px, transparent 1px 3px);
+  }
+  /* grain: a noise tile, stepped about so it does not crawl smoothly */
+  .tv-overlay::after {
+    content: '';
+    position: absolute;
+    inset: -20%;
+    opacity: 0.16;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    animation: tv-grain 0.5s steps(4) infinite;
+  }
+  @keyframes tv-grain {
+    0% {
+      transform: translate(0, 0);
+    }
+    25% {
+      transform: translate(-5%, 3%);
+    }
+    50% {
+      transform: translate(4%, -4%);
+    }
+    75% {
+      transform: translate(-3%, -2%);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .tv-overlay::after {
+      animation: none;
+    }
+  }
+  /* a 4:3 picture on a landscape screen, the rest black; a phone keeps the whole frame */
+  .tv-frame {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    aspect-ratio: 4 / 3;
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow:
+      0 0 0 100vmax #000,
+      inset 0 0 40px rgba(0, 0, 0, 0.6);
+  }
+  @media (orientation: portrait) {
+    .tv-frame {
+      display: none;
+    }
   }
   .scrim {
     position: absolute;

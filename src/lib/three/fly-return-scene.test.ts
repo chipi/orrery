@@ -176,6 +176,32 @@ describe('the J missions (Apollo 15, 16, 17)', () => {
       const cam = returnCamera(RT.subsat + 1, 1.6, pose);
       const c = csmCentreFromAnchor(pose, DEFAULT_RIG);
       expect(cam.pos.clone().sub(c).normalize().dot(bayNormal(pose))).toBeGreaterThan(0.5);
+      // and from the sunlit side (the light of a J mission's scene), so the satellite is not a
+      // dark shape on black
+      const sun = new THREE.Vector3(80, 50, 70).normalize();
+      const side = new THREE.Vector3().crossVectors(bayNormal(pose), new THREE.Vector3(0, 1, 0));
+      expect(cam.pos.clone().sub(c).dot(side) * side.dot(sun)).toBeGreaterThan(0);
+    }
+  });
+  it('the docking close-up opens with the CSM nose and the LM roof both in frame, desktop and phone', () => {
+    for (const p of [profile, load('apollo12'), a15, a16, a17]) {
+      for (const aspect of [1.6, 390 / 844]) {
+        for (const t of [RT.closeUp + 0.05, RT.closeUp + 1]) {
+          const pose = returnPose(t, p);
+          if (pose.shot === 'dock_csm') continue; // Apollo 16: the CSM window view, the nose is behind the lens
+          const cam = returnCamera(t, aspect, pose);
+          const camera = new THREE.PerspectiveCamera(cam.fov, aspect, 0.05, 1e7);
+          camera.position.copy(cam.pos);
+          camera.lookAt(cam.look);
+          camera.updateMatrixWorld();
+          const tip = tipFromAnchor(pose, DEFAULT_RIG);
+          // 2.5 m above the probe tip is the CSM's nose cone; 2 m under the drogue the LM's roof.
+          for (const y of [tip.y + 2.5, DEFAULT_RIG.drogue.y - 2]) {
+            const ndc = new THREE.Vector3(tip.x, y, tip.z).project(camera);
+            expect(Math.abs(ndc.y), `${t} ${aspect} ${pose.shot}`).toBeLessThan(1);
+          }
+        }
+      }
     }
   });
   it('the ascent stage tumbles after Apollo 16 jettisons it, and only then', () => {

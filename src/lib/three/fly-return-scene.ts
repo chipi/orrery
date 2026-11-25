@@ -621,6 +621,31 @@ export function halfFov(fovDeg: number, aspect: number): { h: number; v: number 
   const v = (fovDeg * Math.PI) / 360;
   return { v, h: Math.atan(Math.tan(v) * aspect) };
 }
+/** Toward the sun of a J mission's scene (the light's position below), the only missions with a subsatellite. */
+const J_SUN_DIR = new THREE.Vector3(80, 50, 70).normalize();
+
+/** The docking close-up's aim and distance. `base(g)` is the shot's own distance for a gap of up to
+ *  6 m (the drogue to the probe tip), which ends on the ~1.5 m window. While the gap is wide (the
+ *  first seconds of the beat) the camera backs off further, to hold the LM's roof and the CSM's nose
+ *  cone whole (3.5 m past the drogue and the tip, the LM's width across a phone's frame); that fit
+ *  fades out between a 5 m and a 1 m gap, so the move is continuous. */
+function closeUpFrame(
+  tip: THREE.Vector3,
+  drogue: THREE.Vector3,
+  fov: number,
+  aspect: number,
+  base: (g: number) => number,
+): { look: THREE.Vector3; d: number } {
+  const gap = Math.max(0, tip.y - drogue.y);
+  const s = smooth((gap - 1) / 4);
+  const { h, v } = halfFov(fov, aspect);
+  const fit = s * Math.max((gap / 2 + 3.5) / Math.tan(v), 3.2 / Math.tan(h)) * 1.05;
+  return {
+    look: drogue.clone().add(V(0, gap * 0.5 + 0.15, 0)),
+    d: Math.max(base(Math.min(gap, 6)), fit),
+  };
+}
+
 /** A phone's tall frame backs the camera off to keep the craft in shot. */
 const aspectK = (aspect: number) => (aspect < 1 ? 1 + 0.7 * (1 / aspect - 1) : 1);
 
@@ -685,10 +710,13 @@ export function returnCamera(
     case 'dock_close': {
       // The probe tip against the drogue: from the side and above, so the LM roof is the backdrop;
       // it starts wide enough for the tip's last 6 m and closes to a ~1.5 m window.
-      const gap = Math.max(0, tip.y - drogue.y);
-      const g = Math.min(gap, 6);
-      const look = drogue.clone().add(V(0, g * 0.5 + 0.15, 0));
-      const d = (2.2 + 2.4 * g) * (0.8 + 0.2 * k);
+      const { look, d } = closeUpFrame(
+        tip,
+        drogue,
+        30,
+        aspect,
+        (g) => (2.2 + 2.4 * g) * (0.8 + 0.2 * k),
+      );
       return { pos: look.clone().add(V(0.5 * d, 0.24 * d, 0.84 * d)), look, fov: 30 };
     }
     case 'dock_pull': {
@@ -843,10 +871,13 @@ export function returnCamera(
     }
     case 'dock_close_low': {
       // The probe tip against the drogue from the far side, level with the roof, looking along it.
-      const gap = Math.max(0, tip.y - drogue.y);
-      const g = Math.min(gap, 6);
-      const look = drogue.clone().add(V(0, g * 0.5 + 0.15, 0));
-      const d = (2.4 + 2.4 * g) * (0.8 + 0.2 * k);
+      const { look, d } = closeUpFrame(
+        tip,
+        drogue,
+        34,
+        aspect,
+        (g) => (2.4 + 2.4 * g) * (0.8 + 0.2 * k),
+      );
       return { pos: look.clone().add(V(-0.62 * d, 0.0 * d - 0.2, 0.78 * d)), look, fov: 34 };
     }
     case 'dock_orbit': {
@@ -862,10 +893,13 @@ export function returnCamera(
         const D = ((sep / 2 + 3.5) / Math.tan(Math.min(h, v)) + sep / 2) * 1.05;
         return { pos: mid.clone().addScaledVector(dir, D), look: mid, fov: 36 };
       }
-      const gap = Math.max(0, tip.y - drogue.y);
-      const g = Math.min(gap, 6);
-      const look = drogue.clone().add(V(0, g * 0.5 + 0.15, 0));
-      const d = (2.2 + 2.4 * g) * (0.8 + 0.2 * k);
+      const { look, d } = closeUpFrame(
+        tip,
+        drogue,
+        30,
+        aspect,
+        (g) => (2.2 + 2.4 * g) * (0.8 + 0.2 * k),
+      );
       return { pos: look.clone().addScaledVector(dir, d), look, fov: 30 };
     }
     case 'chase_side': {
@@ -890,15 +924,20 @@ export function returnCamera(
     case 'subsat_side': {
       // From outside the SIM bay, along its normal and a little above: the subsatellite leaves the
       // bay toward the lens and the CSM fills the frame behind it.
+      // The lens stays on the sunlit side of the bay (Apollo 16's bay faced away from the sun and
+      // the satellite left in shadow), and the aim follows the satellite out at its 3 m/s.
       const c = csmCentreFromAnchor(pose, rig);
       const n = bayNormal(pose);
       const side = new THREE.Vector3().crossVectors(n, V(0, 1, 0)).normalize();
+      if (side.dot(J_SUN_DIR) < 0) side.negate();
+      const out = 3 * Math.max(0, Math.min(t - RT.subsat, RT.teiCoast - RT.subsat));
       const pos = c
         .clone()
         .addScaledVector(n, 10 * k)
         .addScaledVector(side, 14 * k)
         .add(V(0, 3, 0));
-      return { pos, look: c.clone().addScaledVector(n, aspect < 1 ? 2 : 4.5), fov: 46 };
+      const look = c.clone().addScaledVector(n, Math.max(aspect < 1 ? 2 : 4.5, 0.6 * out));
+      return { pos, look, fov: 46 };
     }
     case 'tei_high': {
       // From above and behind: the Moon below the CSM as it pulls away.
@@ -984,6 +1023,7 @@ export function createFlyReturn(
   const scene = new THREE.Scene();
   scene.background = new THREE.Color(0x000000);
   const sun = new THREE.DirectionalLight(0xfff6ea, 3.6);
+  // keep in step with J_SUN_DIR
   // The J missions' rover TV camera stands east of the LM: the sun comes over its shoulder so the
   // rising stage is lit toward the lens.
   if (profile.jMission) sun.position.set(80, 50, 70);

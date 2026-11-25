@@ -194,6 +194,24 @@ describe('sentry dev rung (vite dev, no deploy env)', () => {
       ).not.toBeNull();
     });
 
+    // Prod ORRERY-PROD-4V: the browser's ResizeObserver loop notice, both wordings.
+    it('drops the ResizeObserver loop notice, keeps other ResizeObserver errors', () => {
+      for (const value of [
+        'ResizeObserver loop limit exceeded',
+        'ResizeObserver loop completed with undelivered notifications.',
+      ]) {
+        initMock.mockClear();
+        expect(run({ type: 'Error', value })).toBeNull();
+      }
+      initMock.mockClear();
+      expect(
+        run({
+          type: 'TypeError',
+          value: "Failed to construct 'ResizeObserver': 1 argument required",
+        }),
+      ).not.toBeNull();
+    });
+
     it('keeps CSS preload failures (not skew: guard reloads, stable hash) and still drops chunk skew', () => {
       expect(
         run({

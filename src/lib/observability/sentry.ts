@@ -150,6 +150,15 @@ export function initSentry(): void {
       //      on line 3 of the page, where the served HTML has only `<head>`; no code of ours
       //      reads `["@context"]`.
       if (/\["@context"\]/.test(sig)) return null;
+      //    - the ResizeObserver loop notice (ORRERY-PROD-4V, /es/missions): the browser defers
+      //      the observations a callback's own layout change caused to the next frame and reports
+      //      that as an error with no Error object. Nothing is lost. Chrome's old wording and the
+      //      spec's current one.
+      if (
+        /ResizeObserver loop (limit exceeded|completed with undelivered notifications)/.test(sig)
+      ) {
+        return null;
+      }
       // 1. URL — preserve path, strip query + hash.
       if (event.request?.url) {
         try {

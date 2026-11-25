@@ -299,6 +299,21 @@ suite('pwa');
   } catch {
     record('adapter-static env module served (/_app/env.js)', false);
   }
+  // A locale prefix in the wrong case (/zh-cn/...) redirects to the canonical one
+  // (nginx map, plan 0.9.12 B3): 108 lowercase 404s on prod before it.
+  if (TIER === 'prod') {
+    try {
+      const res = await fetch(BASE + '/zh-cn/missions?x=1', { redirect: 'manual' });
+      const loc = res.headers.get('location') || '';
+      record(
+        'locale case: /zh-cn/missions → 301 /zh-CN/missions',
+        res.status === 301 && /\/zh-CN\/missions\?x=1$/.test(loc),
+        `HTTP ${res.status} ${loc}`,
+      );
+    } catch (e) {
+      record('locale case: /zh-cn/missions → 301 /zh-CN/missions', false, e.message.slice(0, 60));
+    }
+  }
   await p.close();
 }
 

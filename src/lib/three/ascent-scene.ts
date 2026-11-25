@@ -682,8 +682,12 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   // wings unfolding at separation. Real payloads ride folded under the fairing
   // and deploy AFTER sep — showing the deployed model bolted to the rocket read
   // wrong.
+  // Starship is its own spacecraft (Flight 5, the Mars flights): the launcher model's ship and
+  // nose ARE the craft. Its registry capsule is that same ship, which as a payload rode as a
+  // crewed capsule, hid the nose and stacked a second ship on top (operator 2026-11-25).
+  const shipIsCraft = opts.launcherId === 'starship';
   const payload = buildPayload(
-    opts.spacecraftId,
+    shipIsCraft ? undefined : opts.spacecraftId,
     vehLen,
     upperStageRadius,
     opts.launcherHeightM,
@@ -1021,9 +1025,8 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   // A payload that stays in its bay (the Shuttle) never separates during the launch.
   const sepAfterSeco =
     !opts.payloadInBay && opts.payloadSepT != null && (secoT == null || opts.payloadSepT > secoT);
-  // Starship is its own spacecraft (Flight 5, the Mars flights): nothing leaves it, and after SECO
-  // the camera stays on the ship, not on a payload that was never drawn (operator 2026-11-23).
-  const shipIsCraft = opts.launcherId === 'starship';
+  // Nothing leaves Starship, and after SECO the camera stays on the ship, not on a payload that
+  // was never drawn (operator 2026-11-23).
   const payloadSepT =
     opts.payloadInBay || shipIsCraft ? undefined : sepAfterSeco ? opts.payloadSepT : secoT;
   // Riding the launcher's stage through its injection burn (not deployed before a kick stage).

@@ -94,6 +94,31 @@ describe('Starship is its own spacecraft (operator 2026-11-23: Flight 5 after SE
     }
   });
 
+  // Operator 2026-11-25 ("doesn't have a spaceship on top"): Flight 5's registry capsule is the
+  // Ship itself, so it rode as a crewed-capsule payload that hid the launcher's nose cone.
+  it('Starship climbs as its own ship: no capsule payload, the nose cone stays on', () => {
+    const sc = createAscentScene({
+      aspect: 1,
+      vehicleLengthKm: 1.2,
+      launcherId: 'starship',
+      spacecraftId: 'starship-flight-5',
+      events,
+    });
+    sc.setState(state(51));
+    let capsule = false;
+    let noseVisible = false;
+    sc.scene.traverse((o) => {
+      if (o.userData.isCapsule) capsule = true;
+      if (o instanceof THREE.Mesh && o.geometry instanceof THREE.LatheGeometry) {
+        let on = true;
+        for (let p: THREE.Object3D | null = o; p; p = p.parent) on &&= p.visible;
+        noseVisible ||= on;
+      }
+    });
+    expect(capsule).toBe(false);
+    expect(noseVisible).toBe(true);
+  });
+
   it('a launcher with a real payload still follows the payload once it is free', () => {
     const vehLen = 1.2;
     const sc = createAscentScene({

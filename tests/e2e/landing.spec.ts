@@ -90,6 +90,8 @@ test.describe('landing page (/)', () => {
     const label = page.locator('.footer-about-label');
     const menu = page.locator('.footer-about-menu');
     const privacy = menu.locator('a[href$="/privacy"]');
+    // The strip ends the home page (in the flow since F2, 2026-11-25): bring it on screen first.
+    await label.scrollIntoViewIfNeeded();
     const lb = (await label.boundingBox())!;
     const x = lb.x + lb.width / 2;
     await page.mouse.move(x, lb.y + lb.height / 2);

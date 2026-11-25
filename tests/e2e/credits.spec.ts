@@ -175,7 +175,7 @@ test.describe('/credits — image provenance disclosure', () => {
 
   test('linked from the site footer', async ({ page, isMobile }) => {
     await page.goto('/', { waitUntil: 'networkidle' });
-    // Desktop: the floating bottom-right footer strip. Touch: the strip is
+    // Desktop: the footer strip at the end of the page (F2). Touch: the strip is
     // hidden and its links live in the nav hamburger drawer (0.7.2).
     let creditsLink;
     if (isMobile) {

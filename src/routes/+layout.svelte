@@ -122,8 +122,23 @@
   // Scene routes whose bottom-left HUD (dock, legend) crowds the full strip: it goes
   // compact (More button) below 1450 px.
   const COMPACT_FOOTER_ROUTES = ['/explore', '/mars', '/moon', '/venus'];
+  // The full-screen scenes keep the floating strip (there is no page end to put it at). Every other
+  // page ends with it in the flow, so it never covers content as the page scrolls under it
+  // (operator 2026-11-25, F2; UXS-013 amendment).
+  const SCENE_FOOTER_ROUTES = [
+    '/explore',
+    '/worlds',
+    '/earth',
+    '/moon',
+    '/mars',
+    '/venus',
+    '/iss',
+    '/tiangong',
+    '/fly',
+  ];
+  let footerInFlow = $derived(!SCENE_FOOTER_ROUTES.includes(seoRoute));
   let footerCompact = $derived(
-    narrow1000 || (narrowExplore && COMPACT_FOOTER_ROUTES.includes(seoRoute)),
+    !footerInFlow && (narrow1000 || (narrowExplore && COMPACT_FOOTER_ROUTES.includes(seoRoute))),
   );
   let canonicalHref = $derived(canonicalUrl(seoRoute, activeLocale));
   // Card share stubs (#547, /c/*) and the OAuth callback are en-US-only pages
@@ -556,6 +571,7 @@
   </main>
   <footer
     class="site-footer"
+    class:in-flow={footerInFlow}
     class:immersive-hidden={immersiveMode.active}
     class:more-open={footerMoreOpen}
     aria-label={m.footer_aria()}
@@ -712,6 +728,18 @@
     inset-inline-end: 10px;
     z-index: 35;
     pointer-events: none;
+  }
+  /* A content page: the strip ends the page, right-aligned (start-aligned in RTL), and wraps in a
+     narrow window instead of folding into a More popover. */
+  .site-footer.in-flow {
+    position: static;
+    display: flex;
+    justify-content: flex-end;
+    padding: 32px 10px max(10px, env(safe-area-inset-bottom));
+  }
+  .site-footer.in-flow .footer-menu {
+    flex-wrap: wrap;
+    row-gap: 2px;
   }
   /* An open More popover must out-stack the explore time dock (z-index 40). */
   .site-footer.more-open {

@@ -101,3 +101,23 @@ Galileo, Cassini, New Horizons, MESSENGER, BepiColombo, Rosetta, Juno, JUICE, Pa
 the rest the mission list carries): picture sheets of each flyby's montage (establish, approach,
 hero, depart) on desktop and phone, the cruise between them, and the arrival; findings and calls to
 the operator as for W6 step 1. Runs after the seven W6 changes above.
+
+## Done (2026-11-25)
+
+| Call | Commit | What changed | Checked |
+|---|---|---|---|
+| 7 | af80c873784, fe0029bb14d | scrim column, splashdown canopy, opening marker, no black sky on the Moon | Chromium frames |
+| 3 | 36b4d1a2789 | seam fade on the way-home entry and the booster-return cut in and out | seam opacity 1 at each (0 with the old key) |
+| 5 | a0236bbbe6a, 5dcd4192ac5, 14c4aaa1b8c | `?montage=0`, `?cam=classic` (+ AscentCameraDebug), the finale lock (+ `fly_mission_end`, 14 locales) removed; the epilogue's black layer kept (`epilogueBlackOpacity`) | unit tests; Inspiration4 launch under the director |
+| 6 | d8c4a1f8f34 | launch telemetry + dossier recede to 0.32 from T+20 s on a fine pointer; hover restores | T+10 / T+60 s frames |
+| 2 | 4ada8461fac | `phone-framing.ts` (`portraitFit`, `portraitFov`): helio + cislunar + coast widen the field of view, the way home + booster return use the distance form | 390x844: Voyager 2 at Jupiter, Perseverance, Apollo 11, STS-1 |
+| 1 | a08f45dcc36, 61865e86776 | cislunar craft placed by its orbit's timing (Kepler areas, or a published path's own times); craft-led long-lens coast shot | Apollo 11 MET 0.3/1/2 d, desktop + phone |
+
+Found on the way (not fixed, for the operator): the hybrid (tier 1.5) Apollo cislunar waypoints are
+stamped evenly by index and their return legs are not a conic (Apollo 11: a sideways hop at
+383,000 km from MET 5.64 to 5.75 d, then a radial fall), so on the way home the craft reaches
+Earth's vicinity within a day of TEI (real flight: about 330,000 km at MET 6.5 d). Fixing it means
+regenerating those waypoints from a source; the craft-led shot leaves the return's close-in part
+to the diagram frame meanwhile. The descent and launch keep their own exact framing rules.
+
+Open: call 4 (F8 phase 2, the scrubber laid out by watching time).

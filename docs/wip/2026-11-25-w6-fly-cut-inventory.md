@@ -80,3 +80,14 @@ Earth; Dragon's mains out of frame and no entry glow on the splashdown; the desc
 shot shows no craft; Apollo 11's LM over black at 85% of the descent; the way-home caption reads
 "Docking approach" at 54 s during the close-up (not investigated). Seven calls put to the operator
 on the page.
+
+## Decisions (operator 2026-11-25: "1 -7 yes")
+
+1. The cislunar coast gets a craft-led camera (the spacecraft in frame, Earth or the Moon behind).
+2. One shared phone-framing rule, used by the cruise, flyby, cislunar and coast cameras.
+3. The seam fade on the way-home entry and the booster-return cuts.
+4. F8 phase 2: the scrubber laid out by watching time.
+5. Remove the dormant paths: the finale lock, `?cam=classic`, the classic flyby (`?montage=0`).
+6. The launch HUD fades back after liftoff on desktop.
+7. Fix the descent defects: the sky light column, Dragon's chutes and entry glow, the empty opening
+   shot, the LM over black; and the way-home caption at 54 s.

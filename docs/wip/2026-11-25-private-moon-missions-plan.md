@@ -40,7 +40,7 @@ is not in them is an ESTIMATE and goes in `estimatedFields`.
 7. **Gates**: science-reviewer on every mission and card, the i18n manifest, validate-data,
    frame audit on the new descents (desktop and phone), the full unit suite.
 
-## Not decided (to the operator)
+## Decided (operator 2026-11-25, "1 yes. 2 yes")
 
-- Where this sits in the 0.9.12 order (group 5 "new missions and scenes" is the natural slot).
-- Unflown European launchers (RFA One, Miura 5, Maia): cards now or after they fly.
+- Group 5 of the 0.9.12 order, ahead of W13 + W14.
+- Unflown European launchers (RFA One, Miura 5, Maia, Zephyr) get fleet cards now, marked in development.

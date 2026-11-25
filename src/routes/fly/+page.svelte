@@ -131,6 +131,7 @@
   import {
     coastAscentFraction,
     descentSeparationTimes,
+    descentPlayClock,
     isCinematicCutJump,
     OI_WINDOW_DAYS,
     OI_WINDOW_DAYS_CISLUNAR,
@@ -139,6 +140,7 @@
     orbitInsertionStage,
     jumpToMet as jumpToMetImpl,
     launchSeparationTimes,
+    launchPlayClock,
     masterScrubFraction,
     masterScrubTarget,
     type JumpToMetContext,
@@ -1838,6 +1840,11 @@
         descentT = Math.max(0, Math.min(descentDurationS, v));
       },
       __descentDuration: () => descentDurationS,
+      // Read the clock and start play, to time an act from a script (the F8 activity clock).
+      __descentT: () => descentT,
+      __flyPlay: () => {
+        isPlaying = true;
+      },
       // A splashdown is reached only through the way home: load its profile file directly.
       __descentLoadProfile: (file: string) =>
         loadDescentProfileFile(file, fetch, base).then(async (p) => {
@@ -1869,6 +1876,10 @@
     ),
   );
   let descentSepTimes = $derived(descentSeparationTimes(descentSummaryFly));
+  // F8: the activity clocks — each act plays fast where little changes, at the pill speed where
+  // it does, in slow motion at the separations.
+  let launchPlayClockFly = $derived(launchPlayClock(launchSummaryFly, launchSepTimes));
+  let descentPlayClockFly = $derived(descentPlayClock(descentSummaryFly));
   // A direct insertion's coast to OMS-2 plays compressed (launch-coast-warp): the master bar's
   // ascent band is laid out on the play clock, `launchT` stays mission time.
   let launchCoastWarpFly = $derived(
@@ -3329,6 +3340,12 @@
       },
       get launchSepTimes() {
         return launchSepTimes;
+      },
+      get launchPlayClock() {
+        return launchPlayClockFly;
+      },
+      get descentPlayClock() {
+        return descentPlayClockFly;
       },
       get phaseMarkers() {
         return phaseMarkers;

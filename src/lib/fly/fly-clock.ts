@@ -1,5 +1,10 @@
 import { pointToScrubber, scrubberToPoint, type JourneyTimeline } from '$lib/orbital/ascent-clock';
-import { terminalStartTime, unwarpDescentTime } from '$lib/orbital/descent-timewarp';
+import {
+  terminalStartTime,
+  unwarpDescentTime,
+  warpDescentTime,
+} from '$lib/orbital/descent-timewarp';
+import { buildActivityClock } from './activity-clock';
 import { biasJumpToIconicMoment, type FlightEventLite } from '$lib/orbital/jump-to-met-bias';
 import { CINEMATIC_TIMINGS, type CinematicBeatState } from '$lib/fly-cinematic-beats';
 import type { AscentSummary } from '$lib/physics/ascent/ascent-physics';
@@ -93,7 +98,7 @@ export function launchSeparationTimes(
   return sep != null ? [...times, sep] : times;
 }
 
-const DESCENT_SEP_BEATS = new Set([
+export const DESCENT_SEP_BEATS = new Set([
   'entry_flip',
   'parachute_deploy',
   'heatshield_sep',
@@ -125,6 +130,48 @@ export function descentSeparationTimes(summary: DescentSummary | null): number[]
   return summary.events
     .filter((e) => DESCENT_SEP_BEATS.has(e.type))
     .map((e) => unwarpDescentTime(e.t, dur, tB));
+}
+
+/** A play clock: advances its act's clock by `wallDt` real seconds at the user's speed (F8). */
+export interface PlayClock {
+  advance(t: number, wallDt: number, speed: number): number;
+}
+
+/** The launch act's activity clock over mission time (`launchT`): the liftoff and the first
+ *  stage at the pill speed, the upper-stage burns and coasts up to 30× that, the separations
+ *  in slow motion. */
+export function launchPlayClock(
+  summary: AscentSummary | null,
+  sepTimes: readonly number[],
+): PlayClock | null {
+  if (!summary || summary.states.length < 2) return null;
+  const c = buildActivityClock(
+    summary.states.map((st) => ({ t: st.t, altM: st.altKm * 1000, speedMs: st.speedKms * 1000 })),
+    sepTimes,
+  );
+  return { advance: (t, dt, sp) => c.advance(t, dt, sp) };
+}
+
+/** The descent act's activity clock. It runs on trajectory time and returns raw scrubber time
+ *  (`descentT`), so the scrubber keeps its warped layout (descent-timewarp.ts) while the play
+ *  rate follows what happens. */
+export function descentPlayClock(summary: DescentSummary | null): PlayClock | null {
+  if (!summary || summary.states.length < 2) return null;
+  const dur = summary.totalDurationS;
+  const tB = terminalStartTime(summary.states, dur, summary.events);
+  const c = buildActivityClock(
+    summary.states.map((st) => ({
+      t: st.t,
+      altM: st.altM,
+      speedMs: st.velocityMs,
+      loadG: st.decelG,
+    })),
+    summary.events.filter((e) => DESCENT_SEP_BEATS.has(e.type)).map((e) => e.t),
+  );
+  return {
+    advance: (raw, dt, sp) =>
+      Math.min(dur, unwarpDescentTime(c.advance(warpDescentTime(raw, dur, tB), dt, sp), dur, tB)),
+  };
 }
 
 /** Where the live phase sits, as the inputs `masterScrubFraction` needs. */

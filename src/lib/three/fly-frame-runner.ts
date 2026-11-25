@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import { advanceMissionT, type LaunchCoastWarp } from '$lib/orbital/launch-coast-warp';
+import type { PlayClock } from '$lib/fly/fly-clock';
 import * as m from '$lib/paraglide/messages';
 import { A_MOON_KM, moonEciPos } from '$lib/orbital/cislunar/cislunar-geometry';
 import { BODY_MASS_KG, gravityAccel, logScaleLength } from '$lib/orbit-overlays';
@@ -174,6 +175,10 @@ export interface FlyFrameBridge {
   readonly launchSepTimes: number[];
   /** The launch act's compressed coast (a direct insertion), or null. */
   readonly launchCoastWarp: LaunchCoastWarp | null;
+  /** The activity clocks (F8): fast where little changes, slow at the events; null until the
+   *  act's summary is in, when the old fixed-rate clock below still runs. */
+  readonly launchPlayClock: PlayClock | null;
+  readonly descentPlayClock: PlayClock | null;
   readonly phaseMarkers: PhaseMarker[];
   readonly viewMode: 'heliocentric' | 'cislunar';
   readonly showLaunch: boolean;
@@ -1050,18 +1055,28 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
     // clock-driven, externalClock=true). At the seam LaunchScene's own loop
     // fires the orbit-reached warp → onComplete flips showLaunch off.
     if (bridge.showLaunch && bridge.isPlaying) {
-      // Slow-mo beat (item 3): ease the clock down through staging / fairing /
-      // payload separation so each reads instead of blitzing past at ×N.
-      const slow = sepSlowmoFactor(bridge.launchT, bridge.launchSepTimes);
-      bridge.launchT = Math.min(
-        bridge.launchDurationS,
-        advanceMissionT(bridge.launchCoastWarp, bridge.launchT, dt * bridge.launchSpeed * slow),
-      );
+      const pc = bridge.launchPlayClock;
+      if (pc) {
+        bridge.launchT = Math.min(
+          bridge.launchDurationS,
+          pc.advance(bridge.launchT, dt, bridge.launchSpeed),
+        );
+      } else {
+        // Slow-mo beat (item 3): ease the clock down through staging / fairing /
+        // payload separation so each reads instead of blitzing past at ×N.
+        const slow = sepSlowmoFactor(bridge.launchT, bridge.launchSepTimes);
+        bridge.launchT = Math.min(
+          bridge.launchDurationS,
+          advanceMissionT(bridge.launchCoastWarp, bridge.launchT, dt * bridge.launchSpeed * slow),
+        );
+      }
     }
     // Master clock — descent phase: advance the EDL time (DescentScene is
     // clock-driven, externalClock=true). At touchdown DescentScene's own
     // loop fires the surface handoff → handleTouchdown navigates away.
-    if (bridge.showDescent && bridge.isPlaying) {
+    if (bridge.showDescent && bridge.isPlaying && bridge.descentPlayClock) {
+      bridge.descentT = bridge.descentPlayClock.advance(bridge.descentT, dt, bridge.descentSpeed);
+    } else if (bridge.showDescent && bridge.isPlaying) {
       // Earth re-entry: the 1-DOF shallow-corridor model yields a long path
       // (100+ min) that isn't watchable at a real-time multiplier, so compress
       // it to a fixed ~30s wall-time play (scaled by the speed pills) — the HUD

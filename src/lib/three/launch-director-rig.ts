@@ -6,7 +6,7 @@
  * drives the camera from the plan.
  *
  * Deterministic for any t (the plan and the pose are pure functions of the state), so scrubbing
- * and seeking never jump. `?cam=classic` skips all of this: LaunchScene then runs today's camera.
+ * and seeking never jump.
  */
 
 import type { AscentScene } from './ascent-scene';

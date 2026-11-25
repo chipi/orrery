@@ -112,19 +112,10 @@ test('the launch runs the camera director by default (data-director-shot names t
 }) => {
   await enterLaunch(page, 'curiosity');
   const scene = page.locator('[data-testid="launch-scene"]');
-  await expect(scene).toHaveAttribute('data-camera-mode', 'director');
   await expect(async () => {
     const shot = await scene.getAttribute('data-director-shot');
     expect(shot && shot.length > 0).toBe(true);
   }).toPass({ timeout: 15_000 });
-});
-
-test('?cam=classic runs the old camera: no director shot', async ({ page }) => {
-  await enterLaunch(page, 'curiosity', '&cam=classic');
-  const scene = page.locator('[data-testid="launch-scene"]');
-  await expect(scene).toHaveAttribute('data-camera-mode', 'classic');
-  await expect(scene).toHaveAttribute('data-director-shot', '');
-  await expect(page.locator('.launch .stage canvas')).toBeAttached();
 });
 
 // The full-HUD reference assertions are desktop-only (HUD is display:none under

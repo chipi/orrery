@@ -155,10 +155,9 @@ export function buildShotSchedule(inp: ScheduleInputs): ShotWindow[] {
 
   // A dedicated camera beat for EVERY separation, not just the first: each
   // 'staging' event (strap-on jettison, the core drop/MECO, and each mid-stage
-  // of a 3+-stage vehicle) plus fairing jettison, in time order. The
-  // AscentCameraDebug plot renders this schedule, so every separation gets both
-  // a camera cut AND a debug-window marker — previously only the first staging,
-  // fairing, and SECO were beated, so the core drop + mid-stage sep were unmarked.
+  // of a 3+-stage vehicle) plus fairing jettison, in time order. Previously only
+  // the first staging, fairing, and SECO were beated, so the core drop + mid-stage
+  // sep were unmarked.
   const beats = [
     ...inp.events
       .filter((e) => e.type === 'staging')

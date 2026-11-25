@@ -78,8 +78,7 @@
   import * as m from '$lib/paraglide/messages';
   import Chip from '$lib/components/Chip.svelte';
   import { hudLabel } from '$lib/orbital/hud-labels';
-  import { buildShotSchedule, defaultTuning } from '$lib/orbital/ascent-cameras';
-  import AscentCameraDebug from '$lib/components/AscentCameraDebug.svelte';
+  import { buildShotSchedule } from '$lib/orbital/ascent-cameras';
   import { createAnimateLoop, type AnimateLoop } from '$lib/three/animate-loop';
   import { createLaunchDirector, type LaunchDirector } from '$lib/three/launch-director-rig';
   import type { LaunchInstant } from '$lib/orbital/launch-sun';
@@ -159,16 +158,11 @@
     onCut,
   }: Props = $props();
 
-  // ?cam=classic keeps today's camera and scene for one release (A/B); the default is the director.
-  const classicCam =
-    typeof window !== 'undefined' &&
-    new URLSearchParams(window.location.search).get('cam') === 'classic';
-  /** The active director shot (data-director-shot), '' under the classic camera. */
+  /** The active director shot (data-director-shot). */
   let directorShot = $state('');
   let debugTrail: Pt[] = [];
   let debugFrame = 0;
 
-  const tuning = $state(defaultTuning()); // live per-shot camera tuning (debug sliders → scene)
   const debugMode =
     typeof window !== 'undefined' &&
     new URLSearchParams(window.location.search).get('debug') === '1';
@@ -464,7 +458,6 @@
       siteYawDeg: dbgNum('yaw'),
       vehicleLengthKm: VEHICLE_LENGTH_KM,
       schedule,
-      tuning,
       events: summary.events,
       spacecraftId: mission.spacecraftId,
       launcherHeightM: mission.launcherHeightM,
@@ -492,84 +485,79 @@
     insetLauncherId = dbg?.get('launcher') || profile.id;
 
     // The launch camera director (G3): shot plan, conditions, ground-relative path. One
-    // implementation shared with /dev/launch-director. Skipped under ?cam=classic.
-    if (!classicCam) {
-      // Frame the vehicle in the part of the screen the HUD leaves free, measured from the HUD as
-      // laid out on this device (operator 2026-11-23): the title and clock at the top, the
-      // readouts and /fly's play bar at the bottom, the telemetry and dossier columns at the
-      // sides where they show. Re-measured as panels open and close.
-      const safeNow = (): SafeArea | null => {
-        const host = container?.getBoundingClientRect();
-        if (!host || host.width < 1 || host.height < 1) return null;
-        const seen = (el: Element | null | undefined) => {
-          if (!el) return null;
-          const r = el.getBoundingClientRect();
-          const cs = getComputedStyle(el);
-          const on = r.width > 0 && cs.display !== 'none' && Number(cs.opacity) > 0.05;
-          return on ? r : null;
-        };
-        let top = 0;
-        for (const q of ['.header', '.clock']) {
-          const r = seen((container.parentElement ?? container).querySelector(q));
-          if (r) top = Math.max(top, r.bottom - host.top);
-        }
-        let bottom = 0;
-        for (const r of [seen(readoutsEl), seen(document.querySelector('.scrubber'))]) {
-          if (r && r.top > host.top + host.height / 2)
-            bottom = Math.max(bottom, host.bottom - r.top);
-        }
-        // A side column counts only beside the frame, not as a sheet across it.
-        const side = (el: Element | null | undefined, edge: 'left' | 'right') => {
-          const r = seen(el);
-          if (!r || r.width > host.width * 0.4 || r.height < host.height * 0.3) return 0;
-          return edge === 'left' ? r.right - host.left : host.right - r.left;
-        };
-        return {
-          top: Math.min(0.35, top / host.height),
-          bottom: Math.min(0.4, bottom / host.height),
-          left: Math.min(0.3, side(telBox, 'left') / host.width),
-          right: Math.min(0.3, side(dossierEl, 'right') / host.width),
-          aspect: host.width / host.height,
-        };
+    // implementation shared with /dev/launch-director.
+    // Frame the vehicle in the part of the screen the HUD leaves free, measured from the HUD as
+    // laid out on this device (operator 2026-11-23): the title and clock at the top, the
+    // readouts and /fly's play bar at the bottom, the telemetry and dossier columns at the
+    // sides where they show. Re-measured as panels open and close.
+    const safeNow = (): SafeArea | null => {
+      const host = container?.getBoundingClientRect();
+      if (!host || host.width < 1 || host.height < 1) return null;
+      const seen = (el: Element | null | undefined) => {
+        if (!el) return null;
+        const r = el.getBoundingClientRect();
+        const cs = getComputedStyle(el);
+        const on = r.width > 0 && cs.display !== 'none' && Number(cs.opacity) > 0.05;
+        return on ? r : null;
       };
-      onSafeResize = () => director?.setSafeArea(safeNow());
-      if (import.meta.env.DEV && debugMode)
-        (window as unknown as Record<string, unknown>).__ascentSafe = safeNow;
-      window.addEventListener('resize', onSafeResize);
-      safeTimer = setInterval(() => onSafeResize?.(), 500);
-      director = createLaunchDirector({
-        safe: safeNow(),
-        asc: sceneObj,
-        summary,
-        profile,
-        vehLen: VEHICLE_LENGTH_KM,
-        missionId: mission.spacecraftId,
-        launch: launchInstant,
-        // ?pad=generic keeps the one lattice tower (A/B, frame-time comparison)
-        pad:
-          new URLSearchParams(window.location.search).get('pad') === 'generic'
-            ? null
-            : launchPadSpec,
-        launcherHeightM: mission.launcherHeightM,
-        payloadSepT,
-        endT: ascentEnd,
-        coastWarp,
-        reducedMotion: prefersReducedMotion(),
-        nightUrl: `${base}/textures/2k_earth_nightmap.jpg`,
-        // weak GPUs and touch devices get the lighter conditions rig
-        lite:
-          quality.tier === 'minimal' ||
-          quality.tier === 'low' ||
-          window.matchMedia('(pointer: coarse)').matches,
-      });
-      if (debugMode) {
-        directorDebugModel = buildPlotModel({
-          plan: director.plan,
-          stateAt: (tt) => sampleAscentAt(summary.states, tt),
-          latDeg: profile.launchSite?.lat ?? 28.5,
-          vehLen: VEHICLE_LENGTH_KM,
-        });
+      let top = 0;
+      for (const q of ['.header', '.clock']) {
+        const r = seen((container.parentElement ?? container).querySelector(q));
+        if (r) top = Math.max(top, r.bottom - host.top);
       }
+      let bottom = 0;
+      for (const r of [seen(readoutsEl), seen(document.querySelector('.scrubber'))]) {
+        if (r && r.top > host.top + host.height / 2) bottom = Math.max(bottom, host.bottom - r.top);
+      }
+      // A side column counts only beside the frame, not as a sheet across it.
+      const side = (el: Element | null | undefined, edge: 'left' | 'right') => {
+        const r = seen(el);
+        if (!r || r.width > host.width * 0.4 || r.height < host.height * 0.3) return 0;
+        return edge === 'left' ? r.right - host.left : host.right - r.left;
+      };
+      return {
+        top: Math.min(0.35, top / host.height),
+        bottom: Math.min(0.4, bottom / host.height),
+        left: Math.min(0.3, side(telBox, 'left') / host.width),
+        right: Math.min(0.3, side(dossierEl, 'right') / host.width),
+        aspect: host.width / host.height,
+      };
+    };
+    onSafeResize = () => director?.setSafeArea(safeNow());
+    if (import.meta.env.DEV && debugMode)
+      (window as unknown as Record<string, unknown>).__ascentSafe = safeNow;
+    window.addEventListener('resize', onSafeResize);
+    safeTimer = setInterval(() => onSafeResize?.(), 500);
+    director = createLaunchDirector({
+      safe: safeNow(),
+      asc: sceneObj,
+      summary,
+      profile,
+      vehLen: VEHICLE_LENGTH_KM,
+      missionId: mission.spacecraftId,
+      launch: launchInstant,
+      // ?pad=generic keeps the one lattice tower (A/B, frame-time comparison)
+      pad:
+        new URLSearchParams(window.location.search).get('pad') === 'generic' ? null : launchPadSpec,
+      launcherHeightM: mission.launcherHeightM,
+      payloadSepT,
+      endT: ascentEnd,
+      coastWarp,
+      reducedMotion: prefersReducedMotion(),
+      nightUrl: `${base}/textures/2k_earth_nightmap.jpg`,
+      // weak GPUs and touch devices get the lighter conditions rig
+      lite:
+        quality.tier === 'minimal' ||
+        quality.tier === 'low' ||
+        window.matchMedia('(pointer: coarse)').matches,
+    });
+    if (debugMode) {
+      directorDebugModel = buildPlotModel({
+        plan: director.plan,
+        stateAt: (tt) => sampleAscentAt(summary.states, tt),
+        latDeg: profile.launchSite?.lat ?? 28.5,
+        vehLen: VEHICLE_LENGTH_KM,
+      });
     }
 
     // Science-Lens force vectors — the lens panel's thrust / drag / gravity /
@@ -653,8 +641,6 @@
             seed: director.plan.seed,
           });
         }
-      } else {
-        sceneObj!.setState(s);
       }
       sceneObj!.setInjectionBurn(injectionFiring);
       if (import.meta.env.DEV && debugMode) applyDebugCamera();
@@ -724,7 +710,6 @@
   class:hud-hidden={hudHidden}
   class:external={externalClock}
   data-testid="launch-scene"
-  data-camera-mode={classicCam ? 'classic' : 'director'}
   data-director-shot={directorShot}
 >
   <div class="stage" bind:this={container}></div>
@@ -898,25 +883,6 @@
   {#if !warping}
     <button class="continue" onclick={complete}>{m.fly_launch_skip_cta()}</button>
   {/if}
-
-  <!-- Launch camera-debug (?debug=1): shot timeline, live camera plot,
-       per-shot tuning sliders. -->
-  {#if debugMode && classicCam && !warping}
-    <div class="cam-debug">
-      <AscentCameraDebug
-        {summary}
-        {schedule}
-        vehLen={VEHICLE_LENGTH_KM}
-        {t}
-        {tuning}
-        onJump={(jt) => {
-          t = jt;
-          playing = false;
-          sceneObj?.snapCamera();
-        }}
-      />
-    </div>
-  {/if}
 </div>
 
 <style>
@@ -1014,12 +980,6 @@
   .launch.hud-hidden .losses {
     opacity: 0;
     pointer-events: none;
-  }
-  .cam-debug {
-    position: absolute;
-    right: 22px;
-    bottom: 108px;
-    z-index: 6;
   }
   /* HUD-hidden — the shared toggle collapses the launch HUD set (matches the
      sim HUD's hudHidden), leaving just the scene + the collapse + skip buttons. */

@@ -319,7 +319,7 @@
     width: 100%;
     height: 100%;
   }
-  /* Coast camera-debug overlay (?debug=1) — the coast analogue of AscentCameraDebug. */
+  /* Coast camera-debug overlay (?debug=1). */
   .cam-debug {
     position: absolute;
     top: 4.5rem;

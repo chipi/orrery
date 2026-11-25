@@ -74,6 +74,16 @@ test.describe('/fleet view toggle', () => {
 });
 
 test.describe('the Missions list of a fleet entry', () => {
+  // F4 (operator 2026-11-25): the tab already says MISSIONS; a count line repeated it.
+  test('Saturn V: every mission has a page, so no summary line above the list', async ({
+    page,
+  }) => {
+    const panel = await openPanel(page, 'saturn-v');
+    await panel.getByTestId('fleet-mission-cta-multi').click();
+    await expect(panel.locator('.missions-list > li').first()).toBeVisible();
+    await expect(panel.getByTestId('fleet-missions-summary')).toHaveCount(0);
+  });
+
   test('Crew Dragon: 5 rows, 2 links, crew as names, no portrait or placeholder', async ({
     page,
   }) => {

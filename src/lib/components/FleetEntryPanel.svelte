@@ -828,11 +828,12 @@
         {/if}
       {:else if tab === 'missions' && hasMissions && namesReady}
         {@const inCatalogue = missionIds.length}
-        <p class="missions-summary" data-testid="fleet-missions-summary">
-          {inCatalogue === missionRows.length
-            ? m.fleet_missions_count({ count: missionRows.length })
-            : m.fleet_missions_in_catalogue({ count: missionRows.length, open: inCatalogue })}
-        </p>
+        <!-- The tab names the list; a line only says why some rows are not links (F4, 2026-11-25). -->
+        {#if inCatalogue < missionRows.length}
+          <p class="missions-summary" data-testid="fleet-missions-summary">
+            {m.fleet_missions_in_catalogue({ count: missionRows.length, open: inCatalogue })}
+          </p>
+        {/if}
         <ul class="missions-list">
           {#each missionRows as row (row.key)}
             <li class="mission-row" class:plain={!row.missionId}>

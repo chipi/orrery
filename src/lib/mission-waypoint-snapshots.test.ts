@@ -47,9 +47,11 @@ interface HelioSnapshot {
 }
 
 const MOON_SNAPSHOTS: CislunarSnapshot[] = [
-  { slug: 'apollo11', dest: 'moon', firstMet: 0, lastMetMin: 8.03, lastMetMax: 8.23, count: 100 },
-  { slug: 'apollo13', dest: 'moon', firstMet: 0, lastMetMin: 5.85, lastMetMax: 6.05, count: 100 },
-  { slug: 'apollo17', dest: 'moon', firstMet: 0, lastMetMin: 12.5, lastMetMax: 12.7, count: 100 },
+  // Apollo since 0.9.12: coasts drawn as conics sampled in time, extra samples where the fast
+  // pass by Earth turns, fewer by the Moon (so no run reads as a stay), splashdown once.
+  { slug: 'apollo11', dest: 'moon', firstMet: 0, lastMetMin: 8.03, lastMetMax: 8.23, count: 93 },
+  { slug: 'apollo13', dest: 'moon', firstMet: 0, lastMetMin: 5.85, lastMetMax: 6.05, count: 96 },
+  { slug: 'apollo17', dest: 'moon', firstMet: 0, lastMetMin: 12.5, lastMetMax: 12.7, count: 101 },
   { slug: 'artemis2', dest: 'moon', firstMet: 0, lastMetMin: 8.96, lastMetMax: 9.16, count: 100 },
   { slug: 'artemis4', dest: 'moon', firstMet: 0, lastMetMin: 17.9, lastMetMax: 18.1, count: 100 },
   { slug: 'beresheet', dest: 'moon', firstMet: 0, lastMetMin: 50.3, lastMetMax: 50.5, count: 100 },

@@ -247,6 +247,27 @@ describe('cislunar-geometry — Tier 1 phase generators (ADR-058)', () => {
       expect(p0.z).toBeCloseTo(wp[0][1] * Math.sin(ph), 6);
     });
 
+    it('hybrid waypoints carry their times to the renderer only when marked flown', () => {
+      const wp: Array<[number, number, number, number]> = [
+        [0, R_EARTH_KM + 185, 0, 0],
+        [0.5, 100000, 30000, 0],
+        [2, 250000, 50000, 0],
+        [3, A_MOON_KM - 20000, 10000, 0],
+      ];
+      const build = (profile: CislunarProfile) =>
+        buildCislunarTrajectory(profile, { ...baseOpts, is_return_trip: false }).phases[0];
+      const flown = build({
+        source_tier: 'tier_1_5_hybrid',
+        waypoints_km: wp,
+        waypoint_times: 'flown',
+      });
+      expect(flown.point_met_days?.length).toBe(flown.points.length);
+      expect(flown.point_met_days![SMOOTH_SAMPLES_PER_SEGMENT]).toBe(0.5);
+      expect(
+        build({ source_tier: 'tier_1_5_hybrid', waypoints_km: wp }).point_met_days,
+      ).toBeUndefined();
+    });
+
     it('waypoints authored for sim-day 0 meet the Moon on the real departure day', () => {
       // The generator parks the craft at the flyby-day Moon (sim-day 0 frame) for the whole stay;
       // on the real departure day that point must be where the live Moon is.

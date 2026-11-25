@@ -64,6 +64,10 @@ export interface CislunarProfile {
   return?: { type?: 'none' | 'tei_direct' | 'tei_lor'; dv_kms?: number };
   waypoints_km?: Array<[number, number, number, number]>;
   waypoints_source?: string;
+  /** 'flown': each waypoint's MET is when the craft was there (generate-hybrid-waypoints.ts
+   *  draws each coast as a conic sampled in time), so the renderer places the craft by them.
+   *  Absent on older hybrid output, whose METs were stamped evenly by index. */
+  waypoint_times?: 'flown';
   /** Published Earth-orbit-raising burns: [met_days, perigee_alt_km, apogee_alt_km] of the orbit each burn leaves. */
   orbit_raising?: Array<[number, number, number]>;
   /** Published lunar orbits after arrival: [met_days, perilune_alt_km, apolune_alt_km]. */
@@ -541,6 +545,7 @@ export function buildCislunarTrajectory(
       dep_day_sim,
       transit_days,
       profile.source_tier === 'tier_2_published',
+      profile.waypoint_times === 'flown',
     );
   }
 
@@ -823,6 +828,7 @@ function buildFromWaypoints(
   dep_day_sim: number,
   transit_days: number,
   published = false,
+  timesFlown = false,
 ): CislunarTrajectory {
   // The waypoints are generated with the departure at sim-day 0 (generate-hybrid-waypoints.ts)
   // and the Moon model is a circular orbit, so the flight on its real departure day is the same
@@ -1005,9 +1011,10 @@ function buildFromWaypoints(
 
   const moon_track: Vec3Km[] = waypoints.map(([metDays]) => moonEciPos(dep_day_sim + metDays));
 
-  // Hybrid (tier 1.5) waypoints are stamped evenly by index, not by when the craft was there
-  // (Apollo 11's sat 10,000 km out a day after TLI): their coasts are placed by Kepler's
-  // second law instead (sample-cislunar-spacecraft.ts). Only a published path carries times.
+  // Older hybrid (tier 1.5) waypoints are stamped evenly by index, not by when the craft was
+  // there (Apollo 11's sat 10,000 km out a day after TLI): their coasts are placed by Kepler's
+  // second law instead (sample-cislunar-spacecraft.ts). Output marked 'flown' carries real times.
+  if (timesFlown) attachPointTimes(phases, points, waypoints);
   for (const ph of phases) smoothPhase(ph);
   return { phases, moon_track, closest_approach_km };
 }

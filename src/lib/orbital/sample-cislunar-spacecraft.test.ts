@@ -1,5 +1,10 @@
 import { describe, it, expect } from 'vitest';
-import { sampleCislunarSpacecraftPos, MOON_LOCAL_PHASE_TYPES } from './sample-cislunar-spacecraft';
+import {
+  sampleCislunarSpacecraftPos,
+  MOON_LOCAL_PHASE_TYPES,
+  phaseIndexAt,
+  phaseTimeFractions,
+} from './sample-cislunar-spacecraft';
 import type { CislunarPhase } from '$lib/orbital/cislunar/cislunar-geometry';
 import { buildCislunarTrajectory, translunarCoast } from '$lib/orbital/cislunar/cislunar-geometry';
 
@@ -160,5 +165,41 @@ describe('sampleCislunarSpacecraftPos: a waypoint path is placed by its own time
       // The published path is rotated to the Moon's phase at departure; compare distances.
       expect(Math.hypot(s.x, s.y, s.z)).toBeCloseTo(Math.hypot(wp[k][1], wp[k][2], wp[k][3]), -1);
     }
+  });
+});
+
+// The hybrid-waypoint generator stamps each coast point with the time the renderer gives it.
+describe('phaseTimeFractions', () => {
+  const coast: CislunarPhase = {
+    type: 'tli_coast',
+    start_met_days: 0,
+    end_met_days: 3,
+    points: translunarCoast({ x: 6700, y: 0, z: 0 }, { x: -378_560, y: 0, z: 66_750 }, 110, 60),
+  };
+
+  it('is the inverse of phaseIndexAt: the craft is on point i at its own fraction', () => {
+    const f = phaseTimeFractions(coast);
+    expect(f[0]).toBe(0);
+    expect(f[f.length - 1]).toBeCloseTo(1, 12);
+    for (const i of [5, 20, 40]) expect(phaseIndexAt(coast, f[i])).toBeCloseTo(i, 6);
+  });
+
+  it('gives the first points little time: the perigee pass is fast', () => {
+    expect(phaseTimeFractions(coast)[10]).toBeLessThan(10 / 60 / 2);
+  });
+
+  it('falls back to even spacing where no Kepler timing applies', () => {
+    const stay: CislunarPhase = { ...coast, type: 'lunar_flyby', points: coast.points.slice(0, 5) };
+    expect(phaseTimeFractions(stay)).toEqual([0, 0.25, 0.5, 0.75, 1]);
+    expect(phaseTimeFractions({ ...stay, points: stay.points.slice(0, 1) })).toEqual([0]);
+  });
+
+  it("uses the points' own times when the path carries them", () => {
+    const timed: CislunarPhase = {
+      ...coast,
+      points: coast.points.slice(0, 3),
+      point_met_days: [1, 1.5, 3],
+    };
+    expect(phaseTimeFractions(timed)).toEqual([0, 0.25, 1]);
   });
 });

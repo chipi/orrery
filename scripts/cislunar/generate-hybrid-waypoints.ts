@@ -62,6 +62,8 @@ import {
   type CislunarPhase,
   type Vec3Km,
 } from '../../src/lib/orbital/cislunar/cislunar-geometry.ts';
+import { phaseTimeFractions } from '../../src/lib/orbital/sample-cislunar-spacecraft.ts';
+import { lambertArc } from './kepler-arc.ts';
 
 const TARGET_WAYPOINTS = 100;
 
@@ -135,15 +137,37 @@ const trajectory = buildCislunarTrajectory(
   },
 );
 
-// Flatten phases into a single (met, point) timeline. Each phase's
-// points span its [start_met_days, end_met_days] linearly.
+// Flatten phases into a single (met, point) timeline. Each coast is redrawn as the Earth-centred
+// conic joining its end points in the flown time (lambertArc), sampled evenly in time. The
+// analytic coast shapes take about five days by their own Kepler timing; squeezed into a flown
+// 2.5-day trip home the craft dawdled at the Moon and raced past Earth. Other phases (and a coast
+// with no such conic) keep their points, timed by Kepler's second law (phaseTimeFractions).
+const COAST_SAMPLES = 80;
+const DAY_S = 86400;
+const coastArc = (phase: CislunarPhase) => {
+  if (phase.type !== 'tli_coast' && phase.type !== 'tei_coast') return null;
+  const { points, start_met_days, end_met_days } = phase;
+  if (points.length < 2) return null;
+  const tofS = (end_met_days - start_met_days) * DAY_S;
+  const at = lambertArc(points[0], points[points.length - 1], tofS, MU_EARTH_KM3_S2);
+  if (!at) {
+    console.warn(`${file}: no conic for ${phase.type}; keeping the analytic shape`);
+    return null;
+  }
+  return Array.from({ length: COAST_SAMPLES + 1 }, (_, k) => at((tofS * k) / COAST_SAMPLES));
+};
 const timeline: Array<{ met: number; pt: Vec3Km }> = [];
 for (const phase of trajectory.phases) {
-  const { start_met_days, end_met_days, points } = phase as CislunarPhase;
+  const { start_met_days, end_met_days } = phase as CislunarPhase;
+  const arc = coastArc(phase as CislunarPhase);
+  const points = arc ?? (phase as CislunarPhase).points;
   if (points.length === 0) continue;
   const span = end_met_days - start_met_days;
+  const fracs = arc
+    ? arc.map((_, k) => k / COAST_SAMPLES)
+    : phaseTimeFractions(phase as CislunarPhase);
   for (let i = 0; i < points.length; i++) {
-    const tFrac = points.length === 1 ? 0 : i / (points.length - 1);
+    const tFrac = fracs[i];
     const met = start_met_days + tFrac * span;
     // Skip if it would duplicate the prior entry's MET (phase boundaries).
     if (timeline.length > 0 && Math.abs(met - timeline[timeline.length - 1].met) < 1e-9) {
@@ -210,13 +234,83 @@ for (const e of events) {
   if (bestIdx >= 0) targetMets[bestIdx] = Math.min(e.met_days, missionEndMet);
 }
 // Re-sort just in case anchor pinning produced a tiny out-of-order pair
-// (e.g. two close events both pinned). Then dedupe by removing any
-// equal-MET slot (validator requires strictly increasing).
+// (e.g. two close events both pinned). Then drop any equal-MET slot (validator requires strictly
+// increasing). Nudged 1e-4 d apart instead, splashdown (an event and the last slot) came out
+// twice at the same place, and that zero-length step turned off the renderer's Kepler timing.
 targetMets.sort((a, b) => a - b);
-for (let i = 1; i < targetMets.length; i++) {
-  if (targetMets[i] <= targetMets[i - 1]) {
-    targetMets[i] = targetMets[i - 1] + 1e-4;
+for (let i = targetMets.length - 1; i > 0; i--) {
+  if (targetMets[i] <= targetMets[i - 1] + 1e-9) targetMets.splice(i, 1);
+}
+
+// Evenly spaced in time, the fast pass near Earth gets few samples and the drawn path corners
+// there (the trip home turned 60 degrees between samples). Add time midpoints wherever the path
+// turns more than MAX_TURN_DEG between neighbours, within validate-data's 200-entry cap.
+const MAX_TURN_DEG = 15;
+const MAX_WAYPOINTS = 190;
+const turnDeg = (a: Vec3Km, b: Vec3Km, c: Vec3Km): number => {
+  const u = [b.x - a.x, b.y - a.y, b.z - a.z];
+  const v = [c.x - b.x, c.y - b.y, c.z - b.z];
+  const lu = Math.hypot(u[0], u[1], u[2]);
+  const lv = Math.hypot(v[0], v[1], v[2]);
+  if (lu < 1 || lv < 1) return 0;
+  const cos = (u[0] * v[0] + u[1] * v[1] + u[2] * v[2]) / (lu * lv);
+  return (Math.acos(Math.max(-1, Math.min(1, cos))) * 180) / Math.PI;
+};
+// Only segments inside a coast: a lunar orbit sampled every couple of hours turns sharply by
+// nature, and the step from the stay (held on the arrival-day Moon) to the trip home (on the
+// Moon where it is at TEI) is a jump the renderer bridges; halving it drew samples between the
+// two Moons, which buildFromWaypoints cuts off as an unflyable climb.
+const coastSpans = trajectory.phases
+  .filter((p) => p.type === 'tli_coast' || p.type === 'tei_coast')
+  .map((p) => [p.start_met_days, p.end_met_days] as const);
+const segInCoast = (m0: number, m1: number) =>
+  coastSpans.some(([a, b]) => m0 > a + 1e-9 && m1 <= b + 1e-9);
+for (let pass = 0; pass < 8 && targetMets.length < MAX_WAYPOINTS; pass++) {
+  const pts = targetMets.map(interpAt);
+  const split = new Set<number>();
+  for (let i = 1; i < pts.length - 1; i++) {
+    if (!segInCoast(targetMets[i - 1], targetMets[i])) continue;
+    if (!segInCoast(targetMets[i], targetMets[i + 1])) continue;
+    if (turnDeg(pts[i - 1], pts[i], pts[i + 1]) <= MAX_TURN_DEG) continue;
+    split.add(i - 1);
+    split.add(i);
   }
+  if (split.size === 0) break;
+  const next: number[] = [];
+  for (let i = 0; i < targetMets.length; i++) {
+    next.push(targetMets[i]);
+    const room = MAX_WAYPOINTS - (next.length + (targetMets.length - 1 - i));
+    if (split.has(i) && i + 1 < targetMets.length && room > 0)
+      next.push((targetMets[i] + targetMets[i + 1]) / 2);
+  }
+  targetMets.splice(0, targetMets.length, ...next);
+}
+
+// buildFromWaypoints reads 3+ consecutive samples beyond 300,000 km that sit within 5,000 km of
+// each other (per axis) as a stay at the Moon. A coast near the Moon moves about 1 km/s, so
+// samples a couple of hours apart there read as a stay that was never flown. Keep consecutive
+// coast samples out there at least HOLD_CLEAR_KM apart (more than 5,000 km on some axis under
+// any turn about the pole), dropping all but the event anchors.
+const HOLD_CLEAR_KM = 9000;
+const NEAR_MOON_KM = 300_000;
+const anchors = new Set([
+  0,
+  missionEndMet,
+  ...events.map((e) => Math.min(e.met_days, missionEndMet)),
+]);
+const coastOnly = (met: number) => coastSpans.some(([a, b]) => met > a + 1e-9 && met < b - 1e-9);
+{
+  const kept: number[] = [];
+  let prev: Vec3Km | null = null;
+  for (const met of targetMets) {
+    const pt = interpAt(met);
+    const far = prev && Math.hypot(pt.x, pt.y, pt.z) > NEAR_MOON_KM;
+    const near = prev && Math.hypot(pt.x - prev.x, pt.y - prev.y, pt.z - prev.z) < HOLD_CLEAR_KM;
+    if (far && near && coastOnly(met) && !anchors.has(met)) continue;
+    kept.push(met);
+    prev = pt;
+  }
+  targetMets.splice(0, targetMets.length, ...kept);
 }
 
 // Sample.
@@ -229,6 +323,7 @@ const waypoints: Array<[number, number, number, number]> = targetMets.map((met) 
 
 // Stamp the JSON.
 flight.cislunar_profile.source_tier = 'tier_1_5_hybrid';
+flight.cislunar_profile.waypoint_times = 'flown';
 flight.cislunar_profile.waypoints_km = waypoints;
 
 writeFileSync(file, JSON.stringify(json, null, 2) + '\n', 'utf8');

@@ -47,23 +47,12 @@ const EARTH_FOCUS_COASTS = new Set<string>(['tli_coast', 'tei_coast']);
 
 const sweptAreas = new WeakMap<readonly CislunarSamplePos[], Float64Array>();
 
-/**
- * The fractional point index the craft has reached at `phaseProgress` (0..1 of the phase's time).
- * A phase with point times (a waypoint path) is placed by them. Otherwise an Earth-focus coast is drawn uniform in true anomaly, so its points are not evenly spaced in
- * time: by Kepler's second law the time between two points is proportional to the area the
- * radius sweeps between them, |r_i × r_i+1| / 2. Every other phase is index-linear.
- */
-export function phaseIndexAt(phase: CislunarPhase, phaseProgress: number): number {
+/** Cumulative swept area per point of an Earth-focus coast, or null where the rule does not
+ *  apply (another phase type, or a segment through the focus, which is not a conic). */
+function sweptAreaTable(phase: CislunarPhase): Float64Array | null {
   const pts = phase.points;
   const last = pts.length - 1;
-  const p = Math.max(0, Math.min(1, phaseProgress));
-  if (last < 1) return 0;
-  const times = phase.point_met_days;
-  if (times && times.length === pts.length && times[last] > times[0]) {
-    const met = times[0] + p * (times[last] - times[0]);
-    return fractionalIndex(times, met);
-  }
-  if (!EARTH_FOCUS_COASTS.has(phase.type)) return p * last;
+  if (last < 1 || !EARTH_FOCUS_COASTS.has(phase.type)) return null;
   let cum = sweptAreas.get(pts);
   if (!cum) {
     cum = new Float64Array(pts.length);
@@ -74,7 +63,6 @@ export function phaseIndexAt(phase: CislunarPhase, phaseProgress: number): numbe
       const cy = a.z * b.x - a.x * b.z;
       const cz = a.x * b.y - a.y * b.x;
       const area = Math.hypot(cx, cy, cz);
-      // A segment through the focus sweeps no area and is not a conic: keep index-linear.
       if (!(area > 0)) {
         cum = new Float64Array(0);
         break;
@@ -83,8 +71,42 @@ export function phaseIndexAt(phase: CislunarPhase, phaseProgress: number): numbe
     }
     sweptAreas.set(pts, cum);
   }
-  if (cum.length === 0) return p * last;
+  return cum.length > 0 ? cum : null;
+}
+
+/**
+ * The fractional point index the craft has reached at `phaseProgress` (0..1 of the phase's time).
+ * A phase with point times (a waypoint path) is placed by them. Otherwise an Earth-focus coast is
+ * drawn uniform in true anomaly, so its points are not evenly spaced in time: by Kepler's second
+ * law the time between two points is proportional to the area the radius sweeps between them,
+ * |r_i × r_i+1| / 2. Every other phase is index-linear.
+ */
+export function phaseIndexAt(phase: CislunarPhase, phaseProgress: number): number {
+  const pts = phase.points;
+  const last = pts.length - 1;
+  const p = Math.max(0, Math.min(1, phaseProgress));
+  if (last < 1) return 0;
+  const times = phase.point_met_days;
+  if (times && times.length === pts.length && times[last] > times[0]) {
+    return fractionalIndex(times, times[0] + p * (times[last] - times[0]));
+  }
+  const cum = sweptAreaTable(phase);
+  if (!cum) return p * last;
   return fractionalIndex(cum, p * cum[last]);
+}
+
+/** The inverse: the fraction of the phase's time (0..1) at which the craft passes each point.
+ *  The hybrid-waypoint generator stamps its samples with these. */
+export function phaseTimeFractions(phase: CislunarPhase): number[] {
+  const last = phase.points.length - 1;
+  if (last < 1) return phase.points.map(() => 0);
+  const times = phase.point_met_days;
+  if (times && times.length === phase.points.length && times[last] > times[0]) {
+    return times.map((t) => (t - times[0]) / (times[last] - times[0]));
+  }
+  const cum = sweptAreaTable(phase);
+  if (!cum) return phase.points.map((_, i) => i / last);
+  return Array.from(cum, (c) => c / cum[last]);
 }
 
 /** Where `v` falls in the non-decreasing `xs`, as a fractional index. */

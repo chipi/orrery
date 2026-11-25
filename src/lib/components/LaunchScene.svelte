@@ -139,6 +139,9 @@
     launchPadSpec?: PadSpec | null;
     /** ?debug=1: what the camera-debug view draws (the /fly DebugPanel Page tab). */
     onDirectorDebug?: (d: DirectorDebugData) => void;
+    /** A cut inside the launch (into and out of the full-frame booster return): /fly covers it
+     *  with its act seam fade, so it reads like every other act change. */
+    onCut?: () => void;
   }
   let {
     profile,
@@ -153,6 +156,7 @@
     launchInstant = null,
     launchPadSpec = null,
     onDirectorDebug,
+    onCut,
   }: Props = $props();
 
   // ?cam=classic keeps today's camera and scene for one release (A/B); the default is the director.
@@ -324,7 +328,10 @@
       const w = container.clientWidth;
       const h = container.clientHeight;
       const on = !!returnScene && returnScene.update(t, w / h);
-      if (on !== returnOn) returnOn = on;
+      if (on !== returnOn) {
+        returnOn = on;
+        onCut?.();
+      }
       if (!on) return null;
       return {
         scene: returnScene!.scene,

@@ -538,21 +538,25 @@
   let seamSnap = $state(false);
   let seamInit = false;
   let seamTimer: ReturnType<typeof setTimeout> | undefined;
+  function seamCut() {
+    seamSnap = true; // disable the CSS transition → instant black
+    seamFadeOpacity = 1;
+    clearTimeout(seamTimer);
+    seamTimer = setTimeout(() => {
+      seamSnap = false; // re-enable the transition → fade in from black
+      seamFadeOpacity = 0;
+    }, 90);
+  }
+  // The way home plays inside the descent segment, so its entry and exit are seams of their own.
+  const seamKey = $derived.by(() => `${flySegment}|${wayHome}`);
   $effect(() => {
-    const _seg = flySegment; // track segment changes
-    void _seg;
+    void seamKey;
     untrack(() => {
       if (!seamInit) {
         seamInit = true;
         return;
       }
-      seamSnap = true; // disable the CSS transition → instant black
-      seamFadeOpacity = 1;
-      clearTimeout(seamTimer);
-      seamTimer = setTimeout(() => {
-        seamSnap = false; // re-enable the transition → fade in from black
-        seamFadeOpacity = 0;
-      }, 90);
+      seamCut();
     });
     return () => clearTimeout(seamTimer);
   });
@@ -3490,6 +3494,7 @@
     {launchInstant}
     {launchPadSpec}
     onDirectorDebug={(d) => (launchDirectorDebug = d)}
+    onCut={seamCut}
     externalClock={true}
     onComplete={() => {
       // ascent → coast (Tier-1 Earth-orbit: loop Earth → re-entry) or → cruise

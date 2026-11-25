@@ -15,7 +15,7 @@ plain `legendRowEls` array (legend keyboard nav) and `iconic.state`.
 - `ScaleNav` — top row: back chip, scale picker (glyph in the chip and every rung, UXD-027), `ResetViewButton` (the seven outer scales only: the solar system's one RESET VIEW is the HUD row's; always drawn, disabled when inert; flush right at the solar system and then left of a docked panel, UXD-021).
 - `SunCompass` — off-screen Sun needle (neighborhood).
 - `ScaleStrip` — bottom-right scale strip: a fixed 232 px box (190 px under 600 px, left of a docked panel) with the unit ladder and the fixed-width `ScaleBar` with its label under it (solar system, neighbourhood), or the schematic honesty note (UXD-021).
-- `BlackHoleNotes`, `AnonStarTag`, `DeepSkyImmersion`, `WarpOverlays` —
+- `BlackHoleNotes`, `AnonStarTag`, `WarpOverlays` —
   read-only scene overlays.
 - `SizesOverlay` — REFERENCES modal: the bodies-only `SizesCanvas` and the aligned DOM legend grid (UXD-021); `HoverTooltip` — cursor tooltip.
 

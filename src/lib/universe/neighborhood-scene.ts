@@ -79,10 +79,6 @@ export interface NeighborhoodScene {
   deepSkyPickables: THREE.Object3D[];
   /** Emphasize one deep-sky object (hover/selection) + reveal its label. */
   highlightDeepSky(id: string | null, selectedId?: string | null): void;
-  /** Focus a deep-sky object for the approach warp (its glint blooms). */
-  focusDeepSky(id: string | null): void;
-  /** Approach ramp 0 → 1 for the focused deep-sky object. */
-  setDeepSkyApproach(a: number): void;
   /** Scene position of a deep-sky object (for warp targeting), or null. */
   deepSkyObjectPosition(id: string): THREE.Vector3 | null;
   /** The deep-sky record for an id, or null. */
@@ -545,12 +541,6 @@ export function createNeighborhoodScene(opts: NeighborhoodOptions): Neighborhood
     deepSkyPickables: deepSky?.pickables ?? [],
     highlightDeepSky(id: string | null, sel: string | null = null) {
       deepSky?.highlight(id, sel);
-    },
-    focusDeepSky(id: string | null) {
-      deepSky?.setFocus(id);
-    },
-    setDeepSkyApproach(a: number) {
-      deepSky?.setApproach(a);
     },
     deepSkyObjectPosition(id: string) {
       return deepSky?.objectPosition(id) ?? null;

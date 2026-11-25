@@ -118,7 +118,6 @@
   import HoverTooltip from './HoverTooltip.svelte';
   import BlackHoleNotes from './BlackHoleNotes.svelte';
   import AnonStarTag from './AnonStarTag.svelte';
-  import DeepSkyImmersion from './DeepSkyImmersion.svelte';
   import WarpOverlays from './WarpOverlays.svelte';
   import ScaleNav from './ScaleNav.svelte';
   import LevelContextCard from '$lib/components/LevelContextCard.svelte';
@@ -677,16 +676,12 @@
   >([]);
   let deepSkyObjects = $state<DeepSkyObject[]>([]);
   let selectedDeepSkyId = $state<string | null>(null);
-  // Deep-sky immersion (Part 4): the full-frame photo destination. `activeDeepSky`
-  // is the immersed object; `deepSkyImmersed` fades the fullscreen photo in;
-  // `deepSkyPhotoUrl` swaps thumb → full-res as the LOD blooms.
+  // The selected deep-sky object, whose panel is open.
   let deepSkyGallery = $state<DeepSkyImage[]>([]);
   let activeDeepSky = $state<DeepSkyObject | null>(null);
   // #410 — culture door(s) for the selected deep-sky object (M13 ← Arecibo).
   let deepSkyCultureDoors = $state<LocalizedCultureDoor[]>([]);
   let deepSkyOverlay = $state<DeepSkyTextOverlay | null>(null);
-  let deepSkyImmersed = $state(false);
-  let deepSkyPhotoUrl = $state('');
   let deepSkyPanelOpen = $state(false);
   let exitDeepSkyFn: (() => void) | null = null;
   let deepSkyGatewayFn: ((hostId: string) => void) | null = null;
@@ -1184,8 +1179,8 @@
     trackItemClick('belt', id, '/explore');
   }
 
-  // The INDEX rail: shown at every scale but while a takeover owns the screen (black hole, deep-sky
-  // immersion, an exoplanet's BodyScene), and, outside the solar system, only in the 3D view.
+  // The INDEX rail: shown at every scale but while a takeover owns the screen (black hole, a
+  // selected deep-sky object, an exoplanet's BodyScene), and, outside the solar system, only in the 3D view.
   const indexAvailable = $derived(
     !activeBlackHole &&
       !activeDeepSky &&
@@ -1708,18 +1703,6 @@
       set activeDeepSky(v) {
         activeDeepSky = v;
       },
-      get deepSkyImmersed() {
-        return deepSkyImmersed;
-      },
-      set deepSkyImmersed(v) {
-        deepSkyImmersed = v;
-      },
-      get deepSkyPhotoUrl() {
-        return deepSkyPhotoUrl;
-      },
-      set deepSkyPhotoUrl(v) {
-        deepSkyPhotoUrl = v;
-      },
       get deepSkyPanelOpen() {
         return deepSkyPanelOpen;
       },
@@ -2237,18 +2220,6 @@
        honest facts from the catalogue — no Panel, no invented name. -->
   {#if view === '3d' && contextId === 'neighborhood' && anonStar}
     <AnonStarTag star={anonStar} onDismiss={() => (anonStar = null)} />
-  {/if}
-
-  <!-- v2 Slice 4: full-frame deep-sky immersion. The curated photo fills the
-       viewport (thumb → full-res) with a soft vignette — the destination you fly
-       into from a glint. Sits above the canvas; the warp flash + panel render on
-       top. -->
-  {#if view === '3d' && activeDeepSky && deepSkyPhotoUrl}
-    <DeepSkyImmersion
-      url={deepSkyPhotoUrl}
-      alt={activeDeepSkyImage?.caption ?? activeDeepSky.name}
-      visible={deepSkyImmersed}
-    />
   {/if}
 
   <!-- Slice 7: the HR-diagram (property-space) lens overlay — the real star field

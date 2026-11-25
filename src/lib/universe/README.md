@@ -12,7 +12,7 @@ The "Known Universe" half of `/explore`: everything outside the solar-system sce
 
 ## Conventions
 
-- `*-scene.ts` is the WebGL builder; its maths lives in a pure sibling (`milky-way-visual`, `deep-sky-visual` + `deep-sky-lod`, `black-hole-visual`) so it tests without a GPU. Builders are coverage-excluded per TA.md; pure modules are counted.
+- `*-scene.ts` is the WebGL builder; its maths lives in a pure sibling (`milky-way-visual`, `deep-sky-visual`, `black-hole-visual`) so it tests without a GPU. Builders are coverage-excluded per TA.md; pure modules are counted.
 - Units: neighborhood 1 scene unit = 1 pc; solar-system 1 unit = 1 AU (`AU_PER_PARSEC = 206265`).
 - Star colour comes from catalogued B-V, never authored (RFC-032 C-G). Shells beyond the Neighborhood are schematic and NOT to scale (PRD-030 principle 2); keep them labelled.
 

@@ -18,7 +18,6 @@ import {
   directionToPosition,
   DEEP_SKY_RADIUS,
 } from './deep-sky-visual';
-import { deepSkyGlintBloom } from './deep-sky-lod';
 import { labelSprite, ringTexture, createRing } from './scene-pin-sprites';
 import {
   LABEL_SPRITE_PX,
@@ -38,10 +37,6 @@ export interface DeepSkyLayerHandle {
   setVisible(on: boolean): void;
   /** Emphasize the hovered and the selected object (ring + label each), or clear with null. */
   highlight(id: string | null, selectedId?: string | null): void;
-  /** Focus one object for the approach warp — its glint blooms per `approach`. */
-  setFocus(id: string | null): void;
-  /** Approach ramp 0 → 1 for the focused object (drives its 3D bloom). */
-  setApproach(a: number): void;
   /** Scene position of an object (for warp targeting), or null. */
   objectPosition(id: string): THREE.Vector3 | null;
   objectById(id: string): DeepSkyObject | null;
@@ -167,8 +162,6 @@ export function buildDeepSkyLayer(objects: DeepSkyObject[]): DeepSkyLayerHandle 
 
   let highlightId: string | null = null;
   let selectedId: string | null = null;
-  let focusId: string | null = null;
-  let approach = 0;
 
   return {
     group,
@@ -179,13 +172,6 @@ export function buildDeepSkyLayer(objects: DeepSkyObject[]): DeepSkyLayerHandle 
     highlight(id: string | null, sel: string | null = null) {
       highlightId = id;
       selectedId = sel;
-    },
-    setFocus(id: string | null) {
-      focusId = id;
-      if (!id) approach = 0;
-    },
-    setApproach(a: number) {
-      approach = Math.min(1, Math.max(0, a));
     },
     objectPosition(id: string) {
       const e = byId.get(id);
@@ -202,16 +188,13 @@ export function buildDeepSkyLayer(objects: DeepSkyObject[]): DeepSkyLayerHandle 
       const reveal = revealFactor(camDistPc);
       for (const e of entries) {
         const hi = e.obj.id === highlightId || e.obj.id === selectedId;
-        const focused = e.obj.id === focusId;
         const distToCam = Math.max(1, viewDepth(camera, e.position));
         const base = distToCam * GLINT_SIZE_K * e.sizeFactor;
-        // Focused object blooms with the approach ramp; else a small hover pop.
-        const bloom = focused ? deepSkyGlintBloom(approach) : hi ? 2.1 : 1;
-        const scale = base * bloom;
+        // The hovered and the selected object pop a little.
+        const scale = base * (hi ? 2.1 : 1);
         e.glint.scale.set(scale, scale, 1);
-        (e.glint.material as THREE.SpriteMaterial).opacity = focused
-          ? Math.min(1, reveal + approach)
-          : reveal * (hi ? 0.98 : GLINT_BASE_OPACITY);
+        (e.glint.material as THREE.SpriteMaterial).opacity =
+          reveal * (hi ? 0.98 : GLINT_BASE_OPACITY);
         // Label: hover/selection only, 12 px, placed just above the glint by its STEADY size
         // (the bloom grows the glint, never the label offset).
         e.label.visible = hi;

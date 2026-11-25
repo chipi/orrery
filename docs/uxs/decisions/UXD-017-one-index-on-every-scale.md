@@ -47,7 +47,7 @@ and a `↗` link where the object has an entity page.
   headliners, at most five besides All; no distance or size filter.
 - **Solar system** gains the moons, the two belts, a meta line and each body's colour dot (the meta line and the chips: see the amendment of 2026-11-13).
 - **Open state**: persists across a scale jump on a fine pointer, closes on a coarse one (the 320 px rail
-  covers most of a phone). It is hidden during a takeover (black hole, deep-sky immersion, an exoplanet's
+  covers most of a phone). It is hidden during a takeover (black hole, a selected deep-sky object, an exoplanet's
   BodyScene, which gets its own list in a later slice) and, outside the solar system, in the 2D view.
 - **Prerender**: `/explore` is one HTML file for every `?context=`, so all eight lists are in it, hidden
   unless on screen. The rows come from the server load; only rows with a page are written into the static

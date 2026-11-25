@@ -43,7 +43,6 @@ import {
   spriteRectPx,
   type PlaceSlot,
 } from '$lib/universe/scene-pins';
-import { deepSkyRung, type DeepSkyRung } from '$lib/universe/deep-sky-lod';
 import { gravityAccel, logScaleLength, BODY_MASS_KG } from '$lib/orbit-overlays';
 import { PLANETS, realStartAngle } from '$lib/explore-scene';
 import { auToPx } from '$lib/scale';
@@ -56,7 +55,6 @@ import { getLocale } from '$lib/paraglide/runtime';
 import { planetName as planetName2d } from '$lib/explore/format';
 import * as m from '$lib/paraglide/messages';
 import { localeFromPage, localHref } from '$lib/locale';
-import { assetOrigin } from '$lib/asset-url';
 import { coalesceLatest } from '$lib/async-coalesce';
 import { trackItemClick } from '$lib/analytics';
 import { exhibit } from '$lib/exhibit.svelte';
@@ -210,10 +208,8 @@ export interface ExploreSceneHostBridge {
   deepSkyCultureDoors: LocalizedCultureDoor[];
   deepSkyGallery: DeepSkyImage[];
   deepSkyOverlay: DeepSkyTextOverlay | null;
-  deepSkyImmersed: boolean;
   deepSkyObjects: DeepSkyObject[];
   deepSkyPanelOpen: boolean;
-  deepSkyPhotoUrl: string;
   exoCultureDoors: LocalizedCultureDoor[];
   exoplanetHostIds: Set<string>;
   exoplanetSystemsById: Map<string, ExoplanetSystem>;
@@ -572,8 +568,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
   const inNeighborhood = () => contextGraph.active.id === 'neighborhood';
   const inMilkyWay = () => contextGraph.active.id === 'milky-way';
 
-  // Slice 6 — the geodesic black-hole render is a full-screen takeover (like the
-  // deep-sky immersion), rendered with its own scene + ortho camera on top of
+  // Slice 6 — the geodesic black-hole render is a full-screen takeover, rendered with its own scene + ortho camera on top of
   // whatever context you came from. Entered by pin / Sag A* / ?bh=; exit restores.
   let bhScene: import('$lib/universe/black-hole-scene').BlackHoleScene | null = null;
   let bhLoading = false;
@@ -1053,13 +1048,6 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
       nbLoading = false;
     }
   }
-
-  // Deep-sky approach tween (Slice 4) — render-loop-driven ramp 0→1 that blooms
-  // the focused glint + fades in the full-frame immersive photo.
-  let dsApproachActive = false;
-  let dsApproachStart = 0;
-  const DS_APPROACH_MS = 1400;
-  let dsRung: DeepSkyRung = 'none';
 
   // Crossing polish: a brief eased pull-back (so the reveal plays as a
   // continuous zoom, not a jump) + a warp flash to mask the scene cut. Both
@@ -1641,22 +1629,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     bridge.localizedStar = null;
     nbScene?.highlightStar(null);
   }
-  // ── Deep-sky approach + immersion (Slice 4, Parts 3–4) ──────────────────
-  // Selecting a photo-backed object warps you in: the glint blooms in 3D
-  // (approach ramp) while a full-frame photo fades in (thumb → full-res via
-  // the LOD hysteresis), landing on an immersive destination with a panel and,
-  // for star-forming regions, a "forming-system" gateway into a BodyScene.
-  const deepSkyPhoto = (obj: DeepSkyObject, rung: DeepSkyRung): string =>
-    `${assetOrigin}/images/deep-sky/${obj.photoKey}${rung === 'full' ? '.jpg' : '.thumb.jpg'}`;
-  function loadDeepSkyFull(obj: DeepSkyObject): void {
-    if (!obj.photoKey) return;
-    const full = deepSkyPhoto(obj, 'full');
-    const img = new Image();
-    img.onload = () => {
-      if (bridge.activeDeepSky?.id === obj.id) bridge.deepSkyPhotoUrl = full;
-    };
-    img.src = full;
-  }
+  // ── Deep-sky selection ──────────────────────────────────────────────────
   function orientToDeepSky(obj: DeepSkyObject): void {
     // Point the view down the object's sky direction (unit vector), like frameStar.
     camP = Math.acos(Math.max(-1, Math.min(1, obj.y)));
@@ -1684,49 +1657,20 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
       })
       .catch(dataLoadFailed);
     // Select = focus (UXD-019): every object opens its panel, takes the ring and turns the
-    // camera to it. A photo-less one (every one has a text overlay) does not immerse: a flat
-    // panel, no hero, no approach warp.
-    if (!obj.photoKey) {
-      cue('select');
-      trackItemClick('deep-sky', id, '/explore');
-      bridge.activeDeepSky = obj;
-      nbScene?.focusDeepSky(id);
-      closeStarPanel();
-      bridge.anonStar = null;
-      orientToDeepSky(obj);
-      bridge.deepSkyPanelOpen = true;
-      return;
-    }
+    // camera to it. The photo stays in the panel, whose hero opens it full screen; it never
+    // covers the scene (operator 2026-11-25, F3: the full-frame photo and its approach warp
+    // are gone).
     cue('select');
     trackItemClick('deep-sky', id, '/explore');
     bridge.activeDeepSky = obj;
-    nbScene?.focusDeepSky(id);
     closeStarPanel();
     bridge.anonStar = null;
-    dsRung = 'thumb';
-    bridge.deepSkyPhotoUrl = deepSkyPhoto(obj, 'thumb');
     orientToDeepSky(obj);
-    if (deps.getReducedMotion()) {
-      nbScene?.setDeepSkyApproach(1);
-      bridge.deepSkyImmersed = true;
-      bridge.deepSkyPanelOpen = true;
-      loadDeepSkyFull(obj);
-    } else {
-      bridge.crossingFlashId++;
-      if (obj.dist_label) showWarpCaption(`${obj.dist_label} · ${obj.name}`);
-      dsApproachActive = true;
-      dsApproachStart = performance.now();
-    }
+    bridge.deepSkyPanelOpen = true;
   }
   function exitDeepSky(): void {
     if (!bridge.activeDeepSky) return;
-    if (!deps.getReducedMotion()) bridge.crossingFlashId++;
-    dsApproachActive = false;
-    dsRung = 'none';
-    nbScene?.setDeepSkyApproach(0);
-    nbScene?.focusDeepSky(null);
     nbScene?.highlightDeepSky(null);
-    bridge.deepSkyImmersed = false;
     bridge.deepSkyPanelOpen = false;
     bridge.activeDeepSky = null;
     bridge.selectedDeepSkyId = null;
@@ -1736,28 +1680,9 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     exitDeepSky();
     void enterBodyScene(hostId);
   }
-  // Per-frame ramp of the approach (0 → 1): blooms the focused glint in 3D,
-  // upgrades the photo rung (thumb → full via LOD hysteresis), and fades the
-  // full-frame immersion in over the final stretch.
-  function stepDeepSkyApproach(): void {
-    if (!dsApproachActive) return;
-    const t = Math.min(1, (performance.now() - dsApproachStart) / DS_APPROACH_MS);
-    const eased = t * t * (3 - 2 * t);
-    nbScene?.setDeepSkyApproach(eased);
-    const rung = deepSkyRung(eased, dsRung);
-    if (rung !== dsRung) {
-      dsRung = rung;
-      if (rung === 'full' && bridge.activeDeepSky) loadDeepSkyFull(bridge.activeDeepSky);
-    }
-    if (!bridge.deepSkyImmersed && eased >= 0.4) bridge.deepSkyImmersed = true;
-    if (t >= 1) {
-      dsApproachActive = false;
-      bridge.deepSkyImmersed = true;
-      bridge.deepSkyPanelOpen = true;
-    }
-  }
+
   // ?deepsky=<designation> deep-link: cross into the neighborhood if needed,
-  // load it, then immerse. Bound to a top-level fn for the URL resolver effect.
+  // load it, then select the object. Bound to a top-level fn for the URL resolver effect.
   async function resolveDeepSkyDeepLink(designation: string): Promise<void> {
     if (!inNeighborhood()) await crossOutToNeighborhood();
     await ensureNeighborhood();
@@ -1809,7 +1734,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
       bridge.lastSystem = sys0;
       void enterBodyScene(sys0, params0.get('planet') ?? undefined);
     }
-    // Cold-load ?deepsky=<designation> → cross into the neighborhood + immerse.
+    // Cold-load ?deepsky=<designation> → cross into the neighborhood + select it.
     const ds0 = params0.get('deepsky');
     if (ds0) {
       bridge.lastDeepSky = ds0;
@@ -2214,7 +2139,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
   });
   watchPanels(framer, lifecycle);
   function applyPanelFraming(dt: number): void {
-    framer.apply(dt, bridge.view === '3d' && !bridge.activeBlackHole && !bridge.deepSkyImmersed);
+    framer.apply(dt, bridge.view === '3d' && !bridge.activeBlackHole);
   }
 
   // A selected belt has no ring to draw (it is a cloud, not a dot): its particles brighten
@@ -2823,8 +2748,8 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
   // nearest background star (a lightweight anonymous readout).
   function pickNeighborhood(e: { clientX: number; clientY: number }): void {
     if (!nbScene) return;
-    // While immersed in a deep-sky destination, the photo fills the view — a
-    // canvas click shouldn't pick a star behind it. Exit is via panel / crumb.
+    // While a deep-sky object is selected, a canvas click does not pick behind its panel.
+    // Exit is via panel / crumb.
     if (bridge.activeDeepSky) return;
     const rect = el3d.getBoundingClientRect();
     const ndcX = ((e.clientX - rect.left) / rect.width) * 2 - 1;
@@ -2853,8 +2778,8 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
         return;
       }
     }
-    // Deep-sky glints (only when the layer is on). Selecting one warps in +
-    // opens the DeepSkyPanel (Part 4); Part 2 highlights + records selection.
+    // Deep-sky glints (only when the layer is on). Selecting one turns the camera to it and
+    // opens the DeepSkyPanel.
     if (bridge.showDeepSky && nbScene.deepSkyPickables.length) {
       const dsHits = ray3d.intersectObjects(nbScene.deepSkyPickables, false);
       if (dsHits.length) {
@@ -4897,7 +4822,6 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
         }
         if (inNeighborhood() && nbScene) {
           stepCrossDolly();
-          stepDeepSkyApproach();
           nbScene.update(camR, camera, bridge.container?.clientHeight ?? 1);
           renderer.render(nbScene.scene, camera);
           // Sun-compass: project the Sun (origin) to screen ~10×/s and steer the

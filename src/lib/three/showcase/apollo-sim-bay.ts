@@ -29,9 +29,12 @@
  *    panoramic camera and, on 15/16, the subsatellite launcher beside it; bottom: the X-ray /
  *    alpha-particle spectrometer "housed in the same enclosure", the gamma-ray spectrometer and
  *    the mass spectrometer (same report, A.4.2 and figure A-1).
- *  - Gamma-ray spectrometer "mounted on a 25-foot boom" (7.62 m); mass spectrometer "on a 24-foot
- *    boom" (7.32 m) (same report, A.4.2). The report's 25 ft vs Wikipedia's 24 ft for both: the
- *    mission report wins.
+ *  - The booms: the gamma-ray spectrometer's 817.8 cm (26 ft 10 in) and the mass spectrometer's
+ *    762 cm (25 ft) at full extension (J. A. White, "The Apollo 15 Deployable Boom Anomaly",
+ *    https://ntrs.nasa.gov/citations/19730010141), which the Mission Report's anomaly section
+ *    (14.1.6, the mass-spectrometer boom "1 foot 10 inches shorter") agrees with. Its appendix
+ *    A.4.2 ("25-foot" and "24-foot" booms) and the press kits round both down; the boom engineers'
+ *    figures stand (docs/wip/2026-11-25-sim-bay-sourced.md).
  *  - Inside surfaces coated with a paint of absorptivity/emissivity 0.3/0.85 (light), beams and
  *    their faces 0.05/0.4 (bright metal); "protective covers and thermal blankets" over the
  *    instruments, in the photographs dark crinkled mylar over the cameras, white painted boxes for
@@ -85,8 +88,8 @@ export interface SimBayOptions {
 }
 
 export const SIM_BACK_WALL_Z = 1.0; // estimate: the bay's depth is R - 1.0 at its centre
-export const SIM_GAMMA_BOOM_M = 25 * 0.3048; // Apollo 15 Mission Report A.4.2: "25-foot boom"
-export const SIM_MASS_BOOM_M = 24 * 0.3048; // Apollo 15 Mission Report A.4.2: "24-foot boom"
+export const SIM_GAMMA_BOOM_M = 8.178; // White, NTRS 19730010141: 817.8 cm (26 ft 10 in)
+export const SIM_MASS_BOOM_M = 7.62; // White, NTRS 19730010141: 762 cm (25 ft)
 export const SIM_BOOM_M = SIM_GAMMA_BOOM_M; // kept for the earlier single-length name
 
 /** Shelf heights as fractions of the bay height from its top (figure A-1; the A17 photo agrees). */

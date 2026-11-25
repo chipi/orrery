@@ -120,4 +120,6 @@ Earth's vicinity within a day of TEI (real flight: about 330,000 km at MET 6.5 d
 regenerating those waypoints from a source; the craft-led shot leaves the return's close-in part
 to the diagram frame meanwhile. The descent and launch keep their own exact framing rules.
 
-Open: call 4 (F8 phase 2, the scrubber laid out by watching time).
+Call 4 (7dd6812f356): the bar's launch and descent bands are laid out by watching time at the default pill (each play clock's `layout`); checked by a unit test (even playhead) and an Inspiration4 scrub round trip.
+
+All seven calls are in. Not run yet: the e2e suites (desktop, mobile, landscape) and `preflight:coverage`. Next: the iconic flyby missions review.

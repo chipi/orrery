@@ -470,7 +470,11 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
       // The jettisoned heat shield falls away: not part of the subject once it goes.
       if (p.o === model.heatshield && p.o.position.y < model.heatshieldBaseY - vehLen * 0.2)
         continue;
-      b.union(p.box.clone().translate(p.o.position));
+      const box = p.box.clone();
+      // Gemini's capsule lies across the frame on its two-point bridle: size the shot to the tilt.
+      if (isGemini && p.o === model.lander)
+        box.applyMatrix4(new THREE.Matrix4().makeRotationFromQuaternion(p.o.quaternion));
+      b.union(box.translate(p.o.position));
     }
     if (b.isEmpty()) return { cy: vehLen * 0.3, r: vehLen * 0.62 };
     const c = b.getCenter(new THREE.Vector3());
@@ -781,6 +785,22 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
   const REPO_S = 8;
   const REPO_RAD = Math.PI / 2 - (35 * Math.PI) / 180; // from vertical to 35 deg off horizontal
   const landerHome = model.lander.position.clone();
+  // A body hanging at rest has its centre of mass under the riser, so the capsule tilts about its
+  // own centre (drawn: the box centre, not the sourced CG), and two bridle legs run up from the
+  // nose and the aft attach point to the riser end.
+  const geminiBox = isGemini ? parts.find((p) => p.o === model.lander)?.box : undefined;
+  const geminiC = geminiBox ? landerHome.y + geminiBox.getCenter(new THREE.Vector3()).y : 0;
+  const geminiBridle = geminiBox
+    ? new THREE.Line(
+        new THREE.BufferGeometry().setFromPoints([0, 1, 2].map(() => new THREE.Vector3())),
+        new THREE.LineBasicMaterial({ color: 0xd9dde2 }),
+      )
+    : undefined;
+  if (geminiBridle) {
+    geminiBridle.visible = false;
+    geminiBridle.frustumCulled = false;
+    model.root.add(geminiBridle);
+  }
   // Apollo command module (apollo7 .. skylab-4): lifting entry at an offset trim, rolled to steer;
   // the apex cover goes before the drogues.
   const isApollo = model.lander.userData.capsuleId === 'apollo-cm';
@@ -1299,8 +1319,7 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
         s.phaseKind === 'ballistic_entry' ? 1 : 1 - smooth01((s.t - (chuteT ?? 0)) / 3);
       vehicle.rotation.z = GEMINI_TRIM_RAD * entryFlip * entering;
       plasma.rotation.z = -vehicle.rotation.z; // the flow stays world-aligned
-      // The reposition: the capsule swings about the riser point from a vertical hang to 35 deg
-      // above horizontal.
+      // The reposition: from a vertical hang off the nose to 35 deg above horizontal.
       const pivotY = model.lander.userData.hangPivotY as number | undefined;
       const rp = chuteJetT == null ? 0 : smooth01((s.t - chuteJetT - REPO_DELAY_S) / REPO_S);
       const ang = -REPO_RAD * rp;
@@ -1310,13 +1329,27 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
         .setFromAxisAngle(new THREE.Vector3(0, 1, 0), psi)
         .multiply(new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(0, 0, 1), ang));
       model.lander.quaternion.copy(q);
-      if (pivotY != null) {
-        const off = new THREE.Vector3(0, landerHome.y - pivotY, 0).applyQuaternion(q);
-        model.lander.position.set(off.x, pivotY + off.y, off.z);
+      if (pivotY != null && geminiBox && geminiBridle) {
+        // It hangs off the nose until the two-point bridle takes the load, then tilts about its
+        // centre, which stays under the riser: the pivot moves from one to the other.
+        const pivot = pivotY + (geminiC - pivotY) * rp;
+        const off = new THREE.Vector3(0, landerHome.y - pivot, 0).applyQuaternion(q);
+        model.lander.position.set(off.x, pivot + off.y, off.z);
+        geminiBridle.visible = rp > 0;
+        if (rp > 0) {
+          const b = geminiBox;
+          const toScene = (x: number, y: number) =>
+            new THREE.Vector3(x, y, 0).applyQuaternion(q).add(model.lander.position);
+          // Nose: the top of the capsule. Aft: on the side facing up once tilted (local -x),
+          // a fifth of the way up from the base (drawn, not sourced).
+          const nose = toScene(0, b.max.y);
+          const aft = toScene(b.min.x * 0.85, b.min.y + (b.max.y - b.min.y) * 0.2);
+          geminiBridle.geometry.setFromPoints([nose, new THREE.Vector3(0, pivotY, 0), aft]);
+        }
         // The heat shield stays on the capsule's base: no separation beat for Gemini.
         if (hp === 0) {
-          const hOff = new THREE.Vector3(0, model.heatshieldBaseY - pivotY, 0).applyQuaternion(q);
-          model.heatshield.position.set(hOff.x, pivotY + hOff.y, hOff.z);
+          const hOff = new THREE.Vector3(0, model.heatshieldBaseY - pivot, 0).applyQuaternion(q);
+          model.heatshield.position.set(hOff.x, pivot + hOff.y, hOff.z);
           model.heatshield.quaternion.copy(
             q.clone().multiply(new THREE.Quaternion().setFromEuler(new THREE.Euler(Math.PI, 0, 0))),
           );

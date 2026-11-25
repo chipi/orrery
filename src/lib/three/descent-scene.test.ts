@@ -124,3 +124,32 @@ describe('Apollo 15 lands on two mains', () => {
     expect(a16.scaleAt(1000)).toBe(1);
   });
 });
+
+describe('Gemini on its two-point bridle', () => {
+  it('hangs with its centre under the riser, not swung out to one side', async () => {
+    const { Box3, Vector3 } = await import('three');
+    await preloadDescentModels();
+    const raw = JSON.parse(
+      readFileSync('static/data/descent-profiles/gemini4.json', 'utf-8'),
+    ) as RawDescentProfile;
+    const sum = integrateDescent(expandDescentProfile(raw));
+    const scene = createDescentScene({
+      aspect: 1.6,
+      body: 'earth',
+      siteId: 'gemini4',
+      durationS: sum.totalDurationS,
+      events: sum.events,
+    });
+    let capsule!: THREE.Object3D;
+    scene.scene.traverse((o) => {
+      if (o.userData.hangPivotY != null) capsule = o;
+    });
+    const touchdown = sum.events.find((e) => e.type === 'touchdown')!.t;
+    scene.setState(sampleDescentAt(sum.states, touchdown - 6));
+    scene.scene.updateMatrixWorld(true);
+    const box = new Box3().setFromObject(capsule);
+    const c = capsule.parent!.worldToLocal(box.getCenter(new Vector3()));
+    const len = box.getSize(new Vector3()).length();
+    expect(Math.hypot(c.x, c.z) / len).toBeLessThan(0.05);
+  });
+});

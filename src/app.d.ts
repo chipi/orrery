@@ -68,7 +68,6 @@ declare global {
     __flyJumpToMet?: (met: number) => void;
     __flySetSimDay?: (met: number) => void;
     __flyLaunchT?: (t: number) => void;
-    __flyMontage?: (on: boolean) => void;
     __flyCislunarDebug?: () => unknown;
     __flyReentryDebug?: () => unknown;
     __flyCoastCamDebug?: () => import('$lib/three/fly-leo-coast-scene').CoastCamDebug | null;

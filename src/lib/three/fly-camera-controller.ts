@@ -167,15 +167,7 @@ export function createFlyCameraController(deps: FlyCameraDeps) {
   // Flyby montage (#371) — the active shot frame for this render, set in
   // updateHelioAutoZoomTargets' flyby branch and APPLIED after updateCam()
   // (Marko's "override final transform" integration). null = not in a
-  // montage window → the normal cruise/lerp camera drives. `montageEnabled`
-  // is the master toggle: off via `?montage=0` (reload A/B), or live via
-  // `window.__flyMontage(false)` in DEV.
-  let montageEnabled = new URLSearchParams(window.location.search).get('montage') !== '0';
-  if (import.meta.env.DEV) {
-    window.__flyMontage = (on) => {
-      montageEnabled = on;
-    };
-  }
+  // montage window → the normal cruise/lerp camera drives.
   // Read-only camera probe for the touch-gesture e2e: position xyz + orbit target xyz.
   window.__orbitCamera = () => [
     camera.position.x,
@@ -529,22 +521,20 @@ export function createFlyCameraController(deps: FlyCameraDeps) {
         // composition; establish/approach/depart are distinct rigs. The
         // iconicFrame above still feeds the lerp targets so leaving the
         // montage window hands back to cruise framing smoothly.
-        if (montageEnabled) {
-          const metOffset = deps.getSimDay() - (deps.getArcTimeline().dep_day + activeFlybyMet);
-          const shotKind = selectShot(metOffset);
-          if (shotKind) {
-            montageShotFrame = composeShot(shotKind, {
-              planetId: flyby.id as FlybyPlanetId,
-              planetPos: { x: bodyScene.x, z: bodyScene.z },
-              planetRadius: flyby.size,
-              shipPosAtMet: sampleShipScene,
-              peakMet: activeFlybyMet,
-              met: deps.getSimDay() - deps.getArcTimeline().dep_day,
-              heroComposition: arrivalComp?.composition,
-              heroSeparationRadii: arrivalComp?.iconicSeparationRadii,
-            });
-            montageShotKind = shotKind;
-          }
+        const metOffset = deps.getSimDay() - (deps.getArcTimeline().dep_day + activeFlybyMet);
+        const shotKind = selectShot(metOffset);
+        if (shotKind) {
+          montageShotFrame = composeShot(shotKind, {
+            planetId: flyby.id as FlybyPlanetId,
+            planetPos: { x: bodyScene.x, z: bodyScene.z },
+            planetRadius: flyby.size,
+            shipPosAtMet: sampleShipScene,
+            peakMet: activeFlybyMet,
+            met: deps.getSimDay() - deps.getArcTimeline().dep_day,
+            heroComposition: arrivalComp?.composition,
+            heroSeparationRadii: arrivalComp?.iconicSeparationRadii,
+          });
+          montageShotKind = shotKind;
         }
       } else {
         sub = `flyby-${activeFlybyMet}`;
@@ -1161,9 +1151,6 @@ export function createFlyCameraController(deps: FlyCameraDeps) {
     },
     get cislunarCamTarget() {
       return cislunarCamTarget;
-    },
-    get montageEnabled() {
-      return montageEnabled;
     },
     get helioAutoZoomActive() {
       return helioAutoZoomActive;

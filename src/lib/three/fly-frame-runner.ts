@@ -1040,15 +1040,14 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
     bridge.finaleBlackOpacity = cineOut.finaleBlackOpacity;
     const isCinematicFreeze = cineOut.isCinematicFreeze;
 
-    // No freeze-frames in the montage (#371): the classic camera
-    // freezes the iconic peak-hold AND the afterglow zoom-out. The
-    // montage's slow-mo swing + cuts + moving catapult carry the beat
-    // entirely, so a freeze-frame just broke the flow (Marko 2026-06).
+    // No freeze-frames in a flyby (#371): the peak hold and the afterglow
+    // still arm, but the montage's slow-mo swing + cuts + moving catapult
+    // carry the beat, so a freeze-frame just broke the flow (Marko 2026-06).
     // Drop BOTH flyby freezes — sim keeps moving (slow-mo) through the
     // whole encounter. (Finale / cruise-hold / launch-dwell are not
     // active during a flyby window, so this only affects the flyby.)
     let cinematicFreeze = isCinematicFreeze;
-    if (flyCam.montageEnabled && currentFrameFlybyMet != null) {
+    if (currentFrameFlybyMet != null) {
       cinematicFreeze = false;
     }
     // Master clock — ascent phase: advance the launch MET (LaunchScene is
@@ -1122,10 +1121,9 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
     ) {
       // Flyby slow-motion (#371): around closest approach, ease the
       // effective sim rate down so the gravity-assist swing is
-      // watchable instead of a buzz. Only when the montage is on and a
-      // flyby is active; the peak-hold freeze still punctuates the peak.
+      // watchable instead of a buzz, while a flyby is active.
       let effectiveSpeed = bridge.simSpeed;
-      if (flyCam.montageEnabled && currentFrameFlybyMet != null) {
+      if (currentFrameFlybyMet != null) {
         effectiveSpeed = flybySlowmoSpeed(
           bridge.simDay - (bridge.arcTimeline.dep_day + currentFrameFlybyMet),
           bridge.simSpeed,
@@ -1560,10 +1558,7 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
       // the far, orbiting camera makes the offset DIRECTION swing frame
       // to frame → the ship wobbles. Skip it there; the ship rides its
       // true trajectory position. (#371)
-      const montageNonHero =
-        flyCam.montageEnabled &&
-        flyCam.montageShotKind != null &&
-        flyCam.montageShotKind !== 'hero';
+      const montageNonHero = flyCam.montageShotKind != null && flyCam.montageShotKind !== 'hero';
       const camToShip = new THREE.Vector3().subVectors(camera.position, scSprite.position);
       const dist = camToShip.length();
       if (dist > 0.01 && !montageNonHero) {

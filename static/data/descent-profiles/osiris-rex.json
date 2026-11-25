@@ -24,6 +24,10 @@
     {
       "l": "OSIRIS-REx TAG — left the ~770 m orbit at 17:50 UTC 20 Oct 2020, Checkpoint burn at 125 m, Matchpoint at 54 m (177 ft), contact at 21:53 UTC for ~6 s with the nitrogen burst, then back-away (collectSPACE). The model flies from Matchpoint; contact speed is an estimate; the back-away climb rate and length are drawn",
       "u": "https://www.collectspace.com/news/news-102020a-osiris-rex-tag-asteroid-bennu.html"
+    },
+    {
+      "l": "OSIRIS-REx TAG — NASA's 6:08 p.m. EDT (22:08 UTC) is when the team on Earth received confirmation, not the contact: the signal took about 18.5 minutes from Bennu (collectSPACE). The contact time stays 21:53 UTC; 21:53 plus 18.5 minutes is about 22:11, three minutes from NASA's figure, unexplained in either source",
+      "u": "https://svs.gsfc.nasa.gov/13745"
     }
   ],
   "estimatedFields": [

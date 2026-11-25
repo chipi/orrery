@@ -5,7 +5,7 @@ import sharp from 'sharp';
 const DIR = process.env.SHOT_DIR ?? 'test-results/shots';
 const [prefix, out, colsArg] = process.argv.slice(2);
 const key = (f) => {
-  const m = f.replace(/\.png$/, '').match(/-(T|f)?(-?[\d.]+)$/);
+  const m = f.replace(/\.png$/, '').match(/-(T|f|L|C)?(-?[\d.]+)$/);
   return m ? Number(m[2]) + (m[1] === 'f' ? 0 : 0) : 0;
 };
 const files = fs

@@ -1,0 +1,70 @@
+# W6: the /fly cut inventory (2026-11-25)
+
+Step 1 of W6 (plan row: "inventory the cuts first with a picture sheet per act, then decide changes
+with the operator"). Read from the code by a search agent; three claims spot-checked by hand
+(the Earth-entry fallback rate in `fly-frame-runner.ts`, `flySegment`'s four values, the dormant
+`finaleStartedAt`). Picture sheets: `docs/wip/2026-11-23-pass2-tools/act-shot.mjs` (launch, cruise),
+`desc-shot.mjs` (descents), `return-shot.mjs` (the way home).
+
+## Acts and who owns the camera
+
+The act machine is `src/lib/fly/flight-phase-controller.ts`: `opening | ascent | coast | cruise |
+descent | recovery`. The way home and booster returns are not acts (the way home plays inside
+`descent`, a booster return inside the launch scene). One overlay per act on `/fly`: LaunchScene,
+CoastScene, ReturnScene, DescentScene; cruise is the base canvas. The play clock is
+`fly-frame-runner.ts` (F8's activity clock replaces the fixed rates for launch and descent).
+
+| Act | Camera | How shots are chosen | Phone-aware |
+|---|---|---|---|
+| Opening, prelaunch | `helio-non-flyby-frame.ts` (`opening`, `prelaunch`) | timer (9.5–22 s) or Skip | no |
+| Launch | `ascent-director.ts` (`buildDirectorPlan`), `launch-director-rig.ts` | seeded plan: an opening pick, event beats (Max-Q, staging, fairing, payload sep), a filler pool of 12 shots in 10–50 s pieces | yes (SafeArea fit) |
+| Booster return | `booster-return-scene.ts`, `landing-inset.ts` | full-frame chase then deck cut (Falcon 9 / New Glenn with a sourced entry burn), else a fixed inset | full frame yes; inset no |
+| Earth-orbit coast | `fly-leo-coast-scene.ts` | ESTABLISH, TRACK, LIMB, GROUND-TRACK at fixed fractions 0.28 / 0.55 / 0.82 of a ~22 s coast | eccentric orbits only |
+| Helio cruise | `fly-camera-controller.ts`, `helio-non-flyby-frame.ts` | by leg progress (depart, cruise, approach, arrived, epilogue) | no |
+| Flybys | montage (`flyby-shots.ts`: establish, approach, hero, depart at fixed MET offsets) or the classic iconic frame with peak hold and afterglow (`?montage=0`) | MET offsets from the peak | no |
+| Cislunar | `cislunar-camera-target.ts`, `cislunar-hero-shot.ts` | by phase (Moon or Earth close-up, TLI/TEI pans) and hero windows at LOI, TEI, descent, ascent | no |
+| Descent, splashdown | `descent-director.ts` (`BEAT_SHOT`) | event beats plus a seeded fill of 12–30 s, a ground shot for the last 18 s, an open-ended orbit after | yes |
+| Way home (Apollo) | `fly-return-scene.ts` (`BEAT_SHOT`, per-mission `camera.shots`) | a cut per beat, 82 s scene | yes |
+| Recovery | the descent camera, a card over it | — | — |
+
+## Act seams
+
+| From → to | Mechanism |
+|---|---|
+| opening → cruise / launch | timer or Skip; 600 ms dwell |
+| any act → another act | the seam fade (black 90 ms, fade in) on `flySegment` |
+| ascent → coast or cruise | auto at the end of the ascent or CONTINUE; a 1.6 s pull-back |
+| coast → descent | auto at the end of the coast |
+| cruise → descent | auto at arrival |
+| descent → surface page | a 1.2 s touchdown flash, then the body page |
+| Moon descent → way home | the "Continue: the way home" button |
+| way home → cruise | auto at 82 s or Skip (seam fade on the exit only) |
+| Earth entry → recovery → cruise | flash, card, close |
+| cruise jump > 365 d | a 200 ms black cut |
+| booster return in and out | plain cuts |
+
+## What the inventory shows (for the review with the operator)
+
+1. **Phone framing is uneven.** Launch, descent, the way home and the full-frame booster return
+   fit their subjects to a tall screen; the cruise, flybys, the cislunar camera, the circular LEO
+   coast, the landing inset and the launch pull-back do not.
+2. **Four separate aspect rules** for the same job (the launch SafeArea fit, the descent's
+   `min(1, aspect)`, the `1 + 0.7(1/aspect − 1)` back-off copied in two files, the coast's special
+   case). No shared helper.
+3. **Seams that do not fade:** entering the way home (it stays in the `descent` segment), the
+   descent-profile swap inside DescentScene, the booster-return cuts.
+4. **Timer cuts next to event cuts.** Launch and descent cut on events, with timer filler; the
+   coast cuts on pure time fractions; the flyby montage on fixed MET offsets.
+5. **Two flyby systems** (montage and classic) and two launch cameras (director and
+   `?cam=classic`).
+6. **Dormant code:** the finale lock (`finaleStartedAt` set only in tests), the unused
+   `LAUNCH_DWELL_DURATION_MS` (4000; the page uses 600 ms), the pre-F8 Earth-entry fixed rate (now
+   only a fallback when no play clock is built).
+7. **Slow motion in three places** with different windows (launch, descent, flyby); F8 replaced
+   the launch and descent ones for play.
+8. **The scrubber layout (F8 phase 2):** the scrubber still uses the descent time warp and the
+   launch coast warp, while play follows the activity clock, so the playhead moves unevenly.
+   Folded into this review: lay the scrubber out by wall time, or keep the warps.
+
+Not covered by the inventory: the bodies of the 12 launch pool shots and the flyby composers, the
+`/dev/launch-director` review route, the e2e specs.

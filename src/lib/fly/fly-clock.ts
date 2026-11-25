@@ -110,6 +110,7 @@ const DESCENT_SEP_BEATS = new Set([
   'terrain_nav',
   'hover',
   'arrays_open',
+  'capsule_inverted',
 ]);
 
 /**

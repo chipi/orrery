@@ -28,7 +28,7 @@
       "u": "https://ntrs.nasa.gov/api/citations/19720026127/downloads/19720026127.pdf"
     },
     {
-      "l": "NASA SP-4029 Apollo chronology, \"Entry, Splashdown, and Recovery\" compilation (Apollo 7-17): Apollo 16 column: \"Lift To Drag Ratio 0.286\", \"Range (n mi) 1,190\" (1,190 n.mi = 2,204 km), \"Maximum g 7.19\" (the Flight Journal PAD predicted 6.87), \"Duration (sec) 814.0\", velocity 36,196.1 ft/s, flight-path angle -6.55, splashdown 0.70 S 156.22 W, landing weight 11,995 lb. No Entry Postflight Analysis exists for Apollo 16 (the mission report's supplement list has none), so L/D and range are the compilation values (secondary), not a reconstruction; no first/second load-factor split is published. Model limit: with these inputs the model peaks at 8.2 g at 68 s (7.19 g flown), dips to 1.2 g, second pulse 5.6 g; drogues 474 s (475 s flown, 265:45:26), splashdown 817 s (814 s flown)",
+      "l": "NASA SP-4029 Apollo chronology, \"Entry, Splashdown, and Recovery\" compilation (Apollo 7-17): Apollo 16 column: \"Lift To Drag Ratio 0.286\", \"Range (n mi) 1,190\" (1,190 n.mi = 2,204 km), \"Maximum g 7.19\" (the Flight Journal PAD predicted 6.87), \"Duration (sec) 814.0\", velocity 36,196.1 ft/s, flight-path angle -6.55, splashdown 0.70 S 156.22 W, landing weight 11,995 lb. No Entry Postflight Analysis exists for Apollo 16 (the mission report's supplement list has none), so L/D and range are the compilation values (secondary), not a reconstruction; no first/second load-factor split is published. Model limit: with these inputs the model peaks at 8.2 g at 68 s (7.19 g flown), dips to 1.2 g, second pulse 5.6 g; drogues 474 s (475 s flown, 265:45:26), splashdown 817 s (814 s flown). Flotation (B1): NASA SP-4029, \"Entry, Splashdown, and Recovery\" table, Apollo 16 column: flotation attitude \"Inverted\" (stable II), uprighting time \"4.5\" minutes (realAfterS 270 s). When the capsule turned over is not given: drawn 3 s after splashdown",
       "u": "https://www.nasa.gov/wp-content/uploads/static/history/SP-4029/Apollo_18-40_Entry_Splashdown_and_Recovery.htm"
     },
     {
@@ -41,7 +41,8 @@
     "params.chuteDeployAltM",
     "params.parachuteCdA",
     "params.terminalCdA",
-    "beats.apex_cover_jettison"
+    "beats.apex_cover_jettison",
+    "afterTouchdown.beats.capsule_inverted"
   ],
   "beats": [
     {
@@ -49,5 +50,19 @@
       "altM": 7500
     }
   ],
-  "targetDownrangeKm": 2204
+  "targetDownrangeKm": 2204,
+  "afterTouchdown": {
+    "holdS": 12,
+    "beats": [
+      {
+        "type": "capsule_inverted",
+        "afterS": 3
+      },
+      {
+        "type": "capsule_upright",
+        "afterS": 18,
+        "realAfterS": 270
+      }
+    ]
+  }
 }

@@ -24,7 +24,7 @@
   "source_tier": "flagship",
   "provenance": [
     {
-      "l": "Apollo 12 Mission Report MSC-01855 (Mar 1970): Table 5-IX, entry interface 244:22:19.1 at 400,000 ft, 36,116 ft/s (11,009 m/s), flight-path angle -6.48 deg; Table A-II, command module weight at entry 12,275.5 lb (5,568 kg; the OCR of this row is doubtful); section 11.3.1, landing 244:36:25 GET (20:58:25 GMT 24 November 1969) at 15 deg 46.6 min S, 165 deg 9.0 min W, USS Hornet. Quote: \"The command module landed at 244:36:25 (2058 G.m.t.) at a point calculated by recovery forces to be 15 degrees 46.6 minutes south latitude and 165 degrees 9.0 minutes west longitude.\" Impact: \"the landing impact was extremely hard ... an impact acceleration of about 15g\" (section 9.15); the model has no water-impact load, so this is a description, not a fitted value",
+      "l": "Apollo 12 Mission Report MSC-01855 (Mar 1970): Table 5-IX, entry interface 244:22:19.1 at 400,000 ft, 36,116 ft/s (11,009 m/s), flight-path angle -6.48 deg; Table A-II, command module weight at entry 12,275.5 lb (5,568 kg; the OCR of this row is doubtful); section 11.3.1, landing 244:36:25 GET (20:58:25 GMT 24 November 1969) at 15 deg 46.6 min S, 165 deg 9.0 min W, USS Hornet. Quote: \"The command module landed at 244:36:25 (2058 G.m.t.) at a point calculated by recovery forces to be 15 degrees 46.6 minutes south latitude and 165 degrees 9.0 minutes west longitude.\" Impact: \"the landing impact was extremely hard ... an impact acceleration of about 15g\" (section 9.15); the model has no water-impact load, so this is a description, not a fitted value. Flotation (B1): Apollo 12 Mission Report MSC-01855 section 11.3.1, flotation: the command module \"immediately went to the stable II (apex down) attitude. The uprighting system returned the command module to the stable I attitude 4 minutes 26 seconds later.\" Drawn on screen sooner (afterTouchdown beats); realAfterS 266 s",
       "u": "https://apollojournals.org/alsj/a12/A12_MissionReport.pdf"
     },
     {
@@ -49,5 +49,20 @@
       "altM": 7500
     }
   ],
-  "targetDownrangeKm": 2315
+  "targetDownrangeKm": 2315,
+  "afterTouchdown": {
+    "holdS": 12,
+    "beats": [
+      {
+        "type": "capsule_inverted",
+        "afterS": 3,
+        "realAfterS": 0
+      },
+      {
+        "type": "capsule_upright",
+        "afterS": 18,
+        "realAfterS": 266
+      }
+    ]
+  }
 }

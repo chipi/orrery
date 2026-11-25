@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { onMount, onDestroy, untrack } from 'svelte';
+  import { onMount, onDestroy, tick, untrack } from 'svelte';
   import { page } from '$app/state';
   import { base } from '$app/paths';
   import { goto } from '$app/navigation';
@@ -1838,6 +1838,15 @@
         descentT = Math.max(0, Math.min(descentDurationS, v));
       },
       __descentDuration: () => descentDurationS,
+      // A splashdown is reached only through the way home: load its profile file directly.
+      __descentLoadProfile: (file: string) =>
+        loadDescentProfileFile(file, fetch, base).then(async (p) => {
+          // Clear first so the mounted descent scene is rebuilt, as the way home mounts it fresh.
+          descentProfile = null;
+          await tick();
+          descentProfile = p;
+          splashdownActive = true;
+        }),
     });
   });
   // Separation-event times for the cinematic slow-mo beat (item 3) — the play-

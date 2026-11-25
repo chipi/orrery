@@ -19,7 +19,8 @@
     "targetDownrangeKm",
     "parachuteCdA",
     "terminalCdA",
-    "beats.apex_cover_jettison"
+    "beats.apex_cover_jettison",
+    "afterTouchdown.beats.capsule_inverted"
   ],
   "archetype": "EARTH_CAPSULE_REENTRY",
   "params": {
@@ -37,6 +38,10 @@
     {
       "l": "Apollo 7 Mission Report (MSC-PA-R-68-15): entry 259:53:26 at 25,846 ft/s, -2.07°; 3.33 g; drogue 260:03:17 ~23,500 ft; main 260:04:14 ~10,300 ft; landing 260:09:03",
       "u": "https://archive.org/details/apollo-7-mission-report"
+    },
+    {
+      "l": "NASA SP-4029, \"Entry, Splashdown, and Recovery\" table, Apollo 7 column: flotation attitude \"Inverted\" (stable II), uprighting time \"12.0\" minutes (realAfterS 720 s). When the capsule turned over is not given: drawn 3 s after splashdown",
+      "u": "https://www.nasa.gov/wp-content/uploads/static/history/SP-4029/Apollo_18-40_Entry_Splashdown_and_Recovery.htm"
     }
   ],
   "beats": [
@@ -44,5 +49,19 @@
       "type": "apex_cover_jettison",
       "altM": 7360
     }
-  ]
+  ],
+  "afterTouchdown": {
+    "holdS": 12,
+    "beats": [
+      {
+        "type": "capsule_inverted",
+        "afterS": 3
+      },
+      {
+        "type": "capsule_upright",
+        "afterS": 18,
+        "realAfterS": 720
+      }
+    ]
+  }
 }

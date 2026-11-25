@@ -60,6 +60,8 @@ const HUD_LABEL: Record<string, () => string> = {
   'RAMPS OUT': m.hud_ramp_deploy,
   'ROVER EGRESS': m.hud_rover_egress,
   'HATCH BLOWS': m.hud_hatch_blow,
+  INVERTED: m.hud_capsule_inverted,
+  UPRIGHTED: m.hud_capsule_upright,
   EJECT: m.hud_eject,
   'SEAT SEP': m.hud_seat_sep,
   'APEX COVER': m.hud_apex_cover,

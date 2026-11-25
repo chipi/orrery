@@ -126,6 +126,8 @@ export type DescentEventType =
   | 'arrays_open' // the solar arrays open after landing (Phoenix, InSight)
   | 'ramp_deploy' // the landing platform's ramps unfold (Tianwen-1)
   | 'hatch_blow' // the side hatch blows after splashdown and the capsule floods (Liberty Bell 7)
+  | 'capsule_inverted' // the capsule turns over apex-down in the water (Apollo's stable II)
+  | 'capsule_upright' // the uprighting bags right it to stable I
   | 'rover_egress' // the rover drives down the ramp onto the surface (Tianwen-1)
   | 'eject' // the hatch blows and the cosmonaut ejects in the seat (Vostok)
   | 'seat_sep' // the seat falls away; the cosmonaut descends on a personal parachute (Vostok)
@@ -1025,8 +1027,9 @@ function appendAfterTouchdown(
     events.push({ type: gb.type, t: t + gb.afterS, altKm: 0, velocityMs: 0, realT });
     end = Math.max(end, t + gb.afterS);
   }
-  // Hold a few seconds past the last beat so what it starts (petals opening) plays out.
-  if (end > t) states.push({ ...rest, t: end + (tail.holdS ?? 6) });
+  // Hold a few seconds past the last beat so what it starts (petals opening) plays out; a tail of
+  // only a hold keeps the craft on screen after contact (Apollo 14's fouled main on the water).
+  if (end > t || tail.holdS != null) states.push({ ...rest, t: end + (tail.holdS ?? 6) });
 }
 
 /**

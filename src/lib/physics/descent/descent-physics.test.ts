@@ -639,3 +639,13 @@ describe('touch-and-go back-away (pass 2)', () => {
     );
   });
 });
+
+describe('a tail that is only a hold (B1: Apollo 14 stays on the water)', () => {
+  it('runs on holdS past the first contact', () => {
+    const bare = integrateDescent(MARS_AIRBAG);
+    const held = integrateDescent({ ...MARS_AIRBAG, afterTouchdown: { holdS: 12 } });
+    const td = held.events.find((e) => e.type === 'touchdown')!.t;
+    expect(held.totalDurationS).toBeCloseTo(td + 12, 6);
+    expect(held.totalDurationS).toBeGreaterThan(bare.totalDurationS + 11);
+  });
+});

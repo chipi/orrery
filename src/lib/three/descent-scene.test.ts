@@ -240,3 +240,38 @@ describe('the craft stays in frame on desktop and phone', () => {
     scene.dispose();
   });
 });
+
+/** B1 (a): five Apollo command modules turned over apex-down in the water and were righted. */
+describe('Apollo stable II after splashdown', () => {
+  it('Apollo 12 turns apex-down, then the bags right it', async () => {
+    const { Quaternion, Vector3 } = await import('three');
+    await preloadDescentModels();
+    const raw = JSON.parse(
+      readFileSync('static/data/descent-profiles/apollo12-splashdown.json', 'utf-8'),
+    ) as RawDescentProfile;
+    const sum = integrateDescent(expandDescentProfile(raw));
+    const scene = createDescentScene({
+      aspect: 1.6,
+      body: 'earth',
+      siteId: 'apollo12-splashdown',
+      durationS: sum.totalDurationS,
+      events: sum.events,
+    });
+    let capsule!: THREE.Object3D;
+    scene.scene.traverse((o) => {
+      if (o.userData.frameSubject) capsule = o;
+    });
+    const t = (type: string) => sum.events.find((e) => e.type === type)!.t;
+    const up = (s: number) => {
+      scene.setState(sampleDescentAt(sum.states, s));
+      scene.scene.updateMatrixWorld(true);
+      return new Vector3(0, 1, 0).applyQuaternion(capsule.getWorldQuaternion(new Quaternion())).y;
+    };
+    expect(up(t('touchdown') - 1)).toBeGreaterThan(0.9);
+    expect(up(t('capsule_inverted') + 4)).toBeLessThan(-0.9);
+    expect(up(t('capsule_upright') + 7)).toBeGreaterThan(0.9);
+    expect(
+      sum.events.find((e) => e.type === 'capsule_upright')!.realT! - t('touchdown'),
+    ).toBeCloseTo(266, 6);
+  });
+});

@@ -30,17 +30,36 @@
     {
       "l": "Apollo 8 Mission Report (MSC-PA-R-69-1): entry 146:46:12.8 at 36,217 ft/s, -6.50°; 6.84 g; drogue 146:54:47.8, main 146:55:38.9, landing 147:00:42",
       "u": "https://ntrs.nasa.gov/api/citations/19700033031/downloads/19700033031.pdf"
+    },
+    {
+      "l": "NASA SP-4029, \"Entry, Splashdown, and Recovery\" table, Apollo 8 column: flotation attitude \"Inverted\" (stable II), uprighting time \"6.0\" minutes (realAfterS 360 s). When the capsule turned over is not given: drawn 3 s after splashdown",
+      "u": "https://www.nasa.gov/wp-content/uploads/static/history/SP-4029/Apollo_18-40_Entry_Splashdown_and_Recovery.htm"
     }
   ],
   "estimatedFields": [
     "parachuteCdA",
     "terminalCdA",
-    "beats.apex_cover_jettison"
+    "beats.apex_cover_jettison",
+    "afterTouchdown.beats.capsule_inverted"
   ],
   "beats": [
     {
       "type": "apex_cover_jettison",
       "altM": 7500
     }
-  ]
+  ],
+  "afterTouchdown": {
+    "holdS": 12,
+    "beats": [
+      {
+        "type": "capsule_inverted",
+        "afterS": 3
+      },
+      {
+        "type": "capsule_upright",
+        "afterS": 18,
+        "realAfterS": 360
+      }
+    ]
+  }
 }

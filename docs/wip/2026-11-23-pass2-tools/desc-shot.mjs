@@ -18,11 +18,20 @@ const b = await chromium.launch({ args: ['--use-angle=swiftshader', '--enable-un
 const tB = Number(process.env.TB ?? 0);
 const ENTRY_FRAC = 0.45; // descent-timewarp.ts ENTRY_TIMELINE_FRAC
 
-async function shoot(mission, [tag, vw, vh]) {
+// `apollo12@apollo12-splashdown`: open the mission, then swap in that descent profile file (a
+// splashdown is otherwise reached only through the way home).
+async function shoot(spec, [tag, vw, vh]) {
+  const [mission, profile] = spec.split('@');
   const page = await (await b.newContext({ viewport: { width: vw, height: vh } })).newPage();
   for (let i = 0; i < 3; i++) {
     await page.goto(`${process.env.DEV_URL ?? 'http://localhost:5199'}/fly?mission=${mission}&descent=1&debug=1`).catch(() => {});
     if (await page.waitForFunction(() => typeof window.__descentSetT === 'function' && window.__descentDuration() > 0, null, { timeout: 90000 }).then(() => true, () => false)) break;
+  }
+  if (profile) {
+    const before = await page.evaluate(() => window.__descentDuration());
+    await page.evaluate((f) => window.__descentLoadProfile(f), profile);
+    await page.waitForFunction((d) => window.__descentDuration() !== d, before, { timeout: 30000 }).catch(() => {});
+    await page.waitForTimeout(8000); // the scene rebuilds after the HUD; slow with four pages at once
   }
   await page.waitForTimeout(3000);
   for (const f of fr.split(',')) {
@@ -41,7 +50,7 @@ async function shoot(mission, [tag, vw, vh]) {
       [f, tB, ENTRY_FRAC],
     );
     await page.waitForTimeout(1000);
-    await page.screenshot({ path: `${OUT}${prefix}-${tag}-${mission}-${f}.png` });
+    await page.screenshot({ path: `${OUT}${prefix}-${tag}-${profile ?? mission}-${f}.png` });
   }
   console.log(mission, tag, 'done');
   await page.close();

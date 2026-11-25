@@ -42,6 +42,10 @@
     {
       "l": "Apollo CM entry aero (L/D 0.3), drogue and main areas: the Apollo 8 profile (MSC-PA-R-69-1), same Block II command module",
       "u": "https://ntrs.nasa.gov/api/citations/19700033031/downloads/19700033031.pdf"
+    },
+    {
+      "l": "NASA SP-4029, \"Entry, Splashdown, and Recovery\" table, Apollo 11 column: flotation attitude \"Inverted\" (stable II), uprighting time \"7.6\" minutes (realAfterS 456 s). When the capsule turned over is not given: drawn 3 s after splashdown",
+      "u": "https://www.nasa.gov/wp-content/uploads/static/history/SP-4029/Apollo_18-40_Entry_Splashdown_and_Recovery.htm"
     }
   ],
   "estimatedFields": [
@@ -49,7 +53,8 @@
     "params.chuteDeployAltM",
     "params.parachuteCdA",
     "params.terminalCdA",
-    "beats.apex_cover_jettison"
+    "beats.apex_cover_jettison",
+    "afterTouchdown.beats.capsule_inverted"
   ],
   "beats": [
     {
@@ -57,5 +62,19 @@
       "altM": 7500
     }
   ],
-  "targetDownrangeKm": 2772
+  "targetDownrangeKm": 2772,
+  "afterTouchdown": {
+    "holdS": 12,
+    "beats": [
+      {
+        "type": "capsule_inverted",
+        "afterS": 3
+      },
+      {
+        "type": "capsule_upright",
+        "afterS": 18,
+        "realAfterS": 456
+      }
+    ]
+  }
 }

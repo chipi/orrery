@@ -53,5 +53,8 @@
       "altM": 7500
     }
   ],
-  "targetDownrangeKm": 2285
+  "targetDownrangeKm": 2285,
+  "afterTouchdown": {
+    "holdS": 12
+  }
 }

@@ -310,6 +310,17 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
       .applyQuaternion(bodyMesh.quaternion);
   }
   scene.add(bodyMesh);
+  // The body is a 128-segment sphere: under the landing site its flat facet sits up to ~2 km
+  // below y = 0, so a capsule "on" the sea floated above the water. A flat local sea at y = 0
+  // takes the hull and an inverted apex under (Apollo splashdowns, B1 a).
+  if (body === 'earth' && /^(apollo|skylab)/.test(opts.siteId)) {
+    const sea = new THREE.Mesh(
+      new THREE.CircleGeometry(rBody * 0.004, 96),
+      new THREE.MeshStandardMaterial({ color: 0x0f1f45, roughness: 0.55, metalness: 0.05 }),
+    );
+    sea.rotation.x = -Math.PI / 2;
+    scene.add(sea);
+  }
   const groundRocks = hasGroundDetail(body) ? makeGroundRocks(body) : null;
   if (groundRocks) scene.add(groundRocks);
 
@@ -810,6 +821,38 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
   const APOLLO_TRIM_RAD = 0.42; // drawn: the trim angle is not in the profile (L/D 0.3 is)
   const APOLLO_ROLL_RAD = 1.1; // drawn: the bank is flown to the guidance, not sourced
   const APOLLO_ROLL_PERIOD_S = 22;
+  // Apollo at splashdown (B1 a). The mains are cut loose and sag onto the sea; the capsule
+  // plunges, bobs and settles about a third under (drawn, not a sourced draft). Five of the
+  // flights turned over apex-down (stable II) and were righted by three bags inflated at the apex
+  // (NASA SP-4029; Apollo 12 MR 11.3.1): capsule_inverted and capsule_upright in the profile.
+  const invertT = metOf('capsule_inverted');
+  const uprightT = metOf('capsule_upright');
+  // Apollo 12 landed "extremely hard", about 15 g (MR12 9.15): a deeper plunge and a jolt.
+  const HARD_SPLASH = new Set(['apollo12-splashdown']);
+  // Apollo 14: one main stayed fouled on the command module until swimmers cut it loose (A14-MR
+  // 9.15, Apollo Flight Journal).
+  const FOULED_MAIN = new Set(['apollo14-splashdown']);
+  const SPLASH_DRAFT = 0.3;
+  const apolloBox = isApollo ? new THREE.Box3().setFromObject(model.lander) : undefined;
+  const apolloCentreY = apolloBox
+    ? apolloBox.getCenter(new THREE.Vector3()).y - model.root.position.y
+    : 0;
+  let uprightBags: THREE.Group | undefined;
+  if (apolloBox && invertT != null) {
+    // Three bags on the apex (drawn: about a fifth of the capsule's height across).
+    const sz = apolloBox.getSize(new THREE.Vector3());
+    const top = apolloBox.max.y - model.root.position.y - model.lander.position.y;
+    uprightBags = new THREE.Group();
+    const bagMat = new THREE.MeshStandardMaterial({ color: 0xf2f0ea, roughness: 0.7 });
+    for (let i = 0; i < 3; i++) {
+      const a = (i / 3) * Math.PI * 2;
+      const bag = new THREE.Mesh(new THREE.SphereGeometry(sz.y * 0.11, 16, 12), bagMat);
+      bag.position.set(Math.cos(a) * sz.x * 0.09, top + sz.y * 0.06, Math.sin(a) * sz.x * 0.09);
+      uprightBags.add(bag);
+    }
+    uprightBags.visible = false;
+    model.lander.add(uprightBags);
+  }
   const apexT = metOf('apex_cover_jettison');
   const apexHomeY = model.root.getObjectByName('apex-cover')?.position.y ?? 0;
   // Vostok: the entry hatch blows off and the cosmonaut leaves in the seat; later the seat drops
@@ -1157,6 +1200,21 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
     model.parachute.position.set(bp * vehLen * 0.5, model.parachuteBaseY + hang + rise, 0);
     model.backshell.position.y = model.backshellBaseY + hang + rise;
     model.backshell.rotation.z = bp * 1.6;
+    if (isApollo && touchdownT != null && s.t >= touchdownT && model.parachute.visible) {
+      // Cut loose just after contact, the canopies sag down onto the sea and are gone.
+      const rel = smooth01((s.t - touchdownT - 0.5) / 4);
+      const fouled = FOULED_MAIN.has(opts.siteId) && deflating;
+      model.parachute.scale.y *= 1 - (fouled ? 0.99 : 0.95) * rel;
+      if (fouled) {
+        // The fouled main stays, flat on the water beside the capsule; the others go.
+        for (const c of deflating.parent!.children) c.visible = c === deflating;
+        for (const c of model.parachute.children) if (c.type === 'Line') c.visible = false; // the riser
+        // Spilled of air it spreads less; flattened, it lies on the water beside the capsule.
+        deflating.scale.set(1 - 0.45 * rel, 1, 1 - 0.45 * rel);
+      } else {
+        model.parachute.visible = rel < 1;
+      }
+    }
 
     // Separation bursts — the pyro event at heat-shield jettison + chute-cut.
     heatshieldBurst.update(sepProgress(s.t, hsT, DESCENT_BURST_S));
@@ -1359,6 +1417,28 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
         }
       }
     }
+    if (isApollo && touchdownT != null && s.t >= touchdownT) {
+      const e = s.t - touchdownT;
+      const hard = HARD_SPLASH.has(opts.siteId) ? 1 : 0;
+      const bob = Math.exp(-e / 1.6) * Math.sin(e * 3.2) * (0.1 + 0.15 * hard);
+      const sink = (smooth01(e / 1.5) * SPLASH_DRAFT + bob) * landerH;
+      const over = invertT == null ? 0 : smooth01((s.t - invertT) / 3);
+      const back = uprightT == null ? 0 : smooth01((s.t - uprightT) / 6);
+      const ang = Math.PI * over * (1 - back);
+      // It rolls across the camera's view, so the turn reads from every shot.
+      const psi = Math.atan2(-camera.position.x, -camera.position.z);
+      const q = new THREE.Quaternion()
+        .setFromAxisAngle(new THREE.Vector3(0, 1, 0), psi)
+        .multiply(new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(0, 0, 1), ang));
+      model.lander.quaternion.copy(q);
+      const off = new THREE.Vector3(0, landerHome.y - apolloCentreY, 0).applyQuaternion(q);
+      model.lander.position.set(off.x, apolloCentreY + off.y - sink, off.z);
+      if (uprightBags && invertT != null && uprightT != null) {
+        const fill = smooth01((s.t - invertT - 3) / Math.max(1, uprightT - invertT - 3));
+        uprightBags.visible = fill > 0;
+        uprightBags.scale.setScalar(0.15 + 0.85 * fill);
+      }
+    }
     if (retroPack && packHome && packQ) {
       const e = Math.max(0, s.t - PACK_DROP_AT_S);
       retroPack.visible = e < 8;
@@ -1528,6 +1608,13 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
         new THREE.Vector3(pose.target[0], camY + pose.target[1], pose.target[2]),
         small || body === 'jupiter' ? -Infinity : 0,
       );
+    if (isApollo && HARD_SPLASH.has(opts.siteId) && touchdownT != null && s.t >= touchdownT) {
+      // The hard splashdown jolts the shot (a pure function of the time since contact).
+      const e = s.t - touchdownT;
+      const amp = Math.exp(-e / 0.4) * 0.015 * camera.position.distanceTo(vehicle.position);
+      camera.position.y += amp * Math.sin(e * 47);
+      camera.position.x += amp * 0.6 * Math.sin(e * 31 + 1);
+    }
 
     lastState = s;
     if (showForces) updateForces(s);

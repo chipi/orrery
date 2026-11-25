@@ -18,6 +18,7 @@ import {
   csmQuat,
   descentRel,
   getAt,
+  halfFov,
   returnCamera,
   returnPose,
   tipFromAnchor,
@@ -201,6 +202,30 @@ describe('the J missions (Apollo 15, 16, 17)', () => {
             expect(Math.abs(ndc.y), `${t} ${aspect} ${pose.shot}`).toBeLessThan(1);
           }
         }
+      }
+    }
+  });
+  it('the J-mission docking approaches hold the LM in frame and larger than the default two-shot', () => {
+    const lmSize = (p: ReturnProfile, t: number, aspect: number) => {
+      const pose = returnPose(t, p);
+      const cam = returnCamera(t, aspect, pose);
+      const camera = new THREE.PerspectiveCamera(cam.fov, aspect, 0.05, 1e7);
+      camera.position.copy(cam.pos);
+      camera.lookAt(cam.look);
+      camera.updateMatrixWorld();
+      const lm = DEFAULT_RIG.drogue.clone().add(new THREE.Vector3(0, -1.5, 0));
+      const ndc = lm.clone().project(camera);
+      expect(Math.abs(ndc.x), `${p.missionId} ${t} ${aspect}`).toBeLessThan(0.95);
+      expect(Math.abs(ndc.y), `${p.missionId} ${t} ${aspect}`).toBeLessThan(0.95);
+      // The LM's apparent size: its ~4.3 m width over the frame's narrower side.
+      const { h, v } = halfFov(cam.fov, aspect);
+      return 4.3 / cam.pos.distanceTo(lm) / Math.tan(Math.min(h, v));
+    };
+    for (const aspect of [1.6, 390 / 844]) {
+      for (const t of [RT.approach + 0.5, RT.approach + 3, RT.closeUp - 0.2]) {
+        const base = lmSize(profile, t, aspect);
+        expect(lmSize(a17, t, aspect)).toBeGreaterThan(base * 1.5);
+        lmSize(a15, t, aspect);
       }
     }
   });

@@ -621,6 +621,12 @@ export function halfFov(fovDeg: number, aspect: number): { h: number; v: number 
   const v = (fovDeg * Math.PI) / 360;
   return { v, h: Math.atan(Math.tan(v) * aspect) };
 }
+/** The vertical fov (deg) whose narrower half-angle (the width on a phone) is `half` radians. */
+export function fovForHalf(half: number, aspect: number): number {
+  const v = aspect >= 1 ? half : Math.atan(Math.tan(half) / aspect);
+  return (v * 360) / Math.PI;
+}
+
 /** Toward the sun of a J mission's scene (the light's position below), the only missions with a subsatellite. */
 const J_SUN_DIR = new THREE.Vector3(80, 50, 70).normalize();
 
@@ -855,6 +861,29 @@ export function returnCamera(
     case 'dock_bay': {
       // Level with the LM, on the sunlit side the SIM bay faces: the CSM across the gap, its bay toward us.
       const b0 = V(0, Math.max(tip.y, drogue.y), 0).add(V(tip.x, 0, tip.z));
+      if (t >= RT.approach) {
+        // The approach: low beside the LM on the sunlit side, the ascent stage large in the lower
+        // frame and the CSM closing above it, its bay toward the sun.
+        const u = b0.clone().sub(drogue).normalize();
+        const side = J_SUN_DIR.clone().addScaledVector(u, -J_SUN_DIR.dot(u));
+        if (side.lengthSq() < 1e-6) side.set(1, 0, 0);
+        side.normalize();
+        const c = Math.max(26, 1.6 * drogue.distanceTo(b0));
+        const pos = drogue
+          .clone()
+          .addScaledVector(side, c)
+          .addScaledVector(u, -0.22 * c);
+        // Aim off the LM toward the CSM, so the LM sits low in the frame (clear of the play bar)
+        // and the CSM above it; the lens widens to keep the CSM in while the gap is large.
+        const toL = drogue.clone().sub(pos).normalize();
+        const toC = csmCentreFromAnchor(pose, rig).sub(pos).normalize();
+        const ang = toL.angleTo(toC);
+        const half = Math.min(0.85, Math.max(0.42, 0.9 * ang));
+        const a = 0.38 * ang;
+        const axis = new THREE.Vector3().crossVectors(toL, toC);
+        const dir = axis.lengthSq() < 1e-9 ? toC : toL.clone().applyAxisAngle(axis.normalize(), a);
+        return { pos, look: pos.clone().add(dir), fov: fovForHalf(half, aspect) };
+      }
       const mid = drogue.clone().add(b0).multiplyScalar(0.5);
       const sep = drogue.distanceTo(b0);
       const n = bayNormal(pose);
@@ -885,6 +914,20 @@ export function returnCamera(
       // the camera's azimuth turning the whole time.
       const ang = 0.5 + (1.5 * (t - RT.dockWide)) / (RT.hardDock - RT.dockWide);
       const dir = V(Math.sin(ang), 0.14, Math.cos(ang)).normalize();
+      if (t >= RT.approach && t < RT.closeUp) {
+        // The approach as the command module pilot saw it: from beside the CM, along the CSM's
+        // nose to the LM, which grows in the window; the sunlit side, the Moon beyond.
+        const c = csmCentreFromAnchor(pose, rig);
+        const back = c.clone().sub(tip).normalize();
+        const side = J_SUN_DIR.clone().addScaledVector(back, -J_SUN_DIR.dot(back));
+        if (side.lengthSq() < 1e-6) side.set(1, 0, 0);
+        side.normalize();
+        const pos = tip.clone().addScaledVector(back, 2.5).addScaledVector(side, 3);
+        const look = drogue.clone().add(V(0, -1.2, 0));
+        // The LM (~4.3 m across) held to about half the frame's narrower side as it closes.
+        const half = Math.max(0.26, Math.atan(4.5 / pos.distanceTo(look)));
+        return { pos, look, fov: fovForHalf(half, aspect) };
+      }
       if (t < RT.closeUp) {
         const b0 = V(0, Math.max(tip.y, drogue.y), 0).add(V(tip.x, 0, tip.z));
         const mid = drogue.clone().add(b0).multiplyScalar(0.5);

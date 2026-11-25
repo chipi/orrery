@@ -246,9 +246,13 @@ function shotPoseAt(
       ? Math.max(floor + subject.core.r * 0.25, subject.core.cy - subject.core.r * 0.5)
       : floor + subject.core.r * 0.25;
     const pos: [number, number, number] = [x, camY, z];
-    const target: [number, number, number] = [0, subject.core.cy, 0];
+    // A capsule sits in the lower third with its risers and the canopy's skirt above it, as the
+    // recovery-ship footage shows a splashdown; a lander fills the frame.
+    const lift = subject.capsule ? subject.core.r * 1.6 : 0;
+    const target: [number, number, number] = [0, subject.core.cy + lift, 0];
     const range = Math.hypot(x, target[1] - pos[1], z);
-    const fov = Math.min(55, Math.max(6, (2 * Math.atan(subject.core.r / (0.4 * range))) / DEG));
+    const fill = subject.capsule ? 0.2 : 0.4;
+    const fov = Math.min(55, Math.max(6, (2 * Math.atan(subject.core.r / (fill * range))) / DEG));
     return { pos, target, fov: fov / Math.min(1, Math.max(0.5, aspect)) ** 0.5 };
   }
 

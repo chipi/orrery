@@ -30,6 +30,15 @@ describe('descent director', () => {
     expect(g.t1).toBe(435);
   });
 
+  it("a capsule's ground shot sits it low in a wider frame, the canopy's risers above it", () => {
+    const t = 435 - 5;
+    const subj = { core: { cy: 0, r: 2 }, whole: { cy: 0, r: 4 } };
+    const lander = descentPoseAt(shots, t, subj, 0.05, 1.6);
+    const capsule = descentPoseAt(shots, t, { ...subj, capsule: true }, 0.05, 1.6);
+    expect(capsule.target[1]).toBeGreaterThan(subj.core.cy + subj.core.r);
+    expect(capsule.fov).toBeGreaterThan(lander.fov * 1.5);
+  });
+
   it('varies the shots: no kind twice in a row, several kinds over the descent', () => {
     for (let i = 1; i < shots.length; i++) expect(shots[i].kind).not.toBe(shots[i - 1].kind);
     expect(new Set(shots.map((s) => s.kind)).size).toBeGreaterThanOrEqual(5);

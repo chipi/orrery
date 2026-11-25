@@ -554,7 +554,8 @@
     transition: opacity 0.3s ease;
   }
   /* Same bands as LaunchScene's scrim: behind the telemetry (left), the dossier (right) and the
-     title + clock (top), clear in the middle where the craft is. */
+     title + clock (top), clear in the middle where the craft is; eased out over 640 px, since a
+     steeper shoulder read as a pale column of light on a bright sky. */
   .hud-scrim {
     position: absolute;
     inset: 0;
@@ -563,15 +564,21 @@
     background:
       linear-gradient(
         90deg,
-        rgba(3, 6, 14, 0.72) 0px,
-        rgba(3, 6, 14, 0.5) 290px,
-        transparent 440px
+        rgba(3, 6, 14, 0.7) 0px,
+        rgba(3, 6, 14, 0.52) 200px,
+        rgba(3, 6, 14, 0.3) 330px,
+        rgba(3, 6, 14, 0.13) 450px,
+        rgba(3, 6, 14, 0.04) 560px,
+        transparent 640px
       ),
       linear-gradient(
         270deg,
-        rgba(3, 6, 14, 0.72) 0px,
-        rgba(3, 6, 14, 0.5) 290px,
-        transparent 440px
+        rgba(3, 6, 14, 0.7) 0px,
+        rgba(3, 6, 14, 0.52) 200px,
+        rgba(3, 6, 14, 0.3) 330px,
+        rgba(3, 6, 14, 0.13) 450px,
+        rgba(3, 6, 14, 0.04) 560px,
+        transparent 640px
       ),
       linear-gradient(180deg, rgba(3, 6, 14, 0.55) 0px, transparent 150px),
       radial-gradient(ellipse 130% 90% at 50% 42%, transparent 46%, rgba(3, 6, 14, 0.62) 100%);

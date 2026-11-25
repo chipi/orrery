@@ -91,3 +91,13 @@ on the page.
 6. The launch HUD fades back after liftoff on desktop.
 7. Fix the descent defects: the sky light column, Dragon's chutes and entry glow, the empty opening
    shot, the LM over black; and the way-home caption at 54 s.
+
+## Added (operator 2026-11-25): the iconic flyby missions
+
+"Review the flights of all iconic missions and their flybys, the planets … those iconic missions are
+where camera work really comes into the game. Let's review all of those equally diligently."
+Scope: every multi-flyby and planetary-tour mission on /fly (the Voyagers, Pioneers 10 and 11,
+Galileo, Cassini, New Horizons, MESSENGER, BepiColombo, Rosetta, Juno, JUICE, Parker Solar Probe and
+the rest the mission list carries): picture sheets of each flyby's montage (establish, approach,
+hero, depart) on desktop and phone, the cruise between them, and the arrival; findings and calls to
+the operator as for W6 step 1. Runs after the seven W6 changes above.

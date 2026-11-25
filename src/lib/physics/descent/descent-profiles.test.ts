@@ -153,7 +153,7 @@ describe('every descent profile expands + flies to its honest outcome', () => {
  * brackets them; a ballistic (lift-free) regression reads ~8.5 g or more and fails here.
  */
 describe('lifting re-entries fly the calibrated lifting band (all capsules)', () => {
-  // EARTH LEO capsule returns only (~7.8 km/s). apollo8 (LUNAR return, 10.8 km/s skip) and the Mars
+  // EARTH LEO capsule returns only (~7.8 km/s). apollo8 (LUNAR return, 10.8 km/s) and the Mars
   // guided-lifting entries (super-circular, higher corridor g) are different regimes, asserted in
   // their own tests (the lunar-return skip test / the Mars EDL band).
   const liftingIds = [...DESCENT_MISSION_IDS].filter((id) => {
@@ -190,19 +190,21 @@ describe('lifting re-entries fly the calibrated lifting band (all capsules)', ()
 });
 
 /**
- * apollo8 is the shipped lunar-return flight (#29 Phase 3 · ADR-089) — the first crewed 10.8 km/s
- * skip entry. It exercises the loft/skip model end-to-end through its real EARTH_CAPSULE_REENTRY
- * profile: loft above the atmosphere (skip_out), the coast, the second entry, then chutes to
- * splashdown. Peak-g sits in the real lunar-return corridor (~6.5–8 g); LEO returns never skip.
+ * apollo8 is the shipped lunar-return flight (#29 Phase 3 · ADR-089), the first crewed 10.8 km/s
+ * entry. Since the US Standard Atmosphere 1976 (2026-11-25) it flies its flown range (SP-4029:
+ * 1,292 n mi) under the range-control guidance and, like the flown up-control, stays inside the
+ * atmosphere: flown 6.84 g maximum, splashdown 869 s after entry. The skip path itself is covered
+ * by the synthetic lunar-return tests in descent-physics.test.ts.
  */
-describe('apollo8 lunar-return skip flight (shipped profile)', () => {
-  it('skips out then re-enters and splashes down in the lunar-return g corridor', () => {
+describe('apollo8 and the Apollo splashdowns: lunar-return guided entries (shipped profiles)', () => {
+  it('apollo8 flies its flown range inside the atmosphere and splashes down near its flown time', () => {
     const { s } = flight('apollo8');
-    expect(s.events.some((e) => e.type === 'skip_out')).toBe(true);
-    expect(s.events.some((e) => e.type === 'second_entry')).toBe(true);
-    expect(Math.max(...s.states.map((st) => st.altKm))).toBeGreaterThan(130); // lofts above the interface
+    expect(s.events.some((e) => e.type === 'skip_out')).toBe(false);
+    expect(s.guidance?.targetReachable).toBe(true);
     expect(s.touchdownSuccess).toBe(true);
-    expectInRange(s.peakDecel.g, 6, 9, 'apollo8 lunar-return peak-g'); // real ~6.8 g
+    expectInRange(s.peakDecel.g, 6.84 * 0.9, 6.84 * 1.1, 'apollo8 maximum g (6.84 flown)');
+    const touch = s.events.find((e) => e.type === 'touchdown')!.t;
+    expectInRange(touch, 869 * 0.9, 869 * 1.05, 'apollo8 splashdown (869 s flown)');
   });
 
   // Apollo 11's guided entry against its postflight analysis (MSC, Feb 1970): first maximum
@@ -304,8 +306,8 @@ describe('model-authored entry fields are declared as estimates, sourced ones ar
     'skylab-3',
     'skylab-4',
   ]);
-  // Range flown, from NASA SP-4029's entry table (Apollo 7: 1,594 n mi; Apollo 9: 1,835 n mi).
-  const SOURCED_RANGE = new Set(['apollo7', 'apollo9']);
+  // Range flown, from NASA SP-4029's entry table (Apollo 7: 1,594; Apollo 8: 1,292; Apollo 9: 1,835 n mi).
+  const SOURCED_RANGE = new Set(['apollo7', 'apollo8', 'apollo9']);
   const profiles = [...DESCENT_MISSION_IDS].filter((id) => {
     if (!existsSync(profilePath(id))) return false;
     const raw = loadRaw(id);

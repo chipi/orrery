@@ -14,6 +14,7 @@
   "entryMassKg": 5560,
   "entryCdA": 17.7,
   "liftToDragRatio": 0.3,
+  "targetDownrangeKm": 2393,
   "archetype": "EARTH_CAPSULE_REENTRY",
   "params": {
     "chuteDeployAltM": 7300,
@@ -32,7 +33,7 @@
       "u": "https://ntrs.nasa.gov/api/citations/19700033031/downloads/19700033031.pdf"
     },
     {
-      "l": "NASA SP-4029, \"Entry, Splashdown, and Recovery\" table, Apollo 8 column: flotation attitude \"Inverted\" (stable II), uprighting time \"6.0\" minutes (realAfterS 360 s). When the capsule turned over is not given: drawn 3 s after splashdown",
+      "l": "NASA SP-4029, \"Entry, Splashdown, and Recovery\" table, Apollo 8 column: flotation attitude \"Inverted\" (stable II), uprighting time \"6.0\" minutes (realAfterS 360 s). When the capsule turned over is not given: drawn 3 s after splashdown. Entry range 1,292 n mi (2,393 km), the target range flown: the guided entry flies it inside the atmosphere, as the flown up-control did, with no skip out (6.84 g maximum, splashdown 869 s after entry)",
       "u": "https://www.nasa.gov/wp-content/uploads/static/history/SP-4029/Apollo_18-40_Entry_Splashdown_and_Recovery.htm"
     }
   ],

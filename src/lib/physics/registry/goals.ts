@@ -1279,7 +1279,7 @@ export const entryComputer: Goal = {
  *   4 dv-to-orbit (Moon) — the LM ascent stage climbs back to lunar orbit; no air, so no drag loss.
  *   5 cislunar-transfer — the return leg: the TEI burn that throws the CM home (same Lambert, home).
  *   6 entry-corridor (10.8 km/s) — the climax: the knife-edge lunar-return corridor the entry
- *     computer threads, the 11 km/s skip entry apollo8 actually flew (/fly?mission=apollo8).
+ *     computer threads, the 11 km/s lifting entry apollo8 actually flew (/fly?mission=apollo8).
  */
 export const apolloRoundTrip: Goal = {
   id: 'apollo-round-trip',

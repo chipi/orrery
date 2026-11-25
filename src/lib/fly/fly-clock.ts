@@ -152,9 +152,14 @@ export function launchPlayClock(
   return { advance: (t, dt, sp) => c.advance(t, dt, sp) };
 }
 
+/** An Earth entry at the default descent pill (3×) plays in at most this many real seconds: the
+ *  operator kept the old fixed-length entry (2026-11-25), the activity clock alone runs 60–140 s. */
+export const EARTH_ENTRY_PLAY_CAP_S = 35;
+const DEFAULT_DESCENT_SPEED = 3;
+
 /** The descent act's activity clock. It runs on trajectory time and returns raw scrubber time
  *  (`descentT`), so the scrubber keeps its warped layout (descent-timewarp.ts) while the play
- *  rate follows what happens. */
+ *  rate follows what happens. An Earth entry is sped up evenly to fit `EARTH_ENTRY_PLAY_CAP_S`. */
 export function descentPlayClock(summary: DescentSummary | null): PlayClock | null {
   if (!summary || summary.states.length < 2) return null;
   const dur = summary.totalDurationS;
@@ -168,9 +173,18 @@ export function descentPlayClock(summary: DescentSummary | null): PlayClock | nu
     })),
     summary.events.filter((e) => DESCENT_SEP_BEATS.has(e.type)).map((e) => e.t),
   );
+  const wall = c.wallSeconds(
+    warpDescentTime(0, dur, tB),
+    warpDescentTime(dur, dur, tB),
+    DEFAULT_DESCENT_SPEED,
+  );
+  const k = summary.body === 'earth' ? Math.max(1, wall / EARTH_ENTRY_PLAY_CAP_S) : 1;
   return {
     advance: (raw, dt, sp) =>
-      Math.min(dur, unwarpDescentTime(c.advance(warpDescentTime(raw, dur, tB), dt, sp), dur, tB)),
+      Math.min(
+        dur,
+        unwarpDescentTime(c.advance(warpDescentTime(raw, dur, tB), dt, sp * k), dur, tB),
+      ),
   };
 }
 

@@ -184,7 +184,7 @@ const messages: Record<string, string> = {
   lab_conn_art_apollo8: "Apollo 8 — el primer viaje tripulado de ida y vuelta a la Luna y reentrada con sustentación a 11 km/s",
   lab_conn_art_apollo_lm: "Módulo Lunar Apollo — la nave que voló el descenso y el ascenso lunar",
   lab_conn_art_csm: "Módulo de Mando/Servicio Apollo — la nave que regresó a casa",
-  lab_conn_art_hook: "Apollo 8 realizó este viaje de ida y vuelta en diciembre de 1968 — la primera tripulación en orbitar la Luna y afrontar una reentrada con sustentación a 11 km/s de regreso a casa. (Su retorno está en /fly?mission=apollo8; nótese que nuestro modelo de sustentación fija vuela un rebote exoatmosférico más completo que el ascenso intraatmosférico realmente volado.)",
+  lab_conn_art_hook: "Apollo 8 realizó este viaje de ida y vuelta en diciembre de 1968 — la primera tripulación en orbitar la Luna y afrontar una reentrada con sustentación a 11 km/s de regreso a casa. (Su retorno está en /fly?mission=apollo8.)",
   lab_conn_art_program: "El programa Apollo: nueve misiones lunares tripuladas",
   lab_conn_art_saturn: "Saturn V — el cohete que llevó a cada tripulación Apollo a la Luna",
   lab_conn_art_why: "Una misión lunar no es un solo problema: es una cadena de ellos, cada uno un régimen distinto con una máquina distinta para pilotarlo. Este proyecto final recorre todo el viaje de ida y vuelta del Apollo 8 de principio a fin, para que cada peldaño que aprendiste por separado encaje en un solo vuelo.",

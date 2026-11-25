@@ -71,8 +71,10 @@ Left as they were, with what they now read:
   takes a lift-free capsule below ~8.5 g (the tuner bracketed 0.3–2× the angle), so they read
   8.5–9.2 g; Mercury flew 7.6–7.7 g, which its summary puts down to lift in entry. Ranges grow
   15–20%.
-- **Apollo 8 (open, to the operator):** the fixed-lift-up skip of ADR-089 balloons: 26 min / 7,523 km
+- **Apollo 8 (decided 2026-11-25: fly the flown range, below):** the fixed-lift-up skip of ADR-089 balloons: 26 min / 7,523 km
   → 72 min / 28,097 km. Flown (SP-4029): range 1,292 n mi (2,393 km), 6.84 g, splash 869 s after
   entry. Given that range as its target, the model flies 6.5 g, 811 s and does not skip. That
   would retire Apollo 8 as the skip demonstrator ADR-089 names, so it is the operator's call.
 - **Apollo-Soyuz:** 4.13 → 4.05 g, left.
+
+Apollo 8, decided: it flies its flown range as a guided target: 6.5 g, splashdown 811 s, no skip (ADR-089 amendment).

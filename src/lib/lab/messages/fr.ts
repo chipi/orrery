@@ -184,7 +184,7 @@ const messages: Record<string, string> = {
   lab_conn_art_apollo8: "Apollo 8 — le premier aller-retour lunaire habité et l'entrée en portance à 11 km/s",
   lab_conn_art_apollo_lm: "Module lunaire Apollo — l'engin qui a effectué la descente et la remontée lunaire",
   lab_conn_art_csm: "Apollo Command/Service Module — le vaisseau qui est revenu",
-  lab_conn_art_hook: "Apollo 8 a effectué cet aller-retour en décembre 1968 — le premier équipage à orbiter autour de la Lune et à effectuer une entrée en portance à 11 km/s au retour. (Son retour se trouve à /fly?mission=apollo8 ; notez que notre modèle à portance fixe effectue un rebond exo-atmosphérique plus prononcé que la remontée en atmosphère réellement volée.)",
+  lab_conn_art_hook: "Apollo 8 a effectué cet aller-retour en décembre 1968 — le premier équipage à orbiter autour de la Lune et à effectuer une entrée en portance à 11 km/s au retour. (Son retour se trouve à /fly?mission=apollo8.)",
   lab_conn_art_program: "Le programme Apollo — neuf missions lunaires habitées",
   lab_conn_art_saturn: "Saturn V — la fusée qui a emmené tous les équipages Apollo vers la Lune",
   lab_conn_art_why: "Une mission lunaire n'est pas un seul problème — c'est une chaîne de problèmes, chacun un régime différent avec une machine différente pour le piloter. Cette pierre de couronnement parcourt l'aller-retour complet d'Apollo 8 de bout en bout, pour que chaque échelon appris séparément s'emboîte en un seul vol.",

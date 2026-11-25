@@ -184,7 +184,7 @@ const messages: Record<string, string> = {
   lab_conn_art_apollo8: "Apollo 8——首次载人绕月往返与 11 km/s 升力式再入",
   lab_conn_art_apollo_lm: "Apollo LM——执行下降与月面上升的飞行器",
   lab_conn_art_csm: "Apollo Command/Service Module——安全返航的飞船",
-  lab_conn_art_hook: "Apollo 8 于 1968 年 12 月完成了这次往返——首个进入环月轨道并以 11 km/s 升力式再入返回的乘组。（其返程见 /fly?mission=apollo8；请注意我们的固定升力模型飞出的是比实际大气内上举更完整的大气外跳跃。）",
+  lab_conn_art_hook: "Apollo 8 于 1968 年 12 月完成了这次往返——首个进入环月轨道并以 11 km/s 升力式再入返回的乘组。（其返程见 /fly?mission=apollo8。）",
   lab_conn_art_program: "Apollo计划——九次载人登月任务",
   lab_conn_art_saturn: "Saturn V——将每一批Apollo机组人员送上月球的火箭",
   lab_conn_art_why: "登月任务不是一个问题——而是一连串问题，每一段都是不同的飞行阶段，需要用不同的机器来驾驭。这个综合项目将Apollo 8的整个往返之旅从头到尾走一遍，让你分别学到的每一个环节汇聚成一次完整的飞行。",

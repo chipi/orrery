@@ -184,7 +184,7 @@ const messages: Record<string, string> = {
   lab_conn_art_apollo8: "Apollo 8 — 初の有人月往復飛行と11 km/s揚力突入",
   lab_conn_art_apollo_lm: "Apollo月着陸船 — 降下と月面上昇を飛んだ機体",
   lab_conn_art_csm: "Apollo司令・機械船 — 帰還を果たした宇宙船",
-  lab_conn_art_hook: "Apollo 8は1968年12月にこの往復飛行を行った——月を周回し、11 km/sの揚力突入で帰還した最初の乗員だ。（その帰還は /fly?mission=apollo8 にある；なお我々の固定揚力モデルは、実際の大気内ロフトよりも完全な外気圏スキップを飛行することに留意。）",
+  lab_conn_art_hook: "Apollo 8は1968年12月にこの往復飛行を行った——月を周回し、11 km/sの揚力突入で帰還した最初の乗員だ。（その帰還は /fly?mission=apollo8 にある。）",
   lab_conn_art_program: "Apollo計画 — 九回の有人月ミッション",
   lab_conn_art_saturn: "Saturn V — すべてのApollo乗員を月へ運んだロケット",
   lab_conn_art_why: "月ミッションは一つの問題ではない——それは連鎖する問題群であり、それぞれが異なる領域で、それぞれを飛ばすための異なる機械を必要とする。この総仕上げはApollo 8の往還全体を端から端まで辿り、別々に学んだ各段がひとつの飛行にカチッとはまる。",

@@ -24,7 +24,7 @@ proportionally slower (Apollo 11's landing timed at 115 s there against 68 s her
 against 98 s: the same ratio for both).
 
 **The one that gets longer:** an Earth entry played in a fixed 33–35 s; it now takes 60–140 s.
-To the operator: keep that, or cap Earth entries near the old length.
+Operator 2026-11-25: "cap them". `EARTH_ENTRY_PLAY_CAP_S` (35 s at the default 3×): an Earth entry's clock is sped up evenly to fit, so the event beats keep their shape but play proportionally faster (`fly-clock-earth-cap.test.ts`).
 
 ## Launches
 

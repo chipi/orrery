@@ -184,7 +184,7 @@ const messages: Record<string, string> = {
   lab_conn_art_apollo8: "Apollo 8 — il primo viaggio lunare con equipaggio andata e ritorno e rientro portante a 11 km/s",
   lab_conn_art_apollo_lm: "Apollo Lunar Module — il veicolo che eseguì la discesa e l'ascesa lunare",
   lab_conn_art_csm: "Apollo Command/Service Module — la nave che tornò a casa",
-  lab_conn_art_hook: "Apollo 8 compì questo viaggio andata e ritorno nel dicembre 1968 — il primo equipaggio a orbitare attorno alla Luna e cavalcare a casa un rientro portante a 11 km/s. (Il suo ritorno è su /fly?mission=apollo8; nota che il nostro modello a portanza fissa vola un rimbalzo eso-atmosferico più ampio della sollevazione in atmosfera effettivamente eseguita.)",
+  lab_conn_art_hook: "Apollo 8 compì questo viaggio andata e ritorno nel dicembre 1968 — il primo equipaggio a orbitare attorno alla Luna e cavalcare a casa un rientro portante a 11 km/s. (Il suo ritorno è su /fly?mission=apollo8.)",
   lab_conn_art_program: "Il programma Apollo — nove missioni lunari con equipaggio",
   lab_conn_art_saturn: "Saturn V — il razzo che portò ogni equipaggio Apollo sulla Luna",
   lab_conn_art_why: "Una missione lunare non è un solo problema — è una catena di problemi, ciascuno un regime diverso con una macchina diversa per affrontarlo. Questa prova finale percorre l'intero viaggio di andata e ritorno di Apollo 8 dall'inizio alla fine, così ogni tassello che hai imparato separatamente si incastra in un unico volo.",

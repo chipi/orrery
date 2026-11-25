@@ -184,7 +184,7 @@ const messages: Record<string, string> = {
   lab_conn_art_apollo8: "Apollo 8 — de eerste bemande rondreis om de Maan en liftende intrede met 11 km/s",
   lab_conn_art_apollo_lm: "Apollo Lunar Module — het vaartuig dat de daling en de maanopstijging vloog",
   lab_conn_art_csm: "Apollo Command/Service Module — het schip dat thuiskwam",
-  lab_conn_art_hook: "Apollo 8 vloog deze rondreis in december 1968 — de eerste bemanning die de Maan omcirkelde en een liftende intrede met 11 km/s naar huis maakte. (De terugkeer staat op /fly?mission=apollo8; let op dat ons model met vaste lift een vollere exo-atmosferische skip vliegt dan de gevlogen in-atmosfeer loft.)",
+  lab_conn_art_hook: "Apollo 8 vloog deze rondreis in december 1968 — de eerste bemanning die de Maan omcirkelde en een liftende intrede met 11 km/s naar huis maakte. (De terugkeer staat op /fly?mission=apollo8.)",
   lab_conn_art_program: "Het Apollo-programma — negen bemande maanmissies",
   lab_conn_art_saturn: "Saturn V — de raket die elke Apollo-bemanning naar de Maan bracht",
   lab_conn_art_why: "Een maanmissie is niet één probleem — het is een keten ervan, elk een ander regime met een andere machine om het te vliegen. Dit sluitstuk loopt de hele heen-en-terugreis van Apollo 8 van begin tot eind door, zodat elke sport die je apart leerde in één vlucht op zijn plaats valt.",

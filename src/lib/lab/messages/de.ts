@@ -184,7 +184,7 @@ const messages: Record<string, string> = {
   lab_conn_art_apollo8: "Apollo 8 — die erste bemannte Mondrundreise und der auftriebsgestützte 11-km/s-Eintritt",
   lab_conn_art_apollo_lm: "Apollo Lunar Module — das Raumfahrzeug, das den Abstieg und den Mondaufstieg flog",
   lab_conn_art_csm: "Apollo Command/Service Module — das Schiff, das heimkehrte",
-  lab_conn_art_hook: "Apollo 8 flog diese Rundreise im Dezember 1968 — die erste Crew, die den Mond umkreiste und mit 11 km/s in einem Eintritt mit Auftrieb nach Hause zurückkehrte. (Die Rückkehr findest du unter /fly?mission=apollo8; beachte, dass unser Modell mit festem Auftrieb einen ausgeprägteren Hüpfer außerhalb der Atmosphäre fliegt als den tatsächlich geflogenen Aufschwung innerhalb der Atmosphäre.)",
+  lab_conn_art_hook: "Apollo 8 flog diese Rundreise im Dezember 1968 — die erste Crew, die den Mond umkreiste und mit 11 km/s in einem Eintritt mit Auftrieb nach Hause zurückkehrte. (Die Rückkehr findest du unter /fly?mission=apollo8.)",
   lab_conn_art_program: "Das Apollo-Programm — neun bemannte Mondmissionen",
   lab_conn_art_saturn: "Saturn V — die Rakete, die jede Apollo-Crew zum Mond flog",
   lab_conn_art_why: "Eine Mondmission ist nicht ein Problem – es ist eine Kette von ihnen, jedes in einem anderen Bereich mit einer anderen Maschine, um es zu fliegen. Dieses Abschlussprojekt durchläuft die ganze Apollo 8 Hin- und Rückfahrt von Anfang bis Ende, sodass jede Stufe, die du separat gelernt hast, in einen Flug zusammenpasst.",

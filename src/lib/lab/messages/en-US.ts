@@ -184,7 +184,7 @@ const messages: Record<string, string> = {
   lab_conn_art_apollo8: "Apollo 8 — the first crewed lunar round trip and 11 km/s lifting entry",
   lab_conn_art_apollo_lm: "Apollo Lunar Module — the craft that flew the descent and lunar ascent",
   lab_conn_art_csm: "Apollo Command/Service Module — the ship that came home",
-  lab_conn_art_hook: "Apollo 8 flew this round trip in December 1968 — the first crew to orbit the Moon and ride an 11 km/s lifting entry home. (Its return is at /fly?mission=apollo8; note our fixed-lift model flies a fuller exo-atmospheric skip than the flown in-atmosphere loft.)",
+  lab_conn_art_hook: "Apollo 8 flew this round trip in December 1968 — the first crew to orbit the Moon and ride an 11 km/s lifting entry home. (Its return is at /fly?mission=apollo8.)",
   lab_conn_art_program: "The Apollo program — nine crewed lunar missions",
   lab_conn_art_saturn: "Saturn V — the rocket that flew every Apollo crew to the Moon",
   lab_conn_art_why: "A Moon mission is not one problem — it is a chain of them, each a different regime with a different machine to fly it. This capstone walks the whole Apollo 8 round trip end to end, so every rung you learned separately clicks into one flight.",

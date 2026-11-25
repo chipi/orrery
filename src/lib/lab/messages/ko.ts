@@ -184,7 +184,7 @@ const messages: Record<string, string> = {
   lab_conn_art_apollo8: "Apollo 8 — 최초의 유인 달 왕복 비행 및 11 km/s 양력 진입",
   lab_conn_art_apollo_lm: "Apollo Lunar Module — 강하와 달 상승을 비행한 우주선",
   lab_conn_art_csm: "Apollo Command/Service Module — 지구로 돌아온 우주선",
-  lab_conn_art_hook: "Apollo 8은 1968년 12월에 이 왕복 비행을 수행했습니다. 달 궤도를 돈 최초의 승무원이자 11 km/s 양력 진입으로 귀환한 최초의 승무원입니다. (귀환은 /fly?mission=apollo8에서 볼 수 있습니다. 참고로 우리의 고정 양력 모델은 실제로 비행한 대기 내 로프트보다 더 큰 대기권 밖 스킵을 보입니다.)",
+  lab_conn_art_hook: "Apollo 8은 1968년 12월에 이 왕복 비행을 수행했습니다. 달 궤도를 돈 최초의 승무원이자 11 km/s 양력 진입으로 귀환한 최초의 승무원입니다. (귀환은 /fly?mission=apollo8에서 볼 수 있습니다.)",
   lab_conn_art_program: "Apollo 계획 — 아홉 차례의 유인 달 임무",
   lab_conn_art_saturn: "Saturn V — 모든 Apollo 승무원을 달로 실어 나른 로켓",
   lab_conn_art_why: "달 임무는 하나의 문제가 아닙니다 — 각기 다른 영역을 각기 다른 기계로 비행해야 하는 문제들의 연쇄입니다. 이 마무리 과제는 Apollo 8의 왕복 비행 전체를 처음부터 끝까지 따라가며, 따로 배운 모든 단계가 하나의 비행으로 맞물리게 합니다.",

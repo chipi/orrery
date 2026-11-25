@@ -54,6 +54,24 @@ describe('descent director', () => {
     const d = (aspect: number) => Math.hypot(...descentPoseAt(shots, t, subject, 50, aspect).pos);
     expect(d(9 / 19.5)).toBeGreaterThan(d(16 / 9) * 1.5);
   });
+
+  // Operator 2026-11-25: on desktop Curiosity's backshell hung below the frame under its chute.
+  it('keeps the craft in frame under a tall canopy, on desktop as on a phone', () => {
+    const tall = { core: { cy: 0.3, r: 0.6 }, whole: { cy: 15, r: 16 } };
+    const bottom = [0, tall.core.cy - tall.core.r, 0];
+    for (const aspect of [16 / 10, 9 / 19.5]) {
+      for (const sh of shots.filter((s) => s.kind === 'under')) {
+        const pose = descentPoseAt(shots, (sh.t0 + sh.t1) / 2, tall, 50, aspect);
+        const look = pose.target.map((v, i) => v - pose.pos[i]);
+        const to = bottom.map((v, i) => v - pose.pos[i]);
+        const cos =
+          look.reduce((a, v, i) => a + v * to[i], 0) / (Math.hypot(...look) * Math.hypot(...to));
+        expect(Math.acos(cos) / (Math.PI / 180), `t${sh.t0} aspect ${aspect}`).toBeLessThan(
+          pose.fov / 2,
+        );
+      }
+    }
+  });
 });
 
 describe('descent director: an airbag landing', () => {

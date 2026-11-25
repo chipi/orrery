@@ -305,13 +305,23 @@ function shotPoseAt(
       f = { fill: 0.85, el: lerp(2, 9, p), az: a0 + sw * 0.5 * p, fov: 32, who: 'core' };
   }
   const subj = subject[f.who];
-  const d = distFor(subj.r, f.fill, f.fov);
+  let d = distFor(subj.r, f.fill, f.fov);
   // From below the craft looks up the lines toward the canopy: aim a little above the craft.
-  const ty =
-    sh.kind === 'under' && !subject.capsule && !subject.opening
-      ? lerp(subject.core.cy, subject.whole.cy, 0.5)
-      : subj.cy;
+  const lookUp = sh.kind === 'under' && !subject.capsule && !subject.opening;
+  const ty = lookUp ? lerp(subject.core.cy, subject.whole.cy, 0.5) : subj.cy;
   const el = f.el * DEG;
+  if (lookUp) {
+    // Sized to the craft but aimed above it: on a wide frame (the height limits, not the width)
+    // the craft fell out of the bottom. Back off until its bottom is inside the vertical view.
+    const drop = ty - (subject.core.cy - subject.core.r);
+    const limit = (f.fov / 2) * 0.85 * DEG;
+    const off = (dd: number) => {
+      const h = Math.cos(el) * dd;
+      const v = Math.sin(el) * dd;
+      return Math.abs(Math.atan2(-v, h) - Math.atan2(-v - drop, h));
+    };
+    for (let i = 0; i < 24 && off(d) > limit; i++) d *= 1.25;
+  }
   let y = ty + Math.sin(el) * d;
   // Near the ground a shot from below becomes one from just above the surface.
   y = Math.max(y, floor);

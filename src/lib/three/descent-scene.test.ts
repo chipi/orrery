@@ -275,3 +275,35 @@ describe('Apollo stable II after splashdown', () => {
     ).toBeCloseTo(266, 6);
   });
 });
+
+/** B1 (b): Apollo 15's main deflating is on screen, not only the capsule under it. */
+describe('Apollo 15 main collapse on camera', () => {
+  it('frames the deflating canopy at 1,700 m, on desktop and phone', async () => {
+    const { Box3, Vector3 } = await import('three');
+    await preloadDescentModels();
+    const raw = JSON.parse(
+      readFileSync('static/data/descent-profiles/apollo15-splashdown.json', 'utf-8'),
+    ) as RawDescentProfile;
+    const sum = integrateDescent(expandDescentProfile(raw));
+    const scene = createDescentScene({
+      aspect: 1.6,
+      body: 'earth',
+      siteId: 'apollo15-splashdown',
+      durationS: sum.totalDurationS,
+      events: sum.events,
+    });
+    let pivot!: THREE.Object3D;
+    scene.scene.traverse((o) => {
+      if (o.userData.deflatingMain) pivot = o.userData.deflatingMain as THREE.Object3D;
+    });
+    const s = sum.states.find((x, i) => i > 0 && x.t > 300 && x.altM <= 1700)!;
+    for (const aspect of [1.6, 390 / 844]) {
+      scene.setAspect(aspect);
+      scene.setState(s);
+      scene.scene.updateMatrixWorld(true);
+      const c = new Box3().setFromObject(pivot).getCenter(new Vector3()).project(scene.camera);
+      expect(Math.abs(c.x), `aspect ${aspect}`).toBeLessThan(1);
+      expect(Math.abs(c.y), `aspect ${aspect}`).toBeLessThan(1);
+    }
+  });
+});

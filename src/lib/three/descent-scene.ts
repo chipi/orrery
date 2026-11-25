@@ -312,14 +312,17 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
   scene.add(bodyMesh);
   // The body is a 128-segment sphere: under the landing site its flat facet sits up to ~2 km
   // below y = 0, so a capsule "on" the sea floated above the water. A flat local sea at y = 0
-  // takes the hull and an inverted apex under (Apollo splashdowns, B1 a).
+  // takes the hull and an inverted apex under (Apollo splashdowns, B1 a). Shown only near the
+  // water: from altitude its flat colour reads as a dark disc on the textured ocean.
+  let localSea: THREE.Mesh | null = null;
   if (body === 'earth' && /^(apollo|skylab)/.test(opts.siteId)) {
     const sea = new THREE.Mesh(
-      new THREE.CircleGeometry(rBody * 0.004, 96),
+      new THREE.CircleGeometry(rBody * 0.02, 96),
       new THREE.MeshStandardMaterial({ color: 0x0f1f45, roughness: 0.55, metalness: 0.05 }),
     );
     sea.rotation.x = -Math.PI / 2;
     scene.add(sea);
+    localSea = sea;
   }
   const groundRocks = hasGroundDetail(body) ? makeGroundRocks(body) : null;
   if (groundRocks) scene.add(groundRocks);
@@ -1417,6 +1420,7 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
         }
       }
     }
+    if (localSea) localSea.visible = s.altM < 150;
     if (isApollo && touchdownT != null && s.t >= touchdownT) {
       const e = s.t - touchdownT;
       const hard = HARD_SPLASH.has(opts.siteId) ? 1 : 0;
@@ -1568,7 +1572,14 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
     const earthChute =
       body === 'earth' && !model.mainChute && !model.deploy && chuteT != null && s.t >= chuteT;
     const chuteOpenAt = chuteJetT != null && s.t >= chuteJetT ? chuteJetT : (chuteT ?? 0);
-    let opening = earthChute && model.parachute.visible && s.t < chuteOpenAt + CHUTE_OPENING_SHOT_S;
+    // Apollo 15's main deflating (1,830 to 1,530 m, drawn above) is framed like an opening, side-on
+    // with the whole cluster, from a little before it starts until the capsule is past it (B1 b).
+    const collapsing =
+      opts.siteId === 'apollo15-splashdown' && s.altKm * 1000 < 1950 && s.altKm * 1000 > 1380;
+    let opening =
+      earthChute &&
+      model.parachute.visible &&
+      (s.t < chuteOpenAt + CHUTE_OPENING_SHOT_S || collapsing);
     const capsule = earthChute && !opening;
     opening = opening && !!model.parachute.visible;
     if (capsule) whole = core;

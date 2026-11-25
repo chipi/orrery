@@ -21,7 +21,7 @@ import {
   makeGroundTexture,
 } from './descent-ground';
 import * as THREE from 'three';
-import { buildDescentShots, descentPoseAt } from '../orbital/descent-director';
+import { buildDescentShots, descentPoseAt, shotAt } from '../orbital/descent-director';
 import { BoldArrow } from './bold-arrow';
 import { SeparationBurst } from './separation-burst';
 import {
@@ -424,7 +424,8 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
   const smallLift = small
     ? (-new THREE.Box3().setFromObject(model.lander).min.y + 0.1) * craftK
     : 0;
-  // Seen from far the craft is a speck: a screen-sized marker keeps it findable.
+  // Seen from far the craft is a speck (a small body's wide shots, a big body's opening): a
+  // screen-sized marker keeps it findable.
   const marker = new THREE.Points(
     new THREE.BufferGeometry().setAttribute(
       'position',
@@ -440,7 +441,7 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
   );
   marker.visible = false;
   marker.renderOrder = 10;
-  if (small) vehicle.add(marker);
+  vehicle.add(marker);
   // Rest bounds of each flying part (in its parent's frame), for the director to frame what is
   // actually there: the aeroshell, the craft, a sky crane climbing off the rover on its bridles.
   const restBox = (o: THREE.Object3D): THREE.Box3 | null => {
@@ -1604,13 +1605,21 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
       floorAlt,
       camera.aspect,
     );
-    // Small body: a craft hanging above the surface is filmed from above it, with the ground behind
-    // it, never from below against the black sky (Philae's drift-down and bounces).
-    if (small && s.altM > 3 && pose.pos[1] < 0) pose.pos[1] = -pose.pos[1];
+    // An airless body: a craft hanging above the surface is filmed from above it, with the ground
+    // behind it, never from below against the black sky (Philae's drift-down and bounces, a lunar
+    // lander's pitch-over); the ground shot of the last seconds stays on the surface.
+    const noSky = small || body === 'moon' || body === 'mercury';
+    if (noSky && s.altM > 3 && pose.pos[1] < 0 && shotAt(shots, s.t).kind !== 'ground')
+      pose.pos[1] = -pose.pos[1];
     camera.position.set(pose.pos[0], camY + pose.pos[1], pose.pos[2]);
     camera.lookAt(pose.target[0], camY + pose.target[1], pose.target[2]);
     camera.fov = pose.fov;
     camera.updateProjectionMatrix();
+    if (!small) {
+      // A big body's opening wide shot holds the craft at a few pixels: the marker finds it.
+      const range = camera.position.distanceTo(vehicle.position);
+      marker.visible = core.r / (range * Math.tan((camera.fov * Math.PI) / 360)) < 0.02;
+    }
     // Vostok after the ejection follows the cosmonaut, not the capsule.
     if (ejectT == null || s.t < ejectT)
       keepCraftInFrame(

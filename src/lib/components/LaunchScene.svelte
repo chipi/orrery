@@ -412,6 +412,10 @@
   const countdown = $derived(countdownSeconds(t));
   const speedKmh = $derived(Math.round(hud.velKms * 3600));
   const dossierOpen = $derived(!warping); // keep the mission panel up through the whole launch
+  /** On desktop the telemetry and the dossier recede once the vehicle is clear of the pad, so it
+   *  has the frame (operator, W6 2026-11-25); hovering a panel brings it back. */
+  const HUD_RECEDE_AFTER_S = 20;
+  const hudRecede = $derived(t > HUD_RECEDE_AFTER_S);
   const progressPct = $derived(
     Math.max(0, Math.min(1, toSceneT(coastWarp, t) / sceneDuration)) * 100,
   );
@@ -711,6 +715,7 @@
   class:external={externalClock}
   data-testid="launch-scene"
   data-director-shot={directorShot}
+  class:recede={hudRecede}
 >
   <div class="stage" bind:this={container}></div>
 
@@ -969,6 +974,20 @@
   .launch.hud-hidden .telemetry {
     opacity: 0;
     pointer-events: none;
+  }
+  /* The director still frames around the receded panels (its safe area counts them), so the
+     camera does not move when they fade. */
+  @media (hover: hover) and (pointer: fine) and (min-width: 641px) {
+    .launch.recede .telemetry,
+    .launch.recede .dossier.open {
+      opacity: 0.32;
+      transition: opacity 1.2s ease;
+    }
+    .launch.recede .telemetry:hover,
+    .launch.recede .dossier.open:hover {
+      opacity: 1;
+      transition: opacity 0.2s ease;
+    }
   }
   .losses {
     position: absolute;

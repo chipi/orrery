@@ -77,6 +77,7 @@
   } from '$lib/data';
   import { localeFromPage, localHref } from '$lib/locale';
   import { missionDestToDataFolder } from '$lib/mission-dest';
+  import { missionDestLabel } from '$lib/mission-dest-label';
   import {
     auToMkm,
     distanceBetween,
@@ -388,7 +389,9 @@
     name: mission.name,
     agency: mission.agency ?? mission.agency_full ?? '',
     site: launchSiteName ?? launchProfile?.launchSite?.name ?? m.hud_launch_complex(),
-    destination: mission.arr_label ?? '',
+    // The destination's name, as the /missions cards write it (F6: `arr_label` is the arrival
+    // date, and the row read "2024-10-13").
+    destination: mission.dest ? missionDestLabel(mission.dest) : '',
     spacecraftId: mission.id,
     missionId: mission.id,
     launcherHeightM,

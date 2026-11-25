@@ -72,6 +72,7 @@ import { moonPeriodDays, select2dTargets } from '$lib/fly/fly-2d-targets';
 import { DEST_STYLE } from '$lib/three/fly-helio-scene';
 import { sensory } from '$lib/sensory/state.svelte';
 import { sepSlowmoFactor } from '$lib/orbital/ascent-cameras';
+import { portraitFov } from './phone-framing';
 import type { MissionTimeline } from '$lib/physics/transfer/mission-arc';
 import type {
   DestinationId,
@@ -1382,13 +1383,18 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
         camera.up.set(0, 1, 0);
       }
       camera.lookAt(flyCam.camTarget.x, flyCam.camTarget.y, flyCam.camTarget.z);
-      if (Math.abs(camera.fov - f.fovDeg) > 0.01) {
-        camera.fov = f.fovDeg;
+      const fov = portraitFov(f.fovDeg, camera.aspect);
+      if (Math.abs(camera.fov - fov) > 0.01) {
+        camera.fov = fov;
         camera.updateProjectionMatrix();
       }
-    } else if (Math.abs(camera.fov - baseFov) > 0.01) {
-      camera.fov = baseFov;
-      camera.updateProjectionMatrix();
+    } else {
+      // The cruise and cislunar frames are composed for landscape; a phone widens them (W6).
+      const fov = portraitFov(baseFov, camera.aspect);
+      if (Math.abs(camera.fov - fov) > 0.01) {
+        camera.fov = fov;
+        camera.updateProjectionMatrix();
+      }
     }
     // Mirror the live scene camera into $state for the debug plot
     // (DEV only — see debugCamWorld). Lets the 2D viewer trace the

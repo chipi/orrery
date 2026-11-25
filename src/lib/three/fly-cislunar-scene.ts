@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import { BoldArrow } from './bold-arrow';
+import { portraitFov } from './phone-framing';
 import { R_EARTH_KM, R_MOON_KM } from '$lib/orbital/cislunar/cislunar-geometry';
 
 /**
@@ -106,9 +107,17 @@ export const EARTH_SOI_KM = 924_000;
 /** Moon SoI radius (km). */
 export const MOON_SOI_KM = 66_100;
 
+/** The cislunar camera's landscape field of view (deg); a phone widens it (phone-framing.ts). */
+export const CISLUNAR_FOV = 55;
+
 export function buildCislunarScene(opts: CislunarSceneOptions): CislunarSceneHandles {
   const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(55, opts.aspect, 0.01, 4000);
+  const camera = new THREE.PerspectiveCamera(
+    portraitFov(CISLUNAR_FOV, opts.aspect),
+    opts.aspect,
+    0.01,
+    4000,
+  );
 
   // × Math.PI restores the r128 look under three r155+ physical lights (#203).
   scene.add(new THREE.AmbientLight(0xeeeeff, 0.7 * Math.PI));

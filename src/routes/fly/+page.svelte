@@ -13,6 +13,8 @@
   import { createFlyFrameRunner } from '$lib/three/fly-frame-runner';
   import { createFlyInputHandlers } from '$lib/three/fly-input-handlers';
   import { createFlySceneHost } from '$lib/three/fly-scene-host';
+  import { portraitFov } from '$lib/three/phone-framing';
+  import { CISLUNAR_FOV } from '$lib/three/fly-cislunar-scene';
   import { createRouteLifecycle } from '$lib/three/route-lifecycle';
   import {
     earthPos,
@@ -2981,6 +2983,7 @@
       camera.aspect = ratio;
       camera.updateProjectionMatrix();
       cislunarCamera.aspect = ratio;
+      cislunarCamera.fov = portraitFov(CISLUNAR_FOV, ratio);
       cislunarCamera.updateProjectionMatrix();
       renderer.setSize(container.clientWidth, container.clientHeight);
       // EffectComposer maintains its own back-buffer at canvas size;

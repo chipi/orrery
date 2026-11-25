@@ -27,6 +27,7 @@
 import * as THREE from 'three';
 import type { RendezvousBurn, ReturnProfile } from '$lib/fly/return-profile';
 import { plumeCone } from './engine-plume';
+import { portraitFit } from './phone-framing';
 
 export const MOON_R_M = 1_737_400;
 const FT = 0.3048;
@@ -652,9 +653,6 @@ function closeUpFrame(
   };
 }
 
-/** A phone's tall frame backs the camera off to keep the craft in shot. */
-const aspectK = (aspect: number) => (aspect < 1 ? 1 + 0.7 * (1 / aspect - 1) : 1);
-
 /** The camera of one scene time: a cut per beat (BEAT_SHOT), with moves inside each shot. */
 export function returnCamera(
   t: number,
@@ -662,7 +660,7 @@ export function returnCamera(
   pose: ReturnPose,
   rig: ReturnRig = DEFAULT_RIG,
 ): ReturnCamera {
-  const k = aspectK(aspect);
+  const k = portraitFit(aspect);
   const tip = tipFromAnchor(pose, rig);
   const drogue = rig.drogue.clone();
   switch (pose.shot) {

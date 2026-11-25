@@ -22,6 +22,7 @@ import { parkingOrbit } from '$lib/orbital/cislunar/cislunar-geometry';
 import type { FlightPhaseScene, ForceKey } from './flight-phase-scene';
 import { BoldArrow } from './bold-arrow';
 import { buildGlowTube } from './glow-line';
+import { portraitFov } from './phone-framing';
 import {
   CRAFT_ENLARGEMENT,
   craftScreenFraction,
@@ -102,9 +103,17 @@ function inclined(pt: { x: number; y: number; z: number }, incRad: number): THRE
   return new THREE.Vector3(pt.x, pt.z * s, pt.z * c);
 }
 
+/** The coast camera's landscape field of view (deg); a phone widens it (phone-framing.ts). */
+const COAST_FOV = 48;
+
 export function createLeoCoastScene(opts: LeoCoastSceneOptions): LeoCoastScene {
   const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(48, opts.aspect, 10, 200_000);
+  const camera = new THREE.PerspectiveCamera(
+    portraitFov(COAST_FOV, opts.aspect),
+    opts.aspect,
+    10,
+    200_000,
+  );
 
   const renderedLoops = Math.max(1, Math.min(LOOP_CAP, Math.round(opts.totalRevs)));
   const incRad = (opts.inclinationDeg * Math.PI) / 180;
@@ -119,7 +128,10 @@ export function createLeoCoastScene(opts: LeoCoastSceneOptions): LeoCoastScene {
   // eccentric orbit's width, which a circular LEO ring never needs.
   const camDist =
     eccentric && opts.aspect < 1
-      ? Math.max(rOrbit * 2.4, (rOrbit * 1.15) / (Math.tan((24 * Math.PI) / 180) * opts.aspect))
+      ? Math.max(
+          rOrbit * 2.4,
+          (rOrbit * 1.15) / (Math.tan((camera.fov * Math.PI) / 360) * opts.aspect),
+        )
       : rOrbit * 2.4;
   // The star shell lies beyond the camera at every distance (a star seen from outside the shell
   // was a big square) and the far plane beyond the shell.
@@ -498,6 +510,7 @@ export function createLeoCoastScene(opts: LeoCoastSceneOptions): LeoCoastScene {
 
   const setAspect = (aspect: number): void => {
     camera.aspect = aspect;
+    camera.fov = portraitFov(COAST_FOV, aspect);
     camera.updateProjectionMatrix();
   };
 

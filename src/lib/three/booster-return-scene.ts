@@ -40,6 +40,7 @@ import {
   setNewGlennBoosterPose,
 } from './showcase/new-glenn-booster';
 import { buildJacklyn } from './showcase/jacklyn';
+import { portraitFit } from './phone-framing';
 
 export { RETURN_HOLD_S, RETURN_LEAD_S, returnLauncherFor, returnWindow };
 export type { BoosterReturnLanding, ReturnLauncher };
@@ -238,7 +239,7 @@ export function returnCamera(
 ): ReturnCamera {
   // Distances are tuned on the 41.2 m Falcon booster; a taller one backs the camera off in step.
   const sc = spec.boosterH / RETURN_SPECS['falcon-9'].boosterH;
-  const k = (aspect < 1 ? 1 + 0.7 * (1 / aspect - 1) : 1) * sc;
+  const k = portraitFit(aspect) * sc;
   const [t0] = returnWindow(l);
   // Chase: 3/4 view, slowly orbiting, a little above the booster's middle.
   const phi = 0.6 + (t - t0) * 0.014;

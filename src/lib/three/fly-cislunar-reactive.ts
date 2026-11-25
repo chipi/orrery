@@ -3,6 +3,7 @@ import { buildInterplanetarySpacecraft } from '$lib/three/interplanetary-spacecr
 import { buildLanderCruiseCraft } from '$lib/three/lander-cruise-models';
 import { fitCraft, flyCraft, flyCraftSource, preloadFlyCraft } from '$lib/three/fly-craft';
 import { buildTubeFromPoints } from '$lib/three/glow-line';
+import { phaseIndexAt } from '$lib/orbital/sample-cislunar-spacecraft';
 import { onLayerChange } from '$lib/science-layers';
 import { isScienceLensOn, onScienceLensChange } from '$lib/science-lens';
 import {
@@ -310,7 +311,9 @@ export function buildCislunarReactiveOverlays(
       else if (met_days <= phase.start_met_days) progress = 0;
       else if (met_days >= phase.end_met_days) progress = 1;
       else progress = (met_days - phase.start_met_days) / span;
-      mat.uniforms.uProgress.value = progress;
+      // The line is drawn by point index; on a coast that runs ahead of time near perigee.
+      const last = phase.points.length - 1;
+      mat.uniforms.uProgress.value = last > 0 ? phaseIndexAt(phase, progress) / last : progress;
     }
   }
 
@@ -326,7 +329,7 @@ export function buildCislunarReactiveOverlays(
     const span = phase.end_met_days - phase.start_met_days;
     const t = span > 0 ? Math.max(0, Math.min(1, (met_days - phase.start_met_days) / span)) : 0;
     const last = phase.points.length - 1;
-    const f = t * last;
+    const f = phaseIndexAt(phase, t);
     const i = Math.min(last - 1, Math.max(0, Math.floor(f)));
     const frac = f - i;
     const a = phase.points[i];

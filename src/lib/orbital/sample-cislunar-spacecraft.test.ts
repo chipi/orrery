@@ -1,6 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { sampleCislunarSpacecraftPos, MOON_LOCAL_PHASE_TYPES } from './sample-cislunar-spacecraft';
 import type { CislunarPhase } from '$lib/orbital/cislunar/cislunar-geometry';
+import { buildCislunarTrajectory, translunarCoast } from '$lib/orbital/cislunar/cislunar-geometry';
 
 const TLI_COAST: CislunarPhase = {
   type: 'tli_coast',
@@ -96,5 +97,68 @@ describe('sampleCislunarSpacecraftPos', () => {
     expect(MOON_LOCAL_PHASE_TYPES.has('tli_coast')).toBe(false);
     expect(MOON_LOCAL_PHASE_TYPES.has('tei_coast')).toBe(false);
     expect(MOON_LOCAL_PHASE_TYPES.has('earth_orbit')).toBe(false);
+  });
+});
+
+// The coasts are drawn uniform in true anomaly, so a point near perigee covers far less time than
+// one near apogee. Placed index-linear in time, the craft lingered by Earth for most of the coast
+// (W6: Apollo 11 sat 10,000 km out a day after TLI).
+describe('sampleCislunarSpacecraftPos: a coast moves at the speed of its orbit', () => {
+  const pts = translunarCoast(
+    { x: 6700, y: 0, z: 0 },
+    { x: -378_560, y: 0, z: 66_750 }, // the Moon 170° round from the TLI point
+    110,
+    300,
+  );
+  const coast: CislunarPhase = {
+    type: 'tli_coast',
+    start_met_days: 0,
+    end_met_days: 3,
+    points: pts,
+  };
+  const r = (p: number) => {
+    const s = sampleCislunarSpacecraftPos(coast, p)!;
+    return Math.hypot(s.x, s.y, s.z);
+  };
+
+  it('is far out a third of the way through the coast, as Kepler has it', () => {
+    // Perigee to apogee of this ellipse: a third of the time is ~266,000 km out (E - e sin E).
+    expect(r(1 / 3)).toBeGreaterThan(200_000);
+  });
+
+  it('still starts at perigee and ends at apogee, moving outward the whole way', () => {
+    expect(r(0)).toBeCloseTo(6700, 0);
+    expect(r(1)).toBeGreaterThan(384_000);
+    let prev = 0;
+    for (let p = 0; p <= 1; p += 0.05) {
+      expect(r(p)).toBeGreaterThanOrEqual(prev);
+      prev = r(p);
+    }
+  });
+});
+
+describe('sampleCislunarSpacecraftPos: a waypoint path is placed by its own times', () => {
+  // Waypoints every 0.1 d near Earth, then every 0.5 d: the index runs ahead of time early on.
+  const met = [0, 0.1, 0.2, 0.3, 0.8, 1.3, 1.8, 2.3];
+  const wp = met.map(
+    (t, i) => [t, 10_000 + i * 40_000, 0, 5_000 * i] as [number, number, number, number],
+  );
+  const traj = buildCislunarTrajectory(
+    { source_tier: 'tier_2_published', waypoints_km: wp },
+    { dep_day_sim: 0, transit_days: 3, is_return_trip: false },
+  );
+  const coast = traj.phases.find((p) => p.type === 'tli_coast')!;
+
+  it('carries a MET for every drawn point', () => {
+    expect(coast.point_met_days?.length).toBe(coast.points.length);
+  });
+
+  it('puts the craft on the waypoint of the MET asked for', () => {
+    const span = coast.end_met_days - coast.start_met_days;
+    for (const k of [2, 4, 6]) {
+      const s = sampleCislunarSpacecraftPos(coast, (met[k] - coast.start_met_days) / span)!;
+      // The published path is rotated to the Moon's phase at departure; compare distances.
+      expect(Math.hypot(s.x, s.y, s.z)).toBeCloseTo(Math.hypot(wp[k][1], wp[k][2], wp[k][3]), -1);
+    }
   });
 });

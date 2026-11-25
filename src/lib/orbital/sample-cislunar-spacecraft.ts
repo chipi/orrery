@@ -42,6 +42,64 @@ export interface MoonFrameShift {
   moonRefPos: CislunarSamplePos;
 }
 
+/** Coasts drawn as Earth-focus conics, uniform in true anomaly (cislunar-geometry.ts). */
+const EARTH_FOCUS_COASTS = new Set<string>(['tli_coast', 'tei_coast']);
+
+const sweptAreas = new WeakMap<readonly CislunarSamplePos[], Float64Array>();
+
+/**
+ * The fractional point index the craft has reached at `phaseProgress` (0..1 of the phase's time).
+ * A phase with point times (a waypoint path) is placed by them. Otherwise an Earth-focus coast is drawn uniform in true anomaly, so its points are not evenly spaced in
+ * time: by Kepler's second law the time between two points is proportional to the area the
+ * radius sweeps between them, |r_i × r_i+1| / 2. Every other phase is index-linear.
+ */
+export function phaseIndexAt(phase: CislunarPhase, phaseProgress: number): number {
+  const pts = phase.points;
+  const last = pts.length - 1;
+  const p = Math.max(0, Math.min(1, phaseProgress));
+  if (last < 1) return 0;
+  const times = phase.point_met_days;
+  if (times && times.length === pts.length && times[last] > times[0]) {
+    const met = times[0] + p * (times[last] - times[0]);
+    return fractionalIndex(times, met);
+  }
+  if (!EARTH_FOCUS_COASTS.has(phase.type)) return p * last;
+  let cum = sweptAreas.get(pts);
+  if (!cum) {
+    cum = new Float64Array(pts.length);
+    for (let i = 1; i <= last; i++) {
+      const a = pts[i - 1];
+      const b = pts[i];
+      const cx = a.y * b.z - a.z * b.y;
+      const cy = a.z * b.x - a.x * b.z;
+      const cz = a.x * b.y - a.y * b.x;
+      const area = Math.hypot(cx, cy, cz);
+      // A segment through the focus sweeps no area and is not a conic: keep index-linear.
+      if (!(area > 0)) {
+        cum = new Float64Array(0);
+        break;
+      }
+      cum[i] = cum[i - 1] + area;
+    }
+    sweptAreas.set(pts, cum);
+  }
+  if (cum.length === 0) return p * last;
+  return fractionalIndex(cum, p * cum[last]);
+}
+
+/** Where `v` falls in the non-decreasing `xs`, as a fractional index. */
+function fractionalIndex(xs: ArrayLike<number>, v: number): number {
+  let lo = 0;
+  let hi = xs.length - 1;
+  while (hi - lo > 1) {
+    const mid = (lo + hi) >> 1;
+    if (xs[mid] <= v) lo = mid;
+    else hi = mid;
+  }
+  const seg = xs[hi] - xs[lo];
+  return lo + (seg > 0 ? Math.max(0, Math.min(1, (v - xs[lo]) / seg)) : 0);
+}
+
 /**
  * Sample the spacecraft position at fraction `phaseProgress` ∈ [0, 1]
  * through the active phase. Returns null when the phase has no
@@ -71,9 +129,9 @@ export function sampleCislunarSpacecraftPos(
     scY = pts[0].y;
     scZ = pts[0].z;
   } else {
-    // Clamp progress to [0, lastIdx]; floor for the segment start,
-    // frac for the interpolation.
-    const f = Math.max(0, Math.min(lastIdx, phaseProgress * lastIdx));
+    // The fractional index (time-correct on a coast); floor for the segment start, frac for
+    // the interpolation.
+    const f = phaseIndexAt(phase, phaseProgress);
     const i = Math.min(lastIdx - 1, Math.max(0, Math.floor(f)));
     const frac = f - i;
     const pa = pts[i];

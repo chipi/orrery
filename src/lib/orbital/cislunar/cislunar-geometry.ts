@@ -39,6 +39,9 @@ export interface CislunarPhase {
   start_met_days: number;
   end_met_days: number;
   points: Vec3Km[];
+  /** MET (days) of each point, where the source has it (a waypoint path): points are not evenly
+   *  spaced in time, so the craft is placed by these. */
+  point_met_days?: number[];
 }
 
 export interface CislunarTrajectory {
@@ -864,7 +867,8 @@ function buildFromWaypoints(
   if (published) {
     const phases = publishedPhases(waypoints, points, dep_day_sim, transit_days);
     const moon_track = waypoints.map(([metDays]) => moonEciPos(dep_day_sim + metDays));
-    for (const ph of phases) ph.points = smoothPhasePoints(ph.points);
+    attachPointTimes(phases, points, waypoints);
+    for (const ph of phases) smoothPhase(ph);
     return { phases, moon_track, closest_approach_km };
   }
 
@@ -1001,8 +1005,40 @@ function buildFromWaypoints(
 
   const moon_track: Vec3Km[] = waypoints.map(([metDays]) => moonEciPos(dep_day_sim + metDays));
 
-  for (const ph of phases) ph.points = smoothPhasePoints(ph.points);
+  // Hybrid (tier 1.5) waypoints are stamped evenly by index, not by when the craft was there
+  // (Apollo 11's sat 10,000 km out a day after TLI): their coasts are placed by Kepler's
+  // second law instead (sample-cislunar-spacecraft.ts). Only a published path carries times.
+  for (const ph of phases) smoothPhase(ph);
   return { phases, moon_track, closest_approach_km };
+}
+
+/** A waypoint coast's points are slices of the waypoint path: give each its waypoint's MET (a
+ *  point the builder made up, like a coast's first point at the Moon, takes the phase start). */
+function attachPointTimes(
+  phases: CislunarPhase[],
+  points: Vec3Km[],
+  waypoints: Array<[number, number, number, number]>,
+): void {
+  const metOf = new Map<Vec3Km, number>();
+  points.forEach((p, i) => metOf.set(p, waypoints[i][0]));
+  for (const ph of phases) {
+    if (ph.type !== 'tli_coast' && ph.type !== 'tei_coast') continue;
+    const t = ph.points.map((p, i) => metOf.get(p) ?? (i === 0 ? ph.start_met_days : NaN));
+    if (t.every((v, i) => Number.isFinite(v) && (i === 0 || v >= t[i - 1]))) ph.point_met_days = t;
+  }
+}
+
+/** Smooth a phase's points; its point times follow, linear within each authored segment. */
+function smoothPhase(ph: CislunarPhase): void {
+  const n = ph.points.length;
+  ph.points = smoothPhasePoints(ph.points);
+  const t = ph.point_met_days;
+  if (!t || ph.points.length === n) return;
+  const per = SMOOTH_SAMPLES_PER_SEGMENT;
+  const out = [t[0]];
+  for (let k = 0; k < n - 1; k++)
+    for (let j = 1; j <= per; j++) out.push(t[k] + ((t[k + 1] - t[k]) * j) / per);
+  ph.point_met_days = out.length === ph.points.length ? out : undefined;
 }
 
 /** The Moon's sphere of influence (km): inside it a published path is drawn Moon-relative. */

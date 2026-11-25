@@ -68,3 +68,15 @@ CoastScene, ReturnScene, DescentScene; cruise is the base canvas. The play clock
 
 Not covered by the inventory: the bodies of the 12 launch pool shots and the flyby composers, the
 `/dev/launch-director` review route, the e2e specs.
+
+## Picture sheets (2026-11-25)
+
+Review page for the operator: https://claude.ai/artifact/GvRdNiknULCEAx1AsqpA2z (launch: Apollo 11,
+Inspiration4, Vostok 1, Perseverance, STS-1, Starship Flight 5; cruise: Apollo 11, Perseverance,
+Voyager 2; descent: Apollo 11, Perseverance, Inspiration4; the way home: Apollo 11; phone strips).
+Seen in the frames, beyond the inventory: the cislunar coast reads empty on desktop (Earth and the
+Moon as dots, no craft); a bright vertical light column in the descent sky backdrop on Mars and
+Earth; Dragon's mains out of frame and no entry glow on the splashdown; the descent's opening wide
+shot shows no craft; Apollo 11's LM over black at 85% of the descent; the way-home caption reads
+"Docking approach" at 54 s during the close-up (not investigated). Seven calls put to the operator
+on the page.

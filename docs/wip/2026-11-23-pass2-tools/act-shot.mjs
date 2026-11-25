@@ -32,6 +32,8 @@ async function shoot(mission, [tag, vw, vh]) {
   await page.waitForTimeout(5000);
   // The mission card and the performance hint cover the scene: dismiss both.
   await page.keyboard.press('Escape').catch(() => {});
+  await page.getByRole('button', { name: /proceed to simulation/i }).click({ timeout: 3000 }).catch(() => {});
+  await page.waitForTimeout(1500);
   await page.getByRole('button', { name: /not now/i }).click({ timeout: 1500 }).catch(() => {});
   for (const item of spec.split(',')) {
     const v = Number(item.slice(1));

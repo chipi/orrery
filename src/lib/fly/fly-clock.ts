@@ -135,7 +135,50 @@ export function descentSeparationTimes(summary: DescentSummary | null): number[]
 /** A play clock: advances its act's clock by `wallDt` real seconds at the user's speed (F8). */
 export interface PlayClock {
   advance(t: number, wallDt: number, speed: number): number;
+  /** The act's band of the master bar laid out by watching time at the default pill (F8 phase 2,
+   *  W6 2026-11-25), so the playhead moves evenly while the clock runs fast and slow. */
+  layout: ScrubLayout;
 }
+
+/** A monotone map between an act's clock and its position on the bar, in wall seconds. */
+export interface ScrubLayout {
+  /** Wall seconds the whole act takes at the default pill. */
+  total: number;
+  toBar(t: number): number;
+  fromBar(w: number): number;
+}
+
+const LAYOUT_SAMPLES = 2000;
+
+/** Tabulate `wall(0, t)` over [0, dur] and interpolate both ways. */
+export function wallTimeLayout(dur: number, wall: (a: number, b: number) => number): ScrubLayout {
+  const n = LAYOUT_SAMPLES;
+  const ts = new Float64Array(n + 1);
+  const ws = new Float64Array(n + 1);
+  for (let i = 1; i <= n; i++) {
+    ts[i] = (dur * i) / n;
+    ws[i] = ws[i - 1] + Math.max(0, wall(ts[i - 1], ts[i]));
+  }
+  const total = ws[n];
+  if (!(dur > 0) || !(total > 0)) return { total: dur, toBar: (t) => t, fromBar: (w) => w };
+  const interp = (xs: Float64Array, ys: Float64Array, x: number) => {
+    if (x <= xs[0]) return ys[0];
+    if (x >= xs[n]) return ys[n];
+    let lo = 0;
+    let hi = n;
+    while (hi - lo > 1) {
+      const mid = (lo + hi) >> 1;
+      if (xs[mid] <= x) lo = mid;
+      else hi = mid;
+    }
+    const seg = xs[hi] - xs[lo];
+    return ys[lo] + (seg > 0 ? ((ys[hi] - ys[lo]) * (x - xs[lo])) / seg : 0);
+  };
+  return { total, toBar: (t) => interp(ts, ws, t), fromBar: (w) => interp(ws, ts, w) };
+}
+
+/** The launch pill the bar's ascent band is laid out at (ASCENT_SPEED_MULTIPLIERS' default). */
+const DEFAULT_LAUNCH_SPEED = 5;
 
 /** The launch act's activity clock over mission time (`launchT`): the liftoff and the first
  *  stage at the pill speed, the upper-stage burns and coasts up to 30× that, the separations
@@ -143,13 +186,18 @@ export interface PlayClock {
 export function launchPlayClock(
   summary: AscentSummary | null,
   sepTimes: readonly number[],
+  durationS?: number,
 ): PlayClock | null {
   if (!summary || summary.states.length < 2) return null;
   const c = buildActivityClock(
     summary.states.map((st) => ({ t: st.t, altM: st.altKm * 1000, speedMs: st.speedKms * 1000 })),
     sepTimes,
   );
-  return { advance: (t, dt, sp) => c.advance(t, dt, sp) };
+  const dur = durationS ?? summary.states[summary.states.length - 1].t;
+  return {
+    advance: (t, dt, sp) => c.advance(t, dt, sp),
+    layout: wallTimeLayout(dur, (a, b) => c.wallSeconds(a, b, DEFAULT_LAUNCH_SPEED)),
+  };
 }
 
 /** An Earth entry at the default descent pill (3×) plays in at most this many real seconds: the
@@ -157,9 +205,8 @@ export function launchPlayClock(
 export const EARTH_ENTRY_PLAY_CAP_S = 35;
 const DEFAULT_DESCENT_SPEED = 3;
 
-/** The descent act's activity clock. It runs on trajectory time and returns raw scrubber time
- *  (`descentT`), so the scrubber keeps its warped layout (descent-timewarp.ts) while the play
- *  rate follows what happens. An Earth entry is sped up evenly to fit `EARTH_ENTRY_PLAY_CAP_S`. */
+/** The descent act's activity clock. It runs on trajectory time and returns raw descent time
+ *  (`descentT`, descent-timewarp.ts); its `layout` places that on the bar by watching time. An Earth entry is sped up evenly to fit `EARTH_ENTRY_PLAY_CAP_S`. */
 export function descentPlayClock(summary: DescentSummary | null): PlayClock | null {
   if (!summary || summary.states.length < 2) return null;
   const dur = summary.totalDurationS;
@@ -185,6 +232,13 @@ export function descentPlayClock(summary: DescentSummary | null): PlayClock | nu
         dur,
         unwarpDescentTime(c.advance(warpDescentTime(raw, dur, tB), dt, sp * k), dur, tB),
       ),
+    layout: wallTimeLayout(dur, (a, b) =>
+      c.wallSeconds(
+        warpDescentTime(a, dur, tB),
+        warpDescentTime(b, dur, tB),
+        DEFAULT_DESCENT_SPEED * k,
+      ),
+    ),
   };
 }
 

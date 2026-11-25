@@ -1884,7 +1884,9 @@
   let descentSepTimes = $derived(descentSeparationTimes(descentSummaryFly));
   // F8: the activity clocks — each act plays fast where little changes, at the pill speed where
   // it does, in slow motion at the separations.
-  let launchPlayClockFly = $derived(launchPlayClock(launchSummaryFly, launchSepTimes));
+  let launchPlayClockFly = $derived(
+    launchPlayClock(launchSummaryFly, launchSepTimes, launchDurationS),
+  );
   let descentPlayClockFly = $derived(descentPlayClock(descentSummaryFly));
   // A direct insertion's coast to OMS-2 plays compressed (launch-coast-warp): the master bar's
   // ascent band is laid out on the play clock, `launchT` stays mission time.
@@ -1892,17 +1894,34 @@
     launchSummaryFly ? launchCoastWarp(launchSummaryFly.events) : null,
   );
   let launchSceneDurationS = $derived(toSceneT(launchCoastWarpFly, launchDurationS));
+  // F8 phase 2 (W6): the bar's ascent and descent bands are laid out by watching time at the
+  // default pill, so the playhead moves evenly while the activity clock speeds up and slows down.
+  // Without a play clock the ascent keeps the coast-warp layout and the descent its raw time.
+  const toAscentBar = (t: number) =>
+    launchPlayClockFly ? launchPlayClockFly.layout.toBar(t) : toSceneT(launchCoastWarpFly, t);
+  const fromAscentBar = (w: number) =>
+    launchPlayClockFly ? launchPlayClockFly.layout.fromBar(w) : toMissionT(launchCoastWarpFly, w);
+  let ascentBarS = $derived(
+    launchPlayClockFly ? launchPlayClockFly.layout.total : launchSceneDurationS,
+  );
+  const toDescentBar = (t: number) =>
+    descentPlayClockFly ? descentPlayClockFly.layout.toBar(t) : t;
+  const fromDescentBar = (w: number) =>
+    descentPlayClockFly ? descentPlayClockFly.layout.fromBar(w) : w;
+  let descentBarS = $derived(
+    descentPlayClockFly ? descentPlayClockFly.layout.total : descentDurationS,
+  );
   // Compressive coast-band width (RFC-034 §13): a 1-orbit hop and an 84-day
   // marathon shouldn't own the same slice of the scrubber (see fly-clock).
   let coastAscentFrac = $derived(coastAscentFraction(!!earthCoast, coastDurationDays));
   let masterTimeline: JourneyTimeline = $derived(
     makeTimeline(
-      launchSceneDurationS,
+      ascentBarS,
       // Earth-orbit missions: the "cruise" act IS the orbit-coast, so its duration
       // is the on-orbit time (days). Interplanetary: the transfer arc.
       earthCoast ? Math.max(0.01, coastDurationDays) : Math.max(1, arcTotalDays),
       coastAscentFrac,
-      descentDurationS,
+      descentBarS,
       // The descent owns a wider band of the master scrubber (was 0.1) so the
       // terminal EDL — parachute, skycrane, touchdown — is actually reachable by
       // scrubbing, not crushed into a sliver next to the huge cruise.
@@ -1927,9 +1946,9 @@
     masterScrubFraction({
       timeline: masterTimeline,
       live: showLaunch ? 'ascent' : showDescent ? 'descent' : showCoast ? 'coast' : 'cruise',
-      launchT: toSceneT(launchCoastWarpFly, launchT),
-      descentT,
-      launchDurationS: launchSceneDurationS,
+      launchT: toAscentBar(launchT),
+      descentT: toDescentBar(descentT),
+      launchDurationS: ascentBarS,
       cruiseDays: earthCoast ? coastDurationDays : arcTotalDays,
       coastMetDays,
       simDay,
@@ -1957,11 +1976,14 @@
               launchProfile ? landingsFor(launchProfile, mission.id) : [],
             ).map((b) => ({
               label: hudLabel(b.label),
-              t: toSceneT(launchCoastWarpFly, b.t),
+              t: toAscentBar(b.t),
             }))
           : [],
         descentBeats: descentSummaryFly
-          ? descentPlanBeats(descentSummaryFly).map((b) => ({ label: hudLabel(b.label), t: b.t }))
+          ? descentPlanBeats(descentSummaryFly).map((b) => ({
+              label: hudLabel(b.label),
+              t: toDescentBar(b.t),
+            }))
           : [],
         milestones:
           arcTotalDays > 0
@@ -2025,11 +2047,11 @@
       // Scrubbing back into the ascent re-mounts LaunchScene fresh (resets any
       // completed warp) and drives it to the scrubbed MET.
       dispatchPhase({ type: 'scrubTo', phase: 'ascent' });
-      launchT = toMissionT(launchCoastWarpFly, target.launchT);
+      launchT = fromAscentBar(target.launchT);
     } else if (target.phase === 'descent') {
       // Scrubbing into the tail enters the descent act at the scrubbed EDL time.
       dispatchPhase({ type: 'scrubTo', phase: 'descent' });
-      descentT = target.descentT;
+      descentT = fromDescentBar(target.descentT);
     } else if (target.phase === 'coast') {
       // Cruise band of a Tier-1 Earth-orbit flight = the orbit-coast act (the
       // reducer maps the cruise band → coast when earthCoast is set).
@@ -4652,7 +4674,7 @@
                 mk.seek.phase === 'descent'
                   ? formatDescentClock(mk.seek.t)
                   : mk.seek.phase === 'ascent'
-                    ? formatAscentClock(toMissionT(launchCoastWarpFly, mk.seek.t))
+                    ? formatAscentClock(fromAscentBar(mk.seek.t))
                     : ''}
               <button
                 type="button"

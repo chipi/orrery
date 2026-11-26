@@ -197,7 +197,7 @@
     type HotspotMode,
   } from '$lib/hotspot-lod-dispatcher';
   import { createSurfaceDebugInfo, type SurfaceDebugInfo } from '$lib/surface-scene/debug-info';
-  import type { SurfaceSceneConfig } from '$lib/surface-scene/types';
+  import type { LanderModelBuilder, SurfaceSceneConfig } from '$lib/surface-scene/types';
   import { statusTone } from '$lib/surface-scene/status-tone';
   import SurfaceFlatPatch from '$lib/surface-scene/SurfaceFlatPatch.svelte';
   import AnnotationRings from '$lib/surface-scene/AnnotationRings.svelte';
@@ -368,6 +368,15 @@
     barStart,
     entityLinks = [],
   }: Props = $props();
+  // The globe's models (types.ts §loadSceneModels) load from here, as the scene is created; the
+  // hotspot builders are registered before the markers that read them are built.
+  let landerModelBuilder: LanderModelBuilder | null = null;
+  untrack(() => config.loadSceneModels())
+    .then((models) => {
+      models.registerHotspotBuilders();
+      landerModelBuilder = models.landerModelBuilder;
+    })
+    .catch(dataLoadFailed);
 
   // AR (#150): earth/moon/mars have tabletop AR scenes. `body` matches
   // ArSceneType for those three; null for any other body → no AR button.
@@ -2872,10 +2881,6 @@
     // back the original cap. Selected site keeps full maxTier; others
     // collapse to ≤ Tier 1 so neighbouring discs don't fight.
     const originalMaxTier = new Map<string, 0 | 1 | 2 | 3>();
-    // Register the Tier 1 builders for ids the dispatcher might need
-    // to lazy-instantiate (bundled in $lib/surface-scene/ for shared
-    // route plumbing — issue #283 Slice 2).
-    config.registerHotspotBuilders();
     // Preload the Image Pipeline v2 manifest so Tier 2 patch URLs are
     // ready by the time the user zooms in. Soft-fails to an empty
     // manifest if the file isn't deployed yet — patches fall back to
@@ -2903,7 +2908,10 @@
       scene,
       planetMesh,
       planetRadius,
-      config,
+      config: {
+        landerModelBuilder: (...a) => landerModelBuilder!(...a),
+        tier2PatchScale: config.tier2PatchScale,
+      },
       getSites: () => sites,
       getTraverses: () => traverses,
       markers,
@@ -4105,7 +4113,7 @@
         // Rebuild markers if the site list changed (cheap — happens once
         // when the data loads). Same trigger covers the orbital ring
         // rebuild (8 lunar orbiters added in v0.4 — Issue #40 / PRD-009).
-        if (surfaceSiteCount !== markers.length) rebuildMarkers();
+        if (landerModelBuilder && surfaceSiteCount !== markers.length) rebuildMarkers();
         if (orbiterSites.length !== orbitalMarkers.length) rebuildOrbitalMarkers();
         if (pendingOrbiterFace) {
           const id = pendingOrbiterFace;

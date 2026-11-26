@@ -31,7 +31,7 @@ import {
   buildHotspotSurfacePatch,
   REGIONAL_PATCH_DIAMETER_WORLD_UNITS,
 } from '$lib/hotspot-surface-patch';
-import type { SurfaceSceneConfig } from '$lib/surface-scene/types';
+import type { LanderModelBuilder, SurfaceSceneConfig } from '$lib/surface-scene/types';
 import type { SurfaceSite, Traverse } from '$types/surface-site';
 
 // Hover-halo factory — bolder + glowing variant of the selection
@@ -210,7 +210,7 @@ export interface SurfaceMarkersContext {
   scene: THREE.Scene;
   planetMesh: THREE.Object3D;
   planetRadius: number;
-  config: Pick<SurfaceSceneConfig, 'landerModelBuilder' | 'tier2PatchScale'>;
+  config: { landerModelBuilder: LanderModelBuilder } & Pick<SurfaceSceneConfig, 'tier2PatchScale'>;
   getSites: () => SurfaceSite[];
   getTraverses: () => Record<string, Traverse>;
   markers: MarkerObj[];

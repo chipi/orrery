@@ -13,13 +13,8 @@
   import { base } from '$app/paths';
   import * as m from '$lib/paraglide/messages';
   import VisuallyHiddenH1 from '$lib/components/VisuallyHiddenH1.svelte';
-  import type { SurfaceSceneConfig, LanderModelBuilder } from '$lib/surface-scene/types';
-  import { buildVenusLanderModel } from '$lib/venus-lander-models';
-  import { registerVenusHotspotBuilders } from '$lib/surface-scene/register-venus-hotspot-builders';
+  import type { SurfaceSceneConfig } from '$lib/surface-scene/types';
   import { getVenusSites, getVenusSiteGallery } from '$lib/data';
-
-  const venusLanderBuilder: LanderModelBuilder = (siteId, missionType, color, agency) =>
-    buildVenusLanderModel(siteId, missionType, color, agency);
 
   const VENUS_CONFIG: SurfaceSceneConfig = {
     planet: 'venus',
@@ -37,9 +32,9 @@
     // Venus rotates retrograde with a ~177° obliquity (effectively upside-down).
     axialTiltDeg: 177.4,
     initialCamR: 150,
-    landerModelBuilder: venusLanderBuilder,
+    loadSceneModels: () =>
+      import('$lib/surface-scene/venus-scene-models').then((s) => s.sceneModels),
     twoDMode: 'equirectangular',
-    registerHotspotBuilders: registerVenusHotspotBuilders,
     // Warm amber ambient hints at the Venusian sky.
     ambientColor: 0xaa7744,
     bodyTintCss: '#e0a84c',

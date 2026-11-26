@@ -17,19 +17,11 @@
  * @see {@link file://../../lib/surface-scene/README.md}
  * @see {@link file://../../../docs/adr/ADR-072.md}
  */
-import type { SurfaceSceneConfig, LanderModelBuilder } from '$lib/surface-scene/types';
-import { buildLaunchpadModel } from '$lib/earth-launchpad-models';
-import { registerEarthHotspotBuilders } from '$lib/surface-scene/register-earth-hotspot-builders';
+import type { SurfaceSceneConfig } from '$lib/surface-scene/types';
 import { getEarthObjects } from '$lib/data';
 import * as m from '$lib/paraglide/messages';
 
 const MOON_DISTANCE_KM = 384400;
-
-// buildLaunchpadModel already matches the canonical
-// (siteId, missionType, color, agency) LanderModelBuilder signature,
-// so no adapter is needed. Cast preserves the import-time check that
-// the contract still holds.
-const earthLaunchpadBuilder: LanderModelBuilder = buildLaunchpadModel;
 
 export function makeEarthLaunchSitesConfig(textureBaseUrl: string): SurfaceSceneConfig {
   return {
@@ -53,13 +45,13 @@ export function makeEarthLaunchSitesConfig(textureBaseUrl: string): SurfaceScene
     },
     // Earth's real axial obliquity drives seasons / day-night terminator.
     axialTiltDeg: 23.4,
-    landerModelBuilder: earthLaunchpadBuilder,
+    loadSceneModels: () =>
+      import('$lib/surface-scene/earth-scene-models').then((s) => s.sceneModels),
     // Earth rotates — equirectangular is the honest 2D projection
     // (same convention as Mars). Moon would use 'lunar-polar-discs'
     // because tidal lock makes a single equirectangular Moon map
     // imply rotation that doesn't physically exist.
     twoDMode: 'equirectangular',
-    registerHotspotBuilders: registerEarthHotspotBuilders,
     // Slight cyan-blue ambient tint hints at Earth's atmospheric
     // palette (consolidated intensity 0.8 lives inside SurfaceScene
     // per ADR-072 §Drift 5).

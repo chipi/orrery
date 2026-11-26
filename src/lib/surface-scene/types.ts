@@ -88,6 +88,14 @@ export type LanderModelBuilder = (
  */
 export type HotspotBuilderRegistrar = () => void;
 
+/** A globe's models, loaded on demand (`SurfaceSceneConfig.loadSceneModels`). */
+export interface SceneModels {
+  /** Per-planet mission-specific 3D glyph builder. */
+  landerModelBuilder: LanderModelBuilder;
+  /** Per-planet Tier 1 hotspot model builder registration bundle. */
+  registerHotspotBuilders: HotspotBuilderRegistrar;
+}
+
 /**
  * Earth-specific orbital layer config (#290 — unify /earth so the
  * route uses SurfaceScene as the base, with orbital subsystems
@@ -256,16 +264,16 @@ export interface SurfaceSceneConfig {
    */
   axialTiltDeg: number;
 
-  /** Per-planet mission-specific 3D glyph builder */
-  landerModelBuilder: LanderModelBuilder;
+  /**
+   * Loads the globe's models: the per-mission marker glyphs and the hotspot builders
+   * (`<body>-scene-models.ts`). Every globe loads them on demand the same way: SurfaceScene
+   * starts this as the scene is created, alongside the site list, and builds the markers once
+   * both are in (route budget).
+   */
+  loadSceneModels: () => Promise<SceneModels>;
 
   /** 2D fallback projection convention */
   twoDMode: SurfaceTwoDMode;
-
-  /**
-   * Per-planet Tier 1 hotspot model builder registration bundle.
-   */
-  registerHotspotBuilders: HotspotBuilderRegistrar;
 
   /**
    * Ambient-light tint hints at body palette (slight blue for Moon

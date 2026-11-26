@@ -21,10 +21,8 @@
   import { page } from '$app/state';
   import { goto } from '$app/navigation';
   import { base } from '$app/paths';
-  import type { SurfaceSceneConfig, LanderModelBuilder } from '$lib/surface-scene/types';
+  import type { SurfaceSceneConfig } from '$lib/surface-scene/types';
   import type { OrbitRegime } from '$types/orbit-regime';
-  import { buildMarsLanderModel } from '$lib/mars-lander-models';
-  import { registerMarsHotspotBuilders } from '$lib/surface-scene/register-mars-hotspot-builders';
   import {
     getMarsSites,
     getMarsSiteGallery,
@@ -41,12 +39,6 @@
   // The audio-tour test (src/lib/audio-tour.test.ts) scans this file
   // for the literal substring `mars-select-` — kept in this comment
   // and on each TourAnchors button below.
-
-  // Mars's native builder takes (siteId, missionType, agency, color) —
-  // adapter reorders to the canonical (siteId, missionType, color, agency)
-  // signature (see types.ts §LanderModelBuilder).
-  const marsLanderBuilder: LanderModelBuilder = (siteId, missionType, color, agency) =>
-    buildMarsLanderModel(siteId, missionType, agency, color);
 
   // Bulk-load the four documented rover traverses in parallel; null
   // entries (missing JSON) silently filtered out so missing data
@@ -119,9 +111,9 @@
       },
     },
     initialCamR: 150,
-    landerModelBuilder: marsLanderBuilder,
+    loadSceneModels: () =>
+      import('$lib/surface-scene/mars-scene-models').then((s) => s.sceneModels),
     twoDMode: 'equirectangular',
-    registerHotspotBuilders: registerMarsHotspotBuilders,
     // Slight-red ambient tint hints at Martian palette (consolidated
     // intensity 0.8 lives inside SurfaceScene per ADR-072 §Drift 5).
     ambientColor: 0x886655,

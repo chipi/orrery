@@ -21,8 +21,6 @@
   import { base } from '$app/paths';
   import type { SurfaceSceneConfig } from '$lib/surface-scene/types';
   import type { OrbitRegime } from '$types/orbit-regime';
-  import { buildMoonLanderModel } from '$lib/moon-lander-models';
-  import { registerMoonHotspotBuilders } from '$lib/surface-scene/register-moon-hotspot-builders';
   import {
     getMoonSites,
     getMoonSiteGallery,
@@ -116,9 +114,9 @@
     // Moon's ~0° obliquity (1.5° in reality, effectively zero here).
     axialTiltDeg: 0,
     initialCamR: 150,
-    landerModelBuilder: buildMoonLanderModel,
+    loadSceneModels: () =>
+      import('$lib/surface-scene/moon-scene-models').then((s) => s.sceneModels),
     twoDMode: 'lunar-polar-discs',
-    registerHotspotBuilders: registerMoonHotspotBuilders,
     // Slight-blue ambient tint hints at lunar palette (consolidated
     // intensity 0.8 lives inside SurfaceScene per ADR-072 §Drift 5).
     ambientColor: 0x666688,

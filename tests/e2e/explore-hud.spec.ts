@@ -381,7 +381,9 @@ test.describe('/explore scale picker: the ladder stays on screen', () => {
     );
   });
 
-  test('opening a panel moves the row only for a docked drawer, never for a bottom sheet', async ({
+  // Since F1 (2026-11-25) the navigator row is top-left at every scale: a drawer docks on the
+  // right, so opening a panel never moves the row, and a docked drawer stops short of it.
+  test('opening a panel never moves the row, and a docked drawer stays clear of it', async ({
     page,
   }) => {
     test.slow();
@@ -397,11 +399,11 @@ test.describe('/explore scale picker: the ladder stays on screen', () => {
     await page.waitForTimeout(600);
     const after = (await row.boundingBox())!;
     const cover = await dockedCover(page);
-    if (cover === 0) {
-      expect(Math.abs(after.x - before.x)).toBeLessThanOrEqual(1);
-    } else {
-      expect(after.x, 'beside a docked drawer the row moves left, by its width').toBeLessThan(
-        before.x - cover + 20,
+    expect(Math.abs(after.x - before.x)).toBeLessThanOrEqual(1);
+    if (cover > 0) {
+      const vw = page.viewportSize()!.width;
+      expect(after.x + after.width, 'the docked drawer stops short of the row').toBeLessThanOrEqual(
+        vw - cover,
       );
     }
     expect(Math.abs(after.y - before.y)).toBeLessThanOrEqual(1);

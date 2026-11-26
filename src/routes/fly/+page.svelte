@@ -1977,12 +1977,14 @@
             ).map((b) => ({
               label: hudLabel(b.label),
               t: toAscentBar(b.t),
+              actT: b.t,
             }))
           : [],
         descentBeats: descentSummaryFly
           ? descentPlanBeats(descentSummaryFly).map((b) => ({
               label: hudLabel(b.label),
               t: toDescentBar(b.t),
+              actT: b.t,
             }))
           : [],
         milestones:
@@ -2018,6 +2020,9 @@
     }
     isPlaying = false;
     applyScrubTarget(masterScrubTarget(mk.pct / 100, masterTimeline, !!earthCoast));
+    // Land on the beat itself, not a hair before it (the bar layout does not round-trip exactly).
+    if (mk.seek.phase === 'ascent' && mk.seek.actT != null && showLaunch) launchT = mk.seek.actT;
+    if (mk.seek.phase === 'descent' && mk.seek.actT != null && showDescent) descentT = mk.seek.actT;
   }
   function masterTogglePlay() {
     if (showLaunch || showDescent) {

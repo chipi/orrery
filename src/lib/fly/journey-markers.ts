@@ -9,11 +9,13 @@ import { pointToScrubber, type JourneyTimeline } from '$lib/orbital/ascent-clock
 
 export type JourneyMarkerKind = 'ascent' | 'milestone' | 'stage' | 'descent';
 
-/** Where a click on a marker seeks to. */
+/** Where a click on a marker seeks to. `t` is bar seconds; `actT`, when given, is the beat's
+ *  exact time on the act's own clock (the bar's watching-time layout does not round-trip exactly,
+ *  so a seek through the bar alone can land just before the beat). */
 export type JourneySeek =
-  | { phase: 'ascent'; t: number }
+  | { phase: 'ascent'; t: number; actT?: number }
   | { phase: 'cruise'; metDays: number }
-  | { phase: 'descent'; t: number };
+  | { phase: 'descent'; t: number; actT?: number };
 
 export interface JourneyMarker {
   id: string;
@@ -32,10 +34,10 @@ export interface JourneyMarkerInput {
   /** The master timeline once a launch act is loaded; null on the cruise-only bar. */
   timeline: JourneyTimeline | null;
   arcTotalDays: number;
-  /** Ascent beats, `t` in ascent seconds. Ignored without a timeline. */
-  ascentBeats: Array<{ label: string; t: number }>;
+  /** Ascent beats, `t` in ascent bar seconds, `actT` the act's own time. Ignored without a timeline. */
+  ascentBeats: Array<{ label: string; t: number; actT?: number }>;
   /** Descent beats, `t` in raw scrubber (warped-clock) seconds. Ignored without a descent tail. */
-  descentBeats: Array<{ label: string; t: number }>;
+  descentBeats: Array<{ label: string; t: number; actT?: number }>;
   milestones: Array<{ id: string; label: string; metDays: number; description?: string }>;
   stages: Array<{ id: string; label: string; metDays: number }>;
 }
@@ -69,7 +71,7 @@ export function journeyMarkers(i: JourneyMarkerInput): JourneyMarker[] {
         kind: 'ascent',
         pct: pointToScrubber({ phase: 'ascent', ascentT: b.t, cruiseMetDays: 0 }, tl) * 100,
         label: b.label,
-        seek: { phase: 'ascent', t: b.t },
+        seek: { phase: 'ascent', t: b.t, actT: b.actT },
       }),
     );
     if (tl.descentScrubberFraction > 0 && tl.descentDurationS > 0) {
@@ -88,7 +90,7 @@ export function journeyMarkers(i: JourneyMarkerInput): JourneyMarker[] {
               tl,
             ) * 100,
           label: b.label,
-          seek: { phase: 'descent', t: b.t },
+          seek: { phase: 'descent', t: b.t, actT: b.actT },
         }),
       );
     }

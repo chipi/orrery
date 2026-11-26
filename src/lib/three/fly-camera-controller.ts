@@ -188,6 +188,8 @@ export function createFlyCameraController(deps: FlyCameraDeps) {
   // Null outside those windows. postArrivalActive: the window is after the arrival, so the
   // epilogue waits.
   let passShip: { x: number; y: number; z: number } | null = null;
+  // The flown-by body's scene position during a flyby window, else null (the hero keeps it in frame).
+  let flybyBody: THREE.Vector3 | null = null;
   let postArrivalActive = false;
   // Previous frame's shot kind — a change is a CUT (snap); same kind
   // smooths within the shot so the chase/depart don't jitter.
@@ -302,6 +304,7 @@ export function createFlyCameraController(deps: FlyCameraDeps) {
     montageShotFrame = null;
     montageShotKind = null;
     passShip = null;
+    flybyBody = null;
     postArrivalActive = false;
     helioHandles.setEncounterBody(null);
     const sc = spacecraftPos(
@@ -454,6 +457,7 @@ export function createFlyCameraController(deps: FlyCameraDeps) {
               : destinationPos(deps.getSimDay(), flyby.id);
           bodyScene = new THREE.Vector3(bodyPos.x * SCALE_3D, 0, bodyPos.z * SCALE_3D);
         }
+        flybyBody = bodyScene;
         sub = `flyby-${activeFlybyMet}-${encounter && encounterPos ? encounter.id : flyby.id}`;
         // Secondary-flyby destinationMesh swap. The 8 main planets
         // (mercury..neptune) plus Earth render via context meshes
@@ -1247,6 +1251,9 @@ export function createFlyCameraController(deps: FlyCameraDeps) {
     },
     get montageShotKind() {
       return montageShotKind;
+    },
+    get flybyBody() {
+      return flybyBody;
     },
     get passShip() {
       return passShip;

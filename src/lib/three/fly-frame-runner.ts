@@ -20,7 +20,14 @@ import {
   findActiveBurn,
   plumeScale,
 } from '$lib/fly/fly-frame-burn';
-import { clampToFrame, heroShipScale } from '$lib/fly/hero-ship-frame';
+import {
+  clampToFrame,
+  clearOfBody,
+  inFrame as ndcInFrame,
+  heroShipScale,
+  HERO_SHIP_FRAME_FRAC,
+} from '$lib/fly/hero-ship-frame';
+import { ARRIVAL_SMALL_BODY_RADIUS } from '$lib/orbital/flyby-camera-plan';
 import {
   CISLUNAR_REBUILD_THRESHOLD,
   CISLUNAR_TUBE_BOUNDS,
@@ -1643,9 +1650,26 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
       // The hero shot sizes the ship by the frame instead and keeps it inside it (hero-ship-frame).
       if (flyCam.montageShotKind == null || flyCam.montageShotKind === 'hero') {
         camera.updateMatrixWorld();
+        // A small body the ship-led rig leaves behind a panel (Halley for Giotto, Dinkinesh and
+        // Donaldjohanson for Lucy): look between the ship and the body so both are in frame.
+        const body = flyCam.flybyBody;
+        if (body && !ndcInFrame(body.clone().project(camera))) {
+          camera.lookAt(scSprite.position.clone().lerp(body, 0.5));
+          camera.updateMatrixWorld();
+        }
         const ndc = scSprite.position.clone().project(camera);
+        // Beside a small body, never in front of it (render radius under 1.5: comets, asteroids).
+        if (body && bodyR < ARRIVAL_SMALL_BODY_RADIUS) {
+          const b = body.clone().project(camera);
+          const tanHalf = Math.tan((camera.fov * Math.PI) / 360);
+          const rNdc = bodyR / (camera.position.distanceTo(body) * tanHalf);
+          const off = clearOfBody(ndc, b, rNdc, HERO_SHIP_FRAME_FRAC * 0.6, camera.aspect);
+          if (off) ndc.set(off.x, off.y, off.z);
+        }
         const inFrame = clampToFrame(ndc);
-        if (inFrame) scSprite.position.set(inFrame.x, inFrame.y, inFrame.z).unproject(camera);
+        scSprite.position
+          .copy(inFrame ? new THREE.Vector3(inFrame.x, inFrame.y, inFrame.z) : ndc)
+          .unproject(camera);
         if (helioMission.scModel) helioMission.scModel.position.copy(scSprite.position);
         const dist = camera.position.distanceTo(scSprite.position);
         const unit = helioMission.scModel?.userData.unitSize as number | undefined;

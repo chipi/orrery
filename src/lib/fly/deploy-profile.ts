@@ -107,7 +107,7 @@ export function isValidDeployProfile(d: unknown): d is DeployProfileRaw {
     [release, 0],
     ...sep.map((b) => [parseGet(b.met)!, b.burnS as number] as [number, number]),
     ...[us.stage1, us.stage2, ...(pam ? [pam] : [])].map((b) => {
-      const r = b as Record<string, unknown>;
+      const r = b as unknown as Record<string, unknown>;
       return [parseGet(r.met)!, r.burnS as number] as [number, number];
     }),
   ];

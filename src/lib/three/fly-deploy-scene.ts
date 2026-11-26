@@ -41,7 +41,7 @@ export const DT = {
   release: 23,
   separation: 31,
   separationEnd: 34,
-  coast: 41,
+  coast: 37,
   stage1: 46,
   stage1End: 51,
   stage2: 53,
@@ -276,20 +276,18 @@ export function stackAxis(deg: number): THREE.Vector3 {
   return new THREE.Vector3(0, Math.sin(a), Math.cos(a));
 }
 
-/** The direction the orbiter backs away along: away from the stack and down (ESTIMATE). */
-export function backAwayDir(deployDeg: number): THREE.Vector3 {
-  return stackAxis(deployDeg)
-    .multiplyScalar(-0.6)
-    .add(new THREE.Vector3(0, -0.8, 0))
-    .normalize();
+/** The direction the orbiter backs away along: aft and a little down, clear of the stack's
+ *  path (ESTIMATE; the reports give the burn's length and delta-v, not its direction). */
+export function backAwayDir(): THREE.Vector3 {
+  return new THREE.Vector3(0, -0.25, -1).normalize();
 }
 
 export function stackBase(pose: DeployPose, rig: DeployRig): THREE.Vector3 {
   return rig.pivot.clone().addScaledVector(stackAxis(pose.stackDeg), pose.stackOutM);
 }
 
-export function orbiterShift(pose: DeployPose, deployDeg: number): THREE.Vector3 {
-  return backAwayDir(deployDeg).multiplyScalar(pose.orbiterBackM);
+export function orbiterShift(pose: DeployPose): THREE.Vector3 {
+  return backAwayDir().multiplyScalar(pose.orbiterBackM);
 }
 
 export interface DeployCamera {
@@ -306,11 +304,10 @@ export function deployCamera(
   rig: DeployRig = DEFAULT_RIG,
 ): DeployCamera {
   const fit = portraitFit(aspect);
-  const deployDeg = p.tilt[p.tilt.length - 1].deg;
   const base = stackBase(pose, rig);
   const axis = stackAxis(pose.stackDeg);
   const stackMid = base.clone().addScaledVector(axis, rig.stackLenM / 2);
-  const orb = rig.orbiterCentre.clone().add(orbiterShift(pose, deployDeg));
+  const orb = rig.orbiterCentre.clone().add(orbiterShift(pose));
   const at = (look: THREE.Vector3, off: THREE.Vector3, fov = 40): DeployCamera => ({
     position: look.clone().addScaledVector(off, fit),
     look,
@@ -331,13 +328,16 @@ export function deployCamera(
     const back = stackMid.clone().sub(orb).normalize();
     const eye = stackMid
       .clone()
-      .addScaledVector(back, 14 * fit)
-      .add(V(9 * fit, 4 * fit, 0));
+      .addScaledVector(back, 22 * fit)
+      .add(V(12 * fit, 5 * fit, 0));
     shots.push([DT.separation, { position: eye, look: orb, fov: 34 }]);
   }
   if (t >= DT.coast) {
-    const look = t >= DT.spin ? stackMid.clone().addScaledVector(axis, pose.pamOffM) : stackMid;
-    shots.push([DT.coast, at(look, V(16, 5, -7))]);
+    // Beside the stack, low enough on it that the nozzle and its flame stay in frame.
+    const look = (t >= DT.spin ? stackMid.clone().addScaledVector(axis, pose.pamOffM) : stackMid)
+      .clone()
+      .addScaledVector(axis, -rig.stackLenM * 0.2);
+    shots.push([DT.coast, at(look, V(24, 6, -10))]);
   }
   // Hold each shot, then ease into the next over its first 1.6 s.
   let i = shots.length - 1;
@@ -501,7 +501,6 @@ export function createFlyDeploy(
 
   const camera = new THREE.PerspectiveCamera(40, 16 / 9, 0.1, 6e4);
   const setDoors = orbiter.userData.setBayDoors as (t: number) => void;
-  const deployDeg = profile.tilt[profile.tilt.length - 1].deg;
   const end = deployEnd(profile);
   const q = new THREE.Quaternion();
   const xAxis = new THREE.Vector3(1, 0, 0);
@@ -511,7 +510,7 @@ export function createFlyDeploy(
     const pose = deployPose(t, profile);
     setDoors(pose.doors);
     u.setTilt(pose.tableDeg);
-    orbiterHolder.position.copy(orbiterShift(pose, deployDeg));
+    orbiterHolder.position.copy(orbiterShift(pose));
     // the stack: the mount's rest frame, turned up by its angle, moved out along its axis
     stackHolder.position.copy(stackBase(pose, rig));
     q.setFromAxisAngle(xAxis, -(pose.stackDeg * Math.PI) / 180);

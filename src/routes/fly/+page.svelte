@@ -192,6 +192,7 @@
     loadReturnProfile,
     type ReturnProfile,
   } from '$lib/fly/return-profile';
+  import { hasDeployProfile, loadDeployProfile, type DeployProfile } from '$lib/fly/deploy-profile';
   import CoastScene from '$lib/components/CoastScene.svelte';
   import { getEarthOrbitCoast } from '$lib/orbital/earth-orbit-registry';
   import { preloadFlyCraft } from '$lib/three/fly-craft';
@@ -661,6 +662,44 @@
     dispatchPhase({ type: 'returnComplete' });
     isPlaying = true;
   }
+  // The Shuttle deploy (W10): a mission that left from the payload bay (Galileo, Magellan,
+  // Ulysses) plays its deploy between the launch and the cruise. Inside the launch act (no new
+  // act): its own scene and clock, the master clock paused; its end dispatches launchComplete.
+  let deployProfile = $state<DeployProfile | null>(null);
+  let deploying = $state(false);
+  let deployDone = $state(false);
+  $effect(() => {
+    const id = mission.id;
+    if (!hasDeployProfile(id)) {
+      deployProfile = null;
+      return;
+    }
+    void loadDeployProfile(id, fetch, base)
+      .then((p) => {
+        if (mission.id === id) deployProfile = p;
+      })
+      .catch(dataLoadFailed);
+  });
+  $effect(() => {
+    // Out of the ascent act (or a new mission), a later launch plays the deploy again.
+    void mission.id;
+    if (flyAct !== 'ascent') {
+      deploying = false;
+      deployDone = false;
+    }
+  });
+  function startDeploy(): boolean {
+    if (!deployProfile || deployDone) return false;
+    deploying = true;
+    isPlaying = false;
+    return true;
+  }
+  function endDeploy() {
+    deploying = false;
+    deployDone = true;
+    dispatchPhase({ type: 'launchComplete' });
+    isPlaying = true;
+  }
   function edlSystemLabel(p: DescentProfile): string {
     const kinds = new Set<EDLPhaseKind>(p.phases.map((x) => x.kind));
     if (kinds.has('touch_and_go_contact')) return m.edl_touch_and_go();
@@ -740,6 +779,13 @@
   // "watch the landing" link.
   const wantDescentDeep = launchDeepParams?.get('descent') === '1';
   const wantWayHomeDeep = launchDeepParams?.get('wayhome') === '1';
+  // ?deploy=1 (with ?launch=1): straight to the Shuttle deploy once its profile loads.
+  const wantDeployDeep = launchDeepParams?.get('deploy') === '1';
+  $effect(() => {
+    if (wantDeployDeep && deployProfile != null && showLaunch && !deploying && !deployDone) {
+      startDeploy();
+    }
+  });
   $effect(() => {
     if (wantWayHomeDeep && returnProfile != null && showDescent && !wayHome && !wayHomeDone) {
       wayHome = true;
@@ -3494,7 +3540,17 @@
 <VisuallyHiddenH1 title={m.fly_page_title()} />
 
 <!-- Launch pre-roll overlay (opt-in ?launch=1). Self-contained; dismisses to reveal the transfer scene. -->
-{#if showLaunch && launchProfile}
+{#if showLaunch && deploying && deployProfile}
+  <!-- Only the Shuttle deploys play it: its scene loads on demand (route budget). -->
+  {#await import('$lib/components/DeployScene.svelte') then { default: DeployScene }}
+    <DeployScene
+      profile={deployProfile}
+      missionName={mission.name}
+      {hudHidden}
+      onComplete={endDeploy}
+    />
+  {/await}
+{:else if showLaunch && launchProfile}
   <LaunchScene
     profile={launchProfile}
     mission={launchDossier}
@@ -3512,7 +3568,8 @@
       // ascent → coast (Tier-1 Earth-orbit: loop Earth → re-entry) or → cruise
       // (interplanetary transfer). The reducer forks on earthCoast; showCoast /
       // the cruise fallback follow flyAct. Keep playing so the one continuous
-      // timeline from MET 0 flows across the seam.
+      // timeline from MET 0 flows across the seam. A Shuttle deploy plays first (endDeploy).
+      if (startDeploy()) return;
       dispatchPhase({ type: 'launchComplete' });
       if (earthCoast) coastMetDays = 0;
       isPlaying = true;
@@ -4586,7 +4643,7 @@
   <div
     class="scrubber"
     class:cinematic-hidden={inCinematicHeldBeat}
-    class:way-home-hidden={wayHome}
+    class:way-home-hidden={wayHome || deploying}
     class:launch-active={showLaunch || showCoast || showDescent}
     aria-label={m.fly_scrub_label()}
   >

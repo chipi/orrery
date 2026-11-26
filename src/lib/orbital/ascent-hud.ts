@@ -46,8 +46,10 @@ export function injectionSepT(ascentDurationS: number): number {
 
 /**
  * When the spacecraft leaves the launcher, if not at SECO (undefined = at SECO). With a launcher
- * injection it rides the stage through the burn and leaves at its end; with its own kick stage
- * (Shuttle + IUS) it is deployed midway through the parking coast and the kick stage fires after;
+ * injection it rides the stage through the burn and leaves at its end; with its own kick stage it
+ * is deployed midway through the parking coast and the kick stage fires after (the Shuttle never
+ * gets here: its payload stays in the bay through the launch, `payloadInBay`, and the deploy plays
+ * afterwards in its own scene, W10 `fly-deploy-scene.ts`);
  * when the stage fires first and then the kick stage (Delta II + Star 48B), they share the burn
  * and part halfway through it. With no injection beat it leaves `separationDelayS` after SECO,
  * the vehicle's published delay (LaunchProfile.payloadSeparationDelayS, backlog F1). The

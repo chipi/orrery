@@ -1123,6 +1123,7 @@ const ORBITER_Y = 2.95;
 
 type StackOrbiter = (variant: 'shuttle' | 'columbia', silts?: boolean) => THREE.Group;
 let stackOrbiter: StackOrbiter | null = null;
+let stackLook: ((orbiter?: string, date?: string) => OrbiterLook) | null = null;
 
 /**
  * Load what a launcher's model needs beyond this module (the Shuttle's orbiter, a lazy chunk), so
@@ -1130,12 +1131,19 @@ let stackOrbiter: StackOrbiter | null = null;
  */
 export async function preloadLauncherModel(launcherId: string | undefined): Promise<void> {
   if (launcherId !== 'space-shuttle-stack' || stackOrbiter) return;
-  stackOrbiter = (await import('./showcase/winged')).buildOrbiterFlying;
+  const [winged, stance] = await Promise.all([
+    import('./showcase/winged'),
+    import('./showcase/orbiter-stance'),
+  ]);
+  stackOrbiter = winged.buildOrbiterFlying;
+  stackLook = stance.orbiterLook;
 }
 
-/** Per-flight looks a launcher model can take (the Shuttle's orbiter, SILTS, a white tank). */
+/** The flight a launcher model is drawn for: the Shuttle's orbiter (fleet id) and launch date
+ *  (ISO) set its look (orbiterLook: SILTS, a white tank), loaded with preloadLauncherModel. */
 export interface LauncherLook {
-  orbiter?: OrbiterLook;
+  orbiterId?: string;
+  date?: string;
 }
 
 /** The tank's outline (radius, height), m: the aft dome, the barrel, the LO2 ogive (sheet 3). */
@@ -1226,7 +1234,11 @@ function coarseOrbiter(white: THREE.Material, tile: THREE.Material): THREE.Group
 
 function buildSpaceShuttle(vehLen: number, _boosters = 0, look?: LauncherLook): LauncherModel {
   const s = vehLen / STACK_H;
-  const o = look?.orbiter ?? { variant: 'shuttle', silts: true, whiteTank: false };
+  const o: OrbiterLook = stackLook?.(look?.orbiterId, look?.date) ?? {
+    variant: 'shuttle',
+    silts: true,
+    whiteTank: false,
+  };
   const white = heroWhite(0xeef0f3);
   const foam = new THREE.MeshStandardMaterial({
     // STS-1 and STS-2 flew a white-painted tank; from STS-3 the bare orange-brown foam

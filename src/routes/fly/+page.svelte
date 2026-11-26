@@ -198,7 +198,6 @@
   import { getEarthOrbitCoast } from '$lib/orbital/earth-orbit-registry';
   import { preloadFlyCraft } from '$lib/three/fly-craft';
   import { preloadLauncherModel } from '$lib/three/launcher-models';
-  import { orbiterLook } from '$lib/three/showcase/orbiter-stance';
   import { LOOP_CAP as LEO_LOOP_CAP } from '$lib/three/fly-leo-coast-scene';
   import {
     loadLaunchProfile,
@@ -410,10 +409,10 @@
     launcherHeightM,
     injectionBurn: launchInjectionBurn,
     // The Shuttle's orbiter and its era (SILTS, the white tanks of STS-1 and STS-2).
-    orbiterLook: orbiterLook(
-      mission.fleet_refs?.find((r) => r.role === 'spacecraft')?.id,
-      mission.dep_label,
-    ),
+    flight: {
+      orbiterId: mission.fleet_refs?.find((r) => r.role === 'spacecraft')?.id,
+      date: mission.dep_label,
+    },
   });
   function startLaunch() {
     // Until the URL's flight is applied, `mission` is still the default ORRERY-1 flight: a launch

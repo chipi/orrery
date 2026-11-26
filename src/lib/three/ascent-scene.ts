@@ -38,8 +38,7 @@ import { buildCapsuleById } from '$lib/three/capsule-models';
 import { buildLanderCruiseCraft } from '$lib/three/lander-cruise-models';
 import { flyCraft } from '$lib/three/fly-craft';
 import { getEarthOrbitCoast } from '$lib/orbital/earth-orbit-registry';
-import { buildLauncherModel } from '$lib/three/launcher-models';
-import type { OrbiterLook } from '$lib/three/showcase/orbiter-stance';
+import { buildLauncherModel, type LauncherLook } from '$lib/three/launcher-models';
 import { plumeCone, plumeCore as plumeCoreMesh } from '$lib/three/engine-plume';
 import { clusterOffsets } from '$lib/three/launcher-detail';
 import { getLauncherEngines } from '$lib/physics/propulsion/launcher-engines';
@@ -76,8 +75,8 @@ export interface AscentSceneOptions {
   launcherHeightM?: number;
   /** Launcher id → the rocket's dedicated procedural model (else a generic body). */
   launcherId?: string;
-  /** The Shuttle's per-flight look (orbiter, SILTS, a white tank): orbiterLook(). */
-  orbiterLook?: OrbiterLook;
+  /** The flight the launcher is drawn for (the Shuttle's orbiter id and launch date). */
+  flight?: LauncherLook;
   /** This flight's booster recovery (`recoveryFor(profile, missionId)`): a landed or caught part
    *  turns tail-down after separation, an expended one tumbles. */
   recovery?: PartRecovery[];
@@ -628,9 +627,7 @@ export function createAscentScene(opts: AscentSceneOptions): AscentScene {
   //    choreography is vehicle-agnostic.
   const vehicle = new THREE.Group();
   const rBody = vehLen * 0.05; // plume scale reference
-  const model = buildLauncherModel(opts.launcherId, vehLen, opts.boosterCount ?? 0, {
-    orbiter: opts.orbiterLook,
-  });
+  const model = buildLauncherModel(opts.launcherId, vehLen, opts.boosterCount ?? 0, opts.flight);
   const recovered = recoveredParts(opts.recovery);
   const strapOnGroup = model.strapOns;
   // The strap-on bodies that flame (before any flames are added to the group; a part marked

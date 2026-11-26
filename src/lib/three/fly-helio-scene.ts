@@ -191,6 +191,19 @@ export interface HelioSceneHandles {
    *  its orbit ring takes the highlight colour, the body is drawn larger and stays visible
    *  when the moon layer is off. */
   setTargetMoon: (name: string | null) => void;
+  /** Show a body the mission only passes (Gaspra, Ida, Lutetia…) at a scene position, or hide it
+   *  with null. One mesh, rebuilt when the body changes; the flyby cinema places it. */
+  setEncounterBody: (
+    body: {
+      id: string;
+      x: number;
+      y: number;
+      z: number;
+      size: number;
+      color: number;
+      stretch: number;
+    } | null,
+  ) => void;
 }
 
 interface DestinationStyle {
@@ -1061,6 +1074,47 @@ export function buildHelioScene(opts: HelioSceneOptions): HelioSceneHandles {
     opts.onDestinationChange?.(id);
   }
 
+  const encounterMesh = new THREE.Mesh(
+    new THREE.IcosahedronGeometry(1, 3),
+    new THREE.MeshPhongMaterial({
+      color: 0x9c8f80,
+      emissive: 0x9c8f80,
+      emissiveIntensity: 0.15,
+      flatShading: true,
+    }),
+  );
+  encounterMesh.name = 'encounter-body';
+  encounterMesh.visible = false;
+  scene.add(encounterMesh);
+  let encounterId: string | null = null;
+
+  function setEncounterBody(
+    body: {
+      id: string;
+      x: number;
+      y: number;
+      z: number;
+      size: number;
+      color: number;
+      stretch: number;
+    } | null,
+  ): void {
+    encounterMesh.visible = !!body;
+    if (!body) return;
+    if (body.id !== encounterId) {
+      encounterId = body.id;
+      const mat = encounterMesh.material as THREE.MeshPhongMaterial;
+      mat.color.setHex(body.color);
+      mat.emissive.setHex(body.color);
+      // An irregular stand-in about as big as a sphere of `size` (the radius the shot frames):
+      // the long axis stretched by √stretch, the short ones shrunk by it, one a little uneven.
+      const k = Math.sqrt(body.stretch);
+      encounterMesh.scale.set(body.size * k, (body.size * 0.9) / k, body.size / k);
+      encounterMesh.rotation.set(0.3, 0.7, 0.2);
+    }
+    encounterMesh.position.set(body.x, body.y, body.z);
+  }
+
   function setDestinationOrbitVisible(visible: boolean): void {
     destinationOrbitVisible = visible;
     destinationOrbitLine.visible = visible;
@@ -1095,5 +1149,6 @@ export function buildHelioScene(opts: HelioSceneOptions): HelioSceneHandles {
     setMoonsVisible,
     updateMoonsForParent,
     setTargetMoon,
+    setEncounterBody,
   };
 }

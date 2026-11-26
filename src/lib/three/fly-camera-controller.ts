@@ -41,7 +41,13 @@ import {
   MOON_COMPOSITION,
   planCislunarHeroShot,
 } from '$lib/orbital/cislunar/cislunar-hero-shot';
-import { PLANET_SIZES, resolveFlybyBody } from '$lib/orbital/find-flyby-planet';
+import {
+  findFlybyPlanetFromLabel,
+  PLANET_SIZES,
+  resolveFlybyBody,
+} from '$lib/orbital/find-flyby-planet';
+import { encounterScenePos, findEncounterBody } from '$lib/orbital/encounter-bodies';
+import { isPostArrivalEvent, postArrivalPass } from '$lib/orbital/post-arrival-pass';
 import { buildFlyDebugSnapshot } from '$lib/orbital/fly-debug-snapshot';
 import { predictShipPosAtMet } from '$lib/physics/transfer/predict-ship-pos';
 import { sampleCislunarSpacecraftPos } from '$lib/orbital/sample-cislunar-spacecraft';
@@ -177,6 +183,9 @@ export function createFlyCameraController(deps: FlyCameraDeps) {
   ];
   let montageShotFrame: ShotFrame | null = null;
   let montageShotKind: ShotKind | null = null;
+  // The ship's scene position on a flyby after the arrival event (post-arrival-pass.ts), which the
+  // frame runner uses instead of the arc's end; null outside those windows.
+  let postArrivalShip: { x: number; y: number; z: number } | null = null;
   // Previous frame's shot kind — a change is a CUT (snap); same kind
   // smooths within the shot so the chase/depart don't jitter.
   /** Reusable flyby choreography: a slow panoramic sweep timed so the
@@ -289,6 +298,8 @@ export function createFlyCameraController(deps: FlyCameraDeps) {
     // the current MET falls inside a montage window. (#371)
     montageShotFrame = null;
     montageShotKind = null;
+    postArrivalShip = null;
+    helioHandles.setEncounterBody(null);
     const sc = spacecraftPos(
       deps.getSimDay(),
       deps.getArcTimeline(),
@@ -355,14 +366,39 @@ export function createFlyCameraController(deps: FlyCameraDeps) {
       const activeEvt = flybyEvents.find((e) => e.met_days === activeFlybyMet);
       // A Sun mission's perihelion has no body: the nearest planet would steal the shot.
       const arc = deps.getArcTimeline();
-      const flyby = resolveFlybyBody(activeEvt, {
-        depDay: arc.dep_day,
-        simDay: deps.getSimDay(),
-        destination: deps.getActiveDestination(),
-        sunTarget,
-        livePos: sc.pos,
-        shipAtMet: (met) => predictShipPosAtMet(deps.getOutPts(), met, arc.arr_day - arc.dep_day),
-      });
+      const totalOutboundDays = arc.arr_day - arc.dep_day;
+      const sampleShipScene = (met: number) => {
+        const p = predictShipPosAtMet(deps.getOutPts(), met, totalOutboundDays);
+        if (!p) return null;
+        return { x: p.x * SCALE_3D, y: p.y * SCALE_3D, z: p.z * SCALE_3D };
+      };
+      // A body the mission only passes (Galileo at Gaspra) has no ephemeris: it is placed just
+      // off the ship's track at the peak and composed with a small-body stand-in preset.
+      const label = activeEvt?.label_en ?? activeEvt?.label;
+      const encounter = findFlybyPlanetFromLabel(label) ? null : findEncounterBody(label);
+      const encounterPeak = encounter ? sampleShipScene(activeFlybyMet) : null;
+      const encounterPos =
+        encounter && encounterPeak
+          ? {
+              ...encounterScenePos(
+                encounterPeak,
+                sampleShipScene(activeFlybyMet + 1),
+                encounter.size,
+              ),
+              y: encounterPeak.y,
+            }
+          : null;
+      const flyby =
+        encounter && encounterPos
+          ? { id: encounter.standIn, size: encounter.size }
+          : resolveFlybyBody(activeEvt, {
+              depDay: arc.dep_day,
+              simDay: deps.getSimDay(),
+              destination: deps.getActiveDestination(),
+              sunTarget,
+              livePos: sc.pos,
+              shipAtMet: (met) => predictShipPosAtMet(deps.getOutPts(), met, totalOutboundDays),
+            });
       // Debug exposure. Builder lives in $lib/orbital/fly-debug-snapshot
       // so the DEV-vs-prod payload shape is unit-tested. flybyId +
       // flybySize ship in BOTH modes (the foreground ship-offset
@@ -382,13 +418,33 @@ export function createFlyCameraController(deps: FlyCameraDeps) {
         camTarget: { x: camTarget.x, y: camTarget.y, z: camTarget.z },
       });
       if (flyby) {
-        const bodyPos =
-          flyby.id === 'earth'
-            ? earthPos(deps.getSimDay())
-            : destinationPos(deps.getSimDay(), flyby.id);
-        const bodyScene = new THREE.Vector3(bodyPos.x * SCALE_3D, 0, bodyPos.z * SCALE_3D);
-        void bodyScene;
-        sub = `flyby-${activeFlybyMet}-${flyby.id}`;
+        const postArrival = isPostArrivalEvent(
+          activeFlybyMet,
+          totalOutboundDays,
+          deps.getRetPts().length < 2,
+        );
+        const bodyAt = (met: number): { x: number; z: number } => {
+          if (encounter && encounterPos) return encounterPos;
+          const d = arc.dep_day + met;
+          const b = flyby.id === 'earth' ? earthPos(d) : destinationPos(d, flyby.id);
+          return { x: b.x * SCALE_3D, z: b.z * SCALE_3D };
+        };
+        const shipScene = postArrival
+          ? (met: number) => postArrivalPass(bodyAt, flyby.size, activeFlybyMet, met)
+          : sampleShipScene;
+        if (postArrival) postArrivalShip = shipScene(deps.getSimDay() - arc.dep_day);
+        let bodyScene: THREE.Vector3;
+        if (encounter && encounterPos) {
+          bodyScene = new THREE.Vector3(encounterPos.x, encounterPos.y, encounterPos.z);
+          helioHandles.setEncounterBody({ ...encounter, ...encounterPos });
+        } else {
+          const bodyPos =
+            flyby.id === 'earth'
+              ? earthPos(deps.getSimDay())
+              : destinationPos(deps.getSimDay(), flyby.id);
+          bodyScene = new THREE.Vector3(bodyPos.x * SCALE_3D, 0, bodyPos.z * SCALE_3D);
+        }
+        sub = `flyby-${activeFlybyMet}-${encounter && encounterPos ? encounter.id : flyby.id}`;
         // Secondary-flyby destinationMesh swap. The 8 main planets
         // (mercury..neptune) plus Earth render via context meshes
         // that are always in the scene — for those bodies no swap is
@@ -422,6 +478,7 @@ export function createFlyCameraController(deps: FlyCameraDeps) {
           'eros',
         ]);
         if (
+          !encounterPos &&
           flyby.id !== 'earth' &&
           NON_CONTEXT_BODIES.has(flyby.id as DestinationId) &&
           flyby.id !== deps.getCurrentDestMeshId()
@@ -482,12 +539,6 @@ export function createFlyCameraController(deps: FlyCameraDeps) {
         // moment's MET and returns the (centerXYZ, targetR, targetP,
         // helioFlybyDesiredCamT) tuple. See its module docstring for
         // the planet-centric composition rationale.
-        const totalOutboundDays = deps.getArcTimeline().arr_day - deps.getArcTimeline().dep_day;
-        const sampleShipScene = (met: number) => {
-          const p = predictShipPosAtMet(deps.getOutPts(), met, totalOutboundDays);
-          if (!p) return null;
-          return { x: p.x * SCALE_3D, y: p.y * SCALE_3D, z: p.z * SCALE_3D };
-        };
         // Orbit-insertion / arrival events (Mars Express MOI, Curiosity
         // EDL, Cassini SOI, Dawn at Vesta…) use the arrival composition:
         // at insertion the ship matches the planet's heliocentric
@@ -505,7 +556,7 @@ export function createFlyCameraController(deps: FlyCameraDeps) {
           flybyPlanetRadius: flyby.size,
           planetScenePos: { x: bodyScene.x, z: bodyScene.z },
           peakMet: activeFlybyMet,
-          sampleShipScene,
+          sampleShipScene: shipScene,
           fallbackShipPos: { x: scScene.x, z: scScene.z },
           fallbackPitchRad: HELIO_APPROACH_P,
           composition: arrivalComp?.composition,
@@ -530,7 +581,7 @@ export function createFlyCameraController(deps: FlyCameraDeps) {
             planetId: flyby.id as FlybyPlanetId,
             planetPos: { x: bodyScene.x, z: bodyScene.z },
             planetRadius: flyby.size,
-            shipPosAtMet: sampleShipScene,
+            shipPosAtMet: shipScene,
             peakMet: activeFlybyMet,
             met: deps.getSimDay() - deps.getArcTimeline().dep_day,
             heroComposition: arrivalComp?.composition,
@@ -1182,6 +1233,9 @@ export function createFlyCameraController(deps: FlyCameraDeps) {
     },
     get montageShotKind() {
       return montageShotKind;
+    },
+    get postArrivalShip() {
+      return postArrivalShip;
     },
     /** The craft-led coast shot is on (cislunar-craft-shot.ts). */
     get craftShotActive() {

@@ -213,6 +213,9 @@ export interface MilestoneScreensOpts {
   arcTimeline: MissionTimeline;
   outPts: Vec2[];
   retPts: Vec2[];
+  /** The ship flies a pass off the arc (a flyby after the arrival, post-arrival-pass.ts): the
+   *  chips mark points on the arc, and the pass's body can sit on one of them. */
+  offArc?: boolean;
 }
 
 /** The ±day windows bounding a milestone's "active" state (byte-identical consts). */
@@ -223,6 +226,7 @@ const ACTIVE_DEPART_DAYS = 20;
  *  guard fails. Byte-identical to inline (uses `pickVisibleMilestones`). */
 export function buildMilestoneScreens(o: MilestoneScreensOpts): MilestoneRender[] | null {
   if (!(o.viewMode === 'heliocentric' && o.container && o.factory)) return null;
+  if (o.offArc) return [];
   const cwMs = o.container.clientWidth;
   const chMs = o.container.clientHeight;
   const currentMet = o.simDay - o.arcTimeline.dep_day;

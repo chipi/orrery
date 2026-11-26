@@ -161,6 +161,26 @@ describe('buildMilestoneScreens', () => {
     expect(out![0].active).toBe(true);
   });
 
+  it('draws none while the ship flies a pass off the arc (a flyby after the arrival)', () => {
+    // Giotto at Grigg-Skjellerup sits at the arc's end, under the Halley arrival chip.
+    const out = buildMilestoneScreens({
+      viewMode: 'heliocentric',
+      container,
+      factory: makeProjectorFactory(container),
+      camera: cam(),
+      mission,
+      simDay: 45,
+      arcTimeline,
+      outPts: [
+        { x: 0, z: 0 },
+        { x: 10, z: 0 },
+      ],
+      retPts: [],
+      offArc: true,
+    });
+    expect(out).toEqual([]);
+  });
+
   it('leaves out events after the flown window', () => {
     const out = buildMilestoneScreens({
       viewMode: 'heliocentric',

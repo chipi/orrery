@@ -1518,6 +1518,9 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
     // camera by construction so the glyph is always centred on the
     // arc regardless of curvature.
     scSprite.position.set(sc.pos.x * SCALE_3D, (sc.pos.y ?? 0) * SCALE_3D, sc.pos.z * SCALE_3D);
+    // A flyby after the arrival event has no arc under it: the ship flies the controller's pass.
+    const pa = flyCam.postArrivalShip;
+    if (pa) scSprite.position.set(pa.x, pa.y, pa.z);
     // Per-mission 3D model rides the same position. Visibility +
     // arrival-hide handled by the same code path that owns scSprite
     // a few lines below; here we only update the transform.
@@ -1755,11 +1758,19 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
     if (phaseNow === 'arrived' && !cine.arrivalSnapped) {
       bridge.camSnapUntil = performance.now() + 1500;
       cine.arrivalSnapped = true;
-      // One-way helio endings go straight from arrival to the epilogue
-      // tableau, which carries the end-of-mission caption; round-trip and
-      // moon-mission endings stay out of it.
-      const isOneWayHelioEnd = !bridge.isMoonMission && bridge.retPts.length < 2;
-      if (isOneWayHelioEnd && bridge.epilogueStartedAt === 0) {
+    }
+    // One-way helio endings go from arrival to the epilogue tableau, which carries the
+    // end-of-mission caption; round-trip and moon-mission endings stay out of it. A flyby
+    // after the arrival (Lucy past Eurybates, New Horizons at Arrokoth) holds it off while
+    // its window is on, and a scrub into one clears it.
+    const isOneWayHelioEnd = !bridge.isMoonMission && bridge.retPts.length < 2;
+    if (phaseNow === 'arrived' && isOneWayHelioEnd) {
+      if (flyCam.postArrivalShip) {
+        bridge.epilogueBlackOpacity = 0;
+        bridge.epilogueStartedAt = 0;
+        bridge.epilogueActive = false;
+        bridge.epilogueCaptionOpacity = 0;
+      } else if (bridge.epilogueStartedAt === 0) {
         bridge.epilogueStartedAt = performance.now();
         bridge.epilogueActive = true;
       }
@@ -2617,6 +2628,7 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
         arcTimeline: bridge.arcTimeline,
         outPts: bridge.outPts,
         retPts: bridge.retPts,
+        offArc: flyCam.postArrivalShip !== null,
       });
       if (msScreens) bridge.milestoneScreens = msScreens;
       else if (bridge.milestoneScreens.length > 0) bridge.milestoneScreens = [];

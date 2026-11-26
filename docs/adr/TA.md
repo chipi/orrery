@@ -1215,6 +1215,7 @@ Listed here in numeric order; full title and date in [`index.md`](index.md).
 | ADR-093 | Accepted (builds on ADR-081) | Journey instrumentation: six milestone-deduped Umami events with fixed names for reports; no session replay |
 | ADR-096 | Accepted (0.9.8, amended with decisions 8–12) | **Indexable entity pages + SEO surface** in 14 locales from the panels' data; see §components "Routes" |
 | ADR-097 | Accepted (supersedes the staging parts of ADR-014 / ADR-070) | **No staging tier**: merge → deploy to prod → validate-prod; GitHub Pages serves only the docs |
+| ADR-098 | Accepted | **Per-locale UI messages**: the client build turns each Paraglide message into a stub and ships the reader's locale only, one shared module plus one per route (`scripts/i18n-split-plugin.mjs`), awaited by the root `+layout.ts` load; dev, SSR and tests keep Paraglide's modules |
 | ADR-067, ADR-068, ADR-081, ADR-082 | Accepted | **Observability / telemetry.** Sentry SDK → self-hosted **GlitchTip** errors (ADR-067), docker log shipping (ADR-068), self-hosted **Umami** analytics (ADR-081), and the **dev → prod env ladder** (staging retired 2026-11) — isolated GlitchTip project + Umami site per rung, dev via the tailnet `homelab` host, fork-silent by construction (ADR-082) |
 
 ---

@@ -9,6 +9,7 @@ import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { execSync } from 'node:child_process';
 import { paraglideOptions } from './scripts/paraglide-options.mjs';
+import { i18nSplitPlugin } from './scripts/i18n-split-plugin';
 // Per-checkout runtime defaults written by .config/workspace/setup (parallel
 // worktrees). `{}` when absent, so CI and fresh clones are unaffected.
 import { pick, readWorkspaceEnv, workspaceClientEnv } from './scripts/workspace/env.mjs';
@@ -180,6 +181,8 @@ export default defineConfig(({ mode, command }) => {
         },
       },
       sveltekit(),
+      // ADR-098: the client build ships each route's UI messages in the reader's locale only.
+      i18nSplitPlugin(),
       // Prod deploy only (#595): inject Sentry debug ids DURING the build. The
       // plugin prepends the id snippet in renderChunk, before Vite names the chunk,
       // so a chunk's content-hashed name covers the injected bytes, and .br/.gz

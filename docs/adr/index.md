@@ -98,4 +98,4 @@
 | ADR-095 | Eccentric planets, the JPL reference and vector v∞ in the shared transfer model (`/fly`, `/plan`, Lab porkchops) | Accepted | Nov 2026 |
 | ADR-096 | Indexable entity pages (missions, fleet, sites, bodies, Lab formulas) and the SEO surface: head tags, JSON-LD, split sitemaps, mirror noindex, the `check-seo` gate | Accepted | Nov 2026 |
 | ADR-097 | No staging tier: releases go straight to prod, GitHub Pages serves only the docs (supersedes the staging parts of ADR-014, 070, 071, 082, 083) | Accepted | Nov 2026 |
-| ADR-098 | Per-locale UI message catalogues: Paraglide output split into per-locale chunks loaded at runtime, stubs keep `m.<key>()` | Proposed | Nov 2026 |
+| ADR-098 | Per-locale UI message catalogues: Paraglide output split into per-locale modules loaded before render, stubs keep `m.<key>()` | Accepted | Nov 2026 |

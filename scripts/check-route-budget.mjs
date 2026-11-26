@@ -114,8 +114,27 @@ function nodeLabel(n) {
   return `${kind === 'layout' ? 'layout ' : ''}${dir || '/'}`;
 }
 
+// The UI messages (ADR-098): per locale, one module every page loads and one per route, listed in
+// _app/immutable/i18n/<locale>/routes.<version>.json. They load before the page renders, so they
+// count as JS: the shared one in the shell, a route's own in the route, at the largest locale.
+const I18N = join(OUT, '_app/immutable/i18n');
+const i18nMaps = existsSync(I18N)
+  ? LOCALES.map((l) => {
+      const f = readdirSync(join(I18N, l)).find((x) => /^routes\.[^.]+\.json$/.test(x));
+      return f ? { l, map: JSON.parse(readFileSync(join(I18N, l, f), 'utf8')) } : null;
+    }).filter(Boolean)
+  : [];
+const i18nKb = (pick) =>
+  Math.max(
+    0,
+    ...i18nMaps.map(({ l, map }) => {
+      const id = pick(map);
+      return id ? brBytes(`_app/immutable/i18n/${l}/${id}.js`) / 1024 : 0;
+    }),
+  );
+
 const rows = [];
-const shellKb = kb(shell);
+const shellKb = kb(shell) + i18nKb((map) => map.root);
 const shellCss = cssFiles(shell);
 rows.push({
   route: 'shell',
@@ -135,7 +154,7 @@ for (const n of readdirSync(NODES).filter((f) => f.endsWith('.js') && f !== '0.j
   const have = new Set([...shell, ...all]);
   rows.push({
     route,
-    kb: kb(own),
+    kb: kb(own) + i18nKb((map) => map.routes[route]),
     budget: BUDGETS.routes[route] ?? BUDGETS.defaultRoute,
     css: cssKb(ownCss),
     cssBudget: budgetOf(BUDGETS.css, route),

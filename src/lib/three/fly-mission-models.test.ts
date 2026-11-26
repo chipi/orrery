@@ -30,8 +30,6 @@ const GENERIC: Record<string, string> = {
   'apollo-1': 'never flew (pad fire)',
   escapade:
     'two small Mars orbiters with no dedicated model yet; rides the generic spacecraft glyph',
-  'peregrine-m1':
-    'a lander that never reached the Moon; no dedicated model yet (the private Moon plan models Hakuto-R and Blue Ghost only)',
 };
 
 describe('/fly mission models', () => {

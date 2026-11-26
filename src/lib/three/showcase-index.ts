@@ -100,6 +100,7 @@ export const SHOWCASE_FAMILY: Readonly<Record<string, string>> = {
   orion: 'capsules-commercial',
   'osiris-rex': 'probes',
   'parker-solar-probe': 'inner-solar',
+  peregrine: 'lunar-landers-west',
   perseverance: 'rovers',
   'phobos-2': 'mars-orbiters',
   phoenix: 'mars-landers',

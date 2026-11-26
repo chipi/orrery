@@ -498,7 +498,7 @@
     {
       "id": "models-ref-wikipedia",
       "name": "3D model references — Wikipedia",
-      "catalog": "207 pages — sizes and proportions for the 3D models",
+      "catalog": "212 pages — sizes and proportions for the 3D models",
       "category": "model-reference",
       "description": "Wikipedia articles (English, Russian and Chinese) that gave the lengths, diameters and proportions of the launcher and spacecraft models and the heights of the landmarks, statues and animals drawn beside them in the /fleet line-ups. The models and outlines are our own; only measurements were read.",
       "source_url": "https://www.wikipedia.org/",
@@ -922,6 +922,10 @@
           "u": "https://en.wikipedia.org/wiki/Beresheet"
         },
         {
+          "l": "Wikipedia — Blue Ghost: Nammo LEROS 4 main engine, eight Spectre RCS thrusters",
+          "u": "https://en.wikipedia.org/wiki/Blue_Ghost"
+        },
+        {
           "l": "Wikipedia — Blue Moon: Mark 1 is 8.05 m high and 3.08 m across, one BE-7",
           "u": "https://en.wikipedia.org/wiki/Blue_Moon_(spacecraft)"
         },
@@ -942,11 +946,15 @@
           "u": "https://en.wikipedia.org/wiki/Chandrayaan-3"
         },
         {
+          "l": "Wikipedia — CM 3.48 m with probe and heat shield, 3.91 m across the base, forward compartment 0.58 m, five windows (side 0.23 m square, rendezvous 0.20 x 0.23 m, hatch window 0.23 m), side hatch 0.74 x 0.86 m, 12 RCS thrusters",
+          "u": "https://en.wikipedia.org/wiki/Apollo_command_module"
+        },
+        {
           "l": "Wikipedia — Compton: BATSE, OSSE, COMPTEL, EGRET",
           "u": "https://en.wikipedia.org/wiki/Compton_Gamma_Ray_Observatory"
         },
         {
-          "l": "Wikipedia — CSM: SM 4.52 m, 3.91 m diameter, SPS nozzle 3.88 m; Block I has no docking probe",
+          "l": "Wikipedia — CSM: SM 4.52 m body, 3.91 m diameter, SPS nozzle 3.88 m; Block I has no docking probe (smooth hatch cover)",
           "u": "https://en.wikipedia.org/wiki/Apollo_command_and_service_module"
         },
         {
@@ -980,6 +988,10 @@
         {
           "l": "Wikipedia — Giotto (spacecraft): 1.86 m drum, 1.47 m despun antenna, dust shield",
           "u": "https://en.wikipedia.org/wiki/Giotto_(spacecraft)"
+        },
+        {
+          "l": "Wikipedia — Hakuto-R: ArianeGroup propulsion, Mission 1 (2023) and Mission 2 RESILIENCE (2025) fly the same Series 1 lander",
+          "u": "https://en.wikipedia.org/wiki/Hakuto-R"
         },
         {
           "l": "Wikipedia — Hayabusa: 1 × 1.6 × 2 m body, 1.5 m antenna, 5.7 m across the panels",
@@ -1054,6 +1066,10 @@
           "u": "https://en.wikipedia.org/wiki/OSIRIS-REx"
         },
         {
+          "l": "Wikipedia — Peregrine Mission One: Astrobotic Peregrine lander, launched 8 January 2024",
+          "u": "https://en.wikipedia.org/wiki/Peregrine_Mission_One"
+        },
+        {
           "l": "Wikipedia — Perseverance (rover): 2.9 x 2.7 x 2.2 m, wheels, MMRTG, Ingenuity",
           "u": "https://en.wikipedia.org/wiki/Perseverance_(rover)"
         },
@@ -1092,6 +1108,10 @@
         {
           "l": "Wikipedia — SLIM: 1.5 × 1.5 × 2 m, solar panel, two-step landing on its side",
           "u": "https://en.wikipedia.org/wiki/Smart_Lander_for_Investigating_Moon"
+        },
+        {
+          "l": "Wikipedia — SM six sectors of 50/70/60/50/70/60 degrees (sector 1 ballast, 4 fuel cells), two 2.8 m2 radiators over sectors 2+3 and 5+6, RCS thruster 0.30 x 0.15 m, high-gain antenna of four 0.79 m dishes round a 0.28 m one",
+          "u": "https://en.wikipedia.org/wiki/Apollo_service_module"
         },
         {
           "l": "Wikipedia — Spektr-RG: eROSITA, ART-XC, Navigator bus",
@@ -1342,7 +1362,7 @@
     {
       "id": "models-ref-nssdca",
       "name": "3D model references — NASA NSSDCA",
-      "catalog": "23 pages — sizes and proportions for the 3D models",
+      "catalog": "24 pages — sizes and proportions for the 3D models",
       "category": "model-reference",
       "description": "NASA Space Science Data Coordinated Archive (NSSDCA) spacecraft and launch-vehicle pages that gave the masses, lengths and diameters of the craft and rockets modelled for /fly and the /fleet line-ups.",
       "source_url": "https://nssdc.gsfc.nasa.gov/",
@@ -1368,6 +1388,10 @@
         {
           "l": "NASA NSSDC — Lunokhod 1: tub with convex lid, helical and cone antennas, TV cameras, polonium-210 heater, French reflector",
           "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1970-095D"
+        },
+        {
+          "l": "NASA NSSDCA — Peregrine Mission One: about 1.9 m high, about 2.5 m across, four legs",
+          "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=PEREGRN-1"
         },
         {
           "l": "NASA NSSDCA Gemini 3 spacecraft description — dimensions",
@@ -1398,7 +1422,7 @@
           "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2018-065A"
         },
         {
-          "l": "NSSDCA — Apollo 11 CSM: 11.0 m long, CM 3.65 m high",
+          "l": "NSSDCA — Apollo 11 CSM: 11.0 m long, CM 3.65 m high, SM 7.6 m long incl. nozzle, 3.9 m diameter",
           "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1969-059A"
         },
         {
@@ -1450,7 +1474,7 @@
     {
       "id": "models-ref-nasa",
       "name": "3D model references — NASA",
-      "catalog": "47 pages — sizes and proportions for the 3D models",
+      "catalog": "49 pages — sizes and proportions for the 3D models",
       "category": "model-reference",
       "description": "NASA mission, vehicle and history pages (nasa.gov, history.nasa.gov, science.nasa.gov) that gave the dimensions of the crewed capsules, cargo craft, Shuttle orbiters and launchers modelled for /fly and the /fleet line-ups.",
       "source_url": "https://www.nasa.gov/",
@@ -1472,6 +1496,10 @@
         {
           "l": "Artemis HLS contract award (NASA)",
           "u": "https://www.nasa.gov/news-release/as-artemis-moves-forward-nasa-picks-spacex-to-land-next-americans-on-moon/"
+        },
+        {
+          "l": "Astrobotic payload user guide (hosted by NASA): five main engines, twelve ACS thrusters, two fuel and two oxidiser tanks with a central helium tank",
+          "u": "https://science.nasa.gov/wp-content/uploads/2023/11/astrobotic-lunar-landers-pug.pdf"
         },
         {
           "l": "Boeing Crew Flight Test Press Kit (NASA)",
@@ -1540,6 +1568,10 @@
         {
           "l": "NASA 'What Was the Saturn V?' - 111 meters (363 feet) tall — dimensions",
           "u": "https://www.nasa.gov/learning-resources/for-kids-and-students/what-was-the-saturn-v-grades-5-8/"
+        },
+        {
+          "l": "NASA CLPS press kit — Astrobotic Peregrine (TO2-AB): lander, payloads and descent",
+          "u": "https://www.nasa.gov/wp-content/uploads/2023/12/np-2023-12-017-jsc-clps-astrobotic-press-kit-update-508.pdf"
         },
         {
           "l": "NASA Commercial Crew Program Press Kit, SpaceX Falcon 9 technical overview — dimensions",
@@ -1818,7 +1850,7 @@
     {
       "id": "models-ref-agencies",
       "name": "3D model references — agencies and manufacturers",
-      "catalog": "25 pages — sizes and proportions for the 3D models",
+      "catalog": "28 pages — sizes and proportions for the 3D models",
       "category": "model-reference",
       "description": "Official pages of space agencies and manufacturers (Roscosmos, SpaceX, United Launch Alliance, Boeing, Northrop Grumman, Firefly, Arianespace, the China Manned Space Agency and CASC, the U.S. Space Force) that gave vehicle dimensions for the launcher and spacecraft models.",
       "source_url": "https://www.roscosmos.ru/",
@@ -1840,6 +1872,10 @@
         {
           "l": "Arianespace — Ariane heritage",
           "u": "https://www.arianespace.com/legacy/"
+        },
+        {
+          "l": "Astrobotic — Peregrine Mission One: the lander and its payload deck",
+          "u": "https://www.astrobotic.com/missionone/"
         },
         {
           "l": "Atlas V — United Launch Alliance",
@@ -1872,6 +1908,14 @@
         {
           "l": "Falcon User's Guide (SpaceX)",
           "u": "https://www.spacex.com/assets/media/falcon-users-guide-2025-05-09.pdf"
+        },
+        {
+          "l": "Firefly — Blue Ghost Mission 1: 2 m high, 3.5 m wide, four shock-absorbing legs, solar power",
+          "u": "https://fireflyspace.com/missions/blue-ghost-mission-1/"
+        },
+        {
+          "l": "ispace — HAKUTO-R reveals final design (2020): 2.3 m high, 2.6 m wide with the legs extended, four legs",
+          "u": "https://www.ispace-inc.com/2020/07/30/commercial-lunar-exploration-program-hakuto-r-reveals-final-design-and-plan-for-mission-1-lunar-lander/"
         },
         {
           "l": "Long March family — China Aerospace Science and Technology",
@@ -2022,7 +2066,7 @@
     {
       "id": "models-ref-commons",
       "name": "3D model references — Wikimedia Commons photographs",
-      "catalog": "108 pages — sizes and proportions for the 3D models",
+      "catalog": "110 pages — sizes and proportions for the 3D models",
       "category": "model-reference",
       "description": "Photographs of flight hardware, test articles and museum replicas on Wikimedia Commons, looked at to get the shapes and layouts of the lander, rover and capsule models right. No photograph is reproduced; the models are our own geometry.",
       "source_url": "https://commons.wikimedia.org/",
@@ -2116,6 +2160,10 @@
         {
           "l": "Wikimedia Commons — BepiColombo stack.jpg: ESA photo: blanketed stack, antenna horn and dish",
           "u": "https://commons.wikimedia.org/wiki/File:BepiColombo_stack.jpg"
+        },
+        {
+          "l": "Wikimedia Commons — Blue Ghost Mission 1 rendering and in-fairing photos: body shape, foil, dishes, RCS pods",
+          "u": "https://commons.wikimedia.org/wiki/Category:Blue_Ghost"
         },
         {
           "l": "Wikimedia Commons — Cassini spacecraft raw uncompressed.png: render: antenna, gold body, pallets, RTGs, Huygens on the side",
@@ -2248,6 +2296,10 @@
         {
           "l": "Wikimedia Commons — Pioneer 10-11 spacecraft.jpg: NASA painting: dish, hexagonal bus, both RTG booms, magnetometer boom",
           "u": "https://commons.wikimedia.org/wiki/File:Pioneer_10-11_spacecraft.jpg"
+        },
+        {
+          "l": "Wikimedia Commons — RESILIENCE lander replica (Haneda, 2025) and the HAKUTO-R model at IAC 2022: shape, foil, panels, legs",
+          "u": "https://commons.wikimedia.org/wiki/File:RESILIENCE-lander-replica01_20250528atHanedaAirPort.jpg"
         },
         {
           "l": "Wikimedia Commons — Rosetta - Philae close-up.jpg: ESA render of Philae on the orbiter",

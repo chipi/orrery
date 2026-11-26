@@ -2,7 +2,7 @@
  * Showcase models: the Western-built and Asian small lunar landers that followed Apollo —
  * Chandrayaan Vikram (-2 and -3, one builder with an option), the Pragyan rover that rides on it,
  * JAXA's SLIM, SpaceIL's Beresheet, Blue Origin's Blue Moon MK1, ispace's HAKUTO-R Series 1 (Mission 1
- * and RESILIENCE: one airframe) and Firefly's Blue Ghost. Same style as the Apollo LM and
+ * and RESILIENCE: one airframe), Firefly's Blue Ghost and Astrobotic's Peregrine. Same style as the Apollo LM and
  * Curiosity (operator 2026-11-23): real metres, crinkled foil where the craft wore it, struts,
  * tanks, nozzles, panels, footpads; base on y = 0, front toward +z.
  */
@@ -1341,6 +1341,158 @@ export function buildBlueGhost(): THREE.Group {
   return stand(g, BLUE_GHOST_HEIGHT_M, 0.12);
 }
 
+// ─── Peregrine ──────────────────────────────────────────────────────────────
+
+export const PEREGRINE_HEIGHT_M = 1.9;
+export const PEREGRINE_SPAN_M = 2.5;
+
+/**
+ * Astrobotic Peregrine (Mission One, 2024; about 1.9 m high and 2.5 m across, four legs, five
+ * 667 N main engines, twelve 45 N ACS thrusters in four sets of three, two fuel and two oxidiser
+ * tanks round a central helium tank), an open-frame lander: an octagonal lower ring and payload
+ * deck joined by corner posts, the four propellant tanks (fuel pale, oxidiser white) between them
+ * with the helium sphere in the middle, a main engine on each tank axis and a fifth on the centre
+ * line, a deck carrying many small payload boxes, one side solar panel on a short mast, four
+ * splayed legs to round pads. Only the sizes, the engine and thruster counts and the tank layout
+ * are sourced; the frame, tank, deck-box and leg proportions and the foil patches are schematic.
+ */
+export function buildPeregrine(): THREE.Group {
+  const M = palette();
+  const g = new THREE.Group();
+  const lowY = 0.6;
+  const topY = 1.4;
+  const rLow = 0.78;
+  const rTop = 0.92;
+  const oct = (r: number, k: number): THREE.Vector3 => {
+    const a = ((k + 0.5) / 8) * Math.PI * 2;
+    return V(Math.sin(a) * r, 0, Math.cos(a) * r);
+  };
+
+  // The frame: octagonal bottom and deck rings, a post at every vertex, a plate and a deck slab.
+  for (let k = 0; k < 8; k++) {
+    const a0 = oct(rLow, k).setY(lowY);
+    const a1 = oct(rLow, k + 1).setY(lowY);
+    const b0 = oct(rTop, k).setY(topY);
+    const b1 = oct(rTop, k + 1).setY(topY);
+    strut(g, M.alu, a0, a1, 0.025, 6);
+    strut(g, M.alu, b0, b1, 0.03, 6);
+    strut(g, M.alu, a0, b0, 0.022, 6);
+    if (k % 2 === 0) strut(g, M.steel, a0, b1, 0.014, 5);
+  }
+  box(g, M.dark, 1.2, 0.04, 1.2, 0, lowY - 0.02, 0);
+  const deck = new THREE.Mesh(new THREE.CylinderGeometry(rTop, rTop, 0.05, 8, 1), M.dark);
+  deck.rotation.y = Math.PI / 8;
+  deck.position.y = topY + 0.02;
+  add(g, deck);
+
+  // Tanks at the diagonals: fuel (pale) and oxidiser (white) alternate; the helium sphere is central.
+  for (let k = 0; k < 4; k++) {
+    const a = (k / 4) * Math.PI * 2 + Math.PI / 4;
+    const x = Math.sin(a) * 0.5;
+    const z = Math.cos(a) * 0.5;
+    const t = new THREE.Mesh(new THREE.CapsuleGeometry(0.2, 0.28, 6, 18), k % 2 ? M.white : M.tank);
+    t.position.set(x, lowY + 0.38, z);
+    add(g, t);
+    box(g, M.black, 0.1, 0.03, 0.1, x, lowY + 0.78, z);
+    strut(g, M.steel, V(x, lowY, z), V(x, lowY + 0.18, z), 0.02, 6);
+    // The main engine below the tank, bell exit under the plate.
+    bell(g, M.bell, x, 0.26, z, 0.11, 0.3, 0.04);
+  }
+  const he = new THREE.Mesh(new THREE.SphereGeometry(0.2, 20, 14), M.tankTi);
+  he.position.set(0, lowY + 0.4, 0);
+  add(g, he);
+  bell(g, M.bell, 0, 0.26, 0, 0.11, 0.3, 0.04);
+  for (const k of [0, 1, 2, 3]) {
+    const a = (k / 4) * Math.PI * 2;
+    strut(
+      g,
+      M.copper,
+      V(0, lowY + 0.4, 0),
+      V(Math.sin(a) * 0.32, lowY + 0.4, Math.cos(a) * 0.32),
+      0.012,
+      5,
+    );
+  }
+
+  // Twelve ACS thrusters: four pods on the deck-ring corners, three nozzles each.
+  for (let k = 0; k < 4; k++) {
+    const a = (k / 4) * Math.PI * 2;
+    const at = V(Math.sin(a) * (rTop + 0.06), topY - 0.1, Math.cos(a) * (rTop + 0.06));
+    const pod = new THREE.Mesh(new THREE.CylinderGeometry(0.07, 0.08, 0.14, 10), M.white);
+    pod.position.copy(at);
+    add(g, pod);
+    const radial = V(Math.sin(a), 0, Math.cos(a));
+    const tang = V(Math.cos(a), 0, -Math.sin(a));
+    thruster(
+      g,
+      M,
+      at.clone().addScaledVector(radial, 0.05),
+      radial.clone().add(V(0, 0.2, 0)),
+      0.03,
+    );
+    thruster(g, M, at.clone().addScaledVector(tang, 0.05), tang, 0.03);
+    thruster(g, M, at.clone().addScaledVector(tang, -0.05), tang.clone().negate(), 0.03);
+  }
+
+  // Payload deck: many small boxes (foil and bare), a dish-less mast with a star tracker, an LRA disc.
+  const dk = topY + 0.045;
+  wrapBox(
+    g,
+    M.dark,
+    [M.gold, M.gold, M.goldPale, M.gold],
+    -0.25,
+    dk + 0.14,
+    -0.2,
+    0.4,
+    0.28,
+    0.34,
+    0.02,
+  );
+  box(g, M.alu, 0.3, 0.16, 0.26, 0.3, dk + 0.08, 0.3);
+  box(g, M.whiteMli, 0.22, 0.12, 0.22, -0.3, dk + 0.06, 0.4);
+  box(g, M.silver, 0.2, 0.2, 0.2, 0.35, dk + 0.1, -0.35);
+  box(g, M.black, 0.16, 0.08, 0.16, -0.6, dk + 0.04, -0.1);
+  box(g, M.gunmetal, 0.14, 0.1, 0.2, 0.0, dk + 0.05, 0.62);
+  box(g, M.goldPale, 0.18, 0.1, 0.14, 0.05, dk + 0.05, -0.65);
+  strut(g, M.silver, V(0.0, dk, 0.0), V(0.0, dk + 0.4, 0.0), 0.025, 8);
+  box(g, M.black, 0.09, 0.09, 0.12, 0.0, dk + 0.43, 0.0);
+  const lra = new THREE.Mesh(new THREE.CylinderGeometry(0.07, 0.07, 0.02, 18), M.lra);
+  lra.position.set(0.6, dk + 0.02, 0.1);
+  add(g, lra);
+  // The solar panel on the +x side, on two short struts above the deck rim, tilted outward.
+  const panel = solarPanel(M, 1.0, 0.7, 10, 6);
+  panel.rotation.set(0, Math.PI / 2, 0);
+  panel.position.set(rTop + 0.12, topY - 0.45, 0);
+  add(g, panel);
+  for (const s of [-1, 1])
+    strut(
+      g,
+      M.alu,
+      V(rTop * 0.92, topY - 0.05, s * 0.3),
+      V(rTop + 0.1, topY - 0.35, s * 0.3),
+      0.015,
+      5,
+    );
+
+  // Four splayed legs from the deck corners to wide round pads, a shock barrel on each.
+  for (const sx of [-1, 1])
+    for (const sz of [-1, 1]) {
+      const A = V(sx * 0.62, topY - 0.05, sz * 0.62);
+      const F = V(sx * 1.08, 0.1, sz * 1.08);
+      strut(g, M.gunmetal, A, F, 0.035, 8);
+      const barrel = new THREE.Mesh(
+        new THREE.CylinderGeometry(0.05, 0.05, A.distanceTo(F) * 0.4, 12),
+        M.steel,
+      );
+      barrel.position.copy(A.clone().lerp(F, 0.65));
+      barrel.quaternion.setFromUnitVectors(V(0, 1, 0), F.clone().sub(A).normalize());
+      add(g, barrel);
+      strut(g, M.gunmetal, V(sx * 0.5, lowY, sz * 0.5), A.clone().lerp(F, 0.55), 0.022, 6);
+      footpad(g, M, F.x, F.z, 0.17);
+    }
+  return stand(g, PEREGRINE_HEIGHT_M, 0.26);
+}
+
 // ─── Exports ────────────────────────────────────────────────────────────────
 
 const VIKRAM_REFS: ShowcaseRef[] = [
@@ -1462,6 +1614,35 @@ export const SHOWCASE: Record<string, ShowcaseModel> = {
       {
         l: 'Wikimedia Commons — Blue Ghost Mission 1 rendering and in-fairing photos: body shape, foil, dishes, RCS pods',
         u: 'https://commons.wikimedia.org/wiki/Category:Blue_Ghost',
+      },
+    ],
+  },
+  peregrine: {
+    build: buildPeregrine,
+    heightM: PEREGRINE_HEIGHT_M,
+    heightEstimate:
+      'NSSDCA gives about 1.9 m high and about 2.5 m across; the frame, tank, deck-box, panel and leg proportions are schematic (no drawing opened), only the engine, thruster and tank counts are sourced.',
+    diameterM: PEREGRINE_SPAN_M,
+    refs: [
+      {
+        l: 'NASA NSSDCA — Peregrine Mission One: about 1.9 m high, about 2.5 m across, four legs',
+        u: 'https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=PEREGRN-1',
+      },
+      {
+        l: 'Astrobotic — Peregrine Mission One: the lander and its payload deck',
+        u: 'https://www.astrobotic.com/missionone/',
+      },
+      {
+        l: 'Wikipedia — Peregrine Mission One: Astrobotic Peregrine lander, launched 8 January 2024',
+        u: 'https://en.wikipedia.org/wiki/Peregrine_Mission_One',
+      },
+      {
+        l: 'NASA CLPS press kit — Astrobotic Peregrine (TO2-AB): lander, payloads and descent',
+        u: 'https://www.nasa.gov/wp-content/uploads/2023/12/np-2023-12-017-jsc-clps-astrobotic-press-kit-update-508.pdf',
+      },
+      {
+        l: 'Astrobotic payload user guide (hosted by NASA): five main engines, twelve ACS thrusters, two fuel and two oxidiser tanks with a central helium tank',
+        u: 'https://science.nasa.gov/wp-content/uploads/2023/11/astrobotic-lunar-landers-pug.pdf',
       },
     ],
   },

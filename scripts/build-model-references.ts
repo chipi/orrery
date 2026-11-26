@@ -127,7 +127,7 @@ const PUBLISHERS: Publisher[] = [
     id: 'models-ref-agencies',
     name: '3D model references — agencies and manufacturers',
     hosts:
-      /^(www\.roscosmos\.ru|www\.spacex\.com|www\.ulalaunch\.com|www\.spaceforce\.mil|www\.boeing\.com|www\.northropgrumman\.com|fireflyspace\.com|www\.arianespace\.com|en\.cmse\.gov\.cn|www\.spacechina\.com)$/,
+      /^(www\.roscosmos\.ru|www\.spacex\.com|www\.ulalaunch\.com|www\.spaceforce\.mil|www\.boeing\.com|www\.northropgrumman\.com|fireflyspace\.com|www\.ispace-inc\.com|www\.astrobotic\.com|astrobotic\.com|www\.intuitivemachines\.com|intuitivemachines\.com|www\.arianespace\.com|en\.cmse\.gov\.cn|www\.spacechina\.com)$/,
     home: 'https://www.roscosmos.ru/',
     what: 'Official pages of space agencies and manufacturers (Roscosmos, SpaceX, United Launch Alliance, Boeing, Northrop Grumman, Firefly, Arianespace, the China Manned Space Agency and CASC, the U.S. Space Force) that gave vehicle dimensions for the launcher and spacecraft models.',
     license_short: 'Facts-only',

@@ -58,6 +58,7 @@ const FLY_CRAFT: Record<string, readonly [string, string]> = {
   'hakuto-r-m1': ['lunar-landers-west', 'hakuto-r'],
   'ispace-m2': ['lunar-landers-west', 'hakuto-r'],
   'blue-ghost-m1': ['lunar-landers-west', 'blue-ghost'],
+  'peregrine-m1': ['lunar-landers-west', 'peregrine'],
   change2: ['lunar-orbiters', 'change-2'],
   mariner9: ['orbiters', 'mariner-9'],
   mariner10: ['orbiters', 'buildMariner10'],

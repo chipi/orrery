@@ -1,0 +1,33 @@
+{
+  "missionId": "magellan",
+  "flight": "STS-30",
+  "orbiter": "atlantis",
+  "launchZeroUtc": "1989-05-04T18:46:59.011Z",
+  "method": "ius-tilt",
+  "orbit": { "nmi": [178, 159], "basis": "actual" },
+  "tilt": [{ "deg": 29 }, { "deg": 52 }],
+  "releaseMet": "6:14:33.0",
+  "springMs": 0.15,
+  "tableLowerDeg": -6,
+  "sepBurns": [{ "id": "oms3", "met": "6:29:22.1", "burnS": 16.4, "dvFts": 31 }],
+  "upperStage": {
+    "stage1": { "met": "7:14:33.0", "burnS": 150 },
+    "stage2": { "met": "7:19:43.0", "burnS": 108 }
+  },
+  "source_tier": "flagship",
+  "estimatedFields": [
+    "tilt[1] (the press kit's 52 deg; Galileo's and Chandra's kits give 58 deg, unresolved)",
+    "tilt times and the bay-door opening time (not found; the scene times them editorially)",
+    "upperStage burn durations (the STS-34 kit's ~150 s and ~108 s; the STS-30 report gives the ignition times only)"
+  ],
+  "provenance": [
+    {
+      "l": "NASA STS-30 Mission Report: launch 124:18:46:59.011 GMT; Magellan deployed 125:01:01:32; OMS-3 16.4 s, 31.0 ft/s (its table: 125:01:16:21.09 to 01:16:37.68); orbit 178 x 159 nmi after it; SRM-1 125:02:01:32 (7:14:33 m.e.t.), SRM-2 ignition 125:02:06:42 (7:19:43 m.e.t.)",
+      "u": "https://ibiblio.org/apollo/Shuttle/Reports/Mission%20Reports/STS-30%20National%20Space%20Transportation%20System%20Mission%20Report.pdf"
+    },
+    {
+      "l": "STS-30 press kit: the tilt table raises Magellan and the IUS to 52 deg for deployment",
+      "u": "https://discmaster.textfiles.com/view/10606/Space%20and%20Astronomy%20(October%201993).iso/pc/text/stskits/sts_30.pre"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "missionId": "ulysses",
+  "flight": "STS-41",
+  "orbiter": "discovery",
+  "launchZeroUtc": "1990-10-06T11:47:14.983Z",
+  "method": "ius-tilt",
+  "orbit": { "nmi": [160, 160], "incDeg": 28.45, "basis": "plan" },
+  "tilt": [{ "deg": 29 }, { "deg": 58 }],
+  "releaseMet": "6:00:59.0",
+  "springMs": 0.15,
+  "tableLowerDeg": -6,
+  "sepBurns": [{ "id": "rcs", "met": "6:01:58.0", "burnS": 5 }],
+  "upperStage": {
+    "stage1": { "met": "7:05:58.0", "burnS": 150 },
+    "stage2": { "met": "7:10:48.0", "burnS": 108 },
+    "pamS": { "met": "7:20:00.0", "burnS": 88, "spinRpm": 70 }
+  },
+  "source_tier": "flagship",
+  "estimatedFields": [
+    "orbit.nmi (the press kit's planned 160 x 160 nmi)",
+    "tilt[1] (58 deg as on STS-34; the STS-41 angle was not found)",
+    "sepBurns[0].burnS (the report times the RCS burn's start only)",
+    "upperStage.stage2 (the STS-34 kit's ~140 s coast and ~108 s burn)",
+    "upperStage.pamS met and burnS (a search summary puts the PAM-S separation near 7 h 24 min; the Star 48B burn length is not sourced)",
+    "tilt times and the bay-door opening time (not found; the scene times them editorially)"
+  ],
+  "provenance": [
+    {
+      "l": "NASA STS-41 Mission Report: launch 279:11:47:14.983 GMT; Ulysses deployment 279:17:48:14; RCS separation burn 1 at 279:17:49:13, burn 2 not performed; Ulysses first burn 279:18:53:13",
+      "u": "https://ibiblio.org/apollo/Shuttle/Reports/Mission%20Reports/STS-41%20Space%20Shuttle%20Mission%20Report.pdf"
+    },
+    {
+      "l": "STS-41 press kit: orbit 160 x 160 nmi at 28.45 deg; spin-up to 70 rpm before the PAM-S firing; the deploy under the oversight of Tom Akers",
+      "u": "https://www.nasa.gov/wp-content/uploads/2023/05/sts-041-press-kit.pdf"
+    }
+  ]
+}

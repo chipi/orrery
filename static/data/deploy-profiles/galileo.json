@@ -1,0 +1,33 @@
+{
+  "missionId": "galileo",
+  "flight": "STS-34",
+  "orbiter": "atlantis",
+  "launchZeroUtc": "1989-10-18T16:53:40.020Z",
+  "method": "ius-tilt",
+  "orbit": { "nmi": [161, 161], "incDeg": 34.3, "basis": "plan" },
+  "tilt": [{ "deg": 29 }, { "deg": 58 }],
+  "releaseMet": "6:21:23.0",
+  "springMs": 0.15,
+  "tableLowerDeg": -6,
+  "sepBurns": [{ "id": "oms3", "met": "6:36:22.2", "burnS": 16.8, "dvFts": 31 }],
+  "upperStage": {
+    "stage1": { "met": "7:21:35.0", "burnS": 150 },
+    "stage2": { "met": "7:26:25.0", "burnS": 108 }
+  },
+  "source_tier": "flagship",
+  "estimatedFields": [
+    "orbit.nmi (the press kit's planned 161 x 161 nmi; the report gives no orbit at deploy)",
+    "tilt times and the bay-door opening time (not found; the scene times them editorially)",
+    "upperStage.stage1.burnS and stage2 (the press kit's ~150 s, ~140 s coast and ~108 s; the report logs only the first IUS burn)"
+  ],
+  "provenance": [
+    {
+      "l": "NASA STS-34 Mission Report (NSTS 08398): launch 291:16:53:40.020 GMT, inclination 34.30 deg; Galileo deployment 291:23:15:03; OMS-3 291:23:30:02.2 to 23:30:19.0, 16.8 s, 31 ft/s; Galileo IUS burn 292:00:15:15",
+      "u": "https://ibiblio.org/apollo/Shuttle/Reports/Mission%20Reports/STS-34%20National%20Space%20Transportation%20System%20Mission%20Report.pdf"
+    },
+    {
+      "l": "STS-34 press kit: tilt table to 29 deg for checkout, then 58 deg; springs eject at about 6 in/s; table lowered to -6 deg; IUS stage 1 about 150 s, stage 2 about 140 s after burnout for about 108 s",
+      "u": "https://discmaster.textfiles.com/view/10606/Space%20and%20Astronomy%20(October%201993).iso/pc/text/stskits/sts_34.pre"
+    }
+  ]
+}

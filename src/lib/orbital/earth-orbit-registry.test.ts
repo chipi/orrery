@@ -226,3 +226,33 @@ describe('coast ↔ descent ↔ capsule join guard', () => {
     }
   });
 });
+
+describe('winged coast ↔ winged return join guard (W12)', () => {
+  // Winged coasts whose runway landing is not built yet: the act holds at the end of the coast.
+  // X-37B: its approach speeds and deorbit times were not found (W12 plan, operator question 2).
+  const WINGED_PENDING = new Set(['otv-1', 'otv-2', 'otv-3', 'otv-4', 'otv-5', 'otv-6', 'otv-7']);
+  const dir = resolve(ROOT, 'static/data/missions/earth');
+  const winged = readdirSync(dir)
+    .filter((f) => f.endsWith('.json'))
+    .map((f) => f.slice(0, -'.json'.length))
+    .filter((id) => getEarthOrbitCoast(id)?.winged);
+  const hasProfile = (id: string) =>
+    existsSync(resolve(ROOT, `static/data/winged-profiles/${id}.json`));
+
+  it('every winged coast has a winged-return profile or is listed as pending', () => {
+    expect(winged).toContain('sts-1');
+    expect(winged.filter((id) => !hasProfile(id) && !WINGED_PENDING.has(id))).toEqual([]);
+  });
+
+  it('the pending list shrinks as returns are built', () => {
+    for (const id of WINGED_PENDING) {
+      expect(winged, id).toContain(id);
+      expect(hasProfile(id), id).toBe(false);
+    }
+  });
+
+  it('a winged return is never also a capsule descent', () => {
+    for (const id of winged.filter(hasProfile))
+      expect(existsSync(resolve(ROOT, `static/data/descent-profiles/${id}.json`)), id).toBe(false);
+  });
+});

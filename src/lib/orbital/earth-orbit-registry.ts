@@ -334,8 +334,8 @@ const COASTS: Record<string, EarthOrbitCoast> = {
     coastDurationS: 86400,
   },
   // Space Shuttle flights: after the climb the orbiter coasts in Earth orbit (no cislunar or
-  // heliocentric arc). No re-entry descent profile exists for a winged glide, so the act holds
-  // at the end of the coast.
+  // heliocentric arc). The landing is the winged return (W12): a runway scene driven by
+  // static/data/winged-profiles/<id>.json, played as the descent act after the coast.
   'sts-1': {
     // The mission record: a 166 nautical mile (307 km) orbit inclined 40.3 degrees, 54 h 20 min
     // 53 s and 37 revolutions (about 88 min each).

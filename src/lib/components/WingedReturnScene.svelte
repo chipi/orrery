@@ -165,7 +165,9 @@
   <div class="scrim" aria-hidden="true"></div>
   <div class="blackout" style="opacity:{fade}" aria-hidden="true"></div>
   <div class="header">
-    <div class="mission">{missionName} · {profile.flight}</div>
+    <div class="mission">
+      {missionName}{profile.flight !== missionName ? ` · ${profile.flight}` : ''}
+    </div>
     <div class="sub"><span class="live-dot"></span>{m.fly_winged_title()}</div>
   </div>
   <div class="clock">

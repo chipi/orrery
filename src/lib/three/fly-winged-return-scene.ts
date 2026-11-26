@@ -332,6 +332,8 @@ function axes(pose: WingedPose) {
 
 export function wingedCamera(t: number, aspect: number, pose: WingedPose): WingedCamera {
   const fit = portraitFit(aspect);
+  // Side-on shots of the 37 m orbiter need its length across a narrow frame, not only its height.
+  const side = Math.max(fit, aspect < 1 ? 1 / aspect : 1);
   const c = pose.pos.clone().add(new THREE.Vector3(0, pose.frame === 'runway' ? 3 : 0, 0));
   const V = (x: number, y: number, z: number) => new THREE.Vector3(x, y, z);
   const shot = (pos: THREE.Vector3, look: THREE.Vector3, fov = 40): WingedCamera => ({
@@ -376,7 +378,7 @@ export function wingedCamera(t: number, aspect: number, pose: WingedPose): Winge
         shot(
           c
             .clone()
-            .addScaledVector(left, 70 * fit)
+            .addScaledVector(left, 70 * side)
             .add(V(0, 6, -25)),
           c,
           34,
@@ -388,8 +390,8 @@ export function wingedCamera(t: number, aspect: number, pose: WingedPose): Winge
         shot(
           c
             .clone()
-            .addScaledVector(left, 48 * fit)
-            .add(V(0, 2.5, 30 * fit)),
+            .addScaledVector(left, 58 * side)
+            .add(V(0, 2.5, 18 * fit)),
           c,
           36,
         ),

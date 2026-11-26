@@ -1,0 +1,54 @@
+{
+  "name": "Hakuto-R Mission 2 RESILIENCE",
+  "vehicle": "Falcon 9 Block 5 (booster B1085; meeliftlancering met Blue Ghost Mission 1 van Firefly)",
+  "payload": "Lander van ongeveer 1000 kg getankt (drooggewicht 340 kg) met zes ladingen, onder meer de 5 kg zware TENACIOUS-microrover; stortte neer tijdens de landingspoging",
+  "delta_v": "Niet gepubliceerd; een overgang met lage energie met een maan-flyby, tot 1,1 miljoen km van de Aarde",
+  "type": "PRIVÉ-LANDER · NEERGESTORT",
+  "first": "De tweede maanlandingspoging van ispace, gericht op Mare Frigoris in het verre noorden",
+  "description": "Hakuto-R Missie 2, RESILIENCE genoemd, was de tweede Maanmissie van ispace. Hij werd op 2025-01-15 gelanceerd met de Falcon 9 die ook Firefly's Blue Ghost droeg, vloog een overgang met lage energie langs de Maan op ongeveer 8400 km op 2025-02-14, kwam op 2025-05-06 in een maanbaan en bereikte op 2025-05-28 een cirkelvormige baan van 100 km. Hij droeg zes ladingen, onder meer de 5 kg zware TENACIOUS-microrover van ispace-EUROPE. De afdaling naar Mare Frigoris, 60.5 N, 4.6 W, begon om ongeveer 18:10 UTC op 2025-06-05 en zou eindigen om 19:17 UTC. De laatste telemetrie kwam van 192 m boven het oppervlak, met de lander sneller dan verwacht, ongeveer 1 min 45 s voor de geplande landing. ispace herleidde het verlies tot de laserafstandsmeter, die traag geldige hoogtes gaf, waardoor de lander niet genoeg kon afremmen. LRO fotografeerde het inslagpunt op 60.4445 N, 355.4120 E op 2025-06-11.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCERING",
+      "note": "Falcon 9-meeliftlancering vanaf LC-39A, 2025-01-15, 06:11 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 1.56,
+      "label": "MANOEUVRE IN DE DIEPE RUIMTE",
+      "note": "Een ontsteking van 16 seconden op 2025-01-16, 250.000 km van de Aarde.",
+      "type": "info"
+    },
+    {
+      "met": 30.7,
+      "label": "MAAN-FLYBY",
+      "note": "Dichtste nadering ongeveer 8400 km op 2025-02-14, 22:43 UTC.",
+      "type": "info"
+    },
+    {
+      "met": 111.6,
+      "label": "INBRENGING IN MAANBAAN",
+      "note": "Een ontsteking van de hoofdmotor van ongeveer negen minuten op 2025-05-06, 20:41 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 133,
+      "label": "CIRKELVORMIGE BAAN VAN 100 KM",
+      "note": "De uiteindelijke baan, bereikt op 2025-05-28.",
+      "type": "nominal"
+    },
+    {
+      "met": 140.5,
+      "label": "AFDALING VANAF 100 KM",
+      "note": "2025-06-05, ongeveer 18:10 UTC; een afdaling van 66 minuten naar Mare Frigoris.",
+      "type": "nominal"
+    },
+    {
+      "met": 140.54,
+      "label": "LAATSTE TELEMETRIE OP 192 M",
+      "note": "Te snel, ongeveer 1 min 45 s voor de geplande landing; de laserafstandsmeter gaf traag geldige hoogtes.",
+      "type": "warning"
+    }
+  ],
+  "vehicle_stage": "tweede trap Falcon 9; losgekoppeld om 07:44 UTC"
+}

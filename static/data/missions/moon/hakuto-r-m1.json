@@ -1,0 +1,597 @@
+{
+  "id": "hakuto-r-m1",
+  "agency": "ispace",
+  "agency_full": "ispace (Japanese commercial lunar company)",
+  "sector": "private",
+  "dest": "MOON",
+  "color": "#C8102E",
+  "year": 2022,
+  "status": "FLOWN",
+  "departure_date": "2022-12-11",
+  "arrival_date": "2023-04-25",
+  "transit_days": 135,
+  "vehicle": "Falcon 9 (booster B1073, fifth flight; rideshare with NASA's Lunar Flashlight)",
+  "payload": "About 1,000 kg fuelled lander (dry mass about 340 kg) with about 11 kg of customer payloads, among them the UAE's Rashid rover; crashed during the landing attempt",
+  "delta_v": "Not published; a low-energy transfer of about three months, out to 1.38 million km from Earth",
+  "data_quality": "partial",
+  "credit": "© ispace for the mission; ispace's results release of 2023-05-26 for the descent and the cause, Spaceflight Now (2022-12-11 launch coverage, 2023-04-24 preview) for the launch, masses and payloads, NASA and the LROC team (NASA/GSFC/Arizona State University) for the impact site. Conflicts: ispace schedules the landing at 16:43 UTC, Spaceflight Now and NSSDCA round it to 16:40 UTC; Wikipedia's 47.581 N, 44.094 E is the LRO impact point, the planned site was 47.5 N, 44.4 E (NSSDCA, search summary only). The impact time and speed were not published, and the lander's main-engine thrust, Isp and propellant mass were not found.",
+  "links": [
+    {
+      "l": "Hakuto-R Mission 1 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Hakuto-R_Mission_1",
+      "t": "intro"
+    },
+    {
+      "l": "ispace: results of the HAKUTO-R Mission 1 lunar landing",
+      "u": "https://www.ispace-inc.com/2023/05/26/ispace-announces-results-of-the-hakuto-r-mission-1-lunar-landing/",
+      "t": "core"
+    },
+    {
+      "l": "NASA's LRO views impact site of Hakuto-R Mission 1",
+      "u": "https://www.nasa.gov/missions/lro/nasas-lro-views-impact-site-of-hakuto-r-mission-1-moon-lander/",
+      "t": "deep"
+    }
+  ],
+  "flight_data_quality": "sparse",
+  "fleet_refs": [
+    {
+      "id": "falcon-9",
+      "role": "launcher"
+    },
+    {
+      "id": "hakuto-r",
+      "role": "spacecraft"
+    },
+    {
+      "id": "cape-canaveral-slc-40",
+      "role": "launch-site"
+    }
+  ],
+  "flight": {
+    "launch": {
+      "vehicle_stage": "Falcon 9 second stage; Hakuto-R separated at T+46:59",
+      "mass_at_tli_kg": 1000,
+      "departure": "spacecraft",
+      "source": "Spaceflight Now launch coverage 2022-12-11 (about 1,000 kg fuelled; separation at T+46:59)"
+    },
+    "cruise": {
+      "source": "ispace design release (low-energy ballistic transfer, about three months); Spaceflight Now (maximum distance from Earth 1.38 million km). The drawn path is the schematic /fly transfer, not the flown low-energy loop."
+    },
+    "arrival": {
+      "periapsis_km": 100,
+      "source": "ispace results release: the descent began from a 100 km circular orbit",
+      "entry_velocity_km_s": 0.001,
+      "edl_system": "powered",
+      "edl_duration_s": 201,
+      "touchdown_velocity_ms": 125.72
+    },
+    "events": [
+      {
+        "met_days": 0,
+        "type": "launch",
+        "label": "Launch — Falcon 9 (rideshare)",
+        "description": "Cape Canaveral SLC-40, 2022-12-11, 07:38 UTC. Hakuto-R separated from the upper stage at T+46:59, about six minutes before NASA's Lunar Flashlight."
+      },
+      {
+        "met_days": 99.7,
+        "type": "loi",
+        "label": "Lunar orbit insertion",
+        "description": "2023-03-21: the first insertion burn, at about 01:24 UTC (10:24 JST), after about three months on a low-energy transfer that reached 1.38 million km from Earth."
+      },
+      {
+        "met_days": 123,
+        "type": "arrival",
+        "label": "100 km circular orbit",
+        "description": "2023-04-13: a 10-minute burn put Hakuto-R into the 100 km circular orbit from which the descent began."
+      },
+      {
+        "met_days": 135.33,
+        "type": "descent_start",
+        "label": "Descent from 100 km",
+        "description": "2023-04-25, 15:40 UTC (26 April 00:40 JST). The descent to Atlas crater, on the south-east edge of Mare Frigoris, took about an hour."
+      },
+      {
+        "met_days": 135.38,
+        "type": "anomaly",
+        "label": "Altimeter rejected — lander still about 5 km up",
+        "description": "Scheduled landing, 16:43 UTC. Passing a crater rim about 3 km high, the measured altitude jumped; the software judged the altimeter abnormal and discarded all later sensor data, so the lander believed it was at 0 m while about 5 km up. It descended slowly until its propellant ran out, then fell. Impact time and speed were not published."
+      }
+    ],
+    "cislunar_profile": {
+      "source_tier": "tier_1_5_hybrid",
+      "translunar": {
+        "type": "direct"
+      },
+      "lunar_arrival": {
+        "type": "orbit_and_land",
+        "altitude_km": 100
+      },
+      "return": {
+        "type": "none"
+      },
+      "waypoint_times": "flown",
+      "waypoints_km": [
+        [
+          0,
+          6563,
+          0,
+          0
+        ],
+        [
+          2.8717,
+          -2757,
+          -2838,
+          5227
+        ],
+        [
+          4.3075,
+          -6497,
+          -419,
+          772
+        ],
+        [
+          5.7434,
+          -4239,
+          2388,
+          -4398
+        ],
+        [
+          7.1792,
+          1937,
+          2991,
+          -5509
+        ],
+        [
+          8.6151,
+          6322,
+          831,
+          -1530
+        ],
+        [
+          10.0509,
+          4869,
+          -2094,
+          3858
+        ],
+        [
+          11.4868,
+          -1079,
+          -3086,
+          5683
+        ],
+        [
+          12.9226,
+          -6034,
+          -1228,
+          2261
+        ],
+        [
+          14.3585,
+          -25620,
+          0,
+          -15030
+        ],
+        [
+          15.7943,
+          -43357,
+          0,
+          -33145
+        ],
+        [
+          17.2302,
+          -56562,
+          0,
+          -47917
+        ],
+        [
+          18.666,
+          -67579,
+          0,
+          -60852
+        ],
+        [
+          20.1019,
+          -77212,
+          0,
+          -72547
+        ],
+        [
+          21.5377,
+          -85861,
+          0,
+          -83319
+        ],
+        [
+          22.9736,
+          -93736,
+          0,
+          -93341
+        ],
+        [
+          24.4094,
+          -101004,
+          0,
+          -102761
+        ],
+        [
+          25.8453,
+          -107756,
+          0,
+          -111655
+        ],
+        [
+          27.2811,
+          -114080,
+          0,
+          -120105
+        ],
+        [
+          28.717,
+          -120014,
+          0,
+          -128146
+        ],
+        [
+          30.1528,
+          -125634,
+          0,
+          -135852
+        ],
+        [
+          31.5887,
+          -130933,
+          0,
+          -143210
+        ],
+        [
+          33.0245,
+          -135961,
+          0,
+          -150273
+        ],
+        [
+          34.4604,
+          -140749,
+          0,
+          -157070
+        ],
+        [
+          35.8962,
+          -145319,
+          0,
+          -163623
+        ],
+        [
+          37.3321,
+          -149669,
+          0,
+          -169929
+        ],
+        [
+          38.7679,
+          -153805,
+          0,
+          -175993
+        ],
+        [
+          40.2038,
+          -157771,
+          0,
+          -181861
+        ],
+        [
+          41.6396,
+          -161593,
+          0,
+          -187563
+        ],
+        [
+          43.0755,
+          -165234,
+          0,
+          -193056
+        ],
+        [
+          44.5113,
+          -168704,
+          0,
+          -198350
+        ],
+        [
+          45.9472,
+          -172086,
+          0,
+          -203539
+        ],
+        [
+          47.383,
+          -175262,
+          0,
+          -208484
+        ],
+        [
+          48.8188,
+          -178354,
+          0,
+          -213330
+        ],
+        [
+          50.2547,
+          -181298,
+          0,
+          -217999
+        ],
+        [
+          51.6905,
+          -184134,
+          0,
+          -222538
+        ],
+        [
+          53.1264,
+          -186848,
+          0,
+          -226930
+        ],
+        [
+          54.5622,
+          -189461,
+          0,
+          -231198
+        ],
+        [
+          55.9981,
+          -191947,
+          0,
+          -235312
+        ],
+        [
+          58.8698,
+          -196631,
+          0,
+          -243186
+        ],
+        [
+          60.3056,
+          -198890,
+          0,
+          -247021
+        ],
+        [
+          64.6132,
+          -204898,
+          0,
+          -257567
+        ],
+        [
+          66.049,
+          -206707,
+          0,
+          -260841
+        ],
+        [
+          70.3566,
+          -211726,
+          0,
+          -270142
+        ],
+        [
+          71.7924,
+          -213300,
+          0,
+          -273118
+        ],
+        [
+          76.1,
+          -217369,
+          0,
+          -281206
+        ],
+        [
+          77.5358,
+          -218514,
+          0,
+          -283629
+        ],
+        [
+          83.2792,
+          -222647,
+          0,
+          -292737
+        ],
+        [
+          84.7151,
+          -223574,
+          0,
+          -294874
+        ],
+        [
+          99.7,
+          -228756,
+          0,
+          -311220
+        ],
+        [
+          100.5094,
+          -228673,
+          675,
+          -311107
+        ],
+        [
+          101.9452,
+          -228208,
+          1587,
+          -310473
+        ],
+        [
+          103.3811,
+          -227508,
+          1817,
+          -309521
+        ],
+        [
+          104.8169,
+          -226874,
+          1265,
+          -308659
+        ],
+        [
+          106.2528,
+          -226579,
+          168,
+          -308257
+        ],
+        [
+          107.6886,
+          -226750,
+          -1001,
+          -308491
+        ],
+        [
+          109.1245,
+          -227314,
+          -1739,
+          -309257
+        ],
+        [
+          110.5603,
+          -228027,
+          -1729,
+          -310227
+        ],
+        [
+          111.9962,
+          -228583,
+          -975,
+          -310984
+        ],
+        [
+          113.432,
+          -228743,
+          198,
+          -311202
+        ],
+        [
+          114.8679,
+          -228438,
+          1287,
+          -310787
+        ],
+        [
+          116.3037,
+          -227799,
+          1821,
+          -309917
+        ],
+        [
+          117.7396,
+          -227101,
+          1572,
+          -308968
+        ],
+        [
+          119.1754,
+          -226645,
+          647,
+          -308347
+        ],
+        [
+          120.6113,
+          -226396,
+          0,
+          -308389
+        ],
+        [
+          122.0471,
+          -226440,
+          0,
+          -308424
+        ],
+        [
+          123,
+          -226633,
+          0,
+          -308331
+        ],
+        [
+          124.9188,
+          -226633,
+          0,
+          -308331
+        ],
+        [
+          126.3547,
+          -226633,
+          0,
+          -308331
+        ],
+        [
+          127.7905,
+          -226633,
+          0,
+          -308331
+        ],
+        [
+          129.2264,
+          -226633,
+          0,
+          -308331
+        ],
+        [
+          130.6622,
+          -226633,
+          0,
+          -308331
+        ],
+        [
+          132.0981,
+          -226633,
+          0,
+          -308331
+        ],
+        [
+          133.5339,
+          -226633,
+          0,
+          -308331
+        ],
+        [
+          135.38,
+          -226633,
+          0,
+          -308331
+        ],
+        [
+          136.4056,
+          -226633,
+          0,
+          -308331
+        ],
+        [
+          137.8415,
+          -226633,
+          0,
+          -308331
+        ],
+        [
+          139.2773,
+          -226633,
+          0,
+          -308331
+        ],
+        [
+          140.7132,
+          -226633,
+          0,
+          -308331
+        ],
+        [
+          142.149,
+          -226633,
+          0,
+          -308331
+        ]
+      ]
+    }
+  }
+}

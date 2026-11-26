@@ -2052,6 +2052,12 @@
       "cover": false
     },
     {
+      "title": "Blue Ghost Mission 1",
+      "file": "/images/missions/thumbnails/blue-ghost-m1.webp",
+      "route": "/missions?id=blue-ghost-m1",
+      "cover": false
+    },
+    {
       "title": "Blue Moon MK1",
       "file": "/images/missions/thumbnails/blue-moon-mk1.webp",
       "route": "/missions?id=blue-moon-mk1",
@@ -2220,6 +2226,12 @@
       "cover": false
     },
     {
+      "title": "Hakuto-R Mission 1",
+      "file": "/images/missions/thumbnails/hakuto-r-m1.webp",
+      "route": "/missions?id=hakuto-r-m1",
+      "cover": false
+    },
+    {
       "title": "Hayabusa",
       "file": "/images/missions/thumbnails/hayabusa1.webp",
       "route": "/missions?id=hayabusa1",
@@ -2256,6 +2268,12 @@
       "cover": false
     },
     {
+      "title": "IM-2",
+      "file": "/images/missions/thumbnails/im-2.webp",
+      "route": "/missions?id=im-2",
+      "cover": false
+    },
+    {
       "title": "InSight",
       "file": "/images/missions/thumbnails/insight.webp",
       "route": "/missions?id=insight",
@@ -2265,6 +2283,12 @@
       "title": "Inspiration4",
       "file": "/images/missions/thumbnails/inspiration4.webp",
       "route": "/missions?id=inspiration4",
+      "cover": false
+    },
+    {
+      "title": "Hakuto-R Mission 2 RESILIENCE",
+      "file": "/images/missions/thumbnails/ispace-m2.webp",
+      "route": "/missions?id=ispace-m2",
       "cover": false
     },
     {
@@ -2499,6 +2523,12 @@
       "title": "Parker Solar Probe",
       "file": "/images/missions/thumbnails/parker-solar-probe.webp",
       "route": "/missions?id=parker-solar-probe",
+      "cover": false
+    },
+    {
+      "title": "Peregrine Mission One",
+      "file": "/images/missions/thumbnails/peregrine-m1.webp",
+      "route": "/missions?id=peregrine-m1",
       "cover": false
     },
     {
@@ -5618,7 +5648,7 @@
     "exploded_art": 76,
     "landing_art": 39,
     "blueprint_art": 18,
-    "mission_trajectories": 141,
+    "mission_trajectories": 146,
     "site_illustrations": 16,
     "lab_illustrations": 25,
     "diagrams_science": 117,

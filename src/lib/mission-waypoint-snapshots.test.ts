@@ -56,6 +56,25 @@ const MOON_SNAPSHOTS: CislunarSnapshot[] = [
   { slug: 'artemis2', dest: 'moon', firstMet: 0, lastMetMin: 8.96, lastMetMax: 9.16, count: 98 },
   { slug: 'artemis4', dest: 'moon', firstMet: 0, lastMetMin: 17.9, lastMetMax: 18.1, count: 103 },
   { slug: 'beresheet', dest: 'moon', firstMet: 0, lastMetMin: 50.3, lastMetMax: 50.5, count: 100 },
+  // The private Moon missions (0.9.12): analytic hybrids, each ending 5% past its last event.
+  {
+    slug: 'hakuto-r-m1',
+    dest: 'moon',
+    firstMet: 0,
+    lastMetMin: 142.0,
+    lastMetMax: 142.3,
+    count: 80,
+  },
+  { slug: 'ispace-m2', dest: 'moon', firstMet: 0, lastMetMin: 147.4, lastMetMax: 147.7, count: 76 },
+  {
+    slug: 'blue-ghost-m1',
+    dest: 'moon',
+    firstMet: 0,
+    lastMetMin: 48.3,
+    lastMetMax: 48.5,
+    count: 99,
+  },
+  { slug: 'im-2', dest: 'moon', firstMet: 0, lastMetMin: 8.0, lastMetMax: 8.2, count: 92 },
   {
     slug: 'blue-moon-mk1',
     dest: 'moon',

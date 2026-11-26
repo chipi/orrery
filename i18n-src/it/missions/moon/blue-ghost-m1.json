@@ -1,0 +1,42 @@
+{
+  "name": "Blue Ghost Mission 1",
+  "vehicle": "Falcon 9 Block 5 (booster B1085; lancio in condivisione con Hakuto-R Mission 2 di ispace)",
+  "payload": "Dieci strumenti NASA (circa 94 kg in tutto); massa al lancio del lander 1517 kg",
+  "delta_v": "Non pubblicato",
+  "type": "LANDER COMMERCIALE · ATTERRATO IN PIEDI",
+  "first": "La prima missione lunare di Firefly: è atterrata in piedi e ha operato per più di 14 giorni",
+  "description": "Blue Ghost Mission 1 è stata la prima missione lunare di Firefly Aerospace, svolta per il programma Commercial Lunar Payload Services della NASA con dieci strumenti NASA. Il lander, alto 2 m e largo 3,5 m, è stato lanciato su un Falcon 9 il 2025-01-15 e ha trascorso circa 25 giorni in orbita terrestre, circa quattro giorni nel transito lunare e circa 16 giorni in orbita lunare. È entrato in orbita lunare il 2025-02-14. Dopo un'accensione di inserimento nell'orbita di discesa a 100 km il 2025-03-01, la discesa propulsa è iniziata alle 08:22 UTC del 2025-03-02 e il lander è atterrato alle 08:34 UTC a Mare Crisium, vicino a Mons Latreille, a 18.5623 N, 61.8103 E, entro il bersaglio di atterraggio di 100 m e in posizione verticale. Ha operato per più di 14 giorni, ha ripreso la Terra che eclissa il Sole il 2025-03-14 e si è fermato dopo il tramonto lunare del 2025-03-16, avendo inviato più di 119 GB di dati.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCIO",
+      "note": "Falcon 9 in condivisione da LC-39A, 2025-01-15, 06:11 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 25,
+      "label": "INSERIMENTO TRANSLUNARE",
+      "note": "Circa 25 giorni in orbita terrestre precedono il transito lunare di circa quattro giorni.",
+      "type": "info"
+    },
+    {
+      "met": 29.82,
+      "label": "INSERIMENTO IN ORBITA LUNARE",
+      "note": "Un'accensione di 4 min 15 s il 2025-02-14, 01:51 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 46.09,
+      "label": "DISCESA PROPULSA",
+      "note": "2025-03-02, 08:22 UTC: un'accensione di frenata di circa nove minuti.",
+      "type": "nominal"
+    },
+    {
+      "met": 46.1,
+      "label": "ATTERRAGGIO",
+      "note": "08:34 UTC a Mare Crisium, in posizione verticale ed entro il bersaglio di 100 m.",
+      "type": "nominal"
+    }
+  ],
+  "vehicle_stage": "secondo stadio del Falcon 9, verso un'orbita terrestre fortemente ellittica"
+}

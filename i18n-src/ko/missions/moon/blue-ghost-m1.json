@@ -1,0 +1,42 @@
+{
+  "name": "Blue Ghost Mission 1",
+  "vehicle": "Falcon 9 Block 5 (부스터 B1085; ispace의 Hakuto-R 미션 2와 동승 발사)",
+  "payload": "NASA 관측 장비 열 개(합계 약 94 kg); 착륙선 발사 질량 1517 kg",
+  "delta_v": "비공개",
+  "type": "상업용 착륙선 · 똑바로 착륙",
+  "first": "Firefly의 첫 달 임무: 똑바로 착륙해 14일 넘게 작동했다",
+  "description": "Blue Ghost Mission 1은 Firefly Aerospace의 첫 달 임무로, NASA의 Commercial Lunar Payload Services를 위해 NASA 관측 장비 열 개를 싣고 수행되었다. 높이 2 m, 너비 3.5 m의 착륙선은 2025-01-15에 Falcon 9으로 발사되어 지구 궤도에서 약 25일, 달 전이에 약 4일, 달 궤도에서 약 16일을 보냈다. 2025-02-14에 달 궤도에 진입했다. 2025-03-01 100 km에서의 하강 궤도 진입 연소 뒤, 동력 하강은 2025-03-02의 08:22 UTC에 시작되었고 08:34 UTC에 위기의 바다의 Mons Latreille 근처 18.5623 N, 61.8103 E에, 100 m 착륙 목표 안에 똑바로 착륙했다. 14일 넘게 작동했고, 2025-03-14에 지구가 태양을 가리는 모습을 촬영했으며, 2025-03-16 달의 일몰 뒤 작동을 멈췄다. 보내온 데이터는 119 GB가 넘는다.",
+  "events": [
+    {
+      "met": 0,
+      "label": "발사",
+      "note": "LC-39A에서 Falcon 9 동승 발사, 2025-01-15, 06:11 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 25,
+      "label": "달 전이 궤도 진입",
+      "note": "지구 궤도에서 약 25일을 보낸 뒤 약 4일의 달 전이가 이어진다.",
+      "type": "info"
+    },
+    {
+      "met": 29.82,
+      "label": "달 궤도 진입",
+      "note": "2025-02-14, 01:51 UTC, 4분 15초 연소.",
+      "type": "nominal"
+    },
+    {
+      "met": 46.09,
+      "label": "동력 하강",
+      "note": "2025-03-02, 08:22 UTC: 약 9분간의 감속 연소.",
+      "type": "nominal"
+    },
+    {
+      "met": 46.1,
+      "label": "착륙",
+      "note": "08:34 UTC, 위기의 바다에 똑바로, 100 m 목표 안에 착륙.",
+      "type": "nominal"
+    }
+  ],
+  "vehicle_stage": "Falcon 9 2단, 고타원 지구 궤도로"
+}

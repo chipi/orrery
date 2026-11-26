@@ -1,0 +1,17 @@
+{
+  "name": "Hakuto-R Mission 1",
+  "vehicle": "Falcon 9 (booster B1073, fifth flight; rideshare with NASA's Lunar Flashlight)",
+  "payload": "About 1,000 kg fuelled lander (dry mass about 340 kg) with about 11 kg of customer payloads, among them the UAE's Rashid rover; crashed during the landing attempt",
+  "delta_v": "Not published; a low-energy transfer of about three months, out to 1.38 million km from Earth",
+  "type": "PRIVATE LANDER · CRASHED",
+  "first": "ispace's first Moon landing attempt: eight of ten milestones met before the landing failed",
+  "description": "Hakuto-R Mission 1 was the first Moon mission of the Japanese company ispace. Its Series 1 lander, 2.3 m tall and 2.6 m wide with its legs out, launched on a Falcon 9 on 2022-12-11 and flew a low-energy transfer of about three months, out to 1.38 million km from Earth. It entered lunar orbit on 2023-03-21 and reached a 100 km circular orbit on 2023-04-13. Its descent began on 2023-04-25 at 15:40 UTC. Passing a crater rim about 3 km high, the measured altitude jumped; the software judged the altimeter abnormal and discarded all later sensor data, so the lander believed it was at the surface while it was still about 5 km up. It kept descending slowly until its propellant ran out, then fell. NASA's Lunar Reconnaissance Orbiter imaged the area on 2023-04-26 and found the impact point at 47.581 N, 44.094 E, with at least four pieces of debris. ispace found a software cause, not a hardware one.",
+  "events": [
+    { "met": 0, "label": "LAUNCH", "note": "Falcon 9 rideshare from Cape Canaveral SLC-40, 2022-12-11, 07:38 UTC.", "type": "nominal" },
+    { "met": 99.7, "label": "LUNAR ORBIT INSERTION", "note": "First insertion burn on 2023-03-21, at about 01:24 UTC.", "type": "nominal" },
+    { "met": 123, "label": "100 KM CIRCULAR ORBIT", "note": "A 10-minute burn on 2023-04-13 reaches the orbit the descent starts from.", "type": "nominal" },
+    { "met": 135.33, "label": "DESCENT FROM 100 KM", "note": "2023-04-25, 15:40 UTC; the descent takes about an hour.", "type": "nominal" },
+    { "met": 135.38, "label": "ALTIMETER REJECTED", "note": "At the scheduled landing time, 16:43 UTC, the lander still believes it is on the surface while about 5 km up; it falls once its propellant runs out.", "type": "warning" }
+  ],
+  "vehicle_stage": "Falcon 9 second stage; Hakuto-R separated at T+46:59"
+}

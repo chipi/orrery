@@ -1,0 +1,54 @@
+{
+  "name": "Hakuto-R Mission 2 RESILIENCE",
+  "vehicle": "Falcon 9 Block 5（B1085号助推器；与Firefly的Blue Ghost Mission 1拼车发射）",
+  "payload": "加注燃料后约1000 kg的着陆器（干质量340 kg），搭载六项载荷，其中包括5 kg的TENACIOUS微型月球车；在着陆尝试中坠毁",
+  "delta_v": "未公布；含一次月球飞掠的低能量转移，最远离地球110万km",
+  "type": "私营着陆器 · 坠毁",
+  "first": "ispace的第二次登月尝试，目标是遥远北方的冷海",
+  "description": "Hakuto-R Mission 2 RESILIENCE，是ispace的第二次月球任务。它于2025-01-15由同时搭载Firefly的Blue Ghost的Falcon 9发射，飞行了一段低能量转移，于2025-02-14在约8400 km处飞掠月球，于2025-05-06进入月球轨道，并于2025-05-28到达100 km的圆轨道。它搭载六项载荷，其中包括来自ispace-EUROPE的5 kg TENACIOUS微型月球车。飞向冷海（60.5 N，4.6 W）的下降于2025-06-05约18:10 UTC开始，原定19:17 UTC结束。最后一次遥测来自距月面192 m处，着陆器速度比预期更快，距预定着陆约1分45秒。ispace将损失归因于激光测距仪，它给出有效高度的速度太慢，使着陆器无法充分减速。LRO于2025-06-11对位于60.4445 N、355.4120 E的撞击点成像。",
+  "events": [
+    {
+      "met": 0,
+      "label": "发射",
+      "note": "2025-01-15，06:11 UTC，Falcon 9拼车发射，自LC-39A。",
+      "type": "nominal"
+    },
+    {
+      "met": 1.56,
+      "label": "深空机动",
+      "note": "2025-01-16，在距地球25万km处进行16秒点火。",
+      "type": "info"
+    },
+    {
+      "met": 30.7,
+      "label": "月球飞掠",
+      "note": "2025-02-14，22:43 UTC，最近距离约8400 km。",
+      "type": "info"
+    },
+    {
+      "met": 111.6,
+      "label": "月球轨道入轨",
+      "note": "2025-05-06，20:41 UTC，主发动机点火约九分钟。",
+      "type": "nominal"
+    },
+    {
+      "met": 133,
+      "label": "100 KM圆轨道",
+      "note": "2025-05-28到达的最终轨道。",
+      "type": "nominal"
+    },
+    {
+      "met": 140.5,
+      "label": "自100 KM开始下降",
+      "note": "2025-06-05，约18:10 UTC；飞向冷海的66分钟下降。",
+      "type": "nominal"
+    },
+    {
+      "met": 140.54,
+      "label": "192 M处最后遥测",
+      "note": "速度过快，距预定着陆约1分45秒；激光测距仪给出有效高度的速度太慢。",
+      "type": "warning"
+    }
+  ],
+  "vehicle_stage": "Falcon 9 第二级；07:44 UTC部署"
+}

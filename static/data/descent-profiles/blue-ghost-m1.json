@@ -1,0 +1,69 @@
+{
+  "missionId": "blue-ghost-m1",
+  "siteId": "blue-ghost-m1",
+  "body": "moon",
+  "landingSite": {
+    "lat": 18.5623,
+    "lon": 61.8103
+  },
+  "entryState": {
+    "altitudeM": 20000,
+    "velocityMs": 1700,
+    "flightPathAngleDeg": 2.2
+  },
+  "entryMassKg": 900,
+  "entryCdA": 0,
+  "retroPropellantKg": 450,
+  "archetype": "LUNAR_POWERED",
+  "params": {
+    "ispS": 300,
+    "terminalVelocityMs": 1,
+    "descentRateGain": 0.065,
+    "brakingFpaDeg": 2.2,
+    "brakingMaxThrustN": 2200,
+    "highGateSpeedMs": 40,
+    "approachFpaDeg": 30,
+    "lowGateAltM": 150,
+    "brakingRateGain": 0.01
+  },
+  "beats": [
+    {
+      "type": "main_cutoff",
+      "altM": 780
+    }
+  ],
+  "source_tier": "flagship",
+  "provenance": [
+    {
+      "l": "Firefly live updates: powered descent began at 2:22 a.m. CST (08:22 UTC) on 2 Mar 2025, about nine minutes with all engines, cutting the speed from about 1,700 m/s to about 40 m/s; the main engine shut off at 2:32 a.m. CST, under two minutes before touchdown; RCS thrusters then brought the lander down at about 1 m/s. The model brakes from 20 km (the end of the coast) to 40 m/s in 8.9 minutes and lands in 10.7 minutes",
+      "u": "https://fireflyspace.com/news/blue-ghost-mission-1-live-updates/"
+    },
+    {
+      "l": "collectSPACE: descent orbit insertion at 100 km about 63 minutes before touchdown, a coast of about 50 minutes down to about 20 km; the main engine shut off with about 100 s to go",
+      "u": "https://www.collectspace.com/news/news-030225a-firefly-blue-ghost-mission-one-moon-landing.html"
+    },
+    {
+      "l": "NASA: touchdown 3:34 a.m. EST (08:34 UTC), upright, in Mare Crisium near Mons Latreille (NSSDCA gives 08:45 UT: three sources give 08:34)",
+      "u": "https://www.nasa.gov/news-release/touchdown-carrying-nasa-science-fireflys-blue-ghost-lands-on-moon/"
+    },
+    {
+      "l": "Firefly Blue Ghost: one central engine of more than 1,000 N and eight Spectre thrusters of 1,600 N in total; MMH and MON-3. The model's braking thrust (2,200 N) is fitted inside that total. Masses at the start of the descent are not published (Wikipedia gives 1,469 kg at the start of the mission and 469 kg dry): estimates",
+      "u": "https://fireflyspace.com/missions/blue-ghost-mission-1/"
+    },
+    {
+      "l": "NASA LRO: the lander at 18.5623 N, 61.8103 E (LROC 1407)",
+      "u": "https://www.lroc.im-ldi.com/images/1407"
+    }
+  ],
+  "estimatedFields": [
+    "entryState.altitudeM (about 20 km, the end of the coast)",
+    "entryState.flightPathAngleDeg",
+    "entryMassKg",
+    "retroPropellantKg",
+    "ispS",
+    "brakingFpaDeg",
+    "brakingMaxThrustN",
+    "approachFpaDeg",
+    "beats.main_cutoff (about 100 s before touchdown in the model; the altitude is unresolved in the sources)"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "name": "Peregrine Mission One",
+  "vehicle": "Vulcan Centaur (eerste vlucht)",
+  "payload": "Peregrine-lander, 1283 kg bij de lancering (Wikipedia); 20 ladingen, vijf ervan NASA-instrumenten; bereikte de Maan nooit",
+  "delta_v": "Niet gepubliceerd",
+  "type": "COMMERCIËLE LANDER · BEREIKTE DE MAAN NOOIT",
+  "first": "Gevlogen op de eerste Vulcan Centaur; een drijfstoflek maakte een einde aan de maanlanding voordat die begon",
+  "description": "Peregrine Mission One was een maanlander van Astrobotic, uitgevoerd voor NASA's Commercial Lunar Payload Services met 20 ladingen, vijf ervan NASA-instrumenten. Hij werd op 2024-01-08 gelanceerd op de eerste vlucht van de Vulcan Centaur en kwam om 08:09 UTC los van de bovenste trap. De geplande vlucht was een sterk elliptische baan om de Aarde met het apogeum op de afstand van de Maan, 1,5 omlopen, en dan een onderschepping van de Maan. In plaats daarvan steeg de druk in de oxidatortank na het loskoppelen en 92 minuten later scheurde een oxidatortank open en liet het lek de lander draaien. De onderzoekscommissie van Astrobotic stelde vast dat een heliumdrukklep zeer waarschijnlijk zijn afdichting verloor. De landing werd afgeblazen. Peregrine bereikte de afstand van de Maan op ongeveer 2024-01-12 en op 2024-01-13 besloten Astrobotic en NASA de missie te beëindigen. Ontstekingen van zijn hoofdmotoren verlegden de terugkeer naar de Zuidelijke Stille Oceaan, waar hij op 2024-01-18 om ongeveer 21:04 UTC terugkeerde, na 10 dagen en 14 uur vlucht.",
+  "events": [
+    { "met": 0, "label": "LANCERING", "note": "Vulcan Centaur vanaf SLC-41, 2024-01-08, 07:18 UTC.", "type": "nominal" },
+    { "met": 0.04, "label": "SCHEIDING", "note": "Peregrine komt om 08:09 UTC los van de Centaur.", "type": "nominal" },
+    { "met": 0.1, "label": "TANKBREUK", "note": "92 minuten na de scheiding scheurt een oxidatortank open en laat het lek de lander draaien; de landing wordt afgeblazen.", "type": "warning" },
+    { "met": 4, "label": "AFSTAND VAN DE MAAN", "note": "Ongeveer 2024-01-12, ongeveer 238.000 mijl van de Aarde, zonder Maan om te ontmoeten.", "type": "info" },
+    { "met": 5, "label": "MISSIE BEËINDIGD", "note": "2024-01-13: Astrobotic en NASA besluiten de missie te beëindigen en de terugkeer op de Zuidelijke Stille Oceaan te richten.", "type": "info" },
+    { "met": 10.57, "label": "TERUGKEER", "note": "2024-01-18, ongeveer 21:04 UTC, ten zuiden van Fiji.", "type": "warning" }
+  ]
+}

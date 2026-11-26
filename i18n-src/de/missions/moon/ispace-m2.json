@@ -1,0 +1,19 @@
+{
+  "name": "Hakuto-R Mission 2 RESILIENCE",
+  "vehicle": "Falcon 9 Block 5 (Booster B1085; Mitflug mit Blue Ghost Mission 1 von Firefly)",
+  "payload": "Lander mit etwa 1000 kg Startmasse inklusive Treibstoff (Trockenmasse 340 kg) und sechs Nutzlasten, darunter der 5 kg schwere Mikro-Rover TENACIOUS; beim Landeversuch abgestürzt",
+  "delta_v": "Nicht veröffentlicht; ein energiearmer Transfer mit Mondvorbeiflug, bis zu 1,1 Millionen km von der Erde entfernt",
+  "type": "PRIVATER LANDER · ABGESTÜRZT",
+  "first": "Zweiter Mondlandeversuch von ispace, Ziel war Mare Frigoris im hohen Norden",
+  "description": "Hakuto-R Mission 2, RESILIENCE genannt, war die zweite Mondmission von ispace. Sie startete am 2025-01-15 auf der Falcon 9, die auch Blue Ghost von Firefly trug, flog einen energiearmen Transfer mit Vorbeiflug am Mond in etwa 8400 km Abstand am 2025-02-14, schwenkte am 2025-05-06 in die Mondumlaufbahn ein und erreichte am 2025-05-28 eine kreisförmige 100-km-Umlaufbahn. Sie trug sechs Nutzlasten, darunter den 5 kg schweren Mikro-Rover TENACIOUS von ispace-EUROPE. Der Abstieg zum Mare Frigoris, 60.5 N, 4.6 W, begann gegen 18:10 UTC am 2025-06-05 und sollte um 19:17 UTC enden. Die letzte Telemetrie kam aus 192 m Höhe über der Oberfläche, der Lander war schneller als erwartet, etwa 1 min 45 s vor der geplanten Landung. ispace führte den Verlust auf den Laser-Entfernungsmesser zurück, der verzögert gültige Höhen lieferte, sodass der Lander nicht genug abbremsen konnte. LRO fotografierte die Aufschlagstelle bei 60.4445 N, 355.4120 E am 2025-06-11.",
+  "events": [
+    { "met": 0, "label": "START", "note": "Falcon 9 im Mitflug vom LC-39A, 2025-01-15, 06:11 UTC.", "type": "nominal" },
+    { "met": 1.56, "label": "TIEFRAUMMANÖVER", "note": "Ein 16-sekündiges Zünden am 2025-01-16, 250.000 km von der Erde entfernt.", "type": "info" },
+    { "met": 30.7, "label": "MONDVORBEIFLUG", "note": "Größte Annäherung in etwa 8400 km am 2025-02-14, 22:43 UTC.", "type": "info" },
+    { "met": 111.6, "label": "EINSCHWENKEN IN DIE MONDUMLAUFBAHN", "note": "Ein Zünden des Haupttriebwerks von etwa neun Minuten am 2025-05-06, 20:41 UTC.", "type": "nominal" },
+    { "met": 133, "label": "KREISBAHN IN 100 KM", "note": "Die Endbahn, erreicht am 2025-05-28.", "type": "nominal" },
+    { "met": 140.5, "label": "ABSTIEG AUS 100 KM", "note": "2025-06-05, gegen 18:10 UTC; ein 66-minütiger Abstieg zum Mare Frigoris.", "type": "nominal" },
+    { "met": 140.54, "label": "LETZTE TELEMETRIE IN 192 M", "note": "Zu schnell, etwa 1 min 45 s vor der geplanten Landung; der Laser-Entfernungsmesser lieferte verzögert gültige Höhen.", "type": "warning" }
+  ],
+  "vehicle_stage": "Zweite Stufe der Falcon 9; ausgesetzt um 07:44 UTC"
+}

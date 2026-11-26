@@ -104,6 +104,9 @@ const RING_ALIAS: Record<string, { agency?: string; nation?: string }> = {
   USSF: { nation: 'USA' },
   'Blue Origin': { nation: 'USA' },
   'Intuitive Machines': { nation: 'USA' },
+  'Firefly Aerospace': { nation: 'USA' },
+  Astrobotic: { nation: 'USA' },
+  ispace: { nation: 'Japan' },
 };
 export function agencyRingColor(agency: string): string {
   const lead = agency.split('/')[0].trim();

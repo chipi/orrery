@@ -1,0 +1,52 @@
+{
+  "missionId": "hakuto-r-m1",
+  "siteId": "hakuto-r-m1",
+  "body": "moon",
+  "landingSite": {
+    "lat": 47.581,
+    "lon": 44.094
+  },
+  "entryState": {
+    "altitudeM": 5000,
+    "velocityMs": 1,
+    "flightPathAngleDeg": 90
+  },
+  "entryMassKg": 380,
+  "entryCdA": 0,
+  "retroPropellantKg": 25,
+  "archetype": "LUNAR_POWERED",
+  "params": {
+    "ispS": 300,
+    "terminalVelocityMs": 1,
+    "descentRateGain": 0.0002
+  },
+  "beats": [
+    {
+      "type": "engine_cutoff",
+      "altM": 4876
+    }
+  ],
+  "source_tier": "flagship",
+  "provenance": [
+    {
+      "l": "ispace, results of the HAKUTO-R Mission 1 landing (26 May 2023): descent began from about 100 km at 00:40 JST 26 Apr (15:40 UTC 25 Apr); deceleration was completed as planned and the lander was below 1 m/s vertically at about 5 km. Passing a crater rim about 3 km high, the measured altitude jumped; the software judged the altimeter abnormal and discarded it, so the lander believed it was at 0 m while about 5 km up. After the scheduled landing time (16:43 UTC) it kept descending slowly until its propellant ran out, then fell freely. The model starts there: the braking from orbit is not drawn",
+      "u": "https://www.ispace-inc.com/2023/05/26/ispace-announces-results-of-the-hakuto-r-mission-1-lunar-landing/"
+    },
+    {
+      "l": "NASA LRO: the impact site at 47.581 N, 44.094 E, at least four large pieces of debris (LROC, 23 May 2023)",
+      "u": "https://www.nasa.gov/missions/lro/nasas-lro-views-impact-site-of-hakuto-r-mission-1-moon-lander/"
+    },
+    {
+      "l": "HAKUTO-R Series 1 lander: dry mass about 340 kg (ispace design release); about 1,000 kg fuelled at launch (Spaceflight Now). The mass left at 5 km, the propellant left for the slow descent and the engine's specific impulse are not published: estimates. No impact time or speed is published; the speed shown (about 126 m/s) is a free fall from about 4.9 km",
+      "u": "https://www.ispace-inc.com/2020/07/30/commercial-lunar-exploration-program-hakuto-r-reveals-final-design-and-plan-for-mission-1-lunar-lander/"
+    }
+  ],
+  "estimatedFields": [
+    "entryState.velocityMs (below 1 m/s per ispace; drawn at 1 m/s)",
+    "entryMassKg",
+    "retroPropellantKg (sets how long the slow descent lasts: about 2 minutes drawn, the real one is not published)",
+    "ispS",
+    "beats.engine_cutoff (where the propellant runs out in the model)",
+    "the impact speed (free fall from about 4.9 km)"
+  ]
+}

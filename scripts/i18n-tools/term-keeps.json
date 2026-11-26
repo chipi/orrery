@@ -303,6 +303,18 @@
     "why": "variant: premier étage (first-stage booster)",
     "tr": "3c12afd40a"
   },
+  "booster|fr|missions/moon/blue-ghost-m1.json :: vehicle": {
+    "why": "read 2026-11-26: \"booster B1085/B1073\" is the recovered Falcon 9 first stage (stage number), rendered as the first stage or the propulsive stage, not as a strap-on booster",
+    "tr": "76d67d1b4a"
+  },
+  "booster|fr|missions/moon/hakuto-r-m1.json :: vehicle": {
+    "why": "read 2026-11-26: \"booster B1085/B1073\" is the recovered Falcon 9 first stage (stage number), rendered as the first stage or the propulsive stage, not as a strap-on booster",
+    "tr": "fb25e9a3a3"
+  },
+  "booster|fr|missions/moon/ispace-m2.json :: vehicle": {
+    "why": "read 2026-11-26: \"booster B1085/B1073\" is the recovered Falcon 9 first stage (stage number), rendered as the first stage or the propulsive stage, not as a strap-on booster",
+    "tr": "f806c8e054"
+  },
   "booster|fr|missions/moon/luna16.json :: description": {
     "why": "variant: lanceur (whole Proton-K launcher); re-read 2026-11-06 after the fact-check fixes",
     "tr": "d13b841cb3"
@@ -515,6 +527,18 @@
     "why": "proper name: the vehicle Booster 12 keeps its English form in every locale (origin-language rule); the locale booster word does not belong in the name",
     "tr": "c0de9ff732"
   },
+  "booster|ru|missions/moon/blue-ghost-m1.json :: vehicle": {
+    "why": "read 2026-11-26: \"booster B1085/B1073\" is the recovered Falcon 9 first stage (stage number), rendered as the first stage or the propulsive stage, not as a strap-on booster",
+    "tr": "70ccf051a2"
+  },
+  "booster|ru|missions/moon/hakuto-r-m1.json :: vehicle": {
+    "why": "read 2026-11-26: \"booster B1085/B1073\" is the recovered Falcon 9 first stage (stage number), rendered as the first stage or the propulsive stage, not as a strap-on booster",
+    "tr": "9f00d1115a"
+  },
+  "booster|ru|missions/moon/ispace-m2.json :: vehicle": {
+    "why": "read 2026-11-26: \"booster B1085/B1073\" is the recovered Falcon 9 first stage (stage number), rendered as the first stage or the propulsive stage, not as a strap-on booster",
+    "tr": "8b1795ab51"
+  },
   "booster|ru|missions/moon/luna16.json :: description": {
     "why": "variant: launcher (Proton-K booster = ракета-носитель); re-read 2026-11-06 after the fact-check fixes",
     "tr": "b1fe3b5422"
@@ -602,6 +626,18 @@
   "booster|sr-Cyrl|missions/earth/starship-flight-5.json :: vehicle": {
     "why": "proper name: the vehicle Booster 12 keeps its English form in every locale (origin-language rule); the locale booster word does not belong in the name",
     "tr": "c0de9ff732"
+  },
+  "booster|sr-Cyrl|missions/moon/blue-ghost-m1.json :: vehicle": {
+    "why": "read 2026-11-26: \"booster B1085/B1073\" is the recovered Falcon 9 first stage (stage number), rendered as the first stage or the propulsive stage, not as a strap-on booster",
+    "tr": "b54720896a"
+  },
+  "booster|sr-Cyrl|missions/moon/hakuto-r-m1.json :: vehicle": {
+    "why": "read 2026-11-26: \"booster B1085/B1073\" is the recovered Falcon 9 first stage (stage number), rendered as the first stage or the propulsive stage, not as a strap-on booster",
+    "tr": "2efb44a4be"
+  },
+  "booster|sr-Cyrl|missions/moon/ispace-m2.json :: vehicle": {
+    "why": "read 2026-11-26: \"booster B1085/B1073\" is the recovered Falcon 9 first stage (stage number), rendered as the first stage or the propulsive stage, not as a strap-on booster",
+    "tr": "6ce4fef078"
   },
   "booster|sr-Cyrl|missions/moon/luna16.json :: description": {
     "why": "variant: ракета (whole launcher Proton-K); re-read 2026-11-06 after the fact-check fixes",
@@ -742,6 +778,10 @@
   "burn|ar|fleet/engine/rd-180.json :: description": {
     "why": "burning excess oxidiser = combustion (احتراق)",
     "tr": "a63d3a287a"
+  },
+  "burn|ar|fleet/lander/blue-ghost.json :: description": {
+    "why": "read 2026-11-26: \"burns MMH and MON-3\" is an engine consuming propellant, not a burn (an engine firing); the translation uses the verb for burning fuel",
+    "tr": "ab3d0f0e8d"
   },
   "burn|ar|fleet/launcher/new-glenn.json :: description": {
     "why": "hydrogen-burning engines = combustion (يعملان بالهيدروجين)",
@@ -906,6 +946,10 @@
   "burn|de|fleet/engine/yf-77.json :: description": {
     "why": "burning LOX/LH2 = combustion",
     "tr": "2dc5f84e7e"
+  },
+  "burn|de|fleet/lander/blue-ghost.json :: description": {
+    "why": "read 2026-11-26: \"burns MMH and MON-3\" is an engine consuming propellant, not a burn (an engine firing); the translation uses the verb for burning fuel",
+    "tr": "2b85a121c0"
   },
   "burn|de|fleet/launcher/new-glenn.json :: description": {
     "why": "hydrogen-burning = fuel type, combustion",
@@ -1103,6 +1147,10 @@
     "why": "combustion: burning LOX and LH2",
     "tr": "f836f11ec5"
   },
+  "burn|fr|fleet/lander/blue-ghost.json :: description": {
+    "why": "read 2026-11-26: \"burns MMH and MON-3\" is an engine consuming propellant, not a burn (an engine firing); the translation uses the verb for burning fuel",
+    "tr": "8cb36a36a3"
+  },
   "burn|fr|fleet/launcher/new-glenn.json :: description": {
     "why": "combustion: hydrogen-burning engines",
     "tr": "c8cd617d91"
@@ -1230,6 +1278,10 @@
   "burn|hi|fleet/engine/yf-77.json :: description": {
     "why": "burning LOX/LH2 = combustion",
     "tr": "764766cb05"
+  },
+  "burn|hi|fleet/lander/blue-ghost.json :: description": {
+    "why": "read 2026-11-26: \"burns MMH and MON-3\" is an engine consuming propellant, not a burn (an engine firing); the translation uses the verb for burning fuel",
+    "tr": "3baf14212c"
   },
   "burn|hi|fleet/launcher/new-glenn.json :: description": {
     "why": "methane/hydrogen-burning = combustion",
@@ -1371,6 +1423,10 @@
     "why": "combustion: brucia LOX e LH2",
     "tr": "92792d010d"
   },
+  "burn|it|fleet/lander/blue-ghost.json :: description": {
+    "why": "read 2026-11-26: \"burns MMH and MON-3\" is an engine consuming propellant, not a burn (an engine firing); the translation uses the verb for burning fuel",
+    "tr": "e36d082c8b"
+  },
   "burn|it|fleet/launcher/new-glenn.json :: description": {
     "why": "combustion: hydrogen-burning engines, rendered a idrogeno; not an engine firing",
     "tr": "5cbc090323"
@@ -1494,6 +1550,10 @@
   "burn|ja|fleet/engine/ce-20.json :: description": {
     "why": "combustion: 燃やす",
     "tr": "fa151b9666"
+  },
+  "burn|ja|fleet/lander/blue-ghost.json :: description": {
+    "why": "read 2026-11-26: \"burns MMH and MON-3\" is an engine consuming propellant, not a burn (an engine firing); the translation uses the verb for burning fuel",
+    "tr": "22f7fe7dda"
   },
   "burn|ja|fleet/launcher/starship.json :: description": {
     "why": "methane-burning = fuel: 燃料とする",
@@ -1811,6 +1871,10 @@
     "why": "engine burning LOX/LH2 = combustion",
     "tr": "f7cc9c312b"
   },
+  "burn|ru|fleet/lander/blue-ghost.json :: description": {
+    "why": "read 2026-11-26: \"burns MMH and MON-3\" is an engine consuming propellant, not a burn (an engine firing); the translation uses the verb for burning fuel",
+    "tr": "7e28c93a77"
+  },
   "burn|ru|fleet/launcher/new-glenn.json :: description": {
     "why": "hydrogen-burning engines = combustion",
     "tr": "8fba44e78a"
@@ -1975,6 +2039,10 @@
     "why": "engine burning LOX/LH2 = combustion",
     "tr": "2806614b21"
   },
+  "burn|sr-Cyrl|fleet/lander/blue-ghost.json :: description": {
+    "why": "read 2026-11-26: \"burns MMH and MON-3\" is an engine consuming propellant, not a burn (an engine firing); the translation uses the verb for burning fuel",
+    "tr": "b5eaa1235d"
+  },
   "burn|sr-Cyrl|fleet/launcher/new-glenn.json :: description": {
     "why": "hydrogen-burning engines = combustion",
     "tr": "1f74b79065"
@@ -2134,6 +2202,10 @@
   "burn|zh-CN|fleet/engine/yf-77.json :: description": {
     "why": "combustion: 燃烧",
     "tr": "316548cd61"
+  },
+  "burn|zh-CN|fleet/lander/blue-ghost.json :: description": {
+    "why": "read 2026-11-26: \"burns MMH and MON-3\" is an engine consuming propellant, not a burn (an engine firing); the translation uses the verb for burning fuel",
+    "tr": "63fcafdb29"
   },
   "burn|zh-CN|fleet/launcher/new-glenn.json :: description": {
     "why": "hydrogen-burning = combustion: 烧氢",
@@ -4579,9 +4651,33 @@
     "why": "read 2026-11-04 (chunk 1): a part of the craft (orbital section, landing capsule, deck), written as such",
     "tr": "2d9ccacecd"
   },
+  "payload|ar|missions/moon/blue-ghost-m1.json :: description": {
+    "why": "read 2026-11-26: \"payload\" is part of the programme name \"Commercial Lunar Payload Services\", kept in English as in the IM-1 overlays",
+    "tr": "2a77660763"
+  },
+  "payload|ar|missions/moon/im-2.json :: description": {
+    "why": "read 2026-11-26: \"payload\" is part of the programme name \"Commercial Lunar Payload Services\", kept in English as in the IM-1 overlays",
+    "tr": "21197663fc"
+  },
+  "payload|de|missions/moon/blue-ghost-m1.json :: description": {
+    "why": "read 2026-11-26: \"payload\" is part of the programme name \"Commercial Lunar Payload Services\", kept in English as in the IM-1 overlays",
+    "tr": "b13b438f41"
+  },
+  "payload|de|missions/moon/im-2.json :: description": {
+    "why": "read 2026-11-26: \"payload\" is part of the programme name \"Commercial Lunar Payload Services\", kept in English as in the IM-1 overlays",
+    "tr": "41258f9fab"
+  },
   "payload|de|science/orbits/space-debris.json :: body_paragraphs.4": {
     "why": "part of proper name Vega Secondary Payload Adapter",
     "tr": "5d89faaf14"
+  },
+  "payload|es|missions/moon/blue-ghost-m1.json :: description": {
+    "why": "read 2026-11-26: \"payload\" is part of the programme name \"Commercial Lunar Payload Services\", kept in English as in the IM-1 overlays",
+    "tr": "1b99b79d12"
+  },
+  "payload|es|missions/moon/im-2.json :: description": {
+    "why": "read 2026-11-26: \"payload\" is part of the programme name \"Commercial Lunar Payload Services\", kept in English as in the IM-1 overlays",
+    "tr": "b0c1a49a4c"
   },
   "payload|es|missions/venus/magellan.json :: description": {
     "why": "variant: bodega de carga (standard Shuttle payload bay)",
@@ -4599,6 +4695,14 @@
     "why": "variant: capacité d'emport",
     "tr": "9f63e040e3"
   },
+  "payload|fr|missions/moon/blue-ghost-m1.json :: description": {
+    "why": "read 2026-11-26: \"payload\" is part of the programme name \"Commercial Lunar Payload Services\", kept in English as in the IM-1 overlays",
+    "tr": "fe9c3443ac"
+  },
+  "payload|fr|missions/moon/im-2.json :: description": {
+    "why": "read 2026-11-26: \"payload\" is part of the programme name \"Commercial Lunar Payload Services\", kept in English as in the IM-1 overlays",
+    "tr": "3c9fd5a06a"
+  },
   "payload|fr|missions/venus/magellan.json :: description": {
     "why": "variant: soute (payload bay)",
     "tr": "3d33d9f223"
@@ -4610,6 +4714,14 @@
   "payload|fr|science/orbits/space-debris.json :: body_paragraphs.4": {
     "why": "\"Vega Secondary Payload Adapter\" is a proper name left in English",
     "tr": "ff8d16d8e2"
+  },
+  "payload|hi|missions/moon/blue-ghost-m1.json :: description": {
+    "why": "read 2026-11-26: \"payload\" is part of the programme name \"Commercial Lunar Payload Services\", kept in English as in the IM-1 overlays",
+    "tr": "a4bb328d5c"
+  },
+  "payload|hi|missions/moon/im-2.json :: description": {
+    "why": "read 2026-11-26: \"payload\" is part of the programme name \"Commercial Lunar Payload Services\", kept in English as in the IM-1 overlays",
+    "tr": "6100218614"
   },
   "payload|hi|science/orbits/space-debris.json :: body_paragraphs.4": {
     "why": "part of the product name Vega Secondary Payload Adapter",
@@ -4623,6 +4735,14 @@
     "why": "variant: capacità di carico",
     "tr": "494b4a422e"
   },
+  "payload|it|missions/moon/blue-ghost-m1.json :: description": {
+    "why": "read 2026-11-26: \"payload\" is part of the programme name \"Commercial Lunar Payload Services\", kept in English as in the IM-1 overlays",
+    "tr": "fdb54f10cf"
+  },
+  "payload|it|missions/moon/im-2.json :: description": {
+    "why": "read 2026-11-26: \"payload\" is part of the programme name \"Commercial Lunar Payload Services\", kept in English as in the IM-1 overlays",
+    "tr": "3310bc841c"
+  },
   "payload|it|missions/venus/magellan.json :: description": {
     "why": "variant: stiva (payload bay)",
     "tr": "9361283cac"
@@ -4635,9 +4755,17 @@
     "why": "variant: 打ち上げ能力 (capacity to LEO)",
     "tr": "c5c2c6ee50"
   },
+  "payload|ja|missions/moon/blue-ghost-m1.json :: description": {
+    "why": "read 2026-11-26: \"payload\" is part of the programme name \"Commercial Lunar Payload Services\", kept in English as in the IM-1 overlays",
+    "tr": "1a38d9e565"
+  },
   "payload|ja|missions/moon/change1.json :: payload": {
     "why": "variant: 科学観測機器 (science instruments = science payload)",
     "tr": "b0b133b2ce"
+  },
+  "payload|ja|missions/moon/im-2.json :: description": {
+    "why": "read 2026-11-26: \"payload\" is part of the programme name \"Commercial Lunar Payload Services\", kept in English as in the IM-1 overlays",
+    "tr": "352d3fca1e"
   },
   "payload|ja|missions/moon/smart-1.json :: vehicle": {
     "why": "shared ride 相乗り; payload omitted naturally",
@@ -4675,6 +4803,14 @@
     "why": "payload of the mission paraphrased as 임무",
     "tr": "34ce240061"
   },
+  "payload|ko|missions/moon/blue-ghost-m1.json :: description": {
+    "why": "read 2026-11-26: \"payload\" is part of the programme name \"Commercial Lunar Payload Services\", kept in English as in the IM-1 overlays",
+    "tr": "57d1fcc4fb"
+  },
+  "payload|ko|missions/moon/im-2.json :: description": {
+    "why": "read 2026-11-26: \"payload\" is part of the programme name \"Commercial Lunar Payload Services\", kept in English as in the IM-1 overlays",
+    "tr": "6207caf528"
+  },
   "payload|ko|missions/moon/luna16.json :: description": {
     "why": "variant: 탑재량 (payload mass); re-read 2026-11-06 after the fact-check fixes",
     "tr": "e9c5e4c48e"
@@ -4706,6 +4842,14 @@
   "payload|nl|missions/venus/magellan.json :: description": {
     "why": "variant: laadruim (payload bay, standard word); re-read 2026-11-06 after the fact-check fixes",
     "tr": "193a66a1ab"
+  },
+  "payload|pt-BR|missions/moon/blue-ghost-m1.json :: description": {
+    "why": "read 2026-11-26: \"payload\" is part of the programme name \"Commercial Lunar Payload Services\", kept in English as in the IM-1 overlays",
+    "tr": "d1cdbfb9fa"
+  },
+  "payload|pt-BR|missions/moon/im-2.json :: description": {
+    "why": "read 2026-11-26: \"payload\" is part of the programme name \"Commercial Lunar Payload Services\", kept in English as in the IM-1 overlays",
+    "tr": "1a158bc894"
   },
   "payload|pt-BR|missions/venus/magellan.json :: description": {
     "why": "variant: baía de carga (payload bay); re-read 2026-11-06 after the fact-check fixes",
@@ -4751,6 +4895,14 @@
     "why": "'7 приборов LRO' instrument suite; omitted naturally",
     "tr": "166997390e"
   },
+  "payload|ru|missions/moon/blue-ghost-m1.json :: description": {
+    "why": "read 2026-11-26: \"payload\" is part of the programme name \"Commercial Lunar Payload Services\", kept in English as in the IM-1 overlays",
+    "tr": "14979cb3f1"
+  },
+  "payload|ru|missions/moon/im-2.json :: description": {
+    "why": "read 2026-11-26: \"payload\" is part of the programme name \"Commercial Lunar Payload Services\", kept in English as in the IM-1 overlays",
+    "tr": "48668baab0"
+  },
   "payload|ru|missions/venus/magellan.json :: description": {
     "why": "variant: грузовой отсек (Shuttle payload bay, standard compound)",
     "tr": "83f569f5fa"
@@ -4779,6 +4931,14 @@
     "why": "variant: сателита (the payloads are satellites)",
     "tr": "c62951c682"
   },
+  "payload|sr-Cyrl|missions/moon/blue-ghost-m1.json :: description": {
+    "why": "read 2026-11-26: \"payload\" is part of the programme name \"Commercial Lunar Payload Services\", kept in English as in the IM-1 overlays",
+    "tr": "0c3759226b"
+  },
+  "payload|sr-Cyrl|missions/moon/im-2.json :: description": {
+    "why": "read 2026-11-26: \"payload\" is part of the programme name \"Commercial Lunar Payload Services\", kept in English as in the IM-1 overlays",
+    "tr": "2ad8ace129"
+  },
   "payload|sr-Cyrl|science/history/apollo-11-1969.json :: body_paragraphs.0": {
     "why": "носивост = payload capacity",
     "tr": "bd003d29c2"
@@ -4802,6 +4962,14 @@
   "payload|zh-CN|missions/moon/apollo8.json :: description": {
     "why": "payload (which craft flies) rendered by 任务; natural omission",
     "tr": "e3929f6a87"
+  },
+  "payload|zh-CN|missions/moon/blue-ghost-m1.json :: description": {
+    "why": "read 2026-11-26: \"payload\" is part of the programme name \"Commercial Lunar Payload Services\", kept in English as in the IM-1 overlays",
+    "tr": "1056d01402"
+  },
+  "payload|zh-CN|missions/moon/im-2.json :: description": {
+    "why": "read 2026-11-26: \"payload\" is part of the programme name \"Commercial Lunar Payload Services\", kept in English as in the IM-1 overlays",
+    "tr": "96bfd90557"
   },
   "payload|zh-CN|missions/venus/magellan.json :: description": {
     "why": "variant: 货舱 (shuttle payload bay); re-read 2026-11-06 after the fact-check fixes",

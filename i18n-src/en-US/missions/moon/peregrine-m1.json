@@ -1,0 +1,17 @@
+{
+  "name": "Peregrine Mission One",
+  "vehicle": "Vulcan Centaur (first flight)",
+  "payload": "Peregrine lander, 1,283 kg at launch (Wikipedia); 20 payloads, five of them NASA instruments; never reached the Moon",
+  "delta_v": "Not published",
+  "type": "COMMERCIAL LANDER · NEVER REACHED THE MOON",
+  "first": "Flown on the first Vulcan Centaur; a propellant leak ended the Moon landing before it began",
+  "description": "Peregrine Mission One was an Astrobotic lunar lander, flown for NASA's Commercial Lunar Payload Services with 20 payloads, five of them NASA instruments. It launched on 2024-01-08 on the first flight of the Vulcan Centaur and separated from the upper stage at 08:09 UTC. The planned flight was a highly elliptical Earth orbit with its apogee at the Moon's distance, 1.5 loops, then an interception of the Moon. Instead, the oxidiser-tank pressure rose after separation and, 92 minutes later, an oxidiser tank ruptured and the leak spun the lander. Astrobotic's review board found that a helium pressure valve most likely lost its seal. The landing was called off. Peregrine reached the Moon's distance on about 2024-01-12, and on 2024-01-13 Astrobotic and NASA decided to end the mission. Burns of its main engines moved the re-entry over the South Pacific, where it re-entered on 2024-01-18 at about 21:04 UTC, after 10 days 14 hours of flight.",
+  "events": [
+    { "met": 0, "label": "LAUNCH", "note": "Vulcan Centaur from SLC-41, 2024-01-08, 07:18 UTC.", "type": "nominal" },
+    { "met": 0.04, "label": "SEPARATION", "note": "Peregrine separates from the Centaur at 08:09 UTC.", "type": "nominal" },
+    { "met": 0.1, "label": "TANK RUPTURE", "note": "92 minutes after separation an oxidiser tank ruptures and the leak spins the lander; the landing is called off.", "type": "warning" },
+    { "met": 4, "label": "MOON'S DISTANCE", "note": "About 2024-01-12, about 238,000 miles from Earth, with no Moon to meet.", "type": "info" },
+    { "met": 5, "label": "MISSION ENDED", "note": "2024-01-13: Astrobotic and NASA decide to end the mission and aim the re-entry at the South Pacific.", "type": "info" },
+    { "met": 10.57, "label": "RE-ENTRY", "note": "2024-01-18, about 21:04 UTC, south of Fiji.", "type": "warning" }
+  ]
+}

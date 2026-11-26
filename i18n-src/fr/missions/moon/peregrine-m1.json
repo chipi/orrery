@@ -1,0 +1,17 @@
+{
+  "name": "Peregrine Mission One",
+  "vehicle": "Vulcan Centaur (premier vol)",
+  "payload": "Atterrisseur Peregrine, 1283 kg au lancement (Wikipédia) ; 20 charges utiles, dont cinq instruments de la NASA ; n'a jamais atteint la Lune",
+  "delta_v": "Non publié",
+  "type": "ATTERRISSEUR COMMERCIAL · N'A JAMAIS ATTEINT LA LUNE",
+  "first": "Lancé sur le premier Vulcan Centaur ; une fuite d'ergols a mis fin à l'alunissage avant qu'il commence",
+  "description": "Peregrine Mission One était un atterrisseur lunaire d'Astrobotic, réalisé pour le programme Commercial Lunar Payload Services de la NASA avec 20 charges utiles, dont cinq instruments de la NASA. Il a été lancé le 2024-01-08 lors du premier vol du Vulcan Centaur et s'est séparé de l'étage supérieur à 08:09 UTC. Le vol prévu était une orbite terrestre très elliptique dont l'apogée se situait à la distance de la Lune, 1,5 révolution, puis une interception de la Lune. À la place, la pression du réservoir d'oxydant a augmenté après la séparation et, 92 minutes plus tard, un réservoir d'oxydant s'est rompu et la fuite a fait tourner l'atterrisseur. La commission d'examen d'Astrobotic a conclu qu'une vanne de pression d'hélium avait très probablement perdu son étanchéité. L'atterrissage a été annulé. Peregrine a atteint la distance de la Lune vers le 2024-01-12, et le 2024-01-13 Astrobotic et la NASA ont décidé de mettre fin à la mission. Des poussées de ses moteurs principaux ont déplacé la rentrée vers le Pacifique Sud, où il est rentré dans l'atmosphère le 2024-01-18 vers 21:04 UTC, après 10 jours et 14 heures de vol.",
+  "events": [
+    { "met": 0, "label": "LANCEMENT", "note": "Vulcan Centaur depuis SLC-41, 2024-01-08, 07:18 UTC.", "type": "nominal" },
+    { "met": 0.04, "label": "SÉPARATION", "note": "Peregrine se sépare du Centaur à 08:09 UTC.", "type": "nominal" },
+    { "met": 0.1, "label": "RUPTURE DU RÉSERVOIR", "note": "92 minutes après la séparation, un réservoir d'oxydant se rompt et la fuite fait tourner l'atterrisseur ; l'atterrissage est annulé.", "type": "warning" },
+    { "met": 4, "label": "DISTANCE DE LA LUNE", "note": "Vers le 2024-01-12, à environ 238 000 miles de la Terre, sans Lune à rejoindre.", "type": "info" },
+    { "met": 5, "label": "FIN DE LA MISSION", "note": "2024-01-13 : Astrobotic et la NASA décident de mettre fin à la mission et de viser le Pacifique Sud pour la rentrée.", "type": "info" },
+    { "met": 10.57, "label": "RENTRÉE", "note": "2024-01-18, vers 21:04 UTC, au sud des Fidji.", "type": "warning" }
+  ]
+}

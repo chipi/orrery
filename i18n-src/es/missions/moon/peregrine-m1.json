@@ -1,0 +1,47 @@
+{
+  "name": "Peregrine Mission One",
+  "vehicle": "Vulcan Centaur (primer vuelo)",
+  "payload": "Módulo Peregrine, 1283 kg en el lanzamiento (Wikipedia); 20 cargas útiles, cinco de ellas instrumentos de la NASA; nunca llegó a la Luna",
+  "delta_v": "No publicado",
+  "type": "MÓDULO COMERCIAL · NUNCA LLEGÓ A LA LUNA",
+  "first": "Voló en el primer Vulcan Centaur; una fuga de propelente acabó con el alunizaje antes de empezar",
+  "description": "Peregrine Mission One fue un módulo de aterrizaje lunar de Astrobotic, realizado para el programa Commercial Lunar Payload Services de la NASA con 20 cargas útiles, cinco de ellas instrumentos de la NASA. Se lanzó el 2024-01-08 en el primer vuelo del Vulcan Centaur y se separó de la etapa superior a las 08:09 UTC. El vuelo previsto era una órbita terrestre muy elíptica con el apogeo a la distancia de la Luna, 1,5 vueltas, y luego una intercepción de la Luna. En cambio, la presión del tanque de oxidante subió tras la separación y, 92 minutos después, un tanque de oxidante se rompió y la fuga hizo girar el módulo. El comité de revisión de Astrobotic concluyó que lo más probable es que una válvula de presión de helio perdiera su sellado. Se canceló el aterrizaje. Peregrine llegó a la distancia de la Luna hacia el 2024-01-12, y el 2024-01-13 Astrobotic y la NASA decidieron dar por terminada la misión. Maniobras de sus motores principales desplazaron la reentrada hacia el Pacífico Sur, donde reentró el 2024-01-18 hacia las 21:04 UTC, tras 10 días y 14 horas de vuelo.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANZAMIENTO",
+      "note": "Vulcan Centaur desde SLC-41, 2024-01-08, 07:18 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.04,
+      "label": "SEPARACIÓN",
+      "note": "Peregrine se separa del Centaur a las 08:09 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.1,
+      "label": "ROTURA DEL TANQUE",
+      "note": "92 minutos después de la separación se rompe un tanque de oxidante y la fuga hace girar el módulo; se cancela el aterrizaje.",
+      "type": "warning"
+    },
+    {
+      "met": 4,
+      "label": "DISTANCIA DE LA LUNA",
+      "note": "Hacia el 2024-01-12, a unas 238 000 millas de la Tierra, sin Luna con la que encontrarse.",
+      "type": "info"
+    },
+    {
+      "met": 5,
+      "label": "FIN DE LA MISIÓN",
+      "note": "2024-01-13: Astrobotic y la NASA deciden dar por terminada la misión y dirigir la reentrada hacia el Pacífico Sur.",
+      "type": "info"
+    },
+    {
+      "met": 10.57,
+      "label": "REENTRADA",
+      "note": "2024-01-18, hacia las 21:04 UTC, al sur de Fiyi.",
+      "type": "warning"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "id": "peregrine-m1",
+  "agency": "Astrobotic",
+  "agency_full": "Astrobotic Technology (US commercial company), for NASA's Commercial Lunar Payload Services",
+  "sector": "private",
+  "dest": "MOON",
+  "color": "#2E86AB",
+  "year": 2024,
+  "status": "FLOWN",
+  "departure_date": "2024-01-08",
+  "arrival_date": "2024-01-18",
+  "transit_days": 10,
+  "vehicle": "Vulcan Centaur (first flight)",
+  "payload": "Peregrine lander, 1,283 kg at launch (Wikipedia); 20 payloads, five of them NASA instruments; never reached the Moon",
+  "delta_v": "Not published",
+  "data_quality": "partial",
+  "credit": "Astrobotic's Peregrine Mission One post-mission report (August 2024) for the launch, the propellant leak and the re-entry; NASA's CLPS press kit and Astrobotic's payload user guide for the planned mission; Spaceflight Now for the re-entry. The arrival date is the date of the controlled re-entry, because the lander never reached the Moon. Conflicts kept open: the report's narrative says '4 PM EST on January 19' for the re-entry but its summary and Spaceflight Now say 18 January, so 18 January is used; Wikipedia's 15:59 EST 'near Point Nemo' is not supported by the report or Spaceflight Now and is not used. Count: 20 payloads in the report, 21 in Astrobotic's launch packet. Dry mass, Isp, the planned site's coordinates, the rideshare list and the 17-versus-39-day lunar-orbit wording in NASA's press kit were not resolved. The launch mass is from Wikipedia only.",
+  "links": [
+    {
+      "l": "Peregrine Mission One — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Peregrine_Mission_One",
+      "t": "intro"
+    },
+    {
+      "l": "Astrobotic: Peregrine Mission One post-mission report",
+      "u": "https://astrobotic.com/wp-content/uploads/2024/08/PM1_Post-Mission-Report_2024-1.pdf",
+      "t": "core"
+    },
+    {
+      "l": "Spaceflight Now: Peregrine ends its mission in a fiery re-entry",
+      "u": "https://spaceflightnow.com/2024/01/19/astrobotics-peregrine-lunar-lander-ends-mission-in-fiery-reentry/",
+      "t": "deep"
+    }
+  ],
+  "fleet_refs": [
+    {
+      "id": "vulcan",
+      "role": "launcher"
+    },
+    {
+      "id": "peregrine",
+      "role": "spacecraft"
+    },
+    {
+      "id": "cape-canaveral-slc-41",
+      "role": "launch-site"
+    }
+  ]
+}

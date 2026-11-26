@@ -1,0 +1,16 @@
+{
+  "name": "IM-2",
+  "vehicle": "Falcon 9 (lancio in condivisione con Lunar Trailblazer della NASA)",
+  "payload": "Lander Nova-C Athena, massa a pieno carico 2120 kg (Wikipedia); trivella PRIME-1 della NASA, hopper Grace e rover MAPP e Yaoki",
+  "delta_v": "Non pubblicato",
+  "type": "LANDER COMMERCIALE · RIBALTATO",
+  "first": "Secondo Intuitive Machines, l'allunaggio più a sud mai compiuto sulla Luna; si è fermato su un fianco",
+  "description": "IM-2 è stata la seconda missione lunare di Intuitive Machines, svolta per il programma Commercial Lunar Payload Services della NASA. Il suo lander Nova-C, Athena, è stato lanciato su un Falcon 9 il 2025-02-27 (00:16 UTC), è entrato in orbita lunare il 2025-03-03 ed è atterrato il 2025-03-06, alle 17:30 UTC circa, vicino a Mons Mouton, a circa 160 km dal polo sud, a 84.7906 S, 29.1957 E, dentro un cratere largo 20 m. Il suo altimetro laser ha dato letture disturbate per tutta la discesa, e il lander ha toccato la superficie più velocemente del previsto fermandosi su un fianco, con i pannelli solari rivolti lontano dal Sole. L'hopper e i rover non si sono dispiegati. Intuitive Machines ha dichiarato conclusa la missione a meno di 13 ore dall'atterraggio, il 2025-03-07; la NASA ha ricevuto 250 MB di dati.",
+  "events": [
+    { "met": 0, "label": "LANCIO", "note": "Falcon 9 da LC-39A, 2025-02-27, 00:16 UTC.", "type": "nominal" },
+    { "met": 4, "label": "INSERIMENTO IN ORBITA LUNARE", "note": "Athena entra in orbita lunare il 2025-03-03.", "type": "nominal" },
+    { "met": 7.71, "label": "RIACCENSIONE DEL MOTORE", "note": "2025-03-06, 17:15 UTC circa; il lander si inclina fino a quasi la verticale a circa 2 km di quota.", "type": "nominal" },
+    { "met": 7.72, "label": "ATTERRAGGIO SU UN FIANCO", "note": "17:30 UTC circa, dentro un cratere di 20 m; l'altimetro aveva dato letture disturbate per tutta la discesa.", "type": "warning" }
+  ],
+  "vehicle_stage": "secondo stadio del Falcon 9"
+}

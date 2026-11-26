@@ -79,6 +79,11 @@
     "en": "f35c14317f",
     "tr": "c51e47f213"
   },
+  "zh-CN|missions/earth/inspiration4.json|first": {
+    "why": "English \"St. Jude\" reads as a sentence end; the Chinese joins the two clauses with a semicolon and loses nothing. Flagged only because the locale median moved when the private Moon missions were added.",
+    "en": "133eb4204b",
+    "tr": "6764ad07cc"
+  },
   "zh-CN|programs/iss.json|the_land.1.md": {
     "why": "false positive; CJK sentence joining (\"But ... It is that ...\" merged by colon), nothing missing",
     "en": "b3c812658f",

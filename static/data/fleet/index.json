@@ -264,6 +264,18 @@
     "tagline": "First private lunar landing attempt"
   },
   {
+    "id": "blue-ghost",
+    "name": "Blue Ghost",
+    "category": "lander",
+    "agency": "Firefly Aerospace",
+    "country": "USA",
+    "era": "2011-now",
+    "epoch": "lunar-return",
+    "status": "RETIRED",
+    "first_flight": "2025-01-15",
+    "tagline": "Firefly's first Moon landing: upright, and 14 days of surface work"
+  },
+  {
     "id": "blue-moon-mk1",
     "name": "Blue Moon Mk1",
     "category": "lander",
@@ -948,6 +960,18 @@
     "tagline": "First U.S. lunar landing since Apollo; sideways"
   },
   {
+    "id": "im-2-athena",
+    "name": "IM-2 Athena",
+    "category": "lander",
+    "agency": "Intuitive Machines",
+    "country": "USA",
+    "era": "2011-now",
+    "epoch": "lunar-return",
+    "status": "RETIRED",
+    "first_flight": "2025-02-27",
+    "tagline": "Landed on its side in a crater near the lunar south pole"
+  },
+  {
     "id": "inmarsat",
     "name": "Inmarsat",
     "category": "constellation",
@@ -1582,6 +1606,18 @@
     "status": "ACTIVE",
     "first_flight": "2020-02-10",
     "tagline": "First detailed imaging of the Sun's polar regions"
+  },
+  {
+    "id": "peregrine",
+    "name": "Peregrine",
+    "category": "lander",
+    "agency": "Astrobotic",
+    "country": "USA",
+    "era": "2011-now",
+    "epoch": "lunar-return",
+    "status": "FAILED",
+    "first_flight": "2024-01-08",
+    "tagline": "A propellant leak ended its Moon flight; it re-entered over the Pacific"
   },
   {
     "id": "perseverance",

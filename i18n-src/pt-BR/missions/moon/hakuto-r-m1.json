@@ -1,0 +1,42 @@
+{
+  "name": "Hakuto-R Mission 1",
+  "vehicle": "Falcon 9 (propulsor B1073, quinto voo; carona com o Lunar Flashlight da NASA)",
+  "payload": "Módulo de pouso de cerca de 1000 kg abastecido (massa seca de cerca de 340 kg) com cerca de 11 kg de cargas úteis de clientes, entre elas o rover Rashid dos EAU; caiu durante a tentativa de pouso",
+  "delta_v": "Não divulgado; uma transferência de baixa energia de cerca de três meses, até 1,38 milhão de km da Terra",
+  "type": "MÓDULO DE POUSO PRIVADO · CAIU",
+  "first": "Primeira tentativa de pouso na Lua da ispace: oito de dez marcos cumpridos antes de o pouso falhar",
+  "description": "A Hakuto-R Mission 1 foi a primeira missão lunar da empresa japonesa ispace. Seu módulo de pouso Series 1, com 2,3 m de altura e 2,6 m de largura com as pernas abertas, foi lançado em um Falcon 9 em 2022-12-11 e fez uma transferência de baixa energia de cerca de três meses, até 1,38 milhão de km da Terra. Entrou em órbita lunar em 2023-03-21 e alcançou uma órbita circular de 100 km em 2023-04-13. Sua descida começou em 2023-04-25 às 15:40 UTC. Ao passar pela borda de uma cratera de cerca de 3 km de altura, a altitude medida deu um salto; o software julgou o altímetro anormal e descartou todos os dados posteriores do sensor, de modo que o módulo acreditava estar na superfície quando ainda estava a cerca de 5 km de altura. Continuou descendo devagar até acabar o propelente e então caiu. O Lunar Reconnaissance Orbiter da NASA fotografou a área em 2023-04-26 e encontrou o ponto de impacto em 47.581 N, 44.094 E, com pelo menos quatro pedaços de destroços. A ispace encontrou uma causa de software, não de hardware.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANÇAMENTO",
+      "note": "Falcon 9 de carona a partir de Cabo Canaveral SLC-40, 2022-12-11, 07:38 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 99.7,
+      "label": "INSERÇÃO EM ÓRBITA LUNAR",
+      "note": "Primeira queima de inserção em 2023-03-21, por volta de 01:24 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 123,
+      "label": "ÓRBITA CIRCULAR DE 100 KM",
+      "note": "Uma queima de 10 minutos em 2023-04-13 alcança a órbita de onde começa a descida.",
+      "type": "nominal"
+    },
+    {
+      "met": 135.33,
+      "label": "DESCIDA A PARTIR DE 100 KM",
+      "note": "2023-04-25, 15:40 UTC; a descida dura cerca de uma hora.",
+      "type": "nominal"
+    },
+    {
+      "met": 135.38,
+      "label": "ALTÍMETRO REJEITADO",
+      "note": "No horário previsto do pouso, 16:43 UTC, o módulo ainda acredita estar na superfície quando está a cerca de 5 km de altura; cai quando o propelente acaba.",
+      "type": "warning"
+    }
+  ],
+  "vehicle_stage": "Segundo estágio do Falcon 9; a Hakuto-R se separou em T+46:59"
+}

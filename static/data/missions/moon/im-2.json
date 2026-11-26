@@ -1,0 +1,662 @@
+{
+  "id": "im-2",
+  "agency": "Intuitive Machines",
+  "agency_full": "Intuitive Machines (US commercial company), for NASA's Commercial Lunar Payload Services",
+  "sector": "private",
+  "dest": "MOON",
+  "color": "#0B3D91",
+  "year": 2025,
+  "status": "FLOWN",
+  "departure_date": "2025-02-27",
+  "arrival_date": "2025-03-06",
+  "transit_days": 7,
+  "vehicle": "Falcon 9 (rideshare with NASA's Lunar Trailblazer)",
+  "payload": "Nova-C lander Athena, wet mass 2,120 kg (Wikipedia); NASA's PRIME-1 drill, the Grace hopper and the MAPP and Yaoki rovers",
+  "delta_v": "Not published",
+  "data_quality": "partial",
+  "credit": "NASA's release and press kit, Spaceflight Now, collectSPACE, SpacePolicyOnline and Space.com for the launch, descent and loss of the mission; LROC (NASA/GSFC/Arizona State University) for the landing coordinates. Conflicts kept open: the main-engine relight is about 17:15 UTC (collectSPACE, converted) against 17:27 UTC (Wikipedia only); touchdown is about 17:30 UTC (NASA) or 17:28:50 UTC (Wikipedia); the distance from the target is 250 m (Intuitive Machines) or more than 400 m (NASA). Intuitive Machines says only that Athena hit the surface faster than intended; a figure of 10 to 13 m/s circulates in a page that could not be opened, is unverified and is not used. Tilt, IM-2's dry mass, main-engine thrust and Isp were not found. The wet mass is from Wikipedia only (IM-1: 2,035 kg in NASA's technical memorandum).",
+  "links": [
+    {
+      "l": "IM-2 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/IM-2",
+      "t": "intro"
+    },
+    {
+      "l": "NASA: liftoff, NASA technology and science en route to the Moon with Intuitive Machines",
+      "u": "https://www.nasa.gov/news-release/liftoff-nasa-tech-science-en-route-to-moon-with-intuitive-machines/",
+      "t": "core"
+    },
+    {
+      "l": "NASA: NASA receives some data before Intuitive Machines ends lunar mission",
+      "u": "https://www.nasa.gov/news-release/nasa-receives-some-data-before-intuitive-machines-ends-lunar-mission/",
+      "t": "deep"
+    }
+  ],
+  "flight_data_quality": "sparse",
+  "fleet_refs": [
+    {
+      "id": "falcon-9",
+      "role": "launcher"
+    },
+    {
+      "id": "im-2-athena",
+      "role": "spacecraft"
+    },
+    {
+      "id": "lc-39a",
+      "role": "launch-site"
+    }
+  ],
+  "flight": {
+    "launch": {
+      "vehicle_stage": "Falcon 9 second stage",
+      "mass_at_tli_kg": 2120,
+      "source": "Wikipedia IM-2 (wet mass 2,120 kg)"
+    },
+    "cruise": {
+      "source": "NASA press kit: a cruise of roughly four to five days, then one and a half to three days in lunar orbit before descent, depending on the launch day"
+    },
+    "arrival": {
+      "periapsis_km": 100,
+      "source": "collectSPACE: initial lunar orbit about 100 km, later lowered to about 10 km near the site",
+      "entry_velocity_km_s": 1.8,
+      "edl_system": "powered",
+      "edl_duration_s": 756,
+      "touchdown_velocity_ms": 10
+    },
+    "events": [
+      {
+        "met_days": 0,
+        "type": "launch",
+        "label": "Launch — Falcon 9",
+        "description": "Kennedy Space Center LC-39A, 2025-02-26 7:16 p.m. EST (2025-02-27, 00:16 UTC), with NASA's Lunar Trailblazer."
+      },
+      {
+        "met_days": 4,
+        "type": "loi",
+        "label": "Lunar orbit insertion",
+        "description": "2025-03-03 (time not given). About 39 lunar orbits were planned before the descent."
+      },
+      {
+        "met_days": 7.71,
+        "type": "descent_start",
+        "label": "Main-engine relight",
+        "description": "2025-03-06, about 17:15 UTC (collectSPACE; Wikipedia says 17:27). The lander pitched to mostly upright at about 2 km altitude."
+      },
+      {
+        "met_days": 7.72,
+        "type": "edl_or_oi",
+        "label": "Lunar touchdown on its side near Mons Mouton",
+        "description": "2025-03-06, about 17:30 UTC, at 84.7906 S, 29.1957 E inside a 20 m crater. Its laser altimeter gave noisy readings all the way down; Athena hit the surface faster than intended and came to rest on its side. The mission ended under 13 hours later, on 2025-03-07."
+      }
+    ],
+    "cislunar_profile": {
+      "source_tier": "tier_1_5_hybrid",
+      "translunar": {
+        "type": "direct"
+      },
+      "lunar_arrival": {
+        "type": "orbit_and_land",
+        "altitude_km": 100
+      },
+      "return": {
+        "type": "none"
+      },
+      "waypoint_times": "flown",
+      "waypoints_km": [
+        [
+          0,
+          6563,
+          0,
+          0
+        ],
+        [
+          0.1638,
+          -3883,
+          -2520,
+          4641
+        ],
+        [
+          0.2456,
+          -6467,
+          516,
+          -950
+        ],
+        [
+          0.3275,
+          -1956,
+          2988,
+          -5503
+        ],
+        [
+          0.4094,
+          4704,
+          2181,
+          -4017
+        ],
+        [
+          0.4913,
+          6199,
+          -1017,
+          1874
+        ],
+        [
+          0.5732,
+          896,
+          -3099,
+          5707
+        ],
+        [
+          0.655,
+          -5393,
+          -1781,
+          3280
+        ],
+        [
+          0.7369,
+          -5138,
+          0,
+          22589
+        ],
+        [
+          0.8188,
+          6307,
+          0,
+          51939
+        ],
+        [
+          0.9007,
+          17621,
+          0,
+          72363
+        ],
+        [
+          0.9825,
+          28094,
+          0,
+          89088
+        ],
+        [
+          1.0644,
+          37877,
+          0,
+          103572
+        ],
+        [
+          1.1463,
+          47094,
+          0,
+          116491
+        ],
+        [
+          1.2282,
+          55836,
+          0,
+          128226
+        ],
+        [
+          1.3101,
+          64168,
+          0,
+          139019
+        ],
+        [
+          1.3919,
+          72144,
+          0,
+          149036
+        ],
+        [
+          1.4738,
+          79801,
+          0,
+          158395
+        ],
+        [
+          1.5557,
+          87173,
+          0,
+          167186
+        ],
+        [
+          1.6376,
+          94285,
+          0,
+          175478
+        ],
+        [
+          1.7195,
+          101158,
+          0,
+          183327
+        ],
+        [
+          1.8013,
+          107812,
+          0,
+          190776
+        ],
+        [
+          1.8832,
+          114261,
+          0,
+          197863
+        ],
+        [
+          1.9651,
+          120519,
+          0,
+          204619
+        ],
+        [
+          2.047,
+          126597,
+          0,
+          211069
+        ],
+        [
+          2.1288,
+          132506,
+          0,
+          217237
+        ],
+        [
+          2.2107,
+          138254,
+          0,
+          223142
+        ],
+        [
+          2.2926,
+          143850,
+          0,
+          228800
+        ],
+        [
+          2.3745,
+          149300,
+          0,
+          234227
+        ],
+        [
+          2.4564,
+          154611,
+          0,
+          239436
+        ],
+        [
+          2.5382,
+          159789,
+          0,
+          244439
+        ],
+        [
+          2.6201,
+          164839,
+          0,
+          249245
+        ],
+        [
+          2.702,
+          169766,
+          0,
+          253865
+        ],
+        [
+          2.8658,
+          179266,
+          0,
+          262580
+        ],
+        [
+          2.9476,
+          183848,
+          0,
+          266689
+        ],
+        [
+          3.1114,
+          192690,
+          0,
+          274443
+        ],
+        [
+          3.1933,
+          196957,
+          0,
+          278100
+        ],
+        [
+          3.357,
+          205195,
+          0,
+          284997
+        ],
+        [
+          3.4389,
+          209171,
+          0,
+          288247
+        ],
+        [
+          3.6027,
+          216849,
+          0,
+          294368
+        ],
+        [
+          3.6845,
+          220553,
+          0,
+          297246
+        ],
+        [
+          4,
+          234032,
+          0,
+          307272
+        ],
+        [
+          4.0939,
+          233653,
+          1371,
+          306773
+        ],
+        [
+          4.1758,
+          232905,
+          1837,
+          305791
+        ],
+        [
+          4.2577,
+          232161,
+          1352,
+          304815
+        ],
+        [
+          4.3396,
+          231805,
+          172,
+          304347
+        ],
+        [
+          4.4215,
+          232022,
+          -1098,
+          304632
+        ],
+        [
+          4.5033,
+          232698,
+          -1803,
+          305520
+        ],
+        [
+          4.5852,
+          233485,
+          -1574,
+          306553
+        ],
+        [
+          4.6671,
+          233978,
+          -535,
+          307200
+        ],
+        [
+          4.749,
+          233919,
+          781,
+          307123
+        ],
+        [
+          4.8308,
+          233343,
+          1695,
+          306366
+        ],
+        [
+          4.9127,
+          232544,
+          1731,
+          305317
+        ],
+        [
+          4.9946,
+          231935,
+          876,
+          304518
+        ],
+        [
+          5.0765,
+          231653,
+          0,
+          304456
+        ],
+        [
+          5.1584,
+          231667,
+          0,
+          304517
+        ],
+        [
+          5.2402,
+          231860,
+          0,
+          304420
+        ],
+        [
+          5.3221,
+          231860,
+          0,
+          304420
+        ],
+        [
+          5.404,
+          231860,
+          0,
+          304420
+        ],
+        [
+          5.4859,
+          231860,
+          0,
+          304420
+        ],
+        [
+          5.5678,
+          231860,
+          0,
+          304420
+        ],
+        [
+          5.6496,
+          231860,
+          0,
+          304420
+        ],
+        [
+          5.7315,
+          231860,
+          0,
+          304420
+        ],
+        [
+          5.8134,
+          231860,
+          0,
+          304420
+        ],
+        [
+          5.8953,
+          231860,
+          0,
+          304420
+        ],
+        [
+          5.9772,
+          231860,
+          0,
+          304420
+        ],
+        [
+          6.059,
+          231860,
+          0,
+          304420
+        ],
+        [
+          6.1409,
+          231860,
+          0,
+          304420
+        ],
+        [
+          6.2228,
+          231860,
+          0,
+          304420
+        ],
+        [
+          6.3047,
+          231860,
+          0,
+          304420
+        ],
+        [
+          6.3865,
+          231860,
+          0,
+          304420
+        ],
+        [
+          6.4684,
+          231860,
+          0,
+          304420
+        ],
+        [
+          6.5503,
+          231860,
+          0,
+          304420
+        ],
+        [
+          6.6322,
+          231860,
+          0,
+          304420
+        ],
+        [
+          6.7141,
+          231860,
+          0,
+          304420
+        ],
+        [
+          6.7959,
+          231860,
+          0,
+          304420
+        ],
+        [
+          6.8778,
+          231860,
+          0,
+          304420
+        ],
+        [
+          6.9597,
+          231860,
+          0,
+          304420
+        ],
+        [
+          7.0416,
+          231860,
+          0,
+          304420
+        ],
+        [
+          7.1235,
+          231860,
+          0,
+          304420
+        ],
+        [
+          7.2053,
+          231860,
+          0,
+          304420
+        ],
+        [
+          7.2872,
+          231860,
+          0,
+          304420
+        ],
+        [
+          7.3691,
+          231860,
+          0,
+          304420
+        ],
+        [
+          7.451,
+          231860,
+          0,
+          304420
+        ],
+        [
+          7.5328,
+          231860,
+          0,
+          304420
+        ],
+        [
+          7.6147,
+          231860,
+          0,
+          304420
+        ],
+        [
+          7.72,
+          231860,
+          0,
+          304420
+        ],
+        [
+          7.7785,
+          231860,
+          0,
+          304420
+        ],
+        [
+          7.8604,
+          231860,
+          0,
+          304420
+        ],
+        [
+          7.9422,
+          231860,
+          0,
+          304420
+        ],
+        [
+          8.0241,
+          231860,
+          0,
+          304420
+        ],
+        [
+          8.106,
+          231860,
+          0,
+          304420
+        ]
+      ]
+    }
+  }
+}

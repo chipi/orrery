@@ -1,0 +1,16 @@
+{
+  "name": "IM-2",
+  "vehicle": "Falcon 9 (lancement partagé avec le Lunar Trailblazer de la NASA)",
+  "payload": "Atterrisseur Nova-C Athena, masse avec ergols 2120 kg (Wikipédia) ; la foreuse PRIME-1 de la NASA, le sauteur Grace et les rovers MAPP et Yaoki",
+  "delta_v": "Non publié",
+  "type": "ATTERRISSEUR COMMERCIAL · BASCULÉ",
+  "first": "Selon Intuitive Machines, l'alunissage le plus au sud sur la Lune ; il a fini sur le flanc",
+  "description": "IM-2 était la deuxième mission lunaire d'Intuitive Machines, réalisée pour le programme Commercial Lunar Payload Services de la NASA. Son atterrisseur Nova-C, Athena, a été lancé sur un Falcon 9 le 2025-02-27 (00:16 UTC), est entré en orbite lunaire le 2025-03-03 et s'est posé le 2025-03-06, vers 17:30 UTC, près de Mons Mouton, à environ 160 km du pôle sud, à 84.7906 S, 29.1957 E, dans un cratère de 20 m de large. Son altimètre laser a donné des mesures bruitées pendant toute la descente, et l'atterrisseur a touché la surface plus vite que prévu et s'est immobilisé sur le flanc, ses panneaux solaires tournés à l'opposé du Soleil. Le sauteur et les rovers ne se sont pas déployés. Intuitive Machines a déclaré la mission terminée moins de 13 heures après l'atterrissage, le 2025-03-07 ; la NASA a reçu 250 MB de données.",
+  "events": [
+    { "met": 0, "label": "LANCEMENT", "note": "Falcon 9 depuis LC-39A, 2025-02-27, 00:16 UTC.", "type": "nominal" },
+    { "met": 4, "label": "INSERTION EN ORBITE LUNAIRE", "note": "Athena entre en orbite lunaire le 2025-03-03.", "type": "nominal" },
+    { "met": 7.71, "label": "RALLUMAGE DU MOTEUR", "note": "2025-03-06, vers 17:15 UTC ; l'atterrisseur se redresse presque complètement à environ 2 km d'altitude.", "type": "nominal" },
+    { "met": 7.72, "label": "POSÉ SUR LE FLANC", "note": "Vers 17:30 UTC, dans un cratère de 20 m ; l'altimètre avait été bruité pendant toute la descente.", "type": "warning" }
+  ],
+  "vehicle_stage": "Deuxième étage du Falcon 9"
+}

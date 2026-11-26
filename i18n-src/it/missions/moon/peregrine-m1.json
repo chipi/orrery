@@ -1,0 +1,17 @@
+{
+  "name": "Peregrine Mission One",
+  "vehicle": "Vulcan Centaur (primo volo)",
+  "payload": "Lander Peregrine, 1283 kg al lancio (Wikipedia); 20 carichi utili, cinque dei quali strumenti NASA; non ha mai raggiunto la Luna",
+  "delta_v": "Non pubblicato",
+  "type": "LANDER COMMERCIALE · NON HA MAI RAGGIUNTO LA LUNA",
+  "first": "Lanciato sul primo Vulcan Centaur; una perdita di propellente ha chiuso l'allunaggio prima che iniziasse",
+  "description": "Peregrine Mission One è stato un lander lunare di Astrobotic, svolto per il programma Commercial Lunar Payload Services della NASA con 20 carichi utili, cinque dei quali strumenti NASA. È stato lanciato il 2024-01-08 al primo volo del Vulcan Centaur e si è separato dallo stadio superiore alle 08:09 UTC. Il volo previsto era un'orbita terrestre fortemente ellittica con l'apogeo alla distanza della Luna, 1,5 giri, poi un intercettamento della Luna. Invece, la pressione del serbatoio di ossidante è salita dopo la separazione e, 92 minuti dopo, un serbatoio di ossidante si è rotto e la perdita ha messo il lander in rotazione. Il comitato di revisione di Astrobotic ha stabilito che una valvola di pressurizzazione a elio ha molto probabilmente perso la tenuta. L'atterraggio è stato annullato. Peregrine ha raggiunto la distanza della Luna intorno al 2024-01-12 e il 2024-01-13 Astrobotic e la NASA hanno deciso di concludere la missione. Accensioni dei suoi motori principali hanno spostato il rientro sul Pacifico meridionale, dove è rientrato il 2024-01-18 alle 21:04 UTC circa, dopo 10 giorni e 14 ore di volo.",
+  "events": [
+    { "met": 0, "label": "LANCIO", "note": "Vulcan Centaur da SLC-41, 2024-01-08, 07:18 UTC.", "type": "nominal" },
+    { "met": 0.04, "label": "SEPARAZIONE", "note": "Peregrine si separa dal Centaur alle 08:09 UTC.", "type": "nominal" },
+    { "met": 0.1, "label": "ROTTURA DEL SERBATOIO", "note": "92 minuti dopo la separazione un serbatoio di ossidante si rompe e la perdita mette il lander in rotazione; l'atterraggio è annullato.", "type": "warning" },
+    { "met": 4, "label": "DISTANZA DELLA LUNA", "note": "Intorno al 2024-01-12, a circa 238000 miglia dalla Terra, senza una Luna da incontrare.", "type": "info" },
+    { "met": 5, "label": "FINE DELLA MISSIONE", "note": "2024-01-13: Astrobotic e la NASA decidono di concludere la missione e di puntare il rientro sul Pacifico meridionale.", "type": "info" },
+    { "met": 10.57, "label": "RIENTRO", "note": "2024-01-18, 21:04 UTC circa, a sud delle Figi.", "type": "warning" }
+  ]
+}

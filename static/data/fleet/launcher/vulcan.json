@@ -31,5 +31,8 @@
   "specs": {
     "height_m": 61.6,
     "diameter_m": 5.4
-  }
+  },
+  "linked_missions": [
+    "peregrine-m1"
+  ]
 }

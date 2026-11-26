@@ -1,0 +1,33 @@
+{
+  "id": "peregrine",
+  "name": "Peregrine",
+  "category": "lander",
+  "agency": "Astrobotic",
+  "country": "USA",
+  "manufacturer": "Astrobotic Technology",
+  "first_flight": "2024-01-08",
+  "status": "FAILED",
+  "era": "2011-now",
+  "epoch": "lunar-return",
+  "best_known_for": "A propellant leak ended its Moon flight; it re-entered over the Pacific",
+  "links": [
+    {
+      "l": "Peregrine Mission One — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Peregrine_Mission_One",
+      "t": "intro"
+    },
+    {
+      "l": "NASA CLPS press kit: Astrobotic Peregrine",
+      "u": "https://www.nasa.gov/wp-content/uploads/2023/12/np-2023-12-017-jsc-clps-astrobotic-press-kit-update-508.pdf",
+      "t": "core"
+    },
+    {
+      "l": "Astrobotic: Peregrine Mission One post-mission report",
+      "u": "https://astrobotic.com/wp-content/uploads/2024/08/PM1_Post-Mission-Report_2024-1.pdf",
+      "t": "deep"
+    }
+  ],
+  "linked_missions": [
+    "peregrine-m1"
+  ]
+}

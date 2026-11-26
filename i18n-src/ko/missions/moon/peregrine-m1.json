@@ -1,0 +1,47 @@
+{
+  "name": "Peregrine Mission One",
+  "vehicle": "Vulcan Centaur (첫 비행)",
+  "payload": "발사 시 1283 kg의 Peregrine 착륙선(Wikipedia); 탑재체 20개, 그중 다섯 개는 NASA 관측 장비; 달에는 도달하지 못함",
+  "delta_v": "비공개",
+  "type": "상업용 착륙선 · 달에 도달하지 못함",
+  "first": "첫 Vulcan Centaur로 비행; 추진제 누출로 달 착륙은 시작도 하기 전에 끝났다",
+  "description": "Peregrine Mission One은 Astrobotic의 달 착륙선으로, NASA의 Commercial Lunar Payload Services를 위해 탑재체 20개(그중 다섯 개는 NASA 관측 장비)를 싣고 수행되었다. 2024-01-08에 Vulcan Centaur 첫 비행으로 발사되어 08:09 UTC에 상단에서 분리되었다. 계획된 비행은 원지점이 달 거리에 있는 고타원 지구 궤도를 1.5바퀴 돈 뒤 달을 요격하는 것이었다. 그러나 분리 후 산화제 탱크의 압력이 올랐고 92분 뒤 산화제 탱크가 파열되어 누출로 착륙선이 회전하기 시작했다. Astrobotic의 조사 위원회는 헬륨 압력 밸브가 밀봉을 잃었을 가능성이 가장 크다고 판단했다. 착륙은 취소되었다. Peregrine은 약 2024-01-12에 달 거리에 도달했고, 2024-01-13에 Astrobotic과 NASA는 임무를 끝내기로 결정했다. 주 엔진 연소로 재진입 지점을 남태평양 상공으로 옮겼고, 비행 10일 14시간 뒤인 2024-01-18 약 21:04 UTC에 그곳에서 재진입했다.",
+  "events": [
+    {
+      "met": 0,
+      "label": "발사",
+      "note": "SLC-41에서 Vulcan Centaur 발사, 2024-01-08, 07:18 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.04,
+      "label": "분리",
+      "note": "Peregrine이 08:09 UTC에 Centaur에서 분리된다.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.1,
+      "label": "탱크 파열",
+      "note": "분리 92분 뒤 산화제 탱크가 파열되고 누출로 착륙선이 회전한다; 착륙은 취소된다.",
+      "type": "warning"
+    },
+    {
+      "met": 4,
+      "label": "달 거리",
+      "note": "약 2024-01-12, 지구에서 약 238,000마일, 만날 달은 없다.",
+      "type": "info"
+    },
+    {
+      "met": 5,
+      "label": "임무 종료",
+      "note": "2024-01-13: Astrobotic과 NASA는 임무를 끝내고 재진입을 남태평양으로 향하게 하기로 결정한다.",
+      "type": "info"
+    },
+    {
+      "met": 10.57,
+      "label": "재진입",
+      "note": "2024-01-18, 약 21:04 UTC, 피지 남쪽.",
+      "type": "warning"
+    }
+  ]
+}

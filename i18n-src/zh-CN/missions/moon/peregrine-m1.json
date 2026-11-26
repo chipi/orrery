@@ -1,0 +1,47 @@
+{
+  "name": "Peregrine Mission One",
+  "vehicle": "Vulcan Centaur（首飞）",
+  "payload": "Peregrine着陆器，发射时1283 kg（Wikipedia）；20项载荷，其中五项为NASA仪器；从未到达月球",
+  "delta_v": "未公布",
+  "type": "商业着陆器 · 未能到达月球",
+  "first": "搭乘首飞的Vulcan Centaur；推进剂泄漏使登月在开始之前就告终",
+  "description": "Peregrine Mission One是Astrobotic的月球着陆器，在NASA的Commercial Lunar Payload Services计划下执行，搭载20项载荷，其中五项为NASA仪器。它于2024-01-08由Vulcan Centaur首飞发射，并于08:09 UTC与上面级分离。原定飞行是一条远地点位于月球距离的大椭圆地球轨道，绕行1.5圈，然后拦截月球。然而，分离后氧化剂贮箱压力上升，92分钟后一个氧化剂贮箱破裂，泄漏使着陆器旋转起来。Astrobotic的审查委员会认定，一个氦气增压阀最有可能失去了密封。着陆被取消。Peregrine于约2024-01-12到达月球距离，2024-01-13，Astrobotic和NASA决定结束任务。其主发动机的点火将再入点移到了南太平洋上空，它于2024-01-18约21:04 UTC在那里再入，飞行了10天14小时。",
+  "events": [
+    {
+      "met": 0,
+      "label": "发射",
+      "note": "2024-01-08，07:18 UTC，Vulcan Centaur自SLC-41发射。",
+      "type": "nominal"
+    },
+    {
+      "met": 0.04,
+      "label": "分离",
+      "note": "Peregrine于08:09 UTC与Centaur分离。",
+      "type": "nominal"
+    },
+    {
+      "met": 0.1,
+      "label": "贮箱破裂",
+      "note": "分离92分钟后，一个氧化剂贮箱破裂，泄漏使着陆器旋转；着陆被取消。",
+      "type": "warning"
+    },
+    {
+      "met": 4,
+      "label": "月球距离",
+      "note": "约2024-01-12，距地球约238,000英里，却没有月球可迎。",
+      "type": "info"
+    },
+    {
+      "met": 5,
+      "label": "任务结束",
+      "note": "2024-01-13：Astrobotic和NASA决定结束任务，并将再入点对准南太平洋。",
+      "type": "info"
+    },
+    {
+      "met": 10.57,
+      "label": "再入",
+      "note": "2024-01-18，约21:04 UTC，在斐济以南。",
+      "type": "warning"
+    }
+  ]
+}

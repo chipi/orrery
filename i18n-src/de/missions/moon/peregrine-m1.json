@@ -1,0 +1,17 @@
+{
+  "name": "Peregrine Mission One",
+  "vehicle": "Vulcan Centaur (Erstflug)",
+  "payload": "Peregrine-Lander, 1283 kg beim Start (Wikipedia); 20 Nutzlasten, fünf davon NASA-Instrumente; erreichte den Mond nie",
+  "delta_v": "Nicht veröffentlicht",
+  "type": "KOMMERZIELLER LANDER · ERREICHTE DEN MOND NIE",
+  "first": "Auf der ersten Vulcan Centaur geflogen; ein Treibstoffleck beendete die Mondlandung, bevor sie begann",
+  "description": "Peregrine Mission One war ein Mondlander von Astrobotic, durchgeführt für das Programm Commercial Lunar Payload Services der NASA mit 20 Nutzlasten, fünf davon NASA-Instrumente. Er startete am 2024-01-08 beim Erstflug der Vulcan Centaur und trennte sich um 08:09 UTC von der Oberstufe. Geplant war eine stark elliptische Erdumlaufbahn mit dem Apogäum in Mondentfernung, 1,5 Umläufe, dann ein Abfangen des Mondes. Stattdessen stieg nach der Trennung der Druck im Oxidator-Tank, und 92 Minuten später platzte ein Oxidator-Tank, und das Leck versetzte den Lander in Drehung. Das Untersuchungsgremium von Astrobotic stellte fest, dass ein Helium-Druckventil höchstwahrscheinlich seine Dichtung verloren hatte. Die Landung wurde abgesagt. Peregrine erreichte die Mondentfernung um den 2024-01-12, und am 2024-01-13 beschlossen Astrobotic und die NASA, die Mission zu beenden. Zündungen seiner Haupttriebwerke verlegten den Wiedereintritt über den Südpazifik, wo er am 2024-01-18 gegen 21:04 UTC wieder eintrat, nach 10 Tagen und 14 Stunden Flug.",
+  "events": [
+    { "met": 0, "label": "START", "note": "Vulcan Centaur vom SLC-41, 2024-01-08, 07:18 UTC.", "type": "nominal" },
+    { "met": 0.04, "label": "TRENNUNG", "note": "Peregrine trennt sich um 08:09 UTC von der Centaur.", "type": "nominal" },
+    { "met": 0.1, "label": "TANKBERSTEN", "note": "92 Minuten nach der Trennung platzt ein Oxidator-Tank, und das Leck versetzt den Lander in Drehung; die Landung wird abgesagt.", "type": "warning" },
+    { "met": 4, "label": "MONDENTFERNUNG", "note": "Um den 2024-01-12, etwa 238.000 Meilen von der Erde entfernt, ohne Mond, den es treffen könnte.", "type": "info" },
+    { "met": 5, "label": "MISSIONSENDE", "note": "2024-01-13: Astrobotic und die NASA beschließen, die Mission zu beenden und den Wiedereintritt auf den Südpazifik auszurichten.", "type": "info" },
+    { "met": 10.57, "label": "WIEDEREINTRITT", "note": "2024-01-18, gegen 21:04 UTC, südlich von Fidschi.", "type": "warning" }
+  ]
+}

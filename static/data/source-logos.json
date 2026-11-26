@@ -54,6 +54,13 @@
       "license_summary": "Italian Space Agency works under Italian government attribution; outbound reference links only. ASI partner contributions on Cassini-Huygens (high-gain antenna + radar) and BepiColombo."
     },
     {
+      "id": "astrobotic",
+      "name": "Astrobotic",
+      "kind": "private-operator",
+      "url": "https://www.astrobotic.com/",
+      "license_summary": "Astrobotic Technology: US lunar-lander company (Peregrine). \u00a9 Astrobotic; cited with attribution."
+    },
+    {
       "id": "astronautix",
       "name": "Encyclopedia Astronautica",
       "kind": "encyclopedic",

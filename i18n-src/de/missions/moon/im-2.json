@@ -1,0 +1,16 @@
+{
+  "name": "IM-2",
+  "vehicle": "Falcon 9 (Mitflug mit Lunar Trailblazer der NASA)",
+  "payload": "Nova-C-Lander Athena, Startmasse inklusive Treibstoff 2120 kg (Wikipedia); der PRIME-1-Bohrer der NASA, der Hopper Grace und die Rover MAPP und Yaoki",
+  "delta_v": "Nicht veröffentlicht",
+  "type": "KOMMERZIELLER LANDER · UMGEKIPPT",
+  "first": "Nach Angaben von Intuitive Machines die südlichste Landung auf dem Mond; er blieb auf der Seite liegen",
+  "description": "IM-2 war die zweite Mondmission von Intuitive Machines, durchgeführt für das Programm Commercial Lunar Payload Services der NASA. Ihr Nova-C-Lander Athena startete am 2025-02-27 (00:16 UTC) auf einer Falcon 9, schwenkte am 2025-03-03 in die Mondumlaufbahn ein und setzte am 2025-03-06 gegen 17:30 UTC nahe Mons Mouton auf, etwa 160 km vom Südpol entfernt, bei 84.7906 S, 29.1957 E, in einem Krater von 20 m Durchmesser. Sein Laser-Höhenmesser lieferte den ganzen Abstieg über verrauschte Werte, und der Lander traf schneller als vorgesehen auf die Oberfläche und kam auf der Seite zum Liegen, mit den Solarmodulen von der Sonne abgewandt. Der Hopper und die Rover wurden nicht ausgesetzt. Intuitive Machines erklärte die Mission am 2025-03-07, weniger als 13 Stunden nach der Landung, für beendet; die NASA erhielt 250 MB Daten.",
+  "events": [
+    { "met": 0, "label": "START", "note": "Falcon 9 vom LC-39A, 2025-02-27, 00:16 UTC.", "type": "nominal" },
+    { "met": 4, "label": "EINSCHWENKEN IN DIE MONDUMLAUFBAHN", "note": "Athena schwenkt am 2025-03-03 in die Mondumlaufbahn ein.", "type": "nominal" },
+    { "met": 7.71, "label": "TRIEBWERK WIEDERGEZÜNDET", "note": "2025-03-06, gegen 17:15 UTC; der Lander richtet sich in etwa 2 km Höhe weitgehend auf.", "type": "nominal" },
+    { "met": 7.72, "label": "LANDUNG AUF DER SEITE", "note": "Gegen 17:30 UTC, in einem 20-m-Krater; der Höhenmesser hatte den ganzen Abstieg über verrauscht gemessen.", "type": "warning" }
+  ],
+  "vehicle_stage": "Zweite Stufe der Falcon 9"
+}

@@ -1,0 +1,42 @@
+{
+  "name": "Blue Ghost Mission 1",
+  "vehicle": "Falcon 9 Block 5 (propulsor B1085; viaje compartido con la Hakuto-R Mission 2 de ispace)",
+  "payload": "Diez instrumentos de la NASA (unos 94 kg en total); masa de lanzamiento del módulo 1517 kg",
+  "delta_v": "No publicado",
+  "type": "MÓDULO COMERCIAL · ATERRIZÓ DERECHO",
+  "first": "Primera misión lunar de Firefly: aterrizó derecho y funcionó más de 14 días",
+  "description": "Blue Ghost Mission 1 fue la primera misión lunar de Firefly Aerospace, realizada para el programa Commercial Lunar Payload Services de la NASA con diez instrumentos de la NASA. El módulo, de 2 m de alto y 3,5 m de ancho, se lanzó en un Falcon 9 el 2025-01-15 y pasó unos 25 días en órbita terrestre, unos cuatro días en el tránsito lunar y unos 16 días en órbita lunar. Entró en órbita lunar el 2025-02-14. Tras una maniobra de inserción en la órbita de descenso a 100 km el 2025-03-01, su descenso propulsado comenzó a las 08:22 UTC del 2025-03-02 y tocó la superficie a las 08:34 UTC en Mare Crisium, cerca de Mons Latreille, en 18.5623 N, 61.8103 E, dentro de su objetivo de 100 m y derecho. Funcionó más de 14 días, tomó imágenes de la Tierra eclipsando al Sol el 2025-03-14 y se detuvo tras la puesta de sol lunar del 2025-03-16, habiendo enviado más de 119 GB de datos.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANZAMIENTO",
+      "note": "Falcon 9 en viaje compartido desde LC-39A, 2025-01-15, 06:11 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 25,
+      "label": "INYECCIÓN TRANSLUNAR",
+      "note": "Unos 25 días en órbita terrestre preceden al tránsito lunar de unos cuatro días.",
+      "type": "info"
+    },
+    {
+      "met": 29.82,
+      "label": "INSERCIÓN EN ÓRBITA LUNAR",
+      "note": "Una maniobra de 4 min 15 s el 2025-02-14, 01:51 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 46.09,
+      "label": "DESCENSO PROPULSADO",
+      "note": "2025-03-02, 08:22 UTC: una maniobra de frenado de unos nueve minutos.",
+      "type": "nominal"
+    },
+    {
+      "met": 46.1,
+      "label": "ATERRIZAJE",
+      "note": "08:34 UTC en Mare Crisium, derecho y dentro del objetivo de 100 m.",
+      "type": "nominal"
+    }
+  ],
+  "vehicle_stage": "Segunda etapa del Falcon 9, hacia una órbita terrestre muy elíptica"
+}

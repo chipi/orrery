@@ -1,0 +1,64 @@
+{
+  "missionId": "ispace-m2",
+  "siteId": "ispace-m2",
+  "body": "moon",
+  "landingSite": {
+    "lat": 60.4445,
+    "lon": -4.588
+  },
+  "entryState": {
+    "altitudeM": 20000,
+    "velocityMs": 1667,
+    "flightPathAngleDeg": 2
+  },
+  "entryMassKg": 750,
+  "entryCdA": 0,
+  "retroPropellantKg": 350,
+  "archetype": "LUNAR_POWERED",
+  "params": {
+    "ispS": 300,
+    "terminalVelocityMs": 42,
+    "descentRateGain": 0.065,
+    "brakingFpaDeg": 2,
+    "brakingMaxThrustN": 1800,
+    "highGateSpeedMs": 106,
+    "approachFpaDeg": 30,
+    "lowGateAltM": 1000,
+    "brakingRateGain": 0.01
+  },
+  "beats": [
+    {
+      "type": "probe_signal_lost",
+      "altM": 192
+    }
+  ],
+  "source_tier": "flagship",
+  "provenance": [
+    {
+      "l": "Planned RESILIENCE landing sequence (Spaceflight Now, 6 Jun 2025): coast from 100 km to 20 km, main braking from 20 km to 3 km and from about 6,000 to 380 km/h, then pitch-over and a terminal descent to 100 m. The model starts the braking at 20 km and 1,667 m/s and ends it at 3.0 km and 106 m/s",
+      "u": "https://spaceflightnow.com/2025/06/06/ispaces-resilience-lander-crash-lands-on-the-moon/"
+    },
+    {
+      "l": "Last telemetry about 192 m (630 ft) above the surface, faster than expected, about 1 min 40 s before the scheduled touchdown (SpacePolicyOnline). The speed is unresolved in the sources (about 42 m/s; a 187 km/h figure also circulates): the model holds 42 m/s from the end of the braking to the ground",
+      "u": "https://spacepolicyonline.com/news/a-second-lunar-landing-failure-for-ispace/"
+    },
+    {
+      "l": "ispace technical cause analysis (24 Jun 2025): the laser range finder was slow to give valid altitudes, so the lander could not slow down enough",
+      "u": "https://www.ispace-inc.com/2025/06/24/ispace-releases-technical-cause-analysis-for-hakuto-r-mission-2/"
+    },
+    {
+      "l": "NASA LRO: the impact site at 60.4445 N, 355.4120 E, a dark smudge with a subtle bright halo (LROC 1456)",
+      "u": "https://lroc.im-ldi.com/images/1456"
+    }
+  ],
+  "estimatedFields": [
+    "entryState.flightPathAngleDeg",
+    "entryMassKg",
+    "retroPropellantKg",
+    "ispS",
+    "brakingFpaDeg",
+    "brakingMaxThrustN (fitted so the braking ends near 3 km at 380 km/h, as planned; the engine's thrust is not published)",
+    "approachFpaDeg",
+    "terminalVelocityMs (the unresolved 42 m/s, held from the end of the braking)"
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "missionId": "im-1",
+  "siteId": "im-1",
+  "body": "moon",
+  "landingSite": {
+    "lat": -80.1276,
+    "lon": 1.4367
+  },
+  "entryState": {
+    "altitudeM": 8018,
+    "velocityMs": 543.3,
+    "flightPathAngleDeg": 12
+  },
+  "entryMassKg": 900,
+  "entryCdA": 0,
+  "retroPropellantKg": 300,
+  "archetype": "LUNAR_POWERED",
+  "params": {
+    "ispS": 320,
+    "terminalVelocityMs": 7.8,
+    "descentRateGain": 0.065,
+    "brakingFpaDeg": 12,
+    "brakingMaxThrustN": 3100,
+    "highGateSpeedMs": 283.5,
+    "approachFpaDeg": 8,
+    "lowGateAltM": 150,
+    "brakingRateGain": 0.01
+  },
+  "survivableTouchdownMs": 10,
+  "source_tier": "flagship",
+  "provenance": [
+    {
+      "l": "NASA TM-20250010290 (Navigation Doppler Lidar on IM-1): powered descent began at 23:10:32 UTC on 22 Feb 2024; the reconstruction starts at 8,017.7 m above ground and 543.3 m/s; at 23:20:41 UTC the lander was 1,921 m up at 283.5 m/s; first contact at 23:23:45.0 UTC at 7.79 to 7.80 m/s, about -44.5 degrees to the local terrain. The model starts at the reconstruction's first point, passes 1,861 m at 287 m/s and touches down 191 s later at 7.8 m/s, straight down (the sideways part is not drawn)",
+      "u": "https://ntrs.nasa.gov/api/citations/20250010290/downloads/NASA%20TM%2020250010290.pdf"
+    },
+    {
+      "l": "Intuitive Machines (via Astronomy): the lander came in harder, skidded, broke one or two legs and was upright about two seconds before tipping to rest about 30 degrees from horizontal. A press briefing gave about 2.7 m/s down and 0.9 m/s sideways instead: the TM and the briefing disagree, and the model follows the TM",
+      "u": "https://www.astronomy.com/space-exploration/odysseus-traveled-to-the-moon-broke-its-leg-and-still-pinged-earth-to-tell-the-story/"
+    },
+    {
+      "l": "Nova-C VR900 engine (LOX and methane): 3,100 N per Wikipedia; a 4,000 N figure also circulates, and no primary figure was found. The mass at the start of the reconstruction is not published (2,035 kg wet and 677 kg dry at launch, NASA TM): estimates",
+      "u": "https://en.wikipedia.org/wiki/Intuitive_Machines_Nova-C"
+    },
+    {
+      "l": "NASA LRO: Odysseus near Malapert A, 80.13 S, 1.44 E, on a 12 degree slope",
+      "u": "https://www.nasa.gov/missions/lro/nasas-lro-images-intuitive-machines-odysseus-lander/"
+    }
+  ],
+  "estimatedFields": [
+    "entryState.flightPathAngleDeg",
+    "entryMassKg",
+    "retroPropellantKg",
+    "ispS",
+    "brakingFpaDeg",
+    "brakingMaxThrustN (Wikipedia's 3,100 N; unresolved)",
+    "approachFpaDeg",
+    "survivableTouchdownMs (the lander survived the 7.8 m/s contact on a broken leg)"
+  ],
+  "afterTouchdown": {
+    "beats": [
+      {
+        "type": "at_rest",
+        "afterS": 4
+      }
+    ]
+  }
+}

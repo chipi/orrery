@@ -923,8 +923,10 @@ export function createDescentScene(opts: DescentSceneOptions): DescentScene {
   });
   const LEG_S = 4;
   const ARRAY_S = 8;
-  /** Landers that ended tipped over, by site (rad about the base): SLIM ended nose-down (JAXA). */
-  const END_TIP_RAD: Record<string, number> = { slim: -1.4 };
+  /** Landers that ended tipped over, by site (rad about the base): SLIM ended nose-down (JAXA);
+   *  Odysseus came to rest about 30 degrees above horizontal (Intuitive Machines); Athena on its
+   *  side in a crater (no angle published: drawn at 85 degrees). */
+  const END_TIP_RAD: Record<string, number> = { slim: -1.4, 'im-1': 1.05, 'im-2': 1.48 };
   const SWINGS_UNDER_CHUTE = new Set(['beagle2']);
   /** How long the whole chute stays framed after each stage opens: long enough to read drogues, then mains. */
   const CHUTE_OPENING_SHOT_S = 8;

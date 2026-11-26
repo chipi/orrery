@@ -1,0 +1,17 @@
+{
+  "name": "Blue Ghost Mission 1",
+  "vehicle": "Falcon 9 Block 5 (booster B1085; rideshare with ispace's Hakuto-R Mission 2)",
+  "payload": "Ten NASA instruments (about 94 kg together); lander launch mass 1,517 kg",
+  "delta_v": "Not published",
+  "type": "COMMERCIAL LANDER · LANDED UPRIGHT",
+  "first": "Firefly's first Moon mission: it landed upright and worked for more than 14 days",
+  "description": "Blue Ghost Mission 1 was Firefly Aerospace's first Moon mission, flown for NASA's Commercial Lunar Payload Services with ten NASA instruments. The lander, 2 m tall and 3.5 m wide, launched on a Falcon 9 on 2025-01-15 and spent about 25 days in Earth orbit, about four days on the lunar transit and about 16 days in lunar orbit. It entered lunar orbit on 2025-02-14. After a descent orbit insertion burn at 100 km on 2025-03-01, its powered descent began at 08:22 UTC on 2025-03-02, and it touched down at 08:34 UTC in Mare Crisium, near Mons Latreille, at 18.5623 N, 61.8103 E, within its 100 m landing target and upright. It worked for more than 14 days, took pictures of Earth eclipsing the Sun on 2025-03-14, and stopped after lunar sunset on 2025-03-16, having sent back more than 119 GB of data.",
+  "events": [
+    { "met": 0, "label": "LAUNCH", "note": "Falcon 9 rideshare from LC-39A, 2025-01-15, 06:11 UTC.", "type": "nominal" },
+    { "met": 25, "label": "TRANS-LUNAR INJECTION", "note": "About 25 days in Earth orbit come before the lunar transit of about four days.", "type": "info" },
+    { "met": 29.82, "label": "LUNAR ORBIT INSERTION", "note": "A 4 min 15 s burn on 2025-02-14, 01:51 UTC.", "type": "nominal" },
+    { "met": 46.09, "label": "POWERED DESCENT", "note": "2025-03-02, 08:22 UTC: a braking burn of about nine minutes.", "type": "nominal" },
+    { "met": 46.1, "label": "TOUCHDOWN", "note": "08:34 UTC in Mare Crisium, upright and within the 100 m target.", "type": "nominal" }
+  ],
+  "vehicle_stage": "Falcon 9 second stage, to a highly elliptical Earth orbit"
+}

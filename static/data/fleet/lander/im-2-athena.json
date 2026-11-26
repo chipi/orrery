@@ -1,0 +1,36 @@
+{
+  "id": "im-2-athena",
+  "name": "IM-2 Athena",
+  "category": "lander",
+  "agency": "Intuitive Machines",
+  "country": "USA",
+  "manufacturer": "Intuitive Machines",
+  "first_flight": "2025-02-27",
+  "status": "RETIRED",
+  "era": "2011-now",
+  "epoch": "lunar-return",
+  "best_known_for": "Landed on its side in a crater near the lunar south pole",
+  "specs": {
+    "height_m": 4.3
+  },
+  "links": [
+    {
+      "l": "IM-2 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/IM-2",
+      "t": "intro"
+    },
+    {
+      "l": "CLPS — NASA",
+      "u": "https://www.nasa.gov/commercial-lunar-payload-services/",
+      "t": "core"
+    },
+    {
+      "l": "NASA: NASA receives some data before Intuitive Machines ends lunar mission",
+      "u": "https://www.nasa.gov/news-release/nasa-receives-some-data-before-intuitive-machines-ends-lunar-mission/",
+      "t": "deep"
+    }
+  ],
+  "linked_missions": [
+    "im-2"
+  ]
+}

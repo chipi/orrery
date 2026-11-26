@@ -1,0 +1,16 @@
+{
+  "name": "IM-2",
+  "vehicle": "Falcon 9 (NASA의 Lunar Trailblazer와 동승 발사)",
+  "payload": "Nova-C 착륙선 Athena, 습윤 질량 2120 kg(Wikipedia); NASA의 PRIME-1 드릴, Grace 호퍼, MAPP와 Yaoki 로버",
+  "delta_v": "비공개",
+  "type": "상업용 착륙선 · 넘어짐",
+  "first": "Intuitive Machines의 설명으로는 달에서 가장 남쪽에 한 착륙; 옆으로 누운 채 끝났다",
+  "description": "IM-2는 Intuitive Machines의 두 번째 달 임무로, NASA의 Commercial Lunar Payload Services를 위해 수행되었다. Nova-C 착륙선 Athena는 2025-02-27(00:16 UTC)에 Falcon 9으로 발사되어 2025-03-03에 달 궤도에 진입했고, 2025-03-06 약 17:30 UTC에 남극에서 약 160 km 떨어진 Mons Mouton 근처, 84.7906 S, 29.1957 E의 지름 20 m 크레이터 안에 착륙했다. 레이저 고도계는 하강 내내 잡음 섞인 값을 냈고, 착륙선은 의도보다 빠르게 표면에 닿아 태양전지판이 태양을 등진 채 옆으로 누워 멈췄다. 호퍼와 로버는 전개되지 않았다. Intuitive Machines는 착륙 후 13시간이 채 되지 않은 2025-03-07에 임무 종료를 선언했으며, NASA는 250 MB의 데이터를 받았다.",
+  "events": [
+    { "met": 0, "label": "발사", "note": "LC-39A에서 Falcon 9 발사, 2025-02-27, 00:16 UTC.", "type": "nominal" },
+    { "met": 4, "label": "달 궤도 진입", "note": "Athena가 2025-03-03에 달 궤도에 진입한다.", "type": "nominal" },
+    { "met": 7.71, "label": "엔진 재점화", "note": "2025-03-06, 약 17:15 UTC; 고도 약 2 km에서 착륙선이 거의 똑바로 서도록 자세를 바꾼다.", "type": "nominal" },
+    { "met": 7.72, "label": "옆으로 누운 채 착륙", "note": "약 17:30 UTC, 지름 20 m 크레이터 안; 고도계는 하강 내내 잡음이 섞여 있었다.", "type": "warning" }
+  ],
+  "vehicle_stage": "Falcon 9 2단"
+}

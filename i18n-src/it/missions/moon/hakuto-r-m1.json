@@ -1,0 +1,42 @@
+{
+  "name": "Hakuto-R Mission 1",
+  "vehicle": "Falcon 9 (booster B1073, quinto volo; lancio in condivisione con Lunar Flashlight della NASA)",
+  "payload": "Lander da circa 1000 kg con propellente (massa a secco circa 340 kg) con circa 11 kg di carichi utili dei clienti, tra cui il rover Rashid degli Emirati Arabi Uniti; si è schiantato durante il tentativo di allunaggio",
+  "delta_v": "Non pubblicato; un trasferimento a bassa energia di circa tre mesi, fino a 1,38 milioni di km dalla Terra",
+  "type": "LANDER PRIVATO · SCHIANTATO",
+  "first": "Il primo tentativo di allunaggio di ispace: otto traguardi su dieci raggiunti prima del fallimento dell'atterraggio",
+  "description": "Hakuto-R Mission 1 è stata la prima missione lunare dell'azienda giapponese ispace. Il suo lander Series 1, alto 2,3 m e largo 2,6 m con le gambe aperte, è stato lanciato su un Falcon 9 il 2022-12-11 e ha percorso un trasferimento a bassa energia di circa tre mesi, fino a 1,38 milioni di km dalla Terra. È entrato in orbita lunare il 2023-03-21 e ha raggiunto un'orbita circolare di 100 km il 2023-04-13. La discesa è iniziata il 2023-04-25 alle 15:40 UTC. Al passaggio sopra il bordo di un cratere alto circa 3 km, l'altitudine misurata è saltata; il software ha giudicato anomalo l'altimetro e ha scartato tutti i dati successivi dei sensori, così il lander credeva di essere sulla superficie mentre era ancora a circa 5 km di quota. Ha continuato a scendere lentamente finché il propellente è finito, poi è caduto. Il Lunar Reconnaissance Orbiter della NASA ha ripreso la zona il 2023-04-26 e ha trovato il punto d'impatto a 47.581 N, 44.094 E, con almeno quattro frammenti di detriti. ispace ha individuato una causa software, non hardware.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCIO",
+      "note": "Falcon 9 in condivisione da Cape Canaveral SLC-40, 2022-12-11, 07:38 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 99.7,
+      "label": "INSERIMENTO IN ORBITA LUNARE",
+      "note": "Prima accensione di inserimento il 2023-03-21, alle 01:24 UTC circa.",
+      "type": "nominal"
+    },
+    {
+      "met": 123,
+      "label": "ORBITA CIRCOLARE DI 100 KM",
+      "note": "Un'accensione di 10 minuti il 2023-04-13 porta all'orbita da cui parte la discesa.",
+      "type": "nominal"
+    },
+    {
+      "met": 135.33,
+      "label": "DISCESA DA 100 KM",
+      "note": "2023-04-25, 15:40 UTC; la discesa dura circa un'ora.",
+      "type": "nominal"
+    },
+    {
+      "met": 135.38,
+      "label": "ALTIMETRO RIFIUTATO",
+      "note": "All'ora prevista dell'atterraggio, 16:43 UTC, il lander crede ancora di essere sulla superficie mentre è a circa 5 km di quota; cade quando il propellente finisce.",
+      "type": "warning"
+    }
+  ],
+  "vehicle_stage": "secondo stadio del Falcon 9; Hakuto-R separato a T+46:59"
+}

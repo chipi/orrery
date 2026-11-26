@@ -1,0 +1,47 @@
+{
+  "name": "Peregrine Mission One",
+  "vehicle": "Vulcan Centaur（初飛行）",
+  "payload": "打ち上げ時1283 kgのPeregrineランダー（Wikipedia）；20のペイロード、うち5つはNASAの観測機器；月には到達せず",
+  "delta_v": "非公表",
+  "type": "商業ランダー · 月に到達せず",
+  "first": "初のVulcan Centaurで飛行；推進剤の漏れにより、月着陸は始まる前に終わった",
+  "description": "Peregrine Mission Oneは、Astrobotic製の月ランダーで、NASAのCommercial Lunar Payload Servicesのもと、20のペイロード（うち5つはNASAの観測機器）を載せて実施された。2024-01-08に初飛行のVulcan Centaurで打ち上げられ、08:09 UTCに上段から分離した。計画された飛行は、遠地点が月の距離にある高楕円の地球周回軌道を1.5周したのち、月に会合するというものだった。ところが分離後に酸化剤タンクの圧力が上昇し、92分後に酸化剤タンクが破裂して、漏れによりランダーが回転し始めた。Astroboticの審査委員会は、ヘリウム加圧バルブがシールを失った可能性が最も高いと結論づけた。着陸は中止された。Peregrineは約2024-01-12に月の距離に達し、2024-01-13にAstroboticとNASAはミッションを終了することを決めた。メインエンジンの噴射で再突入を南太平洋の上に移し、飛行10日14時間ののち、2024-01-18の約21:04 UTCに再突入した。",
+  "events": [
+    {
+      "met": 0,
+      "label": "打ち上げ",
+      "note": "SLC-41からVulcan Centaur、2024-01-08、07:18 UTC。",
+      "type": "nominal"
+    },
+    {
+      "met": 0.04,
+      "label": "分離",
+      "note": "Peregrineは08:09 UTCにCentaurから分離する。",
+      "type": "nominal"
+    },
+    {
+      "met": 0.1,
+      "label": "タンク破裂",
+      "note": "分離の92分後に酸化剤タンクが破裂し、漏れによりランダーが回転する；着陸は中止された。",
+      "type": "warning"
+    },
+    {
+      "met": 4,
+      "label": "月の距離",
+      "note": "約2024-01-12、地球から約23万8000マイル、会うべき月はもうない。",
+      "type": "info"
+    },
+    {
+      "met": 5,
+      "label": "ミッション終了",
+      "note": "2024-01-13：AstroboticとNASAはミッションの終了を決め、再突入を南太平洋に向ける。",
+      "type": "info"
+    },
+    {
+      "met": 10.57,
+      "label": "再突入",
+      "note": "2024-01-18、約21:04 UTC、フィジーの南。",
+      "type": "warning"
+    }
+  ]
+}

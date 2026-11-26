@@ -1,0 +1,16 @@
+{
+  "name": "IM-2",
+  "vehicle": "Falcon 9（NASAのLunar Trailblazerとの相乗り）",
+  "payload": "Nova-CランダーAthena、湿潤質量2120 kg（Wikipedia）；NASAのPRIME-1ドリル、Graceホッパー、MAPPおよびYaokiローバー",
+  "delta_v": "非公表",
+  "type": "商業ランダー · 横転",
+  "first": "Intuitive Machinesの発表では月面で最も南への着陸；横倒しで終わった",
+  "description": "IM-2はIntuitive Machinesの2度目の月ミッションで、NASAのCommercial Lunar Payload Servicesのもとで実施された。Nova-CランダーのAthenaは、2025-02-27（00:16 UTC）にFalcon 9で打ち上げられ、2025-03-03に月周回軌道に入り、2025-03-06の約17:30 UTCに、南極から約160 km離れたMons Mouton付近、84.7906 S、29.1957 Eの、幅20 mのクレーターの中に着陸した。レーザー高度計は降下の最後まで不安定な値を出し続け、ランダーは意図より速く表面に接触して、太陽電池パネルが太陽と反対を向いたまま横倒しで止まった。ホッパーとローバーは展開されなかった。Intuitive Machinesは着陸から13時間足らず後の2025-03-07にミッション終了を宣言し、NASAが受け取ったデータは250 MBだった。",
+  "events": [
+    { "met": 0, "label": "打ち上げ", "note": "LC-39AからFalcon 9、2025-02-27、00:16 UTC。", "type": "nominal" },
+    { "met": 4, "label": "月周回軌道投入", "note": "Athenaは2025-03-03に月周回軌道に入る。", "type": "nominal" },
+    { "met": 7.71, "label": "エンジン再点火", "note": "2025-03-06、約17:15 UTC；高度約2 kmでランダーはほぼ直立の姿勢に起き上がる。", "type": "nominal" },
+    { "met": 7.72, "label": "横倒しで着陸", "note": "約17:30 UTC、幅20 mのクレーターの中；高度計は降下の最後まで不安定だった。", "type": "warning" }
+  ],
+  "vehicle_stage": "Falcon 9 第2段"
+}

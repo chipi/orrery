@@ -1,0 +1,42 @@
+{
+  "name": "Blue Ghost Mission 1",
+  "vehicle": "Falcon 9 Block 5 (propulsor B1085; carona com a Hakuto-R Mission 2 da ispace)",
+  "payload": "Dez instrumentos da NASA (cerca de 94 kg no total); massa de lançamento do módulo 1517 kg",
+  "delta_v": "Não divulgado",
+  "type": "MÓDULO DE POUSO COMERCIAL · POUSOU EM PÉ",
+  "first": "Primeira missão lunar da Firefly: pousou em pé e funcionou por mais de 14 dias",
+  "description": "A Blue Ghost Mission 1 foi a primeira missão lunar da Firefly Aerospace, realizada para o programa Commercial Lunar Payload Services da NASA com dez instrumentos da NASA. O módulo, com 2 m de altura e 3,5 m de largura, foi lançado em um Falcon 9 em 2025-01-15 e passou cerca de 25 dias em órbita da Terra, cerca de quatro dias no trânsito lunar e cerca de 16 dias em órbita lunar. Entrou em órbita lunar em 2025-02-14. Após uma queima de inserção na órbita de descida a 100 km em 2025-03-01, sua descida propulsada começou às 08:22 UTC de 2025-03-02, e ele tocou o solo às 08:34 UTC em Mare Crisium, perto de Mons Latreille, em 18.5623 N, 61.8103 E, dentro do alvo de pouso de 100 m e em pé. Funcionou por mais de 14 dias, fotografou a Terra eclipsando o Sol em 2025-03-14 e parou após o pôr do Sol lunar de 2025-03-16, tendo enviado mais de 119 GB de dados.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANÇAMENTO",
+      "note": "Falcon 9 de carona a partir de LC-39A, 2025-01-15, 06:11 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 25,
+      "label": "INJEÇÃO TRANSLUNAR",
+      "note": "Cerca de 25 dias em órbita da Terra precedem o trânsito lunar de cerca de quatro dias.",
+      "type": "info"
+    },
+    {
+      "met": 29.82,
+      "label": "INSERÇÃO EM ÓRBITA LUNAR",
+      "note": "Uma queima de 4 min 15 s em 2025-02-14, 01:51 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 46.09,
+      "label": "DESCIDA PROPULSADA",
+      "note": "2025-03-02, 08:22 UTC: uma queima de frenagem de cerca de nove minutos.",
+      "type": "nominal"
+    },
+    {
+      "met": 46.1,
+      "label": "POUSO",
+      "note": "08:34 UTC em Mare Crisium, em pé e dentro do alvo de 100 m.",
+      "type": "nominal"
+    }
+  ],
+  "vehicle_stage": "Segundo estágio do Falcon 9, para uma órbita terrestre muito elíptica"
+}

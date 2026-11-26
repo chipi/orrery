@@ -17,6 +17,7 @@ const NAME_PROBLEM = /^names (translated|changed) or missing/;
 const ALLOW = new Set([
   'messages:plan_destination_psyche', // the asteroid 16 Psyche (a body: native form), not the mission
   'messages:fleet_lineup_landmark_columbus', // Christopher Columbus's monument (Colón, Kolumbus …), not the ISS module
+  'programs/hayabusa.json:the_land.1.md', // "Peregrine Falcon" (hayabusa), not the Peregrine lander
   // observatory names are facilities (native form per locale, PRD-028); the dish size in
   // the name reads as a designation to the checker but is a descriptor
   'observatories/effelsberg.json:name',

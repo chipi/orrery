@@ -79,6 +79,12 @@
       "return": {
         "type": "none"
       }
+    },
+    "arrival": {
+      "entry_velocity_km_s": 0.543,
+      "edl_system": "powered",
+      "edl_duration_s": 262,
+      "touchdown_velocity_ms": 7.8
     }
   }
 }

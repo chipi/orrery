@@ -1,0 +1,36 @@
+{
+  "id": "blue-ghost",
+  "name": "Blue Ghost",
+  "category": "lander",
+  "agency": "Firefly Aerospace",
+  "country": "USA",
+  "manufacturer": "Firefly Aerospace",
+  "first_flight": "2025-01-15",
+  "status": "RETIRED",
+  "era": "2011-now",
+  "epoch": "lunar-return",
+  "best_known_for": "Firefly's first Moon landing: upright, and 14 days of surface work",
+  "specs": {
+    "height_m": 2
+  },
+  "links": [
+    {
+      "l": "Firefly Aerospace Blue Ghost — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Firefly_Aerospace_Blue_Ghost",
+      "t": "intro"
+    },
+    {
+      "l": "Firefly Aerospace: Blue Ghost Mission 1",
+      "u": "https://fireflyspace.com/missions/blue-ghost-mission-1/",
+      "t": "core"
+    },
+    {
+      "l": "NASA: Firefly's Blue Ghost lands on the Moon",
+      "u": "https://www.nasa.gov/news-release/touchdown-carrying-nasa-science-fireflys-blue-ghost-lands-on-moon/",
+      "t": "deep"
+    }
+  ],
+  "linked_missions": [
+    "blue-ghost-m1"
+  ]
+}

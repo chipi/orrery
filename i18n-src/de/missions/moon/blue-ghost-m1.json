@@ -1,0 +1,17 @@
+{
+  "name": "Blue Ghost Mission 1",
+  "vehicle": "Falcon 9 Block 5 (Booster B1085; Mitflug mit Hakuto-R Mission 2 von ispace)",
+  "payload": "Zehn NASA-Instrumente (zusammen etwa 94 kg); Startmasse des Landers 1517 kg",
+  "delta_v": "Nicht veröffentlicht",
+  "type": "KOMMERZIELLER LANDER · AUFRECHT GELANDET",
+  "first": "Fireflys erste Mondmission: Sie landete aufrecht und arbeitete mehr als 14 Tage",
+  "description": "Blue Ghost Mission 1 war die erste Mondmission von Firefly Aerospace, durchgeführt für das Programm Commercial Lunar Payload Services der NASA mit zehn NASA-Instrumenten. Der Lander, 2 m hoch und 3,5 m breit, startete am 2025-01-15 auf einer Falcon 9 und verbrachte etwa 25 Tage in der Erdumlaufbahn, etwa vier Tage auf dem Transit zum Mond und etwa 16 Tage in der Mondumlaufbahn. Er schwenkte am 2025-02-14 in die Mondumlaufbahn ein. Nach einem Zünden zum Einschwenken in die Abstiegsbahn in 100 km Höhe am 2025-03-01 begann sein Motorabstieg am 2025-03-02 um 08:22 UTC, und er setzte um 08:34 UTC im Mare Crisium nahe Mons Latreille bei 18.5623 N, 61.8103 E innerhalb seines 100-m-Landeziels und aufrecht auf. Er arbeitete mehr als 14 Tage, nahm am 2025-03-14 Bilder der Erde auf, die die Sonne verfinsterte, und stellte nach dem Mond-Sonnenuntergang am 2025-03-16 den Betrieb ein, nachdem er mehr als 119 GB Daten zurückgesendet hatte.",
+  "events": [
+    { "met": 0, "label": "START", "note": "Falcon 9 im Mitflug vom LC-39A, 2025-01-15, 06:11 UTC.", "type": "nominal" },
+    { "met": 25, "label": "TRANSLUNARE INJEKTION", "note": "Etwa 25 Tage in der Erdumlaufbahn gehen dem Mondtransit von etwa vier Tagen voraus.", "type": "info" },
+    { "met": 29.82, "label": "EINSCHWENKEN IN DIE MONDUMLAUFBAHN", "note": "Ein Zünden von 4 min 15 s am 2025-02-14, 01:51 UTC.", "type": "nominal" },
+    { "met": 46.09, "label": "MOTORABSTIEG", "note": "2025-03-02, 08:22 UTC: ein Bremszünden von etwa neun Minuten.", "type": "nominal" },
+    { "met": 46.1, "label": "LANDUNG", "note": "08:34 UTC im Mare Crisium, aufrecht und innerhalb des 100-m-Ziels.", "type": "nominal" }
+  ],
+  "vehicle_stage": "Zweite Stufe der Falcon 9, in eine stark elliptische Erdumlaufbahn"
+}

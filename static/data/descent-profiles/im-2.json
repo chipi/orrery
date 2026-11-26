@@ -1,0 +1,69 @@
+{
+  "missionId": "im-2",
+  "siteId": "im-2",
+  "body": "moon",
+  "landingSite": {
+    "lat": -84.7906,
+    "lon": 29.1957
+  },
+  "entryState": {
+    "altitudeM": 10000,
+    "velocityMs": 1800,
+    "flightPathAngleDeg": 0.8
+  },
+  "entryMassKg": 1250,
+  "entryCdA": 0,
+  "retroPropellantKg": 700,
+  "archetype": "LUNAR_POWERED",
+  "params": {
+    "ispS": 320,
+    "terminalVelocityMs": 10,
+    "descentRateGain": 0.065,
+    "brakingFpaDeg": 0.8,
+    "brakingMaxThrustN": 3100,
+    "highGateSpeedMs": 100,
+    "approachFpaDeg": 12,
+    "lowGateAltM": 150,
+    "brakingRateGain": 0.01
+  },
+  "survivableTouchdownMs": 15,
+  "source_tier": "flagship",
+  "provenance": [
+    {
+      "l": "collectSPACE: Athena's orbit was lowered to about 10 km near the site; the main engine relit about 15 minutes before touchdown and at about 2 km the lander pitched to mostly upright. Spaceflight Now: the powered descent started at about 4,000 mph (1.8 km/s). The model brakes from 10 km and 1,800 m/s, pitches over at 2.5 km and lands 12.6 minutes later (Wikipedia's 17:27 UTC start conflicts with the 15 minutes)",
+      "u": "https://www.collectspace.com/news/news-030625a-intuitivie-machines-im2-athena-moon-landing.html"
+    },
+    {
+      "l": "NASA: the planned terminal descent slowed to about 3 m/s at 30 m and 1 m/s from 10 m, on inertial data alone; touchdown about 17:30 UTC on 6 Mar 2025",
+      "u": "https://www.nasa.gov/blogs/missions/2025/03/06/im-2-vertical-terminal-descent-begins"
+    },
+    {
+      "l": "Intuitive Machines (LROC 1408 caption): Athena hit the surface faster than intended and came to rest on its side in a 20 m crater at 84.7906 S, 29.1957 E. The laser altimeter's readings were noisy all the way down. A report of 10 to 13 m/s could not be opened: the model touches down at 10 m/s, and the speed is unverified",
+      "u": "https://lroc.im-ldi.com/images/1408"
+    },
+    {
+      "l": "Nova-C VR900 engine: 3,100 N per Wikipedia (a 4,000 N figure also circulates). IM-2 launched at 2,120 kg (Wikipedia); the mass at the start of the descent is not published: estimates",
+      "u": "https://en.wikipedia.org/wiki/IM-2"
+    }
+  ],
+  "estimatedFields": [
+    "entryState.flightPathAngleDeg",
+    "entryMassKg",
+    "retroPropellantKg",
+    "ispS",
+    "brakingFpaDeg",
+    "brakingMaxThrustN (Wikipedia's 3,100 N; unresolved)",
+    "highGateSpeedMs",
+    "approachFpaDeg",
+    "terminalVelocityMs (10 m/s, the low end of an unverified report)",
+    "survivableTouchdownMs (the lander worked for about 13 hours on its side)"
+  ],
+  "afterTouchdown": {
+    "beats": [
+      {
+        "type": "at_rest",
+        "afterS": 4
+      }
+    ]
+  }
+}

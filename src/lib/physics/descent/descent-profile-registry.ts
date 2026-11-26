@@ -643,7 +643,7 @@ export function expandDescentProfile(raw: RawDescentProfile): DescentProfile {
 
 /** Every mission that ships a descent profile (Moon, Mars, Venus and other landers, and the Earth-return capsules). */
 export const DESCENT_MISSION_IDS = new Set<string>([
-  // Moon (22)
+  // Moon (27)
   'apollo11',
   'apollo12',
   'apollo14',
@@ -666,6 +666,12 @@ export const DESCENT_MISSION_IDS = new Set<string>([
   'artemis4',
   'artemis5',
   'blue-moon-mk1',
+  // Private landers flown 2023-2025 (0.9.12 F10).
+  'hakuto-r-m1',
+  'ispace-m2',
+  'blue-ghost-m1',
+  'im-1',
+  'im-2',
   // Mars (14)
   'viking1',
   'mars3',

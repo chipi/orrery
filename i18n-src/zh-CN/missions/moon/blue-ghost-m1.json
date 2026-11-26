@@ -1,0 +1,42 @@
+{
+  "name": "Blue Ghost Mission 1",
+  "vehicle": "Falcon 9 Block 5（B1085号助推器；与ispace的Hakuto-R 任务2拼车发射）",
+  "payload": "十台NASA仪器（合计约94 kg）；着陆器发射质量1517 kg",
+  "delta_v": "未公布",
+  "type": "商业着陆器 · 直立着陆",
+  "first": "Firefly的首次月球任务：直立着陆，并工作了超过14天",
+  "description": "Blue Ghost Mission 1是Firefly Aerospace的首次月球任务，在NASA的Commercial Lunar Payload Services计划下执行，搭载十台NASA仪器。着陆器高2 m、宽3.5 m，于2025-01-15由Falcon 9发射，在地球轨道上度过约25天，月球转移约四天，在月球轨道上约16天。它于2025-02-14进入月球轨道。2025-03-01在100 km处进行下降轨道入轨点火后，动力下降于2025-03-02的08:22 UTC开始，并于08:34 UTC在危海的Mons Latreille附近、18.5623 N、61.8103 E着陆，落在100 m的着陆目标范围内，且直立。它工作了超过14天，于2025-03-14拍摄了地球遮挡太阳的照片，并在2025-03-16月球日落后停止工作，共传回超过119 GB数据。",
+  "events": [
+    {
+      "met": 0,
+      "label": "发射",
+      "note": "2025-01-15，06:11 UTC，Falcon 9拼车发射，自LC-39A。",
+      "type": "nominal"
+    },
+    {
+      "met": 25,
+      "label": "地月转移入轨",
+      "note": "约25天的地球轨道飞行之后，是约四天的月球转移。",
+      "type": "info"
+    },
+    {
+      "met": 29.82,
+      "label": "月球轨道入轨",
+      "note": "2025-02-14，01:51 UTC，一次4分15秒的点火。",
+      "type": "nominal"
+    },
+    {
+      "met": 46.09,
+      "label": "动力下降",
+      "note": "2025-03-02，08:22 UTC：约九分钟的制动点火。",
+      "type": "nominal"
+    },
+    {
+      "met": 46.1,
+      "label": "着陆",
+      "note": "08:34 UTC在危海直立着陆，落在100 m的目标范围内。",
+      "type": "nominal"
+    }
+  ],
+  "vehicle_stage": "Falcon 9 第二级，送入大椭圆地球轨道"
+}

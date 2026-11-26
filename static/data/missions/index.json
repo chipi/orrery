@@ -1409,6 +1409,59 @@
     "crewed": false
   },
   {
+    "agency": "ispace",
+    "id": "hakuto-r-m1",
+    "dest": "MOON",
+    "status": "FLOWN",
+    "year": 2022,
+    "sector": "private",
+    "color": "#C8102E",
+    "crewed": false,
+    "outcome": "failure"
+  },
+  {
+    "agency": "Astrobotic",
+    "id": "peregrine-m1",
+    "dest": "MOON",
+    "status": "FLOWN",
+    "year": 2024,
+    "sector": "private",
+    "color": "#2E86AB",
+    "crewed": false,
+    "outcome": "failure"
+  },
+  {
+    "agency": "ispace",
+    "id": "ispace-m2",
+    "dest": "MOON",
+    "status": "FLOWN",
+    "year": 2025,
+    "sector": "private",
+    "color": "#C8102E",
+    "crewed": false,
+    "outcome": "failure"
+  },
+  {
+    "agency": "Firefly Aerospace",
+    "id": "blue-ghost-m1",
+    "dest": "MOON",
+    "status": "FLOWN",
+    "year": 2025,
+    "sector": "private",
+    "color": "#E4572E",
+    "crewed": false
+  },
+  {
+    "agency": "Intuitive Machines",
+    "id": "im-2",
+    "dest": "MOON",
+    "status": "FLOWN",
+    "year": 2025,
+    "sector": "private",
+    "color": "#0B3D91",
+    "crewed": false
+  },
+  {
     "agency": "CMSA",
     "id": "shenzhou-5",
     "dest": "EARTH",

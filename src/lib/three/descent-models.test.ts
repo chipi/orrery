@@ -70,6 +70,11 @@ describe('buildDescentModel', () => {
           'slim',
           'beresheet',
           'blue-moon-mk1',
+          'hakuto-r-m1',
+          'ispace-m2',
+          'blue-ghost-m1',
+          'im-1',
+          'im-2',
           'viking1-lander',
           'schiaparelli',
           'beagle2', // its panels fold in the stack and open at petals_open; the arm never deployed

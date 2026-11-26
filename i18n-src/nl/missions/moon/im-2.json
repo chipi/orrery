@@ -1,0 +1,16 @@
+{
+  "name": "IM-2",
+  "vehicle": "Falcon 9 (meeliftlancering met NASA's Lunar Trailblazer)",
+  "payload": "Nova-C-lander Athena, natte massa 2120 kg (Wikipedia); NASA's PRIME-1-boor, de Grace-hopper en de MAPP- en Yaoki-rovers",
+  "delta_v": "Niet gepubliceerd",
+  "type": "COMMERCIËLE LANDER · OMGEVALLEN",
+  "first": "Volgens Intuitive Machines de zuidelijkste landing op de Maan; hij kwam op zijn zij tot stilstand",
+  "description": "IM-2 was de tweede Maanmissie van Intuitive Machines, uitgevoerd voor NASA's Commercial Lunar Payload Services. De Nova-C-lander Athena werd op 2025-02-27 (00:16 UTC) gelanceerd met een Falcon 9, kwam op 2025-03-03 in een maanbaan en landde op 2025-03-06, om ongeveer 17:30 UTC, nabij Mons Mouton, ongeveer 160 km van de zuidpool, op 84.7906 S, 29.1957 E, in een krater van 20 m breed. Zijn laserhoogtemeter gaf de hele afdaling lang ruisige metingen, en de lander raakte het oppervlak sneller dan bedoeld en kwam op zijn zij tot stilstand, met zijn zonnepanelen van de Zon af gericht. De hopper en de rovers werden niet uitgezet. Intuitive Machines verklaarde de missie voorbij minder dan 13 uur na de landing, op 2025-03-07; NASA ontving 250 MB aan data.",
+  "events": [
+    { "met": 0, "label": "LANCERING", "note": "Falcon 9 vanaf LC-39A, 2025-02-27, 00:16 UTC.", "type": "nominal" },
+    { "met": 4, "label": "INBRENGING IN MAANBAAN", "note": "Athena gaat op 2025-03-03 in een maanbaan.", "type": "nominal" },
+    { "met": 7.71, "label": "MOTOR OPNIEUW GESTART", "note": "2025-03-06, ongeveer 17:15 UTC; de lander kantelt op ongeveer 2 km hoogte naar bijna rechtop.", "type": "nominal" },
+    { "met": 7.72, "label": "LANDING OP ZIJN ZIJ", "note": "Ongeveer 17:30 UTC, in een krater van 20 m; de hoogtemeter had de hele afdaling lang ruis gegeven.", "type": "warning" }
+  ],
+  "vehicle_stage": "tweede trap Falcon 9"
+}

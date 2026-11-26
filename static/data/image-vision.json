@@ -30957,6 +30957,110 @@
       "rejected_by": null,
       "scored_at": "2026-11-24T10:33:18.649Z",
       "scoring_cost_usd": 0
+    },
+    "/images/missions/hakuto-r-m1/01.jpg": {
+      "score": 8,
+      "subject": "LRO image of the HAKUTO-R Mission 1 impact site, a white square marking the area, with a 100 m scale bar.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-26T00:29:52.000Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/ispace-m2/01.jpg": {
+      "score": 8,
+      "subject": "LRO image of the RESILIENCE impact site in Mare Frigoris, a white arrow pointing to the dark smudge.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-26T00:29:52.005Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/blue-ghost-m1/01.jpg": {
+      "score": 8,
+      "subject": "Oblique LRO image of the Blue Ghost landing site in Mare Crisium, a white square around the lander.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.54,
+        "y": 0.44
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-26T00:29:52.010Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/im-2/01.jpg": {
+      "score": 8,
+      "subject": "Oblique LRO image of the IM-2 Athena landing site near Mons Mouton, a white arrow pointing to the lander.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.48
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-26T00:29:52.016Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/peregrine-m1/01.jpg": {
+      "score": 8,
+      "subject": "Vulcan Centaur lifting off at night with Astrobotic Peregrine, 8 January 2024.",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.55
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-26T00:29:52.020Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/blue-ghost/01.jpg": {
+      "score": 8,
+      "subject": "LRO view from above of the Blue Ghost landing site in Mare Crisium; the lander is a speck near the centre.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-26T00:29:52.145Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/im-2-athena/01.jpg": {
+      "score": 8,
+      "subject": "Close LRO view of the cratered terrain at the IM-2 Athena landing site near Mons Mouton.",
+      "category": "surface",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.45
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-26T00:29:52.149Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/peregrine/01.jpg": {
+      "score": 8,
+      "subject": "Vulcan Centaur on its pad at Cape Canaveral before the Peregrine launch.",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.25,
+        "y": 0.55
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-26T00:29:52.153Z",
+      "scoring_cost_usd": 0
     }
   }
 }

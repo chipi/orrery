@@ -1,0 +1,42 @@
+{
+  "name": "Blue Ghost Mission 1",
+  "vehicle": "Falcon 9 Block 5 (booster B1085; meeliftlancering met Hakuto-R Mission 2 van ispace)",
+  "payload": "Tien NASA-instrumenten (samen ongeveer 94 kg); lanceermassa van de lander 1517 kg",
+  "delta_v": "Niet gepubliceerd",
+  "type": "COMMERCIËLE LANDER · RECHTOP GELAND",
+  "first": "Firefly's eerste Maanmissie: hij landde rechtop en werkte meer dan 14 dagen",
+  "description": "Blue Ghost Mission 1 was de eerste Maanmissie van Firefly Aerospace, uitgevoerd voor NASA's Commercial Lunar Payload Services met tien NASA-instrumenten. De lander, 2 m hoog en 3,5 m breed, werd op 2025-01-15 gelanceerd met een Falcon 9 en bracht ongeveer 25 dagen door in een baan om de Aarde, ongeveer vier dagen op de overgang naar de Maan en ongeveer 16 dagen in een maanbaan. Hij kwam op 2025-02-14 in een maanbaan. Na een ontsteking voor inbrenging in de afdalingsbaan op 100 km op 2025-03-01 begon zijn gemotoriseerde afdaling om 08:22 UTC op 2025-03-02, en hij landde om 08:34 UTC in Mare Crisium, nabij Mons Latreille, op 18.5623 N, 61.8103 E, binnen zijn landingsdoel van 100 m en rechtop. Hij werkte meer dan 14 dagen, maakte op 2025-03-14 foto's van de Aarde die de Zon verduistert en stopte na de maanzonsondergang op 2025-03-16, na meer dan 119 GB aan data te hebben teruggestuurd.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCERING",
+      "note": "Falcon 9-meeliftlancering vanaf LC-39A, 2025-01-15, 06:11 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 25,
+      "label": "TRANSLUNAIRE INJECTIE",
+      "note": "Ongeveer 25 dagen in een baan om de Aarde gaan vooraf aan de overgang naar de Maan van ongeveer vier dagen.",
+      "type": "info"
+    },
+    {
+      "met": 29.82,
+      "label": "INBRENGING IN MAANBAAN",
+      "note": "Een ontsteking van 4 min 15 s op 2025-02-14, 01:51 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 46.09,
+      "label": "GEMOTORISEERDE AFDALING",
+      "note": "2025-03-02, 08:22 UTC: een remontsteking van ongeveer negen minuten.",
+      "type": "nominal"
+    },
+    {
+      "met": 46.1,
+      "label": "LANDING",
+      "note": "08:34 UTC in Mare Crisium, rechtop en binnen het doel van 100 m.",
+      "type": "nominal"
+    }
+  ],
+  "vehicle_stage": "tweede trap Falcon 9, naar een sterk elliptische baan om de Aarde"
+}

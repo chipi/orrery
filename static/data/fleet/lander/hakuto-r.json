@@ -10,6 +10,9 @@
   "era": "2011-now",
   "epoch": "commercial-era",
   "best_known_for": "First private Japanese lunar lander; M1 + M2 both crashed",
+  "specs": {
+    "height_m": 2.3
+  },
   "links": [
     {
       "l": "Hakuto-R — Wikipedia",
@@ -26,5 +29,9 @@
       "u": "https://en.wikipedia.org/wiki/Hakuto-R_Mission_2",
       "t": "deep"
     }
+  ],
+  "linked_missions": [
+    "hakuto-r-m1",
+    "ispace-m2"
   ]
 }

@@ -1,0 +1,16 @@
+{
+  "name": "IM-2",
+  "vehicle": "Falcon 9 (carona com o Lunar Trailblazer da NASA)",
+  "payload": "Módulo de pouso Nova-C Athena, massa abastecida de 2120 kg (Wikipedia); a broca PRIME-1 da NASA, o saltador Grace e os rovers MAPP e Yaoki",
+  "delta_v": "Não divulgado",
+  "type": "MÓDULO DE POUSO COMERCIAL · TOMBADO",
+  "first": "Segundo a Intuitive Machines, o pouso mais ao sul já feito na Lua; terminou de lado",
+  "description": "A IM-2 foi a segunda missão lunar da Intuitive Machines, realizada para o programa Commercial Lunar Payload Services da NASA. Seu módulo de pouso Nova-C, Athena, foi lançado em um Falcon 9 em 2025-02-27 (00:16 UTC), entrou em órbita lunar em 2025-03-03 e pousou em 2025-03-06, por volta das 17:30 UTC, perto de Mons Mouton, a cerca de 160 km do polo sul, em 84.7906 S, 29.1957 E, dentro de uma cratera de 20 m de largura. Seu altímetro a laser deu leituras ruidosas durante toda a descida, e o módulo atingiu a superfície mais rápido que o previsto e parou de lado, com os painéis solares virados para longe do Sol. O saltador e os rovers não foram liberados. A Intuitive Machines declarou a missão encerrada menos de 13 horas após o pouso, em 2025-03-07; a NASA recebeu 250 MB de dados.",
+  "events": [
+    { "met": 0, "label": "LANÇAMENTO", "note": "Falcon 9 de LC-39A, 2025-02-27, 00:16 UTC.", "type": "nominal" },
+    { "met": 4, "label": "INSERÇÃO EM ÓRBITA LUNAR", "note": "A Athena entra em órbita lunar em 2025-03-03.", "type": "nominal" },
+    { "met": 7.71, "label": "REIGNIÇÃO DO MOTOR", "note": "2025-03-06, por volta das 17:15 UTC; o módulo se endireita quase por completo a cerca de 2 km de altitude.", "type": "nominal" },
+    { "met": 7.72, "label": "POUSO DE LADO", "note": "Por volta das 17:30 UTC, dentro de uma cratera de 20 m; o altímetro estivera ruidoso durante toda a descida.", "type": "warning" }
+  ],
+  "vehicle_stage": "Segundo estágio do Falcon 9"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "Hakuto-R Mission 1",
+  "vehicle": "Falcon 9 (Booster B1073, fünfter Flug; Mitflug mit Lunar Flashlight der NASA)",
+  "payload": "Lander mit etwa 1000 kg Startmasse inklusive Treibstoff (Trockenmasse etwa 340 kg) und etwa 11 kg Kundennutzlasten, darunter der Rover Rashid der VAE; beim Landeversuch abgestürzt",
+  "delta_v": "Nicht veröffentlicht; ein energiearmer Transfer von etwa drei Monaten, bis zu 1,38 Millionen km von der Erde entfernt",
+  "type": "PRIVATER LANDER · ABGESTÜRZT",
+  "first": "Erster Mondlandeversuch von ispace: acht von zehn Meilensteinen erreicht, bevor die Landung scheiterte",
+  "description": "Hakuto-R Mission 1 war die erste Mondmission des japanischen Unternehmens ispace. Ihr Series-1-Lander, 2,3 m hoch und 2,6 m breit mit ausgefahrenen Beinen, startete am 2022-12-11 auf einer Falcon 9 und flog einen energiearmen Transfer von etwa drei Monaten, bis zu 1,38 Millionen km von der Erde entfernt. Er schwenkte am 2023-03-21 in die Mondumlaufbahn ein und erreichte am 2023-04-13 eine kreisförmige 100-km-Umlaufbahn. Sein Abstieg begann am 2023-04-25 um 15:40 UTC. Beim Überfliegen eines etwa 3 km hohen Kraterrands sprang die gemessene Höhe; die Software hielt den Höhenmesser für fehlerhaft und verwarf alle späteren Sensordaten, sodass der Lander glaubte, an der Oberfläche zu sein, obwohl er noch etwa 5 km hoch war. Er sank langsam weiter, bis sein Treibstoff aufgebraucht war, und stürzte dann ab. Der Lunar Reconnaissance Orbiter der NASA fotografierte das Gebiet am 2023-04-26 und fand die Aufschlagstelle bei 47.581 N, 44.094 E, mit mindestens vier Trümmerteilen. ispace fand eine Software-Ursache, keine Hardware-Ursache.",
+  "events": [
+    { "met": 0, "label": "START", "note": "Falcon 9 im Mitflug von Cape Canaveral SLC-40, 2022-12-11, 07:38 UTC.", "type": "nominal" },
+    { "met": 99.7, "label": "EINSCHWENKEN IN DIE MONDUMLAUFBAHN", "note": "Erstes Einschwenkmanöver am 2023-03-21, gegen 01:24 UTC.", "type": "nominal" },
+    { "met": 123, "label": "KREISBAHN IN 100 KM", "note": "Ein 10-minütiges Zünden am 2023-04-13 bringt ihn auf die Bahn, von der der Abstieg startet.", "type": "nominal" },
+    { "met": 135.33, "label": "ABSTIEG AUS 100 KM", "note": "2023-04-25, 15:40 UTC; der Abstieg dauert etwa eine Stunde.", "type": "nominal" },
+    { "met": 135.38, "label": "HÖHENMESSER VERWORFEN", "note": "Zur geplanten Landezeit, 16:43 UTC, glaubt der Lander weiter, an der Oberfläche zu sein, obwohl er etwa 5 km hoch ist; er stürzt ab, sobald sein Treibstoff aufgebraucht ist.", "type": "warning" }
+  ],
+  "vehicle_stage": "Zweite Stufe der Falcon 9; Hakuto-R trennte sich bei T+46:59"
+}

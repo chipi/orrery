@@ -1,0 +1,16 @@
+{
+  "name": "IM-2",
+  "vehicle": "Falcon 9（与NASA的Lunar Trailblazer拼车发射）",
+  "payload": "Nova-C着陆器Athena，湿质量2120 kg（Wikipedia）；NASA的PRIME-1钻机、Grace跳跃器，以及MAPP和Yaoki月球车",
+  "delta_v": "未公布",
+  "type": "商业着陆器 · 侧翻",
+  "first": "据Intuitive Machines称是月球上最靠南的着陆；最终侧躺",
+  "description": "IM-2是Intuitive Machines的第二次月球任务，在NASA的Commercial Lunar Payload Services计划下执行。其Nova-C着陆器Athena于2025-02-27（00:16 UTC）由Falcon 9发射，于2025-03-03进入月球轨道，并于2025-03-06约17:30 UTC在Mons Mouton附近着陆，距南极约160 km，位于84.7906 S、29.1957 E，在一个直径20 m的撞击坑内。其激光高度计在整个下降过程中读数噪声很大，着陆器以比预期更快的速度撞上月面，侧躺着停下，太阳能板背向太阳。跳跃器和月球车没有展开。Intuitive Machines于着陆后不到13小时、即2025-03-07宣布任务结束；NASA收到了250 MB数据。",
+  "events": [
+    { "met": 0, "label": "发射", "note": "2025-02-27，00:16 UTC，Falcon 9自LC-39A发射。", "type": "nominal" },
+    { "met": 4, "label": "月球轨道入轨", "note": "Athena于2025-03-03进入月球轨道。", "type": "nominal" },
+    { "met": 7.71, "label": "发动机重新点火", "note": "2025-03-06，约17:15 UTC；在约2 km高度，着陆器俯仰至基本直立。", "type": "nominal" },
+    { "met": 7.72, "label": "侧躺着陆", "note": "约17:30 UTC，在一个20 m的撞击坑内；高度计在整个下降过程中读数噪声很大。", "type": "warning" }
+  ],
+  "vehicle_stage": "Falcon 9 第二级"
+}

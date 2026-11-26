@@ -1,7 +1,8 @@
 /**
  * Showcase models: the Western-built and Asian small lunar landers that followed Apollo —
  * Chandrayaan Vikram (-2 and -3, one builder with an option), the Pragyan rover that rides on it,
- * JAXA's SLIM, SpaceIL's Beresheet and Blue Origin's Blue Moon MK1. Same style as the Apollo LM and
+ * JAXA's SLIM, SpaceIL's Beresheet, Blue Origin's Blue Moon MK1, ispace's HAKUTO-R Series 1 (Mission 1
+ * and RESILIENCE: one airframe) and Firefly's Blue Ghost. Same style as the Apollo LM and
  * Curiosity (operator 2026-11-23): real metres, crinkled foil where the craft wore it, struts,
  * tanks, nozzles, panels, footpads; base on y = 0, front toward +z.
  */
@@ -195,13 +196,16 @@ function footpad(g: THREE.Object3D, M: Record<string, Mat>, x: number, z: number
   add(g, pad);
 }
 
-/** Scale `g` so its Box3 is exactly `heightM` tall and rests on y = 0; returns the wrapping group. */
-function stand(g: THREE.Group, heightM: number): THREE.Group {
+/** Scale `g` so its Box3 is exactly `heightM` tall and rests on y = 0; returns the wrapping group.
+ *  `exitY` (the main bell's exit in g's frame) becomes `userData.engineExitY`, where the descent
+ *  scene lights the braking plume; without it the scene draws a generic nozzle under the legs. */
+function stand(g: THREE.Group, heightM: number, exitY?: number): THREE.Group {
   const b = new THREE.Box3().setFromObject(g);
   g.scale.setScalar(heightM / (b.max.y - b.min.y));
   g.position.y = -b.min.y * g.scale.y;
   const out = new THREE.Group();
   out.add(g);
+  if (exitY != null) out.userData.engineExitY = (exitY - b.min.y) * g.scale.y;
   return out;
 }
 
@@ -1012,6 +1016,331 @@ export function buildBlueMoonMk1(): THREE.Group {
   return stand(g, BLUE_MOON_HEIGHT_M);
 }
 
+// ─── HAKUTO-R Series 1 ──────────────────────────────────────────────────────
+
+export const HAKUTO_R_HEIGHT_M = 2.3;
+export const HAKUTO_R_SPAN_M = 2.6;
+
+/** A regular octagonal prism of foil faces, base at y0, height h, circumradius R, flats at ±x/±z. */
+function foilOctagon(
+  g: THREE.Object3D,
+  m: Mat,
+  y0: number,
+  h: number,
+  R: number,
+  amp: number,
+  seed: number,
+): void {
+  const side = 2 * R * Math.sin(Math.PI / 8);
+  const apothem = R * Math.cos(Math.PI / 8);
+  for (let i = 0; i < 8; i++) {
+    const a = (i / 8) * Math.PI * 2;
+    const f = foil(m, side, h, amp, seed + i);
+    f.position.set(Math.sin(a) * apothem, y0 + h / 2, Math.cos(a) * apothem);
+    f.rotation.y = a;
+    add(g, f);
+  }
+  // Black tape on the vertical corners, where the faces meet.
+  for (let i = 0; i < 8; i++) {
+    const a = ((i + 0.5) / 8) * Math.PI * 2;
+    box(g, mat(0x18191c, 0.3, 0.7), 0.025, h, 0.025, Math.sin(a) * R, y0 + h / 2, Math.cos(a) * R);
+  }
+}
+
+/**
+ * ispace HAKUTO-R Series 1 (2.3 m high, 2.6 m across the extended legs, ArianeGroup main engine
+ * and RCS; Mission 1 in 2023, "RESILIENCE" on Mission 2 in 2025: one airframe), from the replica
+ * photo at Haneda and the unfoiled IAC 2022 mock-up (Wikimedia Commons): a round lower plate with
+ * small thruster cones and the main bell under it, an octagonal gold-foil tub with black solar
+ * panels on its faces, a smaller octagonal tier above, a white top lid carrying two foil-wrapped
+ * payload boxes with white lids, and four splayed black carbon legs with gold bands to small
+ * round pads, each braced from the plate.
+ */
+export function buildHakutoR(): THREE.Group {
+  const M = palette();
+  const g = new THREE.Group();
+  const plateY = 0.8;
+  const lowY = 0.86;
+  const lowTop = 1.56;
+  const RL = 0.95;
+  const upY = 1.61;
+  const upTop = 2.07;
+  const RU = 0.82;
+
+  // Lower plate: a shallow round dish in gold foil, a silver rim ring.
+  lathe(
+    g,
+    M.gold,
+    [
+      [0.2, plateY - 0.1],
+      [0.62, plateY - 0.07],
+      [0.9, plateY - 0.015],
+      [0.93, plateY + 0.05],
+    ],
+    40,
+  );
+  tubeRing(g, M.silver, 0.93, plateY + 0.04, 0.012);
+  // The tub: gold-foil octagon, a flange ring, then the smaller upper tier.
+  foilOctagon(g, M.gold, lowY, lowTop - lowY, RL, 0.035, 1);
+  const flange = new THREE.Mesh(new THREE.CylinderGeometry(RL + 0.03, RL + 0.03, 0.04, 8), M.gold);
+  flange.rotation.y = Math.PI / 8;
+  flange.position.y = lowTop + 0.01;
+  add(g, flange);
+  foilOctagon(g, M.goldPale, upY, upTop - upY, RU, 0.03, 20);
+  const lid = new THREE.Mesh(new THREE.CylinderGeometry(RU + 0.01, RU + 0.01, 0.03, 8), M.white);
+  lid.rotation.y = Math.PI / 8;
+  lid.position.y = upTop + 0.012;
+  add(g, lid);
+
+  // Black solar panels on the tub's faces: big ones on the four flat faces, small ones above the
+  // leg hinges on the diagonals.
+  const apL = RL * Math.cos(Math.PI / 8);
+  for (let i = 0; i < 8; i++) {
+    const a = (i / 8) * Math.PI * 2;
+    const small = i % 2 === 1;
+    const pw = small ? 0.42 : 0.52;
+    const ph = small ? 0.3 : 0.6;
+    const p = new THREE.Group();
+    p.position.set(Math.sin(a) * (apL + 0.045), small ? 1.38 : 1.2, Math.cos(a) * (apL + 0.045));
+    p.rotation.y = a;
+    box(p, M.black, pw, ph, 0.025, 0, 0, 0);
+    for (let k = 1; k < 4; k++)
+      box(p, M.dark, 0.004, ph - 0.02, 0.004, -pw / 2 + (k * pw) / 4, 0, 0.015);
+    for (let k = 1; k < 4; k++)
+      box(p, M.dark, pw - 0.02, 0.004, 0.004, 0, -ph / 2 + (k * ph) / 4, 0.015);
+    add(g, p);
+  }
+  // Black panel on the +z face of the upper tier (the sponsor panel in the photos).
+  const apU = RU * Math.cos(Math.PI / 8);
+  box(g, M.black, 0.46, 0.4, 0.02, 0, 1.84, apU + 0.04);
+
+  // Two payload boxes on the top lid: foil sides, white lids, and a few small fittings.
+  const payload = [
+    { x: -0.22, z: -0.12, w: 0.7, d: 0.55, h: 0.26, s: 31 },
+    { x: 0.3, z: 0.2, w: 0.5, d: 0.62, h: 0.2, s: 41 },
+  ];
+  for (const b of payload) {
+    wrapBox(
+      g,
+      M.dark,
+      [M.gold, M.gold, M.goldPale, M.gold],
+      b.x,
+      upTop + 0.025 + b.h / 2,
+      b.z,
+      b.w,
+      b.h,
+      b.d,
+      0.022,
+    );
+    box(g, M.white, b.w + 0.01, 0.014, b.d + 0.01, b.x, upTop + 0.03 + b.h, b.z);
+  }
+  box(g, M.alu, 0.1, 0.08, 0.1, -0.35, upTop + 0.3, 0.0);
+  strut(g, M.silver, V(0.12, upTop + 0.03, 0.55), V(0.12, upTop + 0.32, 0.55), 0.006, 5);
+  const cam = new THREE.Mesh(new THREE.CylinderGeometry(0.035, 0.045, 0.09, 10), M.white);
+  cam.position.set(0.0, upTop + 0.075, -0.52);
+  add(g, cam);
+
+  // Under the plate: the main bell on the axis and a ring of small thruster cones.
+  bell(g, M.bell, 0, 0.22, 0, 0.17, 0.3);
+  for (let i = 0; i < 8; i++) {
+    const a = ((i + 0.5) / 8) * Math.PI * 2;
+    thruster(g, M, V(Math.sin(a) * 0.62, plateY - 0.08, Math.cos(a) * 0.62), V(0, -1, 0), 0.04);
+  }
+  // RCS clusters on the tub's lower rim (the diagonals, beside the leg hinges).
+  for (let i = 0; i < 4; i++) {
+    const a = (i / 4) * Math.PI * 2 + Math.PI / 4;
+    const n = V(Math.sin(a), 0, Math.cos(a));
+    box(g, M.dark, 0.1, 0.08, 0.1, n.x * (RL + 0.03), lowY + 0.05, n.z * (RL + 0.03)).rotation.y =
+      a;
+  }
+
+  // Four legs at the diagonals: black carbon with gold bands, a brace from the plate, round pads.
+  for (let i = 0; i < 4; i++) {
+    const a = (i / 4) * Math.PI * 2 + Math.PI / 4;
+    const dir = V(Math.sin(a), 0, Math.cos(a));
+    const A = dir.clone().multiplyScalar(0.9).setY(1.22);
+    const F = dir.clone().multiplyScalar(1.2).setY(0.1);
+    strut(g, M.black, A, F, 0.042, 8);
+    for (const t of [0.28, 0.62, 0.9]) {
+      const c = A.clone().lerp(F, t);
+      const band = new THREE.Mesh(new THREE.CylinderGeometry(0.052, 0.052, 0.07, 10), M.goldPale);
+      band.position.copy(c);
+      band.quaternion.setFromUnitVectors(V(0, 1, 0), F.clone().sub(A).normalize());
+      add(g, band);
+    }
+    const K = A.clone().lerp(F, 0.45);
+    strut(g, M.gunmetal, dir.clone().multiplyScalar(0.75).setY(plateY), K, 0.016, 6);
+    box(g, M.silver, 0.12, 0.1, 0.12, A.x, A.y, A.z).rotation.y = a;
+    footpad(g, M, F.x, F.z, 0.1);
+    const ball = new THREE.Mesh(new THREE.SphereGeometry(0.035, 10, 8), M.steel);
+    ball.position.set(F.x, 0.12, F.z);
+    add(g, ball);
+  }
+  return stand(g, HAKUTO_R_HEIGHT_M, 0.22);
+}
+
+// ─── Blue Ghost ─────────────────────────────────────────────────────────────
+
+export const BLUE_GHOST_HEIGHT_M = 2.0;
+export const BLUE_GHOST_WIDTH_M = 3.5;
+
+/**
+ * A crumpled foil face of a truncated pyramid: bottom edge wBot at v = 0, top edge wTop at v = 1,
+ * slant length `slant`, in the XY plane facing +z; the caller tilts it into place.
+ */
+function slopedFoil(
+  m: Mat,
+  wBot: number,
+  wTop: number,
+  slant: number,
+  amp: number,
+  seed: number,
+): THREE.Mesh {
+  const nx = 9;
+  const ny = 6;
+  const geo = new THREE.PlaneGeometry(1, 1, nx, ny);
+  const p = geo.attributes.position;
+  for (let i = 0; i < p.count; i++) {
+    const u = p.getX(i);
+    const v = p.getY(i) + 0.5;
+    const edge = Math.min(0.5 - Math.abs(u), v, 1 - v) * 4;
+    const taper = Math.min(1, edge);
+    const w = wBot + (wTop - wBot) * v;
+    const sx = u * w;
+    const sy = (v - 0.5) * slant;
+    const swell = Math.sin(sx * 8 + seed * 3.1) * Math.sin(sy * 6 + seed * 1.7);
+    p.setXYZ(i, sx, sy, amp * taper * (0.7 * hash3(sx, sy, seed, 4) + 0.5 * swell));
+  }
+  const out = geo.toNonIndexed();
+  out.computeVertexNormals();
+  return new THREE.Mesh(out, m);
+}
+
+/**
+ * Firefly Blue Ghost (Mission 1, 2025; 2 m high, 3.5 m wide, four shock-absorbing legs, one Nammo
+ * LEROS 4 main engine, eight Spectre RCS thrusters), from Firefly's lunar-surface render and the
+ * in-fairing photos (Wikimedia Commons): a wide truncated-pyramid body in gold foil with a solar
+ * panel on two opposite faces, a payload deck on top with boxes and a mast, two black dishes on
+ * copper booms, white RCS pods with paired nozzles at the corners, and four splayed A-frame legs
+ * with shock-absorber barrels to wide round pads.
+ */
+export function buildBlueGhost(): THREE.Group {
+  const M = palette();
+  const g = new THREE.Group();
+  const lowY = 0.62;
+  const topY = 1.42;
+  const hb = 0.62;
+  const ht = 1.0;
+  const slant = Math.hypot(topY - lowY, ht - hb);
+  const tilt = Math.atan2(ht - hb, topY - lowY);
+
+  // The body: four sloped foil faces (the +z and -z ones carry the solar panels).
+  const wBot = 2 * hb;
+  const wTop = 2 * ht;
+  const foils = [M.gold, M.goldPale, M.gold, M.goldPale];
+  for (let k = 0; k < 4; k++) {
+    const a = (k / 4) * Math.PI * 2;
+    const pivot = new THREE.Group();
+    pivot.rotation.y = a;
+    const mid = (hb + ht) / 2;
+    pivot.position.set(Math.sin(a) * mid, (lowY + topY) / 2, Math.cos(a) * mid);
+    // The sheet leans outward at the top: tilt about x by +tilt, then lay the panel on its skin.
+    const skin = new THREE.Group();
+    skin.rotation.x = tilt;
+    pivot.add(skin);
+    skin.add(slopedFoil(foils[k], wBot, wTop, slant, 0.035, k + 1));
+    if (k % 2 === 0) {
+      const panel = solarPanel(M, 1.25, 0.82, 12, 8);
+      panel.position.set(0, 0.02, 0.05);
+      skin.add(panel);
+    }
+    add(g, pivot);
+  }
+  // Corner posts in black tape, a bottom plate and the deck slab.
+  for (const sx of [-1, 1])
+    for (const sz of [-1, 1])
+      strut(g, M.black, V(sx * hb, lowY, sz * hb), V(sx * ht, topY, sz * ht), 0.02, 6);
+  box(g, M.dark, 2 * hb + 0.05, 0.05, 2 * hb + 0.05, 0, lowY - 0.02, 0);
+  box(g, M.black, 2 * ht + 0.05, 0.06, 2 * ht + 0.05, 0, topY + 0.02, 0);
+  for (const s of [-1, 1]) {
+    box(g, M.gold, 2 * ht + 0.07, 0.03, 0.03, 0, topY + 0.055, s * (ht + 0.01));
+    box(g, M.gold, 0.03, 0.03, 2 * ht + 0.07, s * (ht + 0.01), topY + 0.055, 0);
+  }
+
+  // The main engine: a LEROS 4 bell under the plate, its feed above.
+  bell(g, M.bell, 0, 0.12, 0, 0.2, 0.5);
+  const tankA = new THREE.Mesh(new THREE.SphereGeometry(0.3, 24, 16), M.tankTi);
+  tankA.position.set(0, lowY + 0.3, 0);
+  add(g, tankA);
+
+  // RCS pods with paired nozzles at the four corners, canted outward and down.
+  for (const sx of [-1, 1])
+    for (const sz of [-1, 1]) {
+      const at = V(sx * (ht + 0.08), topY - 0.2, sz * (ht + 0.08));
+      const pod = new THREE.Mesh(new THREE.CylinderGeometry(0.1, 0.12, 0.16, 12), M.white);
+      pod.position.copy(at);
+      add(g, pod);
+      const out = V(sx, -0.6, sz).normalize();
+      for (const s of [-1, 1])
+        thruster(g, M, at.clone().add(V(-sz * s * 0.045, -0.05, sx * s * 0.045)), out, 0.035);
+    }
+
+  // Payload deck: lunar payload boxes in foil, a silver instrument box, a mast with a star tracker.
+  const dk = topY + 0.05;
+  wrapBox(
+    g,
+    M.dark,
+    [M.gold, M.gold, M.goldPale, M.gold],
+    -0.3,
+    dk + 0.22,
+    -0.25,
+    0.7,
+    0.44,
+    0.6,
+    0.025,
+  );
+  box(g, M.alu, 0.5, 0.3, 0.45, 0.45, dk + 0.15, 0.35);
+  box(g, M.whiteMli, 0.34, 0.18, 0.34, -0.45, dk + 0.09, 0.5);
+  box(g, M.silver, 0.3, 0.22, 0.3, 0.55, dk + 0.11, -0.45);
+  strut(g, M.silver, V(0.0, dk, 0.0), V(0.0, dk + 0.55, 0.0), 0.03, 8);
+  box(g, M.black, 0.1, 0.1, 0.14, 0.0, dk + 0.58, 0.0);
+  const rod = new THREE.Mesh(new THREE.CylinderGeometry(0.01, 0.01, 0.4, 5), M.steel);
+  rod.position.set(0.7, dk + 0.2, 0.7);
+  add(g, rod);
+  const lra = new THREE.Mesh(new THREE.CylinderGeometry(0.1, 0.1, 0.02, 20), M.lra);
+  lra.position.set(-0.7, dk + 0.02, -0.05);
+  add(g, lra);
+  // Two black dishes on copper booms, facing up and out.
+  for (const s of [-1, 1]) {
+    strut(g, M.copper, V(s * 0.55, dk + 0.1, 0.15), V(s * 1.28, dk + 0.28, 0.1), 0.02, 6);
+    const d = dish(M.black, M.copper, 0.3);
+    d.position.set(s * 1.32, dk + 0.22, 0.1);
+    d.rotation.z = -s * 0.75;
+    add(g, d);
+  }
+
+  // Four splayed A-frame legs: the main strut from a top corner, a brace from the bottom corner,
+  // a silver shock-absorber barrel on the lower stretch, a wide round pad.
+  for (const sx of [-1, 1])
+    for (const sz of [-1, 1]) {
+      const A = V(sx * (ht - 0.04), topY - 0.05, sz * (ht - 0.04));
+      const F = V(sx * 1.52, 0.1, sz * 1.52);
+      strut(g, M.gunmetal, A, F, 0.04, 8);
+      const S = A.clone().lerp(F, 0.45);
+      const barrel = new THREE.Mesh(
+        new THREE.CylinderGeometry(0.058, 0.058, A.distanceTo(F) * 0.45, 12),
+        M.steel,
+      );
+      barrel.position.copy(S.clone().lerp(F, 0.5));
+      barrel.quaternion.setFromUnitVectors(V(0, 1, 0), F.clone().sub(A).normalize());
+      add(g, barrel);
+      strut(g, M.gunmetal, V(sx * hb, lowY, sz * hb), A.clone().lerp(F, 0.4), 0.025, 6);
+      box(g, M.dark, 0.14, 0.1, 0.14, A.x, A.y, A.z);
+      footpad(g, M, F.x, F.z, 0.2);
+    }
+  return stand(g, BLUE_GHOST_HEIGHT_M, 0.12);
+}
+
 // ─── Exports ────────────────────────────────────────────────────────────────
 
 const VIKRAM_REFS: ShowcaseRef[] = [
@@ -1091,6 +1420,48 @@ export const SHOWCASE: Record<string, ShowcaseModel> = {
       {
         l: 'Wikipedia — Blue Moon: Mark 1 is 8.05 m high and 3.08 m across, one BE-7',
         u: 'https://en.wikipedia.org/wiki/Blue_Moon_(spacecraft)',
+      },
+    ],
+  },
+  'hakuto-r': {
+    build: buildHakutoR,
+    heightM: HAKUTO_R_HEIGHT_M,
+    heightEstimate:
+      "ispace's design release gives 2.3 m high and 2.6 m wide with the legs extended; the fleet entry carries no length spec yet. Everything else (tier heights, panel and box sizes, leg splay and attachment) is scaled from the Haneda replica and IAC 2022 photos.",
+    diameterM: HAKUTO_R_SPAN_M,
+    refs: [
+      {
+        l: 'ispace — HAKUTO-R reveals final design (2020): 2.3 m high, 2.6 m wide with the legs extended, four legs',
+        u: 'https://www.ispace-inc.com/2020/07/30/commercial-lunar-exploration-program-hakuto-r-reveals-final-design-and-plan-for-mission-1-lunar-lander/',
+      },
+      {
+        l: 'Wikipedia — Hakuto-R: ArianeGroup propulsion, Mission 1 (2023) and Mission 2 RESILIENCE (2025) fly the same Series 1 lander',
+        u: 'https://en.wikipedia.org/wiki/Hakuto-R',
+      },
+      {
+        l: 'Wikimedia Commons — RESILIENCE lander replica (Haneda, 2025) and the HAKUTO-R model at IAC 2022: shape, foil, panels, legs',
+        u: 'https://commons.wikimedia.org/wiki/File:RESILIENCE-lander-replica01_20250528atHanedaAirPort.jpg',
+      },
+    ],
+  },
+  'blue-ghost': {
+    build: buildBlueGhost,
+    heightM: BLUE_GHOST_HEIGHT_M,
+    heightEstimate:
+      'Firefly gives 2 m high and 3.5 m wide (the fleet entry stores it as height_m); the body, deck, dish and leg proportions are scaled from the lunar-surface render and the in-fairing photos.',
+    diameterM: BLUE_GHOST_WIDTH_M,
+    refs: [
+      {
+        l: 'Firefly — Blue Ghost Mission 1: 2 m high, 3.5 m wide, four shock-absorbing legs, solar power',
+        u: 'https://fireflyspace.com/missions/blue-ghost-mission-1/',
+      },
+      {
+        l: 'Wikipedia — Blue Ghost: Nammo LEROS 4 main engine, eight Spectre RCS thrusters',
+        u: 'https://en.wikipedia.org/wiki/Blue_Ghost',
+      },
+      {
+        l: 'Wikimedia Commons — Blue Ghost Mission 1 rendering and in-fairing photos: body shape, foil, dishes, RCS pods',
+        u: 'https://commons.wikimedia.org/wiki/Category:Blue_Ghost',
       },
     ],
   },

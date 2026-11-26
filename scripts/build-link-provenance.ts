@@ -455,6 +455,14 @@ const HOST_RULES: Array<{ match: RegExp; rule: HostRule }> = [
     rule: { source_id: 'firefly', defaultKind: 'vendor-official', defaultLanguage: 'en' },
   },
   {
+    match: /(^|\.)ispace-inc\.com$/i,
+    rule: { source_id: 'ispace', defaultKind: 'vendor-official', defaultLanguage: 'en' },
+  },
+  {
+    match: /(^|\.)astrobotic\.com$/i,
+    rule: { source_id: 'astrobotic', defaultKind: 'vendor-official', defaultLanguage: 'en' },
+  },
+  {
     match: /(^|\.)iai\.co\.il$/i,
     rule: { source_id: 'iai', defaultKind: 'vendor-official', defaultLanguage: 'en' },
   },

@@ -1,0 +1,19 @@
+{
+  "name": "Hakuto-R Mission 2 RESILIENCE",
+  "vehicle": "Falcon 9 Block 5 (booster B1085; rideshare with Firefly's Blue Ghost Mission 1)",
+  "payload": "About 1,000 kg fuelled lander (dry mass 340 kg) carrying six payloads, among them the 5 kg TENACIOUS micro-rover; crashed during the landing attempt",
+  "delta_v": "Not published; a low-energy transfer with a lunar flyby, out to 1.1 million km from Earth",
+  "type": "PRIVATE LANDER · CRASHED",
+  "first": "ispace's second Moon landing attempt, aimed at Mare Frigoris in the far north",
+  "description": "Hakuto-R Mission 2, named RESILIENCE, was ispace's second Moon mission. It launched on 2025-01-15 on the Falcon 9 that also carried Firefly's Blue Ghost, flew a low-energy transfer past the Moon at about 8,400 km on 2025-02-14, entered lunar orbit on 2025-05-06 and reached a 100 km circular orbit on 2025-05-28. It carried six payloads, among them the 5 kg TENACIOUS micro-rover from ispace-EUROPE. The descent toward Mare Frigoris, 60.5 N, 4.6 W, began at about 18:10 UTC on 2025-06-05 and was to end at 19:17 UTC. The last telemetry came from 192 m above the surface, with the lander faster than expected, about 1 min 45 s before the scheduled touchdown. ispace traced the loss to the laser range finder, which was slow to give valid altitudes, so the lander could not slow enough. LRO imaged the impact point at 60.4445 N, 355.4120 E on 2025-06-11.",
+  "events": [
+    { "met": 0, "label": "LAUNCH", "note": "Falcon 9 rideshare from LC-39A, 2025-01-15, 06:11 UTC.", "type": "nominal" },
+    { "met": 1.56, "label": "DEEP-SPACE MANOEUVRE", "note": "A 16-second burn on 2025-01-16, 250,000 km from Earth.", "type": "info" },
+    { "met": 30.7, "label": "LUNAR FLYBY", "note": "Closest approach about 8,400 km on 2025-02-14, 22:43 UTC.", "type": "info" },
+    { "met": 111.6, "label": "LUNAR ORBIT INSERTION", "note": "A main-engine burn of about nine minutes on 2025-05-06, 20:41 UTC.", "type": "nominal" },
+    { "met": 133, "label": "100 KM CIRCULAR ORBIT", "note": "The final orbit, reached on 2025-05-28.", "type": "nominal" },
+    { "met": 140.5, "label": "DESCENT FROM 100 KM", "note": "2025-06-05, about 18:10 UTC; a 66-minute descent toward Mare Frigoris.", "type": "nominal" },
+    { "met": 140.54, "label": "LAST TELEMETRY AT 192 M", "note": "Too fast, about 1 min 45 s before the scheduled touchdown; the laser range finder was slow to give valid altitudes.", "type": "warning" }
+  ],
+  "vehicle_stage": "Falcon 9 second stage; deployed at 07:44 UTC"
+}

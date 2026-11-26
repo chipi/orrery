@@ -1,0 +1,54 @@
+{
+  "name": "Hakuto-R Mission 2 RESILIENCE",
+  "vehicle": "Falcon 9 Block 5 (propulsor B1085; viaje compartido con la Blue Ghost Mission 1 de Firefly)",
+  "payload": "Módulo de aterrizaje de unos 1000 kg con combustible (masa en seco de 340 kg) con seis cargas útiles, entre ellas el microrróver TENACIOUS de 5 kg; se estrelló durante el intento de aterrizaje",
+  "delta_v": "No publicado; una transferencia de baja energía con sobrevuelo lunar, hasta 1,1 millones de km de la Tierra",
+  "type": "MÓDULO PRIVADO · ESTRELLADO",
+  "first": "Segundo intento de alunizaje de ispace, dirigido a Mare Frigoris, en el extremo norte",
+  "description": "Hakuto-R Misión 2, llamada RESILIENCE, fue la segunda misión lunar de ispace. Se lanzó el 2025-01-15 en el Falcon 9 que también llevaba la Blue Ghost de Firefly, realizó una transferencia de baja energía con paso por la Luna a unos 8400 km el 2025-02-14, entró en órbita lunar el 2025-05-06 y alcanzó una órbita circular de 100 km el 2025-05-28. Llevaba seis cargas útiles, entre ellas el microrróver TENACIOUS de 5 kg de ispace-EUROPE. El descenso hacia Mare Frigoris, 60.5 N, 4.6 W, comenzó hacia las 18:10 UTC del 2025-06-05 y debía terminar a las 19:17 UTC. La última telemetría llegó desde 192 m sobre la superficie, con el módulo más rápido de lo previsto, unos 1 min 45 s antes del aterrizaje programado. ispace atribuyó la pérdida al telémetro láser, que tardó en dar altitudes válidas, de modo que el módulo no pudo frenar lo suficiente. El LRO fotografió el punto de impacto, en 60.4445 N, 355.4120 E, el 2025-06-11.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANZAMIENTO",
+      "note": "Falcon 9 en viaje compartido desde LC-39A, 2025-01-15, 06:11 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 1.56,
+      "label": "MANIOBRA DE ESPACIO PROFUNDO",
+      "note": "Una maniobra de 16 segundos el 2025-01-16, a 250 000 km de la Tierra.",
+      "type": "info"
+    },
+    {
+      "met": 30.7,
+      "label": "SOBREVUELO LUNAR",
+      "note": "Máxima aproximación a unos 8400 km el 2025-02-14, 22:43 UTC.",
+      "type": "info"
+    },
+    {
+      "met": 111.6,
+      "label": "INSERCIÓN EN ÓRBITA LUNAR",
+      "note": "Una maniobra del motor principal de unos nueve minutos el 2025-05-06, 20:41 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 133,
+      "label": "ÓRBITA CIRCULAR DE 100 KM",
+      "note": "La órbita final, alcanzada el 2025-05-28.",
+      "type": "nominal"
+    },
+    {
+      "met": 140.5,
+      "label": "DESCENSO DESDE 100 KM",
+      "note": "2025-06-05, hacia las 18:10 UTC; un descenso de 66 minutos hacia Mare Frigoris.",
+      "type": "nominal"
+    },
+    {
+      "met": 140.54,
+      "label": "ÚLTIMA TELEMETRÍA A 192 M",
+      "note": "Demasiado rápido, unos 1 min 45 s antes del aterrizaje programado; el telémetro láser tardó en dar altitudes válidas.",
+      "type": "warning"
+    }
+  ],
+  "vehicle_stage": "Segunda etapa del Falcon 9; desplegado a las 07:44 UTC"
+}

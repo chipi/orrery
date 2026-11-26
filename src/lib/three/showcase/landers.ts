@@ -96,13 +96,67 @@ export function buildNovaC(): THREE.Group {
     0.012,
   );
 
-  // reaction-control thruster pods on the upper corners
+  // gold foil over the four faces without a solar panel (faces centred at 30° + k·60°)
+  for (let i = 0; i < 6; i++) {
+    const a = Math.PI / 6 + (i * Math.PI) / 3;
+    if (Math.abs(Math.sin(a)) > 0.99) continue; // the ±x faces carry the panels
+    const f = new THREE.Mesh(new THREE.BoxGeometry(R * 0.9, (yTop - yBot) * 0.72, 0.012), gold);
+    f.position.set(
+      Math.sin(a) * (apothem + 0.008),
+      (yBot + yTop) / 2,
+      Math.cos(a) * (apothem + 0.008),
+    );
+    f.rotation.y = a;
+    g.add(f);
+  }
+
+  // reaction-control thruster pods on the upper corners, two nozzles each
+  const nozzleM = mat(0x55575c, 0.7, 0.4, true);
   for (let i = 0; i < 6; i++) {
     const a = (i * Math.PI) / 3;
     const pod = new THREE.Mesh(new THREE.BoxGeometry(0.1, 0.14, 0.1), dark);
     pod.position.set(Math.sin(a) * (R + 0.03), yTop - 0.35, Math.cos(a) * (R + 0.03));
     g.add(pod);
+    for (const s of [-1, 1]) {
+      const n = new THREE.Mesh(new THREE.CylinderGeometry(0.012, 0.03, 0.06, 10, 1, true), nozzleM);
+      n.position.set(
+        Math.sin(a) * (R + 0.11) + Math.cos(a) * s * 0.03,
+        yTop - 0.35,
+        Math.cos(a) * (R + 0.11) - Math.sin(a) * s * 0.03,
+      );
+      n.quaternion.setFromUnitVectors(
+        new THREE.Vector3(0, 1, 0),
+        new THREE.Vector3(-Math.sin(a), 0, -Math.cos(a)),
+      );
+      g.add(n);
+    }
   }
+
+  // the externally mounted helium tank (Odysseus came to rest on it, Wikipedia IM-1) and a
+  // sensor box low on the hull (schematic placement)
+  const tankM = mat(0xb9bcc2, 0.6, 0.35);
+  const he = new THREE.Mesh(new THREE.CapsuleGeometry(0.16, 0.7, 8, 16), tankM);
+  he.position.set(
+    Math.sin(Math.PI / 6) * (apothem + 0.2),
+    1.9,
+    Math.cos(Math.PI / 6) * (apothem + 0.2),
+  );
+  g.add(he);
+  for (const y of [1.65, 2.15])
+    strut(
+      g,
+      metal,
+      new THREE.Vector3(Math.sin(Math.PI / 6) * apothem, y, Math.cos(Math.PI / 6) * apothem),
+      new THREE.Vector3(
+        Math.sin(Math.PI / 6) * (apothem + 0.12),
+        y,
+        Math.cos(Math.PI / 6) * (apothem + 0.12),
+      ),
+      0.015,
+    );
+  const sensor = new THREE.Mesh(new THREE.BoxGeometry(0.22, 0.16, 0.14), dark);
+  sensor.position.set(0, yBot + 0.25, -(apothem + 0.07));
+  g.add(sensor);
 
   // the main engine: a gimbaled bell under the body
   const bell = new THREE.Mesh(
@@ -111,6 +165,8 @@ export function buildNovaC(): THREE.Group {
   );
   bell.position.y = yBot - 0.31;
   g.add(bell);
+  // where the descent scene lights the braking plume (the bell's exit)
+  g.userData.engineExitY = yBot - 0.62;
   const mount = new THREE.Mesh(new THREE.CylinderGeometry(0.14, 0.14, 0.16, 16), metal);
   mount.position.y = yBot - 0.02;
   g.add(mount);
@@ -130,6 +186,11 @@ export function buildNovaC(): THREE.Group {
       .setY(2.45);
     strut(g, metal, lower, foot, 0.04);
     strut(g, metal, upper, foot.clone().lerp(lower, 0.55), 0.025);
+    // the shock-absorbing sleeve on the main strut and the knee where the brace meets it
+    strut(g, dark, lower.clone().lerp(foot, 0.25), lower.clone().lerp(foot, 0.5), 0.06);
+    const knee = new THREE.Mesh(new THREE.BoxGeometry(0.09, 0.09, 0.09), metal);
+    knee.position.copy(foot.clone().lerp(lower, 0.55));
+    g.add(knee);
     const pad = new THREE.Mesh(new THREE.CylinderGeometry(0.2, 0.22, 0.05, 20), dark);
     pad.position.copy(foot).setY(0.025);
     g.add(pad);

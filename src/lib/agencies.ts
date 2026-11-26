@@ -29,7 +29,7 @@ export interface AgencyInfo {
    */
   logo: string | null;
   /**
-   * The agency's data colour: the mission-card accent and badge, the agency filter dot. The 14
+   * The agency's data colour: the mission-card accent and badge, the agency filter dot. The 17
    * agencies that fly on /missions carry the one palette of UXD-048 (4.5:1 on the page and the
    * card, told apart under colour-blind simulation, no cyan or teal); the rest keep their brand
    * colour. null when no colour applies (e.g. defunct concepts, brand-agnostic shorthands).
@@ -225,7 +225,7 @@ export const AGENCIES: AgencyInfo[] = [
     short: 'ispace',
     full: 'ispace',
     logo: 'ispace.svg',
-    color: '#003E7E',
+    color: '#61d168', // UXD-048 palette
     aliases: ['ispace'],
   },
   {
@@ -307,8 +307,15 @@ export const AGENCIES: AgencyInfo[] = [
     short: 'Firefly',
     full: 'Firefly Aerospace',
     logo: null,
-    color: '#ff6600',
+    color: '#ffff33', // UXD-048 palette
     aliases: ['firefly', 'firefly aerospace'],
+  },
+  {
+    short: 'Astrobotic',
+    full: 'Astrobotic Technology',
+    logo: null,
+    color: '#cb86bd', // UXD-048 palette
+    aliases: ['astrobotic', 'astrobotic technology'],
   },
   {
     short: 'Relativity',
@@ -428,7 +435,7 @@ export function agencyColor(input: string | null | undefined): string | null {
 /**
  * The colour to draw an agency as a DATA mark (a dot, a bar) on the dark page: its registry colour,
  * lifted toward white until it clears 4.5:1 on the page and the card for the agencies that still
- * carry a dark brand colour (the 14 agencies of /missions already do, so they are returned as
+ * carry a dark brand colour (the 17 agencies of /missions already do, so they are returned as
  * they are). null when the agency has no colour.
  */
 export function agencyDataColor(input: string | null | undefined): string | null {

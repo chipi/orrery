@@ -1,0 +1,47 @@
+{
+  "name": "Peregrine Mission One",
+  "vehicle": "Vulcan Centaur (primeiro voo)",
+  "payload": "Módulo de pouso Peregrine, 1283 kg no lançamento (Wikipedia); 20 cargas úteis, cinco delas instrumentos da NASA; nunca chegou à Lua",
+  "delta_v": "Não divulgado",
+  "type": "MÓDULO DE POUSO COMERCIAL · NUNCA CHEGOU À LUA",
+  "first": "Voou no primeiro Vulcan Centaur; um vazamento de propelente encerrou o pouso na Lua antes de começar",
+  "description": "A Peregrine Mission One foi um módulo de pouso lunar da Astrobotic, realizado para o programa Commercial Lunar Payload Services da NASA com 20 cargas úteis, cinco delas instrumentos da NASA. Foi lançada em 2024-01-08 no primeiro voo do Vulcan Centaur e se separou do estágio superior às 08:09 UTC. O voo planejado era uma órbita terrestre muito elíptica com o apogeu na distância da Lua, 1,5 volta, e depois uma interceptação da Lua. Em vez disso, a pressão do tanque de oxidante subiu após a separação e, 92 minutos depois, um tanque de oxidante se rompeu e o vazamento fez o módulo girar. O comitê de revisão da Astrobotic concluiu que uma válvula de pressão de hélio provavelmente perdeu a vedação. O pouso foi cancelado. A Peregrine chegou à distância da Lua por volta de 2024-01-12, e em 2024-01-13 a Astrobotic e a NASA decidiram encerrar a missão. Queimas de seus motores principais deslocaram a reentrada para o Pacífico Sul, onde reentrou em 2024-01-18, por volta das 21:04 UTC, após 10 dias e 14 horas de voo.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANÇAMENTO",
+      "note": "Vulcan Centaur de SLC-41, 2024-01-08, 07:18 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.04,
+      "label": "SEPARAÇÃO",
+      "note": "A Peregrine se separa do Centaur às 08:09 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.1,
+      "label": "RUPTURA DO TANQUE",
+      "note": "92 minutos após a separação, um tanque de oxidante se rompe e o vazamento faz o módulo girar; o pouso é cancelado.",
+      "type": "warning"
+    },
+    {
+      "met": 4,
+      "label": "DISTÂNCIA DA LUA",
+      "note": "Por volta de 2024-01-12, a cerca de 238.000 milhas da Terra, sem uma Lua para encontrar.",
+      "type": "info"
+    },
+    {
+      "met": 5,
+      "label": "FIM DA MISSÃO",
+      "note": "2024-01-13: a Astrobotic e a NASA decidem encerrar a missão e direcionar a reentrada para o Pacífico Sul.",
+      "type": "info"
+    },
+    {
+      "met": 10.57,
+      "label": "REENTRADA",
+      "note": "2024-01-18, por volta das 21:04 UTC, ao sul de Fiji.",
+      "type": "warning"
+    }
+  ]
+}

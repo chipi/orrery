@@ -1,0 +1,42 @@
+{
+  "name": "Hakuto-R Mission 1",
+  "vehicle": "Falcon 9 (booster B1073, vijfde vlucht; meeliftlancering met NASA's Lunar Flashlight)",
+  "payload": "Lander van ongeveer 1000 kg getankt (drooggewicht ongeveer 340 kg) met ongeveer 11 kg aan lading van klanten, onder meer de Rashid-rover van de VAE; stortte neer tijdens de landingspoging",
+  "delta_v": "Niet gepubliceerd; een overgang met lage energie van ongeveer drie maanden, tot 1,38 miljoen km van de Aarde",
+  "type": "PRIVÉ-LANDER · NEERGESTORT",
+  "first": "De eerste maanlandingspoging van ispace: acht van de tien mijlpalen gehaald voordat de landing mislukte",
+  "description": "Hakuto-R Mission 1 was de eerste Maanmissie van het Japanse bedrijf ispace. De Series 1-lander, 2,3 m hoog en 2,6 m breed met uitgeklapte poten, werd op 2022-12-11 gelanceerd met een Falcon 9 en vloog een overgang met lage energie van ongeveer drie maanden, tot 1,38 miljoen km van de Aarde. Hij kwam op 2023-03-21 in een maanbaan en bereikte op 2023-04-13 een cirkelvormige baan van 100 km. De afdaling begon op 2023-04-25 om 15:40 UTC. Bij het passeren van een kraterrand van ongeveer 3 km hoog sprong de gemeten hoogte; de software beoordeelde de hoogtemeter als afwijkend en negeerde alle latere sensordata, waardoor de lander dacht dat hij op het oppervlak was terwijl hij nog ongeveer 5 km hoog zat. Hij bleef langzaam dalen tot zijn drijfstof op was en viel toen. NASA's Lunar Reconnaissance Orbiter fotografeerde het gebied op 2023-04-26 en vond het inslagpunt op 47.581 N, 44.094 E, met minstens vier stukken puin. ispace vond een softwareoorzaak, geen hardwareoorzaak.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCERING",
+      "note": "Falcon 9-meeliftlancering vanaf Cape Canaveral SLC-40, 2022-12-11, 07:38 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 99.7,
+      "label": "INBRENGING IN MAANBAAN",
+      "note": "Eerste inbrengingsontsteking op 2023-03-21, om ongeveer 01:24 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 123,
+      "label": "CIRKELVORMIGE BAAN VAN 100 KM",
+      "note": "Een ontsteking van 10 minuten op 2023-04-13 brengt hem in de baan waaruit de afdaling begint.",
+      "type": "nominal"
+    },
+    {
+      "met": 135.33,
+      "label": "AFDALING VANAF 100 KM",
+      "note": "2023-04-25, 15:40 UTC; de afdaling duurt ongeveer een uur.",
+      "type": "nominal"
+    },
+    {
+      "met": 135.38,
+      "label": "HOOGTEMETER VERWORPEN",
+      "note": "Op het geplande landingstijdstip, 16:43 UTC, denkt de lander nog steeds op het oppervlak te zijn terwijl hij ongeveer 5 km hoog zit; hij valt zodra zijn drijfstof op is.",
+      "type": "warning"
+    }
+  ],
+  "vehicle_stage": "tweede trap Falcon 9; Hakuto-R losgekoppeld op T+46:59"
+}

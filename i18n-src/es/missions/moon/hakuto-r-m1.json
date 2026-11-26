@@ -1,0 +1,42 @@
+{
+  "name": "Hakuto-R Mission 1",
+  "vehicle": "Falcon 9 (propulsor B1073, quinto vuelo; viaje compartido con el Lunar Flashlight de la NASA)",
+  "payload": "Módulo de aterrizaje de unos 1000 kg con combustible (masa en seco de unos 340 kg) con unos 11 kg de cargas útiles de clientes, entre ellas el róver Rashid de los EAU; se estrelló durante el intento de aterrizaje",
+  "delta_v": "No publicado; una transferencia de baja energía de unos tres meses, hasta 1,38 millones de km de la Tierra",
+  "type": "MÓDULO PRIVADO · ESTRELLADO",
+  "first": "Primer intento de alunizaje de ispace: cumplió ocho de diez hitos antes de fallar el aterrizaje",
+  "description": "Hakuto-R Mission 1 fue la primera misión lunar de la empresa japonesa ispace. Su módulo de aterrizaje Series 1, de 2,3 m de alto y 2,6 m de ancho con las patas desplegadas, se lanzó en un Falcon 9 el 2022-12-11 y realizó una transferencia de baja energía de unos tres meses, hasta 1,38 millones de km de la Tierra. Entró en órbita lunar el 2023-03-21 y alcanzó una órbita circular de 100 km el 2023-04-13. Su descenso comenzó el 2023-04-25 a las 15:40 UTC. Al pasar sobre el borde de un cráter de unos 3 km de altura, la altitud medida dio un salto; el software juzgó anómalo el altímetro y descartó todos los datos posteriores del sensor, de modo que el módulo creyó estar en la superficie cuando aún estaba a unos 5 km de altura. Siguió descendiendo despacio hasta que se agotó el propelente y entonces cayó. El Lunar Reconnaissance Orbiter de la NASA fotografió la zona el 2023-04-26 y halló el punto de impacto en 47.581 N, 44.094 E, con al menos cuatro fragmentos de restos. ispace encontró una causa de software, no de hardware.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANZAMIENTO",
+      "note": "Falcon 9 en viaje compartido desde Cabo Cañaveral SLC-40, 2022-12-11, 07:38 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 99.7,
+      "label": "INSERCIÓN EN ÓRBITA LUNAR",
+      "note": "Primera maniobra de inserción el 2023-03-21, a las 01:24 UTC aproximadamente.",
+      "type": "nominal"
+    },
+    {
+      "met": 123,
+      "label": "ÓRBITA CIRCULAR DE 100 KM",
+      "note": "Una maniobra de 10 minutos el 2023-04-13 alcanza la órbita desde la que empieza el descenso.",
+      "type": "nominal"
+    },
+    {
+      "met": 135.33,
+      "label": "DESCENSO DESDE 100 KM",
+      "note": "2023-04-25, 15:40 UTC; el descenso dura aproximadamente una hora.",
+      "type": "nominal"
+    },
+    {
+      "met": 135.38,
+      "label": "ALTÍMETRO RECHAZADO",
+      "note": "A la hora prevista del aterrizaje, 16:43 UTC, el módulo cree seguir en la superficie cuando está a unos 5 km de altura; cae al agotarse el propelente.",
+      "type": "warning"
+    }
+  ],
+  "vehicle_stage": "Segunda etapa del Falcon 9; Hakuto-R se separó en T+46:59"
+}

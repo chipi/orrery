@@ -171,7 +171,8 @@ describe('getMissionIndex', () => {
     // 2026-11-15 — slice H adds kaguya + chandrayaan2 (126 → 128); content4 adds sts-1, sts-51-l,
     // sts-107 and artemis1 (128 → 132). 2026-11-15 — content7: viking2, mars2, mro (Mars), mariner2 (Venus),
     // change2, im-1 (Moon), shenzhou-5 (Earth) (132 → 139).
-    expect(missions).toHaveLength(141); // 0.9.11 F3: starship-flight-5 (Earth); escapade (Mars)
+    // 2026-11-26 — the private Moon missions hakuto-r-m1, ispace-m2, blue-ghost-m1, im-2, peregrine-m1 (141 → 146).
+    expect(missions).toHaveLength(146); // 0.9.11 F3: starship-flight-5 (Earth); escapade (Mars)
   });
 
   it('every entry has the required language-neutral fields', async () => {
@@ -226,9 +227,9 @@ describe('filterMissions', () => {
     for (const m of mars) expect(m.dest).toBe('MARS');
   });
 
-  it('MOON filter returns 37', async () => {
+  it('MOON filter returns 42', async () => {
     const moon = await filterMissions({ dest: 'MOON' });
-    expect(moon).toHaveLength(37);
+    expect(moon).toHaveLength(42);
     for (const m of moon) expect(m.dest).toBe('MOON');
   });
 
@@ -450,7 +451,7 @@ describe('getSun', () => {
 describe('getMissionsForLibrary', () => {
   it('returns all 115 missions merged with their en-US overlays', async () => {
     const list = await getMissionsForLibrary();
-    expect(list).toHaveLength(141);
+    expect(list).toHaveLength(146);
     // Every mission should have its base fields…
     for (const m of list) {
       expect(m.id).toBeTruthy();
@@ -496,7 +497,7 @@ describe('getMissionsForLibrary', () => {
 
   it('falls back to en-US for missing locale', async () => {
     const list = await getMissionsForLibrary('xx-TEST');
-    expect(list).toHaveLength(141);
+    expect(list).toHaveLength(146);
   });
 
   it('count matches what filterMissions reports', async () => {
@@ -513,7 +514,10 @@ describe('getMissionsForLibrary', () => {
       'apollo13',
       'beresheet',
       'chandrayaan2',
+      'hakuto-r-m1',
+      'ispace-m2',
       'mars2',
+      'peregrine-m1',
       'schiaparelli',
       'soyuz-1',
       'sts-107',

@@ -1,0 +1,36 @@
+{
+  "id": "rfa-one",
+  "name": "RFA One",
+  "category": "launcher",
+  "agency": "RFA",
+  "country": "Germany",
+  "manufacturer": "Rocket Factory Augsburg",
+  "first_flight": "planned",
+  "status": "PLANNED",
+  "era": "planned",
+  "epoch": "commercial-era",
+  "best_known_for": "Germany's three-stage small launcher, stacked at SaxaVord in 2026 and not yet flown",
+  "credit": "In development, never flown (no launch through 2026-11-25). Sources: Wikipedia RFA One (static-fire anomaly 2024-08-19, UK licence Jan 2025, 30 m, 2 m, 1,300 kg), ESA image caption (2.15 m, 500 kg to SSO), advanced-television.com (Nov 2026 slip to 2027), European Spaceflight (Jul 2026). RFA's own statement on the 2024 accident was not found. Source conflicts: diameter 2 m (Wikipedia; used, as the 30 m comes from the same page) against 2.15 m (ESA); payload to a 500 km sun-synchronous orbit 1,300 kg (Wikipedia) against 500 kg (ESA image caption, the most recent; used in the text). The 1,300 kg figure may be to LEO, not verified. Checked 2026-11-25.",
+  "specs": {
+    "height_m": 30,
+    "diameter_m": 2,
+    "stages": 3
+  },
+  "links": [
+    {
+      "l": "RFA One — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/RFA_One",
+      "t": "intro"
+    },
+    {
+      "l": "RFA team in front of the first RFA One rocket on the launch pad at SaxaVord Spaceport — ESA",
+      "u": "https://www.esa.int/ESA_Multimedia/Images/2026/09/RFA_team_in_front_of_first_RFA_One_rocket_on_the_launch_pad_at_SaxaVord_Spaceport",
+      "t": "core"
+    },
+    {
+      "l": "Rocket Factory Augsburg's Scottish launch slips — Advanced Television (Nov 2026)",
+      "u": "https://www.advanced-television.com/2026/11/11/rocket-factory-augsberg-scottish-launch-slips/",
+      "t": "deep"
+    }
+  ]
+}

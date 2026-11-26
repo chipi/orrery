@@ -1,0 +1,36 @@
+{
+  "id": "maia",
+  "name": "Maia",
+  "category": "launcher",
+  "agency": "MaiaSpace",
+  "country": "France",
+  "manufacturer": "MaiaSpace",
+  "first_flight": "planned",
+  "status": "PLANNED",
+  "era": "planned",
+  "epoch": "commercial-era",
+  "best_known_for": "ArianeGroup subsidiary's reusable methane rocket for Kourou; first flight now set for the second half of 2027",
+  "credit": "In development, never flown. Sources: European Spaceflight (2026-07-29: suborbital test dropped, first flight H2 2027; 2026-03-02: pushed to 2027; earlier H2 2026 per June 2025 and before April 2027 per February 2026), Wikipedia Maia (50 m, 3.5 m, three Prometheus in stage 1 and one in stage 2, methane and LOX, 500 kg reusable, 1,500 kg expendable, 2,500 kg with the Colibri kick stage). Source conflict: European Spaceflight gives 1,500 kg expendable plus about 1,000 kg with a kick stage, Wikipedia 2,500 kg with the Colibri kick stage. MaiaSpace's own page was not found. Pad: the former Soyuz pad (ELS) in Kourou, occupancy agreement signed 2026-02-24. Checked 2026-11-25.",
+  "specs": {
+    "height_m": 50,
+    "diameter_m": 3.5,
+    "stages": 2
+  },
+  "links": [
+    {
+      "l": "Maia — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Maia_(rocket)",
+      "t": "intro"
+    },
+    {
+      "l": "MaiaSpace ditches suborbital test flight plans — European Spaceflight (Jul 2026)",
+      "u": "https://europeanspaceflight.com/maiaspace-ditches-suborbital-test-flight-plans/",
+      "t": "core"
+    },
+    {
+      "l": "MaiaSpace pushes inaugural launch of Maia rocket to 2027 — European Spaceflight (Mar 2026)",
+      "u": "https://europeanspaceflight.com/maiaspace-pushes-inaugural-launch-of-maia-rocket-to-2027/",
+      "t": "deep"
+    }
+  ]
+}

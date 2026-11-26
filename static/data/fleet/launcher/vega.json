@@ -1,0 +1,33 @@
+{
+  "id": "vega",
+  "name": "Vega",
+  "category": "launcher",
+  "agency": "ESA / Avio",
+  "country": "Italy",
+  "manufacturer": "Avio",
+  "first_flight": "2012-02-13",
+  "last_flight": "2024-09-05",
+  "status": "RETIRED",
+  "era": "2011-now",
+  "epoch": "commercial-era",
+  "best_known_for": "Europe's small launcher: 22 flights from French Guiana between 2012 and 2024, 20 of them successful",
+  "credit": "Vega: 22 flights, 20 successes, 2 failures (VV15, VV17); first flight 2012-02-13, last 2024-09-05 (Sentinel-2C). Sources: ESA Vega page (first flight, 22 flights, 20 successes, 30 m, 3 m, 137 t, stages P80 / Zefiro 23 / Zefiro 9 / AVUM) and the Wikipedia Vega article. Source conflict on payload: ESA gives about 1,500 kg to a 700 km circular 90-degree orbit, Wikipedia 1,450 kg to a 400 km sun-synchronous orbit; the ESA figure is used. Country 'Italy' is the lead nation of the programme and is not stated on the opened ESA or Avio pages (Wikipedia: developed by Avio). The VV15 (2019-07-11, FalconEye-1, Zefiro 23 forward dome) and VV17 (2020-11-17, SEOSAT-Ingenio and TARANIS) failure details come from search results and Wikipedia; the ESA inquiry pages were not fetched, only the dates were confirmed against the Wikipedia Vega summary. Checked 2026-11-25.",
+  "specs": {
+    "height_m": 30,
+    "diameter_m": 3,
+    "mass_kg": 137000,
+    "stages": 4
+  },
+  "links": [
+    {
+      "l": "Vega — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Vega_(rocket)",
+      "t": "intro"
+    },
+    {
+      "l": "Vega — ESA",
+      "u": "https://www.esa.int/Enabling_Support/Space_Transportation/Launch_vehicles/Vega",
+      "t": "core"
+    }
+  ]
+}

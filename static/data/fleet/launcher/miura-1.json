@@ -1,0 +1,36 @@
+{
+  "id": "miura-1",
+  "name": "Miura 1",
+  "category": "launcher",
+  "agency": "PLD Space",
+  "country": "Spain",
+  "manufacturer": "PLD Space",
+  "first_flight": "2023-10-07",
+  "last_flight": "2023-10-07",
+  "status": "RETIRED",
+  "era": "2011-now",
+  "epoch": "commercial-era",
+  "best_known_for": "PLD Space's suborbital demonstrator: one flight on 2023-10-07, 46 km up",
+  "credit": "Suborbital demonstrator; one flight found (2023-10-07, 00:19 UTC, El Arenosillo, Huelva; about 306 s; apogee 46 km against 80 km planned, lowered for range safety). No second flight found. Sources: space.com (306 s, 46 km, splashdown), Wikipedia Miura 1 (sank, range-safety reason, 12.7 m, 2,550 kg, TEPREL-B 30.2 kN), ESA image page (date and time). Source conflicts: length 12.5 m (space.com) against 12.7 m (Wikipedia; used, as the mass comes from the same page); space.com reads as if the vehicle was recovered, Wikipedia says it sank after splashdown, probably a water leak into the fuel tank, and was not recovered (Wikipedia used, more specific). Design payload 100 kg to about 150 km. Miura 5, PLD Space's orbital rocket, is targeted for H1 2027 from Kourou per a search summary of an NSF article (page not opened); its specs were not found, so it has no card. Checked 2026-11-25.",
+  "specs": {
+    "height_m": 12.7,
+    "mass_kg": 2550
+  },
+  "links": [
+    {
+      "l": "Miura 1 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Miura_1",
+      "t": "intro"
+    },
+    {
+      "l": "Miura 1 launch — ESA",
+      "u": "https://www.esa.int/ESA_Multimedia/Images/2024/02/Miura_1_launch",
+      "t": "core"
+    },
+    {
+      "l": "PLD Space launches its first Miura 1 rocket — Space.com",
+      "u": "https://www.space.com/pld-space-first-launch-miura-1-rocket",
+      "t": "deep"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "id": "latitude-zephyr",
+  "name": "Latitude Zephyr",
+  "category": "launcher",
+  "agency": "Latitude",
+  "country": "France",
+  "manufacturer": "Latitude",
+  "first_flight": "planned",
+  "status": "PLANNED",
+  "era": "planned",
+  "epoch": "commercial-era",
+  "best_known_for": "A start-up from Reims: Navier engine tests at SaxaVord, first launch now planned for late 2027 from Oman",
+  "credit": "In development, never flown. Latitude (Reims) is not part of MaiaSpace. Sources: European Spaceflight (2026-07-01: letter of intent with Etlaq, Oman, for a first 'experimental launch' from Etlaq Spaceport in late 2027; the company did not name the rocket, so the name Zephyr seems to have been dropped; the French Guiana ELM-Diamant facility continues), Wikipedia Latitude (company). Source conflict on specs, so none are listed: a 2022 European Spaceflight piece gives 17 m, 1.2 m, 100 kg to SSO, nine Navier Mk2 engines, LOX/RP-1; a search summary gives 19 m, two stages, up to 200 kg; Wikipedia gives 100 kg to LEO for the first variant and 200 kg from 2028. Current specs not found. Earlier launch targets were 2024, 2025 and 2026 (search results). Checked 2026-11-25.",
+  "links": [
+    {
+      "l": "Latitude (company) — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Latitude_(company)",
+      "t": "intro"
+    },
+    {
+      "l": "Latitude and Etlaq sign a letter of intent — European Spaceflight (Jul 2026)",
+      "u": "https://europeanspaceflight.com/?p=6710",
+      "t": "core"
+    }
+  ]
+}

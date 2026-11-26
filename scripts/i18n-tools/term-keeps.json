@@ -5954,5 +5954,41 @@
   "upper stage|sr-Cyrl|science/propulsion/engine-clustering.json :: body_paragraphs.3": {
     "why": "read 2026-11-04 (chunk 1): natural omission: the sentence does without the word",
     "tr": "674c774f8e"
+  },
+  "redshift|ru|fleet/launcher/rfa-one.json :: description": {
+    "why": "read 2026-11-26: Redshift OTV is the name of RFA One's third stage, kept as written; not the cosmological redshift",
+    "tr": "b7585736ec"
+  },
+  "redshift|ja|fleet/launcher/rfa-one.json :: description": {
+    "why": "read 2026-11-26: Redshift OTV is the name of RFA One's third stage, kept as written; not the cosmological redshift",
+    "tr": "d91b1dfe4d"
+  },
+  "redshift|zh-CN|fleet/launcher/rfa-one.json :: description": {
+    "why": "read 2026-11-26: Redshift OTV is the name of RFA One's third stage, kept as written; not the cosmological redshift",
+    "tr": "adc92bf6d5"
+  },
+  "redshift|ko|fleet/launcher/rfa-one.json :: description": {
+    "why": "read 2026-11-26: Redshift OTV is the name of RFA One's third stage, kept as written; not the cosmological redshift",
+    "tr": "3e57c9d3cf"
+  },
+  "redshift|hi|fleet/launcher/rfa-one.json :: description": {
+    "why": "read 2026-11-26: Redshift OTV is the name of RFA One's third stage, kept as written; not the cosmological redshift",
+    "tr": "87884231de"
+  },
+  "redshift|ar|fleet/launcher/rfa-one.json :: description": {
+    "why": "read 2026-11-26: Redshift OTV is the name of RFA One's third stage, kept as written; not the cosmological redshift",
+    "tr": "0ead18cd38"
+  },
+  "redshift|sr-Cyrl|fleet/launcher/rfa-one.json :: description": {
+    "why": "read 2026-11-26: Redshift OTV is the name of RFA One's third stage, kept as written; not the cosmological redshift",
+    "tr": "6043d89e57"
+  },
+  "redshift|de|fleet/launcher/rfa-one.json :: description": {
+    "why": "read 2026-11-26: Redshift OTV is the name of RFA One's third stage, kept as written; not the cosmological redshift",
+    "tr": "04bf31bbd2"
+  },
+  "redshift|nl|fleet/launcher/rfa-one.json :: description": {
+    "why": "read 2026-11-26: Redshift OTV is the name of RFA One's third stage, kept as written; not the cosmological redshift",
+    "tr": "4f76a43526"
   }
 }

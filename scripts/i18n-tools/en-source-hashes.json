@@ -3246,6 +3246,12 @@
     "name": "21193cf4b2",
     "tagline": "c42c65a30a"
   },
+  "fleet/launcher/latitude-zephyr.json": {
+    "best_known_for": "5a8de10d7a",
+    "description": "60fb6bce90",
+    "name": "eb3aca946f",
+    "tagline": "d40c838f97"
+  },
   "fleet/launcher/long-march-10.json": {
     "best_known_for": "3c85cceaa3",
     "description": "91023e57af",
@@ -3282,11 +3288,23 @@
     "name": "1130d629c9",
     "tagline": "7ff77f206b"
   },
+  "fleet/launcher/maia.json": {
+    "best_known_for": "b67f215da3",
+    "description": "a27e58e196",
+    "name": "2804f8e4ec",
+    "tagline": "e1acc30cd9"
+  },
   "fleet/launcher/mercury-redstone.json": {
     "best_known_for": "53ced6811e",
     "description": "ab3ee9e3f8",
     "dispatch": "805e39a8e2",
     "tagline": "53ced6811e"
+  },
+  "fleet/launcher/miura-1.json": {
+    "best_known_for": "e54e8b3f4b",
+    "description": "c4787aed87",
+    "name": "1cfdf82c2b",
+    "tagline": "ad5f4c21a7"
   },
   "fleet/launcher/n1.json": {
     "best_known_for": "fd0873e10b",
@@ -3323,6 +3341,12 @@
     "description": "478061d30d",
     "name": "f764213ac5",
     "tagline": "d4a74526e4"
+  },
+  "fleet/launcher/rfa-one.json": {
+    "best_known_for": "f58d7aab8b",
+    "description": "0f4e819d71",
+    "name": "27277c0134",
+    "tagline": "d11a84035d"
   },
   "fleet/launcher/saturn-ib.json": {
     "best_known_for": "378751642b",
@@ -3386,6 +3410,18 @@
     "dispatch": "f2622457b6",
     "name": "e7578e8e9d",
     "tagline": "30e19cd2a6"
+  },
+  "fleet/launcher/vega-c.json": {
+    "best_known_for": "6070a1d13f",
+    "description": "dfcdccf596",
+    "name": "ea4a0c7f08",
+    "tagline": "9913163bef"
+  },
+  "fleet/launcher/vega.json": {
+    "best_known_for": "9f86c58318",
+    "description": "64384270a5",
+    "name": "ceb84bb1f9",
+    "tagline": "6e07aa029a"
   },
   "fleet/launcher/voskhod-11a57.json": {
     "best_known_for": "0212a8f320",

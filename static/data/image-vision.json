@@ -31061,6 +31061,149 @@
       "rejected_by": null,
       "scored_at": "2026-11-26T00:29:52.153Z",
       "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/vega/01.jpg": {
+      "score": 8,
+      "subject": "Full-size model of the Vega launcher outside a museum in Milan.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-26T01:30:09.529Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/vega-c/01.jpg": {
+      "score": 8,
+      "subject": "The AVUM+ upper stage of Vega-C on a vibration table at ESTEC, Noordwijk.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.45,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-26T01:30:09.546Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/vega-c/02.jpg": {
+      "score": 8,
+      "subject": "Tall model of the Vega C launcher at the 2015 Le Bourget air show.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.2
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-26T01:30:09.571Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/miura-1/01.jpg": {
+      "score": 8,
+      "subject": "Miura 1 lifting off at night from El Arenosillo on 2023-10-07.",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.78,
+        "y": 0.55
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-26T01:30:09.602Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/miura-1/02.jpg": {
+      "score": 8,
+      "subject": "The base and engine flame of Miura 1 during its night launch.",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.7
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-26T01:30:09.619Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/miura-1/03.jpg": {
+      "score": 8,
+      "subject": "A Miura 1 rocket on display in Madrid, November 2021.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.6,
+        "y": 0.45
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-26T01:30:09.640Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/rfa-one/01.jpg": {
+      "score": 8,
+      "subject": "The second stage of RFA One in a workshop.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.55,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-26T01:30:09.673Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/rfa-one/02.jpg": {
+      "score": 8,
+      "subject": "A rocket engine of RFA One in a workshop.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-26T01:30:09.688Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/maia/01.jpg": {
+      "score": 8,
+      "subject": "Artist's concept of the Maia rocket in launch and landing configuration.",
+      "category": "render",
+      "focal_point": {
+        "x": 0.3,
+        "y": 0.45
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-26T01:30:09.697Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/latitude-zephyr/01.jpg": {
+      "score": 8,
+      "subject": "Latitude's Navier engine firing at night at SaxaVord Spaceport.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.7,
+        "y": 0.4
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-26T01:30:09.700Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/latitude-zephyr/02.jpg": {
+      "score": 8,
+      "subject": "Latitude's Navier engine test stand at night at SaxaVord Spaceport.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.45
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-26T01:30:09.704Z",
+      "scoring_cost_usd": 0
     }
   }
 }

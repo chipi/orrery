@@ -564,6 +564,18 @@
     "tagline": "First mission dedicated to characterising Europa's habitability"
   },
   {
+    "id": "latitude-zephyr",
+    "name": "Latitude Zephyr",
+    "category": "launcher",
+    "agency": "Latitude",
+    "country": "France",
+    "era": "planned",
+    "epoch": "commercial-era",
+    "status": "PLANNED",
+    "first_flight": "planned",
+    "tagline": "A start-up from Reims: engine tests at SaxaVord, first launch now planned for late 2027"
+  },
+  {
     "id": "lucy",
     "name": "Lucy",
     "category": "orbiter",
@@ -1308,6 +1320,18 @@
     "tagline": "Radar-mapped 98% of Venus's surface"
   },
   {
+    "id": "maia",
+    "name": "Maia",
+    "category": "launcher",
+    "agency": "MaiaSpace",
+    "country": "France",
+    "era": "planned",
+    "epoch": "commercial-era",
+    "status": "PLANNED",
+    "first_flight": "planned",
+    "tagline": "A reusable methane rocket for Kourou: first flight now set for the second half of 2027"
+  },
+  {
     "id": "mangalyaan",
     "name": "Mangalyaan (MOM)",
     "category": "orbiter",
@@ -1438,6 +1462,18 @@
     "status": "RETIRED",
     "first_flight": "1986-02-19",
     "tagline": "First modular space station; 15-year service"
+  },
+  {
+    "id": "miura-1",
+    "name": "Miura 1",
+    "category": "launcher",
+    "agency": "PLD Space",
+    "country": "Spain",
+    "era": "2011-now",
+    "epoch": "commercial-era",
+    "status": "RETIRED",
+    "first_flight": "2023-10-07",
+    "tagline": "PLD Space's suborbital demonstrator: one flight in October 2023, 46 km up"
   },
   {
     "id": "molniya",
@@ -1594,6 +1630,18 @@
     "status": "ACTIVE",
     "first_flight": "2023-10-13",
     "tagline": "First mission to a metal-rich M-class asteroid"
+  },
+  {
+    "id": "rfa-one",
+    "name": "RFA One",
+    "category": "launcher",
+    "agency": "RFA",
+    "country": "Germany",
+    "era": "planned",
+    "epoch": "commercial-era",
+    "status": "PLANNED",
+    "first_flight": "planned",
+    "tagline": "Germany's small launcher: stacked at SaxaVord in 2026, first launch now in 2027"
   },
   {
     "id": "solar-orbiter",
@@ -2400,6 +2448,18 @@
     "tagline": "Polar / sun-synchronous gateway — Falcon 9 to Starlink + national-security + earth-observation"
   },
   {
+    "id": "vega",
+    "name": "Vega",
+    "category": "launcher",
+    "agency": "ESA / Avio",
+    "country": "Italy",
+    "era": "2011-now",
+    "epoch": "commercial-era",
+    "status": "RETIRED",
+    "first_flight": "2012-02-13",
+    "tagline": "Europe's small launcher: 22 flights from French Guiana, 2012 to 2024"
+  },
+  {
     "id": "vega-1",
     "name": "Vega 1",
     "category": "orbiter",
@@ -2422,6 +2482,18 @@
     "status": "RETIRED",
     "first_flight": "1984-12-21",
     "tagline": "Sibling of Vega 1 — second Soviet Venus + Halley double mission, lander + balloon then Halley flyby"
+  },
+  {
+    "id": "vega-c",
+    "name": "Vega C",
+    "category": "launcher",
+    "agency": "ESA / Avio",
+    "country": "Italy",
+    "era": "2011-now",
+    "epoch": "commercial-era",
+    "status": "ACTIVE",
+    "first_flight": "2022-07-13",
+    "tagline": "The larger Vega: back in flight since December 2024, sold by Avio since 2025"
   },
   {
     "id": "venera-13",

@@ -64,12 +64,15 @@
     "jpl-satellite-parameters": "fae0a9b284",
     "ll2-thespacedevs": "2c375d95df",
     "lroc-nac-traverses": "f79b951ed2",
-    "mcconnachie-2012": "ec0f50d9bb",
+    "magellanic-eclipsing-binaries": "cf691e353c",
+    "mcconnachie-2012": "bb89af8e1e",
     "models-ref-agencies": "95f6230bd2",
+    "models-ref-commons": "b9bbf7bf83",
     "models-ref-esa": "baad9f1a6f",
     "models-ref-independent": "72d9fa1437",
     "models-ref-isro": "5b0c17e08d",
     "models-ref-jaxa": "beef5e7c23",
+    "models-ref-loc": "10d5b5cbea",
     "models-ref-nasa": "a7873e1ce9",
     "models-ref-nps": "5c3f2eb64e",
     "models-ref-nssdca": "a55d5cd0f8",
@@ -80,7 +83,9 @@
     "open-cluster-catalogues": "74058728c4",
     "openngc": "f81e65aa24",
     "pds-mer-traverses": "b0a5f5055a",
-    "usgs-apollo17-traverse": "c1973a993c"
+    "usgs-apollo17-traverse": "c1973a993c",
+    "vadawale2024-pragyan-stops": "d396ce0d3b",
+    "wan2014-yutu-traverse": "590ba19430"
   },
   "deep-sky.json": {
     "andromeda-i.distance": "204751d1a7",

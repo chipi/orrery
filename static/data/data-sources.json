@@ -1474,7 +1474,7 @@
     {
       "id": "models-ref-nasa",
       "name": "3D model references — NASA",
-      "catalog": "49 pages — sizes and proportions for the 3D models",
+      "catalog": "55 pages — sizes and proportions for the 3D models",
       "category": "model-reference",
       "description": "NASA mission, vehicle and history pages (nasa.gov, history.nasa.gov, science.nasa.gov) that gave the dimensions of the crewed capsules, cargo craft, Shuttle orbiters and launchers modelled for /fly and the /fleet line-ups.",
       "source_url": "https://www.nasa.gov/",
@@ -1562,6 +1562,14 @@
           "u": "https://www.nasa.gov/centers/kennedy/shuttleoperations/orbiters/discovery-info.html"
         },
         {
+          "l": "NASA — Roman launch: Solar Array Sun Shield doubles as thermal shield",
+          "u": "https://science.nasa.gov/mission/roman-space-telescope/roman-launch/"
+        },
+        {
+          "l": "NASA — Roman observatory: 2.4 m primary mirror, barrel-shaped optical tube",
+          "u": "https://science.nasa.gov/mission/roman-space-telescope/roman-observatory"
+        },
+        {
           "l": "NASA 'About the Russian Progress Spacecraft': Length 7.4 m, Diameter 2.7 m — dimensions",
           "u": "https://www.nasa.gov/wp-json/wp/v2/migration/167910?_fields=content"
         },
@@ -1610,6 +1618,10 @@
           "u": "https://science.nasa.gov/mission/psyche/spacecraft/"
         },
         {
+          "l": "NASA Roman FAQ — 12.7 m long, more than 4.4 m wide with the solar panels deployed",
+          "u": "https://science.nasa.gov/mission/roman-space-telescope/frequently-asked-questions"
+        },
+        {
           "l": "NASA Science — Viking spacecraft: 2 m tall from footpads to the top of the S-band dish, 3 m at its widest",
           "u": "https://science.nasa.gov/mission/viking/spacecraft-and-science"
         },
@@ -1626,12 +1638,24 @@
           "u": "https://solarsystem.nasa.gov/missions/beresheet/in-depth/"
         },
         {
+          "l": "NASA SVS 14997 — Roman deployed (drone footage): over 42 ft, 12.8 m with the cover up; panels 4.3 m",
+          "u": "https://svs.gsfc.nasa.gov/14997"
+        },
+        {
           "l": "NASA The Space Shuttle reference page: Shuttle Basics Length 184 feet — dimensions",
           "u": "https://www.nasa.gov/reference/the-space-shuttle/"
         },
         {
           "l": "NASA, The Skylab Parasol (NTRS) — 6.7 x 7.3 m canopy, sun-facing side, 8 in above the OWS skin",
           "u": "https://ntrs.nasa.gov/citations/19760012092"
+        },
+        {
+          "l": "NASA/JPL SPHEREx quick facts — 2.6 m tall, 3.2 m wide and deep, 502 kg",
+          "u": "https://www.jpl.nasa.gov/press-kits/spherex/quick-facts/"
+        },
+        {
+          "l": "NASA/JPL SPHEREx spacecraft — three concentric photon shields (stack 1.7 m x 3.2 m), 20 cm telescope, solar array 2.67 x 1.02 m",
+          "u": "https://www.jpl.nasa.gov/press-kits/spherex/mission-overview/spacecraft/"
         },
         {
           "l": "Orion Spacecraft — NASA",
@@ -2064,9 +2088,37 @@
       ]
     },
     {
+      "id": "models-ref-loc",
+      "name": "3D model references — Library of Congress (HAER measured drawings)",
+      "catalog": "3 pages — sizes and proportions for the 3D models",
+      "category": "model-reference",
+      "description": "Measured drawings of the Historic American Engineering Record (HAER), held by the Library of Congress Prints and Photographs Division: the elevations and plan of the orbiter Discovery (survey TX-116-A), drawn to scale, which the Shuttle orbiter model was measured from and checked against. The model is our own geometry; no drawing is reproduced.",
+      "source_url": "https://www.loc.gov/pictures/collection/hh/",
+      "license_short": "PD-USGov",
+      "license_url": "https://hdl.loc.gov/loc.pnp/res.114.habs",
+      "license_rationale": "HABS/HAER documentation is made by the U.S. National Park Service and is in the public domain; the Library of Congress lists no known restrictions on its use.",
+      "used_on": [
+        "fleet"
+      ],
+      "references": [
+        {
+          "l": "HAER TX-116-A, Orbiter Discovery (OV-103), forward and aft elevations (sections, engines, 6.96 m gear track, 16.55 m height)",
+          "u": "https://www.loc.gov/pictures/item/tx1107.sheet.00005a/"
+        },
+        {
+          "l": "HAER TX-116-A, Orbiter Discovery (OV-103), port elevation (Library of Congress measured drawing: the side profile, fin, OMS pods, gear stations)",
+          "u": "https://www.loc.gov/pictures/item/tx1107.sheet.00006a/"
+        },
+        {
+          "l": "HAER TX-116-A, Orbiter Discovery (OV-103), top plan (the planform: glove, wing, 23.80 m span)",
+          "u": "https://www.loc.gov/pictures/item/tx1107.sheet.00007a/"
+        }
+      ]
+    },
+    {
       "id": "models-ref-commons",
       "name": "3D model references — Wikimedia Commons photographs",
-      "catalog": "110 pages — sizes and proportions for the 3D models",
+      "catalog": "113 pages — sizes and proportions for the 3D models",
       "category": "model-reference",
       "description": "Photographs of flight hardware, test articles and museum replicas on Wikimedia Commons, looked at to get the shapes and layouts of the lander, rover and capsule models right. No photograph is reproduced; the models are our own geometry.",
       "source_url": "https://commons.wikimedia.org/",
@@ -2302,6 +2354,10 @@
           "u": "https://commons.wikimedia.org/wiki/File:RESILIENCE-lander-replica01_20250528atHanedaAirPort.jpg"
         },
         {
+          "l": "Wikimedia Commons — Roman visualization (the silhouette)",
+          "u": "https://commons.wikimedia.org/wiki/File:NASA%27s_Nancy_Grace_Roman_Space_Telescope-_Systems,_Assemble!_(SVS14693).jpg"
+        },
+        {
           "l": "Wikimedia Commons — Rosetta - Philae close-up.jpg: ESA render of Philae on the orbiter",
           "u": "https://commons.wikimedia.org/wiki/File:Rosetta_-_Philae_close-up.jpg"
         },
@@ -2312,6 +2368,14 @@
         {
           "l": "Wikimedia Commons — Spektr-RG payloads render",
           "u": "https://commons.wikimedia.org/wiki/File:Spektr-RG_payloads.png"
+        },
+        {
+          "l": "Wikimedia Commons — SPHEREx concentric cones (NASA/JPL-Caltech/BAE Systems)",
+          "u": "https://commons.wikimedia.org/wiki/File:SPHEREx%E2%80%99s_Concentric_Cones.jpg"
+        },
+        {
+          "l": "Wikimedia Commons — SPHEREx telescope and detectors",
+          "u": "https://commons.wikimedia.org/wiki/File:SPHEREx_telescope_and_detectors.jpg"
         },
         {
           "l": "Wikimedia Commons — Spitzer spacecraft model",

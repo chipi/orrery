@@ -26,12 +26,17 @@
   "open-cluster-catalogues": "梅西耶星团和星团星云的距离，基于 Gaia 数据：以 Hunt & Reffert 2023 为主，Cantat-Gaudin et al. 2020 作为后备，并在注释中列为替代值。",
   "globular-cluster-catalogues": "球状星团的距离取自 Baumgardt & Vasiliev 2021，总V星等取自哈里斯星表（其自身的距离保留在注释中）。",
   "cosmicflows-4": "梅西耶星系和图库星系的距离取自 Cosmicflows-4。",
-  "mcconnachie-2012": "本星系群星系的距离，以及麦哲伦云和M33内星团与星云的距离，取自 McConnachie 2012。",
+  "mcconnachie-2012": "本星系群星系以及 M33 内星团和星云的距离，取自 McConnachie 2012。两个麦哲伦云及其中的天体使用食双星距离（见 “Magellanic Cloud distances”）。",
   "jpl-keplerian-elements": "JPL 用于行星位置的近似开普勒根数（Standish）。物理实验室依据这些根数计算，并有测试确保任务轨迹所用的行星模型与其偏差不超过 0.6°。",
   "jpl-horizons-sun": "2026 年每一天的太阳视位置（赤经/赤纬），取自 JPL 的 Horizons 系统（DE441），以快照形式保存。深空天体的“天空中”标签读取它，找出天体高度至少 20° 且太阳在地平线下 18° 以上的月份，以及持续多少小时。月份范围已与四个地点的 Horizons 表和美国海军天文台的天文导航服务核对。",
   "jpl-planetary-parameters": "JPL 的行星物理参数表（大小、质量、自转与表面数值），在科学文章的行星统计数据中被引用。",
   "jpl-satellite-parameters": "JPL 的行星卫星轨道根数与物理参数，在科学文章中被引用，用于卫星的轨道和大小以及希尔球数值。",
   "lroc-nac-traverses": "LRO 相机团队根据窄角相机（NAC）影像绘出的路线：Apollo 15 和 16、Lunokhod 1 和 2 以及玉兔二号。Orrery 将其简化后绘制在月面视图中。",
   "usgs-apollo17-traverse": "USGS Astrogeology 绘制的 Apollo 17 月球车行驶路线（Haase 等，2019），与金牛—利特罗山谷的 LROC 正射镶嵌图配准，并连同各停靠点绘制在月面视图中。",
-  "hirise-zhurong-traverse": "HiRISE 相机（火星勘测轨道飞行器，NASA/JPL/亚利桑那大学）拍到的祝融号火星车车轮痕迹。Orrery 沿着这些痕迹描出火星表面视图中的路线，精度约 20 米。"
+  "hirise-zhurong-traverse": "HiRISE 相机（火星勘测轨道飞行器，NASA/JPL/亚利桑那大学）拍到的祝融号火星车车轮痕迹。Orrery 沿着这些痕迹描出火星表面视图中的路线，精度约 20 米。",
+  "models-ref-loc": "美国国会图书馆版画与摄影部收藏的“美国历史工程记录”（HAER）测绘图：按比例绘制的“发现号”轨道器立面图和平面图（测绘编号 TX-116-A），航天飞机轨道器模型据此测量并核对。模型是我们自己的几何体，未复制任何图纸。",
+  "models-ref-commons": "维基共享资源上的飞行硬件、试验件和博物馆复制品照片，用于校正着陆器、巡视器和返回舱模型的外形与布局。未复制任何照片；模型是我们自己的几何体。",
+  "magellanic-eclipsing-binaries": "由晚型食双星测得的大麦哲伦云（49.59 kpc）和小麦哲伦云（62.44 kpc）的距离，用于这两个星系及其中的星团和星云（剑鱼座30、NGC 2014/2020、NGC 346、NGC 602）。",
+  "wan2014-yutu-traverse": "嫦娥三号任务团队对玉兔号月球车17个站点（N0101 至 N0209）的定位，截至2014年1月16日；着陆器和各站点从图5（米制网格，10 米比例尺）数字化，绘制在月面视图上。",
+  "vadawale2024-pragyan-stops": "Chandrayaan-3 团队绘制的地图：Vikram 着陆器周围 Pragyan 月球车的23个 APXS 观测点，带经纬度坐标轴；各观测点从图1c数字化，绘制在月面视图上。"
 }

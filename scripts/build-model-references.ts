@@ -146,6 +146,17 @@ const PUBLISHERS: Publisher[] = [
     license_rationale: FACTS_ONLY,
   },
   {
+    id: 'models-ref-loc',
+    name: '3D model references — Library of Congress (HAER measured drawings)',
+    hosts: /^(www|hdl)\.loc\.gov$/,
+    home: 'https://www.loc.gov/pictures/collection/hh/',
+    what: 'Measured drawings of the Historic American Engineering Record (HAER), held by the Library of Congress Prints and Photographs Division: the elevations and plan of the orbiter Discovery (survey TX-116-A), drawn to scale, which the Shuttle orbiter model was measured from and checked against. The model is our own geometry; no drawing is reproduced.',
+    license_short: 'PD-USGov',
+    license_url: 'https://hdl.loc.gov/loc.pnp/res.114.habs',
+    license_rationale:
+      'HABS/HAER documentation is made by the U.S. National Park Service and is in the public domain; the Library of Congress lists no known restrictions on its use.',
+  },
+  {
     id: 'models-ref-commons',
     name: '3D model references — Wikimedia Commons photographs',
     hosts: /^commons\.wikimedia\.org$/,

@@ -1997,6 +1997,9 @@ const wiki = (page: string): string => `https://en.wikipedia.org/wiki/${encodeUR
 const commons = (file: string): string =>
   `https://commons.wikimedia.org/wiki/File:${encodeURI(file)}`;
 
+/** A sheet of the HAER TX-116-A survey (Orbiter Discovery) in the Library of Congress. */
+const haer = (sheet: string): string => `https://www.loc.gov/pictures/item/tx1107.sheet.${sheet}/`;
+
 const R_ORBITER: ShowcaseRef[] = [
   {
     l: 'Space Shuttle orbiter — Wikipedia (length 37.237 m, wingspan 23.79 m, payload bay 18.3 × 4.6 m)',
@@ -2018,21 +2021,15 @@ const R_ORBITER: ShowcaseRef[] = [
   },
   {
     l: 'HAER TX-116-A, Orbiter Discovery (OV-103), port elevation (Library of Congress measured drawing: the side profile, fin, OMS pods, gear stations)',
-    u: commons(
-      'Port Elevation - Space Transportation System, Orbiter Discovery (OV-103), Lyndon B. Johnson Space Center, 2101 NASA Parkway, Houston, Harris County, TX HAER TX-116-A (sheet 6 of 14).tif',
-    ),
+    u: haer('00006a'),
   },
   {
     l: 'HAER TX-116-A, Orbiter Discovery (OV-103), top plan (the planform: glove, wing, 23.80 m span)',
-    u: commons(
-      'Top Plan - Space Transportation System, Orbiter Discovery (OV-103), Lyndon B. Johnson Space Center, 2101 NASA Parkway, Houston, Harris County, TX HAER TX-116-A (sheet 7 of 14).tif',
-    ),
+    u: haer('00007a'),
   },
   {
     l: 'HAER TX-116-A, Orbiter Discovery (OV-103), forward and aft elevations (sections, engines, 6.96 m gear track, 16.55 m height)',
-    u: commons(
-      'Fwd and Aft Elevations - Space Transportation System, Orbiter Discovery (OV-103), Lyndon B. Johnson Space Center, 2101 NASA Parkway, Houston, Harris County, TX HAER TX-116-A (sheet 5 of 14).tif',
-    ),
+    u: haer('00005a'),
   },
 ];
 

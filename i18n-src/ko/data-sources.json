@@ -26,12 +26,17 @@
   "open-cluster-catalogues": "Gaia 자료에 따른 메시에 성단과 성단 성운의 거리: Hunt & Reffert 2023을 우선하고, Cantat-Gaudin et al. 2020은 대체값이자 주석의 대안으로 둡니다.",
   "globular-cluster-catalogues": "구상 성단의 거리는 Baumgardt & Vasiliev 2021, 총 V 등급은 해리스 카탈로그에서 가져왔습니다(해리스 자신의 거리는 주석에 남겨 둡니다).",
   "cosmicflows-4": "메시에 은하와 갤러리 은하의 거리는 Cosmicflows-4에서 가져왔습니다.",
-  "mcconnachie-2012": "국부 은하군 은하와 대소 마젤란 은하 및 M33 안의 성단·성운의 거리는 McConnachie 2012에서 가져왔습니다.",
+  "mcconnachie-2012": "국부은하군 은하들과 M33 안의 성단·성운까지의 거리(McConnachie 2012). 두 마젤란운과 그 안의 천체는 식쌍성 거리를 씁니다(“Magellanic Cloud distances” 참조).",
   "jpl-keplerian-elements": "행성 위치를 위한 JPL의 근사 케플러 요소(Standish). 물리 실험실은 이 요소로 계산하며, 임무 경로에 쓰이는 행성 모델이 여기서 0.6° 이내에 있음을 테스트로 확인합니다.",
   "jpl-horizons-sun": "2026년 매일의 태양 겉보기 위치(적경/적위). JPL의 Horizons 시스템(DE441)에서 받아 스냅샷으로 보관합니다. 심우주 천체의 '하늘에서' 탭이 이를 읽어, 천체가 고도 20° 이상에 있고 태양이 지평선 아래 18° 넘게 내려가 있는 달과 그 시간을 구합니다. 월별 구간은 네 곳의 Horizons 표와 미국 해군천문대의 천측항법 서비스와 대조했습니다.",
   "jpl-planetary-parameters": "행성 물리 매개변수(크기, 질량, 자전, 표면 값)를 정리한 JPL의 표로, 과학 기사의 행성 통계 출처로 인용합니다.",
   "jpl-satellite-parameters": "행성 위성의 궤도 요소와 물리 매개변수를 정리한 JPL 자료로, 과학 기사에서 위성의 궤도와 크기, 힐 구 수치의 출처로 인용합니다.",
   "lroc-nac-traverses": "LRO 카메라 팀이 협각 카메라(NAC) 영상으로 지도화한 주행 경로: Apollo 15와 16, Lunokhod 1과 2, Yutu-2. Orrery가 이를 단순화해 달 표면 보기에 그립니다.",
   "usgs-apollo17-traverse": "USGS Astrogeology가 지도화한 Apollo 17 달 탐사차의 주행 경로(Haase 외 2019)로, 타우루스–리트로 계곡의 LROC 정사모자이크에 맞춰 정렬하고 각 정거장과 함께 달 표면 보기에 그립니다.",
-  "hirise-zhurong-traverse": "Mars Reconnaissance Orbiter의 HiRISE 카메라가 포착한 중국 로버 Zhurong의 바퀴 자국(NASA/JPL/애리조나 대학교). Orrery가 이를 따라 그려 화성 표면 보기의 경로로 삼았으며 정확도는 약 20 m입니다."
+  "hirise-zhurong-traverse": "Mars Reconnaissance Orbiter의 HiRISE 카메라가 포착한 중국 로버 Zhurong의 바퀴 자국(NASA/JPL/애리조나 대학교). Orrery가 이를 따라 그려 화성 표면 보기의 경로로 삼았으며 정확도는 약 20 m입니다.",
+  "models-ref-loc": "미국 의회도서관 판화·사진부에 소장된 역사적 미국 공학 기록(HAER)의 실측 도면. 축척대로 그린 궤도선 디스커버리의 입면도와 평면도(조사 TX-116-A)로, 우주왕복선 궤도선 모델은 이를 바탕으로 치수를 재고 대조했습니다. 모델은 자체 지오메트리이며 도면은 복제하지 않았습니다.",
+  "models-ref-commons": "위키미디어 공용에 있는 비행 하드웨어, 시험 기체, 박물관 복제품 사진. 착륙선, 로버, 캡슐 모델의 모양과 배치를 바로잡기 위해 참고했습니다. 사진은 복제하지 않았으며 모델은 자체 지오메트리입니다.",
+  "magellanic-eclipsing-binaries": "만기형 식쌍성으로 구한 대마젤란운(49.59 kpc)과 소마젤란운(62.44 kpc)의 거리. 두 은하와 그 안의 성단·성운(황새치자리 30, NGC 2014/2020, NGC 346, NGC 602)에 사용합니다.",
+  "wan2014-yutu-traverse": "Chang'e 3 임무팀이 2014년 1월 16일 기준으로 정한 Yutu 로버의 17개 지점(N0101~N0209) 위치. 착륙선과 각 지점은 그림 5(미터 격자, 10 m 축척 막대)에서 디지털화해 달 표면 화면에 그렸습니다.",
+  "vadawale2024-pragyan-stops": "Chandrayaan-3 팀이 Vikram 착륙선 주변 Pragyan 로버의 APXS 관측 지점 23곳을 위도·경도 축과 함께 나타낸 지도. 각 지점은 그림 1c에서 디지털화해 달 표면 화면에 그렸습니다."
 }

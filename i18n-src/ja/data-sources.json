@@ -26,12 +26,17 @@
   "open-cluster-catalogues": "Gaiaに基づくメシエ星団と星団星雲の距離。Hunt & Reffert 2023を優先し、Cantat-Gaudin et al. 2020は代替値として、また注記の別案として使用。",
   "globular-cluster-catalogues": "球状星団の距離はBaumgardt & Vasiliev 2021、総合V等級はハリスのカタログによる（ハリス自身の距離は注記に残す）。",
   "cosmicflows-4": "メシエ銀河とギャラリー銀河の距離はCosmicflows-4による。",
-  "mcconnachie-2012": "局所銀河群の銀河、およびマゼラン雲とM33内の星団・星雲の距離は、McConnachie 2012による。",
+  "mcconnachie-2012": "局所銀河群の銀河と、M33 内の星団・星雲の距離（McConnachie 2012）。2つのマゼラン雲とその中の天体には食連星による距離を使っています（“Magellanic Cloud distances” を参照）。",
   "jpl-keplerian-elements": "惑星の位置のための JPL の近似ケプラー要素（Standish）。物理ラボはこの要素から計算し、ミッション軌道に使う惑星モデルがそこから 0.6° 以内に収まることをテストで確認しています。",
   "jpl-horizons-sun": "2026 年の毎日の太陽の見かけの位置（赤経/赤緯）。JPL の Horizons システム（DE441）から取得し、スナップショットとして保存。深宇宙天体の「星空で」タブはこれを読み、天体が高度 20° 以上にあり、かつ太陽が地平線の 18° より下にある月と、その時間数を求める。月ごとの範囲は、4 地点の Horizons の表と米海軍天文台の天測航法サービスと照合している。",
   "jpl-planetary-parameters": "惑星の物理パラメータ（大きさ、質量、自転、表面の値）をまとめた JPL の表。科学記事の惑星統計の出典として引用しています。",
   "jpl-satellite-parameters": "惑星の衛星の軌道要素と物理パラメータをまとめた JPL の資料。科学記事で衛星の軌道と大きさ、ヒル球の数値の出典として引用しています。",
   "lroc-nac-traverses": "LRO カメラチームが狭角カメラ（NAC）の画像から地図化した走行経路：Apollo 15 と 16、Lunokhod 1 と 2、Yutu-2。Orrery が単純化して月面ビューに描画します。",
   "usgs-apollo17-traverse": "USGS Astrogeology が地図化した Apollo 17 の月面車の走行経路（Haase ほか 2019）。タウルス・リトロー谷の LROC オルソモザイクに位置合わせし、各ステーションとともに月面ビューに描画します。",
-  "hirise-zhurong-traverse": "Mars Reconnaissance Orbiter の HiRISE カメラがとらえた中国の火星ローバー Zhurong の車輪跡（NASA/JPL/アリゾナ大学）。Orrery がこれをたどって火星表面ビューの経路を描いており、精度は約 20 m です。"
+  "hirise-zhurong-traverse": "Mars Reconnaissance Orbiter の HiRISE カメラがとらえた中国の火星ローバー Zhurong の車輪跡（NASA/JPL/アリゾナ大学）。Orrery がこれをたどって火星表面ビューの経路を描いており、精度は約 20 m です。",
+  "models-ref-loc": "米国議会図書館の版画・写真部に所蔵されている歴史的アメリカ工学記録（HAER）の実測図面。縮尺どおりに描かれたオービター「ディスカバリー」の立面図と平面図（調査 TX-116-A）で、スペースシャトル・オービターのモデルはこれをもとに寸法を取り、照合しました。モデルは独自のジオメトリで、図面は複製していません。",
+  "models-ref-commons": "ウィキメディア・コモンズにある飛行ハードウェア、試験機、博物館のレプリカの写真。着陸機、ローバー、カプセルのモデルの形と配置を正しくするために参照しました。写真は複製しておらず、モデルは独自のジオメトリです。",
+  "magellanic-eclipsing-binaries": "晩期型の食連星から求めた大マゼラン雲（49.59 kpc）と小マゼラン雲（62.44 kpc）の距離。両銀河と、その中の星団・星雲（かじき座30、NGC 2014/2020、NGC 346、NGC 602）に使っています。",
+  "wan2014-yutu-traverse": "Chang'e 3 のミッションチームによる、2014年1月16日時点の探査車 Yutu の17地点（N0101〜N0209）の位置決定。着陸機と各地点は図5（メートル単位のグリッド、10 m のスケールバー）からデジタル化し、月面ビューに描いています。",
+  "vadawale2024-pragyan-stops": "Chandrayaan-3 チームによる、着陸機 Vikram 周辺の探査車 Pragyan の APXS 観測地点23か所の地図（緯度・経度軸つき）。各地点は図1cからデジタル化し、月面ビューに描いています。"
 }

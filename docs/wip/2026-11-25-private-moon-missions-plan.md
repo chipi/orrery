@@ -44,3 +44,19 @@ is not in them is an ESTIMATE and goes in `estimatedFields`.
 
 - Group 5 of the 0.9.12 order, ahead of W13 + W14.
 - Unflown European launchers (RFA One, Miura 5, Maia, Zephyr) get fleet cards now, marked in development.
+
+## Progress (2026-11-26)
+
+- **Done, committed:** mission pages (5), fleet cards (blue-ghost, im-2-athena, peregrine; hakuto-r covers
+  both ispace flights), descents (5), models (Hakuto-R, Blue Ghost, Nova-C detail, Peregrine), Moon sites
+  with /moon markers and site stories (5), 14 locales throughout; science-reviewer pass on F10 with its
+  fixes applied (Beresheet's ~950 m/s is the horizontal speed at last contact; ispace M2 timing unified;
+  a mislabelled helicopter photo removed from the IM-1 story). Model credits regenerated.
+- **F11 committed:** Vega, Vega C, Miura 1, RFA One, Maia, Latitude (PLANNED for the unflown three; the
+  schema has no development status). Science review running.
+- **Operator decision needed:** Isar Spectrum (no free photo, only logos), HyImpulse SR75 (only an SL1
+  artist impression) and ICEYE (only renders) need either an `artistic_impressions` waiver in
+  `static/data/license-waivers.json` (operator reviewer + date) or another hero rule. Held back.
+- **Not done:** /colophon entries and thumbnails for the Hakuto-R, Blue Ghost and Peregrine models
+  (`scripts/build-original-work.mjs` + `capture-colophon-thumbs.ts` + 14-locale `original-work` text);
+  frame audit of the new descents on a phone profile.

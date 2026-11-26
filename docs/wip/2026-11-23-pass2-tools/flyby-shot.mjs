@@ -105,6 +105,8 @@ async function shoot(id, [tag, vw, vh]) {
       subPhase: window.__flyDebugFrame?.lastHelioSubPhase ?? null,
       camR: window.__flyDebugFrame?.camR ?? null,
       cutBlack: window.__flyDebugFrame?.cutBlackOpacity ?? null,
+      hudOpacity: (() => { const el = document.querySelector('.hud-stack'); return el ? Number(getComputedStyle(el).opacity) : null; })(),
+      chromeHidden: !!document.querySelector('.hud-stack.cinematic-hidden'),
     }));
     await page.getByRole('button', { name: /not now/i }).click({ timeout: 300 }).catch(() => {});
     const file = `${prefix}-${id}-${tag}-${f.n}-${f.label}.png`;

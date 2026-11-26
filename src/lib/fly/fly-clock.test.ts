@@ -224,6 +224,18 @@ describe('jumpToMet', () => {
     expect(h.restartOpening).not.toHaveBeenCalled();
   });
 
+  it('ends a running cruise hold and afterglow: they belong to the moment left behind', () => {
+    const h = makeCtx();
+    h.cine.cruiseHoldFired = true;
+    h.cine.cruiseHoldUntil = 99999;
+    h.cine.afterglowUntil = 99999;
+    jumpToMet(h.ctx, 20);
+    expect(h.cine.cruiseHoldUntil).toBe(0);
+    expect(h.cine.afterglowUntil).toBe(0);
+    // Fired once per run: the jump does not re-arm it.
+    expect(h.cine.cruiseHoldFired).toBe(true);
+  });
+
   it('biases a flyby jump two days early', () => {
     const h = makeCtx({ events: [{ type: 'flyby', met_days: 20 }] });
     jumpToMet(h.ctx, 20);

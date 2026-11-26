@@ -2794,6 +2794,9 @@
         if (!Number.isFinite(met) || met < 0) return;
         simDay = mission.timeline.dep_day + met;
         isPlaying = false;
+        // A seek, as jumpToMet: a hold still running belongs to the moment left behind.
+        cine.cruiseHoldUntil = 0;
+        cine.afterglowUntil = 0;
       };
       // Cislunar diagnostic snapshot — mirror of __flyDebug for the
       // cislunar branch (which is gated out of helio __flyDebug via

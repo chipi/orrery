@@ -375,6 +375,10 @@ export function jumpToMet(ctx: JumpToMetContext, metDays: number): void {
   // the freeze, so every timeline click yields the iconic hold.
   ctx.cine.peakHoldArmedForFlybyMet = null;
   ctx.cine.peakHoldUntil = 0;
+  // A cruise hold or afterglow still running belongs to the moment left behind: it froze the sim
+  // and hid the HUD at the event jumped to (review F11, Lucy at Eurybates).
+  ctx.cine.cruiseHoldUntil = 0;
+  ctx.cine.afterglowUntil = 0;
   // Jumping back to MET 0 (Launch) replays the cinematic opening (#86) and the
   // W3.3 pre-launch dwell; non-zero jumps want the snap the camSnapUntil
   // window already provides.

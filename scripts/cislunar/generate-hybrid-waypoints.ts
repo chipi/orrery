@@ -149,12 +149,25 @@ const coastArc = (phase: CislunarPhase) => {
   const { points, start_met_days, end_met_days } = phase;
   if (points.length < 2) return null;
   const tofS = (end_met_days - start_met_days) * DAY_S;
-  const at = lambertArc(points[0], points[points.length - 1], tofS, MU_EARTH_KM3_S2);
+  // buildFromWaypoints starts the drawn trip home at the Moon where it is at TEI; a free return's
+  // analytic coast starts at its exit point instead (Artemis II: 40,000 km out), and a conic from
+  // there met the drawn start at a 44-degree corner.
+  const from = phase.type === 'tei_coast' ? moonEciPos(start_met_days) : points[0];
+  const at = lambertArc(from, points[points.length - 1], tofS, MU_EARTH_KM3_S2);
   if (!at) {
     console.warn(`${file}: no conic for ${phase.type}; keeping the analytic shape`);
     return null;
   }
-  return Array.from({ length: COAST_SAMPLES + 1 }, (_, k) => at((tofS * k) / COAST_SAMPLES));
+  const arc = Array.from({ length: COAST_SAMPLES + 1 }, (_, k) => at((tofS * k) / COAST_SAMPLES));
+  // A slow transfer (weeks of phasing loops, Chang'e 4 or Beresheet) has no single conic that
+  // stays inside the Moon's distance: one in its time climbs far past the Moon and back.
+  const r = (p: Vec3Km) => Math.hypot(p.x, p.y, p.z);
+  const ceiling = 1.05 * Math.max(r(from), r(points[points.length - 1]));
+  if (arc.some((p) => r(p) > ceiling)) {
+    console.warn(`${file}: ${phase.type}'s conic climbs past its ends; keeping the analytic shape`);
+    return null;
+  }
+  return arc;
 };
 const timeline: Array<{ met: number; pt: Vec3Km }> = [];
 for (const phase of trajectory.phases) {
@@ -169,8 +182,15 @@ for (const phase of trajectory.phases) {
   for (let i = 0; i < points.length; i++) {
     const tFrac = fracs[i];
     const met = start_met_days + tFrac * span;
-    // Skip if it would duplicate the prior entry's MET (phase boundaries).
-    if (timeline.length > 0 && Math.abs(met - timeline[timeline.length - 1].met) < 1e-9) {
+    // A phase boundary repeats the prior entry's MET. The same point is skipped; a different one
+    // (the trip home leaves the Moon where it is at TEI, the stay is held on the arrival-day
+    // Moon) is kept a moment later, or the jump between the two Moons is spread over the
+    // coast's first step and sampled as a path no craft flew.
+    const prev = timeline[timeline.length - 1];
+    if (prev && Math.abs(met - prev.met) < 1e-9) {
+      const p = points[i];
+      if (Math.hypot(p.x - prev.pt.x, p.y - prev.pt.y, p.z - prev.pt.z) < 1) continue;
+      timeline.push({ met: met + 1e-4, pt: p });
       continue;
     }
     timeline.push({ met, pt: points[i] });
@@ -300,17 +320,35 @@ const anchors = new Set([
 ]);
 const coastOnly = (met: number) => coastSpans.some(([a, b]) => met > a + 1e-9 && met < b - 1e-9);
 {
-  const kept: number[] = [];
-  let prev: Vec3Km | null = null;
+  const droppable = (met: number) => coastOnly(met) && !anchors.has(met);
+  // shortIn: the step into this sample is short. The hold needs two short steps in a row, so a
+  // coast keeps a short step when the one before it was long: a craft leaving the Moon turns
+  // hard in its first hours (Artemis II), and thinning every short step cornered it there.
+  const kept: Array<{ met: number; pt: Vec3Km; shortIn: boolean }> = [];
+  const tooClose = (pt: Vec3Km) => {
+    const prev = kept[kept.length - 1]?.pt;
+    return (
+      !!prev &&
+      Math.hypot(pt.x, pt.y, pt.z) > NEAR_MOON_KM &&
+      Math.hypot(pt.x - prev.x, pt.y - prev.y, pt.z - prev.z) < HOLD_CLEAR_KM
+    );
+  };
   for (const met of targetMets) {
     const pt = interpAt(met);
-    const far = prev && Math.hypot(pt.x, pt.y, pt.z) > NEAR_MOON_KM;
-    const near = prev && Math.hypot(pt.x - prev.x, pt.y - prev.y, pt.z - prev.z) < HOLD_CLEAR_KM;
-    if (far && near && coastOnly(met) && !anchors.has(met)) continue;
-    kept.push(met);
-    prev = pt;
+    const shortIn = tooClose(pt);
+    if (shortIn) {
+      if (droppable(met)) {
+        if (!kept[kept.length - 1].shortIn) kept.push({ met, pt, shortIn });
+        continue;
+      }
+      // A sample that must stay (an event, or the stay itself) next to the last coast sample:
+      // drop that one instead, or the stay starts there (Lunar Reconnaissance Orbiter: half a
+      // day before arrival, at the slow far end of its transfer).
+      while (tooClose(pt) && droppable(kept[kept.length - 1].met)) kept.pop();
+    }
+    kept.push({ met, pt, shortIn: tooClose(pt) });
   }
-  targetMets.splice(0, targetMets.length, ...kept);
+  targetMets.splice(0, targetMets.length, ...kept.map((k) => k.met));
 }
 
 // Sample.

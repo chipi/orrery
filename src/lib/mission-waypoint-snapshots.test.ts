@@ -47,13 +47,14 @@ interface HelioSnapshot {
 }
 
 const MOON_SNAPSHOTS: CislunarSnapshot[] = [
-  // Apollo since 0.9.12: coasts drawn as conics sampled in time, extra samples where the fast
-  // pass by Earth turns, fewer by the Moon (so no run reads as a stay), splashdown once.
-  { slug: 'apollo11', dest: 'moon', firstMet: 0, lastMetMin: 8.03, lastMetMax: 8.23, count: 93 },
-  { slug: 'apollo13', dest: 'moon', firstMet: 0, lastMetMin: 5.85, lastMetMax: 6.05, count: 96 },
-  { slug: 'apollo17', dest: 'moon', firstMet: 0, lastMetMin: 12.5, lastMetMax: 12.7, count: 101 },
-  { slug: 'artemis2', dest: 'moon', firstMet: 0, lastMetMin: 8.96, lastMetMax: 9.16, count: 100 },
-  { slug: 'artemis4', dest: 'moon', firstMet: 0, lastMetMin: 17.9, lastMetMax: 18.1, count: 100 },
+  // Analytic hybrids since 0.9.12 (Apollo, Artemis, Chang'e, Luna and the rest): coasts drawn as
+  // conics sampled in time, extra samples where the fast pass by Earth turns, fewer by the Moon
+  // (so no run reads as a stay), splashdown once; so the counts vary.
+  { slug: 'apollo11', dest: 'moon', firstMet: 0, lastMetMin: 8.03, lastMetMax: 8.23, count: 97 },
+  { slug: 'apollo13', dest: 'moon', firstMet: 0, lastMetMin: 5.85, lastMetMax: 6.05, count: 99 },
+  { slug: 'apollo17', dest: 'moon', firstMet: 0, lastMetMin: 12.5, lastMetMax: 12.7, count: 102 },
+  { slug: 'artemis2', dest: 'moon', firstMet: 0, lastMetMin: 8.96, lastMetMax: 9.16, count: 98 },
+  { slug: 'artemis4', dest: 'moon', firstMet: 0, lastMetMin: 17.9, lastMetMax: 18.1, count: 103 },
   { slug: 'beresheet', dest: 'moon', firstMet: 0, lastMetMin: 50.3, lastMetMax: 50.5, count: 100 },
   {
     slug: 'blue-moon-mk1',
@@ -61,7 +62,7 @@ const MOON_SNAPSHOTS: CislunarSnapshot[] = [
     firstMet: 0,
     lastMetMin: 4.2,
     lastMetMax: 4.4,
-    count: 100,
+    count: 71,
   },
   // Chandrayaan-1, Chandrayaan-3 and SLIM are built from their published orbit-raising and
   // lunar-orbit tables (0.9.8, generate-hybrid-waypoints orbit-table mode): one sample run per
@@ -82,17 +83,17 @@ const MOON_SNAPSHOTS: CislunarSnapshot[] = [
     lastMetMax: 40.1,
     count: 180,
   },
-  { slug: 'change3', dest: 'moon', firstMet: 0, lastMetMin: 14.6, lastMetMax: 14.8, count: 100 },
-  { slug: 'change4', dest: 'moon', firstMet: 0, lastMetMin: 28.2, lastMetMax: 28.5, count: 100 },
-  { slug: 'change5', dest: 'moon', firstMet: 0, lastMetMin: 22.9, lastMetMax: 23.1, count: 100 },
-  { slug: 'change6', dest: 'moon', firstMet: 0, lastMetMin: 52.9, lastMetMax: 53.1, count: 100 },
-  { slug: 'clementine', dest: 'moon', firstMet: 0, lastMetMin: 26.2, lastMetMax: 26.4, count: 100 },
-  { slug: 'lro', dest: 'moon', firstMet: 0, lastMetMin: 5.2, lastMetMax: 5.3, count: 100 },
-  { slug: 'luna16', dest: 'moon', firstMet: 0, lastMetMin: 15.9, lastMetMax: 16.1, count: 100 },
-  { slug: 'luna17', dest: 'moon', firstMet: 0, lastMetMin: 7.3, lastMetMax: 7.4, count: 100 },
-  { slug: 'luna21', dest: 'moon', firstMet: 0, lastMetMin: 8.3, lastMetMax: 8.5, count: 100 },
-  { slug: 'luna24', dest: 'moon', firstMet: 0, lastMetMin: 12.9, lastMetMax: 13.1, count: 100 },
-  { slug: 'luna9', dest: 'moon', firstMet: 0, lastMetMin: 3.1, lastMetMax: 3.2, count: 100 },
+  { slug: 'change3', dest: 'moon', firstMet: 0, lastMetMin: 14.6, lastMetMax: 14.8, count: 90 },
+  { slug: 'change4', dest: 'moon', firstMet: 0, lastMetMin: 28.2, lastMetMax: 28.5, count: 97 },
+  { slug: 'change5', dest: 'moon', firstMet: 0, lastMetMin: 22.9, lastMetMax: 23.1, count: 95 },
+  { slug: 'change6', dest: 'moon', firstMet: 0, lastMetMin: 52.9, lastMetMax: 53.1, count: 109 },
+  { slug: 'clementine', dest: 'moon', firstMet: 0, lastMetMin: 26.2, lastMetMax: 26.4, count: 80 },
+  { slug: 'lro', dest: 'moon', firstMet: 0, lastMetMin: 5.2, lastMetMax: 5.3, count: 60 },
+  { slug: 'luna16', dest: 'moon', firstMet: 0, lastMetMin: 15.9, lastMetMax: 16.1, count: 85 },
+  { slug: 'luna17', dest: 'moon', firstMet: 0, lastMetMin: 7.3, lastMetMax: 7.4, count: 73 },
+  { slug: 'luna21', dest: 'moon', firstMet: 0, lastMetMin: 8.3, lastMetMax: 8.5, count: 88 },
+  { slug: 'luna24', dest: 'moon', firstMet: 0, lastMetMin: 12.9, lastMetMax: 13.1, count: 95 },
+  { slug: 'luna9', dest: 'moon', firstMet: 0, lastMetMin: 3.1, lastMetMax: 3.2, count: 76 },
   { slug: 'slim', dest: 'moon', firstMet: 0, lastMetMin: 134.9, lastMetMax: 135.1, count: 88 },
 ];
 

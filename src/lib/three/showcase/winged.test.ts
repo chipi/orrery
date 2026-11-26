@@ -94,3 +94,49 @@ describe('Shuttle orbiter with an opening payload bay', () => {
     rms.shoulderPitch.rotation.x = 0;
   });
 });
+
+describe('Shuttle orbiter landing gear (W12)', () => {
+  const gearBox = (root: THREE.Object3D): THREE.Box3 => {
+    root.updateMatrixWorld(true);
+    const b = new THREE.Box3();
+    root.getObjectByName('landing-gear')!.traverse((o) => {
+      if (o instanceof THREE.Mesh && o.visible) {
+        let on = true;
+        for (let p: THREE.Object3D | null = o; p; p = p.parent) on &&= p.visible;
+        if (on) b.union(new THREE.Box3().setFromObject(o));
+      }
+    });
+    return b;
+  };
+  const fixed = buildOrbiter({ variant: 'shuttle', length: L0, span: SPAN0 });
+  const rigged = buildOrbiter({ variant: 'shuttle', length: L0, span: SPAN0, gear: 'animated' });
+
+  it('the default orbiter has no gear API and its gear sits down on three named legs', () => {
+    expect(fixed.userData.setGear).toBeUndefined();
+    for (const n of ['gear-nose', 'gear-main-port', 'gear-main-starboard'])
+      expect(fixed.getObjectByName(n)).toBeDefined();
+  });
+
+  it('down (t = 1) matches the fixed gear; stowed (t = 0) is hidden', () => {
+    rigged.userData.setGear(1);
+    const a = gearBox(fixed);
+    const b = gearBox(rigged);
+    expect(b.min.distanceTo(a.min)).toBeLessThan(1e-6);
+    expect(b.max.distanceTo(a.max)).toBeLessThan(1e-6);
+    rigged.userData.setGear(0);
+    expect(gearBox(rigged).isEmpty()).toBe(true);
+  });
+
+  it('half-way the legs swing forward (toward the nose, +y) and up into the belly', () => {
+    rigged.userData.setGear(1);
+    const down = gearBox(rigged);
+    rigged.userData.setGear(0.5);
+    const half = gearBox(rigged);
+    expect(half.max.y).toBeGreaterThan(down.max.y + 0.3);
+    expect(half.max.z).toBeLessThan(down.max.z - 0.3); // the belly is +z: the wheels rise
+  });
+
+  it('the openable orbiter has the gear rig too', () => {
+    expect(typeof buildOrbiterOpenable().userData.setGear).toBe('function');
+  });
+});

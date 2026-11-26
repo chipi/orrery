@@ -503,6 +503,8 @@ export function createFlyDeploy(
 
   const camera = new THREE.PerspectiveCamera(40, 16 / 9, 0.1, 6e4);
   const setDoors = orbiter.userData.setBayDoors as (t: number) => void;
+  // In orbit the gear is stowed.
+  (orbiter.userData.setGear as ((t: number) => void) | undefined)?.(0);
   const end = deployEnd(profile);
   const q = new THREE.Quaternion();
   const xAxis = new THREE.Vector3(1, 0, 0);

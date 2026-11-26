@@ -764,6 +764,12 @@ export interface OrbiterOpts {
   bayDoors?: 'animated';
   /** With bayDoors 'animated': add the RMS, stowed on the port sill (userData.rms). */
   rms?: boolean;
+  /**
+   * 'animated': userData.setGear(t), 0 stowed to 1 down. Each leg swings forward into the belly
+   * about its top (the nose and main gear both retract forward; the wells and doors are not drawn,
+   * so a stowed leg is hidden). Default (omitted): the gear stays down, as before.
+   */
+  gear?: 'animated';
 }
 
 const TONES: Record<Variant, Tone> = {
@@ -1344,33 +1350,56 @@ export function buildOrbiter(o: OrbiterOpts): THREE.Group {
   gear.name = 'landing-gear';
   g.add(gear);
   const GROUND = 2.3 + 4.2;
-  const leg = (x: number, a: number, z0: number, rUp: number, rLow: number): void => {
+  // Each leg and its wheels hang from a pivot at the leg's top (x, a, z0), so the gear can swing.
+  const pivots: THREE.Group[] = [];
+  const pivot = (name: string, x: number, a: number, z0: number): THREE.Group => {
+    const p = new THREE.Group();
+    p.name = name;
+    p.position.set(x, a, z0);
+    gear.add(p);
+    pivots.push(p);
+    return p;
+  };
+  const leg = (p: THREE.Group, z0: number, rUp: number, rLow: number): void => {
     const mid = z0 + (GROUND - z0) * 0.45;
     for (const [za, zb, r] of [
       [z0, mid, rUp],
       [mid, GROUND - 0.6, rLow],
     ] as const) {
-      const c = mesh(new THREE.CylinderGeometry(r, r, zb - za, 12), M.engine, gear);
+      const c = mesh(new THREE.CylinderGeometry(r, r, zb - za, 12), M.engine, p);
       c.rotation.x = Math.PI / 2;
-      c.position.set(x, a, (za + zb) / 2);
+      c.position.set(0, 0, (za + zb) / 2 - z0);
     }
   };
-  const wheel = (x: number, a: number, r: number, wd: number): void => {
-    const w = mesh(new THREE.CylinderGeometry(r, r, wd, 18), M.tyre, gear);
+  const wheel = (p: THREE.Group, z0: number, dx: number, r: number, wd: number): void => {
+    const w = mesh(new THREE.CylinderGeometry(r, r, wd, 18), M.tyre, p);
     w.rotation.z = Math.PI / 2;
-    w.position.set(x, a, GROUND - r);
-    const hub = mesh(new THREE.CylinderGeometry(r * 0.5, r * 0.5, wd + 0.04, 12), M.engine, gear);
+    w.position.set(dx, 0, GROUND - r - z0);
+    const hub = mesh(new THREE.CylinderGeometry(r * 0.5, r * 0.5, wd + 0.04, 12), M.engine, p);
     hub.rotation.z = Math.PI / 2;
-    hub.position.set(x, a, GROUND - r);
+    hub.position.set(dx, 0, GROUND - r - z0);
   };
   for (const sg of [-1, 1]) {
-    leg(sg * 3.4, 17.8, 2.3, 0.22, 0.14);
-    wheel(sg * 3.4 - 0.3, 17.8, 0.55, 0.4);
-    wheel(sg * 3.4 + 0.3, 17.8, 0.55, 0.4);
+    const p = pivot(sg < 0 ? 'gear-main-starboard' : 'gear-main-port', sg * 3.4, 17.8, 2.3);
+    leg(p, 2.3, 0.22, 0.14);
+    wheel(p, 2.3, -0.3, 0.55, 0.4);
+    wheel(p, 2.3, 0.3, 0.55, 0.4);
   }
-  leg(0, 34.0, surfV(stns, N, 34, 0, false) * -1, 0.16, 0.1);
-  wheel(-0.25, 34.0, 0.45, 0.28);
-  wheel(0.25, 34.0, 0.45, 0.28);
+  const noseZ0 = surfV(stns, N, 34, 0, false) * -1;
+  const nose = pivot('gear-nose', 0, 34.0, noseZ0);
+  leg(nose, noseZ0, 0.16, 0.1);
+  wheel(nose, noseZ0, -0.25, 0.45, 0.28);
+  wheel(nose, noseZ0, 0.25, 0.45, 0.28);
+  if (o.gear === 'animated') {
+    // t 0 stowed .. 1 down: the leg (along +z, the belly side) swings forward (+a) by 90 degrees.
+    root.userData.setGear = (t: number): void => {
+      const k = Math.min(1, Math.max(0, t));
+      for (const p of pivots) {
+        p.rotation.x = (-(1 - k) * Math.PI) / 2;
+        p.visible = k > 0.02;
+      }
+    };
+  }
 
   g.scale.setScalar(o.length / L0);
   return root;
@@ -1617,12 +1646,20 @@ const R_BURAN: ShowcaseRef[] = [
 /**
  * A Shuttle orbiter with an opening payload bay and the RMS, for deploy scenes. Closed (setBayDoors
  * (0)) it looks like the default model. root.userData: setBayDoors(t 0..1), bayLeaves {port,
- * starboard}, rms (RmsRig). The Shuttle variants only; Buran and OK-GLI have no openable bay.
+ * starboard}, rms (RmsRig), bayMount, setGear(t 0..1; down until set). The Shuttle variants only;
+ * Buran and OK-GLI have no openable bay.
  */
 export function buildOrbiterOpenable(
   variant: Exclude<Variant, 'buran' | 'gli'> = 'shuttle',
 ): THREE.Group {
-  return buildOrbiter({ variant, length: L0, span: SPAN0, bayDoors: 'animated', rms: true });
+  return buildOrbiter({
+    variant,
+    length: L0,
+    span: SPAN0,
+    bayDoors: 'animated',
+    rms: true,
+    gear: 'animated',
+  });
 }
 
 function orbiter(variant: Variant, extra: ShowcaseRef[] = []): ShowcaseModel {

@@ -9,7 +9,7 @@
   "status": "ACTIVE",
   "era": "2011-now",
   "epoch": "commercial-era",
-  "best_known_for": "The larger Vega: back in flight since December 2024 and sold by Avio itself since 2025",
+  "best_known_for": "The larger Vega: back in flight since December 2024 and now sold by Avio itself",
   "credit": "Vega C: first flight 2022-07-13 (LARES-2 and six cubesats); 8 flights, 7 successes, 1 failure (VV22) through VV30 on 2026-09-15 (Sentinel-3C, FLEX), the 8th Vega C launch. Sources: Avio Vega C page (P120C 13.5 m, 141.4 t propellant, 4,780 kN, 134 s; Zefiro 40 7.6 m, 36.1 t, 1,035 kN; Zefiro 9 3.9 m, 10.5 t, 255 kN; AVUM+ 737 kg propellant, Isp 316.3 s; up to 2,300 kg to LEO), Wikipedia (34.8 m, 3.4 m, 210 t), Spaceflight Now (34.8 m, flight count). Source conflicts: the VV22 date is 2022-12-21 UTC (01:47:31 UTC, Kourou) on Wikipedia but 20 December local time on ESA's page; the UTC date is used. Avio's page says 2,300 kg to LEO; the sun-synchronous orbit at 700 km figure is from Wikipedia only. The VV22 root cause (erosion of the Zefiro 40 throat insert, procured from KB Pivdenne, Ukraine) is from Wikipedia only. Operator: Arianespace 2022-2025, Avio from 2025 (ESA authorised the change in August 2024; VV30 was the second Vega C launch managed solely by Avio). The ESA Vega C fact page returned 404 and was not read. Next flight, VV31 (IRIDE), planned December 2026, exact date not found. Checked 2026-11-25.",
   "specs": {
     "height_m": 34.8,

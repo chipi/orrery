@@ -2114,6 +2114,21 @@
       "what": "مركبة هبوط Blue Origin بطول 8.05 م — هيكل من رقائق ذهبية وعنبرية على قاعدة جمالونية شاحبة تحمل BE-7، وأرجل جمالونية سلمية، وشريطان طويلان من الخلايا الشمسية وقفص ثماني الأضلاع مفتوح في الأعلى.",
       "where": "الأسطول · صفحة المركبة + الطيران (الهبوط)"
     },
+    "/images/colophon/model-showcase-hakuto-r_webp": {
+      "title": "HAKUTO-R Series 1 (بالحجم الحقيقي، طرازان)",
+      "what": "مركبة هبوط ispace للمهمة 1 وRESILIENCE بارتفاع 2.3 م وعرض 2.6 م بين أرجلها الأربع — الهيكل المشترك للمهمتين اللتين نُفِّذتا. الارتفاع والعرض من ispace؛ وترتيب السطح العلوي تخطيطي.",
+      "where": "الأسطول · صفحة المركبة + الطيران (الهبوط)"
+    },
+    "/images/colophon/model-showcase-blue-ghost_webp": {
+      "title": "Blue Ghost (بالحجم الحقيقي)",
+      "what": "مركبة هبوط Firefly بارتفاع 2 م وعرض 3.5 م — جسم منخفض على أربع أرجل، محركها الرئيسي في الأسفل وأدوات NASA على السطح العلوي. الارتفاع والعرض من Firefly؛ وترتيب السطح العلوي تخطيطي.",
+      "where": "الأسطول · صفحة المركبة + الطيران (الهبوط)"
+    },
+    "/images/colophon/model-showcase-peregrine_webp": {
+      "title": "Peregrine (بالحجم الحقيقي)",
+      "what": "مركبة هبوط Astrobotic بارتفاع نحو 1.9 م وعرض 2.5 م — إطار ثماني الأضلاع مفتوح حول خزّانين للوقود وخزّانين للمؤكسد وخزان هيليوم، وخمسة محركات رئيسية وأربع أرجل ولوح شمسي جانبي. لم تصل إلى القمر قط. الأحجام من NASA NSSDCA؛ والإطار تخطيطي.",
+      "where": "الأسطول · صفحة المركبة + الطيران"
+    },
     "/images/colophon/model-showcase-pragyan_webp": {
       "title": "Pragyan",
       "what": "المركبة الجوالة السداسية العجلات من ISRO التي تنزل منحدر Vikram.",
@@ -3048,6 +3063,9 @@
     "/images/missions/thumbnails/beresheet_webp": {
       "title": "Beresheet"
     },
+    "/images/missions/thumbnails/blue-ghost-m1_webp": {
+      "title": "Blue Ghost Mission 1"
+    },
     "/images/missions/thumbnails/blue-moon-mk1_webp": {
       "title": "Blue Moon MK1"
     },
@@ -3126,6 +3144,9 @@
     "/images/missions/thumbnails/giotto_webp": {
       "title": "Giotto"
     },
+    "/images/missions/thumbnails/hakuto-r-m1_webp": {
+      "title": "Hakuto-R Mission 1"
+    },
     "/images/missions/thumbnails/hayabusa1_webp": {
       "title": "Hayabusa"
     },
@@ -3144,11 +3165,17 @@
     "/images/missions/thumbnails/im-1_webp": {
       "title": "IM-1"
     },
+    "/images/missions/thumbnails/im-2_webp": {
+      "title": "IM-2"
+    },
     "/images/missions/thumbnails/insight_webp": {
       "title": "InSight"
     },
     "/images/missions/thumbnails/inspiration4_webp": {
       "title": "Inspiration4"
+    },
+    "/images/missions/thumbnails/ispace-m2_webp": {
+      "title": "Hakuto-R Mission 2 RESILIENCE"
     },
     "/images/missions/thumbnails/juice_webp": {
       "title": "JUICE"
@@ -3266,6 +3293,9 @@
     },
     "/images/missions/thumbnails/parker-solar-probe_webp": {
       "title": "Parker Solar Probe"
+    },
+    "/images/missions/thumbnails/peregrine-m1_webp": {
+      "title": "Peregrine Mission One"
     },
     "/images/missions/thumbnails/perseverance_webp": {
       "title": "Perseverance"

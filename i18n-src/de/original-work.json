@@ -2114,6 +2114,21 @@
       "what": "Blue Origins 8,05 m großer Lander – ein Rumpf aus Gold- und Bernsteinfolie auf einer hellen Gitterbasis mit dem BE-7, Leiterfachwerk-Beinen, zwei hohen Solarzellenstreifen und einem offenen achteckigen Käfig obenauf.",
       "where": "Flotte · Raumfahrzeugseite + Fliegen · Abstieg"
     },
+    "/images/colophon/model-showcase-hakuto-r_webp": {
+      "title": "HAKUTO-R Series 1 (maßstabsgetreu, 2 Varianten)",
+      "what": "Der Lander von ispace für Mission 1 und RESILIENCE, 2,3 m hoch und 2,6 m breit über seine vier Beine – die gemeinsame Grundstruktur der geflogenen Missionen. Höhe und Breite von ispace; die Deckanordnung ist schematisch.",
+      "where": "Flotte · Raumfahrzeugseite + Fliegen · Abstieg"
+    },
+    "/images/colophon/model-showcase-blue-ghost_webp": {
+      "title": "Blue Ghost (maßstabsgetreu)",
+      "what": "Der Lander von Firefly, 2 m hoch und 3,5 m breit – ein niedriger Rumpf auf vier Beinen, das Haupttriebwerk darunter und die NASA-Instrumente auf dem Deck. Höhe und Breite von Firefly; die Deckanordnung ist schematisch.",
+      "where": "Flotte · Raumfahrzeugseite + Fliegen · Abstieg"
+    },
+    "/images/colophon/model-showcase-peregrine_webp": {
+      "title": "Peregrine (maßstabsgetreu)",
+      "what": "Der Lander von Astrobotic, etwa 1,9 m hoch und 2,5 m breit – ein offener achteckiger Rahmen um zwei Treibstofftanks, zwei Oxidatortanks und einen Heliumtank, fünf Haupttriebwerke, vier Beine und ein seitliches Solarpaneel. Er hat den Mond nie erreicht. Größen aus dem NASA NSSDCA; der Rahmen ist schematisch.",
+      "where": "Flotte · Raumfahrzeugseite + Fliegen"
+    },
     "/images/colophon/model-showcase-pragyan_webp": {
       "title": "Pragyan",
       "what": "Der sechsrädrige Rover der ISRO, der Vikrams Rampe hinunterrollt.",
@@ -3048,6 +3063,9 @@
     "/images/missions/thumbnails/beresheet_webp": {
       "title": "Beresheet"
     },
+    "/images/missions/thumbnails/blue-ghost-m1_webp": {
+      "title": "Blue Ghost Mission 1"
+    },
     "/images/missions/thumbnails/blue-moon-mk1_webp": {
       "title": "Blue Moon MK1"
     },
@@ -3126,6 +3144,9 @@
     "/images/missions/thumbnails/giotto_webp": {
       "title": "Giotto"
     },
+    "/images/missions/thumbnails/hakuto-r-m1_webp": {
+      "title": "Hakuto-R Mission 1"
+    },
     "/images/missions/thumbnails/hayabusa1_webp": {
       "title": "Hayabusa"
     },
@@ -3144,11 +3165,17 @@
     "/images/missions/thumbnails/im-1_webp": {
       "title": "IM-1"
     },
+    "/images/missions/thumbnails/im-2_webp": {
+      "title": "IM-2"
+    },
     "/images/missions/thumbnails/insight_webp": {
       "title": "InSight"
     },
     "/images/missions/thumbnails/inspiration4_webp": {
       "title": "Inspiration4"
+    },
+    "/images/missions/thumbnails/ispace-m2_webp": {
+      "title": "Hakuto-R Mission 2 RESILIENCE"
     },
     "/images/missions/thumbnails/juice_webp": {
       "title": "JUICE"
@@ -3266,6 +3293,9 @@
     },
     "/images/missions/thumbnails/parker-solar-probe_webp": {
       "title": "Parker Solar Probe"
+    },
+    "/images/missions/thumbnails/peregrine-m1_webp": {
+      "title": "Peregrine Mission One"
     },
     "/images/missions/thumbnails/perseverance_webp": {
       "title": "Perseverance"

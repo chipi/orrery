@@ -2114,6 +2114,21 @@
       "what": "L’atterrisseur de 8,05 m de Blue Origin : une coque en feuille dorée et ambrée sur une base en treillis pâle portant le BE-7, des jambes en treillis d’échelle, deux hautes bandes de cellules solaires et une cage octogonale ouverte au sommet.",
       "where": "Flotte · fiche de l’engin + Voler · descente"
     },
+    "/images/colophon/model-showcase-hakuto-r_webp": {
+      "title": "HAKUTO-R Series 1 (taille réelle, 2 variantes)",
+      "what": "L’atterrisseur d’ispace pour la Mission 1 et RESILIENCE, haut de 2,3 m et large de 2,6 m entre ses quatre jambes : la structure commune des missions qui ont volé. Hauteur et largeur d’ispace ; l’agencement du pont est schématique.",
+      "where": "Flotte · fiche de l’engin + Voler · descente"
+    },
+    "/images/colophon/model-showcase-blue-ghost_webp": {
+      "title": "Blue Ghost (taille réelle)",
+      "what": "L’atterrisseur de Firefly, haut de 2 m et large de 3,5 m : un corps bas sur quatre jambes, avec son moteur principal dessous et les instruments de la NASA sur le pont. Hauteur et largeur de Firefly ; l’agencement du pont est schématique.",
+      "where": "Flotte · fiche de l’engin + Voler · descente"
+    },
+    "/images/colophon/model-showcase-peregrine_webp": {
+      "title": "Peregrine (taille réelle)",
+      "what": "L’atterrisseur d’Astrobotic, haut d’environ 1,9 m et large de 2,5 m : un cadre octogonal ouvert autour de deux réservoirs de carburant, deux d’oxydant et un d’hélium, cinq moteurs principaux, quatre jambes et un panneau solaire latéral. Il n’a jamais atteint la Lune. Tailles d’après la NASA NSSDCA ; le cadre est schématique.",
+      "where": "Flotte · fiche de l’engin + Voler"
+    },
     "/images/colophon/model-showcase-pragyan_webp": {
       "title": "Pragyan",
       "what": "Le rover à six roues de l’ISRO qui descend la rampe de Vikram.",
@@ -3048,6 +3063,9 @@
     "/images/missions/thumbnails/beresheet_webp": {
       "title": "Beresheet"
     },
+    "/images/missions/thumbnails/blue-ghost-m1_webp": {
+      "title": "Blue Ghost Mission 1"
+    },
     "/images/missions/thumbnails/blue-moon-mk1_webp": {
       "title": "Blue Moon MK1"
     },
@@ -3126,6 +3144,9 @@
     "/images/missions/thumbnails/giotto_webp": {
       "title": "Giotto"
     },
+    "/images/missions/thumbnails/hakuto-r-m1_webp": {
+      "title": "Hakuto-R Mission 1"
+    },
     "/images/missions/thumbnails/hayabusa1_webp": {
       "title": "Hayabusa"
     },
@@ -3144,11 +3165,17 @@
     "/images/missions/thumbnails/im-1_webp": {
       "title": "IM-1"
     },
+    "/images/missions/thumbnails/im-2_webp": {
+      "title": "IM-2"
+    },
     "/images/missions/thumbnails/insight_webp": {
       "title": "InSight"
     },
     "/images/missions/thumbnails/inspiration4_webp": {
       "title": "Inspiration4"
+    },
+    "/images/missions/thumbnails/ispace-m2_webp": {
+      "title": "Hakuto-R Mission 2 RESILIENCE"
     },
     "/images/missions/thumbnails/juice_webp": {
       "title": "JUICE"
@@ -3266,6 +3293,9 @@
     },
     "/images/missions/thumbnails/parker-solar-probe_webp": {
       "title": "Parker Solar Probe"
+    },
+    "/images/missions/thumbnails/peregrine-m1_webp": {
+      "title": "Peregrine Mission One"
     },
     "/images/missions/thumbnails/perseverance_webp": {
       "title": "Perseverance"

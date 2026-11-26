@@ -2114,6 +2114,21 @@
       "what": "Blue Origin의 길이 8.05 m 착륙선 — BE-7을 실은 옅은 트러스 기단 위에 금색과 호박색 포일 선체, 사다리형 트러스 다리, 키 큰 태양전지 띠 2개, 맨 위에 열린 팔각형 케이지.",
       "where": "함대 · 우주선 페이지 + 비행 (하강)"
     },
+    "/images/colophon/model-showcase-hakuto-r_webp": {
+      "title": "HAKUTO-R Series 1 (실제 크기, 2개 형식)",
+      "what": "ispace의 임무 1과 RESILIENCE용 착륙선 — 높이 2.3 m, 네 다리 사이 폭 2.6 m이며, 비행한 두 임무가 공유한 기체이다. 높이와 폭은 ispace에 따랐다. 데크 배치는 도식적이다.",
+      "where": "함대 · 우주선 페이지 + 비행 (하강)"
+    },
+    "/images/colophon/model-showcase-blue-ghost_webp": {
+      "title": "Blue Ghost (실제 크기)",
+      "what": "Firefly의 착륙선 — 높이 2 m, 폭 3.5 m. 네 다리 위의 낮은 몸체 아래에 주 엔진이 있고 데크에 NASA 기기를 실었다. 높이와 폭은 Firefly에 따랐다. 데크 배치는 도식적이다.",
+      "where": "함대 · 우주선 페이지 + 비행 (하강)"
+    },
+    "/images/colophon/model-showcase-peregrine_webp": {
+      "title": "Peregrine (실제 크기)",
+      "what": "Astrobotic의 착륙선 — 높이 약 1.9 m, 폭 2.5 m. 연료 탱크 둘, 산화제 탱크 둘, 헬륨 탱크 하나를 둘러싼 열린 팔각형 틀에 주 엔진 다섯 기, 다리 네 개, 옆면 태양전지판이 달렸다. 달에는 끝내 도달하지 못했다. 크기는 NASA NSSDCA에 따랐다. 틀은 도식적이다.",
+      "where": "함대 · 우주선 페이지 + 비행"
+    },
     "/images/colophon/model-showcase-pragyan_webp": {
       "title": "Pragyan",
       "what": "Vikram의 경사로를 따라 내려오는 ISRO의 6륜 로버.",
@@ -3048,6 +3063,9 @@
     "/images/missions/thumbnails/beresheet_webp": {
       "title": "Beresheet"
     },
+    "/images/missions/thumbnails/blue-ghost-m1_webp": {
+      "title": "Blue Ghost Mission 1"
+    },
     "/images/missions/thumbnails/blue-moon-mk1_webp": {
       "title": "Blue Moon MK1"
     },
@@ -3126,6 +3144,9 @@
     "/images/missions/thumbnails/giotto_webp": {
       "title": "Giotto"
     },
+    "/images/missions/thumbnails/hakuto-r-m1_webp": {
+      "title": "Hakuto-R Mission 1"
+    },
     "/images/missions/thumbnails/hayabusa1_webp": {
       "title": "Hayabusa"
     },
@@ -3144,11 +3165,17 @@
     "/images/missions/thumbnails/im-1_webp": {
       "title": "IM-1"
     },
+    "/images/missions/thumbnails/im-2_webp": {
+      "title": "IM-2"
+    },
     "/images/missions/thumbnails/insight_webp": {
       "title": "InSight"
     },
     "/images/missions/thumbnails/inspiration4_webp": {
       "title": "Inspiration4"
+    },
+    "/images/missions/thumbnails/ispace-m2_webp": {
+      "title": "Hakuto-R Mission 2 RESILIENCE"
     },
     "/images/missions/thumbnails/juice_webp": {
       "title": "JUICE"
@@ -3266,6 +3293,9 @@
     },
     "/images/missions/thumbnails/parker-solar-probe_webp": {
       "title": "Parker Solar Probe"
+    },
+    "/images/missions/thumbnails/peregrine-m1_webp": {
+      "title": "Peregrine Mission One"
     },
     "/images/missions/thumbnails/perseverance_webp": {
       "title": "Perseverance"

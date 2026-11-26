@@ -1067,6 +1067,9 @@
     "/images/missions/thumbnails/beresheet_webp": {
       "title": "Beresheet"
     },
+    "/images/missions/thumbnails/blue-ghost-m1_webp": {
+      "title": "Blue Ghost Mission 1"
+    },
     "/images/missions/thumbnails/blue-moon-mk1_webp": {
       "title": "Blue Moon MK1"
     },
@@ -1151,6 +1154,9 @@
     "/images/missions/thumbnails/giotto_webp": {
       "title": "Giotto"
     },
+    "/images/missions/thumbnails/hakuto-r-m1_webp": {
+      "title": "Hakuto-R Mission 1"
+    },
     "/images/missions/thumbnails/hayabusa1_webp": {
       "title": "Hayabusa"
     },
@@ -1169,11 +1175,17 @@
     "/images/missions/thumbnails/im-1_webp": {
       "title": "IM-1"
     },
+    "/images/missions/thumbnails/im-2_webp": {
+      "title": "IM-2"
+    },
     "/images/missions/thumbnails/insight_webp": {
       "title": "InSight"
     },
     "/images/missions/thumbnails/inspiration4_webp": {
       "title": "Inspiration4"
+    },
+    "/images/missions/thumbnails/ispace-m2_webp": {
+      "title": "Hakuto-R Mission 2 RESILIENCE"
     },
     "/images/missions/thumbnails/juice_webp": {
       "title": "JUICE"
@@ -1291,6 +1303,9 @@
     },
     "/images/missions/thumbnails/parker-solar-probe_webp": {
       "title": "Parker Solar Probe"
+    },
+    "/images/missions/thumbnails/peregrine-m1_webp": {
+      "title": "Peregrine Mission One"
     },
     "/images/missions/thumbnails/perseverance_webp": {
       "title": "Perseverance"
@@ -2563,6 +2578,21 @@
       "title": "Blue Moon MK1 (true size)",
       "what": "Blue Origin’s 8.05 m lander — a hull of gold and amber foil on a pale truss base carrying the BE-7, ladder-truss legs, two tall solar-cell strips and an open octagonal cage on top.",
       "where": "Fleet · craft page + Fly descent"
+    },
+    "/images/colophon/model-showcase-hakuto-r_webp": {
+      "title": "HAKUTO-R Series 1 (true size, 2 variants)",
+      "what": "ispace’s lander for Mission 1 and RESILIENCE, 2.3 m tall and 2.6 m across its four legs — the flown missions’ shared airframe. Height and span from ispace; the deck layout is schematic.",
+      "where": "Fleet · craft page + Fly descent"
+    },
+    "/images/colophon/model-showcase-blue-ghost_webp": {
+      "title": "Blue Ghost (true size)",
+      "what": "Firefly’s lander, 2 m tall and 3.5 m wide — a low body on four legs with its main engine below and the NASA instruments on the deck. Height and width from Firefly; the deck layout is schematic.",
+      "where": "Fleet · craft page + Fly descent"
+    },
+    "/images/colophon/model-showcase-peregrine_webp": {
+      "title": "Peregrine (true size)",
+      "what": "Astrobotic’s lander, about 1.9 m high and 2.5 m across — an open octagonal frame round two fuel and two oxidiser tanks and a helium tank, five main engines, four legs and a side solar panel. It never reached the Moon. Sizes from NASA’s NSSDCA; the frame is schematic.",
+      "where": "Fleet · craft page + Fly"
     },
     "/images/colophon/model-showcase-pragyan_webp": {
       "title": "Pragyan",

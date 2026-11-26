@@ -2114,6 +2114,21 @@
       "what": "Лендер компаније Blue Origin од 8,05 m — труп од златне и ћилибарне фолије на светлој решеткастој основи која носи BE-7, ноге од лествичасте решетке, две високе траке соларних ћелија и отворени осмоугаони кавез на врху.",
       "where": "Флота · страница летелице + Лет · спуштање"
     },
+    "/images/colophon/model-showcase-hakuto-r_webp": {
+      "title": "HAKUTO-R Series 1 (у стварној величини, 2 варијанте)",
+      "what": "Лендер компаније ispace за мисију 1 и RESILIENCE, висок 2,3 m и широк 2,6 m између четири ноге — заједничка конструкција обе мисије које су летеле. Висина и ширина према компанији ispace; распоред палубе је шематски.",
+      "where": "Флота · страница летелице + Лет · спуштање"
+    },
+    "/images/colophon/model-showcase-blue-ghost_webp": {
+      "title": "Blue Ghost (у стварној величини)",
+      "what": "Лендер компаније Firefly, висок 2 m и широк 3,5 m — ниско тело на четири ноге, са главним мотором испод и инструментима агенције NASA на палуби. Висина и ширина према компанији Firefly; распоред палубе је шематски.",
+      "where": "Флота · страница летелице + Лет · спуштање"
+    },
+    "/images/colophon/model-showcase-peregrine_webp": {
+      "title": "Peregrine (у стварној величини)",
+      "what": "Лендер компаније Astrobotic, висок око 1,9 m и широк 2,5 m — отворен осмоугаони оквир око два резервоара горива, два резервоара оксидатора и једног резервоара хелијума, пет главних мотора, четири ноге и бочни соларни панел. Никад није стигао до Месеца. Величине из NASA NSSDCA; оквир је шематски.",
+      "where": "Флота · страница летелице + Лет"
+    },
     "/images/colophon/model-showcase-pragyan_webp": {
       "title": "Pragyan",
       "what": "Шестоточкаш агенције ISRO који се котрља низ Vikramovu рампу.",
@@ -3048,6 +3063,9 @@
     "/images/missions/thumbnails/beresheet_webp": {
       "title": "Beresheet"
     },
+    "/images/missions/thumbnails/blue-ghost-m1_webp": {
+      "title": "Blue Ghost Mission 1"
+    },
     "/images/missions/thumbnails/blue-moon-mk1_webp": {
       "title": "Blue Moon MK1"
     },
@@ -3126,6 +3144,9 @@
     "/images/missions/thumbnails/giotto_webp": {
       "title": "Giotto"
     },
+    "/images/missions/thumbnails/hakuto-r-m1_webp": {
+      "title": "Hakuto-R Mission 1"
+    },
     "/images/missions/thumbnails/hayabusa1_webp": {
       "title": "Hayabusa"
     },
@@ -3144,11 +3165,17 @@
     "/images/missions/thumbnails/im-1_webp": {
       "title": "IM-1"
     },
+    "/images/missions/thumbnails/im-2_webp": {
+      "title": "IM-2"
+    },
     "/images/missions/thumbnails/insight_webp": {
       "title": "InSight"
     },
     "/images/missions/thumbnails/inspiration4_webp": {
       "title": "Inspiration4"
+    },
+    "/images/missions/thumbnails/ispace-m2_webp": {
+      "title": "Hakuto-R Mission 2 RESILIENCE"
     },
     "/images/missions/thumbnails/juice_webp": {
       "title": "JUICE"
@@ -3266,6 +3293,9 @@
     },
     "/images/missions/thumbnails/parker-solar-probe_webp": {
       "title": "Parker Solar Probe"
+    },
+    "/images/missions/thumbnails/peregrine-m1_webp": {
+      "title": "Peregrine Mission One"
     },
     "/images/missions/thumbnails/perseverance_webp": {
       "title": "Perseverance"

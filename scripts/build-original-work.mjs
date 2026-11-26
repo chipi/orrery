@@ -1101,7 +1101,24 @@ const lunarLanders = [
     'Blue Moon MK1 (true size)',
     'Blue Origin’s 8.05 m lander — a hull of gold and amber foil on a pale truss base carrying the BE-7, ladder-truss legs, two tall solar-cell strips and an open octagonal cage on top.',
   ],
+  [
+    'hakuto-r',
+    'HAKUTO-R Series 1 (true size, 2 variants)',
+    'ispace’s lander for Mission 1 and RESILIENCE, 2.3 m tall and 2.6 m across its four legs — the flown missions’ shared airframe. Height and span from ispace; the deck layout is schematic.',
+  ],
+  [
+    'blue-ghost',
+    'Blue Ghost (true size)',
+    'Firefly’s lander, 2 m tall and 3.5 m wide — a low body on four legs with its main engine below and the NASA instruments on the deck. Height and width from Firefly; the deck layout is schematic.',
+  ],
 ].map(craftPage(WHERE_PAGE_DESCENT));
+const privateCruise = [
+  [
+    'peregrine',
+    'Peregrine (true size)',
+    'Astrobotic’s lander, about 1.9 m high and 2.5 m across — an open octagonal frame round two fuel and two oxidiser tanks and a helium tank, five main engines, four legs and a side solar panel. It never reached the Moon. Sizes from NASA’s NSSDCA; the frame is schematic.',
+  ],
+].map(craftPage(WHERE_PAGE_FLY));
 const lunarRovers = [
   ['pragyan', 'Pragyan', 'The six-wheeled ISRO rover that rolls down Vikram’s ramp.'],
 ].map(craftPage(WHERE_PAGE_DESCENT));
@@ -1383,6 +1400,7 @@ const models3d = [
   ...lunarOrbiters,
   ...lunarOrbiterOnly,
   ...lunarLanders,
+  ...privateCruise,
   ...lunarRovers,
   ...lunarRoversOnly,
   ...marsLandersShowcase,

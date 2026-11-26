@@ -4552,6 +4552,27 @@
       "thumb": "/images/colophon/model-showcase-blue-moon-mk1.webp"
     },
     {
+      "title": "HAKUTO-R Series 1 (true size, 2 variants)",
+      "what": "ispace’s lander for Mission 1 and RESILIENCE, 2.3 m tall and 2.6 m across its four legs — the flown missions’ shared airframe. Height and span from ispace; the deck layout is schematic.",
+      "where": "Fleet · craft page + Fly descent",
+      "route": "/fleet/hakuto-r",
+      "thumb": "/images/colophon/model-showcase-hakuto-r.webp"
+    },
+    {
+      "title": "Blue Ghost (true size)",
+      "what": "Firefly’s lander, 2 m tall and 3.5 m wide — a low body on four legs with its main engine below and the NASA instruments on the deck. Height and width from Firefly; the deck layout is schematic.",
+      "where": "Fleet · craft page + Fly descent",
+      "route": "/fleet/blue-ghost",
+      "thumb": "/images/colophon/model-showcase-blue-ghost.webp"
+    },
+    {
+      "title": "Peregrine (true size)",
+      "what": "Astrobotic’s lander, about 1.9 m high and 2.5 m across — an open octagonal frame round two fuel and two oxidiser tanks and a helium tank, five main engines, four legs and a side solar panel. It never reached the Moon. Sizes from NASA’s NSSDCA; the frame is schematic.",
+      "where": "Fleet · craft page + Fly",
+      "route": "/fleet/peregrine",
+      "thumb": "/images/colophon/model-showcase-peregrine.webp"
+    },
+    {
       "title": "Pragyan",
       "what": "The six-wheeled ISRO rover that rolls down Vikram’s ramp.",
       "where": "Fleet · craft page + Fly descent",
@@ -5653,7 +5674,7 @@
     "lab_illustrations": 25,
     "diagrams_science": 117,
     "posters": 27,
-    "models3d": 251,
+    "models3d": 254,
     "capsules": 0,
     "canvas2d": 6,
     "ui": 4,

@@ -2114,6 +2114,21 @@
       "what": "Посадочный аппарат Blue Origin длиной 8,05 м — корпус из золотой и янтарной фольги на светлом ферменном основании с BE-7, опорами из лестничных ферм, двумя высокими полосами солнечных элементов и открытой восьмиугольной клеткой сверху.",
       "where": "Флот · страница аппарата + Полёт · спуск"
     },
+    "/images/colophon/model-showcase-hakuto-r_webp": {
+      "title": "HAKUTO-R Series 1 (в натуральную величину, 2 варианта)",
+      "what": "Посадочный аппарат ispace для миссии 1 и RESILIENCE высотой 2,3 м и шириной 2,6 м между четырьмя опорами — общая конструкция обеих состоявшихся миссий. Высота и ширина по данным ispace; компоновка палубы схематична.",
+      "where": "Флот · страница аппарата + Полёт · спуск"
+    },
+    "/images/colophon/model-showcase-blue-ghost_webp": {
+      "title": "Blue Ghost (в натуральную величину)",
+      "what": "Посадочный аппарат Firefly высотой 2 м и шириной 3,5 м — низкий корпус на четырёх опорах, главный двигатель снизу, приборы NASA на палубе. Высота и ширина по данным Firefly; компоновка палубы схематична.",
+      "where": "Флот · страница аппарата + Полёт · спуск"
+    },
+    "/images/colophon/model-showcase-peregrine_webp": {
+      "title": "Peregrine (в натуральную величину)",
+      "what": "Посадочный аппарат Astrobotic высотой около 1,9 м и шириной 2,5 м — открытая восьмиугольная рама вокруг двух баков горючего, двух баков окислителя и бака гелия, пять главных двигателей, четыре опоры и боковая солнечная панель. До Луны он не добрался. Размеры по NASA NSSDCA; рама схематична.",
+      "where": "Флот · страница аппарата + Полёт"
+    },
     "/images/colophon/model-showcase-pragyan_webp": {
       "title": "Pragyan",
       "what": "Шестиколёсный ровер ISRO, съезжающий по трапу Vikram.",
@@ -3048,6 +3063,9 @@
     "/images/missions/thumbnails/beresheet_webp": {
       "title": "Beresheet"
     },
+    "/images/missions/thumbnails/blue-ghost-m1_webp": {
+      "title": "Blue Ghost Mission 1"
+    },
     "/images/missions/thumbnails/blue-moon-mk1_webp": {
       "title": "Blue Moon MK1"
     },
@@ -3126,6 +3144,9 @@
     "/images/missions/thumbnails/giotto_webp": {
       "title": "Giotto"
     },
+    "/images/missions/thumbnails/hakuto-r-m1_webp": {
+      "title": "Hakuto-R Mission 1"
+    },
     "/images/missions/thumbnails/hayabusa1_webp": {
       "title": "Hayabusa"
     },
@@ -3144,11 +3165,17 @@
     "/images/missions/thumbnails/im-1_webp": {
       "title": "IM-1"
     },
+    "/images/missions/thumbnails/im-2_webp": {
+      "title": "IM-2"
+    },
     "/images/missions/thumbnails/insight_webp": {
       "title": "InSight"
     },
     "/images/missions/thumbnails/inspiration4_webp": {
       "title": "Inspiration4"
+    },
+    "/images/missions/thumbnails/ispace-m2_webp": {
+      "title": "Hakuto-R Mission 2 RESILIENCE"
     },
     "/images/missions/thumbnails/juice_webp": {
       "title": "JUICE"
@@ -3266,6 +3293,9 @@
     },
     "/images/missions/thumbnails/parker-solar-probe_webp": {
       "title": "Parker Solar Probe"
+    },
+    "/images/missions/thumbnails/peregrine-m1_webp": {
+      "title": "Peregrine Mission One"
     },
     "/images/missions/thumbnails/perseverance_webp": {
       "title": "Perseverance"

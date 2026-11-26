@@ -135,8 +135,15 @@
     '/iss',
     '/tiangong',
     '/fly',
+    '/plan',
   ];
-  let footerInFlow = $derived(!SCENE_FOOTER_ROUTES.includes(seoRoute));
+  // Pages that scroll inside their own full-height pane (the /science layout): the window never
+  // scrolls, so an in-flow strip would sit below the fold behind a second scroll. They float it.
+  const PANE_FOOTER_PREFIXES = ['/science'];
+  let footerInFlow = $derived(
+    !SCENE_FOOTER_ROUTES.includes(seoRoute) &&
+      !PANE_FOOTER_PREFIXES.some((p) => seoRoute === p || seoRoute.startsWith(`${p}/`)),
+  );
   let footerCompact = $derived(
     !footerInFlow && (narrow1000 || (narrowExplore && COMPACT_FOOTER_ROUTES.includes(seoRoute))),
   );

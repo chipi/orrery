@@ -381,3 +381,19 @@ for (const [route, label] of [
     });
   }
 }
+
+// /science and /plan scroll inside their own full-height pane: the window itself must never
+// scroll (an in-flow strip below that pane made a second, 72 px scroll and hid the links below
+// the fold). They keep the floating strip, inside the viewport.
+test.describe('inner-scroll pages keep the floating strip — 1280x720 non-touch', () => {
+  test.use({ viewport: { width: 1280, height: 720 }, hasTouch: false, isMobile: false });
+  for (const path of ['/science', '/science/orbits', '/plan']) {
+    test(`${path}: one scroll, and the strip sits inside the viewport`, async ({ page }) => {
+      await page.goto(path, { waitUntil: 'networkidle' });
+      const doc = await page.evaluate(() => document.documentElement.scrollHeight);
+      expect(doc).toBeLessThanOrEqual(720);
+      const f = await box(page.locator('.footer-menu'));
+      expect(f.y + f.height).toBeLessThanOrEqual(720);
+    });
+  }
+});

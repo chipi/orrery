@@ -612,6 +612,18 @@
     "tagline": "First mission to the Jupiter Trojans"
   },
   {
+    "id": "mmx",
+    "name": "MMX",
+    "category": "orbiter",
+    "agency": "JAXA",
+    "country": "Japan",
+    "era": "2011-now",
+    "epoch": "commercial-era",
+    "status": "ACTIVE",
+    "first_flight": "2026-10-19",
+    "tagline": "JAXA's Phobos sample-return spacecraft, carrying the CNES/DLR rover Idefix"
+  },
+  {
     "id": "dawn",
     "name": "Dawn",
     "category": "orbiter",

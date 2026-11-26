@@ -49,8 +49,7 @@ const FLY_CRAFT: Record<string, readonly [string, string]> = {
   maven: ['orbiters', 'maven'],
   mangalyaan: ['orbiters', 'mangalyaan'],
   'hope-probe': ['orbiters', 'hope'],
-  // MMX: box bus with two wings, like Mars Express.
-  mmx: ['orbiters', 'mars-express'],
+  mmx: ['mars-orbiters', 'mmx'],
   mariner4: ['orbiters', 'mariner-4'],
   mariner2: ['mars-orbiters', 'mariner-2'],
   mro: ['mars-orbiters', 'mro'],

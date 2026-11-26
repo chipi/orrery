@@ -1159,6 +1159,77 @@ function buildEscapade(): THREE.Group {
   return g;
 }
 
+// ─── MMX ─────────────────────────────────────────────────────────────────────────────────────
+
+function buildMmx(): THREE.Group {
+  const P = palette();
+  const g = new THREE.Group();
+  // From the press kit's configuration page (JAXA, 2026-09-17; 5.3 m high, 4.5 m deep, 9.0 m
+  // across the arrays), read at about 63 px/m: four splayed legs on 0.6 m pads 3.8 m apart; the
+  // exploration module, 3.3 x 1.75 x 2.5 m, from 1.0 m up, with the 1.75 m high-gain dish on one
+  // face; the narrower return module above it to 4.85 m, orange-blanketed tanks on its flanks and
+  // a silver tank standing in its middle; thruster cones at its top corners and on the shoulders;
+  // two wings of two by three panels, 2.4 x 4.1 m each, level at 2.1 m.
+  const y0 = 1.0;
+  const EH = 1.75;
+  const EW = 3.3;
+  const ED = 2.5;
+  mli(g, P.gold, EW, EH, ED, 0, y0 + EH / 2, 0);
+  seams(g, P.tape, EW, EH, ED, 0, y0 + EH / 2, 0, 4, 2, 0.03);
+  // the propulsion module's engine between the legs
+  cyl(g, P.dark, 0.18, 0.36, 0.5, 0, y0 - 0.25, 0, 24);
+  ring(g, P.amber, 0.55, 0.06, y0 - 0.02);
+  // legs: a main strut from each bottom corner and a brace from the side, to a round pad
+  for (const sx of [-1, 1])
+    for (const sz of [-1, 1]) {
+      const pad = V(sx * 1.9, 0.08, sz * 1.9);
+      strut(g, P.dark, V(sx * 1.3, y0, sz * 1.0), pad, 0.07, 10);
+      strut(g, P.dark, V(sx * (EW / 2), y0 + 0.7, sz * 0.5), pad, 0.05, 10);
+      strut(g, P.dark, V(sx * 0.7, y0, sz * (ED / 2)), pad, 0.05, 10);
+      cyl(g, P.alu, 0.3, 0.3, 0.08, pad.x, 0.04, pad.z, 24);
+    }
+  // high-gain dish on the +z face, a smaller one on the return module
+  // a dark dish seen into its bowl: both faces drawn
+  const dishDark = P.dark.clone();
+  dishDark.side = THREE.DoubleSide;
+  const hga = foilDish(P, 0.87, dishDark, 0.008, 0.28);
+  aim(hga, V(0, y0 + EH / 2, ED / 2 + 0.05), V(0, 0, 1));
+  g.add(hga);
+  // the sample return capsule's round hatch and the rover on the -z face
+  cyl(g, P.orange, 0.36, 0.36, 0.08, 0, y0 + 0.4, -ED / 2 - 0.04, 24).rotation.x = Math.PI / 2;
+  sphere(g, P.cream, 0.28, 0, y0 + 0.4, -ED / 2 - 0.1).scale.z = 0.5;
+  box(g, P.silver, 0.42, 0.23, 0.38, 0.95, y0 + 0.3, -ED / 2 - 0.2);
+  // return module: two blocks either side of the central tank, blanketed tanks on the flanks
+  const top = 4.85;
+  const RH = top - (y0 + EH);
+  const ry = y0 + EH + RH / 2;
+  for (const s of [-1, 1]) {
+    mli(g, P.gold, 0.6, RH, 1.8, s * 0.55, ry, 0);
+    const t = sphere(g, P.orange, 0.42, s * 1.05, ry + 0.15, 0);
+    t.geometry = crinkle(t.geometry, 0.02);
+  }
+  cyl(g, P.silver, 0.24, 0.24, RH - 0.1, 0, ry, 0, 24);
+  box(g, P.gold, 0.5, 0.12, 1.8, 0, top - 0.06, 0);
+  const d2 = foilDish(P, 0.3, dishDark, 0.004, 0.3);
+  aim(d2, V(-0.55, ry + 0.2, 0.95), V(0, 0, 1));
+  g.add(d2);
+  // thruster cones, exits up: the return module's corners and the exploration module's shoulders
+  for (const sx of [-1, 1])
+    for (const sz of [-1, 1]) {
+      cyl(g, P.line, 0.13, 0.05, 0.45, sx * 0.65, top + 0.225, sz * 0.6, 16);
+      cyl(g, P.line, 0.11, 0.04, 0.4, sx * 1.1, y0 + EH + 0.2, sz * 0.95, 16);
+    }
+  // two wings level at 2.1 m off the short sides: 9.0 m tip to tip
+  const wy = 2.1;
+  for (const s of [1, -1] as const) {
+    strut(g, P.alu, V(s * (EW / 2), wy, 0), V(s * 2.1, wy, 0), 0.04, 8);
+    const w = wing(g, P, 2.1, 2, 1.17, 4.1, s, { cols: 3, rows: 3, cell: P.cellDark });
+    w.rotation.x = -Math.PI / 2;
+    w.position.y = wy;
+  }
+  return g;
+}
+
 const REF = (l: string, u: string): ShowcaseRef => ({ l, u });
 const WP = (page: string, what: string): ShowcaseRef =>
   REF(
@@ -1194,6 +1265,26 @@ function make(
 }
 
 export const SHOWCASE: Record<string, ShowcaseModel> = {
+  mmx: make(
+    buildMmx,
+    5.3,
+    "JAXA's press kit gives 5.3 m high as configured for landing, feet to the thruster tips; the modules' own heights, the leg splay and the tank and dish sizes are read from its configuration drawing.",
+    3.3,
+    [
+      REF(
+        'MMX press kit (JAXA, 2026-09-17), p.34 configuration: height 5.3 m, depth 4.5 m, width 9.0 m across the solar array paddles; views from -Z, -X and +X',
+        'https://fanfun.jaxa.jp/countdown/mmx_h3f10/files/mmx_press-kit_en_20260917.pdf',
+      ),
+      REF(
+        'MMX — JAXA mission site (the three modules: propulsion, exploration, return)',
+        'https://www.mmx.jaxa.jp/en/mission/',
+      ),
+      WC(
+        'MMX_spacecraft_(scale_model)_behind_view_in_1F_atrium_of_JA2024_at_Tokyo_Big_Sight_October_19,_2024.jpg',
+        'scale model, rear view (legs, wings, gold blanket)',
+      ),
+    ],
+  ),
   escapade: make(
     buildEscapade,
     3.85,

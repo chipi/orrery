@@ -1,0 +1,60 @@
+{
+  "id": "mmx",
+  "name": "MMX",
+  "category": "orbiter",
+  "agency": "JAXA",
+  "country": "Japan",
+  "manufacturer": "Mitsubishi Electric",
+  "first_flight": "2026-10-19",
+  "status": "ACTIVE",
+  "era": "2011-now",
+  "epoch": "commercial-era",
+  "best_known_for": "Aims to bring back the first sample from the Martian system, taken from the moon Phobos",
+  "credit": "MMX (Martian Moons eXploration): JAXA's mission to bring back at least 10 g from Phobos; the spacecraft was developed by Mitsubishi Electric (JAXA MMX press kit, 2026-09-17). Launched 2026-10-19 at 19:41:03 UTC (04:41:03 JST on 2026-10-20) on H3 flight 10 (H3-24L) from the Yoshinobu Launch Complex at Tanegashima; separation was confirmed 71 min 13 s after liftoff (JAXA launch result, 2026-10-20). JAXA reported the initial critical operations phase complete on 2026-10-21: solar array paddle deployment, three-axis attitude control and release of the medium-gain antenna hold-down. Mass: 4,480 kg at launch, with 1,840 kg of propellant in the propulsion module and 1,190 kg in the return module (press kit; Wikipedia gives the same 4,480 kg). Size: height 5.3 m, depth 4.5 m, width 9.0 m (press kit configuration page); the JAXA mission site lists the same numbers as height 5.3 m, length 9.0 m and width 4.5 m. Neither says whether the 9.0 m is the span of the solar array paddles, although the press kit drawing shows it across them, so specs list it as width. Schedule (JAXA mission site and press kit): arrival in the Martian system in 2027, a quasi-satellite orbit around Phobos, two soft landings (the rover first, then the spacecraft), a Deimos observation in the final phase, departure in 2030, and the return capsule separating in 2031 for recovery in Australia. Rover: IDEFIX, built jointly by DLR and CNES, 25 kg including 2.5 kg of science payload, 231 x 376 x 415 mm, about 100 days on the surface at a typical speed near 1 mm/s (DLR facts and figures). DLR's launch news gives its landing as around the turn of 2028/2029, while the facts page lists 2029. DLR reported on 2026-11-10 that Idefix had woken up in flight and all systems worked. Source conflicts: Wikipedia calls the rover lighter than 30 kg, DLR gives 25 kg (DLR used); the press kit puts Phobos at 23 km across and DLR at 27 km, neither shown here. The newest items found are JAXA's of 2026-10-26 (first signal received after separation) and DLR's of 2026-11-10; as of 2026-11-26 no later event was found. The mission file's 'August 2027' arrival was not confirmed by any source read for this card.",
+  "specs": {
+    "mass_kg": 4480,
+    "height_m": 5.3,
+    "depth_m": 4.5,
+    "width_m": 9
+  },
+  "links": [
+    {
+      "l": "MMX — JAXA",
+      "u": "https://www.mmx.jaxa.jp/en/",
+      "t": "core"
+    },
+    {
+      "l": "MMX press kit (2026-09-17) — JAXA",
+      "u": "https://fanfun.jaxa.jp/countdown/mmx_h3f10/files/mmx_press-kit_en_20260917.pdf",
+      "t": "core"
+    },
+    {
+      "l": "Launch result of MMX aboard H3 flight No.10 — JAXA",
+      "u": "https://global.jaxa.jp/press/2026/10/20261020-1_e.html",
+      "t": "core"
+    },
+    {
+      "l": "MMX initial critical operations phase completed — JAXA",
+      "u": "https://global.jaxa.jp/press/2026/10/20261021-1_e.html",
+      "t": "deep"
+    },
+    {
+      "l": "MMX and Idefix: facts and figures — DLR",
+      "u": "https://www.dlr.de/en/research-and-transfer/projects-and-missions/mmx/facts-and-figures",
+      "t": "core"
+    },
+    {
+      "l": "MMX mission successfully launches, Idefix rover on its way — DLR",
+      "u": "https://www.dlr.de/en/latest/news/2026/mmx-mission-successfully-launches-idefix-rover-on-its-way-to-martian-moon-phobos",
+      "t": "intro"
+    },
+    {
+      "l": "Martian Moons eXploration — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Martian_Moons_Exploration",
+      "t": "intro"
+    }
+  ],
+  "linked_missions": [
+    "mmx"
+  ]
+}

@@ -31360,6 +31360,32 @@
       "rejected_by": null,
       "scored_at": "2026-11-26T18:29:10.514Z",
       "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/mmx/01.jpg": {
+      "score": 8,
+      "subject": "Photograph of a scale model of JAXA's MMX spacecraft (not flight hardware) at the JA2024 aerospace exhibition, Tokyo Big Sight, 2024-10-19, rear view.",
+      "category": "spacecraft",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-26T20:13:13.819Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/mmx/02.jpg": {
+      "score": 8,
+      "subject": "Photograph of the Idefix rover (CNES/DLR) folded and ready for flight in a clean room, 2023-09-07, before shipment to Japan.",
+      "category": "spacecraft",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-26T20:13:13.888Z",
+      "scoring_cost_usd": 0
     }
   }
 }

@@ -12,6 +12,7 @@ const FAMILIES = import.meta.glob<Family>(['./showcase/*.ts', '!./showcase/*.tes
 
 /** Mission id → [family file, showcase fleet id or exported builder name]. */
 const FLY_CRAFT: Record<string, readonly [string, string]> = {
+  'apollo-1': ['station-freighters', 'apollo-csm-block-i'],
   apollo7: ['station-freighters', 'apollo-csm-block-ii'],
   apollo8: ['station-freighters', 'apollo-csm-block-ii'],
   apollo9: ['station-freighters', 'apollo-csm-block-ii'],
@@ -75,6 +76,8 @@ const FLY_CRAFT: Record<string, readonly [string, string]> = {
   sputnik1: ['early-stations', 'buildSputnik1'],
   // Scale-out batch 5: the probes in cruise.
   cassini: ['probes', 'cassini'],
+  // Huygens flew stacked on Cassini (its 'huygens' part) until the 2004-12-25 release.
+  huygens: ['probes', 'cassini'],
   galileo: ['probes', 'galileo'],
   rosetta: ['probes', 'rosetta'],
   giotto: ['probes', 'giotto'],

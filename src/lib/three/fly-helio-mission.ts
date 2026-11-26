@@ -113,16 +113,22 @@ export function buildHelioMissionOverlays(deps: HelioMissionDeps): HelioMissionO
       scModel.renderOrder = 999;
       // Rim-light injection (#84 / T6) — Fresnel emissive via onBeforeCompile so the
       // model reads as a glowing silhouette; per-part emissive bump preserves colour
-      // through ACES + bloom.
+      // through ACES + bloom. A showcase craft (the /fleet model) keeps its own colours: the
+      // warm rim and doubled emissive turned every one the same beige at flyby size (Giotto's
+      // dark solar drum, gold bands and white dish all read tan), so it gets a faint neutral
+      // edge that only separates it from black space.
+      const rim = craft
+        ? { color: 0xc8d6ec, strength: 0.22, power: 5.0, emissiveGain: 1 }
+        : { color: 0xffd9a3, strength: 0.5, power: 3.0, emissiveGain: 2 };
       scModel.traverse((obj) => {
         const mesh = obj as THREE.Mesh;
         if (!mesh.isMesh) return;
         const mat = mesh.material as THREE.MeshPhongMaterial;
         if (!mat || mat.userData?.rimPatched) return;
         mat.onBeforeCompile = (shader) => {
-          shader.uniforms.rimColor = { value: new THREE.Color(0xffd9a3) };
-          shader.uniforms.rimStrength = { value: 0.5 };
-          shader.uniforms.rimPower = { value: 3.0 };
+          shader.uniforms.rimColor = { value: new THREE.Color(rim.color) };
+          shader.uniforms.rimStrength = { value: rim.strength };
+          shader.uniforms.rimPower = { value: rim.power };
           shader.fragmentShader = shader.fragmentShader.replace(
             '#include <common>',
             `#include <common>
@@ -142,7 +148,7 @@ export function buildHelioMissionOverlays(deps: HelioMissionDeps): HelioMissionO
               }`,
           );
         };
-        mat.emissiveIntensity = Math.min(1.0, (mat.emissiveIntensity ?? 0.4) * 2.0);
+        mat.emissiveIntensity = Math.min(1.0, (mat.emissiveIntensity ?? 0.4) * rim.emissiveGain);
         mat.userData = { ...(mat.userData ?? {}), rimPatched: true };
         mat.needsUpdate = true;
       });

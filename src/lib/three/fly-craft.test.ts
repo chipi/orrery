@@ -48,3 +48,50 @@ describe('fly-craft map', () => {
     // with the whole suite running.
   }, 30_000);
 });
+
+describe('fly-craft: a mission flies its own craft wherever one exists', () => {
+  it('only a mission with no 3D craft anywhere falls back to the generic glyph', async () => {
+    const fs = await import('node:fs');
+    const path = await import('node:path');
+    const { SUPPORTED_MISSION_IDS } = await import('./interplanetary-spacecraft-models');
+    const { CRUISE_MISSION_IDS } = await import('./lander-cruise-models');
+    const families = import.meta.glob<{ SHOWCASE?: Record<string, unknown> }>([
+      './showcase/*.ts',
+      '!./showcase/*.test.ts',
+    ]);
+    const showcase = new Set<string>();
+    for (const load of Object.values(families))
+      for (const k of Object.keys((await load()).SHOWCASE ?? {})) showcase.add(k);
+    const walk = (d: string): string[] =>
+      fs
+        .readdirSync(d, { withFileTypes: true })
+        .flatMap((e) =>
+          e.isDirectory()
+            ? walk(path.join(d, e.name))
+            : e.name.endsWith('.json') && e.name !== 'index.json'
+              ? [path.join(d, e.name)]
+              : [],
+        );
+    const generic: string[] = [];
+    const missed: string[] = [];
+    for (const f of walk('static/data/missions')) {
+      const m = JSON.parse(fs.readFileSync(f, 'utf8')) as {
+        id?: string;
+        fleet_refs?: { id: string; role?: string }[];
+      };
+      if (!m.id) continue;
+      const own =
+        flyCraftSource(m.id) ||
+        SUPPORTED_MISSION_IDS.includes(m.id) ||
+        CRUISE_MISSION_IDS.includes(m.id);
+      if (own) continue;
+      generic.push(m.id);
+      const model = (m.fleet_refs ?? []).find((r) => r.role !== 'launcher' && showcase.has(r.id));
+      if (model) missed.push(`${m.id} -> ${model.id}`);
+    }
+    // A fleet craft with a showcase model must be mapped (fly-craft.ts FLY_CRAFT).
+    expect(missed).toEqual([]);
+    // No 3D craft exists for these (Starship Flight 5 is drawn by the launch scenes).
+    expect(generic.sort()).toEqual(['escapade', 'starship-flight-5']);
+  }, 60_000);
+});

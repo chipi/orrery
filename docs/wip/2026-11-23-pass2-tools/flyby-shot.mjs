@@ -77,7 +77,7 @@ async function settle(page, met, maxPolls) {
 
 async function shoot(id, [tag, vw, vh]) {
   const m = loadMission(id);
-  const { frames } = plan(m);
+  const frames = plan(m).frames.filter((f) => !process.env.SHOT_ONLY || new RegExp(process.env.SHOT_ONLY).test(f.label));
   const page = await (await b.newContext({ viewport: { width: vw, height: vh } })).newPage();
   const prepare = async () => {
     for (let i = 0; i < 3; i++) {

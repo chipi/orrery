@@ -37,6 +37,10 @@
     {
       "id": "falcon-9",
       "role": "launcher"
+    },
+    {
+      "id": "hera",
+      "role": "spacecraft"
     }
   ],
   "flight": {

@@ -92,6 +92,6 @@ describe('fly-craft: a mission flies its own craft wherever one exists', () => {
     // A fleet craft with a showcase model must be mapped (fly-craft.ts FLY_CRAFT).
     expect(missed).toEqual([]);
     // No 3D craft exists for these (Starship Flight 5 is drawn by the launch scenes).
-    expect(generic.sort()).toEqual(['escapade', 'starship-flight-5']);
+    expect(generic.sort()).toEqual(['starship-flight-5']);
   }, 60_000);
 });

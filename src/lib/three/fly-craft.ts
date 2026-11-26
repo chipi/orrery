@@ -38,8 +38,9 @@ const FLY_CRAFT: Record<string, readonly [string, string]> = {
   messenger: ['inner-solar', 'messenger'],
   magellan: ['inner-solar', 'magellan'],
   akatsuki: ['inner-solar', 'akatsuki'],
-  // Hera: a compact box bus with two wings — the Akatsuki shape is close enough.
-  hera: ['inner-solar', 'akatsuki'],
+  hera: ['small-body', 'hera'],
+  'near-shoemaker': ['small-body', 'near-shoemaker'],
+  escapade: ['mars-orbiters', 'escapade'],
   dart: ['small-body', 'dart'],
   lucy: ['small-body', 'lucy'],
   'psyche-mission': ['small-body', 'psyche-spacecraft'],

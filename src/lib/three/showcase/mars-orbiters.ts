@@ -1101,6 +1101,64 @@ function buildBepiColombo(): THREE.Group {
 
 // ─── Registry ────────────────────────────────────────────────────────────────────────────────
 
+// ─── ESCAPADE (Blue and Gold, one builder) ───────────────────────────────────────────────────
+
+function buildEscapade(): THREE.Group {
+  const P = palette();
+  const g = new THREE.Group();
+  // Rocket Lab Explorer bus 1.20 x 1.65 x 1.09 m (x, y, z), two wings to 4.88 m across, a 0.6 m
+  // dish and a 2 m boom above the bus with the magnetometer and the Langmuir probe.
+  const W = 1.2;
+  const H = 1.65;
+  const D = 1.09;
+  const y0 = 0.12;
+  mli(g, P.blackFoil, W, H, D, 0, y0 + H / 2, 0, 0.012);
+  seams(g, P.tape, W, H, D, 0, y0 + H / 2, 0, 3, 2, 0.03);
+  for (const s of [-1, 1]) {
+    box(g, P.white, 0.02, H * 0.55, D * 0.7, s * (W / 2 + 0.012), y0 + H * 0.4, 0);
+    for (let k = 1; k < 6; k++)
+      box(g, P.aluDark, 0.025, 0.01, D * 0.7, s * (W / 2 + 0.014), y0 + H * 0.125 + k * 0.15, 0);
+  }
+  // main engine and its four attitude thrusters below, the adapter ring
+  cyl(g, P.aluDark, 0.07, 0.13, y0, 0, y0 / 2, 0, 18);
+  cyl(g, P.alu, 0.32, 0.32, 0.04, 0, y0 - 0.02, 0, 32);
+  for (const [sx, sz] of [
+    [1, 1],
+    [-1, 1],
+    [1, -1],
+    [-1, -1],
+  ] as const)
+    cyl(g, P.dark, 0.02, 0.045, 0.08, sx * 0.45, y0 + 0.02, sz * 0.4, 10);
+  // the 0.6 m X-band dish on the +z face, star trackers, sun sensors
+  const d = foilDish(P, 0.3, P.dishFoil, 0.006, 0.25);
+  aim(d, V(0, y0 + H * 0.7, D / 2 + 0.05), V(0, 0, 1));
+  g.add(d);
+  for (const sx of [-0.4, 0.4]) {
+    cyl(g, P.dark, 0.05, 0.05, 0.14, sx, y0 + H - 0.18, -D / 2 - 0.07, 14).rotation.x = Math.PI / 2;
+  }
+  box(g, P.alu, 0.12, 0.08, 0.04, 0.4, y0 + H * 0.3, D / 2 + 0.02);
+  // two wings off the short sides: 4.88 m tip to tip
+  for (const s of [1, -1] as const) {
+    strut(
+      g,
+      P.alu,
+      V(s * (W / 2), y0 + H * 0.55, 0),
+      V(s * (W / 2 + 0.18), y0 + H * 0.55, 0),
+      0.03,
+      8,
+    );
+    const w = wing(g, P, W / 2 + 0.18, 2, 0.8, 1.4, s, { cols: 4, rows: 6 });
+    w.position.y = y0 + H * 0.55;
+  }
+  // 2 m boom above the bus: the Langmuir probe part way up, the magnetometer at the tip
+  const top = y0 + H;
+  strut(g, P.alu, V(-0.3, top, -0.2), V(-0.3, top + 2.0, -0.2), 0.018, 8);
+  box(g, P.white, 0.1, 0.1, 0.1, -0.3, top + 2.03, -0.2);
+  box(g, P.dark, 0.08, 0.05, 0.08, -0.3, top + 1.1, -0.2);
+  cyl(g, P.alu, 0.012, 0.012, 0.35, -0.3, top + 1.1, -0.02, 6).rotation.x = Math.PI / 2;
+  return g;
+}
+
 const REF = (l: string, u: string): ShowcaseRef => ({ l, u });
 const WP = (page: string, what: string): ShowcaseRef =>
   REF(
@@ -1136,6 +1194,18 @@ function make(
 }
 
 export const SHOWCASE: Record<string, ShowcaseModel> = {
+  escapade: make(
+    buildEscapade,
+    3.85,
+    'No published height for the craft as it stands: the 1.65 m bus axis upright on its engine and adapter, with the 2 m magnetometer boom raised above it; the radiator and star-tracker sizes are judged.',
+    1.65,
+    [
+      WP(
+        'ESCAPADE',
+        'two identical spacecraft, bus 1.20 x 1.65 x 1.09 m, 4.88 m across the deployed arrays, 0.6 m high-gain dish, 2 m boom with the magnetometer and the Langmuir probe',
+      ),
+    ],
+  ),
   'exomars-tgo': make(
     buildTgo,
     TGO_H,

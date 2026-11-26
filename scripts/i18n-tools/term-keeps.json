@@ -5159,6 +5159,10 @@
     "why": "read 2026-11-04 (chunk 2): a plain word for the surface material (soil, surface material, gravel) or left out",
     "tr": "7992545533"
   },
+  "rendezvous|ar|fleet/orbiter/near-shoemaker.json :: description": {
+    "why": "proper name (mission name in English)",
+    "tr": "09cabea57b"
+  },
   "rendezvous|ar|programs/gemini.json :: goals.1.md": {
     "why": "variant: اللقاء المداري",
     "tr": "8ede5d816d"
@@ -5187,6 +5191,22 @@
     "why": "generic meeting point (Treffpunkt), not a spacecraft rendezvous",
     "tr": "647987ca07"
   },
+  "rendezvous|fr|fleet/orbiter/near-shoemaker.json :: description": {
+    "why": "proper name (mission name in English)",
+    "tr": "4995630fe0"
+  },
+  "rendezvous|hi|fleet/orbiter/near-shoemaker.json :: description": {
+    "why": "proper name (mission name in English)",
+    "tr": "8e70b9cf90"
+  },
+  "rendezvous|ja|fleet/orbiter/near-shoemaker.json :: description": {
+    "why": "proper name (mission name in English)",
+    "tr": "c0511d347c"
+  },
+  "rendezvous|ko|fleet/orbiter/near-shoemaker.json :: description": {
+    "why": "proper name (mission name in English)",
+    "tr": "e33e1b1c48"
+  },
   "rendezvous|ru|essays/going-to-mars.json :: body.12.md": {
     "why": "variant: встретиться (verb, with \"на орбите\")",
     "tr": "d31913e23b"
@@ -5195,13 +5215,25 @@
     "why": "variant: точке встречи",
     "tr": "d79e42fde6"
   },
+  "rendezvous|ru|fleet/orbiter/near-shoemaker.json :: description": {
+    "why": "proper name (mission name in English)",
+    "tr": "bddd9371d6"
+  },
   "rendezvous|ru|programs/starship.json :: goals.3.md": {
     "why": "variant: встречающихся ... на орбите (accepted встреча на орбите)",
     "tr": "eb27d62f6b"
   },
+  "rendezvous|sr-Cyrl|fleet/orbiter/near-shoemaker.json :: description": {
+    "why": "proper name (mission name in English)",
+    "tr": "3c1c88e8a1"
+  },
   "rendezvous|sr-Cyrl|programs/soyuz.json :: the_land.0.md": {
     "why": "variant: састане у орбити (accepted сусрет у орбити)",
     "tr": "e1790d38fe"
+  },
+  "rendezvous|zh-CN|fleet/orbiter/near-shoemaker.json :: description": {
+    "why": "proper name (mission name in English)",
+    "tr": "34f13b2075"
   },
   "rover|ar|fleet/rover/curiosity.json :: best_known_for": {
     "why": "read 2026-11-04 (chunk 1): a generic word for the craft (probe, spacecraft, module, vehicle) in running text",

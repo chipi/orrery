@@ -21356,5 +21356,40 @@
     320,
     1280,
     1920
+  ],
+  "/images/fleet-galleries/near-shoemaker/01": [
+    320,
+    640,
+    694
+  ],
+  "/images/fleet-galleries/near-shoemaker/02": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/fleet-galleries/escapade/01": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/fleet-galleries/escapade/02": [
+    320,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/fleet-galleries/hera/01": [
+    320,
+    640,
+    1020
+  ],
+  "/images/fleet-galleries/hera/02": [
+    320,
+    1280,
+    2048,
+    2500
   ]
 }

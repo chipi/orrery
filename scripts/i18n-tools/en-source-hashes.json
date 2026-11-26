@@ -3584,6 +3584,12 @@
     "description": "5898e946b4",
     "tagline": "72e4ffe157"
   },
+  "fleet/orbiter/escapade.json": {
+    "best_known_for": "d4b1af8a1a",
+    "description": "3e73bd232f",
+    "name": "e5be8d2898",
+    "tagline": "44c8d1fccc"
+  },
   "fleet/orbiter/europa-clipper.json": {
     "best_known_for": "a4c5cc457d",
     "description": "4e714b5ee2",
@@ -3618,6 +3624,12 @@
     "description": "bdb70e5b25",
     "name": "6b3a89892d",
     "tagline": "78407539a7"
+  },
+  "fleet/orbiter/hera.json": {
+    "best_known_for": "d2cceddbde",
+    "description": "27194ce5d3",
+    "name": "31f2f540b9",
+    "tagline": "f8a92c686f"
   },
   "fleet/orbiter/hope.json": {
     "best_known_for": "d4be67301f",
@@ -3756,6 +3768,12 @@
     "description": "49f67d9deb",
     "name": "45da8da847",
     "tagline": "13092ce25c"
+  },
+  "fleet/orbiter/near-shoemaker.json": {
+    "best_known_for": "739e0bc61d",
+    "description": "cbd054a4a1",
+    "name": "f89bc039e6",
+    "tagline": "a6f23b2103"
   },
   "fleet/orbiter/new-horizons.json": {
     "best_known_for": "d1e1784bd5",

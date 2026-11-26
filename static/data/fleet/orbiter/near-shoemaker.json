@@ -1,0 +1,42 @@
+{
+  "id": "near-shoemaker",
+  "name": "NEAR Shoemaker",
+  "category": "orbiter",
+  "agency": "NASA / Johns Hopkins APL",
+  "country": "USA",
+  "manufacturer": "Johns Hopkins APL",
+  "first_flight": "1996-02-17",
+  "status": "RETIRED",
+  "era": "1981-2011",
+  "epoch": "iss-assembly",
+  "best_known_for": "First spacecraft to orbit an asteroid and to land on one",
+  "credit": "NEAR Shoemaker: the first mission of NASA's Discovery program, launched 1996-02-17 at 20:43:27 UT on a Delta 7925-8 (no. D232) from Cape Canaveral Launch Complex 17B (NASA mission page; Wikipedia). Mission design and management NASA / GSFC / APL (NASA); Wikipedia and NSSDCA describe it as a robotic probe developed by the Johns Hopkins University Applied Physics Laboratory for NASA, APL's first. Launch mass 805 kg (1,775 lb) (NASA mission page); dry mass 487 kg (NSSDCA, Wikipedia), which is not shown. NASA numbers six experiments: the multi-spectral imager, magnetometer, near-infrared spectrometer, X-ray/gamma-ray spectrometer and laser rangefinder, plus a radio science and gravimetry experiment; Wikipedia and NSSDCA list the same five instruments and treat radio science as a separate experiment, so no instrument count is given in specs. NSSDCA and Wikipedia give the body as an octagonal prism about 1.7 m on a side with four 1.8 x 1.2 m solar panels and a 1.5 m high-gain antenna; \"on a side\" is ambiguous for an octagon, so no dimensions are in specs. Mathilde flyby 1997-06-27 at 12:56 UT, about 1,200 km (NASA; Wikipedia 1,212 km); Earth gravity assist 1998-01-23 at 07:23 UT, about 540 km (NASA); an aborted engine burn on 1998-12-20 forced a backup trajectory and a first Eros flyby on 1998-12-23 (NASA, NSSDCA). Orbit insertion around 433 Eros 2000-02-14 at 15:33 UT, roughly a year later than planned, the first human-made object to orbit an asteroid; renamed NEAR Shoemaker on 2000-03-14 for the geologist Eugene M. Shoemaker (NASA). About 160,000 images returned (NASA). Touchdown on Eros 2001-02-12, just south of the saddle-shaped Himeros, at about 4 mph (6.4 km/h), although the craft was not designed as a lander (NASA). Source conflict: NASA's mission page gives the touchdown time as 19:44 UT, NSSDCA gives 20:01:52 UT and Wikipedia 20:01 UTC; no time is shown. Last contact 2001-02-28; NASA's attempt to contact it on 2002-12-10 failed (NASA). Status RETIRED: the mission ended with that last contact. Checked 2026-11-26.",
+  "specs": {
+    "mass_kg": 805
+  },
+  "links": [
+    {
+      "l": "NEAR Shoemaker — NASA Science",
+      "u": "https://science.nasa.gov/mission/near-shoemaker/",
+      "t": "core"
+    },
+    {
+      "l": "NEAR Shoemaker — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/NEAR_Shoemaker",
+      "t": "intro"
+    },
+    {
+      "l": "NEAR Shoemaker — NASA NSSDCA",
+      "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1996-008A",
+      "t": "deep"
+    },
+    {
+      "l": "NEAR mission archive — Johns Hopkins APL",
+      "u": "https://near.jhuapl.edu/",
+      "t": "deep"
+    }
+  ],
+  "linked_missions": [
+    "near-shoemaker"
+  ]
+}

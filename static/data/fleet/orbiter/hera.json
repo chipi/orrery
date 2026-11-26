@@ -1,0 +1,42 @@
+{
+  "id": "hera",
+  "name": "Hera",
+  "category": "orbiter",
+  "agency": "ESA",
+  "country": "Multi (Europe)",
+  "manufacturer": "OHB",
+  "first_flight": "2024-10-07",
+  "status": "ACTIVE",
+  "era": "2011-now",
+  "epoch": "commercial-era",
+  "best_known_for": "The first spacecraft to stay with a binary asteroid, surveying the crater NASA's DART left",
+  "credit": "Hera: ESA's first planetary defence mission, the follow-up to NASA's DART impact on Dimorphos (2022-09-26). Hera and its two CubeSats were built by a consortium of 18 ESA states led by OHB in Germany (ESA release of 2026-11-25). Launched 2024-10-07 at 14:52 UTC on a SpaceX Falcon 9 from Cape Canaveral, SLC-40 (Wikipedia; the ESA media kit gives the date, not the pad or time). Mars gravity assist 2025-03-12 at about 5,000 km (Wikipedia; the media kit confirms the date). Mass: about 1,081 kg fully fuelled (ESA media kit, November 2026). Source conflict: Wikipedia's infobox gives 1,128 kg launch mass and 350 kg dry, while its text gives about 1,214 kg launch and 696 kg dry, and the Hera mission file gives 1,128 kg including the CubeSats; ESA's figure is used and the others are not shown. Size: the body is about 1.6 m across per side (ESA media kit) and 1.6 x 1.6 x 1.7 m (ESA, March 2024 release), with solar arrays that stretch 11.5 m when deployed (media kit; Wikipedia says 11.4 m); no dimensions are in specs because the sources do not label the axes. Payload (ESA media kit): two Asteroid Framing Cameras, the HyperScout H imager, the Thermal Infrared Imager TIRI supplied by JAXA, a Planetary Altimeter, a Spacecraft Monitoring Camera, and the Juventas (Luxembourg-led) and Milani (Italian-led) CubeSats. Targets: Didymos about 730 m and Dimorphos about 151 m across (ESA). Arrival (Wikipedia): braking manoeuvres in October 2026 and a rectangular orbit from 2026-11-11. ESA's release of 2026-11-25 reports the spacecraft flying 25 to 30 km from the pair, a stadium-sized crater across the width of Dimorphos, a chaotic tumble and hundreds of orbiting boulders, a closer approach to about 13 km in December 2026 and CubeSat deployment planned for January 2027. Status ACTIVE: ESA's release of 2026-11-25 reports the mission under way at the asteroids; checked 2026-11-26. The ESA landing page https://www.esa.int/Space_Safety/Hera, which the Hera mission entry links, no longer resolves (404 on 2026-11-26, and its new address redirects to itself), so the links here point to ESA's media kit and press release.",
+  "specs": {
+    "mass_kg": 1081
+  },
+  "links": [
+    {
+      "l": "Hera media kit — ESA",
+      "u": "https://www.esa.int/articles/about-us/directorates/operations/space-safety/hera/hera-media-kit",
+      "t": "core"
+    },
+    {
+      "l": "Hera reveals stadium-sized asteroid crater from spacecraft impact — ESA",
+      "u": "https://www.esa.int/articles/about-us/directorates/operations/space-safety/hera/hera-reveals-stadium-sized-asteroid-crater-left-after-spacecraft-impact",
+      "t": "core"
+    },
+    {
+      "l": "Hera (space mission) — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Hera_(space_mission)",
+      "t": "intro"
+    },
+    {
+      "l": "Hera asteroid mission vs. absolutely nothing — ESA",
+      "u": "https://www.esa.int/media/hera-asteroid-mission-vs-absolutely-nothing",
+      "t": "deep"
+    }
+  ],
+  "linked_missions": [
+    "hera"
+  ]
+}

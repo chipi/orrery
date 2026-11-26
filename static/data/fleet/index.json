@@ -552,6 +552,18 @@
     "tagline": "First planetary defense impactor (Dimorphos)"
   },
   {
+    "id": "escapade",
+    "name": "ESCAPADE",
+    "category": "orbiter",
+    "agency": "NASA / UC Berkeley SSL",
+    "country": "USA",
+    "era": "2011-now",
+    "epoch": "commercial-era",
+    "status": "ACTIVE",
+    "first_flight": "2025-11-13",
+    "tagline": "Twin Blue and Gold orbiters bound for Mars to study its magnetosphere from two places at once"
+  },
+  {
     "id": "europa-clipper",
     "name": "Europa Clipper",
     "category": "orbiter",
@@ -562,6 +574,18 @@
     "status": "ACTIVE",
     "first_flight": "2024-10-14",
     "tagline": "First mission dedicated to characterising Europa's habitability"
+  },
+  {
+    "id": "hera",
+    "name": "Hera",
+    "category": "orbiter",
+    "agency": "ESA",
+    "country": "Multi (Europe)",
+    "era": "2011-now",
+    "epoch": "commercial-era",
+    "status": "ACTIVE",
+    "first_flight": "2024-10-07",
+    "tagline": "ESA's first planetary defence mission, surveying Didymos and the crater left by NASA's DART"
   },
   {
     "id": "latitude-zephyr",
@@ -1510,6 +1534,18 @@
     "status": "FAILED",
     "first_flight": "1969",
     "tagline": "Soviet Moon rocket; four launches all failed"
+  },
+  {
+    "id": "near-shoemaker",
+    "name": "NEAR Shoemaker",
+    "category": "orbiter",
+    "agency": "NASA / Johns Hopkins APL",
+    "country": "USA",
+    "era": "1981-2011",
+    "epoch": "iss-assembly",
+    "status": "RETIRED",
+    "first_flight": "1996-02-17",
+    "tagline": "First spacecraft to orbit an asteroid and the first to land on one, 433 Eros"
   },
   {
     "id": "new-glenn",

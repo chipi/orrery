@@ -606,9 +606,178 @@ function buildClipper(): THREE.Group {
   return g;
 }
 
+// ---------------------------------------------------------------------------------------------
+// NEAR Shoemaker: octagonal prism about 1.7 m, four 1.8 x 1.2 m arrays in a windmill, 1.5 m dish
+// ---------------------------------------------------------------------------------------------
+
+/** An octagonal prism, axis along y, `R` to the face centres, crinkled foil. */
+function octPrism(
+  g: THREE.Object3D,
+  m: Mat,
+  R: number,
+  y0: number,
+  h: number,
+  amp: number,
+): THREE.Mesh {
+  const rv = R / Math.cos(Math.PI / 8);
+  const geo = crinkle(
+    new THREE.CylinderGeometry(rv, rv, h, 8, Math.max(2, Math.round(h / 0.2))),
+    amp,
+  );
+  const mesh = new THREE.Mesh(geo, m);
+  mesh.rotation.y = Math.PI / 8;
+  mesh.position.y = y0 + h / 2;
+  return add(g, mesh);
+}
+
+function buildNear(): THREE.Group {
+  const g = new THREE.Group();
+  const M = pal(0x1a2350);
+  const R = 0.85; // about 1.7 m across the flats
+  const y0 = 0.2; // aft-deck instruments below
+  const H = 1.7;
+  const top = y0 + H;
+  octPrism(g, M.gold, R, y0, H, 0.012);
+  for (const y of [y0, top]) cyl(g, M.dark, R * 1.04, R * 1.04, y - 0.015, y + 0.015, 0, 0, 8);
+  // radiator panels on two faces
+  for (const a of [Math.PI / 2, -Math.PI / 2]) {
+    const r = radiator(g, M, 0.55, 0.9, 7);
+    r.position.set(Math.sin(a) * (R + 0.02), y0 + H * 0.5, Math.cos(a) * (R + 0.02));
+    r.rotation.y = a;
+  }
+
+  // forward deck: the fixed 1.5 m X-band dish with the magnetometer on its feed, the X-ray solar
+  // monitor beside it
+  cyl(g, M.metal, 0.22, 0.26, top, top + 0.12);
+  const d = dishAt(g, M.dbl, M.metal, 0.75, 0.2, V(0, top + 0.12, 0), V(0, 1, 0), 0.62, 12);
+  cyl(d, M.white, 0.06, 0.05, 0.62, 0.74, 0, 0, 12);
+  box(g, M.metal, 0.16, 0.14, 0.16, 0.55, top + 0.07, 0.35);
+
+  // four 1.8 x 1.2 m arrays, a windmill around the forward deck, cells facing +y with the dish
+  for (let k = 0; k < 4; k++) {
+    const a = (k / 4) * TAU + Math.PI / 4;
+    const arm = new THREE.Group();
+    arm.rotation.y = a;
+    arm.position.y = top - 0.08;
+    add(g, arm);
+    const p = cellPanel(arm, M, 1.2, 1.8, 6, 8);
+    p.rotation.x = -Math.PI / 2;
+    p.rotation.z = 0.18; // the windmill twist
+    p.position.set(0, 0, R + 0.95);
+    strut(arm, M.titan, V(0, 0, R * 0.95), V(0, 0, R + 0.08), 0.03, 6);
+  }
+
+  // aft deck: the multispectral imager, the near-infrared spectrometer, the laser rangefinder
+  // and the X-ray / gamma-ray spectrometer heads, all looking down -y
+  cyl(g, M.dark, 0.09, 0.09, y0 - 0.2, y0, -0.3, 0.2, 16);
+  box(g, M.metal, 0.3, 0.18, 0.22, 0.25, y0 - 0.09, 0.25);
+  cyl(g, M.dark, 0.07, 0.07, y0 - 0.16, y0, 0.25, -0.3, 14);
+  box(g, M.white, 0.24, 0.16, 0.24, -0.25, y0 - 0.08, -0.3);
+  for (const [x, z] of [
+    [R * 0.7, R * 0.7],
+    [-R * 0.7, R * 0.7],
+    [R * 0.7, -R * 0.7],
+    [-R * 0.7, -R * 0.7],
+  ]) {
+    const t = pod(g, M, 0.05);
+    t.position.set(x, y0 + 0.1, z);
+    t.rotation.x = Math.PI / 2;
+  }
+  return g;
+}
+
+// ---------------------------------------------------------------------------------------------
+// Hera: box bus 1.6 x 1.6 x 1.7 m, 11.5 m across the arrays (ESA), dish on one face
+// ---------------------------------------------------------------------------------------------
+
+function buildHera(): THREE.Group {
+  const g = new THREE.Group();
+  const M = pal(0x18244c);
+  const W = 1.6;
+  const H = 1.7;
+  const y0 = 0.25; // adapter cone and engine below
+  foilBlock(g, M.gold, M.tape, W, H, W, 0, y0 + H / 2, 0, 0.012);
+  box(g, M.dark, W + 0.03, 0.04, W + 0.03, 0, y0 + 0.02, 0);
+  box(g, M.dark, W + 0.03, 0.04, W + 0.03, 0, y0 + H - 0.02, 0);
+  // the adapter cone and main engine under the central tube
+  cyl(g, M.metal, 0.55, 0.42, y0 - 0.02, y0, 0, 0, 32);
+  cyl(g, M.titan, 0.08, 0.16, 0.0, y0 - 0.02, 0, 0, 18);
+  // radiators on the array faces
+  for (const s of [1, -1]) {
+    const r = radiator(g, M, 0.9, 1.0, 8);
+    r.position.set(s * (W / 2 + 0.02), y0 + H * 0.35, 0.3);
+    r.rotation.y = (s * Math.PI) / 2;
+  }
+  // the high-gain dish on the +z face
+  strut(g, M.metal, V(0, y0 + H * 0.6, W / 2), V(0, y0 + H * 0.6, W / 2 + 0.2), 0.05, 8);
+  dishAt(g, M.dbl, M.metal, 0.56, 0.17, V(0, y0 + H * 0.6, W / 2 + 0.22), V(0, 0, 1), 0.42, 12);
+  // the science deck (-z): two framing cameras, thermal infrared imager, hyperspectral imager,
+  // laser altimeter
+  for (const dx of [-0.35, -0.1])
+    cylZ(g, M.dark, 0.06, 0.07, -W / 2 - 0.22, -W / 2, dx, y0 + H * 0.7);
+  box(g, M.metal, 0.26, 0.2, 0.2, 0.3, y0 + H * 0.7, -W / 2 - 0.1);
+  cylZ(g, M.dark, 0.05, 0.05, -W / 2 - 0.25, -W / 2 - 0.2, 0.3, y0 + H * 0.7);
+  box(g, M.white, 0.2, 0.18, 0.16, 0.0, y0 + H * 0.45, -W / 2 - 0.08);
+  box(g, M.metal, 0.18, 0.16, 0.18, -0.4, y0 + H * 0.4, -W / 2 - 0.09);
+  // the two CubeSat deployers (Milani, Juventas) on the top deck, thruster pods at the corners
+  for (const dx of [-0.35, 0.35]) box(g, M.white, 0.28, 0.4, 0.36, dx, y0 + H + 0.2, -0.2);
+  for (const [x, z] of [
+    [1, 1],
+    [-1, 1],
+    [1, -1],
+    [-1, -1],
+  ]) {
+    const p = pod(g, M, 0.05);
+    p.position.set(x * (W / 2 - 0.1), y0 + 0.12, z * (W / 2 + 0.03));
+    p.rotation.y = z > 0 ? 0 : Math.PI;
+  }
+  // two wings of three panels: about 5 m each, 11.5 m tip to tip
+  const pw = 1.603;
+  const ph = 1.33;
+  for (const s of [1, -1]) {
+    const yA = y0 + H * 0.6;
+    strut(g, M.titan, V(s * (W / 2), yA, 0), V(s * (W / 2 + 0.12), yA, 0), 0.03, 8);
+    for (let i = 0; i < 3; i++) {
+      const p = cellPanel(g, M, pw - 0.04, ph, 6, 5);
+      p.position.set(s * (W / 2 + 0.14 + pw * (i + 0.5)), yA, 0);
+    }
+  }
+  return g;
+}
+
 const NASA = (u: string, l: string): ShowcaseRef => ({ l, u });
 
 export const SHOWCASE: Record<string, ShowcaseModel> = {
+  hera: {
+    build: buildHera,
+    heightM: 2.35,
+    heightEstimate:
+      'No published height for the craft as it stands: the 1.7 m bus on its 0.25 m adapter and engine, with the two CubeSat deployers on top; the dish size, instrument positions and deployer sizes are judged, not sourced.',
+    diameterM: 1.6,
+    refs: [
+      NASA(
+        'https://en.wikipedia.org/wiki/Hera_(space_mission)',
+        'Wikipedia (fallback): bus 1.6 x 1.6 x 1.7 m (the 1.7 m height used), two CubeSats (Milani, Juventas)',
+      ),
+      NASA(
+        'https://www.esa.int/articles/about-us/directorates/operations/space-safety/hera/hera-media-kit',
+        'ESA Hera media kit: body about 1.6 m a side, arrays 11.5 m across',
+      ),
+    ],
+  },
+  'near-shoemaker': {
+    build: buildNear,
+    heightM: 2.76,
+    heightEstimate:
+      'No published height: the 1.7 m octagonal bus on a 0.2 m aft deck of instruments, with the 1.5 m dish and its magnetometer on the forward deck; the arrays stand in a windmill around the bus.',
+    diameterM: 1.7,
+    refs: [
+      NASA(
+        'https://en.wikipedia.org/wiki/NEAR_Shoemaker',
+        'Wikipedia (fallback): octagonal prism about 1.7 m on a side (read here as across the flats), four 1.8 x 1.2 m arrays in a windmill, 1.5 m high-gain dish with the magnetometer on its feed, X-ray solar monitor forward, the other instruments aft',
+      ),
+    ],
+  },
   dart: {
     build: buildDart,
     heightM: 2.6,

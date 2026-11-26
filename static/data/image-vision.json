@@ -31282,6 +31282,84 @@
       "rejected_by": null,
       "scored_at": "2026-11-26T17:44:08.218Z",
       "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/near-shoemaker/01.jpg": {
+      "score": 8,
+      "subject": "The NEAR spacecraft in a processing facility at Kennedy Space Center before launch, seen from above, with its white dish antenna on gold struts over a gold-foil body.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-26T18:16:51.254Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/near-shoemaker/02.jpg": {
+      "score": 8,
+      "subject": "Artist's illustration of the NEAR spacecraft at the asteroid Eros, with a gold-foil body, blue solar panels and a white dish antenna.",
+      "category": "spacecraft",
+      "focal_point": {
+        "x": 0.4,
+        "y": 0.45
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-26T18:16:51.259Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/escapade/01.jpg": {
+      "score": 8,
+      "subject": "One of the twin ESCAPADE spacecraft on a work stand at the Astrotech facility near Kennedy Space Center, 22 August 2024, with the second spacecraft behind it.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.4,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-26T18:22:09.302Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/escapade/02.jpg": {
+      "score": 8,
+      "subject": "Illustration from a NASA poster of an ESCAPADE spacecraft over Mars, with a green glow around the planet and translucent blue bands across it.",
+      "category": "spacecraft",
+      "focal_point": {
+        "x": 0.65,
+        "y": 0.55
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-26T18:22:09.497Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/hera/01.jpg": {
+      "score": 8,
+      "subject": "Monochrome image of the asteroid Didymos taken by Hera's Asteroid Framing Camera from 28.5 km away.",
+      "category": "orbital",
+      "focal_point": {
+        "x": 0.49,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-26T18:29:10.511Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/hera/02.jpg": {
+      "score": 8,
+      "subject": "Illustration of ESA's Hera spacecraft with two CubeSats and the Didymos asteroids, as imagined during the mission's study phase.",
+      "category": "spacecraft",
+      "focal_point": {
+        "x": 0.72,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-26T18:29:10.514Z",
+      "scoring_cost_usd": 0
     }
   }
 }

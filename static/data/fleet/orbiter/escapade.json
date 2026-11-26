@@ -1,0 +1,48 @@
+{
+  "id": "escapade",
+  "name": "ESCAPADE",
+  "category": "orbiter",
+  "agency": "NASA / UC Berkeley SSL",
+  "country": "USA",
+  "manufacturer": "Rocket Lab",
+  "first_flight": "2025-11-13",
+  "status": "ACTIVE",
+  "era": "2011-now",
+  "epoch": "commercial-era",
+  "best_known_for": "Twin orbiters sent to Mars after a loiter orbit, by NASA's first powered Earth flyby toward Mars",
+  "credit": "ESCAPADE (Escape and Plasma Acceleration and Dynamics Explorers): two identical spacecraft, Blue and Gold, so one card covers the pair. NASA's Heliophysics Division funds it as part of the SIMPLEx program; the University of California, Berkeley's Space Sciences Laboratory leads it with Rocket Lab (the spacecraft), NASA Goddard, Embry-Riddle Aeronautical University, Advanced Space and Blue Origin as key partners, and Robert Lillis is the principal investigator (NASA mission page; NASA release of 2026-11-09). Launched 2025-11-13 at 3:55 p.m. EST (20:55 UTC in Wikipedia) on Blue Origin's New Glenn NG-2 from Launch Complex 36, Cape Canaveral Space Force Station (NASA mission page). Mass per spacecraft: dry 209 kg (460 lb), fuelled 535 kg (1,179 lb) (NASA mission page; Rocket Lab press kit, hosted by NASA). The press kit gives each spacecraft as 1.20 x 1.65 x 1.09 m stowed and 4.88 x 1.65 x 1.09 m deployed, designed from Rocket Lab's Explorer platform, which Wikipedia repeats; no dimensions are in specs because the sources do not label the axes. Source conflict: the mission's own site (escapade.ssl.berkeley.edu spacecraft page, undated) says about 180 kg dry mass and a Rocket Lab Photon bus, and Wikipedia's text says about 200 kg dry; NASA's and the press kit's 209 kg and Explorer are used. Payload (NASA): an electrostatic analyzer (UC Berkeley), a magnetometer (NASA Goddard), a Langmuir probe (Embry-Riddle) and student visible and infrared cameras (Northern Arizona University). Path (NASA release of 2026-11-09): a loiter orbit around the Sun-Earth Lagrange point L2, then a powered Earth flyby of each spacecraft with a trans-Mars injection burn of about 9 minutes, the first on 2026-11-07 about 1,000 miles up and the second on 2026-11-09 about 650 miles up; NASA says it is the first time it has used a powered Earth flyby to head for Mars. Mars orbit insertion burns are planned for 2027-09-07 and 2027-09-09 and science operations are expected to begin in June 2028 (NASA). Which of Blue and Gold flew first is not stated in the sources read. Status ACTIVE: the NASA mission page lists it as an active mission, and a NASA blog post of 2026-11-23 reports images taken by the second spacecraft after its flyby; checked 2026-11-26.",
+  "specs": {
+    "mass_kg": 535,
+    "dry_mass_kg": 209
+  },
+  "links": [
+    {
+      "l": "ESCAPADE — NASA Science",
+      "u": "https://science.nasa.gov/mission/escapade/",
+      "t": "core"
+    },
+    {
+      "l": "NASA's ESCAPADE completes powered Earth flybys, now en route to Mars — NASA",
+      "u": "https://science.nasa.gov/science-research/heliophysics/nasas-escapade-completes-powered-earth-flybys-now-en-route-to-mars/",
+      "t": "core"
+    },
+    {
+      "l": "ESCAPADE — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/ESCAPADE",
+      "t": "intro"
+    },
+    {
+      "l": "ESCAPADE press kit — Rocket Lab / NASA",
+      "u": "https://assets.science.nasa.gov/content/dam/science/missions/escapade/ESCAPADE%20Press%20Kit.pdf",
+      "t": "deep"
+    },
+    {
+      "l": "ESCAPADE spacecraft — UC Berkeley SSL",
+      "u": "https://escapade.ssl.berkeley.edu/spacecraft/",
+      "t": "deep"
+    }
+  ],
+  "linked_missions": [
+    "escapade"
+  ]
+}

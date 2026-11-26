@@ -52,6 +52,10 @@
     {
       "id": "cape-canaveral-lc-17",
       "role": "launch-site"
+    },
+    {
+      "id": "near-shoemaker",
+      "role": "spacecraft"
     }
   ],
   "flight": {

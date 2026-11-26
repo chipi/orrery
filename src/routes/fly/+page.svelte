@@ -185,7 +185,6 @@
   import { flyVelocitySon } from '$lib/sensory/sonify/fly-velocity';
   import ScienceChip from '$lib/components/ScienceChip.svelte';
   import LaunchScene from '$lib/components/LaunchScene.svelte';
-  import DescentScene from '$lib/components/DescentScene.svelte';
   import {
     descentDue,
     hasReturnProfile,
@@ -194,7 +193,6 @@
   } from '$lib/fly/return-profile';
   import type { DeployProfile } from '$lib/fly/deploy-profile';
   import type { WingedProfile } from '$lib/fly/winged-profile';
-  import CoastScene from '$lib/components/CoastScene.svelte';
   import { getEarthOrbitCoast } from '$lib/orbital/earth-orbit-registry';
   import { preloadFlyCraft } from '$lib/three/fly-craft';
   import { preloadLauncherModel } from '$lib/three/launcher-models';
@@ -715,6 +713,16 @@
       .catch(dataLoadFailed);
   });
   const wingedActive = $derived(showDescent && wingedProfile != null && !descentProfile);
+  // The descent and orbit-coast scenes load on demand (route budget), fetched as soon as the
+  // mission has the act, minutes before it plays, so the act never waits on them.
+  let descentScene: Promise<typeof import('$lib/components/DescentScene.svelte')> | null = null;
+  let coastScene: Promise<typeof import('$lib/components/CoastScene.svelte')> | null = null;
+  const loadDescentScene = () => (descentScene ??= import('$lib/components/DescentScene.svelte'));
+  const loadCoastScene = () => (coastScene ??= import('$lib/components/CoastScene.svelte'));
+  $effect(() => {
+    if (descentProfile) void loadDescentScene().catch(dataLoadFailed);
+    if (earthCoast) void loadCoastScene().catch(dataLoadFailed);
+  });
   function startDeploy(): boolean {
     if (!deployProfile || deployDone) return false;
     deploying = true;
@@ -3607,20 +3615,22 @@
 {/if}
 
 {#if showCoast && earthCoast}
-  <CoastScene
-    coast={earthCoast}
-    missionName={mission.name}
-    agency={mission.agency ?? mission.agency_full ?? ''}
-    {hudHidden}
-    onToggleHud={toggleHud}
-    externalClock={true}
-    t={coastFrac}
-    onComplete={() => {
-      // Deorbit burn → re-entry act. startDescent() dispatches coast→descent
-      // (showCoast falls to false via the reducer).
-      startDescent();
-    }}
-  />
+  {#await loadCoastScene() then { default: CoastScene }}
+    <CoastScene
+      coast={earthCoast}
+      missionName={mission.name}
+      agency={mission.agency ?? mission.agency_full ?? ''}
+      {hudHidden}
+      onToggleHud={toggleHud}
+      externalClock={true}
+      t={coastFrac}
+      onComplete={() => {
+        // Deorbit burn → re-entry act. startDescent() dispatches coast→descent
+        // (showCoast falls to false via the reducer).
+        startDescent();
+      }}
+    />
+  {/await}
 {/if}
 
 {#if showRecovery && (descentProfile || wingedProfile)}
@@ -3688,19 +3698,21 @@
     />
   {/await}
 {:else if showDescent && descentProfile && descentDossier}
-  <DescentScene
-    landedActions={returnProfile && !splashdownActive ? landedActions : undefined}
-    profile={descentProfile}
-    mission={descentDossier}
-    precomputedSummary={descentSummaryFly ?? undefined}
-    {hudHidden}
-    onToggleHud={toggleHud}
-    bind:t={descentT}
-    bind:playing={isPlaying}
-    bind:speed={descentSpeed}
-    externalClock={true}
-    onComplete={handleTouchdown}
-  />
+  {#await loadDescentScene() then { default: DescentScene }}
+    <DescentScene
+      landedActions={returnProfile && !splashdownActive ? landedActions : undefined}
+      profile={descentProfile}
+      mission={descentDossier}
+      precomputedSummary={descentSummaryFly ?? undefined}
+      {hudHidden}
+      onToggleHud={toggleHud}
+      bind:t={descentT}
+      bind:playing={isPlaying}
+      bind:speed={descentSpeed}
+      externalClock={true}
+      onComplete={handleTouchdown}
+    />
+  {/await}
 {/if}
 
 <!-- Segment-transition seam: fade-through-black (see seamFadeOpacity effect). -->

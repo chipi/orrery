@@ -224,17 +224,47 @@ describe('focusMilestones — the flyby label rules (review call 7)', () => {
   ];
 
   it('marks only the active event while a flyby holds the frame', () => {
-    const out = focusMilestones(set, { activeOnly: true, hideActiveLabel: false, width: 1280 });
+    const out = focusMilestones(set, {
+      activeOnly: true,
+      hideActiveLabel: false,
+      width: 1280,
+      met: 0,
+    });
     expect(out.map((x) => x.label)).toEqual(['MERCURY #1']);
   });
 
+  it('keeps the event nearest in time when none is active yet (an establish beat)', () => {
+    const early = [
+      { ...set[0], state: 'past' as const, met_days: 100 },
+      { ...set[2], state: 'future' as const, met_days: 180 },
+      { ...set[2], label: 'LATER', state: 'future' as const, met_days: 400 },
+    ];
+    const out = focusMilestones(early, {
+      activeOnly: true,
+      hideActiveLabel: false,
+      width: 1280,
+      met: 150,
+    });
+    expect(out.map((x) => x.met_days)).toEqual([180]);
+  });
+
   it('keeps every marker outside a flyby', () => {
-    const out = focusMilestones(set, { activeOnly: false, hideActiveLabel: false, width: 1280 });
+    const out = focusMilestones(set, {
+      activeOnly: false,
+      hideActiveLabel: false,
+      width: 1280,
+      met: 0,
+    });
     expect(out).toHaveLength(3);
   });
 
   it('hides the active label at the hero beat, keeping its diamond', () => {
-    const [a] = focusMilestones(set, { activeOnly: true, hideActiveLabel: true, width: 1280 });
+    const [a] = focusMilestones(set, {
+      activeOnly: true,
+      hideActiveLabel: true,
+      width: 1280,
+      met: 0,
+    });
     expect(a.labelHidden).toBe(true);
   });
 
@@ -243,6 +273,7 @@ describe('focusMilestones — the flyby label rules (review call 7)', () => {
       activeOnly: false,
       hideActiveLabel: false,
       width: 390,
+      met: 0,
     });
     expect(out.map((x) => x.align)).toEqual(['start', 'end', 'end']);
   });

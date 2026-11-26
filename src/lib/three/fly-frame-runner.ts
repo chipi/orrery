@@ -2693,7 +2693,12 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
         simMet: bridge.simDay - bridge.mission.timeline.dep_day,
         reducedMotion: bridge.reducedMotion,
       });
-      if (pmScreens) bridge.phaseMarkerScreens = pmScreens;
+      // A flyby or the craft-led cruise holds a close frame: the arc's phase markers (launch,
+      // separation) are clutter there and sat cut at the screen edge on a phone (review call 7).
+      const closeFrame =
+        bridge.viewMode === 'heliocentric' &&
+        ((flyCam.lastHelioSubPhase?.startsWith('flyby-') ?? false) || flyCam.cruiseShot !== null);
+      if (pmScreens && !closeFrame) bridge.phaseMarkerScreens = pmScreens;
       else if (bridge.phaseMarkerScreens.length > 0) bridge.phaseMarkerScreens = [];
 
       const fdScreens = buildFdPhaseMarkerScreens({
@@ -2728,6 +2733,7 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
             (flyCam.lastHelioSubPhase?.startsWith('flyby-') ?? false) || flyCam.cruiseShot !== null,
           hideActiveLabel: flyCam.montageShotKind === 'hero',
           width: bridge.container?.clientWidth ?? 0,
+          met: bridge.simDay - bridge.arcTimeline.dep_day,
         });
       else if (bridge.milestoneScreens.length > 0) bridge.milestoneScreens = [];
     } else draw2d();

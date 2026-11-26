@@ -94,6 +94,8 @@ export interface MilestoneFocus {
   hideActiveLabel: boolean;
   /** Frame width, px. */
   width: number;
+  /** The current MET, days: with no active event, the one nearest in time is the body's. */
+  met: number;
 }
 
 /** Labels within this share of the width from an edge run inward from their diamond. */
@@ -102,7 +104,14 @@ const EDGE_SHARE = 0.22;
 /** The flyby review's label rules (call 7, 2026-11-26): one marker per body at a flyby, not a
  *  stack; no label over the craft at the hero beat; no label running off the screen. */
 export function focusMilestones(ms: MilestoneRender[], o: MilestoneFocus): MilestoneRender[] {
-  const kept = o.activeOnly ? ms.filter((m) => m.state === 'active') : ms;
+  let kept = ms;
+  if (o.activeOnly) {
+    kept = ms.filter((m) => m.state === 'active');
+    if (!kept.length && ms.length)
+      kept = [
+        ms.reduce((a, b) => (Math.abs(b.met_days - o.met) < Math.abs(a.met_days - o.met) ? b : a)),
+      ];
+  }
   return kept.map((m) => ({
     ...m,
     labelHidden: o.hideActiveLabel && m.state === 'active',

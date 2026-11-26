@@ -85,7 +85,8 @@ function mats(): Mats {
     vc: std(0xffffff, 0.82, 0.04, { vertexColors: true, side: THREE.DoubleSide }),
     vcSplit: splitTone(std(0xffffff, 0.82, 0.04, { vertexColors: true, side: THREE.DoubleSide })),
     white: std(0xe6e5de, 0.8, 0.03, { side: THREE.DoubleSide }),
-    rcc: std(0x2e2f32, 0.45, 0.25),
+    // RCC is a mid grey, clearly lighter than the black tile (HAER TX-116-A sheet 13's key)
+    rcc: std(0x6a6b6f, 0.5, 0.2),
     glass: std(0x1a2733, 0.1, 0.55),
     line: std(0x4a4b50, 0.8),
     dark: std(0x0d0d10, 0.9),
@@ -877,7 +878,9 @@ export function buildOrbiter(o: OrbiterOpts): THREE.Group {
   const aft = isBuran ? flapEnd + 0.9 : stn(33.0);
   const WHITE = col(tone.white);
   const BLACK = col(tone.black);
-  const NOSE = col(isGli ? 0x3d3f45 : 0x3a3b3f); // the RCC nose cap, dark grey
+  const NOSE = col(isGli ? 0x3d3f45 : 0x66676b); // the RCC nose cap, mid grey like the leading edge
+  // A flown tile system (not Enterprise's foam and paint, not OK-GLI's painted airframe)
+  const tiled = o.variant !== 'enterprise' && !isGli;
 
   // The fuselage from the side and top elevations: [x, top y, belly y, half-width]. The section's
   // centre stays on v = 0 except toward the nose tip, which sits low (y 4.5).
@@ -1024,6 +1027,8 @@ export function buildOrbiter(o: OrbiterOpts): THREE.Group {
     return wZ(h, a) - wT(h) * wP(f) * gl(a);
   };
   const sideR = new THREE.Group();
+  // Sheet 13's top plan: a band of black HRSI tile runs along the upper wing behind the RCC edge
+  const LE_HRSI = 0.7;
   const chine = (x: number, y: number): boolean =>
     o.variant === 'columbia' && y > stn(16.5) && x < 4.6;
   slab(
@@ -1087,6 +1092,46 @@ export function buildOrbiter(o: OrbiterOpts): THREE.Group {
     const tip = mesh(new THREE.SphereGeometry(rc(XT, last.y), 12, 10), rccM, sideR);
     tip.position.copy(last);
   }
+  // The black HRSI band on the upper wing, 0.7 m across the edge behind the RCC: a strip laid on
+  // the skin along the planform, so its inner edge runs straight (the colour quads step).
+  if (tiled) {
+    const hs: number[] = [];
+    for (let h = X0 + 0.15; h < XT - 0.05; h += 0.12) hs.push(h);
+    hs.push(XT - 0.05);
+    const pos: number[] = [];
+    const cols: number[] = [];
+    const idx: number[] = [];
+    for (const h of hs) {
+      const a = wLE(h);
+      const dadh = (wLE(h + 0.05) - wLE(h - 0.05)) / 0.1;
+      const n = Math.hypot(dadh, 1);
+      // inward across the edge, in plan: (dadh, -1) normalised turns aft and inboard
+      const at = (d: number): [number, number] => [Math.max(X0, h + (dadh / n) * d), a - d / n];
+      for (const d of [0.05, 0.05 + LE_HRSI]) {
+        const [x, y] = at(d);
+        // the skin rises steeply behind the edge and its facets cut the chord: sit at the height
+        // the skin reaches 0.3 m further in
+        pos.push(x, y, Math.min(wTop(x, y), wTop(...at(d + 0.3))) - 0.06);
+        const c = jit(BLACK, x, y, 0, tone.blackSpread);
+        cols.push(c.r, c.g, c.b);
+      }
+    }
+    for (let i = 0; i < hs.length - 1; i++) {
+      const k = i * 2;
+      idx.push(k, k + 2, k + 1, k + 1, k + 2, k + 3);
+    }
+    const geo = new THREE.BufferGeometry();
+    geo.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+    geo.setAttribute('color', new THREE.Float32BufferAttribute(cols, 3));
+    geo.setIndex(idx);
+    geo.computeVertexNormals();
+    // laid on the skin: drawn over it at any distance instead of fighting it for depth
+    const onSkin = M.vc.clone();
+    onSkin.polygonOffset = true;
+    onSkin.polygonOffsetFactor = -2;
+    onSkin.polygonOffsetUnits = -4;
+    mesh(geo, onSkin, sideR);
+  }
   // elevon hinge lines and gaps on the upper surface, gear-door outlines on the underside
   const onWing = (x: number, y: number): THREE.Vector3 =>
     new THREE.Vector3(x, y, wTop(x, y) - 0.012);
@@ -1104,6 +1149,17 @@ export function buildOrbiter(o: OrbiterOpts): THREE.Group {
     seam(sideR, M.line, onWing(...p), onWing(...q), w, 0.03);
   // the elevon hinge line, the split between the two elevons, the RCC panel line behind the edge
   wseam([3.9, hinge(3.9)], [11.4, hinge(11.4)]);
+  // sheet 13: a row of black HRSI tiles covers the hinge line's cove ahead of the elevons
+  if (tiled) {
+    for (let h = 4.05; h < 11.2; h += 0.5) {
+      const a = hinge(h + 0.2) + 0.22;
+      const t = box(0.4, 0.4, 0.03, M.vc, sideR, h + 0.2, a, wTop(h + 0.2, a) - 0.015);
+      const c = jit(BLACK, h, a, 0, tone.blackSpread);
+      const cols: number[] = [];
+      for (let i = 0; i < t.geometry.attributes.position.count; i++) cols.push(c.r, c.g, c.b);
+      t.geometry.setAttribute('color', new THREE.Float32BufferAttribute(cols, 3));
+    }
+  }
   wseam([7.8, hinge(7.8)], [7.8, wTE(7.8) - 0.05]);
   wseam([xk + 0.25, wLE(xk + 0.25) - 1.0], [XT - 0.4, wLE(XT - 0.4) - 0.6], 0.04);
   {

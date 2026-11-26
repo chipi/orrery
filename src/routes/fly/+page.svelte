@@ -193,6 +193,7 @@
     type ReturnProfile,
   } from '$lib/fly/return-profile';
   import { hasDeployProfile, loadDeployProfile, type DeployProfile } from '$lib/fly/deploy-profile';
+  import { hasWingedProfile, loadWingedProfile, type WingedProfile } from '$lib/fly/winged-profile';
   import CoastScene from '$lib/components/CoastScene.svelte';
   import { getEarthOrbitCoast } from '$lib/orbital/earth-orbit-registry';
   import { preloadFlyCraft } from '$lib/three/fly-craft';
@@ -331,11 +332,16 @@
         isMoonMission,
         launchAvailable,
         earthCoast: !!earthCoast,
-        descentAvailable: descentProfile != null,
+        descentAvailable: descentProfile != null || wingedProfile != null,
         // The controller only distinguishes earth (→ recovery card) from the
         // surface-route bodies (page does the goto); collapse anything wider
         // (e.g. a gas-giant descentProfile.body) to null.
-        descentBody: db === 'earth' || db === 'moon' || db === 'mars' || db === 'venus' ? db : null,
+        descentBody:
+          db === 'earth' || db === 'moon' || db === 'mars' || db === 'venus'
+            ? db
+            : !descentProfile && wingedProfile
+              ? 'earth'
+              : null,
         deepLink: {
           launch: wantLaunchDeep,
           descent: wantDescentDeep,
@@ -688,6 +694,23 @@
       deployDone = false;
     }
   });
+  // The winged return (W12): a runway landing (STS-1 first). A mission with a winged profile and no
+  // descent profile plays it as its descent act (its own scene and clock); its end is the touchdown,
+  // and the landing card follows (the reducer routes it as an Earth landing).
+  let wingedProfile = $state<WingedProfile | null>(null);
+  $effect(() => {
+    const id = mission.id;
+    if (!hasWingedProfile(id)) {
+      wingedProfile = null;
+      return;
+    }
+    void loadWingedProfile(id, fetch, base)
+      .then((p) => {
+        if (mission.id === id) wingedProfile = p;
+      })
+      .catch(dataLoadFailed);
+  });
+  const wingedActive = $derived(showDescent && wingedProfile != null && !descentProfile);
   function startDeploy(): boolean {
     if (!deployProfile || deployDone) return false;
     deploying = true;
@@ -770,14 +793,16 @@
   /** Opening CTA (landing missions only): jump straight to the EDL act, past the
    *  launch + cruise — the descent counterpart of startLaunch. */
   function startDescent() {
-    if (!descentProfile) return;
+    if (!descentProfile && !wingedProfile) return;
     dispatchPhase({ type: 'startDescent' });
     descentT = 0;
   }
   // ?descent=1 deep-link → jump straight to the EDL act once the profile loads
   // (mirrors ?launch=1). Deterministic entry for browser/e2e checks + a direct
   // "watch the landing" link.
-  const wantDescentDeep = launchDeepParams?.get('descent') === '1';
+  // ?winged=1 is the same jump for a runway landing (W12).
+  const wantDescentDeep =
+    launchDeepParams?.get('descent') === '1' || launchDeepParams?.get('winged') === '1';
   const wantWayHomeDeep = launchDeepParams?.get('wayhome') === '1';
   // ?deploy=1 (with ?launch=1): straight to the Shuttle deploy once its profile loads.
   const wantDeployDeep = launchDeepParams?.get('deploy') === '1';
@@ -796,7 +821,7 @@
     if (
       wantDescentDeep &&
       !descentAutoStarted &&
-      descentProfile != null &&
+      (descentProfile != null || wingedProfile != null) &&
       (deepMissionId == null || mission.id === deepMissionId)
     ) {
       descentAutoStarted = true;
@@ -3594,12 +3619,12 @@
   />
 {/if}
 
-{#if showRecovery && descentProfile}
+{#if showRecovery && (descentProfile || wingedProfile)}
   <div class="recovery-card" role="dialog" aria-label={m.fly_recovery_aria()}>
     <div class="recovery-inner" class:fail={recoveryOutcome.fail}>
       <div class="recovery-eyebrow">{recoveryOutcome.eyebrow}</div>
       <div class="recovery-name">{mission.name}</div>
-      {#if !descentProfile.landingSiteEstimated}
+      {#if descentProfile && !descentProfile.landingSiteEstimated}
         <div class="recovery-line">
           {descentProfile.landingSite.lat.toFixed(2)}° {descentProfile.landingSite.lat >= 0
             ? 'N'
@@ -3608,6 +3633,13 @@
           0
             ? 'E'
             : 'W'}
+        </div>
+      {/if}
+      {#if !descentProfile && wingedProfile}
+        <div class="recovery-line" data-testid="recovery-runway">
+          {m.fly_winged_runway({
+            n: String(Math.round(wingedProfile.runway.headingDeg / 10)).padStart(2, '0'),
+          })}
         </div>
       {/if}
       {#if mission.id && RECOVERY_CAPTIONS[mission.id]}
@@ -3638,6 +3670,16 @@
       site={missionDescentProfile?.landingSite}
       {hudHidden}
       onComplete={endWayHome}
+    />
+  {/await}
+{:else if wingedActive && wingedProfile}
+  <!-- Only the winged returns play it: its scene loads on demand (route budget). -->
+  {#await import('$lib/components/WingedReturnScene.svelte') then { default: WingedReturnScene }}
+    <WingedReturnScene
+      profile={wingedProfile}
+      missionName={mission.name}
+      {hudHidden}
+      onComplete={() => dispatchPhase({ type: 'touchdown' })}
     />
   {/await}
 {:else if showDescent && descentProfile && descentDossier}
@@ -4643,7 +4685,7 @@
   <div
     class="scrubber"
     class:cinematic-hidden={inCinematicHeldBeat}
-    class:way-home-hidden={wayHome || deploying}
+    class:way-home-hidden={wayHome || deploying || wingedActive}
     class:launch-active={showLaunch || showCoast || showDescent}
     aria-label={m.fly_scrub_label()}
   >

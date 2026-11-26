@@ -37,6 +37,16 @@ const MANIFEST = join(OUT, '.vite/manifest.json');
 const BUDGETS = JSON.parse(readFileSync('scripts/route-budget.json', 'utf8'));
 const report = process.argv.includes('--report');
 
+// The budgets are what a browser downloads per route. The app build ships its JS on the device,
+// with every locale's UI messages inline (ADR-098 is off under MOBILE); check-mobile-size-budget
+// gates it.
+if (process.env.MOBILE === '1' && !report) {
+  console.log(
+    'check-route-budget: skipped for MOBILE=1 (on-device JS; see check-mobile-size-budget)',
+  );
+  process.exit(0);
+}
+
 if (!existsSync(MANIFEST)) {
   console.error(`check-route-budget: ${MANIFEST} not found — run after \`vite build\`.`);
   process.exit(2);

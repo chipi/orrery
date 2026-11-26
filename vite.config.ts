@@ -182,7 +182,9 @@ export default defineConfig(({ mode, command }) => {
       },
       sveltekit(),
       // ADR-098: the client build ships each route's UI messages in the reader's locale only.
-      i18nSplitPlugin(),
+      // Not under MOBILE: the app's JS is on the device, and its non-default locales stream from
+      // STREAM_ORIGIN, a different build without this build's hashed message modules.
+      ...(MOBILE ? [] : [i18nSplitPlugin()]),
       // Prod deploy only (#595): inject Sentry debug ids DURING the build. The
       // plugin prepends the id snippet in renderChunk, before Vite names the chunk,
       // so a chunk's content-hashed name covers the injected bytes, and .br/.gz

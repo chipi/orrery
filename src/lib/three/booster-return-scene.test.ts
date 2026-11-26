@@ -9,6 +9,10 @@ import {
   boosterReturnPose,
   createBoosterReturn,
   returnAltitude,
+  returnLauncherFor,
+  lostAltitude,
+  lostWindow,
+  LOST_IMPACT_SPEED,
   returnCamera,
   returnWindow,
   RETURN_SPECS,
@@ -188,5 +192,116 @@ describe('booster return (IM-1, return to launch site)', () => {
     const r = createBoosterReturn(i4);
     expect(r.scene.getObjectByName('drone-ship')).toBeTruthy();
     expect(r.scene.getObjectByName('landing-zone-1')).toBeUndefined();
+  });
+});
+
+describe('booster return (Falcon Heavy demo, both side boosters at LZ-1 and LZ-2)', () => {
+  const demo: BoosterReturnLanding = {
+    part: 'strapOns',
+    outcome: 'landed',
+    site: 'landing-zone',
+    siteNames: ['LZ-1', 'LZ-2'],
+    entryBurnS: 401,
+    landingBurnS: 461,
+    touchdownS: 478,
+    timeClass: 'approx',
+  };
+
+  it('plays for the falcon-heavy profile', () => {
+    expect(returnLauncherFor('falcon-heavy')).toBe('falcon-heavy');
+  });
+
+  it('builds both pads 310 m apart and stands a booster on each at touchdown', () => {
+    const r = createBoosterReturn(demo, 'midday', 'falcon-heavy');
+    const lz1 = r.scene.getObjectByName('landing-zone-1')!;
+    const lz2 = r.scene.getObjectByName('landing-zone-2')!;
+    expect(lz1.position.distanceTo(lz2.position)).toBeCloseTo(310, 0);
+    expect(r.update(480, 1.6)).toBe(true);
+    r.scene.updateMatrixWorld(true);
+    for (const lz of [lz1, lz2]) {
+      const feet = new THREE.Box3();
+      r.scene.traverse((o) => {
+        if (!o.name.startsWith('foot')) return;
+        const p = o.getWorldPosition(new THREE.Vector3());
+        if (Math.hypot(p.x - lz.position.x, p.z - lz.position.z) < 20) feet.expandByPoint(p);
+      });
+      expect(feet.isEmpty()).toBe(false);
+      expect(Math.abs(feet.min.y)).toBeLessThan(0.6);
+    }
+  });
+
+  it('keeps both boosters in frame from the entry burn to touchdown, wide and phone', () => {
+    for (const aspect of [1.6, 0.46]) {
+      const r = createBoosterReturn(demo, 'midday', 'falcon-heavy');
+      for (const t of [395, 420, 450, 470, 478, 481]) {
+        expect(r.update(t, aspect)).toBe(true);
+        r.scene.updateMatrixWorld(true);
+        r.camera.updateMatrixWorld(true);
+        r.scene.traverse((o) => {
+          if (o.name !== 'falcon-heavy-side-booster') return;
+          const bb = new THREE.Box3().setFromObject(o);
+          for (const y of [bb.min.y, bb.max.y]) {
+            const p = new THREE.Vector3((bb.min.x + bb.max.x) / 2, y, (bb.min.z + bb.max.z) / 2);
+            const ndc = p.project(r.camera);
+            expect(Math.abs(ndc.x)).toBeLessThan(1);
+            expect(Math.abs(ndc.y)).toBeLessThan(1);
+          }
+        });
+        expect(r.camera.position.y).toBeGreaterThan(5);
+      }
+    }
+  });
+
+  const core: BoosterReturnLanding = {
+    part: 'booster',
+    outcome: 'lost',
+    site: 'droneship',
+    siteNames: ['Of Course I Still Love You'],
+    entryBurnS: 407,
+    landingBurnS: 499 - 17,
+    touchdownS: 499,
+    timeClass: 'approx',
+  };
+
+  it('plays the lost centre core straight after the pair, ending at the impact plus a hold', () => {
+    const [a, b] = lostWindow(core, demo);
+    expect(a).toBe(482); // the pair's window closes at 478 + 4
+    expect(b).toBe(504);
+    expect(lostAltitude(499, core)).toBe(0);
+    // Hits the water at the sourced speed: the slope over the last 0.01 s.
+    expect((lostAltitude(498.99, core) - lostAltitude(499, core)) / 0.01).toBeCloseTo(
+      LOST_IMPACT_SPEED,
+      0,
+    );
+    const r = createBoosterReturn(demo, 'midday', 'falcon-heavy', core);
+    expect(r.phaseAt(470)).toBe('return');
+    expect(r.phaseAt(490)).toBe('lost');
+    expect(r.phaseAt(510)).toBeNull();
+    expect(r.update(490, 1.6)).toBe(true);
+    expect(r.update(510, 1.6)).toBe(false);
+  });
+
+  it('keeps the falling core and then the splash beside the ship in frame', () => {
+    for (const aspect of [1.6, 0.46]) {
+      const r = createBoosterReturn(demo, 'midday', 'falcon-heavy', core);
+      for (const t of [483, 490, 496, 498.5, 500, 503]) {
+        expect(r.update(t, aspect)).toBe(true);
+        r.scene.updateMatrixWorld(true);
+        r.camera.updateMatrixWorld(true);
+        const ship = r.scene.getObjectByName('drone-ship')!;
+        const target = new THREE.Vector3();
+        if (t < 499) {
+          const boosters: THREE.Object3D[] = [];
+          r.scene.traverse((o) => {
+            if (o.name === 'falcon9-booster') boosters.push(o);
+          });
+          new THREE.Box3().setFromObject(boosters[0]).getCenter(target);
+        } else target.copy(ship.position).add(new THREE.Vector3(0, 0, 126));
+        const ndc = target.project(r.camera);
+        expect(Math.abs(ndc.x)).toBeLessThan(1);
+        expect(Math.abs(ndc.y)).toBeLessThan(1);
+        expect(r.camera.position.y).toBeGreaterThan(-2);
+      }
+    }
   });
 });

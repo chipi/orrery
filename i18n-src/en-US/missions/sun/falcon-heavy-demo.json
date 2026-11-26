@@ -1,0 +1,48 @@
+{
+  "name": "Falcon Heavy Demo Flight",
+  "vehicle": "Falcon Heavy",
+  "payload": "Elon Musk's midnight-cherry Tesla Roadster with a spacesuited mannequin, Starman, as a mass simulator; about 1,250 kg with batteries (JPL Horizons) or 1,300 kg at launch (Wikipedia)",
+  "delta_v": "Not published",
+  "type": "HEAVY-LIFT TEST FLIGHT · FLOWN",
+  "first": "First flight of Falcon Heavy, which sent a car with a spacesuited mannequin at the wheel into orbit around the Sun",
+  "description": "Falcon Heavy's first flight, on 6 February 2018 at 20:45 UTC from Launch Complex 39A at Kennedy Space Center, carried no customer satellite. Its payload was Elon Musk's midnight-cherry Tesla Roadster with a spacesuited mannequin, Starman, at the wheel, a mass simulator in place of the steel or concrete blocks normally flown. The two side boosters, both flight-proven, landed nearly simultaneously at Landing Zones 1 and 2. The centre core missed the drone ship Of Course I Still Love You and hit the sea about 100 m from it at about 500 km/h (Space.com gives 484 km/h) after two of its three landing engines failed to relight. The second stage then coasted for about six hours through the Van Allen radiation belts, and a third burn, completed at about 02:30 UTC on 7 February (JPL Horizons), left the car in an orbit around the Sun with an aphelion of about 1.67 au; Musk said it exceeded Mars orbit and kept going to the asteroid belt. The times after liftoff are the pre-launch plan, except the completion of the third burn. The car passed Mars on 7 October 2020 at about 7.4 million km (Wikipedia says about 8 million km). It is still in orbit around the Sun; its camera feed lasted just over four hours.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Falcon Heavy from Launch Complex 39A, 6 February 2018, 20:45 UTC; the planned window was 1:30-4:00 pm EST.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.0055,
+      "label": "SIDE BOOSTERS LAND",
+      "note": "Planned for 00:07:58 at Landing Zones 1 and 2; they touched down nearly simultaneously.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.0058,
+      "label": "CENTRE CORE LOST",
+      "note": "Planned drone-ship landing at 00:08:19; two of three engines did not relight and the core hit the sea about 100 m away at about 500 km/h.",
+      "type": "warning"
+    },
+    {
+      "met": 0.0197,
+      "label": "SECOND BURN",
+      "note": "Planned restart at 00:28:22 and cutoff at 00:28:52, then a coast of about six hours through the Van Allen belts.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.24,
+      "label": "THIRD BURN",
+      "note": "Planned at T+06:00:00; completed at about 02:30 UTC on 7 February (JPL Horizons). Musk: it exceeded Mars orbit.",
+      "type": "nominal"
+    },
+    {
+      "met": 973.4,
+      "label": "MARS PASSAGE",
+      "note": "7 October 2020, about 7.4 million km (JPL Horizons) or 8 million km (Wikipedia).",
+      "type": "info"
+    }
+  ],
+  "vehicle_stage": "Falcon Heavy second stage"
+}

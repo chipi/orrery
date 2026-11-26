@@ -1155,6 +1155,16 @@
     "crewed": false
   },
   {
+    "id": "falcon-heavy-demo",
+    "agency": "SpaceX",
+    "dest": "SUN",
+    "status": "FLOWN",
+    "year": 2018,
+    "sector": "private",
+    "color": "#005288",
+    "crewed": false
+  },
+  {
     "id": "dart",
     "agency": "NASA",
     "dest": "DIMORPHOS",

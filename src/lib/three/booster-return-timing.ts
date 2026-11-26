@@ -6,11 +6,13 @@
 import { LANDING_HOLD_S } from '$lib/physics/ascent/ascent-physics';
 import type { Landing } from './landing-inset';
 
-export type ReturnLauncher = 'falcon-9' | 'new-glenn';
+export type ReturnLauncher = 'falcon-9' | 'new-glenn' | 'falcon-heavy';
 
 /** The return scene for a launch profile, or null when it has none (the inset plays instead). */
 export function returnLauncherFor(profileId: string): ReturnLauncher | null {
-  return profileId === 'falcon-9' || profileId === 'new-glenn' ? profileId : null;
+  return profileId === 'falcon-9' || profileId === 'new-glenn' || profileId === 'falcon-heavy'
+    ? profileId
+    : null;
 }
 
 export type BoosterReturnLanding = Landing & { entryBurnS: number };

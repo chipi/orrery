@@ -13,6 +13,11 @@
  * - `grid-fin-<i>` pivots and `leg-<i>` pivots (also grouped under `grid-fins` / `landing-legs`).
  * - `foot-<i>`, the footpad centre of each leg.
  * Drive the deployment with `setFalcon9BoosterPose`.
+ *
+ * `{ sideBooster: true }` builds a Falcon Heavy side booster: sourced (docs/wip/
+ * 2026-11-26-falcon-heavy-demo-sourced.md, second pass) only that a nose cone replaces the black
+ * interstage; its length and shape are ESTIMATES (a white cylinder to the fins, then a 5 m ogive),
+ * and the grid fins are drawn as on a Falcon 9 (sources disagree whether they were larger).
  */
 import * as THREE from 'three';
 import { box, lathe, mat, type Mat } from './kit';
@@ -33,6 +38,10 @@ const PISTON_LEG_AT = 5.8; // distance along the leg
 const FIN_W = 1.5;
 const FIN_H = 1.2;
 const FIN_Y = 38.8;
+/** ESTIMATE: a side booster's white nose section runs to here, then the ogive. */
+const SIDE_NOSE_BASE = 40;
+const SIDE_NOSE_LEN = 5;
+export const FH_SIDE_BOOSTER_HEIGHT_M = SIDE_NOSE_BASE + SIDE_NOSE_LEN;
 
 const hullDir = (a: number, r: number, y: number) =>
   new THREE.Vector3(Math.sin(a) * r, y, Math.cos(a) * r);
@@ -52,9 +61,9 @@ function finLattice(m: Mat): THREE.Group {
   return f;
 }
 
-export function buildFalcon9Booster(): THREE.Group {
+export function buildFalcon9Booster({ sideBooster = false } = {}): THREE.Group {
   const g = new THREE.Group();
-  g.name = 'falcon9-booster';
+  g.name = sideBooster ? 'falcon-heavy-side-booster' : 'falcon9-booster';
   const M: Record<string, Mat> = {
     white: mat(0xeceeef, 0.15, 0.55),
     soot: mat(0x5b5a58, 0.1, 0.9),
@@ -80,11 +89,23 @@ export function buildFalcon9Booster(): THREE.Group {
     [R + 0.004, 7],
     [R + 0.004, 12],
   ]);
-  lathe(g, M.black, [
-    [R + 0.002, INTERSTAGE_BASE],
-    [R + 0.002, HEIGHT],
-    [R - 0.3, HEIGHT],
-  ]);
+  if (sideBooster) {
+    const ogive: [number, number][] = [
+      [R, INTERSTAGE_BASE],
+      [R, SIDE_NOSE_BASE],
+    ];
+    for (let i = 1; i <= 12; i++) {
+      const t = i / 12;
+      ogive.push([R * Math.sqrt(Math.max(0, 1 - t * t)), SIDE_NOSE_BASE + SIDE_NOSE_LEN * t]);
+    }
+    lathe(g, M.white, ogive);
+  } else {
+    lathe(g, M.black, [
+      [R + 0.002, INTERSTAGE_BASE],
+      [R + 0.002, HEIGHT],
+      [R - 0.3, HEIGHT],
+    ]);
+  }
   // Octaweb heat shield.
   lathe(g, M.shield, [
     [0, OCTAWEB_Y],

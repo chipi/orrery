@@ -248,7 +248,7 @@ describe('the station, belt, fleet, program and museum lists on the real manifes
           expect(existsSync(join('static', path as string)), `${e.id} -> ${mid}`).toBe(true);
         }
       }
-    expect(rows).toBe(370);
+    expect(rows).toBe(373);
   });
 
   it('every fleet entry has a thumb (hardware lists link only fleet ids)', () => {

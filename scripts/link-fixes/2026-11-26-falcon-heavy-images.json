@@ -1,0 +1,74 @@
+{
+  "missions/falcon-heavy-demo/01": {
+    "source": "commons",
+    "id": "Falcon Heavy Demo Mission (40126461851).jpg",
+    "agency": "SpaceX",
+    "focal": [0.4, 0.4],
+    "category": "launch",
+    "subject": "Falcon Heavy lifting off from Launch Complex 39A at Kennedy Space Center on its first flight, 6 February 2018.",
+    "alt": {
+      "en-US": "Falcon Heavy climbing from Launch Complex 39A on a bright column of flame, a huge cloud of exhaust billowing beside the pad under a blue sky and a pond in the foreground, 6 February 2018",
+      "ar": "صاروخ Falcon Heavy يرتفع من Launch Complex 39A على عمود لهب ساطع، وسحابة ضخمة من العادم تتصاعد بجانب المنصة تحت سماء زرقاء وبركة ماء في المقدمة، 6 فبراير 2018",
+      "de": "Die Falcon Heavy steigt auf einer hellen Flammensäule vom Launch Complex 39A auf, neben der Startrampe wallt eine riesige Abgaswolke unter blauem Himmel, im Vordergrund ein Teich, 6. Februar 2018",
+      "es": "El Falcon Heavy asciende desde el Launch Complex 39A sobre una brillante columna de llamas, con una enorme nube de gases junto a la plataforma bajo un cielo azul y un estanque en primer plano, 6 de febrero de 2018",
+      "fr": "Falcon Heavy s'élève du Launch Complex 39A sur une brillante colonne de flammes, un immense nuage de gaz d'échappement se déployant près du pas de tir sous un ciel bleu, un étang au premier plan, 6 février 2018",
+      "hi": "6 फ़रवरी 2018 को Falcon Heavy Launch Complex 39A से चमकीले लपटों के स्तंभ पर ऊपर उठता हुआ, नीले आकाश के नीचे लॉन्च पैड के बगल में निकास गैस का विशाल बादल और सामने एक तालाब",
+      "it": "Il Falcon Heavy sale dal Launch Complex 39A su una luminosa colonna di fiamme, con un'enorme nube di gas di scarico accanto alla rampa sotto un cielo azzurro e uno stagno in primo piano, 6 febbraio 2018",
+      "ja": "2018年2月6日、明るい炎の柱に乗ってLaunch Complex 39Aから上昇するFalcon Heavy。青空の下、発射台の脇に排気の巨大な雲が広がり、手前には池がある",
+      "ko": "2018년 2월 6일 밝은 불꽃 기둥을 타고 Launch Complex 39A에서 올라가는 Falcon Heavy. 푸른 하늘 아래 발사대 옆으로 거대한 배기 구름이 번지고 앞쪽에는 연못이 있다",
+      "nl": "De Falcon Heavy stijgt op een felle vlammenkolom op van Launch Complex 39A, naast het lanceerplatform rolt een enorme uitlaatwolk onder een blauwe lucht, op de voorgrond een vijver, 6 februari 2018",
+      "pt-BR": "O Falcon Heavy sobe do Launch Complex 39A sobre uma brilhante coluna de chamas, com uma enorme nuvem de gases ao lado da plataforma sob um céu azul e um lago em primeiro plano, 6 de fevereiro de 2018",
+      "ru": "Falcon Heavy поднимается со стартового комплекса Launch Complex 39A на ярком столбе пламени, рядом со стартовой площадкой клубится огромное облако выхлопа под синим небом, на переднем плане пруд, 6 февраля 2018 года",
+      "sr-Cyrl": "Falcon Heavy се подиже са комплекса Launch Complex 39A на светлом стубу пламена, поред лансирне платформе се увија огроман облак издувних гасова под плавим небом, а у првом плану је бара, 6. фебруара 2018",
+      "zh-CN": "2018年2月6日，Falcon Heavy 踏着明亮的火柱从 Launch Complex 39A 升空，蓝天下发射台旁翻涌着巨大的尾气云，前景是一片池塘"
+    }
+  },
+  "fleet-galleries/tesla-roadster/01": {
+    "source": "commons",
+    "id": "Elon Musk's Tesla Roadster (40110297852).jpg",
+    "agency": "SpaceX",
+    "focal": [0.5, 0.65],
+    "category": "spacecraft",
+    "subject": "Elon Musk's Tesla Roadster in space, seen from the front, with the Starman mannequin at the wheel and Earth in the background; a frame from the car's camera feed.",
+    "alt": {
+      "en-US": "A mannequin in a white spacesuit, Starman, behind the windscreen of the open red Roadster seen from the front, with Earth curving across the black sky above the car",
+      "ar": "دمية بزي فضاء أبيض، ستارمان، خلف الزجاج الأمامي لسيارة رودستر الحمراء المكشوفة ملتقطة من الأمام، وتنحني الأرض عبر السماء السوداء فوق السيارة",
+      "de": "Eine Puppe im weißen Raumanzug, Starman, hinter der Windschutzscheibe des offenen roten Roadsters von vorn gesehen, über dem Auto wölbt sich die Erde durch den schwarzen Himmel",
+      "es": "Un maniquí con traje espacial blanco, Starman, tras el parabrisas del Roadster rojo descapotable visto de frente, con la Tierra curvándose sobre el cielo negro por encima del coche",
+      "fr": "Un mannequin en combinaison spatiale blanche, Starman, derrière le pare-brise du Roadster rouge décapotable vu de face, la Terre s'arrondissant dans le ciel noir au-dessus de la voiture",
+      "hi": "सामने से दिखती खुली लाल रोडस्टर के विंडस्क्रीन के पीछे सफ़ेद अंतरिक्ष-सूट पहना पुतला स्टारमैन, और कार के ऊपर काले आकाश में पृथ्वी का घुमावदार किनारा",
+      "it": "Un manichino in tuta spaziale bianca, Starman, dietro il parabrezza della Roadster rossa scoperta vista di fronte, con la Terra che si incurva nel cielo nero sopra l'auto",
+      "ja": "正面から見た赤いオープンカーのロードスターのフロントガラスの奥に、白い宇宙服を着たマネキンのスターマンがいて、車の上の黒い空には地球の縁が弧を描いている",
+      "ko": "정면에서 본 붉은 오픈카 로드스터의 앞유리 뒤에 흰 우주복을 입은 마네킹 스타맨이 앉아 있고, 차 위의 검은 하늘에는 지구가 둥글게 걸려 있다",
+      "nl": "Een pop in wit ruimtepak, Starman, achter de voorruit van de open rode Roadster van voren gezien, met de aarde die boven de auto door de zwarte hemel welft",
+      "pt-BR": "Um boneco de traje espacial branco, Starman, atrás do para-brisa do Roadster vermelho conversível visto de frente, com a Terra curvando-se no céu preto acima do carro",
+      "ru": "Манекен в белом скафандре, Starman, за лобовым стеклом открытого красного Roadster, снятого спереди, над машиной изгибается Земля на фоне чёрного неба",
+      "sr-Cyrl": "Лутка у белом скафандеру, Starman, иза шофершајбне отвореног црвеног Roadster-а снимљеног спреда, а изнад аутомобила се у црном небу извија Земља",
+      "zh-CN": "从正面看到的红色敞篷 Roadster，挡风玻璃后坐着身穿白色航天服的假人 Starman，车上方的黑色天空中弯出地球的边缘"
+    }
+  },
+  "fleet-galleries/tesla-roadster/02": {
+    "source": "commons",
+    "id": "Elon Musk's Tesla Roadster (40143096241).jpg",
+    "agency": "SpaceX",
+    "focal": [0.62, 0.7],
+    "category": "spacecraft",
+    "subject": "Elon Musk's Tesla Roadster in space, seen from its left side, with the Starman mannequin at the wheel and Earth in the background; a frame from the car's camera feed.",
+    "alt": {
+      "en-US": "The red Roadster seen from its left side, Starman in a white suit and helmet at the wheel with an arm resting along the door, and a blue Earth streaked with white cloud filling the background",
+      "ar": "سيارة رودستر الحمراء من جانبها الأيسر، وستارمان بزي أبيض وخوذة خلف المقود وذراعه ممدودة على الباب، والأرض الزرقاء المخططة بالغيوم البيضاء تملأ الخلفية",
+      "de": "Der rote Roadster von seiner linken Seite, Starman in weißem Anzug und Helm am Steuer, ein Arm liegt auf der Tür, und die blaue, von weißen Wolken durchzogene Erde füllt den Hintergrund",
+      "es": "El Roadster rojo visto por su lado izquierdo, Starman con traje blanco y casco al volante con un brazo apoyado a lo largo de la puerta, y una Tierra azul surcada de nubes blancas llenando el fondo",
+      "fr": "Le Roadster rouge vu de son côté gauche, Starman en combinaison blanche et casque au volant, un bras posé le long de la portière, et une Terre bleue striée de nuages blancs qui remplit l'arrière-plan",
+      "hi": "बाईं ओर से दिखती लाल रोडस्टर, जिसमें सफ़ेद सूट और हेलमेट पहने स्टारमैन स्टीयरिंग पर है और एक बाँह दरवाज़े पर टिकी है, और पृष्ठभूमि में सफ़ेद बादलों की धारियों वाली नीली पृथ्वी छाई है",
+      "it": "La Roadster rossa vista dal lato sinistro, Starman in tuta bianca e casco al volante con un braccio appoggiato lungo la portiera, e una Terra azzurra striata di nuvole bianche che riempie lo sfondo",
+      "ja": "左側面から見た赤いロードスター。白い宇宙服とヘルメットのスターマンがハンドルを握り、片腕をドアに沿って預けていて、白い雲の筋が走る青い地球が背景いっぱいに広がっている",
+      "ko": "왼쪽 옆에서 본 붉은 로드스터. 흰 우주복과 헬멧 차림의 스타맨이 운전석에 앉아 한쪽 팔을 문 위에 얹고 있으며, 흰 구름이 줄무늬를 이룬 푸른 지구가 배경을 가득 채운다",
+      "nl": "De rode Roadster van zijn linkerkant gezien, Starman in wit pak en helm achter het stuur met een arm langs het portier, en een blauwe aarde met witte wolkenslierten die de achtergrond vult",
+      "pt-BR": "O Roadster vermelho visto pelo lado esquerdo, Starman de traje branco e capacete ao volante com um braço apoiado ao longo da porta, e uma Terra azul riscada de nuvens brancas preenchendo o fundo",
+      "ru": "Красный Roadster, снятый с левого борта: Starman в белом скафандре и шлеме за рулём, рука лежит вдоль двери, а на фоне синяя Земля с белыми полосами облаков",
+      "sr-Cyrl": "Црвени Roadster снимљен са леве стране, Starman у белом оделу и кациги за воланом с руком положеном дуж врата, а позадину испуњава плава Земља избраздана белим облацима",
+      "zh-CN": "从左侧看到的红色 Roadster，身穿白色航天服、戴头盔的 Starman 坐在驾驶座上，一条手臂搭在车门上，背景是布满白色云带的蓝色地球"
+    }
+  }
+}

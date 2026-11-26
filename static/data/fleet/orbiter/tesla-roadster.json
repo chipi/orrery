@@ -1,0 +1,42 @@
+{
+  "id": "tesla-roadster",
+  "name": "Elon Musk's Tesla Roadster",
+  "category": "orbiter",
+  "agency": "SpaceX",
+  "country": "USA",
+  "manufacturer": "Tesla",
+  "first_flight": "2018-02-06",
+  "status": "FLOWN",
+  "era": "2011-now",
+  "epoch": "commercial-era",
+  "best_known_for": "A red sports car with a spacesuited mannequin at the wheel, sent into orbit around the Sun on Falcon Heavy's first flight",
+  "credit": "Elon Musk's midnight-cherry Tesla Roadster, flown as the mass simulator on Falcon Heavy's first flight, 2018-02-06 20:45 UTC (SpaceX press kit, February 2018; Wikipedia; JPL Horizons). JPL Horizons names it \"Tesla Roadster (AKA: Starman, 2018-017A)\", id -143205; COSPAR 2018-017A, SATCAT 43205 (Wikipedia). The press kit says steel or concrete blocks are normally flown as the mass simulator. Starman is a full-scale mannequin in a SpaceX pressure suit, described as white and black, with a hand on the wheel and an elbow on the window sill (Wikipedia's wording elsewhere: the left arm resting on the top of the car door; not resolved); visor details are not in the sources. On the dashboard: a Hot Wheels Roadster with a mini Starman and a \"DON'T PANIC\" sign (Wikipedia), a copy of Asimov's Foundation novels on a storage device (JPL Horizons; Wikipedia says an Arch Mission Foundation 5D optical disc), a circuit board marked \"Made on Earth by humans\", a copy of The Hitchhiker's Guide to the Galaxy in the glove box and a towel reference (Wikipedia); a plaque on the attachment fitting carries the names of more than 6,000 SpaceX employees (JPL Horizons). Mount: permanently mounted at an incline above the payload adapter, in a conventional fairing, with three cameras on booms (Wikipedia). The tilt angle and adapter size are not in the sources. The camera feed lasted just over 4 hours (NASA History); Musk estimated more than 12 hours (Wikipedia). Mass conflict: about 1,250 kg with batteries and about 800 kg without (JPL Horizons) against about 1,300 kg at launch and 5,900 kg with the upper stage (Wikipedia); the production car's curb weight is 1,235-1,305 kg depending on the source. No single figure is given in specs. Model year conflict: 2008 (Wikipedia, test flight article) against 2010 (Wikipedia, Roadster article). No length or height is given: the showcase model is the car on its mount, and its height is an estimate; the 2008 production car measures 3,946 mm long, 2,352 mm wheelbase and about 1,127 mm high (Wikipedia; width 1,873 or 1,851 mm), which is not the flown vehicle's verified size. The orbit around the Sun (JPL Horizons, epoch 2018-02-15): perihelion 0.9861 au, aphelion 1.674 au, inclination 1.0885 deg, period 560.2 days; Wikipedia gives aphelion 1.66 au, inclination 1.077 deg and a period of 1.525 years. Closest approach to Mars on 2020-10-07: about 8 million km (Wikipedia) or 7.4 million km (JPL Horizons). Photos: SpaceX, CC0. Checked 2026-11-26.",
+  "specs": {
+    "cameras_count": 3
+  },
+  "links": [
+    {
+      "l": "Elon Musk's Tesla Roadster — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Elon_Musk%27s_Tesla_Roadster",
+      "t": "intro"
+    },
+    {
+      "l": "Falcon Heavy test flight — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Falcon_Heavy_test_flight",
+      "t": "intro"
+    },
+    {
+      "l": "Falcon Heavy demonstration mission press kit (SpaceX)",
+      "u": "https://mail.nbbd.com/events/spacex/180206-falcon-heavy-presskit.pdf",
+      "t": "core"
+    },
+    {
+      "l": "5 years ago: first flight of the Falcon Heavy rocket (NASA History)",
+      "u": "https://www.nasa.gov/history/5-years-ago-first-flight-of-the-falcon-heavy-rocket/",
+      "t": "core"
+    }
+  ],
+  "linked_missions": [
+    "falcon-heavy-demo"
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "name": "Falcon Heavy Demo Flight",
+  "vehicle": "Falcon Heavy",
+  "payload": "Tesla Roadster rouge « midnight cherry » d'Elon Musk avec un mannequin en combinaison spatiale, Starman, en simulateur de masse ; environ 1 250 kg avec les batteries (JPL Horizons) ou 1 300 kg au lancement (Wikipédia)",
+  "delta_v": "Non publié",
+  "type": "VOL D'ESSAI DE LANCEUR HEAVY · ACCOMPLI",
+  "first": "Premier vol de Falcon Heavy, qui a envoyé sur une orbite autour du Soleil une voiture avec un mannequin en combinaison spatiale au volant",
+  "description": "Le premier vol de Falcon Heavy, le 6 février 2018 à 20:45 UTC depuis le Launch Complex 39A du Kennedy Space Center, n'emportait aucun satellite client. Sa charge utile était la Tesla Roadster « midnight cherry » d'Elon Musk, avec au volant un mannequin en combinaison spatiale, Starman, un simulateur de masse à la place des blocs d'acier ou de béton habituellement embarqués. Les deux propulseurs d'appoint latéraux, tous deux déjà volés, se sont posés presque simultanément sur les Landing Zones 1 et 2. Le corps central a manqué le navire-drone Of Course I Still Love You et s'est écrasé en mer à environ 100 m de lui, à environ 500 km/h (Space.com donne 484 km/h), après que deux de ses trois moteurs d'atterrissage ne se sont pas rallumés. Le deuxième étage a ensuite dérivé environ six heures à travers les ceintures de radiations de Van Allen, et un troisième allumage, achevé vers 02:30 UTC le 7 février (JPL Horizons), a laissé la voiture sur une orbite autour du Soleil avec un aphélie d'environ 1,67 au ; Musk a dit qu'elle avait dépassé l'orbite de Mars et continuait vers la ceinture d'astéroïdes. Les heures après le décollage sont le plan d'avant le vol, sauf la fin du troisième allumage. La voiture est passée près de Mars le 7 octobre 2020, à environ 7,4 millions de km (Wikipédia dit environ 8 millions de km). Elle est toujours sur une orbite autour du Soleil ; le flux de ses caméras a duré un peu plus de quatre heures.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCEMENT",
+      "note": "Falcon Heavy depuis le Launch Complex 39A, 6 février 2018, 20:45 UTC ; la fenêtre prévue allait de 13:30 à 16:00 EST.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.0055,
+      "label": "ATTERRISSAGE DES PROPULSEURS LATÉRAUX",
+      "note": "Prévu à 00:07:58 sur les Landing Zones 1 et 2 ; ils se sont posés presque simultanément.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.0058,
+      "label": "CORPS CENTRAL PERDU",
+      "note": "Atterrissage prévu sur le navire-drone à 00:08:19 ; deux moteurs sur trois ne se sont pas rallumés et le corps s'est écrasé en mer à environ 100 m, à environ 500 km/h.",
+      "type": "warning"
+    },
+    {
+      "met": 0.0197,
+      "label": "DEUXIÈME ALLUMAGE",
+      "note": "Rallumage prévu à 00:28:22 et arrêt à 00:28:52, puis une dérive d'environ six heures à travers les ceintures de Van Allen.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.24,
+      "label": "TROISIÈME ALLUMAGE",
+      "note": "Prévu à T+06:00:00 ; achevé vers 02:30 UTC le 7 février (JPL Horizons). Musk : elle a dépassé l'orbite de Mars.",
+      "type": "nominal"
+    },
+    {
+      "met": 973.4,
+      "label": "PASSAGE PRÈS DE MARS",
+      "note": "7 octobre 2020, environ 7,4 millions de km (JPL Horizons) ou 8 millions de km (Wikipédia).",
+      "type": "info"
+    }
+  ],
+  "vehicle_stage": "deuxième étage de Falcon Heavy"
+}

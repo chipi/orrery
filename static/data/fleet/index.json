@@ -3778,5 +3778,17 @@
     "status": "RETIRED",
     "first_flight": "1962-08-27",
     "tagline": "Venus flyby, December 1962: NASA's first successful planetary science mission"
+  },
+  {
+    "id": "tesla-roadster",
+    "name": "Elon Musk's Tesla Roadster",
+    "category": "orbiter",
+    "agency": "SpaceX",
+    "country": "USA",
+    "era": "2011-now",
+    "epoch": "commercial-era",
+    "status": "FLOWN",
+    "first_flight": "2018-02-06",
+    "tagline": "A red sports car with a spacesuited mannequin at the wheel, in orbit around the Sun since Falcon Heavy's first flight"
   }
 ]

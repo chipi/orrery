@@ -8,6 +8,27 @@
     { "part": "booster", "outcome": "expended" }
   ],
   "recoveryByMission": {
+    "falcon-heavy-demo": [
+      {
+        "part": "strapOns",
+        "outcome": "landed",
+        "site": "landing-zone",
+        "siteNames": ["LZ-1", "LZ-2"],
+        "entryBurnS": 401,
+        "landingBurnS": 461,
+        "touchdownS": 478,
+        "timeClass": "approx"
+      },
+      {
+        "part": "booster",
+        "outcome": "lost",
+        "site": "droneship",
+        "siteNames": ["Of Course I Still Love You"],
+        "entryBurnS": 407,
+        "touchdownS": 499,
+        "timeClass": "approx"
+      }
+    ],
     "psyche-mission": [
       {
         "part": "strapOns",

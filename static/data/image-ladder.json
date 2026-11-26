@@ -21183,6 +21183,12 @@
   "/images/missions/thumbnails/card/escapade": [
     420
   ],
+  "/images/missions/thumbnails/falcon-heavy-demo": [
+    736
+  ],
+  "/images/missions/thumbnails/card/falcon-heavy-demo": [
+    420
+  ],
   "/images/fleet-galleries/blue-ghost/01": [
     320,
     640,
@@ -21404,5 +21410,23 @@
     1280,
     2048,
     3072
+  ],
+  "/images/fleet-galleries/tesla-roadster/01": [
+    320,
+    640,
+    1280,
+    1920
+  ],
+  "/images/fleet-galleries/tesla-roadster/02": [
+    320,
+    1280,
+    1920
+  ],
+  "/images/missions/falcon-heavy-demo/01": [
+    320,
+    640,
+    1280,
+    2048,
+    3000
   ]
 }

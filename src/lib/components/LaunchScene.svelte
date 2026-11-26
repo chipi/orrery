@@ -263,17 +263,32 @@
         ].join(' · ')
       : '',
   );
-  /** A drone-ship landing with a sourced or approximate ("about N minutes") entry burn plays full
+  /** A drone-ship landing (Falcon 9, New Glenn) or a landing-zone one (Falcon 9; Falcon Heavy's two
+   *  side boosters together) with a sourced or approximate ("about N minutes") entry burn plays full
    *  frame (the booster return scene) instead of the inset; a 'typical' time stays an inset. */
   const returnLauncher = $derived(returnLauncherFor(profile.id));
   const returnLanding = $derived<BoosterReturnLanding | null>(
     returnLauncher &&
-      (insetLanding?.site === 'droneship' ||
-        (insetLanding?.site === 'landing-zone' && returnLauncher === 'falcon-9')) &&
+      ((insetLanding?.site === 'droneship' && returnLauncher !== 'falcon-heavy') ||
+        (insetLanding?.site === 'landing-zone' && returnLauncher !== 'new-glenn')) &&
       (insetLanding.timeClass === 'sourced' || insetLanding.timeClass === 'approx') &&
       insetLanding.entryBurnS != null
       ? { ...insetLanding, entryBurnS: insetLanding.entryBurnS }
       : null,
+  );
+  /** Falcon Heavy's first centre core, which missed its drone ship: played after the pair. */
+  const returnLost = $derived.by<BoosterReturnLanding | undefined>(() => {
+    const l = landings.find((x) => x.outcome === 'lost' && x.site === 'droneship');
+    return returnLanding && returnLauncher === 'falcon-heavy' && l?.entryBurnS != null
+      ? { ...l, entryBurnS: l.entryBurnS }
+      : undefined;
+  });
+  /** Which part of the return scene is on: the caption names the lost core while it plays. */
+  let returnPhase = $state<'return' | 'lost' | null>(null);
+  const returnCaption = $derived(
+    returnPhase === 'lost' && returnLost
+      ? [hudLabel('CENTRE CORE LOST'), ...(returnLost.siteNames ?? [])].join(' · ')
+      : insetCaption,
   );
   let returnScene: BoosterReturn | undefined;
   /** The scene module is imported on demand (route budget); set once the import is under way. */
@@ -318,15 +333,18 @@
         const landing = returnLanding;
         const light = director?.plan.conditions.light;
         const launcher = returnLauncher ?? 'falcon-9';
+        const lost = returnLost;
         void import('$lib/three/booster-return-scene').then(({ createBoosterReturn }) => {
-          if (!returnDisposed) returnScene = createBoosterReturn(landing, light, launcher);
+          if (!returnDisposed) returnScene = createBoosterReturn(landing, light, launcher, lost);
         });
       }
       const w = container.clientWidth;
       const h = container.clientHeight;
       const on = !!returnScene && returnScene.update(t, w / h);
-      if (on !== returnOn) {
+      const phase = on ? returnScene!.phaseAt(t) : null;
+      if (on !== returnOn || phase !== returnPhase) {
         returnOn = on;
+        returnPhase = phase;
         onCut?.();
       }
       if (!on) return null;
@@ -739,7 +757,7 @@
       data-testid="booster-return-cap"
       aria-hidden={!returnOn}
     >
-      {insetCaption}
+      {returnCaption}
     </div>
   {:else if insetLanding}
     <div

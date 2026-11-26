@@ -1,0 +1,48 @@
+{
+  "name": "Falcon Heavy Demo Flight",
+  "vehicle": "Falcon Heavy",
+  "payload": "Elon Musks kersenrode Tesla Roadster met een pop in ruimtepak, Starman, als massasimulator; ongeveer 1.250 kg met accu's (JPL Horizons) of 1.300 kg bij de lancering (Wikipedia)",
+  "delta_v": "Niet gepubliceerd",
+  "type": "ZWARE-LANCEERRAKET TESTVLUCHT · UITGEVOERD",
+  "first": "Eerste vlucht van de Falcon Heavy, die een auto met een pop in ruimtepak achter het stuur in een baan om de zon bracht",
+  "description": "De eerste vlucht van de Falcon Heavy, op 6 februari 2018 om 20:45 UTC vanaf Launch Complex 39A van het Kennedy Space Center, had geen satelliet van een klant aan boord. De lading was Elon Musks kersenrode Tesla Roadster met achter het stuur de pop Starman in ruimtepak, een massasimulator in plaats van de stalen of betonnen blokken die normaal worden gevlogen. De twee zijboosters, allebei al eerder gevlogen, landden bijna tegelijk op Landing Zones 1 en 2. De middelste kern miste het droneschip Of Course I Still Love You en sloeg ongeveer 100 m ervandaan met ongeveer 500 km/u in zee (Space.com noemt 484 km/u), nadat twee van de drie landingsmotoren niet opnieuw ontstaken. De tweede trap gleed daarna ongeveer zes uur door de stralingsgordels van Van Allen, en een derde ontsteking, voltooid rond 02:30 UTC op 7 februari (JPL Horizons), liet de auto achter in een baan om de zon met een aphelium van ongeveer 1,67 au; Musk zei dat hij de baan van Mars voorbij ging en doorvloog naar de asteroïdengordel. De tijden na de lancering zijn het plan van vóór de vlucht, behalve het einde van de derde ontsteking. De auto passeerde Mars op 7 oktober 2020 op ongeveer 7,4 miljoen km (Wikipedia zegt ongeveer 8 miljoen km). Hij draait nog steeds in een baan om de zon; de camerabeelden duurden iets meer dan vier uur.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCERING",
+      "note": "Falcon Heavy vanaf Launch Complex 39A, 6 februari 2018, 20:45 UTC; het geplande venster liep van 13:30 tot 16:00 EST.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.0055,
+      "label": "ZIJBOOSTERS LANDEN",
+      "note": "Gepland voor 00:07:58 op Landing Zones 1 en 2; ze raakten bijna tegelijk de grond.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.0058,
+      "label": "MIDDELSTE KERN VERLOREN",
+      "note": "Geplande landing op het droneschip om 00:08:19; twee van de drie motoren ontstaken niet opnieuw en de kern sloeg ongeveer 100 m verderop met ongeveer 500 km/u in zee.",
+      "type": "warning"
+    },
+    {
+      "met": 0.0197,
+      "label": "TWEEDE ONTSTEKING",
+      "note": "Geplande herstart om 00:28:22 en uitschakeling om 00:28:52, daarna ongeveer zes uur glijden door de gordels van Van Allen.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.24,
+      "label": "DERDE ONTSTEKING",
+      "note": "Gepland op T+06:00:00; voltooid rond 02:30 UTC op 7 februari (JPL Horizons). Musk: hij ging de baan van Mars voorbij.",
+      "type": "nominal"
+    },
+    {
+      "met": 973.4,
+      "label": "PASSAGE VAN MARS",
+      "note": "7 oktober 2020, ongeveer 7,4 miljoen km (JPL Horizons) of 8 miljoen km (Wikipedia).",
+      "type": "info"
+    }
+  ],
+  "vehicle_stage": "tweede trap van de Falcon Heavy"
+}

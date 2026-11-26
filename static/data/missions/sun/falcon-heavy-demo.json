@@ -1,0 +1,114 @@
+{
+  "id": "falcon-heavy-demo",
+  "agency": "SpaceX",
+  "agency_full": "Space Exploration Technologies Corp.",
+  "sector": "private",
+  "dest": "SUN",
+  "color": "#005288",
+  "year": 2018,
+  "status": "FLOWN",
+  "departure_date": "2018-02-06",
+  "arrival_date": "2020-10-07",
+  "transit_days": 974,
+  "vehicle": "Falcon Heavy",
+  "payload": "Elon Musk's midnight-cherry Tesla Roadster with a spacesuited mannequin, Starman, as a mass simulator; about 1,250 kg with batteries (JPL Horizons) or 1,300 kg at launch (Wikipedia)",
+  "delta_v": "Not published",
+  "data_quality": "partial",
+  "credit": "Sources: SpaceX Falcon Heavy press kit (February 2018), Spaceflight Now's launch timeline, Wikipedia (Falcon Heavy test flight; Elon Musk's Tesla Roadster; Landing Zones 1 and 2), JPL Horizons (target -143205, \"Tesla Roadster (AKA: Starman, 2018-017A)\"), Space.com and NASA History. Every time after liftoff is the pre-launch plan from the press kit and Spaceflight Now; the actual times were not found, except the third burn's completion, which JPL Horizons gives as about 02:30 UTC on 7 February. There is no arrival: arrival_date and transit_days mark the car's closest passage to Mars, 7 October 2020. Source conflicts: the centre core hit the sea at about 500 km/h (Wikipedia, Musk) or 484 km/h (Space.com); Mars passage about 8 million km (Wikipedia) or 7.4 million km (JPL Horizons); aphelion 1.66 au (Wikipedia) or 1.674 au (Horizons elements, epoch 15 February 2018); the car's model year is 2008 (Wikipedia, test flight) or 2010 (Wikipedia, Roadster article).",
+  "links": [
+    {
+      "l": "Falcon Heavy test flight — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Falcon_Heavy_test_flight",
+      "t": "intro"
+    },
+    {
+      "l": "Elon Musk's Tesla Roadster — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Elon_Musk%27s_Tesla_Roadster",
+      "t": "intro"
+    },
+    {
+      "l": "Falcon Heavy demonstration mission press kit (SpaceX, February 2018)",
+      "u": "https://mail.nbbd.com/events/spacex/180206-falcon-heavy-presskit.pdf",
+      "t": "core"
+    },
+    {
+      "l": "Launch timeline for Falcon Heavy's maiden flight (Spaceflight Now)",
+      "u": "https://spaceflightnow.com/2018/02/06/launch-timeline-for-falcon-heavys-maiden-flight/",
+      "t": "core"
+    },
+    {
+      "l": "5 years ago: first flight of the Falcon Heavy rocket (NASA History)",
+      "u": "https://www.nasa.gov/history/5-years-ago-first-flight-of-the-falcon-heavy-rocket/",
+      "t": "core"
+    },
+    {
+      "l": "Musk's Tesla Roadster is headed for the asteroid belt (Space.com)",
+      "u": "https://www.space.com/39619-spacex-falcon-heavy-roadster-to-asteroid-belt.html",
+      "t": "core"
+    },
+    {
+      "l": "Elon Musk explains the Falcon Heavy core booster crash (Space.com)",
+      "u": "https://www.space.com/39690-elon-musk-explains-falcon-heavy-core-booster-crash.html",
+      "t": "core"
+    }
+  ],
+  "flight_data_quality": "sparse",
+  "fleet_refs": [
+    {
+      "id": "falcon-heavy",
+      "role": "launcher"
+    },
+    {
+      "id": "lc-39a",
+      "role": "launch-site"
+    },
+    {
+      "id": "tesla-roadster",
+      "role": "payload"
+    }
+  ],
+  "flight": {
+    "launch": {
+      "vehicle_stage": "Falcon Heavy second stage",
+      "source": "SpaceX Falcon Heavy press kit (February 2018): 27 Merlin engines, more than 5 million pounds of thrust. No C3 or injected mass is published in the sources used"
+    },
+    "events": [
+      {
+        "met_days": 0,
+        "type": "launch",
+        "label": "Launch — Falcon Heavy's first flight",
+        "description": "Launch Complex 39A, Kennedy Space Center, 6 February 2018 at 20:45 UTC, inside the planned 1:30-4:00 pm EST window (the exact second of liftoff is not in the sources used). 27 Merlin engines, more than 5 million pounds of thrust. Both side cores were flight-proven: one had flown Thaicom 8 (May 2016), the other CRS-9 (July 2016)."
+      },
+      {
+        "met_days": 0.0055,
+        "type": "separation",
+        "label": "Side boosters land at LZ-1 and LZ-2",
+        "description": "Planned: the side cores separate at 00:02:33 and land at 00:07:58 on Landing Zones 1 and 2 at Cape Canaveral, one planned time for both; actual times not found. They touched down nearly simultaneously. Wikipedia's LZ page puts B1023 on LZ-1 and B1025 on LZ-2; no second source says which landed where."
+      },
+      {
+        "met_days": 0.0058,
+        "type": "anomaly",
+        "label": "Centre core lost at sea beside the drone ship",
+        "description": "Planned landing on the drone ship Of Course I Still Love You at 00:08:19. Two of the three landing engines did not relight; Musk said there was not enough ignition fluid to light the outer two. The core hit the water about 100 m from the ship at about 500 km/h (Wikipedia, Musk) or 484 km/h (Space.com) and damaged two of the ship's thrusters."
+      },
+      {
+        "met_days": 0.0197,
+        "type": "phasing",
+        "label": "Second burn, then the long coast",
+        "description": "Planned: first cutoff of the second stage (SECO-1) at 00:08:31, restart at 00:28:22, second cutoff (SECO-2) at 00:28:52. The press kit then lists \"an experimental long coast and third stage two burn\": about six hours coasting through the Van Allen radiation belts (Wikipedia). Actual times not found."
+      },
+      {
+        "met_days": 0.24,
+        "type": "tli_or_tmi",
+        "label": "Third burn: past Mars orbit",
+        "description": "Planned at T+06:00:00; JPL Horizons says the burn was completed at about 02:30 UTC on 7 February, 5 h 45 min after liftoff. The plan was a precessing Earth-Mars elliptical orbit around the Sun. Musk: \"Third burn successful. Exceeded Mars orbit and kept going to the Asteroid Belt.\" The Horizons elements give an aphelion of 1.674 au (Wikipedia: 1.66 au)."
+      },
+      {
+        "met_days": 973.4,
+        "type": "phasing",
+        "label": "Closest passage to Mars",
+        "description": "7 October 2020. JPL Horizons predicts a closest approach of 0.0495 au (7.4 million km) at about 06:26 TDB; Wikipedia says about 8 million km. Wikipedia reports no significant effect on the car's orbit."
+      }
+    ]
+  }
+}

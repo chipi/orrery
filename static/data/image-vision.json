@@ -31386,6 +31386,45 @@
       "rejected_by": null,
       "scored_at": "2026-11-26T20:13:13.888Z",
       "scoring_cost_usd": 0
+    },
+    "/images/missions/falcon-heavy-demo/01.jpg": {
+      "score": 8,
+      "subject": "Falcon Heavy lifting off from Launch Complex 39A at Kennedy Space Center on its first flight, 6 February 2018.",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.4,
+        "y": 0.4
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-26T21:05:03.758Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/tesla-roadster/01.jpg": {
+      "score": 8,
+      "subject": "Elon Musk's Tesla Roadster in space, seen from the front, with the Starman mannequin at the wheel and Earth in the background; a frame from the car's camera feed.",
+      "category": "spacecraft",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.65
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-26T21:05:03.776Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/tesla-roadster/02.jpg": {
+      "score": 8,
+      "subject": "Elon Musk's Tesla Roadster in space, seen from its left side, with the Starman mannequin at the wheel and Earth in the background; a frame from the car's camera feed.",
+      "category": "spacecraft",
+      "focal_point": {
+        "x": 0.62,
+        "y": 0.7
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-26T21:05:03.791Z",
+      "scoring_cost_usd": 0
     }
   }
 }

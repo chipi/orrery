@@ -14,6 +14,11 @@
     "en": "d1fb89f213",
     "tr": "7e38a3db58"
   },
+  "ar|missions/sun/falcon-heavy-demo.json|events.0.note": {
+    "why": "Planned window 1:30-4:00 pm EST (SpaceX press kit) is written 13:30-16:00 EST in a 24-hour locale (1:30 + pm = 13:30, 4:00 + pm = 16:00); same window, the UTC liftoff time 20:45 is unchanged.",
+    "en": "e0ee672df1",
+    "tr": "4419eb37de"
+  },
   "ar|original-work.json|models3d./images/colophon/model-showcase-change-3_webp.title": {
     "why": "the Arabic dual (طرازان, two models) carries the count 2; a numeral beside it would read wrong",
     "en": "f0e9d6f2ac",
@@ -104,6 +109,11 @@
     "en": "472062b96c",
     "tr": "843361da4b"
   },
+  "de|missions/sun/falcon-heavy-demo.json|events.0.note": {
+    "why": "Planned window 1:30-4:00 pm EST (SpaceX press kit) is written 13:30-16:00 EST in a 24-hour locale (1:30 + pm = 13:30, 4:00 + pm = 16:00); same window, the UTC liftoff time 20:45 is unchanged.",
+    "en": "e0ee672df1",
+    "tr": "428df1e55f"
+  },
   "de|source-logos.json|nasa-ctx": {
     "why": "the DOI \"10.1029/2024EA003555\" is kept verbatim in the translation; the tool reads its \"10.1029\" prefix as 1029",
     "en": "15282e3d0f",
@@ -118,6 +128,11 @@
     "why": "Launch time 3:55 pm EST is written 15:55 EST in a 24-hour locale (3 + pm = 15); same instant, 20:55 UTC unchanged. Where listed, an extra date token is the same '7 and 9 September 2027' written as a date (ja/ko/zh-CN 9月7日と9日).",
     "en": "d1fb89f213",
     "tr": "b792f8b88c"
+  },
+  "es|missions/sun/falcon-heavy-demo.json|events.0.note": {
+    "why": "Planned window 1:30-4:00 pm EST (SpaceX press kit) is written 13:30-16:00 EST in a 24-hour locale (1:30 + pm = 13:30, 4:00 + pm = 16:00); same window, the UTC liftoff time 20:45 is unchanged.",
+    "en": "e0ee672df1",
+    "tr": "6c9b14e924"
   },
   "es|source-logos.json|nasa-ctx": {
     "why": "the DOI \"10.1029/2024EA003555\" is kept verbatim in the translation; the tool reads its \"10.1029\" prefix as 1029",
@@ -149,6 +164,11 @@
     "en": "d1fb89f213",
     "tr": "9af4061987"
   },
+  "fr|missions/sun/falcon-heavy-demo.json|events.0.note": {
+    "why": "Planned window 1:30-4:00 pm EST (SpaceX press kit) is written 13:30-16:00 EST in a 24-hour locale (1:30 + pm = 13:30, 4:00 + pm = 16:00); same window, the UTC liftoff time 20:45 is unchanged.",
+    "en": "e0ee672df1",
+    "tr": "78686de699"
+  },
   "fr|science/life-in-space/crew-selection.json|intro_sentence": {
     "why": "\"~10 selectees\" is \"une dizaine de sélectionnés\" (about ten)",
     "en": "1c860fdc4b",
@@ -169,6 +189,11 @@
     "en": "d1fb89f213",
     "tr": "c70507494b"
   },
+  "hi|missions/sun/falcon-heavy-demo.json|events.0.note": {
+    "why": "Planned window 1:30-4:00 pm EST (SpaceX press kit) is written 13:30-16:00 EST in a 24-hour locale (1:30 + pm = 13:30, 4:00 + pm = 16:00); same window, the UTC liftoff time 20:45 is unchanged.",
+    "en": "e0ee672df1",
+    "tr": "17415a5813"
+  },
   "hi|source-logos.json|nasa-ctx": {
     "why": "the DOI \"10.1029/2024EA003555\" is kept verbatim in the translation; the tool reads its \"10.1029\" prefix as 1029",
     "en": "15282e3d0f",
@@ -183,6 +208,11 @@
     "why": "Launch time 3:55 pm EST is written 15:55 EST in a 24-hour locale (3 + pm = 15); same instant, 20:55 UTC unchanged. Where listed, an extra date token is the same '7 and 9 September 2027' written as a date (ja/ko/zh-CN 9月7日と9日).",
     "en": "d1fb89f213",
     "tr": "cec966390c"
+  },
+  "it|missions/sun/falcon-heavy-demo.json|events.0.note": {
+    "why": "Planned window 1:30-4:00 pm EST (SpaceX press kit) is written 13:30-16:00 EST in a 24-hour locale (1:30 + pm = 13:30, 4:00 + pm = 16:00); same window, the UTC liftoff time 20:45 is unchanged.",
+    "en": "e0ee672df1",
+    "tr": "2e2273a992"
   },
   "it|science/life-in-space/eva-operations.json|body_paragraphs.1": {
     "why": "\"the riskiest 15 minutes\" is \"il quarto d'ora più rischioso\" (the riskiest quarter of an hour)",
@@ -218,6 +248,11 @@
     "why": "Japan-time date: 19 October 2026 UTC is 20 October JST; the Japanese text says 20 October (日本時間)",
     "en": "e3de9ddd9f",
     "tr": "befb076c0f"
+  },
+  "ja|missions/sun/falcon-heavy-demo.json|events.0.note": {
+    "why": "Planned window 1:30-4:00 pm EST (SpaceX press kit) is written 13:30-16:00 EST in a 24-hour locale (1:30 + pm = 13:30, 4:00 + pm = 16:00); same window, the UTC liftoff time 20:45 is unchanged.",
+    "en": "e0ee672df1",
+    "tr": "72919150c6"
   },
   "ja|science/mission-phases/eva.json|narrative_101.1": {
     "why": "\"100% oxygen\" is \"純酸素\" (pure oxygen)",
@@ -259,6 +294,11 @@
     "en": "d1fb89f213",
     "tr": "3a86763604"
   },
+  "ko|missions/sun/falcon-heavy-demo.json|events.0.note": {
+    "why": "Planned window 1:30-4:00 pm EST (SpaceX press kit) is written 13:30-16:00 EST in a 24-hour locale (1:30 + pm = 13:30, 4:00 + pm = 16:00); same window, the UTC liftoff time 20:45 is unchanged.",
+    "en": "e0ee672df1",
+    "tr": "cff09da637"
+  },
   "ko|science/mission-phases/dead-reckoning.json|body_paragraphs.1": {
     "why": "\"over 1 day\" is \"하루 만에\" (the native word for one day)",
     "en": "73d1d74980",
@@ -299,6 +339,11 @@
     "en": "d1fb89f213",
     "tr": "0e7853afe5"
   },
+  "nl|missions/sun/falcon-heavy-demo.json|events.0.note": {
+    "why": "Planned window 1:30-4:00 pm EST (SpaceX press kit) is written 13:30-16:00 EST in a 24-hour locale (1:30 + pm = 13:30, 4:00 + pm = 16:00); same window, the UTC liftoff time 20:45 is unchanged.",
+    "en": "e0ee672df1",
+    "tr": "b246f58919"
+  },
   "nl|science/life-in-space/sleep-nutrition-circadian.json|body_paragraphs.0": {
     "why": "\"per 24-hour day\" is \"per etmaal\", the Dutch word for a 24-hour day",
     "en": "00196c8be4",
@@ -318,6 +363,11 @@
     "why": "Launch time 3:55 pm EST is written 15:55 EST in a 24-hour locale (3 + pm = 15); same instant, 20:55 UTC unchanged. Where listed, an extra date token is the same '7 and 9 September 2027' written as a date (ja/ko/zh-CN 9月7日と9日).",
     "en": "d1fb89f213",
     "tr": "8035ac222d"
+  },
+  "pt-BR|missions/sun/falcon-heavy-demo.json|events.0.note": {
+    "why": "Planned window 1:30-4:00 pm EST (SpaceX press kit) is written 13:30-16:00 EST in a 24-hour locale (1:30 + pm = 13:30, 4:00 + pm = 16:00); same window, the UTC liftoff time 20:45 is unchanged.",
+    "en": "e0ee672df1",
+    "tr": "46bcaec813"
   },
   "pt-BR|science/life-in-space/lunar-surface-ops.json|body_paragraphs.1": {
     "why": "\"at #1\" is \"no topo da lista\" (at the top of the list)",
@@ -339,6 +389,11 @@
     "en": "d1fb89f213",
     "tr": "f8230ec521"
   },
+  "ru|missions/sun/falcon-heavy-demo.json|events.0.note": {
+    "why": "Planned window 1:30-4:00 pm EST (SpaceX press kit) is written 13:30-16:00 EST in a 24-hour locale (1:30 + pm = 13:30, 4:00 + pm = 16:00); same window, the UTC liftoff time 20:45 is unchanged.",
+    "en": "e0ee672df1",
+    "tr": "08dd2c21b9"
+  },
   "ru|source-logos.json|nasa-ctx": {
     "why": "the DOI \"10.1029/2024EA003555\" is kept verbatim in the translation; the tool reads its \"10.1029\" prefix as 1029",
     "en": "15282e3d0f",
@@ -359,6 +414,11 @@
     "en": "d1fb89f213",
     "tr": "6fe4fc52c6"
   },
+  "sr-Cyrl|missions/sun/falcon-heavy-demo.json|events.0.note": {
+    "why": "Planned window 1:30-4:00 pm EST (SpaceX press kit) is written 13:30-16:00 EST in a 24-hour locale (1:30 + pm = 13:30, 4:00 + pm = 16:00); same window, the UTC liftoff time 20:45 is unchanged.",
+    "en": "e0ee672df1",
+    "tr": "381c3bec34"
+  },
   "sr-Cyrl|source-logos.json|nasa-ctx": {
     "why": "the DOI \"10.1029/2024EA003555\" is kept verbatim in the translation; the tool reads its \"10.1029\" prefix as 1029",
     "en": "15282e3d0f",
@@ -378,6 +438,11 @@
     "why": "Launch time 3:55 pm EST is written 15:55 EST in a 24-hour locale (3 + pm = 15); same instant, 20:55 UTC unchanged. Where listed, an extra date token is the same '7 and 9 September 2027' written as a date (ja/ko/zh-CN 9月7日と9日).",
     "en": "d1fb89f213",
     "tr": "b49c77cd2e"
+  },
+  "zh-CN|missions/sun/falcon-heavy-demo.json|events.0.note": {
+    "why": "Planned window 1:30-4:00 pm EST (SpaceX press kit) is written 13:30-16:00 EST in a 24-hour locale (1:30 + pm = 13:30, 4:00 + pm = 16:00); same window, the UTC liftoff time 20:45 is unchanged.",
+    "en": "e0ee672df1",
+    "tr": "3ac934863b"
   },
   "zh-CN|science/mission-phases/eva.json|narrative_101.1": {
     "why": "\"100% oxygen\" is \"纯氧\" (pure oxygen)",

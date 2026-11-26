@@ -67,7 +67,8 @@ side booster and a tower catch stay a UXD-050 inset.
 ## Consequences
 
 - UXD-050's inset stays for tower catches, Falcon Heavy side boosters and any landing without an
-  entry-burn time. UXD-050 is marked partly superseded for drone-ship and landing-zone landings
+  entry-burn time. (Narrowed by [UXD-054](UXD-054-falcon-heavys-first-flight-plays-both-side-boosters-and-the-lost-core-full-frame.md):
+  Falcon Heavy's first flight plays its side boosters and its lost centre core full frame.) UXD-050 is marked partly superseded for drone-ship and landing-zone landings
   with a sourced entry burn.
 - `LaunchScene.svelte` chooses between `createBoosterReturn` and the inset
   (`returnLanding` gate); `ascent-renderer.ts` draws the return scene as a full-frame view.

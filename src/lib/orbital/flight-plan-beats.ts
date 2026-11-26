@@ -57,7 +57,12 @@ export function buildPlanBeats(
         : []),
   ];
   const landingBeats = landings.map((l) => ({
-    label: l.outcome === 'caught' ? 'TOWER CATCH' : 'BOOSTER LANDING',
+    label:
+      l.outcome === 'caught'
+        ? 'TOWER CATCH'
+        : l.outcome === 'lost'
+          ? 'CENTRE CORE LOST'
+          : 'BOOSTER LANDING',
     t: l.touchdownS,
     ...(l.timeClass === 'approx' || l.timeClass === 'typical' ? { approx: true } : {}),
   }));

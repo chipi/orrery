@@ -136,6 +136,7 @@ export const SHOWCASE_FAMILY: Readonly<Record<string, string>> = {
   spirit: 'rovers',
   spitzer: 'observatories',
   starliner: 'capsules-commercial',
+  'tesla-roadster': 'roadster',
   tess: 'observatories',
   'tianwen-1': 'mars-orbiters',
   tianzhou: 'station-freighters',

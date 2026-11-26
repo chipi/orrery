@@ -945,6 +945,7 @@
     'helio-flyby': m.fly_traj_type_helio_flyby,
     'helio-free-return': m.fly_traj_type_helio_free_return,
     'helio-hohmann': m.fly_traj_type_helio_hohmann,
+    'helio-orbit': m.fly_traj_type_helio_orbit,
   };
   let trajectoryTypeLabel = $derived(
     TRAJECTORY_TYPE_LABEL[

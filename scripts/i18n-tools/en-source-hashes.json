@@ -3839,6 +3839,12 @@
     "name": "3ee5fd8d67",
     "tagline": "70685ac769"
   },
+  "fleet/orbiter/tesla-roadster.json": {
+    "best_known_for": "f2538fdde4",
+    "description": "eccd07ab4d",
+    "name": "5eef766533",
+    "tagline": "b4388267eb"
+  },
   "fleet/orbiter/tianwen-1.json": {
     "best_known_for": "8b15634bff",
     "description": "9f455b2f2c",
@@ -5798,6 +5804,7 @@
     "fly_traj_type_helio_flyby": "a6de3e315a",
     "fly_traj_type_helio_free_return": "ba718de76a",
     "fly_traj_type_helio_hohmann": "45abd67141",
+    "fly_traj_type_helio_orbit": "a3371a3934",
     "fly_traj_type_suborbital": "185782b3ff",
     "fly_view_drawer": "69bd4ef9fb",
     "fly_view_toggles_aria": "14c7f43bfd",
@@ -5890,6 +5897,7 @@
     "hud_constant_descent": "47878cd1ac",
     "hud_contact": "740fabb870",
     "hud_contact_light": "dd897c1867",
+    "hud_core_lost": "54d773255d",
     "hud_data_ends": "61874aeace",
     "hud_decel": "8aa12d221e",
     "hud_deorbit_in": "01be9bb9f6",
@@ -11764,6 +11772,34 @@
     "type": "b8e6e0e847",
     "vehicle": "7d7f7fbce2",
     "vehicle_stage": "c0110c5e48"
+  },
+  "missions/sun/falcon-heavy-demo.json": {
+    "delta_v": "4008163b8c",
+    "description": "8c49bf8396",
+    "events.0.label": "89006102d3",
+    "events.0.note": "e0ee672df1",
+    "events.0.type": "586d612861",
+    "events.1.label": "2e7d242178",
+    "events.1.note": "d074ed8e51",
+    "events.1.type": "586d612861",
+    "events.2.label": "54d773255d",
+    "events.2.note": "47f0cbe4b1",
+    "events.2.type": "383fd7bf84",
+    "events.3.label": "963d5a54e7",
+    "events.3.note": "27ebcb5362",
+    "events.3.type": "586d612861",
+    "events.4.label": "c7cc9f46c7",
+    "events.4.note": "6ec52d1690",
+    "events.4.type": "586d612861",
+    "events.5.label": "f70cad31ac",
+    "events.5.note": "64790dbc6e",
+    "events.5.type": "59bd0a3ff4",
+    "first": "bbf87abfb2",
+    "name": "af18af272f",
+    "payload": "f1a0b2916f",
+    "type": "0449a399f1",
+    "vehicle": "d1b5b43a2f",
+    "vehicle_stage": "5dc0087d19"
   },
   "missions/sun/parker-solar-probe.json": {
     "delta_v": "f72e175db8",

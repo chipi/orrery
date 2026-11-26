@@ -1,0 +1,48 @@
+{
+  "name": "Falcon Heavy Demo Flight",
+  "vehicle": "Falcon Heavy",
+  "payload": "Elon Musks kirschroter Tesla Roadster mit einer Puppe im Raumanzug, Starman, als Massensimulator; etwa 1.250 kg mit Batterien (JPL Horizons) oder 1.300 kg beim Start (Wikipedia)",
+  "delta_v": "Nicht veröffentlicht",
+  "type": "SCHWERLAST-TESTFLUG · ABGESCHLOSSEN",
+  "first": "Erster Flug der Falcon Heavy, die ein Auto mit einer Puppe im Raumanzug am Steuer in eine Umlaufbahn um die Sonne schickte",
+  "description": "Der erste Flug der Falcon Heavy am 6. Februar 2018 um 20:45 UTC vom Launch Complex 39A des Kennedy Space Center trug keinen Kundensatelliten. Die Nutzlast war Elon Musks kirschroter Tesla Roadster mit der Puppe Starman im Raumanzug am Steuer, ein Massensimulator anstelle der Stahl- oder Betonblöcke, die sonst geflogen werden. Die beiden Seitenbooster, beide bereits geflogen, landeten fast gleichzeitig auf den Landing Zones 1 und 2. Der mittlere Kern verfehlte das Drohnenschiff Of Course I Still Love You und schlug etwa 100 m davon entfernt mit etwa 500 km/h im Meer auf (Space.com nennt 484 km/h), nachdem zwei seiner drei Landetriebwerke nicht wieder gezündet hatten. Die zweite Stufe flog danach etwa sechs Stunden durch die Van-Allen-Strahlungsgürtel, und eine dritte Zündung, die laut JPL Horizons gegen 02:30 UTC am 7. Februar abgeschlossen war, ließ das Auto auf einer Umlaufbahn um die Sonne mit einem Aphel von etwa 1,67 au zurück; Musk sagte, sie habe die Marsbahn überschritten und weiter bis zum Asteroidengürtel geführt. Die Zeiten nach dem Start sind der Plan vor dem Flug, mit Ausnahme des Endes der dritten Zündung. Am 7. Oktober 2020 passierte das Auto den Mars in etwa 7,4 Millionen km Abstand (Wikipedia nennt etwa 8 Millionen km). Es befindet sich weiterhin auf einer Umlaufbahn um die Sonne; der Kamerastream dauerte knapp über vier Stunden.",
+  "events": [
+    {
+      "met": 0,
+      "label": "START",
+      "note": "Falcon Heavy vom Launch Complex 39A, 6. Februar 2018, 20:45 UTC; das geplante Startfenster war 13:30-16:00 Uhr EST.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.0055,
+      "label": "SEITENBOOSTER LANDEN",
+      "note": "Geplant für 00:07:58 auf den Landing Zones 1 und 2; sie setzten fast gleichzeitig auf.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.0058,
+      "label": "MITTLERER KERN VERLOREN",
+      "note": "Geplante Landung auf dem Drohnenschiff um 00:08:19; zwei von drei Triebwerken zündeten nicht erneut, und der Kern schlug etwa 100 m entfernt mit etwa 500 km/h im Meer auf.",
+      "type": "warning"
+    },
+    {
+      "met": 0.0197,
+      "label": "ZWEITE ZÜNDUNG",
+      "note": "Geplanter Neustart um 00:28:22 und Abschaltung um 00:28:52, danach ein Flug von etwa sechs Stunden ohne Antrieb durch die Van-Allen-Gürtel.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.24,
+      "label": "DRITTE ZÜNDUNG",
+      "note": "Geplant für T+06:00:00; abgeschlossen gegen 02:30 UTC am 7. Februar (JPL Horizons). Musk: Sie überschritt die Marsbahn.",
+      "type": "nominal"
+    },
+    {
+      "met": 973.4,
+      "label": "MARSPASSAGE",
+      "note": "7. Oktober 2020, etwa 7,4 Millionen km (JPL Horizons) oder 8 Millionen km (Wikipedia).",
+      "type": "info"
+    }
+  ],
+  "vehicle_stage": "zweite Stufe der Falcon Heavy"
+}

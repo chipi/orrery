@@ -35,6 +35,8 @@ const FLY_CRAFT: Record<string, readonly [string, string]> = {
   ),
   'parker-solar-probe': ['inner-solar', 'parker-solar-probe'],
   'solar-orbiter': ['inner-solar', 'solar-orbiter'],
+  // The Roadster on its adapter; the second stage it stayed on is not drawn.
+  'falcon-heavy-demo': ['roadster', 'tesla-roadster'],
   messenger: ['inner-solar', 'messenger'],
   magellan: ['inner-solar', 'magellan'],
   akatsuki: ['inner-solar', 'akatsuki'],

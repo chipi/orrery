@@ -1,0 +1,48 @@
+{
+  "name": "Falcon Heavy Demo Flight",
+  "vehicle": "Falcon Heavy",
+  "payload": "Tesla Roadster rosso «midnight cherry» di Elon Musk con un manichino in tuta spaziale, Starman, come simulatore di massa; circa 1.250 kg con le batterie (JPL Horizons) o 1.300 kg al lancio (Wikipedia)",
+  "delta_v": "Non pubblicato",
+  "type": "VOLO DI PROVA DI LANCIATORE PESANTE · COMPIUTO",
+  "first": "Primo volo di Falcon Heavy, che mandò su un'orbita attorno al Sole un'auto con un manichino in tuta spaziale al volante",
+  "description": "Il primo volo di Falcon Heavy, il 6 febbraio 2018 alle 20:45 UTC dal Launch Complex 39A del Kennedy Space Center, non portava alcun satellite di clienti. Il suo carico utile era la Tesla Roadster «midnight cherry» di Elon Musk con al volante il manichino in tuta spaziale Starman, un simulatore di massa al posto dei blocchi di acciaio o cemento che di solito si fanno volare. I due booster laterali, entrambi già volati, atterrarono quasi contemporaneamente sulle Landing Zones 1 e 2. Il nucleo centrale mancò la nave drone Of Course I Still Love You e colpì il mare a circa 100 m da essa a circa 500 km/h (Space.com indica 484 km/h), dopo che due dei suoi tre motori di atterraggio non si erano riaccesi. Il secondo stadio proseguì poi per circa sei ore in assenza di spinta attraverso le fasce di radiazione di Van Allen, e una terza accensione, completata verso le 02:30 UTC del 7 febbraio (JPL Horizons), lasciò l'auto su un'orbita attorno al Sole con un afelio di circa 1,67 au; Musk disse che aveva superato l'orbita di Marte e continuava verso la fascia degli asteroidi. Gli orari dopo il decollo sono il piano precedente al volo, tranne la fine della terza accensione. L'auto passò vicino a Marte il 7 ottobre 2020 a circa 7,4 milioni di km (Wikipedia dice circa 8 milioni di km). È ancora su un'orbita attorno al Sole; la trasmissione delle sue telecamere durò poco più di quattro ore.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCIO",
+      "note": "Falcon Heavy dal Launch Complex 39A, 6 febbraio 2018, 20:45 UTC; la finestra prevista andava dalle 13:30 alle 16:00 EST.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.0055,
+      "label": "ATTERRAGGIO DEI BOOSTER LATERALI",
+      "note": "Previsto alle 00:07:58 sulle Landing Zones 1 e 2; toccarono terra quasi contemporaneamente.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.0058,
+      "label": "NUCLEO CENTRALE PERSO",
+      "note": "Atterraggio previsto sulla nave drone alle 00:08:19; due motori su tre non si riaccesero e il nucleo colpì il mare a circa 100 m, a circa 500 km/h.",
+      "type": "warning"
+    },
+    {
+      "met": 0.0197,
+      "label": "SECONDA ACCENSIONE",
+      "note": "Riaccensione prevista alle 00:28:22 e spegnimento alle 00:28:52, poi circa sei ore di volo inerziale attraverso le fasce di Van Allen.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.24,
+      "label": "TERZA ACCENSIONE",
+      "note": "Prevista a T+06:00:00; completata verso le 02:30 UTC del 7 febbraio (JPL Horizons). Musk: superò l'orbita di Marte.",
+      "type": "nominal"
+    },
+    {
+      "met": 973.4,
+      "label": "PASSAGGIO PRESSO MARTE",
+      "note": "7 ottobre 2020, circa 7,4 milioni di km (JPL Horizons) o 8 milioni di km (Wikipedia).",
+      "type": "info"
+    }
+  ],
+  "vehicle_stage": "secondo stadio di Falcon Heavy"
+}

@@ -61,6 +61,8 @@ export const FLY_TRAJECTORY_IDS = [
   'near-shoemaker',
   'parker-solar-probe',
   'solar-orbiter',
+  // The measured orbit from JPL Horizons (scripts/fly/roadster-horizons-path.ts), not generated.
+  'falcon-heavy-demo',
 ] as const;
 const FLY_TRAJECTORY_ID_SET: ReadonlySet<string> = new Set(FLY_TRAJECTORY_IDS);
 /** Missions that fly another's path (Huygens rode Cassini). */

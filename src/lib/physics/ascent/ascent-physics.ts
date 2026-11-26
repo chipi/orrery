@@ -149,7 +149,9 @@ export interface ThrottleStep {
  *  `booster` part (the core stage), its side boosters `strapOns`. */
 export interface PartRecovery {
   part: 'booster' | 'strapOns';
-  outcome: 'landed' | 'caught' | 'expended';
+  /** 'lost': a landing tried and missed (Falcon Heavy's first centre core); `touchdownS` is then
+   *  the impact. */
+  outcome: 'landed' | 'caught' | 'expended' | 'lost';
   site?: 'droneship' | 'landing-zone' | 'tower';
   /** The site's own name, as written (LZ-1 and LZ-2 for two side boosters, a drone ship's name). */
   siteNames?: string[];

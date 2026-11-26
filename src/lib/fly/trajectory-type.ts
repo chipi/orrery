@@ -6,7 +6,8 @@ export type TrajectoryType =
   | 'cislunar'
   | 'helio-flyby'
   | 'helio-free-return'
-  | 'helio-hohmann';
+  | 'helio-hohmann'
+  | 'helio-orbit';
 
 const HELIO_FLYBY_DESTINATIONS = new Set(['jupiter', 'saturn', 'uranus', 'neptune', 'pluto']);
 
@@ -27,5 +28,8 @@ export function trajectoryType(o: {
   if (o.earthCoast || o.dest?.toUpperCase() === 'EARTH') return 'earth-orbit';
   if (o.isMoonMission) return o.isFreeReturn ? 'cislunar-free-return' : 'cislunar';
   if (HELIO_FLYBY_DESTINATIONS.has(o.activeDestination)) return 'helio-flyby';
+  // A Sun mission flies its own orbit round the Sun (Parker, Solar Orbiter, the Roadster), not a
+  // transfer to a planet.
+  if (o.dest?.toUpperCase() === 'SUN') return 'helio-orbit';
   return o.isFreeReturn ? 'helio-free-return' : 'helio-hohmann';
 }

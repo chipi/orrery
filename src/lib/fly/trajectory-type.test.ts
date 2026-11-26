@@ -46,5 +46,12 @@ describe('trajectoryType', () => {
     expect(trajectoryType({ ...base, earthCoast: null, dest: 'MARS', isFreeReturn: true })).toBe(
       'helio-free-return',
     );
+    // Sun missions fly their own orbit (Parker, Solar Orbiter, the Roadster); Ulysses aims at Jupiter.
+    expect(
+      trajectoryType({ ...base, earthCoast: null, dest: 'SUN', activeDestination: 'mars' }),
+    ).toBe('helio-orbit');
+    expect(
+      trajectoryType({ ...base, earthCoast: null, dest: 'SUN', activeDestination: 'jupiter' }),
+    ).toBe('helio-flyby');
   });
 });

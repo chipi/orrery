@@ -6,6 +6,8 @@ import {
   buildPhaseMarkerScreens,
   buildFdPhaseMarkerScreens,
   buildMilestoneScreens,
+  focusMilestones,
+  type MilestoneRender,
   type FdStage,
 } from './fly-frame-projections';
 
@@ -204,5 +206,44 @@ describe('buildMilestoneScreens', () => {
       retPts: [],
     });
     expect(out!.map((m) => m.label)).toEqual(['Perihelion']);
+  });
+});
+
+describe('focusMilestones — the flyby label rules (review call 7)', () => {
+  const m = (label: string, x: number, state: 'past' | 'active' | 'future'): MilestoneRender => ({
+    label,
+    met_days: 0,
+    screen: { x, y: 300, onScreen: true } as MilestoneRender['screen'],
+    active: state === 'active',
+    state,
+  });
+  const set = [
+    m('VENUS', 640, 'past'),
+    m('MERCURY #1', 650, 'active'),
+    m('MERCURY #2', 660, 'future'),
+  ];
+
+  it('marks only the active event while a flyby holds the frame', () => {
+    const out = focusMilestones(set, { activeOnly: true, hideActiveLabel: false, width: 1280 });
+    expect(out.map((x) => x.label)).toEqual(['MERCURY #1']);
+  });
+
+  it('keeps every marker outside a flyby', () => {
+    const out = focusMilestones(set, { activeOnly: false, hideActiveLabel: false, width: 1280 });
+    expect(out).toHaveLength(3);
+  });
+
+  it('hides the active label at the hero beat, keeping its diamond', () => {
+    const [a] = focusMilestones(set, { activeOnly: true, hideActiveLabel: true, width: 1280 });
+    expect(a.labelHidden).toBe(true);
+  });
+
+  it('runs a label inward near either edge', () => {
+    const out = focusMilestones([m('A', 20, 'past'), m('B', 640, 'past'), m('C', 370, 'past')], {
+      activeOnly: false,
+      hideActiveLabel: false,
+      width: 390,
+    });
+    expect(out.map((x) => x.align)).toEqual(['start', 'end', 'end']);
   });
 });

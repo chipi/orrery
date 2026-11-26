@@ -52,6 +52,7 @@ import { buildFlyDebugSnapshot } from '$lib/orbital/fly-debug-snapshot';
 import { predictShipPosAtMet } from '$lib/physics/transfer/predict-ship-pos';
 import { sampleCislunarSpacecraftPos } from '$lib/orbital/sample-cislunar-spacecraft';
 import { craftLedCoastShot, inCraftShot, type CraftShot } from '$lib/orbital/cislunar-craft-shot';
+import { cruiseCraftShot, type CruiseShot } from '$lib/orbital/helio-cruise-shot';
 import { portraitFov } from './phone-framing';
 import { CISLUNAR_FOV } from './fly-cislunar-scene';
 
@@ -185,6 +186,8 @@ export function createFlyCameraController(deps: FlyCameraDeps) {
     camTarget.z,
   ];
   let montageShotFrame: ShotFrame | null = null;
+  /** The craft-led cruise shot for this frame, or null (helio-cruise-shot.ts). */
+  let cruiseShot: CruiseShot | null = null;
   let montageShotKind: ShotKind | null = null;
   // The ship's scene position on a pass beside the body (post-arrival-pass.ts), which the frame
   // runner uses instead of the arc: a flyby after the arrival event, or one the stored arc misses.
@@ -306,6 +309,7 @@ export function createFlyCameraController(deps: FlyCameraDeps) {
     // the current MET falls inside a montage window. (#371)
     montageShotFrame = null;
     montageShotKind = null;
+    cruiseShot = null;
     passShip = null;
     flybyBody = null;
     postArrivalActive = false;
@@ -685,6 +689,10 @@ export function createFlyCameraController(deps: FlyCameraDeps) {
       scale3d: SCALE_3D,
     });
     sub = frame.sub;
+    // The cruise's middle stretch is craft-led; the Sun as the target would fill that lens.
+    if (!sunTarget && (frame.sub === 'cruise-out' || frame.sub === 'approach'))
+      cruiseShot = cruiseCraftShot(scScene, destScene);
+    else if (frame.sub === 'cruise-back') cruiseShot = cruiseCraftShot(scScene, earthScene);
     centerX = frame.centerX;
     centerZ = frame.centerZ;
     targetR = frame.targetR;
@@ -1259,6 +1267,10 @@ export function createFlyCameraController(deps: FlyCameraDeps) {
     },
     get montageShotFrame() {
       return montageShotFrame;
+    },
+    /** The craft-led cruise shot (helio-cruise-shot.ts), or null. */
+    get cruiseShot() {
+      return cruiseShot;
     },
     get montageShotKind() {
       return montageShotKind;

@@ -7,6 +7,7 @@ import { BODY_MASS_KG, gravityAccel, logScaleLength } from '$lib/orbit-overlays'
 import {
   buildFdPhaseMarkerScreens,
   buildMilestoneScreens,
+  focusMilestones,
   buildPhaseMarkerScreens,
   makeProjectorFactory,
 } from '$lib/fly/fly-frame-projections';
@@ -1406,8 +1407,16 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
         camera.updateProjectionMatrix();
       }
     } else {
+      // The craft-led cruise shot replaces the frame without touching the orbit state, so the
+      // wide frame is back the moment it ends (helio-cruise-shot.ts).
+      const cs = bridge.isMoonMission ? null : flyCam.cruiseShot;
+      if (cs) {
+        camera.up.set(0, 1, 0);
+        camera.position.set(cs.pos.x, cs.pos.y, cs.pos.z);
+        camera.lookAt(cs.look.x, cs.look.y, cs.look.z);
+      }
       // The cruise and cislunar frames are composed for landscape; a phone widens them (W6).
-      const fov = portraitFov(baseFov, camera.aspect);
+      const fov = portraitFov(cs ? cs.fovDeg : baseFov, camera.aspect);
       if (Math.abs(camera.fov - fov) > 0.01) {
         camera.fov = fov;
         camera.updateProjectionMatrix();
@@ -1662,7 +1671,8 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
         if (body && bodyR < ARRIVAL_SMALL_BODY_RADIUS) {
           const b = body.clone().project(camera);
           const tanHalf = Math.tan((camera.fov * Math.PI) / 360);
-          const rNdc = bodyR / (camera.position.distanceTo(body) * tanHalf);
+          // A small body is a rock (fly-rock.ts): its lumps and long axis reach past the radius.
+          const rNdc = (bodyR * 1.2) / (camera.position.distanceTo(body) * tanHalf);
           const off = clearOfBody(ndc, b, rNdc, HERO_SHIP_FRAME_FRAC * 0.6, camera.aspect);
           if (off) ndc.set(off.x, off.y, off.z);
         }
@@ -1698,6 +1708,22 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
         } else {
           helioMission.scModel.rotateY(Math.PI / 2 - HERO_BUILDER_YAW);
           helioMission.scModel.rotateZ(-0.35); // 20° tilt so the boom angles up-left
+        }
+      }
+    } else if (flyCam.cruiseShot) {
+      // The craft-led cruise: the ship at its hero share of the frame, three-quarter on.
+      const dist = camera.position.distanceTo(scSprite.position);
+      const unit = helioMission.scModel?.userData.unitSize as number | undefined;
+      scSprite.scale.setScalar(heroShipScale(1, dist, camera.fov, HERO_SPRITE_FRAME_FRAC));
+      if (helioMission.scModel) {
+        helioMission.scModel.position.copy(scSprite.position);
+        if (unit) helioMission.scModel.scale.setScalar(heroShipScale(unit, dist, camera.fov));
+        helioMission.scModel.lookAt(camera.position);
+        if (helioMission.scModel.userData.showcase) {
+          helioMission.scModel.rotateY(HERO_SHOWCASE_YAW);
+          helioMission.scModel.rotateX(HERO_SHOWCASE_PITCH);
+        } else {
+          helioMission.scModel.rotateY(Math.PI / 2 - HERO_BUILDER_YAW);
         }
       }
     } else {
@@ -1958,7 +1984,10 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
     // chord — same rule as the phase-marker label hiding. Marko:
     // "when we zoom in also hide blue line as we hid the
     // milestone marker."
-    const inFlybyCinemaForLines = flyCam.lastHelioSubPhase?.startsWith('flyby-') ?? false;
+    // The craft-led cruise shot sits a few units from the ship, where the tube, sized for the wide
+    // frame, is a wall through the frame: left out of that shot too.
+    const inFlybyCinemaForLines =
+      (flyCam.lastHelioSubPhase?.startsWith('flyby-') ?? false) || flyCam.cruiseShot !== null;
     if (outLine)
       outLine.visible = (!afterArrival || bridge.epilogueActive) && !inFlybyCinemaForLines;
     if (retLine)
@@ -2693,7 +2722,13 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
         retPts: bridge.retPts,
         offArc: flyCam.passShip !== null,
       });
-      if (msScreens) bridge.milestoneScreens = msScreens;
+      if (msScreens)
+        bridge.milestoneScreens = focusMilestones(msScreens, {
+          activeOnly:
+            (flyCam.lastHelioSubPhase?.startsWith('flyby-') ?? false) || flyCam.cruiseShot !== null,
+          hideActiveLabel: flyCam.montageShotKind === 'hero',
+          width: bridge.container?.clientWidth ?? 0,
+        });
       else if (bridge.milestoneScreens.length > 0) bridge.milestoneScreens = [];
     } else draw2d();
   }

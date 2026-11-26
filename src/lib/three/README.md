@@ -74,6 +74,11 @@ Didymos carries Dimorphos. The flyby cinema shows only the flown-by body's moons
 (`fly-moon-visibility.ts`), and the belts' point size is capped (`point-size-cap.ts`). The
 cameras that frame a body from the Sun's side (the depart beat, the arrival and epilogue) are in
 `src/lib/orbital/flyby-shots.ts` and `helio-non-flyby-frame.ts` (`sunSideCamT`).
+The interplanetary cruise and approach are craft-led (`src/lib/orbital/helio-cruise-shot.ts`,
+applied in `fly-frame-runner.ts` over the orbit camera, with the trajectory tube hidden), as the
+cislunar coast is (`cislunar-craft-shot.ts`). The milestone labels follow `focusMilestones` in
+`src/lib/fly/fly-frame-projections.ts`: only the active event during a flyby or the cruise shot,
+no label at the hero beat, labels near a screen edge run inward.
 
 ## Critical contract — `document.hidden` pause
 

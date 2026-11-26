@@ -81,6 +81,38 @@ export interface MilestoneRender {
   /** Legacy flag — true when `state === 'active'`. */
   active: boolean;
   state: 'past' | 'active' | 'future';
+  /** The diamond is drawn, its label is not (the HUD's active row carries it). */
+  labelHidden?: boolean;
+  /** Which way the label runs from the diamond: inward near a screen edge. */
+  align?: 'start' | 'center' | 'end';
+}
+
+export interface MilestoneFocus {
+  /** A flyby (or the craft-led cruise) holds the frame: only the active event is marked. */
+  activeOnly: boolean;
+  /** The hero beat: the label would sit on the craft. */
+  hideActiveLabel: boolean;
+  /** Frame width, px. */
+  width: number;
+}
+
+/** Labels within this share of the width from an edge run inward from their diamond. */
+const EDGE_SHARE = 0.22;
+
+/** The flyby review's label rules (call 7, 2026-11-26): one marker per body at a flyby, not a
+ *  stack; no label over the craft at the hero beat; no label running off the screen. */
+export function focusMilestones(ms: MilestoneRender[], o: MilestoneFocus): MilestoneRender[] {
+  const kept = o.activeOnly ? ms.filter((m) => m.state === 'active') : ms;
+  return kept.map((m) => ({
+    ...m,
+    labelHidden: o.hideActiveLabel && m.state === 'active',
+    align:
+      m.screen.x < o.width * EDGE_SHARE
+        ? 'start'
+        : m.screen.x > o.width * (1 - EDGE_SHARE)
+          ? 'end'
+          : 'center',
+  }));
 }
 
 /** The reused `(x,y,z) → MinimalProjector` factory the frame body builds once. */

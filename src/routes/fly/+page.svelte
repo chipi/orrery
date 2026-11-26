@@ -4173,14 +4173,18 @@
             data-milestone-label={m.label}
             aria-hidden="true"
           ></span>
-          <span
-            class="milestone-marker-label"
-            class:active={m.state === 'active'}
-            class:past={m.state === 'past'}
-            class:future={m.state === 'future'}
-            style="left: {m.screen.x}px; top: {m.screen.y + (milestoneLabelDy[idx] ?? 12)}px;"
-            aria-hidden="true">{m.label}</span
-          >
+          {#if !m.labelHidden}
+            <span
+              class="milestone-marker-label"
+              class:active={m.state === 'active'}
+              class:past={m.state === 'past'}
+              class:future={m.state === 'future'}
+              class:align-start={m.align === 'start'}
+              class:align-end={m.align === 'end'}
+              style="left: {m.screen.x}px; top: {m.screen.y + (milestoneLabelDy[idx] ?? 12)}px;"
+              aria-hidden="true">{m.label}</span
+            >
+          {/if}
         {/if}
       {/each}
     </div>
@@ -5338,6 +5342,9 @@
   .milestone-marker-label {
     position: absolute;
     transform: translate(-50%, 0);
+    max-width: calc(100vw - 32px);
+    overflow: hidden;
+    text-overflow: ellipsis;
     white-space: nowrap;
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: var(--size-label);
@@ -5350,6 +5357,13 @@
     pointer-events: none;
     user-select: none;
     z-index: 12;
+  }
+  /* Near a screen edge the label runs inward from its diamond (flyby review call 7). */
+  .milestone-marker-label.align-start {
+    transform: translate(-8px, 0);
+  }
+  .milestone-marker-label.align-end {
+    transform: translate(calc(-100% + 8px), 0);
   }
   .milestone-marker-label.past {
     color: color-mix(in srgb, var(--color-ok) 60%, transparent);

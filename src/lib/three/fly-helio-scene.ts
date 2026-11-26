@@ -8,6 +8,7 @@ import { ShaderPass } from 'three/examples/jsm/postprocessing/ShaderPass.js';
 import { OutputPass } from 'three/examples/jsm/postprocessing/OutputPass.js';
 import { VignetteShader } from 'three/examples/jsm/shaders/VignetteShader.js';
 import { buildSkydome } from './skydome';
+import { moonShown } from './fly-moon-visibility';
 import { addContextPlanetRings, buildSaturnRings } from './fly-helio-rings';
 import { buildSunLensFlare, type SunLensFlare } from './sun-lens-flare';
 import { createLayeredStarField } from '$lib/three/star-field';
@@ -177,7 +178,8 @@ export interface HelioSceneHandles {
    *  Enceladus / Iapetus at Saturn, the Moon at Earth, Phobos / Deimos
    *  at Mars, Triton at Neptune. Each moon ships with a thin orbit
    *  ring centred on its parent. */
-  setMoonsVisible: (visible: boolean) => void;
+  /** `parent` limits it to one body's moons (the flyby cinema shows the flown-by body's own). */
+  setMoonsVisible: (visible: boolean, parent?: string) => void;
   /** Update moon meshes + orbit-ring centres for one parent planet.
    *  Component calls this each frame for every planet whose moons
    *  should track. Phase angle = simDay × 2π / periodDays. */
@@ -796,16 +798,18 @@ export function buildHelioScene(opts: HelioSceneOptions): HelioSceneHandles {
     moonEntries.push({ spec, mesh, orbit, textured: false });
   }
   let moonsVisible = false;
+  let moonsParent: string | null = null;
   function applyMoonVisibility(): void {
     for (const m of moonEntries) {
-      const show = moonsVisible || isTargetMoon(m);
+      const show = moonShown(m.spec.parent, moonsVisible, moonsParent, isTargetMoon(m));
       m.mesh.visible = show;
       m.orbit.visible = show;
       if (show) ensureMoonTexture(m);
     }
   }
-  function setMoonsVisible(on: boolean): void {
+  function setMoonsVisible(on: boolean, parent?: string): void {
     moonsVisible = on;
+    moonsParent = parent ?? null;
     applyMoonVisibility();
   }
   function setTargetMoon(name: string | null): void {

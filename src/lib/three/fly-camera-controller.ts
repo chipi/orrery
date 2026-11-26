@@ -629,7 +629,11 @@ export function createFlyCameraController(deps: FlyCameraDeps) {
         // last asked for.
         if (subPhaseTransition.enteredFlybyCinema) {
           helioReactive.cinemaForceMoons = true;
-          helioHandles.setMoonsVisible(true);
+          // The flown-by body's own moons; Earth's Moon must not crowd an asteroid passed near Earth.
+          helioHandles.setMoonsVisible(
+            true,
+            helioReactive.lastLayerMoonsOn ? undefined : (flyby?.id ?? undefined),
+          );
         } else if (subPhaseTransition.exitedFlybyCinema) {
           helioReactive.cinemaForceMoons = false;
           helioHandles.setMoonsVisible(helioReactive.lastLayerMoonsOn);

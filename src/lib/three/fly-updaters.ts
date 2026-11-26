@@ -65,7 +65,7 @@ export interface HelioUpdater {
   /** Update magnetosphere position + orientation per frame. */
   updateMagnetosphereForBody(id: DestinationId | 'earth', worldX: number, worldZ: number): void;
   /** Toggle major moons + their orbit rings. */
-  setMoonsVisible(visible: boolean): void;
+  setMoonsVisible(visible: boolean, parent?: string): void;
   /** Update one planet's moons each frame. */
   updateMoonsForParent(
     parent: DestinationId | 'earth',

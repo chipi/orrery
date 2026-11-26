@@ -51,11 +51,13 @@
     entry: m.fly_winged_beat_entry,
     reversal: () =>
       m.fly_winged_beat_reversal({
-        mach: String(profile.entry.reversalsMach[Math.max(0, reversalAt(t, profile))] ?? ''),
+        // "about" Mach 18.5 and so on: a secondary source, so the HUD says "~"
+        mach: `~${profile.entry.reversalsMach[Math.max(0, reversalAt(t, profile))] ?? ''}`,
       }),
     taem: m.fly_winged_beat_taem,
     hac: m.fly_winged_beat_hac,
-    final: () => m.fly_winged_beat_final({ deg: String(profile.approach.outerGlideDeg) }),
+    // the press kit's plan: the flown glideslope was not found
+    final: () => m.fly_winged_beat_final({ deg: `~${profile.approach.outerGlideDeg}` }),
     preflare: m.fly_winged_beat_preflare,
     gear: m.fly_winged_beat_gear,
     touchdown: () => m.fly_winged_beat_touchdown({ keas: String(profile.touchdown.keas) }),

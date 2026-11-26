@@ -69,8 +69,8 @@ describe('winged return clock and pose (W12, STS-1)', () => {
       (Math.atan((finalHeight(d1, p) - finalHeight(d0, p)) / (d1 - d0)) * 180) / Math.PI;
     expect(slope(6000, 7000)).toBeCloseTo(p.approach.outerGlideDeg, 1);
     expect(slope(300, 600)).toBeCloseTo(p.approach.innerGlideDeg, 1);
-    // the final starts at 10,000 ft and the turn ends on the runway heading
-    expect(finalHeight(L.dFinal, p)).toBeCloseTo(10_000 * FT, -1);
+    // the final starts at the 18,500 ft turn onto final and the turn ends on the runway heading
+    expect(finalHeight(L.dFinal, p)).toBeCloseTo(18_500 * FT, -1);
     const end = wingedPose(WT.final - 1e-6, p);
     expect(Math.abs(end.yaw)).toBeLessThan(0.01);
     expect(end.pos.x).toBeCloseTo(0, 0);

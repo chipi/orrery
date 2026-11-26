@@ -123,9 +123,10 @@ test.describe('surface object index', () => {
     await expect(list).toBeVisible();
     const row = (id: string) => list.locator(`.sidx-row[data-index-id="${id}"]`);
 
-    // 30 of 30 moon sites have a photo (Kaguya and Chandrayaan-2 joined in 0.9.9; validate-hero-
-    // coverage: moon-sites 30 ok); Apollo 12's is blocked above, so 29 images and one dot.
-    await expect(list.locator('.sidx-row img.entity-thumb')).toHaveCount(29);
+    // 35 of 35 moon sites have a photo (Kaguya and Chandrayaan-2 joined in 0.9.9, the five private
+    // landers in 0.9.12, F10; validate-hero-coverage: moon-sites 35 ok); Apollo 12's is blocked
+    // above, so 34 images and one dot.
+    await expect(list.locator('.sidx-row img.entity-thumb')).toHaveCount(34);
     await expect(row('apollo12').locator('.entity-thumb-dot')).toHaveCount(1);
     await expect(row('apollo12').locator('img.entity-thumb')).toHaveCount(0);
 

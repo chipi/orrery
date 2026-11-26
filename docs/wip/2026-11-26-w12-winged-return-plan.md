@@ -59,3 +59,18 @@ mission record and no Energia launch profile, so it cannot launch on /fly.
 - Main-gear touchdown 2,600 ft long ([WS1]) vs 3,050-3,100 ft ([SYM], primary): use [SYM].
   Touchdown 185 KEAS planned vs 183 flown: use flown.
 - The press kit's "5 degrees glide path" beside gear-down: a typo next to the 1.5 deg inner glideslope.
+
+## Status (2026-11-26, night)
+
+- Built: steps 1-6 for STS-1 (profile, gear rig, runway, scene + `WingedReturnScene.svelte` +
+  page wiring, `fly_winged_*` in 14 locales, `fly-winged.spec`, the join guard in
+  `earth-orbit-registry.test.ts`, TA.md and READMEs).
+- Checked: unit tests (profile 5, scene 9 incl. in frame at 1280x800 and 390x844 and wheels on the
+  runway at touchdown), typecheck, `fly-winged.spec` on desktop and mobile against the dev server,
+  frames at both sizes (`winged-shot.mjs`).
+- Science review (sonnet): 0 blockers. Applied: the pitchover now starts near Mach 14, not after
+  Mach 4.8; the approach values, the reversal Mach numbers and the runway length are in
+  `estimatedFields` and show "~" on the HUD; the 210 deg left turn is sourced (NASA, Wikipedia);
+  the final starts at the press kit's 18,500 ft turn onto final; the bank is the workbook's generic
+  figure. Not verified by the reviewer: the SYM PDF's numbers (too large to open), the OFP.
+- Not yet: a production build for the route budget of the lazy chunk; slices of step 7.

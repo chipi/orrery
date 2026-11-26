@@ -11,15 +11,33 @@
     "widthM": 90,
     "headingDeg": 230
   },
-  "deorbit": { "met": "53:21:10.0", "burnS": 160 },
+  "deorbit": {
+    "met": "53:21:10.0",
+    "burnS": 160
+  },
   "entry": {
     "met": "53:49:12.0",
     "altFt": 400000,
-    "reversalsMach": [18.5, 9.8, 4.8, 2.8],
+    "reversalsMach": [
+      18.5,
+      9.8,
+      4.8,
+      2.8
+    ],
     "blackoutMin": 16
   },
-  "taem": { "met": "54:14:40.0", "mach": 2.5, "altFt": 83000, "rangeNmi": 60 },
-  "approach": { "outerGlideDeg": 20, "innerGlideDeg": 1.5, "preflareFt": 2000, "gearDownFt": 250 },
+  "taem": {
+    "met": "54:14:40.0",
+    "mach": 2.5,
+    "altFt": 83000,
+    "rangeNmi": 60
+  },
+  "approach": {
+    "outerGlideDeg": 20,
+    "innerGlideDeg": 1.5,
+    "preflareFt": 2000,
+    "gearDownFt": 250
+  },
   "touchdown": {
     "met": "54:20:53.0",
     "keas": 183,
@@ -27,13 +45,20 @@
     "noseAfterMainFt": 3099,
     "noseSinkFps": 5.6
   },
-  "rollout": { "brakeAfterMainFt": 5952, "stopFt": 15046, "chute": false },
+  "rollout": {
+    "brakeAfterMainFt": 5952,
+    "stopFt": 15046,
+    "chute": false
+  },
   "source_tier": "flagship",
   "estimatedFields": [
     "deorbit.met, entry.met and taem.met (the press kit's planned offsets from its planned landing, 54:27:43, applied to the flown touchdown 54:20:53; the flown times were not found)",
     "taem (the 2006 guidance workbook's nominal Mach 2.5, 83,000 ft, 60 n mi; the text says 82,000 ft)",
     "runway.widthM (the 1981 lakebed runway's width was not found) and runway.headingDeg (from the runway number)",
-    "touchdown.mainFt (wheels stopped 15,046 ft from the threshold after an 8,993 ft roll)"
+    "touchdown.mainFt (wheels stopped 15,046 ft from the threshold after an 8,993 ft roll)",
+    "approach (the press kit's and the workbook's plan values: the 20 deg and 1.5 deg glideslopes, preflare at 2,000 ft, gear down at 250 ft; the flown values were not found)",
+    "entry.reversalsMach (Wikipedia, 'about'; no primary list of the Mach numbers was found, NASA says 'several roll reversals')",
+    "runway.lengthM (today's Rogers Dry Lake 05/23, 8.4 km; the 1981 length was not found)"
   ],
   "provenance": [
     {

@@ -8,11 +8,14 @@
  * Time is COMPRESSED, and the HUD says so; the real MET (`metAt`) runs through the profile's
  * times, of which only the touchdown is flown (the rest are the press kit's plan offsets, so the
  * clock reads "~" everywhere else). Sourced (winged-profile.ts): the deorbit burn length, the
- * entry interface height, the Mach numbers of the roll reversals, the TAEM point, the 20 deg and
- * 1.5 deg glideslopes, the preflare and gear-down heights, the touchdown speed and the runway
- * distances (mains, nose gear, stop). ESTIMATES: the attitudes (40 deg alpha early, the bank
- * angles, the pitch at touchdown), the heading alignment turn's radius and sweep, the outer
- * glideslope's aim point, the ground track before it, the sky, and every camera move.
+ * entry interface height, the touchdown speed, the runway distances (mains, nose gear, stop) and
+ * the heading alignment turn's direction and sweep (left, 210 deg: NASA's 40th-anniversary page,
+ * Wikipedia). From secondary sources or the plan, shown "~" on the HUD: the Mach numbers of the
+ * roll reversals (Wikipedia, "about"), the TAEM point (the 2006 workbook), the 20 deg and 1.5 deg
+ * glideslopes, the preflare and gear-down heights and the 18,500 ft turn onto final (the press
+ * kit's plan; the flown values were not found). ESTIMATES: the attitudes (40 deg alpha, the
+ * pitchover, the bank angles, the pitch at touchdown), the turn's radius, the outer glideslope's
+ * aim point, the ground track before the turn, the sky, and every camera move.
  *
  * Two frames. The entry: the orbiter at the origin, the Earth at 1/1000 of its size and distance
  * below. The runway (from TAEM): metres, the landing threshold at the origin, the runway along +z,
@@ -135,12 +138,13 @@ export const metIsEstimate = (t: number): boolean => Math.abs(t - WT.touchdown) 
 
 // ── the runway leg: a ground track and a height profile ──
 
-/** Heading alignment turn: left-hand (STS-1 plan), radius and sweep ESTIMATES. */
+/** Heading alignment turn: left, through 210 deg (NASA: "Completing a sweeping 210-degree turn,
+ *  Young aligned Columbia with Runway 23"); the radius is an ESTIMATE. */
 const HAC_R_M = 6000;
 const HAC_SWEEP = 210 * DEG;
-/** The final approach starts at 10,000 ft (the A/L interface); the outer glideslope's aim point
- *  lies this far before the touchdown point: ESTIMATE. */
-const FINAL_START_FT = 10_000;
+/** The turn onto final at 18,500 ft on the 20 deg glide path (the press kit's trajectory table,
+ *  plan); the outer glideslope's aim point lies this far before the touchdown point: ESTIMATE. */
+const FINAL_START_FT = 18_500;
 const OGS_AIM_M = 2200;
 /** Body pitch on the outer glideslope and at touchdown (deg): ESTIMATES. */
 const PITCH_FINAL = -12;
@@ -230,13 +234,16 @@ function entryPose(t: number, p: WingedProfile): Omit<WingedPose, 't' | 'met' | 
     t < WT.entry
       ? lerp(orbitAltM, eiAltM, ramp(t, WT.coast - 2, WT.entry))
       : lerp(eiAltM, taemAltM, 0.65 * clamp01(u) + 0.35 * smooth(u));
-  // Tail first for the burn, then turned round and pitched up to 40 deg (ESTIMATE), easing to the
-  // 14 deg of the workbook's Mach 2.5 row by TAEM.
+  // Tail first for the burn, then turned round and pitched up to 40 deg (ESTIMATE). The pitchover
+  // starts near Mach 14 (14,500 ft/s in the OFP), here between the first two reversals, and
+  // reaches the 14 deg of the workbook's Mach 2.5 row at TAEM.
   const turn = ramp(t, WT.coast, WT.coast + 4);
   const yaw = Math.PI * (1 - turn);
-  const alpha = t < WT.rev3 ? 40 : lerp(40, 14, ramp(t, WT.rev3, WT.taem));
+  const pitchoverT = (WT.rev1 + WT.rev2) / 2;
+  const alpha = lerp(40, 14, ramp(t, pitchoverT, WT.taem));
   const pitchDeg = lerp(0, alpha, turn);
-  // Bank: 37 deg above Mach 10, 20 deg below (workbook crossrange figures; the sign flips at each
+  // Bank: 37 deg above Mach 10, 20 deg below (the workbook's generic crossrange figures, not
+  // STS-1's flown bank; the sign flips at each
   // reversal), entered after the entry interface.
   let sign = 1;
   for (let i = 0; i < REV_T.length && i < p.entry.reversalsMach.length; i++) {

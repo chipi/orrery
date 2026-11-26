@@ -20,6 +20,7 @@
     "orbit.nmi (the press kit's planned 160 x 160 nmi)",
     "tilt[1] (58 deg as on STS-34; the STS-41 angle was not found)",
     "sepBurns[0].burnS (the report times the RCS burn's start only)",
+    "sepBurns[0].dvFts (not printed; the scene assumes 1 ft/s)",
     "upperStage.stage2 (the STS-34 kit's ~140 s coast and ~108 s burn)",
     "upperStage.pamS met and burnS (a search summary puts the PAM-S separation near 7 h 24 min; the Star 48B burn length is not sourced)",
     "tilt times and the bay-door opening time (not found; the scene times them editorially)"

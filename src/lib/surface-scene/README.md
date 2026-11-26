@@ -57,14 +57,13 @@ interface SurfaceSceneConfig {
   // Real obliquity. Mars 25.19°, Moon ~0°
   axialTiltDeg: number;
 
-  // Mission-specific lander mesh builders
-  landerModelBuilder: LanderModelBuilder;
+  // The globe's models, loaded on demand: the mission-specific lander mesh builder and the
+  // Tier 1 hotspot registrar (<body>-scene-models.ts). SurfaceScene starts the load as the
+  // scene is created, alongside the site list; the markers build once both are in.
+  loadSceneModels: () => Promise<SceneModels>;
 
   // 2D projection convention — see ADR-038
   twoDMode: 'lunar-polar-discs' | 'equirectangular';
-
-  // Per-route Tier 1 hotspot model builder registration bundle
-  registerHotspotBuilders: () => void;
 
   // Light tint hints at body palette (slight blue Moon vs slight red
   // Mars). Intensity is now common at 0.8 — only the tint stays per-body.
@@ -89,16 +88,18 @@ To stand up a hypothetical `/mercury` route:
 2. Add `static/textures/2k_mercury.jpg` (1:1 crop already exists per the textures dir).
 3. Add `src/lib/mercury-lander-models.ts` (does not exist; the moon/mars/venus equivalents are `src/lib/{moon,mars,venus}-lander-models.ts`).
 4. Add `src/lib/surface-scene/register-mercury-hotspot-builders.ts` mirroring the moon/mars pattern.
-5. Create `src/routes/mercury/+page.svelte` as a thin shell:
+5. Add `src/lib/surface-scene/mercury-scene-models.ts` exporting `sceneModels` (the builder from step 3
+   and the registrar from step 4), like `moon-scene-models.ts`.
+6. Create `src/routes/mercury/+page.svelte` as a thin shell:
    ```svelte
    <SurfaceScene
      config={{
        planet: 'mercury',
        textureUrl: `${base}/textures/2k_mercury.jpg`,
        axialTiltDeg: 0.034,        // Mercury's real obliquity
-       landerModelBuilder: buildMercuryLanderModel,
+       loadSceneModels: () =>
+         import('$lib/surface-scene/mercury-scene-models').then((s) => s.sceneModels),
        twoDMode: 'equirectangular', // Mercury rotates 3:2 — equirect honest
-       registerHotspotBuilders: registerMercuryHotspotBuilders,
        ambientColor: 0x887766,      // Sun-baked grey
        // No atmosphere, no tidal-lock, no traverses
      }}
@@ -109,7 +110,7 @@ To stand up a hypothetical `/mercury` route:
      {/snippet}
    </SurfaceScene>
    ```
-6. Add `tests/e2e/mercury.spec.ts` mirroring the moon/mars patterns.
+7. Add `tests/e2e/mercury.spec.ts` mirroring the moon/mars patterns.
 
 If something *can't* be expressed in this contract, that's a signal — file an ADR, don't patch the route.
 

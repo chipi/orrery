@@ -38,6 +38,10 @@ interface Tone {
 
 interface Mats {
   vc: THREE.MeshStandardMaterial;
+  /** `vc` with a second colour per quad (`colorB`) and a per-vertex `toneSide`: each fragment
+   *  takes colorB where the interpolated side is > 0, so a tile line crosses a quad as a smooth
+   *  curve instead of stepping from quad to quad. */
+  vcSplit: THREE.MeshStandardMaterial;
   white: THREE.MeshStandardMaterial;
   rcc: THREE.MeshStandardMaterial;
   glass: THREE.MeshStandardMaterial;
@@ -50,9 +54,35 @@ interface Mats {
   gold: THREE.MeshStandardMaterial;
 }
 
+function splitTone(m: THREE.MeshStandardMaterial): THREE.MeshStandardMaterial {
+  m.onBeforeCompile = (sh) => {
+    sh.vertexShader = sh.vertexShader
+      .replace(
+        '#include <common>',
+        '#include <common>\nattribute vec3 colorB;\nattribute float toneSide;\nvarying vec3 vColorB;\nvarying float vToneSide;',
+      )
+      .replace(
+        '#include <color_vertex>',
+        '#include <color_vertex>\nvColorB = colorB;\nvToneSide = toneSide;',
+      );
+    sh.fragmentShader = sh.fragmentShader
+      .replace(
+        '#include <common>',
+        '#include <common>\nvarying vec3 vColorB;\nvarying float vToneSide;',
+      )
+      .replace(
+        '#include <color_fragment>',
+        'diffuseColor.rgb *= vToneSide > 0.0 ? vColorB : vColor.rgb;',
+      );
+  };
+  m.customProgramCacheKey = () => 'winged-split-tone';
+  return m;
+}
+
 function mats(): Mats {
   return {
     vc: std(0xffffff, 0.82, 0.04, { vertexColors: true, side: THREE.DoubleSide }),
+    vcSplit: splitTone(std(0xffffff, 0.82, 0.04, { vertexColors: true, side: THREE.DoubleSide })),
     white: std(0xe6e5de, 0.8, 0.03, { side: THREE.DoubleSide }),
     rcc: std(0x2e2f32, 0.45, 0.25),
     glass: std(0x1a2733, 0.1, 0.55),
@@ -148,6 +178,8 @@ function loft(
     color: ColorFn;
     rough?: (x: number, a: number, v: number) => number;
     capColor?: THREE.Color;
+    /** A second tone: `side` > 0 picks `colorB` per fragment (material `vcSplit`). */
+    split?: { side: (x: number, a: number, v: number) => number; colorB: ColorFn };
   },
 ): THREE.BufferGeometry {
   const step = o.step ?? 0.7;
@@ -216,6 +248,8 @@ function loft(
   const body = g.toNonIndexed();
   g.dispose();
   const colors: number[] = [];
+  const colorsB: number[] = [];
+  const sides: number[] = [];
   const bp = body.getAttribute('position');
   let flatQuad = new Set<number>();
   for (let i = 0; i < bp.count; i += 6) {
@@ -229,6 +263,13 @@ function loft(
     }
     const c = o.color(x, a, v);
     for (let k = 0; k < 6; k++) colors.push(c.r, c.g, c.b);
+    if (o.split) {
+      const cb = o.split.colorB(x, a, v);
+      for (let k = 0; k < 6; k++) {
+        colorsB.push(cb.r, cb.g, cb.b);
+        sides.push(o.split.side(bp.getX(i + k), bp.getY(i + k), -bp.getZ(i + k)));
+      }
+    }
     if (o.rough && o.rough(x, a, v) > 0) flatQuad.add(i);
   }
   flatten(body, (i) => flatQuad.has(i - (i % 6)));
@@ -264,6 +305,11 @@ function loft(
   const capCols: number[] = [];
   for (let i = 0; i < capPos.length / 3; i++) capCols.push(capC.r, capC.g, capC.b);
   out.setAttribute('color', new THREE.Float32BufferAttribute([...colors, ...capCols], 3));
+  if (o.split) {
+    out.setAttribute('colorB', new THREE.Float32BufferAttribute([...colorsB, ...capCols], 3));
+    const capSides = new Array(capPos.length / 3).fill(-1);
+    out.setAttribute('toneSide', new THREE.Float32BufferAttribute([...sides, ...capSides], 1));
+  }
   body.dispose();
   // cap normals: along the axis, outward at each end
   const nrm = out.getAttribute('normal');
@@ -546,15 +592,15 @@ function cutHull(
   }
   for (let i = body; i < p.count; i++) keep.push(i);
   const out = new THREE.BufferGeometry();
-  for (const name of ['position', 'normal', 'color']) {
+  for (const name of ['position', 'normal', 'color', 'colorB', 'toneSide']) {
     const src = g.getAttribute(name);
-    const arr = new Float32Array(keep.length * 3);
+    if (!src) continue;
+    const n = src.itemSize;
+    const arr = new Float32Array(keep.length * n);
     keep.forEach((s, d) => {
-      arr[d * 3] = src.getX(s);
-      arr[d * 3 + 1] = src.getY(s);
-      arr[d * 3 + 2] = src.getZ(s);
+      for (let k = 0; k < n; k++) arr[d * n + k] = src.getComponent(s, k);
     });
-    out.setAttribute(name, new THREE.BufferAttribute(arr, 3));
+    out.setAttribute(name, new THREE.BufferAttribute(arr, n));
   }
   g.dispose();
   return out;
@@ -765,9 +811,10 @@ export interface OrbiterOpts {
   /** With bayDoors 'animated': add the RMS, stowed on the port sill (userData.rms). */
   rms?: boolean;
   /**
-   * 'animated': userData.setGear(t), 0 stowed to 1 down. Each leg swings forward into the belly
-   * about its top (the nose and main gear both retract forward; the wells and doors are not drawn,
-   * so a stowed leg is hidden). Default (omitted): the gear stays down, as before.
+   * 'animated': userData.setGear(t), 0 stowed to 1 down. Each leg swings forward into its well
+   * about its top (the nose and main gear both retract forward and up), the drag braces fold, and
+   * the doors (group 'gear-doors') open in the first third and close over the stowed legs, which are
+   * hidden. Default (omitted): the gear stays down, doors open.
    */
   gear?: 'animated';
 }
@@ -814,10 +861,11 @@ export function buildOrbiter(o: OrbiterOpts): THREE.Group {
   const lowBlack = (a: number): number =>
     a < 27 ? -0.95 : a < 34 ? -0.95 + ((a - 27) / 7) * 1.35 : 0.4 + (a - 34) * 0.5;
   const isBlack = (a: number, v: number): boolean => a > 36.2 || v < lowBlack(a);
-  const hullColor: ColorFn = (x, a, v) =>
-    isBlack(a, v)
-      ? jit(a > 36.2 ? NOSE : BLACK, x, a, v, tone.blackSpread)
-      : jit(WHITE, x, a, v, 0.03, 9);
+  // > 0 on the black side: the tile line, then the nose cap
+  const blackSide = (_x: number, a: number, v: number): number =>
+    Math.max(lowBlack(a) - v, a - 36.2);
+  const hullWhite: ColorFn = (x, a, v) => jit(WHITE, x, a, v, 0.015, 9);
+  const hullBlack: ColorFn = (x, a, v) => jit(a > 36.2 ? NOSE : BLACK, x, a, v, tone.blackSpread);
   // The openable bay: the hull is left open under the doors (between the sills, over the bay's
   // length) and the doors hinge on a straight line along each sill at the dorsal skin height.
   const animated = o.bayDoors === 'animated' && !isBuran;
@@ -827,7 +875,8 @@ export function buildOrbiter(o: OrbiterOpts): THREE.Group {
     n: N,
     ring: 84,
     step: 0.3,
-    color: hullColor,
+    color: hullWhite,
+    split: { side: blackSide, colorB: hullBlack },
     rough: (x, a, v) => (isBlack(a, v) || a < aft + 0.3 ? 0 : 0.018),
     capColor: new THREE.Color(0x6e675c),
   });
@@ -837,7 +886,7 @@ export function buildOrbiter(o: OrbiterOpts): THREE.Group {
       84,
       (x, a, v) => v > 0 && Math.abs(x) < BAY_X && a > BAY_A0 + 0.1 && a < BAY_A1 - 0.1,
     );
-  mesh(hull, M.vc, g).name = 'fuselage';
+  mesh(hull, M.vcSplit, g).name = 'fuselage';
 
   // ── wings (the right one is authored; the left is its mirror) ──
   const half = o.span / 2 / (o.length / L0);
@@ -879,7 +928,7 @@ export function buildOrbiter(o: OrbiterOpts): THREE.Group {
           ? jit(BLACK, p.x, p.y, p.z, tone.blackSpread)
           : chine(p.x, p.y)
             ? jit(BLACK, p.x, p.y, p.z, tone.blackSpread)
-            : jit(WHITE, p.x, p.y, p.z, 0.06, 11),
+            : jit(WHITE, p.x, p.y, p.z, 0.025, 11),
       edgeColor: (p) => jit(BLACK, p.x, p.y, p.z, tone.blackSpread),
     },
     M.vc,
@@ -924,10 +973,6 @@ export function buildOrbiter(o: OrbiterOpts): THREE.Group {
     const zb = wingZb + 0.012;
     const gd = (x0: number, y0: number, x1: number, y1: number): void =>
       seam(sideR, M.line, new THREE.Vector3(x0, y0, zb), new THREE.Vector3(x1, y1, zb), 0.05, 0.03);
-    gd(2.9, 15.2, 2.9, 19.4);
-    gd(4.2, 15.2, 4.2, 19.4);
-    gd(2.9, 15.2, 4.2, 15.2);
-    gd(2.9, 19.4, 4.2, 19.4);
     gd(W(5.5), 8.0, W(10.5), 10.6);
   }
   g.add(sideR);
@@ -968,8 +1013,8 @@ export function buildOrbiter(o: OrbiterOpts): THREE.Group {
       te: finTE,
       pos: (u, c, f, s) =>
         new THREE.Vector3((s === 0 ? -1 : 1) * finT(u) * finQ(f), c, -(finV + FH * u)),
-      color: (_s, p) => jit(WHITE, p.x, p.y, p.z, 0.035, 13),
-      edgeColor: (p) => jit(WHITE, p.x, p.y, p.z, 0.05, 14),
+      color: (_s, p) => jit(WHITE, p.x, p.y, p.z, 0.02, 13),
+      edgeColor: (p) => jit(WHITE, p.x, p.y, p.z, 0.03, 14),
     },
     M.vc,
     fin,
@@ -1216,23 +1261,14 @@ export function buildOrbiter(o: OrbiterOpts): THREE.Group {
     }
   }
   {
-    const aNg0 = 33.2;
-    const aNg1 = 34.9;
+    const aNg0 = 33.7;
     const lineAt = (p: THREE.Vector3, q: THREE.Vector3): void => seam(g, M.line, p, q, 0.05, 0.03);
     const bel = (a: number, x: number): THREE.Vector3 =>
       new THREE.Vector3(x, a, -(surfV(stns, N, a, x, false) - 0.02));
-    lineAt(bel(aNg0, -0.45), bel(aNg1, -0.45));
-    lineAt(bel(aNg0, 0.45), bel(aNg1, 0.45));
-    lineAt(bel(aNg0, -0.45), bel(aNg0, 0.45));
-    lineAt(bel(aNg1, -0.45), bel(aNg1, 0.45));
-    // main gear doors on the belly
-    for (const x of [-1.5, 1.5]) {
-      lineAt(bel(16.9, x), bel(21.1, x));
-      lineAt(bel(16.9, x - 0.5), bel(16.9, x + 0.5));
-      lineAt(bel(21.1, x - 0.5), bel(21.1, x + 0.5));
-      lineAt(bel(16.9, x - 0.5), bel(21.1, x - 0.5));
-      lineAt(bel(16.9, x + 0.5), bel(21.1, x + 0.5));
-    }
+    // the forward orbiter/ET attach fitting, just aft of the nose-gear well (Xo 378)
+    box(0.7, 0.5, 0.05, M.dark, g, 0, aNg0 - 0.6, bel(aNg0 - 0.6, 0).z - 0.01);
+    lineAt(bel(aNg0 - 0.95, -0.35), bel(aNg0 - 0.25, -0.35));
+    lineAt(bel(aNg0 - 0.95, 0.35), bel(aNg0 - 0.25, 0.35));
     // external-tank umbilical doors
     for (const x of [-1.2, 1.2]) {
       const p = bel(8, x);
@@ -1323,7 +1359,7 @@ export function buildOrbiter(o: OrbiterOpts): THREE.Group {
         cx: sg * 1.75,
         cv: 2.55,
         color: (x, a, v) =>
-          v < 2.3 ? jit(BLACK, x, a, v, tone.blackSpread) : jit(WHITE, x, a, v, 0.03, 16),
+          v < 2.3 ? jit(BLACK, x, a, v, tone.blackSpread) : jit(WHITE, x, a, v, 0.015, 16),
         rough: (_x, _a, v) => (v < 2.3 ? 0 : 0.016),
         capColor: new THREE.Color(0x6e675c),
       });
@@ -1345,61 +1381,236 @@ export function buildOrbiter(o: OrbiterOpts): THREE.Group {
     }
   }
 
-  // ── deployed landing gear (the line-up lays the craft on its runway) ──
+  // ── landing gear (JSC-12770 Vol. 10D, 1978: a tricycle of single shock struts, two tyres each;
+  // all three retract forward and up, the mains into the wings, and the gear linkage opens the
+  // doors). The line-up lays the craft on its runway with the gear down. ──
   const gear = new THREE.Group();
   gear.name = 'landing-gear';
   g.add(gear);
+  const doors = new THREE.Group();
+  doors.name = 'gear-doors';
+  g.add(doors);
   const GROUND = 2.3 + 4.2;
-  // Each leg and its wheels hang from a pivot at the leg's top (x, a, z0), so the gear can swing.
-  const pivots: THREE.Group[] = [];
-  const pivot = (name: string, x: number, a: number, z0: number): THREE.Group => {
+  const UP = new THREE.Vector3(0, 1, 0);
+  /** Lays a unit-height cylinder from p to q. */
+  const setBar = (o: THREE.Object3D, p: THREE.Vector3, q: THREE.Vector3): void => {
+    const d = q.clone().sub(p);
+    o.position.copy(p).addScaledVector(d, 0.5);
+    o.quaternion.setFromUnitVectors(UP, d.clone().normalize());
+    o.scale.set(1, d.length(), 1);
+  };
+  const bar = (parent: THREE.Object3D, m: THREE.Material, r: number): THREE.Mesh =>
+    mesh(new THREE.CylinderGeometry(r, r, 1, 10), m, parent);
+  const v3 = (x: number, y: number, z: number): THREE.Vector3 => new THREE.Vector3(x, y, z);
+  // a tyre with rounded shoulders, its hub and brake stack; the axle along x
+  const tyreGeo = (r: number, w: number): THREE.BufferGeometry => {
+    const pts: THREE.Vector2[] = [];
+    const ri = r * 0.62;
+    const n = 10;
+    pts.push(new THREE.Vector2(ri, -w / 2));
+    for (let i = 0; i <= n; i++) {
+      const th = -Math.PI / 2 + (i / n) * Math.PI;
+      pts.push(new THREE.Vector2(r - w * 0.28 + Math.cos(th) * w * 0.28, Math.sin(th) * (w / 2)));
+    }
+    pts.push(new THREE.Vector2(ri, w / 2));
+    return new THREE.LatheGeometry(pts, 28);
+  };
+  const wheel = (p: THREE.Object3D, dx: number, z: number, r: number, w: number): void => {
+    const t = mesh(tyreGeo(r, w), M.tyre, p);
+    t.rotation.z = Math.PI / 2;
+    t.position.set(dx, 0, z);
+    const hub = mesh(new THREE.CylinderGeometry(r * 0.62, r * 0.62, w * 0.92, 18), M.engine, p);
+    hub.rotation.z = Math.PI / 2;
+    hub.position.set(dx, 0, z);
+    const cap = mesh(new THREE.CylinderGeometry(r * 0.26, r * 0.3, w + 0.03, 14), M.line, p);
+    cap.rotation.z = Math.PI / 2;
+    cap.position.set(dx, 0, z);
+  };
+  interface Leg {
+    pivot: THREE.Group;
+    /** Where the drag brace meets the strut (pivot frame) and its fixed end in the well. */
+    onStrut: THREE.Vector3;
+    anchor: THREE.Vector3;
+    half: number;
+    upper: THREE.Object3D;
+    lower: THREE.Object3D;
+    knee: THREE.Object3D;
+  }
+  const legs: Leg[] = [];
+  // A leg hangs from a pivot at its top (x, a, z0): outer cylinder, the oleo piston below it, the
+  // torque links on its aft side, the axle and two wheels; the drag brace runs forward to the well
+  // and folds (two links, straight and locked when down) as the leg swings up.
+  const buildLeg = (
+    name: string,
+    x: number,
+    a: number,
+    z0: number,
+    r: number,
+    w: number,
+    track: number,
+    rOuter: number,
+    braceAt: number,
+    braceTo: number,
+  ): void => {
     const p = new THREE.Group();
     p.name = name;
     p.position.set(x, a, z0);
     gear.add(p);
-    pivots.push(p);
-    return p;
+    const L = GROUND - r - z0;
+    setBar(bar(p, M.white, rOuter), v3(0, 0, -0.05), v3(0, 0, L * 0.58));
+    setBar(bar(p, M.engine, rOuter * 1.12), v3(0, 0, L * 0.56), v3(0, 0, L * 0.6));
+    setBar(bar(p, M.engine, rOuter * 0.62), v3(0, 0, L * 0.58), v3(0, 0, L));
+    // torque links: a scissor on the aft side between the cylinder and the piston foot
+    const kneeT = v3(0, -rOuter * 2.2, L * 0.79);
+    setBar(bar(p, M.line, 0.035), v3(0, -rOuter, L * 0.6), kneeT);
+    setBar(bar(p, M.line, 0.035), kneeT, v3(0, -rOuter * 0.8, L - 0.12));
+    // axle beam
+    const ax = bar(p, M.engine, 0.075);
+    setBar(ax, v3(-track - w * 0.35, 0, L), v3(track + w * 0.35, 0, L));
+    wheel(p, -track, L, r, w);
+    wheel(p, track, L, r, w);
+    const onStrut = v3(0, rOuter * 0.8, braceAt);
+    const anchor = v3(x, a + braceTo, z0 + 0.05);
+    const down = p.position.clone().add(onStrut);
+    legs.push({
+      pivot: p,
+      onStrut,
+      anchor,
+      half: down.distanceTo(anchor) / 2,
+      upper: bar(gear, M.engine, 0.06),
+      lower: bar(gear, M.engine, 0.07),
+      knee: mesh(new THREE.SphereGeometry(0.1, 10, 8), M.line, gear),
+    });
   };
-  const leg = (p: THREE.Group, z0: number, rUp: number, rLow: number): void => {
-    const mid = z0 + (GROUND - z0) * 0.45;
-    for (const [za, zb, r] of [
-      [z0, mid, rUp],
-      [mid, GROUND - 0.6, rLow],
-    ] as const) {
-      const c = mesh(new THREE.CylinderGeometry(r, r, zb - za, 12), M.engine, p);
-      c.rotation.x = Math.PI / 2;
-      c.position.set(0, 0, (za + zb) / 2 - z0);
-    }
-  };
-  const wheel = (p: THREE.Group, z0: number, dx: number, r: number, wd: number): void => {
-    const w = mesh(new THREE.CylinderGeometry(r, r, wd, 18), M.tyre, p);
-    w.rotation.z = Math.PI / 2;
-    w.position.set(dx, 0, GROUND - r - z0);
-    const hub = mesh(new THREE.CylinderGeometry(r * 0.5, r * 0.5, wd + 0.04, 12), M.engine, p);
-    hub.rotation.z = Math.PI / 2;
-    hub.position.set(dx, 0, GROUND - r - z0);
-  };
-  for (const sg of [-1, 1]) {
-    const p = pivot(sg < 0 ? 'gear-main-starboard' : 'gear-main-port', sg * 3.4, 17.8, 2.3);
-    leg(p, 2.3, 0.22, 0.14);
-    wheel(p, 2.3, -0.3, 0.55, 0.4);
-    wheel(p, 2.3, 0.3, 0.55, 0.4);
-  }
+  for (const sg of [-1, 1])
+    buildLeg(
+      sg < 0 ? 'gear-main-starboard' : 'gear-main-port',
+      sg * 3.4,
+      17.8,
+      2.3,
+      0.565,
+      0.41,
+      0.3,
+      0.26,
+      1.5,
+      2.3,
+    );
   const noseZ0 = surfV(stns, N, 34, 0, false) * -1;
-  const nose = pivot('gear-nose', 0, 34.0, noseZ0);
-  leg(nose, noseZ0, 0.16, 0.1);
-  wheel(nose, noseZ0, -0.25, 0.45, 0.28);
-  wheel(nose, noseZ0, 0.25, 0.45, 0.28);
-  if (o.gear === 'animated') {
-    // t 0 stowed .. 1 down: the leg (along +z, the belly side) swings forward (+a) by 90 degrees.
-    root.userData.setGear = (t: number): void => {
-      const k = Math.min(1, Math.max(0, t));
-      for (const p of pivots) {
-        p.rotation.x = (-(1 - k) * Math.PI) / 2;
-        p.visible = k > 0.02;
-      }
+  buildLeg('gear-nose', 0, 34.0, noseZ0, 0.41, 0.23, 0.2, 0.17, 1.3, 1.9);
+
+  // wells and doors. A door is a tile leaf hinged along one edge, built on the skin it closes over
+  // (the belly curve for the nose, the flat wing underside for the mains); its inner face is bare
+  // structure. The well is a dark recess panel just proud of the skin, covered by the closed door.
+  const hinges: { o: THREE.Object3D; sg: number; max: number }[] = [];
+  const doorLeaf = (
+    skin: (a: number, x: number) => THREE.Vector3,
+    a0: number,
+    a1: number,
+    xh: number,
+    xf: number,
+    max: number,
+  ): void => {
+    const sg = Math.sign(xh - xf);
+    const p0 = skin(a0, xh);
+    const p1 = skin(a1, xh);
+    const axis = new THREE.Group();
+    axis.position.copy(p0);
+    axis.quaternion.setFromUnitVectors(UP, p1.clone().sub(p0).normalize());
+    doors.add(axis);
+    const leaf = new THREE.Group();
+    axis.add(leaf);
+    axis.updateMatrix();
+    const inv = axis.matrix.clone().invert();
+    const na = 12;
+    const nx = 4;
+    const sheet = (
+      off: number,
+      shadeOf: ((c: THREE.Vector3) => THREE.Color) | null,
+      m: THREE.Material,
+    ): void => {
+      const pos: number[] = [];
+      const cs: number[] = [];
+      const at = (i: number, j: number): THREE.Vector3 => {
+        const a = a0 + ((a1 - a0) * i) / na;
+        const x = xh + ((xf - xh) * j) / nx;
+        return skin(a, x)
+          .add(v3(0, 0, off))
+          .applyMatrix4(inv);
+      };
+      for (let i = 0; i < na; i++)
+        for (let j = 0; j < nx; j++) {
+          const q = [
+            at(i, j),
+            at(i + 1, j),
+            at(i + 1, j + 1),
+            at(i, j),
+            at(i + 1, j + 1),
+            at(i, j + 1),
+          ];
+          const c = q[0].clone().add(q[2]).multiplyScalar(0.5);
+          const k = shadeOf ? shadeOf(c) : null;
+          for (const v of q) {
+            pos.push(v.x, v.y, v.z);
+            if (k) cs.push(k.r, k.g, k.b);
+          }
+        }
+      const geo = new THREE.BufferGeometry();
+      geo.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+      if (shadeOf) geo.setAttribute('color', new THREE.Float32BufferAttribute(cs, 3));
+      geo.computeVertexNormals();
+      mesh(geo, m, leaf);
     };
-  }
+    sheet(0.06, (c) => jit(BLACK, c.x, c.y, c.z, tone.blackSpread), M.vc);
+    sheet(0.035, null, M.white);
+    hinges.push({ o: leaf, sg, max });
+    // the well under this leaf
+    const wp: number[] = [];
+    const corner = (a: number, x: number): number[] =>
+      skin(a, x)
+        .add(v3(0, 0, 0.012))
+        .toArray();
+    wp.push(...corner(a0, xh), ...corner(a1, xh), ...corner(a1, xf));
+    wp.push(...corner(a0, xh), ...corner(a1, xf), ...corner(a0, xf));
+    const wg = new THREE.BufferGeometry();
+    wg.setAttribute('position', new THREE.Float32BufferAttribute(wp, 3));
+    wg.computeVertexNormals();
+    mesh(wg, M.dark, doors);
+  };
+  const wingSkin = (a: number, x: number): THREE.Vector3 => v3(x, a, wingZb);
+  const bellySkin = (a: number, x: number): THREE.Vector3 => v3(x, a, -surfV(stns, N, a, x, false));
+  for (const sg of [-1, 1]) doorLeaf(wingSkin, 17.4, 22.0, sg * 4.0, sg * 2.8, 1.45);
+  for (const sg of [-1, 1]) doorLeaf(bellySkin, 33.7, 36.2, sg * 0.55, 0, 1.35);
+
+  const kneeAt = (b: THREE.Vector3, an: THREE.Vector3, half: number): THREE.Vector3 => {
+    const mid = b.clone().add(an).multiplyScalar(0.5);
+    const d = an.clone().sub(b);
+    const h = Math.sqrt(Math.max(0, half * half - d.lengthSq() / 4));
+    // the fold bends up into the well (-z), in the leg's plane
+    const perp = v3(0, d.z, -d.y).normalize();
+    if (perp.z > 0) perp.negate();
+    return mid.addScaledVector(perp, h);
+  };
+  const setGear = (t: number): void => {
+    const k = Math.min(1, Math.max(0, t));
+    const shown = k > 0.02;
+    for (const l of legs) {
+      l.pivot.rotation.x = (-(1 - k) * Math.PI) / 2;
+      l.pivot.visible = shown;
+      l.pivot.updateMatrix();
+      const b = l.onStrut.clone().applyMatrix4(l.pivot.matrix);
+      const kn = kneeAt(b, l.anchor, l.half);
+      setBar(l.upper, l.anchor, kn);
+      setBar(l.lower, kn, b);
+      l.knee.position.copy(kn);
+      for (const o of [l.upper, l.lower, l.knee]) o.visible = shown;
+    }
+    // the doors swing open over the first third of the travel and stay open
+    const f = Math.min(1, k / 0.3);
+    const open = f * f * (3 - 2 * f);
+    for (const h of hinges) h.o.rotation.y = h.sg * h.max * open;
+  };
+  setGear(1);
+  if (o.gear === 'animated') root.userData.setGear = setGear;
 
   g.scale.setScalar(o.length / L0);
   return root;

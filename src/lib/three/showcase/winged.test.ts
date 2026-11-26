@@ -136,6 +136,21 @@ describe('Shuttle orbiter landing gear (W12)', () => {
     expect(half.max.z).toBeLessThan(down.max.z - 0.3); // the belly is +z: the wheels rise
   });
 
+  it('the doors open with the gear and close flush over the stowed legs', () => {
+    const doorBox = (): THREE.Box3 => {
+      rigged.updateMatrixWorld(true);
+      return new THREE.Box3().setFromObject(rigged.getObjectByName('gear-doors')!);
+    };
+    rigged.userData.setGear(0);
+    const shut = doorBox();
+    rigged.userData.setGear(1);
+    const open = doorBox();
+    // open leaves hang below the belly (+z) by most of their width; shut, they lie on the skin
+    expect(open.max.z).toBeGreaterThan(shut.max.z + 0.9);
+    rigged.userData.setGear(0.3);
+    expect(doorBox().max.z).toBeCloseTo(open.max.z, 6);
+  });
+
   it('the openable orbiter has the gear rig too', () => {
     expect(typeof buildOrbiterOpenable().userData.setGear).toBe('function');
   });

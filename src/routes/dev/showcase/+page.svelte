@@ -46,7 +46,15 @@
     const q = new URLSearchParams(location.search);
     // ?bay=<0..1>[&arm=yaw,shoulderPitch,elbow,wristPitch,wristYaw,wristRoll in degrees]: the
     // Shuttle with its payload-bay doors open that far and the RMS posed (any orbiter id).
-    const craft = q.has('bay') ? buildOrbiterOpenable() : m.build();
+    // ?gear=<0..1>: the Shuttle's gear that far down (doors included); &land=1 lays any winged
+    // craft (nose +y, belly +z) belly-down on the ground, the way it stands on its runway.
+    const craft = q.has('bay') || q.has('gear') ? buildOrbiterOpenable() : m.build();
+    if (q.has('gear')) craft.userData.setGear(Number(q.get('gear')));
+    if (q.get('land') === '1') {
+      craft.rotation.x = Math.PI / 2;
+      craft.updateMatrixWorld(true);
+      craft.position.y = -new THREE.Box3().setFromObject(craft).min.y;
+    }
     if (q.has('bay')) {
       craft.userData.setBayDoors(Number(q.get('bay')));
       const d = (q.get('arm') ?? '').split(',').map((s) => (Number(s) * Math.PI) / 180);
@@ -88,7 +96,7 @@
       const target = new THREE.Vector3(
         Number(q.get('tx') ?? 0),
         q.has('ty') ? Number(q.get('ty')) : size.y * 0.45,
-        0,
+        Number(q.get('tz') ?? 0),
       );
       cam.position.set(
         target.x + Math.sin(az) * Math.cos(el) * r,

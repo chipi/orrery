@@ -1139,6 +1139,14 @@ export function buildOrbiter(o: OrbiterOpts): THREE.Group {
     root.userData.setBayDoors = setBayDoors;
     root.userData.bayLeaves = { port: leaves.get(1), starboard: leaves.get(-1) };
     if (rig) root.userData.rms = rig;
+    // Where a deployed stage's tilt table pivots: on the centreline at the aft end of the bay,
+    // 1.05 m under the sill (a 2.9 m IUS then sits just inside the door line). The mount's +y
+    // points forward along the bay and its -z out of the bay (dorsal). Placement SCHEMATIC.
+    const mount = new THREE.Object3D();
+    mount.name = 'bay-mount';
+    mount.position.set(0, BAY_A0 + 0.6, -(hingeV - 1.05));
+    g.add(mount);
+    root.userData.bayMount = mount;
   }
 
   // ── flight-deck windows, frames and the side hatch ──

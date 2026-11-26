@@ -1524,6 +1524,18 @@
     "tagline": "Blue Origin's two-stage reusable heavy-lift orbital launcher"
   },
   {
+    "id": "new-horizons",
+    "name": "New Horizons",
+    "category": "orbiter",
+    "agency": "NASA / Johns Hopkins APL",
+    "country": "USA",
+    "era": "1981-2011",
+    "epoch": "iss-assembly",
+    "status": "ACTIVE",
+    "first_flight": "2006-01-19",
+    "tagline": "First spacecraft to fly past Pluto, then on to the Kuiper Belt object Arrokoth"
+  },
+  {
     "id": "new-shepard",
     "name": "New Shepard",
     "category": "crewed-spacecraft",

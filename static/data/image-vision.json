@@ -31256,6 +31256,32 @@
       "rejected_by": null,
       "scored_at": "2026-11-26T01:50:36.595Z",
       "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/new-horizons/01.jpg": {
+      "score": 8,
+      "subject": "The New Horizons spacecraft in a clean room at Kennedy Space Center before launch, wrapped in gold foil.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.55
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-26T17:44:08.232Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/new-horizons/02.jpg": {
+      "score": 8,
+      "subject": "Artist's illustration of the New Horizons spacecraft in deep space, with the distant Sun and the Milky Way.",
+      "category": "spacecraft",
+      "focal_point": {
+        "x": 0.22,
+        "y": 0.58
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-26T17:44:08.218Z",
+      "scoring_cost_usd": 0
     }
   }
 }

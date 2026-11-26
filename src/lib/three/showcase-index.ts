@@ -95,6 +95,7 @@ export const SHOWCASE_FAMILY: Readonly<Record<string, string>> = {
   'mercury-capsule': 'capsules-classic',
   messenger: 'inner-solar',
   mro: 'mars-orbiters',
+  'new-horizons': 'outer-probes',
   'new-shepard': 'capsules-commercial',
   opportunity: 'rovers',
   orion: 'capsules-commercial',

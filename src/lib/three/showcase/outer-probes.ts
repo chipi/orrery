@@ -1,6 +1,6 @@
 /**
  * Showcase models: the deep-space and outer-planet craft — Voyager 1 and 2 (one builder), Pioneer
- * 10 and 11 (one builder), Juno, Juice, Dawn and Ulysses — drawn at real length, booms and wings
+ * 10 and 11 (one builder), Juno, Juice, Dawn, Ulysses and New Horizons — drawn at real length, booms and wings
  * deployed as in the NASA/ESA renders. Crinkled foil on every blanketed body, truss booms made of
  * real longerons and diagonals, solar cells as seamed strips.
  *
@@ -770,6 +770,145 @@ function buildUlysses(): THREE.Group {
   return g;
 }
 
+// ─── New Horizons ────────────────────────────────────────────────────────────────────────────
+
+/** A blunted-triangle prism (outline in x/z, extruded up y), crinkled. */
+function foilPrism(
+  g: THREE.Object3D,
+  m: Mat,
+  pts: [number, number][],
+  y0: number,
+  h: number,
+  amp: number,
+): THREE.Mesh {
+  const s = new THREE.Shape(pts.map(([x, z]) => new THREE.Vector2(x, -z)));
+  const geo = new THREE.ExtrudeGeometry(s, {
+    depth: h,
+    steps: Math.max(2, Math.round(h / 0.12)),
+    bevelEnabled: false,
+  });
+  geo.rotateX(-Math.PI / 2);
+  geo.translate(0, y0, 0);
+  const mesh = new THREE.Mesh(crinkle(geo, amp), m);
+  return add(g, mesh);
+}
+
+function buildNewHorizons(): THREE.Group {
+  const M = pal();
+  const g = new THREE.Group();
+  // Triangular bus almost 0.76 m thick under the 2.1 m dish; the rear corner (-z) carries the RTG.
+  // Wikipedia gives the envelope as 2.2 x 2.1 x 2.7 m without axes: drawn here as 2.1 m across
+  // the dish and 2.7 m from the dish rim to the RTG's end, judged from the clean-room photo.
+  // Science face +z.
+  const BY = 0.12;
+  const BH = 0.76;
+  const cut = 0.1;
+  const A: [number, number] = [0, -0.62];
+  const B: [number, number] = [-1.12, 0.55];
+  const C: [number, number] = [1.12, 0.55];
+  const lerp = (p: [number, number], q: [number, number], t: number): [number, number] => [
+    p[0] + (q[0] - p[0]) * t,
+    p[1] + (q[1] - p[1]) * t,
+  ];
+  const outline: [number, number][] = [];
+  for (const [p, prev, next] of [
+    [A, C, B],
+    [B, A, C],
+    [C, B, A],
+  ] as const) {
+    outline.push(lerp(p, prev, cut), lerp(p, next, cut));
+  }
+  foilPrism(g, M.gold, outline, BY, BH, 0.012);
+  // black deck edges top and bottom
+  for (const y of [BY, BY + BH]) {
+    for (let i = 0; i < outline.length; i++) {
+      const p = outline[i];
+      const q = outline[(i + 1) % outline.length];
+      strut(g, M.black, V(p[0], y, p[1]), V(q[0], y, q[1]), 0.012, 4);
+    }
+  }
+  // launch adapter ring under the central cylinder
+  cyl(g, M.silver, 0.42, 0.47, BY, 0, 0, -0.05, 32);
+  cyl(g, M.metal, 0.48, 0.48, 0.02, 0, 0, -0.05, 32);
+
+  // instruments on the science face (+z): LORRI's sunshade, Ralph, Alice, PEPSSI and SWAP
+  const zf = 0.55;
+  const lorri = cyl(g, M.black, 0.13, 0.13, 0.14, 0, 0, 0, 20);
+  lorri.rotation.x = Math.PI / 2;
+  lorri.position.set(-0.42, BY + 0.42, zf + 0.07);
+  foilBox(g, M.silver, 0.32, 0.24, 0.14, 0.12, BY + 0.38, zf + 0.07, 0.008);
+  box(g, M.black, 0.12, 0.12, 0.01, 0.12, BY + 0.4, zf + 0.145);
+  foilBox(g, M.black, 0.2, 0.14, 0.1, 0.52, BY + 0.5, zf + 0.05, 0.006);
+  box(g, M.dark, 0.06, 0.04, 0.01, 0.52, BY + 0.52, zf + 0.105);
+  box(g, M.metal, 0.12, 0.1, 0.12, -0.75, BY + BH - 0.08, zf - 0.05);
+  cyl(g, M.silver, 0.1, 0.12, 0.14, 0.62, BY + BH - 0.16, 0.42, 18);
+  // star trackers on the -x side, thruster clusters at the two front corners
+  for (const y of [BY + 0.2, BY + 0.45]) box(g, M.black, 0.1, 0.1, 0.12, -0.62, y, -0.25);
+  for (const [x, z] of [B, C]) {
+    for (const dy of [0.06, BH - 0.06]) {
+      const t = cyl(g, M.metal, 0.025, 0.04, 0.07, x * 0.9, BY + dy - 0.035, z * 0.95, 8);
+      t.rotation.z = (x > 0 ? -1 : 1) * 0.6;
+    }
+  }
+
+  // 2.1 m high-gain dish on the top deck; the 0.3 m medium-gain dish drawn on its feed support
+  const R = 1.05;
+  const depth = 0.27;
+  const dy = BY + BH + 0.04;
+  cyl(g, M.silver, 0.3, 0.34, 0.05, 0, BY + BH, 0, 24);
+  const d = paraDish(M.dishGold, R, depth, 16);
+  d.position.y = dy;
+  add(g, d);
+  dishRim(d, M.metal, R, depth, 16);
+  for (let k = 0; k < 3; k++) {
+    const a = (k / 3) * TAU + Math.PI / 6;
+    strut(
+      d,
+      M.silver,
+      V(Math.cos(a) * R * 0.62, depth * 0.4, Math.sin(a) * R * 0.62),
+      V(Math.cos(a) * 0.14, 0.6, Math.sin(a) * 0.14),
+      0.012,
+      5,
+    );
+  }
+  cyl(d, M.white, 0.04, 0.09, 0.16, 0, 0.02, 0, 16);
+  cyl(d, M.silver, 0.2, 0.17, 0.05, 0, 0.6, 0, 24);
+  const mga = paraDish(M.white, 0.15, 0.05, 8);
+  mga.position.y = 0.65;
+  d.add(mga);
+  cyl(d, M.white, 0.035, 0.035, 0.12, 0, 0.65, 0, 10);
+
+  // the GPHS-RTG off the rear corner on its tripod, radial fins along its length
+  const rz0 = A[1] + 0.08;
+  const rLen = 1.14;
+  const ry = BY + 0.36;
+  const rt = new THREE.Group();
+  rt.position.set(0, ry, rz0 - rLen / 2);
+  add(g, rt);
+  const core = cyl(rt, M.rtg, 0.15, 0.15, rLen, 0, -rLen / 2, 0, 18);
+  core.rotation.x = Math.PI / 2;
+  core.position.set(0, 0, 0);
+  for (let k = 0; k < 8; k++) {
+    const a = (k / 8) * TAU;
+    const fin = box(rt, M.black, 0.012, 0.07, rLen * 0.96, 0, 0, 0);
+    fin.position.set(Math.cos(a) * 0.185, Math.sin(a) * 0.185, 0);
+    fin.rotation.z = a + Math.PI / 2;
+  }
+  for (const zEnd of [-rLen / 2, rLen / 2]) {
+    const cap = cyl(rt, M.metal, 0.17, 0.17, 0.03, 0, -0.015, zEnd, 18);
+    cap.rotation.x = Math.PI / 2;
+  }
+  const foot = V(0, ry, rz0 + 0.02);
+  for (const [x, y] of [
+    [-0.28, BY + 0.1],
+    [0.28, BY + 0.1],
+    [0, BY + BH - 0.08],
+  ]) {
+    strut(g, M.titanium, V(x, y, A[1] + 0.3), foot, 0.018, 6);
+  }
+  return g;
+}
+
 // ─── Registry ────────────────────────────────────────────────────────────────────────────────
 
 const REF = (l: string, u: string): ShowcaseRef => ({ l, u });
@@ -894,6 +1033,22 @@ export const SHOWCASE: Record<string, ShowcaseModel> = {
       WC(
         'Dawn_spacecraft_model.png',
         'render: boxy bus, two five-panel wings, tilted dish, thrusters',
+      ),
+    ],
+  ),
+  'new-horizons': make(
+    buildNewHorizons,
+    1.69,
+    'No published overall height in the fleet entry; the 0.76 m triangular bus on its adapter ring plus the 2.1 m dish, its secondary and the 0.3 m medium-gain antenna, judged from the render (Wikipedia gives the overall envelope as 2.2 x 2.1 x 2.7 m)',
+    2.1,
+    [
+      WP(
+        'New_Horizons',
+        '2.2 x 2.1 x 2.7 m, triangular body almost 0.76 m thick, RTG in the plane of the triangle from one vertex, 2.1 m high-gain and 0.3 m medium-gain antennas',
+      ),
+      WC(
+        'New_Horizons_spacecraft_model_1.png',
+        'render: triangular bus, dish with the medium-gain antenna on its secondary, RTG off one corner',
       ),
     ],
   ),

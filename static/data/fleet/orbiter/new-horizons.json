@@ -1,0 +1,38 @@
+{
+  "id": "new-horizons",
+  "name": "New Horizons",
+  "category": "orbiter",
+  "agency": "NASA / Johns Hopkins APL",
+  "country": "USA",
+  "manufacturer": "Johns Hopkins APL / Southwest Research Institute",
+  "first_flight": "2006-01-19",
+  "status": "ACTIVE",
+  "era": "1981-2011",
+  "epoch": "iss-assembly",
+  "best_known_for": "First spacecraft to explore Pluto up close, then flew past Arrokoth in 2019, the most distant object ever explored up close",
+  "credit": "New Horizons: NASA's first New Frontiers mission, launched 2006-01-19 at 19:00:00 UTC on an Atlas V 551 (AV-010) from Cape Canaveral SLC-41 (NASA mission page; Wikipedia). Mission design and management NASA / Johns Hopkins University Applied Physics Laboratory (NASA); Wikipedia lists APL and Southwest Research Institute as manufacturers, and the principal investigator, Alan Stern, is at SwRI (APL mission page). Launch mass 478 kg (1,054 lb) on the NASA mission page and Wikipedia; Wikipedia adds a dry mass of 401 kg, which is not shown. Seven instruments (NASA): Ralph, Alice, REX, LORRI, SWAP, PEPSSI and the Student Dust Counter. Power: one GPHS-RTG, a spare from Cassini, about 250 W at launch (NASA). Wikipedia gives the body dimensions as 2.2 x 2.1 x 2.7 m, a triangular body almost 2.5 ft thick and a 2.1 m high-gain antenna; these are not in specs because NASA's page does not repeat them. Jupiter gravity assist 2007-02-28 (closest approach 05:43:40 UTC); Pluto closest approach 2015-07-14 at 11:49 UTC (NASA), about 12,500 km (7,750 mi) from the surface (Wikipedia). Source conflict: NASA's mission page says \"about 4,800 miles (7,800 kilometers)\", which reads as a mix-up of 7,750 mi with 12,500 km; Arrokoth flyby 2019-01-01, 3,500 km (Wikipedia). Status ACTIVE: the NASA mission page lists it as an active mission and the APL page says it is healthy and operating normally in the Kuiper Belt Extended Mission; checked 2026-11-26 by reading both pages, which carry no date for the status line. The showcase model's size is an estimate, so no length or height is given. Checked 2026-11-26.",
+  "specs": {
+    "mass_kg": 478,
+    "instruments_count": 7
+  },
+  "links": [
+    {
+      "l": "New Horizons — NASA Science",
+      "u": "https://science.nasa.gov/mission/new-horizons/",
+      "t": "core"
+    },
+    {
+      "l": "New Horizons — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/New_Horizons",
+      "t": "intro"
+    },
+    {
+      "l": "New Horizons — Johns Hopkins APL",
+      "u": "https://www.jhuapl.edu/destinations/missions/new-horizons",
+      "t": "deep"
+    }
+  ],
+  "linked_missions": [
+    "new-horizons"
+  ]
+}

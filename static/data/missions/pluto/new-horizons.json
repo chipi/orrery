@@ -62,6 +62,10 @@
     {
       "id": "atlas-v",
       "role": "launcher"
+    },
+    {
+      "id": "new-horizons",
+      "role": "spacecraft"
     }
   ],
   "flight": {

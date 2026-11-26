@@ -121994,6 +121994,86 @@
       "pageid": 143819189,
       "nasa_id": null,
       "fetched_at": "2026-11-26T01:50:36.287Z"
+    },
+    {
+      "id": "bbdd0d774b4e1fad",
+      "path": "/images/fleet-galleries/new-horizons/01.webp",
+      "source_type": "wikimedia-commons",
+      "title": "File:New Horizons 1.jpg",
+      "author": "NASA",
+      "agency": "NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:New_Horizons_1.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/46/New_Horizons_1.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Public domain",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 401365,
+      "nasa_id": null,
+      "fetched_at": "2026-11-26T17:44:06.779Z"
+    },
+    {
+      "id": "7f90a29a5e773f0e",
+      "path": "/images/fleet-galleries/new-horizons/01.1x1.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:New Horizons 1.jpg",
+      "author": "NASA",
+      "agency": "NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:New_Horizons_1.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/46/New_Horizons_1.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Public domain",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 401365,
+      "nasa_id": null,
+      "fetched_at": "2026-11-26T17:44:06.780Z"
+    },
+    {
+      "id": "01860d9b879431ae",
+      "path": "/images/fleet-galleries/new-horizons/02.webp",
+      "source_type": "wikimedia-commons",
+      "title": "File:Artist's Illustration of New Horizons Spacecraft (2021-001).png",
+      "author": "IMAGE: NASA, Joseph Olmsted (STScI)",
+      "agency": "NASA / STScI",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Artist%27s_Illustration_of_New_Horizons_Spacecraft_(2021-001).png",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Artist%27s_Illustration_of_New_Horizons_Spacecraft_%282021-001%29.png",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Public domain",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 136245750,
+      "nasa_id": null,
+      "fetched_at": "2026-11-26T17:44:07.890Z"
+    },
+    {
+      "id": "8910e106619445a6",
+      "path": "/images/fleet-galleries/new-horizons/02.1x1.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "File:Artist's Illustration of New Horizons Spacecraft (2021-001).png",
+      "author": "IMAGE: NASA, Joseph Olmsted (STScI)",
+      "agency": "NASA / STScI",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Artist%27s_Illustration_of_New_Horizons_Spacecraft_(2021-001).png",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Artist%27s_Illustration_of_New_Horizons_Spacecraft_%282021-001%29.png",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "Public domain",
+      "modifications": [
+        "identified-by-image-match"
+      ],
+      "revid": null,
+      "pageid": 136245750,
+      "nasa_id": null,
+      "fetched_at": "2026-11-26T17:44:07.890Z"
     }
   ]
 }

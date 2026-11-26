@@ -4,13 +4,13 @@ Answers to the decision list after the night of 2026-11-26. Numbers are the list
 
 | # | Question | Answer |
 |---|---|---|
-| 1 | W11 level-of-detail standard before model rework? | (b): rebuild the Shuttle orbiter now to the lander bar; the operator asked what "the standard catches up later" means (answered in chat: the written W11 standard is drafted from the models already rebuilt, then applied to the rest) |
+| 1 | W11 level-of-detail standard before model rework? | (b), confirmed after the explanation: rebuild the Shuttle orbiter now to the lander bar; the operator asked what "the standard catches up later" means (answered in chat: the written W11 standard is drafted from the models already rebuilt, then applied to the rest) |
 | 2 | Roman and SPHEREx to the lander bar? | Show them first (renders sent 2026-11-27) |
 | 3 | Buran on /fly | (ii) source and build an Energia launch profile, "do your best" |
 | 4 | X-37B: no airspeed on the HUD, track "~" | OK |
 | 5 | Runway ends (STS-1 23 sourced; X-37B Vandenberg 12, KSC 15/33; Buran 06 estimated) | Yes |
 | 6 | Which observatories become missions | Build the robotic arm (RMS release); all of them become missions |
-| 7 | Deploy as its own scene or a master-scrubber band | Asked for more explanation (answered in chat) |
+| 7 | Deploy as its own scene or a master-scrubber band | (a) its own scene, as built (after the explanation in chat); one later change could put the deploy, the way home and the winged returns on the bar together |
 | 8 | Where the Roadster mission lives | (a) `missions/sun/` |
 | 9 | Full-frame booster return only for flights with both side-booster landings sourced | OK |
 | 10 | Falcon Heavy demo timeline | Use the planned METs, labelled as planned |

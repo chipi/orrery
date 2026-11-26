@@ -52,7 +52,11 @@ import { buildFlyDebugSnapshot } from '$lib/orbital/fly-debug-snapshot';
 import { predictShipPosAtMet } from '$lib/physics/transfer/predict-ship-pos';
 import { sampleCislunarSpacecraftPos } from '$lib/orbital/sample-cislunar-spacecraft';
 import { craftLedCoastShot, inCraftShot, type CraftShot } from '$lib/orbital/cislunar-craft-shot';
-import { cruiseCraftShot, type CruiseShot } from '$lib/orbital/helio-cruise-shot';
+import {
+  cruiseCraftShot,
+  smallBodyPassShot,
+  type CruiseShot,
+} from '$lib/orbital/helio-cruise-shot';
 import { portraitFov } from './phone-framing';
 import { CISLUNAR_FOV } from './fly-cislunar-scene';
 
@@ -597,7 +601,19 @@ export function createFlyCameraController(deps: FlyCameraDeps) {
         // montage window hands back to cruise framing smoothly.
         const metOffset = deps.getSimDay() - (deps.getArcTimeline().dep_day + activeFlybyMet);
         const shotKind = selectShot(metOffset);
-        if (shotKind) {
+        const passShot = shotKind
+          ? smallBodyPassShot(
+              shotKind,
+              scScene,
+              bodyScene,
+              flyby.size,
+              isArrivalEvent || postArrival,
+            )
+          : null;
+        if (passShot) {
+          cruiseShot = passShot;
+          montageShotKind = shotKind;
+        } else if (shotKind) {
           montageShotFrame = composeShot(shotKind, {
             planetId: flyby.id as FlybyPlanetId,
             planetPos: { x: bodyScene.x, z: bodyScene.z },

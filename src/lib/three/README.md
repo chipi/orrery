@@ -76,7 +76,9 @@ cameras that frame a body from the Sun's side (the depart beat, the arrival and 
 `src/lib/orbital/flyby-shots.ts` and `helio-non-flyby-frame.ts` (`sunSideCamT`).
 The interplanetary cruise and approach are craft-led (`src/lib/orbital/helio-cruise-shot.ts`,
 applied in `fly-frame-runner.ts` over the orbit camera, with the trajectory tube hidden), as the
-cislunar coast is (`cislunar-craft-shot.ts`). The milestone labels follow `focusMilestones` in
+cislunar coast is (`cislunar-craft-shot.ts`). So are the approach and depart of a comet or
+asteroid the craft passes (`smallBodyPassShot`), where the planet rigs framed empty space. Phase
+markers (both sets) are hidden in these close frames. The milestone labels follow `focusMilestones` in
 `src/lib/fly/fly-frame-projections.ts`: only the active event during a flyby or the cruise shot,
 no label at the hero beat, labels near a screen edge run inward.
 

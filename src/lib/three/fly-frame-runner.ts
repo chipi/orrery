@@ -1572,7 +1572,9 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
     landerTurned = false;
     const wasImpact = impactShown;
     impactShown = false;
-    if (flyCam.lastHelioSubPhase?.startsWith('flyby-')) {
+    // A small body's pass flies its approach and depart as the craft-led shot (smallBodyPassShot):
+    // the ship is sized as in the cruise, below.
+    if (flyCam.lastHelioSubPhase?.startsWith('flyby-') && !flyCam.cruiseShot) {
       // Push the ship toward the camera by the flyby body's radius
       // — enough to clear the planet's front face. activeFlybyMet
       // + flybyId tracked via __flyDebug; use the body's PLANET_SIZE
@@ -2712,7 +2714,7 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
         scPhase: sc.phase,
         scProgress: sc.progress,
       });
-      if (fdScreens) bridge.fdPhaseMarkerScreens = fdScreens;
+      if (fdScreens && !closeFrame) bridge.fdPhaseMarkerScreens = fdScreens;
       else if (bridge.fdPhaseMarkerScreens.length > 0) bridge.fdPhaseMarkerScreens = [];
 
       const msScreens = buildMilestoneScreens({

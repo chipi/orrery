@@ -10,6 +10,8 @@
  * shows.
  */
 import type { P3 } from './cislunar-craft-shot';
+import { ARRIVAL_SMALL_BODY_RADIUS } from './flyby-camera-plan';
+import type { ShotKind } from './flyby-shots';
 
 export interface CruiseShot {
   pos: P3;
@@ -27,12 +29,16 @@ const CRAFT_LEFT = 0.22;
 /** No cruise shot within this many `back` lengths of the body ahead: the approach frame takes it. */
 const NEAR_TARGET_BACKS = 6;
 
-export function cruiseCraftShot(craft: P3, target: P3): CruiseShot | null {
+export function cruiseCraftShot(
+  craft: P3,
+  target: P3,
+  nearTargetBacks = NEAR_TARGET_BACKS,
+): CruiseShot | null {
   let fx = target.x - craft.x;
   let fy = target.y - craft.y;
   let fz = target.z - craft.z;
   const f = Math.hypot(fx, fy, fz);
-  if (f < NEAR_TARGET_BACKS * CRUISE_SHOT_BACK) return null;
+  if (f < nearTargetBacks * CRUISE_SHOT_BACK || f === 0) return null;
   fx /= f;
   fy /= f;
   fz /= f;
@@ -57,4 +63,24 @@ export function cruiseCraftShot(craft: P3, target: P3): CruiseShot | null {
     look: target,
     fovDeg: CRUISE_SHOT_FOV,
   };
+}
+
+/**
+ * A comet or asteroid the craft passes (Giotto at Halley, Galileo at Gaspra) closes at tens of
+ * km/s: ten days out it is 0.4 AU away, where the planet rigs, sized in body radii, frame empty
+ * space and a craft too small to see (flyby review, 2026-11-26). Its approach and depart are the
+ * craft-led shot instead: the craft in the foreground, the body ahead, then receding behind it.
+ * Planets, arrivals (the craft stays at the body) and the establish and hero beats keep the
+ * montage rigs: null.
+ */
+export function smallBodyPassShot(
+  kind: ShotKind,
+  craft: P3,
+  body: P3,
+  bodyRadius: number,
+  arrival: boolean,
+): CruiseShot | null {
+  if (arrival || bodyRadius >= ARRIVAL_SMALL_BODY_RADIUS) return null;
+  if (kind !== 'approach' && kind !== 'depart') return null;
+  return cruiseCraftShot(craft, body, 0);
 }

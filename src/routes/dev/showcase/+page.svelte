@@ -9,6 +9,7 @@
   import type { ShowcaseModel } from '$lib/three/showcase/types';
   import { buildScaleFigure } from '$lib/three/lineup/scale-figures';
   import { installHeroEnvironment } from '$lib/three/hero-materials';
+  import { buildOrbiterOpenable } from '$lib/three/showcase/winged';
 
   const modules = import.meta.glob<{ SHOWCASE?: Record<string, ShowcaseModel> }>(
     ['$lib/three/showcase/*.ts', '!$lib/three/showcase/*.test.ts'],
@@ -42,14 +43,27 @@
     renderer.outputColorSpace = THREE.SRGBColorSpace;
     renderer.setScissorTest(true);
 
-    const craft = m.build();
+    const q = new URLSearchParams(location.search);
+    // ?bay=<0..1>[&arm=yaw,shoulderPitch,elbow,wristPitch,wristYaw,wristRoll in degrees]: the
+    // Shuttle with its payload-bay doors open that far and the RMS posed (any orbiter id).
+    const craft = q.has('bay') ? buildOrbiterOpenable() : m.build();
+    if (q.has('bay')) {
+      craft.userData.setBayDoors(Number(q.get('bay')));
+      const d = (q.get('arm') ?? '').split(',').map((s) => (Number(s) * Math.PI) / 180);
+      const r = craft.userData.rms;
+      r.shoulderYaw.rotation.z = d[0] || 0;
+      r.shoulderPitch.rotation.x = d[1] || 0;
+      r.elbow.rotation.x = d[2] || 0;
+      r.wristPitch.rotation.x = d[3] || 0;
+      r.wristYaw.rotation.z = d[4] || 0;
+      r.wristRoll.rotation.y = d[5] || 0;
+    }
     const box = new THREE.Box3().setFromObject(craft);
     const size = box.getSize(new THREE.Vector3());
     info = `${id}: drawn ${size.x.toFixed(2)} × ${size.y.toFixed(2)} × ${size.z.toFixed(2)} m (w × h × d); heightM ${m.heightM}, diameterM ${m.diameterM}; base y ${box.min.y.toFixed(3)}`;
 
     // ?hero=1&az=<deg>&el=<deg>: one large perspective view in hard sunlight, for judging detail
     // (the four-view sheet draws a 7 m lander a few hundred pixels tall).
-    const q = new URLSearchParams(location.search);
     if (q.get('hero') === '1') {
       const az = (Number(q.get('az') ?? 35) * Math.PI) / 180;
       const el = (Number(q.get('el') ?? 12) * Math.PI) / 180;
@@ -58,7 +72,7 @@
       scene.background = new THREE.Color(0x07090e);
       scene.add(new THREE.HemisphereLight(0xcfd8e8, 0x3a3a3a, 0.5));
       const sun = new THREE.DirectionalLight(0xfff6ea, 3.2);
-      sun.position.set(-1, 0.9, 1.2);
+      sun.position.set(-1, 0.9, q.get('flip') === '1' ? -1.2 : 1.2); // flip: light the dorsal (-z) side
       scene.add(sun);
       const ground = new THREE.Mesh(
         new THREE.CircleGeometry(60, 64),
@@ -71,7 +85,11 @@
       if (q.get('ibl') !== '0') installHeroEnvironment(renderer, scene);
       const cam = new THREE.PerspectiveCamera(35, W / H, 0.1, 1000);
       const r = Math.max(size.y * 2.3, Math.max(size.x, size.z) * 1.1) * Number(q.get('zoom') ?? 1);
-      const target = new THREE.Vector3(0, size.y * 0.45, 0);
+      const target = new THREE.Vector3(
+        Number(q.get('tx') ?? 0),
+        q.has('ty') ? Number(q.get('ty')) : size.y * 0.45,
+        0,
+      );
       cam.position.set(
         target.x + Math.sin(az) * Math.cos(el) * r,
         target.y + Math.sin(el) * r,

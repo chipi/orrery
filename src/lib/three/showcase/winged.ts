@@ -497,6 +497,254 @@ function slab(
   edge(sides[0][0], sides[1][0]);
 }
 
+// ── payload-bay interior and the RMS (opt-in, see OrbiterOpts) ──────────────────
+
+// Bay: 4.6 m wide and 18.3 m long per Wikipedia (Space Shuttle orbiter). The sill sits at x = ±2.1
+// under the doors' hinge line; the liner's cross-section (vertical walls, a superellipse floor
+// 1.9 m deep), the ribs, longerons and the bulkhead detail are SCHEMATIC.
+const BAY_X = 2.1;
+const BAY_A0 = 7.4;
+const BAY_A1 = 25.8;
+const BAY_FLOOR = 1.9;
+
+/** The bay cross-section as (x, v) points: left sill, down the wall, round the floor, up to the right sill. */
+function bayOutline(vh: number): [number, number][] {
+  const vc = vh - 0.6;
+  const pts: [number, number][] = [[-BAY_X, vh]];
+  const n = 3;
+  for (let i = 0; i <= 16; i++) {
+    const phi = (i / 16) * Math.PI;
+    const c = Math.cos(phi);
+    pts.push([
+      -BAY_X * Math.sign(c) * Math.pow(Math.abs(c), 2 / n),
+      vc - BAY_FLOOR * Math.pow(Math.sin(phi), 2 / n),
+    ]);
+  }
+  pts.push([BAY_X, vh]);
+  return pts;
+}
+
+/** Drop the body quads of a loft whose centroid (x, a, v) the predicate picks; the end caps stay. */
+function cutHull(
+  g: THREE.BufferGeometry,
+  ring: number,
+  drop: (x: number, a: number, v: number) => boolean,
+): THREE.BufferGeometry {
+  const p = g.getAttribute('position');
+  const body = p.count - ring * 6;
+  const keep: number[] = [];
+  for (let i = 0; i < body; i += 6) {
+    let x = 0;
+    let a = 0;
+    let v = 0;
+    for (let k = 0; k < 6; k++) {
+      x += p.getX(i + k) / 6;
+      a += p.getY(i + k) / 6;
+      v -= p.getZ(i + k) / 6;
+    }
+    if (!drop(x, a, v)) for (let k = 0; k < 6; k++) keep.push(i + k);
+  }
+  for (let i = body; i < p.count; i++) keep.push(i);
+  const out = new THREE.BufferGeometry();
+  for (const name of ['position', 'normal', 'color']) {
+    const src = g.getAttribute(name);
+    const arr = new Float32Array(keep.length * 3);
+    keep.forEach((s, d) => {
+      arr[d * 3] = src.getX(s);
+      arr[d * 3 + 1] = src.getY(s);
+      arr[d * 3 + 2] = src.getZ(s);
+    });
+    out.setAttribute(name, new THREE.BufferAttribute(arr, 3));
+  }
+  g.dispose();
+  return out;
+}
+
+/**
+ * The bay seen when the doors are open: the liner, the sill longerons the doors hinge on, the
+ * lengthwise longerons and the ribs, and the two end bulkheads (the aft one carries schematic
+ * plumbing panels). hullV(a, x) is the dorsal skin height, so the bulkheads close under the arch.
+ */
+function buildBay(
+  g: THREE.Object3D,
+  M: Mats,
+  WHITE: THREE.Color,
+  vh: number,
+  hullV: (a: number, x: number) => number,
+): void {
+  const out = bayOutline(vh);
+  const liner = new THREE.Group();
+  liner.name = 'bay-interior';
+  g.add(liner);
+  const rows: THREE.Vector3[][] = [];
+  const NA = 12;
+  for (let i = 0; i <= NA; i++) {
+    const a = BAY_A0 + ((BAY_A1 - BAY_A0) * i) / NA;
+    rows.push(out.map(([x, v]) => new THREE.Vector3(x, a, -v)));
+  }
+  const lc = shade(WHITE, 0.78);
+  mesh(
+    gridGeo(rows, (c) => jit(lc, c.x, c.y, c.z, 0.06, 21), false),
+    M.vc,
+    liner,
+  );
+  // sill flanges (inboard of the hull rim, under the doors), and lengthwise longerons on the wall and floor
+  const sillZ = -vh + 0.06 + 0.15;
+  for (const sg of [-1, 1]) {
+    box(0.2, BAY_A1 - BAY_A0, 0.3, M.line, liner, sg * (BAY_X - 0.1), (BAY_A0 + BAY_A1) / 2, sillZ);
+    for (const idx of [1, 5, 12, 16]) {
+      const [x, v] = out[sg < 0 ? idx : out.length - 1 - idx];
+      seam(
+        liner,
+        M.line,
+        new THREE.Vector3(x, BAY_A0 + 0.2, -v),
+        new THREE.Vector3(x, BAY_A1 - 0.2, -v),
+        0.16,
+        0.12,
+      );
+    }
+  }
+  // ribs: a thin frame every 1.6 m round the liner
+  for (let a = BAY_A0 + 1.4; a < BAY_A1 - 0.8; a += 1.6) {
+    const curve = new THREE.CatmullRomCurve3(out.map(([x, v]) => new THREE.Vector3(x, a, -v)));
+    mesh(new THREE.TubeGeometry(curve, 40, 0.05, 6), M.line, liner);
+  }
+  // bulkheads: the cross-section closed under the door arch, 0.3 m thick
+  for (const [a0, aft] of [
+    [BAY_A0, true],
+    [BAY_A1 - 0.3, false],
+  ] as const) {
+    const shape = new THREE.Shape();
+    out.forEach(([x, v], i) => (i === 0 ? shape.moveTo(x, v) : shape.lineTo(x, v)));
+    for (let k = 0; k <= 10; k++) {
+      const x = BAY_X - (2 * BAY_X * k) / 10;
+      shape.lineTo(x, hullV(a0 + 0.15, x));
+    }
+    const bh = mesh(
+      new THREE.ExtrudeGeometry(shape, { depth: 0.3, bevelEnabled: false }),
+      M.white,
+      liner,
+    );
+    bh.rotation.x = -Math.PI / 2;
+    bh.position.y = a0;
+    bh.name = aft ? 'bay-aft-bulkhead' : 'bay-forward-bulkhead';
+    if (aft) {
+      for (const [x, v, w, h] of [
+        [-1.3, vh - 1.4, 0.9, 0.8],
+        [0.2, vh - 2.0, 1.4, 0.7],
+        [1.4, vh - 1.1, 0.7, 1.1],
+        [-0.2, vh - 0.5, 1.0, 0.45],
+      ] as const)
+        box(w, 0.06, h, M.line, liner, x, a0 + 0.32, -v);
+      box(0.3, 0.1, 0.3, M.gold, liner, -1.3, a0 + 0.36, -(vh - 1.4));
+    }
+  }
+}
+
+export interface RmsRig {
+  /** The shoulder base on the port longeron, forward end of the bay. */
+  base: THREE.Group;
+  shoulderYaw: THREE.Group;
+  shoulderPitch: THREE.Group;
+  elbow: THREE.Group;
+  wristPitch: THREE.Group;
+  wristYaw: THREE.Group;
+  wristRoll: THREE.Group;
+  endEffector: THREE.Group;
+  /** The grapple point, a child of the end effector. */
+  tip: THREE.Object3D;
+  /** The six joints in chain order, each a descendant of the one before. */
+  joints: THREE.Group[];
+  /** Shoulder to tip with the arm stowed, in model metres (15.2 for the sourced arm). */
+  lengthM: number;
+}
+
+/**
+ * The Shuttle Remote Manipulator System (Canadarm): 15.2 m long, 38 cm boom diameter, six joints,
+ * per Wikipedia (Canadarm). Stowed it lies along the port (+x) sill at the forward end of the bay,
+ * pointing aft (-y). The upper and lower boom lengths (6.4 / 7.0 m), the wrist and end-effector
+ * proportions and the housings are SCHEMATIC. Joint axes (bay frame, every angle zero when stowed):
+ * shoulderYaw about z (positive swings outboard, +x), the three pitch joints about x (positive raises
+ * the downstream arm out of the bay, toward -z), wristYaw about z, wristRoll about the arm axis.
+ */
+function buildRms(g: THREE.Object3D, M: Mats, vh: number): RmsRig {
+  const arm = new THREE.Group();
+  arm.name = 'rms';
+  g.add(arm);
+  const AX = BAY_X - 0.3;
+  const AZ = -vh + 0.75;
+  const base = new THREE.Group();
+  base.name = 'rms-base';
+  base.position.set(AX, BAY_A1 - 0.7, AZ);
+  arm.add(base);
+  const R = 0.19;
+  const cyl = (
+    parent: THREE.Object3D,
+    m: THREE.Material,
+    r: number,
+    len: number,
+    axis: 'x' | 'y' | 'z',
+    y = 0,
+  ): THREE.Mesh => {
+    const c = mesh(new THREE.CylinderGeometry(r, r, len, 16), m, parent);
+    if (axis === 'x') c.rotation.z = Math.PI / 2;
+    if (axis === 'z') c.rotation.x = Math.PI / 2;
+    c.position.y = y;
+    return c;
+  };
+  const joint = (parent: THREE.Object3D, name: string, y: number): THREE.Group => {
+    const j = new THREE.Group();
+    j.name = name;
+    j.position.y = y;
+    parent.add(j);
+    return j;
+  };
+  const boom = (parent: THREE.Object3D, y0: number, y1: number): void => {
+    cyl(parent, M.white, R, y1 - y0, 'y', -(y0 + y1) / 2);
+  };
+  box(0.6, 0.7, 0.5, M.line, base, 0, 0, 0.3); // pedestal on the sill
+  const shoulderYaw = joint(base, 'rms-shoulder-yaw', 0);
+  cyl(shoulderYaw, M.line, 0.3, 0.5, 'z');
+  const shoulderPitch = joint(shoulderYaw, 'rms-shoulder-pitch', 0);
+  cyl(shoulderPitch, M.white, 0.25, 0.62, 'x');
+  boom(shoulderPitch, 0.25, 6.2);
+  const elbow = joint(shoulderPitch, 'rms-elbow', -6.4);
+  cyl(elbow, M.line, 0.25, 0.58, 'x');
+  box(0.16, 0.2, 0.2, M.dark, elbow, 0, -0.1, -0.3); // elbow camera
+  boom(elbow, 0.25, 6.75);
+  const wristPitch = joint(elbow, 'rms-wrist-pitch', -7.0);
+  cyl(wristPitch, M.line, 0.2, 0.46, 'x');
+  const wristYaw = joint(wristPitch, 'rms-wrist-yaw', -0.4);
+  cyl(wristYaw, M.white, 0.2, 0.4, 'z');
+  const wristRoll = joint(wristYaw, 'rms-wrist-roll', -0.4);
+  cyl(wristRoll, M.line, 0.19, 0.4, 'y', -0.2);
+  const endEffector = joint(wristRoll, 'rms-end-effector', -0.4);
+  cyl(endEffector, M.engine, 0.2, 0.5, 'y', -0.25);
+  const snare = mesh(new THREE.TorusGeometry(0.15, 0.025, 6, 20), M.gold, endEffector);
+  snare.rotation.x = Math.PI / 2;
+  snare.position.y = -0.5;
+  const tip = new THREE.Object3D();
+  tip.name = 'rms-tip';
+  tip.position.y = -0.6;
+  endEffector.add(tip);
+  // retention cradles along the sill that hold the stowed arm
+  for (const a of [BAY_A1 - 1.2, 21.5, 17.5, 13.5, 10.2])
+    box(0.5, 0.4, 0.3, M.line, arm, AX + 0.12, a, AZ + 0.3);
+  return {
+    base,
+    shoulderYaw,
+    shoulderPitch,
+    elbow,
+    wristPitch,
+    wristYaw,
+    wristRoll,
+    endEffector,
+    tip,
+    joints: [shoulderYaw, shoulderPitch, elbow, wristPitch, wristYaw, wristRoll],
+    lengthM: 6.4 + 7.0 + 0.4 + 0.4 + 0.4 + 0.6,
+  };
+}
+
 // ── the orbiter ──────────────────────────────────────────────────────────────
 
 const L0 = 37.237;
@@ -504,10 +752,18 @@ const SPAN0 = 23.79;
 
 type Variant = 'shuttle' | 'columbia' | 'enterprise' | 'buran' | 'gli';
 
-interface OrbiterOpts {
+export interface OrbiterOpts {
   variant: Variant;
   length: number;
   span: number;
+  /**
+   * 'animated': the payload-bay doors are two rigid leaves hinged at the sills (userData.setBayDoors
+   * (t), 0 closed to 1 open at 175 degrees), the hull is open under them and the bay interior is
+   * built. Default (omitted): the closed, solid look every existing caller gets.
+   */
+  bayDoors?: 'animated';
+  /** With bayDoors 'animated': add the RMS, stowed on the port sill (userData.rms). */
+  rms?: boolean;
 }
 
 const TONES: Record<Variant, Tone> = {
@@ -520,7 +776,7 @@ const TONES: Record<Variant, Tone> = {
   gli: { white: 0xe8e6df, black: 0x56585e, blackSpread: 0.06 },
 };
 
-function buildOrbiter(o: OrbiterOpts): THREE.Group {
+export function buildOrbiter(o: OrbiterOpts): THREE.Group {
   const M = mats();
   const tone = TONES[o.variant];
   const root = new THREE.Group();
@@ -556,7 +812,12 @@ function buildOrbiter(o: OrbiterOpts): THREE.Group {
     isBlack(a, v)
       ? jit(a > 36.2 ? NOSE : BLACK, x, a, v, tone.blackSpread)
       : jit(WHITE, x, a, v, 0.03, 9);
-  const hull = loft(stns, {
+  // The openable bay: the hull is left open under the doors (between the sills, over the bay's
+  // length) and the doors hinge on a straight line along each sill at the dorsal skin height.
+  const animated = o.bayDoors === 'animated' && !isBuran;
+  const HINGE_X = 2.17;
+  const hingeV = surfV(stns, N, (BAY_A0 + BAY_A1) / 2, HINGE_X, true) + 0.04;
+  let hull = loft(stns, {
     n: N,
     ring: 84,
     step: 0.3,
@@ -564,6 +825,12 @@ function buildOrbiter(o: OrbiterOpts): THREE.Group {
     rough: (x, a, v) => (isBlack(a, v) || a < aft + 0.3 ? 0 : 0.018),
     capColor: new THREE.Color(0x6e675c),
   });
+  if (animated)
+    hull = cutHull(
+      hull,
+      84,
+      (x, a, v) => v > 0 && Math.abs(x) < BAY_X && a > BAY_A0 + 0.1 && a < BAY_A1 - 0.1,
+    );
   mesh(hull, M.vc, g).name = 'fuselage';
 
   // ── wings (the right one is authored; the left is its mirror) ──
@@ -729,7 +996,23 @@ function buildOrbiter(o: OrbiterOpts): THREE.Group {
   const doorCuts = [7.4, 12.0, 16.5, 21.2, 25.8];
   const hullPt = (a: number, x: number, off: number): THREE.Vector3 =>
     new THREE.Vector3(x, a, -(surfV(stns, N, a, x, true) + off));
+  // Animated: each side is one rigid leaf (pivot on the hinge line, children in model coordinates
+  // via `inner`); closed it is the same geometry as the default, only parented to the leaf.
+  const leaves = new Map<number, THREE.Group>();
+  const doorParent = (sgn: number): THREE.Object3D => {
+    if (!animated) return g;
+    const pivot = new THREE.Group();
+    pivot.name = sgn > 0 ? 'bay-door-port' : 'bay-door-starboard';
+    pivot.position.set(sgn * HINGE_X, 0, -hingeV);
+    const inner = new THREE.Group();
+    inner.position.set(-sgn * HINGE_X, 0, hingeV);
+    pivot.add(inner);
+    g.add(pivot);
+    leaves.set(sgn, pivot);
+    return inner;
+  };
   for (const sgn of [-1, 1]) {
+    const door = doorParent(sgn);
     for (let k = 0; k < doorCuts.length - 1; k++) {
       const a0 = doorCuts[k] + 0.06;
       const a1 = doorCuts[k + 1] - 0.06;
@@ -748,18 +1031,71 @@ function buildOrbiter(o: OrbiterOpts): THREE.Group {
         }
         rows.push(row);
       }
-      mesh(gridGeo(rows, doorCol, false), M.vc, g);
+      mesh(gridGeo(rows, doorCol, false), M.vc, door).name = 'bay-door';
+      if (animated) {
+        // the radiator panel on the door's inner face (schematic: all four sections, tube
+        // stripes across the panel; the real radiators cover the forward doors)
+        const rad: THREE.Vector3[][] = [];
+        const nrr = 14;
+        for (let i = 0; i <= nrr; i++) {
+          const a = a0 + 0.2 + ((a1 - a0 - 0.4) * i) / nrr;
+          rad.push([0.25, 0.55, 1.0, 1.45, 1.75, 2.0].map((u) => hullPt(a, sgn * u, -0.02)));
+        }
+        mesh(
+          gridGeo(
+            rad,
+            (c, i) => jit(col(i % 2 ? 0xc9ced2 : 0xe4e7e8), c.x, c.y, c.z, 0.03, 23),
+            false,
+          ),
+          M.vc,
+          door,
+        ).name = 'bay-radiator';
+      }
     }
     // hinge line and the latch tabs along the centre seam
     const hx = sgn * 2.17;
     for (let i = 0; i < 10; i++) {
       const a = 7.8 + i * 1.9;
       const p = hullPt(a, hx, 0.04);
-      box(0.18, 0.5, 0.05, M.line, g, hx, a, p.z - 0.02);
+      box(0.18, 0.5, 0.05, M.line, door, hx, a, p.z - 0.02);
     }
   }
   // dark gaps: the centre seam and the section joints
-  for (const a of doorCuts) {
+  if (animated) {
+    // per side, so each leaf carries its own half
+    for (const sgn of [-1, 1]) {
+      const door = leaves.get(sgn)!.children[0];
+      const strip = (a: number, hw: number, x0: number, x1: number, n: number): void => {
+        const rows: THREE.Vector3[][] = [];
+        for (let i = 0; i <= 1; i++) {
+          const row: THREE.Vector3[] = [];
+          for (let j = 0; j <= n; j++)
+            row.push(hullPt(a - hw + i * 2 * hw, sgn * (x0 + ((x1 - x0) * j) / n), 0.02));
+          rows.push(row);
+        }
+        mesh(
+          gridGeo(rows, () => col(0x2a2a2e), false),
+          M.vc,
+          door,
+        );
+      };
+      for (const a of doorCuts) strip(a, 0.07, 0, 2.15, 4);
+      for (let i = 0; i < 12; i++) {
+        const a = 7.4 + ((25.8 - 7.4) * i) / 12;
+        const b = 7.4 + ((25.8 - 7.4) * (i + 1)) / 12;
+        const rows: THREE.Vector3[][] = [
+          [hullPt(a, 0, 0.02), hullPt(a, sgn * 0.06, 0.02)],
+          [hullPt(b, 0, 0.02), hullPt(b, sgn * 0.06, 0.02)],
+        ];
+        mesh(
+          gridGeo(rows, () => col(0x2a2a2e), false),
+          M.vc,
+          door,
+        );
+      }
+    }
+  }
+  for (const a of animated ? [] : doorCuts) {
     const p = hullPt(a, 0, 0.022);
     const half2 = 2.15;
     const rows: THREE.Vector3[][] = [];
@@ -778,7 +1114,7 @@ function buildOrbiter(o: OrbiterOpts): THREE.Group {
       g,
     );
   }
-  {
+  if (!animated) {
     const rows: THREE.Vector3[][] = [];
     for (let i = 0; i <= 12; i++) {
       const a = 7.4 + ((25.8 - 7.4) * i) / 12;
@@ -789,6 +1125,20 @@ function buildOrbiter(o: OrbiterOpts): THREE.Group {
       M.vc,
       g,
     );
+  }
+
+  if (animated) {
+    buildBay(g, M, WHITE, hingeV, (a, x) => surfV(stns, N, a, x, true));
+    const rig = o.rms ? buildRms(g, M, hingeV) : undefined;
+    const OPEN = (175 * Math.PI) / 180;
+    // t 0 closed .. 1 open (about 175 degrees, the leaf lying nearly flat outboard of the sill)
+    const setBayDoors = (t: number): void => {
+      const a = Math.min(1, Math.max(0, t)) * OPEN;
+      for (const [sgn, leaf] of leaves) leaf.rotation.y = -sgn * a;
+    };
+    root.userData.setBayDoors = setBayDoors;
+    root.userData.bayLeaves = { port: leaves.get(1), starboard: leaves.get(-1) };
+    if (rig) root.userData.rms = rig;
   }
 
   // ── flight-deck windows, frames and the side hatch ──
@@ -1255,6 +1605,17 @@ const R_BURAN: ShowcaseRef[] = [
     u: commons('VKK_Buran_AN0077204.jpg'),
   },
 ];
+
+/**
+ * A Shuttle orbiter with an opening payload bay and the RMS, for deploy scenes. Closed (setBayDoors
+ * (0)) it looks like the default model. root.userData: setBayDoors(t 0..1), bayLeaves {port,
+ * starboard}, rms (RmsRig). The Shuttle variants only; Buran and OK-GLI have no openable bay.
+ */
+export function buildOrbiterOpenable(
+  variant: Exclude<Variant, 'buran' | 'gli'> = 'shuttle',
+): THREE.Group {
+  return buildOrbiter({ variant, length: L0, span: SPAN0, bayDoors: 'animated', rms: true });
+}
 
 function orbiter(variant: Variant, extra: ShowcaseRef[] = []): ShowcaseModel {
   return {

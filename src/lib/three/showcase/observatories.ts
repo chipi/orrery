@@ -1441,6 +1441,307 @@ export function buildSpektrRg(): THREE.Group {
   return finish(g, SRG_H);
 }
 
+// ---------------------------------------------------------------------------------------------
+// Nancy Grace Roman Space Telescope
+// ---------------------------------------------------------------------------------------------
+
+/** 12.7 m: NASA's FAQ. Another NASA page gives 12.8 m with the cover up; the two conflict. */
+export const ROMAN_H = 12.7;
+
+/**
+ * Roman as deployed. From the sourced note (docs/wip/2026-11-26-roman-spherex-sourced.md):
+ * about 12.7 m tall, over 4.4 m wide across the solar panels, a barrel-shaped optical tube around
+ * the 2.4 m primary mirror, the Wide Field Instrument and the Coronagraph behind it, a bus 2.5 m
+ * wide and 2 m tall, a Solar Array Sun Shield that doubles as thermal shield, a lower instrument
+ * sun shade, a deployable aperture cover and a high-gain antenna.
+ * SCHEMATIC, not sourced: the barrel's diameter and ring spacing, the cover's size and hinge
+ * angle, the panel layout and tilt, the antenna boom and dish size, every strut, thruster and box
+ * on the bus and the instrument carrier, and all colours.
+ */
+export function buildRoman(): THREE.Group {
+  const M = mats();
+  const g = new THREE.Group();
+  const baff = mat(0xe4e3de, 0.25, 0.5);
+  baff.side = THREE.DoubleSide;
+  const skirt = mat(0xb9bdc4, 0.55, 0.32, true);
+
+  // Launch-adapter ring and the bus: 2.5 m wide, 2 m tall, wrapped in silver and amber blankets.
+  cyl(g, M.alu, 1.0, 1.0, 0, 0.15, 0, 0, 32);
+  box(g, M.dark, 2.5, 2.0, 2.5, 0, 1.15, 0);
+  for (const s of [-1, 1]) {
+    const f = foilSheet(s > 0 ? M.foilDk : M.kapton, 2.5, 1.9, 0.04);
+    f.position.set(0, 1.15, s * 1.27);
+    f.rotation.y = s > 0 ? 0 : Math.PI;
+    add(g, f);
+    const f2 = foilSheet(s > 0 ? M.kapton : M.foilDk, 2.5, 1.9, 0.04);
+    f2.position.set(s * 1.27, 1.15, 0);
+    f2.rotation.y = s * (Math.PI / 2);
+    add(g, f2);
+  }
+  box(g, M.alu, 2.6, 0.08, 2.6, 0, 2.18, 0);
+  box(g, M.alu, 2.6, 0.08, 2.6, 0, 0.14, 0);
+  // Radiator plates and avionics boxes on the shaded (-x) side, thrusters on the corners.
+  box(g, M.white, 0.04, 1.5, 1.8, -1.3, 1.2, 0);
+  for (let i = 0; i < 5; i++) box(g, M.cream, 0.02, 1.5, 0.03, -1.33, 1.2, -0.72 + i * 0.36);
+  box(g, M.black, 0.3, 0.22, 0.22, 1.1, 2.3, 1.2);
+  box(g, M.black, 0.3, 0.22, 0.22, -1.1, 2.3, 1.2);
+  for (const [x, z] of [
+    [1.2, 1.2],
+    [-1.2, 1.2],
+    [1.2, -1.2],
+    [-1.2, -1.2],
+  ] as [number, number][]) {
+    const th = cyl(g, M.black, 0.05, 0.12, 0.15, 0.4, x * 1.04, z * 1.04, 10);
+    th.rotation.z = x > 0 ? -0.5 : 0.5;
+  }
+
+  // Instrument carrier: the Wide Field Instrument and the Coronagraph behind the primary mirror.
+  box(g, M.aluDk, 2.4, 0.3, 2.4, 0, 2.4, 0);
+  box(g, M.dark, 1.5, 0.95, 1.5, -0.3, 2.95, 0.1);
+  box(g, M.black, 0.8, 0.7, 0.8, 0.75, 2.85, -0.5);
+  box(g, M.white, 0.9, 0.04, 1.2, -0.3, 3.45, 0.1);
+  for (const [x, z] of [
+    [1.15, 1.15],
+    [-1.15, 1.15],
+    [1.15, -1.15],
+    [-1.15, -1.15],
+  ] as [number, number][])
+    strut(g, M.alu, V(x, 2.5, z), V(x * 1.25, 3.7, z * 1.25), 0.05, 6);
+
+  // Lower instrument sun shade: a flared foil skirt around the base of the barrel.
+  foilTube(g, skirt, 1.75, 2.05, 3.0, 4.9, 0.05, 0, 0, 36);
+  band(g, M.alu, 1.75, 3.0, 0.06);
+  band(g, M.alu, 2.05, 4.9, 0.06);
+
+  // Outer barrel assembly: the long optical tube around the 2.4 m primary mirror.
+  const y0 = 3.7;
+  const y1 = 10.7;
+  cyl(g, baff, 1.55, 1.55, y0, y1, 0, 0, 48, true);
+  const bore = new THREE.Mesh(
+    new THREE.CylinderGeometry(1.5, 1.5, y1 - y0, 48, 1, true),
+    Object.assign(mat(0x08090b, 0.3, 0.8), { side: THREE.BackSide }),
+  );
+  bore.position.y = (y0 + y1) / 2;
+  add(g, bore);
+  for (let i = 0; i <= 7; i++) band(g, M.alu, 1.57, y0 + i * 1.0, 0.07);
+  seams(g, M.white, 1.55, y0, y1, 14);
+  const rim = new THREE.Mesh(new THREE.TorusGeometry(1.55, 0.06, 8, 48), M.white);
+  rim.rotation.x = Math.PI / 2;
+  rim.position.y = y1;
+  add(g, rim);
+  // Inside: the 2.4 m primary mirror (gold) low in the tube, the secondary on three struts.
+  cyl(g, M.mirror, 1.2, 1.2, 4.5, 4.6, 0, 0, 48);
+  cyl(g, M.dark, 0.25, 0.25, 4.5, 4.62, 0, 0, 16);
+  for (let i = 0; i < 6; i++) {
+    const a = (i / 6) * Math.PI * 2;
+    const seg = box(g, M.gold, 0.03, 0.02, 0.6, 0, 4.61, 0);
+    seg.position.set(Math.sin(a) * 0.75, 4.61, Math.cos(a) * 0.75);
+    seg.rotation.y = a;
+  }
+  for (let i = 0; i < 3; i++) {
+    const a = (i / 3) * Math.PI * 2 + Math.PI / 6;
+    strut(g, M.black, V(Math.sin(a) * 1.5, 9.9, Math.cos(a) * 1.5), V(0, 9.9, 0), 0.04, 6);
+  }
+  cyl(g, M.mirror, 0.3, 0.3, 9.75, 9.8, 0, 0, 24);
+  cyl(g, M.dark, 0.1, 0.1, 9.8, 10.1, 0, 0, 12);
+  // Tube-to-carrier struts.
+  for (let i = 0; i < 4; i++) {
+    const a = (i / 4) * Math.PI * 2 + Math.PI / 4;
+    strut(
+      g,
+      M.aluDk,
+      V(Math.sin(a) * 1.55, y0 - 0.05, Math.cos(a) * 1.55),
+      V(Math.sin(a) * 1.7, 3.0, Math.cos(a) * 1.7),
+      0.04,
+      6,
+    );
+  }
+
+  // Deployable aperture cover, raised on a hinge on the back rim, tipped up and away.
+  const hinge = new THREE.Group();
+  hinge.position.set(0, y1, -1.5);
+  hinge.rotation.x = -(35 * Math.PI) / 180;
+  add(g, hinge);
+  box(hinge, baff, 3.0, 2.4, 0.07, 0, 1.2, 0);
+  const outer = foilSheet(M.foil, 2.9, 2.3, 0.03);
+  outer.position.set(0, 1.2, -0.05);
+  outer.rotation.y = Math.PI;
+  add(hinge, outer);
+  for (const x of [-1.0, 0, 1.0]) box(hinge, M.alu, 0.06, 2.3, 0.07, x, 1.2, 0.05);
+  for (const x of [-1.2, 0, 1.2])
+    cyl(hinge, M.aluDk, 0.06, 0.06, -0.05, 0.1, x, 0, 8).rotation.z = Math.PI / 2;
+  for (const s of [-1, 1])
+    strut(g, M.aluDk, V(s * 1.45, y1 - 0.2, -0.5), V(s * 1.2, y1 + 1.0, -2.2), 0.035, 6);
+
+  // Solar Array Sun Shield on the sun side (+z): a centre panel and two angled wings, leaning
+  // back toward the barrel, doubling as the thermal shield.
+  const arr = solarWing(g);
+  const sun = new THREE.Group();
+  sun.position.set(0, 5.3, 2.05);
+  sun.rotation.x = -0.1;
+  arr.add(sun);
+  const mid = cellPanel(M, 2.8, 5.8, 14, 29);
+  sun.add(mid);
+  for (const s of [-1, 1]) {
+    const hg = new THREE.Group();
+    hg.position.set(s * 1.4, 0, 0);
+    hg.rotation.y = -s * 0.5;
+    sun.add(hg);
+    const wing = cellPanel(M, 0.9, 5.8, 4, 29);
+    wing.position.x = s * 0.45;
+    hg.add(wing);
+    box(hg, M.aluDk, 0.06, 5.8, 0.09, 0, 0, 0);
+  }
+  box(sun, M.aluDk, 3.0, 0.1, 0.12, 0, 2.95, 0);
+  box(sun, M.aluDk, 3.0, 0.1, 0.12, 0, -2.95, 0);
+  for (const x of [-1.0, 1.0]) {
+    strut(arr, M.alu, V(x, 2.2, 1.2), V(x * 0.95, 3.3, 1.99), 0.04, 6);
+    strut(arr, M.alu, V(x, 4.4, 1.5), V(x * 0.95, 5.3, 2.03), 0.04, 6);
+  }
+
+  // High-gain antenna on a boom off the shaded side of the bus.
+  strut(g, M.aluDk, V(-1.25, 1.7, -0.8), V(-1.7, 2.9, -1.4), 0.045, 8);
+  const ant = dish(M.white, M.dark, 0.45);
+  ant.position.set(-1.7, 2.95, -1.4);
+  ant.rotation.z = Math.PI / 2 - 0.35;
+  add(g, ant);
+
+  return finish(g, ROMAN_H);
+}
+
+// ---------------------------------------------------------------------------------------------
+// SPHEREx
+// ---------------------------------------------------------------------------------------------
+
+export const SPHEREX_H = 2.6;
+
+/**
+ * SPHEREx. From the sourced note: 2.6 m tall, 3.2 m wide; three concentric conical photon shields
+ * (reflective aluminium sheets round honeycomb aluminium, about 19 mm thick) forming a stack 1.7 m
+ * tall and 3.2 m across; a 20 cm telescope tilted inside; the BAE Systems bus below; a solar array
+ * of 2.67 x 1.02 m.
+ * SCHEMATIC, not sourced: each cone's own radii and height inside the stack, the spokes and
+ * support struts, the bus's shape and fittings, where and at what angle the solar panel is
+ * mounted, the telescope's tilt and tube, and all colours.
+ */
+export function buildSpherex(): THREE.Group {
+  const M = mats();
+  const g = new THREE.Group();
+  const sheet = mat(0xdcdfe4, 0.65, 0.22);
+  sheet.side = THREE.DoubleSide;
+  const sheetIn = mat(0xeef0f3, 0.7, 0.16);
+  sheetIn.side = THREE.DoubleSide;
+
+  // Bus (0 to 0.9 m): the BAE Systems box in amber and silver blankets on a launch ring.
+  cyl(g, M.alu, 0.9, 0.9, 0, 0.06, 0, 0, 32);
+  prism(g, M.dark, 8, 0.78, 0.78, 0.06, 0.88);
+  for (let i = 0; i < 8; i++) {
+    const a = (i / 8) * Math.PI * 2;
+    const f = foilSheet(i % 2 ? M.foilDk : M.kapton, 0.58, 0.76, 0.02);
+    f.position.set(Math.sin(a) * 0.72, 0.47, Math.cos(a) * 0.72);
+    f.rotation.y = a;
+    add(g, f);
+  }
+  band(g, M.alu, 0.8, 0.88, 0.05);
+  band(g, M.alu, 0.8, 0.06, 0.05);
+  box(g, M.white, 0.5, 0.35, 0.03, 0, 0.45, -0.77);
+  box(g, M.black, 0.16, 0.12, 0.12, 0.45, 0.8, 0.5);
+  box(g, M.black, 0.16, 0.12, 0.12, -0.45, 0.8, 0.5);
+  const sd = dish(M.white, M.dark, 0.14);
+  sd.position.set(-0.55, 0.9, -0.5);
+  sd.rotation.z = 0.5;
+  add(g, sd);
+  for (const [x, z] of [
+    [0.7, 0.3],
+    [-0.7, 0.3],
+  ] as [number, number][])
+    cyl(g, M.black, 0.03, 0.06, 0.02, 0.18, x, z, 8);
+
+  // Solar panel 2.67 x 1.02 m, fixed to the bus and sloping outward on the sun side.
+  const arr = solarWing(g);
+  const pan = cellPanel(M, 2.67, 1.02, 12, 5);
+  pan.position.set(0, 0.5, 1.2);
+  pan.rotation.x = -Math.PI / 4;
+  arr.add(pan);
+  for (const x of [-0.8, 0.8]) strut(arr, M.alu, V(x, 0.84, 0.74), V(x, 0.7, 0.95), 0.025, 6);
+
+  // The photon shields: three concentric cones, widest at the top, stack 0.9 to 2.6 m (1.7 m).
+  const cones: [number, number, number, number, number][] = [
+    // rBase, rTop, yBase, yTop, which
+    [0.82, 1.6, 0.9, 2.2, 0],
+    [0.72, 1.4, 0.95, 2.4, 1],
+    [0.62, 1.18, 1.0, 2.6, 2],
+  ];
+  for (const [r0, r1, ya, yb, k] of cones) {
+    cyl(g, k === 2 ? sheetIn : sheet, r0, r1, ya, yb, 0, 0, 64, true);
+    const lip = new THREE.Mesh(new THREE.TorusGeometry(r1, 0.02, 8, 64), M.aluDk);
+    lip.rotation.x = Math.PI / 2;
+    lip.position.y = yb;
+    add(g, lip);
+    const foot = new THREE.Mesh(new THREE.TorusGeometry(r0, 0.02, 8, 48), M.aluDk);
+    foot.rotation.x = Math.PI / 2;
+    foot.position.y = ya;
+    add(g, foot);
+    // Honeycomb ribs between the sheets, seen as a few spaced radial seams along the cone.
+    for (let i = 0; i < 12; i++) {
+      const a = (i / 12) * Math.PI * 2;
+      beam(
+        g,
+        M.alu,
+        V(Math.sin(a) * r0, ya, Math.cos(a) * r0),
+        V(Math.sin(a) * r1, yb, Math.cos(a) * r1),
+        0.02,
+        0.014,
+      );
+    }
+  }
+  // Spokes tie the cones together just below the outer rim.
+  for (let i = 0; i < 6; i++) {
+    const a = (i / 6) * Math.PI * 2 + Math.PI / 12;
+    const sx = Math.sin(a);
+    const sz = Math.cos(a);
+    beam(g, M.aluDk, V(sx * 1.04, 2.2, sz * 1.04), V(sx * 1.31, 2.2, sz * 1.31), 0.03, 0.02);
+    beam(g, M.aluDk, V(sx * 1.31, 2.2, sz * 1.31), V(sx * 1.6, 2.2, sz * 1.6), 0.03, 0.02);
+  }
+  // Struts from the bus rim up to the outermost cone's base.
+  for (let i = 0; i < 6; i++) {
+    const a = (i / 6) * Math.PI * 2;
+    strut(
+      g,
+      M.alu,
+      V(Math.sin(a) * 0.6, 0.86, Math.cos(a) * 0.6),
+      V(Math.sin(a) * 0.8, 0.95, Math.cos(a) * 0.8),
+      0.025,
+      6,
+    );
+  }
+
+  // The 20 cm telescope, tilted, inside the innermost cone: tube, aperture ring, baffle cone.
+  const tel = new THREE.Group();
+  tel.position.set(0, 1.0, 0);
+  tel.rotation.set(0.14, 0, -0.1);
+  add(g, tel);
+  cyl(tel, M.dark, 0.14, 0.14, 0, 0.9, 0, 0, 20);
+  cyl(tel, M.black, 0.1, 0.12, 0.88, 0.91, 0, 0, 20);
+  cyl(tel, M.aluDk, 0.18, 0.2, 0.62, 0.9, 0, 0, 20, true);
+  band(tel, M.alu, 0.2, 0.9, 0.03);
+  box(tel, M.cell, 0.12, 0.1, 0.12, 0.17, 0.2, 0);
+  box(tel, M.white, 0.2, 0.02, 0.2, 0, 0.0, 0);
+  for (let i = 0; i < 3; i++) {
+    const a = (i / 3) * Math.PI * 2;
+    strut(
+      g,
+      M.aluDk,
+      V(Math.sin(a) * 0.56, 1.0, Math.cos(a) * 0.56),
+      V(Math.sin(a) * 0.12, 1.1, Math.cos(a) * 0.12),
+      0.02,
+      6,
+    );
+  }
+
+  return finish(g, SPHEREX_H);
+}
+
 const WIKI = (page: string, what: string): ShowcaseRef => ({
   l: `Wikipedia — ${what}`,
   u: `https://en.wikipedia.org/wiki/${page}`,
@@ -1610,6 +1911,53 @@ export const SHOWCASE: Record<string, ShowcaseModel> = {
     refs: [
       WIKI('Spektr-RG', 'Spektr-RG: eROSITA, ART-XC, Navigator bus'),
       COMMONS('Spektr-RG_payloads.png', 'Spektr-RG payloads render'),
+    ],
+  },
+  roman: {
+    build: buildRoman,
+    heightM: ROMAN_H,
+    diameterM: 3.2,
+    refs: [
+      {
+        l: 'NASA Roman FAQ — 12.7 m long, more than 4.4 m wide with the solar panels deployed',
+        u: 'https://science.nasa.gov/mission/roman-space-telescope/frequently-asked-questions',
+      },
+      {
+        l: 'NASA SVS 14997 — Roman deployed (drone footage): over 42 ft, 12.8 m with the cover up; panels 4.3 m',
+        u: 'https://svs.gsfc.nasa.gov/14997',
+      },
+      {
+        l: 'NASA — Roman observatory: 2.4 m primary mirror, barrel-shaped optical tube',
+        u: 'https://science.nasa.gov/mission/roman-space-telescope/roman-observatory',
+      },
+      {
+        l: 'NASA — Roman launch: Solar Array Sun Shield doubles as thermal shield',
+        u: 'https://science.nasa.gov/mission/roman-space-telescope/roman-launch/',
+      },
+      COMMONS(
+        'NASA%27s_Nancy_Grace_Roman_Space_Telescope-_Systems,_Assemble!_(SVS14693).jpg',
+        'Roman visualization (the silhouette)',
+      ),
+    ],
+  },
+  spherex: {
+    build: buildSpherex,
+    heightM: SPHEREX_H,
+    diameterM: 3.2,
+    refs: [
+      {
+        l: 'NASA/JPL SPHEREx quick facts — 2.6 m tall, 3.2 m wide and deep, 502 kg',
+        u: 'https://www.jpl.nasa.gov/press-kits/spherex/quick-facts/',
+      },
+      {
+        l: 'NASA/JPL SPHEREx spacecraft — three concentric photon shields (stack 1.7 m x 3.2 m), 20 cm telescope, solar array 2.67 x 1.02 m',
+        u: 'https://www.jpl.nasa.gov/press-kits/spherex/mission-overview/spacecraft/',
+      },
+      COMMONS(
+        'SPHEREx%E2%80%99s_Concentric_Cones.jpg',
+        'SPHEREx concentric cones (NASA/JPL-Caltech/BAE Systems)',
+      ),
+      COMMONS('SPHEREx_telescope_and_detectors.jpg', 'SPHEREx telescope and detectors'),
     ],
   },
 };

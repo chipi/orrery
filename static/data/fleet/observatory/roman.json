@@ -1,0 +1,35 @@
+{
+  "id": "roman",
+  "name": "Nancy Grace Roman Space Telescope",
+  "category": "observatory",
+  "agency": "NASA",
+  "country": "USA",
+  "manufacturer": "NASA Goddard / BAE Systems / L3Harris",
+  "first_flight": "2026-08-30",
+  "status": "ACTIVE",
+  "era": "2011-now",
+  "epoch": "commercial-era",
+  "best_known_for": "NASA's wide-field infrared survey telescope: launched in August 2026, on its way to L2",
+  "credit": "Roman: launched 2026-08-30 at 11:26 UTC (7:26 a.m. EDT; Wikipedia 11:26:04 UTC), Falcon Heavy, pad 39A, Kennedy Space Center; separation from the upper stage about 31 minutes later. Sources: NASA Roman launch page, NASA launch news release, NASA Roman FAQ, NASA SVS 14997, NASA Roman observatory page, ESA Roman factsheet, Wikipedia, Nature World News (2026-09-23), NASA Roman blog index (read 2026-11-26). Status ACTIVE is the schema's nearest value: Roman is in commissioning on its way to Sun-Earth L2 (insertion about 100 days after launch, early December 2026; the burn date was not found), and first science images are expected in early 2027. Source conflicts: the length is 12.7 m on NASA's FAQ and 12.8 m (over 42 ft, aperture cover up) on SVS 14997, and the FAQ figure is used; the span with the solar panels deployed is 4.4 m (FAQ) or 4.3 m (SVS) and is not shown. No launch mass is shown: 4,166 kg (dry 4,059 kg) came only from a search summary, Wikipedia gives 9,174 kg (20,225 lb), which does not match 4,166 kg (9,184 lb) and looks like a lb/kg mix-up, and no opened NASA page gave a figure. The cost is US$3.2 billion for development and up to US$3.934 billion with five years of operations on Wikipedia, while a press headline says US$4.3 billion; not resolved, not shown. The transit is three months on NASA's pages; a pre-launch live page said about 30 days, not used. Wikipedia names the bus builder as Ball Aerospace/BAE Systems; NASA's release says BAE Systems. The fate of the Falcon Heavy centre core (reported expended) was not confirmed on a NASA page and is not stated. Primary mirror 2.4 m, 186 kg; Wide Field Instrument 300.8 Mpx, 18 H4RG-10 detectors (ESA: 300-megapixel); Coronagraph Instrument 575-825 nm, a technology demonstration. Prime mission 5 years, extendable by 5; fuel for at least 22 years. Checked 2026-11-26.",
+  "specs": {
+    "length_m": 12.7,
+    "primary_mirror_m": 2.4
+  },
+  "links": [
+    {
+      "l": "Nancy Grace Roman Space Telescope — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Nancy_Grace_Roman_Space_Telescope",
+      "t": "intro"
+    },
+    {
+      "l": "Roman Space Telescope — NASA",
+      "u": "https://science.nasa.gov/mission/roman-space-telescope/",
+      "t": "core"
+    },
+    {
+      "l": "Roman launch — NASA",
+      "u": "https://science.nasa.gov/mission/roman-space-telescope/roman-launch/",
+      "t": "deep"
+    }
+  ]
+}

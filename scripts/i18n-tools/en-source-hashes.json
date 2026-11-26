@@ -3489,11 +3489,23 @@
     "name": "4edd60209d",
     "tagline": "fe430a7935"
   },
+  "fleet/observatory/roman.json": {
+    "best_known_for": "6cfef42cf3",
+    "description": "8ae5537291",
+    "name": "d856a5c39d",
+    "tagline": "62c3c9a756"
+  },
   "fleet/observatory/spektr-rg.json": {
     "best_known_for": "b4fca1f2bb",
     "description": "94a629f551",
     "name": "c7f019f64f",
     "tagline": "b4fca1f2bb"
+  },
+  "fleet/observatory/spherex.json": {
+    "best_known_for": "2aa2d28111",
+    "description": "a02007bee8",
+    "name": "b8316ea5c5",
+    "tagline": "c7ad5efd04"
   },
   "fleet/observatory/spitzer.json": {
     "best_known_for": "87bff7f108",

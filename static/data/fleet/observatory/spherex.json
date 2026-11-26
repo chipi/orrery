@@ -1,0 +1,36 @@
+{
+  "id": "spherex",
+  "name": "SPHEREx",
+  "category": "observatory",
+  "agency": "NASA / JPL",
+  "country": "USA",
+  "manufacturer": "BAE Systems / Caltech / JPL",
+  "first_flight": "2025-03-12",
+  "status": "ACTIVE",
+  "era": "2011-now",
+  "epoch": "commercial-era",
+  "best_known_for": "NASA's all-sky infrared spectral survey: launched in March 2025, first full map finished in December 2025",
+  "credit": "SPHEREx: launched 2025-03-12 at 03:10 UTC (11:10 p.m. EDT on 11 March), Falcon 9 Block 5, Vandenberg SLC-4E, rideshare with the four PUNCH smallsats; first_flight uses the UTC date. Sources: NASA/JPL SPHEREx quick facts and spacecraft pages, NASA/JPL first-map news release, Wikipedia. Status ACTIVE: operational per the December 2025 first-map release; nothing later (a second map, any anomaly) was found. Source conflicts: mass 502 kg (1,107 lb), 2.6 m tall and 3.2 m wide and deep from NASA quick facts, and Wikipedia agrees on 2.6 x 3.2 m; the quick-facts launch time is written 7:10 p.m. PST but the date was PDT, so the UTC time above comes from Wikipedia and the EDT time. The band count is 102 (NASA, six filters x 17) against 96 on Wikipedia; 102 is used. Altitude is 700 km at 97 degrees on Wikipedia against 650 km and dawn-dusk Sun-synchronous in a NASA press-kit snippet only; not resolved, not shown. The prime mission is 27 months including a month each of commissioning and decommissioning (NASA quick facts) against 25 months on Wikipedia; science operations began 2025-05-01 (Wikipedia) and NASA says mapping began in May. Telescope 20 cm aperture, field of view 11.3 x 3.5 deg, six 2048 x 2048 H2RG arrays; three photon shields about 19 mm thick, stack 1.7 m tall and 3.2 m across; solar array 2.67 x 1.02 m, about 750 W; cost about US$488 million; four all-sky maps planned. Bus builder BAE Systems, Boulder (formerly Ball); payload Caltech / JPL; data at IPAC. Checked 2026-11-26.",
+  "specs": {
+    "length_m": 2.6,
+    "width_m": 3.2,
+    "mass_kg": 502
+  },
+  "links": [
+    {
+      "l": "SPHEREx — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/SPHEREx",
+      "t": "intro"
+    },
+    {
+      "l": "SPHEREx — NASA/JPL",
+      "u": "https://www.jpl.nasa.gov/missions/spherex/",
+      "t": "core"
+    },
+    {
+      "l": "SPHEREx spacecraft — NASA/JPL press kit",
+      "u": "https://www.jpl.nasa.gov/press-kits/spherex/mission-overview/spacecraft/",
+      "t": "deep"
+    }
+  ]
+}

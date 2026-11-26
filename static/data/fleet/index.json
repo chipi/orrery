@@ -1644,6 +1644,18 @@
     "tagline": "Germany's small launcher: stacked at SaxaVord in 2026, first launch now in 2027"
   },
   {
+    "id": "roman",
+    "name": "Nancy Grace Roman Space Telescope",
+    "category": "observatory",
+    "agency": "NASA",
+    "country": "USA",
+    "era": "2011-now",
+    "epoch": "commercial-era",
+    "status": "ACTIVE",
+    "first_flight": "2026-08-30",
+    "tagline": "Wide-field infrared survey of the dark universe, launched August 2026"
+  },
+  {
     "id": "solar-orbiter",
     "name": "Solar Orbiter",
     "category": "orbiter",
@@ -2194,6 +2206,18 @@
     "status": "ACTIVE",
     "first_flight": "2019-07-13",
     "tagline": "Russian-German X-ray sky-mapping observatory"
+  },
+  {
+    "id": "spherex",
+    "name": "SPHEREx",
+    "category": "observatory",
+    "agency": "NASA / JPL",
+    "country": "USA",
+    "era": "2011-now",
+    "epoch": "commercial-era",
+    "status": "ACTIVE",
+    "first_flight": "2025-03-12",
+    "tagline": "A map of the whole sky in 102 infrared colours; first map finished December 2025"
   },
   {
     "id": "spirit",

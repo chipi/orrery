@@ -31204,6 +31204,58 @@
       "rejected_by": null,
       "scored_at": "2026-11-26T01:30:09.704Z",
       "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/roman/01.jpg": {
+      "score": 8,
+      "subject": "Falcon Heavy engines at liftoff with the Roman Space Telescope, 30 August 2026.",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.65,
+        "y": 0.3
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-26T01:50:36.451Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/roman/02.jpg": {
+      "score": 8,
+      "subject": "The Roman spacecraft bus in a clean room, a frame from NASA's Building Roman video with title text.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-26T01:50:36.565Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/spherex/01.jpg": {
+      "score": 8,
+      "subject": "SPHEREx on its side in a BAE Systems clean room, April 2024, with its three photon shield cones.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.65,
+        "y": 0.45
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-26T01:50:36.573Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/fleet-galleries/spherex/02.jpg": {
+      "score": 8,
+      "subject": "The SPHEREx telescope assembly tilted on its mounting legs in a clean room.",
+      "category": "hardware",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.4
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-26T01:50:36.595Z",
+      "scoring_cost_usd": 0
     }
   }
 }

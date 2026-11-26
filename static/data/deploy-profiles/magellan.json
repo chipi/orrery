@@ -4,19 +4,45 @@
   "orbiter": "atlantis",
   "launchZeroUtc": "1989-05-04T18:46:59.011Z",
   "method": "ius-tilt",
-  "orbit": { "nmi": [178, 159], "basis": "actual" },
-  "tilt": [{ "deg": 29 }, { "deg": 52 }],
+  "orbit": {
+    "nmi": [
+      178,
+      159
+    ],
+    "basis": "actual"
+  },
+  "tilt": [
+    {
+      "deg": 29
+    },
+    {
+      "deg": 52
+    }
+  ],
   "releaseMet": "6:14:33.0",
   "springMs": 0.15,
   "tableLowerDeg": -6,
-  "sepBurns": [{ "id": "oms3", "met": "6:29:22.1", "burnS": 16.4, "dvFts": 31 }],
+  "sepBurns": [
+    {
+      "id": "oms3",
+      "met": "6:29:22.1",
+      "burnS": 16.4,
+      "dvFts": 31
+    }
+  ],
   "upperStage": {
-    "stage1": { "met": "7:14:33.0", "burnS": 150 },
-    "stage2": { "met": "7:19:43.0", "burnS": 108 }
+    "stage1": {
+      "met": "7:14:33.0",
+      "burnS": 150
+    },
+    "stage2": {
+      "met": "7:19:43.0",
+      "burnS": 108
+    }
   },
   "source_tier": "flagship",
   "estimatedFields": [
-    "tilt[1] (the press kit's 52 deg; Galileo's and Chandra's kits give 58 deg, unresolved)",
+    "tilt[1] (52 deg in the STS-30 press kit and NASA's STS-30 material; the STS-34 and STS-93 kits give 58 deg for Galileo and Chandra, so the angle likely differed by flight; no mission-report statement found)",
     "tilt times and the bay-door opening time (not found; the scene times them editorially)",
     "upperStage burn durations (the STS-34 kit's ~150 s and ~108 s; the STS-30 report gives the ignition times only)"
   ],

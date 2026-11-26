@@ -6,7 +6,8 @@
  * bay about the aft pivot, as the ASE did (29 deg for checkout, then the deployment angle).
  *
  * Sources: the STS-34 press kit (IUS 17 ft long, 9.25 ft in diameter, two solid stages; the tilt
- * table's 29 deg checkout and 58 deg deployment angles). SCHEMATIC: the split between the stages,
+ * table's 29 deg checkout and 58 deg deployment angles). The same size is assumed for the STS-30
+ * and STS-41 IUS (the same two-stage vehicle; their own figures were not found). SCHEMATIC: the split between the stages,
  * the nozzles, the equipment section and the ASE frame are drawn from photos, not measured; the
  * PAM-S (a Star 48B) size is an estimate. Level of detail per the W11 standard once it is signed off.
  */

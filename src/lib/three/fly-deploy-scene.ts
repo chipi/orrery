@@ -8,9 +8,11 @@
  *
  * Time is COMPRESSED and the HUD says so: the real MET (`metAt`) is piecewise linear through the
  * profile's event times (deploy-profile.ts). Sourced (the post-flight mission reports): release,
- * the separation burn and its length and delta-v, the IUS ignitions. ESTIMATES: the MET of the
- * door opening and the tilt steps (the HUD marks them "~"), the separation burn's direction, the
- * stage and PAM-S separation speeds, the spin-up profile, the attitude of the orbiter over the
+ * the OMS-3 separation burn's time, length and delta-v (Galileo, Magellan), the first IUS ignition
+ * (and Magellan's SRM-2). ESTIMATES (each profile's `estimatedFields`): the MET of the door opening
+ * and the tilt steps (the HUD marks them "~"), Ulysses' RCS burn length and delta-v, the stage-2
+ * and PAM-S ignition times, the burn lengths (press-kit plans), the separation burn's direction,
+ * the stage and PAM-S separation speeds, the spin-up profile, the attitude of the orbiter over the
  * Earth and every camera move.
  *
  * Distances are real where the profile gives a speed: the stack drifts at the spring's 0.15 m/s

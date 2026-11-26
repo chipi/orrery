@@ -62,3 +62,18 @@ Doc/code disagreement: the `ascent-hud.ts` comment on payloadSepTFor says the Sh
 1. Which observatories become missions (Hubble at least, per the plan row), and RMS release then.
 2. The deploy on the master scrubber (a new 'deploy' act) or its own scene (default)?
 3. W11 level-of-detail standard before final models.
+
+## Progress (2026-11-26)
+
+- Step 1 data: `95e7a26883d` (+ `97d91c48daf` type fix). Step 2 models: `b2d5ea9910d`. Step 3 scene:
+  `e416d531c44`. Step 4 page wiring, labels in 14 locales, e2e: `ae0b2acf9a7`. Docs: `0319767e24d`.
+- Checked: unit tests (profiles 8, scene 22 incl. subject in frame at 1280x800 and 390x844, IUS 4),
+  typecheck, validate-data, `fly-deploy.spec` on desktop and mobile against the dev server, the
+  launch end -> deploy -> Skip -> cruise path by a probe, frames of Galileo and Ulysses at both sizes
+  (`deploy-shot.mjs`).
+- Science review (sonnet): 0 numeric errors; its three should-fixes applied (STS-41 tilt and the 88 s
+  PAM-S burn now sourced, the scene header no longer overstates what is sourced).
+- Not yet: a production build for the route budget of the lazy chunk;
+  the reduced-motion stills the plan names (the scene plays as is).
+- The Earth backdrop is the 2k day map at 1/1000 scale: soft when the camera looks straight down
+  (the separation shot); the burn shots see the limb.

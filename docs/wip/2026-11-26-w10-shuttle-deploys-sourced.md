@@ -68,3 +68,9 @@ Tags. Mission reports (NASA JSC, post-flight, full text read via pdftotext), bas
 - Shuttle separation geometry beyond burn durations and delta-v; IUS plume-avoidance attitude.
 - Images and their licences were not searched.
 - Local scratch copies of the PDFs and text used are outside the repo (scratchpad); every URL above was opened via WebFetch or curl in this session.
+
+## Added 2026-11-26 (science review of the deploy profiles)
+
+- STS-41 tilt: "the aft frame of the IUS' support structure tilted the stack to an angle of 29 degrees", then "its deployment position of 58 degrees above the payload bay" - [AS41] https://www.americaspace.com/2015/10/11/on-its-way-25-years-since-sts-41-sent-ulysses-to-the-sun-part-2/ (secondary; quotes checked by fetch).
+- PAM-S: "spun-up" Ulysses to 70 rpm and made "an 88-second burn" - [AS41]. Star 48B elsewhere 87 s (astronautix) and 84 s / 1 min 27 s (Wikipedia, inconsistent). PAM-S ignition MET: still NOT FOUND.
+- Magellan 52 deg: a search summary of NASA's STS-30 material agrees with the kit (29 then 52 deg); not seen in the mission report.

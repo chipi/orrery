@@ -287,6 +287,14 @@ function buildDestinationMesh(style: DestinationStyle, map: THREE.Texture | null
   );
 }
 
+/** Hang Saturn's rings on the context-planet Saturn: a flyby of Saturn on a mission bound elsewhere
+ *  (Voyager 1 and 2, Pioneer 11) draws the context mesh, not the destination mesh, which has its own
+ *  ring group. */
+export function addContextPlanetRings(meshes: Map<string, THREE.Mesh>): void {
+  const saturn = meshes.get('saturn');
+  if (saturn) saturn.add(buildSaturnRings(DEST_STYLE.saturn.size));
+}
+
 /** Build a Saturn-style multi-band ring system around a body of the
  *  given radius. Re-uses the canonical C / B / A / Cassini / Encke / F
  *  band ratios shipped for /explore (commit ce7e97a20) but rescaled to
@@ -633,6 +641,7 @@ export function buildHelioScene(opts: HelioSceneOptions): HelioSceneHandles {
     scene.add(orbit);
     contextOrbits.set(id, orbit);
   }
+  addContextPlanetRings(contextPlanets);
 
   // Moons + their orbit rings for the major flyby bodies — same
   // /explore satellites pattern (PRD-026, GH #287 Slice D) compressed

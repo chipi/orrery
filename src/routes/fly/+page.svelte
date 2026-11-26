@@ -192,8 +192,8 @@
     loadReturnProfile,
     type ReturnProfile,
   } from '$lib/fly/return-profile';
-  import { hasDeployProfile, loadDeployProfile, type DeployProfile } from '$lib/fly/deploy-profile';
-  import { hasWingedProfile, loadWingedProfile, type WingedProfile } from '$lib/fly/winged-profile';
+  import type { DeployProfile } from '$lib/fly/deploy-profile';
+  import type { WingedProfile } from '$lib/fly/winged-profile';
   import CoastScene from '$lib/components/CoastScene.svelte';
   import { getEarthOrbitCoast } from '$lib/orbital/earth-orbit-registry';
   import { preloadFlyCraft } from '$lib/three/fly-craft';
@@ -674,13 +674,12 @@
   let deployProfile = $state<DeployProfile | null>(null);
   let deploying = $state(false);
   let deployDone = $state(false);
+  // The profile modules (ids, validator, loader) load on demand: /fly's own JS stays at its budget.
   $effect(() => {
     const id = mission.id;
-    if (!hasDeployProfile(id)) {
-      deployProfile = null;
-      return;
-    }
-    void loadDeployProfile(id, fetch, base)
+    deployProfile = null;
+    void import('$lib/fly/deploy-profile')
+      .then((d) => (d.hasDeployProfile(id) ? d.loadDeployProfile(id, fetch, base) : null))
       .then((p) => {
         if (mission.id === id) deployProfile = p;
       })
@@ -700,11 +699,9 @@
   let wingedProfile = $state<WingedProfile | null>(null);
   $effect(() => {
     const id = mission.id;
-    if (!hasWingedProfile(id)) {
-      wingedProfile = null;
-      return;
-    }
-    void loadWingedProfile(id, fetch, base)
+    wingedProfile = null;
+    void import('$lib/fly/winged-profile')
+      .then((w) => (w.hasWingedProfile(id) ? w.loadWingedProfile(id, fetch, base) : null))
       .then((p) => {
         if (mission.id === id) wingedProfile = p;
       })

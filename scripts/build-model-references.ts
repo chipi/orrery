@@ -26,6 +26,7 @@ import { SHOWCASE as SMALL_BODY } from '../src/lib/three/showcase/small-body';
 import { SHOWCASE as SOYUZ } from '../src/lib/three/showcase/capsules-classic';
 import { SHOWCASE as FREIGHTERS } from '../src/lib/three/showcase/station-freighters';
 import { SHOWCASE as WINGED } from '../src/lib/three/showcase/winged';
+import { LAUNCHER_MODEL_REFS } from '../src/lib/three/launcher-model-refs';
 
 interface Ref {
   l: string;
@@ -150,7 +151,7 @@ const PUBLISHERS: Publisher[] = [
     name: '3D model references — Library of Congress (HAER measured drawings)',
     hosts: /^(www|hdl)\.loc\.gov$/,
     home: 'https://www.loc.gov/pictures/collection/hh/',
-    what: 'Measured drawings of the Historic American Engineering Record (HAER), held by the Library of Congress Prints and Photographs Division: the elevations and plan of the orbiter Discovery (survey TX-116-A), drawn to scale, which the Shuttle orbiter model was measured from and checked against. The model is our own geometry; no drawing is reproduced.',
+    what: 'Measured drawings of the Historic American Engineering Record (HAER), held by the Library of Congress Prints and Photographs Division: the elevations and plan of the orbiter Discovery (survey TX-116-A), the full Shuttle stack (TX-116) and the solid rocket booster (TX-116-K), drawn to scale, which the Shuttle orbiter and launch stack models were measured from and checked against. The models are our own geometry; no drawing is reproduced.',
     license_short: 'PD-USGov',
     license_url: 'https://hdl.loc.gov/loc.pnp/res.114.habs',
     license_rationale:
@@ -221,6 +222,9 @@ for (const file of readdirSync('src/lib/three/showcase')) {
 for (const map of families) {
   for (const m of Object.values(map)) m.refs.forEach(add);
 }
+
+// The launcher models' own sources (measured drawings), beyond their fleet entries' links.
+for (const list of Object.values(LAUNCHER_MODEL_REFS)) list.forEach(add);
 
 // 2. Landmarks and cast: URLs named in the two files' header comments.
 for (const f of ['scale-figures.ts', 'cartoon-figures.ts']) {

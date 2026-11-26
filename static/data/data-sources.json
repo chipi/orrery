@@ -2090,9 +2090,9 @@
     {
       "id": "models-ref-loc",
       "name": "3D model references — Library of Congress (HAER measured drawings)",
-      "catalog": "3 pages — sizes and proportions for the 3D models",
+      "catalog": "5 pages — sizes and proportions for the 3D models",
       "category": "model-reference",
-      "description": "Measured drawings of the Historic American Engineering Record (HAER), held by the Library of Congress Prints and Photographs Division: the elevations and plan of the orbiter Discovery (survey TX-116-A), drawn to scale, which the Shuttle orbiter model was measured from and checked against. The model is our own geometry; no drawing is reproduced.",
+      "description": "Measured drawings of the Historic American Engineering Record (HAER), held by the Library of Congress Prints and Photographs Division: the elevations and plan of the orbiter Discovery (survey TX-116-A), the full Shuttle stack (TX-116) and the solid rocket booster (TX-116-K), drawn to scale, which the Shuttle orbiter and launch stack models were measured from and checked against. The models are our own geometry; no drawing is reproduced.",
       "source_url": "https://www.loc.gov/pictures/collection/hh/",
       "license_short": "PD-USGov",
       "license_url": "https://hdl.loc.gov/loc.pnp/res.114.habs",
@@ -2112,6 +2112,14 @@
         {
           "l": "HAER TX-116-A, Orbiter Discovery (OV-103), top plan (the planform: glove, wing, 23.80 m span)",
           "u": "https://www.loc.gov/pictures/item/tx1107.sheet.00007a/"
+        },
+        {
+          "l": "HAER TX-116-K, Solid Rocket Boosters, details and joints (Library of Congress measured drawing: 45.72 m, the case, aft skirt and nozzle diameters, the segment joints)",
+          "u": "https://www.loc.gov/pictures/item/tx1117.sheet.00003a/"
+        },
+        {
+          "l": "HAER TX-116, Space Transportation System, full stack elevations (Library of Congress measured drawing: 56.40 m stack, the tank, the SRBs 6.36 m off its axis, the orbiter’s place on it)",
+          "u": "https://www.loc.gov/pictures/item/tx1106.sheet.00003a/"
         }
       ]
     },

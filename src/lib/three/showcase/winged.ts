@@ -19,6 +19,7 @@
  * - X-37B: the small black-tile spaceplane, canted V-tail, closed bay doors.
  */
 import * as THREE from 'three';
+import { MAIN_GROUND_Z, MAIN_STN, NOSE_GROUND_Z, NOSE_STN } from './orbiter-stance';
 import { crinkle, hash3 } from './kit';
 import type { ShowcaseModel, ShowcaseRef } from './types';
 
@@ -108,6 +109,7 @@ interface Stn {
   w: number; // half width
   t: number; // dorsal half height
   b: number; // ventral half height
+  c?: number; // vehicle-up offset of the section's centre (a drooped nose has c < 0)
 }
 
 function prof(stns: Stn[], a: number): Stn {
@@ -122,6 +124,7 @@ function prof(stns: Stn[], a: number): Stn {
         w: p.w + (q.w - p.w) * f,
         t: p.t + (q.t - p.t) * f,
         b: p.b + (q.b - p.b) * f,
+        c: (p.c ?? 0) + ((q.c ?? 0) - (p.c ?? 0)) * f,
       };
     }
   }
@@ -133,14 +136,15 @@ function surfV(stns: Stn[], n: number, a: number, x: number, dorsal: boolean): n
   const p = prof(stns, a);
   const r = Math.min(Math.abs(x) / p.w, 0.999);
   const k = Math.pow(1 - Math.pow(r, n), 1 / n);
-  return dorsal ? p.t * k : -p.b * k;
+  return (p.c ?? 0) + (dorsal ? p.t * k : -p.b * k);
 }
 
 /** Lateral half width of the surface at station a and vehicle-up height v. */
 function surfX(stns: Stn[], n: number, a: number, v: number): number {
   const p = prof(stns, a);
-  const h = v >= 0 ? p.t : p.b;
-  const r = Math.min(Math.abs(v) / h, 0.999);
+  const dv = v - (p.c ?? 0);
+  const h = dv >= 0 ? p.t : p.b;
+  const r = Math.min(Math.abs(dv) / h, 0.999);
   return p.w * Math.pow(1 - Math.pow(r, n), 1 / n);
 }
 
@@ -207,7 +211,7 @@ function loft(
       const px = s.w * Math.sign(c) * Math.pow(Math.abs(c), ex);
       const pv = sn >= 0 ? s.t * Math.pow(sn, ex) : -s.b * Math.pow(-sn, ex);
       let X = cx + px;
-      let V = cv + pv;
+      let V = cv + (s.c ?? 0) + pv;
       let A = s.a;
       const amp = si === 0 || si === S - 1 ? 0 : (o.rough?.(X, s.a, V) ?? 0);
       if (amp > 0) {
@@ -284,7 +288,7 @@ function loft(
       const j2 = (j + 1) % ring;
       const q1 = [pos[(off + j) * 3], pos[(off + j) * 3 + 1], pos[(off + j) * 3 + 2]];
       const q2 = [pos[(off + j2) * 3], pos[(off + j2) * 3 + 1], pos[(off + j2) * 3 + 2]];
-      capPos.push(...q1, ...q2, cx, s.a, -cv);
+      capPos.push(...q1, ...q2, cx, s.a, -(cv + (s.c ?? 0)));
     }
   };
   addCap(0);
@@ -848,18 +852,21 @@ export function buildOrbiter(o: OrbiterOpts): THREE.Group {
     { a: 7, w: 2.8, t: 2.5, b: 2.35 },
     { a: 26, w: 2.6, t: 2.4, b: 2.3 },
     { a: 29, w: 2.4, t: 2.4, b: 2.2 },
-    { a: 32, w: 2.0, t: 2.0, b: 1.9 },
-    { a: 34.5, w: 1.4, t: 1.4, b: 1.3 },
-    { a: 35.6, w: 1.22, t: 1.12, b: 1.1 },
-    { a: 36.5, w: 0.9, t: 0.82, b: 0.8 },
-    { a: 37.0, w: 0.55, t: 0.5, b: 0.5 },
-    { a: 37.18, w: 0.3, t: 0.27, b: 0.27 },
-    { a: L0, w: 0.05, t: 0.05, b: 0.05 },
+    // The nose droops: the belly runs nearly level to the nose gear and the tip sits about 1.2 m
+    // above it (side photos on the runway), while the crown falls from the windshield.
+    { a: 32, w: 2.0, t: 2.1, b: 2.1, c: -0.1 },
+    { a: 34.5, w: 1.4, t: 1.65, b: 1.65, c: -0.45 },
+    { a: 35.6, w: 1.22, t: 1.3, b: 1.3, c: -0.6 },
+    { a: 36.5, w: 0.9, t: 0.875, b: 0.875, c: -0.725 },
+    { a: 37.0, w: 0.55, t: 0.45, b: 0.45, c: -0.9 },
+    { a: 37.18, w: 0.3, t: 0.25, b: 0.25, c: -0.97 },
+    { a: L0, w: 0.05, t: 0.05, b: 0.05, c: -1.0 },
   ];
+  const cAt = (a: number): number => prof(stns, a).c ?? 0;
   const N = 2.6;
   // The line below which the fuselage is black tile: the belly aft, rising to the cockpit forward.
   const lowBlack = (a: number): number =>
-    a < 27 ? -0.95 : a < 34 ? -0.95 + ((a - 27) / 7) * 1.35 : 0.4 + (a - 34) * 0.5;
+    (a < 27 ? -0.95 : a < 34 ? -0.95 + ((a - 27) / 7) * 1.35 : 0.4 + (a - 34) * 0.5) + cAt(a);
   const isBlack = (a: number, v: number): boolean => a > 36.2 || v < lowBlack(a);
   // > 0 on the black side: the tile line, then the nose cap
   const blackSide = (_x: number, a: number, v: number): number =>
@@ -1243,7 +1250,7 @@ export function buildOrbiter(o: OrbiterOpts): THREE.Group {
   if (!isGli) {
     for (const sg of [-1, 1]) {
       const a0 = 34.7;
-      const v0 = 0.4;
+      const v0 = 0.4 + cAt(a0);
       const px = surfX(stns, N, a0, v0) + 0.01;
       box(0.06, 1.5, 1.0, M.dark, g, sg * px, a0 + 0.2, -(v0 + 0.1));
       for (let r = 0; r < 3; r++)
@@ -1257,7 +1264,7 @@ export function buildOrbiter(o: OrbiterOpts): THREE.Group {
       const th = (k / 6) * Math.PI * 2;
       const r = 0.38;
       const jet = mesh(new THREE.CylinderGeometry(0.05, 0.08, 0.14, 8), M.engine, g);
-      jet.position.set(Math.cos(th) * r, 36.7, -(Math.sin(th) * r * 0.9 + 0.05));
+      jet.position.set(Math.cos(th) * r, 36.7, -(Math.sin(th) * r * 0.9 + 0.05 + cAt(36.7)));
     }
   }
   {
@@ -1390,7 +1397,6 @@ export function buildOrbiter(o: OrbiterOpts): THREE.Group {
   const doors = new THREE.Group();
   doors.name = 'gear-doors';
   g.add(doors);
-  const GROUND = 2.3 + 4.2;
   const UP = new THREE.Vector3(0, 1, 0);
   /** Lays a unit-height cylinder from p to q. */
   const setBar = (o: THREE.Object3D, p: THREE.Vector3, q: THREE.Vector3): void => {
@@ -1451,12 +1457,13 @@ export function buildOrbiter(o: OrbiterOpts): THREE.Group {
     rOuter: number,
     braceAt: number,
     braceTo: number,
+    ground: number,
   ): void => {
     const p = new THREE.Group();
     p.name = name;
     p.position.set(x, a, z0);
     gear.add(p);
-    const L = GROUND - r - z0;
+    const L = ground - r - z0;
     setBar(bar(p, M.white, rOuter), v3(0, 0, -0.05), v3(0, 0, L * 0.58));
     setBar(bar(p, M.engine, rOuter * 1.12), v3(0, 0, L * 0.56), v3(0, 0, L * 0.6));
     setBar(bar(p, M.engine, rOuter * 0.62), v3(0, 0, L * 0.58), v3(0, 0, L));
@@ -1486,17 +1493,18 @@ export function buildOrbiter(o: OrbiterOpts): THREE.Group {
     buildLeg(
       sg < 0 ? 'gear-main-starboard' : 'gear-main-port',
       sg * 3.4,
-      17.8,
+      MAIN_STN,
       2.3,
       0.565,
       0.41,
       0.3,
       0.26,
-      1.5,
-      2.3,
+      1.0,
+      1.6,
+      MAIN_GROUND_Z,
     );
-  const noseZ0 = surfV(stns, N, 34, 0, false) * -1;
-  buildLeg('gear-nose', 0, 34.0, noseZ0, 0.41, 0.23, 0.2, 0.17, 1.3, 1.9);
+  const noseZ0 = surfV(stns, N, NOSE_STN, 0, false) * -1;
+  buildLeg('gear-nose', 0, NOSE_STN, noseZ0, 0.41, 0.23, 0.2, 0.17, 0.7, 1.0, NOSE_GROUND_Z);
 
   // wells and doors. A door is a tile leaf hinged along one edge, built on the skin it closes over
   // (the belly curve for the nose, the flat wing underside for the mains); its inner face is bare

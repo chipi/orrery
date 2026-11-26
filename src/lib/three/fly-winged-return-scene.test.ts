@@ -21,6 +21,7 @@ import {
 } from './fly-winged-return-scene';
 import { buildOrbiterOpenable } from './showcase/winged';
 import { buildRunway } from './showcase/runway';
+import { ORBITER_REST_PITCH_DEG } from './showcase/orbiter-stance';
 
 const FT = 0.3048;
 const p: WingedProfile = expandWingedProfile(
@@ -89,7 +90,7 @@ describe('winged return clock and pose (W12, STS-1)', () => {
     let noseDownZ = Infinity;
     for (let t = WT.touchdown; t <= WT.stop; t += 0.05) {
       const q = wingedPose(t, p);
-      if (q.pitchDeg < 1e-6) {
+      if (q.pitchDeg < ORBITER_REST_PITCH_DEG + 1e-6) {
         noseDownZ = q.pos.z;
         break;
       }

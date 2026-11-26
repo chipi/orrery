@@ -1,6 +1,12 @@
 import { describe, it, expect } from 'vitest';
 import * as THREE from 'three';
 import { buildOrbiter, buildOrbiterOpenable, SHOWCASE, type RmsRig } from './winged';
+import {
+  MAIN_GROUND_Z,
+  NOSE_BELLY_Z,
+  NOSE_GROUND_Z,
+  ORBITER_REST_PITCH_DEG,
+} from './orbiter-stance';
 
 const L0 = 37.237;
 const SPAN0 = 23.79;
@@ -134,6 +140,17 @@ describe('Shuttle orbiter landing gear (W12)', () => {
     const half = gearBox(rigged);
     expect(half.max.y).toBeGreaterThan(down.max.y + 0.3);
     expect(half.max.z).toBeLessThan(down.max.z - 0.3); // the belly is +z: the wheels rise
+  });
+
+  it('stands nose-down: mains 2.5 m below the wing, nose wheels 1.7 m below the drooped belly', () => {
+    fixed.updateMatrixWorld(true);
+    const low = (n: string): number =>
+      new THREE.Box3().setFromObject(fixed.getObjectByName(n)!).max.z;
+    expect(low('gear-main-port')).toBeCloseTo(MAIN_GROUND_Z, 2);
+    expect(low('gear-nose')).toBeCloseTo(NOSE_GROUND_Z, 2);
+    expect(fixed.getObjectByName('gear-nose')!.position.z).toBeCloseTo(NOSE_BELLY_Z, 2);
+    expect(ORBITER_REST_PITCH_DEG).toBeLessThan(-2);
+    expect(ORBITER_REST_PITCH_DEG).toBeGreaterThan(-5);
   });
 
   it('the doors open with the gear and close flush over the stowed legs', () => {

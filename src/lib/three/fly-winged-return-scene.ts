@@ -25,6 +25,7 @@ import * as THREE from 'three';
 import type { WingedProfile } from '$lib/fly/winged-profile';
 import { plumeCone } from './engine-plume';
 import { portraitFit } from './phone-framing';
+import { MAIN_GROUND_Z, MAIN_STN, ORBITER_REST_PITCH_DEG } from './showcase/orbiter-stance';
 
 const FT = 0.3048;
 const NMI = 1852;
@@ -299,11 +300,16 @@ function runwayPose(t: number, p: WingedProfile): Omit<WingedPose, 't' | 'met' |
     pos = new THREE.Vector3(0, finalHeight(d, p), L.zTd - d);
     pitchDeg = lerp(PITCH_FINAL, PITCH_TOUCHDOWN, ramp(t, WT.preflare, WT.touchdown - 0.5));
   } else {
-    // Rollout: decelerating to the stop; the nose comes down by the nose-gear distance.
+    // Rollout: decelerating to the stop; the nose comes down by the nose-gear distance, onto the
+    // orbiter's nose-down stance on all three gears.
     const u = clamp01((t - WT.touchdown) / (WT.stop - WT.touchdown));
     const z = L.zTd + (L.zStop - L.zTd) * (1 - (1 - u) ** 2);
     pos = new THREE.Vector3(0, 0, z);
-    pitchDeg = PITCH_TOUCHDOWN * (1 - smooth((z - L.zTd) / (L.zNose - L.zTd)));
+    pitchDeg = lerp(
+      PITCH_TOUCHDOWN,
+      ORBITER_REST_PITCH_DEG,
+      smooth((z - L.zTd) / (L.zNose - L.zTd)),
+    );
   }
   return {
     frame: 'runway',
@@ -421,7 +427,7 @@ export function wingedCamera(t: number, aspect: number, pose: WingedPose): Winge
 }
 
 export interface FlyWingedModels {
-  /** buildOrbiter({ ..., gear: 'animated' }): nose +y, belly +z, wheels at z = 6.5 m. */
+  /** buildOrbiter({ ..., gear: 'animated' }): nose +y, belly +z, stance in showcase/orbiter-stance.ts. */
   orbiter: THREE.Group;
   /** buildRunway(profile.runway). */
   runway: THREE.Group;
@@ -442,8 +448,8 @@ export interface FlyWinged {
 }
 
 /** Where the main wheels touch, in the orbiter's authored frame before its length scale
- *  (winged.ts: mains at station 17.8, the ground plane of the gear at z = 6.5). */
-const MAIN_CONTACT = new THREE.Vector3(0, 17.8, 6.5);
+ *  (showcase/orbiter-stance.ts). */
+const MAIN_CONTACT = new THREE.Vector3(0, MAIN_STN, MAIN_GROUND_Z);
 
 export function createFlyWinged(
   profile: WingedProfile,

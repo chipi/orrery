@@ -10,6 +10,7 @@
   import { buildScaleFigure } from '$lib/three/lineup/scale-figures';
   import { installHeroEnvironment } from '$lib/three/hero-materials';
   import { buildOrbiterOpenable } from '$lib/three/showcase/winged';
+  import { ORBITER_REST_PITCH_DEG } from '$lib/three/showcase/orbiter-stance';
 
   const modules = import.meta.glob<{ SHOWCASE?: Record<string, ShowcaseModel> }>(
     ['$lib/three/showcase/*.ts', '!$lib/three/showcase/*.test.ts'],
@@ -51,7 +52,7 @@
     const craft = q.has('bay') || q.has('gear') ? buildOrbiterOpenable() : m.build();
     if (q.has('gear')) craft.userData.setGear(Number(q.get('gear')));
     if (q.get('land') === '1') {
-      craft.rotation.x = Math.PI / 2;
+      craft.rotation.x = Math.PI / 2 - (ORBITER_REST_PITCH_DEG * Math.PI) / 180;
       craft.updateMatrixWorld(true);
       craft.position.y = -new THREE.Box3().setFromObject(craft).min.y;
     }

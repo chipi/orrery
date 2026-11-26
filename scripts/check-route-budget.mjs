@@ -70,8 +70,12 @@ const cssKb = (files) => [...files].reduce((s, f) => s + brBytes(f), 0) / 1024;
 // A dynamic import of `<dir>/<locale>.ts` (e.g. the Lab's per-locale message tables) is one
 // of a set of alternatives: a visit loads the reader's locale only. Such a set counts once,
 // at its largest member, instead of the sum of all 14.
+// So is a showcase model family (src/lib/three/showcase/<family>.ts): a scene loads the
+// families of the craft it shows, not all twenty (operator, 2026-11-27: "count them once").
 const LOCALES = JSON.parse(readFileSync('project.inlang/settings.json', 'utf8')).locales;
 const LOCALE_MODULE = new RegExp(`^(.*/)(${LOCALES.join('|')})\\.[jt]s$`);
+const SHOWCASE_FAMILY = /^(src\/lib\/three\/showcase\/)[\w-]+\.ts$/;
+const alternativeSet = (src) => LOCALE_MODULE.exec(src)?.[1] ?? SHOWCASE_FAMILY.exec(src)?.[1];
 
 /** Everything the closure's dynamic imports load that `have` doesn't: JS + its CSS. */
 function lazyKb(keys, have, haveCss) {
@@ -84,7 +88,7 @@ function lazyKb(keys, have, haveCss) {
   const localeSets = new Map();
   for (const k of keys)
     for (const d of manifest[k].dynamicImports ?? []) {
-      const dir = LOCALE_MODULE.exec(manifest[d]?.src ?? d)?.[1];
+      const dir = alternativeSet(manifest[d]?.src ?? d);
       if (dir) localeSets.set(dir, [...(localeSets.get(dir) ?? []), d]);
       else closure(d, lazy);
     }

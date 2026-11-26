@@ -53,7 +53,10 @@ for (const size of SIZES) {
 
     test('/: footer is visible inside the viewport', async ({ page }) => {
       await page.goto('/', { waitUntil: 'networkidle' });
-      const f = await box(page.locator('.footer-menu'));
+      // The strip ends the home page (in the flow since F2, 2026-11-25): scrolled to, it fits.
+      const menu = page.locator('.footer-menu');
+      await menu.scrollIntoViewIfNeeded();
+      const f = await box(menu);
       expect(f.x).toBeGreaterThanOrEqual(0);
       expect(f.x + f.width).toBeLessThanOrEqual(size.width);
       expect(f.y + f.height).toBeLessThanOrEqual(size.height);
@@ -64,10 +67,13 @@ for (const size of SIZES) {
 test.describe('footer More disclosure — 800x375 non-touch', () => {
   test.use({ viewport: { width: 800, height: 375 }, hasTouch: false, isMobile: false });
 
+  // The More popover is the floating strip's: since F2 (2026-11-25) content pages such as /
+  // end with the full strip in the flow, so the disclosure is checked on a scene route.
   test('More opens every footer link, has a 44 px target, and Escape closes it', async ({
     page,
   }) => {
-    await page.goto('/', { waitUntil: 'networkidle' });
+    test.slow();
+    await page.goto('/explore', { waitUntil: 'networkidle' });
     const more = page.locator('.footer-more-btn');
     await expect(more).toBeVisible();
     await expect(more).toHaveAttribute('aria-expanded', 'false');

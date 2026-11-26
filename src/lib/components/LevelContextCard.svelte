@@ -20,6 +20,7 @@
     shell,
     card,
     covered = false,
+    aboveRuler = false,
   }: {
     shell: ShellId;
     /** Open or folded; the fold chip is the navigator row's, beside the level picker (plan D15). */
@@ -27,6 +28,9 @@
     /** An open INDEX panel lies over the card's place: the card steps aside until it closes,
      *  its fold state kept. */
     covered?: boolean;
+    /** The solar-system orbit ruler stands in the same left column (since F1): the card ends
+     *  above it. */
+    aboveRuler?: boolean;
   } = $props();
 
   const s = $derived(SCALE_SHELLS[shell]);
@@ -56,6 +60,7 @@
 <section
   id={levelCardBodyId}
   class="level-card"
+  class:above-ruler={aboveRuler}
   hidden={!card.expanded || covered}
   aria-label={s.name()}
   data-testid="explore-level-card"
@@ -97,6 +102,13 @@
     line-height: 1.5;
     color: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(6px);
+  }
+  /* With a mouse at the solar system the orbit ruler (OrbitRuler: 80 px up, ~266 px tall with its
+     eight zones) shares the left column: the card stops 14 px above it and scrolls inside. */
+  @media (hover: hover) and (pointer: fine) {
+    .level-card.above-ruler {
+      max-block-size: max(120px, calc(100% - 404px));
+    }
   }
   /* Touch: the strip sits 112 px up in portrait and is ~110 px tall, so the card stops 300 px from
      the bottom (58 top + 232) and its links never run under the KM / AU / LY / PC readout (D16). */

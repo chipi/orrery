@@ -2137,7 +2137,12 @@
       levelCard={showLevelPicker ? levelCard : undefined}
     />
     {#if showLevelPicker}
-      <LevelContextCard shell={contextId as ShellId} card={levelCard} covered={indexOpen} />
+      <LevelContextCard
+        shell={contextId as ShellId}
+        card={levelCard}
+        covered={indexOpen}
+        aboveRuler={exploreRegimes.length > 0 && contextId === 'solar-system' && !activeBlackHole}
+      />
     {/if}
     {#if !hintDone && panelCoverPx === 0}
       <ExploreHint

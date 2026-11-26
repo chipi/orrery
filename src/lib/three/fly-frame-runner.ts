@@ -18,6 +18,7 @@ import {
   BURN_WINDOW_DAYS_DEFAULT,
   burnExhaustDir,
   findActiveBurn,
+  plumeScale,
 } from '$lib/fly/fly-frame-burn';
 import {
   CISLUNAR_REBUILD_THRESHOLD,
@@ -268,6 +269,9 @@ function impactEventOf(mission: {
 }
 /** Scene radius of the impact shot's primary (Didymos's DEST_STYLE size in fly-helio-scene). */
 const IMPACT_PRIMARY_R = 0.4;
+/** The ship's cruise scale (model and sprite); the flyby shots scale it down from these. */
+const CRUISE_MODEL_SCALE = 1.5;
+const CRUISE_SPRITE_SCALE = 2.5;
 /** Distance of the 2D scale readout's bar from the canvas bottom: above the scrubber on a
  *  desktop, above the MISSION / EVENTS tabs and the scrubber on a phone. */
 const SCALE_READOUT_BOTTOM_PX = 104;
@@ -1646,9 +1650,9 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
         helioMission.scModel.rotateZ(-0.35); // 20° tilt so the boom angles up-left
       }
     } else {
-      scSprite.scale.set(2.5, 2.5, 1);
+      scSprite.scale.set(CRUISE_SPRITE_SCALE, CRUISE_SPRITE_SCALE, 1);
       if (helioMission.scModel) {
-        helioMission.scModel.scale.setScalar(1.5);
+        helioMission.scModel.scale.setScalar(CRUISE_MODEL_SCALE);
         // Cruise: reset to identity orientation so the model rides
         // along the trajectory without the cinema-specific tilt.
         helioMission.scModel.rotation.set(0, 0, 0);
@@ -2128,7 +2132,12 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
         // exhaust direction for the flame to stream along it (aiming along it drew every
         // burn reversed: TCM/TLI exhaust ahead of the ship, capture exhaust trailing).
         plumeMesh.lookAt(at.x - exDx, at.y, at.z - exDz);
-        plumeMesh.scale.setScalar(cfg.scale);
+        // With the ship: the flyby and arrival shots shrink it to a fraction of the body.
+        plumeMesh.scale.setScalar(
+          helioMission.scModel
+            ? plumeScale(cfg.scale, helioMission.scModel.scale.x, CRUISE_MODEL_SCALE)
+            : plumeScale(cfg.scale, scSprite.scale.x, CRUISE_SPRITE_SCALE),
+        );
         // Opacity: peak at event time, fade linearly across the
         // per-event window (launch's wider window gives a sustained
         // dramatic plume).
@@ -2471,7 +2480,10 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
         const tubeUd = outLine.geometry.userData as { tubeRadius?: number };
         const desiredRadius = trajectoryTubeRadius(flyCam.camR, HELIO_TUBE_BOUNDS);
         const currentRadius = tubeUd.tubeRadius ?? 0.175;
-        if (shouldRebuildTube(desiredRadius, currentRadius, HELIO_REBUILD_THRESHOLD)) {
+        // A quarter of the current radius at the thin close framings, where the absolute step
+        // would hold a 0.06 tube at a 0.025 target.
+        const threshold = Math.min(HELIO_REBUILD_THRESHOLD, currentRadius * 0.25);
+        if (shouldRebuildTube(desiredRadius, currentRadius, threshold)) {
           outLine.geometry.dispose();
           outLine.geometry = flyUpdaters.helio.rebuildTubeGeometry(bridge.outPts, desiredRadius);
           (outLine.geometry.userData as { tubeRadius?: number }).tubeRadius = desiredRadius;

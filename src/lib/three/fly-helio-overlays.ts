@@ -292,9 +292,14 @@ export function buildEnginePlume(): EnginePlume {
     },
     vertexShader: `
         varying float vAlongAxis;
+        varying vec3 vViewNormal;
+        varying vec3 vViewPos;
         void main() {
           vAlongAxis = (-position.z) / 2.4;
-          gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+          vViewNormal = normalize(normalMatrix * normal);
+          vec4 mv = modelViewMatrix * vec4(position, 1.0);
+          vViewPos = mv.xyz;
+          gl_Position = projectionMatrix * mv;
         }
       `,
     fragmentShader: `
@@ -302,9 +307,14 @@ export function buildEnginePlume(): EnginePlume {
         uniform vec3 uColorBase;
         uniform vec3 uColorTip;
         varying float vAlongAxis;
+        varying vec3 vViewNormal;
+        varying vec3 vViewPos;
         void main() {
           vec3 color = mix(uColorBase, uColorTip, vAlongAxis);
-          float alpha = uOpacity * (1.0 - vAlongAxis * vAlongAxis);
+          // Fade toward the silhouette, where the surface turns edge-on to the eye: without it
+          // the cone's sides were hard edges, a flat wedge (flyby review call 8).
+          float facing = abs(dot(normalize(vViewNormal), normalize(-vViewPos)));
+          float alpha = uOpacity * (1.0 - vAlongAxis * vAlongAxis) * pow(facing, 1.5);
           gl_FragColor = vec4(color, alpha);
         }
       `,

@@ -111,3 +111,13 @@ export function burnExhaustDir(
   }
   return { exDx: 0, exDz: 0 };
 }
+
+/**
+ * The plume's scale for the ship's current scale. BURN_TABLE sizes are for the cruise ship
+ * (`cruiseShipScale`); flyby and arrival shots shrink the ship to a fraction of the body
+ * (0.088 at Psyche) while the plume stayed at its table size, a flame some fifty times the
+ * ship (flyby review call 8). Never larger than the table size.
+ */
+export function plumeScale(tableScale: number, shipScale: number, cruiseShipScale: number): number {
+  return tableScale * Math.min(1, shipScale / cruiseShipScale);
+}

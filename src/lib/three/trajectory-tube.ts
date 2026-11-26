@@ -30,7 +30,7 @@ export interface TubeRadiusBounds {
 }
 
 /** Heliocentric cruise framing (camR ~ hundreds of scene units). */
-export const HELIO_TUBE_BOUNDS: TubeRadiusBounds = { min: 0.09, max: 0.8 };
+export const HELIO_TUBE_BOUNDS: TubeRadiusBounds = { min: 0.025, max: 0.8 };
 
 /** Cislunar / earth-orbit framing (cislunarCamR ~ single digits when zoomed in). */
 export const CISLUNAR_TUBE_BOUNDS: TubeRadiusBounds = { min: 0.015, max: 0.8 };

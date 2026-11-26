@@ -14,8 +14,8 @@ import {
 describe('trajectoryTubeRadius — on-screen thickness is zoom-invariant', () => {
   it('apparent thickness (radius / camDist) is constant across the unclamped range', () => {
     // Pick distances that stay inside the clamp window for the wide helio bounds
-    // so neither floor nor ceiling engages: raw = camDist * 0.00225 ∈ (0.09, 0.8)
-    // → camDist ∈ (40, 355).
+    // so neither floor nor ceiling engages: raw = camDist * 0.00225 ∈ (0.025, 0.8)
+    // → camDist ∈ (11, 355).
     const dists = [50, 100, 200, 300];
     const apparent = dists.map((d) => trajectoryTubeRadius(d, HELIO_TUBE_BOUNDS) / d);
     for (const a of apparent) {
@@ -44,6 +44,18 @@ describe('trajectoryTubeRadius — on-screen thickness is zoom-invariant', () =>
   it('clamps to the ceiling when zoomed very far out', () => {
     expect(trajectoryTubeRadius(100_000, HELIO_TUBE_BOUNDS)).toBe(HELIO_TUBE_BOUNDS.max);
     expect(trajectoryTubeRadius(100_000, CISLUNAR_TUBE_BOUNDS)).toBe(CISLUNAR_TUBE_BOUNDS.max);
+  });
+
+  it('helio thickness stays constant down to the close coast and approach framings', () => {
+    // MESSENGER's approach (camR 7.7) and Juno's coast (14.6) sat on a 0.09 floor: the
+    // loops near the camera drew as bands 5-6× the cruise thickness (flyby review call 8).
+    expect(trajectoryTubeRadius(14.6, HELIO_TUBE_BOUNDS) / 14.6).toBeCloseTo(
+      TRAJ_TUBE_RADIUS_PER_CAMDIST,
+      10,
+    );
+    expect(trajectoryTubeRadius(7.7, HELIO_TUBE_BOUNDS) / 7.7).toBeLessThan(
+      TRAJ_TUBE_RADIUS_PER_CAMDIST * 1.5,
+    );
   });
 
   it('cislunar floor is thinner than helio floor (frames closer)', () => {

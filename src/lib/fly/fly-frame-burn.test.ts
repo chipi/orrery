@@ -1,5 +1,11 @@
 import { describe, it, expect } from 'vitest';
-import { findActiveBurn, burnExhaustDir, BURN_TABLE, isCaptureBurn } from './fly-frame-burn';
+import {
+  findActiveBurn,
+  burnExhaustDir,
+  BURN_TABLE,
+  isCaptureBurn,
+  plumeScale,
+} from './fly-frame-burn';
 import type { FlightTimelineEvent } from '$types/mission';
 
 // Pure engine-plume burn logic (RFC-036 WS-B/B4). Locks the in-window burn
@@ -92,5 +98,19 @@ describe('isCaptureBurn', () => {
     expect(
       findActiveBurn([{ type: 'edl_or_oi', met_days: 254, label: 'Mars EDL' } as never], 253.5),
     ).toBeNull();
+  });
+});
+
+describe('plumeScale (flyby review call 8)', () => {
+  it('the cruise plume keeps its table size', () => {
+    expect(plumeScale(1.8, 1.5, 1.5)).toBeCloseTo(1.8, 9);
+  });
+  it('shrinks with the ship in a close shot: Psyche OI drew a 4.3-unit flame on a 0.09-unit ship', () => {
+    const s = plumeScale(1.8, 0.088, 1.5);
+    expect(s).toBeCloseTo((1.8 * 0.088) / 1.5, 9);
+    expect(s * 2.4).toBeLessThan(0.088 * 3); // the flame stays within a few ship sizes
+  });
+  it('never grows past the table size', () => {
+    expect(plumeScale(1.8, 3, 1.5)).toBeCloseTo(1.8, 9);
   });
 });

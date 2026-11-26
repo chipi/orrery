@@ -20,6 +20,7 @@ import {
   findActiveBurn,
   plumeScale,
 } from '$lib/fly/fly-frame-burn';
+import { clampToFrame, heroShipScale } from '$lib/fly/hero-ship-frame';
 import {
   CISLUNAR_REBUILD_THRESHOLD,
   CISLUNAR_TUBE_BOUNDS,
@@ -272,6 +273,11 @@ const IMPACT_PRIMARY_R = 0.4;
 /** The ship's cruise scale (model and sprite); the flyby shots scale it down from these. */
 const CRUISE_MODEL_SCALE = 1.5;
 const CRUISE_SPRITE_SCALE = 2.5;
+const HERO_SHOWCASE_YAW = 0.6;
+const HERO_SHOWCASE_PITCH = 0.35;
+const HERO_BUILDER_YAW = 0.75;
+/** The sprite glyph is mostly transparent margin: it needs a larger share than a model. */
+const HERO_SPRITE_FRAME_FRAC = 0.3;
 /** Distance of the 2D scale readout's bar from the canvas bottom: above the scrubber on a
  *  desktop, above the MISSION / EVENTS tabs and the scrubber on a phone. */
 const SCALE_READOUT_BOTTOM_PX = 104;
@@ -1634,6 +1640,19 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
       // (Curiosity's cruise stack drew half the size of Mars once it was no longer hidden).
       if (helioMission.scModel)
         helioMission.scModel.scale.setScalar(Math.min(overrides.modelScale, bodyR * 0.22));
+      // The hero shot sizes the ship by the frame instead and keeps it inside it (hero-ship-frame).
+      if (flyCam.montageShotKind == null || flyCam.montageShotKind === 'hero') {
+        camera.updateMatrixWorld();
+        const ndc = scSprite.position.clone().project(camera);
+        const inFrame = clampToFrame(ndc);
+        if (inFrame) scSprite.position.set(inFrame.x, inFrame.y, inFrame.z).unproject(camera);
+        if (helioMission.scModel) helioMission.scModel.position.copy(scSprite.position);
+        const dist = camera.position.distanceTo(scSprite.position);
+        const unit = helioMission.scModel?.userData.unitSize as number | undefined;
+        if (helioMission.scModel && unit)
+          helioMission.scModel.scale.setScalar(heroShipScale(unit, dist, camera.fov));
+        else scSprite.scale.setScalar(heroShipScale(1, dist, camera.fov, HERO_SPRITE_FRAME_FRAC));
+      }
       // Boom orientation: rotate the 3D model so its iconic-front
       // axis faces (roughly) the camera and the long magnetometer
       // boom angles AWAY from the planet's limb. Each builder model
@@ -1644,10 +1663,18 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
       // an additional tilt around local Z lifts the boom off the
       // planet-ship-camera plane so it reads as a graceful sweep
       // across the frame instead of running through the planet.
+      // A three-quarter view, never dish-on: New Horizons faced the camera as a white disc with
+      // the bus behind it. The older builders point the dish along +X; the showcase craft stand
+      // on +Y with their long axis upright, so they turn about Y and lean back toward the camera.
       if (helioMission.scModel) {
         helioMission.scModel.lookAt(camera.position);
-        helioMission.scModel.rotateY(Math.PI / 2);
-        helioMission.scModel.rotateZ(-0.35); // 20° tilt so the boom angles up-left
+        if (helioMission.scModel.userData.showcase) {
+          helioMission.scModel.rotateY(HERO_SHOWCASE_YAW);
+          helioMission.scModel.rotateX(HERO_SHOWCASE_PITCH);
+        } else {
+          helioMission.scModel.rotateY(Math.PI / 2 - HERO_BUILDER_YAW);
+          helioMission.scModel.rotateZ(-0.35); // 20° tilt so the boom angles up-left
+        }
       }
     } else {
       scSprite.scale.set(CRUISE_SPRITE_SCALE, CRUISE_SPRITE_SCALE, 1);

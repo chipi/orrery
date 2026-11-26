@@ -111,6 +111,9 @@ export function buildHelioMissionOverlays(deps: HelioMissionDeps): HelioMissionO
     if (scModel) {
       scModel.scale.setScalar(1.5);
       scModel.renderOrder = 999;
+      scModel.userData.showcase = !!craft;
+      const dim = new THREE.Box3().setFromObject(scModel).getSize(new THREE.Vector3());
+      scModel.userData.unitSize = Math.max(dim.x, dim.y, dim.z) / 1.5;
       // Rim-light injection (#84 / T6) — Fresnel emissive via onBeforeCompile so the
       // model reads as a glowing silhouette; per-part emissive bump preserves colour
       // through ACES + bloom. A showcase craft (the /fleet model) keeps its own colours: the

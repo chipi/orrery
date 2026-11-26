@@ -1,0 +1,97 @@
+{
+  "id": "compton-gro",
+  "agency": "NASA",
+  "agency_full": "National Aeronautics and Space Administration",
+  "sector": "gov",
+  "dest": "EARTH",
+  "color": "#0B3D91",
+  "year": 1991,
+  "status": "FLOWN",
+  "departure_date": "1991-04-05",
+  "arrival_date": "1991-04-11",
+  "transit_days": 6,
+  "round_trip": true,
+  "vehicle": "Space Shuttle Atlantis (OV-104)",
+  "payload": "Gamma Ray Observatory: 34,527 lb (about 15,700 kg) at the arm, the heaviest payload the robotic arm had moved, with four instruments (BATSE, OSSE, COMPTEL, EGRET); crew of five",
+  "delta_v": "~9.4 km/s (LEO)",
+  "data_quality": "good",
+  "credit": "Sources: NASA JSC STS-37 Space Shuttle Mission Report (all clock times, GMT), NASA STS-37 press kit, NASA Compton page (end of mission). Not in the sources used: the clock time of the spacewalk and of the antenna failure. The report gives the first spacewalk as 3 h 30 min and the second as 5 h 47 min; Wikipedia gives 4 h 32 min and 5 h 57 min. Public domain / archive.",
+  "links": [
+    {
+      "l": "STS-37 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/STS-37",
+      "t": "intro"
+    },
+    {
+      "l": "Compton Gamma Ray Observatory — NASA",
+      "u": "https://science.nasa.gov/mission/cgro/",
+      "t": "core"
+    },
+    {
+      "l": "STS-37 press kit (NASA)",
+      "u": "https://discmaster.textfiles.com/view/10606/Space%20and%20Astronomy%20(October%201993).iso/pc/text/stskits/sts_37.pre",
+      "t": "core"
+    },
+    {
+      "l": "STS-37 Space Shuttle Mission Report (NASA JSC)",
+      "u": "https://ibiblio.org/apollo/Shuttle/Reports/Mission%20Reports/STS-37%20Space%20Shuttle%20Mission%20Report.pdf",
+      "t": "deep"
+    },
+    {
+      "l": "Compton Gamma Ray Observatory — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Compton_Gamma_Ray_Observatory",
+      "t": "intro"
+    }
+  ],
+  "flight_data_quality": "sparse",
+  "fleet_refs": [
+    {
+      "id": "space-shuttle-stack",
+      "role": "launcher"
+    },
+    {
+      "id": "atlantis",
+      "role": "spacecraft"
+    },
+    {
+      "id": "lc-39b",
+      "role": "launch-site"
+    },
+    {
+      "id": "compton-gro",
+      "role": "payload"
+    }
+  ],
+  "flight": {
+    "launch": {
+      "vehicle_stage": "Space Shuttle",
+      "source": "NASA JSC STS-37 Space Shuttle Mission Report: planned circular orbit of about 243 nautical miles after the second orbital maneuvering burn. Launch from pad 39B"
+    },
+    "events": [
+      {
+        "met_days": 0,
+        "type": "launch",
+        "label": "Launch — Atlantis from pad 39B",
+        "description": "5 April 1991 at 14:22:45 UTC (095:14:22:44.988 GMT) from pad 39B, after the countdown resumed about 4 min 45 s late at the T-9 minute hold because of weather limits. The second burn at 15:04 GMT left Atlantis in a circular orbit of about 243 nautical miles."
+      },
+      {
+        "met_days": 2.343,
+        "type": "anomaly",
+        "label": "High-gain antenna stuck; spacewalk",
+        "description": "On flight day 3 the arm raised the observatory and its high-gain antenna would not deploy. Shaking it with thrusters, then with the arm, failed. A contingency spacewalk began; the arm lowered the observatory and Jerry Ross shook the boom free early in the walk. The report gives no clock time for the antenna failure or the walk."
+      },
+      {
+        "met_days": 2.343,
+        "type": "separation",
+        "label": "Observatory released by the arm",
+        "description": "Released at 097:22:36:47 GMT, 7 April 1991, MET 2 d 8 h 14 min, three orbits later than planned (planned MET 2 d 3 h 35 min). It was the heaviest payload the arm had moved. A planned spacewalk on flight day 4 tested equipment and arm handling."
+      },
+      {
+        "met_days": 5.9811,
+        "type": "earth_return",
+        "label": "Landing at Edwards, a day late",
+        "description": "Landing was delayed one day by high winds at Edwards, and fog closed the first Kennedy chance. Main gear touched down at 101:13:55:29 GMT, 11 April 1991, on lakebed runway 33 after a 221.4-second deorbit burn at 12:45:50 GMT. Flight duration 5 d 23 h 32 min 45 s."
+      }
+    ]
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "name": "Hubble-Weltraumteleskop (STS-31)",
+  "vehicle": "Space Shuttle Discovery (OV-103)",
+  "payload": "Hubble-Weltraumteleskop: 43,5 ft (13,3 m) lang, rund 11.000 kg, Hauptspiegel 94,5 in (2,4 m); fünf Besatzungsmitglieder",
+  "delta_v": "~9.4 km/s (LEO)",
+  "type": "VOM SHUTTLE AUSGESETZTES WELTRAUMTELESKOP · AKTIV",
+  "first": "Der Shuttle-Flug, der das Hubble-Weltraumteleskop aus der Nutzlastbucht der Discovery hob und vom Roboterarm freigab",
+  "description": "STS-31 brachte das Hubble-Weltraumteleskop auf eine Umlaufbahn von 332 mal 331 Seemeilen und gab es vom Roboterarm der Discovery frei. Die Discovery hob am 24. April 1990 um 12:33:51 UTC vom Launch Complex 39B ab, zwei Wochen nachdem ein erster Versuch wegen einer Hilfsenergieeinheit abgebrochen worden war. Am 25. April, nachdem sich Feld 2 der Solarmodule im dritten Versuch entfaltet hatte, gab der Arm das Teleskop um 19:37:51 UTC frei; Bruce McCandless und Kathryn Sullivan, die für einen Notfall-Weltraumausstieg bereitstanden, wurden nicht gebraucht. Die Discovery landete am 29. April auf der Edwards Air Force Base, nach etwa 5 Tagen Flug. Hubble ist bis heute in Betrieb. Fünf Wartungsmissionen des Shuttles zwischen 1993 und 2009 reparierten und verbesserten es, die letzte im Mai 2009.",
+  "events": [
+    {
+      "met": 0,
+      "label": "START",
+      "note": "Discovery vom Launch Complex 39B, 24. April 1990, 12:33:51 UTC; ein erster Versuch am 10. April wurde wegen einer Hilfsenergieeinheit abgebrochen.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.298,
+      "label": "ZIRKULARISIERUNG",
+      "note": "Eine Zündung der Steuertriebwerke mit 33,5 ft/s um 19:43:05 UTC brachte die Discovery auf eine Umlaufbahn von 332 mal 331 Seemeilen (etwa 615 mal 613 km).",
+      "type": "nominal"
+    },
+    {
+      "met": 1.2944,
+      "label": "SOLARMODUL-FELD 2 KLEMMT",
+      "note": "Feld 2 der Solarmodule entfaltete sich im ersten Versuch nicht, im zweiten teilweise und im dritten vollständig; der Bericht nennt keine Zeiten.",
+      "type": "warning"
+    },
+    {
+      "met": 1.2944,
+      "label": "HUBBLE FREIGEGEBEN",
+      "note": "Am 25. April um 19:37:51 UTC vom Arm freigegeben; der Notfall-Weltraumausstieg entfiel.",
+      "type": "nominal"
+    },
+    {
+      "met": 5.0528,
+      "label": "LANDUNG",
+      "note": "Edwards Air Force Base, Betonpiste 22, 29. April 1990, Hauptfahrwerk um 13:49:56 UTC aufgesetzt.",
+      "type": "nominal"
+    }
+  ],
+  "vehicle_stage": "Space Shuttle"
+}

@@ -1,0 +1,42 @@
+{
+  "name": "Osservatorio a raggi X Chandra (STS-93)",
+  "vehicle": "Space Shuttle Columbia (OV-102)",
+  "payload": "Osservatorio a raggi X Chandra su uno stadio superiore inerziale (Inertial Upper Stage): 50.162 lb (circa 22.750 kg) con lo stadio e le sue attrezzature di supporto, il carico utile più pesante lanciato dallo Shuttle; 10.560 lb a vuoto; equipaggio di cinque",
+  "delta_v": "~9.4 km/s (LEO)",
+  "type": "OSSERVATORIO A RAGGI X RILASCIATO DALLO SHUTTLE · ATTIVO",
+  "first": "Il volo dello Shuttle che ha lanciato l'osservatorio a raggi X Chandra su uno stadio superiore, al comando di Eileen Collins, prima donna a comandare una missione dello Shuttle",
+  "description": "STS-93 ha lanciato Columbia dalla rampa 39B il 23 luglio 1999 alle 04:31 UTC con l'osservatorio a raggi X Chandra sul suo stadio superiore inerziale (Inertial Upper Stage); con 50.162 lb era il carico utile più pesante lanciato dallo Shuttle. Eileen Collins è stata la prima donna a comandare una missione dello Shuttle; a bordo c'era Steven Hawley, che aveva rilasciato Hubble con STS-31. Prima ci sono state due cancellazioni, il 20 e il 22 luglio. Durante il lancio si è spezzato un perno nel motore principale 3 e c'è stato un cortocircuito in un bus elettrico, ma tutti e tre i motori hanno funzionato fino allo spegnimento. Alle 11:47:01 UTC l'equipaggio ha rilasciato Chandra e il suo stadio dal tavolo di inclinazione; lo stadio si è acceso due volte, poi il motore di Chandra cinque volte per raggiungere l'orbita di lavoro. Columbia è atterrata al Kennedy Space Center il 27 luglio. Chandra è ancora in funzione e arriva a 139.000 km dalla Terra.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCIO",
+      "note": "Columbia dalla rampa 39B, 23 luglio 1999, 04:31 UTC, dopo cancellazioni il 20 e il 22 luglio.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.0001,
+      "label": "PERDITA AL MOTORE, CORTOCIRCUITO",
+      "note": "Un perno allentato ha rotto tre tubi di raffreddamento a idrogeno nel motore 3, e un cortocircuito di mezzo secondo ha colpito il bus in corrente alternata 1; i tre motori hanno funzionato fino allo spegnimento, con 16 ft/s in meno.",
+      "type": "warning"
+    },
+    {
+      "met": 0.3028,
+      "label": "CHANDRA RILASCIATO",
+      "note": "Rilasciato dal tavolo di inclinazione alle 11:47:01 UTC, 7 h 16 min dopo il lancio; Columbia si è allontanata 84 s dopo.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.345,
+      "label": "ACCENSIONI DELLO STADIO SUPERIORE",
+      "note": "Circa un'ora dopo il rilascio il primo stadio si è acceso per 2 min; dopo 2 min di volo inerziale il secondo stadio si è acceso per 2 min e ha raggiunto 327 per 72.067 km.",
+      "type": "nominal"
+    },
+    {
+      "met": 4.9512,
+      "label": "ATTERRAGGIO",
+      "note": "Kennedy Space Center, pista 33, 27 luglio 1999, 03:20:36 UTC.",
+      "type": "nominal"
+    }
+  ],
+  "vehicle_stage": "Space Shuttle"
+}

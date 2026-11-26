@@ -1,0 +1,42 @@
+{
+  "name": "Observatório de raios X Chandra (STS-93)",
+  "vehicle": "Space Shuttle Columbia (OV-102)",
+  "payload": "Observatório de raios X Chandra sobre um estágio superior inercial (Inertial Upper Stage): 50.162 lb (cerca de 22.750 kg) com o estágio e seu equipamento de apoio, a carga útil mais pesada lançada pelo ônibus espacial; 10.560 lb vazio; tripulação de cinco",
+  "delta_v": "~9.4 km/s (LEO)",
+  "type": "OBSERVATÓRIO DE RAIOS X IMPLANTADO PELO ÔNIBUS ESPACIAL · ATIVO",
+  "first": "O voo do ônibus espacial que lançou o observatório de raios X Chandra sobre um estágio superior, comandado por Eileen Collins, a primeira mulher a comandar uma missão do ônibus espacial",
+  "description": "A STS-93 lançou o Columbia da plataforma 39B em 23 de julho de 1999 às 04:31 UTC com o observatório de raios X Chandra sobre seu estágio superior inercial (Inertial Upper Stage); com 50.162 lb, era a carga útil mais pesada lançada pelo ônibus espacial. Eileen Collins foi a primeira mulher a comandar uma missão do ônibus espacial; a bordo estava Steven Hawley, que havia implantado o Hubble na STS-31. Antes houve dois cancelamentos, em 20 e 22 de julho. Durante o lançamento um pino quebrou no motor principal 3 e houve um curto-circuito num barramento elétrico, mas os três motores funcionaram até o corte. Às 11:47:01 UTC a tripulação soltou o Chandra e seu estágio da mesa de inclinação; o estágio acendeu duas vezes, e depois o motor do próprio Chandra cinco vezes para chegar à órbita de trabalho. O Columbia pousou no Centro Espacial Kennedy em 27 de julho. O Chandra continua operando e chega a 139.000 km acima da Terra.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANÇAMENTO",
+      "note": "Columbia da plataforma 39B, 23 de julho de 1999, 04:31 UTC, após cancelamentos em 20 e 22 de julho.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.0001,
+      "label": "VAZAMENTO NO MOTOR, CURTO-CIRCUITO",
+      "note": "Um pino solto rompeu três tubos de resfriamento a hidrogênio do motor 3 e um curto-circuito de meio segundo atingiu o barramento CA 1; os três motores funcionaram até o corte, 16 ft/s abaixo.",
+      "type": "warning"
+    },
+    {
+      "met": 0.3028,
+      "label": "CHANDRA IMPLANTADO",
+      "note": "Solto da mesa de inclinação às 11:47:01 UTC, 7 h 16 min após a decolagem; o Columbia se afastou 84 s depois.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.345,
+      "label": "QUEIMAS DO ESTÁGIO SUPERIOR",
+      "note": "Cerca de uma hora após a soltura o primeiro estágio funcionou 2 min; após 2 min de voo inercial o segundo estágio funcionou 2 min e chegou a 327 por 72.067 km.",
+      "type": "nominal"
+    },
+    {
+      "met": 4.9512,
+      "label": "POUSO",
+      "note": "Centro Espacial Kennedy, pista 33, 27 de julho de 1999, 03:20:36 UTC.",
+      "type": "nominal"
+    }
+  ],
+  "vehicle_stage": "Space Shuttle"
+}

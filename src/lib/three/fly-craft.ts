@@ -28,6 +28,12 @@ const FLY_CRAFT: Record<string, readonly [string, string]> = {
   'sts-1': ['winged', 'buildColumbiaSts1'],
   'sts-107': ['winged', 'buildColumbiaFlying'],
   'sts-51-l': ['winged', 'buildShuttleFlying'],
+  // The Shuttle-launched observatories: the coast and the landing fly the orbiter (the deploy
+  // scene builds the observatory itself). Discovery and Atlantis share the Shuttle look; Columbia
+  // carried SILTS by 1999.
+  hubble: ['winged', 'buildShuttleFlying'],
+  'compton-gro': ['winged', 'buildShuttleFlying'],
+  chandra: ['winged', 'buildColumbiaFlying'],
   inspiration4: ['capsules-commercial', 'crew-dragon'],
   'polaris-dawn': ['capsules-commercial', 'crew-dragon'],
   ...Object.fromEntries(

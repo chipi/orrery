@@ -1,0 +1,36 @@
+{
+  "name": "Compton Gamma Ray Observatory (STS-37)",
+  "vehicle": "Space Shuttle Atlantis (OV-104)",
+  "payload": "Gamma Ray Observatory (GRO): 34.527 lb (circa 15.700 kg) sul braccio, il carico utile più pesante mai mosso dal braccio robotico, con quattro strumenti (BATSE, OSSE, COMPTEL, EGRET); equipaggio di cinque",
+  "delta_v": "~9.4 km/s (LEO)",
+  "type": "OSSERVATORIO PER RAGGI GAMMA RILASCIATO DALLO SHUTTLE · CONCLUSO",
+  "first": "Il volo dello Shuttle che ha rilasciato il Compton Gamma Ray Observatory dal braccio robotico dopo che una passeggiata spaziale di emergenza aveva liberato la sua antenna bloccata",
+  "description": "STS-37 ha lanciato Atlantis dalla rampa 39B il 5 aprile 1991 alle 14:22:45 UTC con il Gamma Ray Observatory (GRO), il secondo dei quattro Grandi Osservatori della NASA, nella stiva (carico utile). Al terzo giorno di volo il braccio ha sollevato l'osservatorio, ma la sua antenna ad alto guadagno non si è aperta, e scuoterla con i propulsori e con il braccio non è servito. È seguita una passeggiata spaziale di emergenza di Jerry Ross e Jay Apt, e l'antenna è stata liberata all'inizio. Il braccio ha rilasciato l'osservatorio il 7 aprile alle 22:36:47 UTC, tre giri più tardi del previsto. Una passeggiata spaziale programmata al quarto giorno ha provato attrezzature e uso del braccio. Atlantis è atterrato alla base aerea di Edwards l'11 aprile, un giorno dopo per il vento forte. L'osservatorio, poi chiamato Compton, ha funzionato fino a giugno 2000; la NASA indica il 4 giugno 2000 come la sua fine, quando è rientrato nell'atmosfera.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCIO",
+      "note": "Atlantis dalla rampa 39B, 5 aprile 1991, 14:22:45 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 2.343,
+      "label": "ANTENNA BLOCCATA",
+      "note": "L'antenna ad alto guadagno non si è aperta; scuoterla con i propulsori e il braccio non è servito, e una passeggiata spaziale di emergenza l'ha liberata. Il rapporto non dà l'orario.",
+      "type": "warning"
+    },
+    {
+      "met": 2.343,
+      "label": "OSSERVATORIO RILASCIATO",
+      "note": "Rilasciato dal braccio il 7 aprile alle 22:36:47 UTC, tre giri più tardi del previsto.",
+      "type": "nominal"
+    },
+    {
+      "met": 5.9811,
+      "label": "ATTERRAGGIO",
+      "note": "Edwards, pista 33 sul lago prosciugato, 11 aprile 1991, 13:55:29 UTC, un giorno dopo per il vento.",
+      "type": "nominal"
+    }
+  ],
+  "vehicle_stage": "Space Shuttle"
+}

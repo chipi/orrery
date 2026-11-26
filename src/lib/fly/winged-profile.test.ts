@@ -41,6 +41,24 @@ describe('winged-return profiles (W12)', () => {
     expect(p.touchdownS - p.taemS).toBe(6 * 60 + 13);
   });
 
+  it('the Shuttle flights touch down at launch plus the report main-gear GMT', () => {
+    const gmt = (d: number, h: number, m: number, s: number) => ((d * 24 + h) * 60 + m) * 60 + s;
+    const cases: [string, number, number][] = [
+      ['hubble', gmt(114, 12, 33, 50.99), gmt(119, 13, 49, 56.25)],
+      ['compton-gro', gmt(95, 14, 22, 44.988), gmt(101, 13, 55, 29)],
+      ['chandra', gmt(204, 4, 30, 59.984), gmt(209, 3, 20, 36)],
+    ];
+    for (const [id, launch, main] of cases) {
+      expect(expandWingedProfile(raw(id)).touchdownS).toBeCloseTo(main - launch, 0);
+      expect(Math.abs(expandWingedProfile(raw(id)).touchdownS - (main - launch))).toBeLessThan(
+        0.06,
+      );
+    }
+    expect(raw('compton-gro').touchdown.mainFt).toBe(-537);
+    expect(raw('chandra').rollout.chute).toBe(true);
+    expect(raw('chandra').rollout.stopFt).toBeCloseTo(2695.7 + 6776.9, 0);
+  });
+
   it('fails closed on a broken profile', () => {
     const ok = raw('sts-1');
     const bad = (patch: (p: WingedProfileRaw) => void) => {

@@ -1,0 +1,42 @@
+{
+  "name": "Chandra X-ray Observatory (STS-93)",
+  "vehicle": "Space Shuttle Columbia (OV-102)",
+  "payload": "Chandra X-ray Observatory on an Inertial Upper Stage: 50,162 lb (about 22,750 kg) with the stage and its support equipment, the heaviest payload launched on the Shuttle; 10,560 lb dry; crew of five",
+  "delta_v": "~9.4 km/s (LEO)",
+  "type": "SHUTTLE-DEPLOYED X-RAY OBSERVATORY · ACTIVE",
+  "first": "The Shuttle flight that launched the Chandra X-ray Observatory on an upper stage, commanded by Eileen Collins, the first woman to command a Shuttle mission",
+  "description": "STS-93 launched Columbia from pad 39B on 23 July 1999 at 04:31 UTC with the Chandra X-ray Observatory on its Inertial Upper Stage, at 50,162 lb the heaviest payload launched on the Shuttle. Eileen Collins was the first woman to command a Shuttle mission; Steven Hawley, who had deployed Hubble on STS-31, was aboard. Scrubs on 20 and 22 July came first. During the launch a pin broke in main engine 3 and a short hit an electrical bus, yet all three engines ran to cutoff. At 11:47:01 UTC the crew released Chandra and its stage from the tilt table; the stage fired twice, then Chandra's own engine five times to reach its working orbit. Columbia landed at Kennedy Space Center on 27 July. Chandra still operates, reaching 139,000 km above Earth.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Columbia from pad 39B, 23 July 1999, 04:31 UTC, after scrubs on 20 and 22 July.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.0001,
+      "label": "ENGINE LEAK, BUS SHORT",
+      "note": "A loose pin broke three hydrogen cooling tubes in engine 3, and a half-second short hit AC bus 1; all three engines ran to cutoff, 16 ft/s short.",
+      "type": "warning"
+    },
+    {
+      "met": 0.3028,
+      "label": "CHANDRA DEPLOYED",
+      "note": "Released from the tilt table at 11:47:01 UTC, 7 h 16 min into the flight; Columbia backed away 84 s later.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.345,
+      "label": "UPPER STAGE FIRES",
+      "note": "About an hour after release the first stage fired for 2 min; after a 2 min coast the second stage fired for 2 min, reaching 327 by 72,067 km.",
+      "type": "nominal"
+    },
+    {
+      "met": 4.9512,
+      "label": "LANDING",
+      "note": "Kennedy Space Center runway 33, 27 July 1999, 03:20:36 UTC.",
+      "type": "nominal"
+    }
+  ],
+  "vehicle_stage": "Space Shuttle"
+}

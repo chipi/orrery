@@ -1,0 +1,42 @@
+{
+  "name": "Observatorio de rayos X Chandra (STS-93)",
+  "vehicle": "Space Shuttle Columbia (OV-102)",
+  "payload": "Observatorio de rayos X Chandra sobre una etapa superior inercial (Inertial Upper Stage): 50.162 lb (unos 22.750 kg) con la etapa y su equipo de apoyo, la carga útil más pesada lanzada por el transbordador; 10.560 lb en seco; tripulación de cinco",
+  "delta_v": "~9.4 km/s (LEO)",
+  "type": "OBSERVATORIO DE RAYOS X DESPLEGADO POR EL TRANSBORDADOR · ACTIVO",
+  "first": "El vuelo del transbordador que lanzó el observatorio de rayos X Chandra sobre una etapa superior, al mando de Eileen Collins, la primera mujer al mando de una misión del transbordador",
+  "description": "STS-93 lanzó el Columbia desde la plataforma 39B el 23 de julio de 1999 a las 04:31 UTC con el observatorio de rayos X Chandra sobre su etapa superior inercial (Inertial Upper Stage); con 50.162 lb era la carga útil más pesada lanzada por el transbordador. Eileen Collins fue la primera mujer al mando de una misión del transbordador; a bordo estaba Steven Hawley, que había desplegado el Hubble en STS-31. Antes hubo dos cancelaciones, el 20 y el 22 de julio. Durante el lanzamiento se rompió un pasador en el motor principal 3 y hubo un cortocircuito en un bus eléctrico, pero los tres motores funcionaron hasta el apagado. A las 11:47:01 UTC la tripulación soltó el Chandra y su etapa desde la mesa de inclinación; la etapa se encendió dos veces y luego el motor propio del Chandra cinco veces hasta llegar a su órbita de trabajo. El Columbia aterrizó en el Centro Espacial Kennedy el 27 de julio. El Chandra sigue funcionando y llega a 139.000 km sobre la Tierra.",
+  "events": [
+    {
+      "met": 0,
+      "label": "DESPEGUE",
+      "note": "Columbia desde la plataforma 39B, 23 de julio de 1999, 04:31 UTC, tras cancelaciones el 20 y el 22 de julio.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.0001,
+      "label": "FUGA EN EL MOTOR, CORTOCIRCUITO",
+      "note": "Un pasador suelto rompió tres tubos de refrigeración de hidrógeno del motor 3, y un cortocircuito de medio segundo afectó al bus de corriente alterna 1; los tres motores funcionaron hasta el apagado, con 16 ft/s de menos.",
+      "type": "warning"
+    },
+    {
+      "met": 0.3028,
+      "label": "CHANDRA DESPLEGADO",
+      "note": "Soltado de la mesa de inclinación a las 11:47:01 UTC, 7 h 16 min después del despegue; el Columbia se alejó 84 s después.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.345,
+      "label": "ENCENDIDOS DE LA ETAPA SUPERIOR",
+      "note": "Una hora después de soltarlo, la primera etapa se encendió 2 min; tras 2 min de vuelo inercial, la segunda etapa se encendió 2 min y alcanzó 327 por 72.067 km.",
+      "type": "nominal"
+    },
+    {
+      "met": 4.9512,
+      "label": "ATERRIZAJE",
+      "note": "Centro Espacial Kennedy, pista 33, 27 de julio de 1999, 03:20:36 UTC.",
+      "type": "nominal"
+    }
+  ],
+  "vehicle_stage": "Space Shuttle"
+}

@@ -394,12 +394,13 @@ function flame(r: number, len: number, hot: number, cool: number): THREE.Group {
   return g;
 }
 
-export function createFlyDeploy(
-  profile: DeployProfile,
-  models: FlyDeployModels,
-  opts: FlyDeployOptions = {},
-): FlyDeploy {
-  const scene = new THREE.Scene();
+/** The deploy scenes' sky: the Sun, the stars and the Earth below at 1/1000 scale for an orbit
+ *  of `orbitNmi` (both deploy scenes share it). `stars` follows the camera. */
+export function addDeployBackdrop(
+  scene: THREE.Scene,
+  orbitNmi: [number, number],
+  earthTextureUrl?: string,
+): { stars: THREE.Points; earthTex: THREE.Texture | null } {
   scene.background = new THREE.Color(0x000000);
   const sun = new THREE.DirectionalLight(0xfff6ea, 3.4);
   sun.position.set(60, 80, -40);
@@ -423,11 +424,11 @@ export function createFlyDeploy(
   stars.frustumCulled = false;
   scene.add(stars);
 
-  const altM = ((profile.orbit.nmi[0] + profile.orbit.nmi[1]) / 2) * NMI;
+  const altM = ((orbitNmi[0] + orbitNmi[1]) / 2) * NMI;
   const earthMat = new THREE.MeshStandardMaterial({ color: 0x2f5d8a, roughness: 0.9 });
   let earthTex: THREE.Texture | null = null;
-  if (opts.earthTextureUrl) {
-    earthTex = new THREE.TextureLoader().load(opts.earthTextureUrl, () => {
+  if (earthTextureUrl) {
+    earthTex = new THREE.TextureLoader().load(earthTextureUrl, () => {
       earthMat.color.set(0xffffff);
       earthMat.needsUpdate = true;
     });
@@ -438,6 +439,16 @@ export function createFlyDeploy(
   earth.position.set(0, -(EARTH_R_M + altM) * EARTH_SCALE, 0);
   earth.rotation.set(0.4, 1.2, 0);
   scene.add(earth);
+  return { stars, earthTex };
+}
+
+export function createFlyDeploy(
+  profile: DeployProfile,
+  models: FlyDeployModels,
+  opts: FlyDeployOptions = {},
+): FlyDeploy {
+  const scene = new THREE.Scene();
+  const { stars, earthTex } = addDeployBackdrop(scene, profile.orbit.nmi, opts.earthTextureUrl);
 
   // The orbiter at rest: its authored frame has the nose on +y and the bay open to -z; turned so
   // the nose points +z and the bay opens to +y (away from the Earth).

@@ -348,6 +348,43 @@ const COASTS: Record<string, EarthOrbitCoast> = {
     revolutions: 37,
     coastDurationS: 195000,
   },
+  // The Shuttle-launched observatories (W10): after the deploy the orbiter coasts on to its
+  // runway. From the post-flight mission reports: the orbit, 28.45 degrees, and the flight length
+  // from liftoff to main-gear touchdown; revolutions are derived (seconds / the Kepler period of
+  // the mean altitude), STS-93's agreeing with its deorbit "on orbit 79".
+  hubble: {
+    // STS-31: a 330 nmi (611 km) circular orbit; 5 d 1 h 16 min 5 s.
+    missionId: 'hubble',
+    capsuleId: 'orbiter',
+    winged: true,
+    apogeeKm: 611,
+    perigeeKm: 611,
+    inclinationDeg: 28.45,
+    revolutions: 75,
+    coastDurationS: 436565,
+  },
+  'compton-gro': {
+    // STS-37: a 243 nmi (450 km) circular orbit (the planned one); 5 d 23 h 32 min 45 s.
+    missionId: 'compton-gro',
+    capsuleId: 'orbiter',
+    winged: true,
+    apogeeKm: 450,
+    perigeeKm: 450,
+    inclinationDeg: 28.45,
+    revolutions: 92,
+    coastDurationS: 516765,
+  },
+  chandra: {
+    // STS-93: 153 x 163 nmi (283 x 302 km) after OMS-3; 4 d 22 h 49 min 36 s.
+    missionId: 'chandra',
+    capsuleId: 'orbiter',
+    winged: true,
+    apogeeKm: 302,
+    perigeeKm: 283,
+    inclinationDeg: 28.45,
+    revolutions: 79,
+    coastDurationS: 427776,
+  },
   // Shenzhou 5 (Yang Liwei, 2003), from CMSE's mission summary (cmse.gov.cn, 2008-09-17): 14
   // orbits, inclination 42.4 degrees, a 199 x 348 km insertion ellipse made circular at 343 km on
   // the fifth orbit (drawn as the 343 km circle it flew most of the flight on), and "21小时23分"

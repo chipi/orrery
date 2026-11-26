@@ -191,7 +191,7 @@
     loadReturnProfile,
     type ReturnProfile,
   } from '$lib/fly/return-profile';
-  import type { DeployProfile } from '$lib/fly/deploy-profile';
+  import type { AnyDeployProfile } from '$lib/fly/deploy-profile';
   import type { WingedProfile } from '$lib/fly/winged-profile';
   import { getEarthOrbitCoast } from '$lib/orbital/earth-orbit-registry';
   import { preloadFlyCraft } from '$lib/three/fly-craft';
@@ -674,9 +674,10 @@
     isPlaying = true;
   }
   // The Shuttle deploy (W10): a mission that left from the payload bay (Galileo, Magellan,
-  // Ulysses) plays its deploy between the launch and the cruise. Inside the launch act (no new
-  // act): its own scene and clock, the master clock paused; its end dispatches launchComplete.
-  let deployProfile = $state<DeployProfile | null>(null);
+  // Ulysses, Chandra on the IUS; Hubble and Compton off the arm) plays its deploy after the launch,
+  // before the cruise or the Earth-orbit coast. Inside the launch act (no new act): its own scene
+  // and clock, the master clock paused; its end dispatches launchComplete.
+  let deployProfile = $state<AnyDeployProfile | null>(null);
   let deploying = $state(false);
   let deployDone = $state(false);
   // The profile modules (ids, validator, loader) load on demand: /fly's own JS stays at its budget.

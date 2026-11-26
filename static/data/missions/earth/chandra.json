@@ -1,0 +1,103 @@
+{
+  "id": "chandra",
+  "agency": "NASA",
+  "agency_full": "National Aeronautics and Space Administration",
+  "sector": "gov",
+  "dest": "EARTH",
+  "color": "#0B3D91",
+  "year": 1999,
+  "status": "ACTIVE",
+  "departure_date": "1999-07-23",
+  "arrival_date": "1999-07-27",
+  "transit_days": 5,
+  "round_trip": true,
+  "vehicle": "Space Shuttle Columbia (OV-102)",
+  "payload": "Chandra X-ray Observatory on an Inertial Upper Stage: 50,162 lb (about 22,750 kg) with the stage and its support equipment, the heaviest payload launched on the Shuttle; 10,560 lb dry; crew of five",
+  "delta_v": "~9.4 km/s (LEO)",
+  "data_quality": "good",
+  "credit": "Sources: NASA JSC STS-93 Space Shuttle Mission Report (all clock times, GMT), NASA STS-93 press kit (hardware figures), Chandra X-ray Center (current status). The stage's own firing times are given only as 'about one hour after' deployment in the report. Public domain / archive.",
+  "links": [
+    {
+      "l": "STS-93 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/STS-93",
+      "t": "intro"
+    },
+    {
+      "l": "Chandra X-ray Observatory — Chandra X-ray Center",
+      "u": "https://chandra.harvard.edu/about/",
+      "t": "core"
+    },
+    {
+      "l": "STS-93 press kit (NASA)",
+      "u": "https://www.nasa.gov/wp-content/uploads/2023/05/sts-093-press-kit.pdf",
+      "t": "core"
+    },
+    {
+      "l": "STS-93 Space Shuttle Mission Report (NASA JSC)",
+      "u": "https://ibiblio.org/apollo/Shuttle/Reports/Mission%20Reports/STS-93%20Space%20Shuttle%20Mission%20Report.pdf",
+      "t": "deep"
+    },
+    {
+      "l": "Chandra X-ray Observatory — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Chandra_X-ray_Observatory",
+      "t": "intro"
+    }
+  ],
+  "flight_data_quality": "sparse",
+  "fleet_refs": [
+    {
+      "id": "space-shuttle-stack",
+      "role": "launcher"
+    },
+    {
+      "id": "columbia",
+      "role": "spacecraft"
+    },
+    {
+      "id": "lc-39b",
+      "role": "launch-site"
+    },
+    {
+      "id": "chandra",
+      "role": "payload"
+    }
+  ],
+  "flight": {
+    "launch": {
+      "vehicle_stage": "Space Shuttle",
+      "source": "NASA JSC STS-93 Space Shuttle Mission Report: orbit 144.7 by 153.7 nautical miles after the second orbital maneuvering burn, 153 by 163 after the separation burn. Launch from pad 39B"
+    },
+    "events": [
+      {
+        "met_days": 0,
+        "type": "launch",
+        "label": "Launch — Columbia, Collins commanding",
+        "description": "23 July 1999 at 04:31 UTC (204:04:30:59.984 GMT, 12:31 a.m. EDT) from pad 39B, after scrubs on 20 July (hydrogen reading in the aft compartment) and 22 July (weather). Eileen Collins was the first woman to command a Shuttle mission."
+      },
+      {
+        "met_days": 0.0001,
+        "type": "anomaly",
+        "label": "Engine leak and electrical short at liftoff",
+        "description": "About 5 s after engine start a loose pin in main engine 3 broke three hydrogen cooling tubes; the leak caused an early cutoff and a 16 ft/s underspeed. About 5 s after liftoff a half-second short on AC bus 1 disqualified two engine controllers. All three engines ran to cutoff."
+      },
+      {
+        "met_days": 0.3028,
+        "type": "separation",
+        "label": "Chandra and its upper stage deployed",
+        "description": "Released at 204:11:47:01 GMT, MET 7 h 16 min, from the tilt table (raised to 29, then 58 degrees per the press kit). Columbia backed away 84 s later and fired the left main engine for 34 s at 12:02 GMT, ending in a 153 by 163 nautical mile orbit."
+      },
+      {
+        "met_days": 0.345,
+        "type": "phasing",
+        "label": "Upper stage fires twice",
+        "description": "About one hour after release the first stage fired for two minutes; after a two-minute coast the second stage fired for two. The pair reached an orbit of 327 by 72,067 km. Chandra's own engine then fired five times to reach its working orbit."
+      },
+      {
+        "met_days": 4.9512,
+        "type": "earth_return",
+        "label": "Landing at Kennedy",
+        "description": "Main gear touched down at 209:03:20:36 GMT, 27 July 1999, on runway 33 of the Shuttle Landing Facility after a deorbit burn at 02:19 GMT; wheels stopped at 03:21:22. Flight duration 4 d 22 h 49 min 36 s."
+      }
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "name": "Observatoire Compton Gamma Ray (STS-37)",
+  "vehicle": "Space Shuttle Atlantis (OV-104)",
+  "payload": "Gamma Ray Observatory (GRO) : 34 527 lb (environ 15 700 kg) au bout du bras, la charge utile la plus lourde que le bras robotique ait déplacée, avec quatre instruments (BATSE, OSSE, COMPTEL, EGRET) ; équipage de cinq",
+  "delta_v": "~9.4 km/s (LEO)",
+  "type": "OBSERVATOIRE DE RAYONS GAMMA DÉPLOYÉ PAR LA NAVETTE · TERMINÉ",
+  "first": "Le vol de navette qui a libéré l'observatoire Compton Gamma Ray du bras robotique après qu'une sortie extravéhiculaire de secours a dégagé son antenne bloquée",
+  "description": "STS-37 a lancé Atlantis depuis l'aire 39B le 5 avril 1991 à 14:22:45 UTC, avec dans la soute (charge utile) le Gamma Ray Observatory (GRO), deuxième des quatre Grands Observatoires de la NASA. Au troisième jour de vol, le bras a soulevé l'observatoire, mais son antenne à grand gain ne s'est pas déployée, et la secouer avec les propulseurs puis avec le bras n'a rien donné. Jerry Ross et Jay Apt ont alors effectué une sortie extravéhiculaire de secours, et l'antenne a été dégagée au début. Le bras a libéré l'observatoire le 7 avril à 22:36:47 UTC, trois révolutions plus tard que prévu. Une sortie extravéhiculaire prévue au quatrième jour a testé du matériel et la manipulation du bras. Atlantis s'est posée à la base aérienne d'Edwards le 11 avril, un jour plus tard à cause de vents forts. L'observatoire, appelé plus tard Compton, a fonctionné jusqu'en juin 2000 ; la NASA donne le 4 juin 2000 comme fin, quand il est rentré dans l'atmosphère.",
+  "events": [
+    {
+      "met": 0,
+      "label": "DÉCOLLAGE",
+      "note": "Atlantis depuis l'aire 39B, 5 avril 1991, 14:22:45 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 2.343,
+      "label": "ANTENNE BLOQUÉE",
+      "note": "L'antenne à grand gain ne s'est pas déployée ; la secouer avec les propulseurs et le bras a échoué, et une sortie extravéhiculaire de secours l'a dégagée. Le rapport ne donne pas d'heure.",
+      "type": "warning"
+    },
+    {
+      "met": 2.343,
+      "label": "OBSERVATOIRE LIBÉRÉ",
+      "note": "Libéré par le bras le 7 avril à 22:36:47 UTC, trois révolutions plus tard que prévu.",
+      "type": "nominal"
+    },
+    {
+      "met": 5.9811,
+      "label": "ATTERRISSAGE",
+      "note": "Edwards, piste 33 sur le lac asséché, 11 avril 1991, 13:55:29 UTC, un jour plus tard à cause du vent.",
+      "type": "nominal"
+    }
+  ],
+  "vehicle_stage": "Space Shuttle"
+}

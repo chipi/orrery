@@ -1,0 +1,42 @@
+{
+  "name": "Observatoire de rayons X Chandra (STS-93)",
+  "vehicle": "Space Shuttle Columbia (OV-102)",
+  "payload": "Observatoire de rayons X Chandra sur un étage supérieur inertiel (Inertial Upper Stage) : 50 162 lb (environ 22 750 kg) avec l'étage et son équipement de support, la charge utile la plus lourde lancée par la navette ; 10 560 lb à vide ; équipage de cinq",
+  "delta_v": "~9.4 km/s (LEO)",
+  "type": "OBSERVATOIRE DE RAYONS X DÉPLOYÉ PAR LA NAVETTE · ACTIF",
+  "first": "Le vol de navette qui a lancé l'observatoire de rayons X Chandra sur un étage supérieur, sous le commandement d'Eileen Collins, première femme à commander une mission de navette",
+  "description": "STS-93 a lancé Columbia depuis l'aire 39B le 23 juillet 1999 à 04:31 UTC avec l'observatoire de rayons X Chandra sur son étage supérieur inertiel (Inertial Upper Stage) ; avec 50 162 lb, c'était la charge utile la plus lourde lancée par la navette. Eileen Collins a été la première femme à commander une mission de navette ; Steven Hawley, qui avait déployé Hubble lors de STS-31, était à bord. Deux reports avaient précédé, les 20 et 22 juillet. Pendant le lancement, une goupille s'est rompue dans le moteur principal 3 et un court-circuit a touché un bus électrique, mais les trois moteurs ont fonctionné jusqu'à l'arrêt. À 11:47:01 UTC, l'équipage a libéré Chandra et son étage depuis la table d'inclinaison ; l'étage s'est allumé deux fois, puis le moteur propre de Chandra cinq fois pour atteindre son orbite de travail. Columbia s'est posée au Centre spatial Kennedy le 27 juillet. Chandra fonctionne toujours et monte à 139 000 km de la Terre.",
+  "events": [
+    {
+      "met": 0,
+      "label": "DÉCOLLAGE",
+      "note": "Columbia depuis l'aire 39B, 23 juillet 1999, 04:31 UTC, après des reports les 20 et 22 juillet.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.0001,
+      "label": "FUITE MOTEUR, COURT-CIRCUIT",
+      "note": "Une goupille desserrée a rompu trois tubes de refroidissement à l'hydrogène du moteur 3, et un court-circuit d'une demi-seconde a touché le bus alternatif 1 ; les trois moteurs ont tenu jusqu'à l'arrêt, 16 ft/s en dessous.",
+      "type": "warning"
+    },
+    {
+      "met": 0.3028,
+      "label": "CHANDRA DÉPLOYÉ",
+      "note": "Libéré de la table d'inclinaison à 11:47:01 UTC, 7 h 16 min après le départ ; Columbia s'est éloignée 84 s plus tard.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.345,
+      "label": "ÉTAGE SUPÉRIEUR ALLUMÉ",
+      "note": "Environ une heure après la libération, le premier étage s'est allumé 2 min ; après 2 min d'inertie, le deuxième étage s'est allumé 2 min et a atteint 327 par 72 067 km.",
+      "type": "nominal"
+    },
+    {
+      "met": 4.9512,
+      "label": "ATTERRISSAGE",
+      "note": "Centre spatial Kennedy, piste 33, 27 juillet 1999, 03:20:36 UTC.",
+      "type": "nominal"
+    }
+  ],
+  "vehicle_stage": "Space Shuttle"
+}

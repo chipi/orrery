@@ -47,7 +47,8 @@ export interface WingedProfileRaw {
   touchdown: {
     met: string;
     keas: number;
-    /** Main-gear touchdown, feet past the threshold. */
+    /** Main-gear touchdown, feet past the threshold. Negative only on a lakebed, where the
+     *  surface runs on before the threshold (STS-37 touched down 537 ft short of it). */
     mainFt: number;
     /** Nose gear down this many feet after the mains. */
     noseAfterMainFt: number;
@@ -103,7 +104,10 @@ export function isValidWingedProfile(d: unknown): d is WingedProfileRaw {
   if (!isPos(ta.mach) || !isPos(ta.altFt) || !isPos(ta.rangeNmi)) return false;
   if (!isPos(ap.outerGlideDeg) || !isPos(ap.innerGlideDeg) || !isPos(ap.preflareFt)) return false;
   if (!isPos(ap.gearDownFt) || (ap.gearDownFt as number) >= (ap.preflareFt as number)) return false;
-  if (!isPos(td.keas) || !isPos(td.mainFt) || !isPos(td.noseAfterMainFt)) return false;
+  const shortOk = rw.surface === 'lakebed' && typeof td.mainFt === 'number' && td.mainFt > -3000;
+  if (!isPos(td.keas) || !(isPos(td.mainFt) || shortOk) || !isPos(td.noseAfterMainFt)) {
+    return false;
+  }
   if (!isPos(ro.brakeAfterMainFt) || !isPos(ro.stopFt) || typeof ro.chute !== 'boolean')
     return false;
   const main = td.mainFt as number;

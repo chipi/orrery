@@ -1348,6 +1348,36 @@
     "outcome": "failure"
   },
   {
+    "id": "hubble",
+    "agency": "NASA",
+    "dest": "EARTH",
+    "status": "ACTIVE",
+    "year": 1990,
+    "sector": "gov",
+    "color": "#0B3D91",
+    "crewed": true
+  },
+  {
+    "id": "compton-gro",
+    "agency": "NASA",
+    "dest": "EARTH",
+    "status": "FLOWN",
+    "year": 1991,
+    "sector": "gov",
+    "color": "#0B3D91",
+    "crewed": true
+  },
+  {
+    "id": "chandra",
+    "agency": "NASA",
+    "dest": "EARTH",
+    "status": "ACTIVE",
+    "year": 1999,
+    "sector": "gov",
+    "color": "#0B3D91",
+    "crewed": true
+  },
+  {
     "id": "artemis1",
     "agency": "NASA",
     "dest": "MOON",

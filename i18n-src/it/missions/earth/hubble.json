@@ -1,0 +1,42 @@
+{
+  "name": "Telescopio spaziale Hubble (STS-31)",
+  "vehicle": "Space Shuttle Discovery (OV-103)",
+  "payload": "Telescopio spaziale Hubble: 43,5 ft (13,3 m) di lunghezza, circa 11.000 kg, specchio principale di 94,5 in (2,4 m); equipaggio di cinque",
+  "delta_v": "~9.4 km/s (LEO)",
+  "type": "TELESCOPIO SPAZIALE RILASCIATO DALLO SHUTTLE · ATTIVO",
+  "first": "Il volo dello Shuttle che ha sollevato il telescopio spaziale Hubble dalla stiva (carico utile) di Discovery e lo ha rilasciato dal braccio robotico",
+  "description": "STS-31 ha portato il telescopio spaziale Hubble su un'orbita di 332 per 331 miglia nautiche e lo ha rilasciato dal braccio robotico di Discovery. Discovery è decollato dal Launch Complex 39B il 24 aprile 1990 alle 12:33:51 UTC, due settimane dopo che un primo tentativo era stato interrotto per un'unità di potenza ausiliaria. Il 25 aprile, dopo che il pannello 2 dei pannelli solari si era aperto al terzo tentativo, il braccio ha rilasciato il telescopio alle 19:37:51 UTC; Bruce McCandless e Kathryn Sullivan, pronti per una passeggiata spaziale di emergenza, non sono serviti. Discovery è atterrato alla base aerea di Edwards il 29 aprile, dopo circa 5 giorni di volo. Hubble è ancora in funzione. Cinque missioni di servizio dello Shuttle tra il 1993 e il 2009 lo hanno riparato e potenziato, l'ultima nel maggio 2009.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCIO",
+      "note": "Discovery dal Launch Complex 39B, 24 aprile 1990, 12:33:51 UTC; un primo tentativo il 10 aprile è stato interrotto per un'unità di potenza ausiliaria.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.298,
+      "label": "CIRCOLARIZZAZIONE",
+      "note": "Un'accensione dei propulsori di 33,5 ft/s alle 19:43:05 UTC ha portato Discovery su un'orbita di 332 per 331 miglia nautiche (circa 615 per 613 km).",
+      "type": "nominal"
+    },
+    {
+      "met": 1.2944,
+      "label": "PANNELLO 2 BLOCCATO",
+      "note": "Il pannello 2 dei pannelli solari non si è aperto al primo tentativo, si è aperto in parte al secondo e del tutto al terzo; il rapporto non dà orari.",
+      "type": "warning"
+    },
+    {
+      "met": 1.2944,
+      "label": "HUBBLE RILASCIATO",
+      "note": "Rilasciato dal braccio il 25 aprile alle 19:37:51 UTC; la passeggiata spaziale di emergenza è stata annullata.",
+      "type": "nominal"
+    },
+    {
+      "met": 5.0528,
+      "label": "ATTERRAGGIO",
+      "note": "Base aerea di Edwards, pista in cemento 22, 29 aprile 1990, carrello principale a terra alle 13:49:56 UTC.",
+      "type": "nominal"
+    }
+  ],
+  "vehicle_stage": "Space Shuttle"
+}

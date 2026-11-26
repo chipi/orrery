@@ -79,3 +79,24 @@ Doc/code disagreement: the `ascent-hud.ts` comment on payloadSepTFor says the Sh
   winged return now opt out, as the coast does; `fly-winged.spec`).
 - The Earth backdrop is the 2k day map at 1/1000 scale: soft when the camera looks straight down
   (the separation shot); the burn shots see the limb.
+
+## The arm release and the observatory missions (2026-11-26, operator decision #6)
+
+- Missions `hubble` (STS-31), `compton-gro` (STS-37), `chandra` (STS-93) in `missions/earth/`, 14
+  locales. /fly: the Shuttle launch, the deploy, the Earth-orbit coast, the runway landing
+  (`winged-profiles/`, from the mission reports).
+- `method: 'rms'` built (`fly-rms-deploy-scene.ts`): the arm (inverse kinematics on the schematic
+  Canadarm), Hubble's 1990 roll-out arrays and its stalled panel 2, Compton's folded wings, stuck
+  antenna and contingency spacewalk. Sourced: the release and separation-burn times, the order of
+  events and how the anomalies ended. Estimated: every time before the release, the orientation
+  in the bay (base forward, by the arm's shoulder), the release position (6 m aft of the shoulder
+  and 7.4 m up, not "above the crew cabin" as the STS-31 kit says: held there the upper boom would
+  pass through the telescope), the arm's poses, the spacewalker, the cameras.
+- Chandra on the existing IUS path (`payload: 'chandra'`).
+- Checked: unit tests (profiles, arm scene 14 incl. the grip held to 2 cm, no boom through the body,
+  framing at 1280x800 and 390x844 with the held observatory centred on a phone), frames at both
+  sizes, the Hubble and Chandra flow launch -> deploy -> Skip -> coast in a browser.
+- Open: the release "above the crew cabin" needs a side grapple fixture (the end effector
+  approaching sideways) to be drawn as flown; the coast's MET restarts at the deploy's end; the
+  default (SM4) Hubble showcase scales its whole model to 13.2 m including the open aperture door,
+  so its tube is drawn about 20 % short.

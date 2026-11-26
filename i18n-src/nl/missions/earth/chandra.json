@@ -1,0 +1,42 @@
+{
+  "name": "Chandra-röntgenobservatorium (STS-93)",
+  "vehicle": "Space Shuttle Columbia (OV-102)",
+  "payload": "Chandra-röntgenobservatorium op een Inertial Upper Stage (bovenste trap): 50.162 lb (circa 22.750 kg) met de trap en de ondersteunende apparatuur, de zwaarste lading die de shuttle ooit lanceerde; 10.560 lb leeg; bemanning van vijf",
+  "delta_v": "~9.4 km/s (LEO)",
+  "type": "DOOR DE SHUTTLE UITGEZET RÖNTGENOBSERVATORIUM · ACTIEF",
+  "first": "De shuttlevlucht die het Chandra-röntgenobservatorium op een bovenste trap lanceerde, onder bevel van Eileen Collins, de eerste vrouw die een shuttlemissie leidde",
+  "description": "STS-93 lanceerde Columbia op 23 juli 1999 om 04:31 UTC van lanceerplatform 39B met het Chandra-röntgenobservatorium op zijn Inertial Upper Stage (bovenste trap); met 50.162 lb was het de zwaarste lading die de shuttle ooit lanceerde. Eileen Collins was de eerste vrouw die een shuttlemissie leidde; ook Steven Hawley, die bij STS-31 Hubble had uitgezet, was aan boord. Eerder waren er twee uitstellen, op 20 en 22 juli. Tijdens de lancering brak een pen in hoofdmotor 3 en kreeg een elektrische bus kortsluiting, maar alle drie de motoren draaiden tot de afsluiting. Om 11:47:01 UTC liet de bemanning Chandra en zijn trap los van de kantelbank; de trap ontbrandde twee keer, daarna de eigen motor van Chandra vijf keer om de werkbaan te bereiken. Columbia landde op 27 juli bij het Kennedy Space Center. Chandra werkt nog steeds en komt tot 139.000 km boven de aarde.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCERING",
+      "note": "Columbia van lanceerplatform 39B, 23 juli 1999, 04:31 UTC, na uitstellen op 20 en 22 juli.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.0001,
+      "label": "MOTORLEK, KORTSLUITING",
+      "note": "Een losse pen brak drie waterstofkoelbuizen in motor 3, en wisselstroombus 1 kreeg een kortsluiting van een halve seconde; alle drie de motoren draaiden tot de afsluiting, 16 ft/s te langzaam.",
+      "type": "warning"
+    },
+    {
+      "met": 0.3028,
+      "label": "CHANDRA UITGEZET",
+      "note": "Om 11:47:01 UTC losgelaten van de kantelbank, 7 h 16 min na de lancering; Columbia bewoog 84 s later weg.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.345,
+      "label": "BOVENSTE TRAP ONTBRANDT",
+      "note": "Ongeveer een uur na het loslaten ontbrandde de eerste trap 2 min; na 2 min vrije vlucht ontbrandde de tweede trap 2 min en bereikte 327 bij 72.067 km.",
+      "type": "nominal"
+    },
+    {
+      "met": 4.9512,
+      "label": "LANDING",
+      "note": "Kennedy Space Center, baan 33, 27 juli 1999, 03:20:36 UTC.",
+      "type": "nominal"
+    }
+  ],
+  "vehicle_stage": "Space Shuttle"
+}

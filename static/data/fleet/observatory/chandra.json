@@ -32,5 +32,8 @@
       "type": "earth-object",
       "site_id": "chandra"
     }
+  ],
+  "linked_missions": [
+    "chandra"
   ]
 }

@@ -2,13 +2,19 @@ import { existsSync, readFileSync } from 'node:fs';
 import { describe, it, expect, vi } from 'vitest';
 
 // The real static/data files and i18n-src overlays, without the bundle/fetch machinery of ./core.
-vi.mock('./core', () => ({
-  get: vi.fn(async (path: string) => {
-    const file = path.startsWith('i18n/') ? `i18n-src/${path.slice(5)}` : `static/data/${path}`;
-    if (!existsSync(file)) throw new Error(`404 ${path}`);
-    return JSON.parse(readFileSync(file, 'utf8'));
-  }),
-}));
+// Each file is parsed once, as ./core's cache does: the panel-heroes sweep read the 5.6 MB
+// image-provenance.json once per hero and ran 5.7 s under the coverage run's load (5 s limit).
+vi.mock('./core', () => {
+  const parsed = new Map<string, unknown>();
+  return {
+    get: vi.fn(async (path: string) => {
+      const file = path.startsWith('i18n/') ? `i18n-src/${path.slice(5)}` : `static/data/${path}`;
+      if (!existsSync(file)) throw new Error(`404 ${path}`);
+      if (!parsed.has(file)) parsed.set(file, JSON.parse(readFileSync(file, 'utf8')));
+      return parsed.get(file);
+    }),
+  };
+});
 
 import { getNamedStarGallery, getPageHero, getUniverseHero } from './universe';
 

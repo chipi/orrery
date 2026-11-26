@@ -21428,5 +21428,50 @@
     1280,
     2048,
     3000
+  ],
+  "/images/missions/chandra/01": [
+    320,
+    640,
+    853,
+    1365,
+    1744
+  ],
+  "/images/missions/chandra/02": [
+    320,
+    1280,
+    2048,
+    3000
+  ],
+  "/images/missions/compton-gro/01": [
+    320,
+    640,
+    1273,
+    2036,
+    3054
+  ],
+  "/images/missions/hubble/01": [
+    320,
+    640,
+    1280,
+    2048,
+    3072
+  ],
+  "/images/missions/thumbnails/hubble": [
+    736
+  ],
+  "/images/missions/thumbnails/card/hubble": [
+    420
+  ],
+  "/images/missions/thumbnails/compton-gro": [
+    736
+  ],
+  "/images/missions/thumbnails/card/compton-gro": [
+    420
+  ],
+  "/images/missions/thumbnails/chandra": [
+    736
+  ],
+  "/images/missions/thumbnails/card/chandra": [
+    420
   ]
 }

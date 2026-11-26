@@ -1,0 +1,42 @@
+{
+  "name": "Hubble-ruimtetelescoop (STS-31)",
+  "vehicle": "Space Shuttle Discovery (OV-103)",
+  "payload": "Hubble-ruimtetelescoop: 43,5 ft (13,3 m) lang, circa 11.000 kg, hoofdspiegel van 94,5 in (2,4 m); bemanning van vijf",
+  "delta_v": "~9.4 km/s (LEO)",
+  "type": "DOOR DE SHUTTLE UITGEZETTE RUIMTETELESCOOP · ACTIEF",
+  "first": "De shuttlevlucht die de Hubble-ruimtetelescoop uit de laadruimte (lading) van Discovery tilde en losliet van de robotarm",
+  "description": "STS-31 bracht de Hubble-ruimtetelescoop in een baan van 332 bij 331 zeemijl en liet hem los van de robotarm van Discovery. Discovery steeg op 24 april 1990 om 12:33:51 UTC op van Launch Complex 39B, twee weken nadat een eerste poging was gestopt vanwege een hulpaandrijfeenheid. Op 25 april, nadat paneel 2 van de zonnepanelen bij de derde poging was uitgeklapt, liet de arm de telescoop om 19:37:51 UTC los; Bruce McCandless en Kathryn Sullivan, klaar voor een noodruimtewandeling, waren niet nodig. Discovery landde op 29 april op Edwards Air Force Base, na ongeveer 5 dagen vlucht. Hubble is nog steeds in bedrijf. Vijf onderhoudsmissies van de shuttle tussen 1993 en 2009 repareerden en verbeterden hem, de laatste in mei 2009.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCERING",
+      "note": "Discovery vanaf Launch Complex 39B, 24 april 1990, 12:33:51 UTC; een eerste poging op 10 april werd gestopt vanwege een hulpaandrijfeenheid.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.298,
+      "label": "CIRCULARISATIE",
+      "note": "Een ontsteking van de stuurraketten van 33,5 ft/s om 19:43:05 UTC bracht Discovery in een baan van 332 bij 331 zeemijl (ongeveer 615 bij 613 km).",
+      "type": "nominal"
+    },
+    {
+      "met": 1.2944,
+      "label": "PANEEL 2 KLEMT",
+      "note": "Paneel 2 van de zonnepanelen klapte bij de eerste poging niet uit, bij de tweede gedeeltelijk en bij de derde helemaal; het rapport geeft geen tijden.",
+      "type": "warning"
+    },
+    {
+      "met": 1.2944,
+      "label": "HUBBLE LOSGELATEN",
+      "note": "Op 25 april om 19:37:51 UTC losgelaten van de arm; de noodruimtewandeling werd afgelast.",
+      "type": "nominal"
+    },
+    {
+      "met": 5.0528,
+      "label": "LANDING",
+      "note": "Edwards Air Force Base, betonnen baan 22, 29 april 1990, hoofdlandingsgestel om 13:49:56 UTC aan de grond.",
+      "type": "nominal"
+    }
+  ],
+  "vehicle_stage": "Space Shuttle"
+}

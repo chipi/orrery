@@ -1,0 +1,36 @@
+{
+  "name": "Compton Gamma Ray Observatory (STS-37)",
+  "vehicle": "Space Shuttle Atlantis (OV-104)",
+  "payload": "Gamma Ray Observatory (GRO): 34.527 lb (circa 15.700 kg) aan de arm, de zwaarste lading die de robotarm had verplaatst, met vier instrumenten (BATSE, OSSE, COMPTEL, EGRET); bemanning van vijf",
+  "delta_v": "~9.4 km/s (LEO)",
+  "type": "DOOR DE SHUTTLE UITGEZET GAMMASTRALINGSOBSERVATORIUM · AFGESLOTEN",
+  "first": "De shuttlevlucht die het Compton Gamma Ray Observatory losliet van de robotarm nadat een noodruimtewandeling de vastzittende antenne had bevrijd",
+  "description": "STS-37 lanceerde Atlantis op 5 april 1991 om 14:22:45 UTC van lanceerplatform 39B met het Gamma Ray Observatory (GRO), het tweede van de vier Grote Observatoria van NASA, in de ladingruimte. Op vliegdag 3 tilde de arm het observatorium op, maar de hoogwinstantenne klapte niet uit, en schudden met stuurraketten en met de arm hielp niet. Er volgde een noodruimtewandeling van Jerry Ross en Jay Apt, en de antenne kwam al vroeg los. De arm liet het observatorium op 7 april om 22:36:47 UTC los, drie omlopen later dan gepland. Een geplande ruimtewandeling op vliegdag 4 testte uitrusting en het gebruik van de arm. Atlantis landde op 11 april op Edwards Air Force Base, een dag te laat vanwege harde wind. Het observatorium, later Compton genoemd, werkte tot juni 2000; NASA noemt 4 juni 2000 als het einde, toen het de atmosfeer weer binnenging.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCERING",
+      "note": "Atlantis van lanceerplatform 39B, 5 april 1991, 14:22:45 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 2.343,
+      "label": "ANTENNE KLEMT",
+      "note": "De hoogwinstantenne klapte niet uit; schudden met stuurraketten en arm mislukte, en een noodruimtewandeling maakte haar los. Het rapport geeft geen kloktijd.",
+      "type": "warning"
+    },
+    {
+      "met": 2.343,
+      "label": "OBSERVATORIUM LOSGELATEN",
+      "note": "Op 7 april om 22:36:47 UTC losgelaten door de arm, drie omlopen later dan gepland.",
+      "type": "nominal"
+    },
+    {
+      "met": 5.9811,
+      "label": "LANDING",
+      "note": "Edwards, baan 33 op de opgedroogde meerbodem, 11 april 1991, 13:55:29 UTC, een dag te laat vanwege wind.",
+      "type": "nominal"
+    }
+  ],
+  "vehicle_stage": "Space Shuttle"
+}

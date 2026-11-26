@@ -1422,6 +1422,15 @@ export function buildOrbiter(o: OrbiterOpts): THREE.Group {
     mount.position.set(0, BAY_A0 + 0.6, -(hingeV - 1.05));
     g.add(mount);
     root.userData.bayMount = mount;
+    // The bay's extent in the model frame (the RMS deploy places its observatory from it): aft and
+    // forward ends on y, the sill and the floor's lowest line on z (the bay opens to -z).
+    root.userData.bay = {
+      aftY: BAY_A0,
+      fwdY: BAY_A1,
+      halfWidth: BAY_X,
+      sillZ: -hingeV,
+      floorZ: -(hingeV - 0.6 - BAY_FLOOR),
+    };
   }
 
   // ── flight-deck windows, frames and the side hatch ──

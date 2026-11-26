@@ -1,0 +1,71 @@
+{
+  "vehicle": "orbiter",
+  "missionId": "hubble",
+  "flight": "STS-31",
+  "orbiter": "discovery",
+  "runway": {
+    "id": "edwards-concrete-22",
+    "name": "Edwards AFB Runway 22 (concrete)",
+    "surface": "concrete",
+    "lengthM": 4579,
+    "widthM": 91,
+    "headingDeg": 220
+  },
+  "deorbit": {
+    "met": "120:03:45.1",
+    "burnS": 291,
+    "dvFts": 571.2
+  },
+  "entry": {
+    "met": "120:45:38.3",
+    "altFt": 400000,
+    "reversalsMach": []
+  },
+  "taem": {
+    "met": "121:09:45.3",
+    "mach": 2.5,
+    "altFt": 83000,
+    "rangeNmi": 60
+  },
+  "approach": {
+    "outerGlideDeg": 20,
+    "innerGlideDeg": 1.5,
+    "preflareFt": 2000,
+    "gearDownFt": 250
+  },
+  "source_tier": "flagship",
+  "touchdown": {
+    "met": "121:16:05.3",
+    "keas": 180,
+    "mainFt": 1176,
+    "noseAfterMainFt": 3388
+  },
+  "rollout": {
+    "brakeAfterMainFt": 6055,
+    "stopFt": 10594,
+    "chute": false
+  },
+  "estimatedFields": [
+    "runway.lengthM and widthM (Wikipedia's 05R/23L, 15,024 x 300 ft, taken to be today's name of the 04/22 strip the orbiter used; the 1990 dimensions were not found) and runway.headingDeg (from the runway number)",
+    "touchdown.keas (the report gives 180 knots ground speed with a 4 kt headwind, not KEAS; ground speed used)",
+    "rollout.stopFt (the report gives the wheels-stop time, 62 s after the mains, not the distance: constant deceleration from 180 kt over 62 s, 9,418 ft, plus the 1,176 ft main-gear point; calibrated against STS-93's flown 6,777 ft, which this method overstates by about 5 percent)",
+    "rollout.brakeAfterMainFt (braking began at 119 kt at an average 6 ft/s2, 3,363 ft before the stop; the report gives no distance)",
+    "taem.mach, taem.altFt, taem.rangeNmi (the 2006 guidance workbook's nominal values; taem.met is the report's major mode change 305, which it labels terminal area energy management)",
+    "approach (the workbook's 20 deg and 1.5 deg glideslopes and preflare at 2,000 ft; gear down at 250 ft is the STS-1 press-kit plan value; the report gives only gear down and locked 13 s before the mains)",
+    "entry.reversalsMach (no per-flight list of the roll-reversal Mach numbers was sourced; left empty)"
+  ],
+  "provenance": [
+    {
+      "l": "STS-31 Mission Report (NASA, 1990): deorbit burn 119:12:37:36.05 GMT, 291.0 s, 571.2 ft/s; entry interface 119:13:19:29.28; major mode change 305 at 119:13:43:36.25; main gear 119:13:49:56.25 at 180 kt ground speed, 1,176 ft past the threshold, 3 ft/s sink; nose gear 4,564 ft; braking at 119 kt, 6 ft/s2 average; wheels stop 119:13:50:58.25; concrete runway 22, Edwards; no blackout (TDRS). Launch 114:12:33:50.99 GMT",
+      "u": "https://ibiblio.org/apollo/Shuttle/Reports/Mission%20Reports/STS-31%20National%20Space%20Transportation%20System%20Mission%20Report.pdf"
+    },
+    {
+      "l": "Entry, TAEM and Approach/Landing Guidance Workbook 21002 (2006): TAEM at about Mach 2.5, 60 n mi, 83 kft; 20 deg outer and 1.5 deg inner glideslopes, preflare about 2,000 ft",
+      "u": "https://ibiblio.org/apollo/Shuttle/Crew%20Training/Entry,%20TAEM%20and%20Approach%20Workbook.pdf"
+    },
+    {
+      "l": "Wikipedia, Edwards Air Force Base: runway 05R/23L, 15,024 x 300 ft (4,579 x 91 m)",
+      "u": "https://en.wikipedia.org/wiki/Edwards_Air_Force_Base"
+    }
+  ]
+}

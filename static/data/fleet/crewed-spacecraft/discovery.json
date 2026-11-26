@@ -38,7 +38,9 @@
       "t": "deep"
     }
   ],
-  "linked_missions": [],
+  "linked_missions": [
+    "hubble"
+  ],
   "linked_iss_modules": [
     "harmony",
     "kibo",

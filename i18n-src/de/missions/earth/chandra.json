@@ -1,0 +1,42 @@
+{
+  "name": "Chandra-Röntgenobservatorium (STS-93)",
+  "vehicle": "Space Shuttle Columbia (OV-102)",
+  "payload": "Chandra-Röntgenobservatorium auf einer Inertial Upper Stage (Oberstufe): 50.162 lb (rund 22.750 kg) mit Stufe und Haltetechnik, die schwerste Nutzlast, die je mit dem Shuttle startete; 10.560 lb leer; fünf Besatzungsmitglieder",
+  "delta_v": "~9.4 km/s (LEO)",
+  "type": "VOM SHUTTLE AUSGESETZTES RÖNTGENOBSERVATORIUM · AKTIV",
+  "first": "Der Shuttle-Flug, der das Chandra-Röntgenobservatorium auf einer Oberstufe startete, kommandiert von Eileen Collins, der ersten Frau als Kommandantin einer Shuttle-Mission",
+  "description": "STS-93 startete die Columbia am 23. Juli 1999 um 04:31 UTC von Rampe 39B mit dem Chandra-Röntgenobservatorium auf seiner Inertial Upper Stage (Oberstufe); mit 50.162 lb war es die schwerste Nutzlast, die je mit dem Shuttle startete. Eileen Collins war die erste Frau als Kommandantin einer Shuttle-Mission; an Bord war auch Steven Hawley, der bei STS-31 Hubble ausgesetzt hatte. Zuvor gab es Startabbrüche am 20. und 22. Juli. Beim Start brach ein Stift im Haupttriebwerk 3, und eine elektrische Sammelschiene hatte einen Kurzschluss, doch alle drei Triebwerke liefen bis zum Abschalten. Um 11:47:01 UTC gab die Besatzung Chandra und seine Stufe vom Kipptisch frei; die Stufe zündete zweimal, dann zündete Chandras eigenes Triebwerk fünfmal, bis die Arbeitsbahn erreicht war. Die Columbia landete am 27. Juli im Kennedy Space Center. Chandra arbeitet noch immer und erreicht 139.000 km Höhe über der Erde.",
+  "events": [
+    {
+      "met": 0,
+      "label": "START",
+      "note": "Columbia von Rampe 39B, 23. Juli 1999, 04:31 UTC, nach Startabbrüchen am 20. und 22. Juli.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.0001,
+      "label": "TRIEBWERKSLECK, KURZSCHLUSS",
+      "note": "Ein loser Stift zerbrach drei Wasserstoff-Kühlrohre im Triebwerk 3, und die Wechselstromschiene 1 hatte einen halbsekündigen Kurzschluss; alle drei Triebwerke liefen bis zum Abschalten, 16 ft/s zu langsam.",
+      "type": "warning"
+    },
+    {
+      "met": 0.3028,
+      "label": "CHANDRA AUSGESETZT",
+      "note": "Um 11:47:01 UTC vom Kipptisch freigegeben, 7 h 16 min nach dem Start; Columbia entfernte sich nach 84 s.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.345,
+      "label": "OBERSTUFE ZÜNDET",
+      "note": "Etwa eine Stunde nach der Freigabe zündete die erste Stufe 2 min; nach 2 min Flug ohne Antrieb zündete die zweite Stufe 2 min und erreichte 327 mal 72.067 km.",
+      "type": "nominal"
+    },
+    {
+      "met": 4.9512,
+      "label": "LANDUNG",
+      "note": "Kennedy Space Center, Piste 33, 27. Juli 1999, 03:20:36 UTC.",
+      "type": "nominal"
+    }
+  ],
+  "vehicle_stage": "Space Shuttle"
+}

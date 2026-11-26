@@ -180,6 +180,47 @@ function finish(g: THREE.Group, heightM: number): THREE.Group {
   return out;
 }
 
+/**
+ * The as-launched options of the Shuttle-deployed observatories (the /fly deploy scene): the
+ * appendages stowed, `userData` hooks to deploy them on the arm, and the RMS grapple fixture.
+ */
+export interface DeployableOpts {
+  asLaunched?: boolean;
+}
+
+/** An RMS grapple fixture on a face whose outward normal is +z: the plate, the grapple shaft and
+ *  the target. Returns the point the end effector closes on. */
+function grappleFixture(
+  g: THREE.Object3D,
+  M: Record<string, Mat>,
+  x: number,
+  y: number,
+  z: number,
+) {
+  const f = new THREE.Group();
+  f.position.set(x, y, z);
+  g.add(f);
+  box(f, M.aluDk, 0.5, 0.5, 0.04, 0, 0, 0.02);
+  const shaft = new THREE.Mesh(new THREE.CylinderGeometry(0.03, 0.03, 0.28, 8), M.alu);
+  shaft.rotation.x = Math.PI / 2;
+  shaft.position.z = 0.18;
+  f.add(shaft);
+  const cam = new THREE.Mesh(new THREE.CylinderGeometry(0.06, 0.06, 0.03, 12), M.black);
+  cam.rotation.x = Math.PI / 2;
+  cam.position.set(0.16, 0.16, 0.05);
+  f.add(cam);
+  const grip = new THREE.Object3D();
+  grip.name = 'grapple';
+  grip.position.z = 0.32;
+  f.add(grip);
+  return grip;
+}
+
+/** Slerp a pivot from its stowed quaternion to identity (deployed) by k. */
+function swing(pivot: THREE.Object3D, stowed: THREE.Quaternion, k: number): void {
+  pivot.quaternion.copy(stowed).slerp(new THREE.Quaternion(), Math.min(1, Math.max(0, k)));
+}
+
 function solarWing(g: THREE.Object3D): THREE.Group {
   const w = new THREE.Group();
   w.userData.solarArray = true;
@@ -198,8 +239,9 @@ export const HUBBLE_H = 13.2;
  * its doors; the crinkled silver light shield with the white aperture door hinged open; the two
  * rigid wings (SM3B) on their masts; the two high-gain antenna booms; the white aft nub.
  */
-export function buildHubble(): THREE.Group {
+export function buildHubble(opts: DeployableOpts = {}): THREE.Group {
   const M = mats();
+  const launched = !!opts.asLaunched;
   const g = new THREE.Group();
   // Aft shroud: 4.2 m across, polished, ribbed with panel lines.
   cyl(g, M.dark, 2.0, 2.0, 0, 0.18, 0, 0, 40);
@@ -270,8 +312,21 @@ export function buildHubble(): THREE.Group {
   hinge.add(door);
   box(hinge, M.alu, 2.8, 0.03, 0.05, 0, 0.04, 0.05);
   for (const x of [-1.1, 0, 1.1]) box(hinge, M.back, 0.04, 0.02, 2.8, x, 0.045, 1.55);
-  hinge.rotation.x = -1.3;
+  // As launched the door stayed shut until two days after the release (STS-31 report).
+  hinge.rotation.x = launched ? 0 : -1.3;
   add(g, hinge);
+
+  if (launched) {
+    buildHubble1990Appendages(g, M);
+    // Drawn at its own scale: the tube is 13.3 m from the aft bulkhead to the shut door (the
+    // STS-31 press kit's 43.5 ft).
+    const b = new THREE.Box3().setFromObject(g);
+    g.position.y = -b.min.y;
+    const out = new THREE.Group();
+    out.add(g);
+    out.userData = g.userData;
+    return out;
+  }
 
   // Rigid solar wings on masts at the junction of the shell and the equipment section.
   for (const s of [-1, 1]) {
@@ -306,6 +361,97 @@ export function buildHubble(): THREE.Group {
     box(g, M.gold, 0.14, 0.4, 0.14, s * 1.75, 9.8, 0);
   }
   return finish(g, HUBBLE_H);
+}
+
+/**
+ * Hubble as it went up on STS-31 (the STS-31 press kit): the first ESA roll-out solar arrays, each
+ * wing 2.4 x 12.1 m on a mast, 12.0 m across with both deployed; stowed they fold flat along the
+ * light shield, inside the 4.3 m stowed diameter. The two high-gain antenna booms stowed along the
+ * tube. The mast length (1.45 m) follows from those three figures; the drum, the bistem booms,
+ * the stowed positions and the fixture's place on the aft shroud are SCHEMATIC.
+ *
+ * userData: setArrays(k1, k2) (each wing 0 stowed .. 1 deployed: the mast swings out over the
+ * first quarter, the blankets roll out over the rest; k2 is solar array panel 2, the one that
+ * stuck), setAntennas(k), grapple (Object3D).
+ */
+function buildHubble1990Appendages(g: THREE.Group, M: Record<string, Mat>): void {
+  const MAST = 1.45;
+  const DRUM = 2.4;
+  const HALF = 12.1 / 2;
+  const wings: { pivot: THREE.Group; stowed: THREE.Quaternion; blankets: THREE.Object3D[] }[] = [];
+  for (const s of [-1, 1]) {
+    const pivot = solarWing(g);
+    pivot.position.set(s * 1.95, 6.35, 0);
+    box(pivot, M.alu, 0.4, 0.4, 0.4, 0, 0, 0);
+    strut(pivot, M.alu, V(0, 0, 0), V(s * MAST, 0, 0), 0.06, 8);
+    // the drum the two blankets roll off, along the mast's line
+    const drum = new THREE.Mesh(new THREE.CylinderGeometry(0.16, 0.16, DRUM, 14), M.foilDk);
+    drum.rotation.z = Math.PI / 2;
+    drum.position.x = s * (MAST + DRUM / 2);
+    pivot.add(drum);
+    const blankets: THREE.Object3D[] = [];
+    for (const dir of [-1, 1]) {
+      const roll = new THREE.Group();
+      roll.position.set(s * (MAST + DRUM / 2), 0, 0);
+      pivot.add(roll);
+      const sheet = cellPanel(M, DRUM - 0.1, HALF, 6, 24);
+      sheet.position.y = (dir * HALF) / 2;
+      roll.add(sheet);
+      for (const ex of [-1, 1])
+        strut(
+          roll,
+          M.gold,
+          V(ex * (DRUM / 2 - 0.04), 0, 0.05),
+          V(ex * (DRUM / 2 - 0.04), dir * HALF, 0.05),
+          0.02,
+          5,
+        );
+      box(roll, M.alu, DRUM, 0.08, 0.1, 0, dir * HALF, 0);
+      blankets.push(roll);
+    }
+    // stowed: the wing turned flat along the tube (pointing forward, +y), beside the light shield
+    const stowed = new THREE.Quaternion().setFromAxisAngle(V(0, 0, 1), s * (Math.PI / 2));
+    wings.push({ pivot, stowed, blankets });
+  }
+  const setArrays = (k1: number, k2 = k1): void => {
+    wings.forEach((w, i) => {
+      const k = i === 0 ? k1 : k2;
+      swing(w.pivot, w.stowed, k / 0.25);
+      const roll = Math.max(0.01, Math.min(1, (k - 0.25) / 0.75));
+      for (const b of w.blankets) b.scale.y = roll;
+    });
+  };
+  setArrays(0);
+
+  const antennas: { pivot: THREE.Group; stowed: THREE.Quaternion }[] = [];
+  for (const s of [-1, 1]) {
+    box(g, M.alu, 0.4, 0.4, 0.4, 0, 6.6, s * 2.12);
+    const pivot = new THREE.Group();
+    pivot.position.set(0, 6.6, s * 2.1);
+    g.add(pivot);
+    // the tip leans forward (+y) so the stowed dish tucks in against the tube
+    strut(pivot, M.alu, V(0, 0, 0), V(0, 0.5, s * 4.1), 0.045, 8);
+    const d = dish(M.shine, M.dark, 0.9);
+    d.position.set(0, 0.5, s * 4.1);
+    d.rotation.x = s * (Math.PI / 2 - 0.25);
+    pivot.add(d);
+    // stowed along the tube, the boom pointing forward
+    antennas.push({
+      pivot,
+      stowed: new THREE.Quaternion().setFromAxisAngle(V(1, 0, 0), -s * (Math.PI / 2)),
+    });
+  }
+  const setAntennas = (k: number): void => {
+    for (const a of antennas) swing(a.pivot, a.stowed, k);
+  };
+  setAntennas(0);
+  for (const s of [-1, 1]) {
+    cyl(g, M.alu, 0.07, 0.07, 6.9, 10.2, s * 1.75, 0, 8);
+    box(g, M.gold, 0.14, 0.4, 0.14, s * 1.75, 9.8, 0);
+  }
+  g.userData.setArrays = setArrays;
+  g.userData.setAntennas = setAntennas;
+  g.userData.grapple = grappleFixture(g, M, 0.9, 2.6, 2.1);
 }
 
 // ---------------------------------------------------------------------------------------------
@@ -1194,8 +1340,9 @@ export const COMPTON_H = 5.0;
  * OSSE box, the domed COMPTEL and EGRET cylinders) and the BATSE detector modules on the
  * corners; the two long four-panel wings on truss booms; the dish on its boom.
  */
-export function buildCompton(): THREE.Group {
+export function buildCompton(opts: DeployableOpts = {}): THREE.Group {
   const M = mats();
+  const launched = !!opts.asLaunched;
   const g = new THREE.Group();
   const lt = mat(0xcfd3d9, 0.5, 0.4, true);
   // Bus deck.
@@ -1249,6 +1396,16 @@ export function buildCompton(): THREE.Group {
         const b = box(g, M.alu, 0.75, 0.12, 0.75, sx * 2.25, y, sz * 1.85);
         b.rotation.set(sz * 0.4, 0, -sx * 0.4);
       }
+  if (launched) {
+    buildCompton1991Appendages(g, M);
+    const b = new THREE.Box3().setFromObject(g);
+    g.scale.setScalar(COMPTON_H / (b.max.y - b.min.y));
+    g.position.y = -b.min.y * g.scale.y;
+    const out = new THREE.Group();
+    out.add(g);
+    out.userData = g.userData;
+    return out;
+  }
   // Solar wings: a truss boom and four flat panels each, facing up.
   for (const s of [-1, 1]) {
     const wing = solarWing(g);
@@ -1278,6 +1435,71 @@ export function buildCompton(): THREE.Group {
   d.rotation.set(0.3, 0, 0.4);
   add(g, d);
   return finish(g, COMPTON_H);
+}
+
+/**
+ * Compton as it went up on STS-37: each wing folded at mid-span and stood up against the deck
+ * (inner half up, outer half folded back down beside it), the high-gain dish boom folded up
+ * against the -x side. The folds, their angles and the fixture's place are SCHEMATIC (the STS-37
+ * report: two solar array deployments, then the high-gain antenna that would not deploy).
+ *
+ * userData: setArrays(k), setAntenna(k) (0 stowed .. 1 deployed), grapple (Object3D).
+ */
+function buildCompton1991Appendages(g: THREE.Group, M: Record<string, Mat>): void {
+  const HALF = 3.9;
+  const wings: { root: THREE.Group; fold: THREE.Group; s: number }[] = [];
+  for (const s of [-1, 1]) {
+    const root = solarWing(g);
+    root.position.set(s * 2.3, 1.3, 0);
+    strut(root, M.white, V(0, 0, 0), V(s * HALF, 0, 0), 0.05, 6);
+    strut(root, M.white, V(s * 0.2, 0, 1.0), V(s * HALF, 0, 1.0), 0.03, 5);
+    const fold = new THREE.Group();
+    fold.position.x = s * HALF;
+    root.add(fold);
+    strut(fold, M.white, V(0, 0, 0), V(s * HALF, 0, 0), 0.05, 6);
+    strut(fold, M.white, V(0, 0, 1.0), V(s * (HALF - 0.3), 0, 1.0), 0.03, 5);
+    for (let i = 0; i < 4; i++) {
+      const p = cellPanel(M, 1.8, 2.7, 8, 12);
+      p.rotation.x = -Math.PI / 2;
+      const x = 1.2 + i * 1.9;
+      if (i < 2) {
+        p.position.set(s * x, 0.06, 0);
+        root.add(p);
+      } else {
+        p.position.set(s * (x - HALF), 0.06, 0);
+        fold.add(p);
+      }
+    }
+    wings.push({ root, fold, s });
+  }
+  const setArrays = (k: number): void => {
+    const c = Math.min(1, Math.max(0, k));
+    const up = Math.min(1, c / 0.5);
+    const out = Math.min(1, Math.max(0, (c - 0.5) / 0.5));
+    for (const w of wings) {
+      w.root.rotation.z = w.s * (Math.PI / 2) * (1 - up);
+      w.fold.rotation.z = -w.s * Math.PI * 0.97 * (1 - out);
+    }
+  };
+  setArrays(0);
+  const pivot = new THREE.Group();
+  pivot.position.set(-1.9, 0.6, 1.5);
+  g.add(pivot);
+  strut(pivot, M.white, V(0, 0, 0), V(-1.7, -0.2, 1.9), 0.05, 6);
+  const d = dish(M.white, M.dark, 0.55);
+  d.position.set(-1.7, -0.2, 1.9);
+  d.rotation.set(0.3, 0, 0.4);
+  pivot.add(d);
+  // stowed: the boom turned up along the -x, +z corner of the deck
+  const stowed = new THREE.Quaternion().setFromUnitVectors(
+    V(-1.7, -0.2, 1.9).normalize(),
+    V(-0.15, 1, 0.05).normalize(),
+  );
+  const setAntenna = (k: number): void => swing(pivot, stowed, k);
+  setAntenna(0);
+  g.userData.setArrays = setArrays;
+  g.userData.setAntenna = setAntenna;
+  g.userData.grapple = grappleFixture(g, M, 0.9, 0.9, 1.78);
 }
 
 // ---------------------------------------------------------------------------------------------

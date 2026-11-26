@@ -1,0 +1,69 @@
+{
+  "vehicle": "orbiter",
+  "missionId": "chandra",
+  "flight": "STS-93",
+  "orbiter": "columbia",
+  "runway": {
+    "id": "ksc-slf-33",
+    "name": "KSC Shuttle Landing Facility Runway 33",
+    "surface": "concrete",
+    "lengthM": 4572,
+    "widthM": 91,
+    "headingDeg": 330
+  },
+  "deorbit": {
+    "met": "117:48:00.1",
+    "burnS": 133.6,
+    "dvFts": 134.4
+  },
+  "entry": {
+    "met": "118:17:47.7",
+    "altFt": 400000,
+    "reversalsMach": []
+  },
+  "taem": {
+    "met": "118:42:59.0",
+    "mach": 2.5,
+    "altFt": 83000,
+    "rangeNmi": 60
+  },
+  "approach": {
+    "outerGlideDeg": 20,
+    "innerGlideDeg": 1.5,
+    "preflareFt": 2000,
+    "gearDownFt": 250
+  },
+  "source_tier": "flagship",
+  "touchdown": {
+    "met": "118:49:36.0",
+    "keas": 195,
+    "mainFt": 2696,
+    "noseAfterMainFt": 2762
+  },
+  "rollout": {
+    "brakeAfterMainFt": 3565,
+    "stopFt": 9473,
+    "chute": true
+  },
+  "estimatedFields": [
+    "runway.headingDeg (from the runway number)",
+    "rollout.brakeAfterMainFt (the report gives brake initiation at 117.2 kt and 32.48 s of braking, not the distance: the 6,777 ft rollout less 3,212 ft of uniform deceleration from 117.2 kt over 32.48 s)",
+    "taem.mach, taem.altFt, taem.rangeNmi (the 2006 guidance workbook's nominal values; taem.met is the report's major mode change 305, which it labels terminal area energy management)",
+    "approach (the workbook's 20 deg and 1.5 deg glideslopes and preflare at 2,000 ft; gear down at 250 ft from the STS-1 press-kit plan; the flown values were not found)",
+    "entry.reversalsMach (no per-flight list of the roll-reversal Mach numbers was sourced; left empty)"
+  ],
+  "provenance": [
+    {
+      "l": "STS-93 Space Shuttle Mission Report (NASA, 1999): deorbit burn 209:02:19:00.1 GMT, 133.6 s, 134.4 ft/s; entry interface 209:02:48:47.7; major mode change 305 at 209:03:13:59; main gear 209:03:20:36 on SLF concrete runway 33 at 2,695.7 ft, 195.0 KEAS; nose gear 5,457.4 ft; brakes at 117.2 kt, 32.48 s; rollout 6,776.9 ft in 43.29 s; drag chute deployed and jettisoned; wheels stop 209:03:21:19; no blackout (TDRS). Launch 204:04:30:59.984 GMT. The report's text puts the chute at 03:20:48 and wheels stop at 03:21:22, its event table at 03:20:37.1 and 03:21:19; the table is used. Wheels stop = main gear 2,695.7 ft + rollout 6,776.9 ft",
+      "u": "https://ibiblio.org/apollo/Shuttle/Reports/Mission%20Reports/STS-93%20Space%20Shuttle%20Mission%20Report.pdf"
+    },
+    {
+      "l": "Entry, TAEM and Approach/Landing Guidance Workbook 21002 (2006): TAEM at about Mach 2.5, 60 n mi, 83 kft; 20 deg outer and 1.5 deg inner glideslopes, preflare about 2,000 ft",
+      "u": "https://ibiblio.org/apollo/Shuttle/Crew%20Training/Entry,%20TAEM%20and%20Approach%20Workbook.pdf"
+    },
+    {
+      "l": "Wikipedia, Shuttle Landing Facility: runway 15/33, 15,000 ft (4,572 m) by 300 ft (91 m), concrete",
+      "u": "https://en.wikipedia.org/wiki/Shuttle_Landing_Facility"
+    }
+  ]
+}

@@ -1,8 +1,10 @@
 <!--
-  DeployScene — the /fly Shuttle deploy (W10): the bay doors open, the IUS tilts up and springs out,
-  the orbiter backs away, and the IUS fires (three/fly-deploy-scene.ts). Self-clocked in compressed
-  scene time with the real MET on the HUD ("~" before the release, whose time is the first one
-  sourced); Skip (or the end) fires `onComplete`, and /fly goes on to the cruise.
+  DeployScene — the /fly Shuttle deploy (W10). The IUS tilt-table release (Galileo, Magellan,
+  Ulysses, Chandra: the bay doors open, the IUS tilts up and springs out, the orbiter backs away, the
+  IUS fires; three/fly-deploy-scene.ts) or the robotic arm's release (Hubble, Compton: the arm lifts
+  the observatory out, its appendages deploy, it lets go; three/fly-rms-deploy-scene.ts).
+  Self-clocked in compressed scene time with the real MET on the HUD ("~" before the release, whose
+  time is the first one sourced); Skip (or the end) fires `onComplete`, and /fly goes on.
 
   Owns its renderer + container, like ReturnScene.
 -->
@@ -19,16 +21,15 @@
     createFlyDeploy,
     metIsEstimate,
     type DeployBeat,
-    type DeployPose,
-    type FlyDeploy,
   } from '$lib/three/fly-deploy-scene';
+  import { rmsBeatsFor, rmsMetIsEstimate, type RmsBeat } from '$lib/three/fly-rms-deploy-scene';
   import { formatGet } from '$lib/fly/return-profile';
-  import type { DeployProfile } from '$lib/fly/deploy-profile';
+  import { isRmsDeploy, type AnyDeployProfile } from '$lib/fly/deploy-profile';
   import { flyCraft, preloadFlyCraft } from '$lib/three/fly-craft';
   import { orbiterLook } from '$lib/three/showcase/orbiter-stance';
 
   interface Props {
-    profile: DeployProfile;
+    profile: AnyDeployProfile;
     missionName: string;
     hudHidden?: boolean;
     onComplete?: () => void;
@@ -37,16 +38,38 @@
 
   let container: HTMLDivElement;
   let ar: AscentRenderer | undefined;
-  let scene: FlyDeploy | undefined;
+  /** Either scene: both take (t, aspect) and return the beat and the real MET. */
+  interface Driver {
+    scene: THREE.Scene;
+    camera: THREE.PerspectiveCamera;
+    end: number;
+    update: (t: number, aspect: number) => { t: number; met: number; beat: string };
+    dispose: () => void;
+  }
+  let scene: Driver | undefined;
   let loop: AnimateLoop | undefined;
   let t = $state(0);
   let end = $state(60);
   let playing = $state(true);
   let finished = false;
-  let pose = $state<DeployPose | null>(null);
+  let pose = $state<{ t: number; met: number; beat: string } | null>(null);
 
-  const tiltDeg = (last: boolean) => String(profile.tilt[last ? profile.tilt.length - 1 : 0].deg);
-  const beatLabel: Record<DeployBeat, () => string> = {
+  const tiltDeg = (last: boolean) =>
+    isRmsDeploy(profile) ? '' : String(profile.tilt[last ? profile.tilt.length - 1 : 0].deg);
+  const rmsLabel: Record<RmsBeat, () => string> = {
+    establish: m.fly_deploy_rms_establish,
+    grapple: m.fly_deploy_rms_grapple,
+    unberth: m.fly_deploy_rms_unberth,
+    arrays: m.fly_deploy_rms_arrays,
+    arrayStuck: m.fly_deploy_rms_array_stuck,
+    arrayRetry: m.fly_deploy_rms_array_retry,
+    antennas: m.fly_deploy_rms_antennas,
+    antennaStuck: m.fly_deploy_rms_antenna_stuck,
+    eva: m.fly_deploy_rms_eva,
+    release: m.fly_deploy_rms_release,
+    separation: m.fly_deploy_beat_separation,
+  };
+  const iusLabel: Record<DeployBeat, () => string> = {
     establish: m.fly_deploy_beat_establish,
     doors: m.fly_deploy_beat_doors,
     tilt: () => m.fly_deploy_beat_tilt({ deg: tiltDeg(false) }),
@@ -59,7 +82,12 @@
     spin: m.fly_deploy_beat_spin,
     pamS: m.fly_deploy_beat_pam,
   };
-  const metText = $derived(pose ? `${metIsEstimate(pose.t) ? '~' : ''}${formatGet(pose.met)}` : '');
+  const beatText = (beat: string): string =>
+    isRmsDeploy(profile) ? rmsLabel[beat as RmsBeat]() : iusLabel[beat as DeployBeat]();
+  const beats = $derived(isRmsDeploy(profile) ? rmsBeatsFor(profile) : beatsFor(profile));
+  const estimate = (t: number) =>
+    isRmsDeploy(profile) ? rmsMetIsEstimate(t, profile) : metIsEstimate(t);
+  const metText = $derived(pose ? `${estimate(pose.t) ? '~' : ''}${formatGet(pose.met)}` : '');
   const progressPct = $derived(Math.min(100, (t / end) * 100));
   const fade = $derived(Math.max(0, Math.min(1, (t - (end - 1.5)) / 1.5)));
 
@@ -72,31 +100,58 @@
   onMount(() => {
     let unmounted = false;
     let stop: (() => void) | undefined;
-    // The orbiter, the IUS and the probe load on demand: /fly's first load stays free of them.
-    void Promise.all([
-      import('$lib/three/showcase/winged'),
-      import('$lib/three/showcase/ius'),
-      preloadFlyCraft(profile.missionId),
-    ]).then(([winged, iusMod]) => {
-      if (unmounted) return;
-      const look = orbiterLook(profile.orbiter, profile.launchZeroUtc);
-      const payload = flyCraft(profile.missionId) ?? new THREE.Group();
-      const orbiter = winged.buildOrbiterOpenable(look.variant, look.silts);
-      const ius = iusMod.buildIusStack({ payload, pamS: !!profile.upperStage.pamS });
-      stop = start(orbiter, ius);
-    });
+    const earthTextureUrl = `${base}/textures/2k_earth_daymap.jpg`;
+    const p = profile;
+    const look = orbiterLook(p.orbiter, p.launchZeroUtc);
+    // The orbiter, the stages and the payload load on demand: /fly's first load stays free of them.
+    if (isRmsDeploy(p)) {
+      void Promise.all([
+        import('$lib/three/showcase/winged'),
+        import('$lib/three/showcase/observatories'),
+        import('$lib/three/fly-rms-deploy-scene'),
+      ]).then(([winged, obs, rms]) => {
+        if (unmounted) return;
+        const build = p.payload === 'compton-gro' ? obs.buildCompton : obs.buildHubble;
+        const d = rms.createFlyRmsDeploy(
+          p,
+          {
+            orbiter: winged.buildOrbiterOpenable(look.variant, look.silts),
+            payload: build({ asLaunched: true }),
+          },
+          { earthTextureUrl },
+        );
+        stop = start(d);
+      });
+    } else {
+      // The payload: the observatory's showcase model when the mission's own /fly craft is the
+      // orbiter (Chandra), else the mission's craft (the probes).
+      const craftId = p.payload ?? p.missionId;
+      const preload = p.payload
+        ? import('$lib/three/showcase/observatories').then((o) => () => {
+            const s = o.SHOWCASE[craftId];
+            return s ? s.build() : null;
+          })
+        : preloadFlyCraft(craftId).then(() => () => flyCraft(craftId));
+      void Promise.all([
+        import('$lib/three/showcase/winged'),
+        import('$lib/three/showcase/ius'),
+        preload,
+      ]).then(([winged, iusMod, payloadOf]) => {
+        if (unmounted) return;
+        const payload = payloadOf() ?? new THREE.Group();
+        const orbiter = winged.buildOrbiterOpenable(look.variant, look.silts);
+        const ius = iusMod.buildIusStack({ payload, pamS: !!p.upperStage.pamS });
+        stop = start(createFlyDeploy(p, { orbiter, ius }, { earthTextureUrl }));
+      });
+    }
     return () => {
       unmounted = true;
       stop?.();
     };
   });
 
-  function start(orbiter: THREE.Group, ius: THREE.Group): () => void {
-    scene = createFlyDeploy(
-      profile,
-      { orbiter, ius },
-      { earthTextureUrl: `${base}/textures/2k_earth_daymap.jpg` },
-    );
+  function start(driver: Driver): () => void {
+    scene = driver;
     end = scene.end;
     const aspectOf = () => container.clientWidth / Math.max(1, container.clientHeight);
     const sceneRef = scene;
@@ -169,7 +224,9 @@
   <div class="scrim" aria-hidden="true"></div>
   <div class="blackout" style="opacity:{fade}" aria-hidden="true"></div>
   <div class="header">
-    <div class="mission">{missionName} · {profile.flight}</div>
+    <div class="mission">
+      {missionName}{missionName.includes(profile.flight) ? '' : ` · ${profile.flight}`}
+    </div>
     <div class="sub"><span class="live-dot"></span>{m.fly_deploy_title()}</div>
   </div>
   <div class="clock">
@@ -180,12 +237,12 @@
   </div>
   {#if pose}
     <div class="beat-label" data-testid="deploy-beat" data-beat={pose.beat} aria-live="polite">
-      {beatLabel[pose.beat]()}
+      {beatText(pose.beat)}
     </div>
   {/if}
   <div class="timeline" aria-hidden="true">
     <div class="track"><div class="fill" style="width:{progressPct}%"></div></div>
-    {#each beatsFor(profile) as b (b.id)}
+    {#each beats as b (b.id)}
       <span class="tick" style="left:{(b.t / end) * 100}%"></span>
     {/each}
   </div>
@@ -333,6 +390,17 @@
     color: #fff;
   }
   @media (max-width: 640px) {
+    /* the caption sits higher on a phone: the dark band reaches up behind it */
+    .scrim {
+      background:
+        linear-gradient(180deg, rgba(3, 6, 14, 0.62) 0px, transparent 150px),
+        linear-gradient(
+          0deg,
+          rgba(3, 6, 14, 0.72) 0px,
+          rgba(3, 6, 14, 0.5) 170px,
+          transparent 240px
+        );
+    }
     .met {
       font-size: 17px;
     }

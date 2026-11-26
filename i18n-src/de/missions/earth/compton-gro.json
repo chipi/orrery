@@ -1,0 +1,36 @@
+{
+  "name": "Compton Gamma Ray Observatory (STS-37)",
+  "vehicle": "Space Shuttle Atlantis (OV-104)",
+  "payload": "Gamma Ray Observatory (GRO): 34.527 lb (rund 15.700 kg) am Arm, die schwerste Nutzlast, die der Roboterarm bewegt hatte, mit vier Instrumenten (BATSE, OSSE, COMPTEL, EGRET); fünf Besatzungsmitglieder",
+  "delta_v": "~9.4 km/s (LEO)",
+  "type": "VOM SHUTTLE AUSGESETZTES GAMMASTRAHLEN-OBSERVATORIUM · BEENDET",
+  "first": "Der Shuttle-Flug, der das Compton Gamma Ray Observatory vom Roboterarm freigab, nachdem ein Notfall-Weltraumausstieg die festsitzende Antenne gelöst hatte",
+  "description": "STS-37 startete die Atlantis am 5. April 1991 um 14:22:45 UTC von Rampe 39B; in der Nutzlastbucht lag das Gamma Ray Observatory (GRO), das zweite der vier Großen Observatorien der NASA. Am dritten Flugtag hob der Arm das Observatorium an, doch seine Hochgewinnantenne entfaltete sich nicht, und Schütteln mit Triebwerken und mit dem Arm half nicht. Es folgte ein Notfall-Weltraumausstieg von Jerry Ross und Jay Apt, bei dem die Antenne früh gelöst wurde. Der Arm gab das Observatorium am 7. April um 22:36:47 UTC frei, drei Umläufe später als geplant. Ein geplanter Weltraumausstieg am vierten Flugtag testete Ausrüstung und Armbedienung. Die Atlantis landete am 11. April auf der Edwards Air Force Base, wegen starken Winds einen Tag später. Das Observatorium, später Compton genannt, arbeitete bis Juni 2000; die NASA nennt den 4. Juni 2000 als sein Ende, als es in die Atmosphäre eintrat.",
+  "events": [
+    {
+      "met": 0,
+      "label": "START",
+      "note": "Atlantis von Rampe 39B, 5. April 1991, 14:22:45 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 2.343,
+      "label": "ANTENNE KLEMMT",
+      "note": "Die Hochgewinnantenne entfaltete sich nicht; Schütteln mit Triebwerken und Arm scheiterte, ein Notfall-Weltraumausstieg löste sie. Der Bericht nennt keine Uhrzeit.",
+      "type": "warning"
+    },
+    {
+      "met": 2.343,
+      "label": "OBSERVATORIUM FREIGEGEBEN",
+      "note": "Am 7. April um 22:36:47 UTC vom Arm freigegeben, drei Umläufe später als geplant.",
+      "type": "nominal"
+    },
+    {
+      "met": 5.9811,
+      "label": "LANDUNG",
+      "note": "Edwards, Piste 33 auf dem Trockensee, 11. April 1991, 13:55:29 UTC, wegen starken Winds einen Tag später.",
+      "type": "nominal"
+    }
+  ],
+  "vehicle_stage": "Space Shuttle"
+}

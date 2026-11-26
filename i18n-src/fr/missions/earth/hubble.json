@@ -1,0 +1,42 @@
+{
+  "name": "Télescope spatial Hubble (STS-31)",
+  "vehicle": "Space Shuttle Discovery (OV-103)",
+  "payload": "Télescope spatial Hubble : 43,5 ft (13,3 m) de long, environ 11 000 kg, miroir principal de 94,5 in (2,4 m) ; équipage de cinq",
+  "delta_v": "~9.4 km/s (LEO)",
+  "type": "TÉLESCOPE SPATIAL DÉPLOYÉ PAR LA NAVETTE · ACTIF",
+  "first": "Le vol de navette qui a sorti le télescope spatial Hubble de la soute (charge utile) de Discovery et l'a libéré du bras robotique",
+  "description": "STS-31 a placé le télescope spatial Hubble sur une orbite de 332 par 331 milles marins et l'a libéré du bras robotique de Discovery. Discovery a décollé du Launch Complex 39B le 24 avril 1990 à 12:33:51 UTC, deux semaines après l'arrêt d'une première tentative à cause d'un groupe auxiliaire de puissance. Le 25 avril, une fois le panneau 2 des panneaux solaires déployé à la troisième tentative, le bras a libéré le télescope à 19:37:51 UTC ; Bruce McCandless et Kathryn Sullivan, prêts pour une sortie extravéhiculaire de secours, n'ont pas été nécessaires. Discovery s'est posée à la base aérienne d'Edwards le 29 avril, après environ 5 jours de vol. Hubble est toujours en service. Cinq missions de maintenance de la navette entre 1993 et 2009 l'ont réparé et amélioré, la dernière en mai 2009.",
+  "events": [
+    {
+      "met": 0,
+      "label": "DÉCOLLAGE",
+      "note": "Discovery depuis le Launch Complex 39B, 24 avril 1990, 12:33:51 UTC ; une première tentative le 10 avril a été arrêtée à cause d'un groupe auxiliaire de puissance.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.298,
+      "label": "CIRCULARISATION",
+      "note": "Un allumage des propulseurs de 33,5 ft/s à 19:43:05 UTC a placé Discovery sur une orbite de 332 par 331 milles marins (environ 615 par 613 km).",
+      "type": "nominal"
+    },
+    {
+      "met": 1.2944,
+      "label": "PANNEAU 2 BLOQUÉ",
+      "note": "Le panneau 2 des panneaux solaires ne s'est pas déployé à la première tentative, s'est déployé en partie à la deuxième et entièrement à la troisième ; le rapport ne donne pas d'heures.",
+      "type": "warning"
+    },
+    {
+      "met": 1.2944,
+      "label": "HUBBLE LIBÉRÉ",
+      "note": "Libéré du bras le 25 avril à 19:37:51 UTC ; la sortie extravéhiculaire de secours a été annulée.",
+      "type": "nominal"
+    },
+    {
+      "met": 5.0528,
+      "label": "ATTERRISSAGE",
+      "note": "Base aérienne d'Edwards, piste en béton 22, 29 avril 1990, train principal au sol à 13:49:56 UTC.",
+      "type": "nominal"
+    }
+  ],
+  "vehicle_stage": "Space Shuttle"
+}

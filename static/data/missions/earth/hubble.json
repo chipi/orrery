@@ -1,0 +1,103 @@
+{
+  "id": "hubble",
+  "agency": "NASA",
+  "agency_full": "National Aeronautics and Space Administration",
+  "sector": "gov",
+  "dest": "EARTH",
+  "color": "#0B3D91",
+  "year": 1990,
+  "status": "ACTIVE",
+  "departure_date": "1990-04-24",
+  "arrival_date": "1990-04-29",
+  "transit_days": 5,
+  "round_trip": true,
+  "vehicle": "Space Shuttle Discovery (OV-103)",
+  "payload": "Hubble Space Telescope: 43.5 ft (13.3 m) long, about 11,000 kg, 94.5 in (2.4 m) main mirror; crew of five",
+  "delta_v": "~9.4 km/s (LEO)",
+  "data_quality": "good",
+  "credit": "Sources: NASA JSC STS-31 Space Shuttle Mission Report (all clock times, GMT), NASA STS-31 press kit (telescope figures), NASA Hubble page and Wikipedia (servicing missions). Not in the sources used: the times of the three solar-array attempts and of the payload bay door opening. Public domain / archive.",
+  "links": [
+    {
+      "l": "STS-31 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/STS-31",
+      "t": "intro"
+    },
+    {
+      "l": "Hubble Space Telescope — NASA",
+      "u": "https://science.nasa.gov/mission/hubble/",
+      "t": "core"
+    },
+    {
+      "l": "STS-31 press kit (NASA)",
+      "u": "https://science.nasa.gov/wp-content/uploads/2023/06/sts-031r-press-kit.pdf",
+      "t": "core"
+    },
+    {
+      "l": "STS-31 Space Shuttle Mission Report (NASA JSC)",
+      "u": "https://ibiblio.org/apollo/Shuttle/Reports/Mission%20Reports/STS-31%20National%20Space%20Transportation%20System%20Mission%20Report.pdf",
+      "t": "deep"
+    },
+    {
+      "l": "Hubble Space Telescope — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Hubble_Space_Telescope",
+      "t": "intro"
+    }
+  ],
+  "flight_data_quality": "sparse",
+  "fleet_refs": [
+    {
+      "id": "space-shuttle-stack",
+      "role": "launcher"
+    },
+    {
+      "id": "discovery",
+      "role": "spacecraft"
+    },
+    {
+      "id": "lc-39b",
+      "role": "launch-site"
+    },
+    {
+      "id": "hubble",
+      "role": "payload"
+    }
+  ],
+  "flight": {
+    "launch": {
+      "vehicle_stage": "Space Shuttle",
+      "source": "NASA JSC STS-31 Space Shuttle Mission Report: orbit 332 by 331 nautical miles after the circularization burn. Launch from Complex 39B"
+    },
+    "events": [
+      {
+        "met_days": 0,
+        "type": "launch",
+        "label": "Launch — Discovery from Complex 39B",
+        "description": "24 April 1990 at 12:33:51 UTC (114:12:33:50.99 GMT) from Launch Complex 39B. The first attempt, on 10 April, was stopped at T-4 minutes by an abnormal auxiliary power unit; the unit was replaced and the launch moved to 24 April."
+      },
+      {
+        "met_days": 0.298,
+        "type": "phasing",
+        "label": "Circularization burn",
+        "description": "At 114:19:43:05 GMT a 33.5 ft/s (2 min 17 s) burn of the reaction control thrusters put Discovery in a 332 by 331 nautical mile orbit (about 615 by 613 km), higher than usual Shuttle flights."
+      },
+      {
+        "met_days": 1.2944,
+        "type": "anomaly",
+        "label": "Solar array panel 2 will not deploy",
+        "description": "After the arm lifted Hubble out of the bay, solar array panel 2 failed to deploy on the first attempt, deployed partly on the second and fully on the third. Two spacewalkers waited in the airlock at 5.0 psia. The report gives no clock times for the attempts; they fall just before the release."
+      },
+      {
+        "met_days": 1.2944,
+        "type": "separation",
+        "label": "Hubble released from the arm",
+        "description": "Released from the robotic arm at 115:19:37:51 GMT, 25 April 1990, after the array deployed; the contingency spacewalk was cancelled. Two small thruster burns at 19:38:20 and 19:58:28 GMT moved Discovery away to stand by until the telescope's aperture door opened."
+      },
+      {
+        "met_days": 5.0528,
+        "type": "earth_return",
+        "label": "Landing at Edwards",
+        "description": "Main gear touched down at 119:13:49:56 GMT, 29 April 1990, on concrete runway 22 at Edwards Air Force Base, California, after a 291-second deorbit burn at 12:37:36 GMT; wheels stopped at 13:50:58."
+      }
+    ]
+  }
+}

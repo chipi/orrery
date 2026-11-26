@@ -1,0 +1,42 @@
+{
+  "name": "Hubble Space Telescope (STS-31)",
+  "vehicle": "Space Shuttle Discovery (OV-103)",
+  "payload": "Hubble Space Telescope: 43.5 ft (13.3 m) long, about 11,000 kg, 94.5 in (2.4 m) main mirror; crew of five",
+  "delta_v": "~9.4 km/s (LEO)",
+  "type": "SHUTTLE-DEPLOYED SPACE TELESCOPE · ACTIVE",
+  "first": "The Shuttle flight that lifted the Hubble Space Telescope out of Discovery's payload bay and released it from the robotic arm",
+  "description": "STS-31 carried the Hubble Space Telescope into a 332 by 331 nautical mile orbit and released it from Discovery's robotic arm. Discovery lifted off from Launch Complex 39B on 24 April 1990 at 12:33:51 UTC, two weeks after a first attempt was stopped by an auxiliary power unit. On 25 April, once panel 2 of the solar array had deployed on its third attempt, the arm released the telescope at 19:37:51 UTC; Bruce McCandless and Kathryn Sullivan, ready for a contingency spacewalk, were not needed. Discovery landed at Edwards Air Force Base on 29 April, after about 5 days in flight. Hubble is still in operation. Five Shuttle servicing missions between 1993 and 2009 repaired and upgraded it, the last in May 2009.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Discovery from Launch Complex 39B, 24 April 1990, 12:33:51 UTC; a first attempt on 10 April was stopped by an auxiliary power unit.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.298,
+      "label": "CIRCULARIZATION",
+      "note": "A 33.5 ft/s thruster firing at 19:43:05 UTC put Discovery in a 332 by 331 nautical mile orbit (about 615 by 613 km).",
+      "type": "nominal"
+    },
+    {
+      "met": 1.2944,
+      "label": "ARRAY PANEL 2 STUCK",
+      "note": "Panel 2 of the solar array failed to deploy on the first attempt, deployed partly on the second and fully on the third; the report gives no times.",
+      "type": "warning"
+    },
+    {
+      "met": 1.2944,
+      "label": "HUBBLE RELEASED",
+      "note": "Released from the arm at 19:37:51 UTC on 25 April; the contingency spacewalk was cancelled.",
+      "type": "nominal"
+    },
+    {
+      "met": 5.0528,
+      "label": "LANDING",
+      "note": "Edwards Air Force Base, concrete runway 22, 29 April 1990, main gear down at 13:49:56 UTC.",
+      "type": "nominal"
+    }
+  ],
+  "vehicle_stage": "Space Shuttle"
+}

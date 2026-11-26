@@ -31425,6 +31425,58 @@
       "rejected_by": null,
       "scored_at": "2026-11-26T21:05:03.791Z",
       "scoring_cost_usd": 0
+    },
+    "/images/missions/hubble/01.jpg": {
+      "score": 8,
+      "subject": "The Hubble Space Telescope held on Discovery's robotic arm above Earth during STS-31, with one gold solar array panel extended, 25 April 1990.",
+      "category": "spacecraft",
+      "focal_point": {
+        "x": 0.55,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-26T22:30:24.340Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/compton-gro/01.jpg": {
+      "score": 8,
+      "subject": "The Gamma Ray Observatory held by Atlantis's robotic arm above the payload bay during STS-37, 7 April 1991.",
+      "category": "spacecraft",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.4
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-26T22:30:24.363Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/chandra/01.jpg": {
+      "score": 8,
+      "subject": "The Chandra X-ray Observatory and its Inertial Upper Stage in Columbia's payload bay on the pad at Launch Complex 39B, July 1999.",
+      "category": "spacecraft",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.45
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-26T22:30:24.402Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/chandra/02.jpg": {
+      "score": 8,
+      "subject": "The Chandra X-ray Observatory, still attached to its Inertial Upper Stage, shortly after release from Columbia on STS-93, July 1999.",
+      "category": "spacecraft",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.52
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-26T22:30:24.413Z",
+      "scoring_cost_usd": 0
     }
   }
 }

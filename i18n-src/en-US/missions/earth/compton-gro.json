@@ -1,0 +1,36 @@
+{
+  "name": "Compton Gamma Ray Observatory (STS-37)",
+  "vehicle": "Space Shuttle Atlantis (OV-104)",
+  "payload": "Gamma Ray Observatory: 34,527 lb (about 15,700 kg) at the arm, the heaviest payload the robotic arm had moved, with four instruments (BATSE, OSSE, COMPTEL, EGRET); crew of five",
+  "delta_v": "~9.4 km/s (LEO)",
+  "type": "SHUTTLE-DEPLOYED GAMMA-RAY OBSERVATORY · FLOWN",
+  "first": "The Shuttle flight that released the Compton Gamma Ray Observatory from the robotic arm after a contingency spacewalk freed its stuck antenna",
+  "description": "STS-37 launched Atlantis from pad 39B on 5 April 1991 at 14:22:45 UTC with the Gamma Ray Observatory, the second of NASA's four Great Observatories, in its payload bay. On flight day 3 the arm raised the observatory, but its high-gain antenna would not deploy, and shaking it with thrusters and with the arm failed. A contingency spacewalk by Jerry Ross and Jay Apt followed, and the antenna was freed early in it. The arm released the observatory at 22:36:47 UTC on 7 April, three revolutions late. A planned spacewalk on flight day 4 tested equipment and arm handling. Atlantis landed at Edwards Air Force Base on 11 April, a day late because of high winds. The observatory, later named Compton, worked until June 2000; NASA lists 4 June 2000 as its end, when it reentered the atmosphere.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Atlantis from pad 39B, 5 April 1991, 14:22:45 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 2.343,
+      "label": "ANTENNA STUCK",
+      "note": "The high-gain antenna would not deploy; shaking it with thrusters and the arm failed, and a contingency spacewalk freed it. The report gives no clock time.",
+      "type": "warning"
+    },
+    {
+      "met": 2.343,
+      "label": "OBSERVATORY RELEASED",
+      "note": "Released by the arm at 22:36:47 UTC on 7 April, three revolutions later than planned.",
+      "type": "nominal"
+    },
+    {
+      "met": 5.9811,
+      "label": "LANDING",
+      "note": "Edwards lakebed runway 33, 11 April 1991, 13:55:29 UTC, a day late for high winds.",
+      "type": "nominal"
+    }
+  ],
+  "vehicle_stage": "Space Shuttle"
+}

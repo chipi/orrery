@@ -2070,6 +2070,12 @@
       "cover": false
     },
     {
+      "title": "Chandra X-ray Observatory (STS-93)",
+      "file": "/images/missions/thumbnails/chandra.webp",
+      "route": "/missions?id=chandra",
+      "cover": false
+    },
+    {
       "title": "Chandrayaan-1",
       "file": "/images/missions/thumbnails/chandrayaan1.webp",
       "route": "/missions?id=chandrayaan1",
@@ -2130,6 +2136,12 @@
       "cover": false
     },
     {
+      "title": "Compton Gamma Ray Observatory (STS-37)",
+      "file": "/images/missions/thumbnails/compton-gro.webp",
+      "route": "/missions?id=compton-gro",
+      "cover": false
+    },
+    {
       "title": "Curiosity",
       "file": "/images/missions/thumbnails/curiosity.webp",
       "route": "/missions?id=curiosity",
@@ -2163,6 +2175,12 @@
       "title": "Faith 7 / MA-9",
       "file": "/images/missions/thumbnails/faith-7.webp",
       "route": "/missions?id=faith-7",
+      "cover": false
+    },
+    {
+      "title": "Falcon Heavy Demo Flight",
+      "file": "/images/missions/thumbnails/falcon-heavy-demo.webp",
+      "route": "/missions?id=falcon-heavy-demo",
       "cover": false
     },
     {
@@ -2253,6 +2271,12 @@
       "title": "Hope Probe",
       "file": "/images/missions/thumbnails/hope-probe.webp",
       "route": "/missions?id=hope-probe",
+      "cover": false
+    },
+    {
+      "title": "Hubble Space Telescope (STS-31)",
+      "file": "/images/missions/thumbnails/hubble.webp",
+      "route": "/missions?id=hubble",
       "cover": false
     },
     {
@@ -5669,7 +5693,7 @@
     "exploded_art": 76,
     "landing_art": 39,
     "blueprint_art": 18,
-    "mission_trajectories": 146,
+    "mission_trajectories": 150,
     "site_illustrations": 16,
     "lab_illustrations": 25,
     "diagrams_science": 117,

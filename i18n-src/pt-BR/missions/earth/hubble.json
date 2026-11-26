@@ -1,0 +1,42 @@
+{
+  "name": "Telescópio espacial Hubble (STS-31)",
+  "vehicle": "Space Shuttle Discovery (OV-103)",
+  "payload": "Telescópio espacial Hubble: 43,5 ft (13,3 m) de comprimento, cerca de 11.000 kg, espelho principal de 94,5 in (2,4 m); tripulação de cinco",
+  "delta_v": "~9.4 km/s (LEO)",
+  "type": "TELESCÓPIO ESPACIAL IMPLANTADO PELO ÔNIBUS ESPACIAL · ATIVO",
+  "first": "O voo do ônibus espacial que ergueu o telescópio espacial Hubble do compartimento de carga útil do Discovery e o soltou do braço robótico",
+  "description": "A STS-31 levou o telescópio espacial Hubble a uma órbita de 332 por 331 milhas náuticas e o soltou do braço robótico do Discovery. O Discovery decolou do Launch Complex 39B em 24 de abril de 1990 às 12:33:51 UTC, duas semanas depois de uma primeira tentativa ser interrompida por uma unidade de potência auxiliar. Em 25 de abril, depois que o painel 2 dos painéis solares se abriu na terceira tentativa, o braço soltou o telescópio às 19:37:51 UTC; Bruce McCandless e Kathryn Sullivan, prontos para uma caminhada espacial de contingência, não foram necessários. O Discovery pousou na Base Aérea de Edwards em 29 de abril, após cerca de 5 dias de voo. O Hubble continua em operação. Cinco missões de manutenção do ônibus espacial entre 1993 e 2009 o repararam e melhoraram, a última em maio de 2009.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANÇAMENTO",
+      "note": "Discovery do Launch Complex 39B, 24 de abril de 1990, 12:33:51 UTC; uma primeira tentativa em 10 de abril foi interrompida por uma unidade de potência auxiliar.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.298,
+      "label": "CIRCULARIZAÇÃO",
+      "note": "Uma queima dos propulsores de 33,5 ft/s às 19:43:05 UTC deixou o Discovery numa órbita de 332 por 331 milhas náuticas (cerca de 615 por 613 km).",
+      "type": "nominal"
+    },
+    {
+      "met": 1.2944,
+      "label": "PAINEL 2 PRESO",
+      "note": "O painel 2 dos painéis solares não se abriu na primeira tentativa, abriu em parte na segunda e por completo na terceira; o relatório não dá horários.",
+      "type": "warning"
+    },
+    {
+      "met": 1.2944,
+      "label": "HUBBLE SOLTO",
+      "note": "Solto do braço em 25 de abril às 19:37:51 UTC; a caminhada espacial de contingência foi cancelada.",
+      "type": "nominal"
+    },
+    {
+      "met": 5.0528,
+      "label": "POUSO",
+      "note": "Base Aérea de Edwards, pista de concreto 22, 29 de abril de 1990, trem principal no solo às 13:49:56 UTC.",
+      "type": "nominal"
+    }
+  ],
+  "vehicle_stage": "Space Shuttle"
+}

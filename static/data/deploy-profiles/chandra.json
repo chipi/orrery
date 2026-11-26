@@ -1,0 +1,42 @@
+{
+  "missionId": "chandra",
+  "flight": "STS-93",
+  "orbiter": "columbia",
+  "launchZeroUtc": "1999-07-23T04:30:59.984Z",
+  "method": "ius-tilt",
+  "orbit": { "nmi": [144.7, 153.7], "basis": "actual" },
+  "payload": "chandra",
+  "tilt": [{ "deg": 29 }, { "deg": 58 }],
+  "releaseMet": "7:16:01.0",
+  "springMs": 0.15,
+  "tableLowerDeg": -6,
+  "sepBurns": [
+    { "id": "rcs", "met": "7:17:25.0", "burnS": 6.7 },
+    { "id": "oms3", "met": "7:31:25.3", "burnS": 34.4, "dvFts": 34.5 }
+  ],
+  "upperStage": {
+    "stage1": { "met": "8:17:00.0", "burnS": 125 },
+    "stage2": { "met": "8:20:00.0", "burnS": 117 }
+  },
+  "source_tier": "flagship",
+  "estimatedFields": [
+    "the tilt times and the door opening as drawn (the report has the doors open at 204:06:08:35, MET 1:37:35; the scene compresses that wait; the press kit plans the 29 deg tilt at MET 5:35)",
+    "upperStage stage1.met and stage2.met (Jonathan McDowell's STS-93 page, to the minute: SRM-1 at 12:48 UTC, SRM-2 at 12:51 UTC) and their burn lengths (the press kit's planned 125 s and 117 s; the report says about two minutes each)",
+    "springMs and tableLowerDeg (the STS-30 and STS-34 press kits' tilt-table figures; the STS-93 kit gives none)",
+    "the first separation burn drawn as one 6.7 s burn (the report: two RCS pulses of 0.54 s and 6.7 s)"
+  ],
+  "provenance": [
+    {
+      "l": "NASA STS-93 Mission Report: launch 204:04:30:59.984 GMT; orbit after OMS-2 144.7 x 153.7 nmi; payload bay doors open 204:06:08:35; Chandra/IUS deployed 204:11:47:01 (MET 7:16:01); -X separation 204:11:48:25 with RCS F2F and F3F pulses of 0.54 s and 6.7 s; OMS-3 204:12:02:25.3 to 12:02:59.7, 34.5 ft/s; IUS first stage about two minutes, about an hour after deploy",
+      "u": "https://ibiblio.org/apollo/Shuttle/Reports/Mission%20Reports/STS-93%20Space%20Shuttle%20Mission%20Report.pdf"
+    },
+    {
+      "l": "STS-93 press kit: tilt table to 29 deg at MET 5:35 (plan), then 58 deg for deploy; IUS stage 1 125 s, stage 2 117 s",
+      "u": "https://www.nasa.gov/wp-content/uploads/2023/05/sts-093-press-kit.pdf"
+    },
+    {
+      "l": "Jonathan McDowell, STS-93 and AXAF: tilt to 58 deg 11:42 UTC, deploy 11:47, IUS SRM-1 12:48 to 12:50, SRM-2 12:51 to 12:53 UTC",
+      "u": "https://planet4589.org/space/axaf/sts93.html"
+    }
+  ]
+}

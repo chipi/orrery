@@ -1,0 +1,72 @@
+{
+  "vehicle": "orbiter",
+  "missionId": "compton-gro",
+  "flight": "STS-37",
+  "orbiter": "atlantis",
+  "runway": {
+    "id": "edwards-lakebed-33",
+    "name": "Rogers Dry Lake Runway 33",
+    "surface": "lakebed",
+    "lengthM": 10000,
+    "widthM": 90,
+    "headingDeg": 330
+  },
+  "deorbit": {
+    "met": "142:23:05.1",
+    "burnS": 221.4,
+    "dvFts": 438.6
+  },
+  "entry": {
+    "met": "143:01:38.0",
+    "altFt": 400000,
+    "reversalsMach": []
+  },
+  "taem": {
+    "met": "143:26:02.0",
+    "mach": 2.5,
+    "altFt": 83000,
+    "rangeNmi": 60
+  },
+  "approach": {
+    "outerGlideDeg": 20,
+    "innerGlideDeg": 1.5,
+    "preflareFt": 2000,
+    "gearDownFt": 250
+  },
+  "source_tier": "flagship",
+  "touchdown": {
+    "met": "143:32:44.0",
+    "keas": 156.6,
+    "mainFt": -537,
+    "noseAfterMainFt": 1500
+  },
+  "rollout": {
+    "brakeAfterMainFt": 4093,
+    "stopFt": 6863,
+    "chute": false
+  },
+  "estimatedFields": [
+    "runway.lengthM (Wikipedia, Rogers Dry Lake 15/33, 10.0 km), runway.widthM (not found; the STS-1 profile's 90 m) and runway.headingDeg (from the runway number)",
+    "touchdown.keas (the report gives 156.6 knots without saying whether equivalent or ground speed)",
+    "touchdown.noseAfterMainFt (the report gives the nose gear 6 s after the mains, not the distance: about 6 s at 250 ft/s)",
+    "rollout.stopFt (the report gives the wheels-stop time, 56 s after the mains, not the distance: constant deceleration from 156.6 kt over 56 s, 7,400 ft, from the main-gear point at -537 ft)",
+    "rollout.brakeAfterMainFt (brake speed not reported; 118 kt assumed from STS-31's 119 and STS-93's 117.2, at 6 ft/s2, 3,307 ft before the stop)",
+    "taem.mach, taem.altFt, taem.rangeNmi (the 2006 guidance workbook's nominal values; taem.met is the report's major mode change 305, which it labels terminal area energy management)",
+    "approach (the workbook's 20 deg and 1.5 deg glideslopes and preflare at 2,000 ft; gear down at 250 ft from the STS-1 press-kit plan; the flown values were not found)",
+    "entry.reversalsMach (no per-flight list of the roll-reversal Mach numbers was sourced; left empty)"
+  ],
+  "provenance": [
+    {
+      "l": "STS-37 Space Shuttle Mission Report (NASA, 1991): deorbit burn 101:12:45:50.1 GMT, 221.4 s, 438.6 ft/s; entry interface 101:13:24:23; major mode change 305 at 101:13:48:47; main gear 101:13:55:29 on lakebed runway 33 at 156.6 kt, 537 ft short of the threshold, 4 ft/s sink after an 80 kt wind shear; nose gear 6 s later; wheels stop 101:13:56:25; no blackout (TDRS). Launch 095:14:22:44.988 GMT",
+      "u": "https://ibiblio.org/apollo/Shuttle/Reports/Mission%20Reports/STS-37%20Space%20Shuttle%20Mission%20Report.pdf"
+    },
+    {
+      "l": "Entry, TAEM and Approach/Landing Guidance Workbook 21002 (2006): TAEM at about Mach 2.5, 60 n mi, 83 kft; 20 deg outer and 1.5 deg inner glideslopes, preflare about 2,000 ft",
+      "u": "https://ibiblio.org/apollo/Shuttle/Crew%20Training/Entry,%20TAEM%20and%20Approach%20Workbook.pdf"
+    },
+    {
+      "l": "Wikipedia, Rogers Dry Lake: lakebed runway 15/33, 6.2 mi (10.0 km)",
+      "u": "https://en.wikipedia.org/wiki/Rogers_Dry_Lake"
+    }
+  ]
+}

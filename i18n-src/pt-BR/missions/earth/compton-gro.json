@@ -1,0 +1,36 @@
+{
+  "name": "Compton Gamma Ray Observatory (STS-37)",
+  "vehicle": "Space Shuttle Atlantis (OV-104)",
+  "payload": "Gamma Ray Observatory (GRO): 34.527 lb (cerca de 15.700 kg) no braço, a carga útil mais pesada que o braço robótico havia movido, com quatro instrumentos (BATSE, OSSE, COMPTEL, EGRET); tripulação de cinco",
+  "delta_v": "~9.4 km/s (LEO)",
+  "type": "OBSERVATÓRIO DE RAIOS GAMA IMPLANTADO PELO ÔNIBUS ESPACIAL · ENCERRADO",
+  "first": "O voo do ônibus espacial que soltou o Compton Gamma Ray Observatory do braço robótico depois que uma caminhada espacial de contingência liberou sua antena presa",
+  "description": "A STS-37 lançou o Atlantis da plataforma 39B em 5 de abril de 1991 às 14:22:45 UTC com o Gamma Ray Observatory (GRO), o segundo dos quatro Grandes Observatórios da NASA, no compartimento de carga útil. No terceiro dia de voo o braço ergueu o observatório, mas sua antena de alto ganho não se abriu, e sacudi-la com propulsores e com o braço não adiantou. Seguiu-se uma caminhada espacial de contingência de Jerry Ross e Jay Apt, e a antena foi liberada no início. O braço soltou o observatório em 7 de abril às 22:36:47 UTC, três voltas mais tarde que o planejado. Uma caminhada espacial planejada no quarto dia testou equipamentos e o manuseio do braço. O Atlantis pousou na Base Aérea de Edwards em 11 de abril, um dia atrasado por causa de ventos fortes. O observatório, depois chamado Compton, funcionou até junho de 2000; a NASA aponta 4 de junho de 2000 como seu fim, quando reentrou na atmosfera.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANÇAMENTO",
+      "note": "Atlantis da plataforma 39B, 5 de abril de 1991, 14:22:45 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 2.343,
+      "label": "ANTENA PRESA",
+      "note": "A antena de alto ganho não se abriu; sacudi-la com propulsores e com o braço falhou, e uma caminhada espacial de contingência a liberou. O relatório não dá o horário.",
+      "type": "warning"
+    },
+    {
+      "met": 2.343,
+      "label": "OBSERVATÓRIO SOLTO",
+      "note": "Solto pelo braço em 7 de abril às 22:36:47 UTC, três voltas mais tarde que o planejado.",
+      "type": "nominal"
+    },
+    {
+      "met": 5.9811,
+      "label": "POUSO",
+      "note": "Edwards, pista 33 no leito do lago seco, 11 de abril de 1991, 13:55:29 UTC, um dia atrasado pelo vento.",
+      "type": "nominal"
+    }
+  ],
+  "vehicle_stage": "Space Shuttle"
+}

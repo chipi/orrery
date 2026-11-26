@@ -1,0 +1,30 @@
+{
+  "missionId": "compton-gro",
+  "flight": "STS-37",
+  "orbiter": "atlantis",
+  "launchZeroUtc": "1991-04-05T14:22:44.988Z",
+  "method": "rms",
+  "orbit": { "nmi": [243, 243], "basis": "plan" },
+  "payload": "compton-gro",
+  "releaseMet": "56:14:02.0",
+  "sepBurns": [{ "id": "rcs", "met": "56:15:02.0", "burnS": 4 }],
+  "anomaly": "antenna-eva",
+  "eva": { "met": "51:37:15.0", "durationS": 12600 },
+  "source_tier": "flagship",
+  "estimatedFields": [
+    "the bay-door opening, the grapple, the move to the release position and the solar array deployment times (the report: grapple about 1 h after the arm was positioned, the move about 1 h after that; no clock times)",
+    "eva.met (about 18:00 UTC on 7 April, the English Wikipedia's STS-37 page; the report gives no start time) and eva.durationS (the report's 3 h 30 min; Wikipedia gives 4 h 32 min)",
+    "sepBurns (no separation burn after the release is in the report; one RCS burn a minute after it is drawn)",
+    "the arm's joint angles, how far Compton was lowered for the spacewalk and the antenna boom's stowed angle"
+  ],
+  "provenance": [
+    {
+      "l": "NASA STS-37 Mission Report: launch 095:14:22:44.988 GMT; the GRO high-gain antenna would not deploy after GRO was raised on the RMS; RCS and RMS shaking failed; a 3 h 30 min contingency EVA, the RMS lowering GRO so the antenna was reachable from the bay; the antenna freed early in the EVA; release from the RMS 097:22:36:47 GMT",
+      "u": "https://ibiblio.org/apollo/Shuttle/Reports/Mission%20Reports/STS-37%20Space%20Shuttle%20Mission%20Report.pdf"
+    },
+    {
+      "l": "STS-37 - Wikipedia: EVA 1 on 7 April 1991 about 18:00 to 22:00 UTC (summary read through a fetch summariser)",
+      "u": "https://en.wikipedia.org/wiki/STS-37"
+    }
+  ]
+}

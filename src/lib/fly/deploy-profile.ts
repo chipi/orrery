@@ -7,8 +7,8 @@
  *
  * Times are Mission Elapsed Time strings "H:MM:SS.s" from liftoff (`launchZeroUtc`), computed
  * from the post-flight mission reports' GMT event times. Anything not in a source is named in
- * `estimatedFields`. Only the IUS tilt-table release (`ius-tilt`) is built; `rms` is reserved
- * for the arm-released observatories (Hubble, Compton).
+ * `estimatedFields`. Two methods: the IUS tilt-table release (`ius-tilt`: Galileo, Magellan,
+ * Ulysses, Chandra) and the robotic arm's release (`rms`: Hubble, Compton), each its own scene.
  */
 import { parseGet } from './return-profile';
 
@@ -26,14 +26,25 @@ export interface UpperStageBurn {
   burnS: number;
 }
 
+export interface DeployOrbit {
+  nmi: [number, number];
+  incDeg?: number;
+  basis: 'plan' | 'actual';
+}
+
+export type DeployOrbiter = 'atlantis' | 'discovery' | 'columbia' | 'challenger' | 'endeavour';
+
 export interface DeployProfileRaw {
   missionId: string;
   /** The Shuttle flight, e.g. "STS-34". */
   flight: string;
-  orbiter: 'atlantis' | 'discovery' | 'columbia' | 'challenger' | 'endeavour';
+  orbiter: DeployOrbiter;
   launchZeroUtc: string;
-  method: 'ius-tilt' | 'rms';
-  orbit: { nmi: [number, number]; incDeg?: number; basis: 'plan' | 'actual' };
+  method: 'ius-tilt';
+  orbit: DeployOrbit;
+  /** The payload's showcase fleet id when the mission's own /fly craft is the orbiter (Chandra:
+   *  the coast and the landing fly Columbia). Absent: the mission's craft (`flyCraft`). */
+  payload?: string;
   /** The tilt table's stops in order: checkout (29 deg), then the deployment angle. */
   tilt: { deg: number }[];
   releaseMet: string;
@@ -53,6 +64,47 @@ export interface DeployProfileRaw {
   provenance: { l: string; u: string }[];
 }
 
+/**
+ * The arm's release (Hubble on STS-31, Compton on STS-37): the RMS grapples the observatory in the
+ * bay, lifts it out, its arrays and antennas deploy on the arm, the end effector lets go and the
+ * orbiter backs away on its RCS. Only the release and the separation burns have report times.
+ */
+export interface RmsDeployProfileRaw {
+  missionId: string;
+  flight: string;
+  orbiter: DeployOrbiter;
+  launchZeroUtc: string;
+  method: 'rms';
+  orbit: DeployOrbit;
+  /** The observatory's showcase fleet id ('hubble', 'compton-gro'). */
+  payload: string;
+  releaseMet: string;
+  sepBurns: DeployBurn[];
+  /**
+   * What went wrong on the arm, as flown. 'array-retry': Hubble's solar array panel 2 failed to
+   * deploy, half deployed on the second attempt, deployed on the third (STS-31 report).
+   * 'antenna-eva': Compton's high-gain antenna stayed stowed through RCS and arm shaking until a
+   * contingency spacewalk freed it, with Compton lowered toward the bay (STS-37 report).
+   */
+  anomaly?: 'array-retry' | 'antenna-eva';
+  /** The contingency spacewalk ('antenna-eva'): its start and its length. */
+  eva?: { met: string; durationS: number };
+  source_tier: string;
+  estimatedFields: string[];
+  provenance: { l: string; u: string }[];
+}
+
+export interface RmsDeployProfile extends RmsDeployProfileRaw {
+  releaseS: number;
+  sepBurnsS: number[];
+  evaS?: number;
+}
+
+/** Either kind of deploy, as loaded. */
+export type AnyDeployProfile = DeployProfile | RmsDeployProfile;
+
+export const isRmsDeploy = (p: AnyDeployProfile): p is RmsDeployProfile => p.method === 'rms';
+
 /** A profile with every MET parsed to seconds since liftoff. */
 export interface DeployProfile extends DeployProfileRaw {
   releaseS: number;
@@ -71,31 +123,79 @@ function isBurn(b: unknown): b is UpperStageBurn {
   return !!r && typeof r === 'object' && parseGet(r.met) != null && isPos(r.burnS);
 }
 
-/** Fail-closed shape check: every MET parses and rises in flight order, each burn after the last
- *  one ended. */
-export function isValidDeployProfile(d: unknown): d is DeployProfileRaw {
-  if (!d || typeof d !== 'object') return false;
-  const p = d as Record<string, unknown>;
+function commonOk(p: Record<string, unknown>): boolean {
   if (typeof p.missionId !== 'string' || typeof p.flight !== 'string') return false;
   if (!ORBITERS.includes(p.orbiter as string)) return false;
   if (typeof p.launchZeroUtc !== 'string' || Number.isNaN(Date.parse(p.launchZeroUtc))) {
     return false;
   }
-  if (p.method !== 'ius-tilt') return false;
   const orbit = p.orbit as Record<string, unknown> | undefined;
   if (!orbit || !Array.isArray(orbit.nmi) || orbit.nmi.length !== 2) return false;
   if (!orbit.nmi.every(isPos) || !['plan', 'actual'].includes(orbit.basis as string)) return false;
   if (orbit.incDeg !== undefined && !isPos(orbit.incDeg)) return false;
+  if (p.payload !== undefined && (typeof p.payload !== 'string' || !p.payload)) return false;
+  if (!Array.isArray(p.sepBurns) || p.sepBurns.length < 1) return false;
+  const sep = p.sepBurns as Record<string, unknown>[];
+  if (!sep.every((b) => (b.id === 'oms3' || b.id === 'rcs') && isBurn(b))) return false;
+  if (!sep.every((b) => b.dvFts === undefined || isPos(b.dvFts))) return false;
+  return (
+    typeof p.source_tier === 'string' &&
+    Array.isArray(p.estimatedFields) &&
+    Array.isArray(p.provenance)
+  );
+}
+
+/** Each [start, length] begins after the one before it ended. */
+function inOrder(seq: [number, number][]): boolean {
+  for (let i = 1; i < seq.length; i++) if (seq[i][0] < seq[i - 1][0] + seq[i - 1][1]) return false;
+  return true;
+}
+
+/** The arm's release: the spacewalk (if any) ends before the release, the burns after it. */
+export function isValidRmsDeployProfile(d: unknown): d is RmsDeployProfileRaw {
+  if (!d || typeof d !== 'object') return false;
+  const p = d as Record<string, unknown>;
+  if (p.method !== 'rms' || !commonOk(p) || typeof p.payload !== 'string') return false;
+  if (p.anomaly !== undefined && p.anomaly !== 'array-retry' && p.anomaly !== 'antenna-eva') {
+    return false;
+  }
+  const release = parseGet(p.releaseMet);
+  if (release == null) return false;
+  const seq: [number, number][] = [];
+  const eva = p.eva as Record<string, unknown> | undefined;
+  if (eva !== undefined) {
+    const at = parseGet(eva?.met);
+    if (p.anomaly !== 'antenna-eva' || at == null || !isPos(eva.durationS)) return false;
+    seq.push([at, eva.durationS]);
+  }
+  seq.push([release, 0]);
+  for (const b of p.sepBurns as Record<string, unknown>[])
+    seq.push([parseGet(b.met)!, b.burnS as number]);
+  return inOrder(seq);
+}
+
+export function expandRmsDeployProfile(raw: RmsDeployProfileRaw): RmsDeployProfile {
+  return {
+    ...raw,
+    releaseS: parseGet(raw.releaseMet)!,
+    sepBurnsS: raw.sepBurns.map((b) => parseGet(b.met)!),
+    evaS: raw.eva ? parseGet(raw.eva.met)! : undefined,
+  };
+}
+
+/** Fail-closed shape check: every MET parses and rises in flight order, each burn after the last
+ *  one ended. */
+export function isValidDeployProfile(d: unknown): d is DeployProfileRaw {
+  if (!d || typeof d !== 'object') return false;
+  const p = d as Record<string, unknown>;
+  if (p.method !== 'ius-tilt' || !commonOk(p)) return false;
   if (!Array.isArray(p.tilt) || p.tilt.length < 1) return false;
   const degs = (p.tilt as Record<string, unknown>[]).map((t) => t?.deg);
   if (!degs.every((x) => isPos(x) && x < 90)) return false;
   for (let i = 1; i < degs.length; i++)
     if ((degs[i] as number) <= (degs[i - 1] as number)) return false;
   if (!isPos(p.springMs) || !isNumber(p.tableLowerDeg) || p.tableLowerDeg > 0) return false;
-  if (!Array.isArray(p.sepBurns) || p.sepBurns.length < 1) return false;
   const sep = p.sepBurns as Record<string, unknown>[];
-  if (!sep.every((b) => (b.id === 'oms3' || b.id === 'rcs') && isBurn(b))) return false;
-  if (!sep.every((b) => b.dvFts === undefined || isPos(b.dvFts))) return false;
   const us = p.upperStage as Record<string, unknown> | undefined;
   if (!us || !isBurn(us.stage1) || !isBurn(us.stage2)) return false;
   const pam = us.pamS as Record<string, unknown> | undefined;
@@ -111,12 +211,7 @@ export function isValidDeployProfile(d: unknown): d is DeployProfileRaw {
       return [parseGet(r.met)!, r.burnS as number] as [number, number];
     }),
   ];
-  for (let i = 1; i < seq.length; i++) if (seq[i][0] < seq[i - 1][0] + seq[i - 1][1]) return false;
-  return (
-    typeof p.source_tier === 'string' &&
-    Array.isArray(p.estimatedFields) &&
-    Array.isArray(p.provenance)
-  );
+  return inOrder(seq);
 }
 
 export function expandDeployProfile(raw: DeployProfileRaw): DeployProfile {
@@ -152,12 +247,13 @@ export async function loadDeployProfile(
   missionId: string | undefined | null,
   fetchFn: typeof fetch = fetch,
   baseUrl = '',
-): Promise<DeployProfile | null> {
+): Promise<AnyDeployProfile | null> {
   if (!hasDeployProfile(missionId)) return null;
   try {
     const res = await fetchFn(`${baseUrl}/data/deploy-profiles/${missionId}.json`);
     if (!res.ok) return null;
     const data: unknown = await res.json();
+    if (isValidRmsDeployProfile(data)) return expandRmsDeployProfile(data);
     return isValidDeployProfile(data) ? expandDeployProfile(data) : null;
   } catch {
     return null;

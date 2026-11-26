@@ -1,0 +1,33 @@
+{
+  "missionId": "hubble",
+  "flight": "STS-31",
+  "orbiter": "discovery",
+  "launchZeroUtc": "1990-04-24T12:33:50.990Z",
+  "method": "rms",
+  "orbit": { "nmi": [330, 330], "incDeg": 28.45, "basis": "plan" },
+  "payload": "hubble",
+  "releaseMet": "31:04:00.0",
+  "sepBurns": [
+    { "id": "rcs", "met": "31:04:29.0", "burnS": 4 },
+    { "id": "rcs", "met": "31:24:37.0", "burnS": 4 }
+  ],
+  "anomaly": "array-retry",
+  "source_tier": "flagship",
+  "estimatedFields": [
+    "the bay-door opening, the grapple, the unberth and the array and antenna deployment times (not in the report or the press kit; the scene times them editorially before the release)",
+    "the times of the three attempts on solar array panel 2 (the report gives their outcome, not their times)",
+    "sepBurns burnS (the report gives the two RCS burns' start times only) and their direction",
+    "the arm's joint angles and the height Hubble is held at (the press kit: above the crew cabin, the aperture door away from the Sun)",
+    "orbit.nmi (the press kit's planned 330 nmi circular orbit)"
+  ],
+  "provenance": [
+    {
+      "l": "NASA STS-31 Mission Report: launch 114:12:33:50.99 GMT; RMS grapple, unberth and deploy normal; solar array panel 2 failed to deploy on the first attempt, partially deployed on the second, deployed on the third; HST released from the RMS 115:19:37:51; RCS separation burns 115:19:38:20 (L1A) and 115:19:58:28 (F2F)",
+      "u": "https://ibiblio.org/apollo/Shuttle/Reports/Mission%20Reports/STS-31%20National%20Space%20Transportation%20System%20Mission%20Report.pdf"
+    },
+    {
+      "l": "STS-31 press kit: the arm lifts HST from the bay and holds it above the crew cabin with its door away from the Sun; arrays unfurl, then the two high-gain antennas deploy; release; 330 nmi, 28.45 deg",
+      "u": "https://science.nasa.gov/wp-content/uploads/2023/06/sts-031r-press-kit.pdf"
+    }
+  ]
+}

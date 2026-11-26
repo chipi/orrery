@@ -200,9 +200,12 @@ export function expandReturnProfile(raw: ReturnProfileRaw): ReturnProfile {
   };
 }
 
-/** Mission ids with a profile file: the directory listing, so a new file is a new mission. */
+/** Mission ids with a profile file: the directory listing, so a new file is a new mission. Only
+ *  the keys are used (the loader fetches the file). `no-inline`: a plain `?url` inlined each JSON
+ *  as a data URL in its own lazy chunk (~2 KB each in /fly's lazy budget); now each chunk is a
+ *  path string, and lazy keeps them out of the page's static closure. */
 const FILES = import.meta.glob('/static/data/return-profiles/*.json', {
-  query: '?url',
+  query: '?url&no-inline',
   import: 'default',
 });
 export const RETURN_MISSION_IDS: ReadonlySet<string> = new Set(

@@ -846,6 +846,12 @@ export interface OrbiterOpts {
    * hidden. Default (omitted): the gear stays down, doors open.
    */
   gear?: 'animated';
+  /**
+   * Columbia's SILTS pod on the fin tip (default: on for Columbia). It came with the
+   * 1986 refit (STS-61-C), so Columbia's earlier flights go without it (orbiterLook in
+   * orbiter-stance.ts).
+   */
+  silts?: boolean;
 }
 
 const TONES: Record<Variant, Tone> = {
@@ -1197,7 +1203,7 @@ export function buildOrbiter(o: OrbiterOpts): THREE.Group {
     fr.scale.set(0.9, 3.0, 0.75);
     fr.position.set(0, stn(30.0), -(finV + 0.05));
   }
-  if (o.variant === 'columbia') {
+  if (o.variant === 'columbia' && o.silts !== false) {
     // SILTS pod on the fin tip, a nose pointing forward
     const silts = mesh(new THREE.SphereGeometry(1, 16, 12), M.white, g);
     silts.scale.set(0.45, 1.8, 0.55);
@@ -2056,6 +2062,7 @@ const R_BURAN: ShowcaseRef[] = [
  */
 export function buildOrbiterOpenable(
   variant: Exclude<Variant, 'buran' | 'gli'> = 'shuttle',
+  silts?: boolean,
 ): THREE.Group {
   return buildOrbiter({
     variant,
@@ -2064,8 +2071,26 @@ export function buildOrbiterOpenable(
     bayDoors: 'animated',
     rms: true,
     gear: 'animated',
+    silts,
   });
 }
+
+/** A Shuttle orbiter as it flies: gear up, doors closed (launch stack, Earth-orbit coast). */
+export function buildOrbiterFlying(
+  variant: Exclude<Variant, 'buran' | 'gli'> = 'shuttle',
+  silts?: boolean,
+): THREE.Group {
+  const root = buildOrbiter({ variant, length: L0, span: SPAN0, gear: 'animated', silts });
+  (root.userData.setGear as (t: number) => void)(0);
+  return root;
+}
+
+/** /fly's Earth-orbit craft (fly-craft.ts): STS-1 flew before Columbia carried SILTS. */
+const flying = (variant: 'shuttle' | 'columbia', silts?: boolean) =>
+  Object.assign((): THREE.Group => buildOrbiterFlying(variant, silts), { diameterM: 4.6 });
+export const buildColumbiaSts1 = flying('columbia', false);
+export const buildColumbiaFlying = flying('columbia');
+export const buildShuttleFlying = flying('shuttle');
 
 function orbiter(variant: Variant, extra: ShowcaseRef[] = []): ShowcaseModel {
   return {

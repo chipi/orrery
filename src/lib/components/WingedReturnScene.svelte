@@ -26,14 +26,17 @@
   } from '$lib/three/fly-winged-return-scene';
   import { formatGet } from '$lib/fly/return-profile';
   import type { WingedProfile } from '$lib/fly/winged-profile';
+  import { orbiterLook } from '$lib/three/showcase/orbiter-stance';
 
   interface Props {
     profile: WingedProfile;
     missionName: string;
+    /** The flight's launch date (ISO): the orbiter's era (Columbia's SILTS pod from 1986). */
+    launchDate?: string;
     hudHidden?: boolean;
     onComplete?: () => void;
   }
-  let { profile, missionName, hudHidden = false, onComplete }: Props = $props();
+  let { profile, missionName, launchDate, hudHidden = false, onComplete }: Props = $props();
 
   let container: HTMLDivElement;
   let ar: AscentRenderer | undefined;
@@ -83,8 +86,11 @@
       import('$lib/three/showcase/runway'),
     ]).then(([winged, runwayMod]) => {
       if (unmounted) return;
-      const variant = profile.orbiter === 'columbia' ? 'columbia' : 'shuttle';
-      stop = start(winged.buildOrbiterOpenable(variant), runwayMod.buildRunway(profile.runway));
+      const look = orbiterLook(profile.orbiter, launchDate);
+      stop = start(
+        winged.buildOrbiterOpenable(look.variant, look.silts),
+        runwayMod.buildRunway(profile.runway),
+      );
     });
     return () => {
       unmounted = true;

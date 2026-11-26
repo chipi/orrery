@@ -197,6 +197,8 @@
   import CoastScene from '$lib/components/CoastScene.svelte';
   import { getEarthOrbitCoast } from '$lib/orbital/earth-orbit-registry';
   import { preloadFlyCraft } from '$lib/three/fly-craft';
+  import { preloadLauncherModel } from '$lib/three/launcher-models';
+  import { orbiterLook } from '$lib/three/showcase/orbiter-stance';
   import { LOOP_CAP as LEO_LOOP_CAP } from '$lib/three/fly-leo-coast-scene';
   import {
     loadLaunchProfile,
@@ -407,6 +409,11 @@
     missionId: mission.id,
     launcherHeightM,
     injectionBurn: launchInjectionBurn,
+    // The Shuttle's orbiter and its era (SILTS, the white tanks of STS-1 and STS-2).
+    orbiterLook: orbiterLook(
+      mission.fleet_refs?.find((r) => r.role === 'spacecraft')?.id,
+      mission.dep_label,
+    ),
   });
   function startLaunch() {
     // Until the URL's flight is applied, `mission` is still the default ORRERY-1 flight: a launch
@@ -422,6 +429,7 @@
       loadLaunchProfile(launcher.id, fetch, base, launcher.name),
       preloadFlyCraft(mission.id ?? ''),
       loadLauncherHeight(),
+      preloadLauncherModel(launcher.id),
     ])
       .then(async ([p]) => {
         if (!p) return;
@@ -3674,6 +3682,7 @@
   {#await import('$lib/components/WingedReturnScene.svelte') then { default: WingedReturnScene }}
     <WingedReturnScene
       profile={wingedProfile}
+      launchDate={mission.dep_label}
       missionName={mission.name}
       {hudHidden}
       onComplete={() => dispatchPhase({ type: 'touchdown' })}

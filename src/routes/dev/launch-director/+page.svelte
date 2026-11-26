@@ -18,6 +18,7 @@
   import { base } from '$app/paths';
   import { streamedUrl } from '$lib/asset-url';
   import { createAscentScene, VEHICLE_LENGTH_KM, type AscentScene } from '$lib/three/ascent-scene';
+  import { preloadLauncherModel } from '$lib/three/launcher-models';
   import { createAscentRenderer, type AscentRenderer } from '$lib/three/ascent-renderer';
   import { resolveLaunchGround } from '$lib/three/launch-ground';
   import {
@@ -123,6 +124,7 @@
         duration,
         endT: duration,
       });
+      await preloadLauncherModel(profile.id);
       const w = container.clientWidth;
       const h = container.clientHeight;
       const launchSite = profile.launchSite;

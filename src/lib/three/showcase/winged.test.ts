@@ -1,11 +1,20 @@
 import { describe, it, expect } from 'vitest';
 import * as THREE from 'three';
-import { buildOrbiter, buildOrbiterOpenable, SHOWCASE, type RmsRig } from './winged';
+import {
+  buildColumbiaFlying,
+  buildColumbiaSts1,
+  buildOrbiter,
+  buildOrbiterOpenable,
+  buildShuttleFlying,
+  SHOWCASE,
+  type RmsRig,
+} from './winged';
 import {
   MAIN_GROUND_Z,
   NOSE_BELLY_Z,
   NOSE_GROUND_Z,
   ORBITER_REST_PITCH_DEG,
+  orbiterLook,
 } from './orbiter-stance';
 
 // the model's authored extent, nose to the fin tip (HAER drawing): built at it, scale 1
@@ -171,5 +180,42 @@ describe('Shuttle orbiter landing gear (W12)', () => {
 
   it('the openable orbiter has the gear rig too', () => {
     expect(typeof buildOrbiterOpenable().userData.setGear).toBe('function');
+  });
+});
+
+describe('the orbiter in flight, by era', () => {
+  const visibleBox = (root: THREE.Object3D): THREE.Box3 => {
+    root.updateMatrixWorld(true);
+    const b = new THREE.Box3();
+    root.traverse((o) => {
+      const m = o as THREE.Mesh;
+      if (!m.isMesh) return;
+      for (let p: THREE.Object3D | null = m; p; p = p.parent) if (!p.visible) return;
+      b.union(new THREE.Box3().setFromObject(m));
+    });
+    return b;
+  };
+
+  it('flies gear up: nothing hangs below the belly toward the main wheels’ ground', () => {
+    // Gear down, the wheels reach the ground at body z 4.85; stowed, only the 16° body flap
+    // hangs a little below the belly (~2.3).
+    expect(visibleBox(buildShuttleFlying()).max.z).toBeLessThan(2.8);
+    expect(visibleBox(buildOrbiterOpenable('shuttle')).max.z).toBeGreaterThan(4.5);
+  });
+
+  it('STS-1 Columbia flies without the 1986 SILTS pod; later Columbia carries it', () => {
+    const finTop = (r: THREE.Object3D): number => -visibleBox(r).min.z;
+    expect(finTop(buildColumbiaFlying()) - finTop(buildColumbiaSts1())).toBeGreaterThan(0.3);
+    expect(orbiterLook('columbia', '1981-04-12')).toEqual({
+      variant: 'columbia',
+      silts: false,
+      whiteTank: true,
+    });
+    expect(orbiterLook('columbia', '1999-07-23').silts).toBe(true);
+    expect(orbiterLook('space-shuttle-orbiter', '1989-10-18')).toEqual({
+      variant: 'shuttle',
+      silts: true,
+      whiteTank: false,
+    });
   });
 });

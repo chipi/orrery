@@ -158,6 +158,12 @@
           import('$lib/three/lineup/lineup-scene'),
           import('$lib/three/lineup/scale-figures'),
           import('$lib/three/lineup/cartoon-figures'),
+          // The Shuttle stack's orbiter is a lazy chunk the launcher builder needs up front.
+          kind === 'launchers'
+            ? import('$lib/three/launcher-models').then((l) =>
+                l.preloadLauncherModel('space-shuttle-stack'),
+              )
+            : undefined,
         ]);
         const cats = LINEUP_CATEGORIES[kind];
         const records = await Promise.all(

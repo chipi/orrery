@@ -25,6 +25,7 @@
   import { formatGet } from '$lib/fly/return-profile';
   import type { DeployProfile } from '$lib/fly/deploy-profile';
   import { flyCraft, preloadFlyCraft } from '$lib/three/fly-craft';
+  import { orbiterLook } from '$lib/three/showcase/orbiter-stance';
 
   interface Props {
     profile: DeployProfile;
@@ -78,9 +79,9 @@
       preloadFlyCraft(profile.missionId),
     ]).then(([winged, iusMod]) => {
       if (unmounted) return;
-      const variant = profile.orbiter === 'columbia' ? 'columbia' : 'shuttle';
+      const look = orbiterLook(profile.orbiter, profile.launchZeroUtc);
       const payload = flyCraft(profile.missionId) ?? new THREE.Group();
-      const orbiter = winged.buildOrbiterOpenable(variant);
+      const orbiter = winged.buildOrbiterOpenable(look.variant, look.silts);
       const ius = iusMod.buildIusStack({ payload, pamS: !!profile.upperStage.pamS });
       stop = start(orbiter, ius);
     });

@@ -94,6 +94,7 @@
     type Pt,
   } from '$lib/orbital/launch-director-debug-plot';
   import { onLayerChange } from '$lib/science-layers';
+  import type { OrbiterLook } from '$lib/three/showcase/orbiter-stance';
   import { LAUNCH_FORCE_LAYER_ENTRIES } from '$lib/orbital/launch-force-layers';
 
   interface MissionDossier {
@@ -106,6 +107,8 @@
     /** The mission's id, for the profile's per-flight values (separation delay, recovery). */
     missionId?: string;
     launcherHeightM?: number;
+    /** A Shuttle flight's look (orbiter, SILTS, a white tank). */
+    orbiterLook?: OrbiterLook;
     /** The post-SECO injection burn (RFC-034 §3.1); null when the mission has no
      *  kick/upper injection stage — the beat is then absent. */
     injectionBurn?: InjectionBurnParams | null;
@@ -466,6 +469,7 @@
       spacecraftId: mission.spacecraftId,
       launcherHeightM: mission.launcherHeightM,
       launcherId: dbg?.get('launcher') || profile.id,
+      orbiterLook: mission.orbiterLook,
       recovery: recoveryFor(profile, mission.missionId),
       boosterCount: profile.boosters?.count ?? 0,
       boosterAirLitCount: profile.boosters?.airLitCount ?? 0,

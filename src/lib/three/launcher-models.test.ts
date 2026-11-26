@@ -1,7 +1,7 @@
 // @vitest-environment jsdom
 import { describe, it, expect } from 'vitest';
 import * as THREE from 'three';
-import { buildLauncherModel, LAUNCHER_MODEL_IDS } from './launcher-models';
+import { buildLauncherModel, LAUNCHER_MODEL_IDS, preloadLauncherModel } from './launcher-models';
 
 /**
  * Gaps along a launcher's body axis: the y-ranges the core stack's visible meshes cover
@@ -64,4 +64,47 @@ describe('launcher models are one connected stack', () => {
       expect(axisGaps(id)).toEqual([]);
     });
   }
+});
+
+describe('the Shuttle stack stands to the HAER drawings (TX-116 sheet 3, TX-116-K sheet 3)', () => {
+  const box = (o: THREE.Object3D): THREE.Box3 => {
+    o.updateWorldMatrix(true, true);
+    const b = new THREE.Box3();
+    o.traverse((c) => {
+      const m = c as THREE.Mesh;
+      if (m.isMesh && m.visible && !(m.material as THREE.Material).transparent)
+        b.union(new THREE.Box3().setFromObject(m));
+    });
+    return b;
+  };
+
+  it('tank, boosters and the preloaded HAER orbiter sit where the stack sheet puts them', async () => {
+    await preloadLauncherModel('space-shuttle-stack');
+    // vehLen = the stack's height, so the model reads in metres.
+    const m = buildLauncherModel('space-shuttle-stack', 56.4, 2);
+    const et = box(m.booster);
+    expect(et.max.y).toBeCloseTo(56.4, 1);
+    expect(et.min.y).toBeCloseTo(9.71, 1);
+    expect(et.max.x).toBeCloseTo(4.2, 1);
+    const srbs = m.strapOns!.children.map(box);
+    expect(srbs).toHaveLength(2);
+    for (const b of srbs) {
+      expect(b.max.y).toBeCloseTo(45.72, 1);
+      expect(b.min.y).toBeCloseTo(0, 1);
+      expect(Math.abs(b.getCenter(new THREE.Vector3()).x)).toBeCloseTo(6.36, 1);
+    }
+    const orb = box(m.upperStage);
+    // Nose to fin tip 37.07 m, the fin tip 2.95 m up and 19.4 m off the tank's axis, the
+    // belly 5.45 m off it (sheet 3, starboard view).
+    expect(orb.min.y).toBeCloseTo(2.95, 1);
+    expect(orb.max.y).toBeGreaterThan(39.7);
+    expect(orb.max.y).toBeLessThan(40.2);
+    expect(orb.max.z).toBeGreaterThan(19.2);
+    expect(orb.max.z).toBeLessThan(19.6);
+    // The belly at mid-body (the drooped body flap hangs lower, so not the whole box).
+    const ray = new THREE.Raycaster(new THREE.Vector3(0, 20, 0), new THREE.Vector3(0, 0, 1));
+    const belly = ray.intersectObject(m.upperStage, true)[0]?.point.z ?? 0;
+    expect(belly).toBeGreaterThan(5.3);
+    expect(belly).toBeLessThan(5.6);
+  });
 });

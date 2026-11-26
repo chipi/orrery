@@ -23,9 +23,10 @@ const FLY_CRAFT: Record<string, readonly [string, string]> = {
   'soyuz-11': ['capsules-classic', 'soyuz-7k-ok'],
   'shenzhou-1': ['station-freighters', 'shenzhou'],
   'shenzhou-5': ['station-freighters', 'shenzhou'],
-  'sts-1': ['winged', 'columbia'],
-  'sts-107': ['winged', 'columbia'],
-  'sts-51-l': ['winged', 'challenger'],
+  // In flight: gear up (the showcase stands on it). STS-1 predates Columbia's SILTS pod.
+  'sts-1': ['winged', 'buildColumbiaSts1'],
+  'sts-107': ['winged', 'buildColumbiaFlying'],
+  'sts-51-l': ['winged', 'buildShuttleFlying'],
   inspiration4: ['capsules-commercial', 'crew-dragon'],
   'polaris-dawn': ['capsules-commercial', 'crew-dragon'],
   ...Object.fromEntries(
@@ -138,7 +139,9 @@ async function loadBuilder(
   const mod = await load();
   const show = mod.SHOWCASE?.[src[1]];
   const fn = show?.build ?? (mod[src[1]] as (() => THREE.Group) | undefined);
-  return typeof fn === 'function' ? { build: fn, diameterM: show?.diameterM } : null;
+  // An exported builder may carry its body diameter (winged.ts buildColumbiaSts1 …).
+  const diameterM = show?.diameterM ?? (fn as { diameterM?: number } | undefined)?.diameterM;
+  return typeof fn === 'function' ? { build: fn, diameterM } : null;
 }
 
 /** The family module path for a mission's craft, if it has one. */

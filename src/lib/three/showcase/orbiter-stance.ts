@@ -17,6 +17,23 @@ export const NOSE_BELLY_Z = 1.735;
 /** The ground plane under each gear's wheels (body z): the drawing's y = 0 and y = 1.12. */
 export const MAIN_GROUND_Z = 4.85;
 export const NOSE_GROUND_Z = 4.85 - 1.12;
+/** How a Shuttle flight looked, from its orbiter and launch date (ISO; undefined: as flown
+ *  longest). Columbia carried the SILTS pod on the fin from STS-61-C (12 Jan 1986); STS-1 and
+ *  STS-2 (1981) flew white-painted external tanks, STS-3 on the bare orange foam. */
+export interface OrbiterLook {
+  variant: 'shuttle' | 'columbia';
+  silts: boolean;
+  whiteTank: boolean;
+}
+export function orbiterLook(orbiter: string | undefined, date: string | undefined): OrbiterLook {
+  const d = date && /^\d{4}-\d{2}-\d{2}/.test(date) ? date.slice(0, 10) : undefined;
+  return {
+    variant: orbiter === 'columbia' ? 'columbia' : 'shuttle',
+    silts: !d || d >= '1986-01-12',
+    whiteTank: !!d && d < '1982-01-01',
+  };
+}
+
 /** Body pitch standing on all three gears (deg, nose up +): nose-down. */
 export const ORBITER_REST_PITCH_DEG =
   (-Math.atan((MAIN_GROUND_Z - NOSE_GROUND_Z) / (NOSE_STN - MAIN_STN)) * 180) / Math.PI;

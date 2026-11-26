@@ -251,3 +251,40 @@ export function findClosestPlanetToShip(
 
   return closest ? { id: closest, size: closestSize } : null;
 }
+
+export interface FlybyEventLite {
+  type?: string | null;
+  met_days?: number | null;
+  label?: string | null;
+  label_en?: string | null;
+}
+
+/**
+ * The body a flyby-cinema event frames. The label decides when it names one.
+ * Otherwise an arrival or touchdown ("TAG — Touch-and-Go", "Probe release") is
+ * at the mission's destination, and a flyby takes the body nearest the ship at
+ * the event's peak, so the choice holds for the whole window: per frame, the
+ * nearest planet changed under the shot as the ship moved (F14).
+ */
+export function resolveFlybyBody(
+  evt: FlybyEventLite | undefined,
+  ctx: {
+    depDay: number;
+    simDay: number;
+    destination: DestinationId;
+    sunTarget: boolean;
+    livePos: { x: number; z: number };
+    shipAtMet: (met: number) => { x: number; z: number } | null;
+  },
+): FlybyPlanet | null {
+  const named = findFlybyPlanetFromLabel(evt?.label_en ?? evt?.label);
+  if (named) return named;
+  if (ctx.sunTarget) return null;
+  if (evt?.type === 'arrival' || evt?.type === 'edl_or_oi')
+    return { id: ctx.destination, size: PLANET_SIZES[ctx.destination] ?? 2.0 };
+  if (evt?.met_days == null) return findClosestPlanetToShip(ctx.livePos, ctx.simDay);
+  const peak = ctx.shipAtMet(evt.met_days);
+  return peak
+    ? findClosestPlanetToShip(peak, ctx.depDay + evt.met_days)
+    : findClosestPlanetToShip(ctx.livePos, ctx.simDay);
+}

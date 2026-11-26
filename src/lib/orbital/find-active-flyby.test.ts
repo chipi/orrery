@@ -76,6 +76,29 @@ describe('findActiveFlybyMet', () => {
     expect(findActiveFlybyMet(overlap, 105, DEP)).toBe(100); // both overlap; first wins
   });
 
+  it('overlapping windows split at the midpoint between the two peaks', () => {
+    // Before the split, the earlier flyby held the shot until its depart window closed,
+    // so the later flyby's peak at 110 showed the earlier body.
+    const overlap: FlightEventLite[] = [
+      { met_days: 100, type: 'flyby' },
+      { met_days: 110, type: 'flyby' },
+    ];
+    expect(findActiveFlybyMet(overlap, 104, DEP)).toBe(100);
+    expect(findActiveFlybyMet(overlap, 106, DEP)).toBe(110);
+    expect(findActiveFlybyMet(overlap, 110, DEP)).toBe(110);
+    expect(findActiveFlybyMet(overlap, 50, DEP)).toBe(100);
+    expect(findActiveFlybyMet(overlap, 140, DEP)).toBe(110);
+  });
+
+  it('splits by MET, not array order', () => {
+    const shuffled: FlightEventLite[] = [
+      { met_days: 110, type: 'flyby' },
+      { met_days: 100, type: 'flyby' },
+    ];
+    expect(findActiveFlybyMet(shuffled, 102, DEP)).toBe(100);
+    expect(findActiveFlybyMet(shuffled, 108, DEP)).toBe(110);
+  });
+
   it('handles a non-zero depDay (offsets the windows)', () => {
     const dep = 808; // arbitrary epoch offset
     expect(findActiveFlybyMet(CASSINI, dep + 193, dep)).toBe(193);

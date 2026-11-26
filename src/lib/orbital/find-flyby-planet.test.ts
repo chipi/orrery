@@ -3,6 +3,7 @@ import {
   findFlybyPlanetFromLabel,
   findClosestPlanetToShip,
   PLANET_SIZES,
+  resolveFlybyBody,
 } from './find-flyby-planet';
 import { earthPos } from '$lib/physics/transfer/mission-arc';
 
@@ -154,5 +155,56 @@ describe('findClosestPlanetToShip', () => {
       }
     }
     expect(foundEarth, 'Earth should be reachable as a closest-planet result').toBe(true);
+  });
+});
+
+describe('resolveFlybyBody (F14: an event whose label names no body)', () => {
+  const far = { x: 40, z: 0 };
+  const ctx = {
+    depDay: 1000,
+    simDay: 1500,
+    destination: 'bennu' as const,
+    sunTarget: false,
+    livePos: far,
+    shipAtMet: () => null,
+  };
+
+  it('a labelled event uses its label', () => {
+    expect(
+      resolveFlybyBody({ type: 'flyby', met_days: 10, label_en: 'Venus — gravity assist' }, ctx)
+        ?.id,
+    ).toBe('venus');
+  });
+
+  it('an unlabelled arrival or touchdown is at the mission destination', () => {
+    const tag = {
+      type: 'edl_or_oi',
+      met_days: 503,
+      label_en: 'TAG — Touch-and-Go sample collection',
+    };
+    expect(resolveFlybyBody(tag, ctx)).toEqual({ id: 'bennu', size: PLANET_SIZES.bennu });
+    expect(
+      resolveFlybyBody({ ...tag, type: 'arrival' }, { ...ctx, destination: 'jupiter' })?.id,
+    ).toBe('jupiter');
+  });
+
+  it('a Sun mission has no body to show', () => {
+    expect(
+      resolveFlybyBody(
+        { type: 'edl_or_oi', met_days: 990, label_en: 'First corona entry (P8)' },
+        { ...ctx, sunTarget: true },
+      ),
+    ).toBeNull();
+  });
+
+  it('an unlabelled flyby takes the body nearest the ship at the peak, not the live ship', () => {
+    const met = 200;
+    const peak = earthPos(ctx.depDay + met);
+    const evt = { type: 'flyby', met_days: met, label_en: 'Mystery flyby' };
+    expect(
+      resolveFlybyBody(evt, { ...ctx, shipAtMet: (m: number) => (m === met ? peak : null) })?.id,
+    ).toBe('earth');
+    // with no prediction, the live position is the fallback
+    expect(resolveFlybyBody(evt, ctx)).toBeNull();
   });
 });

@@ -32,38 +32,43 @@ export interface FlightEventLite {
   type?: string | null;
 }
 
+const CINEMA_TYPES = new Set(['flyby', 'edl_or_oi', 'arrival']);
+
 /**
- * Scan `events` for the first flyby/EDL window that contains the
- * current sim-day. Returns the matching event's `met_days`, or null
- * when no window matches.
+ * The flyby/EDL event whose window contains the current sim-day. Returns
+ * its `met_days`, or null when no window matches.
  *
- * Events are scanned in array order; the first match wins. /fly's
- * mission JSON ships these in MET order so overlap is rare in
- * practice — if it ever happens, the chronologically-earlier event
- * wins, which matches the audience reading order.
+ * Each window is clipped at the midpoint to its neighbours' peaks, by MET,
+ * so two close flybys hand the shot over half-way between them instead of
+ * the earlier one holding it through the later one's closest approach. On
+ * the midpoint itself the earlier event wins.
  */
 export function findActiveFlybyMet(
   events: ReadonlyArray<FlightEventLite>,
   simDay: number,
   depDay: number,
 ): number | null {
-  for (const e of events) {
-    // Cinema fires for flyby (gravity-assist), edl_or_oi (orbit
-    // insertion at the mission's primary destination), and arrival
-    // (Dawn's Vesta + Ceres OIs, Hayabusa2's Ryugu arrival — same
-    // beat as edl_or_oi but the mission data uses the more generic
-    // type). Cislunar missions also use 'arrival' but they take the
-    // findActiveCislunarHero path instead; the helio flyby branch is
-    // gated by !isMoonMission in /fly so there's no overlap.
-    if (e.type !== 'flyby' && e.type !== 'edl_or_oi' && e.type !== 'arrival') continue;
-    if (e.met_days == null) continue;
-    const flybySimDay = depDay + e.met_days;
-    const delta = simDay - flybySimDay; // negative = approaching
-    const approachWindow =
+  // Cinema fires for flyby (gravity-assist), edl_or_oi (orbit
+  // insertion at the mission's primary destination), and arrival
+  // (Dawn's Vesta + Ceres OIs, Hayabusa2's Ryugu arrival — same
+  // beat as edl_or_oi but the mission data uses the more generic
+  // type). Cislunar missions also use 'arrival' but they take the
+  // findActiveCislunarHero path instead; the helio flyby branch is
+  // gated by !isMoonMission in /fly so there's no overlap.
+  const cinema = events
+    .filter((e) => e.met_days != null && CINEMA_TYPES.has(e.type ?? ''))
+    .map((e) => ({ met: e.met_days as number, type: e.type }))
+    .sort((a, b) => a.met - b.met);
+  const met = simDay - depDay;
+  for (let i = 0; i < cinema.length; i++) {
+    const e = cinema[i];
+    const approach =
       e.type === 'edl_or_oi' || e.type === 'arrival' ? OI_APPROACH_DAYS : FLYBY_APPROACH_DAYS;
-    if (delta >= -approachWindow && delta <= FLYBY_DEPART_DAYS) {
-      return e.met_days;
-    }
+    let from = e.met - approach;
+    let to = e.met + FLYBY_DEPART_DAYS;
+    if (i > 0) from = Math.max(from, (cinema[i - 1].met + e.met) / 2);
+    if (i < cinema.length - 1) to = Math.min(to, (e.met + cinema[i + 1].met) / 2);
+    if (met >= from && met <= to) return e.met;
   }
   return null;
 }

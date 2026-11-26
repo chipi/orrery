@@ -41,11 +41,7 @@ import {
   MOON_COMPOSITION,
   planCislunarHeroShot,
 } from '$lib/orbital/cislunar/cislunar-hero-shot';
-import {
-  findFlybyPlanetFromLabel,
-  findClosestPlanetToShip,
-  PLANET_SIZES,
-} from '$lib/orbital/find-flyby-planet';
+import { PLANET_SIZES, resolveFlybyBody } from '$lib/orbital/find-flyby-planet';
 import { buildFlyDebugSnapshot } from '$lib/orbital/fly-debug-snapshot';
 import { predictShipPosAtMet } from '$lib/physics/transfer/predict-ship-pos';
 import { sampleCislunarSpacecraftPos } from '$lib/orbital/sample-cislunar-spacecraft';
@@ -322,10 +318,8 @@ export function createFlyCameraController(deps: FlyCameraDeps) {
     // Detect an active flyby window. deps.getMission().flight.events is the
     // canonical roster; type='flyby' fires the cinema sub-phase.
     // met_days are deps.getMission()-relative; convert to deps.getSimDay() by adding
-    // deps.getArcTimeline().dep_day. First matching window wins (events are
-    // monotonic so overlap is rare). The window opens 90 days
-    // BEFORE the flyby (so the user sees the slow approach) and
-    // closes 40 days AFTER.
+    // deps.getArcTimeline().dep_day. Windows and the hand-over between
+    // close events are findActiveFlybyMet's (find-active-flyby.ts).
     const flybyEvents = deps.getMission().flight?.events ?? [];
     // Flyby cinema fires whenever the active-flyby window contains
     // the current deps.getSimDay(). Earlier this was gated on `!deps.getEpilogueActive()`
@@ -360,9 +354,15 @@ export function createFlyCameraController(deps: FlyCameraDeps) {
       // unlabeled missions: closest planet to spacecraft.
       const activeEvt = flybyEvents.find((e) => e.met_days === activeFlybyMet);
       // A Sun mission's perihelion has no body: the nearest planet would steal the shot.
-      const flyby =
-        findFlybyPlanetFromLabel(activeEvt?.label_en ?? activeEvt?.label) ??
-        (sunTarget ? null : findClosestPlanetToShip(sc.pos, deps.getSimDay()));
+      const arc = deps.getArcTimeline();
+      const flyby = resolveFlybyBody(activeEvt, {
+        depDay: arc.dep_day,
+        simDay: deps.getSimDay(),
+        destination: deps.getActiveDestination(),
+        sunTarget,
+        livePos: sc.pos,
+        shipAtMet: (met) => predictShipPosAtMet(deps.getOutPts(), met, arc.arr_day - arc.dep_day),
+      });
       // Debug exposure. Builder lives in $lib/orbital/fly-debug-snapshot
       // so the DEV-vs-prod payload shape is unit-tested. flybyId +
       // flybySize ship in BOTH modes (the foreground ship-offset

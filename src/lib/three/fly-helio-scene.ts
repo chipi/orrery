@@ -9,6 +9,7 @@ import { OutputPass } from 'three/examples/jsm/postprocessing/OutputPass.js';
 import { VignetteShader } from 'three/examples/jsm/shaders/VignetteShader.js';
 import { buildSkydome } from './skydome';
 import { moonShown } from './fly-moon-visibility';
+import { capPointSize } from './point-size-cap';
 import { addContextPlanetRings, buildSaturnRings } from './fly-helio-rings';
 import { buildSunLensFlare, type SunLensFlare } from './sun-lens-flare';
 import { createLayeredStarField } from '$lib/three/star-field';
@@ -516,6 +517,8 @@ export function buildHelioScene(opts: HelioSceneOptions): HelioSceneHandles {
   // their real orbital radii. Visible by default — they fade naturally
   // when the camera is close to a planet, and read as a soft ring at
   // cruise scales (where the user benefits most from seeing them).
+  // Device pixels: a belt reads as dust at cruise and stays dust when a flyby camera sits in it.
+  const BELT_POINT_MAX_PX = 4;
   const sampleBelt = (count: number, innerAu: number, outerAu: number, slabAu: number) => {
     const arr = new Float32Array(count * 3);
     for (let i = 0; i < count; i++) {
@@ -543,6 +546,7 @@ export function buildHelioScene(opts: HelioSceneOptions): HelioSceneHandles {
       opacity: 0.5,
     }),
   );
+  capPointSize(asteroidBelt.material, BELT_POINT_MAX_PX);
   scene.add(asteroidBelt);
   // Kuiper belt — real bounds ~30–50 AU. Cooler bluish, sparser.
   const kuiperBeltGeo = new THREE.BufferGeometry();
@@ -560,6 +564,7 @@ export function buildHelioScene(opts: HelioSceneOptions): HelioSceneHandles {
       opacity: 0.4,
     }),
   );
+  capPointSize(kuiperBelt.material, BELT_POINT_MAX_PX);
   scene.add(kuiperBelt);
 
   // Earth orbit + initial destination orbit (Mars by default).

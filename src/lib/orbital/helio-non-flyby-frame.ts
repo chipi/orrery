@@ -69,7 +69,17 @@ export interface HelioNonFlybyFrame {
   centerZ: number;
   targetR: number;
   targetP: number;
+  /** Camera azimuth to swing to on entering the sub-phase, when it has one: the arrival looks
+   *  from the Sun's side, so the body shows its day side. */
+  camT?: number;
 }
+
+/** Azimuth of the camera (offset (sin T, cos T) in xz) a little off the Sun's side of a body at
+ *  (x, z); the Sun is the scene origin. Three-quarter lit rather than full phase. */
+export function sunSideCamT(x: number, z: number): number {
+  return Math.atan2(-x, -z) + SUN_SIDE_OFFSET;
+}
+const SUN_SIDE_OFFSET = 0.5;
 
 export function computeHelioNonFlybyFrame(inputs: HelioNonFlybyInputs): HelioNonFlybyFrame {
   const {
@@ -119,6 +129,7 @@ export function computeHelioNonFlybyFrame(inputs: HelioNonFlybyInputs): HelioNon
         centerZ: 0,
         targetR: Math.max(800, destDistance * 1.4 + (destSize > 0 ? destSize * 8 : 0)),
         targetP: 0.35,
+        camT: sunSideCamT(destScene.x, destScene.z),
       };
     }
     if (endAtEarth) {
@@ -140,6 +151,7 @@ export function computeHelioNonFlybyFrame(inputs: HelioNonFlybyInputs): HelioNon
         centerZ: destScene.z * 0.35 + scScene.z * 0.65,
         targetR: destSize * FLYBY_BODY_R_MULTIPLIER,
         targetP: HELIO_APPROACH_P,
+        camT: sunSideCamT(destScene.x, destScene.z),
       };
     }
     return {

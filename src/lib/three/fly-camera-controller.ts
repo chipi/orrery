@@ -168,6 +168,9 @@ export function createFlyCameraController(deps: FlyCameraDeps) {
   // the flyby branch of updateHelioAutoZoomTargets; cleared to null
   // when we leave flyby cinema. See computeFlybyDesiredCamT below.
   let helioFlybyDesiredCamT: number | null = null;
+  // The azimuth a sub-phase's frame swings to on entry (the arrival's Sun-side view), held only
+  // while the auto-zoom converges, so a drag afterwards keeps the reader's view.
+  let subEntryCamT: number | null = null;
   // Flyby montage (#371) — the active shot frame for this render, set in
   // updateHelioAutoZoomTargets' flyby branch and APPLIED after updateCam()
   // (Marko's "override final transform" integration). null = not in a
@@ -690,6 +693,7 @@ export function createFlyCameraController(deps: FlyCameraDeps) {
       const wasInFlybyCinema = lastHelioSubPhase?.startsWith('flyby-') ?? false;
       lastHelioSubPhase = sub;
       helioAutoZoomActive = true;
+      subEntryCamT = frame.camT ?? null;
       // #2 — exit flyby cinema → restore moons to layer state
       if (wasInFlybyCinema) {
         helioReactive.cinemaForceMoons = false;
@@ -824,7 +828,14 @@ export function createFlyCameraController(deps: FlyCameraDeps) {
         camTarget.y += (helioAutoZoomTargetCenter.y - camTarget.y) * LERP;
         camTarget.z += (helioAutoZoomTargetCenter.z - camTarget.z) * LERP;
         camP += (helioAutoZoomTargetP - camP) * LERP;
-        if (Math.abs(camR - helioAutoZoomTargetR) < 0.5) helioAutoZoomActive = false;
+        if (subEntryCamT !== null && lastHelioSubPhase?.startsWith('flyby-')) subEntryCamT = null;
+        if (subEntryCamT !== null) {
+          const dT = Math.atan2(Math.sin(subEntryCamT - camT), Math.cos(subEntryCamT - camT));
+          camT += dT * LERP;
+          if (Math.abs(dT) < 0.02) subEntryCamT = null;
+        }
+        if (Math.abs(camR - helioAutoZoomTargetR) < 0.5 && subEntryCamT === null)
+          helioAutoZoomActive = false;
       } else {
         // Even after convergence we keep a stronger track during
         // flyby cinema because the framing target (planet pos + ship

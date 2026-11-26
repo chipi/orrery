@@ -21,6 +21,7 @@
  * contract as flyby-camera-plan.ts, which produces the HERO shot.
  */
 
+import { sunSideCamT } from './helio-non-flyby-frame';
 import {
   planFlybyShot,
   classifyShot,
@@ -236,10 +237,12 @@ export function establishShot(ctx: FlybyShotContext): ShotFrame | null {
  *  midpoint — fine here because the camera is WIDE, so the midpoint's
  *  drift is gentle in-frame (the close midpoint-look was what jerked). */
 export function departShot(ctx: FlybyShotContext): ShotFrame | null {
-  const k = shipKinematics(ctx, ctx.met);
-  if (!k) return null;
-  const sx = k.pos.x - ctx.planetPos.x;
-  const sz = k.pos.z - ctx.planetPos.z;
+  // After a one-way mission's arrival the trajectory ends at the body: hold the ship where it was
+  // at the peak, so the beat still frames the body.
+  const pos = shipKinematics(ctx, ctx.met)?.pos ?? ctx.shipPosAtMet(ctx.peakMet);
+  if (!pos) return null;
+  const sx = pos.x - ctx.planetPos.x;
+  const sz = pos.z - ctx.planetPos.z;
   const sep = Math.hypot(sx, sz);
   // Frame both: the pair's half-extent (half their separation + the planet
   // disc) must fit the vertical FOV, with margin. Distance grows with the
@@ -249,12 +252,21 @@ export function departShot(ctx: FlybyShotContext): ShotFrame | null {
   const camDist = Math.max(ctx.planetRadius * DEPART_MIN_DIST_MULT, fitDist);
   // View axis perpendicular to the planet→ship line (so the curve is seen
   // broadside, not edge-on) + elevation for the catapult read.
-  const u = sep > 1e-6 ? { x: -sz / sep, z: sx / sep } : { x: 1, z: 0 };
+  const cx = (pos.x + ctx.planetPos.x) / 2;
+  const cy = pos.y / 2;
+  const cz = (pos.z + ctx.planetPos.z) / 2;
+  // Of the two broadside views, the one from the Sun's side (the Sun is the scene origin): the
+  // planet shows its day side and the Sun stays behind the camera, out of frame.
+  // A ship at the body (a depart beat after the mission's arrival) has no line to view across:
+  // look from the Sun's side, as the arrival does.
+  const apart = sep > ctx.planetRadius * 0.05;
+  const flip = apart && -sz * -cx + sx * -cz < 0 ? -1 : 1;
+  const t = sunSideCamT(cx, cz);
+  const u = apart
+    ? { x: (flip * -sz) / sep, z: (flip * sx) / sep }
+    : { x: Math.sin(t), z: Math.cos(t) };
   const cp = Math.cos(DEPART_PITCH);
   const sp = Math.sin(DEPART_PITCH);
-  const cx = (k.pos.x + ctx.planetPos.x) / 2;
-  const cy = k.pos.y / 2;
-  const cz = (k.pos.z + ctx.planetPos.z) / 2;
   return {
     position: {
       x: cx + u.x * camDist * cp,

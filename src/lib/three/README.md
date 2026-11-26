@@ -67,6 +67,14 @@ names (`mission.targetMoon`). `fly-frame-runner.ts` `draw2d` is the 2D canvas; i
 fit and destination selection are the pure modules in `src/lib/fly/` (`fly-2d-style.ts`,
 `fly-2d-scale.ts`, `fly-2d-targets.ts`, UXD-043).
 
+Small bodies (asteroids, comet nuclei, Kuiper Belt objects) are one look: `fly-rock.ts`
+`rockGeometry(id)`, a cratered rock stretched to the body's published axis ratios, used by the
+destination mesh (untextured small bodies, `isRockBody`) and by the passing encounter body;
+Didymos carries Dimorphos. The flyby cinema shows only the flown-by body's moons
+(`fly-moon-visibility.ts`), and the belts' point size is capped (`point-size-cap.ts`). The
+cameras that frame a body from the Sun's side (the depart beat, the arrival and epilogue) are in
+`src/lib/orbital/flyby-shots.ts` and `helio-non-flyby-frame.ts` (`sunSideCamT`).
+
 ## Critical contract — `document.hidden` pause
 
 `docs/adr/TA.md` declares every 3D scene **must** pause its raf loop

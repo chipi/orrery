@@ -115,3 +115,47 @@ describe('composeShot dispatch', () => {
     expect(composeShot('hero', ctx())).toEqual(heroShot(ctx()));
   });
 });
+
+describe('flyby-shots — depart looks from the Sun side', () => {
+  // The Sun is the scene origin; the body sits 500 units out on +x.
+  const away = { x: 500, z: 0 };
+  const sunward = (f: { position: V3 }) => Math.hypot(f.position.x, f.position.z) < 500;
+
+  it('views the ship and the body across their line from the side nearer the Sun', () => {
+    for (const dz of [30, -30]) {
+      const f = departShot(
+        ctx({
+          planetPos: away,
+          shipPosAtMet: (met) => ({ x: 500, y: 0, z: (met - 100) * dz }),
+          met: 101,
+        }),
+      )!;
+      expect(sunward(f)).toBe(true);
+    }
+  });
+
+  it('looks from the Sun side when the ship is at the body (a beat after arrival)', () => {
+    const f = departShot(
+      ctx({
+        planetPos: away,
+        shipPosAtMet: (met) => ({ x: 500, y: 0, z: met >= 105 ? 0 : met - 105 }),
+        met: 110,
+      }),
+    )!;
+    expect(sunward(f)).toBe(true);
+  });
+});
+
+describe('flyby-shots — depart after the trajectory ends', () => {
+  it('holds the ship at its peak position and still looks from the Sun side', () => {
+    const f = departShot(
+      ctx({
+        planetPos: { x: 500, z: 0 },
+        shipPosAtMet: (met) => (met > 100 ? null : { x: 500, y: 0, z: 6 + (met - 100) }),
+        met: 110,
+      }),
+    );
+    expect(f).not.toBeNull();
+    expect(Math.hypot(f!.position.x, f!.position.z)).toBeLessThan(500);
+  });
+});

@@ -18,6 +18,7 @@ import { heroEnvironment } from '$lib/three/hero-materials';
 import type { QualityConfig } from '$lib/quality/quality-tier';
 import type { DestinationId } from '$lib/physics/transfer/lambert-grid.constants';
 import { SCALE_3D, SUN_SCENE_RADIUS } from '$lib/fly-scene-constants';
+import { isRockBody, rockGeometry } from '$lib/three/fly-rock';
 import { earthOrbitPath, orbitPath } from '$lib/physics/transfer/mission-arc';
 
 /**
@@ -586,6 +587,33 @@ export function buildHelioScene(opts: HelioSceneOptions): HelioSceneHandles {
   scene.add(earthMesh);
   const destinationMesh = buildDestinationMesh(DEST_STYLE.mars, destinationTextures.mars ?? null);
   scene.add(destinationMesh);
+  const moonlet = new THREE.Mesh(
+    rockGeometry('dimorphos').scale(0.1, 0.1, 0.1),
+    new THREE.MeshPhongMaterial({
+      color: DEST_STYLE.dimorphos?.color ?? 0xa88860,
+      emissive: DEST_STYLE.dimorphos?.color ?? 0xa88860,
+      emissiveIntensity: 0.1,
+      vertexColors: true,
+    }),
+  );
+  moonlet.name = 'dimorphos';
+  moonlet.position.set(1.12, 0, 0.2);
+  // Its 12-hour orbit would hide it behind Didymos from some views, and its true 1.19 km puts it
+  // under the HUD at the arrival framing: drawn above Didymos and a little to the side as seen,
+  // about two Didymos radii out.
+  const sight = new THREE.Vector3();
+  const side = new THREE.Vector3();
+  const at = new THREE.Vector3();
+  moonlet.onBeforeRender = (_r, _s, cam) => {
+    destinationMesh.getWorldPosition(at);
+    sight.copy(at).sub(cam.position).normalize();
+    side.crossVectors(sight, cam.up).normalize();
+    at.addScaledVector(side, 0.4).addScaledVector(cam.up, 0.7);
+    moonlet.position.copy(destinationMesh.worldToLocal(at));
+    moonlet.updateMatrixWorld();
+  };
+  moonlet.visible = false;
+  destinationMesh.add(moonlet);
 
   // Context planets — Mercury through Neptune. Each renders at its
   // canonical DEST_STYLE size (smaller than Earth, but visible). For
@@ -1055,15 +1083,22 @@ export function buildHelioScene(opts: HelioSceneOptions): HelioSceneHandles {
     activeDestinationId = id;
     // Mesh geometry — dispose old, build new at the destination radius.
     destinationMesh.geometry.dispose();
-    destinationMesh.geometry = new THREE.SphereGeometry(style.size, 32, 32);
+    const map = destinationTextures[id] ?? null;
+    // An untextured small body is a rock, as the passing ones are (fly-rock.ts); the rest spheres.
+    const rock = !map && isRockBody(id);
+    destinationMesh.geometry = rock
+      ? rockGeometry(id).scale(style.size, style.size, style.size)
+      : new THREE.SphereGeometry(style.size, 32, 32);
     // Material — swap to the destination's texture (or null + fallback
     // colour if no texture is shipped for this body).
     const mat = destinationMesh.material as THREE.MeshPhongMaterial;
-    const map = destinationTextures[id] ?? null;
     mat.map = map;
+    mat.vertexColors = rock;
     mat.color.setHex(map ? 0xffffff : style.color);
     mat.emissive.setHex(style.color);
-    mat.emissiveIntensity = map ? 0.05 : 0.2;
+    mat.emissiveIntensity = map ? 0.05 : rock ? 0.1 : 0.2;
+    // Didymos is a binary: Dimorphos (177 m, drawn a quarter of Didymos's size so it reads) 1.19 km out.
+    moonlet.visible = id === 'didymos';
     mat.needsUpdate = true;
     // Orbit ring — full replace (size + colour change together).
     scene.remove(destinationOrbitLine);
@@ -1084,12 +1119,12 @@ export function buildHelioScene(opts: HelioSceneOptions): HelioSceneHandles {
   }
 
   const encounterMesh = new THREE.Mesh(
-    new THREE.IcosahedronGeometry(1, 3),
+    rockGeometry('encounter'),
     new THREE.MeshPhongMaterial({
       color: 0x9c8f80,
       emissive: 0x9c8f80,
-      emissiveIntensity: 0.15,
-      flatShading: true,
+      emissiveIntensity: 0.1,
+      vertexColors: true,
     }),
   );
   encounterMesh.name = 'encounter-body';
@@ -1115,10 +1150,12 @@ export function buildHelioScene(opts: HelioSceneOptions): HelioSceneHandles {
       const mat = encounterMesh.material as THREE.MeshPhongMaterial;
       mat.color.setHex(body.color);
       mat.emissive.setHex(body.color);
-      // An irregular stand-in about as big as a sphere of `size` (the radius the shot frames):
-      // the long axis stretched by √stretch, the short ones shrunk by it, one a little uneven.
-      const k = Math.sqrt(body.stretch);
-      encounterMesh.scale.set(body.size * k, (body.size * 0.9) / k, body.size / k);
+      // A rock about as big as a sphere of `size` (the radius the shot frames), shaped by the
+      // body's axis ratios when fly-rock knows them, else stretched by √stretch.
+      encounterMesh.geometry.dispose();
+      encounterMesh.geometry = rockGeometry(body.id);
+      const k = isRockBody(body.id) ? 1 : Math.sqrt(body.stretch);
+      encounterMesh.scale.set(body.size * k, body.size / k, body.size / k);
       encounterMesh.rotation.set(0.3, 0.7, 0.2);
     }
     encounterMesh.position.set(body.x, body.y, body.z);

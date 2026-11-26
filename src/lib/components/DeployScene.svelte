@@ -136,6 +136,9 @@
         apply();
         ar!.render();
       },
+      // The scene's clock is what the visitor came to watch, not a passive drift: reduced motion
+      // must not freeze it on the first frame (the coast does the same).
+      reducedMotion: () => false,
     });
     loop.start();
     const onResize = () => ar?.resize();

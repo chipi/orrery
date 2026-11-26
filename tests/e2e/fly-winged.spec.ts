@@ -25,3 +25,23 @@ test('a capsule return (Friendship 7) never shows the winged scene', async ({ pa
   await page.waitForTimeout(1500);
   await expect(page.getByTestId('winged-scene')).toHaveCount(0);
 });
+
+// The scene's clock is the content the visitor chose to watch, not a passive animation: under
+// prefers-reduced-motion it still plays (as the coast does), it must not freeze on its first frame.
+test('with reduced motion the winged return, the deploy and the way home still play', async ({
+  page,
+}) => {
+  test.slow();
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  for (const [url, met] of [
+    ['/fly?mission=sts-1&winged=1', 'winged-met'],
+    ['/fly?mission=galileo&launch=1&deploy=1', 'deploy-met'],
+    ['/fly?mission=apollo11&descent=1&wayhome=1', 'return-get'],
+  ] as const) {
+    await page.goto(url);
+    const clock = page.getByTestId(met);
+    await expect(clock).toHaveText(/\d:\d\d\.\d/, { timeout: 30_000 });
+    const first = await clock.textContent();
+    await expect(clock).not.toHaveText(first ?? '', { timeout: 8_000 });
+  }
+});

@@ -74,6 +74,8 @@ Doc/code disagreement: the `ascent-hud.ts` comment on payloadSepTFor says the Sh
 - Science review (sonnet): 0 numeric errors; its three should-fixes applied (STS-41 tilt and the 88 s
   PAM-S burn now sourced, the scene header no longer overstates what is sourced).
 - Not yet: a production build for the route budget of the lazy chunk;
-  the reduced-motion stills the plan names (the scene plays as is).
+  the reduced-motion stills the plan names. Under reduced motion the scene plays as is (it froze on
+  its first frame until the 0.9.12 fix: the animate loop zeroes dt; the deploy, the way home and the
+  winged return now opt out, as the coast does; `fly-winged.spec`).
 - The Earth backdrop is the 2k day map at 1/1000 scale: soft when the camera looks straight down
   (the separation shot); the burn shots see the limb.

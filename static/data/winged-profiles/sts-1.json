@@ -1,0 +1,64 @@
+{
+  "missionId": "sts-1",
+  "flight": "STS-1",
+  "vehicle": "orbiter",
+  "orbiter": "columbia",
+  "runway": {
+    "id": "edwards-lakebed-23",
+    "name": "Rogers Dry Lake Runway 23",
+    "surface": "lakebed",
+    "lengthM": 8400,
+    "widthM": 90,
+    "headingDeg": 230
+  },
+  "deorbit": { "met": "53:21:10.0", "burnS": 160 },
+  "entry": {
+    "met": "53:49:12.0",
+    "altFt": 400000,
+    "reversalsMach": [18.5, 9.8, 4.8, 2.8],
+    "blackoutMin": 16
+  },
+  "taem": { "met": "54:14:40.0", "mach": 2.5, "altFt": 83000, "rangeNmi": 60 },
+  "approach": { "outerGlideDeg": 20, "innerGlideDeg": 1.5, "preflareFt": 2000, "gearDownFt": 250 },
+  "touchdown": {
+    "met": "54:20:53.0",
+    "keas": 183,
+    "mainFt": 6053,
+    "noseAfterMainFt": 3099,
+    "noseSinkFps": 5.6
+  },
+  "rollout": { "brakeAfterMainFt": 5952, "stopFt": 15046, "chute": false },
+  "source_tier": "flagship",
+  "estimatedFields": [
+    "deorbit.met, entry.met and taem.met (the press kit's planned offsets from its planned landing, 54:27:43, applied to the flown touchdown 54:20:53; the flown times were not found)",
+    "taem (the 2006 guidance workbook's nominal Mach 2.5, 83,000 ft, 60 n mi; the text says 82,000 ft)",
+    "runway.widthM (the 1981 lakebed runway's width was not found) and runway.headingDeg (from the runway number)",
+    "touchdown.mainFt (wheels stopped 15,046 ft from the threshold after an 8,993 ft roll)"
+  ],
+  "provenance": [
+    {
+      "l": "NASA (2021): touchdown at MET 2 d 6 h 20 min 53 s; a 160 s deorbit burn on both OMS engines; entry interface 400,000 ft; about 16 min of blackout; 211 mph at touchdown; an 8,993 ft rollout",
+      "u": "https://www.nasa.gov/history/40-years-ago-space-shuttle-columbia-returns-home/"
+    },
+    {
+      "l": "STS-1 Symposium (post-flight, NASA JSC): main gear about 3,100 ft long at 183 KEAS; nose gear 3,099 ft later at 5.6 ft/s sink; braking 5,952 ft after the mains; wheels stopped 15,046 ft from the threshold",
+      "u": "https://www.ibiblio.org/apollo/Shuttle/STS-1_Symposium_Presentation_Material.pdf"
+    },
+    {
+      "l": "STS-1 press kit (plan): deorbit ignition 53:28:00, entry interface 53:56:02, TAEM 54:21:30, landing 54:27:43; final approach on a 20 deg glide path, preflare at 2,000 ft, gear down at 250 ft",
+      "u": "https://www.nasa.gov/wp-content/uploads/2023/05/sts-001-press-kit.pdf"
+    },
+    {
+      "l": "Entry, TAEM and Approach/Landing Guidance Workbook 21002 (2006): TAEM at about Mach 2.5, 60 n mi, 83 kft; 20 deg outer and 1.5 deg inner glideslopes, preflare about 2,000 ft",
+      "u": "https://ibiblio.org/apollo/Shuttle/Crew%20Training/Entry,%20TAEM%20and%20Approach%20Workbook.pdf"
+    },
+    {
+      "l": "Wikipedia, STS-1: roll reversals at about Mach 18.5, 9.8, 4.8 and 2.8; landing on Runway 23 at Rogers Dry Lake",
+      "u": "https://en.wikipedia.org/wiki/STS-1"
+    },
+    {
+      "l": "Wikipedia, Rogers Dry Lake: lakebed runway 05/23, 5.2 mi (8.4 km)",
+      "u": "https://en.wikipedia.org/wiki/Rogers_Dry_Lake"
+    }
+  ]
+}

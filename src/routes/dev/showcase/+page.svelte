@@ -71,6 +71,57 @@
     const size = box.getSize(new THREE.Vector3());
     info = `${id}: drawn ${size.x.toFixed(2)} × ${size.y.toFixed(2)} × ${size.z.toFixed(2)} m (w × h × d); heightM ${m.heightM}, diameterM ${m.diameterM}; base y ${box.min.y.toFixed(3)}`;
 
+    // ?ortho=side|top|bottom|front|aft: a black silhouette on white for a winged craft (nose +y,
+    // belly +z), orthographic at 1 px = &mpp metres (default 0.025), nose to the left in side, top
+    // and bottom, framed on the bounding box's centre. For overlaying measured drawings.
+    const ortho = q.get('ortho');
+    if (ortho) {
+      renderer.setScissorTest(false);
+      renderer.toneMapping = THREE.NoToneMapping;
+      const scene = new THREE.Scene();
+      scene.background = new THREE.Color(0xffffff);
+      scene.overrideMaterial = new THREE.MeshBasicMaterial({
+        color: 0x000000,
+        side: THREE.DoubleSide,
+      });
+      // body x (port) -> +z, body y (nose) -> -x, body z (belly) -> -y: the port side faces +z
+      const frame = new THREE.Group();
+      frame.quaternion.setFromRotationMatrix(
+        new THREE.Matrix4().makeBasis(
+          new THREE.Vector3(0, 0, 1),
+          new THREE.Vector3(-1, 0, 0),
+          new THREE.Vector3(0, -1, 0),
+        ),
+      );
+      frame.add(craft);
+      scene.add(frame);
+      frame.updateMatrixWorld(true);
+      const c = new THREE.Box3().setFromObject(frame).getCenter(new THREE.Vector3());
+      const mpp = Number(q.get('mpp') ?? 0.025);
+      const cam = new THREE.OrthographicCamera(
+        (-W / 2) * mpp,
+        (W / 2) * mpp,
+        (H / 2) * mpp,
+        (-H / 2) * mpp,
+        0.1,
+        500,
+      );
+      const look: Record<string, [THREE.Vector3, THREE.Vector3]> = {
+        side: [new THREE.Vector3(0, 0, 1), new THREE.Vector3(0, 1, 0)],
+        top: [new THREE.Vector3(0, 1, 0), new THREE.Vector3(0, 0, -1)],
+        bottom: [new THREE.Vector3(0, -1, 0), new THREE.Vector3(0, 0, 1)],
+        front: [new THREE.Vector3(-1, 0, 0), new THREE.Vector3(0, 1, 0)],
+        aft: [new THREE.Vector3(1, 0, 0), new THREE.Vector3(0, 1, 0)],
+      };
+      const [dir, up] = look[ortho] ?? look.side;
+      cam.position.copy(c).addScaledVector(dir, 200);
+      cam.up.copy(up);
+      cam.lookAt(c);
+      renderer.render(scene, cam);
+      ready = true;
+      return () => renderer.dispose();
+    }
+
     // ?hero=1&az=<deg>&el=<deg>: one large perspective view in hard sunlight, for judging detail
     // (the four-view sheet draws a 7 m lander a few hundred pixels tall).
     if (q.get('hero') === '1') {

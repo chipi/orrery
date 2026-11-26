@@ -19,7 +19,7 @@
  * - X-37B: the small black-tile spaceplane, canted V-tail, closed bay doors.
  */
 import * as THREE from 'three';
-import { MAIN_GROUND_Z, MAIN_STN, NOSE_GROUND_Z, NOSE_STN } from './orbiter-stance';
+import { MAIN_GROUND_Z, MAIN_H, MAIN_STN, NOSE_GROUND_Z, NOSE_STN } from './orbiter-stance';
 import { crinkle, hash3 } from './kit';
 import type { ShowcaseModel, ShowcaseRef } from './types';
 
@@ -131,21 +131,27 @@ function prof(stns: Stn[], a: number): Stn {
   return stns[stns.length - 1];
 }
 
+/** A superellipse exponent, or one for the dorsal half and one for the ventral half. */
+type Exp = number | { t: number; b: number };
+const expOf = (n: Exp, dorsal: boolean): number => (typeof n === 'number' ? n : dorsal ? n.t : n.b);
+
 /** Vehicle-up coordinate v of the surface at station a, lateral x (dorsal or ventral). */
-function surfV(stns: Stn[], n: number, a: number, x: number, dorsal: boolean): number {
+function surfV(stns: Stn[], n: Exp, a: number, x: number, dorsal: boolean): number {
   const p = prof(stns, a);
+  const e = expOf(n, dorsal);
   const r = Math.min(Math.abs(x) / p.w, 0.999);
-  const k = Math.pow(1 - Math.pow(r, n), 1 / n);
+  const k = Math.pow(1 - Math.pow(r, e), 1 / e);
   return (p.c ?? 0) + (dorsal ? p.t * k : -p.b * k);
 }
 
 /** Lateral half width of the surface at station a and vehicle-up height v. */
-function surfX(stns: Stn[], n: number, a: number, v: number): number {
+function surfX(stns: Stn[], n: Exp, a: number, v: number): number {
   const p = prof(stns, a);
   const dv = v - (p.c ?? 0);
   const h = dv >= 0 ? p.t : p.b;
+  const e = expOf(n, dv >= 0);
   const r = Math.min(Math.abs(dv) / h, 0.999);
-  return p.w * Math.pow(1 - Math.pow(r, n), 1 / n);
+  return p.w * Math.pow(1 - Math.pow(r, e), 1 / e);
 }
 
 type ColorFn = (x: number, a: number, v: number) => THREE.Color;
@@ -174,7 +180,7 @@ function flatten(g: THREE.BufferGeometry, flat: (i: number) => boolean): void {
 function loft(
   coarse: Stn[],
   o: {
-    n: number;
+    n: Exp;
     ring?: number;
     step?: number;
     cx?: number;
@@ -198,7 +204,6 @@ function loft(
   const ring = o.ring ?? 48;
   const cx = o.cx ?? 0;
   const cv = o.cv ?? 0;
-  const ex = 2 / o.n;
   const S = stns.length;
   const pos: number[] = [];
   const amps: number[] = [];
@@ -208,6 +213,7 @@ function loft(
       const th = (j / ring) * Math.PI * 2;
       const c = Math.cos(th);
       const sn = Math.sin(th);
+      const ex = 2 / expOf(o.n, sn >= 0);
       const px = s.w * Math.sign(c) * Math.pow(Math.abs(c), ex);
       const pv = sn >= 0 ? s.t * Math.pow(sn, ex) : -s.b * Math.pow(-sn, ex);
       let X = cx + px;
@@ -553,8 +559,30 @@ function slab(
 // under the doors' hinge line; the liner's cross-section (vertical walls, a superellipse floor
 // 1.9 m deep), the ribs, longerons and the bulkhead detail are SCHEMATIC.
 const BAY_X = 2.1;
-const BAY_A0 = 7.4;
-const BAY_A1 = 25.8;
+// The Shuttle orbiter is authored from the HAER measured drawings of Discovery (Library of Congress
+// HAER TX-116-A, sheets 5-7; readings in docs/wip/2026-11-27-orbiter-haer-measurements.md). Station
+// a = NOSE_A - x, x metres aft of the nose tip; a = 0 is the fin tip's trailing corner, the
+// orbiter's aft-most point, 37.07 m behind the nose on the drawing. The vehicle-up v is 4.85 m
+// below the drawing's height above the main wheels' ground.
+const L0 = 37.07;
+const NOSE_A = L0;
+const SPAN0 = 23.79;
+const stn = (x: number): number => NOSE_A - x;
+/** Piecewise-linear lookup in (key, value) pairs sorted by key, clamped at the ends. */
+const pl = (pts: [number, number][], k: number): number => {
+  if (k <= pts[0][0]) return pts[0][1];
+  for (let i = 1; i < pts.length; i++)
+    if (k <= pts[i][0]) {
+      const [k0, v0] = pts[i - 1];
+      const [k1, v1] = pts[i];
+      return v0 + ((v1 - v0) * (k - k0)) / (k1 - k0);
+    }
+  return pts[pts.length - 1][1];
+};
+
+// the door line runs x 8.6-28.3; the bay itself x 9.6-28.0
+const BAY_A0 = stn(28.0);
+const BAY_A1 = stn(9.6);
 const BAY_FLOOR = 1.9;
 
 /** The bay cross-section as (x, v) points: left sill, down the wall, round the floor, up to the right sill. */
@@ -778,7 +806,7 @@ function buildRms(g: THREE.Object3D, M: Mats, vh: number): RmsRig {
   tip.position.y = -0.6;
   endEffector.add(tip);
   // retention cradles along the sill that hold the stowed arm
-  for (const a of [BAY_A1 - 1.2, 21.5, 17.5, 13.5, 10.2])
+  for (const a of [BAY_A1 - 1.2, BAY_A0 + 14.1, BAY_A0 + 10.1, BAY_A0 + 6.1, BAY_A0 + 2.8])
     box(0.5, 0.4, 0.3, M.line, arm, AX + 0.12, a, AZ + 0.3);
   return {
     base,
@@ -796,9 +824,6 @@ function buildRms(g: THREE.Object3D, M: Mats, vh: number): RmsRig {
 }
 
 // ── the orbiter ──────────────────────────────────────────────────────────────
-
-const L0 = 37.237;
-const SPAN0 = 23.79;
 
 type Variant = 'shuttle' | 'columbia' | 'enterprise' | 'buran' | 'gli';
 
@@ -841,38 +866,82 @@ export function buildOrbiter(o: OrbiterOpts): THREE.Group {
   root.add(g);
   const isBuran = o.variant === 'buran' || o.variant === 'gli';
   const isGli = o.variant === 'gli';
-  const aft = isBuran ? 0.9 : 2.2; // aft bulkhead station
+  // the aft bulkhead (Buran's tail is shorter) and the body flap's trailing edge
+  const flapEnd = stn(35.4);
+  const aft = isBuran ? flapEnd + 0.9 : stn(33.0);
   const WHITE = col(tone.white);
   const BLACK = col(tone.black);
-  const NOSE = col(isGli ? 0x3d3f45 : 0x16161a);
+  const NOSE = col(isGli ? 0x3d3f45 : 0x3a3b3f); // the RCC nose cap, dark grey
 
-  const stns: Stn[] = [
-    { a: aft, w: 2.8, t: 2.5, b: 2.3 },
-    { a: aft + 2, w: 2.85, t: 2.6, b: 2.35 },
-    { a: 7, w: 2.8, t: 2.5, b: 2.35 },
-    { a: 26, w: 2.6, t: 2.4, b: 2.3 },
-    { a: 29, w: 2.4, t: 2.4, b: 2.2 },
-    // The nose droops: the belly runs nearly level to the nose gear and the tip sits about 1.2 m
-    // above it (side photos on the runway), while the crown falls from the windshield.
-    { a: 32, w: 2.0, t: 2.1, b: 2.1, c: -0.1 },
-    { a: 34.5, w: 1.4, t: 1.65, b: 1.65, c: -0.45 },
-    { a: 35.6, w: 1.22, t: 1.3, b: 1.3, c: -0.6 },
-    { a: 36.5, w: 0.9, t: 0.875, b: 0.875, c: -0.725 },
-    { a: 37.0, w: 0.55, t: 0.45, b: 0.45, c: -0.9 },
-    { a: 37.18, w: 0.3, t: 0.25, b: 0.25, c: -0.97 },
-    { a: L0, w: 0.05, t: 0.05, b: 0.05, c: -1.0 },
+  // The fuselage from the side and top elevations: [x, top y, belly y, half-width]. The section's
+  // centre stays on v = 0 except toward the nose tip, which sits low (y 4.5).
+  const SECTIONS: [number, number, number, number][] = [
+    [0, 4.5, 4.45, 0.05],
+    [0.08, 4.78, 4.18, 0.3],
+    [0.25, 5.0, 3.97, 0.48],
+    [0.5, 5.23, 3.79, 0.73],
+    [0.75, 5.38, 3.67, 0.89],
+    [1.0, 5.53, 3.6, 1.03],
+    [1.5, 5.78, 3.49, 1.24],
+    [2.0, 6.02, 3.36, 1.44],
+    [2.5, 6.25, 3.26, 1.59],
+    [3.0, 6.46, 3.17, 1.75],
+    [3.5, 6.68, 3.12, 1.88],
+    [4.0, 6.87, 3.07, 2.01],
+    [4.5, 7.07, 3.03, 2.11],
+    [5.0, 7.29, 3.0, 2.22],
+    [5.25, 7.54, 2.99, 2.28],
+    [5.5, 7.79, 2.97, 2.33],
+    [5.75, 8.03, 2.96, 2.38],
+    [6.0, 8.26, 2.95, 2.43],
+    [6.25, 8.41, 2.94, 2.48],
+    [6.5, 8.52, 2.93, 2.52],
+    [6.75, 8.58, 2.93, 2.57],
+    [7.0, 8.61, 2.92, 2.62],
+    [7.5, 8.6, 2.91, 2.68],
+    [8.0, 8.6, 2.9, 2.7],
+    [10, 8.6, 2.86, 2.7],
+    [15, 8.6, 2.73, 2.7],
+    [20, 8.6, 2.62, 2.7],
+    [25, 8.6, 2.52, 2.72],
+    // aft of the bay the crown rises between the OMS pods (aft elevation: y 9.3 at h 1)
+    [28, 8.75, 2.5, 2.8],
+    [29, 9.2, 2.55, 2.9],
+    [30.5, 9.3, 2.7, 3.05],
+    [33.0, 9.2, 3.3, 3.2],
   ];
-  const cAt = (a: number): number => prof(stns, a).c ?? 0;
-  const N = 2.6;
-  // The line below which the fuselage is black tile: the belly aft, rising to the cockpit forward.
-  const lowBlack = (a: number): number =>
-    (a < 27 ? -0.95 : a < 34 ? -0.95 + ((a - 27) / 7) * 1.35 : 0.4 + (a - 34) * 0.5) + cAt(a);
-  const isBlack = (a: number, v: number): boolean => a > 36.2 || v < lowBlack(a);
-  // > 0 on the black side: the tile line, then the nose cap
-  const blackSide = (_x: number, a: number, v: number): number =>
-    Math.max(lowBlack(a) - v, a - 36.2);
+  const Y0 = 4.85;
+  const stns: Stn[] = SECTIONS.map(([x, yt, yb, w]) => {
+    const c = x < 2 ? -0.35 + (0.35 * x) / 2 : 0;
+    return { a: stn(x), w, t: yt - Y0 - c, b: c - (yb - Y0), c };
+  }).reverse();
+  if (aft < stns[0].a) stns.unshift({ ...stns[0], a: aft });
+  // a round crown (the bay doors' arc) over vertical sides and a flat belly
+  const N: Exp = { t: 2.8, b: 3.2 };
+  // The tile line (black below), from the side elevation: the whole nose to x 1.0, then up to the
+  // forward RCS (y 5.9-6.6), y 5.6 under the windows with the patch round the crew hatch, and
+  // y 4.05 falling to 3.9 aft of x 7.6.
+  const lowBlack = (a: number): number => {
+    const x = NOSE_A - a;
+    const y =
+      x < 1.0
+        ? 99
+        : x < 3.4
+          ? 5.9 + ((x - 1.0) / 2.4) * 0.7
+          : x < 6.2
+            ? 5.6
+            : x < 7.7
+              ? 6.0
+              : 4.05 - Math.min(1, (x - 7.7) / 19.3) * 0.15;
+    return y - Y0;
+  };
+  const NOSE_CAP = stn(0.5);
+  const isBlack = (a: number, v: number): boolean => v < lowBlack(a);
+  // > 0 on the black side
+  const blackSide = (_x: number, a: number, v: number): number => Math.min(9, lowBlack(a) - v);
   const hullWhite: ColorFn = (x, a, v) => jit(WHITE, x, a, v, 0.015, 9);
-  const hullBlack: ColorFn = (x, a, v) => jit(a > 36.2 ? NOSE : BLACK, x, a, v, tone.blackSpread);
+  const hullBlack: ColorFn = (x, a, v) =>
+    jit(a > NOSE_CAP ? NOSE : BLACK, x, a, v, tone.blackSpread);
   // The openable bay: the hull is left open under the doors (between the sills, over the bay's
   // length) and the doors hinge on a straight line along each sill at the dorsal skin height.
   const animated = o.bayDoors === 'animated' && !isBuran;
@@ -897,25 +966,60 @@ export function buildOrbiter(o: OrbiterOpts): THREE.Group {
 
   // ── wings (the right one is authored; the left is its mirror) ──
   const half = o.span / 2 / (o.length / L0);
-  const XT = half - 0.2;
-  const sx = XT / 11.695;
-  const W = (x: number): number => x * sx;
+  const XT = half - 0.15;
   const X0 = 2.0;
-  const wingZb = 2.3;
-  const xk = W(4.9);
-  const xk2 = W(2.8);
-  const wLE = (x: number): number =>
-    x <= xk ? 30 + (21 - 30) * ((x - X0) / (xk - X0)) : 21 + (13.5 - 21) * ((x - xk) / (XT - xk));
-  const wTE = (x: number): number =>
-    x <= xk2 ? 4.2 : 4.2 + (8.5 - 4.2) * ((x - xk2) / (XT - xk2));
-  const wT = (x: number): number => 1.55 + (0.42 - 1.55) * ((x - X0) / (XT - X0));
-  const wP = (f: number): number => 0.88 - 0.7 * f;
-  const wTop = (x: number, y: number): number => {
-    const f = (wLE(x) - y) / (wLE(x) - wTE(x));
-    return wingZb - wT(x) * wP(f);
+  // the underside rises outboard of the root: 5 deg, as the forward elevation's silhouette rises
+  // (0.62 m over the outer 6.5 m); NASA gives 3.5 deg for the wing's reference plane
+  const DIH = Math.tan((5 * Math.PI) / 180);
+  const bellyZ = (a: number): number => {
+    const q = prof(stns, a);
+    return q.b - (q.c ?? 0);
+  };
+  // (aft of x 28.5 the belly rises to the aft face; the elevons stay level)
+  const wZ = (h: number, a: number): number =>
+    bellyZ(Math.max(a, stn(28.5))) - Math.max(0, h - X0) * DIH;
+  // the planform from the top plan, [half-span h, x]: the glove, its kink, the 45-ish deg main
+  // leading edge and the elevons' trailing edge
+  const LE_PTS: [number, number][] = [
+    [X0, 6.0],
+    [2.7, 7.5],
+    [3.13, 10],
+    [3.62, 13],
+    [3.94, 15],
+    [4.28, 17],
+    [4.44, 18],
+    [4.7, 19],
+    [5.15, 20],
+    [5.82, 21],
+    [6.76, 22],
+    [10.77, 26],
+    [11.42, 27],
+    [11.7, 28],
+    [XT, 28.4],
+  ];
+  const TE_PTS: [number, number][] = [
+    [X0, 32.4],
+    [3.9, 32.09],
+    [XT, 30.69],
+  ];
+  const xk = 5.15;
+  const wLE = (h: number): number => stn(pl(LE_PTS, h));
+  const wTE = (h: number): number => stn(pl(TE_PTS, h));
+  // thickness scale: the forward elevation's wing stands 1.65 m deep at h 4 and 0.54 m at h 11.5
+  const wT = (h: number): number => Math.max(0.45, 1.94 - (h - X0) * 0.148);
+  // the glove is a thin strake ahead of the wing box
+  const gl = (a: number): number => 0.25 + 0.75 * Math.min(1, Math.max(0, (NOSE_A - a - 6.2) / 10));
+  // thickness over the chord: the NACA 4-digit distribution, thickest (1.0) at 30 % with a
+  // rounded nose; the underside stays nearly flat
+  const wP = (f: number): number =>
+    10 * (0.2969 * Math.sqrt(f) - 0.126 * f - 0.3516 * f * f + 0.2843 * f ** 3 - 0.1015 * f ** 4);
+  const wTop = (h: number, a: number): number => {
+    const f = (wLE(h) - a) / (wLE(h) - wTE(h));
+    return wZ(h, a) - wT(h) * wP(f) * gl(a);
   };
   const sideR = new THREE.Group();
-  const chine = (x: number, y: number): boolean => o.variant === 'columbia' && y > 21.3 && x < 4.9;
+  const chine = (x: number, y: number): boolean =>
+    o.variant === 'columbia' && y > stn(16.5) && x < 4.6;
   slab(
     {
       ns: 44,
@@ -924,11 +1028,8 @@ export function buildOrbiter(o: OrbiterOpts): THREE.Group {
       te: (u) => wTE(X0 + u * (XT - X0)),
       pos: (u, c, f, s) => {
         const x = X0 + u * (XT - X0);
-        return new THREE.Vector3(
-          x,
-          c,
-          s === 0 ? wingZb - wT(x) * wP(f) : wingZb - wT(x) * 0.06 * wP(f),
-        );
+        const th = wT(x) * wP(f) * gl(c);
+        return new THREE.Vector3(x, c, s === 0 ? wZ(x, c) - th : wZ(x, c) - th * 0.06);
       },
       color: (s, p) =>
         s === 1
@@ -943,44 +1044,73 @@ export function buildOrbiter(o: OrbiterOpts): THREE.Group {
   );
   // RCC leading edge: a tapering tube along both sweeps, with its panel joints
   {
-    const pts = [
-      new THREE.Vector3(X0, wLE(X0), 0),
-      new THREE.Vector3(xk, wLE(xk), 0),
-      new THREE.Vector3(XT, wLE(XT), 0),
-    ];
-    const rc = (x: number): number => wT(x) * 0.46;
-    pts.forEach((p) => (p.z = wingZb - wT(p.x) * 0.44));
+    // the edge follows every point of the planform; the tube is tangent to it (its centre a radius
+    // behind the edge) and slims along the glove
+    const rc = (x: number, a: number): number => wT(x) * 0.16 * gl(a);
+    const pts = [X0 + 0.15, ...LE_PTS.map(([h]) => h).filter((h) => h > X0 + 0.15)].map((h) => {
+      const a = wLE(h);
+      const r = rc(h, a);
+      // the outward normal in plan: (-da/dh, 1), normalised
+      const dadh = (wLE(h + 0.05) - wLE(h - 0.05)) / 0.1;
+      const nl = Math.hypot(dadh, 1);
+      return new THREE.Vector3(h + (dadh / nl) * r, a - r / nl, wZ(h, a) - r * 1.1);
+    });
     const rccM = o.variant === 'enterprise' ? M.white : M.rcc;
-    for (let i = 0; i < 2; i++) {
-      taper(sideR, rccM, pts[i], pts[i + 1], rc(pts[i].x), rc(pts[i + 1].x), 14);
-      const nj = i === 0 ? 3 : 7;
+    for (let i = 0; i < pts.length - 1; i++) {
+      taper(
+        sideR,
+        rccM,
+        pts[i],
+        pts[i + 1],
+        rc(pts[i].x, pts[i].y),
+        rc(pts[i + 1].x, pts[i + 1].y),
+        14,
+      );
+      const nj = Math.floor(pts[i].distanceTo(pts[i + 1]) / 1.1);
       for (let j = 1; j <= nj; j++) {
         const f = j / (nj + 1);
         const c = pts[i].clone().lerp(pts[i + 1], f);
-        const r = rc(c.x) + 0.012;
+        const r = rc(c.x, c.y) + 0.012;
         const dir = pts[i + 1].clone().sub(pts[i]).normalize();
         const jt = mesh(new THREE.CylinderGeometry(r, r, 0.05, 14), M.line, sideR);
         jt.position.copy(c);
         jt.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), dir);
       }
     }
-    const tip = mesh(new THREE.SphereGeometry(rc(XT), 12, 10), rccM, sideR);
-    tip.position.copy(pts[2]);
+    const last = pts[pts.length - 1];
+    const tip = mesh(new THREE.SphereGeometry(rc(XT, last.y), 12, 10), rccM, sideR);
+    tip.position.copy(last);
   }
   // elevon hinge lines and gaps on the upper surface, gear-door outlines on the underside
   const onWing = (x: number, y: number): THREE.Vector3 =>
     new THREE.Vector3(x, y, wTop(x, y) - 0.012);
+  const hinge = (h: number): number =>
+    stn(
+      pl(
+        [
+          [3.9, 30.6],
+          [11.4, 28.95],
+        ],
+        h,
+      ),
+    );
   const wseam = (p: [number, number], q: [number, number], w = 0.05): void =>
     seam(sideR, M.line, onWing(...p), onWing(...q), w, 0.03);
-  wseam([W(3.0), 6.1], [XT - 0.2, 10.3]);
-  wseam([W(7.4), 7.1], [W(7.4), 8.6]);
-  wseam([W(5.0), 6.7], [W(5.0), 8.2]);
-  wseam([xk + 0.2, wLE(xk) - 1.5], [XT - 0.4, wLE(XT) - 1.0], 0.04);
+  // the elevon hinge line, the split between the two elevons, the RCC panel line behind the edge
+  wseam([3.9, hinge(3.9)], [11.4, hinge(11.4)]);
+  wseam([7.8, hinge(7.8)], [7.8, wTE(7.8) - 0.05]);
+  wseam([xk + 0.25, wLE(xk + 0.25) - 1.0], [XT - 0.4, wLE(XT - 0.4) - 0.6], 0.04);
   {
-    const zb = wingZb + 0.012;
     const gd = (x0: number, y0: number, x1: number, y1: number): void =>
-      seam(sideR, M.line, new THREE.Vector3(x0, y0, zb), new THREE.Vector3(x1, y1, zb), 0.05, 0.03);
-    gd(W(5.5), 8.0, W(10.5), 10.6);
+      seam(
+        sideR,
+        M.line,
+        new THREE.Vector3(x0, y0, wZ(x0, y0) + 0.012),
+        new THREE.Vector3(x1, y1, wZ(x1, y1) + 0.012),
+        0.05,
+        0.03,
+      );
+    gd(3.9, hinge(3.9), 11.4, hinge(11.4));
   }
   g.add(sideR);
   const sideL = sideR.clone(true);
@@ -988,34 +1118,59 @@ export function buildOrbiter(o: OrbiterOpts): THREE.Group {
   g.add(sideL);
 
   // ── body flap, trailing the belly under the engines ──
-  const flap = tileBox(6.2, aft, 0.34, BLACK, tone.blackSpread, g, M.vc, 0, aft / 2, 2.35);
+  // hinged under the aft face (y 3.25) and trailed down, its edge near y 2.3 (side and aft elevations)
+  const flapHinge = new THREE.Group();
+  flapHinge.position.set(0, aft, 4.85 - 3.25);
+  flapHinge.rotation.x = (-16 * Math.PI) / 180;
+  g.add(flapHinge);
+  const FL = aft - flapEnd;
+  const flap = tileBox(6.2, FL, 0.34, BLACK, tone.blackSpread, flapHinge, M.vc, 0, -FL / 2, 0.17);
   flap.name = 'body-flap';
   if (!isBuran) {
     for (const sg of [-1, 1])
       seam(
-        g,
+        flapHinge,
         M.line,
-        new THREE.Vector3(sg * 3.15, 0, 2.2),
-        new THREE.Vector3(sg * 3.15, aft, 2.2),
+        new THREE.Vector3(sg * 3.15, -FL, 0.0),
+        new THREE.Vector3(sg * 3.15, 0, 0.0),
         0.06,
         0.04,
       );
-    box(6.0, 0.05, 0.05, M.line, g, 0, aft + 0.03, 2.4);
+    box(6.0, 0.05, 0.05, M.line, flapHinge, 0, 0.03, 0.1);
   }
 
   // ── vertical stabiliser, dorsal ──
-  const finV = 2.35;
-  const FH = 9.0;
-  const finT = (u: number): number => 0.5 - 0.38 * u;
+  // From the side elevation: the root on the hull's crown (y 8.6) with the leading edge's fillet,
+  // the leading edge at 45 deg, the tip chord at y 16.55, the trailing edge swept back to the tip.
+  const finV = 8.6 - Y0;
+  const FH = 16.55 - 8.6;
+  const FIN_LE: [number, number][] = [
+    [8.6, 26.6],
+    [9.0, 27.3],
+    [9.5, 27.55],
+    [10.0, 27.9],
+    [16.46, 34.45],
+    [16.55, 34.7],
+  ];
+  const FIN_TE: [number, number][] = [
+    [8.6, 33.3],
+    [9.0, 33.6],
+    [10.44, 34.3],
+    [16.08, 37.0],
+    [16.35, 37.07],
+    [16.55, 37.02],
+  ];
+  const finY = (u: number): number => 8.6 + FH * u;
+  const finT = (u: number): number => (u < 0.06 ? 0.55 - (u / 0.06) * 0.19 : 0.36 - 0.22 * u);
   const finQ = (f: number): number => Math.min(1, Math.sqrt(f / 0.08)) * (1 - 0.55 * f);
-  const finLE = (u: number): number => 16.0 - FH * u;
-  const finTE = (u: number): number => 7.4 - 0.373 * FH * u;
+  const finLE = (u: number): number => stn(pl(FIN_LE, finY(u)));
+  const finTE = (u: number): number => stn(pl(FIN_TE, finY(u)));
   const fin = new THREE.Group();
   fin.name = 'fin';
   slab(
     {
-      ns: 10,
-      nf: 8,
+      ns: 24,
+      nf: 10,
       le: finLE,
       te: finTE,
       pos: (u, c, f, s) =>
@@ -1029,7 +1184,7 @@ export function buildOrbiter(o: OrbiterOpts): THREE.Group {
   g.add(fin);
   // the rudder / speed brake splits along the trailing edge, drawn on both faces
   for (const sgn of [-1, 1]) {
-    const fa = 0.62;
+    const fa = 0.58;
     const pa = (u: number): THREE.Vector3 => {
       const c = finLE(u) + (finTE(u) - finLE(u)) * fa;
       return new THREE.Vector3(sgn * (finT(u) * finQ(fa) + 0.012), c, -(finV + FH * u));
@@ -1039,19 +1194,19 @@ export function buildOrbiter(o: OrbiterOpts): THREE.Group {
   // the fin's root fairing against the tail
   if (!isGli) {
     const fr = mesh(new THREE.SphereGeometry(1, 14, 10), M.white, g);
-    fr.scale.set(0.55, 2.4, 0.45);
-    fr.position.set(0, 7.0, -(finV + 0.1));
+    fr.scale.set(0.9, 3.0, 0.75);
+    fr.position.set(0, stn(30.0), -(finV + 0.05));
   }
   if (o.variant === 'columbia') {
     // SILTS pod on the fin tip, a nose pointing forward
     const silts = mesh(new THREE.SphereGeometry(1, 16, 12), M.white, g);
-    silts.scale.set(0.45, 2.0, 0.55);
-    silts.position.set(0, 5.4, -(finV + FH + 0.1));
+    silts.scale.set(0.45, 1.8, 0.55);
+    silts.position.set(0, stn(34.9), -(finV + FH + 0.1));
   }
 
   // ── payload-bay doors, closed: four sections a side, blanket-white and crumpled ──
   const doorCol = (c: THREE.Vector3): THREE.Color => jit(col(tone.white), c.x, c.y, c.z, 0.04, 15);
-  const doorCuts = [7.4, 12.0, 16.5, 21.2, 25.8];
+  const doorCuts = [28.0, 23.4, 18.9, 14.2, 9.6].map(stn);
   const hullPt = (a: number, x: number, off: number): THREE.Vector3 =>
     new THREE.Vector3(x, a, -(surfV(stns, N, a, x, true) + off));
   // Animated: each side is one rigid leaf (pivot on the hinge line, children in model coordinates
@@ -1113,7 +1268,7 @@ export function buildOrbiter(o: OrbiterOpts): THREE.Group {
     // hinge line and the latch tabs along the centre seam
     const hx = sgn * 2.17;
     for (let i = 0; i < 10; i++) {
-      const a = 7.8 + i * 1.9;
+      const a = BAY_A0 + 0.4 + i * 1.9;
       const p = hullPt(a, hx, 0.04);
       box(0.18, 0.5, 0.05, M.line, door, hx, a, p.z - 0.02);
     }
@@ -1139,8 +1294,8 @@ export function buildOrbiter(o: OrbiterOpts): THREE.Group {
       };
       for (const a of doorCuts) strip(a, 0.07, 0, 2.15, 4);
       for (let i = 0; i < 12; i++) {
-        const a = 7.4 + ((25.8 - 7.4) * i) / 12;
-        const b = 7.4 + ((25.8 - 7.4) * (i + 1)) / 12;
+        const a = BAY_A0 + ((BAY_A1 - BAY_A0) * i) / 12;
+        const b = BAY_A0 + ((BAY_A1 - BAY_A0) * (i + 1)) / 12;
         const rows: THREE.Vector3[][] = [
           [hullPt(a, 0, 0.02), hullPt(a, sgn * 0.06, 0.02)],
           [hullPt(b, 0, 0.02), hullPt(b, sgn * 0.06, 0.02)],
@@ -1175,7 +1330,7 @@ export function buildOrbiter(o: OrbiterOpts): THREE.Group {
   if (!animated) {
     const rows: THREE.Vector3[][] = [];
     for (let i = 0; i <= 12; i++) {
-      const a = 7.4 + ((25.8 - 7.4) * i) / 12;
+      const a = BAY_A0 + ((BAY_A1 - BAY_A0) * i) / 12;
       rows.push([hullPt(a, -0.06, 0.02), hullPt(a, 0.06, 0.02)]);
     }
     mesh(
@@ -1221,18 +1376,17 @@ export function buildOrbiter(o: OrbiterOpts): THREE.Group {
     box(w, h, 0.07, M.glass, wg, 0, 0, 0.005);
     g.add(wg);
   };
-  win(-0.62, 32.6, 0.62, 0.7);
-  win(0.62, 32.6, 0.62, 0.7);
-  win(-1.3, 31.7, 0.5, 0.75);
-  win(1.3, 31.7, 0.5, 0.75);
-  win(-0.55, 30.2, 0.45, 0.55);
-  win(0.55, 30.2, 0.45, 0.55);
-  win(-0.6, 27.6, 0.4, 0.45);
-  win(0.6, 27.6, 0.4, 0.45);
+  // the six windshield panes (x 5.1-6.4), then the two overhead windows over the flight deck
+  for (const sg of [-1, 1]) {
+    win(sg * 0.5, stn(5.6), 0.7, 0.75);
+    win(sg * 1.25, stn(5.75), 0.6, 0.75);
+    win(sg * 1.85, stn(6.2), 0.45, 0.6);
+    win(sg * 0.35, stn(7.6), 0.42, 0.42);
+  }
   {
     // crew hatch on the port side (+x), a round door with its rim
-    const a = 28.4;
-    const v = -0.45;
+    const a = stn(7.0);
+    const v = 5.2 - Y0;
     const hx = surfX(stns, N, a, v) + 0.02;
     const hatch = new THREE.Group();
     hatch.position.set(hx, a, -v);
@@ -1249,26 +1403,27 @@ export function buildOrbiter(o: OrbiterOpts): THREE.Group {
   // ── forward RCS (nose, both flanks) and the nose gear door ──
   if (!isGli) {
     for (const sg of [-1, 1]) {
-      const a0 = 34.7;
-      const v0 = 0.4 + cAt(a0);
-      const px = surfX(stns, N, a0, v0) + 0.01;
-      box(0.06, 1.5, 1.0, M.dark, g, sg * px, a0 + 0.2, -(v0 + 0.1));
+      // the forward RCS module on each flank of the nose (x 2.0-3.4, y 5.6-6.6)
+      const a0 = stn(2.8);
+      const v0 = 5.9 - Y0;
+      const px = surfX(stns, N, a0, v0) - 0.02;
+      box(0.06, 1.2, 0.6, M.dark, g, sg * px, a0, -v0);
       for (let r = 0; r < 3; r++)
         for (let c = 0; c < 2; c++) {
-          const th = mesh(new THREE.CylinderGeometry(0.07, 0.1, 0.16, 10), M.engine, g);
+          const th = mesh(new THREE.CylinderGeometry(0.06, 0.08, 0.1, 10), M.engine, g);
           th.rotation.z = (Math.PI / 2) * -sg;
-          th.position.set(sg * (px + 0.05), a0 - 0.1 + c * 0.55, -(v0 - 0.25 + r * 0.32));
+          th.position.set(sg * (px + 0.03), a0 - 0.28 + c * 0.55, -(v0 - 0.18 + r * 0.18));
         }
     }
-    for (let k = 0; k < 6; k++) {
-      const th = (k / 6) * Math.PI * 2;
-      const r = 0.38;
-      const jet = mesh(new THREE.CylinderGeometry(0.05, 0.08, 0.14, 8), M.engine, g);
-      jet.position.set(Math.cos(th) * r, 36.7, -(Math.sin(th) * r * 0.9 + 0.05 + cAt(36.7)));
+    // three jets across the top of the nose (the forward elevation: y 5.85, x about 1.0)
+    for (const hx of [-0.38, 0, 0.38]) {
+      const a = stn(1.0);
+      const jet = mesh(new THREE.CylinderGeometry(0.06, 0.08, 0.1, 8), M.engine, g);
+      jet.position.set(hx, a, -(surfV(stns, N, a, hx, true) - 0.06));
     }
   }
   {
-    const aNg0 = 33.7;
+    const aNg0 = stn(3.9);
     const lineAt = (p: THREE.Vector3, q: THREE.Vector3): void => seam(g, M.line, p, q, 0.05, 0.03);
     const bel = (a: number, x: number): THREE.Vector3 =>
       new THREE.Vector3(x, a, -(surfV(stns, N, a, x, false) - 0.02));
@@ -1277,10 +1432,11 @@ export function buildOrbiter(o: OrbiterOpts): THREE.Group {
     lineAt(bel(aNg0 - 0.95, -0.35), bel(aNg0 - 0.25, -0.35));
     lineAt(bel(aNg0 - 0.95, 0.35), bel(aNg0 - 0.25, 0.35));
     // external-tank umbilical doors
-    for (const x of [-1.2, 1.2]) {
-      const p = bel(8, x);
-      box(1.5, 1.8, 0.04, M.dark, g, x, 8, p.z - 0.01);
-      box(0.2, 0.2, 0.08, M.engine, g, x, 8, p.z - 0.02);
+    for (const x of [-1.3, 1.3]) {
+      const a = stn(29.7);
+      const p = bel(a, x);
+      box(1.5, 1.8, 0.04, M.dark, g, x, a, p.z - 0.01);
+      box(0.2, 0.2, 0.08, M.engine, g, x, a, p.z - 0.02);
     }
   }
 
@@ -1293,10 +1449,12 @@ export function buildOrbiter(o: OrbiterOpts): THREE.Group {
     c.position.set(x, y, z);
     c.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), dir);
   };
+  // Buran's and OK-GLI's tails are placed from the body flap's trailing edge
+  if (isBuran) eng.position.y = flapEnd;
   if (isGli) {
     // one AL-31F nacelle on each flank of the fin base (each housing a pair of jets)
     for (const x of [-2.2, 2.2]) {
-      const v = surfV(stns, N, 3.5, x, true);
+      const v = surfV(stns, N, flapEnd + 3.5, x, true);
       const zc = -(v + 0.3);
       const nac = mesh(new THREE.CylinderGeometry(0.85, 0.78, 5.4, 20), M.engine, eng);
       nac.position.set(x, 3.3, zc);
@@ -1315,7 +1473,7 @@ export function buildOrbiter(o: OrbiterOpts): THREE.Group {
       const sp = mesh(new THREE.BoxGeometry(0.7, 3.4, 0.35), M.white, eng);
       sp.position.set(x, 3.4, zc + 0.5);
     }
-    box(2.6, 0.5, 0.05, M.dark, eng, 0, aft + 0.25, 0.4);
+    box(2.6, 0.5, 0.05, M.dark, eng, 0, aft - flapEnd + 0.25, 0.4);
   } else if (isBuran) {
     // no main engines on the orbiter: two OMS nozzles in the tail and the flush aft face
     for (const sg of [-1, 1]) {
@@ -1323,27 +1481,32 @@ export function buildOrbiter(o: OrbiterOpts): THREE.Group {
       ring(eng, M.line, 0.5, 0.035, sg * 1.35, 0.1, -0.9);
       for (let r = 0; r < 3; r++)
         for (let c = 0; c < 4; c++)
-          rcsJet(sg * (2.0 + c * 0.2), aft + 0.55 + r * 0.45, -2.55, new THREE.Vector3(0, 0, -1));
+          rcsJet(
+            sg * (2.0 + c * 0.2),
+            aft - flapEnd + 0.55 + r * 0.45,
+            -2.55,
+            new THREE.Vector3(0, 0, -1),
+          );
     }
     const sh = mesh(new THREE.PlaneGeometry(6, 1.6, 12, 4), M.shield, eng);
     sh.geometry = crinkle(sh.geometry, 0.03);
-    sh.position.set(0, aft + 0.02, 0.4);
+    sh.position.set(0, aft - flapEnd + 0.02, 0.4);
     sh.rotation.x = Math.PI / 2;
   } else {
     // three SSMEs, one above the pair; each with its heat shield, bell and stiffener rings
-    for (const [x, v] of [
-      [0, 1.1],
-      [-1.5, -0.9],
-      [1.5, -0.9],
+    for (const [x, v, y0] of [
+      [0, 8.18 - Y0, stn(34.85)],
+      [-1.52, 5.03 - Y0, stn(35.4)],
+      [1.52, 5.03 - Y0, stn(35.4)],
     ] as const) {
       const z = -v;
-      bellMesh(1.2, 0.34, 2.9, M.bell, eng, x, z, 0, 0.55);
+      bellMesh(1.19, 0.34, 2.9, M.bell, eng, x, z, y0, 0.55);
       for (const [y, rr] of [
-        [0.1, 1.2],
+        [0.1, 1.19],
         [0.85, 0.93],
         [1.7, 0.74],
       ] as const)
-        ring(eng, M.line, rr, 0.04, x, y, z);
+        ring(eng, M.line, rr, 0.04, x, y0 + y, z);
       const skirt = new THREE.CylinderGeometry(1.0, 1.32, 0.9, 20, 3, true);
       const sk = mesh(crinkle(skirt, 0.04), M.shield, eng);
       sk.position.set(x, aft - 0.2, z);
@@ -1351,40 +1514,47 @@ export function buildOrbiter(o: OrbiterOpts): THREE.Group {
       neck.position.set(x, aft + 0.5, z);
     }
     // OMS pods on the upper aft corners: white blanket above, black tile below
+    // a round lobe each side of the fin (aft elevation: out to h 3.86, top y 9.7) whose lower
+    // flank fairs down into the aft fuselage's side (h 3.05 at y 6.45); the rest is buried
+    const PX = 2.3;
+    const PV = 7.9 - Y0;
     const podStn: Stn[] = [
-      { a: aft, w: 0.9, t: 0.85, b: 0.8 },
-      { a: aft + 1, w: 0.95, t: 0.9, b: 0.8 },
-      { a: 7.5, w: 0.9, t: 0.85, b: 0.75 },
-      { a: 9.5, w: 0.6, t: 0.5, b: 0.4 },
-      { a: 10.2, w: 0.2, t: 0.15, b: 0.1 },
+      { a: stn(33.3), w: 1.5, t: 1.75, b: 2.3 },
+      { a: stn(32.3), w: 1.55, t: 1.8, b: 2.3 },
+      { a: stn(30.0), w: 1.5, t: 1.75, b: 2.2 },
+      { a: stn(28.6), w: 1.1, t: 1.3, b: 1.6 },
+      { a: stn(27.8), w: 0.6, t: 0.7, b: 0.8 },
+      { a: stn(27.35), w: 0.15, t: 0.15, b: 0.15 },
     ];
     for (const sg of [-1, 1]) {
       const pod = loft(podStn, {
-        n: 2.2,
+        n: 2.0,
         ring: 28,
         step: 0.5,
-        cx: sg * 1.75,
-        cv: 2.55,
+        cx: sg * PX,
+        cv: PV,
+        // white blanket; black tile only where the flank meets the fuselage's tiled side
         color: (x, a, v) =>
-          v < 2.3 ? jit(BLACK, x, a, v, tone.blackSpread) : jit(WHITE, x, a, v, 0.015, 16),
-        rough: (_x, _a, v) => (v < 2.3 ? 0 : 0.016),
+          v < 4.6 - Y0 ? jit(BLACK, x, a, v, tone.blackSpread) : jit(WHITE, x, a, v, 0.015, 16),
+        rough: (_x, _a, v) => (v < 4.6 - Y0 ? 0 : 0.016),
         capColor: new THREE.Color(0x6e675c),
       });
       mesh(pod, M.vc, g).name = 'oms-pod';
-      bellMesh(0.45, 0.14, 1.2, M.bell, eng, sg * 1.75, -2.35, aft - 1.0, 0.6);
-      ring(eng, M.line, 0.45, 0.03, sg * 1.75, aft - 0.9, -2.35);
-      // the aft RCS: a dark panel on the pod flank with its jets, two more on the aft face
-      box(0.05, 1.7, 1.0, M.dark, g, sg * 2.71, aft + 2.3, -2.75);
+      bellMesh(0.58, 0.16, 1.3, M.bell, eng, sg * 2.33, -(8.69 - Y0), stn(34.1), 0.6);
+      ring(eng, M.line, 0.58, 0.03, sg * 2.33, stn(34.1) + 0.1, -(8.69 - Y0));
+      // the aft RCS: a dark panel on the pod's outer flank with its jets, two more on the aft face
+      const fx = PX + 1.5;
+      box(0.05, 1.7, 1.0, M.dark, g, sg * fx, stn(32.2), -(PV - 0.2));
       for (let r = 0; r < 4; r++)
         for (let c = 0; c < 2; c++)
           rcsJet(
-            sg * 2.76,
-            aft + 1.7 + c * 0.7,
-            -(2.35 + r * 0.25 + 0.1),
+            sg * (fx + 0.05),
+            stn(32.2) - 0.35 + c * 0.7,
+            -(PV - 0.55 + r * 0.25),
             new THREE.Vector3(sg, 0, 0),
           );
-      rcsJet(sg * 2.2, aft + 0.15, -3.2, new THREE.Vector3(0, -1, 0));
-      rcsJet(sg * 1.5, aft + 0.15, -3.2, new THREE.Vector3(0, -1, 0));
+      rcsJet(sg * 3.4, stn(33.3) - 0.05, -(7.85 - Y0), new THREE.Vector3(0, -1, 0));
+      rcsJet(sg * 3.75, stn(33.3) - 0.05, -(7.85 - Y0), new THREE.Vector3(0, -1, 0));
     }
   }
 
@@ -1492,9 +1662,9 @@ export function buildOrbiter(o: OrbiterOpts): THREE.Group {
   for (const sg of [-1, 1])
     buildLeg(
       sg < 0 ? 'gear-main-starboard' : 'gear-main-port',
-      sg * 3.4,
+      sg * MAIN_H,
       MAIN_STN,
-      2.3,
+      wZ(MAIN_H, MAIN_STN),
       0.565,
       0.41,
       0.3,
@@ -1584,10 +1754,11 @@ export function buildOrbiter(o: OrbiterOpts): THREE.Group {
     wg.computeVertexNormals();
     mesh(wg, M.dark, doors);
   };
-  const wingSkin = (a: number, x: number): THREE.Vector3 => v3(x, a, wingZb);
+  const wingSkin = (a: number, x: number): THREE.Vector3 => v3(x, a, wZ(Math.abs(x), a));
   const bellySkin = (a: number, x: number): THREE.Vector3 => v3(x, a, -surfV(stns, N, a, x, false));
-  for (const sg of [-1, 1]) doorLeaf(wingSkin, 17.4, 22.0, sg * 4.0, sg * 2.8, 1.45);
-  for (const sg of [-1, 1]) doorLeaf(bellySkin, 33.7, 36.2, sg * 0.55, 0, 1.35);
+  // main wells x 20.4-24.3 (the side elevation), the doors hinged outboard; nose doors x 1.2-3.9
+  for (const sg of [-1, 1]) doorLeaf(wingSkin, stn(24.3), stn(20.4), sg * 4.3, sg * 2.8, 1.45);
+  for (const sg of [-1, 1]) doorLeaf(bellySkin, stn(3.9), stn(1.2), sg * 0.55, 0, 1.35);
 
   const kneeAt = (b: THREE.Vector3, an: THREE.Vector3, half: number): THREE.Vector3 => {
     const mid = b.clone().add(an).multiplyScalar(0.5);
@@ -1844,6 +2015,24 @@ const R_ORBITER: ShowcaseRef[] = [
   {
     l: 'STS-135 Hurley looks at Atlantis tiles (photo: the black tile mosaic of the underside)',
     u: commons('STS-135_Hurley_looks_at_Atlantis_tiles.jpg'),
+  },
+  {
+    l: 'HAER TX-116-A, Orbiter Discovery (OV-103), port elevation (Library of Congress measured drawing: the side profile, fin, OMS pods, gear stations)',
+    u: commons(
+      'Port Elevation - Space Transportation System, Orbiter Discovery (OV-103), Lyndon B. Johnson Space Center, 2101 NASA Parkway, Houston, Harris County, TX HAER TX-116-A (sheet 6 of 14).tif',
+    ),
+  },
+  {
+    l: 'HAER TX-116-A, Orbiter Discovery (OV-103), top plan (the planform: glove, wing, 23.80 m span)',
+    u: commons(
+      'Top Plan - Space Transportation System, Orbiter Discovery (OV-103), Lyndon B. Johnson Space Center, 2101 NASA Parkway, Houston, Harris County, TX HAER TX-116-A (sheet 7 of 14).tif',
+    ),
+  },
+  {
+    l: 'HAER TX-116-A, Orbiter Discovery (OV-103), forward and aft elevations (sections, engines, 6.96 m gear track, 16.55 m height)',
+    u: commons(
+      'Fwd and Aft Elevations - Space Transportation System, Orbiter Discovery (OV-103), Lyndon B. Johnson Space Center, 2101 NASA Parkway, Houston, Harris County, TX HAER TX-116-A (sheet 5 of 14).tif',
+    ),
   },
 ];
 

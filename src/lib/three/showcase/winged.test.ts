@@ -8,7 +8,8 @@ import {
   ORBITER_REST_PITCH_DEG,
 } from './orbiter-stance';
 
-const L0 = 37.237;
+// the model's authored extent, nose to the fin tip (HAER drawing): built at it, scale 1
+const L0 = 37.07;
 const SPAN0 = 23.79;
 
 const doorBounds = (root: THREE.Object3D): THREE.Box3 => {
@@ -142,7 +143,7 @@ describe('Shuttle orbiter landing gear (W12)', () => {
     expect(half.max.z).toBeLessThan(down.max.z - 0.3); // the belly is +z: the wheels rise
   });
 
-  it('stands nose-down: mains 2.5 m below the wing, nose wheels 1.7 m below the drooped belly', () => {
+  it("stands nose-down on the HAER drawing's wheel ground lines", () => {
     fixed.updateMatrixWorld(true);
     const low = (n: string): number =>
       new THREE.Box3().setFromObject(fixed.getObjectByName(n)!).max.z;

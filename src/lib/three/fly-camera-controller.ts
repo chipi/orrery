@@ -47,7 +47,12 @@ import {
   resolveFlybyBody,
 } from '$lib/orbital/find-flyby-planet';
 import { encounterScenePos, findEncounterBody } from '$lib/orbital/encounter-bodies';
-import { arcMissesBody, isPostArrivalEvent, postArrivalPass } from '$lib/orbital/post-arrival-pass';
+import {
+  arcMissesBody,
+  isPostArrivalEvent,
+  parkedAfterArrival,
+  postArrivalPass,
+} from '$lib/orbital/post-arrival-pass';
 import { buildFlyDebugSnapshot } from '$lib/orbital/fly-debug-snapshot';
 import { predictShipPosAtMet } from '$lib/physics/transfer/predict-ship-pos';
 import { sampleCislunarSpacecraftPos } from '$lib/orbital/sample-cislunar-spacecraft';
@@ -452,10 +457,17 @@ export function createFlyCameraController(deps: FlyCameraDeps) {
           postArrival ||
           (!encounterPos &&
             arcMissesBody(sampleShipScene(activeFlybyMet), bodyAt(activeFlybyMet), flyby.size));
+        const parked =
+          !onPass && (activeEvt?.type === 'edl_or_oi' || activeEvt?.type === 'arrival')
+            ? parkedAfterArrival(bodyAt, flyby.size, activeFlybyMet, nowMet)
+            : null;
         const shipScene = onPass
           ? (met: number) => postArrivalPass(bodyAt, flyby.size, activeFlybyMet, met, nowMet)
-          : sampleShipScene;
+          : parked
+            ? (met: number) => (met >= nowMet - 1e-6 ? parked : sampleShipScene(met))
+            : sampleShipScene;
         if (onPass) passShip = postArrivalPass(bodyAt, flyby.size, activeFlybyMet, nowMet);
+        else if (parked) passShip = parked;
         postArrivalActive = postArrival;
         let bodyScene: THREE.Vector3;
         if (encounter && encounterPos) {

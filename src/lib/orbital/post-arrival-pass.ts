@@ -7,6 +7,8 @@
  * (flyby review call 3).
  */
 
+import { DEFAULT_FLYBY_SCHEDULE } from './flyby-shot-schedule';
+
 const EPS_DAYS = 1e-6;
 
 export function isPostArrivalEvent(met: number, transitDays: number, oneWay: boolean): boolean {
@@ -54,6 +56,25 @@ export function postArrivalPass(
     y: PASS_RADII * size * 0.34,
     z: b.z - out.z * off + dz * t,
   };
+}
+
+/** Days after the peak the hero window closes (flyby-shot-schedule). */
+const HERO_END_DAYS = DEFAULT_FLYBY_SCHEDULE.find((w) => w.kind === 'hero')?.to ?? 1.5;
+
+/**
+ * The ship after an arrival (orbit insertion, rendezvous), once the hero window has closed:
+ * parked beside the body where it is now. The arc ends where the body was at the peak, and the
+ * body moves on: Didymos ten days after Hera's rendezvous is 20 M km away, and the depart beat
+ * framed the ship at the arc's end with the body a speck at the edge (review F5). Null before.
+ */
+export function parkedAfterArrival(
+  bodyAt: (met: number) => { x: number; z: number },
+  size: number,
+  peakMet: number,
+  nowMet: number,
+): { x: number; y: number; z: number } | null {
+  if (nowMet < peakMet + HERO_END_DAYS) return null;
+  return postArrivalPass(bodyAt, size, peakMet, peakMet, nowMet);
 }
 
 /** Separation, in body radii, past which the stored arc does not pass the body. */

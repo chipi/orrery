@@ -1,5 +1,10 @@
 import { describe, it, expect } from 'vitest';
-import { arcMissesBody, isPostArrivalEvent, postArrivalPass } from './post-arrival-pass';
+import {
+  arcMissesBody,
+  isPostArrivalEvent,
+  parkedAfterArrival,
+  postArrivalPass,
+} from './post-arrival-pass';
 
 describe('flybys after the arrival event (flyby review call 3)', () => {
   it('only events past the transit of a one-way mission', () => {
@@ -62,5 +67,24 @@ describe('arcMissesBody (flyby review call 5)', () => {
     expect(arcMissesBody({ x: 10.5, z: 0 }, body, 0.3)).toBe(false); // 1.7 radii
     expect(arcMissesBody({ x: 11, z: 0 }, body, 0.3)).toBe(true); // 3.3 radii
     expect(arcMissesBody(null, body, 0.3)).toBe(true);
+  });
+});
+
+describe('parkedAfterArrival (Hera at Didymos, review F5)', () => {
+  // Didymos 10 days after the rendezvous has moved on 20 M km (11 scene units); the arc ends
+  // where it was at the peak.
+  const didymos = (met: number) => ({ x: 120, z: (met - 782) * 1.1 });
+
+  it('null through the hero window: the iconic frame keeps the arc', () => {
+    expect(parkedAfterArrival(didymos, 0.4, 782, 782)).toBeNull();
+    expect(parkedAfterArrival(didymos, 0.4, 782, 783)).toBeNull();
+  });
+
+  it('after it, the ship is parked beside the body where it is now, a few radii out', () => {
+    const p = parkedAfterArrival(didymos, 0.4, 782, 792)!;
+    const b = didymos(792);
+    const d = Math.hypot(p.x - b.x, p.z - b.z);
+    expect(d).toBeGreaterThan(0.4);
+    expect(d).toBeLessThan(0.4 * 3);
   });
 });

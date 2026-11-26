@@ -178,67 +178,73 @@ describe('the craft stays in frame on desktop and phone', () => {
     'apollo11-splashdown',
     'galileo',
   ];
-  it.each(IDS)('%s', async (id) => {
-    const { Box3, Vector3 } = await import('three');
-    await preloadDescentModels();
-    const raw = JSON.parse(
-      readFileSync(`static/data/descent-profiles/${id}.json`, 'utf-8'),
-    ) as RawDescentProfile & { body: string };
-    const sum = integrateDescent(expandDescentProfile(raw));
-    const scene = createDescentScene({
-      aspect: 1.6,
-      body: raw.body as never,
-      siteId: id,
-      durationS: sum.totalDurationS,
-      events: sum.events,
-    });
-    const shown = (o: THREE.Object3D) => {
-      for (let p: THREE.Object3D | null = o; p; p = p.parent) if (!p.visible) return false;
-      return true;
-    };
-    for (const aspect of [1280 / 800, 390 / 844]) {
-      scene.setAspect(aspect);
-      let n = 0;
-      let cut = 0;
-      const out: number[] = [];
-      const dur = sum.totalDurationS;
-      for (let t = 0; t <= dur; t += dur / 120) {
-        scene.setState(sampleDescentAt(sum.states, t), sampleDescentAt(sum.states, t - 2));
-        scene.scene.updateMatrixWorld(true);
-        const box = new Box3();
-        scene.scene.traverse((o) => {
-          if (!o.userData.frameSubject || !shown(o)) return;
-          o.traverse((c) => {
-            const m = c as THREE.Mesh;
-            if (!m.isMesh || !shown(m)) return;
-            m.geometry.computeBoundingBox();
-            box.union(m.geometry.boundingBox!.clone().applyMatrix4(m.matrixWorld));
+  it.each(IDS)(
+    '%s',
+    async (id) => {
+      const { Box3, Vector3 } = await import('three');
+      await preloadDescentModels();
+      const raw = JSON.parse(
+        readFileSync(`static/data/descent-profiles/${id}.json`, 'utf-8'),
+      ) as RawDescentProfile & { body: string };
+      const sum = integrateDescent(expandDescentProfile(raw));
+      const scene = createDescentScene({
+        aspect: 1.6,
+        body: raw.body as never,
+        siteId: id,
+        durationS: sum.totalDurationS,
+        events: sum.events,
+      });
+      const shown = (o: THREE.Object3D) => {
+        for (let p: THREE.Object3D | null = o; p; p = p.parent) if (!p.visible) return false;
+        return true;
+      };
+      for (const aspect of [1280 / 800, 390 / 844]) {
+        scene.setAspect(aspect);
+        let n = 0;
+        let cut = 0;
+        const out: number[] = [];
+        const dur = sum.totalDurationS;
+        for (let t = 0; t <= dur; t += dur / 120) {
+          scene.setState(sampleDescentAt(sum.states, t), sampleDescentAt(sum.states, t - 2));
+          scene.scene.updateMatrixWorld(true);
+          const box = new Box3();
+          scene.scene.traverse((o) => {
+            if (!o.userData.frameSubject || !shown(o)) return;
+            o.traverse((c) => {
+              const m = c as THREE.Mesh;
+              if (!m.isMesh || !shown(m)) return;
+              m.geometry.computeBoundingBox();
+              box.union(m.geometry.boundingBox!.clone().applyMatrix4(m.matrixWorld));
+            });
           });
-        });
-        if (box.isEmpty()) continue;
-        n++;
-        const cam = scene.camera;
-        const ndc: THREE.Vector3[] = [];
-        for (const x of [box.min.x, box.max.x])
-          for (const y of [box.min.y, box.max.y])
-            for (const z of [box.min.z, box.max.z]) ndc.push(new Vector3(x, y, z).project(cam));
-        const x0 = Math.min(...ndc.map((p) => p.x));
-        const x1 = Math.max(...ndc.map((p) => p.x));
-        const y0 = Math.min(...ndc.map((p) => p.y));
-        const y1 = Math.max(...ndc.map((p) => p.y));
-        const ix = Math.max(0, Math.min(x1, 1) - Math.max(x0, -1));
-        const iy = Math.max(0, Math.min(y1, 0.9) - Math.max(y0, -0.78));
-        const inside = (ix * iy) / ((x1 - x0) * (y1 - y0));
-        if (inside < 0.5) out.push(Math.round(t));
-        else if (inside < 0.75) cut++;
+          if (box.isEmpty()) continue;
+          n++;
+          const cam = scene.camera;
+          const ndc: THREE.Vector3[] = [];
+          for (const x of [box.min.x, box.max.x])
+            for (const y of [box.min.y, box.max.y])
+              for (const z of [box.min.z, box.max.z]) ndc.push(new Vector3(x, y, z).project(cam));
+          const x0 = Math.min(...ndc.map((p) => p.x));
+          const x1 = Math.max(...ndc.map((p) => p.x));
+          const y0 = Math.min(...ndc.map((p) => p.y));
+          const y1 = Math.max(...ndc.map((p) => p.y));
+          const ix = Math.max(0, Math.min(x1, 1) - Math.max(x0, -1));
+          const iy = Math.max(0, Math.min(y1, 0.9) - Math.max(y0, -0.78));
+          const inside = (ix * iy) / ((x1 - x0) * (y1 - y0));
+          if (inside < 0.5) out.push(Math.round(t));
+          else if (inside < 0.75) cut++;
+        }
+        expect(out, `${id} at aspect ${aspect.toFixed(2)}: out of frame at t`).toEqual([]);
+        expect(cut / n, `${id} at aspect ${aspect.toFixed(2)}: share of samples cut`).toBeLessThan(
+          0.05,
+        );
       }
-      expect(out, `${id} at aspect ${aspect.toFixed(2)}: out of frame at t`).toEqual([]);
-      expect(cut / n, `${id} at aspect ${aspect.toFixed(2)}: share of samples cut`).toBeLessThan(
-        0.05,
-      );
-    }
-    scene.dispose();
-  });
+      scene.dispose();
+      // CI ran this file 56 s (gemini4 5.0 s against the 5 s default, 2026-11-26); locally a case is
+      // ~0.4 s, most of it the one integration of its profile (0.26 s for gemini4), which is the input.
+    },
+    15_000,
+  );
 });
 
 /** B1 (a): five Apollo command modules turned over apex-down in the water and were righted. */

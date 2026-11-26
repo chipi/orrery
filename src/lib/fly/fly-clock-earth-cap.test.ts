@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'vitest';
+import { beforeAll, describe, it, expect } from 'vitest';
 import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { descentPlayClock, EARTH_ENTRY_PLAY_CAP_S } from './fly-clock';
@@ -8,11 +8,14 @@ import {
 } from '$lib/physics/descent/descent-profile-registry';
 import { integrateDescent } from '$lib/physics/descent/descent-physics';
 
+const PROFILES = ['apollo11-splashdown', 'friendship-7', 'gemini4', 'curiosity'];
+// Integrated once, before the tests: CI ran this file 10.4 s against the 5 s test default when
+// every call integrated again (2026-11-26).
+const summaries = new Map<string, ReturnType<typeof integrateDescent>>();
 function summary(id: string) {
-  const p = resolve(__dirname, `../../../static/data/descent-profiles/${id}.json`);
-  return integrateDescent(
-    expandDescentProfile(JSON.parse(readFileSync(p, 'utf-8')) as RawDescentProfile),
-  );
+  const s = summaries.get(id);
+  if (!s) throw new Error(`profile ${id} not in PROFILES`);
+  return s;
 }
 
 function wallToEnd(id: string, speed: number): number {
@@ -29,6 +32,18 @@ function wallToEnd(id: string, speed: number): number {
 }
 
 describe('descent play clock: the Earth entry cap', () => {
+  beforeAll(() => {
+    for (const id of PROFILES) {
+      const p = resolve(__dirname, `../../../static/data/descent-profiles/${id}.json`);
+      summaries.set(
+        id,
+        integrateDescent(
+          expandDescentProfile(JSON.parse(readFileSync(p, 'utf-8')) as RawDescentProfile),
+        ),
+      );
+    }
+  });
+
   it('an Earth entry plays in about the capped length at the default speed', () => {
     for (const id of ['apollo11-splashdown', 'friendship-7', 'gemini4']) {
       const w = wallToEnd(id, 3);

@@ -620,6 +620,7 @@ export function createFlyCameraController(deps: FlyCameraDeps) {
               bodyScene,
               flyby.size,
               isArrivalEvent || postArrival,
+              camera.aspect,
             )
           : null;
         if (passShot) {
@@ -719,8 +720,9 @@ export function createFlyCameraController(deps: FlyCameraDeps) {
     sub = frame.sub;
     // The cruise's middle stretch is craft-led; the Sun as the target would fill that lens.
     if (!sunTarget && (frame.sub === 'cruise-out' || frame.sub === 'approach'))
-      cruiseShot = cruiseCraftShot(scScene, destScene);
-    else if (frame.sub === 'cruise-back') cruiseShot = cruiseCraftShot(scScene, earthScene);
+      cruiseShot = cruiseCraftShot(scScene, destScene, undefined, camera.aspect);
+    else if (frame.sub === 'cruise-back')
+      cruiseShot = cruiseCraftShot(scScene, earthScene, undefined, camera.aspect);
     centerX = frame.centerX;
     centerZ = frame.centerZ;
     targetR = frame.targetR;

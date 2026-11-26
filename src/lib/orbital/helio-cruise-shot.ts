@@ -33,6 +33,7 @@ export function cruiseCraftShot(
   craft: P3,
   target: P3,
   nearTargetBacks = NEAR_TARGET_BACKS,
+  aspect = 1,
 ): CruiseShot | null {
   let fx = target.x - craft.x;
   let fy = target.y - craft.y;
@@ -53,7 +54,9 @@ export function cruiseCraftShot(
   const uz = sx * fy;
   const back = CRUISE_SHOT_BACK;
   const up = CRAFT_LOW * back;
-  const right = CRAFT_LEFT * back;
+  // A tall phone frame keeps the height and loses most of the width (phone-framing.ts): the craft
+  // drawn at its hero share then reached past the left edge. Move it in with the width.
+  const right = CRAFT_LEFT * back * Math.min(1, aspect * aspect);
   return {
     pos: {
       x: craft.x - fx * back + ux * up + sx * right,
@@ -79,8 +82,9 @@ export function smallBodyPassShot(
   body: P3,
   bodyRadius: number,
   arrival: boolean,
+  aspect = 1,
 ): CruiseShot | null {
   if (arrival || bodyRadius >= ARRIVAL_SMALL_BODY_RADIUS) return null;
   if (kind !== 'approach' && kind !== 'depart') return null;
-  return cruiseCraftShot(craft, body, 0);
+  return cruiseCraftShot(craft, body, 0, aspect);
 }

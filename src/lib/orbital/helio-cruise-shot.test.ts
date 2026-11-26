@@ -20,6 +20,14 @@ describe('helio cruise shot', () => {
     expect(s.pos.z).toBeGreaterThan(craft.z);
   });
 
+  it('on a phone the craft moves in toward the centre, so its wings stay in the frame', () => {
+    const wide = cruiseCraftShot(craft, target)!;
+    const tall = cruiseCraftShot(craft, target, undefined, 390 / 844)!;
+    expect(tall.pos.z - craft.z).toBeGreaterThan(0);
+    expect(tall.pos.z - craft.z).toBeLessThan((wide.pos.z - craft.z) * 0.5);
+    expect(tall.pos.y).toBeCloseTo(wide.pos.y, 6);
+  });
+
   it('hands the approach to the wide frame close to the target', () => {
     expect(cruiseCraftShot(craft, { x: 120, y: 0, z: 0 })).toBeNull();
   });

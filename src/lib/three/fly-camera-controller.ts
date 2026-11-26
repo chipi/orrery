@@ -47,7 +47,7 @@ import {
   resolveFlybyBody,
 } from '$lib/orbital/find-flyby-planet';
 import { encounterScenePos, findEncounterBody } from '$lib/orbital/encounter-bodies';
-import { isPostArrivalEvent, postArrivalPass } from '$lib/orbital/post-arrival-pass';
+import { arcMissesBody, isPostArrivalEvent, postArrivalPass } from '$lib/orbital/post-arrival-pass';
 import { buildFlyDebugSnapshot } from '$lib/orbital/fly-debug-snapshot';
 import { predictShipPosAtMet } from '$lib/physics/transfer/predict-ship-pos';
 import { sampleCislunarSpacecraftPos } from '$lib/orbital/sample-cislunar-spacecraft';
@@ -183,9 +183,12 @@ export function createFlyCameraController(deps: FlyCameraDeps) {
   ];
   let montageShotFrame: ShotFrame | null = null;
   let montageShotKind: ShotKind | null = null;
-  // The ship's scene position on a flyby after the arrival event (post-arrival-pass.ts), which the
-  // frame runner uses instead of the arc's end; null outside those windows.
-  let postArrivalShip: { x: number; y: number; z: number } | null = null;
+  // The ship's scene position on a pass beside the body (post-arrival-pass.ts), which the frame
+  // runner uses instead of the arc: a flyby after the arrival event, or one the stored arc misses.
+  // Null outside those windows. postArrivalActive: the window is after the arrival, so the
+  // epilogue waits.
+  let passShip: { x: number; y: number; z: number } | null = null;
+  let postArrivalActive = false;
   // Previous frame's shot kind — a change is a CUT (snap); same kind
   // smooths within the shot so the chase/depart don't jitter.
   /** Reusable flyby choreography: a slow panoramic sweep timed so the
@@ -298,7 +301,8 @@ export function createFlyCameraController(deps: FlyCameraDeps) {
     // the current MET falls inside a montage window. (#371)
     montageShotFrame = null;
     montageShotKind = null;
-    postArrivalShip = null;
+    passShip = null;
+    postArrivalActive = false;
     helioHandles.setEncounterBody(null);
     const sc = spacecraftPos(
       deps.getSimDay(),
@@ -429,10 +433,16 @@ export function createFlyCameraController(deps: FlyCameraDeps) {
           const b = flyby.id === 'earth' ? earthPos(d) : destinationPos(d, flyby.id);
           return { x: b.x * SCALE_3D, z: b.z * SCALE_3D };
         };
-        const shipScene = postArrival
-          ? (met: number) => postArrivalPass(bodyAt, flyby.size, activeFlybyMet, met)
+        const nowMet = deps.getSimDay() - arc.dep_day;
+        const onPass =
+          postArrival ||
+          (!encounterPos &&
+            arcMissesBody(sampleShipScene(activeFlybyMet), bodyAt(activeFlybyMet), flyby.size));
+        const shipScene = onPass
+          ? (met: number) => postArrivalPass(bodyAt, flyby.size, activeFlybyMet, met, nowMet)
           : sampleShipScene;
-        if (postArrival) postArrivalShip = shipScene(deps.getSimDay() - arc.dep_day);
+        if (onPass) passShip = postArrivalPass(bodyAt, flyby.size, activeFlybyMet, nowMet);
+        postArrivalActive = postArrival;
         let bodyScene: THREE.Vector3;
         if (encounter && encounterPos) {
           bodyScene = new THREE.Vector3(encounterPos.x, encounterPos.y, encounterPos.z);
@@ -1234,8 +1244,11 @@ export function createFlyCameraController(deps: FlyCameraDeps) {
     get montageShotKind() {
       return montageShotKind;
     },
-    get postArrivalShip() {
-      return postArrivalShip;
+    get passShip() {
+      return passShip;
+    },
+    get postArrivalActive() {
+      return postArrivalActive;
     },
     /** The craft-led coast shot is on (cislunar-craft-shot.ts). */
     get craftShotActive() {

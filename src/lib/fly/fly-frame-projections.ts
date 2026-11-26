@@ -213,8 +213,8 @@ export interface MilestoneScreensOpts {
   arcTimeline: MissionTimeline;
   outPts: Vec2[];
   retPts: Vec2[];
-  /** The ship flies a pass off the arc (a flyby after the arrival, post-arrival-pass.ts): the
-   *  chips mark points on the arc, and the pass's body can sit on one of them. */
+  /** The ship flies a pass off the arc (a flyby after the arrival, or one the arc misses;
+   *  post-arrival-pass.ts): the chips mark points on the arc, and the body can sit on one. */
   offArc?: boolean;
 }
 

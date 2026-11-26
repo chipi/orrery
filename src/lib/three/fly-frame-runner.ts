@@ -1518,8 +1518,8 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
     // camera by construction so the glyph is always centred on the
     // arc regardless of curvature.
     scSprite.position.set(sc.pos.x * SCALE_3D, (sc.pos.y ?? 0) * SCALE_3D, sc.pos.z * SCALE_3D);
-    // A flyby after the arrival event has no arc under it: the ship flies the controller's pass.
-    const pa = flyCam.postArrivalShip;
+    // A flyby after the arrival event, or one the stored arc misses, flies the controller's pass.
+    const pa = flyCam.passShip;
     if (pa) scSprite.position.set(pa.x, pa.y, pa.z);
     // Per-mission 3D model rides the same position. Visibility +
     // arrival-hide handled by the same code path that owns scSprite
@@ -1765,7 +1765,7 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
     // its window is on, and a scrub into one clears it.
     const isOneWayHelioEnd = !bridge.isMoonMission && bridge.retPts.length < 2;
     if (phaseNow === 'arrived' && isOneWayHelioEnd) {
-      if (flyCam.postArrivalShip) {
+      if (flyCam.postArrivalActive) {
         bridge.epilogueBlackOpacity = 0;
         bridge.epilogueStartedAt = 0;
         bridge.epilogueActive = false;
@@ -2628,7 +2628,7 @@ export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs)
         arcTimeline: bridge.arcTimeline,
         outPts: bridge.outPts,
         retPts: bridge.retPts,
-        offArc: flyCam.postArrivalShip !== null,
+        offArc: flyCam.passShip !== null,
       });
       if (msScreens) bridge.milestoneScreens = msScreens;
       else if (bridge.milestoneScreens.length > 0) bridge.milestoneScreens = [];

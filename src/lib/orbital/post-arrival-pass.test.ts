@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { isPostArrivalEvent, postArrivalPass } from './post-arrival-pass';
+import { arcMissesBody, isPostArrivalEvent, postArrivalPass } from './post-arrival-pass';
 
 describe('flybys after the arrival event (flyby review call 3)', () => {
   it('only events past the transit of a one-way mission', () => {
@@ -39,5 +39,28 @@ describe('flybys after the arrival event (flyby review call 3)', () => {
     const p0 = postArrivalPass(() => ({ x: 0, z: 50 }), size, 10, 5);
     const p1 = postArrivalPass(() => ({ x: 0, z: 50 }), size, 10, 15);
     expect(Math.hypot(p1.x - p0.x, p1.z - p0.z)).toBeGreaterThan(0);
+  });
+});
+
+describe('the pass as the shot samples it', () => {
+  // Halley near perihelion moves ~2.4 scene units a day: the shot holds the body where it is
+  // now, so a sample at the 2-day lead must sit beside that position, not where the body was.
+  const fast = (met: number) => ({ x: -30 + met * 2.4, z: -60 });
+  it('anchored at the current MET, samples follow the body’s current position', () => {
+    const now = 446;
+    const lead = postArrivalPass(fast, 0.35, 446, 444, now);
+    expect(Math.hypot(lead.x - fast(now).x, lead.z - fast(now).z)).toBeLessThan(0.35 * 3);
+    // unanchored (the live ship), it rides the body at that MET
+    const live = postArrivalPass(fast, 0.35, 446, 444);
+    expect(Math.hypot(live.x - fast(444).x, live.z - fast(444).z)).toBeLessThan(0.35 * 3);
+  });
+});
+
+describe('arcMissesBody (flyby review call 5)', () => {
+  it('true when the stored arc passes the body more than 3 radii away at the peak', () => {
+    const body = { x: 10, z: 0 };
+    expect(arcMissesBody({ x: 10.5, z: 0 }, body, 0.3)).toBe(false); // 1.7 radii
+    expect(arcMissesBody({ x: 11, z: 0 }, body, 0.3)).toBe(true); // 3.3 radii
+    expect(arcMissesBody(null, body, 0.3)).toBe(true);
   });
 });

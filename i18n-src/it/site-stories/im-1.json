@@ -1,0 +1,27 @@
+{
+  "intro": "IM-1 è stata la prima missione lunare di Intuitive Machines e il primo allunaggio americano dopo l'Apollo 17. Il suo lander Nova-C, Odysseus, è stato lanciato il 15 febbraio 2024 ed è atterrato il 22 febbraio vicino a Malapert A, a circa 300 km dal polo sud. È arrivato a circa 7,8 m/s con un movimento laterale, ha rotto una gamba e si è ribaltato, ma ha continuato a funzionare per circa sette giorni.",
+  "chapters": [
+    {
+      "id": "launch",
+      "title": "Lancio",
+      "subtitle": "15 febbraio 2024 — Falcon 9 dal Kennedy Space Center",
+      "images": [
+        {
+          "src": "/images/missions/im-1/01.webp",
+          "caption": "Un Falcon 9 decolla con il lander Nova-C Odysseus per i Commercial Lunar Payload Services della NASA."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superficie",
+      "subtitle": "Malapert A — atterraggio il 22 febbraio 2024",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/im-1-odysseus/02.webp",
+          "caption": "Odysseus nel suo sito di atterraggio, ripreso dalla Lunar Reconnaissance Orbiter Camera."
+        }
+      ]
+    }
+  ]
+}

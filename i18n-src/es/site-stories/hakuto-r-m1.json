@@ -1,0 +1,27 @@
+{
+  "intro": "Hakuto-R Mission 1 fue el primer intento de alunizaje de la empresa japonesa ispace. Lanzada el 11 de diciembre de 2022, siguió una ruta lenta y de baja energía hasta 1,38 millones de km de la Tierra y entró en órbita lunar el 21 de marzo de 2023. El 25 de abril de 2023, al pasar sobre el borde de un cráter de unos 3 km de altura, su software descartó el altímetro y creyó que el módulo ya había tocado el suelo cuando aún estaba a unos 5 km. Se quedó sin propelente y cayó cerca del cráter Atlas, en Mare Frigoris.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "El equipo",
+      "subtitle": "Módulo de aterrizaje Series 1 de ispace: 2,3 m de alto y 2,6 m de ancho con las patas desplegadas",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/hakuto-r/01.webp",
+          "caption": "Una maqueta del módulo HAKUTO-R mostrada en el Congreso Astronáutico Internacional de 2022. Llevaba el róver Rashid de los Emiratos Árabes Unidos y el robot transformable SORA-Q."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superficie",
+      "subtitle": "Mare Frigoris: impacto el 25 de abril de 2023",
+      "images": [
+        {
+          "src": "/images/missions/hakuto-r-m1/01.webp",
+          "caption": "El Lunar Reconnaissance Orbiter de la NASA halló el lugar del impacto al día siguiente: al menos cuatro fragmentos de restos en torno a 47.581 N, 44.094 E."
+        }
+      ]
+    }
+  ]
+}

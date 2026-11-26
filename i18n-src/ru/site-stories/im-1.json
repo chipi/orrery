@@ -1,0 +1,27 @@
+{
+  "intro": "IM-1 — первая лунная миссия Intuitive Machines и первая американская посадка на Луну со времён Apollo 17. Её посадочный аппарат Nova-C по имени Odysseus стартовал 15 февраля 2024 года, а 22 февраля совершил посадку вблизи Malapert A, примерно в 300 км от южного полюса. Он подошёл к поверхности со скоростью около 7,8 м/с и боковым движением, сломал опору и опрокинулся, но продолжал работать около семи суток.",
+  "chapters": [
+    {
+      "id": "launch",
+      "title": "Запуск",
+      "subtitle": "15 февраля 2024 года — Falcon 9 из Космического центра Кеннеди",
+      "images": [
+        {
+          "src": "/images/missions/im-1/01.webp",
+          "caption": "Falcon 9 стартует с посадочным аппаратом Nova-C Odysseus для программы NASA Commercial Lunar Payload Services."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Поверхность",
+      "subtitle": "Malapert A — посадка 22 февраля 2024 года",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/im-1-odysseus/02.webp",
+          "caption": "Odysseus на месте посадки, снимок камеры Lunar Reconnaissance Orbiter Camera."
+        }
+      ]
+    }
+  ]
+}

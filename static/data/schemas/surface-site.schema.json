@@ -60,7 +60,10 @@
           "SpaceIL",
           "ESA-UK",
           "SpaceX",
-          "Arianespace"
+          "Arianespace",
+          "ispace",
+          "Firefly Aerospace",
+          "Intuitive Machines"
         ]
       },
       "nation": { "enum": ["USA", "USSR", "Russia", "China", "India", "Japan", "Europe", "UAE", "Israel"] },

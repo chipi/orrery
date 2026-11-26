@@ -1,0 +1,27 @@
+{
+  "intro": "IM-1은 Intuitive Machines의 첫 달 임무이자 Apollo 17 이후 처음으로 이루어진 미국의 달 착륙이었다. Nova-C 착륙선 Odysseus는 2024년 2월 15일에 발사되어 2월 22일 남극에서 약 300 km 떨어진 Malapert A 근처에 착륙했다. 약 7.8 m/s의 속도로 옆으로 움직이며 접근해 다리 하나가 부러져 넘어졌지만, 약 7일간 계속 작동했다.",
+  "chapters": [
+    {
+      "id": "launch",
+      "title": "발사",
+      "subtitle": "2024년 2월 15일 — 케네디 우주 센터에서 Falcon 9 발사",
+      "images": [
+        {
+          "src": "/images/missions/im-1/01.webp",
+          "caption": "NASA의 Commercial Lunar Payload Services를 위해 Nova-C 착륙선 Odysseus를 싣고 이륙하는 Falcon 9."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "표면",
+      "subtitle": "Malapert A — 2024년 2월 22일 착륙",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/im-1-odysseus/02.webp",
+          "caption": "Lunar Reconnaissance Orbiter Camera가 촬영한 착륙 지점의 Odysseus."
+        }
+      ]
+    }
+  ]
+}

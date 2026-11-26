@@ -1,0 +1,20 @@
+{
+  "intro": "Blue Ghost Mission 1 was de eerste Maanlanding van Firefly Aerospace, uitgevoerd voor NASA met tien instrumenten. Na een afremmende ontsteking van negen minuten en een langzame laatste afdaling op zijn stuwraketten landde hij op 2 maart 2025 rechtop in Mare Crisium, nabij Mons Latreille, binnen zijn doel van 100 m. Hij werkte meer dan 14 dagen, een volledige maandag lang, en stuurde meer dan 119 GB aan data terug.",
+  "chapters": [
+    {
+      "id": "surface",
+      "title": "Oppervlak",
+      "subtitle": "Mare Crisium — geland op 2 maart 2025",
+      "images": [
+        {
+          "src": "/images/missions/blue-ghost-m1/01.webp",
+          "caption": "Blue Ghost (omkaderd) op de mare-vlakte, schuin gezien door de Lunar Reconnaissance Orbiter."
+        },
+        {
+          "src": "/images/fleet-galleries/blue-ghost/01.webp",
+          "caption": "De lander van recht boven gezien door de Lunar Reconnaissance Orbiter, op 18.5623 N, 61.8103 E."
+        }
+      ]
+    }
+  ]
+}

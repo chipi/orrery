@@ -1,0 +1,27 @@
+{
+  "intro": "A Hakuto-R Missão 2, chamada RESILIENCE, foi o segundo módulo de pouso da ispace. Dividiu um Falcon 9 com a Blue Ghost da Firefly em 15 de janeiro de 2025, passou pela Lua em fevereiro e entrou em órbita lunar em 6 de maio de 2025. Em 5 de junho de 2025, seu telêmetro a laser demorou a fornecer altitudes válidas e o módulo não conseguiu desacelerar o bastante: a última telemetria veio de 192 m acima de Mare Frigoris.",
+  "chapters": [
+    {
+      "id": "target",
+      "title": "Alvo",
+      "subtitle": "Mare Frigoris, perto de 60.5 N — bem ao norte",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/hakuto-r/02.webp",
+          "caption": "A área de pouso planejada em Mare Frigoris, fotografada pelo Lunar Reconnaissance Orbiter antes da tentativa."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superfície",
+      "subtitle": "Impacto em 5 de junho de 2025",
+      "images": [
+        {
+          "src": "/images/missions/ispace-m2/01.webp",
+          "caption": "O local do impacto, em 60.4445 N, 355.4120 E, fotografado pelo Lunar Reconnaissance Orbiter em 11 de junho de 2025: uma mancha escura com um tênue halo brilhante."
+        }
+      ]
+    }
+  ]
+}

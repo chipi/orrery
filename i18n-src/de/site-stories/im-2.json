@@ -1,0 +1,20 @@
+{
+  "intro": "IM-2 war die zweite Mondmission von Intuitive Machines. Ihr Nova-C-Lander Athena setzte am 6. März 2025 auf Mons Mouton auf, etwa 160 km vom Südpol entfernt. Sein Laser-Höhenmesser lieferte den ganzen Abstieg über verrauschte Werte; Athena traf schneller als vorgesehen auf und kam auf der Seite liegend in einem Krater von 20 m Durchmesser zum Stillstand, die Solarmodule von der Sonne abgewandt. Er arbeitete weniger als 13 Stunden.",
+  "chapters": [
+    {
+      "id": "surface",
+      "title": "Oberfläche",
+      "subtitle": "Mons Mouton – gelandet am 6. März 2025",
+      "images": [
+        {
+          "src": "/images/missions/im-2/01.webp",
+          "caption": "Athena, vom Lunar Reconnaissance Orbiter schräg aufgenommen, bei 84.7906 S, 29.1957 E."
+        },
+        {
+          "src": "/images/fleet-galleries/im-2-athena/01.webp",
+          "caption": "Eine nähere Ansicht von Athena in ihrem Krater, vom Lunar Reconnaissance Orbiter aufgenommen."
+        }
+      ]
+    }
+  ]
+}

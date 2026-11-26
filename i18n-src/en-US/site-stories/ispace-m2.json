@@ -1,0 +1,27 @@
+{
+  "intro": "Hakuto-R Mission 2, named RESILIENCE, was ispace's second lander. It shared a Falcon 9 with Firefly's Blue Ghost on 15 January 2025, flew past the Moon in February and entered lunar orbit on 6 May 2025. On 5 June 2025 its laser range finder was slow to give valid altitudes, and the lander could not slow down enough: the last telemetry came from 192 m above Mare Frigoris.",
+  "chapters": [
+    {
+      "id": "target",
+      "title": "Target",
+      "subtitle": "Mare Frigoris, near 60.5 N — far in the north",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/hakuto-r/02.webp",
+          "caption": "The planned landing area in Mare Frigoris, imaged by the Lunar Reconnaissance Orbiter before the attempt."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Surface",
+      "subtitle": "Impact on 5 June 2025",
+      "images": [
+        {
+          "src": "/images/missions/ispace-m2/01.webp",
+          "caption": "The impact site at 60.4445 N, 355.4120 E, imaged by the Lunar Reconnaissance Orbiter on 11 June 2025: a dark smudge with a faint bright halo."
+        }
+      ]
+    }
+  ]
+}

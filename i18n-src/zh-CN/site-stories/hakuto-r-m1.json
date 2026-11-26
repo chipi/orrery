@@ -1,0 +1,27 @@
+{
+  "intro": "Hakuto-R Mission 1是日本公司ispace的首次月球着陆尝试。它于2022年12月11日发射，沿一条缓慢的低能量路线飞到距地球138万km处，并于2023年3月21日进入月球轨道。2023年4月25日，飞越一座约3 km高的撞击坑边缘时，它的软件排除了高度计数据，误以为着陆器已经着陆，而实际仍在约5 km的高空。推进剂耗尽后，它坠落在冷海的阿特拉斯撞击坑附近。",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "硬件",
+      "subtitle": "ispace Series 1着陆器——高2.3 m，展开着陆腿后宽2.6 m",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/hakuto-r/01.webp",
+          "caption": "2022年国际宇航大会上展出的HAKUTO-R着陆器模型。它搭载了阿联酋的Rashid月球车和可变形机器人SORA-Q。"
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "月面",
+      "subtitle": "冷海——2023年4月25日撞击",
+      "images": [
+        {
+          "src": "/images/missions/hakuto-r-m1/01.webp",
+          "caption": "NASA的Lunar Reconnaissance Orbiter在次日找到了撞击点：47.581 N、44.094 E附近有至少四块残骸。"
+        }
+      ]
+    }
+  ]
+}

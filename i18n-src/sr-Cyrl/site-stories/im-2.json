@@ -1,0 +1,20 @@
+{
+  "intro": "IM-2 је била друга мисија компаније Intuitive Machines до Месеца. Њен лендер Nova-C, Athena, слетео је 6. марта 2025. на Mons Mouton, око 160 km од јужног пола. Његов ласерски висиномер давао је нестабилна очитавања током целог спуштања; Athena је ударила у површину брже него што је планирано и зауставила се на боку у кратеру ширине 20 m, са соларним панелима окренутим од Сунца. Радила је мање од 13 сати.",
+  "chapters": [
+    {
+      "id": "surface",
+      "title": "Површина",
+      "subtitle": "Mons Mouton — слетање 6. марта 2025.",
+      "images": [
+        {
+          "src": "/images/missions/im-2/01.webp",
+          "caption": "Athena у косом снимку орбитера Lunar Reconnaissance Orbiter, на 84.7906 S, 29.1957 E."
+        },
+        {
+          "src": "/images/fleet-galleries/im-2-athena/01.webp",
+          "caption": "Ближи поглед на лендер Athena у кратеру, који је снимио орбитер Lunar Reconnaissance Orbiter."
+        }
+      ]
+    }
+  ]
+}

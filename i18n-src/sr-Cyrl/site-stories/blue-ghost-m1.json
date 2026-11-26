@@ -1,0 +1,20 @@
+{
+  "intro": "Blue Ghost Mission 1 било је прво слетање компаније Firefly Aerospace на Месец, изведено за NASA са десет инструмената. После деветоминутног кочећег паљења и спорог завршног спуштања на мотору, лендер је усправно слетео у Море кризе, код Mons Latreille, 2. марта 2025, унутар циља од 100 m. Радио је више од 14 дана, током читавог лунарног дана, и послао назад више од 119 GB података.",
+  "chapters": [
+    {
+      "id": "surface",
+      "title": "Површина",
+      "subtitle": "Море кризе — слетање 2. марта 2025.",
+      "images": [
+        {
+          "src": "/images/missions/blue-ghost-m1/01.webp",
+          "caption": "Blue Ghost (у оквиру) на равници мора, у косом снимку орбитера Lunar Reconnaissance Orbiter."
+        },
+        {
+          "src": "/images/fleet-galleries/blue-ghost/01.webp",
+          "caption": "Лендер снимљен право одозго орбитером Lunar Reconnaissance Orbiter, на 18.5623 N, 61.8103 E."
+        }
+      ]
+    }
+  ]
+}

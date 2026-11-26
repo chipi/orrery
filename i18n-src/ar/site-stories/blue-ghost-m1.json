@@ -1,0 +1,20 @@
+{
+  "intro": "كانت Blue Ghost Mission 1 أول هبوط لشركة Firefly Aerospace على القمر، نُفذ لصالح NASA بعشرة أجهزة. وبعد إشعال كبح مدته تسع دقائق ونزول نهائي بطيء على محركاتها الدافعة، هبطت منتصبة في بحر الشدائد قرب Mons Latreille في 2 مارس 2025، ضمن هدفها البالغ 100 م. وعملت أكثر من 14 يوماً، طوال نهار قمري كامل، وأرسلت أكثر من 119 GB من البيانات.",
+  "chapters": [
+    {
+      "id": "surface",
+      "title": "السطح",
+      "subtitle": "بحر الشدائد — الهبوط في 2 مارس 2025",
+      "images": [
+        {
+          "src": "/images/missions/blue-ghost-m1/01.webp",
+          "caption": "Blue Ghost (داخل إطار) على سهل البحر القمري، كما صوّرها Lunar Reconnaissance Orbiter بزاوية مائلة."
+        },
+        {
+          "src": "/images/fleet-galleries/blue-ghost/01.webp",
+          "caption": "مركبة الهبوط كما صوّرها Lunar Reconnaissance Orbiter من أعلى مباشرة، عند 18.5623 N، 61.8103 E."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "intro": "Hakuto-R Mission 1 è stato il primo tentativo di allunaggio dell'azienda giapponese ispace. Lanciato l'11 dicembre 2022, ha seguito una rotta lenta e a bassa energia fino a 1,38 milioni di km dalla Terra ed è entrato in orbita lunare il 21 marzo 2023. Il 25 aprile 2023, passando sopra il bordo di un cratere alto circa 3 km, il suo software ha scartato l'altimetro e ha creduto che il lander fosse già atterrato mentre era ancora a circa 5 km di quota. Ha finito il propellente ed è caduto vicino al cratere Atlas, in Mare Frigoris.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Equipaggiamento",
+      "subtitle": "Lander Series 1 di ispace — alto 2,3 m e largo 2,6 m con le gambe aperte",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/hakuto-r/01.webp",
+          "caption": "Un modello del lander HAKUTO-R mostrato all'International Astronautical Congress del 2022. Trasportava il rover Rashid degli Emirati Arabi Uniti e il robot trasformabile SORA-Q."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superficie",
+      "subtitle": "Mare Frigoris — impatto il 25 aprile 2023",
+      "images": [
+        {
+          "src": "/images/missions/hakuto-r-m1/01.webp",
+          "caption": "Il Lunar Reconnaissance Orbiter della NASA ha trovato il punto d'impatto il giorno dopo: almeno quattro frammenti di detriti intorno a 47.581 N, 44.094 E."
+        }
+      ]
+    }
+  ]
+}

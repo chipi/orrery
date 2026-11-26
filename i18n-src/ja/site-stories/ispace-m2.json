@@ -1,0 +1,27 @@
+{
+  "intro": "RESILIENCEと名付けられたHakuto-R ミッション2は、ispaceの2機目のランダーだった。2025年1月15日にFireflyのBlue Ghostと同じFalcon 9で打ち上げられ、2月に月のそばを通過し、2025年5月6日に月周回軌道に入った。2025年6月5日、レーザーレンジファインダーが有効な高度値を出すのが遅く、ランダーは十分に減速できなかった。最後のテレメトリは寒さの海の上空192 mから届いた。",
+  "chapters": [
+    {
+      "id": "target",
+      "title": "目標",
+      "subtitle": "寒さの海、60.5 N付近 — 遠い北部",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/hakuto-r/02.webp",
+          "caption": "試みの前にLunar Reconnaissance Orbiterが撮影した、寒さの海の着陸予定地域。"
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "月面",
+      "subtitle": "2025年6月5日に衝突",
+      "images": [
+        {
+          "src": "/images/missions/ispace-m2/01.webp",
+          "caption": "2025年6月11日にLunar Reconnaissance Orbiterが撮影した、60.4445 N、355.4120 Eの衝突地点。うっすらと明るい暈を伴う暗い染みが見える。"
+        }
+      ]
+    }
+  ]
+}

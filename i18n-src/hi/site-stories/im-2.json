@@ -1,0 +1,20 @@
+{
+  "intro": "IM-2 Intuitive Machines का दूसरा चंद्र मिशन था। इसका Nova-C लैंडर Athena 6 मार्च 2025 को दक्षिणी ध्रुव से लगभग 160 किमी दूर Mons Mouton पर उतरा। इसके लेज़र अल्टीमीटर ने पूरे अवरोहण में शोर-भरे मान दिए; Athena इरादे से तेज़ सतह से टकराया और 20 मी चौड़े एक क्रेटर में बग़ल के बल रुका, उसके सौर पैनल सूर्य से दूर थे। यह 13 घंटे से कम काम कर सका।",
+  "chapters": [
+    {
+      "id": "surface",
+      "title": "सतह",
+      "subtitle": "Mons Mouton — 6 मार्च 2025 को उतरा",
+      "images": [
+        {
+          "src": "/images/missions/im-2/01.webp",
+          "caption": "Lunar Reconnaissance Orbiter द्वारा तिरछे कोण से देखा गया Athena, 84.7906 S, 29.1957 E पर।"
+        },
+        {
+          "src": "/images/fleet-galleries/im-2-athena/01.webp",
+          "caption": "Lunar Reconnaissance Orbiter से क्रेटर में Athena का और नज़दीकी दृश्य।"
+        }
+      ]
+    }
+  ]
+}

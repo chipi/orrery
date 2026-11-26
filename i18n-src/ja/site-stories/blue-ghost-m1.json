@@ -1,0 +1,20 @@
+{
+  "intro": "Blue Ghost Mission 1は、Firefly Aerospaceにとって最初の月着陸で、10の観測機器を載せてNASAのために実施された。9分間の制動噴射と、スラスターによるゆっくりとした最終降下のあと、2025年3月2日に危難の海のMons Latreille付近に直立して着陸し、100 mの目標範囲内に収まった。14日を超え、月の1日をまるごと動作し、119 GBを超えるデータを送り返した。",
+  "chapters": [
+    {
+      "id": "surface",
+      "title": "月面",
+      "subtitle": "危難の海 — 2025年3月2日着陸",
+      "images": [
+        {
+          "src": "/images/missions/blue-ghost-m1/01.webp",
+          "caption": "海の平原上のBlue Ghost（枠内）。Lunar Reconnaissance Orbiterが斜めから撮影。"
+        },
+        {
+          "src": "/images/fleet-galleries/blue-ghost/01.webp",
+          "caption": "Lunar Reconnaissance Orbiterが真上から撮影したランダー。位置は18.5623 N、61.8103 E。"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "intro": "Hakuto-R Mission 1 was the first Moon landing attempt by the Japanese company ispace. Launched on 11 December 2022, it took a slow, low-energy route out to 1.38 million km from Earth and entered lunar orbit on 21 March 2023. On 25 April 2023, passing a crater rim about 3 km high, its software rejected the altimeter and believed the lander had touched down while it was still about 5 km up. It ran out of propellant and fell near Atlas crater, in Mare Frigoris.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Hardware",
+      "subtitle": "ispace Series 1 lander — 2.3 m tall, 2.6 m wide with its legs out",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/hakuto-r/01.webp",
+          "caption": "A model of the HAKUTO-R lander shown at the International Astronautical Congress in 2022. It carried the UAE Rashid rover and the SORA-Q transformable robot."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Surface",
+      "subtitle": "Mare Frigoris — impact on 25 April 2023",
+      "images": [
+        {
+          "src": "/images/missions/hakuto-r-m1/01.webp",
+          "caption": "NASA's Lunar Reconnaissance Orbiter found the impact site the next day: at least four pieces of debris around 47.581 N, 44.094 E."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "intro": "كانت IM-1 أولى المهمات القمرية لشركة Intuitive Machines وأول هبوط أمريكي على القمر منذ Apollo 17. أُطلقت مركبة الهبوط Nova-C، Odysseus، في 15 فبراير 2024 وهبطت في 22 فبراير قرب Malapert A، على بعد نحو 300 كم من القطب الجنوبي. وصلت بسرعة نحو 7.8 م/ث مع حركة جانبية، فانكسرت إحدى ساقيها وانقلبت، لكنها واصلت العمل نحو سبعة أيام.",
+  "chapters": [
+    {
+      "id": "launch",
+      "title": "الإطلاق",
+      "subtitle": "15 فبراير 2024 — Falcon 9 من مركز كينيدي للفضاء",
+      "images": [
+        {
+          "src": "/images/missions/im-1/01.webp",
+          "caption": "صاروخ Falcon 9 ينطلق حاملاً مركبة الهبوط Nova-C، Odysseus، لبرنامج Commercial Lunar Payload Services التابع لـ NASA."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "السطح",
+      "subtitle": "Malapert A — الهبوط في 22 فبراير 2024",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/im-1-odysseus/02.webp",
+          "caption": "Odysseus في موقع هبوطها، كما صوّرتها كاميرا Lunar Reconnaissance Orbiter Camera."
+        }
+      ]
+    }
+  ]
+}

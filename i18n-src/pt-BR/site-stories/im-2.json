@@ -1,0 +1,20 @@
+{
+  "intro": "A IM-2 foi a segunda missão lunar da Intuitive Machines. Seu módulo Nova-C, Athena, pousou em 6 de março de 2025 sobre Mons Mouton, a cerca de 160 km do polo sul. Seu altímetro a laser deu leituras ruidosas durante toda a descida; a Athena atingiu a superfície mais rápido que o previsto e parou de lado em uma cratera de 20 m de largura, com os painéis solares virados para longe do Sol. Funcionou por menos de 13 horas.",
+  "chapters": [
+    {
+      "id": "surface",
+      "title": "Superfície",
+      "subtitle": "Mons Mouton — pouso em 6 de março de 2025",
+      "images": [
+        {
+          "src": "/images/missions/im-2/01.webp",
+          "caption": "A Athena vista em oblíquo pelo Lunar Reconnaissance Orbiter, em 84.7906 S, 29.1957 E."
+        },
+        {
+          "src": "/images/fleet-galleries/im-2-athena/01.webp",
+          "caption": "Uma visão mais próxima da Athena em sua cratera, pelo Lunar Reconnaissance Orbiter."
+        }
+      ]
+    }
+  ]
+}

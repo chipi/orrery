@@ -1,0 +1,27 @@
+{
+  "intro": "A IM-1 foi a primeira missão lunar da Intuitive Machines e o primeiro pouso americano na Lua desde a Apollo 17. Seu módulo Nova-C, Odysseus, foi lançado em 15 de fevereiro de 2024 e pousou em 22 de fevereiro perto de Malapert A, a cerca de 300 km do polo sul. Chegou a cerca de 7,8 m/s com movimento lateral, quebrou uma perna e tombou, mas continuou funcionando por cerca de sete dias.",
+  "chapters": [
+    {
+      "id": "launch",
+      "title": "Lançamento",
+      "subtitle": "15 de fevereiro de 2024 — Falcon 9 a partir do Centro Espacial Kennedy",
+      "images": [
+        {
+          "src": "/images/missions/im-1/01.webp",
+          "caption": "Um Falcon 9 decola com o módulo Nova-C Odysseus para os Commercial Lunar Payload Services da NASA."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superfície",
+      "subtitle": "Malapert A — pouso em 22 de fevereiro de 2024",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/im-1-odysseus/02.webp",
+          "caption": "Odysseus em seu local de pouso, fotografado pela Lunar Reconnaissance Orbiter Camera."
+        }
+      ]
+    }
+  ]
+}

@@ -29,7 +29,12 @@
     "lro": ["/images/missions/lro/03.webp","/images/missions/lro/01.webp","/images/missions/lro/02.webp","/images/missions/lro/04.webp","/images/missions/lro/05.webp"],
     "change2": ["/images/moon-sites/change2/01.webp","/images/moon-sites/change2/02.webp"],
     "beresheet": ["/images/missions/beresheet/01.webp","/images/missions/beresheet/02.webp","/images/missions/beresheet/03.webp","/images/missions/beresheet/04.webp","/images/missions/beresheet/05.webp","/images/missions/beresheet/06.webp","/images/missions/beresheet/07.webp","/images/missions/beresheet/08.webp","/images/missions/beresheet/09.webp"],
-    "chandrayaan2": ["/images/missions/chandrayaan2/01.webp","/images/missions/chandrayaan2/02.webp","/images/missions/chandrayaan2/03.webp","/images/missions/chandrayaan2/04.webp"]
+    "chandrayaan2": ["/images/missions/chandrayaan2/01.webp","/images/missions/chandrayaan2/02.webp","/images/missions/chandrayaan2/03.webp","/images/missions/chandrayaan2/04.webp"],
+    "hakuto-r-m1": ["/images/missions/hakuto-r-m1/01.webp"],
+    "ispace-m2": ["/images/missions/ispace-m2/01.webp"],
+    "blue-ghost-m1": ["/images/missions/blue-ghost-m1/01.webp"],
+    "im-1": ["/images/missions/im-1/01.webp","/images/missions/im-1/02.webp","/images/missions/im-1/03.webp","/images/missions/im-1/04.webp"],
+    "im-2": ["/images/missions/im-2/01.webp"]
   },
   "mars": {
     "mars2": ["/images/missions/mars2/02.webp","/images/missions/mars2/01.webp","/images/missions/mars2/03.webp","/images/missions/mars2/04.webp"],

@@ -29,5 +29,11 @@
   ],
   "linked_missions": [
     "im-1"
+  ],
+  "linked_sites": [
+    {
+      "type": "moon",
+      "site_id": "im-1"
+    }
   ]
 }

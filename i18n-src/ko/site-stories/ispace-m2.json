@@ -1,0 +1,27 @@
+{
+  "intro": "RESILIENCE라는 이름의 Hakuto-R 미션 2는 ispace의 두 번째 착륙선이었다. 2025년 1월 15일에 Firefly의 Blue Ghost와 같은 Falcon 9에 실려 발사되었고, 2월에 달 곁을 지나 2025년 5월 6일에 달 궤도에 진입했다. 2025년 6월 5일 레이저 거리계가 유효한 고도값을 내놓는 데 느렸고, 착륙선은 충분히 감속하지 못했다. 마지막 원격 측정은 추위의 바다 상공 192 m에서 왔다.",
+  "chapters": [
+    {
+      "id": "target",
+      "title": "목표",
+      "subtitle": "추위의 바다, 60.5 N 부근 — 먼 북쪽",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/hakuto-r/02.webp",
+          "caption": "시도 전에 Lunar Reconnaissance Orbiter가 촬영한, 추위의 바다의 착륙 예정 지역."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "표면",
+      "subtitle": "2025년 6월 5일 충돌",
+      "images": [
+        {
+          "src": "/images/missions/ispace-m2/01.webp",
+          "caption": "2025년 6월 11일 Lunar Reconnaissance Orbiter가 촬영한 60.4445 N, 355.4120 E의 충돌 지점. 희미하게 밝은 후광이 둘러싼 어두운 얼룩이 보인다."
+        }
+      ]
+    }
+  ]
+}

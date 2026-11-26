@@ -1,0 +1,9 @@
+{
+  "name": "RESILIENCE (mission 2 d'ispace)",
+  "mission_type": "Atterrisseur robotique (échec)",
+  "site_name": "Mare Frigoris",
+  "crew": [],
+  "left": "Site de l'impact (juin 2025), avec le micro-rover TENACIOUS qu'il transportait",
+  "fact": "Le deuxième atterrisseur d'ispace est parti dans l'espace à bord du même Falcon 9 que le Blue Ghost de Firefly le 15 janvier 2025, a survolé la Lune à environ 8 400 km en février et est entré en orbite lunaire le 6 mai 2025. Le 5 juin 2025, son télémètre laser a tardé à fournir des altitudes valides, de sorte que l'atterrisseur n'a pas pu ralentir assez : la dernière télémétrie est venue d'environ 192 m au-dessus de la surface, plus vite que prévu. Le Lunar Reconnaissance Orbiter de la NASA a photographié le site d'impact, une tache sombre entourée d'un faible halo clair.",
+  "capability": "Une commission d'examen externe dirigée par des experts du MIT et de l'université Keio a recommandé une navigation relative au terrain, une meilleure gestion des pannes et davantage d'essais pour les prochains atterrisseurs d'ispace."
+}

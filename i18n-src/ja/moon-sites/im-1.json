@@ -1,0 +1,9 @@
+{
+  "name": "IM-1 Odysseus",
+  "mission_type": "無人着陸機",
+  "site_name": "Malapert A付近、南極域",
+  "crew": [],
+  "left": "Odysseus着陸機、約30度傾いて横たわっている",
+  "fact": "Intuitive MachinesのNova-C着陸機Odysseusは、2024年2月22日、南極から約300 km離れたMalapert A付近に着陸した。レーザー測距計は打ち上げ前に有効化されておらず、チームはソフトウェアのパッチを送って、実験として搭載していたNASAのライダーに頼ることにした。NASAの再現では、接地時の速度は約7.8 m/sで横向きの動きがあった。着陸機は滑って脚を1本折り、横に倒れた。その後も約7日間動き続けた。",
+  "capability": "民間企業が南極域の縁に着陸機を置いて運用し、NASAのNavigation Doppler Lidarは降下中に有効な距離と速度のデータを返した。"
+}

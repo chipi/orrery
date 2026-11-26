@@ -1,0 +1,20 @@
+{
+  "intro": "Blue Ghost Mission 1是Firefly Aerospace的首次月球着陆，为NASA执行，搭载十台仪器。经过九分钟的制动点火和靠推进器完成的缓慢最终下降，它于2025年3月2日直立着陆在危海的Mons Latreille附近，落在100 m的目标范围内。它工作了超过14天，历经整整一个月昼，传回超过119 GB数据。",
+  "chapters": [
+    {
+      "id": "surface",
+      "title": "月面",
+      "subtitle": "危海——2025年3月2日着陆",
+      "images": [
+        {
+          "src": "/images/missions/blue-ghost-m1/01.webp",
+          "caption": "月海平原上的Blue Ghost（框内），由Lunar Reconnaissance Orbiter从斜侧方拍摄。"
+        },
+        {
+          "src": "/images/fleet-galleries/blue-ghost/01.webp",
+          "caption": "Lunar Reconnaissance Orbiter从正上方拍摄的着陆器，位于18.5623 N、61.8103 E。"
+        }
+      ]
+    }
+  ]
+}

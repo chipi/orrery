@@ -1,0 +1,20 @@
+{
+  "intro": "Blue Ghost Mission 1 è stato il primo allunaggio di Firefly Aerospace, svolto per la NASA con dieci strumenti. Dopo un'accensione di frenata di nove minuti e una lenta discesa finale sui propulsori, è atterrato in posizione verticale a Mare Crisium, vicino a Mons Latreille, il 2 marzo 2025, entro il suo bersaglio di 100 m. Ha operato per più di 14 giorni, per un intero giorno lunare, e ha inviato più di 119 GB di dati.",
+  "chapters": [
+    {
+      "id": "surface",
+      "title": "Superficie",
+      "subtitle": "Mare Crisium — allunaggio il 2 marzo 2025",
+      "images": [
+        {
+          "src": "/images/missions/blue-ghost-m1/01.webp",
+          "caption": "Blue Ghost (riquadrato) sulla pianura del mare, ripreso in obliquo dal Lunar Reconnaissance Orbiter."
+        },
+        {
+          "src": "/images/fleet-galleries/blue-ghost/01.webp",
+          "caption": "Il lander visto dall'alto dal Lunar Reconnaissance Orbiter, a 18.5623 N, 61.8103 E."
+        }
+      ]
+    }
+  ]
+}

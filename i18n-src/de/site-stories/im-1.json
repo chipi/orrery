@@ -1,0 +1,27 @@
+{
+  "intro": "IM-1 war die erste Mondmission von Intuitive Machines und die erste amerikanische Mondlandung seit Apollo 17. Ihr Nova-C-Lander Odysseus startete am 15. Februar 2024 und setzte am 22. Februar nahe Malapert A auf, etwa 300 km vom Südpol entfernt. Er kam mit etwa 7,8 m/s und mit seitlicher Bewegung an, brach ein Bein und kippte um, arbeitete aber etwa sieben Tage lang weiter.",
+  "chapters": [
+    {
+      "id": "launch",
+      "title": "Start",
+      "subtitle": "15. Februar 2024 – Falcon 9 vom Kennedy Space Center",
+      "images": [
+        {
+          "src": "/images/missions/im-1/01.webp",
+          "caption": "Eine Falcon 9 hebt mit dem Nova-C-Lander Odysseus für die Commercial Lunar Payload Services der NASA ab."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Oberfläche",
+      "subtitle": "Malapert A – gelandet am 22. Februar 2024",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/im-1-odysseus/02.webp",
+          "caption": "Odysseus an seinem Landeplatz, aufgenommen von der Lunar Reconnaissance Orbiter Camera."
+        }
+      ]
+    }
+  ]
+}

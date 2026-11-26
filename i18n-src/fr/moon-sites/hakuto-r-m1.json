@@ -1,0 +1,9 @@
+{
+  "name": "Hakuto-R Mission 1",
+  "mission_type": "Atterrisseur robotique (échec)",
+  "site_name": "Près du cratère Atlas, Mare Frigoris",
+  "crew": [],
+  "left": "Débris de l'écrasement (avril 2023), avec les rovers Rashid et SORA-Q qu'il transportait",
+  "fact": "L'entreprise japonaise ispace a lancé son premier atterrisseur le 11 décembre 2022 et lui a fait suivre une route lente et peu énergétique qui l'a conduit à 1,38 million de km de la Terre avant son entrée en orbite lunaire le 21 mars 2023. Le 25 avril 2023, le freinage s'est déroulé comme prévu, mais au passage d'un bord de cratère haut d'environ 3 km, la lecture d'altitude a fait un bond ; le logiciel a rejeté l'altimètre et a cru l'atterrisseur au sol alors qu'il se trouvait encore à environ 5 km d'altitude. Il a descendu lentement jusqu'à épuisement de ses ergols, puis il est tombé. Le Lunar Reconnaissance Orbiter de la NASA a retrouvé les débris.",
+  "capability": "Huit de ses dix jalons de mission ont été atteints avant l'atterrissage. ispace a attribué la perte au logiciel et à une simulation qui omettait le relief du chemin d'approche, et non au matériel."
+}

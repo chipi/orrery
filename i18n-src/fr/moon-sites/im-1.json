@@ -1,0 +1,9 @@
+{
+  "name": "IM-1 Odysseus",
+  "mission_type": "Atterrisseur robotique",
+  "site_name": "Près de Malapert A, région du pôle sud",
+  "crew": [],
+  "left": "Atterrisseur Odysseus, couché et incliné d'environ 30 degrés",
+  "fact": "L'atterrisseur Nova-C Odysseus d'Intuitive Machines s'est posé le 22 février 2024 près de Malapert A, à environ 300 km du pôle sud. Ses télémètres laser n'avaient pas été activés avant le lancement ; l'équipe a donc chargé un correctif logiciel pour s'appuyer sur un lidar de la NASA embarqué à titre d'expérience. La reconstitution de la NASA situe le contact avec le sol à environ 7,8 m/s avec un mouvement latéral ; l'atterrisseur a glissé, cassé un pied et basculé sur le côté. Il a continué à fonctionner pendant environ sept jours.",
+  "capability": "Une entreprise privée a posé un atterrisseur en bordure de la région polaire sud et l'y a exploité, et le Navigation Doppler Lidar de la NASA a renvoyé des mesures valides de distance et de vitesse pendant la descente."
+}

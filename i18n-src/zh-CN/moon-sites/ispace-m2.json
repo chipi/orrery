@@ -1,0 +1,9 @@
+{
+  "name": "RESILIENCE（ispace任务2）",
+  "mission_type": "无人着陆器（失败）",
+  "site_name": "冷海",
+  "crew": [],
+  "left": "坠毁地点（2025年6月），以及它携带的TENACIOUS微型月球车",
+  "fact": "ispace的第二台着陆器于2025年1月15日与Firefly的Blue Ghost搭乘同一枚Falcon 9升空，2月在约8,400 km处飞掠月球，并于2025年5月6日进入月球轨道。2025年6月5日，它的激光测距仪迟迟没有给出有效高度，着陆器因此无法充分减速：最后一次遥测来自地表上方约192 m处，速度比预期更快。NASA的Lunar Reconnaissance Orbiter拍到了撞击地点，那是一块带着微弱明亮晕圈的暗斑。",
+  "capability": "由MIT和庆应义塾大学专家领导的外部审查委员会建议，ispace后续的着陆器采用地形相对导航，改进故障处理，并增加测试。"
+}

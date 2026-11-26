@@ -1,0 +1,27 @@
+{
+  "intro": "A Hakuto-R Mission 1 foi a primeira tentativa de pouso na Lua da empresa japonesa ispace. Lançada em 11 de dezembro de 2022, seguiu uma rota lenta e de baixa energia até 1,38 milhão de km da Terra e entrou em órbita lunar em 21 de março de 2023. Em 25 de abril de 2023, ao passar pela borda de uma cratera de cerca de 3 km de altura, seu software descartou o altímetro e acreditou que o módulo já havia tocado o solo quando ainda estava a cerca de 5 km. Ficou sem propelente e caiu perto da cratera Atlas, em Mare Frigoris.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Equipamento",
+      "subtitle": "Módulo de pouso Series 1 da ispace — 2,3 m de altura e 2,6 m de largura com as pernas abertas",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/hakuto-r/01.webp",
+          "caption": "Um modelo do módulo de pouso HAKUTO-R exibido no Congresso Internacional de Astronáutica de 2022. Ele levava o rover Rashid dos Emirados Árabes Unidos e o robô transformável SORA-Q."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Superfície",
+      "subtitle": "Mare Frigoris — impacto em 25 de abril de 2023",
+      "images": [
+        {
+          "src": "/images/missions/hakuto-r-m1/01.webp",
+          "caption": "O Lunar Reconnaissance Orbiter da NASA encontrou o local do impacto no dia seguinte: pelo menos quatro pedaços de destroços em torno de 47.581 N, 44.094 E."
+        }
+      ]
+    }
+  ]
+}

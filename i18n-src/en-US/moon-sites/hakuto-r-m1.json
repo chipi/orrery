@@ -1,0 +1,9 @@
+{
+  "name": "Hakuto-R Mission 1",
+  "mission_type": "Robotic Lander (failed)",
+  "site_name": "Near Atlas crater, Mare Frigoris",
+  "crew": [],
+  "left": "Crash debris (April 2023), with the Rashid and SORA-Q rovers it carried",
+  "fact": "Japanese company ispace launched its first lander on 11 December 2022 and flew a slow, low-energy route that took it 1.38 million km from Earth before it entered lunar orbit on 21 March 2023. On 25 April 2023 the braking went as planned, but passing a crater rim about 3 km high the altitude reading jumped; the software rejected the altimeter and believed the lander was on the ground while it was still about 5 km up. It descended slowly until its propellant ran out, then fell. NASA's Lunar Reconnaissance Orbiter found the debris.",
+  "capability": "Eight of its ten mission milestones were met before the landing. ispace traced the loss to software and to a simulation that left out the terrain on the approach path, not to the hardware."
+}

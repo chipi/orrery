@@ -1,0 +1,9 @@
+{
+  "name": "IM-1 Odysseus",
+  "mission_type": "Robotic Lander",
+  "site_name": "Near Malapert A, south polar region",
+  "crew": [],
+  "left": "Odysseus lander, lying tilted about 30 degrees",
+  "fact": "Intuitive Machines' Nova-C lander Odysseus landed on 22 February 2024 near Malapert A, about 300 km from the south pole. Its laser rangefinders had not been enabled before launch, so the team loaded a software patch to lean on a NASA lidar it was carrying as an experiment. NASA's reconstruction puts the touchdown at about 7.8 m/s with sideways motion; the lander skidded, broke a leg and tipped onto its side. It kept working for about seven days.",
+  "capability": "A private company placed a lander at the edge of the south polar region and operated it there, and NASA's Navigation Doppler Lidar returned valid range and speed data on the way down."
+}

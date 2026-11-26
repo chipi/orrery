@@ -1,0 +1,9 @@
+{
+  "name": "IM-1 Odysseus",
+  "mission_type": "무인 착륙선",
+  "site_name": "Malapert A 근처, 남극 지역",
+  "crew": [],
+  "left": "Odysseus 착륙선, 약 30도 기울어진 채 누워 있음",
+  "fact": "Intuitive Machines의 Nova-C 착륙선 Odysseus는 2024년 2월 22일 남극에서 약 300 km 떨어진 Malapert A 근처에 착륙했다. 레이저 거리계가 발사 전에 활성화되지 않아, 팀은 실험용으로 실려 있던 NASA 라이다에 의존하도록 소프트웨어 패치를 올렸다. NASA의 재구성에 따르면 접지 속도는 약 7.8 m/s였고 옆으로 움직임이 있었으며, 착륙선은 미끄러지며 다리 하나가 부러져 옆으로 쓰러졌다. 그 뒤에도 약 7일 동안 계속 작동했다.",
+  "capability": "민간 기업이 남극 지역 가장자리에 착륙선을 내려놓고 그곳에서 운용했으며, NASA의 Navigation Doppler Lidar는 하강하는 동안 유효한 거리와 속도 데이터를 보내왔다."
+}

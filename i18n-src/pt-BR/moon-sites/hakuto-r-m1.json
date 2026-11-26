@@ -1,0 +1,9 @@
+{
+  "name": "Hakuto-R Mission 1",
+  "mission_type": "Módulo de pouso robótico (falhou)",
+  "site_name": "Perto da cratera Atlas, Mare Frigoris",
+  "crew": [],
+  "left": "Destroços da queda (abril de 2023), com os rovers Rashid e SORA-Q que transportava",
+  "fact": "A empresa japonesa ispace lançou seu primeiro módulo de pouso em 11 de dezembro de 2022 e seguiu uma rota lenta e de baixa energia que o levou a 1,38 milhão de km da Terra antes de entrar em órbita lunar em 21 de março de 2023. Em 25 de abril de 2023, a frenagem ocorreu como planejado, mas ao passar pela borda de uma cratera com cerca de 3 km de altura a leitura de altitude deu um salto; o software rejeitou o altímetro e acreditou que o módulo estava no solo, quando ainda estava a cerca de 5 km de altura. Ele desceu devagar até o propelente acabar e então caiu. O Lunar Reconnaissance Orbiter da NASA encontrou os destroços.",
+  "capability": "Oito de seus dez marcos de missão foram cumpridos antes do pouso. A ispace atribuiu a perda ao software e a uma simulação que deixou de fora o terreno do caminho de aproximação, não ao hardware."
+}

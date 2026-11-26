@@ -1,0 +1,27 @@
+{
+  "intro": "Hakuto-R Mission 1 war der erste Mondlandeversuch des japanischen Unternehmens ispace. Sie startete am 11. Dezember 2022, nahm eine langsame, energiearme Route bis zu 1,38 Millionen km von der Erde entfernt und schwenkte am 21. März 2023 in die Mondumlaufbahn ein. Als der Lander am 25. April 2023 einen etwa 3 km hohen Kraterrand überflog, verwarf die Software den Höhenmesser und glaubte, der Lander habe aufgesetzt, obwohl er noch etwa 5 km hoch war. Der Treibstoff ging zur Neige, und der Lander stürzte nahe dem Krater Atlas im Mare Frigoris ab.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Technik",
+      "subtitle": "Series-1-Lander von ispace – 2,3 m hoch, 2,6 m breit mit ausgefahrenen Beinen",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/hakuto-r/01.webp",
+          "caption": "Ein Modell des HAKUTO-R-Landers, gezeigt auf dem Internationalen Astronautischen Kongress 2022. Er trug den Rover Rashid der VAE und den verwandelbaren Roboter SORA-Q."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Oberfläche",
+      "subtitle": "Mare Frigoris – Einschlag am 25. April 2023",
+      "images": [
+        {
+          "src": "/images/missions/hakuto-r-m1/01.webp",
+          "caption": "Der Lunar Reconnaissance Orbiter der NASA fand die Aufschlagstelle am nächsten Tag: mindestens vier Trümmerteile bei 47.581 N, 44.094 E."
+        }
+      ]
+    }
+  ]
+}

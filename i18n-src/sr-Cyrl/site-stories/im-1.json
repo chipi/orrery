@@ -1,0 +1,27 @@
+{
+  "intro": "IM-1 је била прва мисија компаније Intuitive Machines до Месеца и прво америчко слетање на Месец после мисије Apollo 17. Њен лендер Nova-C, Odysseus, лансиран је 15. фебруара 2024. и слетео 22. фебруара код Malapert A, око 300 km од јужног пола. Дошао је брзином од око 7,8 m/s са бочним кретањем, сломио ногу и преврнуо се, али је наставио да ради око седам дана.",
+  "chapters": [
+    {
+      "id": "launch",
+      "title": "Лансирање",
+      "subtitle": "15. фебруар 2024. — Falcon 9 из Свемирског центра Кенеди",
+      "images": [
+        {
+          "src": "/images/missions/im-1/01.webp",
+          "caption": "Falcon 9 полеће са лендером Nova-C Odysseus за NASA-ин програм Commercial Lunar Payload Services."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Површина",
+      "subtitle": "Malapert A — слетање 22. фебруара 2024.",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/im-1-odysseus/02.webp",
+          "caption": "Odysseus на месту слетања, снимљен камером Lunar Reconnaissance Orbiter Camera."
+        }
+      ]
+    }
+  ]
+}

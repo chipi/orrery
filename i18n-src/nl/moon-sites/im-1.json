@@ -1,0 +1,9 @@
+{
+  "name": "IM-1 Odysseus",
+  "mission_type": "Robotlander",
+  "site_name": "Bij Malapert A, zuidpoolregio",
+  "crew": [],
+  "left": "Odysseus-lander, ongeveer 30 graden scheef liggend",
+  "fact": "De Nova-C-lander Odysseus van Intuitive Machines landde op 22 februari 2024 bij Malapert A, ongeveer 300 km van de zuidpool. Zijn laserafstandsmeters waren vóór de lancering niet ingeschakeld, dus laadde het team een softwarepatch om te leunen op een NASA-lidar die als experiment meeging. NASA's reconstructie plaatst de landing op ongeveer 7,8 m/s met zijwaartse beweging; de lander gleed, brak een poot en kantelde op zijn zij. Hij bleef nog ongeveer zeven dagen werken.",
+  "capability": "Een particulier bedrijf zette een lander neer aan de rand van de zuidpoolregio en bediende hem daar, en NASA's Navigation Doppler Lidar leverde tijdens de afdaling geldige afstands- en snelheidsgegevens."
+}

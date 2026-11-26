@@ -1,0 +1,27 @@
+{
+  "intro": "Hakuto-R Mission 1は、日本企業ispaceによる最初の月着陸への挑戦だった。2022年12月11日に打ち上げられ、ゆっくりとした低エネルギーの経路で地球から138万kmまで離れ、2023年3月21日に月周回軌道に入った。2023年4月25日、高さ約3 kmのクレーターの縁を通過したとき、ソフトウェアは高度計を除外し、まだ約5 km上空にいるのに着陸したと思い込んだ。推進剤が尽き、寒さの海のアトラス・クレーター付近に落下した。",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "ハードウェア",
+      "subtitle": "ispace シリーズ1ランダー — 高さ2.3 m、脚を広げた幅2.6 m",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/hakuto-r/01.webp",
+          "caption": "2022年の国際宇宙会議で展示されたHAKUTO-Rランダーの模型。UAEのRashidローバーと、変形型ロボットSORA-Qを搭載していた。"
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "月面",
+      "subtitle": "寒さの海 — 2023年4月25日に衝突",
+      "images": [
+        {
+          "src": "/images/missions/hakuto-r-m1/01.webp",
+          "caption": "NASAのLunar Reconnaissance Orbiterは翌日に衝突地点を見つけた。47.581 N、44.094 E付近に、少なくとも4つの破片があった。"
+        }
+      ]
+    }
+  ]
+}

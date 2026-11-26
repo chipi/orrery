@@ -781,7 +781,7 @@
   },
   "burn|ar|fleet/lander/blue-ghost.json :: description": {
     "why": "read 2026-11-26: \"burns MMH and MON-3\" is an engine consuming propellant, not a burn (an engine firing); the translation uses the verb for burning fuel",
-    "tr": "ab3d0f0e8d"
+    "tr": "1d100528a8"
   },
   "burn|ar|fleet/launcher/new-glenn.json :: description": {
     "why": "hydrogen-burning engines = combustion (يعملان بالهيدروجين)",
@@ -1281,7 +1281,7 @@
   },
   "burn|hi|fleet/lander/blue-ghost.json :: description": {
     "why": "read 2026-11-26: \"burns MMH and MON-3\" is an engine consuming propellant, not a burn (an engine firing); the translation uses the verb for burning fuel",
-    "tr": "3baf14212c"
+    "tr": "00dfcfd8d5"
   },
   "burn|hi|fleet/launcher/new-glenn.json :: description": {
     "why": "methane/hydrogen-burning = combustion",
@@ -1553,7 +1553,7 @@
   },
   "burn|ja|fleet/lander/blue-ghost.json :: description": {
     "why": "read 2026-11-26: \"burns MMH and MON-3\" is an engine consuming propellant, not a burn (an engine firing); the translation uses the verb for burning fuel",
-    "tr": "22f7fe7dda"
+    "tr": "9c290a0432"
   },
   "burn|ja|fleet/launcher/starship.json :: description": {
     "why": "methane-burning = fuel: 燃料とする",
@@ -1873,7 +1873,7 @@
   },
   "burn|ru|fleet/lander/blue-ghost.json :: description": {
     "why": "read 2026-11-26: \"burns MMH and MON-3\" is an engine consuming propellant, not a burn (an engine firing); the translation uses the verb for burning fuel",
-    "tr": "7e28c93a77"
+    "tr": "71fab87ada"
   },
   "burn|ru|fleet/launcher/new-glenn.json :: description": {
     "why": "hydrogen-burning engines = combustion",
@@ -2041,7 +2041,7 @@
   },
   "burn|sr-Cyrl|fleet/lander/blue-ghost.json :: description": {
     "why": "read 2026-11-26: \"burns MMH and MON-3\" is an engine consuming propellant, not a burn (an engine firing); the translation uses the verb for burning fuel",
-    "tr": "b5eaa1235d"
+    "tr": "b07cf1a087"
   },
   "burn|sr-Cyrl|fleet/launcher/new-glenn.json :: description": {
     "why": "hydrogen-burning engines = combustion",
@@ -4653,7 +4653,7 @@
   },
   "payload|ar|missions/moon/blue-ghost-m1.json :: description": {
     "why": "read 2026-11-26: \"payload\" is part of the programme name \"Commercial Lunar Payload Services\", kept in English as in the IM-1 overlays",
-    "tr": "2a77660763"
+    "tr": "f4e33bda87"
   },
   "payload|ar|missions/moon/im-2.json :: description": {
     "why": "read 2026-11-26: \"payload\" is part of the programme name \"Commercial Lunar Payload Services\", kept in English as in the IM-1 overlays",
@@ -4717,7 +4717,7 @@
   },
   "payload|hi|missions/moon/blue-ghost-m1.json :: description": {
     "why": "read 2026-11-26: \"payload\" is part of the programme name \"Commercial Lunar Payload Services\", kept in English as in the IM-1 overlays",
-    "tr": "a4bb328d5c"
+    "tr": "241418c19e"
   },
   "payload|hi|missions/moon/im-2.json :: description": {
     "why": "read 2026-11-26: \"payload\" is part of the programme name \"Commercial Lunar Payload Services\", kept in English as in the IM-1 overlays",
@@ -4757,7 +4757,7 @@
   },
   "payload|ja|missions/moon/blue-ghost-m1.json :: description": {
     "why": "read 2026-11-26: \"payload\" is part of the programme name \"Commercial Lunar Payload Services\", kept in English as in the IM-1 overlays",
-    "tr": "1a38d9e565"
+    "tr": "ed58a4cd90"
   },
   "payload|ja|missions/moon/change1.json :: payload": {
     "why": "variant: 科学観測機器 (science instruments = science payload)",
@@ -4805,7 +4805,7 @@
   },
   "payload|ko|missions/moon/blue-ghost-m1.json :: description": {
     "why": "read 2026-11-26: \"payload\" is part of the programme name \"Commercial Lunar Payload Services\", kept in English as in the IM-1 overlays",
-    "tr": "57d1fcc4fb"
+    "tr": "ddc6b3e6c3"
   },
   "payload|ko|missions/moon/im-2.json :: description": {
     "why": "read 2026-11-26: \"payload\" is part of the programme name \"Commercial Lunar Payload Services\", kept in English as in the IM-1 overlays",
@@ -4897,7 +4897,7 @@
   },
   "payload|ru|missions/moon/blue-ghost-m1.json :: description": {
     "why": "read 2026-11-26: \"payload\" is part of the programme name \"Commercial Lunar Payload Services\", kept in English as in the IM-1 overlays",
-    "tr": "14979cb3f1"
+    "tr": "b92fd3883a"
   },
   "payload|ru|missions/moon/im-2.json :: description": {
     "why": "read 2026-11-26: \"payload\" is part of the programme name \"Commercial Lunar Payload Services\", kept in English as in the IM-1 overlays",
@@ -4933,7 +4933,7 @@
   },
   "payload|sr-Cyrl|missions/moon/blue-ghost-m1.json :: description": {
     "why": "read 2026-11-26: \"payload\" is part of the programme name \"Commercial Lunar Payload Services\", kept in English as in the IM-1 overlays",
-    "tr": "0c3759226b"
+    "tr": "3f07828121"
   },
   "payload|sr-Cyrl|missions/moon/im-2.json :: description": {
     "why": "read 2026-11-26: \"payload\" is part of the programme name \"Commercial Lunar Payload Services\", kept in English as in the IM-1 overlays",

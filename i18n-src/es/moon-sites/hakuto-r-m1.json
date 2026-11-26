@@ -1,0 +1,9 @@
+{
+  "name": "Hakuto-R Mission 1",
+  "mission_type": "Módulo de aterrizaje robótico (fallido)",
+  "site_name": "Cerca del cráter Atlas, Mare Frigoris",
+  "crew": [],
+  "left": "Restos del choque (abril de 2023), con los rovers Rashid y SORA-Q que transportaba",
+  "fact": "La empresa japonesa ispace lanzó su primer módulo de aterrizaje el 11 de diciembre de 2022 y siguió una ruta lenta y de baja energía que lo llevó a 1,38 millones de km de la Tierra antes de entrar en órbita lunar el 21 de marzo de 2023. El 25 de abril de 2023 el frenado fue el previsto, pero al pasar sobre el borde de un cráter de unos 3 km de altura, la lectura de altitud dio un salto; el software rechazó el altímetro y creyó que el módulo estaba en el suelo cuando aún se hallaba a unos 5 km de altura. Descendió lentamente hasta agotar el propelente y después cayó. El Lunar Reconnaissance Orbiter de la NASA encontró los restos.",
+  "capability": "Ocho de sus diez hitos de la misión se cumplieron antes del aterrizaje. ispace atribuyó la pérdida al software y a una simulación que omitía el terreno de la trayectoria de aproximación, no al hardware."
+}

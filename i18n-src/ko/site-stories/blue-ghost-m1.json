@@ -1,0 +1,20 @@
+{
+  "intro": "Blue Ghost Mission 1은 Firefly Aerospace의 첫 달 착륙으로, 열 개의 관측 장비를 싣고 NASA를 위해 수행되었다. 9분간의 제동 연소와 추력기를 이용한 느린 마지막 하강 끝에 2025년 3월 2일 위난의 바다의 Mons Latreille 근처에 똑바로 착륙했고, 100 m 목표 안에 들었다. 14일 넘게, 달의 하루 전체에 걸쳐 작동하며 119 GB가 넘는 데이터를 보내왔다.",
+  "chapters": [
+    {
+      "id": "surface",
+      "title": "표면",
+      "subtitle": "위난의 바다 — 2025년 3월 2일 착륙",
+      "images": [
+        {
+          "src": "/images/missions/blue-ghost-m1/01.webp",
+          "caption": "바다 평원 위의 Blue Ghost(네모 표시). Lunar Reconnaissance Orbiter가 비스듬히 촬영했다."
+        },
+        {
+          "src": "/images/fleet-galleries/blue-ghost/01.webp",
+          "caption": "Lunar Reconnaissance Orbiter가 바로 위에서 촬영한 착륙선. 위치는 18.5623 N, 61.8103 E."
+        }
+      ]
+    }
+  ]
+}

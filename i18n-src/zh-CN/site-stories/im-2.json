@@ -1,0 +1,20 @@
+{
+  "intro": "IM-2是Intuitive Machines的第二次月球任务。其Nova-C着陆器Athena于2025年3月6日在距南极约160 km的Mons Mouton着陆。它的激光高度计在整个下降过程中读数噪声很大；Athena以比预期更快的速度撞上月面，侧躺在一个直径20 m的撞击坑里，太阳能板背向太阳。它工作了不到13小时。",
+  "chapters": [
+    {
+      "id": "surface",
+      "title": "月面",
+      "subtitle": "Mons Mouton——2025年3月6日着陆",
+      "images": [
+        {
+          "src": "/images/missions/im-2/01.webp",
+          "caption": "Lunar Reconnaissance Orbiter从斜侧方拍摄的Athena，位于84.7906 S、29.1957 E。"
+        },
+        {
+          "src": "/images/fleet-galleries/im-2-athena/01.webp",
+          "caption": "Lunar Reconnaissance Orbiter拍摄的撞击坑中Athena的近景。"
+        }
+      ]
+    }
+  ]
+}

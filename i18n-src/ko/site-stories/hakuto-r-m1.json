@@ -1,0 +1,27 @@
+{
+  "intro": "Hakuto-R Mission 1은 일본 기업 ispace의 첫 달 착륙 시도였다. 2022년 12월 11일에 발사되어 느리고 에너지가 적게 드는 경로로 지구에서 138만 km까지 날아갔고, 2023년 3월 21일에 달 궤도에 진입했다. 2023년 4월 25일 높이 약 3 km의 크레이터 가장자리를 지나면서 소프트웨어가 고도계를 배제했고, 착륙선은 아직 약 5 km 상공에 있는데도 착지했다고 믿었다. 추진제가 바닥나 추위의 바다의 아틀라스 크레이터 근처에 추락했다.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "하드웨어",
+      "subtitle": "ispace Series 1 착륙선 — 높이 2.3 m, 다리를 펼친 너비 2.6 m",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/hakuto-r/01.webp",
+          "caption": "2022년 국제우주대회에서 전시된 HAKUTO-R 착륙선 모형. UAE의 Rashid 로버와 변형 로봇 SORA-Q를 싣고 있었다."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "표면",
+      "subtitle": "추위의 바다 — 2023년 4월 25일 충돌",
+      "images": [
+        {
+          "src": "/images/missions/hakuto-r-m1/01.webp",
+          "caption": "NASA의 Lunar Reconnaissance Orbiter가 이튿날 충돌 지점을 찾아냈다. 47.581 N, 44.094 E 부근에서 최소 네 개의 잔해 조각이 확인되었다."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "intro": "A Blue Ghost Mission 1 foi o primeiro pouso lunar da Firefly Aerospace, realizado para a NASA com dez instrumentos. Após uma queima de frenagem de nove minutos e uma descida final lenta sobre seus propulsores, tocou o solo em pé em Mare Crisium, perto de Mons Latreille, em 2 de março de 2025, dentro de seu alvo de 100 m. Funcionou por mais de 14 dias, durante um dia lunar inteiro, e enviou mais de 119 GB de dados.",
+  "chapters": [
+    {
+      "id": "surface",
+      "title": "Superfície",
+      "subtitle": "Mare Crisium — pouso em 2 de março de 2025",
+      "images": [
+        {
+          "src": "/images/missions/blue-ghost-m1/01.webp",
+          "caption": "A Blue Ghost (enquadrada) na planície do mare, vista em oblíquo pelo Lunar Reconnaissance Orbiter."
+        },
+        {
+          "src": "/images/fleet-galleries/blue-ghost/01.webp",
+          "caption": "O módulo visto de cima pelo Lunar Reconnaissance Orbiter, em 18.5623 N, 61.8103 E."
+        }
+      ]
+    }
+  ]
+}

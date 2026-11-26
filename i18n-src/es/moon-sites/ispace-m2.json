@@ -1,0 +1,9 @@
+{
+  "name": "RESILIENCE (misión 2 de ispace)",
+  "mission_type": "Módulo de aterrizaje robótico (fallido)",
+  "site_name": "Mare Frigoris",
+  "crew": [],
+  "left": "Lugar del impacto (junio de 2025), con el microrrover TENACIOUS que transportaba",
+  "fact": "El segundo módulo de aterrizaje de ispace viajó al espacio en el mismo Falcon 9 que el Blue Ghost de Firefly el 15 de enero de 2025, pasó junto a la Luna a unos 8.400 km en febrero y entró en órbita lunar el 6 de mayo de 2025. El 5 de junio de 2025 su telémetro láser tardó en dar altitudes válidas, por lo que el módulo no pudo frenar lo suficiente: la última telemetría llegó desde unos 192 m sobre la superficie, a mayor velocidad de la esperada. El Lunar Reconnaissance Orbiter de la NASA fotografió el lugar del impacto, una mancha oscura con un tenue halo brillante.",
+  "capability": "Un comité de revisión externo dirigido por expertos del MIT y de la Universidad Keio recomendó navegación relativa al terreno, mejor gestión de fallos y más pruebas para los próximos módulos de ispace."
+}

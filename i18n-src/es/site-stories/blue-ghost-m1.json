@@ -1,0 +1,20 @@
+{
+  "intro": "Blue Ghost Mission 1 fue el primer alunizaje de Firefly Aerospace, realizado para la NASA con diez instrumentos. Tras una quema de frenado de nueve minutos y un lento descenso final con sus propulsores, se posó derecha en Mare Crisium, cerca de Mons Latreille, el 2 de marzo de 2025, dentro de su objetivo de 100 m. Funcionó más de 14 días, durante un día lunar completo, y devolvió más de 119 GB de datos.",
+  "chapters": [
+    {
+      "id": "surface",
+      "title": "Superficie",
+      "subtitle": "Mare Crisium: alunizaje el 2 de marzo de 2025",
+      "images": [
+        {
+          "src": "/images/missions/blue-ghost-m1/01.webp",
+          "caption": "Blue Ghost (enmarcada) sobre la llanura del mar lunar, vista en oblicuo por el Lunar Reconnaissance Orbiter."
+        },
+        {
+          "src": "/images/fleet-galleries/blue-ghost/01.webp",
+          "caption": "El módulo visto desde justo encima por el Lunar Reconnaissance Orbiter, en 18.5623 N, 61.8103 E."
+        }
+      ]
+    }
+  ]
+}

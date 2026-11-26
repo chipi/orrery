@@ -1,0 +1,20 @@
+{
+  "intro": "Blue Ghost Mission 1 Firefly Aerospace का पहला चंद्र अवतरण था, जो NASA के लिए दस उपकरणों के साथ उड़ाया गया। नौ मिनट के ब्रेकिंग दहन और थ्रस्टरों पर धीमे अंतिम अवरोहण के बाद यह 2 मार्च 2025 को संकट सागर में Mons Latreille के पास सीधा उतरा, अपने 100 मी के लक्ष्य के भीतर। इसने 14 दिन से अधिक, पूरे एक चंद्र दिवस तक काम किया और 119 GB से अधिक डेटा भेजा।",
+  "chapters": [
+    {
+      "id": "surface",
+      "title": "सतह",
+      "subtitle": "संकट सागर — 2 मार्च 2025 को उतरा",
+      "images": [
+        {
+          "src": "/images/missions/blue-ghost-m1/01.webp",
+          "caption": "सागर के मैदान पर Blue Ghost (चौखटे में), Lunar Reconnaissance Orbiter द्वारा तिरछे कोण से देखा गया।"
+        },
+        {
+          "src": "/images/fleet-galleries/blue-ghost/01.webp",
+          "caption": "Lunar Reconnaissance Orbiter द्वारा ठीक ऊपर से देखा गया लैंडर, 18.5623 N, 61.8103 E पर।"
+        }
+      ]
+    }
+  ]
+}

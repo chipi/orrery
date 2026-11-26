@@ -1,0 +1,27 @@
+{
+  "intro": "Hakuto-R Missie 2, RESILIENCE genoemd, was de tweede lander van ispace. Hij deelde op 15 januari 2025 een Falcon 9 met Firefly's Blue Ghost, vloog in februari langs de Maan en kwam op 6 mei 2025 in een maanbaan. Op 5 juni 2025 gaf zijn laserafstandsmeter traag geldige hoogtes en kon de lander niet genoeg afremmen: de laatste telemetrie kwam van 192 m boven Mare Frigoris.",
+  "chapters": [
+    {
+      "id": "target",
+      "title": "Doel",
+      "subtitle": "Mare Frigoris, nabij 60.5 N — ver in het noorden",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/hakuto-r/02.webp",
+          "caption": "Het geplande landingsgebied in Mare Frigoris, voor de poging gefotografeerd door de Lunar Reconnaissance Orbiter."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Oppervlak",
+      "subtitle": "Inslag op 5 juni 2025",
+      "images": [
+        {
+          "src": "/images/missions/ispace-m2/01.webp",
+          "caption": "De inslagplek op 60.4445 N, 355.4120 E, op 11 juni 2025 gefotografeerd door de Lunar Reconnaissance Orbiter: een donkere vlek met een zwakke lichte halo."
+        }
+      ]
+    }
+  ]
+}

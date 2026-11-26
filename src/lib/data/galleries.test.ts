@@ -35,7 +35,7 @@ describe('the shared site gallery ladder keeps the Moon and Mars galleries as th
   const mars = sitesOf('mars-sites.json');
 
   it('freezes every site', () => {
-    expect(moon.length).toBe(30);
+    expect(moon.length).toBe(35);
     expect(mars.length).toBe(27);
     expect(Object.keys(frozen.moon)).toEqual(moon.map((s) => s.id));
     expect(Object.keys(frozen.mars)).toEqual(mars.map((s) => s.id));

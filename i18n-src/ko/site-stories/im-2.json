@@ -1,0 +1,20 @@
+{
+  "intro": "IM-2는 Intuitive Machines의 두 번째 달 임무였다. Nova-C 착륙선 Athena는 2025년 3월 6일 남극에서 약 160 km 떨어진 Mons Mouton에 착륙했다. 레이저 고도계는 하강 내내 불안정한 값을 냈고, Athena는 의도보다 빠르게 표면에 닿아 지름 20 m의 크레이터 안에서 태양전지판이 태양을 등진 채 옆으로 누워 멈췄다. 작동한 시간은 13시간이 채 되지 않는다.",
+  "chapters": [
+    {
+      "id": "surface",
+      "title": "표면",
+      "subtitle": "Mons Mouton — 2025년 3월 6일 착륙",
+      "images": [
+        {
+          "src": "/images/missions/im-2/01.webp",
+          "caption": "Lunar Reconnaissance Orbiter가 비스듬히 촬영한 Athena. 위치는 84.7906 S, 29.1957 E."
+        },
+        {
+          "src": "/images/fleet-galleries/im-2-athena/01.webp",
+          "caption": "Lunar Reconnaissance Orbiter가 촬영한, 크레이터 안 Athena의 확대 모습."
+        }
+      ]
+    }
+  ]
+}

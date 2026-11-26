@@ -362,16 +362,17 @@ describe('reference data', () => {
     expect(lunar).toHaveLength(8); // LRO + the 7 backfilled v0.4 orbiters
   });
 
-  it('moonSites() returns 30 sites (21 surface + 9 orbiters)', async () => {
+  it('moonSites() returns 35 sites (26 surface + 9 orbiters)', async () => {
     // v0.7 added luna16, luna21, beresheet (V3a + V3c hotspot coverage
     // per PRD-014 / RFC-017 §S7). Bumps surface count 16 → 19; Chang'e 7 → 20.
     // Slice H adds the Kaguya orbiter marker (28 → 29, orbiters 8 → 9) and the Vikram crash
-    // site of Chandrayaan-2 (29 → 30, surface 20 → 21).
+    // site of Chandrayaan-2 (29 → 30, surface 20 → 21). F10 adds the five private landers' sites
+    // (Hakuto-R M1, ispace M2, Blue Ghost M1, IM-1, IM-2: 30 → 35, surface 21 → 26).
     const data = await moonSites();
-    expect(data).toHaveLength(30);
+    expect(data).toHaveLength(35);
     const surface = data.filter((s) => !s.kind || s.kind === 'surface');
     const orbiters = data.filter((s) => s.kind === 'orbiter');
-    expect(surface).toHaveLength(21);
+    expect(surface).toHaveLength(26);
     expect(orbiters).toHaveLength(9);
   });
 });
@@ -556,11 +557,11 @@ describe('getEarthObjects', () => {
 });
 
 describe('getMoonSites', () => {
-  it('returns 30 sites merged with their en-US overlay', async () => {
+  it('returns 35 sites merged with their en-US overlay', async () => {
     // v0.7 adds luna16 / luna21 / beresheet base entries for hotspot
     // coverage; bumps count 24 → 27; Chang'e 7 → 28; Kaguya 28 → 29; Vikram 29 → 30.
     const list = await getMoonSites();
-    expect(list).toHaveLength(30);
+    expect(list).toHaveLength(35);
     const apollo11 = list.find((s) => s.id === 'apollo11');
     expect(apollo11).toBeDefined();
     expect(apollo11!.year).toBe(1969);
@@ -595,7 +596,7 @@ describe('getMoonSites', () => {
 
   it('falls back to en-US when locale overlay missing', async () => {
     const list = await getMoonSites('xx-TEST');
-    expect(list).toHaveLength(30);
+    expect(list).toHaveLength(35);
   });
 });
 

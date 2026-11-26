@@ -1,0 +1,27 @@
+{
+  "intro": "IM-1はIntuitive Machinesの最初の月ミッションで、Apollo 17以来となるアメリカの月着陸だった。Nova-CランダーのOdysseusは2024年2月15日に打ち上げられ、2月22日に南極から約300 km離れたMalapert A付近に着陸した。約7.8 m/sで、横方向の動きを伴って進入し、脚が1本折れて転倒したが、約7日間動作を続けた。",
+  "chapters": [
+    {
+      "id": "launch",
+      "title": "打ち上げ",
+      "subtitle": "2024年2月15日 — ケネディ宇宙センターからFalcon 9で打ち上げ",
+      "images": [
+        {
+          "src": "/images/missions/im-1/01.webp",
+          "caption": "NASAのCommercial Lunar Payload Servicesのため、Nova-CランダーOdysseusを載せて離昇するFalcon 9。"
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "月面",
+      "subtitle": "Malapert A — 2024年2月22日着陸",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/im-1-odysseus/02.webp",
+          "caption": "Lunar Reconnaissance Orbiter Cameraが撮影した、着陸地点のOdysseus。"
+        }
+      ]
+    }
+  ]
+}

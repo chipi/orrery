@@ -1,5 +1,11 @@
 import * as THREE from 'three';
 import { buildNovaC, NOVA_C_HEIGHT_M } from '$lib/three/showcase/landers';
+import {
+  buildBlueGhost,
+  buildHakutoR,
+  BLUE_GHOST_HEIGHT_M,
+  HAKUTO_R_HEIGHT_M,
+} from '$lib/three/showcase/lunar-landers-west';
 
 /**
  * Per-mission 3D model builders for surface markers on /moon. Mirrors
@@ -723,6 +729,25 @@ function buildNovaCMarker(): THREE.Group {
   return g;
 }
 
+/** ispace HAKUTO-R (Mission 1 and Mission 2 RESILIENCE) — the showcase model at marker size.
+ *  Both crashed: the marker stands for the site, not the wreck. */
+function buildHakutoRMarker(): THREE.Group {
+  const g = new THREE.Group();
+  const craft = buildHakutoR();
+  craft.scale.setScalar(1.0 / HAKUTO_R_HEIGHT_M);
+  g.add(craft);
+  return g;
+}
+
+/** Firefly Blue Ghost Mission 1 — the showcase model at marker size, upright as it landed. */
+function buildBlueGhostMarker(): THREE.Group {
+  const g = new THREE.Group();
+  const craft = buildBlueGhost();
+  craft.scale.setScalar(1.0 / BLUE_GHOST_HEIGHT_M);
+  g.add(craft);
+  return g;
+}
+
 /** Blue Origin Blue Moon MK1 — a tall cargo lander: a central tank stack, a big
  *  spherical hydrogen tank, four long legs and a BE-7 engine. */
 function buildBlueMoon(color: string): THREE.Group {
@@ -788,6 +813,10 @@ const BUILDERS: Record<string, (color: string) => THREE.Group> = {
   // Commercial / future landers
   beresheet: buildBeresheet,
   'im-1': buildNovaCMarker,
+  'im-2': buildNovaCMarker,
+  'hakuto-r-m1': buildHakutoRMarker,
+  'ispace-m2': buildHakutoRMarker,
+  'blue-ghost-m1': buildBlueGhostMarker,
   'blue-moon-mk1': buildBlueMoon,
   artemis4: buildArtemis,
 };

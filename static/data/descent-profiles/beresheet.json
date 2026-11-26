@@ -23,7 +23,7 @@
   "source_tier": "flagship",
   "provenance": [
     {
-      "l": "Beresheet — an IMU fault and the command sent to fix it shut the main engine off at ~14 km; the restart came too late; last telemetry at ~150 m and ~500 km/h (139 m/s); impact 19:23 UTC 11 Apr 2019. No descent timeline found: the model starts at 2.5 km with the engine nearly dry, to end at the reported impact speed",
+      "l": "Beresheet — an IMU fault from ~14 km; the command sent to fix it shut the main engine off and the restart came too late; last telemetry at ~150 m, moving vertically at ~500 km/h; impact 19:23 UTC 11 Apr 2019. No descent timeline found: the model starts at 2.5 km with the engine nearly dry and ends at the last vertical speed (the horizontal motion is not drawn)",
       "u": "https://spaceflightnow.com/2019/04/18/errant-command-doomed-israeli-moon-lander-officials-vow-to-try-again/"
     },
     {
@@ -35,7 +35,7 @@
       "u": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2019-009B"
     },
     {
-      "l": "Beresheet (docs/wip/2026-11-23-lunar-landings-record.md): an IMU fault from about 14 km; the main engine cut at about 10 km and restarted too late; impact at about 139 m/s, contact lost about 150 m up. This profile starts at 2.5 km, so the cut and the late restart are not drawn: the plume is shown going out at 2.4 km (an estimate) and the fall is the recorded impact",
+      "l": "Beresheet (docs/wip/2026-11-23-lunar-landings-record.md): an IMU fault from about 14 km; the main engine cut at about 10 km and restarted too late; last telemetry at 149 m: 134 m/s vertical and 947 m/s horizontal (The Planetary Society); no impact speed was published. This profile starts at 2.5 km, so the cut and the late restart are not drawn: the plume is shown going out at 2.4 km (an estimate) and the fall is the recorded impact",
       "u": "https://www.space.com/beresheet-moon-crash-engine-glitch.html"
     }
   ],

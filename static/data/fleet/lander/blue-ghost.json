@@ -32,5 +32,11 @@
   ],
   "linked_missions": [
     "blue-ghost-m1"
+  ],
+  "linked_sites": [
+    {
+      "type": "moon",
+      "site_id": "blue-ghost-m1"
+    }
   ]
 }

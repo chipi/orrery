@@ -1292,5 +1292,220 @@
         "role": "spacecraft"
       }
     ]
+  },
+  {
+    "id": "hakuto-r-m1",
+    "marker": "lander",
+    "kind": "surface",
+    "agency": "ispace",
+    "nation": "Japan",
+    "year": 2023,
+    "landing_date": "2023-04-25",
+    "lat": 47.581,
+    "lon": 44.094,
+    "region_bounds": {
+      "lat_min": 47.561,
+      "lat_max": 47.601,
+      "lon_min": 44.074,
+      "lon_max": 44.114
+    },
+    "region_kind": "landing_ellipse",
+    "crewed": false,
+    "status": "CRASHED",
+    "surface_status": "completed",
+    "samples_kg": 0,
+    "data_quality": "good",
+    "credit": "ispace HAKUTO-R Mission 1 crashed during its landing attempt near Atlas crater, Mare Frigoris, on 25 April 2023. Impact site found by NASA Lunar Reconnaissance Orbiter NAC imagery (NASA/GSFC/Arizona State University; imaged 26 April 2023, published May 2023).",
+    "links": [
+      {
+        "l": "Hakuto-R Mission 1 — Wikipedia",
+        "u": "https://en.wikipedia.org/wiki/Hakuto-R_Mission_1",
+        "t": "intro"
+      },
+      {
+        "l": "LROC: impact site of the HAKUTO-R Mission 1 lander",
+        "u": "https://lroc.im-ldi.com/posts/1302",
+        "t": "core"
+      }
+    ],
+    "fleet_refs": [
+      {
+        "id": "hakuto-r",
+        "role": "spacecraft"
+      }
+    ]
+  },
+  {
+    "id": "ispace-m2",
+    "marker": "lander",
+    "kind": "surface",
+    "agency": "ispace",
+    "nation": "Japan",
+    "year": 2025,
+    "landing_date": "2025-06-05",
+    "lat": 60.4445,
+    "lon": -4.588,
+    "region_bounds": {
+      "lat_min": 60.4245,
+      "lat_max": 60.4645,
+      "lon_min": -4.608,
+      "lon_max": -4.568
+    },
+    "region_kind": "landing_ellipse",
+    "crewed": false,
+    "status": "CRASHED",
+    "surface_status": "completed",
+    "samples_kg": 0,
+    "data_quality": "good",
+    "credit": "ispace Mission 2 RESILIENCE crashed during its landing attempt in Mare Frigoris on 5 June 2025 (UTC). Impact site at 60.4445 N, 355.4120 E imaged by NASA Lunar Reconnaissance Orbiter NAC (NASA/GSFC/Arizona State University).",
+    "links": [
+      {
+        "l": "Hakuto-R Mission 2 — Wikipedia",
+        "u": "https://en.wikipedia.org/wiki/Hakuto-R_Mission_2",
+        "t": "intro"
+      },
+      {
+        "l": "LROC: ispace Mission 2 impact site",
+        "u": "https://lroc.im-ldi.com/images/1456",
+        "t": "core"
+      }
+    ],
+    "fleet_refs": [
+      {
+        "id": "hakuto-r",
+        "role": "spacecraft"
+      }
+    ]
+  },
+  {
+    "id": "blue-ghost-m1",
+    "marker": "lander",
+    "kind": "surface",
+    "agency": "Firefly Aerospace",
+    "nation": "USA",
+    "year": 2025,
+    "landing_date": "2025-03-02",
+    "lat": 18.5623,
+    "lon": 61.8103,
+    "region_bounds": {
+      "lat_min": 18.5423,
+      "lat_max": 18.5823,
+      "lon_min": 61.7903,
+      "lon_max": 61.8303
+    },
+    "region_kind": "landing_ellipse",
+    "crewed": false,
+    "status": "FLOWN",
+    "surface_status": "completed",
+    "samples_kg": 0,
+    "data_quality": "good",
+    "credit": "Firefly Aerospace Blue Ghost Mission 1 landed upright in Mare Crisium near Mons Latreille on 2 March 2025 and operated through the lunar day. Lander located by NASA Lunar Reconnaissance Orbiter NAC (NASA/GSFC/Arizona State University).",
+    "links": [
+      {
+        "l": "Blue Ghost Mission 1 — Wikipedia",
+        "u": "https://en.wikipedia.org/wiki/Blue_Ghost_Mission_1",
+        "t": "intro"
+      },
+      {
+        "l": "Firefly Aerospace: Blue Ghost Mission 1",
+        "u": "https://fireflyspace.com/missions/blue-ghost-mission-1/",
+        "t": "intro"
+      },
+      {
+        "l": "LROC: Blue Ghost lunar lander seen from above",
+        "u": "https://www.lroc.im-ldi.com/images/1407",
+        "t": "core"
+      }
+    ],
+    "fleet_refs": [
+      {
+        "id": "blue-ghost",
+        "role": "spacecraft"
+      }
+    ]
+  },
+  {
+    "id": "im-1",
+    "marker": "lander",
+    "kind": "surface",
+    "agency": "Intuitive Machines",
+    "nation": "USA",
+    "year": 2024,
+    "landing_date": "2024-02-22",
+    "lat": -80.1276,
+    "lon": 1.4367,
+    "region_bounds": {
+      "lat_min": -80.1476,
+      "lat_max": -80.1076,
+      "lon_min": 1.4167,
+      "lon_max": 1.4567
+    },
+    "region_kind": "landing_ellipse",
+    "crewed": false,
+    "status": "FLOWN",
+    "surface_status": "completed",
+    "samples_kg": 0,
+    "data_quality": "good",
+    "credit": "Intuitive Machines IM-1 Odysseus landed near Malapert A on 22 February 2024, came to rest tilted on its side and operated for about seven days. Location from NASA TM-20250010290 and NASA Lunar Reconnaissance Orbiter NAC imagery (NASA/GSFC/Arizona State University).",
+    "links": [
+      {
+        "l": "IM-1 — Wikipedia",
+        "u": "https://en.wikipedia.org/wiki/IM-1",
+        "t": "intro"
+      },
+      {
+        "l": "NASA: LRO images Intuitive Machines' Odysseus lander",
+        "u": "https://www.nasa.gov/missions/lro/nasas-lro-images-intuitive-machines-odysseus-lander/",
+        "t": "core"
+      }
+    ],
+    "fleet_refs": [
+      {
+        "id": "im-1-odysseus",
+        "role": "spacecraft"
+      }
+    ]
+  },
+  {
+    "id": "im-2",
+    "marker": "lander",
+    "kind": "surface",
+    "agency": "Intuitive Machines",
+    "nation": "USA",
+    "year": 2025,
+    "landing_date": "2025-03-06",
+    "lat": -84.7906,
+    "lon": 29.1957,
+    "region_bounds": {
+      "lat_min": -84.8106,
+      "lat_max": -84.7706,
+      "lon_min": 29.1757,
+      "lon_max": 29.2157
+    },
+    "region_kind": "landing_ellipse",
+    "crewed": false,
+    "status": "FLOWN",
+    "surface_status": "completed",
+    "samples_kg": 0,
+    "data_quality": "good",
+    "credit": "Intuitive Machines IM-2 Athena landed on Mons Mouton on 6 March 2025 and came to rest on its side in a 20 m crater; it operated for under 13 hours. Location from NASA Lunar Reconnaissance Orbiter NAC imagery (NASA/GSFC/Arizona State University).",
+    "links": [
+      {
+        "l": "IM-2 — Wikipedia",
+        "u": "https://en.wikipedia.org/wiki/IM-2",
+        "t": "intro"
+      },
+      {
+        "l": "LROC: IM-2 Athena seen obliquely",
+        "u": "https://lroc.im-ldi.com/images/1408",
+        "t": "core"
+      }
+    ],
+    "fleet_refs": [
+      {
+        "id": "im-2-athena",
+        "role": "spacecraft"
+      }
+    ]
   }
 ]

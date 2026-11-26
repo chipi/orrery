@@ -1,0 +1,20 @@
+{
+  "intro": "IM-2はIntuitive Machinesの2度目の月ミッションだった。Nova-CランダーのAthenaは、2025年3月6日に南極から約160 km離れたMons Moutonに着陸した。レーザー高度計は降下の最後まで不安定な値を出し続け、Athenaは意図より速く接触して、幅20 mのクレーターの中で太陽電池パネルが太陽と反対を向いたまま横倒しで止まった。動作したのは13時間足らずだった。",
+  "chapters": [
+    {
+      "id": "surface",
+      "title": "月面",
+      "subtitle": "Mons Mouton — 2025年3月6日着陸",
+      "images": [
+        {
+          "src": "/images/missions/im-2/01.webp",
+          "caption": "Lunar Reconnaissance Orbiterが斜めから撮影したAthena。位置は84.7906 S、29.1957 E。"
+        },
+        {
+          "src": "/images/fleet-galleries/im-2-athena/01.webp",
+          "caption": "Lunar Reconnaissance Orbiterが撮影した、クレーター内のAthenaの拡大図。"
+        }
+      ]
+    }
+  ]
+}

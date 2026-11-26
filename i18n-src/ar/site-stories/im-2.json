@@ -1,0 +1,20 @@
+{
+  "intro": "كانت IM-2 ثاني مهمة قمرية لشركة Intuitive Machines. هبطت مركبتها Nova-C، Athena، في 6 مارس 2025 على Mons Mouton، على بعد نحو 160 كم من القطب الجنوبي. وأعطى مقياس الارتفاع بالليزر قراءات مضطربة طوال النزول؛ فاصطدمت Athena بالسطح أسرع مما كان مقصوداً واستقرت على جانبها في فوهة عرضها 20 م، وألواحها الشمسية بعيدة عن الشمس. وعملت أقل من 13 ساعة.",
+  "chapters": [
+    {
+      "id": "surface",
+      "title": "السطح",
+      "subtitle": "Mons Mouton — الهبوط في 6 مارس 2025",
+      "images": [
+        {
+          "src": "/images/missions/im-2/01.webp",
+          "caption": "Athena كما صوّرها Lunar Reconnaissance Orbiter بزاوية مائلة، عند 84.7906 S، 29.1957 E."
+        },
+        {
+          "src": "/images/fleet-galleries/im-2-athena/01.webp",
+          "caption": "منظر أقرب لـ Athena داخل فوهتها، التقطه Lunar Reconnaissance Orbiter."
+        }
+      ]
+    }
+  ]
+}

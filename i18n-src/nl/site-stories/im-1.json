@@ -1,0 +1,27 @@
+{
+  "intro": "IM-1 was de eerste Maanmissie van Intuitive Machines en de eerste Amerikaanse Maanlanding sinds Apollo 17. Zijn Nova-C-lander Odysseus werd op 15 februari 2024 gelanceerd en landde op 22 februari nabij Malapert A, ongeveer 300 km van de zuidpool. Hij kwam binnen met ongeveer 7,8 m/s en een zijwaartse beweging, brak een poot en viel om, maar bleef ongeveer zeven dagen werken.",
+  "chapters": [
+    {
+      "id": "launch",
+      "title": "Lancering",
+      "subtitle": "15 februari 2024 — Falcon 9 vanaf het Kennedy Space Center",
+      "images": [
+        {
+          "src": "/images/missions/im-1/01.webp",
+          "caption": "Een Falcon 9 stijgt op met de Nova-C-lander Odysseus voor NASA's Commercial Lunar Payload Services."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Oppervlak",
+      "subtitle": "Malapert A — geland op 22 februari 2024",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/im-1-odysseus/02.webp",
+          "caption": "Odysseus op zijn landingsplek, gefotografeerd door de Lunar Reconnaissance Orbiter Camera."
+        }
+      ]
+    }
+  ]
+}

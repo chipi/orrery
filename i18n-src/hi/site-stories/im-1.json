@@ -1,0 +1,27 @@
+{
+  "intro": "IM-1 Intuitive Machines का पहला चंद्र मिशन था और Apollo 17 के बाद चंद्रमा पर पहला अमेरिकी अवतरण। इसका Nova-C लैंडर Odysseus 15 फरवरी 2024 को प्रक्षेपित हुआ और 22 फरवरी को दक्षिणी ध्रुव से लगभग 300 किमी दूर Malapert A के पास उतरा। यह लगभग 7.8 मी/सेकंड की गति से, बग़ल की ओर बढ़ते हुए पहुँचा, एक पैर टूट गया और यह पलट गया, पर लगभग सात दिन तक काम करता रहा।",
+  "chapters": [
+    {
+      "id": "launch",
+      "title": "प्रक्षेपण",
+      "subtitle": "15 फरवरी 2024 — कैनेडी स्पेस सेंटर से Falcon 9",
+      "images": [
+        {
+          "src": "/images/missions/im-1/01.webp",
+          "caption": "NASA के Commercial Lunar Payload Services के लिए Nova-C लैंडर Odysseus को लेकर उड़ान भरता Falcon 9।"
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "सतह",
+      "subtitle": "Malapert A — 22 फरवरी 2024 को उतरा",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/im-1-odysseus/02.webp",
+          "caption": "अवतरण स्थल पर Odysseus, Lunar Reconnaissance Orbiter Camera द्वारा ली गई तस्वीर में।"
+        }
+      ]
+    }
+  ]
+}

@@ -11931,12 +11931,20 @@
     "site_name": "bff7a50945"
   },
   "moon-sites/beresheet.json": {
-    "capability": "74309ec05f",
-    "fact": "4c1dabecb1",
+    "capability": "a5a78563bb",
+    "fact": "b2bc6df7b9",
     "left": "341dd65a59",
     "mission_type": "acc74d83c4",
     "name": "76c652e5df",
     "site_name": "9783939a9f"
+  },
+  "moon-sites/blue-ghost-m1.json": {
+    "capability": "9220172a9e",
+    "fact": "4c3501bb30",
+    "left": "3a4c09735a",
+    "mission_type": "89c8191a13",
+    "name": "d0c8a1d507",
+    "site_name": "1a11736268"
   },
   "moon-sites/chandrayaan1.json": {
     "capability": "c89446d2f9",
@@ -12021,6 +12029,38 @@
     "mission_type": "4d93e55942",
     "name": "2bf2d48e26",
     "site_name": "37462a5e60"
+  },
+  "moon-sites/hakuto-r-m1.json": {
+    "capability": "5d56847eee",
+    "fact": "3bef20c67f",
+    "left": "e639fe6aeb",
+    "mission_type": "acc74d83c4",
+    "name": "8a82f7223d",
+    "site_name": "8ad9d3309f"
+  },
+  "moon-sites/im-1.json": {
+    "capability": "3bd0f299de",
+    "fact": "c7f645a5ff",
+    "left": "b0654403af",
+    "mission_type": "89c8191a13",
+    "name": "8598409cc1",
+    "site_name": "6da61f7fe8"
+  },
+  "moon-sites/im-2.json": {
+    "capability": "78937c64d7",
+    "fact": "d5e4a8c987",
+    "left": "8b1174c199",
+    "mission_type": "89c8191a13",
+    "name": "f3b101835a",
+    "site_name": "3beb91c66f"
+  },
+  "moon-sites/ispace-m2.json": {
+    "capability": "182d774acc",
+    "fact": "5b65b6a55c",
+    "left": "25958def8b",
+    "mission_type": "acc74d83c4",
+    "name": "4a63ddb70a",
+    "site_name": "67008e7aec"
   },
   "moon-sites/kaguya.json": {
     "capability": "e29f88337d",
@@ -19957,6 +19997,16 @@
     "chapters.2.title": "cda05ca6d8",
     "intro": "7c0d989c88"
   },
+  "site-stories/blue-ghost-m1.json": {
+    "chapters.0.id": "c6359a7968",
+    "chapters.0.images.0.caption": "cc836096a1",
+    "chapters.0.images.0.src": "6357bbcf75",
+    "chapters.0.images.1.caption": "3be1af4630",
+    "chapters.0.images.1.src": "74c04e9953",
+    "chapters.0.subtitle": "ccd250a858",
+    "chapters.0.title": "cda05ca6d8",
+    "intro": "480b7ded73"
+  },
   "site-stories/chandrayaan3.json": {
     "chapters.0.id": "608cb271bb",
     "chapters.0.images.0.caption": "d89923e0ca",
@@ -20143,6 +20193,42 @@
     "chapters.2.title": "2be3622fdc",
     "intro": "a8cac16bb7"
   },
+  "site-stories/hakuto-r-m1.json": {
+    "chapters.0.id": "608cb271bb",
+    "chapters.0.images.0.caption": "2d5d741e27",
+    "chapters.0.images.0.src": "aa938b11aa",
+    "chapters.0.subtitle": "1a8ee4e227",
+    "chapters.0.title": "b76ab65957",
+    "chapters.1.id": "c6359a7968",
+    "chapters.1.images.0.caption": "9e9ee79a18",
+    "chapters.1.images.0.src": "b94b228c7c",
+    "chapters.1.subtitle": "5d63fd1ef4",
+    "chapters.1.title": "cda05ca6d8",
+    "intro": "8c99d7d3bc"
+  },
+  "site-stories/im-1.json": {
+    "chapters.0.id": "f7c91fefc9",
+    "chapters.0.images.0.caption": "89ddcb1a6f",
+    "chapters.0.images.0.src": "2cd1738dd4",
+    "chapters.0.subtitle": "f479561041",
+    "chapters.0.title": "4ad48a0259",
+    "chapters.1.id": "c6359a7968",
+    "chapters.1.images.0.caption": "ca37e86446",
+    "chapters.1.images.0.src": "06c6d091b5",
+    "chapters.1.subtitle": "245ced691e",
+    "chapters.1.title": "cda05ca6d8",
+    "intro": "240c23c5cc"
+  },
+  "site-stories/im-2.json": {
+    "chapters.0.id": "c6359a7968",
+    "chapters.0.images.0.caption": "98e10ba42a",
+    "chapters.0.images.0.src": "11f8880fcb",
+    "chapters.0.images.1.caption": "c6c342aaa4",
+    "chapters.0.images.1.src": "700f2fd26f",
+    "chapters.0.subtitle": "6a39262ff2",
+    "chapters.0.title": "cda05ca6d8",
+    "intro": "3520f2ab2a"
+  },
   "site-stories/insight.json": {
     "chapters.0.id": "608cb271bb",
     "chapters.0.images.0.caption": "1752800040",
@@ -20171,6 +20257,19 @@
     "chapters.3.subtitle": "90d094a554",
     "chapters.3.title": "d2d0663714",
     "intro": "2252a77eb4"
+  },
+  "site-stories/ispace-m2.json": {
+    "chapters.0.id": "0e8a3ad980",
+    "chapters.0.images.0.caption": "184bb5500f",
+    "chapters.0.images.0.src": "629bf596eb",
+    "chapters.0.subtitle": "2c55d4281e",
+    "chapters.0.title": "61ad50a9b9",
+    "chapters.1.id": "c6359a7968",
+    "chapters.1.images.0.caption": "2c4daf4228",
+    "chapters.1.images.0.src": "22e7641512",
+    "chapters.1.subtitle": "808e46b2b8",
+    "chapters.1.title": "cda05ca6d8",
+    "intro": "4883662cf0"
   },
   "site-stories/luna16.json": {
     "chapters.0.id": "608cb271bb",

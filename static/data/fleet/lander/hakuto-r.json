@@ -33,5 +33,15 @@
   "linked_missions": [
     "hakuto-r-m1",
     "ispace-m2"
+  ],
+  "linked_sites": [
+    {
+      "type": "moon",
+      "site_id": "hakuto-r-m1"
+    },
+    {
+      "type": "moon",
+      "site_id": "ispace-m2"
+    }
   ]
 }

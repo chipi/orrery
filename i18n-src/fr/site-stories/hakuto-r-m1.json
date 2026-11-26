@@ -1,0 +1,27 @@
+{
+  "intro": "Hakuto-R Mission 1 a été la première tentative d'alunissage de l'entreprise japonaise ispace. Lancée le 11 décembre 2022, elle a suivi une route lente, à faible énergie, jusqu'à 1,38 million de km de la Terre et est entrée en orbite lunaire le 21 mars 2023. Le 25 avril 2023, en passant au-dessus du bord d'un cratère haut d'environ 3 km, son logiciel a écarté l'altimètre et cru que l'atterrisseur s'était posé alors qu'il se trouvait encore à environ 5 km d'altitude. À court d'ergols, il est tombé près du cratère Atlas, dans Mare Frigoris.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Le matériel",
+      "subtitle": "Atterrisseur Series 1 d'ispace — 2,3 m de haut, 2,6 m de large jambes déployées",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/hakuto-r/01.webp",
+          "caption": "Une maquette de l'atterrisseur HAKUTO-R présentée au Congrès international d'astronautique en 2022. Il emportait le rover Rashid des Émirats arabes unis et le robot transformable SORA-Q."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "La surface",
+      "subtitle": "Mare Frigoris — impact le 25 avril 2023",
+      "images": [
+        {
+          "src": "/images/missions/hakuto-r-m1/01.webp",
+          "caption": "Le Lunar Reconnaissance Orbiter de la NASA a trouvé le lieu d'impact le lendemain : au moins quatre morceaux de débris autour de 47.581 N, 44.094 E."
+        }
+      ]
+    }
+  ]
+}

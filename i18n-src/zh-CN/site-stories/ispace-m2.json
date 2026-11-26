@@ -1,0 +1,27 @@
+{
+  "intro": "Hakuto-R Mission 2 RESILIENCE是ispace的第二台着陆器。它于2025年1月15日与Firefly的Blue Ghost共乘一枚Falcon 9发射，2月飞掠月球，并于2025年5月6日进入月球轨道。2025年6月5日，它的激光测距仪给出有效高度的速度太慢，着陆器无法充分减速：最后一次遥测来自冷海上空192 m处。",
+  "chapters": [
+    {
+      "id": "target",
+      "title": "目标",
+      "subtitle": "冷海，60.5 N附近——远在北方",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/hakuto-r/02.webp",
+          "caption": "冷海中计划的着陆区域，由Lunar Reconnaissance Orbiter在着陆尝试前成像。"
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "月面",
+      "subtitle": "2025年6月5日撞击",
+      "images": [
+        {
+          "src": "/images/missions/ispace-m2/01.webp",
+          "caption": "位于60.4445 N、355.4120 E的撞击点，由Lunar Reconnaissance Orbiter于2025年6月11日成像：一块暗色污迹，带有微弱的明亮晕圈。"
+        }
+      ]
+    }
+  ]
+}

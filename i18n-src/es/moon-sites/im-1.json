@@ -1,0 +1,9 @@
+{
+  "name": "IM-1 Odysseus",
+  "mission_type": "Módulo de aterrizaje robótico",
+  "site_name": "Cerca de Malapert A, región polar sur",
+  "crew": [],
+  "left": "Módulo Odysseus, tumbado e inclinado unos 30 grados",
+  "fact": "El módulo Nova-C Odysseus de Intuitive Machines aterrizó el 22 de febrero de 2024 cerca de Malapert A, a unos 300 km del polo sur. Sus telémetros láser no se habían activado antes del lanzamiento, así que el equipo cargó un parche de software para apoyarse en un lidar de la NASA que llevaba como experimento. La reconstrucción de la NASA sitúa el contacto con el suelo a unos 7,8 m/s con movimiento lateral; el módulo patinó, rompió una pata y cayó de costado. Siguió funcionando unos siete días.",
+  "capability": "Una empresa privada colocó un módulo en el borde de la región polar sur y lo operó allí, y el Navigation Doppler Lidar de la NASA devolvió datos válidos de distancia y velocidad durante el descenso."
+}

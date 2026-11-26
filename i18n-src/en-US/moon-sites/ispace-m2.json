@@ -1,0 +1,9 @@
+{
+  "name": "RESILIENCE (ispace Mission 2)",
+  "mission_type": "Robotic Lander (failed)",
+  "site_name": "Mare Frigoris",
+  "crew": [],
+  "left": "Crash site (June 2025), with the TENACIOUS micro-rover it carried",
+  "fact": "ispace's second lander rode to space on the same Falcon 9 as Firefly's Blue Ghost on 15 January 2025, flew past the Moon at about 8,400 km in February and entered lunar orbit on 6 May 2025. On 5 June 2025 its laser range finder was slow to give valid altitudes, so the lander could not slow down enough: the last telemetry came about 192 m above the surface, faster than expected. NASA's Lunar Reconnaissance Orbiter imaged the impact site, a dark smudge with a faint bright halo.",
+  "capability": "An external review board led by MIT and Keio University experts recommended terrain-relative navigation, better fault handling and more testing for ispace's later landers."
+}

@@ -1,0 +1,9 @@
+{
+  "name": "IM-1 Odysseus",
+  "mission_type": "无人着陆器",
+  "site_name": "Malapert A附近，南极区域",
+  "crew": [],
+  "left": "Odysseus着陆器，倾斜约30度躺在月面",
+  "fact": "Intuitive Machines的Nova-C着陆器Odysseus于2024年2月22日在Malapert A附近着陆，距南极约300 km。它的激光测距仪在发射前没有启用，因此团队上传了一个软件补丁，转而依靠它作为实验搭载的一台NASA激光雷达。NASA的重建结果显示，触地速度约为7.8 m/s，并带有横向运动；着陆器滑行、折断一条支腿，然后翻倒在一侧。它又继续工作了约七天。",
+  "capability": "一家私营公司把着陆器放在南极区域的边缘并在那里运行，NASA的Navigation Doppler Lidar在下降途中返回了有效的距离和速度数据。"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "RESILIENCE (ispace-Mission 2)",
+  "mission_type": "Robotischer Lander (gescheitert)",
+  "site_name": "Mare Frigoris",
+  "crew": [],
+  "left": "Absturzstelle (Juni 2025), mit dem mitgeführten Mikro-Rover TENACIOUS",
+  "fact": "Der zweite Lander von ispace flog am 15. Januar 2025 mit derselben Falcon 9 ins All wie Fireflys Blue Ghost, passierte den Mond im Februar in etwa 8.400 km Abstand und schwenkte am 6. Mai 2025 in die Mondumlaufbahn ein. Am 5. Juni 2025 lieferte sein Laser-Entfernungsmesser nur zögerlich gültige Höhenwerte, sodass der Lander nicht genug abbremsen konnte: Die letzte Telemetrie kam aus etwa 192 m über der Oberfläche, schneller als erwartet. Der Lunar Reconnaissance Orbiter der NASA fotografierte die Einschlagstelle, einen dunklen Fleck mit einem schwachen hellen Hof.",
+  "capability": "Ein externes Prüfgremium unter Leitung von Fachleuten des MIT und der Keio-Universität empfahl für spätere Lander von ispace geländerelative Navigation, besseres Fehlermanagement und mehr Tests."
+}

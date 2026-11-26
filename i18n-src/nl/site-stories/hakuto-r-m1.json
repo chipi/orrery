@@ -1,0 +1,27 @@
+{
+  "intro": "Hakuto-R Mission 1 was de eerste poging van het Japanse bedrijf ispace om op de Maan te landen. Gelanceerd op 11 december 2022, nam de lander een langzame route met lage energie tot 1,38 miljoen km van de Aarde en kwam op 21 maart 2023 in een maanbaan. Op 25 april 2023, bij het passeren van een kraterrand van ongeveer 3 km hoog, verwierp de software de hoogtemeter en geloofde ze dat de lander al had geland terwijl hij nog ongeveer 5 km hoog zat. De drijfstof raakte op en de lander viel neer bij de krater Atlas, in Mare Frigoris.",
+  "chapters": [
+    {
+      "id": "hardware",
+      "title": "Hardware",
+      "subtitle": "Series 1-lander van ispace — 2,3 m hoog, 2,6 m breed met uitgeklapte poten",
+      "images": [
+        {
+          "src": "/images/fleet-galleries/hakuto-r/01.webp",
+          "caption": "Een model van de HAKUTO-R-lander, getoond op het International Astronautical Congress in 2022. Hij droeg de Rashid-rover van de VAE en de transformeerbare robot SORA-Q."
+        }
+      ]
+    },
+    {
+      "id": "surface",
+      "title": "Oppervlak",
+      "subtitle": "Mare Frigoris — inslag op 25 april 2023",
+      "images": [
+        {
+          "src": "/images/missions/hakuto-r-m1/01.webp",
+          "caption": "NASA's Lunar Reconnaissance Orbiter vond de inslagplek de volgende dag: minstens vier stukken puin rond 47.581 N, 44.094 E."
+        }
+      ]
+    }
+  ]
+}

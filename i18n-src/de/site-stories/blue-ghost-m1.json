@@ -1,0 +1,20 @@
+{
+  "intro": "Blue Ghost Mission 1 war die erste Mondlandung von Firefly Aerospace, durchgeführt für die NASA mit zehn Instrumenten. Nach einem neunminütigen Bremszünden und einem langsamen Endabstieg auf den Triebwerken setzte sie am 2. März 2025 aufrecht im Mare Crisium nahe Mons Latreille auf, innerhalb ihres 100-m-Ziels. Sie arbeitete mehr als 14 Tage, einen vollen Mondtag lang, und sendete mehr als 119 GB Daten zurück.",
+  "chapters": [
+    {
+      "id": "surface",
+      "title": "Oberfläche",
+      "subtitle": "Mare Crisium – gelandet am 2. März 2025",
+      "images": [
+        {
+          "src": "/images/missions/blue-ghost-m1/01.webp",
+          "caption": "Blue Ghost (eingerahmt) auf der Mare-Ebene, schräg aufgenommen vom Lunar Reconnaissance Orbiter."
+        },
+        {
+          "src": "/images/fleet-galleries/blue-ghost/01.webp",
+          "caption": "Der Lander, vom Lunar Reconnaissance Orbiter senkrecht von oben aufgenommen, bei 18.5623 N, 61.8103 E."
+        }
+      ]
+    }
+  ]
+}

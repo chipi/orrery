@@ -410,6 +410,20 @@ const COASTS: Record<string, EarthOrbitCoast> = {
     revolutions: 14,
     coastDurationS: 76980,
   },
+  // Shenzhou 12 (the first crew to Tiangong, 2021): launch 17 Jun 01:22:31 to landing 17 Sep
+  // 05:34:09 UTC, 1,454 orbits, 41.4 deg (Wikipedia). Drawn on the station's orbit at the docking,
+  // "a near-circular docking orbit about 390 km high" (CMSA's Ji Qiming, 16 June 2021, Beijing News:
+  // bjnews.com.cn/detail/162380724014370.html); Wikipedia's infobox gives 330 x 340 km, which does
+  // not agree and is not used.
+  'shenzhou-12': {
+    missionId: 'shenzhou-12',
+    capsuleId: 'shenzhou',
+    apogeeKm: 390,
+    perigeeKm: 390,
+    inclinationDeg: 41.4,
+    revolutions: 1454,
+    coastDurationS: 7963898,
+  },
   // STS-107 has no Fly (the operator, 2026-11-15; its record is flightless like STS-51-L's): no
   // descriptor, and the launch is not offered.
   //

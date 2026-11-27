@@ -2616,6 +2616,12 @@
       "cover": false
     },
     {
+      "title": "Shenzhou 12",
+      "file": "/images/missions/thumbnails/shenzhou-12.webp",
+      "route": "/missions?id=shenzhou-12",
+      "cover": false
+    },
+    {
       "title": "Shenzhou 5",
       "file": "/images/missions/thumbnails/shenzhou-5.webp",
       "route": "/missions?id=shenzhou-5",
@@ -5699,7 +5705,7 @@
     "exploded_art": 76,
     "landing_art": 39,
     "blueprint_art": 18,
-    "mission_trajectories": 151,
+    "mission_trajectories": 152,
     "site_illustrations": 16,
     "lab_illustrations": 25,
     "diagrams_science": 117,

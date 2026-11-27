@@ -1520,5 +1520,15 @@
     "sector": "gov",
     "color": "#0B3D91",
     "crewed": true
+  },
+  {
+    "id": "shenzhou-12",
+    "agency": "CMSA",
+    "dest": "EARTH",
+    "status": "FLOWN",
+    "year": 2021,
+    "sector": "gov",
+    "color": "#de2910",
+    "crewed": true
   }
 ]

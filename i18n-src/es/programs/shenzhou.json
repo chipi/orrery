@@ -111,9 +111,8 @@
       "note": "una estancia de 30 días a bordo del Tiangong-2 — la misión tripulada más larga de China hasta entonces, que demostró la habitabilidad a escala de un mes",
       "name": "Shenzhou 11"
     },
-    "Shenzhou 12": {
-      "note": "la primera tripulación en subir a la Estación Espacial China permanente; el Shenzhou-14 (2022) inicia la ocupación continua",
-      "name": "Shenzhou 12"
+    "mission:shenzhou-12": {
+      "note": "la primera tripulación en subir a la Estación Espacial China permanente; el Shenzhou-14 (2022) inicia la ocupación continua"
     }
   }
 }

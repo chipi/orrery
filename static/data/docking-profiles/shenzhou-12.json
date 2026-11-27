@@ -1,0 +1,95 @@
+{
+  "missionId": "shenzhou-12",
+  "flight": "Shenzhou 12",
+  "chaser": "shenzhou",
+  "target": "tiangong",
+  "port": "tianhe-forward",
+  "stationDate": "2021-06-17",
+  "mechanism": "cdm",
+  "launchZeroUtc": "2021-06-17T01:22:31Z",
+  "altitudeKm": 390,
+  "holds": [
+    {
+      "id": "parking",
+      "rangeM": 200,
+      "from": "axis",
+      "uTurn": true,
+      "met": "6:00:00",
+      "hold": true,
+      "holdUntilMinBeforeCapture": 12
+    }
+  ],
+  "captureMet": "6:31:29",
+  "neighbours": [
+    {
+      "id": "tianzhou",
+      "port": "tianhe-aft",
+      "name": "Tianzhou-2"
+    }
+  ],
+  "source_tier": "flagship",
+  "estimatedFields": [
+    "the arrival at the 200 m parking point: CGTN gives it as 'after entering the orbit for around six hours' (orbit insertion is about ten minutes after launch); it is drawn at 6:00:00 after launch",
+    "the end of the stop at the parking point (12 min before the docking) and the start of the closing (30 min before the turn ends)",
+    "the U-turn: CGTN says the craft goes to the front and turns round, and that it reached the 200 m parking point, but not in which order; it is drawn turning before it parks. Where it passes, how far ahead and below, and when it turns (8 min before it parks) are not in a source either",
+    "the docking time is to the minute (07:54 UTC); it is drawn as the contact, and the latching after it (8 min) is an estimate, as is the ring's 0.3 m travel",
+    "the approach path, the closing speed and every camera move",
+    "Tianhe's section lengths, the small section's and resource cabin's 2.8 m, the wing width (5.2 m, from 67 m2 a wing over its 13 m) and where the wings stand",
+    "the docking ring's size and its petals on Shenzhou and on Tianhe",
+    "the Sun's direction"
+  ],
+  "provenance": [
+    {
+      "l": "People's Daily: Shenzhou-12 launched 9:22 Beijing time (01:22 UTC), docked with the front docking port of Tianhe at 3:54 pm Beijing time (07:54 UTC), about 6.5 hours; a complex with Tianzhou-2",
+      "u": "https://en.people.cn/n3/2021/0617/c90000-9862248.html"
+    },
+    {
+      "l": "Wikipedia: launch 17 June 2021, 01:22:31 UTC; docking 07:54 UTC on Tianhe's forward port",
+      "u": "https://en.wikipedia.org/wiki/Shenzhou_12"
+    },
+    {
+      "l": "Space.com: docked with Tianhe at 0754 GMT, 17 June",
+      "u": "https://www.space.com/shenzhou-12-docks-china-space-station-tianhe"
+    },
+    {
+      "l": "CGTN: 'has to first go to the front, take a U-turn and then dock on the front of the space station'; 'reached the parking point 200 meters away from the space station's core module, ready for docking after entering the orbit for around six hours'",
+      "u": "https://news.cgtn.com/news/2021-06-18/Deciphering-Shenzhou-12-spaceship-Docking-space-tasks-and-trivia-11c2JaMAhk4/index.html"
+    },
+    {
+      "l": "CGTN (Shenzhou-13): 'For front and rear dockings, there is a 200-meter holding point'",
+      "u": "https://news.cgtn.com/news/2021-10-28/China-Space-Station-1st-radial-rendezvous-for-manned-spacecraft-14IGT64ne9i/index.html"
+    },
+    {
+      "l": "Spaceflight Now: Tianzhou 2 docked with the rear port on the Tianhe module, 2101 GMT 29 May 2021",
+      "u": "https://spaceflightnow.com/2021/05/31/cargo-ship-docks-with-chinese-space-station/"
+    },
+    {
+      "l": "People's Daily: Tianhe 16.6 m long, 4.2 m maximum diameter, 22.5 t",
+      "u": "https://en.people.cn/n3/2021/0429/c90000-9845269.html"
+    },
+    {
+      "l": "Huanqiu: Tianhe made of the node cabin, small section, large section, aft passage and resource cabin",
+      "u": "https://m.huanqiu.com/article/4RMKFIhDEJp"
+    },
+    {
+      "l": "Toutiao: the node cabin a sphere 2.8 m across",
+      "u": "https://www.toutiao.com/zixun/7500355001349720099/"
+    },
+    {
+      "l": "The Paper: each of Tianhe's wings 13 m out from the body",
+      "u": "https://www.thepaper.cn/newsDetail_forward_12458423"
+    },
+    {
+      "l": "CGTN: Tianhe's flexible wings 67 m2 each",
+      "u": "https://news.cgtn.com/news/2022-08-17/China-Space-Station-Homegrown-solar-array-powers-nation-s-space-goal-1czLeC36wy4/index.html"
+    },
+    {
+      "l": "Wikipedia: the Chinese docking mechanism, after APAS: 800 mm passage, guide ring, soft then hard capture, 12 latches",
+      "u": "https://en.wikipedia.org/wiki/Chinese_Docking_Mechanism"
+    },
+    {
+      "l": "Beijing News: CMSA's Ji Qiming at the 16 June press conference, the Tianhe and Tianzhou-2 complex 'adjusted to a near-circular docking orbit about 390 km high' (组合体已调整到高度约390公里的近圆对接轨道)",
+      "u": "https://www.bjnews.com.cn/detail/162380724014370.html"
+    }
+  ]
+}

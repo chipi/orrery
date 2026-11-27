@@ -1,0 +1,107 @@
+{
+  "id": "shenzhou-12",
+  "agency": "CMSA",
+  "agency_full": "China Manned Space Agency / China Aerospace Science and Technology Corporation",
+  "sector": "gov",
+  "dest": "EARTH",
+  "color": "#de2910",
+  "year": 2021,
+  "status": "FLOWN",
+  "departure_date": "2021-06-17",
+  "arrival_date": "2021-09-17",
+  "transit_days": 92,
+  "round_trip": true,
+  "vehicle": "Long March 2F + Shenzhou 12 spacecraft",
+  "payload": "Three astronauts: Nie Haisheng (commander), Liu Boming and Tang Hongbo",
+  "delta_v": "~9.4 km/s (LEO)",
+  "data_quality": "partial",
+  "credit": "Sources: People's Daily, 17 June 2021 (launch at 9:22 a.m. Beijing time, docking at 3:54 p.m. at the front port of Tianhe after about 6.5 hours); People's Daily, 18 June (the crew moved into Tianhe at 6:48 p.m.); People's Daily, 4 July (Liu Boming and Tang Hongbo step out on the first spacewalk); Wikipedia (launch at 01:22:31 UTC); Spaceflight Now (undocking at 0056 GMT on 16 September after a radial rendezvous test, landing at 0534 GMT on 17 September at Dongfeng, 92 days in orbit, two spacewalks on 4 July and 20 August totaling more than 12 hours), China Daily (the second spacewalk on 20 August, Nie Haisheng and Liu Boming, about six hours). Times are UTC, converted from Beijing time (UTC+8). The soft-capture time and the orbit-adjustment burns were not found in any source used. Images: China News Service photographs and video stills on Wikimedia Commons, CC BY 4.0.",
+  "links": [
+    {
+      "l": "Shenzhou 12 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Shenzhou_12",
+      "t": "intro"
+    },
+    {
+      "l": "Shenzhou-XII spaceship docks with space station core module — People's Daily Online",
+      "u": "https://en.people.cn/n3/2021/0617/c90000-9862248.html",
+      "t": "core"
+    },
+    {
+      "l": "China's space station core module receives first group of residents — People's Daily Online",
+      "u": "https://en.people.cn/n3/2021/0618/c90000-9862351.html",
+      "t": "core"
+    },
+    {
+      "l": "Two Chinese astronauts step out of Tianhe module — People's Daily Online",
+      "u": "https://en.people.cn/n3/2021/0704/c90000-9868049.html",
+      "t": "deep"
+    },
+    {
+      "l": "Shenzhou XII crew completes second spacewalk — China Daily",
+      "u": "https://www.chinadaily.com.cn/a/202108/21/WS611f6a79a310efa1bd66a284.html",
+      "t": "deep"
+    },
+    {
+      "l": "Chinese crew landing caps record-setting day in human spaceflight — Spaceflight Now",
+      "u": "https://spaceflightnow.com/2021/09/17/chinese-crew-landing-caps-record-setting-day-in-human-spaceflight/",
+      "t": "deep"
+    },
+    {
+      "l": "Deciphering Shenzhou-12 spaceship docking — CGTN",
+      "u": "https://news.cgtn.com/news/2021-06-18/Deciphering-Shenzhou-12-spaceship-Docking-space-tasks-and-trivia-11c2JaMAhk4/index.html",
+      "t": "deep"
+    }
+  ],
+  "flight_data_quality": "sparse",
+  "fleet_refs": [
+    {
+      "id": "long-march-2f",
+      "role": "launcher"
+    },
+    {
+      "id": "shenzhou",
+      "role": "spacecraft"
+    },
+    {
+      "id": "tiangong",
+      "role": "station"
+    },
+    {
+      "id": "jiuquan-slc-43",
+      "role": "launch-site"
+    }
+  ],
+  "flight": {
+    "launch": {
+      "vehicle_stage": "Long March 2F",
+      "source": "People's Daily: launch of the Long March 2F at 9:22 a.m. Beijing time (01:22 UTC) on 17 June 2021 from the Jiuquan Satellite Launch Center"
+    },
+    "events": [
+      {
+        "met_days": 0,
+        "type": "launch",
+        "label": "Launch — Long March 2F and Shenzhou 12 from Jiuquan",
+        "description": "17 June 2021 at 01:22 UTC (9:22 a.m. Beijing time) from the Jiuquan Satellite Launch Center: the first crew sent to the Tiangong space station, three astronauts led by Nie Haisheng."
+      },
+      {
+        "met_days": 0.2719,
+        "type": "arrival",
+        "label": "Docking at the front port of Tianhe",
+        "description": "Docking was completed at 07:54 UTC (3:54 p.m. Beijing time), about 6.5 hours after launch (6 h 32 min), at the front docking port of the Tianhe core module, in a fast automated rendezvous. The ship first flew ahead of the station, turned, and docked on the forward port. The crew moved into Tianhe at 10:48 UTC (6:48 p.m.) after sealing, leak and pressure checks. No source used gives a separate soft-capture time."
+      },
+      {
+        "met_days": 90.9819,
+        "type": "separation",
+        "label": "Undocking from Tianhe",
+        "description": "Shenzhou 12 undocked at 00:56 UTC on 16 September 2021 and flew a radial rendezvous test, from a position in front of the station to a point below it, before departing."
+      },
+      {
+        "met_days": 92.175,
+        "type": "earth_return",
+        "label": "Landing at Dongfeng",
+        "description": "Landing at 05:34 UTC on 17 September 2021 (1:34 p.m. Beijing time) at the Dongfeng landing site in the Gobi Desert, after 92 days in orbit, China's longest crewed mission to that date."
+      }
+    ]
+  }
+}

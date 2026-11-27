@@ -1,0 +1,54 @@
+{
+  "name": "Shenzhou 12",
+  "vehicle": "Long March 2F + Shenzhou 12 spacecraft",
+  "payload": "Three astronauts: Nie Haisheng (commander), Liu Boming and Tang Hongbo",
+  "delta_v": "~9.4 km/s (LEO)",
+  "type": "CREWED SPACE STATION MISSION · FLOWN",
+  "first": "The first crew to enter China's Tiangong space station, through its Tianhe core module",
+  "description": "Nie Haisheng, Liu Boming and Tang Hongbo were the first crew to enter China's Tiangong space station, through its Tianhe core module, launched on 2021-04-29. A Long March 2F lifted off from the Jiuquan Satellite Launch Center on 2021-06-17 at 01:22 UTC (9:22 Beijing time). About 6.5 hours later, at 07:54 UTC, Shenzhou 12 docked at the front port of Tianhe after a fast automated rendezvous, and the crew entered the module at 10:48 UTC. They made two spacewalks, on 2021-07-04 (Liu Boming and Tang Hongbo, with commander Nie Haisheng inside) and on 2021-08-20 (Nie Haisheng and Liu Boming), more than 12 hours in all. Shenzhou 12 undocked at 00:56 UTC on 2021-09-16, flew a radial rendezvous test, and landed at the Dongfeng site at 05:34 UTC on 2021-09-17, after 92 days in orbit, China's longest crewed mission to that date.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Long March 2F from the Jiuquan Satellite Launch Center, 2021-06-17, 01:22 UTC (9:22 Beijing time).",
+      "type": "nominal"
+    },
+    {
+      "met": 0.2719,
+      "label": "DOCKING",
+      "note": "Docks at the front port of Tianhe at 07:54 UTC, 6.5 hours after launch, after a fast automated rendezvous.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.3927,
+      "label": "HATCH OPEN",
+      "note": "The crew enters the Tianhe core module at 10:48 UTC (18:48 Beijing time) after sealing, leak and pressure checks.",
+      "type": "nominal"
+    },
+    {
+      "met": 16.9507,
+      "label": "FIRST SPACEWALK",
+      "note": "2021-07-04: Liu Boming and Tang Hongbo go outside, Liu first, at 00:11 UTC (8:11 Beijing time); Nie Haisheng stays inside. They install foot stops on the robotic arm and a working station, and raise the panoramic camera.",
+      "type": "nominal"
+    },
+    {
+      "met": 63.9694,
+      "label": "SECOND SPACEWALK",
+      "note": "2021-08-20: Nie Haisheng and Liu Boming work outside for about six hours and return at 06:33 UTC (14:33 Beijing time), having installed and adjusted equipment, shown their suits and tested the large robotic arm.",
+      "type": "nominal"
+    },
+    {
+      "met": 90.9819,
+      "label": "UNDOCKING",
+      "note": "Undocks at 00:56 UTC on 2021-09-16 and flies a radial rendezvous test, from in front of the station to a point below it.",
+      "type": "nominal"
+    },
+    {
+      "met": 92.175,
+      "label": "LANDING",
+      "note": "Lands at the Dongfeng site at 05:34 UTC on 2021-09-17 (13:34 Beijing time), after 92 days in orbit.",
+      "type": "nominal"
+    }
+  ],
+  "vehicle_stage": "Long March 2F"
+}

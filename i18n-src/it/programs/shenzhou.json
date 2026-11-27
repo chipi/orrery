@@ -111,9 +111,8 @@
       "note": "una permanenza di 30 giorni a bordo di Tiangong-2 — la più lunga missione con equipaggio della Cina fino ad allora, a dimostrazione dell'abitabilità su scala mensile",
       "name": "Shenzhou 11"
     },
-    "Shenzhou 12": {
-      "note": "il primo equipaggio a salire a bordo della Stazione Spaziale Cinese permanente; Shenzhou-14 (2022) avvia l'occupazione continua",
-      "name": "Shenzhou 12"
+    "mission:shenzhou-12": {
+      "note": "il primo equipaggio a salire a bordo della Stazione Spaziale Cinese permanente; Shenzhou-14 (2022) avvia l'occupazione continua"
     }
   }
 }

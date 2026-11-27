@@ -1,0 +1,54 @@
+{
+  "name": "Shenzhou 12",
+  "vehicle": "Long March 2F + Raumfahrzeug Shenzhou 12",
+  "payload": "Drei Astronauten: Nie Haisheng (Kommandant), Liu Boming und Tang Hongbo",
+  "delta_v": "~9,4 km/s (LEO)",
+  "type": "BEMANNTE RAUMSTATIONSMISSION · GEFLOGEN",
+  "first": "Die erste Besatzung, die über das Kernmodul Tianhe in die chinesische Raumstation Tiangong einstieg",
+  "description": "Nie Haisheng, Liu Boming und Tang Hongbo waren die erste Besatzung, die über das am 2021-04-29 gestartete Kernmodul Tianhe in die chinesische Raumstation Tiangong einstieg. Eine Long March 2F hob am 2021-06-17 um 01:22 UTC (9:22 Uhr Pekinger Zeit) vom Raumfahrtzentrum Jiuquan ab. Rund 6,5 Stunden später, um 07:54 UTC, dockte Shenzhou 12 nach einem schnellen automatischen Rendezvous am vorderen Anschluss von Tianhe an, und um 10:48 UTC stieg die Besatzung in das Modul ein. Sie unternahm zwei Weltraumausstiege, am 2021-07-04 (Liu Boming und Tang Hongbo, Kommandant Nie Haisheng blieb drinnen) und am 2021-08-20 (Nie Haisheng und Liu Boming), zusammen mehr als 12 Stunden. Shenzhou 12 koppelte am 2021-09-16 um 00:56 UTC ab, flog einen radialen Rendezvous-Test und landete am 2021-09-17 um 05:34 UTC am Landeplatz Dongfeng, nach 92 Tagen in der Umlaufbahn, damals Chinas längste bemannte Mission.",
+  "events": [
+    {
+      "met": 0,
+      "label": "START",
+      "note": "Long March 2F vom Raumfahrtzentrum Jiuquan, 2021-06-17, 01:22 UTC (9:22 Uhr Pekinger Zeit).",
+      "type": "nominal"
+    },
+    {
+      "met": 0.2719,
+      "label": "ANDOCKEN",
+      "note": "Dockt um 07:54 UTC am vorderen Anschluss von Tianhe an, 6,5 Stunden nach dem Start, nach einem schnellen automatischen Rendezvous.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.3927,
+      "label": "LUKE OFFEN",
+      "note": "Die Besatzung steigt um 10:48 UTC (18:48 Uhr Pekinger Zeit) nach Dichtheits-, Leck- und Drucktests in das Kernmodul Tianhe ein.",
+      "type": "nominal"
+    },
+    {
+      "met": 16.9507,
+      "label": "ERSTER WELTRAUMAUSSTIEG",
+      "note": "2021-07-04: Liu Boming und Tang Hongbo gehen nach draußen, Liu zuerst, um 00:11 UTC (8:11 Uhr Pekinger Zeit); Nie Haisheng bleibt drinnen. Sie montieren Fußhalterungen am Roboterarm und an einer Arbeitsstation und heben die Panoramakamera an.",
+      "type": "nominal"
+    },
+    {
+      "met": 63.9694,
+      "label": "ZWEITER WELTRAUMAUSSTIEG",
+      "note": "2021-08-20: Nie Haisheng und Liu Boming arbeiten rund sechs Stunden draußen und kehren um 06:33 UTC (14:33 Uhr Pekinger Zeit) zurück; sie haben Geräte montiert und eingestellt, ihre Anzüge vorgeführt und den großen Roboterarm getestet.",
+      "type": "nominal"
+    },
+    {
+      "met": 90.9819,
+      "label": "ABKOPPELN",
+      "note": "Koppelt am 2021-09-16 um 00:56 UTC ab und fliegt einen radialen Rendezvous-Test, von einem Punkt vor der Station zu einem Punkt unter ihr.",
+      "type": "nominal"
+    },
+    {
+      "met": 92.175,
+      "label": "LANDUNG",
+      "note": "Landet am 2021-09-17 um 05:34 UTC (13:34 Uhr Pekinger Zeit) am Landeplatz Dongfeng, nach 92 Tagen in der Umlaufbahn.",
+      "type": "nominal"
+    }
+  ],
+  "vehicle_stage": "Long March 2F"
+}

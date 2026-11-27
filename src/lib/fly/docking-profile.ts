@@ -14,17 +14,35 @@ import { parseGet } from './return-profile';
 export type HoldFrom = 'below' | 'axis';
 
 export interface DockingHold {
-  /** 'wp0', 'wp1', 'wp2' (Dragon), or a range name. */
+  /** 'wp0', 'wp1', 'wp2' (Dragon), 'parking' (Shenzhou): also the beat's label key. */
   id: string;
   rangeM: number;
   from: HoldFrom;
-  /** A go/no-go hold at this point (Dragon's Waypoint 2). */
+  /** The craft stops here (Dragon's Waypoint 2, Shenzhou's parking point). */
   hold?: boolean;
+  /** The stop is the go/no-go poll for docking (its own beat). */
+  goNoGo?: boolean;
+  /** The craft passes ahead of the station and turns round before it reaches this point
+   *  (Shenzhou 12 to Tianhe's forward port). */
+  uTurn?: boolean;
+  /** When it arrives: a sourced MET, or minutes before the capture (an estimate). One of the two. */
+  met?: string;
+  minBeforeCapture?: number;
+  /** With `hold`: the stop ends this many minutes before the capture (an estimate). */
+  holdUntilMinBeforeCapture?: number;
 }
+
+/** The stations, their docking ports, and the ports their neighbours sit on. */
+export const TARGET_PORTS = {
+  iss: ['harmony-forward'],
+  tiangong: ['tianhe-forward'],
+} as const;
+export type DockingTarget = keyof typeof TARGET_PORTS;
 
 /** The ship kinds and the ports they can sit on. */
 export const NEIGHBOUR_PORTS = {
   htv: ['harmony-nadir'],
+  tianzhou: ['tianhe-aft'],
   'soyuz-ms': ['poisk-zenith', 'pirs-nadir', 'zvezda-aft', 'rassvet-nadir'],
   'progress-ms': ['poisk-zenith', 'pirs-nadir', 'zvezda-aft', 'rassvet-nadir'],
 } as const;
@@ -44,21 +62,21 @@ export interface DockingProfileRaw {
   /** The chaser's showcase model id ('crew-dragon'). */
   chaser: string;
   /** The station, and the port on it. */
-  target: 'iss';
-  port: 'harmony-forward';
+  target: DockingTarget;
+  port: (typeof TARGET_PORTS)[DockingTarget][number];
   /** The station as it stood (its assembly is drawn as of this date). */
   stationDate: string;
-  /** The docking mechanism: the soft-capture ring (IDSS), probe and drogue, or APAS. */
-  mechanism: 'idss';
+  /** The docking mechanism: the soft-capture ring (IDSS), or China's APAS-derived one (CDM). */
+  mechanism: 'idss' | 'cdm';
   launchZeroUtc: string;
   altitudeKm: number;
-  /** The last burn before the approach (Dragon's approach initiation). */
-  lastBurn: { id: string; met: string; burnS: number };
+  /** The last burn before the approach (Dragon's approach initiation), when a source times it. */
+  lastBurn?: { id: string; met: string; burnS: number };
   holds: DockingHold[];
   /** Contact and capture (soft capture on a ring). */
   captureMet: string;
-  /** The hooks or latches closed (hard capture). */
-  hardDockMet: string;
+  /** The hooks or latches closed (hard capture), when a source times it apart from contact. */
+  hardDockMet?: string;
   /** The ships already docked on the date, by port (HTV-9 drawn at its real size; the Soyuz and
    *  Progress are the /iss diagram models). */
   neighbours: DockingNeighbour[];
@@ -69,9 +87,9 @@ export interface DockingProfileRaw {
 
 export interface DockingProfile extends DockingProfileRaw {
   kind: 'docking';
-  lastBurnS: number;
+  lastBurnS: number | null;
   captureS: number;
-  hardDockS: number;
+  hardDockS: number | null;
 }
 
 export const isDockingProfile = (p: object): p is DockingProfile =>
@@ -79,40 +97,66 @@ export const isDockingProfile = (p: object): p is DockingProfile =>
 
 const isPos = (v: unknown): v is number => typeof v === 'number' && Number.isFinite(v) && v > 0;
 
-/** Fail-closed shape check: the burn ends before the capture, the capture comes before the hard
- *  dock, and the holds close in toward the port. */
+/** Fail-closed shape check: the port is the station's, the holds close in toward the port and
+ *  come in time order after the burn and before the capture, the hard dock after the capture. */
 export function isValidDockingProfile(d: unknown): d is DockingProfileRaw {
   if (!d || typeof d !== 'object') return false;
   const p = d as Record<string, unknown>;
   for (const k of ['missionId', 'flight', 'chaser', 'source_tier'])
     if (typeof p[k] !== 'string' || !p[k]) return false;
-  if (p.target !== 'iss' || p.port !== 'harmony-forward' || p.mechanism !== 'idss') return false;
+  const ports = TARGET_PORTS[p.target as DockingTarget] as readonly string[] | undefined;
+  if (!ports || !ports.includes(p.port as string)) return false;
+  if (p.mechanism !== 'idss' && p.mechanism !== 'cdm') return false;
   for (const k of ['launchZeroUtc', 'stationDate'])
     if (typeof p[k] !== 'string' || Number.isNaN(Date.parse(p[k] as string))) return false;
   if (!isPos(p.altitudeKm)) return false;
-  const burn = p.lastBurn as Record<string, unknown> | undefined;
-  const burnAt = parseGet(burn?.met);
-  if (!burn || typeof burn.id !== 'string' || burnAt == null || !isPos(burn.burnS)) return false;
   const capture = parseGet(p.captureMet);
-  const hard = parseGet(p.hardDockMet);
-  if (capture == null || hard == null) return false;
-  if (!(burnAt + (burn.burnS as number) < capture && capture < hard)) return false;
+  if (capture == null) return false;
+  if (p.hardDockMet !== undefined) {
+    const hard = parseGet(p.hardDockMet);
+    if (hard == null || !(capture < hard)) return false;
+  }
+  let after = -Infinity;
+  if (p.lastBurn !== undefined) {
+    const burn = p.lastBurn as Record<string, unknown> | null;
+    const burnAt = parseGet(burn?.met);
+    if (!burn || typeof burn.id !== 'string' || burnAt == null || !isPos(burn.burnS)) return false;
+    after = burnAt + (burn.burnS as number);
+    if (!(after < capture)) return false;
+  }
   if (!Array.isArray(p.holds) || p.holds.length < 1) return false;
   let prev = Infinity;
   for (const h of p.holds as Record<string, unknown>[]) {
     if (typeof h?.id !== 'string' || !isPos(h.rangeM) || (h.rangeM as number) >= prev) return false;
     if (h.from !== 'below' && h.from !== 'axis') return false;
-    if (h.hold !== undefined && typeof h.hold !== 'boolean') return false;
+    for (const k of ['hold', 'goNoGo', 'uTurn'])
+      if (h[k] !== undefined && typeof h[k] !== 'boolean') return false;
+    // the arrival: one of a sourced MET or an estimate before the capture, after the burn
+    const at =
+      h.met !== undefined
+        ? parseGet(h.met)
+        : isPos(h.minBeforeCapture)
+          ? capture - (h.minBeforeCapture as number) * 60
+          : null;
+    if (at == null || (h.met !== undefined && h.minBeforeCapture !== undefined)) return false;
+    if (!(at > after && at < capture)) return false;
+    after = at;
+    if (h.hold) {
+      if (!isPos(h.holdUntilMinBeforeCapture)) return false;
+      const until = capture - (h.holdUntilMinBeforeCapture as number) * 60;
+      if (!(until > at)) return false;
+      after = until;
+    } else if (h.goNoGo || h.holdUntilMinBeforeCapture !== undefined) return false;
     prev = h.rangeM as number;
   }
   if (!Array.isArray(p.neighbours)) return false;
-  const ports = new Set<string>();
+  const taken = new Set<string>();
   for (const n of p.neighbours as Record<string, unknown>[]) {
     const allowed = NEIGHBOUR_PORTS[n?.id as NeighbourId] as readonly string[] | undefined;
-    if (!allowed || !allowed.includes(n.port as string) || ports.has(n.port as string))
+    if (!allowed || !allowed.includes(n.port as string) || taken.has(n.port as string))
       return false;
     if (n.name !== undefined && typeof n.name !== 'string') return false;
-    ports.add(n.port as string);
+    taken.add(n.port as string);
   }
   return Array.isArray(p.estimatedFields) && Array.isArray(p.provenance);
 }
@@ -121,9 +165,9 @@ export function expandDockingProfile(raw: DockingProfileRaw): DockingProfile {
   return {
     ...raw,
     kind: 'docking',
-    lastBurnS: parseGet(raw.lastBurn.met)!,
+    lastBurnS: raw.lastBurn ? parseGet(raw.lastBurn.met)! : null,
     captureS: parseGet(raw.captureMet)!,
-    hardDockS: parseGet(raw.hardDockMet)!,
+    hardDockS: raw.hardDockMet ? parseGet(raw.hardDockMet)! : null,
   };
 }
 

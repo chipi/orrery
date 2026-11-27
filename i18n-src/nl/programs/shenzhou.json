@@ -111,9 +111,8 @@
       "note": "een verblijf van 30 dagen aan boord van Tiangong-2 — China's langste bemande missie tot dan toe, die bewoning op maandschaal bewees",
       "name": "Shenzhou 11"
     },
-    "Shenzhou 12": {
-      "note": "de eerste bemanning die aan boord ging van het permanente Chinese Ruimtestation; Shenzhou-14 (2022) begint de ononderbroken bewoning",
-      "name": "Shenzhou 12"
+    "mission:shenzhou-12": {
+      "note": "de eerste bemanning die aan boord ging van het permanente Chinese Ruimtestation; Shenzhou-14 (2022) begint de ononderbroken bewoning"
     }
   }
 }

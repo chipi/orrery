@@ -78,6 +78,9 @@
     final: m.fly_docking_beat_final,
     capture: m.fly_docking_beat_capture,
     hardDock: m.fly_docking_beat_hard_dock,
+    latches: m.fly_docking_beat_latches,
+    uturn: m.fly_docking_beat_uturn,
+    parking: () => m.fly_docking_beat_parking({ m: holdM('parking') }),
   };
   const rmsLabel: Record<RmsBeat, () => string> = {
     establish: m.fly_deploy_rms_establish,
@@ -107,20 +110,20 @@
   };
   const beatText = (beat: string): string =>
     isDockingProfile(profile)
-      ? dockLabel[beat as DockingBeat]()
+      ? (dockLabel[beat as DockingBeat]?.() ?? '')
       : isRmsDeploy(profile)
         ? rmsLabel[beat as RmsBeat]()
         : iusLabel[beat as DeployBeat]();
   const beats = $derived(
     isDockingProfile(profile)
-      ? dockingBeatsFor()
+      ? dockingBeatsFor(profile)
       : isRmsDeploy(profile)
         ? rmsBeatsFor(profile)
         : beatsFor(profile),
   );
   const estimate = (t: number) =>
     isDockingProfile(profile)
-      ? dockingMetIsEstimate(t)
+      ? dockingMetIsEstimate(t, profile)
       : isRmsDeploy(profile)
         ? rmsMetIsEstimate(t, profile)
         : metIsEstimate(t);
@@ -142,24 +145,38 @@
     const p = profile;
     // The models load on demand: /fly's first load stays free of them.
     if (isDockingProfile(p)) {
-      void Promise.all([
-        import('$lib/iss-proxy-model'),
-        import('$lib/three/showcase/capsules-commercial'),
-        import('$lib/three/fly-docking-scene'),
-        import('$lib/ar/ar-assembly').then((a) => a.loadStationEpochs('iss')),
-      ]).then(([iss, caps, dock, epochs]) => {
-        if (unmounted) return;
-        const d = dock.createFlyDocking(
-          p,
-          {
-            station: iss.buildIssProxyStation(),
-            chaser: caps.SHOWCASE[p.chaser].build(),
-            visitor: iss.buildIssVisitor,
-          },
-          { earthTextureUrl, epochs },
-        );
-        stop = start(d);
-      });
+      const models =
+        p.target === 'tiangong'
+          ? Promise.all([
+              import('$lib/three/tiangong-docking-end'),
+              import('$lib/three/showcase/station-freighters'),
+            ]).then(([tg, fr]) => ({
+              models: {
+                station: tg.buildTianhe2021(),
+                chaser: fr.SHOWCASE[p.chaser].build(),
+                visitor: (id: string) => fr.SHOWCASE[id]?.build(),
+              },
+              epochs: undefined,
+            }))
+          : Promise.all([
+              import('$lib/iss-proxy-model'),
+              import('$lib/three/showcase/capsules-commercial'),
+              import('$lib/ar/ar-assembly').then((a) => a.loadStationEpochs('iss')),
+            ]).then(([iss, caps, epochs]) => ({
+              models: {
+                station: iss.buildIssProxyStation(),
+                chaser: caps.SHOWCASE[p.chaser].build(),
+                visitor: (id: string) => iss.buildIssVisitor(id as 'soyuz_ms' | 'progress_ms'),
+              },
+              epochs,
+            }));
+      void Promise.all([models, import('$lib/three/fly-docking-scene')]).then(
+        ([{ models: mdl, epochs }, dock]) => {
+          if (unmounted) return;
+          const d = dock.createFlyDocking(p, mdl, { earthTextureUrl, epochs });
+          stop = start(d);
+        },
+      );
       return () => {
         unmounted = true;
         stop?.();

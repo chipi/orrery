@@ -1,0 +1,54 @@
+{
+  "name": "Shenzhou 12",
+  "vehicle": "Long March 2F + ruimtevaartuig Shenzhou 12",
+  "payload": "Drie astronauten: Nie Haisheng (commandant), Liu Boming en Tang Hongbo",
+  "delta_v": "~9,4 km/s (LEO)",
+  "type": "BEMANDE RUIMTESTATIONMISSIE · GEVLOGEN",
+  "first": "De eerste bemanning die via de kernmodule Tianhe het Chinese ruimtestation Tiangong binnenging",
+  "description": "Nie Haisheng, Liu Boming en Tang Hongbo vormden de eerste bemanning die via de kernmodule Tianhe, gelanceerd op 2021-04-29, het Chinese ruimtestation Tiangong binnenging. Een Long March 2F steeg op 2021-06-17 om 01:22 UTC (9:22 uur Pekingtijd) op vanaf het lanceercentrum Jiuquan. Ongeveer 6,5 uur later, om 07:54 UTC, koppelde Shenzhou 12 na een snel automatisch rendez-vous aan op de voorste poort van Tianhe, en om 10:48 UTC ging de bemanning de module in. Ze maakten twee ruimtewandelingen, op 2021-07-04 (Liu Boming en Tang Hongbo, met commandant Nie Haisheng binnen) en op 2021-08-20 (Nie Haisheng en Liu Boming), samen meer dan 12 uur. Shenzhou 12 koppelde op 2021-09-16 om 00:56 UTC af, vloog een radiale rendez-vous-test en landde op 2021-09-17 om 05:34 UTC op landingsplaats Dongfeng, na 92 dagen in de baan, destijds de langste bemande missie van China.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCERING",
+      "note": "Long March 2F vanaf het lanceercentrum Jiuquan, 2021-06-17, 01:22 UTC (9:22 uur Pekingtijd).",
+      "type": "nominal"
+    },
+    {
+      "met": 0.2719,
+      "label": "KOPPELING",
+      "note": "Koppelt om 07:54 UTC aan op de voorste poort van Tianhe, 6,5 uur na de lancering, na een snel automatisch rendez-vous.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.3927,
+      "label": "LUIK OPEN",
+      "note": "De bemanning gaat om 10:48 UTC (18:48 uur Pekingtijd) de kernmodule Tianhe in na controles op afdichting, lekken en druk.",
+      "type": "nominal"
+    },
+    {
+      "met": 16.9507,
+      "label": "EERSTE RUIMTEWANDELING",
+      "note": "2021-07-04: Liu Boming en Tang Hongbo gaan naar buiten, Liu als eerste, om 00:11 UTC (8:11 uur Pekingtijd); Nie Haisheng blijft binnen. Ze monteren voetsteunen op de robotarm en een werkstation en tillen de panoramacamera hoger.",
+      "type": "nominal"
+    },
+    {
+      "met": 63.9694,
+      "label": "TWEEDE RUIMTEWANDELING",
+      "note": "2021-08-20: Nie Haisheng en Liu Boming werken ongeveer zes uur buiten en keren om 06:33 UTC (14:33 uur Pekingtijd) terug; ze monteerden en stelden apparatuur af, toonden hun pakken en testten de grote robotarm.",
+      "type": "nominal"
+    },
+    {
+      "met": 90.9819,
+      "label": "AFKOPPELEN",
+      "note": "Koppelt op 2021-09-16 om 00:56 UTC af en vliegt een radiale rendez-vous-test, van een punt voor het station naar een punt eronder.",
+      "type": "nominal"
+    },
+    {
+      "met": 92.175,
+      "label": "LANDING",
+      "note": "Landt op 2021-09-17 om 05:34 UTC (13:34 uur Pekingtijd) op landingsplaats Dongfeng, na 92 dagen in de baan.",
+      "type": "nominal"
+    }
+  ],
+  "vehicle_stage": "Long March 2F"
+}

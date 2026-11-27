@@ -1,0 +1,64 @@
+{
+  "missionId": "shenzhou-12",
+  "siteId": "shenzhou-12",
+  "body": "earth",
+  "landingSite": {
+    "lat": 41.6285,
+    "lon": 100.0745
+  },
+  "entryState": {
+    "altitudeM": 122000,
+    "velocityMs": 7820,
+    "flightPathAngleDeg": 1.594
+  },
+  "entryMassKg": 3240,
+  "entryCdA": 7.33,
+  "liftToDragRatio": 0.2,
+  "targetDownrangeKm": 3000,
+  "estimatedFields": [
+    "entryMassKg",
+    "entryCdA",
+    "targetDownrangeKm",
+    "flightPathAngleDeg",
+    "parachuteCdA",
+    "beats.heatshield_sep",
+    "beats.retro_ignition",
+    "beats.engine_cutoff"
+  ],
+  "beats": [
+    {
+      "type": "heatshield_sep",
+      "altM": 2000
+    },
+    {
+      "type": "retro_ignition",
+      "altM": 1.5
+    },
+    {
+      "type": "engine_cutoff",
+      "altM": 0.2
+    }
+  ],
+  "archetype": "EARTH_CAPSULE_REENTRY",
+  "params": {
+    "chuteDeployAltM": 7000,
+    "terminalHandoffAltM": 3000,
+    "parachuteCdA": 216,
+    "terminalCdA": 811
+  },
+  "source_tier": "flagship",
+  "provenance": [
+    {
+      "l": "Wikipedia: landed 17 September 2021, 05:34:09 UTC at the Dongfeng landing site, 41°37′42.7″N 100°04′28.2″E",
+      "u": "https://en.wikipedia.org/wiki/Shenzhou_12"
+    },
+    {
+      "l": "Spaceflight Now: landed at Dongfeng in the Gobi Desert, 05:34 GMT 17 Sep 2021, after 92 days",
+      "u": "https://spaceflightnow.com/2021/09/17/chinese-crew-landing-caps-record-setting-day-in-human-spaceflight/"
+    },
+    {
+      "l": "Shenzhou: the re-entry module of every flight; the entry figures are the Shenzhou 1 profile's, not Shenzhou 12's own",
+      "u": "https://en.wikipedia.org/wiki/Shenzhou_(spacecraft)"
+    }
+  ]
+}

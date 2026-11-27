@@ -29,7 +29,8 @@
   ],
   "linked_missions": [
     "shenzhou-1",
-    "shenzhou-5"
+    "shenzhou-5",
+    "shenzhou-12"
   ],
   "flights": [
     {
@@ -51,6 +52,10 @@
     {
       "mission_id": "shenzhou-11",
       "flight_designation": "Shenzhou 11 (2016-10-17) · Jing + Chen Dong — 33-day mission to Tiangong-2; longest Chinese spaceflight at the time"
+    },
+    {
+      "mission_id": "shenzhou-12",
+      "flight_designation": "Shenzhou 12 (2021-06-17 – 2021-09-17) · Nie + Liu Boming + Tang — first crew to enter the Tiangong station, through Tianhe; docked 6.5 hours after launch; two spacewalks; 92 days in orbit"
     },
     {
       "mission_id": "shenzhou-14",

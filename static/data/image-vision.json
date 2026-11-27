@@ -31516,6 +31516,45 @@
       "rejected_by": null,
       "scored_at": "2026-11-26T23:33:42.851Z",
       "scoring_cost_usd": 0
+    },
+    "/images/missions/shenzhou-12/01.jpg": {
+      "score": 8,
+      "subject": "A Long March 2F carrying Shenzhou 12 lifting off from its launch tower at Jiuquan, 17 June 2021 (video still).",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.45
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-27T07:49:47.197Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/shenzhou-12/02.jpg": {
+      "score": 8,
+      "subject": "The Long March 2F with Shenzhou 12 standing on its transporter platform on the way to the launch pad at Jiuquan, 9 June 2021 (video still).",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.6,
+        "y": 0.4
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-27T07:49:47.205Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/shenzhou-12/03.jpg": {
+      "score": 8,
+      "subject": "The Shenzhou 12 crew, Tang Hongbo, Nie Haisheng and Liu Boming, at the press conference of 16 June 2021 (video still).",
+      "category": "people",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.7
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-27T07:49:47.208Z",
+      "scoring_cost_usd": 0
     }
   }
 }

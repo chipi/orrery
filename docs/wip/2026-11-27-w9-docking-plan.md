@@ -66,3 +66,23 @@ Each step: sourced profile first, science review (sonnet) of the record, then th
 Open: the rest of the station (Soyuz MS-16, Progress 74/75: ports not sourced) is not drawn; the
 diagram station's modules are low-poly beside the real-size port end; the coast MET restarts after
 the docking (as after the deploys); no native translation review; no e2e run.
+
+## Step 2 built: Shenzhou 12 to Tianhe (2026-11-27)
+
+- The scene is profile-driven now: the steps come from the holds (a U-turn before a hold that
+  has `uTurn`, a stop with `hold`, the go/no-go beat only with `goNoGo`); the burn and the hard
+  capture are optional; each hold arrives at a sourced `met` or `minBeforeCapture` (an estimate).
+  Demo-2's waypoint spacing moved into its profile (76/51/10 min, the stop ending 4 min before).
+- Tiangong is a target: `tiangong-docking-end.ts` draws Tianhe as it flew in June 2021, whole and
+  in metres (the /tiangong diagram is not to scale); Tianzhou-2 sits on the aft port.
+- Shenzhou's showcase model had a probe tip; it now has the guide ring with three petals of
+  China's APAS-derived mechanism, `dockingPort` and `setRingRetract`.
+- Sourced: launch 01:22:31 UTC (Wikipedia), docking 07:54 UTC on the forward port (People's
+  Daily, Space.com), the 200 m parking point after "around six hours" and the U-turn (CGTN), the
+  station's ~390 km docking orbit (CMSA, via Beijing News), Tianhe's 16.6 m and 4.2 m, its 2.8 m node sphere (Toutiao, secondary),
+  13 m wings and 67 m2 a wing. Everything else is in the profile's `estimatedFields`.
+- Not found: a soft- against hard-capture split, the closing speed, the turn's geometry, other hold
+  points; the order of the U-turn and the parking stop (drawn turn first). Wikipedia's 330 x 340
+  km infobox orbit disagrees with CMSA's ~390 km; the scene and the coast use 390 km.
+- After the docking: the 92-day coast (1,454 orbits, 41.4 deg) and the landing at Dongfeng (the
+  Shenzhou 1 entry figures, marked).

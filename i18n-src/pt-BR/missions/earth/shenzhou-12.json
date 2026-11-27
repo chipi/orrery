@@ -1,0 +1,54 @@
+{
+  "name": "Shenzhou 12",
+  "vehicle": "Long March 2F + nave Shenzhou 12",
+  "payload": "Três astronautas: Nie Haisheng (comandante), Liu Boming e Tang Hongbo",
+  "delta_v": "~9,4 km/s (LEO)",
+  "type": "MISSÃO TRIPULADA A UMA ESTAÇÃO ESPACIAL · REALIZADA",
+  "first": "A primeira tripulação a entrar na estação espacial chinesa Tiangong, pelo seu módulo central Tianhe",
+  "description": "Nie Haisheng, Liu Boming e Tang Hongbo foram a primeira tripulação a entrar na estação espacial chinesa Tiangong, pelo seu módulo central Tianhe, lançado em 2021-04-29. Um Long March 2F decolou do Centro de Lançamento de Satélites de Jiuquan em 2021-06-17 às 01:22 UTC (9:22, horário de Pequim). Cerca de 6,5 horas depois, às 07:54 UTC, a Shenzhou 12 fez o acoplamento à porta frontal de Tianhe após um encontro orbital automático rápido, e a tripulação entrou no módulo às 10:48 UTC. Fez duas caminhadas espaciais, em 2021-07-04 (Liu Boming e Tang Hongbo, com o comandante Nie Haisheng dentro) e em 2021-08-20 (Nie Haisheng e Liu Boming), mais de 12 horas no total. A Shenzhou 12 se desacoplou às 00:56 UTC de 2021-09-16, fez um teste de encontro orbital radial e pousou no local de Dongfeng às 05:34 UTC de 2021-09-17, após 92 dias em órbita, então a missão tripulada mais longa da China.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANÇAMENTO",
+      "note": "Long March 2F do Centro de Lançamento de Satélites de Jiuquan, 2021-06-17, 01:22 UTC (9:22, horário de Pequim).",
+      "type": "nominal"
+    },
+    {
+      "met": 0.2719,
+      "label": "ACOPLAMENTO",
+      "note": "Faz o acoplamento à porta frontal de Tianhe às 07:54 UTC, 6,5 horas após o lançamento, depois de um encontro orbital automático rápido.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.3927,
+      "label": "ESCOTILHA ABERTA",
+      "note": "A tripulação entra no módulo central Tianhe às 10:48 UTC (18:48, horário de Pequim) após verificações de vedação, vazamentos e pressão.",
+      "type": "nominal"
+    },
+    {
+      "met": 16.9507,
+      "label": "PRIMEIRA CAMINHADA ESPACIAL",
+      "note": "2021-07-04: Liu Boming e Tang Hongbo saem para o exterior, Liu primeiro, às 00:11 UTC (8:11, horário de Pequim); Nie Haisheng fica dentro. Instalam apoios para os pés no braço robótico e em uma estação de trabalho e erguem a câmera panorâmica.",
+      "type": "nominal"
+    },
+    {
+      "met": 63.9694,
+      "label": "SEGUNDA CAMINHADA ESPACIAL",
+      "note": "2021-08-20: Nie Haisheng e Liu Boming trabalham cerca de seis horas fora e voltam às 06:33 UTC (14:33, horário de Pequim); instalaram e ajustaram equipamentos, mostraram seus trajes e testaram o grande braço robótico.",
+      "type": "nominal"
+    },
+    {
+      "met": 90.9819,
+      "label": "DESACOPLAMENTO",
+      "note": "Desacopla às 00:56 UTC de 2021-09-16 e faz um teste de encontro orbital radial, de um ponto à frente da estação até um ponto abaixo dela.",
+      "type": "nominal"
+    },
+    {
+      "met": 92.175,
+      "label": "POUSO",
+      "note": "Pousa no local de Dongfeng às 05:34 UTC de 2021-09-17 (13:34, horário de Pequim), após 92 dias em órbita.",
+      "type": "nominal"
+    }
+  ],
+  "vehicle_stage": "Long March 2F"
+}

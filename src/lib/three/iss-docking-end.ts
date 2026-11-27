@@ -30,7 +30,7 @@ const mat = (color: number, metalness = 0.1, roughness = 0.7, side: THREE.Side =
   new THREE.MeshStandardMaterial({ color, metalness, roughness, side });
 
 /** A cylinder along +x from x0 to x1 (radii at each end). */
-function xCyl(
+export function xCyl(
   g: THREE.Object3D,
   m: THREE.Material,
   r0: number,
@@ -47,7 +47,13 @@ function xCyl(
 }
 
 /** A ring in the y-z plane at x. */
-function xRing(g: THREE.Object3D, m: THREE.Material, R: number, r: number, x: number): THREE.Mesh {
+export function xRing(
+  g: THREE.Object3D,
+  m: THREE.Material,
+  R: number,
+  r: number,
+  x: number,
+): THREE.Mesh {
   const t = new THREE.Mesh(new THREE.TorusGeometry(R, r, 8, 48), m);
   t.rotation.y = Math.PI / 2;
   t.position.x = x;

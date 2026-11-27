@@ -175,7 +175,8 @@ describe('getMissionIndex', () => {
     // 2026-11-26 — falcon-heavy-demo (Sun) (146 → 147).
     // 2026-11-26 — hubble, compton-gro, chandra (Earth, Shuttle-launched observatories) (147 → 150).
     // 2026-11-27 — crew-dragon-demo-2 (Earth, the first crewed Crew Dragon flight) (150 → 151).
-    expect(missions).toHaveLength(151); // 0.9.11 F3: starship-flight-5 (Earth); escapade (Mars); falcon-heavy-demo (Sun)
+    // 2026-11-27 — shenzhou-12 (Earth, the first crew to Tiangong) (151 → 152).
+    expect(missions).toHaveLength(152); // 0.9.11 F3: starship-flight-5 (Earth); escapade (Mars); falcon-heavy-demo (Sun)
   });
 
   it('every entry has the required language-neutral fields', async () => {
@@ -455,7 +456,7 @@ describe('getSun', () => {
 describe('getMissionsForLibrary', () => {
   it('returns all 115 missions merged with their en-US overlays', async () => {
     const list = await getMissionsForLibrary();
-    expect(list).toHaveLength(151);
+    expect(list).toHaveLength(152);
     // Every mission should have its base fields…
     for (const m of list) {
       expect(m.id).toBeTruthy();
@@ -501,7 +502,7 @@ describe('getMissionsForLibrary', () => {
 
   it('falls back to en-US for missing locale', async () => {
     const list = await getMissionsForLibrary('xx-TEST');
-    expect(list).toHaveLength(151);
+    expect(list).toHaveLength(152);
   });
 
   it('count matches what filterMissions reports', async () => {

@@ -19,6 +19,7 @@ const raw = JSON.parse(
 describe('docking profiles (W9)', () => {
   it('lists the missions with a profile file', () => {
     expect(hasDockingProfile('crew-dragon-demo-2')).toBe(true);
+    expect(hasDockingProfile('shenzhou-12')).toBe(true);
     expect(hasDockingProfile('hubble')).toBe(false);
     expect(hasDockingProfile(null)).toBe(false);
   });
@@ -51,6 +52,38 @@ describe('docking profiles (W9)', () => {
     expect(isValidDockingProfile({ ...raw, lastBurn: { id: 'x', met: 'never', burnS: 1 } })).toBe(
       false,
     );
+    // a port of another station; a ship on another station's port
+    expect(isValidDockingProfile({ ...raw, port: 'tianhe-forward' })).toBe(false);
+    expect(
+      isValidDockingProfile({ ...raw, neighbours: [{ id: 'tianzhou', port: 'zvezda-aft' }] }),
+    ).toBe(false);
+    const wp = raw.holds;
+    // a hold's arrival: a MET or minutes before the capture, not both, not neither
+    expect(
+      isValidDockingProfile({ ...raw, holds: [{ ...wp[0], met: '17:00:00' }, wp[1], wp[2]] }),
+    ).toBe(false);
+    expect(
+      isValidDockingProfile({
+        ...raw,
+        holds: [{ id: 'wp0', rangeM: 400, from: 'below' }, wp[1], wp[2]],
+      }),
+    ).toBe(false);
+    // the arrivals in time order; a stop needs its end; a go/no-go only on a stop
+    expect(
+      isValidDockingProfile({ ...raw, holds: [{ ...wp[0], minBeforeCapture: 40 }, wp[1], wp[2]] }),
+    ).toBe(false);
+    expect(
+      isValidDockingProfile({
+        ...raw,
+        holds: [wp[0], wp[1], { ...wp[2], holdUntilMinBeforeCapture: undefined }],
+      }),
+    ).toBe(false);
+    expect(
+      isValidDockingProfile({ ...raw, holds: [wp[0], { ...wp[1], goNoGo: true }, wp[2]] }),
+    ).toBe(false);
+    // no burn and no hard-dock time is a valid profile (Shenzhou 12)
+    const { lastBurn: _b, hardDockMet: _h, ...bare } = raw;
+    expect(isValidDockingProfile(bare)).toBe(true);
   });
 
   it('loads and expands the profile; null on a miss, a failed fetch or junk', async () => {

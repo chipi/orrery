@@ -17,18 +17,23 @@
     {
       "id": "wp0",
       "rangeM": 400,
-      "from": "below"
+      "from": "below",
+      "minBeforeCapture": 76
     },
     {
       "id": "wp1",
       "rangeM": 220,
-      "from": "axis"
+      "from": "axis",
+      "minBeforeCapture": 51
     },
     {
       "id": "wp2",
       "rangeM": 20,
       "from": "axis",
-      "hold": true
+      "hold": true,
+      "minBeforeCapture": 10,
+      "goNoGo": true,
+      "holdUntilMinBeforeCapture": 4
     }
   ],
   "captureMet": "18:53:15.0",

@@ -1110,18 +1110,46 @@ function buildShenzhou(): THREE.Group {
   cyl(om, M.silver, 0.78, 0.55, oTop, oTop + 0.5, 32);
   cyl(om, M.dark, 0.5, 0.5, oTop + 0.5, oTop + 0.55, 28);
   boltRing(om, M.dark, 0.54, oTop + 0.52, 10, 0.05);
-  cyl(om, M.silver, 0.2, 0.2, oTop + 0.55, 9.25, 16);
-  cyl(om, M.dark, 0.14, 0.14, 9.2, 9.25, 12);
-  for (let i = 0; i < 3; i++) {
-    const a = (i / 3) * TAU + 0.4;
-    strut(om, M.silver, pol(0.2, a, 8.95), pol(0.46, a, oTop + 0.6), 0.015, 5);
+  // The docking mechanism (China's, after APAS; schematic: the ring's size, its travel and the
+  // petals' shape are not from a source): the housing round the 0.8 m passage, the guide ring on
+  // its extension struts with three petals leaning in, to the sourced 9.25 m. `dockingPort` is the
+  // ring's face; `setRingRetract` draws the ring in after contact.
+  const housingTop = oTop + 0.7;
+  cyl(om, M.alu, 0.56, 0.56, oTop + 0.55, housingTop, 36);
+  cyl(om, M.dark, 0.4, 0.4, housingTop, housingTop + 0.01, 28);
+  const ringFace = 9.0;
+  const ring = grp(om, 'docking-ring');
+  torus(ring, M.silver, 0.6, 0.04, ringFace, 40);
+  for (let i = 0; i < 6; i++) {
+    const a = (i / 6) * TAU;
+    strut(ring, M.alu, pol(0.5, a, housingTop - 0.3), pol(0.58, a, ringFace), 0.018, 5);
   }
+  for (let i = 0; i < 3; i++) {
+    const a = (i / 3) * TAU;
+    const petal = grp(ring, 'petal');
+    petal.position.copy(pol(0.6, a, ringFace));
+    petal.rotation.y = a + Math.PI / 2;
+    box(petal, M.silver, 0.34, 0.25, 0.03, 0, 0.11, 0.03);
+    petal.children[0].rotation.x = -0.3;
+  }
+  const dockPort = new THREE.Object3D();
+  dockPort.name = 'docking-port';
+  dockPort.position.y = ringFace;
+  ring.add(dockPort);
 
   // service-module wings: 17 m span, 2.6 m wide
   const L = (17 - 2 * 1.4) / 2;
   for (const s of [0, Math.PI]) wing(sm, M, 1.5, 1.55, L - 0.1, 2.6, 4, s, M.cell, M.frame, 0.4);
+  g.userData.dockingPort = dockPort;
+  /** 0 the ring out (contact), 1 drawn in by its travel (the latches close). */
+  g.userData.setRingRetract = (k: number): void => {
+    ring.position.y = -Math.min(1, Math.max(0, k)) * SHENZHOU_RING_TRAVEL_M;
+  };
   return g;
 }
+
+/** The guide ring's travel from contact to the latches (ESTIMATE; the docking scene's too). */
+export const SHENZHOU_RING_TRAVEL_M = 0.3;
 
 // ---------------------------------------------------------------------------------------------
 // Apollo CSM

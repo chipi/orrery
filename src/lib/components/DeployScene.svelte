@@ -151,7 +151,11 @@
         if (unmounted) return;
         const d = dock.createFlyDocking(
           p,
-          { station: iss.buildIssProxyStation(), chaser: caps.SHOWCASE[p.chaser].build() },
+          {
+            station: iss.buildIssProxyStation(),
+            chaser: caps.SHOWCASE[p.chaser].build(),
+            visitor: iss.buildIssVisitor,
+          },
           { earthTextureUrl, epochs },
         );
         stop = start(d);

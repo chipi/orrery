@@ -35,6 +35,19 @@ describe('docking profiles (W9)', () => {
       false,
     );
     expect(isValidDockingProfile({ ...raw, neighbours: [{ id: 'cygnus' }] })).toBe(false);
+    expect(isValidDockingProfile({ ...raw, neighbours: [{ id: 'htv', port: 'zvezda-aft' }] })).toBe(
+      false,
+    );
+    // two ships on one port
+    expect(
+      isValidDockingProfile({
+        ...raw,
+        neighbours: [
+          { id: 'soyuz-ms', port: 'poisk-zenith' },
+          { id: 'progress-ms', port: 'poisk-zenith' },
+        ],
+      }),
+    ).toBe(false);
     expect(isValidDockingProfile({ ...raw, lastBurn: { id: 'x', met: 'never', burnS: 1 } })).toBe(
       false,
     );

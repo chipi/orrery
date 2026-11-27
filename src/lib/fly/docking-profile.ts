@@ -22,6 +22,21 @@ export interface DockingHold {
   hold?: boolean;
 }
 
+/** The ship kinds and the ports they can sit on. */
+export const NEIGHBOUR_PORTS = {
+  htv: ['harmony-nadir'],
+  'soyuz-ms': ['poisk-zenith', 'pirs-nadir', 'zvezda-aft', 'rassvet-nadir'],
+  'progress-ms': ['poisk-zenith', 'pirs-nadir', 'zvezda-aft', 'rassvet-nadir'],
+} as const;
+export type NeighbourId = keyof typeof NEIGHBOUR_PORTS;
+export type NeighbourPort = (typeof NEIGHBOUR_PORTS)[NeighbourId][number];
+export interface DockingNeighbour {
+  id: NeighbourId;
+  port: NeighbourPort;
+  /** The flight's name, for the record ('Soyuz MS-16'). */
+  name?: string;
+}
+
 export interface DockingProfileRaw {
   missionId: string;
   /** The flight's short name, e.g. "Demo-2". */
@@ -44,8 +59,9 @@ export interface DockingProfileRaw {
   captureMet: string;
   /** The hooks or latches closed (hard capture). */
   hardDockMet: string;
-  /** Ships already docked that sit near the port (drawn at the port end), by port. */
-  neighbours: { id: 'htv'; port: 'harmony-nadir' }[];
+  /** The ships already docked on the date, by port (HTV-9 drawn at its real size; the Soyuz and
+   *  Progress are the /iss diagram models). */
+  neighbours: DockingNeighbour[];
   source_tier: string;
   estimatedFields: string[];
   provenance: { l: string; u: string }[];
@@ -90,12 +106,14 @@ export function isValidDockingProfile(d: unknown): d is DockingProfileRaw {
     prev = h.rangeM as number;
   }
   if (!Array.isArray(p.neighbours)) return false;
-  if (
-    !(p.neighbours as Record<string, unknown>[]).every(
-      (n) => n?.id === 'htv' && n.port === 'harmony-nadir',
-    )
-  )
-    return false;
+  const ports = new Set<string>();
+  for (const n of p.neighbours as Record<string, unknown>[]) {
+    const allowed = NEIGHBOUR_PORTS[n?.id as NeighbourId] as readonly string[] | undefined;
+    if (!allowed || !allowed.includes(n.port as string) || ports.has(n.port as string))
+      return false;
+    if (n.name !== undefined && typeof n.name !== 'string') return false;
+    ports.add(n.port as string);
+  }
   return Array.isArray(p.estimatedFields) && Array.isArray(p.provenance);
 }
 

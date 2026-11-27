@@ -29,6 +29,14 @@ const HARMONY_FWD_X = (0.66 + 0.57 / 2) * ISS_UNIT_M;
 const HARMONY_X = 0.66 * ISS_UNIT_M;
 const HARMONY_R = 0.173 * ISS_UNIT_M;
 const NMI_PER_KM = 1 / 1.852;
+/** The Russian ports on the diagram station (its units; iss-proxy-model.ts MODULE_BOXES): Poisk
+ *  zenith and Pirs nadir on Zvezda (x -2.58), Zvezda's aft end, Rassvet nadir on Zarya. */
+const RUSSIAN_PORTS = {
+  'poisk-zenith': { pos: [-2.58, 0.531, 0], out: 'plusY' },
+  'pirs-nadir': { pos: [-2.58, -0.531, 0], out: 'minusY' },
+  'zvezda-aft': { pos: [-3.095, 0, 0], out: 'minusX' },
+  'rassvet-nadir': { pos: [-1.53, -0.67, 0], out: 'minusY' },
+} as const;
 const MIN = 60;
 
 export type DockingBeat =
@@ -205,6 +213,9 @@ export interface FlyDockingModels {
   station: THREE.Group;
   /** The chaser's showcase model, standing nose up (+y): userData.dockingPort, setNoseOpen. */
   chaser: THREE.Group;
+  /** The /iss diagram's visiting ships (`buildIssVisitor`), for the Soyuz and Progress docked on
+   *  the date. */
+  visitor?: (id: 'soyuz_ms' | 'progress_ms') => THREE.Group;
 }
 
 export interface FlyDocking {
@@ -229,8 +240,9 @@ export function configureStation(
 ): void {
   station.traverse((o) => {
     if (o === station) return;
-    // PMA-2 and Harmony's forward blanket wrap: the docking end is drawn at its real size instead
-    if (o.name === 'pma2' || o.name === 'mli_harmony') {
+    // PMA-2 and Harmony's forward blanket wrap: the docking end is drawn at its real size instead.
+    // The model's dashed approach corridors belong to its present-day visitors.
+    if (o.name === 'pma2' || o.name === 'mli_harmony' || o.name.startsWith('corridor_')) {
       o.visible = false;
       return;
     }
@@ -267,10 +279,32 @@ export function createFlyDocking(
   end.position.x = HARMONY_FWD_X;
   scene.add(end);
   for (const n of profile.neighbours) {
-    if (n.id !== 'htv') continue;
-    const htv = buildHtv();
-    htv.position.set(HARMONY_X, -HARMONY_R, 0);
-    scene.add(htv);
+    if (n.id === 'htv') {
+      const htv = buildHtv();
+      htv.position.set(HARMONY_X, -HARMONY_R, 0);
+      scene.add(htv);
+      continue;
+    }
+    // The Soyuz and Progress: the diagram's own ships on the diagram's ports, scaled with it.
+    const ship = models.visitor?.(n.id === 'soyuz-ms' ? 'soyuz_ms' : 'progress_ms');
+    if (!ship) continue;
+    const at = RUSSIAN_PORTS[n.port as keyof typeof RUSSIAN_PORTS];
+    ship.position.set(at.pos[0], at.pos[1], at.pos[2]);
+    if (at.out === 'minusY') ship.rotation.x = Math.PI;
+    else if (at.out === 'minusX') ship.rotation.z = Math.PI / 2;
+    ship.name = `neighbour-${n.port}`;
+    station.add(ship);
+    // Pirs was still on Zvezda's nadir port in 2020; the diagram no longer draws it (deorbited
+    // 2021), so it is drawn here at the diagram's Pirs size when a ship sits on it.
+    if (n.port === 'pirs-nadir') {
+      const pirs = new THREE.Mesh(
+        new THREE.CylinderGeometry(0.1, 0.1, 0.32, 20),
+        new THREE.MeshStandardMaterial({ color: 0xe8e8ec, roughness: 0.6 }),
+      );
+      pirs.name = 'pirs-2020';
+      pirs.position.set(-2.58, -0.371, 0);
+      station.add(pirs);
+    }
   }
   scene.updateMatrixWorld(true);
   const portWorld = end.userData.dockingPort.getWorldPosition(new THREE.Vector3());

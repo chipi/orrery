@@ -36,7 +36,23 @@
   "neighbours": [
     {
       "id": "htv",
-      "port": "harmony-nadir"
+      "port": "harmony-nadir",
+      "name": "HTV-9"
+    },
+    {
+      "id": "soyuz-ms",
+      "port": "poisk-zenith",
+      "name": "Soyuz MS-16"
+    },
+    {
+      "id": "progress-ms",
+      "port": "pirs-nadir",
+      "name": "Progress MS-13 (74P)"
+    },
+    {
+      "id": "progress-ms",
+      "port": "zvezda-aft",
+      "name": "Progress MS-14 (75P)"
     }
   ],
   "source_tier": "flagship",
@@ -46,7 +62,7 @@
     "Waypoints 1 and 2 on the docking axis ahead of the port (AmericaSpace gives their ranges, not their direction; not to be confused with the 220 m Wikipedia gives as the limit of Hurley's touchscreen flying); Waypoint 0 400 m below the station",
     "the closing speed and the path between the waypoints (no flown figures found)",
     "the nose cone's side and opening angle (the Everyday Astronaut Demo-2 timeline has its opening sequence start at T+00:12:48, 46 s after separation, without saying whether planned or flown: the scene shows it open throughout)",
-    "the docking system under the nose cone and the station away from the port end (the ISS is the /iss diagram model as of 31 May 2020, scaled to metres; only Harmony's forward end, PMA-2, IDA-2 and HTV-9 are drawn to their sourced sizes)",
+    "the docking system under the nose cone and the station away from the port end (the ISS is the /iss diagram model as of 31 May 2020, scaled to metres, with its own Soyuz and Progress models on their sourced ports and Pirs drawn at the diagram's size; only Harmony's forward end, PMA-2, IDA-2 and HTV-9 are drawn to their sourced sizes)",
     "the ring's retraction between soft and hard capture (its travel)"
   ],
   "provenance": [
@@ -85,6 +101,18 @@
     {
       "l": "Everyday Astronaut, Demo-2 timeline: Dragon separates from the second stage at T+00:12:02, the nosecone opening sequence starts at T+00:12:48; the pre-launch planned times of the waypoints and capture",
       "u": "https://everydayastronaut.com/dragon-2-dm-2-spacexs-first-crewed-mission/"
+    },
+    {
+      "l": "NASA Space Station blog, 25 Apr 2020: Progress 75 docked to the Zvezda service module; Progress 74, Progress 75 and Soyuz MS-16 attached to the station",
+      "u": "https://www.nasa.gov/blogs/spacestation/2020/04/25/progress-cargo-ship-docked-to-station"
+    },
+    {
+      "l": "Soyuz MS-16 docked at Poisk's zenith port on 9 April 2020 (Wikipedia, Soyuz MS-16)",
+      "u": "https://en.wikipedia.org/wiki/Soyuz_MS-16"
+    },
+    {
+      "l": "Progress MS-13 (74P) docked at Pirs on 9 December 2019 and left in July 2020 (Wikipedia, Progress MS-13)",
+      "u": "https://en.wikipedia.org/wiki/Progress_MS-13"
     }
   ]
 }

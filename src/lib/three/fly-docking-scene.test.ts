@@ -18,7 +18,7 @@ import {
   dockingMetIsEstimate,
   dockingSteps,
 } from './fly-docking-scene';
-import { buildIssProxyStation } from '$lib/iss-proxy-model';
+import { buildIssProxyStation, buildIssVisitor } from '$lib/iss-proxy-model';
 import { ISS_DOCK_EVENTS, ISS_TRUSS_PHASES } from '$lib/iss-assembly-phases';
 import { SHOWCASE } from './showcase/capsules-commercial';
 
@@ -43,7 +43,11 @@ function epochs(): Map<string, number> {
 const build = () =>
   createFlyDocking(
     p,
-    { station: buildIssProxyStation(), chaser: SHOWCASE['crew-dragon'].build() },
+    {
+      station: buildIssProxyStation(),
+      chaser: SHOWCASE['crew-dragon'].build(),
+      visitor: buildIssVisitor,
+    },
     { epochs: epochs() },
   );
 
@@ -129,6 +133,17 @@ describe('the docking: geometry', () => {
       if (o.userData.moduleId === 'harmony' && o.visible) harmony++;
     });
     expect(harmony).toBeGreaterThan(0);
+    // the ships docked that day on their ports: Soyuz MS-16 above Poisk, Progress 74 below Pirs,
+    // Progress 75 behind Zvezda's aft end
+    const at = (port: string) =>
+      new THREE.Box3()
+        .setFromObject(s.getObjectByName(`neighbour-${port}`)!)
+        .getCenter(new THREE.Vector3());
+    const zvezda = -2.58 * 12.7;
+    expect(at('poisk-zenith').y).toBeGreaterThan(8);
+    expect(at('pirs-nadir').y).toBeLessThan(-8);
+    expect(at('zvezda-aft').x).toBeLessThan(zvezda - 8);
+    expect(vis('pirs-2020')).toBe(true);
   });
 
   it('the rings meet at contact, the waypoints sit at their ranges, the ring retracts', () => {

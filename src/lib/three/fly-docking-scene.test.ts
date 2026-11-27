@@ -21,6 +21,7 @@ import {
 } from './fly-docking-scene';
 import { buildTianhe2021 } from './tiangong-docking-end';
 import { SHOWCASE as FREIGHTERS } from './showcase/station-freighters';
+import { SHOWCASE as CLASSIC } from './showcase/capsules-classic';
 import { buildIssProxyStation, buildIssVisitor } from '$lib/iss-proxy-model';
 import { ISS_DOCK_EVENTS, ISS_TRUSS_PHASES } from '$lib/iss-assembly-phases';
 import { SHOWCASE } from './showcase/capsules-commercial';
@@ -322,6 +323,113 @@ describe('Shenzhou 12 to Tianhe (W9 step 2)', () => {
   ]) {
     it(`at ${w}x${h}: the craft is in frame, and the port once it is near`, () => {
       const eases = dockingSteps(sp).map((s) => s.t0);
+      for (let t = 0; t <= d.end; t += 0.5) {
+        const pose = d.update(t, w / h);
+        d.scene.updateMatrixWorld(true);
+        d.camera.updateMatrixWorld(true);
+        if (eases.some((s0) => t >= s0 && t < s0 + 1.8)) continue;
+        const c = new THREE.Box3().setFromObject(d.parts.chaser).getCenter(new THREE.Vector3());
+        const subjects = [c];
+        if (pose.rangeM < 60) subjects.push(port());
+        for (const s of subjects) {
+          const ndc = s.clone().project(d.camera);
+          expect(Math.abs(ndc.x), `t=${t} ${pose.beat} x`).toBeLessThan(0.9);
+          expect(Math.abs(ndc.y), `t=${t} ${pose.beat} y`).toBeLessThan(0.9);
+          expect(ndc.z, `t=${t} in front`).toBeLessThan(1);
+        }
+      }
+    });
+  }
+});
+
+describe('Soyuz TM-31 to Zvezda aft (W9 step 3)', () => {
+  const traw = json('static/data/docking-profiles/soyuz-tm-31.json') as DockingProfileRaw;
+  const tp: DockingProfile = expandDockingProfile(traw);
+  const tstep = (id: string) => dockingSteps(tp).find((s) => s.id === id)!;
+  const d = createFlyDocking(
+    tp,
+    {
+      station: buildIssProxyStation(),
+      chaser: CLASSIC['soyuz-tm'].build(),
+      visitor: (id: string) => buildIssVisitor(id as 'soyuz_ms' | 'progress_ms'),
+    },
+    { epochs: epochs() },
+  );
+  const ring = () => {
+    d.scene.updateMatrixWorld(true);
+    return d.parts.chaser.getObjectByName('docking-port')!.getWorldPosition(new THREE.Vector3());
+  };
+  const port = () => d.parts.port.getWorldPosition(new THREE.Vector3());
+
+  it("validates; the hover and the docking are mission control's times", () => {
+    expect(isValidDockingProfile(traw)).toBe(true);
+    const l = Date.parse(traw.launchZeroUtc);
+    expect(tp.captureS).toBeCloseTo((Date.parse('2000-11-02T09:21:40Z') - l) / 1000, 1);
+    expect(dockingMetAt(tstep('to:hover').t1, tp)).toBeCloseTo(
+      (Date.parse('2000-11-02T09:12:12Z') - l) / 1000,
+      1,
+    );
+    expect(dockingBeatsFor(tp).map((b) => b.id)).toEqual([
+      'establish',
+      'hover',
+      'final',
+      'capture',
+      'hardDock',
+    ]);
+  });
+
+  it('the station is drawn as of 2 November 2000: Z1 and PMA-3 on Unity, no Destiny, no P6', () => {
+    const s = d.parts.station;
+    const shown = (pred: (o: THREE.Object3D) => boolean) => {
+      let n = 0;
+      s.traverse((o) => {
+        if (!pred(o)) return;
+        let a: THREE.Object3D | null = o;
+        while (a && a.visible) a = a.parent;
+        if (!a) n++;
+      });
+      return n;
+    };
+    expect(shown((o) => o.userData.moduleId === 'destiny')).toBe(0);
+    expect(shown((o) => o.userData.animModuleId === 'truss-p6')).toBe(0);
+    expect(shown((o) => o.userData.animModuleId === 'truss-z1')).toBeGreaterThan(0);
+    expect(shown((o) => o.name === 'pma3')).toBe(1);
+    expect(shown((o) => o.name === 'pma2')).toBe(1);
+    expect(shown((o) => o.name === 'zvezda_engine_bell')).toBe(0);
+  });
+
+  it('comes in from behind along the aft axis, nose first, and the frames close', () => {
+    const zvezdaAft = -(2.58 + 1.03 / 2) * 12.7;
+    expect(port().x).toBeLessThan(zvezdaAft);
+    d.update(tstep('hold:hover').t0 + 1, 16 / 9);
+    expect(port().x - ring().x).toBeCloseTo(150, 0);
+    const c = new THREE.Box3().setFromObject(d.parts.chaser).getCenter(new THREE.Vector3());
+    // its nose (the probe) toward the station, ahead of it
+    expect(ring().x).toBeGreaterThan(c.x);
+    d.update(tstep('capture').t0, 16 / 9);
+    expect(ring().distanceTo(port())).toBeLessThan(0.02);
+    d.update(dockingEnd(tp), 16 / 9);
+    expect(ring().x - port().x).toBeCloseTo(0.3, 2);
+  });
+
+  it('the craft stays clear of the station until it touches the port', () => {
+    const station = new THREE.Box3().setFromObject(d.parts.station);
+    for (let t = 0; t < tstep('capture').t0; t += 0.25) {
+      d.update(t, 16 / 9);
+      d.scene.updateMatrixWorld(true);
+      const body = new THREE.Box3().setFromObject(d.parts.chaser);
+      if (t < tstep('final').t0) expect(body.intersectsBox(station), `t=${t}`).toBe(false);
+      // the probe reaches past the frame into the drogue
+      else expect(body.max.x, `t=${t}`).toBeLessThan(port().x + 0.35);
+    }
+  });
+
+  for (const [w, h] of [
+    [1280, 800],
+    [390, 844],
+  ]) {
+    it(`at ${w}x${h}: the craft is in frame, and the port once it is near`, () => {
+      const eases = dockingSteps(tp).map((s) => s.t0);
       for (let t = 0; t <= d.end; t += 0.5) {
         const pose = d.update(t, w / h);
         d.scene.updateMatrixWorld(true);

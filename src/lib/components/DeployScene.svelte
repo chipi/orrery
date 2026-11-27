@@ -81,6 +81,7 @@
     latches: m.fly_docking_beat_latches,
     uturn: m.fly_docking_beat_uturn,
     parking: () => m.fly_docking_beat_parking({ m: holdM('parking') }),
+    hover: () => m.fly_docking_beat_hover({ m: holdM('hover') }),
   };
   const rmsLabel: Record<RmsBeat, () => string> = {
     establish: m.fly_deploy_rms_establish,
@@ -160,7 +161,10 @@
             }))
           : Promise.all([
               import('$lib/iss-proxy-model'),
-              import('$lib/three/showcase/capsules-commercial'),
+              // the Soyuz is a classic capsule, Crew Dragon a commercial one
+              p.chaser.startsWith('soyuz')
+                ? import('$lib/three/showcase/capsules-classic')
+                : import('$lib/three/showcase/capsules-commercial'),
               import('$lib/ar/ar-assembly').then((a) => a.loadStationEpochs('iss')),
             ]).then(([iss, caps, epochs]) => ({
               models: {

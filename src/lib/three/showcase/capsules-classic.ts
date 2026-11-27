@@ -1088,6 +1088,13 @@ function buildSoyuz(total: number, wingSpan: number, wingChord: number): THREE.G
   blanket(om, M.mli, omPts, 0.014, 48, 0.2);
   const omR = profileFn(omPts);
   dockingProbe(om, M, 4.5 + 0.9 * L, total);
+  // The point the docking scene brings to the station's port at contact: the probe's head in the
+  // drogue's socket, the docking frames then SOYUZ_FRAME_GAP_M apart until the probe draws the
+  // craft in (ESTIMATE: the gap).
+  const dockPort = new THREE.Object3D();
+  dockPort.name = 'docking-port';
+  dockPort.position.y = 4.5 + 0.9 * L + 0.06 + SOYUZ_FRAME_GAP_M;
+  om.add(dockPort);
   const hatch = onProfile(om, omR, 4.5 + 0.4 * L, 0.0, 0.02);
   const hr = new THREE.Mesh(new THREE.TorusGeometry(0.34, 0.035, 8, 32), M.silver);
   hr.rotation.x = Math.PI / 2;
@@ -1108,8 +1115,13 @@ function buildSoyuz(total: number, wingSpan: number, wingChord: number): THREE.G
     0.014,
     14,
   );
-  return finish(g, total);
+  const out = finish(g, total);
+  out.userData.dockingPort = dockPort;
+  return out;
 }
+
+/** The docking frames' gap at capture, closed as the probe retracts (ESTIMATE). */
+export const SOYUZ_FRAME_GAP_M = 0.3;
 
 /**
  * Progress: the Soyuz service module and wings (none on the 7K-TG, battery-powered), the dark

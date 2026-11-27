@@ -192,8 +192,8 @@ describe('rankMissionScience (T1, T7)', () => {
 });
 
 describe('the cap (T1)', () => {
-  it('ranks at most five for every one of the 152 missions', () => {
-    expect(missions).toHaveLength(152);
+  it('ranks at most five for every one of the 153 missions', () => {
+    expect(missions).toHaveLength(153);
     const over = missions.filter((m) => rankMissionScience(m).length > SCIENCE_LINK_MAX);
     expect(over.map((m) => m.id)).toEqual([]);
     expect(missions.every((m) => rankMissionScience(m).length >= 3)).toBe(true);

@@ -1,0 +1,72 @@
+{
+  "missionId": "soyuz-tm-31",
+  "flight": "Soyuz TM-31",
+  "chaser": "soyuz-tm",
+  "target": "iss",
+  "port": "zvezda-aft",
+  "stationDate": "2000-11-02",
+  "mechanism": "ssvp",
+  "launchZeroUtc": "2000-10-31T07:52:47.241Z",
+  "altitudeKm": 384,
+  "holds": [
+    {
+      "id": "hover",
+      "rangeM": 150,
+      "from": "axis",
+      "met": "49:19:24.8",
+      "hold": true,
+      "holdUntilMinBeforeCapture": 8
+    }
+  ],
+  "captureMet": "49:28:52.8",
+  "neighbours": [],
+  "source_tier": "flagship",
+  "estimatedFields": [
+    "the docking time: the Russian mission-control report and RussianSpaceWeb give 09:21:40 UTC, used here; Wikipedia, Spacefacts and Weebau give 09:21:03. No source says whether the two are contact and capture",
+    "the end of the hover: mission control has the craft at 130 m by 09:13:40, so it is drawn ending 8 min before the docking; the approach from 80 m (09:14:50) to contact is not documented",
+    "the latching after contact (8 min) and the frames' 0.3 m gap at capture",
+    "the path from behind and below to the hover point, the closing speed and every camera move",
+    "the docking unit's frame, cone and the engines' place on Zvezda's aft end",
+    "the altitude: 379 x 388 km (Orbital Focus), drawn at 384 km",
+    "PMA-2 and PMA-3 as they sat that day: drawn on Unity's forward and nadir ports",
+    "the Sun's direction"
+  ],
+  "provenance": [
+    {
+      "l": "Russian mission control (ISSCOM.002, 2 November 2000): hovering commenced at 150 m from the docking port at 09:12:12 UTC; 130 m at 0.4 m/s 09:13:40, 100 m at 0.7 m/s 09:14:16, 80 m at 0.4 m/s 09:14:50; docking 09.21.40 UTC",
+      "u": "https://satellitenwelt.de/cvdb_news/ISSCOM002.txt"
+    },
+    {
+      "l": "RussianSpaceWeb (Zak): launch 10:52:47.241 Moscow time on 31 October 2000; docking at Zvezda's aft port 12:21:40 Moscow time (actual), 12:24 planned; automatic Kurs approach",
+      "u": "https://www.russianspaceweb.com/iss-soyuz-tm31.html"
+    },
+    {
+      "l": "Spacefacts: launch 31 October 2000, 07:52:47 UTC; docking 2 November 2000, 09:21:03 UTC",
+      "u": "https://spacefacts.de/mission/english/soyuz-tm31.htm"
+    },
+    {
+      "l": "Wikipedia: docking 2 November 2000, 09:21:03 UTC, Zvezda aft",
+      "u": "https://en.wikipedia.org/wiki/Soyuz_TM-31"
+    },
+    {
+      "l": "Orbital Focus, Expedition 1 diary: the station's orbit 379 x 388 km, 51.6 degrees; PMA-3 on the lower face of Unity; Progress M1-3 undocking before the crew came and Progress M1-4 docking later, at Zarya's nadir port; P6 added afterwards",
+      "u": "https://orbitalfocus.uk/Diaries/ISS/Expedition1.htm"
+    },
+    {
+      "l": "Wikipedia: Progress M1-3 undocked from Zvezda's aft port on 1 November 2000",
+      "u": "https://en.wikipedia.org/wiki/Progress_M1-3"
+    },
+    {
+      "l": "Wikipedia: STS-92 installed the Z1 truss on Unity's zenith port and PMA-3 on its nadir port in October 2000",
+      "u": "https://en.wikipedia.org/wiki/STS-92"
+    },
+    {
+      "l": "Wikipedia: the SSVP probe-and-drogue docking system, its 800 mm transfer tunnel",
+      "u": "https://en.wikipedia.org/wiki/SSVP_docking_system"
+    },
+    {
+      "l": "Weebau: Zvezda's aft transfer chamber, 2.0 m across and 2.34 m long",
+      "u": "https://weebau.com/iss/zvezda.htm"
+    }
+  ]
+}

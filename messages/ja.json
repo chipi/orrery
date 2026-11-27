@@ -1280,6 +1280,7 @@
   "fly_docking_beat_latches": "ハードキャプチャ · ラッチが閉じる",
   "fly_docking_beat_uturn": "ステーションの前方へ回り込み、向きを反転",
   "fly_docking_beat_parking": "停泊点 · {m} m で待機",
+  "fly_docking_beat_hover": "静止保持 · ポートから {m} m",
   "fly_winged_title": "滑走路への帰還",
   "fly_winged_beat_deorbit": "軌道離脱噴射 · OMS エンジン",
   "fly_winged_beat_coast": "大気圏まで降下",

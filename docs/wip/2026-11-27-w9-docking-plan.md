@@ -86,3 +86,19 @@ the docking (as after the deploys); no native translation review; no e2e run.
   km infobox orbit disagrees with CMSA's ~390 km; the scene and the coast use 390 km.
 - After the docking: the 92-day coast (1,454 orbits, 41.4 deg) and the landing at Dongfeng (the
   Shenzhou 1 entry figures, marked).
+
+## Step 3 built: Soyuz TM-31 to Zvezda's aft port (2026-11-27)
+
+- Ports can face aft (`portFacing`): the approach still comes from behind the station and the
+  craft points its nose forward into the port. The diagram's on-axis engine bell is hidden; a
+  schematic drogue (`buildZvezdaAftEnd`) takes its place. The Soyuz TM model's probe got its
+  docking point (the frames 0.3 m apart at capture, ESTIMATE).
+- The station as of 2 November 2000: Zarya, Unity, Zvezda, Z1 with PMA-3 (STS-92); PMA-2 and
+  PMA-3 drawn on Unity's forward and nadir ports, where they sat before Destiny. No ship on the
+  other ports (Progress M1-3 left on 1 November).
+- Sourced: launch 07:52:47.241 UTC (Spacefacts, RussianSpaceWeb), the 150 m hover at 09:12:12
+  and docking at 09:21:40 UTC (Russian mission control's ISSCOM.002; Wikipedia and Spacefacts say
+  09:21:03, named as a conflict), 379 x 388 km (Orbital Focus). Sources and gaps:
+  docs/wip/2026-11-27-w9-soyuz-tm31-sourced.md.
+- After it: the Soyuz's own flight to its landing on 6 May 2001 near Arkalyk (the TM-32
+  visitors flew it home; Expedition 1 came back on STS-102).

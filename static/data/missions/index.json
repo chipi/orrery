@@ -1530,5 +1530,15 @@
     "sector": "gov",
     "color": "#de2910",
     "crewed": true
+  },
+  {
+    "id": "soyuz-tm-31",
+    "agency": "Roscosmos / NASA",
+    "dest": "EARTH",
+    "status": "FLOWN",
+    "year": 2000,
+    "sector": "gov",
+    "color": "#CD1F2D",
+    "crewed": true
   }
 ]

@@ -1280,6 +1280,7 @@
   "fly_docking_beat_latches": "硬捕获 · 对接锁锁紧",
   "fly_docking_beat_uturn": "绕飞至空间站前方并调头",
   "fly_docking_beat_parking": "停泊点 · 距离 {m} 米，保持",
+  "fly_docking_beat_hover": "悬停 · 距对接口 {m} 米",
   "fly_winged_title": "跑道着陆返回",
   "fly_winged_beat_deorbit": "离轨点火 · OMS 发动机",
   "fly_winged_beat_coast": "滑行降至大气层",

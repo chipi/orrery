@@ -1,0 +1,42 @@
+{
+  "name": "Soyuz TM-31",
+  "vehicle": "Soyuz-U + nave Soyuz TM-31",
+  "payload": "Expedición 1: William Shepherd (NASA, comandante), Yuri Guidzenko (comandante de la Soyuz) y Serguéi Krikaliov (ingeniero de vuelo)",
+  "delta_v": "~7,8 km/s (LEO)",
+  "type": "MISIÓN TRIPULADA A UNA ESTACIÓN ESPACIAL · REALIZADA",
+  "first": "Llevó a la primera tripulación de larga duración a la Estación Espacial Internacional",
+  "description": "Soyuz TM-31 llevó a la Expedición 1, la primera tripulación de larga duración de la Estación Espacial Internacional: William Shepherd, de la NASA, como comandante, Yuri Guidzenko como comandante de la Soyuz y Serguéi Krikaliov como ingeniero de vuelo. Un Soyuz-U despegó del sitio 1/5 de Baikonur el 2000-10-31 a las 07:52:47 UTC. El 2000-11-02 a las 09:21:40 UTC la nave se acopló, de forma totalmente automática con el sistema Kurs, al puerto de popa del módulo Zvezda (Wikipedia y spacefacts dan 09:21:03). Según el informe ruso del control de misión, se mantenía a 150 m del puerto a las 09:12:12 UTC. La escotilla se abrió a las 10:23 UTC. La tripulación permaneció 136 días, 14 horas y 7 minutos y volvió a casa en el Space Shuttle STS-102, que aterrizó el 2001-03-21, no en esta Soyuz. Soyuz TM-31 siguió acoplada hasta el 2001-05-06, cuando se desacopló a las 02:21:09 UTC y aterrizó en Kazajistán a las 05:41:28 UTC con la tripulación visitante de la Soyuz TM-32: Talgat Musabáyev, Yuri Baturin y Dennis Tito.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANZAMIENTO",
+      "note": "Soyuz-U desde el sitio 1/5 de Baikonur, 2000-10-31, 07:52:47 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 2.0617,
+      "label": "ACOPLAMIENTO",
+      "note": "Se acopla automáticamente con el sistema Kurs al puerto de popa de Zvezda a las 09:21:40 UTC del 2000-11-02, tras mantenerse a 150 m a las 09:12:12 UTC; Wikipedia da 09:21:03.",
+      "type": "nominal"
+    },
+    {
+      "met": 2.1043,
+      "label": "ESCOTILLA ABIERTA",
+      "note": "La tripulación abre la escotilla a las 10:23 UTC (ESA); el informe del control de misión cita el aviso de Krikaliov de escotilla abierta entre las 10:46 y las 10:52 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 186.7697,
+      "label": "DESACOPLAMIENTO",
+      "note": "Se desacopla de Zvezda a las 02:21:09 UTC del 2001-05-06; la tripulación de la Expedición 1 había vuelto a casa en el STS-102 el 2001-03-21.",
+      "type": "nominal"
+    },
+    {
+      "met": 186.9088,
+      "label": "ATERRIZAJE",
+      "note": "Aterriza a las 05:41:28 UTC del 2001-05-06 en Kazajistán, cerca de Arkalyk, con Musabáyev, Baturin y Tito, tras 186 días, 21 horas y 48 minutos.",
+      "type": "nominal"
+    }
+  ],
+  "vehicle_stage": "Soyuz-U"
+}

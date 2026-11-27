@@ -1,0 +1,63 @@
+{
+  "missionId": "soyuz-tm-31",
+  "siteId": "soyuz-tm-31",
+  "body": "earth",
+  "landingSite": {
+    "lat": 50.645,
+    "lon": 66.7317
+  },
+  "entryState": {
+    "altitudeM": 122000,
+    "velocityMs": 7820,
+    "flightPathAngleDeg": 1.578
+  },
+  "entryMassKg": 2900,
+  "entryCdA": 5.44,
+  "liftToDragRatio": 0.3,
+  "targetDownrangeKm": 3000,
+  "estimatedFields": [
+    "beats.engine_cutoff",
+    "beats.heatshield_sep",
+    "beats.retro_ignition",
+    "entryCdA",
+    "entryMassKg",
+    "flightPathAngleDeg",
+    "targetDownrangeKm"
+  ],
+  "archetype": "EARTH_CAPSULE_REENTRY",
+  "params": {
+    "chuteDeployAltM": 7000,
+    "terminalHandoffAltM": 3000,
+    "parachuteCdA": 193,
+    "terminalCdA": 726
+  },
+  "source_tier": "flagship",
+  "provenance": [
+    {
+      "l": "Spacefacts: Soyuz TM-31 landed 6 May 2001, 05:41:28 UTC, near Arkalyk, 50°38'42\" N, 66°43'54\" E (with the Soyuz TM-32 visiting crew; Expedition 1 came home on STS-102)",
+      "u": "https://spacefacts.de/mission/english/soyuz-tm31.htm"
+    },
+    {
+      "l": "Wikipedia: Soyuz TM-31 landing 6 May 2001, about 90 km north-east of Arkalyk (Weebau: 82 km NE; Spacefacts' TM-32 page: 46 km NW; the offsets disagree)",
+      "u": "https://en.wikipedia.org/wiki/Soyuz_TM-31"
+    },
+    {
+      "l": "Soyuz: the descent module of every flight; the entry figures are the Soyuz 11 profile's, not this landing's own",
+      "u": "https://en.wikipedia.org/wiki/Soyuz_(spacecraft)"
+    }
+  ],
+  "beats": [
+    {
+      "type": "heatshield_sep",
+      "altM": 2000
+    },
+    {
+      "type": "retro_ignition",
+      "altM": 1.5
+    },
+    {
+      "type": "engine_cutoff",
+      "altM": 0.2
+    }
+  ]
+}

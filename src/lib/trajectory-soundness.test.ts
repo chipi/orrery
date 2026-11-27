@@ -148,7 +148,7 @@ function buildMissionArcs(m: MissionFile): {
 }
 
 describe('Trajectory soundness — every mission renders a valid arc', () => {
-  it(`fixture loads expected counts (24 Mars + 42 Moon + 51 Earth + 12 outer + 9 inner)`, () => {
+  it(`fixture loads expected counts (24 Mars + 42 Moon + 52 Earth + 12 outer + 9 inner)`, () => {
     const mars = MISSIONS.filter((m) => m.destDir === 'mars');
     const moon = MISSIONS.filter((m) => m.destDir === 'moon');
     const earth = MISSIONS.filter((m) => m.destDir === 'earth');
@@ -171,15 +171,16 @@ describe('Trajectory soundness — every mission renders a valid arc', () => {
     // 2026-11-26 — the Shuttle-launched observatories: Hubble, Compton GRO, Chandra. 46 → 49 Earth.
     // 2026-11-27 — Crew Dragon Demo-2. 49 → 50 Earth.
     // 2026-11-27 — Shenzhou 12. 50 → 51 Earth.
+    // 2026-11-27 — Soyuz TM-31. 51 → 52 Earth.
     if (
       mars.length !== 24 ||
       moon.length !== 42 ||
-      earth.length !== 51 ||
+      earth.length !== 52 ||
       outer.length !== 12 ||
       inner.length !== 9
     ) {
       throw new Error(
-        `Expected 24 Mars + 42 Moon + 51 Earth + 12 outer + 9 inner; got ${mars.length} + ${moon.length} + ${earth.length} + ${outer.length} + ${inner.length}`,
+        `Expected 24 Mars + 42 Moon + 52 Earth + 12 outer + 9 inner; got ${mars.length} + ${moon.length} + ${earth.length} + ${outer.length} + ${inner.length}`,
       );
     }
   });

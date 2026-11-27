@@ -31555,6 +31555,45 @@
       "rejected_by": null,
       "scored_at": "2026-11-27T07:49:47.208Z",
       "scoring_cost_usd": 0
+    },
+    "/images/missions/soyuz-tm-31/01.jpg": {
+      "score": 8,
+      "subject": "A Soyuz rocket carrying Soyuz TM-31 and the Expedition 1 crew lifting off from Baikonur on 31 October 2000.",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.47,
+        "y": 0.45
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-27T08:26:25.354Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/soyuz-tm-31/02.jpg": {
+      "score": 8,
+      "subject": "The Soyuz TM-31 launch vehicle standing vertical on its pad at Baikonur in fog, 29 October 2000, two days before its launch.",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.52,
+        "y": 0.4
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-27T08:26:25.369Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/soyuz-tm-31/03.jpg": {
+      "score": 8,
+      "subject": "The Expedition 1 crew, Yuri Gidzenko, William Shepherd and Sergei Krikalev, in the Zvezda module of the International Space Station, 4 December 2000.",
+      "category": "people",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.4
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-27T08:26:25.388Z",
+      "scoring_cost_usd": 0
     }
   }
 }

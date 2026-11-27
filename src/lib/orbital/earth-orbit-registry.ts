@@ -297,6 +297,20 @@ const COASTS: Record<string, EarthOrbitCoast> = {
     revolutions: 18,
     coastDurationS: 96000,
   },
+  // Soyuz TM-31 (Expedition 1's ride, 2000): launch 31 Oct 07:52:47.241 UTC to the Soyuz's own
+  // landing on 6 May 2001 05:41:28 UTC (Spacefacts; it brought the TM-32 visitors home, the
+  // Expedition 1 crew came back on STS-102). The station's 379 x 388 km at 51.6 deg at the docking
+  // (Orbital Focus), drawn at 384 km. Revolutions derived: the coast over the Kepler period at
+  // 384 km (5,534 s).
+  'soyuz-tm-31': {
+    missionId: 'soyuz-tm-31',
+    capsuleId: 'soyuz',
+    apogeeKm: 388,
+    perigeeKm: 379,
+    inclinationDeg: 51.6,
+    revolutions: 2918,
+    coastDurationS: 16148921,
+  },
   'soyuz-11': {
     missionId: 'soyuz-11',
     capsuleId: 'soyuz',

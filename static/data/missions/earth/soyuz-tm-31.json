@@ -1,0 +1,92 @@
+{
+  "id": "soyuz-tm-31",
+  "agency": "Roscosmos / NASA",
+  "agency_full": "Russian space agency (Roscosmos) / National Aeronautics and Space Administration (International Space Station Expedition 1)",
+  "sector": "gov",
+  "dest": "EARTH",
+  "color": "#CD1F2D",
+  "year": 2000,
+  "status": "FLOWN",
+  "departure_date": "2000-10-31",
+  "arrival_date": "2001-05-06",
+  "transit_days": 187,
+  "round_trip": true,
+  "vehicle": "Soyuz-U + Soyuz TM-31 spacecraft",
+  "payload": "Expedition 1: William Shepherd (NASA, commander), Yuri Gidzenko (Soyuz commander) and Sergei Krikalev (flight engineer)",
+  "delta_v": "~7.8 km/s (LEO)",
+  "data_quality": "partial",
+  "credit": "Sources: Wikipedia, Soyuz TM-31 (launch 31 October 2000 at 07:52:47 UTC from Baikonur Site 1/5; docking at the aft port of the Zvezda module on 2 November 2000; undocking at 02:21:09 UTC and landing at 05:41:28 UTC on 6 May 2001, with Talgat Musabayev, Yuri Baturin and Dennis Tito, near Arkalyk; Wikipedia puts it about 90 km north-east of the town, Weebau 82 km north-east, Spacefacts 46 km north-west, so no offset is given); RussianSpaceWeb (launch at 07:52:47.241 UTC, converted from 10:52:47 Moscow time; docking at 12:21:40 Moscow time, 09:21:40 UTC, a fully automated docking; the Expedition 1 crew returned on Space Shuttle Discovery, STS-102); the Russian mission-control report ISSCOM.002 of 2 November 2000 (docking at 09:21:40 UTC in the automatic mode with the Kurs system; hovering at 150 m at 09:12:12 UTC; 130, 100 and 80 m at 09:13:40, 09:14:16 and 09:14:50 UTC); ESA (docking at 0921 GMT, the hatch opened at 10:23 GMT); Wikipedia, Expedition 1 (a stay of 136 days 14 hours 7 minutes at the station; the crew landed on STS-102 on 21 March 2001). The docking time is not agreed: the Russian mission-control report and RussianSpaceWeb give 09:21:40 UTC, which is used here, while Wikipedia and spacefacts give 09:21:03 UTC; no source says whether these are contact and hooks closed. The hatch opening is also reported differently: ESA gives 10:23 GMT, while the mission-control report logs Krikalev's report of the open hatch on a voice pass at 10:46 to 10:52 UTC. RussianSpaceWeb gives the STS-102 return as 8 March 2001, the Shuttle's launch date; Wikipedia gives the landing on 21 March. Times are UTC. No source used gives a separate soft-capture time, the speed at contact or a burn time on 2 November. Images: NASA photographs on Wikimedia Commons, public domain.",
+  "links": [
+    {
+      "l": "Soyuz TM-31 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Soyuz_TM-31",
+      "t": "intro"
+    },
+    {
+      "l": "Soyuz TM-31 (Expedition 1) — RussianSpaceWeb",
+      "u": "https://www.russianspaceweb.com/iss-soyuz-tm31.html",
+      "t": "core"
+    },
+    {
+      "l": "Expedition 1 crew enters the International Space Station — ESA",
+      "u": "https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/International_Space_Station/Expedition_1_crew_enters_the_International_Space_Station",
+      "t": "core"
+    },
+    {
+      "l": "Expedition 1 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Expedition_1",
+      "t": "deep"
+    }
+  ],
+  "flight_data_quality": "sparse",
+  "fleet_refs": [
+    {
+      "id": "soyuz-u",
+      "role": "launcher"
+    },
+    {
+      "id": "soyuz-tm",
+      "role": "spacecraft"
+    },
+    {
+      "id": "iss",
+      "role": "station"
+    },
+    {
+      "id": "baikonur-1-5",
+      "role": "launch-site"
+    }
+  ],
+  "flight": {
+    "launch": {
+      "vehicle_stage": "Soyuz-U",
+      "source": "Wikipedia (Soyuz TM-31): launch on 31 October 2000 at 07:52:47 UTC from Baikonur Site 1/5. RussianSpaceWeb: 10:52:47.241 Moscow time"
+    },
+    "events": [
+      {
+        "met_days": 0,
+        "type": "launch",
+        "label": "Launch — Soyuz-U and Soyuz TM-31 from Baikonur",
+        "description": "31 October 2000 at 07:52:47 UTC from Baikonur Site 1/5: the first resident crew to the International Space Station, Expedition 1, with commander William Shepherd, Soyuz commander Yuri Gidzenko and flight engineer Sergei Krikalev."
+      },
+      {
+        "met_days": 2.0617,
+        "type": "arrival",
+        "label": "Docking at the aft port of Zvezda",
+        "description": "2 November 2000 at 09:21:40 UTC (the Russian mission-control report and RussianSpaceWeb; Wikipedia gives 09:21:03), at the aft port of the Zvezda module, in a fully automatic docking with the Kurs system. The report puts Soyuz hovering 150 m from the port at 09:12:12 UTC, then 130 m at 09:13:40, 100 m at 09:14:16 and 80 m at 09:14:50 UTC. The hatch was opened at 10:23 GMT (ESA). No source used gives a separate soft-capture time."
+      },
+      {
+        "met_days": 186.7697,
+        "type": "separation",
+        "label": "Undocking from Zvezda",
+        "description": "6 May 2001 at 02:21:09 UTC (Wikipedia). The Expedition 1 crew had already gone home on Space Shuttle STS-102, which landed on 21 March 2001; this Soyuz, which stayed docked at the station, brought home the visiting crew of Soyuz TM-32 (Talgat Musabayev, Yuri Baturin and Dennis Tito) back."
+      },
+      {
+        "met_days": 186.9088,
+        "type": "earth_return",
+        "label": "Landing in Kazakhstan",
+        "description": "6 May 2001 at 05:41:28 UTC (Wikipedia), in Kazakhstan near Arkalyk (50°38′42″ N, 66°43′54″ E, Spacefacts), after 186 days 21 hours 48 minutes."
+      }
+    ]
+  }
+}

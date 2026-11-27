@@ -1,0 +1,42 @@
+{
+  "name": "Soyuz TM-31",
+  "vehicle": "Soyuz-U + ruimteschip Soyuz TM-31",
+  "payload": "Expeditie 1: William Shepherd (NASA, commandant), Joeri Gidzenko (Soyuz-commandant) en Sergej Krikaljov (boordwerktuigkundige)",
+  "delta_v": "~7,8 km/s (LEO)",
+  "type": "BEMANDE RUIMTESTATIONMISSIE · GEVLOGEN",
+  "first": "Bracht de eerste langdurige bemanning naar het Internationale Ruimtestation",
+  "description": "Soyuz TM-31 bracht Expeditie 1, de eerste langdurige bemanning van het Internationale Ruimtestation, naar het station: William Shepherd van NASA als commandant, Joeri Gidzenko als Soyuz-commandant en Sergej Krikaljov als boordwerktuigkundige. Een Soyuz-U steeg op 2000-10-31 om 07:52:47 UTC op vanaf Bajkonoer, lanceerplatform 1/5. Op 2000-11-02 om 09:21:40 UTC koppelde het schip, volledig automatisch met het Kurs-systeem, aan de achterste poort van de module Zvezda (Wikipedia en spacefacts geven 09:21:03). Volgens het Russische rapport van de vluchtleiding hing het om 09:12:12 UTC 150 m voor de poort. Het luik werd om 10:23 UTC geopend. De bemanning bleef 136 dagen, 14 uur en 7 minuten en keerde terug met de Space Shuttle STS-102, die op 2001-03-21 landde, niet in deze Soyuz. Soyuz TM-31 bleef gekoppeld tot 2001-05-06, toen hij om 02:21:09 UTC loskoppelde en om 05:41:28 UTC in Kazachstan landde met de bezoekende bemanning van Soyuz TM-32: Talgat Moesabajev, Joeri Baturin en Dennis Tito.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCERING",
+      "note": "Soyuz-U vanaf lanceerplatform 1/5 in Bajkonoer, 2000-10-31, 07:52:47 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 2.0617,
+      "label": "KOPPELING",
+      "note": "Koppelt automatisch met het Kurs-systeem aan de achterste poort van Zvezda om 09:21:40 UTC op 2000-11-02, na om 09:12:12 UTC op 150 m afstand te hebben gehangen; Wikipedia geeft 09:21:03.",
+      "type": "nominal"
+    },
+    {
+      "met": 2.1043,
+      "label": "LUIK OPEN",
+      "note": "De bemanning opent het luik om 10:23 UTC (ESA); het rapport van de vluchtleiding citeert de melding van Krikaljov dat het luik open was tussen 10:46 en 10:52 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 186.7697,
+      "label": "AFKOPPELEN",
+      "note": "Koppelt om 02:21:09 UTC op 2001-05-06 los van Zvezda; de bemanning van Expeditie 1 was op 2001-03-21 met STS-102 teruggekeerd.",
+      "type": "nominal"
+    },
+    {
+      "met": 186.9088,
+      "label": "LANDING",
+      "note": "Landt om 05:41:28 UTC op 2001-05-06 in Kazachstan, bij Arkalyk, met Moesabajev, Baturin en Tito, na 186 dagen, 21 uur en 48 minuten.",
+      "type": "nominal"
+    }
+  ],
+  "vehicle_stage": "Soyuz-U"
+}

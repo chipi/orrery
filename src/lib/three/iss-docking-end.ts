@@ -202,3 +202,43 @@ export function buildHtv(): THREE.Group {
   }
   return g;
 }
+
+/**
+ * Zvezda's aft docking unit (the passive half of the probe-and-drogue system, SSVP): the flange
+ * on the aft bulkhead, the docking frame and the receiving cone with the socket the probe latches
+ * in, and the two main engines either side. SCHEMATIC: the frame's and the cone's sizes, the
+ * engines' place (sourced: the 0.8 m transfer tunnel, the 2.0 m transfer chamber behind it).
+ * Frame: the origin on the docking frame's face on the axis, +x out of the port (aft, in the
+ * station's frame, once turned); `userData.dockingPort` is the frame's face.
+ */
+export function buildZvezdaAftEnd(): DockingEnd {
+  const g = new THREE.Group() as DockingEnd;
+  g.name = 'zvezda-aft-end';
+  const metal = mat(0xb9bdc3, 0.6, 0.35);
+  const dark = mat(0x2a2c31, 0.3, 0.6);
+  const inside = mat(0x3a3c42, 0.4, 0.5, THREE.DoubleSide);
+  const base = -0.32;
+  xCyl(g, metal, 0.75, 0.75, base, base + 0.12, 40);
+  xCyl(g, mat(0xd2d4d6, 0.3, 0.55), 0.6, 0.6, base + 0.12, -0.05, 40);
+  xRing(g, metal, 0.62, 0.05, 0);
+  // the receiving cone, open toward the probe, its socket at the bottom
+  const cone = new THREE.Mesh(new THREE.CylinderGeometry(0.5, 0.06, 0.4, 32, 1, true), inside);
+  cone.rotation.z = Math.PI / 2;
+  cone.position.x = -0.2;
+  g.add(cone);
+  const socket = new THREE.Mesh(new THREE.CylinderGeometry(0.06, 0.06, 0.04, 16), dark);
+  socket.rotation.z = Math.PI / 2;
+  socket.position.x = -0.4;
+  g.add(socket);
+  for (const s of [-1, 1]) {
+    const bell = new THREE.Mesh(new THREE.CylinderGeometry(0.22, 0.4, 0.7, 20, 1, true), dark);
+    bell.rotation.z = -Math.PI / 2;
+    bell.position.set(base + 0.1, 0, s * 1.35);
+    g.add(bell);
+  }
+  const port = new THREE.Object3D();
+  port.name = 'docking-port';
+  g.add(port);
+  g.userData = { dockingPort: port, length: -base };
+  return g;
+}

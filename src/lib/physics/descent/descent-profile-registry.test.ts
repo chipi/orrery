@@ -27,7 +27,7 @@ const apollo11 = loadRaw('apollo11');
 describe('hasDescentProfile gate', () => {
   it('covers the landers + Tier-1 Earth re-entry (incl. apollo8 lunar return), rejects the rest', () => {
     // Moon/Mars/Venus + outer/small-body + Earth-orbit capsules + apollo8 (10.8 km/s lunar return).
-    expect(DESCENT_MISSION_IDS.size).toBe(86); // + crew-dragon-demo-2 and shenzhou-12 (W9), + chandrayaan2 (Vikram, to contact lost), + starship-flight-5, + the five private landers (F10)
+    expect(DESCENT_MISSION_IDS.size).toBe(87); // + crew-dragon-demo-2, shenzhou-12 and soyuz-tm-31 (W9), + chandrayaan2 (Vikram, to contact lost), + starship-flight-5, + the five private landers (F10)
     expect(hasDescentProfile('apollo11')).toBe(true);
     expect(hasDescentProfile('curiosity')).toBe(true);
     expect(hasDescentProfile('friendship-7')).toBe(true);

@@ -34,7 +34,7 @@ export interface DockingHold {
 
 /** The stations, their docking ports, and the ports their neighbours sit on. */
 export const TARGET_PORTS = {
-  iss: ['harmony-forward'],
+  iss: ['harmony-forward', 'zvezda-aft'],
   tiangong: ['tianhe-forward'],
 } as const;
 export type DockingTarget = keyof typeof TARGET_PORTS;
@@ -66,8 +66,9 @@ export interface DockingProfileRaw {
   port: (typeof TARGET_PORTS)[DockingTarget][number];
   /** The station as it stood (its assembly is drawn as of this date). */
   stationDate: string;
-  /** The docking mechanism: the soft-capture ring (IDSS), or China's APAS-derived one (CDM). */
-  mechanism: 'idss' | 'cdm';
+  /** The docking mechanism: the soft-capture ring (IDSS), China's APAS-derived one (CDM), or
+   *  the Soviet probe and drogue (SSVP). */
+  mechanism: 'idss' | 'cdm' | 'ssvp';
   launchZeroUtc: string;
   altitudeKm: number;
   /** The last burn before the approach (Dragon's approach initiation), when a source times it. */
@@ -106,7 +107,7 @@ export function isValidDockingProfile(d: unknown): d is DockingProfileRaw {
     if (typeof p[k] !== 'string' || !p[k]) return false;
   const ports = TARGET_PORTS[p.target as DockingTarget] as readonly string[] | undefined;
   if (!ports || !ports.includes(p.port as string)) return false;
-  if (p.mechanism !== 'idss' && p.mechanism !== 'cdm') return false;
+  if (!['idss', 'cdm', 'ssvp'].includes(p.mechanism as string)) return false;
   for (const k of ['launchZeroUtc', 'stationDate'])
     if (typeof p[k] !== 'string' || Number.isNaN(Date.parse(p[k] as string))) return false;
   if (!isPos(p.altitudeKm)) return false;
@@ -153,8 +154,10 @@ export function isValidDockingProfile(d: unknown): d is DockingProfileRaw {
   const taken = new Set<string>();
   for (const n of p.neighbours as Record<string, unknown>[]) {
     const allowed = NEIGHBOUR_PORTS[n?.id as NeighbourId] as readonly string[] | undefined;
+    // one ship a port, and none on the port the chaser docks to
     if (!allowed || !allowed.includes(n.port as string) || taken.has(n.port as string))
       return false;
+    if (n.port === p.port) return false;
     if (n.name !== undefined && typeof n.name !== 'string') return false;
     taken.add(n.port as string);
   }

@@ -738,6 +738,7 @@ export const DESCENT_MISSION_IDS = new Set<string>([
   'starship-flight-5', // Starship's belly-first return, landing flip and burn (0.9.11 F3)
   'shenzhou-1',
   'shenzhou-12', // after the first crew's 92 days on Tiangong (W9)
+  'soyuz-tm-31', // Expedition 1's Soyuz, home with the TM-32 visitors (W9)
 ]);
 
 /** True when a mission plays a descent act (has a hand-authored profile). */

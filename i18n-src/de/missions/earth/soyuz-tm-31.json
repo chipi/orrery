@@ -1,0 +1,42 @@
+{
+  "name": "Soyuz TM-31",
+  "vehicle": "Soyuz-U + Raumschiff Soyuz TM-31",
+  "payload": "Expedition 1: William Shepherd (NASA, Kommandant), Juri Gidsenko (Soyuz-Kommandant) und Sergej Krikaljow (Bordingenieur)",
+  "delta_v": "~7,8 km/s (LEO)",
+  "type": "BEMANNTE RAUMSTATIONSMISSION · GEFLOGEN",
+  "first": "Brachte die erste Langzeitbesatzung zur Internationalen Raumstation",
+  "description": "Soyuz TM-31 brachte Expedition 1, die erste Langzeitbesatzung der Internationalen Raumstation, zur Station: den NASA-Astronauten William Shepherd als Kommandanten, Juri Gidsenko als Soyuz-Kommandanten und Sergej Krikaljow als Bordingenieur. Eine Soyuz-U hob am 2000-10-31 um 07:52:47 UTC von Baikonur, Startplatz 1/5, ab. Am 2000-11-02 um 09:21:40 UTC dockte das Raumschiff vollautomatisch mit dem System Kurs am hinteren Anschluss des Moduls Zvezda an (Wikipedia und spacefacts nennen 09:21:03). Laut dem russischen Bericht der Flugleitung schwebte es um 09:12:12 UTC 150 m vor dem Anschluss. Die Luke wurde um 10:23 UTC geöffnet. Die Besatzung blieb 136 Tage 14 Stunden 7 Minuten und flog mit dem Space Shuttle STS-102 nach Hause, das am 2001-03-21 landete, nicht in dieser Soyuz. Soyuz TM-31 blieb bis 2001-05-06 angedockt, koppelte dann um 02:21:09 UTC ab und landete um 05:41:28 UTC in Kasachstan, mit der Besuchsbesatzung von Soyuz TM-32: Talgat Musabajew, Juri Baturin und Dennis Tito.",
+  "events": [
+    {
+      "met": 0,
+      "label": "START",
+      "note": "Soyuz-U vom Startplatz 1/5 in Baikonur, 2000-10-31, 07:52:47 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 2.0617,
+      "label": "ANDOCKEN",
+      "note": "Dockt am 2000-11-02 um 09:21:40 UTC automatisch mit dem System Kurs am hinteren Anschluss von Zvezda an, nachdem es um 09:12:12 UTC 150 m davor geschwebt hat; Wikipedia nennt 09:21:03.",
+      "type": "nominal"
+    },
+    {
+      "met": 2.1043,
+      "label": "LUKE OFFEN",
+      "note": "Die Besatzung öffnet die Luke um 10:23 UTC (ESA); der Bericht der Flugleitung gibt Krikaljows Meldung „Luke offen“ mit 10:46 bis 10:52 UTC an.",
+      "type": "nominal"
+    },
+    {
+      "met": 186.7697,
+      "label": "ABKOPPELN",
+      "note": "Koppelt am 2001-05-06 um 02:21:09 UTC von Zvezda ab; die Besatzung von Expedition 1 war am 2001-03-21 mit STS-102 nach Hause geflogen.",
+      "type": "nominal"
+    },
+    {
+      "met": 186.9088,
+      "label": "LANDUNG",
+      "note": "Landet am 2001-05-06 um 05:41:28 UTC in Kasachstan, bei Arkalyk, mit Musabajew, Baturin und Tito, nach 186 Tagen 21 Stunden 48 Minuten.",
+      "type": "nominal"
+    }
+  ],
+  "vehicle_stage": "Soyuz-U"
+}

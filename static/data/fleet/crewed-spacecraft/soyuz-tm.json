@@ -61,5 +61,8 @@
   "specs": {
     "length_m": 7.48,
     "diameter_m": 2.72
-  }
+  },
+  "linked_missions": [
+    "soyuz-tm-31"
+  ]
 }

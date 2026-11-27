@@ -25,6 +25,7 @@ const FLY_CRAFT: Record<string, readonly [string, string]> = {
   'shenzhou-1': ['station-freighters', 'shenzhou'],
   'shenzhou-5': ['station-freighters', 'shenzhou'],
   'shenzhou-12': ['station-freighters', 'shenzhou'],
+  'soyuz-tm-31': ['capsules-classic', 'soyuz-tm'],
   // In flight: gear up (the showcase stands on it). STS-1 predates Columbia's SILTS pod.
   'sts-1': ['winged', 'buildColumbiaSts1'],
   'sts-107': ['winged', 'buildColumbiaFlying'],

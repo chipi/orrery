@@ -1,0 +1,42 @@
+{
+  "name": "Soyuz TM-31",
+  "vehicle": "Soyuz-U + Soyuz TM-31 spacecraft",
+  "payload": "Expedition 1: William Shepherd (NASA, commander), Yuri Gidzenko (Soyuz commander) and Sergei Krikalev (flight engineer)",
+  "delta_v": "~7.8 km/s (LEO)",
+  "type": "CREWED SPACE STATION MISSION · FLOWN",
+  "first": "Carried the first long-duration crew to the International Space Station",
+  "description": "Soyuz TM-31 carried Expedition 1, the first long-duration crew of the International Space Station: NASA's William Shepherd as commander, Yuri Gidzenko as Soyuz commander and Sergei Krikalev as flight engineer. A Soyuz-U lifted off from Baikonur Site 1/5 on 2000-10-31 at 07:52:47 UTC. On 2000-11-02 at 09:21:40 UTC the ship docked, fully automatically with the Kurs system, at the aft port of the Zvezda module (Wikipedia and spacefacts give 09:21:03). The Russian mission-control report has it hovering 150 m from the port at 09:12:12 UTC. The hatch was opened at 10:23 UTC. The crew stayed 136 days 14 hours 7 minutes and went home on Space Shuttle STS-102, landing on 2001-03-21, not in this Soyuz. Soyuz TM-31 stayed docked until 2001-05-06, when it undocked at 02:21:09 UTC and landed in Kazakhstan at 05:41:28 UTC with the visiting crew of Soyuz TM-32: Talgat Musabayev, Yuri Baturin and Dennis Tito.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Soyuz-U from Baikonur Site 1/5, 2000-10-31, 07:52:47 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 2.0617,
+      "label": "DOCKING",
+      "note": "Docks automatically with the Kurs system at the aft port of Zvezda at 09:21:40 UTC on 2000-11-02, after hovering 150 m out at 09:12:12 UTC; Wikipedia gives 09:21:03.",
+      "type": "nominal"
+    },
+    {
+      "met": 2.1043,
+      "label": "HATCH OPEN",
+      "note": "The crew opens the hatch at 10:23 UTC (ESA); the mission-control report quotes Krikalev's hatch-open report at 10:46 to 10:52 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 186.7697,
+      "label": "UNDOCKING",
+      "note": "Undocks from Zvezda at 02:21:09 UTC on 2001-05-06; the Expedition 1 crew had gone home on STS-102 on 2001-03-21.",
+      "type": "nominal"
+    },
+    {
+      "met": 186.9088,
+      "label": "LANDING",
+      "note": "Lands at 05:41:28 UTC on 2001-05-06 in Kazakhstan, near Arkalyk, with Musabayev, Baturin and Tito, after 186 days 21 hours 48 minutes.",
+      "type": "nominal"
+    }
+  ],
+  "vehicle_stage": "Soyuz-U"
+}

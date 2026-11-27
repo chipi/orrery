@@ -2682,6 +2682,12 @@
       "cover": false
     },
     {
+      "title": "Soyuz TM-31",
+      "file": "/images/missions/thumbnails/soyuz-tm-31.webp",
+      "route": "/missions?id=soyuz-tm-31",
+      "cover": false
+    },
+    {
       "title": "Spirit",
       "file": "/images/missions/thumbnails/spirit.webp",
       "route": "/missions?id=spirit",
@@ -5705,7 +5711,7 @@
     "exploded_art": 76,
     "landing_art": 39,
     "blueprint_art": 18,
-    "mission_trajectories": 152,
+    "mission_trajectories": 153,
     "site_illustrations": 16,
     "lab_illustrations": 25,
     "diagrams_science": 117,

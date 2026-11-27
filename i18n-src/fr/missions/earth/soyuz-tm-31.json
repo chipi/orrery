@@ -1,0 +1,42 @@
+{
+  "name": "Soyuz TM-31",
+  "vehicle": "Soyuz-U + vaisseau Soyuz TM-31",
+  "payload": "Expédition 1 : William Shepherd (NASA, commandant), Iouri Guidzenko (commandant du Soyuz) et Sergueï Krikaliov (ingénieur de vol)",
+  "delta_v": "~7,8 km/s (LEO)",
+  "type": "MISSION HABITÉE VERS UNE STATION SPATIALE · RÉALISÉE",
+  "first": "A transporté le premier équipage de longue durée vers la Station spatiale internationale",
+  "description": "Soyuz TM-31 a transporté l'Expédition 1, le premier équipage de longue durée de la Station spatiale internationale : William Shepherd, de la NASA, commandant, Iouri Guidzenko, commandant du Soyuz, et Sergueï Krikaliov, ingénieur de vol. Un Soyuz-U a décollé du site 1/5 de Baïkonour le 2000-10-31 à 07:52:47 UTC. Le 2000-11-02 à 09:21:40 UTC, le vaisseau s'est amarré, de façon entièrement automatique avec le système Kurs, au port arrière du module Zvezda (Wikipédia et spacefacts donnent 09:21:03). Selon le rapport russe du contrôle de mission, il stationnait à 150 m du port à 09:12:12 UTC. L'écoutille a été ouverte à 10:23 UTC. L'équipage est resté 136 jours 14 heures 7 minutes et est rentré avec la navette Space Shuttle STS-102, qui a atterri le 2001-03-21, et non dans ce Soyuz. Soyuz TM-31 est resté amarré jusqu'au 2001-05-06 : il s'est alors désarrimé à 02:21:09 UTC et a atterri au Kazakhstan à 05:41:28 UTC avec l'équipage visiteur de Soyuz TM-32 : Talgat Moussabaïev, Iouri Baturine et Dennis Tito.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCEMENT",
+      "note": "Soyuz-U depuis le site 1/5 de Baïkonour, 2000-10-31, 07:52:47 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 2.0617,
+      "label": "AMARRAGE",
+      "note": "S'amarre automatiquement avec le système Kurs au port arrière de Zvezda à 09:21:40 UTC le 2000-11-02, après avoir stationné à 150 m à 09:12:12 UTC ; Wikipédia donne 09:21:03.",
+      "type": "nominal"
+    },
+    {
+      "met": 2.1043,
+      "label": "ÉCOUTILLE OUVERTE",
+      "note": "L'équipage ouvre l'écoutille à 10:23 UTC (ESA) ; le rapport du contrôle de mission cite le compte rendu de Krikaliov, écoutille ouverte, entre 10:46 et 10:52 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 186.7697,
+      "label": "DÉSARRIMAGE",
+      "note": "Se désarrime de Zvezda à 02:21:09 UTC le 2001-05-06 ; l'équipage de l'Expédition 1 était rentré avec STS-102 le 2001-03-21.",
+      "type": "nominal"
+    },
+    {
+      "met": 186.9088,
+      "label": "ATTERRISSAGE",
+      "note": "Atterrit à 05:41:28 UTC le 2001-05-06 au Kazakhstan, près d'Arkalyk, avec Moussabaïev, Baturine et Tito, après 186 jours 21 heures 48 minutes.",
+      "type": "nominal"
+    }
+  ],
+  "vehicle_stage": "Soyuz-U"
+}

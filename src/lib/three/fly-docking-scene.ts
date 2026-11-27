@@ -22,7 +22,7 @@ import type { DockingHold, DockingProfile } from '$lib/fly/docking-profile';
 import { parseGet } from '$lib/fly/return-profile';
 import { addDeployBackdrop } from './fly-deploy-scene';
 import { portraitFit } from './phone-framing';
-import { buildHarmonyForwardEnd, buildHtv } from './iss-docking-end';
+import { buildHarmonyForwardEnd, buildHtv, buildZvezdaAftEnd } from './iss-docking-end';
 import { TIANHE_LEN_M, type TianheModel } from './tiangong-docking-end';
 
 /** The diagram station's unit (iss-proxy-model.ts: 1 unit = 12.7 m). */
@@ -44,9 +44,15 @@ const RUSSIAN_PORTS = {
 const TIANZHOU_LEN_M = 10.6;
 const MIN = 60;
 
-/** How far the port face stands ahead of the station's centre (m). */
-export const portAhead = (p: DockingProfile): number =>
-  p.target === 'tiangong' ? TIANHE_LEN_M / 2 : HARMONY_FWD_X;
+/** Zvezda's aft end on the diagram station (its centre -2.58 less half its 1.03 length). */
+const ZVEZDA_AFT_X = (2.58 + 1.03 / 2) * ISS_UNIT_M;
+
+/** Which way the port faces (+1 forward, the direction of flight; -1 aft) and how far its face
+ *  stands from the station's centre along that way (m). */
+export function portFacing(p: DockingProfile): { dir: 1 | -1; back: number } {
+  if (p.port === 'zvezda-aft') return { dir: -1, back: ZVEZDA_AFT_X };
+  return { dir: 1, back: p.target === 'tiangong' ? TIANHE_LEN_M / 2 : HARMONY_FWD_X };
+}
 
 /** 'establish', 'burn', 'uturn', a hold's id ('wp0', 'parking'), 'hold', 'final', 'capture',
  *  'hardDock': the HUD's label keys. */
@@ -89,9 +95,16 @@ export function dockingSteps(p: DockingProfile): DockingStep[] {
   if (p.lastBurn) push({ id: 'burn', phase: 'burn', beat: 'burn', sourced: true }, 4, 0.5);
   for (const h of p.holds) {
     if (h.uTurn) push({ id: `uturn:${h.id}`, phase: 'uturn', beat: 'uturn', hold: h }, 8);
-    push({ id: `to:${h.id}`, phase: 'leg', beat: h.id, hold: h }, 7.5, h.hold ? 0 : 0.5);
+    // A stop's own name (Shenzhou's parking point, Soyuz's hover) shows once the craft is there;
+    // a waypoint's (Dragon's) from the leg toward it, its go/no-go stop after it.
+    const named = h.hold && !h.goNoGo;
+    push(
+      { id: `to:${h.id}`, phase: 'leg', beat: named ? undefined : h.id, hold: h },
+      7.5,
+      h.hold ? 0 : 0.5,
+    );
     if (h.hold)
-      push({ id: `hold:${h.id}`, phase: 'hold', beat: h.goNoGo ? 'hold' : undefined, hold: h }, 4);
+      push({ id: `hold:${h.id}`, phase: 'hold', beat: h.goNoGo ? 'hold' : h.id, hold: h }, 4);
   }
   const firm = p.hardDockS != null;
   push({ id: 'final', phase: 'final', beat: 'final' }, 8);
@@ -178,7 +191,8 @@ export interface DockingPose {
   t: number;
   met: number;
   beat: DockingBeat;
-  /** The chaser's docking ring, relative to the station's port face (m, station axes). */
+  /** The chaser's docking ring, relative to the station's port face, in the port's frame: +x out
+   *  of the port along its axis, +y zenith (m). */
   offset: THREE.Vector3;
   /** Range from ring to port (m). */
   rangeM: number;
@@ -212,11 +226,13 @@ const legCache = new WeakMap<DockingProfile, Leg[]>();
 function legs(p: DockingProfile): Leg[] {
   const hit = legCache.get(p);
   if (hit) return hit;
-  const back = portAhead(p);
+  const { dir, back } = portFacing(p);
   const first = p.holds[0];
   const below = first.from === 'below' ? first.rangeM : 400;
-  const START = V(-back - 900, -below - 500, 0);
-  const AFTER_BURN = V(-back - 820, -below - 420, 0);
+  // the chaser comes up from behind the station (-x in the world, whichever way the port faces)
+  const W = (x: number, y: number) => V(dir * (-dir * back + x), y, 0);
+  const START = W(-900, -below - 500);
+  const AFTER_BURN = W(-820, -below - 420);
   const steps = dockingSteps(p);
   const firstTarget = first.uTurn ? turnPoint(first) : holdPoint(first, back);
   const out: Leg[] = [];
@@ -345,8 +361,35 @@ function rigIss(
   station.scale.setScalar(ISS_UNIT_M);
   configureStation(station, epochs, Date.parse(profile.stationDate));
   scene.add(station);
-  const end = buildHarmonyForwardEnd();
-  end.position.x = HARMONY_FWD_X;
+  // Before Destiny (February 2001) PMA-2 sat on Unity's forward port and PMA-3 (October 2000) on
+  // its nadir port; the diagram draws them where they are now.
+  const dateMs = Date.parse(profile.stationDate);
+  const destiny = epochs.get('destiny');
+  if (destiny !== undefined && dateMs < destiny) {
+    const unityFwd = -0.59 + 0.43 / 2 + 0.075;
+    station.traverse((o) => {
+      if (o.name === 'pma2') {
+        o.visible = true;
+        o.position.set(unityFwd, 0, 0);
+      } else if (o.name === 'pma3') {
+        o.visible = dateMs >= (epochs.get('truss-z1') ?? Infinity);
+        o.position.set(-0.59, -(0.18 + 0.075), 0);
+      }
+    });
+  }
+  let end;
+  if (profile.port === 'zvezda-aft') {
+    // the diagram's engine bell sits on the docking axis: the docking unit replaces it
+    station.traverse((o) => {
+      if (o.name === 'zvezda_engine_bell') o.visible = false;
+    });
+    end = buildZvezdaAftEnd();
+    end.rotation.y = Math.PI;
+    end.position.x = -ZVEZDA_AFT_X - 0.32;
+  } else {
+    end = buildHarmonyForwardEnd();
+    end.position.x = HARMONY_FWD_X;
+  }
   scene.add(end);
   for (const n of profile.neighbours) {
     if (n.id === 'htv') {
@@ -418,6 +461,7 @@ export function createFlyDocking(
     if ((o as THREE.DirectionalLight).isDirectionalLight) o.position.set(260, 200, -620);
   });
   const station = models.station;
+  const { dir } = portFacing(profile);
   const portObj =
     profile.target === 'tiangong'
       ? rigTiangong(scene, profile, models)
@@ -456,6 +500,9 @@ export function createFlyDocking(
   const centreInYaw = chaserBox.getCenter(new THREE.Vector3()).applyQuaternion(attitude.quaternion);
   const chaserLen = chaserBox.getSize(new THREE.Vector3()).y;
   const UP = new THREE.Vector3(0, 1, 0);
+  // the same, turned round, for an aft port
+  const portInAft = portInYaw.clone().applyAxisAngle(UP, Math.PI);
+  const centreInAft = centreInYaw.clone().applyAxisAngle(UP, Math.PI);
 
   // Four Draco plumes on the capsule's flank while the burn fires (ESTIMATE: which thrusters
   // fired, and their direction).
@@ -496,9 +543,14 @@ export function createFlyDocking(
     const t = Math.min(total, Math.max(0, tIn));
     const pose = dockingPose(t, profile);
     // The craft turns about its centre: placed by where the centre stands once turned to the port.
-    yawG.rotation.y = pose.yaw;
-    const centreNow = centreInYaw.clone().applyAxisAngle(UP, pose.yaw);
-    const centre = portWorld.clone().add(pose.offset).sub(portInYaw).add(centreInYaw);
+    // nose to the port: toward -x at a forward port, turned round at an aft one
+    const yaw = pose.yaw + (dir < 0 ? Math.PI : 0);
+    yawG.rotation.y = yaw;
+    const centreNow = centreInYaw.clone().applyAxisAngle(UP, yaw);
+    const docked = (dir < 0 ? portInAft : portInYaw).clone();
+    const centreAt = dir < 0 ? centreInAft : centreInYaw;
+    const off = V(dir * pose.offset.x, pose.offset.y, pose.offset.z);
+    const centre = portWorld.clone().add(off).sub(docked).add(centreAt);
     holder.position.copy(centre).sub(centreNow);
     holder.updateMatrixWorld(true);
     cu.setRingRetract?.(pose.retract);
@@ -531,6 +583,7 @@ export function createFlyDocking(
       const sep = Math.max(min, cc.distanceTo(portWorld));
       // on a phone the eye swings toward the docking axis, foreshortening the craft-to-port line
       const o = (portrait ? V(off.x + 0.9, off.y, off.z) : off.clone()).normalize();
+      o.x *= dir;
       return { position: look.clone().addScaledVector(o, sep * 1.5 * fit), look, fov };
     };
     const legSteps = steps.filter((s) => s.phase === 'leg');
@@ -554,8 +607,8 @@ export function createFlyDocking(
         shots.push([
           s.t0,
           {
-            position: portWorld.clone().add(V(48, 16, -38).multiplyScalar(fit)),
-            look: portWorld.clone().add(V(-4, -1, 0)),
+            position: portWorld.clone().add(V(dir * 48, 16, -38).multiplyScalar(fit)),
+            look: portWorld.clone().add(V(-dir * 4, -1, 0)),
             fov: 40,
           },
         ]);

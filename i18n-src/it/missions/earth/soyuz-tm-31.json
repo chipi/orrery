@@ -1,0 +1,42 @@
+{
+  "name": "Soyuz TM-31",
+  "vehicle": "Soyuz-U + veicolo Soyuz TM-31",
+  "payload": "Expedition 1: William Shepherd (NASA, comandante), Jurij Gidzenko (comandante della Soyuz) e Sergej Krikalëv (ingegnere di volo)",
+  "delta_v": "~7,8 km/s (LEO)",
+  "type": "MISSIONE CON EQUIPAGGIO VERSO UNA STAZIONE SPAZIALE · COMPLETATA",
+  "first": "Portò il primo equipaggio di lunga durata sulla Stazione spaziale internazionale",
+  "description": "Soyuz TM-31 portò l'Expedition 1, il primo equipaggio di lunga durata della Stazione spaziale internazionale: William Shepherd della NASA come comandante, Jurij Gidzenko come comandante della Soyuz e Sergej Krikalëv come ingegnere di volo. Un Soyuz-U decollò dal sito 1/5 di Bajkonur il 2000-10-31 alle 07:52:47 UTC. Il 2000-11-02 alle 09:21:40 UTC il veicolo si agganciò, in modo completamente automatico con il sistema Kurs, alla porta di poppa del modulo Zvezda (Wikipedia e spacefacts indicano 09:21:03). Secondo il rapporto russo del controllo missione, alle 09:12:12 UTC si trovava fermo a 150 m dalla porta. Il portello fu aperto alle 10:23 UTC. L'equipaggio rimase 136 giorni, 14 ore e 7 minuti e tornò a casa con lo Space Shuttle STS-102, atterrato il 2001-03-21, non con questa Soyuz. Soyuz TM-31 rimase agganciata fino al 2001-05-06, quando si sganciò alle 02:21:09 UTC e atterrò in Kazakistan alle 05:41:28 UTC con l'equipaggio in visita di Soyuz TM-32: Talgat Musabaev, Jurij Baturin e Dennis Tito.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCIO",
+      "note": "Soyuz-U dal sito 1/5 di Bajkonur, 2000-10-31, 07:52:47 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 2.0617,
+      "label": "AGGANCIO",
+      "note": "Si aggancia automaticamente con il sistema Kurs alla porta di poppa di Zvezda alle 09:21:40 UTC del 2000-11-02, dopo essersi fermata a 150 m alle 09:12:12 UTC; Wikipedia indica 09:21:03.",
+      "type": "nominal"
+    },
+    {
+      "met": 2.1043,
+      "label": "PORTELLO APERTO",
+      "note": "L'equipaggio apre il portello alle 10:23 UTC (ESA); il rapporto del controllo missione riporta la comunicazione di Krikalëv, portello aperto, tra le 10:46 e le 10:52 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 186.7697,
+      "label": "SGANCIO",
+      "note": "Si sgancia da Zvezda alle 02:21:09 UTC del 2001-05-06; l'equipaggio dell'Expedition 1 era tornato a casa con lo STS-102 il 2001-03-21.",
+      "type": "nominal"
+    },
+    {
+      "met": 186.9088,
+      "label": "ATTERRAGGIO",
+      "note": "Atterra alle 05:41:28 UTC del 2001-05-06 in Kazakistan, vicino ad Arkalyk, con Musabaev, Baturin e Tito, dopo 186 giorni, 21 ore e 48 minuti.",
+      "type": "nominal"
+    }
+  ],
+  "vehicle_stage": "Soyuz-U"
+}
